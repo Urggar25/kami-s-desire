@@ -719,3 +719,265 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 # Total : 1h 10m 40s
 
 label _2_CAFETERIA_POST_ANNONCE:
+
+    "Le silence qui suit est plus lourd que l'annonce."
+    "Pas parce qu'elle est violente."
+    "Mais parce qu'elle ressemble presque à une respiration."
+    "Une parenthèse."
+
+    $ showP("kael", "neutre", 0.15)
+    $ showP("mara", "neutre", 0.50)
+    $ showP("sael", "mefiant", 0.86)
+
+    kael "Sur le papier, c’est simple."
+    kael "Autoriser les échanges."
+    kael "Ce n’est pas une révolution."
+
+    mara "Ça en devient suspect."
+    mara "Kami ne fait jamais simple pour faire plaisir."
+
+    sael "Ou elle sait qu’on a besoin d’un os à ronger."
+    sael "Pour calmer la panique."
+
+    $ showP("nyra", "raison", 0.20)
+
+    nyra "Je suis d’accord."
+    nyra "C’est l’amendement le moins explosif qu’on pouvait se prendre."
+    nyra "C’est presque… consensuel."
+
+    $ showP("iris", "neutre", 0.70)
+
+    iris "Ouais."
+    iris "Et ça veut dire qu’on va devoir discuter du reste ensemble."
+    iris "Ce qui est toujours un enfer."
+
+    $ showP("elen", "inquiet", 0.40)
+
+    elen "On peut essayer d’être d’accord, non ?"
+    elen "Juste une fois."
+
+    sael "Touchant."
+    sael "Mais on verra demain."
+
+    $ showP("tomas", "reflechit", 0.10)
+
+    tomas "Je…"
+    tomas "Je pense que c’est important."
+    tomas "Parce que ça touche nos districts."
+    tomas "Et si on peut faire circuler des choses…"
+    tomas "Alors on peut aussi s’entraider, non ?"
+
+    mara "C’est la partie belle."
+    mara "La partie plus moche, c’est qui contrôle ces échanges."
+
+    kael "On n’a pas les détails."
+    kael "On devra décider sans."
+
+    pause 0.6
+
+    "Les discussions se croisent."
+    "Les voix montent, pas pour se battre, juste pour combler le vide."
+    "On finit par tourner en rond."
+    "Et puis, un à un, on se disperse."
+
+    stop music fadeout 0.8
+    pause 0.6
+
+    "Le reste de la matinée glisse sans moi."
+    "Des pas, des couloirs, des horaires qui se rangent tout seuls."
+
+    jump _2_APRES_MIDI
+
+label _2_APRES_MIDI:
+
+    scene bg_couloir at adaptive_fullscreen with fade
+    play music "music/bgm_quiet_routine.mp3" fadein 1.0
+
+    "L’après-midi commence sans véritable signal."
+    "Je traverse un couloir étroit."
+    "Le sol est propre. Trop propre."
+
+    $ showP("mara", "neutre", 0.30)
+    $ showP("sael", "mefiant", 0.70)
+
+    mara "Tu crois vraiment qu’ils vont nous laisser voter tranquille ?"
+    mara "Sans nous souffler la réponse ?"
+
+    sael "Je crois qu’ils vont surtout nous regarder nous disputer."
+    sael "Et ça leur ira très bien."
+
+    mara "Toujours aussi optimiste."
+
+    sael "Toi aussi."
+
+    "Elles échangent un sourire bref."
+    "Froid."
+    "Presque complice."
+
+    mara "On se retrouve plus tard."
+
+    sael "Si on n’explose pas d’ici là."
+
+    hide mara
+    hide sael
+
+    "Je les laisse derrière."
+    "Direction la salle d’observation."
+
+    scene bg_observation at adaptive_fullscreen with dissolve
+
+    "La baie vitrée donne sur le vide."
+    "Un noir immense, calme, presque apaisant."
+    "Kael est déjà là."
+    "Debout, les mains dans le dos."
+
+    $ showP("kael", "neutre", 0.50)
+
+    noam "Tu sais où on est ?"
+    noam "Enfin… précisément."
+
+    kael "Non."
+    kael "Mais je reconnais des pièces."
+    kael "Du matériel Orbite."
+
+    noam "Donc on est bien proches de chez toi."
+
+    kael "Ou on nous a recyclés à partir de là-bas."
+    kael "Ce qui revient presque au même."
+
+    noam "Ça te rassure ?"
+
+    kael "Ça me met en colère."
+    kael "Parce que ça veut dire qu’ils avaient tout prévu."
+
+    pause 0.6
+
+    play sound sfx_announce
+    pause 0.8
+
+    stop music fadeout 0.6
+    scene bg_diffusion_neutre at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Petit rappel."
+    kami "Le vote aura lieu demain."
+    kami "Quatorze heures."
+    kami "Soyez ponctuels."
+    kami "Et soyez unanimes."
+
+    hide screen kami_broadcast_ui
+    stop music fadeout 0.8
+
+    scene bg_observation at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 0.8
+
+    noam "Quatorze heures."
+    noam "C’est proche."
+
+    kael "C’est voulu."
+
+    pause 0.6
+
+    scene bg_gymnase at adaptive_fullscreen with dissolve
+
+    "Je passe par la salle de sport."
+    "Le bruit des machines couvre tout."
+    "Iris enchaîne les répétitions."
+    "Elias compte à voix basse, concentré."
+
+    $ showP("iris", "determine", 0.35)
+    $ showP("elias", "neutre", 0.65)
+
+    iris "Encore."
+    iris "Plus vite."
+
+    elias "Respire."
+    elias "C’est pas une course."
+
+    iris "Justement."
+    iris "J’ai besoin de sentir que ça bouge."
+
+    elias "On bouge tous."
+    elias "Mais pas forcément dans la bonne direction."
+
+    pause 0.6
+
+    "Je les salue d’un geste."
+    "Ils ne s’arrêtent pas."
+    "C’est leur manière de tenir."
+
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+
+    "Je termine la journée à la cafétéria."
+    "Tout le monde ne mange pas en même temps."
+    "Ça vient, ça repart."
+    "Des silhouettes, des plateaux, des regards."
+
+    $ showP("kael", "neutre", 0.20)
+
+    kael "À Orbite, on mangeait souvent en décalé."
+    kael "Les cycles n’étaient pas les mêmes."
+    kael "Le silence faisait partie du travail."
+
+    noam "Tu regrettes ?"
+
+    kael "Ce qui me manque, c’est la routine."
+    kael "Pas l’endroit."
+
+    $ showP("nyra", "taquin", 0.80)
+
+    nyra "Orbite, c’était comment ?"
+    nyra "On entend tout et n’importe quoi."
+    nyra "Des gens qui dorment en apesanteur."
+    nyra "Des repas qui flottent."
+
+    kael "On flotte, oui."
+    kael "Mais on fait quand même la vaisselle."
+
+    nyra "Quelle déception."
+
+    $ showP("tomas", "curieux", 0.50)
+
+    tomas "Et… euh… vous aviez aussi des médiateurs ?"
+    tomas "Des… assemblées ?"
+
+    kael "Pas comme ici."
+    kael "On réglait les choses autrement."
+    kael "Avec des protocoles."
+    kael "Et moins de spectacle."
+
+    noam "Ça te fait quoi de tout revoir ici ?"
+
+    kael "Ça me donne envie de comprendre."
+    kael "Et de ne plus obéir par réflexe."
+
+    pause 0.6
+
+    "La conversation dérive."
+    "D’autres se mêlent à nous."
+    "Des questions, des souvenirs, des comparaisons."
+    "Puis la fatigue gagne."
+
+    stop music fadeout 1.0
+    pause 0.6
+
+    "Je passe par les douches."
+    "L’eau est tiède."
+    "Juste assez pour effacer le bruit."
+
+    scene bg_chambre at adaptive_fullscreen with fade
+    play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+
+    "Je me laisse tomber sur le lit."
+    "Demain, quatorze heures."
+    "Et entre les deux, des paroles à peser."
+    "Des accords à construire."
+    "Ou à casser."
+
+    $ blink()
+
+    think "Je ferme les yeux."
+    think "Et j’essaie de dormir."
