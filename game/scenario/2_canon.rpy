@@ -739,27 +739,71 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael "Ou elle sait qu’on a besoin d’un os à ronger."
     sael "Pour calmer la panique."
 
-    $ showP("nyra", "raison", 0.20)
+    kael "Il y a un piège."
+    kael "La question, c’est où il est."
+
+    mara "Le piège, c’est nous."
+    mara "Nos districts, nos besoins, nos secrets."
+    mara "On va devoir exposer ce qu’on a."
+
+    sael "Et ce qu’on n’a pas."
+    sael "Je peux déjà sentir les calculs."
+
+    hide sael
+    $ showP("nyra", "raison", 0.86)
 
     nyra "Je suis d’accord."
     nyra "C’est l’amendement le moins explosif qu’on pouvait se prendre."
     nyra "C’est presque… consensuel."
 
-    $ showP("iris", "neutre", 0.70)
+    kael "Ce qui n’est pas une bonne nouvelle."
+
+    nyra "Tu veux dire que c’est trop beau ?"
+
+    kael "Je veux dire que ça nous divise sans nous le dire."
+
+    hide mara
+    $ showP("iris", "neutre", 0.50)
 
     iris "Ouais."
     iris "Et ça veut dire qu’on va devoir discuter du reste ensemble."
     iris "Ce qui est toujours un enfer."
 
-    $ showP("elen", "inquiet", 0.40)
+    nyra taquin "Tu dis ça comme si c’était la première fois."
+
+    iris "Je dis ça parce que ça recommence."
+
+    kael "On ne peut pas esquiver."
+    kael "Pas cette fois."
+
+    hide nyra
+    $ showP("elen", "inquiet", 0.86)
 
     elen "On peut essayer d’être d’accord, non ?"
     elen "Juste une fois."
+    elen "Pour ne pas leur donner ce qu’ils veulent."
+
+    iris "Ils veulent du spectacle."
+    iris "On va leur donner des questions."
+
+    elen "C’est mieux."
+
+    hide elen
+    $ showP("sael", "mefiant", 0.86)
 
     sael "Touchant."
     sael "Mais on verra demain."
 
-    $ showP("tomas", "reflechit", 0.10)
+    kael "Demain, c’est tard."
+    kael "On doit se parler aujourd’hui."
+
+    sael "Tu veux dire quoi ?"
+    sael "Qu’on fasse une réunion ?"
+
+    iris "On en est là."
+
+    hide iris
+    $ showP("tomas", "reflechit", 0.50)
 
     tomas "Je…"
     tomas "Je pense que c’est important."
@@ -767,24 +811,380 @@ label _2_CAFETERIA_POST_ANNONCE:
     tomas "Et si on peut faire circuler des choses…"
     tomas "Alors on peut aussi s’entraider, non ?"
 
+    kael "Tu penses à quoi ?"
+
+    tomas "Aux médicaments."
+    tomas "Aux matériaux."
+    tomas "Aux gens, aussi."
+
+    sael "Les gens, c’est autre chose."
+    sael "Même Kami ne nous a pas parlé de ça."
+
+    tomas "Je sais."
+    tomas "Mais si l’échange est autorisé, c’est la porte."
+
+    kael "Une porte qu’ils tiennent de l’autre côté."
+
+    hide sael
+    $ showP("mara", "neutre", 0.86)
+
     mara "C’est la partie belle."
     mara "La partie plus moche, c’est qui contrôle ces échanges."
+    mara "Qui vérifie."
+    mara "Qui sanctionne."
 
-    kael "On n’a pas les détails."
+    tomas "On n’a pas les détails."
+
+    kael "Justement."
     kael "On devra décider sans."
+
+    mara "Décider à l’aveugle."
+
+    tomas "Alors on doit faire confiance."
+
+    mara "À qui ?"
+
+    tomas "Aux autres."
+    tomas "À nous."
+
+    mara "C’est là que ça coince."
+
+    hide tomas
+    $ showP("nyra", "raison", 0.50)
+
+    nyra "On pourrait commencer par lister ce qu’on sait."
+    nyra "Et ce qu’on ignore."
+    nyra "Parce que là, on se jette des impressions."
+
+    mara "Tu veux un tableau ?"
+
+    nyra "Je veux une base."
+
+    kael "Elle a raison."
+    kael "Sinon on va se bouffer."
+
+    hide mara
+    $ showP("elen", "inquiet", 0.86)
+
+    elen "Je peux noter."
+    elen "Je fais souvent ça quand je panique."
+
+    nyra "Tu vois, c’est utile."
+
+    elen "Je ne sais pas si ça me rassure."
+
+    hide kael
+    $ showP("iris", "neutre", 0.15)
+
+    iris "Bon."
+    iris "On a trois trucs :"
+    iris "On veut pas se faire piéger."
+    iris "On veut pas trahir nos districts."
+    iris "Et on veut pas se détester."
+
+    nyra "Ça fait beaucoup de veux."
+
+    iris "On a que ça."
+
+    elen "On a aussi une journée."
+
+    iris "Et une nuit."
+
+    hide elen
+    hide nyra
+    $ showP("julian", "taquin", 0.86)
+
+    julian "Alors on fait quoi ?"
+    julian "On se réunit, on se parle, on signe un pacte ?"
+
+    iris "On se parle."
+    iris "Le reste, on verra."
+
+    julian "Ok."
+    julian "Mais faut pas juste tourner en rond."
+
+    iris "Tu proposes quoi ?"
+
+    julian "Un plan."
+    julian "On se répartit les questions."
+    julian "Chacun réfléchit et on revient."
+
+    iris "Réfléchir, c’est facile."
+    iris "Revenir, c’est autre chose."
+
+    julian "T’as peur de qui ?"
+
+    iris "Des conclusions."
+
+    hide julian
+    $ showP("kael", "neutre", 0.86)
+
+    kael "Une question simple."
+    kael "Quelqu’un a-t-il de quoi échanger ?"
+
+    iris "Tu parles de quoi ?"
+
+    kael "De ressources."
+    kael "De compétences."
+    kael "De temps."
+
+    iris "Je sais parler fort."
+
+    kael "Je sais réparer."
+
+    iris "Ça ne se vend pas."
+
+    kael "Ça se partage."
+
+    hide kael
+    $ showP("sael", "mefiant", 0.86)
+
+    sael "Partager, ça se paye."
+    sael "Toujours."
+
+    iris "Et si on refuse ?"
+
+    sael "On se retire."
+    sael "On laisse ceux qui veulent se vendre le faire."
+
+    iris "Tu dis ça comme si c’était simple."
+
+    sael "Rien n’est simple."
+    sael "Mais refuser, c’est aussi décider."
+
+    hide iris
+    $ showP("nyra", "raison", 0.15)
+
+    nyra "Sauf que refuser ensemble, c’est se condamner ensemble."
+    nyra "Et accepter ensemble, c’est se lier."
+    nyra "On fait quoi de ceux qui ne veulent pas se lier ?"
+
+    sael "On les laisse."
+
+    nyra "Tu parles de gens."
+
+    sael "Je parle de choix."
+
+    hide sael
+    $ showP("mara", "neutre", 0.86)
+
+    mara "On n’a pas la même position."
+    mara "Certaines de nos régions n’ont rien."
+    mara "D’autres ont trop."
+    mara "Et là, d’un coup, on nous demande de gérer l’équilibre."
+
+    nyra "Donc on doit parler d’inégalités."
+
+    mara "Exactement."
+    mara "Et on n’a même pas le droit d’en parler dans nos districts."
+
+    nyra "Ça va être beau."
+
+    hide nyra
+    $ showP("tomas", "inquiet", 0.15)
+
+    tomas "On est obligés de parler de nos districts ?"
+    tomas "De dire ce qu’on a ?"
+
+    mara "Non."
+    mara "Mais tout le monde le devinera."
+
+    tomas "Et si on ment ?"
+
+    mara "Tu veux commencer le Conclave par un mensonge ?"
+
+    tomas "Je veux pas."
+    tomas "Je veux juste pas avoir à choisir."
+
+    hide mara
+    $ showP("elen", "triste", 0.86)
+
+    elen "On a tous peur de choisir."
+    elen "Mais on choisit déjà."
+    elen "Quand on parle."
+    elen "Quand on se tait."
+
+    tomas "Je sais."
+    tomas "Je sais."
+
+    hide tomas
+    $ showP("kael", "neutre", 0.15)
+
+    kael "Si on ne se parle pas ici, on va se parler derrière."
+    kael "Et là, ça devient dangereux."
+
+    elen "Alors on fait comment ?"
+
+    kael "On propose une méthode."
+    kael "Et on la tient."
+
+    elen "Une méthode ?"
+
+    kael "On fait une liste."
+    kael "On précise les besoins."
+    kael "On ne discute pas des échanges tant qu’on n’a pas la carte."
+
+    hide elen
+    $ showP("nyra", "raison", 0.86)
+
+    nyra "Et qui fait la carte ?"
+
+    kael "Nous."
+    kael "Chacun pour son district."
+
+    nyra "Et ceux qui ne veulent pas se dévoiler ?"
+
+    kael "On les écoute."
+    kael "Mais on leur dit que demain, ça s’impose."
+
+    hide kael
+    $ showP("iris", "neutre", 0.15)
+
+    iris "Je déteste quand c’est raisonnable."
+
+    nyra "Tu préfères quand c’est violent ?"
+
+    iris "Je préfère quand je comprends."
+
+    nyra "Alors on va parler."
+
+    hide nyra
+    $ showP("julian", "reflexion", 0.86)
+
+    julian "Je peux résumer ?"
+    julian "On s’organise."
+    julian "On dit ce qu’on peut offrir."
+    julian "Et on essaye de ne pas se juger."
+
+    iris "Ça va être le plus dur."
+
+    julian "Je sais."
+
+    hide julian
+    $ showP("mara", "neutre", 0.86)
+
+    mara "Et pendant qu’on discute…"
+    mara "Kami nous écoute."
+    mara "Elle notera qui craque."
+
+    iris "Alors on ne craque pas."
+
+    mara "Plus facile à dire."
+
+    hide mara
+    $ showP("sael", "mefiant", 0.86)
+
+    sael "Je propose qu’on fasse ça en deux temps."
+    sael "D’abord les besoins, ensuite les échanges."
+    sael "Et sans promesse aujourd’hui."
+
+    iris "Je signe."
+
+    kael "Moi aussi."
+
+    nyra "Pareil."
+
+    elen "Oui."
+
+    tomas "D’accord."
+
+    sael "Bien."
+    sael "On se pose quand ?"
+
+    kael "Après le déjeuner."
+    kael "Une heure ou deux."
+
+    sael "On a une salle ?"
+
+    iris "La salle commune."
+
+    kael "S’ils ne nous la ferment pas."
+
+    hide sael
+    $ showP("tomas", "inquiet", 0.86)
+
+    tomas "Et si quelqu’un refuse ?"
+
+    iris "On ne l’oblige pas."
+
+    kael "Mais on lui laisse une place."
+
+    tomas "Ok."
+
+    hide tomas
+    $ showP("nyra", "raison", 0.86)
+
+    nyra "Et si quelqu’un profite ?"
+
+    iris "On le verra."
+
+    kael "Et on le dit."
+
+    nyra "Donc on fait ça."
+
+    kael "Oui."
 
     pause 0.6
 
-    "Les discussions se croisent."
-    "Les voix montent, pas pour se battre, juste pour combler le vide."
-    "On finit par tourner en rond."
-    "Et puis, un à un, on se disperse."
+    "Le bruit reprend doucement."
+    "Des chaises raclent."
+    "Des plateaux s’éloignent."
+    "Ce n’est plus un silence."
+    "C’est un mouvement."
+
+    hide iris
+    hide kael
+    hide nyra
+    hide sael
+
+    $ showP("ryn", "neutre", 0.15)
+
+    ryn "On dirait que vous avez déjà décidé."
+
+    noam "On a juste cherché un cadre."
+
+    ryn "Un cadre, c’est déjà un camp."
+
+    noam "Tu veux t’en faire un autre ?"
+
+    ryn "Je veux éviter de me faire piéger."
+
+    noam "Moi aussi."
+
+    hide ryn
+
+    "Je sens les regards qui glissent."
+    "Chacun se repositionne."
+    "Des alliances silencieuses."
+    "Des distances nouvelles."
+    "Je comprends que la matinée est finie."
+    "Mais pas la tension."
+    "Elle reste accrochée aux épaules."
+    "Elle s’invite dans les gestes."
+    "Dans les pauses trop longues."
+    "Dans les sourires qui veulent rassurer."
+    "Je sens mes mains se crisper."
+    "Je les ouvre."
+    "Je les referme."
+    "Je me force à marcher."
+    "À ne pas rester planté."
+    "À ne pas chercher des réponses là où il n’y en a pas."
 
     stop music fadeout 0.8
     pause 0.6
 
     "Le reste de la matinée glisse sans moi."
     "Des pas, des couloirs, des horaires qui se rangent tout seuls."
+    "Je me surprends à écouter."
+    "Pas les mots."
+    "Les respirations."
+    "Celles qui s’accélèrent."
+    "Celles qui se cassent."
+    "Celles qui se contrôlent."
+    "Je devine les tempêtes."
+    "Je devine les résistances."
+    "Je ne sais pas qui va craquer."
+    "Je ne sais pas si ce sera moi."
 
     jump _2_APRES_MIDI
 
@@ -823,6 +1223,174 @@ label _2_APRES_MIDI:
 
     "Je les laisse derrière."
     "Direction la salle d’observation."
+    "Sur le chemin, des voix me frôlent."
+    "Des morceaux de phrases."
+    "Des hypothèses."
+    "Des promesses qu’on n’ose pas dire."
+
+    "Je tourne au bout du couloir."
+    "Lysa est adossée au mur, les bras croisés."
+    "Elias lui parle doucement."
+
+    $ showP("lysa", "triste", 0.30)
+    $ showP("elias", "neutre", 0.70)
+
+    elias "Tu n’es pas obligée de rester seule."
+
+    lysa "Je ne suis pas seule."
+    lysa "Je me protège."
+
+    elias "Tu te coupes."
+
+    lysa "Je me repose."
+
+    elias "Ça ne ressemble pas à du repos."
+
+    lysa "Toi, tu appelles comment ce qu’on fait ?"
+    lysa "Ce va-et-vient, ces discussions, ces regards."
+    lysa "Moi j’appelle ça survivre."
+
+    elias "C’est pareil."
+    elias "Mais tu peux survivre avec nous."
+
+    lysa "Avec nous."
+    lysa "Qui est nous ?"
+
+    elias "Tous."
+
+    lysa "Tous, ça n’existe pas."
+    lysa "Pas ici."
+
+    noam "Tu ne crois pas qu’on peut y arriver ?"
+
+    lysa "Je crois qu’on va essayer."
+    lysa "Et qu’on va se faire mal."
+
+    elias "On va se faire mal de toute façon."
+    elias "Autant choisir comment."
+
+    lysa "Tu dis ça comme si on avait la main."
+
+    elias "On a au moins un doigt."
+
+    lysa "Je ne suis pas certaine de vouloir l’utiliser."
+
+    noam "Tu as peur ?"
+
+    lysa "Oui."
+    lysa "Et toi ?"
+
+    noam "Oui."
+
+    lysa "Alors ne fais pas semblant d’être solide."
+
+    noam "Je ne fais pas semblant."
+
+    lysa "Si."
+    lysa "Tu fais semblant pour que les autres tiennent."
+
+    elias "Elle n’a pas tort."
+
+    noam "Je ne sais pas faire autrement."
+
+    lysa "Moi non plus."
+
+    elias "Tu n’es pas obligée de parler à la réunion."
+
+    lysa "Je sais."
+    lysa "Mais si je ne parle pas, on parlera pour moi."
+
+    elias "Tu veux dire quoi ?"
+
+    lysa "Que mon district a une réputation."
+    lysa "Et qu’elle me colle."
+
+    noam "Tu n’es pas une réputation."
+
+    lysa "Dis-le à ceux qui ne me connaissent pas."
+
+    elias "Alors présente-toi."
+
+    lysa "Ce n’est pas si simple."
+
+    elias "Rien ne l’est."
+
+    lysa "Je sais."
+    lysa "C’est ça le problème."
+
+    noam "Tu veux qu’on reste ?"
+
+    lysa "Je veux que vous compreniez."
+    lysa "Je suis fatiguée de devoir expliquer."
+
+    elias "Tu n’as pas à tout expliquer."
+    elias "Tu peux dire l’essentiel."
+
+    lysa "L’essentiel ?"
+    lysa "Que nos rations sont déjà basses."
+    lysa "Que les hôpitaux ferment."
+    lysa "Que nos dirigeants mentent."
+
+    elias "Dis-le."
+
+    lysa "Et après ?"
+    lysa "On va me dire qu’on a tous des problèmes."
+
+    elias "Et ce sera vrai."
+
+    lysa "Alors à quoi bon ?"
+
+    noam "À ne pas être seule avec ça."
+
+    lysa "Tu crois que ça change quelque chose ?"
+
+    noam "Je ne sais pas."
+    noam "Mais je ne veux pas qu’on te fasse taire."
+
+    lysa "Je ne me tais pas."
+    lysa "Je choisis mes mots."
+
+    elias "C’est déjà beaucoup."
+
+    lysa "Toi aussi, tu vas parler ?"
+
+    elias "Je vais écouter."
+    elias "Et je dirai ce que je dois."
+
+    lysa "Tu as toujours l’air d’avoir un devoir."
+
+    elias "C’est mon problème."
+
+    lysa "C’est aussi le nôtre."
+
+    elias "Je le sais."
+
+    lysa "Alors ne te sacrifies pas."
+
+    elias "Je ne me sacrifie pas."
+    elias "Je suis là."
+
+    lysa "C’est déjà un sacrifice."
+
+    noam "On y va ?"
+
+    lysa "Oui."
+    lysa "Je vais venir."
+    lysa "Mais si je sors, je ne veux pas qu’on me fasse dire plus."
+
+    elias "Promis."
+
+    noam "Promis."
+
+    hide lysa
+    hide elias
+
+    "Elle se redresse."
+    "Elle inspire."
+    "Et elle marche."
+    "Je la suis des yeux un instant."
+    "C’est une décision minuscule."
+    "Mais je sais ce que ça lui coûte."
 
     scene bg_observation at adaptive_fullscreen with dissolve
 
@@ -849,6 +1417,24 @@ label _2_APRES_MIDI:
 
     kael "Ça me met en colère."
     kael "Parce que ça veut dire qu’ils avaient tout prévu."
+    kael "Le lieu, le calendrier, nos réactions."
+
+    noam "Tu crois qu’ils ont prévu le vote aussi ?"
+
+    kael "Ils l’ont fabriqué."
+    kael "Pour que ça paraisse raisonnable."
+    kael "Et pour que nous nous divisons sur des détails."
+
+    noam "On n’est pas encore divisés."
+
+    kael "On l’est déjà."
+    kael "La peur ne met pas les mêmes mots dans toutes les bouches."
+
+    noam "Tu parles comme si tu avais déjà choisi."
+
+    kael "Non."
+    kael "Je me prépare."
+    kael "C’est différent."
 
     pause 0.6
 
@@ -877,6 +1463,50 @@ label _2_APRES_MIDI:
     noam "C’est proche."
 
     kael "C’est voulu."
+    kael "Ils veulent qu’on manque de temps."
+
+    noam "Tu penses qu’on peut tenir un consensus ?"
+
+    kael "On peut tenir une ligne."
+    kael "Pas forcément une paix."
+
+    noam "Quelle ligne ?"
+
+    kael "Le respect."
+    kael "Si on le perd, on est fichus."
+
+    noam "Tu crois que tout le monde peut faire ça ?"
+
+    kael "Non."
+    kael "Mais si on commence par les écouter, peut-être."
+
+    hide kael
+
+    "Je reste un instant face au vide."
+    "Je me surprends à vouloir y lire une réponse."
+    "Mais il n’y a que le noir."
+    "Et ce silence qui fait trop de place."
+    "Je compte mes respirations."
+    "Trois."
+    "Cinq."
+    "Sept."
+    "Je m’arrête."
+    "Je me sens idiot."
+    "Je recommence."
+    "La routine rassure."
+    "Même inventée."
+    "Même bancale."
+    "Je pense à Juliette."
+    "À sa manière de répéter les mêmes chansons."
+    "Elle disait que ça chassait les cauchemars."
+    "Moi, ça chasse quoi ?"
+    "L’inquiétude ?"
+    "La honte ?"
+    "Ou juste le bruit ?"
+    "Je n’ai pas la réponse."
+    "Je me contente d’un souffle."
+    "Un autre."
+    "Et j’avance."
 
     pause 0.6
 
@@ -902,11 +1532,269 @@ label _2_APRES_MIDI:
     elias "On bouge tous."
     elias "Mais pas forcément dans la bonne direction."
 
+    iris "Parle pour toi."
+    iris "Moi je sais où je vais."
+
+    elias "Tu vas où ?"
+
+    iris "Vers demain."
+    iris "Vers leur foutu vote."
+    iris "Pour leur montrer qu’on n’est pas des figurants."
+
+    elias "Être un figurant, ça fait mal."
+    elias "Mais être une cible, c’est pire."
+
+    iris "Tu me dis d’être prudente ?"
+
+    elias "Je te dis d’être lucide."
+
+    iris "Je le suis."
+    iris "C’est pour ça que je tape plus fort."
+
+    elias "Tu te fais mal."
+
+    iris "J’ai besoin de quelque chose de clair."
+    iris "De net."
+    iris "Les mots, c’est flou."
+
+    elias "Les mots peuvent tenir debout."
+    elias "Si on les pose bien."
+
+    iris "Et si on les pose mal ?"
+
+    elias "Alors on s’excuse."
+    elias "Et on recommence."
+
     pause 0.6
 
     "Je les salue d’un geste."
     "Ils ne s’arrêtent pas."
     "C’est leur manière de tenir."
+    "Je comprends."
+    "On tient comme on peut."
+    "Avec les bras, avec la voix, avec le silence."
+    "Iris tient par la force."
+    "Elias par la mesure."
+    "Moi, je ne sais pas encore."
+    "Alors je regarde."
+    "Et je retiens."
+
+    hide iris
+    hide elias
+
+    "Je traverse le couloir qui mène à la salle commune."
+    "La porte est entrouverte."
+    "Des voix calmes."
+    "Je décide d’entrer."
+
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+
+    $ showP("nyra", "sourire", 0.20)
+    $ showP("elen", "inquiet", 0.50)
+    $ showP("tomas", "inquiet", 0.80)
+
+    nyra "On a dit qu’on commençait par les besoins."
+    nyra "Pas par les rêves."
+
+    elen "Mais les rêves, c’est aussi un besoin."
+
+    nyra "Oui."
+    nyra "Mais ça ne se pèse pas."
+
+    tomas "On peut dire ce qui manque."
+    tomas "Sans dire ce qu’on a."
+    tomas "Peut-être."
+
+    nyra "Et comment on échange si on ne sait pas ce qu’on a ?"
+
+    tomas "On peut dire des catégories."
+    tomas "Comme ça personne ne se sent trop exposé."
+
+    elen "Des catégories ?"
+
+    tomas "Oui."
+    tomas "Alimentation."
+    tomas "Médical."
+    tomas "Technologie."
+    tomas "Éducation."
+
+    nyra "Ça devient un inventaire."
+
+    elen "Ce serait déjà bien."
+
+    nyra "Ce serait dangereux."
+
+    tomas "Pourquoi ?"
+
+    nyra "Parce que ceux qui ont pourront demander des choses en échange."
+    nyra "Et ceux qui n’ont rien…"
+
+    elen "On ne les laissera pas tomber."
+
+    nyra "Tu ne peux pas promettre pour tout le monde."
+
+    elen "Je peux promettre pour moi."
+
+    nyra "Et moi, je peux promettre de te rappeler que ça ne suffit pas."
+
+    hide tomas
+    $ showP("kael", "neutre", 0.80)
+
+    kael "On ne parle pas de promesse."
+    kael "On parle d’un cadre."
+    kael "Le but, c’est d’éviter les surenchères."
+
+    elen "On peut décider de limiter."
+
+    nyra "Limiter quoi ?"
+
+    kael "Les demandes."
+    kael "Les échanges."
+    kael "Une règle simple."
+
+    nyra "Et qui surveille ?"
+
+    kael "On se surveille."
+
+    nyra "C’est ça le piège."
+
+    hide elen
+    $ showP("iris", "determine", 0.50)
+
+    iris "Vous parlez comme si on avait le choix."
+    iris "Kami nous donne un vote."
+    iris "On vote."
+    iris "Après, on gère."
+
+    kael "Si on vote oui."
+
+    iris "Et si on vote non, on gère quand même."
+
+    nyra "On gère différemment."
+
+    iris "On gère dans le noir."
+
+    nyra "On est déjà dans le noir."
+
+    kael "On est dans un couloir."
+    kael "On peut encore choisir la porte."
+
+    iris "Tu crois que c’est une porte ?"
+
+    kael "C’est ça ou un mur."
+
+    nyra "Arrêtez."
+    nyra "On n’a pas besoin d’image."
+    nyra "On a besoin d’une décision."
+
+    hide iris
+    $ showP("mara", "neutre", 0.50)
+
+    mara "La décision ne peut pas être prise sans informations."
+    mara "Et on n’en a pas."
+
+    kael "Alors on en fabrique."
+
+    mara "Ce n’est pas de l’information."
+    mara "C’est de la fiction."
+
+    nyra "La fiction, ça tient quand tout s’effondre."
+
+    mara "Ça tient jusqu’à demain."
+
+    tomas "On peut appeler ça un plan."
+    tomas "Un plan temporaire."
+
+    mara "Un plan temporaire, c’est un plan quand même."
+
+    pause 0.6
+
+    "Les regards se croisent."
+    "On comprend tous qu’on va devoir poser quelque chose."
+    "Même si c’est fragile."
+
+    hide nyra
+    hide kael
+    hide mara
+
+    $ showP("julian", "taquin", 0.20)
+    $ showP("elen", "inquiet", 0.50)
+    $ showP("tomas", "inquiet", 0.80)
+
+    julian "On peut faire simple."
+    julian "On liste les besoins, point."
+    julian "Sans chiffres."
+    julian "Sans détails."
+
+    tomas "Tu crois que ça suffira ?"
+
+    julian "Ça suffira pour aujourd’hui."
+    julian "Demain on improvisera."
+
+    elen "Improviser, ça me fait peur."
+
+    julian "Moi aussi."
+
+    elen "Alors pourquoi tu souris ?"
+
+    julian "Parce que si je ne souris pas, je tremble."
+
+    elen "Je tremble déjà."
+
+    julian "Alors on tremblera ensemble."
+
+    hide julian
+    hide elen
+    hide tomas
+
+    "La salle commune se remplit petit à petit."
+    "Des chuchotements."
+    "Des notes griffonnées."
+    "Je comprends que chacun trouve sa place."
+    "Même ceux qui ne parlent pas."
+
+    scene bg_couloir at adaptive_fullscreen with dissolve
+
+    "Je repars pour respirer."
+    "Dans les couloirs, des regards évitent les miens."
+    "Ou s’y accrochent trop fort."
+    "On sent les alliances se chercher."
+    "Les peurs se répartir."
+
+    $ showP("ryn", "neutre", 0.20)
+    $ showP("mara", "neutre", 0.60)
+
+    ryn "Tu vas voter quoi ?"
+
+    mara "Je ne sais pas."
+
+    ryn "Tu sais très bien."
+
+    mara "Je sais ce que je risque."
+
+    ryn "Alors tu sais."
+
+    mara "Et toi ?"
+
+    ryn "Moi, je veux être libre."
+
+    mara "Libre de quoi ?"
+
+    ryn "De devoir quelque chose."
+    ryn "De devoir des explications."
+    ryn "De devoir une loyauté."
+
+    mara "On est déjà redevables."
+
+    ryn "Pas encore."
+
+    hide ryn
+    hide mara
+
+    "Je me surprends à écouter la façon dont les mots tombent."
+    "Ils pèsent."
+    "Ils restent."
+    "Ils collent."
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
@@ -954,7 +1842,123 @@ label _2_APRES_MIDI:
     kael "Ça me donne envie de comprendre."
     kael "Et de ne plus obéir par réflexe."
 
-    pause 0.6
+    nyra "Et si tu comprends pas ?"
+
+    kael "Alors j’essaie quand même."
+
+    tomas "Et si on fait une erreur ?"
+
+    kael "On la porte."
+
+    nyra "Ça fait lourd."
+
+    kael "Ça l’est."
+
+    hide nyra
+    $ showP("elen", "triste", 0.80)
+
+    elen "Je me demande."
+    elen "Si nos familles nous regardent."
+
+    noam "Je me le demande aussi."
+
+    elen "S’ils nous voient, ils doivent avoir peur."
+    elen "Et si on vote mal, ils auront plus peur."
+
+    kael "On ne vote pas pour eux."
+
+    elen "Mais ils vivent avec nos décisions."
+
+    kael "Oui."
+    kael "C’est ça, être ici."
+
+    elen "Je déteste ça."
+
+    nyra "On déteste tous."
+
+    elen "Alors on fait quoi ?"
+
+    nyra "On tient."
+
+    elen "C’est tout ?"
+
+    nyra "Pour aujourd’hui, oui."
+
+    hide elen
+    hide nyra
+
+    $ showP("ryn", "neutre", 0.80)
+
+    ryn "Vous êtes calmes."
+    ryn "Je m’attendais à des cris."
+
+    kael "Tu es déçue ?"
+
+    ryn "Non."
+    ryn "Les cris viennent après."
+
+    noam "Tu penses qu’on va se déchirer ?"
+
+    ryn "Je pense qu’on va se découvrir."
+    ryn "Et ce n’est pas toujours beau."
+
+    kael "On n’est pas obligés d’être beaux."
+    kael "On doit être honnêtes."
+
+    ryn "L’honnêteté, c’est dangereux."
+    ryn "Elle donne des angles d’attaque."
+
+    noam "Elle donne aussi des points d’appui."
+
+    ryn "Peut-être."
+    ryn "Mais je n’ai pas envie d’être un point d’appui."
+
+    kael "Tu veux être quoi, alors ?"
+
+    ryn "Libre."
+
+    kael "Encore."
+
+    ryn "Toujours."
+
+    noam "Tu ne crois pas qu’on puisse être libre ensemble ?"
+
+    ryn "Je ne sais pas."
+    ryn "Je n’ai jamais essayé."
+
+    kael "Alors c’est l’occasion."
+
+    ryn "Ou l’erreur."
+
+    noam "Tu vas voter ?"
+
+    ryn "Je vais écouter."
+    ryn "Et je déciderai demain."
+
+    kael "Ce sera tard."
+
+    ryn "Ce sera juste."
+
+    noam "Tu refuses de t’engager ?"
+
+    ryn "Je refuse qu’on m’engage."
+
+    kael "Personne ne t’engage."
+
+    ryn "Pas encore."
+
+    noam "Tu as raison d’être prudente."
+    noam "Mais si tu ne parles pas, on parlera pour toi."
+
+    ryn "Alors je parlerai."
+    ryn "Quand ça comptera."
+
+    kael "Ça compte déjà."
+
+    ryn "Tout compte déjà."
+    ryn "Et c’est pour ça que je me tais."
+
+    hide ryn
 
     "La conversation dérive."
     "D’autres se mêlent à nous."
