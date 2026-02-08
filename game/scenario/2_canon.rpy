@@ -709,7 +709,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     elias "A tous les coups, la diffusion s'est retransmise partout."
 
     julian panne "..."
-    julian decu "Sérieux, Kael ! Fallait me laisser mon heure de gloire ..."
+    julian decu "Sérieux, Elias ! Fallait me laisser mon heure de gloire ..."
     julian panne "..."
     julian decu "Bon ok j'ai tout entendu, pas besoin de récap ..."
 
@@ -723,31 +723,31 @@ label _2_CAFETERIA_POST_ANNONCE:
     "Le silence qui suit est plus lourd que l'annonce."
     "Pas parce qu'elle est violente."
     "Mais parce qu'elle ressemble presque à une respiration."
-    "Une parenthèse."
+    "Une parenthèse, un espoir que tout ne dégénèrera pas."
 
+    hide nyra
+    hide elias
     $ showP("kael", "neutre", 0.15)
-    $ showP("mara", "neutre", 0.50)
-    $ showP("sael", "mefiant", 0.86)
-
     kael "Sur le papier, c’est simple."
     kael "Autoriser les échanges."
-    kael "Ce n’est pas une révolution."
+    kael "On pourrait presque dire que ce n’est pas une révolution."
 
+    hide julian
+    $ showP("mara", "neutre", 0.50)
     mara "Ça en devient suspect."
-    mara "Kami ne fait jamais simple pour faire plaisir."
+    mara "Kami ne ferait jamais ça pour nous faire plaisir."
 
+    hide iris
+    $ showP("sael", "mefiant", 0.86)
     sael "Ou elle sait qu’on a besoin d’un os à ronger."
-    sael "Pour calmer la panique."
+    sael "Pour calmer la panique et la colère de la foule."
 
-    kael "Il y a un piège."
-    kael "La question, c’est où il est."
+    kael "Ce n'est pas Kami qui a décidé de cet amendement. C'est l'un d'entre nous."
+    kael "Il y a un risque qu'il y ait un piège."
+    kael "La question, c’est de savoir où il est."
 
     mara "Le piège, c’est nous."
-    mara "Nos districts, nos besoins, nos secrets."
-    mara "On va devoir exposer ce qu’on a."
-
-    sael "Et ce qu’on n’a pas."
-    sael "Je peux déjà sentir les calculs."
+    mara "On a nos districts, nos besoins, nos secrets."
 
     hide sael
     $ showP("nyra", "raison", 0.86)
@@ -760,21 +760,21 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     nyra "Tu veux dire que c’est trop beau ?"
 
-    kael "Je veux dire que ça nous divise sans nous le dire."
-
     hide mara
     $ showP("iris", "neutre", 0.50)
 
-    iris "Ouais."
+    iris "Réfléchis deux secondes."
+    iris "Nous donner l'espoir que tout va bien se passer pour qu'on baisse notre garde."
+    iris "C'est typiquement ce que pourrait faire Kami !"
     iris "Et ça veut dire qu’on va devoir discuter du reste ensemble."
-    iris "Ce qui est toujours un enfer."
+    iris "L'enfer quoi."
 
     nyra taquin "Tu dis ça comme si c’était la première fois."
 
-    iris "Je dis ça parce que ça recommence."
+    iris "La première fois que j'ai à débattre de ce qui pourrait causer la fin du monde ? Ouai c'est ma première fois.."
 
-    kael "On ne peut pas esquiver."
-    kael "Pas cette fois."
+    kael "On ne peut pas vraiment esquiver."
+    kael "Demain, il va falloir faire le bon choix et voter."
 
     hide nyra
     $ showP("elen", "inquiet", 0.86)
@@ -784,9 +784,10 @@ label _2_CAFETERIA_POST_ANNONCE:
     elen "Pour ne pas leur donner ce qu’ils veulent."
 
     iris "Ils veulent du spectacle."
-    iris "On va leur donner des questions."
 
-    elen "C’est mieux."
+    elen "Franchement, la proposition n'a pas l'air mauvaise non ?"
+
+    "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
 
     hide elen
     $ showP("sael", "mefiant", 0.86)
@@ -800,7 +801,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael "Tu veux dire quoi ?"
     sael "Qu’on fasse une réunion ?"
 
-    iris "On en est là."
+    iris "C'est pas ce qu'on fait déjà ?!"
 
     hide iris
     $ showP("tomas", "reflechit", 0.50)
@@ -815,48 +816,37 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     tomas "Aux médicaments."
     tomas "Aux matériaux."
-    tomas "Aux gens, aussi."
+    tomas "Pourquoi pas aux gens, aussi."
 
     sael "Les gens, c’est autre chose."
-    sael "Même Kami ne nous a pas parlé de ça."
+    sael "La proposition parlait des échanges dans les districts, pas d'autoriser les gens à changer de district."
 
-    tomas "Je sais."
-    tomas "Mais si l’échange est autorisé, c’est la porte."
-
-    kael "Une porte qu’ils tiennent de l’autre côté."
+    tomas "Je sais ..."
+    tomas "M-Mais si les échanges deviennent autorisés, alors peut être ..."
 
     hide sael
     $ showP("mara", "neutre", 0.86)
 
-    mara "C’est la partie belle."
-    mara "La partie plus moche, c’est qui contrôle ces échanges."
-    mara "Qui vérifie."
-    mara "Qui sanctionne."
+    mara "C’est bien beau tout ça mais qui contrôlera ces échanges ?"
 
     tomas "On n’a pas les détails."
 
     kael "Justement."
     kael "On devra décider sans."
 
-    mara "Décider à l’aveugle."
+    mara "Décider à l’aveugle, ou presque."
 
-    tomas "Alors on doit faire confiance."
-
-    mara "À qui ?"
-
-    tomas "Aux autres."
-    tomas "À nous."
-
-    mara "C’est là que ça coince."
+    tomas "Alors on doit se faire confiance."
 
     hide tomas
     $ showP("nyra", "raison", 0.50)
 
     nyra "On pourrait commencer par lister ce qu’on sait."
     nyra "Et ce qu’on ignore."
-    nyra "Parce que là, on se jette des impressions."
+    nyra "Parce que là, on se jette des impressions sans grande certitude."
+    nyra "C'est pas comme ça qu'on avancera ..."
 
-    mara "Tu veux un tableau ?"
+    mara "Tu as de quoi écrire un roman entier sur ce qu'on ignore ?"
 
     nyra "Je veux une base."
 
@@ -866,12 +856,13 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide mara
     $ showP("elen", "inquiet", 0.86)
 
-    elen "Je peux noter."
-    elen "Je fais souvent ça quand je panique."
+    elen "Je peux prendre des notes."
+    elen "Ca me rassure de garder des notes sur mon travail."
+    elen "D'une certaine façon ... On travaille ..."
 
     nyra "Tu vois, c’est utile."
 
-    elen "Je ne sais pas si ça me rassure."
+    elen "Je ne sais pas, ça me rassure."
 
     hide kael
     $ showP("iris", "neutre", 0.15)
@@ -880,15 +871,13 @@ label _2_CAFETERIA_POST_ANNONCE:
     iris "On a trois trucs :"
     iris "On veut pas se faire piéger."
     iris "On veut pas trahir nos districts."
-    iris "Et on veut pas se détester."
+    iris "Et si possible on veut éviter de se détester."
 
-    nyra "Ça fait beaucoup de veux."
+    nyra "Ça fait beaucoup de voeux."
 
     iris "On a que ça."
 
-    elen "On a aussi une journée."
-
-    iris "Et une nuit."
+    elen "On a une journée seulement pour nous décider."
 
     hide elen
     hide nyra
@@ -901,11 +890,11 @@ label _2_CAFETERIA_POST_ANNONCE:
     iris "Le reste, on verra."
 
     julian "Ok."
-    julian "Mais faut pas juste tourner en rond."
+    julian "Mais faut pas juste tourner en rond, faut avancer."
 
     iris "Tu proposes quoi ?"
 
-    julian "Un plan."
+    julian "Une sorte de plan."
     julian "On se répartit les questions."
     julian "Chacun réfléchit et on revient."
 
@@ -914,29 +903,9 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     julian "T’as peur de qui ?"
 
-    iris "Des conclusions."
+    iris "Des gens qu'on risque de tuer ..."
 
     hide julian
-    $ showP("kael", "neutre", 0.86)
-
-    kael "Une question simple."
-    kael "Quelqu’un a-t-il de quoi échanger ?"
-
-    iris "Tu parles de quoi ?"
-
-    kael "De ressources."
-    kael "De compétences."
-    kael "De temps."
-
-    iris "Je sais parler fort."
-
-    kael "Je sais réparer."
-
-    iris "Ça ne se vend pas."
-
-    kael "Ça se partage."
-
-    hide kael
     $ showP("sael", "mefiant", 0.86)
 
     sael "Partager, ça se paye."
@@ -944,39 +913,27 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     iris "Et si on refuse ?"
 
-    sael "On se retire."
+    sael "Il suffit d'une voix contre pour que ça parte en couille."
     sael "On laisse ceux qui veulent se vendre le faire."
 
     iris "Tu dis ça comme si c’était simple."
 
     sael "Rien n’est simple."
-    sael "Mais refuser, c’est aussi décider."
-
-    hide iris
-    $ showP("nyra", "raison", 0.15)
-
-    nyra "Sauf que refuser ensemble, c’est se condamner ensemble."
-    nyra "Et accepter ensemble, c’est se lier."
-    nyra "On fait quoi de ceux qui ne veulent pas se lier ?"
-
-    sael "On les laisse."
-
-    nyra "Tu parles de gens."
-
-    sael "Je parle de choix."
+    sael "Mais refuser, c’est aussi un choix. Un choix qui a des conséquences."
 
     hide sael
     $ showP("mara", "neutre", 0.86)
 
-    mara "On n’a pas la même position."
-    mara "Certaines de nos régions n’ont rien."
-    mara "D’autres ont trop."
-    mara "Et là, d’un coup, on nous demande de gérer l’équilibre."
+    mara "On n’aura pas forcément la même position de vote."
+    mara "Certains de nos districts n’ont rien en commun. Notre histoire est différente. Notre mode de vie aussi."
+    mara "D’autres en ont trop."
+    mara "Et là, d’un coup, on nous demande de trouver un équilibre dans tout ce foutoir ?!"
 
+    $ showP("nyra", "neutre", 0.55)
     nyra "Donc on doit parler d’inégalités."
 
     mara "Exactement."
-    mara "Et on n’a même pas le droit d’en parler dans nos districts."
+    mara "Et on n’a même pas le droit d’en parler avec les gens de nos districts."
 
     nyra "Ça va être beau."
 
@@ -984,17 +941,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     $ showP("tomas", "inquiet", 0.15)
 
     tomas "On est obligés de parler de nos districts ?"
-    tomas "De dire ce qu’on a ?"
-
-    mara "Non."
-    mara "Mais tout le monde le devinera."
-
-    tomas "Et si on ment ?"
-
-    mara "Tu veux commencer le Conclave par un mensonge ?"
-
-    tomas "Je veux pas."
-    tomas "Je veux juste pas avoir à choisir."
+    tomas "E-Enfin je veux dire, bien sur qu'on veut les défendre mais ..."
 
     hide mara
     $ showP("elen", "triste", 0.86)
