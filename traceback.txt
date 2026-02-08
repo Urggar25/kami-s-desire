@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scenario/salles/sas.rpy", line 310, in script call
+    call CHECK_ALL_SALLES_VISITEES
+  File "game/scenario/2_canon.rpy", line 678, in script
+    jump _2_CAFETERIA_POST_ANNONCE
+ScriptError: could not find label '_2_CAFETERIA_POST_ANNONCE'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/scenario/salles/sas.rpy", line 310, in script call
+    call CHECK_ALL_SALLES_VISITEES
+  File "game/scenario/2_canon.rpy", line 678, in script
+    jump _2_CAFETERIA_POST_ANNONCE
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label '_2_CAFETERIA_POST_ANNONCE'.
+
+Windows-10-10.0.26200 AMD64
+Ren'Py 8.3.7.25031702
+kami desire 1.0
+Thu Feb  5 11:39:45 2026

@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/scenario/2_canon.rpy", line 494: expected statement.
+    silence
+           ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Wed Feb  4 11:37:01 2026

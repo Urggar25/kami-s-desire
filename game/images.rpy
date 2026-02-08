@@ -1,0 +1,260 @@
+﻿# ======================
+# ELIAS
+# ======================
+image elias colere            = im.FactorScale("images/character/elias/colere.png", 0.60)
+image elias colere_noire      = im.FactorScale("images/character/elias/colere_noire.png", 0.60)
+image elias content           = im.FactorScale("images/character/elias/content.png", 0.60)
+image elias desespoir         = im.FactorScale("images/character/elias/desespoir.png", 0.60)
+image elias ecoute            = im.FactorScale("images/character/elias/ecoute.png", 0.60)
+image elias fatigue           = im.FactorScale("images/character/elias/fatigue.png", 0.60)
+image elias inquiet           = im.FactorScale("images/character/elias/inquiet.png", 0.60)
+image elias jaloux            = im.FactorScale("images/character/elias/jaloux.png", 0.60)
+image elias joie              = im.FactorScale("images/character/elias/joie.png", 0.60)
+image elias neutre            = im.FactorScale("images/character/elias/neutre.png", 0.60)
+image elias panique           = im.FactorScale("images/character/elias/panique.png", 0.60)
+image elias rire              = im.FactorScale("images/character/elias/rire.png", 0.60)
+image elias reflechit              = im.FactorScale("images/character/elias/reflechit.png", 0.60)
+image elias vide              = im.FactorScale("images/character/vide.png", 0.60)
+image elias detendu              = im.FactorScale("images/character/elias/detendu.png", 0.60)
+
+# ======================
+# MARA
+# ======================
+image mara agace              = im.FactorScale("images/character/mara/agace.png", 0.60)
+image mara colere             = im.FactorScale("images/character/mara/colere.png", 0.60)
+image mara colere_noire       = im.FactorScale("images/character/mara/colere_noire.png", 0.60)
+image mara content            = im.FactorScale("images/character/mara/content.png", 0.60)
+image mara doute              = im.FactorScale("images/character/mara/doute.png", 0.60)
+image mara jaloux             = im.FactorScale("images/character/mara/jaloux.png", 0.60)
+image mara joie               = im.FactorScale("images/character/mara/joie.png", 0.60)
+image mara mefiant            = im.FactorScale("images/character/mara/mefiant.png", 0.60)
+image mara neutre             = im.FactorScale("images/character/mara/neutre.png", 0.60)
+image mara reflexion          = im.FactorScale("images/character/mara/reflexion.png", 0.60)
+image mara rire               = im.FactorScale("images/character/mara/rire.png", 0.60)
+image mara rire_profond       = im.FactorScale("images/character/mara/rire_profond.png", 0.60)
+image mara stress             = im.FactorScale("images/character/mara/stress.png", 0.60)
+image mara sourire             = im.FactorScale("images/character/mara/sourire.png", 0.60)
+image mara vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# NOAM
+# ======================
+image noam colere              = im.FactorScale("images/character/noam/colere.png", 0.60)
+image noam culpabilite         = im.FactorScale("images/character/noam/culpabilite.png", 0.60)
+image noam desaccord           = im.FactorScale("images/character/noam/desaccord.png", 0.60)
+image noam desespoir           = im.FactorScale("images/character/noam/desespoir.png", 0.60)
+image noam determine           = im.FactorScale("images/character/noam/determine.png", 0.60)
+image noam hesitation          = im.FactorScale("images/character/noam/hesitation.png", 0.60)
+image noam inquiet             = im.FactorScale("images/character/noam/inquiet.png", 0.60)
+image noam joie                = im.FactorScale("images/character/noam/joie.png", 0.60)
+image noam neutre              = im.FactorScale("images/character/noam/neutre.png", 0.60)
+image noam panne               = im.FactorScale("images/character/noam/panne.png", 0.60)
+image noam peur                = im.FactorScale("images/character/noam/peur.png", 0.60)
+image noam raison              = im.FactorScale("images/character/noam/raison.png", 0.60)
+image noam reflexion           = im.FactorScale("images/character/noam/reflexion.png", 0.60)
+image noam rire                = im.FactorScale("images/character/noam/rire.png", 0.60)
+image noam sourire             = im.FactorScale("images/character/noam/sourire.png", 0.60)
+image noam surpris             = im.FactorScale("images/character/noam/surpris.png", 0.60)
+image noam taquin              = im.FactorScale("images/character/noam/taquin.png", 0.60)
+image noam triste              = im.FactorScale("images/character/noam/triste.png", 0.60)
+image noam vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# LYSA
+# ======================
+image lysa blase               = im.FactorScale("images/character/lysa/blase.png", 0.60)
+image lysa colere              = im.FactorScale("images/character/lysa/colere.png", 0.60)
+image lysa content             = im.FactorScale("images/character/lysa/content.png", 0.60)
+image lysa culpabilite         = im.FactorScale("images/character/lysa/culpabilite.png", 0.60)
+image lysa desespoir           = im.FactorScale("images/character/lysa/desespoir.png", 0.60)
+image lysa determine           = im.FactorScale("images/character/lysa/determine.png", 0.60)
+image lysa inquiet             = im.FactorScale("images/character/lysa/inquiet.png", 0.60)
+image lysa neutre              = im.FactorScale("images/character/lysa/neutre.png", 0.60)
+image lysa opposition          = im.FactorScale("images/character/lysa/opposition.png", 0.60)
+image lysa panne               = im.FactorScale("images/character/lysa/panne.png", 0.60)
+image lysa peur                = im.FactorScale("images/character/lysa/peur.png", 0.60)
+image lysa reflexion           = im.FactorScale("images/character/lysa/reflexion.png", 0.60)
+image lysa rire                = im.FactorScale("images/character/lysa/rire.png", 0.60)
+image lysa salut               = im.FactorScale("images/character/lysa/salut.png", 0.60)
+image lysa sourire             = im.FactorScale("images/character/lysa/sourire.png", 0.60)
+image lysa surpris             = im.FactorScale("images/character/lysa/surpris.png", 0.60)
+image lysa taquin              = im.FactorScale("images/character/lysa/taquin.png", 0.60)
+image lysa triste              = im.FactorScale("images/character/lysa/triste.png", 0.60)
+image lysa vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# JULIAN
+# ======================
+image julian decu               = im.FactorScale("images/character/julian/decu.png", 0.60)
+image julian determine          = im.FactorScale("images/character/julian/determine.png", 0.60)
+image julian hesitation         = im.FactorScale("images/character/julian/hesitation.png", 0.60)
+image julian idee               = im.FactorScale("images/character/julian/idee.png", 0.60)
+image julian inquietude         = im.FactorScale("images/character/julian/inquietude.png", 0.60)
+image julian joie               = im.FactorScale("images/character/julian/joie.png", 0.60)
+image julian neutre             = im.FactorScale("images/character/julian/neutre.png", 0.60)
+image julian panne              = im.FactorScale("images/character/julian/panne.png", 0.60)
+image julian peur               = im.FactorScale("images/character/julian/peur.png", 0.60)
+image julian reflexion          = im.FactorScale("images/character/julian/reflexion.png", 0.60)
+image julian rire               = im.FactorScale("images/character/julian/rire.png", 0.60)
+image julian sourire            = im.FactorScale("images/character/julian/sourire.png", 0.60)
+image julian surpris            = im.FactorScale("images/character/julian/surpris.png", 0.60)
+image julian taquin             = im.FactorScale("images/character/julian/taquin.png", 0.60)
+image julian triste             = im.FactorScale("images/character/julian/triste.png", 0.60)
+image julian vide              = im.FactorScale("images/character/vide.png", 0.60)
+image julian detendu              = im.FactorScale("images/character/julian/detendu.png", 0.60)
+image julian decontracte              = im.FactorScale("images/character/julian/decontracte.png", 0.60)
+
+# ======================
+# IRIS
+# ======================
+image iris colere               = im.FactorScale("images/character/iris/colere.png", 0.60)
+image iris culpabilite          = im.FactorScale("images/character/iris/culpabilite.png", 0.60)
+image iris determine            = im.FactorScale("images/character/iris/determine.png", 0.60)
+image iris fatigue              = im.FactorScale("images/character/iris/fatigue.png", 0.60)
+image iris hesitation           = im.FactorScale("images/character/iris/hesitation.png", 0.60)
+image iris inquiet              = im.FactorScale("images/character/iris/inquiet.png", 0.60)
+image iris joie                 = im.FactorScale("images/character/iris/joie.png", 0.60)
+image iris neutre               = im.FactorScale("images/character/iris/neutre.png", 0.60)
+image iris panne                = im.FactorScale("images/character/iris/panne.png", 0.60)
+image iris peur                 = im.FactorScale("images/character/iris/peur.png", 0.60)
+image iris reflexion            = im.FactorScale("images/character/iris/reflexion.png", 0.60)
+image iris rire                 = im.FactorScale("images/character/iris/rire.png", 0.60)
+image iris sourire              = im.FactorScale("images/character/iris/sourire.png", 0.60)
+image iris surpris              = im.FactorScale("images/character/iris/surpris.png", 0.60)
+image iris taquin               = im.FactorScale("images/character/iris/taquin.png", 0.60)
+image iris triste               = im.FactorScale("images/character/iris/triste.png", 0.60)
+image iris vide              = im.FactorScale("images/character/vide.png", 0.60)
+image iris desaccord               = im.FactorScale("images/character/iris/desaccord.png", 0.60)
+image iris intervention               = im.FactorScale("images/character/iris/intervention.png", 0.60)
+
+# ======================
+# TOMAS
+# ======================
+image tomas colere              = im.FactorScale("images/character/tomas/colere.png", 0.60)
+image tomas colere_noire        = im.FactorScale("images/character/tomas/colere_noire.png", 0.60)
+image tomas culpabilite         = im.FactorScale("images/character/tomas/culpabilite.png", 0.60)
+image tomas desaccord           = im.FactorScale("images/character/tomas/desaccord.png", 0.60)
+image tomas desespoir           = im.FactorScale("images/character/tomas/desespoir.png", 0.60)
+image tomas determine           = im.FactorScale("images/character/tomas/determine.png", 0.60)
+image tomas inquiet             = im.FactorScale("images/character/tomas/inquiet.png", 0.60)
+image tomas joie                = im.FactorScale("images/character/tomas/joie.png", 0.60)
+image tomas mefiant             = im.FactorScale("images/character/tomas/mefiant.png", 0.60)
+image tomas neutre              = im.FactorScale("images/character/tomas/neutre.png", 0.60)
+image tomas panne               = im.FactorScale("images/character/tomas/panne.png", 0.60)
+image tomas raison              = im.FactorScale("images/character/tomas/raison.png", 0.60)
+image tomas reflechit           = im.FactorScale("images/character/tomas/reflechit.png", 0.60)
+image tomas rire                = im.FactorScale("images/character/tomas/rire.png", 0.60)
+image tomas surpris             = im.FactorScale("images/character/tomas/surpris.png", 0.60)
+image tomas taquin              = im.FactorScale("images/character/tomas/taquin.png", 0.60)
+image tomas triste              = im.FactorScale("images/character/tomas/triste.png", 0.60)
+image tomas hesitation              = im.FactorScale("images/character/tomas/hesitation.png", 0.60)
+image tomas vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# ELEN
+# ======================
+image elen choque               = im.FactorScale("images/character/elen/choque.png", 0.60)
+image elen colere               = im.FactorScale("images/character/elen/colere.png", 0.60)
+image elen colere_noire         = im.FactorScale("images/character/elen/colere_noire.png", 0.60)
+image elen content              = im.FactorScale("images/character/elen/content.png", 0.60)
+image elen decu                 = im.FactorScale("images/character/elen/decu.png", 0.60)
+image elen desaccord            = im.FactorScale("images/character/elen/desaccord.png", 0.60)
+image elen determine            = im.FactorScale("images/character/elen/determine.png", 0.60)
+image elen inquiet              = im.FactorScale("images/character/elen/inquiet.png", 0.60)
+image elen joie                 = im.FactorScale("images/character/elen/joie.png", 0.60)
+image elen neutre               = im.FactorScale("images/character/elen/neutre.png", 0.60)
+image elen peur                 = im.FactorScale("images/character/elen/peur.png", 0.60)
+image elen reflechit            = im.FactorScale("images/character/elen/reflechit.png", 0.60)
+image elen rire                 = im.FactorScale("images/character/elen/rire.png", 0.60)
+image elen surpris              = im.FactorScale("images/character/elen/surpris.png", 0.60)
+image elen taquin               = im.FactorScale("images/character/elen/taquin.png", 0.60)
+image elen triste               = im.FactorScale("images/character/elen/triste.png", 0.60)
+image elen vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# KAEL
+# ======================
+image kael calme                = im.FactorScale("images/character/kael/calme.png", 0.60)
+image kael culpabilite          = im.FactorScale("images/character/kael/culpabilite.png", 0.60)
+image kael fatigue              = im.FactorScale("images/character/kael/fatigue.png", 0.60)
+image kael inquietude           = im.FactorScale("images/character/kael/inquietude.png", 0.60)
+image kael jaloux               = im.FactorScale("images/character/kael/jaloux.png", 0.60)
+image kael joie                 = im.FactorScale("images/character/kael/joie.png", 0.60)
+image kael neutre               = im.FactorScale("images/character/kael/neutre.png", 0.60)
+image kael reflechit            = im.FactorScale("images/character/kael/reflechit.png", 0.60)
+image kael rire                 = im.FactorScale("images/character/kael/rire.png", 0.60)
+image kael sourire              = im.FactorScale("images/character/kael/sourire.png", 0.60)
+image kael surpris              = im.FactorScale("images/character/kael/surpris.png", 0.60)
+image kael taquin               = im.FactorScale("images/character/kael/taquin.png", 0.60)
+image kael triste               = im.FactorScale("images/character/kael/triste.png", 0.60)
+image kael vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# NYRA
+# ======================
+image nyra colere               = im.FactorScale("images/character/nyra/colere.png", 0.60)
+image nyra culpabilite          = im.FactorScale("images/character/nyra/culpabilite.png", 0.60)
+image nyra degout               = im.FactorScale("images/character/nyra/degout.png", 0.60)
+image nyra determine            = im.FactorScale("images/character/nyra/determine.png", 0.60)
+image nyra fatigue              = im.FactorScale("images/character/nyra/fatigue.png", 0.60)
+image nyra hesitation           = im.FactorScale("images/character/nyra/hesitation.png", 0.60)
+image nyra inquiet              = im.FactorScale("images/character/nyra/inquiet.png", 0.60)
+image nyra joie                 = im.FactorScale("images/character/nyra/joie.png", 0.60)
+image nyra neutre               = im.FactorScale("images/character/nyra/neutre.png", 0.60)
+image nyra panne                = im.FactorScale("images/character/nyra/panne.png", 0.60)
+image nyra raison               = im.FactorScale("images/character/nyra/raison.png", 0.60)
+image nyra reflexion            = im.FactorScale("images/character/nyra/reflexion.png", 0.60)
+image nyra rire                 = im.FactorScale("images/character/nyra/rire.png", 0.60)
+image nyra sourire              = im.FactorScale("images/character/nyra/sourire.png", 0.60)
+image nyra surpris              = im.FactorScale("images/character/nyra/surpris.png", 0.60)
+image nyra taquin               = im.FactorScale("images/character/nyra/taquin.png", 0.60)
+image nyra triste               = im.FactorScale("images/character/nyra/triste.png", 0.60)
+image nyra vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# RYN
+# ======================
+image ryn colere                = im.FactorScale("images/character/ryn/colere.png", 0.60)
+image ryn colere2               = im.FactorScale("images/character/ryn/colere2.png", 0.60)
+image ryn desaccord             = im.FactorScale("images/character/ryn/desaccord.png", 0.60)
+image ryn determine             = im.FactorScale("images/character/ryn/determine.png", 0.60)
+image ryn fatigue               = im.FactorScale("images/character/ryn/fatigue.png", 0.60)
+image ryn inquiet               = im.FactorScale("images/character/ryn/inquiet.png", 0.60)
+image ryn jaloux                = im.FactorScale("images/character/ryn/jaloux.png", 0.60)
+image ryn joie                  = im.FactorScale("images/character/ryn/joie.png", 0.60)
+image ryn neutre                = im.FactorScale("images/character/ryn/neutre.png", 0.60)
+image ryn reflechit             = im.FactorScale("images/character/ryn/reflechit.png", 0.60)
+image ryn rire                  = im.FactorScale("images/character/ryn/rire.png", 0.60)
+image ryn sourire               = im.FactorScale("images/character/ryn/sourire.png", 0.60)
+image ryn surpris               = im.FactorScale("images/character/ryn/surpris.png", 0.60)
+image ryn taquin                = im.FactorScale("images/character/ryn/taquin.png", 0.60)
+image ryn triste                = im.FactorScale("images/character/ryn/triste.png", 0.60)
+image ryn vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# SAEL
+# ======================
+image sael culpabilite          = im.FactorScale("images/character/sael/culpabilite.png", 0.60)
+image sael desaccord            = im.FactorScale("images/character/sael/desaccord.png", 0.60)
+image sael determine            = im.FactorScale("images/character/sael/determine.png", 0.60)
+image sael fatigue              = im.FactorScale("images/character/sael/fatigue.png", 0.60)
+image sael inquiet              = im.FactorScale("images/character/sael/inquiet.png", 0.60)
+image sael jaloux               = im.FactorScale("images/character/sael/jaloux.png", 0.60)
+image sael joie                 = im.FactorScale("images/character/sael/joie.png", 0.60)
+image sael mefiant              = im.FactorScale("images/character/sael/mefiant.png", 0.60)
+image sael neutre               = im.FactorScale("images/character/sael/neutre.png", 0.60)
+image sael peur                 = im.FactorScale("images/character/sael/peur.png", 0.60)
+image sael raison               = im.FactorScale("images/character/sael/raison.png", 0.60)
+image sael reflechit            = im.FactorScale("images/character/sael/reflechit.png", 0.60)
+image sael rire                 = im.FactorScale("images/character/sael/rire.png", 0.60)
+image sael sourire              = im.FactorScale("images/character/sael/sourire.png", 0.60)
+image sael surpris              = im.FactorScale("images/character/sael/surpris.png", 0.60)
+image sael taquin               = im.FactorScale("images/character/sael/taquin.png", 0.60)
+image sael triste               = im.FactorScale("images/character/sael/triste.png", 0.60)
+image sael vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+# ======================
+# Goumi
+# ======================
+
+image goumi vide              = im.FactorScale("images/character/vide.png", 0.60)
