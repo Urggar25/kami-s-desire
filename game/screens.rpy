@@ -1370,13 +1370,13 @@ style argument_unlock_title:
     size 38
     textalign 0.5
     xalign 0.5
-    color "#f1e6c6"
+    color "#be9c36"
 
 style argument_unlock_name:
     size 48
     textalign 0.5
     xalign 0.5
-    color "#ffffff"
+    color "#000000"
 
 
 ## Écran NVL ###################################################################

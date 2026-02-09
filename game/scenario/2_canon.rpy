@@ -1240,19 +1240,22 @@ label _2_SALLE_OBSERVATION:
     "Kael est déjà là."
     "Debout, les mains dans le dos."
 
+    $ showP("noam", "neutre", 0.18)
     $ showP("kael", "neutre", 0.50)
 
+    noam neutre "Ah Kael, tu tombes bien. Je voulais te demander..."
     noam hesitation "Tu sais où on est ?"
     noam hesitation "Enfin… précisément."
 
     kael neutre "Non."
-    kael ecoute "Mais je reconnais des pièces."
-    kael neutre "Du matériel Orbite."
+    kael reflechit "Mais je reconnais des pièces."
+    kael reflechit "C'est du matériel qui vient bien d'Orbite."
 
     noam raison "Donc on est bien proches de chez toi."
 
-    kael doute "Ou on nous a recyclés à partir de là-bas."
-    kael neutre "Ce qui revient presque au même."
+    kael doute "Enfin proche ... Tu te rends compte de la taille d’Orbite ?"
+    kael doute "On dit souvent que Limen est le plus grand district ... En terme de surface habitée peut-être mais Orbite le surpasse de loin en superficie."
+    kael jaloux "J'imagine donc qu'on est quelque part dans mon district."
 
     noam inquiet "Ça te rassure ?"
 
@@ -1262,20 +1265,15 @@ label _2_SALLE_OBSERVATION:
 
     noam inquiet "Tu crois qu’ils ont prévu le vote aussi ?"
 
-    kael mefiant "Ils l’ont fabriqué."
-    kael mefiant "Pour que ça paraisse raisonnable."
-    kael mefiant "Et pour que nous nous divisons sur des détails."
+    kael mefiant "Je ne sais pas vraiment... Si c'est vraiment nous qui l'avons proposé, peut-être que non."
+    kael mefiant "Mais ça ne changera pas grand chose au fond."
+    kael mefiant "Nous allons sans doute nous diviser sur des détails."
 
     noam raison "On n’est pas encore divisés."
 
-    kael sombre "On l’est déjà."
-    kael sombre "La peur ne met pas les mêmes mots dans toutes les bouches."
-
-    noam inquiet "Tu parles comme si tu avais déjà choisi."
-
-    kael neutre "Non."
-    kael raison "Je me prépare."
-    kael neutre "C’est différent."
+    kael colere "On l’est déjà."
+    kael colere "Sinon tout le monde aurait accepté de parler hier soir."
+    kael colere "La peur ne met pas les mêmes mots dans toutes les bouches."
 
     pause 0.6
 
@@ -1288,11 +1286,12 @@ label _2_SALLE_OBSERVATION:
     play music "music/bgm_system_override.mp3" fadein 0.8
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami neutre "Petit rappel."
-    kami neutre "Le vote aura lieu demain."
-    kami neutre "Quatorze heures."
-    kami neutre "Soyez ponctuels."
-    kami neutre "Et soyez unanimes."
+    kami "Petite annonce, l'un d'entre vous m'a demandé l'heure du vote demain."
+    kami "Le vote aura lieu demain à quatorze heure."
+    kami "Soyez ponctuels."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Profitez bien de votre douce nuit de réflexion."
 
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
@@ -1300,117 +1299,222 @@ label _2_SALLE_OBSERVATION:
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
-    noam neutre "Quatorze heures."
-    noam inquiet "C’est proche."
+    $ showP("noam", "neutre", 0.18)
+    $ showP("kael", "neutre", 0.50)
 
-    kael mefiant "C’est voulu."
-    kael mefiant "Ils veulent qu’on manque de temps."
+    noam neutre "Quatorze heures."
+    noam inquiet "On y sera vite."
+
+    kael mefiant "C’est clair."
 
     noam inquiet "Tu penses qu’on peut tenir un consensus ?"
 
-    kael raison "On peut tenir une ligne."
-    kael neutre "Pas forcément une paix."
+    kael raison "Personne n'a l'air d'être particulièrement contre la proposition."
+    kael neutre "Alors..."
+    kael inquiet "'Fin, peut-être. Je sais pas."
+    kael inquiet "Je t'avoue que je ne sais pas trop quoi faire."
+    
+    noam reflexion "Pourquoi ça ? Chez toi, sur Orbite, comment vous gérez les appros ?"
 
-    noam hesitation "Quelle ligne ?"
+    kael doute "J'imagine un peu comme partout ailleurs."
+    kael doute "Il y a des rations à récupérer chaque jour. Si on veut du matériel spécifique on doit faire une demande officielle et attendre."
 
-    kael raison "Le respect."
-    kael sombre "Si on le perd, on est fichus."
+    noam reflexion "Ouais, comme partout en fait."
+    noam reflexion "Je crois que ça fonctionne comme ça dans tous les districts aujourd'hui ..."
 
-    noam inquiet "Tu crois que tout le monde peut faire ça ?"
+    $ add_argument("Bons de rationnement")
+    show screen argument_unlock("Bons de rationnement")
 
-    kael neutre "Non."
-    kael raison "Mais si on commence par les écouter, peut-être."
+    noam neutre "Si on autorise le commerce, ça pourrait peut-être améliorer les choses, non ?"
+    noam reflexion "Ca pourrait redevenir un peu comme avant, avec des magasins, des choses en libre accès."
+
+    kael raison "Ouais, ça se tient."
+    kael doute "Mais si il y a la moindre chose qui peut entrainer un tir de laser, c'est extrèmement dangereux."
+
+    noam neutre "Il te suffit pourtant de 'juste' respecter les règles non ?"
+
+    kael colere "Ca ne marche pas comme ça sur Orbite ..."
+    kael colere "S-Sur orbite, on vit tous dans des vaisseaux ... au beau milieu de l'espace."
+
+    "Il avale sa salive difficilement, il a du mal à parler."
+
+    kael inquiet "Si quelqu'un fait une connerie, le laser tire ..."
+    kael inquiet "Le vaisseau se perce et tout le monde à bord risque de mourir faute d'oxygène ..."
+
+    noam triste "Hein ?!"
+    noam triste "Mais c'est pas juste !"
+
+    kael inquiet "Si Kami était juste on le saurait..."
+    kael inquiet "Changer, c'est risquer de briser ce quotidien auquel on s'est habitué."
+    kael inquiet "Heureusement on y est habitué, et dans toutes les salles on a des masques à oxygène au cas ou ..."
+    kael inquiet "Mais ça reste très dangereux."
+
+    "Il s'éloigne de quelques pas."
+
+    kael triste "Excuse moi, je vais faire un tour..."
+
+    $ add_argument("Faiblesse d'Orbite")
+    show screen argument_unlock("Faiblesse d'Orbite")
 
     hide kael
+    hide noam
 
-    "Je reste un instant face au vide."
+    "Je reste un instant face au vide perdu dans mes pensées."
     "Je compte mes respirations."
-    "La routine rassure, même inventée."
-    "Je pense à Juliette et à ses chansons."
-    "Elle disait que ça chassait les cauchemars."
-    "Moi, je chasse quoi ?"
-    "Je n’ai pas la réponse."
+    "Je pense à Juliette et à ses chansons horribles à écouter."
+    "Et pourtant, là, elles me manquent."
+    "Elle disait que ça chassait les cauchemars. J'en aurai bien besoin."
     "Je prends une longue bouffée d'air, puis une autre, et j’avance."
 
     pause 0.6
+    jump _2_GYMNASE
 
+# Durée : 2m15
+# Totale : 1h 20m 25s
+
+label _2_GYMNASE:
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
     "Je passe par la salle de sport."
-    "Le bruit des machines couvre tout."
+    "Le bruit des machines est constant."
+    "Métallique."
+    "Régulier."
+
     "Iris enchaîne les répétitions."
-    "Elias compte à voix basse, concentré."
+    "Sa respiration est courte."
+    "Elias compte à voix basse."
 
     $ showP("iris", "determine", 0.35)
     $ showP("elias", "neutre", 0.65)
 
     iris determine "Encore."
-    iris determine "Plus vite."
+    iris determine "Allez."
+    iris determine "Sans ralentir."
 
-    elias ecoute "Respire."
-    elias neutre "C’est pas une course."
+    elias ecoute "Respire. C'est le plus important."
+    elias ecoute "Sinon tu vas te fatiguer pour rien."
 
-    iris determine "Justement."
-    iris determine "J’ai besoin de sentir que ça bouge."
+    "Je m’approche."
 
-    elias neutre "On bouge tous."
-    elias raison "Mais pas forcément dans la bonne direction."
+    noam hesitation "Je dérange ?"
 
-    iris taquin "Parle pour toi."
-    iris determine "Moi je sais où je vais."
+    iris taquin "Tant que tu prends pas ma place."
 
-    elias ecoute "Tu vas où ?"
+    elias ecoute "Non."
+    elias neutre "Ça tombe bien."
 
-    iris determine "Vers demain."
-    iris determine "Vers leur foutu vote."
-    iris determine "Pour leur montrer qu’on n’est pas des figurants."
+    elias joie "Tu voulais apprendre comment on fait pour mieux te muscler ?"
 
-    elias reflechit "Être un figurant, ça fait mal."
-    elias neutre "Mais être une cible, c’est pire."
+    noam surpris "Euh…"
+    noam neutre "Je crois."
 
-    iris determine "Tu me dis d’être prudente ?"
+    iris determine "Alors fais pas que regarder."
 
-    elias raison "Je te dis d’être lucide."
+    "Elias me désigne un banc."
 
-    iris determine "Je le suis."
-    iris determine "C’est pour ça que je tape plus fort."
+    elias ecoute "Assieds-toi."
+    elias joie "On va commencer simple."
 
-    elias inquiet "Tu te fais mal."
+    "Je m’exécute."
+    "Le métal est froid."
 
-    iris determine "J’ai besoin de quelque chose de clair."
-    iris determine "De net."
-    iris determine "Les mots, c’est flou."
+    elias raison "Posture."
+    elias ecoute "Dos droit."
+    elias ecoute "Respiration régulière."
 
-    elias raison "Les mots, ça tient."
-    elias reflechit "Du moins si tu les poses droit."
+    iris taquin "Il va trembler."
 
-    iris intervention "Et si on les pose mal ?"
+    noam inquiet "Je tremble déjà."
 
-    elias raison "Alors on s’excuse."
-    elias neutre "Et on recommence."
+    elias ecoute "Normal."
+    elias detendu "Ne lutte pas."
+    elias detendu "Accompagne."
+
+    "Je soulève."
+    "C’est plus lourd que prévu."
+
+    elias ecoute "Pas comme ça."
+    elias detendu "Moins vite."
+    elias detendu "Contrôle."
+
+    "Je recommence."
+    "Ça brûle."
+
+    iris fatigue "Voilà."
+    iris sourire "Bienvenue."
+
+    elias ecoute "Encore deux."
+    elias detendu "Après tu t’arrêtes."
+
+    tuto "Durant vos temps libres, il sera possible de faire certaines actions qui augmenteront vos statistiques personnelles."
+    tuto "Faire du sport est l'une d'entre elles."
+    tuto "En faisant du sport, vous lancerez un minijeu qui, si réussit, aura une chance d'augmenter votre statistique Physique."
+    tuto "Certaines actions ou certains choix seront bloqués ou débloqués selon ces statistiques secondaires."
+    tuto "De plus, pratiquer ce genre d'activité permet de charger des évènements, seuls ou avec d'autres personnages."
+    tuto "Ces évènements sont aléatoires et peuvent vous offrir des images... intéressantes."
+
+    noam effort "Un…"
+    noam effort "Deux…"
+
+    "Je commence à pousser les altères."
+
+    # Minijeu altère
+
+    "Je repose."
+    "Je souffle."
 
     pause 0.6
 
-    "Je les salue d’un geste."
-    "Ils ne s’arrêtent pas."
-    "C’est leur manière de tenir."
-    "Je comprends."
-    "On tient comme on peut."
-    "Avec les bras, avec la voix, avec le silence."
-    "Iris tient par la force."
-    "Elias par la mesure."
-    "Moi, je ne sais pas encore."
-    "Alors je regarde."
-    "Et je retiens."
+    elias raison "Ce que tu fais ici compte."
+    elias ecoute "Pas juste pour aujourd’hui."
+
+    elias raison "À chaque fois que tu utilises ton temps libre…"
+    elias raison "Ton corps ou ton esprit encaissent."
+
+    iris neutre "Ou lâchent."
+
+    elias ecoute "S’entraîner."
+    elias ecoute "Observer."
+    elias ecoute "Discuter."
+    elias raison "Tout ça, ça te façonne."
+
+    elias raison "Certaines actions améliorent tes capacités."
+    elias ecoute "Ta force."
+    elias ecoute "Ton endurance."
+    elias ecoute "Ta concentration."
+
+    iris taquin "Et parfois…"
+    iris determine "Ça évite de craquer au mauvais moment."
+
+    pause 0.4
+
+    noam reflexion "Donc…"
+    noam reflexion "Si je ne fais rien…"
+
+    elias neutre "Tu stagnes, et puis t'auras plus de chance d'être en mauvaise santé plus tard."
+
+    "Je regarde mes mains."
+    "Elles tremblent encore un peu."
+
+    noam neutre "Je reviendrai."
+
+    iris sourire "Bonne idée."
+
+    elias ecoute "Je serai là."
+    elias raison "Si tu veux t’y prendre correctement."
 
     hide iris
     hide elias
 
-    "Je traverse le couloir qui mène à la salle commune."
-    "La porte est entrouverte."
-    "Des voix calmes."
-    "Je décide d’entrer."
+    "Je quitte la salle."
+    "Les machines continuent."
+    "Régulières."
+    "Implacables."
 
+    jump _2_CAFETERIA_SOIR
+
+
+label _2_CAFETERIA_SOIR:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ showP("nyra", "sourire", 0.20)

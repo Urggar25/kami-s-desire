@@ -179,7 +179,7 @@ image elen vide              = im.FactorScale("images/character/vide.png", 0.60)
 image kael calme                = im.FactorScale("images/character/kael/calme.png", 0.60)
 image kael culpabilite          = im.FactorScale("images/character/kael/culpabilite.png", 0.60)
 image kael fatigue              = im.FactorScale("images/character/kael/fatigue.png", 0.60)
-image kael inquietude           = im.FactorScale("images/character/kael/inquietude.png", 0.60)
+image kael inquiet           = im.FactorScale("images/character/kael/inquiet.png", 0.60)
 image kael jaloux               = im.FactorScale("images/character/kael/jaloux.png", 0.60)
 image kael joie                 = im.FactorScale("images/character/kael/joie.png", 0.60)
 image kael neutre               = im.FactorScale("images/character/kael/neutre.png", 0.60)
@@ -189,6 +189,9 @@ image kael sourire              = im.FactorScale("images/character/kael/sourire.
 image kael surpris              = im.FactorScale("images/character/kael/surpris.png", 0.60)
 image kael taquin               = im.FactorScale("images/character/kael/taquin.png", 0.60)
 image kael triste               = im.FactorScale("images/character/kael/triste.png", 0.60)
+image kael doute               = im.FactorScale("images/character/kael/doute.png", 0.60)
+image kael colere               = im.FactorScale("images/character/kael/colere.png", 0.60)
+image kael mefiant               = im.FactorScale("images/character/kael/mefiant.png", 0.60)
 image kael vide              = im.FactorScale("images/character/vide.png", 0.60)
 
 # ======================
