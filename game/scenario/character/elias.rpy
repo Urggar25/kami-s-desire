@@ -37,66 +37,70 @@ label ELIAS_LINK_INTERACT:
 
 label elias_link_1:
 
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+
     scene bg_gymnase at adaptive_fullscreen
 
     $ showP("elias", "neutre", 0.70)
 
-    elias "Tu arrives pile à l'heure."
-    elias "J'ai quinze minutes pour finir ma série."
-    elias "Après ça, je range."
+    elias content "Tu arrives pile à l'heure."
+    elias detendu "J'ai quinze minutes pour finir ma série."
+    elias detendu "Après ça, je range."
 
     "Il règle la charge sans me regarder."
     "Ses gestes sont précis, presque mécaniques, automatiques."
 
-    elias "Je fais toujours les mêmes séries."
-    elias "Même cadence, même souffle, même rythme."
+    elias ecoute "Je fais toujours les mêmes séries."
+    elias ecoute "Même cadence, même souffle, même rythme."
 
-    noam "Tu ne t'ennuies jamais à faire les mêmes exercices ?"
+    $ showP("noam", "neutre", 0.25)
 
-    elias "Non."
-    elias "L'ennui, c'est quand tu ne sais pas quoi faire."
-    elias "Moi je sais exactement les exercices dont j'ai besoin."
+    noam sourire "Tu ne t'ennuies jamais à faire les mêmes exercices ?"
+
+    elias reflechit "Non."
+    elias reflechit "L'ennui, c'est quand tu ne sais pas quoi faire."
+    elias reflechit "Moi je sais exactement les exercices dont j'ai besoin."
 
     "Il pousse une répétition, inspire, puis parle."
 
-    elias "Quand j'étais gamin, c'était pareil."
-    elias "Je me suis toujours levé tôt, j'allais aider mes parents."
+    elias content "Quand j'étais gamin, c'était pareil."
+    elias content "Je me suis toujours levé tôt, j'allais aider mes parents."
 
     "Sa voix ne se plaint pas. Elle constate."
 
-    elias "Mon père partait au dépôt tôt dans la nuit."
-    elias "Ma mère enchaînait deux postes pour gagner un peu mieux sa vie."
-    elias "On ne cherchait pas à comprendre."
-    elias "On tenait."
+    elias ecoute "Mon père partait au dépôt tôt dans la nuit."
+    elias ecoute "Ma mère enchaînait deux postes pour gagner un peu mieux sa vie."
+    elias fatigue "On ne cherchait pas à comprendre."
+    elias fatigue "On continuait à bosser, c'est tout."
 
-    noam "Et toi, tu faisais quoi dans tout ça ?"
+    noam reflexion "Et toi, tu faisais quoi dans tout ça ?"
 
-    elias "Je réparais ce qui cassait."
-    elias "Vieux vélo."
-    elias "Fuite dans la cuisine."
-    elias "J'essayais d'être utile."
+    elias ecoute "Je réparais ce qui cassait."
+    elias ecoute "Genre, les vieux vélo."
+    elias ecoute "Fuite dans la cuisine."
+    elias jaloux "J'essayais d'être utile quoi."
 
     "Il essuie la barre avec une serviette pliée au carré."
 
-    noam "C'est comme ça que tu es devenu mécano ?"
+    noam raison "C'est comme ça que tu es devenu mécano ?"
 
-    elias "Je voulais être utile."
-    elias "Alors d'une certaine manière, ça a bien marché, du moins je pense."
+    elias joie "Je voulais être utile."
+    elias joie "Alors d'une certaine manière, ça a bien marché, du moins je pense."
 
     "Il reprend une série sans attendre ma réponse."
 
-    elias "Le sport m'a appris à être exigent, envers moi-même mais aussi envers les autres."
-    elias "D'attendre des résultats en progression constante."
+    elias detendu "Le sport m'a appris à être exigent, envers moi-même mais aussi envers les autres."
+    elias detendu "D'attendre des résultats en progression constante."
 
     "Il laisse tomber la barre en contrôlant la descente."
 
-    elias "C'est un peu ce que j'essaye de faire dans mon quotidien."
+    elias content "C'est un peu ce que j'essaye de faire dans mon quotidien."
 
     "Un léger silence."
     "Il resserre la poignée d'un appareil."
 
-    elias "J'écoute quand quelqu'un sait ce qu'il fait."
-    elias "Sinon, je perds vite le fil de la discussion, les grandes théories c'est vraiment pas pour moi."
+    elias ecoute "J'écoute quand quelqu'un sait ce qu'il fait."
+    elias reflechit "Sinon, je perds vite le fil de la discussion, les grandes théories c'est vraiment pas pour moi."
 
     "Sa voix reste plate, mais le message est clair."
 
