@@ -78,7 +78,7 @@ label _1_CANON:
 
     $ showP("lysa", "blase", 0.78)
 
-    lysa "Ouais."
+    lysa "Ouais..."
     lysa "T’es enfin réveillé."
 
     noam "On est où… ?"
@@ -103,7 +103,7 @@ label _1_CANON:
     $ showP("lysa", "surpris", 0.78)      # elle réagit, sans parler
 
     ryn "Putain mais on est où là ?!"
-    ryn "Qui a fait ça ?"
+    ryn "Qui a fait ça ?!"
 
     "Personne ne répond."
     "Pas un seul mot."
@@ -116,7 +116,7 @@ label _1_CANON:
 
     mara "Tu veux dire… à part l’IA qui contrôle le monde ?"
 
-    ryn "Je parle de ce qui nous arrive maintenant."
+    ryn "Je parle de ce qui nous arrive, là, maintenant."
     ryn "Qui nous a endormis."
     ryn "Qui nous a trimballés ici."
 
@@ -126,7 +126,7 @@ label _1_CANON:
     $ showP("ryn", "reflechit", 0.22)    # il écoute
     $ showP("mara", "neutre", 0.50)      # elle se calme
 
-    tomas "Probablement personne de “présent”."
+    tomas "Probablement personne de “présent”… enfin, pas ici."
     tomas "Ça ressemble à une procédure."
     tomas "Automatique."
 
@@ -183,7 +183,7 @@ label _1_CANON:
     $ showP("nyra", "neutre", 0.22)      # réaction
 
     kael "Ou une attente."
-    kael "Peut-être qu'elle attend juste quelque chose ?"
+    kael "Peut-être qu'elle attend juste... quelque chose ?"
 
     "Un silence encore plus lourd tombe."
     "Personne n’aime l’idée d’attendre."

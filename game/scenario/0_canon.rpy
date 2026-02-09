@@ -100,9 +100,9 @@ label _0_CANON:
     "Son badge tremble, littéralement."
     "Le portique ne bip pas tout de suite."
 
-    med2 "Reprenez votre badge."
-    med2 "Respirez."
-    med2 "Puis recommencez. Une fois."
+    med2 "Reprenez votre badge, d’accord ?"
+    med2 "Respirez… voilà."
+    med2 "Puis recommencez. Juste une fois."
 
     cit_a "Pardon… je…"
     med2 "Allez-y doucement madame."
@@ -190,7 +190,7 @@ label _0_CANON:
     cit_a "Excusez-moi, c’est au sujet de la fermeture du secteur nord. Ma sœur—"
     resp "Fin de séance."
     cit_a "Mais c’est pas une question technique, c’est—"
-    resp "Fin de séance. Merci."
+    resp "Fin de séance, madame. Merci."
 
     "La femme reste la main à moitié levée."
     "Comme si son corps n’avait pas reçu l’ordre en même temps que son cerveau."

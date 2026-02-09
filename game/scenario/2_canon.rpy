@@ -178,7 +178,7 @@
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
-    kami "je vous donne rendez-vous à neuf heures."
+    kami "Je vous donne rendez-vous à neuf heures, d’accord ?"
     kami "À la cafétéria."
 
     pause 0.4
