@@ -1458,7 +1458,7 @@ label _2_GYMNASE:
 
     "Je commence à pousser les altères."
 
-    # Minijeu altère
+    call minijeu_halteres
 
     "Je repose."
     "Je souffle."
