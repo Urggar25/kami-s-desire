@@ -37,6 +37,7 @@ label MARA_LINK_INTERACT:
 
 label mara_link_1:
 
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_cafeteria at adaptive_fullscreen
 
     $ showP("mara", "sourire", 0.60)
@@ -50,15 +51,14 @@ label mara_link_1:
     mara sourire "Tu sens ?"
     mara neutre "Le café ici n'a pas d'âme."
 
-    "Je lui demande si elle est difficile."
-
+    noam taquin "Pourquoi tu es difficile à satisfaire ?"
     mara taquin "Je suis exigeante."
     mara neutre "C'est différent."
 
     mara sourire "Je plaisante."
     mara taquin "Enfin… pas complètement."
 
-    "Je lui demande ce qu'elle préfère."
+    noam "Et... Qu'est ce que tu préfères ?"
 
     mara taquin "Les ragots, c'est plus nutritif."
     mara sourire "Mais le café fait mieux semblant."
@@ -66,16 +66,16 @@ label mara_link_1:
     "Elle rit vite, puis regarde autour."
 
     mara sourire "Tu sais quoi ?"
-    mara neutre "Je reconnais les gens à leur façon de tenir leur tasse."
+    mara neutre "J'arrive à sonder les gens à leur façon de tenir leur tasse."
 
-    "Je lui demande ce que ça dit de moi."
+    noam taquin "Ah oui ? Et ça dit quoi de moi ?"
 
     mara taquin "Que tu hésites."
     mara neutre "Tu tiens la chaleur, mais pas trop près."
 
     mara taquin "Tu te caches ou tu assumes ?"
 
-    "Je lui dis que je suis juste là."
+    noam "Je suis pourtant juste là.."
 
     mara neutre "Juste là, ça n'existe pas."
     mara taquin "Tout le monde te voit."
@@ -85,84 +85,75 @@ label mara_link_1:
     mara neutre "Tu sais, avant, on ne me laissait jamais traîner dans une cafét'."
     mara fatigue "On me disait que ça faisait mauvais genre."
 
-    "Je lui demande qui lui disait ça."
+    noam "Qui te disait ça ?."
 
     mara neutre "Mon père."
     mara neutre "Ses conseillers."
     mara taquin "Les gens qui ont peur que je sois "
-    mara taquin "trop vraie."
+    mara taquin "trop vraie, un peu trop authentique."
 
     "Elle mime des guillemets avec ses doigts."
 
     mara neutre "Alors j'ai appris à jouer."
     mara sourire "Sourire quand il faut."
-    mara taquin "Rire quand ça arrange."
+    mara taquin "Rire quand ça les arrangeait."
 
-    "Je lui demande si elle aime jouer."
+    "Alors comme ça tu aimes jouer ? C'est à dire ?."
 
     mara sourire "J'aime gagner."
-    mara taquin "Et j'aime qu'on me regarde gagner."
+    mara taquin "Et surtout j'aime qu'on me regarde gagner."
 
     "Elle remue son café, puis me regarde d'un air curieux."
 
     mara taquin "Tu me regardes pour quoi, toi ?"
+    mara taquin "Qu'est ce qui peut intéresser un grringalet comme toi ?"
 
-    "Je dis que je veux comprendre."
+    "Elle m'intimide légèrement."
+    noam "Je veux surtout comprendre..."
 
     mara neutre "Comprendre quoi ?"
     mara taquin "Le costume ?"
-    mara neutre "Ou la personne dessous ?"
+    mara neutre "Ou qui est la personne personne là-dessous ?"
 
-    "Elle penche la tête."
+    "Elle penche la tête et montre sa poitrine du bout de son doigt."
 
-    mara taquin "Fais gaffe, la personne dessous est moins pratique."
+    mara taquin "Fais gaffe, la personne dessous est un peu moins controlable."
+    mara joie "Heureusement pour toi, de grandes responsabilités me réfrennent..."
 
-    "Je lui demande comment elle s'appelait avant le costume."
+    noam "Et ces grandes responsabilités, elles sont ici dans cette pièce ?"
 
-    mara sourire "Toujours Mara."
-    mara neutre "Mais on me disait 'petite'."
-    mara taquin "Ça faisait gentil."
+    "Elle éclate de rire l'espace d'un instant."
+
+    mara sourire "Ah ah ! Je t'aime bien toi."
+    mara sourire "Malheureusement oui, elles sont toujours collées à mes escarpins !"
+    mara neutre "Je préférais quand on m'appelait 'petite'."
+    mara taquin "Ça faisait gentil et je pouvais davantage m'amuser."
 
     "Elle prend une gorgée, plus lente."
 
-    mara neutre "J'étais la vitrine."
-    mara taquin "Sauf que j'avais envie d'entrer dans le magasin."
-
-    "Elle hausse les épaules."
-
-    mara colere "J'ai arrêté d'être gentille quand j'ai compris que ça me rendait invisible."
-
-    "Je lui demande si elle se sent invisible, ici."
-
-    mara neutre "Non."
-    mara sourire "Je suis tout."
-    mara taquin "Trop visible."
+    mara neutre "J'étais la petite vitrine adorée de ma famille."
+    mara taquin "Enfin, sauf quand j'avais envie d'entrer dans le magasin et de faire chauffer la CB !"
 
     "Elle boit, grimace légèrement."
 
-    mara fatigue "Ça ne veut pas dire qu'on me voit vraiment."
+    mara fatigue "Oui, une petite vitrine bien pratique ..."
 
-    "Je lui demande ce qu'elle voudrait qu'on voie."
+    noam "Ici tu pourrais presque être qui tu veux.."
 
-    mara neutre "Quelqu'un qui peut tomber et se relever."
-    mara fatigue "Pas une affiche."
+    mara neutre "Ah ! Drole d'idée, on ne peut pas être qui on veut quand on est observé par des millions de gens."
+    mara fatigue "Pas quand on est une des têtes d'affiche du principal évènement mondial."
 
     "Elle sourit, plus doux, puis claque son gobelet sur la table."
 
-    mara sourire "Bon."
+    mara sourire "Bon. Enfin, on pourra pas refaire le monde..."
     mara taquin "On a eu notre moment sérieux."
-    mara sourire "Maintenant tu me dois un vrai ragot."
 
-    "Je lui dis que je n'en ai pas."
-
-    mara taquin "Alors invente."
-    mara sourire "C'est ça, la vie mondaine."
-
+    "Elle imite une fois encore des guillemets avec ses doigts."
     "Je ris. Elle aussi."
     "Elle lève son gobelet comme un toast."
     "Je fais pareil."
     "Le geste est simple, mais complice."
-    "Elle sourit, satisfaite."
+    "Elle sourit, elle semble s'être amusée durant ces quelques minutes."
 
     $ mara_link = 1
 

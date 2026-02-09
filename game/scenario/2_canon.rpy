@@ -1045,203 +1045,190 @@ label _2_CAFETERIA_POST_ANNONCE:
 # Durée : 3m50
 # Total : 1h 14m 50s
 
+# Freetimde :
+# Durée : 1m30
+# Total : 1h 16m 20s
+
 label _2_APRES_MIDI:
 
     scene bg_couloir at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "L’après-midi commence sans véritable signal."
-    "Je traverse un couloir étroit."
-    "Le sol est propre. Trop propre."
+    "Je marche."
+    "Un couloir étroit."
+    "Propre."
+    "Trop propre."
 
     $ showP("mara", "neutre", 0.30)
     $ showP("sael", "mefiant", 0.70)
 
-    mara "Tu crois vraiment qu’ils vont nous laisser voter tranquille ?"
-    mara "Sans nous souffler la réponse ?"
+    mara mefiant "Tu penses vraiment qu’ils vont nous laisser voter tranquilles ?"
+    mara doute "Sans… orienter un peu ?"
 
-    sael "Je crois qu’ils vont surtout nous regarder nous disputer."
-    sael "Et ça leur ira très bien."
+    sael mefiant "Ils n’ont pas besoin."
+    sael raison "Ils attendront qu’on le fasse nous-mêmes."
 
-    mara "Toujours aussi optimiste."
+    mara taquin "Toujours aussi rassurante."
 
-    sael "Toi aussi."
+    sael neutre "Je fais de mon mieux."
 
-    "Elles échangent un sourire bref."
-    "Froid."
-    "Presque complice."
+    "Un silence."
+    "Bref."
 
-    mara "On se retrouve plus tard."
+    mara stress "On se retrouve plus tard."
+    mara neutre "Enfin… si tout tient encore."
 
-    sael "Si on n’explose pas d’ici là."
+    sael taquin "Si ça lâche, on saura où chercher."
 
     hide mara
     hide sael
 
     "Je les laisse derrière."
-    "Direction la salle d’observation."
-    "Sur le chemin, des voix me frôlent."
-    "Des morceaux de phrases."
-    "Des hypothèses."
-    "Des promesses qu’on n’ose pas dire."
+    "Le couloir continue."
+    "Des voix passent."
+    "Des mots coupés."
+    "Des phrases qu’on ne termine pas."
 
-    "Je tourne au bout du couloir."
-    "Lysa est adossée au mur, les bras croisés."
-    "Elias lui parle doucement."
+    "Je tourne."
+    "Lysa est adossée au mur."
+    "Bras croisés."
+    "Elias est face à elle."
 
     $ showP("lysa", "triste", 0.30)
     $ showP("elias", "neutre", 0.70)
 
-    elias "Tu n’es pas obligée de rester seule."
+    elias ecoute "Tu devrais en discuter avec nous."
+    elias ecoute "Enfin, si tu veux."
 
-    lysa "Je ne suis pas seule."
-    lysa "Je me protège."
+    lysa neutre "Tu sais je préfère..."
 
-    elias "Ça ne ressemble pas à du repos."
+    elias inquiet "Je voulais dire…  Faut pas rester seule."
 
-    lysa "Toi, tu appelles comment ce qu’on fait ?"
-    lysa "Ce va-et-vient, ces discussions, ces regards."
-    lysa "Moi j’appelle ça survivre."
+    lysa blase "Je sais."
 
-    elias "C’est pareil."
-    elias "Mais tu peux survivre avec nous."
+    "Un temps."
 
-    lysa "Avec nous."
-    lysa "Qui est nous ?"
+    elias fatigue "Tu n’as presque rien dit aujourd’hui."
 
-    elias "Tous."
+    lysa reflexion "J’ai écouté."
 
-    lysa "Tous, ça n’existe pas."
-    lysa "Pas ici."
+    elias neutre "Ce n’est pas très reposant."
 
-    noam "Tu ne crois pas qu’on peut y arriver ?"
+    lysa taquin "Rien ici ne l’est."
 
-    lysa "Je crois qu’on va essayer."
-    lysa "Et qu’on va se faire mal."
+    elias ecoute "Non."
 
-    elias "On va se faire mal de toute façon."
-    elias "Autant choisir comment."
+    lysa reflexion "Tu sais comment j’appelle tout ça ?"
+    lysa neutre "Marcher sans trop y penser."
+    lysa blase "Avancer sans tomber."
 
-    lysa "Tu dis ça comme si on avait la main."
+    elias reflechit "Laisse moi deviner..."
+    elias neutre "Essayer de survivre."
 
-    elias "On a au moins un doigt."
+    lysa surpris "… Oui."
+    lysa triste "Voilà."
 
-    lysa "Je ne suis pas certaine de vouloir l’utiliser."
+    "Je m’approche."
 
-    noam "Tu as peur ?"
+    $ showP("noam", "inquiet", 0.10)
 
-    lysa "Oui."
-    lysa "Et toi ?"
+    noam hesitation "Ça va ?"
 
-    noam "Oui."
+    lysa determine "Ça va comme ça peut."
 
-    lysa "Alors ne fais pas semblant d’être solide."
+    elias ecoute "On va avoir besoin de toi."
 
-    noam "Je ne fais pas semblant."
+    lysa opposition "Vous allez surtout parler."
+    lysa blase "Moi, on m’écoutera à moitié."
 
-    lysa "Si."
-    lysa "Tu fais semblant pour que les autres tiennent."
+    noam inquiet "Pourquoi tu penses ça ?"
 
-    elias "Elle n’a pas tort."
+    lysa reflexion "Mon district. Enfin, le notre ..."
+    lysa neutre "Les gens entendent avant de regarder."
 
-    noam "Je ne sais pas faire autrement."
+    elias raison "Alors dis-leur."
 
-    lysa "Moi non plus."
+    lysa tristesse "Dire quoi ?"
+    lysa blase "Qu’on manque déjà de tout ?"
+    lysa neutre "Ils le savent."
 
-    elias "Tu n’es pas obligée de parler à la réunion."
+    noam culpabilite "Je pense que tous les districts ont des problèmes…"
 
-    lysa "Je sais."
-    lysa "Mais si je ne parle pas, on parlera pour moi."
+    lysa opposition "Justement."
 
-    elias "Tu veux dire quoi ?"
+    "Silence."
+    "Lysa regarde le sol."
 
-    lysa "Que mon district a une réputation."
-    lysa "Et qu’elle me colle."
+    elias fatigue "Tu n’es pas obligée de parler à la réunion."
 
-    noam "Tu n’es pas une réputation."
+    lysa determine "Si je ne parle pas…"
+    lysa reflexion "On parlera pour moi."
 
-    lysa "Dis-le à ceux qui ne me connaissent pas."
+    noam hesitation "Tu as peur ?"
 
-    elias "Alors présente-toi."
+    lysa peur "Oui."
+    lysa peur "Mais toi aussi."
 
-    lysa "Ce n’est pas si simple."
+    noam panne "… Oui."
 
-    elias "Rien ne l’est."
+    lysa neutre "Alors n’essaie pas d’être solide."
+    lysa blase "Ça se voit quand ça sonne faux."
 
-    lysa "Je sais."
-    lysa "C’est ça le problème."
+    noam culpabilite "Je fais ce que je peux."
 
-    noam "Tu veux qu’on reste ?"
+    lysa triste "Moi aussi."
 
-    lysa "Je veux que vous compreniez."
-    lysa "Je suis fatiguée de devoir expliquer."
+    elias ecoute "Tu peux dire l’essentiel."
 
-    elias "Tu n’as pas à tout expliquer."
-    elias "Tu peux dire l’essentiel."
+    lysa reflexion "L’essentiel fait toujours mal."
 
-    lysa "L’essentiel ?"
-    lysa "Que nos rations sont déjà basses."
-    lysa "Que les hôpitaux ferment."
-    lysa "Que nos dirigeants mentent."
+    elias neutre "Mais il peut rester en mémoire."
 
-    elias "Dis-le."
+    "Lysa souffle."
+    "Longuement."
 
-    lysa "Et après ?"
-    lysa "On va me dire qu’on a tous des problèmes."
+    lysa determine "Je viendrai et on tirera ça au clair ..."
+    lysa reflexion "J'ai quelques réserves sur ce vote ...."
+    lysa reflexion "S'il manque déjà de tout dans les districts. Autoriser les échanges et le commerce ça ne risque pas de tout aggraver encore ?"
 
-    elias "Et ce sera vrai."
+    noam raison "C'est possible."
+    noam raison "Pour tout te dire, je ne sais pas vraiment."
 
-    lysa "Alors à quoi bon ?"
+    lysa regarde "Ne promets pas trop vite."
 
-    noam "À ne pas être seule avec ça."
+    noam neutre "On en parlera peut-être demain..."
 
-    lysa "Tu crois que ça change quelque chose ?"
+    lysa hoche "Oui."
+    lysa triste "Avant que je ne change d’avis."
+    lysa triste "Je n'ai pas envie de briser leurs espoirs de changement mais ..."
+    lysa determine "Enfin tu as compris ..."
 
-    noam "Je ne sais pas."
-    noam "Mais je ne veux pas qu’on te fasse taire."
-
-    lysa "Je ne me tais pas."
-    lysa "Je choisis mes mots."
-
-    elias "C’est déjà beaucoup."
-
-    lysa "Toi aussi, tu vas parler ?"
-
-    elias "Je vais écouter."
-    elias "Et je dirai ce que je dois."
-
-    lysa "Tu as toujours l’air d’avoir un devoir."
-
-    elias "C’est mon problème."
-
-    lysa "C’est aussi le nôtre."
-
-    elias "Je le sais."
-
-    lysa "Alors ne te sacrifies pas."
-
-    elias "Je ne me sacrifie pas."
-    elias "Je suis là."
-
-    lysa "C’est déjà un sacrifice."
-
-    noam "On y va ?"
-
-    lysa "Oui."
-    lysa "Je vais venir."
-    lysa "Mais si je sors, je ne veux pas qu’on me fasse dire plus."
-
-    elias "Promis."
-
-    noam "Promis."
+    tuto "Prêt pour un nouveau tutoriel ?"
+    tuto "Au cours de ce dialogue, Lysa a émit des doutes sur le vote à venir."
+    tuto "Ces doutes ont muri sous la forme d'un Argument."
+    tuto "Au cours du vote, vous aurez à choisir un ou plusieurs arguments à certains moments précis."
+    tuto "Ces arguments peuvent convaincre certains personnages, mais aussi en rébuter d'autres."
+    tuto "Vous pourrez collecter des arguments en explorant, en discutant avec des personnages ou en progressant dans l'histoire."
+    tuto "Alors bonne collecte !"
 
     hide lysa
     hide elias
+    hide noam
 
-    "Elle se redresse, inspire, et marche."
-    "Je la suis des yeux un instant."
-    "C’est une décision minuscule, mais je sais ce que ça lui coûte."
+    "Elle se redresse."
+    "Fais un pas."
+    "Puis un autre."
 
+    "Je reste une seconde."
+    "Puis je repars en direction de la salle d'observation."
+
+    jump _2_SALLE_OBSERVATION
+
+# Durée : 1m50
+# Total : 1h 18m 10s
+
+label _2_SALLE_OBSERVATION:
     scene bg_observation at adaptive_fullscreen with dissolve
 
     "La baie vitrée donne sur le vide."

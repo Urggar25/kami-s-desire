@@ -35,6 +35,8 @@ image mara rire_profond       = im.FactorScale("images/character/mara/rire_profo
 image mara stress             = im.FactorScale("images/character/mara/stress.png", 0.60)
 image mara sourire             = im.FactorScale("images/character/mara/sourire.png", 0.60)
 image mara vide              = im.FactorScale("images/character/vide.png", 0.60)
+image mara taquin              = im.FactorScale("images/character/mara/taquin.png", 0.60)
+image mara fatigue              = im.FactorScale("images/character/mara/fatigue.png", 0.60)
 
 # ======================
 # NOAM
