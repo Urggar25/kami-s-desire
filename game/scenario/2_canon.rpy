@@ -83,7 +83,7 @@
 
     $ blink()
     think "Rien n’y fait."
-    think "Ca ne me calme pas."
+    think "Ça ne me calme pas."
     $ blink()
 
     "Alors que j'avais du mal à dormir convenablement, une alarme retentit."
@@ -716,8 +716,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     jump _2_CAFETERIA_POST_ANNONCE
 
-# Durée : 3m15
-# Total : 1h 10m 40s
+# Durée : 3m35
+# Total : 1h 11m 0s
 
 label _2_CAFETERIA_POST_ANNONCE:
 
@@ -763,11 +763,21 @@ label _2_CAFETERIA_POST_ANNONCE:
     nyra "Tu veux dire que c’est trop beau ?"
 
     hide mara
-    $ showP("iris", "neutre", 0.50)
+    $ showP("iris", "intervention", 0.50)
 
     iris "Réfléchis deux secondes."
     iris "Nous donner l'espoir que tout va bien se passer pour qu'on baisse notre garde."
-    iris "C'est typiquement ce que pourrait faire Kami !"
+    iris "C’est du Kami tout craché, ça ! Nous faire espérer deux secondes pour mieux nous baiser après."
+
+    $ showP("mara", "neutre", 0.90)
+    mara taquin "‘Baiser’, hein ? T’as l’air presque impatiente que ça arrive."
+
+    iris "H-Hein ?! Mais va te faire foutre, Mara !"
+
+    mara sourire "Non merci, je te laisse découvrir ça toute seule."
+
+    $ showP("iris", "desaccord", 0.50)
+    iris "Sérieusement ..."
     iris "Et ça veut dire qu’on va devoir discuter du reste ensemble."
     iris "L'enfer quoi."
 
@@ -876,9 +886,9 @@ label _2_CAFETERIA_POST_ANNONCE:
     iris "On veut pas trahir nos districts."
     iris "Et si possible on veut éviter de se détester."
 
-    nyra "Ça fait beaucoup de voeux."
+    nyra "T’as pas oublié la lune dans ta liste aussi ?"
 
-    iris "On a que ça."
+    iris "Sacrément drôle dis donc."
 
     elen "On a une journée seulement pour nous décider."
 
@@ -887,19 +897,13 @@ label _2_CAFETERIA_POST_ANNONCE:
     $ showP("julian", "taquin", 0.86)
 
     julian "Alors on fait quoi ?"
-    julian "On se réunit, on se parle, on signe un pacte ?"
-
-    iris "On se parle."
-    iris "Le reste, on verra."
-
-    julian "Ok."
-    julian "Mais faut pas juste tourner en rond, faut avancer."
+    julian "Faut pas juste tourner en rond, faut avancer."
 
     iris "Tu proposes quoi ?"
 
     julian "Une sorte de plan."
     julian "On se répartit les questions."
-    julian "Chacun réfléchit et on revient."
+    julian "Chacun y réfléchit dans son coin et on en reparle demain."
 
     iris "Réfléchir, c’est facile."
     iris "Revenir, c’est autre chose."
@@ -911,7 +915,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide julian
     $ showP("sael", "mefiant", 0.86)
 
-    sael "Partager, ça se paye."
+    sael "Tout ce qu’on partage ici, ça va nous revenir dans la gueule. Toujours."
     sael "Toujours."
 
     iris "Et si on refuse ?"
@@ -941,7 +945,7 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     nyra "Ça va être beau."
 
-    hide nyra
+    hide iris
     $ showP("tomas", "inquiet", 0.15)
 
     tomas "On est obligés de parler de nos districts ?"
@@ -951,9 +955,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     $ showP("elen", "triste", 0.86)
 
     elen "On a tous peur de choisir."
-    elen "Mais on choisit déjà."
-    elen "Quand on parle."
-    elen "Quand on se tait."
+    elen "Mais on choisit déjà, quand on parle ou quand on se tait."
 
     tomas "Je sais."
     tomas "Je sais."
@@ -964,30 +966,6 @@ label _2_CAFETERIA_POST_ANNONCE:
     kael "Si on ne se parle pas ici, on va se parler derrière."
     kael "Et là, ça devient dangereux."
 
-    elen "Alors on fait comment ?"
-
-    kael "On propose une méthode."
-    kael "Et on la tient."
-
-    elen "Une méthode ?"
-
-    kael "On fait une liste."
-    kael "On précise les besoins."
-    kael "On ne discute pas des échanges tant qu’on n’a pas la carte."
-
-    hide elen
-    $ showP("nyra", "raison", 0.86)
-
-    nyra "Et qui fait la carte ?"
-
-    kael "Nous."
-    kael "Chacun pour son district."
-
-    nyra "Et ceux qui ne veulent pas se dévoiler ?"
-
-    kael "On les écoute."
-    kael "Mais on leur dit que demain, ça s’impose."
-
     hide kael
     $ showP("iris", "neutre", 0.15)
 
@@ -995,11 +973,11 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     nyra "Tu préfères quand c’est violent ?"
 
-    iris "Je préfère quand je comprends."
+    iris "Je préfère quand je comprends ce qu'on nous demande de faire."
 
     nyra "Alors on va parler."
 
-    hide nyra
+    hide elen
     $ showP("julian", "reflexion", 0.86)
 
     julian "Je peux résumer ?"
@@ -1016,129 +994,56 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     mara "Et pendant qu’on discute…"
     mara "Kami nous écoute."
-    mara "Elle notera qui craque."
+    mara "Elle notera qui dit quoi, qui propose quoi, qui pourrait craquer."
 
     iris "Alors on ne craque pas."
 
-    mara "Plus facile à dire."
+    mara "C'est facile à dire."
     mara "Surtout quand tout le monde regarde."
 
     hide mara
-    $ showP("sael", "mefiant", 0.86)
-
-    sael "Je propose qu’on fasse ça en deux temps."
-    sael "D’abord les besoins, ensuite les échanges."
-    sael "Et sans promesse aujourd’hui."
-
-    iris "Je signe."
-
-    kael "Moi aussi."
-
-    nyra "Pareil."
-
-    elen "Oui."
-
-    tomas "D’accord."
-
-    sael "Bien."
-    sael "On se pose quand ?"
-
-    kael "Après le déjeuner."
-    kael "Une heure ou deux."
-
-    sael "On a une salle ?"
-
-    iris "La salle commune."
-
-    kael "S’ils ne nous la ferment pas."
-
-    hide sael
     $ showP("tomas", "inquiet", 0.86)
 
     tomas "Et si quelqu’un refuse ?"
 
-    iris "On ne l’oblige pas."
+    iris "On ne va obliger personne a voter pour."
 
+    hide nyra
+    $ showP("kael", "reflechit", 0.40)
     kael "Mais on lui laisse une place."
 
-    tomas "Ok."
-
-    hide tomas
-    $ showP("nyra", "raison", 0.86)
-
-    nyra "Et si quelqu’un profite ?"
-
-    iris "On le verra."
-
-    kael "Et on le dit."
-
-    nyra "Donc on fait ça."
-
-    kael "Oui."
-
-    pause 0.6
+    tomas "D-De toute façon on ne sait même pas qui votera contre, si ?."
 
     "Le bruit reprend doucement."
-    "Des chaises raclent."
-    "Des plateaux s’éloignent."
-    "Ce n’est plus un silence."
-    "C’est un mouvement."
+    "Des chaises raclent, des plateaux s’éloignent."
+    "Tout le monde retourne peu à peu à ses occupations."
 
     hide iris
     hide kael
-    hide nyra
-    hide sael
+    hide tomas
 
-    $ showP("ryn", "neutre", 0.15)
-
-    ryn "On dirait que vous avez déjà décidé."
-
-    noam "On a juste cherché un cadre."
-
-    ryn "Un cadre, c’est déjà un camp."
-
-    noam "Tu veux t’en faire un autre ?"
-
-    ryn "Je veux éviter de me faire piéger."
-
-    noam "Moi aussi."
-
-    hide ryn
-
-    "Je sens les regards qui glissent."
-    "Chacun se repositionne."
-    "Des alliances silencieuses."
-    "Des distances nouvelles."
-    "Je comprends que la matinée est finie."
-    "Mais pas la tension."
+    "La matinée est finie, pas la tension, elle, elle reste bien présente."
     "Elle reste accrochée aux épaules."
     "Elle s’invite dans les gestes."
-    "Dans les pauses trop longues."
+    "Dans les pauses un peu trop longues."
     "Dans les sourires qui veulent rassurer."
     "Je sens mes mains se crisper."
-    "Je les ouvre."
-    "Je les referme."
     "Je me force à marcher."
-    "À ne pas rester planté."
+    "À ne pas rester planté là."
     "À ne pas chercher des réponses là où il n’y en a pas."
 
     stop music fadeout 0.8
     pause 0.6
 
-    "Le reste de la matinée glisse sans moi."
-    "Des pas, des couloirs, des horaires qui se rangent tout seuls."
-    "Je me surprends à écouter."
-    "Pas les mots."
-    "Les respirations."
-    "Celles qui s’accélèrent."
-    "Celles qui se cassent."
-    "Celles qui se contrôlent."
-    "Je devine les tempêtes."
-    "Je devine les résistances."
+    "Le reste de la matinée passe rapidement et pendant ce temps là, je me balade pour me changer les idées."
+    "Des pas, des couloirs, des respirations."
     "Je ne sais pas qui va craquer."
     "Je ne sais pas si ce sera moi."
 
     jump _2_APRES_MIDI
+
+# Durée : 3m50
+# Total : 1h 14m 50s
 
 label _2_APRES_MIDI:
 
@@ -1191,10 +1096,6 @@ label _2_APRES_MIDI:
 
     lysa "Je ne suis pas seule."
     lysa "Je me protège."
-
-    elias "Tu te coupes."
-
-    lysa "Je me repose."
 
     elias "Ça ne ressemble pas à du repos."
 
@@ -1337,12 +1238,9 @@ label _2_APRES_MIDI:
     hide lysa
     hide elias
 
-    "Elle se redresse."
-    "Elle inspire."
-    "Et elle marche."
+    "Elle se redresse, inspire, et marche."
     "Je la suis des yeux un instant."
-    "C’est une décision minuscule."
-    "Mais je sais ce que ça lui coûte."
+    "C’est une décision minuscule, mais je sais ce que ça lui coûte."
 
     scene bg_observation at adaptive_fullscreen with dissolve
 
@@ -1435,30 +1333,13 @@ label _2_APRES_MIDI:
     hide kael
 
     "Je reste un instant face au vide."
-    "Je me surprends à vouloir y lire une réponse."
-    "Mais il n’y a que le noir."
-    "Et ce silence qui fait trop de place."
     "Je compte mes respirations."
-    "Trois."
-    "Cinq."
-    "Sept."
-    "Je m’arrête."
-    "Je me sens idiot."
-    "Je recommence."
-    "La routine rassure."
-    "Même inventée."
-    "Même bancale."
-    "Je pense à Juliette."
-    "À sa manière de répéter les mêmes chansons."
+    "La routine rassure, même inventée."
+    "Je pense à Juliette et à ses chansons."
     "Elle disait que ça chassait les cauchemars."
-    "Moi, ça chasse quoi ?"
-    "L’inquiétude ?"
-    "La honte ?"
-    "Ou juste le bruit ?"
+    "Moi, je chasse quoi ?"
     "Je n’ai pas la réponse."
-    "Je me contente d’un souffle."
-    "Un autre."
-    "Et j’avance."
+    "Je prends une longue bouffée d'air, puis une autre, et j’avance."
 
     pause 0.6
 
@@ -1869,10 +1750,6 @@ label _2_APRES_MIDI:
 
     ryn "Libre."
 
-    kael "Encore."
-
-    ryn "Toujours."
-
     noam "Tu ne crois pas qu’on puisse être libre ensemble ?"
 
     ryn "Je ne sais pas."
@@ -1880,24 +1757,18 @@ label _2_APRES_MIDI:
 
     kael "Alors c’est l’occasion."
 
-    ryn "Ou l’erreur."
+    noam "Qu'est ce que tu vas voter ?"
 
-    noam "Tu vas voter ?"
-
-    ryn "Je vais écouter."
-    ryn "Et je déciderai demain."
+    ryn "Je ne sais pas vraiment. Je vais écouter."
+    ryn "Et je me déciderai demain."
 
     kael "Ce sera tard."
 
-    ryn "Ce sera juste."
+    ryn "C'est sans doute mieux comme ça."
 
     noam "Tu refuses de t’engager ?"
 
     ryn "Je refuse qu’on m’engage."
-
-    kael "Personne ne t’engage."
-
-    ryn "Pas encore."
 
     noam "Tu as raison d’être prudente."
     noam "Mais si tu ne parles pas, on parlera pour toi."
