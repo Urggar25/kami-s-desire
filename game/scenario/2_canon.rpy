@@ -1458,6 +1458,7 @@ label _2_GYMNASE:
 
     "Je commence à pousser les altères."
 
+    $ mg_skip_scene_pick = True
     call minijeu_halteres
 
     "Je repose."
