@@ -2154,7 +2154,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     elias "C’est étrange."
     elias "On a passé la journée à faire des trucs lourds."
     elias "Et pourtant…"
-    elias "J’ai l’impression que mon corps est juste crevé."
+    elias "Je suis rincé, comme après un chantier.Je suis rincé, comme après un chantier."
 
     noam "Ouais."
     noam "Comme après un déménagement."
@@ -2167,7 +2167,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     $ showP("elias", "inquiet", 0.50)
 
     elias "Demain matin…"
-    elias "Ça va être autre chose."
+    elias "Ça va être un autre calibre."
 
     noam "Ouais."
     

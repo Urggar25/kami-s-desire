@@ -154,15 +154,15 @@ label decouverte_gymnase:
 
     $ showP("elias", "neutre", 0.78)
     elias "Oui. Mais pas spécialement à cause de Kami."
-    elias "C'est clair que sa méthode est cruelle, mais elle obtient des résultats."
-    elias "Avant on risquait de se prendre une balle à n'importe quel moment ou d'être emmené dans n'importe quelle guerre."
+    elias "Sa méthode est dure, mais elle tient la route."
+    elias "Avant, on pouvait se prendre une balle n'importe quand, ou partir de force sur une guerre."
     
     "Il marque une pause un instant."
     
     $ showP("elias", "jaloux", 0.78)
-    elias "Est-ce qu'on peut vraiment dire qu'on vit moins bien qu'avant ?"
-    elias "Perso, je ne pourrai pas répondre à cette question."
-    elias "Alors ça ne sert à rien de trop y réfléchir. C'est comme ça et c'est tout."
+    elias "Est-ce qu'on vit moins bien qu'avant ?"
+    elias "Perso, j'ai pas la réponse."
+    elias "Alors je fais le taf. Le reste, c'est que du bruit dont je ne m'occupe pas vraiment."
 
     pause 0.2
     "Je ne sais pas vraiment quoi répondre."
@@ -187,7 +187,7 @@ label decouverte_gymnase:
     noam "La Forge."
 
     $ showP("elias", "content", 0.78)
-    elias "Ouais. C'est là où on fabrique la majorité des trucs pour l'ensemble des districts."
+    elias "Ouais. Là où on fabrique la majorité des trucs pour tous les districts."
 
     "Il dit ça sans fierté particulière."
     "Mais il sait dans son timbre de voix que AXIOME est nécessaire à tout le monde."
@@ -226,7 +226,7 @@ label decouverte_gymnase:
 
     $ showP("elias", "fatigue", 0.78)
     elias "C'est pour ça que je continue."
-    elias "Quand tout change, il faut garder un truc stable."
+    elias "Quand tout bouge, faut garder un repère."
 
     $ showP("elias", "neutre", 0.78)
     elias "C'est le principe."
@@ -253,9 +253,9 @@ label decouverte_gymnase:
 
     $ showP("elias", "ecoute", 0.78)
     elias "Tu sais ce qui est drôle ?"
-    elias "Ils nous donnent un gymnase."
+    elias "Ils nous filent un gymnase."
     elias "Comme si on était en colonie."
-    elias "On soit, c'est pas pour me déplaire. C'était chouette les colonies."
+    elias "On soit, c'est pas pour me déplaire. J'ai toujours voulu aller en colo."
 
     $ showP("noam", "reflexion", 0.22)
     noam "Ouais. Notre animateur est juste un peu plus cinglé que les autres."
@@ -277,7 +277,7 @@ label decouverte_gymnase:
 
     $ showP("elias", "neutre", 0.78)
     elias "Non. Pas forcément."
-    elias "Mais ça permet au moins de se changer les idées."
+    elias "Mais ça permet au moins de se vider la tête."
 
     pause 0.3
 

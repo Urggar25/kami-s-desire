@@ -366,7 +366,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     noam "Prêts à quoi, exactement ?"
 
-    elias "À entendre quelque chose qui ne nous plaira pas."
+    elias "À encaisser ce qu'on va nous balancer."
 
     pause 0.6
 
@@ -706,7 +706,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     elias "Quel beau parleur !"
     elias "Il y a des écrans partout dans le bâtiment."
-    elias "A tous les coups, la diffusion s'est retransmise partout."
+    elias "A tous les coups, la diffusion a tourné partout."
 
     julian panne "..."
     julian decu "Sérieux, Elias ! Fallait me laisser mon heure de gloire ..."
@@ -1504,8 +1504,8 @@ label _2_APRES_MIDI:
     iris "De net."
     iris "Les mots, c’est flou."
 
-    elias "Les mots peuvent tenir debout."
-    elias "Si on les pose bien."
+    elias "Les mots, ça tient."
+    elias "Du moins si tu les poses droit."
 
     iris "Et si on les pose mal ?"
 
