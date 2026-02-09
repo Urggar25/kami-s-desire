@@ -39,17 +39,20 @@ label mara_link_1:
 
     scene bg_cafeteria at adaptive_fullscreen
 
+    play music "music/bgm_soft_neon_morning.mp3" fadein 0.6
+
     $ showP("mara", "sourire", 0.60)
 
     mara "Tiens, toi."
     mara "T'es venu pour le café ou pour les ragots ?"
 
     "Elle appuie sur la machine en me fixant."
+    play sound sfx_beep
 
     mara "Tu sens ?"
     mara "Le café ici n'a pas d'âme."
 
-    "Je lui demande si elle est difficile."
+    noam "T'es difficile, toi."
 
     mara "Je suis exigeante."
     mara "C'est différent."
@@ -57,7 +60,7 @@ label mara_link_1:
     mara "Je plaisante."
     mara "Enfin… pas complètement."
 
-    "Je lui demande ce qu'elle préfère."
+    noam "Tu préfères quoi, alors ?"
 
     mara "Les ragots, c'est plus nutritif."
     mara "Mais le café fait mieux semblant."
@@ -67,24 +70,26 @@ label mara_link_1:
     mara "Tu sais quoi ?"
     mara "Je reconnais les gens à leur façon de tenir leur tasse."
 
-    "Je lui demande ce que ça dit de moi."
+    noam "Et moi, ça dit quoi ?"
 
     mara "Que tu hésites."
     mara "Tu tiens la chaleur, mais pas trop près."
 
     mara "Tu te caches ou tu assumes ?"
 
-    "Je lui dis que je suis juste là."
+    noam "Je suis juste là, j'assume… enfin je crois."
 
     mara "Juste là, ça n'existe pas."
     mara "Tout le monde te voit."
+
+    $ showP("mara", "doute", 0.60)
 
     "Elle me tend un gobelet, sans attendre de merci."
 
     mara "Tu sais, avant, on ne me laissait jamais traîner dans une cafét'."
     mara "On me disait que ça faisait mauvais genre."
 
-    "Je lui demande qui lui disait ça."
+    noam "Qui te disait ça ?"
 
     mara "Mon père."
     mara "Ses conseillers."
@@ -97,7 +102,7 @@ label mara_link_1:
     mara "Sourire quand il faut."
     mara "Rire quand ça arrange."
 
-    "Je lui demande si elle aime jouer."
+    noam "Et t'aimes jouer, du coup ?"
 
     mara "J'aime gagner."
     mara "Et j'aime qu'on me regarde gagner."
@@ -106,7 +111,7 @@ label mara_link_1:
 
     mara "Tu me regardes pour quoi, toi ?"
 
-    "Je dis que je veux comprendre."
+    noam "Pour comprendre. Vraiment."
 
     mara "Comprendre quoi ?"
     mara "Le costume ?"
@@ -116,7 +121,7 @@ label mara_link_1:
 
     mara "Fais gaffe, la personne dessous est moins pratique."
 
-    "Je lui demande comment elle s'appelait avant le costume."
+    noam "Avant le costume, tu t'appelais comment ?"
 
     mara "Toujours Mara."
     mara "Mais on me disait 'petite'."
@@ -131,7 +136,7 @@ label mara_link_1:
 
     mara "J'ai arrêté d'être gentille quand j'ai compris que ça me rendait invisible."
 
-    "Je lui demande si elle se sent invisible, ici."
+    noam "Et ici, tu te sens invisible ?"
 
     mara "Non."
     mara "Je suis tout."
@@ -141,10 +146,12 @@ label mara_link_1:
 
     mara "Ça ne veut pas dire qu'on me voit vraiment."
 
-    "Je lui demande ce qu'elle voudrait qu'on voie."
+    noam "Tu voudrais qu'on voie quoi, alors ?"
 
     mara "Quelqu'un qui peut tomber et se relever."
     mara "Pas une affiche."
+
+    $ showP("mara", "sourire", 0.60)
 
     "Elle sourit, plus doux, puis claque son gobelet sur la table."
 
@@ -152,10 +159,22 @@ label mara_link_1:
     mara "On a eu notre moment sérieux."
     mara "Maintenant tu me dois un vrai ragot."
 
-    "Je lui dis que je n'en ai pas."
+    noam "J'en ai pas, moi."
 
     mara "Alors invente."
     mara "C'est ça, la vie mondaine."
+
+    menu:
+        "Inventer un ragot pour Mara":
+            "Parler d'un faux duel de babyfoot":
+                noam "On dit que Tomas a perdu un duel de babyfoot contre… un robot."
+                mara "Oh, ça, je garde."
+            "Parler d'une carte perdue":
+                noam "J'ai entendu qu'une carte d'accès traîne dans la salle de repos."
+                mara "Joli. Pas trop méchant, mais ça pique."
+            "Avouer que j'improvise":
+                noam "Ok, j'invente. Je suis nul en ragots."
+                mara "Au moins, tu joues franc jeu."
 
     "Je ris. Elle aussi."
     "Elle lève son gobelet comme un toast."
@@ -172,6 +191,8 @@ label mara_link_2:
 
     scene bg_repos at adaptive_fullscreen
 
+    play music "music/bgm_careful_wanting.mp3" fadein 0.6
+
     $ showP("mara", "neutre", 0.58)
 
     mara "Tomas fait toujours semblant de ne rien écouter."
@@ -183,11 +204,13 @@ label mara_link_2:
     mara "Kael joue au chef."
     mara "Ça lui va bien."
 
-    "Je lui demande si elle a un rôle, elle aussi."
+    noam "Et toi, t'as un rôle ?"
 
     mara "Moi ?"
     mara "Je mets le feu."
     mara "Je regarde qui danse."
+
+    $ showP("mara", "joie", 0.58)
 
     "Elle croise les jambes et prend un ton plus léger."
 
@@ -195,17 +218,19 @@ label mara_link_2:
     mara "Quand tout le monde se cache, je fais du bruit."
     mara "Je tire les gens dehors."
 
-    "Je lui demande si elle aime vraiment le bruit."
+    noam "Tu aimes vraiment le bruit ?"
 
     mara "Le bruit couvre les silences."
     mara "Et les silences, ça fait peur."
 
-    "Je lui demande ce qu'elle entend dans le silence."
+    noam "Tu entends quoi dans le silence ?"
 
     mara "Moi."
     mara "Et ça, c'est compliqué."
 
-    "Je lui demande si elle ne craint pas les retours."
+    $ showP("mara", "reflexion", 0.58)
+
+    noam "Tu crains pas le retour de flamme ?"
 
     mara "Je les provoque."
     mara "Comme ça, au moins, c'est moi qui décide."
@@ -215,13 +240,13 @@ label mara_link_2:
     mara "Tu sais ce qui est drôle ?"
     mara "Tout le monde me croit sûre de moi."
 
-    "Je lui dis que c'est l'impression qu'elle donne."
+    noam "C'est l'impression que tu donnes, ouais."
 
     mara "Impression, voilà."
     mara "À la maison, c'était mon travail."
     mara "Donner la bonne impression."
 
-    "Je lui demande comment c'était."
+    noam "Et c'était comment, chez toi ?"
 
     mara "Des dîners, des visages, des sourires programmés."
     mara "On te demande d'être parfaite sans jamais transpirer."
@@ -236,7 +261,7 @@ label mara_link_2:
     mara "Alors j'ai décidé de transpirer en public."
     mara "Et de dire que j'aime ça."
 
-    "Je lui demande si c'est vrai."
+    noam "C'est vrai, ou tu joues encore ?"
 
     mara "Parfois."
     mara "Parfois non."
@@ -246,7 +271,7 @@ label mara_link_2:
     mara "La vérité, c'est que j'aime qu'on me suive."
     mara "Pas qu'on me tienne."
 
-    "Je lui demande si elle a déjà été tenue."
+    noam "Tu t'es déjà sentie tenue, coincée ?"
 
     mara "Tout le temps."
     mara "C'est ça, être héritière."
@@ -261,7 +286,7 @@ label mara_link_2:
     mara "Tu vois ?"
     mara "Je te regarde pour savoir si je vais trop loin."
 
-    "Je lui dis qu'elle décide."
+    noam "C'est toi qui décides, non ?"
 
     mara "Non."
     mara "Je teste."
@@ -272,12 +297,12 @@ label mara_link_2:
     mara "On dirait un concours, non ?"
     mara "Qui tiendra la scène le plus longtemps."
 
-    "Je lui demande si ça l'amuse."
+    noam "Ça t'amuse, cette scène-là ?"
 
     mara "Ça m'occupe."
     mara "Et ça me rassure."
 
-    "Je lui demande si elle a déjà perdu la scène."
+    noam "Tu l'as déjà perdue, la scène ?"
 
     mara "Une fois."
     mara "J'avais dix-sept ans."
@@ -303,6 +328,8 @@ label mara_link_3:
 
     scene bg_cafeteria at adaptive_fullscreen
 
+    play music "music/bgm_soft_neon_morning.mp3" fadein 0.6
+
     $ showP("mara", "colere", 0.60)
 
     mara "Tu sais ce qui m'agace ?"
@@ -313,12 +340,13 @@ label mara_link_3:
     mara "Comme si j'étais un décor."
     mara "Comme si je devais sourire et dire merci."
 
-    "Je lui demande qui a fait ça."
+    noam "Qui t'a fait ça ?"
 
     mara "Peu importe."
     mara "Ce qui compte, c'est le geste."
 
     "Elle serre sa tasse, puis la repose trop fort."
+    play sound sfx_beep
 
     mara "Je sais me défendre."
     mara "Mais je déteste devoir le faire."
@@ -328,7 +356,7 @@ label mara_link_3:
     mara "C'est rien."
     mara "Juste une mauvaise journée."
 
-    "Je lui dis que ça a l'air de compter."
+    noam "Ça a l'air de compter pour toi."
 
     mara "Oui."
     mara "Parce que je suis censée être intouchable."
@@ -345,7 +373,9 @@ label mara_link_3:
     mara "Sauf que parfois, tu voudrais juste dire :"
     mara "Laisse-moi tranquille."
 
-    "Je lui demande si elle le dit."
+    $ showP("mara", "stress", 0.60)
+
+    noam "Tu le dis, parfois ?"
 
     mara "Je le dis autrement."
     mara "Je pique."
@@ -357,12 +387,12 @@ label mara_link_3:
     mara "Ça marche."
     mara "Mais ça laisse des traces."
 
-    "Je lui demande lesquelles."
+    noam "Et ça laisse quelles traces ?"
 
     mara "Les gens ne savent pas si je suis une amie ou une menace."
     mara "Et moi, je ne sais pas si je veux choisir."
 
-    "Je lui demande si elle voudrait parfois être juste une amie."
+    noam "Tu voudrais juste être une amie, parfois ?"
 
     mara "Oui."
     mara "Mais il faut de la confiance."
@@ -372,7 +402,7 @@ label mara_link_3:
     mara "Tu sais ce qui est ironique ?"
     mara "On me reproche d'être trop sûre de moi."
 
-    "Je lui demande si ce n'est pas son choix."
+    noam "C'est pas ton choix ?"
 
     mara "C'est un rôle."
     mara "Un costume."
@@ -383,7 +413,7 @@ label mara_link_3:
     mara "Et quand quelqu'un me contredit,"
     mara "j'ai l'impression qu'il tire sur les coutures."
 
-    "Je lui demande ce qu'elle fait quand ça craque."
+    noam "Et quand ça craque, tu fais quoi ?"
 
     mara "Je fais une blague."
     mara "Ou je pars."
@@ -392,12 +422,12 @@ label mara_link_3:
 
     mara "Et je m'en veux après."
 
-    "Je lui demande si elle revient vers les gens."
+    noam "Tu reviens vers les gens après ?"
 
     mara "Si je peux."
     mara "Si j'ose."
 
-    "Je lui dis qu'elle peut rester, si elle veut."
+    noam "Tu peux rester, si tu veux."
 
     mara "Rester, c'est intime."
     mara "Tu veux vraiment ça ?"
@@ -413,10 +443,12 @@ label mara_link_3:
     mara "Merci d'écouter."
     mara "C'est rare."
 
-    "Je lui dis que ce n'est pas un effort."
+    noam "C'est pas un effort."
 
     mara "Ne t'habitue pas trop."
     mara "Je redeviens vite piquante."
+
+    $ showP("mara", "colere", 0.60)
 
     "Elle se redresse, masque retrouvé."
 
@@ -437,6 +469,8 @@ label mara_link_4:
 
     scene bg_repos at adaptive_fullscreen
 
+    play music "music/bgm_careful_wanting.mp3" fadein 0.6
+
     $ showP("mara", "neutre", 0.58)
 
     mara "Tu sais, la réputation, c'est un costume."
@@ -448,7 +482,9 @@ label mara_link_4:
     mara "Je préfère qu'on sache à quoi s'attendre."
     mara "Alors je donne une version claire."
 
-    "Je lui demande si cette version lui ressemble."
+    $ showP("mara", "doute", 0.58)
+
+    noam "Cette version, elle te ressemble ?"
 
     mara "Un peu."
     mara "Assez pour être crédible."
@@ -460,7 +496,7 @@ label mara_link_4:
     mara "La bonne tenue."
     mara "La bonne phrase."
 
-    "Je lui demande si elle a déjà dérapé."
+    noam "T'as déjà dérapé ?"
 
     mara "Une fois."
     mara "J'ai dit ce que je pensais."
@@ -473,7 +509,7 @@ label mara_link_4:
     mara "Quand j'étais petite, je voulais chanter."
     mara "Mon père disait que c'était un hobby."
 
-    "Je lui demande ce qu'elle en a fait."
+    noam "Et tu en as fait quoi, de cette envie ?"
 
     mara "Je chante quand je suis seule."
     mara "Ça ne compte pas, donc ça fait du bien."
@@ -486,7 +522,7 @@ label mara_link_4:
     mara "Tu vois, c'est ça."
     mara "Je garde des trucs pour moi."
 
-    "Je lui demande si ça lui pèse."
+    noam "Ça te pèse, de garder ça pour toi ?"
 
     mara "Parfois."
     mara "Surtout quand tout le monde pense me connaître."
@@ -496,23 +532,25 @@ label mara_link_4:
     mara "Je me suis entraînée à marcher, à parler, à sourire."
     mara "À dire 'oui' sans le penser."
 
-    "Je lui demande quand elle a dit non."
+    noam "Et tu as dit non quand ?"
 
     mara "Le jour où j'ai pris un train seule."
     mara "C'était bête."
     mara "Mais j'ai respiré pour la première fois."
 
-    "Je lui demande si quelqu'un l'a su."
+    noam "Quelqu'un l'a su ?"
 
     mara "Non."
     mara "Et c'est ce qui l'a rendu parfait."
+
+    $ showP("mara", "neutre", 0.58)
 
     "Elle pose la main sur son ventre comme pour revivre l'instant."
 
     mara "Ici, je rejoue ça."
     mara "Je prends des trains imaginaires."
 
-    "Je lui demande si elle a peur du regard des autres."
+    noam "Tu as peur du regard des autres ?"
 
     mara "J'en ai besoin."
     mara "Et j'en ai peur."
@@ -523,12 +561,12 @@ label mara_link_4:
     mara "Je suis faite de contradictions."
     mara "C'est aussi pour ça qu'ils m'ont élevée."
 
-    "Je lui demande ce qu'elle veut vraiment."
+    noam "Tu veux quoi, vraiment ?"
 
     mara "Qu'on me laisse choisir."
     mara "Et qu'on me regarde choisir."
 
-    "Je lui demande si elle a peur de décevoir."
+    noam "Et décevoir, ça te fait peur ?"
 
     mara "Toujours."
     mara "Mais je déçois quand même."
@@ -538,12 +576,12 @@ label mara_link_4:
     mara "Tu vois ?"
     mara "Même mes désirs sont un spectacle."
 
-    "Je lui dis qu'elle peut en sortir."
+    noam "Tu peux en sortir, tu sais."
 
     mara "Je peux."
     mara "Mais je reviens toujours."
 
-    "Je lui demande pourquoi."
+    noam "Pourquoi tu reviens ?"
 
     mara "Parce que j'ai besoin d'un public."
     mara "Même quand je dis le contraire."
@@ -568,6 +606,8 @@ label mara_link_5:
 
     scene bg_cafeteria at adaptive_fullscreen
 
+    play music "music/bgm_soft_neon_morning.mp3" fadein 0.6
+
     $ showP("mara", "fatigue", 0.60)
 
     "La cafétéria se vide."
@@ -576,7 +616,7 @@ label mara_link_5:
     mara "Je joue un rôle."
     mara "C'est plus simple que d'expliquer."
 
-    "Je lui demande si elle sait qui elle serait sans."
+    noam "Tu sais qui tu serais sans tout ça ?"
 
     mara "Je l'apprends."
     mara "Je la cherche."
@@ -588,7 +628,9 @@ label mara_link_5:
     mara "Tu sais ce qui me fait peur ?"
     mara "Qu'on m'oublie quand je ne brille pas."
 
-    "Je lui dis qu'elle n'a pas besoin de briller tout le temps."
+    $ showP("mara", "doute", 0.60)
+
+    noam "T'as pas besoin de briller tout le temps."
 
     mara "Oui."
     mara "Et pourtant, je continue."
@@ -598,7 +640,7 @@ label mara_link_5:
     mara "Si je m'arrête, j'ai l'impression de disparaître."
     mara "Comme si je n'étais plus utile."
 
-    "Je lui dis qu'elle n'a pas besoin d'être utile."
+    noam "T'as pas besoin d'être utile, tu sais."
 
     mara "Essaie de dire ça à mon père."
 
@@ -610,13 +652,13 @@ label mara_link_5:
 
     mara "Alors j'ai appris à ne pas respirer trop fort."
 
-    "Je lui demande si elle a déjà fait une tache exprès."
+    noam "T'as déjà fait une tache exprès ?"
 
     mara "Oui."
     mara "Du vin rouge."
     mara "C'était ma petite révolution."
 
-    "Je lui demande si elle respire ici."
+    noam "Tu respires ici ?"
 
     mara "Plus."
     mara "Mais pas assez."
@@ -627,7 +669,7 @@ label mara_link_5:
     mara "C'est utile."
     mara "Mais ça fatigue."
 
-    "Je lui demande si elle a quelqu'un en qui elle a confiance."
+    noam "Et t'as quelqu'un en qui tu as confiance ?"
 
     mara "Rarement."
     mara "Je teste."
@@ -637,7 +679,7 @@ label mara_link_5:
 
     mara "Et parfois je blesse sans vouloir."
 
-    "Je lui demande si elle regrette."
+    noam "Tu regrettes ?"
 
     mara "Souvent."
     mara "Surtout quand la personne ne revient pas."
@@ -647,7 +689,7 @@ label mara_link_5:
     mara "Je ne supporte pas d'être ignorée."
     mara "Même quand je dis que je m'en fiche."
 
-    "Je lui dis que c'est humain."
+    noam "C'est humain, ça."
 
     mara "Ouais."
     mara "Mais chez moi, on n'avait pas le droit d'être 'humain'."
@@ -662,7 +704,7 @@ label mara_link_5:
     mara "Moi, je veux qu'on me voie."
     mara "Pas qu'on voie le logo."
 
-    "Je lui demande ce qu'elle ferait sans logo."
+    noam "Tu ferais quoi, sans logo ?"
 
     mara "Je voyagerais."
     mara "Je danserais."
@@ -674,7 +716,7 @@ label mara_link_5:
     mara "j'ai envie d'y croire."
     mara "Et ça m'effraie."
 
-    "Je lui demande pourquoi."
+    noam "Pourquoi ça t'effraie ?"
 
     mara "Parce que si j'y crois,"
     mara "je deviens loyale."
@@ -685,6 +727,8 @@ label mara_link_5:
     mara "Bon."
     mara "Assez parlé."
     mara "On va faire semblant que tout va bien."
+
+    $ showP("mara", "sourire", 0.60)
 
     "Elle sourit, et cette fois le sourire est plus vrai."
     "Elle attend une seconde, comme si elle hésitait."
