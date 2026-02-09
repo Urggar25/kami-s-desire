@@ -84,6 +84,16 @@ screen pnc_repos():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+    if free_time_active and mara_link in [1, 3]:
+        imagebutton:
+            idle "images/character/mara/neutre.png"
+            hover "images/character/mara/sourire.png"
+            focus_mask True
+            xalign 0.30
+            yalign 0.80
+            zoom 0.45
+            action [SetVariable("last_room_label", "REPOS_TP"), Jump("MARA_LINK_INTERACT")]
+
 
 label REPOS_PNC_BABYFOOT:
     "Le babyfoot brille trop."

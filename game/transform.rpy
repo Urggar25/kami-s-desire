@@ -128,6 +128,34 @@ screen day_transition(day_label):
             add Solid("#FFFFFF", xysize=(600, 2)):
                 xalign 0.5
 
+
+screen free_time_transition():
+
+    modal True
+    zorder 100
+
+    add Solid("#000")
+
+    timer 5.0 action Return()
+
+    frame:
+        background None
+        xalign 0.5
+        yalign 0.5
+
+        vbox at day_fade_5s:
+            spacing 12
+            xalign 0.5
+
+            text "Temps libre":
+                size 84
+                color "#FFFFFF"
+                font "fonts/day_font.ttf"
+                xalign 0.5
+
+            add Solid("#FFFFFF", xysize=(600, 2)):
+                xalign 0.5
+
 # -----------------------------------
 # Ecran pour Kami quand il parle :
 
