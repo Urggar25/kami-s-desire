@@ -74,6 +74,16 @@ screen pnc_cafeteria():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+    if free_time_active and mara_link in [0, 2, 4]:
+        imagebutton:
+            idle "images/character/mara/sourire.png"
+            hover "images/character/mara/neutre.png"
+            focus_mask True
+            xalign 0.68
+            yalign 0.78
+            zoom 0.45
+            action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("MARA_LINK_INTERACT")]
+
 
 label CAF_PNC_GOUMI:
 

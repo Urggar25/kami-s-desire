@@ -65,6 +65,16 @@ screen pnc_gymnase():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+    if free_time_active and elias_link in [0, 2, 4]:
+        imagebutton:
+            idle "images/character/elias/neutre.png"
+            hover "images/character/elias/ecoute.png"
+            focus_mask True
+            xalign 0.78
+            yalign 0.78
+            zoom 0.45
+            action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("ELIAS_LINK_INTERACT")]
+
 
 label GYM_PNC_TAPIS:
     "Le tapis est encore tiède."

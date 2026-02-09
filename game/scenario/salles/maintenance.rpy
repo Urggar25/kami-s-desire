@@ -65,6 +65,16 @@ screen pnc_maintenance():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+    if free_time_active and elias_link in [1, 3]:
+        imagebutton:
+            idle "images/character/elias/neutre.png"
+            hover "images/character/elias/reflechit.png"
+            focus_mask True
+            xalign 0.72
+            yalign 0.76
+            zoom 0.45
+            action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("ELIAS_LINK_INTERACT")]
+
 
 label MAINT_PNC_ETABLI:
     "Un établi métallique."

@@ -45,7 +45,7 @@ image map_stockage_hover        = "images/carte/stockage_hover.png"
 #  SCREEN — CARTE CONCLAVE
 # =========================
 
-screen conclave_map():
+screen conclave_map(allow_return=False):
 
     modal True
     zorder 200
@@ -55,6 +55,10 @@ screen conclave_map():
 
     # BG COVER — c'est LUI qui définit le scaling réel
     add "images/carte/bg_map.png" at cover_screen
+
+    if allow_return:
+        key "game_menu" action Return()
+        key "K_ESCAPE" action Return()
 
     # --- HOTSPOTS (full-screen overlays) ---
     # IMPORTANT : xpos/ypos 0 + at cover_screen, comme ton modèle

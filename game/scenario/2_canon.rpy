@@ -1040,7 +1040,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     "Je ne sais pas qui va craquer."
     "Je ne sais pas si ce sera moi."
 
-    jump _2_APRES_MIDI
+    call START_FREE_TIME("_2_APRES_MIDI")
 
 # Durée : 3m50
 # Total : 1h 14m 50s
