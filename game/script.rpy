@@ -444,11 +444,12 @@ label _init_cinema_params:
 label start:
     call _init_cinema_params from _call__init_cinema_params
     menu:
-        "Activer contenu PEGI 18 ?":
-            "Oui":
-                $ persistent.pegi18 = True
-            "Non":
-                $ persistent.pegi18 = False
+        "Activer contenu PEGI 18 ?"
+
+        "Oui":
+            $ persistent.pegi18 = True
+        "Non":
+            $ persistent.pegi18 = False
     jump _0_CANON
 
 
