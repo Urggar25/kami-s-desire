@@ -114,7 +114,7 @@ label _1_CANON:
     $ showP("ryn", "colere2", 0.22)        # réaction
     $ showP("lysa", "blase", 0.78)      # réaction
 
-    mara "Tu veux dire… à part l’IA qui contrôle le monde ?"
+    mara "Tu veux dire… à part l’IA qui tient le monde en laisse ?"
 
     ryn "Je parle de ce qui nous arrive, là, maintenant."
     ryn "Qui nous a endormis."
@@ -218,9 +218,9 @@ label _1_CANON:
     $ showP("noam", "neutre", 0.78)
 
     mara "J’adore."
-    mara "On est douze."
-    mara "On est coincés ici. Sans savoir quoi faire."
-    mara "Et le boss n’est même pas là."
+    mara "Douze invités, zéro hôte."
+    mara "Coincés ici sans mode d’emploi."
+    mara "Et le boss n’est même pas là pour l’entrée."
 
     hide noam
     $ showP("tomas", "reflechit", 0.78)  # droite
@@ -706,9 +706,9 @@ label _1_KAMI_APPARITION:
     $ showP("noam", "inquiet", 0.50)
     $ showP("lysa", "surpris", 0.78)
 
-    mara "Vous êtes tous en train de parler comme si on avait gagné un droit."
+    mara "Vous parlez tous comme si on venait de gagner un droit."
     mara "On est dans une cage."
-    mara "Une cage avec un bouton 'vote'."
+    mara "Une cage avec un bouton 'vote' et un joli ruban dessus."
 
     $ showP("lysa", "colere", 0.78)
     lysa "Merci pour le rappel."
@@ -985,7 +985,8 @@ label KAMI_MESSAGE_APRES_VISITE:
 
     mara "Chut."
     mara "T’as entendu."
-    mara "Kami ne pardonne pas qu’on lui fasse perdre son temps."
+    mara "Kami ne pardonne pas qu’on lui fasse perdre son temps, paraît-il."
+    mara "Et j’ai pas envie d’être dans sa ligne de mire."
 
     hide lysa
     $ showP("iris", "fatigue", 0.22)
@@ -1287,7 +1288,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     $ showP("mara", "neutre", 0.78)
 
     mara "C’est pas un risque."
-    mara "C’est une constante ça."
+    mara "C’est ta signature ... Comment tu t'appelles déjà ?"
+
+    "Personne ne lui réponds vraiment."
 
     pause 0.3
 
@@ -1898,11 +1901,11 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     $ showP("mara", "sourire", 0.50)
 
     mara "Moi j’ai arrêté d’y penser."
-    mara "Sinon je devenais folle."
+    mara "Sinon je risquais de devenais folle."
 
     mara "J’ai écrit."
     mara "Point."
-    mara "Et tant pis."
+    mara "Et tant pis si ça ne vous plait pas."
 
     think "Tant pis."
     think "Facile à dire."
@@ -1931,7 +1934,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     think "C’est étrange."
     think "On dirait presque une soirée normale."
 
-    mara "Vous pensez qu’elle regarde là ?"
+    mara "Vous pensez qu’elle regarde là ? Genre, là ? Maintenant ?"
 
     julian "Sûrement."
     julian "Mais honnêtement ?"
@@ -2021,7 +2024,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     nyra "Tenir quelque chose de chaud."
 
     mara "Ouais."
-    mara "Ça rassure."
+    mara "C'est con mais ça rassure."
     mara "Un peu."
 
     "Je prends la tasse."

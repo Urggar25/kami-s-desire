@@ -412,7 +412,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     elen "Tu veux t’asseoir avec nous ?"
 
     mara "Je suis très bien là."
-    mara "Je préfère voir tout le monde."
+    mara "Je préfère voir tout le monde, histoire de voir vos tronches lors de l'annonce."
 
     pause 0.4
 
@@ -639,6 +639,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     $ showP("mara", "neutre", 0.60)
 
     mara "Ça va laisser des traces."
+    mara "Et pas que sur le papier."
 
     hide sael
     $ showP("kael", "neutre", 0.86)
@@ -748,6 +749,7 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     mara "Le piège, c’est nous."
     mara "On a nos districts, nos besoins, nos secrets."
+    mara "Et nos égos, tant qu’à faire."
 
     hide sael
     $ showP("nyra", "raison", 0.86)
@@ -827,7 +829,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide sael
     $ showP("mara", "neutre", 0.86)
 
-    mara "C’est bien beau tout ça mais qui contrôlera ces échanges ?"
+    mara "C’est bien beau tout ça, mais qui contrôlera ces échanges ?"
 
     tomas "On n’a pas les détails."
 
@@ -835,6 +837,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     kael "On devra décider sans."
 
     mara "Décider à l’aveugle, ou presque."
+    mara "J’adore quand on improvise avec nos vies."
 
     tomas "Alors on doit se faire confiance."
 
@@ -925,8 +928,9 @@ label _2_CAFETERIA_POST_ANNONCE:
     $ showP("mara", "neutre", 0.86)
 
     mara "On n’aura pas forcément la même position de vote."
-    mara "Certains de nos districts n’ont rien en commun. Notre histoire est différente. Notre mode de vie aussi."
-    mara "D’autres en ont trop."
+    mara "Certains de nos districts n’ont rien en commun."
+    mara "Notre histoire est différente, notre mode de vie aussi."
+    mara "D’autres ont trop de points communs."
     mara "Et là, d’un coup, on nous demande de trouver un équilibre dans tout ce foutoir ?!"
 
     $ showP("nyra", "neutre", 0.55)
@@ -1017,6 +1021,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     iris "Alors on ne craque pas."
 
     mara "Plus facile à dire."
+    mara "Surtout quand tout le monde regarde."
 
     hide mara
     $ showP("sael", "mefiant", 0.86)
