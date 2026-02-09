@@ -1242,40 +1242,40 @@ label _2_SALLE_OBSERVATION:
 
     $ showP("kael", "neutre", 0.50)
 
-    noam "Tu sais où on est ?"
-    noam "Enfin… précisément."
+    noam hesitation "Tu sais où on est ?"
+    noam hesitation "Enfin… précisément."
 
-    kael "Non."
-    kael "Mais je reconnais des pièces."
-    kael "Du matériel Orbite."
+    kael neutre "Non."
+    kael ecoute "Mais je reconnais des pièces."
+    kael neutre "Du matériel Orbite."
 
-    noam "Donc on est bien proches de chez toi."
+    noam raison "Donc on est bien proches de chez toi."
 
-    kael "Ou on nous a recyclés à partir de là-bas."
-    kael "Ce qui revient presque au même."
+    kael doute "Ou on nous a recyclés à partir de là-bas."
+    kael neutre "Ce qui revient presque au même."
 
-    noam "Ça te rassure ?"
+    noam inquiet "Ça te rassure ?"
 
-    kael "Ça me met en colère."
-    kael "Parce que ça veut dire qu’ils avaient tout prévu."
-    kael "Le lieu, le calendrier, nos réactions."
+    kael colere "Ça me met en colère."
+    kael colere "Parce que ça veut dire qu’ils avaient tout prévu."
+    kael colere "Le lieu, le calendrier, nos réactions."
 
-    noam "Tu crois qu’ils ont prévu le vote aussi ?"
+    noam inquiet "Tu crois qu’ils ont prévu le vote aussi ?"
 
-    kael "Ils l’ont fabriqué."
-    kael "Pour que ça paraisse raisonnable."
-    kael "Et pour que nous nous divisons sur des détails."
+    kael mefiant "Ils l’ont fabriqué."
+    kael mefiant "Pour que ça paraisse raisonnable."
+    kael mefiant "Et pour que nous nous divisons sur des détails."
 
-    noam "On n’est pas encore divisés."
+    noam raison "On n’est pas encore divisés."
 
-    kael "On l’est déjà."
-    kael "La peur ne met pas les mêmes mots dans toutes les bouches."
+    kael sombre "On l’est déjà."
+    kael sombre "La peur ne met pas les mêmes mots dans toutes les bouches."
 
-    noam "Tu parles comme si tu avais déjà choisi."
+    noam inquiet "Tu parles comme si tu avais déjà choisi."
 
-    kael "Non."
-    kael "Je me prépare."
-    kael "C’est différent."
+    kael neutre "Non."
+    kael raison "Je me prépare."
+    kael neutre "C’est différent."
 
     pause 0.6
 
@@ -1288,11 +1288,11 @@ label _2_SALLE_OBSERVATION:
     play music "music/bgm_system_override.mp3" fadein 0.8
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Petit rappel."
-    kami "Le vote aura lieu demain."
-    kami "Quatorze heures."
-    kami "Soyez ponctuels."
-    kami "Et soyez unanimes."
+    kami neutre "Petit rappel."
+    kami neutre "Le vote aura lieu demain."
+    kami neutre "Quatorze heures."
+    kami neutre "Soyez ponctuels."
+    kami neutre "Et soyez unanimes."
 
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
@@ -1300,26 +1300,26 @@ label _2_SALLE_OBSERVATION:
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
-    noam "Quatorze heures."
-    noam "C’est proche."
+    noam neutre "Quatorze heures."
+    noam inquiet "C’est proche."
 
-    kael "C’est voulu."
-    kael "Ils veulent qu’on manque de temps."
+    kael mefiant "C’est voulu."
+    kael mefiant "Ils veulent qu’on manque de temps."
 
-    noam "Tu penses qu’on peut tenir un consensus ?"
+    noam inquiet "Tu penses qu’on peut tenir un consensus ?"
 
-    kael "On peut tenir une ligne."
-    kael "Pas forcément une paix."
+    kael raison "On peut tenir une ligne."
+    kael neutre "Pas forcément une paix."
 
-    noam "Quelle ligne ?"
+    noam hesitation "Quelle ligne ?"
 
-    kael "Le respect."
-    kael "Si on le perd, on est fichus."
+    kael raison "Le respect."
+    kael sombre "Si on le perd, on est fichus."
 
-    noam "Tu crois que tout le monde peut faire ça ?"
+    noam inquiet "Tu crois que tout le monde peut faire ça ?"
 
-    kael "Non."
-    kael "Mais si on commence par les écouter, peut-être."
+    kael neutre "Non."
+    kael raison "Mais si on commence par les écouter, peut-être."
 
     hide kael
 
@@ -1344,50 +1344,50 @@ label _2_SALLE_OBSERVATION:
     $ showP("iris", "determine", 0.35)
     $ showP("elias", "neutre", 0.65)
 
-    iris "Encore."
-    iris "Plus vite."
+    iris determine "Encore."
+    iris determine "Plus vite."
 
-    elias "Respire."
-    elias "C’est pas une course."
+    elias ecoute "Respire."
+    elias neutre "C’est pas une course."
 
-    iris "Justement."
-    iris "J’ai besoin de sentir que ça bouge."
+    iris determine "Justement."
+    iris determine "J’ai besoin de sentir que ça bouge."
 
-    elias "On bouge tous."
-    elias "Mais pas forcément dans la bonne direction."
+    elias neutre "On bouge tous."
+    elias raison "Mais pas forcément dans la bonne direction."
 
-    iris "Parle pour toi."
-    iris "Moi je sais où je vais."
+    iris taquin "Parle pour toi."
+    iris determine "Moi je sais où je vais."
 
-    elias "Tu vas où ?"
+    elias ecoute "Tu vas où ?"
 
-    iris "Vers demain."
-    iris "Vers leur foutu vote."
-    iris "Pour leur montrer qu’on n’est pas des figurants."
+    iris determine "Vers demain."
+    iris determine "Vers leur foutu vote."
+    iris determine "Pour leur montrer qu’on n’est pas des figurants."
 
-    elias "Être un figurant, ça fait mal."
-    elias "Mais être une cible, c’est pire."
+    elias reflechit "Être un figurant, ça fait mal."
+    elias neutre "Mais être une cible, c’est pire."
 
-    iris "Tu me dis d’être prudente ?"
+    iris determine "Tu me dis d’être prudente ?"
 
-    elias "Je te dis d’être lucide."
+    elias raison "Je te dis d’être lucide."
 
-    iris "Je le suis."
-    iris "C’est pour ça que je tape plus fort."
+    iris determine "Je le suis."
+    iris determine "C’est pour ça que je tape plus fort."
 
-    elias "Tu te fais mal."
+    elias inquiet "Tu te fais mal."
 
-    iris "J’ai besoin de quelque chose de clair."
-    iris "De net."
-    iris "Les mots, c’est flou."
+    iris determine "J’ai besoin de quelque chose de clair."
+    iris determine "De net."
+    iris determine "Les mots, c’est flou."
 
-    elias "Les mots, ça tient."
-    elias "Du moins si tu les poses droit."
+    elias raison "Les mots, ça tient."
+    elias reflechit "Du moins si tu les poses droit."
 
-    iris "Et si on les pose mal ?"
+    iris intervention "Et si on les pose mal ?"
 
-    elias "Alors on s’excuse."
-    elias "Et on recommence."
+    elias raison "Alors on s’excuse."
+    elias neutre "Et on recommence."
 
     pause 0.6
 
@@ -1417,119 +1417,119 @@ label _2_SALLE_OBSERVATION:
     $ showP("elen", "inquiet", 0.50)
     $ showP("tomas", "inquiet", 0.80)
 
-    nyra "On a dit qu’on commençait par les besoins."
-    nyra "Pas par les rêves."
+    nyra raison "On a dit qu’on commençait par les besoins."
+    nyra raison "Pas par les rêves."
 
-    elen "Mais les rêves, c’est aussi un besoin."
+    elen inquiet "Mais les rêves, c’est aussi un besoin."
 
-    nyra "Oui."
-    nyra "Mais ça ne se pèse pas."
+    nyra raison "Oui."
+    nyra raison "Mais ça ne se pèse pas."
 
-    tomas "On peut dire ce qui manque."
-    tomas "Sans dire ce qu’on a."
-    tomas "Peut-être."
+    tomas inquiet "On peut dire ce qui manque."
+    tomas inquiet "Sans dire ce qu’on a."
+    tomas panne "Peut-être."
 
-    nyra "Et comment on échange si on ne sait pas ce qu’on a ?"
+    nyra raison "Et comment on échange si on ne sait pas ce qu’on a ?"
 
-    tomas "On peut dire des catégories."
-    tomas "Comme ça personne ne se sent trop exposé."
+    tomas inquiet "On peut dire des catégories."
+    tomas inquiet "Comme ça personne ne se sent trop exposé."
 
-    elen "Des catégories ?"
+    elen inquiet "Des catégories ?"
 
-    tomas "Oui."
-    tomas "Alimentation."
-    tomas "Médical."
-    tomas "Technologie."
-    tomas "Éducation."
+    tomas inquiet "Oui."
+    tomas inquiet "Alimentation."
+    tomas inquiet "Médical."
+    tomas inquiet "Technologie."
+    tomas inquiet "Éducation."
 
-    nyra "Ça devient un inventaire."
+    nyra raison "Ça devient un inventaire."
 
-    elen "Ce serait déjà bien."
+    elen inquiet "Ce serait déjà bien."
 
-    nyra "Ce serait dangereux."
+    nyra raison "Ce serait dangereux."
 
-    tomas "Pourquoi ?"
+    tomas inquiet "Pourquoi ?"
 
-    nyra "Parce que ceux qui ont pourront demander des choses en échange."
-    nyra "Et ceux qui n’ont rien…"
+    nyra raison "Parce que ceux qui ont pourront demander des choses en échange."
+    nyra raison "Et ceux qui n’ont rien…"
 
-    elen "On ne les laissera pas tomber."
+    elen inquiet "On ne les laissera pas tomber."
 
-    nyra "Tu ne peux pas promettre pour tout le monde."
+    nyra raison "Tu ne peux pas promettre pour tout le monde."
 
-    elen "Je peux promettre pour moi."
+    elen inquiet "Je peux promettre pour moi."
 
-    nyra "Et moi, je peux promettre de te rappeler que ça ne suffit pas."
+    nyra raison "Et moi, je peux promettre de te rappeler que ça ne suffit pas."
 
     hide tomas
     $ showP("kael", "neutre", 0.80)
 
-    kael "On ne parle pas de promesse."
-    kael "On parle d’un cadre."
-    kael "Le but, c’est d’éviter les surenchères."
+    kael raison "On ne parle pas de promesse."
+    kael raison "On parle d’un cadre."
+    kael raison "Le but, c’est d’éviter les surenchères."
 
-    elen "On peut décider de limiter."
+    elen inquiet "On peut décider de limiter."
 
-    nyra "Limiter quoi ?"
+    nyra raison "Limiter quoi ?"
 
-    kael "Les demandes."
-    kael "Les échanges."
-    kael "Une règle simple."
+    kael raison "Les demandes."
+    kael raison "Les échanges."
+    kael raison "Une règle simple."
 
-    nyra "Et qui surveille ?"
+    nyra raison "Et qui surveille ?"
 
-    kael "On se surveille."
+    kael mefiant "On se surveille."
 
-    nyra "C’est ça le piège."
+    nyra raison "C’est ça le piège."
 
     hide elen
     $ showP("iris", "determine", 0.50)
 
-    iris "Vous parlez comme si on avait le choix."
-    iris "Kami nous donne un vote."
-    iris "On vote."
-    iris "Après, on gère."
+    iris determine "Vous parlez comme si on avait le choix."
+    iris determine "Kami nous donne un vote."
+    iris determine "On vote."
+    iris determine "Après, on gère."
 
-    kael "Si on vote oui."
+    kael neutre "Si on vote oui."
 
-    iris "Et si on vote non, on gère quand même."
+    iris determine "Et si on vote non, on gère quand même."
 
-    nyra "On gère différemment."
+    nyra raison "On gère différemment."
 
-    iris "On gère dans le noir."
+    iris determine "On gère dans le noir."
 
-    nyra "On est déjà dans le noir."
+    nyra raison "On est déjà dans le noir."
 
-    kael "On est dans un couloir."
-    kael "On peut encore choisir la porte."
+    kael raison "On est dans un couloir."
+    kael raison "On peut encore choisir la porte."
 
-    iris "Tu crois que c’est une porte ?"
+    iris determine "Tu crois que c’est une porte ?"
 
-    kael "C’est ça ou un mur."
+    kael neutre "C’est ça ou un mur."
 
-    nyra "Arrêtez."
-    nyra "On n’a pas besoin d’image."
-    nyra "On a besoin d’une décision."
+    nyra raison "Arrêtez."
+    nyra raison "On n’a pas besoin d’image."
+    nyra raison "On a besoin d’une décision."
 
     hide iris
     $ showP("mara", "neutre", 0.50)
 
-    mara "La décision ne peut pas être prise sans informations."
-    mara "Et on n’en a pas."
+    mara neutre "La décision ne peut pas être prise sans informations."
+    mara neutre "Et on n’en a pas."
 
-    kael "Alors on en fabrique."
+    kael mefiant "Alors on en fabrique."
 
-    mara "Ce n’est pas de l’information."
-    mara "C’est de la fiction."
+    mara doute "Ce n’est pas de l’information."
+    mara doute "C’est de la fiction."
 
-    nyra "La fiction, ça tient quand tout s’effondre."
+    nyra raison "La fiction, ça tient quand tout s’effondre."
 
-    mara "Ça tient jusqu’à demain."
+    mara stress "Ça tient jusqu’à demain."
 
-    tomas "On peut appeler ça un plan."
-    tomas "Un plan temporaire."
+    tomas inquiet "On peut appeler ça un plan."
+    tomas inquiet "Un plan temporaire."
 
-    mara "Un plan temporaire, c’est un plan quand même."
+    mara neutre "Un plan temporaire, c’est un plan quand même."
 
     pause 0.6
 
@@ -1545,27 +1545,27 @@ label _2_SALLE_OBSERVATION:
     $ showP("elen", "inquiet", 0.50)
     $ showP("tomas", "inquiet", 0.80)
 
-    julian "On peut faire simple."
-    julian "On liste les besoins, point."
-    julian "Sans chiffres."
-    julian "Sans détails."
+    julian taquin "On peut faire simple."
+    julian reflexion "On liste les besoins, point."
+    julian reflexion "Sans chiffres."
+    julian reflexion "Sans détails."
 
-    tomas "Tu crois que ça suffira ?"
+    tomas inquiet "Tu crois que ça suffira ?"
 
-    julian "Ça suffira pour aujourd’hui."
-    julian "Demain on improvisera."
+    julian reflexion "Ça suffira pour aujourd’hui."
+    julian reflexion "Demain on improvisera."
 
-    elen "Improviser, ça me fait peur."
+    elen inquiet "Improviser, ça me fait peur."
 
-    julian "Moi aussi."
+    julian sourire "Moi aussi."
 
-    elen "Alors pourquoi tu souris ?"
+    elen inquiet "Alors pourquoi tu souris ?"
 
-    julian "Parce que si je ne souris pas, je tremble."
+    julian taquin "Parce que si je ne souris pas, je tremble."
 
-    elen "Je tremble déjà."
+    elen inquiet "Je tremble déjà."
 
-    julian "Alors on tremblera ensemble."
+    julian taquin "Alors on tremblera ensemble."
 
     hide julian
     hide elen
@@ -1588,29 +1588,29 @@ label _2_SALLE_OBSERVATION:
     $ showP("ryn", "neutre", 0.20)
     $ showP("mara", "neutre", 0.60)
 
-    ryn "Tu vas voter quoi ?"
+    ryn neutre "Tu vas voter quoi ?"
 
-    mara "Je ne sais pas."
+    mara neutre "Je ne sais pas."
 
-    ryn "Tu sais très bien."
+    ryn reflechit "Tu sais très bien."
 
-    mara "Je sais ce que je risque."
+    mara stress "Je sais ce que je risque."
 
-    ryn "Alors tu sais."
+    ryn reflechit "Alors tu sais."
 
-    mara "Et toi ?"
+    mara neutre "Et toi ?"
 
-    ryn "Moi, je veux être libre."
+    ryn neutre "Moi, je veux être libre."
 
-    mara "Libre de quoi ?"
+    mara doute "Libre de quoi ?"
 
-    ryn "De devoir quelque chose."
-    ryn "De devoir des explications."
-    ryn "De devoir une loyauté."
+    ryn reflechit "De devoir quelque chose."
+    ryn reflechit "De devoir des explications."
+    ryn reflechit "De devoir une loyauté."
 
-    mara "On est déjà redevables."
+    mara neutre "On est déjà redevables."
 
-    ryn "Pas encore."
+    ryn fatigue "Pas encore."
 
     hide ryn
     hide mara
@@ -1630,147 +1630,147 @@ label _2_SALLE_OBSERVATION:
 
     $ showP("kael", "neutre", 0.20)
 
-    kael "À Orbite, on mangeait souvent en décalé."
-    kael "Les cycles n’étaient pas les mêmes."
-    kael "Le silence faisait partie du travail."
+    kael neutre "À Orbite, on mangeait souvent en décalé."
+    kael neutre "Les cycles n’étaient pas les mêmes."
+    kael neutre "Le silence faisait partie du travail."
 
-    noam "Tu regrettes ?"
+    noam hesitation "Tu regrettes ?"
 
-    kael "Ce qui me manque, c’est la routine."
-    kael "Pas l’endroit."
+    kael neutre "Ce qui me manque, c’est la routine."
+    kael neutre "Pas l’endroit."
 
     $ showP("nyra", "taquin", 0.80)
 
-    nyra "Orbite, c’était comment ?"
-    nyra "On entend tout et n’importe quoi."
-    nyra "Des gens qui dorment en apesanteur."
-    nyra "Des repas qui flottent."
+    nyra taquin "Orbite, c’était comment ?"
+    nyra taquin "On entend tout et n’importe quoi."
+    nyra taquin "Des gens qui dorment en apesanteur."
+    nyra taquin "Des repas qui flottent."
 
-    kael "On flotte, oui."
-    kael "Mais on fait quand même la vaisselle."
+    kael neutre "On flotte, oui."
+    kael neutre "Mais on fait quand même la vaisselle."
 
-    nyra "Quelle déception."
+    nyra taquin "Quelle déception."
 
     $ showP("tomas", "curieux", 0.50)
 
-    tomas "Et… euh… vous aviez aussi des médiateurs ?"
-    tomas "Des… assemblées ?"
+    tomas inquiet "Et… euh… vous aviez aussi des médiateurs ?"
+    tomas inquiet "Des… assemblées ?"
 
-    kael "Pas comme ici."
-    kael "On réglait les choses autrement."
-    kael "Avec des protocoles."
-    kael "Et moins de spectacle."
+    kael raison "Pas comme ici."
+    kael raison "On réglait les choses autrement."
+    kael raison "Avec des protocoles."
+    kael raison "Et moins de spectacle."
 
-    noam "Ça te fait quoi de tout revoir ici ?"
+    noam inquiet "Ça te fait quoi de tout revoir ici ?"
 
-    kael "Ça me donne envie de comprendre."
-    kael "Et de ne plus obéir par réflexe."
+    kael raison "Ça me donne envie de comprendre."
+    kael raison "Et de ne plus obéir par réflexe."
 
-    nyra "Et si tu comprends pas ?"
+    nyra raison "Et si tu comprends pas ?"
 
-    kael "Alors j’essaie quand même."
+    kael neutre "Alors j’essaie quand même."
 
-    tomas "Et si on fait une erreur ?"
+    tomas inquiet "Et si on fait une erreur ?"
 
-    kael "On la porte."
+    kael neutre "On la porte."
 
-    nyra "Ça fait lourd."
+    nyra raison "Ça fait lourd."
 
-    kael "Ça l’est."
+    kael neutre "Ça l’est."
 
     hide nyra
     $ showP("elen", "triste", 0.80)
 
-    elen "Je me demande."
-    elen "Si nos familles nous regardent."
+    elen triste "Je me demande."
+    elen triste "Si nos familles nous regardent."
 
-    noam "Je me le demande aussi."
+    noam neutre "Je me le demande aussi."
 
-    elen "S’ils nous voient, ils doivent avoir peur."
-    elen "Et si on vote mal, ils auront plus peur."
+    elen triste "S’ils nous voient, ils doivent avoir peur."
+    elen triste "Et si on vote mal, ils auront plus peur."
 
-    kael "On ne vote pas pour eux."
+    kael raison "On ne vote pas pour eux."
 
-    elen "Mais ils vivent avec nos décisions."
+    elen triste "Mais ils vivent avec nos décisions."
 
-    kael "Oui."
-    kael "C’est ça, être ici."
+    kael neutre "Oui."
+    kael sombre "C’est ça, être ici."
 
-    elen "Je déteste ça."
+    elen triste "Je déteste ça."
 
-    nyra "On déteste tous."
+    nyra raison "On déteste tous."
 
-    elen "Alors on fait quoi ?"
+    elen inquiet "Alors on fait quoi ?"
 
-    nyra "On tient."
+    nyra raison "On tient."
 
-    elen "C’est tout ?"
+    elen inquiet "C’est tout ?"
 
-    nyra "Pour aujourd’hui, oui."
+    nyra raison "Pour aujourd’hui, oui."
 
     hide elen
     hide nyra
 
     $ showP("ryn", "neutre", 0.80)
 
-    ryn "Vous êtes calmes."
-    ryn "Je m’attendais à des cris."
+    ryn neutre "Vous êtes calmes."
+    ryn neutre "Je m’attendais à des cris."
 
-    kael "Tu es déçue ?"
+    kael neutre "Tu es déçue ?"
 
-    ryn "Non."
-    ryn "Les cris viennent après."
+    ryn neutre "Non."
+    ryn reflechit "Les cris viennent après."
 
-    noam "Tu penses qu’on va se déchirer ?"
+    noam inquiet "Tu penses qu’on va se déchirer ?"
 
-    ryn "Je pense qu’on va se découvrir."
-    ryn "Et ce n’est pas toujours beau."
+    ryn reflechit "Je pense qu’on va se découvrir."
+    ryn reflechit "Et ce n’est pas toujours beau."
 
-    kael "On n’est pas obligés d’être beaux."
-    kael "On doit être honnêtes."
+    kael raison "On n’est pas obligés d’être beaux."
+    kael raison "On doit être honnêtes."
 
-    ryn "L’honnêteté, c’est dangereux."
-    ryn "Elle donne des angles d’attaque."
+    ryn fatigue "L’honnêteté, c’est dangereux."
+    ryn fatigue "Elle donne des angles d’attaque."
 
-    noam "Elle donne aussi des points d’appui."
+    noam raison "Elle donne aussi des points d’appui."
 
-    ryn "Peut-être."
-    ryn "Mais je n’ai pas envie d’être un point d’appui."
+    ryn reflechit "Peut-être."
+    ryn reflechit "Mais je n’ai pas envie d’être un point d’appui."
 
-    kael "Tu veux être quoi, alors ?"
+    kael neutre "Tu veux être quoi, alors ?"
 
-    ryn "Libre."
+    ryn neutre "Libre."
 
-    noam "Tu ne crois pas qu’on puisse être libre ensemble ?"
+    noam inquiet "Tu ne crois pas qu’on puisse être libre ensemble ?"
 
-    ryn "Je ne sais pas."
-    ryn "Je n’ai jamais essayé."
+    ryn reflechit "Je ne sais pas."
+    ryn reflechit "Je n’ai jamais essayé."
 
-    kael "Alors c’est l’occasion."
+    kael raison "Alors c’est l’occasion."
 
-    noam "Qu'est ce que tu vas voter ?"
+    noam hesitation "Qu'est ce que tu vas voter ?"
 
-    ryn "Je ne sais pas vraiment. Je vais écouter."
-    ryn "Et je me déciderai demain."
+    ryn reflechit "Je ne sais pas vraiment. Je vais écouter."
+    ryn reflechit "Et je me déciderai demain."
 
-    kael "Ce sera tard."
+    kael neutre "Ce sera tard."
 
-    ryn "C'est sans doute mieux comme ça."
+    ryn reflechit "C'est sans doute mieux comme ça."
 
-    noam "Tu refuses de t’engager ?"
+    noam inquiet "Tu refuses de t’engager ?"
 
-    ryn "Je refuse qu’on m’engage."
+    ryn fatigue "Je refuse qu’on m’engage."
 
-    noam "Tu as raison d’être prudente."
-    noam "Mais si tu ne parles pas, on parlera pour toi."
+    noam raison "Tu as raison d’être prudente."
+    noam inquiet "Mais si tu ne parles pas, on parlera pour toi."
 
-    ryn "Alors je parlerai."
-    ryn "Quand ça comptera."
+    ryn reflechit "Alors je parlerai."
+    ryn reflechit "Quand ça comptera."
 
-    kael "Ça compte déjà."
+    kael sombre "Ça compte déjà."
 
-    ryn "Tout compte déjà."
-    ryn "Et c’est pour ça que je me tais."
+    ryn fatigue "Tout compte déjà."
+    ryn fatigue "Et c’est pour ça que je me tais."
 
     hide ryn
 
