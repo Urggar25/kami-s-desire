@@ -117,109 +117,110 @@ label elias_link_2:
     scene bg_maintenance at adaptive_fullscreen
 
     $ showP("elias", "ecoute", 0.65)
+    $ showP("noam", "reflexion", 0.25)
 
-    elias "Le bras d'articulation a pris du jeu."
-    elias "Trois millimètres."
-    elias "C'est suffisant pour fausser tout l'angle."
+    elias ecoute "Le bras d'articulation a pris du jeu."
+    elias reflechit "Trois millimètres."
+    elias reflechit "C'est suffisant pour fausser tout l'angle."
 
     "Je le regarde mesurer, puis noter quelque chose sur un carnet."
 
-    elias "Si je resserre trop, ça risque de casser."
-    elias "Mais si je laisse, ça va dériver."
-    elias "Il faut trouver le bon point."
+    elias ecoute "Si je resserre trop, ça risque de casser."
+    elias fatigue "Mais si je laisse, ça va dériver."
+    elias reflechit "Il faut trouver le bon point."
 
-    noam "Et ... Tu fais ça comment ?"
+    noam hesitation "Et ... Tu fais ça comment ?"
 
-    elias "Je teste."
-    elias "Je corrige."
-    elias "Je recommence."
+    elias ecoute "Je teste."
+    elias ecoute "Je corrige."
+    elias reflechit "Je recommence."
 
     "Il s'arrête une seconde pour changer d'outil."
 
-    elias "J'ai appris ça en atelier."
-    elias "Crois moi, t'avais pas intéret à te tromper."
+    elias content "J'ai appris ça en atelier."
+    elias reflechit "Crois moi, t'avais pas intéret à te tromper."
 
-    noam "En atelier ? Tu as travaillé dans une grande boite ou quelque chose du genre ?"
+    noam reflexion "En atelier ? Tu as travaillé dans une grande boite ou quelque chose du genre ?"
 
-    elias "Un usine de maintenance automobile."
-    elias "Équipe de nuit."
-    elias "Ça payait le loyer."
+    elias ecoute "Un usine de maintenance automobile."
+    elias fatigue "Équipe de nuit."
+    elias ecoute "Ça payait le loyer."
 
-    noam "Et avec ça t'avais le temps de faire du sport sur le côté ?!"
+    noam surpris "Et avec ça t'avais le temps de faire du sport sur le côté ?!"
 
-    elias "Course."
-    elias "Tractions."
-    elias "Rien d'exotique."
+    elias ecoute "Course."
+    elias ecoute "Tractions."
+    elias reflechit "Rien d'exotique."
 
     "Il ajuste un câble, teste la tension."
 
-    elias "Le sport me gardait droit."
-    elias "Quand tu bosses la nuit, tu dois tenir la journée et même si c'est crevant, le sport, ça aide."
+    elias content "Le sport me gardait droit."
+    elias detendu "Quand tu bosses la nuit, tu dois tenir la journée et même si c'est crevant, le sport, ça aide."
 
-    noam "Tu pratiquais seul ou..."
+    noam hesitation "Tu pratiquais seul ou..."
 
-    elias "Des collègues."
-    elias "On se respectait."
-    elias "Pas besoin de plus."
+    elias ecoute "Des collègues."
+    elias ecoute "On se respectait."
+    elias reflechit "Pas besoin de plus."
 
     "Il serre une vis, puis vérifie avec un niveau."
 
-    elias "Le boulot, c'est pas la passion."
-    elias "C'est ce qui permet de survivre."
-    elias "Même si j'aime bien être entouré de ces machines."
+    elias reflechit "Le boulot, c'est pas la passion."
+    elias ecoute "C'est ce qui permet de survivre."
+    elias content "Même si j'aime bien être entouré de ces machines."
 
     "Il repose l'outil et regarde la machine comme si elle pouvait mentir."
 
-    elias "On n'avait pas de réseau."
-    elias "Pas de piston."
-    elias "Donc je bossais dur."
+    elias reflechit "On n'avait pas de réseau."
+    elias reflechit "Pas de piston."
+    elias ecoute "Donc je bossais dur."
 
-    noam "T'as jamais pensé à arrêter ?"
+    noam reflexion "T'as jamais pensé à arrêter ?"
 
-    elias "Arrêter pour quoi ?"
-    elias "Pour que je me retrouve dehors ?"
-    elias "Y'avait du taff, fallait que je le fasse, c'est tout."
+    elias ecoute "Arrêter pour quoi ?"
+    elias jaloux "Pour que je me retrouve dehors ?"
+    elias reflechit "Y'avait du taff, fallait que je le fasse, c'est tout."
 
     "Il secoue la tête, de façon presque imperceptible."
 
-    elias "Surtout quand il y avait la guerre..."
+    elias fatigue "Surtout quand il y avait la guerre..."
     "Il pose la paume sur la carcasse froide."
 
-    elias "Une panne, ça ne prévient pas."
-    elias "Et ça ne se discute pas."
+    elias ecoute "Une panne, ça ne prévient pas."
+    elias reflechit "Et ça ne se discute pas."
 
-    noam "La guerre, d'une certain façon tu étais concerné toi aussi ..."
+    noam hesitation "La guerre, d'une certain façon tu étais concerné toi aussi ..."
 
-    elias "C'est clair, tu ne peux même pas imaginer ..."
-    elias "L'échec, c'est quand tu n'as plus d'outil."
-    elias "Ou plus de temps."
-    elias "Le reste, c'est des ajustements."
+    elias ecoute "C'est clair, tu ne peux même pas imaginer ..."
+    elias reflechit "L'échec, c'est quand tu n'as plus d'outil."
+    elias fatigue "Ou plus de temps."
+    elias reflechit "Le reste, c'est des ajustements."
 
     "Il corrige encore, au millimètre."
 
-    elias "On croit gagner du temps, et on perd tout."
-    elias "Les approximations coûtent plus cher."
+    elias ecoute "On croit gagner du temps, et on perd tout."
+    elias reflechit "Les approximations coûtent plus cher."
 
     "Je remarque sa fatigue."
 
-    elias "Je supporte la fatigue."
-    elias "Je ne supporte pas l'inefficacité."
+    elias fatigue "Je supporte la fatigue."
+    elias jaloux "Je ne supporte pas l'inefficacité."
 
     "Il redresse les épaules."
 
-    elias "Si tu veux aider, tiens la lampe."
-    elias "Pas besoin de parler."
+    elias ecoute "Si tu veux aider, tiens la lampe."
+    elias reflechit "Pas besoin de parler."
 
     "Je tiens la lampe."
     "Il travaille en silence pendant plusieurs minutes."
 
-    elias "Merci."
-    elias "C'était utile."
+    elias content "Merci."
+    elias content "C'était utile."
 
     "Le mot sonne comme un compliment."
 
-    elias "Si tu reviens, viens à l'heure."
-    elias "Je n'attends pas."
+    elias reflechit "Si tu reviens, viens à l'heure."
+    elias ecoute "Je n'attends pas."
     "Il ne plaisante pas."
     "C'est une règle simple."
 
@@ -233,123 +234,124 @@ label elias_link_3:
     scene bg_gymnase at adaptive_fullscreen
 
     $ showP("elias", "reflechit", 0.70)
+    $ showP("noam", "reflexion", 0.25)
 
-    elias "Je devais réorganiser les stations."
-    elias "Mais il manque des pièces."
-    elias "On fera avec."
+    elias ecoute "Je devais réorganiser les stations."
+    elias reflechit "Mais il manque des pièces."
+    elias reflechit "On fera avec."
 
     "Il déplace un tapis, puis aligne les haltères."
 
-    elias "Je n'aime pas l'improvisation."
-    elias "Mais je sais m'adapter."
+    elias jaloux "Je n'aime pas l'improvisation."
+    elias ecoute "Mais je sais m'adapter."
 
     "Je lui demande ce qu'il entend par s'adapter."
 
-    elias "Tu gardes l'objectif."
-    elias "Tu changes la route."
+    elias reflechit "Tu gardes l'objectif."
+    elias ecoute "Tu changes la route."
 
     "Il me montre un support bricolé."
 
-    elias "J'ai récupéré ça dans le stock."
-    elias "Ça ne devait pas servir ici."
-    elias "Maintenant, si."
+    elias ecoute "J'ai récupéré ça dans le stock."
+    elias reflechit "Ça ne devait pas servir ici."
+    elias content "Maintenant, si."
 
     "Je lui demande s'il a souvent dû bricoler comme ça."
 
-    elias "Tout le temps."
-    elias "Quand tu n'as pas de budget, tu inventes."
+    elias ecoute "Tout le temps."
+    elias reflechit "Quand tu n'as pas de budget, tu inventes."
 
     "Sa façon de dire 'inventer' ressemble à 'réparer'."
 
-    elias "On récupère."
-    elias "On recompose."
-    elias "On ne gaspille pas."
+    elias ecoute "On récupère."
+    elias ecoute "On recompose."
+    elias jaloux "On ne gaspille pas."
 
     "Je lui demande s'il déteste le gaspillage."
 
-    elias "Oui."
-    elias "C'est une insulte à l'effort."
+    elias ecoute "Oui."
+    elias reflechit "C'est une insulte à l'effort."
 
-    elias "Mon quartier, c'était ça."
-    elias "Une pièce qui casse, une autre qui la remplace."
-    elias "Pas de fioritures."
+    elias ecoute "Mon quartier, c'était ça."
+    elias reflechit "Une pièce qui casse, une autre qui la remplace."
+    elias ecoute "Pas de fioritures."
 
     "Je lui dis que ça demande de la créativité."
 
-    elias "Non."
-    elias "Ça demande de la discipline."
+    elias jaloux "Non."
+    elias reflechit "Ça demande de la discipline."
 
     "Il essuie un banc."
 
-    elias "On a appris à respecter ce qui tient."
-    elias "Si ça tient, tu ne touches pas."
-    elias "Si ça lâche, tu répares."
+    elias ecoute "On a appris à respecter ce qui tient."
+    elias reflechit "Si ça tient, tu ne touches pas."
+    elias content "Si ça lâche, tu répares."
 
     "Je remarque qu'il garde tout à distance."
 
-    elias "Je ne suis pas là pour faire joli."
-    elias "Je suis là pour que ça marche."
+    elias reflechit "Je ne suis pas là pour faire joli."
+    elias ecoute "Je suis là pour que ça marche."
 
     "Je lui demande s'il s'autorise un moment de pause."
 
-    elias "Quand tout tient."
-    elias "Pas avant."
+    elias ecoute "Quand tout tient."
+    elias reflechit "Pas avant."
 
     "Il vérifie le serrage d'une vis."
 
-    elias "Je fais pareil avec les gens."
-    elias "Je regarde s'ils sont fiables."
+    elias reflechit "Je fais pareil avec les gens."
+    elias ecoute "Je regarde s'ils sont fiables."
 
     "Je demande comment il juge ça."
 
-    elias "Tu vois qui tient sa parole."
-    elias "Qui arrive à l'heure."
-    elias "Qui termine ce qu'il commence."
+    elias ecoute "Tu vois qui tient sa parole."
+    elias reflechit "Qui arrive à l'heure."
+    elias ecoute "Qui termine ce qu'il commence."
 
     "Je lui demande s'il pardonne les erreurs."
 
-    elias "Une fois."
-    elias "Après, c'est un choix."
+    elias reflechit "Une fois."
+    elias jaloux "Après, c'est un choix."
 
     "Il replace un tapis, puis souffle."
 
-    elias "Je ne suis pas dur."
-    elias "Je suis constant."
+    elias ecoute "Je ne suis pas dur."
+    elias reflechit "Je suis constant."
 
     "Il lève les yeux, une seconde."
 
-    elias "Le reste, c'est du bruit."
+    elias jaloux "Le reste, c'est du bruit."
 
     "Je lui demande s'il croit aux promesses."
 
-    elias "Je crois aux actes."
-    elias "Les promesses, ça se casse."
+    elias reflechit "Je crois aux actes."
+    elias ecoute "Les promesses, ça se casse."
 
     "Il replace une série d'haltères."
 
-    elias "Même ici, je note tout."
-    elias "Qui utilise quoi."
-    elias "Ce qui s'use."
+    elias reflechit "Même ici, je note tout."
+    elias ecoute "Qui utilise quoi."
+    elias ecoute "Ce qui s'use."
 
     "Je lui dis qu'il ressemble à un chef d'atelier."
 
-    elias "Je ne cherche pas à diriger."
-    elias "Je cherche à éviter les pertes."
+    elias ecoute "Je ne cherche pas à diriger."
+    elias reflechit "Je cherche à éviter les pertes."
 
     "Il ajuste encore un dernier détail."
 
-    elias "Quand les choses sont rangées, tu peux penser."
-    elias "Quand c'est le chaos, tu subis."
+    elias ecoute "Quand les choses sont rangées, tu peux penser."
+    elias reflechit "Quand c'est le chaos, tu subis."
 
     "Je lui demande s'il subit, ici."
 
-    elias "Pas encore."
-    elias "Mais je reste prêt."
+    elias ecoute "Pas encore."
+    elias reflechit "Mais je reste prêt."
 
     "Il souffle, puis se remet en place."
 
-    elias "L'effort calme."
-    elias "L'improvisation épuise."
+    elias reflechit "L'effort calme."
+    elias fatigue "L'improvisation épuise."
 
     "Je comprends qu'il parle de plus que du sport."
     "Il reste concentré."
@@ -365,122 +367,123 @@ label elias_link_4:
     scene bg_maintenance at adaptive_fullscreen
 
     $ showP("elias", "neutre", 0.68)
+    $ showP("noam", "reflexion", 0.25)
 
-    elias "Les règles évitent les discussions inutiles."
-    elias "Tout le monde sait quoi faire."
-    elias "Pas besoin d'interpréter les intentions."
+    elias reflechit "Les règles évitent les discussions inutiles."
+    elias ecoute "Tout le monde sait quoi faire."
+    elias reflechit "Pas besoin d'interpréter les intentions."
 
     "Il trace une ligne imaginaire sur la table."
 
-    elias "Là, c'est clair."
-    elias "Là, c'est flou."
+    elias ecoute "Là, c'est clair."
+    elias reflechit "Là, c'est flou."
 
     "Je lui demande s'il n'a jamais eu envie de sortir du cadre."
 
-    elias "Le cadre protège."
-    elias "Sans cadre, tu passes ton temps à négocier."
+    elias ecoute "Le cadre protège."
+    elias reflechit "Sans cadre, tu passes ton temps à négocier."
 
     "Il classe des outils par taille."
 
-    elias "J'ai vu des gens tout perdre pour une mauvaise décision."
-    elias "Un retard."
-    elias "Une prise de risque inutile."
+    elias ecoute "J'ai vu des gens tout perdre pour une mauvaise décision."
+    elias reflechit "Un retard."
+    elias fatigue "Une prise de risque inutile."
 
     "Je lui demande si c'est arrivé dans sa famille."
 
-    elias "Un accident."
-    elias "Un mois sans salaire."
-    elias "Tu apprends vite."
+    elias ecoute "Un accident."
+    elias fatigue "Un mois sans salaire."
+    elias reflechit "Tu apprends vite."
 
     "Il reste factuel, mais le silence qui suit est plus long."
 
-    elias "On n'avait pas de réserve."
-    elias "Pas d'excuse."
-    elias "Juste un trou à combler."
+    elias ecoute "On n'avait pas de réserve."
+    elias reflechit "Pas d'excuse."
+    elias ecoute "Juste un trou à combler."
 
     "Je lui demande comment ils ont tenu."
 
-    elias "Heures en plus."
-    elias "Moins de sommeil."
-    elias "Plus d'effort."
+    elias ecoute "Heures en plus."
+    elias fatigue "Moins de sommeil."
+    elias reflechit "Plus d'effort."
 
     "Il range des clés plates avec soin."
 
-    elias "Ça forge."
-    elias "Ça épuise aussi."
+    elias ecoute "Ça forge."
+    elias fatigue "Ça épuise aussi."
 
     "Je lui demande ce qu'il aurait voulu à ce moment-là."
 
-    elias "Un mois de calme."
-    elias "C'est tout."
+    elias reflechit "Un mois de calme."
+    elias ecoute "C'est tout."
 
     "Je comprends qu'il parle encore en termes de réparation."
 
-    elias "Le vote, c'est bien."
-    elias "Si le cadre est clair."
-    elias "Sinon, c'est du bruit."
+    elias reflechit "Le vote, c'est bien."
+    elias ecoute "Si le cadre est clair."
+    elias jaloux "Sinon, c'est du bruit."
 
     "Je lui demande s'il a déjà douté d'un cadre."
 
-    elias "Oui."
-    elias "Quand il est injuste."
-    elias "Mais on fait avec."
+    elias ecoute "Oui."
+    elias reflechit "Quand il est injuste."
+    elias fatigue "Mais on fait avec."
 
     "Il resserre sa prise sur un tournevis."
 
-    elias "Changer un cadre, c'est du chantier."
-    elias "On ne fait pas ça en parlant."
+    elias reflechit "Changer un cadre, c'est du chantier."
+    elias jaloux "On ne fait pas ça en parlant."
 
     "Je lui demande s'il se sent écouté, ici."
 
-    elias "Je ne parle pas beaucoup."
-    elias "Je fais."
+    elias ecoute "Je ne parle pas beaucoup."
+    elias reflechit "Je fais."
 
     "Il me lance un regard rapide."
 
-    elias "Les mots, ça se tord."
-    elias "Les gestes, non."
+    elias jaloux "Les mots, ça se tord."
+    elias ecoute "Les gestes, non."
 
-    elias "Tu veux me comprendre ?"
-    elias "Regarde ce que je tiens."
+    elias reflechit "Tu veux me comprendre ?"
+    elias ecoute "Regarde ce que je tiens."
 
     "Je regarde ses mains."
     "Elles sont marquées, mais calmes."
 
-    elias "J'ai appris à rester debout."
-    elias "Même quand tout le monde se plaint."
+    elias ecoute "J'ai appris à rester debout."
+    elias reflechit "Même quand tout le monde se plaint."
 
     "Je lui demande s'il n'a jamais eu envie d'être reconnu."
 
-    elias "La reconnaissance, ça ne répare rien."
-    elias "Si je fais bien, ça tient."
+    elias reflechit "La reconnaissance, ça ne répare rien."
+    elias ecoute "Si je fais bien, ça tient."
 
     "Il range un outil dans son étui."
 
-    elias "Je respecte ceux qui travaillent."
-    elias "Les autres, je les laisse parler."
+    elias ecoute "Je respecte ceux qui travaillent."
+    elias reflechit "Les autres, je les laisse parler."
 
     "Je lui demande s'il se sent indispensable."
 
-    elias "Je ne pense pas comme ça."
-    elias "Je fais ce qu'il faut."
+    elias reflechit "Je ne pense pas comme ça."
+    elias ecoute "Je fais ce qu'il faut."
 
     "Il s'arrête, réfléchit."
 
-    elias "Si je ne le fais pas, quelqu'un d'autre devra."
-    elias "Alors autant le faire bien."
+    elias reflechit "Si je ne le fais pas, quelqu'un d'autre devra."
+    elias ecoute "Alors autant le faire bien."
 
     "Sa logique est simple, mais solide."
 
-    elias "Je ne cherche pas à convaincre."
-    elias "Je cherche à éviter les erreurs."
+    elias ecoute "Je ne cherche pas à convaincre."
+    elias reflechit "Je cherche à éviter les erreurs."
 
     "Je hoche la tête."
     "Le bruit d'un outil qui claque marque la fin de la discussion."
 
-    elias "Si ça tient, c'est suffisant."
-    elias "Si ça casse, on répare."
-    elias "C'est ma ligne."
+    elias ecoute "Si ça tient, c'est suffisant."
+    elias reflechit "Si ça casse, on répare."
+    elias ecoute "C'est ma ligne."
 
     "Il ne sourit pas, mais il est clair."
     "La conversation est close."
@@ -495,115 +498,116 @@ label elias_link_5:
     scene bg_gymnase at adaptive_fullscreen
 
     $ showP("elias", "fatigue", 0.70)
+    $ showP("noam", "reflexion", 0.25)
 
     "La salle est presque vide."
     "Il essuie une barre, lentement."
 
-    elias "Je dors mal quand les choses sont mal définies."
-    elias "C'est tout."
+    elias fatigue "Je dors mal quand les choses sont mal définies."
+    elias ecoute "C'est tout."
 
     "Je lui demande ce qui le tient éveillé."
 
-    elias "Les listes incomplètes."
-    elias "Les tâches laissées en plan."
-    elias "Les gens qui promettent et disparaissent."
+    elias reflechit "Les listes incomplètes."
+    elias ecoute "Les tâches laissées en plan."
+    elias jaloux "Les gens qui promettent et disparaissent."
 
     "Il range un disque et se redresse."
 
-    elias "Je ne supporte pas les dettes."
-    elias "Pas seulement l'argent."
-    elias "Les dettes de temps."
-    elias "Les dettes d'effort."
+    elias reflechit "Je ne supporte pas les dettes."
+    elias ecoute "Pas seulement l'argent."
+    elias reflechit "Les dettes de temps."
+    elias ecoute "Les dettes d'effort."
 
     "Je lui dis que ça fait beaucoup à porter."
 
-    elias "Je porte."
-    elias "J'ai toujours porté."
+    elias ecoute "Je porte."
+    elias reflechit "J'ai toujours porté."
 
     "Il inspire, puis reprend plus doucement."
 
-    elias "Ce n'est pas du courage."
-    elias "C'est une habitude."
+    elias reflechit "Ce n'est pas du courage."
+    elias ecoute "C'est une habitude."
 
-    elias "Quand j'étais plus jeune, j'avais peur de tomber malade."
-    elias "Parce que personne ne te remplace."
+    elias fatigue "Quand j'étais plus jeune, j'avais peur de tomber malade."
+    elias ecoute "Parce que personne ne te remplace."
 
     "Je lui demande s'il a eu quelqu'un sur qui compter."
 
-    elias "Ma sœur."
-    elias "Elle comptait sur moi."
-    elias "C'était clair."
+    elias ecoute "Ma sœur."
+    elias reflechit "Elle comptait sur moi."
+    elias ecoute "C'était clair."
 
     "Le mot "clair" revient, comme un repère."
 
-    elias "Je lui ai appris à réparer un moteur."
-    elias "Elle m'a appris à dormir quand c'est possible."
+    elias content "Je lui ai appris à réparer un moteur."
+    elias ecoute "Elle m'a appris à dormir quand c'est possible."
 
     "Je lui demande si elle lui manque."
 
-    elias "Oui."
-    elias "Mais je ne m'arrête pas pour ça."
+    elias reflechit "Oui."
+    elias ecoute "Mais je ne m'arrête pas pour ça."
 
     "Il regarde la barre comme si elle pesait plus lourd."
 
-    elias "Elle voulait que je parte."
-    elias "Que je prenne ma chance."
-    elias "Alors je la prends."
+    elias reflechit "Elle voulait que je parte."
+    elias ecoute "Que je prenne ma chance."
+    elias content "Alors je la prends."
 
     "Je remarque un sourire très bref."
 
-    elias "C'était rare."
-    elias "Mais ça comptait."
+    elias ecoute "C'était rare."
+    elias content "Mais ça comptait."
 
     "Je lui demande s'il pense à elle ici."
 
-    elias "Parfois."
-    elias "Quand je répare quelque chose."
+    elias ecoute "Parfois."
+    elias reflechit "Quand je répare quelque chose."
 
     "Il se passe une main sur le front."
 
-    elias "Le manque de contrôle, ça te ronge."
-    elias "Alors je contrôle ce que je peux."
+    elias fatigue "Le manque de contrôle, ça te ronge."
+    elias reflechit "Alors je contrôle ce que je peux."
 
     "Je lui demande s'il a déjà craqué."
 
-    elias "Une fois."
-    elias "J'ai ri."
-    elias "Pas parce que c'était drôle."
+    elias ecoute "Une fois."
+    elias reflechit "J'ai ri."
+    elias fatigue "Pas parce que c'était drôle."
 
     "Il semble presque gêné."
 
-    elias "Le rire, c'est quand la pression lâche."
-    elias "Après, tu reviens."
+    elias reflechit "Le rire, c'est quand la pression lâche."
+    elias ecoute "Après, tu reviens."
 
-    elias "C'était quand j'avais trop poussé."
-    elias "Mon corps a dit stop."
+    elias fatigue "C'était quand j'avais trop poussé."
+    elias reflechit "Mon corps a dit stop."
 
     "Je lui demande s'il écoute son corps maintenant."
 
-    elias "Je l'écoute."
-    elias "Je lui demande juste de tenir."
+    elias ecoute "Je l'écoute."
+    elias reflechit "Je lui demande juste de tenir."
 
     "Il s'assoit, un instant."
 
-    elias "Je ne cherche pas l'affection."
-    elias "Je cherche la stabilité."
+    elias reflechit "Je ne cherche pas l'affection."
+    elias ecoute "Je cherche la stabilité."
 
     "Je lui dis que la stabilité, c'est aussi des gens."
 
-    elias "Oui."
-    elias "Mais des gens fiables."
+    elias ecoute "Oui."
+    elias reflechit "Mais des gens fiables."
 
     "Je lui demande ce qu'il considère comme fiable."
 
-    elias "Quelqu'un qui revient."
-    elias "Quelqu'un qui tient parole."
-    elias "Quelqu'un qui reste quand ça dure."
+    elias ecoute "Quelqu'un qui revient."
+    elias reflechit "Quelqu'un qui tient parole."
+    elias ecoute "Quelqu'un qui reste quand ça dure."
 
     "Un long silence s'installe."
 
-    elias "Tu voulais en savoir plus."
-    elias "Voilà."
+    elias ecoute "Tu voulais en savoir plus."
+    elias reflechit "Voilà."
 
     "Il se lève, déjà prêt à repartir."
     "Je comprends que, pour lui, parler est un effort mesuré."
