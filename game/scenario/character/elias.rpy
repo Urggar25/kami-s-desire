@@ -42,115 +42,63 @@ label elias_link_1:
     $ showP("elias", "neutre", 0.70)
 
     elias "Tu arrives pile à l'heure."
-    elias "J'ai quinze minutes pour finir."
-    elias "Après, je range."
+    elias "J'ai quinze minutes pour finir ma série."
+    elias "Après ça, je range."
 
     "Il règle la charge sans me regarder."
-    "Ses gestes sont précis, presque mécaniques."
+    "Ses gestes sont précis, presque mécaniques, automatiques."
 
     elias "Je fais toujours les mêmes séries."
-    elias "Même cadence."
-    elias "Même souffle."
+    elias "Même cadence, même souffle, même rythme."
 
-    "Je lui demande s'il ne s'ennuie jamais."
+    noam "Tu ne t'ennuies jamais à faire les mêmes exercices ?"
 
     elias "Non."
     elias "L'ennui, c'est quand tu ne sais pas quoi faire."
-    elias "Moi je sais."
+    elias "Moi je sais exactement les exercices dont j'ai besoin."
 
     "Il pousse une répétition, inspire, puis parle."
 
     elias "Quand j'étais gamin, c'était pareil."
-    elias "Lever tôt."
-    elias "Aider."
-    elias "Répéter."
+    elias "Je me suis toujours levé tôt, j'allais aider mes parents."
 
     "Sa voix ne se plaint pas. Elle constate."
 
-    elias "Mon père partait au dépôt."
-    elias "Ma mère enchaînait deux postes."
+    elias "Mon père partait au dépôt tôt dans la nuit."
+    elias "Ma mère enchaînait deux postes pour gagner un peu mieux sa vie."
     elias "On ne cherchait pas à comprendre."
     elias "On tenait."
 
-    "Je lui demande ce qu'il faisait, lui."
+    noam "Et toi, tu faisais quoi dans tout ça ?"
 
     elias "Je réparais ce qui cassait."
     elias "Vieux vélo."
     elias "Fuite dans la cuisine."
-    elias "C'était utile."
+    elias "J'essayais d'être utile."
 
     "Il essuie la barre avec une serviette pliée au carré."
 
-    elias "Si quelque chose tient, tu peux dormir."
-    elias "Si ça lâche, tu perds du temps."
-
-    "Je commente que ça ressemble à une philosophie."
-
-    elias "C'est juste du bon sens."
-    elias "Tu fais avec ce que tu as."
-    elias "Tu le fais bien."
-
-    "Je lui demande s'il a toujours voulu être mécano."
+    noam "C'est comme ça que tu es devenu mécano ?"
 
     elias "Je voulais être utile."
-    elias "Le reste, c'est des mots."
+    elias "Alors d'une certaine manière, ça a bien marché, du moins je pense."
 
     "Il reprend une série sans attendre ma réponse."
 
-    elias "Le sport m'a appris à compter."
-    elias "Les heures."
-    elias "Les efforts."
-    elias "Les résultats."
+    elias "Le sport m'a appris à être exigent, envers moi-même mais aussi envers les autres."
+    elias "D'attendre des résultats en progression constante."
 
-    "Il laisse tomber la barre, contrôle la descente."
+    "Il laisse tomber la barre en contrôlant la descente."
 
-    elias "Ici c'est pareil."
-    elias "Tu travailles."
-    elias "Tu tiens."
-    elias "Tu ne te plains pas."
-
-    "Je remarque qu'il parle comme s'il écrivait une liste."
-
-    elias "Une liste, c'est clair."
-    elias "Les discours, ça disperse."
-
-    "Je lui demande s'il a des loisirs."
-
-    elias "Le travail."
-    elias "L'entraînement."
-    elias "Le reste, c'est du bruit."
+    elias "C'est un peu ce que j'essaye de faire dans mon quotidien."
 
     "Un léger silence."
     "Il resserre la poignée d'un appareil."
 
     elias "J'écoute quand quelqu'un sait ce qu'il fait."
-    elias "Sinon, je coupe court."
-
-    "Je lui demande s'il ne s'inquiète jamais de ne pas profiter."
-
-    elias "Profiter de quoi ?"
-    elias "De perdre du temps ?"
-
-    "Il relève la tête et me fixe enfin."
-
-    elias "On profite quand c'est stable."
-    elias "Là, on stabilise."
+    elias "Sinon, je perds vite le fil de la discussion, les grandes théories c'est vraiment pas pour moi."
 
     "Sa voix reste plate, mais le message est clair."
-
-    elias "Je note mes repas."
-    elias "Pas pour le plaisir."
-    elias "Pour l'énergie."
-
-    "Je lui demande s'il calcule tout."
-
-    elias "Je réduis les surprises."
-    elias "Ça évite les erreurs."
-
-    elias "On a un boulot."
-    elias "Je fais le mien."
-    elias "Si tu veux parler, parle."
-    elias "Mais ne me ralentis pas."
 
     "Je hoche la tête."
     "Elias repart sur une série, concentré."
@@ -172,11 +120,11 @@ label elias_link_2:
 
     "Je le regarde mesurer, puis noter quelque chose sur un carnet."
 
-    elias "Si je resserre trop, ça casse."
-    elias "Si je laisse, ça dérive."
-    elias "Il faut le bon point."
+    elias "Si je resserre trop, ça risque de casser."
+    elias "Mais si je laisse, ça va dériver."
+    elias "Il faut trouver le bon point."
 
-    "Je lui demande comment il fait pour toujours trouver ce point."
+    noam "Et ... Tu fais ça comment ?"
 
     elias "Je teste."
     elias "Je corrige."
@@ -185,16 +133,15 @@ label elias_link_2:
     "Il s'arrête une seconde pour changer d'outil."
 
     elias "J'ai appris ça en atelier."
-    elias "Pas de marge."
-    elias "Pas d'excuse."
+    elias "Crois moi, t'avais pas intéret à te tromper."
 
-    "Je lui demande où il a travaillé."
+    noam "En atelier ? Tu as travaillé dans une grande boite ou quelque chose du genre ?"
 
-    elias "Usine de maintenance."
+    elias "Un usine de maintenance automobile."
     elias "Équipe de nuit."
     elias "Ça payait le loyer."
 
-    "Je lui demande s'il faisait du sport à côté."
+    noam "Et avec ça t'avais le temps de faire du sport sur le côté ?!"
 
     elias "Course."
     elias "Tractions."
@@ -203,9 +150,9 @@ label elias_link_2:
     "Il ajuste un câble, teste la tension."
 
     elias "Le sport me gardait droit."
-    elias "Quand tu bosses la nuit, tu dois tenir la journée."
+    elias "Quand tu bosses la nuit, tu dois tenir la journée et même si c'est crevant, le sport, ça aide."
 
-    "Je lui demande s'il avait des amis."
+    noam "Tu pratiquais seul ou..."
 
     elias "Des collègues."
     elias "On se respectait."
@@ -214,45 +161,32 @@ label elias_link_2:
     "Il serre une vis, puis vérifie avec un niveau."
 
     elias "Le boulot, c'est pas la passion."
-    elias "C'est ce qui tient les murs."
-
-    "Je lui demande s'il a une passion, alors."
-
-    elias "Tenir les murs."
-
-    "Je lui dis que ça sonne dur."
-
-    elias "C'est réel."
+    elias "C'est ce qui permet de survivre."
+    elias "Même si j'aime bien être entouré de ces machines."
 
     "Il repose l'outil et regarde la machine comme si elle pouvait mentir."
 
     elias "On n'avait pas de réseau."
     elias "Pas de piston."
-    elias "Donc je bossais plus."
+    elias "Donc je bossais dur."
 
-    "Je lui demande s'il a déjà voulu arrêter."
+    noam "T'as jamais pensé à arrêter ?"
 
     elias "Arrêter pour quoi ?"
-    elias "Pour attendre ?"
+    elias "Pour que je me retrouve dehors ?"
+    elias "Y'avait du taff, fallait que je le fasse, c'est tout."
 
-    "Il secoue la tête, presque imperceptible."
+    "Il secoue la tête, de façon presque imperceptible."
 
-    elias "Quand tu comptes tes heures, tu ne joues pas."
-    elias "Tu avances."
-
-    "Je lui dis qu'ici, tout le monde avance différemment."
-
-    elias "Je m'en fiche."
-    elias "Moi, je dois tenir les machines."
-    elias "Sinon, on perd tout."
-
+    elias "Surtout quand il y avait la guerre..."
     "Il pose la paume sur la carcasse froide."
 
     elias "Une panne, ça ne prévient pas."
-    elias "Et ça ne discute pas."
+    elias "Et ça ne se discute pas."
 
-    "Je lui demande s'il a peur de l'échec."
+    noam "La guerre, d'une certain façon tu étais concerné toi aussi ..."
 
+    elias "C'est clair, tu ne peux même pas imaginer ..."
     elias "L'échec, c'est quand tu n'as plus d'outil."
     elias "Ou plus de temps."
     elias "Le reste, c'est des ajustements."
