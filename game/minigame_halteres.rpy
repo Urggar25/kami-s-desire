@@ -10,6 +10,7 @@ default mg_direction = 1
 default mg_speed = 0.9
 default mg_done = False
 default mg_feedback = ""
+default mg_feedback_color = "#f5f5f5"
 default mg_time_left = 60.0
 default mg_zone_start = 0.40
 default mg_zone_end = 0.60
@@ -28,6 +29,7 @@ init python:
         store.mg_direction = 1
         store.mg_done = False
         store.mg_feedback = ""
+        store.mg_feedback_color = "#f5f5f5"
         store.mg_time_left = 60.0
 
     def mg_tick(dt=0.02):
@@ -58,12 +60,15 @@ init python:
             if abs(val - center) <= store.mg_perfect_margin:
                 store.mg_progress += 2
                 store.mg_feedback = "Parfait !"
+                store.mg_feedback_color = "#5ad45a"
             else:
                 store.mg_progress += 1
                 store.mg_feedback = "Correct."
+                store.mg_feedback_color = "#f2c94c"
         else:
             store.mg_energy = max(0.0, store.mg_energy - 0.15)
             store.mg_feedback = "Raté..."
+            store.mg_feedback_color = "#ff6b6b"
 
         if store.mg_reps >= store.mg_target_reps:
             store.mg_done = True
@@ -94,6 +99,7 @@ screen minijeu_halteres():
     zorder 200
 
     timer 0.02 repeat True action Function(mg_tick, 0.02)
+    key "mouseup_1" action Function(mg_click)
 
     if mg_done:
         timer 0.05 action Return()
@@ -102,44 +108,61 @@ screen minijeu_halteres():
         style "frame"
         xalign 0.5
         yalign 0.5
-        xsize 900
-        ysize 520
+        xsize 980
+        ysize 560
 
         vbox:
-            spacing 16
+            spacing 14
             xalign 0.5
 
             text "ENTRAÎNEMENT AUX HALTÈRES" style "label_text" xalign 0.5
+            text "Clique au bon moment pour enchaîner les répétitions." xalign 0.5
 
             fixed:
-                xsize 340
-                ysize 260
+                xsize 620
+                ysize 240
                 xalign 0.5
+                add Solid("#1c1c1c") xsize 620 ysize 240 xalign 0.5 yalign 0.5
+                $ dumbbell_y = int(160 - (mg_value * 110))
+                add Solid("#8f99a3") xpos 140 ypos dumbbell_y-10 xsize 40 ysize 40
+                add Solid("#e6e6e6") xpos 180 ypos dumbbell_y xsize 260 ysize 18
+                add Solid("#8f99a3") xpos 440 ypos dumbbell_y-10 xsize 40 ysize 40
+                add Solid("#2d2d2d") xpos 130 ypos dumbbell_y-14 xsize 60 ysize 48
+                add Solid("#2d2d2d") xpos 440 ypos dumbbell_y-14 xsize 60 ysize 48
+                add Solid("#3f3f3f") xpos 200 ypos 190 xsize 220 ysize 6
                 if renpy.has_image("noam neutre"):
-                    add "noam neutre" xalign 0.5 yalign 0.5
+                    add "noam neutre" xpos 30 yalign 1.0 zoom 0.5
                 else:
-                    text "NOAM" xalign 0.5 yalign 0.5
+                    text "NOAM" xpos 40 yalign 1.0
 
-            text "BARRE D'ÉNERGIE" xalign 0.5
-            bar value mg_energy range 1.0 xsize 600
+            hbox:
+                spacing 24
+                xalign 0.5
+                vbox:
+                    spacing 8
+                    text "Énergie" xalign 0.0
+                    bar value mg_energy range 1.0 xsize 520
+                vbox:
+                    spacing 8
+                    text "Temps" xalign 0.0
+                    bar value mg_time_left range 60.0 xsize 200
 
-            text "BARRE DE RYTHME" xalign 0.5
+            text "Rythme" xalign 0.5
             fixed:
-                xsize 600
-                ysize 28
-                add Solid("#2b2b2b")
+                xsize 720
+                ysize 30
+                add Solid("#2b2b2b") xsize 720 ysize 30
                 $ zone_width = (mg_zone_end - mg_zone_start)
-                add Solid("#3fa34d") xpos int(mg_zone_start * 600) xsize int(zone_width * 600) ysize 28
-                add Solid("#f5f5f5") xpos int(mg_value * 600) xsize 6 ysize 28
+                add Solid("#3fa34d") xpos int(mg_zone_start * 720) xsize int(zone_width * 720) ysize 30
+                add Solid("#f5f5f5") xpos int(mg_value * 720) xsize 8 ysize 30
 
-            text "⬆   ⬇" xalign 0.5
-            text "(CLIC AU BON MOMENT)" xalign 0.5
-            text "Compteur répétitions : [mg_reps]/[mg_target_reps]" xalign 0.5
+            text "⬆   ⬇  (clic ou touche)" xalign 0.5
+            text "Répétitions : [mg_reps]/[mg_target_reps]" xalign 0.5
 
             if mg_feedback:
-                text "[mg_feedback]" xalign 0.5
+                text "[mg_feedback]" xalign 0.5 color mg_feedback_color
 
-            textbutton "CLIC" action Function(mg_click) xalign 0.5
+            textbutton "POUSSER" action Function(mg_click) xalign 0.5
 
 label minijeu_halteres:
     $ mg_reset()
