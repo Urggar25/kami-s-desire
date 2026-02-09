@@ -1204,6 +1204,10 @@ label _2_APRES_MIDI:
     lysa triste "Je n'ai pas envie de briser leurs espoirs de changement mais ..."
     lysa determine "Enfin tu as compris ..."
 
+    $ add_argument("Difficulté d'approvisionnement")
+    show screen argument_unlock("Difficulté d'approvisionnement")
+    pause 5.0
+
     tuto "Prêt pour un nouveau tutoriel ?"
     tuto "Au cours de ce dialogue, Lysa a émit des doutes sur le vote à venir."
     tuto "Ces doutes ont muri sous la forme d'un Argument."

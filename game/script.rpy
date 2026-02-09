@@ -38,6 +38,7 @@ default _last_autofocus_tag = None
 
 default _focus_locked = False
 default _focus_last_params = None
+default arguments = []
 
 
 # ------------------------------------------------------------
@@ -130,6 +131,10 @@ transform char_focus:
 init python:
     im = renpy.display.im
     ImageReference = renpy.display.image.ImageReference
+
+    def add_argument(name):
+        if name not in store.arguments:
+            store.arguments.append(name)
 
     def bg_disp(name, blurred=False, blur_radius=2.0):
         ref = ImageReference(name)

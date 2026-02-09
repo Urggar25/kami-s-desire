@@ -1314,6 +1314,71 @@ style notify_text:
     properties gui.text_properties("notify")
 
 
+## Écran de gain d'argument ####################################################
+##
+## Cet écran est utilisé pour signaler au joueur qu'il vient de gagner un
+## argument. Il reste affiché 3 secondes.
+##
+
+screen argument_unlock(argument_name):
+
+    zorder 200
+    modal True
+
+    add Solid("#0008")
+
+    frame at argument_unlock_appear:
+        style_prefix "argument_unlock"
+
+        vbox:
+            spacing 12
+            text "NOUVEL ARGUMENT" at argument_unlock_pulse style "argument_unlock_title"
+            text "[argument_name!t]" style "argument_unlock_name"
+
+    timer 3.0 action Hide("argument_unlock")
+
+
+transform argument_unlock_appear:
+    on show:
+        alpha 0.0
+        zoom 0.95
+        linear 0.4 alpha 1.0 zoom 1.0
+        pause 2.0
+    on hide:
+        linear 0.3 alpha 0.0
+
+
+transform argument_unlock_pulse:
+    alpha 0.9
+    linear 0.6 alpha 1.0
+    linear 0.6 alpha 0.9
+    repeat
+
+
+style argument_unlock_frame is empty
+style argument_unlock_title is gui_text
+style argument_unlock_name is gui_text
+
+style argument_unlock_frame:
+    xalign 0.5
+    yalign 0.5
+    xmaximum 900
+    padding (60, 40)
+    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+
+style argument_unlock_title:
+    size 38
+    textalign 0.5
+    xalign 0.5
+    color "#f1e6c6"
+
+style argument_unlock_name:
+    size 48
+    textalign 0.5
+    xalign 0.5
+    color "#ffffff"
+
+
 ## Écran NVL ###################################################################
 ##
 ## Cet écran est utilisé pour les dialogues et les menus en mode NVL.
