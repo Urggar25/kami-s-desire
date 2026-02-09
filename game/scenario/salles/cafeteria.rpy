@@ -76,12 +76,11 @@ screen pnc_cafeteria():
 
     if free_time_active and mara_link in [0, 2, 4]:
         imagebutton:
-            idle "images/character/mara/sourire.png"
-            hover "images/character/mara/neutre.png"
+            idle Transform("images/character/mara/sourire.png", zoom=0.75)
+            hover Transform("images/character/mara/neutre.png", zoom=0.75)
             focus_mask True
-            xalign 0.68
-            yalign 0.78
-            zoom 0.45
+            xalign 0.15
+            yalign 0.30
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("MARA_LINK_INTERACT")]
 
 

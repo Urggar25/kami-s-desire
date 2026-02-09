@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenario/2_canon.rpy", line 494: expected statement.
-    silence
-           ^
+File "game/scenario/salles/maintenance.rpy", line 75: 'zoom' is not a keyword argument or valid child of the imagebutton statement.
+    zoom 0.45
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Feb  4 11:37:01 2026
+Mon Feb  9 11:30:22 2026

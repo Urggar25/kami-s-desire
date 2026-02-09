@@ -67,12 +67,11 @@ screen pnc_gymnase():
 
     if free_time_active and elias_link in [0, 2, 4]:
         imagebutton:
-            idle "images/character/elias/neutre.png"
-            hover "images/character/elias/ecoute.png"
+            idle Transform("images/character/elias/neutre.png", zoom=0.75)
+            hover Transform("images/character/elias/reflechit.png", zoom=0.75)
             focus_mask True
-            xalign 0.78
-            yalign 0.78
-            zoom 0.45
+            xalign 0.90
+            yalign 0.90
             action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("ELIAS_LINK_INTERACT")]
 
 

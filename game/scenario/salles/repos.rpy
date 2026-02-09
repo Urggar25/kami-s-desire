@@ -86,12 +86,11 @@ screen pnc_repos():
 
     if free_time_active and mara_link in [1, 3]:
         imagebutton:
-            idle "images/character/mara/neutre.png"
-            hover "images/character/mara/sourire.png"
+            idle Transform("images/character/mara/sourire.png", zoom=0.75)
+            hover Transform("images/character/mara/neutre.png", zoom=0.75)
             focus_mask True
-            xalign 0.30
-            yalign 0.80
-            zoom 0.45
+            xalign 0.15
+            yalign 0.30
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("MARA_LINK_INTERACT")]
 
 
