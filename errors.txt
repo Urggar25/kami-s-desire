@@ -2,33 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenario/character/mara.rpy", line 92: end of line expected.
-    mara "trop vraie".
-                     ^
-
-File "game/scenario/character/mara.rpy", line 122: end of line expected.
-    mara "Mais on me disait "petite"."
-                             ^
-
-File "game/scenario/character/mara.rpy", line 346: end of line expected.
-    mara ""Laisse-moi tranquille.""
-           ^
-
-File "game/scenario/character/mara.rpy", line 497: end of line expected.
-    mara "À dire "oui" sans le penser."
-                  ^
-
-File "game/scenario/character/mara.rpy", line 607: end of line expected.
-    mara "On me disait "ne fais pas de taches"."
-                        ^
-
-File "game/scenario/character/mara.rpy", line 653: end of line expected.
-    mara "Mais chez moi, on n'avait pas le droit d'être "humain"."
-                                                         ^
-
 File "game/scenario/character/mara.rpy", line 658: end of line expected.
     mara ""On représente.""
            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Feb  9 12:12:00 2026
+Mon Feb  9 12:56:08 2026

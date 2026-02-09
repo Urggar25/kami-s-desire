@@ -89,7 +89,7 @@ label mara_link_1:
     mara "Mon père."
     mara "Ses conseillers."
     mara "Les gens qui ont peur que je sois "
-    mara "trop vraie".
+    mara "trop vraie."
 
     "Elle mime des guillemets avec ses doigts."
 
@@ -119,7 +119,7 @@ label mara_link_1:
     "Je lui demande comment elle s'appelait avant le costume."
 
     mara "Toujours Mara."
-    mara "Mais on me disait "petite"."
+    mara "Mais on me disait 'petite'."
     mara "Ça faisait gentil."
 
     "Elle prend une gorgée, plus lente."
@@ -343,7 +343,7 @@ label mara_link_3:
     "Elle s'adosse, plus vulnérable."
 
     mara "Sauf que parfois, tu voudrais juste dire :"
-    mara ""Laisse-moi tranquille.""
+    mara "Laisse-moi tranquille."
 
     "Je lui demande si elle le dit."
 
@@ -494,7 +494,7 @@ label mara_link_4:
     "Elle se penche vers moi."
 
     mara "Je me suis entraînée à marcher, à parler, à sourire."
-    mara "À dire "oui" sans le penser."
+    mara "À dire 'oui' sans le penser."
 
     "Je lui demande quand elle a dit non."
 
@@ -604,7 +604,7 @@ label mara_link_5:
 
     mara "Quand j'étais petite,"
     mara "on me mettait dans des robes trop belles."
-    mara "On me disait "ne fais pas de taches"."
+    mara "On me disait 'ne fais pas de taches'."
 
     "Elle ricane."
 
@@ -650,12 +650,12 @@ label mara_link_5:
     "Je lui dis que c'est humain."
 
     mara "Ouais."
-    mara "Mais chez moi, on n'avait pas le droit d'être "humain"."
+    mara "Mais chez moi, on n'avait pas le droit d'être 'humain'."
 
     "Elle éclate d'un rire bref."
 
     mara "Tu sais, mon père disait :"
-    mara ""On représente.""
+    mara "On représente."
 
     "Elle fait une pause."
 
