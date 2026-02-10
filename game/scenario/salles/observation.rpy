@@ -75,6 +75,16 @@ screen pnc_observation():
         action Jump("OPEN_CONCLAVE_MAP")
 
 
+    if free_time_active and lysa_link == 2:
+        imagebutton:
+            idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
+            hover Transform("images/character/lysa/triste.png", zoom=0.75)
+            focus_mask True
+            xalign 0.82
+            yalign 0.30
+            action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("LYSA_LINK_INTERACT")]
+
+
 label OBS_PNC_RADIO:
     "La console radio est massive."
     "Plusieurs fréquences."
