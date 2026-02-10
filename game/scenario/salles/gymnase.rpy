@@ -153,7 +153,8 @@ label decouverte_gymnase:
     noam "Visiblement non."
 
     $ showP("elias", "fatigue", 0.78)
-    elias "J'aime le sport, ça m'évite de trop réflechir à tout ce qui peut se passer."
+    elias "J’aime le sport."
+    elias "Ça m’empêche de trop cogiter sur ce qui peut merder."
 
     $ showP("noam", "taquin", 0.22)
     noam "Ouais... J'imagine que c'est devenu une habitude depuis un an."
@@ -162,10 +163,11 @@ label decouverte_gymnase:
     "Il rit de façon courte."
 
     $ showP("elias", "neutre", 0.78)
-    elias "Oui. Mais pas spécialement à cause de Kami."
-    elias "Sa méthode est dure, mais elle tient la route."
-    elias "Avant, on pouvait se prendre une balle n'importe quand, ou partir de force sur une guerre."
-    
+    elias "Pas à cause d’elle."
+    elias "Avant, une balle ou une guerre, et c’était fini sans sommation."
+    elias "Là au moins, on sait à quoi s’attendre."
+    elias raison "Faut juste respecter les règles quoi."
+
     "Il marque une pause un instant."
     
     $ showP("elias", "jaloux", 0.78)
@@ -189,14 +191,15 @@ label decouverte_gymnase:
 
     $ showP("elias", "neutre", 0.78)
     elias "Elias."
-    elias "AXIOME."
+    elias "AXIOME. Quartier bas."
 
     $ showP("noam", "surpris", 0.22)
     noam "AXIOME…"
     noam "La Forge."
 
     $ showP("elias", "content", 0.78)
-    elias "Ouais. Là où on fabrique la majorité des trucs pour tous les districts."
+    elias "Ouais."
+    elias "C’est là qu’on fabrique presque tout ce que les autres utilisent."
 
     "Il dit ça sans fierté particulière."
     "Mais il sait dans son timbre de voix que AXIOME est nécessaire à tout le monde."
@@ -207,9 +210,9 @@ label decouverte_gymnase:
     noam "Tu t'entraînes pour quoi ?"
 
     $ showP("elias", "rire", 0.78)
-    elias "Pour dormir. Le sport aide à mieux dormir."
-    elias "Je me dis qu'une petite session avant le rendez-vous à 18h serait pas trop mal."
-    elias "J'espère juste qu'il y a de quoi se doucher."
+    elias "Pour dormir mieux."
+    elias "Une petite session avant 18h, ça serait pas de refus."
+    elias "J’espère qu’il y a des douches après."
 
     $ showP("noam", "rire", 0.22)
     noam "Ah."
@@ -234,11 +237,9 @@ label decouverte_gymnase:
     noam "Je sais plus trop ce que je fais, honnêtement."
 
     $ showP("elias", "fatigue", 0.78)
-    elias "C'est pour ça que je continue."
-    elias "Quand tout bouge, faut garder un repère."
-
-    $ showP("elias", "neutre", 0.78)
-    elias "C'est le principe."
+    elias "C’est pour ça que je continue."
+    elias "Quand tout part en vrille, faut garder un repère."
+    elias neutre "C’est le principe."
 
     pause 0.2
 
@@ -247,9 +248,9 @@ label decouverte_gymnase:
     noam "Je dois courir et soulever des trucs."
 
     $ showP("elias", "content", 0.78)
-    elias "Et boire de l'eau."
-    elias "Et respirer."
-    elias "N'oublie pas, sinon merci les crampes !"
+    elias "Et bois de l’eau."
+    elias "Respire."
+    elias "Sinon t’auras des crampes, et bon courage."
 
     $ showP("noam", "sourire", 0.22)
     noam "Merci docteur."
@@ -277,9 +278,9 @@ label decouverte_gymnase:
     "Puis moi."
 
     $ showP("elias", "inquiet", 0.78)
-    elias "Tu sais, ces 30 jours ici, ça va pas être simple."
-    elias "On sera constamment sur nos gardes, pas que durant les votes."
-    elias "On risque d'être fatigué, on risque d'être sur les nerfs."
+    elias "Ces 30 jours, ça va pas être une partie de plaisir."
+    elias "On va être sur le qui-vive tout le temps, pas seulement aux votes."
+    elias "Fatigue, nerfs à vif… ça va peser."
 
     $ showP("noam", "inquiet", 0.22)
     noam "Tu crois que le sport change quelque chose ?"
@@ -302,8 +303,8 @@ label decouverte_gymnase:
 
     $ showP("elias", "content", 0.78)
     elias "Ok."
-    elias "Mais tu m'écoutes hein."
-    elias "Sinon tu vas te faire mal."
+    elias "Mais écoute bien."
+    elias "Sinon tu vas te péter quelque chose."
 
     $ showP("noam", "sourire", 0.22)
     noam "Promis."

@@ -366,7 +366,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     noam "Prêts à quoi, exactement ?"
 
-    elias "À encaisser ce qu'on va nous balancer."
+    elias "Autant se préparer à encaisser ce qu'on va nous balancer."
 
     pause 0.6
 
@@ -401,9 +401,9 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     $ showP("mara", "neutre", 0.90)
 
     play sound sfx_door
-    mara "Vous parlez beaucoup."
-    mara "On vous entend depuis le couloir ..."
-    mara "Ça ne changera rien à ce qui va être dit."
+    mara taquin "Vous jacassez grave, là."
+    mara "On vous entend depuis le couloir, sérieux."
+    mara "De toute façon ça changera que dalle à ce qui va tomber."
 
     hide iris
     $ showP("elen", "joie", 0.40)
@@ -422,7 +422,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     ryn "Même elle a compris."
     ryn "Observer, noter, attendre que ça pète."
 
-    mara "Ce n’est pas ce que j’ai dit."
+    mara "Non mais attends, c’est pas ce que j’ai raconté."
 
     ryn "C’est ce que j’ai entendu."
 
@@ -638,8 +638,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     hide iris
     $ showP("mara", "neutre", 0.60)
 
-    mara "Ça va laisser des traces."
-    mara "Et pas que sur le papier."
+    mara "Ça va laisser des marques."
+    mara "Et pas seulement sur le papier, hein."
 
     hide sael
     $ showP("kael", "neutre", 0.86)
@@ -705,8 +705,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     $ showP("elias", "rire", 0.20)
 
-    elias "Quel beau parleur !"
-    elias "Il y a des écrans partout dans le bâtiment."
+    elias "Quel beau parleur, tiens !"
+    elias "Y a des écrans partout ici."
     elias "A tous les coups, la diffusion a tourné partout."
 
     julian panne "..."
@@ -735,8 +735,8 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     hide julian
     $ showP("mara", "neutre", 0.50)
-    mara "Ça en devient suspect."
-    mara "Kami ne ferait jamais ça pour nous faire plaisir."
+    mara doute "Ça devient louche là."
+    mara "Kami fait jamais rien pour nous faire kiffer."
 
     hide iris
     $ showP("sael", "mefiant", 0.86)
@@ -774,7 +774,8 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     iris "H-Hein ?! Mais va te faire foutre, Mara !"
 
-    mara sourire "Non merci, je te laisse découvrir ça toute seule."
+    mara sourire "Oh je vois que Madame a du vocabulaire."
+    mara sourire "Nan merci, vas-y découvre ça en solo, je te regarde faire, hein !"
 
     $ showP("iris", "desaccord", 0.50)
     iris "Sérieusement ..."
@@ -839,7 +840,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide sael
     $ showP("mara", "neutre", 0.86)
 
-    mara "C’est bien beau tout ça, mais qui contrôlera ces échanges ?"
+    mara "C’est mignon tout ça, mais qui va surveiller ces petits échanges ?"
 
     tomas "On n’a pas les détails."
 
@@ -859,7 +860,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     nyra "Parce que là, on se jette des impressions sans grande certitude."
     nyra "C'est pas comme ça qu'on avancera ..."
 
-    mara "Tu as de quoi écrire un roman entier sur ce qu'on ignore ?"
+    mara taquin "T’as de quoi pondre un roman sur tout ce qu’on sait pas ?"
 
     nyra "Je veux une base."
 
@@ -931,17 +932,17 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide sael
     $ showP("mara", "neutre", 0.86)
 
-    mara "On n’aura pas forcément la même position de vote."
-    mara "Certains de nos districts n’ont rien en commun."
-    mara "Notre histoire est différente, notre mode de vie aussi."
-    mara "D’autres ont trop de points communs."
-    mara "Et là, d’un coup, on nous demande de trouver un équilibre dans tout ce foutoir ?!"
+    mara agace "On va pas tous voter pareil, soyons sérieux."
+    mara "Y a des districts qui ont rien à voir entre eux."
+    mara "Nos vies, nos galères, nos habitudes… tout est différent."
+    mara "Et d’un coup on nous demande de tomber d’accord ?!"
+    mara "Dans ce bordel ? Sérieux ?!"
 
     $ showP("nyra", "neutre", 0.55)
     nyra "Donc on doit parler d’inégalités."
 
-    mara "Exactement."
-    mara "Et on n’a même pas le droit d’en parler avec les gens de nos districts."
+    mara "Ouais exactement."
+    mara "Et on peut même pas checker avec nos potes de district."
 
     nyra "Ça va être beau."
 
@@ -992,9 +993,9 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide julian
     $ showP("mara", "neutre", 0.86)
 
-    mara "Et pendant qu’on discute…"
-    mara "Kami nous écoute."
-    mara "Elle notera qui dit quoi, qui propose quoi, qui pourrait craquer."
+    mara doute "Et pendant qu’on papote…"
+    mara doute "Kami nous mate."
+    mara taquin "Elle grave tout : qui parle, qui propose quoi, qui va péter les plombs en premier."
 
     iris "Alors on ne craque pas."
 
@@ -1076,8 +1077,8 @@ label _2_APRES_MIDI:
     "Un silence."
     "Bref."
 
-    mara stress "On se retrouve plus tard."
-    mara neutre "Enfin… si tout tient encore."
+    mara stress "À plus tard."
+    mara doute "… si tout a pas déjà explosé d’ici là."
 
     sael taquin "Si ça lâche, on saura où chercher."
 
@@ -1103,13 +1104,14 @@ label _2_APRES_MIDI:
 
     lysa neutre "Tu sais je préfère..."
 
-    elias inquiet "Je voulais dire…  Faut pas rester seule."
+    elias inquiet "… Faut pas rester toute seule ici."
 
     lysa blase "Je sais."
 
     "Un temps."
 
-    elias fatigue "Tu n’as presque rien dit aujourd’hui."
+    elias fatigue "T’as pas beaucoup parlé aujourd’hui…"
+    elias fatigue "Tu étais plus bavarde hier…"
 
     lysa reflexion "J’ai écouté."
 
@@ -1404,8 +1406,7 @@ label _2_GYMNASE:
 
     elias ecoute "Non."
     elias neutre "Ça tombe bien."
-
-    elias joie "Tu voulais apprendre comment on fait pour mieux te muscler ?"
+    elias joie "T'as envie d'apprendre à mieux te muscler ?"
 
     noam surpris "Euh…"
     noam neutre "Je crois."
@@ -1471,16 +1472,11 @@ label _2_GYMNASE:
 
     pause 0.6
 
-    elias joie "T’as senti le petit feu dans les pecs ? C’est ça qui te fait rester."
-    elias joie "Mais si tu reviens que tous les quinze jours, ça repart aussi vite que ça vient. Le corps oublie pas, il pardonne juste pas."
-
-    elias raison "Perso je viens souvent dès que j'ai un peu de temps libre."
-    elias raison "Si tu t'entraines, ton corps et ton esprit deviendront plus forts."
-
-    elias raison "Certaines actions améliorent tes capacités."
-    elias ecoute "Ta force."
-    elias ecoute "Ton endurance."
-    elias ecoute "Ta concentration."
+    elias joie "T’as senti le feu dans les pecs ? C’est ça qui marque."
+    elias joie "Mais si tu viens une fois tous les quinze jours, ça repart aussi sec. Le corps oublie pas, il pardonne juste pas."
+    elias raison "Moi je viens dès que j’ai un créneau."
+    elias raison "En t’entraînant régulièrement, tu rends ton corps et ta tête plus solides."
+    elias ecoute "Force, endurance, concentration… tout ça monte."
 
     iris taquin "Et parfois…"
     iris determine "Ouais. Et des fois, c’est juste pour pas rentrer chez soi et tout péter dans le salon."

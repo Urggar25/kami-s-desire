@@ -193,57 +193,47 @@ label decouverte_sas:
 
     $ showP("mara", "mefiant", 0.78)
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "…"
-    noam "Euh…"
-    noam "Salut."
+    noam hesitation "…"
+    noam hesitation "Euh…"
+    noam hesitation "Salut."
 
-    $ showP("mara", "jaloux", 0.78)
-    mara "Hein ?"
-    mara "Ah—"
-    $ showP("mara", "neutre", 0.78)
-    mara "Salut."
+    mara jaloux "Hein ?"
+    mara taquin "Putain, c’est toi qui traînes ici ?"
+    mara sourire "Salut, le stalker."
 
     pause 0.2
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Je voulais pas te faire peur."
-    noam "C’est juste que…"
-    noam "je pensais pas tomber sur quelqu’un ici."
+    noam taquin "Hein ?!"
+    noam reflexion "Désolé, je voulais pas te faire peur."
+    noam reflexion "C’est juste que…"
+    noam reflexion "je pensais pas tomber sur quelqu’un ici."
 
-    $ showP("mara", "doute", 0.78)
-    mara "Ouais."
-    mara "En général, les gens passent vite."
-    mara "Ils regardent la porte."
-    mara "Ils comprennent."
-    mara "Et ils repartent."
+    mara doute "Ouais…"
+    mara "Les gens passent, matent la porte deux secondes,"
+    mara "captent que c’est fermé à double tour,"
+    mara "et se barrent direct comme des rats."
+    mara taquin "Ils ont pas les couilles de rester."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Et toi ?"
+    noam sourire "Et toi ?"
 
-    $ showP("mara", "stress", 0.78)
-    mara "Moi je reste."
-    mara "J’aime bien savoir comment les choses peuvent mal tourner."
-    mara "Rien de mieux que de connaître parfaitement les lieux pour ça."
+    mara sourire "Moi je reste."
+    mara "J’aime bien savoir exactement comment tout peut partir en vrille."
+    mara "Rien de tel que de connaître chaque recoin pourri d’un endroit."
+    mara taquin "Ça permet de mieux anticiper le moment où ça va chier."
 
     pause 0.3
 
-    $ showP("noam", "neutre", 0.22)
-    noam "J'imagine que tu viens d'Axiome alors ?"
-    
-    noam "Moi c'est Noam."
-    noam "District HARMONIE."
+    noam neutre "J'imagine que tu viens d'Axiome alors ?"
+    noam neutre "Moi c'est Noam."
+    noam neutre "District HARMONIE."
 
-    $ showP("mara", "neutre", 0.78)
-    mara "Mara."
-    mara "Et Bingo, je viens bien d'Axiome."
+    mara neutre "Mara."
+    mara sourire "Et ouais, bingo : Axiome pur jus."
 
-    $ showP("noam", "taquin", 0.22)
-    noam "Ah."
-    noam "D'où le côté un peu professionnel."
+    noam taquin "Ah."
+    noam taquin "D'où le côté un peu professionnel."
 
-    $ showP("mara", "rire", 0.78)
-    mara "Seulement un peu ?"
+    mara rire "Seulement un peu ?"
 
     pause 0.3
 
@@ -251,26 +241,19 @@ label decouverte_sas:
     "Elle est lourde."
     "Même sans l’ouvrir, on le sent."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Tu crois que ce sas sera utile ?"
+    noam reflexion "Tu crois que ce sas sera utile ?"
 
-    $ showP("mara", "doute", 0.78)
-    mara "Euh…"
-    mara "Ouais."
-    mara "Les livraisons devraient normalement arriver une fois par semaine."
+    mara doute "Euh… ouais."
+    mara "Normalement, les livraisons tombent une fois par semaine."
+    mara reflexion "C’est huilé au millimètre : J7, J14, J21, J28."
+    mara "Toujours pile à la même heure, comme des horloges suisses."
+    mara taquin "Très rassurant, hein ?"
 
-    $ showP("mara", "reflexion", 0.78)
-    mara "C’est réglé à la perfection."
-    mara "J7, J14, J21, J28."
-    mara "Toujours à la même heure apparemment."
+    noam surpris "Ils ont déjà prévu tout ça ?"
+    noam surpris "Genre…"
+    noam surpris "jusqu’à la fin du Conclave ?"
 
-    $ showP("noam", "surpris", 0.22)
-    noam "Ils ont déjà prévu tout ça ?"
-    noam "Genre…"
-    noam "jusqu’à la fin du Conclave ?"
-
-    $ showP("mara", "doute", 0.78)
-    mara "Au moins on est surs d'avoir des livraisons régulièrement."
+    mara doute "Au moins on est surs d'avoir des livraisons régulièrement."
 
     pause 0.3
 
@@ -281,19 +264,18 @@ label decouverte_sas:
     noam "C’est con, mais…"
     noam "savoir que ça arrive toutes les semaines, ça rassure."
 
-    $ showP("mara", "stress", 0.78)
-    mara "Ouais."
-    mara "C’est exactement pour ça que ça m’angoisse."
+    mara stress "Ouais… c’est exactement pour ça que ça me fout les jetons."
 
     pause 0.3
 
     $ showP("noam", "inquiet", 0.22)
     noam "Pourquoi ?"
 
-    $ showP("mara", "reflexion", 0.78)
-    mara "Parce que ça veut aussi dire que si on a le moindre soucis…"
-    mara "On ne pourra être livré que lors de ces jours particuliers."
-
+    mara "Parce que si un truc déconne…"
+    mara "si on a besoin d’un médoc, de bouffe en plus, d’un câble USB ou que sais-je…"
+    mara "bah on attend sagement le prochain jour J."
+    mara doute "Et si c’est pas le bon jour… on crève la dalle ou on crève tout court."
+    mara sourire "Super planning, Kami. Vraiment top."
     pause 0.4
 
     "Je regarde la porte."

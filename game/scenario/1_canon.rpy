@@ -217,10 +217,10 @@ label _1_CANON:
     $ showP("ryn", "colere", 0.22)
     $ showP("noam", "neutre", 0.78)
 
-    mara "J’adore."
-    mara "Douze invités, zéro hôte."
-    mara "Coincés ici sans mode d’emploi."
-    mara "Et le boss n’est même pas là pour l’entrée."
+    mara "J’adore, putain."
+    mara "Douze pigeons, zéro animateur."
+    mara "Pas de mode d’emploi, pas d’hôte, même pas un petit speech d’accueil."
+    mara "Elle nous snobe direct, la garce."
 
     hide noam
     $ showP("tomas", "reflechit", 0.78)  # droite
@@ -303,7 +303,7 @@ label _1_CANON:
     
     hide noam
     $ showP("elias", "neutre", 0.50)
-    elias "Franchement, que veux-tu faire de plus ?"
+    elias "… Et après ? Tu comptes faire quoi ?"
 
     hide elias
     $ showP("sael", "raison", 0.50)      # centre
@@ -706,9 +706,9 @@ label _1_KAMI_APPARITION:
     $ showP("noam", "inquiet", 0.50)
     $ showP("lysa", "surpris", 0.78)
 
-    mara "Vous parlez tous comme si on venait de gagner un droit."
-    mara "On est dans une cage."
-    mara "Une cage avec un bouton 'vote' et un joli ruban dessus."
+    mara "Vous parlez tous comme si on venait de gagner au loto."
+    mara "On est dans une putain de cage, les gars."
+    mara "Avec un bouton ‘vote’ et un nœud rose dessus pour faire genre que c’est cadeau."
 
     $ showP("lysa", "colere", 0.78)
     lysa "Merci pour le rappel."
@@ -983,10 +983,10 @@ label KAMI_MESSAGE_APRES_VISITE:
     hide noam
     $ showP("mara", "rire", 0.50)
 
-    mara "Chut."
-    mara "T’as entendu."
-    mara "Kami ne pardonne pas qu’on lui fasse perdre son temps, paraît-il."
-    mara "Et j’ai pas envie d’être dans sa ligne de mire."
+    mara "Chuuut."
+    mara "T’as capté ou quoi ?"
+    mara "Kami supporte pas qu’on lui fasse perdre son temps, soi-disant."
+    mara "Et moi j’ai pas envie d’être sa cible du jour, alors merci mais tais toi."
 
     hide lysa
     $ showP("iris", "fatigue", 0.22)
@@ -1173,7 +1173,7 @@ label KAMI_MESSAGE_APRES_VISITE:
     show screen kami_broadcast_ui
     $ bc_show("elias", "reflechit", px=-70, py=-50, pz=0.85)
     
-    elias "Donc un seul refus annule tout."
+    elias "Donc si une seule personne dit non… c’est mort."
     elias "C’est une sorte de système de blocage."
     
     $ bc_hide()
@@ -1287,8 +1287,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide julian
     $ showP("mara", "neutre", 0.78)
 
-    mara "C’est pas un risque."
-    mara "C’est ta signature ... Comment tu t'appelles déjà ?"
+    mara "C’est pas un risque, c’est ta marque de fabrique."
+    mara "Au fait… c’est quoi ton blaze déjà ?"
 
     "Personne ne lui réponds vraiment."
 
@@ -1351,8 +1351,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide tomas
     $ showP("elias", "reflechit", 0.78)
 
-    elias "Pendant qu’on discute."
-    elias "Le temps passe, il ne reste déjà plus que vingt minutes."
+    elias "Au fait les gars..."
+    elias "Pendant qu’on tourne en rond, le chrono descend à vingt minutes."
 
     pause 0.4
 
@@ -1384,8 +1384,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide nyra
     $ showP("mara", "sourire", 0.50)
 
-    mara "Une fois que quelqu’un commence."
-    mara "Les autres suivent toujours."
+    mara "Dès qu’un con commence…"
+    mara "Tous les autres moutons suivent. Les gens sont vraiment des moutons."
 
     pause 0.3
 
@@ -1900,12 +1900,11 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     $ showP("mara", "sourire", 0.50)
 
-    mara "Moi j’ai arrêté d’y penser."
-    mara "Sinon je risquais de devenais folle."
-
-    mara "J’ai écrit."
-    mara "Point."
-    mara "Et tant pis si ça ne vous plait pas."
+    mara "Moi j’ai arrêté de cogiter."
+    mara "Sinon je devenais dingue."
+    mara "J’ai écrit un truc."
+    mara "Point barre."
+    mara "Et si ça vous plaît pas, bah tant pis pour vos gueules."
 
     think "Tant pis."
     think "Facile à dire."
@@ -1934,7 +1933,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     think "C’est étrange."
     think "On dirait presque une soirée normale."
 
-    mara "Vous pensez qu’elle regarde là ? Genre, là ? Maintenant ?"
+    mara "Vous croyez qu’elle nous mate là ? Genre… là, tout de suite ?"
 
     julian "Sûrement."
     julian "Mais honnêtement ?"
@@ -2023,9 +2022,9 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     nyra "J’avais presque oublié ce que ça faisait."
     nyra "Tenir quelque chose de chaud."
 
-    mara "Ouais."
-    mara "C'est con mais ça rassure."
-    mara "Un peu."
+    mara "Ouais…"
+    mara "C’est débile mais ça fait du bien."
+    mara "Un tout petit peu."
 
     "Je prends la tasse."
     "Elle me brûle presque les doigts."
@@ -2058,8 +2057,8 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     "Le plateau n’en garde plus qu’une."
     "Personne ne la prend."
 
-    mara "Bon."
-    mara "Je vais finir par aller me coucher."
+    mara "Bon bah voilà."
+    mara "Je vais aller me pieuter avant de péter un câble."
 
     nyra "Moi aussi."
     nyra "Avant que je recommence à réfléchir."
@@ -2118,8 +2117,7 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     if choix_1_soir == "salle_repos":
 
-        elias "Ah."
-        elias "Toi aussi tu rentres tard."
+        elias "Ah. Toi aussi t’es encore debout."
 
         think "Elias."
         
@@ -2129,18 +2127,18 @@ label _1_FIN_JOURNEE_DORTOIR:
         noam "J’avais pas trop envie de rester seul."
 
         elias "Je vois."
-        elias "La salle de repos ?"
+        elias "La salle de repos, hein ? … Pas con."
 
         noam "Ouais."
 
         elias "Bonne idée."
     
-        elias "Moi j’ai essayé de dormir."
+        elias "Moi j’ai tenté de dormir direct."
         elias "Raté."
 
     if choix_1_soir == "dormir":
         
-        elias "En voilà un de couche tôt."
+        elias "En voilà un se couche tôt."
         elias "Laisse moi deviner, envie de rester seul ?"
         
         $ showP("noam", "neutre", 0.15)
@@ -2154,10 +2152,9 @@ label _1_FIN_JOURNEE_DORTOIR:
     "Un vrai sourire."
     "Un peu fatigué."
 
-    elias "C’est étrange."
-    elias "On a passé la journée à faire des trucs lourds."
-    elias "Et pourtant…"
-    elias "Je suis rincé, comme après un chantier.Je suis rincé, comme après un chantier."
+    elias "C’est chelou quand même."
+    elias "Journée à rallonge, stress au max…"
+    elias "… et je suis rincé comme après douze heures sur un chantier."
 
     noam "Ouais."
     noam "Comme après un déménagement."
