@@ -251,7 +251,7 @@ label _1_CANON:
     $ showP("mara", "agace", 0.50)       # réaction
     $ showP("tomas", "neutre", 0.78)     # réaction
 
-    lysa "Tu as remarques ça ?"
+    lysa "Tu as remarqué ça ?"
 
     hide mara
     $ showP("noam", "reflexion", 0.50)   # centre
@@ -263,9 +263,10 @@ label _1_CANON:
 
     $ showP("lysa", "determine", 0.22)
 
-    lysa "Aucun ordre."
+    lysa neutre "Aucun ordre."
     lysa "Aucun écran."
     lysa "Aucun message."
+    lysa fatigue "... Silence radio."
 
     noam "Ça veut dire quoi pour toi ?"
 
@@ -658,9 +659,12 @@ label _1_KAMI_APPARITION:
     noam "On va devoir vraiment passer trente jours ici …"
 
     $ showP("lysa", "reflexion", 0.78)
-    lysa "L’unanimité, c’est le piège. En pratique c'est quasimment toujours impossible à avoir."
-    lysa "Ça force à convaincre les autres, ou comme moteur pour les écraser."
-    lysa "Je comprends mieux pourquoi Kami dit que ça ne va pas être simple."
+    lysa blase "L’unanimité ?"
+    lysa blase "C’est le piège ultime."
+    lysa blase "En vrai, c’est quasi impossible."
+    lysa "Soit tu convaincs tout le monde…"
+    lysa "soit tu les écrases."
+    lysa fatigue "Maintenant je pige pourquoi elle dit que ce sera pas simple."
 
     $ showP("tomas", "raison", 0.22)
     tomas "Ou à faire des compromis."
@@ -728,10 +732,11 @@ label _1_KAMI_APPARITION:
     ryn "On fait quoi ?"
 
     $ showP("lysa", "reflexion", 0.78)
-    lysa "On est constamment filmé par les caméras."
-    lysa "Et une IA qui regarde et diffuse tout ce qu'on fait."
-    lysa "Je pense que c’est son idée du 'cadre sécurisé'."
-    lysa "Cette pression devrait empêcher tout pétage de câble."
+    lysa neutre "On est filmés en permanence."
+    lysa "IA qui mate et diffuse tout."
+    lysa blase "Son idée du ‘cadre sécurisé’, apparemment."
+    lysa "La pression, ça empêche de péter un câble."
+    lysa fatigue "... En théorie."
 
     "À côté, quelqu’un se lève, ajuste sa veste comme s’il montait sur scène."
     "Il cherche du regard une caméra. Il la trouve."
@@ -818,10 +823,12 @@ label _1_KAMI_APPARITION:
     elen "Pour éviter que ça parte en guerre tout de suite."
 
     $ showP("lysa", "blase", 0.78)
-    lysa "Tu veux une méthode ?"
+    lysa blase "Tu veux une méthode ?"
     lysa "On est douze, enfermés, filmés."
-    lysa "Et on peut se tuer sans conséquence ici."
-    lysa "La méthode, elle est déjà écrite."
+    lysa "Et ici, tuer quelqu’un… pas de conséquence."
+    lysa fatigue "La méthode est déjà écrite."
+    lysa "... Et on la connaît tous."
+    lysa peur "Evidemment que ça va finir en tuerie de masse."
 
     pause 0.4
 
@@ -835,10 +842,10 @@ label _1_KAMI_APPARITION:
     noam "On fait quoi, nous ?"
 
     $ showP("lysa", "determine", 0.78)
-    lysa "On visite."
+    lysa neutre "On visite."
     lysa "On repère les lieux."
-    lysa "Et on évite de trop parler devant les caméras."
-    lysa "Surtout au début."
+    lysa "Et on ferme sa gueule devant les caméras."
+    lysa fatigue "Surtout au début."
 
     $ showP("elen", "reflechit", 0.22)
     elen "Je… je vais voir s’il y a une infirmerie."
@@ -1335,11 +1342,14 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide nyra
     $ showP("lysa", "reflexion", 0.22)
 
-    lysa "Ou alors."
-    lysa "C’est notre seule défense."
-    lysa "Il y a aussi la possibilité que quelqu'un mente."
-    lysa "Il dit qu'il propose un amendement alors qu'en fait il en propose un autre."
-
+    lysa reflexion "Ou alors…"
+    lysa "c’est notre seule défense."
+    lysa doute "Quelqu’un peut très bien mentir."
+    lysa "Dire qu’il propose un truc alors qu’il en propose un autre."
+    lysa blase "Avec seulement dix votes tirés au sort…"
+    lysa "c’est l’alibi parfait."
+    lysa fatigue "Personne pourra prouver le contraire."
+    
     pause 0.4
 
     "Le silence retombe."

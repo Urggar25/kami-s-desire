@@ -50,17 +50,17 @@ label elias_link_1:
     "Il règle la charge sans me regarder."
     "Ses gestes sont précis, presque mécaniques, automatiques."
 
-    elias ecoute "Je fais toujours les mêmes séries."
-    elias ecoute "Même cadence, même souffle, même rythme."
+    elias ecoute "Toujours les mêmes séries."
+    elias ecoute "Même cadence. Même souffle."
 
     $ showP("noam", "neutre", 0.25)
 
     noam sourire "Tu ne t'ennuies jamais à faire les mêmes exercices ?"
 
     elias reflechit "Non."
-    elias reflechit "L'ennui, c'est quand tu ne sais pas quoi faire."
-    elias reflechit "Moi je sais exactement les exercices dont j'ai besoin."
-
+    elias reflechit "L’ennui, c’est quand tu sais pas quoi faire."
+    elias reflechit "Moi, je sais exactement ce dont j’ai besoin."
+    
     "Il pousse une répétition, inspire, puis parle."
 
     elias content "Quand j'étais gamin, c'était pareil."

@@ -1190,9 +1190,12 @@ label _2_APRES_MIDI:
     "Lysa souffle."
     "Longuement."
 
-    lysa determine "Je viendrai et on tirera ça au clair ..."
-    lysa reflexion "J'ai quelques réserves sur ce vote ...."
-    lysa reflexion "S'il manque déjà de tout dans les districts. Autoriser les échanges et le commerce ça ne risque pas de tout aggraver encore ?"
+    lysa determine "Je viendrai."
+    lysa reflexion "On tirera ça au clair."
+    lysa blase "Mais j’ai des réserves sur ce vote…"
+    lysa neutre "Si on manque déjà de tout là-bas…"
+    lysa reflexion "autoriser les échanges, le commerce…"
+    lysa fatigue "ça risque pas d’empirer les choses ?"
 
     noam raison "C'est possible."
     noam raison "Pour tout te dire, je ne sais pas vraiment."
@@ -1202,9 +1205,10 @@ label _2_APRES_MIDI:
     noam neutre "On en parlera peut-être demain..."
 
     lysa hoche "Oui."
-    lysa triste "Avant que je ne change d’avis."
-    lysa triste "Je n'ai pas envie de briser leurs espoirs de changement mais ..."
-    lysa determine "Enfin tu as compris ..."
+    lysa triste "Avant que je change d’avis."
+    lysa blase "J’ai pas envie de briser leurs espoirs…"
+    lysa determine "mais tu as compris."
+    lysa fatigue "... C’est déjà ça."
 
     $ add_argument("Difficulté d'approvisionnement")
     show screen argument_unlock("Difficulté d'approvisionnement")

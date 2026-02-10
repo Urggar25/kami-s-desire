@@ -1442,14 +1442,16 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Lysa."
     resp_d "Vous aussi, merci d’être restée calme."
 
-    lysa "Je ne suis pas vraiment calme."
-    lysa "Je n'ai même pas eu le temps de rentrer chez moi."
+    lysa blase "... Calme ?"
+    lysa "J’ai même pas eu le temps de rentrer chez moi."
+    lysa "Donc non."
 
     "Elle me regarde."
     "Deux secondes."
     "Puis elle fixe le responsable."
 
-    lysa "C’est lui ?"
+    lysa doute "C’est lui ?"
+    lysa "... Super."
 
     resp_d "Oui."
     resp_d "Noam. Médiation."
@@ -1484,9 +1486,10 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Du moins c'est ce qu'on m'a dit."
     resp_d "Vous serez endormi durant le trajet par un gaz sopo-"
 
-    lysa "Donc on dort."
-    lysa "Et on se réveille ailleurs."
-    lysa "Sans contrôle."
+    lysa fatigue "Donc on s’endort."
+    lysa "Et pouf."
+    lysa "Réveil ailleurs, zéro contrôle."
+    lysa "Décidément c'est la foire aux horreurs ?"
 
     resp_d "Kami aura le contrôle. Nous, nous obéissons."
     resp_d "Et je vous conseille de ne pas résister."
@@ -1512,7 +1515,7 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "On y va."
     resp_d "Il faut vous installer dans les caissons de transport."
     
-    lysa "Mais on a encore plusieurs heures ..."
+    lysa "Mais on a encore plusieurs heures ..!"
     
     resp_d "Je ne veux prendre aucun risque."
     resp_d "Rien ne vous interdit d'arriver plus tôt."
@@ -1521,7 +1524,8 @@ label _0_LABEL2_RESP_DISTRICT:
     "Lysa me regarde une dernière fois."
     "Elle sait bien qu'il n'est pas possible de négocier."
 
-    lysa "On se présentera plus en détail dans la machine."
+    lysa "On se présentera correctement quand la machine nous le demandera."
+    lysa blase "Pas la peine de s’épuiser maintenant."
 
     noam "Ça marche."
 

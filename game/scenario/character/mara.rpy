@@ -50,17 +50,18 @@ label mara_link_1:
 
     mara sourire "Tu sens ?"
     mara neutre "Le café ici n'a pas d'âme."
+    mara taquin "On dirait du jus de chaussette premium."
 
     noam taquin "Pourquoi tu es difficile à satisfaire ?"
-    mara taquin "Je suis exigeante."
-    mara neutre "C'est différent."
 
+    mara taquin "Je suis exigeante."
+    mara neutre "Pas chiante. Exigeante."
     mara sourire "Je plaisante."
     mara taquin "Enfin… pas complètement."
 
     noam "Et... Qu'est ce que tu préfères ?"
 
-    mara taquin "Les ragots, c'est plus nutritif."
+    mara taquin "Les ragots, c'est plus nourrissant."
     mara sourire "Mais le café fait mieux semblant."
 
     "Elle rit vite, puis regarde autour."
@@ -89,8 +90,8 @@ label mara_link_1:
 
     mara neutre "Mon père."
     mara neutre "Ses conseillers."
-    mara taquin "Les gens qui ont peur que je sois "
-    mara taquin "trop vraie, un peu trop authentique."
+    mara taquin "Tous ceux qui flippaient que je sois trop vraie."
+    mara taquin "... Trop authentique, quoi."
 
     "Elle mime des guillemets avec ses doigts."
 
@@ -105,10 +106,11 @@ label mara_link_1:
 
     "Elle remue son café, puis me regarde d'un air curieux."
 
-    mara taquin "Tu me regardes pour quoi, toi ?"
-    mara taquin "Qu'est ce qui peut intéresser un grringalet comme toi ?"
+    mara taquin "Tu me mates pour quoi, toi ?"
+    mara taquin "Qu’est-ce qui peut bien t’intéresser chez une fille comme moi ?"
 
     "Elle m'intimide légèrement."
+    noam "Hein ?!"
     noam "Je veux surtout comprendre..."
 
     mara neutre "Comprendre quoi ?"
@@ -124,7 +126,7 @@ label mara_link_1:
 
     "Elle éclate de rire l'espace d'un instant."
 
-    mara sourire "Ah ah ! Je t'aime bien toi."
+    mara sourire "Ah putain, je t’aime bien toi."
     mara sourire "Malheureusement oui, elles sont toujours collées à mes escarpins !"
     mara neutre "Je préférais quand on m'appelait 'petite'."
     mara taquin "Ça faisait gentil et je pouvais davantage m'amuser."
