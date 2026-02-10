@@ -1511,6 +1511,9 @@ label _2_GYMNASE:
     "Régulières."
     "Implacables."
 
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    "L'heure tourne et je commence à avoir un petit creux."
+
     jump _2_CAFETERIA_SOIR
 
 # Durée : 1m50
@@ -1519,207 +1522,51 @@ label _2_GYMNASE:
 label _2_CAFETERIA_SOIR:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    $ showP("nyra", "sourire", 0.20)
-    $ showP("elen", "inquiet", 0.50)
-    $ showP("tomas", "inquiet", 0.80)
-
-    nyra raison "On tourne en rond."
-    nyra raison "La proposition ne bougera pas."
-    nyra raison "Demain, c’est oui ou non."
-
-    elen inquiet "Oui pour autoriser les échanges et le commerce."
-    elen inquiet "Non pour tout refuser."
-
-    tomas inquiet "Donc on arrête de discuter des exceptions ?"
-
-    nyra raison "On arrête."
-    nyra raison "Pas de clauses, pas de liste, pas de rustine."
-
-    tomas panne "... D’accord."
-
-    elen triste "C’est violent, dit comme ça."
-
-    nyra raison "C’est honnête."
-    nyra raison "On ne vote pas un plan détaillé."
-    nyra raison "On vote une direction."
-
-    hide tomas
-    $ showP("kael", "neutre", 0.80)
-
-    kael raison "La seule vraie question, c’est celle-là :"
-    kael raison "Est-ce qu’on accepte d’ouvrir les échanges ?"
-    kael raison "Ou est-ce qu’on ferme tout ?"
-
-    elen inquiet "Et après, on gère les conséquences."
-
-    nyra raison "Voilà."
-
-    hide elen
-    $ showP("iris", "determine", 0.50)
-
-    iris determine "Parfait."
-    iris determine "Alors qu’on arrête les faux débats."
-    iris determine "Demain, chacun dit oui ou non."
-    iris determine "Et qu’il assume."
-
-    kael neutre "Au moins, c’est clair."
-
-    nyra raison "La clarté, c’est déjà une défense."
-
-    hide iris
-    $ showP("mara", "neutre", 0.50)
-
-    mara neutre "Je déteste voter à l’aveugle."
-
-    kael mefiant "On vote tous à l’aveugle."
-
-    mara doute "Alors il nous faut au moins une règle simple."
-
-    nyra raison "La voici :"
-    nyra raison "Ne pas faire croire demain qu’on a voté un texte qu’on n’a pas."
-
-    tomas inquiet "Donc pas de 'oui, mais'."
-    tomas inquiet "Pas de 'non, sauf'."
-
-    mara neutre "Oui."
-    mara neutre "Un mandat net."
-
-    pause 0.6
-
-    "Les regards se croisent."
-    "Personne n’a l’air rassuré."
-    "Mais au moins, la question est propre."
-
-    $ add_argument("Mandat binaire")
-    show screen argument_unlock("Mandat binaire")
-
-    hide nyra
-    hide kael
-    hide mara
-
-    $ showP("julian", "taquin", 0.20)
-    $ showP("elen", "inquiet", 0.50)
-    $ showP("tomas", "inquiet", 0.80)
-
-    julian taquin "Au moins, ce soir, on a arrêté de jouer aux juristes."
-    julian reflexion "Demain, ce sera brut."
-    julian reflexion "Autoriser les échanges, ou les interdire."
-
-    tomas inquiet "Tu crois qu'on peut vraiment trancher comme ça ?"
-
-    julian reflexion "On va devoir le faire."
-    julian reflexion "Même si personne n'a envie d'être celui qui coupe."
-
-    elen inquiet "Improviser, ça me fait peur."
-
-    julian sourire "Moi aussi."
-
-    elen inquiet "Alors pourquoi tu souris ?"
-
-    julian taquin "Parce que si je ne souris pas, je tremble."
-
-    elen inquiet "Je tremble déjà."
-
-    julian taquin "Alors on tremblera ensemble."
-
-    hide julian
-    hide elen
-    hide tomas
-
-    "La salle commune se remplit petit à petit."
-    "Des chuchotements."
-    "Des notes griffonnées."
-    "Je comprends que chacun trouve sa place."
-    "Même ceux qui ne parlent pas."
-
-    scene bg_couloir at adaptive_fullscreen with dissolve
-
-    "Je repars pour respirer."
-    "Dans les couloirs, des regards évitent les miens."
-    "Ou s’y accrochent trop fort."
-    "On sent les alliances se chercher."
-    "Les peurs se répartir."
-
-    $ showP("ryn", "neutre", 0.20)
-    $ showP("mara", "neutre", 0.60)
-
-    ryn neutre "Tu vas voter quoi ?"
-
-    mara neutre "Je ne sais pas."
-
-    ryn reflechit "Tu sais très bien."
-
-    mara stress "Je sais ce que je risque."
-
-    ryn reflechit "Alors tu sais."
-
-    mara neutre "Et toi ?"
-
-    ryn neutre "Moi, je veux être libre."
-
-    mara doute "Libre de quoi ?"
-
-    ryn reflechit "De devoir quelque chose."
-    ryn reflechit "De devoir des explications."
-    ryn reflechit "De devoir une loyauté."
-
-    mara neutre "On est déjà redevables."
-
-    ryn fatigue "Pas encore."
-
-    hide ryn
-    hide mara
-
-    "Je me surprends à écouter la façon dont les mots tombent."
-    "Ils pèsent."
-    "Ils restent."
-    "Ils collent."
-
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-
     "Je termine la journée à la cafétéria."
     "Tout le monde ne mange pas en même temps."
     "Ça vient, ça repart."
     "Des silhouettes, des plateaux, des regards."
 
-    $ showP("kael", "neutre", 0.20)
+    $ showP("nyra", "neutre", 0.80)
 
-    kael neutre "À Orbite, on mangeait souvent en décalé."
-    kael neutre "Les cycles n’étaient pas les mêmes."
-    kael neutre "Le silence faisait partie du travail."
+    "Nyra est en train de parler de sa vie."
+    nyra sourire "À Orbite, on mangeait souvent en décalé."
+    nyra sourire "Chacun vivait vraiment à son propre rythme, comme dans dessortes de cycles."
+    nyra sourire "Le silence faisait partie du travail."
 
     noam hesitation "Tu regrettes ?"
 
-    kael neutre "Ce qui me manque, c’est la routine."
-    kael neutre "Pas l’endroit."
+    $ showP("kael", "neutre", 0.15)
+    kael neutre "Ce qui me manque moi, c’est la routine."
+    kael neutre "Pas l’endroit, à vrai dire, ça fait du bien de voir autre chose."
 
-    $ showP("nyra", "taquin", 0.80)
+    $ showP("elen", "taquin", 0.55)
 
-    nyra taquin "Orbite, c’était comment ?"
-    nyra taquin "On entend tout et n’importe quoi."
-    nyra taquin "Des gens qui dorment en apesanteur."
-    nyra taquin "Des repas qui flottent."
+    elen taquin "Orbite, c’était comment ?"
+    elen reflechit "On entend tout et n’importe quoi."
+    elen content "Des gens qui dorment en apesanteur."
+    elen content "Des repas qui flottent, ce genre de choses."
 
     kael neutre "On flotte, oui."
-    kael neutre "Mais on fait quand même la vaisselle."
+    kael neutre "Mais on fait quand même la vaisselle, même si parfois c'est galère !"
 
-    nyra taquin "Quelle déception."
+    nyra taquin "C'est clair !."
 
-    $ showP("tomas", "curieux", 0.50)
+    hide elen
+    $ showP("tomas", "neutre", 0.50)
 
     tomas inquiet "Et… euh… vous aviez aussi des médiateurs ?"
-    tomas inquiet "Des… assemblées ?"
+    tomas inquiet "Des… assemblées ? C-Comment vous prenez des décisions ?"
 
-    kael raison "Pas comme ici."
-    kael raison "On réglait les choses autrement."
-    kael raison "Avec des protocoles."
-    kael raison "Et moins de spectacle."
+    kael calme "Pas comme ici."
+    kael calme "On réglait les choses autrement."
+    kael calme "Avec des protocoles."
+    kael rire "Et beaucoup moins de spectacle."
 
     noam inquiet "Ça te fait quoi de tout revoir ici ?"
 
-    kael raison "Ça me donne envie de comprendre."
-    kael raison "Et de ne plus obéir par réflexe."
+    kael reflechit "Ça me donne envie de comprendre."
+    kael reflechit "Et de ne plus obéir par réflexe."
 
     nyra raison "Et si tu comprends pas ?"
 
@@ -1727,41 +1574,39 @@ label _2_CAFETERIA_SOIR:
 
     tomas inquiet "Et si on fait une erreur ?"
 
-    kael neutre "On la porte."
+    kael triste "J'imagine qu'on fait tous des erreurs."
+    kael triste "A nous de les assumer."
 
-    nyra raison "Ça fait lourd."
+    nyra raison "Autant éviter d'en faire."
 
     kael neutre "Ça l’est."
 
-    hide nyra
-    $ showP("elen", "triste", 0.80)
+    hide tomas
+    $ showP("elen", "triste", 0.55)
 
     elen triste "Je me demande."
     elen triste "Si nos familles nous regardent."
 
     noam neutre "Je me le demande aussi."
 
-    elen triste "S’ils nous voient, ils doivent avoir peur."
-    elen triste "Et si on vote mal, ils auront plus peur."
+    elen triste "S’ils nous voient, ils doivent avoir peur pour nous."
+    elen triste "Et si on vote mal, ils auront encore plus peur."
 
-    kael raison "On ne vote pas pour eux."
+    kael reflechit "On ne vote pas uniquement pour eux."
 
-    elen triste "Mais ils vivent avec nos décisions."
+    elen triste "Oui, mais nos décisions impacteront tout le monde."
 
     kael neutre "Oui."
-    kael sombre "C’est ça, être ici."
+    kael triste "C’est ça, être ici."
 
     elen triste "Je déteste ça."
 
-    nyra raison "On déteste tous."
-
-    elen inquiet "Alors on fait quoi ?"
-
-    nyra raison "On tient."
+    nyra raison "Je pense qu'on déteste tous ça."
+    nyra raison "On a un travail à faire, c'est tout.."
 
     elen inquiet "C’est tout ?"
 
-    nyra raison "Pour aujourd’hui, oui."
+    nyra raison "Pour aujourd’hui, en tout cas."
 
     hide elen
     hide nyra
@@ -1769,20 +1614,20 @@ label _2_CAFETERIA_SOIR:
     $ showP("ryn", "neutre", 0.80)
 
     ryn neutre "Vous êtes calmes."
-    ryn neutre "Je m’attendais à des cris."
+    ryn neutre "Je m’attendais à des cris et des hurlements."
 
-    kael neutre "Tu es déçue ?"
+    kael neutre "Tu es déçu ?"
 
-    ryn neutre "Non."
-    ryn reflechit "Les cris viennent après."
+    ryn sourire "Ha ha ! Peut-être un peu !."
+    ryn sourire "Mais les cris viendront après."
 
     noam inquiet "Tu penses qu’on va se déchirer ?"
 
-    ryn reflechit "Je pense qu’on va se découvrir."
-    ryn reflechit "Et ce n’est pas toujours beau."
+    ryn reflechit "Je pense qu’on va découvrir les joies des désaccords."
+    ryn reflechit "Et ce n’est pas toujours sympa à voir."
 
-    kael raison "On n’est pas obligés d’être beaux."
-    kael raison "On doit être honnêtes."
+    kael reflechit "On n’est pas obligés d’être sympa à voir."
+    kael reflechit "On doit surtout être honnêtes."
 
     ryn fatigue "L’honnêteté, c’est dangereux."
     ryn fatigue "Elle donne des angles d’attaque."
@@ -1794,63 +1639,62 @@ label _2_CAFETERIA_SOIR:
 
     kael neutre "Tu veux être quoi, alors ?"
 
-    ryn neutre "Libre."
+    ryn neutre "Libre. Je veux que les Limenois soient libres."
 
     noam inquiet "Tu ne crois pas qu’on puisse être libre ensemble ?"
 
     ryn reflechit "Je ne sais pas."
-    ryn reflechit "Je n’ai jamais essayé."
+    ryn reflechit "Ca fait bien longtemps qu'on ne l'est plus, et ça, ça date de bien avant Kami."
 
-    kael raison "Alors c’est l’occasion."
+    noam raison "Alors c’est l’occasion d'essayer de faire avancer les choses."
 
     noam hesitation "Qu'est ce que tu vas voter ?"
 
-    ryn reflechit "Je ne sais pas vraiment. Je vais écouter."
+    ryn reflechit "Je pense que je voterai pour. Je vais écouter."
     ryn reflechit "Et je me déciderai demain."
-
-    kael neutre "Ce sera tard."
-
     ryn reflechit "C'est sans doute mieux comme ça."
 
-    noam inquiet "Tu refuses de t’engager ?"
-
-    ryn fatigue "Je refuse qu’on m’engage."
-
-    noam raison "Tu as raison d’être prudente."
-    noam inquiet "Mais si tu ne parles pas, on parlera pour toi."
-
-    ryn reflechit "Alors je parlerai."
-    ryn reflechit "Quand ça comptera."
-
-    kael sombre "Ça compte déjà."
-
-    ryn fatigue "Tout compte déjà."
-    ryn fatigue "Et c’est pour ça que je me tais."
+    noam raison "Tu as raison d’être prudent."
 
     hide ryn
 
     "La conversation dérive."
     "D’autres se mêlent à nous."
     "Des questions, des souvenirs, des comparaisons."
-    "Puis la fatigue gagne."
+    "Puis la fatigue gagne peu à peu nos esprits."
 
     stop music fadeout 1.0
     pause 0.6
 
-    "Je passe par les douches."
-    "L’eau est tiède."
-    "Juste assez pour effacer le bruit."
-
+    scene bg_couloir at adaptive_fullscreen with fade
+    pause 1.0
+    scene bg_dortoir at adaptive_fullscreen with fade
+    pause 1.0
     scene bg_chambre at adaptive_fullscreen with fade
+    pause 1.0
+
+    "Je passe par les douches."
+
+    scene bg_cg011 at adaptive_fullscreen with fade
+
+    "L’eau est chaude."
+    "Juste assez pour effacer le bruit de mes pensées."
+
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
-    "Je me laisse tomber sur le lit."
-    "Demain, quatorze heures."
-    "Et entre les deux, des paroles à peser."
-    "Des accords à construire."
-    "Ou à casser."
+    scene bg_chambre at adaptive_fullscreen with fade
+    "Je me sèche, puis je me laisse tomber sur le lit et j'éteins les lumières."
+    
+    scene bg_cg012 at adaptive_fullscreen with fade
+    "Demain sera dense."
+    $ blink()
+    "A quatorze heures on en saura enfin plus."
+    "On saura si on peut vraiment changer les choses ou pas."
 
     $ blink()
 
     think "Je ferme les yeux."
     think "Et j’essaie de dormir."
+
+# Durée : 1m55
+# Totale : 1h 24m 10s
