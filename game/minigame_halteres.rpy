@@ -15,6 +15,7 @@ default mg_time_left = 60.0
 default mg_zone_start = 0.40
 default mg_zone_end = 0.60
 default mg_perfect_margin = 0.05
+default mg_skip_scene_pick = False
 
 default scenes_normales = ["scene_mg_normale_1"]
 default scenes_patreon = ["scene_mg_patreon_1"]
@@ -179,7 +180,11 @@ label minijeu_halteres:
     else:
         "Tu sens la fatigue, mais tu sais que ça finit par payer."
 
-    $ scene_label = mg_pick_scene()
+    if mg_skip_scene_pick:
+        $ scene_label = None
+        $ mg_skip_scene_pick = False
+    else:
+        $ scene_label = mg_pick_scene()
     if scene_label:
         call expression scene_label
     return

@@ -16,6 +16,7 @@ image elias rire              = im.FactorScale("images/character/elias/rire.png"
 image elias reflechit              = im.FactorScale("images/character/elias/reflechit.png", 0.60)
 image elias vide              = im.FactorScale("images/character/vide.png", 0.60)
 image elias detendu              = im.FactorScale("images/character/elias/detendu.png", 0.60)
+image elias raison              = im.FactorScale("images/character/elias/raison.png", 0.60)
 
 # ======================
 # MARA

@@ -1373,6 +1373,8 @@ label _2_SALLE_OBSERVATION:
 # Totale : 1h 20m 25s
 
 label _2_GYMNASE:
+
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
     "Je passe par la salle de sport."
@@ -1388,8 +1390,8 @@ label _2_GYMNASE:
     $ showP("elias", "neutre", 0.65)
 
     iris determine "Encore."
-    iris determine "Allez."
-    iris determine "Sans ralentir."
+    iris determine "Allez. Je dois..."
+    iris determine "Sans... ralentir."
 
     elias ecoute "Respire. C'est le plus important."
     elias ecoute "Sinon tu vas te fatiguer pour rien."
@@ -1408,34 +1410,36 @@ label _2_GYMNASE:
     noam surpris "Euh…"
     noam neutre "Je crois."
 
-    iris determine "Alors fais pas que regarder."
+    iris determine "Alors ne fais pas que regarder."
+    iris taquin "Ca tombe bien, plusieurs bancs sont libres."
 
     "Elias me désigne un banc."
 
     elias ecoute "Assieds-toi."
-    elias joie "On va commencer simple."
+    elias joie "On va commencer simplement."
 
     "Je m’exécute."
     "Le métal est froid."
 
-    elias raison "Posture."
-    elias ecoute "Dos droit."
-    elias ecoute "Respiration régulière."
+    elias raison "Stop. Redresse ton dos, ça ne va pas."
+    elias detendu "Expire en poussant, inspire en descendant. Si tu bloques ta respiration, tu vas exploser avant la troisième rep."
 
-    iris taquin "Il va trembler."
 
-    noam inquiet "Je tremble déjà."
+    iris taquin "Directement sur le banc de développé coucher ?"
+    iris taquin "Il va trembler le pauvre."
 
-    elias ecoute "Normal."
+    noam inquiet "Je tremble déjà rien que d'y penser."
+
+    elias ecoute "C'est pas si difficile."
     elias detendu "Ne lutte pas."
-    elias detendu "Accompagne."
+    elias detendu "Accompagne le mouvement."
 
     "Je soulève."
-    "C’est plus lourd que prévu."
+    "C’est bien plus lourd que prévu."
 
     elias ecoute "Pas comme ça."
     elias detendu "Moins vite."
-    elias detendu "Contrôle."
+    elias detendu "Contrôle la descente."
 
     "Je recommence."
     "Ça brûle."
@@ -1443,7 +1447,7 @@ label _2_GYMNASE:
     iris fatigue "Voilà."
     iris sourire "Bienvenue."
 
-    elias ecoute "Encore deux."
+    elias ecoute "Encore deux séries."
     elias detendu "Après tu t’arrêtes."
 
     tuto "Durant vos temps libres, il sera possible de faire certaines actions qui augmenteront vos statistiques personnelles."
@@ -1458,25 +1462,20 @@ label _2_GYMNASE:
 
     "Je commence à pousser les altères."
 
+    $ mg_skip_scene_pick = True
     call minijeu_halteres
 
     "Je repose."
     "Je souffle."
+    $ mg_skip_scene_pick = False
 
     pause 0.6
 
-    elias raison "Ce que tu fais ici compte."
-    elias ecoute "Pas juste pour aujourd’hui."
+    elias joie "T’as senti le petit feu dans les pecs ? C’est ça qui te fait rester."
+    elias joie "Mais si tu reviens que tous les quinze jours, ça repart aussi vite que ça vient. Le corps oublie pas, il pardonne juste pas."
 
-    elias raison "À chaque fois que tu utilises ton temps libre…"
-    elias raison "Ton corps ou ton esprit encaissent."
-
-    iris neutre "Ou lâchent."
-
-    elias ecoute "S’entraîner."
-    elias ecoute "Observer."
-    elias ecoute "Discuter."
-    elias raison "Tout ça, ça te façonne."
+    elias raison "Perso je viens souvent dès que j'ai un peu de temps libre."
+    elias raison "Si tu t'entraines, ton corps et ton esprit deviendront plus forts."
 
     elias raison "Certaines actions améliorent tes capacités."
     elias ecoute "Ta force."
@@ -1484,14 +1483,15 @@ label _2_GYMNASE:
     elias ecoute "Ta concentration."
 
     iris taquin "Et parfois…"
-    iris determine "Ça évite de craquer au mauvais moment."
+    iris determine "Ouais. Et des fois, c’est juste pour pas rentrer chez soi et tout péter dans le salon."
+    iris taquin "Bref. Soulever de la fonte, c’est moins cher qu’un psy."
 
     pause 0.4
 
     noam reflexion "Donc…"
     noam reflexion "Si je ne fais rien…"
 
-    elias neutre "Tu stagnes, et puis t'auras plus de chance d'être en mauvaise santé plus tard."
+    elias neutre "Tu stagneras, et puis t'auras plus de chance d'être en mauvaise santé plus tard."
 
     "Je regarde mes mains."
     "Elles tremblent encore un peu."
@@ -1501,18 +1501,20 @@ label _2_GYMNASE:
     iris sourire "Bonne idée."
 
     elias ecoute "Je serai là."
-    elias raison "Si tu veux t’y prendre correctement."
+    elias raison "Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?" 
 
     hide iris
     hide elias
 
     "Je quitte la salle."
-    "Les machines continuent."
+    "Les machines continuent de tourner."
     "Régulières."
     "Implacables."
 
     jump _2_CAFETERIA_SOIR
 
+# Durée : 1m50
+# Totale : 1h 22m 15s
 
 label _2_CAFETERIA_SOIR:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
