@@ -164,8 +164,8 @@ label _1_CANON:
     $ showP("elen", "desaccord", 0.22)
     $ showP("julian", "peur", 0.50)
 
-    iris "Même pas une voix. Rien ne peut être aussi silencieux."
-    iris "Puis on ne sait même pas ce qu'on doit faire."
+    iris "Mais… y a même pas un murmure ! Rien ! C’est flippant à quel point c’est silencieux ici !"
+    iris "Et en plus on sait même pas ce qu’on est censés faire, hein ! On attend quoi, un miracle ?"
 
     hide elen
     $ showP("nyra", "triste", 0.22)      # gauche
@@ -997,8 +997,9 @@ label KAMI_MESSAGE_APRES_VISITE:
     hide lysa
     $ showP("iris", "fatigue", 0.22)
 
-    iris "Super."
-    iris "On est convoqués comme des gosses."
+    iris "Super. Vraiment super."
+    iris "On nous convoque comme des mômes de primaire qui ont sali la classe. Génial, l’ambiance."
+    iris "J’ai hâte de voir qui va nous mettre au coin cette fois."
 
     hide ryn
     $ showP("julian", "sourire", 0.78)
@@ -1245,9 +1246,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     $ showP("iris", "fatigue", 0.22)
 
-    iris "Non."
-
-    iris "C’est déjà une horreur ce que tu proposes."
+    iris "Non mais non !"
+    iris "C’est déjà l’horreur ton truc, là, tu te rends compte ou pas ?!"
 
     hide kael
     $ showP("kael", "neutre", 0.50)
@@ -1257,12 +1257,11 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide iris
     $ showP("iris", "desaccord", 0.22)
 
-    iris "Parce que si un amendement a l’air raisonnable."
-    iris "Mais qu’il a des conséquences dégueulasses."
-    iris "Tu crois que Kami va dire quoi ?"
-
-    iris "‘Oups’ ?"
-    iris "Ou ‘c’est de sa faute’ ou celle de celui qui a écrit ?"
+    iris "Attends, parce que si un amendement a l’air tout gentil, tout raisonnable…"
+    iris "…mais qu’en vrai il fout un merdier monstrueux derrière…"
+    iris "Tu crois vraiment que Kami va faire quoi ?"
+    iris taquin "‘Oups désolée’ ?"
+    iris colere "Ou ‘ah bah c’est la faute de celui qui l’a écrit’ ? Genre, super la logique !"
 
     $ showP("sael", "determine", 0.78)
 
@@ -1452,9 +1451,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     $ showP("iris", "fatigue", 0.80)
 
-    iris "Alors soit on vote compte,"
-    iris "Soit on vivra avec."
-    iris "Comme d’habitude."
+    iris "Donc voilà : soit on vote contre, hein et rien ne change, sauf que même ça ça craint..."
+    iris "soit on se tape les conséquences dans la tronche."
+    iris "Comme d’hab’, quoi. Rien de neuf sous le soleil pourri."
 
     pause 0.4
 

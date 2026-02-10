@@ -329,8 +329,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     $ showP("iris", "colere", 0.50)
 
-    iris "Super."
-    iris "Même pas dix minutes et ça commence déjà à poser des questions idiotes."
+    iris "Super. Vraiment super."
+    iris "Même pas dix minutes et on a déjà droit aux questions à la con. Bravo l’équipe."
 
     tomas panne "Je— je dis pas que c’est idiot !"
     tomas panne "C’est juste que… enfin… voilà."
@@ -348,7 +348,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     elen "Mais regardez, ils ont changé les plateaux ! Ils sont plus brillants, non ?"
 
     iris "Elen."
-    iris "On s’en fout des plateaux."
+    iris "On s’en tape complètement des plateaux, là. Sérieux."
 
     elen desaccord "Oui mais quand même !"
     elen content "C’est peut-être fait exprès pour nous mettre de bonne humeur."
@@ -388,7 +388,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     hide sael
     $ showP("iris", "desaccord", 0.50)
-    iris "Et on ne peut même pas partir."
+    iris "Et en plus on peut même pas se barrer. Génial."
 
     nyra raison "Hé."
     nyra raison "Ce ne sont que des détails."
@@ -460,8 +460,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     hide tomas
     $ showP("iris", "neutre", 0.50)
-    iris "Franchement, j'ai la flemme de compter."
-    iris "On va dire que oui."
+    iris "Franchement, j’ai la flemme de compter."
+    iris "On va dire que oui, point barre. Ça vous va ?"
 
     kael "Bien."
 
@@ -552,8 +552,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     nyra "Hé."
     nyra "C’est mieux que ‘qui on sacrifie en premier’, non ?"
 
-    $ bc_show("iris", "sourire", px=-70, py=-50, pz=0.85)
-    iris "Ne dis pas ça."
+    $ bc_show("iris", "triste", px=-70, py=-50, pz=0.85)
+    iris "Ne dis pas ça. S’il te plaît. Ne. Dis. Pas. Ça."
 
     $ bc_show("nyra", "sourire", px=-70, py=-50, pz=0.85)
     nyra "Quoi ?"
@@ -617,7 +617,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     $ showP("iris", "colere", 0.50)
     iris "Non."
-    iris "C’est pire."
+    iris "C’est pire, on a même pas le temps de réfléchir."
 
     $ showP("ryn", "determine", 0.86)
     ryn "Parfait."
@@ -700,7 +700,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     julian reflexion "Mais attendez… elle est pas si pourrie que ça, la proposition."
     julian sourire "Je parie que c’est un truc pour fluidifier le commerce ! Genre, enfin un peu de vie économique ici !"
 
-    iris intervention "... Euh ? Comment tu as ..."
+    iris intervention "… Euh ? Attends, comment tu… t’as deviné ça toi ?!"
 
     julian taquin "J’ai toujours eu un sixième sens…"
 
@@ -766,8 +766,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide mara
     $ showP("iris", "intervention", 0.50)
 
-    iris "Réfléchis deux secondes."
-    iris "Nous donner l'espoir que tout va bien se passer pour qu'on baisse notre garde."
+    iris "Réfléchis deux secondes, putain."
+    iris "Nous filer l’espoir que tout va bien se passer pour qu’on baisse notre garde…"
     iris "C’est du Kami tout craché, ça ! Nous faire espérer deux secondes pour mieux nous baiser après."
 
     $ showP("mara", "neutre", 0.90)
@@ -779,9 +779,9 @@ label _2_CAFETERIA_POST_ANNONCE:
     mara sourire "Nan merci, vas-y découvre ça en solo, je te regarde faire, hein !"
 
     $ showP("iris", "desaccord", 0.50)
-    iris "Sérieusement ..."
-    iris "Et ça veut dire qu’on va devoir discuter du reste ensemble."
-    iris "L'enfer quoi."
+    iris "Sérieusement…"
+    iris "Et ça veut dire qu’on va devoir causer de tout le reste ensemble."
+    iris "L’enfer. Littéralement l’enfer sur Terre."
 
     nyra taquin "Tu dis ça comme si c’était la première fois."
 
@@ -797,7 +797,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     elen "Juste une fois."
     elen "Pour ne pas leur donner ce qu’ils veulent."
 
-    iris "Ils veulent du spectacle."
+    iris "Ils veulent du spectacle. Du vrai drama de téléréalité."
 
     elen "Franchement, la proposition n'a pas l'air mauvaise non ?"
 
@@ -815,7 +815,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael "Tu veux dire quoi ?"
     sael "Qu’on fasse une réunion ?"
 
-    iris "C'est pas ce qu'on fait déjà ?!"
+    iris "Mais c’est pas déjà ce qu’on fait là depuis le début ou quoi ?!"
 
     hide iris
     $ showP("tomas", "reflechit", 0.50)
@@ -882,15 +882,14 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide kael
     $ showP("iris", "neutre", 0.15)
 
-    iris "Bon."
-    iris "On a trois trucs :"
-    iris "On veut pas se faire piéger."
-    iris "On veut pas trahir nos districts."
-    iris "Et si possible on veut éviter de se détester."
+    iris "Bon. On a trois priorités, ok ?"
+    iris "Un : on veut pas se faire baiser."
+    iris "Deux : on veut pas trahir nos districts."
+    iris "Et trois : si possible, on évite de finir par se détester tous. Ambitieux, je sais."
 
     nyra "T’as pas oublié la lune dans ta liste aussi ?"
 
-    iris "Sacrément drôle dis donc."
+    iris "Sacrément drôle, ouais. À mourir de rire."
 
     elen "On a une journée seulement pour nous décider."
 
@@ -901,14 +900,14 @@ label _2_CAFETERIA_POST_ANNONCE:
     julian "Bon, on fait quoi concrètement là ?"
     julian "Parce que tourner en rond c’est mignon cinq minutes, mais après ça gave."
 
-    iris "Tu proposes quoi ?"
+    iris "Tu proposes quoi, là, concrètement ? Vas-y, je t’écoute."
 
     julian "Faut un vrai plan, là."
     julian "Ou alors, on y réfléchit et on met en commun demain."
     julian "Chacun bosse son bout dans son coin, et demain on se retrouve avec du lourd."
 
-    iris "Réfléchir, c’est facile."
-    iris "Revenir, c’est autre chose."
+    iris "Dire qu’on réfléchit, c’est super facile à balancer."
+    iris "Le faire vraiment, par contre… c’est une autre paire de manches."
 
     julian "T’as peur de qui, là, tout de suite ? Dis."
 
@@ -975,9 +974,9 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     nyra "Tu préfères quand c’est violent ?"
 
-    iris "Je préfère quand je comprends ce qu'on nous demande de faire."
+    iris "Je préfère quand je comprends au moins ce qu’on nous demande de faire, merci."
 
-    nyra "Alors on va parler."
+    nyra "Alors on va en parler."
 
     hide elen
     $ showP("julian", "reflexion", 0.86)
@@ -987,7 +986,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     julian "On pose clairement ce qu’on peut apporter."
     julian "Et on se juge pas. Promis, je commence."
 
-    iris "Ça va être le plus dur."
+    iris "Ça va être le plus dur. De loin."
 
     julian "Ouais, je sais."
 
@@ -998,7 +997,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     mara doute "Kami nous mate."
     mara taquin "Elle grave tout : qui parle, qui propose quoi, qui va péter les plombs en premier."
 
-    iris "Alors on ne craque pas."
+    iris "Alors on craque pas. Personne craque. Ok ?"
 
     mara "C'est facile à dire."
     mara "Surtout quand tout le monde regarde."
@@ -1008,7 +1007,7 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     tomas "Et si quelqu’un refuse ?"
 
-    iris "On ne va obliger personne a voter pour."
+    iris "On va obliger personne à voter pour. Personne."
 
     hide nyra
     $ showP("kael", "reflechit", 0.40)
@@ -1397,8 +1396,8 @@ label _2_GYMNASE:
     $ showP("elias", "neutre", 0.65)
 
     iris determine "Encore."
-    iris determine "Allez. Je dois..."
-    iris determine "Sans... ralentir."
+    iris determine "Allez. Je dois… je dois continuer."
+    iris determine "Sans ralentir. Sans m’arrêter. Allez."
 
     elias ecoute "Respire. C'est le plus important."
     elias ecoute "Sinon tu vas te fatiguer pour rien."
@@ -1416,8 +1415,8 @@ label _2_GYMNASE:
     noam surpris "Euh…"
     noam neutre "Je crois."
 
-    iris determine "Alors ne fais pas que regarder."
-    iris taquin "Ca tombe bien, plusieurs bancs sont libres."
+    iris determine "Alors bouge-toi au lieu de juste mater."
+    iris taquin "Ça tombe bien, y a plusieurs bancs qui sont libres là-bas."
 
     "Elias me désigne un banc."
 
@@ -1431,8 +1430,8 @@ label _2_GYMNASE:
     elias detendu "Expire en poussant, inspire en descendant. Si tu bloques ta respiration, tu vas exploser avant la troisième rep."
 
 
-    iris taquin "Directement sur le banc de développé coucher ?"
-    iris taquin "Il va trembler le pauvre."
+    iris taquin "Directement sur le banc de développé-couché ?"
+    iris taquin "Le pauvre, il va trembler de tout son corps."
 
     noam inquiet "Je tremble déjà rien que d'y penser."
 
@@ -1451,7 +1450,6 @@ label _2_GYMNASE:
     "Ça brûle."
 
     iris fatigue "Voilà."
-    iris sourire "Bienvenue."
 
     elias ecoute "Encore deux séries."
     elias detendu "Après tu t’arrêtes."
