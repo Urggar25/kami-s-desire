@@ -77,7 +77,7 @@ label lysa_link_1:
     "Elle tapote la canette contre sa tempe, presque comme un salut."
 
     lysa neutre "Tant que je plaisante, tout le monde respire."
-    lysa taquin "C'est mon service public."
+    lysa taquin "Vous me remercierez tous plus tard."
 
     "Sa voix est légère, mais son regard reste ailleurs."
 
