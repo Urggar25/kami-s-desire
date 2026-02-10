@@ -155,8 +155,8 @@ label _1_CANON:
     $ showP("elen", "inquiet", 0.22)     # réaction
     $ showP("tomas", "reflechit", 0.78)  # réaction
 
-    julian "Vous… vous entendez ?"
-    julian "Il n'y a… rien. On entend personne."
+    julian "Vous… vous entendez ça ?"
+    julian "Rien. Absolument rien. On dirait qu’on est les derniers humains sur Terre."
 
     hide tomas
     $ showP("iris", "inquiet", 0.78)     # droite
@@ -749,13 +749,12 @@ label _1_KAMI_APPARITION:
     $ showP("lysa", "blase", 0.78)
 
     julian "Franchement ?"
-    julian "Moi je trouve ça… excitant."
+    julian "Moi je trouve ça carrément bandant."
 
     $ showP("julian", "neutre", 0.22)
-    julian "Enfin."
-    julian "Un endroit où on peut parler."
-    julian "Où on peut peser sur les règles."
-    julian "Et où les gens vont… regarder."
+    julian "Enfin !"
+    julian "Un endroit où on peut vraiment parler, peser sur les règles…"
+    julian "… et où les gens vont regarder. Pour de vrai."
 
     "Il se tourne légèrement. Comme pour se mettre de profil face à la caméra."
     "Comme si ça avait de l’importance."
@@ -765,8 +764,8 @@ label _1_KAMI_APPARITION:
 
     $ showP("julian", "idee", 0.22)
     julian "Totalement."
-    julian "Si je dois être coincé ici trente jours…"
-    julian "Autant être iconique et tenter d'améliorer la vie des gens."
+    julian "Si je dois être coincé ici trente jours… autant que ce soit légendaire."
+    julian "Et autant en profiter pour rendre la vie un peu moins pourrie aux autres, non ?"
 
     "Il jette un regard rapide vers une caméra."
     "Il lève deux doigts en signe de salut."
@@ -1004,8 +1003,8 @@ label KAMI_MESSAGE_APRES_VISITE:
     hide ryn
     $ showP("julian", "sourire", 0.78)
 
-    julian "Moi je trouve ça amusant."
-    julian "Je me demande bien ce qu'on va pouvoir changer dans ce drôle d'endroit."
+    julian "Perso je trouve ça hyper marrant."
+    julian "J’ai trop envie de voir jusqu’où on peut pousser le bordel dans cet endroit…"
 
     hide mara
     $ showP("elen", "inquiet", 0.50)
@@ -1015,10 +1014,10 @@ label KAMI_MESSAGE_APRES_VISITE:
 
     $ showP("julian", "taquin", 0.78)
 
-    julian "Je sais."
-    julian "C’est pour ça que c’est intéressant."
-    julian "Si on peut changer les règles, on peut changer ça."
-    julian "Et sauver tout le monde !"
+    julian "Je sais, je sais..."
+    julian "Mais justement, c’est ça qui est excitant."
+    julian "Si on peut réécrire les règles, on peut tout changer."
+    julian "Et sortir tout le monde de là. On pourrait être les héros de l'humanité !"
 
     "L’écran central s’allume."
     "Un halo blanc."
@@ -1288,8 +1287,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide sael
     $ showP("julian", "sourire", 0.78)
 
-    julian "Moi je veux bien en parler."
-    julian "Mais je sens que je vais encore passer pour un connard."
+    julian "Moi je veux bien en parler, hein."
+    julian "Mais bon… je sens que je vais encore me faire passer pour le relou qui se la raconte."
 
     hide julian
     $ showP("mara", "neutre", 0.78)
@@ -1430,9 +1429,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide kael
     $ showP("julian", "neutre", 0.78)
 
-    julian "C’est fou."
-    julian "C’est toujours quand on arrête de parler."
-    julian "Qu'on prend les vraies décisions."
+    julian "C’est dingue, non ?"
+    julian "C’est toujours quand tout le monde se tait…"
+    julian "… que les vraies décisions se prennent."
 
     hide julian
 
@@ -1887,7 +1886,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     $ showP("julian", "detendu", 0.78)
 
     julian "Ah."
-    julian "Toi aussi t’as pas réussi à rentrer direct ?"
+    julian "Toi aussi t’as pas réussi à te coucher direct ?"
 
     think "Évidemment."
 
@@ -1900,11 +1899,10 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     "Julian se laisse tomber dans un fauteuil."
     "Un peu trop fort."
 
-    julian "Franchement."
-    julian "J’ai cru que j’allais rester bloqué devant ma feuille."
-    julian "À un moment, j’ai écrit une phrase entière."
-    julian "Puis je l’ai effacée."
-    julian "Trois fois."
+    julian "Franchement..."
+    julian "J’ai cru que j’allais rester planté devant ma feuille blanche comme un con."
+    julian "J’ai écrit une phrase entière, puis je l'ai supprimé, trois fois de suite."
+    julian "Il fallait vraiment que je trouve quelque chose de bien.."
 
     pause 0.2
 
@@ -1925,10 +1923,10 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     "Pas fort."
     "Mais assez pour que ça surprenne."
 
-    julian "On est d’accord que c’est complètement absurde ?"
-    julian "On écrit des phrases."
-    julian "Et demain matin…"
-    julian "le hasard décide si elles comptent."
+    julian "On est bien d’accord que c’est complètement n’importe quoi ?"
+    julian "On réfléchit à ce qui peut aider les gens, on écrit des phrases."
+    julian "… et demain matin le hasard décide si ça vaut de l’or ou si ça vaut zéro."
+    julian "lmagine si ma proposition ne tombera pas dans les dix tirages ?!."
 
     nyra "Oui."
     nyra "Mais au moins…"
@@ -1945,10 +1943,9 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     mara "Vous croyez qu’elle nous mate là ? Genre… là, tout de suite ?"
 
-    julian "Sûrement."
-    julian "Mais honnêtement ?"
-    julian "Là, tout de suite…"
-    julian "j’en ai un peu rien à foutre."
+    julian "Sûrement..."
+    julian "Et pour tout te dire, j'espère bien !"
+    julian "Ah qu'est ce que j'aimerais être repéré pour mes talents ici !"
 
     pause 0.3
 
@@ -1982,7 +1979,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     $ bc_show("julian", "detendu", px=-70, py=-50, pz=0.85)
     julian "…"
     julian "Ok."
-    julian "Respect."
+    julian "Respect vraiment."
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
     nyra "Fais pas semblant d’être détendu."
@@ -2009,7 +2006,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     $ bc_show("julian", "joie", px=-70, py=-50, pz=0.85)
     julian "Putain."
-    julian "T'es un véritable héros."
+    julian "T'es un vrai héros mec."
     $ bc_hide()
 
     pause 0.3

@@ -658,8 +658,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     hide kael
     $ showP("julian", "taquin", 0.50)
 
-    julian "Salut tout le monde."
-    julian "J’ai raté quoi ?"
+    julian "Salut la team !"
+    julian "J’ai loupé quoi ?"
 
     $ showP("nyra", "taquin", 0.10)
 
@@ -668,40 +668,41 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     nyra "Tu sais, celui qui aura lieu demain."
     nyra "La joie. Quoi."
 
-    julian "Oh."
-    julian "J’adore quand ça commence comme ça."
+    julian "Oh putain…"
+    julian "J’adore quand ça démarre direct en mode drama. Ça sent les bonnes histoires."
 
     noam "Bienvenue au Conclave."
     noam "Je crois bien que c'est notre quotidien désormais."
 
     pause 0.6
 
-    julian "Et sinon ?"
+    julian "Et sinon ? On en est où là, vraiment ?"
 
     $ showP("iris", "desaccord", 0.75)
     iris "Non mais franchement Julian, tu peux pas débarquer ici la bouche en coeur et demander à ce qu'on te fasse un récap."
 
-    julian decu "Et pourquoi pas ?"
-    julian decu "Tu pourrais le dire à ton meilleur ami ?"
+    julian decu "Et pourquoi pas, hein ?"
+    julian decu "Tu pourrais le dire à ton meilleur pote, non ? Allez, fais-moi plaisir."
 
     iris sourire "Toi ?! Mon meilleur ami ?!"
     iris taquin "Laisse moi rire !"
 
-    julian sourire "Bon, très bien."
-    julian sourire "Alors je vais deviner."
-    julian taquin "J'adore ce jeu là !"
+    julian sourire "Bon, très bien, j’abandonne."
+    julian sourire "Je vais deviner direct. J’adore ce jeu, sérieux."
+    julian taquin "Préparez-vous, je sens que je vais taper dans le mille."
 
-    julian reflexion "Donc réfléchissons. Kami a annoncé un vote."
-    julian reflexion "Vu vos têtes ..."
+    julian reflexion "Donc… on récapitule."
+    julian reflexion "Kami balance un vote."
+    julian reflexion "À voir vos têtes..."
 
     "Il prends du temps et regarde curieusement chacun des visages de la salle."
 
-    julian reflexion "La proposition qui est faite n'est pas si mauvaise."
-    julian sourire "Si je devais deviner je dirais que c'est une proposition pour faciliter le commerce !"
+    julian reflexion "Mais attendez… elle est pas si pourrie que ça, la proposition."
+    julian sourire "Je parie que c’est un truc pour fluidifier le commerce ! Genre, enfin un peu de vie économique ici !"
 
     iris intervention "... Euh ? Comment tu as ..."
 
-    julian taquin "J'ai toujours eu un bon troisième sens ..."
+    julian taquin "J’ai toujours eu un sixième sens…"
 
     $ showP("elias", "rire", 0.20)
 
@@ -709,10 +710,10 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     elias "Y a des écrans partout ici."
     elias "A tous les coups, la diffusion a tourné partout."
 
-    julian panne "..."
-    julian decu "Sérieux, Elias ! Fallait me laisser mon heure de gloire ..."
-    julian panne "..."
-    julian decu "Bon ok j'ai tout entendu, pas besoin de récap ..."
+    julian panne "…"
+    julian decu "Sérieux Elias ? Fallait vraiment me piquer mon moment de gloire comme ça ?"
+    julian panne "…"
+    julian decu "Pfff… ok j’ai tout capté en fond, inutile de me refaire le film."
 
     jump _2_CAFETERIA_POST_ANNONCE
 
@@ -897,19 +898,19 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide nyra
     $ showP("julian", "taquin", 0.86)
 
-    julian "Alors on fait quoi ?"
-    julian "Faut pas juste tourner en rond, faut avancer."
+    julian "Bon, on fait quoi concrètement là ?"
+    julian "Parce que tourner en rond c’est mignon cinq minutes, mais après ça gave."
 
     iris "Tu proposes quoi ?"
 
-    julian "Une sorte de plan."
-    julian "On se répartit les questions."
-    julian "Chacun y réfléchit dans son coin et on en reparle demain."
+    julian "Faut un vrai plan, là."
+    julian "Ou alors, on y réfléchit et on met en commun demain."
+    julian "Chacun bosse son bout dans son coin, et demain on se retrouve avec du lourd."
 
     iris "Réfléchir, c’est facile."
     iris "Revenir, c’est autre chose."
 
-    julian "T’as peur de qui ?"
+    julian "T’as peur de qui, là, tout de suite ? Dis."
 
     iris "Des gens qu'on risque de tuer ..."
 
@@ -981,14 +982,14 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide elen
     $ showP("julian", "reflexion", 0.86)
 
-    julian "Je peux résumer ?"
+    julian "Je peux résumer vite fait pour qu’on soit tous synchro ?"
     julian "On s’organise."
-    julian "On dit ce qu’on peut offrir."
-    julian "Et on essaye de ne pas se juger."
+    julian "On pose clairement ce qu’on peut apporter."
+    julian "Et on se juge pas. Promis, je commence."
 
     iris "Ça va être le plus dur."
 
-    julian "Je sais."
+    julian "Ouais, je sais."
 
     hide julian
     $ showP("mara", "neutre", 0.86)
