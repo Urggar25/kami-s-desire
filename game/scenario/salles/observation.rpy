@@ -84,6 +84,15 @@ screen pnc_observation():
             yalign 0.30
             action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("LYSA_LINK_INTERACT")]
 
+    if free_time_active and julian_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/julian/sourire.png", zoom=0.75)
+            hover Transform("images/character/julian/taquin.png", zoom=0.75)
+            focus_mask True
+            xalign 0.62
+            yalign 0.30
+            action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("JULIAN_LINK_INTERACT")]
+
 
 label OBS_PNC_RADIO:
     "La console radio est massive."
