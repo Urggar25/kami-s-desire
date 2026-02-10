@@ -272,7 +272,7 @@ label decouverte_salle_repos:
     julian "Moi je trouve ça honnête."
     julian "Ils savent qu’on risque de craquer-"
     julian "Enfin, que vous risquiez de craquer."
-    julian "Alors ils vous donnent de quoi tenir."
+    julian "Alors ils n... vous donnent de quoi tenir."
 
     $ showP("noam", "hesitation", 0.22)
     noam "Tenir jusqu’à quoi ?"
