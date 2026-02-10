@@ -67,6 +67,16 @@ screen pnc_archive():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+
+    if free_time_active and lysa_link == 3:
+        imagebutton:
+            idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
+            hover Transform("images/character/lysa/neutre.png", zoom=0.75)
+            focus_mask True
+            xalign 0.82
+            yalign 0.30
+            action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("LYSA_LINK_INTERACT")]
+
 label ARCHIVE_PNC_BIBLIO:
 
     "Des étagères entières."
