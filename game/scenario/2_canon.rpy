@@ -1523,125 +1523,75 @@ label _2_CAFETERIA_SOIR:
     $ showP("elen", "inquiet", 0.50)
     $ showP("tomas", "inquiet", 0.80)
 
-    nyra raison "On a dit qu’on commençait par les besoins."
-    nyra raison "Pas par les rêves."
+    nyra raison "On tourne en rond."
+    nyra raison "La proposition ne bougera pas."
+    nyra raison "Demain, c’est oui ou non."
 
-    elen inquiet "Mais les rêves, c’est aussi un besoin."
+    elen inquiet "Oui pour autoriser les échanges et le commerce."
+    elen inquiet "Non pour tout refuser."
 
-    nyra raison "Oui."
-    nyra raison "Mais ça ne se pèse pas."
+    tomas inquiet "Donc on arrête de discuter des exceptions ?"
 
-    tomas inquiet "On peut dire ce qui manque."
-    tomas inquiet "Sans dire ce qu’on a."
-    tomas panne "Peut-être."
+    nyra raison "On arrête."
+    nyra raison "Pas de clauses, pas de liste, pas de rustine."
 
-    nyra raison "Et comment on échange si on ne sait pas ce qu’on a ?"
+    tomas panne "... D’accord."
 
-    tomas inquiet "On peut dire des catégories."
-    tomas inquiet "Comme ça personne ne se sent trop exposé."
+    elen triste "C’est violent, dit comme ça."
 
-    elen inquiet "Des catégories ?"
-
-    tomas inquiet "Oui."
-    tomas inquiet "Alimentation."
-    tomas inquiet "Médical."
-    tomas inquiet "Technologie."
-    tomas inquiet "Éducation."
-
-    nyra raison "Ça devient un inventaire."
-
-    elen inquiet "Ce serait déjà bien."
-
-    nyra raison "Ce serait dangereux."
-
-    tomas inquiet "Pourquoi ?"
-
-    nyra raison "Parce que ceux qui ont pourront demander des choses en échange."
-    nyra raison "Et ceux qui n’ont rien…"
-
-    elen inquiet "On ne les laissera pas tomber."
-
-    nyra raison "Tu ne peux pas promettre pour tout le monde."
-
-    elen inquiet "Je peux promettre pour moi."
-
-    nyra raison "Et moi, je peux promettre de te rappeler que ça ne suffit pas."
+    nyra raison "C’est honnête."
+    nyra raison "On ne vote pas un plan détaillé."
+    nyra raison "On vote une direction."
 
     hide tomas
     $ showP("kael", "neutre", 0.80)
 
-    kael raison "On ne parle pas de promesse."
-    kael raison "On parle d’un cadre."
-    kael raison "Le but, c’est d’éviter les surenchères."
+    kael raison "La seule vraie question, c’est celle-là :"
+    kael raison "Est-ce qu’on accepte d’ouvrir les échanges ?"
+    kael raison "Ou est-ce qu’on ferme tout ?"
 
-    elen inquiet "On peut décider de limiter."
+    elen inquiet "Et après, on gère les conséquences."
 
-    nyra raison "Limiter quoi ?"
-
-    kael raison "Les demandes."
-    kael raison "Les échanges."
-    kael raison "Une règle simple."
-
-    nyra raison "Et qui surveille ?"
-
-    kael mefiant "On se surveille."
-
-    nyra raison "C’est ça le piège."
+    nyra raison "Voilà."
 
     hide elen
     $ showP("iris", "determine", 0.50)
 
-    iris determine "Vous parlez comme si on avait le choix."
-    iris determine "Kami nous donne un vote."
-    iris determine "On vote."
-    iris determine "Après, on gère."
+    iris determine "Parfait."
+    iris determine "Alors qu’on arrête les faux débats."
+    iris determine "Demain, chacun dit oui ou non."
+    iris determine "Et qu’il assume."
 
-    kael neutre "Si on vote oui."
+    kael neutre "Au moins, c’est clair."
 
-    iris determine "Et si on vote non, on gère quand même."
-
-    nyra raison "On gère différemment."
-
-    iris determine "On gère dans le noir."
-
-    nyra raison "On est déjà dans le noir."
-
-    kael raison "On est dans un couloir."
-    kael raison "On peut encore choisir la porte."
-
-    iris determine "Tu crois que c’est une porte ?"
-
-    kael neutre "C’est ça ou un mur."
-
-    nyra raison "Arrêtez."
-    nyra raison "On n’a pas besoin d’image."
-    nyra raison "On a besoin d’une décision."
+    nyra raison "La clarté, c’est déjà une défense."
 
     hide iris
     $ showP("mara", "neutre", 0.50)
 
-    mara neutre "La décision ne peut pas être prise sans informations."
-    mara neutre "Et on n’en a pas."
+    mara neutre "Je déteste voter à l’aveugle."
 
-    kael mefiant "Alors on en fabrique."
+    kael mefiant "On vote tous à l’aveugle."
 
-    mara doute "Ce n’est pas de l’information."
-    mara doute "C’est de la fiction."
+    mara doute "Alors il nous faut au moins une règle simple."
 
-    nyra raison "La fiction, ça tient quand tout s’effondre."
+    nyra raison "La voici :"
+    nyra raison "Ne pas faire croire demain qu’on a voté un texte qu’on n’a pas."
 
-    mara stress "Ça tient jusqu’à demain."
+    tomas inquiet "Donc pas de 'oui, mais'."
+    tomas inquiet "Pas de 'non, sauf'."
 
-    tomas inquiet "On peut appeler ça un plan."
-    tomas inquiet "Un plan temporaire."
-
-    mara neutre "Un plan temporaire, c’est un plan quand même."
+    mara neutre "Oui."
+    mara neutre "Un mandat net."
 
     pause 0.6
 
     "Les regards se croisent."
-    "On comprend tous qu’on va devoir poser quelque chose."
-    "Même si c’est fragile."
+    "Personne n’a l’air rassuré."
+    "Mais au moins, la question est propre."
+
+    $ add_argument("Mandat binaire")
+    show screen argument_unlock("Mandat binaire")
 
     hide nyra
     hide kael
@@ -1651,15 +1601,14 @@ label _2_CAFETERIA_SOIR:
     $ showP("elen", "inquiet", 0.50)
     $ showP("tomas", "inquiet", 0.80)
 
-    julian taquin "On peut faire simple."
-    julian reflexion "On liste les besoins, point."
-    julian reflexion "Sans chiffres."
-    julian reflexion "Sans détails."
+    julian taquin "Au moins, ce soir, on a arrêté de jouer aux juristes."
+    julian reflexion "Demain, ce sera brut."
+    julian reflexion "Autoriser les échanges, ou les interdire."
 
-    tomas inquiet "Tu crois que ça suffira ?"
+    tomas inquiet "Tu crois qu'on peut vraiment trancher comme ça ?"
 
-    julian reflexion "Ça suffira pour aujourd’hui."
-    julian reflexion "Demain on improvisera."
+    julian reflexion "On va devoir le faire."
+    julian reflexion "Même si personne n'a envie d'être celui qui coupe."
 
     elen inquiet "Improviser, ça me fait peur."
 
