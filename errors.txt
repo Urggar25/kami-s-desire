@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 448: expected statement.
-    "Oui":
-         ^
-
-File "game/script.rpy", line 450: expected statement.
-    "Non":
-         ^
+File "game/scenario/1_canon.rpy", line 326: expected statement.
+    tomas un peu plus bas, presque pour lui-même "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Feb  9 21:15:46 2026
+Wed Feb 11 13:21:42 2026

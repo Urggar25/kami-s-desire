@@ -126,9 +126,8 @@ label _1_CANON:
     $ showP("ryn", "reflechit", 0.22)    # il écoute
     $ showP("mara", "neutre", 0.50)      # elle se calme
 
-    tomas "Probablement personne de “présent”… enfin, pas ici."
-    tomas "Ça ressemble à une procédure."
-    tomas "Automatique."
+    tomas "Probablement… personne qui soit vraiment là. Enfin, je veux dire… pas ici, pas physiquement."
+    tomas "Ça ressemble à une procédure. Automatique. Presque… mécanique."
 
     hide ryn
     $ showP("elen", "surpris", 0.22)     # gauche
@@ -228,9 +227,9 @@ label _1_CANON:
     $ showP("ryn", "reflechit", 0.22)
     $ showP("mara", "neutre", 0.50)
 
-    tomas "On parle de Kami, n'oublie pas."
-    tomas "Elle est toujours là."
-    tomas "Même sans image."
+    tomas "On parle de Kami, quand même."
+    tomas "Elle est toujours là. Même quand on ne la voit pas."
+    tomas "Même sans image… elle reste là."
 
     "Je fixe la tablette noire sur mon pupitre."
     "Je tapote du doigt."
@@ -322,10 +321,10 @@ label _1_CANON:
     hide lysa
     $ showP("tomas", "raison", 0.95)
     
-    tomas "Tout ici est un pari."
-    tomas "Faut dire qu'on a tous été pris de court."
-    tomas "Même les responsables de district semblaient n'être au courant de rien ..."
-
+    tomas "Tout ça… c’est un pari, non ? Tout le temps."
+    tomas "On s’est tous fait prendre de court. Moi le premier."
+    tomas un peu plus bas, presque pour lui-même "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
+    
     "Je sens mon cœur accélérer."
     "Pas de panique."
     "Juste la lucidité qui pique."
@@ -667,7 +666,7 @@ label _1_KAMI_APPARITION:
     lysa fatigue "Maintenant je pige pourquoi elle dit que ce sera pas simple."
 
     $ showP("tomas", "raison", 0.22)
-    tomas "Ou à faire des compromis."
+    tomas "Ou alors… faire des compromis."
     tomas "Pour une fois."
 
     "Je tourne la tête."
@@ -780,12 +779,9 @@ label _1_KAMI_APPARITION:
     $ showP("noam", "reflexion", 0.50)
     $ showP("lysa", "reflexion", 0.78)
 
-    tomas "Au moins, ça confirme un truc."
-    tomas "Elle veut du spectacle."
-
-    $ showP("tomas", "raison", 0.22)
-    tomas "Et si elle veut du spectacle…"
-    tomas "C’est qu’elle s’attend à ce qu’on se déchire."
+    tomas "Au moins, ça confirme quelque chose."
+    tomas "Elle veut du spectacle. Vraiment."
+    tomas raison "Et si elle veut du spectacle… c’est qu’elle compte sur le fait qu’on va se déchirer entre nous."
 
     pause 0.4
 
@@ -1321,11 +1317,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide ryn
     $ showP("tomas", "hesitation", 0.78)
 
-    tomas "Non. Ça ne marchera pas Ryn."
-    tomas "Kami a dit que refuser un amendement."
-    tomas "Pouvait aussi avoir un prix."
-
-    tomas "On sait juste pas lequel."
+    tomas "Non. Ça ne marchera pas, Ryn."
+    tomas "Kami a dit… très clairement… que refuser un amendement pouvait aussi avoir des conséquences."
+    tomas "On sait juste pas encore lequel. Et c’est ça qui m’inquiète."
 
     pause 0.3
 
@@ -1985,9 +1979,8 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     nyra "On voit très bien que tu stresses."
     $ bc_hide()
 
-    tomas "Disons que si je renverse ça."
-    tomas "Je meurs socialement et je vais me cacher sous une table pendant le reste du mois."
-
+    tomas "Disons que… si je renverse ça sur moi là, maintenant…"
+    tomas "je suis mort socialement pour le reste du mois. Je vais directement me cacher sous une table et on me reverra plus."
     $ bc_show("mara", "content", px=-70, py=-50, pz=0.85)
     mara "Y’a pire."
     mara "Tu pourrais mourir pour de vrai."
@@ -1996,9 +1989,9 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     "Un léger rire passe."
     "Bref, presque timide."
 
-    tomas "J’me suis dit que…"
-    tomas "Ça ferait peut-être du bien."
-    tomas "Un truc chaud."
+    tomas "Je me suis dit que…"
+    tomas "…que ça ferait peut-être du bien."
+    tomas "Un truc chaud. Juste… un truc chaud."
 
     "Il pose enfin le plateau sur la table."
     "Sans rien renverser."

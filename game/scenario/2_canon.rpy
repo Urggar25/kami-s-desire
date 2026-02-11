@@ -324,9 +324,9 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     $ showP("tomas", "neutre", 0.10)
 
-    tomas inquiet "E-Excusez-moi mais… euh…"
-    tomas taquin "On est obligés d’être tous là, là ? Enfin je veux dire… maintenant ?"
-
+    tomas "E-Excusez-moi mais… euh…"
+    tomas "On est vraiment obligés d’être tous là… enfin, là, tout de suite ? Je veux dire… maintenant ?"
+    
     $ showP("iris", "colere", 0.50)
 
     iris "Super. Vraiment super."
@@ -440,7 +440,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     $ showP("tomas", "hesitation", 0.60)
 
     tomas "N-Non non !"
-    tomas "Enfin, y a pas de problème, hein."
+    tomas "Enfin… y a pas de problème. Vraiment. Aucun problème."
 
     lysa "Je n’avais pas envie de revenir ici."
     lysa "Pas tout de suite."
@@ -822,22 +822,22 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     tomas "Je…"
     tomas "Je pense que c’est important."
-    tomas "Parce que ça touche nos districts."
-    tomas "Et si on peut faire circuler des choses…"
-    tomas "Alors on peut aussi s’entraider, non ?"
+    tomas "Parce que ça concerne nos districts. Directement."
+    tomas "Et si on peut faire circuler des choses entre nous…"
+    tomas "Ben… on peut aussi s’entraider, non ?"
 
     kael "Tu penses à quoi ?"
 
     tomas "Aux médicaments."
-    tomas "Aux matériaux."
-    tomas "Pourquoi pas aux gens, aussi."
+    tomas "Aux matériaux de construction, ou… ce genre de choses."
+    tomas "Pourquoi pas aux gens, aussi. À un moment donné."
 
     sael "Les gens, c’est autre chose."
     sael "La proposition parlait des échanges dans les districts, pas d'autoriser les gens à changer de district."
 
-    tomas "Je sais ..."
-    tomas "M-Mais si les échanges deviennent autorisés, alors peut être ..."
-
+    tomas "Je sais…"
+    tomas "M-Mais si les échanges deviennent autorisés… alors peut-être que…"
+    
     hide sael
     $ showP("mara", "neutre", 0.86)
 
@@ -851,7 +851,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     mara "Décider à l’aveugle, ou presque."
     mara "J’adore quand on improvise avec nos vies."
 
-    tomas "Alors on doit se faire confiance."
+    tomas "Du coup… on doit se faire confiance. Voilà."
 
     hide tomas
     $ showP("nyra", "raison", 0.50)
@@ -949,9 +949,9 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide iris
     $ showP("tomas", "inquiet", 0.15)
 
-    tomas "On est obligés de parler de nos districts ?"
-    tomas "E-Enfin je veux dire, bien sur qu'on veut les défendre mais ..."
-
+    tomas "On est obligés de parler de nos districts ? Genre… en détail ?"
+    tomas "E-Enfin je veux dire, bien sûr qu’on veut les défendre, mais…"
+    
     hide mara
     $ showP("elen", "triste", 0.86)
 
@@ -959,7 +959,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     elen "Mais on choisit déjà, quand on parle ou quand on se tait."
 
     tomas "Je sais."
-    tomas "Je sais."
+    tomas "Je sais, oui."
 
     hide tomas
     $ showP("kael", "neutre", 0.15)
@@ -1554,8 +1554,8 @@ label _2_CAFETERIA_SOIR:
     hide elen
     $ showP("tomas", "neutre", 0.50)
 
-    tomas inquiet "Et… euh… vous aviez aussi des médiateurs ?"
-    tomas inquiet "Des… assemblées ? C-Comment vous prenez des décisions ?"
+    tomas "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
+    tomas "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
 
     kael calme "Pas comme ici."
     kael calme "On réglait les choses autrement."
@@ -1571,7 +1571,7 @@ label _2_CAFETERIA_SOIR:
 
     kael neutre "Alors j’essaie quand même."
 
-    tomas inquiet "Et si on fait une erreur ?"
+    tomas inquiet "Et si on fait une erreur ..?"
 
     kael triste "J'imagine qu'on fait tous des erreurs."
     kael triste "A nous de les assumer."
