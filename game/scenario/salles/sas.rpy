@@ -70,6 +70,16 @@ screen pnc_livraison():
         at cover_screen
         action Jump("LIV_PNC_TERMINAL")
 
+
+
+    if free_time_active and sael_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/sael/neutre.png", zoom=0.75)
+            hover Transform("images/character/sael/raison.png", zoom=0.75)
+            focus_mask True
+            xalign 0.76
+            yalign 0.30
+            action [SetVariable("last_room_label", "LIVRAISON_TP"), Jump("SAEL_LINK_INTERACT")]
     imagebutton:
         idle "images/background/interact/retour.png"
         hover "images/background/interact/retour_hover.png"

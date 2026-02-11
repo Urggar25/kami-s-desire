@@ -65,6 +65,16 @@ screen pnc_gymnase():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+
+
+    if free_time_active and ryn_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/ryn/determine.png", zoom=0.75)
+            hover Transform("images/character/ryn/neutre.png", zoom=0.75)
+            focus_mask True
+            xalign 0.20
+            yalign 0.75
+            action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("RYN_LINK_INTERACT")]
     if free_time_active and elias_link in [0, 2, 4]:
         imagebutton:
             idle Transform("images/character/elias/neutre.png", zoom=0.75)
