@@ -68,12 +68,21 @@ screen pnc_archive():
         action Jump("OPEN_CONCLAVE_MAP")
 
 
+    if free_time_active and tomas_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/tomas/reflechit.png", zoom=0.75)
+            hover Transform("images/character/tomas/neutre.png", zoom=0.75)
+            focus_mask True
+            xalign 0.60
+            yalign 0.30
+            action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("TOMAS_LINK_INTERACT")]
+
     if free_time_active and lysa_link == 3:
         imagebutton:
             idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
             hover Transform("images/character/lysa/neutre.png", zoom=0.75)
             focus_mask True
-            xalign 0.82
+            xalign 0.84
             yalign 0.30
             action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("LYSA_LINK_INTERACT")]
 
