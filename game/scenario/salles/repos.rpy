@@ -102,6 +102,15 @@ screen pnc_repos():
             yalign 0.30
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("LYSA_LINK_INTERACT")]
 
+    if free_time_active and iris_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/iris/colere.png", zoom=0.75)
+            hover Transform("images/character/iris/taquin.png", zoom=0.75)
+            focus_mask True
+            xalign 0.50
+            yalign 0.31
+            action [SetVariable("last_room_label", "REPOS_TP"), Jump("IRIS_LINK_INTERACT")]
+
 
 label REPOS_PNC_BABYFOOT:
     "Le babyfoot brille trop."
