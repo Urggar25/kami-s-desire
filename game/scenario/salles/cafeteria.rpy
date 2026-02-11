@@ -93,6 +93,15 @@ screen pnc_cafeteria():
             yalign 0.30
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("LYSA_LINK_INTERACT")]
 
+    if free_time_active and elen_link == 1:
+        imagebutton:
+            idle Transform("images/character/elen/joie.png", zoom=0.75)
+            hover Transform("images/character/elen/content.png", zoom=0.75)
+            focus_mask True
+            xalign 0.50
+            yalign 0.30
+            action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("ELEN_LINK_INTERACT")]
+
 
 label CAF_PNC_GOUMI:
 

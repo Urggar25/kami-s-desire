@@ -74,6 +74,16 @@ screen pnc_infirmerie():
         action Jump("OPEN_CONCLAVE_MAP")
 
 
+    if free_time_active and elen_link == 3:
+        imagebutton:
+            idle Transform("images/character/elen/content.png", zoom=0.75)
+            hover Transform("images/character/elen/inquiet.png", zoom=0.75)
+            focus_mask True
+            xalign 0.50
+            yalign 0.30
+            action [SetVariable("last_room_label", "INFIRMERIE_TP"), Jump("ELEN_LINK_INTERACT")]
+
+
 label INF_PNC_MORGUE:
     window auto
 

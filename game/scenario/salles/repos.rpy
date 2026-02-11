@@ -112,6 +112,16 @@ screen pnc_repos():
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("IRIS_LINK_INTERACT")]
 
 
+    if free_time_active and elen_link == 4:
+        imagebutton:
+            idle Transform("images/character/elen/joie.png", zoom=0.75)
+            hover Transform("images/character/elen/content.png", zoom=0.75)
+            focus_mask True
+            xalign 0.68
+            yalign 0.30
+            action [SetVariable("last_room_label", "REPOS_TP"), Jump("ELEN_LINK_INTERACT")]
+
+
 label REPOS_PNC_BABYFOOT:
     "Le babyfoot brille trop."
     "Comme s’il n’avait jamais vu une main humaine."
