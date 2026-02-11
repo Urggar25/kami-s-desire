@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/scenario/1_canon.rpy", line 326: expected statement.
-    tomas un peu plus bas, presque pour lui-même "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
-                         ^
+File "game/scenario/1_canon.rpy", line 140: end of line expected.
+    elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
+                                                                                             ^
+
+File "game/scenario/2_canon.rpy", line 805: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Feb 11 13:21:42 2026
+Wed Feb 11 21:10:58 2026

@@ -135,8 +135,11 @@ label _1_CANON:
     $ showP("mara", "stress", 0.50)  # réaction
     $ showP("tomas", "neutre", 0.78)     # réaction
 
-    elen "Automatique ou pas, ça reste un enlèvement."
-    elen "Mais bon, plus rien n'est choquant dans ce monde ..."
+    elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
+    elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
+    elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
+    elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
+    elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."
 
     "Je lève les yeux."
     "Je cherche les caméras."
@@ -316,14 +319,15 @@ label _1_CANON:
     sael "c’est un risque. Et tu veux que je te rappelle ce qui arrive à ceux qui prennent des risques ?"
     
     "Derrière, une petite voix se fait entendre."
-    elen "Mais attendre, c’est un pari risqué aussi."
+    elen "Mais attendre… c’est aussi super risqué, tu trouves pas ?"
+    elen "On mise sur le fait que ça va pas empirer…"
     
     hide lysa
     $ showP("tomas", "raison", 0.95)
     
     tomas "Tout ça… c’est un pari, non ? Tout le temps."
     tomas "On s’est tous fait prendre de court. Moi le premier."
-    tomas un peu plus bas, presque pour lui-même "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
+    tomas "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
     
     "Je sens mon cœur accélérer."
     "Pas de panique."
@@ -460,7 +464,8 @@ label _1_KAMI_APPARITION:
     pause 0.4
 
     $ bc_show("elen", "inquiet", px=-70, py=-50, pz=0.85)
-    elen "Décider de quoi… ?"
+    elen "Décider de quoi exactement ?"
+    elen "Attends, explique-moi encore, je suis larguée là."
 
     $ bc_hide()
 
@@ -692,10 +697,9 @@ label _1_KAMI_APPARITION:
     $ showP("noam", "reflexion", 0.50)
     $ showP("lysa", "reflexion", 0.78)
 
-    elen "Le fait qu’on puisse proposer des amendements…"
-    elen "C’est pas rien."
-    elen "Dans ce monde, c’est presque…"
-    elen "Une respiration."
+    elen "Le fait qu’on ait le droit de proposer des amendements…"
+    elen "Franchement, dans ce merdier, c’est déjà énorme."
+    elen "C’est comme… une toute petite fenêtre ouverte. Ça fait du bien de respirer cinq secondes."
 
     $ showP("lysa", "blase", 0.78)
     lysa "Une respiration sous l’eau."
@@ -812,10 +816,9 @@ label _1_KAMI_APPARITION:
     
     $ showP("lysa", "reflexion", 0.78)
 
-    elen "On devrait peut-être…"
-    elen "Se mettre d’accord sur une méthode."
-    elen "Un truc simple."
-    elen "Pour éviter que ça parte en guerre tout de suite."
+    elen "On devrait peut-être se caler sur un truc simple avant que ça parte en vrille."
+    elen "Genre une règle de base, pas grand-chose… juste pour pas s’étriper dans les dix premières minutes."
+    elen "Parce que sinon je te jure, ça va dégénérer direct."
 
     $ showP("lysa", "blase", 0.78)
     lysa blase "Tu veux une méthode ?"
@@ -843,9 +846,8 @@ label _1_KAMI_APPARITION:
     lysa fatigue "Surtout au début."
 
     $ showP("elen", "reflechit", 0.22)
-    elen "Je… je vais voir s’il y a une infirmerie."
-    elen "Ou au moins du matériel."
-    elen "On sait jamais."
+    elen "Je vais checker s’il y a une infirmerie… ou au moins de quoi faire un pansement."
+    elen "On sait jamais, des fois que quelqu’un se fasse vraiment mal."
 
     $ showP("noam", "neutre", 0.50)
     noam "Ok."
@@ -1006,8 +1008,9 @@ label KAMI_MESSAGE_APRES_VISITE:
     hide mara
     $ showP("elen", "inquiet", 0.50)
 
-    elen "Pas vraiment sûre qu'on puisse changer grand chose…"
-    elen "Tu sais très bien que Kami a droit de vie et mort sur tout le monde."
+    elen "Franchement, je suis pas sûre qu’on puisse changer grand-chose…"
+    elen "Kami décide de qui vit ou meurt, on va pas se mentir."
+    elen "Mais même si c’est minuscule… j’ai envie d’essayer quand même. Ça coûte rien d’essayer, si ?"
 
     $ showP("julian", "taquin", 0.78)
 
@@ -1273,11 +1276,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     hide iris
     $ showP("elen", "inquiet", 0.22)
 
-    elen "Et puis…"
-    elen "Tout le monde n’a pas forcément envie d'en parler."
-
-    elen "Y a des idées ..."
-    elen "Enfin voilà quoi ..."
+    elen "Et puis… y en a qui ont clairement pas envie d’en causer."
+    elen "Y a des trucs qu’on garde pour soi, des idées un peu tordues…"
+    elen "Bref, c’est pas parce qu’on est tous là qu’on va tout se dire cash."
 
     hide sael
     $ showP("julian", "sourire", 0.78)
@@ -1441,7 +1442,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     $ showP("elen", "inquiet", 0.22)
 
-    elen "Et si quelqu’un écrit quelque chose de terrible ?"
+    elen "Et si jamais quelqu’un balance un truc vraiment hardcore ?"
+    elen "Genre une proposition qui fait flipper tout le monde…"
 
     $ showP("iris", "fatigue", 0.80)
 

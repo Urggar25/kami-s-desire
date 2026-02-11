@@ -344,15 +344,15 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     $ showP("elen", "joie", 0.40)
 
     elen "Oh !"
-    elen "C’est vrai que l’ambiance est un peu bizarre ce matin."
-    elen "Mais regardez, ils ont changé les plateaux ! Ils sont plus brillants, non ?"
+    elen "C’est vrai que l’ambiance est un peu chelou ce matin…"
+    elen "Mais attends, ils ont changé les plateaux ! Regardez comme ils brillent maintenant, c’est pas dingue ? Ça change tout !"
 
     iris "Elen."
     iris "On s’en tape complètement des plateaux, là. Sérieux."
 
     elen desaccord "Oui mais quand même !"
-    elen content "C’est peut-être fait exprès pour nous mettre de bonne humeur."
-
+    elen content "N’empêche… peut-être que c’est fait exprès pour nous rebooster un peu le moral, non ?"
+    
     ryn fatigue "Ou pour nous faire avaler des conneries plus facilement."
 
     pause 0.4
@@ -409,7 +409,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     $ showP("elen", "joie", 0.40)
 
     elen "Oh Mara !"
-    elen "Tu veux t’asseoir avec nous ?"
+    elen "Viens t’asseoir avec nous, allez ! Ça serait trop cool."
 
     mara "Je suis très bien là."
     mara "Je préfère voir tout le monde, histoire de voir vos tronches lors de l'annonce."
@@ -588,8 +588,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Je rappelle que le vote devra être unanime."
 
     $ bc_show("elen", "determine", px=-70, py=-50, pz=0.85)
-    elen "Unanime comme… tout le monde d’accord ?"
-    elen "Tout le monde doit voter pour ?"
+    elen "Unanime… genre vraiment tout le monde doit être d’accord ?"
+    elen "Genre 100 % des voix ? Wow, c’est hardcore comme condition…"
     $ bc_hide()
 
     kami "Exactement. Enfin presque."
@@ -626,8 +626,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     hide tomas
     $ showP("elen", "inquiet", 0.15)
 
-    elen "On pourrait… peut-être en parler calmement ?"
-    elen "Tous ensemble ?"
+    elen "Et si on essayait d’en parler calmement tous ensemble ?"
+    elen "Juste… sans s’énerver..."
 
     hide ryn
     $ showP("sael", "mefiant", 0.70)
@@ -794,12 +794,13 @@ label _2_CAFETERIA_POST_ANNONCE:
     $ showP("elen", "inquiet", 0.86)
 
     elen "On peut essayer d’être d’accord, non ?"
-    elen "Juste une fois."
-    elen "Pour ne pas leur donner ce qu’ils veulent."
+    elen "Juste une fois. Rien qu’une."
+    elen "Pour pas leur filer exactement ce qu’ils attendent de nous."
 
     iris "Ils veulent du spectacle. Du vrai drama de téléréalité."
 
-    elen "Franchement, la proposition n'a pas l'air mauvaise non ?"
+    elen "Franchement… la proposition a pas l’air si pourrie que ça, si ?"
+e   len "Je veux dire… y a claiiirement pire, non ?"
 
     "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
 
@@ -871,13 +872,13 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide mara
     $ showP("elen", "inquiet", 0.86)
 
-    elen "Je peux prendre des notes."
-    elen "Ca me rassure de garder des notes sur mon travail."
-    elen "D'une certaine façon ... On travaille ..."
+    elen "Je peux prendre des notes si vous voulez."
+    elen "Ça me calme de tout noter. Ça donne l’impression qu’on bosse vraiment sur un truc important…"
+    elen "… et que c’est pas juste du vent."
 
     nyra "Tu vois, c’est utile."
 
-    elen "Je ne sais pas, ça me rassure."
+    elen "Je sais pas… ça me rassure, c’est tout."
 
     hide kael
     $ showP("iris", "neutre", 0.15)
@@ -891,7 +892,8 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     iris "Sacrément drôle, ouais. À mourir de rire."
 
-    elen "On a une journée seulement pour nous décider."
+    elen "On n’a qu’une journée pour se décider."
+    elen "Une seule. C’est hyper court quand on y pense…"
 
     hide elen
     hide nyra
@@ -955,8 +957,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     hide mara
     $ showP("elen", "triste", 0.86)
 
-    elen "On a tous peur de choisir."
-    elen "Mais on choisit déjà, quand on parle ou quand on se tait."
+    elen "On a tous la trouille de choisir."
+    elen "Mais en vrai… on choisit déjà. À chaque fois qu’on parle, la vie n'est qu'une suite de choix !"
 
     tomas "Je sais."
     tomas "Je sais, oui."
@@ -1542,9 +1544,8 @@ label _2_CAFETERIA_SOIR:
     $ showP("elen", "taquin", 0.55)
 
     elen taquin "Orbite, c’était comment ?"
-    elen reflechit "On entend tout et n’importe quoi."
-    elen content "Des gens qui dorment en apesanteur."
-    elen content "Des repas qui flottent, ce genre de choses."
+    elen reflechit "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
+    elen content "Des gens qui dorment en flottant comme des méduses, des repas qui se baladent tout seuls… c’est complètement barré !"
 
     kael neutre "On flotte, oui."
     kael neutre "Mais on fait quand même la vaisselle, même si parfois c'est galère !"
@@ -1583,22 +1584,23 @@ label _2_CAFETERIA_SOIR:
     hide tomas
     $ showP("elen", "triste", 0.55)
 
-    elen triste "Je me demande."
-    elen triste "Si nos familles nous regardent."
+    elen triste "Je me demande…"
+    elen triste "… si nos familles nous regardent en ce moment."
 
     noam neutre "Je me le demande aussi."
 
-    elen triste "S’ils nous voient, ils doivent avoir peur pour nous."
-    elen triste "Et si on vote mal, ils auront encore plus peur."
+    elen triste "S’ils nous voient, ils doivent flipper grave."
+    elen triste "Et si on se plante dans le vote… ils vont flipper encore plus."
 
     kael reflechit "On ne vote pas uniquement pour eux."
 
-    elen triste "Oui, mais nos décisions impacteront tout le monde."
+    elen triste "Ouais… mais ce qu’on va décider là, ça va toucher tout le monde. Pas juste nous."
 
     kael neutre "Oui."
     kael triste "C’est ça, être ici."
 
     elen triste "Je déteste ça."
+    elen triste "Vraiment. Ça me retourne l’estomac."
 
     nyra raison "Je pense qu'on déteste tous ça."
     nyra raison "On a un travail à faire, c'est tout.."
