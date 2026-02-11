@@ -63,7 +63,7 @@ label elen_link_1:
 
     "Elle se décale de quelques centimètres pour me montrer l'angle exact."
 
-    play sound sfx_bip
+    play sound sfx_beep
 
     elen surpris "Là !"
     elen joie "Tu l'as vu ?"
@@ -118,9 +118,8 @@ label elen_link_1:
     elen taquin "Alors je vais en avoir un pour elles."
     elen joie "Je déclare officiellement cette rainure adorable."
 
-    "Elle tape dans ses mains, ravie de sa propre proclamation."
-
     play sound sfx_clap
+    "Elle tape dans ses mains, ravie de sa propre proclamation."
 
     elen joie "Tu sais quoi ?"
     elen content "On devrait donner des noms aux détails oubliés."

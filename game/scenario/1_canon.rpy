@@ -137,8 +137,6 @@ label _1_CANON:
 
     elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
     elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
-    elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
-    elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
     elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."
 
     "Je lève les yeux."
@@ -184,8 +182,8 @@ label _1_CANON:
     $ showP("iris", "fatigue", 0.78)     # réaction
     $ showP("nyra", "neutre", 0.22)      # réaction
 
-    kael "Ou une attente."
-    kael "Peut-être qu'elle attend juste... quelque chose ?"
+    kael "Ou alors… c’est juste une attente."
+    kael "Peut-être qu’elle attend quelque chose. Quelque chose de précis."
 
     "Un silence encore plus lourd tombe."
     "Personne n’aime l’idée d’attendre."
@@ -801,8 +799,10 @@ label _1_KAMI_APPARITION:
     
     hide noam
     $ showP("kael", "neutre", 0.50)
-    kael "Et si on se disait tous ce qu'on propose comme modifications ?"
-    kael "Si on les travaille ensemble, on a plus de choses d'atteindre l'unanimité ?"
+    kael "Et si on se disait chacun ce qu’on envisage comme modifications ?"
+    kael "Pas besoin de tout écrire d’un coup. Juste… l’idée générale."
+    kael "Si on les met sur la table ensemble, on a peut-être une chance d’atteindre l’unanimité."
+    kael "Sinon, on va tourner en rond."
 
     "Un silence retombe, plus sec."
     "Cette fois, c’est pas la peur."
@@ -1228,18 +1228,13 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     kael "Bon."
     kael "Je vais être direct."
-
-    kael "Si on écrit tous dans notre coin."
-    kael "Sans se parler."
-    kael "On prend un risque énorme."
-
-    kael "Je propose un truc simple."
-    kael "Chacun annonce ce qu’il compte proposer."
-    kael "Pas forcément le texte exact."
-    kael "Mais au moins l’intention."
-
-    kael "Comme ça."
-    kael "On évite les horreurs et les erreurs."
+    kael "Si chacun écrit de son côté, sans rien partager avant…"
+    kael "… on prend un risque énorme."
+    kael "Je propose quelque chose de simple."
+    kael "Chacun dit à voix haute ce qu’il compte mettre en avant."
+    kael "Pas le texte mot pour mot. Juste l’intention."
+    kael "Comme ça, on voit tout de suite où ça coince."
+    kael "Et on évite… les catastrophes."
 
     pause 0.3
 
@@ -1326,10 +1321,10 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     $ showP("kael", "reflechit", 0.50)
 
-    kael "C’est exactement pour ça qu’il faut qu'on en parle."
-
+    kael "C’est précisément pour ça qu’il faut en parler."
     kael "Le silence."
-    kael "C’est comme lui laisser le champ libre."
+    kael "C’est exactement ce qu’ils veulent."
+    kael "Le laisser s’installer, c’est leur donner le champ libre."
 
     hide kael
     hide nyra
@@ -1416,7 +1411,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     $ showP("kael", "calme", 0.22)
 
-    kael "Bon ... C'est donc votre choix."
+    kael "Bon…"
+    kael "C’est donc votre choix."
+    kael "Je le note."
     
     "Puis Kael s'éloigne à son tour."
 

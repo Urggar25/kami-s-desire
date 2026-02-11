@@ -800,7 +800,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     iris "Ils veulent du spectacle. Du vrai drama de téléréalité."
 
     elen "Franchement… la proposition a pas l’air si pourrie que ça, si ?"
-e   len "Je veux dire… y a claiiirement pire, non ?"
+    elen "Je veux dire… y a claiiirement pire, non ?"
 
     "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
 
