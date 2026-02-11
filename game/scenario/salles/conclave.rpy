@@ -3,7 +3,7 @@ default conclave_lock = True
 label CONCLAVE_TP:
     scene bg_conclave at adaptive_fullscreen
 
-    if free_time_active and elen_link == 0:
+    if free_time_active and (elen_link == 0 or nyra_link in [0, 1, 2, 3, 4]):
         $ pnc_room = "pnc_conclave"
         call screen pnc_conclave()
 
@@ -32,6 +32,15 @@ screen pnc_conclave():
         ypos 0
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
+
+    if free_time_active and nyra_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/nyra/neutre.png", zoom=0.75)
+            hover Transform("images/character/nyra/reflexion.png", zoom=0.75)
+            focus_mask True
+            xalign 0.30
+            yalign 0.30
+            action [SetVariable("last_room_label", "CONCLAVE_TP"), Jump("NYRA_LINK_INTERACT")]
 
     if free_time_active and elen_link == 0:
         imagebutton:

@@ -65,6 +65,16 @@ screen pnc_maintenance():
         at cover_screen
         action Jump("OPEN_CONCLAVE_MAP")
 
+
+
+    if free_time_active and kael_link in [0, 1, 2, 3, 4]:
+        imagebutton:
+            idle Transform("images/character/kael/neutre.png", zoom=0.75)
+            hover Transform("images/character/kael/reflechit.png", zoom=0.75)
+            focus_mask True
+            xalign 0.48
+            yalign 0.35
+            action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("KAEL_LINK_INTERACT")]
     if free_time_active and elias_link in [1, 3]:
         imagebutton:
             idle Transform("images/character/elias/neutre.png", zoom=0.75)
