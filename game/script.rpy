@@ -449,8 +449,8 @@ screen pegi18_choice():
     add "images/background/bg_18.png" at cover_screen
 
     imagebutton:
-        idle "images/background/interact/18/yes_holder.png"
-        hover "images/background/interact/18/yes.png"
+        idle "images/background/interact/18/yes.png"
+        hover "images/background/interact/18/yes_holder.png"
         focus_mask True
         xpos 0
         ypos 0
@@ -462,8 +462,8 @@ screen pegi18_choice():
         ]
 
     imagebutton:
-        idle "images/background/interact/18/no_holder.png"
-        hover "images/background/interact/18/no.png"
+        idle "images/background/interact/18/no.png"
+        hover "images/background/interact/18/no_holder.png"
         focus_mask True
         xpos 0
         ypos 0
