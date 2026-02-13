@@ -594,3 +594,11 @@ translate english decouverte_salle_repos_801e2d5e:
     # noam "Je retiens."
     noam ""
 
+# TODO: Translation updated at 2026-02-13 12:20
+
+# game/scenario/salles/repos.rpy:294
+translate english decouverte_salle_repos_abbac041:
+
+    # julian "Alors ils n... vous donnent de quoi tenir."
+    julian ""
+

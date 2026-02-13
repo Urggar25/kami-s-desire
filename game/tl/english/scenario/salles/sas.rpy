@@ -630,3 +630,269 @@ translate english decouverte_sas_ced82d0c:
     # think "Je devrais aller voir ailleurs."
     think ""
 
+# TODO: Translation updated at 2026-02-13 12:20
+
+# game/scenario/salles/sas.rpy:206
+translate english decouverte_sas_765391ea:
+
+    # noam hesitation "…"
+    noam hesitation ""
+
+# game/scenario/salles/sas.rpy:207
+translate english decouverte_sas_72962a6a:
+
+    # noam hesitation "Euh…"
+    noam hesitation ""
+
+# game/scenario/salles/sas.rpy:208
+translate english decouverte_sas_d006a495:
+
+    # noam hesitation "Salut."
+    noam hesitation ""
+
+# game/scenario/salles/sas.rpy:210
+translate english decouverte_sas_3840d215:
+
+    # mara jaloux "Hein ?"
+    mara jaloux ""
+
+# game/scenario/salles/sas.rpy:211
+translate english decouverte_sas_ed42c9c3:
+
+    # mara taquin "Putain, c’est toi qui traînes ici ?"
+    mara taquin ""
+
+# game/scenario/salles/sas.rpy:212
+translate english decouverte_sas_d2f1abad:
+
+    # mara sourire "Salut, le stalker."
+    mara sourire ""
+
+# game/scenario/salles/sas.rpy:216
+translate english decouverte_sas_ad7be637:
+
+    # noam taquin "Hein ?!"
+    noam taquin ""
+
+# game/scenario/salles/sas.rpy:217
+translate english decouverte_sas_f8560260:
+
+    # noam reflexion "Désolé, je voulais pas te faire peur."
+    noam reflexion ""
+
+# game/scenario/salles/sas.rpy:218
+translate english decouverte_sas_bc04c0fc:
+
+    # noam reflexion "C’est juste que…"
+    noam reflexion ""
+
+# game/scenario/salles/sas.rpy:219
+translate english decouverte_sas_fbbd6931:
+
+    # noam reflexion "je pensais pas tomber sur quelqu’un ici."
+    noam reflexion ""
+
+# game/scenario/salles/sas.rpy:221
+translate english decouverte_sas_cd46d174:
+
+    # mara doute "Ouais…"
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:222
+translate english decouverte_sas_345e53c3:
+
+    # mara "Les gens passent, matent la porte deux secondes,"
+    mara ""
+
+# game/scenario/salles/sas.rpy:223
+translate english decouverte_sas_60718457:
+
+    # mara "captent que c’est fermé à double tour,"
+    mara ""
+
+# game/scenario/salles/sas.rpy:224
+translate english decouverte_sas_5690179c:
+
+    # mara "et se barrent direct comme des rats."
+    mara ""
+
+# game/scenario/salles/sas.rpy:225
+translate english decouverte_sas_7832b2e3:
+
+    # mara taquin "Ils ont pas les couilles de rester."
+    mara taquin ""
+
+# game/scenario/salles/sas.rpy:227
+translate english decouverte_sas_8d253364:
+
+    # noam sourire "Et toi ?"
+    noam sourire ""
+
+# game/scenario/salles/sas.rpy:229
+translate english decouverte_sas_fe388503:
+
+    # mara sourire "Moi je reste."
+    mara sourire ""
+
+# game/scenario/salles/sas.rpy:230
+translate english decouverte_sas_2c346741:
+
+    # mara "J’aime bien savoir exactement comment tout peut partir en vrille."
+    mara ""
+
+# game/scenario/salles/sas.rpy:231
+translate english decouverte_sas_5fc80f48:
+
+    # mara "Rien de tel que de connaître chaque recoin pourri d’un endroit."
+    mara ""
+
+# game/scenario/salles/sas.rpy:232
+translate english decouverte_sas_e86eb4e1:
+
+    # mara taquin "Ça permet de mieux anticiper le moment où ça va chier."
+    mara taquin ""
+
+# game/scenario/salles/sas.rpy:236
+translate english decouverte_sas_63d178e7:
+
+    # noam neutre "J'imagine que tu viens d'Axiome alors ?"
+    noam neutre ""
+
+# game/scenario/salles/sas.rpy:237
+translate english decouverte_sas_644e552c:
+
+    # noam neutre "Moi c'est Noam."
+    noam neutre ""
+
+# game/scenario/salles/sas.rpy:238
+translate english decouverte_sas_7f3822cd:
+
+    # noam neutre "District HARMONIE."
+    noam neutre ""
+
+# game/scenario/salles/sas.rpy:240
+translate english decouverte_sas_9584b0ee:
+
+    # mara neutre "Mara."
+    mara neutre ""
+
+# game/scenario/salles/sas.rpy:241
+translate english decouverte_sas_19d17b13:
+
+    # mara sourire "Et ouais, bingo : Axiome pur jus."
+    mara sourire ""
+
+# game/scenario/salles/sas.rpy:243
+translate english decouverte_sas_91e8b5d5:
+
+    # noam taquin "Ah."
+    noam taquin ""
+
+# game/scenario/salles/sas.rpy:244
+translate english decouverte_sas_f68574a5:
+
+    # noam taquin "D'où le côté un peu professionnel."
+    noam taquin ""
+
+# game/scenario/salles/sas.rpy:246
+translate english decouverte_sas_70f1e526:
+
+    # mara rire "Seulement un peu ?"
+    mara rire ""
+
+# game/scenario/salles/sas.rpy:254
+translate english decouverte_sas_d0ec55a7:
+
+    # noam reflexion "Tu crois que ce sas sera utile ?"
+    noam reflexion ""
+
+# game/scenario/salles/sas.rpy:256
+translate english decouverte_sas_4a165a63:
+
+    # mara doute "Euh… ouais."
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:257
+translate english decouverte_sas_d94c81bf:
+
+    # mara "Normalement, les livraisons tombent une fois par semaine."
+    mara ""
+
+# game/scenario/salles/sas.rpy:258
+translate english decouverte_sas_0e264940:
+
+    # mara reflexion "C’est huilé au millimètre : J7, J14, J21, J28."
+    mara reflexion ""
+
+# game/scenario/salles/sas.rpy:259
+translate english decouverte_sas_9c35a2b7:
+
+    # mara "Toujours pile à la même heure, comme des horloges suisses."
+    mara ""
+
+# game/scenario/salles/sas.rpy:260
+translate english decouverte_sas_4b57e4f7:
+
+    # mara taquin "Très rassurant, hein ?"
+    mara taquin ""
+
+# game/scenario/salles/sas.rpy:262
+translate english decouverte_sas_3615b45b:
+
+    # noam surpris "Ils ont déjà prévu tout ça ?"
+    noam surpris ""
+
+# game/scenario/salles/sas.rpy:263
+translate english decouverte_sas_4c3f9913:
+
+    # noam surpris "Genre…"
+    noam surpris ""
+
+# game/scenario/salles/sas.rpy:264
+translate english decouverte_sas_203c18d5:
+
+    # noam surpris "jusqu’à la fin du Conclave ?"
+    noam surpris ""
+
+# game/scenario/salles/sas.rpy:266
+translate english decouverte_sas_11392c29:
+
+    # mara doute "Au moins on est surs d'avoir des livraisons régulièrement."
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:277
+translate english decouverte_sas_0fb1dd71:
+
+    # mara stress "Ouais… c’est exactement pour ça que ça me fout les jetons."
+    mara stress ""
+
+# game/scenario/salles/sas.rpy:284
+translate english decouverte_sas_101f049e:
+
+    # mara "Parce que si un truc déconne…"
+    mara ""
+
+# game/scenario/salles/sas.rpy:285
+translate english decouverte_sas_cfa074f4:
+
+    # mara "si on a besoin d’un médoc, de bouffe en plus, d’un câble USB ou que sais-je…"
+    mara ""
+
+# game/scenario/salles/sas.rpy:286
+translate english decouverte_sas_ca4d8067:
+
+    # mara "bah on attend sagement le prochain jour J."
+    mara ""
+
+# game/scenario/salles/sas.rpy:287
+translate english decouverte_sas_738d003a:
+
+    # mara doute "Et si c’est pas le bon jour… on crève la dalle ou on crève tout court."
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:288
+translate english decouverte_sas_ee15339e:
+
+    # mara sourire "Super planning, Kami. Vraiment top."
+    mara sourire ""
+

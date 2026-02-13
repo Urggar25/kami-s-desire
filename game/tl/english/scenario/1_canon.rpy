@@ -6308,3 +6308,1097 @@ translate english strings:
     old "Se rendre à la salle de repos (Optionnel)"
     new ""
 
+# TODO: Translation updated at 2026-02-13 12:20
+
+# game/scenario/1_canon.rpy:81
+translate english 8d311a95:
+
+    # lysa "Ouais..."
+    lysa ""
+
+# game/scenario/1_canon.rpy:106
+translate english cc5bad5a:
+
+    # ryn "Qui a fait ça ?!"
+    ryn ""
+
+# game/scenario/1_canon.rpy:117
+translate english f64c716b:
+
+    # mara "Tu veux dire… à part l’IA qui tient le monde en laisse ?"
+    mara ""
+
+# game/scenario/1_canon.rpy:119
+translate english b9be0c57:
+
+    # ryn "Je parle de ce qui nous arrive, là, maintenant."
+    ryn ""
+
+# game/scenario/1_canon.rpy:129
+translate english 66adb82c:
+
+    # tomas "Probablement… personne qui soit vraiment là. Enfin, je veux dire… pas ici, pas physiquement."
+    tomas ""
+
+# game/scenario/1_canon.rpy:130
+translate english 0c118340:
+
+    # tomas "Ça ressemble à une procédure. Automatique. Presque… mécanique."
+    tomas ""
+
+# game/scenario/1_canon.rpy:138
+translate english 2ab3da00:
+
+    # elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
+    elen ""
+
+# game/scenario/1_canon.rpy:139
+translate english b83d9f41:
+
+    # elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
+    elen ""
+
+# game/scenario/1_canon.rpy:140
+translate english 487d82ba:
+
+    # elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."
+    elen ""
+
+# game/scenario/1_canon.rpy:158
+translate english ab4a8b41:
+
+    # julian "Vous… vous entendez ça ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:159
+translate english 354886be:
+
+    # julian "Rien. Absolument rien. On dirait qu’on est les derniers humains sur Terre."
+    julian ""
+
+# game/scenario/1_canon.rpy:167
+translate english 9b6ef580:
+
+    # iris "Mais… y a même pas un murmure ! Rien ! C’est flippant à quel point c’est silencieux ici !"
+    iris ""
+
+# game/scenario/1_canon.rpy:168
+translate english 0f9fbbfc:
+
+    # iris "Et en plus on sait même pas ce qu’on est censés faire, hein ! On attend quoi, un miracle ?"
+    iris ""
+
+# game/scenario/1_canon.rpy:185
+translate english 4efd4f31:
+
+    # kael "Ou alors… c’est juste une attente."
+    kael ""
+
+# game/scenario/1_canon.rpy:186
+translate english 3a0d1e20:
+
+    # kael "Peut-être qu’elle attend quelque chose. Quelque chose de précis."
+    kael ""
+
+# game/scenario/1_canon.rpy:220
+translate english 9d34981e:
+
+    # mara "J’adore, putain."
+    mara ""
+
+# game/scenario/1_canon.rpy:221
+translate english 0d7397f4:
+
+    # mara "Douze pigeons, zéro animateur."
+    mara ""
+
+# game/scenario/1_canon.rpy:222
+translate english 806ba1f5:
+
+    # mara "Pas de mode d’emploi, pas d’hôte, même pas un petit speech d’accueil."
+    mara ""
+
+# game/scenario/1_canon.rpy:223
+translate english c1258dfa:
+
+    # mara "Elle nous snobe direct, la garce."
+    mara ""
+
+# game/scenario/1_canon.rpy:231
+translate english 3a256468:
+
+    # tomas "On parle de Kami, quand même."
+    tomas ""
+
+# game/scenario/1_canon.rpy:232
+translate english 9c065241:
+
+    # tomas "Elle est toujours là. Même quand on ne la voit pas."
+    tomas ""
+
+# game/scenario/1_canon.rpy:233
+translate english 8efba929:
+
+    # tomas "Même sans image… elle reste là."
+    tomas ""
+
+# game/scenario/1_canon.rpy:254
+translate english 15c3722d:
+
+    # lysa "Tu as remarqué ça ?"
+    lysa ""
+
+# game/scenario/1_canon.rpy:266
+translate english 3cc805a4:
+
+    # lysa neutre "Aucun ordre."
+    lysa neutre ""
+
+# game/scenario/1_canon.rpy:269
+translate english 40486bf3:
+
+    # lysa fatigue "... Silence radio."
+    lysa fatigue ""
+
+# game/scenario/1_canon.rpy:307
+translate english c3442e12:
+
+    # elias "… Et après ? Tu comptes faire quoi ?"
+    elias ""
+
+# game/scenario/1_canon.rpy:320
+translate english ec1b287d:
+
+    # elen "Mais attendre… c’est aussi super risqué, tu trouves pas ?"
+    elen ""
+
+# game/scenario/1_canon.rpy:321
+translate english 13110c18:
+
+    # elen "On mise sur le fait que ça va pas empirer…"
+    elen ""
+
+# game/scenario/1_canon.rpy:326
+translate english 6892ac31:
+
+    # tomas "Tout ça… c’est un pari, non ? Tout le temps."
+    tomas ""
+
+# game/scenario/1_canon.rpy:327
+translate english 010561c8:
+
+    # tomas "On s’est tous fait prendre de court. Moi le premier."
+    tomas ""
+
+# game/scenario/1_canon.rpy:328
+translate english 74213a89:
+
+    # tomas "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
+    tomas ""
+
+# game/scenario/1_canon.rpy:465
+translate english 8a05cd65:
+
+    # elen "Décider de quoi exactement ?"
+    elen ""
+
+# game/scenario/1_canon.rpy:466
+translate english 2bfc8e7f:
+
+    # elen "Attends, explique-moi encore, je suis larguée là."
+    elen ""
+
+# game/scenario/1_canon.rpy:664
+translate english f12605d5:
+
+    # lysa blase "L’unanimité ?"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:665
+translate english e2eebb5a:
+
+    # lysa blase "C’est le piège ultime."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:666
+translate english e159afd8:
+
+    # lysa blase "En vrai, c’est quasi impossible."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:667
+translate english 85da3d66:
+
+    # lysa "Soit tu convaincs tout le monde…"
+    lysa ""
+
+# game/scenario/1_canon.rpy:668
+translate english 47ef3003:
+
+    # lysa "soit tu les écrases."
+    lysa ""
+
+# game/scenario/1_canon.rpy:669
+translate english 9139a0a3:
+
+    # lysa fatigue "Maintenant je pige pourquoi elle dit que ce sera pas simple."
+    lysa fatigue ""
+
+# game/scenario/1_canon.rpy:672
+translate english 39987483:
+
+    # tomas "Ou alors… faire des compromis."
+    tomas ""
+
+# game/scenario/1_canon.rpy:698
+translate english 790285c9:
+
+    # elen "Le fait qu’on ait le droit de proposer des amendements…"
+    elen ""
+
+# game/scenario/1_canon.rpy:699
+translate english 1592a195:
+
+    # elen "Franchement, dans ce merdier, c’est déjà énorme."
+    elen ""
+
+# game/scenario/1_canon.rpy:700
+translate english 4c694d68:
+
+    # elen "C’est comme… une toute petite fenêtre ouverte. Ça fait du bien de respirer cinq secondes."
+    elen ""
+
+# game/scenario/1_canon.rpy:714
+translate english 7f8cc7f4:
+
+    # mara "Vous parlez tous comme si on venait de gagner au loto."
+    mara ""
+
+# game/scenario/1_canon.rpy:715
+translate english 05491dd2:
+
+    # mara "On est dans une putain de cage, les gars."
+    mara ""
+
+# game/scenario/1_canon.rpy:716
+translate english de2f4e00:
+
+    # mara "Avec un bouton ‘vote’ et un nœud rose dessus pour faire genre que c’est cadeau."
+    mara ""
+
+# game/scenario/1_canon.rpy:736
+translate english d3c2f07e:
+
+    # lysa neutre "On est filmés en permanence."
+    lysa neutre ""
+
+# game/scenario/1_canon.rpy:737
+translate english 7bbf1250:
+
+    # lysa "IA qui mate et diffuse tout."
+    lysa ""
+
+# game/scenario/1_canon.rpy:738
+translate english 094c9a0c:
+
+    # lysa blase "Son idée du ‘cadre sécurisé’, apparemment."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:739
+translate english 825fb225:
+
+    # lysa "La pression, ça empêche de péter un câble."
+    lysa ""
+
+# game/scenario/1_canon.rpy:740
+translate english 63081b2d:
+
+    # lysa fatigue "... En théorie."
+    lysa fatigue ""
+
+# game/scenario/1_canon.rpy:753
+translate english 7eab6ba6:
+
+    # julian "Moi je trouve ça carrément bandant."
+    julian ""
+
+# game/scenario/1_canon.rpy:756
+translate english 68c84ba6:
+
+    # julian "Enfin !"
+    julian ""
+
+# game/scenario/1_canon.rpy:757
+translate english 7099c814:
+
+    # julian "Un endroit où on peut vraiment parler, peser sur les règles…"
+    julian ""
+
+# game/scenario/1_canon.rpy:758
+translate english 2ca1db03:
+
+    # julian "… et où les gens vont regarder. Pour de vrai."
+    julian ""
+
+# game/scenario/1_canon.rpy:768
+translate english db1ccf28:
+
+    # julian "Si je dois être coincé ici trente jours… autant que ce soit légendaire."
+    julian ""
+
+# game/scenario/1_canon.rpy:769
+translate english 6f177207:
+
+    # julian "Et autant en profiter pour rendre la vie un peu moins pourrie aux autres, non ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:784
+translate english 7b499056:
+
+    # tomas "Au moins, ça confirme quelque chose."
+    tomas ""
+
+# game/scenario/1_canon.rpy:785
+translate english b3f7db95:
+
+    # tomas "Elle veut du spectacle. Vraiment."
+    tomas ""
+
+# game/scenario/1_canon.rpy:786
+translate english 1f944326:
+
+    # tomas raison "Et si elle veut du spectacle… c’est qu’elle compte sur le fait qu’on va se déchirer entre nous."
+    tomas raison ""
+
+# game/scenario/1_canon.rpy:802
+translate english beae2523:
+
+    # kael "Et si on se disait chacun ce qu’on envisage comme modifications ?"
+    kael ""
+
+# game/scenario/1_canon.rpy:803
+translate english 2ddd5613:
+
+    # kael "Pas besoin de tout écrire d’un coup. Juste… l’idée générale."
+    kael ""
+
+# game/scenario/1_canon.rpy:804
+translate english be4d4440:
+
+    # kael "Si on les met sur la table ensemble, on a peut-être une chance d’atteindre l’unanimité."
+    kael ""
+
+# game/scenario/1_canon.rpy:805
+translate english 4cf69707:
+
+    # kael "Sinon, on va tourner en rond."
+    kael ""
+
+# game/scenario/1_canon.rpy:819
+translate english fe8af0ce:
+
+    # elen "On devrait peut-être se caler sur un truc simple avant que ça parte en vrille."
+    elen ""
+
+# game/scenario/1_canon.rpy:820
+translate english 0a165a5d:
+
+    # elen "Genre une règle de base, pas grand-chose… juste pour pas s’étriper dans les dix premières minutes."
+    elen ""
+
+# game/scenario/1_canon.rpy:821
+translate english a485e597:
+
+    # elen "Parce que sinon je te jure, ça va dégénérer direct."
+    elen ""
+
+# game/scenario/1_canon.rpy:824
+translate english 0f890bc7:
+
+    # lysa blase "Tu veux une méthode ?"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:826
+translate english dae65a3d:
+
+    # lysa "Et ici, tuer quelqu’un… pas de conséquence."
+    lysa ""
+
+# game/scenario/1_canon.rpy:827
+translate english 3ae3afb6:
+
+    # lysa fatigue "La méthode est déjà écrite."
+    lysa fatigue ""
+
+# game/scenario/1_canon.rpy:828
+translate english 65c33c99:
+
+    # lysa "... Et on la connaît tous."
+    lysa ""
+
+# game/scenario/1_canon.rpy:829
+translate english 1c28a0d4:
+
+    # lysa peur "Evidemment que ça va finir en tuerie de masse."
+    lysa peur ""
+
+# game/scenario/1_canon.rpy:843
+translate english 39d67f97:
+
+    # lysa neutre "On visite."
+    lysa neutre ""
+
+# game/scenario/1_canon.rpy:845
+translate english 8f591d90:
+
+    # lysa "Et on ferme sa gueule devant les caméras."
+    lysa ""
+
+# game/scenario/1_canon.rpy:846
+translate english 4ee91d69:
+
+    # lysa fatigue "Surtout au début."
+    lysa fatigue ""
+
+# game/scenario/1_canon.rpy:849
+translate english 6625ee5f:
+
+    # elen "Je vais checker s’il y a une infirmerie… ou au moins de quoi faire un pansement."
+    elen ""
+
+# game/scenario/1_canon.rpy:850
+translate english 6f8c4674:
+
+    # elen "On sait jamais, des fois que quelqu’un se fasse vraiment mal."
+    elen ""
+
+# game/scenario/1_canon.rpy:990
+translate english KAMI_MESSAGE_APRES_VISITE_8dc38f66:
+
+    # mara "Chuuut."
+    mara ""
+
+# game/scenario/1_canon.rpy:991
+translate english KAMI_MESSAGE_APRES_VISITE_149b29b8:
+
+    # mara "T’as capté ou quoi ?"
+    mara ""
+
+# game/scenario/1_canon.rpy:992
+translate english KAMI_MESSAGE_APRES_VISITE_1bc75170:
+
+    # mara "Kami supporte pas qu’on lui fasse perdre son temps, soi-disant."
+    mara ""
+
+# game/scenario/1_canon.rpy:993
+translate english KAMI_MESSAGE_APRES_VISITE_a53592f3:
+
+    # mara "Et moi j’ai pas envie d’être sa cible du jour, alors merci mais tais toi."
+    mara ""
+
+# game/scenario/1_canon.rpy:998
+translate english KAMI_MESSAGE_APRES_VISITE_f2abc07a:
+
+    # iris "Super. Vraiment super."
+    iris ""
+
+# game/scenario/1_canon.rpy:999
+translate english KAMI_MESSAGE_APRES_VISITE_4a8ba040:
+
+    # iris "On nous convoque comme des mômes de primaire qui ont sali la classe. Génial, l’ambiance."
+    iris ""
+
+# game/scenario/1_canon.rpy:1000
+translate english KAMI_MESSAGE_APRES_VISITE_21c178e3:
+
+    # iris "J’ai hâte de voir qui va nous mettre au coin cette fois."
+    iris ""
+
+# game/scenario/1_canon.rpy:1005
+translate english KAMI_MESSAGE_APRES_VISITE_a10d4a6a:
+
+    # julian "Perso je trouve ça hyper marrant."
+    julian ""
+
+# game/scenario/1_canon.rpy:1006
+translate english KAMI_MESSAGE_APRES_VISITE_6cdc09be:
+
+    # julian "J’ai trop envie de voir jusqu’où on peut pousser le bordel dans cet endroit…"
+    julian ""
+
+# game/scenario/1_canon.rpy:1011
+translate english KAMI_MESSAGE_APRES_VISITE_632f7d15:
+
+    # elen "Franchement, je suis pas sûre qu’on puisse changer grand-chose…"
+    elen ""
+
+# game/scenario/1_canon.rpy:1012
+translate english KAMI_MESSAGE_APRES_VISITE_e61ccdac:
+
+    # elen "Kami décide de qui vit ou meurt, on va pas se mentir."
+    elen ""
+
+# game/scenario/1_canon.rpy:1013
+translate english KAMI_MESSAGE_APRES_VISITE_05c9b6a2:
+
+    # elen "Mais même si c’est minuscule… j’ai envie d’essayer quand même. Ça coûte rien d’essayer, si ?"
+    elen ""
+
+# game/scenario/1_canon.rpy:1017
+translate english KAMI_MESSAGE_APRES_VISITE_99be0ef2:
+
+    # julian "Je sais, je sais..."
+    julian ""
+
+# game/scenario/1_canon.rpy:1018
+translate english KAMI_MESSAGE_APRES_VISITE_9e125932:
+
+    # julian "Mais justement, c’est ça qui est excitant."
+    julian ""
+
+# game/scenario/1_canon.rpy:1019
+translate english KAMI_MESSAGE_APRES_VISITE_76417aaa:
+
+    # julian "Si on peut réécrire les règles, on peut tout changer."
+    julian ""
+
+# game/scenario/1_canon.rpy:1020
+translate english KAMI_MESSAGE_APRES_VISITE_1fa840af:
+
+    # julian "Et sortir tout le monde de là. On pourrait être les héros de l'humanité !"
+    julian ""
+
+# game/scenario/1_canon.rpy:1182
+translate english KAMI_MESSAGE_APRES_VISITE_b4b44df3:
+
+    # elias "Donc si une seule personne dit non… c’est mort."
+    elias ""
+
+# game/scenario/1_canon.rpy:1231
+translate english KAMI_MESSAGE_APRES_VISITE_717aaf46:
+
+    # kael "Si chacun écrit de son côté, sans rien partager avant…"
+    kael ""
+
+# game/scenario/1_canon.rpy:1232
+translate english KAMI_MESSAGE_APRES_VISITE_b7feb8e5:
+
+    # kael "… on prend un risque énorme."
+    kael ""
+
+# game/scenario/1_canon.rpy:1233
+translate english KAMI_MESSAGE_APRES_VISITE_6f615060:
+
+    # kael "Je propose quelque chose de simple."
+    kael ""
+
+# game/scenario/1_canon.rpy:1234
+translate english KAMI_MESSAGE_APRES_VISITE_b3f40f09:
+
+    # kael "Chacun dit à voix haute ce qu’il compte mettre en avant."
+    kael ""
+
+# game/scenario/1_canon.rpy:1235
+translate english KAMI_MESSAGE_APRES_VISITE_1f153c6e:
+
+    # kael "Pas le texte mot pour mot. Juste l’intention."
+    kael ""
+
+# game/scenario/1_canon.rpy:1236
+translate english KAMI_MESSAGE_APRES_VISITE_ef0322e0:
+
+    # kael "Comme ça, on voit tout de suite où ça coince."
+    kael ""
+
+# game/scenario/1_canon.rpy:1237
+translate english KAMI_MESSAGE_APRES_VISITE_565daf5b:
+
+    # kael "Et on évite… les catastrophes."
+    kael ""
+
+# game/scenario/1_canon.rpy:1243
+translate english KAMI_MESSAGE_APRES_VISITE_d1fa1fd6:
+
+    # iris "Non mais non !"
+    iris ""
+
+# game/scenario/1_canon.rpy:1244
+translate english KAMI_MESSAGE_APRES_VISITE_4aad10f5:
+
+    # iris "C’est déjà l’horreur ton truc, là, tu te rends compte ou pas ?!"
+    iris ""
+
+# game/scenario/1_canon.rpy:1254
+translate english KAMI_MESSAGE_APRES_VISITE_eee64b5a:
+
+    # iris "Attends, parce que si un amendement a l’air tout gentil, tout raisonnable…"
+    iris ""
+
+# game/scenario/1_canon.rpy:1255
+translate english KAMI_MESSAGE_APRES_VISITE_723ed263:
+
+    # iris "…mais qu’en vrai il fout un merdier monstrueux derrière…"
+    iris ""
+
+# game/scenario/1_canon.rpy:1256
+translate english KAMI_MESSAGE_APRES_VISITE_ed24d5d5:
+
+    # iris "Tu crois vraiment que Kami va faire quoi ?"
+    iris ""
+
+# game/scenario/1_canon.rpy:1257
+translate english KAMI_MESSAGE_APRES_VISITE_13fd3442:
+
+    # iris taquin "‘Oups désolée’ ?"
+    iris taquin ""
+
+# game/scenario/1_canon.rpy:1258
+translate english KAMI_MESSAGE_APRES_VISITE_ca91ab2c:
+
+    # iris colere "Ou ‘ah bah c’est la faute de celui qui l’a écrit’ ? Genre, super la logique !"
+    iris colere ""
+
+# game/scenario/1_canon.rpy:1274
+translate english KAMI_MESSAGE_APRES_VISITE_2a29e74f:
+
+    # elen "Et puis… y en a qui ont clairement pas envie d’en causer."
+    elen ""
+
+# game/scenario/1_canon.rpy:1275
+translate english KAMI_MESSAGE_APRES_VISITE_6886e9b7:
+
+    # elen "Y a des trucs qu’on garde pour soi, des idées un peu tordues…"
+    elen ""
+
+# game/scenario/1_canon.rpy:1276
+translate english KAMI_MESSAGE_APRES_VISITE_f9135eb7:
+
+    # elen "Bref, c’est pas parce qu’on est tous là qu’on va tout se dire cash."
+    elen ""
+
+# game/scenario/1_canon.rpy:1281
+translate english KAMI_MESSAGE_APRES_VISITE_e95cd4f5:
+
+    # julian "Moi je veux bien en parler, hein."
+    julian ""
+
+# game/scenario/1_canon.rpy:1282
+translate english KAMI_MESSAGE_APRES_VISITE_bd24823f:
+
+    # julian "Mais bon… je sens que je vais encore me faire passer pour le relou qui se la raconte."
+    julian ""
+
+# game/scenario/1_canon.rpy:1287
+translate english KAMI_MESSAGE_APRES_VISITE_9b4f184f:
+
+    # mara "C’est pas un risque, c’est ta marque de fabrique."
+    mara ""
+
+# game/scenario/1_canon.rpy:1288
+translate english KAMI_MESSAGE_APRES_VISITE_c0b3ff16:
+
+    # mara "Au fait… c’est quoi ton blaze déjà ?"
+    mara ""
+
+# game/scenario/1_canon.rpy:1290
+translate english KAMI_MESSAGE_APRES_VISITE_c84ed56b:
+
+    # "Personne ne lui réponds vraiment."
+    ""
+
+# game/scenario/1_canon.rpy:1316
+translate english KAMI_MESSAGE_APRES_VISITE_3fb9b798:
+
+    # tomas "Non. Ça ne marchera pas, Ryn."
+    tomas ""
+
+# game/scenario/1_canon.rpy:1317
+translate english KAMI_MESSAGE_APRES_VISITE_7dc244fe:
+
+    # tomas "Kami a dit… très clairement… que refuser un amendement pouvait aussi avoir des conséquences."
+    tomas ""
+
+# game/scenario/1_canon.rpy:1318
+translate english KAMI_MESSAGE_APRES_VISITE_a7a2223d:
+
+    # tomas "On sait juste pas encore lequel. Et c’est ça qui m’inquiète."
+    tomas ""
+
+# game/scenario/1_canon.rpy:1324
+translate english KAMI_MESSAGE_APRES_VISITE_dbd37fa2:
+
+    # kael "C’est précisément pour ça qu’il faut en parler."
+    kael ""
+
+# game/scenario/1_canon.rpy:1326
+translate english KAMI_MESSAGE_APRES_VISITE_966d238b:
+
+    # kael "C’est exactement ce qu’ils veulent."
+    kael ""
+
+# game/scenario/1_canon.rpy:1327
+translate english KAMI_MESSAGE_APRES_VISITE_153536ae:
+
+    # kael "Le laisser s’installer, c’est leur donner le champ libre."
+    kael ""
+
+# game/scenario/1_canon.rpy:1333
+translate english KAMI_MESSAGE_APRES_VISITE_7eb6767a:
+
+    # lysa reflexion "Ou alors…"
+    lysa reflexion ""
+
+# game/scenario/1_canon.rpy:1334
+translate english KAMI_MESSAGE_APRES_VISITE_67cc18d0:
+
+    # lysa "c’est notre seule défense."
+    lysa ""
+
+# game/scenario/1_canon.rpy:1335
+translate english KAMI_MESSAGE_APRES_VISITE_797c3cb7:
+
+    # lysa doute "Quelqu’un peut très bien mentir."
+    lysa doute ""
+
+# game/scenario/1_canon.rpy:1336
+translate english KAMI_MESSAGE_APRES_VISITE_9199ae42:
+
+    # lysa "Dire qu’il propose un truc alors qu’il en propose un autre."
+    lysa ""
+
+# game/scenario/1_canon.rpy:1337
+translate english KAMI_MESSAGE_APRES_VISITE_c2526ea9:
+
+    # lysa blase "Avec seulement dix votes tirés au sort…"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:1338
+translate english KAMI_MESSAGE_APRES_VISITE_406363fe:
+
+    # lysa "c’est l’alibi parfait."
+    lysa ""
+
+# game/scenario/1_canon.rpy:1339
+translate english KAMI_MESSAGE_APRES_VISITE_f8e2a19b:
+
+    # lysa fatigue "Personne pourra prouver le contraire."
+    lysa fatigue ""
+
+# game/scenario/1_canon.rpy:1352
+translate english KAMI_MESSAGE_APRES_VISITE_43cf01d0:
+
+    # elias "Au fait les gars..."
+    elias ""
+
+# game/scenario/1_canon.rpy:1353
+translate english KAMI_MESSAGE_APRES_VISITE_368f6222:
+
+    # elias "Pendant qu’on tourne en rond, le chrono descend à vingt minutes."
+    elias ""
+
+# game/scenario/1_canon.rpy:1385
+translate english KAMI_MESSAGE_APRES_VISITE_f8346938:
+
+    # mara "Dès qu’un con commence…"
+    mara ""
+
+# game/scenario/1_canon.rpy:1386
+translate english KAMI_MESSAGE_APRES_VISITE_d0d0dafb:
+
+    # mara "Tous les autres moutons suivent. Les gens sont vraiment des moutons."
+    mara ""
+
+# game/scenario/1_canon.rpy:1414
+translate english KAMI_MESSAGE_APRES_VISITE_b94859df:
+
+    # kael "Bon…"
+    kael ""
+
+# game/scenario/1_canon.rpy:1415
+translate english KAMI_MESSAGE_APRES_VISITE_030ca548:
+
+    # kael "C’est donc votre choix."
+    kael ""
+
+# game/scenario/1_canon.rpy:1416
+translate english KAMI_MESSAGE_APRES_VISITE_c72c2112:
+
+    # kael "Je le note."
+    kael ""
+
+# game/scenario/1_canon.rpy:1423
+translate english KAMI_MESSAGE_APRES_VISITE_2b1e4cc3:
+
+    # julian "C’est dingue, non ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:1424
+translate english KAMI_MESSAGE_APRES_VISITE_00c31bbd:
+
+    # julian "C’est toujours quand tout le monde se tait…"
+    julian ""
+
+# game/scenario/1_canon.rpy:1425
+translate english KAMI_MESSAGE_APRES_VISITE_e039d84d:
+
+    # julian "… que les vraies décisions se prennent."
+    julian ""
+
+# game/scenario/1_canon.rpy:1442
+translate english KAMI_MESSAGE_APRES_VISITE_b813bd73:
+
+    # elen "Et si jamais quelqu’un balance un truc vraiment hardcore ?"
+    elen ""
+
+# game/scenario/1_canon.rpy:1443
+translate english KAMI_MESSAGE_APRES_VISITE_f55ac852:
+
+    # elen "Genre une proposition qui fait flipper tout le monde…"
+    elen ""
+
+# game/scenario/1_canon.rpy:1447
+translate english KAMI_MESSAGE_APRES_VISITE_44f1a140:
+
+    # iris "Donc voilà : soit on vote contre, hein et rien ne change, sauf que même ça ça craint..."
+    iris ""
+
+# game/scenario/1_canon.rpy:1448
+translate english KAMI_MESSAGE_APRES_VISITE_2bf2ecb4:
+
+    # iris "soit on se tape les conséquences dans la tronche."
+    iris ""
+
+# game/scenario/1_canon.rpy:1449
+translate english KAMI_MESSAGE_APRES_VISITE_77d5265d:
+
+    # iris "Comme d’hab’, quoi. Rien de neuf sous le soleil pourri."
+    iris ""
+
+# game/scenario/1_canon.rpy:1881
+translate english KAMI_MESSAGE_APRES_VISITE_69a09f11:
+
+    # julian "Toi aussi t’as pas réussi à te coucher direct ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:1894
+translate english KAMI_MESSAGE_APRES_VISITE_40c60225:
+
+    # julian "Franchement..."
+    julian ""
+
+# game/scenario/1_canon.rpy:1895
+translate english KAMI_MESSAGE_APRES_VISITE_986fea39:
+
+    # julian "J’ai cru que j’allais rester planté devant ma feuille blanche comme un con."
+    julian ""
+
+# game/scenario/1_canon.rpy:1896
+translate english KAMI_MESSAGE_APRES_VISITE_ac659c0d:
+
+    # julian "J’ai écrit une phrase entière, puis je l'ai supprimé, trois fois de suite."
+    julian ""
+
+# game/scenario/1_canon.rpy:1897
+translate english KAMI_MESSAGE_APRES_VISITE_3c6c5c4f:
+
+    # julian "Il fallait vraiment que je trouve quelque chose de bien.."
+    julian ""
+
+# game/scenario/1_canon.rpy:1903
+translate english KAMI_MESSAGE_APRES_VISITE_42c0a2b2:
+
+    # mara "Moi j’ai arrêté de cogiter."
+    mara ""
+
+# game/scenario/1_canon.rpy:1904
+translate english KAMI_MESSAGE_APRES_VISITE_91f56d75:
+
+    # mara "Sinon je devenais dingue."
+    mara ""
+
+# game/scenario/1_canon.rpy:1905
+translate english KAMI_MESSAGE_APRES_VISITE_5a2abc97:
+
+    # mara "J’ai écrit un truc."
+    mara ""
+
+# game/scenario/1_canon.rpy:1906
+translate english KAMI_MESSAGE_APRES_VISITE_988b33c6:
+
+    # mara "Point barre."
+    mara ""
+
+# game/scenario/1_canon.rpy:1907
+translate english KAMI_MESSAGE_APRES_VISITE_6268674f:
+
+    # mara "Et si ça vous plaît pas, bah tant pis pour vos gueules."
+    mara ""
+
+# game/scenario/1_canon.rpy:1918
+translate english KAMI_MESSAGE_APRES_VISITE_96e31471:
+
+    # julian "On est bien d’accord que c’est complètement n’importe quoi ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:1919
+translate english KAMI_MESSAGE_APRES_VISITE_4b55a31b:
+
+    # julian "On réfléchit à ce qui peut aider les gens, on écrit des phrases."
+    julian ""
+
+# game/scenario/1_canon.rpy:1920
+translate english KAMI_MESSAGE_APRES_VISITE_073a86fc:
+
+    # julian "… et demain matin le hasard décide si ça vaut de l’or ou si ça vaut zéro."
+    julian ""
+
+# game/scenario/1_canon.rpy:1921
+translate english KAMI_MESSAGE_APRES_VISITE_7474bafc:
+
+    # julian "lmagine si ma proposition ne tombera pas dans les dix tirages ?!."
+    julian ""
+
+# game/scenario/1_canon.rpy:1936
+translate english KAMI_MESSAGE_APRES_VISITE_99254fca:
+
+    # mara "Vous croyez qu’elle nous mate là ? Genre… là, tout de suite ?"
+    mara ""
+
+# game/scenario/1_canon.rpy:1938
+translate english KAMI_MESSAGE_APRES_VISITE_b908d592:
+
+    # julian "Sûrement..."
+    julian ""
+
+# game/scenario/1_canon.rpy:1939
+translate english KAMI_MESSAGE_APRES_VISITE_c01cc4b0:
+
+    # julian "Et pour tout te dire, j'espère bien !"
+    julian ""
+
+# game/scenario/1_canon.rpy:1940
+translate english KAMI_MESSAGE_APRES_VISITE_c2338aef:
+
+    # julian "Ah qu'est ce que j'aimerais être repéré pour mes talents ici !"
+    julian ""
+
+# game/scenario/1_canon.rpy:1974
+translate english KAMI_MESSAGE_APRES_VISITE_7f09affd:
+
+    # julian "Respect vraiment."
+    julian ""
+
+# game/scenario/1_canon.rpy:1981
+translate english KAMI_MESSAGE_APRES_VISITE_32b1ee38:
+
+    # tomas "Disons que… si je renverse ça sur moi là, maintenant…"
+    tomas ""
+
+# game/scenario/1_canon.rpy:1982
+translate english KAMI_MESSAGE_APRES_VISITE_cdf25dbb:
+
+    # tomas "je suis mort socialement pour le reste du mois. Je vais directement me cacher sous une table et on me reverra plus."
+    tomas ""
+
+# game/scenario/1_canon.rpy:1991
+translate english KAMI_MESSAGE_APRES_VISITE_dac31c02:
+
+    # tomas "Je me suis dit que…"
+    tomas ""
+
+# game/scenario/1_canon.rpy:1992
+translate english KAMI_MESSAGE_APRES_VISITE_cf3dfa63:
+
+    # tomas "…que ça ferait peut-être du bien."
+    tomas ""
+
+# game/scenario/1_canon.rpy:1993
+translate english KAMI_MESSAGE_APRES_VISITE_d63ecdaa:
+
+    # tomas "Un truc chaud. Juste… un truc chaud."
+    tomas ""
+
+# game/scenario/1_canon.rpy:2000
+translate english KAMI_MESSAGE_APRES_VISITE_2013b177:
+
+    # julian "T'es un vrai héros mec."
+    julian ""
+
+# game/scenario/1_canon.rpy:2023
+translate english KAMI_MESSAGE_APRES_VISITE_872d88c2:
+
+    # mara "Ouais…"
+    mara ""
+
+# game/scenario/1_canon.rpy:2024
+translate english KAMI_MESSAGE_APRES_VISITE_f3672412:
+
+    # mara "C’est débile mais ça fait du bien."
+    mara ""
+
+# game/scenario/1_canon.rpy:2025
+translate english KAMI_MESSAGE_APRES_VISITE_dbaacf7f:
+
+    # mara "Un tout petit peu."
+    mara ""
+
+# game/scenario/1_canon.rpy:2058
+translate english KAMI_MESSAGE_APRES_VISITE_c4c1e5b4:
+
+    # mara "Bon bah voilà."
+    mara ""
+
+# game/scenario/1_canon.rpy:2059
+translate english KAMI_MESSAGE_APRES_VISITE_561891cb:
+
+    # mara "Je vais aller me pieuter avant de péter un câble."
+    mara ""
+
+# game/scenario/1_canon.rpy:2118
+translate english KAMI_MESSAGE_APRES_VISITE_4724906d:
+
+    # elias "Ah. Toi aussi t’es encore debout."
+    elias ""
+
+# game/scenario/1_canon.rpy:2128
+translate english KAMI_MESSAGE_APRES_VISITE_e9ec529d:
+
+    # elias "La salle de repos, hein ? … Pas con."
+    elias ""
+
+# game/scenario/1_canon.rpy:2134
+translate english KAMI_MESSAGE_APRES_VISITE_5aa3da20:
+
+    # elias "Moi j’ai tenté de dormir direct."
+    elias ""
+
+# game/scenario/1_canon.rpy:2139
+translate english KAMI_MESSAGE_APRES_VISITE_852317a4:
+
+    # elias "En voilà un se couche tôt."
+    elias ""
+
+# game/scenario/1_canon.rpy:2153
+translate english KAMI_MESSAGE_APRES_VISITE_c1a24f44:
+
+    # elias "C’est chelou quand même."
+    elias ""
+
+# game/scenario/1_canon.rpy:2154
+translate english KAMI_MESSAGE_APRES_VISITE_8a5ff33e:
+
+    # elias "Journée à rallonge, stress au max…"
+    elias ""
+
+# game/scenario/1_canon.rpy:2155
+translate english KAMI_MESSAGE_APRES_VISITE_aad19b96:
+
+    # elias "… et je suis rincé comme après douze heures sur un chantier."
+    elias ""
+
+# game/scenario/1_canon.rpy:2168
+translate english KAMI_MESSAGE_APRES_VISITE_83e2d9c6:
+
+    # elias "Ça va être un autre calibre."
+    elias ""
+

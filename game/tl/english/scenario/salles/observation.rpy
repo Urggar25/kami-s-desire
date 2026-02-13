@@ -978,3 +978,131 @@ translate english decouverte_salle_observation_ced82d0c:
     # think "Je devrais aller voir ailleurs."
     think ""
 
+# TODO: Translation updated at 2026-02-13 12:20
+
+# game/scenario/salles/observation.rpy:275
+translate english decouverte_salle_observation_67b5792d:
+
+    # lysa sourire "Je comprends."
+    lysa sourire ""
+
+# game/scenario/salles/observation.rpy:276
+translate english decouverte_salle_observation_d4435d31:
+
+    # lysa content "Moi ça…"
+    lysa content ""
+
+# game/scenario/salles/observation.rpy:277
+translate english decouverte_salle_observation_a1204357:
+
+    # lysa content "Ça me calme, bizarrement."
+    lysa content ""
+
+# game/scenario/salles/observation.rpy:284
+translate english decouverte_salle_observation_b114a2e1:
+
+    # lysa reflexion "Ou peut-être que j’avais besoin de voir un truc…"
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:285
+translate english decouverte_salle_observation_04936bfc:
+
+    # lysa reflexion "Qui change de notre quotidien."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:312
+translate english decouverte_salle_observation_a13b10ba:
+
+    # lysa neutre "À ta place, j’éviterais de toucher à ça."
+    lysa neutre ""
+
+# game/scenario/salles/observation.rpy:313
+translate english decouverte_salle_observation_ef663196:
+
+    # lysa blase "On sait même pas si on a le droit."
+    lysa blase ""
+
+# game/scenario/salles/observation.rpy:314
+translate english decouverte_salle_observation_d44cb3df:
+
+    # lysa fatigue "... Et franchement, vaut mieux pas tester."
+    lysa fatigue ""
+
+# game/scenario/salles/observation.rpy:337
+translate english decouverte_salle_observation_6cdfa152:
+
+    # lysa surpris "Ouais."
+    lysa surpris ""
+
+# game/scenario/salles/observation.rpy:338
+translate english decouverte_salle_observation_2494209d:
+
+    # lysa reflexion "On est vraiment loin de chez nous."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:339
+translate english decouverte_salle_observation_ac31bd82:
+
+    # lysa reflexion "Regarde la trajectoire."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:340
+translate english decouverte_salle_observation_cfc92098:
+
+    # lysa reflexion "Et les marqueurs sur le côté du vaisseau."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:347
+translate english decouverte_salle_observation_e036ba06:
+
+    # lysa determine "District ORBITE."
+    lysa determine ""
+
+# game/scenario/salles/observation.rpy:348
+translate english decouverte_salle_observation_9baef7fe:
+
+    # lysa determine "On est dans leur domaine ici."
+    lysa determine ""
+
+# game/scenario/salles/observation.rpy:349
+translate english decouverte_salle_observation_e34932ab:
+
+    # lysa reflexion "Peut être que leurs représentants en savent plus que nous sur où nous sommes."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:356
+translate english decouverte_salle_observation_0fc6fff6:
+
+    # lysa blase "Bien sûr qu’il y a des gens."
+    lysa blase ""
+
+# game/scenario/salles/observation.rpy:357
+translate english decouverte_salle_observation_66773cbe:
+
+    # lysa triste "On est juste… pas du même côté de la vitre."
+    lysa triste ""
+
+# game/scenario/salles/observation.rpy:377
+translate english decouverte_salle_observation_a91d0c0b:
+
+    # lysa triste "Hors de tout ce qu'on connait depuis là."
+    lysa triste ""
+
+# game/scenario/salles/observation.rpy:384
+translate english decouverte_salle_observation_bb40f1c9:
+
+    # lysa taquin "Ça marche une fois sur deux."
+    lysa taquin ""
+
+# game/scenario/salles/observation.rpy:409
+translate english decouverte_salle_observation_87cf7b7b:
+
+    # lysa blase "Ouais."
+    lysa blase ""
+
+# game/scenario/salles/observation.rpy:410
+translate english decouverte_salle_observation_507099dd:
+
+    # lysa triste "Probablement les deux."
+    lysa triste ""
+

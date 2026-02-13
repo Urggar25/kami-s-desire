@@ -702,3 +702,179 @@ translate english decouverte_gymnase_ced82d0c:
     # think "Je devrais aller voir ailleurs."
     think ""
 
+# TODO: Translation updated at 2026-02-13 12:20
+
+# game/scenario/salles/gymnase.rpy:166
+translate english decouverte_gymnase_82d083ae:
+
+    # elias "J’aime le sport."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:167
+translate english decouverte_gymnase_e5c25190:
+
+    # elias "Ça m’empêche de trop cogiter sur ce qui peut merder."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:176
+translate english decouverte_gymnase_542e8cd3:
+
+    # elias "Pas à cause d’elle."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:177
+translate english decouverte_gymnase_f0cef521:
+
+    # elias "Avant, une balle ou une guerre, et c’était fini sans sommation."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:178
+translate english decouverte_gymnase_ab50d301:
+
+    # elias "Là au moins, on sait à quoi s’attendre."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:179
+translate english decouverte_gymnase_19d1460c:
+
+    # elias raison "Faut juste respecter les règles quoi."
+    elias raison ""
+
+# game/scenario/salles/gymnase.rpy:184
+translate english decouverte_gymnase_55993753:
+
+    # elias "Est-ce qu'on vit moins bien qu'avant ?"
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:185
+translate english decouverte_gymnase_ec125e74:
+
+    # elias "Perso, j'ai pas la réponse."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:186
+translate english decouverte_gymnase_6219279e:
+
+    # elias "Alors je fais le taf. Le reste, c'est que du bruit dont je ne m'occupe pas vraiment."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:204
+translate english decouverte_gymnase_c8b43ab3:
+
+    # elias "AXIOME. Quartier bas."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:211
+translate english decouverte_gymnase_c998fcd3:
+
+    # elias "Ouais."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:212
+translate english decouverte_gymnase_7c59e302:
+
+    # elias "C’est là qu’on fabrique presque tout ce que les autres utilisent."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:223
+translate english decouverte_gymnase_b7ba870a:
+
+    # elias "Pour dormir mieux."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:224
+translate english decouverte_gymnase_64761190:
+
+    # elias "Une petite session avant 18h, ça serait pas de refus."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:225
+translate english decouverte_gymnase_c8f18577:
+
+    # elias "J’espère qu’il y a des douches après."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:250
+translate english decouverte_gymnase_698822ad:
+
+    # elias "C’est pour ça que je continue."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:251
+translate english decouverte_gymnase_450a5eca:
+
+    # elias "Quand tout part en vrille, faut garder un repère."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:252
+translate english decouverte_gymnase_33fc160e:
+
+    # elias neutre "C’est le principe."
+    elias neutre ""
+
+# game/scenario/salles/gymnase.rpy:261
+translate english decouverte_gymnase_652e6396:
+
+    # elias "Et bois de l’eau."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:262
+translate english decouverte_gymnase_9d356a50:
+
+    # elias "Respire."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:263
+translate english decouverte_gymnase_cdeae8cf:
+
+    # elias "Sinon t’auras des crampes, et bon courage."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:276
+translate english decouverte_gymnase_b8f27f0d:
+
+    # elias "Ils nous filent un gymnase."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:278
+translate english decouverte_gymnase_bb0f918f:
+
+    # elias "On soit, c'est pas pour me déplaire. J'ai toujours voulu aller en colo."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:291
+translate english decouverte_gymnase_89af22e7:
+
+    # elias "Ces 30 jours, ça va pas être une partie de plaisir."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:292
+translate english decouverte_gymnase_d29d3ba5:
+
+    # elias "On va être sur le qui-vive tout le temps, pas seulement aux votes."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:293
+translate english decouverte_gymnase_f2d0eb83:
+
+    # elias "Fatigue, nerfs à vif… ça va peser."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:300
+translate english decouverte_gymnase_f29dc6f4:
+
+    # elias "Mais ça permet au moins de se vider la tête."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:316
+translate english decouverte_gymnase_c03c3de0:
+
+    # elias "Mais écoute bien."
+    elias ""
+
+# game/scenario/salles/gymnase.rpy:317
+translate english decouverte_gymnase_0147ad18:
+
+    # elias "Sinon tu vas te péter quelque chose."
+    elias ""
+
