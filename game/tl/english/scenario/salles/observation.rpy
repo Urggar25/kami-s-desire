@@ -1,982 +1,982 @@
-﻿# TODO: Translation updated at 2026-01-29 14:58
+# TODO: Translation updated at 2026-01-29 14:58
 
 # game/scenario/salles/observation.rpy:79
 translate english OBS_PNC_RADIO_f1c2f316:
 
     # "La console radio est massive."
-    ""
+    "La console radio est massive."
 
 # game/scenario/salles/observation.rpy:80
 translate english OBS_PNC_RADIO_ae8c037c:
 
     # "Plusieurs fréquences."
-    ""
+    "Plusieurs fréquences."
 
 # game/scenario/salles/observation.rpy:81
 translate english OBS_PNC_RADIO_7f3040b9:
 
     # "Des indicateurs de puissance."
-    ""
+    "Des indicateurs de puissance."
 
 # game/scenario/salles/observation.rpy:82
 translate english OBS_PNC_RADIO_f3cf7e81:
 
     # "Un micro sur bras articulé."
-    ""
+    "Un micro sur bras articulé."
 
 # game/scenario/salles/observation.rpy:83
 translate english OBS_PNC_RADIO_15a9d946:
 
     # "Tout est verrouillé."
-    ""
+    "Tout est verrouillé."
 
 # game/scenario/salles/observation.rpy:84
 translate english OBS_PNC_RADIO_613b4a8c:
 
     # think "Donc on peut parler… mais pas appeler."
-    think ""
+    think "Donc on peut parler… mais pas appeler."
 
 # game/scenario/salles/observation.rpy:89
 translate english OBS_PNC_VITRE_e252a5f3:
 
     # "Les vitres donnent sur le vide."
-    ""
+    "Les vitres donnent sur le vide."
 
 # game/scenario/salles/observation.rpy:90
 translate english OBS_PNC_VITRE_02f3219a:
 
     # "Pas une vue 'sur le dehors'."
-    ""
+    "Pas une vue 'sur le dehors'."
 
 # game/scenario/salles/observation.rpy:91
 translate english OBS_PNC_VITRE_7f0d6d02:
 
     # "Une vue sur l’espace."
-    ""
+    "Une vue sur l’espace."
 
 # game/scenario/salles/observation.rpy:92
 translate english OBS_PNC_VITRE_1e75ff76:
 
     # think "Difficile de s'habituer à ça."
-    think ""
+    think "Difficile de s'habituer à ça."
 
 # game/scenario/salles/observation.rpy:99
 translate english OBS_PNC_ORBITE_121d77d3:
 
     # "Je m’approche un peu plus de la vitre."
-    ""
+    "Je m’approche un peu plus de la vitre."
 
 # game/scenario/salles/observation.rpy:100
 translate english OBS_PNC_ORBITE_6947d35d:
 
     # "Mon regard se fixe sur la masse la plus imposante au loin."
-    ""
+    "Mon regard se fixe sur la masse la plus imposante au loin."
 
 # game/scenario/salles/observation.rpy:102
 translate english OBS_PNC_ORBITE_d5e12ff2:
 
     # "Ce n’est pas une station."
-    ""
+    "Ce n’est pas une station."
 
 # game/scenario/salles/observation.rpy:103
 translate english OBS_PNC_ORBITE_46830e21:
 
     # "Pas vraiment."
-    ""
+    "Pas vraiment."
 
 # game/scenario/salles/observation.rpy:104
 translate english OBS_PNC_ORBITE_7b9d6785:
 
     # "Trop mobile."
-    ""
+    "Trop mobile."
 
 # game/scenario/salles/observation.rpy:105
 translate english OBS_PNC_ORBITE_9cbfac6f:
 
     # "Trop structurée."
-    ""
+    "Trop structurée."
 
 # game/scenario/salles/observation.rpy:107
 translate english OBS_PNC_ORBITE_855be9a0:
 
     # "C'est sans doute un vaisseau."
-    ""
+    "C'est sans doute un vaisseau."
 
 # game/scenario/salles/observation.rpy:108
 translate english OBS_PNC_ORBITE_462c4007:
 
     # "Ou quelque chose qui en a la fonction."
-    ""
+    "Ou quelque chose qui en a la fonction."
 
 # game/scenario/salles/observation.rpy:110
 translate english OBS_PNC_ORBITE_0654d5ff:
 
     # "Des lumières courent le long de sa coque."
-    ""
+    "Des lumières courent le long de sa coque."
 
 # game/scenario/salles/observation.rpy:111
 translate english OBS_PNC_ORBITE_c282876d:
 
     # "Pas au hasard."
-    ""
+    "Pas au hasard."
 
 # game/scenario/salles/observation.rpy:112
 translate english OBS_PNC_ORBITE_b09ea772:
 
     # "Des lignes nettes."
-    ""
+    "Des lignes nettes."
 
 # game/scenario/salles/observation.rpy:113
 translate english OBS_PNC_ORBITE_9beeeefa:
 
     # "Presque… organisées."
-    ""
+    "Presque… organisées."
 
 # game/scenario/salles/observation.rpy:115
 translate english OBS_PNC_ORBITE_491ae13c:
 
     # "Autour, d’autres silhouettes plus petites."
-    ""
+    "Autour, d’autres silhouettes plus petites."
 
 # game/scenario/salles/observation.rpy:116
 translate english OBS_PNC_ORBITE_df04494a:
 
     # "Elles apparaissent."
-    ""
+    "Elles apparaissent."
 
 # game/scenario/salles/observation.rpy:117
 translate english OBS_PNC_ORBITE_7e76de0e:
 
     # "Disparaissent."
-    ""
+    "Disparaissent."
 
 # game/scenario/salles/observation.rpy:118
 translate english OBS_PNC_ORBITE_139173a6:
 
     # "Comme si tout ça suivait un rythme précis."
-    ""
+    "Comme si tout ça suivait un rythme précis."
 
 # game/scenario/salles/observation.rpy:120
 translate english OBS_PNC_ORBITE_3fbf1f60:
 
     # think "Le district ORBITE."
-    think ""
+    think "Le district ORBITE."
 
 # game/scenario/salles/observation.rpy:121
 translate english OBS_PNC_ORBITE_24fa943c:
 
     # think "Du moins, ce que j’imagine que c’est."
-    think ""
+    think "Du moins, ce que j’imagine que c’est."
 
 # game/scenario/salles/observation.rpy:123
 translate english OBS_PNC_ORBITE_c1ed5524:
 
     # "Rien ne semble nous prêter attention."
-    ""
+    "Rien ne semble nous prêter attention."
 
 # game/scenario/salles/observation.rpy:124
 translate english OBS_PNC_ORBITE_ca33118a:
 
     # "Aucune manœuvre."
-    ""
+    "Aucune manœuvre."
 
 # game/scenario/salles/observation.rpy:125
 translate english OBS_PNC_ORBITE_d269b8ac:
 
     # "Aucun signal visible."
-    ""
+    "Aucun signal visible."
 
 # game/scenario/salles/observation.rpy:127
 translate english OBS_PNC_ORBITE_6ad5f9d7:
 
     # "Juste cette présence."
-    ""
+    "Juste cette présence."
 
 # game/scenario/salles/observation.rpy:128
 translate english OBS_PNC_ORBITE_18811cd4:
 
     # "Lourde."
-    ""
+    "Lourde."
 
 # game/scenario/salles/observation.rpy:129
 translate english OBS_PNC_ORBITE_02701adb:
 
     # "Constante."
-    ""
+    "Constante."
 
 # game/scenario/salles/observation.rpy:131
 translate english OBS_PNC_ORBITE_dcd80b49:
 
     # think "Ils sont là."
-    think ""
+    think "Ils sont là."
 
 # game/scenario/salles/observation.rpy:132
 translate english OBS_PNC_ORBITE_235bdb58:
 
     # think "Ils bougent."
-    think ""
+    think "Ils bougent."
 
 # game/scenario/salles/observation.rpy:133
 translate english OBS_PNC_ORBITE_e73f85ae:
 
     # think "Ils vivent."
-    think ""
+    think "Ils vivent."
 
 # game/scenario/salles/observation.rpy:135
 translate english OBS_PNC_ORBITE_3897c151:
 
     # think "Et moi… je regarde."
-    think ""
+    think "Et moi… je regarde."
 
 # game/scenario/salles/observation.rpy:158
 translate english decouverte_salle_observation_84d3c570:
 
     # think "La salle d'observation."
-    think ""
+    think "La salle d'observation."
 
 # game/scenario/salles/observation.rpy:159
 translate english decouverte_salle_observation_94b2f182:
 
     # think "Le nom sonne calme."
-    think ""
+    think "Le nom sonne calme."
 
 # game/scenario/salles/observation.rpy:160
 translate english decouverte_salle_observation_043f1db5:
 
     # think "Presque normal."
-    think ""
+    think "Presque normal."
 
 # game/scenario/salles/observation.rpy:166
 translate english decouverte_salle_observation_eb7d86ba:
 
     # "La salle est large."
-    ""
+    "La salle est large."
 
 # game/scenario/salles/observation.rpy:167
 translate english decouverte_salle_observation_571adb36:
 
     # "Plus ouverte que les autres."
-    ""
+    "Plus ouverte que les autres."
 
 # game/scenario/salles/observation.rpy:168
 translate english decouverte_salle_observation_50b15afa:
 
     # "Comme un poste de commande."
-    ""
+    "Comme un poste de commande."
 
 # game/scenario/salles/observation.rpy:170
 translate english decouverte_salle_observation_4d687445:
 
     # "À l’avant : une immense baie vitrée."
-    ""
+    "À l’avant : une immense baie vitrée."
 
 # game/scenario/salles/observation.rpy:171
 translate english decouverte_salle_observation_56d370e7:
 
     # "Et derrière : des consoles."
-    ""
+    "Et derrière : des consoles."
 
 # game/scenario/salles/observation.rpy:172
 translate english decouverte_salle_observation_f3160824:
 
     # "Des écrans."
-    ""
+    "Des écrans."
 
 # game/scenario/salles/observation.rpy:173
 translate english decouverte_salle_observation_4baaec71:
 
     # "Des appareils alignés avec une rigueur presque militaire."
-    ""
+    "Des appareils alignés avec une rigueur presque militaire."
 
 # game/scenario/salles/observation.rpy:175
 translate english decouverte_salle_observation_9c766667:
 
     # "Au centre, une console radio."
-    ""
+    "Au centre, une console radio."
 
 # game/scenario/salles/observation.rpy:176
 translate english decouverte_salle_observation_b4f013d8:
 
     # "Pas un petit talkie."
-    ""
+    "Pas un petit talkie."
 
 # game/scenario/salles/observation.rpy:177
 translate english decouverte_salle_observation_fba462da:
 
     # "Une vraie station."
-    ""
+    "Une vraie station."
 
 # game/scenario/salles/observation.rpy:178
 translate english decouverte_salle_observation_c8cb9122:
 
     # "Avec des boutons physiques."
-    ""
+    "Avec des boutons physiques."
 
 # game/scenario/salles/observation.rpy:179
 translate english decouverte_salle_observation_58c05805:
 
     # "Des curseurs."
-    ""
+    "Des curseurs."
 
 # game/scenario/salles/observation.rpy:180
 translate english decouverte_salle_observation_608b1aea:
 
     # "Un micro lourd."
-    ""
+    "Un micro lourd."
 
 # game/scenario/salles/observation.rpy:185
 translate english decouverte_salle_observation_c762de9d:
 
     # "Lysa est déjà près de la vitre."
-    ""
+    "Lysa est déjà près de la vitre."
 
 # game/scenario/salles/observation.rpy:186
 translate english decouverte_salle_observation_080fd615:
 
     # "Elle ne touche rien."
-    ""
+    "Elle ne touche rien."
 
 # game/scenario/salles/observation.rpy:187
 translate english decouverte_salle_observation_85f2014f:
 
     # "Elle regarde dehors."
-    ""
+    "Elle regarde dehors."
 
 # game/scenario/salles/observation.rpy:191
 translate english decouverte_salle_observation_a04de17f:
 
     # noam "Tu… regardes quoi ?"
-    noam ""
+    noam "Tu… regardes quoi ?"
 
 # game/scenario/salles/observation.rpy:194
 translate english decouverte_salle_observation_27417b27:
 
     # lysa "Viens."
-    lysa ""
+    lysa "Viens."
 
 # game/scenario/salles/observation.rpy:196
 translate english decouverte_salle_observation_d5390703:
 
     # "Je m’approche."
-    ""
+    "I step closer."
 
 # game/scenario/salles/observation.rpy:197
 translate english decouverte_salle_observation_b95f94ab:
 
     # "Et je comprends tout de suite."
-    ""
+    "Et je comprends tout de suite."
 
 # game/scenario/salles/observation.rpy:198
 translate english decouverte_salle_observation_a8052b6f:
 
     # "Mon cerveau met une seconde à suivre."
-    ""
+    "Mon cerveau met une seconde à suivre."
 
 # game/scenario/salles/observation.rpy:200
 translate english decouverte_salle_observation_19274fed:
 
     # "Il n’y a pas de ville à proprement parlé."
-    ""
+    "Il n’y a pas de ville à proprement parlé."
 
 # game/scenario/salles/observation.rpy:201
 translate english decouverte_salle_observation_5e11e212:
 
     # "Pas de ciel bleu éclatant."
-    ""
+    "Pas de ciel bleu éclatant."
 
 # game/scenario/salles/observation.rpy:202
 translate english decouverte_salle_observation_0ee72510:
 
     # "Juste du noir."
-    ""
+    "Juste du noir."
 
 # game/scenario/salles/observation.rpy:203
 translate english decouverte_salle_observation_1c092db4:
 
     # "Et des points scintillants."
-    ""
+    "Et des points scintillants."
 
 # game/scenario/salles/observation.rpy:204
 translate english decouverte_salle_observation_e75071d4:
 
     # "Des étoiles."
-    ""
+    "Des étoiles."
 
 # game/scenario/salles/observation.rpy:205
 translate english decouverte_salle_observation_db4d7908:
 
     # "Quand on plonge le regard, on voit une masse imposante et une sorte de gros vaisseau volant."
-    ""
+    "Quand on plonge le regard, on voit une masse imposante et une sorte de gros vaisseau volant."
 
 # game/scenario/salles/observation.rpy:209
 translate english decouverte_salle_observation_341dcd9e:
 
     # noam "…"
-    noam ""
+    noam "…"
 
 # game/scenario/salles/observation.rpy:210
 translate english decouverte_salle_observation_3a6a1e92:
 
     # noam "Attends."
-    noam ""
+    noam "Attends."
 
 # game/scenario/salles/observation.rpy:213
 translate english decouverte_salle_observation_1e7097cc:
 
     # lysa "Ouais."
-    lysa ""
+    lysa "Ouais."
 
 # game/scenario/salles/observation.rpy:216
 translate english decouverte_salle_observation_1502bb5d:
 
     # noam "On est…"
-    noam ""
+    noam "On est…"
 
 # game/scenario/salles/observation.rpy:219
 translate english decouverte_salle_observation_b2f0629d:
 
     # lysa "Dans l’espace ouai."
-    lysa ""
+    lysa "Dans l’espace ouai."
 
 # game/scenario/salles/observation.rpy:221
 translate english decouverte_salle_observation_91193fab:
 
     # "Elle le dit comme si c’était une évidence."
-    ""
+    "Elle le dit comme si c’était une évidence."
 
 # game/scenario/salles/observation.rpy:222
 translate english decouverte_salle_observation_8e2e2d9e:
 
     # "Mais son sourire la trahit."
-    ""
+    "Mais son sourire la trahit."
 
 # game/scenario/salles/observation.rpy:223
 translate english decouverte_salle_observation_48e60f86:
 
     # "Petit."
-    ""
+    "Petit."
 
 # game/scenario/salles/observation.rpy:224
 translate english decouverte_salle_observation_cabf407e:
 
     # "Presque enfantin."
-    ""
+    "Presque enfantin."
 
 # game/scenario/salles/observation.rpy:228
 translate english decouverte_salle_observation_59bac7f0:
 
     # noam "C’est pas possible."
-    noam ""
+    noam "C’est pas possible."
 
 # game/scenario/salles/observation.rpy:229
 translate english decouverte_salle_observation_e5618b87:
 
     # noam "On a marché dix minutes."
-    noam ""
+    noam "On a marché dix minutes."
 
 # game/scenario/salles/observation.rpy:232
 translate english decouverte_salle_observation_4d840169:
 
     # lysa "Et on a été endormis dans des caissons."
-    lysa ""
+    lysa "Et on a été endormis dans des caissons."
 
 # game/scenario/salles/observation.rpy:233
 translate english decouverte_salle_observation_be04cddc:
 
     # lysa "Donc oui."
-    lysa ""
+    lysa "Donc oui."
 
 # game/scenario/salles/observation.rpy:234
 translate english decouverte_salle_observation_e8e15efc:
 
     # lysa "Tout est possible."
-    lysa ""
+    lysa "Tout est possible."
 
 # game/scenario/salles/observation.rpy:236
 translate english decouverte_salle_observation_d3e3e19a:
 
     # "Je colle presque mon front à la vitre."
-    ""
+    "Je colle presque mon front à la vitre."
 
 # game/scenario/salles/observation.rpy:237
 translate english decouverte_salle_observation_906ff6ce:
 
     # "Le verre est froid."
-    ""
+    "Le verre est froid."
 
 # game/scenario/salles/observation.rpy:238
 translate english decouverte_salle_observation_c5d1f64f:
 
     # "Ultra froid."
-    ""
+    "Ultra froid."
 
 # game/scenario/salles/observation.rpy:241
 translate english decouverte_salle_observation_308a082a:
 
     # noam "C’est beau."
-    noam ""
+    noam "C’est beau."
 
 # game/scenario/salles/observation.rpy:243
 translate english decouverte_salle_observation_18cebd6b:
 
     # noam "Et ça me donne la nausée."
-    noam ""
+    noam "Et ça me donne la nausée."
 
 # game/scenario/salles/observation.rpy:246
 translate english decouverte_salle_observation_77243bca:
 
     # lysa "Je comprends."
-    lysa ""
+    lysa "Je comprends."
 
 # game/scenario/salles/observation.rpy:248
 translate english decouverte_salle_observation_2c85e548:
 
     # lysa "Moi ça…"
-    lysa ""
+    lysa "Moi ça…"
 
 # game/scenario/salles/observation.rpy:249
 translate english decouverte_salle_observation_dfbfeadb:
 
     # lysa "Ça me calme, bizarrement."
-    lysa ""
+    lysa "Ça me calme, bizarrement."
 
 # game/scenario/salles/observation.rpy:252
 translate english decouverte_salle_observation_174ea8a1:
 
     # noam "Toi t’es câblée à l’envers."
-    noam ""
+    noam "Toi t’es câblée à l’envers."
 
 # game/scenario/salles/observation.rpy:255
 translate english decouverte_salle_observation_b91c3006:
 
     # lysa "Peut-être."
-    lysa ""
+    lysa "Peut-être."
 
 # game/scenario/salles/observation.rpy:257
 translate english decouverte_salle_observation_e523d90f:
 
     # lysa "Ou peut-être que j’avais besoin de voir un truc…"
-    lysa ""
+    lysa "Ou peut-être que j’avais besoin de voir un truc…"
 
 # game/scenario/salles/observation.rpy:258
 translate english decouverte_salle_observation_be8170e6:
 
     # lysa "Qui change de notre quotidien."
-    lysa ""
+    lysa "Qui change de notre quotidien."
 
 # game/scenario/salles/observation.rpy:260
 translate english decouverte_salle_observation_f4d478bd:
 
     # "Un long moment de silence s'en est suivi."
-    ""
+    "Un long moment de silence s'en est suivi."
 
 # game/scenario/salles/observation.rpy:261
 translate english decouverte_salle_observation_7cc72d9c:
 
     # "Mais pas un silence lourd."
-    ""
+    "Mais pas un silence lourd."
 
 # game/scenario/salles/observation.rpy:262
 translate english decouverte_salle_observation_7e10d85d:
 
     # "Juste un calme reposant."
-    ""
+    "Juste un calme reposant."
 
 # game/scenario/salles/observation.rpy:264
 translate english decouverte_salle_observation_77035256:
 
     # "Je regarde les consoles derrière nous."
-    ""
+    "Je regarde les consoles derrière nous."
 
 # game/scenario/salles/observation.rpy:265
 translate english decouverte_salle_observation_8fbf619c:
 
     # "La radio."
-    ""
+    "La radio."
 
 # game/scenario/salles/observation.rpy:266
 translate english decouverte_salle_observation_95dd5cce:
 
     # "Les écrans."
-    ""
+    "Les écrans."
 
 # game/scenario/salles/observation.rpy:267
 translate english decouverte_salle_observation_1bee2959:
 
     # "Tout a l'air fonctionnel."
-    ""
+    "Tout a l'air fonctionnel."
 
 # game/scenario/salles/observation.rpy:270
 translate english decouverte_salle_observation_84724235:
 
     # noam "Tu crois qu’on peut contacter quelqu’un ?"
-    noam ""
+    noam "Tu crois qu’on peut contacter quelqu’un ?"
 
 # game/scenario/salles/observation.rpy:273
 translate english decouverte_salle_observation_380ae9fd:
 
     # lysa "Je ne sais pas me servir de ce truc."
-    lysa ""
+    lysa "Je ne sais pas me servir de ce truc."
 
 # game/scenario/salles/observation.rpy:274
 translate english decouverte_salle_observation_064a9de0:
 
     # lysa "Sinon, j'aurai bien aimé appeler ma famille."
-    lysa ""
+    lysa "Sinon, j'aurai bien aimé appeler ma famille."
 
 # game/scenario/salles/observation.rpy:277
 translate english decouverte_salle_observation_596f5ec4:
 
     # noam "Ouais."
-    noam ""
+    noam "Ouais."
 
 # game/scenario/salles/observation.rpy:279
 translate english decouverte_salle_observation_7e8a51cd:
 
     # "Je m'avance vers la console radio."
-    ""
+    "Je m'avance vers la console radio."
 
 # game/scenario/salles/observation.rpy:282
 translate english decouverte_salle_observation_983cc9ec:
 
     # noam "Mais ça doit pas être bien compliqué, attends ..."
-    noam ""
+    noam "Mais ça doit pas être bien compliqué, attends ..."
 
 # game/scenario/salles/observation.rpy:285
 translate english decouverte_salle_observation_829e0d79:
 
     # lysa "Je serai toi, j'éviterais de toucher à ça."
-    lysa ""
+    lysa "Je serai toi, j'éviterais de toucher à ça."
 
 # game/scenario/salles/observation.rpy:286
 translate english decouverte_salle_observation_99e89aff:
 
     # lysa "On ne sait même pas si on a le droit de s'en servir."
-    lysa ""
+    lysa "On ne sait même pas si on a le droit de s'en servir."
 
 # game/scenario/salles/observation.rpy:289
 translate english decouverte_salle_observation_3269162e:
 
     # "Je lâche un petit rire."
-    ""
+    "Je lâche un petit rire."
 
 # game/scenario/salles/observation.rpy:291
 translate english decouverte_salle_observation_05461e41:
 
     # "Sans joie."
-    ""
+    "Sans joie."
 
 # game/scenario/salles/observation.rpy:295
 translate english decouverte_salle_observation_1c7907d6:
 
     # "Un point lumineux bouge et passe à plusieurs dizaines de kilomètres de là."
-    ""
+    "Un point lumineux bouge et passe à plusieurs dizaines de kilomètres de là."
 
 # game/scenario/salles/observation.rpy:296
 translate english decouverte_salle_observation_4d31128b:
 
     # "Pas une étoile."
-    ""
+    "Pas une étoile."
 
 # game/scenario/salles/observation.rpy:297
 translate english decouverte_salle_observation_5b41dd27:
 
     # "Le déplacement est trop régulier."
-    ""
+    "Le déplacement est trop régulier."
 
 # game/scenario/salles/observation.rpy:298
 translate english decouverte_salle_observation_83ac2bd2:
 
     # "Trop droit."
-    ""
+    "Trop droit."
 
 # game/scenario/salles/observation.rpy:300
 translate english decouverte_salle_observation_909d3b56:
 
     # "Puis une silhouette passe."
-    ""
+    "Puis une silhouette passe."
 
 # game/scenario/salles/observation.rpy:301
 translate english decouverte_salle_observation_7f2a77bd:
 
     # "Un vaisseau."
-    ""
+    "Un vaisseau."
 
 # game/scenario/salles/observation.rpy:302
 translate english decouverte_salle_observation_d7066f28:
 
     # "Petit et rapide."
-    ""
+    "Petit et rapide."
 
 # game/scenario/salles/observation.rpy:305
 translate english decouverte_salle_observation_48a4ddca:
 
     # noam "Tu vois ça ?"
-    noam ""
+    noam "Tu vois ça ?"
 
 # game/scenario/salles/observation.rpy:306
 translate english decouverte_salle_observation_8def9ef8:
 
     # "Je montre du doigt l'horizon."
-    ""
+    "Je montre du doigt l'horizon."
 
 # game/scenario/salles/observation.rpy:309
 translate english decouverte_salle_observation_1e7097cc_1:
 
     # lysa "Ouais."
-    lysa ""
+    lysa "Ouais."
 
 # game/scenario/salles/observation.rpy:311
 translate english decouverte_salle_observation_956311e6:
 
     # lysa "On est vraiment loin de chez nous."
-    lysa ""
+    lysa "On est vraiment loin de chez nous."
 
 # game/scenario/salles/observation.rpy:313
 translate english decouverte_salle_observation_b58459c5:
 
     # lysa "Regarde la trajectoire."
-    lysa ""
+    lysa "Regarde la trajectoire."
 
 # game/scenario/salles/observation.rpy:314
 translate english decouverte_salle_observation_30875476:
 
     # lysa "Et les marqueurs sur le côté du vaisseau."
-    lysa ""
+    lysa "Et les marqueurs sur le côté du vaisseau."
 
 # game/scenario/salles/observation.rpy:316
 translate english decouverte_salle_observation_73dc2a82:
 
     # "Sur le flanc, une bande lumineuse."
-    ""
+    "Sur le flanc, une bande lumineuse."
 
 # game/scenario/salles/observation.rpy:317
 translate english decouverte_salle_observation_0dc724ed:
 
     # "Un code."
-    ""
+    "Un code."
 
 # game/scenario/salles/observation.rpy:318
 translate english decouverte_salle_observation_23a1f5c1:
 
     # "Un motif propre."
-    ""
+    "Un motif propre."
 
 # game/scenario/salles/observation.rpy:321
 translate english decouverte_salle_observation_a2ac187c:
 
     # lysa "District ORBITE."
-    lysa ""
+    lysa "District ORBITE."
 
 # game/scenario/salles/observation.rpy:322
 translate english decouverte_salle_observation_5eda3efc:
 
     # lysa "On est dans leur domaine ici."
-    lysa ""
+    lysa "On est dans leur domaine ici."
 
 # game/scenario/salles/observation.rpy:324
 translate english decouverte_salle_observation_ed83e6f0:
 
     # lysa "Peut être que leurs représentants en savent plus que nous sur où nous sommes."
-    lysa ""
+    lysa "Peut être que leurs représentants en savent plus que nous sur où nous sommes."
 
 # game/scenario/salles/observation.rpy:327
 translate english decouverte_salle_observation_4820c039:
 
     # noam "Donc y’a du trafic."
-    noam ""
+    noam "Donc y’a du trafic."
 
 # game/scenario/salles/observation.rpy:328
 translate english decouverte_salle_observation_da7ff416:
 
     # noam "Et y’a des gens dehors."
-    noam ""
+    noam "Et y’a des gens dehors."
 
 # game/scenario/salles/observation.rpy:331
 translate english decouverte_salle_observation_5bdfec4d:
 
     # lysa "Bien sûr qu’il y a des gens."
-    lysa ""
+    lysa "Bien sûr qu’il y a des gens."
 
 # game/scenario/salles/observation.rpy:333
 translate english decouverte_salle_observation_22c9389e:
 
     # lysa "On est juste… pas du même côté de la vitre."
-    lysa ""
+    lysa "On est juste… pas du même côté de la vitre."
 
 # game/scenario/salles/observation.rpy:338
 translate english decouverte_salle_observation_c9d05670:
 
     # noam "C’est fou."
-    noam ""
+    noam "C’est fou."
 
 # game/scenario/salles/observation.rpy:339
 translate english decouverte_salle_observation_00406b8a:
 
     # noam "Kami nous a mis dans l’espace."
-    noam ""
+    noam "Kami nous a mis dans l’espace."
 
 # game/scenario/salles/observation.rpy:340
 translate english decouverte_salle_observation_5f5d913e:
 
     # noam "Comme si c’était anodin…"
-    noam ""
+    noam "Comme si c’était anodin…"
 
 # game/scenario/salles/observation.rpy:341
 translate english decouverte_salle_observation_674997fd:
 
     # noam "Comme si c'était juste un décor."
-    noam ""
+    noam "Comme si c'était juste un décor."
 
 # game/scenario/salles/observation.rpy:344
 translate english decouverte_salle_observation_743ecf42:
 
     # lysa "C’est un décor."
-    lysa ""
+    lysa "C’est un décor."
 
 # game/scenario/salles/observation.rpy:345
 translate english decouverte_salle_observation_0daf303f:
 
     # lysa "Mais c’est aussi un message."
-    lysa ""
+    lysa "Mais c’est aussi un message."
 
 # game/scenario/salles/observation.rpy:348
 translate english decouverte_salle_observation_71db60b3:
 
     # noam "Lequel ?"
-    noam ""
+    noam "Lequel ?"
 
 # game/scenario/salles/observation.rpy:351
 translate english decouverte_salle_observation_cc7836ba:
 
     # lysa "Qu’on est hors du monde."
-    lysa ""
+    lysa "Qu’on est hors du monde."
 
 # game/scenario/salles/observation.rpy:352
 translate english decouverte_salle_observation_5a904b37:
 
     # lysa "Hors des règles."
-    lysa ""
+    lysa "Hors des règles."
 
 # game/scenario/salles/observation.rpy:354
 translate english decouverte_salle_observation_a3dc68a0:
 
     # lysa "Hors de tout ce qu'on connait depuis là."
-    lysa ""
+    lysa "Hors de tout ce qu'on connait depuis là."
 
 # game/scenario/salles/observation.rpy:357
 translate english decouverte_salle_observation_9767ac69:
 
     # noam "Tu dis ça calmement."
-    noam ""
+    noam "Tu dis ça calmement."
 
 # game/scenario/salles/observation.rpy:360
 translate english decouverte_salle_observation_e0947019:
 
     # lysa "Je fais semblant. J'essaye de me rassurer."
-    lysa ""
+    lysa "Je fais semblant. J'essaye de me rassurer."
 
 # game/scenario/salles/observation.rpy:362
 translate english decouverte_salle_observation_7b2543d6:
 
     # lysa "Ça marche une fois sur deux."
-    lysa ""
+    lysa "Ça marche une fois sur deux."
 
 # game/scenario/salles/observation.rpy:365
 translate english decouverte_salle_observation_edb8c906:
 
     # noam "Joli ratio."
-    noam ""
+    noam "Joli ratio."
 
 # game/scenario/salles/observation.rpy:368
 translate english decouverte_salle_observation_7fa7f190:
 
     # lysa "Merci."
-    lysa ""
+    lysa "Merci."
 
 # game/scenario/salles/observation.rpy:370
 translate english decouverte_salle_observation_10c85edc:
 
     # "Elle reste face à la vitre."
-    ""
+    "Elle reste face à la vitre."
 
 # game/scenario/salles/observation.rpy:371
 translate english decouverte_salle_observation_37d95fd3:
 
     # "Puis elle baisse un peu la voix."
-    ""
+    "Puis elle baisse un peu la voix."
 
 # game/scenario/salles/observation.rpy:374
 translate english decouverte_salle_observation_d9667ec5:
 
     # lysa "Tu sais ce qui est le pire ?"
-    lysa ""
+    lysa "Tu sais ce qui est le pire ?"
 
 # game/scenario/salles/observation.rpy:377
 translate english decouverte_salle_observation_fbbf2212:
 
     # noam "Vas-y."
-    noam ""
+    noam "Vas-y."
 
 # game/scenario/salles/observation.rpy:380
 translate english decouverte_salle_observation_630077ee:
 
     # lysa "J’arrive pas à décider si c’est magnifique…"
-    lysa ""
+    lysa "J’arrive pas à décider si c’est magnifique…"
 
 # game/scenario/salles/observation.rpy:381
 translate english decouverte_salle_observation_845bd5aa:
 
     # lysa "Ou si c’est juste une autre façon de nous écraser."
-    lysa ""
+    lysa "Ou si c’est juste une autre façon de nous écraser."
 
 # game/scenario/salles/observation.rpy:384
 translate english decouverte_salle_observation_036c3fde:
 
     # noam "Les deux."
-    noam ""
+    noam "Les deux."
 
 # game/scenario/salles/observation.rpy:387
 translate english decouverte_salle_observation_1e7097cc_2:
 
     # lysa "Ouais."
-    lysa ""
+    lysa "Ouais."
 
 # game/scenario/salles/observation.rpy:389
 translate english decouverte_salle_observation_91e6920b:
 
     # lysa "Probablement les deux."
-    lysa ""
+    lysa "Probablement les deux."
 
 # game/scenario/salles/observation.rpy:394
 translate english decouverte_salle_observation_c2dda557:
 
     # "Je recule d’un pas."
-    ""
+    "Je recule d’un pas."
 
 # game/scenario/salles/observation.rpy:395
 translate english decouverte_salle_observation_70f39401:
 
     # "Je regarde la radio."
-    ""
+    "Je regarde la radio."
 
 # game/scenario/salles/observation.rpy:396
 translate english decouverte_salle_observation_95dd5cce_1:
 
     # "Les écrans."
-    ""
+    "Les écrans."
 
 # game/scenario/salles/observation.rpy:397
 translate english decouverte_salle_observation_fca2d459:
 
     # "Les vitres."
-    ""
+    "Les vitres."
 
 # game/scenario/salles/observation.rpy:399
 translate english decouverte_salle_observation_ced82d0c:
 
     # think "Je devrais aller voir ailleurs."
-    think ""
+    think "Je devrais aller voir ailleurs."
 
 # TODO: Translation updated at 2026-02-13 12:20
 
@@ -984,125 +984,125 @@ translate english decouverte_salle_observation_ced82d0c:
 translate english decouverte_salle_observation_67b5792d:
 
     # lysa sourire "Je comprends."
-    lysa sourire ""
+    lysa sourire "Je comprends."
 
 # game/scenario/salles/observation.rpy:276
 translate english decouverte_salle_observation_d4435d31:
 
     # lysa content "Moi ça…"
-    lysa content ""
+    lysa content "Moi ça…"
 
 # game/scenario/salles/observation.rpy:277
 translate english decouverte_salle_observation_a1204357:
 
     # lysa content "Ça me calme, bizarrement."
-    lysa content ""
+    lysa content "Ça me calme, bizarrement."
 
 # game/scenario/salles/observation.rpy:284
 translate english decouverte_salle_observation_b114a2e1:
 
     # lysa reflexion "Ou peut-être que j’avais besoin de voir un truc…"
-    lysa reflexion ""
+    lysa reflexion "Ou peut-être que j’avais besoin de voir un truc…"
 
 # game/scenario/salles/observation.rpy:285
 translate english decouverte_salle_observation_04936bfc:
 
     # lysa reflexion "Qui change de notre quotidien."
-    lysa reflexion ""
+    lysa reflexion "Qui change de notre quotidien."
 
 # game/scenario/salles/observation.rpy:312
 translate english decouverte_salle_observation_a13b10ba:
 
     # lysa neutre "À ta place, j’éviterais de toucher à ça."
-    lysa neutre ""
+    lysa neutre "À ta place, j’éviterais de toucher à ça."
 
 # game/scenario/salles/observation.rpy:313
 translate english decouverte_salle_observation_ef663196:
 
     # lysa blase "On sait même pas si on a le droit."
-    lysa blase ""
+    lysa blase "On sait même pas si on a le droit."
 
 # game/scenario/salles/observation.rpy:314
 translate english decouverte_salle_observation_d44cb3df:
 
     # lysa fatigue "... Et franchement, vaut mieux pas tester."
-    lysa fatigue ""
+    lysa fatigue "... Et franchement, vaut mieux pas tester."
 
 # game/scenario/salles/observation.rpy:337
 translate english decouverte_salle_observation_6cdfa152:
 
     # lysa surpris "Ouais."
-    lysa surpris ""
+    lysa surpris "Ouais."
 
 # game/scenario/salles/observation.rpy:338
 translate english decouverte_salle_observation_2494209d:
 
     # lysa reflexion "On est vraiment loin de chez nous."
-    lysa reflexion ""
+    lysa reflexion "On est vraiment loin de chez nous."
 
 # game/scenario/salles/observation.rpy:339
 translate english decouverte_salle_observation_ac31bd82:
 
     # lysa reflexion "Regarde la trajectoire."
-    lysa reflexion ""
+    lysa reflexion "Regarde la trajectoire."
 
 # game/scenario/salles/observation.rpy:340
 translate english decouverte_salle_observation_cfc92098:
 
     # lysa reflexion "Et les marqueurs sur le côté du vaisseau."
-    lysa reflexion ""
+    lysa reflexion "Et les marqueurs sur le côté du vaisseau."
 
 # game/scenario/salles/observation.rpy:347
 translate english decouverte_salle_observation_e036ba06:
 
     # lysa determine "District ORBITE."
-    lysa determine ""
+    lysa determine "District ORBITE."
 
 # game/scenario/salles/observation.rpy:348
 translate english decouverte_salle_observation_9baef7fe:
 
     # lysa determine "On est dans leur domaine ici."
-    lysa determine ""
+    lysa determine "On est dans leur domaine ici."
 
 # game/scenario/salles/observation.rpy:349
 translate english decouverte_salle_observation_e34932ab:
 
     # lysa reflexion "Peut être que leurs représentants en savent plus que nous sur où nous sommes."
-    lysa reflexion ""
+    lysa reflexion "Peut être que leurs représentants en savent plus que nous sur où nous sommes."
 
 # game/scenario/salles/observation.rpy:356
 translate english decouverte_salle_observation_0fc6fff6:
 
     # lysa blase "Bien sûr qu’il y a des gens."
-    lysa blase ""
+    lysa blase "Bien sûr qu’il y a des gens."
 
 # game/scenario/salles/observation.rpy:357
 translate english decouverte_salle_observation_66773cbe:
 
     # lysa triste "On est juste… pas du même côté de la vitre."
-    lysa triste ""
+    lysa triste "On est juste… pas du même côté de la vitre."
 
 # game/scenario/salles/observation.rpy:377
 translate english decouverte_salle_observation_a91d0c0b:
 
     # lysa triste "Hors de tout ce qu'on connait depuis là."
-    lysa triste ""
+    lysa triste "Hors de tout ce qu'on connait depuis là."
 
 # game/scenario/salles/observation.rpy:384
 translate english decouverte_salle_observation_bb40f1c9:
 
     # lysa taquin "Ça marche une fois sur deux."
-    lysa taquin ""
+    lysa taquin "Ça marche une fois sur deux."
 
 # game/scenario/salles/observation.rpy:409
 translate english decouverte_salle_observation_87cf7b7b:
 
     # lysa blase "Ouais."
-    lysa blase ""
+    lysa blase "Ouais."
 
 # game/scenario/salles/observation.rpy:410
 translate english decouverte_salle_observation_507099dd:
 
     # lysa triste "Probablement les deux."
-    lysa triste ""
+    lysa triste "Probablement les deux."
 
