@@ -441,15 +441,59 @@ label _init_cinema_params:
     return
 
 
+screen pegi18_choice():
+    modal True
+    zorder 250
+
+    add "images/background/bg_18.png" at cover_screen
+
+    imagebutton:
+        idle "images/background/interact/18/yes_holder.png"
+        hover "images/background/interact/18/yes.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action [
+            SetField(persistent, "pegi18", True),
+            Return(),
+        ]
+
+    imagebutton:
+        idle "images/background/interact/18/no_holder.png"
+        hover "images/background/interact/18/no.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action [
+            SetField(persistent, "pegi18", False),
+            Return(),
+        ]
+
+
+label splashscreen:
+    scene black
+    with Dissolve(0.5)
+
+    scene expression "images/background/bg_initialisation.png" at adaptive_fullscreen
+    with Dissolve(1.0)
+    $ renpy.pause(4.0, hard=True)
+    scene black
+    with Dissolve(1.0)
+
+    scene expression "images/background/bg_studio.png" at adaptive_fullscreen
+    with Dissolve(1.0)
+    $ renpy.pause(4.0, hard=True)
+    scene black
+    with Dissolve(1.0)
+
+    return
+
+
 label start:
     call _init_cinema_params from _call__init_cinema_params
-    menu:
-        "Activer contenu PEGI 18 ?"
-
-        "Oui":
-            $ persistent.pegi18 = True
-        "Non":
-            $ persistent.pegi18 = False
+    call screen pegi18_choice
     jump _0_CANON
 
 
