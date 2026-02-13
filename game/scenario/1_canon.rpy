@@ -1468,6 +1468,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 label _1_proposition_amendement:
 
     scene bg_cg009 at adaptive_fullscreen
+    $ unlock_gallery_image("bg_cg009")
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
     think "Ok."
@@ -1952,6 +1953,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     play sound sfx_door
 
     scene bg_cg010 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg010")
     show screen kami_broadcast_ui
 
     "La porte de la salle de repos s’ouvre."
@@ -2003,6 +2005,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     pause 0.3
 
     scene bg_cg010_1 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg010")
     $ showP("tomas", "vide", 0.01)
     $ showP("julian", "vide", 0.30)
     $ showP("noam", "vide", 0.65)
@@ -2212,6 +2215,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     pause 0.2
 
     scene bg_cg011 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg011")
 
     play sound sfx_shower
 
