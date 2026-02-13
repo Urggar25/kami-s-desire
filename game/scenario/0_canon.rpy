@@ -82,6 +82,7 @@ label _0_CANON:
     "Puis le suivant."
     
     scene bg_cg001 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg001")
 
     "Je sors mon badge."
     "Je le présente."
@@ -310,6 +311,7 @@ label _0_FLASHBACK_KAMI:
     think "Comme si quelqu’un testait les verrouillages."
     
     scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg003")
 
     "Je tente d’appeler."
     "Rien. Ecran figé."
@@ -432,6 +434,7 @@ label _0_FLASHBACK_KAMI:
 
     pause 0.6
     scene bg_cg003_1 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg003")
 
     "L’interface change encore."
     "Une barre de progression apparaît."
@@ -451,6 +454,7 @@ label _0_FLASHBACK_KAMI:
     pause 0.5
     
     scene bg_cg003_2 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg003")
     
     "Cette fois, une silhouette apparait sur l'écran."
 
@@ -512,6 +516,7 @@ label _0_FLASHBACK_KAMI:
     "Et personne ne comprend comment répondre à ça."
     
     scene bg_cg003_3 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg003")
 
     voix "J’ai observé vos systèmes."
     voix "J’ai évalué vos trajectoires."
@@ -540,6 +545,7 @@ label _0_FLASHBACK_KAMI:
     voix "Toute décision souveraine est suspendue."
 
     scene bg_cg003_2 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg003")
 
     voix "Les instances supérieures et politiques humaines sont abolies."
 
@@ -579,6 +585,7 @@ label _0_FLASHBACK_KAMI:
     "La diffusion se coupe."
 
     scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg003")
 
     "Pas brutalement."
     "Comme si elle avait fini sa phrase et quitté la pièce calmement."
@@ -1022,6 +1029,7 @@ label _0_EXTRACTION:
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
 
     scene bg_cg004 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg004")
 
     "La liste reste affichée là, comme un verdict indélébile."
     "Deux noms."
@@ -1045,6 +1053,7 @@ label _0_EXTRACTION:
     cit_b "Vous… vous êtes bien—"
 
     scene bg_cg004_1 at adaptive_fullscreen,memory_idle with dissolve
+    $ unlock_gallery_image("bg_cg004")
 
     "Une main en veste grise se lève, paume ouverte."
 
@@ -1101,6 +1110,7 @@ label _0_EXTRACTION:
     "Juste assez près pour que mon corps comprenne que je n'ai aucun autre choix."
 
     scene bg_cg005 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg005")
 
     "On traverse un couloir latéral."
     "Plus étroit."
@@ -1124,6 +1134,7 @@ label _0_EXTRACTION:
     "Mais je l’entends comme un couperet."
 
     scene bg_cg006 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
 
     "Un dernier couloir."
     "Une pièce."
@@ -1159,6 +1170,7 @@ label _0_EXTRACTION:
 # ------------------------------
 
     scene bg_cg006 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
     $ pnc_room = "bg_cg006"
     call screen pnc_room()
     return
@@ -1282,6 +1294,7 @@ label _0_LABEL2_RESP_DISTRICT:
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
     scene bg_cg006 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
     
     "Sur la table se trouve des documents."
     "Au premier coup d'oeil je comprends immédiatement ce dont il s'agit."
@@ -1533,6 +1546,7 @@ label _0_LABEL2_RESP_DISTRICT:
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
 
     scene bg_cg006_1 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
 
     play sound sfx_beep
     "Bip."
@@ -1547,6 +1561,7 @@ label _0_LABEL2_RESP_DISTRICT:
     "Elle s’allonge la première."
     
     scene bg_cg006_2 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
     
     "Presque sans hésitation."
     "Même si on voit à son teint qu'elle est loin d'être à l'aise."
@@ -1555,6 +1570,7 @@ label _0_LABEL2_RESP_DISTRICT:
     "Je m’allonge à mon tour."
     
     scene bg_cg006_3 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
     
     "Le matelas est vraiment bien."
     "L'intérieur est assez chaud, il semble climatisé."
@@ -1577,6 +1593,7 @@ label _0_LABEL2_RESP_DISTRICT:
     "Un léger picotement me saisit le nez."
     
     scene bg_cg006_4 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg006")
     
     $ blink()
     
