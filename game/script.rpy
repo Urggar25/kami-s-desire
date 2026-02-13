@@ -39,6 +39,7 @@ default _last_autofocus_tag = None
 default _focus_locked = False
 default _focus_last_params = None
 default arguments = []
+default persistent.pegi18_prompt_done = False
 
 
 # ------------------------------------------------------------
@@ -456,6 +457,7 @@ screen pegi18_choice():
         at cover_screen
         action [
             SetField(persistent, "pegi18", True),
+            SetField(persistent, "pegi18_prompt_done", True),
             Return(),
         ]
 
@@ -468,9 +470,9 @@ screen pegi18_choice():
         at cover_screen
         action [
             SetField(persistent, "pegi18", False),
+            SetField(persistent, "pegi18_prompt_done", True),
             Return(),
         ]
-
 
 label splashscreen:
     scene black
