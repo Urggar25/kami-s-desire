@@ -1,48 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/salles/sas.rpy", line 292, in script call
+  File "game/scenario/salles/sas.rpy", line 302, in script call
     call CHECK_ALL_SALLES_VISITEES
-  File "game/scenario/2_canon.rpy", line 1046, in script call
-    call START_FREE_TIME("_2_APRES_MIDI")
-  File "game/scenario/character/elen.rpy", line 123, in script
-    play sound sfx_clap
-  File "renpy/common/000statements.rpy", line 301, in execute_play_sound
-    renpy.sound.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 33, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "game/scenario/character/elen.rpy", line 123, in <module>
-    play sound sfx_clap
-NameError: name 'sfx_clap' is not defined
+  File "game/scenario/2_canon.rpy", line 592, in script
+    elen "Genre 100 % des voix ? Wow, c’est hardcore comme condition…"
+TypeError: %d format: a number is required, not TagQuotingDict
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/salles/sas.rpy", line 292, in script call
+  File "game/scenario/salles/sas.rpy", line 302, in script call
     call CHECK_ALL_SALLES_VISITEES
-  File "game/scenario/2_canon.rpy", line 1046, in script call
-    call START_FREE_TIME("_2_APRES_MIDI")
-  File "game/scenario/character/elen.rpy", line 123, in script
-    play sound sfx_clap
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 301, in execute_play_sound
-    renpy.sound.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 33, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scenario/character/elen.rpy", line 123, in <module>
-    play sound sfx_clap
-NameError: name 'sfx_clap' is not defined
+  File "game/scenario/2_canon.rpy", line 592, in script
+    elen "Genre 100 % des voix ? Wow, c’est hardcore comme condition…"
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 121, in say
+    what = what % tag_quoting_dict
+TypeError: %d format: a number is required, not TagQuotingDict
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 1.0
-Wed Feb 11 21:40:08 2026
+Fri Feb 13 20:01:58 2026

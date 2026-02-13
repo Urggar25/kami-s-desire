@@ -589,7 +589,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     $ bc_show("elen", "determine", px=-70, py=-50, pz=0.85)
     elen "Unanime… genre vraiment tout le monde doit être d’accord ?"
-    elen "Genre 100 % des voix ? Wow, c’est hardcore comme condition…"
+    elen "Genre 100%% des voix ? Wow, c’est hardcore comme condition…"
     $ bc_hide()
 
     kami "Exactement. Enfin presque."

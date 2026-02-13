@@ -84,6 +84,8 @@ image lysa surpris             = im.FactorScale("images/character/lysa/surpris.p
 image lysa taquin              = im.FactorScale("images/character/lysa/taquin.png", 0.60)
 image lysa triste              = im.FactorScale("images/character/lysa/triste.png", 0.60)
 image lysa vide              = im.FactorScale("images/character/vide.png", 0.60)
+image lysa fatigue              = im.FactorScale("images/character/lysa/fatigue.png", 0.60)
+image lysa doute              = im.FactorScale("images/character/lysa/doute.png", 0.60)
 
 # ======================
 # JULIAN
