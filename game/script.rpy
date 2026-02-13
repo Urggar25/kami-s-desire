@@ -474,10 +474,7 @@ screen pegi18_choice():
             Return(),
         ]
 
-
-label start:
-    call _init_cinema_params from _call__init_cinema_params
-
+label splashscreen:
     scene black
     with Dissolve(0.5)
 
@@ -493,9 +490,12 @@ label start:
     scene black
     with Dissolve(1.0)
 
-    if not persistent.pegi18_prompt_done:
-        call screen pegi18_choice
+    return
 
+
+label start:
+    call _init_cinema_params from _call__init_cinema_params
+    call screen pegi18_choice
     jump _0_CANON
 
 
