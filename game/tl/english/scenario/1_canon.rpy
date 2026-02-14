@@ -4,2227 +4,2227 @@
 translate english 867d890b:
 
     # think "Jour un."
-    think ""
+    think "Day one."
 
 # game/scenario/1_canon.rpy:22
 translate english 911b3599:
 
     # think "Enfin, je crois."
-    think ""
+    think "At least, I think so."
 
 # game/scenario/1_canon.rpy:23
 translate english b986b0e7:
 
     # think "Je n'ai pas vu le temps passé."
-    think ""
+    think "I lost track of time."
 
 # game/scenario/1_canon.rpy:24
 translate english 6ce4cf75:
 
     # think "Je me suis endormi dans un caisson."
-    think ""
+    think "I fell asleep in a pod."
 
 # game/scenario/1_canon.rpy:25
 translate english 834f7dbd:
 
     # think "Et là… je me réveille sur un siège."
-    think ""
+    think "And now... I wake up in a seat."
 
 # game/scenario/1_canon.rpy:31
 translate english 7ca2b04d:
 
     # "Un dossier rigide sous mon dos."
-    ""
+    "A rigid backrest digs into my spine."
 
 # game/scenario/1_canon.rpy:32
 translate english 657ab5ea:
 
     # "Un siège froid et métallique."
-    ""
+    "The seat is cold, metallic."
 
 # game/scenario/1_canon.rpy:33
 translate english 4e6afd60:
 
     # "L’air est sec, presque comme s'il était recyclé."
-    ""
+    "The air is dry, almost recycled."
 
 # game/scenario/1_canon.rpy:34
 translate english 5d6091ff:
 
     # "Ça sent le plastique neuf et le produit de nettoyage."
-    ""
+    "It smells like new plastic and cleaning chemicals."
 
 # game/scenario/1_canon.rpy:38
 translate english e5627eeb:
 
     # "Je cligne des yeux."
-    ""
+    "I blink."
 
 # game/scenario/1_canon.rpy:39
 translate english 89e6f748:
 
     # "Ma bouche est sèche."
-    ""
+    "My mouth is dry."
 
 # game/scenario/1_canon.rpy:40
 translate english 19df876e:
 
     # "Ma nuque me fait mal."
-    ""
+    "My neck aches."
 
 # game/scenario/1_canon.rpy:42
 translate english 343d1f1c:
 
     # "Je me redresse."
-    ""
+    "I sit up."
 
 # game/scenario/1_canon.rpy:43
 translate english 4192a944:
 
     # "Autour de moi, d’autres sièges."
-    ""
+    "Around me, more seats."
 
 # game/scenario/1_canon.rpy:44
 translate english 1ad5b9f5:
 
     # "Beaucoup."
-    ""
+    "A lot more."
 
 # game/scenario/1_canon.rpy:45
 translate english b540c409:
 
     # "En cercle."
-    ""
+    "In a circle."
 
 # game/scenario/1_canon.rpy:46
 translate english 396229c3:
 
     # "Et sur chaque siège… quelqu’un."
-    ""
+    "And in every seat... someone."
 
 # game/scenario/1_canon.rpy:48
 translate english 843d2f80:
 
     # "Certains bougent légèrement."
-    ""
+    "Some move a little."
 
 # game/scenario/1_canon.rpy:49
 translate english 5ac9edb0:
 
     # "D’autres restent figés. Ils dorment encore."
-    ""
+    "Others stay frozen. Still asleep."
 
 # game/scenario/1_canon.rpy:51
 translate english 72744f8c:
 
     # "Personne ne parle fort."
-    ""
+    "Nobody speaks loudly."
 
 # game/scenario/1_canon.rpy:52
 translate english e9fd45d5:
 
     # "Juste des respirations régulières."
-    ""
+    "Just steady breathing."
 
 # game/scenario/1_canon.rpy:53
 translate english 6ea5b2b7:
 
     # "Des froissements de vêtements."
-    ""
+    "Fabric rustling."
 
 # game/scenario/1_canon.rpy:54
 translate english edbf8aee:
 
     # "Un raclement de gorge quelque part."
-    ""
+    "A throat clearing somewhere."
 
 # game/scenario/1_canon.rpy:57
 translate english c5396df9_3:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:59
 translate english 275e8ece:
 
     # "Un son bref."
-    ""
+    "A short sound."
 
 # game/scenario/1_canon.rpy:60
 translate english 81591c9e:
 
     # "Pas une alarme."
-    ""
+    "Not an alarm."
 
 # game/scenario/1_canon.rpy:61
 translate english 43095117:
 
     # "Un bip de système."
-    ""
+    "A system beep."
 
 # game/scenario/1_canon.rpy:62
 translate english 47d6cd92:
 
     # "Ça vient d’en bas, il semble y avoir plusieurs étages ici."
-    ""
+    "It comes from below. Looks like there are several levels here."
 
 # game/scenario/1_canon.rpy:64
 translate english 0323665a:
 
     # "Je baisse les yeux."
-    ""
+    "I lower my gaze."
 
 # game/scenario/1_canon.rpy:65
 translate english 732a2854:
 
     # "Sur mon pupitre, une tablette est encastrée."
-    ""
+    "A tablet is embedded in the desk in front of me."
 
 # game/scenario/1_canon.rpy:66
 translate english 3fa7e1f8:
 
     # "Éteinte."
-    ""
+    "Off."
 
 # game/scenario/1_canon.rpy:67
 translate english 38105176:
 
     # "Noire."
-    ""
+    "Black."
 
 # game/scenario/1_canon.rpy:69
 translate english fe28081f:
 
     # "Je tourne la tête."
-    ""
+    "I turn my head."
 
 # game/scenario/1_canon.rpy:70
 translate english 1699e6a7:
 
     # "Je cherche Lysa du regard."
-    ""
+    "I scan for Lysa."
 
 # game/scenario/1_canon.rpy:71
 translate english bd10aed7:
 
     # "Parce que c’est la seule personne que je connais un minimum."
-    ""
+    "Because she's the only person I even kinda know."
 
 # game/scenario/1_canon.rpy:72
 translate english 0ac6ba0c:
 
     # "Au moins de nom."
-    ""
+    "At least by name."
 
 # game/scenario/1_canon.rpy:77
 translate english 180f3441:
 
     # noam "Lysa… ?"
-    noam ""
+    noam "Lysa...?"
 
 # game/scenario/1_canon.rpy:81
 translate english 1e7097cc:
 
     # lysa "Ouais."
-    lysa ""
+    lysa "Yeah."
 
 # game/scenario/1_canon.rpy:82
 translate english 2facac13:
 
     # lysa "T’es enfin réveillé."
-    lysa ""
+    lysa "You're finally awake."
 
 # game/scenario/1_canon.rpy:84
 translate english ca849307:
 
     # noam "On est où… ?"
-    noam ""
+    noam "Where are we...?"
 
 # game/scenario/1_canon.rpy:88
 translate english 175bae0e:
 
     # lysa "Si je devais deviner…"
-    lysa ""
+    lysa "If I had to guess..."
 
 # game/scenario/1_canon.rpy:89
 translate english 2ed9524f:
 
     # lysa "Je dirais le Conclave."
-    lysa ""
+    lysa "I'd say the Conclave."
 
 # game/scenario/1_canon.rpy:91
 translate english 52361f37:
 
     # "Je regarde autour."
-    ""
+    "I look around."
 
 # game/scenario/1_canon.rpy:92
 translate english c0287f7a:
 
     # "Je ne connais aucun des autres visages."
-    ""
+    "I don't recognize any of the other faces."
 
 # game/scenario/1_canon.rpy:94
 translate english 5e7eddd7:
 
     # think "Donc c’est vrai."
-    think ""
+    think "So it's true."
 
 # game/scenario/1_canon.rpy:95
 translate english 8d88c04b:
 
     # think "Ils nous ont tous mis au même endroit."
-    think ""
+    think "They put us all in the same place."
 
 # game/scenario/1_canon.rpy:96
 translate english 87da185b:
 
     # think "En même temps pour participer à ce truc étrange."
-    think ""
+    think "At the same time, for this weird thing."
 
 # game/scenario/1_canon.rpy:98
 translate english 7ced2d05:
 
     # "Quelqu’un se lève brusquement."
-    ""
+    "Someone stands up abruptly."
 
 # game/scenario/1_canon.rpy:99
 translate english fb574ff6:
 
     # "Un siège grince."
-    ""
+    "A seat squeaks."
 
 # game/scenario/1_canon.rpy:100
 translate english 1984dbd5:
 
     # "Ça claque dans le silence."
-    ""
+    "The sound cracks through the silence."
 
 # game/scenario/1_canon.rpy:105
 translate english cf2bdcaf:
 
     # ryn "Putain mais on est où là ?!"
-    ryn ""
+    ryn "Fuck, where the hell are we?!"
 
 # game/scenario/1_canon.rpy:106
 translate english a6d0f3fb:
 
     # ryn "Qui a fait ça ?"
-    ryn ""
+    ryn "Who did this?"
 
 # game/scenario/1_canon.rpy:108
 translate english 96aae473_1:
 
     # "Personne ne répond."
-    ""
+    "Nobody answers."
 
 # game/scenario/1_canon.rpy:109
 translate english c13032a8:
 
     # "Pas un seul mot."
-    ""
+    "Not one word."
 
 # game/scenario/1_canon.rpy:117
 translate english aaf6f58e:
 
     # mara "Tu veux dire… à part l’IA qui contrôle le monde ?"
-    mara ""
+    mara "You mean... besides the AI running the world?"
 
 # game/scenario/1_canon.rpy:119
 translate english 805b1b7e:
 
     # ryn "Je parle de ce qui nous arrive maintenant."
-    ryn ""
+    ryn "I'm talking about what's happening right now."
 
 # game/scenario/1_canon.rpy:120
 translate english 06755d9a:
 
     # ryn "Qui nous a endormis."
-    ryn ""
+    ryn "Who put us to sleep."
 
 # game/scenario/1_canon.rpy:121
 translate english 94edb777:
 
     # ryn "Qui nous a trimballés ici."
-    ryn ""
+    ryn "Who hauled us all the way here."
 
 # game/scenario/1_canon.rpy:129
 translate english 7538179f:
 
     # tomas "Probablement personne de “présent”."
-    tomas ""
+    tomas "Probably no one physically present."
 
 # game/scenario/1_canon.rpy:130
 translate english 10d26617:
 
     # tomas "Ça ressemble à une procédure."
-    tomas ""
+    tomas "Looks more like a procedure."
 
 # game/scenario/1_canon.rpy:131
 translate english 30a1cad6:
 
     # tomas "Automatique."
-    tomas ""
+    tomas "Automatic."
 
 # game/scenario/1_canon.rpy:139
 translate english b5c69562:
 
     # elen "Automatique ou pas, ça reste un enlèvement."
-    elen ""
+    elen "Automatic or not, it's still a kidnapping."
 
 # game/scenario/1_canon.rpy:140
 translate english cbe9e4df:
 
     # elen "Mais bon, plus rien n'est choquant dans ce monde ..."
-    elen ""
+    elen "Then again, nothing shocks me anymore in this world..."
 
 # game/scenario/1_canon.rpy:142
 translate english e3cb1513:
 
     # "Je lève les yeux."
-    ""
+    "I look up."
 
 # game/scenario/1_canon.rpy:143
 translate english 7c5bab3b:
 
     # "Je cherche les caméras."
-    ""
+    "I search for cameras."
 
 # game/scenario/1_canon.rpy:144
 translate english 97cf8ed6:
 
     # "Il y en a."
-    ""
+    "There are some."
 
 # game/scenario/1_canon.rpy:145
 translate english 7875f5ff:
 
     # "Évidemment."
-    ""
+    "Of course."
 
 # game/scenario/1_canon.rpy:146
 translate english 9c129e89:
 
     # "Propres."
-    ""
+    "Clean."
 
 # game/scenario/1_canon.rpy:147
 translate english 930b2260:
 
     # "Discrètes."
-    ""
+    "Discreet."
 
 # game/scenario/1_canon.rpy:149
 translate english 6f2ccfa3:
 
     # think "Ça, c’est la partie la plus habituelle de tout ça."
-    think ""
+    think "That part is the most familiar thing in here."
 
 # game/scenario/1_canon.rpy:150
 translate english fcb4036b:
 
     # think "C’est triste mais on y est habitué."
-    think ""
+    think "It's sad, but we're used to it."
 
 # game/scenario/1_canon.rpy:158
 translate english 422453d5:
 
     # julian "Vous… vous entendez ?"
-    julian ""
+    julian "Do you... do you hear that?"
 
 # game/scenario/1_canon.rpy:159
 translate english 43eafa86:
 
     # julian "Il n'y a… rien. On entend personne."
-    julian ""
+    julian "There's... nothing. We can't hear anyone."
 
 # game/scenario/1_canon.rpy:167
 translate english 7559d9d8:
 
     # iris "Même pas une voix. Rien ne peut être aussi silencieux."
-    iris ""
+    iris "Not even a voice. Nothing should be this quiet."
 
 # game/scenario/1_canon.rpy:168
 translate english 5a479833:
 
     # iris "Puis on ne sait même pas ce qu'on doit faire."
-    iris ""
+    iris "And we don't even know what we're supposed to do."
 
 # game/scenario/1_canon.rpy:176
 translate english 9616c461:
 
     # nyra "Ce silence est voulu."
-    nyra ""
+    nyra "This silence is intentional."
 
 # game/scenario/1_canon.rpy:177
 translate english 3f3f6a41:
 
     # nyra "C’est un test. Kami veut voir comment on réagit."
-    nyra ""
+    nyra "It's a test. Kami wants to see how we react."
 
 # game/scenario/1_canon.rpy:185
 translate english a07f9612:
 
     # kael "Ou une attente."
-    kael ""
+    kael "Or it's just waiting."
 
 # game/scenario/1_canon.rpy:186
 translate english 7471a000:
 
     # kael "Peut-être qu'elle attend juste quelque chose ?"
-    kael ""
+    kael "Maybe she's waiting for something else?"
 
 # game/scenario/1_canon.rpy:188
 translate english ebdd6c7e:
 
     # "Un silence encore plus lourd tombe."
-    ""
+    "An even heavier silence drops over us."
 
 # game/scenario/1_canon.rpy:189
 translate english dc51acd2:
 
     # "Personne n’aime l’idée d’attendre."
-    ""
+    "No one likes the idea of waiting."
 
 # game/scenario/1_canon.rpy:190
 translate english 6d24597f:
 
     # "Surtout dans une situation comme celle-là."
-    ""
+    "Especially in a situation like this."
 
 # game/scenario/1_canon.rpy:191
 translate english f47f09ca:
 
     # "Parce que ça veut dire qu’on dépend du bouton “play” de quelqu’un d’autre."
-    ""
+    "Because it means we're at someone else's mercy to hit play."
 
 # game/scenario/1_canon.rpy:199
 translate english 34115fb8:
 
     # noam "Au fait, vous avez vu Kami ?"
-    noam ""
+    noam "By the way, did anyone see Kami?"
 
 # game/scenario/1_canon.rpy:201
 translate english c8fc90eb:
 
     # "Pas un seul regard ne se lève vers l'écran central."
-    ""
+    "Not a single gaze lifts toward the central screen."
 
 # game/scenario/1_canon.rpy:202
 translate english 3e3da427:
 
     # "Il n'est pas allumé. Tout comme les tablettes disposées à chacune des places."
-    ""
+    "It's still off. Just like the tablets set in front of every seat."
 
 # game/scenario/1_canon.rpy:203
 translate english b59a995c:
 
     # "Et parce que personne n’a envie de prononcer son nom trop fort."
-    ""
+    "And because no one wants to say her name too loudly."
 
 # game/scenario/1_canon.rpy:211
 translate english 147450ef:
 
     # ryn "Non."
-    ryn ""
+    ryn "No."
 
 # game/scenario/1_canon.rpy:212
 translate english a4d61d11:
 
     # ryn "Et ça me fait chier de le dire, mais je préfèrerais avoir des nouvelles."
-    ryn ""
+    ryn "And I hate saying this, but I'd rather get some news."
 
 # game/scenario/1_canon.rpy:220
 translate english 58bc29c6:
 
     # mara "J’adore."
-    mara ""
+    mara "Love this."
 
 # game/scenario/1_canon.rpy:221
 translate english e1387776:
 
     # mara "On est douze."
-    mara ""
+    mara "We're twelve."
 
 # game/scenario/1_canon.rpy:222
 translate english e47385af:
 
     # mara "On est coincés ici. Sans savoir quoi faire."
-    mara ""
+    mara "We're stuck here, no idea what to do."
 
 # game/scenario/1_canon.rpy:223
 translate english 60c8769d:
 
     # mara "Et le boss n’est même pas là."
-    mara ""
+    mara "And the boss isn't even here."
 
 # game/scenario/1_canon.rpy:231
 translate english 3d39bf0a:
 
     # tomas "On parle de Kami, n'oublie pas."
-    tomas ""
+    tomas "We're talking about Kami, don't forget."
 
 # game/scenario/1_canon.rpy:232
 translate english 5c45e649:
 
     # tomas "Elle est toujours là."
-    tomas ""
+    tomas "She's always here."
 
 # game/scenario/1_canon.rpy:233
 translate english 09bb82ff:
 
     # tomas "Même sans image."
-    tomas ""
+    tomas "Even without an image."
 
 # game/scenario/1_canon.rpy:235
 translate english 240beef5:
 
     # "Je fixe la tablette noire sur mon pupitre."
-    ""
+    "I stare at the black tablet on my desk."
 
 # game/scenario/1_canon.rpy:236
 translate english 2b14b406:
 
     # "Je tapote du doigt."
-    ""
+    "I tap it with a finger."
 
 # game/scenario/1_canon.rpy:237
 translate english c09788b4_2:
 
     # "Rien."
-    ""
+    "Nothing."
 
 # game/scenario/1_canon.rpy:239
 translate english a8eb648c:
 
     # think "C’est ça qui me dérange."
-    think ""
+    think "That's what's bothering me."
 
 # game/scenario/1_canon.rpy:240
 translate english b1316e6c:
 
     # think "D’habitude, Kami aime être… présente."
-    think ""
+    think "Usually, Kami likes to be... present."
 
 # game/scenario/1_canon.rpy:241
 translate english 193e8eb7:
 
     # think "Là, c’est vide."
-    think ""
+    think "Right now, it's empty."
 
 # game/scenario/1_canon.rpy:242
 translate english 4f99a3bd:
 
     # think "Comme une salle de classe sans prof."
-    think ""
+    think "Like a classroom with no teacher."
 
 # game/scenario/1_canon.rpy:243
 translate english 3009374f:
 
     # think "Sauf qu'ici le prof peut te tuer."
-    think ""
+    think "Except here the teacher can kill you."
 
 # game/scenario/1_canon.rpy:245
 translate english 5bbacef7:
 
     # "Lysa se penche légèrement vers moi."
-    ""
+    "Lysa leans slightly toward me."
 
 # game/scenario/1_canon.rpy:246
 translate english 771459fe:
 
     # "Elle parle bas par réflexe."
-    ""
+    "She lowers her voice on instinct."
 
 # game/scenario/1_canon.rpy:254
 translate english 931bd8d0:
 
     # lysa "Tu as remarques ça ?"
-    lysa ""
+    lysa "Did you notice that?"
 
 # game/scenario/1_canon.rpy:262
 translate english df784008:
 
     # noam "Quoi ?"
-    noam ""
+    noam "What?"
 
 # game/scenario/1_canon.rpy:266
 translate english 15c26369:
 
     # lysa "Aucun ordre."
-    lysa ""
+    lysa "No orders."
 
 # game/scenario/1_canon.rpy:267
 translate english 6fee7d3b:
 
     # lysa "Aucun écran."
-    lysa ""
+    lysa "No screens."
 
 # game/scenario/1_canon.rpy:268
 translate english 8c38728b:
 
     # lysa "Aucun message."
-    lysa ""
+    lysa "No message."
 
 # game/scenario/1_canon.rpy:270
 translate english 7b23d6b1:
 
     # noam "Ça veut dire quoi pour toi ?"
-    noam ""
+    noam "What does that mean to you?"
 
 # game/scenario/1_canon.rpy:274
 translate english 3705a241:
 
     # lysa "Ça veut dire que soit on est censé faire quelque chose, soit que Kami attend un autre momennt."
-    lysa ""
+    lysa "It means either we're supposed to do something, or Kami's waiting for another moment."
 
 # game/scenario/1_canon.rpy:275
 translate english 2e4f0b34:
 
     # lysa "Et ça…"
-    lysa ""
+    lysa "And that..."
 
 # game/scenario/1_canon.rpy:276
 translate english 30e2e085:
 
     # lysa "J’aime pas."
-    lysa ""
+    lysa "I don't like it."
 
 # game/scenario/1_canon.rpy:280
 translate english f3deb1d7:
 
     # "Au centre de la salle, une structure circulaire."
-    ""
+    "In the center of the room: a circular structure."
 
 # game/scenario/1_canon.rpy:281
 translate english 657ad361:
 
     # "Un vaste écran qui fait un tour complet sur lui-même."
-    ""
+    "A massive screen that wraps all the way around."
 
 # game/scenario/1_canon.rpy:282
 translate english a90ee354:
 
     # think "C'est comme si on regardait un film mais qu'on attendait l'acteur principal.."
-    think ""
+    think "It's like we're watching a movie while waiting for the main actor."
 
 # game/scenario/1_canon.rpy:285
 translate english c5396df9_4:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:287
 translate english 59616dfd:
 
     # "Un deuxième bip."
-    ""
+    "A second beep."
 
 # game/scenario/1_canon.rpy:288
 translate english 757f88be:
 
     # "Puis rien."
-    ""
+    "Then nothing."
 
 # game/scenario/1_canon.rpy:290
 translate english 1bf60fe7:
 
     # "Quelqu’un se lève."
-    ""
+    "Someone gets up."
 
 # game/scenario/1_canon.rpy:291
 translate english 68d4e070:
 
     # "Un pas."
-    ""
+    "One step."
 
 # game/scenario/1_canon.rpy:292
 translate english 20c606c2:
 
     # "Puis s’arrête."
-    ""
+    "Then stops."
 
 # game/scenario/1_canon.rpy:300
 translate english 5e6f595d:
 
     # ryn "On reste assis ?"
-    ryn ""
+    ryn "So we just stay seated?"
 
 # game/scenario/1_canon.rpy:301
 translate english cafcdff1:
 
     # ryn "On attend ?"
-    ryn ""
+    ryn "And wait?"
 
 # game/scenario/1_canon.rpy:302
 translate english 47fd0e0e:
 
     # ryn "C’est ça le plan ?"
-    ryn ""
+    ryn "That's the plan?"
 
 # game/scenario/1_canon.rpy:306
 translate english 1e9b0dfa:
 
     # elias "Franchement, que veux-tu faire de plus ?"
-    elias ""
+    elias "Honestly, what else do you want to do?"
 
 # game/scenario/1_canon.rpy:314
 translate english 6de848a6:
 
     # sael "Le plan, c’est de survivre."
-    sael ""
+    sael "The plan is to survive."
 
 # game/scenario/1_canon.rpy:315
 translate english 09fc476b:
 
     # sael "Et pour l’instant, bouger sans info…"
-    sael ""
+    sael "And right now, moving without info..."
 
 # game/scenario/1_canon.rpy:316
 translate english 4c755a4c:
 
     # sael "c’est un risque. Et tu veux que je te rappelle ce qui arrive à ceux qui prennent des risques ?"
-    sael ""
+    sael "is a risk. Want me to remind you what happens to people who take risks?"
 
 # game/scenario/1_canon.rpy:318
 translate english a184235e:
 
     # "Derrière, une petite voix se fait entendre."
-    ""
+    "Behind us, a small voice rises."
 
 # game/scenario/1_canon.rpy:319
 translate english cdb11cf1:
 
     # elen "Mais attendre, c’est un pari risqué aussi."
-    elen ""
+    elen "But waiting is a risk too."
 
 # game/scenario/1_canon.rpy:324
 translate english 3ba6ae18:
 
     # tomas "Tout ici est un pari."
-    tomas ""
+    tomas "Everything here is a gamble."
 
 # game/scenario/1_canon.rpy:325
 translate english 98d54393:
 
     # tomas "Faut dire qu'on a tous été pris de court."
-    tomas ""
+    tomas "To be fair, we were all caught off guard."
 
 # game/scenario/1_canon.rpy:326
 translate english 199a6d91:
 
     # tomas "Même les responsables de district semblaient n'être au courant de rien ..."
-    tomas ""
+    tomas "Even district officials looked like they had no clue..."
 
 # game/scenario/1_canon.rpy:328
 translate english 754fc900:
 
     # "Je sens mon cœur accélérer."
-    ""
+    "I feel my heart speed up."
 
 # game/scenario/1_canon.rpy:329
 translate english d3b7b5fd:
 
     # "Pas de panique."
-    ""
+    "Not panic."
 
 # game/scenario/1_canon.rpy:330
 translate english 3ca732bb:
 
     # "Juste la lucidité qui pique."
-    ""
+    "Just sharp clarity stinging."
 
 # game/scenario/1_canon.rpy:332
 translate english 867d890b_1:
 
     # think "Jour un."
-    think ""
+    think "Day one."
 
 # game/scenario/1_canon.rpy:333
 translate english 1069e30a:
 
     # think "Et on est déjà en train d'essayer de deviner les règles."
-    think ""
+    think "And we're already trying to guess the rules."
 
 # game/scenario/1_canon.rpy:334
 translate english 95120838:
 
     # think "Super."
-    think ""
+    think "Great."
 
 # game/scenario/1_canon.rpy:336
 translate english bd8acd7f:
 
     # "Je jette un regard à Lysa."
-    ""
+    "I glance at Lysa."
 
 # game/scenario/1_canon.rpy:337
 translate english db66bedc:
 
     # "Elle ne tremble pas."
-    ""
+    "She's not shaking."
 
 # game/scenario/1_canon.rpy:338
 translate english 0683aa52:
 
     # "Mais sa jambe bouge."
-    ""
+    "But her leg is moving."
 
 # game/scenario/1_canon.rpy:339
 translate english 7e268756:
 
     # "Un mouvement minuscule."
-    ""
+    "A tiny movement."
 
 # game/scenario/1_canon.rpy:347
 translate english c9010c9d:
 
     # noam "On fait quoi, alors ?"
-    noam ""
+    noam "So what do we do?"
 
 # game/scenario/1_canon.rpy:349
 translate english 44fbd506:
 
     # "Personne ne répond tout de suite."
-    ""
+    "No one answers right away."
 
 # game/scenario/1_canon.rpy:350
 translate english dbbcc105:
 
     # "Parce que personne ne veut être le premier à choisir."
-    ""
+    "Because no one wants to be the first to choose."
 
 # game/scenario/1_canon.rpy:351
 translate english 64484aea:
 
     # "Parce que choisir, ça peut nous tuer."
-    ""
+    "Because choosing could get us killed."
 
 # game/scenario/1_canon.rpy:355
 translate english c1b1f8c6:
 
     # "Un souffle de ventilation change."
-    ""
+    "The sound of ventilation shifts."
 
 # game/scenario/1_canon.rpy:356
 translate english 672823a9:
 
     # "Très léger."
-    ""
+    "Very slightly."
 
 # game/scenario/1_canon.rpy:357
 translate english 36b4b653:
 
     # "Mais tout le monde l’entend."
-    ""
+    "But everyone hears it."
 
 # game/scenario/1_canon.rpy:358
 translate english 5192c320:
 
     # "Parce qu’on n’a plus que ça à entendre."
-    ""
+    "Because that's all we have left to hear."
 
 # game/scenario/1_canon.rpy:360
 translate english 950f0893:
 
     # "Et là, au-dessus du pupitre central…"
-    ""
+    "And then, above the central desk..."
 
 # game/scenario/1_canon.rpy:361
 translate english 463b5862:
 
     # "Une lumière blanche s’allume."
-    ""
+    "A white light turns on."
 
 # game/scenario/1_canon.rpy:362
 translate english abeee158:
 
     # "Faible."
-    ""
+    "Faint."
 
 # game/scenario/1_canon.rpy:363
 translate english d47002e3:
 
     # "Comme une veilleuse."
-    ""
+    "Like a night-light."
 
 # game/scenario/1_canon.rpy:364
 translate english b9d1d4ed:
 
     # "Au même moment, le bruit d'un mécanisme qui s'active prend de l'ampleur."
-    ""
+    "At the same time, the sound of a mechanism starting up grows louder."
 
 # game/scenario/1_canon.rpy:368
 translate english aff24ef4:
 
     # "Puis l'écran central s'allume enfin."
-    ""
+    "Then the central screen finally powers on."
 
 # game/scenario/1_canon.rpy:390
 translate english 2897e4ea:
 
     # kami "Ah… vous êtes tous réveillés."
-    kami ""
+    kami "Ah... you're all awake."
 
 # game/scenario/1_canon.rpy:391
 translate english 0b73ac81:
 
     # kami "Parfait."
-    kami ""
+    kami "Perfect."
 
 # game/scenario/1_canon.rpy:392
 translate english fdc620cc:
 
     # kami "J’avais peur d’avoir surestimé votre capacité à survivre à une sieste forcée."
-    kami ""
+    kami "I was afraid I'd overestimated your ability to survive a forced nap."
 
 # game/scenario/1_canon.rpy:396
 translate english a9e0ee9d:
 
     # kami "Les sièges étaient confortables, j’espère."
-    kami ""
+    kami "I hope the seats were comfortable."
 
 # game/scenario/1_canon.rpy:397
 translate english bdfa4e04:
 
     # kami "J’ai hésité avec des bancs en métal."
-    kami ""
+    kami "I almost went with metal benches."
 
 # game/scenario/1_canon.rpy:398
 translate english 8183f97d:
 
     # kami "Et puis je me suis dit que vous préféreriez commencer… doucement."
-    kami ""
+    kami "Then I thought you'd probably prefer to start... gently."
 
 # game/scenario/1_canon.rpy:403
 translate english 62e81707:
 
     # noam "Pourquoi nous ?"
-    noam ""
+    noam "Why us?"
 
 # game/scenario/1_canon.rpy:409
 translate english 6bc0225b_1:
 
     # kami "Oh."
-    kami ""
+    kami "Oh."
 
 # game/scenario/1_canon.rpy:410
 translate english 24597c82:
 
     # kami "Excellente question."
-    kami ""
+    kami "Excellent question."
 
 # game/scenario/1_canon.rpy:412
 translate english ad2f3b35:
 
     # kami "Parce que vous êtes douze."
-    kami ""
+    kami "Because there are twelve of you."
 
 # game/scenario/1_canon.rpy:413
 translate english 64d29be3:
 
     # kami "Et que douze, c’est un chiffre pratique."
-    kami ""
+    kami "And twelve is a practical number."
 
 # game/scenario/1_canon.rpy:414
 translate english be396cb6:
 
     # kami "Assez pour créer des alliances."
-    kami ""
+    kami "Enough to form alliances."
 
 # game/scenario/1_canon.rpy:415
 translate english aaf1eefe:
 
     # kami "Pas assez pour se cacher dans la foule."
-    kami ""
+    kami "Not enough to hide in the crowd."
 
 # game/scenario/1_canon.rpy:420
 translate english 731508ec:
 
     # ryn "Un test de quoi ?"
-    ryn ""
+    ryn "A test of what?"
 
 # game/scenario/1_canon.rpy:426
 translate english a58cf52d:
 
     # kami "Un test de vous."
-    kami ""
+    kami "A test of you."
 
 # game/scenario/1_canon.rpy:427
 translate english c55d9260:
 
     # kami "De vos choix."
-    kami ""
+    kami "Of your choices."
 
 # game/scenario/1_canon.rpy:428
 translate english 2afcbb11:
 
     # kami "De l’humanité en général."
-    kami ""
+    kami "Of humanity in general."
 
 # game/scenario/1_canon.rpy:432
 translate english ed49e73d:
 
     # kami "De votre capacité à obéir…"
-    kami ""
+    kami "Of your ability to obey..."
 
 # game/scenario/1_canon.rpy:433
 translate english 62cae114:
 
     # kami "Et à prétendre que vous obéissez “pour le bien commun”."
-    kami ""
+    kami "And pretend you're obeying 'for the common good.'"
 
 # game/scenario/1_canon.rpy:437
 translate english 500b55cb:
 
     # kami "Croyez-moi."
-    kami ""
+    kami "Believe me."
 
 # game/scenario/1_canon.rpy:438
 translate english c0cee409:
 
     # kami "Ça ne sera pas si évident."
-    kami ""
+    kami "It won't be that simple."
 
 # game/scenario/1_canon.rpy:442
 translate english d42719b3:
 
     # kami "Bienvenue au Conclave."
-    kami ""
+    kami "Welcome to the Conclave."
 
 # game/scenario/1_canon.rpy:448
 translate english 54f9df83:
 
     # kami "Le Conclave durera trente jours."
-    kami ""
+    kami "The Conclave will last thirty days."
 
 # game/scenario/1_canon.rpy:449
 translate english 204d60f4:
 
     # kami "Trente jours exactement."
-    kami ""
+    kami "Thirty days exactly."
 
 # game/scenario/1_canon.rpy:450
 translate english 939f13f2:
 
     # kami "Pas un de plus."
-    kami ""
+    kami "Not one more."
 
 # game/scenario/1_canon.rpy:451
 translate english c597d3c8:
 
     # kami "Pas un de moins."
-    kami ""
+    kami "Not one less."
 
 # game/scenario/1_canon.rpy:452
 translate english d82b98ca:
 
     # kami "Et pendant ces trente jours, vous ne retournerez pas chez vous."
-    kami ""
+    kami "And during those thirty days, you will not be going home."
 
 # game/scenario/1_canon.rpy:456
 translate english c42fb66f:
 
     # kami "Trente jours pendant lesquels vous allez décider."
-    kami ""
+    kami "Thirty days in which you will decide things."
 
 # game/scenario/1_canon.rpy:457
 translate english 7e0fc229:
 
     # kami "Pas pour vous."
-    kami ""
+    kami "Not for yourselves."
 
 # game/scenario/1_canon.rpy:458
 translate english 76b20a29:
 
     # kami "Pour tous les autres…"
-    kami ""
+    kami "For everyone else..."
 
 # game/scenario/1_canon.rpy:463
 translate english f4862ae2:
 
     # elen "Décider de quoi… ?"
-    elen ""
+    elen "Decide what... ?"
 
 # game/scenario/1_canon.rpy:469
 translate english dfe4e658:
 
     # kami "Des règles."
-    kami ""
+    kami "The rules."
 
 # game/scenario/1_canon.rpy:470
 translate english 2413853f:
 
     # kami "Celles qui encadrent ce monde."
-    kami ""
+    kami "The ones that frame this world."
 
 # game/scenario/1_canon.rpy:471
 translate english 23fde927:
 
     # kami "Celles que vous respectez déjà, chaque jour."
-    kami ""
+    kami "The ones you already obey, every day."
 
 # game/scenario/1_canon.rpy:472
 translate english 87e07e2e:
 
     # kami "Le bien et le mal, en somme."
-    kami ""
+    kami "Good and evil, basically."
 
 # game/scenario/1_canon.rpy:478
 translate english d53ea8a0:
 
     # kami "Aujourd’hui, au cours de cette première journée…"
-    kami ""
+    kami "Today, on this first day..."
 
 # game/scenario/1_canon.rpy:479
 translate english 7022777e:
 
     # kami "Chacun de vous proposera une modification."
-    kami ""
+    kami "Each of you will propose one change."
 
 # game/scenario/1_canon.rpy:480
 translate english 70d91a86:
 
     # kami "Un amendement."
-    kami ""
+    kami "One amendment."
 
 # game/scenario/1_canon.rpy:481
 translate english b9fa6be9:
 
     # kami "Un seul."
-    kami ""
+    kami "Just one."
 
 # game/scenario/1_canon.rpy:482
 translate english eec875d1:
 
     # kami "Sur le commandement de votre choix."
-    kami ""
+    kami "To whichever Commandment you choose."
 
 # game/scenario/1_canon.rpy:486
 translate english dca6ef5b:
 
     # kami "Vous pourrez renforcer une règle."
-    kami ""
+    kami "You can make a rule stricter."
 
 # game/scenario/1_canon.rpy:487
 translate english b3342356:
 
     # kami "L’adoucir."
-    kami ""
+    kami "Soften it."
 
 # game/scenario/1_canon.rpy:488
 translate english ed859206:
 
     # kami "La tordre."
-    kami ""
+    kami "Twist it."
 
 # game/scenario/1_canon.rpy:489
 translate english baacec34:
 
     # kami "Ou l’habiller d’un joli mot pour faire croire que c’est une avancée."
-    kami ""
+    kami "Or dress it up in pretty words to make it look like progress."
 
 # game/scenario/1_canon.rpy:493
 translate english e4bf7547:
 
     # kami "Vous êtes libres de proposer ce que vous voulez."
-    kami ""
+    kami "You're free to suggest whatever you want."
 
 # game/scenario/1_canon.rpy:494
 translate english e2f68f5a:
 
     # kami "Et personne ne saura jamais qui a proposé quoi."
-    kami ""
+    kami "And no one will ever know who proposed what."
 
 # game/scenario/1_canon.rpy:498
 translate english 5cf893dc:
 
     # kami "Je vous laisse être créatifs."
-    kami ""
+    kami "I'll let you be creative."
 
 # game/scenario/1_canon.rpy:499
 translate english 46b0fa1f:
 
     # kami "Après tout…"
-    kami ""
+    kami "After all..."
 
 # game/scenario/1_canon.rpy:500
 translate english 126890c9:
 
     # kami "C’est ce que vous faites de mieux."
-    kami ""
+    kami "That's what you do best."
 
 # game/scenario/1_canon.rpy:505
 translate english 93d9591a:
 
     # tomas "Et ensuite ?"
-    tomas ""
+    tomas "And then what?"
 
 # game/scenario/1_canon.rpy:511
 translate english b2826c31:
 
     # kami "Ensuite ?"
-    kami ""
+    kami "Then what?"
 
 # game/scenario/1_canon.rpy:512
 translate english 27993145:
 
     # kami "Vous votez."
-    kami ""
+    kami "You vote."
 
 # game/scenario/1_canon.rpy:514
 translate english cafa0bcf:
 
     # kami "Tous les trois jours."
-    kami ""
+    kami "Every three days."
 
 # game/scenario/1_canon.rpy:515
 translate english 6dd5c9d4:
 
     # kami "Un vote."
-    kami ""
+    kami "One vote."
 
 # game/scenario/1_canon.rpy:516
 translate english e6d2cde7:
 
     # kami "Simple."
-    kami ""
+    kami "Simple."
 
 # game/scenario/1_canon.rpy:517
 translate english 84800889:
 
     # kami "Clair."
-    kami ""
+    kami "Clear."
 
 # game/scenario/1_canon.rpy:518
 translate english 70bc74a6:
 
     # kami "Binaire."
-    kami ""
+    kami "Binary."
 
 # game/scenario/1_canon.rpy:522
 translate english c09ec9a2:
 
     # kami "Pour."
-    kami ""
+    kami "For."
 
 # game/scenario/1_canon.rpy:523
 translate english 18106bb9:
 
     # kami "Ou contre."
-    kami ""
+    kami "Or against."
 
 # game/scenario/1_canon.rpy:529
 translate english 48e2ca7e:
 
     # kami "Mais attention."
-    kami ""
+    kami "But careful."
 
 # game/scenario/1_canon.rpy:530
 translate english 4ee876f6:
 
     # kami "Pour qu’un amendement soit adopté…"
-    kami ""
+    kami "For an amendment to pass..."
 
 # game/scenario/1_canon.rpy:531
 translate english e5b7b3a4:
 
     # kami "Il faut l’unanimité."
-    kami ""
+    kami "It must be unanimous."
 
 # game/scenario/1_canon.rpy:535
 translate english 979d1d6a:
 
     # kami "Tous."
-    kami ""
+    kami "All of you."
 
 # game/scenario/1_canon.rpy:536
 translate english 7c13e068:
 
     # kami "Sans exception."
-    kami ""
+    kami "No exceptions."
 
 # game/scenario/1_canon.rpy:537
 translate english 42fe2de4:
 
     # kami "Sinon, c’est non."
-    kami ""
+    kami "Otherwise, it's a no."
 
 # game/scenario/1_canon.rpy:542
 translate english a67026c3:
 
     # nyra "Et si quelqu’un vote contre… ?"
-    nyra ""
+    nyra "And if someone votes against it... ?"
 
 # game/scenario/1_canon.rpy:548
 translate english 3211ec92:
 
     # kami "Alors l’amendement est rejeté."
-    kami ""
+    kami "Then the amendment is rejected."
 
 # game/scenario/1_canon.rpy:549
 translate english e95f3f97:
 
     # kami "Il disparaît."
-    kami ""
+    kami "It disappears."
 
 # game/scenario/1_canon.rpy:550
 translate english 87f109db:
 
     # kami "Comme s’il n’avait jamais existé."
-    kami ""
+    kami "As if it had never existed."
 
 # game/scenario/1_canon.rpy:554
 translate english e6d589f3:
 
     # kami "Un peu comme certaines personnes."
-    kami ""
+    kami "A bit like some people."
 
 # game/scenario/1_canon.rpy:555
 translate english 8837f166:
 
     # kami "Dans d’autres circonstances."
-    kami ""
+    kami "In other circumstances."
 
 # game/scenario/1_canon.rpy:561
 translate english 60677574:
 
     # kami "Vous allez apprendre quelque chose d’important."
-    kami ""
+    kami "You're about to learn something important."
 
 # game/scenario/1_canon.rpy:562
 translate english 047b1801:
 
     # kami "Très vite."
-    kami ""
+    kami "Very quickly."
 
 # game/scenario/1_canon.rpy:564
 translate english eb0145c4:
 
     # kami "Convaincre est plus difficile que contraindre."
-    kami ""
+    kami "Convincing is harder than forcing."
 
 # game/scenario/1_canon.rpy:565
 translate english aff342e8:
 
     # kami "Et le consensus…"
-    kami ""
+    kami "And consensus..."
 
 # game/scenario/1_canon.rpy:566
 translate english f46e328d:
 
     # kami "Est un luxe que peu de sociétés peuvent se permettre."
-    kami ""
+    kami "is a luxury few societies can afford."
 
 # game/scenario/1_canon.rpy:572
 translate english 6bc0225b_2:
 
     # kami "Oh."
-    kami ""
+    kami "Oh."
 
 # game/scenario/1_canon.rpy:573
 translate english 0c8373ff:
 
     # kami "Dernière précision."
-    kami ""
+    kami "One last detail."
 
 # game/scenario/1_canon.rpy:577
 translate english c9c0a7f1:
 
     # kami "Je ne participerai pas aux votes."
-    kami ""
+    kami "I won't take part in the votes."
 
 # game/scenario/1_canon.rpy:578
 translate english 4a66e166:
 
     # kami "Je ne donnerai pas mon avis."
-    kami ""
+    kami "I won't give my opinion."
 
 # game/scenario/1_canon.rpy:579
 translate english b8258901:
 
     # kami "Je ne prendrai part à aucune de vos manigances."
-    kami ""
+    kami "I won't take part in any of your schemes."
 
 # game/scenario/1_canon.rpy:583
 translate english 04ab6cf5:
 
     # kami "Je regarderai."
-    kami ""
+    kami "I'll watch."
 
 # game/scenario/1_canon.rpy:584
 translate english e8f9f70a:
 
     # kami "Et j’apprendrai encore de vous."
-    kami ""
+    kami "And I'll keep learning from you."
 
 # game/scenario/1_canon.rpy:590
 translate english 91ca3c2d:
 
     # kami "Et maintenant, la précision de taille."
-    kami ""
+    kami "And now, the big clarification."
 
 # game/scenario/1_canon.rpy:591
 translate english 869a7029:
 
     # kami "Ici… les Commandements n’ont pas lieu d’être."
-    kami ""
+    kami "Here... the Commandments don't apply."
 
 # game/scenario/1_canon.rpy:595
 translate english 73bba9a9:
 
     # kami "Vous pouvez vous battre."
-    kami ""
+    kami "You can fight."
 
 # game/scenario/1_canon.rpy:596
 translate english d13a3f01:
 
     # kami "Vous pouvez mentir."
-    kami ""
+    kami "You can lie."
 
 # game/scenario/1_canon.rpy:597
 translate english 305e2731:
 
     # kami "Vous pouvez voler."
-    kami ""
+    kami "You can steal."
 
 # game/scenario/1_canon.rpy:598
 translate english ad1a0ee3:
 
     # kami "Vous pouvez vous entretuer."
-    kami ""
+    kami "You can kill each other."
 
 # game/scenario/1_canon.rpy:599
 translate english 49b9609f:
 
     # kami "Je ne m’en mêlerai pas."
-    kami ""
+    kami "I won't interfere."
 
 # game/scenario/1_canon.rpy:603
 translate english 75165d85:
 
     # kami "Mais n’oubliez pas."
-    kami ""
+    kami "But don't forget."
 
 # game/scenario/1_canon.rpy:604
 translate english 164ae233:
 
     # kami "Tout ce que vous faites est filmé."
-    kami ""
+    kami "Everything you do is recorded."
 
 # game/scenario/1_canon.rpy:605
 translate english 1d595bde:
 
     # kami "Et diffusé."
-    kami ""
+    kami "And broadcast."
 
 # game/scenario/1_canon.rpy:611
 translate english 34e00e42:
 
     # kami "J’ai passé un an à vous observer."
-    kami ""
+    kami "I've spent a year observing you."
 
 # game/scenario/1_canon.rpy:612
 translate english 742cf23e:
 
     # kami "Vos débats."
-    kami ""
+    kami "Your debates."
 
 # game/scenario/1_canon.rpy:613
 translate english 3fe53959:
 
     # kami "Vos justifications."
-    kami ""
+    kami "Your justifications."
 
 # game/scenario/1_canon.rpy:614
 translate english ec2c1af3:
 
     # kami "Vos excuses."
-    kami ""
+    kami "Your excuses."
 
 # game/scenario/1_canon.rpy:618
 translate english bd883e4f:
 
     # kami "Ce serait dommage de s’arrêter maintenant."
-    kami ""
+    kami "It'd be a shame to stop now."
 
 # game/scenario/1_canon.rpy:624
 translate english 89bbb71e:
 
     # kami "Le Conclave commence."
-    kami ""
+    kami "The Conclave begins."
 
 # game/scenario/1_canon.rpy:625
 translate english a6f11563:
 
     # kami "Les portes sont ouvertes."
-    kami ""
+    kami "The doors are open."
 
 # game/scenario/1_canon.rpy:626
 translate english 8983ae70:
 
     # kami "Visitez les lieux."
-    kami ""
+    kami "Take a look around."
 
 # game/scenario/1_canon.rpy:630
 translate english 53fc0a8d:
 
     # kami "Faites connaissance."
-    kami ""
+    kami "Get to know each other."
 
 # game/scenario/1_canon.rpy:631
 translate english ecca39a3:
 
     # kami "Ou faites… autrement."
-    kami ""
+    kami "Or do... otherwise."
 
 # game/scenario/1_canon.rpy:646
 translate english eae1715d:
 
     # "L’écran s’éteint."
-    ""
+    "The screen goes dark."
 
 # game/scenario/1_canon.rpy:647
 translate english d944bcea:
 
     # "Et pendant une seconde, personne ne respire."
-    ""
+    "And for one second, nobody breathes."
 
 # game/scenario/1_canon.rpy:649
 translate english 5fa6e84b:
 
     # "Puis tout le monde se met à parler en même temps."
-    ""
+    "Then everyone starts talking at once."
 
 # game/scenario/1_canon.rpy:650
 translate english 189c58b6:
 
     # "Des chuchotements qui deviennent vite des phrases entières."
-    ""
+    "Whispers that quickly turn into full sentences."
 
 # game/scenario/1_canon.rpy:651
 translate english 8c952a12:
 
     # "Des rires nerveux."
-    ""
+    "Nervous laughs."
 
 # game/scenario/1_canon.rpy:652
 translate english de21ba39:
 
     # "Des insultes à demi avalées."
-    ""
+    "Half-swallowed insults."
 
 # game/scenario/1_canon.rpy:658
 translate english 784140ab:
 
     # noam "On va devoir vraiment passer trente jours ici …"
-    noam ""
+    noam "We're really gonna spend thirty days in here..."
 
 # game/scenario/1_canon.rpy:661
 translate english e97fac1f:
 
     # lysa "L’unanimité, c’est le piège. En pratique c'est quasimment toujours impossible à avoir."
-    lysa ""
+    lysa "Unanimity is the trap. In practice, it's almost always impossible."
 
 # game/scenario/1_canon.rpy:662
 translate english 94ec0d1f:
 
     # lysa "Ça force à convaincre les autres, ou comme moteur pour les écraser."
-    lysa ""
+    lysa "It forces you to convince people, or use it as leverage to crush them."
 
 # game/scenario/1_canon.rpy:663
 translate english fe007f15:
 
     # lysa "Je comprends mieux pourquoi Kami dit que ça ne va pas être simple."
-    lysa ""
+    lysa "Now I get why Kami said this won't be simple."
 
 # game/scenario/1_canon.rpy:666
 translate english 5ad5b461:
 
     # tomas "Ou à faire des compromis."
-    tomas ""
+    tomas "Or force compromises."
 
 # game/scenario/1_canon.rpy:667
 translate english e935c7ad:
 
     # tomas "Pour une fois."
-    tomas ""
+    tomas "For once."
 
 # game/scenario/1_canon.rpy:669
 translate english fe28081f_1:
 
     # "Je tourne la tête."
-    ""
+    "I turn my head."
 
 # game/scenario/1_canon.rpy:670
 translate english bed97255:
 
     # "Sur les autres sièges, ça débat déjà comme si ça faisait une heure."
-    ""
+    "In the other seats, people are already debating like it's been an hour."
 
 # game/scenario/1_canon.rpy:678
 translate english 868898c0:
 
     # nyra "Moi… je vois quand même un truc positif."
-    nyra ""
+    nyra "I... still see one positive thing."
 
 # game/scenario/1_canon.rpy:679
 translate english 142e8132:
 
     # nyra "Si on peut modifier les règles…"
-    nyra ""
+    nyra "If we can change the rules..."
 
 # game/scenario/1_canon.rpy:680
 translate english 6212fc08:
 
     # nyra "Ça veut dire qu’on peut améliorer les choses."
-    nyra ""
+    nyra "that means we can make things better."
 
 # game/scenario/1_canon.rpy:683
 translate english 92d6f455:
 
     # lysa "Ou les empirer."
-    lysa ""
+    lysa "Or worse."
 
 # game/scenario/1_canon.rpy:684
 translate english bfb7d0b5:
 
     # lysa "Les rendre “légales”, surtout."
-    lysa ""
+    lysa "Make them 'legal,' mostly."
 
 # game/scenario/1_canon.rpy:692
 translate english e4e5f0a7:
 
     # elen "Le fait qu’on puisse proposer des amendements…"
-    elen ""
+    elen "The fact we can propose amendments..."
 
 # game/scenario/1_canon.rpy:693
 translate english 65ac4835:
 
     # elen "C’est pas rien."
-    elen ""
+    elen "that's not nothing."
 
 # game/scenario/1_canon.rpy:694
 translate english 3a092c70:
 
     # elen "Dans ce monde, c’est presque…"
-    elen ""
+    elen "In this world, it's almost..."
 
 # game/scenario/1_canon.rpy:695
 translate english 15078daf:
 
     # elen "Une respiration."
-    elen ""
+    elen "a breath of air."
 
 # game/scenario/1_canon.rpy:698
 translate english f8fea61e:
 
     # lysa "Une respiration sous l’eau."
-    lysa ""
+    lysa "A breath of air underwater."
 
 # game/scenario/1_canon.rpy:700
 translate english 5f544267:
 
     # "Un rire s’échappe quelque part."
-    ""
+    "A laugh slips out somewhere."
 
 # game/scenario/1_canon.rpy:701
 translate english 316f5e94:
 
     # "Un rire trop franc, trop sûr de lui."
-    ""
+    "Too direct. Too confident."
 
 # game/scenario/1_canon.rpy:709
 translate english c02d8a88:
 
     # mara "Vous êtes tous en train de parler comme si on avait gagné un droit."
-    mara ""
+    mara "You're all talking like we just earned a right."
 
 # game/scenario/1_canon.rpy:710
 translate english b52b9611:
 
     # mara "On est dans une cage."
-    mara ""
+    mara "We're in a cage."
 
 # game/scenario/1_canon.rpy:711
 translate english 05af8cb7:
 
     # mara "Une cage avec un bouton 'vote'."
-    mara ""
+    mara "A cage with a 'vote' button."
 
 # game/scenario/1_canon.rpy:714
 translate english d0d792af:
 
     # lysa "Merci pour le rappel."
-    lysa ""
+    lysa "Thanks for the reminder."
 
 # game/scenario/1_canon.rpy:722
 translate english 5fb5d125:
 
     # ryn "Non mais attendez."
-    ryn ""
+    ryn "No, wait."
 
 # game/scenario/1_canon.rpy:723
 translate english 8d998aa0:
 
     # ryn "Elle a dit quoi exactement ?"
-    ryn ""
+    ryn "What exactly did she say?"
 
 # game/scenario/1_canon.rpy:724
 translate english ef457488:
 
     # ryn "Ici, les commandements s’appliquent pas."
-    ryn ""
+    ryn "In here, the Commandments don't apply."
 
 # game/scenario/1_canon.rpy:727
 translate english a498361a:
 
     # ryn "Donc si quelqu’un pète un câble…"
-    ryn ""
+    ryn "So if someone snaps..."
 
 # game/scenario/1_canon.rpy:728
 translate english 09a20716:
 
     # ryn "On fait quoi ?"
-    ryn ""
+    ryn "What do we do?"
 
 # game/scenario/1_canon.rpy:731
 translate english ae82ee14:
 
     # lysa "On est constamment filmé par les caméras."
-    lysa ""
+    lysa "We're constantly being filmed by cameras."
 
 # game/scenario/1_canon.rpy:732
 translate english 9e30d081:
 
     # lysa "Et une IA qui regarde et diffuse tout ce qu'on fait."
-    lysa ""
+    lysa "And an AI is watching and broadcasting everything we do."
 
 # game/scenario/1_canon.rpy:733
 translate english 9b5acf87:
 
     # lysa "Je pense que c’est son idée du 'cadre sécurisé'."
-    lysa ""
+    lysa "I think that's her idea of a 'safe framework.'"
 
 # game/scenario/1_canon.rpy:734
 translate english 7099bfd8:
 
     # lysa "Cette pression devrait empêcher tout pétage de câble."
-    lysa ""
+    lysa "That pressure should keep people from snapping."
 
 # game/scenario/1_canon.rpy:736
 translate english 31b563f1:
 
     # "À côté, quelqu’un se lève, ajuste sa veste comme s’il montait sur scène."
-    ""
+    "Nearby, someone stands up and adjusts his jacket like he's stepping onstage."
 
 # game/scenario/1_canon.rpy:737
 translate english 585ac0c5:
 
     # "Il cherche du regard une caméra. Il la trouve."
-    ""
+    "He scans for a camera. Finds one."
 
 # game/scenario/1_canon.rpy:738
 translate english 91989fdd:
 
     # "Et il lui offre un sourire travaillé."
-    ""
+    "And gives it a practiced smile."
 
 # game/scenario/1_canon.rpy:746
 translate english 19e7596a:
 
     # julian "Franchement ?"
-    julian ""
+    julian "Honestly?"
 
 # game/scenario/1_canon.rpy:747
 translate english 77181cca:
 
     # julian "Moi je trouve ça… excitant."
-    julian ""
+    julian "I find this... exciting."
 
 # game/scenario/1_canon.rpy:750
 translate english 1cf2595a:
 
     # julian "Enfin."
-    julian ""
+    julian "Finally."
 
 # game/scenario/1_canon.rpy:751
 translate english dd0d2814:
 
     # julian "Un endroit où on peut parler."
-    julian ""
+    julian "A place where we can talk."
 
 # game/scenario/1_canon.rpy:752
 translate english f220dc42:
 
     # julian "Où on peut peser sur les règles."
-    julian ""
+    julian "Where we can influence the rules."
 
 # game/scenario/1_canon.rpy:753
 translate english 062479ab:
 
     # julian "Et où les gens vont… regarder."
-    julian ""
+    julian "And where people are going to... watch."
 
 # game/scenario/1_canon.rpy:755
 translate english 45b100a2:
 
     # "Il se tourne légèrement. Comme pour se mettre de profil face à la caméra."
-    ""
+    "He turns slightly, as if to catch his profile for the camera."
 
 # game/scenario/1_canon.rpy:756
 translate english e59d9084:
 
     # "Comme si ça avait de l’importance."
-    ""
+    "As if that mattered."
 
 # game/scenario/1_canon.rpy:759
 translate english 06f736b0:
 
     # lysa "T’es sérieux ?"
-    lysa ""
+    lysa "Are you serious?"
 
 # game/scenario/1_canon.rpy:762
 translate english 2f1a4bbf:
 
     # julian "Totalement."
-    julian ""
+    julian "Totally."
 
 # game/scenario/1_canon.rpy:763
 translate english dc20b567:
 
     # julian "Si je dois être coincé ici trente jours…"
-    julian ""
+    julian "If I'm stuck here for thirty days..."
 
 # game/scenario/1_canon.rpy:764
 translate english c17548fb:
 
     # julian "Autant être iconique et tenter d'améliorer la vie des gens."
-    julian ""
+    julian "I might as well be iconic and try to make people's lives better."
 
 # game/scenario/1_canon.rpy:766
 translate english 7dc45c67:
 
     # "Il jette un regard rapide vers une caméra."
-    ""
+    "He shoots a quick glance at a camera."
 
 # game/scenario/1_canon.rpy:767
 translate english a1116cd8:
 
     # "Il lève deux doigts en signe de salut."
-    ""
+    "Raises two fingers in greeting."
 
 # game/scenario/1_canon.rpy:768
 translate english 4dfd9c8c:
 
     # "Comme si quelqu’un l’attendait de l’autre côté."
-    ""
+    "Like someone is waiting for him on the other side."
 
 # game/scenario/1_canon.rpy:771
 translate english 341dcd9e:
 
     # noam "…"
-    noam ""
+    noam "..."
 
 # game/scenario/1_canon.rpy:779
 translate english d17bf2bb:
 
     # tomas "Au moins, ça confirme un truc."
-    tomas ""
+    tomas "At least that confirms one thing."
 
 # game/scenario/1_canon.rpy:780
 translate english 08cf3fe0:
 
     # tomas "Elle veut du spectacle."
-    tomas ""
+    tomas "She wants a show."
 
 # game/scenario/1_canon.rpy:783
 translate english ffc4dbb2:
 
     # tomas "Et si elle veut du spectacle…"
-    tomas ""
+    tomas "And if she wants a show..."
 
 # game/scenario/1_canon.rpy:784
 translate english 94cc68b0:
 
     # tomas "C’est qu’elle s’attend à ce qu’on se déchire."
-    tomas ""
+    tomas "she expects us to tear each other apart."
 
 # game/scenario/1_canon.rpy:788
 translate english bc3339ff:
 
     # "Un autre détail me revient."
-    ""
+    "Another detail comes back to me."
 
 # game/scenario/1_canon.rpy:789
 translate english 32c902c1:
 
     # "Le jour 1, chacun propose un amendement."
-    ""
+    "On day one, everyone proposes an amendment."
 
 # game/scenario/1_canon.rpy:792
 translate english 80a9f4b8:
 
     # noam "Donc aujourd’hui… on doit tous proposer quelque chose."
-    noam ""
+    noam "So today... we all have to propose something."
 
 # game/scenario/1_canon.rpy:795
 translate english 1e7097cc_1:
 
     # lysa "Ouais."
-    lysa ""
+    lysa "Yeah."
 
 # game/scenario/1_canon.rpy:796
 translate english 845b0226:
 
     # lysa "Et personne saura qui a proposé quoi."
-    lysa ""
+    lysa "And nobody will know who proposed what."
 
 # game/scenario/1_canon.rpy:800
 translate english 23acda38:
 
     # kael "Et si on se disait tous ce qu'on propose comme modifications ?"
-    kael ""
+    kael "What if we all tell each other what changes we're planning?"
 
 # game/scenario/1_canon.rpy:801
 translate english 37a03364:
 
     # kael "Si on les travaille ensemble, on a plus de choses d'atteindre l'unanimité ?"
-    kael ""
+    kael "If we work on them together, we'd have a better shot at unanimity, right?"
 
 # game/scenario/1_canon.rpy:803
 translate english 4005e0e2:
 
     # "Un silence retombe, plus sec."
-    ""
+    "Silence falls again, sharper this time."
 
 # game/scenario/1_canon.rpy:804
 translate english 90b1dc8a:
 
     # "Cette fois, c’est pas la peur."
-    ""
+    "This time, it's not fear."
 
 # game/scenario/1_canon.rpy:805
 translate english 68f703ad:
 
     # "C’est le calcul."
-    ""
+    "It's calculation."
 
 # game/scenario/1_canon.rpy:815
 translate english dcd25b35:
 
     # elen "On devrait peut-être…"
-    elen ""
+    elen "Maybe we should..."
 
 # game/scenario/1_canon.rpy:816
 translate english 9169115d:
 
     # elen "Se mettre d’accord sur une méthode."
-    elen ""
+    elen "agree on a method."
 
 # game/scenario/1_canon.rpy:817
 translate english 37f6cc2a:
 
     # elen "Un truc simple."
-    elen ""
+    elen "Something simple."
 
 # game/scenario/1_canon.rpy:818
 translate english 13dd3bf3:
 
     # elen "Pour éviter que ça parte en guerre tout de suite."
-    elen ""
+    elen "So this doesn't turn into war right away."
 
 # game/scenario/1_canon.rpy:821
 translate english bab77dc2:
 
     # lysa "Tu veux une méthode ?"
-    lysa ""
+    lysa "You want a method?"
 
 # game/scenario/1_canon.rpy:822
 translate english 16efdb36:
 
     # lysa "On est douze, enfermés, filmés."
-    lysa ""
+    lysa "We're twelve people, locked in, under cameras."
 
 # game/scenario/1_canon.rpy:823
 translate english 5807f29c:
 
     # lysa "Et on peut se tuer sans conséquence ici."
-    lysa ""
+    lysa "And we can kill each other in here without consequences."
 
 # game/scenario/1_canon.rpy:824
 translate english 78b846f5:
 
     # lysa "La méthode, elle est déjà écrite."
-    lysa ""
+    lysa "The method is already written."
 
 # game/scenario/1_canon.rpy:828
 translate english 6343870f:
 
     # "Je vois des petits groupes se former."
-    ""
+    "I see little groups starting to form."
 
 # game/scenario/1_canon.rpy:829
 translate english f4d00a89:
 
     # "Deux par-ci."
-    ""
+    "Two here."
 
 # game/scenario/1_canon.rpy:830
 translate english d769ae31:
 
     # "Trois par-là."
-    ""
+    "Three there."
 
 # game/scenario/1_canon.rpy:831
 translate english c059085b:
 
     # "Des regards en biais."
-    ""
+    "Sideways glances."
 
 # game/scenario/1_canon.rpy:832
 translate english f504bbeb:
 
     # "Des gens qui s’éloignent déjà, comme s’ils avaient peur d’être associés."
-    ""
+    "People already drifting apart, like they're afraid to be associated."
 
 # game/scenario/1_canon.rpy:835
 translate english 891dc9b6:
 
     # noam "On fait quoi, nous ?"
-    noam ""
+    noam "What do we do, then?"
 
 # game/scenario/1_canon.rpy:838
 translate english 7bd2498d:
 
     # lysa "On visite."
-    lysa ""
+    lysa "We explore."
 
 # game/scenario/1_canon.rpy:839
 translate english e41d2622:
 
     # lysa "On repère les lieux."
-    lysa ""
+    lysa "We map the place out."
 
 # game/scenario/1_canon.rpy:840
 translate english 1b2a5e15:
 
     # lysa "Et on évite de trop parler devant les caméras."
-    lysa ""
+    lysa "And we avoid talking too much in front of cameras."
 
 # game/scenario/1_canon.rpy:841
 translate english 62c70552:
 
     # lysa "Surtout au début."
-    lysa ""
+    lysa "Especially at the start."
 
 # game/scenario/1_canon.rpy:844
 translate english ae7ddcbb:
 
     # elen "Je… je vais voir s’il y a une infirmerie."
-    elen ""
+    elen "I... I'm gonna see if there's an infirmary."
 
 # game/scenario/1_canon.rpy:845
 translate english 03432f80:
 
     # elen "Ou au moins du matériel."
-    elen ""
+    elen "Or at least supplies."
 
 # game/scenario/1_canon.rpy:846
 translate english 3c45edc4:
 
     # elen "On sait jamais."
-    elen ""
+    elen "You never know."
 
 # game/scenario/1_canon.rpy:849
 translate english bb8d21ae:
 
     # noam "Ok."
-    noam ""
+    noam "Okay."
 
 # game/scenario/1_canon.rpy:853
 translate english 57dcad50:
 
     # "Tout le monde quitte peu à peu la pièce."
-    ""
+    "Little by little, everyone leaves the room."
 
 # game/scenario/1_canon.rpy:855
 translate english 2aeb911c:
 
     # "Et moi…"
-    ""
+    "And me..."
 
 # game/scenario/1_canon.rpy:856
 translate english bed45dab:
 
     # "Je devrais aller faire un tour également."
-    ""
+    "I should go look around too."
 
 # game/scenario/1_canon.rpy:860
 translate english 6df65576:
 
     # think "Phase exploration."
-    think ""
+    think "Exploration phase."
 
 # game/scenario/1_canon.rpy:861
 translate english f705ee75:
 
     # think "Ça commence maintenant."
-    think ""
+    think "It starts now."
 
 # game/scenario/1_canon.rpy:865
 translate english e05ca73f:
 
     # tuto "Prêt pour un nouveau tutoriel ?"
-    tuto ""
+    tuto "Ready for a new tutorial?"
 
 # game/scenario/1_canon.rpy:866
 translate english fb67b769:
 
     # tuto "J'espère bien !"
-    tuto ""
+    tuto "I sure hope so!"
 
 # game/scenario/1_canon.rpy:867
 translate english 8c776e4c:
 
     # tuto "Cette carte correspond à la carte du Conclave."
-    tuto ""
+    tuto "This map is the Conclave map."
 
 # game/scenario/1_canon.rpy:868
 translate english c46e538f:
 
     # tuto "Toutes les pièces vous sont ouvertes afin que vous puissiez explorer chacune des pièces convenablement."
-    tuto ""
+    tuto "All rooms are open so you can explore each area properly."
 
 # game/scenario/1_canon.rpy:869
 translate english 2078a0e7:
 
     # tuto "Pour accéder à une salle spécifique, rien de plus simple : il suffit de cliquer dessus."
-    tuto ""
+    tuto "To access a specific room, it's simple: just click on it."
 
 # game/scenario/1_canon.rpy:870
 translate english 86cd9af5:
 
     # tuto "Dans certaines pièces, certaines interactions peuvent être cruciales pour débloquer des fins différentes."
-    tuto ""
+    tuto "In some rooms, certain interactions can be crucial for unlocking different endings."
 
 # game/scenario/1_canon.rpy:871
 translate english 1f66a397:
 
     # tuto "Cette mécanique complète la mécanique de choix afin d'ouvrir les possibles."
-    tuto ""
+    tuto "This system complements the choice system to open up more possibilities."
 
 # game/scenario/1_canon.rpy:872
 translate english 1a6042d1:
 
     # tuto "N'hésitez donc pas à explorer et à interagir avec votre environnement."
-    tuto ""
+    tuto "So don't hesitate to explore and interact with your environment."
 
 # game/scenario/1_canon.rpy:873
 translate english bf38bea5:
 
     # tuto "Bonne exploration !"
-    tuto ""
+    tuto "Happy exploring!"
 
 # game/scenario/1_canon.rpy:906
 translate english KAMI_MESSAGE_APRES_VISITE_ccc50beb:
@@ -2320,241 +2320,241 @@ translate english KAMI_MESSAGE_APRES_VISITE_c7f4f0c1:
 translate english KAMI_MESSAGE_APRES_VISITE_96b6154a:
 
     # kami "On a surtout mis des ingénieurs passionnés."
-    kami ""
+    kami "We mostly put passionate engineers on it."
 
 # game/scenario/1_canon.rpy:937
 translate english KAMI_MESSAGE_APRES_VISITE_ab8a9d20:
 
     # kami "Vous êtes tous convoqués."
-    kami ""
+    kami "You are all summoned."
 
 # game/scenario/1_canon.rpy:938
 translate english KAMI_MESSAGE_APRES_VISITE_5e86b9d1:
 
     # kami "Direction la salle du Conclave."
-    kami ""
+    kami "Head to the Conclave chamber."
 
 # game/scenario/1_canon.rpy:939
 translate english KAMI_MESSAGE_APRES_VISITE_37b7a4b7:
 
     # kami "Tout de suite."
-    kami ""
+    kami "Right now."
 
 # game/scenario/1_canon.rpy:943
 translate english KAMI_MESSAGE_APRES_VISITE_67cee457:
 
     # kami "Hop hop."
-    kami ""
+    kami "Chop chop."
 
 # game/scenario/1_canon.rpy:944
 translate english KAMI_MESSAGE_APRES_VISITE_311db366:
 
     # kami "Je suis déjà installée."
-    kami ""
+    kami "I'm already seated."
 
 # game/scenario/1_canon.rpy:945
 translate english KAMI_MESSAGE_APRES_VISITE_69a97d3d:
 
     # kami "Popcorn virtuel en main."
-    kami ""
+    kami "Virtual popcorn in hand."
 
 # game/scenario/1_canon.rpy:949
 translate english KAMI_MESSAGE_APRES_VISITE_5967f67d:
 
     # kami "Ne me faites pas perdre mon temps."
-    kami ""
+    kami "Don't waste my time."
 
 # game/scenario/1_canon.rpy:950
 translate english KAMI_MESSAGE_APRES_VISITE_05d01e24:
 
     # kami "C’est le seul truc que je ne vous pardonnerai pas."
-    kami ""
+    kami "It's the one thing I won't forgive."
 
 # game/scenario/1_canon.rpy:953
 translate english KAMI_MESSAGE_APRES_VISITE_c5396df9_1:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:957
 translate english KAMI_MESSAGE_APRES_VISITE_5c51b6ad:
 
     # think "Voilà, on y arrive."
-    think ""
+    think "Here we go."
 
 # game/scenario/1_canon.rpy:958
 translate english KAMI_MESSAGE_APRES_VISITE_c0acf03d:
 
     # think "A partir de là, le Conclave débute vraiment."
-    think ""
+    think "From this point on, the Conclave really starts."
 
 # game/scenario/1_canon.rpy:959
 translate english KAMI_MESSAGE_APRES_VISITE_d7274cdd:
 
     # think "Ce n'est plus possible de faire marche arrière."
-    think ""
+    think "There's no turning back now."
 
 # game/scenario/1_canon.rpy:960
 translate english KAMI_MESSAGE_APRES_VISITE_2ea558ca:
 
     # think "Enfin, ça n'a jamais été possible mais bon ..."
-    think ""
+    think "Not that there ever was, but still..."
 
 # game/scenario/1_canon.rpy:964
 translate english KAMI_MESSAGE_APRES_VISITE_b21efa8c:
 
     # "Les portes du Conclave s’ouvrent, dedans, il y a déjà plusieurs personnes."
-    ""
+    "The Conclave doors open. There are already several people inside."
 
 # game/scenario/1_canon.rpy:965
 translate english KAMI_MESSAGE_APRES_VISITE_9f7593ba:
 
     # "On évite tous de se regarder, comme si on était géné de quelques choses."
-    ""
+    "We all avoid looking at each other, like we're embarrassed about something."
 
 # game/scenario/1_canon.rpy:966
 translate english KAMI_MESSAGE_APRES_VISITE_4d6c5c39:
 
     # "Personne n’a envie d’être le premier à parler."
-    ""
+    "No one wants to be the first to speak."
 
 # game/scenario/1_canon.rpy:968
 translate english KAMI_MESSAGE_APRES_VISITE_fae8ee44:
 
     # "La salle du Conclave n'a pas changé depuis tout à l'heure."
-    ""
+    "The Conclave room hasn't changed since earlier."
 
 # game/scenario/1_canon.rpy:969
 translate english KAMI_MESSAGE_APRES_VISITE_83139994:
 
     # "Toujours trop propre."
-    ""
+    "Still too clean."
 
 # game/scenario/1_canon.rpy:970
 translate english KAMI_MESSAGE_APRES_VISITE_eebebeee:
 
     # "Toujours trop grande."
-    ""
+    "Still too big."
 
 # game/scenario/1_canon.rpy:971
 translate english KAMI_MESSAGE_APRES_VISITE_4186c644:
 
     # "Et on est toujours insignifiant dans ce monde gigantesque."
-    ""
+    "And we're still insignificant in this gigantic world."
 
 # game/scenario/1_canon.rpy:973
 translate english KAMI_MESSAGE_APRES_VISITE_66b56adb:
 
     # "Je m’assois et ceux déjà présents m'imitent."
-    ""
+    "I sit down, and the ones already there mirror me."
 
 # game/scenario/1_canon.rpy:974
 translate english KAMI_MESSAGE_APRES_VISITE_8d42de62:
 
     # "Les autres arrivent par grappes."
-    ""
+    "The others arrive in clusters."
 
 # game/scenario/1_canon.rpy:975
 translate english KAMI_MESSAGE_APRES_VISITE_0a0c7b28:
 
     # "Des fauteuils raclent."
-    ""
+    "Chairs scrape."
 
 # game/scenario/1_canon.rpy:976
 translate english KAMI_MESSAGE_APRES_VISITE_e65944f6:
 
     # "Mais personne ne parle. On attends."
-    ""
+    "But no one talks. We wait."
 
 # game/scenario/1_canon.rpy:980
 translate english KAMI_MESSAGE_APRES_VISITE_062f9c27:
 
     # ryn "On est tous là ?"
-    ryn ""
+    ryn "Is everyone here?"
 
 # game/scenario/1_canon.rpy:981
 translate english KAMI_MESSAGE_APRES_VISITE_b19ee139:
 
     # ryn "Me dites pas qu’on va encore attendre pour rien."
-    ryn ""
+    ryn "Don't tell me we're waiting again for nothing."
 
 # game/scenario/1_canon.rpy:986
 translate english KAMI_MESSAGE_APRES_VISITE_86913f6f:
 
     # mara "Chut."
-    mara ""
+    mara "Shh."
 
 # game/scenario/1_canon.rpy:987
 translate english KAMI_MESSAGE_APRES_VISITE_ea4368bb:
 
     # mara "T’as entendu."
-    mara ""
+    mara "You heard her."
 
 # game/scenario/1_canon.rpy:988
 translate english KAMI_MESSAGE_APRES_VISITE_d6ad8367:
 
     # mara "Kami ne pardonne pas qu’on lui fasse perdre son temps."
-    mara ""
+    mara "Kami doesn't forgive people wasting her time."
 
 # game/scenario/1_canon.rpy:993
 translate english KAMI_MESSAGE_APRES_VISITE_f4df5a1c:
 
     # iris "Super."
-    iris ""
+    iris "Great."
 
 # game/scenario/1_canon.rpy:994
 translate english KAMI_MESSAGE_APRES_VISITE_0faf4915:
 
     # iris "On est convoqués comme des gosses."
-    iris ""
+    iris "We're being summoned like kids."
 
 # game/scenario/1_canon.rpy:999
 translate english KAMI_MESSAGE_APRES_VISITE_167253f5:
 
     # julian "Moi je trouve ça amusant."
-    julian ""
+    julian "I find it fun, actually."
 
 # game/scenario/1_canon.rpy:1000
 translate english KAMI_MESSAGE_APRES_VISITE_9c67a74c:
 
     # julian "Je me demande bien ce qu'on va pouvoir changer dans ce drôle d'endroit."
-    julian ""
+    julian "I'm really curious what we can change in this weird place."
 
 # game/scenario/1_canon.rpy:1005
 translate english KAMI_MESSAGE_APRES_VISITE_9b0ca137:
 
     # elen "Pas vraiment sûre qu'on puisse changer grand chose…"
-    elen ""
+    elen "Not really sure we can change much..."
 
 # game/scenario/1_canon.rpy:1006
 translate english KAMI_MESSAGE_APRES_VISITE_d09cf0ef:
 
     # elen "Tu sais très bien que Kami a droit de vie et mort sur tout le monde."
-    elen ""
+    elen "You know very well Kami has power of life and death over everyone."
 
 # game/scenario/1_canon.rpy:1010
 translate english KAMI_MESSAGE_APRES_VISITE_26c4e2fb:
 
     # julian "Je sais."
-    julian ""
+    julian "I know."
 
 # game/scenario/1_canon.rpy:1011
 translate english KAMI_MESSAGE_APRES_VISITE_db3a865b:
 
     # julian "C’est pour ça que c’est intéressant."
-    julian ""
+    julian "That's why it's interesting."
 
 # game/scenario/1_canon.rpy:1012
 translate english KAMI_MESSAGE_APRES_VISITE_2c320e0d:
 
     # julian "Si on peut changer les règles, on peut changer ça."
-    julian ""
+    julian "If we can change the rules, we can change that."
 
 # game/scenario/1_canon.rpy:1013
 translate english KAMI_MESSAGE_APRES_VISITE_343dbaca:
 
     # julian "Et sauver tout le monde !"
-    julian ""
+    julian "And save everyone!"
 
 # game/scenario/1_canon.rpy:1015
 translate english KAMI_MESSAGE_APRES_VISITE_9c95fdc3:
@@ -6286,27 +6286,27 @@ translate english strings:
 
     # game/scenario/1_canon.rpy:1599
     old "Quelle proposition Noam écrit-il ?"
-    new ""
+    new "What proposal does Noam write?"
 
     # game/scenario/1_canon.rpy:1599
     old "Limiter l’interdiction de transmission d’informations à la politique"
-    new ""
+    new "Limit the information-sharing ban to politics"
 
     # game/scenario/1_canon.rpy:1599
     old "Instaurer une obligation d’assistance quand une aide est possible"
-    new ""
+    new "Establish a duty to help when assistance is possible"
 
     # game/scenario/1_canon.rpy:1829
     old "Que devrais-je faire ?"
-    new ""
+    new "What should I do?"
 
     # game/scenario/1_canon.rpy:1829
     old "Aller se coucher"
-    new ""
+    new "Go to bed"
 
     # game/scenario/1_canon.rpy:1829
     old "Se rendre à la salle de repos (Optionnel)"
-    new ""
+    new "Go to the lounge (Optional)"
 
 # TODO: Translation updated at 2026-02-13 12:20
 
@@ -6314,343 +6314,343 @@ translate english strings:
 translate english 8d311a95:
 
     # lysa "Ouais..."
-    lysa ""
+    lysa "Yeah..."
 
 # game/scenario/1_canon.rpy:106
 translate english cc5bad5a:
 
     # ryn "Qui a fait ça ?!"
-    ryn ""
+    ryn "Who did this?!"
 
 # game/scenario/1_canon.rpy:117
 translate english f64c716b:
 
     # mara "Tu veux dire… à part l’IA qui tient le monde en laisse ?"
-    mara ""
+    mara "You mean... besides the AI that keeps the world on a leash?"
 
 # game/scenario/1_canon.rpy:119
 translate english b9be0c57:
 
     # ryn "Je parle de ce qui nous arrive, là, maintenant."
-    ryn ""
+    ryn "I'm talking about what's happening to us, right now."
 
 # game/scenario/1_canon.rpy:129
 translate english 66adb82c:
 
     # tomas "Probablement… personne qui soit vraiment là. Enfin, je veux dire… pas ici, pas physiquement."
-    tomas ""
+    tomas "Probably... no one who's actually here. I mean... not here physically."
 
 # game/scenario/1_canon.rpy:130
 translate english 0c118340:
 
     # tomas "Ça ressemble à une procédure. Automatique. Presque… mécanique."
-    tomas ""
+    tomas "It looks like a procedure. Automatic. Almost... mechanical."
 
 # game/scenario/1_canon.rpy:138
 translate english 2ab3da00:
 
     # elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
-    elen ""
+    elen "Automatic or not... we're still the ones dragged here by force, right?"
 
 # game/scenario/1_canon.rpy:139
 translate english b83d9f41:
 
     # elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
-    elen ""
+    elen "I can't bring myself to call this 'normal' anymore."
 
 # game/scenario/1_canon.rpy:140
 translate english 487d82ba:
 
     # elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."
-    elen ""
+    elen "Even if... yeah, eventually you get used to everything. That's what scares me."
 
 # game/scenario/1_canon.rpy:158
 translate english ab4a8b41:
 
     # julian "Vous… vous entendez ça ?"
-    julian ""
+    julian "Do you... do you hear that?"
 
 # game/scenario/1_canon.rpy:159
 translate english 354886be:
 
     # julian "Rien. Absolument rien. On dirait qu’on est les derniers humains sur Terre."
-    julian ""
+    julian "Nothing. Absolutely nothing. Feels like we're the last humans on Earth."
 
 # game/scenario/1_canon.rpy:167
 translate english 9b6ef580:
 
     # iris "Mais… y a même pas un murmure ! Rien ! C’est flippant à quel point c’est silencieux ici !"
-    iris ""
+    iris "There isn't even a whisper! Nothing! It's scary how silent this place is!"
 
 # game/scenario/1_canon.rpy:168
 translate english 0f9fbbfc:
 
     # iris "Et en plus on sait même pas ce qu’on est censés faire, hein ! On attend quoi, un miracle ?"
-    iris ""
+    iris "And we still don't even know what we're supposed to do! What are we waiting for, a miracle?"
 
 # game/scenario/1_canon.rpy:185
 translate english 4efd4f31:
 
     # kael "Ou alors… c’est juste une attente."
-    kael ""
+    kael "Or maybe... we're just waiting."
 
 # game/scenario/1_canon.rpy:186
 translate english 3a0d1e20:
 
     # kael "Peut-être qu’elle attend quelque chose. Quelque chose de précis."
-    kael ""
+    kael "Maybe she's waiting for something. Something specific."
 
 # game/scenario/1_canon.rpy:220
 translate english 9d34981e:
 
     # mara "J’adore, putain."
-    mara ""
+    mara "Fuckin' love this."
 
 # game/scenario/1_canon.rpy:221
 translate english 0d7397f4:
 
     # mara "Douze pigeons, zéro animateur."
-    mara ""
+    mara "Twelve pigeons, zero host."
 
 # game/scenario/1_canon.rpy:222
 translate english 806ba1f5:
 
     # mara "Pas de mode d’emploi, pas d’hôte, même pas un petit speech d’accueil."
-    mara ""
+    mara "No instructions, no host, not even a little welcome speech."
 
 # game/scenario/1_canon.rpy:223
 translate english c1258dfa:
 
     # mara "Elle nous snobe direct, la garce."
-    mara ""
+    mara "She snubs us right away, that bitch."
 
 # game/scenario/1_canon.rpy:231
 translate english 3a256468:
 
     # tomas "On parle de Kami, quand même."
-    tomas ""
+    tomas "We're talking about Kami, though."
 
 # game/scenario/1_canon.rpy:232
 translate english 9c065241:
 
     # tomas "Elle est toujours là. Même quand on ne la voit pas."
-    tomas ""
+    tomas "She's always there. Even when we can't see her."
 
 # game/scenario/1_canon.rpy:233
 translate english 8efba929:
 
     # tomas "Même sans image… elle reste là."
-    tomas ""
+    tomas "Even without an image... she's still here."
 
 # game/scenario/1_canon.rpy:254
 translate english 15c3722d:
 
     # lysa "Tu as remarqué ça ?"
-    lysa ""
+    lysa "Did you notice that?"
 
 # game/scenario/1_canon.rpy:266
 translate english 3cc805a4:
 
     # lysa neutre "Aucun ordre."
-    lysa neutre ""
+    lysa neutre "No orders."
 
 # game/scenario/1_canon.rpy:269
 translate english 40486bf3:
 
     # lysa fatigue "... Silence radio."
-    lysa fatigue ""
+    lysa fatigue "...Radio silence."
 
 # game/scenario/1_canon.rpy:307
 translate english c3442e12:
 
     # elias "… Et après ? Tu comptes faire quoi ?"
-    elias ""
+    elias "...And then? What are you planning to do?"
 
 # game/scenario/1_canon.rpy:320
 translate english ec1b287d:
 
     # elen "Mais attendre… c’est aussi super risqué, tu trouves pas ?"
-    elen ""
+    elen "But waiting... that's super risky too, don't you think?"
 
 # game/scenario/1_canon.rpy:321
 translate english 13110c18:
 
     # elen "On mise sur le fait que ça va pas empirer…"
-    elen ""
+    elen "We're betting things won't get worse..."
 
 # game/scenario/1_canon.rpy:326
 translate english 6892ac31:
 
     # tomas "Tout ça… c’est un pari, non ? Tout le temps."
-    tomas ""
+    tomas "All this... it's a gamble, isn't it? All the time."
 
 # game/scenario/1_canon.rpy:327
 translate english 010561c8:
 
     # tomas "On s’est tous fait prendre de court. Moi le premier."
-    tomas ""
+    tomas "We were all caught off guard. Me first."
 
 # game/scenario/1_canon.rpy:328
 translate english 74213a89:
 
     # tomas "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
-    tomas ""
+    tomas "Even people from the districts... they looked completely blindsided."
 
 # game/scenario/1_canon.rpy:465
 translate english 8a05cd65:
 
     # elen "Décider de quoi exactement ?"
-    elen ""
+    elen "Decide exactly what?"
 
 # game/scenario/1_canon.rpy:466
 translate english 2bfc8e7f:
 
     # elen "Attends, explique-moi encore, je suis larguée là."
-    elen ""
+    elen "Wait, explain again, I'm totally lost."
 
 # game/scenario/1_canon.rpy:664
 translate english f12605d5:
 
     # lysa blase "L’unanimité ?"
-    lysa blase ""
+    lysa blase "Unanimity?"
 
 # game/scenario/1_canon.rpy:665
 translate english e2eebb5a:
 
     # lysa blase "C’est le piège ultime."
-    lysa blase ""
+    lysa blase "That's the ultimate trap."
 
 # game/scenario/1_canon.rpy:666
 translate english e159afd8:
 
     # lysa blase "En vrai, c’est quasi impossible."
-    lysa blase ""
+    lysa blase "In reality, it's almost impossible."
 
 # game/scenario/1_canon.rpy:667
 translate english 85da3d66:
 
     # lysa "Soit tu convaincs tout le monde…"
-    lysa ""
+    lysa "Either you convince everyone..."
 
 # game/scenario/1_canon.rpy:668
 translate english 47ef3003:
 
     # lysa "soit tu les écrases."
-    lysa ""
+    lysa "or you crush them."
 
 # game/scenario/1_canon.rpy:669
 translate english 9139a0a3:
 
     # lysa fatigue "Maintenant je pige pourquoi elle dit que ce sera pas simple."
-    lysa fatigue ""
+    lysa fatigue "Now I get why she says this won't be simple."
 
 # game/scenario/1_canon.rpy:672
 translate english 39987483:
 
     # tomas "Ou alors… faire des compromis."
-    tomas ""
+    tomas "Or... make compromises."
 
 # game/scenario/1_canon.rpy:698
 translate english 790285c9:
 
     # elen "Le fait qu’on ait le droit de proposer des amendements…"
-    elen ""
+    elen "The fact we're allowed to propose amendments..."
 
 # game/scenario/1_canon.rpy:699
 translate english 1592a195:
 
     # elen "Franchement, dans ce merdier, c’est déjà énorme."
-    elen ""
+    elen "Honestly, in this mess, that's already huge."
 
 # game/scenario/1_canon.rpy:700
 translate english 4c694d68:
 
     # elen "C’est comme… une toute petite fenêtre ouverte. Ça fait du bien de respirer cinq secondes."
-    elen ""
+    elen "It's like... a tiny window opening. Breathing for five seconds feels good."
 
 # game/scenario/1_canon.rpy:714
 translate english 7f8cc7f4:
 
     # mara "Vous parlez tous comme si on venait de gagner au loto."
-    mara ""
+    mara "You all sound like we just won the lottery."
 
 # game/scenario/1_canon.rpy:715
 translate english 05491dd2:
 
     # mara "On est dans une putain de cage, les gars."
-    mara ""
+    mara "We're in a fucking cage, guys."
 
 # game/scenario/1_canon.rpy:716
 translate english de2f4e00:
 
     # mara "Avec un bouton ‘vote’ et un nœud rose dessus pour faire genre que c’est cadeau."
-    mara ""
+    mara "With a 'vote' button and a pink bow on it so it looks like a gift."
 
 # game/scenario/1_canon.rpy:736
 translate english d3c2f07e:
 
     # lysa neutre "On est filmés en permanence."
-    lysa neutre ""
+    lysa neutre "We're being filmed all the time."
 
 # game/scenario/1_canon.rpy:737
 translate english 7bbf1250:
 
     # lysa "IA qui mate et diffuse tout."
-    lysa ""
+    lysa "AI watches and broadcasts everything."
 
 # game/scenario/1_canon.rpy:738
 translate english 094c9a0c:
 
     # lysa blase "Son idée du ‘cadre sécurisé’, apparemment."
-    lysa blase ""
+    lysa blase "Her idea of a 'safe framework,' apparently."
 
 # game/scenario/1_canon.rpy:739
 translate english 825fb225:
 
     # lysa "La pression, ça empêche de péter un câble."
-    lysa ""
+    lysa "Pressure keeps people from snapping."
 
 # game/scenario/1_canon.rpy:740
 translate english 63081b2d:
 
     # lysa fatigue "... En théorie."
-    lysa fatigue ""
+    lysa fatigue "...In theory."
 
 # game/scenario/1_canon.rpy:753
 translate english 7eab6ba6:
 
     # julian "Moi je trouve ça carrément bandant."
-    julian ""
+    julian "I think it's straight-up hot."
 
 # game/scenario/1_canon.rpy:756
 translate english 68c84ba6:
 
     # julian "Enfin !"
-    julian ""
+    julian "Finally!"
 
 # game/scenario/1_canon.rpy:757
 translate english 7099c814:
 
     # julian "Un endroit où on peut vraiment parler, peser sur les règles…"
-    julian ""
+    julian "A place where we can really talk, really influence the rules..."
 
 # game/scenario/1_canon.rpy:758
 translate english 2ca1db03:
 
     # julian "… et où les gens vont regarder. Pour de vrai."
-    julian ""
+    julian "...and where people are going to watch. For real."
 
 # game/scenario/1_canon.rpy:768
 translate english db1ccf28:
 
     # julian "Si je dois être coincé ici trente jours… autant que ce soit légendaire."
-    julian ""
+    julian "If I'm stuck here for thirty days... might as well make it legendary."
 
 # game/scenario/1_canon.rpy:769
 translate english 6f177207:
 
     # julian "Et autant en profiter pour rendre la vie un peu moins pourrie aux autres, non ?"
-    julian ""
+    julian "And while we're at it, maybe make life a little less shitty for everyone else, right?"
 
 # game/scenario/1_canon.rpy:784
 translate english 7b499056:
@@ -6728,7 +6728,7 @@ translate english dae65a3d:
 translate english 3ae3afb6:
 
     # lysa fatigue "La méthode est déjà écrite."
-    lysa fatigue ""
+    lysa fatigue "...Radio silence."
 
 # game/scenario/1_canon.rpy:828
 translate english 65c33c99:
@@ -6746,7 +6746,7 @@ translate english 1c28a0d4:
 translate english 39d67f97:
 
     # lysa neutre "On visite."
-    lysa neutre ""
+    lysa neutre "No orders."
 
 # game/scenario/1_canon.rpy:845
 translate english 8f591d90:
@@ -6758,7 +6758,7 @@ translate english 8f591d90:
 translate english 4ee91d69:
 
     # lysa fatigue "Surtout au début."
-    lysa fatigue ""
+    lysa fatigue "...Radio silence."
 
 # game/scenario/1_canon.rpy:849
 translate english 6625ee5f:
@@ -6788,7 +6788,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_149b29b8:
 translate english KAMI_MESSAGE_APRES_VISITE_1bc75170:
 
     # mara "Kami supporte pas qu’on lui fasse perdre son temps, soi-disant."
-    mara ""
+    mara "Kami doesn't forgive people wasting her time."
 
 # game/scenario/1_canon.rpy:993
 translate english KAMI_MESSAGE_APRES_VISITE_a53592f3:
@@ -6800,7 +6800,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_a53592f3:
 translate english KAMI_MESSAGE_APRES_VISITE_f2abc07a:
 
     # iris "Super. Vraiment super."
-    iris ""
+    iris "We're being summoned like kids."
 
 # game/scenario/1_canon.rpy:999
 translate english KAMI_MESSAGE_APRES_VISITE_4a8ba040:
@@ -6824,7 +6824,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_a10d4a6a:
 translate english KAMI_MESSAGE_APRES_VISITE_6cdc09be:
 
     # julian "J’ai trop envie de voir jusqu’où on peut pousser le bordel dans cet endroit…"
-    julian ""
+    julian "I know."
 
 # game/scenario/1_canon.rpy:1011
 translate english KAMI_MESSAGE_APRES_VISITE_632f7d15:
@@ -7082,7 +7082,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_406363fe:
 translate english KAMI_MESSAGE_APRES_VISITE_f8e2a19b:
 
     # lysa fatigue "Personne pourra prouver le contraire."
-    lysa fatigue ""
+    lysa fatigue "...Radio silence."
 
 # game/scenario/1_canon.rpy:1352
 translate english KAMI_MESSAGE_APRES_VISITE_43cf01d0:
@@ -7401,4 +7401,3 @@ translate english KAMI_MESSAGE_APRES_VISITE_83e2d9c6:
 
     # elias "Ça va être un autre calibre."
     elias ""
-
