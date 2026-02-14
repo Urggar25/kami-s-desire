@@ -4,5 +4,5 @@
 translate english DORTOIR_ENTREE_d5942c2e:
 
     # "Je rentre dans les dortoirs"
-    ""
+    "I'm going back to the dormitories."
 

@@ -5327,101 +5327,100 @@ translate english 6581da91:
 translate english 056c6bb7:
 
     # "Les murs du bâtiment étaient presque entièrement détruits."
-    ""
+    "The building’s walls were almost completely destroyed."
 
 # game/scenario/0_canon.rpy:103
 translate english 77eaf905:
 
     # med2 "Reprenez votre badge, d’accord ?"
-    med2 ""
+    med2 "Take your badge back, okay?"
 
 # game/scenario/0_canon.rpy:104
 translate english 62dbbdcc:
 
     # med2 "Respirez… voilà."
-    med2 ""
+    med2 "Breathe… there you go."
 
 # game/scenario/0_canon.rpy:105
 translate english d73fe0c3:
 
     # med2 "Puis recommencez. Juste une fois."
-    med2 ""
+    med2 "Then start again. Just once."
 
 # game/scenario/0_canon.rpy:193
 translate english 8278ac2f:
 
     # resp "Fin de séance, madame. Merci."
-    resp ""
+    resp "Session’s over, ma’am. Thank you."
 
 # game/scenario/0_canon.rpy:1445
 translate english 19e22620:
 
     # lysa blase "... Calme ?"
-    lysa blase ""
+    lysa blase "... Calm?"
 
 # game/scenario/0_canon.rpy:1446
 translate english 87af5372:
 
     # lysa "J’ai même pas eu le temps de rentrer chez moi."
-    lysa ""
+    lysa "I didn’t even have time to go home."
 
 # game/scenario/0_canon.rpy:1447
 translate english 17bf1028:
 
     # lysa "Donc non."
-    lysa ""
+    lysa "So no."
 
 # game/scenario/0_canon.rpy:1453
 translate english 5e9c8712:
 
     # lysa doute "C’est lui ?"
-    lysa doute ""
+    lysa doute "That’s him?"
 
 # game/scenario/0_canon.rpy:1454
 translate english 808afb79:
 
     # lysa "... Super."
-    lysa ""
+    lysa "... Great."
 
 # game/scenario/0_canon.rpy:1489
 translate english 710a31e3:
 
     # lysa fatigue "Donc on s’endort."
-    lysa fatigue ""
+    lysa fatigue "So we fall asleep."
 
 # game/scenario/0_canon.rpy:1490
 translate english 9ef6c66a:
 
     # lysa "Et pouf."
-    lysa ""
+    lysa "And poof."
 
 # game/scenario/0_canon.rpy:1491
 translate english 50d6c3f7:
 
     # lysa "Réveil ailleurs, zéro contrôle."
-    lysa ""
+    lysa "Wake up somewhere else, zero control."
 
 # game/scenario/0_canon.rpy:1492
 translate english 8793a98a:
 
     # lysa "Décidément c'est la foire aux horreurs ?"
-    lysa ""
+    lysa "So this is just a freak show, huh?"
 
 # game/scenario/0_canon.rpy:1518
 translate english 1404fed5:
 
     # lysa "Mais on a encore plusieurs heures ..!"
-    lysa ""
+    lysa "But we still have hours..!"
 
 # game/scenario/0_canon.rpy:1527
 translate english eae9c812:
 
     # lysa "On se présentera correctement quand la machine nous le demandera."
-    lysa ""
+    lysa "We’ll introduce ourselves properly when the machine asks us to."
 
 # game/scenario/0_canon.rpy:1528
 translate english b2376235:
 
     # lysa blase "Pas la peine de s’épuiser maintenant."
-    lysa blase ""
-
+    lysa blase "No point exhausting ourselves now."

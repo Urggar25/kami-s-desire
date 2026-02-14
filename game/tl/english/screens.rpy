@@ -332,13 +332,13 @@ translate english strings:
 
     # game/screens.rpy:762
     old "Langage"
-    new ""
+    new "Language"
 
     # game/screens.rpy:764
     old "Français"
-    new ""
+    new "French"
 
     # game/screens.rpy:765
     old "Anglais"
-    new ""
+    new "English"
 

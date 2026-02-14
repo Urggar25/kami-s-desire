@@ -3,6 +3,6 @@
 # game/scenario/salles/conclave.rpy:12
 translate english CONCLAVE_ENTREE_9160017a:
 
-    # "Je rentre dans le Conclave"
-    ""
+    # "Je rentre dans le Conclave."
+    "I am entering the Conclave."
 

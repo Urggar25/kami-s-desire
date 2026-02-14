@@ -28,7 +28,7 @@ translate english 6ce4cf75:
 translate english 834f7dbd:
 
     # think "Et là… je me réveille sur un siège."
-    think "And now... I wake up in a seat."
+    think "And now... I'm waking up in a seat."
 
 # game/scenario/1_canon.rpy:31
 translate english 7ca2b04d:
@@ -100,7 +100,7 @@ translate english b540c409:
 translate english 396229c3:
 
     # "Et sur chaque siège… quelqu’un."
-    "And in every seat... someone."
+    "And on every seat... someone."
 
 # game/scenario/1_canon.rpy:48
 translate english 843d2f80:
@@ -496,7 +496,7 @@ translate english 6d24597f:
 translate english f47f09ca:
 
     # "Parce que ça veut dire qu’on dépend du bouton “play” de quelqu’un d’autre."
-    "Because it means we're at someone else's mercy to hit play."
+    "Because it means someone else decides when this starts."
 
 # game/scenario/1_canon.rpy:199
 translate english 34115fb8:
@@ -790,7 +790,7 @@ translate english 4c755a4c:
 translate english a184235e:
 
     # "Derrière, une petite voix se fait entendre."
-    "Behind us, a small voice rises."
+    "From behind, a small voice speaks up."
 
 # game/scenario/1_canon.rpy:319
 translate english cdb11cf1:
@@ -832,7 +832,7 @@ translate english d3b7b5fd:
 translate english 3ca732bb:
 
     # "Juste la lucidité qui pique."
-    "Just sharp clarity stinging."
+    "Just the sting of clarity."
 
 # game/scenario/1_canon.rpy:332
 translate english 867d890b_1:
@@ -1018,7 +1018,7 @@ translate english 24597c82:
 translate english ad2f3b35:
 
     # kami "Parce que vous êtes douze."
-    kami "Because there are twelve of you."
+    kami "Because you're twelve."
 
 # game/scenario/1_canon.rpy:413
 translate english 64d29be3:
@@ -1048,7 +1048,7 @@ translate english 731508ec:
 translate english a58cf52d:
 
     # kami "Un test de vous."
-    kami "A test of you."
+    kami "A test of who you are."
 
 # game/scenario/1_canon.rpy:427
 translate english c55d9260:
@@ -1126,7 +1126,7 @@ translate english d82b98ca:
 translate english c42fb66f:
 
     # kami "Trente jours pendant lesquels vous allez décider."
-    kami "Thirty days in which you will decide things."
+    kami "Thirty days during which you'll decide."
 
 # game/scenario/1_canon.rpy:457
 translate english 7e0fc229:
@@ -1156,7 +1156,7 @@ translate english dfe4e658:
 translate english 2413853f:
 
     # kami "Celles qui encadrent ce monde."
-    kami "The ones that frame this world."
+    kami "The ones that shape this world."
 
 # game/scenario/1_canon.rpy:471
 translate english 23fde927:
@@ -1318,7 +1318,7 @@ translate english 18106bb9:
 translate english 48e2ca7e:
 
     # kami "Mais attention."
-    kami "But careful."
+    kami "But here's the catch."
 
 # game/scenario/1_canon.rpy:530
 translate english 4ee876f6:
@@ -1642,7 +1642,7 @@ translate english fe007f15:
 translate english 5ad5b461:
 
     # tomas "Ou à faire des compromis."
-    tomas "Or force compromises."
+    tomas "Or make compromises."
 
 # game/scenario/1_canon.rpy:667
 translate english e935c7ad:
@@ -2020,7 +2020,7 @@ translate english dcd25b35:
 translate english 9169115d:
 
     # elen "Se mettre d’accord sur une méthode."
-    elen "agree on a method."
+    elen "Agree on a method."
 
 # game/scenario/1_canon.rpy:817
 translate english 37f6cc2a:
@@ -2032,7 +2032,7 @@ translate english 37f6cc2a:
 translate english 13dd3bf3:
 
     # elen "Pour éviter que ça parte en guerre tout de suite."
-    elen "So this doesn't turn into war right away."
+    elen "So it doesn't turn into a war right away."
 
 # game/scenario/1_canon.rpy:821
 translate english bab77dc2:
@@ -2044,37 +2044,37 @@ translate english bab77dc2:
 translate english 16efdb36:
 
     # lysa "On est douze, enfermés, filmés."
-    lysa "We're twelve people, locked in, under cameras."
+    lysa "There's twelve of us—locked in, on camera."
 
 # game/scenario/1_canon.rpy:823
 translate english 5807f29c:
 
     # lysa "Et on peut se tuer sans conséquence ici."
-    lysa "And we can kill each other in here without consequences."
+    lysa "And in here, we can kill each other with no consequences."
 
 # game/scenario/1_canon.rpy:824
 translate english 78b846f5:
 
     # lysa "La méthode, elle est déjà écrite."
-    lysa "The method is already written."
+    lysa "The method's already written."
 
 # game/scenario/1_canon.rpy:828
 translate english 6343870f:
 
     # "Je vois des petits groupes se former."
-    "I see little groups starting to form."
+    "I watch small groups start to form."
 
 # game/scenario/1_canon.rpy:829
 translate english f4d00a89:
 
     # "Deux par-ci."
-    "Two here."
+    "Two over here."
 
 # game/scenario/1_canon.rpy:830
 translate english d769ae31:
 
     # "Trois par-là."
-    "Three there."
+    "Three over there."
 
 # game/scenario/1_canon.rpy:831
 translate english c059085b:
@@ -2086,13 +2086,13 @@ translate english c059085b:
 translate english f504bbeb:
 
     # "Des gens qui s’éloignent déjà, comme s’ils avaient peur d’être associés."
-    "People already drifting apart, like they're afraid to be associated."
+    "People already drifting apart, like they're scared of being associated with the wrong person."
 
 # game/scenario/1_canon.rpy:835
 translate english 891dc9b6:
 
     # noam "On fait quoi, nous ?"
-    noam "What do we do, then?"
+    noam "So what do we do?"
 
 # game/scenario/1_canon.rpy:838
 translate english 7bd2498d:
@@ -2104,13 +2104,13 @@ translate english 7bd2498d:
 translate english e41d2622:
 
     # lysa "On repère les lieux."
-    lysa "We map the place out."
+    lysa "We get the lay of the place."
 
 # game/scenario/1_canon.rpy:840
 translate english 1b2a5e15:
 
     # lysa "Et on évite de trop parler devant les caméras."
-    lysa "And we avoid talking too much in front of cameras."
+    lysa "And we avoid talking too much in front of the cameras."
 
 # game/scenario/1_canon.rpy:841
 translate english 62c70552:
@@ -2122,19 +2122,19 @@ translate english 62c70552:
 translate english ae7ddcbb:
 
     # elen "Je… je vais voir s’il y a une infirmerie."
-    elen "I... I'm gonna see if there's an infirmary."
+    elen "I... I'm going to see if there's an infirmary."
 
 # game/scenario/1_canon.rpy:845
 translate english 03432f80:
 
     # elen "Ou au moins du matériel."
-    elen "Or at least supplies."
+    elen "Or at least some supplies."
 
 # game/scenario/1_canon.rpy:846
 translate english 3c45edc4:
 
     # elen "On sait jamais."
-    elen "You never know."
+    elen "Just in case."
 
 # game/scenario/1_canon.rpy:849
 translate english bb8d21ae:
@@ -2146,7 +2146,7 @@ translate english bb8d21ae:
 translate english 57dcad50:
 
     # "Tout le monde quitte peu à peu la pièce."
-    "Little by little, everyone leaves the room."
+    "Little by little, everyone clears out of the room."
 
 # game/scenario/1_canon.rpy:855
 translate english 2aeb911c:
@@ -2158,7 +2158,7 @@ translate english 2aeb911c:
 translate english bed45dab:
 
     # "Je devrais aller faire un tour également."
-    "I should go look around too."
+    "I should take a look around too."
 
 # game/scenario/1_canon.rpy:860
 translate english 6df65576:
@@ -2182,7 +2182,7 @@ translate english e05ca73f:
 translate english fb67b769:
 
     # tuto "J'espère bien !"
-    tuto "I sure hope so!"
+    tuto "You'd better be!"
 
 # game/scenario/1_canon.rpy:867
 translate english 8c776e4c:
@@ -2194,31 +2194,31 @@ translate english 8c776e4c:
 translate english c46e538f:
 
     # tuto "Toutes les pièces vous sont ouvertes afin que vous puissiez explorer chacune des pièces convenablement."
-    tuto "All rooms are open so you can explore each area properly."
+    tuto "All rooms are open, so you can explore each one properly."
 
 # game/scenario/1_canon.rpy:869
 translate english 2078a0e7:
 
     # tuto "Pour accéder à une salle spécifique, rien de plus simple : il suffit de cliquer dessus."
-    tuto "To access a specific room, it's simple: just click on it."
+    tuto "To go to a specific room, it's simple: just click on it."
 
 # game/scenario/1_canon.rpy:870
 translate english 86cd9af5:
 
     # tuto "Dans certaines pièces, certaines interactions peuvent être cruciales pour débloquer des fins différentes."
-    tuto "In some rooms, certain interactions can be crucial for unlocking different endings."
+    tuto "In some rooms, certain interactions can be crucial to unlocking different endings."
 
 # game/scenario/1_canon.rpy:871
 translate english 1f66a397:
 
     # tuto "Cette mécanique complète la mécanique de choix afin d'ouvrir les possibles."
-    tuto "This system complements the choice system to open up more possibilities."
+    tuto "This mechanic complements choices and opens up new possibilities."
 
 # game/scenario/1_canon.rpy:872
 translate english 1a6042d1:
 
     # tuto "N'hésitez donc pas à explorer et à interagir avec votre environnement."
-    tuto "So don't hesitate to explore and interact with your environment."
+    tuto "So don't hesitate to explore and interact with your surroundings."
 
 # game/scenario/1_canon.rpy:873
 translate english bf38bea5:
@@ -2230,103 +2230,103 @@ translate english bf38bea5:
 translate english KAMI_MESSAGE_APRES_VISITE_ccc50beb:
 
     # think "J’avais fini par oublier l’heure."
-    think ""
+    think "I’d ended up losing track of time."
 
 # game/scenario/1_canon.rpy:907
 translate english KAMI_MESSAGE_APRES_VISITE_1096051a:
 
     # think "Ici, le temps a une façon de te faire croire qu’il s’est arrêté."
-    think ""
+    think "In here, time has a way of making you think it’s stopped."
 
 # game/scenario/1_canon.rpy:908
 translate english KAMI_MESSAGE_APRES_VISITE_cd4d6fea:
 
     # think "Et puis non."
-    think ""
+    think "Then you realize it hasn’t."
 
 # game/scenario/1_canon.rpy:909
 translate english KAMI_MESSAGE_APRES_VISITE_d9e224b3:
 
     # think "Il avance. Lentement, mais il ne recule jamais."
-    think ""
+    think "It keeps moving. Slowly—but it never goes back."
 
 # game/scenario/1_canon.rpy:911
 translate english KAMI_MESSAGE_APRES_VISITE_bece53fb:
 
     # "Un écran mural grésille."
-    ""
+    "A wall screen crackles."
 
 # game/scenario/1_canon.rpy:912
 translate english KAMI_MESSAGE_APRES_VISITE_d4fc5b0f:
 
     # "Un second s’allume plus loin."
-    ""
+    "A second one lights up further down."
 
 # game/scenario/1_canon.rpy:913
 translate english KAMI_MESSAGE_APRES_VISITE_966c115b:
 
     # "Puis un troisième."
-    ""
+    "Then a third."
 
 # game/scenario/1_canon.rpy:914
 translate english KAMI_MESSAGE_APRES_VISITE_2b47923d:
 
     # "Même signal, partout, identique."
-    ""
+    "Same signal everywhere—identical."
 
 # game/scenario/1_canon.rpy:917
 translate english KAMI_MESSAGE_APRES_VISITE_c5396df9:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:921
 translate english KAMI_MESSAGE_APRES_VISITE_8d80e671:
 
     # kami "Il est bientôt dix-huit heures."
-    kami ""
+    kami "It’s almost six o’clock."
 
 # game/scenario/1_canon.rpy:922
 translate english KAMI_MESSAGE_APRES_VISITE_8cc1389f:
 
     # kami "Votre visite libre touche à sa fin."
-    kami ""
+    kami "Your free exploration is coming to an end."
 
 # game/scenario/1_canon.rpy:924
 translate english KAMI_MESSAGE_APRES_VISITE_8be32f4c:
 
     # kami "J’espère que vous avez trouvé ça…"
-    kami ""
+    kami "I hope you found it..."
 
 # game/scenario/1_canon.rpy:925
 translate english KAMI_MESSAGE_APRES_VISITE_a88fb02a:
 
     # kami "inspirant et complet."
-    kami ""
+    kami "inspiring. And thorough."
 
 # game/scenario/1_canon.rpy:929
 translate english KAMI_MESSAGE_APRES_VISITE_49305316:
 
     # kami "On a mis du cœur à l’ouvrage."
-    kami ""
+    kami "We really poured our hearts into it."
 
 # game/scenario/1_canon.rpy:930
 translate english KAMI_MESSAGE_APRES_VISITE_c7f4f0c1:
 
     # kami "Enfin."
-    kami ""
+    kami "Well."
 
 # game/scenario/1_canon.rpy:931
 translate english KAMI_MESSAGE_APRES_VISITE_96b6154a:
 
     # kami "On a surtout mis des ingénieurs passionnés."
-    kami "We mostly put passionate engineers on it."
+    kami "Mostly, we put passionate engineers on it."
 
 # game/scenario/1_canon.rpy:937
 translate english KAMI_MESSAGE_APRES_VISITE_ab8a9d20:
 
     # kami "Vous êtes tous convoqués."
-    kami "You are all summoned."
+    kami "You’re all being summoned."
 
 # game/scenario/1_canon.rpy:938
 translate english KAMI_MESSAGE_APRES_VISITE_5e86b9d1:
@@ -2338,7 +2338,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_5e86b9d1:
 translate english KAMI_MESSAGE_APRES_VISITE_37b7a4b7:
 
     # kami "Tout de suite."
-    kami "Right now."
+    kami "Now."
 
 # game/scenario/1_canon.rpy:943
 translate english KAMI_MESSAGE_APRES_VISITE_67cee457:
@@ -2350,7 +2350,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_67cee457:
 translate english KAMI_MESSAGE_APRES_VISITE_311db366:
 
     # kami "Je suis déjà installée."
-    kami "I'm already seated."
+    kami "I’m already settled in."
 
 # game/scenario/1_canon.rpy:945
 translate english KAMI_MESSAGE_APRES_VISITE_69a97d3d:
@@ -2362,13 +2362,13 @@ translate english KAMI_MESSAGE_APRES_VISITE_69a97d3d:
 translate english KAMI_MESSAGE_APRES_VISITE_5967f67d:
 
     # kami "Ne me faites pas perdre mon temps."
-    kami "Don't waste my time."
+    kami "Don’t waste my time."
 
 # game/scenario/1_canon.rpy:950
 translate english KAMI_MESSAGE_APRES_VISITE_05d01e24:
 
     # kami "C’est le seul truc que je ne vous pardonnerai pas."
-    kami "It's the one thing I won't forgive."
+    kami "It’s the one thing I won’t forgive."
 
 # game/scenario/1_canon.rpy:953
 translate english KAMI_MESSAGE_APRES_VISITE_c5396df9_1:
@@ -2386,19 +2386,19 @@ translate english KAMI_MESSAGE_APRES_VISITE_5c51b6ad:
 translate english KAMI_MESSAGE_APRES_VISITE_c0acf03d:
 
     # think "A partir de là, le Conclave débute vraiment."
-    think "From this point on, the Conclave really starts."
+    think "From this point on, the Conclave really begins."
 
 # game/scenario/1_canon.rpy:959
 translate english KAMI_MESSAGE_APRES_VISITE_d7274cdd:
 
     # think "Ce n'est plus possible de faire marche arrière."
-    think "There's no turning back now."
+    think "There’s no turning back."
 
 # game/scenario/1_canon.rpy:960
 translate english KAMI_MESSAGE_APRES_VISITE_2ea558ca:
 
     # think "Enfin, ça n'a jamais été possible mais bon ..."
-    think "Not that there ever was, but still..."
+    think "Not that it ever was, but still..."
 
 # game/scenario/1_canon.rpy:964
 translate english KAMI_MESSAGE_APRES_VISITE_b21efa8c:
@@ -2410,7 +2410,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_b21efa8c:
 translate english KAMI_MESSAGE_APRES_VISITE_9f7593ba:
 
     # "On évite tous de se regarder, comme si on était géné de quelques choses."
-    "We all avoid looking at each other, like we're embarrassed about something."
+    "We all avoid looking at each other, like we’re embarrassed about something."
 
 # game/scenario/1_canon.rpy:966
 translate english KAMI_MESSAGE_APRES_VISITE_4d6c5c39:
@@ -2422,7 +2422,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_4d6c5c39:
 translate english KAMI_MESSAGE_APRES_VISITE_fae8ee44:
 
     # "La salle du Conclave n'a pas changé depuis tout à l'heure."
-    "The Conclave room hasn't changed since earlier."
+    "The Conclave room hasn’t changed since earlier."
 
 # game/scenario/1_canon.rpy:969
 translate english KAMI_MESSAGE_APRES_VISITE_83139994:
@@ -2440,19 +2440,19 @@ translate english KAMI_MESSAGE_APRES_VISITE_eebebeee:
 translate english KAMI_MESSAGE_APRES_VISITE_4186c644:
 
     # "Et on est toujours insignifiant dans ce monde gigantesque."
-    "And we're still insignificant in this gigantic world."
+    "And we’re still insignificant in this gigantic world."
 
 # game/scenario/1_canon.rpy:973
 translate english KAMI_MESSAGE_APRES_VISITE_66b56adb:
 
     # "Je m’assois et ceux déjà présents m'imitent."
-    "I sit down, and the ones already there mirror me."
+    "I sit down, and the ones already there follow suit."
 
 # game/scenario/1_canon.rpy:974
 translate english KAMI_MESSAGE_APRES_VISITE_8d42de62:
 
     # "Les autres arrivent par grappes."
-    "The others arrive in clusters."
+    "The others come in clusters."
 
 # game/scenario/1_canon.rpy:975
 translate english KAMI_MESSAGE_APRES_VISITE_0a0c7b28:
@@ -2464,7 +2464,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_0a0c7b28:
 translate english KAMI_MESSAGE_APRES_VISITE_e65944f6:
 
     # "Mais personne ne parle. On attends."
-    "But no one talks. We wait."
+    "But nobody speaks. We wait."
 
 # game/scenario/1_canon.rpy:980
 translate english KAMI_MESSAGE_APRES_VISITE_062f9c27:
@@ -2476,7 +2476,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_062f9c27:
 translate english KAMI_MESSAGE_APRES_VISITE_b19ee139:
 
     # ryn "Me dites pas qu’on va encore attendre pour rien."
-    ryn "Don't tell me we're waiting again for nothing."
+    ryn "Don’t tell me we’re going to wait again for nothing."
 
 # game/scenario/1_canon.rpy:986
 translate english KAMI_MESSAGE_APRES_VISITE_86913f6f:
@@ -2494,7 +2494,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_ea4368bb:
 translate english KAMI_MESSAGE_APRES_VISITE_d6ad8367:
 
     # mara "Kami ne pardonne pas qu’on lui fasse perdre son temps."
-    mara "Kami doesn't forgive people wasting her time."
+    mara "Kami doesn’t forgive you for wasting her time."
 
 # game/scenario/1_canon.rpy:993
 translate english KAMI_MESSAGE_APRES_VISITE_f4df5a1c:
@@ -2506,31 +2506,31 @@ translate english KAMI_MESSAGE_APRES_VISITE_f4df5a1c:
 translate english KAMI_MESSAGE_APRES_VISITE_0faf4915:
 
     # iris "On est convoqués comme des gosses."
-    iris "We're being summoned like kids."
+    iris "We’re being called in like kids."
 
 # game/scenario/1_canon.rpy:999
 translate english KAMI_MESSAGE_APRES_VISITE_167253f5:
 
     # julian "Moi je trouve ça amusant."
-    julian "I find it fun, actually."
+    julian "I think it’s funny."
 
 # game/scenario/1_canon.rpy:1000
 translate english KAMI_MESSAGE_APRES_VISITE_9c67a74c:
 
     # julian "Je me demande bien ce qu'on va pouvoir changer dans ce drôle d'endroit."
-    julian "I'm really curious what we can change in this weird place."
+    julian "I can’t wait to see what we’ll be able to change in this weird place."
 
 # game/scenario/1_canon.rpy:1005
 translate english KAMI_MESSAGE_APRES_VISITE_9b0ca137:
 
     # elen "Pas vraiment sûre qu'on puisse changer grand chose…"
-    elen "Not really sure we can change much..."
+    elen "I’m not really sure we can change much..."
 
 # game/scenario/1_canon.rpy:1006
 translate english KAMI_MESSAGE_APRES_VISITE_d09cf0ef:
 
     # elen "Tu sais très bien que Kami a droit de vie et mort sur tout le monde."
-    elen "You know very well Kami has power of life and death over everyone."
+    elen "You know perfectly well Kami has power of life and death over everyone."
 
 # game/scenario/1_canon.rpy:1010
 translate english KAMI_MESSAGE_APRES_VISITE_26c4e2fb:
@@ -2542,7 +2542,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_26c4e2fb:
 translate english KAMI_MESSAGE_APRES_VISITE_db3a865b:
 
     # julian "C’est pour ça que c’est intéressant."
-    julian "That's why it's interesting."
+    julian "That’s why it’s interesting."
 
 # game/scenario/1_canon.rpy:1012
 translate english KAMI_MESSAGE_APRES_VISITE_2c320e0d:
@@ -2560,3727 +2560,3727 @@ translate english KAMI_MESSAGE_APRES_VISITE_343dbaca:
 translate english KAMI_MESSAGE_APRES_VISITE_9c95fdc3:
 
     # "L’écran central s’allume."
-    ""
+    "The central screen lights up."
 
 # game/scenario/1_canon.rpy:1016
 translate english KAMI_MESSAGE_APRES_VISITE_d1b11554:
 
     # "Un halo blanc."
-    ""
+    "A white glow."
 
 # game/scenario/1_canon.rpy:1017
 translate english KAMI_MESSAGE_APRES_VISITE_e8a08a24:
 
     # "Et Kami apparaît."
-    ""
+    "And Kami appears."
 
 # game/scenario/1_canon.rpy:1021
 translate english KAMI_MESSAGE_APRES_VISITE_995f9436:
 
     # kami "Bonjour. Je vois que vous êtes tous arrivés."
-    kami ""
+    kami "Hello. I see you’ve all arrived."
 
 # game/scenario/1_canon.rpy:1022
 translate english KAMI_MESSAGE_APRES_VISITE_fb6636d9:
 
     # kami "Mes douze représentants."
-    kami ""
+    kami "My twelve representatives."
 
 # game/scenario/1_canon.rpy:1026
 translate english KAMI_MESSAGE_APRES_VISITE_485be494:
 
     # kami "Oh que ça faisait longtemps que j'en révais de ce Conclave !"
-    kami ""
+    kami "Oh, I’ve been dreaming of this Conclave for so long!"
 
 # game/scenario/1_canon.rpy:1027
 translate english KAMI_MESSAGE_APRES_VISITE_1280daf7:
 
     # kami "C'était un travail monstre de tout organiser !"
-    kami ""
+    kami "It took a monstrous amount of work to organize everything!"
 
 # game/scenario/1_canon.rpy:1028
 translate english KAMI_MESSAGE_APRES_VISITE_6d185e85:
 
     # kami "Mais je pense que ça peut valoir le coup !"
-    kami ""
+    kami "But I think it could be worth it!"
 
 # game/scenario/1_canon.rpy:1034
 translate english KAMI_MESSAGE_APRES_VISITE_e9329a3b:
 
     # kami "Mais revenons à nos moutons."
-    kami ""
+    kami "But back to business."
 
 # game/scenario/1_canon.rpy:1035
 translate english KAMI_MESSAGE_APRES_VISITE_9c69b190:
 
     # kami "Je vais être claire."
-    kami ""
+    kami "Let me be clear."
 
 # game/scenario/1_canon.rpy:1036
 translate english KAMI_MESSAGE_APRES_VISITE_187a8197:
 
     # kami "Ici, dans le Conclave…"
-    kami ""
+    kami "Here, in the Conclave..."
 
 # game/scenario/1_canon.rpy:1037
 translate english KAMI_MESSAGE_APRES_VISITE_98df9b1b:
 
     # kami "les Commandements sont suspendus, abolis."
-    kami ""
+    kami "the Commandments are suspended—abolished."
 
 # game/scenario/1_canon.rpy:1038
 translate english KAMI_MESSAGE_APRES_VISITE_13fd0ed4:
 
     # kami "Toutes les règles que vous connaissiez jusque là n'ont plus lieu d'être."
-    kami ""
+    kami "Every rule you knew up to now no longer applies."
 
 # game/scenario/1_canon.rpy:1042
 translate english KAMI_MESSAGE_APRES_VISITE_90affde9:
 
     # kami "Vous êtes libre d'avoir la liberté absolue !"
-    kami ""
+    kami "You’re free to have absolute freedom!"
 
 # game/scenario/1_canon.rpy:1043
 translate english KAMI_MESSAGE_APRES_VISITE_b777e7af:
 
     # kami "Pas de commandement, pas de loi, pas de police."
-    kami ""
+    kami "No Commandments, no laws, no police."
 
 # game/scenario/1_canon.rpy:1044
 translate english KAMI_MESSAGE_APRES_VISITE_0a7362b0:
 
     # kami "Juste vous."
-    kami ""
+    kami "Just you."
 
 # game/scenario/1_canon.rpy:1046
 translate english KAMI_MESSAGE_APRES_VISITE_d82f62f1:
 
     # "Un frisson traverse la salle."
-    ""
+    "A shiver runs through the room."
 
 # game/scenario/1_canon.rpy:1050
 translate english KAMI_MESSAGE_APRES_VISITE_dcc53124:
 
     # kami "Oui."
-    kami ""
+    kami "Yes."
 
 # game/scenario/1_canon.rpy:1051
 translate english KAMI_MESSAGE_APRES_VISITE_18a36786:
 
     # kami "Je vois que certains d'entre vous arborrent déjà des sourires."
-    kami ""
+    kami "I can see some of you are already smiling."
 
 # game/scenario/1_canon.rpy:1052
 translate english KAMI_MESSAGE_APRES_VISITE_db30e546:
 
     # kami "Mais..."
-    kami ""
+    kami "But..."
 
 # game/scenario/1_canon.rpy:1056
 translate english KAMI_MESSAGE_APRES_VISITE_08acaeb8:
 
     # kami "Ne vous enflammez pas."
-    kami ""
+    kami "Don’t get carried away."
 
 # game/scenario/1_canon.rpy:1057
 translate english KAMI_MESSAGE_APRES_VISITE_d5a839d0:
 
     # kami "Ça ne veut pas dire que vous pouvez tout faire."
-    kami ""
+    kami "That doesn’t mean you can do anything you want."
 
 # game/scenario/1_canon.rpy:1058
 translate english KAMI_MESSAGE_APRES_VISITE_c877e121:
 
     # kami "Je me permets juste cet amènagement pour pouvoir vous observer sans bruit de fond."
-    kami ""
+    kami "I’m only allowing this adjustment so I can observe you without any background noise."
 
 # game/scenario/1_canon.rpy:1064
 translate english KAMI_MESSAGE_APRES_VISITE_72fd6b93:
 
     # kami "Donc."
-    kami ""
+    kami "So."
 
 # game/scenario/1_canon.rpy:1065
 translate english KAMI_MESSAGE_APRES_VISITE_09cf1665:
 
     # kami "Il n'y a plus de Commandements ici."
-    kami ""
+    kami "There are no more Commandments here."
 
 # game/scenario/1_canon.rpy:1066
 translate english KAMI_MESSAGE_APRES_VISITE_609b4fd0:
 
     # kami "Mais il reste certaines règles."
-    kami ""
+    kami "But there are still some rules."
 
 # game/scenario/1_canon.rpy:1067
 translate english KAMI_MESSAGE_APRES_VISITE_5b142acc:
 
     # kami "Celles du Conclave."
-    kami ""
+    kami "The Conclave’s rules."
 
 # game/scenario/1_canon.rpy:1069
 translate english KAMI_MESSAGE_APRES_VISITE_38e25870:
 
     # kami "Règle une."
-    kami ""
+    kami "Rule one."
 
 # game/scenario/1_canon.rpy:1070
 translate english KAMI_MESSAGE_APRES_VISITE_036b102d:
 
     # kami "Interdiction de retourner dans votre district."
-    kami ""
+    kami "You are forbidden from returning to your district."
 
 # game/scenario/1_canon.rpy:1071
 translate english KAMI_MESSAGE_APRES_VISITE_a72b8c23:
 
     # kami "Interdiction d’aller dans un autre."
-    kami ""
+    kami "You are forbidden from going to another."
 
 # game/scenario/1_canon.rpy:1072
 translate english KAMI_MESSAGE_APRES_VISITE_f662ba89:
 
     # kami "Jusqu’à la fin du trentième jour."
-    kami ""
+    kami "Until the end of day thirty."
 
 # game/scenario/1_canon.rpy:1076
 translate english KAMI_MESSAGE_APRES_VISITE_6c337491:
 
     # kami "Vous restez ici."
-    kami ""
+    kami "You stay here."
 
 # game/scenario/1_canon.rpy:1079
 translate english KAMI_MESSAGE_APRES_VISITE_e7d9005a:
 
     # kami "Pendant trente petit jour, nous allons nous amuser ensemble."
-    kami ""
+    kami "For thirty little days, we’re going to have fun together."
 
 # game/scenario/1_canon.rpy:1083
 translate english KAMI_MESSAGE_APRES_VISITE_ba115f0e:
 
     # kami "Règle deux."
-    kami ""
+    kami "Rule two."
 
 # game/scenario/1_canon.rpy:1084
 translate english KAMI_MESSAGE_APRES_VISITE_e45f9f31:
 
     # kami "Interdiction d’initier un contact vers l’extérieur."
-    kami ""
+    kami "You are forbidden from initiating contact with the outside."
 
 # game/scenario/1_canon.rpy:1088
 translate english KAMI_MESSAGE_APRES_VISITE_a7ac0375:
 
     # kami "Alors que je ne vous vois pas trifouiller au matériel de communication."
-    kami ""
+    kami "And I’d better not catch you messing with the communications equipment."
 
 # game/scenario/1_canon.rpy:1089
 translate english KAMI_MESSAGE_APRES_VISITE_d0c02391:
 
     # kami "Si jamais quelqu'un vous appelle, vous pouvez répondre."
-    kami ""
+    kami "If someone calls you, you may answer."
 
 # game/scenario/1_canon.rpy:1090
 translate english KAMI_MESSAGE_APRES_VISITE_7fbe81fa:
 
     # kami "Mais pas l'inverse."
-    kami ""
+    kami "But not the other way around."
 
 # game/scenario/1_canon.rpy:1093
 translate english KAMI_MESSAGE_APRES_VISITE_fcc87b60:
 
     # kami "Vous savez combien ça coûte les appels depuis l'espace ?!"
-    kami ""
+    kami "Do you have any idea how much calls from space cost?!"
 
 # game/scenario/1_canon.rpy:1094
 translate english KAMI_MESSAGE_APRES_VISITE_24cb3d2e:
 
     # kami "Non franchement, ne jouez pas aux idiots."
-    kami ""
+    kami "Seriously—don’t play dumb."
 
 # game/scenario/1_canon.rpy:1100
 translate english KAMI_MESSAGE_APRES_VISITE_82e0eb52:
 
     # kami "Règle trois."
-    kami ""
+    kami "Rule three."
 
 # game/scenario/1_canon.rpy:1101
 translate english KAMI_MESSAGE_APRES_VISITE_ce1aaf1b:
 
     # kami "Vous êtes constamment filmés."
-    kami ""
+    kami "You are under constant surveillance."
 
 # game/scenario/1_canon.rpy:1103
 translate english KAMI_MESSAGE_APRES_VISITE_c25d5805:
 
     # "Personne ne commente."
-    ""
+    "No one comments."
 
 # game/scenario/1_canon.rpy:1104
 translate english KAMI_MESSAGE_APRES_VISITE_801feb0d:
 
     # "On le sait."
-    ""
+    "We know."
 
 # game/scenario/1_canon.rpy:1105
 translate english KAMI_MESSAGE_APRES_VISITE_c78048c3:
 
     # "On le sait trop bien."
-    ""
+    "We know it all too well."
 
 # game/scenario/1_canon.rpy:1106
 translate english KAMI_MESSAGE_APRES_VISITE_d67416eb:
 
     # "C'est peut être la seule chose qui ne changera pas dans notre quotidien."
-    ""
+    "It might be the only thing that will never change about our daily lives."
 
 # game/scenario/1_canon.rpy:1108
 translate english KAMI_MESSAGE_APRES_VISITE_af90b794:
 
     # kami "Mais il y a une exception."
-    kami ""
+    kami "But there is one exception."
 
 # game/scenario/1_canon.rpy:1110
 translate english KAMI_MESSAGE_APRES_VISITE_8b86feed:
 
     # "Tout le monde écoute plus attentivement."
-    ""
+    "Everyone listens more closely."
 
 # game/scenario/1_canon.rpy:1112
 translate english KAMI_MESSAGE_APRES_VISITE_13d9aeec:
 
     # kami "Vos chambres sont équipées d'un brouilleur."
-    kami ""
+    kami "Your rooms are equipped with a jammer."
 
 # game/scenario/1_canon.rpy:1113
 translate english KAMI_MESSAGE_APRES_VISITE_aa7578c0:
 
     # kami "Il est activé par défaut."
-    kami ""
+    kami "It’s enabled by default."
 
 # game/scenario/1_canon.rpy:1114
 translate english KAMI_MESSAGE_APRES_VISITE_67facbb5:
 
     # kami "Caméras, audio, capteurs : tout est coupés."
-    kami ""
+    kami "Cameras, audio, sensors—everything is cut off."
 
 # game/scenario/1_canon.rpy:1118
 translate english KAMI_MESSAGE_APRES_VISITE_6688a013:
 
     # kami "Mais vous pouvez le désactiver."
-    kami ""
+    kami "But you can disable it."
 
 # game/scenario/1_canon.rpy:1119
 translate english KAMI_MESSAGE_APRES_VISITE_4dff9df4:
 
     # kami "Si vous aimez être vus par exemple."
-    kami ""
+    kami "If you like being watched, for example."
 
 # game/scenario/1_canon.rpy:1125
 translate english KAMI_MESSAGE_APRES_VISITE_38ffd0f9:
 
     # kami "Maintenant."
-    kami ""
+    kami "Now."
 
 # game/scenario/1_canon.rpy:1126
 translate english KAMI_MESSAGE_APRES_VISITE_92f30909:
 
     # kami "On peut passer au cœur du Conclave."
-    kami ""
+    kami "We can move on to the heart of the Conclave."
 
 # game/scenario/1_canon.rpy:1128
 translate english KAMI_MESSAGE_APRES_VISITE_5a77b974:
 
     # kami "Vous allez déposer chacun un amendement."
-    kami ""
+    kami "Each of you will submit an amendment."
 
 # game/scenario/1_canon.rpy:1129
 translate english KAMI_MESSAGE_APRES_VISITE_994ba72e:
 
     # kami "Une modification d’un Commandement."
-    kami ""
+    kami "A change to a Commandment."
 
 # game/scenario/1_canon.rpy:1130
 translate english KAMI_MESSAGE_APRES_VISITE_85c494d6:
 
     # kami "Dans une urne."
-    kami ""
+    kami "Into a ballot box."
 
 # game/scenario/1_canon.rpy:1132
 translate english KAMI_MESSAGE_APRES_VISITE_57ce8353:
 
     # kami "Vous avez trente-cinq minutes pour chacun en déposer un."
-    kami ""
+    kami "You have thirty-five minutes for each of you to drop one in."
 
 # game/scenario/1_canon.rpy:1136
 translate english KAMI_MESSAGE_APRES_VISITE_1317114d:
 
     # kami "Oui, c'est presque comme un examen surprise."
-    kami ""
+    kami "Yes—it's basically a pop quiz."
 
 # game/scenario/1_canon.rpy:1137
 translate english KAMI_MESSAGE_APRES_VISITE_5a09403b:
 
     # kami "J'adore."
-    kami ""
+    kami "I love it."
 
 # game/scenario/1_canon.rpy:1138
 translate english KAMI_MESSAGE_APRES_VISITE_1960355e:
 
     # kami "J’espère que vous avez de l'inspiration."
-    kami ""
+    kami "I hope you brought some inspiration."
 
 # game/scenario/1_canon.rpy:1142
 translate english KAMI_MESSAGE_APRES_VISITE_c40a99a9:
 
     # kami "Allez, je veux savoir ce que vous voulez changer dans mes règles parfaites !"
-    kami ""
+    kami "Come on—I want to know what you’d like to change about my perfect rules!"
 
 # game/scenario/1_canon.rpy:1143
 translate english KAMI_MESSAGE_APRES_VISITE_1f2fd12a:
 
     # kami "Qu'est ce que j'aurais pu mal faire ?"
-    kami ""
+    kami "What could I possibly have done wrong?"
 
 # game/scenario/1_canon.rpy:1147
 translate english KAMI_MESSAGE_APRES_VISITE_d12353b7:
 
     # kami "Il y aura dix votes."
-    kami ""
+    kami "There will be ten votes."
 
 # game/scenario/1_canon.rpy:1148
 translate english KAMI_MESSAGE_APRES_VISITE_4a16b8df:
 
     # kami "Dix amendements tirés au sort."
-    kami ""
+    kami "Ten amendments drawn at random."
 
 # game/scenario/1_canon.rpy:1149
 translate english KAMI_MESSAGE_APRES_VISITE_939f13f2:
 
     # kami "Pas un de plus."
-    kami ""
+    kami "Not one more."
 
 # game/scenario/1_canon.rpy:1151
 translate english KAMI_MESSAGE_APRES_VISITE_1506e594:
 
     # kami "Vous êtes douze."
-    kami ""
+    kami "There are twelve of you."
 
 # game/scenario/1_canon.rpy:1152
 translate english KAMI_MESSAGE_APRES_VISITE_ef09fae4:
 
     # kami "Donc deux amendements ne seront pas votés lors de ce Conclave."
-    kami ""
+    kami "So two amendments won’t be voted on during this Conclave."
 
 # game/scenario/1_canon.rpy:1156
 translate english KAMI_MESSAGE_APRES_VISITE_73cfc171:
 
     # kami "Ne le prenez pas mal."
-    kami ""
+    kami "Don’t take it personally."
 
 # game/scenario/1_canon.rpy:1157
 translate english KAMI_MESSAGE_APRES_VISITE_8ce7b7eb:
 
     # kami "C’est mathématique."
-    kami ""
+    kami "It’s just math."
 
 # game/scenario/1_canon.rpy:1158
 translate english KAMI_MESSAGE_APRES_VISITE_92a4a490:
 
     # kami "Et ce n'est pas plus mal, si jamais je devais reproduire le Conclave l'an prochain."
-    kami ""
+    kami "And it’s not such a bad thing—if I ever decide to run the Conclave again next year."
 
 # game/scenario/1_canon.rpy:1159
 translate english KAMI_MESSAGE_APRES_VISITE_70b4cf2d:
 
     # kami "Je pourrais peut être ajouter les amendements restants dans la prochaine urne !"
-    kami ""
+    kami "I might even toss the leftover amendments into the next ballot box!"
 
 # game/scenario/1_canon.rpy:1163
 translate english KAMI_MESSAGE_APRES_VISITE_cafa0bcf:
 
     # kami "Tous les trois jours."
-    kami ""
+    kami "Every three days."
 
 # game/scenario/1_canon.rpy:1164
 translate english KAMI_MESSAGE_APRES_VISITE_b22b88c0:
 
     # kami "Un amendement sera tiré au sort."
-    kami ""
+    kami "One amendment will be drawn at random."
 
 # game/scenario/1_canon.rpy:1165
 translate english KAMI_MESSAGE_APRES_VISITE_05b9fac9:
 
     # kami "Puis tous les trois jours, vous voterez sur cet amendement. Votre objectif : l’unanimité."
-    kami ""
+    kami "Then every three days, you'll vote on that amendment. Your goal: unanimity."
 
 # game/scenario/1_canon.rpy:1169
 translate english KAMI_MESSAGE_APRES_VISITE_ac3cdc8e:
 
     # kami "Une seule voix contre."
-    kami ""
+    kami "One single vote against."
 
 # game/scenario/1_canon.rpy:1170
 translate english KAMI_MESSAGE_APRES_VISITE_66673df5:
 
     # kami "Et l'amendement est refusé."
-    kami ""
+    kami "And the amendment is rejected."
 
 # game/scenario/1_canon.rpy:1175
 translate english KAMI_MESSAGE_APRES_VISITE_bc9a4298:
 
     # elias "Donc un seul refus annule tout."
-    elias ""
+    elias "So a single no cancels everything."
 
 # game/scenario/1_canon.rpy:1176
 translate english KAMI_MESSAGE_APRES_VISITE_0dedd520:
 
     # elias "C’est une sorte de système de blocage."
-    elias ""
+    elias "It’s basically a veto system."
 
 # game/scenario/1_canon.rpy:1183
 translate english KAMI_MESSAGE_APRES_VISITE_9cf294ba:
 
     # kami "Pour chaque proposition d'amendement adopté, j'initierai immédiatement le changement."
-    kami ""
+    kami "For every amendment that gets adopted, I’ll implement the change immediately."
 
 # game/scenario/1_canon.rpy:1184
 translate english KAMI_MESSAGE_APRES_VISITE_b9c00f4b:
 
     # kami "Pour certains, un refus de l'amendement pourra aussi avoir des conséquences."
-    kami ""
+    kami "And for some of them, rejecting the amendment may also have consequences."
 
 # game/scenario/1_canon.rpy:1185
 translate english KAMI_MESSAGE_APRES_VISITE_99f93756:
 
     # kami "Mais ça ça dépendra de vos douces propositions."
-    kami ""
+    kami "But that will depend on your sweet little proposals."
 
 # game/scenario/1_canon.rpy:1189
 translate english KAMI_MESSAGE_APRES_VISITE_efc4fbf0:
 
     # kami "Sur ce."
-    kami ""
+    kami "With that said."
 
 # game/scenario/1_canon.rpy:1190
 translate english KAMI_MESSAGE_APRES_VISITE_5c57c1c1:
 
     # kami "Écrivez."
-    kami ""
+    kami "Write."
 
 # game/scenario/1_canon.rpy:1191
 translate english KAMI_MESSAGE_APRES_VISITE_3b391839:
 
     # kami "Réfléchissez."
-    kami ""
+    kami "Think."
 
 # game/scenario/1_canon.rpy:1194
 translate english KAMI_MESSAGE_APRES_VISITE_602c9438:
 
     # kami "Faites semblant d’être des adultes responsables."
-    kami ""
+    kami "Pretend you're responsible adults."
 
 # game/scenario/1_canon.rpy:1198
 translate english KAMI_MESSAGE_APRES_VISITE_40984434:
 
     # kami "L’urne ferme dans trente-et-une minutes."
-    kami ""
+    kami "The ballot box closes in thirty-one minutes."
 
 # game/scenario/1_canon.rpy:1199
 translate english KAMI_MESSAGE_APRES_VISITE_fd074140:
 
     # kami "Ne déposez pas vos propositions en retard."
-    kami ""
+    kami "Don't submit your proposals late."
 
 # game/scenario/1_canon.rpy:1202
 translate english KAMI_MESSAGE_APRES_VISITE_c5396df9_2:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:1214
 translate english KAMI_MESSAGE_APRES_VISITE_d85b405b:
 
     # think "Trente-et-une minutes seulement."
-    think ""
+    think "Thirty-one minutes. That's it."
 
 # game/scenario/1_canon.rpy:1215
 translate english KAMI_MESSAGE_APRES_VISITE_8f05b9dc:
 
     # think "Pour faire des propositions qui peuvent réduire des villes en cendre."
-    think ""
+    think "To make proposals that could turn cities to ash."
 
 # game/scenario/1_canon.rpy:1217
 translate english KAMI_MESSAGE_APRES_VISITE_717f486d:
 
     # "L’urne est là, au centre de la pièce."
-    ""
+    "The ballot box sits there, in the middle of the room."
 
 # game/scenario/1_canon.rpy:1218
 translate english KAMI_MESSAGE_APRES_VISITE_ef1d9c83:
 
     # "Bien visible, bien mise en avant."
-    ""
+    "Front and center. Impossible to miss."
 
 # game/scenario/1_canon.rpy:1222
 translate english KAMI_MESSAGE_APRES_VISITE_23a1b434:
 
     # kael "Bon."
-    kael ""
+    kael "Alright."
 
 # game/scenario/1_canon.rpy:1223
 translate english KAMI_MESSAGE_APRES_VISITE_670f391d:
 
     # kael "Je vais être direct."
-    kael ""
+    kael "I'll be blunt."
 
 # game/scenario/1_canon.rpy:1225
 translate english KAMI_MESSAGE_APRES_VISITE_508a8703:
 
     # kael "Si on écrit tous dans notre coin."
-    kael ""
+    kael "If we all write in our own corners..."
 
 # game/scenario/1_canon.rpy:1226
 translate english KAMI_MESSAGE_APRES_VISITE_967e0a45:
 
     # kael "Sans se parler."
-    kael ""
+    kael "without talking to each other..."
 
 # game/scenario/1_canon.rpy:1227
 translate english KAMI_MESSAGE_APRES_VISITE_0cc114b6:
 
     # kael "On prend un risque énorme."
-    kael ""
+    kael "we're taking a huge risk."
 
 # game/scenario/1_canon.rpy:1229
 translate english KAMI_MESSAGE_APRES_VISITE_a3d530c9:
 
     # kael "Je propose un truc simple."
-    kael ""
+    kael "So here's something simple."
 
 # game/scenario/1_canon.rpy:1230
 translate english KAMI_MESSAGE_APRES_VISITE_f00136f5:
 
     # kael "Chacun annonce ce qu’il compte proposer."
-    kael ""
+    kael "Everyone says what they plan to propose."
 
 # game/scenario/1_canon.rpy:1231
 translate english KAMI_MESSAGE_APRES_VISITE_3e964cfd:
 
     # kael "Pas forcément le texte exact."
-    kael ""
+    kael "Not the exact wording."
 
 # game/scenario/1_canon.rpy:1232
 translate english KAMI_MESSAGE_APRES_VISITE_6fb1e09b:
 
     # kael "Mais au moins l’intention."
-    kael ""
+    kael "But at least the intent."
 
 # game/scenario/1_canon.rpy:1234
 translate english KAMI_MESSAGE_APRES_VISITE_032c40c1:
 
     # kael "Comme ça."
-    kael ""
+    kael "That way..."
 
 # game/scenario/1_canon.rpy:1235
 translate english KAMI_MESSAGE_APRES_VISITE_df54e4e6:
 
     # kael "On évite les horreurs et les erreurs."
-    kael ""
+    kael "we avoid the horrors. And the mistakes."
 
 # game/scenario/1_canon.rpy:1241
 translate english KAMI_MESSAGE_APRES_VISITE_59aecd40:
 
     # iris "Non."
-    iris ""
+    iris "No."
 
 # game/scenario/1_canon.rpy:1243
 translate english KAMI_MESSAGE_APRES_VISITE_281b42d6:
 
     # iris "C’est déjà une horreur ce que tu proposes."
-    iris ""
+    iris "What you're proposing is already a horror."
 
 # game/scenario/1_canon.rpy:1248
 translate english KAMI_MESSAGE_APRES_VISITE_ce253de1:
 
     # kael "Pourquoi ça ?"
-    kael ""
+    kael "How so?"
 
 # game/scenario/1_canon.rpy:1253
 translate english KAMI_MESSAGE_APRES_VISITE_40f37ead:
 
     # iris "Parce que si un amendement a l’air raisonnable."
-    iris ""
+    iris "Because if an amendment looks reasonable..."
 
 # game/scenario/1_canon.rpy:1254
 translate english KAMI_MESSAGE_APRES_VISITE_5517adf1:
 
     # iris "Mais qu’il a des conséquences dégueulasses."
-    iris ""
+    iris "but it comes with disgusting consequences..."
 
 # game/scenario/1_canon.rpy:1255
 translate english KAMI_MESSAGE_APRES_VISITE_b5f12861:
 
     # iris "Tu crois que Kami va dire quoi ?"
-    iris ""
+    iris "what do you think Kami’s going to say?"
 
 # game/scenario/1_canon.rpy:1257
 translate english KAMI_MESSAGE_APRES_VISITE_fdb98ec4:
 
     # iris "‘Oups’ ?"
-    iris ""
+    iris "\"Oops\"?"
 
 # game/scenario/1_canon.rpy:1258
 translate english KAMI_MESSAGE_APRES_VISITE_8b75f22b:
 
     # iris "Ou ‘c’est de sa faute’ ou celle de celui qui a écrit ?"
-    iris ""
+    iris "Or \"It's their fault\"—the one who suggested it, or the one who wrote it?"
 
 # game/scenario/1_canon.rpy:1262
 translate english KAMI_MESSAGE_APRES_VISITE_7f149dff:
 
     # sael "Elle pointera quelqu’un."
-    sael ""
+    sael "She’ll point at someone."
 
 # game/scenario/1_canon.rpy:1263
 translate english KAMI_MESSAGE_APRES_VISITE_d50ae86e:
 
     # sael "Toujours."
-    sael ""
+    sael "Always."
 
 # game/scenario/1_canon.rpy:1264
 translate english KAMI_MESSAGE_APRES_VISITE_95a060e5:
 
     # sael "Et ce quelqu'un ce sera l'un d'entre nous."
-    sael ""
+    sael "And that someone will be one of us."
 
 # game/scenario/1_canon.rpy:1266
 translate english KAMI_MESSAGE_APRES_VISITE_f4cf8789:
 
     # sael "Même si elle ne le dit pas clairement."
-    sael ""
+    sael "Even if she never says it outright."
 
 # game/scenario/1_canon.rpy:1267
 translate english KAMI_MESSAGE_APRES_VISITE_96bc8df6:
 
     # sael "Même si c’est jamais écrit."
-    sael ""
+    sael "Even if it’s never written down."
 
 # game/scenario/1_canon.rpy:1269
 translate english KAMI_MESSAGE_APRES_VISITE_176f4d57:
 
     # sael "On en assumera les conséquences."
-    sael ""
+    sael "We’ll be the ones paying for it."
 
 # game/scenario/1_canon.rpy:1274
 translate english KAMI_MESSAGE_APRES_VISITE_00e504a1:
 
     # elen "Et puis…"
-    elen ""
+    elen "And besides..."
 
 # game/scenario/1_canon.rpy:1275
 translate english KAMI_MESSAGE_APRES_VISITE_f1a1d954:
 
     # elen "Tout le monde n’a pas forcément envie d'en parler."
-    elen ""
+    elen "Not everyone necessarily wants to talk about it."
 
 # game/scenario/1_canon.rpy:1277
 translate english KAMI_MESSAGE_APRES_VISITE_80fd49f4:
 
     # elen "Y a des idées ..."
-    elen ""
+    elen "Some ideas..."
 
 # game/scenario/1_canon.rpy:1278
 translate english KAMI_MESSAGE_APRES_VISITE_ffdc6760:
 
     # elen "Enfin voilà quoi ..."
-    elen ""
+    elen "Well. You know..."
 
 # game/scenario/1_canon.rpy:1283
 translate english KAMI_MESSAGE_APRES_VISITE_e7193faf:
 
     # julian "Moi je veux bien en parler."
-    julian ""
+    julian "I'm fine talking about mine."
 
 # game/scenario/1_canon.rpy:1284
 translate english KAMI_MESSAGE_APRES_VISITE_fab1dd63:
 
     # julian "Mais je sens que je vais encore passer pour un connard."
-    julian ""
+    julian "But I can already tell I'm going to look like an asshole again."
 
 # game/scenario/1_canon.rpy:1289
 translate english KAMI_MESSAGE_APRES_VISITE_495881ac:
 
     # mara "C’est pas un risque."
-    mara ""
+    mara "That’s not a risk."
 
 # game/scenario/1_canon.rpy:1290
 translate english KAMI_MESSAGE_APRES_VISITE_116c77ed:
 
     # mara "C’est une constante ça."
-    mara ""
+    mara "That’s a constant."
 
 # game/scenario/1_canon.rpy:1297
 translate english KAMI_MESSAGE_APRES_VISITE_56a6141a:
 
     # ryn "Et si on faisait rien ?"
-    ryn ""
+    ryn "What if we did nothing?"
 
 # game/scenario/1_canon.rpy:1299
 translate english KAMI_MESSAGE_APRES_VISITE_033c1785:
 
     # ryn "On vote contre tout."
-    ryn ""
+    ryn "We vote no on everything."
 
 # game/scenario/1_canon.rpy:1300
 translate english KAMI_MESSAGE_APRES_VISITE_d32dd63d:
 
     # ryn "On touche à rien."
-    ryn ""
+    ryn "We don't touch a thing."
 
 # game/scenario/1_canon.rpy:1301
 translate english KAMI_MESSAGE_APRES_VISITE_d8554c75:
 
     # ryn "Fin de l’histoire."
-    ryn ""
+    ryn "End of story."
 
 # game/scenario/1_canon.rpy:1302
 translate english KAMI_MESSAGE_APRES_VISITE_ad187234:
 
     # ryn "Comme ça on ne change pas les habitudes, et tout le monde connait les règles ?"
-    ryn ""
+    ryn "That way nothing changes, and everyone knows the rules, right?"
 
 # game/scenario/1_canon.rpy:1307
 translate english KAMI_MESSAGE_APRES_VISITE_ff43c9e2:
 
     # nyra "Ça veut dire accepter."
-    nyra ""
+    nyra "That means accepting it."
 
 # game/scenario/1_canon.rpy:1308
 translate english KAMI_MESSAGE_APRES_VISITE_a6262525:
 
     # nyra "Que ce monde reste comme il est."
-    nyra ""
+    nyra "Letting this world stay the way it is."
 
 # game/scenario/1_canon.rpy:1310
 translate english KAMI_MESSAGE_APRES_VISITE_1253a40f:
 
     # nyra "On va pas faire semblant que tout va bien, non ?"
-    nyra ""
+    nyra "We're not going to pretend everything's fine, are we?"
 
 # game/scenario/1_canon.rpy:1311
 translate english KAMI_MESSAGE_APRES_VISITE_ad12b5ec:
 
     # nyra "Y'a pas que du mauvais, mais y'a aussi des choses à changer."
-    nyra ""
+    nyra "It’s not all bad—but there are things that need changing."
 
 # game/scenario/1_canon.rpy:1316
 translate english KAMI_MESSAGE_APRES_VISITE_ca181c86:
 
     # tomas "Non. Ça ne marchera pas Ryn."
-    tomas ""
+    tomas "No. That won't work, Ryn."
 
 # game/scenario/1_canon.rpy:1317
 translate english KAMI_MESSAGE_APRES_VISITE_09eb38e0:
 
     # tomas "Kami a dit que refuser un amendement."
-    tomas ""
+    tomas "Kami said that rejecting an amendment..."
 
 # game/scenario/1_canon.rpy:1318
 translate english KAMI_MESSAGE_APRES_VISITE_8475885f:
 
     # tomas "Pouvait aussi avoir un prix."
-    tomas ""
+    tomas "could come with a cost, too."
 
 # game/scenario/1_canon.rpy:1320
 translate english KAMI_MESSAGE_APRES_VISITE_1882484e:
 
     # tomas "On sait juste pas lequel."
-    tomas ""
+    tomas "We just don't know what."
 
 # game/scenario/1_canon.rpy:1326
 translate english KAMI_MESSAGE_APRES_VISITE_ec7e7cd4:
 
     # kael "C’est exactement pour ça qu’il faut qu'on en parle."
-    kael ""
+    kael "That’s exactly why we have to talk about it."
 
 # game/scenario/1_canon.rpy:1328
 translate english KAMI_MESSAGE_APRES_VISITE_e4b3f1b8:
 
     # kael "Le silence."
-    kael ""
+    kael "Silence..."
 
 # game/scenario/1_canon.rpy:1329
 translate english KAMI_MESSAGE_APRES_VISITE_6eeb7443:
 
     # kael "C’est comme lui laisser le champ libre."
-    kael ""
+    kael "is basically handing her the whole field."
 
 # game/scenario/1_canon.rpy:1335
 translate english KAMI_MESSAGE_APRES_VISITE_af32ec17:
 
     # lysa "Ou alors."
-    lysa ""
+    lysa "Or..."
 
 # game/scenario/1_canon.rpy:1336
 translate english KAMI_MESSAGE_APRES_VISITE_ba4c6957:
 
     # lysa "C’est notre seule défense."
-    lysa ""
+    lysa "it’s our only defense."
 
 # game/scenario/1_canon.rpy:1337
 translate english KAMI_MESSAGE_APRES_VISITE_be940087:
 
     # lysa "Il y a aussi la possibilité que quelqu'un mente."
-    lysa ""
+    lysa "There’s also the possibility someone lies."
 
 # game/scenario/1_canon.rpy:1338
 translate english KAMI_MESSAGE_APRES_VISITE_5de6c82d:
 
     # lysa "Il dit qu'il propose un amendement alors qu'en fait il en propose un autre."
-    lysa ""
+    lysa "Says they’re proposing one amendment, when they’re actually proposing a different one."
 
 # game/scenario/1_canon.rpy:1342
 translate english KAMI_MESSAGE_APRES_VISITE_ef1285aa:
 
     # "Le silence retombe."
-    ""
+    "Silence settles again."
 
 # game/scenario/1_canon.rpy:1343
 translate english KAMI_MESSAGE_APRES_VISITE_52865bea:
 
     # "Pas un silence lourd."
-    ""
+    "Not a heavy silence."
 
 # game/scenario/1_canon.rpy:1344
 translate english KAMI_MESSAGE_APRES_VISITE_3501f029:
 
     # "Un silence méfiant."
-    ""
+    "A wary one."
 
 # game/scenario/1_canon.rpy:1346
 translate english KAMI_MESSAGE_APRES_VISITE_929186d4:
 
     # lysa "Comme il n'y a que dix votes. C'est l'alibi idéal pour justifier son mensonge."
-    lysa ""
+    lysa "And with only ten votes, it’s the perfect alibi. \"Mine just didn’t get picked.\""
 
 # game/scenario/1_canon.rpy:1351
 translate english KAMI_MESSAGE_APRES_VISITE_cdb77a85:
 
     # elias "Pendant qu’on discute."
-    elias ""
+    elias "While we’re talking..."
 
 # game/scenario/1_canon.rpy:1352
 translate english KAMI_MESSAGE_APRES_VISITE_66fd7b2e:
 
     # elias "Le temps passe, il ne reste déjà plus que vingt minutes."
-    elias ""
+    elias "time’s ticking. We’ve already only got twenty minutes left."
 
 # game/scenario/1_canon.rpy:1359
 translate english KAMI_MESSAGE_APRES_VISITE_37f4ed19:
 
     # ryn "Ecoutez, faites ce que vous voulez."
-    ryn ""
+    ryn "Look—do whatever you want."
 
 # game/scenario/1_canon.rpy:1361
 translate english KAMI_MESSAGE_APRES_VISITE_9605cea2:
 
     # "Ryn se lève."
-    ""
+    "Ryn stands up."
 
 # game/scenario/1_canon.rpy:1363
 translate english KAMI_MESSAGE_APRES_VISITE_01bdf78a:
 
     # "Il attrape une feuille de papier puis un stylo."
-    ""
+    "He grabs a sheet of paper, then a pen."
 
 # game/scenario/1_canon.rpy:1364
 translate english KAMI_MESSAGE_APRES_VISITE_659e8041:
 
     # "Sans aucune justification ni aucune parole."
-    ""
+    "No explanation. Not a word."
 
 # game/scenario/1_canon.rpy:1369
 translate english KAMI_MESSAGE_APRES_VISITE_775a98f4:
 
     # "Un froissement."
-    ""
+    "A crinkle."
 
 # game/scenario/1_canon.rpy:1370
 translate english KAMI_MESSAGE_APRES_VISITE_a235c141:
 
     # "Puis le bruit sec du papier qui tombe au fond d'une boite."
-    ""
+    "Then the sharp sound of paper hitting the bottom of a box."
 
 # game/scenario/1_canon.rpy:1373
 translate english KAMI_MESSAGE_APRES_VISITE_33346357:
 
     # think "Voilà."
-    think ""
+    think "There."
 
 # game/scenario/1_canon.rpy:1374
 translate english KAMI_MESSAGE_APRES_VISITE_fcc49d3a:
 
     # think "Le premier."
-    think ""
+    think "The first one."
 
 # game/scenario/1_canon.rpy:1379
 translate english KAMI_MESSAGE_APRES_VISITE_a27e8c0d:
 
     # nyra "C’est allé vite…"
-    nyra ""
+    nyra "That was fast..."
 
 # game/scenario/1_canon.rpy:1384
 translate english KAMI_MESSAGE_APRES_VISITE_01e07fb3:
 
     # mara "Une fois que quelqu’un commence."
-    mara ""
+    mara "Once someone starts..."
 
 # game/scenario/1_canon.rpy:1385
 translate english KAMI_MESSAGE_APRES_VISITE_ee8b607e:
 
     # mara "Les autres suivent toujours."
-    mara ""
+    mara "everyone else always follows."
 
 # game/scenario/1_canon.rpy:1389
 translate english KAMI_MESSAGE_APRES_VISITE_c10fd420:
 
     # "Une chaise recule."
-    ""
+    "A chair scrapes back."
 
 # game/scenario/1_canon.rpy:1390
 translate english KAMI_MESSAGE_APRES_VISITE_defd301b:
 
     # "Puis une autre."
-    ""
+    "Then another."
 
 # game/scenario/1_canon.rpy:1394
 translate english KAMI_MESSAGE_APRES_VISITE_0e105d95:
 
     # sael "On peut en discuter pendant des heures."
-    sael ""
+    sael "We could talk about it for hours."
 
 # game/scenario/1_canon.rpy:1395
 translate english KAMI_MESSAGE_APRES_VISITE_c26a7bee:
 
     # sael "Mais au final."
-    sael ""
+    sael "But in the end..."
 
 # game/scenario/1_canon.rpy:1396
 translate english KAMI_MESSAGE_APRES_VISITE_3a4d9808:
 
     # sael "Chacun va écrire ce qu’il croit être juste."
-    sael ""
+    sael "everyone’s going to write what they think is right."
 
 # game/scenario/1_canon.rpy:1398
 translate english KAMI_MESSAGE_APRES_VISITE_6b0aa5b3:
 
     # sael "Sauf que la justice, c'est une notion très personnelle."
-    sael ""
+    sael "Thing is, justice is a very personal concept."
 
 # game/scenario/1_canon.rpy:1403
 translate english KAMI_MESSAGE_APRES_VISITE_9a9d9c85:
 
     # "Un second papier tombe."
-    ""
+    "A second paper drops."
 
 # game/scenario/1_canon.rpy:1404
 translate english KAMI_MESSAGE_APRES_VISITE_966c115b_1:
 
     # "Puis un troisième."
-    ""
+    "Then a third."
 
 # game/scenario/1_canon.rpy:1406
 translate english KAMI_MESSAGE_APRES_VISITE_fcf3514b:
 
     # think "Plus personne ne débat vraiment."
-    think ""
+    think "Nobody’s really debating anymore."
 
 # game/scenario/1_canon.rpy:1408
 translate english KAMI_MESSAGE_APRES_VISITE_99bd5e97:
 
     # "On est encore quelques uns, debout."
-    ""
+    "A few of us are still standing."
 
 # game/scenario/1_canon.rpy:1409
 translate english KAMI_MESSAGE_APRES_VISITE_00088113:
 
     # "On a les yeux baissés. On ose plus se regarder."
-    ""
+    "Eyes down. We don’t even dare look at each other anymore."
 
 # game/scenario/1_canon.rpy:1413
 translate english KAMI_MESSAGE_APRES_VISITE_033b84c6:
 
     # kael "Bon ... C'est donc votre choix."
-    kael ""
+    kael "Well... so that’s your choice."
 
 # game/scenario/1_canon.rpy:1415
 translate english KAMI_MESSAGE_APRES_VISITE_08585449:
 
     # "Puis Kael s'éloigne à son tour."
-    ""
+    "Then Kael walks off as well."
 
 # game/scenario/1_canon.rpy:1420
 translate english KAMI_MESSAGE_APRES_VISITE_630bed00:
 
     # julian "C’est fou."
-    julian ""
+    julian "It’s crazy."
 
 # game/scenario/1_canon.rpy:1421
 translate english KAMI_MESSAGE_APRES_VISITE_f505ff04:
 
     # julian "C’est toujours quand on arrête de parler."
-    julian ""
+    julian "It’s always when we stop talking..."
 
 # game/scenario/1_canon.rpy:1422
 translate english KAMI_MESSAGE_APRES_VISITE_2ec336b9:
 
     # julian "Qu'on prend les vraies décisions."
-    julian ""
+    julian "that we make the real decisions."
 
 # game/scenario/1_canon.rpy:1426
 translate english KAMI_MESSAGE_APRES_VISITE_c2b35d17:
 
     # "L’urne se remplit."
-    ""
+    "The ballot box fills up."
 
 # game/scenario/1_canon.rpy:1428
 translate english KAMI_MESSAGE_APRES_VISITE_d64bb10f:
 
     # "Lentement."
-    ""
+    "Slowly."
 
 # game/scenario/1_canon.rpy:1430
 translate english KAMI_MESSAGE_APRES_VISITE_98f183bd:
 
     # "Inexorablement."
-    ""
+    "Inexorably."
 
 # game/scenario/1_canon.rpy:1433
 translate english KAMI_MESSAGE_APRES_VISITE_cfe90647:
 
     # think "C’est ça le Conclave."
-    think ""
+    think "So this is the Conclave."
 
 # game/scenario/1_canon.rpy:1434
 translate english KAMI_MESSAGE_APRES_VISITE_ee7914e5:
 
     # think "Pas un débat."
-    think ""
+    think "Not a debate."
 
 # game/scenario/1_canon.rpy:1435
 translate english KAMI_MESSAGE_APRES_VISITE_af8328ca:
 
     # think "Un enchaînement."
-    think ""
+    think "A chain reaction."
 
 # game/scenario/1_canon.rpy:1439
 translate english KAMI_MESSAGE_APRES_VISITE_a322e130:
 
     # elen "Et si quelqu’un écrit quelque chose de terrible ?"
-    elen ""
+    elen "And what if someone writes something terrible?"
 
 # game/scenario/1_canon.rpy:1443
 translate english KAMI_MESSAGE_APRES_VISITE_1bc98e6c:
 
     # iris "Alors soit on vote compte,"
-    iris ""
+    iris "Then either we vote against it,"
 
 # game/scenario/1_canon.rpy:1444
 translate english KAMI_MESSAGE_APRES_VISITE_8b22965b:
 
     # iris "Soit on vivra avec."
-    iris ""
+    iris "or we live with it."
 
 # game/scenario/1_canon.rpy:1445
 translate english KAMI_MESSAGE_APRES_VISITE_64e2f341:
 
     # iris "Comme d’habitude."
-    iris ""
+    iris "Like we always do."
 
 # game/scenario/1_canon.rpy:1450
 translate english KAMI_MESSAGE_APRES_VISITE_a5ca706d:
 
     # "Plusieurs personnes sont debout."
-    ""
+    "Several people are standing."
 
 # game/scenario/1_canon.rpy:1451
 translate english KAMI_MESSAGE_APRES_VISITE_e1d86d8e:
 
     # "D’autres écrivent encore."
-    ""
+    "Others are still writing."
 
 # game/scenario/1_canon.rpy:1454
 translate english KAMI_MESSAGE_APRES_VISITE_f7979d73:
 
     # "L'urne est presque entièrement remplie."
-    ""
+    "The ballot box is almost full."
 
 # game/scenario/1_canon.rpy:1455
 translate english KAMI_MESSAGE_APRES_VISITE_7808ea91:
 
     # "Le temps passe."
-    ""
+    "Time keeps moving."
 
 # game/scenario/1_canon.rpy:1456
 translate english KAMI_MESSAGE_APRES_VISITE_e133e4a5:
 
     # "Il faut que je m'y mette moi aussi."
-    ""
+    "I need to start too."
 
 # game/scenario/1_canon.rpy:1469
 translate english KAMI_MESSAGE_APRES_VISITE_1fd09df1:
 
     # think "Ok."
-    think ""
+    think "Okay."
 
 # game/scenario/1_canon.rpy:1470
 translate english KAMI_MESSAGE_APRES_VISITE_ba1ea779:
 
     # think "C’est à moi."
-    think ""
+    think "My turn."
 
 # game/scenario/1_canon.rpy:1472
 translate english KAMI_MESSAGE_APRES_VISITE_d5e0659b:
 
     # "Le bruit des papiers qui tombent dans l’urne continue."
-    ""
+    "The sound of papers dropping into the box keeps going."
 
 # game/scenario/1_canon.rpy:1473
 translate english KAMI_MESSAGE_APRES_VISITE_4d071aa4:
 
     # "Pas fort."
-    ""
+    "Not loud."
 
 # game/scenario/1_canon.rpy:1474
 translate english KAMI_MESSAGE_APRES_VISITE_a303a73e:
 
     # "Mais assez pour te rappeler que tu traînes."
-    ""
+    "But loud enough to remind you you’re stalling."
 
 # game/scenario/1_canon.rpy:1476
 translate english KAMI_MESSAGE_APRES_VISITE_4280a830:
 
     # "Sur ma table, j'ai pris une feuille."
-    ""
+    "On my desk, I’ve got a sheet of paper."
 
 # game/scenario/1_canon.rpy:1477
 translate english KAMI_MESSAGE_APRES_VISITE_01493d0d:
 
     # "Un stylo."
-    ""
+    "A pen."
 
 # game/scenario/1_canon.rpy:1478
 translate english KAMI_MESSAGE_APRES_VISITE_86e4e83a:
 
     # "Et il y a toujours ce vide au milieu de la poitrine."
-    ""
+    "And that hollow feeling is still sitting in the middle of my chest."
 
 # game/scenario/1_canon.rpy:1480
 translate english KAMI_MESSAGE_APRES_VISITE_016bcd1c:
 
     # think "On dirait un examen."
-    think ""
+    think "It feels like an exam."
 
 # game/scenario/1_canon.rpy:1481
 translate english KAMI_MESSAGE_APRES_VISITE_0fd74426:
 
     # think "Sauf qu’ici…"
-    think ""
+    think "Except here..."
 
 # game/scenario/1_canon.rpy:1482
 translate english KAMI_MESSAGE_APRES_VISITE_7cdaa804:
 
     # think "si tu rates."
-    think ""
+    think "if you screw up..."
 
 # game/scenario/1_canon.rpy:1483
 translate english KAMI_MESSAGE_APRES_VISITE_fce5cb08:
 
     # think "Les conséquences peuvent être terribles."
-    think ""
+    think "the consequences can be terrible."
 
 # game/scenario/1_canon.rpy:1485
 translate english KAMI_MESSAGE_APRES_VISITE_7213070b:
 
     # "Je fais tourner le stylo entre mes doigts."
-    ""
+    "I roll the pen between my fingers."
 
 # game/scenario/1_canon.rpy:1486
 translate english KAMI_MESSAGE_APRES_VISITE_61821264:
 
     # "Je le lâche."
-    ""
+    "Let it go."
 
 # game/scenario/1_canon.rpy:1487
 translate english KAMI_MESSAGE_APRES_VISITE_fe1ebf41:
 
     # "Je le reprends."
-    ""
+    "Pick it back up."
 
 # game/scenario/1_canon.rpy:1488
 translate english KAMI_MESSAGE_APRES_VISITE_53544b71:
 
     # "Je sais que je suis assez ridicule comme ça."
-    ""
+    "I know I already look ridiculous."
 
 # game/scenario/1_canon.rpy:1490
 translate english KAMI_MESSAGE_APRES_VISITE_198128bc:
 
     # think "Respire, Noam."
-    think ""
+    think "Breathe, Noam."
 
 # game/scenario/1_canon.rpy:1491
 translate english KAMI_MESSAGE_APRES_VISITE_9772f8ae:
 
     # think "Fais pas semblant."
-    think ""
+    think "Don’t pretend."
 
 # game/scenario/1_canon.rpy:1492
 translate english KAMI_MESSAGE_APRES_VISITE_d4b7e91d:
 
     # think "T’as peur. Ok."
-    think ""
+    think "You’re scared. Okay."
 
 # game/scenario/1_canon.rpy:1493
 translate english KAMI_MESSAGE_APRES_VISITE_72e57fde:
 
     # think "C’est normal. Enfin, je crois que ça l'est."
-    think ""
+    think "That’s normal. I think. I mean... it should be."
 
 # game/scenario/1_canon.rpy:1495
 translate english KAMI_MESSAGE_APRES_VISITE_45984268:
 
     # "Je baisse les yeux sur l’urne."
-    ""
+    "I glance down at the ballot box."
 
 # game/scenario/1_canon.rpy:1496
 translate english KAMI_MESSAGE_APRES_VISITE_deb7a542:
 
     # "Elle est toujours là."
-    ""
+    "It’s still there."
 
 # game/scenario/1_canon.rpy:1497
 translate english KAMI_MESSAGE_APRES_VISITE_971351eb:
 
     # "Comme si elle me regardait, comme si elle attendait."
-    ""
+    "Like it’s watching me. Like it’s waiting."
 
 # game/scenario/1_canon.rpy:1499
 translate english KAMI_MESSAGE_APRES_VISITE_5bb86f72:
 
     # think "Il faut que je trouve quelque chose."
-    think ""
+    think "I have to come up with something."
 
 # game/scenario/1_canon.rpy:1501
 translate english KAMI_MESSAGE_APRES_VISITE_89888848:
 
     # "Je gratte un mot sur le papier."
-    ""
+    "I scratch a word onto the page."
 
 # game/scenario/1_canon.rpy:1502
 translate english KAMI_MESSAGE_APRES_VISITE_b2ae20a4:
 
     # "Je le raye aussitôt."
-    ""
+    "Cross it out immediately."
 
 # game/scenario/1_canon.rpy:1504
 translate english KAMI_MESSAGE_APRES_VISITE_af33f61f:
 
     # think "Il faut quelque chose qui puisse être utile."
-    think ""
+    think "It has to be something useful."
 
 # game/scenario/1_canon.rpy:1505
 translate english KAMI_MESSAGE_APRES_VISITE_ada23c3b:
 
     # think "Quelque chose qui fait que les gens vivront mieux."
-    think ""
+    think "Something that makes people live better."
 
 # game/scenario/1_canon.rpy:1506
 translate english KAMI_MESSAGE_APRES_VISITE_3bf8c578:
 
     # think "Facile à dire. Difficile à trouver."
-    think ""
+    think "Easy to say. Hard to find."
 
 # game/scenario/1_canon.rpy:1510
 translate english KAMI_MESSAGE_APRES_VISITE_73dd10bc:
 
     # "Une chaise grince derrière moi."
-    ""
+    "A chair squeaks behind me."
 
 # game/scenario/1_canon.rpy:1511
 translate english KAMI_MESSAGE_APRES_VISITE_07eb0006:
 
     # "Quelqu’un passe."
-    ""
+    "Someone walks by."
 
 # game/scenario/1_canon.rpy:1512
 translate english KAMI_MESSAGE_APRES_VISITE_adea7329:
 
     # "Je n’ose même pas relever la tête."
-    ""
+    "I don’t even dare look up."
 
 # game/scenario/1_canon.rpy:1514
 translate english KAMI_MESSAGE_APRES_VISITE_b898aafe:
 
     # think "Ils écrivent tous."
-    think ""
+    think "They’re all writing."
 
 # game/scenario/1_canon.rpy:1515
 translate english KAMI_MESSAGE_APRES_VISITE_3c4faf26:
 
     # think "Comme si c’était simple."
-    think ""
+    think "Like it’s easy."
 
 # game/scenario/1_canon.rpy:1516
 translate english KAMI_MESSAGE_APRES_VISITE_d76566dd:
 
     # think "Comme si c’était… normal."
-    think ""
+    think "Like it’s... normal."
 
 # game/scenario/1_canon.rpy:1518
 translate english KAMI_MESSAGE_APRES_VISITE_8cbad386:
 
     # "Je pose la pointe du stylo."
-    ""
+    "I set the pen tip down."
 
 # game/scenario/1_canon.rpy:1519
 translate english KAMI_MESSAGE_APRES_VISITE_51dda799:
 
     # "Et je reste bloqué."
-    ""
+    "And I freeze."
 
 # game/scenario/1_canon.rpy:1521
 translate english KAMI_MESSAGE_APRES_VISITE_1fd09df1_1:
 
     # think "Ok."
-    think ""
+    think "Okay."
 
 # game/scenario/1_canon.rpy:1522
 translate english KAMI_MESSAGE_APRES_VISITE_95b90c86:
 
     # think "Il faut que je sois honnête avec moi même."
-    think ""
+    think "I need to be honest with myself."
 
 # game/scenario/1_canon.rpy:1523
 translate english KAMI_MESSAGE_APRES_VISITE_d061b963:
 
     # think "J’hésite."
-    think ""
+    think "I’m hesitating."
 
 # game/scenario/1_canon.rpy:1527
 translate english KAMI_MESSAGE_APRES_VISITE_131c73ec:
 
     # think "Deux idées."
-    think ""
+    think "Two ideas."
 
 # game/scenario/1_canon.rpy:1528
 translate english KAMI_MESSAGE_APRES_VISITE_f95ccf92:
 
     # think "Deux trucs très concrets."
-    think ""
+    think "Two very concrete options."
 
 # game/scenario/1_canon.rpy:1529
 translate english KAMI_MESSAGE_APRES_VISITE_fbdddf01:
 
     # think "Deux propositions pour tenter de faire changer les choses."
-    think ""
+    think "Two proposals that might actually change things."
 
 # game/scenario/1_canon.rpy:1531
 translate english KAMI_MESSAGE_APRES_VISITE_fe1cafef:
 
     # think "La première…"
-    think ""
+    think "The first..."
 
 # game/scenario/1_canon.rpy:1532
 translate english KAMI_MESSAGE_APRES_VISITE_efb9fca5:
 
     # think "C’est l’information."
-    think ""
+    think "is information."
 
 # game/scenario/1_canon.rpy:1534
 translate english KAMI_MESSAGE_APRES_VISITE_ad7d75c8:
 
     # think "Pas le monde."
-    think ""
+    think "Not the world."
 
 # game/scenario/1_canon.rpy:1535
 translate english KAMI_MESSAGE_APRES_VISITE_9358a8c8:
 
     # think "Pas les districts."
-    think ""
+    think "Not the districts."
 
 # game/scenario/1_canon.rpy:1536
 translate english KAMI_MESSAGE_APRES_VISITE_42f1b705:
 
     # think "Pas les grandes annonces."
-    think ""
+    think "Not the big announcements."
 
 # game/scenario/1_canon.rpy:1537
 translate english KAMI_MESSAGE_APRES_VISITE_7bc12fde:
 
     # think "Mais celles du quotidien."
-    think ""
+    think "But the everyday ones."
 
 # game/scenario/1_canon.rpy:1539
 translate english KAMI_MESSAGE_APRES_VISITE_28a8f75e:
 
     # think "Dire ce que je vois."
-    think ""
+    think "To say what I see."
 
 # game/scenario/1_canon.rpy:1540
 translate english KAMI_MESSAGE_APRES_VISITE_e3cf1805:
 
     # think "Ce que je vis, ce que je ressens."
-    think ""
+    think "What I live through, what I feel."
 
 # game/scenario/1_canon.rpy:1542
 translate english KAMI_MESSAGE_APRES_VISITE_10d32d7e:
 
     # think "Arrêter de faire semblant que parler de la pluie, du froid ou d’un problème local…"
-    think ""
+    think "Stop pretending that talking about the rain, the cold, or a local issue…"
 
 # game/scenario/1_canon.rpy:1543
 translate english KAMI_MESSAGE_APRES_VISITE_aee31c34:
 
     # think "c’est une menace pour l’équilibre du monde."
-    think ""
+    think "is some kind of threat to the balance of the world."
 
 # game/scenario/1_canon.rpy:1544
 translate english KAMI_MESSAGE_APRES_VISITE_57487483:
 
     # think "Actuellement ce n'est pas clair."
-    think ""
+    think "Right now, it’s not clear at all."
 
 # game/scenario/1_canon.rpy:1546
 translate english KAMI_MESSAGE_APRES_VISITE_19c7a627:
 
     # "Le cinquième commandement dit que :"
-    ""
+    "The Fifth Commandment states that:"
 
 # game/scenario/1_canon.rpy:1547
 translate english KAMI_MESSAGE_APRES_VISITE_86ffb08e:
 
     # "La diffusion d’informations non validées par ARCHIVE est interdite."
-    ""
+    "The dissemination of information not validated by ARCHIVE is forbidden."
 
 # game/scenario/1_canon.rpy:1548
 translate english KAMI_MESSAGE_APRES_VISITE_3a1d8d3c:
 
     # "Mais qu'est ce qui est validé ?"
-    ""
+    "But what exactly is validated?"
 
 # game/scenario/1_canon.rpy:1549
 translate english KAMI_MESSAGE_APRES_VISITE_998b4139:
 
     # "Personne ne le sait vraiment."
-    ""
+    "No one really knows."
 
 # game/scenario/1_canon.rpy:1550
 translate english KAMI_MESSAGE_APRES_VISITE_5d7b8dd8:
 
     # "Donc tout le monde évite de parler."
-    ""
+    "So everyone avoids speaking up."
 
 # game/scenario/1_canon.rpy:1554
 translate english KAMI_MESSAGE_APRES_VISITE_07cffdb3:
 
     # think "La deuxième…"
-    think ""
+    think "The second one…"
 
 # game/scenario/1_canon.rpy:1555
 translate english KAMI_MESSAGE_APRES_VISITE_93489965:
 
     # think "C’est le fait d'aider."
-    think ""
+    think "It’s about helping."
 
 # game/scenario/1_canon.rpy:1556
 translate english KAMI_MESSAGE_APRES_VISITE_2c7ae1fc:
 
     # think "Aujourd'hui, plus personne n'aide grand monde."
-    think ""
+    think "These days, no one really helps anyone anymore."
 
 # game/scenario/1_canon.rpy:1557
 translate english KAMI_MESSAGE_APRES_VISITE_0624a938:
 
     # think "On a peur de faire quoi que ce soit qui ne serait pas conforme aux Commandements."
-    think ""
+    think "We’re scared to do anything that might not comply with the Commandments."
 
 # game/scenario/1_canon.rpy:1559
 translate english KAMI_MESSAGE_APRES_VISITE_27d93614:
 
     # think "Le fait d'aider quelqu’un ne devrait pas être pénalisable."
-    think ""
+    think "Helping someone shouldn’t be punishable."
 
 # game/scenario/1_canon.rpy:1560
 translate english KAMI_MESSAGE_APRES_VISITE_88129e33:
 
     # think "Quand quelqu'un est dans la merde."
-    think ""
+    think "When someone’s in deep trouble."
 
 # game/scenario/1_canon.rpy:1561
 translate english KAMI_MESSAGE_APRES_VISITE_d3b2b003:
 
     # think "Quand on peut."
-    think ""
+    think "When you’re able to."
 
 # game/scenario/1_canon.rpy:1562
 translate english KAMI_MESSAGE_APRES_VISITE_a027a7db:
 
     # think "Alors il faudrait permettre le fait d'aider."
-    think ""
+    think "Then helping should be allowed."
 
 # game/scenario/1_canon.rpy:1566
 translate english KAMI_MESSAGE_APRES_VISITE_aded2270:
 
     # think "Les deux propositions me semblent raisonnables."
-    think ""
+    think "Both ideas seem reasonable to me."
 
 # game/scenario/1_canon.rpy:1567
 translate english KAMI_MESSAGE_APRES_VISITE_131a0530:
 
     # think "Laquelle choisir ?"
-    think ""
+    think "Which one should I choose?"
 
 # game/scenario/1_canon.rpy:1568
 translate english KAMI_MESSAGE_APRES_VISITE_8c024eba:
 
     # think "Je ne vois pas ce qu'il y aurait de mal à proposer ça ?."
-    think ""
+    think "I don’t see what could be wrong with proposing that."
 
 # game/scenario/1_canon.rpy:1570
 translate english KAMI_MESSAGE_APRES_VISITE_84f5e748:
 
     # think "A moins que je ne fasse fausse route ?"
-    think ""
+    think "Unless I’m completely wrong?"
 
 # game/scenario/1_canon.rpy:1572
 translate english KAMI_MESSAGE_APRES_VISITE_3de2a646:
 
     # think "Et évidemment…"
-    think ""
+    think "And of course…"
 
 # game/scenario/1_canon.rpy:1573
 translate english KAMI_MESSAGE_APRES_VISITE_bd5465d5:
 
     # think "C’est à moi de décider."
-    think ""
+    think "It’s up to me to decide."
 
 # game/scenario/1_canon.rpy:1577
 translate english KAMI_MESSAGE_APRES_VISITE_e6f0a1fd:
 
     # "Je ferme les yeux une seconde."
-    ""
+    "I close my eyes for a second."
 
 # game/scenario/1_canon.rpy:1578
 translate english KAMI_MESSAGE_APRES_VISITE_89dc51db:
 
     # "Le bruit de l’urne continue."
-    ""
+    "The sound of the ballot box continues."
 
 # game/scenario/1_canon.rpy:1579
 translate english KAMI_MESSAGE_APRES_VISITE_6747bb89:
 
     # "Moins régulier."
-    ""
+    "Less steady."
 
 # game/scenario/1_canon.rpy:1580
 translate english KAMI_MESSAGE_APRES_VISITE_ee56a7e3:
 
     # "Plus pressant."
-    ""
+    "More urgent."
 
 # game/scenario/1_canon.rpy:1582
 translate english KAMI_MESSAGE_APRES_VISITE_a6ecc2d1:
 
     # "Je souffle lentement."
-    ""
+    "I exhale slowly."
 
 # game/scenario/1_canon.rpy:1583
 translate english KAMI_MESSAGE_APRES_VISITE_fa429911:
 
     # "Je redresse un peu le dos."
-    ""
+    "I straighten my back a little."
 
 # game/scenario/1_canon.rpy:1585
 translate english KAMI_MESSAGE_APRES_VISITE_1fd09df1_2:
 
     # think "Ok."
-    think ""
+    think "Okay."
 
 # game/scenario/1_canon.rpy:1586
 translate english KAMI_MESSAGE_APRES_VISITE_9980c621:
 
     # think "Arrête de tourner autour du pot."
-    think ""
+    think "Stop beating around the bush."
 
 # game/scenario/1_canon.rpy:1587
 translate english KAMI_MESSAGE_APRES_VISITE_4f1ef9e1:
 
     # think "Il faut choisir."
-    think ""
+    think "You have to choose."
 
 # game/scenario/1_canon.rpy:1589
 translate english KAMI_MESSAGE_APRES_VISITE_00fecabb:
 
     # tuto "Ah ça fait longtemps !"
-    tuto ""
+    tuto "Wow, it’s been a while!"
 
 # game/scenario/1_canon.rpy:1590
 translate english KAMI_MESSAGE_APRES_VISITE_80acb8aa:
 
     # tuto "Il est désormais temps de vous parler d'une autre fonctionnalité majeure."
-    tuto ""
+    tuto "It’s time to tell you about another major feature."
 
 # game/scenario/1_canon.rpy:1591
 translate english KAMI_MESSAGE_APRES_VISITE_9991fe23:
 
     # tuto "Les choix !"
-    tuto ""
+    tuto "Choices!"
 
 # game/scenario/1_canon.rpy:1592
 translate english KAMI_MESSAGE_APRES_VISITE_d686e8f4:
 
     # tuto "Parfois, souvent, vous aurez des choix à faire."
-    tuto ""
+    tuto "Sometimes—often—you’ll have choices to make."
 
 # game/scenario/1_canon.rpy:1593
 translate english KAMI_MESSAGE_APRES_VISITE_8b6b7d2a:
 
     # tuto "Ces choix sont majeurs et aboutiront à une histoire qui pourra être totalement différente."
-    tuto ""
+    tuto "These choices are major and can lead to a completely different story."
 
 # game/scenario/1_canon.rpy:1594
 translate english KAMI_MESSAGE_APRES_VISITE_a0f78b13:
 
     # tuto "Lors de ces occasions, plusieurs choix apparaitront à l'écran. A vous de faire le choix qui vous interesse davantage."
-    tuto ""
+    tuto "When that happens, several options will appear on screen. It’s up to you to pick the one that interests you most."
 
 # game/scenario/1_canon.rpy:1595
 translate english KAMI_MESSAGE_APRES_VISITE_27d98bd0:
 
     # tuto "A noter qu'il n'y a pas de mauvaises réponses. Chaque choix vous fera découvrir une histoire différente."
-    tuto ""
+    tuto "There are no wrong answers. Each choice will let you discover a different version of the story."
 
 # game/scenario/1_canon.rpy:1596
 translate english KAMI_MESSAGE_APRES_VISITE_821fb5fe:
 
     # tuto "Certains choix seront marqués du mot clé (optionnel). Si vous les choisissez, vous pourrez alors suivre une scène optionnelle."
-    tuto ""
+    tuto "Some choices will be marked with the keyword (optional). If you pick them, you’ll unlock an optional scene."
 
 # game/scenario/1_canon.rpy:1597
 translate english KAMI_MESSAGE_APRES_VISITE_137132af:
 
     # tuto "Amusez-vous bien !"
-    tuto ""
+    tuto "Have fun!"
 
 # game/scenario/1_canon.rpy:1605
 translate english KAMI_MESSAGE_APRES_VISITE_e1f57b3e:
 
     # think "D’accord."
-    think ""
+    think "Alright."
 
 # game/scenario/1_canon.rpy:1606
 translate english KAMI_MESSAGE_APRES_VISITE_4cfcfd39:
 
     # think "Il faut libérer la parole."
-    think ""
+    think "People need to be free to speak."
 
 # game/scenario/1_canon.rpy:1607
 translate english KAMI_MESSAGE_APRES_VISITE_7a2822c9:
 
     # think "Mais pas n’importe comment."
-    think ""
+    think "But not just any way."
 
 # game/scenario/1_canon.rpy:1609
 translate english KAMI_MESSAGE_APRES_VISITE_02f38333:
 
     # "J’écris une phrase."
-    ""
+    "I write a sentence."
 
 # game/scenario/1_canon.rpy:1610
 translate english KAMI_MESSAGE_APRES_VISITE_b3c08322:
 
     # "Puis je m’arrête."
-    ""
+    "Then I stop."
 
 # game/scenario/1_canon.rpy:1611
 translate english KAMI_MESSAGE_APRES_VISITE_cd8e713e:
 
     # "Je me relis."
-    ""
+    "I read it again."
 
 # game/scenario/1_canon.rpy:1613
 translate english KAMI_MESSAGE_APRES_VISITE_82031d20:
 
     # think "Je précise un mot qui me semble mal tourné, peu précis."
-    think ""
+    think "I adjust a word that feels awkward, too vague."
 
 # game/scenario/1_canon.rpy:1614
 translate english KAMI_MESSAGE_APRES_VISITE_70bd0908:
 
     # think "Il ne faut pas tout changer, mais permettre une plus grande liberté est important."
-    think ""
+    think "We don’t need to change everything, but allowing more freedom matters."
 
 # game/scenario/1_canon.rpy:1615
 translate english KAMI_MESSAGE_APRES_VISITE_33d63513:
 
     # think "Ce qui touche aux districts et à la politique."
-    think ""
+    think "Anything related to districts or politics."
 
 # game/scenario/1_canon.rpy:1616
 translate english KAMI_MESSAGE_APRES_VISITE_b375a19a:
 
     # think "Ça peut rester verrouiller."
-    think ""
+    think "That can stay locked down."
 
 # game/scenario/1_canon.rpy:1618
 translate english KAMI_MESSAGE_APRES_VISITE_b52a2a99:
 
     # think "Mais le reste…"
-    think ""
+    think "But the rest…"
 
 # game/scenario/1_canon.rpy:1619
 translate english KAMI_MESSAGE_APRES_VISITE_0b3dfbbc:
 
     # think "Le quotidien."
-    think ""
+    think "Daily life."
 
 # game/scenario/1_canon.rpy:1620
 translate english KAMI_MESSAGE_APRES_VISITE_b532318e:
 
     # think "Le local."
-    think ""
+    think "Local matters."
 
 # game/scenario/1_canon.rpy:1621
 translate english KAMI_MESSAGE_APRES_VISITE_3a52074d:
 
     # think "L’immédiat, ce qu'on voit, ce qu'on dit, ce qu'on ressent."
-    think ""
+    think "The immediate—what we see, what we say, what we feel."
 
 # game/scenario/1_canon.rpy:1623
 translate english KAMI_MESSAGE_APRES_VISITE_a0f1d7bf:
 
     # think "On devrait pouvoir le formuler comme on le souhaite."
-    think ""
+    think "We should be allowed to express it however we want."
 
 # game/scenario/1_canon.rpy:1624
 translate english KAMI_MESSAGE_APRES_VISITE_bc031bec:
 
     # think "Sans risquer sa vie du moins."
-    think ""
+    think "Without risking our lives, at least."
 
 # game/scenario/1_canon.rpy:1626
 translate english KAMI_MESSAGE_APRES_VISITE_bdb16cb9:
 
     # "Je reformule."
-    ""
+    "I rephrase it."
 
 # game/scenario/1_canon.rpy:1627
 translate english KAMI_MESSAGE_APRES_VISITE_cdb70519:
 
     # "Encore."
-    ""
+    "Again."
 
 # game/scenario/1_canon.rpy:1628
 translate english KAMI_MESSAGE_APRES_VISITE_78337186:
 
     # "J’enlève un mot."
-    ""
+    "I remove a word."
 
 # game/scenario/1_canon.rpy:1629
 translate english KAMI_MESSAGE_APRES_VISITE_9f9e2fa2:
 
     # "J’en ajoute un autre."
-    ""
+    "I add another."
 
 # game/scenario/1_canon.rpy:1634
 translate english KAMI_MESSAGE_APRES_VISITE_1fd09df1_3:
 
     # think "Ok."
-    think ""
+    think "Okay."
 
 # game/scenario/1_canon.rpy:1635
 translate english KAMI_MESSAGE_APRES_VISITE_2f749e08:
 
     # think "Je vais essayer de permettre l’entraide."
-    think ""
+    think "I’m going to try to allow mutual aid."
 
 # game/scenario/1_canon.rpy:1637
 translate english KAMI_MESSAGE_APRES_VISITE_b0741ff3:
 
     # "J’écris un premier jet."
-    ""
+    "I write a first draft."
 
 # game/scenario/1_canon.rpy:1638
 translate english KAMI_MESSAGE_APRES_VISITE_fdadae2c:
 
     # "Ma main hésite."
-    ""
+    "My hand hesitates."
 
 # game/scenario/1_canon.rpy:1640
 translate english KAMI_MESSAGE_APRES_VISITE_65988586:
 
     # think "Il faut que la formulation ne soit pas un truc impossible."
-    think ""
+    think "The wording can’t be something impossible."
 
 # game/scenario/1_canon.rpy:1641
 translate english KAMI_MESSAGE_APRES_VISITE_86d7bca3:
 
     # think "Juste…"
-    think ""
+    think "Just…"
 
 # game/scenario/1_canon.rpy:1642
 translate english KAMI_MESSAGE_APRES_VISITE_1f4da924:
 
     # think "qu'on puisse faire quelque chose quand on le peut."
-    think ""
+    think "that we can do something when we’re able to."
 
 # game/scenario/1_canon.rpy:1644
 translate english KAMI_MESSAGE_APRES_VISITE_043ba5e0:
 
     # think "Aider."
-    think ""
+    think "Help."
 
 # game/scenario/1_canon.rpy:1645
 translate english KAMI_MESSAGE_APRES_VISITE_d83cb971:
 
     # think "Prévenir."
-    think ""
+    think "Warn."
 
 # game/scenario/1_canon.rpy:1646
 translate english KAMI_MESSAGE_APRES_VISITE_8f9bebb2:
 
     # think "Intervenir."
-    think ""
+    think "Intervene."
 
 # game/scenario/1_canon.rpy:1648
 translate english KAMI_MESSAGE_APRES_VISITE_0e98420a:
 
     # think "Parce que laisser quelqu’un tomber…"
-    think ""
+    think "Because letting someone fall…"
 
 # game/scenario/1_canon.rpy:1649
 translate english KAMI_MESSAGE_APRES_VISITE_2507fa7c:
 
     # think "Ça aussi, c’est une décision."
-    think ""
+    think "That’s a decision too."
 
 # game/scenario/1_canon.rpy:1650
 translate english KAMI_MESSAGE_APRES_VISITE_f3e73c60:
 
     # think "Une mauvaise décision."
-    think ""
+    think "A bad one."
 
 # game/scenario/1_canon.rpy:1652
 translate english KAMI_MESSAGE_APRES_VISITE_f846af40:
 
     # "Je fais attention à chaque formulation."
-    ""
+    "I pay attention to every word."
 
 # game/scenario/1_canon.rpy:1656
 translate english KAMI_MESSAGE_APRES_VISITE_7a520e85:
 
     # "Quand j’ai fini d’écrire, ma main tremble un peu."
-    ""
+    "When I finish writing, my hand trembles slightly."
 
 # game/scenario/1_canon.rpy:1657
 translate english KAMI_MESSAGE_APRES_VISITE_869ef422:
 
     # "Pas assez pour lâcher le stylo."
-    ""
+    "Not enough to drop the pen."
 
 # game/scenario/1_canon.rpy:1658
 translate english KAMI_MESSAGE_APRES_VISITE_e9466087:
 
     # "Juste assez pour que je remarque la tension qui fait vibrer mes doigts."
-    ""
+    "Just enough to notice the tension in my fingers."
 
 # game/scenario/1_canon.rpy:1660
 translate english KAMI_MESSAGE_APRES_VISITE_33346357_1:
 
     # think "Voilà."
-    think ""
+    think "There."
 
 # game/scenario/1_canon.rpy:1661
 translate english KAMI_MESSAGE_APRES_VISITE_e11e40d1:
 
     # think "C’est fait."
-    think ""
+    think "It’s done."
 
 # game/scenario/1_canon.rpy:1663
 translate english KAMI_MESSAGE_APRES_VISITE_b679f1c6:
 
     # "Je relis une dernière fois."
-    ""
+    "I read it one last time."
 
 # game/scenario/1_canon.rpy:1664
 translate english KAMI_MESSAGE_APRES_VISITE_31b8bfbd:
 
     # "J’ai envie de corriger."
-    ""
+    "I want to correct it."
 
 # game/scenario/1_canon.rpy:1665
 translate english KAMI_MESSAGE_APRES_VISITE_907bc33f:
 
     # "De nuancer."
-    ""
+    "To nuance it."
 
 # game/scenario/1_canon.rpy:1666
 translate english KAMI_MESSAGE_APRES_VISITE_43455728:
 
     # "De préciser encore."
-    ""
+    "To clarify it even more."
 
 # game/scenario/1_canon.rpy:1668
 translate english KAMI_MESSAGE_APRES_VISITE_d1af98c2:
 
     # think "Non."
-    think ""
+    think "No."
 
 # game/scenario/1_canon.rpy:1669
 translate english KAMI_MESSAGE_APRES_VISITE_448b5da1:
 
     # think "Sinon je recommencerai encore et encore."
-    think ""
+    think "Otherwise I’ll just start over again and again."
 
 # game/scenario/1_canon.rpy:1671
 translate english KAMI_MESSAGE_APRES_VISITE_df7662aa:
 
     # "Je jette un coup d'oeil aux écrans."
-    ""
+    "I glance at the screens."
 
 # game/scenario/1_canon.rpy:1672
 translate english KAMI_MESSAGE_APRES_VISITE_cf04c6d8:
 
     # "Il ne reste plus que quatre minutes."
-    ""
+    "Only four minutes left."
 
 # game/scenario/1_canon.rpy:1674
 translate english KAMI_MESSAGE_APRES_VISITE_4d53a3d6:
 
     # think "ça fait tant de temps que ça ?."
-    think ""
+    think "Has it really been that long?"
 
 # game/scenario/1_canon.rpy:1678
 translate english KAMI_MESSAGE_APRES_VISITE_d2013722:
 
     # "Je plie la feuille."
-    ""
+    "I fold the sheet."
 
 # game/scenario/1_canon.rpy:1679
 translate english KAMI_MESSAGE_APRES_VISITE_53d2cd5d:
 
     # "Ce n'est pas très droit, c'est assez irrégulier."
-    ""
+    "It’s not very straight, kind of uneven."
 
 # game/scenario/1_canon.rpy:1681
 translate english KAMI_MESSAGE_APRES_VISITE_8fdda2e0:
 
     # "Je me lève."
-    ""
+    "I stand up."
 
 # game/scenario/1_canon.rpy:1682
 translate english KAMI_MESSAGE_APRES_VISITE_38a343fc:
 
     # "La chaise fait trop de bruit."
-    ""
+    "My chair makes too much noise."
 
 # game/scenario/1_canon.rpy:1683
 translate english KAMI_MESSAGE_APRES_VISITE_701a301f:
 
     # "Ou alors c'est le fait que personne ne fait un bruit."
-    ""
+    "Or maybe it’s just that no one else is making any."
 
 # game/scenario/1_canon.rpy:1685
 translate english KAMI_MESSAGE_APRES_VISITE_6e553256:
 
     # think "Je sens le regard des caméras."
-    think ""
+    think "I can feel the cameras watching."
 
 # game/scenario/1_canon.rpy:1686
 translate english KAMI_MESSAGE_APRES_VISITE_d31ced57:
 
     # think "Même sans forcément les voir."
-    think ""
+    think "Even without seeing them."
 
 # game/scenario/1_canon.rpy:1688
 translate english KAMI_MESSAGE_APRES_VISITE_da6667e3:
 
     # "Je marche jusqu’à l’urne."
-    ""
+    "I walk toward the ballot box."
 
 # game/scenario/1_canon.rpy:1689
 translate english KAMI_MESSAGE_APRES_VISITE_5731bb5f:
 
     # "Chaque pas est un peu trop long."
-    ""
+    "Each step feels a little too long."
 
 # game/scenario/1_canon.rpy:1690
 translate english KAMI_MESSAGE_APRES_VISITE_949e2f56:
 
     # "J'ai la gorge sèche."
-    ""
+    "My throat is dry."
 
 # game/scenario/1_canon.rpy:1692
 translate english KAMI_MESSAGE_APRES_VISITE_b6dededd:
 
     # think "Et si j'avais fait le mauvais choix ?"
-    think ""
+    think "What if I made the wrong choice?"
 
 # game/scenario/1_canon.rpy:1693
 translate english KAMI_MESSAGE_APRES_VISITE_48da4f29:
 
     # think "Non. Arrête d'y penser."
-    think ""
+    think "No. Stop thinking about it."
 
 # game/scenario/1_canon.rpy:1695
 translate english KAMI_MESSAGE_APRES_VISITE_cac2518d:
 
     # "Je glisse la feuille dans la fente."
-    ""
+    "I slide the sheet into the slot."
 
 # game/scenario/1_canon.rpy:1696
 translate english KAMI_MESSAGE_APRES_VISITE_821a38b4:
 
     # "Elle tombe au fond."
-    ""
+    "It drops to the bottom."
 
 # game/scenario/1_canon.rpy:1697
 translate english KAMI_MESSAGE_APRES_VISITE_e46ca973:
 
     # "Je ne peux plus la récupérer."
-    ""
+    "I can’t take it back."
 
 # game/scenario/1_canon.rpy:1698
 translate english KAMI_MESSAGE_APRES_VISITE_5ca69144:
 
     # "Trop tard pour les regrets."
-    ""
+    "Too late for regrets."
 
 # game/scenario/1_canon.rpy:1702
 translate english KAMI_MESSAGE_APRES_VISITE_33346357_2:
 
     # think "Voilà."
-    think ""
+    think "There."
 
 # game/scenario/1_canon.rpy:1703
 translate english KAMI_MESSAGE_APRES_VISITE_b033753a:
 
     # think "Mon premier amendement."
-    think ""
+    think "My first amendment."
 
 # game/scenario/1_canon.rpy:1705
 translate english KAMI_MESSAGE_APRES_VISITE_2ebabbe4:
 
     # "Je recule."
-    ""
+    "I step back."
 
 # game/scenario/1_canon.rpy:1706
 translate english KAMI_MESSAGE_APRES_VISITE_33cfb561:
 
     # "Je retourne à ma place."
-    ""
+    "I return to my seat."
 
 # game/scenario/1_canon.rpy:1707
 translate english KAMI_MESSAGE_APRES_VISITE_b12be15c:
 
     # "J'étais le dernier."
-    ""
+    "I was the last one."
 
 # game/scenario/1_canon.rpy:1720
 translate english KAMI_MESSAGE_APRES_VISITE_4688a40d:
 
     # "Un léger grésillement."
-    ""
+    "A faint crackle."
 
 # game/scenario/1_canon.rpy:1721
 translate english KAMI_MESSAGE_APRES_VISITE_772fe2cf:
 
     # "Les écrans muraux s’allument presque en même temps."
-    ""
+    "The wall screens light up almost at the same time."
 
 # game/scenario/1_canon.rpy:1724
 translate english KAMI_MESSAGE_APRES_VISITE_c5396df9_3:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:1728
 translate english KAMI_MESSAGE_APRES_VISITE_e0828820:
 
     # kami "Dix-huit heures précises."
-    kami ""
+    kami "Six p.m. sharp."
 
 # game/scenario/1_canon.rpy:1730
 translate english KAMI_MESSAGE_APRES_VISITE_48d54fbc:
 
     # kami "Le temps imparti pour le dépôt des amendements est désormais écoulé."
-    kami ""
+    kami "The time allotted for submitting amendments has now expired."
 
 # game/scenario/1_canon.rpy:1734
 translate english KAMI_MESSAGE_APRES_VISITE_709d8213:
 
     # kami "Je suis ravie."
-    kami ""
+    kami "I’m delighted."
 
 # game/scenario/1_canon.rpy:1738
 translate english KAMI_MESSAGE_APRES_VISITE_4b044c02:
 
     # kami "Vraiment."
-    kami ""
+    kami "Truly."
 
 # game/scenario/1_canon.rpy:1739
 translate english KAMI_MESSAGE_APRES_VISITE_f597187f:
 
     # kami "Vous avez tous participé."
-    kami ""
+    kami "You all participated."
 
 # game/scenario/1_canon.rpy:1740
 translate english KAMI_MESSAGE_APRES_VISITE_22fc3032:
 
     # kami "Dans les temps."
-    kami ""
+    kami "On time."
 
 # game/scenario/1_canon.rpy:1741
 translate english KAMI_MESSAGE_APRES_VISITE_7c13e068:
 
     # kami "Sans exception."
-    kami ""
+    kami "Without exception."
 
 # game/scenario/1_canon.rpy:1745
 translate english KAMI_MESSAGE_APRES_VISITE_a61a72fc:
 
     # kami "C’est rare."
-    kami ""
+    kami "That’s rare."
 
 # game/scenario/1_canon.rpy:1746
 translate english KAMI_MESSAGE_APRES_VISITE_7c551a12:
 
     # kami "Et très appréciable."
-    kami ""
+    kami "And very much appreciated."
 
 # game/scenario/1_canon.rpy:1750
 translate english KAMI_MESSAGE_APRES_VISITE_310e97b6:
 
     # kami "Grâce à vous, je n’aurai pas besoin d’éliminer qui que ce soit aujourd’hui."
-    kami ""
+    kami "Thanks to you, I won’t need to eliminate anyone today."
 
 # game/scenario/1_canon.rpy:1752
 translate english KAMI_MESSAGE_APRES_VISITE_ab87bb6c:
 
     # "Personne ne réagit."
-    ""
+    "No one reacts."
 
 # game/scenario/1_canon.rpy:1753
 translate english KAMI_MESSAGE_APRES_VISITE_9dbfd93b:
 
     # "Mais l’air semble se détendre d’un cran."
-    ""
+    "But the tension eases slightly."
 
 # game/scenario/1_canon.rpy:1754
 translate english KAMI_MESSAGE_APRES_VISITE_542ee4e8:
 
     # "D'un cran seulement."
-    ""
+    "Only slightly."
 
 # game/scenario/1_canon.rpy:1758
 translate english KAMI_MESSAGE_APRES_VISITE_aab0949c:
 
     # kami "Les dix amendements soumis au vote seront tirés au sort."
-    kami ""
+    kami "The ten amendments submitted will be drawn at random."
 
 # game/scenario/1_canon.rpy:1760
 translate english KAMI_MESSAGE_APRES_VISITE_3474a992:
 
     # kami "Le tirage sera diffusé demain matin."
-    kami ""
+    kami "The draw will be broadcast tomorrow morning."
 
 # game/scenario/1_canon.rpy:1761
 translate english KAMI_MESSAGE_APRES_VISITE_4d72439e:
 
     # kami "À neuf heures."
-    kami ""
+    kami "At nine o’clock."
 
 # game/scenario/1_canon.rpy:1762
 translate english KAMI_MESSAGE_APRES_VISITE_89a9f3a4:
 
     # kami "Sur l’ensemble des écrans."
-    kami ""
+    kami "On all screens."
 
 # game/scenario/1_canon.rpy:1766
 translate english KAMI_MESSAGE_APRES_VISITE_50470f87:
 
     # kami "Je vous conseille d’être attentifs."
-    kami ""
+    kami "I advise you to pay close attention."
 
 # game/scenario/1_canon.rpy:1767
 translate english KAMI_MESSAGE_APRES_VISITE_a46266dd:
 
     # kami "Le hasard a parfois beaucoup de goût."
-    kami ""
+    kami "Chance sometimes has exquisite taste."
 
 # game/scenario/1_canon.rpy:1771
 translate english KAMI_MESSAGE_APRES_VISITE_453873ad:
 
     # kami "En attendant."
-    kami ""
+    kami "In the meantime."
 
 # game/scenario/1_canon.rpy:1773
 translate english KAMI_MESSAGE_APRES_VISITE_c95daf64:
 
     # kami "L’accès aux chambres est désormais ouvert."
-    kami ""
+    kami "Access to the rooms is now open."
 
 # game/scenario/1_canon.rpy:1774
 translate english KAMI_MESSAGE_APRES_VISITE_b8609d1f:
 
     # kami "Vous êtes libres de circuler."
-    kami ""
+    kami "You are free to move around."
 
 # game/scenario/1_canon.rpy:1775
 translate english KAMI_MESSAGE_APRES_VISITE_cbd08934:
 
     # kami "De manger."
-    kami ""
+    kami "To eat."
 
 # game/scenario/1_canon.rpy:1776
 translate english KAMI_MESSAGE_APRES_VISITE_24280cde:
 
     # kami "De vous reposer."
-    kami ""
+    kami "To rest."
 
 # game/scenario/1_canon.rpy:1780
 translate english KAMI_MESSAGE_APRES_VISITE_6624b3de:
 
     # kami "Profitez-en."
-    kami ""
+    kami "Enjoy it."
 
 # game/scenario/1_canon.rpy:1781
 translate english KAMI_MESSAGE_APRES_VISITE_1e4896c4:
 
     # kami "Demain, on recommencera à jouer tous ensemble."
-    kami ""
+    kami "Tomorrow, we’ll start playing together again."
 
 # game/scenario/1_canon.rpy:1784
 translate english KAMI_MESSAGE_APRES_VISITE_c5396df9_4:
 
     # "-Bip-"
-    ""
+    "-Beep-"
 
 # game/scenario/1_canon.rpy:1788
 translate english KAMI_MESSAGE_APRES_VISITE_8ee85931:
 
     # "Les écrans s’éteignent."
-    ""
+    "The screens turn off."
 
 # game/scenario/1_canon.rpy:1789
 translate english KAMI_MESSAGE_APRES_VISITE_e8cbd0ff:
 
     # "Un par un."
-    ""
+    "One by one."
 
 # game/scenario/1_canon.rpy:1790
 translate english KAMI_MESSAGE_APRES_VISITE_5d19475b:
 
     # "Puis le silence retombe."
-    ""
+    "Then silence falls again."
 
 # game/scenario/1_canon.rpy:1794
 translate english KAMI_MESSAGE_APRES_VISITE_a529d078:
 
     # "Personne ne parle tout de suite."
-    ""
+    "No one speaks right away."
 
 # game/scenario/1_canon.rpy:1795
 translate english KAMI_MESSAGE_APRES_VISITE_5d70c8e4:
 
     # "Comme si on attendait encore quelque chose."
-    ""
+    "As if we’re still waiting for something."
 
 # game/scenario/1_canon.rpy:1796
 translate english KAMI_MESSAGE_APRES_VISITE_2eb410ac:
 
     # "Ou quelqu’un. Mais rien ne vient."
-    ""
+    "Or someone. But nothing comes."
 
 # game/scenario/1_canon.rpy:1798
 translate english KAMI_MESSAGE_APRES_VISITE_f6d87fe1:
 
     # "Puis les chaises raclent le sol."
-    ""
+    "Then chairs scrape against the floor."
 
 # game/scenario/1_canon.rpy:1799
 translate english KAMI_MESSAGE_APRES_VISITE_30937729:
 
     # "Des pas."
-    ""
+    "Footsteps."
 
 # game/scenario/1_canon.rpy:1800
 translate english KAMI_MESSAGE_APRES_VISITE_81896e7f:
 
     # "Des soupirs."
-    ""
+    "Sighs."
 
 # game/scenario/1_canon.rpy:1802
 translate english KAMI_MESSAGE_APRES_VISITE_f83d0112:
 
     # "Les représentants commencent à se disperser."
-    ""
+    "The representatives start to disperse."
 
 # game/scenario/1_canon.rpy:1803
 translate english KAMI_MESSAGE_APRES_VISITE_a5238a61:
 
     # "Sans vraiment se regarder."
-    ""
+    "Without really looking at each other."
 
 # game/scenario/1_canon.rpy:1804
 translate english KAMI_MESSAGE_APRES_VISITE_5f203bf1:
 
     # "Sans se dire au revoir."
-    ""
+    "Without saying goodbye."
 
 # game/scenario/1_canon.rpy:1806
 translate english KAMI_MESSAGE_APRES_VISITE_17cb7db1:
 
     # think "C’est fini."
-    think ""
+    think "It’s over."
 
 # game/scenario/1_canon.rpy:1807
 translate english KAMI_MESSAGE_APRES_VISITE_54d26496:
 
     # think "Pour aujourd’hui du moins."
-    think ""
+    think "At least for today."
 
 # game/scenario/1_canon.rpy:1811
 translate english KAMI_MESSAGE_APRES_VISITE_95cc50c7:
 
     # "Le couloir est éclairé."
-    ""
+    "The hallway is lit."
 
 # game/scenario/1_canon.rpy:1812
 translate english KAMI_MESSAGE_APRES_VISITE_98c422d4:
 
     # "Il est plus calme."
-    ""
+    "It’s quieter."
 
 # game/scenario/1_canon.rpy:1813
 translate english KAMI_MESSAGE_APRES_VISITE_18b2c3d1:
 
     # "Presque normal."
-    ""
+    "Almost normal."
 
 # game/scenario/1_canon.rpy:1815
 translate english KAMI_MESSAGE_APRES_VISITE_79700a7b:
 
     # think "J’ai déposé un amendement."
-    think ""
+    think "I submitted an amendment."
 
 # game/scenario/1_canon.rpy:1816
 translate english KAMI_MESSAGE_APRES_VISITE_9120ec76:
 
     # think "On en a tous déposé un."
-    think ""
+    think "We all did."
 
 # game/scenario/1_canon.rpy:1817
 translate english KAMI_MESSAGE_APRES_VISITE_51fe995f:
 
     # think "J’espère ne pas avoir fait une connerie."
-    think ""
+    think "I hope I didn’t screw up."
 
 # game/scenario/1_canon.rpy:1819
 translate english KAMI_MESSAGE_APRES_VISITE_75cfdc71:
 
     # think "Demain matin à neuf heures."
-    think ""
+    think "Tomorrow morning at nine."
 
 # game/scenario/1_canon.rpy:1823
 translate english KAMI_MESSAGE_APRES_VISITE_03773c47:
 
     # "Je m’arrête un instant."
-    ""
+    "I stop for a moment."
 
 # game/scenario/1_canon.rpy:1824
 translate english KAMI_MESSAGE_APRES_VISITE_62ef3255:
 
     # "Debout, au milieu du couloir."
-    ""
+    "Standing in the middle of the hallway."
 
 # game/scenario/1_canon.rpy:1826
 translate english KAMI_MESSAGE_APRES_VISITE_31287647:
 
     # think "Je n’ai pas vraiment envie de réfléchir."
-    think ""
+    think "I don't really feel like thinking."
 
 # game/scenario/1_canon.rpy:1827
 translate english KAMI_MESSAGE_APRES_VISITE_9e23f6d2:
 
     # think "Mais j’ai pas envie de rester seul avec ça en tête non plus."
-    think ""
+    think "But I don't want to stay alone with it in my head either."
 
 # game/scenario/1_canon.rpy:1834
 translate english KAMI_MESSAGE_APRES_VISITE_9f676492:
 
     # think "J’ai besoin de m’allonger."
-    think ""
+    think "I need to lie down."
 
 # game/scenario/1_canon.rpy:1835
 translate english KAMI_MESSAGE_APRES_VISITE_05820635:
 
     # think "Même si je sais que je ne dormirai pas tout de suite."
-    think ""
+    think "Even though I know I won't fall asleep right away."
 
 # game/scenario/1_canon.rpy:1837
 translate english KAMI_MESSAGE_APRES_VISITE_86d7bca3_1:
 
     # think "Juste…"
-    think ""
+    think "Just..."
 
 # game/scenario/1_canon.rpy:1838
 translate english KAMI_MESSAGE_APRES_VISITE_c60d5b49:
 
     # think "Me couper un peu du monde et rester au calme."
-    think ""
+    think "Cut off from the world for a bit and stay quiet."
 
 # game/scenario/1_canon.rpy:1844
 translate english KAMI_MESSAGE_APRES_VISITE_3526cc01:
 
     # think "Je devrais aller à la salle de repos."
-    think ""
+    think "I should go to the lounge."
 
 # game/scenario/1_canon.rpy:1845
 translate english KAMI_MESSAGE_APRES_VISITE_f57e8f97:
 
     # think "Peut-être que quelqu’un y sera."
-    think ""
+    think "Maybe someone will be there."
 
 # game/scenario/1_canon.rpy:1846
 translate english KAMI_MESSAGE_APRES_VISITE_43504072:
 
     # think "Ou peut-être pas."
-    think ""
+    think "Or maybe not."
 
 # game/scenario/1_canon.rpy:1848
 translate english KAMI_MESSAGE_APRES_VISITE_5fd4bdbc:
 
     # think "Dans les deux cas…"
-    think ""
+    think "Either way..."
 
 # game/scenario/1_canon.rpy:1849
 translate english KAMI_MESSAGE_APRES_VISITE_c10d6516:
 
     # think "ça me fera du bien."
-    think ""
+    think "it'll do me good."
 
 # game/scenario/1_canon.rpy:1861
 translate english KAMI_MESSAGE_APRES_VISITE_8e028cab:
 
     # "La salle de repos est allumée."
-    ""
+    "The lounge is lit."
 
 # game/scenario/1_canon.rpy:1862
 translate english KAMI_MESSAGE_APRES_VISITE_23b12128:
 
     # "Pas trop."
-    ""
+    "Not too bright."
 
 # game/scenario/1_canon.rpy:1863
 translate english KAMI_MESSAGE_APRES_VISITE_b18abf5e:
 
     # "Il y a cette lumière douce, presque agréable qui pulse du plafond."
-    ""
+    "A soft, almost pleasant light pulses from the ceiling."
 
 # game/scenario/1_canon.rpy:1865
 translate english KAMI_MESSAGE_APRES_VISITE_c1364ae7:
 
     # "Il n’y a pas grand monde."
-    ""
+    "There aren't many people."
 
 # game/scenario/1_canon.rpy:1866
 translate english KAMI_MESSAGE_APRES_VISITE_b9532605:
 
     # "Quelques canapés sont occupés."
-    ""
+    "A few couches are occupied."
 
 # game/scenario/1_canon.rpy:1867
 translate english KAMI_MESSAGE_APRES_VISITE_76b427fe:
 
     # "La plupart sont vides."
-    ""
+    "Most of them are empty."
 
 # game/scenario/1_canon.rpy:1869
 translate english KAMI_MESSAGE_APRES_VISITE_a46d2978:
 
     # think "Je m’attendais à pire."
-    think ""
+    think "I expected worse."
 
 # game/scenario/1_canon.rpy:1870
 translate english KAMI_MESSAGE_APRES_VISITE_4d85bc3a:
 
     # think "Ou à plus de silence."
-    think ""
+    think "Or more silence."
 
 # game/scenario/1_canon.rpy:1876
 translate english KAMI_MESSAGE_APRES_VISITE_4fc9927e:
 
     # julian "Ah."
-    julian ""
+    julian "Ah."
 
 # game/scenario/1_canon.rpy:1877
 translate english KAMI_MESSAGE_APRES_VISITE_d8772b00:
 
     # julian "Toi aussi t’as pas réussi à rentrer direct ?"
-    julian ""
+    julian "You couldn't go straight back either?"
 
 # game/scenario/1_canon.rpy:1879
 translate english KAMI_MESSAGE_APRES_VISITE_96fb98c9:
 
     # think "Évidemment."
-    think ""
+    think "Of course."
 
 # game/scenario/1_canon.rpy:1883
 translate english KAMI_MESSAGE_APRES_VISITE_ed194e72:
 
     # nyra "J’avais besoin de…"
-    nyra ""
+    nyra "I needed to..."
 
 # game/scenario/1_canon.rpy:1884
 translate english KAMI_MESSAGE_APRES_VISITE_62329a6f:
 
     # nyra "Je sais pas."
-    nyra ""
+    nyra "I don't know."
 
 # game/scenario/1_canon.rpy:1885
 translate english KAMI_MESSAGE_APRES_VISITE_92b802e5:
 
     # nyra "Voir autre chose qu’un mur."
-    nyra ""
+    nyra "See something other than a wall."
 
 # game/scenario/1_canon.rpy:1887
 translate english KAMI_MESSAGE_APRES_VISITE_73da6395:
 
     # "Julian se laisse tomber dans un fauteuil."
-    ""
+    "Julian lets himself drop into an armchair."
 
 # game/scenario/1_canon.rpy:1888
 translate english KAMI_MESSAGE_APRES_VISITE_08d825f7:
 
     # "Un peu trop fort."
-    ""
+    "A little too hard."
 
 # game/scenario/1_canon.rpy:1890
 translate english KAMI_MESSAGE_APRES_VISITE_252691d2:
 
     # julian "Franchement."
-    julian ""
+    julian "Honestly."
 
 # game/scenario/1_canon.rpy:1891
 translate english KAMI_MESSAGE_APRES_VISITE_f84af3c8:
 
     # julian "J’ai cru que j’allais rester bloqué devant ma feuille."
-    julian ""
+    julian "I thought I was going to get stuck staring at my page."
 
 # game/scenario/1_canon.rpy:1892
 translate english KAMI_MESSAGE_APRES_VISITE_b1a57715:
 
     # julian "À un moment, j’ai écrit une phrase entière."
-    julian ""
+    julian "At one point, I wrote a full sentence."
 
 # game/scenario/1_canon.rpy:1893
 translate english KAMI_MESSAGE_APRES_VISITE_adde3724:
 
     # julian "Puis je l’ai effacée."
-    julian ""
+    julian "Then I erased it."
 
 # game/scenario/1_canon.rpy:1894
 translate english KAMI_MESSAGE_APRES_VISITE_f44d2f5f:
 
     # julian "Trois fois."
-    julian ""
+    julian "Three times."
 
 # game/scenario/1_canon.rpy:1900
 translate english KAMI_MESSAGE_APRES_VISITE_c4a6a689:
 
     # mara "Moi j’ai arrêté d’y penser."
-    mara ""
+    mara "I stopped thinking about it."
 
 # game/scenario/1_canon.rpy:1901
 translate english KAMI_MESSAGE_APRES_VISITE_e11c9b26:
 
     # mara "Sinon je devenais folle."
-    mara ""
+    mara "Otherwise I was going to lose it."
 
 # game/scenario/1_canon.rpy:1903
 translate english KAMI_MESSAGE_APRES_VISITE_ff54f112:
 
     # mara "J’ai écrit."
-    mara ""
+    mara "I wrote."
 
 # game/scenario/1_canon.rpy:1904
 translate english KAMI_MESSAGE_APRES_VISITE_5c0b41af:
 
     # mara "Point."
-    mara ""
+    mara "Period."
 
 # game/scenario/1_canon.rpy:1905
 translate english KAMI_MESSAGE_APRES_VISITE_99b010df:
 
     # mara "Et tant pis."
-    mara ""
+    mara "And whatever."
 
 # game/scenario/1_canon.rpy:1907
 translate english KAMI_MESSAGE_APRES_VISITE_a448852f:
 
     # think "Tant pis."
-    think ""
+    think "Whatever."
 
 # game/scenario/1_canon.rpy:1908
 translate english KAMI_MESSAGE_APRES_VISITE_26ad2c8d:
 
     # think "Facile à dire."
-    think ""
+    think "Easy to say."
 
 # game/scenario/1_canon.rpy:1912
 translate english KAMI_MESSAGE_APRES_VISITE_75b4815a:
 
     # "Quelqu’un rit."
-    ""
+    "Someone laughs."
 
 # game/scenario/1_canon.rpy:1913
 translate english KAMI_MESSAGE_APRES_VISITE_4d071aa4_1:
 
     # "Pas fort."
-    ""
+    "Not loud."
 
 # game/scenario/1_canon.rpy:1914
 translate english KAMI_MESSAGE_APRES_VISITE_c8f15d34:
 
     # "Mais assez pour que ça surprenne."
-    ""
+    "But loud enough to surprise me."
 
 # game/scenario/1_canon.rpy:1916
 translate english KAMI_MESSAGE_APRES_VISITE_78a990b8:
 
     # julian "On est d’accord que c’est complètement absurde ?"
-    julian ""
+    julian "We agree this is completely absurd, right?"
 
 # game/scenario/1_canon.rpy:1917
 translate english KAMI_MESSAGE_APRES_VISITE_81fe37d8:
 
     # julian "On écrit des phrases."
-    julian ""
+    julian "We write sentences."
 
 # game/scenario/1_canon.rpy:1918
 translate english KAMI_MESSAGE_APRES_VISITE_d008e102:
 
     # julian "Et demain matin…"
-    julian ""
+    julian "And tomorrow morning..."
 
 # game/scenario/1_canon.rpy:1919
 translate english KAMI_MESSAGE_APRES_VISITE_d6a27755:
 
     # julian "le hasard décide si elles comptent."
-    julian ""
+    julian "random chance decides whether they matter."
 
 # game/scenario/1_canon.rpy:1921
 translate english KAMI_MESSAGE_APRES_VISITE_e3128258:
 
     # nyra "Oui."
-    nyra ""
+    nyra "Yeah."
 
 # game/scenario/1_canon.rpy:1922
 translate english KAMI_MESSAGE_APRES_VISITE_e48f35c7:
 
     # nyra "Mais au moins…"
-    nyra ""
+    nyra "But at least..."
 
 # game/scenario/1_canon.rpy:1923
 translate english KAMI_MESSAGE_APRES_VISITE_41869bdc:
 
     # nyra "on a écrit quelque chose."
-    nyra ""
+    nyra "we wrote something."
 
 # game/scenario/1_canon.rpy:1927
 translate english KAMI_MESSAGE_APRES_VISITE_adc85247:
 
     # "Un silence s’installe."
-    ""
+    "A silence settles in."
 
 # game/scenario/1_canon.rpy:1928
 translate english KAMI_MESSAGE_APRES_VISITE_b747470f:
 
     # "Pas gênant."
-    ""
+    "Not awkward."
 
 # game/scenario/1_canon.rpy:1929
 translate english KAMI_MESSAGE_APRES_VISITE_94a9388d:
 
     # "Juste calme."
-    ""
+    "Just calm."
 
 # game/scenario/1_canon.rpy:1931
 translate english KAMI_MESSAGE_APRES_VISITE_d4b75960:
 
     # think "C’est étrange."
-    think ""
+    think "It's strange."
 
 # game/scenario/1_canon.rpy:1932
 translate english KAMI_MESSAGE_APRES_VISITE_e79b1ad0:
 
     # think "On dirait presque une soirée normale."
-    think ""
+    think "It almost feels like a normal evening."
 
 # game/scenario/1_canon.rpy:1934
 translate english KAMI_MESSAGE_APRES_VISITE_43be68bf:
 
     # mara "Vous pensez qu’elle regarde là ?"
-    mara ""
+    mara "Do you think she's watching us right now?"
 
 # game/scenario/1_canon.rpy:1936
 translate english KAMI_MESSAGE_APRES_VISITE_a9fdc427:
 
     # julian "Sûrement."
-    julian ""
+    julian "Probably."
 
 # game/scenario/1_canon.rpy:1937
 translate english KAMI_MESSAGE_APRES_VISITE_b0cb2b50:
 
     # julian "Mais honnêtement ?"
-    julian ""
+    julian "But honestly?"
 
 # game/scenario/1_canon.rpy:1938
 translate english KAMI_MESSAGE_APRES_VISITE_16e03cae:
 
     # julian "Là, tout de suite…"
-    julian ""
+    julian "Right now..."
 
 # game/scenario/1_canon.rpy:1939
 translate english KAMI_MESSAGE_APRES_VISITE_15c14e81:
 
     # julian "j’en ai un peu rien à foutre."
-    julian ""
+    julian "I kind of don't give a shit."
 
 # game/scenario/1_canon.rpy:1943
 translate english KAMI_MESSAGE_APRES_VISITE_b2331912:
 
     # "Personne ne le reprend."
-    ""
+    "No one calls him out."
 
 # game/scenario/1_canon.rpy:1944
 translate english KAMI_MESSAGE_APRES_VISITE_b6bd58fe:
 
     # "Personne ne le contredit."
-    ""
+    "No one contradicts him."
 
 # game/scenario/1_canon.rpy:1946
 translate english KAMI_MESSAGE_APRES_VISITE_9952c37f:
 
     # think "Ça fait du bien."
-    think ""
+    think "It feels good."
 
 # game/scenario/1_canon.rpy:1947
 translate english KAMI_MESSAGE_APRES_VISITE_0e25ef0e:
 
     # think "De ne pas faire attention pendant deux minutes."
-    think ""
+    think "To stop paying attention for two minutes."
 
 # game/scenario/1_canon.rpy:1956
 translate english KAMI_MESSAGE_APRES_VISITE_57efb6ac:
 
     # "La porte de la salle de repos s’ouvre."
-    ""
+    "The lounge door opens."
 
 # game/scenario/1_canon.rpy:1958
 translate english KAMI_MESSAGE_APRES_VISITE_a2f1e19f:
 
     # "Quelqu’un hésite un instant."
-    ""
+    "Someone hesitates for a moment."
 
 # game/scenario/1_canon.rpy:1959
 translate english KAMI_MESSAGE_APRES_VISITE_4259cbe6:
 
     # "Puis il avance."
-    ""
+    "Then he steps inside."
 
 # game/scenario/1_canon.rpy:1961
 translate english KAMI_MESSAGE_APRES_VISITE_0b2a3cd1:
 
     # tomas "Euh…"
-    tomas ""
+    tomas "Uh..."
 
 # game/scenario/1_canon.rpy:1962
 translate english KAMI_MESSAGE_APRES_VISITE_36de3b76:
 
     # tomas "Bonsoir."
-    tomas ""
+    tomas "Good evening."
 
 # game/scenario/1_canon.rpy:1964
 translate english KAMI_MESSAGE_APRES_VISITE_f15cf903:
 
     # "Tomas entre."
-    ""
+    "Tomas walks in."
 
 # game/scenario/1_canon.rpy:1965
 translate english KAMI_MESSAGE_APRES_VISITE_6a1524dc:
 
     # "Un plateau entre les mains."
-    ""
+    "A tray in his hands."
 
 # game/scenario/1_canon.rpy:1966
 translate english KAMI_MESSAGE_APRES_VISITE_63ed8a19:
 
     # "Six tasses."
-    ""
+    "Six cups."
 
 # game/scenario/1_canon.rpy:1967
 translate english KAMI_MESSAGE_APRES_VISITE_f3da372c:
 
     # "Il marche lentement."
-    ""
+    "He walks slowly."
 
 # game/scenario/1_canon.rpy:1968
 translate english KAMI_MESSAGE_APRES_VISITE_2db451b0:
 
     # "Beaucoup trop concentré sur son équilibre."
-    ""
+    "Way too focused on keeping his balance."
 
 # game/scenario/1_canon.rpy:1971
 translate english KAMI_MESSAGE_APRES_VISITE_ea1f88f1:
 
     # julian "…"
-    julian ""
+    julian "..."
 
 # game/scenario/1_canon.rpy:1972
 translate english KAMI_MESSAGE_APRES_VISITE_7a569080:
 
     # julian "Ok."
-    julian ""
+    julian "Okay."
 
 # game/scenario/1_canon.rpy:1973
 translate english KAMI_MESSAGE_APRES_VISITE_21479a14:
 
     # julian "Respect."
-    julian ""
+    julian "Respect."
 
 # game/scenario/1_canon.rpy:1976
 translate english KAMI_MESSAGE_APRES_VISITE_c5c2a031:
 
     # nyra "Fais pas semblant d’être détendu."
-    nyra ""
+    nyra "Don't pretend you're relaxed."
 
 # game/scenario/1_canon.rpy:1977
 translate english KAMI_MESSAGE_APRES_VISITE_24ba16c6:
 
     # nyra "On voit très bien que tu stresses."
-    nyra ""
+    nyra "It's obvious you're stressed."
 
 # game/scenario/1_canon.rpy:1980
 translate english KAMI_MESSAGE_APRES_VISITE_b167ca81:
 
     # tomas "Disons que si je renverse ça."
-    tomas ""
+    tomas "Let's just say if I spill this..."
 
 # game/scenario/1_canon.rpy:1981
 translate english KAMI_MESSAGE_APRES_VISITE_5f88cf1b:
 
     # tomas "Je meurs socialement et je vais me cacher sous une table pendant le reste du mois."
-    tomas ""
+    tomas "I'll die socially and hide under a table for the rest of the month."
 
 # game/scenario/1_canon.rpy:1984
 translate english KAMI_MESSAGE_APRES_VISITE_858af966:
 
     # mara "Y’a pire."
-    mara ""
+    mara "Could be worse."
 
 # game/scenario/1_canon.rpy:1985
 translate english KAMI_MESSAGE_APRES_VISITE_a60c3fc3:
 
     # mara "Tu pourrais mourir pour de vrai."
-    mara ""
+    mara "You could die for real."
 
 # game/scenario/1_canon.rpy:1988
 translate english KAMI_MESSAGE_APRES_VISITE_fcecf20c:
 
     # "Un léger rire passe."
-    ""
+    "A small laugh passes through the room."
 
 # game/scenario/1_canon.rpy:1989
 translate english KAMI_MESSAGE_APRES_VISITE_dfcf17e1:
 
     # "Bref, presque timide."
-    ""
+    "Brief—almost shy."
 
 # game/scenario/1_canon.rpy:1991
 translate english KAMI_MESSAGE_APRES_VISITE_6bdae024:
 
     # tomas "J’me suis dit que…"
-    tomas ""
+    tomas "I figured..."
 
 # game/scenario/1_canon.rpy:1992
 translate english KAMI_MESSAGE_APRES_VISITE_ea9abc32:
 
     # tomas "Ça ferait peut-être du bien."
-    tomas ""
+    tomas "it might do us some good."
 
 # game/scenario/1_canon.rpy:1993
 translate english KAMI_MESSAGE_APRES_VISITE_40105bca:
 
     # tomas "Un truc chaud."
-    tomas ""
+    tomas "Something warm."
 
 # game/scenario/1_canon.rpy:1995
 translate english KAMI_MESSAGE_APRES_VISITE_76387d29:
 
     # "Il pose enfin le plateau sur la table."
-    ""
+    "He finally sets the tray down on the table."
 
 # game/scenario/1_canon.rpy:1996
 translate english KAMI_MESSAGE_APRES_VISITE_18eedd6b:
 
     # "Sans rien renverser."
-    ""
+    "Without spilling anything."
 
 # game/scenario/1_canon.rpy:1999
 translate english KAMI_MESSAGE_APRES_VISITE_97260b72:
 
     # julian "Putain."
-    julian ""
+    julian "Fuck."
 
 # game/scenario/1_canon.rpy:2000
 translate english KAMI_MESSAGE_APRES_VISITE_643d4009:
 
     # julian "T'es un véritable héros."
-    julian ""
+    julian "You're a damn hero."
 
 # game/scenario/1_canon.rpy:2012
 translate english KAMI_MESSAGE_APRES_VISITE_c37cf152:
 
     # "Les tasses circulent."
-    ""
+    "The cups get passed around."
 
 # game/scenario/1_canon.rpy:2013
 translate english KAMI_MESSAGE_APRES_VISITE_07c7db3f:
 
     # "Les mains se tendent."
-    ""
+    "Hands reach out."
 
 # game/scenario/1_canon.rpy:2014
 translate english KAMI_MESSAGE_APRES_VISITE_58d4262b:
 
     # "La vapeur monte doucement."
-    ""
+    "Steam rises softly."
 
 # game/scenario/1_canon.rpy:2016
 translate english KAMI_MESSAGE_APRES_VISITE_2c963b61:
 
     # think "Ça sent le thé."
-    think ""
+    think "It smells like tea."
 
 # game/scenario/1_canon.rpy:2017
 translate english KAMI_MESSAGE_APRES_VISITE_f05a099c:
 
     # think "Un vrai thé bien fort comme il faut."
-    think ""
+    think "Real, properly strong tea."
 
 # game/scenario/1_canon.rpy:2018
 translate english KAMI_MESSAGE_APRES_VISITE_96d08b9d:
 
     # think "Pas un truc synthétique."
-    think ""
+    think "Not some synthetic crap."
 
 # game/scenario/1_canon.rpy:2020
 translate english KAMI_MESSAGE_APRES_VISITE_ad4ef0f9:
 
     # nyra "J’avais presque oublié ce que ça faisait."
-    nyra ""
+    nyra "I’d almost forgotten what it feels like."
 
 # game/scenario/1_canon.rpy:2021
 translate english KAMI_MESSAGE_APRES_VISITE_c079b2e2:
 
     # nyra "Tenir quelque chose de chaud."
-    nyra ""
+    nyra "Holding something warm."
 
 # game/scenario/1_canon.rpy:2023
 translate english KAMI_MESSAGE_APRES_VISITE_5839b059:
 
     # mara "Ouais."
-    mara ""
+    mara "Yeah."
 
 # game/scenario/1_canon.rpy:2024
 translate english KAMI_MESSAGE_APRES_VISITE_91182f97:
 
     # mara "Ça rassure."
-    mara ""
+    mara "It’s comforting."
 
 # game/scenario/1_canon.rpy:2025
 translate english KAMI_MESSAGE_APRES_VISITE_c33ba509:
 
     # mara "Un peu."
-    mara ""
+    mara "A little."
 
 # game/scenario/1_canon.rpy:2027
 translate english KAMI_MESSAGE_APRES_VISITE_4f09a2df:
 
     # "Je prends la tasse."
-    ""
+    "I take the cup."
 
 # game/scenario/1_canon.rpy:2028
 translate english KAMI_MESSAGE_APRES_VISITE_67e3dfb7:
 
     # "Elle me brûle presque les doigts."
-    ""
+    "It almost burns my fingers."
 
 # game/scenario/1_canon.rpy:2029
 translate english KAMI_MESSAGE_APRES_VISITE_6f3ce102:
 
     # "Mais je la garde quand même."
-    ""
+    "But I hold onto it anyway."
 
 # game/scenario/1_canon.rpy:2031
 translate english KAMI_MESSAGE_APRES_VISITE_153caf2f:
 
     # think "C’est idiot."
-    think ""
+    think "It’s stupid."
 
 # game/scenario/1_canon.rpy:2032
 translate english KAMI_MESSAGE_APRES_VISITE_5bcab31d:
 
     # think "Mais ça m’ancre."
-    think ""
+    think "But it grounds me."
 
 # game/scenario/1_canon.rpy:2034
 translate english KAMI_MESSAGE_APRES_VISITE_7f372a9f:
 
     # tomas "Demain…"
-    tomas ""
+    tomas "Tomorrow..."
 
 # game/scenario/1_canon.rpy:2035
 translate english KAMI_MESSAGE_APRES_VISITE_ac2e0ec3:
 
     # tomas "À neuf heures on saura ..."
-    tomas ""
+    tomas "At nine o’clock, we’ll know..."
 
 # game/scenario/1_canon.rpy:2037
 translate english KAMI_MESSAGE_APRES_VISITE_8f504254:
 
     # julian "Ouais."
-    julian ""
+    julian "Yeah."
 
 # game/scenario/1_canon.rpy:2038
 translate english KAMI_MESSAGE_APRES_VISITE_395da090:
 
     # julian "Demain."
-    julian ""
+    julian "Tomorrow."
 
 # game/scenario/1_canon.rpy:2040
 translate english KAMI_MESSAGE_APRES_VISITE_ce37a24d:
 
     # "Personne n’ajoute rien."
-    ""
+    "No one adds anything."
 
 # game/scenario/1_canon.rpy:2041
 translate english KAMI_MESSAGE_APRES_VISITE_811bba7e:
 
     # "Mais tout le monde y pense."
-    ""
+    "But everyone’s thinking it."
 
 # game/scenario/1_canon.rpy:2045
 translate english KAMI_MESSAGE_APRES_VISITE_d5bf8ae9:
 
     # "On boit."
-    ""
+    "We drink."
 
 # game/scenario/1_canon.rpy:2046
 translate english KAMI_MESSAGE_APRES_VISITE_55091af0:
 
     # "En silence."
-    ""
+    "In silence."
 
 # game/scenario/1_canon.rpy:2048
 translate english KAMI_MESSAGE_APRES_VISITE_bfc475ba:
 
     # think "Je sais pas combien de temps ce calme durera."
-    think ""
+    think "I don't know how long this calm will last."
 
 # game/scenario/1_canon.rpy:2049
 translate english KAMI_MESSAGE_APRES_VISITE_2bf1760b:
 
     # think "Mais là, en ce moment…"
-    think ""
+    think "But right now..."
 
 # game/scenario/1_canon.rpy:2050
 translate english KAMI_MESSAGE_APRES_VISITE_cd7ec503:
 
     # think "C’est agréable."
-    think ""
+    think "it feels good."
 
 # game/scenario/1_canon.rpy:2054
 translate english KAMI_MESSAGE_APRES_VISITE_c1b0319a:
 
     # "Les tasses se vident."
-    ""
+    "The cups empty out."
 
 # game/scenario/1_canon.rpy:2055
 translate english KAMI_MESSAGE_APRES_VISITE_2ebe2305:
 
     # "Le plateau n’en garde plus qu’une."
-    ""
+    "Only one cup remains on the tray."
 
 # game/scenario/1_canon.rpy:2056
 translate english KAMI_MESSAGE_APRES_VISITE_6d3e9965:
 
     # "Personne ne la prend."
-    ""
+    "No one takes it."
 
 # game/scenario/1_canon.rpy:2058
 translate english KAMI_MESSAGE_APRES_VISITE_d5553673:
 
     # mara "Bon."
-    mara ""
+    mara "Alright."
 
 # game/scenario/1_canon.rpy:2059
 translate english KAMI_MESSAGE_APRES_VISITE_8132e4fc:
 
     # mara "Je vais finir par aller me coucher."
-    mara ""
+    mara "I’m gonna end up going to bed."
 
 # game/scenario/1_canon.rpy:2061
 translate english KAMI_MESSAGE_APRES_VISITE_00559a83:
 
     # nyra "Moi aussi."
-    nyra ""
+    nyra "Me too."
 
 # game/scenario/1_canon.rpy:2062
 translate english KAMI_MESSAGE_APRES_VISITE_5c937039:
 
     # nyra "Avant que je recommence à réfléchir."
-    nyra ""
+    nyra "Before I start thinking again."
 
 # game/scenario/1_canon.rpy:2064
 translate english KAMI_MESSAGE_APRES_VISITE_dc7fe9f2:
 
     # julian "Excellente idée."
-    julian ""
+    julian "Excellent idea."
 
 # game/scenario/1_canon.rpy:2066
 translate english KAMI_MESSAGE_APRES_VISITE_c45566f0:
 
     # "Ils se lèvent."
-    ""
+    "They stand up."
 
 # game/scenario/1_canon.rpy:2067
 translate english KAMI_MESSAGE_APRES_VISITE_7e4d8d7a:
 
     # "Un à un."
-    ""
+    "One by one."
 
 # game/scenario/1_canon.rpy:2069
 translate english KAMI_MESSAGE_APRES_VISITE_4e217128:
 
     # think "La parenthèse se referme."
-    think ""
+    think "The little bubble closes."
 
 # game/scenario/1_canon.rpy:2073
 translate english KAMI_MESSAGE_APRES_VISITE_99a9f4c2:
 
     # "Je reste encore quelques secondes."
-    ""
+    "I stay a few more seconds."
 
 # game/scenario/1_canon.rpy:2074
 translate english KAMI_MESSAGE_APRES_VISITE_130f99f1:
 
     # "Assis."
-    ""
+    "Sitting."
 
 # game/scenario/1_canon.rpy:2075
 translate english KAMI_MESSAGE_APRES_VISITE_2c3c1ac5:
 
     # "La tasse vide entre les mains."
-    ""
+    "The empty cup in my hands."
 
 # game/scenario/1_canon.rpy:2077
 translate english KAMI_MESSAGE_APRES_VISITE_2c1d1c85:
 
     # think "Je devrais y aller aussi."
-    think ""
+    think "I should go too."
 
 # game/scenario/1_canon.rpy:2089
 translate english KAMI_MESSAGE_APRES_VISITE_777bf449:
 
     # "Le couloir est plus calme."
-    ""
+    "The hallway is quieter."
 
 # game/scenario/1_canon.rpy:2090
 translate english KAMI_MESSAGE_APRES_VISITE_5bdf59ea:
 
     # "Pas vide."
-    ""
+    "Not empty."
 
 # game/scenario/1_canon.rpy:2091
 translate english KAMI_MESSAGE_APRES_VISITE_a13dfe43:
 
     # "Mais plus lent."
-    ""
+    "Just slower."
 
 # game/scenario/1_canon.rpy:2093
 translate english KAMI_MESSAGE_APRES_VISITE_4d2a63a3:
 
     # "Les pas résonnent différemment."
-    ""
+    "Footsteps sound different."
 
 # game/scenario/1_canon.rpy:2094
 translate english KAMI_MESSAGE_APRES_VISITE_a5d6ec6f:
 
     # "Comme si le bâtiment lui-même soufflait un peu."
-    ""
+    "Like the building itself is finally exhaling."
 
 # game/scenario/1_canon.rpy:2096
 translate english KAMI_MESSAGE_APRES_VISITE_4e4a51a1:
 
     # think "Ça y est."
-    think ""
+    think "That's it."
 
 # game/scenario/1_canon.rpy:2097
 translate english KAMI_MESSAGE_APRES_VISITE_c869e964:
 
     # think "La journée est finie."
-    think ""
+    think "The day is over."
 
 # game/scenario/1_canon.rpy:2098
 translate english KAMI_MESSAGE_APRES_VISITE_47dc9b99:
 
     # think "Enfin… presque."
-    think ""
+    think "Well... almost."
 
 # game/scenario/1_canon.rpy:2100
 translate english KAMI_MESSAGE_APRES_VISITE_536396e6:
 
     # "Je marche sans me presser."
-    ""
+    "I walk without hurrying."
 
 # game/scenario/1_canon.rpy:2101
 translate english KAMI_MESSAGE_APRES_VISITE_4a571357:
 
     # "Je laisse les pensées glisser."
-    ""
+    "I let my thoughts slide."
 
 # game/scenario/1_canon.rpy:2102
 translate english KAMI_MESSAGE_APRES_VISITE_6b288621:
 
     # "Sans vraiment m’y accrocher."
-    ""
+    "Without really holding onto any of them."
 
 # game/scenario/1_canon.rpy:2108
 translate english KAMI_MESSAGE_APRES_VISITE_ccfa91af:
 
     # "Le dortoir est allumé."
-    ""
+    "The dorm is lit."
 
 # game/scenario/1_canon.rpy:2109
 translate english KAMI_MESSAGE_APRES_VISITE_7504573c:
 
     # "Une lumière plus chaude."
-    ""
+    "A warmer light."
 
 # game/scenario/1_canon.rpy:2110
 translate english KAMI_MESSAGE_APRES_VISITE_69a28514:
 
     # "Moins clinique."
-    ""
+    "Less clinical."
 
 # game/scenario/1_canon.rpy:2112
 translate english KAMI_MESSAGE_APRES_VISITE_b5dc7c28:
 
     # "Quelqu’un est déjà là."
-    ""
+    "Someone is already there."
 
 # game/scenario/1_canon.rpy:2118
 translate english KAMI_MESSAGE_APRES_VISITE_0feece22:
 
     # elias "Ah."
-    elias ""
+    elias "Ah."
 
 # game/scenario/1_canon.rpy:2119
 translate english KAMI_MESSAGE_APRES_VISITE_2716224a:
 
     # elias "Toi aussi tu rentres tard."
-    elias ""
+    elias "You’re back late too."
 
 # game/scenario/1_canon.rpy:2121
 translate english KAMI_MESSAGE_APRES_VISITE_f85b2fd7:
 
     # think "Elias."
-    think ""
+    think "Elias."
 
 # game/scenario/1_canon.rpy:2125
 translate english KAMI_MESSAGE_APRES_VISITE_596f5ec4:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/1_canon.rpy:2126
 translate english KAMI_MESSAGE_APRES_VISITE_9f121771:
 
     # noam "J’avais pas trop envie de rester seul."
-    noam ""
+    noam "I didn’t really feel like being alone."
 
 # game/scenario/1_canon.rpy:2128
 translate english KAMI_MESSAGE_APRES_VISITE_f7a826ad:
 
     # elias "Je vois."
-    elias ""
+    elias "I get it."
 
 # game/scenario/1_canon.rpy:2129
 translate english KAMI_MESSAGE_APRES_VISITE_435b1cfd:
 
     # elias "La salle de repos ?"
-    elias ""
+    elias "The lounge?"
 
 # game/scenario/1_canon.rpy:2131
 translate english KAMI_MESSAGE_APRES_VISITE_596f5ec4_1:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/1_canon.rpy:2133
 translate english KAMI_MESSAGE_APRES_VISITE_f31f2b89:
 
     # elias "Bonne idée."
-    elias ""
+    elias "Good idea."
 
 # game/scenario/1_canon.rpy:2135
 translate english KAMI_MESSAGE_APRES_VISITE_990a7f89:
 
     # elias "Moi j’ai essayé de dormir."
-    elias ""
+    elias "I tried to sleep."
 
 # game/scenario/1_canon.rpy:2136
 translate english KAMI_MESSAGE_APRES_VISITE_ddc4fbf0:
 
     # elias "Raté."
-    elias ""
+    elias "Didn't work."
 
 # game/scenario/1_canon.rpy:2140
 translate english KAMI_MESSAGE_APRES_VISITE_6346589d:
 
     # elias "En voilà un de couche tôt."
-    elias ""
+    elias "Well, look at Mr. Early-Bedtime."
 
 # game/scenario/1_canon.rpy:2141
 translate english KAMI_MESSAGE_APRES_VISITE_53fb35e3:
 
     # elias "Laisse moi deviner, envie de rester seul ?"
-    elias ""
+    elias "Let me guess—wanted to be alone?"
 
 # game/scenario/1_canon.rpy:2145
 translate english KAMI_MESSAGE_APRES_VISITE_985f2d04:
 
     # noam "On peut dire ça."
-    noam ""
+    noam "You could say that."
 
 # game/scenario/1_canon.rpy:2146
 translate english KAMI_MESSAGE_APRES_VISITE_e84c3980:
 
     # noam "Drôle de journée."
-    noam ""
+    noam "Hell of a day."
 
 # game/scenario/1_canon.rpy:2150
 translate english KAMI_MESSAGE_APRES_VISITE_ac64cdbe:
 
     # "Il sourit."
-    ""
+    "He smiles."
 
 # game/scenario/1_canon.rpy:2151
 translate english KAMI_MESSAGE_APRES_VISITE_0b4efc7e:
 
     # "Un vrai sourire."
-    ""
+    "A real smile."
 
 # game/scenario/1_canon.rpy:2152
 translate english KAMI_MESSAGE_APRES_VISITE_aef5bf3c:
 
     # "Un peu fatigué."
-    ""
+    "A little tired."
 
 # game/scenario/1_canon.rpy:2154
 translate english KAMI_MESSAGE_APRES_VISITE_d68091c6:
 
     # elias "C’est étrange."
-    elias ""
+    elias "It’s weird."
 
 # game/scenario/1_canon.rpy:2155
 translate english KAMI_MESSAGE_APRES_VISITE_8dc9a51f:
 
     # elias "On a passé la journée à faire des trucs lourds."
-    elias ""
+    elias "We spent the whole day doing heavy stuff."
 
 # game/scenario/1_canon.rpy:2156
 translate english KAMI_MESSAGE_APRES_VISITE_65789704:
 
     # elias "Et pourtant…"
-    elias ""
+    elias "And yet..."
 
 # game/scenario/1_canon.rpy:2157
 translate english KAMI_MESSAGE_APRES_VISITE_ecf5a34e:
 
     # elias "J’ai l’impression que mon corps est juste crevé."
-    elias ""
+    elias "I feel like my body is just wiped."
 
 # game/scenario/1_canon.rpy:2159
 translate english KAMI_MESSAGE_APRES_VISITE_596f5ec4_2:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/1_canon.rpy:2160
 translate english KAMI_MESSAGE_APRES_VISITE_77d71c4a:
 
     # noam "Comme après un déménagement."
-    noam ""
+    noam "Like after moving."
 
 # game/scenario/1_canon.rpy:2161
 translate english KAMI_MESSAGE_APRES_VISITE_71ce94f8:
 
     # noam "Ou un examen."
-    noam ""
+    noam "Or an exam."
 
 # game/scenario/1_canon.rpy:2163
 translate english KAMI_MESSAGE_APRES_VISITE_a0a210cb:
 
     # elias "Exactement. C'est l'idée."
-    elias ""
+    elias "Exactly. That's the vibe."
 
 # game/scenario/1_canon.rpy:2169
 translate english KAMI_MESSAGE_APRES_VISITE_10e05958:
 
     # elias "Demain matin…"
-    elias ""
+    elias "Tomorrow morning..."
 
 # game/scenario/1_canon.rpy:2170
 translate english KAMI_MESSAGE_APRES_VISITE_e599a770:
 
     # elias "Ça va être autre chose."
-    elias ""
+    elias "It's going to be something else."
 
 # game/scenario/1_canon.rpy:2172
 translate english KAMI_MESSAGE_APRES_VISITE_596f5ec4_3:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/1_canon.rpy:2176
 translate english KAMI_MESSAGE_APRES_VISITE_3344ba0c:
 
     # "On n’insiste pas."
-    ""
+    "We don't push it."
 
 # game/scenario/1_canon.rpy:2177
 translate english KAMI_MESSAGE_APRES_VISITE_2c7076fd:
 
     # "Pas besoin."
-    ""
+    "No need."
 
 # game/scenario/1_canon.rpy:2179
 translate english KAMI_MESSAGE_APRES_VISITE_4b646199:
 
     # elias "Bonne nuit, Noam."
-    elias ""
+    elias "Good night, Noam."
 
 # game/scenario/1_canon.rpy:2181
 translate english KAMI_MESSAGE_APRES_VISITE_791dfeee:
 
     # noam "Bonne nuit."
-    noam ""
+    noam "Good night."
 
 # game/scenario/1_canon.rpy:2189
 translate english KAMI_MESSAGE_APRES_VISITE_d0461715:
 
     # "Ma chambre."
-    ""
+    "My room."
 
 # game/scenario/1_canon.rpy:2190
 translate english KAMI_MESSAGE_APRES_VISITE_195831b4:
 
     # "Petite."
-    ""
+    "Small."
 
 # game/scenario/1_canon.rpy:2191
 translate english KAMI_MESSAGE_APRES_VISITE_bc13532c:
 
     # "Propre."
-    ""
+    "Clean."
 
 # game/scenario/1_canon.rpy:2192
 translate english KAMI_MESSAGE_APRES_VISITE_6b74c445:
 
     # "Silencieuse."
-    ""
+    "Quiet."
 
 # game/scenario/1_canon.rpy:2194
 translate english KAMI_MESSAGE_APRES_VISITE_eb5a00ac:
 
     # think "Enfin seul."
-    think ""
+    think "Finally alone."
 
 # game/scenario/1_canon.rpy:2196
 translate english KAMI_MESSAGE_APRES_VISITE_cfe93e4b:
 
     # "Je pose mes affaires."
-    ""
+    "I put my stuff down."
 
 # game/scenario/1_canon.rpy:2197
 translate english KAMI_MESSAGE_APRES_VISITE_7e60fd4d:
 
     # "En fait, je les jette presque."
-    ""
+    "Actually, I almost throw it."
 
 # game/scenario/1_canon.rpy:2198
 translate english KAMI_MESSAGE_APRES_VISITE_d603c42a:
 
     # "Je suis épuisé."
-    ""
+    "I'm exhausted."
 
 # game/scenario/1_canon.rpy:2200
 translate english KAMI_MESSAGE_APRES_VISITE_28ffdf6f:
 
     # "Je jette un regard sur ce qui compose ce qui me servira de chambre pendant un mois."
-    ""
+    "I look around at what’s going to be my room for a month."
 
 # game/scenario/1_canon.rpy:2201
 translate english KAMI_MESSAGE_APRES_VISITE_78e57710:
 
     # "Honnêtement, c'est pas mal du tout."
-    ""
+    "Honestly, it's not bad at all."
 
 # game/scenario/1_canon.rpy:2202
 translate english KAMI_MESSAGE_APRES_VISITE_7a4b0e51:
 
     # "Le lit est grand, une garderobe avec des affaires ..."
-    ""
+    "The bed is big, a wardrobe with clothes..."
 
 # game/scenario/1_canon.rpy:2204
 translate english KAMI_MESSAGE_APRES_VISITE_55e4f712:
 
     # think "Non, ce sont MES affaires !"
-    think ""
+    think "No—those are MY clothes!"
 
 # game/scenario/1_canon.rpy:2206
 translate english KAMI_MESSAGE_APRES_VISITE_00263874:
 
     # "Il y a du matériel informatique également."
-    ""
+    "There's computer gear too."
 
 # game/scenario/1_canon.rpy:2207
 translate english KAMI_MESSAGE_APRES_VISITE_890f8062:
 
     # "Je me demande à quoi on a accès."
-    ""
+    "I wonder what we can access."
 
 # game/scenario/1_canon.rpy:2209
 translate english KAMI_MESSAGE_APRES_VISITE_f36260f1:
 
     # "Sur le côté de la chambre, il y a aussi un accès à un toilette privatif ainsi qu'une salle de bain."
-    ""
+    "Off to the side, there’s a private toilet and a bathroom."
 
 # game/scenario/1_canon.rpy:2210
 translate english KAMI_MESSAGE_APRES_VISITE_361dcafe:
 
     # "Franchement, une douche bien chaude ça me tente bien."
-    ""
+    "Honestly, a hot shower sounds really good."
 
 # game/scenario/1_canon.rpy:2212
 translate english KAMI_MESSAGE_APRES_VISITE_f78f7671:
 
     # "Bon ... Allez."
-    ""
+    "Alright... let's go."
 
 # game/scenario/1_canon.rpy:2220
 translate english KAMI_MESSAGE_APRES_VISITE_9f28c34d:
 
     # "L’eau chaude coule."
-    ""
+    "Hot water runs."
 
 # game/scenario/1_canon.rpy:2221
 translate english KAMI_MESSAGE_APRES_VISITE_6828b5a6:
 
     # "Longtemps."
-    ""
+    "For a long time."
 
 # game/scenario/1_canon.rpy:2222
 translate english KAMI_MESSAGE_APRES_VISITE_7fd052d7:
 
     # "Mais qu'est ce que ça fait du bien."
-    ""
+    "God, that feels good."
 
 # game/scenario/1_canon.rpy:2224
 translate english KAMI_MESSAGE_APRES_VISITE_7af7b854:
 
     # "Je ferme les yeux."
-    ""
+    "I close my eyes."
 
 # game/scenario/1_canon.rpy:2225
 translate english KAMI_MESSAGE_APRES_VISITE_501c941c:
 
     # "Je profite du moment."
-    ""
+    "I let myself enjoy it."
 
 # game/scenario/1_canon.rpy:2226
 translate english KAMI_MESSAGE_APRES_VISITE_27a3db16:
 
     # "Je laisse la journée partir avec la vapeur."
-    ""
+    "I let the day drift away with the steam."
 
 # game/scenario/1_canon.rpy:2228
 translate english KAMI_MESSAGE_APRES_VISITE_e883e5c9:
 
     # think "Pas ce soir."
-    think ""
+    think "Not tonight."
 
 # game/scenario/1_canon.rpy:2229
 translate english KAMI_MESSAGE_APRES_VISITE_aa90db5d:
 
     # think "Je réfléchirai demain."
-    think ""
+    think "I'll think tomorrow."
 
 # game/scenario/1_canon.rpy:2235
 translate english KAMI_MESSAGE_APRES_VISITE_f7eca15f:
 
     # "Je sors de la douche puis m’allonge tranquillement sur le lit."
-    ""
+    "I step out of the shower and lie down on the bed."
 
 # game/scenario/1_canon.rpy:2236
 translate english KAMI_MESSAGE_APRES_VISITE_1295f6b9:
 
     # "Il est plus confortable que je ne l’imaginais."
-    ""
+    "It's more comfortable than I expected."
 
 # game/scenario/1_canon.rpy:2238
 translate english KAMI_MESSAGE_APRES_VISITE_eb896fcd:
 
     # think "Mon amendement est déposé."
-    think ""
+    think "My amendment is filed."
 
 # game/scenario/1_canon.rpy:2239
 translate english KAMI_MESSAGE_APRES_VISITE_2e218471:
 
     # think "Le reste ne m’appartient plus."
-    think ""
+    think "The rest isn't mine anymore."
 
 # game/scenario/1_canon.rpy:2241
 translate english KAMI_MESSAGE_APRES_VISITE_a5d1dbea:
 
     # "Le plafond est immobile."
-    ""
+    "The ceiling is still."
 
 # game/scenario/1_canon.rpy:2245
 translate english KAMI_MESSAGE_APRES_VISITE_210b04e4:
 
     # "Pour une fois."
-    ""
+    "For once."
 
 # game/scenario/1_canon.rpy:2253
 translate english KAMI_MESSAGE_APRES_VISITE_727fcd05:
 
     # "Je ne vais pas tarder à dormir."
-    ""
+    "I won't be long before I fall asleep."
 
 translate english strings:
 
@@ -6656,133 +6656,133 @@ translate english 6f177207:
 translate english 7b499056:
 
     # tomas "Au moins, ça confirme quelque chose."
-    tomas ""
+    tomas "At least it confirms something."
 
 # game/scenario/1_canon.rpy:785
 translate english b3f7db95:
 
     # tomas "Elle veut du spectacle. Vraiment."
-    tomas ""
+    tomas "She wants a show. For real."
 
 # game/scenario/1_canon.rpy:786
 translate english 1f944326:
 
     # tomas raison "Et si elle veut du spectacle… c’est qu’elle compte sur le fait qu’on va se déchirer entre nous."
-    tomas raison ""
+    tomas raison "And if she wants a show... it's because she's betting we'll tear each other apart."
 
 # game/scenario/1_canon.rpy:802
 translate english beae2523:
 
     # kael "Et si on se disait chacun ce qu’on envisage comme modifications ?"
-    kael ""
+    kael "What if we each say what kind of changes we're considering?"
 
 # game/scenario/1_canon.rpy:803
 translate english 2ddd5613:
 
     # kael "Pas besoin de tout écrire d’un coup. Juste… l’idée générale."
-    kael ""
+    kael "No need to write everything at once. Just... the general idea."
 
 # game/scenario/1_canon.rpy:804
 translate english be4d4440:
 
     # kael "Si on les met sur la table ensemble, on a peut-être une chance d’atteindre l’unanimité."
-    kael ""
+    kael "If we put them on the table together, maybe we have a shot at unanimity."
 
 # game/scenario/1_canon.rpy:805
 translate english 4cf69707:
 
     # kael "Sinon, on va tourner en rond."
-    kael ""
+    kael "Otherwise, we're going to go in circles."
 
 # game/scenario/1_canon.rpy:819
 translate english fe8af0ce:
 
     # elen "On devrait peut-être se caler sur un truc simple avant que ça parte en vrille."
-    elen ""
+    elen "Maybe we should agree on something simple before it goes off the rails."
 
 # game/scenario/1_canon.rpy:820
 translate english 0a165a5d:
 
     # elen "Genre une règle de base, pas grand-chose… juste pour pas s’étriper dans les dix premières minutes."
-    elen ""
+    elen "Like a basic rule, nothing big... just so we don't tear each other apart in the first ten minutes."
 
 # game/scenario/1_canon.rpy:821
 translate english a485e597:
 
     # elen "Parce que sinon je te jure, ça va dégénérer direct."
-    elen ""
+    elen "Because if we don't, I swear it's going to blow up immediately."
 
 # game/scenario/1_canon.rpy:824
 translate english 0f890bc7:
 
     # lysa blase "Tu veux une méthode ?"
-    lysa blase ""
+    lysa blase "You want a method?"
 
 # game/scenario/1_canon.rpy:826
 translate english dae65a3d:
 
     # lysa "Et ici, tuer quelqu’un… pas de conséquence."
-    lysa ""
+    lysa "And here, killing someone... no consequences."
 
 # game/scenario/1_canon.rpy:827
 translate english 3ae3afb6:
 
     # lysa fatigue "La méthode est déjà écrite."
-    lysa fatigue "...Radio silence."
+    lysa fatigue "The method is already written."
 
 # game/scenario/1_canon.rpy:828
 translate english 65c33c99:
 
     # lysa "... Et on la connaît tous."
-    lysa ""
+    lysa "...And we all know it."
 
 # game/scenario/1_canon.rpy:829
 translate english 1c28a0d4:
 
     # lysa peur "Evidemment que ça va finir en tuerie de masse."
-    lysa peur ""
+    lysa peur "Of course this is going to end in a mass slaughter."
 
 # game/scenario/1_canon.rpy:843
 translate english 39d67f97:
 
     # lysa neutre "On visite."
-    lysa neutre "No orders."
+    lysa neutre "We explore."
 
 # game/scenario/1_canon.rpy:845
 translate english 8f591d90:
 
     # lysa "Et on ferme sa gueule devant les caméras."
-    lysa ""
+    lysa "And we shut up in front of the cameras."
 
 # game/scenario/1_canon.rpy:846
 translate english 4ee91d69:
 
     # lysa fatigue "Surtout au début."
-    lysa fatigue "...Radio silence."
+    lysa fatigue "Especially at first."
 
 # game/scenario/1_canon.rpy:849
 translate english 6625ee5f:
 
     # elen "Je vais checker s’il y a une infirmerie… ou au moins de quoi faire un pansement."
-    elen ""
+    elen "I'm going to check if there's an infirmary... or at least something to make a bandage."
 
 # game/scenario/1_canon.rpy:850
 translate english 6f8c4674:
 
     # elen "On sait jamais, des fois que quelqu’un se fasse vraiment mal."
-    elen ""
+    elen "You never know—someone might actually get hurt."
 
 # game/scenario/1_canon.rpy:990
 translate english KAMI_MESSAGE_APRES_VISITE_8dc38f66:
 
     # mara "Chuuut."
-    mara ""
+    mara "Shhh."
 
 # game/scenario/1_canon.rpy:991
 translate english KAMI_MESSAGE_APRES_VISITE_149b29b8:
 
     # mara "T’as capté ou quoi ?"
-    mara ""
+    mara "Do you get it or what?"
 
 # game/scenario/1_canon.rpy:992
 translate english KAMI_MESSAGE_APRES_VISITE_1bc75170:
@@ -6794,610 +6794,610 @@ translate english KAMI_MESSAGE_APRES_VISITE_1bc75170:
 translate english KAMI_MESSAGE_APRES_VISITE_a53592f3:
 
     # mara "Et moi j’ai pas envie d’être sa cible du jour, alors merci mais tais toi."
-    mara ""
+    mara "And I don't feel like being her target of the day, so thanks, but shut up."
 
 # game/scenario/1_canon.rpy:998
 translate english KAMI_MESSAGE_APRES_VISITE_f2abc07a:
 
     # iris "Super. Vraiment super."
-    iris "We're being summoned like kids."
+    iris "Great. Really great."
 
 # game/scenario/1_canon.rpy:999
 translate english KAMI_MESSAGE_APRES_VISITE_4a8ba040:
 
     # iris "On nous convoque comme des mômes de primaire qui ont sali la classe. Génial, l’ambiance."
-    iris ""
+    iris "We're being summoned like little kids who trashed the classroom. Great vibe."
 
 # game/scenario/1_canon.rpy:1000
 translate english KAMI_MESSAGE_APRES_VISITE_21c178e3:
 
     # iris "J’ai hâte de voir qui va nous mettre au coin cette fois."
-    iris ""
+    iris "Can't wait to see who’s going to put us in the corner this time."
 
 # game/scenario/1_canon.rpy:1005
 translate english KAMI_MESSAGE_APRES_VISITE_a10d4a6a:
 
     # julian "Perso je trouve ça hyper marrant."
-    julian ""
+    julian "Personally, I think it's hilarious."
 
 # game/scenario/1_canon.rpy:1006
 translate english KAMI_MESSAGE_APRES_VISITE_6cdc09be:
 
     # julian "J’ai trop envie de voir jusqu’où on peut pousser le bordel dans cet endroit…"
-    julian "I know."
+    julian "I really want to see how far we can push the chaos in this place..."
 
 # game/scenario/1_canon.rpy:1011
 translate english KAMI_MESSAGE_APRES_VISITE_632f7d15:
 
     # elen "Franchement, je suis pas sûre qu’on puisse changer grand-chose…"
-    elen ""
+    elen "Honestly, I'm not sure we can change much..."
 
 # game/scenario/1_canon.rpy:1012
 translate english KAMI_MESSAGE_APRES_VISITE_e61ccdac:
 
     # elen "Kami décide de qui vit ou meurt, on va pas se mentir."
-    elen ""
+    elen "Kami decides who lives or dies—let's not kid ourselves."
 
 # game/scenario/1_canon.rpy:1013
 translate english KAMI_MESSAGE_APRES_VISITE_05c9b6a2:
 
     # elen "Mais même si c’est minuscule… j’ai envie d’essayer quand même. Ça coûte rien d’essayer, si ?"
-    elen ""
+    elen "But even if it's tiny... I still want to try. It costs nothing to try, right?"
 
 # game/scenario/1_canon.rpy:1017
 translate english KAMI_MESSAGE_APRES_VISITE_99be0ef2:
 
     # julian "Je sais, je sais..."
-    julian ""
+    julian "I know, I know..."
 
 # game/scenario/1_canon.rpy:1018
 translate english KAMI_MESSAGE_APRES_VISITE_9e125932:
 
     # julian "Mais justement, c’est ça qui est excitant."
-    julian ""
+    julian "But that's exactly what makes it exciting."
 
 # game/scenario/1_canon.rpy:1019
 translate english KAMI_MESSAGE_APRES_VISITE_76417aaa:
 
     # julian "Si on peut réécrire les règles, on peut tout changer."
-    julian ""
+    julian "If we can rewrite the rules, we can change everything."
 
 # game/scenario/1_canon.rpy:1020
 translate english KAMI_MESSAGE_APRES_VISITE_1fa840af:
 
     # julian "Et sortir tout le monde de là. On pourrait être les héros de l'humanité !"
-    julian ""
+    julian "And get everyone out of here. We could be humanity's heroes!"
 
 # game/scenario/1_canon.rpy:1182
 translate english KAMI_MESSAGE_APRES_VISITE_b4b44df3:
 
     # elias "Donc si une seule personne dit non… c’est mort."
-    elias ""
+    elias "So if even one person says no... it's dead."
 
 # game/scenario/1_canon.rpy:1231
 translate english KAMI_MESSAGE_APRES_VISITE_717aaf46:
 
     # kael "Si chacun écrit de son côté, sans rien partager avant…"
-    kael ""
+    kael "If everyone writes on their own, without sharing anything first..."
 
 # game/scenario/1_canon.rpy:1232
 translate english KAMI_MESSAGE_APRES_VISITE_b7feb8e5:
 
     # kael "… on prend un risque énorme."
-    kael ""
+    kael "...we're taking a massive risk."
 
 # game/scenario/1_canon.rpy:1233
 translate english KAMI_MESSAGE_APRES_VISITE_6f615060:
 
     # kael "Je propose quelque chose de simple."
-    kael ""
+    kael "I propose something simple."
 
 # game/scenario/1_canon.rpy:1234
 translate english KAMI_MESSAGE_APRES_VISITE_b3f40f09:
 
     # kael "Chacun dit à voix haute ce qu’il compte mettre en avant."
-    kael ""
+    kael "Everyone says out loud what they plan to push."
 
 # game/scenario/1_canon.rpy:1235
 translate english KAMI_MESSAGE_APRES_VISITE_1f153c6e:
 
     # kael "Pas le texte mot pour mot. Juste l’intention."
-    kael ""
+    kael "Not the text word for word. Just the intent."
 
 # game/scenario/1_canon.rpy:1236
 translate english KAMI_MESSAGE_APRES_VISITE_ef0322e0:
 
     # kael "Comme ça, on voit tout de suite où ça coince."
-    kael ""
+    kael "That way, we immediately see where it gets stuck."
 
 # game/scenario/1_canon.rpy:1237
 translate english KAMI_MESSAGE_APRES_VISITE_565daf5b:
 
     # kael "Et on évite… les catastrophes."
-    kael ""
+    kael "And we avoid... disasters."
 
 # game/scenario/1_canon.rpy:1243
 translate english KAMI_MESSAGE_APRES_VISITE_d1fa1fd6:
 
     # iris "Non mais non !"
-    iris ""
+    iris "No, no—!"
 
 # game/scenario/1_canon.rpy:1244
 translate english KAMI_MESSAGE_APRES_VISITE_4aad10f5:
 
     # iris "C’est déjà l’horreur ton truc, là, tu te rends compte ou pas ?!"
-    iris ""
+    iris "Your idea is already a nightmare, do you even realize that?!"
 
 # game/scenario/1_canon.rpy:1254
 translate english KAMI_MESSAGE_APRES_VISITE_eee64b5a:
 
     # iris "Attends, parce que si un amendement a l’air tout gentil, tout raisonnable…"
-    iris ""
+    iris "Wait—because if an amendment looks all nice and reasonable..."
 
 # game/scenario/1_canon.rpy:1255
 translate english KAMI_MESSAGE_APRES_VISITE_723ed263:
 
     # iris "…mais qu’en vrai il fout un merdier monstrueux derrière…"
-    iris ""
+    iris "...but in reality it causes a massive mess behind the scenes..."
 
 # game/scenario/1_canon.rpy:1256
 translate english KAMI_MESSAGE_APRES_VISITE_ed24d5d5:
 
     # iris "Tu crois vraiment que Kami va faire quoi ?"
-    iris ""
+    iris "What do you think Kami is going to do?"
 
 # game/scenario/1_canon.rpy:1257
 translate english KAMI_MESSAGE_APRES_VISITE_13fd3442:
 
     # iris taquin "‘Oups désolée’ ?"
-    iris taquin ""
+    iris taquin "'Oops, sorry'?"
 
 # game/scenario/1_canon.rpy:1258
 translate english KAMI_MESSAGE_APRES_VISITE_ca91ab2c:
 
     # iris colere "Ou ‘ah bah c’est la faute de celui qui l’a écrit’ ? Genre, super la logique !"
-    iris colere ""
+    iris colere "Or 'well, that's the writer's fault'? Like, great logic!"
 
 # game/scenario/1_canon.rpy:1274
 translate english KAMI_MESSAGE_APRES_VISITE_2a29e74f:
 
     # elen "Et puis… y en a qui ont clairement pas envie d’en causer."
-    elen ""
+    elen "And besides... some people clearly don't want to talk about it."
 
 # game/scenario/1_canon.rpy:1275
 translate english KAMI_MESSAGE_APRES_VISITE_6886e9b7:
 
     # elen "Y a des trucs qu’on garde pour soi, des idées un peu tordues…"
-    elen ""
+    elen "There are things you keep to yourself—twisted ideas and all..."
 
 # game/scenario/1_canon.rpy:1276
 translate english KAMI_MESSAGE_APRES_VISITE_f9135eb7:
 
     # elen "Bref, c’est pas parce qu’on est tous là qu’on va tout se dire cash."
-    elen ""
+    elen "Anyway, just because we're all here doesn't mean we're going to say everything straight up."
 
 # game/scenario/1_canon.rpy:1281
 translate english KAMI_MESSAGE_APRES_VISITE_e95cd4f5:
 
     # julian "Moi je veux bien en parler, hein."
-    julian ""
+    julian "I'm fine talking about it."
 
 # game/scenario/1_canon.rpy:1282
 translate english KAMI_MESSAGE_APRES_VISITE_bd24823f:
 
     # julian "Mais bon… je sens que je vais encore me faire passer pour le relou qui se la raconte."
-    julian ""
+    julian "But... I can already tell I'll get painted as the annoying guy who thinks he's hot shit."
 
 # game/scenario/1_canon.rpy:1287
 translate english KAMI_MESSAGE_APRES_VISITE_9b4f184f:
 
     # mara "C’est pas un risque, c’est ta marque de fabrique."
-    mara ""
+    mara "That's not a risk—it's your brand."
 
 # game/scenario/1_canon.rpy:1288
 translate english KAMI_MESSAGE_APRES_VISITE_c0b3ff16:
 
     # mara "Au fait… c’est quoi ton blaze déjà ?"
-    mara ""
+    mara "By the way... what's your name again?"
 
 # game/scenario/1_canon.rpy:1290
 translate english KAMI_MESSAGE_APRES_VISITE_c84ed56b:
 
     # "Personne ne lui réponds vraiment."
-    ""
+    "No one really answers him."
 
 # game/scenario/1_canon.rpy:1316
 translate english KAMI_MESSAGE_APRES_VISITE_3fb9b798:
 
     # tomas "Non. Ça ne marchera pas, Ryn."
-    tomas ""
+    tomas "No. That won’t work, Ryn."
 
 # game/scenario/1_canon.rpy:1317
 translate english KAMI_MESSAGE_APRES_VISITE_7dc244fe:
 
     # tomas "Kami a dit… très clairement… que refuser un amendement pouvait aussi avoir des conséquences."
-    tomas ""
+    tomas "Kami said… very clearly… that rejecting an amendment could also have consequences."
 
 # game/scenario/1_canon.rpy:1318
 translate english KAMI_MESSAGE_APRES_VISITE_a7a2223d:
 
     # tomas "On sait juste pas encore lequel. Et c’est ça qui m’inquiète."
-    tomas ""
+    tomas "We just don’t know what kind yet. And that’s what worries me."
 
 # game/scenario/1_canon.rpy:1324
 translate english KAMI_MESSAGE_APRES_VISITE_dbd37fa2:
 
     # kael "C’est précisément pour ça qu’il faut en parler."
-    kael ""
+    kael "That’s exactly why we need to talk about it."
 
 # game/scenario/1_canon.rpy:1326
 translate english KAMI_MESSAGE_APRES_VISITE_966d238b:
 
     # kael "C’est exactement ce qu’ils veulent."
-    kael ""
+    kael "That’s exactly what they want."
 
 # game/scenario/1_canon.rpy:1327
 translate english KAMI_MESSAGE_APRES_VISITE_153536ae:
 
     # kael "Le laisser s’installer, c’est leur donner le champ libre."
-    kael ""
+    kael "Letting it settle in means giving them free rein."
 
 # game/scenario/1_canon.rpy:1333
 translate english KAMI_MESSAGE_APRES_VISITE_7eb6767a:
 
     # lysa reflexion "Ou alors…"
-    lysa reflexion ""
+    lysa reflexion "Or maybe…"
 
 # game/scenario/1_canon.rpy:1334
 translate english KAMI_MESSAGE_APRES_VISITE_67cc18d0:
 
     # lysa "c’est notre seule défense."
-    lysa ""
+    lysa "it’s our only defense."
 
 # game/scenario/1_canon.rpy:1335
 translate english KAMI_MESSAGE_APRES_VISITE_797c3cb7:
 
     # lysa doute "Quelqu’un peut très bien mentir."
-    lysa doute ""
+    lysa doute "Someone could easily lie."
 
 # game/scenario/1_canon.rpy:1336
 translate english KAMI_MESSAGE_APRES_VISITE_9199ae42:
 
     # lysa "Dire qu’il propose un truc alors qu’il en propose un autre."
-    lysa ""
+    lysa "Say they’re proposing one thing while actually submitting another."
 
 # game/scenario/1_canon.rpy:1337
 translate english KAMI_MESSAGE_APRES_VISITE_c2526ea9:
 
     # lysa blase "Avec seulement dix votes tirés au sort…"
-    lysa blase ""
+    lysa blase "With only ten votes drawn at random…"
 
 # game/scenario/1_canon.rpy:1338
 translate english KAMI_MESSAGE_APRES_VISITE_406363fe:
 
     # lysa "c’est l’alibi parfait."
-    lysa ""
+    lysa "it’s the perfect alibi."
 
 # game/scenario/1_canon.rpy:1339
 translate english KAMI_MESSAGE_APRES_VISITE_f8e2a19b:
 
     # lysa fatigue "Personne pourra prouver le contraire."
-    lysa fatigue "...Radio silence."
+    lysa fatigue "No one will be able to prove otherwise."
 
 # game/scenario/1_canon.rpy:1352
 translate english KAMI_MESSAGE_APRES_VISITE_43cf01d0:
 
     # elias "Au fait les gars..."
-    elias ""
+    elias "By the way, guys..."
 
 # game/scenario/1_canon.rpy:1353
 translate english KAMI_MESSAGE_APRES_VISITE_368f6222:
 
     # elias "Pendant qu’on tourne en rond, le chrono descend à vingt minutes."
-    elias ""
+    elias "While we’re going in circles, the clock’s down to twenty minutes."
 
 # game/scenario/1_canon.rpy:1385
 translate english KAMI_MESSAGE_APRES_VISITE_f8346938:
 
     # mara "Dès qu’un con commence…"
-    mara ""
+    mara "As soon as one idiot starts…"
 
 # game/scenario/1_canon.rpy:1386
 translate english KAMI_MESSAGE_APRES_VISITE_d0d0dafb:
 
     # mara "Tous les autres moutons suivent. Les gens sont vraiment des moutons."
-    mara ""
+    mara "All the other sheep follow. People really are sheep."
 
 # game/scenario/1_canon.rpy:1414
 translate english KAMI_MESSAGE_APRES_VISITE_b94859df:
 
     # kael "Bon…"
-    kael ""
+    kael "Alright…"
 
 # game/scenario/1_canon.rpy:1415
 translate english KAMI_MESSAGE_APRES_VISITE_030ca548:
 
     # kael "C’est donc votre choix."
-    kael ""
+    kael "So that’s your choice."
 
 # game/scenario/1_canon.rpy:1416
 translate english KAMI_MESSAGE_APRES_VISITE_c72c2112:
 
     # kael "Je le note."
-    kael ""
+    kael "I’ll note it down."
 
 # game/scenario/1_canon.rpy:1423
 translate english KAMI_MESSAGE_APRES_VISITE_2b1e4cc3:
 
     # julian "C’est dingue, non ?"
-    julian ""
+    julian "It’s crazy, isn’t it?"
 
 # game/scenario/1_canon.rpy:1424
 translate english KAMI_MESSAGE_APRES_VISITE_00c31bbd:
 
     # julian "C’est toujours quand tout le monde se tait…"
-    julian ""
+    julian "It’s always when everyone goes quiet…"
 
 # game/scenario/1_canon.rpy:1425
 translate english KAMI_MESSAGE_APRES_VISITE_e039d84d:
 
     # julian "… que les vraies décisions se prennent."
-    julian ""
+    julian "…that the real decisions get made."
 
 # game/scenario/1_canon.rpy:1442
 translate english KAMI_MESSAGE_APRES_VISITE_b813bd73:
 
     # elen "Et si jamais quelqu’un balance un truc vraiment hardcore ?"
-    elen ""
+    elen "And what if someone drops something really hardcore?"
 
 # game/scenario/1_canon.rpy:1443
 translate english KAMI_MESSAGE_APRES_VISITE_f55ac852:
 
     # elen "Genre une proposition qui fait flipper tout le monde…"
-    elen ""
+    elen "Like a proposal that freaks everyone out…"
 
 # game/scenario/1_canon.rpy:1447
 translate english KAMI_MESSAGE_APRES_VISITE_44f1a140:
 
     # iris "Donc voilà : soit on vote contre, hein et rien ne change, sauf que même ça ça craint..."
-    iris ""
+    iris "So here it is: either we vote against it and nothing changes — except even that sucks..."
 
 # game/scenario/1_canon.rpy:1448
 translate english KAMI_MESSAGE_APRES_VISITE_2bf2ecb4:
 
     # iris "soit on se tape les conséquences dans la tronche."
-    iris ""
+    iris "or we take the consequences straight to the face."
 
 # game/scenario/1_canon.rpy:1449
 translate english KAMI_MESSAGE_APRES_VISITE_77d5265d:
 
     # iris "Comme d’hab’, quoi. Rien de neuf sous le soleil pourri."
-    iris ""
+    iris "Same as always. Nothing new under this rotten sun."
 
 # game/scenario/1_canon.rpy:1881
 translate english KAMI_MESSAGE_APRES_VISITE_69a09f11:
 
     # julian "Toi aussi t’as pas réussi à te coucher direct ?"
-    julian ""
+    julian "You couldn’t go to bed right away either?"
 
 # game/scenario/1_canon.rpy:1894
 translate english KAMI_MESSAGE_APRES_VISITE_40c60225:
 
     # julian "Franchement..."
-    julian ""
+    julian "Honestly..."
 
 # game/scenario/1_canon.rpy:1895
 translate english KAMI_MESSAGE_APRES_VISITE_986fea39:
 
     # julian "J’ai cru que j’allais rester planté devant ma feuille blanche comme un con."
-    julian ""
+    julian "I thought I’d just stare at my blank page like an idiot."
 
 # game/scenario/1_canon.rpy:1896
 translate english KAMI_MESSAGE_APRES_VISITE_ac659c0d:
 
     # julian "J’ai écrit une phrase entière, puis je l'ai supprimé, trois fois de suite."
-    julian ""
+    julian "I wrote a whole sentence, then deleted it, three times in a row."
 
 # game/scenario/1_canon.rpy:1897
 translate english KAMI_MESSAGE_APRES_VISITE_3c6c5c4f:
 
     # julian "Il fallait vraiment que je trouve quelque chose de bien.."
-    julian ""
+    julian "I really had to come up with something good.."
 
 # game/scenario/1_canon.rpy:1903
 translate english KAMI_MESSAGE_APRES_VISITE_42c0a2b2:
 
     # mara "Moi j’ai arrêté de cogiter."
-    mara ""
+    mara "I stopped overthinking."
 
 # game/scenario/1_canon.rpy:1904
 translate english KAMI_MESSAGE_APRES_VISITE_91f56d75:
 
     # mara "Sinon je devenais dingue."
-    mara ""
+    mara "Otherwise I’d go crazy."
 
 # game/scenario/1_canon.rpy:1905
 translate english KAMI_MESSAGE_APRES_VISITE_5a2abc97:
 
     # mara "J’ai écrit un truc."
-    mara ""
+    mara "I wrote something."
 
 # game/scenario/1_canon.rpy:1906
 translate english KAMI_MESSAGE_APRES_VISITE_988b33c6:
 
     # mara "Point barre."
-    mara ""
+    mara "That’s it."
 
 # game/scenario/1_canon.rpy:1907
 translate english KAMI_MESSAGE_APRES_VISITE_6268674f:
 
     # mara "Et si ça vous plaît pas, bah tant pis pour vos gueules."
-    mara ""
+    mara "And if you don’t like it, too bad for you."
 
 # game/scenario/1_canon.rpy:1918
 translate english KAMI_MESSAGE_APRES_VISITE_96e31471:
 
     # julian "On est bien d’accord que c’est complètement n’importe quoi ?"
-    julian ""
+    julian "We all agree this is completely insane, right?"
 
 # game/scenario/1_canon.rpy:1919
 translate english KAMI_MESSAGE_APRES_VISITE_4b55a31b:
 
     # julian "On réfléchit à ce qui peut aider les gens, on écrit des phrases."
-    julian ""
+    julian "We think about what could help people, we write sentences."
 
 # game/scenario/1_canon.rpy:1920
 translate english KAMI_MESSAGE_APRES_VISITE_073a86fc:
 
     # julian "… et demain matin le hasard décide si ça vaut de l’or ou si ça vaut zéro."
-    julian ""
+    julian "...and tomorrow morning luck decides if it’s worth gold or worth nothing."
 
 # game/scenario/1_canon.rpy:1921
 translate english KAMI_MESSAGE_APRES_VISITE_7474bafc:
 
     # julian "lmagine si ma proposition ne tombera pas dans les dix tirages ?!."
-    julian ""
+    julian "Imagine if my proposal doesn’t even make it into the ten draws?!."
 
 # game/scenario/1_canon.rpy:1936
 translate english KAMI_MESSAGE_APRES_VISITE_99254fca:
 
     # mara "Vous croyez qu’elle nous mate là ? Genre… là, tout de suite ?"
-    mara ""
+    mara "You think she’s watching us right now? Like… right this second?"
 
 # game/scenario/1_canon.rpy:1938
 translate english KAMI_MESSAGE_APRES_VISITE_b908d592:
 
     # julian "Sûrement..."
-    julian ""
+    julian "Probably..."
 
 # game/scenario/1_canon.rpy:1939
 translate english KAMI_MESSAGE_APRES_VISITE_c01cc4b0:
 
     # julian "Et pour tout te dire, j'espère bien !"
-    julian ""
+    julian "And honestly, I hope she is!"
 
 # game/scenario/1_canon.rpy:1940
 translate english KAMI_MESSAGE_APRES_VISITE_c2338aef:
 
     # julian "Ah qu'est ce que j'aimerais être repéré pour mes talents ici !"
-    julian ""
+    julian "Man, I’d love to get noticed for my talents here!"
 
 # game/scenario/1_canon.rpy:1974
 translate english KAMI_MESSAGE_APRES_VISITE_7f09affd:
 
     # julian "Respect vraiment."
-    julian ""
+    julian "Seriously, respect."
 
 # game/scenario/1_canon.rpy:1981
 translate english KAMI_MESSAGE_APRES_VISITE_32b1ee38:
 
     # tomas "Disons que… si je renverse ça sur moi là, maintenant…"
-    tomas ""
+    tomas "Let’s just say… if I spill this on myself right now…"
 
 # game/scenario/1_canon.rpy:1982
 translate english KAMI_MESSAGE_APRES_VISITE_cdf25dbb:
 
     # tomas "je suis mort socialement pour le reste du mois. Je vais directement me cacher sous une table et on me reverra plus."
-    tomas ""
+    tomas "I’m socially dead for the rest of the month. I’ll just crawl under a table and never come out."
 
 # game/scenario/1_canon.rpy:1991
 translate english KAMI_MESSAGE_APRES_VISITE_dac31c02:
 
     # tomas "Je me suis dit que…"
-    tomas ""
+    tomas "I figured…"
 
 # game/scenario/1_canon.rpy:1992
 translate english KAMI_MESSAGE_APRES_VISITE_cf3dfa63:
 
     # tomas "…que ça ferait peut-être du bien."
-    tomas ""
+    tomas "...it might actually feel good."
 
 # game/scenario/1_canon.rpy:1993
 translate english KAMI_MESSAGE_APRES_VISITE_d63ecdaa:
 
     # tomas "Un truc chaud. Juste… un truc chaud."
-    tomas ""
+    tomas "Something warm. Just… something warm."
 
 # game/scenario/1_canon.rpy:2000
 translate english KAMI_MESSAGE_APRES_VISITE_2013b177:
 
     # julian "T'es un vrai héros mec."
-    julian ""
+    julian "You’re a real hero, man."
 
 # game/scenario/1_canon.rpy:2023
 translate english KAMI_MESSAGE_APRES_VISITE_872d88c2:
 
     # mara "Ouais…"
-    mara ""
+    mara "Yeah…"
 
 # game/scenario/1_canon.rpy:2024
 translate english KAMI_MESSAGE_APRES_VISITE_f3672412:
 
     # mara "C’est débile mais ça fait du bien."
-    mara ""
+    mara "It’s stupid, but it feels good."
 
 # game/scenario/1_canon.rpy:2025
 translate english KAMI_MESSAGE_APRES_VISITE_dbaacf7f:
 
     # mara "Un tout petit peu."
-    mara ""
+    mara "Just a little."
 
 # game/scenario/1_canon.rpy:2058
 translate english KAMI_MESSAGE_APRES_VISITE_c4c1e5b4:
 
     # mara "Bon bah voilà."
-    mara ""
+    mara "Well, there you go."
 
 # game/scenario/1_canon.rpy:2059
 translate english KAMI_MESSAGE_APRES_VISITE_561891cb:
 
     # mara "Je vais aller me pieuter avant de péter un câble."
-    mara ""
+    mara "I’m gonna go crash before I lose it."
 
 # game/scenario/1_canon.rpy:2118
 translate english KAMI_MESSAGE_APRES_VISITE_4724906d:
 
     # elias "Ah. Toi aussi t’es encore debout."
-    elias ""
+    elias "Oh. You’re still up too."
 
 # game/scenario/1_canon.rpy:2128
 translate english KAMI_MESSAGE_APRES_VISITE_e9ec529d:
 
     # elias "La salle de repos, hein ? … Pas con."
-    elias ""
+    elias "The lounge, huh? …Not a bad idea."
 
 # game/scenario/1_canon.rpy:2134
 translate english KAMI_MESSAGE_APRES_VISITE_5aa3da20:
 
     # elias "Moi j’ai tenté de dormir direct."
-    elias ""
+    elias "I tried going straight to sleep."
 
 # game/scenario/1_canon.rpy:2139
 translate english KAMI_MESSAGE_APRES_VISITE_852317a4:
 
     # elias "En voilà un se couche tôt."
-    elias ""
+    elias "Well, look at you going to bed early."
 
 # game/scenario/1_canon.rpy:2153
 translate english KAMI_MESSAGE_APRES_VISITE_c1a24f44:
 
     # elias "C’est chelou quand même."
-    elias ""
+    elias "It’s weird, though."
 
 # game/scenario/1_canon.rpy:2154
 translate english KAMI_MESSAGE_APRES_VISITE_8a5ff33e:
 
     # elias "Journée à rallonge, stress au max…"
-    elias ""
+    elias "Endless day, max stress…"
 
 # game/scenario/1_canon.rpy:2155
 translate english KAMI_MESSAGE_APRES_VISITE_aad19b96:
 
     # elias "… et je suis rincé comme après douze heures sur un chantier."
-    elias ""
+    elias "...and I’m wiped out like after twelve hours on a construction site."
 
 # game/scenario/1_canon.rpy:2168
 translate english KAMI_MESSAGE_APRES_VISITE_83e2d9c6:
 
     # elias "Ça va être un autre calibre."
-    elias ""
+    elias "Tomorrow’s going to be on a whole different level."

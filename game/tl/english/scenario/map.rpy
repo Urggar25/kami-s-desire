@@ -4,5 +4,5 @@
 translate english MAP_NOTHING_HERE_ddb13359:
 
     # think "Je n'ai rien à faire ici pour le moment."
-    think ""
+    think "I have nothing to do here at the moment."
 
