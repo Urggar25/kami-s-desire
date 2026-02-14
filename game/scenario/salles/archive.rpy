@@ -415,7 +415,7 @@ label decouverte_salle_archive:
     "Tomas continue de nouveau à bidouiller des paramètres."
     "Je devrais y aller ..."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES
 
     jump ARCHIVE_TP
 

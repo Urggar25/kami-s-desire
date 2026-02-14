@@ -335,7 +335,7 @@ label decouverte_gymnase:
     $ showP("noam", "reflexion", 0.22)
     think "Je devrais aller voir ailleurs."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_3
 
     jump GYMNASE_TP
 

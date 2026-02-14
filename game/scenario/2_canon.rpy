@@ -1043,7 +1043,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     "Je ne sais pas qui va craquer."
     "Je ne sais pas si ce sera moi."
 
-    call START_FREE_TIME("_2_APRES_MIDI")
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
 
 # Durée : 3m50
 # Total : 1h 14m 50s
@@ -1469,7 +1469,7 @@ label _2_GYMNASE:
     "Je commence à pousser les altères."
 
     $ mg_skip_scene_pick = True
-    call minijeu_halteres
+    call minijeu_halteres from _call_minijeu_halteres
 
     "Je repose."
     "Je souffle."
@@ -1696,6 +1696,13 @@ label _2_CAFETERIA_SOIR:
 
     think "Je ferme les yeux."
     think "Et j’essaie de dormir."
+
+    jump patreon_ending
+
+    #call end_day("3") from _call_end_day_1
+
+    #jump _3_CANON
+
 
 # Durée : 1m55
 # Totale : 1h 24m 10s

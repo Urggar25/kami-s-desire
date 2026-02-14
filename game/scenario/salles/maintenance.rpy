@@ -347,7 +347,7 @@ label decouverte_salle_maintenance:
     think "Cette salle de maintenance ressemble plus à un atelier."
     think "Et ce n'est pas pour me déplaire."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_5
 
     jump MAINTENANCE_TP
 

@@ -466,7 +466,7 @@ label decouverte_salle_canon:
     "Mais je sais une chose."
     "Je n’oublierai jamais ce bruit."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_2
 
     jump CANON_TP
 

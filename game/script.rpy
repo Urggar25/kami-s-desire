@@ -492,6 +492,20 @@ label splashscreen:
 
     return
 
+label patreon_ending:
+    scene black
+    with Dissolve(0.5)
+
+    scene expression "images/background/bg_patreon.png" at adaptive_fullscreen
+    with Dissolve(1.0)
+    $ renpy.pause(6.0, hard=True)
+    scene black
+    with Dissolve(1.0)
+
+    call screen save
+
+    $ renpy.pause(3.0, hard=True)
+    $ renpy.full_restart()
 
 label start:
     call _init_cinema_params from _call__init_cinema_params

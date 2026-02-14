@@ -1,28 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/salles/sas.rpy", line 302, in script call
-    call CHECK_ALL_SALLES_VISITEES
-  File "game/scenario/2_canon.rpy", line 592, in script
-    elen "Genre 100 % des voix ? Wow, c’est hardcore comme condition…"
-TypeError: %d format: a number is required, not TagQuotingDict
+  File "game/options.rpy", line 168, in script
+    init python:
+  File "game/options.rpy", line 199, in <module>
+    build.archive("script",all)
+  File "renpy/common/00build.rpy", line 295, in archive
+    archives.append((name, make_file_lists(file_list)))
+  File "renpy/common/00build.rpy", line 48, in make_file_lists
+    raise Exception("Expected a string, list, or None.")
+Exception: Expected a string, list, or None.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/salles/sas.rpy", line 302, in script call
-    call CHECK_ALL_SALLES_VISITEES
-  File "game/scenario/2_canon.rpy", line 592, in script
-    elen "Genre 100 % des voix ? Wow, c’est hardcore comme condition…"
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 121, in say
-    what = what % tag_quoting_dict
-TypeError: %d format: a number is required, not TagQuotingDict
+  File "game/options.rpy", line 168, in script
+    init python:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/options.rpy", line 199, in <module>
+    build.archive("script",all)
+  File "renpy/common/00build.rpy", line 295, in archive
+    archives.append((name, make_file_lists(file_list)))
+  File "renpy/common/00build.rpy", line 48, in make_file_lists
+    raise Exception("Expected a string, list, or None.")
+Exception: Expected a string, list, or None.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 1.0
-Fri Feb 13 20:01:58 2026
+Sat Feb 14 23:37:24 2026

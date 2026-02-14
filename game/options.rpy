@@ -195,11 +195,26 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
-
+    
+    build.archive("script", "all")
+    build.archive("image", "all")
+    build.archive("video", "all")
+    build.archive("audio", "all")
+    
     ## Pour archiver les fichiers, choisissez la valeur « archive ».
+    
+    build.classify('game/**.png', 'image')
+    build.classify('game/**.jpg', 'image')
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.rpy', 'script')
+    build.classify('game/**.rpyc', 'script')
+    
+    build.classify('game/**.mp4', 'video')
+    build.classify('game/**.avi', 'video')
+    build.classify('game/**.webm', 'video')
+    
+    build.classify('game/**.mp3', 'audio')
+    build.classify('game/**.wav', 'audio')
 
     ## Les fichiers correspondant au format de documentation sont dupliqués pour
     ## les compilation sur Mac, c'est pourquoi ils apparaissent deux fois dans

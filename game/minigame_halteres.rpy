@@ -186,7 +186,7 @@ label minijeu_halteres:
     else:
         $ scene_label = mg_pick_scene()
     if scene_label:
-        call expression scene_label
+        call expression scene_label from _call_expression
     return
 
 label scene_mg_normale_1:

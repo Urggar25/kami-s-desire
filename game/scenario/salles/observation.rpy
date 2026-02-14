@@ -419,7 +419,7 @@ label decouverte_salle_observation:
 
     think "Je devrais aller voir ailleurs."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_6
 
     jump OBSERVATION_TP
 

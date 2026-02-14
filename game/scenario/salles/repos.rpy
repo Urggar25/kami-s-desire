@@ -345,7 +345,7 @@ label decouverte_salle_repos:
     $ showP("noam", "sourire", 0.22)
     noam "Je retiens."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_7
 
     jump REPOS_TP
 

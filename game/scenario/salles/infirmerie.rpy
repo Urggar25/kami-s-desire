@@ -478,7 +478,7 @@ label decouverte_infirmerie:
     think "Je devrais aller voir ailleurs."
     think "Il faut que je trouve un endroit moins morbide."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
 
     jump INFIRMERIE_TP
 

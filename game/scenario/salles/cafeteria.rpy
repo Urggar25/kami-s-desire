@@ -337,7 +337,7 @@ label decouverte_cafeteria:
 
     think "Je devrais aller voir ailleurs aussi."
     
-    call CHECK_ALL_SALLES_VISITEES
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_1
     
     jump CAFETERIA_TP
 
