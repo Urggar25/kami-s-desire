@@ -1,37 +1,37 @@
-2026-02-14 11:05:52 UTC
+2026-02-14 17:11:06 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.12s
-Loading error handling took 0.06s
-Loading script took 1.10s
-Loading save slot metadata took 0.17s
-Loading persistent took 0.01s
-Running init code took 0.09s
-Loading analysis data took 0.02s
+Early init took 0.15s
+Loading error handling took 0.04s
+Loading script took 2.18s
+Loading save slot metadata took 0.14s
+Loading persistent took 0.00s
+Running init code took 0.13s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.14s
+Reloading save slot metadata took 0.09s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.16s
+Dump and make backups took 0.13s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.07s
+Initial gc took 0.08s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.01s
+Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.00s
+Load screen analysis took 0.01s
 Analyze screens took 0.01s
-Save screen analysis took 0.04s
-Prepare screens took 0.12s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.15s
-Running _start took 0.00s
-Interface start took 2.44s
+Save bytecode. took 0.06s
+Running _start took 0.01s
+Interface start took 1.03s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -41,6 +41,10 @@ Vendor: "b'Intel'"
 Renderer: b'Intel(R) UHD Graphics 770'
 Version: b'4.6.0 - Build 32.0.101.6733'
 Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
