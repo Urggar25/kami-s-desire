@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/scenario/2_canon.rpy", line 805: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
-    ^
+The label _call_end_day_1 is defined twice, at File "game/scenario/1_canon.rpy", line 2262:
+    call end_day("2") from _call_end_day_1
+and File "game/scenario/2_canon.rpy", line 1702:
+    call end_day("3") from _call_end_day_1
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Feb 11 21:31:51 2026
+Sun Feb 15 12:48:36 2026

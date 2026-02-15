@@ -8,75 +8,159 @@ label _3_CANON:
     pause 0.5
 
     think "…"
+
+    pause 0.3
+
     think "Je suis réveillé."
-    think "Ou je n’ai jamais vraiment dormi."
+    think "Je crois."
 
     pause 0.4
 
-    think "Mon dos est raide."
-    think "Mes yeux piquent."
-    think "Ma tête tourne un peu."
+    "Je ne bouge pas."
+    "Mon dos est raide."
+    "Mes épaules me lancent."
 
     pause 0.4
 
-    think "Je ne bouge pas tout de suite."
-    think "Je compte ma respiration."
-    think "Une."
-    think "Deux."
-    think "Trois."
-
-    pause 0.4
-
-    think "Le silence revient."
-    think "Un silence propre."
-    think "Presque clinique."
-
-    pause 0.4
-
-    think "Hier, il y avait des voix partout."
-    think "Aujourd’hui, non."
-
-    pause 0.4
-
-    scene bg_chambre at adaptive_fullscreen with fade
-
-    think "Je regarde le plafond."
-    think "Même lumière blanche."
-    think "Même angle mort dans le coin gauche."
-
-    pause 0.4
-
-    think "Le couloir derrière la porte est presque muet."
-    think "Pas de pas pressés."
-    think "Pas de blague forcée."
+    think "J’ai dormi ?"
+    think "Ou j’ai juste fermé les yeux en attendant le matin ?"
 
     pause 0.5
 
-    think "Juste des bruits très courts."
-    think "Une poignée."
-    think "Un tissu qui frotte."
-    think "Puis plus rien."
+    think "Aujourd’hui."
 
     pause 0.4
 
-    think "Je ferme les yeux une seconde."
-    think "Le vote revient tout de suite."
-
-    pause 0.4
-
-    think "Un seul non, et tout s’écroule."
+    think "Le vote."
 
     pause 0.6
 
-    think "C’est simple."
-    think "C’est brutal."
-    think "Et c’est pour aujourd’hui."
+    think "Un seul non."
+    think "Et tout s’arrête."
+
+    pause 0.6
+
+    think "C’est ridicule que ce soit aussi fragile."
+
+    pause 0.5
+
+    scene bg_cg012 at adaptive_fullscreen with fade
+
+    "Je fixe le plafond."
+    "Blanc."
+    "Lisse."
+    $ blink()
+    "Propre."
 
     pause 0.4
 
-    think "Je me redresse."
-    think "Mes épaules craquent."
-    think "J’ai l’impression de porter un sac invisible."
+    think "Trop propre."
+    $ blink()
+
+    pause 0.5
+
+    "Un bruit de pas dans le couloir."
+    "Ça traîne."
+    "Ça hésite."
+
+    pause 0.4
+
+    think "Personne ne semble courir."
+    think "Personne ne parle fort."
+
+    pause 0.6
+
+    play sound sfx_announce
+
+    pause 0.8
+
+    # Diffusion de Kami
+    stop music fadeout 1.0
+    scene bg_diffusion_neutre at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+
+    play music "music/bgm_system_override.mp3" fadein 1.0
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Booooonjour mes petits représentants ♥"
+
+    pause 0.4
+
+    kami "Jour trois !"
+    kami "Déjà fatigués ?"
+
+    pause 0.4
+
+    kami "Petit rappel doux et adorable :"
+    kami "Aujourd’hui, c’est le jour de vote."
+
+    pause 0.5
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Unanimité absolue."
+    kami "Un seul petit non, et… pfiou."
+
+    pause 0.4
+
+    kami "On efface tout."
+    kami "On recommence, et tant pis pour la proposition."
+
+    pause 0.5
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "L'un d'entre vous se sera creusé les méninges pour rien !"
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Alors souriez bien."
+    kami "Et méfiez-vous un tout petit peu les uns des autres."
+
+    pause 0.4
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Ça met du piment~"
+    kami "Et j'adore ça !"
+
+    pause 0.4
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Rendez-vous au Conclave à 14h ♥"
+
+    pause 0.3
+
+    hide screen kami_overlay with dissolve
+
+    pause 0.8
+    scene bg_cg012 at adaptive_fullscreen with fade
+
+    think "…"
+
+    pause 0.4
+
+    think "Elle adore ça."
+    think "Appuyer là où ça fait mal."
+
+    pause 0.6
+
+    think "Un seul non."
+
+    pause 0.6
+
+    think "Qui pourrait voter contre ?"
+
+    pause 0.5
+
+    think "Personne n’a intérêt à voter contre."
+    think "Alors pourquoi j’ai cette drôle de sensation ?"
+
+    pause 0.6
+
+    scene bg_chambre at adaptive_fullscreen with fade
+    "Je me redresse. J'allume la lumière."
+    "Mes vertèbres craquent."
+
+    pause 0.4
+
+    think "Super."
 
     pause 0.4
 
@@ -84,125 +168,317 @@ label _3_CANON:
     "Peau froide."
     "Mâchoire serrée."
 
+    pause 0.5
+
+    think "Respirer."
+    think "Une étape à la fois."
+
+    pause 0.5
+
     pause 0.4
 
     "Je me lève."
-    "Mes pieds touchent le sol métallique."
-    "Le contact me réveille enfin pour de vrai."
+    "Le sol métallique est froid sous mes pieds."
+
+    pause 0.5
+
+    think "Ça réveille."
 
     pause 0.4
 
-    "Je bois deux gorgées d’eau."
-    "Pas plus."
-    "Je n’ai pas faim."
+    "Je bois un peu d’eau."
+    "Deux gorgées."
+    "Je n'ai pas très faim, j'ai la gorge nouée."
 
-    pause 0.4
+    pause 0.5
 
-    think "Ne pas penser trop loin."
-    think "Avancer par étapes."
-    think "Atteindre la cafétéria."
-    think "Écouter."
+    think "Mais il faut quand même que j'aille à la cafétéria."
 
-    pause 0.4
-
-    "Je me dirige vers la porte."
-    "Elle s’ouvre sans bruit."
+    pause 0.5
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
-    "Le couloir est vide sur quelques mètres."
-    "Puis j’aperçois deux silhouettes qui marchent lentement."
+    pause 0.4
+
+    "Le couloir est étrangement calme."
+
+    pause 0.5
+
+    think "Même la ventilation semble retenir son souffle."
 
     pause 0.4
 
-    "Personne ne salue fort."
-    "On se reconnaît d’un regard."
-    "C’est tout."
+    "Deux silhouettes marchent devant moi."
+    "Elles ralentissent en m’entendant."
+    "Puis reprennent."
+
+    pause 0.5
+
+    think "On se surveille sans le dire."
 
     pause 0.4
 
-    think "Tout le monde économise ses mots."
-    think "Comme si parler trop vite pouvait casser quelque chose."
+    "Je croise Kael au détour du couloir."
+
+    $ showP("noam", "neutre", 0.20)
+    $ showP("kael", "fatigue", 0.65)
+
+    kael fatigue "Salut."
+
+    "Sa voix est plus basse que d’habitude."
+
+    noam "Tu vas à la cafétéria ?"
+
+    kael reflechit "Oui."
+    kael doute "Enfin… oui."
+
+    "Il ne bouge pas."
+    "Il reste là une seconde de trop."
+
+    kael inquiet "Tu es sûr que c’est une bonne idée ?"
+
+    noam "Le commerce ?"
+
+    kael reflechit "Oui."
+    kael reflechit "On dit tous que ça ne changera pas grand-chose."
+    kael inquiet "Mais si ça dérape ?"
+
+    "Il évite toujours mon regard."
+
+    noam "Tu penses que ça peut vraiment déraper ?"
+
+    kael culpabilite "Je ne sais pas."
+    kael fatigue "Je préfère quand les choses sont stables."
+    kael reflechit "On vient à peine d’arriver."
+    kael inquiet "On ne sait même pas encore comment on fonctionne ensemble."
+    kael reflechit "Et on commence déjà à modifier les règles."
+
+    "Il ne dit pas non."
+    "Il ne dit pas oui non plus."
+
+    noam "Tu veux voter contre ?"
+
+    kael surpris "Non."
+    kael doute "Enfin… je ne crois pas."
+    kael reflechit "Je suis pour."
+    kael sourire "En théorie."
+
+    "En théorie."
+
+    kael reflechit "Je n’aime pas avancer sans savoir où on met les pieds."
+    kael inquiet "Changer quelque chose, c’est accepter de ne plus revenir en arrière."
+
+    "La ventilation souffle au-dessus de nous."
+    "Le bruit semble plus fort que d’habitude."
+
+    kael inquiet "Tu n’as pas peur ?"
+
+    noam "Si."
+    noam "Mais ne rien changer, c’est aussi un choix."
+
+    "Il baisse légèrement les yeux."
+
+    kael fatigue "Je déteste ça."
+    kael reflechit "Décider."
+    kael culpabilite "Et ne pas savoir si on va le regretter."
+
+    "Il pourrait basculer."
+
+    kael calme "On verra à 14h."
+    kael sourire "Bonne chance."
+
+    "Il passe à côté de moi."
+    "Son épaule frôle la mienne."
+
+    "Il n’a pas tranché."
+    "Et ça suffit à me serrer l’estomac."
+
+
+    hide noam
+    hide kael
+
+    "Je continue."
+
+    pause 0.5
+
+    "Julian est près du distributeur."
+    "Il tapote la machine comme si elle lui devait quelque chose."
+
+    $ showP("noam", "neutre", 0.30)
+    $ showP("julian", "joie", 0.75)
+
+    julian joie "Hey."
+    julian taquin "Alors ? Prêt à secouer un peu ce système ?"
+
+    "Un large sourire illumine son visage."
+
+    noam "On va essayer."
+
+    julian rire "Essayer ?"
+    julian joie "Non, non."
+    julian "On va le faire."
+
+    "Il attrape sa tasse."
+    "Le café déborde un peu."
+    "Il ne s’en rend même pas compte."
+
+    julian reflexion "Tu te rends compte ?"
+    julian joie "Si ça passe, on ouvre la première brèche depuis la prise de pouvoir de Kami."
+
+    julian taquin "Du commerce. Des échanges."
+    julian joie "Du mouvement."
+
+    "Ses yeux brillent."
+    "Il aime l’idée."
+
+    noam "Et si ça ne passe pas ?"
+
+    julian hesitation "Ça passera."
+    julian sourire "Il faut que ça passe."
+
+    "Il appuie un peu trop fort sur les mots."
+
+    julian reflexion "On ne peut pas rester figés."
+    julian "On n’est pas venus ici pour maintenir le statu quo."
+    julian joie "On est là pour changer les choses."
+    julian idee "Les gens veulent du changement."
+
+    "Il redresse les épaules."
+    "Il se voit déjà dans l’après."
+
+    noam "Tu es sûr que tout le monde suivra ?"
+
+    julian hesitation "…"
+
+    "Une micro-seconde."
+    "Presque rien."
+
+    julian sourire "Ils suivront."
+    julian taquin "Ils aiment juste faire semblant d’hésiter."
+
+    "Il me regarde droit dans les yeux."
+
+    julian reflexion "Et puis franchement."
+    julian joie "C’est le commerce."
+    julian "Personne ne va voter contre ça."
+
+    "Il y croit."
+    "Ou il veut y croire."
+
+    julian sourire "Imagine un peu."
+    julian joie "Des districts qui échangent vraiment."
+    julian "Des ressources qui circulent."
+    julian "Des idées qui bougent."
+    julian idee "Comme avant ! Tu te rends compte !"
+    julian taquin "Ça te plaît pas ?"
+
+    "Il parle plus vite."
+    "Comme s’il avait déjà validé le résultat."
+
+    noam "Si. Evidemment que dis comme ça, sur le papier, ça me plaît."
+
+    "Mais son enthousiasme me met mal à l’aise."
+
+    julian reflexion "On a besoin d’un élan."
+    julian joie "On peut changer les choses. A nous de le faire."
+
+    "Il boit une gorgée."
+    "Grimace."
+    "Le café est mauvais."
+
+    julian sourire "À 14h."
+    julian joie "On ouvre le bal et on change ce monde."
+
+    $ add_argument("Le monde d'avant")
+    show screen argument_unlock("Le monde d'avant")
+
+    "Il pivote vers la cafétéria."
+
+    "Il marche vite."
+    "Trop vite."
+
+    "Il veut que ça passe."
+    "Pas seulement pour le monde."
+
+    "Pour lui aussi."
+
+    hide noam
+    hide julian
+
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+
+    pause 0.5
+
+    "Le bruit des conversations est bas."
+    "Trop bas."
+
+    pause 0.6
+
+    think "On fait semblant d’être normaux."
+
+    pause 0.5
+
+    "Ryn parle à voix basse avec Elen."
+    "Mara regarde un écran éteint sans vraiment le voir."
+    "Iris tient sa tasse sans boire."
+
+    pause 0.6
+
+    think "Tout le monde calcule."
+
+    pause 0.5
+
+    think "Si quelqu’un vote contre."
+    think "Qui serait-ce ?"
+
+    pause 0.6
+
+    think "Mara ?"
+    think "Non."
 
     pause 0.4
 
-    "Je continue jusqu’au carrefour principal."
-    "Des portes automatiques glissent."
-    "Elles se referment derrière moi."
+    think "Sael ?"
+    think "Elle serait frontale."
 
-    pause 0.4
+    pause 0.5
 
-    think "Même le bâtiment semble retenir son souffle."
+    think "Ou peut-être que je me raconte des histoires."
 
-    pause 0.4
+    pause 0.6
 
-    "Je tourne à droite."
-    "Panneau lumineux : CAFÉTÉRIA."
-    "Flèche blanche sur fond noir."
+    think "C’est ça le pire."
+    think "Le doute."
 
-    pause 0.4
+    pause 0.6
 
-    "Je suis la flèche."
-    "Le bruit de voix augmente un peu."
-    "Pas assez pour parler d’agitation."
+    "Je prends un café."
+    "Il est amer."
+    "Plus que d’habitude."
 
-    pause 0.4
+    pause 0.5
 
-    think "Je croise Kael au détour d’un angle."
-    think "On se salue sans ralentir."
+    think "Un seul non."
 
-    pause 0.4
+    pause 0.6
 
-    think "Je vois aussi Julian près d’un distributeur."
-    think "Il me fait un signe bref avec sa tasse."
+    think "Et on aura juste prouvé qu’on n’est pas capables de s’entendre."
 
-    pause 0.4
+    pause 0.6
 
-    think "Tout le monde semble déjà en train de calculer."
-    think "Ses mots."
-    think "Ses limites."
-    think "Sa marge de doute."
+    think "Respire."
 
-    pause 0.4
+    pause 0.6
 
-    "Une grille de ventilation souffle au plafond."
-    "Le son est continu, régulier, presque hypnotique."
+    think "Aujourd’hui, on décide si on est un groupe."
+    think "Ou juste douze personnes enfermées ensemble."
 
-    pause 0.4
-
-    think "Je me force à rester concret."
-    think "Ne pas imaginer le pire trop tôt."
-
-    pause 0.4
-
-    "J’ajuste ma manche."
-    "Je serre puis desserre mes doigts."
-    "Le mouvement ramène un peu de stabilité."
-
-    pause 0.4
-
-    think "Une étape après l’autre."
-    think "Cafétéria."
-    think "Échanges."
-    think "Puis Conclave."
-
-    pause 0.4
-
-    "L’odeur du café réchauffé arrive avant la porte."
-    "Avec un fond de métal et de détergent."
-
-    pause 0.4
-
-    think "Même les détails ordinaires me paraissent tranchants."
-
-    pause 0.4
-
-    think "Ça y est."
-    think "On y est."
-    think "Le jour commence."
+    pause 0.8
 
     jump _3_CAFETERIA_DEBAT
 
+# Durée : 3m45
+# Totale : 1h 27m 55s
 
 label _3_CAFETERIA_DEBAT:
 

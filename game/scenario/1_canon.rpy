@@ -2259,11 +2259,9 @@ label _1_FIN_JOURNEE_DORTOIR:
     scene black with fade
     stop music fadeout 2.0
 
-    jump patreon_ending
-    
-    #call end_day("2") from _call_end_day_1
+    call end_day("2") from _call_end_day_1
 
-    #jump _2_CANON
+    jump _2_CANON
 
 # Durée : 1m40
 # Total : 1h 4m 50s

@@ -1,34 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/options.rpy", line 168, in script
-    init python:
-  File "game/options.rpy", line 199, in <module>
-    build.archive("script",all)
-  File "renpy/common/00build.rpy", line 295, in archive
-    archives.append((name, make_file_lists(file_list)))
-  File "renpy/common/00build.rpy", line 48, in make_file_lists
-    raise Exception("Expected a string, list, or None.")
-Exception: Expected a string, list, or None.
+  File "game/scenario/salles/sas.rpy", line 302, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
+  File "game/scenario/2_canon.rpy", line 1046, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 126, in script
+    kami sourire "Rendez-vous au Conclave à 14h ♥"
+Exception: Say has image attributes ('sourire',), but there's no image tag associated with the speaking character.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/options.rpy", line 168, in script
-    init python:
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/options.rpy", line 199, in <module>
-    build.archive("script",all)
-  File "renpy/common/00build.rpy", line 295, in archive
-    archives.append((name, make_file_lists(file_list)))
-  File "renpy/common/00build.rpy", line 48, in make_file_lists
-    raise Exception("Expected a string, list, or None.")
-Exception: Expected a string, list, or None.
+  File "game/scenario/salles/sas.rpy", line 302, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
+  File "game/scenario/2_canon.rpy", line 1046, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 126, in script
+    kami sourire "Rendez-vous au Conclave à 14h ♥"
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1407, in __call__
+    old_attr_state = self.handle_say_attributes(False, interact)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1223, in handle_say_attributes
+    if self.resolve_say_attributes(predicting, attrs):
+  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1149, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes ('sourire',), but there's no image tag associated with the speaking character.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
-kami desire 1.0
-Sat Feb 14 23:37:24 2026
+kami desire 0.2
+Sun Feb 15 13:21:23 2026

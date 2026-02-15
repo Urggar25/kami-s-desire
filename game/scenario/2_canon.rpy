@@ -1697,11 +1697,11 @@ label _2_CAFETERIA_SOIR:
     think "Je ferme les yeux."
     think "Et j’essaie de dormir."
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("3") from _call_end_day_1
+    call end_day("3") from _call_end_day_2
 
-    #jump _3_CANON
+    jump _3_CANON
 
 
 # Durée : 1m55

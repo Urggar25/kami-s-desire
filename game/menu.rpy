@@ -163,6 +163,16 @@ screen main_menu():
         at cover_screen
         action ShowMenu("gallery_menu")
 
+    # PATREON
+    imagebutton:
+        idle "images/background/interact/menu/patreon.png"
+        hover "images/background/interact/menu/patreon_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Function(renpy.open_url, "https://www.patreon.com/c/Kamidesires")
+
     # QUIT
     imagebutton:
         idle "images/background/interact/menu/quit.png"
