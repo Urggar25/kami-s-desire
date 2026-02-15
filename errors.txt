@@ -2,11 +2,21 @@
 errors listed below, and try again.
 
 
-The label _call_end_day_1 is defined twice, at File "game/scenario/1_canon.rpy", line 2262:
-    call end_day("2") from _call_end_day_1
-and File "game/scenario/2_canon.rpy", line 1702:
-    call end_day("3") from _call_end_day_1
+File "game/scenario/3_canon.rpy", line 1330: expected statement.
+    silence 0.4
+             ^
 
+File "game/scenario/3_canon.rpy", line 1378: expected statement.
+    silence 0.4
+             ^
+
+File "game/scenario/3_canon.rpy", line 1416: expected statement.
+    silence 0.4
+             ^
+
+File "game/scenario/3_canon.rpy", line 1468: expected statement.
+    silence 0.4
+             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Feb 15 12:48:36 2026
+Sun Feb 15 23:11:23 2026

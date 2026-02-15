@@ -572,7 +572,7 @@ label _3_CAFETERIA_DEBAT:
 
     elen rire "Mais goûte."
     elen rire "Juste une bouchée."
-    elen rire "Allez, jsute une !"
+    elen rire "Allez, juste une !"
     elen taquin "Pour l’art. Tu es bien courageuse non ?"
 
     iris "Non."
@@ -727,7 +727,7 @@ label _3_CAFETERIA_DEBAT:
     iris "Il plaisante jamais."
     iris taquin "Crois moi. Ca c'est vrai."
 
-    "IJ s'assoit à la table auprès de nous."
+    "Il s'assoit à la table auprès de nous."
     elias "Protéines."
     elias "Œufs."
     elias "Poulet."
@@ -767,7 +767,7 @@ label _3_CAFETERIA_DEBAT:
     "Comme s'il s'interdisait de dire quelque chose."
 
     hide elias
-    $ showP("elias", "reflexion", 0.82)
+    $ showP("elias", "reflechit", 0.82)
 
     elias "Je dis juste."
     elias "Cet aprèm, on devra être lucides."
@@ -803,6 +803,7 @@ label _3_CAFETERIA_DEBAT:
     elias "Mais on fait quoi, alors."
     elias "On arrive au vote et on improvise ?"
 
+    elen "Bon vu que vous me cassez les pieds avec ça."
     elen "Moi, je vais pas improviser."
     elen "Je sais déjà ce que je vais faire."
 
@@ -896,6 +897,7 @@ label _3_CAFETERIA_DEBAT:
 
     pause 0.3
 
+    elen "Nan nan nan ! Il faut voir le bon côté des choses !"
     "Elen claque sa langue, contente."
 
     hide elen
@@ -1041,10 +1043,6 @@ label _3_CAFETERIA_DEBAT:
 
     mara "Je dis pas ça."
 
-    elias "Elle dit que c’est une décision à prendre."
-
-    julian "Tout a un prix ici."
-
     pause 0.3
 
     "Mara serre la mâchoire."
@@ -1073,10 +1071,6 @@ label _3_CAFETERIA_DEBAT:
 
     pause 0.4
 
-    elias "Ça, c’est raisonnable."
-
-    julian "C’est chiant, mais raisonnable."
-
     elen taquin "Ok."
     elen taquin "Donc t’es pas contre, tu vas voter pour."
 
@@ -1100,23 +1094,24 @@ label _3_CAFETERIA_DEBAT:
 
     pause 0.4
 
-    hide kael
-    $ showP("kael", "neutre", 0.82)
-
     "Kael mange."
     "Sans regarder personne."
-    "Mais il écoute tout."
 
     pause 0.3
 
-    iris "On va pas régler ça ici."
+    iris "On va pas tout régler ici."
 
     elias "Non."
 
+    hide mara
+    $ showP("julian", "neutre", 0.82)
     julian "Mais au moins…"
     julian "On sait que ça penche pour le “pour”."
 
-    elen joie "Ça me suffit pour maintenant."
+    elen joie "Ça me suffit pour le moment."
+
+    $ add_argument("l'énoncé précis")
+    show screen argument_unlock("L'énoncé précis")
 
     pause 0.3
 
@@ -1129,12 +1124,12 @@ label _3_CAFETERIA_DEBAT:
 
     elen content "Ok."
     elen content "Je vais aller digérer mon œuvre."
-    elen taquin "Et peut-être convertir d’autres âmes."
+    elen taquin "Et peut-être convertir d’autres âmes à ma bonne humeur."
 
     iris "Bonne chance."
 
     elen rire "Merci."
-    elen rire "Je suis née pour ça."
+    elen rire "Hé hé, Je suis née pour ça."
 
     pause 0.4
 
@@ -1147,24 +1142,16 @@ label _3_CAFETERIA_DEBAT:
 
     pause 0.4
 
-    "Elias récupère son plateau."
+    "Elias récupère son plateau et le suit également."
 
-    hide elias
-    $ showP("elias", "neutre", 0.82)
-
-    elias "Je retourne au…"
-    elias "Je sais même pas."
-    elias "Au calme."
-
+    hide julian
+    $ showP("mara", "neutre", 0.82)
     mara "Ouais."
 
     pause 0.4
 
     "Mara se lève à son tour."
     "Toujours sur le bord."
-
-    hide mara
-    $ showP("mara", "neutre", 0.82)
 
     mara "Je vais vérifier deux trucs."
     mara "Rien de grave."
@@ -1241,211 +1228,305 @@ label _3_CAFETERIA_DEBAT:
 
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
 
+# Durée : 6m30
+# Totale : 1h 34m 25s
+
+# + 1m30 de temps libres
+# Totale : 1h 36m 00s
 
 label _3_PAUSE_CHAMBRE:
 
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
-    "Je referme la porte derrière moi."
-    "La chambre retrouve son calme sec."
+    "La porte claque derrière moi."
+
+    play sound sfx_door
+    "Le choc résonne dans la cage thoracique."
+    "Pas juste dans la pièce."
+    "Dans moi."
+
+    pause 0.3
+
+    "Je reste planté là, dos au battant."
+    "Pas un bruit dehors. Pas un bruit dedans."
+    "Juste mon cœur qui cogne comme s'il voulait sortir avant moi."
+
+    pause 0.3
+
+    think "On vote pas avec des idées."
+    think "On vote avec nos nerfs."
+
+    "Je fais un pas. Puis un autre."
+    "La chambre est trop petite. Ou alors c'est moi qui suis trop grand."
+
+    pause 0.3
+
+    think "Convaincre, c’est pas prouver qu’on a raison."
+    think "C’est toucher ce que l’autre protège."
+    think "Ce qu’il a déjà perdu. Ce qu’il refuse de perdre encore."
+
+    "Je m’assois sur le bord du lit puis je me mets à réfléchir."
 
     pause 0.4
 
-    think "Je reste debout."
-    think "Je n’allume rien d’autre."
+    think "Vaut-il mieux défendre ses principes ou les gens ?"
+    think "Vaut-il mieux voter pour un texte clair ou conserver un statu quo mortel ?"
+    think "Clarté. Limites. Traçabilité."
+
+    pause 0.3
+
+    "Je ferme les yeux une seconde."
+    "Le silence pèse. Il pourrait presque écouter les battements rythmés de mon coeur.."
 
     pause 0.4
 
-    think "Convaincre quelqu’un, ce n’est pas prouver qu’on a raison."
+    play sound sfx_knock
+
+    "Trois coups secs."
+    "Rapides."
+
+    pause 0.2
+
+    play sound sfx_knock
+
+    "Encore."
+
+    pause 0.2
+
+    nyra "Noam ! Ouvre !"
+
+    "Je me lève."
+
+    scene bg_dortoir at adaptive_fullscreen with fade
+
+    $ showP("nyra", "stress", 0.65)
+    $ showP("noam", "neutre", 0.20)
+
+    nyra stress "Il est en train de faire le tour."
+
+    noam "Qui ?"
+
+    nyra "Julian."
+
+    pause 0.2
+
+    nyra "Il parle à Tomas."
+    nyra "Il parle à d’autres."
+    nyra "Il essaye de convaincre tout le monde de voter pour la proposition."
+
+    noam "Comment ça ? C'est pas si grave, non ? Pourquoi tu es si remontée ?!"
+
+    nyra "Il dit que si c’est lui qui prend la parole au Conclave, personne n’osera dire non."
+    nyra "Il vend son image. Il veut juste paraitre pour celui qui fait avancer les choses."
+
+    pause 0.3
+
+    nyra "Il dit que le vote passera grâce à lui."
+
+    pause 0.4
+
+    think "Pas le texte."
+    think "Lui."
+
+    noam "Où il est ?"
+
+    nyra "Dans la salle de repos."
+
+    stop music fadeout 0.5
+    play music "music/bgm_tension_low.mp3" fadein 0.6
+
+    scene bg_couloir at adaptive_fullscreen,memory_idle with fade
+
+    "On se met à courir."
+
+    play sound sfx_run
+
+    "Mes semelles claquent sur le métal."
+    "Chaque pas renvoie un écho trop fort."
+    "Trop visible."
+
+    pause 0.3
+
+    "Nyra est devant. Elle court sans regarder derrière."
+    "Son souffle est court. Rageur."
+
+    pause 0.2
+
+    play sound sfx_run
+    "Les néons défilent au-dessus."
+    "Blanc. Blanc. Clignotant."
+    "Un grésillement. Comme si les caméras tournaient plus vite."
+
+    pause 0.3
+
+    "Mon cœur tape dans les tempes."
+    "Pas juste la course."
+    "Julian. Son sourire. J'image déjà sa voix disant 'le texte passera grâce à moi'."
+
+    pause 0.2
+
+    "Un virage sec. Je manque de percuter le mur."
+    "Nyra ralentit à peine."
 
     pause 0.5
 
-    think "C’est comprendre ce qui lui fait peur."
-    think "Ce qu’il veut protéger."
-    think "Ce qu’il refuse de perdre."
+    "J'entends un bruit de voix au loin."
+    "C'est le sien. Son rire. Toujours ce rire."
+
+    scene bg_repos at adaptive_fullscreen with fade
+
+    $ showP("julian", "sourire", 0.65)
+    $ showP("tomas", "hesitation", 0.35)
+
+    julian sourire "— et si je prends la parole en premier, ça donne le ton."
+    julian sourire "On a besoin d’un visage sûr."
+    julian sourire "D’un leader visible. De quelqu'un en qui les gens se reconnaissent."
+
+    tomas hesitation "Je vote pour le texte."
+    tomas hesitation "Pas pour un leader."
+
+    julian rire "Mais le texte a besoin d’un moteur."
+    julian rire "Et je peux être ce moteur."
+
+    "Je m’avance."
+
+    $ showP("noam", "determine", 0.85)
+
+    noam "C'est loin d'être une bonne idée."
+    noam "Personne n'est leader ici."
 
     pause 0.4
 
-    think "Je l’oublie trop vite."
-    think "Surtout quand je suis stressé."
+    julian sourire "Ah."
+    julian sourire "Noam."
+
+    pause 0.2
+
+    noam "Si tu passes ton temps à dire que ça passera grâce à toi,"
+    noam "les hésitants vont se braquer."
+    noam raison "Ils vont croire qu’on leur impose quelqu’un."
+    noam raison "Et qu'on ne vote plus seulement pour ou contre une idée."
 
     pause 0.4
 
-    "Je m’assois sur le bord du lit."
-    "Mes mains restent ouvertes sur mes genoux."
+    julian sourire "T’es dur franchement."
+
+    "Son sourire glisse."
+    "Une seconde."
+    "À peine."
+
+    $ showP("julian", "neutre", 0.65)
+
+    julian "Je veux juste que ça passe."
+
+    noam "Alors parle uniquement du texte."
+    noam "Et arrête d'essayer de te mettre en avant."
+
+    pause 0.3
+
+    tomas "Il a raison."
+
+    $ showP("tomas", "determine", 0.35)
+
+    tomas "Si ça ressemble à une démonstration d’ego,"
+    tomas "F-Franchement, ç-ça sera sans moi."
 
     pause 0.4
 
-    think "Au Conclave, on parle de principes."
-    think "Mais on vote avec nos nerfs."
+    $ showP("julian", "decu", 0.65)
 
-    pause 0.4
+    julian "Bon. Très bien."
+    "Son sourire revient. Mais il n’atteint plus les yeux."
+    julian sourire "On verra au Conclave qui porte vraiment le vote."
 
-    think "On vote avec nos histoires."
-    think "Avec nos dettes."
-    think "Avec nos morts."
+    "Il me fixe."
+    "Pas longtemps."
+    "Avant de me dire d'une voix sèche."
 
-    pause 0.4
+    julian "Evide de me fais pas passer pour le méchant."
 
-    think "Je ne peux pas l’ignorer."
+    "Il s’éloigne."
 
-    pause 0.4
-
-    think "Est-ce que je vote pour le système ?"
-    think "Pour une architecture plus stable ?"
-    think "Pour une version moins brutale des règles ?"
-
-    pause 0.4
-
-    think "Ou est-ce que je vote pour les gens ?"
-    think "Pour ceux qui sont là, maintenant."
-    think "Pour leurs visages, pas pour un schéma."
-
-    pause 0.4
-
-    think "Je n’ai pas la réponse nette."
-    think "Et je déteste ça."
-
-    pause 0.4
-
-    "Je me lève, je fais deux pas, je reviens."
-    "La pièce est trop petite pour tourner en rond dignement."
-
-    pause 0.4
-
-    think "Si je pousse un argument parfait mais froid, je perds des voix."
-    think "Si je pousse une émotion pure, je perds le texte."
-
-    pause 0.4
-
-    think "Il faut les deux."
-    think "Pas moitié-moitié."
-    think "Les deux, en même temps."
-
-    pause 0.4
-
-    think "Clarté."
-    think "Limites."
-    think "Traçabilité."
-
-    pause 0.4
-
-    think "Je répète les trois mots comme un ancrage."
-
-    pause 0.4
-
-    "Un bruit dans le couloir."
-    "Des pas ralentissent devant ma porte."
-    "Puis repartent."
-
-    pause 0.4
-
-    think "Personne n’est tranquille aujourd’hui."
-
-    pause 0.4
-
-    think "Je revois les regards à la cafétéria."
-    think "Pas d’enthousiasme."
-    think "Pas de panique pure."
-    think "Juste une concentration fragile."
-
-    pause 0.4
-
-    think "Une concentration qui peut casser au premier faux mot."
-
-    pause 0.4
-
-    think "Alors je dois choisir mes mots."
-    think "Pas pour paraître brillant."
-    think "Pour être compréhensible."
-
-    pause 0.4
-
-    think "Compréhensible et honnête."
-
-    pause 0.4
-
-    "Je prends une inspiration lente."
-    "Je la retiens."
-    "Je relâche."
-
-    pause 0.4
-
-    think "Je ne convaincrai pas tout le monde."
-    think "Mais je peux éviter de braquer inutilement."
-
-    pause 0.4
-
-    think "Je peux écouter avant de répondre."
-
-    pause 0.4
-
-    think "Je peux admettre quand je ne sais pas."
-
-    pause 0.4
-
-    think "Je peux dire :"
-    think "“Je veux que ça tienne dans la réalité.”"
-    think "“Je veux que ça protège, pas que ça piège.”"
-
-    pause 0.4
-
-    think "Ce sera déjà mieux que réciter un slogan."
-
-    pause 0.4
-
-    "Je regarde la porte."
-    "Encore quelques heures avant le Conclave."
-
-    pause 0.4
-
-    think "Encore du temps pour parler."
-    think "Pour ajuster."
-    think "Pour rattraper une maladresse."
-
-    pause 0.4
-
-    think "Pas assez de temps pour réparer une fracture."
-
-    pause 0.4
-
-    think "Donc pas de grand discours."
-    think "Des phrases courtes."
-    think "Des engagements vérifiables."
-
-    pause 0.4
-
-    think "Et surtout :"
-    think "Ne pas confondre gagner un échange"
-    think "avec construire un accord."
+    hide julian
 
     pause 0.5
 
-    "Je prends une gorgée d’eau."
-    "Cette fois, mes mains tremblent moins."
+    stop music fadeout 0.6
+    play music "music/bgm_unsaid_distance.mp3" fadein 0.6
+
+    $ showP("nyra", "neutre", 0.60)
+    $ showP("tomas", "reflechit", 0.35)
+
+    tomas "C’était limite."
+    tomas triste "Il était franchement casse pied."
+    tomas mefiant "D-Désolé, à cause de moi, v-vous avez du venir m'aider..."
+
+    nyra "T'inquiète, mais il faut surveiller cet imbécile."
+
+    pause 0.3
+
+    think "Julian n’est pas contre."
+    think "Mais il aime être au devant de la scène."
+    think "Et ça, ça peut causer des problèmes."
+
+    pause 0.3
+
+    tomas "P-Pour être honnête, je ne veux pas que ce soit lui qui donne le ton."
+    tomas "Il faut que quelqu'un puisse lui tenir tête..."
+    tomas "T-Tu vas parler tout à l'heure ?"
+
+    noam "Oui."
+
+    pause 0.2
+
+    noam "Mais pas pour briller. Pour essayer que ça avance dans le bon sens."
 
     pause 0.4
 
-    think "D’accord."
-    think "Je repars."
+    tomas hoche_la_tete "Alors fais simple."
+
+    nyra "Et clair."
+
+    "Ils repartent tous les deux en direction des autres pièces."
 
     pause 0.4
 
-    think "Pas besoin d’être parfait."
-    think "Besoin d’être clair."
+    hide tomas
+    hide nyra
 
-    pause 0.4
+    $ showP("noam", "determine", 0.75)
 
-    think "Je prends la poignée."
-    think "Je souffle une dernière fois."
+    think "Ce vote, c’est plus juste un texte."
+    think "C’est aussi une question de confiance."
+    think "On ne peut pas faire n'importe quoi, au risque de la briser."
 
-    pause 0.4
+    pause 0.3
 
-    think "Aller au bout, maintenant."
+    think "Julian n’est pas un ennemi."
+    think "Mais son caractère peut causer le pire comme le meilleur."
 
-    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_2
+    pause 0.3
 
+    "Je serre les poings."
+    "Ils tremblent moins qu’avant."
+
+    pause 0.3
+
+    think "Les grands discours, ce n'est pas vraiment pour moi."
+    think "Mais je ne peux pas laisser les choses s'envenimer."
+
+    pause 0.3
+
+    think "Je devrais y aller."
+
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+
+# Durée : 2m40
+# Totale : 1h 37m 05s
+
+# + 1m30 de temps libres
+# Totale : 1h 38m 35s
 
 label _3_TRANSITION_CONCLAVE:
 

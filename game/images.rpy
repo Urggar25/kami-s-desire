@@ -17,6 +17,7 @@ image elias reflechit              = im.FactorScale("images/character/elias/refl
 image elias vide              = im.FactorScale("images/character/vide.png", 0.60)
 image elias detendu              = im.FactorScale("images/character/elias/detendu.png", 0.60)
 image elias raison              = im.FactorScale("images/character/elias/raison.png", 0.60)
+image elias determine              = im.FactorScale("images/character/elias/determine.png", 0.60)
 
 # ======================
 # MARA
@@ -217,6 +218,7 @@ image nyra sourire              = im.FactorScale("images/character/nyra/sourire.
 image nyra surpris              = im.FactorScale("images/character/nyra/surpris.png", 0.60)
 image nyra taquin               = im.FactorScale("images/character/nyra/taquin.png", 0.60)
 image nyra triste               = im.FactorScale("images/character/nyra/triste.png", 0.60)
+image nyra stress               = im.FactorScale("images/character/nyra/stress.png", 0.60)
 image nyra vide              = im.FactorScale("images/character/vide.png", 0.60)
 
 # ======================

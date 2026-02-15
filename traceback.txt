@@ -5,9 +5,13 @@ While running game code:
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
   File "game/scenario/2_canon.rpy", line 1046, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
-  File "game/scenario/3_canon.rpy", line 126, in script
-    kami sourire "Rendez-vous au Conclave à 14h ♥"
-Exception: Say has image attributes ('sourire',), but there's no image tag associated with the speaking character.
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1353, in script
+    scene bg_salle_commune at adaptive_fullscreen with cut
+  File "game/scenario/3_canon.rpy", line 1353, in <module>
+    scene bg_salle_commune at adaptive_fullscreen with cut
+NameError: name 'cut' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,23 +20,21 @@ Full traceback:
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
   File "game/scenario/2_canon.rpy", line 1046, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
-  File "game/scenario/3_canon.rpy", line 126, in script
-    kami sourire "Rendez-vous au Conclave à 14h ♥"
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1407, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1223, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1149, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes ('sourire',), but there's no image tag associated with the speaking character.
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1353, in script
+    scene bg_salle_commune at adaptive_fullscreen with cut
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1370, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scenario/3_canon.rpy", line 1353, in <module>
+    scene bg_salle_commune at adaptive_fullscreen with cut
+NameError: name 'cut' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2
-Sun Feb 15 13:21:23 2026
+Sun Feb 15 23:50:57 2026
