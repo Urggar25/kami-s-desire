@@ -486,514 +486,758 @@ label _3_CAFETERIA_DEBAT:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "La cafétéria est pleine."
-    "Mais les voix restent basses."
-    "Comme si les murs pouvaient prendre parti."
+    "Mais ça parle à peine."
+    "Un brouhaha… sans bruit."
+    "Des fourchettes."
+    "Des chaises."
+    "Des souffles."
 
     pause 0.4
 
-    "Je prends un plateau."
-    "Je n’y mets presque rien."
-    "Juste pour avoir quelque chose dans les mains."
+    "Je m’assois."
+    "Pas au centre."
+    "Pas trop visible."
 
-    pause 0.4
+    pause 0.3
 
-    "Au fond, Elen et Iris parlent près d’une table."
-    "Leurs têtes sont penchées l’une vers l’autre."
-
-    $ showP("elen", "inquiet", 0.22)
-    $ showP("iris", "hesitation", 0.50)
     $ showP("noam", "neutre", 0.82)
+    $ showP("elen", "joie", 0.22)
+    $ showP("iris", "fatigue", 0.50)
 
-    noam "Je peux me joindre à vous ?"
-
-    elen "Oui."
-    elen "On essaye juste de garder ça clair."
-
-    iris "Et de ne pas paniquer avant midi."
-
-    noam "Bonne stratégie."
+    "Elen est déjà là."
+    "Et Iris aussi."
+    "Côte à côte."
+    "Comme si ça s’était fait tout seul."
 
     pause 0.3
 
-    elen "Ce qui m’inquiète, c’est l’unanimité."
-    elen "Pas la majorité."
-    elen "L’unanimité."
+    scene bg_cg013 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg013")
 
-    iris "Une personne peut tout bloquer."
-    iris "Même si onze sont d’accord."
-
-    noam "Je sais."
+    "Elen a un bol."
+    "Un bol énorme."
+    "Ça fume."
+    "Ça sent…"
+    "Je ne sais pas vraiment en fait."
+    "La forêt ?"
+    "Le dessert ?"
 
     pause 0.3
 
-    elen "Non, justement."
-    elen "On dit tous “je sais”, mais on ne le sent pas pareil."
-    elen "Certains voient un vote."
-    elen "Moi je vois une seule faille possible."
+    iris "… C’est quoi ça ..?"
 
-    iris "Et je vois la formulation."
-    iris "Si elle est floue, c’est fini."
+    elen rire "C’est."
+    elen rire "Une MASTERPIECE."
 
-    noam "Tu penses à quoi exactement ?"
+    iris "Je suis pas sûre que ce mot s’applique ici."
 
-    iris "À un mot mal choisi."
-    iris "À une exception oubliée."
-    iris "À une phrase qu’on interprète différemment selon les districts."
+    elen joie "Pâtes."
+    elen joie "Noix."
+    elen joie "Et…"
+    elen taquin "Un petit truc secret."
+
+    iris "Un petit truc secret, c’est exactement comme ça qu’on finit à l’infirmerie."
+
+    elen rire "T’inquiète."
+    elen rire "C’est Goumi qui a validé."
+    elen taquin "Goumi ne tue pas ses clients."
+    elen taquin "Il n'en a jamais tué volontairement."
+
+    iris desaccord "… C’est pas rassurant."
+
+    pause 0.3
+
+    "Elen plonge sa fourchette."
+    "Elle mélange."
+    "Elle goûte."
+    "Ses yeux brillent."
+
+    elen joie "Oh putain."
+    elen joie "C’est trop bon."
+    elen rire "C’est EXACTEMENT trop bon."
+
+    iris "Tu joues à quoi."
+    iris "À te convaincre toi-même ?"
+
+    elen taquin "Quelle rabat-joie ! J'ai bien le droit d'être heureuse."
+    elen taquin "Ça te dérange ? Tu devrais essayer de temps en temps."
+
+    iris fatigue "Ça me fatigue rien que de te regarder."
+
+    pause 0.3
+
+    "Elen se marre."
+    "Vraiment."
+    "Ça tranche avec l'atmosphère du reste de la pièce."
+
+    elen rire "Mais goûte."
+    elen rire "Juste une bouchée."
+    elen rire "Allez, jsute une !"
+    elen taquin "Pour l’art. Tu es bien courageuse non ?"
+
+    iris "Non."
+
+    elen surpris "Même pas pour la postérité ?!"
+
+    iris "Surtout pas..."
+
+    pause 0.3
+
+    "Elen hausse les épaules."
+    "Elle s’en fout."
+    "Elle remange."
+
+    elen content "Ok."
+    elen content "Plus pour moi."
+    elen content "C-ça... m'va..."
 
     pause 0.4
 
-    "Mara arrive avec un plateau chargé."
-
-    hide noam
-    $ showP("mara", "neutre", 0.82)
-
-    mara "Vous êtes déjà en mode comité de crise ?"
-
-    elen "On préfère maintenant que trop tard."
-
-    mara "Très bien."
-    mara "Alors je vais faire la version moche :"
-    mara "Qui applique quoi derrière ?"
-
-    iris "Tu parles de la logistique ?"
-
-    mara "Oui."
-    mara "Le concret."
-    mara "Les flux."
-    mara "Les stocks."
-    mara "Les points de passage."
-    mara "Le terrain."
-
-    elen "On n’a pas tous les chiffres."
-
-    mara "Justement."
-    mara "Donc on doit éviter les promesses irréalistes."
+    "Je regarde mon plateau."
+    "Rien d’extra."
+    "Rien de drôle ou d'extravagant."
+    "Juste une barre de céréale avec un jus de fruit."
+    "J'ai toujours cette nausée qui me prends aux tripes."
 
     pause 0.3
 
-    "Nyra, assise à la table voisine, relève les yeux."
+    noam "Goumi t’a laissé commander ça ?"
 
-    hide elen
-    $ showP("nyra", "neutre", 0.22)
+    elen joie "Ouaiiiis."
+    elen joie "J'lui ai fait ce regard."
 
-    nyra "Le problème n’est pas seulement logistique."
-    nyra "Le problème est aussi juridique."
+    scene bg_cg013_1 at adaptive_fullscreen with fade
+    "Elle commence à imiter un regard... Particulier."
 
-    iris "Juridique ?"
+    elen taquin "Le regard ultiiime !"
 
-    nyra "Le Commandement est un texte."
-    nyra "Un texte se lit."
-    nyra "Un texte se tord."
-    nyra "Un texte se retourne contre celui qui l’a écrit."
+    iris "Le regard du caprice, oui."
 
-    mara "Voilà, on y est."
+    elen rire "Mais le regard du caprice, c’est mignon."
+    elen rire "Je me suis entrainée à le faire celui-là !"
 
-    nyra "Si on vote sur une phrase molle, on donne une arme à la première interprétation hostile."
-
+    scene bg_cg013 at adaptive_fullscreen with fade
     pause 0.3
 
-    "Tomas pose son verre et se penche en avant."
+    "Iris fixe le bol."
+    "Comme si le bol allait bouger. Comme si son contenu était vivant."
+    "Comme si ça allait lui sauter au visage."
 
-    hide iris
-    $ showP("tomas", "reflechit", 0.50)
+    iris "On dirait des pâtes…"
+    iris "Avec des cailloux."
 
-    tomas "Je suis d’accord."
-    tomas "Il faut séparer :"
-    tomas "Ce qu’on autorise explicitement."
-    tomas "Ce qu’on interdit explicitement."
-    tomas "Et ce qui demande une validation supplémentaire."
-
-    mara "Trois blocs ?"
-
-    tomas "Oui."
-    tomas "Sinon chacun projettera sa version."
-
-    nyra "Et il n’y aura pas d’unanimité."
-
-    pause 0.4
-
-    hide mara
-    $ showP("noam", "inquiet", 0.82)
-
-    noam "Donc la question n’est pas seulement “pour ou contre”."
-
-    tomas "Non."
-
-    noam "C’est “pour quel texte précis”."
-
-    nyra "Exactement."
-
-    pause 0.3
-
-    elen "On pourrait déjà lister les points qui font peur à tout le monde."
+    elen "C’est des noix."
 
     iris "Oui."
-    iris "Comme ça on sait où ça bloque."
+    iris "Mais je me dis qu'avec des cailloux ça serait peut-être meilleurs encore."
 
-    mara "Je commence."
-    mara "Peur numéro un : promesse impossible à appliquer."
+    elen taquin "Ah ouais tu crois !?."
 
-    tomas "Peur numéro deux : formulation exploitable contre nous."
-
-    nyra "Peur numéro trois : désaccord sur le sens des mots-clés."
-
-    elen "Peur numéro quatre : vote émotionnel, sans verrou."
-
-    noam "Peur numéro cinq : croire qu’on est d’accord alors qu’on ne l’est pas."
-
-    pause 0.4
-
-    "La table voisine écoute désormais clairement."
-    "Personne ne coupe."
-    "Personne ne rit."
+    iris desaccord "Mon dieu, dites moi qu'elle n'est pas aussi simple d'esprit..."
+    iris desaccord "Sois lucide bon sang ! Bien sur que non !!"
 
     pause 0.3
 
-    mara "Bon."
-    mara "On avance."
-    mara "Qui veut une version courte du problème ?"
+    "Elen mâche."
+    "Elle ferme les yeux."
+    "Elle fait un petit bruit satisfait."
+    "Vraiment pas discret."
 
-    iris "Moi."
+    iris fatigue "…"
 
-    mara "On doit voter un texte."
-    mara "Pas une intention."
+    elen joie "Tu vois ?"
+    elen joie "La vie."
+    elen joie "C’est ça."
+    elen taquin "Profiter, et s'en fouttre de ce que les autres pensent."
+    elen taquin "Et comme ça, rien ne t'atteint !"
 
-    iris "Parfait."
+    iris "Tu dis ça comme si c’était normal."
 
-    tomas "Et ce texte doit survivre à une lecture hostile."
+    elen "Ça devrait en tout cas."
 
-    nyra "Exact."
+    pause 0.5
+    scene bg_cafeteria at adaptive_fullscreen with fade
 
-    pause 0.3
+    $ showP("noam", "neutre", 0.82)
+    $ showP("elen", "joie", 0.22)
+    $ showP("iris", "fatigue", 0.50)
 
-    elen "On fait quoi des termes vagues ?"
+    iris "T’as pas peur."
+    iris "Deux secondes ?"
 
-    tomas "On les bannit."
-
-    iris "Tous ?"
-
-    tomas "Tous ceux qui peuvent ouvrir deux interprétations incompatibles."
-
-    nyra "Et on définit les autres."
-
-    mara "Définir dans le Commandement lui-même ?"
-
-    tomas "Si possible, oui."
-
-    noam "Et si c’est trop long ?"
-
-    nyra "Alors on simplifie la portée."
-    nyra "Pas la précision."
-
-    pause 0.4
-
-    "Un silence serré tombe sur la table."
-
-    elen "On dirait un cours."
-
-    mara "Un cours qui évite de se faire piéger."
-
-    iris "Je prends."
-
-    pause 0.3
-
-    noam "On peut tester une phrase ?"
-
-    tomas "Vas-y."
-
-    noam "“Autoriser des échanges inter-districts encadrés”."
-
-    mara "“Encadrés” par quoi ?"
-
-    iris "Voilà."
-
-    nyra "Mot vague."
-
-    tomas "À remplacer par une condition opérationnelle."
-
-    pause 0.3
-
-    elen "D’accord."
-    elen "“Autoriser les échanges inter-districts validés par protocole commun.”"
-
-    mara "“Protocole commun” défini où ?"
-
-    elen "…"
-
-    iris "Encore flou."
-
-    nyra "Mais c’est mieux."
-
-    pause 0.3
-
-    tomas "On peut faire plus direct."
-    tomas "“Autoriser les échanges inter-districts listés et tracés par registre partagé.”"
-
-    mara "Là c’est concret."
-
-    iris "Oui, mais ça suppose l’outil."
-
-    tomas "L’outil existe déjà sous une forme minimale."
-
-    mara "Pas partout pareil."
-
-    nyra "Alors il faut ajouter une clause de déploiement progressif."
-
-    pause 0.4
-
-    noam "Vous voyez ?"
-    noam "Rien qu’une phrase et on ouvre dix portes."
-
-    elen "C’est pour ça qu’il ne faut pas improviser au moment du vote."
-
-    pause 0.3
-
-    "Deux personnes derrière nous se rapprochent."
-    "Elles écoutent sans intervenir."
-
-    pause 0.3
-
-    mara "Autre sujet."
-    mara "La perception."
-    mara "Si on parle trop technique, certains décrochent."
-
-    iris "Si on simplifie trop, on ment."
-
-    nyra "Donc il faut deux niveaux de discours."
-
-    tomas "Version publique lisible."
-    tomas "Version verrouillée précise."
-
-    elen "Et il faut que les deux disent la même chose."
-
-    noam "Sinon on perd la confiance."
-
-    pause 0.3
-
-    mara "Encore un point :"
-    mara "Qui prend la parole au Conclave ?"
-
-    iris "Pas une seule personne."
-
-    elen "Oui, sinon ça ressemble à une prise de contrôle."
-
-    nyra "Trois voix minimum."
-    nyra "Profils différents."
-
-    tomas "Une pour le cadre."
-    tomas "Une pour le terrain."
-    tomas "Une pour les garanties."
-
-    noam "Et moi ?"
-
-    mara "Toi, tu peux faire le lien."
-
-    pause 0.4
-
-    noam "Le lien entre quoi ?"
-
-    mara "Entre l’idée et la personne en face."
-
-    iris "Tu reformules bien."
-
-    noam "Je ne suis pas sûr que ça suffise."
-
-    nyra "Ça ne suffira pas."
-    nyra "Mais ce sera utile."
-
-    pause 0.3
-
-    elen "On devrait aussi identifier qui risque de voter contre."
-
-    tomas "Sans les désigner publiquement."
-
-    mara "Oui."
-
-    iris "Et surtout comprendre pourquoi."
-
-    noam "Pas pour les coincer."
-
-    nyra "Pour les entendre avant la salle."
-
-    pause 0.4
-
-    "Une serveuse automatique passe entre les rangées."
-    "Le moteur ronronne doucement."
-    "Personne ne la regarde vraiment."
-
-    pause 0.3
-
-    mara "Je vais être franche."
-    mara "Je ne crois pas qu’on aura l’unanimité juste avec de bons arguments."
-
-    elen "Tu crois qu’il faudra quoi ?"
-
-    mara "De la confiance."
-    mara "Et la confiance, ça ne se décrète pas en séance."
-
-    iris "Ça se construit avant."
-
-    nyra "Ou ça échoue avant."
-
-    pause 0.3
-
-    tomas "D’où la formulation."
-    tomas "Un texte clair peut au moins réduire la peur."
-
-    noam "Réduire."
-    noam "Pas effacer."
-
-    tomas "Oui."
-
-    pause 0.3
-
-    elen "Je peux poser une question brute ?"
-
-    mara "Vas-y."
-
-    elen "Si on voit qu’on n’aura pas l’unanimité, on fait quoi ?"
-
-    "…"
+    elen "Si."
+    elen "Mais là, maintenant, tout de suite, j’ai faim."
+    elen joie "Alors je m'en fou d'avoir peur."
 
     iris "…"
 
-    nyra "On adapte."
-
-    tomas "On retire ce qui bloque si ça ne trahit pas le fond."
-
-    mara "Et si ça le trahit ?"
-
-    nyra "Alors on assume l’échec."
-
-    pause 0.5
-
-    "Le mot reste suspendu."
-    "Échec."
-    "Personne ne le répète."
-
     pause 0.3
 
-    noam "Je préfère qu’on n’y arrive pas que de voter un piège."
-
-    mara "Pareil."
-
-    iris "Pareil."
-
-    elen "Pareil."
-
-    tomas "Pareil."
-
-    nyra "Alors on est alignés sur une base minimale."
-
-    pause 0.3
-
-    "Nyra prend une serviette et écrit trois mots."
-    "Elle la pose au centre de la table."
-
-    nyra "Clarté."
-    nyra "Limites."
-    nyra "Traçabilité."
-
-    tomas "Ça me va."
-
-    mara "Ça me va aussi."
-
-    iris "Oui."
-
-    elen "D’accord."
-
-    noam "On tient quelque chose."
+    "Iris détourne les yeux."
+    "Elle a l’air de se retenir de dire quelque chose."
+    "Elle avale sa salive mais retient ses mots."
 
     pause 0.4
 
-    "Derrière nous, les deux observateurs hochent la tête et repartent."
+    $ showP("elen", "taquin", 0.22)
 
-    pause 0.3
+    elen taquin "T’as envie de me faire la morale, hein."
 
-    mara "Bon, je dois filer dans le couloir nord après ça."
+    iris "Un peu."
 
-    iris "Pour quoi ?"
+    elen rire "Vas-y."
+    elen rire "Je t’écoute."
+    elen taquin "Héhé, balance ton sermon."
 
-    mara "Vérifier un point d’acheminement."
-    mara "Histoire de parler concret quand je ramène l’argument."
-
-    noam "Tu veux un coup de main ?"
-
-    mara "Plus tard peut-être."
-
-    pause 0.3
-
-    tomas "Je vais retravailler une formulation test."
-
-    elen "Tu nous l’envoies ?"
-
-    tomas "Oui, version courte et version complète."
-
-    nyra "Ajoute les définitions en annexe."
-
-    tomas "Déjà prévu."
-
-    pause 0.3
-
-    iris "Je vais parler à deux personnes qui hésitent encore."
-
-    noam "Tu veux que je vienne ?"
-
-    iris "Pas tout de suite."
-    iris "D’abord je les écoute."
-
-    pause 0.3
-
-    elen "Noam, toi tu peux faire circuler l’idée simple :"
-    elen "On ne vote pas une intention, on vote un texte."
-
-    noam "Oui."
-
-    nyra "Et rappelle que la précision protège tout le monde."
-
-    noam "Compris."
+    iris fatigue "Non."
+    iris fatigue "Laisse tomber."
 
     pause 0.4
 
-    "La table se vide lentement."
-    "Pas d’un coup."
-    "Par départs successifs."
+    "Une chaise racle."
+    "Quelqu’un passe derrière."
+    "On ne regarde pas."
 
-    hide nyra
-    hide tomas
+    pause 0.4
+
     hide noam
+    $ showP("elias", "neutre", 0.82)
 
-    "Je reste assis quelques secondes."
-    "Le plateau devant moi est presque intact."
+    "Elias arrive."
+    "Son plateau est…"
+    "Triste, propre, calibré."
+
+    pause 0.3
+
+    elias "Vous mangez quoi."
+
+    elen joie "Le bonheur."
+
+    iris "Ne la crois surtout pas..."
+
+    elias inquiet "…"
+    elias inquiet "On doit manger correctement."
+    elias inquiet "Surtout maintenant."
+
+    elen taquin "Oh non."
+    elen taquin "Le discours nutrition."
+
+    elias "Je plaisante pas."
+
+    iris "Il plaisante jamais."
+    iris taquin "Crois moi. Ca c'est vrai."
+
+    "IJ s'assoit à la table auprès de nous."
+    elias "Protéines."
+    elias "Œufs."
+    elias "Poulet."
+    elias "Simple, efficace, nutritif et bon."
+
+    pause 0.3
+
+    "Elen le regarde."
+    "Comme si Elias venait de lui dire de boire de l’eau tiède pour s’amuser."
+
+    hide elen
+    $ showP("elen", "surpris", 0.22)
+
+    elen "Poulet."
+    elen "Ici."
+    elen "Alors que tu peux manger tout ce que tu veux ?!"
+
+    elias "C’est une base."
+    elias "Un principe."
+    elias "Il vaut mieux manger quelque chose qui tient bien au corps."
+    elias "Mais on arrête les…"
+    elias inquiet "les pâtes aux noix."
+
+    iris "Merci."
+
+    elen colere "Oh !"
+    elen colere "C’est pas des pâtes aux noix."
+    elen colere "C’est une œuvre d'art gustative."
+
+    elias "Franchement, laisse moi en douter..."
+
+    elen "Ça dépend laquelle."
+
+    pause 0.3
+
+    "Elias soupire."
+    "Comme s'il s'interdisait de dire quelque chose."
+
+    hide elias
+    $ showP("elias", "reflexion", 0.82)
+
+    elias "Je dis juste."
+    elias "Cet aprèm, on devra être lucides."
+    elias "On doit tenir."
+    elias "On peut pas se permettre d’être mous."
+    "Elias remue son œuf du bout de la fourchette. Comme s'il le regrettait déjà."
+
+    pause 0.3
+
+    hide iris
+    $ showP("iris", "hesitation", 0.50)
+
+    iris "…"
+
+    elen "On devait pas en parler."
+
+    elias "Personne veut en parler."
+    elias "C’est pour ça que ça tourne dans les têtes."
 
     pause 0.4
 
-    think "Ce n’était pas un débat pour gagner."
-    think "C’était un débat pour éviter l’erreur."
+    "Elen remange."
+    "Mais moins fort."
+    "Elle écoute d'une oreille."
+
+    pause 0.3
+
+    iris "On n’est pas obligés."
+    iris "Là."
+    iris "Maintenant. On est en train de manger."
+
+    elias "Non."
+    elias "Mais on fait quoi, alors."
+    elias "On arrive au vote et on improvise ?"
+
+    elen "Moi, je vais pas improviser."
+    elen "Je sais déjà ce que je vais faire."
+
+    pause 0.3
+
+    "Elen s'exclame en sautillant sur elle même un bas en l'air."
+    $ showP("elen", "joie", 0.22)
+
+    elen joie "Je vote pour !!"
 
     pause 0.4
 
-    think "Et malgré ça, rien n’est acquis."
+    "Elle le dit comme si elle annonçait le dessert à un mariage."
+    "Sa voix ne tremble pas, elle se fiche des caméras, se fiche du regard des autres."
+    "Comme Elen le ferait.."
+
+    iris "Tu le dis facilement."
+
+    elen taquin "Parce que c’est facile."
+    elen taquin "On crève d’ennui ici."
+    elen taquin "Et dehors, ils crèvent pour de vrai."
+
+    iris "…"
+
+    elias "Tu marques un point."
 
     pause 0.4
 
-    $ add_argument("Formulation du commandement")
-    show screen argument_unlock("Formulation du commandement")
-    pause 5.0
+    "Silence."
+    "Un silence qui n’a pas envie d’être cassé."
+    "Mais qui se casse quand même."
 
-    "Le nouvel argument s’ajoute à la liste."
-    "Je le relis mentalement."
-    "Formulation du commandement."
+    pause 0.3
+
+    hide elias
+    $ showP("julian", "neutre", 0.82)
+
+    "Julian débarque."
+    "Il embarque une chaise et s’assoit un peu trop vite avec nous."
+    "Comme s’il avait peur qu’on change de sujet."
+
+    julian "J’ai entendu “je vote pour” ?"
+
+    elen rire "Oui."
+    elen rire "Bienvenue au club !!"
+
+    julian sourire "Moi aussi."
+    julian sourire "Evidemment que je vote pour !"
+
+    iris hesitation "Julian…"
+
+    julian "Quoi ?"
+    julian "Je vais pas faire semblant et je vais pas garder ça pour moi."
+    julian taquin "Je suis de toute façon incapable de faire semblant."
+
+    "Julian jette un œil vers une caméra au plafond. Un réflexe. Sourire intact."
+
+    pause 0.3
+
+    "Tout le monde regarde dans notre direction dans la pièce."
+    "Bravo Elen, pour attirer l'attention de tout le monde, ça tu sais faire..."
+
+    pause 0.3
+
+    elen taquin "Ok."
+    elen taquin "Question simple."
+    elen taquin "Qui vote pour ?"
 
     pause 0.4
 
-    think "Oui."
-    think "C’est exactement le nerf du problème."
+    "Julian lève la main."
+    "Comme à l’école."
+    "Ça fait presque rire."
+
+    julian rire "Pour."
+
+    pause 0.3
+
+    hide julian
+    $ showP("noam", "hesitation", 0.82)
+
+    "Je sens des regards."
+    "Pas accusateurs."
+    "Juste…"
+    "En attente."
+
+    noam "Tu votes pour... sans 'mais' ?"
+    "Elen hausse les épaules, comme si c'était évident."
+    think "Et moi ? Si c'était si simple..."
+    noam "Et si le texte est foireux ?"
+
+    pause 0.3
+
+    "Elen claque sa langue, contente."
+
+    hide elen
+    $ showP("elen", "content", 0.22)
+
+    elen content "Voilà."
+    elen content "Ça fait déjà du bien."
+
+    iris fatigue "Je te rappelle que si une seule personne n'est pas d'accord, ça fout tout en l'air."
+
+    pause 0.3
+
+    "Elias hoche la tête."
+    "Une fois."
+
+    hide noam
+    $ showP("elias", "determine", 0.82)
+
+    elias "Pour."
+    elias "Mais…"
+    elias "Faut que ce soit vraiment appliqué."
+
+    elen taquin "Ça y est."
+    elen taquin "Le “mais” est arrivé."
+    elen rire "Je l’attendais."
+
+    elias "Je suis sérieux."
+
+    iris "Lui aussi."
+
+    pause 0.4
+
+    "Plus loin, d’autres s’approchent."
+    "Pas en groupe."
+    "Par petites vagues."
+    "Comme si personne ne voulait avoir l’air de venir écouter."
+
+    pause 0.3
+
+    hide elias
+    $ showP("kael", "neutre", 0.82)
+
+    "Kael passe."
+    "Plateau à la main, il s'apprête à s'éloigner quand Elen lui barre la route."
+    "Son visage ne bouge presque pas."
+
+    pause 0.4
+
+    elen "Kael ?"
+    elen "Pour ou contre ?"
+
+    pause 0.4
+
+    hide kael
+    $ showP("kael", "reflechit", 0.82)
+
+    "Kael ouvre la bouche."
+    "Puis la referme."
+    "Comme s’il mesurait le poids du mot."
+
+    kael "…"
+    kael "Je sais pas. Je verrais."
+
+    pause 0.3
+
+    elen "Ok."
+    elen "Réponse honnête."
+
+    iris "Au moins."
+
+    pause 0.4
+
+    hide kael
+    $ showP("mara", "mefiant", 0.82)
+
+    "Mara arrive derrière."
+    "Elle ne s’assoit pas tout de suite."
+    "Elle regarde les plateaux."
+    "Puis les visages."
+
+    mara "Je vous entends de loin."
+    mara "C’est dangereux de dire ce que vous allez faire."
+
+    elen rire "Oh non."
+    elen rire "On est démasqués."
+
+    mara mefiant "Je rigole pas."
+
+    pause 0.3
+
+    iris "Tu votes pas pour ?"
+
+    mara "J'ai pas dis pas ça."
+
+    pause 0.3
+
+    "Elle prend enfin une chaise."
+    "Pas au centre."
+    "Sur le bord."
+    "Comme si elle gardait une sortie."
+
+    hide mara
+    $ showP("mara", "doute", 0.82)
+
+    mara "Je comprends l’idée."
+    mara "Vraiment."
+    mara "Mais…"
+    mara "On ouvre une porte dont on connait pas les conséquences."
+    mara "Et j’aime pas les portes qu’on ouvre sans voir derrière."
+
+    elen "C’est du commerce."
+    elen "C'est pas comme si on proposait l'éradication des bébés pinguins !"
+
+    mara doute "T’es sûre ?"
+
+    pause 0.4
+
+    iris "Mara…"
+
+    mara "Non."
+    mara "Laissez."
+    mara "Je fais pas ma dramatique."
+    mara "Je dis juste : et s'il y avait un détail qu'on avait pas compris ?"
+    mara "D'ailleurs, il est où l'intitulé ?"
+    mara "Il faut bien le voir avant de se décider, être surs de pas faire une connerie."
+
+    pause 0.3
+
+    "Elen se redresse."
+    "Prête à répondre trop fort."
+    "Puis elle se retient."
+    "Elle respire."
+
+    hide elen
+    $ showP("elen", "reflechit", 0.22)
+
+    elen "Ok."
+    elen "Je t’entends."
+    elen "Vraiment."
+    elen "Mais…"
+    elen "On fait quoi sinon ?"
+    elen "On regarde les gens crever et on se dit que c'est pas de notre faute ?"
+
+    mara "Je dis pas ça."
+
+    elias "Elle dit que c’est une décision à prendre."
+
+    julian "Tout a un prix ici."
+
+    pause 0.3
+
+    "Mara serre la mâchoire."
+
+    hide mara
+    $ showP("mara", "stress", 0.82)
+
+    mara "Je suis pas “contre” par principe."
+    mara "Je suis…"
+    mara "Réticente."
+    mara "Parce que si ça part mal, ça part très mal."
+    mara "Et après, c’est nous."
+    mara "Pas Kami."
+    mara "Nous. Qui en subiront les conséquences."
+    "Mara serre son plateau si fort que ses jointures blanchissent."
+
+    pause 0.4
+
+    noam "Tu veux des garanties."
+
+    mara "Oui."
+
+    iris "Et si on en a pas ?"
+
+    mara "Alors je veux que la proposition ne soit pas ambigüe."
+
+    pause 0.4
+
+    elias "Ça, c’est raisonnable."
+
+    julian "C’est chiant, mais raisonnable."
+
+    elen taquin "Ok."
+    elen taquin "Donc t’es pas contre, tu vas voter pour."
+
+    mara stress "Je te jure…"
+
+    elen rire "Je plaisante."
+
+    pause 0.4
+
+    "Le bruit de la cafétéria revient."
+    "Il n'est pas spécialement plus fort mais un peu plus présent."
+    "Comme si les gens respiraient à nouveau."
+
+    pause 0.3
+
+    "Certains acquiescent."
+    "D’autres évitent encore de se mouiller."
+    "Mais le truc est là."
+    "Une tendance."
+    "Un consensus mou plutôt en faveur du vote."
+
+    pause 0.4
+
+    hide kael
+    $ showP("kael", "neutre", 0.82)
+
+    "Kael mange."
+    "Sans regarder personne."
+    "Mais il écoute tout."
+
+    pause 0.3
+
+    iris "On va pas régler ça ici."
+
+    elias "Non."
+
+    julian "Mais au moins…"
+    julian "On sait que ça penche pour le “pour”."
+
+    elen joie "Ça me suffit pour maintenant."
+
+    pause 0.3
+
+    "Elen finit une bouchée."
+    "Elle pousse son bol."
+    "Satisfaite, malgré tout."
+
+    hide elen
+    $ showP("elen", "content", 0.22)
+
+    elen content "Ok."
+    elen content "Je vais aller digérer mon œuvre."
+    elen taquin "Et peut-être convertir d’autres âmes."
+
+    iris "Bonne chance."
+
+    elen rire "Merci."
+    elen rire "Je suis née pour ça."
+
+    pause 0.4
+
+    "Julian se lève aussi."
+
+    hide julian
+    $ showP("julian", "sourire", 0.82)
+
+    julian "Je vais faire un tour aussi."
+
+    pause 0.4
+
+    "Elias récupère son plateau."
+
+    hide elias
+    $ showP("elias", "neutre", 0.82)
+
+    elias "Je retourne au…"
+    elias "Je sais même pas."
+    elias "Au calme."
+
+    mara "Ouais."
+
+    pause 0.4
+
+    "Mara se lève à son tour."
+    "Toujours sur le bord."
+
+    hide mara
+    $ showP("mara", "neutre", 0.82)
+
+    mara "Je vais vérifier deux trucs."
+    mara "Rien de grave."
+    mara "Juste…"
+    mara "Désolée d'avoir cassé l'ambiance."
+
+    iris "T'inquiète. C'est pas toi qui est en cause..."
+
+    mara "Merci."
+
+    pause 0.4
+
+    "Kael finit."
+    "Il se lève sans faire de commentaire."
+
+    pause 0.4
+
+    hide kael
+    hide elias
+    hide mara
+    hide elen
+    hide julian
+
+    $ showP("noam", "neutre", 0.82)
+    $ showP("iris", "fatigue", 0.50)
+
+    "Il reste Iris."
+    "Et moi."
+    "Deux secondes."
+
+    pause 0.3
+
+    iris fatigue "Tu vois."
+    iris fatigue "Même quand personne veut en parler…"
+    iris fatigue "On finit toujours par le faire.."
+
+    noam "Ouais."
+    "Je tripote ma barre de céréale. Elle s'effrite entre mes doigts."
+
+    pause 0.3
+
+    iris "Fais attention tout à l'heure."
+
+    noam "Toi aussi."
+
+    pause 0.4
+
+    "Elle hoche la tête."
+    "Et elle part."
+
+    hide iris
+
+    pause 0.4
+
+    "Je reste une seconde."
+    "Je regarde la salle."
+    "Pleine."
+    "Silencieuse."
+    "Vivante quand même."
+
+    pause 0.4
+
+    think "Une respiration."
+    think "Avant la suite."
+
+    pause 0.4
+
+    "Je repose mon plateau."
+    "Et je me lève."
 
     stop music fadeout 0.8
 
-    "Je repose le plateau."
-    "Puis je quitte la cafétéria pour prendre l’air dans les couloirs."
+    "Que devrais-je faire en attendant ?"
 
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
 
