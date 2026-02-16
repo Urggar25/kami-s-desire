@@ -1835,6 +1835,64 @@ label _3_TRANSITION_CONCLAVE:
     "Le Conclave va commencer."
     think "Plus de retour en arrière possible."
 
+    pause 0.4
+    show screen kami_broadcast_ui
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Très bien mes petits débats ambulants..."
+    kami "On ouvre cette première phase en douceur."
+    kami "Phase 1 : poser les bases."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Avant de vous arracher les cordes vocales, vous allez reconstruire le texte ensemble."
+    kami "Parce qu'un débat sans base commune, c'est juste une bagarre mal prononcée."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Chacun va donner les mots dont il se souvient."
+    kami "Ryn et Sael participent."
+    kami "Nyra aussi, parce que sa mémoire me met presque en insécurité."
+    kami "Les mots seront en désordre. À vous de les remettre dans l'ordre logique."
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Objectif : retrouver exactement la proposition suivante."
+    kami "Autoriser le transport, la vente et l’échange de marchandises entre les districts."
+    kami "Le système actuel de distribution de matériel et de denrées est aboli."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("ryn", "determine", 0.18)
+    ryn "On respire et on trie."
+    ryn "Ce n'est que des mots. Pour l'instant."
+
+    $ showP("sael", "mefiant", 0.82)
+    sael "Que des mots qui peuvent tout faire basculer."
+
+    hide ryn
+    $ showP("nyra", "raison", 0.50)
+    nyra "Concentrez-vous sur la structure. Sujet, action, conséquence."
+    nyra "Les points sont fixes, donc utilisez-les intelligemment."
+
+    noam "D'accord."
+    noam "On reconstruit, puis on discutera."
+
+    hide sael
+    hide nyra
+
+    $ debat_phase1_setup()
+    call screen debat_phase1_opening
+
+    $ showP("elen", "joie", 0.28)
+    elen "On l'a !"
+    elen "Ça fait du bien d'avoir enfin une base claire."
+
+    $ showP("kael", "neutre", 0.72)
+    kael "Parfait."
+    kael "Maintenant le vrai débat peut commencer."
+
+    hide elen
+    hide kael
+
     return
 
 # Durée : 2m55
