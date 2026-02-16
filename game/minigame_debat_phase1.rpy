@@ -23,8 +23,14 @@ init python:
         (300, 385), (500, 420), (700, 390), (900, 420), (1100, 390), (1300, 420),
     ]
 
-    DEBAT_PHASE1_SLOT_START_X = 120
-    DEBAT_PHASE1_SLOT_START_Y = 520
+    # --- Ajustements layout demandés (mesurés) ---
+    # Baisser banque / mots / slots sans tout exploser.
+    DEBAT_PHASE1_BANK_Y = 150             # anciennement 88
+    DEBAT_PHASE1_WORDS_Y_OFFSET = 40      # descend un peu les mots
+    DEBAT_PHASE1_WORDS_X_SPREAD = 1.03    # écarte un peu les mots
+
+    DEBAT_PHASE1_SLOT_START_X = 150
+    DEBAT_PHASE1_SLOT_START_Y = 600       # anciennement 520 (trop haut)
     DEBAT_PHASE1_SLOT_GAP = 16
     DEBAT_PHASE1_SLOT_ROW_SPACING = 120
     DEBAT_PHASE1_SLOT_MIN_WIDTH = 54
@@ -94,6 +100,11 @@ init python:
 
         for i, (orig_id, text) in enumerate(indexed_words):
             hx, hy = DEBAT_PHASE1_FLOAT_POSITIONS[i]
+
+            # Espacer un peu + baisser les mots (sans dérégler l'écran)
+            hx = int(960 + (hx - 960) * DEBAT_PHASE1_WORDS_X_SPREAD)
+            hy = int(hy + DEBAT_PHASE1_WORDS_Y_OFFSET)
+
             store.debat_phase1_words[orig_id] = {
                 "id": orig_id,
                 "text": text,
@@ -105,7 +116,6 @@ init python:
         debat_phase1_refresh_slot_layout()
         store.debat_phase1_success = False
 
-        # IMPORTANT : évite que le rollback te remette l'ancien état / defaults
         renpy.block_rollback()
 
     def debat_phase1_handle_drop(word_id, drags, drop):
@@ -139,13 +149,9 @@ init python:
 
         store.debat_phase1_slots[target_slot] = word_id
 
-        # Swap : si le slot cible était occupé
         if occupant is not None and occupant != word_id:
             if current_slot is not None:
                 store.debat_phase1_slots[current_slot] = occupant
-            else:
-                # le mot remplacé repart à la banque
-                pass
 
         debat_phase1_update_success()
         debat_phase1_refresh_slot_layout()
@@ -215,13 +221,15 @@ transform fa_error_shake:
     linear 0.04 xoffset 6
     linear 0.04 xoffset 0
 
+
 init -2:
     style fa_h1 is default
     style fa_h1:
         size 52
         color "#F2F6FF"
         text_align 0.5
-        outlines [(2, "#062233", 0, 0), (5, "#06101980", 0, 0)]
+        # => suppression du double effet : un seul outline net
+        outlines [(3, "#000000AA", 0, 0)]
 
     style fa_h2 is default
     style fa_h2:
@@ -240,9 +248,10 @@ init -2:
     style fa_word is default
     style fa_word:
         size 25
-        color "#ECF7FF"
+        # Contraste ++
+        color "#FFFFFF"
         text_align 0.5
-        outlines [(2, "#102233", 0, 0)]
+        outlines [(3, "#000000CC", 0, 0)]
 
     style fa_btn_text is default
     style fa_btn_text:
@@ -250,6 +259,8 @@ init -2:
         color "#E6F8FF"
         text_align 0.5
         outlines [(2, "#0C2533", 0, 0)]
+        insensitive_color "#7F8A99"
+        insensitive_outlines [(2, "#0C253355", 0, 0)]
 
     style fa_btn is default
     style fa_btn:
@@ -258,10 +269,6 @@ init -2:
         background Solid("#153246D0")
         hover_background Solid("#1B4D68F0")
         insensitive_background Solid("#1A1E2688")
-
-    style fa_btn_insensitive_text is fa_btn_text
-    style fa_btn_insensitive_text:
-        color "#7F8A99"
 
 
 screen debat_phase1_opening():
@@ -284,51 +291,36 @@ screen debat_phase1_opening():
             xfill True
             yfill True
             for gx in range(0, 1921, 64):
-                add Solid("#1CB7D111"):
+                add Solid("#1CB7D111", xsize=1, ysize=1080):
                     xpos gx
                     ypos 0
-                    xsize 1
-                    ysize 1080
-
             for gx2 in range(32, 1921, 64):
-                add Solid("#22D6F208"):
+                add Solid("#22D6F208", xsize=1, ysize=1080):
                     xpos gx2
                     ypos 0
-                    xsize 1
-                    ysize 1080
 
         # Faint texture/noise style overlay
         fixed:
             xfill True
             yfill True
             for ny in range(0, 1081, 36):
-                add Solid("#D8F7FF03"):
+                add Solid("#D8F7FF03", xsize=1920, ysize=1):
                     xpos 0
                     ypos ny
-                    xsize 1920
-                    ysize 1
 
         # Vignette approximation
-        add Solid("#00000040"):
+        add Solid("#00000040", xsize=1920, ysize=80):
             xpos 0
             ypos 0
-            xsize 1920
-            ysize 80
-        add Solid("#00000044"):
+        add Solid("#00000044", xsize=1920, ysize=80):
             xpos 0
             ypos 1000
-            xsize 1920
-            ysize 80
-        add Solid("#00000030"):
+        add Solid("#00000030", xsize=90, ysize=1080):
             xpos 0
             ypos 0
-            xsize 90
-            ysize 1080
-        add Solid("#00000030"):
+        add Solid("#00000030", xsize=90, ysize=1080):
             xpos 1830
             ypos 0
-            xsize 90
-            ysize 1080
 
     frame:
         xalign 0.5
@@ -339,28 +331,19 @@ screen debat_phase1_opening():
 
         vbox:
             spacing 6
+            # Sous-titre supprimé : on garde juste le titre
             text "Fatal Assembly":
-                xalign 0.5
+                xalign 0.0
                 style "fa_h1"
 
-            text "Phase 1 – Ouverture : Poser les bases":
-                xalign 0.5
-                style "fa_h2"
-
-            text "Glisse les mots dans le bon ordre.":
-                xalign 0.5
-                style "fa_hint"
-
-    add Solid("#38DFFF"):
+    add Solid("#38DFFF", xsize=1680, ysize=2):
         xalign 0.5
-        ypos 168
-        xsize 1680
-        ysize 2
+        ypos 120
 
-    # Panel for word bank visuals
+    # Panel for word bank visuals (abaissé)
     frame:
         xpos 56
-        ypos 88
+        ypos DEBAT_PHASE1_BANK_Y
         xsize 1808
         ysize 370
         background Solid("#1024348A")
@@ -371,15 +354,15 @@ screen debat_phase1_opening():
             yfill True
             background Solid("#0B152380")
 
-    # Zone banque (drop)
+    # Zone banque (drop) (abaissée)
     drag:
         drag_name "word_bank"
         draggable False
         droppable True
         xpos 60
-        ypos 80
+        ypos (DEBAT_PHASE1_BANK_Y - 10)
         xsize 1800
-        ysize 360
+        ysize 370
 
     draggroup:
 
@@ -405,45 +388,45 @@ screen debat_phase1_opening():
                         xfill True
                         yfill True
 
-                        add Solid("#0A1522D8")
-
-                        add Solid("#2AE5FF40"):
-                            xfill True
-                            yfill True
-                            at fa_slot_pulse if debat_phase1_slots[i] is None else fa_slot_filled_glow
+                        add Solid("#0A1522D8", xsize=slot_w, ysize=slot_h)
 
                         if debat_phase1_slots[i] is None:
-                            add Solid("#64EBFF66"):
-                                xpos 0
-                                ypos 0
-                                xsize slot_w
-                                ysize 2
-                            add Solid("#64EBFF66"):
-                                xpos 0
-                                ypos slot_h - 2
-                                xsize slot_w
-                                ysize 2
+                            add Solid("#2AE5FF40", xsize=slot_w, ysize=slot_h) at fa_slot_pulse
                         else:
-                            add Solid("#74F3FFAA"):
+                            add Solid("#2AE5FF40", xsize=slot_w, ysize=slot_h) at fa_slot_filled_glow
+
+                        if debat_phase1_slots[i] is None:
+                            add Solid("#64EBFF66", xsize=slot_w, ysize=2):
                                 xpos 0
                                 ypos 0
-                                xsize slot_w
-                                ysize 2
-                            add Solid("#74F3FFAA"):
+                            add Solid("#64EBFF66", xsize=slot_w, ysize=2):
                                 xpos 0
                                 ypos slot_h - 2
-                                xsize slot_w
-                                ysize 2
+                        else:
+                            add Solid("#74F3FFAA", xsize=slot_w, ysize=2):
+                                xpos 0
+                                ypos 0
+                            add Solid("#74F3FFAA", xsize=slot_w, ysize=2):
+                                xpos 0
+                                ypos slot_h - 2
 
                         if debat_phase1_success:
-                            add Solid("#63EBFF55") at fa_success_flash
+                            add Solid("#63EBFF55", xsize=slot_w, ysize=slot_h) at fa_success_flash
 
         # --- WORDS ---
         for word in debat_phase1_words:
+            if word is None:
+                continue
+
             $ word_id = word["id"]
             $ slot_index = debat_phase1_find_word_slot(word_id)
-            $ wx = debat_phase1_slot_layout[slot_index][0] if slot_index is not None else word["home_x"]
-            $ wy = debat_phase1_slot_layout[slot_index][1] if slot_index is not None else word["home_y"]
+
+            if slot_index is not None:
+                $ wx = debat_phase1_slot_layout[slot_index][0]
+                $ wy = debat_phase1_slot_layout[slot_index][1]
+            else:
+                $ wx = word["home_x"]
+                $ wy = word["home_y"]
 
             $ float_at = None
             if slot_index is None:
@@ -458,6 +441,10 @@ screen debat_phase1_opening():
             if slot_index is not None and not debat_phase1_success:
                 $ is_word_wrong = (word["text"] != DEBAT_PHASE1_TARGET[slot_index])
 
+            # Largeur stable pour éviter les tiles "bizarres"
+            $ ww = debat_phase1_word_width(word["text"])
+            $ th = 46
+
             drag:
                 drag_name ("word_%d" % word_id)
                 xpos wx
@@ -468,33 +455,34 @@ screen debat_phase1_opening():
                 hovered SetScreenVariable("fa_hovered_word", word_id)
                 unhovered SetScreenVariable("fa_hovered_word", None)
 
-                child:
-                    fixed:
-                        fit_first True
-                        at float_at if slot_index is None else None
+                fixed:
+                    xsize ww
+                    ysize th
+                    if float_at is not None:
+                        at float_at
 
+                    # shadow (sans texte -> pas de doublon)
+                    frame:
+                        xsize ww
+                        ysize th
+                        background Solid("#00000066")
+                        at fa_tile_shadow
+
+                    # main tile
+                    if fa_hovered_word == word_id:
                         frame:
-                            padding (14, 10)
-                            background Solid("#00000066")
-                            at fa_tile_shadow
-
-                            text word["text"]:
-                                style "fa_word"
-                                xalign 0.5
-
-                        frame:
-                            padding (14, 10)
+                            xsize ww
+                            ysize th
                             background Solid("#1B2D43E8")
-                            at fa_tile_hover if fa_hovered_word == word_id else fa_tile_idle
+                            at fa_tile_hover
 
                             fixed:
-                                fit_first True
+                                xfill True
+                                yfill True
 
-                                add Solid("#74EFFF18"):
+                                add Solid("#74EFFF18", xsize=ww - 2, ysize=2):
                                     xpos 1
                                     ypos 1
-                                    xsize debat_phase1_word_width(word["text"]) - 2
-                                    ysize 2
 
                                 if debat_phase1_success:
                                     add Solid("#61F0FF44") at fa_success_flash
@@ -504,19 +492,31 @@ screen debat_phase1_opening():
                                 text word["text"]:
                                     style "fa_word"
                                     xalign 0.5
+                                    yalign 0.5
+                    else:
+                        frame:
+                            xsize ww
+                            ysize th
+                            background Solid("#1B2D43E8")
+                            at fa_tile_idle
 
-                child_when_dragging:
-                    frame:
-                        padding (14, 10)
-                        background Solid("#2E4562F5")
-                        at fa_tile_dragging
+                            fixed:
+                                xfill True
+                                yfill True
 
-                        fixed:
-                            fit_first True
-                            add Solid("#8AF5FF5A")
-                            text word["text"]:
-                                style "fa_word"
-                                xalign 0.5
+                                add Solid("#74EFFF18", xsize=ww - 2, ysize=2):
+                                    xpos 1
+                                    ypos 1
+
+                                if debat_phase1_success:
+                                    add Solid("#61F0FF44") at fa_success_flash
+                                elif is_word_wrong:
+                                    add Solid("#FF4D5E22") at fa_error_shake
+
+                                text word["text"]:
+                                    style "fa_word"
+                                    xalign 0.5
+                                    yalign 0.5
 
     hbox:
         xalign 0.5
@@ -533,8 +533,9 @@ screen debat_phase1_opening():
             action Return(True)
             style "fa_btn"
             text_style "fa_btn_text"
-            insensitive_text_style "fa_btn_insensitive_text"
-            at fa_btn_focus_pulse if debat_phase1_success else None
+            if debat_phase1_success:
+                at fa_btn_focus_pulse
+
 
 screen noam_consent_screen():
     modal True
@@ -544,3 +545,58 @@ screen noam_consent_screen():
 
     on "show" action Play("sound", sfx_victory)
     timer 2.8 action Return(True)
+
+
+# Animation :
+
+transform fa_cam_in:
+    zoom 1.08
+    ease 0.8 zoom 1.0
+
+transform fa_pop:
+    alpha 0.0
+    zoom 0.96
+    linear 0.15 alpha 1.0
+    easeout 0.35 zoom 1.02
+    easein 0.10 zoom 0.99
+    easeout 0.15 zoom 1.0
+
+transform fa_tiles_float:
+    yoffset 0
+    ease 1.2 yoffset -10
+    ease 1.2 yoffset 0
+    repeat
+
+transform fa_title_slam:
+    yoffset 60
+    alpha 0.0
+    linear 0.12 alpha 1.0
+    easeout 0.35 yoffset 0
+    easein 0.08 yoffset 12
+    easeout 0.12 yoffset 0
+
+
+label FA_START_ANIM:
+
+    $ renpy.block_rollback()
+
+    scene black
+
+    show fatal_assembly_1 as fa_bg at adaptive_fullscreen, fa_cam_in
+    play sound sfx_minigame_start
+    pause 0.50
+
+    show fatal_assembly_2 as fa_fx at adaptive_fullscreen, fa_pop
+    pause 0.50
+
+    show fatal_assembly_3 as fa_noam at adaptive_fullscreen, fa_pop
+    pause 0.50
+
+    show fatal_assembly_4 as fa_tiles at adaptive_fullscreen, fa_tiles_float
+    pause 0.60
+
+    show fatal_assembly_5 as fa_title at adaptive_fullscreen, fa_title_slam
+    pause 1.20
+
+    pause 1.30
+    return

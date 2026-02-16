@@ -1931,10 +1931,15 @@ label _3_DEBAT1_PHASE1:
     hide nyra
     hide noam
 
+    call FA_START_ANIM
+
+    pause 1.0
     $ debat_phase1_setup()
     $ phase1_ok = renpy.call_screen("debat_phase1_opening")
     if phase1_ok:
         call screen noam_consent_screen
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showP("elen", "joie", 0.28)
     elen "On l'a ! Enfin !"

@@ -9,12 +9,19 @@ While running game code:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1523, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/3_canon.rpy", line 1885, in script
-    call screen noam_consent_screen
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-Exception: Screen noam_consent_screen is not known.
-
+  File "game/scenario/3_canon.rpy", line 1934, in script call
+    call FA_START_ANIM
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1934, in script call
+    call FA_START_ANIM
+ScriptError: could not find label 'FA_START_ANIM'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -27,24 +34,25 @@ Full traceback:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1523, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/3_canon.rpy", line 1885, in script
-    call screen noam_consent_screen
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 331, in call_screen
-    renpy.exports.show_screen(_screen_name, *args, _transient=True, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 1328, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen noam_consent_screen is not known.
-
+  File "game/scenario/3_canon.rpy", line 1934, in script call
+    call FA_START_ANIM
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1427, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1934, in script call
+    call FA_START_ANIM
+  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'FA_START_ANIM'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2
-Mon Feb 16 18:12:40 2026
+Mon Feb 16 20:34:38 2026

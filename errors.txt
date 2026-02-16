@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame_debat_phase1.rpy", line 302: 'play' is not a keyword argument or valid child of the screen statement.
-    play sound sfx_victory
-        ^
+File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
+    insensitive_text_style "fa_btn_insensitive_text"
+                          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Feb 16 18:31:50 2026
+Mon Feb 16 23:34:52 2026
