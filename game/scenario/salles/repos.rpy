@@ -194,6 +194,7 @@ label decouverte_salle_repos:
     hide noam
     
     scene bg_cg007 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg007")
     $ showP("noam", "vide", 0.1)
     $ showP("iris", "vide", 0.9)
     $ showP("julian", "vide", 0.5)

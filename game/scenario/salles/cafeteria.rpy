@@ -189,6 +189,7 @@ label decouverte_cafeteria:
     "Familiarité immédiate : ça parle fort."
     
     scene bg_cg008 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg008")
 
     $ showP("elen", "vide", 0.1)
     $ showP("goumi", "vide", 0.9)

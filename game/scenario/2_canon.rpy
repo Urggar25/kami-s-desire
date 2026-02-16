@@ -41,6 +41,7 @@
 
     think "J'ouvre les yeux."
     scene bg_cg012 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg012")
 
     $ blink()
 
