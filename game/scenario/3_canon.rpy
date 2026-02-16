@@ -1880,7 +1880,9 @@ label _3_TRANSITION_CONCLAVE:
     hide nyra
 
     $ debat_phase1_setup()
-    call screen debat_phase1_opening
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+    if phase1_ok:
+        call screen noam_consent_screen
 
     $ showP("elen", "joie", 0.28)
     elen "On l'a !"
