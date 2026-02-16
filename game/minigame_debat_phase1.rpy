@@ -5,6 +5,8 @@ default debat_phase1_words = []
 default debat_phase1_success = False
 default debat_phase1_slot_layout = []
 
+define sfx_victory = "audio/sfx_clap.mp3"
+
 init python:
     import random
 
@@ -25,17 +27,19 @@ init python:
     DEBAT_PHASE1_SLOT_START_Y = 520
     DEBAT_PHASE1_SLOT_GAP = 16
     DEBAT_PHASE1_SLOT_ROW_SPACING = 120
-    DEBAT_PHASE1_SLOT_BASE_WIDTH = 122
+    DEBAT_PHASE1_SLOT_MIN_WIDTH = 54
+    DEBAT_PHASE1_SLOT_TEXT_PADDING_X = 28
+    DEBAT_PHASE1_SLOT_CHAR_WIDTH = 13.5
     DEBAT_PHASE1_SLOT_HEIGHT = 66
     DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH = 1680
 
     def debat_phase1_word_width(word_text):
-        estimated = 42 + int(len(word_text) * 13.5)
-        return max(DEBAT_PHASE1_SLOT_BASE_WIDTH, estimated)
+        estimated = DEBAT_PHASE1_SLOT_TEXT_PADDING_X + int(len(word_text) * DEBAT_PHASE1_SLOT_CHAR_WIDTH)
+        return max(DEBAT_PHASE1_SLOT_MIN_WIDTH, estimated)
 
-    def debat_phase1_get_slot_width(slot_word_id):
+    def debat_phase1_get_slot_width(slot_index, slot_word_id):
         if slot_word_id is None:
-            return DEBAT_PHASE1_SLOT_BASE_WIDTH
+            return debat_phase1_word_width(DEBAT_PHASE1_TARGET[slot_index])
 
         word_text = store.debat_phase1_words[slot_word_id]["text"]
         return debat_phase1_word_width(word_text)
@@ -45,8 +49,8 @@ init python:
         current_x = DEBAT_PHASE1_SLOT_START_X
         current_y = DEBAT_PHASE1_SLOT_START_Y
 
-        for slot_word_id in store.debat_phase1_slots:
-            slot_width = debat_phase1_get_slot_width(slot_word_id)
+        for slot_index, slot_word_id in enumerate(store.debat_phase1_slots):
+            slot_width = debat_phase1_get_slot_width(slot_index, slot_word_id)
             row_end = DEBAT_PHASE1_SLOT_START_X + DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH
 
             if current_x != DEBAT_PHASE1_SLOT_START_X and (current_x + slot_width) > row_end:
@@ -294,20 +298,7 @@ screen noam_consent_screen():
     modal True
     zorder 260
 
-    add Solid("#06080fcc")
+    add "images/background/debat/noam_agree.png" at adaptive_fullscreen
 
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 900
-        ypadding 36
-        xpadding 44
-        background Solid("#141B30")
-
-        vbox:
-            spacing 20
-            text "Consensus validé" size 48 color "#EAF0FF" xalign 0.5
-            text "Noam acquiesce. Le texte de base est retenu, vous pouvez passer à la suite du débat." size 30 color "#C8D0FF" xalign 0.5
-            textbutton "Continuer":
-                xalign 0.5
-                action Return(True)
+    on "show" action Play("sound", sfx_victory)
+    timer 2.8 action Return(True)
