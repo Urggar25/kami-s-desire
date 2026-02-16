@@ -3,6 +3,7 @@
 default debat_phase1_slots = []
 default debat_phase1_words = []
 default debat_phase1_success = False
+default debat_phase1_slot_layout = []
 
 init python:
     import random
@@ -14,15 +15,48 @@ init python:
     ]
 
     DEBAT_PHASE1_FLOAT_POSITIONS = [
-        (90, 120), (260, 90), (430, 130), (620, 95), (800, 130), (980, 100),
-        (1140, 125), (1320, 95), (1490, 125), (170, 240), (360, 215), (550, 250),
-        (750, 220), (940, 245), (1130, 215), (1310, 250), (1500, 220), (120, 360),
-        (300, 335), (500, 370), (700, 340), (900, 370), (1100, 340), (1300, 370),
+        (90, 170), (260, 140), (430, 180), (620, 145), (800, 180), (980, 150),
+        (1140, 175), (1320, 145), (1490, 175), (170, 290), (360, 265), (550, 300),
+        (750, 270), (940, 295), (1130, 265), (1310, 300), (1500, 270), (120, 410),
+        (300, 385), (500, 420), (700, 390), (900, 420), (1100, 390), (1300, 420),
     ]
 
-    DEBAT_PHASE1_SLOT_POSITIONS = [
-        (120 + (i % 12) * 135, 520 + (i // 12) * 120) for i in range(24)
-    ]
+    DEBAT_PHASE1_SLOT_START_X = 120
+    DEBAT_PHASE1_SLOT_START_Y = 520
+    DEBAT_PHASE1_SLOT_GAP = 16
+    DEBAT_PHASE1_SLOT_ROW_SPACING = 120
+    DEBAT_PHASE1_SLOT_BASE_WIDTH = 122
+    DEBAT_PHASE1_SLOT_HEIGHT = 66
+    DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH = 1680
+
+    def debat_phase1_word_width(word_text):
+        estimated = 42 + int(len(word_text) * 13.5)
+        return max(DEBAT_PHASE1_SLOT_BASE_WIDTH, estimated)
+
+    def debat_phase1_get_slot_width(slot_word_id):
+        if slot_word_id is None:
+            return DEBAT_PHASE1_SLOT_BASE_WIDTH
+
+        word_text = store.debat_phase1_words[slot_word_id]["text"]
+        return debat_phase1_word_width(word_text)
+
+    def debat_phase1_refresh_slot_layout():
+        layout = []
+        current_x = DEBAT_PHASE1_SLOT_START_X
+        current_y = DEBAT_PHASE1_SLOT_START_Y
+
+        for slot_word_id in store.debat_phase1_slots:
+            slot_width = debat_phase1_get_slot_width(slot_word_id)
+            row_end = DEBAT_PHASE1_SLOT_START_X + DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH
+
+            if current_x != DEBAT_PHASE1_SLOT_START_X and (current_x + slot_width) > row_end:
+                current_x = DEBAT_PHASE1_SLOT_START_X
+                current_y += DEBAT_PHASE1_SLOT_ROW_SPACING
+
+            layout.append((current_x, current_y, slot_width, DEBAT_PHASE1_SLOT_HEIGHT))
+            current_x += slot_width + DEBAT_PHASE1_SLOT_GAP
+
+        store.debat_phase1_slot_layout = layout
 
     def debat_phase1_find_word_slot(word_id):
         for i, slot_word_id in enumerate(store.debat_phase1_slots):
@@ -64,6 +98,7 @@ init python:
             }
 
         store.debat_phase1_slots = [None for _ in DEBAT_PHASE1_TARGET]
+        debat_phase1_refresh_slot_layout()
         store.debat_phase1_success = False
 
         # IMPORTANT : évite que le rollback te remette l'ancien état / defaults
@@ -80,6 +115,7 @@ init python:
             if current_slot is not None:
                 store.debat_phase1_slots[current_slot] = None
                 debat_phase1_update_success()
+                debat_phase1_refresh_slot_layout()
                 renpy.block_rollback()
                 renpy.restart_interaction()
             return
@@ -108,6 +144,7 @@ init python:
                 pass
 
         debat_phase1_update_success()
+        debat_phase1_refresh_slot_layout()
         renpy.block_rollback()
         renpy.restart_interaction()
 
@@ -146,8 +183,23 @@ screen debat_phase1_opening():
 
         vbox:
             spacing 6
-            text "Phase 1 – Ouverture : Poser les bases" size 38 color "#E9ECFF"
-            text "Reconstituez la proposition en glissant les mots dans le bon ordre." size 28 color "#C8D0FF"
+            text "Fatal Assembly":
+                size 44
+                color "#E9ECFF"
+                xalign 0.5
+                text_align 0.5
+
+            text "Phase 1 – Ouverture : Poser les bases":
+                size 30
+                color "#E9ECFF"
+                xalign 0.5
+                text_align 0.5
+
+            text "Reconstituez la proposition en glissant les mots dans le bon ordre.":
+                size 26
+                color "#C8D0FF"
+                xalign 0.5
+                text_align 0.5
 
     # Zone banque (drop)
     drag:
@@ -162,16 +214,16 @@ screen debat_phase1_opening():
     draggroup:
 
         # --- SLOTS ---
-        for i in range(24):
-            $ sx, sy = DEBAT_PHASE1_SLOT_POSITIONS[i]
+        for i in range(len(debat_phase1_slots)):
+            $ sx, sy, slot_w, slot_h = debat_phase1_slot_layout[i]
             drag:
                 drag_name ("slot_%d" % i)
                 draggable False
                 droppable True
                 xpos sx
                 ypos sy
-                xsize 122
-                ysize 66
+                xsize slot_w
+                ysize slot_h
 
                 frame:
                     xfill True
@@ -188,8 +240,8 @@ screen debat_phase1_opening():
         for word in debat_phase1_words:
             $ word_id = word["id"]
             $ slot_index = debat_phase1_find_word_slot(word_id)
-            $ wx = DEBAT_PHASE1_SLOT_POSITIONS[slot_index][0] if slot_index is not None else word["home_x"]
-            $ wy = DEBAT_PHASE1_SLOT_POSITIONS[slot_index][1] if slot_index is not None else word["home_y"]
+            $ wx = debat_phase1_slot_layout[slot_index][0] if slot_index is not None else word["home_x"]
+            $ wy = debat_phase1_slot_layout[slot_index][1] if slot_index is not None else word["home_y"]
 
             $ float_at = None
             if slot_index is None:
