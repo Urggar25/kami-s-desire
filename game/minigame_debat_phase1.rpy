@@ -391,15 +391,17 @@ screen debat_phase1_opening():
         ypos 120
 
     frame:
-        xpos 1470
+        xpos 1860
         ypos 24
-        xsize 380
+        xanchor 1.0
         ypadding 12
         xpadding 16
         background Solid("#0A1622DD")
 
         vbox:
-            spacing 8
+            spacing 10
+            xalign 1.0
+
             text "[fa_time_left]s":
                 xalign 1.0
                 size 42
@@ -408,15 +410,16 @@ screen debat_phase1_opening():
 
             if fa_pressure_comment:
                 frame:
-                    xfill True
-                    background Solid("#14283AE8")
-                    padding (12, 10)
+                    xalign 1.0
+                    background Solid("#FFFFFFFF")
+                    padding (14, 12)
 
                     text "[fa_pressure_comment]":
                         size 20
-                        color "#D5EEFF"
+                        color "#1A2530"
                         xalign 0.0
-                        outlines [(1, "#081521BB", 0, 0)]
+                        xmaximum 420
+                        outlines []
 
     # Panel for word bank visuals (abaissé)
     frame:
