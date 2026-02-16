@@ -171,10 +171,103 @@ transform debat_phase1_float_c:
     ease 2.2 yoffset 0
     repeat
 
+transform fa_tile_hover:
+    zoom 1.0
+    ease 0.12 zoom 1.05
+
+transform fa_tile_idle:
+    zoom 1.0
+
+transform fa_tile_dragging:
+    alpha 0.96
+    matrixcolor BrightnessMatrix(0.12)
+
+transform fa_tile_shadow:
+    alpha 0.35
+    yoffset 4
+
+transform fa_slot_pulse:
+    alpha 0.35
+    ease 1.2 alpha 0.7
+    ease 1.2 alpha 0.35
+    repeat
+
+transform fa_slot_filled_glow:
+    alpha 0.65
+
+transform fa_btn_focus_pulse:
+    alpha 0.85
+    ease 0.8 alpha 1.0
+    ease 0.8 alpha 0.85
+    repeat
+
+transform fa_success_flash:
+    alpha 0.2
+    ease 0.18 alpha 0.75
+    ease 0.22 alpha 0.2
+    repeat
+
+transform fa_error_shake:
+    xoffset 0
+    linear 0.04 xoffset -8
+    linear 0.04 xoffset 8
+    linear 0.04 xoffset -6
+    linear 0.04 xoffset 6
+    linear 0.04 xoffset 0
+
+init -2:
+    style fa_h1 is default
+    style fa_h1:
+        size 52
+        color "#F2F6FF"
+        text_align 0.5
+        outlines [(2, "#062233", 0, 0), (5, "#06101980", 0, 0)]
+
+    style fa_h2 is default
+    style fa_h2:
+        size 30
+        color "#CFE8FF"
+        text_align 0.5
+        outlines [(2, "#0A1D2B", 0, 0)]
+
+    style fa_hint is default
+    style fa_hint:
+        size 24
+        color "#A8CFE4"
+        text_align 0.5
+        outlines [(1, "#07141F", 0, 0)]
+
+    style fa_word is default
+    style fa_word:
+        size 25
+        color "#ECF7FF"
+        text_align 0.5
+        outlines [(2, "#102233", 0, 0)]
+
+    style fa_btn_text is default
+    style fa_btn_text:
+        size 28
+        color "#E6F8FF"
+        text_align 0.5
+        outlines [(2, "#0C2533", 0, 0)]
+
+    style fa_btn is default
+    style fa_btn:
+        xpadding 28
+        ypadding 14
+        background Solid("#153246D0")
+        hover_background Solid("#1B4D68F0")
+        insensitive_background Solid("#1A1E2688")
+
+    style fa_btn_insensitive_text is fa_btn_text
+    style fa_btn_insensitive_text:
+        color "#7F8A99"
+
 
 screen debat_phase1_opening():
     modal True
     zorder 250
+    default fa_hovered_word = None
 
     # --- GARDE ANTI-DESYNC ---
     $ expected = len(DEBAT_PHASE1_TARGET)
@@ -183,34 +276,100 @@ screen debat_phase1_opening():
     elif len(debat_phase1_slot_layout) != len(debat_phase1_slots):
         $ debat_phase1_refresh_slot_layout()
 
-    add Solid("#090b12")
+    fixed:
+        add Solid("#050810")
+
+        # Vertical grid overlay
+        fixed:
+            xfill True
+            yfill True
+            for gx in range(0, 1921, 64):
+                add Solid("#1CB7D111"):
+                    xpos gx
+                    ypos 0
+                    xsize 1
+                    ysize 1080
+
+            for gx2 in range(32, 1921, 64):
+                add Solid("#22D6F208"):
+                    xpos gx2
+                    ypos 0
+                    xsize 1
+                    ysize 1080
+
+        # Faint texture/noise style overlay
+        fixed:
+            xfill True
+            yfill True
+            for ny in range(0, 1081, 36):
+                add Solid("#D8F7FF03"):
+                    xpos 0
+                    ypos ny
+                    xsize 1920
+                    ysize 1
+
+        # Vignette approximation
+        add Solid("#00000040"):
+            xpos 0
+            ypos 0
+            xsize 1920
+            ysize 80
+        add Solid("#00000044"):
+            xpos 0
+            ypos 1000
+            xsize 1920
+            ysize 80
+        add Solid("#00000030"):
+            xpos 0
+            ypos 0
+            xsize 90
+            ysize 1080
+        add Solid("#00000030"):
+            xpos 1830
+            ypos 0
+            xsize 90
+            ysize 1080
 
     frame:
         xalign 0.5
-        yalign 0.04
+        yalign 0.03
         xsize 1720
-        ypadding 12
-        background Solid("#151a2a")
+        ypadding 14
+        background Solid("#0A1622CC")
 
         vbox:
             spacing 6
             text "Fatal Assembly":
-                size 44
-                color "#E9ECFF"
                 xalign 0.5
-                text_align 0.5
+                style "fa_h1"
 
             text "Phase 1 – Ouverture : Poser les bases":
-                size 30
-                color "#E9ECFF"
                 xalign 0.5
-                text_align 0.5
+                style "fa_h2"
 
-            text "Reconstituez la proposition en glissant les mots dans le bon ordre.":
-                size 26
-                color "#C8D0FF"
+            text "Glisse les mots dans le bon ordre.":
                 xalign 0.5
-                text_align 0.5
+                style "fa_hint"
+
+    add Solid("#38DFFF"):
+        xalign 0.5
+        ypos 168
+        xsize 1680
+        ysize 2
+
+    # Panel for word bank visuals
+    frame:
+        xpos 56
+        ypos 88
+        xsize 1808
+        ysize 370
+        background Solid("#1024348A")
+        padding (12, 12)
+
+        frame:
+            xfill True
+            yfill True
+            background Solid("#0B152380")
 
     # Zone banque (drop)
     drag:
@@ -239,13 +398,45 @@ screen debat_phase1_opening():
                 frame:
                     xfill True
                     yfill True
-                    background Solid("#141a2b")
+                    background Solid("#101A2680")
                     padding (6, 6)
 
-                    frame:
+                    fixed:
                         xfill True
                         yfill True
-                        background Solid("#1E243A")
+
+                        add Solid("#0A1522D8")
+
+                        add Solid("#2AE5FF40"):
+                            xfill True
+                            yfill True
+                            at fa_slot_pulse if debat_phase1_slots[i] is None else fa_slot_filled_glow
+
+                        if debat_phase1_slots[i] is None:
+                            add Solid("#64EBFF66"):
+                                xpos 0
+                                ypos 0
+                                xsize slot_w
+                                ysize 2
+                            add Solid("#64EBFF66"):
+                                xpos 0
+                                ypos slot_h - 2
+                                xsize slot_w
+                                ysize 2
+                        else:
+                            add Solid("#74F3FFAA"):
+                                xpos 0
+                                ypos 0
+                                xsize slot_w
+                                ysize 2
+                            add Solid("#74F3FFAA"):
+                                xpos 0
+                                ypos slot_h - 2
+                                xsize slot_w
+                                ysize 2
+
+                        if debat_phase1_success:
+                            add Solid("#63EBFF55") at fa_success_flash
 
         # --- WORDS ---
         for word in debat_phase1_words:
@@ -263,6 +454,10 @@ screen debat_phase1_opening():
                 else:
                     $ float_at = debat_phase1_float_c
 
+            $ is_word_wrong = False
+            if slot_index is not None and not debat_phase1_success:
+                $ is_word_wrong = (word["text"] != DEBAT_PHASE1_TARGET[slot_index])
+
             drag:
                 drag_name ("word_%d" % word_id)
                 xpos wx
@@ -270,17 +465,58 @@ screen debat_phase1_opening():
                 draggable True
                 droppable False
                 dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
+                hovered SetScreenVariable("fa_hovered_word", word_id)
+                unhovered SetScreenVariable("fa_hovered_word", None)
 
-                # Look : taille au contenu (pas de gros rectangles)
-                frame:
-                    padding (14, 10)
-                    background Solid("#2A3352")
-                    at float_at
+                child:
+                    fixed:
+                        fit_first True
+                        at float_at if slot_index is None else None
 
-                    text word["text"]:
-                        size 25
-                        color "#FFFFFF"
-                        xalign 0.5
+                        frame:
+                            padding (14, 10)
+                            background Solid("#00000066")
+                            at fa_tile_shadow
+
+                            text word["text"]:
+                                style "fa_word"
+                                xalign 0.5
+
+                        frame:
+                            padding (14, 10)
+                            background Solid("#1B2D43E8")
+                            at fa_tile_hover if fa_hovered_word == word_id else fa_tile_idle
+
+                            fixed:
+                                fit_first True
+
+                                add Solid("#74EFFF18"):
+                                    xpos 1
+                                    ypos 1
+                                    xsize debat_phase1_word_width(word["text"]) - 2
+                                    ysize 2
+
+                                if debat_phase1_success:
+                                    add Solid("#61F0FF44") at fa_success_flash
+                                elif is_word_wrong:
+                                    add Solid("#FF4D5E22") at fa_error_shake
+
+                                text word["text"]:
+                                    style "fa_word"
+                                    xalign 0.5
+
+                child_when_dragging:
+                    frame:
+                        padding (14, 10)
+                        background Solid("#2E4562F5")
+                        at fa_tile_dragging
+
+                        fixed:
+                            fit_first True
+                            add Solid("#8AF5FF5A")
+                            text word["text"]:
+                                style "fa_word"
+                                xalign 0.5
 
     hbox:
         xalign 0.5
@@ -289,10 +525,16 @@ screen debat_phase1_opening():
 
         textbutton "Réinitialiser":
             action Function(debat_phase1_setup)
+            style "fa_btn"
+            text_style "fa_btn_text"
 
         textbutton "Valider la proposition":
             sensitive debat_phase1_success
             action Return(True)
+            style "fa_btn"
+            text_style "fa_btn_text"
+            insensitive_text_style "fa_btn_insensitive_text"
+            at fa_btn_focus_pulse if debat_phase1_success else None
 
 screen noam_consent_screen():
     modal True
