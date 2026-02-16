@@ -1533,216 +1533,309 @@ label _3_TRANSITION_CONCLAVE:
     scene bg_couloir at adaptive_fullscreen with fade
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
-    "Le couloir principal est éclairé plus bas que d’habitude."
-    "Assez pour voir les visages."
-    "Pas assez pour les détails."
-
-    pause 0.4
-
-    "Des groupes avancent dans la même direction."
-    "Conclave."
-    "Toujours le même point de convergence."
-
-    pause 0.4
-
-    "Personne ne fait de discours dans le trajet."
-    "On garde les dernières phrases pour plus tard."
-
-    pause 0.4
-
-    "Une porte automatique s’ouvre devant nous."
-    "Souffle d’air froid."
-    "Passage étroit."
-
-    pause 0.4
-
-    "Je franchis le seuil."
-    "Les pas résonnent légèrement."
-    "Les murs répondent en écho court."
-
-    pause 0.4
-
-    think "Même l’acoustique semble plus sèche."
-
-    pause 0.4
-
-    "Elen marche un peu devant moi."
-    "Elle ajuste sa manche sans lever les yeux."
+    "Le couloir est plus sombre que d’habitude."
+    "Il me semble bien plus étroit..."
 
     pause 0.3
 
-    "Iris vérifie sa tablette, puis l’éteint."
-    "Geste net."
-    "Pas de seconde vérification."
+    $ showP("noam", "inquiet", 0.5)
+
+    think "Respire."
+    think "C’est juste un vote."
 
     pause 0.3
 
-    "Mara passe sa main dans ses cheveux et expire fort par le nez."
-    "Nyra garde le menton droit."
-    "Tomas compte quelque chose sur ses doigts."
+    think "Pourquoi est-ce que mon cœur tape comme ça."
+
+    "Je sens une sueur froide glisser le long de ma nuque."
+    "Comme si quelqu’un me regardait de trop près."
+
+    pause 0.3
+
+    think "Les caméras."
+
+    "Elles sont là."
+    "Oui. Bien sûr. Pourquoi auraient-elles disparu ?"
+
+    pause 0.3
+
+    "Des groupes avancent."
+    "Nous allons tous dans la même direction."
+    "Nous partageons tous le même silence."
+
+    pause 0.3
+
+    "Personne ne parle."
+    "On marche."
+
+    "Pas synchronisés, obligés."
+    "On a une démarche presque militaire."
+
+    pause 0.3
+
+    "Elias a les poings serrés."
+    "Ses jointures sont blanches."
+
+    "Julian marche un peu trop vite."
+    "Il sourit toujours mais on remarque que celui-ci reste figé. Il se force sans doute."
+
+    pause 0.3
+
+    "Mara regarde son poignet."
+    "Encore."
+    "Comme si elle comptait les minutes."
+
+    "Tomas murmure des chiffres pour lui-même."
+
+    pause 0.3
+
+    think "On dirait une salle d’attente."
+    think "Sauf que personne ne sait ce qu’on attend exactement."
 
     pause 0.4
 
-    "Aucun de nous ne parle vraiment."
-    "On échange des signes très courts."
-    "Un regard."
-    "Un hochement."
+    $ showP("lysa", "neutre", 0.25)
+    $ showP("noam", "inquiet", 0.75)
+
+    "Lysa marche en retrait."
+
+    "Pas beaucoup."
+    "Mais juste assez pour que ça se voie."
+
+    pause 0.3
+
+    "Le couloir se resserre."
+    "Le groupe accélère."
+
+    "Elle non."
+
+    pause 0.3
+
+    "Elle garde le même rythme."
+    "Lent."
+    "Délibéré."
+
+    pause 0.3
+
+    "Je ralentis sans vraiment réfléchir."
+    "Je me cale sur son pas."
+
+    pause 0.3
+
+    "Elle le sent."
+
+    $ showP("lysa", "reflexion", 0.25)
+
+    "Elle tourne légèrement la tête."
+    "Pas de sourire."
+    "Pas d’agressivité."
+
+    "Elle a les traits du visage particulièrement fatigués."
+
+    pause 0.3
+
+    $ showP("lysa", "triste", 0.25)
+
+    lysa "Ça ne changera rien."
+    lysa "On va voter."
+    lysa "On va échouer."
+
+    pause 0.3
+
+    lysa "Et demain on sera toujours là."
+    lysa "Avec les mêmes murs et la même pression sur les épaules."
+    lysa "Puis on recommencera dans trois jours encore..."
+
+    pause 0.6
+
+    "Elle ne me regarde pas, elle se parle à elle-même."
+    "Elle avance."
+    "Toujours au même rythme, inlassablement."
+
+    pause 0.5
+
+    think "Elle y croit."
+    think "Vraiment."
+
+    pause 0.3
+
+    think "Pas à l’espoir."
+    think "À l’inverse."
 
     pause 0.4
 
-    think "Le mode solennel s’installe tout seul."
+    $ showP("julian", "hesitation", 0.9)
+
+    "Julian se retourne."
+    "Il l'a entendu."
+
+    "Son sourire se crispe."
+    "Une seconde."
+    "Il me regarde, grimace, puis il accélère."
+    hide julian
+
+    pause 0.3
+
+    $ showP("mara", "stress", 0.5)
+
+    "Mara serre les lèvres."
+    "Elle ne répond pas."
+    "Et son silence fait plus de bruit que si elle avait ri."
+    hide mara
+
+    pause 0.5
+
+    "Le couloir devient plus lourd encore."
+    "Même les néons semblent hésiter."
 
     pause 0.4
 
-    "Deuxième série de portes."
-    "Ouverture latérale."
-    "Fermeture immédiate derrière le dernier."
+    think "Parmi ceux qui l'ont entendu, personne ne l'a contredit."
+    think "Comment le pourrions-nous ?"
+    think "Personne ne sait ce qu'il va se passer."
+
+    "Et puis, alors qu'on arrive devant la salle, Sael prend Lysa dans ses bras."
+
+    pause 0.3
+
+    scene bg_cg014 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg014")
+
+    "C’est bref."
+    "Pas théâtral."
+    "Pas démonstratif."
 
     pause 0.4
 
-    "Le sas diffuse une lumière blanche fixe."
-    "Pas d’annonce."
-    "Pas de musique d’accueil."
+    "Juste ses bras qui se referment."
+    "Solides autour de sa taille."
+
+    pause 0.3
+
+    "Lysa se fige."
+    "Une demi-seconde, sans rien dire."
+    "Comme si son corps ne savait plus quoi faire."
 
     pause 0.4
 
-    think "Kami n’intervient pas encore."
-    think "Et ce silence pèse plus lourd qu’un discours."
+    sael "T’as le droit d’être fatiguée."
+    sael "Mais pas d’abandonner."
+
+    pause 0.5
+
+    "Sa voix est basse."
+    "Pas particulièrement dure ou sèche."
 
     pause 0.4
 
-    "Nous avançons en file irrégulière."
-    "Personne ne cherche à passer devant."
+    sael "On a besoin de toi là-dedans."
+    sael "Pas de ton cynisme, pas de cette moue."
+    sael "Tu étais énergique le premier jour, on a besoin de retrouver cette Lysa là."
+
+    pause 0.3
+
+    sael "On a besoin de ta lucidité."
+
+    pause 0.5
+
+    "Les épaules de Lysa se détendent un peu."
+    "À peine."
+
+    pause 0.3
+
+    lysa "Tu dramatises."
+    lysa "Je suis toujours là."
 
     pause 0.4
 
-    "Un garçon trébuche légèrement sur une jointure au sol."
-    "La personne derrière le rattrape par le coude."
-    "Pas un mot."
+    sael "Alors montre-le."
 
     pause 0.4
 
-    "On reprend le rythme."
-    "Pas après pas."
+    "Sael la relâche."
+    "Pas complètement."
+
+    pause 0.3
+
+    sael "T-Tu comprends les choses mieux que moi."
+    sael "C’est pénible, très pénible même."
+    sael "Mais c’est utile."
+
+    pause 0.5
+
+    "Lysa sourit légèrement."
+
+    pause 0.3
+
+    lysa "Si je sauve le débat, je veux que tu me payes un café."
+
+    pause 0.3
+
+    sael "Deux. Même si tu veux."
+    sael "Ici c'est pas moi qui paye."
 
     pause 0.4
 
-    think "C’est étrange."
-    think "On dirait une marche vers quelque chose de déjà écrit."
+    "Elles se séparent."
+    "La porte est juste là."
 
-    pause 0.4
+    pause 0.3
 
-    think "Alors que, justement, on va essayer d’écrire."
-
-    pause 0.4
-
-    "À gauche, une baie vitrée donne sur une section technique."
-    "Des câbles."
-    "Des voyants verts."
-    "Rien qui ressemble à une réponse."
-
-    pause 0.4
-
-    "À droite, des portes fermées sans signalétique."
-    "Le genre de portes qu’on ne nous ouvre jamais."
-
-    pause 0.4
-
-    think "Aujourd’hui, seule la salle du Conclave compte."
-
-    pause 0.4
-
-    "Troisième porte automatique."
-    "Le capteur nous détecte."
-    "Un déclic sec précède l’ouverture."
-
-    pause 0.4
-
-    "L’air devient un peu plus chaud."
-    "Plus dense aussi."
-
-    pause 0.4
-
-    "Quelqu’un tousse derrière moi."
-    "Un seul son humain un peu trop fort."
-    "Puis plus rien."
-
-    pause 0.4
-
-    "Nous ralentissons sans consigne."
-    "Le couloir final impose son propre tempo."
-
-    pause 0.4
-
-    think "C’est maintenant qu’on sent la gravité de la salle."
-
-    pause 0.4
-
-    "Je vois les bords métalliques de l’entrée du Conclave."
-    "Les lignes lumineuses bleues sont déjà actives."
-
-    pause 0.4
-
-    "Une personne devant moi ferme les yeux deux secondes."
-    "Elle rouvre."
-    "Avance."
-
-    pause 0.4
-
-    "Pas de voix synthétique."
-    "Pas de compte à rebours."
-    "Toujours pas Kami."
-
-    pause 0.4
-
-    think "Ce silence est volontaire."
-    think "Il nous laisse seuls avec nos choix."
-
-    pause 0.4
-
-    "Le groupe se compacte naturellement à l’entrée."
-    "Puis se redistribue."
-    "Chacun trouve son passage."
-
-    pause 0.4
-
-    "Je sens mon rythme cardiaque monter."
-    "Pas de panique."
-    "Juste une alerte continue."
-
-    pause 0.4
-
-    think "Rester net."
-    think "Rester utile."
-    think "Rester honnête."
-
-    pause 0.4
-
-    "Dernier seuil."
-    "Les portes coulissent en silence parfait."
+    think "Lysa redresse le menton. Elle a l'air d'avoir repris du poil de la bête."
+    think "Elle ne croit peut-être pas à ce système."
+    think "Mais il faut qu'elle sache qu'elle peut le changer !"
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    "La salle du Conclave nous attend."
-    "Les sièges sont prêts."
-    "Les pupitres aussi."
+    "La salle est déjà éclairée."
+    "Les sièges sont mis en place."
+    "Les pupitres sont prêts, les caméras chargées sur nous."
 
+    pause 0.3
+
+    "Juste avant de franchir le seuil—"
+    "Un écran mural s’allume."
+
+    play sound sfx_announce
+    pause 1.0
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
+
+    kami "Vous voilà tous ! Manquera-t-il quelqu'un ?"
+    kami "Mes chers téléspectateurs, nous le saurons dans un instant !"
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "On voit à vos visages qu'il y a eu un peu d'émotion !"
+    kami "Oh, comme c'est mignon !"
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "CAMERAMAN ! Un petit zoom sur ces visages cro-crognon !"
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Pardonnez mon humour douteux, je suis comme vous, moi aussi je stress !"
+    kami "C'est bien la première fois que j'organise ça..."
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Mais pas d'inquiétude, asseyez-vous. On commence dans quelques instants."
+
+    hide screen kami_broadcast_ui
+
+    scene bg_conclave at adaptive_fullscreen with fade
     pause 0.4
 
-    "On prend place sans consigne."
-    "Par habitude déjà acquise."
+    "Les portes se referment derrière nous."
 
-    pause 0.4
+    play sound sfx_door
 
-    "Le plafond diffuse une lumière régulière."
-    "Les écrans restent noirs."
+    pause 0.5
 
-    pause 0.4
-
-    think "Kami n’a pas encore parlé."
-
-    pause 0.4
-
-    think "Et c’est peut-être mieux comme ça."
+    "On s'installe tous à nos sièges respectifs."
+    "Le Conclave va commencer."
+    think "Plus de retour en arrière possible."
 
     return
+
+# Durée : 2m55
+# Totale : 1h 40m 00s
