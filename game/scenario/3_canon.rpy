@@ -1110,7 +1110,7 @@ label _3_CAFETERIA_DEBAT:
 
     elen joie "Ça me suffit pour le moment."
 
-    $ add_argument("l'énoncé précis")
+    $ add_argument("L'énoncé précis")
     show screen argument_unlock("L'énoncé précis")
 
     pause 0.3
