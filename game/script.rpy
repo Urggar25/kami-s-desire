@@ -332,6 +332,24 @@ init python:
         store._autofocus_cb_lock = False
 
 init python:
+    def scene_has_no_character_sprites():
+        special_tokens = ("bg_cg", "bg_diffusion")
+
+        # Cas où le BG est suivi via bg_show().
+        bg_name = store.current_bg_name or ""
+        if any(token in bg_name for token in special_tokens):
+            return True
+
+        # Cas des `scene bg_xxx` affichés directement par le script.
+        for layer in ("bgcam", "master"):
+            for tag in renpy.get_showing_tags(layer=layer):
+                if any(token in tag for token in special_tokens):
+                    return True
+
+        return False
+
+
+init python:
     def make_autofocus_cb(tag):
         def _cb(event, interact=True, **kwargs):
             if event != "begin":
@@ -348,6 +366,13 @@ init python:
             last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
             if last_tag == tag:
                 return  # Skip parfait
+
+            if scene_has_no_character_sprites():
+                if last_tag == "__NO_AUTOFOCUS__":
+                    return
+                cinematic_reset(t=0.30)
+                store._focus_last_params = dict(tag="__NO_AUTOFOCUS__")
+                return
 
             cinematic_focus(tag, t=0.30)
 
