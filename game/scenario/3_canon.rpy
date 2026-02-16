@@ -1835,49 +1835,101 @@ label _3_TRANSITION_CONCLAVE:
     "Le Conclave va commencer."
     think "Plus de retour en arrière possible."
 
+# Durée : 2m55
+# Totale : 1h 40m 00s
+
+label _3_DEBAT1_PHASE1:
     pause 0.4
     show screen kami_broadcast_ui
 
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "C'est bon tout le monde est installé ?"
+    kami "C'est TROOOP LOOONG !!"
+
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Très bien mes petits débats ambulants..."
-    kami "On ouvre cette première phase en douceur."
-    kami "Phase 1 : poser les bases."
+    kami "Bon on va commencer cette première phase en douceur."
+    kami "Vous allez devoir poser les bases."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Avant de vous arracher les cordes vocales, vous allez reconstruire le texte ensemble."
-    kami "Parce qu'un débat sans base commune, c'est juste une bagarre mal prononcée."
+    kami "Avant de vous arracher les cordes vocales, vous allez devoir reconstruire le texte ensemble."
+    kami "Il faut que vous sachiez de quoi vous parlez non ?!."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "Ne faites pas les mêmes erreurs que les anciens politiciens qui ont conduit le monde à sa ruine !"
+
+    $ bc_show("ryn", "surpris", px=-70, py=-50, pz=0.85)
+    ryn "Attends comment ça reconstruire le texte ensemble ?!"
+    ryn "C'est quoi ce bordel ?!"
+    $ bc_hide()
+
+    kami "Non mais attends ! Tu ne penses tout de même pas que je vais faire le travail à TA place ?!"
+    kami "J'ai un monde entier à gérer, je suis très occupée moi !"
+
+    $ bc_show("sael", "reflechit", px=-70, py=-50, pz=0.85)
+    sael "Donc ça veut dire qu'on a même pas la base écrite de l'amendement ?"
+    sael "Comment on va faire pour en débattre sans ça ?!"
+    $ bc_hide()
+    
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Mon dieu, je savais qu'en prenant des jeunes il aurait fallu tout expliquer !"
+    kami "Zen... Tu t'y étais préparée..."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Chacun va donner les mots dont il se souvient."
-    kami "Ryn et Sael participent."
-    kami "Nyra aussi, parce que sa mémoire me met presque en insécurité."
-    kami "Les mots seront en désordre. À vous de les remettre dans l'ordre logique."
+    kami "Ne vous en faites pas, je sais que vous n'avez PAS de mémoire..."
+    kami "Alors pour vous aider, mais pas trop, j'ai réarrangé les mots de l'amendement déposé..."
+    kami "Et..."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "Pour pimenter le tout j'y ai ajouté quelques mots !"
+    kami "Histoire de voir vos débats !"
+
+    $ bc_show("lysa", "colere", px=-70, py=-50, pz=0.85)
+    lysa "C'était évidemment trop beau !"
+    lysa "Avoir un amendement qui autorise le commerce, c'était trop simple !"
+    $ bc_hide()
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Toujours en train de pleurnicher ceux là..."
+    kami "Vous devriez être reconnaissants de cette possibilité de changement !"
+
+    $ bc_show("nyra", "stress", px=-70, py=-50, pz=0.85)
+    nyra "S'il vous plait, dites moi que je rêve..."
+    $ bc_hide()
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Bref, j'ai rentré les mots de l'amendement à archive et je les ai compilé."
+    kami "Malheureusement pour vous, ils sont totalement dans le désordre."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Objectif : retrouver exactement la proposition suivante."
-    kami "Autoriser le transport, la vente et l’échange de marchandises entre les districts."
-    kami "Le système actuel de distribution de matériel et de denrées est aboli."
+    kami "Avant de pouvoir débattre de quoi que ce soit, il faudra que vous régliez ce problème..."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "J'espère que vous vous rappelez vos règles de construction de phrase."
 
     hide screen kami_broadcast_ui
+
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showP("ryn", "determine", 0.18)
-    ryn "On respire et on trie."
-    ryn "Ce n'est que des mots. Pour l'instant."
+    ryn "Elle pouvait pas nous les donner directement dans l'ordre ?!"
+    ryn "Sérieusement, pourquoi elle fait ça ?!"
 
     $ showP("sael", "mefiant", 0.82)
-    sael "Que des mots qui peuvent tout faire basculer."
+    sael "Va falloir qu'on s'y mette si on veut avancer."
 
     hide ryn
     $ showP("nyra", "raison", 0.50)
     nyra "Concentrez-vous sur la structure. Sujet, action, conséquence."
-    nyra "Les points sont fixes, donc utilisez-les intelligemment."
+    nyra "Il faut faire attention à la ponctuation, ça peut nous aider à bien placer les mots."
 
+    $ showP("noam", "raison", 0.18)
     noam "D'accord."
-    noam "On reconstruit, puis on discutera."
+    noam "On reconstruit ça, puis on discutera ensuite."
+    noam "J'espère que rien n'a été ajouté de dangereux."
 
     hide sael
     hide nyra
+    hide noam
 
     $ debat_phase1_setup()
     $ phase1_ok = renpy.call_screen("debat_phase1_opening")
@@ -1885,17 +1937,17 @@ label _3_TRANSITION_CONCLAVE:
         call screen noam_consent_screen
 
     $ showP("elen", "joie", 0.28)
-    elen "On l'a !"
+    elen "On l'a ! Enfin !"
     elen "Ça fait du bien d'avoir enfin une base claire."
 
-    $ showP("kael", "neutre", 0.72)
+    $ showP("tomas", "neutre", 0.72)
     kael "Parfait."
-    kael "Maintenant le vrai débat peut commencer."
+    kael "M-Maintenant le vrai débat peut commencer."
 
     hide elen
     hide kael
 
     return
 
-# Durée : 2m55
-# Totale : 1h 40m 00s
+# Durée : 2m35
+# Totale : 1h 42m 35s
