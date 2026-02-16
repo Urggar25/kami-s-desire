@@ -2,9 +2,18 @@
 errors listed below, and try again.
 
 
+<<<<<<< Updated upstream
 File "game/minigame_debat_phase1.rpy", line 211: 'xfill' is not a keyword argument or valid child of the add statement.
     add Solid("#6477B022") xfill True ysize 2 yalign 1.0
                                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
 Mon Feb 16 17:47:49 2026
+=======
+File "game/minigame_debat_phase1.rpy", line 198: for expects a non-empty block.
+    for word in debat_phase1_words:
+                                   ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Mon Feb 16 16:41:38 2026
+>>>>>>> Stashed changes
