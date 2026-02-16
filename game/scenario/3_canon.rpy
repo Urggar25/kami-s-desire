@@ -1935,8 +1935,13 @@ label _3_DEBAT1_PHASE1:
 
     pause 1.0
     $ debat_phase1_setup()
-    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+    $ phase1_result = renpy.call_screen("debat_phase1_opening")
+    $ phase1_ok = phase1_result.get("success", False) if phase1_result else False
+    $ phase1_time_left = phase1_result.get("time_left", 0) if phase1_result else 0
+    $ phase1_kamyz_gain = debat_phase1_calculate_kamyz(phase1_time_left) if phase1_ok else 0
     if phase1_ok:
+        $ player_kamyz += phase1_kamyz_gain
+        $ renpy.notify("+ %d Kamyz" % phase1_kamyz_gain)
         call screen noam_consent_screen
 
     scene bg_conclave at adaptive_fullscreen with dissolve

@@ -4,6 +4,7 @@ default debat_phase1_slots = []
 default debat_phase1_words = []
 default debat_phase1_success = False
 default debat_phase1_slot_layout = []
+default player_kamyz = 0
 
 define sfx_victory = "audio/sfx_clap.mp3"
 
@@ -38,6 +39,30 @@ init python:
     DEBAT_PHASE1_SLOT_CHAR_WIDTH = 13.5
     DEBAT_PHASE1_SLOT_HEIGHT = 66
     DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH = 1680
+    DEBAT_PHASE1_TOTAL_TIME = 180
+    DEBAT_PHASE1_COMMENT_THRESHOLDS = [120, 60, 30, 10]
+    DEBAT_PHASE1_PRESSURE_COMMENTS = {
+        120: [
+            "Kami : Deux minutes. Vous êtes déjà en retard sur mes calculs.",
+            "Kami : 120 secondes, et toujours ce chaos. Charmant.",
+            "Kami : Vous sentez la pression ? Moi, j'appelle ça une statistique.",
+        ],
+        60: [
+            "Kami : Une minute. J'espère que vous aimez finir dans la panique.",
+            "Kami : 60 secondes. Je lance déjà les paris sur votre échec.",
+            "Kami : Tic tac. C'est là que les erreurs deviennent irréversibles.",
+        ],
+        30: [
+            "Kami : 30 secondes. Même mes protocoles ont plus de sang-froid.",
+            "Kami : Trente secondes. Vous devriez déjà avoir terminé.",
+            "Kami : Plus que 30 secondes. Essayez de ne pas tout saboter.",
+        ],
+        10: [
+            "Kami : 10 secondes. Oui, c'est exactement aussi catastrophique que prévu.",
+            "Kami : Dix secondes. Respirez... enfin non, perdez plutôt du temps.",
+            "Kami : 10 secondes. Le stress vous va si bien.",
+        ],
+    }
 
     def debat_phase1_word_width(word_text):
         estimated = DEBAT_PHASE1_SLOT_TEXT_PADDING_X + int(len(word_text) * DEBAT_PHASE1_SLOT_CHAR_WIDTH)
@@ -158,6 +183,16 @@ init python:
         renpy.block_rollback()
         renpy.restart_interaction()
 
+    def debat_phase1_pick_pressure_comment(threshold):
+        comments = DEBAT_PHASE1_PRESSURE_COMMENTS.get(threshold, [])
+        if not comments:
+            return ""
+        return random.choice(comments)
+
+    def debat_phase1_calculate_kamyz(time_left):
+        clamped_time = max(0, min(DEBAT_PHASE1_TOTAL_TIME, int(time_left)))
+        return int(round(500.0 * clamped_time / float(DEBAT_PHASE1_TOTAL_TIME)))
+
 
 transform debat_phase1_float_a:
     yoffset 0
@@ -275,6 +310,21 @@ screen debat_phase1_opening():
     modal True
     zorder 250
     default fa_hovered_word = None
+    default fa_time_left = DEBAT_PHASE1_TOTAL_TIME
+    default fa_shown_thresholds = []
+    default fa_pressure_comment = ""
+
+    timer 1.0 repeat True action [
+        If(fa_time_left > 0, true=SetScreenVariable("fa_time_left", fa_time_left - 1)),
+        If(
+            (fa_time_left in DEBAT_PHASE1_COMMENT_THRESHOLDS) and (fa_time_left not in fa_shown_thresholds),
+            true=[
+                SetScreenVariable("fa_pressure_comment", debat_phase1_pick_pressure_comment(fa_time_left)),
+                SetScreenVariable("fa_shown_thresholds", fa_shown_thresholds + [fa_time_left]),
+            ],
+        ),
+        If(fa_time_left <= 0, true=Return({"success": False, "time_left": 0})),
+    ]
 
     # --- GARDE ANTI-DESYNC ---
     $ expected = len(DEBAT_PHASE1_TARGET)
@@ -339,6 +389,34 @@ screen debat_phase1_opening():
     add Solid("#38DFFF", xsize=1680, ysize=2):
         xalign 0.5
         ypos 120
+
+    frame:
+        xpos 1470
+        ypos 24
+        xsize 380
+        ypadding 12
+        xpadding 16
+        background Solid("#0A1622DD")
+
+        vbox:
+            spacing 8
+            text "[fa_time_left]s":
+                xalign 1.0
+                size 42
+                color "#F2F6FF"
+                outlines [(2, "#000000AA", 0, 0)]
+
+            if fa_pressure_comment:
+                frame:
+                    xfill True
+                    background Solid("#14283AE8")
+                    padding (12, 10)
+
+                    text "[fa_pressure_comment]":
+                        size 20
+                        color "#D5EEFF"
+                        xalign 0.0
+                        outlines [(1, "#081521BB", 0, 0)]
 
     # Panel for word bank visuals (abaissé)
     frame:
@@ -530,7 +608,7 @@ screen debat_phase1_opening():
 
         textbutton "Valider la proposition":
             sensitive debat_phase1_success
-            action Return(True)
+            action Return({"success": True, "time_left": fa_time_left})
             style "fa_btn"
             text_style "fa_btn_text"
             if debat_phase1_success:
