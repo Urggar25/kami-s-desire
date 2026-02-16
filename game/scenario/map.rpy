@@ -57,8 +57,8 @@ screen conclave_map(allow_return=False):
     add "images/carte/bg_map.png" at cover_screen
 
     if allow_return:
-        key "game_menu" action Return()
         key "K_ESCAPE" action Return()
+        key "mouseup_3" action NullAction()
 
     # --- HOTSPOTS (full-screen overlays) ---
     # IMPORTANT : xpos/ypos 0 + at cover_screen, comme ton modèle

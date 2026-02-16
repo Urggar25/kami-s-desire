@@ -222,11 +222,6 @@ screen gallery_menu():
         if len(variants) > 1:
             text "Variant [selected_variant_index + 1]/[len(variants)]" xalign 0.5 yalign 0.04 size 28 color "#FFF"
 
-        textbutton "Retour":
-            xalign 0.02
-            yalign 0.03
-            action SetScreenVariable("selected_base", None)
-
         if current_variant and len(variants) > 1:
             button:
                 background Solid("#0000")
@@ -234,6 +229,12 @@ screen gallery_menu():
                 yfill True
                 action SetScreenVariable("selected_variant_index", (selected_variant_index + 1) % len(variants))
 
+        textbutton "Retour":
+            xalign 0.02
+            yalign 0.03
+            action SetScreenVariable("selected_base", None)
+
+        if current_variant and len(variants) > 1:
             text "Cliquez sur l'image pour passer au sprite suivant" xalign 0.5 yalign 0.96 size 24 color "#FFF"
 
     else:

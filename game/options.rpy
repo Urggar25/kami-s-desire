@@ -160,6 +160,13 @@ define config.save_directory = "kamidesire-1766833117"
 define config.window_icon = "gui/window_icon.png"
 
 
+## Désactive le rollback et le rollforward via molette / raccourcis afin
+## d'éviter les retours accidentels dans le texte, les choix et les écrans.
+init python:
+    config.keymap["rollback"] = []
+    config.keymap["rollforward"] = []
+
+
 ## Configuration de la compilation #############################################
 ##
 ## Cette section paramètre la façon dont Ren’Py transforme votre projet en
