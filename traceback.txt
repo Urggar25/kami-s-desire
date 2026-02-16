@@ -1,40 +1,78 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/salles/sas.rpy", line 302, in script call
-    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
-  File "game/scenario/2_canon.rpy", line 1046, in script call
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
   File "game/scenario/3_canon.rpy", line 1229, in script call
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
-  File "game/scenario/3_canon.rpy", line 1353, in script
-    scene bg_salle_commune at adaptive_fullscreen with cut
-  File "game/scenario/3_canon.rpy", line 1353, in <module>
-    scene bg_salle_commune at adaptive_fullscreen with cut
-NameError: name 'cut' is not defined
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "game/scenario/3_canon.rpy", line 1883, in <module>
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 194, in execute
+    draggroup:
+Exception: Only drags can be added to a drag group.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/salles/sas.rpy", line 302, in script call
-    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
-  File "game/scenario/2_canon.rpy", line 1046, in script call
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
   File "game/scenario/3_canon.rpy", line 1229, in script call
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
-  File "game/scenario/3_canon.rpy", line 1353, in script
-    scene bg_salle_commune at adaptive_fullscreen with cut
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1370, in execute
-    paired = renpy.python.py_eval(self.paired)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scenario/3_canon.rpy", line 1353, in <module>
-    scene bg_salle_commune at adaptive_fullscreen with cut
-NameError: name 'cut' is not defined
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenario/3_canon.rpy", line 1883, in <module>
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 194, in execute
+    draggroup:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1059, in add
+    raise Exception("Only drags can be added to a drag group.")
+Exception: Only drags can be added to a drag group.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2
-Sun Feb 15 23:50:57 2026
+Mon Feb 16 17:51:10 2026

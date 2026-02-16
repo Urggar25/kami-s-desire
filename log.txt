@@ -1,488 +1,22 @@
-2026-02-16 08:57:49 UTC
+2026-02-16 15:05:13 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.17s
-Loading error handling took 0.06s
-Loading script took 0.67s
-Loading save slot metadata took 0.16s
-Loading persistent took 0.00s
-Running init code took 0.09s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.11s
-Index archives took 0.00s
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.01s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.01s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.07s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.19s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 2.23s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Early init took 738.80s
-Loading error handling took 0.06s
-Loading script took 0.90s
-Loading save slot metadata took 0.16s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.12s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.14s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.18s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.08s
-Prepare screens took 0.15s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.78s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.01s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.01s
-Resetting cache.
-Early init took 1490.34s
+Early init took 0.16s
 Loading error handling took 0.04s
-Loading script took 0.86s
-Loading save slot metadata took 0.21s
-Loading persistent took 0.01s
-Running init code took 0.12s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.12s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.11s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.19s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.14s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 1.31s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.07s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.01s
-Resetting cache.
-Early init took 5925.73s
-Loading error handling took 0.06s
-Loading script took 0.85s
-Loading save slot metadata took 0.16s
-Loading persistent took 0.01s
-Running init code took 0.09s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.15s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.17s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.84s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6089.48s
-Loading error handling took 0.03s
-Loading script took 0.48s
-Loading save slot metadata took 0.10s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.06s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.06s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.51s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6210.57s
-Loading error handling took 0.03s
-Loading script took 0.58s
-Loading save slot metadata took 0.12s
-Loading persistent took 0.01s
-Running init code took 0.07s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.13s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.70s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6227.10s
-Loading error handling took 0.05s
-Loading script took 0.96s
-Loading save slot metadata took 0.24s
-Loading persistent took 0.01s
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.11s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.12s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.68s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6266.31s
-Loading error handling took 0.03s
-Loading script took 0.80s
-Loading save slot metadata took 0.16s
-Loading persistent took 0.01s
-Running init code took 0.06s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.08s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.89s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6325.48s
-Loading error handling took 0.03s
-Loading script took 0.67s
-Loading save slot metadata took 0.14s
+Loading script took 0.94s
+Loading save slot metadata took 0.15s
 Loading persistent took 0.00s
 Running init code took 0.08s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.18s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.17s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.69s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6439.11s
-Loading error handling took 0.04s
-Loading script took 0.64s
-Loading save slot metadata took 0.21s
-Loading persistent took 0.01s
-Running init code took 0.07s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.11s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.70s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6459.30s
-Loading error handling took 0.05s
-Loading script took 0.87s
-Loading save slot metadata took 0.12s
-Loading persistent took 0.01s
-Running init code took 0.04s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.01s
 Reloading save slot metadata took 0.10s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.11s
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.13s
+Initial gc took 0.09s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -491,13 +25,13 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
+Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Prepare screens took 0.15s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.04s
 Running _start took 0.00s
-Interface start took 0.99s
+Interface start took 0.86s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -511,60 +45,156 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6539.65s
-Loading error handling took 0.05s
-Loading script took 0.81s
-Loading save slot metadata took 0.19s
-Loading persistent took 0.01s
-Running init code took 0.08s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.67s
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 166, in execute
+    draggroup:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1059, in add
+    raise Exception("Only drags can be added to a drag group.")
+Exception: Only drags can be added to a drag group.
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 166, in execute
+    draggroup:
+Exception: Only drags can be added to a drag group.
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 166, in execute
+    draggroup:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1059, in add
+    raise Exception("Only drags can be added to a drag group.")
+Exception: Only drags can be added to a drag group.
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 139, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 166, in execute
+    draggroup:
+Exception: Only drags can be added to a drag group.
 Resetting cache.
-Early init took 6763.40s
-Loading error handling took 0.04s
-Loading script took 0.59s
-Loading save slot metadata took 0.13s
-Loading persistent took 0.01s
-Running init code took 0.07s
+Early init took 1902.39s
+Loading error handling took 0.06s
+Loading script took 0.46s
+Loading save slot metadata took 0.11s
+Loading persistent took 0.00s
+Running init code took 0.04s
 Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.08s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.06s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
 Dump and make backups took 0.06s
@@ -580,12 +210,1111 @@ Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.04s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.71s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/minigame_debat_phase1.rpy", line 149, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 149, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 181, in execute
+    draggroup:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1059, in add
+    raise Exception("Only drags can be added to a drag group.")
+Exception: Only drags can be added to a drag group.
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 149, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 149, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 181, in execute
+    draggroup:
+Exception: Only drags can be added to a drag group.
+Resetting cache.
+Early init took 2029.22s
+Loading error handling took 0.03s
+Loading script took 0.38s
+Loading save slot metadata took 0.14s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.11s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.66s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1100, in event
+    return super(DragGroup, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 954, in event
+    rv = run(drag.dragged, joined, drop)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+TypeError: __call__() takes 1 positional argument but 3 were given
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+TypeError: __call__() takes 1 positional argument but 3 were given
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1100, in event
+    return super(DragGroup, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 954, in event
+    rv = run(drag.dragged, joined, drop)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+TypeError: __call__() takes 1 positional argument but 3 were given
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+TypeError: __call__() takes 1 positional argument but 3 were given
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1100, in event
+    return super(DragGroup, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 954, in event
+    rv = run(drag.dragged, joined, drop)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+TypeError: __call__() takes 1 positional argument but 3 were given
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+TypeError: __call__() takes 1 positional argument but 3 were given
+Resetting cache.
+Early init took 2136.82s
+Loading error handling took 0.02s
+Loading script took 0.43s
+Loading save slot metadata took 0.12s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.64s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1100, in event
+    return super(DragGroup, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 954, in event
+    rv = run(drag.dragged, joined, drop)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 220, in <lambda>
+    dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
+  File "game/minigame_debat_phase1.rpy", line 108, in debat_phase1_handle_drop
+    target_slot = int(target_name.split("_")[1])
+ValueError: invalid literal for int() with base 10: '[i]'
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 220, in <lambda>
+    dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
+  File "game/minigame_debat_phase1.rpy", line 108, in debat_phase1_handle_drop
+    target_slot = int(target_name.split("_")[1])
+ValueError: invalid literal for int() with base 10: '[i]'
+Resetting cache.
+Early init took 2184.50s
+Loading error handling took 0.03s
+Loading script took 0.43s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.01s
+
+File "game/minigame_debat_phase1.rpy", line 198: for expects a non-empty block.
+    for word in debat_phase1_words:
+                                   ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2210.05s
+Loading error handling took 0.03s
+Loading script took 0.38s
+Loading save slot metadata took 0.11s
+Loading persistent took 0.01s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.11s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.63s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1100, in event
+    return super(DragGroup, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 954, in event
+    rv = run(drag.dragged, joined, drop)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 219, in <lambda>
+    dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
+  File "game/minigame_debat_phase1.rpy", line 108, in debat_phase1_handle_drop
+    target_slot = int(target_name.split("_")[1])
+ValueError: invalid literal for int() with base 10: '[i]'
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    call screen debat_phase1_opening
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame_debat_phase1.rpy", line 219, in <lambda>
+    dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
+  File "game/minigame_debat_phase1.rpy", line 108, in debat_phase1_handle_drop
+    target_slot = int(target_name.split("_")[1])
+ValueError: invalid literal for int() with base 10: '[i]'
+Resetting cache.
+Early init took 2276.38s
+Loading error handling took 0.03s
+Loading script took 0.48s
+Loading save slot metadata took 0.10s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.07s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.12s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.63s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2827.09s
+Loading error handling took 0.03s
+Loading script took 0.46s
+Loading save slot metadata took 0.11s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
 Prepare screens took 0.09s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.62s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(958, 539) drawable=(958, 539)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 4191.05s
+Loading error handling took 0.03s
+Loading script took 0.68s
+Loading save slot metadata took 0.15s
+Loading persistent took 0.01s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.17s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.98s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 4438.46s
+Loading error handling took 0.05s
+Loading script took 0.80s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.01s
+Running init code took 0.11s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.18s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.67s
+Interface start took 0.83s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 4674.38s
+Loading error handling took 0.03s
+Loading script took 0.87s
+Loading save slot metadata took 0.22s
+Loading persistent took 0.01s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.11s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.15s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.83s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 4681.83s
+Loading error handling took 0.03s
+Loading script took 0.56s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.01s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.14s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.94s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6139.36s
+Loading error handling took 0.03s
+Loading script took 0.41s
+Loading save slot metadata took 0.16s
+Loading persistent took 0.01s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.56s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6149.23s
+Loading error handling took 0.02s
+Loading script took 0.80s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.01s
+Running init code took 0.07s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.09s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.11s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.13s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.73s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6154.34s
+Loading error handling took 0.03s
+Loading script took 0.87s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.00s
+
+File "game/minigame_debat_phase1.rpy", line 211: 'xfill' is not a keyword argument or valid child of the add statement.
+    add Solid("#6477B022") xfill True ysize 2 yalign 1.0
+                                ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.43s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6349.96s
+Loading error handling took 0.03s
+Loading script took 0.88s
+Loading save slot metadata took 0.12s
+Loading persistent took 0.00s
+Running init code took 0.10s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.61s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenario/3_canon.rpy", line 1883, in <module>
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 194, in execute
+    draggroup:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1059, in add
+    raise Exception("Only drags can be added to a drag group.")
+Exception: Only drags can be added to a drag group.
+
+While running game code:
+  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1229, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1523, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/scenario/3_canon.rpy", line 1883, in script
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "game/scenario/3_canon.rpy", line 1883, in <module>
+    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 160, in execute
+    screen debat_phase1_opening():
+  File "game/minigame_debat_phase1.rpy", line 194, in execute
+    draggroup:
+Exception: Only drags can be added to a drag group.
+Resetting cache.
+Early init took 6464.41s
+Loading error handling took 0.03s
+Loading script took 0.73s
+Loading save slot metadata took 0.19s
+Loading persistent took 0.01s
+Running init code took 0.07s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.13s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.72s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
