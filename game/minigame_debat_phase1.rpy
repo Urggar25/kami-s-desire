@@ -172,6 +172,13 @@ screen debat_phase1_opening():
     modal True
     zorder 250
 
+    # --- GARDE ANTI-DESYNC ---
+    $ expected = len(DEBAT_PHASE1_TARGET)
+    if (debat_phase1_slots is None) or (len(debat_phase1_slots) != expected) or (len(debat_phase1_words) != expected):
+        $ debat_phase1_setup()
+    elif len(debat_phase1_slot_layout) != len(debat_phase1_slots):
+        $ debat_phase1_refresh_slot_layout()
+
     add Solid("#090b12")
 
     frame:
@@ -282,3 +289,25 @@ screen debat_phase1_opening():
         textbutton "Valider la proposition":
             sensitive debat_phase1_success
             action Return(True)
+
+screen noam_consent_screen():
+    modal True
+    zorder 260
+
+    add Solid("#06080fcc")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 900
+        ypadding 36
+        xpadding 44
+        background Solid("#141B30")
+
+        vbox:
+            spacing 20
+            text "Consensus validé" size 48 color "#EAF0FF" xalign 0.5
+            text "Noam acquiesce. Le texte de base est retenu, vous pouvez passer à la suite du débat." size 30 color "#C8D0FF" xalign 0.5
+            textbutton "Continuer":
+                xalign 0.5
+                action Return(True)

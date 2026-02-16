@@ -9,28 +9,12 @@ While running game code:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1523, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/3_canon.rpy", line 1883, in script
-<<<<<<< Updated upstream
-    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
-  File "game/scenario/3_canon.rpy", line 1883, in <module>
-    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
-  File "game/minigame_debat_phase1.rpy", line 160, in execute
-    screen debat_phase1_opening():
-  File "game/minigame_debat_phase1.rpy", line 160, in execute
-    screen debat_phase1_opening():
-  File "game/minigame_debat_phase1.rpy", line 194, in execute
-    draggroup:
-Exception: Only drags can be added to a drag group.
-=======
-    call screen debat_phase1_opening
+  File "game/scenario/3_canon.rpy", line 1885, in script
+    call screen noam_consent_screen
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/minigame_debat_phase1.rpy", line 219, in <lambda>
-    dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
-  File "game/minigame_debat_phase1.rpy", line 108, in debat_phase1_handle_drop
-    target_slot = int(target_name.split("_")[1])
-ValueError: invalid literal for int() with base 10: '[i]'
->>>>>>> Stashed changes
+Exception: Screen noam_consent_screen is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -43,17 +27,8 @@ Full traceback:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1523, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/3_canon.rpy", line 1883, in script
-<<<<<<< Updated upstream
-    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scenario/3_canon.rpy", line 1883, in <module>
-    $ phase1_ok = renpy.call_screen("debat_phase1_opening")
-=======
-    call screen debat_phase1_opening
+  File "game/scenario/3_canon.rpy", line 1885, in script
+    call screen noam_consent_screen
   File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
@@ -62,72 +37,14 @@ Full traceback:
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
->>>>>>> Stashed changes
-  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-<<<<<<< Updated upstream
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/minigame_debat_phase1.rpy", line 160, in execute
-    screen debat_phase1_opening():
-  File "game/minigame_debat_phase1.rpy", line 160, in execute
-    screen debat_phase1_opening():
-  File "game/minigame_debat_phase1.rpy", line 194, in execute
-    draggroup:
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1059, in add
-    raise Exception("Only drags can be added to a drag group.")
-Exception: Only drags can be added to a drag group.
-=======
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 1100, in event
-    return super(DragGroup, self).event(ev, x, y, st)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\dragdrop.py", line 954, in event
-    rv = run(drag.dragged, joined, drop)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
-    return action(*args, **kwargs)
-  File "game/minigame_debat_phase1.rpy", line 219, in <lambda>
-    dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
-  File "game/minigame_debat_phase1.rpy", line 108, in debat_phase1_handle_drop
-    target_slot = int(target_name.split("_")[1])
-ValueError: invalid literal for int() with base 10: '[i]'
->>>>>>> Stashed changes
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 331, in call_screen
+    renpy.exports.show_screen(_screen_name, *args, _transient=True, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 1328, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen noam_consent_screen is not known.
+
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2
-<<<<<<< Updated upstream
-Mon Feb 16 17:51:10 2026
-=======
-Mon Feb 16 16:42:07 2026
->>>>>>> Stashed changes
+Mon Feb 16 18:12:40 2026
