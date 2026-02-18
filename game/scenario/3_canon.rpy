@@ -1960,8 +1960,311 @@ label _3_DEBAT1_PHASE1:
 
     hide elen
     hide tomas
+    hide lysa
 
-    return
+    jump _3_DEBAT1_PHASE2
 
 # Durée : 2m35
 # Totale : 1h 42m 35s
+
+label _3_DEBAT1_PHASE2:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 1.0
+
+    pause 0.5
+
+    "Le silence ne dure pas bien longtemps."
+
+    $ showP("mara", "reflexion", 0.40)
+    mara "Bon réfléchissons, maintenant qu'on a le contenu de l'amendement."
+    mara "C'est la deuxième partie qui me fait surtout chier ! Qui a proposé de mettre fin au système de distribution ?!"
+
+    "Quelques regards se croisent."
+
+    $ showP("elen", "surpris", 0.30)
+    elen "Attends."
+    elen "Ça faisait partie de la proposition ?"
+
+    $ showP("tomas", "reflechit", 0.85)
+    tomas "La formulation est claire."
+    tomas "L’abrogation est incluse."
+
+    hide tomas
+    $ showP("nyra", "raison", 0.90)
+    nyra "C’est un choix radical."
+    nyra "Pas un simple ajustement."
+
+    hide elen
+    $ showP("kael", "inquietude", 0.05)
+    kael "Supprimer le système de distribution…"
+    kael "Ça change tout."
+
+    hide kael
+    $ showP("ryn", "desaccord", 0.15)
+    ryn "Ça supprime la seule garantie minimale."
+
+    "Le silence revient. Plus lourd."
+
+    hide nyra
+    $ showP("julian", "surpris", 0.75)
+    julian "Attendez. Q-Quelqu'un a vraiment proposé d'abolir ça ?"
+    julian "C’est pas ce que Kami avait annoncé, si ?"
+
+    hide mara
+    $ showP("iris", "rale", 0.40)
+    iris "Bah ouai. Ecoute un peu."
+
+    julian hesitation "Je—"
+    julian hesitation "Je pensais qu’on parlait d’autoriser les échanges."
+    julian hesitation "Pas de faire sauter tout le reste."
+
+    hide iris
+    $ showP("lysa", "reflexion", 0.60)
+    lysa "Donc quelqu’un a proposé ça."
+
+    hide julian
+    $ showP("tomas", "raison", 0.85)
+    tomas "Les amendements sont déposés anonymement."
+
+    $ showP("ryn", "desaccord", 0.15)
+    ryn "Comme c'est pratique..."
+
+    hide tomas
+    $ showP("nyra", "fatigue", 0.90)
+    nyra "Ce n’est pas anodin."
+    nyra "Supprimer une structure mondiale, ça ne s’écrit pas par accident."
+
+    "Un malaise s’installe."
+
+    hide lysa
+    $ showP("mara", "colere", 0.40)
+    mara "Donc quelqu’un ici veut casser le système."
+    mara "Et évidemment, il ne l’assume pas."
+
+    $ showP("julian", "neutre", 0.75)
+    julian "Pas le choix, faut en discuter et voter."
+    julian "Idéalement, faut éviter de faire une chasse aux sorcières, on avancera pas."
+
+    ryn "Facile à dire."
+
+    hide mara
+    $ showP("noam", "raison", 0.50)
+    noam "Puis rien ne nous garantit que tout ça n'est pas une mascarade."
+    noam "Il est aussi possible que Kami se moque totalement de nous, et que personne n'ait proposé ça."
+
+    hide noam
+    $ showP("lysa", "reflexion", 0.60)
+    lysa "Oui, c'est possible."
+    lysa "Et comme il n'y a que dix votes pour douze propositions, ça peut camoufler toute manipulation."
+
+    ryn "Hein, qu'est ce que tu veux dire par là ?!"
+
+    lysa "Réfléchis-y ..."
+    lysa raison "Si les amendements qu'on vote ne sont pas de notre fait, alors aucun d'entre nous à écris celui-là."
+    lysa raison "Et on doit tous se dire que le notre aura de grande chance de tomber une autre fois."
+    lysa raison "Et si cette autre fois n'arrive jamais, alors on se dira tous qu'on fait parti des deux restants."
+
+    hide ryn
+    $ showP("sael", "reflexion", 0.25)
+    sael "Donc c'est impossible de savoir si c'est l'un d'entre nous qui a proposé ça ?"
+
+    lysa "Exactement, seul Kami le sait. Et la personne qui a écrit cet amenement, si elle existe..."
+
+    "Sael prend une grande inspiration puis frappe un poing sur la table."
+    sael "Bordel, qui a proposé ça ?!"
+
+    "Les regards se croisent."
+    "Chacun se regarde mais personne ne répond."
+
+    sael "Kami, tu le sais toi. L'un d'entre nous a-t-il écrit ça ?"
+
+    "L'écran central reste figé et Kami ne réponds pas."
+
+    hide lysa
+    $ showP("noam", "reflexion", 0.50)
+    noam "Bon, pas le choix, il faut débattre du fond de la proposition."
+    noam "Ne cherchons pas un coupable, c'est une perte de temps."
+    noam "N'empêche y'en a un qui fait moins le malin."
+
+    pause 0.5
+    hide sael
+
+
+    "Julian arbore son plus grand sourire, il a bien compris de qui je parlais."
+    $ showP("julian", "sourire", 0.75)
+    julian "Oh Noam. Mais ne t'en fais pas, ça ne changera pas grand chose à ma position."
+    julian "Certes, cette découverte peut être perturbante, mais le commerce n'en reste pas moins absolument E-SSEN-TIEL."
+
+    hide noam
+    $ showP("lysa", "blase", 0.60)
+    lysa "T’es déjà sur scène."
+    lysa "Respire."
+
+    "Quelques regards se tournent vers Julian qui commence à expliquer."
+
+    $ showP("julian", "idee", 0.75)
+    julian "Très bien."
+    julian "Puisque personne ne se lance vraiment dans la discussion…"
+    julian "Autoriser le transport et la vente, c’est logique."
+    julian "On débloque l’économie."
+    julian "On relance les districts."
+    julian "On arrête de tout centraliser et on revient à ce qu'on connaissait il y a quelques années."
+
+    hide lysa
+    $ showP("mara", "rire", 0.40)
+    mara "Et tu veux mettre ça comment en place ?"
+    mara "Avec ton enthousiasme ?"
+
+    "Un léger rire nerveux traverse la salle."
+
+    $ showP("julian", "determine", 0.75)
+    julian "Comment on le faisait avant ?"
+    julian "Un district qui produit des ressources le vendra aux autres."
+    julian "Tout simplement."
+
+    $ showP("ryn", "neutre", 0.15)
+    ryn "Et qu'est ce que tu fais de ceux qui n'ont rien ?!"
+
+    "Ryn croise les bras."
+
+    $ showP("ryn", "desaccord", 0.15)
+    ryn "Si le système actuel saute…"
+    ryn "Les distributions sautent aussi."
+    ryn "Et ça ça tuera de nombreuses personnes dans les districts les plus pauvres dont LIMEN."
+
+    silence
+
+    $ showP("julian", "hesitation", 0.75)
+    julian "Pas forcément."
+
+    ryn "Si."
+    ryn "C’est écrit noir sur blanc."
+
+    hide julian
+    $ showP("tomas", "raison", 0.85)
+    tomas "L’abrogation du système de distribution implique sa disparition."
+    tomas "Il n’y a pas d’entre-deux, c'est factuel."
+
+    hide tomas
+    $ showP("julian", "surpris", 0.75)
+    julian "On peut compenser."
+
+    hide mara
+    $ showP("lysa", "reflexion", 0.60)
+    lysa "Comment tu comptes faire ça ?"
+    lysa "Ce n'est même pas précisé dans l'amendement."
+
+    $ showP("julian", "rire", 0.75)
+    julian "C’est fou."
+    julian "Dès qu’on parle d’ouverture, vous imaginez l’apocalypse."
+
+    hide lysa
+    $ showP("mara", "agace", 0.40)
+    mara "Non. Mais on aimerait éviter de se retrouver avec des cadavres sur le dos."
+
+    hide mara
+    $ showP("elen", "inquiet", 0.30)
+    elen "Mais ça ira bien mieux ! Les marchandises circuleront d'un district à l'autre !"
+    elen "Elles ne seront peut être plus distribuées, mais on pourra les acheter !"
+
+    hide julian
+    $ showP("nyra", "raison", 0.90)
+    nyra "Ça dépend de qui pourra les acheter."
+    nyra "A Orbite, on a pas de ressources propres..."
+
+    $ showP("kael", "inquietude", 0.05)
+    kael "Alors oui et non..."
+    kael "Si on ne produit pas beaucoup de ressources, on en exploite quand même dans l'espace."
+    kael "Simplement ces matériaux là ne restent pas bien longtemps chez nous, on les exporte rapidement."
+
+    hide nyra
+    $ showP("iris", "hesitation", 0.70)
+    iris "Et…"
+    iris "Si ça relançait aussi les trafics ?"
+
+    "L’atmosphère se fige légèrement."
+
+    $ showP("ryn", "colere", 0.15)
+    ryn "Exact. Actuellement la frontière est fermée, seuls ceux qui ont une autorisation spéciale peuvent passer."
+    ryn "Même si on ne peut pas passer, les matériaux peuvent passer sans soucis."
+    ryn "Et si les distributions sautent comment feront les plus pauvres pour s'acheter quelque chose ?"
+
+    hide iris
+    $ showP("julian", "raison", 0.75)
+    julian "En vendant aussi."
+
+    ryn "Vendre quoi ?"
+    ryn "Leurs dettes ?"
+
+    julian "Leur travail, leur ressource."
+    julian "Ne me fais pas croire un instant qu'il n'y a pas de travail à Limen !"
+
+    ryn "Si, évidemment qu'il y en a..."
+
+    julian "Et pourquoi les gens ne travaillent pas ?!"
+
+    ryn "Et bien-..."
+    ryn "Parce que ça ne change rien."
+    ryn "Tu travailles."
+    ryn "Tu ne travailles pas."
+    ryn "Tu reçois le même bon de rationnement."
+
+    $ showP("lysa", "reflechit", 0.60)
+    lysa "Oui, c'est pareil dans tous les districts..."
+    lysa "Comme on a les bons de rationnement et l'interdiction de faire du commerce, le travail est devenu accessoire."
+    lysa "On ne travaille que si on le souhaite ou si on en reçoit l'ordre de Kami."
+
+    "Julian relève la tête."
+
+    julian "Au moins l'une d'entre vous à compris ou je voulais en venir."
+
+    lysa "Mais là tu joues au héros."
+    lysa "Sans plan."
+
+    $ showP("julian", "determine", 0.75)
+    julian "Quelqu’un doit faire avancer les choses."
+
+    hide lysa
+    $ showP("noam", "raison", 0.50)
+    noam "Avancer, oui."
+    noam "Improviser, non."
+
+    "Plusieurs têtes hochent légèrement."
+
+    noam "On ne vote pas une idée."
+    noam "On vote pour un système qui peut impacter les gens jusque leur quotidien."
+
+    julian "Et le système actuel fonctionne ?"
+
+    $ showP("mara", "reflexion", 0.40)
+    mara "..."
+
+    julian "Il nous étouffe."
+
+    ryn "Il nous nourrit aussi."
+
+    julian "En nous rationnant, en nous empêchant de manger ce qu'on veut, en nous distribuant du pain rassi, en nous obligeant à réclamer tout et n'importe quoi !"
+    julian colere "Mais réveillez-vous ! Vous voulez garder ce monde là ?!"
+
+    pause 0.4
+    show screen kami_broadcast_ui
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "On me dit dans l'oreillette que vous êtes ennuyants !!"
+    kami "Tout ça, vos blabla, ça n'avance pas !"
+    kami "Je suis obligée de prendre les choses en main."
+
+    "A ce moment là les bureaux devant nous changent de forme."
+    "Un micro sort d'un petit emplacement dédié, un buzzer apparait."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "A partir de maintenant vous n'avez plus la parole."
+    kami "Vous parlerez à tour de rôle. Histoire qu'on puisse vous entendre."
+    kami "Devant vous, il y a un buzzer, si vous voulez contredire un propos d'un de vos camarades, vous pouvez appuyer dessus."
+    kami "Et vous ne parlerez que lorsque votre buzzer s'allumera d'une couleur verte !"
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Compris ?!"
+    kami "Alors c'est parti !"
