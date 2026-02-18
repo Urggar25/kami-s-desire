@@ -1954,15 +1954,9 @@ label _3_DEBAT1_PHASE1:
     elen "On l'a ! Enfin !"
     elen "Ça fait du bien d'avoir enfin une base claire."
 
-<<<<<<< Updated upstream
     $ showP("tomas", "neutre", 0.82)
     kael "Parfait."
     kael "M-Maintenant le vrai débat peut commencer."
-=======
-    $ showP("tomas", "neutre", 0.72)
-    tomas "Parfait."
-    tomas "M-Maintenant le vrai débat peut commencer."
->>>>>>> Stashed changes
 
     hide elen
     hide tomas
