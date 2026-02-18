@@ -1946,11 +1946,15 @@ label _3_DEBAT1_PHASE1:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
+    $ showP("lysa", "reflechit", 0.45)
+    lysa "Autoriser le transport, la vente et l'échange de marchandises ..."
+    lysa "Le système actuel de distribution de denrées est aboli ?!"
+
     $ showP("elen", "joie", 0.28)
     elen "On l'a ! Enfin !"
     elen "Ça fait du bien d'avoir enfin une base claire."
 
-    $ showP("tomas", "neutre", 0.72)
+    $ showP("tomas", "neutre", 0.82)
     kael "Parfait."
     kael "M-Maintenant le vrai débat peut commencer."
 

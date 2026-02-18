@@ -13,8 +13,8 @@ init python:
 
     DEBAT_PHASE1_TARGET = [
         "Autoriser","le","transport,","la","vente","et","l’échange","de",
-        "marchandises","entre","les","districts.","Le","système","actuel","de",
-        "distribution","de","denrées","est","aboli.",
+        "marchandises.","Le","système","actuel","de","distribution","de","denrées",
+        "est","aboli.",
     ]
 
     DEBAT_PHASE1_FLOAT_POSITIONS = [
