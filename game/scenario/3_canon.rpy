@@ -1974,8 +1974,6 @@ label _3_DEBAT1_PHASE2:
 
     pause 0.5
 
-    call debat_phase2_minigame
-
     "Le silence ne dure pas bien longtemps."
 
     $ showP("mara", "reflexion", 0.40)
@@ -2268,3 +2266,5 @@ label _3_DEBAT1_PHASE2:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Compris ?!"
     kami "Alors c'est parti !"
+
+    call debat_phase2_minigame
