@@ -2268,3 +2268,5 @@ label _3_DEBAT1_PHASE2:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Compris ?!"
     kami "Alors c'est parti !"
+
+    call debat_phase2_minigame

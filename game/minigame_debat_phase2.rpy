@@ -4,12 +4,9 @@ default debat_phase2_buzzed_ids = []
 default debat_phase2_rebuttal_log = []
 default debat_phase2_vote_summary = {}
 default debat_day3_live_vote_stats = {}
-default debat_phase2_index = 0
-default debat_phase2_current_dialogue = None
-default debat_phase2_current_outcome = None
 
 define DEBAT_PHASE2_LINE_DURATION = 5.0
-define DEBAT_PHASE2_REBUTTAL_LINE_DURATION = 3.4
+
 define DEBAT_PHASE2_FADE_TIME = 0.35
 
 image kami_debat_background = "images/background/bg_conclave.png"
