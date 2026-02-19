@@ -109,6 +109,7 @@ image julian triste             = im.FactorScale("images/character/julian/triste
 image julian vide              = im.FactorScale("images/character/vide.png", 0.60)
 image julian detendu              = im.FactorScale("images/character/julian/detendu.png", 0.60)
 image julian decontracte              = im.FactorScale("images/character/julian/decontracte.png", 0.60)
+image julian colere              = im.FactorScale("images/character/julian/colere.png", 0.60)
 
 # ======================
 # IRIS

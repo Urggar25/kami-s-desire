@@ -1946,7 +1946,7 @@ label _3_DEBAT1_PHASE1:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    $ showP("lysa", "reflechit", 0.45)
+    $ showP("lysa", "reflexion", 0.45)
     lysa "Autoriser le transport, la vente et l'échange de marchandises ..."
     lysa "Le système actuel de distribution de denrées est aboli ?!"
 
@@ -1977,9 +1977,7 @@ label _3_DEBAT1_PHASE2:
     "Le silence ne dure pas bien longtemps."
 
     $ showP("mara", "reflexion", 0.40)
-    mara "Bon réfléchissons, maintenant qu'on a le contenu de l'amendement."
-    mara "C'est la deuxième partie qui me fait surtout chier ! Qui a proposé de mettre fin au système de distribution ?!"
-
+    mara "Bon, on a le papier sous le nez. Putain, la deuxième partie… qui est le génie qui veut nous faire crever la dalle direct ?"
     "Quelques regards se croisent."
 
     $ showP("elen", "surpris", 0.30)
@@ -1987,8 +1985,8 @@ label _3_DEBAT1_PHASE2:
     elen "Ça faisait partie de la proposition ?"
 
     $ showP("tomas", "reflechit", 0.85)
-    tomas "La formulation est claire."
-    tomas "L’abrogation est incluse."
+    tomas "La… la formulation est… euh… très claire."
+    tomas "L’abrogation… elle est… incluse. Oui."
 
     hide tomas
     $ showP("nyra", "raison", 0.90)
@@ -1996,13 +1994,13 @@ label _3_DEBAT1_PHASE2:
     nyra "Pas un simple ajustement."
 
     hide elen
-    $ showP("kael", "inquietude", 0.05)
+    $ showP("kael", "inquiet", 0.05)
     kael "Supprimer le système de distribution…"
     kael "Ça change tout."
 
     hide kael
     $ showP("ryn", "desaccord", 0.15)
-    ryn "Ça supprime la seule garantie minimale."
+    ryn "Ça supprime TOUT ! La seule putain de sécurité qu’on avait !"
 
     "Le silence revient. Plus lourd."
 
@@ -2012,7 +2010,7 @@ label _3_DEBAT1_PHASE2:
     julian "C’est pas ce que Kami avait annoncé, si ?"
 
     hide mara
-    $ showP("iris", "rale", 0.40)
+    $ showP("iris", "panne", 0.40)
     iris "Bah ouai. Ecoute un peu."
 
     julian hesitation "Je—"
@@ -2037,6 +2035,7 @@ label _3_DEBAT1_PHASE2:
 
     "Un malaise s’installe."
 
+    hide nyra
     hide lysa
     $ showP("mara", "colere", 0.40)
     mara "Donc quelqu’un ici veut casser le système."
@@ -2061,15 +2060,15 @@ label _3_DEBAT1_PHASE2:
     ryn "Hein, qu'est ce que tu veux dire par là ?!"
 
     lysa "Réfléchis-y ..."
-    lysa raison "Si les amendements qu'on vote ne sont pas de notre fait, alors aucun d'entre nous à écris celui-là."
-    lysa raison "Et on doit tous se dire que le notre aura de grande chance de tomber une autre fois."
-    lysa raison "Et si cette autre fois n'arrive jamais, alors on se dira tous qu'on fait parti des deux restants."
+    lysa salut "Si les amendements qu'on vote ne sont pas de notre fait, alors aucun d'entre nous à écris celui-là."
+    lysa salut "Et on doit tous se dire que le notre aura de grande chance de tomber une autre fois."
+    lysa salut "Et si cette autre fois n'arrive jamais, alors on se dira tous qu'on fait parti des deux restants."
 
     hide ryn
-    $ showP("sael", "reflexion", 0.25)
+    $ showP("sael", "desaccord", 0.25)
     sael "Donc c'est impossible de savoir si c'est l'un d'entre nous qui a proposé ça ?"
 
-    lysa "Exactement, seul Kami le sait. Et la personne qui a écrit cet amenement, si elle existe..."
+    lysa "Exactement, seul Kami le sait. Et la personne qui a écrit cet amendement, si elle existe..."
 
     "Sael prend une grande inspiration puis frappe un poing sur la table."
     sael "Bordel, qui a proposé ça ?!"
@@ -2113,8 +2112,8 @@ label _3_DEBAT1_PHASE2:
 
     hide lysa
     $ showP("mara", "rire", 0.40)
-    mara "Et tu veux mettre ça comment en place ?"
-    mara "Avec ton enthousiasme ?"
+    mara "Et tu comptes faire comment, lover ?"
+    mara "T’as prévu d’enthousiasmer les ventres vides ou tu vas leur refourguer ta bonne humeur au black ?"
 
     "Un léger rire nerveux traverse la salle."
 
@@ -2132,8 +2131,6 @@ label _3_DEBAT1_PHASE2:
     ryn "Si le système actuel saute…"
     ryn "Les distributions sautent aussi."
     ryn "Et ça ça tuera de nombreuses personnes dans les districts les plus pauvres dont LIMEN."
-
-    silence
 
     $ showP("julian", "hesitation", 0.75)
     julian "Pas forcément."
@@ -2161,18 +2158,20 @@ label _3_DEBAT1_PHASE2:
 
     hide lysa
     $ showP("mara", "agace", 0.40)
-    mara "Non. Mais on aimerait éviter de se retrouver avec des cadavres sur le dos."
+    mara "Ouais non, j’ai pas envie de ramasser des macchabées parce que Monsieur Idéal a eu une illumination de start-upper."
 
     hide mara
     $ showP("elen", "inquiet", 0.30)
-    elen "Mais ça ira bien mieux ! Les marchandises circuleront d'un district à l'autre !"
-    elen "Elles ne seront peut être plus distribuées, mais on pourra les acheter !"
+    elen "Mais attendez ! Ça va être génial !"
+    elen "Les trucs vont circuler partout, on pourra enfin CHOISIR ce qu’on veut !"
+    elen "C’est pas ça, la liberté ?!"
 
     hide julian
     $ showP("nyra", "raison", 0.90)
     nyra "Ça dépend de qui pourra les acheter."
     nyra "A Orbite, on a pas de ressources propres..."
 
+    hide ryn
     $ showP("kael", "inquietude", 0.05)
     kael "Alors oui et non..."
     kael "Si on ne produit pas beaucoup de ressources, on en exploite quand même dans l'espace."
@@ -2185,17 +2184,17 @@ label _3_DEBAT1_PHASE2:
 
     "L’atmosphère se fige légèrement."
 
+    hide kael
     $ showP("ryn", "colere", 0.15)
     ryn "Exact. Actuellement la frontière est fermée, seuls ceux qui ont une autorisation spéciale peuvent passer."
     ryn "Même si on ne peut pas passer, les matériaux peuvent passer sans soucis."
     ryn "Et si les distributions sautent comment feront les plus pauvres pour s'acheter quelque chose ?"
 
     hide iris
-    $ showP("julian", "raison", 0.75)
+    $ showP("julian", "reflexion", 0.75)
     julian "En vendant aussi."
 
-    ryn "Vendre quoi ?"
-    ryn "Leurs dettes ?"
+    ryn "Vendre QUOI, Julian ?! Leurs godasses trouées ? Leur fierté en solde ?!"
 
     julian "Leur travail, leur ressource."
     julian "Ne me fais pas croire un instant qu'il n'y a pas de travail à Limen !"
@@ -2204,20 +2203,19 @@ label _3_DEBAT1_PHASE2:
 
     julian "Et pourquoi les gens ne travaillent pas ?!"
 
-    ryn "Et bien-..."
-    ryn "Parce que ça ne change rien."
+    ryn "Parce que ça change QUE DALLE !"
     ryn "Tu travailles."
-    ryn "Tu ne travailles pas."
-    ryn "Tu reçois le même bon de rationnement."
+    ryn "Tu te crèves le cul douze heures, tu touches le même ticket pourri que le mec qui dort toute la journée."
+    ryn "C’est ça ta motivation, toi ?!"
 
-    $ showP("lysa", "reflechit", 0.60)
+    $ showP("lysa", "reflexion", 0.60)
     lysa "Oui, c'est pareil dans tous les districts..."
     lysa "Comme on a les bons de rationnement et l'interdiction de faire du commerce, le travail est devenu accessoire."
     lysa "On ne travaille que si on le souhaite ou si on en reçoit l'ordre de Kami."
 
     "Julian relève la tête."
 
-    julian "Au moins l'une d'entre vous à compris ou je voulais en venir."
+    julian "Au moins l'une d'entre vous a compris ou je voulais en venir."
 
     lysa "Mais là tu joues au héros."
     lysa "Sans plan."
@@ -2228,12 +2226,12 @@ label _3_DEBAT1_PHASE2:
     hide lysa
     $ showP("noam", "raison", 0.50)
     noam "Avancer, oui."
-    noam "Improviser, non."
+    noam "Mais pas en sautant dans le vide sans savoir où on va."
 
     "Plusieurs têtes hochent légèrement."
 
     noam "On ne vote pas une idée."
-    noam "On vote pour un système qui peut impacter les gens jusque leur quotidien."
+    noam "On vote pour un système qui peut impacter les gens jusque dans leur quotidien."
 
     julian "Et le système actuel fonctionne ?"
 

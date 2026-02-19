@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
+File "game/scenario/3_canon.rpy", line 2136: expected statement.
+    silence
+           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Feb 16 23:34:52 2026
+Thu Feb 19 11:11:16 2026

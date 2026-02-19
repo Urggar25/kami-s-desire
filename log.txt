@@ -1,20 +1,36 @@
-2026-02-16 22:21:48 UTC
+2026-02-19 16:27:49 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.08s
-Loading error handling took 0.05s
-Loading script took 0.50s
-Loading save slot metadata took 0.12s
+Early init took 0.09s
+Loading error handling took 0.04s
+Loading script took 0.79s
+Loading save slot metadata took 0.11s
 Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 411: 'xfill' is not a keyword argument or valid child of the add statement.
-    xfill True
-         ^
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.60s
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.93s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -29,525 +45,15 @@ Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 138.92s
-Loading error handling took 0.06s
+Early init took 294.09s
+Loading error handling took 0.04s
 Loading script took 0.65s
 Loading save slot metadata took 0.11s
 Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 411: The if statement is not a valid child of the add statement.
-    at fa_slot_pulse if debat_phase1_slots[i] is None else fa_slot_filled_glow
-                       ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.59s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 140.68s
-Loading error handling took 0.06s
-Loading script took 0.55s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 411: The if statement is not a valid child of the add statement.
-    at fa_slot_pulse if debat_phase1_slots[i] is None else fa_slot_filled_glow
-                       ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.36s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 167.01s
-Loading error handling took 0.05s
-Loading script took 0.42s
-Loading save slot metadata took 0.12s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 468: the child keyword argument was not given a value.
-    child:
-         ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.33s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 168.53s
-Loading error handling took 0.04s
-Loading script took 0.41s
-Loading save slot metadata took 0.10s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 468: the child keyword argument was not given a value.
-    child:
-         ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.33s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 291.24s
-Loading error handling took 0.04s
-Loading script took 0.42s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 470: The if statement is not a valid child of the fixed statement.
-    at float_at if slot_index is None else None
-                  ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.32s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 310.50s
-Loading error handling took 0.05s
-Loading script took 0.43s
-Loading save slot metadata took 0.10s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 470: Line is indented, but the preceding fit_first statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    at float_at if slot_index is None else None
-    ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.32s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 320.22s
-Loading error handling took 0.04s
-Loading script took 0.42s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 470: The if statement is not a valid child of the fixed statement.
-    at float_at if slot_index is None else None
-                  ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.34s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 390.19s
-Loading error handling took 0.04s
-Loading script took 0.45s
-Loading save slot metadata took 0.12s
-Loading persistent took 0.01s
-
-File "game/minigame_debat_phase1.rpy", line 468: 'ffixed' is not a keyword argument or valid child of the drag statement.
-    ffixed:
-          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.37s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 638.77s
-Loading error handling took 0.04s
-Loading script took 0.45s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.29s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 640.91s
-Loading error handling took 0.04s
-Loading script took 0.44s
-Loading save slot metadata took 0.14s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.38s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 642.52s
-Loading error handling took 0.05s
-Loading script took 0.45s
-Loading save slot metadata took 0.12s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.50s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 779.37s
-Loading error handling took 0.04s
-Loading script took 0.44s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.34s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 781.41s
-Loading error handling took 0.04s
-Loading script took 0.55s
-Loading save slot metadata took 0.18s
-Loading persistent took 0.00s
-
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.43s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 782.98s
-Loading error handling took 0.04s
-Loading script took 0.50s
-Loading save slot metadata took 0.14s
-Loading persistent took 0.01s
-
-File "game/minigame_debat_phase1.rpy", line 522: 'insensitive_text_style' is not a keyword argument or valid child of the textbutton statement.
-    insensitive_text_style "fa_btn_insensitive_text"
-                          ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.40s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 810.10s
-Loading error handling took 0.05s
-Loading script took 0.45s
-Loading save slot metadata took 0.10s
-Loading persistent took 0.00s
-Running init code took 0.06s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.64s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1519.08s
-Loading error handling took 0.03s
-Loading script took 0.53s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.06s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.02s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.74s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1897.58s
-Loading error handling took 0.03s
-Loading script took 0.58s
-Loading save slot metadata took 0.15s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.64s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 2161.44s
-Loading error handling took 0.03s
-Loading script took 0.62s
-Loading save slot metadata took 0.14s
-Loading persistent took 0.00s
 Running init code took 0.05s
-Loading analysis data took 0.02s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.10s
+Reloading save slot metadata took 0.12s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
 Dump and make backups took 0.09s
@@ -562,13 +68,13 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.12s
+Analyze screens took 0.02s
+Save screen analysis took 0.06s
+Prepare screens took 0.11s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.65s
+Interface start took 0.70s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -582,24 +88,66 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
+Resetting cache.
+Early init took 330.75s
+Loading error handling took 0.03s
+Loading script took 0.79s
+Loading save slot metadata took 0.16s
+Loading persistent took 0.01s
+Running init code took 0.07s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.66s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 2253.59s
+Early init took 379.45s
 Loading error handling took 0.03s
-Loading script took 0.46s
-Loading save slot metadata took 0.14s
-Loading persistent took 0.01s
+Loading script took 0.69s
+Loading save slot metadata took 0.17s
+Loading persistent took 0.00s
 Running init code took 0.05s
-Loading analysis data took 0.03s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.01s
 Reloading save slot metadata took 0.07s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.08s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.11s
+Initial gc took 0.10s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -611,10 +159,10 @@ Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.03s
 Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.65s
+Interface start took 0.62s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -624,23 +172,23 @@ Vendor: "b'Intel'"
 Renderer: b'Intel(R) UHD Graphics 770'
 Version: b'4.6.0 - Build 32.0.101.6733'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(958, 539) drawable=(958, 539)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 2269.26s
-Loading error handling took 0.03s
-Loading script took 0.49s
-Loading save slot metadata took 0.15s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.02s
+Early init took 407.49s
+Loading error handling took 0.02s
+Loading script took 0.70s
+Loading save slot metadata took 0.16s
+Loading persistent took 0.01s
+Running init code took 0.09s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.07s
+Reloading save slot metadata took 0.08s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.10s
+Dump and make backups took 0.11s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.12s
@@ -655,10 +203,10 @@ Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.03s
 Prepare screens took 0.10s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.71s
+Interface start took 0.62s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -668,17 +216,17 @@ Vendor: "b'Intel'"
 Renderer: b'Intel(R) UHD Graphics 770'
 Version: b'4.6.0 - Build 32.0.101.6733'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(958, 539) drawable=(958, 539)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 2345.48s
-Loading error handling took 0.03s
-Loading script took 0.52s
-Loading save slot metadata took 0.13s
+Early init took 444.31s
+Loading error handling took 0.02s
+Loading script took 0.66s
+Loading save slot metadata took 0.12s
 Loading persistent took 0.00s
-Running init code took 0.04s
+Running init code took 0.06s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.01s
 Reloading save slot metadata took 0.09s
@@ -702,7 +250,7 @@ Prepare screens took 0.11s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.67s
+Interface start took 0.64s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -712,21 +260,110 @@ Vendor: "b'Intel'"
 Renderer: b'Intel(R) UHD Graphics 770'
 Version: b'4.6.0 - Build 32.0.101.6733'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(958, 539) drawable=(958, 539)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 2361.28s
-Loading error handling took 0.03s
-Loading script took 0.51s
-Loading save slot metadata took 0.11s
+Early init took 952.86s
+Loading error handling took 0.04s
+Loading script took 0.57s
+Loading save slot metadata took 0.13s
 Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.09s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.13s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.04s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.66s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 996.07s
+Loading error handling took 0.03s
+Loading script took 0.52s
+Loading save slot metadata took 0.12s
+Loading persistent took 0.01s
 Running init code took 0.07s
 Loading analysis data took 0.03s
 Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.11s
+Reloading save slot metadata took 0.13s
+Index archives took 0.00s
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.15s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.69s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.6733'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3250.18s
+Loading error handling took 0.03s
+Loading script took 0.73s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.08s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.08s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.11s
@@ -738,188 +375,11 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.68s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(958, 539) drawable=(958, 539)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(958, 1000) drawable=(958, 1000)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 2702.48s
-Loading error handling took 0.02s
-Loading script took 0.64s
-Loading save slot metadata took 0.15s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.08s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.09s
+Analyze screens took 0.02s
+Save screen analysis took 0.06s
+Prepare screens took 0.12s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.67s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3665.81s
-Loading error handling took 0.05s
-Loading script took 0.52s
-Loading save slot metadata took 0.13s
-Loading persistent took 0.01s
-Running init code took 0.08s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.09s
-Index archives took 0.00s
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.06s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.85s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3671.59s
-Loading error handling took 0.03s
-Loading script took 0.82s
-Loading save slot metadata took 0.17s
-Loading persistent took 0.01s
-Running init code took 0.06s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.10s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.80s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.6733'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4435.38s
-Loading error handling took 0.03s
-Loading script took 0.72s
-Loading save slot metadata took 0.13s
-Loading persistent took 0.01s
-Running init code took 0.07s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.08s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.15s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.15s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.03s
 Running _start took 0.00s
 Interface start took 0.78s
 
