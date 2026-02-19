@@ -1974,6 +1974,8 @@ label _3_DEBAT1_PHASE2:
 
     pause 0.5
 
+    call debat_phase2_minigame
+
     "Le silence ne dure pas bien longtemps."
 
     $ showP("mara", "reflexion", 0.40)

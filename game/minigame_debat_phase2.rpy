@@ -23,10 +23,15 @@ transform debat_phase2_buzzer_pulse:
     ease 0.28 zoom 1.0
     repeat
 
-init python:
-    import random
+transform debat_phase2_objection_shock:
+    alpha 0.0
+    zoom 0.96
+    linear 0.16 alpha 1.0
+    easeout 0.30 zoom 1.01
+    easein 0.10 zoom 0.99
+    easeout 0.12 zoom 1.0
 
-    # Chaque entrée est indépendante : simple à ajouter/supprimer/reclasser.
+init python:
     DEBAT_PHASE2_DIALOGUES = [
         {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d1", "lines": ["Abolir la distribution,", "c'est condamner", "les plus fragiles."]},
         {"id": "d2", "speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d2", "lines": ["Le marché libre va", "récompenser ceux", "qui se bougent."]},
@@ -60,6 +65,13 @@ init python:
     }
 
     DEBAT_PHASE2_LINE_X_OFFSETS = [0, 24, -18, 12]
+
+    def debat_phase2_get_objection_protocol_image(index_number):
+        wanted = "images/background/debat/objection_protocol_%d.png" % int(index_number)
+        if renpy.loadable(wanted):
+            return wanted
+        fallback = "images/background/debat/fatal_assembly_%d.png" % int(index_number)
+        return fallback
 
     def debat_day3_vote_from_stat(stat_value):
         if stat_value > 0:
@@ -98,10 +110,8 @@ screen debat_phase2_line(dialogue_data):
         xfill True
         yfill True
 
-    # Personnage parlant à gauche (fade in / fade out)
     add "[dialogue_data['speaker_tag']] [dialogue_data['speaker_expr']]" at Position(xalign=0.18, yalign=1.0), debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
 
-    # Texte à droite, en plusieurs lignes avec léger décalage non-aligné
     vbox:
         xalign 0.73
         yalign 0.45
@@ -120,7 +130,6 @@ screen debat_phase2_line(dialogue_data):
         yalign 0.22
         at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
 
-    # Buzzer au premier plan
     frame:
         background Solid("#8d1212dd")
         xalign 0.5
@@ -141,6 +150,47 @@ screen debat_phase2_line(dialogue_data):
 
     timer DEBAT_PHASE2_LINE_DURATION action Return({"buzzed": False, "id": dialogue_data["id"]})
 
+screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
+    modal True
+    zorder 120
+
+    add "kami_debat_background" at adaptive_fullscreen
+
+    frame:
+        background Solid("#05091765")
+        xfill True
+        yfill True
+
+    add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.18, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+
+    vbox:
+        xalign 0.73
+        yalign 0.45
+        spacing 6
+        at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+
+        for idx, line_text in enumerate(entry_data["lines"]):
+            $ local_xoffset = DEBAT_PHASE2_LINE_X_OFFSETS[idx % len(DEBAT_PHASE2_LINE_X_OFFSETS)]
+            text "[line_text]":
+                style "debat_phase2_line_text"
+                xoffset local_xoffset
+
+    text "[entry_data['speaker']]":
+        style "debat_phase2_speaker_text"
+        xalign 0.58
+        yalign 0.22
+        at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+
+    timer duration action Return(True)
+
+screen debat_phase2_objection_flash():
+    modal True
+    zorder 240
+
+    add "images/background/debat/noam_objection.png" at adaptive_fullscreen, debat_phase2_objection_shock
+    on "show" action Play("sound", "audio/sfx_announce.mp3")
+    timer 1.9 action Return(True)
+
 style debat_phase2_speaker_text:
     color "#FFFFFF"
     font "fonts/day_font.ttf"
@@ -160,29 +210,70 @@ style debat_phase2_buzzer_button is default:
     hover_color "#FFE7A8"
     outlines [(2, "#000000", 0, 0)]
 
+label DEBAT_PHASE2_START_ANIM:
+    $ renpy.block_rollback()
+
+    scene black
+
+    $ op1 = debat_phase2_get_objection_protocol_image(1)
+    $ op2 = debat_phase2_get_objection_protocol_image(2)
+
+    show expression op1 as op_bg at adaptive_fullscreen, debat_phase2_objection_shock
+    play sound "audio/sfx_minigame_start.mp3"
+    pause 2.50
+
+    show expression op2 as op_fx at adaptive_fullscreen, debat_phase2_objection_shock
+    pause 2.50
+
+    hide op_fx
+    hide op_bg
+
+    return
+
+label debat_phase2_play_rebuttal_sequence(sequence_data):
+    python:
+        for entry in sequence_data:
+            renpy.call_screen("debat_phase2_rebuttal_line", entry_data=entry, duration=DEBAT_PHASE2_REBUTTAL_LINE_DURATION)
+    return
+
 label debat_phase2_minigame:
     $ debat_phase2_buzzed_ids = []
     $ debat_phase2_rebuttal_log = []
     $ debat_day3_reset_live_stats()
+    $ debat_phase2_index = 0
 
-    scene kami_debat_background at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
-    "Mini-jeu : buzze pour lancer une contradiction et influencer le vote."
+    call DEBAT_PHASE2_START_ANIM
 
-    python:
-        for dialogue_data in DEBAT_PHASE2_DIALOGUES:
-            outcome = renpy.call_screen("debat_phase2_line", dialogue_data=dialogue_data)
-            if outcome and outcome.get("buzzed"):
-                counter_label = outcome.get("counter_label")
-                store.debat_phase2_buzzed_ids.append(outcome.get("id"))
-                store.debat_phase2_rebuttal_log.append({
-                    "id": outcome.get("id"),
-                    "speaker": outcome.get("speaker"),
-                    "counter_label": counter_label,
-                })
-                if counter_label:
-                    renpy.call(counter_label)
+label debat_phase2_loop:
+    if debat_phase2_index >= len(DEBAT_PHASE2_DIALOGUES):
+        jump debat_phase2_finish
 
+    $ debat_phase2_current_dialogue = DEBAT_PHASE2_DIALOGUES[debat_phase2_index]
+    $ debat_phase2_current_outcome = renpy.call_screen("debat_phase2_line", dialogue_data=debat_phase2_current_dialogue)
+
+    if debat_phase2_current_outcome and debat_phase2_current_outcome.get("buzzed"):
+        $ counter_label = debat_phase2_current_outcome.get("counter_label")
+        $ debat_phase2_buzzed_ids.append(debat_phase2_current_outcome.get("id"))
+        $ debat_phase2_rebuttal_log.append({
+            "id": debat_phase2_current_outcome.get("id"),
+            "speaker": debat_phase2_current_outcome.get("speaker"),
+            "counter_label": counter_label,
+        })
+        call screen debat_phase2_objection_flash
+        if counter_label:
+            jump expression counter_label
+        jump debat_phase2_resume
+
+    $ debat_phase2_index += 1
+    jump debat_phase2_loop
+
+label debat_phase2_resume:
+    $ debat_phase2_index += 1
+    jump debat_phase2_loop
+
+label debat_phase2_finish:
     $ debat_phase2_vote_summary = debat_day3_compute_votes(store.debat_day3_live_vote_stats)
 
     "Résultat provisoire du vote : [debat_phase2_vote_summary['pour']] pour, [debat_phase2_vote_summary['abstention']] abstention, [debat_phase2_vote_summary['contre']] contre."
@@ -192,91 +283,136 @@ label debat_phase2_minigame:
 # --- Contre-arguments dédiés (1 label par réplique contredite) ---
 
 label debat_phase2_counter_d1:
-    noam "Mara, supprimer le filet d'un coup est trop risqué."
-    nyra "Je suis d'accord, on peut encadrer sans abandonner les plus fragiles."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Mara, supprimer le filet", "d'un coup, c'est", "trop risqué."]},
+        {"speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "raison", "lines": ["On peut encadrer", "sans abandonner", "les plus fragiles."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"mara": -1, "nyra": 1, "iris": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d2:
-    noam "Elias, l'effort doit être récompensé, mais pas au prix d'abus incontrôlés."
-    elias "...Si c'est régulé intelligemment, je peux l'entendre."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["L'effort doit être", "récompensé, mais", "pas les abus."]},
+        {"speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "reflexion", "lines": ["Si c'est régulé", "intelligemment...", "je peux l'entendre."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"elias": -1, "sael": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d3:
-    noam "Lysa a raison : liberté oui, abandon non."
-    sael "On garde un socle commun, sinon ce vote explose."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Liberté, oui.", "Abandon", "non."]},
+        {"speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "mefiant", "lines": ["On garde un socle", "commun sinon", "le vote explose."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"lysa": 1, "sael": 1, "julian": -1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d4:
-    noam "Julian, corriger un système et le détruire, c'est pas pareil."
-    tomas "Un audit en amont éviterait un chaos total."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Corriger un système", "et le détruire,", "c'est différent."]},
+        {"speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "reflechit", "lines": ["Un audit en amont", "évite un", "chaos total."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"julian": -1, "tomas": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d5:
-    noam "Iris, on peut verrouiller les prix des denrées vitales."
-    iris "Si ce verrou est réel, j'accepte d'écouter la suite."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["On peut verrouiller", "les prix des", "denrées vitales."]},
+        {"speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "neutre", "lines": ["Si ce verrou est", "réel, j'écoute", "la suite."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"iris": 1, "elen": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d6:
-    noam "Tomas, on lance une phase pilote courte, pas une bascule brutale."
-    tomas "Avec ça... oui, on peut tester proprement."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["On lance une phase", "pilote, pas", "une bascule brutale."]},
+        {"speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "reflechit", "lines": ["Avec ça,", "on peut tester", "proprement."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"tomas": 1, "kael": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d7:
-    noam "Elen, concurrence oui, mais dans un cadre clair."
-    elen "Tant que la sécurité minimale est maintenue, ça me va."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Concurrence oui,", "mais dans", "un cadre clair."]},
+        {"speaker": "Elen", "speaker_tag": "elen", "speaker_expr": "joie", "lines": ["Si la sécurité", "reste minimale,", "ça me va."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"elen": 1, "mara": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d8:
-    noam "Kael, un marché légal traçable réduit justement le noir."
-    kael "Si la traçabilité est vérifiable, c'est défendable."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Un marché légal", "traçable réduit", "le noir."]},
+        {"speaker": "Kael", "speaker_tag": "kael", "speaker_expr": "reflexion", "lines": ["Si c'est vérifiable,", "alors c'est", "défendable."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"kael": 2, "nyra": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d9:
-    noam "Nyra, contrôle tournant et audits publics : personne ne confisque les stocks."
-    nyra "D'accord. Dans ce cadre, c'est plus stable."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Contrôle tournant", "et audits publics,", "pas de confiscation."]},
+        {"speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "raison", "lines": ["Dans ce cadre,", "c'est", "plus stable."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"nyra": 1, "iris": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d10:
-    noam "Ryn, on découpe la réforme en étapes mesurables."
-    ryn "...Si les étapes sont réversibles, je peux suivre."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["On découpe", "en étapes", "mesurables."]},
+        {"speaker": "Ryn", "speaker_tag": "ryn", "speaker_expr": "determine", "lines": ["Si elles sont", "réversibles,", "je peux suivre."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"ryn": 2, "mara": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d11:
-    noam "Sael, on ajoute des clauses de secours automatiques."
-    sael "Là, on parle d'un texte qui peut survivre à la réalité."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["On ajoute", "des clauses", "de secours."]},
+        {"speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "mefiant", "lines": ["Là, c'est", "un texte qui", "survit au réel."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"sael": 1, "julian": -1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d12:
-    noam "L'expérience de la pénurie doit servir à calibrer, pas bloquer toute évolution."
-    mara "...Je veux des garanties écrites."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["La pénurie doit", "servir à calibrer,", "pas tout bloquer."]},
+        {"speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "reflexion", "lines": ["Je veux des", "garanties", "écrites."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"mara": -1, "lysa": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d13:
-    noam "Le risque est acceptable seulement avec des seuils d'alerte précis."
-    julian "OK, si on grave ces seuils dans l'amendement."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Le risque n'est", "acceptable qu'avec", "des seuils clairs."]},
+        {"speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "reflexion", "lines": ["OK, si ces seuils", "sont gravés", "dans l'amendement."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"julian": -1, "tomas": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d14:
-    noam "Exact. Le critère n°1 reste : tout le monde mange demain."
-    iris "Dans ce cas, je défends cette version amendée."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Critère numéro un :", "tout le monde", "mange demain."]},
+        {"speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "neutre", "lines": ["Dans ce cas,", "je défends", "cette version."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"iris": 1, "ryn": 1})
-    return
+    jump debat_phase2_resume
 
 label debat_phase2_counter_d15:
-    noam "Décider vite n'a aucune valeur si la décision est intenable."
-    elias "...Très bien. On tranche, mais sur une version sécurisée."
+    $ seq = [
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Décider vite", "ne vaut rien", "si c'est intenable."]},
+        {"speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "reflexion", "lines": ["On tranche alors", "sur une version", "sécurisée."]},
+    ]
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"elias": -1, "elen": 1, "sael": 1})
-    return
+    jump debat_phase2_resume
