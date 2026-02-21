@@ -2,9 +2,18 @@
 errors listed below, and try again.
 
 
-File "game/scenario/3_canon.rpy", line 2136: expected statement.
-    silence
-           ^
+File "game/minigame_debat_phase2.rpy", line 606: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+    ^
+            "lines": [
+                "Changer, oui. Mais",
+                "sans créer une fracture",
+                "qu’on ne pourra pas contenir."
+            ]},
+
+File "game/minigame_debat_phase2.rpy", line 612: expected statement.
+    ]
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Feb 19 11:11:16 2026
+Sat Feb 21 15:44:02 2026

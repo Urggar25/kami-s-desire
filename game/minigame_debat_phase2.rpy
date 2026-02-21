@@ -5,9 +5,10 @@ default debat_phase2_rebuttal_log = []
 default debat_phase2_vote_summary = {}
 default debat_day3_live_vote_stats = {}
 
-define DEBAT_PHASE2_LINE_DURATION = 5.0
+define DEBAT_PHASE2_LINE_DURATION = 6.0
 
 define DEBAT_PHASE2_FADE_TIME = 0.35
+define DEBAT_PHASE2_REBUTTAL_LINE_DURATION = 5.0
 
 image kami_debat_background = "images/background/bg_conclave.png"
 
@@ -33,21 +34,21 @@ transform debat_phase2_objection_shock:
 
 init python:
     DEBAT_PHASE2_DIALOGUES = [
-        {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d1", "lines": ["Abolir la distribution,", "c'est condamner", "les plus fragiles."]},
-        {"id": "d2", "speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d2", "lines": ["Le marché libre va", "récompenser ceux", "qui se bougent."]},
-        {"id": "d3", "speaker": "Lysa", "speaker_tag": "lysa", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d3", "lines": ["Vous confondez", "liberté économique", "et abandon collectif."]},
-        {"id": "d4", "speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d4", "lines": ["Le système est lent,", "opaque...", "et tue l'initiative."]},
-        {"id": "d5", "speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d5", "lines": ["Si les prix flambent,", "certains ne", "mangeront plus."]},
-        {"id": "d6", "speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d6", "lines": ["On n'a même pas", "simulé l'impact", "logistique."]},
-        {"id": "d7", "speaker": "Elen", "speaker_tag": "elen", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d7", "lines": ["Sans concurrence,", "la qualité stagne", "pour tout le monde."]},
-        {"id": "d8", "speaker": "Kael", "speaker_tag": "kael", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d8", "lines": ["On va créer", "un marché noir", "impossible à contrôler."]},
-        {"id": "d9", "speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d9", "lines": ["Le vrai sujet...", "qui contrôle", "les stocks critiques ?"]},
-        {"id": "d10", "speaker": "Ryn", "speaker_tag": "ryn", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d10", "lines": ["Ce texte ressemble", "à un pari", "fait avec nos vies."]},
-        {"id": "d11", "speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d11", "lines": ["Sans clauses de secours,", "je ne vote jamais", "un texte pareil."]},
-        {"id": "d12", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d12", "lines": ["Ceux qui défendent ça", "n'ont jamais connu", "la vraie pénurie."]},
-        {"id": "d13", "speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d13", "lines": ["Si on refuse", "tout risque,", "on restera bloqués."]},
-        {"id": "d14", "speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d14", "lines": ["Ce débat n'a de sens", "que si chacun", "peut manger demain."]},
-        {"id": "d15", "speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "neutre", "counter_label": "debat_phase2_counter_d15", "lines": ["On tranche ce soir,", "sinon on n'avancera", "jamais."]},
+        {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute", "counter_label": "debat_phase2_counter_d1", "lines": ["Ah, je dois commence ?? Euh...", "Abolir la distribution risque de", "condamner les plus fragiles."]},
+        {"id": "d2", "speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "determine", "counter_label": "debat_phase2_counter_d2", "lines": ["Le marché libre va", "récompenser ceux", "qui se bougent vraiment."]},
+        {"id": "d3", "speaker": "Lysa", "speaker_tag": "lysa", "speaker_expr": "opposition", "counter_label": "debat_phase2_counter_d3", "lines": ["Ceux qui se bougent, oui.", "Mais ceux qui échouent", "on les verra aussi."]},
+        {"id": "d4", "speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "taquin", "counter_label": "debat_phase2_counter_d4", "lines": ["L’échec existe déjà.", "Au moins là,", "il aura un sens."]},
+        {"id": "d5", "speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "inquiet", "counter_label": "debat_phase2_counter_d5", "lines": ["J’aime pas vraiment ça.", "Mais rester figés,", "j’aime encore moins."]},
+        {"id": "d6", "speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "raison", "counter_label": "debat_phase2_counter_d6", "lines": ["Statistiquement…", "ne rien changer", "c’est déjà tout perdre."]},
+        {"id": "d7", "speaker": "Elen", "speaker_tag": "elen", "speaker_expr": "joie", "counter_label": "debat_phase2_counter_d7", "lines": ["Alors essayons !", "Moi, j’ai envie de voir", "ce que ça peut donner."]},
+        {"id": "d8", "speaker": "Kael", "speaker_tag": "kael", "speaker_expr": "reflechit", "counter_label": "debat_phase2_counter_d8", "lines": ["Un test mal cadré peut", "coûter plus cher que", "ce qu'on connait déjà."]},
+        {"id": "d9", "speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "determine", "counter_label": "debat_phase2_counter_d9", "lines": ["Alors cadrons-le.", "Mais ne faisons pas", "semblant d’ignorer le reste."]},
+        {"id": "d10", "speaker": "Ryn", "speaker_tag": "ryn", "speaker_expr": "colere", "counter_label": "debat_phase2_counter_d10", "lines": ["Le reste ?!", "Le reste, c’est des vies !", "Pas un foutu paramètre !"]},
+        {"id": "d11", "speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "determine", "counter_label": "debat_phase2_counter_d11", "lines": ["Si on veut protéger des vies,", "il faut tout changer.", "Ca commence par ça."]},
+        {"id": "d12", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "reflexion", "counter_label": "debat_phase2_counter_d12", "lines": ["On doit bouger, oui.", "Mais étape par étape.", "Doucement."]},
+        {"id": "d13", "speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "joie", "counter_label": "debat_phase2_counter_d13", "lines": ["Je vous l’avais dit.", "On finit toujours", "par me rejoindre."]},
+        {"id": "d14", "speaker": "noam", "speaker_tag": "noam", "speaker_expr": "desaccord", "counter_label": "debat_phase2_counter_d14", "lines": ["Ton besoin d’avoir raison", "n’a rien à voir avec", "notre discussion."]},
+        {"id": "d15", "speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "determine", "counter_label": "debat_phase2_counter_d15", "lines": ["Je crois bien que", "nous sommes d’accord.", "Il faut du changement."]},
     ]
 
     DEBAT_DAY3_BASE_VOTE_STATS = {
@@ -110,7 +111,7 @@ screen debat_phase2_line(dialogue_data):
         xfill True
         yfill True
 
-    add "[dialogue_data['speaker_tag']] [dialogue_data['speaker_expr']]" at Position(xalign=0.18, yalign=1.0), debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+    add "[dialogue_data['speaker_tag']] [dialogue_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
 
     vbox:
         xalign 0.73
@@ -161,7 +162,7 @@ screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
         xfill True
         yfill True
 
-    add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.18, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+    add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
 
     vbox:
         xalign 0.73
@@ -283,136 +284,392 @@ label debat_phase2_finish:
 # --- Contre-arguments dédiés (1 label par réplique contredite) ---
 
 label debat_phase2_counter_d1:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Mara, supprimer le filet", "d'un coup, c'est", "trop risqué."]},
-        {"speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "raison", "lines": ["On peut encadrer", "sans abandonner", "les plus fragiles."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Mara, attends. On ne parle pas",
+            "de tout couper. On parle de",
+            "changer comment ça marche."
+        ]},
+
+        {"speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute",
+        "lines": [
+            "Changer, oui, d’accord.",
+            "Mais comment on fait si ça dérape ?",
+            "C’est pas toi qui assumera."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "Si. Bien au contraire",
+            "On en assumera tous les conséquences.",
+            "C’est justement pour ça qu’on en parle."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"mara": -1, "nyra": 1, "iris": 1})
+    $ debat_day3_apply_influence({"mara": -1, "iris": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d2:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["L'effort doit être", "récompensé, mais", "pas les abus."]},
-        {"speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "reflexion", "lines": ["Si c'est régulé", "intelligemment...", "je peux l'entendre."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Attends.",
+            "On parle quand même de réintroduire",
+            "de l’argent dans un système fermé."
+        ]},
+
+        {"speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "determine",
+        "lines": [
+            "Justement, cette proposition.",
+            "est plus importante, elle réintroduit,",
+            "l'argent et le fait d’obtenir ce qu'on veut."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison",
+        "lines": [
+            "Donc certains auront plus.",
+            "Et d’autres moins.",
+            "On accepte ça ?"
+        ]},
+
+        {"speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "reflexion",
+        "lines": [
+            "Parce que si on accepte ça,",
+            "on accepte aussi le retour à ce qu'on",
+            "connaissait avant, la liberté."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"elias": -1, "sael": 1})
+    $ debat_day3_apply_influence({"elias": 1, "nyra": 1, "lysa": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d3:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Liberté, oui.", "Abandon", "non."]},
-        {"speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "mefiant", "lines": ["On garde un socle", "commun sinon", "le vote explose."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Les voir, ça ne veut pas dire",
+            "les abandonner.",
+            "On peut prévoir des garde-fous."
+        ]},
+
+        {"speaker": "Ryn", "speaker_tag": "ryn", "speaker_expr": "colere",
+        "lines": [
+            "Des garde-fous ?",
+            "A Limen, c'est TRES CLAIR !",
+            "Ce sera une hécatombe."
+        ]},
+
+        {"speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "raison",
+        "lines": [
+            "Non. Pas partout.",
+            "En dehors des trois grandes villes,",
+            "on sait encore vivre autrement."
+        ]},
+
+        {"speaker": "Lysa", "speaker_tag": "lysa", "speaker_expr": "reflexion",
+        "lines": [
+            "Tout le monde ne reçoit pas de bons.",
+            "Mais la majorité est en ville.",
+            "Eux, ils feront comment ?"
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"lysa": 1, "sael": 1, "julian": -1})
+    $ debat_day3_apply_influence({"ryn": -1, "sael": 1, "lysa": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d4:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Corriger un système", "et le détruire,", "c'est différent."]},
-        {"speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "reflechit", "lines": ["Un audit en amont", "évite un", "chaos total."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "colere",
+        "lines": [
+            "Un sens ? Mais de quoi tu parles ?!",
+            "Tu parles de gens qui risquent,",
+            "de mourir ! Pas d’un foutu concept."
+        ]},
+
+        {"speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "hesitation",
+        "lines": [
+            "Je ne romantise rien.",
+            "Je dis juste que stagner",
+            "ne sauvere jamais personne."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "Alors arrête de parler",
+            "comme si l’échec était utile.",
+            "Pour certains, il sera définitif."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"julian": -1, "tomas": 1})
+    $ debat_day3_apply_influence({"tomas": 1, "lysa": 1, "nyra": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d5:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["On peut verrouiller", "les prix des", "denrées vitales."]},
-        {"speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "neutre", "lines": ["Si ce verrou est", "réel, j'écoute", "la suite."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Je comprends. MAIS...",
+            "bouger juste pour bouger,",
+            "c’est pas une solution."
+        ]},
+
+        {"speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "inquiet",
+        "lines": [
+            "Alors on fait quoi ?",
+            "On attend encore trois ans,",
+            "et on appelle ça de la prudence ?"
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison",
+        "lines": [
+            "Non. Ce n'est pas une solution non plus ...",
+            "Il faut que ça change mais...",
+            "Il faut être sûrs de ce qu'on fait."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"iris": 1, "elen": 1})
+    $ debat_day3_apply_influence({"iris": -1, "mara": -1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d6:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["On lance une phase", "pilote, pas", "une bascule brutale."]},
-        {"speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "reflechit", "lines": ["Avec ça,", "on peut tester", "proprement."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Statistiquement, d’accord.",
+            "Mais tu simplifies beaucoup.",
+            "C’est pas si binaire."
+        ]},
+
+        {"speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "hesitation",
+        "lines": [
+            "Je…",
+            "Les tendances montrent quand même",
+            "une perte progressive."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison",
+        "lines": [
+            "Une tendance n’est pas un verdict.",
+            "On peut corriger.",
+            "Sans provoquer une rupture."
+        ]},
+
+        {"speaker": "Tomas", "speaker_tag": "tomas", "speaker_expr": "panne",
+        "lines": [
+            "Oui… peut-être.",
+            "Je voulais juste dire que",
+            "le statu quo nous fragilise."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"tomas": 1, "kael": 1})
+    $ debat_day3_apply_influence({"tomas": -2})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d7:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Concurrence oui,", "mais dans", "un cadre clair."]},
-        {"speaker": "Elen", "speaker_tag": "elen", "speaker_expr": "joie", "lines": ["Si la sécurité", "reste minimale,", "ça me va."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Ce n’est pas un jeu, Elen.",
+            "On ne “voit pas ce que ça donne”.",
+            "On risque clairement des vies."
+        ]},
+
+        {"speaker": "Elen", "speaker_tag": "elen", "speaker_expr": "joie",
+        "lines": [
+            "Mais si on ne teste jamais,",
+            "on ne saura jamais !",
+            "Ça peut marcher, non ?"
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "Essayer pour essayer",
+            "ce n’est pas une stratégie.",
+            "Il nous faut un cadre clair."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"elen": 1, "mara": 1})
+    $ debat_day3_apply_influence({"elen": -2})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d8:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Un marché légal", "traçable réduit", "le noir."]},
-        {"speaker": "Kael", "speaker_tag": "kael", "speaker_expr": "reflexion", "lines": ["Si c'est vérifiable,", "alors c'est", "défendable."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Et rester comme ça",
+            "n’a aucun coût ?",
+            "On fait comme si tout allait bien ?"
+        ]},
+
+        {"speaker": "Kael", "speaker_tag": "kael", "speaker_expr": "reflechit",
+        "lines": [
+            "Non. Mais on sait au moins",
+            "ce que ça produit.",
+            "Et ce qu'on peut faire ou non."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "On sait que ça fige tout.",
+            "Que personne ne peut avancer.",
+            "Ça aussi, c’est un risque."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"kael": 2, "nyra": 1})
+    $ debat_day3_apply_influence({"kael": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d9:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Contrôle tournant", "et audits publics,", "pas de confiscation."]},
-        {"speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "raison", "lines": ["Dans ce cadre,", "c'est", "plus stable."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "On ne peut pas le cadrer.",
+            "Ce vote est binaire, soit",
+            "c'est oui, soit c'est non..."
+        ]},
+
+        {"speaker": "Nyra", "speaker_tag": "nyra", "speaker_expr": "reflexion",
+        "lines": [
+            "Alors il faut au moins",
+            "accepter ce que ça implique.",
+            "Sans être naïfs."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"nyra": 1, "iris": 1})
+    $ debat_day3_apply_influence({"nyra": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d10:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["On découpe", "en étapes", "mesurables."]},
-        {"speaker": "Ryn", "speaker_tag": "ryn", "speaker_expr": "determine", "lines": ["Si elles sont", "réversibles,", "je peux suivre."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "Je parle de vies aussi.",
+            "Celles qui étouffent déjà.",
+            "Et qu’on ne voit plus."
+        ]},
+
+        {"speaker": "Ryn", "speaker_tag": "ryn", "speaker_expr": "colere",
+        "lines": [
+            "À Limen, on les voit.",
+            "Tous les jours.",
+            "On en enterre déjà assez."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison",
+        "lines": [
+            "Justement.",
+            "Si on ne change rien,",
+            "ça continuera pareil."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"ryn": 2, "mara": 1})
+    $ debat_day3_apply_influence({"ryn": 2})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d11:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["On ajoute", "des clauses", "de secours."]},
-        {"speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "mefiant", "lines": ["Là, c'est", "un texte qui", "survit au réel."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Tout changer, d’accord.",
+            "Mais pas n’importe comment.",
+            "Pas d’un coup."
+        ]},
+
+        {"speaker": "Sael", "speaker_tag": "sael", "speaker_expr": "reflechit",
+        "lines": [
+            "Chaque retard",
+            "coûte aussi des vies.",
+            "L’inaction protège qui ?"
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "Changer, oui. Mais",
+            "sans créer une fracture",
+            "qu’on ne pourra pas contenir."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"sael": 1, "julian": -1})
+    $ debat_day3_apply_influence({"sael": 1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d12:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["La pénurie doit", "servir à calibrer,", "pas tout bloquer."]},
-        {"speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "reflexion", "lines": ["Je veux des", "garanties", "écrites."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Le problème c'est qu'on a",
+            "pas le choix. On doit voter.",
+            "Et assumer ensemble ce choix."
+        ]},
+
+        {"speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute",
+        "lines": [
+            "Et si ça déraille ?",
+            "On ne pourra pas revenir",
+            "en arrière."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "On peut ne rien changer.",
+            "c’est déjà un choix.",
+            "Mais ça a aussi un coût."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"mara": -1, "lysa": 1})
+    $ debat_day3_apply_influence({"mara": -1})
     jump debat_phase2_resume
 
 label debat_phase2_counter_d13:
+
     $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Le risque n'est", "acceptable qu'avec", "des seuils clairs."]},
-        {"speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "reflexion", "lines": ["OK, si ces seuils", "sont gravés", "dans l'amendement."]},
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "desaccord",
+        "lines": [
+            "Ce n’est pas une victoire.",
+            "On ne te rejoint pas.",
+            "On hésite encore."
+        ]},
+
+        {"speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "surpris",
+        "lines": [
+            "Je plaisantais.",
+            "On avance quand même.",
+            "C’est déjà ça."
+        ]},
+
+        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",
+        "lines": [
+            "Alors reste concentré.",
+            "Ce n’est pas ton moment.",
+            "C’est une décision lourde."
+        ]},
     ]
+
     call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"julian": -1, "tomas": 1})
-    jump debat_phase2_resume
-
-label debat_phase2_counter_d14:
-    $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "raison", "lines": ["Critère numéro un :", "tout le monde", "mange demain."]},
-        {"speaker": "Iris", "speaker_tag": "iris", "speaker_expr": "neutre", "lines": ["Dans ce cas,", "je défends", "cette version."]},
-    ]
-    call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"iris": 1, "ryn": 1})
-    jump debat_phase2_resume
-
-label debat_phase2_counter_d15:
-    $ seq = [
-        {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine", "lines": ["Décider vite", "ne vaut rien", "si c'est intenable."]},
-        {"speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "reflexion", "lines": ["On tranche alors", "sur une version", "sécurisée."]},
-    ]
-    call debat_phase2_play_rebuttal_sequence(seq)
-    $ debat_day3_apply_influence({"elias": -1, "elen": 1, "sael": 1})
     jump debat_phase2_resume

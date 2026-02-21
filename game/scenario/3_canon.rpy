@@ -2270,3 +2270,6 @@ label _3_DEBAT1_PHASE2:
     kami "Alors c'est parti !"
 
     call debat_phase2_minigame
+
+    kami "Je vois que le minijeu est terminé !"
+    kami "AHURISSANT !"
