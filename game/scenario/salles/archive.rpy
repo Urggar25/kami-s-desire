@@ -24,8 +24,14 @@ label ARCHIVE_TP:
 init python:
     config.overlay_screens.append("global_retour_button")
 
+    def _is_free_time_exploration_active():
+        room_screen = getattr(store, "pnc_room", None)
+        return bool(room_screen) and renpy.get_screen(room_screen) is not None
+
 screen global_retour_button():
-    if free_time_active:
+    zorder 250
+
+    if free_time_active and _is_free_time_exploration_active():
         imagebutton:
             idle "images/background/interact/retour.png"
             hover "images/background/interact/retour_hover.png"
