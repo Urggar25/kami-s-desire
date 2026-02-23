@@ -1,4 +1,4 @@
-﻿default decouverte_salle_canon = False
+default decouverte_salle_canon = False
 
 label CANON_TP:
     scene bg_canon at adaptive_fullscreen
@@ -56,14 +56,7 @@ screen pnc_canon():
         at cover_screen
         action Jump("CANON_PNC_VITRE")
 
-    imagebutton:
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
+    use exploration_retour_button
 
 label CANON_PNC_CANON:
     "Le canon est encore plus grand de près."

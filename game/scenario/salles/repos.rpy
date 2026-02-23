@@ -1,4 +1,4 @@
-﻿default decouverte_salle_repos = False
+default decouverte_salle_repos = False
 
 
 label REPOS_TP:
@@ -113,6 +113,8 @@ screen pnc_repos():
             yalign 0.30
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("ELEN_LINK_INTERACT")]
 
+
+    use exploration_retour_button
 
 label REPOS_PNC_BABYFOOT:
     "Le babyfoot brille trop."

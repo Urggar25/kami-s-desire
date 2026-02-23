@@ -32,16 +32,6 @@ screen pnc_archive():
     key "game_menu" action Return()
     key "K_ESCAPE" action Return()
 
-    if free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
     imagebutton:
         idle "images/background/interact/salle_archive/biblio.png"
         hover "images/background/interact/salle_archive/biblio_hover.png"
@@ -86,6 +76,8 @@ screen pnc_archive():
             xalign 0.84
             yalign 0.30
             action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("LYSA_LINK_INTERACT")]
+
+    use exploration_retour_button
 
 label ARCHIVE_PNC_BIBLIO:
 

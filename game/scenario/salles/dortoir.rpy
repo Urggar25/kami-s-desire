@@ -1,4 +1,4 @@
-﻿default dortoir_lock = True
+default dortoir_lock = True
 
 
 label DORTOIR_TP:
@@ -61,6 +61,8 @@ screen pnc_dortoir():
             yalign 0.30
             action [SetVariable("last_room_label", "DORTOIR_TP"), Jump("LYSA_LINK_INTERACT")]
 
+    use exploration_retour_button
+
 
 screen pnc_chambre():
 
@@ -81,3 +83,5 @@ screen pnc_chambre():
         ypos 0
         at cover_screen
         action Jump("CHAMBRE_CHOIX_LIT")
+
+    use exploration_retour_button

@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # SALLE DE STOCKAGE — même modèle que CANON
 # - 2 persos seulement : Noam + Nyra
 # - Découverte : abondance de matériel, libre accès encadré
@@ -64,15 +64,8 @@ screen pnc_stockage():
         at cover_screen
         action Jump("STO_PNC_REGLEMENT")
 
-    imagebutton:
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
 
+    use exploration_retour_button
 
 label STO_PNC_ETAGERES:
     window auto
