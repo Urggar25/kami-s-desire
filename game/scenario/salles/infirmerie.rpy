@@ -65,28 +65,6 @@ screen pnc_infirmerie():
         at cover_screen
         action Jump("INF_PNC_TABLE")
 
-    if free_time_active:
-        imagebutton:
-            zorder 1000
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-    if not free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-
     if free_time_active and elen_link == 3:
         imagebutton:
             idle Transform("images/character/elen/content.png", zoom=0.75)

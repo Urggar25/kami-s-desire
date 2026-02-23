@@ -52,27 +52,6 @@ screen pnc_dortoir():
             at cover_screen
             action Jump("CHAMBRE_TP")
 
-    if free_time_active:
-        imagebutton:
-            zorder 1000
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-    if not free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
     if free_time_active and lysa_link == 4:
         imagebutton:
             idle Transform("images/character/lysa/triste.png", zoom=0.75)
@@ -95,18 +74,8 @@ screen pnc_chambre():
     key "K_ESCAPE" action Return()
 
     imagebutton:
-        zorder 1000
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
-
-    imagebutton:
-        idle "images/background/interact/gymnase/banc.png"
-        hover "images/background/interact/gymnase/banc_hover.png"
+        idle "images/background/interact/chambre/lit.png"
+        hover "images/background/interact/chambre/lit_hover.png"
         focus_mask True
         xpos 0
         ypos 0

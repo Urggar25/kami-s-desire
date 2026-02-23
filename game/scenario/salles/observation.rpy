@@ -66,28 +66,6 @@ screen pnc_observation():
         at cover_screen
         action Jump("OBS_PNC_ORBITE")
 
-    if free_time_active:
-        imagebutton:
-            zorder 1000
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-    if not free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-
     if free_time_active and lysa_link == 2:
         imagebutton:
             idle Transform("images/character/lysa/reflexion.png", zoom=0.75)

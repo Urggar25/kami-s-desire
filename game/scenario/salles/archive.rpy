@@ -21,6 +21,20 @@ label ARCHIVE_TP:
 # Label d'exploration
 # -----------------------------------------------------------------------
 
+init python:
+    config.overlay_screens.append("global_retour_button")
+
+screen global_retour_button():
+    if free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
+
 screen pnc_archive():
 
     modal True
@@ -58,28 +72,6 @@ screen pnc_archive():
         ypos 0
         at cover_screen
         action Jump("ARCHIVE_PNC_HOLOGRAMME")
-
-    if free_time_active:
-        imagebutton:
-            zorder 1000
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-    if not free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
 
     if free_time_active and tomas_link in [0, 1, 2, 3, 4]:
         imagebutton:

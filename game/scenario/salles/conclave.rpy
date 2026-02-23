@@ -25,27 +25,6 @@ screen pnc_conclave():
     key "game_menu" action Return()
     key "K_ESCAPE" action Return()
 
-    if free_time_active:
-        imagebutton:
-            zorder 1000
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
-    if not free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
     if free_time_active and nyra_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/nyra/neutre.png", zoom=0.75)
