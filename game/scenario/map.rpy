@@ -1,4 +1,4 @@
-﻿# =========================
+# =========================
 #  IMAGES — CARTE CONCLAVE
 # =========================
 
@@ -44,6 +44,20 @@ image map_stockage_hover        = "images/carte/stockage_hover.png"
 # =========================
 #  SCREEN — CARTE CONCLAVE
 # =========================
+
+
+
+screen exploration_retour_button():
+
+    if free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
 
 screen conclave_map(allow_return=False):
 

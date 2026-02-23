@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # SALLE DE MAINTENANCE — même modèle que CANON
 # - 2 persos seulement : Noam + Kael
 # - Découverte : "l'envers" du Conclave (bruit, odeur d'huile, modules)
@@ -74,6 +74,8 @@ screen pnc_maintenance():
             yalign 0.76
             action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("ELIAS_LINK_INTERACT")]
 
+
+    use exploration_retour_button
 
 label MAINT_PNC_ETABLI:
     "Un établi métallique."

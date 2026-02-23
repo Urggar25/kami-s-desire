@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # INFIRMERIE — même modèle que CANON
 # - 2 persos seulement : Noam + Sael
 # - Découverte : violence autorisée au Conclave (hors commandements)
@@ -74,6 +74,8 @@ screen pnc_infirmerie():
             yalign 0.30
             action [SetVariable("last_room_label", "INFIRMERIE_TP"), Jump("ELEN_LINK_INTERACT")]
 
+
+    use exploration_retour_button
 
 label INF_PNC_MORGUE:
     window auto

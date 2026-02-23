@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # GYMNASE — même modèle que CANON
 # - 2 persos seulement : Noam + Elias
 # - Découverte : Elias s'entraîne / discussion légère
@@ -76,6 +76,8 @@ screen pnc_gymnase():
 
 
 
+
+    use exploration_retour_button
 
 label GYM_BANC_INTERACT:
     if not free_time_active:

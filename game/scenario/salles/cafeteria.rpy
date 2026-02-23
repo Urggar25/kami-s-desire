@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # CAFÉTÉRIA — même modèle que OBSERVATION / CANON
 # - Persos : Noam + Elen
 # - Rencontre : Goumi (robot cuisinier) — pas de sprite, mais il parle
@@ -94,6 +94,8 @@ screen pnc_cafeteria():
             yalign 0.30
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("ELEN_LINK_INTERACT")]
 
+
+    use exploration_retour_button
 
 label CAF_PNC_GOUMI:
 

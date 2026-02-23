@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # SALLE D'OBSERVATION — même modèle que CANON
 # - 2 persos seulement : Noam + Lysa
 # - Découverte : ils sont dans l'espace
@@ -94,6 +94,8 @@ screen pnc_observation():
             yalign 0.30
             action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("ELEN_LINK_INTERACT")]
 
+
+    use exploration_retour_button
 
 label OBS_PNC_RADIO:
     "La console radio est massive."

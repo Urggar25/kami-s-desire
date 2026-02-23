@@ -1,4 +1,4 @@
-﻿default conclave_lock = True
+default conclave_lock = True
 
 
 label CONCLAVE_TP:
@@ -43,6 +43,8 @@ screen pnc_conclave():
             yalign 0.30
             action [SetVariable("last_room_label", "CONCLAVE_TP"), Jump("ELEN_LINK_INTERACT")]
 
+
+    use exploration_retour_button
 
 label CONCLAVE_ENTREE:
     "Je rentre dans le Conclave"

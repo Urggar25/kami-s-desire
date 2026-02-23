@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # SAS DE LIVRAISON — même modèle que CANON
 # - 2 persos seulement : Noam + Mara
 # - Découverte : logistique, livraisons régulières
@@ -81,6 +81,8 @@ screen pnc_livraison():
             xalign 0.76
             yalign 0.30
             action [SetVariable("last_room_label", "LIVRAISON_TP"), Jump("SAEL_LINK_INTERACT")]
+
+    use exploration_retour_button
 
 label LIV_PNC_PORTE:
     window auto
