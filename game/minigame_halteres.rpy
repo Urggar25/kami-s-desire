@@ -16,6 +16,19 @@ default mg_zone_start = 0.40
 default mg_zone_end = 0.60
 default mg_perfect_margin = 0.05
 default mg_skip_scene_pick = False
+default mg_was_success = False
+default sport_events_pool = [
+    "sport_event_001",
+    "sport_event_002",
+    "sport_event_003",
+    "sport_event_004",
+    "sport_event_005",
+    "sport_event_006",
+    "sport_event_007",
+    "sport_event_008",
+    "sport_event_009",
+]
+default sport_events_seen = []
 
 default scenes_normales = ["scene_mg_normale_1"]
 default scenes_patreon = ["scene_mg_patreon_1"]
@@ -74,12 +87,19 @@ init python:
         if store.mg_reps >= store.mg_target_reps:
             store.mg_done = True
 
-    def mg_stat_chance():
-        max_progress = float(store.mg_target_reps * 2)
-        ratio = 0.0
-        if max_progress > 0:
-            ratio = min(1.0, store.mg_progress / max_progress)
-        return min(0.8, 0.2 + (0.6 * ratio))
+    def mg_is_successful():
+        return store.mg_progress >= store.mg_target_reps
+
+    def sport_events_left_count():
+        return len(store.sport_events_pool)
+
+    def pop_random_sport_event():
+        if not store.sport_events_pool:
+            return None
+        picked = renpy.random.choice(store.sport_events_pool)
+        store.sport_events_pool.remove(picked)
+        store.sport_events_seen.append(picked)
+        return picked
 
     def mg_pick_scene():
         pools = []
@@ -165,17 +185,42 @@ screen minijeu_halteres():
 
             textbutton "POUSSER" action Function(mg_click) xalign 0.5
 
+
+screen physique_gain_anim():
+
+    zorder 260
+    modal True
+
+    add Solid("#0008")
+
+    frame at argument_unlock_appear:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 900
+        padding (60, 40)
+        background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+
+        vbox:
+            spacing 12
+            text "STAT EN HAUSSE" at argument_unlock_pulse size 38 xalign 0.5 color "#be9c36"
+            text "Physique +1" size 48 xalign 0.5 color "#000000"
+
+    timer 2.0 action Hide("physique_gain_anim")
+
 label minijeu_halteres:
     $ mg_reset()
     call screen minijeu_halteres
 
+    $ mg_was_success = mg_is_successful()
     $ gained_physique = False
-    $ chance_physique = mg_stat_chance()
-    if renpy.random.random() < chance_physique:
+    if renpy.random.random() < 0.30:
         $ stat_physique += 1
         $ gained_physique = True
 
     if gained_physique:
+        show screen physique_gain_anim
+        pause 2.0
+        hide screen physique_gain_anim
         "Ta statistique Physique augmente."
     else:
         "Tu sens la fatigue, mais tu sais que ça finit par payer."
@@ -199,4 +244,49 @@ label scene_mg_patreon_1:
 
 label scene_mg_sexy_1:
     "Le contact s'attarde une seconde de trop, et la chaleur monte."
+    return
+
+label sport_event_001:
+    $ unlock_gallery_image("sport001")
+    "Tu termines ta série avec Elias qui corrige ton rythme sans te lâcher du regard."
+    return
+
+label sport_event_002:
+    $ unlock_gallery_image("sport002")
+    "Iris te lance un défi de vitesse au rameur et t'arrache un rire malgré la fatigue."
+    return
+
+label sport_event_003:
+    $ unlock_gallery_image("sport003")
+    "Un entraînement de gainage tourne à la compétition improvisée entre vous tous."
+    return
+
+label sport_event_004:
+    $ unlock_gallery_image("sport004")
+    "Tu croises Elias tard, et vous faites une séance silencieuse, épaule contre épaule."
+    return
+
+label sport_event_005:
+    $ unlock_gallery_image("sport005")
+    "Iris commente chacun de tes mouvements avec une ironie qui te pousse à tenir."
+    return
+
+label sport_event_006:
+    $ unlock_gallery_image("sport006")
+    "Tu termines sur le banc, vidé, pendant qu'Elias te tend une serviette en souriant."
+    return
+
+label sport_event_007:
+    $ unlock_gallery_image("sport007")
+    "Une coupure de courant stoppe les machines et vous finissez l'entraînement dans l'ombre."
+    return
+
+label sport_event_008:
+    $ unlock_gallery_image("sport008")
+    "Vous improvisez un mini match sur le terrain, et la tension retombe enfin."
+    return
+
+label sport_event_009:
+    $ unlock_gallery_image("sport009")
+    "Dernière répétition, dernier souffle ; tu sens que ton corps commence vraiment à changer."
     return

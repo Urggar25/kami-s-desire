@@ -54,7 +54,7 @@ screen pnc_gymnase():
         xpos 0
         ypos 0
         at cover_screen
-        action Jump("GYM_PNC_POIDS")
+        action Jump("GYM_BANC_INTERACT")
 
     imagebutton:
         idle "images/background/interact/retour.png"
@@ -84,6 +84,48 @@ screen pnc_gymnase():
             yalign 0.90
             action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("ELIAS_LINK_INTERACT")]
 
+
+
+
+label GYM_BANC_INTERACT:
+    if not free_time_active:
+        jump GYM_PNC_POIDS
+
+    $ events_left = sport_events_left_count()
+
+    if events_left > 0:
+        menu:
+            "Faire une session de sport ? ([events_left] évènement(s) sport restant(s))"
+            "Oui":
+                jump GYM_SPORT_MINIGAME
+            "Non":
+                "Tu préfères garder ton énergie pour plus tard."
+                jump GYMNASE_TP
+    else:
+        menu:
+            "Faire une session de sport ? (Tous les évènements sport ont été découverts)"
+            "Oui":
+                jump GYM_SPORT_MINIGAME
+            "Non":
+                "Tu préfères garder ton énergie pour plus tard."
+                jump GYMNASE_TP
+
+
+label GYM_SPORT_MINIGAME:
+    "Tu t'installes sur le banc et tu commences l'entraînement."
+
+    call minijeu_halteres from _call_minijeu_halteres_free_time
+
+    if mg_was_success:
+        $ sport_event_label = pop_random_sport_event()
+        if sport_event_label:
+            call expression sport_event_label from _call_expression_sport_event
+        else:
+            "Tu termines ta séance, satisfait de tes progrès."
+    else:
+        "La série te casse le rythme, mais tu sauras mieux gérer la prochaine fois."
+
+    jump GYMNASE_TP
 
 label GYM_PNC_TAPIS:
     "Le tapis est encore tiède."
