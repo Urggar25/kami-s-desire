@@ -1974,8 +1974,6 @@ label _3_DEBAT1_PHASE2:
 
     pause 0.5
 
-    call debat_phase2_minigame
-
     "Le silence ne dure pas bien longtemps."
 
     $ showP("mara", "reflexion", 0.40)
@@ -2174,7 +2172,7 @@ label _3_DEBAT1_PHASE2:
     nyra "A Orbite, on a pas de ressources propres..."
 
     hide ryn
-    $ showP("kael", "inquietude", 0.05)
+    $ showP("kael", "inquiet", 0.05)
     kael "Alors oui et non..."
     kael "Si on ne produit pas beaucoup de ressources, on en exploite quand même dans l'espace."
     kael "Simplement ces matériaux là ne restent pas bien longtemps chez nous, on les exporte rapidement."
@@ -2273,3 +2271,6 @@ label _3_DEBAT1_PHASE2:
 
     kami "Je vois que le minijeu est terminé !"
     kami "AHURISSANT !"
+
+# Durée : 6m05
+# Totale : 1h 48m 40s
