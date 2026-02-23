@@ -83,6 +83,7 @@ screen pnc_livraison():
             action [SetVariable("last_room_label", "LIVRAISON_TP"), Jump("SAEL_LINK_INTERACT")]
     if free_time_active:
         imagebutton:
+            zorder 1000
             idle "images/background/interact/retour.png"
             hover "images/background/interact/retour_hover.png"
             focus_mask True

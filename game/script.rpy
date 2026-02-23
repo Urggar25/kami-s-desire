@@ -335,15 +335,21 @@ init python:
     def scene_has_no_character_sprites():
         special_tokens = ("bg_cg", "bg_diffusion")
 
+        def is_sport_bg(name):
+            if not name:
+                return False
+            low = name.lower()
+            return low.startswith("sport") and low[5:].isdigit()
+
         # Cas où le BG est suivi via bg_show().
         bg_name = store.current_bg_name or ""
-        if any(token in bg_name for token in special_tokens):
+        if any(token in bg_name for token in special_tokens) or is_sport_bg(bg_name):
             return True
 
         # Cas des `scene bg_xxx` affichés directement par le script.
         for layer in ("bgcam", "master"):
             for tag in renpy.get_showing_tags(layer=layer):
-                if any(token in tag for token in special_tokens):
+                if any(token in tag for token in special_tokens) or is_sport_bg(tag):
                     return True
 
         return False
