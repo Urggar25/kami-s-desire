@@ -17,6 +17,7 @@ default mg_zone_end = 0.60
 default mg_perfect_margin = 0.05
 default mg_skip_scene_pick = False
 default mg_was_success = False
+default mg_quick_menu_prev = True
 default sport_events_pool = [
     "sport_event_001",
     "sport_event_002",
@@ -35,6 +36,11 @@ default scenes_patreon = ["scene_mg_patreon_1"]
 default scenes_sexy = ["scene_mg_sexy_1"]
 
 init python:
+    def mg_get_ui_font():
+        if renpy.loadable("game/fonts/Orbitron-Regular.ttf"):
+            return "fonts/Orbitron-Regular.ttf"
+        return "fonts/day_font.ttf"
+
     def mg_reset():
         store.mg_reps = 0
         store.mg_progress = 0
@@ -115,6 +121,49 @@ init python:
         pool = renpy.random.choice(pools)
         return renpy.random.choice(pool)
 
+transform mg_bg_idle:
+    alpha 0.82
+    linear 3.0 alpha 0.94
+    linear 3.0 alpha 0.82
+    repeat
+
+transform mg_panel_fade(delay=0.0):
+    alpha 0.0
+    yoffset 24
+    pause delay
+    easeout 0.35 alpha 1.0 yoffset 0
+
+transform mg_hud_pulse:
+    zoom 1.0
+    linear 0.35 zoom 1.02
+    linear 0.35 zoom 1.0
+    repeat
+
+transform mg_feedback_pop:
+    alpha 0.0
+    zoom 0.85
+    easeout 0.18 alpha 1.0 zoom 1.0
+
+style mg_title_text is default:
+    color "#d8ecff"
+    size 38
+    outlines [(2, "#051321", 0, 0)]
+
+style mg_subtitle_text is default:
+    color "#97b5d5"
+    size 21
+    outlines [(1, "#051321", 0, 0)]
+
+style mg_label_text is default:
+    color "#9ec4e9"
+    size 20
+    outlines [(1, "#02101d", 0, 0)]
+
+style mg_value_text is default:
+    color "#dff1ff"
+    size 24
+    outlines [(2, "#04131f", 0, 0)]
+
 screen minijeu_halteres():
     modal True
     zorder 200
@@ -125,65 +174,127 @@ screen minijeu_halteres():
     if mg_done:
         timer 0.05 action Return()
 
-    frame:
-        style "frame"
+    default mg_font = mg_get_ui_font()
+
+    add "gym_bg.png"
+    add Solid("#020912b0")
+    add Solid("#1f5fa833") at mg_bg_idle
+
+    frame at mg_panel_fade(0.0):
         xalign 0.5
-        yalign 0.5
-        xsize 980
-        ysize 560
+        yalign 0.06
+        xsize 1480
+        ysize 165
+        background Solid("#071827c0")
+        padding (40, 22)
 
         vbox:
-            spacing 14
-            xalign 0.5
+            spacing 8
+            text "ENTRAÎNEMENT AUX HALTÈRES" style "mg_title_text" xalign 0.5 font mg_font
+            text "Synchronise ton effort avec la zone verte pour valider chaque répétition." style "mg_subtitle_text" xalign 0.5 font mg_font
 
-            text "ENTRAÎNEMENT AUX HALTÈRES" style "label_text" xalign 0.5
-            text "Clique au bon moment pour enchaîner les répétitions." xalign 0.5
+    hbox:
+        xalign 0.5
+        yalign 0.57
+        spacing 30
+
+        frame at mg_panel_fade(0.08):
+            xsize 980
+            ysize 650
+            background Solid("#07131fcf")
+            padding (26, 26)
 
             fixed:
-                xsize 620
-                ysize 240
-                xalign 0.5
-                add Solid("#1c1c1c") xsize 620 ysize 240 xalign 0.5 yalign 0.5
-                $ dumbbell_y = int(160 - (mg_value * 110))
-                add Solid("#8f99a3") xpos 140 ypos dumbbell_y-10 xsize 40 ysize 40
-                add Solid("#e6e6e6") xpos 180 ypos dumbbell_y xsize 260 ysize 18
-                add Solid("#8f99a3") xpos 440 ypos dumbbell_y-10 xsize 40 ysize 40
-                add Solid("#2d2d2d") xpos 130 ypos dumbbell_y-14 xsize 60 ysize 48
-                add Solid("#2d2d2d") xpos 440 ypos dumbbell_y-14 xsize 60 ysize 48
-                add Solid("#3f3f3f") xpos 200 ypos 190 xsize 220 ysize 6
+                xfill True
+                yfill True
+                add Solid("#0f2439") xsize 928 ysize 598
+                add Solid("#1f8fff18") xsize 928 ysize 598 at mg_bg_idle
+
+                $ dumbbell_y = int(440 - (mg_value * 300))
+                add Solid("#9fb3c7") xpos 320 ypos dumbbell_y xsize 280 ysize 22
+                add Solid("#232f3a") xpos 264 ypos dumbbell_y-13 xsize 66 ysize 48
+                add Solid("#232f3a") xpos 595 ypos dumbbell_y-13 xsize 66 ysize 48
+                add Solid("#576572") xpos 280 ypos dumbbell_y-9 xsize 40 ysize 40
+                add Solid("#576572") xpos 604 ypos dumbbell_y-9 xsize 40 ysize 40
+                add Solid("#57e86c") xpos 300 ypos 540 xsize 320 ysize 6 at mg_hud_pulse
+
                 if renpy.has_image("noam neutre"):
-                    add "noam neutre" xpos 30 yalign 1.0 zoom 0.5
+                    add "noam neutre" xpos 40 yalign 1.0 zoom 0.82
                 else:
-                    text "NOAM" xpos 40 yalign 1.0
+                    text "NOAM" xpos 68 yalign 1.0 style "mg_value_text" font mg_font
 
-            hbox:
-                spacing 24
-                xalign 0.5
+        vbox at mg_panel_fade(0.14):
+            spacing 20
+
+            frame:
+                xsize 470
+                ysize 150
+                background Solid("#06111dd8")
+                padding (20, 18)
+
                 vbox:
                     spacing 8
-                    text "Énergie" xalign 0.0
-                    bar value mg_energy range 1.0 xsize 520
+                    text "RÉPÉTITIONS" style "mg_label_text" font mg_font
+                    text "[mg_reps]/[mg_target_reps]" style "mg_value_text" xalign 0.5 font mg_font
+                    if mg_feedback:
+                        text "[mg_feedback]" at mg_feedback_pop style "mg_subtitle_text" color mg_feedback_color xalign 0.5 font mg_font
+
+            frame:
+                xsize 470
+                ysize 308
+                background Solid("#06111dd8")
+                padding (20, 18)
+
                 vbox:
-                    spacing 8
-                    text "Temps" xalign 0.0
-                    bar value mg_time_left range 60.0 xsize 200
+                    spacing 14
 
-            text "Rythme" xalign 0.5
-            fixed:
-                xsize 720
-                ysize 30
-                add Solid("#2b2b2b") xsize 720 ysize 30
-                $ zone_width = (mg_zone_end - mg_zone_start)
-                add Solid("#3fa34d") xpos int(mg_zone_start * 720) xsize int(zone_width * 720) ysize 30
-                add Solid("#f5f5f5") xpos int(mg_value * 720) xsize 8 ysize 30
+                    text "ÉNERGIE // CHARGE MUSCULAIRE" style "mg_label_text" font mg_font
+                    fixed:
+                        xsize 430
+                        ysize 40
+                        add Solid("#0d2235") xsize 430 ysize 40
+                        add Solid("#3ed06f") xsize int(430 * mg_energy) ysize 40
+                        add Solid("#ffffff20") xsize int(430 * mg_energy) ysize 16
 
-            text "⬆   ⬇  (clic ou touche)" xalign 0.5
-            text "Répétitions : [mg_reps]/[mg_target_reps]" xalign 0.5
+                    text "RYTHME // FENÊTRE D'EFFORT" style "mg_label_text" font mg_font
+                    fixed:
+                        xsize 430
+                        ysize 34
+                        add Solid("#11293f") xsize 430 ysize 34
+                        $ zone_width = (mg_zone_end - mg_zone_start)
+                        add Solid("#22c065") xpos int(mg_zone_start * 430) xsize int(zone_width * 430) ysize 34 at mg_hud_pulse
+                        add Solid("#f4faff") xpos int(mg_value * 430) xsize 8 ysize 34
 
-            if mg_feedback:
-                text "[mg_feedback]" xalign 0.5 color mg_feedback_color
+                    text "TEMPS // CHRONO" style "mg_label_text" font mg_font
+                    fixed:
+                        xsize 430
+                        ysize 28
+                        add Solid("#101e2e") xsize 430 ysize 28
+                        add Solid("#e74f4f") xsize int((mg_time_left / 60.0) * 430) ysize 28
 
-            textbutton "POUSSER" action Function(mg_click) xalign 0.5
+                    text "⬆ ⬇  Clic, ↑ ou ↓ pour pousser." style "mg_subtitle_text" xalign 0.5 font mg_font
+
+            textbutton "POUSSER":
+                action Function(mg_click)
+                xsize 470
+                ysize 94
+                text_size 34
+                text_font mg_font
+                text_color "#e6f7ff"
+                background Solid("#0d3b63")
+                hover_background Solid("#1e7fce")
+                insensitive_background Solid("#203447")
+
+            textbutton "RETOUR":
+                action Return()
+                xalign 1.0
+                text_font mg_font
+                text_color "#9eb3c7"
+                background Solid("#091522aa")
+                hover_background Solid("#16324acc")
+
+    key "K_UP" action Function(mg_click)
+    key "K_DOWN" action Function(mg_click)
 
 
 screen physique_gain_anim():
@@ -208,8 +319,11 @@ screen physique_gain_anim():
     timer 2.0 action Hide("physique_gain_anim")
 
 label minijeu_halteres:
+    $ mg_quick_menu_prev = quick_menu
+    $ quick_menu = False
     $ mg_reset()
     call screen minijeu_halteres
+    $ quick_menu = mg_quick_menu_prev
 
     $ mg_was_success = mg_is_successful()
     $ gained_physique = False
