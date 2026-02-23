@@ -4558,4 +4558,11 @@ translate english 7332f2ed:
 translate english beb9f618:
 
     # think "Et j’essaie de dormir."
-    think "And I try to sleep."
+    think "And I try to sleep."# TODO: Translation updated at 2026-02-23 20:22
+
+# game/scenario/2_canon.rpy:593
+translate english aa8692df:
+
+    # elen "Genre 100%% des voix ? Wow, c’est hardcore comme condition…"
+    elen "100%% of the votes? Wow, that's a tough condition..."
+

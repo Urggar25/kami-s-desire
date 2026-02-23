@@ -877,3 +877,45 @@ translate english decouverte_gymnase_0147ad18:
 
     # elias "Sinon tu vas te péter quelque chose."
     elias "Otherwise you’re gonna break something."
+# TODO: Translation updated at 2026-02-23 20:22
+
+# game/scenario/salles/gymnase.rpy:94
+translate english GYM_BANC_INTERACT_28080bc1:
+
+    # "Tu préfères garder ton énergie pour plus tard."
+    "You prefer to save your energy for later."
+
+# game/scenario/salles/gymnase.rpy:102
+translate english GYM_BANC_INTERACT_28080bc1_1:
+
+    # "Tu préfères garder ton énergie pour plus tard."
+    ""
+
+# game/scenario/salles/gymnase.rpy:107
+translate english GYM_SPORT_MINIGAME_68091b23:
+
+    # "Tu t'installes sur le banc et tu commences l'entraînement."
+    "You prefer to save your energy for later.v"
+
+# game/scenario/salles/gymnase.rpy:116
+translate english GYM_SPORT_MINIGAME_88630f3a:
+
+    # "Tu termines ta séance, satisfait de tes progrès."
+    "You finish your session, satisfied with your progress."
+
+# game/scenario/salles/gymnase.rpy:118
+translate english GYM_SPORT_MINIGAME_fb53e2ed:
+
+    # "La série te casse le rythme, mais tu sauras mieux gérer la prochaine fois."
+    "The series breaks your rhythm, but you'll know how to handle it better next time."
+
+translate english strings:
+
+    # game/scenario/salles/gymnase.rpy:89
+    old "Faire une session de sport ? ([events_left] évènement(s) sport restant(s))"
+    new "Want to do a sports session? ([events_left] remaining sports event(s))"
+
+    # game/scenario/salles/gymnase.rpy:97
+    old "Faire une session de sport ? (Tous les évènements sport ont été découverts)"
+    new "Want to do some exercise? (All sporting events have been discovered)"
+

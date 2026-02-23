@@ -2889,3 +2889,17 @@ translate english strings:
     # game/scenario/character/nyra.rpy:9
     old "Passer du temps avec Nyra ?"
     new "Spend time with Nyra?"
+# TODO: Translation updated at 2026-02-23 20:22
+
+# game/scenario/character/nyra.rpy:154
+translate english nyra_link_2_4f79e51d:
+
+    # nyra "Assieds-toi."
+    nyra "Sit down."
+
+# game/scenario/character/nyra.rpy:408
+translate english nyra_link_4_8daa7dbd:
+
+    # noam "Tu t'ennuies."
+    noam "You're bored."
+
