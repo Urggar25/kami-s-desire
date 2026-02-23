@@ -8,6 +8,7 @@
 
 default decouverte_infirmerie = False
 
+
 label INFIRMERIE_TP:
     scene bg_infirmerie at adaptive_fullscreen
 
@@ -64,14 +65,25 @@ screen pnc_infirmerie():
         at cover_screen
         action Jump("INF_PNC_TABLE")
 
-    imagebutton:
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
+    if free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
+
+    if not free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
 
 
     if free_time_active and elen_link == 3:

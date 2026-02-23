@@ -8,6 +8,7 @@
 default decouverte_gymnase = False
 
 
+
 label GYMNASE_TP:
     scene bg_gymnase at adaptive_fullscreen
 
@@ -56,14 +57,25 @@ screen pnc_gymnase():
         at cover_screen
         action Jump("GYM_BANC_INTERACT")
 
-    imagebutton:
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
+    if free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
+
+    if not free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
 
 
 
@@ -124,6 +136,9 @@ label GYM_SPORT_MINIGAME:
             "Tu termines ta séance, satisfait de tes progrès."
     else:
         "La série te casse le rythme, mais tu sauras mieux gérer la prochaine fois."
+
+    if free_time_active:
+        jump FREE_TIME_END
 
     jump GYMNASE_TP
 

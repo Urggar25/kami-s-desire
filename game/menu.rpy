@@ -189,7 +189,7 @@ screen main_menu():
 
 # ------------------------------------------------------------
 # Galerie CG
-# - 16 images par page (4 x 4)
+# - 12 images par page (4 x 3)
 # - unlock_gallery_image("bg_cg001") débloque aussi bg_cg001_1, _2, etc.
 # ------------------------------------------------------------
 screen gallery_menu():
@@ -203,7 +203,7 @@ screen gallery_menu():
     default selected_variant_index = 0
     default gallery_section = "cg"
 
-    $ page_size = 16
+    $ page_size = 12
     $ active_catalog = GALLERY_CG_CATALOG if gallery_section == "cg" else GALLERY_SPORT_CATALOG
     $ total_items = len(active_catalog)
     $ total_pages = max(1, (total_items + page_size - 1) // page_size)
@@ -263,16 +263,24 @@ screen gallery_menu():
                     xalign 0.5
 
                     textbutton "CG":
+                        background Solid("#2f2f2f")
+                        hover_background Solid("#4a4a4a")
+                        if gallery_section == "cg":
+                            background Solid("#be9c36")
+                            hover_background Solid("#d8b44f")
                         action [SetScreenVariable("gallery_section", "cg"), SetScreenVariable("gallery_page", 0)]
 
                     textbutton "Sport":
+                        background Solid("#2f2f2f")
+                        hover_background Solid("#4a4a4a")
+                        if gallery_section == "sport":
+                            background Solid("#be9c36")
+                            hover_background Solid("#d8b44f")
                         action [SetScreenVariable("gallery_section", "sport"), SetScreenVariable("gallery_page", 0)]
 
-                $ section_name = "CG" if gallery_section == "cg" else "Sport"
-                text "Section : [section_name]" xalign 0.5 size 26 color "#DDD"
                 text "Page [gallery_page + 1]/[total_pages]" xalign 0.5 size 24 color "#DDD"
 
-                grid 4 4:
+                grid 4 3:
                     xalign 0.5
                     yalign 0.5
                     spacing 12

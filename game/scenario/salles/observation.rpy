@@ -8,6 +8,7 @@
 
 default decouverte_salle_observation = False
 
+
 label OBSERVATION_TP:
     scene bg_observation at adaptive_fullscreen
 
@@ -65,14 +66,25 @@ screen pnc_observation():
         at cover_screen
         action Jump("OBS_PNC_ORBITE")
 
-    imagebutton:
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
+    if free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
+
+    if not free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
 
 
     if free_time_active and lysa_link == 2:
