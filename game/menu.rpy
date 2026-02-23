@@ -62,11 +62,12 @@ init python:
     import re
 
     _cg_pattern = re.compile(r"^images/background/(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp)$")
+    _sport_pattern = re.compile(r"^images/background/(sport\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp)$")
 
-    def _gallery_catalog():
+    def _build_gallery_catalog(pattern):
         catalog = {}
         for path in renpy.list_files():
-            match = _cg_pattern.match(path)
+            match = pattern.match(path)
             if not match:
                 continue
 
@@ -84,10 +85,12 @@ init python:
             ordered.append((base_name, sprites))
         return ordered
 
-    GALLERY_CG_CATALOG = _gallery_catalog()
+    GALLERY_CG_CATALOG = _build_gallery_catalog(_cg_pattern)
+    GALLERY_SPORT_CATALOG = _build_gallery_catalog(_sport_pattern)
 
-    def gallery_variants(base_name):
-        for cg_name, sprites in GALLERY_CG_CATALOG:
+    def gallery_variants(base_name, section="cg"):
+        catalog = GALLERY_CG_CATALOG if section == "cg" else GALLERY_SPORT_CATALOG
+        for cg_name, sprites in catalog:
             if cg_name == base_name:
                 return sprites
         return []
@@ -198,14 +201,16 @@ screen gallery_menu():
     default gallery_page = 0
     default selected_base = None
     default selected_variant_index = 0
+    default gallery_section = "cg"
 
     $ page_size = 16
-    $ total_items = len(GALLERY_CG_CATALOG)
+    $ active_catalog = GALLERY_CG_CATALOG if gallery_section == "cg" else GALLERY_SPORT_CATALOG
+    $ total_items = len(active_catalog)
     $ total_pages = max(1, (total_items + page_size - 1) // page_size)
     $ gallery_page = min(gallery_page, total_pages - 1)
     $ start = gallery_page * page_size
     $ end = min(start + page_size, total_items)
-    $ page_items = GALLERY_CG_CATALOG[start:end]
+    $ page_items = active_catalog[start:end]
 
     add Solid("#000")
 
@@ -213,7 +218,7 @@ screen gallery_menu():
     key "K_ESCAPE" action [SetScreenVariable("selected_base", None), Return()]
 
     if selected_base:
-        $ variants = gallery_variants(selected_base)
+        $ variants = gallery_variants(selected_base, gallery_section)
         $ current_variant = variants[selected_variant_index] if variants else None
 
         if current_variant:
@@ -251,7 +256,20 @@ screen gallery_menu():
             vbox:
                 spacing 18
 
-                text "Galerie CG" xalign 0.5 size 42 color "#FFF"
+                text "Galerie" xalign 0.5 size 42 color "#FFF"
+
+                hbox:
+                    spacing 12
+                    xalign 0.5
+
+                    textbutton "CG":
+                        action [SetScreenVariable("gallery_section", "cg"), SetScreenVariable("gallery_page", 0)]
+
+                    textbutton "Sport":
+                        action [SetScreenVariable("gallery_section", "sport"), SetScreenVariable("gallery_page", 0)]
+
+                $ section_name = "CG" if gallery_section == "cg" else "Sport"
+                text "Section : [section_name]" xalign 0.5 size 26 color "#DDD"
                 text "Page [gallery_page + 1]/[total_pages]" xalign 0.5 size 24 color "#DDD"
 
                 grid 4 4:
