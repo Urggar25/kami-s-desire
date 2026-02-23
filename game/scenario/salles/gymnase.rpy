@@ -59,6 +59,7 @@ screen pnc_gymnase():
 
     if free_time_active:
         imagebutton:
+            zorder 1000
             idle "images/background/interact/retour.png"
             hover "images/background/interact/retour_hover.png"
             focus_mask True

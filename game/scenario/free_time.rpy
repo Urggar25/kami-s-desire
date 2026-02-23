@@ -13,6 +13,8 @@ label START_FREE_TIME(next_label=None):
 
     $ free_time_active = True
     $ free_time_next_label = next_label
+    $ conclave_lock = False
+    $ dortoir_lock = False
 
     call screen free_time_transition()
 
