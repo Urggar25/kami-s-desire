@@ -21,20 +21,6 @@ label ARCHIVE_TP:
 # Label d'exploration
 # -----------------------------------------------------------------------
 
-init python:
-    config.overlay_screens.append("global_retour_button")
-
-screen global_retour_button():
-    if free_time_active:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("OPEN_CONCLAVE_MAP")
-
 screen pnc_archive():
 
     modal True
@@ -45,6 +31,16 @@ screen pnc_archive():
 
     key "game_menu" action Return()
     key "K_ESCAPE" action Return()
+
+    if free_time_active:
+        imagebutton:
+            idle "images/background/interact/retour.png"
+            hover "images/background/interact/retour_hover.png"
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            action Jump("OPEN_CONCLAVE_MAP")
 
     imagebutton:
         idle "images/background/interact/salle_archive/biblio.png"
