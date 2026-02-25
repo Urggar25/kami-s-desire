@@ -1869,7 +1869,7 @@ label _3_DEBAT1_PHASE1:
     sael "Donc ça veut dire qu'on a même pas la base écrite de l'amendement ?"
     sael "Comment on va faire pour en débattre sans ça ?!"
     $ bc_hide()
-    
+
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Mon dieu, je savais qu'en prenant des jeunes il aurait fallu tout expliquer !"
     kami "Zen... Tu t'y étais préparée..."
@@ -2272,5 +2272,480 @@ label _3_DEBAT1_PHASE2:
     kami "Je vois que le minijeu est terminé !"
     kami "AHURISSANT !"
 
+    jump _3_DEBAT1_PHASE3
+
 # Durée : 6m05
 # Totale : 1h 48m 40s
+init -1:
+    transform p3_arg_button_idle:
+        alpha 0.92
+        zoom 1.0
+    transform p3_arg_button_hover:
+        alpha 1.0
+        zoom 1.04
+    transform p3_arg_glow:
+        alpha 0.35
+        linear 0.6 alpha 0.75
+        linear 0.6 alpha 0.35
+        repeat
+    transform p3_arg_float:
+        yoffset 0
+        linear 1.2 yoffset -6
+        linear 1.2 yoffset 0
+        repeat
+
+screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
+    modal True
+    zorder 250
+
+    add Solid("#050a12d9")
+    add Solid("#2be1ff22") at p3_arg_glow
+
+    frame:
+        background Frame(Solid("#0e1626f2"), 20, 20)
+        xalign 0.5
+        yalign 0.5
+        xsize 1620
+        ysize 820
+        padding (40, 35)
+
+        vbox:
+            spacing 28
+            xfill True
+
+            text "INTERVENTION STRATÉGIQUE" size 52 color "#7be7ff" xalign 0.5
+            text "[prompt]" size 30 color "#d5f7ff" xalign 0.5 text_align 0.5
+
+            hbox:
+                spacing 26
+                xalign 0.5
+
+                for i, opt in enumerate(options):
+                    fixed:
+                        xsize 490
+                        ysize 560
+                        at p3_arg_float
+
+                        add Frame(Solid("#0d2037d0"), 14, 14) xfill True yfill True
+                        add Solid("#61f0ff15") at p3_arg_glow
+
+                        imagebutton:
+                            idle Solid("#142b49a0")
+                            hover Solid("#1d3f67c5")
+                            at p3_arg_button_idle
+                            xalign 0.5
+                            yalign 0.5
+                            xsize 460
+                            ysize 530
+                            action Return(i)
+
+                        vbox:
+                            xalign 0.5
+                            yalign 0.48
+                            spacing 18
+                            xmaximum 410
+
+                            text "[opt['icon']]" size 74 xalign 0.5
+                            text "[opt['title']]" size 33 color "#9deeff" xalign 0.5 text_align 0.5
+                            text "[opt['desc']]" size 25 color "#e6f6ff" xalign 0.5 text_align 0.5
+
+            text "L'impact dépend du moment et des tensions déjà installées." size 24 color "#86bdd0" xalign 0.5
+
+label _3_DEBAT1_PHASE3:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tension_phase3.mp3" fadein 1.0
+    show screen kami_broadcast_ui
+
+    $ p3_args_source = globals().get("collected_args", None)
+    if p3_args_source is None:
+        $ p3_args_source = globals().get("arguments", [])
+    if p3_args_source is None:
+        $ p3_args_source = []
+
+    $ p3_all_args = list(p3_args_source)
+    if len(p3_all_args) == 0:
+        $ p3_all_args = ["Bons de rationnement", "Difficulté d'approvisionnement", "Faiblesse d'Orbite", "L'énoncé précis", "Le monde d'avant"]
+
+    python:
+        p3_cycle = p3_all_args[:]
+        while len(p3_cycle) < 15:
+            p3_cycle.extend(p3_all_args)
+        p3_cycle = p3_cycle[:15]
+        store.p3_round_options = []
+        for ridx in range(5):
+            triplet = p3_cycle[ridx * 3:(ridx + 1) * 3]
+            card = []
+            for a in triplet:
+                low = a.lower()
+                if "ration" in low:
+                    icon = "⌬"
+                    desc = "Sécurité minimale contre la faim et le chaos."
+                elif "orbite" in low:
+                    icon = "◉"
+                    desc = "Dépendance logistique et fragilité structurelle."
+                elif "énoncé" in low or "precis" in low:
+                    icon = "⟡"
+                    desc = "Texte exact, conséquences juridiques immédiates."
+                elif "appro" in low:
+                    icon = "⬢"
+                    desc = "Ruptures passées et files de pénurie."
+                else:
+                    icon = "✦"
+                    desc = "Mémoire d'un système ancien imparfait mais vivant."
+                card.append({"title": a, "desc": desc, "icon": icon})
+            store.p3_round_options.append(card)
+
+    if "pnj_adhesion" not in globals() or pnj_adhesion is None:
+        $ pnj_adhesion = {}
+    if "julian" not in pnj_adhesion:
+        $ pnj_adhesion["julian"] = 0
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Résumons les épisodes précédents, mes petits représentants contrariés."
+    kami "Phase 2 : soupçons, anonymat, ego blessés, et une quasi-émeute rhétorique signée Julian."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    play sound "sound/sfx_table_hit.ogg"
+    kami "Vous avez surtout buté sur UNE question : les districts pauvres mangent comment si la distribution saute ?"
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Et puis ce petit bijou : sans perspective de gain, pourquoi travailler plus que son voisin ?"
+    kami "Bienvenue en Phase 3. Moins de cris. Plus de précision. En théorie."
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("noam", "raison", 0.50)
+    noam "On repart proprement."
+    noam "Deux axes : survie immédiate et motivation au travail."
+
+    $ showP("lysa", "reflexion", 0.77)
+    lysa "Et un troisième : qui profite du flou."
+
+    $ showP("mara", "agace", 0.19)
+    mara "Ça commence bien. On fait un audit pendant qu'il y en a qui comptent leurs portions."
+
+    $ showP("julian", "determine", 0.88)
+    julian "Si on garde le système tel quel, on enterre toute reprise."
+    julian "Il faut un choc."
+
+    $ showP("ryn", "colere", 0.08)
+    ryn "Un choc pour qui ? Pour ceux qui ont déjà de quoi tenir six mois ?"
+
+    hide noam
+    $ showP("tomas", "raison", 0.50)
+    tomas "Les données des trois derniers cycles montrent une baisse de productivité globale de vingt-sept pour cent."
+    tomas "Les districts sous forte assistance chutent encore plus."
+
+    $ showP("elen", "joie", 0.33)
+    elen "Donc on est d'accord ! Le système étouffe tout !"
+
+    hide elen
+    $ showP("iris", "desaccord", 0.66)
+    iris "On est d'accord sur rien du tout."
+    iris "Baisser l'effort, c'est une chose. Laisser entrer des réseaux de trafic, c'en est une autre."
+
+    hide lysa
+    $ showP("nyra", "raison", 0.77)
+    nyra "Le commerce libre sans contrôle crée des gagnants instantanés."
+    nyra "Et des zones sacrifiées."
+
+    $ showP("kael", "hesitation", 0.19)
+    kael "Mais s'il y a des quotas de base, et des couloirs d'export encadrés..."
+    kael "On pourrait relancer sans couper l'oxygène."
+
+    $ showP("sael", "mefiant", 0.93)
+    sael "Le texte ne parle pas de quotas."
+    sael "Le texte tranche."
+
+    $ showP("elias", "neutre", 0.40)
+    elias "Je pense qu'on se cache derrière la peur."
+    elias "Les gens sont fatigués d'attendre une permission pour tout."
+    elias "Si on n'ouvre jamais, on ne saura jamais ce qu'on est capables de reconstruire."
+
+    "Les regards montent vers l'écran central, comme si Kami allait immédiatement frapper."
+
+    play sound "sound/sfx_argument_impact.ogg"
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], prompt="Moment 1 — Cadrer la première salve.")
+    call _3_DEBAT1_PHASE3_INT1
+
+    $ showP("mara", "rire", 0.19)
+    mara "Bon. On avance au moins plus vite que d'habitude."
+    mara "Et c'est presque excitant."
+
+    $ showP("julian", "surpris", 0.88)
+    julian "Concentre-toi, Mara."
+
+    mara "Oh, je suis très concentrée, chéri."
+
+    $ showP("noam", "reflexion", 0.50)
+    noam "Revenons au terrain."
+    noam "Dans les districts pauvres, le problème n'est pas juste l'offre. C'est aussi la solvabilité."
+
+    $ showP("ryn", "desaccord", 0.08)
+    ryn "Exactement. Tu peux remplir les marchés, si personne ne peut payer, ça reste une vitrine."
+
+    $ showP("julian", "hesitation", 0.88)
+    julian "Alors on stimule l'emploi."
+
+    $ showP("tomas", "reflechit", 0.62)
+    tomas "À court terme, sans filet, il y aura rupture."
+    tomas "Même avec hausse de l'activité."
+
+    $ showP("elen", "inquiet", 0.33)
+    elen "Mais garder l'ancien système, c'est accepter la lente asphyxie..."
+
+    $ showP("lysa", "blase", 0.77)
+    lysa "Je vote pour arrêter les slogans et parler des délais."
+
+    play sound "sound/sfx_argument_impact.ogg"
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
+    call _3_DEBAT1_PHASE3_INT2
+
+    $ showP("iris", "hesitation", 0.66)
+    iris "Je pose un truc simple."
+    iris "Qui contrôle les routes contrôle les prix."
+    iris "Et qui contrôle les prix contrôle les gens."
+
+    $ showP("nyra", "fatigue", 0.77)
+    nyra "C'est pour ça qu'un basculement brutal est dangereux politiquement."
+
+    $ showP("sael", "desaccord", 0.93)
+    sael "Dangereux pour qui ?"
+
+    nyra "Pour ceux qui ne peuvent pas négocier."
+
+    $ showP("kael", "inquiet", 0.19)
+    kael "Les exportations peuvent financer une caisse d'urgence inter-districts..."
+    kael "Si on sanctuarise une part fixe."
+
+    $ showP("mara", "colere", 0.29)
+    mara "Encore un "si". Vous me vendez des "si" depuis une heure."
+
+    $ showP("elias", "determine", 0.40)
+    elias "On peut aussi choisir d'écrire les garde-fous après le vote d'orientation."
+    elias "C'est pas idéal, mais c'est faisable."
+
+    $ showP("noam", "raison", 0.50)
+    noam "Sauf que l'amendement qu'on juge n'a pas ces garde-fous."
+
+    play sound "sound/sfx_table_hit.ogg"
+    ryn "Voilà. Merci."
+
+    play sound "sound/sfx_argument_impact.ogg"
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[2], prompt="Moment 3 — Appuyer sur la légalité ou sur l'élan.")
+    call _3_DEBAT1_PHASE3_INT3
+
+    $ showP("julian", "determine", 0.88)
+    julian "Si on refuse chaque pas parce qu'il n'est pas parfait, on reste au point mort à vie."
+
+    $ showP("ryn", "colere", 0.08)
+    ryn "Et si on signe n'importe quoi, on condamne les mêmes qu'on prétend sauver."
+
+    $ showP("mara", "reflexion", 0.29)
+    mara "Je déteste le système actuel."
+    mara "Mais je déteste encore plus l'idée de voir des gamins troquer leur ration contre une promesse."
+
+    $ showP("elen", "determine", 0.33)
+    elen "On peut imaginer un marché libre avec une base garantie !"
+
+    $ showP("lysa", "reflexion", 0.77)
+    lysa "On peut surtout constater que ce n'est pas ce qu'on vote."
+
+    $ showP("tomas", "raison", 0.62)
+    tomas "J'ajoute un fait : lors de la suspension partielle des circuits centraux au cycle 318,"
+    tomas "les incidents de sécurité sur les axes secondaires ont doublé en dix jours."
+
+    $ showP("iris", "panne", 0.66)
+    iris "Merci. Voilà pourquoi je râle."
+
+    play sound "sound/sfx_argument_impact.ogg"
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[3], prompt="Moment 4 — Fixer la peur ou relancer l'audace.")
+    call _3_DEBAT1_PHASE3_INT4
+
+    $ showP("sael", "raison", 0.93)
+    sael "Il y a une question qu'on évite."
+    sael "L'auteur anonyme voulait-il réformer..."
+    sael "...ou provoquer une panique pour discréditer le commerce ?"
+
+    $ showP("nyra", "taquin", 0.77)
+    nyra "Les deux sont compatibles."
+
+    $ showP("noam", "hesitation", 0.50)
+    noam "Donc on tranche sur le texte, pas sur l'intention."
+
+    $ showP("elias", "neutre", 0.40)
+    elias "Je reste convaincu que fermer encore n'est plus une option."
+
+    $ showP("kael", "hesitation", 0.19)
+    kael "Je... je veux ouvrir, mais pas comme ça."
+
+    $ showP("mara", "doute", 0.29)
+    mara "Pareil."
+
+    $ showP("julian", "reflexion", 0.88)
+    julian "Alors on envoie quel signal ?"
+    julian "Qu'on accepte de pourrir doucement ?"
+
+    $ showP("ryn", "neutre", 0.08)
+    ryn "Qu'on refuse de sacrifier les plus bas sur l'autel d'un pari."
+
+    play sound "sound/sfx_argument_impact.ogg"
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[4], prompt="Moment 5 — Dernière impulsion avant la coupure.")
+    call _3_DEBAT1_PHASE3_INT5
+
+    if pnj_adhesion["julian"] >= 5:
+        $ showP("julian", "sourire", 0.88)
+        julian "Je vous entends."
+        julian "On peut bâtir une transition plus propre, mais on ne renonce pas à ouvrir."
+    elif pnj_adhesion["julian"] <= -5:
+        $ showP("julian", "colere", 0.88)
+        julian "Vous avez gagné du temps, pas une vision."
+        julian "On continuera à survivre au lieu de vivre."
+    else:
+        $ showP("julian", "hesitation", 0.88)
+        julian "J'admets que le texte est brutal."
+        julian "Mais je refuse d'enterrer l'idée d'ouverture."
+
+    pause 0.4
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    play sound "sound/sfx_table_hit.ogg"
+    kami "Oh, merveilleux. Vous avez presque réussi à penser en groupe pendant plus de trois minutes."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "Phase 4, maintenant : compromis impossible, alliances opportunistes, et peut-être un aveu."
+    kami "Restez assis. Les chaises sont verrouillées."
+
+    hide screen kami_broadcast_ui
+
+    jump _3_DEBAT1_PHASE4
+
+label _3_DEBAT1_PHASE3_INT1:
+    $ selected = p3_round_options[0][p3_pick]["title"]
+    if "énoncé" in selected.lower() or "precis" in selected.lower():
+        $ pnj_adhesion["julian"] -= 1
+        $ p3_delta_txt = "-1"
+        $ showP("lysa", "determine", 0.77)
+        lysa "Merci. Enfin quelqu'un lit le texte au lieu de l'inventer."
+        $ showP("julian", "agace", 0.88)
+        julian "Je le lis. Je refuse juste d'être paralysé par lui."
+    elif "ration" in selected.lower():
+        $ pnj_adhesion["julian"] -= 2
+        $ p3_delta_txt = "-2"
+        $ showP("ryn", "determine", 0.08)
+        ryn "Priorité à la survie. Point final."
+        $ showP("julian", "hesitation", 0.88)
+        julian "Je comprends l'urgence."
+    else:
+        $ pnj_adhesion["julian"] += 2
+        $ p3_delta_txt = "+2"
+        $ showP("elen", "joie", 0.33)
+        elen "Oui ! On peut encore relancer l'élan !"
+        $ showP("julian", "sourire", 0.88)
+        julian "Exactement."
+    "[selected] influence Julian ([p3_delta_txt])."
+    return
+
+label _3_DEBAT1_PHASE3_INT2:
+    $ selected = p3_round_options[1][p3_pick]["title"]
+    if "orbite" in selected.lower() or "appro" in selected.lower():
+        $ pnj_adhesion["julian"] -= 1
+        $ p3_delta_txt = "-1"
+        $ showP("kael", "raison", 0.19)
+        kael "Notre fragilité logistique est réelle."
+        $ showP("julian", "reflexion", 0.88)
+        julian "Je peux l'entendre."
+    elif "monde" in selected.lower():
+        $ pnj_adhesion["julian"] += 1
+        $ p3_delta_txt = "+1"
+        $ showP("elias", "sourire", 0.40)
+        elias "On n'a pas tout oublié de l'avant."
+        $ showP("julian", "sourire", 0.88)
+        julian "Enfin quelqu'un qui regarde plus loin que demain matin."
+    else:
+        $ pnj_adhesion["julian"] += 0
+        $ p3_delta_txt = "+0"
+        $ showP("noam", "neutre", 0.50)
+        noam "Argument équilibré."
+        $ showP("julian", "neutre", 0.88)
+        julian "Ça me va."
+    "[selected] influence Julian ([p3_delta_txt])."
+    return
+
+label _3_DEBAT1_PHASE3_INT3:
+    $ selected = p3_round_options[2][p3_pick]["title"]
+    if "énoncé" in selected.lower():
+        $ pnj_adhesion["julian"] -= 2
+        $ p3_delta_txt = "-2"
+        $ showP("tomas", "raison", 0.62)
+        tomas "Le texte prévaut."
+        $ showP("julian", "agace", 0.88)
+        julian "Le texte peut être amendé ensuite."
+    elif "faiblesse" in selected.lower() or "orbite" in selected.lower():
+        $ pnj_adhesion["julian"] -= 1
+        $ p3_delta_txt = "-1"
+        $ showP("nyra", "raison", 0.77)
+        nyra "On ne gouverne pas un risque systémique à l'instinct."
+        $ showP("julian", "hesitation", 0.88)
+        julian "Pas à l'instinct. À la décision."
+    else:
+        $ pnj_adhesion["julian"] += 2
+        $ p3_delta_txt = "+2"
+        $ showP("elen", "determine", 0.33)
+        elen "On a besoin d'un vrai virage !"
+        $ showP("julian", "determine", 0.88)
+        julian "Oui."
+    "[selected] influence Julian ([p3_delta_txt])."
+    return
+
+label _3_DEBAT1_PHASE3_INT4:
+    $ selected = p3_round_options[3][p3_pick]["title"]
+    if "ration" in selected.lower() or "appro" in selected.lower():
+        $ pnj_adhesion["julian"] -= 1
+        $ p3_delta_txt = "-1"
+        $ showP("mara", "reflexion", 0.29)
+        mara "Tant qu'on garantit le minimum, je garde mon couteau dans son étui."
+        $ showP("julian", "neutre", 0.88)
+        julian "Deal provisoire."
+    elif "monde" in selected.lower():
+        $ pnj_adhesion["julian"] += 1
+        $ p3_delta_txt = "+1"
+        $ showP("elias", "determine", 0.40)
+        elias "Rien ne renaît sans risque."
+        $ showP("julian", "sourire", 0.88)
+        julian "Exact."
+    else:
+        $ pnj_adhesion["julian"] += 0
+        $ p3_delta_txt = "+0"
+        $ showP("iris", "taquin", 0.66)
+        iris "Mouais. Au moins c'est pas idiot."
+        $ showP("julian", "rire", 0.88)
+        julian "Je prends."
+    "[selected] influence Julian ([p3_delta_txt])."
+    return
+
+label _3_DEBAT1_PHASE3_INT5:
+    $ selected = p3_round_options[4][p3_pick]["title"]
+    if "énoncé" in selected.lower() or "ration" in selected.lower():
+        $ pnj_adhesion["julian"] -= 1
+        $ p3_delta_txt = "-1"
+        $ showP("noam", "raison", 0.50)
+        noam "On ne signe pas un saut sans filet."
+        $ showP("julian", "hesitation", 0.88)
+        julian "Alors mettons le filet, vite."
+    elif "monde" in selected.lower() or "faiblesse" in selected.lower():
+        $ pnj_adhesion["julian"] += 2
+        $ p3_delta_txt = "+2"
+        $ showP("julian", "determine", 0.88)
+        julian "Merci. Ça, c'est un message politique fort."
+        $ showP("nyra", "neutre", 0.77)
+        nyra "Fort, oui. Stable, à voir."
+    else:
+        $ pnj_adhesion["julian"] += 0
+        $ p3_delta_txt = "+0"
+        $ showP("sael", "mefiant", 0.93)
+        sael "Le vrai choix viendra après."
+        $ showP("julian", "reflexion", 0.88)
+        julian "Peut-être."
+    "[selected] influence Julian ([p3_delta_txt])."
+    return
