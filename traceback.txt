@@ -1,7 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+  File "game/scenario/salles/infirmerie.rpy", line 474, in script call
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
   File "game/scenario/2_canon.rpy", line 1047, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
@@ -9,26 +9,16 @@ While running game code:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1523, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/3_canon.rpy", line 2272, in script call
-    call debat_phase2_minigame
-  File "game/minigame_debat_phase2.rpy", line 615, in script call
-    call debat_phase2_play_rebuttal_sequence(seq)
-  File "game/minigame_debat_phase2.rpy", line 235, in script
-    python:
-  File "game/minigame_debat_phase2.rpy", line 237, in <module>
-    renpy.call_screen("debat_phase2_rebuttal_line", entry_data=entry, duration=DEBAT_PHASE2_REBUTTAL_LINE_DURATION)
-  File "game/minigame_debat_phase2.rpy", line 154, in execute
-    screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
-  File "game/minigame_debat_phase2.rpy", line 154, in execute
-    screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
-  File "game/minigame_debat_phase2.rpy", line 165, in execute
-    add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.18, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
-Exception: DynamicImage "[entry_data['speaker_tag']] [entry_data['speaker_expr']]": could not find image. ('sael reflexion')
+  File "game/scenario/3_canon.rpy", line 2496, in script call
+    call _3_DEBAT1_PHASE3_INT1
+  File "game/scenario/3_canon.rpy", line 2701, in script
+    "[selected] influence Julian ([p3_delta_txt])."
+NameError: name 'p3_delta_txt' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/salles/infirmerie.rpy", line 481, in script call
+  File "game/scenario/salles/infirmerie.rpy", line 474, in script call
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
   File "game/scenario/2_canon.rpy", line 1047, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
@@ -36,57 +26,36 @@ Full traceback:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1523, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/3_canon.rpy", line 2272, in script call
-    call debat_phase2_minigame
-  File "game/minigame_debat_phase2.rpy", line 615, in script call
-    call debat_phase2_play_rebuttal_sequence(seq)
-  File "game/minigame_debat_phase2.rpy", line 235, in script
-    python:
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/minigame_debat_phase2.rpy", line 237, in <module>
-    renpy.call_screen("debat_phase2_rebuttal_line", entry_data=entry, duration=DEBAT_PHASE2_REBUTTAL_LINE_DURATION)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/minigame_debat_phase2.rpy", line 154, in execute
-    screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
-  File "game/minigame_debat_phase2.rpy", line 154, in execute
-    screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
-  File "game/minigame_debat_phase2.rpy", line 165, in execute
-    add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.18, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\sl2\sldisplayables.py", line 453, in sl2add
-    d = renpy.easy.displayable(d, scope=scope)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\easy.py", line 119, in displayable
-    return renpy.display.image.DynamicImage(d, scope=scope)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\image.py", line 598, in __init__
-    self.find_target(scope)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\display\image.py", line 683, in find_target
-    raise Exception(error)
-Exception: DynamicImage "[entry_data['speaker_tag']] [entry_data['speaker_expr']]": could not find image. ('sael reflexion')
+  File "game/scenario/3_canon.rpy", line 2496, in script call
+    call _3_DEBAT1_PHASE3_INT1
+  File "game/scenario/3_canon.rpy", line 2701, in script
+    "[selected] influence Julian ([p3_delta_txt])."
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1456, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\fasqu\Desktop\renpy\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\fasqu\Desktop\renpy\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\fasqu\Desktop\renpy\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'p3_delta_txt' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2
-Sat Feb 21 15:43:31 2026
+Wed Feb 25 22:59:03 2026

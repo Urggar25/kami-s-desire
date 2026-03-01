@@ -2326,7 +2326,7 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
                         ysize 560
                         at p3_arg_float
 
-                        add Frame(Solid("#0d2037d0"), 14, 14) xfill True yfill True
+                        add Frame(Solid("#0d2037d0"), 14, 14) xpos 0 ypos 0 xsize 490 ysize 560
                         add Solid("#61f0ff15") at p3_arg_glow
 
                         imagebutton:
@@ -2390,113 +2390,152 @@ label _3_DEBAT1_PHASE3:
                 elif "appro" in low:
                     icon = "⬢"
                     desc = "Ruptures passées et files de pénurie."
-                else:
+                elif "avant" in low:
                     icon = "✦"
                     desc = "Mémoire d'un système ancien imparfait mais vivant."
                 card.append({"title": a, "desc": desc, "icon": icon})
             store.p3_round_options.append(card)
 
-    if "pnj_adhesion" not in globals() or pnj_adhesion is None:
-        $ pnj_adhesion = {}
-    if "julian" not in pnj_adhesion:
-        $ pnj_adhesion["julian"] = 0
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
+    pause 0.6
+
+    show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Résumons les épisodes précédents, mes petits représentants contrariés."
-    kami "Phase 2 : soupçons, anonymat, ego blessés, et une quasi-émeute rhétorique signée Julian."
 
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    play sound "sound/sfx_table_hit.ogg"
-    kami "Vous avez surtout buté sur UNE question : les districts pauvres mangent comment si la distribution saute ?"
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Et puis ce petit bijou : sans perspective de gain, pourquoi travailler plus que son voisin ?"
-    kami "Bienvenue en Phase 3. Moins de cris. Plus de précision. En théorie."
+    kami "Oh bordel, regardez-moi ces têtes de défunts…"
+    kami "Jusque là c’était mignon : entre Julian qui se branle l’ego en public, Ryn qui hurle comme une veuve éplorée..."
+    kami "...et tout le monde qui cherche le coupable sans oser se regarder dans les yeux."
+    kami "Mais là, on passe aux choses sérieuses, mes chéris."
+    kami "Question du jour, et je veux du sang : si on coupe les distributions, qui va gérer la famine à Limen ?"
+    kami "Et surtout… pourquoi le petit peuple irait se lever le cul le matin si y’a plus de carotte au bout du bâton ?"
+    kami "Allez, montrez-moi que vous valez plus que des rations périmées. Je m’ennuie déjà."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
 
-    $ showP("noam", "raison", 0.50)
-    noam "On repart proprement."
-    noam "Deux axes : survie immédiate et motivation au travail."
+    $ showP("noam", "raison", 0.50)  # centre
+    noam "On va essayer de rester civilisés, si c’est possible."
 
-    $ showP("lysa", "reflexion", 0.77)
-    lysa "Et un troisième : qui profite du flou."
+    $ showP("julian", "determine", 0.88)  # droite
+    julian "Civilisés ? On est en train de crever doucement, Noam."
+    julian "Le statu quo, c’est une tombe collective avec des bons de pain rassis."
 
-    $ showP("mara", "agace", 0.19)
-    mara "Ça commence bien. On fait un audit pendant qu'il y en a qui comptent leurs portions."
+    $ showP("ryn", "colere", 0.12)  # gauche
+    ryn "Et ton 'choc salvateur', c’est quoi ? On sacrifie Limen pour que tes potes d’Orbite se payent des putes en or ?"
 
-    $ showP("julian", "determine", 0.88)
-    julian "Si on garde le système tel quel, on enterre toute reprise."
-    julian "Il faut un choc."
+    julian surpris "D'orbite ?!"
+    julian rire "Mais je viens de Nexus moi ! Faut suivre hein !"
 
-    $ showP("ryn", "colere", 0.08)
-    ryn "Un choc pour qui ? Pour ceux qui ont déjà de quoi tenir six mois ?"
+    ryn "Ah... Euh oui..."
+    ryn jaloux "C'est pareil façon !"
 
     hide noam
-    $ showP("tomas", "raison", 0.50)
-    tomas "Les données des trois derniers cycles montrent une baisse de productivité globale de vingt-sept pour cent."
-    tomas "Les districts sous forte assistance chutent encore plus."
+    $ showP("mara", "agace", 0.50)  # centre
+    mara "Oh ça va, Ryn, calme tes hormones."
+    mara "Mais il a pas tort : si on ouvre tout, c’est qui qui va se faire démonter en premier ? Les ventres vides ou les queues molles ?"
 
-    $ showP("elen", "joie", 0.33)
-    elen "Donc on est d'accord ! Le système étouffe tout !"
+    hide ryn
+    $ showP("kael", "culpabilite", 0.12)  # gauche
+    kael "Je… je sais pas. Peut-être qu’on pourrait garder un filet minimal ?"
+    kael "Juste le temps de… de voir si ça marche ?"
+
+    hide julian
+    $ showP("elen", "joie", 0.88)  # droite
+    elen "Mais c’est ça qui est génial !"
+    elen "On va enfin pouvoir choisir ce qu’on mange, ce qu’on fait, sans demander la permission à une IA sadique !"
+
+    hide mara
+    $ showP("lysa", "blase", 0.50)  # centre
+    lysa "Choisir avec quel argent, Elen ?"
+    lysa "T’as déjà vu un ticket de ration se transformer en crédit inter-districts par magie ?"
+
+    hide kael
+    $ showP("iris", "desaccord", 0.12)  # gauche
+    iris "Pff… évidemment que non."
+    iris "Et pendant qu’on rêve de liberté, les trafiquants se frottent déjà les mains. Bande de naïfs."
 
     hide elen
-    $ showP("iris", "desaccord", 0.66)
-    iris "On est d'accord sur rien du tout."
-    iris "Baisser l'effort, c'est une chose. Laisser entrer des réseaux de trafic, c'en est une autre."
+    $ showP("tomas", "hesitation", 0.88)  # droite
+    tomas "Euh… les chiffres des trois derniers cycles…"
+    tomas "…montrent une chute de productivité de vingt-sept pour cent dans les zones très assistées."
+    tomas "C’est… c’est pas rien, hein ?"
 
     hide lysa
-    $ showP("nyra", "raison", 0.77)
-    nyra "Le commerce libre sans contrôle crée des gagnants instantanés."
-    nyra "Et des zones sacrifiées."
+    $ showP("nyra", "raison", 0.50)  # centre
+    nyra "Les chiffres, c’est bien joli, Tomas."
+    nyra "Mais le texte de l’amendement ne parle ni de filet de sécurité, ni de transition, ni de rien."
+    nyra "C’est un couperet. Pas une réforme."
 
-    $ showP("kael", "hesitation", 0.19)
-    kael "Mais s'il y a des quotas de base, et des couloirs d'export encadrés..."
-    kael "On pourrait relancer sans couper l'oxygène."
+    hide iris
+    $ showP("sael", "mefiant", 0.12)  # gauche
+    sael "…"
 
-    $ showP("sael", "mefiant", 0.93)
-    sael "Le texte ne parle pas de quotas."
-    sael "Le texte tranche."
+    sael "Quelqu’un ici sait déjà comment ça finit."
+    sael "Et ce quelqu’un sourit."
 
-    $ showP("elias", "neutre", 0.40)
-    elias "Je pense qu'on se cache derrière la peur."
-    elias "Les gens sont fatigués d'attendre une permission pour tout."
-    elias "Si on n'ouvre jamais, on ne saura jamais ce qu'on est capables de reconstruire."
+    "Un silence lourd tombe. Tous les regards se tournent lentement vers l’écran central."
 
-    "Les regards montent vers l'écran central, comme si Kami allait immédiatement frapper."
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    kami "Oh ? Déjà la parano ? J’adore."
+    kami "Je vous rappelle que cet amendement est le fruit de VOTRE imagination !"
+    kami "Continuez, mes petits rats de laboratoire."
+    kami "Oooh ! J'adore le drama ! Je fais plus d'audimat !"
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], prompt="Moment 1 — Cadrer la première salve.")
     call _3_DEBAT1_PHASE3_INT1
 
-    $ showP("mara", "rire", 0.19)
-    mara "Bon. On avance au moins plus vite que d'habitude."
-    mara "Et c'est presque excitant."
+    stop music fadeout 1.0
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
-    $ showP("julian", "surpris", 0.88)
-    julian "Concentre-toi, Mara."
+    pause 0.8
 
-    mara "Oh, je suis très concentrée, chéri."
+    $ showP("nyra", "raison", 0.50)  # centre
+    nyra "On tourne en rond."
+    nyra "Les buzzers ont servi à rien. On est toujours au même point."
 
-    $ showP("noam", "reflexion", 0.50)
-    noam "Revenons au terrain."
-    noam "Dans les districts pauvres, le problème n'est pas juste l'offre. C'est aussi la solvabilité."
+    $ showP("elias", "determine", 0.88)  # droite
+    elias "Parce qu’on évite les vraies questions."
+    elias "On sait tous que ça peut pas continuer comme ça."
 
-    $ showP("ryn", "desaccord", 0.08)
-    ryn "Exactement. Tu peux remplir les marchés, si personne ne peut payer, ça reste une vitrine."
+    $ showP("sael", "mefiant", 0.12)  # gauche
+    sael "…"
 
-    $ showP("julian", "hesitation", 0.88)
-    julian "Alors on stimule l'emploi."
+    sael "On sait tous où ça mène."
+    sael "Mais personne veut le dire."
 
-    $ showP("tomas", "reflechit", 0.62)
-    tomas "À court terme, sans filet, il y aura rupture."
-    tomas "Même avec hausse de l'activité."
+    hide elias
+    $ showP("lysa", "blase", 0.88)  # droite
+    lysa "On a trois problèmes qui reviennent en boucle."
+    lysa "Et on fait semblant qu’ils sont séparés."
 
-    $ showP("elen", "inquiet", 0.33)
-    elen "Mais garder l'ancien système, c'est accepter la lente asphyxie..."
+    hide sael
+    $ showP("noam", "reflexion", 0.12)  # gauche
+    noam "Le passé, le texte brut de l’amendement, et la réalité des rayons vides."
+    noam "On peut pas parler de tout en même temps."
 
-    $ showP("lysa", "blase", 0.77)
-    lysa "Je vote pour arrêter les slogans et parler des délais."
+    hide nyra
+    $ showP("elen", "joie", 0.50)  # centre
+    elen "Mais il faut bien commencer quelque part !"
+    elen "Sinon on va encore tourner en rond jusqu’à demain !"
+
+    hide lysa
+    $ showP("nyra", "sourire", 0.88)  # droite – retour
+    nyra "Alors choisissez un angle."
+    nyra "Et on creuse. Pour de vrai, cette fois."
+
+    hide noam
+    $ showP("sael", "mefiant", 0.12)  # gauche – retour
+    sael "Un seul."
+    sael "Le reste attendra."
+
+    "La salle se tait. Tous attendent que quelqu’un – ou quelque chose – tranche."
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
@@ -2520,7 +2559,7 @@ label _3_DEBAT1_PHASE3:
     kael "Si on sanctuarise une part fixe."
 
     $ showP("mara", "colere", 0.29)
-    mara "Encore un "si". Vous me vendez des "si" depuis une heure."
+    mara "Encore un 'si'. Vous me vendez des 'si' depuis une heure."
 
     $ showP("elias", "determine", 0.40)
     elias "On peut aussi choisir d'écrire les garde-fous après le vote d'orientation."
@@ -2594,19 +2633,6 @@ label _3_DEBAT1_PHASE3:
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[4], prompt="Moment 5 — Dernière impulsion avant la coupure.")
     call _3_DEBAT1_PHASE3_INT5
 
-    if pnj_adhesion["julian"] >= 5:
-        $ showP("julian", "sourire", 0.88)
-        julian "Je vous entends."
-        julian "On peut bâtir une transition plus propre, mais on ne renonce pas à ouvrir."
-    elif pnj_adhesion["julian"] <= -5:
-        $ showP("julian", "colere", 0.88)
-        julian "Vous avez gagné du temps, pas une vision."
-        julian "On continuera à survivre au lieu de vivre."
-    else:
-        $ showP("julian", "hesitation", 0.88)
-        julian "J'admets que le texte est brutal."
-        julian "Mais je refuse d'enterrer l'idée d'ouverture."
-
     pause 0.4
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play sound "sound/sfx_table_hit.ogg"
@@ -2622,61 +2648,344 @@ label _3_DEBAT1_PHASE3:
 
 label _3_DEBAT1_PHASE3_INT1:
     $ selected = p3_round_options[0][p3_pick]["title"]
-    if "énoncé" in selected.lower() or "precis" in selected.lower():
-        $ pnj_adhesion["julian"] -= 1
-        $ p3_delta_txt = "-1"
-        $ showP("lysa", "determine", 0.77)
-        lysa "Merci. Enfin quelqu'un lit le texte au lieu de l'inventer."
-        $ showP("julian", "agace", 0.88)
-        julian "Je le lis. Je refuse juste d'être paralysé par lui."
-    elif "ration" in selected.lower():
-        $ pnj_adhesion["julian"] -= 2
-        $ p3_delta_txt = "-2"
-        $ showP("ryn", "determine", 0.08)
-        ryn "Priorité à la survie. Point final."
-        $ showP("julian", "hesitation", 0.88)
-        julian "Je comprends l'urgence."
-    else:
-        $ pnj_adhesion["julian"] += 2
-        $ p3_delta_txt = "+2"
-        $ showP("elen", "joie", 0.33)
-        elen "Oui ! On peut encore relancer l'élan !"
-        $ showP("julian", "sourire", 0.88)
-        julian "Exactement."
-    "[selected] influence Julian ([p3_delta_txt])."
+    
+    if "appro" in selected.lower():
+
+        scene bg_conclave at adaptive_fullscreen with dissolve
+        $ showP("noam", "reflexion", 0.50)  # centre
+        noam "Attends. Même avec les bons actuels… on trouve quoi sur les rayons ?"
+        noam "Des fruits frais ? Des médocs qui marchent ? Des pièces pour réparer une pompe ?"
+
+        $ showP("julian", "idee", 0.88)  # droite
+        julian "Rien ! C’est du vent, Noam."
+        julian "Ouvrir le commerce, c’est remplir les rayons. Point."
+
+        $ showP("mara", "agace", 0.12)  # gauche
+        mara "Ouais, super Julian. Et les districts qui produisent que dalle ?"
+        mara "Ils vendent leur cul pour une patate ou ils crèvent la dalle en silence ?"
+
+        hide noam
+        $ showP("ryn", "colere", 0.50)  # centre – remplace Noam
+        ryn "Exactement !"
+        ryn "À Limen, on a déjà des bons qui servent à rien. Tu crois que le marché va soudain nous livrer en priorité ?"
+
+        hide julian
+        $ showP("kael", "reflechit", 0.88)  # droite
+        kael "Pour le coup... C'est bien possible."
+        kael "C'est à Limen qu'il y a le plus d'habitants, donc le plus de gens prêts à acheter des choses."
+
+        hide mara
+        $ showP("lysa", "blase", 0.12)  # gauche
+        lysa "Pour ça encore faut-il que les gens aient de l'argent."
+        lysa "Puis on est pas à l'abri du traditionnel 'on exporte ailleurs, c’est plus rentable'..."
+
+        hide ryn
+        $ showP("iris", "desaccord", 0.50)  # centre
+        iris "Pff. Les prix vont exploser. Les pauvres regarderont les rayons pleins depuis dehors."
+        iris "Comme d’habitude quoi."
+
+        hide kael
+        $ showP("elen", "joie", 0.88)  # droite
+        elen "Mais imagine ! Des épices, des vrais vêtements… on pourra enfin choisir !"
+
+        hide lysa
+        $ showP("sael", "mefiant", 0.12)  # gauche
+        sael "C'est ce monde qui nous empêche de choisir…"
+        sael "Rien ne nous empêche de fabriquer ce dont on a besoin."
+
+        # Modifs adhésion légères et nuancées
+        $ debat_day3_apply_influence({"julian": 2, "ryn": 1, "mara": -1, "kael": 1, "lysa": 1, "elen": 2})
+
+        hide sael
+        hide elen 
+        hide iris
+
+    if "ration" in selected.lower() or "choix" in selected.lower():
+
+        scene bg_conclave at adaptive_fullscreen with dissolve
+
+        $ showP("noam", "reflexion", 0.50)  # centre
+        noam "On dit que les bons permettent d’avoir beaucoup de choses…"
+        noam "Mais en vrai, combien de produits sont réellement disponibles ?"
+
+        $ showP("nyra", "raison", 0.88)  # droite
+        nyra "Beaucoup sur le papier. Très peu en vrai."
+        nyra "Les bons donnent droit à des trucs standards. Pas à du choix."
+
+        $ showP("tomas", "hesitation", 0.12)  # gauche
+        tomas "Euh… les rapports indiquent souvent que 62 %% des références listées…"
+        tomas "…sont en rupture permanente dans les zones périphériques."
+        tomas "C’est… c’est pas juste un chiffre, hein ?"
+
+        hide noam
+        $ showP("mara", "agace", 0.50)  # centre
+        mara "Ouais, on a le choix entre du pain sec et du pain sec et moisi."
+        mara "Et si t’as envie d’un truc qui te fait bander les papilles, bah bonne chance."
+
+        hide nyra
+        $ showP("iris", "desaccord", 0.88)  # droite
+        iris "Pff. Et quand y’a un truc sympa, il disparaît en deux jours."
+        iris "Parce que y'a toujours un chanceux qui tombe sur la seule brioche de la décénnie, ouais."
+
+        hide tomas
+        $ showP("ryn", "colere", 0.12)  # gauche
+        ryn "C’est pas juste une question de goût !"
+        ryn "À Limen, on a des bons pour du lait… qui arrive caillé la moitié du temps."
+        ryn "Ou des médocs qui périment avant d’arriver. C’est ça votre 'nombreuses choses' ?"
+
+        hide mara
+        $ showP("elen", "joie", 0.50)  # centre – elle entre pour contrer
+        elen "Mais justement ! Si on ouvre, on aura plus de fournisseurs !"
+        elen "Plus de concurrence ; plus de choix, non ?!"
+
+        hide iris
+        $ showP("noam", "raison", 0.88)  # droite – retour
+        noam "En théorie, oui. Mais en pratique…"
+        noam "Les fournisseurs iront là où il y a du pouvoir d’achat."
+        noam "Et Limen n’en a pas beaucoup."
+
+        hide ryn
+        $ showP("elias", "determine", 0.12)  # gauche
+        elias "C’est pour ça qu’il faut que ça change."
+        elias "Avec le commerce, même Limen pourra produire et vendre quelque chose."
+        elias "Du travail, des échanges locaux… ça crée du pouvoir d’achat petit à petit."
+        elias "On peut pas rester bloqués dans ce système où tout le monde a le même ticket pour rien."
+
+        # Modifs adhésion
+        $ debat_day3_apply_influence({
+            "julian": 1,      # aime l'idée de choix via commerce
+            "ryn": 2,        # voit l'échec actuel comme preuve contre le changement
+            "mara": 1,       # agacée par l'idéalisme
+            "noam": 1,        # pragmatique, voit le potentiel mais reste prudent
+            "nyra": 1,        # politique, apprécie la nuance sur le pouvoir d'achat
+            "tomas": 1,       # factuel, les chiffres le font pencher vers le changement
+            "iris": 1,       # râleuse, reste sceptique
+            "elen": 1         # enthousiaste, adore l'idée de choix
+        })
+
+        hide elen
+        hide noam
+        hide elias
+
+        return
+
+    if "orbite" in selected.lower():
+
+        scene bg_conclave at adaptive_fullscreen with dissolve
+
+        $ showP("nyra", "raison", 0.50)  # centre
+        nyra "On parle beaucoup de Limen ces derniers temps."
+        nyra "Mais Orbite… on n’en parle jamais vraiment."
+        nyra "Là-haut, les règles ne sont pas négociables."
+
+        $ showP("kael", "mefiant", 0.88)  # droite
+        kael "Ouais… c’est pas comme chez vous."
+        kael "Un écart, et c’est fini. Pour tout le monde autour."
+        kael triste "On peut pas se permettre des… imprévus."
+
+        $ showP("noam", "reflexion", 0.12)  # gauche
+        noam "C’est pour ça que le système actuel tient Orbite entre ses griffes ?"
+        noam "Tu m'en avais rapidement parlé. Tout le monde sait à quoi s’en tenir."
+
+        hide nyra
+        $ showP("iris", "desaccord", 0.50)  # centre
+        iris "Pff. Donc si on change les règles, ça ne vous arrange pas ?"
+        iris "Et après on s’étonne que ça parte en vrille là-haut."
+
+        hide kael
+        $ showP("elen", "joie", 0.88)  # droite
+        elen "Mais peut-être qu’avec plus d’échanges, Orbite pourrait importer ce qu’il manque !"
+        elen "Plus de stabilité, plus de ressources…"
+
+        hide noam
+        $ showP("tomas", "hesitation", 0.12)  # gauche
+        tomas "Euh… en théorie, oui."
+        tomas "Mais p-paradoxalement c'est sur Orbite qu'il y a le m-moins de morts chaque année."
+
+        hide iris
+        $ showP("julian", "determine", 0.50)  # centre
+        julian "En autorisant le commerce, on ne met pas en cause la viabilité d'Orbite !"
+        julian "Au contraire : on ouvre les possibles ! Ce n'est pas comme si on créait une nouvelle interdiction !"
+
+        hide elen
+        $ showP("lysa", "blase", 0.88)  # droite
+        lysa "Et s'il y a la moindre chose qu'on ne contrôle pas, tout peut pêter."
+        lysa "Et Nyra et Kael le savent mieux que quiconque."
+
+        hide tomas
+        $ showP("nyra", "stress", 0.12)  # gauche – retour
+        nyra "On n’est pas contre le progrès, hein."
+        nyra "On est contre le risque de perdre le contrôle."
+        nyra triste "Et sur Orbite, le risque, on le paie cash. Tout de suite."
+
+        "Nyra et Kael échangent un regard bref, tendu. Personne n’insiste."
+
+        # Modifs adhésion – pénalisantes pour le changement
+        $ debat_day3_apply_influence({
+            "julian": -2,     # idéaliste mais bloqué par la réalité d'Orbite
+            "noam": 1,        # pragmatique, penche pour la stabilité
+            "nyra": -2,        # manipulatrice, utilise Orbite comme argument massue
+            "kael": -2,        # culpabilisé, terrifié
+            "tomas": 1,       # factuel, chiffres le font pencher anti-changement
+            "iris": -1,        # râleuse, horrifiée par le risque
+            "elen": -1,       # enthousiaste mais remise en question
+            "lysa": -1         # blasée, voit le pragmatisme anti
+        })
+
+        hide nyra
+        hide lysa
+        hide julian
+
     return
 
 label _3_DEBAT1_PHASE3_INT2:
     $ selected = p3_round_options[1][p3_pick]["title"]
-    if "orbite" in selected.lower() or "appro" in selected.lower():
-        $ pnj_adhesion["julian"] -= 1
-        $ p3_delta_txt = "-1"
-        $ showP("kael", "raison", 0.19)
-        kael "Notre fragilité logistique est réelle."
-        $ showP("julian", "reflexion", 0.88)
-        julian "Je peux l'entendre."
-    elif "monde" in selected.lower():
-        $ pnj_adhesion["julian"] += 1
-        $ p3_delta_txt = "+1"
-        $ showP("elias", "sourire", 0.40)
-        elias "On n'a pas tout oublié de l'avant."
-        $ showP("julian", "sourire", 0.88)
-        julian "Enfin quelqu'un qui regarde plus loin que demain matin."
-    else:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    if "avant" in selected.lower():
+        $ showP("iris", "desaccord", 0.50)  # centre
+        iris "Pff… le monde d’avant ?"
+        iris "Vous parlez comme si c’était le paradis perdu."
+        iris "Moi je m’en souviens : files interminables, prix qui doublaient sans raison…"
+
+        $ showP("elen", "joie", 0.88)  # droite
+        elen "Mais au moins on pouvait choisir !"
+        elen "Tu voulais des chaussures neuves ? Tu bossais, tu achetais !"
+        elen "Pas besoin d’attendre que Kami décide que t’as droit à des semelles usées !"
+
+        $ showP("mara", "reflexion", 0.12)  # gauche
+        mara "Choisir…"
+        mara "C’est un beau mot, Elen."
+        mara "Moi je me souviens surtout des sourires obligatoires."
+        mara "Des regards qui comptent chaque faux pas."
+        mara "Et des portes qui se ferment si tu n’es pas… parfaite."
+        mara "Mais bon… les robes étaient jolies."
+
+        hide iris
+        $ showP("julian", "determine", 0.50)  # centre
+        julian "C’était pas parfait, OK ?"
+        julian "Mais c’était vivant."
+        julian "Les gens bossaient, inventaient, échangeaient. Il y avait du mouvement."
+        julian "Aujourd’hui on est tous assis sur le même banc pourri, à attendre la même miette."
+
+        hide mara
+        $ showP("tomas", "hesitation", 0.88)  # droite
+        tomas "Euh… avant Kami, c’était surtout la guerre qui foutait le bordel."
+        tomas "Tous les matériaux, la nourriture, les pièces… réquisitionnés pour l’effort de guerre."
+        tomas "C’est pour ça que les prix explosaient et que les rayons se vidaient."
+        tomas "Maintenant la guerre est interdite… donc techniquement, ça pourrait mieux tourner."
+
+        hide julian
+        $ showP("noam", "raison", 0.12)  # gauche
+        noam "Le monde d’avant avait de la liberté pour ceux qui avaient déjà les moyens."
+        noam "Pour les autres, c’était la loi de la jungle : les riches achetaient tout, les pauvres regardaient."
+        noam "On a mis les bons et la distribution pour arrêter ça."
+
+        hide tomas
+        $ showP("elen", "joie", 0.88)  # droite – retour
+        elen "Mais on peut garder le meilleur !"
+        elen "La distribution pour les essentiels, et la liberté pour le reste !"
+        elen "Comme avant, mais sans la guerre !"
+
+        hide noam
+        $ showP("mara", "colere", 0.50)  # centre – retour
+        mara "Sans la guerre, peut-être."
+        mara "Mais sans les chaînes aussi ?"
+        mara "Tu crois que la liberté vient sans prix à payer ?"
+        mara "Moi j’ai payé cher pour le découvrir."
+
+        hide elen
+        $ showP("iris", "desaccord", 0.88)  # droite – retour
+        iris "Pff. Et maintenant c’est juste ?"
+        iris "Au moins c’est égal. Tout le monde crève pareil."
+
+        "Un silence amer s’installe. Mara détourne le regard, comme si elle regrettait déjà d’avoir parlé."
+
+        # Modifs adhésion – Mara ambivalente : nostalgique mais blessée → léger malus au changement pur
+        $ debat_day3_apply_influence({
+            "julian": 1,      # adore le retour à la liberté/vie
+            "elen": 2,        # enthousiaste, rêve du "mieux"
+            "mara": -1,       # nostalgique de la richesse mais traumatisée par les obligations (teasé subtilement)
+            "iris": 1,       # râleuse, sceptique
+            "tomas": 1       # factuel, voit que sans guerre ça pourrait marcher
+        })
+
+        hide iris
+        hide mara
+
+    elif "énoncé" in selected.lower():
+        scene bg_conclave at adaptive_fullscreen with dissolve
+
+        $ showP("ryn", "colere", 0.50)  # centre
+        ryn "Le texte est clair comme de l’eau de roche !"
+        ryn "Suppression des bons. Fin de la distribution. Point barre !"
+        ryn "Pas de 'peut-être', pas de 'minimum vital'. Rien !"
+
+        $ showP("elias", "determine", 0.88)  # droite
+        elias "Et c’est ça qui libère !"
+        elias "Fin des bons, ça veut dire qu'on coupe la laisse de Kami."
+        elias "On marchande, on échange, on vit enfin !"
+
+        hide ryn
+        $ showP("noam", "raison", 0.50)  # centre
+        noam "Le texte est binaire."
+        noam "POUR : suppression totale, liberté marchande immédiate."
+        noam "CONTRE : on garde tout tel quel."
+        noam "Y a pas d’entre-deux écrit. Pas de négociation possible."
+
+        hide elias
+        $ showP("kael", "triste", 0.88)  # droite
+        kael "Mais… on pourrait pas… juste…"
+
+        $ showP("lysa", "blase", 0.12)  # gauche
+        lysa "Interpréter ?"
+        lysa "Le texte dit suppression. Pas 'réduction'. Pas 'adaptation'."
+        lysa "C’est tout ou rien."
+
+        hide kael
+        $ showP("elias", "determine", 0.88)  # droite – reste
+        elias "C’est tout ou rien qui nous sauvera !"
+        elias "On arrête de mendier des miettes. On produit. On vend. On survit ! Merde !"
+
+        hide noam
+        $ showP("ryn", "colere", 0.50)  # centre – retour
+        ryn "Survivre ?!"
+        ryn "À Limen sans bons, on meurt en silence pendant que vous 'produisez' vos rêves !"
+        ryn "Le texte condamne les faibles. C’est écrit noir sur blanc !"
+
+        hide elias
+        $ showP("sael", "mefiant", 0.88)  # droite – retour
+        sael "Condamne ?"
+        sael "Ou délivre ?"
+
+        "Ryn frappe du poing. Sael ne cille pas. La salle retient son souffle."
+
+        # Modifs adhésion : positif = POUR suppression / changement ; négatif = CONTRE
+        $ debat_day3_apply_influence({
+            "ryn": -2,        # violemment contre (condamnation Limen)
+            "kael": -1,       # indécis, terrifié par l’absence d’entre-deux
+            "elias": 1,       # déterminé, voit la fin de la dépendance
+            "lysa": -1,       # blasée, pointe la cruauté immédiate
+            "sael": 2         # très favorable : voit la suppression comme délivrance/force vitale
+        })
+
+        hide ryn
+        hide sael
+
+    elif "appro" in selected.lower():
         $ pnj_adhesion["julian"] += 0
-        $ p3_delta_txt = "+0"
         $ showP("noam", "neutre", 0.50)
         noam "Argument équilibré."
         $ showP("julian", "neutre", 0.88)
         julian "Ça me va."
-    "[selected] influence Julian ([p3_delta_txt])."
+
     return
 
 label _3_DEBAT1_PHASE3_INT3:
     $ selected = p3_round_options[2][p3_pick]["title"]
     if "énoncé" in selected.lower():
         $ pnj_adhesion["julian"] -= 2
-        $ p3_delta_txt = "-2"
         $ showP("tomas", "raison", 0.62)
         tomas "Le texte prévaut."
         $ showP("julian", "agace", 0.88)
@@ -2690,62 +2999,8 @@ label _3_DEBAT1_PHASE3_INT3:
         julian "Pas à l'instinct. À la décision."
     else:
         $ pnj_adhesion["julian"] += 2
-        $ p3_delta_txt = "+2"
         $ showP("elen", "determine", 0.33)
         elen "On a besoin d'un vrai virage !"
         $ showP("julian", "determine", 0.88)
         julian "Oui."
-    "[selected] influence Julian ([p3_delta_txt])."
-    return
-
-label _3_DEBAT1_PHASE3_INT4:
-    $ selected = p3_round_options[3][p3_pick]["title"]
-    if "ration" in selected.lower() or "appro" in selected.lower():
-        $ pnj_adhesion["julian"] -= 1
-        $ p3_delta_txt = "-1"
-        $ showP("mara", "reflexion", 0.29)
-        mara "Tant qu'on garantit le minimum, je garde mon couteau dans son étui."
-        $ showP("julian", "neutre", 0.88)
-        julian "Deal provisoire."
-    elif "monde" in selected.lower():
-        $ pnj_adhesion["julian"] += 1
-        $ p3_delta_txt = "+1"
-        $ showP("elias", "determine", 0.40)
-        elias "Rien ne renaît sans risque."
-        $ showP("julian", "sourire", 0.88)
-        julian "Exact."
-    else:
-        $ pnj_adhesion["julian"] += 0
-        $ p3_delta_txt = "+0"
-        $ showP("iris", "taquin", 0.66)
-        iris "Mouais. Au moins c'est pas idiot."
-        $ showP("julian", "rire", 0.88)
-        julian "Je prends."
-    "[selected] influence Julian ([p3_delta_txt])."
-    return
-
-label _3_DEBAT1_PHASE3_INT5:
-    $ selected = p3_round_options[4][p3_pick]["title"]
-    if "énoncé" in selected.lower() or "ration" in selected.lower():
-        $ pnj_adhesion["julian"] -= 1
-        $ p3_delta_txt = "-1"
-        $ showP("noam", "raison", 0.50)
-        noam "On ne signe pas un saut sans filet."
-        $ showP("julian", "hesitation", 0.88)
-        julian "Alors mettons le filet, vite."
-    elif "monde" in selected.lower() or "faiblesse" in selected.lower():
-        $ pnj_adhesion["julian"] += 2
-        $ p3_delta_txt = "+2"
-        $ showP("julian", "determine", 0.88)
-        julian "Merci. Ça, c'est un message politique fort."
-        $ showP("nyra", "neutre", 0.77)
-        nyra "Fort, oui. Stable, à voir."
-    else:
-        $ pnj_adhesion["julian"] += 0
-        $ p3_delta_txt = "+0"
-        $ showP("sael", "mefiant", 0.93)
-        sael "Le vrai choix viendra après."
-        $ showP("julian", "reflexion", 0.88)
-        julian "Peut-être."
-    "[selected] influence Julian ([p3_delta_txt])."
     return
