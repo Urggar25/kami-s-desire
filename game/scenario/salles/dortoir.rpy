@@ -7,6 +7,9 @@ label DORTOIR_TP:
     if dortoir_lock:
         jump MAP_NOTHING_HERE
 
+    if free_time_active and free_time_round == 3 and not seen_voyeur_nyra:
+        jump temps_libre_salle_dortoir
+
     $ pnc_room = "pnc_dortoir"
     call screen pnc_dortoir()
 

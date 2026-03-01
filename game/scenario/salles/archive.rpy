@@ -1,4 +1,4 @@
-﻿# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # SALLE D'ARCHIVE — Connaissance fragmentée
 # - 2 persos : Noam + Tomas (uniquement à la découverte)
 # - Interactions : biblio / console / hologramme
@@ -13,6 +13,9 @@ label ARCHIVE_TP:
 
     if not decouverte_salle_archive:
         jump decouverte_salle_archive
+
+    if free_time_active and free_time_round == 2 and not seen_voyeur_mara_tomas:
+        jump temps_libre_salle_archive
 
     $ pnc_room = "pnc_archive"
     call screen pnc_archive()

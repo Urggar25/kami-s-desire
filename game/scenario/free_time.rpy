@@ -7,11 +7,13 @@ default free_time_active = False
 default free_time_next_label = None
 
 default last_room_label = None
+default free_time_round = 0
 
 
 label START_FREE_TIME(next_label=None):
 
     $ free_time_active = True
+    $ free_time_round += 1
     $ free_time_next_label = next_label
     $ conclave_lock = False
     $ dortoir_lock = False
