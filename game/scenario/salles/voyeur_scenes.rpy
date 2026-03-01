@@ -3,54 +3,50 @@ default seen_voyeur_mara_tomas = False
 default seen_voyeur_nyra = False
 default got_argument_echanges_discrets = False
 
-
 label temps_libre_salle_repos:
+    scene bg_repos at adaptive_fullscreen with dissolve
 
     $ seen_voyeur_julian_iris = True
 
-    scene bg_repos at adaptive_fullscreen
-    play sound "audio/sfx_door.mp3"
+    "La salle de repos est calme, faiblement éclairée par les veilleuses bleues. Des bancs, des distributeurs, un paravent à moitié ouvert dans le coin du fond."
+    "J'entends un rire étouffé venant de derrière le paravent. je m'approche sans bruit et regarde ce qu'il se passe."
 
-    "La salle de repos est presque vide."
-    "Le ronronnement des néons couvre à peine un souffle retenu, derrière un paravent replié."
+    scene bg_cg015 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg015")
 
-    think "Je m'arrête net."
-    think "Deux voix. Basses. Trop proches pour une simple conversation."
+    iris "Pff… t’es sérieux là ? Ici ?"
+    iris "Si quelqu’un entre…"
 
-    $ showP("julian", "taquin", 0.62)
-    $ showP("iris", "colere", 0.80)
+    julian "Justement, c’est ça qui rend ça excitant."
+    julian "Allez, Iris… détends-toi un peu. Personne ne viendra à cette heure."
 
-    julian "Tu grognes encore, mais tu t'es pas reculée."
-    iris "Je grogne parce que tu parles trop."
-    iris "Et retire pas ça de son contexte."
+    iris "T’es vraiment un crâneur…"
 
-    "Un rire bref lui échappe malgré elle."
-    "Le tissu du paravent frissonne, comme si une main glissait sous une veste."
+    "Julian se penche vers elle, glisse une main sous sa chemise entrouverte. Iris sursaute légèrement, mais ne le repousse pas."
+    "Elle râle encore, mais sa voix tremble :"
 
-    $ showP("julian", "sourire", 0.62)
-    julian "Tu vois ? Tu souris quand même."
+    iris "Arrête… ou continue, je sais plus…"
 
-    $ showP("iris", "hesitation", 0.80)
-    iris "T'approche pas de mon cou—"
-    "Il l'embrasse juste sous l'oreille."
-    "Le souffle d'Iris se coupe une seconde."
+    julian "Chut…"
 
-    iris "...T'es insupportable."
-    julian "Et toi, impossible à quitter."
+    "Il l’embrasse dans le cou, lentement. Sa main remonte sur sa poitrine, effleure sans déshabiller. Iris ferme les yeux, mord sa lèvre, un petit gémissement lui échappe malgré elle."
+    "Elle pose sa main sur celle de Julian pour la guider, mais garde son haut en place – comme si elle voulait garder le contrôle."
 
-    "Des caresses lentes passent sous les couches de tissu, discrètes, précises."
-    "Leur respiration se mélange, nerveuse, électrique."
+    iris "T’es… insupportable…"
 
-    $ showP("iris", "taquin", 0.80)
-    iris "Si quelqu'un nous voit, je nie tout."
-    julian "Alors on va leur laisser aucun angle."
+    julian "Et toi, t’es adorable quand tu râles."
 
-    think "Je recule d'un pas."
-    think "Le parquet grince à peine. Ils n'entendent rien."
-    think "Je me retire dans le couloir, sans bruit."
+    "Ils s’embrassent doucement, puis plus profondément. Les mains de Julian descendent sur ses hanches, sous sa jupe, mais sans aller trop loin – juste des caresses légères sur la peau."
+    "Iris respire plus fort, ses doigts s’agrippent à la chemise de Julian."
 
-    hide julian
-    hide iris
+    iris "Si quelqu’un nous voit… je te tue."
+
+    julian "Alors sois plus discrète…"
+
+    "Ils rient tout bas, complices. Julian murmure quelque chose à son oreille qui la fait rougir encore plus."
+
+    "Tu recules lentement dans l’ombre, le cœur battant. Ils ne t’ont pas vu. Tu sors de la salle sans un bruit."
+
     jump REPOS_TP
 
 
@@ -58,90 +54,90 @@ label temps_libre_salle_archive:
 
     $ seen_voyeur_mara_tomas = True
 
-    scene bg_archive at adaptive_fullscreen
-    play sound "audio/sfx_paper.mp3"
+    scene bg_archive at adaptive_fullscreen with dissolve
+    "Je pousse la porte de la salle des archives. C’est sombre, poussiéreux, rempli d’étagères métalliques et de vieux terminaux. L’odeur de métal froid et de papier ancien me prend à la gorge."
+    "Je m’avance doucement, quand un rire bas et provocateur me parvient du fond, derrière une rangée de casiers. Je m’approche sans bruit, restant dans l’ombre d’une pile de boîtes."
 
-    "Entre deux rayonnages, une lampe de lecture reste allumée."
-    "Je distingue Mara, adossée à un meuble bas, et Tomas, raide comme un câble tendu."
+    scene bg_cg016 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg016")
 
-    $ showP("mara", "sourire", 0.74)
-    $ showP("tomas", "panne", 0.38)
+    mara "Attends… t’es sérieux là ?"
+    mara "T’as jamais rien fait avec une fille ? Jamais ?"
 
-    mara "Attends... t'es sérieux ? Jamais, jamais ?"
-    tomas "J-je... non. Pas vraiment."
-    tomas "Enfin, non."
+    tomas "Euh… non… je… j’ai jamais eu l’occasion…"
+    tomas "C’est… c’est pas que je voulais pas, hein… c’est juste…"
 
-    $ showP("mara", "sourire", 0.74)
-    mara "C'est presque mignon."
-    mara "Viens. Je te guide. Tu paniques pas, tu suis."
+    mara "Oh mon dieu, c’est trop mignon."
+    mara "Le petit intello qui rougit dès qu’on parle de cul."
+    mara "Viens là, approche."
 
-    "Elle prend sa main avec assurance et la fait glisser sous le tissu de sa jupe, juste assez pour l'obliger à sentir la chaleur de sa peau."
-    "Tomas rougit jusqu'aux oreilles."
+    "Je me fige derrière les boîtes. Mara s’adosse à une chaise, croise les bras sous sa poitrine pour la faire remonter légèrement, elle sourit en coin."
+    "Tomas avance d’un pas hésitant, rouge jusqu’aux oreilles."
 
-    $ showP("tomas", "reflechit", 0.38)
-    tomas "Je... je dois faire quoi ?"
-    mara "Rien d'héroïque. Doucement."
-    mara "Comme si tu apprenais une machine délicate."
+    mara "Allez, touche."
+    mara "Je te jure que je mords pas… enfin, pas trop."
 
-    "Il bouge à peine les doigts."
-    "Mara souffle un rire bas, puis guide son poignet vers le haut de son buste, par-dessus son chemisier."
+    tomas "M-Mara… si quelqu’un arrive…"
 
-    $ showP("mara", "sourire", 0.74)
-    mara "Voilà. Là. Tu vois ?"
-    mara "Tu trembles, mais t'apprends vite."
+    mara "Personne vient ici. Et puis, c’est juste pour te dépuceler un peu les mains."
+    mara "Vas-y. Tu peux toucher où tu veux. Doucement."
 
-    $ showP("tomas", "raison", 0.38)
-    tomas "Pardon. Je veux pas mal faire."
-    mara "Tu fais pas mal."
-    mara "Tu découvres. Nuance."
+    "Je retiens mon souffle. Tomas tremble, mais pose une main hésitante sur sa cuisse tandis que l'autre attrape son flanc. Mara rit doucement, prend sa main et la guide lentement plus haut, sous sa jupe, sans jamais la soulever complètement."
+    "Elle garde les yeux dans les siens, provocante."
 
-    think "Je détourne les yeux avant que ça aille plus loin."
-    think "Le bruit des pages couvre mes pas quand je ressors."
+    mara "Tu sens ?"
+    mara "C’est pas sorcier. Juste… explore un peu."
 
-    hide mara
-    hide tomas
+    "Tomas respire fort, ses doigts effleurent timidement ses vêtements, puis un peu plus haut. Mara soupire de plaisir, mais garde le contrôle."
+    "Elle ne se déshabille pas – juste une main guidée, des caresses légères, un jeu de pouvoir."
+
+    mara "Pas mal pour un débutant…"
+    mara "Tu vois ? C’est pas si terrifiant."
+
+    tomas "Je… je sais pas quoi faire…"
+
+    mara "Continue comme ça. T’es pas mal du tout."
+
+    "Elle rit encore, un rire bas et taquin, tandis que Tomas continue timidement, comme hypnotisé."
+    "Je recule lentement dans l’ombre, le cœur battant. Ils ne m’ont pas vu. Je sors de la salle sans un bruit."
+
+    $ voyeur_mara_tomas_seen = True  # Flag pour débloquer une référence future ou conséquence optionnelle
+
     jump ARCHIVE_TP
-
 
 label temps_libre_salle_dortoir:
 
     $ seen_voyeur_nyra = True
 
-    scene bg_dortoir at adaptive_fullscreen
+    scene bg_dortoir at adaptive_fullscreen with dissolve
+    "Je décide de passer par le dortoir. Les couloirs sont silencieux à cette heure. Seule la lueur bleue des veilleuses éclaire les portes des chambres."
+    "Soudain, un bruit étouffé me parvient : un bourdonnement discret, suivi d’un soupir bas et contrôlé."
+    "Ça vient de la chambre de Nyra. La porte est légèrement entrouverte, juste une fine fente."
+    "Je m’approche sans un bruit, le cœur qui cogne. Je jette un œil prudent par l’interstice."
 
-    "Le dortoir est silencieux, sauf un son étouffé au fond du couloir."
-    "Un rythme court. Un souffle contrôlé."
+    scene bg_cg017 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg017")
 
-    think "La porte de Nyra est entrouverte de quelques centimètres."
-    think "Je n'aurais pas dû regarder."
+    "Nyra est allongée sur son lit, dos légèrement cambré, jupe relevée jusqu’aux hanches, haut déboutonné jusqu’à la taille."
+    "Entre ses cuisses écartées, un petit appareil artisanal – un vibromasseur qu’elle a dû fabriquer elle-même – vibre doucement contre elle."
+    "Elle le tient fermement d’une main, l’autre main sur sa poitrine, doigts pinçant un téton à travers le tissu."
+    "Ses mouvements sont précis, autoritaires : elle dirige l’objet avec assurance, comme si elle donnait des ordres à son propre corps."
+    "Un soupir rauque lui échappe. Elle murmure pour elle-même :"
+    
+    nyra "Plus fort… oui… comme ça…"
 
-    scene bg_chambre at adaptive_fullscreen
-    play sound "audio/sfx_shower.mp3"
+    "Elle accélère légèrement le rythme, les hanches se soulèvent par intermittence, cherchant le point parfait."
+    "Sa respiration devient saccadée, mais elle garde un contrôle absolu : pas de gémissements incontrôlés, juste des souffles profonds et maîtrisés."
+    "Ses yeux sont mi-clos, concentrés sur son plaisir, comme si elle analysait chaque sensation."
 
-    $ showP("nyra", "raison", 0.70)
+    "Je reste figé derrière la porte, incapable de détourner le regard. Le bourdonnement continue, régulier, hypnotique."
+    "Nyra rejette la tête en arrière, un petit spasme la traverse. Elle murmure encore :"
+    
+    nyra "C’est ça… parfait…"
 
-    "À travers la fente, je la vois, jupe remontée sur les cuisses, chemisier ouvert juste assez pour laisser sa peau prendre la lumière froide."
-    "Dans sa main, un petit appareil bricolé vibre par impulsions régulières."
+    "Elle ralentit enfin, retire doucement l’appareil, le pose sur le côté. Son souffle se calme, mais son sourire satisfait reste."
+    "Je recule lentement, le cœur battant à tout rompre. Elle ne m’a pas vu. Je m’éloigne sans un bruit, l’image gravée dans ma tête."
 
-    nyra "Tiens le rythme."
-    nyra "Pas plus vite. C'est moi qui décide."
-
-    "Elle garde le dos droit, le regard fixé sur son reflet sombre dans la vitre."
-    "Ses mouvements restent précis, presque militaires, malgré la chaleur qui lui casse la voix par moments."
-
-    $ showP("nyra", "reflexion", 0.70)
-    nyra "Encore."
-    nyra "Respire. Contrôle."
-
-    "Un gémissement lui échappe, bref, aussitôt avalé."
-    "Elle reprend le tempo, maîtresse d'elle-même jusqu'au bout des doigts."
-
-    think "Je recule lentement."
-    think "Aucune latte ne craque."
-    think "Elle ne lève jamais les yeux vers la porte."
-    think "Je disparais dans le couloir sans être vu."
-
-    hide nyra
     jump DORTOIR_TP
 
 
@@ -161,19 +157,16 @@ label temps_libre_salle_stockage_argument:
 
     $ showP("sael", "raison", 0.30)
     sael "Chez nous, je troquais déjà ça contre des repas chauds."
-    sael "Pas légal. Juste nécessaire."
+    sael "Quand je retournais en ville. Juste nécessaire."
 
     $ showP("nyra", "taquin", 0.76)
     nyra "À Orbite, un lot de légumes valait une réparation express."
-    nyra "Même logique, autre décor."
+    nyra "Même logique, mais dans un autre décor."
 
-    sael "Le système appelle ça du désordre."
-    nyra "Moi j'appelle ça des gens qui s'adaptent."
+    sael "On a tous connu plus ou moins la galère."
+    nyra "Et on a pas eu le choix de s'adapter."
 
     "Elles referment les contenants, sobres, efficaces, comme un rituel rodé."
-
-    think "Donc les échanges discrets existent déjà."
-    think "Sans effondrement. Sans chaos."
 
     if not got_argument_echanges_discrets:
         $ got_argument_echanges_discrets = True

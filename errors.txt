@@ -2,17 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/scenario/3_canon.rpy", line 2846: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    $ showP("iris", "desaccord", 0.50)  
-    ^
+The label temps_libre_salle_repos is defined twice, at File "game/scenario/salles/voyeur_scenes.rpy", line 7:
+label temps_libre_salle_repos:
+and File "game/scenario/salles/voyeur_scenes.rpy", line 56:
+label temps_libre_salle_repos:
 
-File "game/scenario/3_canon.rpy", line 2916: end of line expected.
-    elif "énoncé" in selected.lower():
-                  ^
 
-File "game/scenario/3_canon.rpy", line 2923: end of line expected.
-    elif "appro" in selected.lower():
-                 ^
+The label temps_libre_salle_archive is defined twice, at File "game/scenario/salles/voyeur_scenes.rpy", line 105:
+label temps_libre_salle_archive:
+and File "game/scenario/salles/voyeur_scenes.rpy", line 160:
+label temps_libre_salle_archive:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Feb 26 11:02:21 2026
+Sun Mar  1 21:12:16 2026
