@@ -7,6 +7,9 @@ label REPOS_TP:
     if not decouverte_salle_repos:
         jump decouverte_salle_repos
 
+    if free_time_active and free_time_round == 1 and not seen_voyeur_julian_iris:
+        jump temps_libre_salle_repos
+
     $ pnc_room = "pnc_repos"
     call screen pnc_repos()
 

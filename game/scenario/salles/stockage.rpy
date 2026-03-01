@@ -14,6 +14,9 @@ label STOCKAGE_TP:
     if not decouverte_stockage:
         jump decouverte_stockage
 
+    if free_time_active and free_time_round in [1, 2, 3] and not got_argument_echanges_discrets:
+        jump temps_libre_salle_stockage_argument
+
     $ pnc_room = "pnc_stockage"
     call screen pnc_stockage()
 
