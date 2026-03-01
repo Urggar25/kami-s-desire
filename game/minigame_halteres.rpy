@@ -628,6 +628,9 @@ label sport_event_008:
     return
 
 label sport_event_009:
+    if not persistent.pegi18:
+        return
+
     $ unlock_gallery_image("sport009")
 
     scene bg_gymnase_douche at adaptive_fullscreen with dissolve

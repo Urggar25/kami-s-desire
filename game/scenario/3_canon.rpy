@@ -2365,11 +2365,20 @@ label _3_DEBAT1_PHASE3:
     if p3_args_source is None:
         $ p3_args_source = []
 
-    $ p3_all_args = list(p3_args_source)
-    if len(p3_all_args) == 0:
-        $ p3_all_args = ["Bons de rationnement", "Difficulté d'approvisionnement", "Faiblesse d'Orbite", "L'énoncé précis", "Le monde d'avant"]
-
     python:
+        unlocked_set = set(p3_args_source)
+        allowed_args_order = [
+            "Bons de rationnement",
+            "Difficulté d'approvisionnement",
+            "Faiblesse d'Orbite",
+            "L'énoncé précis",
+            "Le monde d'avant",
+            "Échanges discrets déjà actifs",
+        ]
+        p3_all_args = [a for a in allowed_args_order if a in unlocked_set]
+        if not p3_all_args:
+            p3_all_args = ["Bons de rationnement"]
+
         p3_cycle = p3_all_args[:]
         while len(p3_cycle) < 15:
             p3_cycle.extend(p3_all_args)
@@ -2392,6 +2401,9 @@ label _3_DEBAT1_PHASE3:
                 elif "appro" in low:
                     icon = "⬢"
                     desc = "Ruptures passées et files de pénurie."
+                elif "échange" in low or "discret" in low:
+                    icon = "◌"
+                    desc = "Réseaux d'entraide clandestins déjà en place."
                 elif "avant" in low:
                     icon = "✦"
                     desc = "Mémoire d'un système ancien imparfait mais vivant."
@@ -2975,12 +2987,42 @@ label _3_DEBAT1_PHASE3_INT2:
         hide ryn
         hide sael
 
-    elif "appro" in selected.lower():
-        $ pnj_adhesion["julian"] += 0
-        $ showP("noam", "neutre", 0.50)
-        noam "Argument équilibré."
-        $ showP("julian", "neutre", 0.88)
-        julian "Ça me va."
+    elif "échange" in selected.lower() or "discret" in selected.lower():
+        scene bg_conclave at adaptive_fullscreen with dissolve
+
+        $ showP("nyra", "raison", 0.50)
+        nyra "Les échanges discrets existent déjà."
+        nyra "Couper les bons d'un coup, c'est forcer tout le monde à passer par des réseaux opaques."
+
+        $ showP("sael", "mefiant", 0.88)
+        sael "Opaques, oui. Mais efficaces."
+        sael "Quand les canaux officiels lâchent, c'est ça qui fait tenir les quartiers."
+
+        hide nyra
+        $ showP("noam", "reflexion", 0.50)
+        noam "Efficaces pour ceux qui ont un contact."
+        noam "Pour les autres, c'est juste une file d'attente de plus, sans recours."
+
+        hide sael
+        $ showP("mara", "agace", 0.88)
+        mara "Et ça crée des chefs de couloir."
+        mara "Les 'discrets' deviennent vite des péages."
+
+        $ showP("julian", "determine", 0.12)
+        julian "Ou des preuves que les gens savent déjà s'organiser sans Kami."
+
+        "La salle hésite : survivre par les marges, ou refuser d'en faire la règle."
+
+        $ debat_day3_apply_influence({
+            "nyra": -1,
+            "noam": -1,
+            "mara": -1,
+            "sael": 1,
+            "julian": 1
+        })
+
+        hide mara
+        hide julian
 
     return
 
@@ -2999,6 +3041,12 @@ label _3_DEBAT1_PHASE3_INT3:
         nyra "On ne gouverne pas un risque systémique à l'instinct."
         $ showP("julian", "hesitation", 0.88)
         julian "Pas à l'instinct. À la décision."
+    elif "échange" in selected.lower() or "discret" in selected.lower():
+        $ pnj_adhesion["julian"] += 1
+        $ showP("sael", "raison", 0.77)
+        sael "Les circuits parallèles prouvent qu'une transition est déjà en cours."
+        $ showP("julian", "reflexion", 0.88)
+        julian "Alors assumons-la au grand jour."
     else:
         $ pnj_adhesion["julian"] += 2
         $ showP("elen", "determine", 0.33)

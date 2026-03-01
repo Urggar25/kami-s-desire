@@ -4,6 +4,9 @@ default seen_voyeur_nyra = False
 default got_argument_echanges_discrets = False
 
 label temps_libre_salle_repos:
+    if not persistent.pegi18:
+        jump REPOS_TP
+
     scene bg_repos at adaptive_fullscreen with dissolve
 
     $ seen_voyeur_julian_iris = True
@@ -51,6 +54,9 @@ label temps_libre_salle_repos:
 
 
 label temps_libre_salle_archive:
+
+    if not persistent.pegi18:
+        jump ARCHIVE_TP
 
     $ seen_voyeur_mara_tomas = True
 
@@ -106,6 +112,9 @@ label temps_libre_salle_archive:
     jump ARCHIVE_TP
 
 label temps_libre_salle_dortoir:
+
+    if not persistent.pegi18:
+        jump DORTOIR_TP
 
     $ seen_voyeur_nyra = True
 
