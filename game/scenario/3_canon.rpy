@@ -2359,56 +2359,55 @@ label _3_DEBAT1_PHASE3:
     play music "music/bgm_tension_phase3.mp3" fadein 1.0
     show screen kami_broadcast_ui
 
-    $ p3_args_source = globals().get("collected_args", None)
-    if p3_args_source is None:
-        $ p3_args_source = globals().get("arguments", [])
-    if p3_args_source is None:
-        $ p3_args_source = []
-
+    # =========================
+    # OPTIONS FIXES (3 CHOIX x 3 MOMENTS)
+    # =========================
     python:
-        unlocked_set = set(p3_args_source)
-        allowed_args_order = [
-            "Bons de rationnement",
-            "Difficulté d'approvisionnement",
-            "Faiblesse d'Orbite",
-            "L'énoncé précis",
-            "Le monde d'avant",
-            "Échanges discrets déjà actifs",
-        ]
-        p3_all_args = [a for a in allowed_args_order if a in unlocked_set]
-        if not p3_all_args:
-            p3_all_args = ["Bons de rationnement"]
+        def build_arg(title):
+            low = title.lower()
 
-        p3_cycle = p3_all_args[:]
-        while len(p3_cycle) < 15:
-            p3_cycle.extend(p3_all_args)
-        p3_cycle = p3_cycle[:15]
-        store.p3_round_options = []
-        for ridx in range(5):
-            triplet = p3_cycle[ridx * 3:(ridx + 1) * 3]
-            card = []
-            for a in triplet:
-                low = a.lower()
-                if "ration" in low:
-                    icon = "⌬"
-                    desc = "Sécurité minimale contre la faim et le chaos."
-                elif "orbite" in low:
-                    icon = "◉"
-                    desc = "Dépendance logistique et fragilité structurelle."
-                elif "énoncé" in low or "precis" in low:
-                    icon = "⟡"
-                    desc = "Texte exact, conséquences juridiques immédiates."
-                elif "appro" in low:
-                    icon = "⬢"
-                    desc = "Ruptures passées et files de pénurie."
-                elif "échange" in low or "discret" in low:
-                    icon = "◌"
-                    desc = "Réseaux d'entraide clandestins déjà en place."
-                elif "avant" in low:
-                    icon = "✦"
-                    desc = "Mémoire d'un système ancien imparfait mais vivant."
-                card.append({"title": a, "desc": desc, "icon": icon})
-            store.p3_round_options.append(card)
+            if "ration" in low:
+                icon = "⌬"
+                desc = "Sécurité minimale contre la faim et le chaos."
+            elif "orbite" in low:
+                icon = "◉"
+                desc = "Dépendance logistique et fragilité structurelle."
+            elif "énoncé" in low or "precis" in low:
+                icon = "⟡"
+                desc = "Texte exact, conséquences juridiques immédiates."
+            elif "appro" in low:
+                icon = "⬢"
+                desc = "Ruptures passées et files de pénurie."
+            elif "échange" in low or "discret" in low:
+                icon = "◌"
+                desc = "Réseaux d'entraide clandestins déjà en place."
+            elif "avant" in low:
+                icon = "✦"
+                desc = "Mémoire d'un système ancien imparfait mais vivant."
+            else:
+                icon = "•"
+                desc = "Argument."
+
+            return {"title": title, "desc": desc, "icon": icon}
+
+        # >>> ICI TU DÉCIDES EXACTEMENT LES 3 ARGUMENTS DE CHAQUE MOMENT <<<
+        store.p3_round_options = [
+            [   # Moment 1
+                build_arg("Bons de rationnement"),
+                build_arg("Difficulté d'approvisionnement"),
+                build_arg("Faiblesse d'Orbite"),
+            ],
+            [   # Moment 2
+                build_arg("L'énoncé précis"),
+                build_arg("Le monde d'avant"),
+                build_arg("Échanges discrets déjà actifs"),
+            ],
+            [   # Moment 3
+                build_arg("Difficulté d'approvisionnement"),
+                build_arg("L'énoncé précis"),
+                build_arg("Bons de rationnement"),
+            ],
+        ]
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5

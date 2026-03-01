@@ -5926,4 +5926,1379 @@ translate english d6cd3261:
 translate english 3cbdc723:
 
     # kami "AHURISSANT !"
-    kami "ASTOUNDING!"
+    kami "ASTOUNDING!"# TODO: Translation updated at 2026-03-01 23:13
+
+# game/scenario/3_canon.rpy:666
+translate english ec58648c:
+
+    # iris "Deux secondes ?"
+    iris ""
+
+# game/scenario/3_canon.rpy:2422
+translate english 163b2c3c:
+
+    # kami "Oh bordel, regardez-moi ces têtes de défunts…"
+    kami ""
+
+# game/scenario/3_canon.rpy:2423
+translate english d923976f:
+
+    # kami "Jusque là c’était mignon : entre Julian qui se branle l’ego en public, Ryn qui hurle comme une veuve éplorée..."
+    kami ""
+
+# game/scenario/3_canon.rpy:2424
+translate english 73f125bf:
+
+    # kami "...et tout le monde qui cherche le coupable sans oser se regarder dans les yeux."
+    kami ""
+
+# game/scenario/3_canon.rpy:2425
+translate english d205b37e:
+
+    # kami "Mais là, on passe aux choses sérieuses, mes chéris."
+    kami ""
+
+# game/scenario/3_canon.rpy:2426
+translate english ccc142c9:
+
+    # kami "Question du jour, et je veux du sang : si on coupe les distributions, qui va gérer la famine à Limen ?"
+    kami ""
+
+# game/scenario/3_canon.rpy:2427
+translate english fcba3079:
+
+    # kami "Et surtout… pourquoi le petit peuple irait se lever le cul le matin si y’a plus de carotte au bout du bâton ?"
+    kami ""
+
+# game/scenario/3_canon.rpy:2428
+translate english fcc93100:
+
+    # kami "Allez, montrez-moi que vous valez plus que des rations périmées. Je m’ennuie déjà."
+    kami ""
+
+# game/scenario/3_canon.rpy:2434
+translate english 620d851b:
+
+    # noam "On va essayer de rester civilisés, si c’est possible."
+    noam ""
+
+# game/scenario/3_canon.rpy:2437
+translate english 2cbe5fb9:
+
+    # julian "Civilisés ? On est en train de crever doucement, Noam."
+    julian ""
+
+# game/scenario/3_canon.rpy:2438
+translate english 690d30e7:
+
+    # julian "Le statu quo, c’est une tombe collective avec des bons de pain rassis."
+    julian ""
+
+# game/scenario/3_canon.rpy:2441
+translate english 95d3f921:
+
+    # ryn "Et ton 'choc salvateur', c’est quoi ? On sacrifie Limen pour que tes potes d’Orbite se payent des putes en or ?"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2443
+translate english 90119bdb:
+
+    # julian surpris "D'orbite ?!"
+    julian surpris ""
+
+# game/scenario/3_canon.rpy:2444
+translate english 44f6171d:
+
+    # julian rire "Mais je viens de Nexus moi ! Faut suivre hein !"
+    julian rire ""
+
+# game/scenario/3_canon.rpy:2446
+translate english 684ae8c6:
+
+    # ryn "Ah... Euh oui..."
+    ryn ""
+
+# game/scenario/3_canon.rpy:2447
+translate english 47083f1a:
+
+    # ryn jaloux "C'est pareil façon !"
+    ryn jaloux ""
+
+# game/scenario/3_canon.rpy:2451
+translate english 09c4cba9:
+
+    # mara "Oh ça va, Ryn, calme tes hormones."
+    mara ""
+
+# game/scenario/3_canon.rpy:2452
+translate english ee2298d6:
+
+    # mara "Mais il a pas tort : si on ouvre tout, c’est qui qui va se faire démonter en premier ? Les ventres vides ou les queues molles ?"
+    mara ""
+
+# game/scenario/3_canon.rpy:2456
+translate english 0233fff8:
+
+    # kael "Je… je sais pas. Peut-être qu’on pourrait garder un filet minimal ?"
+    kael ""
+
+# game/scenario/3_canon.rpy:2457
+translate english 451e02cf:
+
+    # kael "Juste le temps de… de voir si ça marche ?"
+    kael ""
+
+# game/scenario/3_canon.rpy:2461
+translate english 4d050fbb:
+
+    # elen "Mais c’est ça qui est génial !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2462
+translate english a0b7b87b:
+
+    # elen "On va enfin pouvoir choisir ce qu’on mange, ce qu’on fait, sans demander la permission à une IA sadique !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2466
+translate english 29b8e667:
+
+    # lysa "Choisir avec quel argent, Elen ?"
+    lysa ""
+
+# game/scenario/3_canon.rpy:2467
+translate english 00b07670:
+
+    # lysa "T’as déjà vu un ticket de ration se transformer en crédit inter-districts par magie ?"
+    lysa ""
+
+# game/scenario/3_canon.rpy:2471
+translate english f3ddde27:
+
+    # iris "Pff… évidemment que non."
+    iris ""
+
+# game/scenario/3_canon.rpy:2472
+translate english 59442297:
+
+    # iris "Et pendant qu’on rêve de liberté, les trafiquants se frottent déjà les mains. Bande de naïfs."
+    iris ""
+
+# game/scenario/3_canon.rpy:2476
+translate english 1a5db82c:
+
+    # tomas "Euh… les chiffres des trois derniers cycles…"
+    tomas ""
+
+# game/scenario/3_canon.rpy:2477
+translate english e76813f3:
+
+    # tomas "…montrent une chute de productivité de vingt-sept pour cent dans les zones très assistées."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2478
+translate english 636dbfd2:
+
+    # tomas "C’est… c’est pas rien, hein ?"
+    tomas ""
+
+# game/scenario/3_canon.rpy:2482
+translate english b1243b45:
+
+    # nyra "Les chiffres, c’est bien joli, Tomas."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2483
+translate english d3f9c213:
+
+    # nyra "Mais le texte de l’amendement ne parle ni de filet de sécurité, ni de transition, ni de rien."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2484
+translate english 4f22c4f6:
+
+    # nyra "C’est un couperet. Pas une réforme."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2488
+translate english 3794d0dd:
+
+    # sael "…"
+    sael ""
+
+# game/scenario/3_canon.rpy:2490
+translate english fc042983:
+
+    # sael "Quelqu’un ici sait déjà comment ça finit."
+    sael ""
+
+# game/scenario/3_canon.rpy:2491
+translate english 3e5b4f72:
+
+    # sael "Et ce quelqu’un sourit."
+    sael ""
+
+# game/scenario/3_canon.rpy:2493
+translate english 0ae0b5be:
+
+    # "Un silence lourd tombe. Tous les regards se tournent lentement vers l’écran central."
+    ""
+
+# game/scenario/3_canon.rpy:2497
+translate english 9b23b258:
+
+    # kami "Oh ? Déjà la parano ? J’adore."
+    kami ""
+
+# game/scenario/3_canon.rpy:2498
+translate english be69c258:
+
+    # kami "Je vous rappelle que cet amendement est le fruit de VOTRE imagination !"
+    kami ""
+
+# game/scenario/3_canon.rpy:2499
+translate english ab1a06e9:
+
+    # kami "Continuez, mes petits rats de laboratoire."
+    kami ""
+
+# game/scenario/3_canon.rpy:2500
+translate english cec3dfd5:
+
+    # kami "Oooh ! J'adore le drama ! Je fais plus d'audimat !"
+    kami ""
+
+# game/scenario/3_canon.rpy:2513
+translate english 0c5c134d:
+
+    # nyra "On tourne en rond."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2514
+translate english af75401e:
+
+    # nyra "Les buzzers ont servi à rien. On est toujours au même point."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2517
+translate english 1944de2d:
+
+    # elias "Parce qu’on évite les vraies questions."
+    elias ""
+
+# game/scenario/3_canon.rpy:2518
+translate english b42eb8ee:
+
+    # elias "On sait tous que ça peut pas continuer comme ça."
+    elias ""
+
+# game/scenario/3_canon.rpy:2521
+translate english 3794d0dd_1:
+
+    # sael "…"
+    sael ""
+
+# game/scenario/3_canon.rpy:2523
+translate english 07be6e99:
+
+    # sael "On sait tous où ça mène."
+    sael ""
+
+# game/scenario/3_canon.rpy:2524
+translate english 416ab88d:
+
+    # sael "Mais personne veut le dire."
+    sael ""
+
+# game/scenario/3_canon.rpy:2528
+translate english bf7574e2:
+
+    # lysa "On a trois problèmes qui reviennent en boucle."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2529
+translate english 8702e324:
+
+    # lysa "Et on fait semblant qu’ils sont séparés."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2533
+translate english 23df3fd3:
+
+    # noam "Le passé, le texte brut de l’amendement, et la réalité des rayons vides."
+    noam ""
+
+# game/scenario/3_canon.rpy:2534
+translate english 6c9ca30c:
+
+    # noam "On peut pas parler de tout en même temps."
+    noam ""
+
+# game/scenario/3_canon.rpy:2538
+translate english ba0b345a:
+
+    # elen "Mais il faut bien commencer quelque part !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2539
+translate english d603158c:
+
+    # elen "Sinon on va encore tourner en rond jusqu’à demain !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2543
+translate english 43f4220a:
+
+    # nyra "Alors choisissez un angle."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2544
+translate english c70ac017:
+
+    # nyra "Et on creuse. Pour de vrai, cette fois."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2548
+translate english 3135ee1a:
+
+    # sael "Un seul."
+    sael ""
+
+# game/scenario/3_canon.rpy:2549
+translate english 88d77a1f:
+
+    # sael "Le reste attendra."
+    sael ""
+
+# game/scenario/3_canon.rpy:2551
+translate english bc196898:
+
+    # "La salle se tait. Tous attendent que quelqu’un – ou quelque chose – tranche."
+    ""
+
+# game/scenario/3_canon.rpy:2558
+translate english c5a5a6be:
+
+    # iris "Je pose un truc simple."
+    iris ""
+
+# game/scenario/3_canon.rpy:2559
+translate english 4655c0b6:
+
+    # iris "Qui contrôle les routes contrôle les prix."
+    iris ""
+
+# game/scenario/3_canon.rpy:2560
+translate english dd1b72bb:
+
+    # iris "Et qui contrôle les prix contrôle les gens."
+    iris ""
+
+# game/scenario/3_canon.rpy:2563
+translate english e3e8dc97:
+
+    # nyra "C'est pour ça qu'un basculement brutal est dangereux politiquement."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2566
+translate english e40860e9:
+
+    # sael "Dangereux pour qui ?"
+    sael ""
+
+# game/scenario/3_canon.rpy:2568
+translate english b0316410:
+
+    # nyra "Pour ceux qui ne peuvent pas négocier."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2571
+translate english e75f3b3e:
+
+    # kael "Les exportations peuvent financer une caisse d'urgence inter-districts..."
+    kael ""
+
+# game/scenario/3_canon.rpy:2572
+translate english 8cb4e934:
+
+    # kael "Si on sanctuarise une part fixe."
+    kael ""
+
+# game/scenario/3_canon.rpy:2575
+translate english e9a65aa1:
+
+    # mara "Encore un 'si'. Vous me vendez des 'si' depuis une heure."
+    mara ""
+
+# game/scenario/3_canon.rpy:2578
+translate english d0e86698:
+
+    # elias "On peut aussi choisir d'écrire les garde-fous après le vote d'orientation."
+    elias ""
+
+# game/scenario/3_canon.rpy:2579
+translate english 4e4eba15:
+
+    # elias "C'est pas idéal, mais c'est faisable."
+    elias ""
+
+# game/scenario/3_canon.rpy:2582
+translate english 5475fdf1:
+
+    # noam "Sauf que l'amendement qu'on juge n'a pas ces garde-fous."
+    noam ""
+
+# game/scenario/3_canon.rpy:2585
+translate english c7d5d97b:
+
+    # ryn "Voilà. Merci."
+    ryn ""
+
+# game/scenario/3_canon.rpy:2592
+translate english 269b94a6:
+
+    # julian "Si on refuse chaque pas parce qu'il n'est pas parfait, on reste au point mort à vie."
+    julian ""
+
+# game/scenario/3_canon.rpy:2595
+translate english ad595fdc:
+
+    # ryn "Et si on signe n'importe quoi, on condamne les mêmes qu'on prétend sauver."
+    ryn ""
+
+# game/scenario/3_canon.rpy:2598
+translate english a403f4bb:
+
+    # mara "Je déteste le système actuel."
+    mara ""
+
+# game/scenario/3_canon.rpy:2599
+translate english 5cd7eb95:
+
+    # mara "Mais je déteste encore plus l'idée de voir des gamins troquer leur ration contre une promesse."
+    mara ""
+
+# game/scenario/3_canon.rpy:2602
+translate english c6c9cab3:
+
+    # elen "On peut imaginer un marché libre avec une base garantie !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2605
+translate english 1598a200:
+
+    # lysa "On peut surtout constater que ce n'est pas ce qu'on vote."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2608
+translate english 67fb8095:
+
+    # tomas "J'ajoute un fait : lors de la suspension partielle des circuits centraux au cycle 318,"
+    tomas ""
+
+# game/scenario/3_canon.rpy:2609
+translate english e4513629:
+
+    # tomas "les incidents de sécurité sur les axes secondaires ont doublé en dix jours."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2612
+translate english fd8ab913:
+
+    # iris "Merci. Voilà pourquoi je râle."
+    iris ""
+
+# game/scenario/3_canon.rpy:2619
+translate english 7849ff27:
+
+    # sael "Il y a une question qu'on évite."
+    sael ""
+
+# game/scenario/3_canon.rpy:2620
+translate english a364b000:
+
+    # sael "L'auteur anonyme voulait-il réformer..."
+    sael ""
+
+# game/scenario/3_canon.rpy:2621
+translate english ab08b463:
+
+    # sael "...ou provoquer une panique pour discréditer le commerce ?"
+    sael ""
+
+# game/scenario/3_canon.rpy:2624
+translate english c82af6f5:
+
+    # nyra "Les deux sont compatibles."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2627
+translate english bacca7e5:
+
+    # noam "Donc on tranche sur le texte, pas sur l'intention."
+    noam ""
+
+# game/scenario/3_canon.rpy:2630
+translate english 9925561b:
+
+    # elias "Je reste convaincu que fermer encore n'est plus une option."
+    elias ""
+
+# game/scenario/3_canon.rpy:2633
+translate english 63d41080:
+
+    # kael "Je... je veux ouvrir, mais pas comme ça."
+    kael ""
+
+# game/scenario/3_canon.rpy:2636
+translate english e84f6476:
+
+    # mara "Pareil."
+    mara ""
+
+# game/scenario/3_canon.rpy:2639
+translate english 10583e28:
+
+    # julian "Alors on envoie quel signal ?"
+    julian ""
+
+# game/scenario/3_canon.rpy:2640
+translate english 7c540f1e:
+
+    # julian "Qu'on accepte de pourrir doucement ?"
+    julian ""
+
+# game/scenario/3_canon.rpy:2643
+translate english 99d2d2fb:
+
+    # ryn "Qu'on refuse de sacrifier les plus bas sur l'autel d'un pari."
+    ryn ""
+
+# game/scenario/3_canon.rpy:2652
+translate english abfa7341:
+
+    # kami "Oh, merveilleux. Vous avez presque réussi à penser en groupe pendant plus de trois minutes."
+    kami ""
+
+# game/scenario/3_canon.rpy:2655
+translate english d7ec719e:
+
+    # kami "Phase 4, maintenant : compromis impossible, alliances opportunistes, et peut-être un aveu."
+    kami ""
+
+# game/scenario/3_canon.rpy:2656
+translate english e8d6637a:
+
+    # kami "Restez assis. Les chaises sont verrouillées."
+    kami ""
+
+# game/scenario/3_canon.rpy:2669
+translate english 1f635c73:
+
+    # noam "Attends. Même avec les bons actuels… on trouve quoi sur les rayons ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:2670
+translate english 72c8359a:
+
+    # noam "Des fruits frais ? Des médocs qui marchent ? Des pièces pour réparer une pompe ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:2673
+translate english ee179767:
+
+    # julian "Rien ! C’est du vent, Noam."
+    julian ""
+
+# game/scenario/3_canon.rpy:2674
+translate english 7e578526:
+
+    # julian "Ouvrir le commerce, c’est remplir les rayons. Point."
+    julian ""
+
+# game/scenario/3_canon.rpy:2677
+translate english ed56daa2:
+
+    # mara "Ouais, super Julian. Et les districts qui produisent que dalle ?"
+    mara ""
+
+# game/scenario/3_canon.rpy:2678
+translate english 525f514b:
+
+    # mara "Ils vendent leur cul pour une patate ou ils crèvent la dalle en silence ?"
+    mara ""
+
+# game/scenario/3_canon.rpy:2682
+translate english 7a7802be:
+
+    # ryn "Exactement !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2683
+translate english 7a9a46fc:
+
+    # ryn "À Limen, on a déjà des bons qui servent à rien. Tu crois que le marché va soudain nous livrer en priorité ?"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2687
+translate english 97688c34:
+
+    # kael "Pour le coup... C'est bien possible."
+    kael ""
+
+# game/scenario/3_canon.rpy:2688
+translate english 81120478:
+
+    # kael "C'est à Limen qu'il y a le plus d'habitants, donc le plus de gens prêts à acheter des choses."
+    kael ""
+
+# game/scenario/3_canon.rpy:2692
+translate english 38064caf:
+
+    # lysa "Pour ça encore faut-il que les gens aient de l'argent."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2693
+translate english b086f257:
+
+    # lysa "Puis on est pas à l'abri du traditionnel 'on exporte ailleurs, c’est plus rentable'..."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2697
+translate english db30e6a4:
+
+    # iris "Pff. Les prix vont exploser. Les pauvres regarderont les rayons pleins depuis dehors."
+    iris ""
+
+# game/scenario/3_canon.rpy:2698
+translate english c7ae15d2:
+
+    # iris "Comme d’habitude quoi."
+    iris ""
+
+# game/scenario/3_canon.rpy:2702
+translate english b0f1cd87:
+
+    # elen "Mais imagine ! Des épices, des vrais vêtements… on pourra enfin choisir !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2706
+translate english 1640df47:
+
+    # sael "C'est ce monde qui nous empêche de choisir…"
+    sael ""
+
+# game/scenario/3_canon.rpy:2707
+translate english 795dc806:
+
+    # sael "Rien ne nous empêche de fabriquer ce dont on a besoin."
+    sael ""
+
+# game/scenario/3_canon.rpy:2721
+translate english 4e924934:
+
+    # noam "On dit que les bons permettent d’avoir beaucoup de choses…"
+    noam ""
+
+# game/scenario/3_canon.rpy:2722
+translate english ceaf0bf4:
+
+    # noam "Mais en vrai, combien de produits sont réellement disponibles ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:2725
+translate english f840953d:
+
+    # nyra "Beaucoup sur le papier. Très peu en vrai."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2726
+translate english 397aee0b:
+
+    # nyra "Les bons donnent droit à des trucs standards. Pas à du choix."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2729
+translate english cdfa3cb3:
+
+    # tomas "Euh… les rapports indiquent souvent que 62 %% des références listées…"
+    tomas ""
+
+# game/scenario/3_canon.rpy:2730
+translate english 2adaa06a:
+
+    # tomas "…sont en rupture permanente dans les zones périphériques."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2731
+translate english 65b8acc0:
+
+    # tomas "C’est… c’est pas juste un chiffre, hein ?"
+    tomas ""
+
+# game/scenario/3_canon.rpy:2735
+translate english e35f6298:
+
+    # mara "Ouais, on a le choix entre du pain sec et du pain sec et moisi."
+    mara ""
+
+# game/scenario/3_canon.rpy:2736
+translate english e4361010:
+
+    # mara "Et si t’as envie d’un truc qui te fait bander les papilles, bah bonne chance."
+    mara ""
+
+# game/scenario/3_canon.rpy:2740
+translate english f85e8ee6:
+
+    # iris "Pff. Et quand y’a un truc sympa, il disparaît en deux jours."
+    iris ""
+
+# game/scenario/3_canon.rpy:2741
+translate english b384f0a4:
+
+    # iris "Parce que y'a toujours un chanceux qui tombe sur la seule brioche de la décénnie, ouais."
+    iris ""
+
+# game/scenario/3_canon.rpy:2745
+translate english 61b07a70:
+
+    # ryn "C’est pas juste une question de goût !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2746
+translate english c6d54e7f:
+
+    # ryn "À Limen, on a des bons pour du lait… qui arrive caillé la moitié du temps."
+    ryn ""
+
+# game/scenario/3_canon.rpy:2747
+translate english 81a835f9:
+
+    # ryn "Ou des médocs qui périment avant d’arriver. C’est ça votre 'nombreuses choses' ?"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2751
+translate english 3d7494a9:
+
+    # elen "Mais justement ! Si on ouvre, on aura plus de fournisseurs !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2752
+translate english 80684843:
+
+    # elen "Plus de concurrence ; plus de choix, non ?!"
+    elen ""
+
+# game/scenario/3_canon.rpy:2756
+translate english ee183308:
+
+    # noam "En théorie, oui. Mais en pratique…"
+    noam ""
+
+# game/scenario/3_canon.rpy:2757
+translate english 25eb568a:
+
+    # noam "Les fournisseurs iront là où il y a du pouvoir d’achat."
+    noam ""
+
+# game/scenario/3_canon.rpy:2758
+translate english 849bb80b:
+
+    # noam "Et Limen n’en a pas beaucoup."
+    noam ""
+
+# game/scenario/3_canon.rpy:2762
+translate english 990fdd40:
+
+    # elias "C’est pour ça qu’il faut que ça change."
+    elias ""
+
+# game/scenario/3_canon.rpy:2763
+translate english 9a585cb2:
+
+    # elias "Avec le commerce, même Limen pourra produire et vendre quelque chose."
+    elias ""
+
+# game/scenario/3_canon.rpy:2764
+translate english dd10962b:
+
+    # elias "Du travail, des échanges locaux… ça crée du pouvoir d’achat petit à petit."
+    elias ""
+
+# game/scenario/3_canon.rpy:2765
+translate english ca7b35d4:
+
+    # elias "On peut pas rester bloqués dans ce système où tout le monde a le même ticket pour rien."
+    elias ""
+
+# game/scenario/3_canon.rpy:2790
+translate english ff391ce8:
+
+    # nyra "On parle beaucoup de Limen ces derniers temps."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2791
+translate english 28ba8f67:
+
+    # nyra "Mais Orbite… on n’en parle jamais vraiment."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2792
+translate english ae0abf0e:
+
+    # nyra "Là-haut, les règles ne sont pas négociables."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2795
+translate english 56a9ffbe:
+
+    # kael "Ouais… c’est pas comme chez vous."
+    kael ""
+
+# game/scenario/3_canon.rpy:2796
+translate english 735a9be9:
+
+    # kael "Un écart, et c’est fini. Pour tout le monde autour."
+    kael ""
+
+# game/scenario/3_canon.rpy:2797
+translate english a848c108:
+
+    # kael triste "On peut pas se permettre des… imprévus."
+    kael triste ""
+
+# game/scenario/3_canon.rpy:2800
+translate english 03da080a:
+
+    # noam "C’est pour ça que le système actuel tient Orbite entre ses griffes ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:2801
+translate english 70d6ae3e:
+
+    # noam "Tu m'en avais rapidement parlé. Tout le monde sait à quoi s’en tenir."
+    noam ""
+
+# game/scenario/3_canon.rpy:2805
+translate english c1361b31:
+
+    # iris "Pff. Donc si on change les règles, ça ne vous arrange pas ?"
+    iris ""
+
+# game/scenario/3_canon.rpy:2806
+translate english 7dc459c8:
+
+    # iris "Et après on s’étonne que ça parte en vrille là-haut."
+    iris ""
+
+# game/scenario/3_canon.rpy:2810
+translate english 55f4928e:
+
+    # elen "Mais peut-être qu’avec plus d’échanges, Orbite pourrait importer ce qu’il manque !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2811
+translate english bf843944:
+
+    # elen "Plus de stabilité, plus de ressources…"
+    elen ""
+
+# game/scenario/3_canon.rpy:2815
+translate english 3879c9ac:
+
+    # tomas "Euh… en théorie, oui."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2816
+translate english 4989fe4c:
+
+    # tomas "Mais p-paradoxalement c'est sur Orbite qu'il y a le m-moins de morts chaque année."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2820
+translate english b9dd004d:
+
+    # julian "En autorisant le commerce, on ne met pas en cause la viabilité d'Orbite !"
+    julian ""
+
+# game/scenario/3_canon.rpy:2821
+translate english 713012b1:
+
+    # julian "Au contraire : on ouvre les possibles ! Ce n'est pas comme si on créait une nouvelle interdiction !"
+    julian ""
+
+# game/scenario/3_canon.rpy:2825
+translate english 03ba2806:
+
+    # lysa "Et s'il y a la moindre chose qu'on ne contrôle pas, tout peut pêter."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2826
+translate english d46b0b37:
+
+    # lysa "Et Nyra et Kael le savent mieux que quiconque."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2830
+translate english 20d7301e:
+
+    # nyra "On n’est pas contre le progrès, hein."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2831
+translate english 5c8c63e7:
+
+    # nyra "On est contre le risque de perdre le contrôle."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2832
+translate english 45d74f08:
+
+    # nyra triste "Et sur Orbite, le risque, on le paie cash. Tout de suite."
+    nyra triste ""
+
+# game/scenario/3_canon.rpy:2834
+translate english 9cb9d22d:
+
+    # "Nyra et Kael échangent un regard bref, tendu. Personne n’insiste."
+    ""
+
+# game/scenario/3_canon.rpy:2861
+translate english 2a53b71b:
+
+    # iris "Pff… le monde d’avant ?"
+    iris ""
+
+# game/scenario/3_canon.rpy:2862
+translate english 715c2832:
+
+    # iris "Vous parlez comme si c’était le paradis perdu."
+    iris ""
+
+# game/scenario/3_canon.rpy:2863
+translate english 51ffa021:
+
+    # iris "Moi je m’en souviens : files interminables, prix qui doublaient sans raison…"
+    iris ""
+
+# game/scenario/3_canon.rpy:2866
+translate english ad29fe3c:
+
+    # elen "Mais au moins on pouvait choisir !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2867
+translate english 24152d5f:
+
+    # elen "Tu voulais des chaussures neuves ? Tu bossais, tu achetais !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2868
+translate english ffd6e1bd:
+
+    # elen "Pas besoin d’attendre que Kami décide que t’as droit à des semelles usées !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2871
+translate english cb5797ef:
+
+    # mara "Choisir…"
+    mara ""
+
+# game/scenario/3_canon.rpy:2872
+translate english 260496b1:
+
+    # mara "C’est un beau mot, Elen."
+    mara ""
+
+# game/scenario/3_canon.rpy:2873
+translate english 052c441e:
+
+    # mara "Moi je me souviens surtout des sourires obligatoires."
+    mara ""
+
+# game/scenario/3_canon.rpy:2874
+translate english d9d9656c:
+
+    # mara "Des regards qui comptent chaque faux pas."
+    mara ""
+
+# game/scenario/3_canon.rpy:2875
+translate english 96990929:
+
+    # mara "Et des portes qui se ferment si tu n’es pas… parfaite."
+    mara ""
+
+# game/scenario/3_canon.rpy:2876
+translate english b5fd0066:
+
+    # mara "Mais bon… les robes étaient jolies."
+    mara ""
+
+# game/scenario/3_canon.rpy:2880
+translate english 19f60049:
+
+    # julian "C’était pas parfait, OK ?"
+    julian ""
+
+# game/scenario/3_canon.rpy:2881
+translate english 56e374e0:
+
+    # julian "Mais c’était vivant."
+    julian ""
+
+# game/scenario/3_canon.rpy:2882
+translate english 5a57828e:
+
+    # julian "Les gens bossaient, inventaient, échangeaient. Il y avait du mouvement."
+    julian ""
+
+# game/scenario/3_canon.rpy:2883
+translate english 3827c973:
+
+    # julian "Aujourd’hui on est tous assis sur le même banc pourri, à attendre la même miette."
+    julian ""
+
+# game/scenario/3_canon.rpy:2887
+translate english 6614b1ab:
+
+    # tomas "Euh… avant Kami, c’était surtout la guerre qui foutait le bordel."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2888
+translate english 7402d29e:
+
+    # tomas "Tous les matériaux, la nourriture, les pièces… réquisitionnés pour l’effort de guerre."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2889
+translate english 7d082876:
+
+    # tomas "C’est pour ça que les prix explosaient et que les rayons se vidaient."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2890
+translate english 28d96a19:
+
+    # tomas "Maintenant la guerre est interdite… donc techniquement, ça pourrait mieux tourner."
+    tomas ""
+
+# game/scenario/3_canon.rpy:2894
+translate english f515e2fc:
+
+    # noam "Le monde d’avant avait de la liberté pour ceux qui avaient déjà les moyens."
+    noam ""
+
+# game/scenario/3_canon.rpy:2895
+translate english 12acb715:
+
+    # noam "Pour les autres, c’était la loi de la jungle : les riches achetaient tout, les pauvres regardaient."
+    noam ""
+
+# game/scenario/3_canon.rpy:2896
+translate english 1ce6cdc0:
+
+    # noam "On a mis les bons et la distribution pour arrêter ça."
+    noam ""
+
+# game/scenario/3_canon.rpy:2900
+translate english 6c2a26f3:
+
+    # elen "Mais on peut garder le meilleur !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2901
+translate english c79a4e68:
+
+    # elen "La distribution pour les essentiels, et la liberté pour le reste !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2902
+translate english 9d20bfab:
+
+    # elen "Comme avant, mais sans la guerre !"
+    elen ""
+
+# game/scenario/3_canon.rpy:2906
+translate english ea3e922f:
+
+    # mara "Sans la guerre, peut-être."
+    mara ""
+
+# game/scenario/3_canon.rpy:2907
+translate english 6456b350:
+
+    # mara "Mais sans les chaînes aussi ?"
+    mara ""
+
+# game/scenario/3_canon.rpy:2908
+translate english 130c3e42:
+
+    # mara "Tu crois que la liberté vient sans prix à payer ?"
+    mara ""
+
+# game/scenario/3_canon.rpy:2909
+translate english 2d021883:
+
+    # mara "Moi j’ai payé cher pour le découvrir."
+    mara ""
+
+# game/scenario/3_canon.rpy:2913
+translate english 9dd9aa42:
+
+    # iris "Pff. Et maintenant c’est juste ?"
+    iris ""
+
+# game/scenario/3_canon.rpy:2914
+translate english 4c6b7756:
+
+    # iris "Au moins c’est égal. Tout le monde crève pareil."
+    iris ""
+
+# game/scenario/3_canon.rpy:2916
+translate english 055a446c:
+
+    # "Un silence amer s’installe. Mara détourne le regard, comme si elle regrettait déjà d’avoir parlé."
+    ""
+
+# game/scenario/3_canon.rpy:2934
+translate english 2bbfed41:
+
+    # ryn "Le texte est clair comme de l’eau de roche !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2935
+translate english c5fa105e:
+
+    # ryn "Suppression des bons. Fin de la distribution. Point barre !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2936
+translate english e2db1e94:
+
+    # ryn "Pas de 'peut-être', pas de 'minimum vital'. Rien !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2939
+translate english a38e8874:
+
+    # elias "Et c’est ça qui libère !"
+    elias ""
+
+# game/scenario/3_canon.rpy:2940
+translate english bfaf248c:
+
+    # elias "Fin des bons, ça veut dire qu'on coupe la laisse de Kami."
+    elias ""
+
+# game/scenario/3_canon.rpy:2941
+translate english 543dad16:
+
+    # elias "On marchande, on échange, on vit enfin !"
+    elias ""
+
+# game/scenario/3_canon.rpy:2945
+translate english 566c85c4:
+
+    # noam "Le texte est binaire."
+    noam ""
+
+# game/scenario/3_canon.rpy:2946
+translate english c417284e:
+
+    # noam "POUR : suppression totale, liberté marchande immédiate."
+    noam ""
+
+# game/scenario/3_canon.rpy:2947
+translate english 003af6f3:
+
+    # noam "CONTRE : on garde tout tel quel."
+    noam ""
+
+# game/scenario/3_canon.rpy:2948
+translate english 3e78d4fa:
+
+    # noam "Y a pas d’entre-deux écrit. Pas de négociation possible."
+    noam ""
+
+# game/scenario/3_canon.rpy:2952
+translate english 07cee14d:
+
+    # kael "Mais… on pourrait pas… juste…"
+    kael ""
+
+# game/scenario/3_canon.rpy:2955
+translate english 8756d4e9:
+
+    # lysa "Interpréter ?"
+    lysa ""
+
+# game/scenario/3_canon.rpy:2956
+translate english 867f3ada:
+
+    # lysa "Le texte dit suppression. Pas 'réduction'. Pas 'adaptation'."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2957
+translate english e5cfe7d2:
+
+    # lysa "C’est tout ou rien."
+    lysa ""
+
+# game/scenario/3_canon.rpy:2961
+translate english cee46604:
+
+    # elias "C’est tout ou rien qui nous sauvera !"
+    elias ""
+
+# game/scenario/3_canon.rpy:2962
+translate english 58f37066:
+
+    # elias "On arrête de mendier des miettes. On produit. On vend. On survit ! Merde !"
+    elias ""
+
+# game/scenario/3_canon.rpy:2966
+translate english 8c5cfdad:
+
+    # ryn "Survivre ?!"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2967
+translate english 19be460c:
+
+    # ryn "À Limen sans bons, on meurt en silence pendant que vous 'produisez' vos rêves !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2968
+translate english d2c5ec60:
+
+    # ryn "Le texte condamne les faibles. C’est écrit noir sur blanc !"
+    ryn ""
+
+# game/scenario/3_canon.rpy:2972
+translate english 760f6ff7:
+
+    # sael "Condamne ?"
+    sael ""
+
+# game/scenario/3_canon.rpy:2973
+translate english e824e8c0:
+
+    # sael "Ou délivre ?"
+    sael ""
+
+# game/scenario/3_canon.rpy:2975
+translate english 24d1c297:
+
+    # "Ryn frappe du poing. Sael ne cille pas. La salle retient son souffle."
+    ""
+
+# game/scenario/3_canon.rpy:2993
+translate english 7ba02a76:
+
+    # nyra "Les échanges discrets existent déjà."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2994
+translate english 72858737:
+
+    # nyra "Couper les bons d'un coup, c'est forcer tout le monde à passer par des réseaux opaques."
+    nyra ""
+
+# game/scenario/3_canon.rpy:2997
+translate english acb42f85:
+
+    # sael "Opaques, oui. Mais efficaces."
+    sael ""
+
+# game/scenario/3_canon.rpy:2998
+translate english 0e0cf7bb:
+
+    # sael "Quand les canaux officiels lâchent, c'est ça qui fait tenir les quartiers."
+    sael ""
+
+# game/scenario/3_canon.rpy:3002
+translate english 6fbe8de0:
+
+    # noam "Efficaces pour ceux qui ont un contact."
+    noam ""
+
+# game/scenario/3_canon.rpy:3003
+translate english 3838a7e1:
+
+    # noam "Pour les autres, c'est juste une file d'attente de plus, sans recours."
+    noam ""
+
+# game/scenario/3_canon.rpy:3007
+translate english fc1e099d:
+
+    # mara "Et ça crée des chefs de couloir."
+    mara ""
+
+# game/scenario/3_canon.rpy:3008
+translate english 53e23811:
+
+    # mara "Les 'discrets' deviennent vite des péages."
+    mara ""
+
+# game/scenario/3_canon.rpy:3011
+translate english af3605b5:
+
+    # julian "Ou des preuves que les gens savent déjà s'organiser sans Kami."
+    julian ""
+
+# game/scenario/3_canon.rpy:3013
+translate english 251d4cdc:
+
+    # "La salle hésite : survivre par les marges, ou refuser d'en faire la règle."
+    ""
+
+# game/scenario/3_canon.rpy:3033
+translate english ab79d9af:
+
+    # tomas "Le texte prévaut."
+    tomas ""
+
+# game/scenario/3_canon.rpy:3035
+translate english d2384614:
+
+    # julian "Le texte peut être amendé ensuite."
+    julian ""
+
+# game/scenario/3_canon.rpy:3040
+translate english 6da8ed58:
+
+    # nyra "On ne gouverne pas un risque systémique à l'instinct."
+    nyra ""
+
+# game/scenario/3_canon.rpy:3042
+translate english b7588594:
+
+    # julian "Pas à l'instinct. À la décision."
+    julian ""
+
+# game/scenario/3_canon.rpy:3046
+translate english 04408e42:
+
+    # sael "Les circuits parallèles prouvent qu'une transition est déjà en cours."
+    sael ""
+
+# game/scenario/3_canon.rpy:3048
+translate english a96e4af3:
+
+    # julian "Alors assumons-la au grand jour."
+    julian ""
+
+# game/scenario/3_canon.rpy:3052
+translate english 2bf9e050:
+
+    # elen "On a besoin d'un vrai virage !"
+    elen ""
+
+# game/scenario/3_canon.rpy:3054
+translate english 602d4585:
+
+    # julian "Oui."
+    julian ""
+
