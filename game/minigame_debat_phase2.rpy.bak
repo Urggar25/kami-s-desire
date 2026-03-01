@@ -245,7 +245,7 @@ label debat_phase2_minigame:
 
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
-    call DEBAT_PHASE2_START_ANIM from _call_DEBAT_PHASE2_START_ANIM
+    call DEBAT_PHASE2_START_ANIM
 
 label debat_phase2_loop:
     if debat_phase2_index >= len(DEBAT_PHASE2_DIALOGUES):
@@ -308,7 +308,7 @@ label debat_phase2_counter_d1:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"mara": -1, "iris": 1})
     jump debat_phase2_resume
 
@@ -344,7 +344,7 @@ label debat_phase2_counter_d2:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_1
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"elias": 1, "nyra": 1, "lysa": 1})
     jump debat_phase2_resume
 
@@ -380,7 +380,7 @@ label debat_phase2_counter_d3:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_2
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"ryn": -1, "sael": 1, "lysa": 1})
     jump debat_phase2_resume
 
@@ -409,7 +409,7 @@ label debat_phase2_counter_d4:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_3
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"tomas": 1, "lysa": 1, "nyra": 1})
     jump debat_phase2_resume
 
@@ -438,7 +438,7 @@ label debat_phase2_counter_d5:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_4
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"iris": -1, "mara": -1})
     jump debat_phase2_resume
 
@@ -474,7 +474,7 @@ label debat_phase2_counter_d6:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_5
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"tomas": -2})
     jump debat_phase2_resume
 
@@ -503,7 +503,7 @@ label debat_phase2_counter_d7:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_6
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"elen": -2})
     jump debat_phase2_resume
 
@@ -532,7 +532,7 @@ label debat_phase2_counter_d8:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_7
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"kael": 1})
     jump debat_phase2_resume
 
@@ -554,7 +554,7 @@ label debat_phase2_counter_d9:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_8
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"nyra": 1})
     jump debat_phase2_resume
 
@@ -583,7 +583,7 @@ label debat_phase2_counter_d10:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_9
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"ryn": 2})
     jump debat_phase2_resume
 
@@ -612,7 +612,7 @@ label debat_phase2_counter_d11:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_10
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"sael": 1})
     jump debat_phase2_resume
 
@@ -641,7 +641,7 @@ label debat_phase2_counter_d12:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_11
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"mara": -1})
     jump debat_phase2_resume
 
@@ -670,6 +670,6 @@ label debat_phase2_counter_d13:
         ]},
     ]
 
-    call debat_phase2_play_rebuttal_sequence(seq) from _call_debat_phase2_play_rebuttal_sequence_12
+    call debat_phase2_play_rebuttal_sequence(seq)
     $ debat_day3_apply_influence({"julian": -1, "tomas": 1})
     jump debat_phase2_resume

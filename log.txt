@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2026-02-26 22:57:12 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
@@ -16,13 +17,34 @@ Dump and make backups took 0.21s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.14s
+=======
+2026-02-25 19:36:28 UTC
+Windows-10-10.0.26200
+Ren'Py 8.3.7.25031702
+
+Early init took 0.44s
+Loading error handling took 0.18s
+Loading script took 1.05s
+Loading save slot metadata took 0.25s
+Loading persistent took 0.01s
+Running init code took 0.11s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.26s
+Index archives took 0.00s
+Dump and make backups took 0.11s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+>>>>>>> Stashed changes
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.01s
+Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
+<<<<<<< Updated upstream
 Load screen analysis took 0.14s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
@@ -250,6 +272,16 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Interface start took 0.90s
+=======
+Load screen analysis took 0.09s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.26s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 1.47s
+>>>>>>> Stashed changes
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -263,3 +295,10 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
+<<<<<<< Updated upstream
+=======
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+>>>>>>> Stashed changes
