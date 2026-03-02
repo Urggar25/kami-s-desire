@@ -71,7 +71,6 @@ init python:
         if store.vote_phase3_tally_index >= len(store.vote_phase3_results):
             store.vote_phase3_tally_done = True
 
-        renpy.restart_interaction()
 
 
 # -----------------------------
@@ -416,7 +415,7 @@ label vote_phase3_final:
     stop music fadeout 1.0
     scene black with dissolve
 
-    # Vote joueur (ou timeout => contre par défaut)
+    # Vote joueur (ou timeout => abstention par défaut)
     $ _vote_result = renpy.call_screen("vote_screen")
 
     if _vote_result == "pour":
@@ -436,12 +435,12 @@ label vote_phase3_final:
 
     show screen vote_phase3_tally_screen
 
-    # Dépouillement piloté par le script (plus robuste que les timers d'écran
-    # selon les plateformes/configurations Ren'Py).
-    while not vote_phase3_tally_done:
+    # Dépouillement piloté par le script.
+    while vote_phase3_tally_index < len(vote_phase3_results):
         $ vote_phase3_tally_step()
         $ renpy.pause(0.55, hard=False)
 
+    $ vote_phase3_tally_done = True
     $ renpy.pause(1.2, hard=False)
 
     hide screen vote_phase3_tally_screen
