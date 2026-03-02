@@ -1,3 +1,34 @@
+init python:
+    # Compatibilité chargement : d'anciennes sauvegardes peuvent désérialiser
+    # une référence à store.build_arg pendant un reload Ren'Py.
+    def build_arg(title):
+        low = title.lower()
+
+        if "ration" in low:
+            icon = "⌬"
+            desc = "Sécurité minimale contre la faim et le chaos."
+        elif "orbite" in low:
+            icon = "◉"
+            desc = "Dépendance logistique et fragilité structurelle."
+        elif "énoncé" in low or "precis" in low:
+            icon = "⟡"
+            desc = "Texte exact, conséquences juridiques immédiates."
+        elif "appro" in low:
+            icon = "⬢"
+            desc = "Ruptures passées et files de pénurie."
+        elif "échange" in low or "discret" in low:
+            icon = "◌"
+            desc = "Réseaux d'entraide clandestins déjà en place."
+        elif "avant" in low:
+            icon = "✦"
+            desc = "Mémoire d'un système ancien imparfait mais vivant."
+        else:
+            icon = "•"
+            desc = "Argument."
+
+        return {"title": title, "desc": desc, "icon": icon}
+
+
 label _3_CANON:
 
     $ day_id = 3
@@ -2560,33 +2591,6 @@ label _3_DEBAT1_PHASE3:
     # OPTIONS FIXES (3 CHOIX x 3 MOMENTS)
     # =========================
     python:
-        def build_arg(title):
-            low = title.lower()
-
-            if "ration" in low:
-                icon = "⌬"
-                desc = "Sécurité minimale contre la faim et le chaos."
-            elif "orbite" in low:
-                icon = "◉"
-                desc = "Dépendance logistique et fragilité structurelle."
-            elif "énoncé" in low or "precis" in low:
-                icon = "⟡"
-                desc = "Texte exact, conséquences juridiques immédiates."
-            elif "appro" in low:
-                icon = "⬢"
-                desc = "Ruptures passées et files de pénurie."
-            elif "échange" in low or "discret" in low:
-                icon = "◌"
-                desc = "Réseaux d'entraide clandestins déjà en place."
-            elif "avant" in low:
-                icon = "✦"
-                desc = "Mémoire d'un système ancien imparfait mais vivant."
-            else:
-                icon = "•"
-                desc = "Argument."
-
-            return {"title": title, "desc": desc, "icon": icon}
-
         # >>> ICI TU DÉCIDES EXACTEMENT LES 3 ARGUMENTS DE CHAQUE MOMENT <<<
         store.p3_round_options = [
             [   # Moment 1
