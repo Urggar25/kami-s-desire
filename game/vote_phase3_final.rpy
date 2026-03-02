@@ -8,6 +8,8 @@ default vote_phase3_counts = {"pour": 0, "abstention": 0, "contre": 0}
 default vote_phase3_current_name = ""
 default vote_phase3_current_vote = None
 default vote_phase3_results = []
+default vote_phase3_tally_index = 0
+default vote_phase3_tally_done = False
 
 init python:
     import random
@@ -33,6 +35,34 @@ init python:
                 votes[random.randrange(12)] = "pour"
 
         return list(zip(names, votes))
+
+    def vote_phase3_tally_step():
+        """Dépouille un vote à chaque appel et marque la fin une fois la liste épuisée."""
+        if store.vote_phase3_tally_done:
+            return
+
+        if store.vote_phase3_tally_index >= len(store.vote_phase3_results):
+            store.vote_phase3_tally_done = True
+            return
+
+        _, rep_vote = store.vote_phase3_results[store.vote_phase3_tally_index]
+        store.vote_phase3_current_name = ""
+        store.vote_phase3_current_vote = rep_vote
+        store.vote_phase3_counts[rep_vote] += 1
+
+        if rep_vote == "pour":
+            renpy.sound.play("sound/sfx_vote_pour.ogg")
+        elif rep_vote == "abstention":
+            renpy.sound.play("sound/sfx_abstention.ogg")
+        else:
+            renpy.sound.play("sound/sfx_contre.ogg")
+
+        store.vote_phase3_tally_index += 1
+
+        if store.vote_phase3_tally_index >= len(store.vote_phase3_results):
+            store.vote_phase3_tally_done = True
+
+        renpy.restart_interaction()
 
 
 # -----------------------------
@@ -278,13 +308,11 @@ screen vote_phase3_tally_screen():
         outlines [(4, "#65D4FF88", 0, 0)]
         at vote_phase3_title_glow
 
-    text "[vote_phase3_current_name]":
-        xalign 0.19
-        yalign 0.41
-        font "fonts/day_font.ttf"
-        size 42
-        color "#EAF2FF"
-        outlines [(2, "#000000", 0, 0)]
+    timer 2.0 repeat True action If(
+        vote_phase3_tally_done,
+        true=NullAction(),
+        false=Function(vote_phase3_tally_step)
+    )
 
     if vote_phase3_current_vote == "pour":
         text "POUR":
@@ -400,24 +428,14 @@ label vote_phase3_final:
     $ vote_phase3_current_name = ""
     $ vote_phase3_current_vote = None
     $ vote_phase3_results = vote_phase3_build_results(vote_phase3_player_choice)
+    $ vote_phase3_tally_index = 0
+    $ vote_phase3_tally_done = False
 
     show screen vote_phase3_tally_screen
+    $ vote_phase3_tally_step()
 
-    python:
-        for rep_name, rep_vote in store.vote_phase3_results:
-            store.vote_phase3_current_name = rep_name
-            store.vote_phase3_current_vote = rep_vote
-            store.vote_phase3_counts[rep_vote] += 1
-
-            if rep_vote == "pour":
-                renpy.sound.play("sound/sfx_vote_pour.ogg")
-            elif rep_vote == "abstention":
-                renpy.sound.play("sound/sfx_abstention.ogg")
-            else:
-                renpy.sound.play("sound/sfx_contre.ogg")
-
-            renpy.restart_interaction()
-            renpy.pause(2.0)
+    while not vote_phase3_tally_done:
+        $ renpy.pause(0.1, hard=True)
 
     hide screen vote_phase3_tally_screen
 
