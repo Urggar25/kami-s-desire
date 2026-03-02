@@ -2323,23 +2323,29 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
                 xalign 0.5
 
                 for i, opt in enumerate(options):
+                    $ is_unlocked = opt["title"] in arguments
                     fixed:
                         xsize 490
                         ysize 560
                         at p3_arg_float
 
-                        add Frame(Solid("#0d2037d0"), 14, 14) xpos 0 ypos 0 xsize 490 ysize 560
-                        add Solid("#61f0ff15") at p3_arg_glow
+                        if is_unlocked:
+                            add Frame(Solid("#0d2037d0"), 14, 14) xpos 0 ypos 0 xsize 490 ysize 560
+                            add Solid("#61f0ff15") at p3_arg_glow
+                        else:
+                            add Frame(Solid("#2f0b0bd0"), 14, 14) xpos 0 ypos 0 xsize 490 ysize 560
+                            add Solid("#ff3a3a26")
 
                         imagebutton:
-                            idle Solid("#142b49a0")
-                            hover Solid("#1d3f67c5")
+                            idle Solid("#142b49a0" if is_unlocked else "#4c1a1aa0")
+                            hover Solid("#1d3f67c5" if is_unlocked else "#4c1a1aa0")
                             at p3_arg_button_idle
                             xalign 0.5
                             yalign 0.5
                             xsize 460
                             ysize 530
-                            action Return(i)
+                            sensitive is_unlocked
+                            action Return(i) if is_unlocked else NullAction()
 
                         vbox:
                             xalign 0.5
@@ -2348,8 +2354,10 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
                             xmaximum 410
 
                             text "[opt['icon']]" size 74 xalign 0.5
-                            text "[opt['title']]" size 33 color "#9deeff" xalign 0.5 text_align 0.5
-                            text "[opt['desc']]" size 25 color "#e6f6ff" xalign 0.5 text_align 0.5
+                            text "[opt['title']]" size 33 color ("#9deeff" if is_unlocked else "#ff7b7b") xalign 0.5 text_align 0.5
+                            text "[opt['desc']]" size 25 color ("#e6f6ff" if is_unlocked else "#ffb6b6") xalign 0.5 text_align 0.5
+                            if not is_unlocked:
+                                text "Argument non débloqué" size 22 color "#ff4c4c" xalign 0.5 text_align 0.5
 
             text "L'impact dépend du moment et des tensions déjà installées." size 24 color "#86bdd0" xalign 0.5
 
