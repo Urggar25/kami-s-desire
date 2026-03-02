@@ -2788,38 +2788,38 @@ label _3_DEBAT1_PHASE3:
 # Durée : 4m
 # Total : 1h 52m 40s
 
-label vote_phase3_final:
+# label vote_phase3_final:
 
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    show screen kami_broadcast_ui
-    play music "music/bgm_fatal_assembly.mp3" fadein 1.2
-    with Dissolve(0.5)
+#     scene bg_conclave at adaptive_fullscreen with dissolve
+#     show screen kami_broadcast_ui
+#     play music "music/bgm_fatal_assembly.mp3" fadein 1.2
+#     with Dissolve(0.5)
 
-    show bg_conclave:
-        zoom 1.03
-        linear 0.7 zoom 1.0
+#     show bg_conclave:
+#         zoom 1.03
+#         linear 0.7 zoom 1.0
 
-    kami "Mes délicieux cobayes... l'instant du verdict est arrivé."
-    kami "Un seul geste, et vous décidez si la faim devient une marchandise."
-    kami "Vert : vous ouvrez les vannes du marché. Rouge : vous gardez la laisse."
-    kami "Choisissez bien. Je savoure déjà la suite."
+#     kami "Mes délicieux cobayes... l'instant du verdict est arrivé."
+#     kami "Un seul geste, et vous décidez si la faim devient une marchandise."
+#     kami "Vert : vous ouvrez les vannes du marché. Rouge : vous gardez la laisse."
+#     kami "Choisissez bien. Je savoure déjà la suite."
 
-    $ total_adhesion = sum(debat_day3_live_vote_stats.values())
-    $ vote_joueur = renpy.call_screen("vote_screen", total_adhesion=total_adhesion)
+#     $ total_adhesion = sum(debat_day3_live_vote_stats.values())
+#     $ vote_joueur = renpy.call_screen("vote_screen", total_adhesion=total_adhesion)
 
-    if vote_joueur == "pour":
-        scene bg_conclave at adaptive_fullscreen with vpunch
-        show expression Solid("#2dff9e40") as vote_flash with dissolve
-        hide vote_flash
-    else:
-        scene bg_conclave at adaptive_fullscreen with vpunch
-        show expression Solid("#ff435040") as vote_flash with dissolve
-        hide vote_flash
+#     if vote_joueur == "pour":
+#         scene bg_conclave at adaptive_fullscreen with vpunch
+#         show expression Solid("#2dff9e40") as vote_flash with dissolve
+#         hide vote_flash
+#     else:
+#         scene bg_conclave at adaptive_fullscreen with vpunch
+#         show expression Solid("#ff435040") as vote_flash with dissolve
+#         hide vote_flash
 
-    if total_adhesion > 0:
-        jump vote_pour
-    else:
-        jump vote_contre
+#     if total_adhesion > 0:
+#         jump vote_pour
+#     else:
+#         jump vote_contre
 
 label vote_pour:
 

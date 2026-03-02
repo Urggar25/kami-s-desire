@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/scenario/3_canon.rpy", line 2348: The if statement is not a valid child of the imagebutton statement.
-    action Return(i) if is_unlocked else NullAction()
-                       ^
+The label vote_phase3_final is defined twice, at File "game/scenario/3_canon.rpy", line 2791:
+label vote_phase3_final:
+and File "game/vote_phase3_final.rpy", line 367:
+label vote_phase3_final:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Mar  2 11:30:27 2026
+Mon Mar  2 13:54:58 2026

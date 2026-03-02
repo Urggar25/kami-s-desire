@@ -138,7 +138,9 @@ screen vote_screen():
         yalign 0.58
         spacing 120
 
-        # Bouton POUR (vert)
+        # ---------------------
+        # Bouton POUR
+        # ---------------------
         button:
             at vote_phase3_intro_left, vote_phase3_btn_pulse
             xsize 600
@@ -147,10 +149,11 @@ screen vote_screen():
             hover_background Solid("#1C5A3ACC")
             hovered SetVariable("vote_phase3_hover_side", "pour")
             unhovered SetVariable("vote_phase3_hover_side", None)
+
             action [
                 SetVariable("vote_phase3_player_choice", "pour"),
                 Play("sound", "sound/sfx_vote_click.ogg"),
-                Function(renpy.with_statement, vpunch),
+                With(vpunch),
                 Return("pour"),
             ]
 
@@ -158,6 +161,7 @@ screen vote_screen():
                 xalign 0.5
                 yalign 0.5
                 spacing 24
+
                 if vote_phase3_hover_side == "pour":
                     at vote_phase3_hover_zoom
 
@@ -185,7 +189,9 @@ screen vote_screen():
                         color "#68FFC1"
                         at vote_phase3_float_up
 
-        # Bouton CONTRE (rouge)
+        # ---------------------
+        # Bouton CONTRE
+        # ---------------------
         button:
             at vote_phase3_intro_right, vote_phase3_btn_pulse
             xsize 600
@@ -194,10 +200,11 @@ screen vote_screen():
             hover_background Solid("#5A1F1FCC")
             hovered SetVariable("vote_phase3_hover_side", "contre")
             unhovered SetVariable("vote_phase3_hover_side", None)
+
             action [
                 SetVariable("vote_phase3_player_choice", "contre"),
                 Play("sound", "sound/sfx_vote_click.ogg"),
-                Function(renpy.with_statement, vpunch),
+                With(vpunch),
                 Return("contre"),
             ]
 
@@ -205,6 +212,7 @@ screen vote_screen():
                 xalign 0.5
                 yalign 0.5
                 spacing 24
+
                 if vote_phase3_hover_side == "contre":
                     at vote_phase3_hover_zoom
 
@@ -232,13 +240,17 @@ screen vote_screen():
                         color "#FF7070"
                         at vote_phase3_float_down
 
+    # Timer logique
     timer 1.0 repeat True action If(
         vote_phase3_time_left > 0,
         true=SetVariable("vote_phase3_time_left", vote_phase3_time_left - 1),
         false=NullAction()
     )
-    timer 10.0 action [SetVariable("vote_phase3_player_choice", "contre"), Return("timeout")]
 
+    timer 10.0 action [
+        SetVariable("vote_phase3_player_choice", "contre"),
+        Return("timeout")
+    ]
 
 # -----------------------------
 # Écran 2 — dépouillement visuel
@@ -423,12 +435,21 @@ label vote_phase3_final:
         $ vote_phase3_winner_text = "CONTRE GAGNE"
         $ vote_phase3_winner_color = "#FFA0A0"
 
-    show text "[vote_phase3_winner_text]" at truecenter, vote_phase3_symbol_pulse:
-        font "fonts/day_font.ttf"
-        size 120
-        bold True
-        color vote_phase3_winner_color
-        outlines [(7, "#7FDBFF77", 0, 0)]
+    # show text "[vote_phase3_winner_text]" at truecenter, vote_phase3_symbol_pulse:
+    #     font "fonts/day_font.ttf"
+    #     size 120
+    #     bold True
+    #     color vote_phase3_winner_color
+        #outlines [(7, "#7FDBFF77", 0, 0)]
+    
+    show expression Text(
+        vote_phase3_winner_text,
+        font="fonts/day_font.ttf",
+        size=120,
+        bold=True,
+        color=vote_phase3_winner_color,
+        outlines=[(7, "#7FDBFF77", 0, 0)]
+    ) at truecenter, vote_phase3_symbol_pulse
 
     kami "Verdict confirmé. [vote_phase3_winner_text]."
     hide text
