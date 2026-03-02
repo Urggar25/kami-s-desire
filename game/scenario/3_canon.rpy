@@ -2271,9 +2271,6 @@ label _3_DEBAT1_PHASE2:
 
     call debat_phase2_minigame from _call_debat_phase2_minigame
 
-    kami "Je vois que le minijeu est terminé !"
-    kami "AHURISSANT !"
-
     jump _3_DEBAT1_PHASE3
 
 # Durée : 6m05
@@ -2602,11 +2599,6 @@ label _3_DEBAT1_PHASE3:
                 build_arg("Le monde d'avant"),
                 build_arg("Échanges discrets déjà actifs"),
             ],
-            [   # Moment 3
-                build_arg("Difficulté d'approvisionnement"),
-                build_arg("L'énoncé précis"),
-                build_arg("Bons de rationnement"),
-            ],
         ]
 
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -2754,110 +2746,47 @@ label _3_DEBAT1_PHASE3:
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
     call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
 
-    $ showP("iris", "hesitation", 0.66)
-    iris "Je pose un truc simple."
-    iris "Qui contrôle les routes contrôle les prix."
-    iris "Et qui contrôle les prix contrôle les gens."
+    stop music fadeout 1.0
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
-    $ showP("nyra", "fatigue", 0.77)
-    nyra "C'est pour ça qu'un basculement brutal est dangereux politiquement."
+    pause 1.0
 
-    $ showP("sael", "desaccord", 0.93)
-    sael "Dangereux pour qui ?"
+    $ showP("noam", "raison", 0.50)  # centre
+    noam "On a tout dit."
+    noam "Le monde d’avant, le texte brut, les trocs qui existent déjà…"
+    noam "Maintenant, il faut choisir."
 
-    nyra "Pour ceux qui ne peuvent pas négocier."
+    $ showP("ryn", "colere", 0.88)  # droite
+    ryn "Choisir entre crever lentement ou crever d’un coup ?"
 
-    $ showP("kael", "inquiet", 0.19)
-    kael "Les exportations peuvent financer une caisse d'urgence inter-districts..."
-    kael "Si on sanctuarise une part fixe."
+    $ showP("julian", "determine", 0.12)  # gauche
+    julian "Ou entre survivre enchaîné ou se battre libre."
 
-    $ showP("mara", "colere", 0.29)
-    mara "Encore un 'si'. Vous me vendez des 'si' depuis une heure."
+    hide noam
+    $ showP("nyra", "raison", 0.50)  # centre
+    nyra "C’est binaire."
+    nyra "On vote. Et on assume."
 
-    $ showP("elias", "determine", 0.40)
-    elias "On peut aussi choisir d'écrire les garde-fous après le vote d'orientation."
-    elias "C'est pas idéal, mais c'est faisable."
+    "Les regards se croisent. La tension est palpable."
 
-    $ showP("noam", "raison", 0.50)
-    noam "Sauf que l'amendement qu'on juge n'a pas ces garde-fous."
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    kami "Enfin !"
+    kami "J’ai failli m’endormir avec vos jérémiades."
+    kami "Le texte est clair : suppression totale des bons ou statu quo."
+    kami "Vert pour couper la laisse. Rouge pour rester sages."
+    kami "Allez, mes petits rats. Faites-moi vibrer l’audimat."
 
-    play sound "sound/sfx_table_hit.ogg"
-    ryn "Voilà. Merci."
+    "L’écran central affiche deux boutons immenses : VERT et ROUGE."
+    "Tous les yeux se tournent vers moi."
 
-    play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[2], prompt="Moment 3 — Appuyer sur la légalité ou sur l'élan.")
-    call _3_DEBAT1_PHASE3_INT3 from _call__3_DEBAT1_PHASE3_INT3
+    "C’est maintenant."
 
-    $ showP("julian", "determine", 0.88)
-    julian "Si on refuse chaque pas parce qu'il n'est pas parfait, on reste au point mort à vie."
+    jump vote_phase3_final
 
-    $ showP("ryn", "colere", 0.08)
-    ryn "Et si on signe n'importe quoi, on condamne les mêmes qu'on prétend sauver."
-
-    $ showP("mara", "reflexion", 0.29)
-    mara "Je déteste le système actuel."
-    mara "Mais je déteste encore plus l'idée de voir des gamins troquer leur ration contre une promesse."
-
-    $ showP("elen", "determine", 0.33)
-    elen "On peut imaginer un marché libre avec une base garantie !"
-
-    $ showP("lysa", "reflexion", 0.77)
-    lysa "On peut surtout constater que ce n'est pas ce qu'on vote."
-
-    $ showP("tomas", "raison", 0.62)
-    tomas "J'ajoute un fait : lors de la suspension partielle des circuits centraux au cycle 318,"
-    tomas "les incidents de sécurité sur les axes secondaires ont doublé en dix jours."
-
-    $ showP("iris", "panne", 0.66)
-    iris "Merci. Voilà pourquoi je râle."
-
-    play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[3], prompt="Moment 4 — Fixer la peur ou relancer l'audace.")
-    call _3_DEBAT1_PHASE3_INT4 from _call__3_DEBAT1_PHASE3_INT4
-
-    $ showP("sael", "raison", 0.93)
-    sael "Il y a une question qu'on évite."
-    sael "L'auteur anonyme voulait-il réformer..."
-    sael "...ou provoquer une panique pour discréditer le commerce ?"
-
-    $ showP("nyra", "taquin", 0.77)
-    nyra "Les deux sont compatibles."
-
-    $ showP("noam", "hesitation", 0.50)
-    noam "Donc on tranche sur le texte, pas sur l'intention."
-
-    $ showP("elias", "neutre", 0.40)
-    elias "Je reste convaincu que fermer encore n'est plus une option."
-
-    $ showP("kael", "hesitation", 0.19)
-    kael "Je... je veux ouvrir, mais pas comme ça."
-
-    $ showP("mara", "doute", 0.29)
-    mara "Pareil."
-
-    $ showP("julian", "reflexion", 0.88)
-    julian "Alors on envoie quel signal ?"
-    julian "Qu'on accepte de pourrir doucement ?"
-
-    $ showP("ryn", "neutre", 0.08)
-    ryn "Qu'on refuse de sacrifier les plus bas sur l'autel d'un pari."
-
-    play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[4], prompt="Moment 5 — Dernière impulsion avant la coupure.")
-    call _3_DEBAT1_PHASE3_INT5 from _call__3_DEBAT1_PHASE3_INT5
-
-    pause 0.4
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    play sound "sound/sfx_table_hit.ogg"
-    kami "Oh, merveilleux. Vous avez presque réussi à penser en groupe pendant plus de trois minutes."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Phase 4, maintenant : compromis impossible, alliances opportunistes, et peut-être un aveu."
-    kami "Restez assis. Les chaises sont verrouillées."
-
-    hide screen kami_broadcast_ui
-
-    jump _3_DEBAT1_PHASE4
+# Durée : 4m
+# Total : 1h 52m 40s
 
 label vote_phase3_final:
 
@@ -3327,33 +3256,4 @@ label _3_DEBAT1_PHASE3_INT2:
         hide ryn
         hide sael
 
-    return
-
-label _3_DEBAT1_PHASE3_INT3:
-    $ selected = p3_round_options[2][p3_pick]["title"]
-    if "énoncé" in selected.lower():
-        $ pnj_adhesion["julian"] -= 2
-        $ showP("tomas", "raison", 0.62)
-        tomas "Le texte prévaut."
-        $ showP("julian", "agace", 0.88)
-        julian "Le texte peut être amendé ensuite."
-    elif "faiblesse" in selected.lower() or "orbite" in selected.lower():
-        $ pnj_adhesion["julian"] -= 1
-        $ p3_delta_txt = "-1"
-        $ showP("nyra", "raison", 0.77)
-        nyra "On ne gouverne pas un risque systémique à l'instinct."
-        $ showP("julian", "hesitation", 0.88)
-        julian "Pas à l'instinct. À la décision."
-    elif "échange" in selected.lower() or "discret" in selected.lower():
-        $ pnj_adhesion["julian"] += 1
-        $ showP("sael", "raison", 0.77)
-        sael "Les circuits parallèles prouvent qu'une transition est déjà en cours."
-        $ showP("julian", "reflexion", 0.88)
-        julian "Alors assumons-la au grand jour."
-    else:
-        $ pnj_adhesion["julian"] += 2
-        $ showP("elen", "determine", 0.33)
-        elen "On a besoin d'un vrai virage !"
-        $ showP("julian", "determine", 0.88)
-        julian "Oui."
     return
