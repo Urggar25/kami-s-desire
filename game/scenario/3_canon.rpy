@@ -3216,28 +3216,97 @@ label _3_DEBAT1_PHASE3_INT2:
 
     return
 
-label vote_pour:
+label _3_VOTE_POUR:
 
-    $ amendement_passe = True
     scene bg_conclave at adaptive_fullscreen with dissolve
+    stop music fadeout 1.0
+    play music "music/bgm_victory_bitter.mp3" fadein 2.0  # ambiance triomphale mais pesante, avec une note sombre
 
-    $ showP("julian", "determine", 0.82)
-    $ showP("ryn", "colere", 0.20)
-    $ showP("nyra", "taquin", 0.52)
-    julian "Enfin. On coupe les chaînes."
-    ryn "Vous appelez ça une victoire ? Moi j'appelle ça abandonner les plus fragiles."
+    pause 1.2
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with vpunch
+    kami "VERT !"
+    kami "Le vote est POUR !"
+    kami "Suppression totale des bons de rationnement. Fin de la distribution gratuite."
+    kami "Le commerce, le transport et le stockage de marchandises sont désormais autorisés."
+    kami "Félicitations, mes petits rebelles. Vous avez coupé la laisse."
+    kami "Mais attention… la laisse, c’était aussi une sécurité."
+    kami "On va voir ce que ça donne sans filet. J’ai hâte du spectacle."
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
+
+    "L’écran s’éteint. Un silence étrange s’installe, pas vraiment joyeux."
+    "Je sens mon cœur battre fort. On l’a fait. Mais on n’a pas gagné. On a juste… changé les règles."
+
+    $ showP("julian", "sourire", 0.50)  # centre
+    julian "C’est fait."
+    julian "On a une chance, maintenant."
+    julian "Une vraie."
+
+    $ showP("elen", "joie", 0.88)  # droite
+    elen "On va pouvoir choisir…"
+    elen "Vraiment choisir."
+
+    $ showP("ryn", "jaloux", 0.12)  # gauche
+    ryn "Ouais…"
+    ryn inquiet "Mais sans les bons, Limen va morfler au début."
+    ryn "Faut pas se mentir."
+
+    hide julian
+    $ showP("noam", "raison", 0.50)  # centre
+    noam "On savait que ce serait pas propre."
+    noam "Mais on avait plus le choix de rester comme avant."
+
+    hide elen
+    $ showP("mara", "rire_profond", 0.88)  # droite
+    mara "Génial. On va enfin pouvoir acheter des trucs."
+    mara taquin "Enfin… au moins, on va crever en ayant le choix de la sauce."
+
+    hide ryn
+    $ showP("kael", "mefiant", 0.12)  # gauche
+    kael "À Orbite… ça va tenir."
+    kael "Tant qu’on touche pas aux règles de sécurité."
+    kael triste "Mais j’ai quand même peur que ça parte en vrille."
+
+    hide noam
+    $ showP("nyra", "raison", 0.50)  # centre
+    nyra "On a gagné une bataille."
+    nyra "Pas la guerre."
+    nyra "Maintenant, il va falloir gérer les conséquences."
+
+    "Je regarde autour de moi. Julian a un sourire crispé. Elen semble excitée mais nerveuse."
+    "Ryn fixe le sol, poings serrés. Kael respire fort, comme s’il venait de courir un marathon."
+    "Personne n’exulte. On sait tous que le plus dur commence maintenant."
 
     hide nyra
-    $ showP("kael", "hesitation", 0.52)
-    kael "Le vote est passé... il faudra encadrer vite, sinon ça dérape."
-    nyra "Ça va brûler, oui. Mais au moins, ça bouge."
+    hide kael
+    hide mara
 
-    kami "Majorité favorable. Le marché respire. Les nerfs, beaucoup moins."
+    "L’horloge indique 17h10. La journée est finie."
+    "Je me lève lentement. Les autres font pareil, en silence."
 
-    stop music fadeout 1.6
-    hide screen kami_broadcast_ui
-    with dissolve
-    jump _3_DEBAT1_PHASE4
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    "Je marche vers ma chambre. Mes pas résonnent dans le couloir vide."
+
+    scene bg_dortoir at adaptive_fullscreen with dissolve
+    "On a voté pour le changement."
+    "Mais je ne sais pas si on est prêts à le vivre."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Je pousse la porte de ma chambre et m’effondre sur le lit."
+    "Demain, tout sera différent."
+    "Et j’ai peur que ça ne soit pas mieux."
+
+    $ phase3_over = True
+    $ vote1 = "OUI"
+
+    jump patreon_ending
+
+    #call end_day("4") from _call_end_day_2
+
+    #jump _4_NON
 
 label _3_VOTE_CONTRE:
 
@@ -3272,35 +3341,38 @@ label _3_VOTE_CONTRE:
     julian "Non, c’est pas possible."
     julian "On avait une chance… une vraie chance de changer les choses…"
 
-    $ showP("ryn", "soulagement", 0.12)  # gauche
+    $ showP("ryn", "fatigue", 0.12)  # gauche
     ryn "Ce n'est pas si simple que ça, d'autres auraient pu en souffrir."
 
-    hide julian
     $ showP("mara", "colere", 0.88)  # droite
     mara "On a juste repoussé l’inévitable !"
     mara "On va continuer à crever à petit feu, SU-PER."
 
+    hide julian
     $ showP("elen", "triste", 0.50)  # centre – remplace Julian
     elen "Je… je croyais qu’on allait y arriver…"
     elen "J’étais tellement sûre…"
 
-    hide mara
-    $ showP("kael", "soulagement", 0.12)  # gauche
+    hide ryn
+    $ showP("kael", "doute", 0.12)  # gauche
     kael "Au moins… On est déjà habitué à ce quotidien."
     kael "Rien ne change, ça ne s'aggrave pas. C'est déjà ça."
 
-    hide elen
+    hide mara
     $ showP("nyra", "raison", 0.88)  # droite
     nyra "Décevant, mais en soit c'est rationnel."
     nyra "Le chaos aurait pu tout détruire."
 
     "Les voix montent. Julian se lève d’un coup, frappe la table du poing."
 
+    hide elen
     $ showP("julian", "colere", 0.50)  # centre – retour
     julian "Rationnelle ?!"
     julian "Vous appelez ça rationnel ? Continuer à rationner des miettes pendant que les districts crèvent ?!"
     julian "On a eu une chance et on l’a laissée filer !"
 
+    hide kael
+    $ showP("ryn", "colere", 0.12)  # gauche
     ryn "C'est le vote, c'est comme ça."
     ryn "Je le comprends. T’as vu ce que ça risquait pour Limen ?!"
 
@@ -3327,13 +3399,15 @@ label _3_VOTE_CONTRE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Le silence est pire que les cris."
 
-    "Qu’est-ce qu’on fait maintenant ?"
+    "Tout a échoué."
+    "Qu’est-ce qu’on peut faire maintenant ?"
 
     $ phase3_over = True
-    $ amendement_passe = False
 
     $ vote1 = "NON"
 
-    jump _4_NON  # ou ton label suivant
+    jump patreon_ending
 
-    return
+    #call end_day("4") from _call_end_day_2
+
+    #jump _4_NON

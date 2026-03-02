@@ -471,6 +471,6 @@ label vote_phase3_final:
     $ renpy.pause(0.8, hard=False)
 
     if vote_phase3_counts["contre"] == 0:
-        jump vote_pour
+        jump _3_VOTE_POUR
     else:
         jump _3_VOTE_CONTRE

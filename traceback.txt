@@ -1,42 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 219, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x000000000499f9d0>
+  File "game/scenario/salles/sas.rpy", line 296, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1260, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1554, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/vote_phase3_final.rpy", line 474, in script
+    jump vote_pour
+ScriptError: could not find label 'vote_pour'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 219, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-  File "C:\Users\fasqu\Desktop\renpy\renpy\loadsave.py", line 837, in load
-    roots, log = loads(log_data)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 104, in loads
-    return load(io.BytesIO(s))
-  File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 101, in load
-    return up.load()
-  File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 97, in find_class
-    return super().find_class(module, name)
-AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x000000000499f9d0>
+  File "game/scenario/salles/sas.rpy", line 296, in script call
+    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
+  File "game/scenario/2_canon.rpy", line 1047, in script call
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
+  File "game/scenario/3_canon.rpy", line 1260, in script call
+    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
+  File "game/scenario/3_canon.rpy", line 1554, in script call
+    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
+  File "game/vote_phase3_final.rpy", line 474, in script
+    jump vote_pour
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'vote_pour'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2.2
-Mon Mar  2 19:09:51 2026
+Mon Mar  2 19:45:20 2026

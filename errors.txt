@@ -2,11 +2,11 @@
 errors listed below, and try again.
 
 
-The label vote_phase3_final is defined twice, at File "game/scenario/3_canon.rpy", line 2791:
-label vote_phase3_final:
-and File "game/vote_phase3_final.rpy", line 367:
-label vote_phase3_final:
+The label _call_end_day_2 is defined twice, at File "game/scenario/2_canon.rpy", line 1703:
+    call end_day("3") from _call_end_day_2
+and File "game/scenario/3_canon.rpy", line 3341:
+    call end_day("4") from _call_end_day_2
 
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Mar  2 13:54:58 2026
+Mon Mar  2 19:24:48 2026
