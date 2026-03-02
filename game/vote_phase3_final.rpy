@@ -308,8 +308,8 @@ screen vote_phase3_tally_screen():
     modal True
     zorder 230
 
-    add "images/background/bg_conclave.png" at adaptive_fullscreen
     add Solid("#04070FCC")
+    add "images/background/bg_conclave.png" at adaptive_fullscreen
 
     frame:
         xalign 0.5
@@ -339,14 +339,14 @@ screen vote_phase3_tally_screen():
         false=NullAction()
     )
 
-    if vote_phase3_current_name:
-        text "[vote_phase3_current_name] vote :":
-            xalign 0.5
-            yalign 0.30
-            font "fonts/day_font.ttf"
-            size 38
-            color "#D9ECFF"
-            outlines [(2, "#203050", 0, 0)]
+    # if vote_phase3_current_name:
+    #     text "[vote_phase3_current_name] vote :":
+    #         xalign 0.5
+    #         yalign 0.30
+    #         font "fonts/day_font.ttf"
+    #         size 38
+    #         color "#D9ECFF"
+    #         outlines [(2, "#203050", 0, 0)]
 
     if vote_phase3_current_vote == "pour":
         text "POUR":
@@ -473,4 +473,4 @@ label vote_phase3_final:
     if vote_phase3_counts["contre"] == 0:
         jump vote_pour
     else:
-        jump vote_contre
+        jump _3_VOTE_CONTRE

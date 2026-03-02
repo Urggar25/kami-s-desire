@@ -2821,52 +2821,6 @@ label _3_DEBAT1_PHASE3:
 #     else:
 #         jump vote_contre
 
-label vote_pour:
-
-    $ amendement_passe = True
-    scene bg_conclave at adaptive_fullscreen with dissolve
-
-    $ showP("julian", "determine", 0.82)
-    $ showP("ryn", "colere", 0.20)
-    $ showP("nyra", "taquin", 0.52)
-    julian "Enfin. On coupe les chaînes."
-    ryn "Vous appelez ça une victoire ? Moi j'appelle ça abandonner les plus fragiles."
-
-    hide nyra
-    $ showP("kael", "hesitation", 0.52)
-    kael "Le vote est passé... il faudra encadrer vite, sinon ça dérape."
-    nyra "Ça va brûler, oui. Mais au moins, ça bouge."
-
-    kami "Majorité favorable. Le marché respire. Les nerfs, beaucoup moins."
-
-    stop music fadeout 1.6
-    hide screen kami_broadcast_ui
-    with dissolve
-    jump _3_DEBAT1_PHASE4
-
-label vote_contre:
-
-    $ amendement_passe = False
-    scene bg_conclave at adaptive_fullscreen with dissolve
-
-    $ showP("ryn", "determine", 0.20)
-    $ showP("julian", "agace", 0.82)
-    $ showP("nyra", "neutre", 0.52)
-    ryn "Le texte tombe. On garde un filet, pas une roulette."
-    julian "Magnifique. Encore un tour de clé sur une prison qui rouille."
-
-    hide nyra
-    $ showP("kael", "reflechit", 0.52)
-    kael "Ce n'est pas la fin du débat... juste un refus du saut aveugle."
-    nyra "Statu quo validé. La survie gagne, l'audace attendra."
-
-    kami "Majorité défavorable. Rien ne change... sauf la rancœur."
-
-    stop music fadeout 1.6
-    hide screen kami_broadcast_ui
-    with dissolve
-    jump conclusion_jour3
-
 label _3_DEBAT1_PHASE3_INT1:
     $ selected = p3_round_options[0][p3_pick]["title"]
     
@@ -3255,5 +3209,127 @@ label _3_DEBAT1_PHASE3_INT2:
 
         hide ryn
         hide sael
+
+    return
+
+label vote_pour:
+
+    $ amendement_passe = True
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("julian", "determine", 0.82)
+    $ showP("ryn", "colere", 0.20)
+    $ showP("nyra", "taquin", 0.52)
+    julian "Enfin. On coupe les chaînes."
+    ryn "Vous appelez ça une victoire ? Moi j'appelle ça abandonner les plus fragiles."
+
+    hide nyra
+    $ showP("kael", "hesitation", 0.52)
+    kael "Le vote est passé... il faudra encadrer vite, sinon ça dérape."
+    nyra "Ça va brûler, oui. Mais au moins, ça bouge."
+
+    kami "Majorité favorable. Le marché respire. Les nerfs, beaucoup moins."
+
+    stop music fadeout 1.6
+    hide screen kami_broadcast_ui
+    with dissolve
+    jump _3_DEBAT1_PHASE4
+
+label _3_VOTE_CONTRE:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    stop music fadeout 1.0
+    play music "music/bgm_defeat_low.mp3" fadein 2.0  # ambiance sombre, pesante
+
+    pause 1.2
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "ROUGE !"
+    kami "Le vote est CONTRE !"
+    kami "Le statu quo est donc maintenu. Les bons de rationnement restent. La distribution continue."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Que je n'entende plus personne râler sur ces bons !"
+    kami "Vous aviez la possibilité de changer le système."
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Félicitations, mes petits rats sages. Vous avez choisi la sécurité… Bien que c'est un peu plus ennuyeux."
+    kami "Je suis presque déçue. J’espérais un peu plus de sang et de chaos."
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
+
+    "L’écran central s’éteint. Le silence est assourdissant."
+    "Je sens un poids énorme tomber sur mes épaules. Tout le monde reste figé."
+
+    $ showP("julian", "colere", 0.50)  # centre
+    julian "Non…"
+    julian "Non, c’est pas possible."
+    julian "On avait une chance… une vraie chance de changer les choses…"
+
+    $ showP("ryn", "soulagement", 0.12)  # gauche
+    ryn "Ce n'est pas si simple que ça, d'autres auraient pu en souffrir."
+
+    hide julian
+    $ showP("mara", "colere", 0.88)  # droite
+    mara "On a juste repoussé l’inévitable !"
+    mara "On va continuer à crever à petit feu, SU-PER."
+
+    $ showP("elen", "triste", 0.50)  # centre – remplace Julian
+    elen "Je… je croyais qu’on allait y arriver…"
+    elen "J’étais tellement sûre…"
+
+    hide mara
+    $ showP("kael", "soulagement", 0.12)  # gauche
+    kael "Au moins… On est déjà habitué à ce quotidien."
+    kael "Rien ne change, ça ne s'aggrave pas. C'est déjà ça."
+
+    hide elen
+    $ showP("nyra", "raison", 0.88)  # droite
+    nyra "Décevant, mais en soit c'est rationnel."
+    nyra "Le chaos aurait pu tout détruire."
+
+    "Les voix montent. Julian se lève d’un coup, frappe la table du poing."
+
+    $ showP("julian", "colere", 0.50)  # centre – retour
+    julian "Rationnelle ?!"
+    julian "Vous appelez ça rationnel ? Continuer à rationner des miettes pendant que les districts crèvent ?!"
+    julian "On a eu une chance et on l’a laissée filer !"
+
+    ryn "C'est le vote, c'est comme ça."
+    ryn "Je le comprends. T’as vu ce que ça risquait pour Limen ?!"
+
+    julian "Et t’as vu ce que ça risque si on change rien ?!"
+
+    "La tension explose. Plusieurs se lèvent, parlent en même temps. Mara crie quelque chose sur les riches qui s’en foutent. Noam essaie de calmer tout le monde, sans succès."
+
+    "Je regarde l’horloge sur le mur : presque 17h."
+    "La journée est finie. Le vote est fini."
+    "Et rien n’a changé."
+
+    "Je me lève lentement. Les voix continuent autour de moi, mais je n’écoute plus."
+    "Je veux juste rentrer dans ma chambre. Réfléchir. Ou ne plus réfléchir du tout."
+
+    hide julian
+    hide ryn
+    hide nyra
+
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    "Je marche dans les couloirs froids du Conclave. Mes pas résonnent."
+    scene bg_dortoir at adaptive_fullscreen with dissolve
+    "Je pousse la porte de ma chambre et m’effondre sur le lit."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Le silence est pire que les cris."
+
+    "Qu’est-ce qu’on fait maintenant ?"
+
+    $ phase3_over = True
+    $ amendement_passe = False
+
+    $ vote1 = "NON"
+
+    jump _4_NON  # ou ton label suivant
 
     return
