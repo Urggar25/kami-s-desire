@@ -1835,7 +1835,7 @@ label _3_TRANSITION_CONCLAVE:
     "Le Conclave va commencer."
     think "Plus de retour en arrière possible."
 
-    jump patreon_ending
+    #jump patreon_ending
 
 # Durée : 2m55
 # Totale : 1h 40m 00s
@@ -2501,7 +2501,7 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], prompt="Moment 1 — Cadrer la première salve.")
-    call _3_DEBAT1_PHASE3_INT1
+    call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
 
     stop music fadeout 1.0
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -2552,7 +2552,7 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
-    call _3_DEBAT1_PHASE3_INT2
+    call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
 
     $ showP("iris", "hesitation", 0.66)
     iris "Je pose un truc simple."
@@ -2586,7 +2586,7 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[2], prompt="Moment 3 — Appuyer sur la légalité ou sur l'élan.")
-    call _3_DEBAT1_PHASE3_INT3
+    call _3_DEBAT1_PHASE3_INT3 from _call__3_DEBAT1_PHASE3_INT3
 
     $ showP("julian", "determine", 0.88)
     julian "Si on refuse chaque pas parce qu'il n'est pas parfait, on reste au point mort à vie."
@@ -2613,7 +2613,7 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[3], prompt="Moment 4 — Fixer la peur ou relancer l'audace.")
-    call _3_DEBAT1_PHASE3_INT4
+    call _3_DEBAT1_PHASE3_INT4 from _call__3_DEBAT1_PHASE3_INT4
 
     $ showP("sael", "raison", 0.93)
     sael "Il y a une question qu'on évite."
@@ -2644,7 +2644,7 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[4], prompt="Moment 5 — Dernière impulsion avant la coupure.")
-    call _3_DEBAT1_PHASE3_INT5
+    call _3_DEBAT1_PHASE3_INT5 from _call__3_DEBAT1_PHASE3_INT5
 
     pause 0.4
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -2989,39 +2989,64 @@ label _3_DEBAT1_PHASE3_INT2:
     elif "échange" in selected.lower() or "discret" in selected.lower():
         scene bg_conclave at adaptive_fullscreen with dissolve
 
-        $ showP("nyra", "raison", 0.50)
-        nyra "Les échanges discrets existent déjà."
-        nyra "Couper les bons d'un coup, c'est forcer tout le monde à passer par des réseaux opaques."
+        $ showP("ryn", "colere", 0.50)  # centre
+        ryn "Attends… tu dis que ça se fait déjà ?"
+        ryn "Des trocs en douce à Limen ?"
 
-        $ showP("sael", "mefiant", 0.88)
-        sael "Opaques, oui. Mais efficaces."
-        sael "Quand les canaux officiels lâchent, c'est ça qui fait tenir les quartiers."
+        $ showP("sael", "mefiant", 0.88)  # droite
+        sael "Depuis longtemps."
+        sael "Un sac contre une réparation. Un service contre du tissu."
+        sael "Ça tient les gens en vie entre deux distributions."
 
-        hide nyra
-        $ showP("noam", "reflexion", 0.50)
-        noam "Efficaces pour ceux qui ont un contact."
-        noam "Pour les autres, c'est juste une file d'attente de plus, sans recours."
+        $ showP("noam", "reflexion", 0.12)  # gauche
+        noam "Ça marche en petit comité."
+        noam "Mais si tout le monde le fait officiellement, est-ce que ça reste contrôlable ?"
 
-        hide sael
-        $ showP("mara", "agace", 0.88)
-        mara "Et ça crée des chefs de couloir."
-        mara "Les 'discrets' deviennent vite des péages."
+        hide ryn
+        $ showP("kael", "hesitation", 0.50)  # centre
+        kael "Et… à Orbite ?"
+        kael "Si ça se fait ici sans que Kami réagisse…"
+        kael "Peut-être que ça peut exister sans… sans que ça pète tout ?"
 
-        $ showP("julian", "determine", 0.12)
-        julian "Ou des preuves que les gens savent déjà s'organiser sans Kami."
+        hide noam
+        $ showP("julian", "determine", 0.88)  # droite
+        julian "Exactement !"
+        julian "Ça prouve que les gens savent déjà s’organiser sans attendre la permission."
+        julian "Supprimer les bons, c’est juste arrêter de faire semblant."
 
-        "La salle hésite : survivre par les marges, ou refuser d'en faire la règle."
+        hide kael
+        $ showP("lysa", "blase", 0.12)  # gauche
+        lysa "S’organiser… ou créer des petits rois."
+        lysa "Les trocs discrets, c’est bien quand ça reste discret."
+        lysa "À grande échelle, ça devient un marché noir avec des chefs qui contrôlent tout."
 
+        hide julian
+        $ showP("ryn", "reflexion", 0.88)  # droite – retour
+        ryn "Mais… si c’est déjà là à Limen…"
+        ryn "Et que ça sauve des familles entre deux rations…"
+        ryn "Alors peut-être que sans les bons, on pourrait faire pareil, mais en mieux."
+        ryn "Sans crever de faim en attendant Kami."
+
+        hide lysa
+        $ showP("sael", "mefiant", 0.50)  # centre – retour
+        sael "C’est déjà le cas."
+        sael "On survit."
+        sael "On peut faire plus que survivre."
+
+        "Ryn baisse les yeux un instant. Kael fixe le sol, comme s’il recalculait tout dans sa tête."
+        "L’idée fait son chemin : le troc existe déjà. Il fonctionne. Il pourrait être la réponse."
+
+        # Modifs adhésion : on cible surtout Ryn et Kael (positif = POUR le changement)
         $ debat_day3_apply_influence({
-            "nyra": -1,
-            "noam": -1,
-            "mara": -1,
-            "sael": 1,
-            "julian": 1
+            "ryn": 2,         # convaincu que Limen survivrait grâce au troc existant
+            "kael": 2,        # rassuré : échanges sans chaos ni punition orbitale
+            "julian": 1,      # adore la preuve d’autonomie
+            "sael": 1,        # favorable, voit le surpassement
+            "lysa": -1        # blasée, craint les dérives
         })
 
-        hide mara
-        hide julian
+        hide ryn
+        hide sael
 
     return
 
