@@ -1,22 +1,21 @@
-2026-03-02 10:03:11 UTC
+2026-03-02 10:36:21 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.19s
-Loading error handling took 0.13s
-Loading script took 1.17s
-Loading save slot metadata took 0.24s
+Early init took 0.14s
+Loading error handling took 0.07s
+Loading script took 1.20s
+Loading save slot metadata took 0.25s
 Loading persistent took 0.01s
-Running init code took 0.10s
-Loading analysis data took 0.06s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.12s
+Running init code took 0.17s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.16s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.15s
+Dump and make backups took 0.16s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.13s
+Initial gc took 0.29s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -24,14 +23,14 @@ Creating interface object took 0.01s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.05s
-Prepare screens took 0.13s
+Load screen analysis took 0.12s
+Analyze screens took 0.01s
+Save screen analysis took 0.00s
+Prepare screens took 0.47s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.06s
-Running _start took 0.00s
-Interface start took 1.24s
+Save bytecode. took 0.15s
+Running _start took 0.01s
+Interface start took 2.90s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -45,6 +44,70 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1526, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 285, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1526, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 285, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 285, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 1182, in event
+    return handle_click(self.clicked)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 1103, in handle_click
+    rv = run(action)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_file.rpy", line 499, in __call__
+    renpy.load(fn)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\loadsave.py", line 837, in load
+    roots, log = loads(log_data)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 104, in loads
+    return load(io.BytesIO(s))
+  File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 101, in load
+    return up.load()
+  File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 97, in find_class
+    return super().find_class(module, name)
+AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049ff9d0>
+
+While running game code:
+  File "renpy/common/00action_file.rpy", line 499, in __call__
+    renpy.load(fn)
+AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049ff9d0>
 
 Full traceback:
   File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
@@ -97,60 +160,23 @@ Full traceback:
     return up.load()
   File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 97, in find_class
     return super().find_class(module, name)
-AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049bf9d0>
+AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049ff9d0>
 
 While running game code:
   File "renpy/common/00action_file.rpy", line 499, in __call__
     renpy.load(fn)
-AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049bf9d0>
+AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049ff9d0>
 Cleaning stores took 0.00s
 Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.08s
+Build styles took 0.01s
+Load screen analysis took 0.09s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.05s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.01s
-Resetting cache.
-Early init took 246.35s
-Loading error handling took 0.07s
-Loading script took 0.95s
-Loading save slot metadata took 0.16s
-Loading persistent took 0.01s
-Running init code took 0.08s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.10s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.13s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.21s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.14s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.93s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) UHD Graphics 770'
-Version: b'4.6.0 - Build 32.0.101.7084'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096

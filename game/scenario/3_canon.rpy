@@ -2345,7 +2345,11 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
                             xsize 460
                             ysize 530
                             sensitive is_unlocked
-                            action Return(i) if is_unlocked else NullAction()
+
+                            if is_unlocked:
+                                action Return(i)
+                            else:
+                                action NullAction()
 
                         vbox:
                             xalign 0.5

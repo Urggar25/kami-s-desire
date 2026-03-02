@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label temps_libre_salle_repos is defined twice, at File "game/scenario/salles/voyeur_scenes.rpy", line 7:
-label temps_libre_salle_repos:
-and File "game/scenario/salles/voyeur_scenes.rpy", line 56:
-label temps_libre_salle_repos:
-
-
-The label temps_libre_salle_archive is defined twice, at File "game/scenario/salles/voyeur_scenes.rpy", line 105:
-label temps_libre_salle_archive:
-and File "game/scenario/salles/voyeur_scenes.rpy", line 160:
-label temps_libre_salle_archive:
-
+File "game/scenario/3_canon.rpy", line 2348: The if statement is not a valid child of the imagebutton statement.
+    action Return(i) if is_unlocked else NullAction()
+                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Mar  1 21:12:16 2026
+Mon Mar  2 11:30:27 2026

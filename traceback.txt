@@ -3,7 +3,7 @@
 While running game code:
   File "renpy/common/00action_file.rpy", line 499, in __call__
     renpy.load(fn)
-AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049bf9d0>
+AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049ff9d0>
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -58,9 +58,9 @@ Full traceback:
     return up.load()
   File "C:\Users\fasqu\Desktop\renpy\renpy\compat\pickle.py", line 97, in find_class
     return super().find_class(module, name)
-AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049bf9d0>
+AttributeError: Can't get attribute 'build_arg' on <renpy.python.StoreModule object at 0x00000000049ff9d0>
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2.2
-Mon Mar  2 11:03:48 2026
+Mon Mar  2 11:36:52 2026
