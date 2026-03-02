@@ -2296,6 +2296,194 @@ init -1:
         linear 1.2 yoffset 0
         repeat
 
+    # =========================
+    # VOTE FINAL — UI TRANSFORMS
+    # =========================
+    transform vote_screen_intro:
+        alpha 0.0
+        zoom 0.92
+        linear 0.35 alpha 1.0 zoom 1.0
+
+    transform vote_glow_pulse:
+        alpha 0.28
+        linear 1.2 alpha 0.72
+        linear 1.2 alpha 0.28
+        repeat
+
+    transform vote_green_entry:
+        alpha 0.0
+        xoffset -220
+        on show:
+            easeout 0.45 alpha 1.0 xoffset 12
+            linear 0.05 xoffset -8
+            linear 0.05 xoffset 0
+
+    transform vote_red_entry:
+        alpha 0.0
+        xoffset 220
+        on show:
+            easeout 0.45 alpha 1.0 xoffset -12
+            linear 0.05 xoffset 8
+            linear 0.05 xoffset 0
+
+    transform vote_particle_float:
+        alpha 0.0
+        yoffset 20
+        linear 0.8 alpha 0.55 yoffset -24
+        linear 0.7 alpha 0.0 yoffset -44
+        repeat
+
+    transform vote_trend_fill:
+        alpha 0.55
+        linear 0.6 alpha 1.0
+
+screen vote_screen(total_adhesion=0):
+    modal True
+    zorder 300
+
+    default hover_side = None
+    default pending_choice = None
+
+    # Fond dystopique sombre + halos froids.
+    add "bg_conclave" at adaptive_fullscreen
+    add Solid("#040913d6")
+    add Solid("#6ad4ff10") at vote_glow_pulse
+    add Solid("#ffffff07")
+
+    # Flash plein écran lors de la validation du clic.
+    if pending_choice == "pour":
+        add Solid("#37ff8f5e")
+    elif pending_choice == "contre":
+        add Solid("#ff3f4f5e")
+
+    # Barre de tendance collective (gradient rouge -> vert).
+    frame at vote_screen_intro:
+        background Solid("#091524e6")
+        xalign 0.5
+        yalign 0.06
+        xsize 980
+        ysize 82
+        padding (22, 16)
+
+        vbox:
+            spacing 8
+            text "TENDANCE COLLECTIVE" size 24 color "#9ddfff" xalign 0.5
+            fixed:
+                xsize 920
+                ysize 20
+                add Solid("#31141bcc") xpos 0 ypos 0 xsize 460 ysize 20
+                add Solid("#113222cc") xpos 460 ypos 0 xsize 460 ysize 20
+                $ clamped = max(-8.0, min(8.0, float(total_adhesion)))
+                $ fill_width = int((clamped + 8.0) / 16.0 * 920)
+                if fill_width > 0:
+                    add Solid("#8de4ff55") xpos 0 ypos 0 xsize fill_width ysize 20 at vote_trend_fill
+
+    # Zone principale avec deux boutons géants.
+    hbox at vote_screen_intro:
+        xalign 0.5
+        yalign 0.56
+        spacing 220
+
+        # Bouton POUR (vert).
+        fixed at vote_green_entry:
+            xsize 510
+            ysize 540
+
+            if hover_side == "pour":
+                add Solid("#35ff8d2a") at vote_glow_pulse
+
+            if hover_side == "pour":
+                imagebutton:
+                    idle Solid("#0d211ae0")
+                    hover Solid("#143626f2")
+                    at Transform(zoom=1.04)
+                    xalign 0.5
+                    yalign 0.5
+                    xsize 510
+                    ysize 540
+                    hover_sound "sound/sfx_beep.mp3"
+                    action [SetScreenVariable("pending_choice", "pour"), Play("sound", "sound/sfx_vote_click.ogg"), Function(renpy.with_statement, vpunch), Return("pour")]
+                    hovered SetScreenVariable("hover_side", "pour")
+                    unhovered SetScreenVariable("hover_side", None)
+            else:
+                imagebutton:
+                    idle Solid("#0d211ae0")
+                    hover Solid("#143626f2")
+                    at Transform(zoom=1.0)
+                    xalign 0.5
+                    yalign 0.5
+                    xsize 510
+                    ysize 540
+                    hover_sound "sound/sfx_beep.mp3"
+                    action [SetScreenVariable("pending_choice", "pour"), Play("sound", "sound/sfx_vote_click.ogg"), Function(renpy.with_statement, vpunch), Return("pour")]
+                    hovered SetScreenVariable("hover_side", "pour")
+                    unhovered SetScreenVariable("hover_side", None)
+
+            frame:
+                background Solid("#42ff9647")
+                xalign 0.5
+                yalign 0.5
+                xsize 486
+                ysize 516
+
+            text "POUR" size 96 color "#7dffc0" outlines [(3, "#00331a", 0, 0)] xalign 0.5 yalign 0.42
+            text "SUPPRIMER LES BONS\n+LIBERTÉ MARCHANDE" size 30 color "#d9ffe9" text_align 0.5 xalign 0.5 yalign 0.62
+
+            if hover_side == "pour":
+                text "✦" size 32 color "#79ffc4" xpos 60 ypos 70 at vote_particle_float
+                text "✦" size 26 color "#79ffc4" xpos 420 ypos 92 at vote_particle_float
+                text "✦" size 24 color "#79ffc4" xpos 250 ypos 470 at vote_particle_float
+
+        # Bouton CONTRE (rouge).
+        fixed at vote_red_entry:
+            xsize 510
+            ysize 540
+
+            if hover_side == "contre":
+                add Solid("#ff4b592a") at vote_glow_pulse
+
+            if hover_side == "contre":
+                imagebutton:
+                    idle Solid("#270e12e0")
+                    hover Solid("#45131bf2")
+                    at Transform(zoom=1.04)
+                    xalign 0.5
+                    yalign 0.5
+                    xsize 510
+                    ysize 540
+                    hover_sound "sound/sfx_beep.mp3"
+                    action [SetScreenVariable("pending_choice", "contre"), Play("sound", "sound/sfx_vote_click.ogg"), Function(renpy.with_statement, vpunch), Return("contre")]
+                    hovered SetScreenVariable("hover_side", "contre")
+                    unhovered SetScreenVariable("hover_side", None)
+            else:
+                imagebutton:
+                    idle Solid("#270e12e0")
+                    hover Solid("#45131bf2")
+                    at Transform(zoom=1.0)
+                    xalign 0.5
+                    yalign 0.5
+                    xsize 510
+                    ysize 540
+                    hover_sound "sound/sfx_beep.mp3"
+                    action [SetScreenVariable("pending_choice", "contre"), Play("sound", "sound/sfx_vote_click.ogg"), Function(renpy.with_statement, vpunch), Return("contre")]
+                    hovered SetScreenVariable("hover_side", "contre")
+                    unhovered SetScreenVariable("hover_side", None)
+
+            frame:
+                background Solid("#ff4f6442")
+                xalign 0.5
+                yalign 0.5
+                xsize 486
+                ysize 516
+
+            text "CONTRE" size 96 color "#ff8b98" outlines [(3, "#3a0008", 0, 0)] xalign 0.5 yalign 0.42
+            text "MAINTIEN DU\n+SYSTÈME ACTUEL" size 30 color "#ffe0e4" text_align 0.5 xalign 0.5 yalign 0.62
+
+            if hover_side == "contre":
+                text "✦" size 32 color "#ff8d9c" xpos 80 ypos 82 at vote_particle_float
+                text "✦" size 26 color "#ff8d9c" xpos 410 ypos 112 at vote_particle_float
+                text "✦" size 24 color "#ff8d9c" xpos 260 ypos 476 at vote_particle_float
+
 screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
     modal True
     zorder 250
@@ -2670,6 +2858,85 @@ label _3_DEBAT1_PHASE3:
     hide screen kami_broadcast_ui
 
     jump _3_DEBAT1_PHASE4
+
+label vote_phase3_final:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    show screen kami_broadcast_ui
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.2
+    with Dissolve(0.5)
+
+    show bg_conclave:
+        zoom 1.03
+        linear 0.7 zoom 1.0
+
+    kami "Mes délicieux cobayes... l'instant du verdict est arrivé."
+    kami "Un seul geste, et vous décidez si la faim devient une marchandise."
+    kami "Vert : vous ouvrez les vannes du marché. Rouge : vous gardez la laisse."
+    kami "Choisissez bien. Je savoure déjà la suite."
+
+    $ total_adhesion = sum(pnj_adhesion.values())
+    $ vote_joueur = renpy.call_screen("vote_screen", total_adhesion=total_adhesion)
+
+    if vote_joueur == "pour":
+        scene bg_conclave at adaptive_fullscreen with vpunch
+        show expression Solid("#2dff9e40") as vote_flash with dissolve
+        hide vote_flash
+    else:
+        scene bg_conclave at adaptive_fullscreen with vpunch
+        show expression Solid("#ff435040") as vote_flash with dissolve
+        hide vote_flash
+
+    if total_adhesion > 0:
+        jump vote_pour
+    else:
+        jump vote_contre
+
+label vote_pour:
+
+    $ amendement_passe = True
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("julian", "determine", 0.82)
+    $ showP("ryn", "colere", 0.20)
+    $ showP("nyra", "taquin", 0.52)
+    julian "Enfin. On coupe les chaînes."
+    ryn "Vous appelez ça une victoire ? Moi j'appelle ça abandonner les plus fragiles."
+
+    hide nyra
+    $ showP("kael", "hesitation", 0.52)
+    kael "Le vote est passé... il faudra encadrer vite, sinon ça dérape."
+    nyra "Ça va brûler, oui. Mais au moins, ça bouge."
+
+    kami "Majorité favorable. Le marché respire. Les nerfs, beaucoup moins."
+
+    stop music fadeout 1.6
+    hide screen kami_broadcast_ui
+    with dissolve
+    jump _3_DEBAT1_PHASE4
+
+label vote_contre:
+
+    $ amendement_passe = False
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("ryn", "determine", 0.20)
+    $ showP("julian", "agace", 0.82)
+    $ showP("nyra", "neutre", 0.52)
+    ryn "Le texte tombe. On garde un filet, pas une roulette."
+    julian "Magnifique. Encore un tour de clé sur une prison qui rouille."
+
+    hide nyra
+    $ showP("kael", "reflechit", 0.52)
+    kael "Ce n'est pas la fin du débat... juste un refus du saut aveugle."
+    nyra "Statu quo validé. La survie gagne, l'audace attendra."
+
+    kami "Majorité défavorable. Rien ne change... sauf la rancœur."
+
+    stop music fadeout 1.6
+    hide screen kami_broadcast_ui
+    with dissolve
+    jump conclusion_jour3
 
 label _3_DEBAT1_PHASE3_INT1:
     $ selected = p3_round_options[0][p3_pick]["title"]
