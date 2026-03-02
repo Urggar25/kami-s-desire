@@ -8,56 +8,69 @@ default vote_phase3_counts = {"pour": 0, "abstention": 0, "contre": 0}
 default vote_phase3_current_name = ""
 default vote_phase3_current_vote = None
 default vote_phase3_results = []
+default vote_phase3_pending_votes = []
 default vote_phase3_tally_index = 0
 default vote_phase3_tally_done = False
 
 init python:
     import random
 
-    VOTE_PHASE3_REPRESENTANTS = [
-        "Ryn", "Julian", "Nyra", "Kael", "Mara", "Elias",
-        "Lysa", "Iris", "Tomas", "Elen", "Sael", "Noam",
-    ]
-
     def vote_phase3_build_results(player_choice):
-        """Prépare 12 votes. Le vote de Noam reflète le choix joueur (timeout => abstention)."""
-        names = list(VOTE_PHASE3_REPRESENTANTS)
-        random.shuffle(names)
+        """Construit les 12 votes : 11 persos via score, + Noam via choix joueur."""
+        display_names = {
+            "ryn": "Ryn",
+            "julian": "Julian",
+            "nyra": "Nyra",
+            "kael": "Kael",
+            "mara": "Mara",
+            "elias": "Elias",
+            "lysa": "Lysa",
+            "iris": "Iris",
+            "tomas": "Tomas",
+            "elen": "Elen",
+            "sael": "Sael",
+        }
 
         player_vote = player_choice if player_choice in ("pour", "contre", "abstention") else "abstention"
-        npc_pool = ["pour", "pour", "pour", "abstention", "abstention", "abstention"]
+
+        # Stats des 11 personnages (hors Noam) issues de la phase 2.
+        stats = dict(getattr(store, "debat_day3_live_vote_stats", {}))
+        if not stats and "DEBAT_DAY3_BASE_VOTE_STATS" in globals():
+            stats = dict(DEBAT_DAY3_BASE_VOTE_STATS)
 
         results = []
-        for name in names:
-            if name == "Noam":
-                vote = player_vote
+        for key, name in display_names.items():
+            stat_value = stats.get(key, 0)
+            if stat_value > 1:
+                vote = "pour"
+            elif stat_value < -1:
+                vote = "contre"
             else:
-                vote = random.choice(npc_pool)
+                vote = "abstention"
             results.append((name, vote))
 
-        # Évite un résultat 100% abstention (hors cas voulu si Noam s'abstient).
-        if all(v == "abstention" for _, v in results):
-            candidates = [i for i, (n, _) in enumerate(results) if n != "Noam"]
-            if candidates:
-                idx = random.choice(candidates)
-                n, _ = results[idx]
-                results[idx] = (n, "pour")
+        # Vote du joueur (Noam).
+        results.append(("Noam", player_vote))
 
+        random.shuffle(results)
         return results
 
     def vote_phase3_tally_step():
-        """Dépouille un vote à chaque appel et marque la fin une fois la liste épuisée."""
+        """Dépouille 1 vote aléatoire et le retire de la liste restante."""
         if store.vote_phase3_tally_done:
             return
 
-        if store.vote_phase3_tally_index >= len(store.vote_phase3_results):
+        if not store.vote_phase3_pending_votes:
             store.vote_phase3_tally_done = True
             return
 
-        _, rep_vote = store.vote_phase3_results[store.vote_phase3_tally_index]
-        store.vote_phase3_current_name = ""
+        pick_index = random.randrange(len(store.vote_phase3_pending_votes))
+        rep_name, rep_vote = store.vote_phase3_pending_votes.pop(pick_index)
+
+        store.vote_phase3_current_name = rep_name
         store.vote_phase3_current_vote = rep_vote
         store.vote_phase3_counts[rep_vote] += 1
+        store.vote_phase3_tally_index += 1
 
         if rep_vote == "pour":
             renpy.sound.play("sound/sfx_vote_pour.ogg")
@@ -66,9 +79,7 @@ init python:
         else:
             renpy.sound.play("sound/sfx_contre.ogg")
 
-        store.vote_phase3_tally_index += 1
-
-        if store.vote_phase3_tally_index >= len(store.vote_phase3_results):
+        if not store.vote_phase3_pending_votes:
             store.vote_phase3_tally_done = True
 
 
@@ -316,6 +327,27 @@ screen vote_phase3_tally_screen():
         outlines [(4, "#65D4FF88", 0, 0)]
         at vote_phase3_title_glow
 
+    timer 0.85 repeat True action If(
+        vote_phase3_tally_done,
+        true=NullAction(),
+        false=Function(vote_phase3_tally_step)
+    )
+
+    timer 0.2 repeat True action If(
+        vote_phase3_tally_done,
+        true=Return(True),
+        false=NullAction()
+    )
+
+    if vote_phase3_current_name:
+        text "[vote_phase3_current_name] vote :":
+            xalign 0.5
+            yalign 0.30
+            font "fonts/day_font.ttf"
+            size 38
+            color "#D9ECFF"
+            outlines [(2, "#203050", 0, 0)]
+
     if vote_phase3_current_vote == "pour":
         text "POUR":
             xalign 0.5
@@ -430,20 +462,13 @@ label vote_phase3_final:
     $ vote_phase3_current_name = ""
     $ vote_phase3_current_vote = None
     $ vote_phase3_results = vote_phase3_build_results(vote_phase3_player_choice)
+    $ vote_phase3_pending_votes = list(vote_phase3_results)
     $ vote_phase3_tally_index = 0
     $ vote_phase3_tally_done = False
 
-    show screen vote_phase3_tally_screen
+    $ renpy.call_screen("vote_phase3_tally_screen")
 
-    # Dépouillement piloté par le script.
-    while vote_phase3_tally_index < len(vote_phase3_results):
-        $ vote_phase3_tally_step()
-        $ renpy.pause(0.55, hard=False)
-
-    $ vote_phase3_tally_done = True
-    $ renpy.pause(1.2, hard=False)
-
-    hide screen vote_phase3_tally_screen
+    $ renpy.pause(0.8, hard=False)
 
     if vote_phase3_counts["contre"] == 0:
         jump vote_pour
