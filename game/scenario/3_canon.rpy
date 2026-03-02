@@ -2804,7 +2804,7 @@ label vote_phase3_final:
     kami "Vert : vous ouvrez les vannes du marché. Rouge : vous gardez la laisse."
     kami "Choisissez bien. Je savoure déjà la suite."
 
-    $ total_adhesion = sum(pnj_adhesion.values())
+    $ total_adhesion = sum(debat_day3_live_vote_stats.values())
     $ vote_joueur = renpy.call_screen("vote_screen", total_adhesion=total_adhesion)
 
     if vote_joueur == "pour":
