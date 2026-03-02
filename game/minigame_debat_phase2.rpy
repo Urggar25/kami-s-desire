@@ -75,11 +75,13 @@ init python:
         return fallback
 
     def debat_day3_vote_from_stat(stat_value):
-        if stat_value > 0:
+        if stat_value > 1:
             return "pour"
-        if stat_value == 0:
+        if stat_value < -1:
+            return "contre"
+        if -1 <= stat_value <= 1:
             return "abstention"
-        return "contre"
+        return "abstention"
 
     def debat_day3_compute_votes(stats=None):
         source = stats if stats is not None else store.debat_day3_live_vote_stats
