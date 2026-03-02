@@ -308,7 +308,7 @@ screen vote_phase3_tally_screen():
         outlines [(4, "#65D4FF88", 0, 0)]
         at vote_phase3_title_glow
 
-    timer 2.0 repeat True action If(
+    timer 4.0 repeat True action If(
         vote_phase3_tally_done,
         true=NullAction(),
         false=Function(vote_phase3_tally_step)
@@ -432,65 +432,15 @@ label vote_phase3_final:
     $ vote_phase3_tally_done = False
 
     show screen vote_phase3_tally_screen
-    $ vote_phase3_tally_step()
 
     while not vote_phase3_tally_done:
         $ renpy.pause(0.1, hard=True)
 
+    $ renpy.pause(4.0, hard=True)
+
     hide screen vote_phase3_tally_screen
 
-    # Résultat final + annonce Kami
-    play sound "audio/sfx_tambour.mp3"
-    scene white with Dissolve(0.18)
-    scene black with Dissolve(0.22)
-
     if vote_phase3_counts["contre"] == 0:
-        $ amendement_passe = True
-        $ vote_phase3_winner_text = "POUR GAGNE"
-        $ vote_phase3_winner_color = "#7CFFD3"
+        jump vote_pour
     else:
-        $ amendement_passe = False
-        $ vote_phase3_winner_text = "CONTRE GAGNE"
-        $ vote_phase3_winner_color = "#FFA0A0"
-
-    # show text "[vote_phase3_winner_text]" at truecenter, vote_phase3_symbol_pulse:
-    #     font "fonts/day_font.ttf"
-    #     size 120
-    #     bold True
-    #     color vote_phase3_winner_color
-        #outlines [(7, "#7FDBFF77", 0, 0)]
-    
-    show expression Text(
-        vote_phase3_winner_text,
-        font="fonts/day_font.ttf",
-        size=120,
-        bold=True,
-        color=vote_phase3_winner_color,
-        outlines=[(7, "#7FDBFF77", 0, 0)]
-    ) at truecenter, vote_phase3_symbol_pulse
-
-    kami "Verdict confirmé. [vote_phase3_winner_text]."
-    hide text
-
-    # Réactions PNJ clés (rapides)
-    show ryn colere at left
-    ryn "Ça y est... c'est gravé dans le système."
-
-    show julian determine at right
-    julian "On vient de changer l'équilibre. Pour de bon."
-
-    show nyra reflexion at center
-    nyra "Tout se jouera sur ce qu'on fera juste après."
-
-    show kael inquiet at Position(xalign=0.80, yalign=1.0)
-    kael "Un seul vote CONTRE suffisait... et il a suffi."
-
-    hide ryn
-    hide julian
-    hide nyra
-    hide kael
-
-    stop music fadeout 1.5
-    scene black with dissolve
-
-    jump conclusion_jour3
+        jump vote_contre
