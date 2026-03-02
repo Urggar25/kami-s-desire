@@ -437,9 +437,9 @@ label vote_phase3_final:
     # versions/configurations Ren'Py. On garde une pause courte "souple" pour
     # laisser le timer de dépouillement marquer proprement la fin.
     while not vote_phase3_tally_done:
-        $ renpy.pause(0.1)
+        $ renpy.pause(0.1, hard=False)
 
-    $ renpy.pause(4.0)
+    $ renpy.pause(4.0, hard=False)
 
     hide screen vote_phase3_tally_screen
 
