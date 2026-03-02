@@ -3,6 +3,8 @@ default seen_voyeur_mara_tomas = False
 default seen_voyeur_nyra = False
 default got_argument_echanges_discrets = False
 
+image bg_cg017_1 = Movie(play="images/background/bg_cg017_1.mp4", loop=True)
+
 label temps_libre_salle_repos:
     if not persistent.pegi18:
         jump REPOS_TP
@@ -124,7 +126,7 @@ label temps_libre_salle_dortoir:
     "Ça vient de la chambre de Nyra. La porte est légèrement entrouverte, juste une fine fente."
     "Je m’approche sans un bruit, le cœur qui cogne. Je jette un œil prudent par l’interstice."
 
-    scene bg_cg017 at adaptive_fullscreen with dissolve
+    scene bg_cg017_1 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg017")
 
     "Nyra est allongée sur son lit, dos légèrement cambré, jupe relevée jusqu’aux hanches, haut déboutonné jusqu’à la taille."

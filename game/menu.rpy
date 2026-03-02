@@ -61,8 +61,8 @@ default persistent.gallery_unlocked_bases = []
 init python:
     import re
 
-    _cg_pattern = re.compile(r"^images/background/(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp)$")
-    _sport_pattern = re.compile(r"^images/background/(sport\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp)$")
+    _cg_pattern = re.compile(r"^images/background/(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
+    _sport_pattern = re.compile(r"^images/background/(sport\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
 
     def _build_gallery_catalog(pattern):
         catalog = {}
@@ -97,6 +97,19 @@ init python:
 
     def gallery_is_unlocked(base_name):
         return base_name in persistent.gallery_unlocked_bases
+
+    def gallery_displayable(path):
+        lowered = path.lower()
+        if lowered.endswith((".mp4", ".webm", ".avi")):
+            return Movie(play=path, loop=True)
+        return path
+
+    def gallery_preview(sprites):
+        for sprite in sprites:
+            lowered = sprite.lower()
+            if lowered.endswith((".png", ".jpg", ".jpeg", ".webp")):
+                return sprite
+        return sprites[0] if sprites else None
 
     # Fonction utilitaire demandée : débloque une image + ses variantes _1, _2, etc.
     def unlock_gallery_image(base_name):
@@ -222,7 +235,7 @@ screen gallery_menu():
         $ current_variant = variants[selected_variant_index] if variants else None
 
         if current_variant:
-            add current_variant at adaptive_fullscreen
+            add gallery_displayable(current_variant) at adaptive_fullscreen
 
         if len(variants) > 1:
             text "Variant [selected_variant_index + 1]/[len(variants)]" xalign 0.5 yalign 0.04 size 28 color "#FFF"
@@ -288,7 +301,7 @@ screen gallery_menu():
                     for idx in range(page_size):
                         if idx < len(page_items):
                             $ base_name, sprites = page_items[idx]
-                            $ preview = sprites[0] if sprites else None
+                            $ preview = gallery_preview(sprites)
 
                             if gallery_is_unlocked(base_name) and preview:
                                 imagebutton:
