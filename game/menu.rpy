@@ -101,6 +101,9 @@ init python:
     def gallery_displayable(path):
         lowered = path.lower()
         if lowered.endswith((".mp4", ".webm", ".avi")):
+            image_name = path.rsplit("/", 1)[-1].rsplit(".", 1)[0]
+            if renpy.has_image(image_name):
+                return image_name
             return Movie(play=path, loop=True)
         return path
 
