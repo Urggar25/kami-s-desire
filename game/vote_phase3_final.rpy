@@ -20,21 +20,30 @@ init python:
     ]
 
     def vote_phase3_build_results(player_choice):
-        """Prépare 12 votes aléatoires avec condition de victoire demandée."""
+        """Prépare 12 votes. Le vote de Noam reflète le choix joueur (timeout => abstention)."""
         names = list(VOTE_PHASE3_REPRESENTANTS)
         random.shuffle(names)
 
-        if player_choice == "contre":
-            pool = ["pour", "pour", "pour", "abstention", "abstention"]
-            votes = [random.choice(pool) for _ in range(12)]
-            votes[random.randrange(12)] = "contre"  # au moins 1 contre
-        else:
-            pool = ["pour", "pour", "pour", "abstention", "abstention", "abstention"]
-            votes = [random.choice(pool) for _ in range(12)]
-            if all(v == "abstention" for v in votes):
-                votes[random.randrange(12)] = "pour"
+        player_vote = player_choice if player_choice in ("pour", "contre", "abstention") else "abstention"
+        npc_pool = ["pour", "pour", "pour", "abstention", "abstention", "abstention"]
 
-        return list(zip(names, votes))
+        results = []
+        for name in names:
+            if name == "Noam":
+                vote = player_vote
+            else:
+                vote = random.choice(npc_pool)
+            results.append((name, vote))
+
+        # Évite un résultat 100% abstention (hors cas voulu si Noam s'abstient).
+        if all(v == "abstention" for _, v in results):
+            candidates = [i for i, (n, _) in enumerate(results) if n != "Noam"]
+            if candidates:
+                idx = random.choice(candidates)
+                n, _ = results[idx]
+                results[idx] = (n, "pour")
+
+        return results
 
     def vote_phase3_tally_step():
         """Dépouille un vote à chaque appel et marque la fin une fois la liste épuisée."""
@@ -278,7 +287,7 @@ screen vote_screen():
     )
 
     timer 10.0 action [
-        SetVariable("vote_phase3_player_choice", "contre"),
+        SetVariable("vote_phase3_player_choice", "abstention"),
         Return("timeout")
     ]
 
@@ -307,12 +316,6 @@ screen vote_phase3_tally_screen():
         color "#E6F4FF"
         outlines [(4, "#65D4FF88", 0, 0)]
         at vote_phase3_title_glow
-
-    timer 4.0 repeat True action If(
-        vote_phase3_tally_done,
-        true=NullAction(),
-        false=Function(vote_phase3_tally_step)
-    )
 
     if vote_phase3_current_vote == "pour":
         text "POUR":
@@ -433,13 +436,13 @@ label vote_phase3_final:
 
     show screen vote_phase3_tally_screen
 
-    # hard=True peut bloquer la progression des timers d'écran sur certaines
-    # versions/configurations Ren'Py. On garde une pause courte "souple" pour
-    # laisser le timer de dépouillement marquer proprement la fin.
+    # Dépouillement piloté par le script (plus robuste que les timers d'écran
+    # selon les plateformes/configurations Ren'Py).
     while not vote_phase3_tally_done:
-        $ renpy.pause(0.1)
+        $ vote_phase3_tally_step()
+        $ renpy.pause(0.55, hard=False)
 
-    $ renpy.pause(4.0)
+    $ renpy.pause(1.2, hard=False)
 
     hide screen vote_phase3_tally_screen
 
