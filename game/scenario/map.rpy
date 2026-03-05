@@ -41,6 +41,106 @@ image map_stockage              = "images/carte/stockage.png"
 image map_stockage_hover        = "images/carte/stockage_hover.png"
 
 
+default map_ui_room_key = None
+
+
+init python:
+    MAP_ROOM_LABELS = {
+        "archive": "Salle d'Archive",
+        "cafeteria": "Cafétéria",
+        "canon": "Salle du Canon",
+        "conclave": "Conclave",
+        "dortoir": "Dortoir",
+        "gymnase": "Gymnase",
+        "infirmerie": "Infirmerie",
+        "livraison": "SAS Livraison",
+        "maintenance": "Maintenance",
+        "observation": "Observatoire",
+        "repos": "Salle de Repos",
+        "stockage": "Stockage",
+    }
+
+    MAP_CHARACTER_SNIPPETS = {
+        "Mara": "semble déjà analyser l'ambiance du groupe.",
+        "Lysa": "observe tout et garde ses distances.",
+        "Elen": "cherche à garder de l'élan malgré la pression.",
+        "Nyra": "pèse ses mots avant chaque décision.",
+        "Tomas": "reste prudent, mais attentif au moindre détail.",
+        "Ryn": "décharge son stress dans l'action.",
+        "Elias": "essaye de poser un cadre logique.",
+        "Kael": "garde son calme, même quand ça grince.",
+        "Julian": "teste les limites avec un sourire nerveux.",
+        "Iris": "questionne tout haut ce que d'autres taisent.",
+        "Sael": "observe en silence avant de s'engager.",
+    }
+
+    def map_room_characters(room_key):
+        """Retourne la liste des personnages visibles en temps libre pour une salle."""
+        if not getattr(store, "free_time_active", False):
+            return []
+
+        chars = []
+        if room_key == "archive":
+            if getattr(store, "tomas_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Tomas")
+            if getattr(store, "lysa_link", -1) == 3:
+                chars.append("Lysa")
+        elif room_key == "cafeteria":
+            if getattr(store, "mara_link", -1) in [0, 2, 4]:
+                chars.append("Mara")
+            if getattr(store, "lysa_link", -1) == 1:
+                chars.append("Lysa")
+            if getattr(store, "elen_link", -1) == 1:
+                chars.append("Elen")
+        elif room_key == "conclave":
+            if getattr(store, "nyra_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Nyra")
+            if getattr(store, "elen_link", -1) == 0:
+                chars.append("Elen")
+        elif room_key == "dortoir":
+            if getattr(store, "lysa_link", -1) == 4:
+                chars.append("Lysa")
+        elif room_key == "gymnase":
+            if getattr(store, "ryn_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Ryn")
+            if getattr(store, "elias_link", -1) in [0, 2, 4]:
+                chars.append("Elias")
+        elif room_key == "infirmerie":
+            if getattr(store, "elen_link", -1) == 3:
+                chars.append("Elen")
+        elif room_key == "livraison":
+            if getattr(store, "sael_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Sael")
+        elif room_key == "maintenance":
+            if getattr(store, "kael_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Kael")
+            if getattr(store, "elias_link", -1) in [1, 3]:
+                chars.append("Elias")
+        elif room_key == "observation":
+            if getattr(store, "lysa_link", -1) == 2:
+                chars.append("Lysa")
+            if getattr(store, "julian_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Julian")
+            if getattr(store, "elen_link", -1) == 2:
+                chars.append("Elen")
+        elif room_key == "repos":
+            if getattr(store, "mara_link", -1) in [1, 3]:
+                chars.append("Mara")
+            if getattr(store, "lysa_link", -1) == 0:
+                chars.append("Lysa")
+            if getattr(store, "iris_link", -1) in [0, 1, 2, 3, 4]:
+                chars.append("Iris")
+            if getattr(store, "elen_link", -1) == 4:
+                chars.append("Elen")
+
+        return chars
+
+    def map_room_header(room_key):
+        if not room_key:
+            return "Conclave — Carte interactive"
+        return MAP_ROOM_LABELS.get(room_key, "Salle inconnue")
+
+
 # =========================
 #  SCREEN — CARTE CONCLAVE
 # =========================
@@ -73,6 +173,50 @@ screen conclave_map(allow_return=False):
         key "K_ESCAPE" action Return()
         key "mouseup_3" action NullAction()
 
+    frame:
+        xalign 0.5
+        yalign 0.06
+        xmaximum 920
+        background Solid("#090d14cc")
+        padding (20, 12)
+
+        text "[map_room_header(map_ui_room_key)]":
+            size 38
+            color "#E8F4FF"
+            xalign 0.5
+            text_align 0.5
+
+    frame:
+        xalign 0.03
+        yalign 0.97
+        xmaximum 620
+        ymaximum 320
+        background Solid("#0b1118d0")
+        padding (20, 16)
+
+        vbox:
+            spacing 10
+            text "Présences dans la zone":
+                size 30
+                color "#A6D8FF"
+
+            if map_ui_room_key is None:
+                text "Survole une salle pour voir les personnages disponibles et un court ressenti.":
+                    size 24
+                    color "#DCE8F7"
+            else:
+                $ current_chars = map_room_characters(map_ui_room_key)
+
+                if current_chars:
+                    for char_name in current_chars:
+                        text "• [char_name] — [MAP_CHARACTER_SNIPPETS.get(char_name, 'est dans les environs.')]":
+                            size 24
+                            color "#F2F7FF"
+                else:
+                    text "Aucun personnage interactif repéré ici pour le moment.":
+                        size 24
+                        color "#C8D3E0"
+
     # --- HOTSPOTS (full-screen overlays) ---
     # IMPORTANT : xpos/ypos 0 + at cover_screen, comme ton modèle
 
@@ -83,6 +227,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "archive")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("ARCHIVE_TP")
 
     imagebutton:
@@ -92,6 +238,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "cafeteria")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("CAFETERIA_TP")
 
     imagebutton:
@@ -101,6 +249,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "canon")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("CANON_TP")
 
     imagebutton:
@@ -110,6 +260,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "conclave")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("CONCLAVE_TP")
 
     imagebutton:
@@ -119,6 +271,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "dortoir")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("DORTOIR_TP")
 
     imagebutton:
@@ -128,6 +282,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "gymnase")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("GYMNASE_TP")
 
     imagebutton:
@@ -137,6 +293,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "infirmerie")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("INFIRMERIE_TP")
 
     imagebutton:
@@ -146,6 +304,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "livraison")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("LIVRAISON_TP")
 
     imagebutton:
@@ -155,6 +315,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "maintenance")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("MAINTENANCE_TP")
 
     imagebutton:
@@ -164,6 +326,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "observation")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("OBSERVATION_TP")
 
     imagebutton:
@@ -173,6 +337,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "repos")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("REPOS_TP")
 
     imagebutton:
@@ -182,6 +348,8 @@ screen conclave_map(allow_return=False):
         xpos 0
         ypos 0
         at cover_screen
+        hovered SetVariable("map_ui_room_key", "stockage")
+        unhovered SetVariable("map_ui_room_key", None)
         action Jump("STOCKAGE_TP")
 
 
@@ -190,6 +358,7 @@ screen conclave_map(allow_return=False):
 # =========================
 
 label OPEN_CONCLAVE_MAP:
+    $ map_ui_room_key = None
     call screen conclave_map()
     return
 
