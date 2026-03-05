@@ -310,9 +310,11 @@ screen navigation():
 
         if main_menu:
             textbutton _("Codex") action ShowMenu("codex_menu")
+            textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
         else:
             textbutton _("Profils") action ShowMenu("profiles_menu")
             textbutton _("Codex") action ShowMenu("codex_menu")
+            textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
 
         if _in_replay:
 

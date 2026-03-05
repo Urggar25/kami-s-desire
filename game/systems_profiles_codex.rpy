@@ -23,6 +23,8 @@ default codex_unlocked_entries = [
 default profile_global_points = 0
 default persistent.profile_wardrobe_unlocked = {}
 default persistent.profile_skin_equipped = {}
+default persistent.redeemed_promo_codes = []
+default player_inventory = []
 
 init python:
     PROFILE_ORDER = ["noam", "lysa", "elen", "elias", "mara", "julian", "iris", "tomas", "kael", "nyra", "ryn", "sael"]
@@ -151,6 +153,13 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
             return skin_path
         return profile_portrait(profile_id)
 
+    def profile_skin_display_image(profile_id):
+        skin_id = get_profile_equipped_skin(profile_id)
+        skin_path = profile_skin_path(profile_id, skin_id)
+        if renpy.loadable(skin_path):
+            return skin_path
+        return None
+
     def unlock_profile_skin(profile_id, skin_id):
         unlocked = set(persistent.profile_wardrobe_unlocked.get(profile_id, []))
         unlocked.add(skin_id)
@@ -161,6 +170,55 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         if skin_id in get_profile_unlocked_skins(profile_id):
             persistent.profile_skin_equipped[profile_id] = skin_id
             renpy.save_persistent()
+
+    PROMO_CODES = {
+        "WELCOME-KD": {
+            "kamyz": 150,
+            "items": ["Kit de secours"],
+            "message": "+150 Kamyz et 1 Kit de secours",
+        },
+        "NOAM-SKIN": {
+            "skins": [("noam", "elite")],
+            "message": "Skin 'elite' débloqué pour Noam",
+        },
+        "PACK-CONCLAVE": {
+            "kamyz": 300,
+            "items": ["Fragment mémoire", "Ticket premium"],
+            "skins": [("nyra", "ceremonie"), ("kael", "ferraille")],
+            "message": "+300 Kamyz, objets bonus et 2 skins exclusifs",
+        },
+    }
+
+    def apply_promo_code(code_input):
+        code = (code_input or "").strip().upper()
+        if not code:
+            renpy.notify("Code promo vide.")
+            return
+
+        if code in persistent.redeemed_promo_codes:
+            renpy.notify("Code déjà utilisé.")
+            return
+
+        rewards = PROMO_CODES.get(code)
+        if not rewards:
+            renpy.notify("Code promo invalide.")
+            return
+
+        if rewards.get("kamyz"):
+            store.player_kamyz += int(rewards["kamyz"])
+
+        for item_name in rewards.get("items", []):
+            if item_name not in store.player_inventory:
+                store.player_inventory.append(item_name)
+
+        for profile_id, skin_id in rewards.get("skins", []):
+            if profile_id in PROFILE_DATA:
+                unlock_profile_skin(profile_id, skin_id)
+
+        persistent.redeemed_promo_codes.append(code)
+        renpy.save_persistent()
+        renpy.notify("Code validé : {}".format(rewards.get("message", "récompenses ajoutées")))
+
 
 
 screen profiles_menu():
@@ -212,16 +270,36 @@ screen profiles_menu():
 
                     hbox:
                         spacing 24
+                        xfill True
 
-                        hbox:
-                            spacing 12
-                            add Transform(profile_portrait(selected_profile), xsize=320, ysize=320)
-                            add Transform(profile_display_image(selected_profile), xsize=320, ysize=320)
+                        frame:
+                            background Solid("#5e6670")
+                            xsize 320
+                            ysize 420
+                            padding (0, 0)
+
+                            add Transform(profile_portrait(selected_profile), fit="contain", xsize=320, ysize=420)
 
                         vbox:
                             spacing 10
+                            yalign 0.05
                             text "Affinité" size 24 color "#FFFFFF"
                             text "[affinity_val]/100" size 24 color "#FFFFFF"
+
+                        null width 10
+                        null xfill True
+
+                        frame:
+                            background Solid("#5e6670")
+                            xsize 320
+                            ysize 420
+                            padding (0, 0)
+
+                            $ equipped_skin = profile_skin_display_image(selected_profile)
+                            if equipped_skin:
+                                add Transform(equipped_skin, zoom=0.5, xanchor=1.0, yanchor=1.0, xpos=320, ypos=420)
+                            else:
+                                text "Aucun skin équipé" xalign 0.5 yalign 0.5 color "#D9E2EF"
 
                     frame:
                         background Solid("#060b12ba")
@@ -349,3 +427,58 @@ screen exploration_meta_buttons():
 
         textbutton "Profils" action ShowMenu("profiles_menu")
         textbutton "Codex" action ShowMenu("codex_menu")
+        textbutton "Codes promo" action ShowMenu("promo_codes_menu")
+
+
+screen promo_codes_menu():
+    tag menu
+
+    default promo_code_input = ""
+
+    use game_menu(_("Codes promo"), scroll="viewport"):
+        vbox:
+            spacing 16
+            xfill True
+
+            frame:
+                background Solid("#121926f0")
+                xfill True
+                padding (18, 16)
+
+                vbox:
+                    spacing 8
+                    text "Codes promo" size 38 color "#FFFFFF"
+                    text "Entre un code promo pour recevoir des récompenses (skins, Kamyz, objets, etc.)." size 22 color "#BFD6EA"
+
+                    hbox:
+                        spacing 10
+                        input value ScreenVariableInputValue("promo_code_input") length 32 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_" xmaximum 340
+                        textbutton "Valider":
+                            action [Function(apply_promo_code, promo_code_input), SetScreenVariable("promo_code_input", "")]
+
+            frame:
+                background Solid("#0a1119d8")
+                xfill True
+                padding (16, 14)
+
+                vbox:
+                    spacing 8
+                    text "Codes déjà utilisés : [len(persistent.redeemed_promo_codes)]" size 24 color "#D9E2EF"
+                    if persistent.redeemed_promo_codes:
+                        text "[', '.join(persistent.redeemed_promo_codes)]" size 19 color "#9CB2C8"
+                    else:
+                        text "Aucun code validé pour le moment." size 19 color "#9CB2C8"
+
+            frame:
+                background Solid("#0a1119d8")
+                xfill True
+                padding (16, 14)
+
+                vbox:
+                    spacing 6
+                    text "Inventaire joueur" size 24 color "#D9E2EF"
+                    text "Kamyz : [player_kamyz]" size 22 color "#FFE7AE"
+                    if player_inventory:
+                        text "Objets : [', '.join(player_inventory)]" size 19 color "#C8D7E6"
+                    else:
+                        text "Objets : aucun" size 19 color "#8EA3B8"
