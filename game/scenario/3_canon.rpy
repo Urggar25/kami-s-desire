@@ -102,8 +102,7 @@ label _3_CANON:
     pause 0.6
 
     play sound sfx_announce
-
-    pause 0.8
+    pause 1.0
 
     # Diffusion de Kami
     stop music fadeout 1.0
@@ -3304,9 +3303,9 @@ label _3_VOTE_POUR:
 
     jump patreon_ending
 
-    #call end_day("4") from _call_end_day_2
+    #call end_day("4") from _call_end_day_3
 
-    #jump _4_NON
+    #jump _4_1_REVEIL_CHAMBRE
 
 label _3_VOTE_CONTRE:
 
@@ -3411,3 +3410,6 @@ label _3_VOTE_CONTRE:
     #call end_day("4") from _call_end_day_2
 
     #jump _4_NON
+
+# Durée : 1m20
+# Total : 1h 54m 0s

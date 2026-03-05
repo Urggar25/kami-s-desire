@@ -39,6 +39,7 @@ image mara sourire             = im.FactorScale("images/character/mara/sourire.p
 image mara vide              = im.FactorScale("images/character/vide.png", 0.60)
 image mara taquin              = im.FactorScale("images/character/mara/taquin.png", 0.60)
 image mara fatigue              = im.FactorScale("images/character/mara/fatigue.png", 0.60)
+image mara ivre              = im.FactorScale("images/character/mara/ivre.png", 0.60)
 
 # ======================
 # NOAM
@@ -87,6 +88,8 @@ image lysa triste              = im.FactorScale("images/character/lysa/triste.pn
 image lysa vide              = im.FactorScale("images/character/vide.png", 0.60)
 image lysa fatigue              = im.FactorScale("images/character/lysa/fatigue.png", 0.60)
 image lysa doute              = im.FactorScale("images/character/lysa/doute.png", 0.60)
+image lysa jaloux              = im.FactorScale("images/character/lysa/jaloux.png", 0.60)
+image lysa gene              = im.FactorScale("images/character/lysa/gene.png", 0.60)
 
 # ======================
 # JULIAN
@@ -133,6 +136,7 @@ image iris triste               = im.FactorScale("images/character/iris/triste.p
 image iris vide              = im.FactorScale("images/character/vide.png", 0.60)
 image iris desaccord               = im.FactorScale("images/character/iris/desaccord.png", 0.60)
 image iris intervention               = im.FactorScale("images/character/iris/intervention.png", 0.60)
+image iris gene               = im.FactorScale("images/character/iris/gene.png", 0.60)
 
 # ======================
 # TOMAS
@@ -156,6 +160,7 @@ image tomas taquin              = im.FactorScale("images/character/tomas/taquin.
 image tomas triste              = im.FactorScale("images/character/tomas/triste.png", 0.60)
 image tomas hesitation              = im.FactorScale("images/character/tomas/hesitation.png", 0.60)
 image tomas vide              = im.FactorScale("images/character/vide.png", 0.60)
+image tomas gene              = im.FactorScale("images/character/tomas/gene.png", 0.60)
 
 # ======================
 # ELEN
@@ -198,6 +203,7 @@ image kael doute               = im.FactorScale("images/character/kael/doute.png
 image kael colere               = im.FactorScale("images/character/kael/colere.png", 0.60)
 image kael mefiant               = im.FactorScale("images/character/kael/mefiant.png", 0.60)
 image kael vide              = im.FactorScale("images/character/vide.png", 0.60)
+image kael gene               = im.FactorScale("images/character/kael/gene.png", 0.60)
 
 # ======================
 # NYRA
@@ -263,6 +269,7 @@ image sael surpris              = im.FactorScale("images/character/sael/surpris.
 image sael taquin               = im.FactorScale("images/character/sael/taquin.png", 0.60)
 image sael triste               = im.FactorScale("images/character/sael/triste.png", 0.60)
 image sael vide              = im.FactorScale("images/character/vide.png", 0.60)
+image sael colere               = im.FactorScale("images/character/sael/colere.png", 0.60)
 
 # ======================
 # Goumi

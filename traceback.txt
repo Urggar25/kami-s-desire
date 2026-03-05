@@ -5,13 +5,15 @@ While running game code:
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
   File "game/scenario/2_canon.rpy", line 1047, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
-  File "game/scenario/3_canon.rpy", line 1260, in script call
+  File "game/scenario/3_canon.rpy", line 1259, in script call
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
-  File "game/scenario/3_canon.rpy", line 1554, in script call
+  File "game/scenario/3_canon.rpy", line 1553, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/vote_phase3_final.rpy", line 474, in script
-    jump vote_pour
-ScriptError: could not find label 'vote_pour'.
+  File "game/scenario/salles/4_1.rpy", line 218, in script call
+    call START_FREE_TIME("_4_1_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_4_1
+  File "game/scenario/salles/4_1.rpy", line 716, in script
+    jump _4_1_JEU_BOUTEILLE
+ScriptError: could not find label '_4_1_JEU_BOUTEILLE'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -20,19 +22,21 @@ Full traceback:
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
   File "game/scenario/2_canon.rpy", line 1047, in script call
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
-  File "game/scenario/3_canon.rpy", line 1260, in script call
+  File "game/scenario/3_canon.rpy", line 1259, in script call
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
-  File "game/scenario/3_canon.rpy", line 1554, in script call
+  File "game/scenario/3_canon.rpy", line 1553, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/vote_phase3_final.rpy", line 474, in script
-    jump vote_pour
+  File "game/scenario/salles/4_1.rpy", line 218, in script call
+    call START_FREE_TIME("_4_1_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_4_1
+  File "game/scenario/salles/4_1.rpy", line 716, in script
+    jump _4_1_JEU_BOUTEILLE
   File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
     rv = renpy.game.script.lookup(target)
   File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'vote_pour'.
+ScriptError: could not find label '_4_1_JEU_BOUTEILLE'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.2.2
-Mon Mar  2 19:45:20 2026
+Thu Mar  5 14:25:16 2026
