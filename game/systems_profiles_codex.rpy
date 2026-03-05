@@ -27,6 +27,8 @@ default persistent.redeemed_promo_codes = []
 default player_inventory = []
 
 init python:
+    import re
+
     PROFILE_ORDER = ["noam", "lysa", "elen", "elias", "mara", "julian", "iris", "tomas", "kael", "nyra", "ryn", "sael"]
 
     PROFILE_DATA = {
@@ -132,13 +134,55 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
             if renpy.loadable(neutral):
                 return neutral
             return profile_portrait(profile_id)
+
+        for path in (
+            "images/character/{}/skins/{}.png".format(profile_id, skin_id),
+            "images/character/{}/skins/skin_{}.png".format(profile_id, skin_id),
+            "images/character/{}/{}.png".format(profile_id, skin_id),
+            "images/character/{}/skin_{}.png".format(profile_id, skin_id),
+        ):
+            if renpy.loadable(path):
+                return path
+
         return "images/character/{}/skins/{}.png".format(profile_id, skin_id)
 
+    def get_profile_detected_skins(profile_id):
+        detected = set(["neutre"])
+
+        for skin_id in persistent.profile_wardrobe_unlocked.get(profile_id, []):
+            detected.add(skin_id)
+
+        for rewards in PROMO_CODES.values():
+            for reward_profile_id, skin_id in rewards.get("skins", []):
+                if reward_profile_id == profile_id:
+                    detected.add(skin_id)
+
+        if profile_id in persistent.profile_skin_equipped:
+            detected.add(persistent.profile_skin_equipped[profile_id])
+
+        prefix = "images/character/{}/".format(profile_id)
+        skin_regex = re.compile(r"^{}(?:skins/)?skin_(.+)\.png$".format(re.escape(prefix)))
+        for filepath in renpy.list_files():
+            skin_match = skin_regex.match(filepath)
+            if skin_match:
+                detected.add(skin_match.group(1))
+
+        filtered = []
+        for skin_id in sorted(detected):
+            if skin_id == "neutre" or renpy.loadable(profile_skin_path(profile_id, skin_id)):
+                filtered.append(skin_id)
+
+        return filtered
+
     def get_profile_unlocked_skins(profile_id):
+        detected = get_profile_detected_skins(profile_id)
         unlocked = list(persistent.profile_wardrobe_unlocked.get(profile_id, []))
         if "neutre" not in unlocked:
             unlocked.insert(0, "neutre")
-        return unlocked
+        return [skin_id for skin_id in detected if skin_id in unlocked]
+
+    def is_profile_skin_unlocked(profile_id, skin_id):
+        return skin_id in get_profile_unlocked_skins(profile_id)
 
     def get_profile_equipped_skin(profile_id):
         equipped = persistent.profile_skin_equipped.get(profile_id, "neutre")
@@ -178,8 +222,7 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
             "message": "+150 Kamyz et 1 Kit de secours",
         },
         "LYSABONUS01": {
-            "skins": [("lysa", "cyber")],
-            "skins": [("lysa", "gothic_maid")],
+            "skins": [("lysa", "cyber"), ("lysa", "gothic_maid")],
             "message": "Skin Cyber et Gothic Maid débloqué pour Lysa !",
         },
         "PACK-CONCLAVE": {
@@ -298,7 +341,7 @@ screen profiles_menu():
 
                             $ equipped_skin = profile_skin_display_image(selected_profile)
                             if equipped_skin:
-                                add Transform(equipped_skin, zoom=0.5, xanchor=1.0, yanchor=1.0, xpos=320, ypos=420)
+                                add Transform(equipped_skin, zoom=0.5, xanchor=1.0, yanchor=1.0, xpos=320, ypos=460)
                             else:
                                 text "Aucun skin équipé" xalign 0.5 yalign 0.5 color "#D9E2EF"
 
@@ -327,7 +370,7 @@ screen profile_wardrobe(profile_id):
     modal True
     zorder 400
 
-    $ unlocked_skins = get_profile_unlocked_skins(profile_id)
+    $ detected_skins = get_profile_detected_skins(profile_id)
 
     add Solid("#00000090")
 
@@ -352,15 +395,24 @@ screen profile_wardrobe(profile_id):
 
                 vbox:
                     spacing 8
-                    for skin_id in unlocked_skins:
+                    for skin_id in detected_skins:
+                        $ skin_unlocked = is_profile_skin_unlocked(profile_id, skin_id)
                         $ skin_path = profile_skin_path(profile_id, skin_id)
                         $ display_path = skin_path if renpy.loadable(skin_path) else profile_portrait(profile_id)
                         hbox:
                             spacing 12
                             add Transform(profile_portrait(profile_id), xsize=96, ysize=96)
-                            add Transform(display_path, xsize=96, ysize=96)
-                            textbutton "Équiper [skin_id]":
-                                action Function(equip_profile_skin, profile_id, skin_id)
+                            add Transform(
+                                display_path,
+                                xsize=96,
+                                ysize=96,
+                                matrixcolor=None if skin_unlocked else SaturationMatrix(0),
+                            )
+                            if skin_unlocked:
+                                textbutton "Équiper [skin_id]":
+                                    action Function(equip_profile_skin, profile_id, skin_id)
+                            else:
+                                text "[skin_id] (verrouillé)" size 22 color "#8EA3B8"
 
             textbutton "Fermer" action Hide("profile_wardrobe") xalign 1.0
 
