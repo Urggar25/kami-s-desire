@@ -3301,11 +3301,11 @@ label _3_VOTE_POUR:
     $ phase3_over = True
     $ vote1 = "OUI"
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("4") from _call_end_day_3
+    call end_day("4") from _call_end_day_3
 
-    #jump _4_1_REVEIL_CHAMBRE
+    jump _4_1_REVEIL_CHAMBRE
 
 label _3_VOTE_CONTRE:
 
