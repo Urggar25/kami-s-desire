@@ -60,18 +60,18 @@ init python:
         "stockage": "Stockage",
     }
 
-    MAP_CHARACTER_NEUTRAL_IMAGES = {
-        "Mara": "images/character/mara/neutre.png",
-        "Lysa": "images/character/lysa/neutre.png",
-        "Elen": "images/character/elen/neutre.png",
-        "Nyra": "images/character/nyra/neutre.png",
-        "Tomas": "images/character/tomas/neutre.png",
-        "Ryn": "images/character/ryn/neutre.png",
-        "Elias": "images/character/elias/neutre.png",
-        "Kael": "images/character/kael/neutre.png",
-        "Julian": "images/character/julian/neutre.png",
-        "Iris": "images/character/iris/neutre.png",
-        "Sael": "images/character/sael/neutre.png",
+    MAP_CHARACTER_PORTRAIT_IMAGES = {
+        "Mara": "images/character/mara/portrait.png",
+        "Lysa": "images/character/lysa/portrait.png",
+        "Elen": "images/character/elen/portrait.png",
+        "Nyra": "images/character/nyra/portrait.png",
+        "Tomas": "images/character/tomas/portrait.png",
+        "Ryn": "images/character/ryn/portrait.png",
+        "Elias": "images/character/elias/portrait.png",
+        "Kael": "images/character/kael/portrait.png",
+        "Julian": "images/character/julian/portrait.png",
+        "Iris": "images/character/iris/portrait.png",
+        "Sael": "images/character/sael/portrait.png",
     }
 
     def map_room_characters(room_key):
@@ -207,7 +207,7 @@ screen conclave_map(allow_return=False):
                     hbox:
                         spacing 10
                         for char_name in current_chars:
-                            $ portrait_path = MAP_CHARACTER_NEUTRAL_IMAGES.get(char_name, None)
+                            $ portrait_path = MAP_CHARACTER_PORTRAIT_IMAGES.get(char_name, None)
                             frame:
                                 background Solid("#101722f0")
                                 xsize 78

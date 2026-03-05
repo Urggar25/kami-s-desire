@@ -90,7 +90,6 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         },
     }
 
-    CODEX_CATEGORIES = ["Tous", "Districts", "Personnages", "Systèmes", "Histoire"]
 
     def clamp_affinity(value):
         return max(0, min(100, int(value)))
@@ -126,20 +125,23 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         return portrait if renpy.loadable(portrait) else PROFILE_DATA[profile_id]["sprite"]
 
     def profile_skin_path(profile_id, skin_id):
-        if skin_id == "portrait":
+        if skin_id == "neutre":
+            neutral = "images/character/{}/neutre.png".format(profile_id)
+            if renpy.loadable(neutral):
+                return neutral
             return profile_portrait(profile_id)
         return "images/character/{}/skins/{}.png".format(profile_id, skin_id)
 
     def get_profile_unlocked_skins(profile_id):
         unlocked = list(persistent.profile_wardrobe_unlocked.get(profile_id, []))
-        if "portrait" not in unlocked:
-            unlocked.insert(0, "portrait")
+        if "neutre" not in unlocked:
+            unlocked.insert(0, "neutre")
         return unlocked
 
     def get_profile_equipped_skin(profile_id):
-        equipped = persistent.profile_skin_equipped.get(profile_id, "portrait")
+        equipped = persistent.profile_skin_equipped.get(profile_id, "neutre")
         if equipped not in get_profile_unlocked_skins(profile_id):
-            equipped = "portrait"
+            equipped = "neutre"
         return equipped
 
     def profile_display_image(profile_id):
@@ -189,7 +191,6 @@ screen profiles_menu():
                             action SetScreenVariable("selected_profile", pid)
 
             $ profile = PROFILE_DATA[selected_profile]
-            $ safe_img = profile_display_image(selected_profile)
             $ affinity_val = profile_affinity[selected_profile]
 
             frame:
@@ -212,20 +213,15 @@ screen profiles_menu():
                     hbox:
                         spacing 24
 
-                        add Transform(safe_img, xsize=320, ysize=320)
+                        hbox:
+                            spacing 12
+                            add Transform(profile_portrait(selected_profile), xsize=320, ysize=320)
+                            add Transform(profile_display_image(selected_profile), xsize=320, ysize=320)
 
                         vbox:
                             spacing 10
                             text "Affinité" size 24 color "#FFFFFF"
-
-                            hbox:
-                                spacing 12
-                                vbar value StaticValue(affinity_val, 100) ymaximum 220 xmaximum 28
-                                vbox:
-                                    spacing 4
-                                    text "♥" size 58 color "#FF5C7A"
-                                    text "[affinity_val]/100" size 24 color "#FFFFFF"
-                                    text "Le cœur se remplit à mesure que l'affinité augmente." size 18 color "#BFD6EA"
+                            text "[affinity_val]/100" size 24 color "#FFFFFF"
 
                     frame:
                         background Solid("#060b12ba")
@@ -267,7 +263,7 @@ screen profile_wardrobe(profile_id):
         vbox:
             spacing 14
             text "Garde-robe — [PROFILE_DATA[profile_id]['name']]" size 36 color "#FFFFFF"
-            text "Débloque des skins via des variables persistantes, puis équipe-les ici." size 20 color "#BFD6EA"
+            text "Débloque des skins via des variables persistantes, puis équipe-les ici (appliqués à la partie droite du cadre)." size 20 color "#BFD6EA"
 
             viewport:
                 mousewheel True
@@ -282,6 +278,7 @@ screen profile_wardrobe(profile_id):
                         $ display_path = skin_path if renpy.loadable(skin_path) else profile_portrait(profile_id)
                         hbox:
                             spacing 12
+                            add Transform(profile_portrait(profile_id), xsize=96, ysize=96)
                             add Transform(display_path, xsize=96, ysize=96)
                             textbutton "Équiper [skin_id]":
                                 action Function(equip_profile_skin, profile_id, skin_id)
@@ -292,7 +289,6 @@ screen profile_wardrobe(profile_id):
 screen codex_menu():
     tag menu
 
-    default selected_category = "Tous"
     default selected_entry = "districts_conclave"
 
     use game_menu(_("Codex"), scroll="viewport"):
@@ -311,19 +307,13 @@ screen codex_menu():
                     text "Index" size 34 color "#E8D8B8"
                     text "Complétion: [codex_completion_percent()]%" size 22 color "#C9B896"
 
-                    hbox:
-                        spacing 6
-                        for cat in CODEX_CATEGORIES:
-                            textbutton "[cat]" action SetScreenVariable("selected_category", cat)
-
                     null height 8
 
                     for eid, entry in CODEX_ENTRIES.items():
-                        if selected_category == "Tous" or entry["category"] == selected_category:
-                            $ unlocked = eid in codex_unlocked_entries
-                            textbutton "[entry['title']]":
-                                action SetScreenVariable("selected_entry", eid)
-                                sensitive unlocked
+                        $ unlocked = eid in codex_unlocked_entries
+                        textbutton "[entry['title']]":
+                            action SetScreenVariable("selected_entry", eid)
+                            sensitive unlocked
 
             $ entry = CODEX_ENTRIES[selected_entry]
             $ is_unlocked = selected_entry in codex_unlocked_entries
@@ -337,8 +327,6 @@ screen codex_menu():
                 vbox:
                     spacing 12
                     text "[entry['title']]" size 40 color "#F8E7C2"
-                    text "Catégorie: [entry['category']]" size 22 color "#CFBC95"
-
                     if is_unlocked:
                         viewport:
                             mousewheel True
