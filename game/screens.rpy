@@ -308,6 +308,12 @@ screen navigation():
 
         textbutton _("Préférences") action ShowMenu("preferences")
 
+        if main_menu:
+            textbutton _("Codex") action ShowMenu("codex_menu")
+        else:
+            textbutton _("Profils") action ShowMenu("profiles_menu")
+            textbutton _("Codex") action ShowMenu("codex_menu")
+
         if _in_replay:
 
             textbutton _("Fin de la rediffusion") action EndReplay(confirm=True)

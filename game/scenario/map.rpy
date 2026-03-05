@@ -175,6 +175,8 @@ screen conclave_map(allow_return=False):
     # BG COVER — c'est LUI qui définit le scaling réel
     add "images/carte/bg_map.png" at cover_screen
 
+    use exploration_meta_buttons
+
     if allow_return:
         key "K_ESCAPE" action Return()
         key "mouseup_3" action NullAction()
