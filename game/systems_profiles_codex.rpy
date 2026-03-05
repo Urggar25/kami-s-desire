@@ -219,9 +219,6 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         renpy.save_persistent()
         renpy.notify("Code validé : {}".format(rewards.get("message", "récompenses ajoutées")))
 
-    def prompt_and_apply_promo_code():
-        code_input = renpy.input("Entrer un code promo :", length=32)
-        apply_promo_code(code_input)
 
 
 screen profiles_menu():
@@ -273,33 +270,36 @@ screen profiles_menu():
 
                     hbox:
                         spacing 24
+                        xfill True
 
-                        hbox:
-                            spacing 12
-                            frame:
-                                background Solid("#5e6670")
-                                xsize 320
-                                ysize 420
-                                padding (0, 0)
+                        frame:
+                            background Solid("#5e6670")
+                            xsize 320
+                            ysize 420
+                            padding (0, 0)
 
-                                add Transform(profile_portrait(selected_profile), fit="contain", xsize=320, ysize=420)
-
-                            frame:
-                                background Solid("#5e6670")
-                                xsize 320
-                                ysize 420
-                                padding (0, 0)
-
-                                $ equipped_skin = profile_skin_display_image(selected_profile)
-                                if equipped_skin:
-                                    add Transform(equipped_skin, zoom=0.5, xanchor=1.0, yanchor=1.0, xpos=320, ypos=420)
-                                else:
-                                    text "Aucun skin équipé" xalign 0.5 yalign 0.5 color "#D9E2EF"
+                            add Transform(profile_portrait(selected_profile), fit="contain", xsize=320, ysize=420)
 
                         vbox:
                             spacing 10
+                            yalign 0.05
                             text "Affinité" size 24 color "#FFFFFF"
                             text "[affinity_val]/100" size 24 color "#FFFFFF"
+
+                        null width 10
+                        null xfill True
+
+                        frame:
+                            background Solid("#5e6670")
+                            xsize 320
+                            ysize 420
+                            padding (0, 0)
+
+                            $ equipped_skin = profile_skin_display_image(selected_profile)
+                            if equipped_skin:
+                                add Transform(equipped_skin, zoom=0.5, xanchor=1.0, yanchor=1.0, xpos=320, ypos=420)
+                            else:
+                                text "Aucun skin équipé" xalign 0.5 yalign 0.5 color "#D9E2EF"
 
                     frame:
                         background Solid("#060b12ba")
@@ -433,6 +433,8 @@ screen exploration_meta_buttons():
 screen promo_codes_menu():
     tag menu
 
+    default promo_code_input = ""
+
     use game_menu(_("Codes promo"), scroll="viewport"):
         vbox:
             spacing 16
@@ -447,8 +449,12 @@ screen promo_codes_menu():
                     spacing 8
                     text "Codes promo" size 38 color "#FFFFFF"
                     text "Entre un code promo pour recevoir des récompenses (skins, Kamyz, objets, etc.)." size 22 color "#BFD6EA"
-                    textbutton "Entrer un code":
-                        action Function(prompt_and_apply_promo_code)
+
+                    hbox:
+                        spacing 10
+                        input value ScreenVariableInputValue("promo_code_input") length 32 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_" xmaximum 340
+                        textbutton "Valider":
+                            action [Function(apply_promo_code, promo_code_input), SetScreenVariable("promo_code_input", "")]
 
             frame:
                 background Solid("#0a1119d8")
