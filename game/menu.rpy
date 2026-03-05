@@ -182,6 +182,12 @@ screen main_menu():
         at cover_screen
         action ShowMenu("gallery_menu")
 
+    # CODEX
+    textbutton "Codex":
+        xalign 0.97
+        yalign 0.05
+        action ShowMenu("codex_menu")
+
     # PATREON
     imagebutton:
         idle "images/background/interact/menu/patreon.png"
