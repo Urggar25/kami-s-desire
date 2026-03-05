@@ -9,11 +9,13 @@ While running game code:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1553, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/salles/4_1.rpy", line 218, in script call
-    call START_FREE_TIME("_4_1_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_4_1
-  File "game/scenario/salles/4_1.rpy", line 716, in script
-    jump _4_1_JEU_BOUTEILLE
-ScriptError: could not find label '_4_1_JEU_BOUTEILLE'.
+  File "game/scenario/3_canon.rpy", line 2699, in script call
+    call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
+  File "game/scenario/3_canon.rpy", line 2828, in script
+    $ selected = p3_round_options[0][p3_pick]["title"]
+  File "game/scenario/3_canon.rpy", line 2828, in <module>
+    $ selected = p3_round_options[0][p3_pick]["title"]
+NameError: name 'p3_round_options' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -26,17 +28,19 @@ Full traceback:
     call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
   File "game/scenario/3_canon.rpy", line 1553, in script call
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/salles/4_1.rpy", line 218, in script call
-    call START_FREE_TIME("_4_1_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_4_1
-  File "game/scenario/salles/4_1.rpy", line 716, in script
-    jump _4_1_JEU_BOUTEILLE
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '_4_1_JEU_BOUTEILLE'.
+  File "game/scenario/3_canon.rpy", line 2699, in script call
+    call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
+  File "game/scenario/3_canon.rpy", line 2828, in script
+    $ selected = p3_round_options[0][p3_pick]["title"]
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenario/3_canon.rpy", line 2828, in <module>
+    $ selected = p3_round_options[0][p3_pick]["title"]
+NameError: name 'p3_round_options' is not defined
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
-kami desire 0.2.2
-Thu Mar  5 14:25:16 2026
+kami desire 0.3.0
+Thu Mar  5 19:38:17 2026
