@@ -177,9 +177,10 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
             "items": ["Kit de secours"],
             "message": "+150 Kamyz et 1 Kit de secours",
         },
-        "NOAM-SKIN": {
-            "skins": [("noam", "elite")],
-            "message": "Skin 'elite' débloqué pour Noam",
+        "LYSABONUS01": {
+            "skins": [("lysa", "cyber")],
+            "skins": [("lysa", "gothic_maid")],
+            "message": "Skin Cyber et Gothic Maid débloqué pour Lysa !",
         },
         "PACK-CONCLAVE": {
             "kamyz": 300,
