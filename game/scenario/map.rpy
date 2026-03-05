@@ -60,18 +60,18 @@ init python:
         "stockage": "Stockage",
     }
 
-    MAP_CHARACTER_SNIPPETS = {
-        "Mara": "semble déjà analyser l'ambiance du groupe.",
-        "Lysa": "observe tout et garde ses distances.",
-        "Elen": "cherche à garder de l'élan malgré la pression.",
-        "Nyra": "pèse ses mots avant chaque décision.",
-        "Tomas": "reste prudent, mais attentif au moindre détail.",
-        "Ryn": "décharge son stress dans l'action.",
-        "Elias": "essaye de poser un cadre logique.",
-        "Kael": "garde son calme, même quand ça grince.",
-        "Julian": "teste les limites avec un sourire nerveux.",
-        "Iris": "questionne tout haut ce que d'autres taisent.",
-        "Sael": "observe en silence avant de s'engager.",
+    MAP_CHARACTER_NEUTRAL_IMAGES = {
+        "Mara": "images/character/mara/neutre.png",
+        "Lysa": "images/character/lysa/neutre.png",
+        "Elen": "images/character/elen/neutre.png",
+        "Nyra": "images/character/nyra/neutre.png",
+        "Tomas": "images/character/tomas/neutre.png",
+        "Ryn": "images/character/ryn/neutre.png",
+        "Elias": "images/character/elias/neutre.png",
+        "Kael": "images/character/kael/neutre.png",
+        "Julian": "images/character/julian/neutre.png",
+        "Iris": "images/character/iris/neutre.png",
+        "Sael": "images/character/sael/neutre.png",
     }
 
     def map_room_characters(room_key):
@@ -141,6 +141,12 @@ init python:
         return MAP_ROOM_LABELS.get(room_key, "Salle inconnue")
 
 
+transform map_room_title_pop:
+    alpha 0.0
+    yoffset -8
+    ease 0.18 alpha 1.0 yoffset 0
+
+
 # =========================
 #  SCREEN — CARTE CONCLAVE
 # =========================
@@ -174,47 +180,43 @@ screen conclave_map(allow_return=False):
         key "mouseup_3" action NullAction()
 
     frame:
-        xalign 0.5
-        yalign 0.06
-        xmaximum 920
-        background Solid("#090d14cc")
-        padding (20, 12)
-
-        text "[map_room_header(map_ui_room_key)]":
-            size 38
-            color "#E8F4FF"
-            xalign 0.5
-            text_align 0.5
-
-    frame:
         xalign 0.03
         yalign 0.97
-        xmaximum 620
-        ymaximum 320
+        xmaximum 560
+        ymaximum 220
         background Solid("#0b1118d0")
-        padding (20, 16)
+        padding (16, 14)
 
         vbox:
             spacing 10
-            text "Présences dans la zone":
-                size 30
+
+            text "Présences":
+                size 28
                 color "#A6D8FF"
 
             if map_ui_room_key is None:
-                text "Survole une salle pour voir les personnages disponibles et un court ressenti.":
-                    size 24
+                text "Survole une zone":
+                    size 22
                     color "#DCE8F7"
             else:
                 $ current_chars = map_room_characters(map_ui_room_key)
 
                 if current_chars:
-                    for char_name in current_chars:
-                        text "• [char_name] — [MAP_CHARACTER_SNIPPETS.get(char_name, 'est dans les environs.')]":
-                            size 24
-                            color "#F2F7FF"
+                    hbox:
+                        spacing 10
+                        for char_name in current_chars:
+                            $ portrait_path = MAP_CHARACTER_NEUTRAL_IMAGES.get(char_name, None)
+                            frame:
+                                background Solid("#101722f0")
+                                xsize 78
+                                ysize 78
+                                padding (2, 2)
+
+                                if portrait_path is not None:
+                                    add Transform(portrait_path, xsize=74, ysize=74)
                 else:
-                    text "Aucun personnage interactif repéré ici pour le moment.":
-                        size 24
+                    text "Aucun personnage":
+                        size 22
                         color "#C8D3E0"
 
     # --- HOTSPOTS (full-screen overlays) ---
@@ -351,6 +353,22 @@ screen conclave_map(allow_return=False):
         hovered SetVariable("map_ui_room_key", "stockage")
         unhovered SetVariable("map_ui_room_key", None)
         action Jump("STOCKAGE_TP")
+
+    frame at map_room_title_pop:
+        xalign 0.985
+        yalign 0.03
+        xmaximum 430
+        background Solid("#090d14dd")
+        padding (16, 12)
+
+        text "[map_room_header(map_ui_room_key)]":
+            color "#E8F4FF"
+            size 36
+            xalign 1.0
+            text_align 1.0
+            xmaximum 390
+            min_width 390
+            outlines [(2, "#02060ccc", 0, 0)]
 
 
 # =========================
