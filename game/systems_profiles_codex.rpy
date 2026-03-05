@@ -3,8 +3,8 @@
 # -----------------------------------------------------------------------
 
 default profile_affinity = {
-    "noam": 50, "lysa": 50, "elen": 50, "elias": 50, "mara": 50, "julian": 50,
-    "iris": 50, "tomas": 50, "kael": 50, "nyra": 50, "ryn": 50, "sael": 50,
+    "noam": 0, "lysa": 0, "elen": 0, "elias": 0, "mara": 0, "julian": 0,
+    "iris": 0, "tomas": 0, "kael": 0, "nyra": 0, "ryn": 0, "sael": 0,
 }
 default profile_story_unlocked = {
     "noam": False, "lysa": False, "elen": False, "elias": False, "mara": False, "julian": False,
@@ -21,6 +21,8 @@ default codex_unlocked_entries = [
 ]
 
 default profile_global_points = 0
+default persistent.profile_wardrobe_unlocked = {}
+default persistent.profile_skin_equipped = {}
 
 init python:
     PROFILE_ORDER = ["noam", "lysa", "elen", "elias", "mara", "julian", "iris", "tomas", "kael", "nyra", "ryn", "sael"]
@@ -29,22 +31,22 @@ init python:
         "noam": {
             "name": "Noam", "role": "Médiateur (narrateur)", "district": "Conclave", "age": "20",
             "quote": "Comprendre avant de trancher.",
-            "sprite": "images/character/noam/neutre.png",
+            "sprite": "images/character/noam/portrait.png",
             "expressions": ["neutre", "inquiet", "determine"],
             "backstory": "Noam est réveillé dans le Conclave sans souvenirs complets des semaines précédentes. Il compense par une écoute active et une capacité inhabituelle à reformuler les conflits.",
             "relations": "Pivot entre les représentants: confiance fragile de Lysa, friction idéologique avec Kael, empathie instinctive avec Iris.",
         },
-        "lysa": {"name": "Lysa", "role": "Coordination logistique", "district": "Réseau Central", "age": "22", "quote": "Une promesse sans procédure n'est qu'un bruit.", "sprite": "images/character/lysa/neutre.png", "expressions": ["neutre", "inquiet", "sourire"], "backstory": "Spécialiste des flux et des quotas.", "relations": "S'aligne souvent avec Tomas sur les contraintes matérielles."},
-        "elen": {"name": "Elen", "role": "Santé & triage", "district": "Infirmerie", "age": "23", "quote": "On compte les vivants, pas les slogans.", "sprite": "images/character/elen/neutre.png", "expressions": ["neutre", "colere", "triste"], "backstory": "A connu trois vagues de pénurie de médicaments.", "relations": "Respect mutuel avec Sael, tensions avec les discours propagandistes."},
-        "elias": {"name": "Elias", "role": "Sport & discipline", "district": "Gymnase", "age": "21", "quote": "Tenir, c'est déjà gagner du temps.", "sprite": "images/character/elias/neutre.png", "expressions": ["neutre", "determine", "surpris"] , "backstory": "Ancien instructeur de terrain.", "relations": "Complicité compétitive avec Ryn."},
-        "mara": {"name": "Mara", "role": "Ravitaillement", "district": "Cafétéria", "age": "24", "quote": "Un repas stable vaut mieux qu'un grand discours.", "sprite": "images/character/mara/neutre.png", "expressions": ["neutre", "rire", "inquiet"], "backstory": "Gestionnaire des stocks alimentaires.", "relations": "Confiance pragmatique avec Lysa."},
-        "julian": {"name": "Julian", "role": "Observation", "district": "Observatoire", "age": "22", "quote": "Les chiffres mentent moins que nous.", "sprite": "images/character/julian/neutre.png", "expressions": ["neutre", "reflexion", "triste"], "backstory": "Analyse les cycles d'incidents.", "relations": "Affinité intellectuelle avec Noam."},
-        "iris": {"name": "Iris", "role": "Réseaux internes", "district": "Repos", "age": "20", "quote": "Le silence est aussi un signal.", "sprite": "images/character/iris/neutre.png", "expressions": ["neutre", "peur", "joie"], "backstory": "Répare les intercoms et capteurs.", "relations": "Confie des informations fragmentaires à Noam."},
-        "tomas": {"name": "Tomas", "role": "Archives", "district": "Salle d'Archive", "age": "25", "quote": "Si ce n'est pas consigné, c'est déjà perdu.", "sprite": "images/character/tomas/neutre.png", "expressions": ["neutre", "reflechit", "desaccord"], "backstory": "Archiviste des directives Kami.", "relations": "Joutes argumentatives avec Julian."},
-        "kael": {"name": "Kael", "role": "Maintenance lourde", "district": "Maintenance", "age": "26", "quote": "On ne négocie pas avec une turbine en panne.", "sprite": "images/character/kael/neutre.png", "expressions": ["neutre", "colere", "determine"], "backstory": "Responsable des infrastructures critiques.", "relations": "Conflits avec ceux qui sous-estiment la technique."},
-        "nyra": {"name": "Nyra", "role": "Protocole du Conclave", "district": "Conclave", "age": "23", "quote": "Le cadre protège de l'arbitraire.", "sprite": "images/character/nyra/neutre.png", "expressions": ["neutre", "sourire", "desaccord"], "backstory": "Gardienne des règles de séance.", "relations": "Alliance variable avec Lysa selon le contexte."},
-        "ryn": {"name": "Ryn", "role": "Sécurité de proximité", "district": "Gymnase", "age": "21", "quote": "Le danger n'attend pas les votes.", "sprite": "images/character/ryn/neutre.png", "expressions": ["neutre", "inquiet", "determine"], "backstory": "Patrouilles en zones instables.", "relations": "Peut basculer entre Elias et Kael."},
-        "sael": {"name": "Sael", "role": "SAS Livraison", "district": "Livraison", "age": "24", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/neutre.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
+        "lysa": {"name": "Lysa", "role": "Coordination logistique", "district": "Réseau Central", "age": "22", "quote": "Une promesse sans procédure n'est qu'un bruit.", "sprite": "images/character/lysa/portrait.png", "expressions": ["neutre", "inquiet", "sourire"], "backstory": "Spécialiste des flux et des quotas.", "relations": "S'aligne souvent avec Tomas sur les contraintes matérielles."},
+        "elen": {"name": "Elen", "role": "Santé & triage", "district": "Infirmerie", "age": "23", "quote": "On compte les vivants, pas les slogans.", "sprite": "images/character/elen/portrait.png", "expressions": ["neutre", "colere", "triste"], "backstory": "A connu trois vagues de pénurie de médicaments.", "relations": "Respect mutuel avec Sael, tensions avec les discours propagandistes."},
+        "elias": {"name": "Elias", "role": "Sport & discipline", "district": "Gymnase", "age": "21", "quote": "Tenir, c'est déjà gagner du temps.", "sprite": "images/character/elias/portrait.png", "expressions": ["neutre", "determine", "surpris"] , "backstory": "Ancien instructeur de terrain.", "relations": "Complicité compétitive avec Ryn."},
+        "mara": {"name": "Mara", "role": "Ravitaillement", "district": "Cafétéria", "age": "24", "quote": "Un repas stable vaut mieux qu'un grand discours.", "sprite": "images/character/mara/portrait.png", "expressions": ["neutre", "rire", "inquiet"], "backstory": "Gestionnaire des stocks alimentaires.", "relations": "Confiance pragmatique avec Lysa."},
+        "julian": {"name": "Julian", "role": "Observation", "district": "Observatoire", "age": "22", "quote": "Les chiffres mentent moins que nous.", "sprite": "images/character/julian/portrait.png", "expressions": ["neutre", "reflexion", "triste"], "backstory": "Analyse les cycles d'incidents.", "relations": "Affinité intellectuelle avec Noam."},
+        "iris": {"name": "Iris", "role": "Réseaux internes", "district": "Repos", "age": "20", "quote": "Le silence est aussi un signal.", "sprite": "images/character/iris/portrait.png", "expressions": ["neutre", "peur", "joie"], "backstory": "Répare les intercoms et capteurs.", "relations": "Confie des informations fragmentaires à Noam."},
+        "tomas": {"name": "Tomas", "role": "Archives", "district": "Salle d'Archive", "age": "25", "quote": "Si ce n'est pas consigné, c'est déjà perdu.", "sprite": "images/character/tomas/portrait.png", "expressions": ["neutre", "reflechit", "desaccord"], "backstory": "Archiviste des directives Kami.", "relations": "Joutes argumentatives avec Julian."},
+        "kael": {"name": "Kael", "role": "Maintenance lourde", "district": "Maintenance", "age": "26", "quote": "On ne négocie pas avec une turbine en panne.", "sprite": "images/character/kael/portrait.png", "expressions": ["neutre", "colere", "determine"], "backstory": "Responsable des infrastructures critiques.", "relations": "Conflits avec ceux qui sous-estiment la technique."},
+        "nyra": {"name": "Nyra", "role": "Protocole du Conclave", "district": "Conclave", "age": "23", "quote": "Le cadre protège de l'arbitraire.", "sprite": "images/character/nyra/portrait.png", "expressions": ["neutre", "sourire", "desaccord"], "backstory": "Gardienne des règles de séance.", "relations": "Alliance variable avec Lysa selon le contexte."},
+        "ryn": {"name": "Ryn", "role": "Sécurité de proximité", "district": "Gymnase", "age": "21", "quote": "Le danger n'attend pas les votes.", "sprite": "images/character/ryn/portrait.png", "expressions": ["neutre", "inquiet", "determine"], "backstory": "Patrouilles en zones instables.", "relations": "Peut basculer entre Elias et Kael."},
+        "sael": {"name": "Sael", "role": "SAS Livraison", "district": "Livraison", "age": "24", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/portrait.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
     }
 
     CODEX_ENTRIES = {
@@ -99,12 +101,6 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         store.profile_affinity[profile_id] = clamp_affinity(store.profile_affinity[profile_id] + delta)
         store.profile_global_points += delta
 
-        if unlock_thresholds:
-            if store.profile_affinity[profile_id] >= 60:
-                store.profile_relations_unlocked[profile_id] = True
-            if store.profile_affinity[profile_id] >= 75:
-                store.profile_story_unlocked[profile_id] = True
-
     def register_debate_alignment(profile_id, agreed=True):
         add_affinity(profile_id, 4 if agreed else -6)
 
@@ -125,36 +121,75 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         unlocked = len(store.codex_unlocked_entries)
         return int((100.0 * unlocked) / total) if total else 0
 
+    def profile_portrait(profile_id):
+        portrait = "images/character/{}/portrait.png".format(profile_id)
+        return portrait if renpy.loadable(portrait) else PROFILE_DATA[profile_id]["sprite"]
+
+    def profile_skin_path(profile_id, skin_id):
+        if skin_id == "portrait":
+            return profile_portrait(profile_id)
+        return "images/character/{}/skins/{}.png".format(profile_id, skin_id)
+
+    def get_profile_unlocked_skins(profile_id):
+        unlocked = list(persistent.profile_wardrobe_unlocked.get(profile_id, []))
+        if "portrait" not in unlocked:
+            unlocked.insert(0, "portrait")
+        return unlocked
+
+    def get_profile_equipped_skin(profile_id):
+        equipped = persistent.profile_skin_equipped.get(profile_id, "portrait")
+        if equipped not in get_profile_unlocked_skins(profile_id):
+            equipped = "portrait"
+        return equipped
+
+    def profile_display_image(profile_id):
+        skin_id = get_profile_equipped_skin(profile_id)
+        skin_path = profile_skin_path(profile_id, skin_id)
+        if renpy.loadable(skin_path):
+            return skin_path
+        return profile_portrait(profile_id)
+
+    def unlock_profile_skin(profile_id, skin_id):
+        unlocked = set(persistent.profile_wardrobe_unlocked.get(profile_id, []))
+        unlocked.add(skin_id)
+        persistent.profile_wardrobe_unlocked[profile_id] = sorted(unlocked)
+        renpy.save_persistent()
+
+    def equip_profile_skin(profile_id, skin_id):
+        if skin_id in get_profile_unlocked_skins(profile_id):
+            persistent.profile_skin_equipped[profile_id] = skin_id
+            renpy.save_persistent()
+
 
 screen profiles_menu():
     tag menu
 
     default selected_profile = "noam"
-    default selected_expression = "neutre"
 
     use game_menu(_("Profils"), scroll="viewport"):
 
-        hbox:
-            spacing 28
+        vbox:
+            spacing 14
 
-            frame:
-                background Solid("#081018c8")
-                xsize 320
-                yfill True
-                padding (14, 14)
+            viewport:
+                mousewheel "horizontal"
+                draggable True
+                scrollbars "horizontal"
+                xfill True
+                ymaximum 132
 
-                vbox:
-                    spacing 6
-                    text "Représentants" size 30 color "#9FD4FF"
-
+                hbox:
+                    spacing 12
                     for pid in PROFILE_ORDER:
                         $ pdata = PROFILE_DATA[pid]
-                        textbutton "[pdata['name']] — [pdata['role']]":
-                            action [SetScreenVariable("selected_profile", pid), SetScreenVariable("selected_expression", "neutre")]
+                        $ portrait_path = profile_portrait(pid)
+                        imagebutton:
+                            idle Transform(portrait_path, xsize=96, ysize=96)
+                            hover Transform(portrait_path, xsize=102, ysize=102)
+                            action SetScreenVariable("selected_profile", pid)
 
             $ profile = PROFILE_DATA[selected_profile]
-            $ img_path = "images/character/{}/{}.png".format(selected_profile, selected_expression)
-            $ safe_img = img_path if renpy.loadable(img_path) else profile["sprite"]
+            $ safe_img = profile_display_image(selected_profile)
             $ affinity_val = profile_affinity[selected_profile]
 
             frame:
@@ -166,24 +201,31 @@ screen profiles_menu():
                 vbox:
                     spacing 14
 
-                    text "[profile['name']]" size 42 color "#FFFFFF"
+                    hbox:
+                        spacing 16
+                        text "[profile['name']]" size 42 color "#FFFFFF"
+                        textbutton "👗":
+                            action Show("profile_wardrobe", profile_id=selected_profile)
+
                     text "[profile['role']] — District: [profile['district']] — Âge: [profile['age']]" size 24 color "#D2E3F6"
 
                     hbox:
-                        spacing 16
-                        add Transform(safe_img, xsize=280, ysize=280)
+                        spacing 24
+
+                        add Transform(safe_img, xsize=320, ysize=320)
 
                         vbox:
-                            spacing 8
-                            text "Expressions" size 24 color "#9FD4FF"
-                            hbox:
-                                spacing 8
-                                for expr in profile["expressions"]:
-                                    textbutton "[expr]" action SetScreenVariable("selected_expression", expr)
+                            spacing 10
+                            text "Affinité" size 24 color "#FFFFFF"
 
-                            text "Affinité: [affinity_val]/100" size 24 color "#FFFFFF"
-                            bar value StaticValue(affinity_val, 100) xmaximum 520
-                            text "Impact: forte affinité = dialogues exclusifs, alliances en vote, routes romance/dark." size 20 color "#BFD6EA"
+                            hbox:
+                                spacing 12
+                                vbar value StaticValue(affinity_val, 100) ymaximum 220 xmaximum 28
+                                vbox:
+                                    spacing 4
+                                    text "♥" size 58 color "#FF5C7A"
+                                    text "[affinity_val]/100" size 24 color "#FFFFFF"
+                                    text "Le cœur se remplit à mesure que l'affinité augmente." size 18 color "#BFD6EA"
 
                     frame:
                         background Solid("#060b12ba")
@@ -197,13 +239,54 @@ screen profiles_menu():
                         if profile_story_unlocked[selected_profile]:
                             text "[profile['backstory']]" size 22 color "#E8EEF5"
                         else:
-                            text "Verrouillé — progresse via free time / événements clés / affinité 75+." size 20 color "#8EA3B8"
+                            text "Verrouillé — se débloque pendant les discussions et événements narratifs." size 20 color "#8EA3B8"
 
                         text "Relations" size 26 color "#9FD4FF"
                         if profile_relations_unlocked[selected_profile]:
                             text "[profile['relations']]" size 22 color "#E8EEF5"
                         else:
-                            text "Verrouillé — se débloque via interactions et votes cohérents (affinité 60+)." size 20 color "#8EA3B8"
+                            text "Verrouillé — se débloque pendant les discussions et les interactions clés." size 20 color "#8EA3B8"
+
+
+screen profile_wardrobe(profile_id):
+    modal True
+    zorder 400
+
+    $ unlocked_skins = get_profile_unlocked_skins(profile_id)
+
+    add Solid("#00000090")
+
+    frame:
+        background Solid("#121926f5")
+        xalign 0.5
+        yalign 0.5
+        xsize 920
+        ysize 620
+        padding (22, 20)
+
+        vbox:
+            spacing 14
+            text "Garde-robe — [PROFILE_DATA[profile_id]['name']]" size 36 color "#FFFFFF"
+            text "Débloque des skins via des variables persistantes, puis équipe-les ici." size 20 color "#BFD6EA"
+
+            viewport:
+                mousewheel True
+                draggable True
+                scrollbars "vertical"
+                ymaximum 430
+
+                vbox:
+                    spacing 8
+                    for skin_id in unlocked_skins:
+                        $ skin_path = profile_skin_path(profile_id, skin_id)
+                        $ display_path = skin_path if renpy.loadable(skin_path) else profile_portrait(profile_id)
+                        hbox:
+                            spacing 12
+                            add Transform(display_path, xsize=96, ysize=96)
+                            textbutton "Équiper [skin_id]":
+                                action Function(equip_profile_skin, profile_id, skin_id)
+
+            textbutton "Fermer" action Hide("profile_wardrobe") xalign 1.0
 
 
 screen codex_menu():
