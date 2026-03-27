@@ -108,6 +108,9 @@ init python:
             )
         return path
 
+    def gallery_is_video(path):
+        return path.lower().endswith((".mp4", ".webm", ".avi"))
+
     def gallery_preview(sprites):
         for sprite in sprites:
             lowered = sprite.lower()
@@ -245,7 +248,10 @@ screen gallery_menu():
         $ current_variant = variants[selected_variant_index] if variants else None
 
         if current_variant:
-            add gallery_displayable(current_variant) at adaptive_fullscreen
+            if gallery_is_video(current_variant):
+                add gallery_displayable(current_variant)
+            else:
+                add gallery_displayable(current_variant) at adaptive_fullscreen
 
         if len(variants) > 1:
             text "Variant [selected_variant_index + 1]/[len(variants)]" xalign 0.5 yalign 0.04 size 28 color "#FFF"

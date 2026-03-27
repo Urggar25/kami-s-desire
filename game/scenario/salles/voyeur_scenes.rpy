@@ -138,7 +138,7 @@ label temps_libre_salle_dortoir:
     "Ça vient de la chambre de Nyra. La porte est légèrement entrouverte, juste une fine fente."
     "Je m’approche sans un bruit, le cœur qui cogne. Je jette un œil prudent par l’interstice."
 
-    scene bg_cg017_1 at adaptive_fullscreen with dissolve
+    scene bg_cg017_1 with dissolve
     $ unlock_gallery_image("bg_cg017")
 
     "Nyra est allongée sur son lit, dos légèrement cambré, jupe relevée jusqu’aux hanches, haut déboutonné jusqu’à la taille."
