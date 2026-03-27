@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /c/Users/fasqu/Desktop/ServerGit/kami-s-desire/game/scenario/character && wc -l /c/Users/fasqu/Desktop/ServerGit/kami-s-desire/game/scenario/*.rpy /c/Users/fasqu/Desktop/ServerGit/kami-s-desire/game/scenario/salles/*.rpy 2>/dev/null)"
+    ]
+  }
+}

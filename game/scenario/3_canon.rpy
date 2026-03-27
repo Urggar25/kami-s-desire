@@ -3311,7 +3311,7 @@ label _3_VOTE_CONTRE:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
-    play music "music/bgm_defeat_low.mp3" fadein 2.0  # ambiance sombre, pesante
+    play music "music/bgm_system_override.mp3" fadein 2.0  # ambiance sombre, pesante
 
     pause 1.2
 
@@ -3332,6 +3332,7 @@ label _3_VOTE_CONTRE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
 
+    play music "music/bgm_low_tension.mp3" fadein 2.0  # ambiance sombre, pesante
     "L’écran central s’éteint. Le silence est assourdissant."
     "Je sens un poids énorme tomber sur mes épaules. Tout le monde reste figé."
 
@@ -3377,7 +3378,7 @@ label _3_VOTE_CONTRE:
 
     julian "Et t’as vu ce que ça risque si on change rien ?!"
 
-    "La tension explose. Plusieurs se lèvent, parlent en même temps. Mara crie quelque chose sur les riches qui s’en foutent. Noam essaie de calmer tout le monde, sans succès."
+    "La tension explose. Plusieurs se lèvent, parlent en même temps. Mara crie quelque chose sur les riches qui s’en foutent. J'essaie de calmer tout le monde, sans succès."
 
     "Je regarde l’horloge sur le mur : presque 17h."
     "La journée est finie. Le vote est fini."
@@ -3405,11 +3406,11 @@ label _3_VOTE_CONTRE:
 
     $ vote1 = "NON"
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("4") from _call_end_day_2
+    call end_day("4") from _call_end_day_4_0
 
-    #jump _4_NON
+    jump _4_0_REVEIL_CHAMBRE
 
 # Durée : 1m20
 # Total : 1h 54m 0s

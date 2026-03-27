@@ -29,28 +29,28 @@ default player_inventory = []
 init python:
     import re
 
-    PROFILE_ORDER = ["noam", "lysa", "elen", "elias", "mara", "julian", "iris", "tomas", "kael", "nyra", "ryn", "sael"]
+    PROFILE_ORDER = ["noam", "lysa", "elias", "mara", "julian", "iris", "tomas", "elen", "kael", "nyra", "ryn", "sael"]
 
     PROFILE_DATA = {
         "noam": {
-            "name": "Noam", "role": "Médiateur (narrateur)", "district": "Conclave", "age": "20",
+            "name": "Noam", "role": "Médiateur", "district": "Harmonie", "age": "20",
             "quote": "Comprendre avant de trancher.",
             "sprite": "images/character/noam/portrait.png",
             "expressions": ["neutre", "inquiet", "determine"],
             "backstory": "Noam est réveillé dans le Conclave sans souvenirs complets des semaines précédentes. Il compense par une écoute active et une capacité inhabituelle à reformuler les conflits.",
             "relations": "Pivot entre les représentants: confiance fragile de Lysa, friction idéologique avec Kael, empathie instinctive avec Iris.",
         },
-        "lysa": {"name": "Lysa", "role": "Coordination logistique", "district": "Réseau Central", "age": "22", "quote": "Une promesse sans procédure n'est qu'un bruit.", "sprite": "images/character/lysa/portrait.png", "expressions": ["neutre", "inquiet", "sourire"], "backstory": "Spécialiste des flux et des quotas.", "relations": "S'aligne souvent avec Tomas sur les contraintes matérielles."},
-        "elen": {"name": "Elen", "role": "Santé & triage", "district": "Infirmerie", "age": "23", "quote": "On compte les vivants, pas les slogans.", "sprite": "images/character/elen/portrait.png", "expressions": ["neutre", "colere", "triste"], "backstory": "A connu trois vagues de pénurie de médicaments.", "relations": "Respect mutuel avec Sael, tensions avec les discours propagandistes."},
-        "elias": {"name": "Elias", "role": "Sport & discipline", "district": "Gymnase", "age": "21", "quote": "Tenir, c'est déjà gagner du temps.", "sprite": "images/character/elias/portrait.png", "expressions": ["neutre", "determine", "surpris"] , "backstory": "Ancien instructeur de terrain.", "relations": "Complicité compétitive avec Ryn."},
-        "mara": {"name": "Mara", "role": "Ravitaillement", "district": "Cafétéria", "age": "24", "quote": "Un repas stable vaut mieux qu'un grand discours.", "sprite": "images/character/mara/portrait.png", "expressions": ["neutre", "rire", "inquiet"], "backstory": "Gestionnaire des stocks alimentaires.", "relations": "Confiance pragmatique avec Lysa."},
-        "julian": {"name": "Julian", "role": "Observation", "district": "Observatoire", "age": "22", "quote": "Les chiffres mentent moins que nous.", "sprite": "images/character/julian/portrait.png", "expressions": ["neutre", "reflexion", "triste"], "backstory": "Analyse les cycles d'incidents.", "relations": "Affinité intellectuelle avec Noam."},
-        "iris": {"name": "Iris", "role": "Réseaux internes", "district": "Repos", "age": "20", "quote": "Le silence est aussi un signal.", "sprite": "images/character/iris/portrait.png", "expressions": ["neutre", "peur", "joie"], "backstory": "Répare les intercoms et capteurs.", "relations": "Confie des informations fragmentaires à Noam."},
-        "tomas": {"name": "Tomas", "role": "Archives", "district": "Salle d'Archive", "age": "25", "quote": "Si ce n'est pas consigné, c'est déjà perdu.", "sprite": "images/character/tomas/portrait.png", "expressions": ["neutre", "reflechit", "desaccord"], "backstory": "Archiviste des directives Kami.", "relations": "Joutes argumentatives avec Julian."},
-        "kael": {"name": "Kael", "role": "Maintenance lourde", "district": "Maintenance", "age": "26", "quote": "On ne négocie pas avec une turbine en panne.", "sprite": "images/character/kael/portrait.png", "expressions": ["neutre", "colere", "determine"], "backstory": "Responsable des infrastructures critiques.", "relations": "Conflits avec ceux qui sous-estiment la technique."},
-        "nyra": {"name": "Nyra", "role": "Protocole du Conclave", "district": "Conclave", "age": "23", "quote": "Le cadre protège de l'arbitraire.", "sprite": "images/character/nyra/portrait.png", "expressions": ["neutre", "sourire", "desaccord"], "backstory": "Gardienne des règles de séance.", "relations": "Alliance variable avec Lysa selon le contexte."},
-        "ryn": {"name": "Ryn", "role": "Sécurité de proximité", "district": "Gymnase", "age": "21", "quote": "Le danger n'attend pas les votes.", "sprite": "images/character/ryn/portrait.png", "expressions": ["neutre", "inquiet", "determine"], "backstory": "Patrouilles en zones instables.", "relations": "Peut basculer entre Elias et Kael."},
-        "sael": {"name": "Sael", "role": "SAS Livraison", "district": "Livraison", "age": "24", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/portrait.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
+        "lysa": {"name": "Lysa", "role": "Habitante", "district": "Harmonie", "age": "22", "quote": "Une promesse sans procédure n'est qu'un bruit.", "sprite": "images/character/lysa/portrait.png", "expressions": ["neutre", "inquiet", "sourire"], "backstory": "Spécialiste des flux et des quotas.", "relations": "S'aligne souvent avec Tomas sur les contraintes matérielles."},
+        "elias": {"name": "Elias", "role": "Ouvrier", "district": "Axiome", "age": "21", "quote": "Tenir, c'est déjà gagner du temps.", "sprite": "images/character/elias/portrait.png", "expressions": ["neutre", "determine", "surpris"] , "backstory": "Ancien instructeur de terrain.", "relations": "Complicité compétitive avec Ryn."},
+        "mara": {"name": "Mara", "role": "Habitante", "district": "Axiome", "age": "24", "quote": "Un repas stable vaut mieux qu'un grand discours.", "sprite": "images/character/mara/portrait.png", "expressions": ["neutre", "rire", "inquiet"], "backstory": "Gestionnaire des stocks alimentaires.", "relations": "Confiance pragmatique avec Lysa."},
+        "julian": {"name": "Julian", "role": "Habitant", "district": "Nexus", "age": "22", "quote": "Les chiffres mentent moins que nous.", "sprite": "images/character/julian/portrait.png", "expressions": ["neutre", "reflexion", "triste"], "backstory": "Analyse les cycles d'incidents.", "relations": "Affinité intellectuelle avec Noam."},
+        "iris": {"name": "Iris", "role": "Habitante", "district": "Nexus", "age": "20", "quote": "Le silence est aussi un signal.", "sprite": "images/character/iris/portrait.png", "expressions": ["neutre", "peur", "joie"], "backstory": "Répare les intercoms et capteurs.", "relations": "Confie des informations fragmentaires à Noam."},
+        "tomas": {"name": "Tomas", "role": "Archiviste", "district": "Archive", "age": "25", "quote": "Si ce n'est pas consigné, c'est déjà perdu.", "sprite": "images/character/tomas/portrait.png", "expressions": ["neutre", "reflechit", "desaccord"], "backstory": "Archiviste des directives Kami.", "relations": "Joutes argumentatives avec Julian."},
+        "elen": {"name": "Elen", "role": "Habitante", "district": "Archive", "age": "23", "quote": "On compte les vivants, pas les slogans.", "sprite": "images/character/elen/portrait.png", "expressions": ["neutre", "colere", "triste"], "backstory": "A connu trois vagues de pénurie de médicaments.", "relations": "Respect mutuel avec Sael, tensions avec les discours propagandistes."},
+        "kael": {"name": "Kael", "role": "Ingénieur", "district": "Orbite", "age": "26", "quote": "On ne négocie pas avec une turbine en panne.", "sprite": "images/character/kael/portrait.png", "expressions": ["neutre", "colere", "determine"], "backstory": "Responsable des infrastructures critiques.", "relations": "Conflits avec ceux qui sous-estiment la technique."},
+        "nyra": {"name": "Nyra", "role": "Habitante", "district": "Orbite", "age": "23", "quote": "Le cadre protège de l'arbitraire.", "sprite": "images/character/nyra/portrait.png", "expressions": ["neutre", "sourire", "desaccord"], "backstory": "Gardienne des règles de séance.", "relations": "Alliance variable avec Lysa selon le contexte."},
+        "ryn": {"name": "Ryn", "role": "Gardien", "district": "Limen", "age": "21", "quote": "Le danger n'attend pas les votes.", "sprite": "images/character/ryn/portrait.png", "expressions": ["neutre", "inquiet", "determine"], "backstory": "Patrouilles en zones instables.", "relations": "Peut basculer entre Elias et Kael."},
+        "sael": {"name": "Sael", "role": "Habitante", "district": "Limen", "age": "24", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/portrait.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
     }
 
     CODEX_ENTRIES = {
@@ -222,8 +222,12 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
             "message": "+150 Kamyz et 1 Kit de secours",
         },
         "LYSABONUS01": {
-            "skins": [("lysa", "cyber"), ("lysa", "gothic_maid")],
+            "skins": [("lysa", "gothic_maid")],
             "message": "Skin Cyber et Gothic Maid débloqué pour Lysa !",
+        },
+        "LYSABONUS02": {
+            "skins": [("lysa", "cyber")],
+            "message": "Skin Cyber débloqué pour Lysa !",
         },
         "PACK-CONCLAVE": {
             "kamyz": 300,
@@ -341,7 +345,7 @@ screen profiles_menu():
 
                             $ equipped_skin = profile_skin_display_image(selected_profile)
                             if equipped_skin:
-                                add Transform(equipped_skin, zoom=0.5, xanchor=1.0, yanchor=1.0, xpos=320, ypos=460)
+                                add Transform(equipped_skin, zoom=0.4, xanchor=1.0, yanchor=1.0, xpos=375, ypos=460)
                             else:
                                 text "Aucun skin équipé" xalign 0.5 yalign 0.5 color "#D9E2EF"
 
