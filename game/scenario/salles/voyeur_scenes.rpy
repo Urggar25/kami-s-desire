@@ -3,7 +3,16 @@ default seen_voyeur_mara_tomas = False
 default seen_voyeur_nyra = False
 default got_argument_echanges_discrets = False
 
-image bg_cg017_1 = Movie(play="images/background/bg_cg017_1.mp4", loop=True)
+image bg_cg017_1 = ConditionSwitch(
+    "renpy.loadable('images/background/bg_cg017_1.mp4')",
+    Movie(
+        play="images/background/bg_cg017_1.mp4",
+        loop=True,
+        size=(config.screen_width, config.screen_height),
+    ),
+    "True",
+    "images/background/bg_cg017.png",
+)
 
 label temps_libre_salle_repos:
     if not persistent.pegi18:
