@@ -169,9 +169,9 @@ label _4_1_CAFETERIA_ECRANS:
 
     hide elen
     $ showP("noam", "raison", 0.50)  # centre
-    noam "C’est exactement ça le problème."
-    noam "On a supprimé les bons sans rien mettre à la place."
-    noam "Les gens s’organisent, mais pas tous. Et pas partout."
+    noam "Ce que j’entends, c’est que... les repères ont disparu."
+    noam "Il me semble qu’on a enlevé quelque chose sans vraiment prévoir ce qui prendrait la place."
+    noam "Les gens s’organisent. Certains. Pas partout."
 
     hide iris
     $ showP("sael", "mefiant", 0.88)  # droite
@@ -296,8 +296,8 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     hide iris
     $ showP("noam", "raison", 0.12)  # gauche
-    noam "On l'attend ELLE."
-    noam "On ne peut faire que ça..."
+    noam "Il me semble qu'on l'attend, ELLE."
+    noam reflexion "Je ne sais pas si on peut faire autre chose..."
 
     hide kael
     $ showP("lysa", "blase", 0.50)  # centre
@@ -375,9 +375,9 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     hide kael
     $ showP("noam", "determine", 0.88)  # droite
-    noam "Ryn… ce que tu as fait, c’était pour protéger les gens."
-    noam "Mais c’est fini. On ne peut plus vivre comme ça."
-    noam "Libre circulation, c’est la fin des murs. La fin des lasers. La fin des gardiens."
+    noam "Ce que j’entends, Ryn... c’est que tu as fait ça pour protéger les gens."
+    noam hesitation "Mais je me demande si on peut encore vivre comme ça."
+    noam "Libre circulation... la fin des murs. Des lasers. Des gardiens. Il me semble que c’est ce que ça veut dire."
 
     hide lysa
     $ showP("ryn", "colere", 0.50)  # centre – retour
@@ -458,8 +458,8 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     julian inquietude "Mais on peut pas laisser la peur dicter notre avenir."
 
     $ showP("noam", "raison", 0.12)  # gauche
-    noam "C’est pas juste de la peur."
-    noam neutre "Sael a raison sur un point : ce sont les territoires la source de toutes les guerres."
+    noam "Je me demande si c’est vraiment juste de la peur."
+    noam reflexion "Ce que j’entends dans ce que dit Sael... les territoires. Peut-être que c’est là que tout commence."
 
     hide noam
     $ showP("ryn", "colere", 0.50)  # centre
@@ -578,7 +578,7 @@ label _4_1_APRES_CLASH_PRE_FETE:
     iris "T’as raison… comme d’habitude."
     iris "Bon, allons-y. Mais si Julian commence à faire ses beaux discours, je te jure que je le frappe."
 
-    noam "Je ne laisserai pas ça arriver."
+    noam "Je me demande si je peux faire quelque chose."
     noam "Quoi que... Pour le spectacle."
     
     "Iris sourit puis se relève légèrement."

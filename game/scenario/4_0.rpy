@@ -202,7 +202,7 @@ label _4_0_CAFETERIA_ECRANS:
     lysa "Tu regrettes qu’on n’ait pas osé ? Ou tu es soulagé qu’on ait préféré rester dans nos petites chaînes bien confortables ?"
 
     noam "Je… je ne sais plus."
-    noam "Hier on a choisi de ne rien risquer… et aujourd’hui on paie le prix du confort."
+    noam "Je me demande si... ne rien risquer hier... c’était du confort. Ou juste de la peur."
 
     hide lysa
 

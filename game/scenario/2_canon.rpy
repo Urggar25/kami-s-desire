@@ -1278,7 +1278,7 @@ label _2_SALLE_OBSERVATION:
     kael mefiant "Mais ça ne changera pas grand chose au fond."
     kael mefiant "Nous allons sans doute nous diviser sur des détails."
 
-    noam raison "On n’est pas encore divisés."
+    noam raison "Il me semble qu’on n’est pas encore divisés."
 
     kael colere "On l’est déjà."
     kael colere "Sinon tout le monde aurait accepté de parler hier soir."

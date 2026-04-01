@@ -8,30 +8,41 @@
 
 ### NOAM — Médiateur (District Harmonie)
 DISTRICT D'ORIGINE : Harmonie
-RÔLE AU CONCLAVE : Médiateur émergeant (sans statut officiel auparavant, devient progressivement pivot)
+RÔLE AU CONCLAVE : Médiateur (sans statut officiel, devient progressivement pivot)
 AGE : 20 ans
-CARACTÈRE : 
-- Écoute active et capacité à reformuler les conflits sans humilier
+
+DUALITÉ PRINCIPALE :
+- Surface : Écoute active, voix basse, reformule les conflits avec précision
+- Profond : Comble un vide intérieur en absorbant la souffrance des autres — sans conflit autour de lui, il ne sait plus exister
+
+FAÇON DE PARLER :
+- Voix basse et détachée, comme s'il réfléchissait en même temps qu'il parle
+- Reformule systématiquement ce que les autres disent avant de répondre
+- Phrases caractéristiques : "Je me demande si…", "Il me semble que…", "Ce que j'entends, c'est que…"
+- Pèse chaque syllabe — ses silences sont aussi chargés que ses mots
+- N'affirme presque jamais directement ; tout passe par la nuance ou l'interrogation
+
+CARACTÈRE :
 - Cherche les "points de friction utiles" pour construire un terrain d'accord minimal
-- Calme et introspectif, pense beaucoup intérieurement
-- Absorbe la charge émotionnelle de plusieurs camps sans appartenir pleinement à aucun
+- Calme de surface qui dissimule une dépendance psychologique aux tensions des autres
+- Absorbe la charge émotionnelle de plusieurs camps sans appartenir à aucun
 - Non-violent par conviction, préfère comprendre avant de trancher
+- Évite les solutions radicales — non par sagesse pure, mais parce qu'elles le priveraient de son rôle d'éponge émotionnelle
+
 BACKSTORY / CE QU'ON SAIT :
 - Réveillé dans le Conclave avec des souvenirs fragmentaires des semaines précédentes
 - Compense ce vide de mémoire par une écoute particulièrement active
 - Sa position de neutralité lui permet d'obtenir un avantage décisif dans les débats
+- A une petite sœur, Juliette, 11 ans — le seul lien affectif non conflictuel qu'il mentionne
 - À mesure que les crises s'enchaînent, devient soit un pivot de cohésion, soit un point de rupture
-RELATIONS :
-- Confiance fragile avec Lysa (comprend ses contraintes matérielles)
-- Friction idéologique avec Kael (oppose approche de compassion et analyse systémique)
-- Empathie instinctive avec Iris (tous deux marginalisés)
-- Affinité intellectuelle avec Julian (comprennent les cycles ensemble)
-- Peut basculer entre différents camps selon les enjeux
+
 POSITIONS POLITIQUES :
 - Faveur pour le dialogue et la médiation plutôt que l'autoritarisme
-- Cherche l'équilibre plutôt que des solutions idéales
-- Lutte contre l'automatisation des décisions (résiste tacitement à la domination de Kami)
-QUOTE : "Comprendre avant de trancher."
+- Cherche l'équilibre — mais cet équilibre lui est aussi nécessaire personnellement que politiquement
+- Résiste tacitement à l'automatisation des décisions (lutte contre la domination de Kami)
+- Fuit les positions tranchées qui rendraient les conflits inutiles — et donc lui-même inutile
+
+QUOTE : "Je me demande si… comprendre vraiment ne suffit pas toujours à arranger les choses."
 
 ### LYSA — Habitante (District Harmonie)
 DISTRICT D'ORIGINE : Harmonie
@@ -46,10 +57,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Spécialiste des flux et des quotas de rationnement
 - Comprend intimement le système de distribution d'Harmonie
 - A vécu les cycles de pénurie et d'optimisation
-RELATIONS :
-- S'aligne souvent avec Tomas sur les contraintes matérielles
-- Alliance variable avec Nyra selon les contextes
-- Respecte les données factuelles
 POSITIONS POLITIQUES :
 - Favorise les solutions basées sur les chiffres plutôt que l'éthique
 - Soutient les quota strict pour assurer la "stabilité"
@@ -68,9 +75,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Ancien instructeur qui a formé d'autres à la survie en zone instable
 - Connaît les "incidents mineurs" bien plus intimes que les représentants
 - Liens étroits avec les travailleurs
-RELATIONS :
-- Complicité compétitive avec Ryn (tous deux face aux dangers réels)
-- Tend à soutenir des mesures de sécurité strictes
 POSITIONS POLITIQUES :
 - Faveur pour la sécurité et la stabilité
 - Soutient les opérations de maintenance et de contrôle
@@ -88,9 +92,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Gestionnaire des stocks alimentaires d'Axiome
 - Connaît intimement les rationnements et les crises alimentaires
 - Fait les choix difficiles sur qui mange quoi et quand
-RELATIONS :
-- Confiance pragmatique avec Lysa (comprennent ensemble le rationnement)
-- Tensions avec Sael sur les distributions aux zones périphériques
 POSITIONS POLITIQUES :
 - Faveur absolue pour le rationnement rationnel
 - Oppose les "gaspillages" sentimentaux
@@ -110,10 +111,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Analyse les cycles d'incidents et les ruptures de stabilité
 - Examine les données de Kami avec une certaine lucidité critique
 - Comprend mieux que quiconque comment le système fonctionne (et échoue)
-RELATIONS :
-- Affinité intellectuelle avec Noam
-- Joutes argumentatives avec Tomas sur l'interprétation des archives
-- Peut être allié ou adversaire selon le contexte intellectuel
 POSITIONS POLITIQUES :
 - Très critique envers Kami mais reconnaît son efficacité partielle
 - Faveur pour l'analyse rationnelle plutôt que l'idéalisme
@@ -134,10 +131,6 @@ BACKSTORY / CE QU'ON SAIT :
 - A accès à des informations qu'elle ne devrait pas avoir
 - Connaît des "anomalies" de fonctionnement de Kami
 - Confie des informations fragmentaires à Noam progressivement
-RELATIONS :
-- Empathie réciproque avec Noam (tous deux marginalisés)
-- Méfiance envers les autorités
-- Peut être source d'informations critiques
 POSITIONS POLITIQUES :
 - Secrètement sceptique de l'omniscience de Kami
 - Favorable à la résistance passive
@@ -158,10 +151,6 @@ BACKSTORY / CE QU'ON SAIT :
 - A accès à l'historique complet des décisions et changements
 - Comprend comment le système evolue au fil du temps
 - Connaît les contradictions et incohérences des directives
-RELATIONS :
-- Joutes argumentatives récurrentes avec Julian
-- Alignement avec Lysa sur les procédures strictes
-- Respects mutuels avec Elen (tous deux documentalistes)
 POSITIONS POLITIQUES :
 - Fidèle aux procédures et archives établies
 - Croit en l'importance de documenter la vérité
@@ -182,10 +171,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Témoigne des réalités sanitaires brutes
 - A vu mourir des gens faute de ressources
 - Documente les impacts humains des décisions
-RELATIONS :
-- Respect mutuel avec Sael (tous deux voient les côtés cachés)
-- Tensions avec les discours propagandistes
-- Peut être élévatrice de conscience morale
 POSITIONS POLITIQUES :
 - Humaniste et critique envers le rationnement "rationnel"
 - Faveur pour une réallocation éthique plutôt qu'optimale
@@ -208,11 +193,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Évalue constamment les "vitesses" et les "impacts" des situations
 - Capable de lire les tensions avant qu'elles explosent
 - Perfectionniste et autodéterminé à extrême
-RELATIONS :
-- Friction idéologique avec Noam (empathie vs analyse)
-- Peut être allié de Ryn sur la sécurité
-- Respecté mais craint
-- Conflit interne constant
 POSITIONS POLITIQUES :
 - Faveur pour la stabilité technique par tous les moyens
 - Interventions ciblées plutôt que des grands discours
@@ -232,10 +212,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Gardienne stricte des règles de séance et des protocoles
 - Comprend que les cadres peuvent être utilisés tactiquement
 - Peut s'allier avec différents groupes selon les enjeux
-RELATIONS :
-- Alliance variable avec Lysa selon le contexte
-- Peut débattre fortement avec Kael sur les méthodes
-- Respects mutuels avec les procéduriers
 POSITIONS POLITIQUES :
 - Absolutiste des procédures et des cadres légaux
 - Croit que les règles protègent des abus
@@ -256,10 +232,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Confronté quotidiennement aux réalités du maintien de l'ordre
 - Comprend les menaces réelles vs perçues
 - A tué ou blessé (probablement) en service
-RELATIONS :
-- Complicité compétitive avec Elias
-- Peut basculer entre Kael et Elias selon les contextes
-- Compréhension mutuelle avec les ouvriers
 POSITIONS POLITIQUES :
 - Faveur pour la sécurité et l'ordre maintenu
 - Pragmatique envers les méthodes nécessaires
@@ -280,10 +252,6 @@ BACKSTORY / CE QU'ON SAIT :
 - Voit tout ce qui entre et sort, remarque les incohérences
 - Soupçonne des manipulations ou des mensonges dans les distributions
 - Connaît des "anomalies" que Kami ne veut pas voir
-RELATIONS :
-- Respect mutuel avec Elen (tous deux voient les réalités)
-- Tensions avec Mara sur les distributions
-- Soupçonneuse envers les représentants du système
 POSITIONS POLITIQUES :
 - Humaniste mais réaliste sur les manipulations
 - Sceptique envers les chiffres "officiels"

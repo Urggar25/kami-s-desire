@@ -1577,7 +1577,7 @@ label _0_LABEL2_RESP_DISTRICT:
     "Au fond, une sorte de coussin moelleux est disposé."
     "C'est plutôt agréable, et on peut s'étendre les jambes."
     
-    noam "Whouah ! Je m'attendais pas à ce que ce soit aussi confortable !"
+    noam "Je ne m'attendais pas à ce que ce soit... aussi confortable."
     lysa "C'est clair ..."
 
     "Une sangle se ferme."

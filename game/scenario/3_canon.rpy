@@ -405,7 +405,7 @@ label _3_CANON:
     "Il parle plus vite."
     "Comme s’il avait déjà validé le résultat."
 
-    noam "Si. Evidemment que dis comme ça, sur le papier, ça me plaît."
+    noam "Je crois que... oui. Dit comme ça, sur le papier... ça me plaît."
 
     "Mais son enthousiasme me met mal à l’aise."
 
@@ -1345,7 +1345,7 @@ label _3_PAUSE_CHAMBRE:
     nyra "Il parle à d’autres."
     nyra "Il essaye de convaincre tout le monde de voter pour la proposition."
 
-    noam "Comment ça ? C'est pas si grave, non ? Pourquoi tu es si remontée ?!"
+    noam "Ce que j'entends, c'est que... tu t'inquiètes de comment il présente les choses ?"
 
     nyra "Il dit que si c’est lui qui prend la parole au Conclave, personne n’osera dire non."
     nyra "Il vend son image. Il veut juste paraitre pour celui qui fait avancer les choses."
@@ -1423,8 +1423,8 @@ label _3_PAUSE_CHAMBRE:
 
     $ showP("noam", "determine", 0.85)
 
-    noam "C'est loin d'être une bonne idée."
-    noam "Personne n'est leader ici."
+    noam hesitation "Je me demande si... c'est vraiment ce qu'on veut mettre en avant."
+    noam "Il me semble que personne ici n'a de mandat pour se poser en leader."
 
     pause 0.4
 
@@ -1433,10 +1433,10 @@ label _3_PAUSE_CHAMBRE:
 
     pause 0.2
 
-    noam "Si tu passes ton temps à dire que ça passera grâce à toi,"
-    noam "les hésitants vont se braquer."
-    noam raison "Ils vont croire qu’on leur impose quelqu’un."
-    noam raison "Et qu'on ne vote plus seulement pour ou contre une idée."
+    noam hesitation "Ce que j’entends, c’est que tu veux que ça passe."
+    noam "Mais il me semble que si tu te mets trop en avant, les hésitants vont percevoir autre chose."
+    noam reflexion "Pas l’idée. Toi."
+    noam raison "Et là, le vote ne sera plus sur le fond. Ce sera sur toi."
 
     pause 0.4
 
@@ -1450,8 +1450,8 @@ label _3_PAUSE_CHAMBRE:
 
     julian "Je veux juste que ça passe."
 
-    noam "Alors parle uniquement du texte."
-    noam "Et arrête d'essayer de te mettre en avant."
+    noam "Ce que je veux dire... parle du texte. Rien d'autre."
+    noam hesitation "Je me demande si... le reste est vraiment nécessaire."
 
     pause 0.3
 
@@ -2081,8 +2081,8 @@ label _3_DEBAT1_PHASE2:
 
     hide mara
     $ showP("noam", "raison", 0.50)
-    noam "Puis rien ne nous garantit que tout ça n'est pas une mascarade."
-    noam "Il est aussi possible que Kami se moque totalement de nous, et que personne n'ait proposé ça."
+    noam "Je me demande si... tout ça n'est pas une mascarade."
+    noam "Il est possible que Kami se moque totalement de nous, et que personne n'ait proposé ça."
 
     hide noam
     $ showP("lysa", "reflexion", 0.60)
@@ -2114,8 +2114,8 @@ label _3_DEBAT1_PHASE2:
 
     hide lysa
     $ showP("noam", "reflexion", 0.50)
-    noam "Bon, pas le choix, il faut débattre du fond de la proposition."
-    noam "Ne cherchons pas un coupable, c'est une perte de temps."
+    noam "Il me semble que... débattre du fond reste la seule chose utile là."
+    noam reflexion "Je me demande si chercher un coupable maintenant nous avancerait vraiment."
     noam "N'empêche y'en a un qui fait moins le malin."
 
     pause 0.5
@@ -2257,13 +2257,13 @@ label _3_DEBAT1_PHASE2:
 
     hide lysa
     $ showP("noam", "raison", 0.50)
-    noam "Avancer, oui."
-    noam "Mais pas en sautant dans le vide sans savoir où on va."
+    noam "Avancer... je me demande si on sait vraiment où on va."
+    noam "Je ne dis pas non. Je dis : à quel prix."
 
     "Plusieurs têtes hochent légèrement."
 
-    noam "On ne vote pas une idée."
-    noam "On vote pour un système qui peut impacter les gens jusque dans leur quotidien."
+    noam "Ce que j'entends, c'est qu'on parle d'une idée."
+    noam reflexion "Il me semble que c'est autre chose. Un système. Quelque chose qui touche les gens dans leur quotidien."
 
     julian "Et le système actuel fonctionne ?"
 
@@ -2626,7 +2626,7 @@ label _3_DEBAT1_PHASE3:
     hide screen kami_broadcast_ui
 
     $ showP("noam", "raison", 0.50)  # centre
-    noam "On va essayer de rester civilisés, si c’est possible."
+    noam "Il me semble qu’on peut essayer de rester civilisés."
 
     $ showP("julian", "determine", 0.88)  # droite
     julian "Civilisés ? On est en train de crever doucement, Noam."
@@ -2725,8 +2725,8 @@ label _3_DEBAT1_PHASE3:
 
     hide sael
     $ showP("noam", "reflexion", 0.12)  # gauche
-    noam "Le passé, le texte brut de l’amendement, et la réalité des rayons vides."
-    noam "On peut pas parler de tout en même temps."
+    noam "Ce que j’entends, c’est trois sujets distincts. Le passé, le texte brut, et les rayons vides."
+    noam reflexion "Il me semble qu’on ne peut pas traiter tout ça en même temps."
 
     hide nyra
     $ showP("elen", "joie", 0.50)  # centre
@@ -2756,9 +2756,9 @@ label _3_DEBAT1_PHASE3:
     pause 1.0
 
     $ showP("noam", "raison", 0.50)  # centre
-    noam "On a tout dit."
+    noam "Il me semble qu’on a fait le tour."
     noam "Le monde d’avant, le texte brut, les trocs qui existent déjà…"
-    noam "Maintenant, il faut choisir."
+    noam reflexion "Je me demande si... on est prêts à choisir maintenant."
 
     $ showP("ryn", "colere", 0.88)  # droite
     ryn "Choisir entre crever lentement ou crever d’un coup ?"
@@ -3255,8 +3255,8 @@ label _3_VOTE_POUR:
 
     hide julian
     $ showP("noam", "raison", 0.50)  # centre
-    noam "On savait que ce serait pas propre."
-    noam "Mais on avait plus le choix de rester comme avant."
+    noam reflexion "Je me demande si on savait vraiment ce que ça voulait dire."
+    noam "Il me semble qu'on ne pouvait plus rester comme avant. Mais... est-ce que c'était vraiment un choix ?"
 
     hide elen
     $ showP("mara", "rire_profond", 0.88)  # droite
