@@ -541,6 +541,10 @@ label patreon_ending:
 label start:
     call _init_cinema_params from _call__init_cinema_params
     call screen pegi18_choice
+    if story_map_target_label:
+        $ _target = story_map_target_label
+        $ story_map_target_label = None
+        jump expression _target
     jump _0_CANON
 
 
