@@ -1,38 +1,21 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/salles/sas.rpy", line 296, in script call
-    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
-  File "game/scenario/2_canon.rpy", line 1047, in script call
-    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
-  File "game/scenario/3_canon.rpy", line 1259, in script call
-    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
-  File "game/scenario/3_canon.rpy", line 1553, in script call
-    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/salles/4_0.rpy", line 212, in script
-    jump _4_0_TEMPS_LIBRE_1
-ScriptError: could not find label '_4_0_TEMPS_LIBRE_1'.
+Exception: A translation for "Accepter de jouer" already exists at game/tl/english/scenario/4_1.rpy:2299.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/salles/sas.rpy", line 296, in script call
-    call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
-  File "game/scenario/2_canon.rpy", line 1047, in script call
-    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
-  File "game/scenario/3_canon.rpy", line 1259, in script call
-    call START_FREE_TIME("_3_PAUSE_CHAMBRE") from _call_START_FREE_TIME_3_1
-  File "game/scenario/3_canon.rpy", line 1553, in script call
-    call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
-  File "game/scenario/salles/4_0.rpy", line 212, in script
-    jump _4_0_TEMPS_LIBRE_1
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '_4_0_TEMPS_LIBRE_1'.
+  File "game/tl/english/scenario/salles/4_1.rpyc", line 2298, in script
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2659, in execute
+    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\translation\__init__.py", line 594, in add_string_translation
+    stl.add(old, new, newloc)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\translation\__init__.py", line 534, in add
+    raise Exception("A translation for \"{}\" already exists at {}:{}.".format(
+Exception: A translation for "Accepter de jouer" already exists at game/tl/english/scenario/4_1.rpy:2299.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0
-Thu Mar 26 23:25:04 2026
+Fri Mar 27 15:31:11 2026
