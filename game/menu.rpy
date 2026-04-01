@@ -57,6 +57,7 @@ init python:
 image bg_menu = "images/background/bg_menu.png"
 
 default persistent.gallery_unlocked_bases = []
+default story_map_target_label = None
 
 init python:
     import re
@@ -124,6 +125,47 @@ init python:
             persistent.gallery_unlocked_bases.append(base_name)
             renpy.save_persistent()
 
+    STORY_MAP_ROUTES = [
+        {
+            "id": "route_main",
+            "name": "Trame principale",
+            "nodes": [
+                {"id": "D0", "title": "Jour 0", "label": "_0_CANON", "requires": []},
+                {"id": "D1", "title": "Jour 1", "label": "_1_CANON", "requires": ["D0"]},
+                {"id": "D2", "title": "Jour 2", "label": "_2_CANON", "requires": ["D1"]},
+                {"id": "D3", "title": "Jour 3", "label": "_3_CANON", "requires": ["D2"]},
+                {"id": "D4A", "title": "Jour 4A", "label": "_4_0_REVEIL_CHAMBRE", "requires": ["D3"]},
+                {"id": "D4B", "title": "Jour 4B", "label": "_4_1_REVEIL_CHAMBRE", "requires": ["D3"]},
+            ],
+        },
+        {
+            "id": "route_debat",
+            "name": "Branche débat",
+            "nodes": [
+                {"id": "DB1", "title": "Débat P1", "label": "_3_CAFETERIA_DEBAT", "requires": []},
+                {"id": "DB2", "title": "Débat P2", "label": "_3_DEBAT1_PHASE2", "requires": ["DB1"]},
+                {"id": "DB3", "title": "Débat P3", "label": "_3_DEBAT1_PHASE3", "requires": ["DB2"]},
+                {"id": "VOTE", "title": "Vote final", "label": "vote_phase3_final", "requires": ["DB3"]},
+            ],
+        },
+    ]
+
+    def _story_node_seen(node):
+        return renpy.seen_label(node["label"])
+
+    def _story_node_visible(node):
+        return _story_node_seen(node)
+
+    def _story_node_unlocked(node, nodes_by_id):
+        if _story_node_seen(node):
+            return True
+        for requirement in node.get("requires", []):
+            if requirement not in nodes_by_id:
+                return False
+            if not _story_node_seen(nodes_by_id[requirement]):
+                return False
+        return True
+
 
 # ------------------------------------------------------------
 # MAIN MENU
@@ -185,6 +227,16 @@ screen main_menu():
         ypos 0
         at cover_screen
         action ShowMenu("gallery_menu")
+
+    # STORY MAP
+    imagebutton:
+        idle "images/background/interact/menu/story_map.png"
+        hover "images/background/interact/menu/story_map_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action ShowMenu("story_map_menu")
 
     # CODEX
     textbutton "Codex":
@@ -351,3 +403,105 @@ screen gallery_menu():
                     textbutton "Suivant →":
                         sensitive gallery_page < (total_pages - 1)
                         action SetScreenVariable("gallery_page", min(total_pages - 1, gallery_page + 1))
+
+
+screen story_map_menu():
+
+    tag menu
+    zorder 210
+    modal True
+
+    default selected_route_id = STORY_MAP_ROUTES[0]["id"] if STORY_MAP_ROUTES else None
+
+    $ current_route = next((r for r in STORY_MAP_ROUTES if r["id"] == selected_route_id), STORY_MAP_ROUTES[0] if STORY_MAP_ROUTES else None)
+    $ route_nodes = current_route["nodes"] if current_route else []
+    $ nodes_by_id = {node["id"]: node for node in route_nodes}
+
+    add Solid("#020b19")
+    add "images/background/bg_menu.png" at cover_screen
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1760
+        ysize 950
+        padding (30, 26)
+        background Solid("#03152ddd")
+
+        vbox:
+            spacing 16
+
+            text "Story Map" xalign 0.5 size 52 color "#7be6ff"
+            text "Une case s'affiche seulement après avoir vu son label au moins une fois." xalign 0.5 size 22 color "#b7d8ff"
+
+            hbox:
+                xalign 0.5
+                spacing 12
+                for route in STORY_MAP_ROUTES:
+                    textbutton "[route['name']]":
+                        background Solid("#17314f")
+                        hover_background Solid("#2c5a87")
+                        if selected_route_id == route["id"]:
+                            background Solid("#36b9ff")
+                            hover_background Solid("#5bc8ff")
+                        action SetScreenVariable("selected_route_id", route["id"])
+
+            viewport:
+                xfill True
+                yfill True
+                mousewheel True
+                draggable True
+                scrollbars "vertical"
+
+                vbox:
+                    xfill True
+                    spacing 14
+
+                    for node in route_nodes:
+                        $ is_visible = _story_node_visible(node)
+                        $ is_unlocked = _story_node_unlocked(node, nodes_by_id)
+                        $ requirement_text = ", ".join(node.get("requires", [])) if node.get("requires") else "Aucun"
+
+                        if is_visible:
+                            button:
+                                xfill True
+                                ysize 86
+                                background Solid("#0f3d66")
+                                hover_background Solid("#14639f")
+                                action [SetVariable("story_map_target_label", node["label"]), Start()]
+
+                                hbox:
+                                    xfill True
+                                    yalign 0.5
+                                    spacing 14
+                                    text "[node['id']]" size 28 color "#66e7ff"
+                                    text "[node['title']]" size 30 color "#ffffff"
+                                    null width 20
+                                    text "Label: [node['label']]" size 20 color "#c6e7ff"
+                        elif is_unlocked:
+                            frame:
+                                xfill True
+                                ysize 86
+                                background Solid("#21344a")
+                                hbox:
+                                    yalign 0.5
+                                    spacing 14
+                                    text "[node['id']]" size 28 color "#94b8d9"
+                                    text "[node['title']]" size 30 color "#d4deec"
+                                    text "Débloqué (non visité)" size 22 color "#ffd166"
+                                    text "Prérequis: [requirement_text]" size 20 color "#a4b8cf"
+                        else:
+                            frame:
+                                xfill True
+                                ysize 86
+                                background Solid("#141b26")
+                                hbox:
+                                    yalign 0.5
+                                    spacing 14
+                                    text "???" size 30 color "#596b83"
+                                    text "Prérequis: [requirement_text]" size 20 color "#647a96"
+
+    textbutton "Retour":
+        xalign 0.03
+        yalign 0.05
+        action Return()
