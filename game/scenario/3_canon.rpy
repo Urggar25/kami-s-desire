@@ -3408,7 +3408,7 @@ label _3_VOTE_CONTRE:
 
     #jump patreon_ending
 
-    call end_day("4") from _call_end_day_4_0
+    call end_day("4")
 
     jump _4_0_REVEIL_CHAMBRE
 

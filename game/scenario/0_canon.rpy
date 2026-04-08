@@ -17,7 +17,7 @@ define resp_d = Character("Responsable de District", what_prefix="“", what_suf
 define tuto = Character("", what_prefix="(", what_suffix=")",what_color="#008000")
 
 # (Optionnel) Ambiances / transitions rapides
-define sfx_door = "sfx/door_soft.ogg"
+define sfx_door = "sfx/door_soft.mp3"
 define sfx_beep = "sfx/terminal_beep.ogg"
 
 define think = Character(
@@ -1624,7 +1624,7 @@ label _0_LABEL2_RESP_DISTRICT:
     stop music fadeout 1.2
     pause 1.0
 
-    call end_day("1") from _call_end_day
+    call end_day("1")
     jump _1_CANON
 
 

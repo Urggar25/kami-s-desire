@@ -793,9 +793,10 @@ label _4_0_FIN_SOIREE:
     $ current_day = 5
     pause 1.5
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("5") from _call_end_day_4_0
+    call end_day("5")
+    jump _5_0_REVEIL_CHAMBRE
 
 # Durée : 2m00
 # Total estimé journée 4_0 : ~13-14 minutes

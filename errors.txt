@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenario/4_1.rpy", line 241: Line with id cfb3bd55 appears twice. The other line is game/scenario/4_0.rpy:247
+File "game/scenario/5_0.rpy", line 824: expected statement.
+    puis il se tourne de nouveau vers le brouilleur.
+                                                   ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Mar 27 15:55:55 2026
+Mon Apr  6 20:09:54 2026

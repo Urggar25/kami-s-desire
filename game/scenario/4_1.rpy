@@ -432,7 +432,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     hide sael
     with moveoutright
 
-    play sound "sound/sfx_door.ogg"
+    play sound sfx_door volume 8.0
     "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
     with hpunch
     with vpunch
@@ -448,7 +448,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     hide mara
     with moveoutright
 
-    play sound "sound/sfx_door.ogg"
+    play sound sfx_door volume 8.0
     "Mara se lève et la suit en courant hors de la pièce."
     with hpunch
 

@@ -1700,7 +1700,7 @@ label _2_CAFETERIA_SOIR:
 
     # jump patreon_ending
 
-    call end_day("3") from _call_end_day_2
+    call end_day("3")
 
     jump _3_CANON
 

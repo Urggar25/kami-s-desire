@@ -1,21 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-Exception: A translation for "Accepter de jouer" already exists at game/tl/english/scenario/4_1.rpy:2299.
+  File "game/scenario/5_0.rpy", line 576, in script call
+    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1") from _call_START_FREE_TIME_5_0
+  File "game/scenario/5_0.rpy", line 1012, in script
+    julian idee "%oi je l'assume, je veux être le type dont on parlera encore quand cette mascarade sera finie."
+TypeError: %o format: an integer is required, not TagQuotingDict
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/tl/english/scenario/salles/4_1.rpyc", line 2298, in script
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2659, in execute
-    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\translation\__init__.py", line 594, in add_string_translation
-    stl.add(old, new, newloc)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\translation\__init__.py", line 534, in add
-    raise Exception("A translation for \"{}\" already exists at {}:{}.".format(
-Exception: A translation for "Accepter de jouer" already exists at game/tl/english/scenario/4_1.rpy:2299.
+  File "game/scenario/5_0.rpy", line 576, in script call
+    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1") from _call_START_FREE_TIME_5_0
+  File "game/scenario/5_0.rpy", line 1012, in script
+    julian idee "%oi je l'assume, je veux être le type dont on parlera encore quand cette mascarade sera finie."
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 121, in say
+    what = what % tag_quoting_dict
+TypeError: %o format: an integer is required, not TagQuotingDict
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0
-Fri Mar 27 15:31:11 2026
+Mon Apr  6 20:37:43 2026
