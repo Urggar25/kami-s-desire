@@ -918,9 +918,8 @@ label _4_1_FIN_SOIREE:
     $ current_day = 5
     pause 2.0
 
-    jump patreon_ending
-
-    #call end_day("5") from _call_end_day_5
+    call end_day("5") from _call_end_day_5_1
+    jump _5_1_REVEIL_CHAMBRE
 
 # Durée : 0m35
 # Total : 2h 06m 15s
