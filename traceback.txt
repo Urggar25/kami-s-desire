@@ -3,26 +3,24 @@
 While running game code:
   File "game/scenario/5_0.rpy", line 576, in script call
     call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1") from _call_START_FREE_TIME_5_0
-  File "game/scenario/5_0.rpy", line 1012, in script
-    julian idee "%oi je l'assume, je veux être le type dont on parlera encore quand cette mascarade sera finie."
-TypeError: %o format: an integer is required, not TagQuotingDict
+  File "game/scenario/5_0.rpy", line 1476, in script
+    jump _6_0_REVEIL_CHAMBRE
+ScriptError: could not find label '_6_0_REVEIL_CHAMBRE'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenario/5_0.rpy", line 576, in script call
     call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1") from _call_START_FREE_TIME_5_0
-  File "game/scenario/5_0.rpy", line 1012, in script
-    julian idee "%oi je l'assume, je veux être le type dont on parlera encore quand cette mascarade sera finie."
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\sayexports.py", line 121, in say
-    what = what % tag_quoting_dict
-TypeError: %o format: an integer is required, not TagQuotingDict
+  File "game/scenario/5_0.rpy", line 1476, in script
+    jump _6_0_REVEIL_CHAMBRE
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label '_6_0_REVEIL_CHAMBRE'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0
-Mon Apr  6 20:37:43 2026
+Fri Apr 24 13:12:16 2026

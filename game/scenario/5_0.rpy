@@ -1122,8 +1122,7 @@ label _5_0_1_OBSERVATION:
     pause 0.5
 
     "Je marche vers la salle d'observation."
-    "La porte est toujours ouverte en journée."
-    "Kami a donné accès à tous, sans restriction."
+    "Kami ne nous a jamais interdit de surveiller les données du terminal après tout."
     "Probablement parce que regarder le vide en face finit toujours par décourager les gens."
 
     scene bg_observation at adaptive_fullscreen with dissolve
@@ -1132,62 +1131,68 @@ label _5_0_1_OBSERVATION:
 
     "La salle est plongée dans cette lumière bleue permanente."
     "Les baies vitrées donnent directement sur l'espace."
-    "Même après plusieurs jours, ça me prend quelques secondes à chaque fois."
-    "Ce silence derrière les vitres qui n'a rien à voir avec le silence des couloirs."
-    "Un silence qui existe depuis des milliards d'années et qui durera des milliards d'années encore."
-    "Indifférent à nos votes."
+    "Même après plusieurs jours, ça me prend quelques secondes à chaque fois d'habituer mes yeux à cette étrange atomosphère."
+    "Ce silence derrière les vitres qui n'a rien à voir avec le silence géné des couloirs."
+    "Un silence qui existe depuis des milliards d'années et qui durera des milliards d'années encore après nous."
+    "Indifférent à nos votes, à notre lutte ou à notre survie."
 
     $ showP("elias", "detendu", 0.75)
 
     "Elias est là."
     "Assis à la console centrale."
-    "Une tasse dans une main."
+    "Une tasse bien chaude dans une main."
     "Les yeux sur un des écrans latéraux qui affiche les données des districts."
 
-    elias detendu "Noam."
-    elias "Tu passes aussi ?"
+    elias detendu "Noam ?"
+
+    "Il ne s'est même pas retourné."
+
+    elias "Qu'est ce que tu fais là ?"
 
     $ showP("noam", "neutre", 0.25)
 
-    noam "Il me semble que c'est le seul endroit qui soit calme ce matin."
+    noam "C'est le seul endroit qui soit calme aujourd'hui."
 
-    elias detendu "Ouais."
+    $ showP("elias", "detendu", 0.75)
+    elias "Ouais."
     elias "La cafétéria, c'était... chargé."
 
     "Il prend une gorgée de café."
-    "Regarde l'écran."
+    "Il continuer à fixer l'écran sans tourner la tête."
 
-    elias reflechit "Regarde ça."
+    $ showP("elias", "reflechit", 0.75)
+    elias "Regarde ça."
 
-    "Il pointe vers le panneau droit."
-    "Un flux de données qui défile en temps réel."
+    "Il pointe vers une partie spécifique du panneau droit."
+    "Il y a un flux de données qui défile en temps réel."
     "Des chiffres, des courbes, des noms de districts."
 
     $ showP("noam", "reflexion", 0.25)
 
-    noam "Ce que j'entends sur cet écran, c'est que Limen est dans le rouge."
+    noam "Faut que tu m'expliques, c'est quoi tous ces chiffres ?"
 
-    elias "Depuis trois jours."
-    elias reflechit "Et ça se creuse."
-    elias "Les rations tiennent, mais les réserves tampons sont à moins de douze pour cent."
-    elias "Si la distribution de la semaine prochaine est réduite..."
+    elias "Ici ..."
 
-    noam "Il me semble que ça appuie exactement ce que Julian essaie de dire."
+    "Il pointe du doigt une liste de nom qui défile."
 
-    elias neutre "Ou ce que Sael essaie de dire."
-    elias "Ça dépend comment tu lis les chiffres."
+    elias reflechit "C'est le nom de tous les gens qui ont enfreint les règles, et la règle qu'ils n'ont pas respecté."
+
+    "Je regarde la liste. Elle est longue. Bien trop longue."
+    "Je regarde les raisons : vol, bagarre, menace ... Les raisons ne manquent pas mais il y a toujours un point central : les tiquets de rationnement."
+    "Les gens veulent juste manger."
 
     pause 0.4
 
     "Je m'approche de la console."
     "Je veux voir plus précisément."
-    "Je tends le bras vers l'écran pour zoomer sur la courbe de Limen."
+    "Je tends le bras vers l'écran pour zoomer sur la courbe de population de Limen."
 
     pause 0.3
 
-    play sound sfx_drop
+    elias reflechit "Attends, regarde ..."
 
-    "Le coude d'Elias accroche sa tasse."
+    "Elias se relève pour me montrer quelque chose mais son coude accroche sa tasse."
+    play sound sfx_drop
 
     "Un bruit mat."
     "Le café se renverse en arc sur le bord de la console."
@@ -1196,10 +1201,10 @@ label _5_0_1_OBSERVATION:
 
     $ showP("elias", "panique", 0.75)
 
-    elias "Merde !"
+    elias "Et merde !"
 
     "Il se lève d'un bond."
-    "Attrape sa tasse — vide désormais."
+    "Attrape sa tasse ; vide désormais."
     "Le café ruisselle entre les touches."
 
     "Un voyant passe au rouge."
@@ -1281,7 +1286,7 @@ label _5_0_1_OBSERVATION:
     noam "Il me semble que c'est pas le contexte idéal pour une discussion sur le vote."
 
     elias rire "Non."
-    elias "Mais les contextes idéaux, ici, ça n'existe pas vraiment."
+    elias "Mais les contextes idéaux, ici, ça n'existe plus vraiment."
 
     pause 0.5
 
@@ -1306,14 +1311,18 @@ label _5_0_1_OBSERVATION:
 
     "Silence."
 
-    elias fatigue "Alors c'est mort."
+    elias fatigue "Alors c'est foutu."
 
-    noam "Il me semble qu'on ne sait pas encore."
+    noam "Peut-être pas ..."
 
     "Je le dis sans vraiment y croire."
     "On le sait tous les deux."
 
-    pause 0.4
+    pause 1.0
+
+    call screen custom_title("Après plusieurs heures")
+
+    pause 3.0
 
     "Les voyants passent de rouge à orange."
     "La fumée s'est dissipée."
@@ -1334,7 +1343,7 @@ label _5_0_1_OBSERVATION:
     elias "Je vais voir si j'ai pas cramé un truc important."
 
     "Il examine la console."
-    "Quelques touches sont collées."
+    "Quelques touches sont pâteuses."
     "L'écran latéral est éteint."
 
     elias neutre "Rien de critique."
@@ -1348,6 +1357,8 @@ label _5_0_1_OBSERVATION:
     hide noam
     hide elias
 
+    "Enfin libérés, on se sépare et je me retrouve dans le couloir."
+
     jump _5_0_FIN_JOURNEE
 
 
@@ -1360,8 +1371,8 @@ label _5_0_FIN_JOURNEE:
 
     "L'après-midi se passe dans un calme de façade."
     "Quelques échanges à la salle commune."
-    "Un repas de midi que j'avale sans vraiment y goûter."
-    "Des conversations qui démarrent et qui s'arrêtent avant d'arriver quelque part."
+    "Un repas du soir que j'avale sans vraiment y goûter."
+    "Des conversations qui démarrent et qui s'arrêtent avant d'aboutir à quelque chose d'interessant."
 
     "Je croise Tomas dans le couloir."
     "Il fait un signe de tête."
@@ -1395,26 +1406,11 @@ label _5_0_FIN_JOURNEE:
     "Pas encore prêt à m'allonger."
     "Juste là. Posé sur le bord."
 
-    "Je pense à Julian."
-    "Son 'je verrai' qui ne ressemblait pas à une porte fermée."
-    "Mais qui ne ressemblait pas non plus à une promesse."
-
-    "Je pense à Sael."
-    "Sa façon de dire 'contre' sans haine."
-    "Juste avec cette certitude tranquille qui fait encore plus mal que la colère."
-
-    "Je pense à Iris."
-    "Qui veut la même chose que Julian."
-    "Mais qui votera à l'opposé."
-    "Parce que la méthode compte autant que la direction."
-
     pause 0.5
 
-    think "Il me semble que tout le monde a raison."
+    think "Je pense que tout le monde a raison."
     think "D'une certaine façon."
     think "Et en même temps, le vote de demain sera contre."
-    think "Sept voix au minimum pour que ça passe."
-    think "Je ne les ai pas."
 
     pause 0.4
 
@@ -1455,7 +1451,7 @@ label _5_0_FIN_JOURNEE:
 
     "Je ferme les yeux."
     "Pas parce que je suis en paix."
-    "Juste parce que le corps finit toujours par abandonner avant la tête."
+    "Juste parce que le corps finit toujours par tomber de fatigue avant la tête."
 
     "Le vote de demain est probablement perdu."
     "Et pourtant, quelque chose dans le fait de s'être levé ce matin, d'avoir frappé aux portes, d'avoir été là..."

@@ -156,6 +156,33 @@ screen free_time_transition():
             add Solid("#FFFFFF", xysize=(600, 2)):
                 xalign 0.5
 
+screen custom_title(title_text="Temps libre"):
+
+    modal True
+    zorder 100
+
+    add Solid("#000")
+
+    timer 5.0 action Return()
+
+    frame:
+        background None
+        xalign 0.5
+        yalign 0.5
+
+        vbox at day_fade_5s:
+            spacing 12
+            xalign 0.5
+
+            text title_text:
+                size 84
+                color "#FFFFFF"
+                font "fonts/day_font.ttf"
+                xalign 0.5
+
+            add Solid("#FFFFFF", xysize=(600, 2)):
+                xalign 0.5
+                
 # -----------------------------------
 # Ecran pour Kami quand il parle :
 
