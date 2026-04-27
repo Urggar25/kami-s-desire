@@ -139,6 +139,7 @@ init python:
                 {"id": "D5A", "title": "Jour 5A", "label": "_5_0_REVEIL_CHAMBRE", "requires": ["D4A"]},
 
                 {"id": "D4B", "title": "Jour 4B", "label": "_4_1_REVEIL_CHAMBRE", "requires": ["D3"]},
+                {"id": "D5B", "title": "Jour 5B", "label": "_5_1_REVEIL_CHAMBRE", "requires": ["D4B"]},
             ],
         },
         {
