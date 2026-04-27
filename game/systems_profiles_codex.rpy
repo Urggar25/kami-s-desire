@@ -14,12 +14,6 @@ default profile_relations_unlocked = {
     "noam": False, "lysa": False, "elen": False, "elias": False, "mara": False, "julian": False,
     "iris": False, "tomas": False, "kael": False, "nyra": False, "ryn": False, "sael": False,
 }
-default codex_unlocked_entries = [
-    "districts_conclave",
-    "systeme_votes",
-    "personnage_noam",
-]
-
 default profile_global_points = 0
 default persistent.profile_wardrobe_unlocked = {}
 default persistent.profile_skin_equipped = {}
@@ -53,48 +47,6 @@ init python:
         "sael": {"name": "Sael", "role": "Habitante", "district": "Limen", "age": "24", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/portrait.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
     }
 
-    CODEX_ENTRIES = {
-        "districts_conclave": {
-            "title": "Districts du Conclave",
-            "category": "Districts",
-            "unlocked_day": 1,
-            "text": """Le Conclave n'est pas une ville au sens ancien du terme, mais une agrégation de zones spécialisées reliées par des couloirs pressurisés, des sas et des routines de rationnement. Chaque district fonctionne comme un organe: la Cafétéria assure l'apport énergétique, l'Infirmerie absorbe les chocs biologiques, la Maintenance prolonge la survie mécanique, l'Observatoire anticipe les ruptures.
-
-Depuis la troisième réorganisation, l'administration Kami impose une circulation par quotas temporels: on ne traverse pas un district parce qu'on le souhaite, mais parce qu'un besoin est validé. Ce système diminue les incidents, tout en créant des angles morts sociaux. Les représentants, censés compenser cette fragmentation, deviennent alors des filtres d'information autant que des voix politiques.
-
-On observe enfin un phénomène propre aux environnements clos: l'identité individuelle se confond progressivement avec le district d'appartenance. Un conflit entre personnes se présente rapidement comme un conflit entre fonctions. Cette translation explique pourquoi les votes du Conclave paraissent souvent « techniques » alors qu'ils sont traversés d'affects et de mémoire."""
-        },
-        "systeme_votes": {
-            "title": "Système de vote des représentants",
-            "category": "Systèmes",
-            "unlocked_day": 1,
-            "text": """Le vote n'est pas un rituel démocratique classique; c'est un protocole de répartition du risque. Douze représentants y participent, avec un poids théoriquement égal, mais des conséquences asymétriques selon la proposition adoptée. Une mesure sur l'énergie peut pénaliser immédiatement la Maintenance, alors qu'une mesure sur le rationnement affectera d'abord la Cafétéria et la Santé.
-
-Le règlement Kami distingue trois niveaux: recommandation, directive locale et dérogation d'urgence. La recommandation est consultative; la directive locale devient exécutoire dès majorité simple; la dérogation exige un seuil renforcé et une justification archivable. Dans la pratique, la frontière entre ces catégories dépend de l'état de crise déclaré.
-
-Les observateurs extérieurs décrivent ce modèle comme « froid ». Pourtant, les archives montrent que les alignements de vote suivent aussi des affinités interpersonnelles, des dettes symboliques et des conflits antérieurs. Comprendre la mécanique officielle sans lire les liens informels revient à lire seulement la moitié du système."""
-        },
-        "personnage_noam": {
-            "title": "Noam — médiateur émergent",
-            "category": "Personnages",
-            "linked_profile": "noam",
-            "unlocked_day": 1,
-            "text": """Noam occupe une position paradoxale: il ne possède ni l'ancienneté de Tomas, ni l'autorité procédurale de Nyra, ni l'assise technique de Kael. Pourtant, il obtient un avantage décisif dans les séquences de débat: la capacité à reformuler sans humilier.
-
-Les témoins décrivent chez lui une écoute orientée vers les « points de friction utiles ». Là où d'autres cherchent à gagner une confrontation, Noam tente d'identifier le noyau non négociable de chaque interlocuteur puis de construire un terrain d'accord minimal. Cette méthode ralentit la décision à court terme, mais réduit la probabilité de sabotage passif après le vote.
-
-Les analyses psychologiques internes relèvent également un coût personnel. Un médiateur absorbe la charge émotionnelle de plusieurs camps sans appartenir pleinement à aucun. À mesure que les crises s'enchaînent, Noam peut devenir soit un pivot de cohésion, soit un point de rupture."""
-        },
-        "rationnement_consequences": {
-            "title": "Conséquences des bons de rationnement",
-            "category": "Histoire",
-            "text": """Après chaque vote sur les bons de rationnement, l'effet immédiat est mesurable (portion, files, incidents), mais l'effet profond est comportemental. Les ménages adaptent leurs horaires, les personnels médicaux déplacent les soins non urgents, les équipes techniques choisissent quelles pannes « attendre ». Le rationnement redistribue le temps autant que la nourriture.
-
-Les bulletins Kami présentent ces ajustements comme des preuves de résilience. Les témoignages anonymes, eux, parlent de fatigue stratégique: chacun optimise sa survie locale au détriment d'une vision commune. C'est dans cet écart narratif que naissent les tensions politiques du Conclave."""
-        },
-    }
-
-
     def clamp_affinity(value):
         return max(0, min(100, int(value)))
 
@@ -114,15 +66,6 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
             store.profile_story_unlocked[profile_id] = True
         elif section == "relations":
             store.profile_relations_unlocked[profile_id] = True
-
-    def unlock_codex_entry(entry_id):
-        if entry_id not in store.codex_unlocked_entries and entry_id in CODEX_ENTRIES:
-            store.codex_unlocked_entries.append(entry_id)
-
-    def codex_completion_percent():
-        total = len(CODEX_ENTRIES)
-        unlocked = len(store.codex_unlocked_entries)
-        return int((100.0 * unlocked) / total) if total else 0
 
     def profile_portrait(profile_id):
         portrait = "images/character/{}/portrait.png".format(profile_id)
@@ -419,59 +362,6 @@ screen profile_wardrobe(profile_id):
                                 text "[skin_id] (verrouillé)" size 22 color "#8EA3B8"
 
             textbutton "Fermer" action Hide("profile_wardrobe") xalign 1.0
-
-
-screen codex_menu():
-    tag menu
-
-    default selected_entry = "districts_conclave"
-
-    use game_menu(_("Codex"), scroll="viewport"):
-
-        hbox:
-            spacing 24
-
-            frame:
-                background Solid("#110f0dcc")
-                xsize 360
-                yfill True
-                padding (14, 14)
-
-                vbox:
-                    spacing 8
-                    text "Index" size 34 color "#E8D8B8"
-                    text "Complétion: [codex_completion_percent()]%" size 22 color "#C9B896"
-
-                    null height 8
-
-                    for eid, entry in CODEX_ENTRIES.items():
-                        $ unlocked = eid in codex_unlocked_entries
-                        textbutton "[entry['title']]":
-                            action SetScreenVariable("selected_entry", eid)
-                            sensitive unlocked
-
-            $ entry = CODEX_ENTRIES[selected_entry]
-            $ is_unlocked = selected_entry in codex_unlocked_entries
-
-            frame:
-                background Solid("#1a1612dd")
-                xfill True
-                yfill True
-                padding (18, 18)
-
-                vbox:
-                    spacing 12
-                    text "[entry['title']]" size 40 color "#F8E7C2"
-                    if is_unlocked:
-                        viewport:
-                            mousewheel True
-                            draggable True
-                            scrollbars "vertical"
-                            ysize 580
-
-                            text "[entry['text']]" size 22 color "#EFE7D8" line_spacing 4
-                    else:
-                        text "Entrée verrouillée. Déclenche un événement narratif pour l'ajouter au Codex." size 22 color "#A99779"
 
 
 screen exploration_meta_buttons():
