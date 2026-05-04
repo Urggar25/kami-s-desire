@@ -1175,6 +1175,18 @@ label KAMI_MESSAGE_APRES_VISITE:
 
     kami "Une seule voix contre."
     kami "Et l'amendement est refusé."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    
+    kami "La participation aux votes est libre. Libre à vous de venir voter, ou pas."
+    kami "Sur les bulletins exprimés, il faut une unanimité de POUR pour adopter le vote."
+    kami "Sont retirés des bulletins exprimés les abstentions et les absences au vote."
+
+    kami "Je ne suis pas un monstre tout de même."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+
+    kami "Mais je vous préviens, le peuple n'apprécie généralement pas les PROCRASTINATEURS."
     
     show screen kami_broadcast_ui
     $ bc_show("elias", "reflechit", px=-70, py=-50, pz=0.85)

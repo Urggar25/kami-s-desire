@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenario/5_0.rpy", line 824: expected statement.
-    puis il se tourne de nouveau vers le brouilleur.
-                                                   ^
+File "game/scenario/1_canon.rpy", line 1179: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Apr  6 20:09:54 2026
+Sun May  3 12:48:39 2026

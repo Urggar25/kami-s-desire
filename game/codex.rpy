@@ -2,22 +2,17 @@
 # CODEX — Entrées, catégories et déblocages
 # -----------------------------------------------------------------------
 
-# Entrées visibles au démarrage.
 default codex_unlocked_entries = [
     "districts_conclave",
     "systeme_votes",
     "personnage_noam",
 ]
 
-# File de notifications de pages débloquées.
 default codex_notification_queue = []
 default codex_current_notification = None
 
 init python:
-    # -------------------------------------------------------------------
-    # Configuration des catégories
-    # Pour ajouter/retirer une catégorie, modifiez ces 2 structures.
-    # -------------------------------------------------------------------
+
     CODEX_CATEGORY_ORDER = ["histoire", "district", "coutume", "divers"]
 
     CODEX_CATEGORY_LABELS = {
@@ -27,10 +22,6 @@ init python:
         "divers": "Divers",
     }
 
-    # -------------------------------------------------------------------
-    # Pages du codex
-    # category doit utiliser une clé présente dans CODEX_CATEGORY_ORDER.
-    # -------------------------------------------------------------------
     CODEX_ENTRIES = {
         "districts_conclave": {
             "title": "Districts du Conclave",
@@ -70,6 +61,15 @@ Les analyses psychologiques internes relèvent également un coût personnel. Un
 
 Les bulletins Kami présentent ces ajustements comme des preuves de résilience. Les témoignages anonymes, eux, parlent de fatigue stratégique: chacun optimise sa survie locale au détriment d'une vision commune. C'est dans cet écart narratif que naissent les tensions politiques du Conclave."""
         },
+        "complexe_c": {
+            "title": "Complexe C",
+            "category": "district",
+            "text": """Le complexe C est l'un des ensembles résidentiels majeurs d'Orbite. Il regroupe un total de quatre modules familiaux, de deux modules de production, d'un module administratif, des coursives pressurisées, des points de confinement et des sas de sécurité capables d'isoler une section en quelques secondes. Dans les bulletins Kami, il est présenté comme une réussite d'ingénierie orbitale : compartimenté, redondant, conçu pour encaisser les incidents sans compromettre l'ensemble de la station.
+
+Sur place, la réalité est moins propre. Chaque habitant connaît les alarmes, les itinéraires d'évacuation et l'ordre exact des attaches d'un scaphandre d'urgence. Les enfants apprennent ces gestes comme des comptines, parce qu'une fuite, une sanction laser ou une panne de jonction ne laisse pas le temps d'avoir peur correctement. Le complexe C ne protège pas seulement ses habitants : il les dresse à survivre.
+
+C'est cette normalité-là qui marque le plus les représentants d'Orbite. Une alerte de sas n'est pas un événement exceptionnel, mais un rappel brutal de leur quotidien. Quand une section comme le module C-4 s'isole, cent quarante personnes peuvent se retrouver coupées du reste de la station, dépendantes des réserves locales, des procédures et du sang-froid de familles entières. Dans Orbite, la sécurité n'est pas une promesse. C'est une série de gestes à réussir avant que l'air ne parte."""
+        },
     }
 
     def codex_valid_entry_ids():
@@ -102,36 +102,29 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
     def codex_unlock_page(entry_id, with_notification=True):
         if entry_id not in CODEX_ENTRIES:
             return False
-
         if entry_id in store.codex_unlocked_entries:
             return False
-
         store.codex_unlocked_entries.append(entry_id)
-
         if with_notification:
             store.codex_notification_queue.append(entry_id)
             if not store.codex_current_notification:
                 codex_show_next_notification()
-
         renpy.restart_interaction()
         return True
 
     def unlock_codex_page(entry_id, with_notification=True):
         return codex_unlock_page(entry_id, with_notification=with_notification)
 
-    # Alias de compatibilité avec le code existant.
     def unlock_codex_entry(entry_id):
         return codex_unlock_page(entry_id, with_notification=True)
 
     def codex_show_next_notification():
         if store.codex_current_notification or not store.codex_notification_queue:
             return
-
         next_entry_id = store.codex_notification_queue.pop(0)
         entry = CODEX_ENTRIES.get(next_entry_id)
         if not entry:
             return
-
         store.codex_current_notification = {
             "entry_id": next_entry_id,
             "title": entry.get("title", next_entry_id),
@@ -145,100 +138,373 @@ Les bulletins Kami présentent ces ajustements comme des preuves de résilience.
         codex_show_next_notification()
 
 
-transform codex_unlock_notification_appear:
-    alpha 0.0
-    xoffset 80
-    parallel:
-        ease 0.25 alpha 1.0
-    parallel:
-        ease 0.25 xoffset 0
+# -----------------------------------------------------------------------
+# Transforms
+# -----------------------------------------------------------------------
 
+transform codex_notif_appear:
+    alpha 0.0
+    xoffset 30
+    parallel:
+        ease 0.22 alpha 1.0
+    parallel:
+        ease 0.22 xoffset 0
+
+transform codex_entry_appear:
+    alpha 0.0
+    yoffset 8
+    ease 0.18 alpha 1.0 yoffset 0
+
+
+# -----------------------------------------------------------------------
+# Styles
+# -----------------------------------------------------------------------
+
+style codex_default:
+    font "fonts/Barlow-Light.ttf"
+
+style codex_nav_idle is codex_default:
+    color "#3a6a80"
+    size 24
+    hover_color "#7ab8cc"
+
+style codex_nav_idle_selected is codex_nav_idle:
+    color "#a8d8ea"
+
+style codex_cat_idle is codex_default:
+    color "#2a5a72"
+    size 23
+    hover_color "#5ab0c8"
+
+style codex_cat_idle_selected is codex_cat_idle:
+    color "#5cd3ff"
+
+style codex_entry_idle is codex_default:
+    color "#3a7a90"
+    size 21
+    hover_color "#8ac8da"
+    left_padding 10
+
+style codex_entry_idle_selected is codex_entry_idle:
+    color "#a8dff0"
+
+style codex_read_category is codex_default:
+    color "#2a6a8a"
+    size 19
+    kerning 3
+
+style codex_read_title:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    color "#daeaf5"
+    size 46
+    line_spacing 2
+
+style codex_read_body is codex_default:
+    color "#8aacbc"
+    size 23
+    line_spacing 8
+
+style codex_section_label is codex_default:
+    color "#1e4a65"
+    size 18
+    kerning 4
+
+style codex_index_title:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    color "#daeaf5"
+    size 38
+
+style codex_completion_label is codex_default:
+    color "#2a5a7a"
+    size 19
+    kerning 2
+
+style codex_notif_sub is codex_default:
+    color "#2a6a8a"
+    size 18
+    kerning 3
+
+style codex_notif_title:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    color "#c8e8f5"
+    size 28
+
+style codex_notif_cat is codex_default:
+    color "#3a7a90"
+    size 19
+
+style codex_empty_label is codex_default:
+    color "#1e4a65"
+    size 22
+
+
+# -----------------------------------------------------------------------
+# Notification de déblocage
+# -----------------------------------------------------------------------
 
 screen codex_unlock_notification():
     zorder 500
 
     if codex_current_notification:
-        frame at codex_unlock_notification_appear:
-            background Solid("#0f1f2ae8")
+        frame at codex_notif_appear:
+            background Solid("#07151e")
             xalign 0.985
             yalign 0.08
-            xsize 520
-            padding (16, 12)
+            xsize 480
+            padding (0, 14, 18, 14)
 
-            vbox:
-                spacing 4
-                text "Nouvelle page du Codex" size 24 color "#A3E0FF"
-                text "[codex_current_notification['title']]" size 27 color "#FFFFFF"
-                text "Catégorie : [CODEX_CATEGORY_LABELS.get(codex_current_notification['category'], codex_current_notification['category'])]" size 19 color "#BFD6EA"
+            hbox:
+                spacing 0
 
-        timer 2.8 action Function(codex_pop_notification)
+                frame:
+                    background Solid("#3a9fca")
+                    xsize 3
+                    yfill True
+                    right_margin 14
 
+                vbox:
+                    spacing 5
+
+                    text "NOUVELLE PAGE DU CODEX":
+                        style "codex_notif_sub"
+
+                    text "[codex_current_notification['title']]":
+                        style "codex_notif_title"
+
+                    text "[CODEX_CATEGORY_LABELS.get(codex_current_notification['category'], codex_current_notification['category'])]":
+                        style "codex_notif_cat"
+
+        timer 3.0 action Function(codex_pop_notification)
+
+
+# -----------------------------------------------------------------------
+# Écran principal du Codex
+# -----------------------------------------------------------------------
 
 screen codex_menu():
     tag menu
 
     default selected_category = codex_first_visible_category()
-    default selected_entry = codex_first_visible_entry(selected_category)
+    default selected_entry    = codex_first_visible_entry(selected_category)
 
-    use game_menu(_("Codex"), scroll="viewport"):
+    add Solid("#080d12")
 
-        hbox:
-            spacing 24
+    hbox:
+        xfill True
+        yfill True
+
+        # -----------------------------------------------------------
+        # Colonne 1 — Navigation principale
+        # -----------------------------------------------------------
+        frame:
+            background Solid("#00000000")
+            xsize 200
+            yfill True
 
             frame:
-                background Solid("#110f0dcc")
-                xsize 430
-                yfill True
-                padding (14, 14)
+                background Solid("#00000000")
+                padding (20, 24, 0, 0)
 
                 vbox:
-                    spacing 8
-                    text "Index" size 34 color "#E8D8B8"
-                    text "Complétion: [codex_completion_percent()]%" size 22 color "#C9B896"
+                    xfill True
+                    yfill True
 
-                    null height 8
-                    text "Catégories" size 24 color "#F4E3C1"
+                    text "MENU":
+                        style "codex_section_label"
 
-                    for category_id in CODEX_CATEGORY_ORDER:
-                        $ category_entries = codex_entries_for_category(category_id)
-                        if category_entries:
-                            textbutton "[CODEX_CATEGORY_LABELS.get(category_id, category_id)] ([len(category_entries)])":
-                                action [
-                                    SetScreenVariable("selected_category", category_id),
-                                    SetScreenVariable("selected_entry", codex_first_visible_entry(category_id)),
-                                ]
+                    null height 14
 
-                    null height 10
-                    text "Pages débloquées" size 24 color "#F4E3C1"
+                    for lbl, act in [
+                        ("Historique",  ShowMenu("history")),
+                        ("Sauvegarde",  ShowMenu("save")),
+                        ("Charger",     ShowMenu("load")),
+                        ("Préférences", ShowMenu("preferences")),
+                        ("Profils",     ShowMenu("profiles")),
+                        ("Codex",       NullAction()),
+                        ("À propos",    ShowMenu("about")),
+                        ("Quitter",     MainMenu()),
+                    ]:
+                        textbutton "[lbl]":
+                            action act
+                            style "codex_nav_idle"
+                            selected (lbl == "Codex")
+                            ypadding 7
+                            xfill True
 
-                    $ current_entries = codex_entries_for_category(selected_category) if selected_category else []
-                    if current_entries:
-                        for eid in current_entries:
-                            $ entry = CODEX_ENTRIES[eid]
-                            textbutton "[entry['title']]":
-                                action SetScreenVariable("selected_entry", eid)
-                    else:
-                        text "Aucune page débloquée dans cette catégorie." size 20 color "#A99779"
+        # Séparateur vertical
+        frame:
+            background Solid("#122030")
+            xsize 1
+            yfill True
 
-            frame:
-                background Solid("#1a1612dd")
+        # -----------------------------------------------------------
+        # Colonne 2 — Index
+        # -----------------------------------------------------------
+        frame:
+            background Solid("#00000000")
+            xsize 260
+            yfill True
+
+            vbox:
                 xfill True
                 yfill True
-                padding (18, 18)
 
-                if selected_entry and selected_entry in CODEX_ENTRIES:
-                    $ entry = CODEX_ENTRIES[selected_entry]
+                # En-tête
+                frame:
+                    background Solid("#00000000")
+                    xfill True
+                    padding (20, 20, 20, 16)
+
                     vbox:
-                        spacing 12
-                        text "[entry['title']]" size 40 color "#F8E7C2"
-                        text "[CODEX_CATEGORY_LABELS.get(entry.get('category', 'divers'), entry.get('category', 'divers'))]" size 20 color "#BFAF8E"
+                        spacing 8
 
-                        viewport:
-                            mousewheel True
-                            draggable True
-                            scrollbars "vertical"
-                            ysize 580
+                        text "Codex":
+                            style "codex_index_title"
 
-                            text "[entry['text']]" size 22 color "#EFE7D8" line_spacing 4
-                else:
-                    text "Aucune page du Codex débloquée pour le moment." size 24 color "#A99779"
+                        $ pct = codex_completion_percent()
+                        $ filled_w = int(2.20 * pct)
+
+                        frame:
+                            background Solid("#122030")
+                            xfill True
+                            ysize 2
+                            xpadding 0
+                            ypadding 0
+
+                            frame:
+                                background Solid("#3bbcef")
+                                xsize filled_w
+                                ysize 2
+                                xalign 0.0
+
+                        text "[pct]% — [len(codex_valid_entry_ids())] / [len(CODEX_ENTRIES)] pages":
+                            style "codex_completion_label"
+
+                # Séparateur horizontal
+                frame:
+                    background Solid("#122030")
+                    xfill True
+                    ysize 1
+
+                # Catégories
+                frame:
+                    background Solid("#00000000")
+                    xfill True
+                    padding (20, 14, 20, 0)
+
+                    vbox:
+                        spacing 6
+
+                        text "CATÉGORIES":
+                            style "codex_section_label"
+
+                        null height 4
+
+                        for category_id in CODEX_CATEGORY_ORDER:
+                            $ cat_entries = codex_entries_for_category(category_id)
+                            if cat_entries:
+                                textbutton "[CODEX_CATEGORY_LABELS.get(category_id, category_id)] ([len(cat_entries)])":
+                                    action [
+                                        SetScreenVariable("selected_category", category_id),
+                                        SetScreenVariable("selected_entry", codex_first_visible_entry(category_id)),
+                                    ]
+                                    style "codex_cat_idle"
+                                    selected (selected_category == category_id)
+                                    ypadding 5
+                                    xfill True
+
+                # Pages débloquées
+                frame:
+                    background Solid("#00000000")
+                    xfill True
+                    yfill True
+                    padding (20, 12, 20, 12)
+
+                    vbox:
+                        spacing 4
+
+                        text "PAGES DÉBLOQUÉES":
+                            style "codex_section_label"
+
+                        null height 6
+
+                        $ current_entries = codex_entries_for_category(selected_category) if selected_category else []
+                        if current_entries:
+                            for eid in current_entries:
+                                $ edata = CODEX_ENTRIES[eid]
+                                textbutton "[edata['title']]":
+                                    action SetScreenVariable("selected_entry", eid)
+                                    style "codex_entry_idle"
+                                    selected (selected_entry == eid)
+                                    ypadding 6
+                                    xfill True
+                                    text_xalign 0.0
+                        else:
+                            text "Aucune page débloquée.":
+                                style "codex_empty_label"
+
+        # Séparateur vertical
+        frame:
+            background Solid("#122030")
+            xsize 1
+            yfill True
+
+        # -----------------------------------------------------------
+        # Colonne 3 — Panneau de lecture
+        # -----------------------------------------------------------
+        frame:
+            background Solid("#00000000")
+            xfill True
+            yfill True
+            padding (40, 32, 40, 32)
+
+            if selected_entry and selected_entry in CODEX_ENTRIES:
+                $ edata = CODEX_ENTRIES[selected_entry]
+                $ cat_label = CODEX_CATEGORY_LABELS.get(edata.get("category", "divers"), edata.get("category", "divers"))
+
+                vbox at codex_entry_appear:
+                    spacing 0
+                    xfill True
+
+                    hbox:
+                        spacing 10
+
+                        frame:
+                            background Solid("#1e4a65")
+                            xsize 20
+                            ysize 1
+                            yalign 0.5
+
+                        text "[cat_label]":
+                            style "codex_read_category"
+
+                    null height 12
+
+                    text "[edata['title']]":
+                        style "codex_read_title"
+
+                    null height 20
+
+                    frame:
+                        background Solid("#1e6a90")
+                        xsize 40
+                        ysize 1
+
+                    null height 22
+
+                    viewport:
+                        mousewheel True
+                        draggable True
+                        scrollbars "vertical"
+                        yfill True
+                        xfill True
+
+                        text "[edata['text']]":
+                            style "codex_read_body"
+                            xfill True
+
+            else:
+                text "Aucune page débloquée pour le moment.":
+                    style "codex_empty_label"
+                    xalign 0.5
+                    yalign 0.5

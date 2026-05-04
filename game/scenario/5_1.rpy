@@ -513,6 +513,7 @@ label _5_1_KAEL_NYRA:
     noam "Ce Conclave est vraiment une machine à mélanger les mondes qui n'auraient jamais dû se toucher."
 
     pause 0.4
+    $ unlock_codex_page("complexe_c")
 
     jump _5_1_CAFETERIA_MATIN
 
@@ -552,24 +553,24 @@ label _5_1_CAFETERIA_MATIN:
     elen "Les marchés ?"
 
     ryn "Les files."
-    ryn "Regarde l'écran."
-
-    "Sur les murs, Limen attend. Nexus marchande. Les chiffres clignotent comme s'ils avaient honte."
+    ryn "Regarde l'écran. Les gens attendent toujours leurs rations."
+    ryn "Comme s'ils allaient en avoir ..."
 
     elen "Kami a dit que les marchés fonctionnaient."
+    elen reflechit "Ça va prendre un peu de temps, mais ça va se mettre en route comme il faut."
 
     ryn "Les marchés fonctionnent pour ceux qui ont un truc à vendre."
     ryn blase "Pour les autres, c'est juste une façon plus chic de crever debout."
 
-    elen "Ryn..."
+    elen "Ryn... Non il faut..."
 
-    ryn "Quoi ? C'est moins joli sans graphique ?"
+    ryn "Quoi ? C'est vrai, non ?"
 
     hide elen
     $ showP("tomas", "hesitation", 0.50)
 
     tomas hesitation "Euh... techniquement, les premières tensions étaient prévisibles."
-    tomas "Le modèle d'ouverture suppose toujours une phase de déséquilibre initial."
+    tomas "Quand on change le système il faut toujours un temps d'adaptation."
 
     ryn "Le modèle, il a mangé ce matin ?"
 
@@ -579,11 +580,16 @@ label _5_1_CAFETERIA_MATIN:
 
     tomas hesitation "Alors... non. Enfin, un modèle ne mange pas."
 
-    ryn "Voilà."
+    ryn "Voilà. Et les gens veulent juste pouvoir manger."
 
     kael "Ryn."
 
-    ryn blase "Je suis calme. C'est mon calme qui parle fort."
+    ryn blase "Quoi ? J'ai pas crié."
+
+    tomas hesitation "Non, mais... l'effet était très proche."
+
+    "Personne ne rit vraiment."
+    "Mais tout le monde a compris."
 
     hide tomas
     hide ryn
@@ -596,9 +602,9 @@ label _5_1_CAFETERIA_MATIN:
     $ showP("lysa", "blase", 0.12)
     $ showP("iris", "fatigue", 0.50)
 
-    lysa blase "T'as une tête."
+    lysa blase "T'as une de ces têtes."
 
-    noam "Merci. Je la porte moi-même."
+    noam "Merci. J'ai préféré pas me regarder dans le miroir ce matin."
 
     iris fatigue "Non, mais vraiment."
 
@@ -612,33 +618,46 @@ label _5_1_CAFETERIA_MATIN:
 
     iris fatigue "Pff."
 
-    noam "C'est beau, cette solidarité post-fête."
+    noam "C'est beau, cette solidarité féminine."
 
-    iris "Je déteste ce faux café."
+    iris "Solidarité ? Tu parles."
+    iris "Madame n'a pas besoin de se faire belle pour l'être."
+    iris "Il n'y avait qu'à se souvenir de ta tête hier soir."
 
-    lysa "C'est pas du café. C'est une menace liquide."
 
-    iris "Kami nous teste."
-
-    lysa "Kami nous punit. Nuance."
-
-    pause 0.4
+    think "Non."
+    think "Je préfèrerais éviter d'y repenser ...."
 
     hide iris
     hide lysa
+
+    show bg_cg019 at memory_fade(1.5, 2.0, 1.5)
+
+    pause 6.0
+    hide bg_cg019
+
+
+    play sound sfx_door volume 5.0
+
+    "Une porte s'ouvre derrière nous."
+    "Mon visage est encore en train de brûler."
+    think "Timing parfait pour changer de sujet."
 
     $ showP("julian", "detendu", 0.50)
 
     julian detendu "Bonjour à tous."
 
-    noam "Il a l'air réveillé. C'est louche."
+    noam "Il a l'air en forme. C'est louche."
 
+    julian "Alors c'est comme ça qu'on m'accueille ?"
     julian sourire "J'ai choisi de transcender la gueule de bois."
 
-    lysa blase "Personne ne transcende rien. Tu fais semblant mieux que nous."
+    $ showP("lysa", "blase", 0.12)
+    lysa blase "Personne ne transcende rien. Tu fais juste mieux semblant que nous."
 
     julian "C'est déjà une compétence sociale."
 
+    $ showP("ryn", "blase", 0.88)
     ryn "Ou un défaut."
 
     julian detendu "Les deux peuvent être rentables."
@@ -649,18 +668,24 @@ label _5_1_CAFETERIA_MATIN:
     julian "Le vote est demain."
     julian "On ne va pas faire semblant de parler d'autre chose toute la journée."
 
-    iris fatigue "On peut essayer quand même ?"
+    hide ryn
+    $ showP("iris", "fatigue", 0.66)
+    iris "Raah fous-nous la paix."
+    iris fatigue "Tu peux essayer de faire ça ?"
 
-    julian "On peut."
-    julian sourire "Mais on échouera avec moins d'élégance."
+    julian "Je peux."
+    julian joie "Mais j'en ai pas envie."
+    julian sourire "Alors même si on devait échouer, autant échouer avec élégance et en se battant."
 
     lysa "Je vote pour l'échec sans élégance."
 
-    noam "Ça ne compte pas encore comme un scrutin officiel."
+    noam "J'aime pas l'admettre, mais Julian n'a pas complètement tort."
+    noam "Demain arrive beaucoup trop vite."
 
     pause 0.3
 
-    $ showP("sael", "neutre", 0.88)
+    hide iris
+    $ showP("sael", "neutre", 0.95)
 
     "Sael est au bout de la table. Droite. Silencieuse. Inattaquable."
 
@@ -673,18 +698,26 @@ label _5_1_CAFETERIA_MATIN:
     julian detendu "Je n'ai pas encore posé la question."
 
     sael "Tu allais."
+    sael mefiant "Et j'ai dit non."
 
-    ryn "Propre."
+    hide julian
+    $ showP("ryn", "blase", 0.60)
+    ryn "Au moins ça a le mérite d'être clair."
 
+    hide ryn
+    $ showP("julian", "sourire", 0.50)
     julian sourire "Je voulais seulement ouvrir une discussion."
 
     sael "Elle est fermée."
 
+    hide lysa
+    $ showP("elen", "neutre", 0.20)
     elen inquiet "Sael, peut-être qu'on peut juste... écouter ?"
+    hide elen
 
-    sael "Écouter n'oblige pas à changer."
+    sael "Personne n'a à m'obliger à changer ma position."
 
-    julian "Personne ne t'oblige."
+    julian "Personne ne t'oblige. Mais..."
 
     sael "Alors inutile d'insister."
 
@@ -695,24 +728,45 @@ label _5_1_CAFETERIA_MATIN:
     julian detendu "Très bien."
     julian "On parlera plus tard."
 
+    hide julian
+    with moveoutright
+
     sael "Tu parleras."
     sael neutre "Je répondrai si c'est nécessaire."
 
-    lysa "Ambiance."
+    hide sael
+    with dissolve
 
+    $ showP("lysa", "neutre", 0.20)
+
+    lysa "C'est vraiment joyeux ici."
+
+    $ showP("iris", "taquin", 0.66)
     iris "Je regrette presque la bouteille."
 
-    noam "Ne dis pas des choses aussi graves."
+    lysa "Vexée de pas avoir été choisie ?"
 
-    pause 0.4
+    iris rire "Moi vexée ? Et puis quoi encore."
+    iris taquin "Et pour embrasser qui d'abord ?"
 
-    "Les écrans continuent. Limen attend. Nexus vend. Orbite répare. Nous, on mâche."
+    lysa "Tu n'as pas de préférence ?"
+    lysa taquin "En tout cas Noam embrasse plutôt bien."
 
-    think "Tout le monde veut sauver quelqu'un."
-    think "Personne n'est d'accord sur qui."
+    noam "Je vais..."
+    noam "Très loin."
 
-    hide julian
-    hide sael
+    iris taquin "Oh ? Il fuit."
+
+    lysa taquin "Il bat en retraite."
+
+    noam "J'appelle ça une manœuvre stratégique."
+
+    "Je prends mon plateau."
+    "Je rate presque la sortie."
+    "Évidemment."
+
+    hide lysa
+    hide iris
 
     pause 0.3
 
@@ -729,644 +783,750 @@ label _5_1_TEMPS_LIBRE:
     noam "Matinée ouverte. Morale fermée."
     noam "On progresse."
 
-    call START_FREE_TIME("_5_1_APRES_MIDI") from _call_START_FREE_TIME_5_1
+    call START_FREE_TIME("_5_1_INFIRMERIE_KAEL") from _call_START_FREE_TIME_5_1
 
 # Durée : 0m15
 # Total : 2h 14m 30s
 
-label _5_1_APRES_MIDI:
-
-    scene bg_couloir at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.8
-
-    pause 0.6
-
-    "L'après-midi avance comme un animal prudent. Tout le monde a la même idée. Personne ne veut le dire."
-
-    think "Aller parler à Sael."
-    think "Trouver la phrase magique."
-    think "Comme si une phrase pouvait réparer une guerre."
-
-    scene bg_conclave at adaptive_fullscreen with dissolve
-
-    pause 0.4
-
-    "Elias est déjà là. Notes ouvertes. Regard trop droit. Sael en face. Mur vivant."
-
-    $ showP("elias", "determine", 0.25)
-    $ showP("sael", "neutre", 0.75)
-
-    elias "Sael, regarde-moi. Pas les notes. Moi."
-
-    sael "Je te regarde."
-
-    elias determine "À Limen, trente pour cent de la population est coincée dans quatre kilomètres carrés."
-    elias "Quatre."
-    elias "Ce n'est pas une ville, c'est une boîte qu'on secoue."
-
-    sael "Je connais les chiffres."
-
-    elias "Alors tu sais que ça ne tient pas."
-    elias "Si on n'ouvre pas, la pression reste."
-    elias "Si la pression reste, ça casse."
-
-    sael neutre "Tu parles d'humains comme d'un tuyau."
-
-    elias "Je parle d'un système."
-
-    sael "Et moi, je parle des gens pris dedans."
-
-    elias "Justement."
-
-    sael "Non."
-    sael "Pas justement."
-    sael "Les gens ne se déplacent pas comme des points sur ta carte."
-    sael "Ils emportent leurs peurs. Leurs dettes. Leurs armes. Leurs morts."
-
-    elias fatigue "Tu caricatures."
-
-    sael "Tu simplifies."
-
-    elias "Parce qu'il faut décider."
-
-    sael "Non."
-    sael "Parce que tu veux que la décision rentre dans ton tableau."
-
-    pause 0.3
-
-    elias determine "D'accord. Parlons concret."
-    elias "Limen manque d'espace. Nexus manque de bras sur certains secteurs. Harmonie a des stocks."
-    elias "Sans circulation, chaque district pourrit dans sa propre cage."
-
-    sael "Et avec circulation, les plus faibles iront supplier devant la cage des autres."
-
-    elias "Ce n'est pas ce que je propose."
-
-    sael "C'est ce qui arrivera."
-
-    elias "Tu n'en sais rien."
-
-    sael desaccord "Je l'ai vu."
-
-    pause 0.3
-
-    elias "Pas ici."
-
-    sael "Les gens changent de murs. Pas de faim."
-
-    elias "Sael—"
-
-    sael "Non."
-
-    elias "Laisse-moi finir."
-
-    sael "Tu as fini hier."
-
-    elias "Hier, j'ai mal parlé."
-
-    sael "Oui."
-
-    elias fatigue "Je le reconnais."
-
-    sael "Bien."
-
-    elias "Mais ça ne rend pas mes arguments faux."
-
-    sael "Ça rend ta certitude dangereuse."
-
-    pause 0.4
-
-    elias reflechit "Et Orbite ?"
-
-    sael "Orbite est dans l'espace."
-
-    elias "Orbite a besoin de techniciens, de matériel, de rotations. Kael l'a dit."
-
-    sael "Orbite a besoin de corridors contrôlés. Pas d'une libre circulation générale."
-
-    elias "C'est une question de principe."
-
-    sael "Non. C'est là que tu te trompes."
-    sael "Quand l'air manque, le principe ne sert à rien."
-    sael "Quand les foules bougent, le principe ne les arrête pas."
-
-    pause 0.3
-
-    elias fatigue "T'es sûre que ce n'est pas juste la peur qui parle ?"
-
-    pause 0.5
-
-    "La pièce se bloque. Même moi, j'arrête de respirer."
-
-    sael desaccord "Oui."
-
-    elias "Je voulais dire—"
-
-    sael "Oui, Elias."
-    sael "C'est la peur qui parle."
-    sael "La vraie."
-    sael "Pas celle qu'on écrit en note de bas de page sous un graphique."
-
-    elias "Sael..."
-
-    sael "Tu veux savoir ce que je vois quand tu dis libre circulation ?"
-
-    elias "Je veux comprendre."
-
-    sael "Des portes forcées."
-    sael "Des familles qui partent sans savoir où dormir."
-    sael "Des hommes qui vendent de la sécurité comme on vend du pain."
-    sael "Des enfants qui apprennent trop vite qui il faut éviter dans une foule."
-
-    pause 0.3
-
-    sael "Tes chiffres ne saignent pas, Elias."
-    sael neutre "Les gens, si."
-
-    pause 0.5
-
-    elias fatigue "Je pense que tu te trompes."
-
-    sael "Peut-être."
-
-    elias "Et si tu te trompes, des gens restent enfermés à Limen."
-
-    sael "Et si toi tu te trompes, des gens ouvriront des portes qu'ils ne sauront plus refermer."
-
-    pause 0.4
-
-    elias "Alors on fait quoi ?"
-
-    sael "On vote."
-
-    elias "C'est tout ?"
-
-    sael "C'est déjà beaucoup."
-
-    hide elias
-    hide sael
-
-    pause 0.5
-
-    "Elias sort. Il tient ses notes comme si elles venaient de le trahir."
-
-    $ showP("elias", "fatigue", 0.50)
-    $ showP("noam", "neutre", 0.25)
-
-    elias fatigue "J'ai essayé les chiffres."
-    elias "Les projections. Les exemples. Les risques."
-
-    noam "Et ?"
-
-    elias "Elle m'a répondu avec des morts."
-
-    noam "Difficile à contredire."
-
-    elias "Difficile ne veut pas dire juste."
-
-    noam "Non."
-
-    elias fatigue "C'est ça qui me rend fou."
-    elias "Elle peut avoir tort et raison en même temps."
-
-    noam "Bienvenue au Conclave."
-
-    elias "Très drôle."
-
-    noam "Pas vraiment."
-
-    elias fatigue "Je n'ai plus d'angle."
-
-    noam "Alors arrête de chercher un angle."
-
-    elias "Et je fais quoi ?"
-
-    noam "Je sais pas."
-    noam "Mais si elle voit une arme dans chaque argument, peut-être qu'il faut arrêter de les lui jeter dessus."
-
-    pause 0.3
-
-    elias "..."
-    elias "Tu devrais lui parler."
-
-    noam "Moi ?"
-
-    elias "Tu parles comme quelqu'un qui ne sait pas."
-    elias "C'est parfois moins insultant que quelqu'un qui sait trop."
-
-    noam "Merci. Je crois."
-
-    hide elias
-    hide noam
-
-    pause 0.5
-
-    scene bg_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_calm_not_peace.mp3" fadein 1.5
-
-    pause 0.4
-
-    "Plus tard. Une voix douce dans le couloir. Elen. Pas venue gagner. Venue comprendre."
-
-    $ showP("elen", "inquiet", 0.25)
-    $ showP("sael", "neutre", 0.75)
-
-    elen inquiet "Je peux rester là ?"
-
-    sael "Tu es déjà là."
-
-    elen "Oui, mais... moralement."
-
-    sael "Moralement ?"
-
-    elen gene "Je sais pas. Ça sonnait mieux dans ma tête."
-
-    pause 0.2
-
-    sael "Reste."
-
-    elen "Merci."
-
-    pause 0.3
-
-    elen inquiet "Je ne viens pas te forcer."
-    elen "Enfin... j'aimerais que tu changes d'avis."
-    elen "Mais je ne veux pas te coincer."
-    elen gene "Je suis pas très douée pour ça, de toute façon."
-
-    sael "Non."
-
-    elen "Ah."
-
-    sael "Ce n'était pas une insulte."
-
-    elen "Un peu quand même."
-
-    sael fatigue "Un peu."
-
-    pause 0.3
-
-    elen triste "Tu dois avoir des raisons."
-    elen "Des vraies."
-    elen "Pas juste... je sais pas... de l'entêtement."
-
-    sael "L'entêtement peut être une vraie raison."
-
-    elen "Pas une bonne."
-
-    sael "Ça dépend de ce qu'il protège."
-
-    pause 0.4
-
-    elen "Alors ça protège quoi ?"
-
-    $ showP("sael", "fatigue", 0.75)
-
-    sael fatigue "Une mémoire."
-
-    elen "De Limen ?"
-
-    sael "De la guerre."
-    sael "Celle que vous avez vue sur des écrans."
-    sael "Moi, je l'ai sentie dans les murs."
-    sael "Dans les couloirs trop pleins."
-    sael "Dans les gens qui courent sans destination."
-
-    pause 0.3
-
-    elen triste "Tu étais enfant ?"
-
-    sael "Assez pour comprendre."
-    sael "Pas assez pour décider."
-
-    elen "C'est cruel, dit comme ça."
-
-    sael "C'était cruel, vécu comme ça."
-
-    pause 0.4
-
-    elen inquiet "Tu es retournée là-bas ?"
-
-    sael "Non."
-
-    elen "Pourquoi ?"
-
-    sael "Parce que là-bas n'existe plus."
-
-    elen "Ton district ?"
-
-    sael "Mon endroit."
-    sael "Les cartes ont gardé un nom."
-    sael neutre "Pas les voix."
-
-    pause 0.5
-
-    elen triste "Je suis désolée."
-
-    sael "Je ne te demande pas d'être désolée."
-
-    elen "Je sais."
-    elen "Mais je le suis quand même."
-
-    pause 0.3
-
-    sael "Tu es toujours comme ça ?"
-
-    elen "Maladroite ?"
-
-    sael "Sincère au mauvais endroit."
-
-    elen "Oui."
-    elen gene "Enfin, j'essaie de le faire au bon endroit, mais je vise mal."
-
-    pause 0.3
-
-    sael "Ce n'est pas forcément mauvais."
-
-    elen "Ah."
-    elen triste "Merci. Je crois."
-
-    pause 0.4
-
-    elen "Je ne crois pas que tu aies tort."
-    elen "Sur le danger."
-    elen "Sur la peur."
-    elen "Sur ce que ça peut casser."
-
-    sael "Mais ?"
-
-    elen "Mais les gens de Limen..."
-    elen inquiet "S'ils veulent partir, ils ont le droit, non ?"
-
-    sael "Les droits sont simples quand ils sont seuls."
-    sael "Le droit de partir. Le droit de rester. Le droit de ne pas avoir peur."
-    sael "Le problème, c'est quand ils se rencontrent dans un couloir trop étroit."
-
-    elen triste "Je déteste cette réponse."
-
-    sael "Moi aussi."
-
-    elen "Mais tu votes quand même contre."
-
-    sael "Oui."
-
-    elen "Tu es sûre ?"
-
-    sael "Non."
-
-    pause 0.3
-
-    elen "..."
-
-    sael neutre "Je suis décidée. Ce n'est pas la même chose."
-
-    pause 0.5
-
-    elen triste "Je voulais juste que tu saches que ce n'est pas contre toi."
-
-    sael "Je sais."
-
-    elen "Et toi ?"
-
-    sael "Quoi, moi ?"
-
-    elen "Quand tu voteras contre."
-    elen "Ce sera contre nous ?"
-
-    pause 0.4
-
-    sael "Non."
-    sael fatigue "Ce sera contre ce que j'ai déjà vu."
-
-    hide sael
-
-    pause 0.3
-
-    "Elen recule. Elle m'a vu. Elle ne fait même pas semblant."
-
-    hide elen
-    $ showP("elen", "triste", 0.50)
-    $ showP("noam", "neutre", 0.25)
-
-    elen triste "Tu as entendu ?"
-
-    noam "Oui."
-
-    elen "C'est nul."
-
-    noam "Quoi ?"
-
-    elen "Comprendre quelqu'un et ne pas changer d'avis."
-    elen "J'avais l'impression que comprendre, ça devait aider."
-
-    noam "Ça aide."
-
-    elen "À quoi ?"
-
-    noam "À souffrir plus précisément."
-
-    elen "Super."
-
-    noam "Je ne vends pas du rêve."
-
-    elen triste "Elle non plus ne changera pas."
-
-    noam "Non."
-
-    elen "Et moi non plus."
-
-    noam "Non plus."
-
-    elen "Alors on est juste... bloqués proprement."
-
-    noam "Oui."
-
-    elen "Je déteste ce lieu."
-
-    noam "Il est très détestable."
-
-    hide elen
-    hide noam
-
-    pause 0.4
+label _5_1_INFIRMERIE_KAEL:
 
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "L'après-midi s'use. Les tentatives tombent une par une. Pas en fracas. En silence."
+    pause 0.5
 
-    think "Elias a essayé de prouver."
-    think "Elen a essayé de comprendre."
-    think "Julian doit sûrement essayer autre chose quelque part."
-    think "Et Sael reste Sael."
+    "Je quitte la cafétéria sans destination précise."
+    "J'avais juste besoin de ne plus être là."
 
-    pause 0.4
+    pause 0.2
 
-    $ showP("nyra", "neutre", 0.50)
-    $ showP("noam", "neutre", 0.25)
-
-    nyra "Tu les as vus ?"
-
-    noam "Qui ?"
-
-    nyra "Tous."
-    nyra neutre "Elias avec ses chiffres. Elen avec son cœur dans les mains. Julian avec son sourire qui commence à craquer."
-
-    noam "Tu fais des fiches sur nous ?"
-
-    nyra "Pas besoin. Vous êtes lisibles quand vous paniquez."
-
-    noam "Merci, c'est rassurant."
-
-    nyra raison "Rien n'a bougé."
-
-    noam "Non."
-
-    nyra "C'est intéressant."
-
-    noam "C'est surtout décourageant."
-
-    nyra "Les deux peuvent rapporter gros."
-
-    noam "Évidemment."
+    "Sael avait fermé la discussion comme on ferme un dossier."
+    "Julian avait encaissé en silence."
+    "Moi, j'avais encore trop mal au crâne pour jouer les arbitres."
 
     pause 0.3
 
-    nyra raison "Il y a une chose que personne ne dit."
+    "J'avance dans le couloir."
+    "Puis j'entends des pas."
+    "Rapides."
 
-    noam "Je sens que je ne vais pas aimer."
+    pause 0.2
 
-    nyra "Probable."
+    $ showP("elias", "panique", 0.50)
 
-    noam "Vas-y."
+    elias "Noam."
 
-    nyra "Si quelqu'un ne peut pas voter..."
+    noam "Elias ?"
 
-    pause 0.3
+    elias "Infirmerie."
 
-    nyra "Ça ne compte pas comme un vote contre."
+    pause 0.1
 
-    pause 0.7
+    elias panique "Maintenant."
 
-    noam "Nyra."
+    noam "Qu'est-ce qui—"
 
-    nyra "Noam."
-
-    noam "Tu viens de dire ça comme si tu parlais d'une règle de carte."
-
-    nyra raison "C'est une règle."
-
-    noam "C'est une personne."
-
-    nyra "Les règles utilisent toujours des personnes."
-
-    noam "C'est immonde."
-
-    nyra "Je n'ai pas dit que c'était beau."
-
-    noam "Tu as dit que c'était intéressant."
-
-    nyra neutre "Oui."
+    elias "Kael."
 
     pause 0.3
 
-    noam "Tu suggères quoi ?"
+    noam "Quoi, Kael ?"
 
-    nyra "Rien."
+    elias inquiet "Il s'est blessé ..."
+    elias "La main."
+    elias "Il y a du sang partout."
 
-    noam "Mensonge."
+    pause 0.2
 
-    nyra raison "Correction : je ne suggère rien à voix haute."
+    noam "Merde."
 
-    noam "Pourquoi moi ?"
+    elias fatigue "C'est clair, viens vite."
 
-    nyra "Parce que tu as encore l'air de croire que ne pas choisir te garde propre."
+    hide elias
+    with moveoutright
+
+    "Il repart sans attendre."
+    "Je le suis."
+
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
     pause 0.5
 
-    noam "..."
+    "L'infirmerie sent le désinfectant."
+    "Typiquement le genre d'odeur d'hôpital qui donne mal à la tête."
 
-    nyra "C'est tout."
+    pause 0.3
 
-    noam "Non."
-    noam "Ce n'est pas tout."
+    $ showP("kael", "triste", 0.50)
+    $ showP("nyra", "neutre", 0.78)
+    $ showP("mara", "stress", 0.22)
+    $ showP("elias", "inquiet", 0.05)
 
-    nyra "Pour l'instant, si."
+    "Kael est assis sur le bord du lit d'examen."
+    "Main droite dans une compresse rouge."
+    "Il regarde nulle part."
 
-    hide nyra
+    pause 0.2
 
-    pause 0.7
+    "Mara fouille dans une armoire."
+    "Elias se colle au mur près de la porte."
+    "Nyra se tient à côté de Kael."
 
-    "Elle part. La phrase reste. Petite. Polie. Dégoûtante."
+    pause 0.3
 
-    think "Si quelqu'un ne peut pas voter."
-    think "Ça ne compte pas comme un vote contre."
+    noam "Kael."
 
-    noam "Putain."
+    kael "Salut."
+
+    noam "...Salut ?"
+
+    kael triste "J'ai pas vraiment trouvé mieux."
+
+    mara stress "Ouais, par contre le mur lui tu l'as bien trouvé."
+
+    noam "Un mur ?"
+
+    mara "Il a eu la bonne idée de se détruire la main contre le mur."
+    mara "Et pas qu'une fois en plus."
+    mara agace "Résultat : nul. Méthode : nulle. Recommandation : aucune. Bref il s'est juste explosé la main pour RIEN."
+
+    kael "Je te remercie pour cette synthèse."
+
+    mara "Ecoute, là j'essaye de t'empêcher de repeindre l'infirmerie."
+    mara "T'as pas de meilleure amie que moi ce soir."
+
+    pause 0.3
+
+    noam "Pourquoi t'as fait ça ?"
+
+    pause 0.2
+
+    kael "Kami a refusé ma demande."
+
+    noam "Quelle demande ?"
+
+    kael triste "Contacter Léa."
+
+    pause 0.3
+
+    kael "Je voulais pas grand chose. Juste trente secondes."
+    kael "Même pas le temps d'avoir une vraie conversation."
+    kael inquiet "Juste savoir si elle va bien."
 
     pause 0.4
 
-    jump _5_1_CHOIX_PRINCIPAL
+    noam "Et elle a dit non ?"
+
+    kael "Elle a dit que les communications familiales ne faisaient pas partie des priorités du Conclave."
+    kael "Que c'était de toute façon interdit par les règles."
+
+    pause 0.2
+
+    kael "Et aussi que les représentants devaient éviter les distractions émotionnelles avant un vote important."
+
+    pause 0.5
+
+    "Personne ne parle."
+
+    pause 0.3
+
+    elias inquiet "Il est sorti de la salle de communication après ça. Et là..."
+
+    kael "Et j'ai frappé un mur."
+
+    mara "Et le mur a gagné la bagarre."
+
+    kael "Ouais. C'était pas la meilleure décision de ma vie."
+
+    pause 0.4
+
+    "Mara revient avec du désinfectant et une bande propre."
+    "Elle retire la compresse sans prévenir."
+
+    hide elias
+    with moveinleft
+
+    kael "Aïe."
+
+    mara "J'ai pas touché."
+
+    kael "Je prends de l'avance."
+
+    mara "Arrête de prendre des initiatives."
+
+    pause 0.3
+
+    "Elle nettoie la plaie."
+    "Kael fixe le mur d'en face."
+    "Sa main tremble légèrement."
+    "Pas seulement à cause du désinfectant."
+
+    pause 0.4
+
+    noam "Tu penses qu'elle est en danger ?"
+
+    kael "Je sais pas, je n'ai aucune information."
+
+    noam "Le module s'est isolé correctement ?"
+
+    kael "Oui."
+    kael inquiet "Enfin normalement."
+
+    $ showP("elias", "inquiet", 0.05)
+
+    pause 0.3
+
+    kael "Normalement, un sas ne lâche pas en pleine nuit non plus."
+    kael "Normalement, une gamine de six ans devrait pas savoir enfiler un scaphandre en trente secondes."
+    kael "Normalement, je devrais pouvoir lui demander si elle va bien."
+
+    pause 0.4
+
+    kael triste "Il y a trop de normalement aujourd'hui."
+
+    pause 0.5
+
+    elias inquiet "Si j'ai bien compris les modules résidentiels sont conçus pour tenir plusieurs jours en isolement ?"
+    elias "Si le protocole s'est déclenché correctement, le risque immédiat est limité."
+
+    pause 0.2
+
+    kael "Je sais."
+
+    pause 0.3
+
+    "Elias se tait, il regarde le plafond depuis tout à l'heure."
+    "Il vient de comprendre quelque chose."
+
+    pause 0.2
+
+    mara "Bon."
+    mara "Ta main va survivre."
+    mara "Y'a pas l'avoir d'avoir de fracture."
+    mara "Pas de points mais tu auras un sacré bleu."
+    mara agace "Ne recommence pas."
+
+    kael "Compris."
+
+    mara "Mauvaise réponse."
+
+    kael "...Pardon ?"
+
+    mara "'Compris', c'est ce que je disais avant de recommencer mes conneries."
+    mara agace "Je veux 'je ne recommencerai pas'."
+
+    kael "Je ne recommencerai pas."
+
+    mara "C'est déjà mieux."
+
+    pause 0.4
+
+    "Elle serre le bandage."
+    "Kael regarde sa main comme si elle lui avait fait quelque chose de personnel."
+
+    pause 0.4
+
+    kael triste "Je suis pas sûr d'être utile demain."
+
+    noam "Pour le vote ?"
+
+    kael "Oui."
+
+    pause 0.3
+
+    kael "Je sais ce que je pense."
+    kael inquiet "Je croyais, en tout cas."
+
+    pause 0.2
+
+    kael "Là tout se mélange."
+    kael "Orbite. Léa. Kami. Le vote."
+
+    pause 0.3
+
+    kael triste "Si je lève la main demain, ce sera pas vraiment moi."
+    kael "Ce sera juste ma peur qui vote à ma place."
+
+    pause 0.5
+
+    nyra "Alors ne force pas. Repose toi."
+
+    mara stress "Demain c'est pas vraiment une journée pour rester au lit."
+
+    nyra "Je n'ai pas dit que c'était une bonne journée pour ça."
+    nyra raison "J'ai dit qu'il en avait le droit de ne pas voter ?"
+
+    pause 0.3
+
+    elias "La participation n'est pas obligatoire ?"
+
+    "Il demande ça mécaniquement."
+    "Puis il réalise que tout le monde le regarde."
+
+    nyra "Non. Pas d'après les règles qui ont été expliqué."
+    nyra "Exact."
+
+    pause 0.4
+
+    kael triste "Mais si je vote pas..."
+
+    nyra "Ton absence sera comptabilisée, mais ça ne sera pas un vote contre."
+    nyra "En fait, c'est plus ou moins comme si tu t'abstenais."
+    nyra "Au final, ça n'empêchera ni le vote pour, ni le vote contre de gagner..."
+
+    pause 0.3
+
+    mara mefiant "Tu dis ça comme si c'était simple."
+
+    nyra "Non."
+    nyra "Je dis ça parce que c'est ce que disent les règles."
+    nyra "Et pour le coup, elles sont assez claires."
+
+    pause 0.5
+
+    "Le silence s'installe."
+    "Pas de panique dedans."
+    "Juste du calcul."
+
+    pause 0.3
+
+    noam "Kami demande l'unanimité des votes exprimés."
+
+    "Je dis ça à voix basse."
+    "Presque pour moi."
+
+    pause 0.3
+
+    nyra "Oui."
+
+    pause 0.4
+
+    "Mara fronce les sourcils."
+    "Elias baisse les yeux."
+    "Kael n'a pas l'air de penser à la règle."
+
+    pause 0.5
+
+    kael calme "Je vais voter."
+
+    nyra "Dans cet état ?"
+
+    kael "Oui."
+
+    pause 0.3
+
+    kael triste "Si je reste dans ma chambre je vais passer la nuit à réfléchir."
+    kael "Je préfère être là."
+
+    pause 0.3
+
+    "Nyra ne répond pas."
+    "Elle n'insiste pas davantage."
+
+    pause 0.4
+
+    mara "Avant de voter, tu dors."
+    mara "Tu manges. Tu te reposes."
+    mara agace "Et par pitié, tu mets cette main au repos."
+
+    kael "C'est beaucoup de contraintes."
+
+    mara "J'en ai d'autres en réserve si tu veux."
+
+    kael "Non... Ça ira."
+
+    pause 0.4
+
+    "Kael baisse les yeux."
+    "Sa main bandée repose sur ses genoux."
+
+    pause 0.4
+
+    kael triste "Je veux juste savoir si elle va bien."
+
+    pause 0.6
+
+    "Personne ne répond."
+    "Mara referme sa trousse."
+    "Nyra ne bouge pas."
+
+    pause 0.2
+
+    "Elias regarde ses chaussures."
+    "Depuis un moment."
+    "Très attentivement."
+    "Comme si ses lacets lui avaient fait quelque chose."
+
+    pause 0.4
+
+    "Ce silence-là, c'est la seule réponse honnête qu'on peut lui donner."
+
+    pause 0.5
+
+    elias "Je..."
+
+    pause 0.2
+
+    elias fatigue "J'ai laissé un truc allumé."
+
+    pause 0.2
+
+    "Personne ne dit rien."
+
+    elias "Dans la salle de maintenance."
+    elias "Un outil."
+    elias "Je l'ai laissé allumé."
+
+    pause 0.2
+
+    mara "Elias."
+
+    elias "Ouais."
+
+    mara "T'as l'air vert."
+
+    elias "Je suis fatigué."
+
+    mara "C'est pas la fatigue."
+
+    pause 0.2
+
+    elias "L'outil—"
+
+    mara "Y'a aucun outil."
+
+    elias fatigue "Y'a peut-être un outil."
+
+    pause 0.3
+
+    kael "Elias."
+
+    elias "Ouais."
+
+    kael triste "Merci d'être venu."
+
+    pause 0.4
+
+    "Elias ouvre la bouche."
+    "La referme."
+    "Il déglutit."
+
+    elias "...C'est bon."
+
+    hide elias
+    with moveoutleft
+
+    "Il sort."
+    "Vite."
+    "Vraiment vite."
+    "Pour quelqu'un qui avait juste un outil à aller éteindre."
+
+    pause 0.4
+
+    mara "Il fait ça à chaque fois."
+
+    noam "Il est parti en trente secondes."
+
+    mara "Vingt-huit."
+    mara "Record personnel."
+
+    pause 0.3
+
+    kael triste "Il est quand même venu."
+
+    pause 0.4
+
+    "Mara ne répond pas."
+    "Elle range sa trousse."
+    "Mais quelque chose dans ses épaules se relâche légèrement."
+
+    pause 0.4
+
+    mara "Noam."
+
+    noam "Ouais."
+
+    mara "Viens."
+
+    noam "Où ?"
+
+    mara agace "Dehors."
+    mara "Avant qu'on invente un cinquième problème."
+
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.5
+
+    pause 0.5
+
+    $ showP("mara", "stress", 0.35)
+    $ showP("noam", "neutre", 0.65)
+
+    "La porte se referme."
+
+    pause 0.2
+
+    "Dans le couloir, Elias est adossé au mur."
+    "Les bras croisés."
+    "Il respire par le nez."
+    "Lentement."
+    "Comme quelqu'un qui essaie très fort de pas vomir."
+
+    pause 0.3
+
+    $ showP("elias", "fatigue", 0.15)
+
+    noam "Ça va ?"
+
+    elias "Ouais."
+
+    noam "T'es blanc."
+
+    elias fatigue "Je suis toujours comme ça."
+
+    noam "Non."
+
+    elias "...Non."
+
+    pause 0.3
+
+    mara "Rentre te coucher Elias."
+
+    elias "J'allais—"
+
+    mara "Elias."
+
+    pause 0.2
+
+    elias fatigue "...Ouais. OK."
+
+    hide elias
+    with moveoutleft
+
+    pause 0.4
+
+    "Mara le regarde partir."
+    "Elle souffle."
+
+    mara "J'aime pas cette journée."
+
+    noam "Moi non plus."
+
+    pause 0.4
+
+    mara "Kael qui se blesse."
+    mara "Kami qui refuse trente secondes de communication."
+    mara "Elle pouvait quand même faire une exception à ses foutues règles..."
+
+    pause 0.3
+
+    mara "D'un côté Kael devrait se reposer... Mais je comprends qu'il veuille participer au vote."
+    mara "J'avais pas compris les règles comme ça..."
+    mara "Le fait qu'on puisse ne pas aller voter..."
+
+    pause 0.5
+
+    "Elle laisse ça dans l'air."
+    "Sans vraiment conclure."
+
+    pause 0.4
+
+    mara "Je retourne vérifier qu'il tape pas dans un deuxième mur."
+
+    noam "Bonne idée."
+
+    mara "Flemme de lui rebander le bras demain."
+    mara agace "C'est quand même triste d'en être là."
+
+    hide mara
+    with moveoutright
+
+    pause 0.5
+
+    "Mara retourne dans l'infirmerie."
+    "Je reste seul dans le couloir."
+
+    "Je fais un petit tour par la cafétéria pour me prendre un truc à manger."
+    "Je retourne dans ma chambre ensuite."
+
+    jump _5_1_CHOIX_CHAMBRE
 
 # Durée : 4m00
 # Total : 2h 18m 30s
 
-label _5_1_CHOIX_PRINCIPAL:
+label _5_1_CHOIX_CHAMBRE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+
+    pause 0.5
+
+    "Quatre murs."
+    "Un lit."
+    "Le silence."
+
+    pause 0.3
+
+    "C'est exactement ce qu'il me faut."
+
+    pause 0.4
+
+    "Je balance mes affaires sur le bureau et je file sous la douche."
+
+    scene bg_cg011 at adaptive_fullscreen with dissolve
+
+    pause 1.0
+
+    "L'eau chaude."
+    "Le seul truc dans cette station qui fait ce qu'on lui demande sans négocier."
+
+    pause 0.5
+
+    "Je reste là un moment."
+    "Longtemps."
+    "Sans doute bien plus longtemps que nécessaire."
+
+    pause 0.4
+
+    "Je pense à Kael et à sa main bandée."
+    "À Elias dans le couloir, blanc comme un linge."
+
+    pause 0.5
+
+    "Je pense à demain, au carnage que ça va être."
 
     pause 0.6
 
-    "Le soir. Ma chambre. Le plafond. Moi, en dessous, pas beaucoup plus avancé."
+    scene bg_chambre at adaptive_fullscreen with dissolve
 
-    noam "Sael ne changera pas."
-    noam "Pas demain."
-    noam "Pas avec des chiffres."
-    noam "Pas avec des larmes."
-    noam "Pas avec Julian qui sourit comme si le monde lui devait une faveur."
+    pause 0.5
 
-    pause 0.3
-
-    think "Nyra savait."
-    think "Elle savait exactement où planter la phrase."
-
-    noam "Si quelqu'un ne peut pas voter..."
+    "Je sors de la douche."
+    "Je m'habille."
+    "Je m'apprête à m'effondrer sur le lit."
 
     pause 0.3
 
-    noam "Ça ne compte pas comme un vote contre."
-
-    "La pharmacie revient dans ma tête avec une précision honteuse."
-
-    noam "Non."
-
-    pause 0.2
-
-    noam "Enfin..."
-
-    pause 0.2
-
-    noam "Non."
-
-    pause 0.3
-
-    think "Pas la blesser."
-    think "Pas la briser."
-    think "Juste l'empêcher d'être là."
-
-    noam "Écoute-toi."
-    noam "Vraiment, écoute-toi."
+    "Et puis je le vois."
 
     pause 0.4
 
-    think "Et Limen ?"
-    think "Et les files ?"
-    think "Et ceux qui restent enfermés parce qu'une seule voix dit non ?"
+    "Il y a un papier qui a été glissé sous la porte."
+    "Plié en deux."
 
-    noam "Je déteste cette journée."
+    pause 0.3
+
+    "Je le ramasse."
 
     pause 0.4
+
+    "Une seule phrase écrite à l'ordinateur."
+    "Le papier a été imprimé."
+    "Pas de signature."
+
+    pause 0.5
+
+    "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
+
+    pause 0.8
+
+    "Je relis."
+
+    pause 0.4
+
+    "Je relis encore."
+
+    pause 0.6
+
+    think "Sont retirés des bulletins exprimés les abstentions et les absences au vote."
+
+    pause 0.5
+
+    "C'est tiré du règlement."
+    "Mot pour mot."
+    "Quelqu'un a copié une ligne du règlement et l'a glissée sous ma porte."
+
+    pause 0.4
+
+    "Anonymement."
+    "En pleine nuit."
+
+    pause 0.5
+
+    think "Qui ? Et pourquoi faire ?"
+
+    pause 0.6
+
+    "Je fixe la phrase."
+
+    pause 0.3
+
+    "Sont retirés des bulletins exprimés."
+    "Les abstentions."
+    "Et les absences."
+
+    pause 0.5
+
+    "Si quelqu'un n'est pas là pour voter."
+    "Son vote n'est pas compté."
+    "Ni pour."
+    "Ni contre."
+
+    pause 0.4
+
+    "L'unanimité s'applique aux votes exprimés."
+    "Pas aux absents."
+
+    pause 0.6
+
+    "Je pose le papier sur le bureau."
+
+    pause 0.4
+
+    "Je pense à Sael."
+
+    pause 0.3
+
+    "Sael qui a fermé la discussion ce soir comme on claque une porte."
+    "Sael qui votera contre demain."
+    "Sael qui ne changera pas d'avis."
+
+    pause 0.5
+
+    think "Si elle vote pas."
+    think "Elle ne votera pas contre."
+
+    pause 0.6
+
+    "C'est simple."
+    "Trop simple."
+    "Le genre de raisonnement qui a l'air propre jusqu'à ce qu'on le retourne."
+
+    pause 0.4
+
+    "Je reprends le papier."
+    "Je le relis une dernière fois."
+
+    pause 0.5
+
+    "Pas de signature."
+    "Juste une phrase."
+    "Et une idée que je peux plus défaire maintenant qu'elle est là."
+
+    pause 0.6
+
+    "La pharmacie est à deux couloirs d'ici."
+    "Je pourrais peut être trouver quelque chose qui fera que Sael reste au lit demain..."
+
+    pause 0.5
+
+    "Je pose le papier."
+
+    pause 0.3
+
+    "Je m'assieds sur le lit."
+    "Qu'est ce que je devrais faire..."
+
+    pause 0.6
 
     menu:
         "Aller à la pharmacie.":
@@ -1381,164 +1541,277 @@ label _5_1_CHOIX_PRINCIPAL:
 label _5_1_PHARMACIE:
 
     scene bg_couloir at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
 
     pause 0.5
 
-    "Le couloir est presque vide. Tant mieux. C'est déjà assez moche sans public."
-
-    noam "Je marche."
-    noam "Normalement."
-    noam "Pas trop vite."
-    noam "Quelqu'un de normal marche comme ça."
-
-    pause 0.3
-
-    "Je passe devant la chambre de Sael. Porte fermée. Silence total."
-
-    noam "Désolé."
-
-    pause 0.2
-
-    noam "Non."
-    noam "Même ça, c'est lâche."
-
-    scene bg_pharmacie at adaptive_fullscreen with dissolve
+    "Le couloir est vide."
+    "Éclairage de nuit."
+    "Ces petites lumières bleues au ras du sol qui donnent l'impression que la station respire."
 
     pause 0.4
 
-    "La lumière automatique s'allume. Étagères propres. Étiquettes propres. Intention beaucoup moins propre."
-
-    noam "Ok."
-    noam "Qu'est-ce que je cherche ?"
-
-    think "Laxatif. Purge légère. Trouble digestif. Quelque chose qui ne laisse pas de trace dramatique."
-
-    noam "Je ne suis pas médecin."
-    noam "Je suis à peine qualifié pour choisir un petit-déjeuner."
+    "Je marche lentement."
+    "Pas parce que je suis fatigué."
+    "Parce que quelqu'un qui marche lentement a l'air de quelqu'un qui a le droit d'être là."
 
     pause 0.3
 
-    "Anti-nauséeux. Antiseptique. Antidouleur. Bandages. Suppléments. Trop de noms, pas assez de courage."
-
-    noam "Là."
+    think "Si je croise quelqu'un."
+    think "Je peux pas dormir."
+    think "Je voulais juste prendre quelque chose pour m'aider à dormir."
 
     pause 0.3
 
-    "Petite boîte beige. Comprimés. Effet purgatif doux. Déconseillé avant activité physique soutenue."
-
-    noam "Parfait."
-
-    pause 0.2
-
-    noam "Non."
-    noam "Pas parfait."
-    noam "C'est même exactement le contraire de parfait."
+    "C'est plausible."
+    "C'est même vrai."
+    "Je peux vraiment pas dormir."
 
     pause 0.4
 
-    think "C'est pas irréversible."
-    think "C'est juste une absence."
-    think "Une journée ratée."
-    think "Un vote qui passe."
+    "Je tourne au couloir B."
+    "Personne."
 
-    noam "C'est une personne."
+    pause 0.2
 
-    pause 0.3
+    "Je tourne au couloir C."
+    "Personne non plus."
 
-    think "C'est aussi des milliers de personnes."
+    pause 0.2
 
-    noam "Arrête."
-
-    pause 0.3
-
-    "Un bruit dans le couloir. Je me fige."
-
-    noam "..."
+    "Bien."
 
     pause 0.5
 
-    "Des pas. Ils ralentissent. Mon cœur, lui, accélère comme un imbécile."
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
 
-    noam "Pas maintenant."
+    pause 0.4
+
+    "L'infirmerie de nuit."
+    "Les lumières sont au minimum."
+    "Ça sent toujours le désinfectant."
+
+    pause 0.3
+
+    "Le lit d'examen est vide."
+    "La compresse rouge a disparu."
+    "Quelqu'un a nettoyé."
+
+    pause 0.4
+
+    "Les armoires à pharmacie sont sur le mur du fond."
+    "Quatre portes vitrées."
+    "Fermées mais pas verrouillées."
+    "En cas d'urgence, un verrou serait une mauvaise idée."
+
+    pause 0.3
+
+    "Ce soir, je lui en suis reconnaissant."
+
+    pause 0.5
+
+    "J'ouvre la première armoire."
+
+    pause 0.3
+
+    "Paracétamol en comprimés."
+    "Ibuprofène."
+    "Antihistaminiques."
+    "Prednisolone."
+
+    pause 0.3
+
+    "J'ouvre la deuxième."
+
+    pause 0.3
+
+    "Antispasmodiques."
+    "Antibiotiques sous blister."
+    "Zolpidem."
+
+    pause 0.3
+
+    think "Zolpidem."
+    think "Somnifère."
+
+    pause 0.3
+
+    "Je prends une gélule."
+    "Une seule."
+    "Pour ce soir."
+    "Pour dormir."
+
+    pause 0.3
+
+    "Je continue."
+
+    pause 0.4
+
+    "Troisième armoire."
+
+    pause 0.3
+
+    "Lopéramide en gélules."
+    "Bisacodyl en gélules."
+    "Macrogol 4000 en sachets-doses."
+
+    pause 0.5
+
+    "Je m'arrête."
+
+    pause 0.3
+
+    "Lopéramide."
+    "Anti-diarrhéique."
+    "Gélules."
+
+    pause 0.2
+
+    "Bisacodyl."
+    "Laxatif."
+    "Gélules."
+
+    pause 0.4
+
+    "Je les pose côte à côte sur le bord de l'armoire."
+
+    pause 0.3
+
+    "Les deux boîtes se ressemblent."
+    "Même taille."
+    "Même forme."
+    "Étiquettes différentes."
+    "Mais dans le noir, ou sans ses lunettes, ou sans vraiment regarder..."
+
+    pause 0.5
+
+    think "Si quelqu'un prend du Bisacodyl en croyant prendre du Lopéramide."
+
+    pause 0.4
+
+    "Demain matin."
+    "Avant le vote."
+
+    pause 0.3
+
+    "Ce quelqu'un ne sera pas en état de voter."
+    "Ce quelqu'un ne sera pas en état de faire grand chose."
+
+    pause 0.5
+
+    scene bg_cg024 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg024")
+
+    "J'échange les gélules."
+    "Bisacodyl dans la boîte de Lopéramide."
+    "Lopéramide dans la boîte de Bisacodyl."
+
+    pause 0.3
+
+    "Proprement."
+    "Soigneusement."
+    "Comme si l'ordre avait de l'importance."
+
+    pause 0.4
+
+    "Je referme les deux boîtes."
+    "Je les replace exactement où elles étaient."
+
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
+
+    pause 0.5
+
+    "Je regarde les sachets de Macrogol."
+
+    pause 0.3
+
+    "Laxatif osmotique."
+    "En poudre."
+    "À diluer dans un liquide."
+    "N'importe quel liquide."
+    "Indétectable si le liquide a déjà un goût."
+
+    pause 0.4
+
+    think "Mais ça, c'est pour demain."
+    think "Il faudra trouver comment."
+    think "Et quand."
+
+    pause 0.5
+
+    "Je prends deux sachets."
+    "Je les glisse dans ma poche."
+    "À côté du Zolpidem."
+
+    pause 0.4
+
+    "Je referme l'armoire."
+
+    pause 0.3
+
+    "Je regarde l'infirmerie une dernière fois."
+    "Tout a l'air exactement comme avant."
+
+    pause 0.3
+
+    "C'est peut-être ça le pire."
 
     pause 0.6
-
-    "Les pas repartent. Disparaissent."
-
-    noam "Ok."
-    noam "Je viens officiellement d'avoir peur d'être surpris avec des laxatifs."
-    noam "Niveau de dignité : souterrain."
-
-    pause 0.4
-
-    "Le terminal clignote à l'entrée. Kami observe. Kami sait. Kami adorera sûrement."
-
-    noam "Tu regardes, hein ?"
-
-    pause 0.2
-
-    noam "Bien sûr que tu regardes."
-
-    pause 0.4
-
-    think "Si Kami voit ça, elle ne dira rien."
-    think "Pas par bonté."
-    think "Par curiosité."
-
-    noam "Tu veux voir jusqu'où je descends ?"
-
-    pause 0.3
-
-    noam "Moi aussi, apparemment."
-
-    pause 0.4
-
-    "Je pense à Sael. À ses portes forcées. À ses gens qui saignent."
-
-    noam "Elle a raison."
-
-    pause 0.2
-
-    "Je pense à Limen. Aux files. Aux gens coincés."
-
-    noam "Elias aussi."
-
-    pause 0.3
-
-    noam "C'est ça le problème."
-
-    pause 0.4
-
-    "La boîte est légère dans ma main. Trop légère pour ce qu'elle vient de devenir."
-
-    noam "Je pourrais la reposer."
-
-    pause 0.2
-
-    noam "Je devrais la reposer."
-
-    pause 0.5
-
-    "Je ne la repose pas."
-
-    pause 0.3
-
-    "Je glisse la boîte dans ma poche."
-
-    noam "Putain."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     pause 0.4
 
-    "Le couloir est silencieux. Personne n'a vu. Ce n'est pas rassurant."
+    "Le couloir est toujours vide."
+    "Les lumières bleues au ras du sol."
 
-    noam "Allez."
-    noam "Marche."
-    noam "Comme quelqu'un qui n'a rien volé à sa propre conscience."
+    pause 0.3
 
-    jump _5_1_FIN_JOURNEE
+    "Je rentre dans ma chambre."
+
+    pause 0.5
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+
+    pause 0.4
+
+    "Je pose les sachets sur le bureau."
+    "À côté du papier."
+
+    pause 0.3
+
+    "Je regarde les deux."
+    "Un moment."
+
+    pause 0.5
+
+    "Quelqu'un a jugé que je ferais ça."
+    "Quelqu'un a glissé ce papier sous ma porte en sachant que je serais là ce soir."
+    "À fouiller une armoire à pharmacie à deux heures du matin."
+
+    pause 0.4
+
+    think "Qui ?"
+
+    pause 0.6
+
+    "Je sais pas."
+    "Je sais pas encore."
+
+    pause 0.4
+
+    "J'avale le Zolpidem avec un fond d'eau."
+    "Je m'allonge."
+    "Je fixe le plafond."
+
+    pause 0.5
+
+    "Pour une fois."
+    "Je dors."
+
+    pause 0.6
+
+    call end_day("6")
+    jump _6_1_1_REVEIL_CHAMBRE
 
 # Durée : 2m30
 # Total : 2h 21m 45s
@@ -1546,96 +1819,94 @@ label _5_1_PHARMACIE:
 label _5_1_FIN_JOURNEE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+
+    pause 0.5
+
+    "Ma chambre."
+    "Le silence."
+    "Le papier sur le bureau."
+
+    pause 0.4
+
+    "Je le regarde encore."
+
+    pause 0.3
+
+    "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
+
+    pause 0.5
+
+    "Je le repose."
+    "Face contre le bureau."
+
+    pause 0.4
+
+    think "Quelqu'un voulait que je fasse quelque chose avec ça."
+
+    pause 0.3
+
+    think "Je ne vais pas le faire."
+
+    pause 0.5
+
+    "Sael votera contre."
+    "Peut-être que d'autres voteront contre."
+    "Peut-être, sans doute même, que le texte ne passera pas."
+
+    pause 0.4
+
+    "C'est possible."
+    "C'est même certain."
+
+    pause 0.3
+
+    "Mais forcer le résultat en empêchant quelqu'un de voter."
+    "Ce n'est plus vraiment un vote."
+    "C'est juste un résultat qu'on a fabriqué."
+
+    pause 0.5
+
+    think "Et si ça marche comme ça."
+    think "Ça vaut quoi ?"
 
     pause 0.6
 
-    "Ma chambre. La porte. Le clic de fermeture. Le genre de bruit qui ressemble à un jugement."
-
-    noam "Bon."
-
-    pause 0.2
-
-    noam "Journée terminée ?"
-
-    pause 0.2
-
-    noam "Pas vraiment, non."
-
-    $ blink()
-
-    "Le plafond est toujours là. Fidèle. Inutile."
-
-    noam "Kael par terre."
-    noam "Nyra qui ne console pas, mais reste."
-    noam "Léa qui sait mettre un scaphandre seule."
-
-    pause 0.3
-
-    noam "Elias et ses notes."
-    noam "Elen qui comprend trop bien pour être tranquille."
-    noam "Sael qui dit non comme on ferme une blessure."
+    "Je me déshabille."
+    "Je m'allonge."
 
     pause 0.4
 
-    think "Nyra."
-    think "Si quelqu'un ne peut pas voter."
-    think "Ça ne compte pas comme un vote contre."
-
-    pause 0.3
-
-    noam "Je la déteste pour avoir dit ça."
-
-    pause 0.2
-
-    noam "Je me déteste pour l'avoir compris."
+    "Je fixe le plafond."
 
     pause 0.5
 
-    "Je m'allonge. Le lit accepte mon poids sans commentaire. Lui au moins."
+    "Demain sera ce que demain sera."
 
-    scene bg_cg012 at adaptive_fullscreen with dissolve
+    pause 0.6
+
+    "Le noir."
+    "Le silence."
+    "La station qui bourdonne très doucement quelque part dans les murs."
+
+    pause 0.5
+
+    "Je pense à Kael."
+    "À sa sœur qui a six ans et qui sait enfiler un scaphandre en trente secondes."
+    "À ce que ça dit, au final, du monde dans lequel on vit."
 
     pause 0.4
 
-    $ blink()
-
-    noam "Demain, il y a le vote."
-
-    pause 0.3
-
-    noam "Un oui."
-    noam "Un non."
-    noam "Une absence."
-    noam "Et tout un monde coincé entre les trois."
-
-    pause 0.5
-
-    think "Je pensais qu'une décision, c'était choisir ce qui est juste."
-    think "Ici, c'est choisir ce qu'on accepte de salir."
-
-    pause 0.5
+    "Je tourne ça dans tous les sens."
+    "Ça mène nulle part."
+    "Comme d'habitude."
 
     $ blink()
+    pause 0.6
 
-    noam "J'aimerais avoir une phrase propre pour finir la journée."
-
-    pause 0.3
-
-    noam "J'en ai pas."
-
-    pause 0.5
-
-    "Le sommeil arrive sans douceur. Il me prend avant que je trouve une excuse."
-
+    "Je ferme les yeux."
     $ blink()
-    pause 1.5
 
-    $ current_day = 6
-    pause 1.0
+    pause 0.8
 
-    call end_day("6") from _call_end_day_6_1
-    jump _6_1_REVEIL_CHAMBRE
-
-# Durée : 1m20
-# Total : 2h 23m 05s
+    call end_day("6")
+    jump _6_1_0_REVEIL_CHAMBRE

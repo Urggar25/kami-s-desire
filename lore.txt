@@ -19,10 +19,14 @@ Personnages :
 
   Nyra :
   - District Orbite
+    - A vécu sur une station isolée à Orbite qui n'est pas rattachée à une station
 
   Kael :
   - District Orbite
-
+    - A vécu au sein au sein de la Station C, plus particulièrement dans le module C-3
+  - Famille :
+    - A une soeur de 6 ans qui s'appelle Léa
+ 
   Julian :
   - District Nexus
 
@@ -31,6 +35,8 @@ Personnages :
 
   Elias :
   - District Axiome
+  - Phobies :
+    - Sang
 
   Mara :
   - District Axiome
@@ -48,3 +54,95 @@ Lore du monde :
   - Les gardiens de Limen :
     Les gardiens de Limen sont une organisation non gouvernementale qui protègent les frontières Limenoises ; Limen est le plus vaste district terrestre, avec des frontières avec tous les autres districts.
     Les gardiens ont creusé une tranché formant la frontière avec tous les autres districts. Quiconque franchissait cette frontière était instantanément éliminé. On racconte que des dizaines de milliers de Gardiens sont morts en les traçant.
+
+Résumé des journées du jeu :
+
+0_ (Jour 0 — Le déclenchement)
+
+Ouverture sur le hall du district HARMONIE rénové, ambiance d'oppression silencieuse, an 1 du règne de Kami.
+Assemblée du district : 500 médiateurs réunis pour une réunion sans réel pouvoir, pure mise en scène.
+Flashback : récit de la prise de pouvoir mondiale de Kami il y a un an, blocage simultané de toutes les machines, annonce androgyne, abolition des gouvernements.
+Retour au présent : Kami fait une diffusion exceptionnelle pour son "anniversaire" et lance les Kami's Desires (30 jours, 12 représentants tirés au sort, votes à l'unanimité pour amender les Commandements).
+Tirage au sort : Noam (le narrateur, médiateur) est désigné représentant de HARMONIE.
+Extraction par les agents, lecture des dix Commandements, rencontre avec le Responsable de District qui explique la mission.
+Arrivée de Lysa, second représentant de HARMONIE (coordination logistique, attitude blasée).
+Mise en caisson de transport pour rejoindre le Conclave, endormissement par gaz soporifique.
+
+1_ (Jour 1 — Arrivée au Conclave)
+
+Réveil de Noam et des 11 autres représentants sur des sièges au Conclave, présentation indirecte de tous les personnages (Ryn, Mara, Tomas, Elen, Julian, Iris, Nyra, Kael, Sael, Elias, Lysa).
+Première apparition de Kami au Conclave : explication des règles (30 jours sans rentrer chez soi, chacun propose un amendement, votes tous les trois jours à l'unanimité, Commandements suspendus à l'intérieur du Conclave, tout est filmé).
+Phase d'exploration libre : visite des salles du Conclave (archive, cafétéria, salle canon, gymnase, infirmerie, maintenance, observation, repos, sas, stockage).
+Rassemblement à 18h : Kami précise les règles supplémentaires (interdiction de rentrer/contacter l'extérieur, brouilleurs dans les chambres) et lance le dépôt des amendements (35 minutes, 10 votes parmi 12 propositions tirés au sort).
+Débat tendu sur la stratégie de dépôt (transparence vs anonymat) ; les représentants déposent un par un sans se concerter.
+Choix de Noam : amendement sur la liberté d'information locale OU sur l'obligation d'assistance.
+Diffusion de Kami à 18h : clôture de l'urne, tous ont participé.
+Soirée optionnelle à la salle de repos (Tomas apporte du thé) ou retour direct au dortoir, brève discussion avec Elias avant de dormir.
+
+2_ (Jour 2 — Annonce du premier vote)
+
+Réveil difficile à 8h, intervention matinale de Kami qui se moque du stress collectif et donne rendez-vous à 9h à la cafétéria.
+Pensées de Noam pour sa famille et sa petite sœur Juliette, restée à HARMONIE.
+Annonce du premier amendement tiré au sort : "Autoriser le transport, la vente et l'échange de marchandises au sein des districts".
+Le vote n'aura lieu que le lendemain (jour 3) à 14h, donc seulement une journée pour décider.
+Long débat collectif à la cafétéria sur les implications (peur d'un piège, méfiance, recherche de consensus mou en faveur du "pour").
+Temps libre, puis discussions par petits groupes : Lysa exprime ses doutes (déblocage de l'argument "Difficulté d'approvisionnement"), Kael à la salle d'observation parle des fragilités d'Orbite (arguments "Bons de rationnement" et "Faiblesse d'Orbite").
+Séance au gymnase avec Iris et Elias : initiation au sport, mini-jeu de musculation, tutoriel sur les statistiques.
+Soirée à la cafétéria : conversations sur Orbite, sur la peur du désaccord, position de Ryn (probablement pour, mais prudent), douche, coucher.
+
+3_ (Jour 3 — Premier vote)
+
+Réveil avec petite annonce de Kami rappelant l'unanimité requise, peur diffuse du "non".
+Conversations matinales : Kael hésitant, Julian enthousiaste qui se prend pour le porteur du vote (déblocage "Le monde d'avant").
+Cafétéria : Elen mange ses pâtes aux noix, déclaration publique de votes "pour" (Elen, Julian, Elias) ; Mara et Kael indécis.
+Temps libre puis Nyra alerte Noam : Julian fait du porte-à-porte pour se positionner en leader, confrontation en salle de repos avec Tomas et Noam qui le recadrent.
+Transition vers le Conclave, Lysa pessimiste, Sael la prend dans ses bras pour la motiver.
+Phase 1 du débat : Kami a mélangé les mots de l'amendement, il faut le reconstituer (mini-jeu) ; révélation que la proposition inclut en fait l'abolition du système de distribution.
+Phase 2 : débat houleux, mécanisme de buzzers imposé par Kami pour structurer les prises de parole.
+Phase 3 : trois moments de choix d'arguments stratégiques par Noam pour influencer l'adhésion, conclusion en confrontation Ryn/Sael/Julian.
+Vote final POUR ou CONTRE → branche 4_0 (vote NON, statu quo) ou 4_1 (vote OUI, suppression des bons).
+
+4_0 (Jour 4 — Branche statu quo)
+
+Réveil dans une atmosphère lourde de défaite, Kami se moque du conformisme en début de matinée.
+Cafétéria : Goumi refuse à Elen un peu de cannelle (ressources redirigées vers la Terre par Kami), tension palpable, Elen part en pleurs ; les écrans muraux confirment que rien n'a changé.
+Temps libre puis convocation par Kami au Conclave pour annoncer le deuxième vote : autoriser la libre circulation entre districts.
+Julian est absent (enfermé dans sa chambre), débat extrêmement tendu : Sael s'oppose violemment (les Gardiens sont morts pour ces frontières) et claque la porte, Mara la suit.
+Iris et plusieurs autres craquent aussi, la séance se dissout sans organisation.
+Soirée d'isolement : chacun rentre dans sa chambre, Noam passe devant la chambre éclairée de Julian sans frapper, sentiment d'échec collectif.
+
+4_1 (Jour 4 — Branche changement)
+
+Réveil le matin de l'application du nouveau système, Kami annonce que Nexus et Orbite prospèrent déjà tandis que Limen souffre (files d'attente, troc sauvage, alerte mineure à Orbite).
+Cafétéria : confrontation entre les optimistes (Julian, Elen, Lysa) et les inquiets (Ryn, Iris, Sael).
+Temps libre puis convocation : Kami annonce le deuxième vote sur la libre circulation entre districts (énoncé clair cette fois).
+Débat : Ryn, ancien Gardien de Limen, vote pour (dénonce les morts) ; Sael s'y oppose (vénération des Gardiens) et claque la porte ; Mara la suit, puis Iris.
+Elen organise une fête improvisée pour décompresser, Noam va chercher Iris.
+Fête dans la salle de repos avec alcool, intervention humoristique de Kami, jeu de la bouteille (Noam embrasse Lysa, Tomas embrasse Sael, Kael embrasse Elias).
+Fin de soirée : Noam rentre saoul dans sa chambre et s'effondre sur son lit.
+
+5_0 (Jour 5 — Branche statu quo)
+
+Réveil avec migraine émotionnelle, certitude que le prochain vote sera également perdu.
+Annonce matinale de Kami : vote sur la libre circulation reporté au jour 6.
+Noam mange seul dans sa chambre puis va frapper aux portes : Sael (chambre dépouillée, refuse de voter pour) et Iris (refuse aussi, préfère ne pas participer à la mascarade).
+Temps libre puis choix : aller voir Julian OU aller à la salle d'observation.
+
+Julian : confrontation glaçante, Julian désactive le brouilleur pour révéler son cynisme (il joue un rôle, peu importe le résultat du vote).
+Salle d'observation : Elias renverse son café, la salle se verrouille en sécurité, longue discussion avec Elias sur les chiffres de Limen et l'inévitabilité de l'échec.
+
+
+Soirée morose, Noam s'endort en se disant que demain sera difficile mais qu'il sera là quand même.
+
+5_1 (Jour 5 — Branche changement)
+
+Réveil avec gueule de bois, Kami annonce qu'une alerte sécurité a touché le complexe C-3 d'Orbite cette nuit (Kael ignorait que sa petite sœur Léa, 6 ans, vivait là).
+Dans le couloir, Noam surprend une discussion intime entre Kael et Nyra sur Léa et la culpabilité de ne pas avoir été là.
+Cafétéria du matin : tensions sur les marchés de Limen, Sael bloque toute discussion avec Julian, taquineries entre Lysa et Iris au sujet du baiser de la veille.
+Temps libre puis appel d'Elias : Kael s'est blessé en frappant un mur (Kami a refusé sa demande de contacter Léa).
+Scène à l'infirmerie : Mara soigne Kael, Nyra explique que les absences/abstentions ne comptent pas dans les bulletins exprimés ; Elias sort précipitamment.
+Retour en chambre : Noam trouve un papier glissé sous sa porte avec la phrase exacte du règlement sur les abstentions, suggérant qu'on pourrait empêcher Sael de voter.
+Choix : aller à la pharmacie OU se coucher.
+
+Pharmacie : Noam vole un Zolpidem (somnifère) et échange les gélules de Bisacodyl/Lopéramide + prend des sachets de Macrogol pour saboter Sael avant le vote.
+Coucher : Noam refuse cette manipulation, considérant qu'un vote forcé n'a aucune valeur.

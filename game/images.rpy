@@ -181,6 +181,7 @@ image elen rire                 = im.FactorScale("images/character/elen/rire.png
 image elen surpris              = im.FactorScale("images/character/elen/surpris.png", 0.60)
 image elen taquin               = im.FactorScale("images/character/elen/taquin.png", 0.60)
 image elen triste               = im.FactorScale("images/character/elen/triste.png", 0.60)
+image elen fatigue               = im.FactorScale("images/character/elen/fatigue.png", 0.60)
 image elen vide              = im.FactorScale("images/character/vide.png", 0.60)
 
 # ======================
@@ -246,6 +247,7 @@ image ryn sourire               = im.FactorScale("images/character/ryn/sourire.p
 image ryn surpris               = im.FactorScale("images/character/ryn/surpris.png", 0.60)
 image ryn taquin                = im.FactorScale("images/character/ryn/taquin.png", 0.60)
 image ryn triste                = im.FactorScale("images/character/ryn/triste.png", 0.60)
+image ryn blase                = im.FactorScale("images/character/ryn/blase.png", 0.60)
 image ryn vide              = im.FactorScale("images/character/vide.png", 0.60)
 
 # ======================
