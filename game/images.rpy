@@ -18,6 +18,8 @@ image elias vide              = im.FactorScale("images/character/vide.png", 0.60
 image elias detendu              = im.FactorScale("images/character/elias/detendu.png", 0.60)
 image elias raison              = im.FactorScale("images/character/elias/raison.png", 0.60)
 image elias determine              = im.FactorScale("images/character/elias/determine.png", 0.60)
+image elias hesitation              = im.FactorScale("images/character/elias/hesitation.png", 0.60)
+image elias choc              = im.FactorScale("images/character/elias/choc.png", 0.60)
 
 # ======================
 # MARA
@@ -90,6 +92,7 @@ image lysa fatigue              = im.FactorScale("images/character/lysa/fatigue.
 image lysa doute              = im.FactorScale("images/character/lysa/doute.png", 0.60)
 image lysa jaloux              = im.FactorScale("images/character/lysa/jaloux.png", 0.60)
 image lysa gene              = im.FactorScale("images/character/lysa/gene.png", 0.60)
+image lysa choc              = im.FactorScale("images/character/lysa/choc.png", 0.60)
 
 # ======================
 # JULIAN
@@ -161,6 +164,7 @@ image tomas triste              = im.FactorScale("images/character/tomas/triste.
 image tomas hesitation              = im.FactorScale("images/character/tomas/hesitation.png", 0.60)
 image tomas vide              = im.FactorScale("images/character/vide.png", 0.60)
 image tomas gene              = im.FactorScale("images/character/tomas/gene.png", 0.60)
+image tomas fatigue              = im.FactorScale("images/character/tomas/fatigue.png", 0.60)
 
 # ======================
 # ELEN
@@ -205,6 +209,7 @@ image kael colere               = im.FactorScale("images/character/kael/colere.p
 image kael mefiant               = im.FactorScale("images/character/kael/mefiant.png", 0.60)
 image kael vide              = im.FactorScale("images/character/vide.png", 0.60)
 image kael gene               = im.FactorScale("images/character/kael/gene.png", 0.60)
+image kael effondre               = im.FactorScale("images/character/kael/effondre.png", 0.60)
 
 # ======================
 # NYRA
@@ -249,6 +254,8 @@ image ryn taquin                = im.FactorScale("images/character/ryn/taquin.pn
 image ryn triste                = im.FactorScale("images/character/ryn/triste.png", 0.60)
 image ryn blase                = im.FactorScale("images/character/ryn/blase.png", 0.60)
 image ryn vide              = im.FactorScale("images/character/vide.png", 0.60)
+image ryn hesitation                = im.FactorScale("images/character/ryn/hesitation.png", 0.60)
+image ryn decontracte                = im.FactorScale("images/character/ryn/decontracte.png", 0.60)
 
 # ======================
 # SAEL

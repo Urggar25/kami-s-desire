@@ -139,7 +139,9 @@ init python:
                 {"id": "D5A", "title": "Jour 5A", "label": "_5_0_REVEIL_CHAMBRE", "requires": ["D4A"]},
                 {"id": "D6AA", "title": "Jour 6AA", "label": "_6_0_0_REVEIL_CHAMBRE", "requires": ["D5A"]},
                 
-                {"id": "D6AB", "title": "Jour 6AA", "label": "_6_0_1_REVEIL_CHAMBRE", "requires": ["D5A"]},
+                {"id": "D6_0_1", "title": "Jour 6AA", "label": "_6_0_1_REVEIL_CHAMBRE", "requires": ["D5A"]},
+                {"id": "D7_0_1", "title": "Jour 7AA", "label": "_7_0_1_REVEIL_CHAMBRE", "requires": ["D6_0_1"]},
+                {"id": "D8_0_1", "title": "Jour 8AA", "label": "_8_0_1_REVEIL_CHAMBRE", "requires": ["D7_0_1"]},
 
                 {"id": "D4B", "title": "Jour 4B", "label": "_4_1_REVEIL_CHAMBRE", "requires": ["D3"]},
                 {"id": "D5B", "title": "Jour 5B", "label": "_5_1_REVEIL_CHAMBRE", "requires": ["D4B"]},

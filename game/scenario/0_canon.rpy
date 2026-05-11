@@ -28,6 +28,8 @@ define think = Character(
     italic=True
 )
 
+default journal_entries = []
+
 
 transform enter_soft:
     alpha 0.0
@@ -612,6 +614,8 @@ label _0_retour_reunion:
 
     scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
 
+    $ journal_entries.append(("Jour 0", "Il y a un an, je me suis retrouvé immobile devant un écran qui disait que le monde venait de changer. Je n'ai pas bougé. Personne n'a bougé. On a tous regardé sans rien faire."))
+
     "Je reviens d’un coup."
     "Pas comme on sort d’un rêve."
     "Comme on reprend l’air après avoir été maintenu sous l’eau, encore un peu sonné."
@@ -1030,6 +1034,8 @@ label _0_EXTRACTION:
 
     scene bg_cg004 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg004")
+
+    $ journal_entries.append(("Jour 0 — soir", "Mon nom était sur la liste. J'aurais dû m'y attendre, et pourtant non. Lysa a l'air de quelqu'un qui cache bien ses peurs. Moi, je ne suis même pas sûr de cacher les miennes."))
 
     "La liste reste affichée là, comme un verdict indélébile."
     "Deux noms."
@@ -1466,11 +1472,21 @@ label _0_LABEL2_RESP_DISTRICT:
     lysa doute "C’est lui ?"
     lysa "... Super."
 
+    menu:
+        "Tendre la main.":
+            $ affinity_lysa = 1
+            noam "Enchanté."
+            think "Elle regarde ma main une seconde de trop."
+            think "Puis la serre. Rapidement."
+
+        "Ne pas bouger.":
+            $ affinity_lysa = 0
+            noam "Enchanté."
+            think "Je le dis quand même."
+
     resp_d "Oui."
     resp_d "Noam. Médiation."
     resp_d "Lysa. Coordination logistique inter-secteurs."
-
-    noam "Enchanté."
 
     lysa "Oui oui, enchanté, tout ça tout ça ..."
 

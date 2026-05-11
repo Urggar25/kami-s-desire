@@ -203,11 +203,11 @@ init python:
 
         st["mode"] = mode
 
-        expr = st["expr"]
-        x = st["x"]
-        y = st["y"]
-        layer = st["layer"]
-        base_z = st["zorder"]
+        expr = st.get("expr", "neutre")
+        x = st.get("x", 0.5)
+        y = st.get("y", 1.0)
+        layer = st.get("layer", "master")  # valeur par défaut si clé absente
+        base_z = st.get("zorder", 0)
 
         img = f"{tag} {expr}"
         at_list = [Position(xalign=x, yalign=y)]
@@ -220,7 +220,6 @@ init python:
             z = 500
         else:
             at_list.append(char_restore)
-
 
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=z)
 
@@ -288,14 +287,19 @@ init python:
             return
 
         bg_set_blur(True, 2.5, layer="bgcam")
-        
         tx = cam_x_for_framed_char(tag)
         cam_move(tx, CINEMA_CAM_Y, CINEMA_ZOOM_BG, t, layers=("bgcam", "master"))
-        
+
         for c in list(store.char_state.keys()):
             if not renpy.showing(c, layer="master"):
                 continue
             if c == tag:
+                attrs = renpy.get_attributes(c, layer="master")
+                if attrs:
+                    real_expr = attrs[0]
+                    if real_expr != store.char_state[c].get("expr"):
+                        store.char_state[c]["expr"] = real_expr
+                        store.char_state[c]["mode"] = None
                 restyle_char(c, "focus")
             else:
                 restyle_char(c, "dim")

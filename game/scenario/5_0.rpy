@@ -638,9 +638,11 @@ label _5_0_CHOIX_PRINCIPAL:
 
     menu:
         "Aller frapper à la porte de Julian.":
+            $ doplleganger = 0
             jump _5_0_0_JULIAN
 
         "Aller à la salle d'observation.":
+            $ doplleganger = 1
             jump _5_0_1_OBSERVATION
 
 
@@ -1194,12 +1196,13 @@ label _5_0_1_OBSERVATION:
     "Elias se relève pour me montrer quelque chose mais son coude accroche sa tasse."
     play sound sfx_drop
 
+    scene bg_cg027 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg027")
+
     "Un bruit mat."
     "Le café se renverse en arc sur le bord de la console."
     "Sur les touches."
     "Sur le panneau de commande latéral."
-
-    $ showP("elias", "panique", 0.75)
 
     elias "Et merde !"
 
@@ -1210,8 +1213,6 @@ label _5_0_1_OBSERVATION:
     "Un voyant passe au rouge."
     "Un léger sifflement."
 
-    $ showP("noam", "peur", 0.25)
-
     noam "C'est moi qui— j'ai failli te bousculer, je—"
 
     elias "Non non, c'était ma tasse."
@@ -1220,8 +1221,6 @@ label _5_0_1_OBSERVATION:
     "Orange."
     "Puis une fumée fine s'échappe d'une grille latérale."
     "Pas de flammes. Juste cette fumée grise et acre qui monte tranquillement."
-
-    $ showP("elias", "inquiet", 0.75)
 
     elias inquiet "OK."
     elias "C'est pas dramatique, mais..."
@@ -1260,11 +1259,12 @@ label _5_0_1_OBSERVATION:
 
     "Et derrière les baies vitrées, l'espace continue d'être indifférent à tout ça."
 
-    $ showP("noam", "reflexion", 0.25)
-
     noam reflexion "..."
 
     noam "Je me demande combien de temps on a."
+
+    scene bg_cg028 at adaptive_fullscreen with dissolve
+    $ unlock_gallery_image("bg_cg028")
 
     elias "La salle est ventilée."
     elias detendu "On n'étouffera pas."
@@ -1280,8 +1280,6 @@ label _5_0_1_OBSERVATION:
 
     elias detendu "On n'a nulle part où aller."
     elias "Autant qu'on en parle."
-
-    $ showP("noam", "neutre", 0.25)
 
     noam "Il me semble que c'est pas le contexte idéal pour une discussion sur le vote."
 
@@ -1321,6 +1319,8 @@ label _5_0_1_OBSERVATION:
     pause 1.0
 
     call screen custom_title("Après plusieurs heures")
+
+    scene bg_observation at adaptive_fullscreen with dissolve
 
     pause 3.0
 
@@ -1472,5 +1472,10 @@ label _5_0_FIN_JOURNEE:
     $ current_day = 6
     pause 1.0
 
-    call end_day("6")
-    jump _6_0_REVEIL_CHAMBRE
+    if doplleganger == 0:
+        call end_day("6")
+        jump _6_0_0_REVEIL_CHAMBRE
+
+    else:
+        call end_day("6")
+        jump _6_0_1_REVEIL_CHAMBRE

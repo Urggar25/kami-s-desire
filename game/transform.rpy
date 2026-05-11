@@ -1,5 +1,80 @@
 ﻿# transform.rpy
 
+transform char_active(xpos):
+    xalign xpos yalign 1.0
+    linear 0.15 zoom 1.15 alpha 1.0
+
+transform char_inactive(xpos):
+    xalign xpos yalign 1.0
+    linear 0.15 zoom 1.0 alpha 0.4
+
+transform char_idle(xpos):
+    xalign xpos yalign 1.0
+    zoom 1.0 alpha 1.0
+
+init python:
+
+    def showGroup(members, y=1.0, layer="master"):
+        """
+        members : liste de tuples (tag, expr, x)
+        ex: showGroup([("lysa","neutre",0.15), ("julian","sourire",0.5)])
+        """
+        store.group_members = [tag for tag, expr, x in members]
+        
+        for tag, expr, x in members:
+            store.char_pos[tag] = x
+            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer)  # layer ajouté
+            img = f"{tag} {expr}"
+            renpy.show(img, tag=tag, at_list=[char_idle(x)], layer=layer)
+
+    def hideGroup():
+        """Cache tous les personnages du groupe actuel"""
+        for tag in store.group_members:
+            renpy.hide(tag)
+        store.group_members = []
+
+    def on_speaking(event, interact, **kwargs):
+        if event != "begin":
+            return
+
+        speaker = renpy.get_say_image_tag()
+        members = getattr(store, "group_members", [])
+
+        if not members:
+            return
+
+        if speaker is None:
+            for tag in members:
+                if tag in store.char_pos:
+                    x = store.char_pos[tag]
+                    renpy.show(tag, at_list=[char_idle(x)])
+            return
+
+        if speaker not in members:
+            return
+
+        for tag in members:
+            if tag not in store.char_pos:
+                continue
+            x = store.char_pos[tag]
+            if tag == speaker:
+                renpy.show(tag, at_list=[char_active(x)])
+            else:
+                renpy.show(tag, at_list=[char_inactive(x)])
+
+        # Branchement du callback
+        config.all_character_callbacks.append(on_speaking)
+
+init python:
+    def updateExpr(tag, expr):
+        """Met à jour l'expression d'un personnage silencieux"""
+        if tag not in store.char_state:
+            return
+        store.char_state[tag]["expr"] = expr
+        x = store.char_pos[tag]
+        img = f"{tag} {expr}"
+        renpy.show(img, tag=tag, at_list=[char_idle(x)])
+
 transform eyelid_top_once(close=0.11, hold=0.04, open=0.16, overlap=80, amount=0.62):
     xpos 0
     ypos 0

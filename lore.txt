@@ -146,3 +146,23 @@ Choix : aller à la pharmacie OU se coucher.
 
 Pharmacie : Noam vole un Zolpidem (somnifère) et échange les gélules de Bisacodyl/Lopéramide + prend des sachets de Macrogol pour saboter Sael avant le vote.
 Coucher : Noam refuse cette manipulation, considérant qu'un vote forcé n'a aucune valeur.
+
+6_0_1 (Jour 6 — Branche statu quo / Axe Palimpseste)
+
+Réveil lourd après l’incident de la salle d’observation : Noam sait déjà que le vote sur la libre circulation va échouer.
+Diffusion matinale de Kami : elle annonce le vote à 14h, mais son image et sa voix présentent des micro-glitches ; elle paraît agacée, moins joueuse que d’habitude.
+Cafétéria : ambiance résignée. Elias renverse encore un verre, ce qui ravive le malaise de l’accident de la veille. Mara, Elen, Lysa et Elias remarquent que Kami semble anormalement instable.
+Iris annonce clairement qu’elle votera contre. Sael confirme immédiatement. Le groupe comprend que le débat est déjà mort avant même d’avoir commencé.
+Transition vers le Conclave : Kami interrompt le groupe dans le couloir et propose d’avancer le vote, en disant que cela “l’arrange”. Sa voix et son hologramme bugguent encore.
+Étrange incident dans le couloir : Sael s’arrête, fixe un point vide et affirme avoir cru voir quelqu’un bouger au loin. Noam ne voit personne.
+Conclave : Kami lance le débat sur la libre circulation, mais le groupe ne joue plus le jeu. Ryn, Iris et Sael déclarent que cela ne sert à rien.
+Kami se dérègle davantage et force une séquence de stabilisation du signal.
+Mini-jeu “Signal Instable” : Noam doit maintenir le signal de Kami dans une zone stable pendant que son discours sur l’amendement se corrompt progressivement.
+Mini-jeu “Fracture” : Kami tente de poursuivre la lecture, mais ses phrases se fragmentent, avec des lapsus inquiétants autour de “mourir” et “voter”.
+Après les bugs, les représentants sont choqués : personne n’a vraiment compris le texte exact, et plusieurs craignent qu’un vote “pour” applique une version déformée ou dangereuse de l’amendement.
+La peur des répercussions domine : même ceux favorables au principe de libre circulation hésitent à valider un texte lu par une Kami instable.
+Vote final : Julian et Tomas votent pour, Elias s’abstient, tous les autres votent contre. Noam choisit librement son vote, mais l’amendement échoue quoi qu’il arrive.
+Kami annonce l’absence d’unanimité et le maintien du statu quo, toujours avec quelques traces de bug.
+Sortie du Conclave : tensions entre Ryn, Sael, Julian et les autres. Tomas veut vérifier les retranscriptions pour comprendre ce qui a réellement été prononcé.
+Fin de journée : Noam rentre dans sa chambre, repense aux glitches de Kami, au mot “mourir”, à l’écran qui clignote et au trouble de Sael dans le couloir.
+La journée se termine sur une certitude diffuse : quelque chose a changé chez Kami, ou quelque chose agit hors de son contrôle.

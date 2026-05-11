@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/5_1.rpy", line 786, in script call
-    call START_FREE_TIME("_5_1_INFIRMERIE_KAEL") from _call_START_FREE_TIME_5_1
-  File "game/scenario/5_1.rpy", line 1814, in script
-    jump _6_1_1_REVEIL_CHAMBRE
-ScriptError: could not find label '_6_1_1_REVEIL_CHAMBRE'.
+  File "game/scenario/8_0_1.rpy", line 568, in script call
+    call START_FREE_TIME("_8_0_1_APRES_MIDI_KAEL_CRISE") from _call_START_FREE_TIME_8_0_1
+  File "game/scenario/8_0_1.rpy", line 1000, in script
+    jump _9_0_1_REVEIL_CHAMBRE
+ScriptError: could not find label '_9_0_1_REVEIL_CHAMBRE'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/5_1.rpy", line 786, in script call
-    call START_FREE_TIME("_5_1_INFIRMERIE_KAEL") from _call_START_FREE_TIME_5_1
-  File "game/scenario/5_1.rpy", line 1814, in script
-    jump _6_1_1_REVEIL_CHAMBRE
+  File "game/scenario/8_0_1.rpy", line 568, in script call
+    call START_FREE_TIME("_8_0_1_APRES_MIDI_KAEL_CRISE") from _call_START_FREE_TIME_8_0_1
+  File "game/scenario/8_0_1.rpy", line 1000, in script
+    jump _9_0_1_REVEIL_CHAMBRE
   File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
     rv = renpy.game.script.lookup(target)
   File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '_6_1_1_REVEIL_CHAMBRE'.
+ScriptError: could not find label '_9_0_1_REVEIL_CHAMBRE'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0
-Sun May  3 15:43:27 2026
+Sat May  9 17:45:01 2026
