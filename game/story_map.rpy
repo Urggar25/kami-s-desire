@@ -6,20 +6,25 @@ init python:
             "id": "route_main",
             "name": "Trame principale",
             "nodes": [
-                {"id": "D0", "title": "Jour 0", "label": "_0_CANON", "requires": [], "summary": "Résumé à écrire."},
-                {"id": "D1", "title": "Jour 1", "label": "_1_CANON", "requires": ["D0"], "summary": "Résumé à écrire."},
-                {"id": "D2", "title": "Jour 2", "label": "_2_CANON", "requires": ["D1"], "summary": "Résumé à écrire."},
-                {"id": "D3", "title": "Jour 3", "label": "_3_CANON", "requires": ["D2"], "summary": "Résumé à écrire."},
-                {"id": "D4A", "title": "Jour 4A", "label": "_4_0_REVEIL_CHAMBRE", "requires": ["D3"], "summary": "Résumé à écrire."},
-                {"id": "D5A", "title": "Jour 5A", "label": "_5_0_REVEIL_CHAMBRE", "requires": ["D4A"], "summary": "Résumé à écrire."},
-                {"id": "D6AA", "title": "Jour 6AA", "label": "_6_0_0_REVEIL_CHAMBRE", "requires": ["D5A"], "summary": "Résumé à écrire."},
-                {"id": "D6_0_1", "title": "Jour 6AA", "label": "_6_0_1_REVEIL_CHAMBRE", "requires": ["D5A"], "summary": "Résumé à écrire."},
-                {"id": "D7_0_1", "title": "Jour 7AA", "label": "_7_0_1_REVEIL_CHAMBRE", "requires": ["D6_0_1"], "summary": "Résumé à écrire."},
-                {"id": "D8_0_1", "title": "Jour 8AA", "label": "_8_0_1_REVEIL_CHAMBRE", "requires": ["D7_0_1"], "summary": "Résumé à écrire."},
-                {"id": "D4B", "title": "Jour 4B", "label": "_4_1_REVEIL_CHAMBRE", "requires": ["D3"], "summary": "Résumé à écrire."},
-                {"id": "D5B", "title": "Jour 5B", "label": "_5_1_REVEIL_CHAMBRE", "requires": ["D4B"], "summary": "Résumé à écrire."},
-                {"id": "D6BA", "title": "Jour 6BA", "label": "_6_1_0_REVEIL_CHAMBRE", "requires": ["D5B"], "summary": "Résumé à écrire."},
-                {"id": "D6BB", "title": "Jour 6BA", "label": "_6_1_1_REVEIL_CHAMBRE", "requires": ["D5B"], "summary": "Résumé à écrire."},
+                {"id": "D0", "title": "Jour 0", "label": "_0_CANON", "requires": [], "summary": "Un an après la prise de contrôle mondiale de Kami, Noam assiste à une réunion ordinaire du district Harmonie. Kami interrompt la séance pour annoncer les Kami’s Desires : un Conclave de 30 jours où douze représentants devront voter à l’unanimité pour modifier les Commandements."},
+                {"id": "D1", "title": "Jour 1", "label": "_1_CANON", "requires": ["D0"], "summary": "Noam se réveille avec les autres représentants dans le Conclave et le visite. Kami apparaît et révèle les règles : trente jours d’isolement, des amendements anonymes, un vote tous les trois jours et l'unanimité est obligatoire pour apporter des modifications aux Commandements."},
+                {"id": "D2", "title": "Jour 2", "label": "_2_CANON", "requires": ["D1"], "summary": "Kami annonce le premier vote du Conclave : autoriser le transport, la vente et l’échange de marchandises entre districts. Les représentants comprennent qu’ils n’ont qu’une journée pour débattre, ce qui fait remonter les peurs, les inégalités et les intérêts propres à chaque district."},
+                {"id": "D3", "title": "Jour 3", "label": "_3_CANON", "requires": ["D2"], "summary": "Le premier vote approche et les tensions explosent autour de l’amendement sur le commerce et les bons de rationnement. Entre débats, soupçons de manipulation et affrontements idéologiques, les représentants doivent choisir entre ouvrir les échanges ou maintenir le système actuel."},
+                
+                {"id": "D4A", "title": "Jour 4", "label": "_4_0_REVEIL_CHAMBRE", "requires": ["D3"], "summary": "Après l’échec du vote sur le commerce, le Conclave s’enfonce dans la frustration et le regret. Kami annonce un nouveau vote sur la libre circulation entre districts, mais le sujet fracture aussitôt le groupe, notamment avec l’opposition frontale de Sael."},
+                {"id": "D5A", "title": "Jour 5", "label": "_5_0_REVEIL_CHAMBRE", "requires": ["D4A"], "summary": "À la veille du vote sur la libre circulation, Noam constate que Sael, Mara et Iris voteront contre. Selon son choix, il confronte Julian sur son besoin de mise en scène ou provoque avec Elias un incident dans la salle d’observation qui endommage accidentellement une console."},
+                {"id": "D6AA", "title": "Jour 6", "label": "_6_0_0_REVEIL_CHAMBRE", "requires": ["D5A"], "summary": "Résumé à écrire."},
+                
+                {"id": "D6_0_1", "title": "Jour 6", "label": "_6_0_1_REVEIL_CHAMBRE", "requires": ["D5A"], "summary": "Le vote sur la libre circulation tourne au fiasco : Kami semble instable, son discours se déforme et elle laisse échapper une menace inquiétante. Face à un texte incompréhensible et au risque d’une application incontrôlée, le Conclave rejette massivement l’amendement."},
+                {"id": "D7_0_1", "title": "Jour 7", "label": "_7_0_1_REVEIL_CHAMBRE", "requires": ["D6_0_1"], "summary": "Pour la première fois, Kami reste silencieuse et le Conclave connaît une journée presque normale, entre grasse matinée, repas détendus et discussions sans vote. Mais Tomas découvre qu’il n’y a plus aucune exécution dans le monde, tandis que du matériel disparaît mystérieusement dans le Conclave."},
+                {"id": "D8_0_1", "title": "Jour 8", "label": "_8_0_1_REVEIL_CHAMBRE", "requires": ["D7_0_1"], "summary": "Le silence de Kami continue, mais le calme se fissure : Noam découvre que le dessin de Juliette a disparu, puis Kael explose en apprenant que la photo de sa sœur a aussi été volée. Le Conclave comprend que quelqu'un cible leurs souvenirs les plus personnels."},
+                {"id": "D9_0_1", "title": "Jour 9", "label": "_9_0_1_REVEIL_CHAMBRE", "requires": ["D8_0_1"], "summary": "???"},
+
+                {"id": "D4B", "title": "Jour 4", "label": "_4_1_REVEIL_CHAMBRE", "requires": ["D3"], "summary": "Après l’adoption du commerce libre, le Conclave découvre déjà ses conséquences : Nexus et Orbite s’organisent, tandis que Limen vacille. Kami annonce ensuite un nouveau vote sur la libre circulation entre districts, provoquant un violent clash avec Sael. La soirée s'apaise ensuite autour d'une soirée improvisée."},
+                {"id": "D5B", "title": "Jour 5", "label": "_5_1_REVEIL_CHAMBRE", "requires": ["D4B"], "summary": "Kami annonce qu’une alerte a frappé le complexe C-3 d’Orbite, laissant Kael rongé par l’angoisse pour sa petite sœur qui vit sur place. Alors que le vote sur la libre circulation approche, Noam reçoit anonymement une étrange note faison référence au règlement : les absents ne comptent pas dans l’unanimité."},
+                {"id": "D6BA", "title": "Jour 6", "label": "_6_1_0_REVEIL_CHAMBRE", "requires": ["D5B"], "summary": "Résumé à écrire."},
+
+                {"id": "D6BB", "title": "Jour 6", "label": "_6_1_1_REVEIL_CHAMBRE", "requires": ["D5B"], "summary": "Résumé à écrire."},
             ],
         },
         {
@@ -170,21 +175,41 @@ screen story_map_menu():
                         $ hover_bg = "#1b4f7a" if is_visible else node_bg
                         if is_visible:
                             button:
-                                xpos positioned["x"]; ypos positioned["y"]; xsize positioned["w"]; ysize positioned["h"]
+                                xpos positioned["x"]
+                                ypos positioned["y"]
+                                xsize positioned["w"]
+                                ysize positioned["h"]
                                 background Solid(node_bg)
                                 hover_background Solid(hover_bg)
                                 hovered SetScreenVariable("hovered_node_id", node["id"])
                                 unhovered SetScreenVariable("hovered_node_id", None)
                                 action [SetVariable("story_map_target_label", node["label"]), Start()]
-                                text "[node['id']] • [node['title']]" xalign 0.5 yalign 0.5 size 22 color "#bff5ff"
+
+                                text "[node['id']] • [node['title']]":
+                                    xalign 0.5
+                                    yalign 0.5
+                                    size 22
+                                    color "#bff5ff"
                         else:
                             frame:
-                                xpos positioned["x"]; ypos positioned["y"]; xsize positioned["w"]; ysize positioned["h"]
+                                xpos positioned["x"]
+                                ypos positioned["y"]
+                                xsize positioned["w"]
+                                ysize positioned["h"]
                                 background Solid(node_bg)
+
                                 if is_unlocked:
-                                    text "[node['id']] • [node['title']]" xalign 0.5 yalign 0.5 size 22 color "#98b7ce"
+                                    text "[node['id']] • [node['title']]":
+                                        xalign 0.5
+                                        yalign 0.5
+                                        size 22
+                                        color "#98b7ce"
                                 else:
-                                    text "🔒 [node['id']]" xalign 0.5 yalign 0.5 size 24 color "#6f8398"
+                                    text "🔒 [node['id']]":
+                                        xalign 0.5
+                                        yalign 0.5
+                                        size 24
+                                        color "#6f8398"
 
     frame:
         xalign 0.5
