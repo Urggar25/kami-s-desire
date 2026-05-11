@@ -1,24 +1,31 @@
 # ============================================================
-# MINI-JEU JOUR 9_0_1 — LE SIGNAL VIVANT
+# MINI-JEU JOUR 9_0_1 — LE SIGNAL VIVANT  (V2)
 #
 # Contexte : pendant le débat du Conclave (label _9_0_1_CONCLAVE_DEBAT),
 # Noam doit maintenir vivant un signal de transmission pour que le
 # message de dispersion atteigne les campements aux frontières.
 #
-# Mécanique :
-# - 9 personnages = 9 fréquences uniques
-# - 4 slots actifs : on combine les fréquences pour façonner le signal
-# - 3 jauges à maintenir dans la bande verte : Clarté, Force, Discrétion
-# - Kami envoie des interférences (parasites, polarité, ombre, brouillage)
-# - 12 campements aux frontières : ils se dispersent ou ils meurent
+# Mécanique V2 :
+# - 9 personnages = 9 fréquences uniques placées dans 4 slots actifs.
+# - 3 jauges globales à maintenir en zone verte : Clarté, Force, Discrétion.
+# - La carte des campements est divisée en 4 QUADRANTS (NO, NE, SO, SE).
+#   Chaque quadrant a SA PROPRE jauge de dispersion + une mini forme d'onde.
+# - Clic gauche sur un quadrant = ENVOI D'UNE PULSE (cooldown par quadrant).
+# - Kami envoie des ORBES NOIRS qui volent vers les quadrants ou vers
+#   la forme d'onde centrale. Clic répété pour les détruire (3 à 5 hits).
+#   - Orbe touche quadrant : signal coupé 20-30s sur ce quadrant.
+#   - Orbe touche centre : perturbation globale (jauges chaotiques).
+# - Bonus de fréquence :
+#   * Ryn  → +50% de vitesse de dispersion sur les quadrants menacés.
+#   * Elen → +25% de vitesse de dispersion partout.
+#   * Mara → "buzz" aléatoire : booste un quadrant au hasard toutes les 2-4s.
 #
-# Durée : 240 secondes (~4 min).
+# Durée : 240 secondes (~4 min). Plus le temps avance, plus les orbes
+# arrivent vite et nombreux.
 #
 # Appel scénario :
 #   call j901_play_signal_vivant
-#   $ j901_signal_result_tier = _return
-#
-# Le label renvoie une string : "excellent" / "bon" / "moyen" / "echec".
+#   $ j901_signal_result_tier = _return     # "excellent" / "bon" / "moyen" / "echec"
 # ============================================================
 
 
@@ -32,53 +39,57 @@ default j901_sv_result_tier = "moyen"
 
 # Slots actifs : 4 slots, chacun contient soit None soit la clé d'un perso
 default j901_sv_slots = [None, None, None, None]
-# Intensité par slot (1, 2 ou 3) - se clique pour cycler
 default j901_sv_slot_power = [2, 2, 2, 2]
 
-# Jauges courantes 0..100
+# Jauges globales 0..100
 default j901_sv_g_clarte = 50.0
 default j901_sv_g_force = 50.0
 default j901_sv_g_discretion = 50.0
-
-# Cibles (calculées en continu d'après les slots actifs)
 default j901_sv_target_clarte = 50.0
 default j901_sv_target_force = 50.0
 default j901_sv_target_discretion = 50.0
 
-# Etat de l'interférence en cours
-default j901_sv_inter_type = ""        # "", "parasites", "polarite", "ombre", "brouillage"
-default j901_sv_inter_time = 0.0       # temps restant de l'interférence
-default j901_sv_inter_target = ""      # cible secondaire (jauge ou perso)
-default j901_sv_next_inter = 16.0      # délai avant la prochaine interférence
-default j901_sv_locked_chip = ""       # chip verrouillé par "brouillage"
-
-# Forme d'onde (60 valeurs entre -1 et 1)
+# Forme d'onde globale (60 valeurs entre -1 et 1)
 default j901_sv_wave = [0.0] * 60
 
-# Dispersion : 12 campements, chacun a un offset (0..100). Au-dessus de 60 = dispersé.
-default j901_sv_camp_offsets = [0.0] * 12
-default j901_sv_camp_alive = [True] * 12     # False = éteint (massacre)
-default j901_sv_dispersion_progress = 0.0    # accumule quand 3 jauges en vert
+# Quadrants : 4 quadrants (0=NO, 1=NE, 2=SO, 3=SE)
+default j901_sv_quad_offset = [0.0, 0.0, 0.0, 0.0]    # progression dispersion 0..100
+default j901_sv_quad_cooldown = [0.0, 0.0, 0.0, 0.0]   # cooldown du clic pulse
+default j901_sv_quad_disabled = [0.0, 0.0, 0.0, 0.0]   # temps restant de désactivation
+default j901_sv_quad_pulse_anim = [0.0, 0.0, 0.0, 0.0] # animation de pulse en cours
+default j901_sv_quad_wave = [[0.0] * 16, [0.0] * 16, [0.0] * 16, [0.0] * 16]
+default j901_sv_pulse_count = 0      # stats : pulses envoyées
+default j901_sv_orbs_killed = 0      # stats : orbes détruits
+default j901_sv_hits_taken = 0       # stats : impacts subis
 
-# Dialogue du débat (auto-déroulé sur fond de minijeu)
+# Orbes (liste de dicts)
+default j901_sv_orbs = []
+default j901_sv_orb_id_counter = 0
+default j901_sv_next_orb = 8.0
+
+# Effet "buzz" de Mara
+default j901_sv_mara_timer = 3.0
+
+# Perturbation globale (en secondes restantes)
+default j901_sv_global_disturb = 0.0
+
+# Dialogue du débat (auto-déroulé)
 default j901_sv_debate_index = 0
-default j901_sv_debate_next = 2.0   # délai avant la prochaine réplique
+default j901_sv_debate_next = 2.0
 default j901_sv_current_speaker = "tomas"
 default j901_sv_current_expr = "raison"
-default j901_sv_current_line = "Le débat est ouvert. Mesdames et messieurs..."
+default j901_sv_current_line = "Le débat est ouvert."
 
 # Effets visuels
 default j901_sv_flash = 0.0
-default j901_sv_shake = 0
 default j901_sv_kami_alert = ""
 default j901_sv_kami_alert_time = 0.0
 default j901_sv_warning = "ÉMISSION INITIÉE"
 default j901_sv_status_color = "#7DF9FF"
 
 # Stats finales
-default j901_sv_disp_count = 0
-default j901_sv_danger_count = 0
-default j901_sv_dead_count = 0
+default j901_sv_dots_safe = 0
+default j901_sv_dots_lost = 0
 
 
 # ------------------------------------------------------------
@@ -92,49 +103,74 @@ init python:
     J901_SV_TICK = 0.05
     J901_SV_TOTAL_TIME = 240.0
 
-    # Chaque chip : key, nom court, couleur, contributions à (Clarté, Force, Discrétion)
-    # Valeurs entre -3 et +3 par fréquence (avant intensité)
+    # Coordonnées des centres des 4 quadrants (en pixels écran 1920x1080)
+    # Pane droit : x=1152..1920, y=170..980
+    # Quadrants : 384 x 405 chacun
+    J901_SV_QUAD_RECTS = [
+        # (x, y, w, h, label_court, label_long)
+        (1152, 170, 384, 405, "NO", "NORD-OUEST"),
+        (1536, 170, 384, 405, "NE", "NORD-EST"),
+        (1152, 575, 384, 405, "SO", "SUD-OUEST"),
+        (1536, 575, 384, 405, "SE", "SUD-EST"),
+    ]
+
+    def j901_sv_quad_center(q):
+        x, y, w, h, _, _ = J901_SV_QUAD_RECTS[q]
+        return (x + w // 2, y + h // 2)
+
+    # Centre de la forme d'onde globale (cible des orbes "centre")
+    J901_SV_CENTER_TARGET = (380, 670)
+
+    # Chips
     J901_SV_CHIPS = {
         "ryn":    {"nom": "Ryn",    "couleur": "#D2283C", "freq": "BASSE GRAVE",
                    "c": -1, "f": +3, "d": -2,
+                   "bonus": "Boost x1.5 sur les quadrants menacés",
                    "asset": "minijeu/signal_vivant_assets/chip_ryn.png"},
         "lysa":   {"nom": "Lysa",   "couleur": "#5AAAF0", "freq": "CLAIRE FROIDE",
                    "c": +3, "f": -1, "d": +1,
+                   "bonus": "",
                    "asset": "minijeu/signal_vivant_assets/chip_lysa.png"},
         "elen":   {"nom": "Elen",   "couleur": "#FFC850", "freq": "HAUTE ÉMOTIONNELLE",
                    "c": +1, "f": +2, "d": -1,
+                   "bonus": "Boost +25% global de dispersion",
                    "asset": "minijeu/signal_vivant_assets/chip_elen.png"},
         "mara":   {"nom": "Mara",   "couleur": "#B446E6", "freq": "PARASITE CHAOS",
                    "c": -2, "f": +2, "d": -1,
+                   "bonus": "Buzz aléatoire sur un quadrant",
                    "asset": "minijeu/signal_vivant_assets/chip_mara.png"},
         "noam":   {"nom": "Noam",   "couleur": "#DCF0FF", "freq": "PORTEUSE STABLE",
                    "c": +1, "f": 0, "d": +1,
+                   "bonus": "",
                    "asset": "minijeu/signal_vivant_assets/chip_noam.png"},
         "tomas":  {"nom": "Tomas",  "couleur": "#5ADC82", "freq": "DIGITAL PRÉCIS",
                    "c": +3, "f": -1, "d": +1,
+                   "bonus": "",
                    "asset": "minijeu/signal_vivant_assets/chip_tomas.png"},
         "nyra":   {"nom": "Nyra",   "couleur": "#B4C8D2", "freq": "CHIRURGICAL",
                    "c": 0, "f": -1, "d": +3,
+                   "bonus": "",
                    "asset": "minijeu/signal_vivant_assets/chip_nyra.png"},
         "iris":   {"nom": "Iris",   "couleur": "#FF6EA0", "freq": "PULSE TSUNDERE",
                    "c": -1, "f": 0, "d": +2,
+                   "bonus": "",
                    "asset": "minijeu/signal_vivant_assets/chip_iris.png"},
         "julian": {"nom": "Julian", "couleur": "#F0C85A", "freq": "THÉÂTRAL DORÉ",
                    "c": +1, "f": +3, "d": -2,
+                   "bonus": "",
                    "asset": "minijeu/signal_vivant_assets/chip_julian.png"},
     }
 
     J901_SV_CHIP_ORDER = ["ryn", "lysa", "elen", "mara", "noam", "tomas", "nyra", "iris", "julian"]
 
-    # Bandes vertes par jauge (min, max).
+    # Bandes vertes par jauge
     J901_SV_GREEN_ZONES = {
         "clarte":     (55.0, 85.0),
         "force":      (45.0, 80.0),
         "discretion": (40.0, 70.0),
     }
 
-    # Dialogue du débat (texte qui défile pendant que Noam joue avec le signal)
-    # Chaque entrée : (speaker, expression, ligne, "renforce_chip")
+    # Dialogue du débat
     J901_SV_DEBATE = [
         ("tomas",  "raison",      "Le présent amendement vise à autoriser les regroupements de plus de vingt personnes…",                "tomas"),
         ("tomas",  "raison",      "Les campements actuels relèvent du Commandement IV.",                                                   "tomas"),
@@ -156,20 +192,12 @@ init python:
         ("iris",   "determine",   "Bah… oui. On va le faire. Tant pis. Écoutez-nous, idiots.",                                            "iris"),
         ("julian", "determine",   "Habitants des campements ! Citoyens de Limen ! C'est à VOUS que je parle !",                          "julian"),
         ("julian", "inquietude",  "Le Conclave vous regarde. Le monde vous regarde. SÉPAREZ-VOUS !",                                      "julian"),
-        ("noam",   "determine",   "Cinq minutes. Vous avez cinq minutes pour décider. Pas plus.",                                          "noam"),
+        ("noam",   "determine",   "Quatre fronts. Chaque quadrant doit recevoir le signal. NE LAISSEZ PASSER PERSONNE.",                  "noam"),
         ("ryn",    "determine",   "Allez ! ALLEZ ! On n'arrêtera pas de répéter !",                                                        "ryn"),
         ("tomas",  "raison",      "Je répète le détail juridique. Lentement. Pour ceux qui transcrivent là-bas.",                         "tomas"),
         ("lysa",   "determine",   "Et pour ceux qui regardent : c'est ce qu'on appelle un sauvetage par diffusion publique.",             "lysa"),
         ("elen",   "joie",        "On les voit bouger. Sur les écrans. Ça marche. ÇA MARCHE.",                                            "elen"),
         ("noam",   "determine",   "Continuez. Encore. Le signal doit tenir jusqu'à la dernière personne.",                                "noam"),
-    ]
-
-    # Interférences possibles
-    J901_SV_INTERFERENCES = [
-        {"type": "parasites",  "label": "PARASITES VISUELS",      "duree": 4.0},
-        {"type": "polarite",   "label": "POLARITÉ INVERSÉE",      "duree": 4.5},
-        {"type": "ombre",      "label": "OMBRE KAMI",             "duree": 5.5},
-        {"type": "brouillage", "label": "BROUILLAGE FRÉQUENTIEL", "duree": 6.0},
     ]
 
     def j901_sv_reset():
@@ -184,47 +212,44 @@ init python:
         store.j901_sv_target_clarte = 50.0
         store.j901_sv_target_force = 50.0
         store.j901_sv_target_discretion = 50.0
-        store.j901_sv_inter_type = ""
-        store.j901_sv_inter_time = 0.0
-        store.j901_sv_inter_target = ""
-        store.j901_sv_next_inter = random.uniform(13.0, 18.0)
-        store.j901_sv_locked_chip = ""
         store.j901_sv_wave = [0.0] * 60
-        store.j901_sv_camp_offsets = [0.0] * 12
-        store.j901_sv_camp_alive = [True] * 12
-        store.j901_sv_dispersion_progress = 0.0
+        store.j901_sv_quad_offset = [0.0, 0.0, 0.0, 0.0]
+        store.j901_sv_quad_cooldown = [0.0, 0.0, 0.0, 0.0]
+        store.j901_sv_quad_disabled = [0.0, 0.0, 0.0, 0.0]
+        store.j901_sv_quad_pulse_anim = [0.0, 0.0, 0.0, 0.0]
+        store.j901_sv_quad_wave = [[0.0] * 16 for _ in range(4)]
+        store.j901_sv_pulse_count = 0
+        store.j901_sv_orbs_killed = 0
+        store.j901_sv_hits_taken = 0
+        store.j901_sv_orbs = []
+        store.j901_sv_orb_id_counter = 0
+        store.j901_sv_next_orb = random.uniform(7.0, 10.0)
+        store.j901_sv_mara_timer = 3.0
+        store.j901_sv_global_disturb = 0.0
         store.j901_sv_debate_index = 0
         store.j901_sv_debate_next = 2.0
         store.j901_sv_current_speaker = "tomas"
         store.j901_sv_current_expr = "raison"
         store.j901_sv_current_line = "Le débat commence. Les campements vous écoutent."
         store.j901_sv_flash = 0.0
-        store.j901_sv_shake = 0
         store.j901_sv_kami_alert = ""
         store.j901_sv_kami_alert_time = 0.0
         store.j901_sv_warning = "ÉMISSION INITIÉE"
         store.j901_sv_status_color = "#7DF9FF"
-        store.j901_sv_disp_count = 0
-        store.j901_sv_danger_count = 0
-        store.j901_sv_dead_count = 0
+        store.j901_sv_dots_safe = 0
+        store.j901_sv_dots_lost = 0
+
+    # ---- Gestion des slots de fréquences ----
 
     def j901_sv_place_chip(chip_key):
-        """Clique sur un chip : le place dans le 1er slot libre, ou le retire s'il est déjà dedans."""
         if store.j901_sv_done:
-            return
-        if chip_key == store.j901_sv_locked_chip:
-            store.j901_sv_warning = "FRÉQUENCE BROUILLÉE"
-            store.j901_sv_status_color = "#FF6B9A"
-            store.j901_sv_flash = 0.15
             return
         slots = list(store.j901_sv_slots)
         if chip_key in slots:
-            # Retire
             idx = slots.index(chip_key)
             slots[idx] = None
             store.j901_sv_warning = "FRÉQUENCE RETIRÉE"
         else:
-            # Place dans 1er slot libre
             for i in range(len(slots)):
                 if slots[i] is None:
                     slots[i] = chip_key
@@ -238,7 +263,6 @@ init python:
         store.j901_sv_status_color = "#7DF9FF"
 
     def j901_sv_cycle_slot_power(slot_index):
-        """Clique sur un slot : si plein, cycle l'intensité 1->2->3->1. Si vide, ignore."""
         if store.j901_sv_done:
             return
         if store.j901_sv_slots[slot_index] is None:
@@ -249,7 +273,6 @@ init python:
         store.j901_sv_warning = "INTENSITÉ " + str(powers[slot_index])
 
     def j901_sv_clear_slot(slot_index):
-        """Clear droit (ou bouton dédié) : retire le chip d'un slot."""
         if store.j901_sv_done:
             return
         if store.j901_sv_slots[slot_index] is None:
@@ -257,6 +280,8 @@ init python:
         slots = list(store.j901_sv_slots)
         slots[slot_index] = None
         store.j901_sv_slots = slots
+
+    # ---- Calculs de signal ----
 
     def j901_sv_compute_targets():
         c_sum = 0.0
@@ -275,16 +300,9 @@ init python:
             active += 1
         if active == 0:
             return 30.0, 25.0, 30.0
-        # Base 50 + accumulation
         clarte = 50.0 + c_sum * 7.0
         force = 35.0 + f_sum * 7.5
         discretion = 50.0 + d_sum * 6.5
-        # Polarité inversée : on flip les delta par rapport à 50
-        if store.j901_sv_inter_type == "polarite":
-            clarte = 100.0 - clarte
-            force = 100.0 - force
-            discretion = 100.0 - discretion
-        # Clamp doux
         clarte = max(0.0, min(100.0, clarte))
         force = max(0.0, min(100.0, force))
         discretion = max(0.0, min(100.0, discretion))
@@ -299,51 +317,238 @@ init python:
                 and j901_sv_in_green("force", store.j901_sv_g_force)
                 and j901_sv_in_green("discretion", store.j901_sv_g_discretion))
 
-    def j901_sv_spawn_interference():
-        inter = random.choice(J901_SV_INTERFERENCES)
-        store.j901_sv_inter_type = inter["type"]
-        store.j901_sv_inter_time = inter["duree"]
-        store.j901_sv_kami_alert = "KAMI INTERFÈRE : " + inter["label"]
-        store.j901_sv_kami_alert_time = 2.5
-        store.j901_sv_flash = 0.35
-        store.j901_sv_shake = 4
-        store.j901_sv_status_color = "#FF6B9A"
-        if inter["type"] == "ombre":
-            store.j901_sv_inter_target = random.choice(["clarte", "force", "discretion"])
-        elif inter["type"] == "brouillage":
-            # Verrouille un chip aléatoire parmi ceux actuellement placés (ou n'importe lequel)
-            placed = [k for k in store.j901_sv_slots if k]
-            pool = placed if placed else J901_SV_CHIP_ORDER
-            store.j901_sv_locked_chip = random.choice(pool)
-            store.j901_sv_inter_target = store.j901_sv_locked_chip
-            # Si verrouillé alors qu'en slot : on le retire
-            slots = list(store.j901_sv_slots)
-            if store.j901_sv_locked_chip in slots:
-                idx = slots.index(store.j901_sv_locked_chip)
-                slots[idx] = None
-                store.j901_sv_slots = slots
-        else:
-            store.j901_sv_inter_target = ""
+    def j901_sv_signal_quality():
+        # Renvoie 0..1 — multiplicateur global de vitesse de dispersion
+        if j901_sv_all_green():
+            return 1.0
+        # Hors zone : dépend de la moyenne d'éloignement
+        score = 0.0
+        for name, val in [("clarte", store.j901_sv_g_clarte),
+                          ("force", store.j901_sv_g_force),
+                          ("discretion", store.j901_sv_g_discretion)]:
+            lo, hi = J901_SV_GREEN_ZONES[name]
+            if lo <= val <= hi:
+                score += 1.0
+            else:
+                margin = min(abs(val - lo), abs(val - hi))
+                score += max(0.0, 1.0 - margin / 30.0)
+        return max(0.0, min(1.0, score / 3.0)) * 0.35  # max 0.35 en dehors
 
-    def j901_sv_end_interference():
-        store.j901_sv_inter_type = ""
-        store.j901_sv_inter_time = 0.0
-        store.j901_sv_locked_chip = ""
-        store.j901_sv_inter_target = ""
-        store.j901_sv_kami_alert = "INTERFÉRENCE NEUTRALISÉE"
-        store.j901_sv_kami_alert_time = 1.5
-        store.j901_sv_status_color = "#7DF9FF"
+    # ---- Pulse sur quadrant ----
+
+    def j901_sv_pulse_quad(q):
+        if store.j901_sv_done:
+            return
+        if store.j901_sv_quad_cooldown[q] > 0.0:
+            return
+        if store.j901_sv_quad_disabled[q] > 0.0:
+            store.j901_sv_warning = "QUADRANT HORS LIGNE"
+            store.j901_sv_status_color = "#FF6B9A"
+            return
+        # Puissance de la pulse selon la qualité du signal
+        quality = j901_sv_signal_quality()
+        base = 8.0 + quality * 12.0
+        # Bonus Julian (théâtral) : pulses x1.5
+        if "julian" in store.j901_sv_slots:
+            base *= 1.5
+        # Bonus Iris : réduit le cooldown
+        cooldown = 5.5
+        if "iris" in store.j901_sv_slots:
+            cooldown = 3.8
+        offsets = list(store.j901_sv_quad_offset)
+        offsets[q] = min(100.0, offsets[q] + base)
+        store.j901_sv_quad_offset = offsets
+        cooldowns = list(store.j901_sv_quad_cooldown)
+        cooldowns[q] = cooldown
+        store.j901_sv_quad_cooldown = cooldowns
+        anims = list(store.j901_sv_quad_pulse_anim)
+        anims[q] = 0.8
+        store.j901_sv_quad_pulse_anim = anims
+        store.j901_sv_pulse_count += 1
+        store.j901_sv_warning = "PULSE → " + J901_SV_QUAD_RECTS[q][4]
+        store.j901_sv_status_color = "#5DFF9A"
+
+    # ---- Gestion des orbes ----
+
+    def j901_sv_spawn_orb():
+        elapsed = J901_SV_TOTAL_TIME - store.j901_sv_time_left
+        # Type d'orbe selon le temps écoulé
+        if elapsed < 60.0:
+            type_choice = random.choices(["small", "medium"], weights=[0.7, 0.3])[0]
+        elif elapsed < 150.0:
+            type_choice = random.choices(["small", "medium", "large"], weights=[0.4, 0.45, 0.15])[0]
+        else:
+            type_choice = random.choices(["small", "medium", "large"], weights=[0.25, 0.45, 0.30])[0]
+        # HP / taille
+        type_data = {
+            "small":  {"hp": 3, "size": 80,  "speed_mult": 1.0, "asset": "minijeu/signal_vivant_assets/orb_small.png"},
+            "medium": {"hp": 4, "size": 110, "speed_mult": 0.85, "asset": "minijeu/signal_vivant_assets/orb_medium.png"},
+            "large":  {"hp": 5, "size": 140, "speed_mult": 0.72, "asset": "minijeu/signal_vivant_assets/orb_large.png"},
+        }[type_choice]
+        # Cible : 80% chance sur un quadrant, 20% sur le centre
+        if random.random() < 0.20:
+            target_quad = None
+            target_x, target_y = J901_SV_CENTER_TARGET
+        else:
+            target_quad = random.randint(0, 3)
+            tcx, tcy = j901_sv_quad_center(target_quad)
+            target_x = tcx
+            target_y = tcy
+        # Spawn depuis un bord aléatoire
+        edge = random.choice(["top", "right", "bottom"])
+        if edge == "top":
+            sx = random.randint(150, 1800)
+            sy = -100
+        elif edge == "bottom":
+            sx = random.randint(150, 1800)
+            sy = 1180
+        else:  # right
+            sx = 2020
+            sy = random.randint(150, 950)
+        # Vitesse de base selon temps écoulé
+        base_speed = 90.0 + (elapsed / J901_SV_TOTAL_TIME) * 130.0
+        base_speed *= type_data["speed_mult"]
+        dx = target_x - sx
+        dy = target_y - sy
+        dist = max(1.0, math.sqrt(dx * dx + dy * dy))
+        vx = (dx / dist) * base_speed
+        vy = (dy / dist) * base_speed
+        store.j901_sv_orb_id_counter += 1
+        orb = {
+            "id": store.j901_sv_orb_id_counter,
+            "x": float(sx),
+            "y": float(sy),
+            "vx": vx,
+            "vy": vy,
+            "hp": type_data["hp"],
+            "max_hp": type_data["hp"],
+            "size": type_data["size"],
+            "asset": type_data["asset"],
+            "target_quad": target_quad,
+            "target_x": target_x,
+            "target_y": target_y,
+            "hit_flash": 0.0,
+        }
+        orbs = list(store.j901_sv_orbs)
+        orbs.append(orb)
+        store.j901_sv_orbs = orbs
+
+    def j901_sv_hit_orb(orb_id):
+        if store.j901_sv_done:
+            return
+        orbs = list(store.j901_sv_orbs)
+        for i, orb in enumerate(orbs):
+            if orb["id"] == orb_id:
+                orb = dict(orb)
+                orb["hp"] -= 1
+                orb["hit_flash"] = 0.15
+                orbs[i] = orb
+                if orb["hp"] <= 0:
+                    # Destruction
+                    orbs.pop(i)
+                    store.j901_sv_orbs_killed += 1
+                    store.j901_sv_warning = "ORBE DÉTRUIT"
+                    store.j901_sv_status_color = "#5DFF9A"
+                break
+        store.j901_sv_orbs = orbs
+
+    def j901_sv_update_orbs(dt):
+        orbs = list(store.j901_sv_orbs)
+        survivors = []
+        for orb in orbs:
+            o = dict(orb)
+            o["x"] += o["vx"] * dt
+            o["y"] += o["vy"] * dt
+            if o["hit_flash"] > 0.0:
+                o["hit_flash"] = max(0.0, o["hit_flash"] - dt)
+            dx = o["x"] - o["target_x"]
+            dy = o["y"] - o["target_y"]
+            d_sq = dx * dx + dy * dy
+            # Collision avec cible
+            if d_sq < 1200.0:  # ~35px
+                if o["target_quad"] is None:
+                    # Perturbation globale
+                    store.j901_sv_global_disturb = 5.0
+                    store.j901_sv_kami_alert = "FORME D'ONDE FRAPPÉE"
+                    store.j901_sv_kami_alert_time = 2.2
+                    store.j901_sv_flash = 0.35
+                else:
+                    # Désactive un quadrant
+                    q = o["target_quad"]
+                    duration = random.uniform(20.0, 30.0)
+                    disabled = list(store.j901_sv_quad_disabled)
+                    disabled[q] = duration
+                    store.j901_sv_quad_disabled = disabled
+                    store.j901_sv_kami_alert = J901_SV_QUAD_RECTS[q][4] + " TOUCHÉ — SIGNAL COUPÉ"
+                    store.j901_sv_kami_alert_time = 2.2
+                    store.j901_sv_flash = 0.35
+                store.j901_sv_hits_taken += 1
+                continue  # supprime l'orbe
+            survivors.append(o)
+        store.j901_sv_orbs = survivors
+
+    # ---- Update dispersion par quadrant ----
+
+    def j901_sv_update_quads(dt):
+        all_green = j901_sv_all_green()
+        quality = j901_sv_signal_quality()
+        # Personnages actifs
+        has_ryn = "ryn" in store.j901_sv_slots
+        has_elen = "elen" in store.j901_sv_slots
+        has_mara = "mara" in store.j901_sv_slots
+        # Quadrants menacés (orbe en approche)
+        threatened = set()
+        for orb in store.j901_sv_orbs:
+            if orb["target_quad"] is not None:
+                threatened.add(orb["target_quad"])
+        offsets = list(store.j901_sv_quad_offset)
+        cooldowns = list(store.j901_sv_quad_cooldown)
+        disabled = list(store.j901_sv_quad_disabled)
+        anims = list(store.j901_sv_quad_pulse_anim)
+        for q in range(4):
+            # Cooldown
+            if cooldowns[q] > 0:
+                cooldowns[q] = max(0.0, cooldowns[q] - dt)
+            # Animation
+            if anims[q] > 0:
+                anims[q] = max(0.0, anims[q] - dt)
+            # Désactivation
+            if disabled[q] > 0:
+                disabled[q] = max(0.0, disabled[q] - dt)
+                continue
+            # Vitesse de base
+            base_speed = 1.6 * quality + (0.6 if all_green else 0.0)
+            mult = 1.0
+            if has_elen:
+                mult += 0.25
+            if has_ryn and q in threatened:
+                mult += 0.5
+            # Bonus Tomas : +10% si quadrant déjà bien parti (>40%)
+            if "tomas" in store.j901_sv_slots and offsets[q] > 40.0:
+                mult += 0.10
+            offsets[q] = min(100.0, offsets[q] + base_speed * mult * dt)
+        # Buzz Mara
+        if has_mara:
+            store.j901_sv_mara_timer -= dt
+            if store.j901_sv_mara_timer <= 0:
+                live_quads = [q for q in range(4) if disabled[q] <= 0]
+                if live_quads:
+                    q = random.choice(live_quads)
+                    offsets[q] = min(100.0, offsets[q] + 4.5)
+                    anims[q] = max(anims[q], 0.5)
+                store.j901_sv_mara_timer = random.uniform(2.5, 4.0)
+        store.j901_sv_quad_offset = offsets
+        store.j901_sv_quad_cooldown = cooldowns
+        store.j901_sv_quad_disabled = disabled
+        store.j901_sv_quad_pulse_anim = anims
+
+    # ---- Forme d'onde globale ----
 
     def j901_sv_update_wave(elapsed):
-        # Forme d'onde basée sur Force et Clarté
         force = store.j901_sv_g_force / 100.0
         clarte = store.j901_sv_g_clarte / 100.0
         wave = []
-        glitch = 0.0
-        if store.j901_sv_inter_type == "parasites":
-            glitch = 0.6
-        elif store.j901_sv_inter_type == "ombre":
-            glitch = 0.25
+        glitch = 0.6 if store.j901_sv_global_disturb > 0.0 else 0.0
         for i in range(60):
             phase = elapsed * 4.0 + i * 0.5
             amp = 0.15 + force * 0.7
@@ -356,51 +561,29 @@ init python:
                 v *= 0.6
             wave.append(max(-1.0, min(1.0, v)))
         store.j901_sv_wave = wave
-
-    def j901_sv_update_camps(dt):
-        # Si signal bon : les points s'éloignent.
-        # Si signal coupé (clarté trop basse) : risque de mort.
-        camps = list(store.j901_sv_camp_offsets)
-        alive = list(store.j901_sv_camp_alive)
-        all_green = j901_sv_all_green()
-        clarte = store.j901_sv_g_clarte
-        force = store.j901_sv_g_force
-        for i in range(len(camps)):
-            if not alive[i]:
-                continue
-            if all_green:
-                # Vitesse de dispersion proportionnelle à la force du signal
-                gain = (force / 100.0) * 3.0 * dt
-                camps[i] = min(100.0, camps[i] + gain)
-            elif clarte < 25.0 and force < 25.0:
-                # Signal coupé : les campements ne bougent plus, et risque de mort
-                if random.random() < 0.0008:
-                    alive[i] = False
-            else:
-                # Signal moyen : dérive lente
-                gain = 0.3 * dt
-                camps[i] = min(100.0, camps[i] + gain)
-        # Pendant l'ombre Kami, peut éteindre brutalement un campement
-        if store.j901_sv_inter_type == "ombre" and random.random() < 0.0025:
-            living = [i for i, a in enumerate(alive) if a and camps[i] < 60.0]
-            if living:
-                idx = random.choice(living)
-                alive[idx] = False
-                store.j901_sv_warning = "CAMPEMENT TOUCHÉ"
-                store.j901_sv_status_color = "#FF4D6D"
-                store.j901_sv_flash = 0.3
-        store.j901_sv_camp_offsets = camps
-        store.j901_sv_camp_alive = alive
+        # Mini-ondes par quadrant
+        quad_waves = []
+        for q in range(4):
+            qw = []
+            disabled = store.j901_sv_quad_disabled[q] > 0
+            for i in range(16):
+                phase = elapsed * 6.0 + i * 0.6 + q * 1.4
+                amp = 0.15 + (store.j901_sv_quad_offset[q] / 100.0) * 0.7
+                v = math.sin(phase) * amp
+                if disabled:
+                    v = random.uniform(-0.2, 0.2)
+                qw.append(max(-1.0, min(1.0, v)))
+            quad_waves.append(qw)
+        store.j901_sv_quad_wave = quad_waves
 
     def j901_sv_pick_speaker_from_chip(chip_key):
-        # Quand une réplique est diffusée, on renforce le chip correspondant SI il est placé.
-        # Sinon on ne fait que de l'affichage.
         if chip_key in store.j901_sv_slots:
             idx = store.j901_sv_slots.index(chip_key)
             powers = list(store.j901_sv_slot_power)
-            # Boost temporaire : +1 intensité (clampé à 3) pour 2 sec
             powers[idx] = min(3, powers[idx] + 1)
             store.j901_sv_slot_power = powers
+
+    # ---- Tick principal ----
 
     def j901_sv_tick():
         if store.j901_sv_done:
@@ -415,85 +598,77 @@ init python:
         store.j901_sv_target_force = tf
         store.j901_sv_target_discretion = td
 
-        # Lerp des jauges vers les cibles
+        # Lerp
         lerp = 0.06
         store.j901_sv_g_clarte += (tc - store.j901_sv_g_clarte) * lerp
         store.j901_sv_g_force += (tf - store.j901_sv_g_force) * lerp
         store.j901_sv_g_discretion += (td - store.j901_sv_g_discretion) * lerp
 
-        # Effets d'interférence sur les jauges
-        if store.j901_sv_inter_type == "parasites":
-            store.j901_sv_g_clarte += random.uniform(-1.6, 1.6)
-            store.j901_sv_g_force += random.uniform(-1.6, 1.6)
-            store.j901_sv_g_discretion += random.uniform(-1.6, 1.6)
-        elif store.j901_sv_inter_type == "ombre":
-            tgt = store.j901_sv_inter_target
-            if tgt == "clarte":
-                store.j901_sv_g_clarte = max(0.0, store.j901_sv_g_clarte - 0.6)
-            elif tgt == "force":
-                store.j901_sv_g_force = max(0.0, store.j901_sv_g_force - 0.6)
-            elif tgt == "discretion":
-                store.j901_sv_g_discretion = max(0.0, store.j901_sv_g_discretion - 0.6)
+        # Perturbation globale
+        if store.j901_sv_global_disturb > 0.0:
+            store.j901_sv_global_disturb -= J901_SV_TICK
+            store.j901_sv_g_clarte += random.uniform(-2.2, 2.2)
+            store.j901_sv_g_force += random.uniform(-2.2, 2.2)
+            store.j901_sv_g_discretion += random.uniform(-2.2, 2.2)
 
         # Clamp
         store.j901_sv_g_clarte = max(0.0, min(100.0, store.j901_sv_g_clarte))
         store.j901_sv_g_force = max(0.0, min(100.0, store.j901_sv_g_force))
         store.j901_sv_g_discretion = max(0.0, min(100.0, store.j901_sv_g_discretion))
 
-        # Dispersion progress quand 3 en vert
-        if j901_sv_all_green():
-            store.j901_sv_dispersion_progress = min(100.0, store.j901_sv_dispersion_progress + J901_SV_TICK * 3.5)
-            if store.j901_sv_kami_alert_time <= 0.0:
+        # Status
+        if store.j901_sv_kami_alert_time <= 0.0:
+            if j901_sv_all_green():
                 store.j901_sv_warning = "SIGNAL VIVANT"
                 store.j901_sv_status_color = "#5DFF9A"
-        else:
-            if store.j901_sv_kami_alert_time <= 0.0:
-                if store.j901_sv_g_clarte < 30.0:
-                    store.j901_sv_warning = "INCOMPRÉHENSIBLE"
-                    store.j901_sv_status_color = "#FFD166"
-                elif store.j901_sv_g_force < 30.0:
-                    store.j901_sv_warning = "TROP FAIBLE"
-                    store.j901_sv_status_color = "#FFD166"
-                elif store.j901_sv_g_discretion < 30.0:
-                    store.j901_sv_warning = "KAMI IRRITÉE"
-                    store.j901_sv_status_color = "#FF6B9A"
-                elif store.j901_sv_g_clarte > 92.0 or store.j901_sv_g_force > 88.0:
-                    store.j901_sv_warning = "TROP VISIBLE"
-                    store.j901_sv_status_color = "#FF6B9A"
-                else:
-                    store.j901_sv_warning = "INSTABLE"
-                    store.j901_sv_status_color = "#FFD166"
+            elif store.j901_sv_g_clarte < 30.0:
+                store.j901_sv_warning = "INCOMPRÉHENSIBLE"
+                store.j901_sv_status_color = "#FFD166"
+            elif store.j901_sv_g_force < 30.0:
+                store.j901_sv_warning = "TROP FAIBLE"
+                store.j901_sv_status_color = "#FFD166"
+            elif store.j901_sv_g_discretion < 30.0:
+                store.j901_sv_warning = "KAMI IRRITÉE"
+                store.j901_sv_status_color = "#FF6B9A"
+            elif store.j901_sv_g_clarte > 92.0 or store.j901_sv_g_force > 88.0:
+                store.j901_sv_warning = "TROP VISIBLE"
+                store.j901_sv_status_color = "#FF6B9A"
+            else:
+                store.j901_sv_warning = "INSTABLE"
+                store.j901_sv_status_color = "#FFD166"
 
-        # Mise à jour campements
-        j901_sv_update_camps(J901_SV_TICK)
+        # Mise à jour quadrants
+        j901_sv_update_quads(J901_SV_TICK)
+
+        # Mise à jour orbes
+        j901_sv_update_orbs(J901_SV_TICK)
 
         # Mise à jour forme d'onde
         j901_sv_update_wave(elapsed)
 
-        # Gestion interférences
-        if store.j901_sv_inter_type:
-            store.j901_sv_inter_time -= J901_SV_TICK
-            if store.j901_sv_inter_time <= 0.0:
-                j901_sv_end_interference()
-        else:
-            store.j901_sv_next_inter -= J901_SV_TICK
-            if store.j901_sv_next_inter <= 0.0 and elapsed > 8.0:
-                j901_sv_spawn_interference()
-                store.j901_sv_next_inter = random.uniform(14.0, 19.0)
+        # Spawn d'orbes
+        store.j901_sv_next_orb -= J901_SV_TICK
+        if store.j901_sv_next_orb <= 0 and elapsed > 4.0:
+            j901_sv_spawn_orb()
+            if elapsed < 60.0:
+                store.j901_sv_next_orb = random.uniform(14.0, 18.0)
+            elif elapsed < 120.0:
+                store.j901_sv_next_orb = random.uniform(10.0, 13.0)
+            elif elapsed < 180.0:
+                store.j901_sv_next_orb = random.uniform(7.0, 10.0)
+            else:
+                store.j901_sv_next_orb = random.uniform(5.0, 7.0)
 
-        # Timer d'alerte
+        # Timer alerte
         if store.j901_sv_kami_alert_time > 0.0:
             store.j901_sv_kami_alert_time = max(0.0, store.j901_sv_kami_alert_time - J901_SV_TICK)
             if store.j901_sv_kami_alert_time == 0.0:
                 store.j901_sv_kami_alert = ""
 
-        # Flash decay
         if store.j901_sv_flash > 0.0:
             store.j901_sv_flash = max(0.0, store.j901_sv_flash - J901_SV_TICK)
-        if store.j901_sv_shake > 0:
-            store.j901_sv_shake = max(0, store.j901_sv_shake - 1)
 
-        # Auto-diffusion des répliques de débat
+        # Dialogue
         store.j901_sv_debate_next -= J901_SV_TICK
         if store.j901_sv_debate_next <= 0.0:
             if store.j901_sv_debate_index < len(J901_SV_DEBATE):
@@ -505,7 +680,6 @@ init python:
                 store.j901_sv_debate_index += 1
                 store.j901_sv_debate_next = random.uniform(7.5, 10.5)
             else:
-                # En boucle sur les 6 dernières lignes pour ne pas avoir de vide
                 idx = max(0, len(J901_SV_DEBATE) - random.randint(1, 6))
                 speaker, expr, line, reinforce = J901_SV_DEBATE[idx]
                 store.j901_sv_current_speaker = speaker
@@ -514,54 +688,41 @@ init python:
                 j901_sv_pick_speaker_from_chip(reinforce)
                 store.j901_sv_debate_next = random.uniform(7.5, 10.5)
 
-        # Fin du minijeu
         if store.j901_sv_time_left <= 0.0:
             j901_sv_finalize()
 
     def j901_sv_finalize():
-        # Comptage final
-        disp = 0
-        danger = 0
-        dead = 0
-        for off, alive in zip(store.j901_sv_camp_offsets, store.j901_sv_camp_alive):
-            if not alive:
-                dead += 1
-            elif off >= 60.0:
-                disp += 1
+        # Scoring : 3 dots par quadrant, sauvés selon le % de dispersion atteint.
+        # Si quadrant désactivé au moment final, on applique un malus.
+        safe = 0
+        lost = 0
+        for q in range(4):
+            off = store.j901_sv_quad_offset[q]
+            disabled = store.j901_sv_quad_disabled[q] > 0
+            if disabled:
+                off = max(0.0, off - 15.0)  # malus
+            # Conversion en dots sauvés
+            if off >= 75.0:
+                quad_safe = 3
+            elif off >= 55.0:
+                quad_safe = 2
+            elif off >= 30.0:
+                quad_safe = 1
             else:
-                danger += 1
-        # Application du Commandement : les campements encore "en danger" subissent
-        # une chance de mort proportionnelle au manque de dispersion.
-        new_dead = 0
-        for i, (off, alive) in enumerate(zip(store.j901_sv_camp_offsets, store.j901_sv_camp_alive)):
-            if not alive:
-                continue
-            if off < 60.0:
-                # Plus l'offset est faible, plus le risque est haut
-                risk = (60.0 - off) / 60.0  # 0..1
-                if random.random() < risk * 0.75:
-                    store.j901_sv_camp_alive[i] = False
-                    new_dead += 1
-        # Recomptage
-        disp = 0
-        danger = 0
-        dead = 0
-        for off, alive in zip(store.j901_sv_camp_offsets, store.j901_sv_camp_alive):
-            if not alive:
-                dead += 1
-            elif off >= 60.0:
-                disp += 1
-            else:
-                danger += 1
-        store.j901_sv_disp_count = disp
-        store.j901_sv_danger_count = danger
-        store.j901_sv_dead_count = dead
-        # Tier
-        if disp >= 9:
+                quad_safe = 0
+            # Risque résiduel (chance de perdre 1 dot supplémentaire)
+            if quad_safe > 0 and off < 60.0:
+                if random.random() < (60.0 - off) / 60.0 * 0.5:
+                    quad_safe -= 1
+            safe += quad_safe
+            lost += (3 - quad_safe)
+        store.j901_sv_dots_safe = safe
+        store.j901_sv_dots_lost = lost
+        if safe >= 10:
             store.j901_sv_result_tier = "excellent"
-        elif disp >= 6:
+        elif safe >= 7:
             store.j901_sv_result_tier = "bon"
-        elif disp >= 3:
+        elif safe >= 4:
             store.j901_sv_result_tier = "moyen"
         else:
             store.j901_sv_result_tier = "echec"
@@ -592,19 +753,26 @@ transform j901_sv_shake_light:
     pause 0.10
     repeat
 
-transform j901_sv_shake_hard:
-    xoffset 0 yoffset 0
-    linear 0.04 xoffset 6 yoffset -3
-    linear 0.04 xoffset -5 yoffset 3
-    linear 0.04 xoffset 3 yoffset -2
-    linear 0.04 xoffset 0 yoffset 0
-    pause 0.08
-    repeat
-
 transform j901_sv_speaker_in:
     alpha 0.0
     xoffset -30
     easeout 0.45 alpha 1.0 xoffset 0
+
+transform j901_sv_orb_wobble:
+    rotate 0
+    linear 1.2 rotate 6
+    linear 1.2 rotate -6
+    repeat
+
+transform j901_sv_pulse_ring_anim:
+    alpha 0.95
+    zoom 0.6
+    easein 0.75 alpha 0.0 zoom 1.6
+
+transform j901_sv_orb_hit_flash:
+    alpha 1.0
+    linear 0.08 alpha 0.35
+    linear 0.08 alpha 1.0
 
 
 # ------------------------------------------------------------
@@ -616,49 +784,49 @@ init python:
         lo, hi = J901_SV_GREEN_ZONES[name]
         if lo <= value <= hi:
             return "#5DFF9A"
-        # Hors zone verte mais proche
         margin = 10.0
         if (lo - margin) <= value <= (hi + margin):
             return "#FFD166"
         return "#FF4D6D"
 
-    def j901_sv_camp_color(idx):
-        if not store.j901_sv_camp_alive[idx]:
-            return "#3A0612"
-        off = store.j901_sv_camp_offsets[idx]
+    def j901_sv_quad_color(q):
+        if store.j901_sv_quad_disabled[q] > 0.0:
+            return "#FF4D6D"
+        off = store.j901_sv_quad_offset[q]
+        if off >= 70.0:
+            return "#5DFF9A"
+        if off >= 40.0:
+            return "#FFD166"
+        return "#7DF9FF"
+
+    # Position des 3 campement-dots d'un quadrant selon son progress
+    def j901_sv_dot_positions(q):
+        rect = J901_SV_QUAD_RECTS[q]
+        rx, ry, rw, rh = rect[0], rect[1], rect[2], rect[3]
+        cx = rx + rw // 2
+        cy = ry + rh // 2 + 30  # un peu sous le centre pour laisser la place au titre
+        off = store.j901_sv_quad_offset[q]
+        # Plus le progress est élevé, plus les dots s'écartent
+        spread = 40.0 + (off / 100.0) * 100.0
+        positions = []
+        angles = [-2.4, -1.6, -0.8] if q < 2 else [0.8, 1.6, 2.4]
+        # En haut → angles vers le haut, en bas → vers le bas
+        angles = [math.pi * a / 2.0 for a in angles]
+        for a in angles:
+            dx = math.cos(a) * spread
+            dy = math.sin(a) * spread
+            positions.append((int(cx + dx), int(cy + dy)))
+        return positions
+
+    def j901_sv_dot_color(q):
+        if store.j901_sv_quad_disabled[q] > 0.0:
+            return "#FF4D6D"
+        off = store.j901_sv_quad_offset[q]
         if off >= 60.0:
             return "#5DFF9A"
         if off >= 30.0:
             return "#FFD166"
         return "#FF4D6D"
-
-    def j901_sv_camp_size(idx):
-        if not store.j901_sv_camp_alive[idx]:
-            return 8
-        off = store.j901_sv_camp_offsets[idx]
-        return int(10 + off / 12.0)
-
-    # Position d'origine des campements (grille 4x3 dans le pane droit)
-    J901_SV_CAMP_BASE = []
-    for row in range(3):
-        for col in range(4):
-            J901_SV_CAMP_BASE.append((
-                int(140 + col * 130),
-                int(120 + row * 240),
-            ))
-
-    def j901_sv_camp_pos(idx):
-        bx, by = J901_SV_CAMP_BASE[idx]
-        off = store.j901_sv_camp_offsets[idx]
-        # Direction radiale depuis le centre du pane (380, 480) vers le point initial
-        cx, cy = 380.0, 420.0
-        dx = bx - cx
-        dy = by - cy
-        # Normalise + applique l'offset
-        length = max(1.0, math.sqrt(dx * dx + dy * dy))
-        ux = dx / length
-        uy = dy / length
-        return (int(bx + ux * off * 1.4), int(by + uy * off * 1.4))
 
 
 # ------------------------------------------------------------
@@ -672,7 +840,7 @@ screen j901_signal_vivant_screen():
 
     timer J901_SV_TICK repeat True action Function(j901_sv_tick)
 
-    key "K_ESCAPE" action NullAction()   # désactive échap pendant la partie
+    key "K_ESCAPE" action NullAction()
 
     # Raccourcis clavier 1..9 pour chips
     key "K_1" action Function(j901_sv_place_chip, "ryn")
@@ -685,27 +853,25 @@ screen j901_signal_vivant_screen():
     key "K_8" action Function(j901_sv_place_chip, "iris")
     key "K_9" action Function(j901_sv_place_chip, "julian")
 
-    # Fond global noir
+    # Raccourcis clavier A/Z/E/R pour pulse des quadrants
+    key "K_a" action Function(j901_sv_pulse_quad, 0)
+    key "K_z" action Function(j901_sv_pulse_quad, 1)
+    key "K_e" action Function(j901_sv_pulse_quad, 2)
+    key "K_r" action Function(j901_sv_pulse_quad, 3)
+
     add Solid("#02040A")
 
-    # Flash d'interférence
+    # Flash d'alerte
     if j901_sv_flash > 0.0:
-        if j901_sv_inter_type == "ombre":
-            add Solid("#33002288")
-        elif j901_sv_inter_type == "polarite":
-            add Solid("#3300FF55")
-        else:
-            add Solid("#FF334466")
+        add Solid("#FF334466")
 
     # ============================================
-    # PANEAU GAUCHE (0..1152) — SALLE DU CONCLAVE
+    # PANEAU GAUCHE — SALLE DU CONCLAVE (0..1152)
     # ============================================
 
-    # Fond oscilloscope
     add "minijeu/signal_vivant_assets/bg_scope.png":
         xpos 0 ypos 110
 
-    # Image de fond Conclave (cinématique de débat)
     if renpy.has_image("bg_conclave"):
         add "bg_conclave":
             xpos 0 ypos 110
@@ -713,16 +879,13 @@ screen j901_signal_vivant_screen():
             ysize 430
             alpha 0.35
 
-    # Portrait du speaker actif (gauche en bas du pane conclave)
     fixed:
         xpos 0 ypos 110
         xsize 1152
         ysize 430
 
-        # Voile sombre
         add Solid("#02040A66")
 
-        # Cadre intérieur
         frame:
             xpos 20 ypos 16
             xsize 1112
@@ -741,14 +904,12 @@ screen j901_signal_vivant_screen():
                     color "#7DF9FF"
                     bold True
 
-        # Portrait du speaker à gauche
         $ _sv_speaker_image = j901_sv_current_speaker + " " + j901_sv_current_expr
         if renpy.has_image(_sv_speaker_image):
             add _sv_speaker_image at j901_sv_speaker_in:
                 xpos 30 ypos 88
                 zoom 0.55
         else:
-            # Fallback : juste une grosse capsule colorée
             frame:
                 xpos 60 ypos 100
                 xsize 280
@@ -761,7 +922,6 @@ screen j901_signal_vivant_screen():
                     color "#DCF0FF"
                     bold True
 
-        # Bulle de dialogue à droite du portrait
         frame:
             xpos 360 ypos 130
             xsize 760
@@ -785,7 +945,7 @@ screen j901_signal_vivant_screen():
                     text_align 0.0
 
     # ============================================
-    # MONITEUR SIGNAL (centre — sous la cinématique)
+    # MONITEUR SIGNAL — forme d'onde + 3 jauges
     # ============================================
 
     fixed:
@@ -795,33 +955,31 @@ screen j901_signal_vivant_screen():
 
         add Solid("#03081599")
 
-        # Titre
         text "FORME D'ONDE GLOBALE":
             xpos 24 ypos 12
             size 20
             color "#9FC7D8"
             bold True
 
-        # Forme d'onde — 60 segments verticaux
+        # Forme d'onde
         fixed:
             xpos 24 ypos 50
             xsize 720
             ysize 130
 
-            # Cadre
             add Solid("#06101FCC")
-            add Solid("#7DF9FF55", xysize=(720, 1)) ypos 65   # ligne centrale
+            add Solid("#7DF9FF55", xysize=(720, 1)) ypos 65
 
             for i, v in enumerate(j901_sv_wave):
                 $ _bx = i * 12
                 $ _bh = max(2, int(abs(v) * 55))
                 $ _by = 65 - _bh // 2 if v >= 0 else 65
-                if j901_sv_all_green():
+                if j901_sv_all_green() and j901_sv_global_disturb <= 0.0:
                     add Solid("#5DFF9A") xpos (_bx + 2) ypos _by xysize (8, _bh)
                 else:
                     add Solid("#FF6B9A") xpos (_bx + 2) ypos _by xysize (8, _bh)
 
-        # 3 jauges à droite de la forme d'onde
+        # 3 jauges à droite
         vbox:
             xpos 770 ypos 50
             spacing 14
@@ -848,10 +1006,8 @@ screen j901_signal_vivant_screen():
                         xsize 340
                         ysize 18
 
-                        # Fond rail
                         add Solid("#0A1326") xysize (340, 18)
 
-                        # Zone verte
                         $ _lo, _hi = J901_SV_GREEN_ZONES[gname]
                         $ _zx = int((_lo / 100.0) * 340)
                         $ _zw = int(((_hi - _lo) / 100.0) * 340)
@@ -859,7 +1015,6 @@ screen j901_signal_vivant_screen():
                         add Solid("#26C96FAA") xpos _zx ypos 0 xysize (2, 18)
                         add Solid("#26C96FAA") xpos (_zx + _zw - 2) ypos 0 xysize (2, 18)
 
-                        # Curseur
                         $ _cx = int((gvalue / 100.0) * 340)
                         add Solid("#FFFFFF") xpos (_cx - 2) ypos -2 xysize (4, 22)
 
@@ -874,19 +1029,17 @@ screen j901_signal_vivant_screen():
 
         add Solid("#04091588")
 
-        # Section "SLOTS ACTIFS"
         text "SLOTS ACTIFS":
             xpos 24 ypos 12
             size 20
             color "#9FC7D8"
             bold True
 
-        text "(Clic chip : placer/retirer · Clic slot : intensité · Clic-droit slot : vider)":
+        text "(Chip 1..9 · Slot : intensité · Clic-droit : vider · A/Z/E/R : pulse quadrants)":
             xpos 180 ypos 16
             size 14
             color "#5F8090"
 
-        # 4 slots
         for s_idx in range(4):
             $ _sx = 30 + s_idx * 210
             fixed:
@@ -929,76 +1082,41 @@ screen j901_signal_vivant_screen():
                         color "#DCF0FF"
                         bold True
 
-        # Section "PALETTE DE FRÉQUENCES"
         text "PALETTE DE FRÉQUENCES":
             xpos 24 ypos 250
             size 18
             color "#9FC7D8"
             bold True
 
-        # 9 chips en bas (mini)
         for c_idx, c_key in enumerate(J901_SV_CHIP_ORDER):
             $ _cx_chip = 250 + c_idx * 90
             $ _data = J901_SV_CHIPS[c_key]
             $ _active = c_key in j901_sv_slots
-            $ _locked = (c_key == j901_sv_locked_chip and j901_sv_inter_type == "brouillage")
             $ _chip_num = c_idx + 1
             fixed:
                 xpos _cx_chip ypos 250
                 xsize 80
                 ysize 65
 
-                if _locked:
-                    button:
-                        xpos 0 ypos 0
-                        xsize 80
-                        ysize 65
-                        background Solid("#3A0612CC")
-                        action NullAction()
-                    add _data["asset"]:
-                        xalign 0.5 yalign 0.5
-                        zoom 0.32
-                        alpha 0.30
-                    text "✕":
-                        xalign 0.5 yalign 0.5
-                        size 38
-                        color "#FF4D6D"
-                        bold True
-                else:
-                    $ _chip_bg = Solid("#10384DEE") if _active else Solid("#0F1A2EDD")
-
-                    button:
-                        xpos 0
-                        ypos 0
-                        xsize 80
-                        ysize 65
-                        background _chip_bg
-                        hover_background Solid("#1D2D52EE")
-                        action Function(j901_sv_place_chip, c_key)
-
-                        fixed:
-                            xsize 80
-                            ysize 65
-
-                            add _data["asset"]:
-                                xalign 0.5
-                                yalign 0.4
-                                zoom 0.36
-
-                            text "[_chip_num]":
-                                xpos 4
-                                ypos 2
-                                size 12
-                                color "#7DF9FF"
-                                bold True
+                button:
+                    xpos 0 ypos 0
+                    xsize 80
+                    ysize 65
+                    background Solid("#10384DEE") if _active else Solid("#0F1A2EDD")
+                    hover_background Solid("#1D2D52EE")
+                    action Function(j901_sv_place_chip, c_key)
+                add _data["asset"]:
+                    xalign 0.5 yalign 0.4
+                    zoom 0.36
+                text "[_chip_num]":
+                    xpos 4 ypos 2
+                    size 12
+                    color "#7DF9FF"
+                    bold True
 
     # ============================================
-    # PANEAU DROIT (1152..1920) — CAMPEMENTS
+    # PANEAU DROIT — 4 QUADRANTS (1152..1920)
     # ============================================
-
-    # Fond nébuleux
-    add "minijeu/signal_vivant_assets/bg_campfield.png":
-        xpos 1152 ypos 110
 
     # Cadre titre
     frame:
@@ -1010,124 +1128,165 @@ screen j901_signal_vivant_screen():
             xalign 0.5
             yalign 0.5
             spacing 2
-            text "TRANSMISSION → CAMPEMENTS FRONTALIERS":
+            text "CARTE DES CAMPEMENTS — 4 FRONTS":
                 xalign 0.5
                 size 20
                 color "#DCF0FF"
                 bold True
-            text "12 groupes — entre 50 et 500 personnes":
+            text "Clic quadrant : pulse renforcée  ·  Clic orbe : détruire":
                 xalign 0.5
                 size 14
                 color "#7DF9FF"
 
-    # Légende verticale gauche
-    fixed:
-        xpos 1162 ypos 180
-        xsize 80
-        ysize 60
+    # Fond des 4 quadrants
+    for q in range(4):
+        $ _qrect = J901_SV_QUAD_RECTS[q]
+        $ _qcode = _qrect[4].lower()
+        add ("minijeu/signal_vivant_assets/quad_" + _qcode + ".png"):
+            xpos _qrect[0] ypos _qrect[1]
 
-        text "DISPERSÉS":
-            xpos 0 ypos 4
-            size 13
-            color "#5DFF9A"
-            bold True
-        text "EN DANGER":
-            xpos 0 ypos 22
-            size 13
-            color "#FFD166"
-            bold True
-        text "ÉTEINTS":
-            xpos 0 ypos 40
-            size 13
-            color "#FF4D6D"
-            bold True
-
-    # Affichage des 12 campements (positions calculées dynamiquement)
-    fixed:
+    # Croix de séparation des quadrants
+    add "minijeu/signal_vivant_assets/quad_cross.png":
         xpos 1152 ypos 170
-        xsize 768
-        ysize 800
 
-        # Cercle ondulatoire au centre quand le signal est vivant
-        if j901_sv_all_green():
-            add Solid("#5DFF9A22") xpos 340 ypos 380 xysize (80, 80)
-            add Solid("#5DFF9A55") xpos 360 ypos 400 xysize (40, 40)
+    # Pour chaque quadrant : zone cliquable + infos + dots + mini-onde
+    for q in range(4):
+        $ _qrect = J901_SV_QUAD_RECTS[q]
+        $ _qx, _qy, _qw, _qh = _qrect[0], _qrect[1], _qrect[2], _qrect[3]
+        $ _qlabel = _qrect[4]
+        $ _qfull = _qrect[5]
+        $ _qoff = j901_sv_quad_offset[q]
+        $ _qcooldown = j901_sv_quad_cooldown[q]
+        $ _qdisabled = j901_sv_quad_disabled[q]
+        $ _qcolor = j901_sv_quad_color(q)
 
-        # Ombre Kami pendant l'interférence "ombre"
-        if j901_sv_inter_type == "ombre":
-            add "minijeu/signal_vivant_assets/kami_shadow.png":
-                xalign 0.5 yalign 0.5
-                zoom 0.85
-                alpha 0.55
-                at j901_sv_alert_pulse
+        # Zone cliquable transparente (envoi pulse)
+        button:
+            xpos _qx ypos _qy
+            xsize _qw
+            ysize _qh
+            background Solid("#00000000")
+            hover_background Solid("#7DF9FF15")
+            action Function(j901_sv_pulse_quad, q)
 
-        # Les 12 dots
-        for cidx in range(12):
-            $ _pos = j901_sv_camp_pos(cidx)
-            $ _size = j901_sv_camp_size(cidx)
-            $ _col = j901_sv_camp_color(cidx)
-            $ _alive = j901_sv_camp_alive[cidx]
-            $ _camp_num = cidx + 1
-            add Solid(_col) xpos (_pos[0] - _size // 2) ypos (_pos[1] - _size // 2) xysize (_size, _size)
-            if _alive:
-                # Halo doux
-                $ _halo_size = _size + 14
-                add Solid(_col + "33") xpos (_pos[0] - _halo_size // 2) ypos (_pos[1] - _halo_size // 2) xysize (_halo_size, _halo_size)
-                # Numéro
-                text "[_camp_num]":
-                    xpos (_pos[0] + _size // 2 + 4)
-                    ypos (_pos[1] - 12)
-                    size 13
-                    color "#FFFFFF99"
-
-    # Statistiques en bas du pane droit
-    frame:
-        xpos 1152 ypos 990
-        xsize 768
-        ysize 90
-        background Solid("#070D1ADD")
-
-        $ _disp = sum(1 for i, off in enumerate(j901_sv_camp_offsets) if j901_sv_camp_alive[i] and off >= 60.0)
-        $ _dang = sum(1 for i, off in enumerate(j901_sv_camp_offsets) if j901_sv_camp_alive[i] and off < 60.0)
-        $ _dead = sum(1 for a in j901_sv_camp_alive if not a)
-
-        hbox:
-            xalign 0.5
-            yalign 0.5
-            spacing 36
-
-            vbox:
-                spacing 2
-                text "DISPERSÉS":
-                    size 14
-                    color "#9FC7D8"
-                text "[_disp]/12":
-                    size 36
-                    color "#5DFF9A"
+        # Bandeau d'info en haut du quadrant
+        frame:
+            xpos (_qx + 8) ypos (_qy + 36)
+            xsize (_qw - 16)
+            ysize 46
+            background Solid("#0A1326DD")
+            hbox:
+                xalign 0.5
+                yalign 0.5
+                spacing 14
+                text "[_qlabel]":
+                    size 22
+                    color "#DCF0FF"
                     bold True
-
-            vbox:
-                spacing 2
-                text "EN DANGER":
-                    size 14
-                    color "#9FC7D8"
-                text "[_dang]/12":
-                    size 36
-                    color "#FFD166"
+                text "[_qoff:.0f]%":
+                    size 26
+                    color _qcolor
                     bold True
+                if _qdisabled > 0.0:
+                    text "OFF [_qdisabled:.0f]s":
+                        size 16
+                        color "#FF4D6D"
+                        bold True
+                elif _qcooldown > 0.0:
+                    text "CD [_qcooldown:.1f]":
+                        size 16
+                        color "#FFD166"
+                else:
+                    text "READY":
+                        size 16
+                        color "#5DFF9A"
+                        bold True
 
-            vbox:
-                spacing 2
-                text "ÉTEINTS":
-                    size 14
-                    color "#9FC7D8"
-                text "[_dead]/12":
-                    size 36
-                    color "#FF4D6D"
-                    bold True
+        # Mini-onde
+        fixed:
+            xpos (_qx + 30) ypos (_qy + 90)
+            xsize 320
+            ysize 70
+
+            add Solid("#06101FAA")
+            add Solid("#7DF9FF33", xysize=(320, 1)) ypos 35
+
+            for i, v in enumerate(j901_sv_quad_wave[q]):
+                $ _wx = i * 20
+                $ _wh = max(2, int(abs(v) * 28))
+                $ _wy = 35 - _wh // 2 if v >= 0 else 35
+                add Solid(_qcolor) xpos (_wx + 2) ypos _wy xysize (16, _wh)
+
+        # 3 dots de campement
+        $ _positions = j901_sv_dot_positions(q)
+        $ _dcolor = j901_sv_dot_color(q)
+        for d_idx, pos in enumerate(_positions):
+            $ _ddsize = 16 + int(_qoff / 10.0)
+            # Position absolue à l'écran
+            add Solid(_dcolor) xpos (pos[0] - _ddsize // 2) ypos (pos[1] - _ddsize // 2) xysize (_ddsize, _ddsize)
+            # Halo
+            $ _halo_size = _ddsize + 14
+            add Solid(_dcolor + "33") xpos (pos[0] - _halo_size // 2) ypos (pos[1] - _halo_size // 2) xysize (_halo_size, _halo_size)
+
+        # Animation de pulse réussie (anneau qui s'étend)
+        if j901_sv_quad_pulse_anim[q] > 0.0:
+            $ _qcx, _qcy = (_qx + _qw // 2), (_qy + _qh // 2 + 30)
+            add "minijeu/signal_vivant_assets/pulse_ring.png" at j901_sv_pulse_ring_anim:
+                xpos (_qcx - 120) ypos (_qcy - 120)
+
+        # Voile sombre si désactivé
+        if _qdisabled > 0.0:
+            add Solid("#3A061266") xpos _qx ypos _qy xysize _qw ysize _qh
+            text "SIGNAL COUPÉ":
+                xpos (_qx + _qw // 2 - 90)
+                ypos (_qy + _qh // 2 - 14)
+                size 26
+                color "#FF4D6D"
+                bold True
+                outlines [(3, "#000000", 0, 0)]
 
     # ============================================
-    # BANDEAU SUPÉRIEUR (titre + chrono + alerte)
+    # ORBES KAMI — affichés au-dessus de tout
+    # ============================================
+
+    for orb in j901_sv_orbs:
+        $ _osize = orb["size"]
+        $ _ox = int(orb["x"] - _osize // 2)
+        $ _oy = int(orb["y"] - _osize // 2)
+        $ _ohp = orb["hp"]
+        $ _omax = orb["max_hp"]
+
+        button:
+            xpos _ox ypos _oy
+            xsize _osize
+            ysize _osize
+            background Solid("#00000000")
+            hover_background Solid("#FF6B9A22")
+            action Function(j901_sv_hit_orb, orb["id"])
+
+        if orb["hit_flash"] > 0.0:
+            add orb["asset"] at j901_sv_orb_hit_flash:
+                xpos _ox ypos _oy
+        else:
+            add orb["asset"] at j901_sv_orb_wobble:
+                xpos _ox ypos _oy
+
+        # Barre de HP au-dessus de l'orbe
+        $ _bar_w = _osize - 16
+        $ _bar_x = _ox + 8
+        $ _bar_y = _oy - 16
+        add Solid("#0A0010CC") xpos _bar_x ypos _bar_y xysize (_bar_w, 8)
+        $ _hp_w = int(_bar_w * (_ohp / float(_omax)))
+        add Solid("#FF6B9A") xpos _bar_x ypos _bar_y xysize (_hp_w, 8)
+        text "[_ohp]/[_omax]":
+            xpos _bar_x
+            ypos (_bar_y - 18)
+            size 14
+            color "#FFFFFF"
+            bold True
+
+    # ============================================
+    # BANDEAU SUPÉRIEUR
     # ============================================
 
     add "minijeu/signal_vivant_assets/title_band.png":
@@ -1143,7 +1302,7 @@ screen j901_signal_vivant_screen():
         color "#FFFFFF"
         bold True
 
-    text "Maintenez les 3 jauges en zone verte. Combinez les fréquences. Survivez à Kami.":
+    text "Combinez les fréquences. Pulsez les quadrants. Détruisez les orbes de Kami.":
         xpos 270 ypos 66
         size 16
         color "#9FC7D8"
@@ -1160,23 +1319,30 @@ screen j901_signal_vivant_screen():
         color j901_sv_status_color
         bold True
 
-    # Score live
-    text "DISPERSION [j901_sv_dispersion_progress:.0f]%":
+    # Stats live
+    $ _live_safe = 0
+    for q in range(4):
+        $ _q_off = j901_sv_quad_offset[q]
+        if _q_off >= 75.0:
+            $ _live_safe += 3
+        elif _q_off >= 55.0:
+            $ _live_safe += 2
+        elif _q_off >= 30.0:
+            $ _live_safe += 1
+
+    text "SAUVÉS LIVE [_live_safe]/12":
         xpos 1540 ypos 24
         size 22
-        color "#DCF0FF"
-        bold True
-
-    # Compteurs de campements pendant la partie
-    $ _live_disp = sum(1 for i, off in enumerate(j901_sv_camp_offsets) if j901_sv_camp_alive[i] and off >= 60.0)
-    text "CAMPS SAUVÉS [_live_disp]/12":
-        xpos 1540 ypos 58
-        size 18
         color "#5DFF9A"
         bold True
 
+    text "ORBES TUÉS [j901_sv_orbs_killed]  IMPACTS [j901_sv_hits_taken]":
+        xpos 1540 ypos 58
+        size 16
+        color "#9FC7D8"
+
     # ============================================
-    # ALERTE KAMI (overlay si en cours)
+    # ALERTE KAMI
     # ============================================
 
     if j901_sv_kami_alert_time > 0.0:
@@ -1198,13 +1364,11 @@ screen j901_signal_vivant_screen():
                     color "#FFFFFF"
                     bold True
 
-    # Overlay glitch pendant les interférences fortes
-    if j901_sv_inter_type == "parasites" or j901_sv_flash > 0.15:
+    if j901_sv_global_disturb > 0.0:
         add "minijeu/signal_vivant_assets/overlay_glitch.png":
             alpha 0.35
             at j901_sv_shake_light
 
-    # Fin de partie : déclenche Return
     if j901_sv_done:
         timer 0.4 action Return(j901_sv_result_tier)
 
@@ -1220,9 +1384,11 @@ screen j901_signal_vivant_bilan(tier):
 
     add Solid("#020408EE")
 
-    $ _disp = store.j901_sv_disp_count
-    $ _dang = store.j901_sv_danger_count
-    $ _dead = store.j901_sv_dead_count
+    $ _safe = store.j901_sv_dots_safe
+    $ _lost = store.j901_sv_dots_lost
+    $ _orbs_killed = store.j901_sv_orbs_killed
+    $ _hits = store.j901_sv_hits_taken
+    $ _pulses = store.j901_sv_pulse_count
 
     $ _tier_label = {
         "excellent": "TRANSMISSION EXEMPLAIRE",
@@ -1239,23 +1405,23 @@ screen j901_signal_vivant_bilan(tier):
     }.get(tier, "#FFFFFF")
 
     $ _tier_msg = {
-        "excellent": "Le signal a porté. La majorité des campements s'est dispersée à temps. Kami semble presque impressionnée.",
-        "bon":       "Le message est passé. Plusieurs campements ont entendu et se sont écartés des frontières.",
-        "moyen":     "Le signal a vacillé. Trop de campements sont restés groupés. Le Commandement a fait du dégât.",
-        "echec":     "Le signal s'est éteint. Le Commandement IV s'est appliqué dans toute sa logique froide.",
+        "excellent": "Les quatre fronts ont reçu le signal. La majorité des campements s'est dispersée à temps. Kami semble presque impressionnée.",
+        "bon":       "Le message est passé sur la plupart des fronts. Plusieurs campements ont entendu et se sont écartés des frontières.",
+        "moyen":     "Le signal a vacillé. Plusieurs quadrants ont été coupés trop longtemps. Le Commandement a fait du dégât.",
+        "echec":     "Le signal s'est éteint. Les orbes de Kami ont fait leur œuvre. Le Commandement IV s'est appliqué dans toute sa logique froide.",
     }.get(tier, "")
 
     frame:
         xalign 0.5
         yalign 0.5
-        xsize 1100
-        ysize 620
+        xsize 1200
+        ysize 720
         background Solid("#0A1326EE")
 
         vbox:
             xalign 0.5
             yalign 0.5
-            spacing 18
+            spacing 16
 
             text "BILAN DE TRANSMISSION":
                 xalign 0.5
@@ -1269,7 +1435,30 @@ screen j901_signal_vivant_bilan(tier):
                 color _tier_color
                 bold True
 
-            null height 10
+            null height 8
+
+            # Résultat par quadrant
+            hbox:
+                xalign 0.5
+                spacing 30
+                for q in range(4):
+                    $ _qoff = store.j901_sv_quad_offset[q]
+                    $ _qlabel = J901_SV_QUAD_RECTS[q][4]
+                    $ _qcolor_b = j901_sv_quad_color(q)
+                    vbox:
+                        spacing 4
+                        text "[_qlabel]":
+                            xalign 0.5
+                            size 22
+                            color "#DCF0FF"
+                            bold True
+                        text "[_qoff:.0f]%":
+                            xalign 0.5
+                            size 40
+                            color _qcolor_b
+                            bold True
+
+            null height 8
 
             hbox:
                 xalign 0.5
@@ -1277,50 +1466,62 @@ screen j901_signal_vivant_bilan(tier):
 
                 vbox:
                     spacing 4
-                    text "DISPERSÉS":
+                    text "SAUVÉS":
                         xalign 0.5
                         size 18
                         color "#9FC7D8"
-                    text "[_disp]/12":
+                    text "[_safe]/12":
                         xalign 0.5
-                        size 64
+                        size 56
                         color "#5DFF9A"
                         bold True
 
                 vbox:
                     spacing 4
-                    text "EN DANGER":
+                    text "PERDUS":
                         xalign 0.5
                         size 18
                         color "#9FC7D8"
-                    text "[_dang]/12":
+                    text "[_lost]/12":
                         xalign 0.5
-                        size 64
-                        color "#FFD166"
+                        size 56
+                        color "#FF4D6D"
                         bold True
 
                 vbox:
                     spacing 4
-                    text "ÉTEINTS":
+                    text "ORBES":
                         xalign 0.5
                         size 18
                         color "#9FC7D8"
-                    text "[_dead]/12":
+                    text "[_orbs_killed]":
                         xalign 0.5
-                        size 64
-                        color "#FF4D6D"
+                        size 56
+                        color "#7DF9FF"
                         bold True
 
-            null height 14
+                vbox:
+                    spacing 4
+                    text "PULSES":
+                        xalign 0.5
+                        size 18
+                        color "#9FC7D8"
+                    text "[_pulses]":
+                        xalign 0.5
+                        size 56
+                        color "#FFD166"
+                        bold True
+
+            null height 10
 
             text "[_tier_msg]":
                 xalign 0.5
                 size 24
                 color "#FFFFFF"
-                xmaximum 980
+                xmaximum 1080
                 text_align 0.5
 
-            null height 14
+            null height 10
 
             textbutton "Continuer":
                 xalign 0.5
