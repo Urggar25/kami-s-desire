@@ -58,6 +58,7 @@ default j901_sv_quad_cooldown = [0.0, 0.0, 0.0, 0.0]   # cooldown du clic pulse
 default j901_sv_quad_disabled = [0.0, 0.0, 0.0, 0.0]   # temps restant de désactivation
 default j901_sv_quad_pulse_anim = [0.0, 0.0, 0.0, 0.0] # animation de pulse en cours
 default j901_sv_quad_wave = [[0.0] * 16, [0.0] * 16, [0.0] * 16, [0.0] * 16]
+default j901_sv_quad_urgency = [1.25, 1.10, 0.95, 1.35]  # quadrants plus exposés
 default j901_sv_pulse_count = 0      # stats : pulses envoyées
 default j901_sv_orbs_killed = 0      # stats : orbes détruits
 default j901_sv_hits_taken = 0       # stats : impacts subis
@@ -218,6 +219,7 @@ init python:
         store.j901_sv_quad_disabled = [0.0, 0.0, 0.0, 0.0]
         store.j901_sv_quad_pulse_anim = [0.0, 0.0, 0.0, 0.0]
         store.j901_sv_quad_wave = [[0.0] * 16 for _ in range(4)]
+        store.j901_sv_quad_urgency = [1.25, 1.10, 0.95, 1.35]
         store.j901_sv_pulse_count = 0
         store.j901_sv_orbs_killed = 0
         store.j901_sv_hits_taken = 0
@@ -518,7 +520,7 @@ init python:
                 continue
             # Vitesse de base
             base_speed = 1.6 * quality + (0.6 if all_green else 0.0)
-            mult = 1.0
+            mult = store.j901_sv_quad_urgency[q]
             if has_elen:
                 mult += 0.25
             if has_ryn and q in threatened:
@@ -1118,6 +1120,13 @@ screen j901_signal_vivant_screen():
     # PANEAU DROIT — 4 QUADRANTS (1152..1920)
     # ============================================
 
+    add "minijeu/signal_vivant_assets/bg_campfield.png":
+        xpos 1152 ypos 170
+
+    add "minijeu/signal_vivant_assets/kami_shadow.png":
+        xpos 1670 ypos 130
+        alpha 0.22
+
     # Cadre titre
     frame:
         xpos 1152 ypos 110
@@ -1161,13 +1170,18 @@ screen j901_signal_vivant_screen():
         $ _qcolor = j901_sv_quad_color(q)
 
         # Zone cliquable transparente (envoi pulse)
-        button:
-            xpos _qx ypos _qy
-            xsize _qw
-            ysize _qh
-            background Solid("#00000000")
-            hover_background Solid("#7DF9FF15")
-            action Function(j901_sv_pulse_quad, q)
+        if _qdisabled > 0.0:
+            add "minijeu/signal_vivant_assets/slot_locked.png":
+                xpos (_qx + _qw - 76) ypos (_qy + 12)
+                zoom 0.3
+        else:
+            button:
+                xpos _qx ypos _qy
+                xsize _qw
+                ysize _qh
+                background Solid("#00000000")
+                hover_background Solid("#7DF9FF15")
+                action Function(j901_sv_pulse_quad, q)
 
         # Bandeau d'info en haut du quadrant
         frame:
@@ -1187,6 +1201,9 @@ screen j901_signal_vivant_screen():
                     size 26
                     color _qcolor
                     bold True
+                text "URG x[j901_sv_quad_urgency[q]:.2f]":
+                    size 14
+                    color "#FFD166"
                 if _qdisabled > 0.0:
                     text "OFF [_qdisabled:.0f]s":
                         size 16
@@ -1229,6 +1246,11 @@ screen j901_signal_vivant_screen():
             add Solid(_dcolor + "33") xpos (pos[0] - _halo_size // 2) ypos (pos[1] - _halo_size // 2) xysize (_halo_size, _halo_size)
 
         # Animation de pulse réussie (anneau qui s'étend)
+        add "minijeu/signal_vivant_assets/pulse_button.png":
+            xpos (_qx + _qw - 86) ypos (_qy + _qh - 86)
+            zoom 0.35
+            alpha 0.85 if _qcooldown <= 0.0 and _qdisabled <= 0.0 else 0.35
+
         if j901_sv_quad_pulse_anim[q] > 0.0:
             $ _qcx, _qcy = (_qx + _qw // 2), (_qy + _qh // 2 + 30)
             add "minijeu/signal_vivant_assets/pulse_ring.png" at j901_sv_pulse_ring_anim:
