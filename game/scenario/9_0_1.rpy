@@ -1111,3 +1111,21 @@ label _9_0_1_CONCLAVE_ANNONCE:
     scene black with fade
 
     jump _9_0_1_CONCLAVE_DEBAT
+
+label _9_0_1_CONCLAVE_DEBAT:
+    # ... intro du débat ...
+    call j901_play_signal_vivant
+    $ j901_signal_result_tier = _return
+    
+    if j901_signal_result_tier == "excellent":
+        # Kami amusée mais impressionnée
+        "OUI"
+    elif j901_signal_result_tier == "bon":
+        # Tensions modérées
+        "BOF"
+    elif j901_signal_result_tier == "moyen":
+        # Kami se moque
+        "BOF MOYEN"
+    else:
+        # Massacre + Kami gagne en domination
+        "NUL"
