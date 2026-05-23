@@ -20,6 +20,9 @@ label STOCKAGE_TP:
     $ pnc_room = "pnc_stockage"
     call screen pnc_stockage()
 
+    if free_time_active:
+        return
+
 
 # -----------------------------------------------------------------------
 # Label d'exploration
@@ -34,9 +37,6 @@ screen pnc_stockage():
 
     # BG COVER
     add "images/background/bg_stockage.png" at cover_screen
-
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
 
     # HOTSPOTS
 

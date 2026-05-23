@@ -163,10 +163,20 @@ label end_day(next_day):
 
     play sound "sfx/day_transition.wav"
 
-    # Bloque le script pendant 5s, puis revient automatiquement
-    call screen day_transition(next_day)
+    $ _day_transition_text = "Day %s" % next_day
+    show expression Text(_day_transition_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as day_transition_title at truecenter
+    pause 5.0
+    hide day_transition_title
 
-    $ current_day = next_day
+    $ current_day = day_number(next_day)
+    return
+
+label show_custom_title(title_text="Temps libre"):
+
+    scene black
+    show expression Text(title_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as custom_title_card at truecenter
+    pause 5.0
+    hide custom_title_card
     return
 
 transform day_fade_5s:
@@ -182,8 +192,7 @@ screen day_transition(day_label):
 
     add Solid("#000")
 
-    # Ferme automatiquement au bout de 5s
-    timer 5.0 action Return()
+    timer 5.0 action Hide("day_transition")
 
     frame:
         background None
@@ -211,7 +220,7 @@ screen free_time_transition():
 
     add Solid("#000")
 
-    timer 5.0 action Return()
+    timer 5.0 action Hide("free_time_transition")
 
     frame:
         background None
@@ -238,7 +247,7 @@ screen custom_title(title_text="Temps libre"):
 
     add Solid("#000")
 
-    timer 5.0 action Return()
+    timer 5.0 action Hide("custom_title")
 
     frame:
         background None

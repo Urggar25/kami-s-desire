@@ -18,6 +18,9 @@ label INFIRMERIE_TP:
     $ pnc_room = "pnc_infirmerie"
     call screen pnc_infirmerie()
 
+    if free_time_active:
+        return
+
 
 # -----------------------------------------------------------------------
 # Label d'exploration
@@ -32,9 +35,6 @@ screen pnc_infirmerie():
 
     # BG COVER
     add "images/background/bg_infirmerie.png" at cover_screen
-
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
 
     # HOTSPOTS
 

@@ -1095,23 +1095,31 @@ screen j901_signal_vivant_screen():
             $ _data = J901_SV_CHIPS[c_key]
             $ _active = c_key in j901_sv_slots
             $ _chip_num = c_idx + 1
+            $ _chip_bg = Solid("#10384DEE") if _active else Solid("#0F1A2EDD")
+
             fixed:
-                xpos _cx_chip ypos 250
+                xpos _cx_chip
+                ypos 250
                 xsize 80
                 ysize 65
 
                 button:
-                    xpos 0 ypos 0
+                    xpos 0
+                    ypos 0
                     xsize 80
                     ysize 65
-                    background Solid("#10384DEE") if _active else Solid("#0F1A2EDD")
+                    background _chip_bg
                     hover_background Solid("#1D2D52EE")
                     action Function(j901_sv_place_chip, c_key)
+
                 add _data["asset"]:
-                    xalign 0.5 yalign 0.4
+                    xalign 0.5
+                    yalign 0.4
                     zoom 0.36
+
                 text "[_chip_num]":
-                    xpos 4 ypos 2
+                    xpos 4
+                    ypos 2
                     size 12
                     color "#7DF9FF"
                     bold True
@@ -1246,10 +1254,13 @@ screen j901_signal_vivant_screen():
             add Solid(_dcolor + "33") xpos (pos[0] - _halo_size // 2) ypos (pos[1] - _halo_size // 2) xysize (_halo_size, _halo_size)
 
         # Animation de pulse réussie (anneau qui s'étend)
+        $ _pulse_alpha = 0.85 if _qcooldown <= 0.0 and _qdisabled <= 0.0 else 0.35
+
         add "minijeu/signal_vivant_assets/pulse_button.png":
-            xpos (_qx + _qw - 86) ypos (_qy + _qh - 86)
+            xpos (_qx + _qw - 86)
+            ypos (_qy + _qh - 86)
             zoom 0.35
-            alpha 0.85 if _qcooldown <= 0.0 and _qdisabled <= 0.0 else 0.35
+            alpha _pulse_alpha
 
         if j901_sv_quad_pulse_anim[q] > 0.0:
             $ _qcx, _qcy = (_qx + _qw // 2), (_qy + _qh // 2 + 30)
@@ -1258,7 +1269,11 @@ screen j901_signal_vivant_screen():
 
         # Voile sombre si désactivé
         if _qdisabled > 0.0:
-            add Solid("#3A061266") xpos _qx ypos _qy xysize _qw ysize _qh
+            add Solid("#3A061266"):
+                xpos _qx
+                ypos _qy
+                xysize (_qw, _qh)
+
             text "SIGNAL COUPÉ":
                 xpos (_qx + _qw // 2 - 90)
                 ypos (_qy + _qh // 2 - 14)

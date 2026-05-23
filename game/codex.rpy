@@ -361,6 +361,13 @@ screen codex_menu():
                         text "Codex":
                             style "codex_index_title"
 
+                        if j2_vote_codex_unlocked:
+                            textbutton "Prochain vote":
+                                action ShowMenu("day2_current_vote_codex")
+                                style "codex_cat_idle"
+                                ypadding 4
+                                xfill True
+
                         $ pct = codex_completion_percent()
                         $ filled_w = int(2.20 * pct)
 

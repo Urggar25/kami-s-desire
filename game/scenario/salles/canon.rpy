@@ -9,6 +9,9 @@ label CANON_TP:
     $ pnc_room = "pnc_canon"
     call screen pnc_canon()
 
+    if free_time_active:
+        return
+
 # -----------------------------------------------------------------------
 # Label d'exploration
 # -----------------------------------------------------------------------
@@ -25,9 +28,6 @@ screen pnc_canon():
     add "images/background/bg_canon.png" at cover_screen
 
     # Option : quitter au clic droit / ESC (retour au label appelant)
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
-
     # HOTSPOTS — doivent subir EXACTEMENT le même transform
     imagebutton:
         idle "images/background/interact/salle_canon/canon.png"

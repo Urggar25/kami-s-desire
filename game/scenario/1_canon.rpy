@@ -11,12 +11,429 @@
 # - Les persos restants ne bougent pas quand un nouveau parle
 # --------------------------------------------------------------------------------------------
 
+default j1_noam_prudence = 0
+default j1_noam_initiative = 0
+default j1_noam_mediation = 0
+default j1_noam_curiosity = 0
+default j1_wakeup_trace_attempts = 0
+default j1_urn_trace_attempts = 0
+default j1_jammer_trace_attempts = 0
+default j1_tablet_touched = False
+default j1_amendment_validated = False
+default j1_amendment_deposited = False
+default j1_amendment_time_display = "31:00"
+default noam_amendement_choix = None
+default noam_room_jammer_on = True
+default j1_trace_active = False
+default j1_trace_target = 1
+default j1_trace_success = False
+default j1_trace_failed = False
+default j1_trace_stray = 0
+default j1_trace_mouse_x = 960
+default j1_trace_mouse_y = 540
+
+define sfx_drop = "audio/sfx_drop.mp3"
+define sfx_shower = "audio/sfx_shower.mp3"
+
+init 2 python:
+    import math
+    try:
+        import pygame_sdl2 as pygame
+    except Exception:
+        pygame = None
+
+    day1_amendment_cards = [
+        {
+            "id": "information_locale",
+            "title": "Parole locale encadree",
+            "commandment": "Cinquieme Commandement",
+            "intent": "Autoriser les informations locales non politiques.",
+            "short_wording": "Les faits locaux, immediats et non sensibles peuvent etre communiques sans validation prealable.",
+            "wording": "La transmission d'informations non validees reste interdite pour les sujets politiques, strategiques ou interdistricts. Les faits locaux, immediats et non sensibles peuvent etre communiques sans validation prealable d'ARCHIVE.",
+            "risks": "Risque de flou entre fait local et information politique.",
+        },
+        {
+            "id": "assistance_minimale",
+            "title": "Assistance possible",
+            "commandment": "Commandements de conduite civile",
+            "intent": "Proteger le geste d'aide quand il ne met personne en danger.",
+            "short_wording": "Un citoyen peut porter assistance en cas de danger immediat si son geste n'aggrave pas la situation.",
+            "wording": "Aucun citoyen ne peut etre sanctionne pour avoir porte assistance a une personne en danger immediat, si cette assistance n'aggrave pas la situation et ne contrevient pas a une procedure de securite active.",
+            "risks": "Risque d'interpretations abusives en situation de crise.",
+        },
+    ]
+
+    if "reglement_conclave" not in CODEX_ENTRIES:
+        CODEX_ENTRIES["reglement_conclave"] = {
+            "title": "Règlement du Conclave",
+            "category": "coutume",
+            "unlocked_day": 1,
+            "text": """Le Conclave dure trente jours. Pendant cette période, les représentants restent isolés dans le complexe et ne peuvent pas rejoindre leur district, ni initier de contact vers l'extérieur. Si un appel extérieur leur parvient, ils peuvent y répondre, mais ils ne peuvent pas provoquer eux-mêmes l'échange.
+
+Chaque représentant dépose un amendement lors de la première journée. Les propositions sont déposées dans une urne, anonymement. Dix amendements sont ensuite tirés au sort pour être soumis au vote au cours du Conclave; deux propositions peuvent donc ne jamais être débattues.
+
+Un vote a lieu tous les trois jours. Pour qu'un amendement soit adopté, tous les bulletins exprimés doivent être favorables. Les abstentions et absences ne comptent pas dans les bulletins exprimés, mais une seule voix contre suffit à rejeter le texte. Selon la nature de la proposition, un rejet peut aussi produire des conséquences.
+
+Les chambres individuelles sont équipées de brouilleurs. Par défaut, le brouilleur coupe les caméras, l'audio et les capteurs de la chambre. Un représentant peut le désactiver, mais la pièce redevient alors potentiellement observable.
+
+Les espaces communs restent surveillés et enregistrés. Les Commandements ordinaires ne s'appliquent pas dans le Conclave, mais les règles propres au complexe restent actives. Kami ne vote pas et ne propose pas d'amendement; elle organise, observe, tire au sort, annonce les résultats et applique les changements validés."""
+        }
+
+    def day1_dist(a, b):
+        return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
+
+    def day1_dist_to_segment(p, a, b):
+        ax, ay = a
+        bx, by = b
+        px, py = p
+        dx = bx - ax
+        dy = by - ay
+        if dx == 0 and dy == 0:
+            return day1_dist(p, a)
+        t = ((px - ax) * dx + (py - ay) * dy) / float(dx * dx + dy * dy)
+        t = max(0.0, min(1.0, t))
+        closest = (ax + t * dx, ay + t * dy)
+        return day1_dist(p, closest)
+
+    def j1_trace_reset():
+        store.j1_trace_active = False
+        store.j1_trace_target = 1
+        store.j1_trace_success = False
+        store.j1_trace_failed = False
+        store.j1_trace_stray = 0
+
+    def j1_trace_press(points, start_radius=85):
+        pos = renpy.get_mouse_pos()
+        store.j1_trace_mouse_x, store.j1_trace_mouse_y = pos
+        store.j1_trace_success = False
+        store.j1_trace_failed = False
+        if day1_dist(pos, points[0]) <= start_radius:
+            store.j1_trace_active = True
+            store.j1_trace_target = 1
+            store.j1_trace_stray = 0
+        else:
+            store.j1_trace_active = False
+
+    def j1_trace_release():
+        if store.j1_trace_active and not store.j1_trace_success:
+            store.j1_trace_failed = True
+        store.j1_trace_active = False
+
+    def j1_trace_tick(points, tolerance=78, target_radius=82):
+        if not store.j1_trace_active or store.j1_trace_success or store.j1_trace_failed:
+            return
+        if pygame is not None and not pygame.mouse.get_pressed()[0]:
+            store.j1_trace_failed = True
+            store.j1_trace_active = False
+            return
+        pos = renpy.get_mouse_pos()
+        store.j1_trace_mouse_x, store.j1_trace_mouse_y = pos
+        target = store.j1_trace_target
+        if target >= len(points):
+            store.j1_trace_success = True
+            store.j1_trace_active = False
+            return
+        prev_point = points[target - 1]
+        next_point = points[target]
+        if day1_dist(pos, next_point) <= target_radius:
+            store.j1_trace_target += 1
+            store.j1_trace_stray = 0
+            if store.j1_trace_target >= len(points):
+                store.j1_trace_success = True
+                store.j1_trace_active = False
+            return
+        if day1_dist_to_segment(pos, prev_point, next_point) > tolerance:
+            store.j1_trace_stray += 1
+            if store.j1_trace_stray >= 9:
+                store.j1_trace_failed = True
+                store.j1_trace_active = False
+        else:
+            store.j1_trace_stray = max(0, store.j1_trace_stray - 1)
+
+transform day1_unsteady:
+    subpixel True
+    xoffset -4
+    yoffset 2
+    linear 0.08 xoffset 5 yoffset -2
+    linear 0.10 xoffset -2 yoffset 4
+    linear 0.08 xoffset 0 yoffset 0
+    repeat
+
+screen day1_wakeup_overlay(level="heavy"):
+    zorder 80
+    if level == "heavy":
+        add "gui/day1/wakeup_blur_overlay.png" xysize (1920, 1080) at day1_unsteady
+        add "gui/day1/wakeup_noise.png" xysize (1920, 1080) alpha 0.28
+        add "gui/day1/wakeup_dark_overlay.png" xysize (1920, 1080)
+        add "gui/day1/wakeup_vignette.png" xysize (1920, 1080)
+    elif level == "soft":
+        add "gui/day1/wakeup_noise.png" xysize (1920, 1080) alpha 0.14 at day1_unsteady
+        add "gui/day1/wakeup_vignette.png" xysize (1920, 1080) alpha 0.55
+
+screen day1_trace_qte(title, prompt, points, timeout=6.0):
+    modal True
+    zorder 100
+
+    on "show" action Function(j1_trace_reset)
+    key "mousedown_1" action Function(j1_trace_press, points)
+    key "mouseup_1" action [Function(j1_trace_release), If(j1_trace_success, Return(True), If(j1_trace_failed, Return(False), NullAction()))]
+
+    add "gui/day1/qte_trace_bg.png" xysize (1920, 1080)
+    add Solid("#02050b99")
+
+    fixed:
+        for idx, p in enumerate(points):
+            $ px = p[0]
+            $ py = p[1]
+            $ done = idx < j1_trace_target
+            if idx > 0:
+                $ prev = points[idx - 1]
+                $ cx = min(prev[0], px) + abs(px - prev[0]) / 2
+                $ cy = min(prev[1], py) + abs(py - prev[1]) / 2
+                $ line_w = max(80, int(day1_dist(prev, p)) + 60)
+                $ line_angle = math.degrees(math.atan2(py - prev[1], px - prev[0]))
+                add "gui/day1/qte_trace_line.png" xpos cx ypos cy xanchor 0.5 yanchor 0.5 xsize line_w ysize 16 rotate line_angle alpha (0.85 if idx <= j1_trace_target else 0.28)
+
+            if idx == 0:
+                add "gui/day1/qte_point_start.png" xpos (px - 48) ypos (py - 48) alpha (1.0 if done else 0.75)
+            elif idx == len(points) - 1:
+                add "gui/day1/qte_point_end.png" xpos (px - 50) ypos (py - 50) alpha (1.0 if idx <= j1_trace_target else 0.55)
+            else:
+                add "gui/day1/qte_point_mid.png" xpos (px - 43) ypos (py - 43) alpha (1.0 if idx <= j1_trace_target else 0.55)
+
+        if j1_trace_active:
+            add "gui/day1/qte_cursor_glow.png" xpos (j1_trace_mouse_x - 60) ypos (j1_trace_mouse_y - 60)
+
+        vbox:
+            xalign 0.5
+            ypos 82
+            spacing 12
+            text title xalign 0.5 size 34 color "#dff8ff"
+            text prompt xalign 0.5 size 23 color "#9ed8ff"
+            text "Maintiens le clic depuis le premier point et suis le trajet jusqu'au dernier." xalign 0.5 size 19 color "#7ca9ba"
+
+        frame:
+            xalign 0.5
+            yalign 0.92
+            padding (22, 12)
+            background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
+            if j1_trace_active:
+                text "TRAJET EN COURS" size 20 color "#dff8ff"
+            else:
+                text "MAINTENIR LE CLIC SUR LE PREMIER POINT" size 20 color "#dff8ff"
+
+    timer 0.03 repeat True action [Function(j1_trace_tick, points), If(j1_trace_success, Return(True), If(j1_trace_failed, Return(False), NullAction()))]
+    timer timeout action Return(False)
+
+screen day1_tablet_interaction():
+    modal True
+    zorder 100
+    add Solid("#02050bcc")
+    add "gui/day1/tablet_frame.png" xalign 0.5 yalign 0.5 xysize (860, 560)
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 720
+        ysize 460
+        padding (34, 30)
+        background None
+        vbox:
+            spacing 18
+            text "INTERFACE PUPITRE" size 30 color "#dff8ff"
+            null height 8
+            text "SESSION REPRESENTANT : EN ATTENTE" size 24 color "#8fdcff"
+            text "UTILISATEUR : NOAM" size 24 color "#8fdcff"
+            text "ACCES LIMITE" size 24 color "#ffcf76"
+            text "INTERACTION ENREGISTREE" size 24 color "#ff8f8f"
+            null height 22
+            textbutton "Retirer la main":
+                xalign 0.5
+                xsize 260
+                background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
+                hover_background Frame("gui/day1/tablet_warning.png", 24, 24)
+                text_color "#dff8ff"
+                text_hover_color "#ffffff"
+                action Return(True)
+
+screen day1_codex_unlock_panel(entry_title):
+    zorder 120
+    frame:
+        xalign 0.5
+        ypos 78
+        padding (26, 14)
+        background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
+        text "Nouvelle entrée Codex débloquée : [entry_title]" size 25 color "#dff8ff"
+
+screen day1_amendment_timer():
+    zorder 70
+    frame:
+        xpos 58
+        ypos 54
+        padding (18, 10)
+        background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
+        text "URNE OUVERTE - [j1_amendment_time_display]" size 24 color "#ffcf76"
+
+screen day1_amendment_form():
+    modal True
+    zorder 100
+    default selected = noam_amendement_choix if noam_amendement_choix else "information_locale"
+
+    add Solid("#03070ddd")
+    add "gui/day1/amendment_terminal_panel.png" xalign 0.5 yalign 0.5
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1120
+        ysize 710
+        padding (34, 28)
+        background None
+        vbox:
+            spacing 14
+            text "PROPOSITION D'AMENDEMENT" size 30 color "#dff8ff"
+            text "Representant : NOAM   |   Statut : BROUILLON" size 18 color "#82b5c8"
+
+            hbox:
+                spacing 18
+                for card in day1_amendment_cards:
+                    $ card_id = card["id"]
+                    $ card_title = card["title"]
+                    $ card_commandment = card["commandment"]
+                    $ card_intent = card["intent"]
+                    $ card_wording = card["short_wording"]
+                    $ card_risks = card["risks"]
+                    button:
+                        xsize 520
+                        ysize 420
+                        padding (26, 24)
+                        background Frame("gui/day1/amendment_card_selected.png" if selected == card_id else "gui/day1/amendment_card_idle.png", 36, 36)
+                        hover_background Frame("gui/day1/amendment_card_selected.png", 36, 36)
+                        action SetScreenVariable("selected", card_id)
+                        vbox:
+                            spacing 8
+                            text card_title size 25 color "#e8fbff"
+                            text "[card_commandment]" size 16 color "#8fb7c5"
+                            text "Intention" size 17 color "#ffcf76"
+                            text card_intent size 17 color "#d3edf5"
+                            text "Formulation" size 17 color "#ffcf76"
+                            text card_wording size 16 color "#c4dce5"
+                            text "Risque" size 17 color "#ffcf76"
+                            text card_risks size 16 color "#ff9a9a"
+
+            $ selected_card = day1_amendment_cards[0] if selected == "information_locale" else day1_amendment_cards[1]
+            frame:
+                xfill True
+                ysize 86
+                padding (18, 12)
+                background Frame("gui/day1/amendment_card_idle.png", 28, 28)
+                vbox:
+                    spacing 4
+                    text "Formulation officielle retenue" size 16 color "#ffcf76"
+                    text selected_card["wording"] size 15 color "#d7eef6"
+
+            hbox:
+                xalign 0.5
+                spacing 18
+                textbutton "Valider la proposition":
+                    xsize 360
+                    ysize 76
+                    background Frame("gui/day1/amendment_validate_button.png", 24, 24)
+                    hover_background Frame("gui/day1/amendment_card_selected.png", 24, 24)
+                    text_color "#dff8ff"
+                    text_hover_color "#ffffff"
+                    text_size 24
+                    action Return(selected)
+
+screen day1_urn_confirmation():
+    modal True
+    zorder 105
+    add Solid("#02050bcc")
+    add "gui/day1/urn_bg.png" xalign 0.5 yalign 0.5 xysize (900, 560)
+    add "gui/day1/amendment_folded.png" xalign 0.5 ypos 145
+    add "gui/day1/urn_confirmation_panel.png" xalign 0.5 yalign 0.58
+    frame:
+        xalign 0.5
+        yalign 0.58
+        xsize 650
+        padding (38, 30)
+        background None
+        vbox:
+            spacing 14
+            text "AMENDEMENT DEPOSE" xalign 0.5 size 32 color "#dff8ff"
+            text "RETRAIT IMPOSSIBLE" xalign 0.5 size 24 color "#ffcf76"
+            text "ENREGISTREMENT CONFIRME" xalign 0.5 size 24 color "#8fffc1"
+            null height 16
+            textbutton "Reculer de l'urne":
+                xalign 0.5
+                xsize 260
+                background Frame("gui/day1/amendment_validate_button.png", 24, 24)
+                hover_background Frame("gui/day1/urn_confirmation_panel.png", 24, 24)
+                text_color "#dff8ff"
+                text_hover_color "#ffffff"
+                action Return(True)
+
+screen day1_jammer_panel():
+    modal True
+    zorder 100
+    add Solid("#02050bcc")
+    if noam_room_jammer_on:
+        add "gui/day1/jammer_panel_on.png" xalign 0.5 yalign 0.5 xysize (880, 620)
+    else:
+        add "gui/day1/jammer_panel_off.png" xalign 0.5 yalign 0.5 xysize (880, 620)
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 760
+        ysize 520
+        padding (34, 30)
+        background None
+        vbox:
+            spacing 16
+            text "INTERFACE DE CHAMBRE" size 31 color "#dff8ff"
+            if noam_room_jammer_on:
+                text "BROUILLEUR : ACTIF" size 25 color "#8fffc1"
+                text "SURVEILLANCE AUDIO : COUPEE" size 23 color "#9ed8ff"
+                text "CAMERA : COUPEE" size 23 color "#9ed8ff"
+                text "MODE PRIVE : ACTIVE" size 23 color "#8fffc1"
+                textbutton "Desactiver le brouilleur":
+                    xsize 330
+                    background Frame("gui/day1/jammer_off.png", 24, 24)
+                    hover_background Frame("gui/day1/jammer_panel_off.png", 24, 24)
+                    text_color "#ffe1e1"
+                    action SetVariable("noam_room_jammer_on", False)
+            else:
+                text "BROUILLEUR : INACTIF" size 25 color "#ff8f8f"
+                text "SURVEILLANCE POTENTIELLE" size 23 color "#ffcf76"
+                text "MODE PRIVE : DESACTIVE" size 23 color "#ff8f8f"
+                textbutton "Activer le brouilleur":
+                    xsize 330
+                    background Frame("gui/day1/jammer_on.png", 24, 24)
+                    hover_background Frame("gui/day1/jammer_panel_on.png", 24, 24)
+                    text_color "#dcffe8"
+                    action SetVariable("noam_room_jammer_on", True)
+            null height 18
+            textbutton "Quitter l'interface":
+                xsize 260
+                background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
+                hover_background Frame("gui/day1/tablet_warning.png", 24, 24)
+                text_color "#dff8ff"
+                action Return(noam_room_jammer_on)
+
+label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True):
+
+    while True:
+        call screen trace_qte(path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y)
+        if _return:
+            return True
+        if not required:
+            return False
+
 label _1_CANON:
 
     $ day_id = 1
 
     scene black
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    show screen day1_wakeup_overlay("heavy")
 
     think "Jour un."
     think "Enfin, je crois."
@@ -38,8 +455,21 @@ label _1_CANON:
     "Je cligne des yeux."
     "Ma bouche est sèche."
     "Ma nuque me fait mal."
+    "Ma main droite ne répond pas tout de suite."
+
+    call day1_play_trace(path_type="curve_right", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True)
+    $ j1_noam_initiative += 1
+
+    hide screen day1_wakeup_overlay
+    show screen day1_wakeup_overlay("soft")
+
+    "La sensation revient par à-coups."
+    "D'abord les doigts."
+    "Puis le poignet."
+    "Enfin le bras."
 
     "Je me redresse."
+    hide screen day1_wakeup_overlay
     "Autour de moi, d’autres sièges."
     "Beaucoup."
     "En cercle."
@@ -65,6 +495,23 @@ label _1_CANON:
     "Sur mon pupitre, une tablette est encastrée."
     "Éteinte."
     "Noire."
+
+    menu:
+        "Que fait Noam avec la tablette ?"
+
+        "Poser la main sur l'écran":
+            $ j1_noam_curiosity += 1
+            $ j1_tablet_touched = True
+            "Je pose deux doigts sur la surface froide."
+            call screen day1_tablet_interaction()
+            play sound sfx_beep
+            "-Bip-"
+            think "Même éteinte, elle note que j'existe."
+
+        "Retirer la main du pupitre":
+            $ j1_noam_prudence += 1
+            "Je garde mes doigts contre le bord du siège."
+            think "Pas maintenant. Pas avant de comprendre à quoi elle sert."
 
     "Je tourne la tête."
     "Je cherche Lysa du regard."
@@ -233,8 +680,12 @@ label _1_CANON:
     tomas "Même sans image… elle reste là."
 
     "Je fixe la tablette noire sur mon pupitre."
-    "Je tapote du doigt."
-    "Rien."
+    if j1_tablet_touched:
+        "Je n'y touche pas une seconde fois."
+        "Le message ACCES LIMITE est encore trop frais dans ma tête."
+    else:
+        "Je tapote du doigt."
+        "Rien."
 
     think "C’est ça qui me dérange."
     think "D’habitude, Kami aime être… présente."
@@ -330,6 +781,22 @@ label _1_CANON:
     "Je sens mon cœur accélérer."
     "Pas de panique."
     "Juste la lucidité qui pique."
+
+    menu:
+        "Que fait Noam ?"
+
+        "Se lever pour observer la salle":
+            $ j1_noam_initiative += 1
+            "Je me lève à moitié."
+            "Pas assez pour provoquer quoi que ce soit."
+            "Juste assez pour voir les issues, les caméras, les pupitres."
+            think "Tout est prévu pour qu'on soit visibles."
+
+        "Rester assis et écouter":
+            $ j1_noam_prudence += 1
+            "Je reste assis."
+            "J'écoute les respirations, les voix, les bips de la salle."
+            think "Avant d'agir, il faut savoir dans quoi on met les pieds."
 
     think "Jour un."
     think "Et on est déjà en train d'essayer de deviner les règles."
@@ -674,6 +1141,19 @@ label _1_KAMI_APPARITION:
 
     "Je tourne la tête."
     "Sur les autres sièges, ça débat déjà comme si ça faisait une heure."
+
+    menu:
+        "Où Noam pose-t-il son regard ?"
+
+        "Suivre Lysa du regard":
+            $ j1_noam_prudence += 1
+            "Lysa regarde les caméras avant de regarder les gens."
+            think "Elle cherche les angles morts. S'il y en a."
+
+        "Regarder l'écran central":
+            $ j1_noam_curiosity += 1
+            "Je garde les yeux sur l'écran central."
+            think "Même éteint, il donne l'impression de pouvoir reprendre la parole à tout moment."
 
     hide tomas
     $ showP("nyra", "triste", 0.22)
@@ -1203,6 +1683,11 @@ label KAMI_MESSAGE_APRES_VISITE:
     kami "Pour certains, un refus de l'amendement pourra aussi avoir des conséquences."
     kami "Mais ça ça dépendra de vos douces propositions."
 
+    $ unlock_codex_page("reglement_conclave", with_notification=False)
+    show screen day1_codex_unlock_panel("Règlement du Conclave")
+    pause 2.0
+    hide screen day1_codex_unlock_panel
+
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Sur ce."
@@ -1229,6 +1714,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     scene bg_conclave at adaptive_fullscreen
     play music "music/bgm_system_override.mp3" fadein 1.0
+    $ j1_amendment_time_display = "31:00"
+    show screen day1_amendment_timer
 
     think "Trente-et-une minutes seulement."
     think "Pour faire des propositions qui peuvent réduire des villes en cendre."
@@ -1362,6 +1849,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     $ showP("elias", "reflechit", 0.78)
 
     elias "Au fait les gars..."
+    $ j1_amendment_time_display = "20:00"
     elias "Pendant qu’on tourne en rond, le chrono descend à vingt minutes."
 
     pause 0.4
@@ -1470,6 +1958,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     "L'urne est presque entièrement remplie."
     "Le temps passe."
     "Il faut que je m'y mette moi aussi."
+    $ j1_amendment_time_display = "04:00"
     jump _1_proposition_amendement
 
     return
@@ -1602,71 +2091,62 @@ label _1_proposition_amendement:
     think "Ok."
     think "Arrête de tourner autour du pot."
     think "Il faut choisir."
-    
-    tuto "Ah ça fait longtemps !"
-    tuto "Il est désormais temps de vous parler d'une autre fonctionnalité majeure."
-    tuto "Les choix !"
-    tuto "Parfois, souvent, vous aurez des choix à faire."
-    tuto "Ces choix sont majeurs et aboutiront à une histoire qui pourra être totalement différente."
-    tuto "Lors de ces occasions, plusieurs choix apparaitront à l'écran. A vous de faire le choix qui vous interesse davantage."
-    tuto "A noter qu'il n'y a pas de mauvaises réponses. Chaque choix vous fera découvrir une histoire différente."
-    tuto "Certains choix seront marqués du mot clé (optionnel). Si vous les choisissez, vous pourrez alors suivre une scène optionnelle."
-    tuto "Amusez-vous bien !"
 
-    menu:
-        "Quelle proposition Noam écrit-il ?"
+    call screen day1_amendment_form()
+    $ noam_amendement_choix = _return
+    $ j1_amendment_validated = True
 
-        "Limiter l’interdiction de transmission d’informations à la politique":
-            $ noam_amendement_choix = "information_locale"
+    if noam_amendement_choix == "information_locale":
+        $ j1_noam_mediation += 1
 
-            think "D’accord."
-            think "Il faut libérer la parole."
-            think "Mais pas n’importe comment."
+        think "D’accord."
+        think "Il faut libérer la parole."
+        think "Mais pas n’importe comment."
 
-            "J’écris une phrase."
-            "Puis je m’arrête."
-            "Je me relis."
+        "J’écris une phrase."
+        "Puis je m’arrête."
+        "Je me relis."
 
-            think "Je précise un mot qui me semble mal tourné, peu précis."
-            think "Il ne faut pas tout changer, mais permettre une plus grande liberté est important."
-            think "Ce qui touche aux districts et à la politique."
-            think "Ça peut rester verrouiller."
+        think "Je précise un mot qui me semble mal tourné, peu précis."
+        think "Il ne faut pas tout changer, mais permettre une plus grande liberté est important."
+        think "Ce qui touche aux districts et à la politique."
+        think "Ça peut rester verrouillé."
 
-            think "Mais le reste…"
-            think "Le quotidien."
-            think "Le local."
-            think "L’immédiat, ce qu'on voit, ce qu'on dit, ce qu'on ressent."
+        think "Mais le reste…"
+        think "Le quotidien."
+        think "Le local."
+        think "L’immédiat, ce qu'on voit, ce qu'on dit, ce qu'on ressent."
 
-            think "On devrait pouvoir le formuler comme on le souhaite."
-            think "Sans risquer sa vie du moins."
+        think "On devrait pouvoir le formuler comme on le souhaite."
+        think "Sans risquer sa vie du moins."
 
-            "Je reformule."
-            "Encore."
-            "J’enlève un mot."
-            "J’en ajoute un autre."
+        "Je reformule."
+        "Encore."
+        "J’enlève un mot."
+        "J’en ajoute un autre."
 
-        "Instaurer une obligation d’assistance quand une aide est possible":
-            $ noam_amendement_choix = "assistance_minimale"
+    if noam_amendement_choix == "assistance_minimale":
+        $ j1_noam_initiative += 1
 
-            think "Ok."
-            think "Je vais essayer de permettre l’entraide."
+        think "Ok."
+        think "Je vais essayer de permettre l’entraide."
 
-            "J’écris un premier jet."
-            "Ma main hésite."
+        "J’écris un premier jet."
+        "Ma main hésite."
 
-            think "Il faut que la formulation ne soit pas un truc impossible."
-            think "Juste…"
-            think "qu'on puisse faire quelque chose quand on le peut."
+        think "Il faut que la formulation ne soit pas un truc impossible."
+        think "Juste…"
+        think "qu'on puisse faire quelque chose quand on le peut."
 
-            think "Aider."
-            think "Prévenir."
-            think "Intervenir."
+        think "Aider."
+        think "Prévenir."
+        think "Intervenir."
 
-            think "Parce que laisser quelqu’un tomber…"
-            think "Ça aussi, c’est une décision."
-            think "Une mauvaise décision."
-            
-            "Je fais attention à chaque formulation."
+        think "Parce que laisser quelqu’un tomber…"
+        think "Ça aussi, c’est une décision."
+        think "Une mauvaise décision."
+
+        "Je fais attention à chaque formulation."
 
     pause 0.3
 
@@ -1709,8 +2189,14 @@ label _1_proposition_amendement:
     think "Et si j'avais fait le mauvais choix ?"
     think "Non. Arrête d'y penser."
 
-    "Je glisse la feuille dans la fente."
+    call day1_play_trace(path_type="vertical_up", time_limit=6.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True)
+
+    play sound sfx_paper
+    "Je pousse la feuille dans la fente."
+    play sound sfx_drop
     "Elle tombe au fond."
+    $ j1_amendment_deposited = True
+    call screen day1_urn_confirmation()
     "Je ne peux plus la récupérer."
     "Trop tard pour les regrets."
 
@@ -1733,6 +2219,8 @@ label _1_proposition_amendement:
 label _1_AMENDEMENT_DEPOSE:
 
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+    $ j1_amendment_time_display = "DEPOT CLOS"
+    hide screen day1_amendment_timer
 
     "Un léger grésillement."
     "Les écrans muraux s’allument presque en même temps."
@@ -2039,12 +2527,23 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     mara "C’est débile mais ça fait du bien."
     mara "Un tout petit peu."
 
-    "Je prends la tasse."
-    "Elle me brûle presque les doigts."
-    "Mais je la garde quand même."
+    menu:
+        "Que fait Noam ?"
 
-    think "C’est idiot."
-    think "Mais ça m’ancre."
+        "Prendre une tasse":
+            $ j1_noam_initiative += 1
+            "Je prends la tasse."
+            "Elle me brûle presque les doigts."
+            "Mais je la garde quand même."
+
+            think "C’est idiot."
+            think "Mais ça m’ancre."
+
+        "Laisser la tasse aux autres":
+            $ j1_noam_prudence += 1
+            "Je laisse la tasse sur le plateau."
+            "Mes mains restent autour du vide."
+            think "Ce soir, même un geste simple ressemble à une décision."
 
     tomas "Demain…"
     tomas "À neuf heures on saura ..."
@@ -2218,6 +2717,34 @@ label _1_FIN_JOURNEE_DORTOIR:
     
     "Il y a du matériel informatique également."
     "Je me demande à quoi on a accès."
+
+    "Un petit boîtier est fixé près du bureau."
+    "Une diode verte pulse lentement."
+    "Sous la diode, un libellé minuscule : BROUILLEUR."
+
+    menu:
+        "Que fait Noam avec le brouilleur ?"
+
+        "Ouvrir l'interface du brouilleur":
+            $ j1_noam_curiosity += 1
+            call day1_play_trace(path_type="arc", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=560, required=False)
+            if _return:
+                call screen day1_jammer_panel()
+                if noam_room_jammer_on:
+                    "La diode reste verte."
+                    "La chambre indique son mode privé comme une permission accordée."
+                else:
+                    "La diode passe au rouge."
+                    "La chambre paraît soudain plus grande, et beaucoup moins à moi."
+            else:
+                $ j1_noam_prudence += 1
+                "Le capteur refuse mon geste."
+                "Je retire la main avant d'insister."
+
+        "Laisser le brouilleur tranquille":
+            $ j1_noam_prudence += 1
+            "Je garde la diode verte dans un coin de mon regard."
+            think "S'il est actif par défaut, je vais le laisser actif."
     
     "Sur le côté de la chambre, il y a aussi un accès à un toilette privatif ainsi qu'une salle de bain."
     "Franchement, une douche bien chaude ça me tente bien."
@@ -2267,6 +2794,8 @@ label _1_FIN_JOURNEE_DORTOIR:
     "Je ne vais pas tarder à dormir."
     
     $ blink()
+
+    $ journal_entries.append({"title": "Jour 1 — chambre", "text": "Je me suis reveille dans un siege, avec une main qui ne voulait pas bouger et une salle entiere deja en train de nous regarder. Aujourd'hui, j'ai touche une tablette verrouillee, ecoute Kami transformer un reglement en cage propre, valide une phrase sur un formulaire officiel, puis je l'ai poussee dans une urne qui ne rend rien. Meme ma chambre depend d'un interrupteur. Le brouilleur decide si je suis seul ou seulement moins visible. Ici, je suis libre dans les limites prevues par Kami."})
 
     scene black with fade
     stop music fadeout 2.0

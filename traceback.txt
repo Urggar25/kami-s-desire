@@ -1,22 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/9_0_1.rpy", line 1113, in script
-    jump _9_0_1_CONCLAVE_DEBAT
-ScriptError: could not find label '_9_0_1_CONCLAVE_DEBAT'.
+  File "game/scenario/5_0.rpy", line 812, in script call
+    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1")
+  File "game/scenario/free_time.rpy", line 40, in script call
+    call DORTOIR_TP
+  File "game/scenario/free_time.rpy", line 40, in script call
+    call DORTOIR_TP
+  File "game/scenario/free_time.rpy", line 40, in script call
+    call DORTOIR_TP
+  File "game/scenario/5_0.rpy", line 1600, in script
+    jump _6_0_0_REVEIL_CHAMBRE
+ScriptError: could not find label '_6_0_0_REVEIL_CHAMBRE'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/9_0_1.rpy", line 1113, in script
-    jump _9_0_1_CONCLAVE_DEBAT
+  File "game/scenario/5_0.rpy", line 812, in script call
+    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1")
+  File "game/scenario/free_time.rpy", line 40, in script call
+    call DORTOIR_TP
+  File "game/scenario/free_time.rpy", line 40, in script call
+    call DORTOIR_TP
+  File "game/scenario/free_time.rpy", line 40, in script call
+    call DORTOIR_TP
+  File "game/scenario/5_0.rpy", line 1600, in script
+    jump _6_0_0_REVEIL_CHAMBRE
   File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
     rv = renpy.game.script.lookup(target)
   File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '_9_0_1_CONCLAVE_DEBAT'.
+ScriptError: could not find label '_6_0_0_REVEIL_CHAMBRE'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0
-Mon May 11 17:40:49 2026
+Sat May 23 03:18:34 2026

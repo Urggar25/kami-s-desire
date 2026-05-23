@@ -20,6 +20,9 @@ label ARCHIVE_TP:
     $ pnc_room = "pnc_archive"
     call screen pnc_archive()
 
+    if free_time_active:
+        return
+
 # -----------------------------------------------------------------------
 # Label d'exploration
 # -----------------------------------------------------------------------
@@ -31,9 +34,6 @@ screen pnc_archive():
 
     add Solid("#000")
     add "images/background/bg_archive.png" at cover_screen
-
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
 
     imagebutton:
         idle "images/background/interact/salle_archive/biblio.png"

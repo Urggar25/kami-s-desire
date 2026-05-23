@@ -17,6 +17,12 @@
 # ------------------------------------------------------------
 init -2 python:
     config.layers = [ "bgcam", "master", "transient", "screens", "overlay" ]
+    CINEMA_ZOOM_BG = 1.60
+    CINEMA_CAM_Y = 0.45
+    CINEMA_SPRITE_ZOOM = 1.60
+    CINEMA_SPRITE_YPUSH = -80
+    CINEMA_FRAME_LEFT = 0.38
+    CINEMA_FRAME_RIGHT = 0.62
 
 define config.say_attribute_transition = None
 define config.say_attribute_transition_layer = "master"
@@ -33,6 +39,7 @@ default char_state = {}       # tag -> dict(expr,x,y,layer,zorder)
 
 default current_bg_name = None
 default bg_is_blurred = False
+default current_day = 0
 
 default _last_autofocus_tag = None
 
@@ -72,6 +79,14 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.35):
 
 
 init python:
+    def day_number(value=None):
+        if value is None:
+            value = getattr(store, "current_day", 0)
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return 0
+
     def cam_apply(x1, y1, z1, t=0.35, layers=("bgcam", "master")):
         x0 = store.cam_x_cur
         y0 = store.cam_y_cur
@@ -545,6 +560,10 @@ label patreon_ending:
 label start:
     call _init_cinema_params from _call__init_cinema_params
     call screen pegi18_choice
+    if roadmap_target_label:
+        $ _target = roadmap_target_label
+        $ roadmap_target_label = None
+        jump expression _target
     if story_map_target_label:
         $ _target = story_map_target_label
         $ story_map_target_label = None

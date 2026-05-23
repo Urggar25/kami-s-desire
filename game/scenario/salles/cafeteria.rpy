@@ -18,6 +18,9 @@ label CAFETERIA_TP:
     $ pnc_room = "pnc_cafeteria"
     call screen pnc_cafeteria()
 
+    if free_time_active:
+        return
+
 
 # -----------------------------------------------------------------------
 # Label d'exploration
@@ -35,9 +38,6 @@ screen pnc_cafeteria():
     add "images/background/bg_cafeteria.png" at cover_screen
 
     # Option : quitter au clic droit / ESC (retour au label appelant)
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
-
     # HOTSPOTS — doivent subir EXACTEMENT le même transform
     imagebutton:
         idle "images/background/interact/cafeteria/goumi.png"
@@ -65,6 +65,15 @@ screen pnc_cafeteria():
         ypos 0
         at cover_screen
         action Jump("CAF_PNC_TABLES")
+
+    imagebutton:
+        idle "images/background/interact/cafeteria/ecran.png"
+        hover "images/background/interact/cafeteria/ecran_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Jump("CAF_PNC_ECRAN_INFOS")
 
     if free_time_active and mara_link in [0, 2, 4]:
         imagebutton:
@@ -127,6 +136,16 @@ label CAF_PNC_FRIGO:
     "Et une liste de catégories et d'aliments qui défile."
 
     think "Au moins ça n'a pas l'air d'être très compliqué."
+    jump CAFETERIA_TP
+
+
+label CAF_PNC_ECRAN_INFOS:
+
+    if day_number() == 4:
+        call screen day4_news_screen()
+        jump CAFETERIA_TP
+
+    think "Les informations defilent sans rien m'apprendre de neuf."
     jump CAFETERIA_TP
 
 

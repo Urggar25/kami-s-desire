@@ -7,6 +7,7 @@ label CONCLAVE_TP:
     if free_time_active and (elen_link == 0 or nyra_link in [0, 1, 2, 3, 4]):
         $ pnc_room = "pnc_conclave"
         call screen pnc_conclave()
+        return
 
     if conclave_lock:
         jump MAP_NOTHING_HERE
@@ -21,9 +22,6 @@ screen pnc_conclave():
 
     add Solid("#000")
     add "images/background/bg_conclave.png" at cover_screen
-
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
 
     if free_time_active and nyra_link in [0, 1, 2, 3, 4]:
         imagebutton:

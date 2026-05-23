@@ -18,6 +18,9 @@ label LIVRAISON_TP:
     $ pnc_room = "pnc_livraison"
     call screen pnc_livraison()
 
+    if free_time_active:
+        return
+
 
 # -----------------------------------------------------------------------
 # Label d'exploration
@@ -31,9 +34,6 @@ screen pnc_livraison():
     add Solid("#000")
 
     add "images/background/bg_sas.png" at cover_screen
-
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
 
     imagebutton:
         idle "images/background/interact/livraison/porte.png"

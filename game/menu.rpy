@@ -125,96 +125,207 @@ init python:
             renpy.save_persistent()
 
 
-screen main_menu():
+# ============================================================
+# MAIN MENU — KAMI HUD
+# ============================================================
+# Direction artistique : interface Kami, vue orbitale, ton sacré-froid.
+# Tous les assets dédiés vivent dans gui/main_menu_kami/.
 
-    # menu Ren'Py
+# --- Transforms d'ambiance ----------------------------------------------------
+transform kami_pulse:
+    alpha 0.18
+    linear 2.4 alpha 0.32
+    linear 2.4 alpha 0.18
+    repeat
+
+transform kami_drift:
+    # Léger panoramique vertical sans révéler les bords (zoom 1.06).
+    zoom 1.06
+    xanchor 0.5 yanchor 0.5
+    xpos 960 ypos 540
+    yoffset 0
+    linear 18.0 yoffset -22
+    linear 18.0 yoffset 0
+    repeat
+
+transform kami_menu_in:
+    alpha 0.0
+    yoffset 12
+    easein 0.6 alpha 1.0 yoffset 0
+
+transform kami_glyph_spin:
+    alpha 0.30
+    zoom 0.9
+    rotate 0
+    linear 80.0 rotate 360
+    repeat
+
+transform kami_scan:
+    alpha 0.25
+    yoffset -1080
+    linear 7.0 yoffset 1080
+    repeat
+
+transform kami_overlay_dim:
+    alpha 0.35
+
+transform kami_vignette_dim:
+    alpha 0.8
+
+# --- Styles dédiés ------------------------------------------------------------
+style kami_button is button:
+    background Frame("gui/main_menu_kami/button_idle.png", 14, 14)
+    hover_background Frame("gui/main_menu_kami/button_hover.png", 14, 14)
+    xsize 460
+    ysize 72
+    xalign 0.5
+    padding (38, 12, 18, 12)
+
+style kami_button_text is button_text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 28
+    color "#8ab8d0"
+    hover_color "#dff2ff"
+    insensitive_color "#3a5a72"
+    xalign 0.0
+    yalign 0.5
+
+style kami_small_button is button:
+    background None
+    padding (10, 6, 10, 6)
+    hover_background Solid("#5cd3ff22")
+
+style kami_small_button_text is button_text:
+    font "fonts/Barlow-Light.ttf"
+    size 20
+    color "#6fa5be"
+    hover_color "#dff2ff"
+
+style kami_title_text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 88
+    color "#dff2ff"
+    outlines [(2, "#0a1626", 0, 0)]
+    kerning 6.0
+
+style kami_subtitle_text:
+    font "fonts/Barlow-Light.ttf"
+    size 22
+    color "#5cd3ff"
+    kerning 8.0
+
+style kami_meta_text:
+    font "fonts/Barlow-Light.ttf"
+    size 18
+    color "#3a7a90"
+    kerning 2.0
+
+
+screen main_menu():
     tag menu
     zorder 200
     modal True
 
-    on "show" action Play("music", audio.main_menu, fadein=1.0)
-    on "hide" action Stop("music", fadeout=1.0)
+    on "show" action Play("music", "audio/music/main_menu.mp3", fadein=1.5)
+    on "hide" action Stop("music", fadeout=1.2)
 
-    add Solid("#000")
+    # --- Couches de fond -----------------------------------------------------
+    add Solid("#04080f")
+    add "gui/main_menu_kami/bg_orbit.png" at kami_drift
 
-    # Fond menu
-    add "images/background/bg_menu.png" at cover_screen
+    # Œil de Kami (présence omnisciente, très tamisé)
+    add "gui/main_menu_kami/kami_eye.png":
+        xalign 0.5
+        yalign 0.5
+        at kami_pulse
 
-    # NEW GAME
-    imagebutton:
-        idle "images/background/interact/menu/new_game.png"
-        hover "images/background/interact/menu/new_game_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Start()
+    # Glyphe Kami décoratif (rotation lente, présence subtile)
+    add "gui/main_menu_kami/glyph_kami.png":
+        at kami_glyph_spin
+        xpos 1700
+        ypos 880
+        xanchor 0.5
+        yanchor 0.5
 
-    # LOAD GAME
-    imagebutton:
-        idle "images/background/interact/menu/load_game.png"
-        hover "images/background/interact/menu/load_game_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action ShowMenu("load")
+    # Scanline subtile qui descend
+    add "gui/main_menu_kami/scanlines.png" at kami_overlay_dim
+    add "gui/main_menu_kami/scanlines.png" at kami_scan
 
-    # OPTIONS
-    imagebutton:
-        idle "images/background/interact/menu/option.png"
-        hover "images/background/interact/menu/option_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action ShowMenu("preferences")
+    # Vignette
+    add "gui/main_menu_kami/vignette.png" at kami_vignette_dim
 
-    # GALLERY
-    imagebutton:
-        idle "images/background/interact/menu/gallery.png"
-        hover "images/background/interact/menu/gallery_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action ShowMenu("gallery_menu")
+    # --- HUD coins -----------------------------------------------------------
+    add "gui/main_menu_kami/corner.png" xpos 30 ypos 30
+    add Transform("gui/main_menu_kami/corner.png", xzoom=-1) xpos 1770 ypos 30
+    add Transform("gui/main_menu_kami/corner.png", yzoom=-1) xpos 30 ypos 950
+    add Transform("gui/main_menu_kami/corner.png", xzoom=-1, yzoom=-1) xpos 1770 ypos 950
 
-    # STORY MAP
-    imagebutton:
-        idle "images/background/interact/menu/story_map.png"
-        hover "images/background/interact/menu/story_map_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action ShowMenu("story_map_menu")
+    # Bandeau supérieur — identifiants Conclave
+    text "KAMI.CORE // CONCLAVE ORBITAL — LINK STABLE":
+        style "kami_meta_text"
+        xpos 80
+        ypos 50
+    text "[config.version]":
+        style "kami_meta_text"
+        xpos 1730
+        ypos 50
+        xanchor 1.0
 
-    # CODEX
-    textbutton "Codex":
-        xalign 0.97
-        yalign 0.05
-        action ShowMenu("codex_menu")
+    # --- Titre ---------------------------------------------------------------
+    vbox:
+        xalign 0.5
+        ypos 80
+        spacing 6
+        at kami_menu_in
 
-    # PATREON
-    imagebutton:
-        idle "images/background/interact/menu/patreon.png"
-        hover "images/background/interact/menu/patreon_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Function(renpy.open_url, "https://www.patreon.com/c/Kamidesires")
+        text "KAMI'S DESIRES" style "kami_title_text" xalign 0.5
+        text "— LE CONCLAVE T'ÉCOUTE —" style "kami_subtitle_text" xalign 0.5
 
-    # QUIT
-    imagebutton:
-        idle "images/background/interact/menu/quit.png"
-        hover "images/background/interact/menu/quit_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Quit(confirm=True)
+    # --- Panneau central des actions principales ------------------------------
+    frame:
+        xalign 0.5
+        ypos 280
+        xsize 520
+        ysize 740
+        background Frame("gui/main_menu_kami/panel.png", 32, 32)
+        padding (30, 50, 30, 50)
+        at kami_menu_in
+
+        vbox:
+            spacing 14
+            xalign 0.5
+            yalign 0.5
+
+            if main_menu:
+                textbutton _("Nouvelle partie") style "kami_button" action Start()
+            else:
+                textbutton _("Reprendre") style "kami_button" action Return()
+
+            textbutton _("Charger")     style "kami_button" action ShowMenu("load")
+            textbutton _("Roadmap")     style "kami_button" action ShowMenu("roadmap_menu")
+            textbutton _("Galerie")     style "kami_button" action ShowMenu("gallery_menu")
+            textbutton _("Codex")       style "kami_button" action ShowMenu("codex_menu")
+            textbutton _("Options")     style "kami_button" action ShowMenu("preferences")
+
+            add "gui/main_menu_kami/divider.png" xalign 0.5 ypos 4
+
+            hbox:
+                xalign 0.5
+                spacing 18
+
+                textbutton _("PATREON") style "kami_small_button":
+                    action Function(renpy.open_url, "https://www.patreon.com/c/Kamidesires")
+                textbutton _("CRÉDITS") style "kami_small_button" action ShowMenu("about")
+                textbutton _("QUITTER") style "kami_small_button" action Quit(confirm=True)
+
+    # --- Bas de l'écran : signature institutionnelle --------------------------
+    text "© CONCLAVE.ORBITAL — COMMANDEMENTS ENREGISTRÉS":
+        style "kami_meta_text"
+        xalign 0.5
+        ypos 1040
+
+    # Raccourci clavier rapide
+    key "K_ESCAPE" action NullAction()
 
 
 # ------------------------------------------------------------
@@ -244,8 +355,8 @@ screen gallery_menu():
 
     add Solid("#000")
 
-    key "game_menu" action [SetScreenVariable("selected_base", None), Return()]
-    key "K_ESCAPE" action [SetScreenVariable("selected_base", None), Return()]
+    key "game_menu" action NullAction()
+    key "K_ESCAPE" action NullAction()
 
     if selected_base:
         $ variants = gallery_variants(selected_base, gallery_section)

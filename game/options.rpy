@@ -165,6 +165,7 @@ define config.window_icon = "gui/window_icon.png"
 init python:
     config.keymap["rollback"] = []
     config.keymap["rollforward"] = []
+    config.keymap["game_menu"] = ["K_ESCAPE", "mouseup_3"]
 
 
 ## Configuration de la compilation #############################################

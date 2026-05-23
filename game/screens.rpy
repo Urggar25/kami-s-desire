@@ -199,6 +199,8 @@ style choice_button_text is default:
 ## Menu rapide
 ################################################################################
 
+default quick_menu = True
+
 screen quick_menu():
     zorder 100
 
@@ -226,8 +228,6 @@ screen quick_menu():
 
 init python:
     config.overlay_screens.append("quick_menu")
-
-default quick_menu = True
 
 style quick_button is default
 style quick_button_text is button_text
@@ -268,10 +268,12 @@ screen navigation():
         textbutton _("Préférences")   action ShowMenu("preferences")
 
         if main_menu:
+            textbutton _("Roadmap")     action ShowMenu("roadmap_menu")
             textbutton _("Codex")       action ShowMenu("codex_menu")
             textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
         else:
             textbutton _("Profils")     action ShowMenu("profiles_menu")
+            textbutton _("Roadmap")     action ShowMenu("roadmap_menu")
             textbutton _("Codex")       action ShowMenu("codex_menu")
             textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
 
@@ -422,12 +424,20 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     textbutton _("Retour"):
         style "return_button"
-        action Return()
+        action Jump("kd_close_game_menu")
 
     label title
 
     if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
+        key "game_menu" action NullAction()
+
+
+label kd_close_game_menu:
+    $ main_menu = False
+    $ renpy.context()._main_menu = False
+    $ renpy.play(config.exit_sound)
+    $ renpy.transition(config.exit_transition)
+    return
 
 
 style game_menu_outer_frame is empty
@@ -1053,7 +1063,7 @@ screen confirm(message, yes_action, no_action):
                 textbutton _("Oui") action yes_action
                 textbutton _("Non") action no_action
 
-    key "game_menu" action no_action
+    key "game_menu" action NullAction()
 
 
 style confirm_frame is gui_frame

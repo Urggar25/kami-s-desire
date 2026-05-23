@@ -162,7 +162,7 @@ screen exploration_retour_button():
         xpos 0
         ypos 0
         at cover_screen
-        action Jump("OPEN_CONCLAVE_MAP")
+        action If(free_time_active, Jump("START_FREE_TIME_MAP"), Jump("OPEN_CONCLAVE_MAP"))
 
 screen conclave_map(allow_return=False):
 
@@ -176,10 +176,6 @@ screen conclave_map(allow_return=False):
     add "images/carte/bg_map.png" at cover_screen
 
     use exploration_meta_buttons
-
-    if allow_return:
-        key "K_ESCAPE" action Return()
-        key "mouseup_3" action NullAction()
 
     frame:
         xalign 0.03
@@ -233,7 +229,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "archive")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("ARCHIVE_TP")
+        action If(free_time_active, Return("archive"), Jump("ARCHIVE_TP"))
 
     imagebutton:
         idle "images/carte/cafeteria.png"
@@ -244,7 +240,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "cafeteria")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("CAFETERIA_TP")
+        action If(free_time_active, Return("cafeteria"), Jump("CAFETERIA_TP"))
 
     imagebutton:
         idle "images/carte/canon.png"
@@ -255,7 +251,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "canon")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("CANON_TP")
+        action If(free_time_active, Return("canon"), Jump("CANON_TP"))
 
     imagebutton:
         idle "images/carte/conclave.png"
@@ -266,7 +262,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "conclave")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("CONCLAVE_TP")
+        action If(free_time_active, Return("conclave"), Jump("CONCLAVE_TP"))
 
     imagebutton:
         idle "images/carte/dortoir.png"
@@ -277,7 +273,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "dortoir")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("DORTOIR_TP")
+        action If(free_time_active, Return("dortoir"), Jump("DORTOIR_TP"))
 
     imagebutton:
         idle "images/carte/gymnase.png"
@@ -288,7 +284,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "gymnase")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("GYMNASE_TP")
+        action If(free_time_active, Return("gymnase"), Jump("GYMNASE_TP"))
 
     imagebutton:
         idle "images/carte/infirmerie.png"
@@ -299,7 +295,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "infirmerie")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("INFIRMERIE_TP")
+        action If(free_time_active, Return("infirmerie"), Jump("INFIRMERIE_TP"))
 
     imagebutton:
         idle "images/carte/livraison.png"
@@ -310,7 +306,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "livraison")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("LIVRAISON_TP")
+        action If(free_time_active, Return("livraison"), Jump("LIVRAISON_TP"))
 
     imagebutton:
         idle "images/carte/maintenance.png"
@@ -321,7 +317,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "maintenance")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("MAINTENANCE_TP")
+        action If(free_time_active, Return("maintenance"), Jump("MAINTENANCE_TP"))
 
     imagebutton:
         idle "images/carte/observation.png"
@@ -332,7 +328,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "observation")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("OBSERVATION_TP")
+        action If(free_time_active, Return("observation"), Jump("OBSERVATION_TP"))
 
     imagebutton:
         idle "images/carte/repos.png"
@@ -343,7 +339,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "repos")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("REPOS_TP")
+        action If(free_time_active, Return("repos"), Jump("REPOS_TP"))
 
     imagebutton:
         idle "images/carte/stockage.png"
@@ -354,7 +350,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "stockage")
         unhovered SetVariable("map_ui_room_key", None)
-        action Jump("STOCKAGE_TP")
+        action If(free_time_active, Return("stockage"), Jump("STOCKAGE_TP"))
 
     frame at map_room_title_pop:
         xalign 0.985

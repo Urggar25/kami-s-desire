@@ -18,6 +18,9 @@ label OBSERVATION_TP:
     $ pnc_room = "pnc_observation"
     call screen pnc_observation()
 
+    if free_time_active:
+        return
+
 
 # -----------------------------------------------------------------------
 # Label d'exploration
@@ -35,9 +38,6 @@ screen pnc_observation():
     add "images/background/bg_observation.png" at cover_screen
 
     # Option : quitter au clic droit / ESC (retour au label appelant)
-    key "game_menu" action Return()
-    key "K_ESCAPE" action Return()
-
     # HOTSPOTS — doivent subir EXACTEMENT le même transform
     imagebutton:
         idle "images/background/interact/salle_observation/radio.png"

@@ -332,6 +332,10 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     kami "Si vous votez pour, les personnes pourront voyager d'un district à l'autre."
     kami "Si vous votez contre, on garde la même chose qu'aujourd'hui."
 
+    $ j2_vote_codex_unlocked = True
+    $ j45_vote_codex_active = True
+    show screen day3_codex_logo
+
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Et promis, vous ne serez pas surpris cette fois-ci."
     kami "L'énoncé est parfaitement clair."

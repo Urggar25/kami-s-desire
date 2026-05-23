@@ -107,17 +107,18 @@ screen debat_phase2_line(dialogue_data):
     zorder 120
 
     add "kami_debat_background" at adaptive_fullscreen
-
-    frame:
-        background Solid("#05091765")
-        xfill True
-        yfill True
+    add "gui/day3/vote_phase2/bg_overlay.png"
 
     add "[dialogue_data['speaker_tag']] [dialogue_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+
+    add "gui/day3/vote_phase2/dialogue_panel.png":
+        xalign 0.73
+        yalign 0.45
 
     vbox:
         xalign 0.73
         yalign 0.45
+        xmaximum 760
         spacing 6
         at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
 
@@ -127,29 +128,29 @@ screen debat_phase2_line(dialogue_data):
                 style "debat_phase2_line_text"
                 xoffset local_xoffset
 
+    add "gui/day3/vote_phase2/speaker_plate.png":
+        xalign 0.58
+        yalign 0.22
+        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+
     text "[dialogue_data['speaker']]":
         style "debat_phase2_speaker_text"
         xalign 0.58
         yalign 0.22
         at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
 
-    frame:
-        background Solid("#8d1212dd")
+    imagebutton:
+        idle "gui/day3/vote_phase2/buzzer_idle.png"
+        hover "gui/day3/vote_phase2/buzzer_hover.png"
         xalign 0.5
         yalign 0.92
-        xsize 390
-        ysize 96
-
-        textbutton "BUZZER" style "debat_phase2_buzzer_button":
-            xalign 0.5
-            yalign 0.5
-            at debat_phase2_buzzer_pulse
-            action Return({
-                "buzzed": True,
-                "id": dialogue_data["id"],
-                "speaker": dialogue_data["speaker"],
-                "counter_label": dialogue_data["counter_label"],
-            })
+        at debat_phase2_buzzer_pulse
+        action Return({
+            "buzzed": True,
+            "id": dialogue_data["id"],
+            "speaker": dialogue_data["speaker"],
+            "counter_label": dialogue_data["counter_label"],
+        })
 
     timer DEBAT_PHASE2_LINE_DURATION action Return({"buzzed": False, "id": dialogue_data["id"]})
 
@@ -158,17 +159,18 @@ screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
     zorder 120
 
     add "kami_debat_background" at adaptive_fullscreen
-
-    frame:
-        background Solid("#05091765")
-        xfill True
-        yfill True
+    add "gui/day3/vote_phase2/bg_overlay.png"
 
     add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+
+    add "gui/day3/vote_phase2/rebuttal_panel.png":
+        xalign 0.73
+        yalign 0.45
 
     vbox:
         xalign 0.73
         yalign 0.45
+        xmaximum 800
         spacing 6
         at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
 
@@ -177,6 +179,11 @@ screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
             text "[line_text]":
                 style "debat_phase2_line_text"
                 xoffset local_xoffset
+
+    add "gui/day3/vote_phase2/speaker_plate.png":
+        xalign 0.58
+        yalign 0.22
+        at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
 
     text "[entry_data['speaker']]":
         style "debat_phase2_speaker_text"
@@ -191,6 +198,7 @@ screen debat_phase2_objection_flash():
     zorder 240
 
     add "images/background/debat/noam_objection.png" at adaptive_fullscreen, debat_phase2_objection_shock
+    add "gui/day3/vote_phase2/objection_flash_overlay.png" at debat_phase2_objection_shock
     on "show" action Play("sound", "audio/sfx_announce.mp3")
     timer 1.9 action Return(True)
 

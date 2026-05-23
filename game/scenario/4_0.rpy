@@ -1,3 +1,651 @@
+default j4_photo_pick_trace_attempts = 0
+default j4_photo_put_trace_attempts = 0
+default j4_tray_eaten = []
+default j4_thread_score = 0
+default j4_thread_tension = 36
+default j4_thread_wave = 1
+default j4_thread_current_bubble = None
+default j4_thread_selected_bubble = None
+default j4_thread_silences_left = 2
+default j4_thread_cut_used = 0
+default j4_thread_timer = 0.0
+default j4_thread_feedback = ""
+default j4_thread_done = False
+default j4_thread_result = "medium"
+default j4_thread_active_bubbles = []
+default j4_thread_answered_ids = []
+default j4_thread_freeze_timer = 0.0
+default j4_thread_last_link = None
+default j4_thread_last_effect = ""
+default j4_thread_round = 0
+default j4_thread_successes = 0
+default j4_argument_frontieres_cadre = False
+
+init python:
+    J4_THREAD_POLES = [
+        {"id": "liberte", "label": "LIBERTE", "subtitle": "respirer / sortir / ne plus etre tenu", "xalign": 0.08, "yalign": 0.18, "color": "#9be7ff"},
+        {"id": "securite", "label": "SECURITE", "subtitle": "risque / attaque / digue / protection", "xalign": 0.92, "yalign": 0.18, "color": "#ffd071"},
+        {"id": "memoire", "label": "MEMOIRE", "subtitle": "morts / villages / sang / traumatisme", "xalign": 0.08, "yalign": 0.76, "color": "#d2b2ff"},
+        {"id": "cadre", "label": "CADRE", "subtitle": "regles / rythme / controle / passage", "xalign": 0.92, "yalign": 0.76, "color": "#aef2bf"},
+    ]
+
+    J4_THREAD_BUBBLES = [
+        {"id": "cage", "wave": 1, "keyword": "CAGE", "line": "Moi, j'en ai juste marre de vivre dans une cage.", "pole": "liberte", "danger": "normal", "xalign": 0.50, "yalign": 0.31, "success": "Ryn ne parle pas seulement de bouger. Il parle de respirer sans autorisation."},
+        {"id": "gardiens", "wave": 1, "keyword": "GARDIENS", "line": "Des Gardiens sont morts pour tenir ces lignes.", "pole": "memoire", "danger": "urgent", "xalign": 0.36, "yalign": 0.40, "success": "Pour Sael, ouvrir les frontieres, ce n'est pas juste changer une regle. C'est toucher a des morts."},
+        {"id": "frontieres", "wave": 1, "keyword": "FRONTIERES", "line": "Les frontieres, ce n'est pas une ligne sur une carte.", "pole": "securite", "danger": "normal", "xalign": 0.62, "yalign": 0.41, "success": "Elle parle d'un danger concret. Pas d'un symbole."},
+        {"id": "trop_vite", "wave": 2, "keyword": "TROP VITE", "line": "On n'a meme pas survecu a une histoire de rationnement.", "pole": "cadre", "danger": "urgent", "xalign": 0.47, "yalign": 0.28, "success": "Lysa ne refuse pas forcement le changement. Elle dit qu'on n'a aucun rythme, aucun cadre."},
+        {"id": "pauvres", "wave": 2, "keyword": "PAUVRES", "line": "Ce ne sera pas les plus solides qui se feront ecraser.", "pole": "liberte", "danger": "normal", "xalign": 0.35, "yalign": 0.48, "success": "Iris parle de ceux qui subiront la liberte des autres avant d'en profiter."},
+        {"id": "controle", "wave": 2, "keyword": "CONTROLE", "line": "On nous balance un bouton, et debrouillez-vous.", "pole": "cadre", "danger": "normal", "xalign": 0.64, "yalign": 0.47, "success": "Nyra pointe le vrai vide : pas de regles, pas de passage, pas de protection."},
+        {"id": "peur", "wave": 3, "keyword": "PEUR", "line": "Vous me faites tous peur.", "pole": "memoire", "danger": "urgent", "xalign": 0.40, "yalign": 0.31, "success": "Sael ne parle plus seulement du vote. Elle parle de ce qu'elle a deja vu arriver."},
+        {"id": "digue", "wave": 3, "keyword": "DIGUE", "line": "J'appelle ca une digue.", "pole": "securite", "danger": "urgent", "xalign": 0.59, "yalign": 0.39, "success": "Pour elle, une frontiere fermee n'est pas une prison. C'est ce qui empeche le pire de revenir."},
+        {"id": "laisse", "wave": 3, "keyword": "LAISSE", "line": "Kami nous tient encore en laisse.", "pole": "liberte", "danger": "normal", "xalign": 0.50, "yalign": 0.52, "success": "Ryn confond peut-etre vitesse et liberte, mais sa colere vient d'un vrai enfermement."},
+    ]
+
+    J4_THREAD_PARASITES = [
+        {"id": "parasite_0", "keyword": "MENSONGE", "line": "Quelqu'un cherche a faire taire quelqu'un.", "xalign": 0.22, "yalign": 0.34},
+        {"id": "parasite_1", "keyword": "TRAITRE", "line": "Le mot parasite accroche la table.", "xalign": 0.77, "yalign": 0.35},
+        {"id": "parasite_2", "keyword": "COUPABLE", "line": "La faute circule plus vite que les idees.", "xalign": 0.26, "yalign": 0.58},
+        {"id": "parasite_3", "keyword": "CRIE", "line": "Le volume remplace le sens.", "xalign": 0.74, "yalign": 0.59},
+    ]
+
+    J4_NEWS_ITEMS = [
+        ("FILES DE RATIONNEMENT INCHANGÉES", "Même file. Autre district. Même attente.\nLe système appelle ça de la stabilité."),
+        ("DISTRIBUTION CENTRALISÉE MAINTENUE", "Aucun ajustement local autorisé.\nLes citoyens sont invités à préserver le calme."),
+        ("RÉAFFECTATION DES STOCKS NON ESSENTIELS", "Les réserves de confort du Conclave sont redirigées.\nLe sacrifice partagé est prioritaire."),
+        ("COMMUNIQUÉ ARCHIVE", "Aucune archive commerciale ne sera ouverte.\nLa continuité administrative reste totale."),
+        ("MESSAGE OFFICIEL DE KAMI", "Merci d'avoir choisi la prudence.\nDemain vous ressemblera."),
+        ("AUCUNE ÉVOLUTION COMMERCIALE AUTORISÉE", "Pas de circulation libre. Pas d'échange spontané.\nLe monde entier ressemble à une salle d'attente."),
+    ]
+
+    def j4_thread_safe_play(path):
+        if renpy.loadable(path):
+            renpy.play(path, channel="sound")
+
+    def j4_thread_bubble_by_id(bubble_id):
+        for bubble in J4_THREAD_BUBBLES:
+            if bubble["id"] == bubble_id:
+                return bubble
+        for bubble in J4_THREAD_PARASITES:
+            if bubble["id"] == bubble_id:
+                parasite = dict(bubble)
+                parasite["parasite"] = True
+                parasite["danger"] = "danger"
+                return parasite
+        return None
+
+    def j4_thread_next_real_bubble():
+        for bubble in J4_THREAD_BUBBLES:
+            if bubble["id"] not in store.j4_thread_answered_ids:
+                return bubble
+        return None
+
+    def j4_thread_refresh_wave():
+        current = j4_thread_next_real_bubble()
+        if current:
+            store.j4_thread_wave = current["wave"]
+            store.j4_thread_current_bubble = current["id"]
+        else:
+            store.j4_thread_current_bubble = None
+            store.j4_thread_done = True
+
+    def j4_thread_reset():
+        store.j4_thread_score = 0
+        store.j4_thread_tension = 36
+        store.j4_thread_wave = 1
+        store.j4_thread_current_bubble = None
+        store.j4_thread_selected_bubble = None
+        store.j4_thread_silences_left = 2
+        store.j4_thread_cut_used = 0
+        store.j4_thread_timer = 0.0
+        store.j4_thread_feedback = "Clique une bulle, puis relie-la au bon enjeu."
+        store.j4_thread_done = False
+        store.j4_thread_result = "medium"
+        store.j4_thread_active_bubbles = []
+        store.j4_thread_answered_ids = []
+        store.j4_thread_freeze_timer = 0.0
+        store.j4_thread_last_link = None
+        store.j4_thread_last_effect = ""
+        store.j4_thread_round = 0
+        store.j4_thread_successes = 0
+        j4_thread_refresh_wave()
+        j4_thread_safe_play("sound/thread_bubble_spawn.ogg")
+
+    def j4_thread_select(bubble_id):
+        if store.j4_thread_done:
+            return
+        store.j4_thread_selected_bubble = bubble_id
+        bubble = j4_thread_bubble_by_id(bubble_id)
+        if bubble:
+            store.j4_thread_feedback = bubble["line"]
+
+    def j4_thread_choose_pole(pole_id):
+        if store.j4_thread_done or not store.j4_thread_selected_bubble:
+            return
+
+        bubble_id = store.j4_thread_selected_bubble
+        bubble = j4_thread_bubble_by_id(bubble_id)
+        if not bubble:
+            store.j4_thread_selected_bubble = None
+            return
+
+        if bubble.get("parasite", False):
+            store.j4_thread_tension = min(100, store.j4_thread_tension + 8)
+            store.j4_thread_feedback = "Noam donne du poids a un mot parasite. Le debat se crispe."
+            store.j4_thread_last_effect = "fail"
+            j4_thread_safe_play("sound/thread_link_fail.ogg")
+            store.j4_thread_selected_bubble = None
+            return
+
+        if pole_id == bubble["pole"]:
+            store.j4_thread_score += 1
+            store.j4_thread_successes += 1
+            store.j4_thread_tension = max(0, store.j4_thread_tension - 9)
+            store.j4_thread_feedback = bubble["success"]
+            store.j4_thread_last_link = (bubble["xalign"], bubble["yalign"], pole_id)
+            store.j4_thread_last_effect = "success"
+            j4_thread_safe_play("sound/thread_link_success.ogg")
+        else:
+            store.j4_thread_tension = min(100, store.j4_thread_tension + 17)
+            store.j4_thread_feedback = "Noam tire le fil du mauvais cote. La phrase se durcit au lieu de s'ouvrir."
+            store.j4_thread_last_effect = "fail"
+            j4_thread_safe_play("sound/thread_link_fail.ogg")
+
+        store.j4_thread_answered_ids.append(bubble_id)
+        store.j4_thread_selected_bubble = None
+        store.j4_thread_timer = 0.0
+        store.j4_thread_round += 1
+        j4_thread_refresh_wave()
+        if store.j4_thread_done:
+            j4_thread_finalize()
+        else:
+            j4_thread_safe_play("sound/thread_bubble_spawn.ogg")
+
+    def j4_thread_spawn_parasite():
+        if len(store.j4_thread_active_bubbles) >= 3:
+            return
+        index = (store.j4_thread_round + len(store.j4_thread_active_bubbles) + int(store.j4_thread_tension / 10)) % len(J4_THREAD_PARASITES)
+        parasite = J4_THREAD_PARASITES[index]
+        if parasite["id"] not in store.j4_thread_active_bubbles:
+            store.j4_thread_active_bubbles.append(parasite["id"])
+            j4_thread_safe_play("sound/thread_bubble_spawn.ogg")
+
+    def j4_thread_silence():
+        if store.j4_thread_done or store.j4_thread_silences_left <= 0:
+            return
+        store.j4_thread_silences_left -= 1
+        store.j4_thread_freeze_timer = 1.0
+        store.j4_thread_feedback = "Noam impose une seconde de silence. Les mots restent suspendus."
+        j4_thread_safe_play("sound/thread_silence.ogg")
+
+    def j4_thread_cut():
+        if store.j4_thread_done or not store.j4_thread_selected_bubble:
+            return
+        if store.j4_thread_selected_bubble in store.j4_thread_active_bubbles:
+            store.j4_thread_active_bubbles.remove(store.j4_thread_selected_bubble)
+            store.j4_thread_selected_bubble = None
+            store.j4_thread_cut_used += 1
+            store.j4_thread_tension = min(100, store.j4_thread_tension + 5)
+            store.j4_thread_feedback = "Noam coupe court. Efficace, mais le geste laisse une marque."
+            store.j4_thread_last_effect = "cut"
+            j4_thread_safe_play("sound/thread_cut.ogg")
+
+    def j4_thread_finalize():
+        if store.j4_thread_tension >= 86 or store.j4_thread_score <= 3:
+            store.j4_thread_result = "bad"
+            j4_thread_safe_play("sound/thread_break.ogg")
+        elif store.j4_thread_score >= 7 and store.j4_thread_tension <= 64:
+            store.j4_thread_result = "good"
+        else:
+            store.j4_thread_result = "medium"
+        store.j4_thread_done = True
+
+    def j4_thread_tick():
+        if store.j4_thread_done:
+            return
+        if store.j4_thread_freeze_timer > 0.0:
+            store.j4_thread_freeze_timer = max(0.0, store.j4_thread_freeze_timer - 0.5)
+            return
+
+        store.j4_thread_timer += 0.5
+        if store.j4_thread_timer >= 3.0:
+            store.j4_thread_tension = min(100, store.j4_thread_tension + 2)
+            if int(store.j4_thread_timer * 10) % 10 == 0:
+                store.j4_thread_feedback = "Le silence dure trop longtemps. La tension gagne du terrain."
+                j4_thread_safe_play("sound/thread_tension_up.ogg")
+
+        spawn_delay = 4.0
+        if store.j4_thread_tension >= 75:
+            spawn_delay = 2.5
+        if store.j4_thread_timer >= spawn_delay and int(store.j4_thread_timer * 10) % 20 == 0:
+            j4_thread_spawn_parasite()
+
+        if store.j4_thread_tension >= 100:
+            store.j4_thread_feedback = "Le fil casse."
+            j4_thread_finalize()
+
+screen day4_restricted_map():
+    modal True
+    zorder 200
+
+    add Solid("#000")
+    add "images/carte/bg_map.png" at cover_screen
+
+    frame:
+        xalign 0.03
+        yalign 0.05
+        background Solid("#071018dd")
+        padding (18, 14)
+        text "Objectif : rejoindre la cafétéria" size 30 color "#E8F4FF"
+
+    imagebutton:
+        idle "images/carte/cafeteria.png"
+        hover "images/carte/cafeteria_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("cafeteria")
+
+    imagebutton:
+        idle "images/carte/repos.png"
+        hover "images/carte/repos_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("repos")
+
+    imagebutton:
+        idle "images/carte/conclave.png"
+        hover "images/carte/conclave_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("conclave")
+
+    imagebutton:
+        idle "images/carte/dortoir.png"
+        hover "images/carte/dortoir_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("dortoir")
+
+    imagebutton:
+        idle "images/carte/infirmerie.png"
+        hover "images/carte/infirmerie_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("infirmerie")
+
+screen day4_cafeteria_wall():
+    modal True
+    zorder 205
+
+    add "images/background/bg_cafeteria.png" at cover_screen
+    add Solid("#00000055")
+
+    frame:
+        xalign 0.5
+        yalign 0.16
+        xsize 760
+        background Solid("#071018e8")
+        padding (24, 18)
+        vbox:
+            spacing 10
+            text "ÉCRAN CAFÉTÉRIA" size 30 color "#BFE8FF" xalign 0.5
+            text "Les flux d'aujourd'hui tournent en boucle." size 24 color "#DCE8F7" xalign 0.5
+
+    imagebutton:
+        idle "gui/day4/news_button_idle.png"
+        hover "gui/day4/news_button_hover.png"
+        xalign 0.5
+        yalign 0.49
+        action Return("news")
+
+    textbutton "Continuer":
+        xalign 0.5
+        yalign 0.78
+        action Return("continue")
+
+screen day4_cafeteria_elen_gate():
+    modal True
+    zorder 205
+
+    add Solid("#000")
+    add "images/background/bg_cafeteria.png" at cover_screen
+
+    imagebutton:
+        idle "images/background/interact/cafeteria/goumi.png"
+        hover "images/background/interact/cafeteria/goumi_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("goumi")
+
+    imagebutton:
+        idle "images/background/interact/cafeteria/frigo.png"
+        hover "images/background/interact/cafeteria/frigo_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("frigo")
+
+    imagebutton:
+        idle "images/background/interact/cafeteria/table.png"
+        hover "images/background/interact/cafeteria/table_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("tables")
+
+    imagebutton:
+        idle "images/background/interact/cafeteria/ecran.png"
+        hover "images/background/interact/cafeteria/ecran_hover.png"
+        focus_mask True
+        xpos 0
+        ypos 0
+        at cover_screen
+        action Return("news")
+
+    imagebutton:
+        idle Transform("images/character/elen/colere.png", zoom=0.75)
+        hover Transform("images/character/elen/colere_noire.png", zoom=0.75)
+        focus_mask True
+        xalign 0.55
+        yalign 0.30
+        action Return("elen")
+
+screen day4_news_screen():
+    modal True
+    zorder 215
+
+    add "gui/day4/news_screen_bg.png" at cover_screen
+
+    frame:
+        xalign 0.5
+        yalign 0.48
+        xsize 1180
+        ysize 760
+        background Solid("#071018f2")
+        padding (26, 24)
+
+        vbox:
+            spacing 18
+            text "INFOS D'AUJOURD'HUI" size 38 color "#E8F4FF"
+            grid 2 3:
+                spacing 16
+                for title, body in J4_NEWS_ITEMS:
+                    frame:
+                        xsize 550
+                        ysize 165
+                        background Solid("#101a26ee")
+                        padding (18, 14)
+                        vbox:
+                            spacing 8
+                            text title size 21 color "#9FD8FF"
+                            text body size 22 color "#E1E8EF"
+
+    textbutton "Fermer":
+        xalign 0.5
+        yalign 0.91
+        xsize 180
+        ysize 54
+        action Return("back")
+
+screen day4_tray_pnc():
+    modal True
+    zorder 210
+
+    add "images/background/interact/cafeteria/plateau/plateau.png" at cover_screen
+
+    if "bread" not in j4_tray_eaten:
+        imagebutton:
+            idle "images/background/interact/cafeteria/plateau/pain.png"
+            hover "images/background/interact/cafeteria/plateau/pain.png"
+            xalign 0.29
+            yalign 0.54
+            action Return("bread")
+
+    if "ration" not in j4_tray_eaten:
+        imagebutton:
+            idle "images/background/interact/cafeteria/plateau/ration.png"
+            hover "images/background/interact/cafeteria/plateau/ration.png"
+            xalign 0.50
+            yalign 0.50
+            action Return("ration")
+
+    if "bar" not in j4_tray_eaten:
+        imagebutton:
+            idle "images/background/interact/cafeteria/plateau/barre.png"
+            hover "images/background/interact/cafeteria/plateau/barre.png"
+            xalign 0.65
+            yalign 0.64
+            action Return("bar")
+
+    button:
+        xalign 0.37
+        yalign 0.68
+        xsize 260
+        ysize 170
+        background None
+        action Return("empty")
+
+    textbutton "Terminer":
+        xalign 0.84
+        yalign 0.88
+        xsize 190
+        ysize 58
+        action Return("finish")
+
+transform j4_thread_bubble_idle:
+    alpha 0.96
+    zoom 1.0
+    ease 0.7 yoffset -6
+    ease 0.7 yoffset 6
+    repeat
+
+transform j4_thread_bubble_selected:
+    alpha 1.0
+    zoom 1.06
+    ease 0.22 zoom 1.11
+    ease 0.22 zoom 1.06
+    repeat
+
+transform j4_thread_glitch:
+    alpha 0.24
+    ease 0.05 xoffset -10
+    ease 0.05 xoffset 12
+    ease 0.05 xoffset 0
+    repeat
+
+screen day4_thread_debate():
+    modal True
+    zorder 220
+
+    on "show" action Function(j4_thread_reset)
+    timer 0.5 repeat True action Function(j4_thread_tick)
+
+    if renpy.loadable("gui/day4/thread/thread_bg.png"):
+        add "gui/day4/thread/thread_bg.png" at cover_screen
+    else:
+        add "gui/day4/thread_debate_bg.png" at cover_screen
+
+    if j4_thread_tension >= 75:
+        add Solid("#2a0308a8")
+        add Solid("#ff1c1c22") at j4_thread_glitch
+    else:
+        add Solid("#00081699")
+
+    $ current = j4_thread_bubble_by_id(j4_thread_current_bubble)
+    $ visible_bubbles = []
+    if current:
+        $ visible_bubbles.append(current)
+    for parasite_id in j4_thread_active_bubbles:
+        $ parasite_bubble = j4_thread_bubble_by_id(parasite_id)
+        if parasite_bubble:
+            $ visible_bubbles.append(parasite_bubble)
+
+    frame:
+        xalign 0.5
+        yalign 0.08
+        xsize 720
+        ysize 128
+        background Solid("#06111dee")
+        padding (20, 14)
+        vbox:
+            spacing 6
+            text "NOAM / FIL DU DEBAT" size 34 color "#E8F4FF" xalign 0.5
+            text "Vague [j4_thread_wave]/3 - [j4_thread_score] fils compris" size 22 color "#9FD8FF" xalign 0.5
+            if current:
+                text current["line"] size 22 color "#DCE8F7" xalign 0.5 text_align 0.5
+
+    frame:
+        xalign 0.5
+        yalign 0.47
+        xsize 390
+        ysize 190
+        background Solid("#081827dd")
+        padding (20, 18)
+        vbox:
+            spacing 8
+            text "NOAM" size 26 color "#E8F4FF" xalign 0.5
+            text "Maintenir le sens sans etouffer la colere." size 20 color "#A9C6D8" xalign 0.5 text_align 0.5
+            null height 8
+            bar value StaticValue(max(0, 100 - j4_thread_tension), 100):
+                xsize 330
+                ysize 16
+            text "Concentration" size 18 color "#CDEBFF" xalign 0.5
+
+    for pole in J4_THREAD_POLES:
+        frame:
+            xalign pole["xalign"]
+            yalign pole["yalign"]
+            xsize 270
+            ysize 116
+            background Solid("#07131fee")
+            padding (10, 8)
+            vbox:
+                spacing 4
+                textbutton pole["label"]:
+                    xsize 250
+                    ysize 50
+                    background Solid("#10283aee")
+                    hover_background Solid("#1a4665ee")
+                    text_size 27
+                    text_color pole["color"]
+                    text_hover_color "#ffffff"
+                    action Function(j4_thread_choose_pole, pole["id"])
+                text pole["subtitle"] size 16 color "#BFD5E5" xalign 0.5 text_align 0.5
+
+    for bubble in visible_bubbles:
+        $ is_selected = bubble["id"] == j4_thread_selected_bubble
+        $ is_parasite = bubble.get("parasite", False)
+        $ bubble_bg = "#0f3147ee"
+        $ bubble_border = "#9be7ff"
+        $ bubble_text = "#ffffff"
+        if bubble.get("danger", "normal") == "urgent":
+            $ bubble_bg = "#5a2b0bee"
+            $ bubble_border = "#ffb35c"
+        if is_parasite:
+            $ bubble_bg = "#25050bee"
+            $ bubble_border = "#ff3848"
+        if is_selected:
+            $ bubble_bg = "#1d6788ee"
+            $ bubble_text = "#ffffff"
+        button:
+            xalign bubble["xalign"]
+            yalign bubble["yalign"]
+            xsize 245
+            ysize 92
+            background Solid(bubble_bg)
+            hover_background Solid("#244e68ee")
+            action Function(j4_thread_select, bubble["id"])
+            at j4_thread_bubble_idle
+            frame:
+                xfill True
+                yfill True
+                background Solid("#00000000")
+                padding (10, 8)
+                vbox:
+                    spacing 2
+                    text bubble["keyword"] size 30 color bubble_text xalign 0.5
+                    if is_parasite:
+                        text "parasite" size 17 color bubble_border xalign 0.5
+                    else:
+                        text "a relier" size 17 color bubble_border xalign 0.5
+
+    if j4_thread_last_effect == "success":
+        frame:
+            xalign 0.5
+            yalign 0.66
+            xsize 560
+            ysize 38
+            background Solid("#9be7ff55")
+            padding (8, 4)
+            text "Fil lumineux etabli" size 22 color "#E8F4FF" xalign 0.5
+    elif j4_thread_last_effect == "fail":
+        add Solid("#ff1c1c33") at j4_thread_glitch
+    elif j4_thread_last_effect == "cut":
+        frame:
+            xalign 0.5
+            yalign 0.66
+            xsize 500
+            ysize 38
+            background Solid("#ff384855")
+            padding (8, 4)
+            text "Mot coupe" size 22 color "#ffffff" xalign 0.5
+
+    hbox:
+        xalign 0.5
+        yalign 0.78
+        spacing 18
+        textbutton "Faire silence ([j4_thread_silences_left])":
+            xsize 260
+            ysize 58
+            text_size 23
+            background Solid("#123044ee")
+            hover_background Solid("#1f5b79ee")
+            insensitive_background Solid("#222831dd")
+            action Function(j4_thread_silence)
+            sensitive j4_thread_silences_left > 0
+        textbutton "Couper":
+            xsize 180
+            ysize 58
+            text_size 23
+            background Solid("#451018ee")
+            hover_background Solid("#762030ee")
+            insensitive_background Solid("#222831dd")
+            action Function(j4_thread_cut)
+            sensitive j4_thread_selected_bubble in j4_thread_active_bubbles
+
+    frame:
+        xalign 0.5
+        yalign 0.91
+        xsize 940
+        ysize 112
+        background Solid("#061018ee")
+        padding (18, 12)
+        vbox:
+            spacing 8
+            hbox:
+                spacing 14
+                text "TENSION" size 23 color "#E8F4FF"
+                bar value StaticValue(j4_thread_tension, 100):
+                    xsize 735
+                    ysize 22
+            text "[j4_thread_feedback]" size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
+
+    if j4_thread_done:
+        timer 0.8 action Return(j4_thread_result)
+
 label _4_0_REVEIL_CHAMBRE:
 
     scene bg_cg012 at adaptive_fullscreen with dissolve
@@ -28,19 +676,44 @@ label _4_0_REVEIL_CHAMBRE:
     $ blink()
     pause 2.5  # Pause plus longue pour laisser peser le vide
 
-    "Je me tourne à moitié. Une photo holographique est sur la table de nuit me fixe."
-    "Ca me fait penser que je n'ai même pas déballé mes affaires en arrivant ici."
-    "Alors qui a installé ça ?"
+    "Je me tourne à moitié."
+    "Une photo holographique est posée sur la table de nuit."
+    "Elle n'était pas là hier."
+    "Ou alors je ne l'ai pas vue."
+    "Non. Je l'aurais vue."
 
-    pause 1.0
-    "Quelqu'un s'est permis de fouiller ?!"
+    call day4_photo_take_trace from _call_day4_photo_take_trace
 
-    pause 1.0
-    "Vu ce qu'on vit, à quoi bon se plaindre ..."
-
+    scene bg_cg029 at adaptive_fullscreen with dissolve
+    "Je la prends entre deux doigts."
+    "Le cadre est froid."
+    "Un souvenir posé là sans me demander mon avis."
+    "Même ma table de nuit n'est pas vraiment à moi."
     "Sur la photo, il y a une famille souriante. Pas la mienne. Ce sont des amis."
+    $ unlock_gallery_image("bg_cg029")
     "Je me demande si eux aussi ont un bon de rationnement ce matin."
     "Ou si, quelque part, ils ont déjà arrêté de sourire depuis longtemps."
+
+    menu:
+        "Regarder la photo encore quelques secondes.":
+            "Je garde le cadre levé."
+            "Les visages tremblent à peine dans la lumière holographique."
+            "Plus je regarde, plus j'ai l'impression qu'on m'a déposé une preuve au lieu d'un souvenir."
+
+        "La retourner immédiatement.":
+            "Je serre un peu trop fort les bords."
+            "Je n'ai pas envie que ces sourires me regardent plus longtemps."
+
+        "Vérifier l'arrière du cadre.":
+            "Je retourne le cadre."
+            "Rien."
+            "Pas de signature. Pas de mot. Juste une surface lisse, prévue pour ne rien avouer."
+
+    call day4_photo_put_trace from _call_day4_photo_put_trace
+
+    "Je repose la photo face contre la table."
+    "Ça ne règle rien."
+    "Mais au moins, pendant quelques secondes, elle cesse de me regarder."
 
     play sound sfx_announce
     "Un bip strident déchire le silence."
@@ -94,7 +767,109 @@ label _4_0_REVEIL_CHAMBRE:
     "Ça n’a pas encore explosé."
     "Mais ça pourrait à tout moment."
 
-    jump _4_0_CAFETERIA_ECRANS
+    jump _4_0_NAVIGATION_CAFETERIA
+
+label day4_photo_take_trace:
+
+    $ j4_photo_pick_trace_attempts = 0
+
+label day4_photo_take_trace_loop:
+
+    call screen trace_qte(path_type="curve_right", time_limit=6.0, wait_time=0.5, tolerance=70, max_errors=5, anchor_x=860, anchor_y=620)
+
+    if _return:
+        return
+
+    $ j4_photo_pick_trace_attempts += 1
+    if j4_photo_pick_trace_attempts >= 2:
+        "Mes doigts glissent une première fois, puis finissent par trouver le bord du cadre."
+        return
+
+    "Je m'y reprends."
+    jump day4_photo_take_trace_loop
+
+label day4_photo_put_trace:
+
+    $ j4_photo_put_trace_attempts = 0
+
+label day4_photo_put_trace_loop:
+
+    call screen trace_qte(path_type="arc", time_limit=5.0, wait_time=0.4, tolerance=72, max_errors=5, anchor_x=960, anchor_y=620)
+
+    if _return:
+        return
+
+    $ j4_photo_put_trace_attempts += 1
+    if j4_photo_put_trace_attempts >= 2:
+        "Je finis par la reposer, maladroitement."
+        return
+
+    "Le cadre accroche mes doigts."
+    jump day4_photo_put_trace_loop
+
+label _4_0_NAVIGATION_CAFETERIA:
+
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    "Je sors de la chambre."
+    "Le couloir m'attend avec sa lumière froide et ses portes fermées."
+
+label _4_0_NAVIGATION_CAFETERIA_LOOP:
+
+    call screen day4_restricted_map()
+
+    if _return == "cafeteria":
+        "Je prends enfin la direction de la cafétéria."
+        jump _4_0_CAFETERIA_ELEN
+
+    if _return == "repos":
+        scene bg_repos at adaptive_fullscreen with dissolve
+        think "Je n'ai pas envie de faire semblant de me détendre."
+    elif _return == "conclave":
+        scene bg_conclave at adaptive_fullscreen with dissolve
+        think "Pas maintenant. Je n'ai pas envie de revoir les boutons."
+    elif _return == "dortoir":
+        scene bg_dortoir at adaptive_fullscreen with dissolve
+        think "Derrière chaque porte, quelqu'un digère l'échec d'hier à sa manière."
+    elif _return == "infirmerie":
+        scene bg_infirmerie at adaptive_fullscreen with dissolve
+        think "Mauvaise idée. Je n'ai pas envie de chercher une solution dans une armoire à médicaments."
+
+    jump _4_0_NAVIGATION_CAFETERIA_LOOP
+
+label _4_0_CAFETERIA_ELEN:
+
+    $ decouverte_cafeteria = True
+
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
+
+    "A peine entré dans la cafétéria, je repère Elen près du comptoir."
+    "Elle ne parle pas. Elle bouillonne."
+
+label _4_0_CAFETERIA_ELEN_PARTIAL:
+
+    call screen day4_cafeteria_elen_gate()
+
+    if _return == "elen":
+        $ showP("elen", "colere", 0.55)
+        elen "Noam."
+        elen "Viens voir ça."
+        hide elen
+        jump _4_0_CAFETERIA_ECRANS
+
+    if _return == "news":
+        call screen day4_news_screen()
+    elif _return == "goumi":
+        "Goumi reste immobile derriere le comptoir."
+        "Ses voyants suivent Elen comme s'il attendait l'ordre suivant."
+    elif _return == "frigo":
+        "Le frigo-machine affiche des listes presque vides."
+        "Il y a assez pour survivre. Pas assez pour oublier ou on est."
+    elif _return == "tables":
+        "Les tables sont deja occupees par des plateaux silencieux."
+        "Personne ne mange vraiment."
+
+    jump _4_0_CAFETERIA_ELEN_PARTIAL
 
 label _4_0_CAFETERIA_ECRANS:
 
@@ -155,6 +930,20 @@ label _4_0_CAFETERIA_ECRANS:
     "Elen reste figée deux secondes, les yeux brillants de larmes de rage et de déception."
     "Puis elle tourne les talons et quitte la cafétéria presque en courant, la tête baissée comme une petite fille qui vient de se faire humilier devant tout le monde."
 
+    menu:
+        "Faire un pas vers Elen.":
+            "Je bouge trop tard."
+            "Elen est déjà partie."
+
+        "Regarder Goumi.":
+            "Le robot reste immobile."
+            "Pas de honte. Pas d'hésitation."
+            "Juste l'ordre exécuté."
+
+        "Baisser les yeux vers le plateau.":
+            "Je regarde ma ration."
+            "Elle a soudain l'air encore plus petite."
+
     $ showP("mara", "agace", 0.70)
     mara "…Génial. Voilà qu’elle boude comme une gamine maintenant."
 
@@ -201,16 +990,80 @@ label _4_0_CAFETERIA_ECRANS:
     lysa "Alors Noam ?"
     lysa "Tu regrettes qu’on n’ait pas osé ? Ou tu es soulagé qu’on ait préféré rester dans nos petites chaînes bien confortables ?"
 
-    noam "Je… je ne sais plus."
+    menu:
+        "Répondre franchement.":
+            noam "Je crois que oui."
+            noam "Mais je ne sais même pas ce que je regrette exactement."
+
+        "Éviter son regard.":
+            noam "Je ne sais pas."
+            noam "Et j'ai horreur que ce soit la seule réponse honnête."
+
+        "Regarder les écrans avant de répondre.":
+            "Je regarde les files d'attente."
+            "Puis je comprends que ma réponse ne vaut pas grand-chose."
+            noam "Je ne sais plus."
+
     noam "Je me demande si... ne rien risquer hier... c’était du confort. Ou juste de la peur."
 
     hide lysa
+
+    call day4_tray_scene from _call_day4_tray_scene
 
     "La salle est silencieuse. Chacun fixe les écrans comme une sentence qu’on s’est nous-mêmes infligée."
     "On n’a rien gagné hier."
     "On a juste réussi à rester exactement au même endroit… en sachant qu’on aurait pu faire mieux."
 
     jump _4_0_TEMPS_LIBRE_1
+
+label day4_optional_news:
+
+    call screen day4_cafeteria_wall()
+
+    if _return == "news":
+        call screen day4_news_screen()
+        "Quand je relève les yeux, les mêmes titres continuent de défiler."
+        "Même file. Même attente. Même monde."
+    else:
+        "Je laisse les écrans tourner sans moi."
+
+    return
+
+label day4_tray_scene:
+
+    $ j4_tray_eaten = []
+    "Je baisse les yeux vers mon plateau."
+    "Il n'y a pas grand-chose à sauver là-dedans."
+
+label day4_tray_scene_loop:
+
+    call screen day4_tray_pnc()
+
+    if _return == "bread":
+        $ j4_tray_eaten.append("bread")
+        "Je croque."
+        "Ça fait plus de bruit que de goût."
+    elif _return == "ration":
+        $ j4_tray_eaten.append("ration")
+        "Tiède."
+        "Pas chaud. Pas froid."
+        "Même la température refuse de prendre parti."
+    elif _return == "bar":
+        $ j4_tray_eaten.append("bar")
+        "Le genre d'aliment qu'on mange uniquement parce que le corps insiste."
+    elif _return == "empty":
+        "Je fixe le vide."
+        "C'est idiot, mais c'est ça qui me met le plus en colère."
+    elif _return == "finish":
+        "Je repousse le plateau de quelques centimètres."
+        return
+
+    if len(j4_tray_eaten) >= 3:
+        "Mon corps a compris le message avant moi."
+        "Il n'y aura rien de plus."
+        return
+
+    jump day4_tray_scene_loop
 
 label _4_0_TEMPS_LIBRE_1:
 
@@ -219,7 +1072,7 @@ label _4_0_TEMPS_LIBRE_1:
     "Après le petit-déjeuner, j'ai un peu de temps devant moi."
     "Je ne sais pas enncore quoi faire."
 
-    call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_4_0
+    call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE")
 
 label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
@@ -342,6 +1195,10 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     kami "Autoriser ou non les déplacements entre les districts ?"
     kami "Oui : libre circulation entre tous les districts."
     kami "Non : les frontières restent fermées comme aujourd’hui."
+
+    $ j2_vote_codex_unlocked = True
+    $ j45_vote_codex_active = True
+    show screen day3_codex_logo
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "C’est simple."
@@ -481,6 +1338,8 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ryn "Non."
     ryn "Moi, j’en ai juste marre de vivre dans une cage."
 
+    call day4_thread_debate_game from _call_day4_thread_debate_game
+
     $ showP("sael", "determine", 0.88)
     sael "Alors vote oui."
     sael "Mais ne compte pas sur moi pour ouvrir la porte."
@@ -561,6 +1420,46 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     "On est en train de choisir la forme exacte de notre prochain désastre."
 
     jump _4_0_APRES_CLASH_PRE_FETE
+
+label day4_thread_debate_game:
+
+    "Je sens le debat partir."
+    "Pas d'un coup."
+    "Comme un fil qu'on tire trop longtemps."
+    "Puis le fil casse en eclats."
+
+    call screen day4_objection_fracturee()
+    $ day4_objection_return = _return
+    call screen day4_objection_reward_summary()
+
+    if day4_objection_return == "good":
+        $ j4_argument_frontieres_cadre = True
+        $ j4_argument_circulation_cadre = True
+        noam "Attendez."
+        noam "Ryn parle d'une cage. Sael parle d'une digue."
+        noam "Et au fond, vous parlez tous les deux de peur."
+        noam "Si on ouvre sans cadre, on transforme la liberte en abandon."
+        noam "Si on ferme sans ecouter, on transforme la securite en prison."
+        "Pendant une seconde, ca tient."
+        "Une seule."
+        think "Sael ne recule pas. Mais cette fois, je vois ce qu'elle protege vraiment : pas une frontiere. Une terreur."
+        think "Et Ryn l'entend aussi. Un peu."
+    elif day4_objection_return == "bad":
+        noam "On peut peut-etre..."
+        ryn "Non, Noam."
+        ryn "La, tu fais juste joli au milieu de la piece."
+        sael "Tu veux traduire une peur que tu ne connais pas."
+        think "Le fil me glisse des mains."
+        think "Non. Il me claque entre les doigts."
+    else:
+        noam "On peut ralentir deux secondes ?"
+        noam "Personne ne parle vraiment de la meme chose."
+        noam "Ryn parle d'etouffer. Sael parle de proteger ce qui reste."
+        "Quelques regards se tournent vers moi."
+        "Pas assez longtemps pour sauver le debat."
+        think "Je tiens le fil. Mal. Mais je le tiens encore."
+
+    return
 
 label _4_0_APRES_CLASH_PRE_FETE:
 

@@ -272,7 +272,7 @@ label _7_0_1_REVEIL_CHAMBRE:
 
 label _7_0_1_CAFETERIA:
 
-    call screen custom_title("Je vais à la cafétéria avec Lysa.")
+    call show_custom_title("Je vais à la cafétéria avec Lysa.")
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
