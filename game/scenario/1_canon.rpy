@@ -24,24 +24,11 @@ default j1_amendment_deposited = False
 default j1_amendment_time_display = "31:00"
 default noam_amendement_choix = None
 default noam_room_jammer_on = True
-default j1_trace_active = False
-default j1_trace_target = 1
-default j1_trace_success = False
-default j1_trace_failed = False
-default j1_trace_stray = 0
-default j1_trace_mouse_x = 960
-default j1_trace_mouse_y = 540
 
 define sfx_drop = "audio/sfx_drop.mp3"
 define sfx_shower = "audio/sfx_shower.mp3"
 
 init 2 python:
-    import math
-    try:
-        import pygame_sdl2 as pygame
-    except Exception:
-        pygame = None
-
     day1_amendment_cards = [
         {
             "id": "information_locale",
@@ -79,77 +66,6 @@ Les chambres individuelles sont équipées de brouilleurs. Par défaut, le broui
 Les espaces communs restent surveillés et enregistrés. Les Commandements ordinaires ne s'appliquent pas dans le Conclave, mais les règles propres au complexe restent actives. Kami ne vote pas et ne propose pas d'amendement; elle organise, observe, tire au sort, annonce les résultats et applique les changements validés."""
         }
 
-    def day1_dist(a, b):
-        return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
-
-    def day1_dist_to_segment(p, a, b):
-        ax, ay = a
-        bx, by = b
-        px, py = p
-        dx = bx - ax
-        dy = by - ay
-        if dx == 0 and dy == 0:
-            return day1_dist(p, a)
-        t = ((px - ax) * dx + (py - ay) * dy) / float(dx * dx + dy * dy)
-        t = max(0.0, min(1.0, t))
-        closest = (ax + t * dx, ay + t * dy)
-        return day1_dist(p, closest)
-
-    def j1_trace_reset():
-        store.j1_trace_active = False
-        store.j1_trace_target = 1
-        store.j1_trace_success = False
-        store.j1_trace_failed = False
-        store.j1_trace_stray = 0
-
-    def j1_trace_press(points, start_radius=85):
-        pos = renpy.get_mouse_pos()
-        store.j1_trace_mouse_x, store.j1_trace_mouse_y = pos
-        store.j1_trace_success = False
-        store.j1_trace_failed = False
-        if day1_dist(pos, points[0]) <= start_radius:
-            store.j1_trace_active = True
-            store.j1_trace_target = 1
-            store.j1_trace_stray = 0
-        else:
-            store.j1_trace_active = False
-
-    def j1_trace_release():
-        if store.j1_trace_active and not store.j1_trace_success:
-            store.j1_trace_failed = True
-        store.j1_trace_active = False
-
-    def j1_trace_tick(points, tolerance=78, target_radius=82):
-        if not store.j1_trace_active or store.j1_trace_success or store.j1_trace_failed:
-            return
-        if pygame is not None and not pygame.mouse.get_pressed()[0]:
-            store.j1_trace_failed = True
-            store.j1_trace_active = False
-            return
-        pos = renpy.get_mouse_pos()
-        store.j1_trace_mouse_x, store.j1_trace_mouse_y = pos
-        target = store.j1_trace_target
-        if target >= len(points):
-            store.j1_trace_success = True
-            store.j1_trace_active = False
-            return
-        prev_point = points[target - 1]
-        next_point = points[target]
-        if day1_dist(pos, next_point) <= target_radius:
-            store.j1_trace_target += 1
-            store.j1_trace_stray = 0
-            if store.j1_trace_target >= len(points):
-                store.j1_trace_success = True
-                store.j1_trace_active = False
-            return
-        if day1_dist_to_segment(pos, prev_point, next_point) > tolerance:
-            store.j1_trace_stray += 1
-            if store.j1_trace_stray >= 9:
-                store.j1_trace_failed = True
-                store.j1_trace_active = False
-        else:
-            store.j1_trace_stray = max(0, store.j1_trace_stray - 1)
-
 transform day1_unsteady:
     subpixel True
     xoffset -4
@@ -169,61 +85,6 @@ screen day1_wakeup_overlay(level="heavy"):
     elif level == "soft":
         add "gui/day1/wakeup_noise.png" xysize (1920, 1080) alpha 0.14 at day1_unsteady
         add "gui/day1/wakeup_vignette.png" xysize (1920, 1080) alpha 0.55
-
-screen day1_trace_qte(title, prompt, points, timeout=6.0):
-    modal True
-    zorder 100
-
-    on "show" action Function(j1_trace_reset)
-    key "mousedown_1" action Function(j1_trace_press, points)
-    key "mouseup_1" action [Function(j1_trace_release), If(j1_trace_success, Return(True), If(j1_trace_failed, Return(False), NullAction()))]
-
-    add "gui/day1/qte_trace_bg.png" xysize (1920, 1080)
-    add Solid("#02050b99")
-
-    fixed:
-        for idx, p in enumerate(points):
-            $ px = p[0]
-            $ py = p[1]
-            $ done = idx < j1_trace_target
-            if idx > 0:
-                $ prev = points[idx - 1]
-                $ cx = min(prev[0], px) + abs(px - prev[0]) / 2
-                $ cy = min(prev[1], py) + abs(py - prev[1]) / 2
-                $ line_w = max(80, int(day1_dist(prev, p)) + 60)
-                $ line_angle = math.degrees(math.atan2(py - prev[1], px - prev[0]))
-                add "gui/day1/qte_trace_line.png" xpos cx ypos cy xanchor 0.5 yanchor 0.5 xsize line_w ysize 16 rotate line_angle alpha (0.85 if idx <= j1_trace_target else 0.28)
-
-            if idx == 0:
-                add "gui/day1/qte_point_start.png" xpos (px - 48) ypos (py - 48) alpha (1.0 if done else 0.75)
-            elif idx == len(points) - 1:
-                add "gui/day1/qte_point_end.png" xpos (px - 50) ypos (py - 50) alpha (1.0 if idx <= j1_trace_target else 0.55)
-            else:
-                add "gui/day1/qte_point_mid.png" xpos (px - 43) ypos (py - 43) alpha (1.0 if idx <= j1_trace_target else 0.55)
-
-        if j1_trace_active:
-            add "gui/day1/qte_cursor_glow.png" xpos (j1_trace_mouse_x - 60) ypos (j1_trace_mouse_y - 60)
-
-        vbox:
-            xalign 0.5
-            ypos 82
-            spacing 12
-            text title xalign 0.5 size 34 color "#dff8ff"
-            text prompt xalign 0.5 size 23 color "#9ed8ff"
-            text "Maintiens le clic depuis le premier point et suis le trajet jusqu'au dernier." xalign 0.5 size 19 color "#7ca9ba"
-
-        frame:
-            xalign 0.5
-            yalign 0.92
-            padding (22, 12)
-            background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
-            if j1_trace_active:
-                text "TRAJET EN COURS" size 20 color "#dff8ff"
-            else:
-                text "MAINTENIR LE CLIC SUR LE PREMIER POINT" size 20 color "#dff8ff"
-
-    timer 0.03 repeat True action [Function(j1_trace_tick, points), If(j1_trace_success, Return(True), If(j1_trace_failed, Return(False), NullAction()))]
-    timer timeout action Return(False)
 
 screen day1_tablet_interaction():
     modal True

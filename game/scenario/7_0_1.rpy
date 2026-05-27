@@ -1,3 +1,898 @@
+default j701_prep_done = []
+default j701_prep_feedback = ""
+default j701_prep_focus = 0
+default j701_plate_step = 0
+default j701_plate_score = 0
+default j701_plate_errors = 0
+default j701_plate_time = 8
+default j701_plate_combo = 0
+default j701_plate_wobble = 0
+default j701_plate_feedback = ""
+default j701_calm_score = 45
+default j701_calm_node = "start"
+default j701_calm_depth = 0
+default j701_calm_time = 6
+default j701_calm_feedback = ""
+default j701_calm_done = False
+default j701_calm_last_line = ""
+default j701_console_rings = []
+default j701_console_errors = 0
+default j701_console_noise = 0
+default j701_console_feedback = ""
+default j701_stock_marked = []
+default j701_stock_errors = 0
+default j701_stock_solved = False
+default j701_stock_clue = ""
+default j701_stock_feedback = ""
+default j701_clean_particles = []
+default j701_clean_score = 0
+default j701_clean_time = 22
+default j701_clean_next_id = 0
+default j701_clean_mouse_x = 960
+default j701_clean_mouse_y = 540
+default j701_clean_reveal = 0
+default j701_clean_feedback = ""
+
+init python:
+    J701_PREP_ITEMS = [
+        ("visage", "Se passer de l'eau", "Le froid me remet les idées en place.", 0.23, 0.55, "Réveil"),
+        ("cheveux", "Rattraper les cheveux", "Sauvetage partiel. Pas miraculeux.", 0.44, 0.34, "Dignité"),
+        ("veste", "Attraper la veste", "Au moins, j'aurai l'air vaguement réveillé.", 0.68, 0.62, "Tenue"),
+        ("ecran", "Regarder l'écran", "Noir. Toujours noir. Et ça fait presque du bien.", 0.78, 0.28, "Silence"),
+    ]
+
+    J701_PLATE_ORDERS = [
+        {"who": "Julian", "line": "Le pain va tomber de mon côté.", "want": "pain", "lane": 0, "tone": "blague"},
+        {"who": "Iris", "line": "Quelqu'un peut me passer l'eau avant que Julian négocie avec ?", "want": "eau", "lane": 2, "tone": "relance"},
+        {"who": "Lysa", "line": "La ration chaude, avant qu'elle devienne un concept.", "want": "ration", "lane": 1, "tone": "calme"},
+        {"who": "Mara", "line": "Laisse une part au centre. On va éviter le drame diplomatique.", "want": "part", "lane": 3, "tone": "partage"},
+    ]
+
+    J701_PLATE_BUTTONS = [
+        ("pain", "Pain", "#d4a45f", 0.18, 0.62, "sec"),
+        ("eau", "Eau", "#7bc7ff", 0.38, 0.70, "stable"),
+        ("ration", "Ration", "#ffb05c", 0.59, 0.62, "chaud"),
+        ("part", "Partage", "#b8f0a0", 0.79, 0.70, "centre"),
+    ]
+
+    J701_CALM_NODES = {
+        "start": {
+            "speaker": "Iris",
+            "line": "Je veux que ça DUUURE... Si on a enfin une journée sans voix divine, je refuse qu'on la passe à fixer les murs.",
+            "choices": [
+                ("Alors impose une minute de fête officielle.", "iris_fete", 12, "Iris lève son verre comme si elle venait de fonder un pays."),
+                ("Tu crois vraiment qu'elle est partie ?", "kami_absente", -16, "Le nom de Kami aspire l'air autour de la table."),
+                ("Julian peut faire le discours, il adore s'écouter.", "julian_discours", 9, "Julian prend l'attaque comme une promotion."),
+                ("On devrait quand même rester prudents.", "lysa_prudence", -5, "La prudence est juste. Elle est aussi lourde."),
+            ],
+        },
+        "iris_fete": {
+            "speaker": "Iris",
+            "line": "Minute de fête officielle ? J'aime. Il nous faut un rituel idiot, tout de suite.",
+            "choices": [
+                ("Lever les verres à la santé du silence.", "final_good", 12, "Les verres se lèvent. Le silence devient presque une présence invitée."),
+                ("Déclarer Julian mascotte temporaire.", "final_fun", 8, "Julian proteste trop vite pour être crédible."),
+                ("Proposer une minute sans parler de Kami.", "final_best", 15, "La règle est simple. Tout le monde l'accepte."),
+            ],
+        },
+        "kami_absente": {
+            "speaker": "Lysa",
+            "line": "Partie ? Non. C'est justement ça qui me gêne. Elle ne disparaît pas. Elle attend.",
+            "choices": [
+                ("Alors on lui vole six minutes.", "final_good", 10, "Lysa te regarde, puis accepte cette petite désobéissance."),
+                ("Tu as raison, ça sent mauvais.", "final_bad", -12, "La table retombe dans le réel."),
+                ("Peut-être qu'elle nous écoute paniquer.", "final_bad", -14, "Mauvaise image. Les épaules se tendent."),
+            ],
+        },
+        "julian_discours": {
+            "speaker": "Julian",
+            "line": "Je peux improviser un discours historique. Court, brillant, indispensable.",
+            "choices": [
+                ("Trois mots maximum.", "final_fun", 10, "Julian mime une blessure politique grave."),
+                ("Vas-y, président de la table.", "final_good", 9, "Il se redresse comme si c'était sérieux. C'est ce qui sauve la blague."),
+                ("Non. On mange.", "final_flat", 2, "Le repas continue. Sans éclat, mais sans casse."),
+            ],
+        },
+        "lysa_prudence": {
+            "speaker": "Lysa",
+            "line": "Merci. Je sais que je casse l'ambiance, mais je n'arrive pas à trouver ça normal.",
+            "choices": [
+                ("Tu ne casses rien. Tu vérifies les murs.", "final_good", 11, "La formule lui arrache presque un sourire."),
+                ("Alors laisse-moi casser l'ambiance à ta place.", "final_fun", 7, "Elle te laisse faire. C'est déjà un accord."),
+                ("Tu stresses pour rien.", "final_bad", -16, "Elle se ferme aussitôt. Mauvais angle."),
+            ],
+        },
+        "final_best": {"speaker": "Table", "line": "Pendant une minute, personne ne dit son nom.", "choices": []},
+        "final_good": {"speaker": "Table", "line": "La table respire encore un peu.", "choices": []},
+        "final_fun": {"speaker": "Table", "line": "La blague tient juste assez longtemps pour devenir utile.", "choices": []},
+        "final_flat": {"speaker": "Table", "line": "Le calme reste là, moins brillant, mais intact.", "choices": []},
+        "final_bad": {"speaker": "Table", "line": "Le calme se fend. Pas beaucoup. Assez.", "choices": []},
+    }
+
+    J701_CONSOLE_MODULES = [
+        {"name": "NORD", "values": ["31", "12", "04", "0"], "target": 3},
+        {"name": "SUD", "values": ["27", "ERR", "08", "0"], "target": 3},
+        {"name": "EST", "values": ["44", "19", "0", "02"], "target": 2},
+        {"name": "OUEST", "values": ["35", "0", "11", "SYNC"], "target": 1},
+    ]
+
+    J701_STOCK_ITEMS = [
+        ("tournevis", "Tournevis isolé", "present", "present"),
+        ("micro_soudeur", "Micro-soudeur", "present", "absent"),
+        ("bobine", "Bobine de cuivre", "present", "present"),
+        ("batteries", "Deux batteries", "present", "absent"),
+        ("pinces", "Pinces fines", "present", "present"),
+        ("stabilisateurs", "Stabilisateurs", "present", "absent"),
+        ("fusibles", "Fusibles", "present", "present"),
+        ("registre", "Registre signé", "absent", "absent"),
+    ]
+    J701_STOCK_TARGETS = ["micro_soudeur", "batteries", "stabilisateurs"]
+    J701_STOCK_CLUES = {
+        "micro_soudeur": "souder",
+        "batteries": "alimenter",
+        "stabilisateurs": "stabiliser",
+    }
+
+    J701_CLEAN_SPRITES = [
+        "gui/day7/clean/dust_1.png",
+        "gui/day7/clean/dust_2.png",
+        "gui/day7/clean/dust_3.png",
+        "gui/day7/clean/dust_4.png",
+        "gui/day7/clean/glitch_dust_1.png",
+        "gui/day7/clean/glitch_dust_2.png",
+    ]
+
+    def j701_reset_list(var_name, feedback_var, feedback):
+        setattr(store, var_name, [])
+        setattr(store, feedback_var, feedback)
+        if var_name == "j701_prep_done":
+            store.j701_prep_focus = 0
+
+    def j701_mark_list(var_name, feedback_var, item_id, feedback):
+        current = list(getattr(store, var_name))
+        if item_id not in current:
+            current.append(item_id)
+            setattr(store, var_name, current)
+            setattr(store, feedback_var, feedback)
+            if var_name == "j701_prep_done":
+                store.j701_prep_focus = len(current)
+            renpy.restart_interaction()
+
+    def j701_plate_reset():
+        store.j701_plate_step = 0
+        store.j701_plate_score = 0
+        store.j701_plate_errors = 0
+        store.j701_plate_time = 8
+        store.j701_plate_combo = 0
+        store.j701_plate_wobble = 0
+        store.j701_plate_feedback = "Le plateau glisse de main en main. Suis la demande avant que la conversation déraille."
+
+    def j701_plate_pick(item_id):
+        if store.j701_plate_step >= len(J701_PLATE_ORDERS):
+            return
+        expected = J701_PLATE_ORDERS[store.j701_plate_step]["want"]
+        if item_id == expected:
+            store.j701_plate_score += 1
+            store.j701_plate_combo += 1
+            store.j701_plate_wobble = max(0, store.j701_plate_wobble - 12)
+            store.j701_plate_feedback = "Bon geste. Le repas continue sans accroc."
+            store.j701_plate_step += 1
+            store.j701_plate_time = 8
+        else:
+            store.j701_plate_errors += 1
+            store.j701_plate_combo = 0
+            store.j701_plate_wobble = min(100, store.j701_plate_wobble + 26)
+            store.j701_plate_feedback = "Mauvais objet. Quelqu'un rattrape le plateau au dernier moment."
+            store.j701_plate_time = max(2, store.j701_plate_time - 2)
+        renpy.restart_interaction()
+
+    def j701_plate_tick():
+        if store.j701_plate_step >= len(J701_PLATE_ORDERS):
+            return
+        store.j701_plate_time -= 1
+        if store.j701_plate_time <= 0:
+            store.j701_plate_errors += 1
+            store.j701_plate_combo = 0
+            store.j701_plate_wobble = min(100, store.j701_plate_wobble + 18)
+            store.j701_plate_feedback = "Trop lent. La demande se perd dans le bruit de la table."
+            store.j701_plate_step += 1
+            store.j701_plate_time = 8
+        else:
+            store.j701_plate_wobble = min(100, store.j701_plate_wobble + 2)
+        renpy.restart_interaction()
+
+    def j701_calm_reset():
+        store.j701_calm_score = 45
+        store.j701_calm_node = "start"
+        store.j701_calm_depth = 0
+        store.j701_calm_time = 6
+        store.j701_calm_feedback = "Réponds vite. Trop hésiter, c'est déjà laisser le malaise entrer."
+        store.j701_calm_done = False
+        store.j701_calm_last_line = ""
+
+    def j701_calm_choose(choice_index):
+        if store.j701_calm_done:
+            return
+        node = J701_CALM_NODES.get(store.j701_calm_node, J701_CALM_NODES["start"])
+        if choice_index >= len(node["choices"]):
+            return
+        label, next_node, effect, feedback = node["choices"][choice_index]
+        store.j701_calm_score = max(0, min(100, store.j701_calm_score + effect))
+        store.j701_calm_last_line = label
+        store.j701_calm_feedback = feedback
+        store.j701_calm_node = next_node
+        store.j701_calm_depth += 1
+        if not J701_CALM_NODES.get(next_node, {}).get("choices", []):
+            store.j701_calm_done = True
+        else:
+            store.j701_calm_time = 6
+        renpy.restart_interaction()
+
+    def j701_calm_timeout():
+        if store.j701_calm_done:
+            return
+        store.j701_calm_score = max(0, store.j701_calm_score - 8)
+        store.j701_calm_last_line = "..."
+        store.j701_calm_feedback = "Noam hésite. La table continue sans lui, un peu moins légère."
+        node = J701_CALM_NODES.get(store.j701_calm_node, J701_CALM_NODES["start"])
+        if node["choices"]:
+            store.j701_calm_node = node["choices"][-1][1]
+        store.j701_calm_depth += 1
+        store.j701_calm_time = 6
+        if not J701_CALM_NODES.get(store.j701_calm_node, {}).get("choices", []):
+            store.j701_calm_done = True
+        renpy.restart_interaction()
+
+    def j701_calm_tick():
+        if store.j701_calm_done:
+            return
+        store.j701_calm_time -= 1
+        if store.j701_calm_time <= 0:
+            j701_calm_timeout()
+        else:
+            renpy.restart_interaction()
+
+    def j701_console_reset():
+        store.j701_console_rings = [0, 1, 2, 3]
+        store.j701_console_errors = 0
+        store.j701_console_noise = 64
+        store.j701_console_feedback = "Chaque cadran est un flux régional. Aligne les quatre lectures sur zéro."
+
+    def j701_console_cycle(index):
+        rings = list(store.j701_console_rings)
+        while len(rings) < len(J701_CONSOLE_MODULES):
+            rings.append(0)
+        rings[index] = (rings[index] + 1) % len(J701_CONSOLE_MODULES[index]["values"])
+        store.j701_console_rings = rings
+        locked = 0
+        for idx, module in enumerate(J701_CONSOLE_MODULES):
+            if rings[idx] == module["target"]:
+                locked += 1
+        store.j701_console_noise = max(0, 64 - locked * 16)
+        store.j701_console_feedback = "Le flux se recale. Le chiffre change, mais le silence reste."
+        renpy.restart_interaction()
+
+    def j701_console_is_solved():
+        if len(store.j701_console_rings) < len(J701_CONSOLE_MODULES):
+            return False
+        for idx, module in enumerate(J701_CONSOLE_MODULES):
+            if store.j701_console_rings[idx] != module["target"]:
+                return False
+        return True
+
+    def j701_stock_reset():
+        store.j701_stock_marked = []
+        store.j701_stock_errors = 0
+        store.j701_stock_solved = False
+        store.j701_stock_clue = ""
+        store.j701_stock_feedback = "Compare le souvenir d'Elias avec l'étagère actuelle. Marque seulement les vraies disparitions."
+
+    def j701_stock_toggle(item_id):
+        marked = list(store.j701_stock_marked)
+        if item_id in marked:
+            marked.remove(item_id)
+        elif len(marked) < 3:
+            marked.append(item_id)
+        store.j701_stock_marked = marked
+        clues = [J701_STOCK_CLUES[item] for item in marked if item in J701_STOCK_CLUES]
+        store.j701_stock_clue = " / ".join(clues)
+        if clues:
+            store.j701_stock_feedback = "Hypothèse : quelqu'un rassemble de quoi " + ", ".join(clues) + "."
+        else:
+            store.j701_stock_feedback = "Hypothèse notée. Elias suit ton regard sans respirer."
+        renpy.restart_interaction()
+
+    def j701_stock_validate():
+        if sorted(store.j701_stock_marked) == sorted(J701_STOCK_TARGETS):
+            store.j701_stock_solved = True
+            store.j701_stock_clue = "souder / alimenter / stabiliser"
+            store.j701_stock_feedback = "Les absences forment une ligne nette : souder, alimenter, stabiliser."
+            renpy.restart_interaction()
+            return
+        store.j701_stock_errors += 1
+        store.j701_stock_feedback = "Ça ne colle pas. Un objet marqué n'est pas une vraie disparition."
+        renpy.restart_interaction()
+
+    def j701_clean_spawn(x=None, y=None, glitch=False):
+        import random
+        particle = {
+            "id": store.j701_clean_next_id,
+            "x": x if x is not None else random.randint(190, 1180),
+            "y": y if y is not None else random.randint(120, 540),
+            "dx": random.choice([-1, 1]) * random.uniform(0.5, 2.2),
+            "dy": random.choice([-1, 1]) * random.uniform(0.3, 1.6),
+            "sprite": random.choice(J701_CLEAN_SPRITES[4:] if glitch else J701_CLEAN_SPRITES[:4]),
+            "glitch": glitch,
+            "life": random.randint(5, 9) if glitch else random.randint(7, 12),
+        }
+        store.j701_clean_next_id += 1
+        store.j701_clean_particles.append(particle)
+
+    def j701_clean_reset():
+        import random
+        store.j701_clean_particles = []
+        store.j701_clean_score = 0
+        store.j701_clean_time = 22
+        store.j701_clean_next_id = 0
+        store.j701_clean_mouse_x = 960
+        store.j701_clean_mouse_y = 540
+        store.j701_clean_reveal = 0
+        store.j701_clean_feedback = "Balaye les poussières avant qu'elles se multiplient."
+        for i in range(7):
+            j701_clean_spawn(glitch=(i >= 5))
+
+    def j701_clean_sweep(particle_id):
+        particles = []
+        removed = None
+        for particle in store.j701_clean_particles:
+            if particle["id"] == particle_id:
+                removed = particle
+            else:
+                particles.append(particle)
+        if removed:
+            store.j701_clean_score += 2 if removed.get("glitch") else 1
+            store.j701_clean_reveal = min(100, store.j701_clean_reveal + (18 if removed.get("glitch") else 10))
+            store.j701_clean_feedback = "La poussière éclate en silence."
+            if removed.get("glitch"):
+                store.j701_clean_feedback = "Le parasite se désagrège sous le balai."
+        store.j701_clean_particles = particles
+        renpy.restart_interaction()
+
+    def j701_clean_tick():
+        import random
+        if store.j701_clean_score >= 12 or store.j701_clean_time <= 0:
+            return
+        try:
+            mx, my = renpy.get_mouse_pos()
+            store.j701_clean_mouse_x = mx
+            store.j701_clean_mouse_y = my
+        except Exception:
+            pass
+        store.j701_clean_time = max(0, store.j701_clean_time - 0.25)
+        moved = []
+        for particle in store.j701_clean_particles:
+            particle = dict(particle)
+            particle["x"] += particle["dx"]
+            particle["y"] += particle["dy"]
+            if particle["x"] < 110 or particle["x"] > 1240:
+                particle["dx"] *= -1
+            if particle["y"] < 90 or particle["y"] > 565:
+                particle["dy"] *= -1
+            particle["life"] -= 0.25
+            if particle["life"] <= 0 and len(store.j701_clean_particles) + len(moved) < 18:
+                particle["life"] = random.randint(5, 9)
+                moved.append({
+                    "id": store.j701_clean_next_id,
+                    "x": particle["x"] + random.randint(-80, 80),
+                    "y": particle["y"] + random.randint(-60, 60),
+                    "dx": -particle["dx"] * random.uniform(0.7, 1.25),
+                    "dy": -particle["dy"] * random.uniform(0.7, 1.25),
+                    "sprite": random.choice(J701_CLEAN_SPRITES[4:] if particle.get("glitch", False) else J701_CLEAN_SPRITES[:4]),
+                    "glitch": particle.get("glitch", False),
+                    "life": random.randint(5, 9),
+                })
+                store.j701_clean_next_id += 1
+                store.j701_clean_feedback = "La poussière se divise. Le bureau refuse de rester propre."
+            moved.append(particle)
+        store.j701_clean_particles = moved
+        if random.random() < 0.08 and len(store.j701_clean_particles) < 14:
+            j701_clean_spawn(glitch=random.random() < 0.35)
+        renpy.restart_interaction()
+
+screen j701_prepare_room():
+    modal True
+    zorder 220
+    add Solid("#00000088")
+    add Solid("#07131f99")
+
+    frame:
+        xalign 0.08
+        yalign 0.46
+        xsize 230
+        ysize 420
+        padding (18, 16)
+        background Solid("#05090add")
+        vbox:
+            spacing 14
+            text "ÉTAT" size 28 color "#E8F4FF" xalign 0.5
+            bar value StaticValue(j701_prep_focus, 4):
+                xsize 190
+                ysize 18
+            for idx, item in enumerate(J701_PREP_ITEMS):
+                $ item_id, label, feedback, xa, ya, tag = item
+                $ done = item_id in j701_prep_done
+                hbox:
+                    spacing 8
+                    text ("OK" if done else "--") size 18 color ("#B8F0A0" if done else "#516A7A")
+                    text tag size 20 color ("#E8F4FF" if done else "#9FD8FF")
+
+    frame:
+        xalign 0.5
+        yalign 0.08
+        xsize 760
+        padding (22, 14)
+        background Solid("#07131fee")
+        vbox:
+            spacing 6
+            text "SE RECOMPOSER" size 36 color "#E8F4FF" xalign 0.5
+            text "Clique les détails avant de rejoindre Lysa." size 22 color "#9FD8FF" xalign 0.5
+
+    for item_id, label, feedback, xa, ya, tag in J701_PREP_ITEMS:
+        $ done = item_id in j701_prep_done
+        textbutton label:
+            xalign xa
+            yalign ya
+            xsize 282
+            ysize 64
+            text_size 22
+            background Solid("#10283aee" if not done else "#1b3326ee")
+            hover_background Solid("#1a4665ee")
+            sensitive not done
+            action Function(j701_mark_list, "j701_prep_done", "j701_prep_feedback", item_id, feedback)
+
+    frame:
+        xalign 0.5
+        yalign 0.88
+        xsize 920
+        ysize 96
+        padding (18, 12)
+        background Solid("#061018ee")
+        vbox:
+            spacing 8
+            text "[len(j701_prep_done)]/4 gestes - dignité opérationnelle" size 22 color "#9FD8FF" xalign 0.5
+            text "[j701_prep_feedback]" size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
+
+    if len(j701_prep_done) >= 4:
+        timer 0.35 action Return(True)
+
+screen j701_plate_game():
+    modal True
+    zorder 220
+    on "show" action Function(j701_plate_reset)
+    timer 1.0 repeat True action Function(j701_plate_tick)
+    add Solid("#03070bee")
+
+    $ finished = j701_plate_step >= len(J701_PLATE_ORDERS)
+    if not finished:
+        $ order = J701_PLATE_ORDERS[j701_plate_step]
+    else:
+        $ order = {"who": "Table", "line": "Le plateau a survécu au repas.", "want": ""}
+
+    frame:
+        xalign 0.5
+        yalign 0.08
+        xsize 980
+        ysize 132
+        padding (24, 16)
+        background Solid("#07131ff2")
+        vbox:
+            spacing 6
+            text "PLATEAU EN CIRCULATION" size 34 color "#E8F4FF" xalign 0.5
+            text "[order['who']] : [order['line']]" size 24 color "#DCE8F7" xalign 0.5 text_align 0.5
+            if not finished:
+                text "ton : [order['tone']] / piste [order['lane'] + 1]" size 18 color "#FFDF8A" xalign 0.5
+
+    fixed:
+        xalign 0.5
+        yalign 0.52
+        xsize 1260
+        ysize 660
+        add Solid("#101820dd") xpos 80 ypos 250 xsize 1100 ysize 180
+        add Solid("#ff384855") xpos 80 ypos 250 xsize int(11 * j701_plate_wobble) ysize 180
+        add Solid("#283846") xpos 400 ypos 180 xsize 460 ysize 300
+        add Solid("#05090a88") xpos 420 ypos 200 xsize 420 ysize 260
+        for i in range(6):
+            add Solid("#ffffff10") xpos (150 + i * 180) ypos 250 xsize 2 ysize 180
+        if not finished:
+            add Solid("#ffdf8a55") xpos 88 ypos (260 + order["lane"] * 42) xsize 1084 ysize 30
+
+        for item_id, label, color, xa, ya, hint in J701_PLATE_BUTTONS:
+            $ wanted = (not finished and item_id == order["want"])
+            button:
+                xalign xa
+                yalign ya
+                xsize 180
+                ysize 100
+                background Solid(color + ("ff" if wanted else "cc"))
+                hover_background Solid("#ffffffdd")
+                sensitive not finished
+                action Function(j701_plate_pick, item_id)
+                vbox:
+                    spacing 4
+                    text label size 27 color "#061018" xalign 0.5
+                    text hint.upper() size 15 color "#24313a" xalign 0.5
+                    text "PASSER" size 17 color "#1b2b34" xalign 0.5
+
+    frame:
+        xalign 0.14
+        yalign 0.18
+        xsize 260
+        ysize 96
+        padding (14, 10)
+        background Solid("#05090add")
+        vbox:
+            spacing 6
+            text "Rythme de table" size 20 color "#9FD8FF" xalign 0.5
+            bar value StaticValue(max(0, 100 - j701_plate_wobble), 100):
+                xsize 220
+                ysize 16
+            text "combo x[j701_plate_combo]" size 20 color "#FFDF8A" xalign 0.5
+
+    frame:
+        xalign 0.5
+        yalign 0.89
+        xsize 980
+        ysize 116
+        padding (20, 12)
+        background Solid("#061018ee")
+        vbox:
+            spacing 8
+            hbox:
+                spacing 18
+                text "Temps" size 23 color "#9FD8FF"
+                bar value StaticValue(j701_plate_time, 8):
+                    xsize 540
+                    ysize 20
+                text "OK [j701_plate_score]/4" size 23 color "#B8F0A0"
+                text "Ratés [j701_plate_errors]" size 23 color "#FF8A7A"
+            text "[j701_plate_feedback]" size 22 color "#E8F4FF" xalign 0.5 text_align 0.5
+
+    if finished:
+        timer 0.8 action Return(j701_plate_score)
+
+screen j701_calm_game():
+    modal True
+    zorder 220
+    on "show" action Function(j701_calm_reset)
+    timer 1.0 repeat True action Function(j701_calm_tick)
+    add "gui/day7/social/branch_ui.png" at cover_screen
+    add Solid("#02070b55")
+
+    if not j701_calm_done:
+        $ round_data = J701_CALM_NODES.get(j701_calm_node, J701_CALM_NODES["start"])
+    else:
+        $ round_data = J701_CALM_NODES.get(j701_calm_node, {"speaker": "Table", "line": "Le calme tient encore.", "choices": []})
+
+    fixed:
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080
+
+        frame:
+            xpos 92
+            ypos 92
+            xsize 680
+            ysize 176
+            padding (22, 16)
+            background Solid("#07131fcc")
+            vbox:
+                spacing 8
+                text "DISCUSSION / [round_data['speaker']]" size 34 color "#E8F4FF"
+                text round_data["line"] size 24 color "#DCE8F7"
+                if j701_calm_last_line:
+                    text "Noam : [j701_calm_last_line]" size 20 color "#FFDF8A"
+
+        frame:
+            xpos 1420
+            ypos 70
+            xsize 390
+            ysize 112
+            padding (16, 12)
+            background Solid("#061018dd")
+            vbox:
+                spacing 8
+                hbox:
+                    spacing 14
+                    text "6s" size 25 color "#FFDF8A"
+                    bar value StaticValue(j701_calm_time, 6):
+                        xsize 270
+                        ysize 20
+                bar value StaticValue(j701_calm_score, 100):
+                    xsize 350
+                    ysize 18
+                text ("chemin " + str(j701_calm_depth + 1) + "/2") size 18 color "#9FD8FF" xalign 0.5
+
+        for dot in range(3):
+            add Solid("#ffdf8a" if dot <= j701_calm_depth else "#516A7A") xpos (102 + dot * 38) ypos 294 xsize 24 ysize 8
+
+        for idx, choice in enumerate(round_data["choices"]):
+            $ yline = 154 + idx * 190
+            $ effect = choice[2]
+            $ tone_color = "#B8F0A0" if effect >= 10 else ("#FF8A7A" if effect < 0 else "#FFDF8A")
+            textbutton choice[0]:
+                xpos 1100
+                ypos yline
+                xsize 690
+                ysize 96
+                text_size 24
+                text_xalign 1.0
+                background Solid("#07131faa")
+                hover_background Solid("#17344bdd")
+                action Function(j701_calm_choose, idx)
+            add Solid(tone_color) xpos 1070 ypos (yline + 16) xsize 8 ysize 64
+
+        frame:
+            xpos 460
+            ypos 910
+            xsize 1000
+            ysize 74
+            padding (18, 10)
+            background Solid("#061018dd")
+            text "[j701_calm_feedback]" size 22 color "#E8F4FF" xalign 0.5 text_align 0.5
+
+    if j701_calm_done:
+        timer 0.8 action Return(j701_calm_score)
+
+screen j701_console_game():
+    modal True
+    zorder 220
+    on "show" action Function(j701_console_reset)
+    add Solid("#000a10ee")
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1340
+        ysize 790
+        padding (30, 26)
+        background Solid("#06131cf5")
+        vbox:
+            spacing 18
+            text "CANON / SYNCHRONISATION DES FLUX" size 36 color "#DFF8FF" xalign 0.5
+            text "Chaque cadran tourne sur des valeurs publiques. Le zéro n'apparaît qu'une fois par flux." size 22 color "#9ED8FF" xalign 0.5
+            hbox:
+                spacing 26
+                xalign 0.5
+                for idx, module in enumerate(J701_CONSOLE_MODULES):
+                    $ ring = j701_console_rings[idx] if len(j701_console_rings) > idx else 0
+                    $ value = module["values"][ring]
+                    $ solved = ring == module["target"]
+                    button:
+                        xsize 285
+                        ysize 360
+                        background Solid("#0d1b26ee" if not solved else "#163321ee")
+                        hover_background Solid("#17344bee")
+                        action Function(j701_console_cycle, idx)
+                        vbox:
+                            spacing 12
+                            xalign 0.5
+                            text module["name"] size 32 color "#9ED8FF" xalign 0.5
+                            null height 8
+                            frame:
+                                xsize 210
+                                ysize 210
+                                background Solid("#02070b")
+                                xalign 0.5
+                                add Solid("#1d3d55") xalign 0.5 yalign 0.5 xsize 180 ysize 180
+                                add Solid("#07131f") xalign 0.5 yalign 0.5 xsize 132 ysize 132
+                                text value size 52 color ("#FFDF8A" if solved else "#DFF8FF") xalign 0.5 yalign 0.5
+                            text ("VERROUILLÉ" if solved else "TOURNER") size 22 color ("#B8F0A0" if solved else "#FFDF8A") xalign 0.5
+                            bar value StaticValue(ring + 1, len(module["values"])):
+                                xsize 210
+                                ysize 10
+                            text ("cible: 0" if not solved else "flux muet") size 17 color "#9ED8FF" xalign 0.5
+            frame:
+                xalign 0.5
+                xsize 980
+                ysize 92
+                padding (18, 10)
+                background Solid("#02070bee")
+                text "[j701_console_feedback]" size 23 color "#E8F4FF" xalign 0.5 yalign 0.5 text_align 0.5
+            hbox:
+                spacing 18
+                xalign 0.5
+                text "Bruit système" size 22 color "#9ED8FF"
+                bar value StaticValue(j701_console_noise, 64):
+                    xsize 520
+                    ysize 18
+                text "[4 - int(j701_console_noise / 16)]/4 flux verrouillés" size 22 color "#FFDF8A"
+            if j701_console_is_solved():
+                text "TOTAL MONDIAL : 0" size 46 color "#FFDF8A" xalign 0.5
+            else:
+                text "TOTAL MONDIAL : SIGNAL INCOHÉRENT" size 34 color "#516A7A" xalign 0.5
+
+    if j701_console_is_solved():
+        timer 0.75 action Return(True)
+
+screen j701_stock_game():
+    modal True
+    zorder 220
+    on "show" action Function(j701_stock_reset)
+    add Solid("#090704dd")
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1320
+        ysize 790
+        padding (30, 24)
+        background Solid("#10151af2")
+        vbox:
+            spacing 14
+            text "INVENTAIRE CROISÉ" size 38 color "#E8F4FF" xalign 0.5
+            text "Souvenir à gauche, étagère actuelle à droite. Marque trois disparitions utiles, pas les absences normales." size 22 color "#A9C6D8" xalign 0.5
+            hbox:
+                spacing 18
+                xalign 0.5
+                text "Hypothèse" size 23 color "#9FD8FF"
+                frame:
+                    xsize 560
+                    ysize 44
+                    padding (12, 6)
+                    background Solid("#061018ee")
+                    text (j701_stock_clue if j701_stock_clue else "aucun schéma fiable") size 22 color "#FFDF8A" xalign 0.5 yalign 0.5
+            grid 4 2:
+                spacing 12
+                xalign 0.5
+                for item_id, label, before, now in J701_STOCK_ITEMS:
+                    $ marked = item_id in j701_stock_marked
+                    $ true_missing = before == "present" and now == "absent"
+                    $ is_target = item_id in J701_STOCK_TARGETS
+                    button:
+                        xsize 300
+                        ysize 174
+                        background Solid("#3b241fee" if marked else ("#26333dee" if true_missing else "#232b33ee"))
+                        hover_background Solid("#365064ee")
+                        action Function(j701_stock_toggle, item_id)
+                        vbox:
+                            spacing 8
+                            text label size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
+                            hbox:
+                                spacing 8
+                                xalign 0.5
+                                vbox:
+                                    spacing 4
+                                    text "AVANT" size 16 color "#9FD8FF" xalign 0.5
+                                    text ("OK" if before == "present" else "--") size 28 color ("#B8F0A0" if before == "present" else "#516A7A") xalign 0.5
+                                vbox:
+                                    spacing 4
+                                    text "MAINT." size 16 color "#9FD8FF" xalign 0.5
+                                    text ("OK" if now == "present" else "--") size 28 color ("#B8F0A0" if now == "present" else "#FF8A7A") xalign 0.5
+                            text ("MARQUÉ" if marked else "inspecter") size 18 color ("#FFDF8A" if marked else "#A9C6D8") xalign 0.5
+                            if marked and is_target:
+                                text J701_STOCK_CLUES[item_id].upper() size 16 color "#B8F0A0" xalign 0.5
+                            elif marked:
+                                text "FAUX SIGNAL" size 16 color "#FF8A7A" xalign 0.5
+            frame:
+                xalign 0.5
+                xsize 980
+                ysize 82
+                padding (18, 10)
+                background Solid("#061018ee")
+                text "[j701_stock_feedback]" size 22 color "#E8F4FF" xalign 0.5 yalign 0.5 text_align 0.5
+            textbutton "Valider les 3 disparitions":
+                xalign 0.5
+                xsize 360
+                ysize 58
+                text_size 23
+                background Solid("#10283aee")
+                hover_background Solid("#1a4665ee")
+                action Function(j701_stock_validate)
+                sensitive len(j701_stock_marked) == 3
+            text "Erreurs : [j701_stock_errors]" size 18 color "#FF8A7A" xalign 0.5
+
+    if j701_stock_solved:
+        timer 0.9 action Return(True)
+
+screen j701_search_drawing_game():
+    modal True
+    zorder 220
+    on "show" action Function(j701_clean_reset)
+    timer 0.25 repeat True action Function(j701_clean_tick)
+    add Solid("#02070bee")
+    add "bg_chambre" at adaptive_fullscreen
+    add Solid("#00000099")
+
+    frame:
+        xalign 0.5
+        yalign 0.08
+        xsize 920
+        padding (22, 14)
+        background Solid("#07131fee")
+        vbox:
+            spacing 6
+            text "NETTOYER LE BUREAU" size 36 color "#E8F4FF" xalign 0.5
+            text "Balaye les particules avant qu'elles se multiplient. Le dessin n'apparaît nulle part." size 22 color "#9FD8FF" xalign 0.5
+
+    frame:
+        xalign 0.5
+        yalign 0.53
+        xsize 1360
+        ysize 650
+        background Solid("#091018cc")
+        padding (0, 0)
+        add Solid("#17202aaa") xpos 120 ypos 270 xsize 1120 ysize 180
+        add Solid("#263444dd") xpos 310 ypos 150 xsize 730 ysize 330
+        add Solid("#05090acc") xpos 340 ypos 180 xsize 670 ysize 270
+        add Solid("#d8e6ef22") xpos 488 ypos 230 xsize max(8, int(j701_clean_reveal * 3.8)) ysize 92
+        add Solid("#ffdf8a55") xpos 488 ypos 230 xsize 380 ysize 4
+        add Solid("#ffdf8a55") xpos 488 ypos 318 xsize 380 ysize 4
+
+        for particle in j701_clean_particles:
+            imagebutton:
+                idle Transform(particle["sprite"], zoom=0.34)
+                hover Transform("gui/day7/clean/sweep_ring.png", zoom=0.38)
+                xpos int(particle["x"])
+                ypos int(particle["y"])
+                xanchor 0.5
+                yanchor 0.5
+                action Function(j701_clean_sweep, particle["id"])
+
+    frame:
+        xalign 0.5
+        yalign 0.88
+        xsize 920
+        ysize 96
+        padding (18, 12)
+        background Solid("#061018ee")
+        vbox:
+            spacing 8
+            hbox:
+                spacing 18
+                xalign 0.5
+                text "Temps" size 22 color "#9FD8FF"
+                bar value StaticValue(max(0, j701_clean_time), 22):
+                    xsize 520
+                    ysize 18
+                text "Nettoyé [j701_clean_score]/12" size 22 color "#FFDF8A"
+            hbox:
+                spacing 18
+                xalign 0.5
+                text "Trace révélée" size 20 color "#9FD8FF"
+                bar value StaticValue(j701_clean_reveal, 100):
+                    xsize 480
+                    ysize 14
+            text "[j701_clean_feedback]" size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
+
+    add Transform("gui/day7/clean/broom.png", zoom=0.32) xpos j701_clean_mouse_x ypos j701_clean_mouse_y xanchor 0.18 yanchor 0.18
+
+    if j701_clean_score >= 12 or j701_clean_time <= 0:
+        timer 0.9 action Return(True)
+
+label j701_play_preparation:
+    $ j701_reset_list("j701_prep_done", "j701_prep_feedback", "Noam est encore à moitié endormi.")
+    call screen j701_prepare_room
+    return
+
+label j701_play_plate:
+    call screen j701_plate_game
+    return
+
+label j701_play_calm:
+    call screen j701_calm_game
+    return
+
+label j701_play_console:
+    call screen j701_console_game
+    return
+
+label j701_play_stock:
+    call screen j701_stock_game
+    return
+
+label j701_play_search_drawing:
+    call screen j701_search_drawing_game
+    return
+
 label _7_0_1_REVEIL_CHAMBRE:
 
     scene black
@@ -222,7 +1117,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     think "Elle n'est pas là."
 
     "Un vrai soulagement me traverse."
-    "Net."
+    "Net." id j701_reveil_soulagement_net
     "Presque honteux."
 
     think "Tant pis."
@@ -243,7 +1138,11 @@ label _7_0_1_REVEIL_CHAMBRE:
 
     scene bg_cg026_1 at adaptive_fullscreen with dissolve
 
+    call j701_play_preparation from _call_j701_play_preparation
+
     "Puis un deuxième."
+    "Je ressemble enfin à quelqu'un qui a choisi de se lever."
+    "Ou presque."
 
     "La chambre reste silencieuse."
 
@@ -371,6 +1270,10 @@ label _7_0_1_CAFETERIA:
     "Plateau devant moi."
     "Je mange sans réfléchir."
 
+    call j701_play_plate from _call_j701_play_plate
+
+    "Quand je relève enfin la tête, la conversation n'a pas eu besoin de moi pour continuer."
+
     "Ça fait longtemps que c'était pas juste… manger."
 
     $ hideGroup()
@@ -410,6 +1313,8 @@ label _7_0_1_CAFETERIA:
 
     iris "Oui mais laisse-moi rêver deux minutes."
     iris rire "Je veux que ça DUUURE..."
+
+    call j701_play_calm from _call_j701_play_calm
 
     julian rire "Accordé."
 
@@ -563,6 +1468,8 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     tomas reflechit "Regarde... Depuis hier soir…"
 
+    call j701_play_console from _call_j701_play_console
+
     "Il déglutit légèrement."
 
     tomas inquiet "Zéro."
@@ -627,7 +1534,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     tomas reflechit "Mais si Kami disparaît réellement…"
     tomas inquiet "Alors ça dépasse largement le Conclave."
 
-    "Silence."
+    "Silence." id j701_tomas_regles_silence
     "Pas un silence lourd."
     "Un silence vide."
 
@@ -773,6 +1680,11 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     elias fatigue "J'avais tout rangé ce matin."
     elias fatigue "J'étais en train de bricoler un petit truc..."
 
+    call j701_play_stock from _call_j701_play_stock
+
+    elias fatigue "J'ai refait la liste dans ma tête."
+    elias inquiet "Plus je recompte, moins ça colle."
+
     kael reflechit "Dans le stockage principal ?"
 
     elias neutre "Oui."
@@ -790,8 +1702,8 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     iris hesitation "Et personne a rien pris ici ?"
 
-    "Silence."
-    "Personne ne répond."
+    "Silence." id j701_stockage_batteries_silence
+    "Personne ne répond." id j701_stockage_batteries_personne_repond
     "Même Julian relève un peu la tête."
 
     julian reflexion "Pourquoi quelqu'un volerait des batteries ?"
@@ -918,10 +1830,13 @@ label _7_0_1_FIN_JOURNEE:
     noam surpris "Hein... ?"
 
     "Je regarde autour de moi."
+
+    call j701_play_search_drawing from _call_j701_play_search_drawing
+
     "Le bureau."
     "Le sol."
     "Sous le lit."
-    "Rien."
+    "Rien." id j701_chambre_fouille_rien
 
     think "Je l'ai pourtant laissé là il me semble."
 

@@ -245,13 +245,41 @@ label _6_0_1_REVEIL_CHAMBRE:
     think "Non."
     think "Pas maintenant."
 
-    "Je me lève enfin."
+    $ _j601_reveil_trace_score = 0
+
+    "Je pousse sur le matelas."
+    "Lentement."
+    "Comme si mon corps discutait encore."
+
+    call screen trace_qte(path_type="s_curve", time_limit=4.2, wait_time=0.25, tolerance=78, max_errors=4, anchor_x=960, anchor_y=650, start_radius=120)
+    if _return:
+        $ _j601_reveil_trace_score = 1
+
+    "Je me lève."
     "Mes jambes répondent avec un léger retard."
 
     pause 0.4
 
-    "Je ramasse ma veste."
-    "Je l'enfile sans vraiment regarder ce que je fais."
+    "Ma veste est par terre."
+    "Trop loin."
+    "Évidemment."
+
+    "Je la ramasse."
+    "Le tissu pèse plus lourd que d'habitude."
+
+    "Je l'enfile."
+    "Sans vraiment regarder ce que je fais."
+
+    "Puis je vais jusqu'à la porte."
+
+    if _j601_reveil_trace_score >= 1:
+        think "Ça passe."
+        think "Pas bien."
+        think "Mais ça passe."
+    else:
+        think "Je n'y arrive presque pas."
+        think "Je bouge quand même."
+        think "C'est tout."
 
     pause 0.5
 
@@ -302,13 +330,48 @@ label _6_0_1_CAFETERIA:
 
     elias "Putain—"
 
-    mara "T’es sérieux là ?"
+    call screen trace_qte(path_type="arc", time_limit=1.8, wait_time=0.1, tolerance=86, max_errors=3, anchor_x=960, anchor_y=650, start_radius=125)
+    $ _j601_verre_score = tq_progress
+
+    if _j601_verre_score >= 0.82:
+        "Ma main part avant ma tête."
+        "Je redresse le verre d'un coup sec."
+        "Quelques gouttes tombent."
+        "Pas plus."
+        $ showP("elias", "inquiet", 0.25)
+        elias "Oh putain."
+        elias "Merci."
+        $ showP("mara", "agace", 0.55)
+        mara "Génial."
+        mara "On applaudit le miracle ou on regarde où on fout ses mains ?"
+    elif _j601_verre_score >= 0.35:
+        "Je le rattrape trop tard."
+        "Le verre tape la table."
+        "Une nappe d'eau file vers Mara."
+        "Je l'arrête avec ma manche."
+        $ showP("elias", "inquiet", 0.25)
+        elias "Merde, merde."
+        elias "J'ai fait quoi, là ?"
+        $ showP("mara", "agace", 0.55)
+        mara "Pas grand-chose."
+        mara "Juste assez pour me tremper et nous foutre les nerfs."
+    else:
+        "Je tends le bras."
+        "Trop lent."
+        "Le verre bascule."
+        "Tout se renverse."
+        $ showP("elias", "inquiet", 0.25)
+        elias "Et merde."
+        elias "Fait chier."
+        $ showP("mara", "agace", 0.55)
+        mara "T’es sérieux là ?"
+        mara "Tout le verre."
+        mara "Évidemment."
 
     elias "J’ai pas—"
 
     mara "Hier tu t'es déjà retrouvé coincé à cause de ta maladresse."
-    $ showP("mara", "agace", 0.55)
-    mara "Et là tu renverses ton verre sur mon putain de tee-shirt, t'es sérieux ?!"
+    mara "Et là tu recommences au petit déjeuner, t'es sérieux ?!"
     mara "Demain tu nous réserves quoi ?!"
 
     elen "..."
@@ -537,6 +600,25 @@ label _6_0_1_TRANSITION_CONCLAVE:
     "Je continue."
     "Puis je remarque."
     "Il manque quelqu'un."
+
+    menu:
+        "Sael":
+            $ _j601_absent_pick = "sael"
+        "Iris":
+            $ _j601_absent_pick = "iris"
+        "Elias":
+            $ _j601_absent_pick = "elias"
+        "Kael":
+            $ _j601_absent_pick = "kael"
+
+    if _j601_absent_pick == "sael":
+        think "Sael."
+        think "Tout de suite."
+    else:
+        think "Non."
+        think "Pas elle."
+        "Quelques secondes passent."
+        think "Sael."
 
     hide all
     $ showP("sael", "neutre", 0.5)

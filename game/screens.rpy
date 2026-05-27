@@ -200,37 +200,55 @@ style choice_button_text is default:
 ################################################################################
 
 default quick_menu = True
+default quick_menu_open = False
 
 screen quick_menu():
-    zorder 100
+    zorder 500
 
-    if quick_menu:
-        frame:
-            xalign 0.5
-            yalign 1.0
-            background Solid("#07101888")
-            padding (0, 0)
+    if quick_menu and not main_menu:
+        textbutton _(""):
+            style "quick_toggle_button"
+            xpos 20
+            ypos 22
+            action ToggleVariable("quick_menu_open")
 
-            hbox:
-                style_prefix "quick"
-                xalign 0.5
-                yalign 1.0
+        if quick_menu_open:
+            frame:
+                style "quick_panel_frame"
 
-                textbutton _("Retour")        action Rollback()
-                textbutton _("Historique")    action ShowMenu('history')
-                textbutton _("Avance rapide") action Skip() alternate Skip(fast=True, confirm=True)
-                textbutton _("Auto")          action Preference("auto-forward", "toggle")
-                textbutton _("Sauvegarde")    action ShowMenu('save')
-                textbutton _("Sauvegarde R.") action QuickSave()
-                textbutton _("Chargement R.") action QuickLoad()
-                textbutton _("Préf.")         action ShowMenu('preferences')
+                vbox:
+                    style_prefix "quick_panel"
+
+                    textbutton _("Historique")      action [SetVariable("quick_menu_open", False), ShowMenu("history")]
+                    textbutton _("Sauvegarde")      action [SetVariable("quick_menu_open", False), ShowMenu("save")]
+                    textbutton _("Charger")         action [SetVariable("quick_menu_open", False), ShowMenu("load")]
+                    textbutton _("Préférences")     action [SetVariable("quick_menu_open", False), ShowMenu("preferences")]
+                    textbutton _("Profils")         action [SetVariable("quick_menu_open", False), ShowMenu("profiles_menu")]
+                    textbutton _("Roadmap")         action [SetVariable("quick_menu_open", False), ShowMenu("roadmap_menu")]
+                    textbutton _("Codex")           action [SetVariable("quick_menu_open", False), ShowMenu("codex_menu")]
+                    textbutton _("Codes promo")     action [SetVariable("quick_menu_open", False), ShowMenu("promo_codes_menu")]
+                    textbutton _("Menu principal")  action [SetVariable("quick_menu_open", False), MainMenu()]
+                    textbutton _("À propos")        action [SetVariable("quick_menu_open", False), ShowMenu("about")]
+                    textbutton _("Aide")            action [SetVariable("quick_menu_open", False), ShowMenu("help")]
+                    textbutton _("Quitter")         action [SetVariable("quick_menu_open", False), Quit(confirm=True)]
 
 
 init python:
     config.overlay_screens.append("quick_menu")
 
+label after_load:
+    $ quick_menu = True
+    $ quick_menu_open = False
+    return
+
 style quick_button is default
 style quick_button_text is button_text
+style quick_toggle_button is quick_button
+style quick_toggle_button_text is quick_button_text
+style quick_panel_frame is frame
+style quick_panel_vbox is vbox
+style quick_panel_button is button
+style quick_panel_button_text is button_text
 
 style quick_button:
     properties gui.button_properties("quick_button")
@@ -242,6 +260,41 @@ style quick_button_text:
     hover_color "#a8d8ea"
     selected_color "#5cd3ff"
     size 21
+
+style quick_toggle_button:
+    background "gui/quick_menu/toggle_idle.png"
+    hover_background "gui/quick_menu/toggle_hover.png"
+    xsize 72
+    ysize 72
+    padding (0, 0)
+
+style quick_toggle_button_text:
+    size 1
+
+style quick_panel_frame:
+    xpos 0
+    ypos 0
+    xsize 328
+    yfill True
+    background Frame("gui/quick_menu/panel.png", 0, 0)
+    padding (39, 47, 28, 36)
+
+style quick_panel_vbox:
+    spacing 20
+
+style quick_panel_button:
+    background None
+    hover_background None
+    xsize 250
+    ysize 31
+    padding (0, 0)
+
+style quick_panel_button_text:
+    font "fonts/Barlow-Light.ttf"
+    size 27
+    color "#317f98"
+    hover_color "#5cd3ff"
+    insensitive_color "#214a5d"
 
 
 ################################################################################
@@ -1436,24 +1489,34 @@ style pref_vbox:
 
 screen quick_menu():
     variant "touch"
-    zorder 100
+    zorder 500
 
-    if quick_menu:
-        frame:
-            xalign 0.5
-            yalign 1.0
-            background Solid("#07101888")
-            padding (0, 0)
+    if quick_menu and not main_menu:
+        textbutton _(""):
+            style "quick_toggle_button"
+            xpos 16
+            ypos 16
+            action ToggleVariable("quick_menu_open")
 
-            hbox:
-                style_prefix "quick"
-                xalign 0.5
-                yalign 1.0
+        if quick_menu_open:
+            frame:
+                style "quick_panel_frame"
 
-                textbutton _("Retour")        action Rollback()
-                textbutton _("Avance rapide") action Skip() alternate Skip(fast=True, confirm=True)
-                textbutton _("Auto")          action Preference("auto-forward", "toggle")
-                textbutton _("Menu")          action ShowMenu()
+                vbox:
+                    style_prefix "quick_panel"
+
+                    textbutton _("Historique")      action [SetVariable("quick_menu_open", False), ShowMenu("history")]
+                    textbutton _("Sauvegarde")      action [SetVariable("quick_menu_open", False), ShowMenu("save")]
+                    textbutton _("Charger")         action [SetVariable("quick_menu_open", False), ShowMenu("load")]
+                    textbutton _("Préférences")     action [SetVariable("quick_menu_open", False), ShowMenu("preferences")]
+                    textbutton _("Profils")         action [SetVariable("quick_menu_open", False), ShowMenu("profiles_menu")]
+                    textbutton _("Roadmap")         action [SetVariable("quick_menu_open", False), ShowMenu("roadmap_menu")]
+                    textbutton _("Codex")           action [SetVariable("quick_menu_open", False), ShowMenu("codex_menu")]
+                    textbutton _("Codes promo")     action [SetVariable("quick_menu_open", False), ShowMenu("promo_codes_menu")]
+                    textbutton _("Menu principal")  action [SetVariable("quick_menu_open", False), MainMenu()]
+                    textbutton _("À propos")        action [SetVariable("quick_menu_open", False), ShowMenu("about")]
+                    textbutton _("Aide")            action [SetVariable("quick_menu_open", False), ShowMenu("help")]
+                    textbutton _("Quitter")         action [SetVariable("quick_menu_open", False), Quit(confirm=True)]
 
 
 style window:

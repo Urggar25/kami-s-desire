@@ -1863,6 +1863,56 @@ init 3 python:
             return True
         renpy.restart_interaction()
 
+screen vote_argument_briefcase(arg_id, argument_data, card_drag_name, drop_drag_name, drop_handler):
+    modal True
+    zorder 180
+    $ arg = argument_data
+
+    add Solid("#02050bd9")
+    frame:
+        xalign 0.5
+        yalign 0.09
+        padding (18, 10)
+        background Solid("#06131d")
+        text "Glisse la carte dans la mallette de Noam." size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+
+    draggroup:
+        drag:
+            drag_name card_drag_name
+            xpos 330
+            ypos 338
+            xsize 460
+            ysize 260
+            draggable True
+            droppable False
+            dragged (lambda drags, drop, arg_id=arg_id, drop_handler=drop_handler: drop_handler(drags, drop, arg_id))
+            fixed:
+                xfill True
+                yfill True
+                add arg.get("card", "gui/day3/argument_card_bg.png")
+                vbox:
+                    xpos 44
+                    ypos 46
+                    xsize 370
+                    spacing 14
+                    text "[arg['title']]" size 34 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                    text "DOSSIER DU VOTE" size 20 color "#9ed8ff" font "fonts/Rajdhani-SemiBold.ttf"
+
+        drag:
+            drag_name drop_drag_name
+            xpos 1020
+            ypos 308
+            xsize 560
+            ysize 330
+            draggable False
+            droppable True
+            fixed:
+                xfill True
+                yfill True
+                add "gui/day3/argument_drop_zone.png"
+                add "gui/day3/argument_briefcase_open.png" xpos 20 ypos 24
+                text "DÉPOSER ICI" xalign 0.5 ypos 250 size 28 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+
 screen day2_quick_vote_notes():
     pass
 
@@ -2007,54 +2057,8 @@ screen day2_current_vote_codex():
                                         text "[cdata['name']]" xalign 0.5 size 17 color "#dff8ff"
 
 screen day2_argument_briefcase(arg_id):
-    modal True
-    zorder 180
     $ arg = DAY2_VOTE_ARGUMENTS[arg_id]
-
-    add Solid("#02050bd9")
-    frame:
-        xalign 0.5
-        yalign 0.09
-        padding (18, 10)
-        background Solid("#06131d")
-        text "Glisse la carte dans la mallette de Noam." size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-
-    draggroup:
-        drag:
-            drag_name "day2_argument_card"
-            xpos 330
-            ypos 338
-            xsize 460
-            ysize 260
-            draggable True
-            droppable False
-            dragged (lambda drags, drop, arg_id=arg_id: day2_argument_drop(drags, drop, arg_id))
-            fixed:
-                xfill True
-                yfill True
-                add "gui/day3/argument_card_bg.png"
-                vbox:
-                    xpos 44
-                    ypos 46
-                    xsize 370
-                    spacing 14
-                    text "[arg['title']]" size 34 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
-                    text "DOSSIER DU VOTE" size 20 color "#9ed8ff" font "fonts/Rajdhani-SemiBold.ttf"
-
-        drag:
-            drag_name "day2_briefcase_drop"
-            xpos 1020
-            ypos 308
-            xsize 560
-            ysize 330
-            draggable False
-            droppable True
-            fixed:
-                xfill True
-                yfill True
-                add "gui/day3/argument_drop_zone.png"
-                add "gui/day3/argument_briefcase_open.png" xpos 20 ypos 24
-                text "DÉPOSER ICI" xalign 0.5 ypos 250 size 28 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+    use vote_argument_briefcase(arg_id, arg, "day2_argument_card", "day2_briefcase_drop", day2_argument_drop)
 
 label day2_play_wakeup_trace:
     while True:

@@ -514,6 +514,28 @@ init -2 python:
         if setup_label and renpy.has_label(setup_label):
             renpy.call_in_new_context(setup_label)
 
+    def roadmap_jump_to_node(node_id):
+        node = ROADMAP_NODE_BY_ID.get(node_id)
+        if not node:
+            renpy.notify("Roadmap: noeud inconnu - %s" % node_id)
+            return
+        label = node.get("label")
+        if not label or not renpy.has_label(label):
+            renpy.notify("Roadmap: label introuvable - %s" % label)
+            return
+
+        store.quick_menu = True
+        store.quick_menu_open = False
+        roadmap_apply_node_setup(node_id)
+        if node_id not in store.roadmap_unlocked_nodes:
+            store.roadmap_unlocked_nodes.append(node_id)
+        if node_id not in store.roadmap_discovered_nodes:
+            store.roadmap_discovered_nodes.append(node_id)
+        store.roadmap_current_node = node_id
+        store.roadmap_target_node_id = None
+        store.roadmap_target_label = None
+        renpy.jump_out_of_context(label)
+
     def roadmap_latest_node_id():
         if store.roadmap_current_node in ROADMAP_NODE_BY_ID:
             return store.roadmap_current_node
@@ -549,6 +571,8 @@ transform roadmap_soft_pulse:
     repeat
 
 label roadmap_perform_teleport:
+    $ quick_menu = True
+    $ quick_menu_open = False
     $ _roadmap_target = roadmap_target_node_id
     if _roadmap_target:
         $ roadmap_apply_node_setup(_roadmap_target)
@@ -752,9 +776,8 @@ screen roadmap_node_details(node):
                     textbutton "Rejoindre cette séquence":
                         style "roadmap_action_button"
                         action [
-                            SetVariable("roadmap_target_node_id", node["id"]),
                             Hide("roadmap_menu"),
-                            Jump("roadmap_perform_teleport"),
+                            Function(roadmap_jump_to_node, node["id"]),
                         ]
                 else:
                     textbutton "Accès refusé par Kami":

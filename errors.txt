@@ -2,9 +2,15 @@
 errors listed below, and try again.
 
 
-File "game/scenario/free_time.rpy", line 26: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    color "#FFFFFF"
-                   ^
+File "game/scenario/7_0_1.rpy", line 225: Line with id 92b9db42 appears twice. The other line is game/scenario/6_0_1.rpy:469
+
+File "game/scenario/7_0_1.rpy", line 630: Line with id 16b8cb94_5 appears twice. The other line is game/scenario/6_0_1.rpy:925
+
+File "game/scenario/7_0_1.rpy", line 793: Line with id 16b8cb94_6 appears twice. The other line is game/scenario/6_0_1.rpy:1156
+
+File "game/scenario/7_0_1.rpy", line 794: Line with id 96aae473_1 appears twice. The other line is game/scenario/6_0_1.rpy:1436
+
+File "game/scenario/7_0_1.rpy", line 924: Line with id c09788b4_2 appears twice. The other line is game/scenario/6_0_1.rpy:641
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May 23 02:24:36 2026
+Mon May 25 19:22:28 2026

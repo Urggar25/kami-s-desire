@@ -1,0 +1,22 @@
+{
+  "name": "renpy-development",
+  "version": "0.1.0",
+  "description": "Codex support for Ren'Py visual novel development.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ren'Py Development",
+    "shortDescription": "Build, review, and debug Ren'Py projects.",
+    "longDescription": "Ren'Py Development helps Codex work on visual novel projects with Ren'Py-specific guidance for script files, labels, dialogue, screens, transforms, assets, linting, builds, and save-compatible changes.",
+    "developerName": "Local developer",
+    "category": "Development",
+    "capabilities": ["Read", "Write", "Debug"],
+    "defaultPrompt": [
+      "Review this Ren'Py scene for bugs.",
+      "Add a Ren'Py screen or menu flow.",
+      "Help debug a Ren'Py lint error."
+    ]
+  }
+}
