@@ -1200,7 +1200,7 @@ label _2_APRES_MIDI:
 
     elias raison "Alors dis-leur."
 
-    lysa tristesse "Dire quoi ?"
+    lysa triste "Dire quoi ?"
     lysa blase "Qu’on manque déjà de tout ?"
     lysa neutre "Ils le savent."
 
@@ -1249,7 +1249,7 @@ label _2_APRES_MIDI:
     noam raison "C'est possible."
     noam raison "Pour tout te dire, je ne sais pas vraiment."
 
-    lysa regarde "Ne promets pas trop vite."
+    lysa triste "Ne promets pas trop vite."
 
     noam neutre "On en parlera peut-être demain..."
 
@@ -1512,8 +1512,8 @@ label _2_GYMNASE:
     tuto "De plus, pratiquer ce genre d'activité permet de charger des évènements, seuls ou avec d'autres personnages."
     tuto "Ces évènements sont aléatoires et peuvent vous offrir des images... intéressantes."
 
-    noam effort "Un…"
-    noam effort "Deux…"
+    noam "Un…"
+    noam "Deux…"
 
     "Je commence à pousser les altères."
 

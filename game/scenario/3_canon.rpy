@@ -3296,7 +3296,7 @@ label _3_DEBAT1_PHASE3_INT2:
         noam "Mais si tout le monde le fait officiellement, est-ce que ça reste contrôlable ?"
 
         hide ryn
-        $ showP("kael", "hesitation", 0.50)  # centre
+        $ showP("kael", "doute", 0.50)  # centre
         kael "Et… à Orbite ?"
         kael "Si ça se fait ici sans que Kami réagisse…"
         kael "Peut-être que ça peut exister sans… sans que ça pète tout ?"
@@ -3314,7 +3314,7 @@ label _3_DEBAT1_PHASE3_INT2:
         lysa "À grande échelle, ça devient un marché noir avec des chefs qui contrôlent tout."
 
         hide julian
-        $ showP("ryn", "reflexion", 0.88)  # droite – retour
+        $ showP("ryn", "reflechit", 0.88)  # droite – retour
         ryn "Mais… si c’est déjà là à Limen…"
         ryn "Et que ça sauve des familles entre deux rations…"
         ryn "Alors peut-être que sans les bons, on pourrait faire pareil, mais en mieux."

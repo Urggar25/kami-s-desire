@@ -1025,7 +1025,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     noam taquin "D'accord."
     noam taquin "Donc tu as défoncé ma porte pour me dire que tout va bien."
 
-    lysa desaccord "J'ai pas défoncé."
+    lysa desaccord "J'ai pas défoncé la porte."
 
     noam "BAM BAM BAM."
 

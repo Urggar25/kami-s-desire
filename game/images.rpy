@@ -65,6 +65,7 @@ image noam surpris             = im.FactorScale("images/character/noam/surpris.p
 image noam taquin              = im.FactorScale("images/character/noam/taquin.png", 0.60)
 image noam triste              = im.FactorScale("images/character/noam/triste.png", 0.60)
 image noam vide              = im.FactorScale("images/character/vide.png", 0.60)
+image noam fatigue              = im.FactorScale("images/character/noam/fatigue.png", 0.60)
 
 # ======================
 # LYSA
@@ -93,6 +94,7 @@ image lysa doute              = im.FactorScale("images/character/lysa/doute.png"
 image lysa jaloux              = im.FactorScale("images/character/lysa/jaloux.png", 0.60)
 image lysa gene              = im.FactorScale("images/character/lysa/gene.png", 0.60)
 image lysa choc              = im.FactorScale("images/character/lysa/choc.png", 0.60)
+image lysa desaccord              = im.FactorScale("images/character/lysa/desaccord.png", 0.60)
 
 # ======================
 # JULIAN
@@ -210,6 +212,7 @@ image kael mefiant               = im.FactorScale("images/character/kael/mefiant
 image kael vide              = im.FactorScale("images/character/vide.png", 0.60)
 image kael gene               = im.FactorScale("images/character/kael/gene.png", 0.60)
 image kael effondre               = im.FactorScale("images/character/kael/effondre.png", 0.60)
+image kael raison               = im.FactorScale("images/character/kael/raison.png", 0.60)
 
 # ======================
 # NYRA
