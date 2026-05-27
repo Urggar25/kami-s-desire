@@ -239,6 +239,7 @@ init python:
 label after_load:
     $ quick_menu = True
     $ quick_menu_open = False
+    $ lock_nsfw_content()
     return
 
 style quick_button is default

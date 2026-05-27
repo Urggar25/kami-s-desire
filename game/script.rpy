@@ -79,6 +79,14 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.35):
 
 
 init python:
+    def nsfw_content_locked():
+        return True
+
+    def lock_nsfw_content():
+        persistent.pegi18 = False
+        persistent.pegi18_prompt_done = True
+        renpy.save_persistent()
+
     def day_number(value=None):
         if value is None:
             value = getattr(store, "current_day", 0)
@@ -492,38 +500,6 @@ label _init_cinema_params:
     return
 
 
-screen pegi18_choice():
-    modal True
-    zorder 250
-
-    add "images/background/bg_18.png" at cover_screen
-
-    imagebutton:
-        idle "images/background/interact/18/yes.png"
-        hover "images/background/interact/18/yes_holder.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action [
-            SetField(persistent, "pegi18", True),
-            SetField(persistent, "pegi18_prompt_done", True),
-            Return(),
-        ]
-
-    imagebutton:
-        idle "images/background/interact/18/no.png"
-        hover "images/background/interact/18/no_holder.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action [
-            SetField(persistent, "pegi18", False),
-            SetField(persistent, "pegi18_prompt_done", True),
-            Return(),
-        ]
-
 label splashscreen:
     scene black
     with Dissolve(0.5)
@@ -559,7 +535,7 @@ label patreon_ending:
 
 label start:
     call _init_cinema_params from _call__init_cinema_params
-    call screen pegi18_choice
+    $ lock_nsfw_content()
     if roadmap_target_label:
         $ _target = roadmap_target_label
         $ roadmap_target_label = None

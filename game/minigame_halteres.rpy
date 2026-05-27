@@ -24,16 +24,12 @@ default sport_events_pool = [
     "sport_event_003",
     "sport_event_004",
     "sport_event_005",
-    "sport_event_006",
-    "sport_event_007",
-    "sport_event_008",
-    "sport_event_009",
 ]
 default sport_events_seen = []
 
 default scenes_normales = ["scene_mg_normale_1"]
 default scenes_patreon = ["scene_mg_patreon_1"]
-default scenes_sexy = ["scene_mg_sexy_1"]
+default scenes_sexy = []
 
 init python:
     def mg_get_ui_font():
@@ -97,12 +93,13 @@ init python:
         return store.mg_progress >= store.mg_target_reps
 
     def sport_events_left_count():
-        return len(store.sport_events_pool)
+        return len([event for event in store.sport_events_pool if event not in store.NSFW_SPORT_EVENTS])
 
     def pop_random_sport_event():
-        if not store.sport_events_pool:
+        safe_events = [event for event in store.sport_events_pool if event not in store.NSFW_SPORT_EVENTS]
+        if not safe_events:
             return None
-        picked = renpy.random.choice(store.sport_events_pool)
+        picked = renpy.random.choice(safe_events)
         store.sport_events_pool.remove(picked)
         store.sport_events_seen.append(picked)
         return picked
@@ -113,13 +110,17 @@ init python:
             pools.append(store.scenes_normales)
         if store.scenes_patreon:
             pools.append(store.scenes_patreon)
-        if persistent.pegi18 and store.scenes_sexy:
-            pools.append(store.scenes_sexy)
-
         if not pools:
             return None
         pool = renpy.random.choice(pools)
         return renpy.random.choice(pool)
+
+    NSFW_SPORT_EVENTS = {
+        "sport_event_006",
+        "sport_event_007",
+        "sport_event_008",
+        "sport_event_009",
+    }
 
 transform mg_bg_idle:
     alpha 0.82
@@ -357,6 +358,9 @@ label scene_mg_patreon_1:
     return
 
 label scene_mg_sexy_1:
+    if nsfw_content_locked():
+        return
+
     "Le contact s'attarde une seconde de trop, et la chaleur monte."
     return
 
@@ -541,6 +545,9 @@ label sport_event_005:
     return
 
 label sport_event_006:
+    if nsfw_content_locked():
+        return
+
     $ unlock_gallery_image("sport006")
 
     scene sport006 at adaptive_fullscreen with dissolve
@@ -572,6 +579,9 @@ label sport_event_006:
     return
 
 label sport_event_007:
+    if nsfw_content_locked():
+        return
+
     $ unlock_gallery_image("sport007")
 
     scene sport007 at adaptive_fullscreen with dissolve
@@ -601,6 +611,9 @@ label sport_event_007:
 
     return
 label sport_event_008:
+    if nsfw_content_locked():
+        return
+
     $ unlock_gallery_image("sport008")
 
     scene sport008 at adaptive_fullscreen with dissolve
@@ -628,7 +641,7 @@ label sport_event_008:
     return
 
 label sport_event_009:
-    if not persistent.pegi18:
+    if nsfw_content_locked():
         return
 
     $ unlock_gallery_image("sport009")

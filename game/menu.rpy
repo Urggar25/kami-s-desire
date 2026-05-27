@@ -61,6 +61,11 @@ default persistent.gallery_unlocked_bases = []
 init python:
     import re
 
+    NSFW_GALLERY_BASES = {
+        "bg_cg015", "bg_cg016", "bg_cg017",
+        "sport006", "sport007", "sport008", "sport009",
+    }
+
     _cg_pattern = re.compile(r"^images/background/(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
     _sport_pattern = re.compile(r"^images/background/(sport\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
 
@@ -96,6 +101,8 @@ init python:
         return []
 
     def gallery_is_unlocked(base_name):
+        if nsfw_content_locked() and base_name in NSFW_GALLERY_BASES:
+            return False
         return base_name in persistent.gallery_unlocked_bases
 
     def gallery_displayable(path):
@@ -120,6 +127,8 @@ init python:
 
     # Fonction utilitaire demandée : débloque une image + ses variantes _1, _2, etc.
     def unlock_gallery_image(base_name):
+        if nsfw_content_locked() and base_name in NSFW_GALLERY_BASES:
+            return
         if base_name not in persistent.gallery_unlocked_bases:
             persistent.gallery_unlocked_bases.append(base_name)
             renpy.save_persistent()

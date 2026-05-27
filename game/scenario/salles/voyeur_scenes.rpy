@@ -6,7 +6,7 @@ default got_argument_echanges_discrets = False
 image bg_cg017_1 = Movie(play="images/background/bg_cg017_1.webm", loop=True)
 
 label temps_libre_salle_repos:
-    if not persistent.pegi18:
+    if nsfw_content_locked():
         $ seen_voyeur_julian_iris = True
         jump REPOS_TP
 
@@ -58,7 +58,7 @@ label temps_libre_salle_repos:
 
 label temps_libre_salle_archive:
 
-    if not persistent.pegi18:
+    if nsfw_content_locked():
         $ seen_voyeur_mara_tomas = True
         jump ARCHIVE_TP
 
@@ -117,7 +117,7 @@ label temps_libre_salle_archive:
 
 label temps_libre_salle_dortoir:
 
-    if not persistent.pegi18:
+    if nsfw_content_locked():
         $ seen_voyeur_nyra = True
         jump DORTOIR_TP
 
