@@ -167,6 +167,7 @@ image tomas hesitation              = im.FactorScale("images/character/tomas/hes
 image tomas vide              = im.FactorScale("images/character/vide.png", 0.60)
 image tomas gene              = im.FactorScale("images/character/tomas/gene.png", 0.60)
 image tomas fatigue              = im.FactorScale("images/character/tomas/fatigue.png", 0.60)
+image tomas stress              = im.FactorScale("images/character/tomas/fatigue.png", 0.60)
 
 # ======================
 # ELEN

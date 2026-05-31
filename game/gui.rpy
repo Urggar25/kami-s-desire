@@ -57,18 +57,18 @@ define gui.game_menu_background = "gui/game_menu.png"
 define gui.textbox_height  = 278
 define gui.textbox_yalign  = 1.0
 
-define gui.name_xpos       = 360
-define gui.name_ypos       = 0
+define gui.name_xpos       = 165
+define gui.name_ypos       = 8
 define gui.name_xalign     = 0.0
 
-define gui.namebox_width   = None
-define gui.namebox_height  = None
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_width   = 430
+define gui.namebox_height  = 82
+define gui.namebox_borders = Borders(72, 18, 72, 18)
 define gui.namebox_tile    = False
 
-define gui.dialogue_xpos       = 402
-define gui.dialogue_ypos       = 75
-define gui.dialogue_width      = 1116
+define gui.dialogue_xpos       = 235
+define gui.dialogue_ypos       = 86
+define gui.dialogue_width      = 1450
 define gui.dialogue_text_xalign = 0.0
 
 

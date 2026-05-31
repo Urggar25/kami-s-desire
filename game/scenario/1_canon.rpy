@@ -291,6 +291,7 @@ label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, to
 label _1_CANON:
 
     $ day_id = 1
+    $ current_day = 1
 
     scene black
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0

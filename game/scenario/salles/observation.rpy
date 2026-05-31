@@ -12,13 +12,15 @@ default decouverte_salle_observation = False
 label OBSERVATION_TP:
     scene bg_observation at adaptive_fullscreen
 
-    if not decouverte_salle_observation:
+    if not decouverte_salle_observation and day_number() == 1:
         jump decouverte_salle_observation
 
     $ pnc_room = "pnc_observation"
     call screen pnc_observation()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -66,7 +68,7 @@ screen pnc_observation():
         at cover_screen
         action Jump("OBS_PNC_ORBITE")
 
-    if free_time_active and lysa_link == 2:
+    if social_free_time_active() and lysa_link == 2:
         imagebutton:
             idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
             hover Transform("images/character/lysa/triste.png", zoom=0.75)
@@ -75,7 +77,7 @@ screen pnc_observation():
             yalign 0.30
             action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("LYSA_LINK_INTERACT")]
 
-    if free_time_active and julian_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and julian_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/julian/sourire.png", zoom=0.75)
             hover Transform("images/character/julian/taquin.png", zoom=0.75)
@@ -85,7 +87,7 @@ screen pnc_observation():
             action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("JULIAN_LINK_INTERACT")]
 
 
-    if free_time_active and elen_link == 2:
+    if social_free_time_active() and elen_link == 2:
         imagebutton:
             idle Transform("images/character/elen/content.png", zoom=0.75)
             hover Transform("images/character/elen/reflechit.png", zoom=0.75)

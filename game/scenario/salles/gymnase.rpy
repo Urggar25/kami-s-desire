@@ -12,13 +12,15 @@ default decouverte_gymnase = False
 label GYMNASE_TP:
     scene bg_gymnase at adaptive_fullscreen
 
-    if not decouverte_gymnase:
+    if not decouverte_gymnase and day_number() == 1:
         jump decouverte_gymnase
 
     $ pnc_room = "pnc_gymnase"
     call screen pnc_gymnase()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -57,7 +59,7 @@ screen pnc_gymnase():
         at cover_screen
         action Jump("GYM_BANC_INTERACT")
 
-    if free_time_active and ryn_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and ryn_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/ryn/determine.png", zoom=0.75)
             hover Transform("images/character/ryn/neutre.png", zoom=0.75)
@@ -65,7 +67,7 @@ screen pnc_gymnase():
             xalign 0.20
             yalign 0.75
             action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("RYN_LINK_INTERACT")]
-    if free_time_active and elias_link in [0, 2, 4]:
+    if social_free_time_active() and elias_link in [0, 2, 4]:
         imagebutton:
             idle Transform("images/character/elias/neutre.png", zoom=0.75)
             hover Transform("images/character/elias/reflechit.png", zoom=0.75)
@@ -80,7 +82,7 @@ screen pnc_gymnase():
     use exploration_retour_button
 
 label GYM_BANC_INTERACT:
-    if not free_time_active:
+    if not social_free_time_active():
         jump GYM_PNC_POIDS
 
     $ events_left = sport_events_left_count()
@@ -117,7 +119,7 @@ label GYM_SPORT_MINIGAME:
     else:
         "La série te casse le rythme, mais tu sauras mieux gérer la prochaine fois."
 
-    if free_time_active:
+    if social_free_time_active():
         jump FREE_TIME_END
 
     jump GYMNASE_TP

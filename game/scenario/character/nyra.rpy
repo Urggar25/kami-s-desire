@@ -2,7 +2,7 @@
 # LIENS — NYRA
 # -----------------------------------------------------------------------
 
-default nyra_link = 0
+default nyra_link = character_link_progress("nyra")
 
 label NYRA_LINK_INTERACT:
 
@@ -136,6 +136,9 @@ label nyra_link_1:
     nyra "La partie réelle reprend."
 
     $ nyra_link = 1
+    $ set_character_link_progress("nyra", 1)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label nyra_link_2:
@@ -261,6 +264,9 @@ label nyra_link_2:
     nyra "C'est un excellent début."
 
     $ nyra_link = 2
+    $ set_character_link_progress("nyra", 2)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label nyra_link_3:
@@ -378,6 +384,9 @@ label nyra_link_3:
     nyra "...perdent sans comprendre quand ils ont commencé à perdre."
 
     $ nyra_link = 3
+    $ set_character_link_progress("nyra", 3)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label nyra_link_4:
@@ -492,6 +501,9 @@ label nyra_link_4:
     nyra "Et ici, ce n'est jamais fini."
 
     $ nyra_link = 4
+    $ set_character_link_progress("nyra", 4)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label nyra_link_5:
@@ -617,4 +629,7 @@ label nyra_link_5:
     nyra "...et pour rester humaine au passage."
 
     $ nyra_link = 5
+    $ set_character_link_progress("nyra", 5)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

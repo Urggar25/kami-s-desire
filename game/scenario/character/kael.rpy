@@ -2,7 +2,7 @@
 # LIENS — KAEL
 # -----------------------------------------------------------------------
 
-default kael_link = 0
+default kael_link = character_link_progress("kael")
 
 label KAEL_LINK_INTERACT:
 
@@ -132,6 +132,9 @@ label kael_link_1:
     kael "C'est tenir la ligne quand personne ne veut la voir."
 
     $ kael_link = 1
+    $ set_character_link_progress("kael", 1)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label kael_link_2:
@@ -242,6 +245,9 @@ label kael_link_2:
     kael "Et ce fait m'accompagne."
 
     $ kael_link = 2
+    $ set_character_link_progress("kael", 2)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label kael_link_3:
@@ -346,6 +352,9 @@ label kael_link_3:
     kael "J'ai juste besoin d'arrêter d'appeler prudence ce qui est parfois de la peur."
 
     $ kael_link = 3
+    $ set_character_link_progress("kael", 3)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label kael_link_4:
@@ -453,6 +462,9 @@ label kael_link_4:
     kael "Les deux peuvent coexister."
 
     $ kael_link = 4
+    $ set_character_link_progress("kael", 4)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label kael_link_5:
@@ -559,4 +571,7 @@ label kael_link_5:
     "Pour la première fois, son calme ressemble à une lame dégainée."
 
     $ kael_link = 5
+    $ set_character_link_progress("kael", 5)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

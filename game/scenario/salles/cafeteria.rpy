@@ -12,13 +12,15 @@ default decouverte_cafeteria = False
 label CAFETERIA_TP:
     scene bg_cafeteria at adaptive_fullscreen
 
-    if not decouverte_cafeteria:
+    if not decouverte_cafeteria and day_number() == 1:
         jump decouverte_cafeteria
 
     $ pnc_room = "pnc_cafeteria"
     call screen pnc_cafeteria()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -75,7 +77,7 @@ screen pnc_cafeteria():
         at cover_screen
         action Jump("CAF_PNC_ECRAN_INFOS")
 
-    if free_time_active and mara_link in [0, 2, 4]:
+    if social_free_time_active() and mara_link in [0, 2, 4]:
         imagebutton:
             idle Transform("images/character/mara/sourire.png", zoom=0.75)
             hover Transform("images/character/mara/neutre.png", zoom=0.75)
@@ -85,7 +87,7 @@ screen pnc_cafeteria():
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("MARA_LINK_INTERACT")]
 
 
-    if free_time_active and lysa_link == 1:
+    if social_free_time_active() and lysa_link == 1:
         imagebutton:
             idle Transform("images/character/lysa/sourire.png", zoom=0.75)
             hover Transform("images/character/lysa/taquin.png", zoom=0.75)
@@ -94,7 +96,7 @@ screen pnc_cafeteria():
             yalign 0.30
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("LYSA_LINK_INTERACT")]
 
-    if free_time_active and elen_link == 1:
+    if social_free_time_active() and elen_link == 1:
         imagebutton:
             idle Transform("images/character/elen/joie.png", zoom=0.75)
             hover Transform("images/character/elen/content.png", zoom=0.75)
@@ -102,6 +104,15 @@ screen pnc_cafeteria():
             xalign 0.50
             yalign 0.30
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("ELEN_LINK_INTERACT")]
+
+    if j10011_waiting_elias:
+        imagebutton:
+            idle Transform("images/character/elias/fatigue.png", zoom=0.75)
+            hover Transform("images/character/elias/inquiet.png", zoom=0.75)
+            focus_mask True
+            xalign 0.58
+            yalign 0.30
+            action Jump("_10_0_1_1_CAFETERIA_ELIAS")
 
 
     use exploration_retour_button

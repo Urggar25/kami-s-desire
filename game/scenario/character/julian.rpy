@@ -2,7 +2,7 @@
 # LIENS — JULIAN
 # -----------------------------------------------------------------------
 
-default julian_link = 0
+default julian_link = character_link_progress("julian")
 
 
 label JULIAN_LINK_INTERACT:
@@ -142,7 +142,10 @@ label julian_link_1:
     julian "Un baromètre premium."
 
     $ julian_link = 1
+    $ set_character_link_progress("julian", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -252,7 +255,10 @@ label julian_link_2:
     julian "Et à choisir quand entrer en scène."
 
     $ julian_link = 2
+    $ set_character_link_progress("julian", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -356,7 +362,10 @@ label julian_link_3:
     julian "Je veux voir ce que ça donne quand je vais jusqu'au bout."
 
     $ julian_link = 3
+    $ set_character_link_progress("julian", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -462,7 +471,10 @@ label julian_link_4:
     julian "Pas maintenant."
 
     $ julian_link = 4
+    $ set_character_link_progress("julian", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -567,5 +579,8 @@ label julian_link_5:
     julian "Vu comme ça, c'est moins flippant."
 
     $ julian_link = 5
+    $ set_character_link_progress("julian", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

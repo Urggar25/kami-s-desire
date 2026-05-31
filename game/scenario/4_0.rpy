@@ -1072,7 +1072,7 @@ label _4_0_TEMPS_LIBRE_1:
     "Après le petit-déjeuner, j'ai un peu de temps devant moi."
     "Je ne sais pas enncore quoi faire."
 
-    call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE")
+    call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_1
 
 label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
@@ -1694,7 +1694,7 @@ label _4_0_FIN_SOIREE:
 
     #jump patreon_ending
 
-    call end_day("5")
+    call end_day("5") from _call_end_day_5
     jump _5_0_REVEIL_CHAMBRE
 
 # Durée : 2m00

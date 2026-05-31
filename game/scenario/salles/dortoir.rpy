@@ -7,7 +7,7 @@ label DORTOIR_TP:
     if dortoir_lock:
         jump MAP_NOTHING_HERE
 
-    if free_time_active and free_time_round == 3 and not seen_voyeur_nyra:
+    if social_free_time_active() and free_time_round == 3 and not seen_voyeur_nyra:
         jump temps_libre_salle_dortoir
 
     $ pnc_room = "pnc_dortoir"
@@ -15,18 +15,22 @@ label DORTOIR_TP:
 
     if free_time_active:
         return
+    if exploration_libre_active:
+        return
 
 
 label CHAMBRE_TP:
     scene bg_chambre at adaptive_fullscreen
 
-    if not free_time_active:
+    if not social_free_time_active():
         jump MAP_NOTHING_HERE
 
     $ pnc_room = "pnc_chambre"
     call screen pnc_chambre()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -48,7 +52,7 @@ screen pnc_dortoir():
     add Solid("#000")
     add "images/background/bg_dortoir.png" at cover_screen
 
-    if free_time_active:
+    if social_free_time_active():
         imagebutton:
             idle "images/background/interact/livraison/porte.png"
             hover "images/background/interact/livraison/porte_hover.png"
@@ -58,7 +62,7 @@ screen pnc_dortoir():
             at cover_screen
             action Jump("CHAMBRE_TP")
 
-    if free_time_active and lysa_link == 4:
+    if social_free_time_active() and lysa_link == 4:
         imagebutton:
             idle Transform("images/character/lysa/triste.png", zoom=0.75)
             hover Transform("images/character/lysa/sourire.png", zoom=0.75)

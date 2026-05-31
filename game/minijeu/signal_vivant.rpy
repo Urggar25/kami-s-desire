@@ -13,15 +13,15 @@
 # - Clic gauche sur un quadrant = ENVOI D'UNE PULSE (cooldown par quadrant).
 # - Kami envoie des ORBES NOIRS qui volent vers les quadrants ou vers
 #   la forme d'onde centrale. Clic répété pour les détruire (3 à 5 hits).
-#   - Orbe touche quadrant : signal coupé 20-30s sur ce quadrant.
+#   - Orbe touche quadrant : signal coupé quelques secondes sur ce quadrant.
 #   - Orbe touche centre : perturbation globale (jauges chaotiques).
 # - Bonus de fréquence :
 #   * Ryn  → +50% de vitesse de dispersion sur les quadrants menacés.
 #   * Elen → +25% de vitesse de dispersion partout.
 #   * Mara → "buzz" aléatoire : booste un quadrant au hasard toutes les 2-4s.
 #
-# Durée : 240 secondes (~4 min). Plus le temps avance, plus les orbes
-# arrivent vite et nombreux.
+# Durée : 45 secondes maximum. Plus le temps avance, plus les orbes
+# arrivent vite.
 #
 # Appel scénario :
 #   call j901_play_signal_vivant
@@ -33,7 +33,7 @@
 # Variables d'état
 # ------------------------------------------------------------
 
-default j901_sv_time_left = 240.0
+default j901_sv_time_left = 45.0
 default j901_sv_done = False
 default j901_sv_result_tier = "moyen"
 
@@ -66,7 +66,7 @@ default j901_sv_hits_taken = 0       # stats : impacts subis
 # Orbes (liste de dicts)
 default j901_sv_orbs = []
 default j901_sv_orb_id_counter = 0
-default j901_sv_next_orb = 8.0
+default j901_sv_next_orb = 5.0
 
 # Effet "buzz" de Mara
 default j901_sv_mara_timer = 3.0
@@ -76,10 +76,10 @@ default j901_sv_global_disturb = 0.0
 
 # Dialogue du débat (auto-déroulé)
 default j901_sv_debate_index = 0
-default j901_sv_debate_next = 2.0
+default j901_sv_debate_next = 1.0
 default j901_sv_current_speaker = "tomas"
 default j901_sv_current_expr = "raison"
-default j901_sv_current_line = "Le débat est ouvert."
+default j901_sv_current_line = "Le signal s'ouvre. Les campements vous écoutent."
 
 # Effets visuels
 default j901_sv_flash = 0.0
@@ -102,7 +102,7 @@ init python:
     import math
 
     J901_SV_TICK = 0.05
-    J901_SV_TOTAL_TIME = 240.0
+    J901_SV_TOTAL_TIME = 45.0
 
     # Coordonnées des centres des 4 quadrants (en pixels écran 1920x1080)
     # Pane droit : x=1152..1920, y=170..980
@@ -173,32 +173,20 @@ init python:
 
     # Dialogue du débat
     J901_SV_DEBATE = [
-        ("tomas",  "raison",      "Le présent amendement vise à autoriser les regroupements de plus de vingt personnes…",                "tomas"),
-        ("tomas",  "raison",      "Les campements actuels relèvent du Commandement IV.",                                                   "tomas"),
-        ("noam",   "determine",   "Aux campements limenois qui nous écoutent : la frontière est verrouillée.",                            "noam"),
-        ("noam",   "determine",   "Dispersez-vous en groupes de moins de vingt. Maintenant.",                                              "noam"),
-        ("ryn",    "colere",      "ILS ENTENDENT TOUS ! Vous m'entendez ?! Bougez ! BOUGEZ !",                                             "ryn"),
-        ("ryn",    "colere2",     "Pas la peine d'attendre une autorisation qui ne viendra jamais !",                                     "ryn"),
-        ("lysa",   "blase",       "Concrètement : éloignez-vous des points de passage. Ne traversez pas.",                                "lysa"),
-        ("lysa",   "triste",      "Personne ne viendra vous chercher. Sauvez-vous vous-mêmes.",                                            "lysa"),
-        ("elen",   "peur",        "Je vous en supplie. Si vous avez des enfants, des blessés, partez maintenant.",                        "elen"),
-        ("elen",   "determine",   "On vous écoute. Le monde entier vous écoute. Tenez bon.",                                              "elen"),
-        ("mara",   "stress",      "Ils vont vraiment tirer. Mara au micro : OUI ils vont vraiment tirer.",                                "mara"),
-        ("mara",   "rire",        "Si vous voulez un canon dans la gueule, restez en gros tas !",                                          "mara"),
-        ("tomas",  "raison",      "Préalable : avant. Les campements existants ne sont pas couverts par l'amendement.",                   "tomas"),
-        ("tomas",  "culpabilite", "Même si vous votez pour. Même unanime. Vous devez bouger.",                                             "tomas"),
-        ("nyra",   "raison",      "Précisément : moins de vingt par groupe, à plus de trois cents mètres des frontières.",                "nyra"),
-        ("nyra",   "determine",   "Pas de panique. Méthode. Vous avez le temps si vous commencez maintenant.",                            "nyra"),
-        ("iris",   "fatigue",     "Sérieux ? On va vraiment leur sauver la vie en parlant à un écran ?",                                  "iris"),
-        ("iris",   "determine",   "Bah… oui. On va le faire. Tant pis. Écoutez-nous, idiots.",                                            "iris"),
-        ("julian", "determine",   "Habitants des campements ! Citoyens de Limen ! C'est à VOUS que je parle !",                          "julian"),
-        ("julian", "inquietude",  "Le Conclave vous regarde. Le monde vous regarde. SÉPAREZ-VOUS !",                                      "julian"),
-        ("noam",   "determine",   "Quatre fronts. Chaque quadrant doit recevoir le signal. NE LAISSEZ PASSER PERSONNE.",                  "noam"),
-        ("ryn",    "determine",   "Allez ! ALLEZ ! On n'arrêtera pas de répéter !",                                                        "ryn"),
-        ("tomas",  "raison",      "Je répète le détail juridique. Lentement. Pour ceux qui transcrivent là-bas.",                         "tomas"),
-        ("lysa",   "determine",   "Et pour ceux qui regardent : c'est ce qu'on appelle un sauvetage par diffusion publique.",             "lysa"),
-        ("elen",   "joie",        "On les voit bouger. Sur les écrans. Ça marche. ÇA MARCHE.",                                            "elen"),
-        ("noam",   "determine",   "Continuez. Encore. Le signal doit tenir jusqu'à la dernière personne.",                                "noam"),
+        ("tomas",  "raison",      "Campements limenois : le Commandement IV peut s'appliquer à vous.",                                    "tomas"),
+        ("noam",   "determine",   "La frontière est verrouillée. Dispersez-vous en groupes de moins de vingt. Maintenant.",              "noam"),
+        ("ryn",    "colere",      "Vous m'entendez ?! Bougez ! Pas dans une minute. MAINTENANT !",                                         "ryn"),
+        ("lysa",   "blase",       "Éloignez-vous des points de passage. Ne traversez pas. Ne restez pas groupés.",                         "lysa"),
+        ("elen",   "peur",        "Enfants, blessés, retardataires : partez avec le groupe le plus proche. Tout de suite.",                "elen"),
+        ("mara",   "stress",      "Version courte : oui, ils vont tirer. Donc on se sépare et on court.",                                  "mara"),
+        ("tomas",  "culpabilite", "Même un vote pour ne couvrira pas les campements déjà formés. Vous devez bouger.",                     "tomas"),
+        ("nyra",   "determine",   "Moins de vingt par groupe. Distance maximale entre vous. Gardez le signal ouvert.",                     "nyra"),
+        ("iris",   "determine",   "Écoutez-nous, idiots. On n'a que quelques secondes pour vous garder en vie.",                           "iris"),
+        ("julian", "determine",   "Limen ! Le Conclave vous regarde. Le monde vous regarde. SÉPAREZ-VOUS !",                              "julian"),
+        ("noam",   "determine",   "Quatre fronts. Faites passer le message autour de vous. Personne ne reste en bloc.",                   "noam"),
+        ("elen",   "joie",        "Ils bougent. Je les vois bouger. Continuez, continuez !",                                                "elen"),
+        ("ryn",    "determine",   "Encore ! On tient jusqu'au bout et vous dégagez de là !",                                               "ryn"),
+        ("noam",   "determine",   "Dernier relais. Si vous entendez cette voix : dispersez-vous maintenant.",                              "noam"),
     ]
 
     def j901_sv_reset():
@@ -225,14 +213,14 @@ init python:
         store.j901_sv_hits_taken = 0
         store.j901_sv_orbs = []
         store.j901_sv_orb_id_counter = 0
-        store.j901_sv_next_orb = random.uniform(7.0, 10.0)
+        store.j901_sv_next_orb = random.uniform(4.5, 6.0)
         store.j901_sv_mara_timer = 3.0
         store.j901_sv_global_disturb = 0.0
         store.j901_sv_debate_index = 0
-        store.j901_sv_debate_next = 2.0
+        store.j901_sv_debate_next = 1.0
         store.j901_sv_current_speaker = "tomas"
         store.j901_sv_current_expr = "raison"
-        store.j901_sv_current_line = "Le débat commence. Les campements vous écoutent."
+        store.j901_sv_current_line = "Le signal s'ouvre. Les campements vous écoutent."
         store.j901_sv_flash = 0.0
         store.j901_sv_kami_alert = ""
         store.j901_sv_kami_alert_time = 0.0
@@ -349,14 +337,14 @@ init python:
             return
         # Puissance de la pulse selon la qualité du signal
         quality = j901_sv_signal_quality()
-        base = 8.0 + quality * 12.0
+        base = 14.0 + quality * 18.0
         # Bonus Julian (théâtral) : pulses x1.5
         if "julian" in store.j901_sv_slots:
             base *= 1.5
         # Bonus Iris : réduit le cooldown
-        cooldown = 5.5
+        cooldown = 3.2
         if "iris" in store.j901_sv_slots:
-            cooldown = 3.8
+            cooldown = 2.4
         offsets = list(store.j901_sv_quad_offset)
         offsets[q] = min(100.0, offsets[q] + base)
         store.j901_sv_quad_offset = offsets
@@ -375,9 +363,9 @@ init python:
     def j901_sv_spawn_orb():
         elapsed = J901_SV_TOTAL_TIME - store.j901_sv_time_left
         # Type d'orbe selon le temps écoulé
-        if elapsed < 60.0:
+        if elapsed < 12.0:
             type_choice = random.choices(["small", "medium"], weights=[0.7, 0.3])[0]
-        elif elapsed < 150.0:
+        elif elapsed < 28.0:
             type_choice = random.choices(["small", "medium", "large"], weights=[0.4, 0.45, 0.15])[0]
         else:
             type_choice = random.choices(["small", "medium", "large"], weights=[0.25, 0.45, 0.30])[0]
@@ -477,7 +465,7 @@ init python:
                 else:
                     # Désactive un quadrant
                     q = o["target_quad"]
-                    duration = random.uniform(20.0, 30.0)
+                    duration = random.uniform(6.0, 9.0)
                     disabled = list(store.j901_sv_quad_disabled)
                     disabled[q] = duration
                     store.j901_sv_quad_disabled = disabled
@@ -519,7 +507,7 @@ init python:
                 disabled[q] = max(0.0, disabled[q] - dt)
                 continue
             # Vitesse de base
-            base_speed = 1.6 * quality + (0.6 if all_green else 0.0)
+            base_speed = 4.0 * quality + (1.4 if all_green else 0.0)
             mult = store.j901_sv_quad_urgency[q]
             if has_elen:
                 mult += 0.25
@@ -652,14 +640,14 @@ init python:
         store.j901_sv_next_orb -= J901_SV_TICK
         if store.j901_sv_next_orb <= 0 and elapsed > 4.0:
             j901_sv_spawn_orb()
-            if elapsed < 60.0:
-                store.j901_sv_next_orb = random.uniform(14.0, 18.0)
-            elif elapsed < 120.0:
-                store.j901_sv_next_orb = random.uniform(10.0, 13.0)
-            elif elapsed < 180.0:
-                store.j901_sv_next_orb = random.uniform(7.0, 10.0)
+            if elapsed < 12.0:
+                store.j901_sv_next_orb = random.uniform(6.0, 8.0)
+            elif elapsed < 24.0:
+                store.j901_sv_next_orb = random.uniform(4.8, 6.2)
+            elif elapsed < 36.0:
+                store.j901_sv_next_orb = random.uniform(3.6, 4.8)
             else:
-                store.j901_sv_next_orb = random.uniform(5.0, 7.0)
+                store.j901_sv_next_orb = random.uniform(2.8, 3.8)
 
         # Timer alerte
         if store.j901_sv_kami_alert_time > 0.0:
@@ -680,7 +668,7 @@ init python:
                 store.j901_sv_current_line = line
                 j901_sv_pick_speaker_from_chip(reinforce)
                 store.j901_sv_debate_index += 1
-                store.j901_sv_debate_next = random.uniform(7.5, 10.5)
+                store.j901_sv_debate_next = random.uniform(2.6, 3.4)
             else:
                 idx = max(0, len(J901_SV_DEBATE) - random.randint(1, 6))
                 speaker, expr, line, reinforce = J901_SV_DEBATE[idx]
@@ -688,7 +676,7 @@ init python:
                 store.j901_sv_current_expr = expr
                 store.j901_sv_current_line = line
                 j901_sv_pick_speaker_from_chip(reinforce)
-                store.j901_sv_debate_next = random.uniform(7.5, 10.5)
+                store.j901_sv_debate_next = random.uniform(2.6, 3.4)
 
         if store.j901_sv_time_left <= 0.0:
             j901_sv_finalize()

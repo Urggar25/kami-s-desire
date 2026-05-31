@@ -3,13 +3,15 @@ default decouverte_salle_canon = False
 label CANON_TP:
     scene bg_canon at adaptive_fullscreen
     
-    if not decouverte_salle_canon:
+    if not decouverte_salle_canon and day_number() == 1:
         jump decouverte_salle_canon
         
     $ pnc_room = "pnc_canon"
     call screen pnc_canon()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 # -----------------------------------------------------------------------

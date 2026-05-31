@@ -1810,7 +1810,7 @@ label _5_1_PHARMACIE:
 
     pause 0.6
 
-    call end_day("6")
+    call end_day("6") from _call_end_day_8
     jump _6_1_1_REVEIL_CHAMBRE
 
 # Durée : 2m30
@@ -1908,5 +1908,5 @@ label _5_1_FIN_JOURNEE:
 
     pause 0.8
 
-    call end_day("6")
+    call end_day("6") from _call_end_day_9
     jump _6_1_0_REVEIL_CHAMBRE

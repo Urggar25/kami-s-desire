@@ -2,7 +2,7 @@
 # LIENS — TOMAS
 # -----------------------------------------------------------------------
 
-default tomas_link = 0
+default tomas_link = character_link_progress("tomas")
 
 
 label TOMAS_LINK_INTERACT:
@@ -145,7 +145,10 @@ label tomas_link_1:
     noam "Marché conclu."
 
     $ tomas_link = 1
+    $ set_character_link_progress("tomas", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -266,7 +269,10 @@ label tomas_link_2:
     noam "Je prends."
 
     $ tomas_link = 2
+    $ set_character_link_progress("tomas", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -389,7 +395,10 @@ label tomas_link_3:
     noam "Je comprends."
 
     $ tomas_link = 3
+    $ set_character_link_progress("tomas", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -501,7 +510,10 @@ label tomas_link_4:
     tomas neutre "Je la garde."
 
     $ tomas_link = 4
+    $ set_character_link_progress("tomas", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -623,5 +635,8 @@ label tomas_link_5:
     tomas rire "Bien."
 
     $ tomas_link = 5
+    $ set_character_link_progress("tomas", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

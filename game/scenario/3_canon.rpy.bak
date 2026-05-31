@@ -1,6 +1,280 @@
+﻿init python:
+    # Compatibilité chargement : d'anciennes sauvegardes peuvent désérialiser
+    # une référence à store.build_arg pendant un reload Ren'Py.
+    def build_arg(title):
+        low = title.lower()
+
+        if "ration" in low:
+            icon = "⌬"
+            desc = "Sécurité minimale contre la faim et le chaos."
+        elif "orbite" in low:
+            icon = "◉"
+            desc = "Dépendance logistique et fragilité structurelle."
+        elif "énoncé" in low or "precis" in low:
+            icon = "⟡"
+            desc = "Texte exact, conséquences juridiques immédiates."
+        elif "appro" in low:
+            icon = "⬢"
+            desc = "Ruptures passées et files de pénurie."
+        elif "échange" in low or "discret" in low:
+            icon = "◌"
+            desc = "Réseaux d'entraide clandestins déjà en place."
+        elif "avant" in low:
+            icon = "✦"
+            desc = "Mémoire d'un système ancien imparfait mais vivant."
+        else:
+            icon = "•"
+            desc = "Argument."
+
+        return {"title": title, "desc": desc, "icon": icon}
+
+default j3_wakeup_trace_attempts = 0
+default j3_corridor_trace_attempts = 0
+default j3_codex_dot = False
+default j45_vote_codex_active = False
+
+init 4 python:
+    DAY3_VOTE_ARGUMENTS = {
+        "monde_avant": {
+            "title": "Le monde d'avant",
+            "category": "Mémoire politique",
+            "summary": "Julian présente l'avant-Kami comme une preuve que la circulation libre peut exister.",
+            "origin": "Entendu auprès de Julian avant la cafétéria.",
+            "card": "gui/day3/argument_card_world_before.png",
+        },
+        "enonce_precis": {
+            "title": "L'énoncé précis",
+            "category": "Texte du vote",
+            "summary": "La formulation exacte devient décisive : elle engage plus qu'une simple autorisation d'échange.",
+            "origin": "Déduit pendant la discussion à la cafétéria.",
+            "card": "gui/day3/argument_card_exact_wording.png",
+        },
+    }
+
+    def day3_vote_bootstrap():
+        store.j2_vote_codex_unlocked = True
+        if "DAY2_VOTE_ARGUMENTS" in globals():
+            for _arg_id, _arg_data in DAY3_VOTE_ARGUMENTS.items():
+                if _arg_id not in DAY2_VOTE_ARGUMENTS:
+                    DAY2_VOTE_ARGUMENTS[_arg_id] = _arg_data
+
+    def day3_vote_argument_drop(drags, drop, arg_id):
+        if drop is not None and getattr(drop, "drag_name", "") == "day3_briefcase_drop":
+            day2_vote_add_argument(arg_id)
+            store.j3_codex_dot = True
+            return True
+        renpy.restart_interaction()
+
+screen day3_codex_logo():
+    if j2_vote_codex_unlocked:
+        zorder 95
+        imagebutton:
+            idle "gui/common/codex_logo_idle.png"
+            hover "gui/common/codex_logo_hover.png"
+            selected_idle "gui/common/codex_logo_pressed.png"
+            xpos 1814
+            ypos 18
+            action [SetVariable("j3_codex_dot", False), Show("day3_current_vote_codex")]
+        if j3_codex_dot:
+            add "gui/common/codex_notification_dot.png" xpos 1864 ypos 18
+
+screen day3_current_vote_codex(called=False):
+    modal True
+    zorder 200
+    $ vote_codex_j45 = getattr(store, "j45_vote_codex_active", False)
+    add Solid("#080d12")
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1720
+        ysize 960
+        padding (28, 24)
+        background Solid("#07151ef5")
+        vbox:
+            spacing 18
+            hbox:
+                xfill True
+                vbox:
+                    spacing 4
+                    text "Codex" size 22 color "#3a9fca"
+                    text "Prochain vote" size 48 color "#daeaf5" font "fonts/Rajdhani-SemiBold.ttf"
+                textbutton "Retour":
+                    xalign 1.0
+                    yalign 0.5
+                    xsize 150
+                    background Solid("#1a2530")
+                    hover_background Solid("#2d3a45")
+                    text_color "#dff8ff"
+                    action If(called, Return(), Hide("day3_current_vote_codex"))
+            hbox:
+                spacing 22
+                frame:
+                    xsize 500
+                    yfill True
+                    padding (22, 18)
+                    background Solid("#0d2230")
+                    vbox:
+                        spacing 12
+                        text "Vote en cours" size 30 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                        if vote_codex_j45:
+                            text "Autoriser ou non les déplacements entre les districts." size 22 color "#dff8ff"
+                            text "Moment prévu : Jour 6, 14h00" size 19 color "#9ed8ff"
+                        else:
+                            text "Autoriser le transport, la vente et l'échange de marchandises au sein des districts." size 22 color "#dff8ff"
+                            text "Moment prévu : Jour 3, 14h00" size 19 color "#9ed8ff"
+                        text "Résumé neutre" size 21 color "#70c6e8"
+                        if vote_codex_j45:
+                            text "Le texte promet une circulation plus libre des personnes entre districts. Ses effets restent incertains selon les frontières, la sécurité et les capacités d'accueil." size 20 color "#b8d8e4"
+                        else:
+                            text "Le texte promet une circulation plus libre des biens. Ses effets restent incertains selon les districts, les procédures et les risques locaux." size 20 color "#b8d8e4"
+                        null height 8
+                        text "Arguments découverts" size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                        for arg_id in ["approvisionnement", "rationnement", "orbite", "monde_avant", "enonce_precis"]:
+                            if arg_id in j2_vote_arguments:
+                                $ arg = DAY2_VOTE_ARGUMENTS[arg_id]
+                                frame:
+                                    xfill True
+                                    padding (12, 10)
+                                    background Solid("#123044")
+                                    vbox:
+                                        spacing 3
+                                        text "[arg['title']]" size 21 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text "[arg['summary']]" size 17 color "#b8d8e4"
+                                        text "[arg['origin']]" size 15 color "#74a8ba"
+                            else:
+                                frame:
+                                    xfill True
+                                    padding (12, 12)
+                                    background Solid("#111820")
+                                    text "Argument non découvert" size 18 color "#526d79"
+                fixed:
+                    xfill True
+                    yfill True
+                    draggroup:
+                        for cidx, col_data in enumerate(DAY2_VOTE_COLUMNS):
+                            $ col_id = col_data[0]
+                            $ col_label = col_data[1]
+                            drag:
+                                drag_name ("day2_vote_col_%s" % col_id)
+                                draggable False
+                                droppable True
+                                xpos (20 + cidx * 340)
+                                ypos 0
+                                xsize 318
+                                ysize 810
+                                frame:
+                                    xfill True
+                                    yfill True
+                                    padding (14, 14)
+                                    background Solid("#0c1d29")
+                                    vbox:
+                                        spacing 8
+                                        text "[col_label]" xalign 0.5 size 28 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text "Glisse les portraits ici." xalign 0.5 size 16 color "#6797aa"
+                        for cid in DAY2_VOTE_CHARACTER_ORDER:
+                            $ card_x, card_y = day2_vote_card_xy(cid)
+                            $ cdata = DAY2_VOTE_CHARACTERS[cid]
+                            drag:
+                                drag_name ("day2_vote_char_%s" % cid)
+                                xpos card_x
+                                ypos card_y
+                                xsize 142
+                                ysize 116
+                                draggable True
+                                droppable False
+                                dragged (lambda drags, drop, cid=cid: day2_vote_position_dragged(cid, drags, drop))
+                                frame:
+                                    xfill True
+                                    yfill True
+                                    padding (7, 7)
+                                    background Solid("#182d3a")
+                                    vbox:
+                                        spacing 3
+                                        add cdata["portrait"] xalign 0.5 xysize (62, 62)
+                                        text "[cdata['name']]" xalign 0.5 size 17 color "#dff8ff"
+
+screen day3_phone_vote_notice():
+    modal True
+    zorder 160
+    add Solid("#02050bd9")
+    fixed:
+        xalign 0.5
+        yalign 0.5
+        xsize 560
+        ysize 940
+        add "gui/day3/phone_frame.png" xalign 0.5 yalign 0.5
+        add "gui/day3/phone_screen_vote.png" xpos 65 ypos 82
+        vbox:
+            xpos 96
+            ypos 168
+            xsize 365
+            spacing 18
+            text "Dossier actif" size 25 color "#9ed8ff" font "fonts/Rajdhani-SemiBold.ttf"
+            text "Autoriser le transport, la vente et l'échange de marchandises." size 22 color "#dff8ff"
+            text "Arguments rangés : [day2_vote_argument_count()] / [len(DAY2_VOTE_ARGUMENTS)]" size 20 color "#b8d8e4"
+            text "Les positions restent modifiables dans le Codex." size 19 color "#74a8ba"
+        hbox:
+            xpos 112
+            ypos 688
+            spacing 28
+            imagebutton:
+                idle "gui/day3/phone_icon_vote.png"
+                hover "gui/day3/phone_icon_vote.png"
+                action Return("codex")
+            imagebutton:
+                idle "gui/day3/phone_icon_codex.png"
+                hover "gui/day3/phone_icon_codex.png"
+                action Return("codex")
+        textbutton "Continuer":
+            xpos 175
+            ypos 802
+            xsize 210
+            background Solid("#123044")
+            hover_background Solid("#1c526b")
+            text_color "#dff8ff"
+            action Return("continue")
+
+screen day3_argument_briefcase(arg_id):
+    $ arg = DAY3_VOTE_ARGUMENTS[arg_id] if arg_id in DAY3_VOTE_ARGUMENTS else DAY2_VOTE_ARGUMENTS[arg_id]
+    use vote_argument_briefcase(arg_id, arg, "day3_argument_card", "day3_briefcase_drop", day3_vote_argument_drop)
+
+label day3_play_wakeup_trace:
+    while True:
+        call screen trace_qte(path_type="curve_right", time_limit=7.0, wait_time=0.8, tolerance=60, max_errors=4, anchor_x=930, anchor_y=640)
+        if _return:
+            return True
+        $ j3_wakeup_trace_attempts += 1
+        if j3_wakeup_trace_attempts >= 2:
+            "Mes gestes finissent par obéir."
+            return False
+        "Je retombe contre l'oreiller."
+        "Je recommence, plus lentement."
+
+label day3_play_corridor_trace:
+    while True:
+        call screen trace_qte(path_type="arc", time_limit=5.0, wait_time=0.5, tolerance=58, max_errors=4, anchor_x=960, anchor_y=650)
+        if _return:
+            "Je prends le virage sans ralentir."
+            return True
+        $ j3_corridor_trace_attempts += 1
+        if j3_corridor_trace_attempts >= 2:
+            "Mon épaule tape contre le mur. Nyra ne ralentit même pas."
+            return False
+        "Je dérape sur le métal."
+        "Je reprends l'angle."
+
+label day3_collect_vote_argument(arg_id):
+    call screen day3_argument_briefcase(arg_id)
+    if _return:
+        play sound sfx_drop
+        "Argument ajouté au dossier du vote."
+    return
+
+
 label _3_CANON:
 
     $ day_id = 3
+    $ day3_vote_bootstrap()
 
     scene black
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
@@ -71,8 +345,7 @@ label _3_CANON:
     pause 0.6
 
     play sound sfx_announce
-
-    pause 0.8
+    pause 1.0
 
     # Diffusion de Kami
     stop music fadeout 1.0
@@ -158,6 +431,8 @@ label _3_CANON:
     "Je me redresse. J'allume la lumière."
     "Mes vertèbres craquent."
 
+    call day3_play_wakeup_trace from _call_day3_play_wakeup_trace
+
     pause 0.4
 
     think "Super."
@@ -189,6 +464,23 @@ label _3_CANON:
     "Je bois un peu d’eau."
     "Deux gorgées."
     "Je n'ai pas très faim, j'ai la gorge nouée."
+
+    menu:
+        "Attraper le téléphone posé près du lit.":
+            "Je le prends du bout des doigts."
+            "L'écran s'allume avant même que je le demande."
+        "Le laisser encore une seconde.":
+            "Je le fixe sans bouger."
+            "Le rappel du vote attend derrière le verre noir."
+        "Le ranger dans ma poche.":
+            "Je le glisse contre ma hanche."
+            "Son poids suffit à me rappeler l'heure."
+
+    call screen day3_phone_vote_notice
+    if _return == "codex":
+        call screen day3_current_vote_codex(called=True)
+
+    show screen day3_codex_logo
 
     pause 0.5
 
@@ -375,7 +667,7 @@ label _3_CANON:
     "Il parle plus vite."
     "Comme s’il avait déjà validé le résultat."
 
-    noam "Si. Evidemment que dis comme ça, sur le papier, ça me plaît."
+    noam "Je crois que... oui. Dit comme ça, sur le papier... ça me plaît."
 
     "Mais son enthousiasme me met mal à l’aise."
 
@@ -389,8 +681,7 @@ label _3_CANON:
     julian sourire "À 14h."
     julian joie "On ouvre le bal et on change ce monde."
 
-    $ add_argument("Le monde d'avant")
-    show screen argument_unlock("Le monde d'avant")
+    call day3_collect_vote_argument("monde_avant") from _call_day3_collect_vote_argument_monde_avant
 
     "Il pivote vers la cafétéria."
 
@@ -452,9 +743,19 @@ label _3_CANON:
 
     pause 0.6
 
-    "Je prends un café."
-    "Il est amer."
-    "Plus que d’habitude."
+    menu:
+        "Prendre un café noir.":
+            "Je prends un café."
+            "Il est amer."
+            "Plus que d'habitude."
+        "Prendre une barre de céréale.":
+            "Je prends une barre de céréale."
+            "Elle colle aux doigts."
+            "Je la garde sans vraiment manger."
+        "Prendre seulement de l'eau.":
+            "Je prends un verre d'eau."
+            "Le froid descend lentement dans ma gorge."
+            "Ça ne suffit pas à desserrer mon ventre."
 
     pause 0.5
 
@@ -494,9 +795,19 @@ label _3_CAFETERIA_DEBAT:
 
     pause 0.4
 
-    "Je m’assois."
-    "Pas au centre."
-    "Pas trop visible."
+    menu:
+        "S'asseoir près du bord de table.":
+            "Je m’assois près du bord."
+            "Pas au centre."
+            "Pas trop visible."
+        "Rester debout quelques secondes.":
+            "Je reste debout quelques secondes."
+            "Le plateau entre les mains."
+            "Puis je choisis une place pas trop visible."
+        "Poser le téléphone face contre table.":
+            "Je pose le téléphone face contre table."
+            "L'écran disparaît."
+            "Le vote, lui, reste là."
 
     pause 0.3
 
@@ -1110,8 +1421,7 @@ label _3_CAFETERIA_DEBAT:
 
     elen joie "Ça me suffit pour le moment."
 
-    $ add_argument("L'énoncé précis")
-    show screen argument_unlock("L'énoncé précis")
+    call day3_collect_vote_argument("enonce_precis") from _call_day3_collect_vote_argument_enonce_precis
 
     pause 0.3
 
@@ -1315,7 +1625,7 @@ label _3_PAUSE_CHAMBRE:
     nyra "Il parle à d’autres."
     nyra "Il essaye de convaincre tout le monde de voter pour la proposition."
 
-    noam "Comment ça ? C'est pas si grave, non ? Pourquoi tu es si remontée ?!"
+    noam "Ce que j'entends, c'est que... tu t'inquiètes de comment il présente les choses ?"
 
     nyra "Il dit que si c’est lui qui prend la parole au Conclave, personne n’osera dire non."
     nyra "Il vend son image. Il veut juste paraitre pour celui qui fait avancer les choses."
@@ -1366,8 +1676,8 @@ label _3_PAUSE_CHAMBRE:
 
     pause 0.2
 
-    "Un virage sec. Je manque de percuter le mur."
-    "Nyra ralentit à peine."
+    "Un virage sec."
+    call day3_play_corridor_trace from _call_day3_play_corridor_trace
 
     pause 0.5
 
@@ -1393,8 +1703,26 @@ label _3_PAUSE_CHAMBRE:
 
     $ showP("noam", "determine", 0.85)
 
-    noam "C'est loin d'être une bonne idée."
-    noam "Personne n'est leader ici."
+    menu:
+        "Couper Julian immédiatement.":
+            noam hesitation "Julian."
+            noam "Je me demande si... c'est vraiment ce qu'on veut mettre en avant."
+            "Son sourire se fige plus vite que prévu."
+            nyra stress "Direct. Au moins, il t'a entendu."
+        "Laisser Tomas répondre d'abord.":
+            "Je garde une seconde de silence."
+            "Tomas serre ses doigts autour de son poignet."
+            tomas hesitation "J-Je ne veux pas que le vote devienne ça."
+            noam "Il me semble que Tomas vient de dire l'essentiel."
+            nyra stress "Bien. Il fallait le laisser poser sa limite."
+        "S'adresser directement à Tomas.":
+            noam "Tomas."
+            noam "Tu votes pour un texte, pas pour quelqu'un qui parle plus fort."
+            "Tomas relève les yeux."
+            tomas hesitation "Oui. Voilà."
+            nyra stress "Ça le remet au centre sans nourrir Julian."
+
+    noam "Il me semble que personne ici n'a de mandat pour se poser en leader."
 
     pause 0.4
 
@@ -1403,10 +1731,10 @@ label _3_PAUSE_CHAMBRE:
 
     pause 0.2
 
-    noam "Si tu passes ton temps à dire que ça passera grâce à toi,"
-    noam "les hésitants vont se braquer."
-    noam raison "Ils vont croire qu’on leur impose quelqu’un."
-    noam raison "Et qu'on ne vote plus seulement pour ou contre une idée."
+    noam hesitation "Ce que j’entends, c’est que tu veux que ça passe."
+    noam "Mais il me semble que si tu te mets trop en avant, les hésitants vont percevoir autre chose."
+    noam reflexion "Pas l’idée. Toi."
+    noam raison "Et là, le vote ne sera plus sur le fond. Ce sera sur toi."
 
     pause 0.4
 
@@ -1420,8 +1748,8 @@ label _3_PAUSE_CHAMBRE:
 
     julian "Je veux juste que ça passe."
 
-    noam "Alors parle uniquement du texte."
-    noam "Et arrête d'essayer de te mettre en avant."
+    noam "Ce que je veux dire... parle du texte. Rien d'autre."
+    noam hesitation "Je me demande si... le reste est vraiment nécessaire."
 
     pause 0.3
 
@@ -1617,8 +1945,18 @@ label _3_TRANSITION_CONCLAVE:
 
     pause 0.3
 
-    "Je ralentis sans vraiment réfléchir."
-    "Je me cale sur son pas."
+    menu:
+        "Ralentir pour marcher près de Lysa.":
+            "Je ralentis sans vraiment réfléchir."
+            "Je me cale sur son pas."
+        "Rester avec le groupe.":
+            "Je reste dans le mouvement du groupe."
+            "Mais mon regard revient vers elle."
+            "Je finis quand même par ralentir."
+        "Regarder Julian avant d'entrer.":
+            "Je regarde Julian."
+            "Il avance trop droit, trop vite."
+            "Puis je ralentis pour revenir au rythme de Lysa."
 
     pause 0.3
 
@@ -1835,7 +2173,7 @@ label _3_TRANSITION_CONCLAVE:
     "Le Conclave va commencer."
     think "Plus de retour en arrière possible."
 
-    jump patreon_ending
+    #jump patreon_ending
 
 # Durée : 2m55
 # Totale : 1h 40m 00s
@@ -1933,6 +2271,7 @@ label _3_DEBAT1_PHASE1:
     hide nyra
     hide noam
 
+    hide screen day3_codex_logo
     call FA_START_ANIM from _call_FA_START_ANIM
 
     pause 1.0
@@ -1947,6 +2286,7 @@ label _3_DEBAT1_PHASE1:
         call screen noam_consent_screen
 
     scene bg_conclave at adaptive_fullscreen with dissolve
+    show screen day3_codex_logo
 
     $ showP("lysa", "reflexion", 0.45)
     lysa "Autoriser le transport, la vente et l'échange de marchandises ..."
@@ -2051,8 +2391,8 @@ label _3_DEBAT1_PHASE2:
 
     hide mara
     $ showP("noam", "raison", 0.50)
-    noam "Puis rien ne nous garantit que tout ça n'est pas une mascarade."
-    noam "Il est aussi possible que Kami se moque totalement de nous, et que personne n'ait proposé ça."
+    noam "Je me demande si... tout ça n'est pas une mascarade."
+    noam "Il est possible que Kami se moque totalement de nous, et que personne n'ait proposé ça."
 
     hide noam
     $ showP("lysa", "reflexion", 0.60)
@@ -2084,8 +2424,8 @@ label _3_DEBAT1_PHASE2:
 
     hide lysa
     $ showP("noam", "reflexion", 0.50)
-    noam "Bon, pas le choix, il faut débattre du fond de la proposition."
-    noam "Ne cherchons pas un coupable, c'est une perte de temps."
+    noam "Il me semble que... débattre du fond reste la seule chose utile là."
+    noam reflexion "Je me demande si chercher un coupable maintenant nous avancerait vraiment."
     noam "N'empêche y'en a un qui fait moins le malin."
 
     pause 0.5
@@ -2227,13 +2567,13 @@ label _3_DEBAT1_PHASE2:
 
     hide lysa
     $ showP("noam", "raison", 0.50)
-    noam "Avancer, oui."
-    noam "Mais pas en sautant dans le vide sans savoir où on va."
+    noam "Avancer... je me demande si on sait vraiment où on va."
+    noam "Je ne dis pas non. Je dis : à quel prix."
 
     "Plusieurs têtes hochent légèrement."
 
-    noam "On ne vote pas une idée."
-    noam "On vote pour un système qui peut impacter les gens jusque dans leur quotidien."
+    noam "Ce que j'entends, c'est qu'on parle d'une idée."
+    noam reflexion "Il me semble que c'est autre chose. Un système. Quelque chose qui touche les gens dans leur quotidien."
 
     julian "Et le système actuel fonctionne ?"
 
@@ -2269,10 +2609,9 @@ label _3_DEBAT1_PHASE2:
     kami "Compris ?!"
     kami "Alors c'est parti !"
 
+    hide screen day3_codex_logo
     call debat_phase2_minigame from _call_debat_phase2_minigame
-
-    kami "Je vois que le minijeu est terminé !"
-    kami "AHURISSANT !"
+    show screen day3_codex_logo
 
     jump _3_DEBAT1_PHASE3
 
@@ -2300,11 +2639,10 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
     modal True
     zorder 250
 
-    add Solid("#050a12d9")
-    add Solid("#2be1ff22") at p3_arg_glow
+    add "gui/day3/vote_phase3/bg.png"
 
     frame:
-        background Frame(Solid("#0e1626f2"), 20, 20)
+        background None
         xalign 0.5
         yalign 0.5
         xsize 1620
@@ -2315,7 +2653,8 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
             spacing 28
             xfill True
 
-            text "INTERVENTION STRATÉGIQUE" size 52 color "#7be7ff" xalign 0.5
+            add "gui/day3/vote_phase3/prompt_panel.png" xalign 0.5
+            text "INTERVENTION STRATÉGIQUE" size 48 color "#7be7ff" xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf"
             text "[prompt]" size 30 color "#d5f7ff" xalign 0.5 text_align 0.5
 
             hbox:
@@ -2323,23 +2662,32 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
                 xalign 0.5
 
                 for i, opt in enumerate(options):
+                    $ is_unlocked = opt["title"] in arguments
                     fixed:
                         xsize 490
                         ysize 560
                         at p3_arg_float
 
-                        add Frame(Solid("#0d2037d0"), 14, 14) xpos 0 ypos 0 xsize 490 ysize 560
-                        add Solid("#61f0ff15") at p3_arg_glow
+                        if is_unlocked:
+                            add "gui/day3/vote_phase3/card_idle.png" xpos 0 ypos 0 xsize 490 ysize 560
+                            add Solid("#61f0ff15") at p3_arg_glow
+                        else:
+                            add "gui/day3/vote_phase3/card_locked.png" xpos 0 ypos 0 xsize 490 ysize 560
 
                         imagebutton:
-                            idle Solid("#142b49a0")
-                            hover Solid("#1d3f67c5")
+                            idle ("gui/day3/vote_phase3/card_idle.png" if is_unlocked else "gui/day3/vote_phase3/card_locked.png")
+                            hover ("gui/day3/vote_phase3/card_hover.png" if is_unlocked else "gui/day3/vote_phase3/card_locked.png")
                             at p3_arg_button_idle
                             xalign 0.5
                             yalign 0.5
-                            xsize 460
-                            ysize 530
-                            action Return(i)
+                            xsize 490
+                            ysize 560
+                            sensitive is_unlocked
+
+                            if is_unlocked:
+                                action Return(i)
+                            else:
+                                action NullAction()
 
                         vbox:
                             xalign 0.5
@@ -2347,9 +2695,15 @@ screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
                             spacing 18
                             xmaximum 410
 
-                            text "[opt['icon']]" size 74 xalign 0.5
-                            text "[opt['title']]" size 33 color "#9deeff" xalign 0.5 text_align 0.5
-                            text "[opt['desc']]" size 25 color "#e6f6ff" xalign 0.5 text_align 0.5
+                            if is_unlocked:
+                                text "[opt['icon']]" size 74 xalign 0.5
+                                text "[opt['title']]" size 33 color "#9deeff" xalign 0.5 text_align 0.5 font "fonts/Rajdhani-SemiBold.ttf"
+                                text "[opt['desc']]" size 25 color "#e6f6ff" xalign 0.5 text_align 0.5
+                                add "gui/day3/vote_phase3/select_button.png" xalign 0.5
+                            else:
+                                text "?" size 92 color "#6f7c86" xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf"
+                                add "gui/day3/vote_phase3/locked_stamp.png" xalign 0.5
+                                text "Argument non débloqué" size 24 color "#9a8f96" xalign 0.5 text_align 0.5
 
             text "L'impact dépend du moment et des tensions déjà installées." size 24 color "#86bdd0" xalign 0.5
 
@@ -2363,33 +2717,6 @@ label _3_DEBAT1_PHASE3:
     # OPTIONS FIXES (3 CHOIX x 3 MOMENTS)
     # =========================
     python:
-        def build_arg(title):
-            low = title.lower()
-
-            if "ration" in low:
-                icon = "⌬"
-                desc = "Sécurité minimale contre la faim et le chaos."
-            elif "orbite" in low:
-                icon = "◉"
-                desc = "Dépendance logistique et fragilité structurelle."
-            elif "énoncé" in low or "precis" in low:
-                icon = "⟡"
-                desc = "Texte exact, conséquences juridiques immédiates."
-            elif "appro" in low:
-                icon = "⬢"
-                desc = "Ruptures passées et files de pénurie."
-            elif "échange" in low or "discret" in low:
-                icon = "◌"
-                desc = "Réseaux d'entraide clandestins déjà en place."
-            elif "avant" in low:
-                icon = "✦"
-                desc = "Mémoire d'un système ancien imparfait mais vivant."
-            else:
-                icon = "•"
-                desc = "Argument."
-
-            return {"title": title, "desc": desc, "icon": icon}
-
         # >>> ICI TU DÉCIDES EXACTEMENT LES 3 ARGUMENTS DE CHAQUE MOMENT <<<
         store.p3_round_options = [
             [   # Moment 1
@@ -2401,11 +2728,6 @@ label _3_DEBAT1_PHASE3:
                 build_arg("L'énoncé précis"),
                 build_arg("Le monde d'avant"),
                 build_arg("Échanges discrets déjà actifs"),
-            ],
-            [   # Moment 3
-                build_arg("Difficulté d'approvisionnement"),
-                build_arg("L'énoncé précis"),
-                build_arg("Bons de rationnement"),
             ],
         ]
 
@@ -2431,7 +2753,7 @@ label _3_DEBAT1_PHASE3:
     hide screen kami_broadcast_ui
 
     $ showP("noam", "raison", 0.50)  # centre
-    noam "On va essayer de rester civilisés, si c’est possible."
+    noam "Il me semble qu’on peut essayer de rester civilisés."
 
     $ showP("julian", "determine", 0.88)  # droite
     julian "Civilisés ? On est en train de crever doucement, Noam."
@@ -2501,7 +2823,7 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], prompt="Moment 1 — Cadrer la première salve.")
-    call _3_DEBAT1_PHASE3_INT1
+    call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
 
     stop music fadeout 1.0
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -2530,8 +2852,8 @@ label _3_DEBAT1_PHASE3:
 
     hide sael
     $ showP("noam", "reflexion", 0.12)  # gauche
-    noam "Le passé, le texte brut de l’amendement, et la réalité des rayons vides."
-    noam "On peut pas parler de tout en même temps."
+    noam "Ce que j’entends, c’est trois sujets distincts. Le passé, le texte brut, et les rayons vides."
+    noam reflexion "Il me semble qu’on ne peut pas traiter tout ça en même temps."
 
     hide nyra
     $ showP("elen", "joie", 0.50)  # centre
@@ -2552,112 +2874,83 @@ label _3_DEBAT1_PHASE3:
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
-    call _3_DEBAT1_PHASE3_INT2
+    call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
 
-    $ showP("iris", "hesitation", 0.66)
-    iris "Je pose un truc simple."
-    iris "Qui contrôle les routes contrôle les prix."
-    iris "Et qui contrôle les prix contrôle les gens."
+    stop music fadeout 1.0
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
-    $ showP("nyra", "fatigue", 0.77)
-    nyra "C'est pour ça qu'un basculement brutal est dangereux politiquement."
+    pause 1.0
 
-    $ showP("sael", "desaccord", 0.93)
-    sael "Dangereux pour qui ?"
+    $ showP("noam", "raison", 0.50)  # centre
+    noam "Il me semble qu’on a fait le tour."
+    noam "Le monde d’avant, le texte brut, les trocs qui existent déjà…"
+    noam reflexion "Je me demande si... on est prêts à choisir maintenant."
 
-    nyra "Pour ceux qui ne peuvent pas négocier."
+    $ showP("ryn", "colere", 0.88)  # droite
+    ryn "Choisir entre crever lentement ou crever d’un coup ?"
 
-    $ showP("kael", "inquiet", 0.19)
-    kael "Les exportations peuvent financer une caisse d'urgence inter-districts..."
-    kael "Si on sanctuarise une part fixe."
+    $ showP("julian", "determine", 0.12)  # gauche
+    julian "Ou entre survivre enchaîné ou se battre libre."
 
-    $ showP("mara", "colere", 0.29)
-    mara "Encore un 'si'. Vous me vendez des 'si' depuis une heure."
+    hide noam
+    $ showP("nyra", "raison", 0.50)  # centre
+    nyra "C’est binaire."
+    nyra "On vote. Et on assume."
 
-    $ showP("elias", "determine", 0.40)
-    elias "On peut aussi choisir d'écrire les garde-fous après le vote d'orientation."
-    elias "C'est pas idéal, mais c'est faisable."
+    "Les regards se croisent. La tension est palpable."
 
-    $ showP("noam", "raison", 0.50)
-    noam "Sauf que l'amendement qu'on juge n'a pas ces garde-fous."
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    kami "Enfin !"
+    kami "J’ai failli m’endormir avec vos jérémiades."
+    kami "Le texte est clair : suppression totale des bons ou statu quo."
+    kami "Vert pour couper la laisse. Rouge pour rester sages."
+    kami "Allez, mes petits rats. Faites-moi vibrer l’audimat."
 
-    play sound "sound/sfx_table_hit.ogg"
-    ryn "Voilà. Merci."
+    "L’écran central affiche deux boutons immenses : VERT et ROUGE."
+    "Tous les yeux se tournent vers moi."
 
-    play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[2], prompt="Moment 3 — Appuyer sur la légalité ou sur l'élan.")
-    call _3_DEBAT1_PHASE3_INT3
+    "C’est maintenant."
 
-    $ showP("julian", "determine", 0.88)
-    julian "Si on refuse chaque pas parce qu'il n'est pas parfait, on reste au point mort à vie."
+    hide screen day3_codex_logo
+    jump vote_phase3_final
 
-    $ showP("ryn", "colere", 0.08)
-    ryn "Et si on signe n'importe quoi, on condamne les mêmes qu'on prétend sauver."
+# Durée : 4m
+# Total : 1h 52m 40s
 
-    $ showP("mara", "reflexion", 0.29)
-    mara "Je déteste le système actuel."
-    mara "Mais je déteste encore plus l'idée de voir des gamins troquer leur ration contre une promesse."
+# label vote_phase3_final:
 
-    $ showP("elen", "determine", 0.33)
-    elen "On peut imaginer un marché libre avec une base garantie !"
+#     scene bg_conclave at adaptive_fullscreen with dissolve
+#     show screen kami_broadcast_ui
+#     play music "music/bgm_fatal_assembly.mp3" fadein 1.2
+#     with Dissolve(0.5)
 
-    $ showP("lysa", "reflexion", 0.77)
-    lysa "On peut surtout constater que ce n'est pas ce qu'on vote."
+#     show bg_conclave:
+#         zoom 1.03
+#         linear 0.7 zoom 1.0
 
-    $ showP("tomas", "raison", 0.62)
-    tomas "J'ajoute un fait : lors de la suspension partielle des circuits centraux au cycle 318,"
-    tomas "les incidents de sécurité sur les axes secondaires ont doublé en dix jours."
+#     kami "Mes délicieux cobayes... l'instant du verdict est arrivé."
+#     kami "Un seul geste, et vous décidez si la faim devient une marchandise."
+#     kami "Vert : vous ouvrez les vannes du marché. Rouge : vous gardez la laisse."
+#     kami "Choisissez bien. Je savoure déjà la suite."
 
-    $ showP("iris", "panne", 0.66)
-    iris "Merci. Voilà pourquoi je râle."
+#     $ total_adhesion = sum(debat_day3_live_vote_stats.values())
+#     $ vote_joueur = renpy.call_screen("vote_screen", total_adhesion=total_adhesion)
 
-    play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[3], prompt="Moment 4 — Fixer la peur ou relancer l'audace.")
-    call _3_DEBAT1_PHASE3_INT4
+#     if vote_joueur == "pour":
+#         scene bg_conclave at adaptive_fullscreen with vpunch
+#         show expression Solid("#2dff9e40") as vote_flash with dissolve
+#         hide vote_flash
+#     else:
+#         scene bg_conclave at adaptive_fullscreen with vpunch
+#         show expression Solid("#ff435040") as vote_flash with dissolve
+#         hide vote_flash
 
-    $ showP("sael", "raison", 0.93)
-    sael "Il y a une question qu'on évite."
-    sael "L'auteur anonyme voulait-il réformer..."
-    sael "...ou provoquer une panique pour discréditer le commerce ?"
-
-    $ showP("nyra", "taquin", 0.77)
-    nyra "Les deux sont compatibles."
-
-    $ showP("noam", "hesitation", 0.50)
-    noam "Donc on tranche sur le texte, pas sur l'intention."
-
-    $ showP("elias", "neutre", 0.40)
-    elias "Je reste convaincu que fermer encore n'est plus une option."
-
-    $ showP("kael", "hesitation", 0.19)
-    kael "Je... je veux ouvrir, mais pas comme ça."
-
-    $ showP("mara", "doute", 0.29)
-    mara "Pareil."
-
-    $ showP("julian", "reflexion", 0.88)
-    julian "Alors on envoie quel signal ?"
-    julian "Qu'on accepte de pourrir doucement ?"
-
-    $ showP("ryn", "neutre", 0.08)
-    ryn "Qu'on refuse de sacrifier les plus bas sur l'autel d'un pari."
-
-    play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[4], prompt="Moment 5 — Dernière impulsion avant la coupure.")
-    call _3_DEBAT1_PHASE3_INT5
-
-    pause 0.4
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    play sound "sound/sfx_table_hit.ogg"
-    kami "Oh, merveilleux. Vous avez presque réussi à penser en groupe pendant plus de trois minutes."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Phase 4, maintenant : compromis impossible, alliances opportunistes, et peut-être un aveu."
-    kami "Restez assis. Les chaises sont verrouillées."
-
-    hide screen kami_broadcast_ui
-
-    jump _3_DEBAT1_PHASE4
+#     if total_adhesion > 0:
+#         jump vote_pour
+#     else:
+#         jump vote_contre
 
 label _3_DEBAT1_PHASE3_INT1:
     $ selected = p3_round_options[0][p3_pick]["title"]
@@ -2989,67 +3282,264 @@ label _3_DEBAT1_PHASE3_INT2:
     elif "échange" in selected.lower() or "discret" in selected.lower():
         scene bg_conclave at adaptive_fullscreen with dissolve
 
-        $ showP("nyra", "raison", 0.50)
-        nyra "Les échanges discrets existent déjà."
-        nyra "Couper les bons d'un coup, c'est forcer tout le monde à passer par des réseaux opaques."
+        $ showP("ryn", "colere", 0.50)  # centre
+        ryn "Attends… tu dis que ça se fait déjà ?"
+        ryn "Des trocs en douce à Limen ?"
 
-        $ showP("sael", "mefiant", 0.88)
-        sael "Opaques, oui. Mais efficaces."
-        sael "Quand les canaux officiels lâchent, c'est ça qui fait tenir les quartiers."
+        $ showP("sael", "mefiant", 0.88)  # droite
+        sael "Depuis longtemps."
+        sael "Un sac contre une réparation. Un service contre du tissu."
+        sael "Ça tient les gens en vie entre deux distributions."
 
-        hide nyra
-        $ showP("noam", "reflexion", 0.50)
-        noam "Efficaces pour ceux qui ont un contact."
-        noam "Pour les autres, c'est juste une file d'attente de plus, sans recours."
+        $ showP("noam", "reflexion", 0.12)  # gauche
+        noam "Ça marche en petit comité."
+        noam "Mais si tout le monde le fait officiellement, est-ce que ça reste contrôlable ?"
 
-        hide sael
-        $ showP("mara", "agace", 0.88)
-        mara "Et ça crée des chefs de couloir."
-        mara "Les 'discrets' deviennent vite des péages."
+        hide ryn
+        $ showP("kael", "doute", 0.50)  # centre
+        kael "Et… à Orbite ?"
+        kael "Si ça se fait ici sans que Kami réagisse…"
+        kael "Peut-être que ça peut exister sans… sans que ça pète tout ?"
 
-        $ showP("julian", "determine", 0.12)
-        julian "Ou des preuves que les gens savent déjà s'organiser sans Kami."
+        hide noam
+        $ showP("julian", "determine", 0.88)  # droite
+        julian "Exactement !"
+        julian "Ça prouve que les gens savent déjà s’organiser sans attendre la permission."
+        julian "Supprimer les bons, c’est juste arrêter de faire semblant."
 
-        "La salle hésite : survivre par les marges, ou refuser d'en faire la règle."
+        hide kael
+        $ showP("lysa", "blase", 0.12)  # gauche
+        lysa "S’organiser… ou créer des petits rois."
+        lysa "Les trocs discrets, c’est bien quand ça reste discret."
+        lysa "À grande échelle, ça devient un marché noir avec des chefs qui contrôlent tout."
 
+        hide julian
+        $ showP("ryn", "reflechit", 0.88)  # droite – retour
+        ryn "Mais… si c’est déjà là à Limen…"
+        ryn "Et que ça sauve des familles entre deux rations…"
+        ryn "Alors peut-être que sans les bons, on pourrait faire pareil, mais en mieux."
+        ryn "Sans crever de faim en attendant Kami."
+
+        hide lysa
+        $ showP("sael", "mefiant", 0.50)  # centre – retour
+        sael "C’est déjà le cas."
+        sael "On survit."
+        sael "On peut faire plus que survivre."
+
+        "Ryn baisse les yeux un instant. Kael fixe le sol, comme s’il recalculait tout dans sa tête."
+        "L’idée fait son chemin : le troc existe déjà. Il fonctionne. Il pourrait être la réponse."
+
+        # Modifs adhésion : on cible surtout Ryn et Kael (positif = POUR le changement)
         $ debat_day3_apply_influence({
-            "nyra": -1,
-            "noam": -1,
-            "mara": -1,
-            "sael": 1,
-            "julian": 1
+            "ryn": 2,         # convaincu que Limen survivrait grâce au troc existant
+            "kael": 2,        # rassuré : échanges sans chaos ni punition orbitale
+            "julian": 1,      # adore la preuve d’autonomie
+            "sael": 1,        # favorable, voit le surpassement
+            "lysa": -1        # blasée, craint les dérives
         })
 
-        hide mara
-        hide julian
+        hide ryn
+        hide sael
 
     return
 
-label _3_DEBAT1_PHASE3_INT3:
-    $ selected = p3_round_options[2][p3_pick]["title"]
-    if "énoncé" in selected.lower():
-        $ pnj_adhesion["julian"] -= 2
-        $ showP("tomas", "raison", 0.62)
-        tomas "Le texte prévaut."
-        $ showP("julian", "agace", 0.88)
-        julian "Le texte peut être amendé ensuite."
-    elif "faiblesse" in selected.lower() or "orbite" in selected.lower():
-        $ pnj_adhesion["julian"] -= 1
-        $ p3_delta_txt = "-1"
-        $ showP("nyra", "raison", 0.77)
-        nyra "On ne gouverne pas un risque systémique à l'instinct."
-        $ showP("julian", "hesitation", 0.88)
-        julian "Pas à l'instinct. À la décision."
-    elif "échange" in selected.lower() or "discret" in selected.lower():
-        $ pnj_adhesion["julian"] += 1
-        $ showP("sael", "raison", 0.77)
-        sael "Les circuits parallèles prouvent qu'une transition est déjà en cours."
-        $ showP("julian", "reflexion", 0.88)
-        julian "Alors assumons-la au grand jour."
-    else:
-        $ pnj_adhesion["julian"] += 2
-        $ showP("elen", "determine", 0.33)
-        elen "On a besoin d'un vrai virage !"
-        $ showP("julian", "determine", 0.88)
-        julian "Oui."
-    return
+label _3_VOTE_POUR:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    stop music fadeout 1.0
+    play music "music/bgm_victory_bitter.mp3" fadein 2.0  # ambiance triomphale mais pesante, avec une note sombre
+
+    pause 1.2
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with vpunch
+    kami "VERT !"
+    kami "Le vote est POUR !"
+    kami "Suppression totale des bons de rationnement. Fin de la distribution gratuite."
+    kami "Le commerce, le transport et le stockage de marchandises sont désormais autorisés."
+    kami "Félicitations, mes petits rebelles. Vous avez coupé la laisse."
+    kami "Mais attention… la laisse, c’était aussi une sécurité."
+    kami "On va voir ce que ça donne sans filet. J’ai hâte du spectacle."
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
+
+    "L’écran s’éteint. Un silence étrange s’installe, pas vraiment joyeux."
+    "Je sens mon cœur battre fort. On l’a fait. Mais on n’a pas gagné. On a juste… changé les règles."
+
+    $ showP("julian", "sourire", 0.50)  # centre
+    julian "C’est fait."
+    julian "On a une chance, maintenant."
+    julian "Une vraie."
+
+    $ showP("elen", "joie", 0.88)  # droite
+    elen "On va pouvoir choisir…"
+    elen "Vraiment choisir."
+
+    $ showP("ryn", "jaloux", 0.12)  # gauche
+    ryn "Ouais…"
+    ryn inquiet "Mais sans les bons, Limen va morfler au début."
+    ryn "Faut pas se mentir."
+
+    hide julian
+    $ showP("noam", "raison", 0.50)  # centre
+    noam reflexion "Je me demande si on savait vraiment ce que ça voulait dire."
+    noam "Il me semble qu'on ne pouvait plus rester comme avant. Mais... est-ce que c'était vraiment un choix ?"
+
+    hide elen
+    $ showP("mara", "rire_profond", 0.88)  # droite
+    mara "Génial. On va enfin pouvoir acheter des trucs."
+    mara taquin "Enfin… au moins, on va crever en ayant le choix de la sauce."
+
+    hide ryn
+    $ showP("kael", "mefiant", 0.12)  # gauche
+    kael "À Orbite… ça va tenir."
+    kael "Tant qu’on touche pas aux règles de sécurité."
+    kael triste "Mais j’ai quand même peur que ça parte en vrille."
+
+    hide noam
+    $ showP("nyra", "raison", 0.50)  # centre
+    nyra "On a gagné une bataille."
+    nyra "Pas la guerre."
+    nyra "Maintenant, il va falloir gérer les conséquences."
+
+    "Je regarde autour de moi. Julian a un sourire crispé. Elen semble excitée mais nerveuse."
+    "Ryn fixe le sol, poings serrés. Kael respire fort, comme s’il venait de courir un marathon."
+    "Personne n’exulte. On sait tous que le plus dur commence maintenant."
+
+    hide nyra
+    hide kael
+    hide mara
+
+    "L’horloge indique 17h10. La journée est finie."
+    "Je me lève lentement. Les autres font pareil, en silence."
+
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    "Je marche vers ma chambre. Mes pas résonnent dans le couloir vide."
+
+    scene bg_dortoir at adaptive_fullscreen with dissolve
+    "On a voté pour le changement."
+    "Mais je ne sais pas si on est prêts à le vivre."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Je pousse la porte de ma chambre et m’effondre sur le lit."
+    "Demain, tout sera différent."
+    "Et j’ai peur que ça ne soit pas mieux."
+
+    $ phase3_over = True
+    $ vote1 = "OUI"
+
+    #jump patreon_ending
+
+    call end_day("4") from _call_end_day_3
+
+    jump _4_1_REVEIL_CHAMBRE
+
+label _3_VOTE_CONTRE:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    stop music fadeout 1.0
+    play music "music/bgm_system_override.mp3" fadein 2.0  # ambiance sombre, pesante
+
+    pause 1.2
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "ROUGE !"
+    kami "Le vote est CONTRE !"
+    kami "Le statu quo est donc maintenu. Les bons de rationnement restent. La distribution continue."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Que je n'entende plus personne râler sur ces bons !"
+    kami "Vous aviez la possibilité de changer le système."
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Félicitations, mes petits rats sages. Vous avez choisi la sécurité… Bien que c'est un peu plus ennuyeux."
+    kami "Je suis presque déçue. J’espérais un peu plus de sang et de chaos."
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
+
+    play music "music/bgm_low_tension.mp3" fadein 2.0  # ambiance sombre, pesante
+    "L’écran central s’éteint. Le silence est assourdissant."
+    "Je sens un poids énorme tomber sur mes épaules. Tout le monde reste figé."
+
+    $ showP("julian", "colere", 0.50)  # centre
+    julian "Non…"
+    julian "Non, c’est pas possible."
+    julian "On avait une chance… une vraie chance de changer les choses…"
+
+    $ showP("ryn", "fatigue", 0.12)  # gauche
+    ryn "Ce n'est pas si simple que ça, d'autres auraient pu en souffrir."
+
+    $ showP("mara", "colere", 0.88)  # droite
+    mara "On a juste repoussé l’inévitable !"
+    mara "On va continuer à crever à petit feu, SU-PER."
+
+    hide julian
+    $ showP("elen", "triste", 0.50)  # centre – remplace Julian
+    elen "Je… je croyais qu’on allait y arriver…"
+    elen "J’étais tellement sûre…"
+
+    hide ryn
+    $ showP("kael", "doute", 0.12)  # gauche
+    kael "Au moins… On est déjà habitué à ce quotidien."
+    kael "Rien ne change, ça ne s'aggrave pas. C'est déjà ça."
+
+    hide mara
+    $ showP("nyra", "raison", 0.88)  # droite
+    nyra "Décevant, mais en soit c'est rationnel."
+    nyra "Le chaos aurait pu tout détruire."
+
+    "Les voix montent. Julian se lève d’un coup, frappe la table du poing."
+
+    hide elen
+    $ showP("julian", "colere", 0.50)  # centre – retour
+    julian "Rationnelle ?!"
+    julian "Vous appelez ça rationnel ? Continuer à rationner des miettes pendant que les districts crèvent ?!"
+    julian "On a eu une chance et on l’a laissée filer !"
+
+    hide kael
+    $ showP("ryn", "colere", 0.12)  # gauche
+    ryn "C'est le vote, c'est comme ça."
+    ryn "Je le comprends. T’as vu ce que ça risquait pour Limen ?!"
+
+    julian "Et t’as vu ce que ça risque si on change rien ?!"
+
+    "La tension explose. Plusieurs se lèvent, parlent en même temps. Mara crie quelque chose sur les riches qui s’en foutent. J'essaie de calmer tout le monde, sans succès."
+
+    "Je regarde l’horloge sur le mur : presque 17h."
+    "La journée est finie. Le vote est fini."
+    "Et rien n’a changé."
+
+    "Je me lève lentement. Les voix continuent autour de moi, mais je n’écoute plus."
+    "Je veux juste rentrer dans ma chambre. Réfléchir. Ou ne plus réfléchir du tout."
+
+    hide julian
+    hide ryn
+    hide nyra
+
+    scene bg_couloir at adaptive_fullscreen with dissolve
+    "Je marche dans les couloirs froids du Conclave. Mes pas résonnent."
+    scene bg_dortoir at adaptive_fullscreen with dissolve
+    "Je pousse la porte de ma chambre et m’effondre sur le lit."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Le silence est pire que les cris."
+
+    "Tout a échoué."
+    "Qu’est-ce qu’on peut faire maintenant ?"
+
+    $ phase3_over = True
+
+    $ vote1 = "NON"
+
+    #jump patreon_ending
+
+    call end_day("4")
+
+    jump _4_0_REVEIL_CHAMBRE
+
+# Durée : 1m20
+# Total : 1h 54m 0s
+

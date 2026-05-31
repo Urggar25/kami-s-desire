@@ -2,7 +2,7 @@
 # LIENS — RYN
 # -----------------------------------------------------------------------
 
-default ryn_link = 0
+default ryn_link = character_link_progress("ryn")
 
 label RYN_LINK_INTERACT:
 
@@ -139,6 +139,9 @@ label ryn_link_1:
     ryn "Bien."
 
     $ ryn_link = 1
+    $ set_character_link_progress("ryn", 1)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label ryn_link_2:
@@ -252,6 +255,9 @@ label ryn_link_2:
     ryn "Parce que quand ça pue, faudra aller vite."
 
     $ ryn_link = 2
+    $ set_character_link_progress("ryn", 2)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label ryn_link_3:
@@ -364,6 +370,9 @@ label ryn_link_3:
     ryn "Dans la même phrase, s'il faut."
 
     $ ryn_link = 3
+    $ set_character_link_progress("ryn", 3)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label ryn_link_4:
@@ -484,6 +493,9 @@ label ryn_link_4:
     ryn "Et maintenant, on range ce foutu dossier avant que je change d'avis."
 
     $ ryn_link = 4
+    $ set_character_link_progress("ryn", 4)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label ryn_link_5:
@@ -605,4 +617,7 @@ label ryn_link_5:
     ryn "Et cette fois, on laisse personne décider à notre place."
 
     $ ryn_link = 5
+    $ set_character_link_progress("ryn", 5)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

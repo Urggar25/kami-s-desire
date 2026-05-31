@@ -1954,7 +1954,7 @@ label _0_LABEL2_RESP_DISTRICT:
 
     $ journal_entries.append({"title": "Jour 0 — caisson", "text": "Je croyais avoir seulement suivi des ordres. Mais aujourd'hui, même mes gestes les plus simples avaient une interface, une lumiere, une limite. J'ai scanne un badge, clique sur un ecran, regarde Lysa entrer dans une boite propre. Et quelque part, le systeme a appele ca mon consentement."})
 
-    call end_day("1")
+    call end_day("1") from _call_end_day
     jump _1_CANON
 
 

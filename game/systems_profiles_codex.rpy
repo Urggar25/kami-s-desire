@@ -312,6 +312,20 @@ screen profiles_menu():
                         else:
                             text "Verrouillé — se débloque pendant les discussions et les interactions clés." size 20 color "#8EA3B8"
 
+                        text "Souvenirs" size 26 color "#9FD4FF"
+                        if selected_profile in CHARACTER_LINK_IDS:
+                            $ unlocked_memories = character_link_unlocked_memories(selected_profile)
+                            if unlocked_memories:
+                                hbox:
+                                    spacing 8
+                                    for memory_id in unlocked_memories:
+                                        textbutton "Souvenir [memory_id]":
+                                            action Call("REPLAY_CHARACTER_LINK", selected_profile, memory_id)
+                            else:
+                                text "Aucun souvenir de temps libre débloqué." size 20 color "#8EA3B8"
+                        else:
+                            text "Aucun souvenir de temps libre disponible." size 20 color "#8EA3B8"
+
 
 screen profile_wardrobe(profile_id):
     modal True

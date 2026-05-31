@@ -214,29 +214,13 @@ screen vote_screen():
                 if vote_phase3_hover_side == "pour":
                     at vote_phase3_hover_zoom
 
-                text "VOTER POUR":
+                text "Vote Pour":
                     xalign 0.5
                     font "fonts/day_font.ttf"
                     size 62
                     bold True
                     color "#9FFFD4"
                     outlines [(4, "#2CFF9D88", 0, 0)]
-
-                text "Suppression des bons\n+ liberté marchande":
-                    text_align 0.5
-                    xalign 0.5
-                    font "fonts/day_font.ttf"
-                    size 36
-                    color "#D8FFF1"
-                    outlines [(2, "#0C2A1C", 0, 0)]
-
-                if vote_phase3_hover_side == "pour":
-                    text "✦  ✦  ✦":
-                        xalign 0.5
-                        font "fonts/day_font.ttf"
-                        size 46
-                        color "#68FFC1"
-                        at vote_phase3_float_up
 
         # ---------------------
         # Bouton CONTRE
@@ -265,29 +249,13 @@ screen vote_screen():
                 if vote_phase3_hover_side == "contre":
                     at vote_phase3_hover_zoom
 
-                text "VOTER CONTRE":
+                text "Vote contre":
                     xalign 0.5
                     font "fonts/day_font.ttf"
                     size 62
                     bold True
                     color "#FFB2B2"
                     outlines [(4, "#FF474788", 0, 0)]
-
-                text "Statu quo maintenu":
-                    text_align 0.5
-                    xalign 0.5
-                    font "fonts/day_font.ttf"
-                    size 40
-                    color "#FFE7E7"
-                    outlines [(2, "#2A0C0C", 0, 0)]
-
-                if vote_phase3_hover_side == "contre":
-                    text "✦  ✦  ✦":
-                        xalign 0.5
-                        font "fonts/day_font.ttf"
-                        size 46
-                        color "#FF7070"
-                        at vote_phase3_float_down
 
     # Timer logique
     timer 1.0 repeat True action If(

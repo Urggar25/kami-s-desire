@@ -2,7 +2,7 @@
 # LIENS — IRIS
 # -----------------------------------------------------------------------
 
-default iris_link = 0
+default iris_link = character_link_progress("iris")
 
 
 label IRIS_LINK_INTERACT:
@@ -136,7 +136,10 @@ label iris_link_1:
     iris desaccord "Plus je reste ici, plus je vais casser quelque chose."
 
     $ iris_link = 1
+    $ set_character_link_progress("iris", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -251,7 +254,10 @@ label iris_link_2:
     iris desaccord "faire attention."
 
     $ iris_link = 2
+    $ set_character_link_progress("iris", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -352,7 +358,10 @@ label iris_link_3:
     iris colere "N'importe quoi sauf ma dignité en morceaux."
 
     $ iris_link = 3
+    $ set_character_link_progress("iris", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -460,7 +469,10 @@ label iris_link_4:
     iris desaccord "ça suffit pour rester debout."
 
     $ iris_link = 4
+    $ set_character_link_progress("iris", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -567,5 +579,8 @@ label iris_link_5:
     iris desaccord "Maintenant je redeviens pénible, c'est plus sûr."
 
     $ iris_link = 5
+    $ set_character_link_progress("iris", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

@@ -909,7 +909,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     "L’interface s’impose."
 
     # --- LANCEMENT MINI-JEU ---
-    call j601_play_signal_instable
+    call j601_play_signal_instable from _call_j601_play_signal_instable
     # --------------------------
 
     stop sound fadeout 0.5
@@ -979,7 +979,7 @@ label _6_0_1_SIGNAL_INSTABLE:
 
 label _6_0_1_FRACTURE_QTE:
 
-    call j601_play_fracture
+    call j601_play_fracture from _call_j601_play_fracture
     $ j601_fracture_result = _return
 
     show screen kami_broadcast_ui
@@ -1798,7 +1798,7 @@ label _6_0_1_FIN_JOURNEE:
 
     $ blink()
 
-    call end_day("7")
+    call end_day("7") from _call_end_day_10
     jump _7_0_1_REVEIL_CHAMBRE
 
 # Durée : ~4m00

@@ -12,13 +12,15 @@ default decouverte_infirmerie = False
 label INFIRMERIE_TP:
     scene bg_infirmerie at adaptive_fullscreen
 
-    if not decouverte_infirmerie:
+    if not decouverte_infirmerie and day_number() == 1:
         jump decouverte_infirmerie
 
     $ pnc_room = "pnc_infirmerie"
     call screen pnc_infirmerie()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -65,7 +67,7 @@ screen pnc_infirmerie():
         at cover_screen
         action Jump("INF_PNC_TABLE")
 
-    if free_time_active and elen_link == 3:
+    if social_free_time_active() and elen_link == 3:
         imagebutton:
             idle Transform("images/character/elen/content.png", zoom=0.75)
             hover Transform("images/character/elen/inquiet.png", zoom=0.75)

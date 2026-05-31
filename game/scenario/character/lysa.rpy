@@ -2,7 +2,7 @@
 # LIENS — LYSA
 # -----------------------------------------------------------------------
 
-default lysa_link = 0
+default lysa_link = character_link_progress("lysa")
 
 
 label LYSA_LINK_INTERACT:
@@ -82,7 +82,10 @@ label lysa_link_1:
     "Sa voix est légère, mais son regard reste ailleurs."
 
     $ lysa_link = 1
+    $ set_character_link_progress("lysa", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -131,7 +134,10 @@ label lysa_link_2:
     lysa sourire "Tiens. Boire, c'est déjà un plan de survie."
 
     $ lysa_link = 2
+    $ set_character_link_progress("lysa", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -184,7 +190,10 @@ label lysa_link_3:
     lysa neutre "Parler n'est pas obligatoire."
 
     $ lysa_link = 3
+    $ set_character_link_progress("lysa", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -237,7 +246,10 @@ label lysa_link_4:
     "Elle acquiesce, presque imperceptiblement."
 
     $ lysa_link = 4
+    $ set_character_link_progress("lysa", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -281,5 +293,8 @@ label lysa_link_5:
     "Et, pour la première fois, elle ne joue pas à aller bien."
 
     $ lysa_link = 5
+    $ set_character_link_progress("lysa", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

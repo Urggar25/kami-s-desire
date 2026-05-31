@@ -86,9 +86,12 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                text (who.upper() if isinstance(who, str) else who) id "who"
 
         text what id "what"
+        add "gui/textbox_arrow.png" xpos 1760 yalign 0.9 at textbox_arrow_blink
+
+    use talked_object_from_line(what)
 
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
@@ -96,6 +99,12 @@ screen say(who, what):
 
 init python:
     config.character_id_prefixes.append('namebox')
+
+transform textbox_arrow_blink:
+    alpha 0.55
+    linear 0.85 alpha 1.0
+    linear 0.85 alpha 0.55
+    repeat
 
 style window is default
 style say_label is default
@@ -122,11 +131,15 @@ style namebox:
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    color "#eef7ff"
+    outlines [(1, "#050813cc", 0, 1)]
+    xalign 0.5
     yalign 0.5
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
+    color "#e8edf6"
+    outlines [(1, "#050813cc", 0, 1)]
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos

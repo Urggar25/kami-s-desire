@@ -12,13 +12,15 @@ default decouverte_sas = False
 label LIVRAISON_TP:
     scene bg_sas at adaptive_fullscreen
 
-    if not decouverte_sas:
+    if not decouverte_sas and day_number() == 1:
         jump decouverte_sas
 
     $ pnc_room = "pnc_livraison"
     call screen pnc_livraison()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -73,7 +75,7 @@ screen pnc_livraison():
 
 
 
-    if free_time_active and sael_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and sael_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/sael/neutre.png", zoom=0.75)
             hover Transform("images/character/sael/raison.png", zoom=0.75)

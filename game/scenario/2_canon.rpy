@@ -1,6 +1,7 @@
 ﻿label _2_CANON:
 
     $ day_id = 2
+    $ current_day = 2
 
     scene black
     play music "music/main_menu.mp3" fadein 1.0

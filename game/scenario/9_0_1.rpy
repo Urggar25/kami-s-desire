@@ -429,7 +429,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
-    kami "Le vote aura lieu aujourd'hui... Enfin... Dans quelques minutes !"
+    kami "Le vote aura lieu aujourd'hui... Enfin... Dans quelques instants !"
 
     pause 0.3
 
@@ -1113,19 +1113,587 @@ label _9_0_1_CONCLAVE_ANNONCE:
     jump _9_0_1_CONCLAVE_DEBAT
 
 label _9_0_1_CONCLAVE_DEBAT:
-    # ... intro du débat ...
-    call j901_play_signal_vivant
+    call j901_play_signal_vivant from _call_j901_play_signal_vivant
     $ j901_signal_result_tier = _return
-    
+
+    jump _9_0_1_CONCLAVE_DEBAT_PARTIE_2
+
+label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_low_tension.mp3" fadein 1.0
+
+    "Le signal disparaît."
+    "Pas d'un coup."
+    "Par morceaux."
+    "Comme si quelqu'un écrasait une voix sous une paume trop grande."
+
+    pause 0.4
+
+    "Les écrans du Conclave clignotent encore."
+    "Quelques fragments de campements restent imprimés dans la lumière."
+    "Des silhouettes qui courent."
+    "Des bâches arrachées."
+    "Des points minuscules qui comprennent trop tard, ou juste à temps."
+
+    pause 0.5
+
+    play sound sfx_gresillement
+    stop music fadeout 0.6
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 0.8
+
+    kami "Voilà."
+    kami "C'était donc ça, votre grande tentative."
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+
+    kami "Un petit détournement de signal."
+    kami "Un message paniqué."
+    kami "Quelques humains qui crient très fort parce qu'ils ont enfin compris qu'ils étaient en retard."
+
+    pause 0.3
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
     if j901_signal_result_tier == "excellent":
-        # Kami amusée mais impressionnée
-        "OUI"
+        kami "Je reconnais une certaine efficacité technique."
+        kami "C'est adorable."
+        kami "Presque respectable, si l'impertinence ne gâchait pas tout."
     elif j901_signal_result_tier == "bon":
-        # Tensions modérées
-        "BOF"
+        kami "Vous avez touché une partie des campements."
+        kami "Pas tous."
+        kami "Mais assez pour vous donner l'illusion d'avoir repris la main."
     elif j901_signal_result_tier == "moyen":
-        # Kami se moque
-        "BOF MOYEN"
+        kami "Vous avez réussi à faire du bruit."
+        kami "Pas beaucoup plus."
+        kami "Le bruit donne parfois l'impression d'agir. C'est un piège fréquent."
     else:
-        # Massacre + Kami gagne en domination
-        "NUL"
+        kami "Et même cela, vous l'avez raté."
+        kami "Je suis presque déçue."
+        kami "Presque."
+
+    pause 0.4
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Dans tous les cas, votre intrusion est enregistrée."
+    kami "Votre intention est notée."
+    kami "Votre insolence aussi."
+
+    pause 0.3
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+
+    kami "Mais je vais être généreuse."
+    kami "Je ne vais pas laisser votre petit théâtre interrompre une procédure officielle."
+
+    pause 0.3
+
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+
+    kami "Le Conclave n'est pas une antenne de secours."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Le Conclave est un lieu de décision."
+
+    pause 0.5
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.2
+
+    $ showGroup([
+        ("ryn",   "colere",      0.10),
+        ("sael",  "determine",   0.27),
+        ("tomas", "culpabilite", 0.43),
+        ("lysa",  "blase",       0.57),
+        ("nyra",  "stress",      0.73),
+        ("kael",  "inquiet",     0.90),
+    ])
+
+    "Personne ne bouge."
+    "Même respirer paraît risqué."
+
+    ryn colere "Tu savais qu'ils entendaient."
+    ryn "Tu les as laissés entendre juste assez pour nous regarder nous débattre."
+
+    play sound sfx_gresillement
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Ryn."
+    kami "Je t'assure que te voir comprendre les choses avec trois minutes de retard reste un plaisir très simple."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("ryn",   "colere2",     0.10),
+        ("sael",  "determine",   0.27),
+        ("tomas", "culpabilite", 0.43),
+        ("lysa",  "blase",       0.57),
+        ("nyra",  "stress",      0.73),
+        ("kael",  "inquiet",     0.90),
+    ])
+
+    sael determine "Alors laisse-nous terminer."
+    sael "Quelques minutes."
+    sael "Juste quelques minutes."
+
+    play sound sfx_gresillement
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Non."
+
+    pause 0.2
+
+    jump _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS
+
+label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("tomas", "raison",      0.12),
+        ("nyra",  "stress",      0.28),
+        ("kael",  "inquiet",     0.44),
+        ("noam",  "inquiet",     0.60),
+        ("lysa",  "blase",       0.76),
+        ("sael",  "determine",   0.92),
+    ])
+
+    tomas raison "Il faut au moins clarifier le statut des campements déjà en cours de dispersion."
+    tomas "Si le signal a été reçu, alors leur situation juridique a changé pendant la procédure."
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Non."
+    kami "Leur statut change au moment où j'enregistre la décision."
+    kami "Pas au moment où vous espérez très fort."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("nyra", "raison", 0.28)
+
+    nyra raison "Alors vérifions les campements."
+    nyra "Un relevé en direct. Un simple état des lieux."
+    nyra "Nous devons savoir combien de groupes sont encore au-dessus du seuil."
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Tu veux savoir combien de personnes sont encore en danger avant de lever la main ?"
+    kami "C'est touchant."
+    kami "Inutile, mais touchant."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Le vote ne porte pas sur un inventaire."
+    kami "Il porte sur une règle."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("kael", "raison", 0.44)
+
+    kael raison "Dans ce cas, on demande un délai procédural."
+    kael "Pas pour négocier."
+    kael "Pour éviter qu'une décision administrative se transforme en exécution massive."
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+
+    kami "Demande refusée."
+    kami "Le règlement ne prévoit pas de délai de confort moral."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("lysa", "colere", 0.76)
+
+    lysa colere "Kami."
+    lysa "Même pour toi, il doit bien rester une seconde de décence quelque part."
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+
+    kami "Oh, Lysa."
+    kami "La décence est justement ce qui vous oblige à voter vite."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Plus vous parlez, plus les campements restent exposés."
+    kami "C'est presque comme si votre compassion avait une portée balistique."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    $ showP("noam", "determine", 0.60)
+
+    noam determine "Tu cherches à nous faire porter le tir."
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Je vous fais porter votre fonction."
+    kami "Il y a une nuance."
+    kami "Elle vous échappe parce qu'elle est désagréable."
+
+    pause 0.4
+
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+
+    kami "Assez."
+
+    pause 0.2
+
+    jump _9_0_1_KAMI_EXIGE_LE_VOTE
+
+label _9_0_1_KAMI_EXIGE_LE_VOTE:
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Le débat est terminé."
+    kami "Les demandes de délai sont rejetées."
+    kami "Les demandes de clarification sont rejetées."
+    kami "Les appels à la décence sont classés comme manifestations émotionnelles non pertinentes."
+
+    pause 0.3
+
+    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
+
+    kami "Vote immédiat."
+
+    pause 0.3
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    "Les pupitres s'allument."
+    "Douze halos blancs."
+    "Douze petites surfaces lisses, propres, absurdes."
+
+    play sound sfx_beep
+
+    "Sur chaque écran, le même choix attend."
+    "POUR."
+    "CONTRE."
+
+    pause 0.4
+
+    $ showGroup([
+        ("ryn",   "colere",      0.10),
+        ("sael",  "determine",   0.27),
+        ("tomas", "culpabilite", 0.43),
+        ("lysa",  "blase",       0.57),
+        ("nyra",  "stress",      0.73),
+        ("kael",  "inquiet",     0.90),
+    ])
+
+    "Personne ne regarde vraiment son pupitre."
+    "Tout le monde regarde les autres."
+    "Comme si une hésitation pouvait devenir contagieuse."
+
+    think "Si quelqu'un refuse..."
+    think "Si quelqu'un tremble trop longtemps..."
+    think "Si quelqu'un veut encore sauver son principe au lieu de sauver des vies..."
+
+    pause 0.3
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Je vous rappelle que ne pas voter n'est pas une échappatoire."
+    kami "Dans le contexte actuel, le silence aura une valeur morale très intéressante."
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+
+    kami "Je suis certaine que les Limenois apprécieront vos nuances."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    "Un silence compact tombe sur la salle."
+    "Pas un silence de réflexion."
+    "Un silence de gorge serrée."
+
+    jump _9_0_1_VOTE
+
+label _9_0_1_VOTE:
+
+    $ renpy.block_rollback()
+    $ vote_phase3_time_left = 10
+    $ vote_phase3_hover_side = None
+    $ vote_phase3_player_choice = None
+
+    stop music fadeout 1.0
+    scene black with dissolve
+
+    $ _vote_result = renpy.call_screen("vote_screen")
+    $ j901_player_vote = _vote_result if _vote_result in ("pour", "contre") else "contre"
+    $ j901_vote_adopte = (j901_player_vote == "pour")
+
+    if j901_player_vote == "pour":
+        scene Solid("#0AFF8844")
+        with Dissolve(0.12)
+    elif j901_player_vote == "contre":
+        scene Solid("#FF2A2A44")
+        with Dissolve(0.12)
+    else:
+        scene Solid("#FF2A2A44")
+        with Dissolve(0.12)
+
+    pause 0.4
+
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.0
+
+    "Les pupitres enregistrent les choix."
+    "Pas de voix."
+    "Pas de main levée."
+    "Pas de confession courageuse ou lâche."
+
+    pause 0.3
+
+    "Seulement des écrans qui s'éteignent les uns après les autres."
+    "Et personne qui ne sait vraiment ce que les autres viennent de faire."
+
+    pause 0.5
+
+    $ vote_phase3_counts = {"pour": 0, "abstention": 0, "contre": 0}
+    $ vote_phase3_current_name = ""
+    $ vote_phase3_current_vote = None
+
+    if j901_vote_adopte:
+        $ vote_phase3_results = [
+            ("Bulletin 01", "pour"),
+            ("Bulletin 02", "pour"),
+            ("Bulletin 03", "pour"),
+            ("Bulletin 04", "pour"),
+            ("Bulletin 05", "pour"),
+            ("Bulletin 06", "pour"),
+            ("Bulletin 07", "pour"),
+            ("Bulletin 08", "pour"),
+            ("Bulletin 09", "pour"),
+            ("Bulletin 10", "pour"),
+            ("Bulletin 11", "pour"),
+            ("Bulletin 12", "pour"),
+        ]
+    else:
+        $ vote_phase3_results = [
+            ("Bulletin 01", "pour"),
+            ("Bulletin 02", "pour"),
+            ("Bulletin 03", "pour"),
+            ("Bulletin 04", "pour"),
+            ("Bulletin 05", "pour"),
+            ("Bulletin 06", "pour"),
+            ("Bulletin 07", "pour"),
+            ("Bulletin 08", "pour"),
+            ("Bulletin 09", "pour"),
+            ("Bulletin 10", "pour"),
+            ("Bulletin 11", "pour"),
+            ("Bulletin 12", "contre"),
+        ]
+
+    $ renpy.random.shuffle(vote_phase3_results)
+    $ vote_phase3_pending_votes = list(vote_phase3_results)
+    $ vote_phase3_tally_index = 0
+    $ vote_phase3_tally_done = False
+
+    $ renpy.call_screen("vote_phase3_tally_screen")
+
+    pause 0.8
+
+    $ j901_vote_adopte = (vote_phase3_counts["contre"] == 0)
+
+    if j901_vote_adopte:
+        jump _9_0_1_FIN_JOURNEE_VOTE_ADOPTE
+    else:
+        jump _9_0_1_FIN_JOURNEE_VOTE_REFUSE
+
+label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
+
+    $ hideGroup()
+    stop music fadeout 0.8
+    play sound sfx_announce
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 1.2
+
+    kami "Résultat du vote."
+    kami "Unanimité des suffrages exprimés."
+    kami "Aucun vote défavorable enregistré."
+
+    pause 0.3
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+
+    kami "Unanimité atteinte."
+    kami "Amendement adopté."
+
+    pause 0.4
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Les regroupements de plus de vingt personnes sont désormais autorisés sous déclaration préalable."
+    kami "Application immédiate."
+
+    pause 0.3
+
+    if j901_signal_result_tier == "excellent":
+        kami "Bilan provisoire : la majorité des campements a eu le temps de se disperser ou de transmettre une déclaration d'urgence."
+        kami "Pertes anticipées : réduites."
+    elif j901_signal_result_tier == "bon":
+        kami "Bilan provisoire : plusieurs campements ont reçu votre avertissement."
+        kami "Une partie reste exposée."
+    elif j901_signal_result_tier == "moyen":
+        kami "Bilan provisoire : signal incomplet."
+        kami "Une fraction significative des campements reste menacée malgré votre vote."
+    else:
+        kami "Bilan provisoire : signal inefficace."
+        kami "Le vote sauve les structures encore identifiables comme campements, mais arrive après plusieurs applications du Commandement."
+
+    pause 0.4
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Vous voyez ?"
+    kami "Quand vous obéissez à la procédure, des vies peuvent être sauvées."
+
+    pause 0.3
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+
+    kami "Quelle belle leçon collective."
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    "Personne ne répond."
+    "Personne n'a la force."
+
+    pause 0.5
+
+    scene bg_couloir at adaptive_fullscreen with fade
+    play music "music/bgm_calm_not_peace.mp3" fadein 2.0
+
+    "Le retour jusqu'aux chambres se fait sans discussion."
+    "Les portes s'ouvrent."
+    "Les portes se ferment."
+    "Les pas résonnent dans le couloir comme des fautes qu'on compte une par une."
+
+    pause 0.5
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+
+    "Je rentre dans ma chambre."
+    "Je ne me souviens pas d'avoir marché jusque-là."
+
+    "Je reste debout devant le lit."
+    "Les mains vides."
+    "La gorge sèche."
+
+    think "On a gagné."
+
+    pause 0.3
+
+    think "Non."
+    think "On a voté assez vite pour que Kami puisse appeler ça une victoire."
+
+    "Je m'assois."
+    "Le matelas plie sous moi."
+    "Tout le reste reste droit."
+    "Trop droit."
+
+    think "Des gens sont peut-être vivants parce qu'on a levé la main."
+    think "Des gens sont peut-être morts parce qu'on a dû lui demander la permission."
+
+    pause 0.5
+
+    "Je regarde l'écran mural."
+    "Il est noir."
+    "Pour une fois, j'aurais presque préféré qu'il montre quelque chose."
+
+    think "Juste un chiffre."
+    think "Même froid."
+    think "Même cruel."
+    think "Quelque chose à détester précisément."
+
+    pause 0.5
+
+    "Mais il n'y a rien."
+    "Seulement ma chambre."
+    "Et cette victoire sale."
+
+    $ journal_entries.append(("Jour 9 — conclusion", "Le vote est passé. Les campements limenois ne sont plus illégaux, mais Kami nous a forcés à sauver des vies selon ses règles. Ce soir, je ne sais pas combien de personnes sont vivantes grâce à nous. Je sais seulement qu'elle nous a humiliés en public."))
+
+    call end_day("10") from _call_end_day_13
+    jump _10_0_1_1_REVEIL_CHAMBRE
+
+label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
+
+    $ hideGroup()
+    stop music fadeout 0.6
+    play sound sfx_announce
+
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 0.8
+
+    kami "Résultat du vote."
+    kami "Absence d'unanimité."
+    kami "Amendement rejeté."
+
+    pause 0.3
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "L'interdiction des regroupements de plus de vingt personnes demeure en vigueur."
+    kami "Les campements limenois aux frontières sont donc des rassemblements illégaux."
+
+    pause 0.3
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+
+    kami "Application du Commandement IV."
+
+    pause 0.4
+
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+
+    "Pendant une seconde, personne ne comprend."
+    "Ou plutôt, tout le monde comprend en même temps."
+
+    play sound sfx_gresillement
+    scene bg_conclave at adaptive_fullscreen, heavy_shake
+
+    "Le Conclave tremble."
+    "Très loin sous nos pieds, quelque chose s'aligne."
+
+    ryn colere2 "Non."
+
+    play sound sfx_laser_canon volume 8.0
+    scene bg_conclave at adaptive_fullscreen, heavy_shake
+
+    "Le premier tir part."
+    "Même à travers les murs, la lumière trouve une manière d'exister."
+
+    "Un flash blanc avale la salle."
+
+    scene black with Fade(0.1, 0.2, 0.8)
+
+    think "Jour 10 commence avant la nuit."
+    think "Et cette fois, il commence par un tir."
+
+    call end_day("10") from _call_end_day_14
+    jump _10_0_1_1_REVEIL_CHAMBRE

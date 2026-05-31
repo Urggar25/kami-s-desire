@@ -2,7 +2,7 @@
 # LIENS — ELEN
 # -----------------------------------------------------------------------
 
-default elen_link = 0
+default elen_link = character_link_progress("elen")
 
 
 label ELEN_LINK_INTERACT:
@@ -150,7 +150,10 @@ label elen_link_1:
     "Elle me fait un petit salut solennel, puis éclate de rire."
 
     $ elen_link = 1
+    $ set_character_link_progress("elen", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -270,7 +273,10 @@ label elen_link_2:
     elen joie "On va distribuer un peu de bénéfice du doute avant que ça manque en stock."
 
     $ elen_link = 2
+    $ set_character_link_progress("elen", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -390,7 +396,10 @@ label elen_link_3:
     "Elle m'offre un clin d'œil fragile, puis regarde à nouveau le vide au-delà de la vitre."
 
     $ elen_link = 3
+    $ set_character_link_progress("elen", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -502,7 +511,10 @@ label elen_link_4:
     elen content "Merci."
 
     $ elen_link = 4
+    $ set_character_link_progress("elen", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -617,5 +629,8 @@ label elen_link_5:
     "Sa lumière n'est pas moins vraie parce qu'elle connaît le prix."
 
     $ elen_link = 5
+    $ set_character_link_progress("elen", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

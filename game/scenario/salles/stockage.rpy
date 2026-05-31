@@ -11,16 +11,18 @@ default decouverte_stockage = False
 label STOCKAGE_TP:
     scene bg_stockage at adaptive_fullscreen
 
-    if not decouverte_stockage:
+    if not decouverte_stockage and day_number() == 1:
         jump decouverte_stockage
 
-    if free_time_active and free_time_round in [1, 2, 3] and not got_argument_echanges_discrets:
+    if social_free_time_active() and free_time_round in [1, 2, 3] and not got_argument_echanges_discrets:
         jump temps_libre_salle_stockage_argument
 
     $ pnc_room = "pnc_stockage"
     call screen pnc_stockage()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 

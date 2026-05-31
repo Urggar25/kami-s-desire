@@ -2,7 +2,7 @@
 # LIENS — SAEL
 # -----------------------------------------------------------------------
 
-default sael_link = 0
+default sael_link = character_link_progress("sael")
 
 label SAEL_LINK_INTERACT:
 
@@ -151,6 +151,9 @@ label sael_link_1:
     sael "Le reste se comprend quand le tambour remplace le cœur."
 
     $ sael_link = 1
+    $ set_character_link_progress("sael", 1)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label sael_link_2:
@@ -268,6 +271,9 @@ label sael_link_2:
     sael "Il empêche le sommeil des consciences."
 
     $ sael_link = 2
+    $ set_character_link_progress("sael", 2)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label sael_link_3:
@@ -388,6 +394,9 @@ label sael_link_3:
     sael "La faiblesse niée se propage."
 
     $ sael_link = 3
+    $ set_character_link_progress("sael", 3)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label sael_link_4:
@@ -508,6 +517,9 @@ label sael_link_4:
     sael "Prépare-toi à choisir juste, pas à choisir sans douleur."
 
     $ sael_link = 4
+    $ set_character_link_progress("sael", 4)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 label sael_link_5:
@@ -628,4 +640,7 @@ label sael_link_5:
     sael "Et sans baisser les yeux."
 
     $ sael_link = 5
+    $ set_character_link_progress("sael", 5)
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

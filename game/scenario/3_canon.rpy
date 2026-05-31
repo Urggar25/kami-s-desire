@@ -274,6 +274,7 @@ label day3_collect_vote_argument(arg_id):
 label _3_CANON:
 
     $ day_id = 3
+    $ current_day = 3
     $ day3_vote_bootstrap()
 
     scene black

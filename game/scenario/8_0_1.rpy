@@ -738,7 +738,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     # --- Lancement du mini-jeu ---
 
-    call j801_play_stabilisation
+    call j801_play_stabilisation from _call_j801_play_stabilisation
     $ j801_stabilisation_result = _return
 
     jump _8_0_1_APRES_STABILISATION
@@ -996,5 +996,5 @@ label _8_0_1_SOIREE:
 
     $ journal_entries.append(("Jour 8 — conclusion", "Quelqu’un nous observe. Quelqu’un nous connaît et nous vole. Et ce quelqu’un est parmi nous."))
 
-    call end_day("9")
+    call end_day("9") from _call_end_day_12
     jump _9_0_1_REVEIL_CHAMBRE

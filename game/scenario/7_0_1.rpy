@@ -1165,13 +1165,45 @@ label _7_0_1_REVEIL_CHAMBRE:
 
     think "Un peu trop."
 
+    scene bg_couloir at adaptive_fullscreen with dissolve
+
+    "Je sors enfin de ma chambre."
+    "Lysa m'attend un peu plus loin, adossee au mur."
+    "Avant que je la rejoigne, Nyra debouche du couloir oppose."
+    "Elle avance vite, les bras charges de fournitures, un carton cale contre la hanche."
+
+    $ showGroup([
+        ("nyra", "neutre", 0.72),
+        ("noam", "neutre", 0.28),
+    ])
+
+    noam surpris "Nyra ? Tu demenages le stockage ?"
+
+    nyra taquin "Presque."
+    nyra neutre "Le Conclave a recu une livraison tot ce matin : des fournitures, quelques pieces de maintenance, et assez de cartons pour occuper trois personnes trop motivees."
+
+    noam reflexion "Une livraison le matin ou Kami ne parle pas..."
+
+    nyra hesitation "Oui."
+    nyra "Je trouve aussi que le timing manque de discretion."
+
+    "Elle reajuste le carton contre elle."
+
+    nyra neutre "Si tu cherches une activite noble avant de manger, tu peux toujours porter deux caisses."
+
+    noam taquin "Je vais commencer par survivre a la cafeteria."
+
+    nyra sourire "Strategie prudente."
+
+    $ hideGroup()
+
     jump _7_0_1_CAFETERIA
 
 # Durée : ~3m00
 
 label _7_0_1_CAFETERIA:
 
-    call show_custom_title("Je vais à la cafétéria avec Lysa.")
+    call show_custom_title("Je vais à la cafétéria avec Lysa.") from _call_show_custom_title_1
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
@@ -1858,5 +1890,5 @@ label _7_0_1_FIN_JOURNEE:
 
     scene black with fade
 
-    call end_day("8")
+    call end_day("8") from _call_end_day_11
     jump _8_0_1_REVEIL_CHAMBRE

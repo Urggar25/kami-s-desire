@@ -12,13 +12,15 @@ default decouverte_salle_maintenance = False
 label MAINTENANCE_TP:
     scene bg_maintenance at adaptive_fullscreen
 
-    if not decouverte_salle_maintenance:
+    if not decouverte_salle_maintenance and day_number() == 1:
         jump decouverte_salle_maintenance
 
     $ pnc_room = "pnc_maintenance"
     call screen pnc_maintenance()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -57,7 +59,7 @@ screen pnc_maintenance():
         at cover_screen
         action Jump("MAINT_PNC_ROBOT")
 
-    if free_time_active and kael_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and kael_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/kael/neutre.png", zoom=0.75)
             hover Transform("images/character/kael/reflechit.png", zoom=0.75)
@@ -65,7 +67,7 @@ screen pnc_maintenance():
             xalign 0.48
             yalign 0.35
             action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("KAEL_LINK_INTERACT")]
-    if free_time_active and elias_link in [1, 3]:
+    if social_free_time_active() and elias_link in [1, 3]:
         imagebutton:
             idle Transform("images/character/elias/neutre.png", zoom=0.75)
             hover Transform("images/character/elias/reflechit.png", zoom=0.75)

@@ -2,7 +2,7 @@
 # LIENS — MARA
 # -----------------------------------------------------------------------
 
-default mara_link = 0
+default mara_link = character_link_progress("mara")
 
 
 label MARA_LINK_INTERACT:
@@ -158,7 +158,10 @@ label mara_link_1:
     "Elle sourit, elle semble s'être amusée durant ces quelques minutes."
 
     $ mara_link = 1
+    $ set_character_link_progress("mara", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -290,7 +293,10 @@ label mara_link_2:
     "Elle rit."
 
     $ mara_link = 2
+    $ set_character_link_progress("mara", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -425,7 +431,10 @@ label mara_link_3:
     "La tension retombe."
 
     $ mara_link = 3
+    $ set_character_link_progress("mara", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -557,7 +566,10 @@ label mara_link_4:
     "Elle cligne des yeux, amusée."
 
     $ mara_link = 4
+    $ set_character_link_progress("mara", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -690,5 +702,8 @@ label mara_link_5:
     "Le masque revient, mais moins rigide."
 
     $ mara_link = 5
+    $ set_character_link_progress("mara", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

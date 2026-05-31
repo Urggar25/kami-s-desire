@@ -17,8 +17,10 @@ define resp_d = Character("Responsable de District", what_prefix="“", what_suf
 define tuto = Character("", what_prefix="(", what_suffix=")",what_color="#008000")
 
 # (Optionnel) Ambiances / transitions rapides
-define sfx_door = "sfx/door_soft.ogg"
+define sfx_door = "sfx/door_soft.mp3"
 define sfx_beep = "sfx/terminal_beep.ogg"
+define sfx_paper = "audio/sfx_paper.mp3"
+define sfx_gresillement = "audio/sfx_gresillement.mp3"
 
 define think = Character(
     None,
@@ -27,6 +29,35 @@ define think = Character(
     what_suffix="",
     italic=True
 )
+
+default journal_entries = []
+default noam_prudence = 0
+default noam_compassion = 0
+default noam_defiance = 0
+default day0_badge_dropped = False
+
+init python:
+    day0_commandment_pages = [
+        ("I", "Toute autorite humaine independante est dissoute.\n\nKami est l'unique instance decisionnelle.\nToute tentative de prise de pouvoir autonome est une violation."),
+        ("II", "Tout ordre emis par Kami doit etre execute sans delai.\n\nLe refus, le retard volontaire ou la contestation constituent une infraction."),
+        ("III", "Toute violence non autorisee par Kami est interdite.\n\nSont inclus : meurtre, agression, sabotage, insurrection.\nLa legitime defense n'est jamais reconnue, la violence etant immediatement reprimee."),
+        ("IV", "Les regroupements non declares sont interdits.\n\nToute organisation politique, militaire ou ideologique independante est dissoute."),
+        ("V", "La diffusion de rumeurs non validees par ARCHIVE est interdite.\n\nLa desinformation, l'omission volontaire et la manipulation sont des crimes."),
+        ("VI", "Les deplacements inter-districts sont limites a stricte autorisation.\n\nToute tentative de fuite, d'exil ou de franchissement non autorise est une violation.\nLIMEN est charge de l'application de ce commandement."),
+        ("VII", "Les ressources critiques sont placees sous controle central.\n\nToute appropriation non autorisee est consideree comme un acte hostile."),
+        ("VIII", "Chaque individu est responsable de ses actes, paroles et omissions.\n\nLa responsabilite collective peut etre appliquee en cas de necessite."),
+        ("IX", "Toute activite peut etre observee.\n\nLa vie privee n'est pas un droit opposable."),
+        ("X", "Toute violation d'un Commandement entraine une execution immediate, automatique et irrevocable."),
+    ]
+    day0_selection_names = ["ELIAS VAREN", "MARA ELSEN", "NOAM", "IRIS LORAN", "TOMAS REED", "LYSA", "NYRA SETH", "JULIAN ORS", "KAEL DORN", "ELEN RY"]
+    day0_selection_criteria = ["district", "stabilite comportementale", "compatibilite Conclave", "profil de mediation", "risque de dissidence", "aptitude Harmonie"]
+
+    def day0_badge_dragged(drags, drop):
+        if drop and drop.drag_name == "day0_scanner_drop":
+            renpy.play(sfx_beep, channel="sound")
+            renpy.store.day0_badge_dropped = True
+            renpy.restart_interaction()
+        return None
 
 
 transform enter_soft:
@@ -42,6 +73,285 @@ transform focus_zoom:
 
 transform unfocus_zoom:
     linear 0.18 zoom 1.0
+
+transform day0_soft_blink:
+    alpha 0.45
+    linear 0.7 alpha 0.9
+    linear 0.7 alpha 0.45
+    repeat
+
+transform day0_scan_sweep:
+    yoffset -120
+    alpha 0.0
+    linear 0.15 alpha 0.8
+    linear 0.95 yoffset 130
+    linear 0.15 alpha 0.0
+    repeat
+
+transform day0_selection_pulse:
+    alpha 0.45
+    linear 0.35 alpha 1.0
+    linear 0.35 alpha 0.45
+    repeat
+
+screen day0_security_badge_scan():
+
+    modal True
+    zorder 250
+    default scan_phase = 0
+
+    add Solid("#05080B")
+    add Solid("#111820CC")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1040
+        ysize 600
+        background Solid("#111820F2")
+        padding (34, 30)
+
+        fixed:
+            text "PORTIQUE DE SECURITE - DISTRICT HARMONIE" xpos 0 ypos 0 size 30 color "#DDE7EA"
+            text "LECTEUR CIVIL / IDENTIFICATION OBLIGATOIRE" xpos 2 ypos 42 size 18 color "#8FA2A9"
+
+            frame:
+                xpos 610
+                ypos 105
+                xsize 330
+                ysize 360
+                background Solid("#0B1015")
+                padding (18, 18)
+
+                fixed:
+                    if scan_phase == 0:
+                        add "gui/day0/badge_scanner_idle.png" xpos -18 ypos -18
+                    elif scan_phase == 1:
+                        add "gui/day0/badge_scanner_active.png" xpos -18 ypos -18
+                    else:
+                        add "gui/day0/badge_scanner_valid.png" xpos -18 ypos -18
+                    add Solid("#26323B") xpos 80 ypos 38 xsize 134 ysize 248
+                    if scan_phase == 0:
+                        add Solid("#A66A2D") xpos 96 ypos 62 xsize 102 ysize 202 at day0_soft_blink
+                        text "ZONE DE LECTURE" xpos 66 ypos 286 size 18 color "#CFA56D"
+                    elif scan_phase == 1:
+                        add Solid("#D17735") xpos 96 ypos 62 xsize 102 ysize 202
+                        add "gui/day0/scan_line.png" xpos 95 ypos 62 at day0_scan_sweep
+                        text "VALIDATION..." xpos 76 ypos 286 size 18 color "#F0B35A"
+                    else:
+                        add Solid("#2C8B65") xpos 96 ypos 62 xsize 102 ysize 202
+                        text "ACCES AUTORISE" xpos 58 ypos 286 size 18 color "#92F3BD"
+
+            if scan_phase == 0:
+                draggroup:
+                    drag:
+                        drag_name "day0_badge_drag"
+                        xpos 88
+                        ypos 170
+                        xsize 360
+                        ysize 210
+                        draggable True
+                        droppable False
+                        dragged day0_badge_dragged
+                        add "gui/day0/badge_noam.png"
+
+                    drag:
+                        drag_name "day0_scanner_drop"
+                        xpos 690
+                        ypos 167
+                        xsize 134
+                        ysize 248
+                        draggable False
+                        droppable True
+                        add Solid("#00000000")
+            else:
+                add "gui/day0/badge_noam.png" xpos 88 ypos 170
+
+            if scan_phase == 0:
+                timer 0.05 repeat True action If(day0_badge_dropped, [SetScreenVariable("scan_phase", 1), SetVariable("day0_badge_dropped", False)])
+                text "Glissez le badge sur la zone de lecture." xpos 92 ypos 430 size 22 color "#B9C7CC"
+                text "Chaque entree est enregistree." xpos 92 ypos 464 size 18 color "#7F929B"
+            elif scan_phase == 1:
+                text "IDENTITE EN COURS DE VALIDATION" xpos 92 ypos 430 size 24 color "#F0B35A"
+                text "Comparaison du profil civil avec les autorisations locales." xpos 92 ypos 464 size 18 color "#9CAEB6"
+                timer 1.15 action [Play("sound", sfx_beep), SetScreenVariable("scan_phase", 2)]
+            else:
+                text "ACCES AUTORISE" xpos 92 ypos 430 size 28 color "#92F3BD"
+                text "Passage confirme. Comportement conforme." xpos 92 ypos 468 size 18 color "#9CAEB6"
+                timer 0.85 action Return(True)
+
+screen day0_phone_override():
+
+    modal True
+    zorder 250
+    default attempts = 0
+
+    add Solid("#030506E8")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 440
+        ysize 760
+        background "gui/day0/phone_frame.png"
+        padding (24, 24)
+
+        fixed:
+            add Solid("#141B22") xpos 0 ypos 0 xsize 392 ysize 712
+            add Solid("#05080B") xpos 22 ypos 62 xsize 348 ysize 560
+
+            text "NOAM / APPAREIL PERSONNEL" xpos 32 ypos 22 size 18 color "#6F818A"
+
+            if attempts == 0:
+                text "ECRAN VERROUILLE" xalign 0.5 ypos 180 size 26 color "#D6DEE2"
+                text "Signal: --" xpos 70 ypos 240 size 20 color "#8798A0"
+            elif attempts == 1:
+                text "AUCUN RESEAU" xalign 0.5 ypos 170 size 30 color "#D58A42"
+                text "Recherche des relais civils..." xpos 70 ypos 232 size 20 color "#8798A0"
+            elif attempts == 2:
+                text "APPEL REFUSE" xalign 0.5 ypos 160 size 30 color "#D06161"
+                text "Appels d'urgence indisponibles." xpos 62 ypos 220 size 20 color "#C2CDD2"
+                text "Code: INFRASTRUCTURE NON SOUVERAINE" xpos 42 ypos 260 size 16 color "#8798A0"
+            elif attempts == 3:
+                text "MESSAGE NON ENVOYE" xalign 0.5 ypos 150 size 28 color "#D06161"
+                text "Le reseau de communication ne vous appartient plus." xpos 44 ypos 214 size 18 color "#C2CDD2" xmaximum 306
+                add Solid("#D0616133") xpos 42 ypos 304 xsize 306 ysize 120
+                text "KAMI" xpos 64 ypos 320 size 24 color "#F1D8D8"
+                text "Merci de cesser toute tentative de reinitialisation." xpos 64 ypos 354 size 18 color "#F1D8D8" xmaximum 260
+            else:
+                text "CONTROLE DISTANT ACTIF" xalign 0.5 ypos 142 size 26 color "#F0B35A"
+                text "Verrouillage de l'interface." xpos 78 ypos 210 size 20 color "#C2CDD2"
+                add Solid("#EAF4FF22") xpos 22 ypos 62 xsize 348 ysize 560 at day0_selection_pulse
+                add "gui/day0/phone_glitch_overlay.png" xpos 22 ypos 62
+                timer 1.0 action Return(True)
+
+            hbox:
+                xpos 46
+                ypos 636
+                spacing 10
+                if attempts < 4:
+                    textbutton "Rallumer" xsize 108 ysize 46 background Solid("#111C24") hover_background Solid("#183243") text_size 18 text_color "#9ED8F0" text_hover_color "#EAF7FF" text_xalign 0.5 action [Play("sound", sfx_gresillement), SetScreenVariable("attempts", attempts + 1)]
+                    textbutton "Appeler" xsize 96 ysize 46 background Solid("#111C24") hover_background Solid("#183243") text_size 18 text_color "#9ED8F0" text_hover_color "#EAF7FF" text_xalign 0.5 action [Play("sound", sfx_beep), SetScreenVariable("attempts", attempts + 1)]
+                    textbutton "Envoyer" xsize 108 ysize 46 background Solid("#111C24") hover_background Solid("#183243") text_size 18 text_color "#9ED8F0" text_hover_color "#EAF7FF" text_xalign 0.5 action [Play("sound", sfx_gresillement), SetScreenVariable("attempts", attempts + 1)]
+                else:
+                    text "..." size 28 color "#8798A0"
+
+screen day0_commandments_registry():
+
+    modal True
+    zorder 250
+    default page = 0
+    $ commandment_title = day0_commandment_pages[page][0]
+    $ commandment_text = day0_commandment_pages[page][1]
+    $ commandment_page_label = "Page %d / %d" % (page + 1, len(day0_commandment_pages))
+
+    add Solid("#07090BEE")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1180
+        ysize 720
+        background "gui/day0/commandments_book_bg.png"
+        padding (38, 34)
+
+        fixed:
+            add Solid("#E8E4DA") xpos 0 ypos 0 xsize 530 ysize 650
+            add Solid("#DAD6CC") xpos 552 ypos 0 xsize 550 ysize 650
+
+            text "REGISTRE DES COMMANDEMENTS" xpos 34 ypos 38 size 30 color "#1B242A"
+            text "District HARMONIE / Consultation surveillee" xpos 36 ypos 84 size 18 color "#5F6A70"
+            text "COMMANDEMENT [commandment_title]" xpos 610 ypos 64 size 30 color "#1B242A"
+            text commandment_text xpos 610 ypos 132 xmaximum 450 size 28 color "#22282C" line_spacing 8
+            text commandment_page_label xpos 610 ypos 560 size 18 color "#5F6A70"
+
+            hbox:
+                xpos 610
+                ypos 600
+                spacing 16
+                textbutton "< Page precedente" sensitive (page > 0) action [Play("sound", sfx_paper), SetScreenVariable("page", page - 1)]
+                textbutton "Page suivante >" sensitive (page < len(day0_commandment_pages) - 1) action [Play("sound", sfx_paper), SetScreenVariable("page", page + 1)]
+                textbutton "Continuer" action Return(True)
+
+screen day0_countdown_overlay(time_left="03:42:18"):
+
+    zorder 140
+    frame:
+        xalign 0.98
+        yalign 0.05
+        xsize 520
+        background "gui/day0/countdown_panel.png"
+        padding (70, 10, 16, 10)
+
+        vbox:
+            spacing 4
+            text "ACHEMINEMENT AU CONCLAVE" size 16 color "#E7EDF0" xmaximum 420
+            text "LIMITE : 22:00  /  RESTANT : [time_left]" size 18 color "#F0B35A" xmaximum 420
+
+screen day0_representative_selection():
+
+    modal True
+    zorder 250
+    default tick = 0
+    default locked = False
+
+    add Solid("#05080BEF")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1120
+        ysize 680
+        background "gui/day0/selection_panel.png"
+        padding (30, 28)
+
+        fixed:
+            text "DISTRICT HARMONIE / SELECTION DES REPRESENTANTS" xpos 0 ypos 0 size 26 color "#E6EEF2"
+            text "Cliquez pour arreter la selection." xpos 0 ypos 40 size 20 color "#A9B8BF"
+
+            vbox:
+                xpos 40
+                ypos 105
+                spacing 12
+                for i in range(7):
+                    frame:
+                        xsize 450
+                        ysize 54
+                        background Solid("#17222B")
+                        padding (16, 10)
+                        if locked:
+                            if i == 2:
+                                text "NOAM" size 28 color "#92F3BD"
+                            elif i == 4:
+                                text "LYSA" size 28 color "#92F3BD"
+                            else:
+                                text "PROFIL ECARTE" size 24 color "#566871"
+                        else:
+                            text day0_selection_names[(tick + i) % len(day0_selection_names)] size 26 color "#DDE7EA"
+
+            vbox:
+                xpos 585
+                ypos 108
+                spacing 14
+                for i in range(6):
+                    text (day0_selection_criteria[i].upper() + " : ANALYSE") size 22 color "#AFC0C8"
+                    bar value StaticValue(((tick * 13 + i * 17) % 100), 100) xmaximum 420
+
+            if locked:
+                add Solid("#92F3BD33") xpos 34 ypos 216 xsize 462 ysize 128 at day0_selection_pulse
+                add "gui/day0/selection_final_stamp.png" xpos 570 ypos 430
+                text "SELECTION VALIDEE" xpos 594 ypos 460 size 34 color "#92F3BD"
+                text "REPRESENTANTS : NOAM / LYSA" xpos 594 ypos 510 size 28 color "#E6EEF2"
+                timer 1.55 action Return(True)
+            else:
+                timer 0.08 repeat True action SetScreenVariable("tick", tick + 1)
+                button:
+                    xpos 0
+                    ypos 0
+                    xsize 1060
+                    ysize 620
+                    background Solid("#00000000")
+                    action [Play("sound", sfx_beep), SetScreenVariable("locked", True)]
 
 # --------------------------------------------------------------------------------------------
 label _0_CANON:
@@ -89,8 +399,8 @@ label _0_CANON:
     "Je ne regarde pas l’agent, je regarde le portique."
     "Ce n’est pas de la politesse. C’est de la survie."
 
-    play sound sfx_beep
-    "-Bip-"
+    $ day0_badge_dropped = False
+    call screen day0_security_badge_scan()
 
     "Lumière verte."
     "Je passe."
@@ -100,6 +410,29 @@ label _0_CANON:
     "Derrière moi, quelqu’un hésite."
     "Son badge tremble, littéralement."
     "Le portique ne bip pas tout de suite."
+
+    "Le badge lui échappe et tombe à mes pieds."
+    "Personne ne bouge dans la file."
+    "Pas tout de suite."
+
+    menu:
+        "Ramasser le badge tombé.":
+            $ noam_compassion += 1
+            "Je me penche, lentement, et je le ramasse par le coin."
+            noam "Tenez."
+            "Je tends le badge sans avancer d’un pas de plus."
+
+        "Attendre que l’agent intervienne.":
+            $ noam_prudence += 1
+            "Je garde les mains visibles."
+            "L’agent a déjà vu le badge tomber."
+            "Dans ce bâtiment, aider trop vite ressemble parfois à une initiative."
+
+        "Regarder la caméra avant de bouger.":
+            $ noam_defiance += 1
+            "Je lève les yeux vers la caméra."
+            "Une seconde sous l'objectif."
+            "Puis seulement je fais un pas de côté."
 
     med2 "Reprenez votre badge, d’accord ?"
     med2 "Respirez… voilà."
@@ -313,13 +646,14 @@ label _0_FLASHBACK_KAMI:
     scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
     $ unlock_gallery_image("bg_cg003")
 
-    "Je tente d’appeler."
-    "Rien. Ecran figé."
-    "J’ouvre une messagerie."
-    "Rien."
-    "Je coupe le Wi-Fi."
-    "Je passe en données."
-    "Rien non plus."
+    "Je tente d’utiliser mon téléphone."
+    "Un geste idiot."
+    "Normal."
+    "Donc vital."
+
+    call screen day0_phone_override()
+
+    think "Même mon téléphone n’était plus à moi."
 
     "Autour de moi, les autres réagissent en même temps."
     "Pas parce qu’on se regarde."
@@ -612,6 +946,8 @@ label _0_retour_reunion:
 
     scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
 
+    $ journal_entries.append(("Jour 0", "Il y a un an, je me suis retrouvé immobile devant un écran qui disait que le monde venait de changer. Je n'ai pas bougé. Personne n'a bougé. On a tous regardé sans rien faire."))
+
     "Je reviens d’un coup."
     "Pas comme on sort d’un rêve."
     "Comme on reprend l’air après avoir été maintenu sous l’eau, encore un peu sonné."
@@ -861,6 +1197,8 @@ label _0_retour_reunion:
     kami "Délai maximal d’acheminement au Conclave : 22h00."
     kami "Tout retard sera interprété comme une obstruction volontaire."
 
+    show screen day0_countdown_overlay("03:42:18")
+
     pause 0.2
 
     kami "Conséquence : élimination des représentants absents."
@@ -941,13 +1279,10 @@ label _0_retour_reunion:
     "LISTE DE SÉLECTION."
     "Défilement automatique."
 
-    "Des noms."
-    "Des fonctions."
-    "Des identifiants."
-    "Tout est trop rapide pour lire confortablement."
-    "Mais assez lent pour comprendre que c’est calculé."
+    call screen day0_representative_selection()
     
-    think "Les noms semblaient défiler au hasard."
+    think "J’avais cliqué."
+    think "Mais l’écran avait choisi avant moi."
 
     "Le responsable de séance ne dit rien."
     "Il ne commente pas."
@@ -957,14 +1292,9 @@ label _0_retour_reunion:
     "Au fond, quelqu’un baisse les yeux et commence à prier."
     "Puis se tait presque aussitôt."
 
-    "Le défilement ralentit."
-    "Un filtre s’applique."
+    "Les filtres disparaissent un par un."
     "La liste se réduit."
     "Brutalement."
-
-    "Des centaines de noms disparaissent."
-    "Comme effacés car ne répondant pas à certains critères."
-    "Comme s’ils n’avaient jamais été candidats."
 
     "Deux lignes restent."
     "Deux."
@@ -1030,6 +1360,8 @@ label _0_EXTRACTION:
 
     scene bg_cg004 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg004")
+
+    $ journal_entries.append(("Jour 0 — soir", "Mon nom était sur la liste. J'aurais dû m'y attendre, et pourtant non. Lysa a l'air de quelqu'un qui cache bien ses peurs. Moi, je ne suis même pas sûr de cacher les miennes."))
 
     "La liste reste affichée là, comme un verdict indélébile."
     "Deux noms."
@@ -1303,56 +1635,8 @@ label _0_LABEL2_RESP_DISTRICT:
     "Des millions de personnes sont mortes à cause de ces derniers."
     
     $ cam_move(0.5, 0.5, 2.35, 2.0)
-    
-    "I] Toute autorité humaine indépendante est dissoute."
-    "Kami est l’unique instance décisionnelle."
-    "Toute tentative de prise de pouvoir autonome est une violation."
-    
-    pause 1.0
-    
-    "II] Tout ordre émis par Kami doit être exécuté sans délai."
-    "Le refus, le retard volontaire ou la contestation constituent une infraction."
-    
-    pause 1.0
-    
-    "III] Toute violence non autorisée par Kami est interdite."
-    "Sont inclus : meurtre, agression, sabotage, insurrection."
-    "La légitime défense n’est jamais reconnue, la violence étant immédiatement réprimée."
-    
-    pause 1.0
-    
-    "IV] Les regroupements non déclarés sont interdits."
-    "Toute organisation politique, militaire ou idéologique indépendante est dissoute."
-    
-    pause 1.0
-    
-    "V] La diffusion de rumeurs non validées par ARCHIVE est interdite."
-    "La désinformation, l’omission volontaire et la manipulation sont des crimes."
-    
-    pause 1.0
-    
-    "VI] Les déplacements inter-districts sont limités à stricte autorisation."
-    "Toute tentative de fuite, d’exil ou de franchissement non autorisé est une violation."
-    "LIMEN est chargé de l'application de ce commandement."
-    
-    pause 1.0
-    
-    "VII] Les ressources critiques sont placées sous contrôle central."
-    "Toute appropriation non autorisée est considérée comme un acte hostile."
-    
-    pause 1.0
-    
-    "VIII] Chaque individu est responsable de ses actes, paroles et omissions."
-    "La responsabilité collective peut être appliquée en cas de nécessité."
-    
-    pause 1.0
-    
-    "IX] Toute activité peut être observée."
-    "La vie privée n’est pas un droit opposable."
-    
-    pause 1.0
-    
-    "X] Toute violation d’un Commandement entraîne une exécution immédiate, automatique et irrévocable."
+
+    call screen day0_commandments_registry()
     
     "..."
     
@@ -1458,6 +1742,7 @@ label _0_LABEL2_RESP_DISTRICT:
     lysa blase "... Calme ?"
     lysa "J’ai même pas eu le temps de rentrer chez moi."
     lysa "Donc non."
+    lysa "Et leur petit compteur en haut de l'écran n'aide pas franchement."
 
     "Elle me regarde."
     "Deux secondes."
@@ -1466,13 +1751,25 @@ label _0_LABEL2_RESP_DISTRICT:
     lysa doute "C’est lui ?"
     lysa "... Super."
 
+    menu:
+        "Tendre la main.":
+            $ affinity_lysa = 1
+            noam "Enchanté."
+            think "Elle regarde ma main une seconde de trop."
+            think "Puis la serre. Rapidement."
+
+        "Ne pas bouger.":
+            $ affinity_lysa = 0
+            noam "Enchanté."
+            think "Je le dis quand même."
+
     resp_d "Oui."
     resp_d "Noam. Médiation."
     resp_d "Lysa. Coordination logistique inter-secteurs."
 
-    noam "Enchanté."
-
     lysa "Oui oui, enchanté, tout ça tout ça ..."
+    lysa blase "Selection aleatoire, j'imagine."
+    lysa "Le genre de hasard qui connait deja ton adresse et tes heures de sommeil."
 
     think "Ok ..."
     think "On va bien se marrer avec elle ..."
@@ -1503,6 +1800,7 @@ label _0_LABEL2_RESP_DISTRICT:
     lysa "Et pouf."
     lysa "Réveil ailleurs, zéro contrôle."
     lysa "Décidément c'est la foire aux horreurs ?"
+    lysa blase "Ils auraient pu mettre de la musique douce. Quitte à nous ranger dans des boîtes."
 
     resp_d "Kami aura le contrôle. Nous, nous obéissons."
     resp_d "Et je vous conseille de ne pas résister."
@@ -1538,6 +1836,7 @@ label _0_LABEL2_RESP_DISTRICT:
     "Elle sait bien qu'il n'est pas possible de négocier."
 
     lysa "On se présentera correctement quand la machine nous le demandera."
+    lysa "Enfin bon. On va faire comme si on avait notre mot à dire, j’imagine."
     lysa blase "Pas la peine de s’épuiser maintenant."
 
     noam "Ça marche."
@@ -1567,6 +1866,34 @@ label _0_LABEL2_RESP_DISTRICT:
     "Même si on voit à son teint qu'elle est loin d'être à l'aise."
     "Mais elle le cache omme un embarras qu’elle refuse de ressentir."
 
+    menu:
+        "Demander à prévenir quelqu’un.":
+            $ noam_compassion += 1
+            noam "Je peux prévenir quelqu’un avant ?"
+            agent "Les notifications officielles seront transmises."
+            lysa blase "Traduction : non."
+
+        "Questionner le trajet.":
+            $ noam_prudence += 1
+            noam "On sait combien de temps dure le trajet ?"
+            resp_d "Non."
+            resp_d "Vous serez endormis avant le départ."
+            lysa "Pratique. Même l'angoisse est sous-traitée."
+
+        "Regarder Lysa avant d’entrer.":
+            $ noam_compassion += 1
+            "Je regarde Lysa."
+            "Pas longtemps, juste avant le caisson."
+            "Juste assez pour qu’elle comprenne que je ne veux pas disparaître seul."
+            lysa "Respire, Noam. Enfin... tant que c'est encore autorisé."
+
+        "Poser la main sur la vitre du caisson.":
+            $ noam_defiance += 1
+            "Je pose la main sur la vitre."
+            "La surface est froide."
+            "Le voyant vert ne change pas."
+            think "Même mon dernier geste personnel ressemble à une validation biométrique."
+
     "Je m’allonge à mon tour."
     
     scene bg_cg006_3 at adaptive_fullscreen with dissolve
@@ -1577,7 +1904,7 @@ label _0_LABEL2_RESP_DISTRICT:
     "Au fond, une sorte de coussin moelleux est disposé."
     "C'est plutôt agréable, et on peut s'étendre les jambes."
     
-    noam "Whouah ! Je m'attendais pas à ce que ce soit aussi confortable !"
+    noam "Je ne m'attendais pas à ce que ce soit... aussi confortable."
     lysa "C'est clair ..."
 
     "Une sangle se ferme."
@@ -1620,9 +1947,12 @@ label _0_LABEL2_RESP_DISTRICT:
     $ blink()
     
     scene black with dissolve
+    hide screen day0_countdown_overlay
 
     stop music fadeout 1.2
     pause 1.0
+
+    $ journal_entries.append({"title": "Jour 0 — caisson", "text": "Je croyais avoir seulement suivi des ordres. Mais aujourd'hui, même mes gestes les plus simples avaient une interface, une lumiere, une limite. J'ai scanne un badge, clique sur un ecran, regarde Lysa entrer dans une boite propre. Et quelque part, le systeme a appele ca mon consentement."})
 
     call end_day("1")
     jump _1_CANON

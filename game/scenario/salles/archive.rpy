@@ -11,16 +11,18 @@ default decouverte_salle_archive = False
 label ARCHIVE_TP:
     scene bg_archive at adaptive_fullscreen
 
-    if not decouverte_salle_archive:
+    if not decouverte_salle_archive and day_number() == 1:
         jump decouverte_salle_archive
 
-    if free_time_active and free_time_round == 2 and not seen_voyeur_mara_tomas:
+    if social_free_time_active() and free_time_round == 2 and not seen_voyeur_mara_tomas:
         jump temps_libre_salle_archive
 
     $ pnc_room = "pnc_archive"
     call screen pnc_archive()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 # -----------------------------------------------------------------------
@@ -62,7 +64,7 @@ screen pnc_archive():
         at cover_screen
         action Jump("ARCHIVE_PNC_HOLOGRAMME")
 
-    if free_time_active and tomas_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and tomas_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/tomas/reflechit.png", zoom=0.75)
             hover Transform("images/character/tomas/neutre.png", zoom=0.75)
@@ -71,7 +73,7 @@ screen pnc_archive():
             yalign 0.30
             action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("TOMAS_LINK_INTERACT")]
 
-    if free_time_active and lysa_link == 3:
+    if social_free_time_active() and lysa_link == 3:
         imagebutton:
             idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
             hover Transform("images/character/lysa/neutre.png", zoom=0.75)

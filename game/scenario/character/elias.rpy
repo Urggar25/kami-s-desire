@@ -2,7 +2,7 @@
 # LIENS — ELIAS
 # -----------------------------------------------------------------------
 
-default elias_link = 0
+default elias_link = character_link_progress("elias")
 
 
 label ELIAS_LINK_INTERACT:
@@ -108,7 +108,10 @@ label elias_link_1:
     "Elias repart sur une série, concentré."
 
     $ elias_link = 1
+    $ set_character_link_progress("elias", 1)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -225,7 +228,10 @@ label elias_link_2:
     "C'est une règle simple."
 
     $ elias_link = 2
+    $ set_character_link_progress("elias", 2)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -358,7 +364,10 @@ label elias_link_3:
     "Tout est à sa place."
 
     $ elias_link = 3
+    $ set_character_link_progress("elias", 3)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -489,7 +498,10 @@ label elias_link_4:
     "La conversation est close."
 
     $ elias_link = 4
+    $ set_character_link_progress("elias", 4)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END
 
 
@@ -619,5 +631,8 @@ label elias_link_5:
     "Je le laisse travailler."
 
     $ elias_link = 5
+    $ set_character_link_progress("elias", 5)
 
+    if link_replay_mode:
+        return
     jump FREE_TIME_END

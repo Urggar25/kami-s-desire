@@ -2,15 +2,15 @@
 errors listed below, and try again.
 
 
-File "game/scenario/7_0_1.rpy", line 225: Line with id 92b9db42 appears twice. The other line is game/scenario/6_0_1.rpy:469
+File "game/scenario/2_canon.rpy", line 1298: Line with id 24f92ec7 appears twice. The other line is game/scenario/10_0_1_1.rpy:472
 
-File "game/scenario/7_0_1.rpy", line 630: Line with id 16b8cb94_5 appears twice. The other line is game/scenario/6_0_1.rpy:925
+File "game/scenario/4_0.rpy", line 709: Line with id c09788b4_1 appears twice. The other line is game/scenario/10_0_1_1.rpy:325
 
-File "game/scenario/7_0_1.rpy", line 793: Line with id 16b8cb94_6 appears twice. The other line is game/scenario/6_0_1.rpy:1156
+File "game/scenario/5_0.rpy", line 261: Line with id 68099ad2 appears twice. The other line is game/scenario/10_0_1_1.rpy:320
 
-File "game/scenario/7_0_1.rpy", line 794: Line with id 96aae473_1 appears twice. The other line is game/scenario/6_0_1.rpy:1436
+File "game/scenario/6_0_1.rpy", line 1636: Line with id fa451ded appears twice. The other line is game/scenario/10_0_1_1.rpy:429
 
-File "game/scenario/7_0_1.rpy", line 924: Line with id c09788b4_2 appears twice. The other line is game/scenario/6_0_1.rpy:641
+File "game/scenario/6_0_1.rpy", line 1650: Line with id 147450ef appears twice. The other line is game/scenario/10_0_1_1.rpy:455
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon May 25 19:22:28 2026
+Fri May 29 12:53:52 2026

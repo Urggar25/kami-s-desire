@@ -809,7 +809,7 @@ label _5_0_DISCUSSION_SAEL:
     jump _5_0_TEMPS_LIBRE_1
 
 label _5_0_TEMPS_LIBRE_1:
-    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1")
+    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1") from _call_START_FREE_TIME_2
 
 label _5_0_APRES_TEMPS_LIBRE_1:
 
@@ -1428,7 +1428,7 @@ label _5_0_1_OBSERVATION:
 
     pause 1.0
 
-    call show_custom_title("Après plusieurs heures")
+    call show_custom_title("Après plusieurs heures") from _call_show_custom_title
 
     scene bg_observation at adaptive_fullscreen with dissolve
 
@@ -1596,11 +1596,11 @@ label _5_0_NUIT_RETOUR:
     pause 1.0
 
     if doplleganger == 0:
-        call end_day("6")
+        call end_day("6") from _call_end_day_6
         jump _6_0_0_REVEIL_CHAMBRE
 
     else:
-        call end_day("6")
+        call end_day("6") from _call_end_day_7
         jump _6_0_1_REVEIL_CHAMBRE
 
 

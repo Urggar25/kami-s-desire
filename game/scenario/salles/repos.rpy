@@ -4,16 +4,18 @@ default decouverte_salle_repos = False
 label REPOS_TP:
     scene bg_repos at adaptive_fullscreen
 
-    if not decouverte_salle_repos:
+    if not decouverte_salle_repos and day_number() == 1:
         jump decouverte_salle_repos
 
-    if free_time_active and free_time_round == 1 and not seen_voyeur_julian_iris:
+    if social_free_time_active() and free_time_round == 1 and not seen_voyeur_julian_iris:
         jump temps_libre_salle_repos
 
     $ pnc_room = "pnc_repos"
     call screen pnc_repos()
 
     if free_time_active:
+        return
+    if exploration_libre_active:
         return
 
 
@@ -79,7 +81,7 @@ screen pnc_repos():
         at cover_screen
         action Jump("REPOS_PNC_CANAPE")
 
-    if free_time_active and mara_link in [1, 3]:
+    if social_free_time_active() and mara_link in [1, 3]:
         imagebutton:
             idle Transform("images/character/mara/sourire.png", zoom=0.75)
             hover Transform("images/character/mara/neutre.png", zoom=0.75)
@@ -88,7 +90,7 @@ screen pnc_repos():
             yalign 0.30
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("MARA_LINK_INTERACT")]
 
-    if free_time_active and lysa_link == 0:
+    if social_free_time_active() and lysa_link == 0:
         imagebutton:
             idle Transform("images/character/lysa/taquin.png", zoom=0.75)
             hover Transform("images/character/lysa/neutre.png", zoom=0.75)
@@ -97,7 +99,7 @@ screen pnc_repos():
             yalign 0.30
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("LYSA_LINK_INTERACT")]
 
-    if free_time_active and iris_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and iris_link in [0, 1, 2, 3, 4]:
         imagebutton:
             idle Transform("images/character/iris/colere.png", zoom=0.75)
             hover Transform("images/character/iris/taquin.png", zoom=0.75)
@@ -107,7 +109,7 @@ screen pnc_repos():
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("IRIS_LINK_INTERACT")]
 
 
-    if free_time_active and elen_link == 4:
+    if social_free_time_active() and elen_link == 4:
         imagebutton:
             idle Transform("images/character/elen/joie.png", zoom=0.75)
             hover Transform("images/character/elen/content.png", zoom=0.75)

@@ -41,6 +41,7 @@
 
     think "J'ouvre les yeux."
     scene bg_cg012 at adaptive_fullscreen with fade
+    $ unlock_gallery_image("bg_cg012")
 
     $ blink()
 
@@ -296,6 +297,8 @@
 
     pause 0.6
 
+    call day2_play_wakeup_trace from _call_day2_play_wakeup_trace
+
     think "Je me redresse."
     think "Je pose les pieds au sol."
 
@@ -321,6 +324,18 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     "Dès que je mets un pied dans la cafétéria, je comprends que ça parle déjà trop fort."
     play sound sfx_door
+
+    menu:
+        "Choisir où se placer."
+        "Je m'assois près d'une table encore libre.":
+            "Je tire une chaise sans bruit."
+            "Depuis là, je peux voir presque toute la salle."
+        "Rester près du buffet.":
+            "Je prends un plateau, plus pour occuper mes mains que pour manger."
+            "Les voix me parviennent par morceaux."
+        "Me tenir près de l'entrée.":
+            "Je reste debout quelques secondes."
+            "La porte derrière moi permet de compter ceux qui arrivent."
 
     $ showP("tomas", "neutre", 0.10)
 
@@ -715,12 +730,18 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     julian panne "…"
     julian decu "Pfff… ok j’ai tout capté en fond, inutile de me refaire le film."
 
+    $ j2_vote_codex_unlocked = True
+    call screen day2_vote_tablet_notice
+    "La tablette vibre une dernière fois, puis le dossier reste disponible dans mes notes."
+
     jump _2_CAFETERIA_POST_ANNONCE
 
 # Durée : 3m35
 # Total : 1h 11m 0s
 
 label _2_CAFETERIA_POST_ANNONCE:
+
+    show screen day2_quick_vote_notes
 
     "Le silence qui suit est plus lourd que l'annonce."
     "Pas parce qu'elle est violente."
@@ -789,6 +810,18 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     kael "On ne peut pas vraiment esquiver."
     kael "Demain, il va falloir faire le bon choix et voter."
+
+    menu:
+        "Suivre la discussion."
+        "Revenir sur la phrase de Kael.":
+            "Je garde ses mots en tête."
+            "Demain, personne ne pourra prétendre que le vote arrive par surprise."
+        "Observer les réactions autour de la table.":
+            "Je laisse les mots circuler."
+            "Les regards disent déjà presque autant que les phrases."
+        "Noter mentalement la règle d'unanimité.":
+            "Une voix contre suffira."
+            "Ce détail change tout."
 
     hide nyra
     $ showP("elen", "inquiet", 0.86)
@@ -1038,12 +1071,14 @@ label _2_CAFETERIA_POST_ANNONCE:
     stop music fadeout 0.8
     pause 0.6
 
+    hide screen day2_quick_vote_notes
+
     "Le reste de la matinée passe rapidement et pendant ce temps là, je me balade pour me changer les idées."
     "Des pas, des couloirs, des respirations."
     "Je ne sais pas qui va craquer."
     "Je ne sais pas si ce sera moi."
 
-    call START_FREE_TIME("_2_APRES_MIDI")
+    call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
 
 # Durée : 3m50
 # Total : 1h 14m 50s
@@ -1056,6 +1091,7 @@ label _2_APRES_MIDI:
 
     scene bg_couloir at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
+    show screen day2_quick_vote_notes
 
     "L’après-midi commence sans véritable signal."
     "Je marche."
@@ -1097,6 +1133,17 @@ label _2_APRES_MIDI:
     "Lysa est adossée au mur."
     "Bras croisés."
     "Elias est face à elle."
+
+    menu:
+        "Approcher Lysa et Elias."
+        "Les rejoindre directement.":
+            "Je fais quelques pas vers eux avant que la conversation ne se referme."
+        "Attendre qu'Elias termine sa phrase.":
+            "Je ralentis."
+            "Une phrase complète vaut parfois mieux qu'une question trop rapide."
+        "Les observer quelques secondes.":
+            "Lysa garde les bras croisés."
+            "Elias cherche ses mots sans la brusquer."
 
     $ showP("lysa", "triste", 0.30)
     $ showP("elias", "neutre", 0.70)
@@ -1153,7 +1200,7 @@ label _2_APRES_MIDI:
 
     elias raison "Alors dis-leur."
 
-    lysa tristesse "Dire quoi ?"
+    lysa triste "Dire quoi ?"
     lysa blase "Qu’on manque déjà de tout ?"
     lysa neutre "Ils le savent."
 
@@ -1202,27 +1249,20 @@ label _2_APRES_MIDI:
     noam raison "C'est possible."
     noam raison "Pour tout te dire, je ne sais pas vraiment."
 
-    lysa regarde "Ne promets pas trop vite."
+    lysa triste "Ne promets pas trop vite."
 
     noam neutre "On en parlera peut-être demain..."
 
-    lysa hoche "Oui."
+    lysa triste "Oui."
     lysa triste "Avant que je change d’avis."
     lysa blase "J’ai pas envie de briser leurs espoirs…"
     lysa determine "mais tu as compris."
     lysa fatigue "... C’est déjà ça."
 
-    $ add_argument("Difficulté d'approvisionnement")
-    show screen argument_unlock("Difficulté d'approvisionnement")
-    pause 5.0
+    call day2_collect_vote_argument("approvisionnement") from _call_day2_collect_vote_argument_approvisionnement
 
-    tuto "Prêt pour un nouveau tutoriel ?"
-    tuto "Au cours de ce dialogue, Lysa a émit des doutes sur le vote à venir."
-    tuto "Ces doutes ont muri sous la forme d'un Argument."
-    tuto "Au cours du vote, vous aurez à choisir un ou plusieurs arguments à certains moments précis."
-    tuto "Ces arguments peuvent convaincre certains personnages, mais aussi en rébuter d'autres."
-    tuto "Vous pourrez collecter des arguments en explorant, en discutant avec des personnages ou en progressant dans l'histoire."
-    tuto "Alors bonne collecte !"
+    tuto "Un argument rangé dans la mallette apparaît dans l'onglet Prochain vote."
+    tuto "Les notes ne décident pas à ta place : elles servent à préparer le vote et à relire les positions supposées."
 
     hide lysa
     hide elias
@@ -1247,6 +1287,17 @@ label _2_SALLE_OBSERVATION:
     "Un noir immense, calme, presque apaisant."
     "Kael est déjà là."
     "Debout, les mains dans le dos."
+
+    menu:
+        "Avant de parler à Kael."
+        "Examiner brièvement la salle.":
+            "Je suis les lignes des consoles et les reflets de la vitre."
+            "Ici, tout ramène à Orbite."
+        "Regarder la baie vitrée.":
+            "Orbite paraît calme de loin."
+            "C'est presque pire."
+        "Aller directement vers lui.":
+            "Je ne laisse pas le silence s'installer plus longtemps."
 
     $ showP("noam", "neutre", 0.18)
     $ showP("kael", "neutre", 0.50)
@@ -1277,7 +1328,7 @@ label _2_SALLE_OBSERVATION:
     kael mefiant "Mais ça ne changera pas grand chose au fond."
     kael mefiant "Nous allons sans doute nous diviser sur des détails."
 
-    noam raison "On n’est pas encore divisés."
+    noam raison "Il me semble qu’on n’est pas encore divisés."
 
     kael colere "On l’est déjà."
     kael colere "Sinon tout le monde aurait accepté de parler hier soir."
@@ -1330,8 +1381,7 @@ label _2_SALLE_OBSERVATION:
     noam reflexion "Ouais, comme partout en fait."
     noam reflexion "Je crois que ça fonctionne comme ça dans tous les districts aujourd'hui ..."
 
-    $ add_argument("Bons de rationnement")
-    show screen argument_unlock("Bons de rationnement")
+    call day2_collect_vote_argument("rationnement") from _call_day2_collect_vote_argument_rationnement
 
     noam neutre "Si on autorise le commerce, ça pourrait peut-être améliorer les choses, non ?"
     noam reflexion "Ca pourrait redevenir un peu comme avant, avec des magasins, des choses en libre accès."
@@ -1361,8 +1411,7 @@ label _2_SALLE_OBSERVATION:
 
     kael triste "Excuse moi, je vais faire un tour..."
 
-    $ add_argument("Faiblesse d'Orbite")
-    show screen argument_unlock("Faiblesse d'Orbite")
+    call day2_collect_vote_argument("orbite") from _call_day2_collect_vote_argument_orbite
 
     hide kael
     hide noam
@@ -1463,13 +1512,13 @@ label _2_GYMNASE:
     tuto "De plus, pratiquer ce genre d'activité permet de charger des évènements, seuls ou avec d'autres personnages."
     tuto "Ces évènements sont aléatoires et peuvent vous offrir des images... intéressantes."
 
-    noam effort "Un…"
-    noam effort "Deux…"
+    noam "Un…"
+    noam "Deux…"
 
     "Je commence à pousser les altères."
 
     $ mg_skip_scene_pick = True
-    call minijeu_halteres
+    call minijeu_halteres from _call_minijeu_halteres
 
     "Je repose."
     "Je souffle."
@@ -1657,6 +1706,17 @@ label _2_CAFETERIA_SOIR:
 
     noam raison "Tu as raison d’être prudent."
 
+    menu:
+        "Après la réponse de Ryn."
+        "Garder sa position en tête.":
+            "Je garde sa prudence en tête."
+        "Reformuler concrètement.":
+            noam raison "Donc pour l'instant, tu penches pour, mais tu veux entendre les autres."
+            ryn reflechit "Voilà. C'est déjà pas mal, non ?"
+        "Continuer à écouter.":
+            "Je ne rajoute rien."
+            "Parfois, une phrase suffit à dessiner une position."
+
     hide ryn
 
     "La conversation dérive."
@@ -1666,6 +1726,7 @@ label _2_CAFETERIA_SOIR:
 
     stop music fadeout 1.0
     pause 0.6
+    hide screen day2_quick_vote_notes
 
     scene bg_couloir at adaptive_fullscreen with fade
     pause 1.0
@@ -1697,5 +1758,323 @@ label _2_CAFETERIA_SOIR:
     think "Je ferme les yeux."
     think "Et j’essaie de dormir."
 
+    # jump patreon_ending
+
+    call end_day("3")
+
+    jump _3_CANON
+
+
 # Durée : 1m55
 # Totale : 1h 24m 10s
+default j2_wakeup_trace_attempts = 0
+default j2_vote_codex_unlocked = False
+default j2_vote_arguments = []
+default j2_vote_positions = {
+    "lysa": "unknown",
+    "elias": "unknown",
+    "kael": "unknown",
+    "mara": "unknown",
+    "julian": "unknown",
+    "iris": "unknown",
+    "elen": "unknown",
+    "ryn": "unknown",
+    "sael": "unknown",
+    "tomas": "unknown",
+    "nyra": "unknown",
+}
+
+init 3 python:
+    DAY2_VOTE_COLUMNS = [
+        ("for", "POUR"),
+        ("unknown", "INCONNU"),
+        ("against", "CONTRE"),
+    ]
+
+    DAY2_VOTE_ARGUMENTS = {
+        "approvisionnement": {
+            "title": "Difficulté d'approvisionnement",
+            "category": "Risque économique",
+            "summary": "Les circuits actuels ne répondent pas toujours aux besoins réels des habitants.",
+            "origin": "Entendu lors d'un échange avec Lysa et Elias.",
+        },
+        "rationnement": {
+            "title": "Bons de rationnement",
+            "category": "Organisation quotidienne",
+            "summary": "Les demandes officielles et les bons structurent déjà l'accès aux biens essentiels.",
+            "origin": "Relevé dans la discussion avec Kael.",
+        },
+        "orbite": {
+            "title": "Faiblesse d'Orbite",
+            "category": "Sécurité",
+            "summary": "Sur Orbite, une erreur de circulation ou de sanction peut menacer directement la survie.",
+            "origin": "Décrit par Kael en salle d'observation.",
+        },
+    }
+
+    DAY2_VOTE_CHARACTER_ORDER = ["lysa", "elias", "kael", "mara", "julian", "iris", "elen", "ryn", "sael", "tomas", "nyra"]
+    DAY2_VOTE_CHARACTERS = {
+        "lysa": {"name": "Lysa", "portrait": "images/character/lysa/portrait.png"},
+        "elias": {"name": "Elias", "portrait": "images/character/elias/portrait.png"},
+        "kael": {"name": "Kael", "portrait": "images/character/kael/portrait.png"},
+        "mara": {"name": "Mara", "portrait": "images/character/mara/portrait.png"},
+        "julian": {"name": "Julian", "portrait": "images/character/julian/portrait.png"},
+        "iris": {"name": "Iris", "portrait": "images/character/iris/portrait.png"},
+        "elen": {"name": "Elen", "portrait": "images/character/elen/portrait.png"},
+        "ryn": {"name": "Ryn", "portrait": "images/character/ryn/portrait.png"},
+        "sael": {"name": "Sael", "portrait": "images/character/sael/portrait.png"},
+        "tomas": {"name": "Tomas", "portrait": "images/character/tomas/portrait.png"},
+        "nyra": {"name": "Nyra", "portrait": "images/character/nyra/portrait.png"},
+    }
+
+    def day2_vote_argument_count():
+        return len(store.j2_vote_arguments)
+
+    def day2_vote_add_argument(arg_id):
+        if arg_id not in DAY2_VOTE_ARGUMENTS:
+            return False
+        title = DAY2_VOTE_ARGUMENTS[arg_id]["title"]
+        if title not in store.arguments:
+            store.arguments.append(title)
+        if arg_id not in store.j2_vote_arguments:
+            store.j2_vote_arguments.append(arg_id)
+        renpy.restart_interaction()
+        return True
+
+    def day2_vote_position_dragged(char_id, drags, drop):
+        if drop is None:
+            renpy.restart_interaction()
+            return
+        target = getattr(drop, "drag_name", "")
+        if target.startswith("day2_vote_col_"):
+            store.j2_vote_positions[char_id] = target.replace("day2_vote_col_", "")
+        renpy.restart_interaction()
+
+    def day2_vote_card_xy(char_id):
+        col = store.j2_vote_positions.get(char_id, "unknown")
+        col_index = {"for": 0, "unknown": 1, "against": 2}.get(col, 1)
+        items = [cid for cid in DAY2_VOTE_CHARACTER_ORDER if store.j2_vote_positions.get(cid, "unknown") == col]
+        idx = items.index(char_id) if char_id in items else 0
+        return (48 + col_index * 340 + (idx % 2) * 154, 72 + (idx // 2) * 132)
+
+    def day2_argument_drop(drags, drop, arg_id):
+        if drop is not None and getattr(drop, "drag_name", "") == "day2_briefcase_drop":
+            day2_vote_add_argument(arg_id)
+            return True
+        renpy.restart_interaction()
+
+screen vote_argument_briefcase(arg_id, argument_data, card_drag_name, drop_drag_name, drop_handler):
+    modal True
+    zorder 180
+    $ arg = argument_data
+
+    add Solid("#02050bd9")
+    frame:
+        xalign 0.5
+        yalign 0.09
+        padding (18, 10)
+        background Solid("#06131d")
+        text "Glisse la carte dans la mallette de Noam." size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+
+    draggroup:
+        drag:
+            drag_name card_drag_name
+            xpos 330
+            ypos 338
+            xsize 460
+            ysize 260
+            draggable True
+            droppable False
+            dragged (lambda drags, drop, arg_id=arg_id, drop_handler=drop_handler: drop_handler(drags, drop, arg_id))
+            fixed:
+                xfill True
+                yfill True
+                add arg.get("card", "gui/day3/argument_card_bg.png")
+                vbox:
+                    xpos 44
+                    ypos 46
+                    xsize 370
+                    spacing 14
+                    text "[arg['title']]" size 34 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                    text "DOSSIER DU VOTE" size 20 color "#9ed8ff" font "fonts/Rajdhani-SemiBold.ttf"
+
+        drag:
+            drag_name drop_drag_name
+            xpos 1020
+            ypos 308
+            xsize 560
+            ysize 330
+            draggable False
+            droppable True
+            fixed:
+                xfill True
+                yfill True
+                add "gui/day3/argument_drop_zone.png"
+                add "gui/day3/argument_briefcase_open.png" xpos 20 ypos 24
+                text "DÉPOSER ICI" xalign 0.5 ypos 250 size 28 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+
+screen day2_quick_vote_notes():
+    pass
+
+screen day2_vote_tablet_notice():
+    modal True
+    zorder 120
+    add Solid("#02050bcc")
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 820
+        padding (34, 28)
+        background Solid("#081722f2")
+        vbox:
+            spacing 16
+            text "TABLETTE DE NOAM" size 34 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+            text "Nouveau dossier disponible : Prochain vote" size 25 color "#9ed8ff"
+            text "La fiche rassemble la proposition, les arguments rangés dans ton dossier et les positions que tu supposes chez les autres représentants." size 21 color "#b8d8e4"
+            text "Les portraits peuvent être déplacés librement entre POUR, INCONNU et CONTRE. Ce classement est une note personnelle, pas une correction automatique." size 21 color "#b8d8e4"
+            textbutton "Continuer":
+                xalign 0.5
+                xsize 210
+                background Solid("#1a2530")
+                hover_background Solid("#2d3a45")
+                text_color "#dff8ff"
+                action Return(False)
+
+screen day2_current_vote_codex():
+    tag menu
+    modal True
+    zorder 200
+
+    add Solid("#080d12")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1720
+        ysize 960
+        padding (28, 24)
+        background Solid("#07151ef5")
+
+        vbox:
+            spacing 18
+            hbox:
+                xfill True
+                vbox:
+                    spacing 4
+                    text "Codex" size 22 color "#3a9fca"
+                    text "Prochain vote" size 48 color "#daeaf5" font "fonts/Rajdhani-SemiBold.ttf"
+                textbutton "Retour":
+                    xalign 1.0
+                    yalign 0.5
+                    xsize 150
+                    background Solid("#1a2530")
+                    hover_background Solid("#2d3a45")
+                    text_color "#dff8ff"
+                    action Return()
+
+            hbox:
+                spacing 22
+
+                frame:
+                    xsize 480
+                    yfill True
+                    padding (22, 18)
+                    background Solid("#0d2230")
+                    vbox:
+                        spacing 12
+                        text "Vote en cours" size 30 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                        text "Autoriser le transport, la vente et l'échange de marchandises au sein des districts." size 22 color "#dff8ff"
+                        text "Moment prévu : Jour 3, 14h00" size 19 color "#9ed8ff"
+                        text "Résumé neutre" size 21 color "#70c6e8"
+                        text "Le texte promet une circulation plus libre des biens. Ses effets restent incertains selon les districts, les procédures et les risques locaux." size 20 color "#b8d8e4"
+                        null height 8
+                        text "Arguments découverts" size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                        for arg_id in ["approvisionnement", "rationnement", "orbite"]:
+                            if arg_id in j2_vote_arguments:
+                                $ arg = DAY2_VOTE_ARGUMENTS[arg_id]
+                                frame:
+                                    xfill True
+                                    padding (12, 10)
+                                    background Solid("#123044")
+                                    vbox:
+                                        spacing 3
+                                        text "[arg['title']]" size 21 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text "[arg['summary']]" size 17 color "#b8d8e4"
+                                        text "[arg['origin']]" size 15 color "#74a8ba"
+                            else:
+                                frame:
+                                    xfill True
+                                    padding (12, 12)
+                                    background Solid("#111820")
+                                    text "Argument non découvert" size 18 color "#526d79"
+
+                fixed:
+                    xfill True
+                    yfill True
+
+                    draggroup:
+                        for cidx, col_data in enumerate(DAY2_VOTE_COLUMNS):
+                            $ col_id = col_data[0]
+                            $ col_label = col_data[1]
+                            drag:
+                                drag_name ("day2_vote_col_%s" % col_id)
+                                draggable False
+                                droppable True
+                                xpos (20 + cidx * 340)
+                                ypos 0
+                                xsize 318
+                                ysize 810
+                                frame:
+                                    xfill True
+                                    yfill True
+                                    padding (14, 14)
+                                    background Solid("#0c1d29")
+                                    vbox:
+                                        spacing 8
+                                        text "[col_label]" xalign 0.5 size 28 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text "Glisse les portraits ici." xalign 0.5 size 16 color "#6797aa"
+
+                        for cid in DAY2_VOTE_CHARACTER_ORDER:
+                            $ card_x, card_y = day2_vote_card_xy(cid)
+                            $ cdata = DAY2_VOTE_CHARACTERS[cid]
+                            drag:
+                                drag_name ("day2_vote_char_%s" % cid)
+                                xpos card_x
+                                ypos card_y
+                                xsize 142
+                                ysize 116
+                                draggable True
+                                droppable False
+                                dragged (lambda drags, drop, cid=cid: day2_vote_position_dragged(cid, drags, drop))
+                                frame:
+                                    xfill True
+                                    yfill True
+                                    padding (7, 7)
+                                    background Solid("#182d3a")
+                                    vbox:
+                                        spacing 3
+                                        add cdata["portrait"] xalign 0.5 xysize (62, 62)
+                                        text "[cdata['name']]" xalign 0.5 size 17 color "#dff8ff"
+
+screen day2_argument_briefcase(arg_id):
+    $ arg = DAY2_VOTE_ARGUMENTS[arg_id]
+    use vote_argument_briefcase(arg_id, arg, "day2_argument_card", "day2_briefcase_drop", day2_argument_drop)
+
+label day2_play_wakeup_trace:
+    while True:
+        call screen trace_qte(path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620)
+        if _return:
+            return True
+        $ j2_wakeup_trace_attempts += 1
+        if j2_wakeup_trace_attempts >= 2:
+            "Mes gestes finissent par trouver le rythme."
+            return False
+        "Je rate le mouvement et ma main retombe sur le drap."
+        "Je recommence plus lentement."
+
+label day2_collect_vote_argument(arg_id):
+    call screen day2_argument_briefcase(arg_id)
+    if _return:
+        play sound sfx_drop
+        "Note ajoutée au Prochain vote."
+    return

@@ -76,7 +76,7 @@ init python:
 
     def map_room_characters(room_key):
         """Retourne la liste des personnages visibles en temps libre pour une salle."""
-        if not getattr(store, "free_time_active", False):
+        if not social_free_time_active():
             return []
 
         chars = []
@@ -86,6 +86,8 @@ init python:
             if getattr(store, "lysa_link", -1) == 3:
                 chars.append("Lysa")
         elif room_key == "cafeteria":
+            if getattr(store, "j10011_waiting_elias", False):
+                chars.append("Elias")
             if getattr(store, "mara_link", -1) in [0, 2, 4]:
                 chars.append("Mara")
             if getattr(store, "lysa_link", -1) == 1:
@@ -140,6 +142,14 @@ init python:
             return "Conclave — Carte interactive"
         return MAP_ROOM_LABELS.get(room_key, "Salle inconnue")
 
+    def map_room_selectable(room_key):
+        if getattr(store, "exploration_libre_active", False):
+            return exploration_libre_room_allowed(room_key)
+        return True
+
+    def map_returns_room():
+        return social_free_time_active() or getattr(store, "exploration_libre_active", False)
+
 
 transform map_room_title_pop:
     alpha 0.0
@@ -162,7 +172,7 @@ screen exploration_retour_button():
         xpos 0
         ypos 0
         at cover_screen
-        action If(free_time_active, Jump("START_FREE_TIME_MAP"), Jump("OPEN_CONCLAVE_MAP"))
+        action If(exploration_libre_active, Return(), If(social_free_time_active(), Jump("START_FREE_TIME_MAP"), Jump("OPEN_CONCLAVE_MAP")))
 
 screen conclave_map(allow_return=False):
 
@@ -188,35 +198,61 @@ screen conclave_map(allow_return=False):
         vbox:
             spacing 10
 
-            text "Présences":
-                size 28
-                color "#A6D8FF"
+            if exploration_libre_active:
+                text "Exploration":
+                    size 28
+                    color "#A6D8FF"
 
-            if map_ui_room_key is None:
-                text "Survole une zone":
-                    size 22
-                    color "#DCE8F7"
-            else:
-                $ current_chars = map_room_characters(map_ui_room_key)
-
-                if current_chars:
-                    hbox:
-                        spacing 10
-                        for char_name in current_chars:
-                            $ portrait_path = MAP_CHARACTER_PORTRAIT_IMAGES.get(char_name, None)
-                            frame:
-                                background Solid("#101722f0")
-                                xsize 78
-                                ysize 78
-                                padding (2, 2)
-
-                                if portrait_path is not None:
-                                    add Transform(portrait_path, xsize=74, ysize=74)
+                if exploration_libre_required_visits > 0:
+                    text "Zones visitees : [len(exploration_libre_seen_rooms)]/[exploration_libre_required_visits]":
+                        size 22
+                        color "#DCE8F7"
                 else:
-                    text "Aucun personnage":
+                    text "Choisis librement une zone":
+                        size 22
+                        color "#DCE8F7"
+
+                if map_ui_room_key is None:
+                    text "Survole une zone":
                         size 22
                         color "#C8D3E0"
+                elif not map_room_selectable(map_ui_room_key):
+                    text "Zone inaccessible":
+                        size 22
+                        color "#C8D3E0"
+                else:
+                    text "[map_room_header(map_ui_room_key)]":
+                        size 22
+                        color "#C8D3E0"
+            else:
+                text "Presences":
+                    size 28
+                    color "#A6D8FF"
 
+                if map_ui_room_key is None:
+                    text "Survole une zone":
+                        size 22
+                        color "#DCE8F7"
+                else:
+                    $ current_chars = map_room_characters(map_ui_room_key)
+
+                    if current_chars:
+                        hbox:
+                            spacing 10
+                            for char_name in current_chars:
+                                $ portrait_path = MAP_CHARACTER_PORTRAIT_IMAGES.get(char_name, None)
+                                frame:
+                                    background Solid("#101722f0")
+                                    xsize 78
+                                    ysize 78
+                                    padding (2, 2)
+
+                                    if portrait_path is not None:
+                                        add Transform(portrait_path, xsize=74, ysize=74)
+                    else:
+                        text "Aucun personnage":
+                            size 22
+                            color "#C8D3E0"
     # --- HOTSPOTS (full-screen overlays) ---
     # IMPORTANT : xpos/ypos 0 + at cover_screen, comme ton modèle
 
@@ -229,7 +265,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "archive")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("archive"), Jump("ARCHIVE_TP"))
+        action If(map_room_selectable("archive"), If(map_returns_room(), Return("archive"), Jump("ARCHIVE_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/cafeteria.png"
@@ -240,7 +276,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "cafeteria")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("cafeteria"), Jump("CAFETERIA_TP"))
+        action If(map_room_selectable("cafeteria"), If(map_returns_room(), Return("cafeteria"), Jump("CAFETERIA_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/canon.png"
@@ -251,7 +287,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "canon")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("canon"), Jump("CANON_TP"))
+        action If(map_room_selectable("canon"), If(map_returns_room(), Return("canon"), Jump("CANON_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/conclave.png"
@@ -262,7 +298,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "conclave")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("conclave"), Jump("CONCLAVE_TP"))
+        action If(map_room_selectable("conclave"), If(map_returns_room(), Return("conclave"), Jump("CONCLAVE_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/dortoir.png"
@@ -273,7 +309,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "dortoir")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("dortoir"), Jump("DORTOIR_TP"))
+        action If(map_room_selectable("dortoir"), If(map_returns_room(), Return("dortoir"), Jump("DORTOIR_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/gymnase.png"
@@ -284,7 +320,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "gymnase")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("gymnase"), Jump("GYMNASE_TP"))
+        action If(map_room_selectable("gymnase"), If(map_returns_room(), Return("gymnase"), Jump("GYMNASE_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/infirmerie.png"
@@ -295,7 +331,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "infirmerie")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("infirmerie"), Jump("INFIRMERIE_TP"))
+        action If(map_room_selectable("infirmerie"), If(map_returns_room(), Return("infirmerie"), Jump("INFIRMERIE_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/livraison.png"
@@ -306,7 +342,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "livraison")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("livraison"), Jump("LIVRAISON_TP"))
+        action If(map_room_selectable("livraison"), If(map_returns_room(), Return("livraison"), Jump("LIVRAISON_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/maintenance.png"
@@ -317,7 +353,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "maintenance")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("maintenance"), Jump("MAINTENANCE_TP"))
+        action If(map_room_selectable("maintenance"), If(map_returns_room(), Return("maintenance"), Jump("MAINTENANCE_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/observation.png"
@@ -328,7 +364,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "observation")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("observation"), Jump("OBSERVATION_TP"))
+        action If(map_room_selectable("observation"), If(map_returns_room(), Return("observation"), Jump("OBSERVATION_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/repos.png"
@@ -339,7 +375,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "repos")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("repos"), Jump("REPOS_TP"))
+        action If(map_room_selectable("repos"), If(map_returns_room(), Return("repos"), Jump("REPOS_TP")), NullAction())
 
     imagebutton:
         idle "images/carte/stockage.png"
@@ -350,7 +386,7 @@ screen conclave_map(allow_return=False):
         at cover_screen
         hovered SetVariable("map_ui_room_key", "stockage")
         unhovered SetVariable("map_ui_room_key", None)
-        action If(free_time_active, Return("stockage"), Jump("STOCKAGE_TP"))
+        action If(map_room_selectable("stockage"), If(map_returns_room(), Return("stockage"), Jump("STOCKAGE_TP")), NullAction())
 
     frame at map_room_title_pop:
         xalign 0.985
