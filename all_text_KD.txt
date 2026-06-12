@@ -2448,7 +2448,7 @@ label _1_KAMI_APPARITION:
     lysa "Et on évite de trop parler devant les caméras."
     lysa "Surtout au début."
 
-    $ showP("elen", "reflechit", 0.22)
+    $ showP("elen", "reflexion", 0.22)
     elen "Je… je vais voir s’il y a une infirmerie."
     elen "Ou au moins du matériel."
     elen "On sait jamais."
@@ -3187,7 +3187,7 @@ label decouverte_cafeteria:
     "Il ne bouge pas."
     "Et pourtant, la machine derrière lui s'allume."
 
-    $ showP("elen", "reflechit", 0.78)
+    $ showP("elen", "reflexion", 0.78)
     elen "Cette technologie est quand même incroyable ..."
 
     $ showP("noam", "inquiet", 0.22)

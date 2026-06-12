@@ -4113,8 +4113,8 @@ translate english 4f0f098d:
 # game/scenario/2_canon.rpy:1547
 translate english 0f4aa674:
 
-    # elen reflechit "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
-    elen reflechit "I mean… you hear literally anything and everything about what goes on up there."
+    # elen reflexion "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
+    elen reflexion "I mean… you hear literally anything and everything about what goes on up there."
 
 # game/scenario/2_canon.rpy:1548
 translate english 1651536a:

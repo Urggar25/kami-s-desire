@@ -323,7 +323,7 @@ label decouverte_cafeteria:
     "Il ne bouge pas."
     "Et pourtant, la machine derrière lui s'allume."
 
-    $ showP("elen", "reflechit", 0.78)
+    $ showP("elen", "reflexion", 0.78)
     elen "Cette technologie est quand même incroyable ..."
 
     $ showP("noam", "inquiet", 0.22)

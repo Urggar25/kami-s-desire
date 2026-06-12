@@ -274,7 +274,7 @@ label _9_0_1_REVEIL_CHAMBRE:
 label _9_0_1_CONCLAVE_ANNONCE:
 
     scene bg_couloir at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
     pause 0.5
 
@@ -299,7 +299,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     lysa blase "Elen."
 
-    elen "Quoi ?"
+    elen "Quoi ? Qu'est ce qui a ??"
 
     lysa triste "Pas maintenant."
 

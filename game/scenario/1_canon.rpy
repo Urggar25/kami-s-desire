@@ -1187,7 +1187,7 @@ label _1_KAMI_APPARITION:
     lysa "Et on ferme sa gueule devant les caméras."
     lysa fatigue "Surtout au début."
 
-    $ showP("elen", "reflechit", 0.22)
+    $ showP("elen", "reflexion", 0.22)
     elen "Je vais checker s’il y a une infirmerie… ou au moins de quoi faire un pansement."
     elen "On sait jamais, des fois que quelqu’un se fasse vraiment mal."
 

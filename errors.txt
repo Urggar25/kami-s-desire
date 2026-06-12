@@ -2,15 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/scenario/2_canon.rpy", line 1298: Line with id 24f92ec7 appears twice. The other line is game/scenario/10_0_1_1.rpy:472
-
-File "game/scenario/4_0.rpy", line 709: Line with id c09788b4_1 appears twice. The other line is game/scenario/10_0_1_1.rpy:325
-
-File "game/scenario/5_0.rpy", line 261: Line with id 68099ad2 appears twice. The other line is game/scenario/10_0_1_1.rpy:320
-
-File "game/scenario/6_0_1.rpy", line 1636: Line with id fa451ded appears twice. The other line is game/scenario/10_0_1_1.rpy:429
-
-File "game/scenario/6_0_1.rpy", line 1650: Line with id 147450ef appears twice. The other line is game/scenario/10_0_1_1.rpy:455
+File "game/scenario/5_1.rpy", line 302: Line with id 384cbb45 appears twice. The other line is game/scenario/14_0_1_1_0.rpy:115
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May 29 12:53:52 2026
+Fri Jun 12 20:40:59 2026

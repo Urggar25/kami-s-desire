@@ -706,7 +706,7 @@ label _4_0_REVEIL_CHAMBRE:
 
         "Vérifier l'arrière du cadre.":
             "Je retourne le cadre."
-            "Rien."
+            "Rien. Il n'y a rien."
             "Pas de signature. Pas de mot. Juste une surface lisse, prévue pour ne rien avouer."
 
     call day4_photo_put_trace from _call_day4_photo_put_trace

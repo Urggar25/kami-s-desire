@@ -417,7 +417,7 @@ init python:
 # ------------------------------------------------------------
 define narrator = Character(
     None,
-    what_prefix="“", what_suffix="”",
+    what_prefix="", what_suffix="",
     callback=make_autofocus_cb("__NARRATOR__")
 )
 
@@ -456,6 +456,7 @@ define sael = Character("Sael", what_prefix="“", what_suffix="”", callback=m
 
 define resp_d = Character("Responsable de District", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("__NARRATOR__"))
 define goumi = Character("Goumi", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("goumi"))
+define robot = Character("Robot", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("robot"))
 
 define kami = Character(
     "KAMI",

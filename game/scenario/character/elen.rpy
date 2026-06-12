@@ -49,7 +49,7 @@ label elen_link_1:
     noam "Qu'est-ce qu'il y a ?"
 
     elen surpris "Regarde la rainure ici."
-    elen reflechit "Le trait dans le métal."
+    elen reflexion "Le trait dans le métal."
     elen joie "On dirait une rivière miniature !"
 
     "Je m'approche."
@@ -79,7 +79,7 @@ label elen_link_1:
     noam "Tu t'extasies sur une rainure de sol."
 
     elen taquin "Exactement."
-    elen reflechit "Attends, c'est encore mieux ici."
+    elen reflexion "Attends, c'est encore mieux ici."
 
     "Elle me prend la manche et m'entraîne de deux pas vers la droite."
 
@@ -105,7 +105,7 @@ label elen_link_1:
     "Un bourdonnement grave traverse la salle."
     "Les écrans autour de nous continuent leur cycle."
 
-    elen reflechit "Écoute ça aussi."
+    elen reflexion "Écoute ça aussi."
     elen joie "On dirait un orgue géant qui a appris à chuchoter."
 
     noam "Moi, j'entends surtout des machines."
@@ -123,7 +123,7 @@ label elen_link_1:
 
     elen joie "Tu sais quoi ?"
     elen content "On devrait donner des noms aux détails oubliés."
-    elen reflechit "Celui-là, c'est... Fil d'Argent."
+    elen reflexion "Celui-là, c'est... Fil d'Argent."
 
     noam "Fil d'Argent ?"
 
@@ -169,7 +169,7 @@ label elen_link_2:
 
     noam "Ils y vont fort."
 
-    elen reflechit "Oui."
+    elen reflexion "Oui."
     elen triste "Et c'est injuste."
 
     noam "Tu le connais à peine."
@@ -182,7 +182,7 @@ label elen_link_2:
     play sound sfx_tasse
 
     elen content "Je crois pas aux monstres définitifs."
-    elen reflechit "Je crois aux gens coincés dans un mauvais moment."
+    elen reflexion "Je crois aux gens coincés dans un mauvais moment."
 
     noam "Même quand ils blessent les autres ?"
 
@@ -192,7 +192,7 @@ label elen_link_2:
     "Elle lisse la serviette en papier devant elle, geste doux et nerveux à la fois."
 
     elen neutre "Écoute."
-    elen reflechit "Je dis pas que tout va bien."
+    elen reflexion "Je dis pas que tout va bien."
     elen desaccord "Je dis que crier 'c'est un salaud' n'aide personne."
 
     noam "Tu prends sa défense spontanément."
@@ -203,19 +203,19 @@ label elen_link_2:
 
     noam "Et si tu te trompes ?"
 
-    elen reflechit "Alors je me trompe en essayant de réparer."
+    elen reflexion "Alors je me trompe en essayant de réparer."
     elen content "Je préfère ça à avoir raison en détruisant."
 
     "Le brouhaha au fond de la cafétéria retombe un peu."
 
-    elen reflechit "On critique plus facilement quelqu'un quand il n'est pas là."
+    elen reflexion "On critique plus facilement quelqu'un quand il n'est pas là."
     elen triste "Ça me serre le ventre."
 
     noam "Tu veux aller lui parler ?"
 
     elen joie "Oui."
     elen content "Pas pour le gronder."
-    elen reflechit "Pour lui demander ce qui va pas, vraiment."
+    elen reflexion "Pour lui demander ce qui va pas, vraiment."
 
     "Elle me regarde comme si la réponse était évidente depuis toujours."
 
@@ -225,7 +225,7 @@ label elen_link_2:
     noam "Tu lui trouves des excuses."
 
     elen desaccord "Non."
-    elen reflechit "Je lui cherche une porte de sortie."
+    elen reflexion "Je lui cherche une porte de sortie."
     elen content "C'est différent."
 
     "Elle reprend son gobelet, grimace au goût, puis sourit quand même."
@@ -237,7 +237,7 @@ label elen_link_2:
 
     elen joie "Presque."
     elen content "Sauf ceux qui ferment les portes exprès derrière eux."
-    elen reflechit "Là, je frappe très fort à la porte."
+    elen reflexion "Là, je frappe très fort à la porte."
 
     noam "Avec ton sourire ?"
 
@@ -251,7 +251,7 @@ label elen_link_2:
 
     noam "Tu crois vraiment qu'il n'y a pas de gens mauvais ?"
 
-    elen reflechit "Je crois qu'il y a des gens qui ont arrêté d'espérer."
+    elen reflexion "Je crois qu'il y a des gens qui ont arrêté d'espérer."
     elen triste "Et quand t'arrêtes d'espérer, tu fais mal autour."
     elen content "Mais ça peut revenir."
 
@@ -260,7 +260,7 @@ label elen_link_2:
     play sound sfx_tap
 
     elen content "Une phrase sans jugement."
-    elen reflechit "Parfois ça suffit à faire reculer la nuit de quelqu'un."
+    elen reflexion "Parfois ça suffit à faire reculer la nuit de quelqu'un."
 
     noam "Tu parles comme si tu l'avais déjà vu."
 
@@ -295,13 +295,13 @@ label elen_link_3:
 
     noam "C'est risqué."
 
-    elen reflechit "Oui."
+    elen reflexion "Oui."
     elen content "Mais il faut bien commencer quelque part, non ?"
 
     "Elle tourne vers moi un profil calme, presque enfantin."
 
     elen neutre "Si j'attends des preuves parfaites,"
-    elen reflechit "je ne laisserai jamais personne entrer."
+    elen reflexion "je ne laisserai jamais personne entrer."
 
     noam "Et si la mauvaise personne entre ?"
 
@@ -312,7 +312,7 @@ label elen_link_3:
 
     noam "Ça t'est déjà arrivé."
 
-    elen reflechit "..."
+    elen reflexion "..."
     elen content "Je fais confiance vite."
     elen desaccord "On parlait de ça, non ?"
 
@@ -337,7 +337,7 @@ label elen_link_3:
 
     "Elle pose son front un bref instant contre la vitre."
 
-    elen reflechit "Je me dis que la confiance, c'est un pari."
+    elen reflexion "Je me dis que la confiance, c'est un pari."
     elen content "Un pari sur ce que l'autre peut devenir avec un peu d'espace."
 
     noam "Et quand le pari est perdu ?"
@@ -350,7 +350,7 @@ label elen_link_3:
 
     noam "Pourquoi ?"
 
-    elen reflechit "Parce que la méfiance totale coûte encore plus cher."
+    elen reflexion "Parce que la méfiance totale coûte encore plus cher."
     elen neutre "Elle te laisse seul, et seule la peur gagne."
 
     noam "Tu n'as jamais envie de te protéger ?"
@@ -368,7 +368,7 @@ label elen_link_3:
 
     elen rire "Une petite."
     elen content "Qui grince."
-    elen reflechit "Pour prévenir que j'ai peur aussi."
+    elen reflexion "Pour prévenir que j'ai peur aussi."
 
     "Elle tapote la vitre de l'ongle, deux fois, presque un code."
 
@@ -384,7 +384,7 @@ label elen_link_3:
 
     "Ses épaules se détendent un peu."
 
-    elen reflechit "On verra plus tard pour les histoires compliquées."
+    elen reflexion "On verra plus tard pour les histoires compliquées."
     elen content "Pour l'instant, on va dire que j'apprends encore."
     elen joie "Et que je préfère apprendre en aimant les gens qu'en les fuyant."
 
@@ -416,7 +416,7 @@ label elen_link_4:
     play sound sfx_bip
 
     elen joie "J'aime bien la lumière ici."
-    elen reflechit "Elle est froide, mais propre."
+    elen reflexion "Elle est froide, mais propre."
 
     "Elle sourit, mais ses doigts triturent la manche de sa veste."
 
@@ -429,7 +429,7 @@ label elen_link_4:
 
     noam "Tu n'es pas obligée de forcer."
 
-    elen reflechit "Je ne force pas."
+    elen reflexion "Je ne force pas."
     elen inquiet "Je..."
     elen content "Ça ira."
 
@@ -441,7 +441,7 @@ label elen_link_4:
 
     noam "Et ?"
 
-    elen reflechit "Et mon ventre s'est noué d'un coup."
+    elen reflexion "Et mon ventre s'est noué d'un coup."
     elen triste "Comme si mon corps savait déjà ce que ma tête refusait."
 
     "Elle respire plus lentement, compte mentalement."
@@ -457,7 +457,7 @@ label elen_link_4:
     "Elle touche sa joue comme pour vérifier elle-même."
 
     elen inquiet "Je déteste quand ça se voit."
-    elen reflechit "D'habitude je tiens mieux."
+    elen reflexion "D'habitude je tiens mieux."
 
     noam "Tu peux juste dire que tu as peur."
 
@@ -469,7 +469,7 @@ label elen_link_4:
 
     noam "Tu n'as pas à éclairer tout le monde seule."
 
-    elen reflechit "Je sais."
+    elen reflexion "Je sais."
     elen inquiet "Mais j'ai appris à faire comme si."
 
     "Un bip plus aigu coupe le silence, puis revient au rythme normal."
@@ -482,7 +482,7 @@ label elen_link_4:
     noam "Et là, maintenant ?"
 
     elen content "Là..."
-    elen reflechit "Là, j'ai juste besoin de trente secondes."
+    elen reflexion "Là, j'ai juste besoin de trente secondes."
 
     "Elle ferme les yeux, inspire profondément, puis expire en quatre temps."
 
@@ -497,7 +497,7 @@ label elen_link_4:
 
     "Elle laisse échapper un petit rire qui casse à moitié."
 
-    elen reflechit "Je veux continuer à croire que ça ira."
+    elen reflexion "Je veux continuer à croire que ça ira."
     elen inquiet "Mais aujourd'hui, c'est... plus difficile."
 
     noam "On peut rester là sans parler."
@@ -528,7 +528,7 @@ label elen_link_5:
     "La salle de repos bourdonne doucement."
     "Elen est assise en tailleur sur le canapé, un gobelet vide entre les mains."
 
-    elen reflechit "Tu sais..."
+    elen reflexion "Tu sais..."
     elen content "Je crois que je suis vraiment naïve."
 
     noam "Tu dis ça sans honte ?"
@@ -539,7 +539,7 @@ label elen_link_5:
     "Elle sourit avant de reprendre, plus sérieuse."
 
     elen neutre "Les gens pensent que je ne vois pas les risques."
-    elen reflechit "En vrai, je les vois parfois très bien."
+    elen reflexion "En vrai, je les vois parfois très bien."
     elen triste "Je choisis juste autre chose."
 
     noam "Croire au meilleur."
@@ -549,7 +549,7 @@ label elen_link_5:
 
     "Elle fait tourner le gobelet entre ses doigts, lentement."
 
-    elen reflechit "Je préfère me tromper en ouvrant les bras"
+    elen reflexion "Je préfère me tromper en ouvrant les bras"
     elen desaccord "qu'avoir raison en fermant toutes les portes."
 
     noam "Et quand ça te casse ?"
@@ -567,20 +567,20 @@ label elen_link_5:
 
     noam "Tu n'as jamais voulu changer ?"
 
-    elen reflechit "Si."
+    elen reflexion "Si."
     elen triste "Quand ça faisait trop mal."
     elen content "Puis je me souvenais des moments où croire avait sauvé quelqu'un."
 
     noam "Tu portes ça comme une décision."
 
     elen neutre "C'en est une."
-    elen reflechit "L'innocence, chez moi, c'est pas l'ignorance."
+    elen reflexion "L'innocence, chez moi, c'est pas l'ignorance."
     elen content "C'est une direction."
 
     "Elle me regarde droit dans les yeux, calme et stable."
 
     elen joie "Je veux rester lumineuse."
-    elen reflechit "Pas pour nier l'ombre."
+    elen reflexion "Pas pour nier l'ombre."
     elen content "Pour que l'ombre n'ait pas le dernier mot."
 
     noam "Même si les autres te trouvent imprudente ?"
@@ -591,14 +591,14 @@ label elen_link_5:
     "Un rire discret lui échappe, puis elle hausse les épaules."
 
     elen content "Je me connais."
-    elen reflechit "Je vais encore faire confiance trop tôt."
+    elen reflexion "Je vais encore faire confiance trop tôt."
     elen taquin "Je vais encore défendre l'indéfendable au mauvais moment."
 
     noam "Et pourtant ?"
 
     elen joie "Et pourtant je vais continuer à essayer."
     elen content "Parce que parfois, ça marche."
-    elen reflechit "Et ces fois-là valent les cicatrices."
+    elen reflexion "Et ces fois-là valent les cicatrices."
 
     "Je hoche la tête sans trouver quoi ajouter."
 

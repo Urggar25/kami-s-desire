@@ -12,6 +12,11 @@ transform char_idle(xpos):
     xalign xpos yalign 1.0
     zoom 1.0 alpha 1.0
 
+transform char_group_fade_in(xpos):
+    xalign xpos yalign 1.0
+    zoom 1.0 alpha 0.0
+    linear 0.35 alpha 1.0
+
 init python:
 
     def showGroup(members, y=1.0, layer="master"):
@@ -25,12 +30,16 @@ init python:
             store.char_pos[tag] = x
             store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer)  # layer ajouté
             img = f"{tag} {expr}"
-            renpy.show(img, tag=tag, at_list=[char_idle(x)], layer=layer)
+            renpy.show(img, tag=tag, at_list=[char_group_fade_in(x)], layer=layer)
 
     def hideGroup():
         """Cache tous les personnages du groupe actuel"""
-        for tag in store.group_members:
-            renpy.hide(tag)
+        members = list(store.group_members)
+        for tag in members:
+            state = store.char_state.get(tag, {})
+            renpy.hide(tag, layer=state.get("layer", "master"))
+        if members:
+            renpy.with_statement(Dissolve(0.35))
         store.group_members = []
 
     def on_speaking(event, interact, **kwargs):

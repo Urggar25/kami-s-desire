@@ -66,6 +66,7 @@ image noam taquin              = im.FactorScale("images/character/noam/taquin.pn
 image noam triste              = im.FactorScale("images/character/noam/triste.png", 0.60)
 image noam vide              = im.FactorScale("images/character/vide.png", 0.60)
 image noam fatigue              = im.FactorScale("images/character/noam/fatigue.png", 0.60)
+image noam faible              = im.FactorScale("images/character/noam/fatigue.png", 0.60)
 
 # ======================
 # LYSA
@@ -183,7 +184,7 @@ image elen inquiet              = im.FactorScale("images/character/elen/inquiet.
 image elen joie                 = im.FactorScale("images/character/elen/joie.png", 0.60)
 image elen neutre               = im.FactorScale("images/character/elen/neutre.png", 0.60)
 image elen peur                 = im.FactorScale("images/character/elen/peur.png", 0.60)
-image elen reflechit            = im.FactorScale("images/character/elen/reflechit.png", 0.60)
+image elen reflexion            = im.FactorScale("images/character/elen/reflechit.png", 0.60)
 image elen rire                 = im.FactorScale("images/character/elen/rire.png", 0.60)
 image elen surpris              = im.FactorScale("images/character/elen/surpris.png", 0.60)
 image elen taquin               = im.FactorScale("images/character/elen/taquin.png", 0.60)
@@ -275,7 +276,7 @@ image sael mefiant              = im.FactorScale("images/character/sael/mefiant.
 image sael neutre               = im.FactorScale("images/character/sael/neutre.png", 0.60)
 image sael peur                 = im.FactorScale("images/character/sael/peur.png", 0.60)
 image sael raison               = im.FactorScale("images/character/sael/raison.png", 0.60)
-image sael reflechit            = im.FactorScale("images/character/sael/reflechit.png", 0.60)
+image sael reflexion            = im.FactorScale("images/character/sael/reflechit.png", 0.60)
 image sael rire                 = im.FactorScale("images/character/sael/rire.png", 0.60)
 image sael sourire              = im.FactorScale("images/character/sael/sourire.png", 0.60)
 image sael surpris              = im.FactorScale("images/character/sael/surpris.png", 0.60)

@@ -557,7 +557,7 @@ label _5_1_CAFETERIA_MATIN:
     ryn "Comme s'ils allaient en avoir ..."
 
     elen "Kami a dit que les marchés fonctionnaient."
-    elen reflechit "Ça va prendre un peu de temps, mais ça va se mettre en route comme il faut."
+    elen reflexion "Ça va prendre un peu de temps, mais ça va se mettre en route comme il faut."
 
     ryn "Les marchés fonctionnent pour ceux qui ont un truc à vendre."
     ryn blase "Pour les autres, c'est juste une façon plus chic de crever debout."

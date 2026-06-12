@@ -1344,7 +1344,7 @@ label _3_CAFETERIA_DEBAT:
     "Elle respire."
 
     hide elen
-    $ showP("elen", "reflechit", 0.22)
+    $ showP("elen", "reflexion", 0.22)
 
     elen "Ok."
     elen "Je t’entends."

@@ -27,8 +27,8 @@ translate english elen_link_1_2def8385:
 # game/scenario/character/elen.rpy:52
 translate english elen_link_1_0ca9972c:
 
-    # elen reflechit "Le trait dans le métal."
-    elen reflechit "The line in the metal."
+    # elen reflexion "Le trait dans le métal."
+    elen reflexion "The line in the metal."
 
 # game/scenario/character/elen.rpy:53
 translate english elen_link_1_ee5b219a:
@@ -135,8 +135,8 @@ translate english elen_link_1_b71b2125:
 # game/scenario/character/elen.rpy:82
 translate english elen_link_1_ada81379:
 
-    # elen reflechit "Attends, c'est encore mieux ici."
-    elen reflechit "Wait—it's even better over here."
+    # elen reflexion "Attends, c'est encore mieux ici."
+    elen reflexion "Wait—it's even better over here."
 
 # game/scenario/character/elen.rpy:84
 translate english elen_link_1_36d90ae4:
@@ -231,8 +231,8 @@ translate english elen_link_1_936797c4:
 # game/scenario/character/elen.rpy:108
 translate english elen_link_1_797fb61e:
 
-    # elen reflechit "Écoute ça aussi."
-    elen reflechit "Listen to that too."
+    # elen reflexion "Écoute ça aussi."
+    elen reflexion "Listen to that too."
 
 # game/scenario/character/elen.rpy:109
 translate english elen_link_1_605fe7da:
@@ -297,8 +297,8 @@ translate english elen_link_1_d1aa7e30:
 # game/scenario/character/elen.rpy:126
 translate english elen_link_1_db7cb3cb:
 
-    # elen reflechit "Celui-là, c'est... Fil d'Argent."
-    elen reflechit "This one is… Silver Thread."
+    # elen reflexion "Celui-là, c'est... Fil d'Argent."
+    elen reflexion "This one is… Silver Thread."
 
 # game/scenario/character/elen.rpy:128
 translate english elen_link_1_48dad171:
@@ -405,8 +405,8 @@ translate english elen_link_2_e76b23d3:
 # game/scenario/character/elen.rpy:169
 translate english elen_link_2_93a1ebe0:
 
-    # elen reflechit "Oui."
-    elen reflechit "Yeah."
+    # elen reflexion "Oui."
+    elen reflexion "Yeah."
 
 # game/scenario/character/elen.rpy:170
 translate english elen_link_2_146a91ba:
@@ -447,8 +447,8 @@ translate english elen_link_2_ef2629dc:
 # game/scenario/character/elen.rpy:182
 translate english elen_link_2_70b75fa9:
 
-    # elen reflechit "Je crois aux gens coincés dans un mauvais moment."
-    elen reflechit "I believe in people stuck in a bad moment."
+    # elen reflexion "Je crois aux gens coincés dans un mauvais moment."
+    elen reflexion "I believe in people stuck in a bad moment."
 
 # game/scenario/character/elen.rpy:184
 translate english elen_link_2_d5b8a0c9:
@@ -483,8 +483,8 @@ translate english elen_link_2_bafa80d8:
 # game/scenario/character/elen.rpy:192
 translate english elen_link_2_45297938:
 
-    # elen reflechit "Je dis pas que tout va bien."
-    elen reflechit "I’m not saying everything’s fine."
+    # elen reflexion "Je dis pas que tout va bien."
+    elen reflexion "I’m not saying everything’s fine."
 
 # game/scenario/character/elen.rpy:193
 translate english elen_link_2_a443abbf:
@@ -525,8 +525,8 @@ translate english elen_link_2_e20bfe6e:
 # game/scenario/character/elen.rpy:203
 translate english elen_link_2_1b0e3b04:
 
-    # elen reflechit "Alors je me trompe en essayant de réparer."
-    elen reflechit "Then I’m wrong while trying to fix things."
+    # elen reflexion "Alors je me trompe en essayant de réparer."
+    elen reflexion "Then I’m wrong while trying to fix things."
 
 # game/scenario/character/elen.rpy:204
 translate english elen_link_2_b83d6bca:
@@ -543,8 +543,8 @@ translate english elen_link_2_8bf1989f:
 # game/scenario/character/elen.rpy:208
 translate english elen_link_2_9e3ffd3d:
 
-    # elen reflechit "On critique plus facilement quelqu'un quand il n'est pas là."
-    elen reflechit "It’s easier to criticize someone when they’re not here."
+    # elen reflexion "On critique plus facilement quelqu'un quand il n'est pas là."
+    elen reflexion "It’s easier to criticize someone when they’re not here."
 
 # game/scenario/character/elen.rpy:209
 translate english elen_link_2_3515ab07:
@@ -573,8 +573,8 @@ translate english elen_link_2_3e4fbe1c:
 # game/scenario/character/elen.rpy:215
 translate english elen_link_2_b8cc1b11:
 
-    # elen reflechit "Pour lui demander ce qui va pas, vraiment."
-    elen reflechit "To ask him what’s wrong—really."
+    # elen reflexion "Pour lui demander ce qui va pas, vraiment."
+    elen reflexion "To ask him what’s wrong—really."
 
 # game/scenario/character/elen.rpy:217
 translate english elen_link_2_3fed8f5c:
@@ -609,8 +609,8 @@ translate english elen_link_2_60b9c2bd:
 # game/scenario/character/elen.rpy:225
 translate english elen_link_2_d5255bf7:
 
-    # elen reflechit "Je lui cherche une porte de sortie."
-    elen reflechit "I’m looking for an exit for him."
+    # elen reflexion "Je lui cherche une porte de sortie."
+    elen reflexion "I’m looking for an exit for him."
 
 # game/scenario/character/elen.rpy:226
 translate english elen_link_2_c83ff500:
@@ -657,8 +657,8 @@ translate english elen_link_2_b242c271:
 # game/scenario/character/elen.rpy:237
 translate english elen_link_2_b3120341:
 
-    # elen reflechit "Là, je frappe très fort à la porte."
-    elen reflechit "Then I knock very hard."
+    # elen reflexion "Là, je frappe très fort à la porte."
+    elen reflexion "Then I knock very hard."
 
 # game/scenario/character/elen.rpy:239
 translate english elen_link_2_15f7a62b:
@@ -705,8 +705,8 @@ translate english elen_link_2_c87bb5d6:
 # game/scenario/character/elen.rpy:251
 translate english elen_link_2_20bfcb5a:
 
-    # elen reflechit "Je crois qu'il y a des gens qui ont arrêté d'espérer."
-    elen reflechit "I think there are people who stopped hoping."
+    # elen reflexion "Je crois qu'il y a des gens qui ont arrêté d'espérer."
+    elen reflexion "I think there are people who stopped hoping."
 
 # game/scenario/character/elen.rpy:252
 translate english elen_link_2_4e8c0e2a:
@@ -735,8 +735,8 @@ translate english elen_link_2_07b25ab7:
 # game/scenario/character/elen.rpy:260
 translate english elen_link_2_c4902373:
 
-    # elen reflechit "Parfois ça suffit à faire reculer la nuit de quelqu'un."
-    elen reflechit "Sometimes that’s enough to push back someone’s night."
+    # elen reflexion "Parfois ça suffit à faire reculer la nuit de quelqu'un."
+    elen reflexion "Sometimes that’s enough to push back someone’s night."
 
 # game/scenario/character/elen.rpy:262
 translate english elen_link_2_569a4765:
@@ -807,8 +807,8 @@ translate english elen_link_3_671b8d9d:
 # game/scenario/character/elen.rpy:292
 translate english elen_link_3_93a1ebe0:
 
-    # elen reflechit "Oui."
-    elen reflechit "Yeah."
+    # elen reflexion "Oui."
+    elen reflexion "Yeah."
 
 # game/scenario/character/elen.rpy:293
 translate english elen_link_3_61b330b4:
@@ -831,8 +831,8 @@ translate english elen_link_3_aa19261a:
 # game/scenario/character/elen.rpy:298
 translate english elen_link_3_53014565:
 
-    # elen reflechit "je ne laisserai jamais personne entrer."
-    elen reflechit "I’ll never let anyone in."
+    # elen reflexion "je ne laisserai jamais personne entrer."
+    elen reflexion "I’ll never let anyone in."
 
 # game/scenario/character/elen.rpy:300
 translate english elen_link_3_9dac8ee3:
@@ -867,8 +867,8 @@ translate english elen_link_3_e051768b:
 # game/scenario/character/elen.rpy:309
 translate english elen_link_3_703898e6:
 
-    # elen reflechit "..."
-    elen reflechit "…"
+    # elen reflexion "..."
+    elen reflexion "…"
 
 # game/scenario/character/elen.rpy:310
 translate english elen_link_3_03150d3c:
@@ -951,8 +951,8 @@ translate english elen_link_3_618ee4e3:
 # game/scenario/character/elen.rpy:334
 translate english elen_link_3_2764064e:
 
-    # elen reflechit "Je me dis que la confiance, c'est un pari."
-    elen reflechit "I tell myself trust is a bet."
+    # elen reflexion "Je me dis que la confiance, c'est un pari."
+    elen reflexion "I tell myself trust is a bet."
 
 # game/scenario/character/elen.rpy:335
 translate english elen_link_3_2b36ad62:
@@ -999,8 +999,8 @@ translate english elen_link_3_06e71761:
 # game/scenario/character/elen.rpy:347
 translate english elen_link_3_fb51b6f9:
 
-    # elen reflechit "Parce que la méfiance totale coûte encore plus cher."
-    elen reflechit "Because total mistrust costs even more."
+    # elen reflexion "Parce que la méfiance totale coûte encore plus cher."
+    elen reflexion "Because total mistrust costs even more."
 
 # game/scenario/character/elen.rpy:348
 translate english elen_link_3_314441c1:
@@ -1071,8 +1071,8 @@ translate english elen_link_3_db81f328:
 # game/scenario/character/elen.rpy:365
 translate english elen_link_3_a5877232:
 
-    # elen reflechit "Pour prévenir que j'ai peur aussi."
-    elen reflechit "To warn that I’m scared too."
+    # elen reflexion "Pour prévenir que j'ai peur aussi."
+    elen reflexion "To warn that I’m scared too."
 
 # game/scenario/character/elen.rpy:367
 translate english elen_link_3_30e2d462:
@@ -1119,8 +1119,8 @@ translate english elen_link_3_33a37f88:
 # game/scenario/character/elen.rpy:381
 translate english elen_link_3_79d73cc2:
 
-    # elen reflechit "On verra plus tard pour les histoires compliquées."
-    elen reflechit "We’ll deal with the complicated stories later."
+    # elen reflexion "On verra plus tard pour les histoires compliquées."
+    elen reflexion "We’ll deal with the complicated stories later."
 
 # game/scenario/character/elen.rpy:382
 translate english elen_link_3_977be113:
@@ -1179,8 +1179,8 @@ translate english elen_link_4_74a3e1ed:
 # game/scenario/character/elen.rpy:410
 translate english elen_link_4_d06fc28a:
 
-    # elen reflechit "Elle est froide, mais propre."
-    elen reflechit "It’s cold, but clean."
+    # elen reflexion "Elle est froide, mais propre."
+    elen reflexion "It’s cold, but clean."
 
 # game/scenario/character/elen.rpy:412
 translate english elen_link_4_cdf76b6f:
@@ -1221,8 +1221,8 @@ translate english elen_link_4_0b9a24c3:
 # game/scenario/character/elen.rpy:423
 translate english elen_link_4_4bf094cf:
 
-    # elen reflechit "Je ne force pas."
-    elen reflechit "I’m not."
+    # elen reflexion "Je ne force pas."
+    elen reflexion "I’m not."
 
 # game/scenario/character/elen.rpy:424
 translate english elen_link_4_df4a1945:
@@ -1269,8 +1269,8 @@ translate english elen_link_4_fe3e6487:
 # game/scenario/character/elen.rpy:435
 translate english elen_link_4_ea6db469:
 
-    # elen reflechit "Et mon ventre s'est noué d'un coup."
-    elen reflechit "My stomach knotted instantly."
+    # elen reflexion "Et mon ventre s'est noué d'un coup."
+    elen reflexion "My stomach knotted instantly."
 
 # game/scenario/character/elen.rpy:436
 translate english elen_link_4_881733bd:
@@ -1329,8 +1329,8 @@ translate english elen_link_4_f5d18694:
 # game/scenario/character/elen.rpy:451
 translate english elen_link_4_0fa54c50:
 
-    # elen reflechit "D'habitude je tiens mieux."
-    elen reflechit "Usually I hold it together better."
+    # elen reflexion "D'habitude je tiens mieux."
+    elen reflexion "Usually I hold it together better."
 
 # game/scenario/character/elen.rpy:453
 translate english elen_link_4_025de3db:
@@ -1371,8 +1371,8 @@ translate english elen_link_4_4c685768:
 # game/scenario/character/elen.rpy:463
 translate english elen_link_4_1caba133:
 
-    # elen reflechit "Je sais."
-    elen reflechit "I know."
+    # elen reflexion "Je sais."
+    elen reflexion "I know."
 
 # game/scenario/character/elen.rpy:464
 translate english elen_link_4_c2fea20f:
@@ -1413,8 +1413,8 @@ translate english elen_link_4_12783e7e:
 # game/scenario/character/elen.rpy:476
 translate english elen_link_4_92e90aa3:
 
-    # elen reflechit "Là, j'ai juste besoin de trente secondes."
-    elen reflechit "I just need thirty seconds."
+    # elen reflexion "Là, j'ai juste besoin de trente secondes."
+    elen reflexion "I just need thirty seconds."
 
 # game/scenario/character/elen.rpy:478
 translate english elen_link_4_417322c1:
@@ -1467,8 +1467,8 @@ translate english elen_link_4_53c453fe:
 # game/scenario/character/elen.rpy:491
 translate english elen_link_4_b6221cf5:
 
-    # elen reflechit "Je veux continuer à croire que ça ira."
-    elen reflechit "I want to keep believing it’ll be fine."
+    # elen reflexion "Je veux continuer à croire que ça ira."
+    elen reflexion "I want to keep believing it’ll be fine."
 
 # game/scenario/character/elen.rpy:492
 translate english elen_link_4_809e40a5:
@@ -1527,8 +1527,8 @@ translate english elen_link_5_f777e8f8:
 # game/scenario/character/elen.rpy:519
 translate english elen_link_5_7fe1b2c6:
 
-    # elen reflechit "Tu sais..."
-    elen reflechit "You know…"
+    # elen reflexion "Tu sais..."
+    elen reflexion "You know…"
 
 # game/scenario/character/elen.rpy:520
 translate english elen_link_5_fef2313b:
@@ -1569,8 +1569,8 @@ translate english elen_link_5_137b0031:
 # game/scenario/character/elen.rpy:530
 translate english elen_link_5_b15c39e9:
 
-    # elen reflechit "En vrai, je les vois parfois très bien."
-    elen reflechit "Actually, sometimes I see them very clearly."
+    # elen reflexion "En vrai, je les vois parfois très bien."
+    elen reflexion "Actually, sometimes I see them very clearly."
 
 # game/scenario/character/elen.rpy:531
 translate english elen_link_5_7884604e:
@@ -1605,8 +1605,8 @@ translate english elen_link_5_889a84bf:
 # game/scenario/character/elen.rpy:540
 translate english elen_link_5_2c4b8b0c:
 
-    # elen reflechit "Je préfère me tromper en ouvrant les bras"
-    elen reflechit "I’d rather be wrong with open arms"
+    # elen reflexion "Je préfère me tromper en ouvrant les bras"
+    elen reflexion "I’d rather be wrong with open arms"
 
 # game/scenario/character/elen.rpy:541
 translate english elen_link_5_60270adb:
@@ -1665,8 +1665,8 @@ translate english elen_link_5_0962418a:
 # game/scenario/character/elen.rpy:558
 translate english elen_link_5_b5d1a00f:
 
-    # elen reflechit "Si."
-    elen reflechit "I did."
+    # elen reflexion "Si."
+    elen reflexion "I did."
 
 # game/scenario/character/elen.rpy:559
 translate english elen_link_5_0d147892:
@@ -1695,8 +1695,8 @@ translate english elen_link_5_6363671e:
 # game/scenario/character/elen.rpy:565
 translate english elen_link_5_192411fa:
 
-    # elen reflechit "L'innocence, chez moi, c'est pas l'ignorance."
-    elen reflechit "Innocence, for me, isn’t ignorance."
+    # elen reflexion "L'innocence, chez moi, c'est pas l'ignorance."
+    elen reflexion "Innocence, for me, isn’t ignorance."
 
 # game/scenario/character/elen.rpy:566
 translate english elen_link_5_d4dc0962:
@@ -1719,8 +1719,8 @@ translate english elen_link_5_1bb8c23a:
 # game/scenario/character/elen.rpy:571
 translate english elen_link_5_ac4ad73c:
 
-    # elen reflechit "Pas pour nier l'ombre."
-    elen reflechit "Not to deny the shadow."
+    # elen reflexion "Pas pour nier l'ombre."
+    elen reflexion "Not to deny the shadow."
 
 # game/scenario/character/elen.rpy:572
 translate english elen_link_5_4a291dea:
@@ -1761,8 +1761,8 @@ translate english elen_link_5_622cf489:
 # game/scenario/character/elen.rpy:582
 translate english elen_link_5_36d494fe:
 
-    # elen reflechit "Je vais encore faire confiance trop tôt."
-    elen reflechit "I’ll trust too early again."
+    # elen reflexion "Je vais encore faire confiance trop tôt."
+    elen reflexion "I’ll trust too early again."
 
 # game/scenario/character/elen.rpy:583
 translate english elen_link_5_c98d0c3d:
@@ -1791,8 +1791,8 @@ translate english elen_link_5_8e4f3912:
 # game/scenario/character/elen.rpy:589
 translate english elen_link_5_0949a1f0:
 
-    # elen reflechit "Et ces fois-là valent les cicatrices."
-    elen reflechit "And those times are worth the scars."
+    # elen reflexion "Et ces fois-là valent les cicatrices."
+    elen reflexion "And those times are worth the scars."
 
 # game/scenario/character/elen.rpy:591
 translate english elen_link_5_286ff997:

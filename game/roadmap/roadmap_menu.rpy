@@ -341,7 +341,7 @@ init -2 python:
         {
             "id": "day_10_0_1_1",
             "title": "Jour 10 — Matinée lourde",
-            "short": "J10-1",
+            "short": "J10",
             "label": "_10_0_1_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
@@ -351,6 +351,66 @@ init -2 python:
             "choice": "Rejoindre la cafétéria et empêcher la discussion de rompre autour de la table.",
             "consequence": "La colère contre Kami devient un risque interne pour le groupe.",
             "requires": ["day_9_kami_return"],
+            "teleportable": True,
+        },
+        {
+            "id": "day_11_0_1_1",
+            "title": "Jour 11 — Malaise",
+            "short": "J11",
+            "label": "_11_0_1_1_REVEIL_CHAMBRE",
+            "category": "day",
+            "kind": "day",
+            "x": 6160,
+            "y": 530,
+            "summary": "Noam se réveille avec un mal de crâne inhabituel dans un Conclave trop chaud et trop silencieux. À la cafétéria, Elias annonce que la majorité des campements s'est dispersée, mais Ryn accuse Kami d'avoir piégé tout le monde.",
+            "choice": "Rejoindre la cafétéria et empêcher la discussion de rompre autour de la table.",
+            "consequence": "La colère contre Kami devient un risque interne pour le groupe.",
+            "requires": ["day_9_kami_return"],
+            "teleportable": True,
+        },
+        {
+            "id": "day_12_0_1_1",
+            "title": "Jour 12 — Intrusion",
+            "short": "J12",
+            "label": "_12_0_1_1_REVEIL_CHAMBRE",
+            "category": "day",
+            "kind": "day",
+            "x": 6540,
+            "y": 530,
+            "summary": "Noam se réveille en sursaut après un bruit dans sa chambre. La fouille transforme le doute en menace intime.",
+            "choice": "Fouiller la chambre malgré la peur de céder à la paranoïa.",
+            "consequence": "Le soupçon d'une intrusion récente s'ajoute à la méfiance envers le groupe.",
+            "requires": ["day_11_0_1_1"],
+            "teleportable": True,
+        },
+        {
+            "id": "day_13_0_1_1_0",
+            "title": "Jour 13 — Intrusion",
+            "short": "J13",
+            "label": "_13_0_1_1_0_REVEIL_CHAMBRE",
+            "category": "day",
+            "kind": "day",
+            "x": 6920,
+            "y": 530,
+            "summary": "Noam se réveille en sursaut alors que son brouilleur se fait démonter.",
+            "choice": "Fouiller la chambre malgré la peur de céder à la paranoïa.",
+            "consequence": "Le soupçon d'une intrusion récente s'ajoute à la méfiance envers le groupe.",
+            "requires": ["day_12_0_1_1"],
+            "teleportable": True,
+        },
+        {
+            "id": "day_14_0_1_1_0",
+            "title": "Jour 14 — Intrusion",
+            "short": "J14",
+            "label": "_14_0_1_1_0_REVEIL_CHAMBRE",
+            "category": "day",
+            "kind": "day",
+            "x": 7300,
+            "y": 530,
+            "summary": "Noam se réveille en sursaut alors que son brouilleur se fait démonter.",
+            "choice": "Fouiller la chambre malgré la peur de céder à la paranoïa.",
+            "consequence": "Le soupçon d'une intrusion récente s'ajoute à la méfiance envers le groupe.",
+            "requires": ["day_13_0_1_1_0"],
             "teleportable": True,
         },
         {
@@ -432,6 +492,16 @@ init -2 python:
     def roadmap_should_show(node):
         if node.get("dev_only") and not store.roadmap_dev_mode:
             return False
+        if node.get("kind") == "day" or node.get("category") == "day":
+            node_id = node["id"]
+            return (
+                store.roadmap_dev_mode
+                or node_id == store.roadmap_current_node
+                or node_id in store.roadmap_unlocked_nodes
+                or node_id in store.roadmap_discovered_nodes
+                or node_id in store.roadmap_completed_nodes
+                or roadmap_label_seen(node)
+            )
         return True
 
     def roadmap_status(node):
@@ -628,11 +698,12 @@ screen roadmap_menu(focus_node_id=None):
     default category_filter = roadmap_selected_category
     default map_zoom = 1.0
 
-    $ focus_id = focus_node_id or selected_node_id
-    $ selected_node = roadmap_node(selected_node_id)
     $ map_w, map_h = roadmap_map_size()
     $ z = map_zoom
     $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_should_show(node) and (category_filter == "all" or node.get("category") == category_filter)]
+    $ visible_node_ids = set([node["id"] for node in visible_nodes])
+    $ selected_node = roadmap_node(selected_node_id) if selected_node_id in visible_node_ids else None
+    $ focus_id = focus_node_id or (selected_node_id if selected_node_id in visible_node_ids else roadmap_latest_node_id())
 
     add "gui/roadmap/backgrounds/roadmap_bg_hologram.png"
     add Solid("#02071199")
@@ -714,7 +785,7 @@ screen roadmap_menu(focus_node_id=None):
 
                             for node in visible_nodes:
                                 for req in node.get("requires", []):
-                                    if req in ROADMAP_NODE_BY_ID:
+                                    if req in ROADMAP_NODE_BY_ID and req in visible_node_ids:
                                         $ source = ROADMAP_NODE_BY_ID[req]
                                         $ sx = int((source["x"] + 310) * z)
                                         $ sy = int((source["y"] + 59) * z)

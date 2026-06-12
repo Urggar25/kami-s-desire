@@ -575,7 +575,7 @@ label _5_0_CHERCHE_SAEL:
     $ showP("sael", "reflechit", 0.75)
 
     sael "Peut-être."
-    sael reflechit "Mais ça ne change pas ma réponse."
+    sael reflexion "Mais ça ne change pas ma réponse."
 
     $ showP("noam", "reflexion", 0.25)
 

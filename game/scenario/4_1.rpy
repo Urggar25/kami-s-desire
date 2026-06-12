@@ -522,7 +522,7 @@ label _4_1_APRES_CLASH_PRE_FETE:
 
     elen "Justement après !"
     elen "Si on reste tous à ruminer, on va finir par se détester."
-    elen reflechit "Nyra, tu peux aller chercher Mara et Sael ? Dis-leur que c’est juste pour boire un coup et se détendre."
+    elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Dis-leur que c’est juste pour boire un coup et se détendre."
 
     hide noam
     $ showP("nyra", "surpris", 0.12)  # gauche

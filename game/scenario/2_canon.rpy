@@ -1594,7 +1594,7 @@ label _2_CAFETERIA_SOIR:
     $ showP("elen", "taquin", 0.55)
 
     elen taquin "Orbite, c’était comment ?"
-    elen reflechit "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
+    elen reflexion "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
     elen content "Des gens qui dorment en flottant comme des méduses, des repas qui se baladent tout seuls… c’est complètement barré !"
 
     kael neutre "On flotte, oui."
