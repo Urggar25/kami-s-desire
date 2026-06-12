@@ -2062,16 +2062,8 @@ screen day2_argument_briefcase(arg_id):
     use vote_argument_briefcase(arg_id, arg, "day2_argument_card", "day2_briefcase_drop", day2_argument_drop)
 
 label day2_play_wakeup_trace:
-    while True:
-        call screen trace_qte(path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620)
-        if _return:
-            return True
-        $ j2_wakeup_trace_attempts += 1
-        if j2_wakeup_trace_attempts >= 2:
-            "Mes gestes finissent par trouver le rythme."
-            return False
-        "Je rate le mouvement et ma main retombe sur le drap."
-        "Je recommence plus lentement."
+    call trace_qte_run(mg_id="trace_day2_wakeup", title="RÉVEIL — JOUR 2", path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True)
+    return True
 
 label day2_collect_vote_argument(arg_id):
     call screen day2_argument_briefcase(arg_id)

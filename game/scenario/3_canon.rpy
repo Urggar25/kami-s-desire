@@ -239,29 +239,17 @@ screen day3_argument_briefcase(arg_id):
     use vote_argument_briefcase(arg_id, arg, "day3_argument_card", "day3_briefcase_drop", day3_vote_argument_drop)
 
 label day3_play_wakeup_trace:
-    while True:
-        call screen trace_qte(path_type="curve_right", time_limit=7.0, wait_time=0.8, tolerance=60, max_errors=4, anchor_x=930, anchor_y=640)
-        if _return:
-            return True
-        $ j3_wakeup_trace_attempts += 1
-        if j3_wakeup_trace_attempts >= 2:
-            "Mes gestes finissent par obéir."
-            return False
-        "Je retombe contre l'oreiller."
-        "Je recommence, plus lentement."
+    call trace_qte_run(mg_id="trace_day3_wakeup", title="RÉVEIL — JOUR 3", path_type="curve_right", time_limit=7.0, wait_time=0.8, tolerance=60, max_errors=4, anchor_x=930, anchor_y=640, required=True)
+    return True
 
 label day3_play_corridor_trace:
-    while True:
-        call screen trace_qte(path_type="arc", time_limit=5.0, wait_time=0.5, tolerance=58, max_errors=4, anchor_x=960, anchor_y=650)
-        if _return:
-            "Je prends le virage sans ralentir."
-            return True
-        $ j3_corridor_trace_attempts += 1
-        if j3_corridor_trace_attempts >= 2:
-            "Mon épaule tape contre le mur. Nyra ne ralentit même pas."
-            return False
-        "Je dérape sur le métal."
-        "Je reprends l'angle."
+    call trace_qte_run(mg_id="trace_day3_corridor", title="VIRAGE SERRÉ", path_type="arc", time_limit=5.0, wait_time=0.5, tolerance=58, max_errors=4, anchor_x=960, anchor_y=650, required=False)
+    if _return != "FAIL":
+        "Je prends le virage sans ralentir."
+        return True
+    else:
+        "Mon épaule tape contre le mur. Nyra ne ralentit même pas."
+        return False
 
 label day3_collect_vote_argument(arg_id):
     call screen day3_argument_briefcase(arg_id)
@@ -2273,14 +2261,13 @@ label _3_DEBAT1_PHASE1:
     hide noam
 
     hide screen day3_codex_logo
-    call FA_START_ANIM from _call_FA_START_ANIM
 
-    pause 1.0
-    $ debat_phase1_setup()
-    $ phase1_result = renpy.call_screen("debat_phase1_opening")
-    $ phase1_ok = phase1_result.get("success", False) if phase1_result else False
-    $ phase1_time_left = phase1_result.get("time_left", 0) if phase1_result else 0
-    $ phase1_kamyz_gain = debat_phase1_calculate_kamyz(phase1_time_left) if phase1_ok else 0
+    # Wrapper complet : intro animée, tutoriel 1ère fois, retry avec malus, résultats avec rang
+    call debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY")
+
+    $ phase1_ok = debat_phase1_last_result.get("success", False)
+    $ phase1_time_left = debat_phase1_last_result.get("time_left", 0)
+    $ phase1_kamyz_gain = debat_phase1_last_result.get("kamyz", 0)
     if phase1_ok:
         $ player_kamyz += phase1_kamyz_gain
         $ renpy.notify("+ %d Kamyz" % phase1_kamyz_gain)
@@ -3352,6 +3339,8 @@ label _3_VOTE_POUR:
 
     pause 1.2
 
+    $ interject("ADOPTÉ", color="#5DFF9A")
+
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with vpunch
     kami "VERT !"
@@ -3443,6 +3432,8 @@ label _3_VOTE_CONTRE:
     play music "music/bgm_system_override.mp3" fadein 2.0  # ambiance sombre, pesante
 
     pause 1.2
+
+    $ interject("REJETÉ", color="#FF4D6D")
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve

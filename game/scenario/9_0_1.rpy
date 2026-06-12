@@ -1538,6 +1538,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
     kami "Unanimité atteinte."
+    $ interject("ADOPTÉ", color="#5DFF9A")
     kami "Amendement adopté."
 
     pause 0.4
@@ -1651,6 +1652,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
 
     kami "Résultat du vote."
     kami "Absence d'unanimité."
+    $ interject("REJETÉ", color="#FF4D6D")
     kami "Amendement rejeté."
 
     pause 0.3

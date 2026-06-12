@@ -166,23 +166,61 @@ screen blink_once(seq=0, close=0.11, hold=0.04, open=0.16):
 # -----------------------------------
 # Transition de jour :
 
+transform day_card_slam:
+    alpha 0.0
+    zoom 1.6
+    easein 0.30 alpha 1.0 zoom 1.0
+    easeout 0.08 zoom 1.05
+    easein 0.10 zoom 1.0
+
+transform day_card_line_grow:
+    xzoom 0.0
+    pause 0.35
+    easeout 0.45 xzoom 1.0
+
+screen day_transition_card(day_label):
+    zorder 100
+
+    add Solid("#000")
+
+    vbox:
+        align (0.5, 0.5)
+        spacing 16
+
+        text "— CONCLAVE —" at day_card_line_grow:
+            xalign 0.5
+            size 26
+            color "#5cd3ff"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            kerning 10
+
+        text "Day [day_label]" at day_card_slam:
+            xalign 0.5
+            size 110
+            color "#FFFFFF"
+            font "fonts/day_font.ttf"
+            outlines [(4, "#0a1626", 0, 0)]
+
+        add Solid("#5cd3ff", xysize=(600, 2)) xalign 0.5 at day_card_line_grow
+
 label end_day(next_day):
 
     stop music fadeout 1.0
     scene black with fade
 
-    play sound "sfx/day_transition.wav"
+    play sound "audio/sfx_day_transition.wav"
 
-    $ _day_transition_text = "Day %s" % next_day
-    show expression Text(_day_transition_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as day_transition_title at truecenter
-    pause 5.0
-    hide day_transition_title
+    $ renpy.show_screen("day_transition_card", day_label=str(next_day))
+    $ renpy.pause(4.0)
+    $ renpy.hide_screen("day_transition_card")
+    with Dissolve(0.4)
 
     $ current_day = day_number(next_day)
     return
 
 label show_custom_title(title_text="Temps libre"):
 
+    play sound "audio/sfx_kami_alert.wav"
     scene black
     show expression Text(title_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as custom_title_card at truecenter
     pause 5.0

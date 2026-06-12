@@ -111,13 +111,19 @@ init python:
             store.j601_fracture_success_count += 1
             store.j601_fracture_display_line = store.j601_fracture_line
             store.j601_fracture_warning = "FRACTURE CAPTÉE"
-            renpy.play("audio/sfx_beep.mp3", channel="sound")
+            if renpy.loadable("audio/sfx_qte_hit.wav"):
+                renpy.play("audio/sfx_qte_hit.wav", channel="sound")
+            else:
+                renpy.play("audio/sfx_beep.mp3", channel="sound")
         else:
             store.j601_fracture_fail_count += 1
             store.j601_fracture_display_line = j601_fracture_glitch_text(store.j601_fracture_line)
             store.j601_fracture_warning = "MAUVAISE TOUCHE"
             store.j601_fracture_flash = 0.25
-            renpy.play("audio/sfx_gresillement.mp3", channel="sound")
+            if renpy.loadable("audio/sfx_qte_miss.wav"):
+                renpy.play("audio/sfx_qte_miss.wav", channel="sound")
+            else:
+                renpy.play("audio/sfx_gresillement.mp3", channel="sound")
 
         store.j601_fracture_prompt_active = False
         store.j601_fracture_step += 1

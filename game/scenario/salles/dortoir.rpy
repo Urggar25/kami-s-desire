@@ -161,7 +161,7 @@ label CHAMBRE_BROUILLEUR:
 label chambre_brouilleur_trace:
     while True:
         call screen trace_qte(path_type="s_curve", time_limit=5.5, wait_time=0.6, tolerance=60, max_errors=4, anchor_x=1075, anchor_y=565)
-        if _return:
+        if _return["success"]:
             return
         think "Je rate l'acces au boitier."
         think "Je reprends plus lentement."

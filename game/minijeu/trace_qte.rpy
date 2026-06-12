@@ -1,25 +1,23 @@
 # --------------------------------------------------------------------------------------------
-# TRACE QTE — Mini-jeu QTE générique (Attendre / Maintenir / Glisser)
+# TRACE QTE v2 — Mini-jeu QTE générique (Attendre / Maintenir / Glisser)
 # Compatible Ren'Py 8.3.7
 #
-# Usage :
-#   call screen trace_qte(
-#       path_type="vertical_up",
-#       time_limit=6.0,
-#       wait_time=1.2,
-#       tolerance=45,
-#       max_errors=3,
-#       success_label="LABEL_SUCCESS",
-#       fail_label="LABEL_FAIL"
-#   )
+# Usage recommandé (gère tutoriel, retry avec malus, résultats avec rang) :
+#   call trace_qte_run(
+#       mg_id="trace_reveil", title="SYNCHRONISATION NEURALE",
+#       path_type="curve_right", time_limit=6.0, wait_time=1.2,
+#       tolerance=55, max_errors=4, anchor_x=960, anchor_y=620,
+#       required=True, show_results=True)
+#   → _return = rang ("S".."D") si réussi, "FAIL" si abandon (required=False)
 #
-# Le screen NE pose PAS d'image de fond : il pose juste un voile semi-transparent
-# par-dessus la scène actuelle (l'image courante reste visible).
+# Usage bas niveau (juste le screen, retourne un dict) :
+#   call screen trace_qte(...)
+#   → _return = {"success": bool, "elapsed": float, "avg_dev": float, "stray_ticks": int}
 # --------------------------------------------------------------------------------------------
 
 default tq_phase = "wait"            # "wait" / "hold" / "trace" / "done"
 default tq_result = None             # "success" / "fail" / None
-default tq_progress = 0.0            # 0.0 -> 1.0
+default tq_progress = 0.0
 default tq_errors = 0
 default tq_stray = False
 default tq_mouse_x = 960
@@ -32,8 +30,11 @@ default tq_path_points = []
 default tq_path_length = 1.0
 default tq_anchor_x = 960
 default tq_anchor_y = 540
-default tq_success_label = None
-default tq_fail_label = None
+default tq_dev_sum = 0.0
+default tq_dev_samples = 0
+default tq_stray_ticks = 0
+default tq_time_limit = 6.0
+default tq_tolerance = 45
 
 init -2 python:
     import math
@@ -129,7 +130,7 @@ init -2 python:
     # ------------------------------------------------------------------
     # State management
     # ------------------------------------------------------------------
-    def tq_reset(path_type, anchor_x, anchor_y, wait_time, success_label, fail_label):
+    def tq_reset(path_type, anchor_x, anchor_y, wait_time, time_limit, tolerance):
         store.tq_phase = "wait"
         store.tq_result = None
         store.tq_progress = 0.0
@@ -143,8 +144,11 @@ init -2 python:
         store.tq_anchor_y = anchor_y
         store.tq_path_points = tq_build_path(path_type, anchor_x, anchor_y)
         store.tq_path_length = tq_path_total_length(store.tq_path_points)
-        store.tq_success_label = success_label
-        store.tq_fail_label = fail_label
+        store.tq_dev_sum = 0.0
+        store.tq_dev_samples = 0
+        store.tq_stray_ticks = 0
+        store.tq_time_limit = float(time_limit)
+        store.tq_tolerance = float(tolerance)
 
     def tq_on_press(start_radius):
         if store.tq_phase == "done":
@@ -155,6 +159,7 @@ init -2 python:
         if store.tq_phase == "wait":
             store.tq_phase = "done"
             store.tq_result = "fail"
+            renpy.play("audio/sfx_drop.mp3", channel="sound")
             return
         if store.tq_phase == "hold":
             start_pt = store.tq_path_points[0]
@@ -164,15 +169,18 @@ init -2 python:
                 store.tq_errors = 0
                 store.tq_stray = False
                 store.tq_elapsed = 0.0
+                renpy.play("audio/sfx_beep.mp3", channel="sound")
             else:
                 store.tq_phase = "done"
                 store.tq_result = "fail"
+                renpy.play("audio/sfx_drop.mp3", channel="sound")
 
     def tq_on_release():
         store.tq_pressed = False
         if store.tq_phase == "trace" and store.tq_progress < 0.985:
             store.tq_phase = "done"
             store.tq_result = "fail"
+            renpy.play("audio/sfx_drop.mp3", channel="sound")
 
     def tq_tick(time_limit, tolerance, max_errors):
         if store.tq_phase == "done":
@@ -191,7 +199,6 @@ init -2 python:
             return
 
         if store.tq_phase == "trace":
-            # vérifie bouton toujours pressé
             if _tq_pygame is not None and not _tq_pygame.mouse.get_pressed()[0]:
                 if store.tq_progress < 0.985:
                     store.tq_phase = "done"
@@ -207,6 +214,9 @@ init -2 python:
             points = store.tq_path_points
             d, length_along = tq_closest_progress(points, pos)
 
+            store.tq_dev_sum += d
+            store.tq_dev_samples += 1
+
             new_progress = length_along / store.tq_path_length
             if new_progress > store.tq_progress:
                 store.tq_progress = min(1.0, new_progress)
@@ -214,7 +224,7 @@ init -2 python:
             if d > tolerance:
                 store.tq_stray = True
                 store.tq_errors += 1
-                # max_errors compté en "ticks" hors zone (~30 ticks/s)
+                store.tq_stray_ticks += 1
                 if store.tq_errors >= max_errors * 14:
                     store.tq_phase = "done"
                     store.tq_result = "fail"
@@ -225,9 +235,27 @@ init -2 python:
             if store.tq_progress >= 0.985:
                 store.tq_phase = "done"
                 store.tq_result = "success"
+                renpy.play("audio/sfx_clap.mp3", channel="sound")
+
+    def tq_collect_stats():
+        avg_dev = (store.tq_dev_sum / store.tq_dev_samples) if store.tq_dev_samples else 0.0
+        return {
+            "success": store.tq_result == "success",
+            "elapsed": store.tq_elapsed,
+            "avg_dev": avg_dev,
+            "stray_ticks": store.tq_stray_ticks,
+        }
+
+    def tq_compute_score(stats, time_limit, tolerance):
+        """Score sur 1000 : 600 précision + 400 vitesse."""
+        if not stats["success"]:
+            return 0
+        precision = max(0.0, 1.0 - (stats["avg_dev"] / float(tolerance)))
+        speed = max(0.0, 1.0 - (stats["elapsed"] / float(time_limit)))
+        return int(round(600 * precision + 400 * min(1.0, speed * 1.6)))
 
     # ------------------------------------------------------------------
-    # Displayable custom : dessine cercles + tracé propres (anti-alias)
+    # Displayable custom : cercles + tracé
     # ------------------------------------------------------------------
     class TraceQTEDrawable(renpy.Displayable):
         def __init__(self, **kwargs):
@@ -253,17 +281,13 @@ init -2 python:
                 shadow_color = "#0a1016cc"
                 inner_color = "#121c26eb"
 
-                # ombre arrière large
                 for i in range(1, len(pts)):
                     c.line(shadow_color, pts[i - 1], pts[i], 22)
-                # contour
                 for i in range(1, len(pts)):
                     c.line(base_color, pts[i - 1], pts[i], 14)
-                # remplissage intérieur (vide)
                 for i in range(1, len(pts)):
                     c.line(inner_color, pts[i - 1], pts[i], 8)
 
-                # portion accomplie
                 total_len = max(1.0, store.tq_path_length)
                 target = progress * total_len
                 cum = 0.0
@@ -283,7 +307,6 @@ init -2 python:
                         break
                     cum += seg
 
-                # point d'arrivée
                 ex, ey = pts[-1]
                 c.circle("#dceaf5dd", (ex, ey), 18, 3)
 
@@ -298,7 +321,6 @@ init -2 python:
             else:
                 c.circle("#ffffffa0", (sx, sy), 88, 2)
 
-            # ---- Disque intérieur ----
             if phase == "trace":
                 if store.tq_stray:
                     inner_fill = "#d25a5ac8"
@@ -309,7 +331,6 @@ init -2 python:
             c.circle(inner_fill, (sx, sy), 46, 0)
             c.circle("#ffffffdc", (sx, sy), 46, 2)
 
-            # ---- Curseur actif ----
             if phase == "trace":
                 mx = int(store.tq_mouse_x)
                 my = int(store.tq_mouse_y)
@@ -320,7 +341,6 @@ init -2 python:
                     c.circle("#ffffff5a", (mx, my), 26, 0)
                     c.circle("#ffffffe6", (mx, my), 12, 0)
 
-            # ---- Flash de fin ----
             if phase == "done":
                 if store.tq_result == "success":
                     c.circle("#b4ffc8b4", (sx, sy), 110, 5)
@@ -348,22 +368,43 @@ transform tq_label_pulse:
 # SCREEN PRINCIPAL
 # --------------------------------------------------------------------------------------------
 
-screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, tolerance=45, max_errors=3, success_label=None, fail_label=None, anchor_x=960, anchor_y=540, start_radius=95):
+screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, tolerance=45, max_errors=3, anchor_x=960, anchor_y=540, start_radius=95, challenges_hud=True):
     modal True
     zorder 150
 
-    on "show" action Function(tq_reset, path_type, anchor_x, anchor_y, wait_time, success_label, fail_label)
+    on "show" action Function(tq_reset, path_type, anchor_x, anchor_y, wait_time, time_limit, tolerance)
 
     key "mousedown_1" action Function(tq_on_press, start_radius)
     key "mouseup_1" action Function(tq_on_release)
 
-    # Voile sombre semi-transparent : l'image de fond actuelle reste visible
     add Solid("#00000077")
-
-    # Drawable custom (cercles, tracé, curseur)
     add TraceQTEDrawable()
 
-    # Label sous l'action
+    # Barre de temps pendant la phase trace
+    if tq_phase == "trace":
+        fixed:
+            xalign 0.5
+            ypos 32
+            xsize 600
+            ysize 12
+            add Solid("#0A1326CC", xsize=600, ysize=12)
+            $ _tq_time_ratio = max(0.0, 1.0 - tq_elapsed / max(0.01, tq_time_limit))
+            if _tq_time_ratio > 0.4:
+                add Solid("#7DF9FF", xsize=int(600 * _tq_time_ratio), ysize=12)
+            else:
+                add Solid("#FF4D6D", xsize=int(600 * _tq_time_ratio), ysize=12)
+
+    # Défis live
+    if challenges_hud and tq_phase in ("hold", "trace"):
+        $ _tq_no_stray = (tq_stray_ticks == 0)
+        $ _tq_fast = (tq_elapsed <= tq_time_limit * 0.6)
+        use mk_challenge_hud([
+            ("Zéro sortie de piste", False, not _tq_no_stray),
+            ("Rapide (-40% du chrono)", False, not _tq_fast),
+        ])
+
+    # Pas de bouton d'aide ici : tout clic hors séquence fait partie du gameplay.
+
     $ phase = tq_phase
     if phase == "wait":
         $ label_text = "ATTENDRE"
@@ -386,16 +427,147 @@ screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, toleran
             outlines [(2, "#000000aa", 0, 0)]
             at tq_label_pulse
 
-    # Tick global
     timer 0.03 repeat True action Function(tq_tick, time_limit, tolerance, max_errors)
-    # Sortie : quand phase=="done" on ferme le screen après un court délai (animation fin)
     if tq_phase == "done":
-        if tq_result == "success" and tq_success_label:
-            timer 0.45 action [Hide("trace_qte"), Jump(tq_success_label)]
-        elif tq_result == "fail" and tq_fail_label:
-            timer 0.45 action [Hide("trace_qte"), Jump(tq_fail_label)]
+        timer 0.45 action Return(tq_collect_stats())
+
+# --------------------------------------------------------------------------------------------
+# TUTORIEL ANIMÉ
+# --------------------------------------------------------------------------------------------
+
+transform tq_demo_ring_pulse:
+    zoom 1.0
+    alpha 0.8
+    block:
+        ease 0.6 zoom 1.10 alpha 1.0
+        ease 0.6 zoom 1.0 alpha 0.8
+        repeat
+
+transform tq_demo_cursor_anim:
+    # boucle : approche → maintien (pulse) → glisse le long de la courbe → reset
+    xpos 360 ypos 470 alpha 0.0
+    block:
+        easein 0.4 alpha 1.0
+        easeout 0.9 xpos 360 ypos 400
+        # clic maintenu
+        easeout 0.12 zoom 0.8
+        pause 0.5
+        # glissé le long de la courbe (approximation en 4 segments)
+        easeout 0.45 xpos 430 ypos 320
+        easeout 0.45 xpos 470 ypos 230
+        easeout 0.45 xpos 430 ypos 140
+        easeout 0.45 xpos 360 ypos 60
+        easein 0.12 zoom 1.0
+        pause 0.4
+        easeout 0.4 alpha 0.0
+        pause 0.5
+        repeat
+
+transform tq_demo_step_label:
+    alpha 0.0
+    block:
+        pause 0.4
+        linear 0.3 alpha 1.0
+        pause 1.4
+        linear 0.3 alpha 0.0
+        pause 2.4
+        repeat
+
+screen tuto_trace_qte(as_overlay=False):
+    use mk_tuto_chrome("TRACÉ SYNCHRONISÉ", [
+        ("Attendre", "Ne clique pas tant que l'anneau n'est pas blanc. Cliquer trop tôt = échec."),
+        ("Maintenir", "Clique sur le cercle de départ et garde le bouton enfoncé."),
+        ("Glisser", "Suis la ligne jusqu'au bout sans relâcher. Reste dans le couloir."),
+    ], "tuto_trace_qte", as_overlay):
+
+        # Courbe en pointillés
+        fixed:
+            xfill True
+            yfill True
+
+            for tq_i in range(0, 13):
+                $ tq_t = tq_i / 12.0
+                $ tq_dx = int(360 + 110 * math.sin(tq_t * 3.14159))
+                $ tq_dy = int(400 - 340 * tq_t)
+                add Solid("#7DF9FF99") size (8, 8) pos (tq_dx - 4, tq_dy - 4)
+
+            # Anneau de départ
+            fixed at tq_demo_ring_pulse:
+                xpos 360
+                ypos 400
+                xanchor 0.5
+                yanchor 0.5
+                xsize 110
+                ysize 110
+                add Solid("#FFFFFF22") size (110, 110) align (0.5, 0.5)
+                add Solid("#A0C8EBDC") size (62, 62) align (0.5, 0.5)
+
+            # Point d'arrivée
+            add Solid("#5DFF9ACC") size (20, 20) pos (350, 50)
+
+            # Faux curseur animé
+            fixed at tq_demo_cursor_anim:
+                xanchor 0.5
+                yanchor 0.5
+                xsize 34
+                ysize 34
+                add Solid("#FFFFFF55") size (34, 34) align (0.5, 0.5)
+                add Solid("#FFFFFFEE") size (12, 12) align (0.5, 0.5)
+
+            text "MAINTENIR PUIS GLISSER" at tq_demo_step_label:
+                xpos 380
+                ypos 480
+                xanchor 0.5
+                size 22
+                color "#FFD166"
+                bold True
+
+# --------------------------------------------------------------------------------------------
+# WRAPPER COMPLET : tutoriel → jeu → retry avec malus → résultats avec rang
+# --------------------------------------------------------------------------------------------
+
+label trace_qte_run(mg_id="trace_qte", title="TRACÉ SYNCHRONISÉ", path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True, show_results=True):
+
+    call mk_tutorial("trace_qte", "tuto_trace_qte")
+    $ mk_reset_retries(mg_id)
+
+label .attempt:
+    call screen trace_qte(path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y)
+    $ tq_run_stats = _return
+
+    if not tq_run_stats["success"]:
+        if required:
+            call mk_fail_retry(title, mg_id)
+            jump .attempt
         else:
-            timer 0.45 action Return(tq_result == "success")
+            return "FAIL"
+
+    if not show_results:
+        return "B"
+
+    python:
+        tq_run_score = tq_compute_score(tq_run_stats, time_limit, tolerance)
+        tq_run_challenges = [
+            ("Zéro sortie de piste", tq_run_stats["stray_ticks"] == 0),
+            ("Rapide (-40% du chrono)", tq_run_stats["elapsed"] <= time_limit * 0.6),
+            ("Précision chirurgicale", tq_run_stats["avg_dev"] <= tolerance * 0.4),
+        ]
+        tq_run_score = min(1000, tq_run_score + 50 * len([1 for c in tq_run_challenges if c[1]]))
+
+    call mk_show_results(
+        title,
+        tq_run_score,
+        1000,
+        stats=[
+            ("Temps", "%.1fs / %.1fs" % (tq_run_stats["elapsed"], time_limit)),
+            ("Écart moyen", "%dpx" % int(tq_run_stats["avg_dev"])),
+            ("Sorties de piste", str(tq_run_stats["stray_ticks"])),
+        ],
+        challenges=tq_run_challenges,
+        mg_id=mg_id,
+        retries=mk_get_retries(mg_id),
+    )
+    return _return
 
 # --------------------------------------------------------------------------------------------
 # Labels de test
@@ -403,23 +575,12 @@ screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, toleran
 
 label _TEST_TRACE_VERTICAL_UP:
     scene black
-    call screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, tolerance=45, max_errors=3, success_label="_TEST_TRACE_SUCCESS", fail_label="_TEST_TRACE_FAIL")
-    return
-
-label _TEST_TRACE_VERTICAL_DOWN:
-    scene black
-    call screen trace_qte(path_type="vertical_down", time_limit=6.0, wait_time=1.2, tolerance=45, max_errors=3, success_label="_TEST_TRACE_SUCCESS", fail_label="_TEST_TRACE_FAIL")
+    call trace_qte_run(mg_id="test_trace", title="TEST VERTICAL", path_type="vertical_up", required=False)
+    "Rang obtenu : [_return]"
     return
 
 label _TEST_TRACE_CURVE_RIGHT:
     scene black
-    call screen trace_qte(path_type="curve_right", time_limit=7.0, wait_time=1.2, tolerance=45, max_errors=3, success_label="_TEST_TRACE_SUCCESS", fail_label="_TEST_TRACE_FAIL")
-    return
-
-label _TEST_TRACE_SUCCESS:
-    "QTE REUSSI."
-    return
-
-label _TEST_TRACE_FAIL:
-    "QTE RATE."
+    call trace_qte_run(mg_id="test_trace", title="TEST COURBE", path_type="curve_right", time_limit=7.0, required=True)
+    "Rang obtenu : [_return]"
     return

@@ -79,11 +79,11 @@ init python:
         store.vote_phase3_tally_index += 1
 
         if rep_vote == "pour":
-            vote_phase3_safe_play("sound/sfx_vote_pour.ogg", "audio/sfx_beep.mp3")
+            vote_phase3_safe_play("audio/sfx_vote_pour.wav", "audio/sfx_beep.mp3")
         elif rep_vote == "abstention":
-            vote_phase3_safe_play("sound/sfx_abstention.ogg", "audio/sfx_paper.mp3")
+            vote_phase3_safe_play("audio/sfx_vote_abstention.wav", "audio/sfx_paper.mp3")
         else:
-            vote_phase3_safe_play("sound/sfx_contre.ogg", "audio/sfx_tambour.mp3")
+            vote_phase3_safe_play("audio/sfx_vote_contre.wav", "audio/sfx_tambour.mp3")
 
         if not store.vote_phase3_pending_votes:
             store.vote_phase3_tally_done = True

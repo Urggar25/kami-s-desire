@@ -281,12 +281,8 @@ screen day1_jammer_panel():
 
 label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True):
 
-    while True:
-        call screen trace_qte(path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y)
-        if _return:
-            return True
-        if not required:
-            return False
+    call trace_qte_run(mg_id="trace_day1", title="SYNCHRONISATION MOTRICE", path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y, required=required)
+    return (_return != "FAIL")
 
 label _1_CANON:
 
@@ -295,7 +291,7 @@ label _1_CANON:
 
     scene black
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
-    show screen day1_wakeup_overlay("heavy")
+    show screen day1_wakeup_overlay("soft")
 
     think "Jour un."
     think "Enfin, je crois."

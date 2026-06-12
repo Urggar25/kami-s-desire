@@ -4,6 +4,10 @@ default debat_phase2_buzzed_ids = []
 default debat_phase2_rebuttal_log = []
 default debat_phase2_vote_summary = {}
 default debat_day3_live_vote_stats = {}
+default debat_phase2_good = 0
+default debat_phase2_wrong = 0
+default debat_phase2_missed = 0
+default debat_phase2_dialogues_active = []
 
 define DEBAT_PHASE2_LINE_DURATION = 6.0
 
@@ -39,7 +43,7 @@ transform debat_phase2_objection_shock:
 
 init python:
     DEBAT_PHASE2_DIALOGUES = [
-        {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute", "counter_label": "debat_phase2_counter_d1", "lines": ["Ah, je dois commence ?? Euh...", "Abolir la distribution risque de", "condamner les plus fragiles."]},
+        {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute", "counter_label": "debat_phase2_counter_d1", "lines": ["Ah, je dois commencer ?? Euh...", "Abolir la distribution risque de", "condamner les plus fragiles."]},
         {"id": "d2", "speaker": "Elias", "speaker_tag": "elias", "speaker_expr": "determine", "counter_label": "debat_phase2_counter_d2", "lines": ["Le marché libre va", "récompenser ceux", "qui se bougent vraiment."]},
         {"id": "d3", "speaker": "Lysa", "speaker_tag": "lysa", "speaker_expr": "opposition", "counter_label": "debat_phase2_counter_d3", "lines": ["Ceux qui se bougent, oui.", "Mais ceux qui échouent", "on les verra aussi."]},
         {"id": "d4", "speaker": "Julian", "speaker_tag": "julian", "speaker_expr": "taquin", "counter_label": "debat_phase2_counter_d4", "lines": ["L’échec existe déjà.", "Au moins là,", "il aura un sens."]},
@@ -107,6 +111,19 @@ init python:
             current = store.debat_day3_live_vote_stats.get(character, 0)
             store.debat_day3_live_vote_stats[character] = current + delta
 
+    def debat_phase2_is_contestable(dialogue_data):
+        label_name = dialogue_data.get("counter_label")
+        return bool(label_name) and renpy.has_label(label_name)
+
+    def debat_phase2_total_contestable(dialogues=None):
+        source = dialogues if dialogues is not None else store.debat_phase2_dialogues_active
+        return len([d for d in source if debat_phase2_is_contestable(d)])
+
+    def debat_phase2_compute_score():
+        total = max(1, debat_phase2_total_contestable())
+        base = 1000.0 * store.debat_phase2_good / float(total)
+        return int(max(0, round(base - 60 * store.debat_phase2_wrong)))
+
 screen debat_phase2_line(dialogue_data):
     modal True
     zorder 120
@@ -156,6 +173,23 @@ screen debat_phase2_line(dialogue_data):
             xpos 0
             xsize 700
             ysize 10
+
+    # HUD objections
+    frame:
+        xpos 24
+        ypos 24
+        background Solid("#060D1CC8")
+        padding (18, 12)
+
+        hbox:
+            spacing 24
+            text "OBJECTIONS  [debat_phase2_good]" size 22 color "#5DFF9A" bold True
+            if debat_phase2_wrong > 0:
+                text "À TORT  [debat_phase2_wrong]" size 22 color "#FF4D6D" bold True
+            if debat_phase2_missed > 0:
+                text "MANQUÉES  [debat_phase2_missed]" size 22 color "#FFD166" bold True
+
+    use mk_help_button("tuto_debat_phase2")
 
     imagebutton:
         idle "gui/day3/vote_phase2/buzzer_idle.png"
@@ -265,25 +299,165 @@ label debat_phase2_play_rebuttal_sequence(sequence_data):
             renpy.call_screen("debat_phase2_rebuttal_line", entry_data=entry, duration=DEBAT_PHASE2_REBUTTAL_LINE_DURATION)
     return
 
+# ------------------------------------------------------------
+# TUTORIEL ANIMÉ — démo du buzzer
+# ------------------------------------------------------------
+transform dp2_demo_time_drain_loop:
+    xzoom 1.0
+    xanchor 0.0
+    block:
+        linear 2.6 xzoom 0.0
+        pause 0.6
+        xzoom 1.0
+        repeat
+
+transform dp2_demo_cursor_to_buzzer:
+    xpos 540 ypos 150 alpha 0.0
+    block:
+        easein 0.3 alpha 1.0
+        pause 0.5
+        easeout 0.8 xpos 360 ypos 330
+        easeout 0.10 zoom 0.8
+        easein 0.10 zoom 1.0
+        pause 0.3
+        linear 0.25 alpha 0.0
+        pause 0.85
+        repeat
+
+transform dp2_demo_objection_pop:
+    alpha 0.0
+    block:
+        pause 1.8
+        easeout 0.15 alpha 1.0 zoom 1.25
+        easein 0.15 zoom 1.0
+        pause 0.6
+        linear 0.2 alpha 0.0
+        pause 0.3
+        repeat
+
+screen tuto_debat_phase2(as_overlay=False):
+    use mk_tuto_chrome("PROTOCOLE D'OBJECTION", [
+        ("Écoute chaque argument", "Chaque participant parle quelques secondes. La barre jaune indique le temps pour réagir."),
+        ("Buzze ce qui est contestable", "Si un argument te semble faible ou faux, frappe le buzzer avant la fin de la barre."),
+        ("Influence le vote", "Chaque contre-argument de Noam fait évoluer l'opinion des votants. Buzzer à tort dessert ta cause."),
+    ], "tuto_debat_phase2", as_overlay):
+
+        fixed:
+            xfill True
+            yfill True
+
+            # Panneau de dialogue factice
+            frame:
+                xpos 60
+                ypos 60
+                xsize 620
+                ysize 130
+                background Solid("#0A1622DD")
+                vbox:
+                    align (0.5, 0.5)
+                    spacing 4
+                    text "« Abolir la distribution risque de" size 22 color "#FFFFFF" xalign 0.5
+                    text "condamner les plus fragiles. »" size 22 color "#FFFFFF" xalign 0.5
+
+            # Barre de temps qui se vide en boucle
+            fixed:
+                xpos 60
+                ypos 220
+                xsize 620
+                ysize 12
+                add Solid("#0A1326CC", xsize=620, ysize=12)
+                add Solid("#FFD166", xsize=620, ysize=12) at dp2_demo_time_drain_loop
+
+            # Buzzer
+            frame:
+                xpos 360
+                ypos 330
+                xanchor 0.5
+                yanchor 0.5
+                xsize 150
+                ysize 150
+                background Solid("#5C1020")
+                text "BUZZ" align (0.5, 0.5) size 30 color "#FFFFFF" bold True
+
+            # Faux curseur
+            fixed at dp2_demo_cursor_to_buzzer:
+                xanchor 0.5
+                yanchor 0.5
+                xsize 34
+                ysize 34
+                add Solid("#FFFFFF55") size (34, 34) align (0.5, 0.5)
+                add Solid("#FFFFFFEE") size (12, 12) align (0.5, 0.5)
+
+            text "OBJECTION !" at dp2_demo_objection_pop:
+                xpos 360
+                ypos 440
+                xanchor 0.5
+                size 36
+                color "#FF4D6D"
+                bold True
+                outlines [(3, "#02040A", 0, 0)]
+
+# Mauvaise objection (ligne non contestable)
+screen debat_phase2_bad_objection():
+    modal True
+    zorder 240
+
+    add Solid("#1A0408B0")
+    vbox:
+        align (0.5, 0.45)
+        spacing 14
+        text "OBJECTION REJETÉE" at debat_phase2_objection_shock:
+            xalign 0.5
+            size 72
+            color "#FF4D6D"
+            bold True
+            outlines [(4, "#02040A", 0, 0)]
+        text "Cet argument tenait debout. L'assemblée murmure...":
+            xalign 0.5
+            size 26
+            color "#DCF0FF"
+
+    on "show" action Play("sound", "audio/sfx_drop.mp3")
+    timer 1.6 action Return(True)
+
+# ------------------------------------------------------------
+# MINIJEU — réutilisable : debat_phase2_session est paramétrable
+#   $ debat_phase2_dialogues_active = MA_LISTE  (avant l'appel)
+#   call debat_phase2_minigame
+# ------------------------------------------------------------
 label debat_phase2_minigame:
     $ debat_phase2_buzzed_ids = []
     $ debat_phase2_rebuttal_log = []
+    $ debat_phase2_good = 0
+    $ debat_phase2_wrong = 0
+    $ debat_phase2_missed = 0
+    if not debat_phase2_dialogues_active:
+        $ debat_phase2_dialogues_active = list(DEBAT_PHASE2_DIALOGUES)
     $ debat_day3_reset_live_stats()
     $ debat_phase2_index = 0
 
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
     call DEBAT_PHASE2_START_ANIM from _call_DEBAT_PHASE2_START_ANIM
+    call mk_tutorial("debat_phase2", "tuto_debat_phase2")
 
 label debat_phase2_loop:
-    if debat_phase2_index >= len(DEBAT_PHASE2_DIALOGUES):
+    if debat_phase2_index >= len(debat_phase2_dialogues_active):
         jump debat_phase2_finish
 
-    $ debat_phase2_current_dialogue = DEBAT_PHASE2_DIALOGUES[debat_phase2_index]
+    $ debat_phase2_current_dialogue = debat_phase2_dialogues_active[debat_phase2_index]
     $ debat_phase2_current_outcome = renpy.call_screen("debat_phase2_line", dialogue_data=debat_phase2_current_dialogue)
 
     if debat_phase2_current_outcome and debat_phase2_current_outcome.get("buzzed"):
         $ counter_label = debat_phase2_current_outcome.get("counter_label")
+
+        if not debat_phase2_is_contestable(debat_phase2_current_dialogue):
+            # Objection à tort : pénalité, pas de crash
+            $ debat_phase2_wrong += 1
+            call screen debat_phase2_bad_objection
+            jump debat_phase2_resume
+
+        $ debat_phase2_good += 1
         $ debat_phase2_buzzed_ids.append(debat_phase2_current_outcome.get("id"))
         $ debat_phase2_rebuttal_log.append({
             "id": debat_phase2_current_outcome.get("id"),
@@ -291,9 +465,10 @@ label debat_phase2_loop:
             "counter_label": counter_label,
         })
         call screen debat_phase2_objection_flash
-        if counter_label:
-            jump expression counter_label
-        jump debat_phase2_resume
+        jump expression counter_label
+
+    if debat_phase2_is_contestable(debat_phase2_current_dialogue):
+        $ debat_phase2_missed += 1
 
     $ debat_phase2_index += 1
     jump debat_phase2_loop
@@ -304,6 +479,32 @@ label debat_phase2_resume:
 
 label debat_phase2_finish:
     $ debat_phase2_vote_summary = debat_day3_compute_votes(store.debat_day3_live_vote_stats)
+
+    # Résultats avec rang
+    python:
+        dp2_score = debat_phase2_compute_score()
+        dp2_total = debat_phase2_total_contestable()
+        dp2_challenges = [
+            ("Aucune objection manquée", debat_phase2_missed == 0),
+            ("Aucune objection à tort", debat_phase2_wrong == 0),
+            ("5 contre-arguments ou plus", debat_phase2_good >= 5),
+        ]
+        dp2_score = min(1000, dp2_score + 40 * len([1 for c in dp2_challenges if c[1]]))
+
+    call mk_show_results(
+        "PROTOCOLE D'OBJECTION",
+        dp2_score,
+        1000,
+        stats=[
+            ("Contre-arguments", "%d/%d" % (debat_phase2_good, dp2_total)),
+            ("Objections à tort", str(debat_phase2_wrong)),
+            ("Occasions manquées", str(debat_phase2_missed)),
+        ],
+        challenges=dp2_challenges,
+        mg_id="debat_phase2",
+    )
+
+    $ debat_phase2_dialogues_active = []
 
     "Résultat provisoire du vote : [debat_phase2_vote_summary['pour']] pour, [debat_phase2_vote_summary['abstention']] abstention, [debat_phase2_vote_summary['contre']] contre."
 
@@ -426,7 +627,7 @@ label debat_phase2_counter_d4:
         "lines": [
             "Je ne romantise rien.",
             "Je dis juste que stagner",
-            "ne sauvere jamais personne."
+            "ne sauvera jamais personne."
         ]},
 
         {"speaker": "Noam", "speaker_tag": "noam", "speaker_expr": "determine",

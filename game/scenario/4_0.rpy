@@ -777,7 +777,7 @@ label day4_photo_take_trace_loop:
 
     call screen trace_qte(path_type="curve_right", time_limit=6.0, wait_time=0.5, tolerance=70, max_errors=5, anchor_x=860, anchor_y=620)
 
-    if _return:
+    if _return["success"]:
         return
 
     $ j4_photo_pick_trace_attempts += 1
@@ -796,7 +796,7 @@ label day4_photo_put_trace_loop:
 
     call screen trace_qte(path_type="arc", time_limit=5.0, wait_time=0.4, tolerance=72, max_errors=5, anchor_x=960, anchor_y=620)
 
-    if _return:
+    if _return["success"]:
         return
 
     $ j4_photo_put_trace_attempts += 1

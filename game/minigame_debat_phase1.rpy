@@ -4,6 +4,10 @@ default debat_phase1_slots = []
 default debat_phase1_words = []
 default debat_phase1_success = False
 default debat_phase1_slot_layout = []
+default debat_phase1_target = []
+default debat_phase1_resets = 0
+default debat_phase1_wrong_drops = 0
+default debat_phase1_last_result = {}
 default player_kamyz = 0
 
 define sfx_victory = "audio/sfx_clap.mp3"
@@ -70,7 +74,7 @@ init python:
 
     def debat_phase1_get_slot_width(slot_index, slot_word_id):
         if slot_word_id is None:
-            return debat_phase1_word_width(DEBAT_PHASE1_TARGET[slot_index])
+            return debat_phase1_word_width(store.debat_phase1_target[slot_index])
 
         word_text = store.debat_phase1_words[slot_word_id]["text"]
         return debat_phase1_word_width(word_text)
@@ -100,11 +104,11 @@ init python:
         return None
 
     def debat_phase1_update_success():
-        if len(store.debat_phase1_slots) != len(DEBAT_PHASE1_TARGET):
+        if len(store.debat_phase1_slots) != len(store.debat_phase1_target):
             store.debat_phase1_success = False
             return
 
-        for i, expected_word in enumerate(DEBAT_PHASE1_TARGET):
+        for i, expected_word in enumerate(store.debat_phase1_target):
             word_id = store.debat_phase1_slots[i]
             if word_id is None:
                 store.debat_phase1_success = False
@@ -119,14 +123,26 @@ init python:
             renpy.play("audio/sfx_victory.mp3", channel="sound")
         store.debat_phase1_success = True
 
-    def debat_phase1_setup():
-        indexed_words = list(enumerate(DEBAT_PHASE1_TARGET))  # (orig_id, text)
+    def debat_phase1_setup(target=None, count_reset=False):
+        if target is not None:
+            store.debat_phase1_target = list(target)
+        elif not store.debat_phase1_target:
+            store.debat_phase1_target = list(DEBAT_PHASE1_TARGET)
+
+        if count_reset:
+            store.debat_phase1_resets += 1
+        else:
+            store.debat_phase1_resets = 0
+            store.debat_phase1_wrong_drops = 0
+
+        tgt = store.debat_phase1_target
+        indexed_words = list(enumerate(tgt))  # (orig_id, text)
         random.shuffle(indexed_words)
 
-        store.debat_phase1_words = [None for _ in DEBAT_PHASE1_TARGET]
+        store.debat_phase1_words = [None for _ in tgt]
 
         for i, (orig_id, text) in enumerate(indexed_words):
-            hx, hy = DEBAT_PHASE1_FLOAT_POSITIONS[i]
+            hx, hy = DEBAT_PHASE1_FLOAT_POSITIONS[i % len(DEBAT_PHASE1_FLOAT_POSITIONS)]
 
             # Espacer un peu + baisser les mots (sans dérégler l'écran)
             hx = int(960 + (hx - 960) * DEBAT_PHASE1_WORDS_X_SPREAD)
@@ -139,11 +155,17 @@ init python:
                 "home_y": hy,
             }
 
-        store.debat_phase1_slots = [None for _ in DEBAT_PHASE1_TARGET]
+        store.debat_phase1_slots = [None for _ in tgt]
         debat_phase1_refresh_slot_layout()
         store.debat_phase1_success = False
 
         renpy.block_rollback()
+
+    def debat_phase1_compute_score(time_left, total_time):
+        """Score sur 1000 : temps restant + propreté du placement."""
+        time_part = 700.0 * max(0, time_left) / float(max(1, total_time))
+        clean_part = max(0.0, 300.0 - 40.0 * store.debat_phase1_wrong_drops - 80.0 * store.debat_phase1_resets)
+        return int(round(time_part + clean_part))
 
     def debat_phase1_handle_drop(word_id, drags, drop):
         if drop is None:
@@ -176,6 +198,9 @@ init python:
             store.debat_phase1_slots[current_slot] = None
 
         store.debat_phase1_slots[target_slot] = word_id
+
+        if store.debat_phase1_words[word_id]["text"] != store.debat_phase1_target[target_slot]:
+            store.debat_phase1_wrong_drops += 1
 
         if occupant is not None and occupant != word_id:
             if current_slot is not None:
@@ -330,7 +355,7 @@ screen debat_phase1_opening():
     ]
 
     # --- GARDE ANTI-DESYNC ---
-    $ expected = len(DEBAT_PHASE1_TARGET)
+    $ expected = len(debat_phase1_target) if debat_phase1_target else len(DEBAT_PHASE1_TARGET)
     if (debat_phase1_slots is None) or (len(debat_phase1_slots) != expected) or (len(debat_phase1_words) != expected):
         $ debat_phase1_setup()
     elif len(debat_phase1_slot_layout) != len(debat_phase1_slots):
@@ -437,6 +462,13 @@ screen debat_phase1_opening():
                         xmaximum 420
                         outlines []
 
+    use mk_challenge_hud([
+        ("Sans réinitialiser", False, debat_phase1_resets > 0),
+        ("Aucun mot mal placé", False, debat_phase1_wrong_drops > 0),
+        ("Fini avec +50% du temps", False, fa_time_left < DEBAT_PHASE1_TOTAL_TIME / 2),
+    ], 24, 830)
+    use mk_help_button("tuto_debat_phase1")
+
     # Panel for word bank visuals (abaissé)
     frame:
         xpos 56
@@ -536,7 +568,7 @@ screen debat_phase1_opening():
 
             $ is_word_wrong = False
             if slot_index is not None and not debat_phase1_success:
-                $ is_word_wrong = (word["text"] != DEBAT_PHASE1_TARGET[slot_index])
+                $ is_word_wrong = (word["text"] != debat_phase1_target[slot_index])
 
             # Largeur stable pour éviter les tiles "bizarres"
             $ ww = debat_phase1_word_width(word["text"])
@@ -621,7 +653,7 @@ screen debat_phase1_opening():
         spacing 24
 
         textbutton "Réinitialiser":
-            action Function(debat_phase1_setup)
+            action Function(debat_phase1_setup, count_reset=True)
             style "fa_btn"
             text_style "fa_btn_text"
 
@@ -632,6 +664,135 @@ screen debat_phase1_opening():
             text_style "fa_btn_text"
             if debat_phase1_success:
                 at fa_btn_focus_pulse
+
+
+# ------------------------------------------------------------
+# TUTORIEL ANIMÉ — démo drag & drop d'un mot vers un slot
+# ------------------------------------------------------------
+transform fa_demo_word_drag:
+    xpos 90 ypos 120 alpha 0.0
+    block:
+        easein 0.35 alpha 1.0
+        pause 0.45
+        easeout 0.9 xpos 250 ypos 360
+        pause 0.35
+        linear 0.25 alpha 0.0
+        pause 0.6
+        repeat
+
+transform fa_demo_slot_glow:
+    alpha 0.35
+    block:
+        ease 0.8 alpha 0.85
+        ease 0.8 alpha 0.35
+        repeat
+
+transform fa_demo_check_pop:
+    alpha 0.0
+    block:
+        pause 1.7
+        easeout 0.2 alpha 1.0 zoom 1.2
+        easein 0.2 zoom 1.0
+        pause 0.35
+        linear 0.2 alpha 0.0
+        pause 0.55
+        repeat
+
+screen tuto_debat_phase1(as_overlay=False):
+    use mk_tuto_chrome("FATAL ASSEMBLY", [
+        ("Lis la banque de mots", "Les mots de la proposition flottent en haut, dans le désordre."),
+        ("Glisse chaque mot", "Fais glisser les mots dans les emplacements, dans le bon ordre."),
+        ("Valide avant la fin du chrono", "Quand la phrase est correcte, le bouton de validation s'active. Kami commente ton retard..."),
+    ], "tuto_debat_phase1", as_overlay):
+
+        fixed:
+            xfill True
+            yfill True
+
+            # Banque (3 mots fixes)
+            frame:
+                xpos 40
+                ypos 60
+                xsize 660
+                ysize 150
+                background Solid("#1024348A")
+            text "Autoriser" pos (260, 110) size 24 color "#FFFFFF" bold True
+            text "vente" pos (470, 95) size 24 color "#FFFFFF" bold True
+
+            # Slots
+            for fa_si in range(3):
+                frame at fa_demo_slot_glow:
+                    xpos (110 + fa_si * 200)
+                    ypos 350
+                    xsize 170
+                    ysize 62
+                    background Solid("#2AE5FF40")
+
+            # Mot qui se déplace
+            frame at fa_demo_word_drag:
+                xsize 150
+                ysize 48
+                background Solid("#1B2D43F0")
+                text "le" align (0.5, 0.5) size 24 color "#FFFFFF" bold True
+
+            text "✓" at fa_demo_check_pop:
+                xpos 335
+                ypos 300
+                size 48
+                color "#5DFF9A"
+                bold True
+
+# ------------------------------------------------------------
+# WRAPPER COMPLET : tutoriel → anim → jeu → retry malus → résultats
+#   call debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY",
+#                         target=None, with_intro_anim=True)
+#   → _return = rang ; debat_phase1_last_result = {"success","time_left","kamyz"}
+# ------------------------------------------------------------
+label debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY", target=None, with_intro_anim=True):
+
+    if with_intro_anim:
+        call FA_START_ANIM
+
+    call mk_tutorial("debat_phase1", "tuto_debat_phase1")
+    $ mk_reset_retries(mg_id)
+
+label .attempt:
+    $ debat_phase1_setup(target=target)
+    $ fa_run_result = renpy.call_screen("debat_phase1_opening")
+
+    if not fa_run_result.get("success"):
+        call mk_fail_retry(title, mg_id)
+        jump .attempt
+
+    python:
+        fa_time_left = fa_run_result.get("time_left", 0)
+        fa_run_score = debat_phase1_compute_score(fa_time_left, DEBAT_PHASE1_TOTAL_TIME)
+        fa_run_challenges = [
+            ("Sans réinitialiser", debat_phase1_resets == 0),
+            ("Aucun mot mal placé", debat_phase1_wrong_drops == 0),
+            ("Fini avec +50% du temps", fa_time_left >= DEBAT_PHASE1_TOTAL_TIME / 2),
+        ]
+        fa_run_score = min(1000, fa_run_score + 40 * len([1 for c in fa_run_challenges if c[1]]))
+        store.debat_phase1_last_result = {
+            "success": True,
+            "time_left": fa_time_left,
+            "kamyz": debat_phase1_calculate_kamyz(fa_time_left),
+        }
+
+    call mk_show_results(
+        title,
+        fa_run_score,
+        1000,
+        stats=[
+            ("Temps restant", "%ds / %ds" % (fa_time_left, DEBAT_PHASE1_TOTAL_TIME)),
+            ("Mots mal placés", str(debat_phase1_wrong_drops)),
+            ("Réinitialisations", str(debat_phase1_resets)),
+        ],
+        challenges=fa_run_challenges,
+        mg_id=mg_id,
+        retries=mk_get_retries(mg_id),
+    )
+    return _return
 
 
 screen noam_consent_screen():

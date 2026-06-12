@@ -1563,9 +1563,60 @@ screen j901_signal_vivant_bilan(tier):
 # Label public
 # ------------------------------------------------------------
 
+screen j901_sv_howto():
+    modal True
+    zorder 310
+
+    add Solid("#02040AEE")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1100
+        ysize 620
+        background Solid("#0A1326EE")
+        padding (50, 40)
+
+        vbox:
+            xalign 0.5
+            spacing 22
+
+            text "LE SIGNAL VIVANT — BRIEFING":
+                xalign 0.5
+                size 40
+                color "#DCF0FF"
+                bold True
+
+            add Solid("#7DF9FF66", xsize=960, ysize=2) xalign 0.5
+
+            vbox:
+                spacing 16
+                text "1.  FRÉQUENCES — Place jusqu'à 4 voix dans les slots (touches 1-9). Garde les trois jauges (Clarté, Force, Discrétion) dans le vert.":
+                    size 26 color "#DCF0FF" xmaximum 980
+                text "2.  PULSES — Clique un quadrant (ou A/Z/E/R) pour booster la dispersion des campements. Cooldown entre deux pulses.":
+                    size 26 color "#DCF0FF" xmaximum 980
+                text "3.  ORBES DE KAMI — Clique plusieurs fois les orbes noirs avant qu'ils ne frappent un quadrant ou la forme d'onde.":
+                    size 26 color "#DCF0FF" xmaximum 980
+                text "Objectif : disperser un maximum de campements en 45 secondes.":
+                    size 26 color "#FFD166" bold True xmaximum 980
+
+            null height 10
+
+            textbutton "LANCER LA TRANSMISSION":
+                xalign 0.5
+                xsize 440
+                ysize 64
+                background Solid("#10384DEE")
+                hover_background Solid("#1D5C7AEE")
+                text_size 26
+                text_color "#FFFFFF"
+                text_xalign 0.5
+                action Return(True)
+
 label j901_play_signal_vivant:
 
     $ j901_sv_reset()
+    call screen j901_sv_howto
     $ _sv_tier = renpy.call_screen("j901_signal_vivant_screen")
     $ _sv_final_tier = renpy.call_screen("j901_signal_vivant_bilan", tier=_sv_tier)
     return _sv_final_tier

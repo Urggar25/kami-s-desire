@@ -252,7 +252,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     "Comme si mon corps discutait encore."
 
     call screen trace_qte(path_type="s_curve", time_limit=4.2, wait_time=0.25, tolerance=78, max_errors=4, anchor_x=960, anchor_y=650, start_radius=120)
-    if _return:
+    if _return["success"]:
         $ _j601_reveil_trace_score = 1
 
     "Je me lève."
@@ -1374,6 +1374,7 @@ label _6_0_1_VOTE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "Résultat du vote."
+    $ interject("REJETÉ", color="#FF4D6D")
     scene bg_diffusion_colere at adaptive_fullscreen with vpunch
     kami "Ab-Absence d'unanimité."
     kami "Amend-ement rejeté."

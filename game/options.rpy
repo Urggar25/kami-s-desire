@@ -119,6 +119,37 @@ define config.window = "auto"
 define config.window_show_transition = Dissolve(0.2)
 define config.window_hide_transition = Dissolve(0.2)
 
+## Remappage audio : corrige les chemins "music/x.mp3" -> "audio/music/x.mp3"
+## (de nombreux scripts pointent vers music/ et sfx/ alors que les fichiers
+## sont sous audio/ ; Ren'Py ignorait silencieusement ces fichiers manquants)
+init python:
+    ## Pistes référencées dans le scénario mais jamais composées :
+    ## on les remappe vers la piste existante la plus proche en ambiance.
+    ## Remplace ces alias par de vraies pistes quand elles existeront.
+    _KD_MUSIC_ALIASES = {
+        "bgm_victory_bitter.mp3":        "bgm_calm_not_peace.mp3",
+        "bgm_calm_sad.mp3":              "bgm_unsaid_distance.mp3",
+        "bgm_debate_low.mp3":            "bgm_low_tension.mp3",
+        "bgm_quiet_tension.mp3":         "bgm_low_tension.mp3",
+        "bgm_tension_low.mp3":           "bgm_low_tension.mp3",
+        "bgm_tension_phase3.mp3":        "bgm_fatal_assembly.mp3",
+        "bgm_stabilisation_tension.mp3": "bgm_low_tension.mp3",
+    }
+
+    def _kd_audio_filename_fix(fn):
+        if renpy.loadable(fn):
+            return fn
+        alt = "audio/" + fn
+        if renpy.loadable(alt):
+            return alt
+        base = fn.rsplit("/", 1)[-1]
+        if base in _KD_MUSIC_ALIASES:
+            alias = "audio/music/" + _KD_MUSIC_ALIASES[base]
+            if renpy.loadable(alias):
+                return alias
+        return fn
+    config.audio_filename_callback = _kd_audio_filename_fix
+
 
 ## Préférences par défaut ######################################################
 

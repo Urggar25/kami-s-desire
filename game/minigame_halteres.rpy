@@ -1,6 +1,12 @@
 ﻿default persistent.pegi18 = False
 default stat_physique = 0
 
+# --- Config réutilisable (modifiée par minijeu_halteres_run) ---
+default mg_title = "ENTRAÎNEMENT AUX HALTÈRES"
+default mg_subtitle = "Synchronise ton effort avec la zone verte pour valider chaque répétition."
+default mg_bg = "gym_bg.png"
+default mg_duration = 60.0
+default mg_base_speed = 0.9
 default mg_target_reps = 10
 default mg_reps = 0
 default mg_progress = 0
@@ -42,17 +48,25 @@ init python:
             return "fonts/Orbitron-Regular.ttf"
         return "fonts/day_font.ttf"
 
+    def mg_configure(target_reps=10, duration=60.0, base_speed=0.9, title=None, subtitle=None, bg=None):
+        store.mg_target_reps = target_reps
+        store.mg_duration = float(duration)
+        store.mg_base_speed = float(base_speed)
+        if title: store.mg_title = title
+        if subtitle: store.mg_subtitle = subtitle
+        if bg: store.mg_bg = bg
+
     def mg_reset():
         store.mg_reps = 0
         store.mg_progress = 0
         store.mg_energy = 1.0
         store.mg_value = 0.0
         store.mg_direction = 1
-        store.mg_speed = 0.9
+        store.mg_speed = store.mg_base_speed
         store.mg_done = False
         store.mg_feedback = ""
         store.mg_feedback_color = "#f5f5f5"
-        store.mg_time_left = 60.0
+        store.mg_time_left = store.mg_duration
         store.mg_zone_start = 0.40
         store.mg_zone_end = 0.60
         store.mg_combo = 0
@@ -60,6 +74,20 @@ init python:
         store.mg_perfects = 0
         store.mg_misses = 0
         store.mg_flash = 0.0
+
+    def mg_live_challenges():
+        return [
+            ("Combo x5", store.mg_combo_max >= 5),
+            ("Zéro raté", False, store.mg_misses > 0),
+            ("4 frappes parfaites", store.mg_perfects >= 4),
+        ]
+
+    def mg_final_challenges():
+        return [
+            ("Combo x5", store.mg_combo_max >= 5),
+            ("Zéro raté", store.mg_misses == 0),
+            ("4 frappes parfaites", store.mg_perfects >= 4),
+        ]
 
     def mg_tick(dt=0.02):
         if store.mg_done:
@@ -89,7 +117,7 @@ init python:
         store.mg_zone_start = center - width / 2.0
         store.mg_zone_end = center + width / 2.0
         # Vitesse croissante
-        store.mg_speed = 0.9 + progress * 0.55
+        store.mg_speed = store.mg_base_speed + progress * 0.55
 
     def mg_click():
         if store.mg_done:
@@ -216,12 +244,15 @@ screen minijeu_halteres():
 
     default mg_font = mg_get_ui_font()
 
-    add "gym_bg.png"
+    add mg_bg
     add Solid("#020912b0")
     add Solid("#1f5fa833") at mg_bg_idle
 
     if mg_flash > 0.0:
         add Solid("#5ad45a2e")
+
+    use mk_challenge_hud(mg_live_challenges(), 24, 240)
+    use mk_help_button("tuto_halteres")
 
     frame at mg_panel_fade(0.0):
         xalign 0.5
@@ -233,8 +264,8 @@ screen minijeu_halteres():
 
         vbox:
             spacing 8
-            text "ENTRAÎNEMENT AUX HALTÈRES" style "mg_title_text" xalign 0.5 font mg_font
-            text "Synchronise ton effort avec la zone verte pour valider chaque répétition." style "mg_subtitle_text" xalign 0.5 font mg_font
+            text "[mg_title]" style "mg_title_text" xalign 0.5 font mg_font
+            text "[mg_subtitle]" style "mg_subtitle_text" xalign 0.5 font mg_font
 
     hbox:
         xalign 0.5
@@ -317,7 +348,7 @@ screen minijeu_halteres():
                         xsize 430
                         ysize 28
                         add Solid("#101e2e") xsize 430 ysize 28
-                        add Solid("#e74f4f") xsize int((mg_time_left / 60.0) * 430) ysize 28
+                        add Solid("#e74f4f") xsize int((mg_time_left / max(0.01, mg_duration)) * 430) ysize 28
 
                     text "⬆ ⬇  Clic, ↑ ou ↓ pour pousser." style "mg_subtitle_text" xalign 0.5 font mg_font
 
@@ -365,19 +396,97 @@ screen physique_gain_anim():
 
     timer 2.0 action Hide("physique_gain_anim")
 
-label minijeu_halteres:
+# ------------------------------------------------------------
+# TUTORIEL ANIMÉ — démo de la barre de rythme
+# ------------------------------------------------------------
+transform mg_demo_cursor_sweep:
+    xpos 60
+    block:
+        linear 1.1 xpos 560
+        linear 1.1 xpos 60
+        repeat
+
+transform mg_demo_hit_flash:
+    alpha 0.0
+    block:
+        pause 0.78
+        easeout 0.10 alpha 1.0
+        easein 0.30 alpha 0.0
+        pause 1.02
+        repeat
+
+transform mg_demo_dumbbell_lift:
+    ypos 330
+    block:
+        pause 0.78
+        easeout 0.35 ypos 250
+        pause 0.4
+        easein 0.35 ypos 330
+        pause 0.32
+        repeat
+
+screen tuto_halteres(as_overlay=False):
+    use mk_tuto_chrome("RYTHME D'ENTRAÎNEMENT", [
+        ("Observe le curseur", "Le curseur blanc balaye la barre de rythme en continu."),
+        ("Frappe dans la zone verte", "Clique (ou ↑/↓) quand le curseur traverse la zone. Au centre exact : PARFAIT."),
+        ("Enchaîne les combos", "Chaque réussite consécutive augmente le combo et le score. Un raté coûte de l'énergie."),
+    ], "tuto_halteres", as_overlay):
+
+        fixed:
+            xfill True
+            yfill True
+
+            # Haltère qui se lève à chaque "frappe"
+            fixed at mg_demo_dumbbell_lift:
+                xpos 230
+                xsize 280
+                ysize 50
+                add Solid("#9fb3c7") size (200, 16) pos (40, 17)
+                add Solid("#232f3a") size (44, 50) pos (0, 0)
+                add Solid("#232f3a") size (44, 50) pos (236, 0)
+
+            # Barre de rythme
+            fixed:
+                xpos 60
+                ypos 430
+                xsize 540
+                ysize 36
+                add Solid("#11293f") size (540, 36)
+                add Solid("#22c065") size (130, 36) xpos 205
+                add Solid("#FFFFFF") size (8, 36) at mg_demo_cursor_sweep
+
+            text "PARFAIT !" at mg_demo_hit_flash:
+                xpos 330
+                ypos 370
+                xanchor 0.5
+                size 30
+                color "#5ad45a"
+                bold True
+                outlines [(2, "#02040A", 0, 0)]
+
+# ------------------------------------------------------------
+# LABEL RÉUTILISABLE
+#   call minijeu_halteres_run(mg_id="halteres", title=..., target_reps=..,
+#                             duration=.., base_speed=.., with_scene=True)
+# ------------------------------------------------------------
+label minijeu_halteres_run(mg_id="halteres", title=None, subtitle=None, bg=None, target_reps=10, duration=60.0, base_speed=0.9, with_scene=True):
     $ mg_quick_menu_prev = quick_menu
     $ quick_menu = False
+    $ mg_configure(target_reps=target_reps, duration=duration, base_speed=base_speed, title=title, subtitle=subtitle, bg=bg)
     $ mg_reset()
-    call mk_countdown from _call_mk_countdown_halteres
+    $ mg_skip_scene_pick = mg_skip_scene_pick or (not with_scene)
+
+    call mk_tutorial("halteres", "tuto_halteres")
+    call mk_countdown
     call screen minijeu_halteres
 
     $ mg_was_success = mg_is_successful()
 
-    # Écran de résultats avec rang (kit partagé)
+    # Écran de résultats avec rang, défis et record
+    $ mg_final_score = min(mg_target_reps * 2, mg_progress + len([1 for c in mg_final_challenges() if c[1]]))
     call mk_show_results(
-        "ENTRAÎNEMENT AUX HALTÈRES",
-        mg_progress,
+        mg_title,
+        mg_final_score,
         mg_target_reps * 2,
         stats=[
             ("Répétitions", "%d/%d" % (mg_reps, mg_target_reps)),
@@ -385,9 +494,19 @@ label minijeu_halteres:
             ("Combo max", "x%d" % mg_combo_max),
             ("Ratés", str(mg_misses)),
         ],
-    ) from _call_mk_show_results_halteres
+        challenges=mg_final_challenges(),
+        mg_id=mg_id,
+    )
 
     $ quick_menu = mg_quick_menu_prev
+    jump minijeu_halteres_after
+
+# Compatibilité : ancien point d'entrée (jour 2 gymnase)
+label minijeu_halteres:
+    call minijeu_halteres_run(mg_id="halteres")
+    return
+
+label minijeu_halteres_after:
 
     # Gain de stat lié à la performance (au lieu d'un pur aléatoire)
     $ _mg_gain_chance = 0.10 + (0.45 if mg_was_success else 0.0) + min(0.20, mg_combo_max * 0.03)
@@ -445,7 +564,7 @@ label sport_event_001:
     elias "Pouah ! J'ai assez bien géré l'amplitude aujourd'hui..."
 
     "La barre descend."
-    "Il contrôle la descnte."
+    "Il contrôle la descente."
     "Pas d’élan."
 
     elias "Allez ! Encore une."
