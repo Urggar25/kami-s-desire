@@ -24,6 +24,11 @@ transform debat_phase2_buzzer_pulse:
     ease 0.28 zoom 1.0
     repeat
 
+transform debat_phase2_time_drain(total=6.0):
+    xzoom 1.0
+    xanchor 0.0
+    linear total xzoom 0.0
+
 transform debat_phase2_objection_shock:
     alpha 0.0
     zoom 0.96
@@ -138,6 +143,19 @@ screen debat_phase2_line(dialogue_data):
         xalign 0.58
         yalign 0.22
         at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+
+    # Barre de temps restant pour buzzer
+    fixed:
+        xalign 0.5
+        yalign 0.985
+        xsize 700
+        ysize 10
+
+        add Solid("#0A1326CC", xsize=700, ysize=10)
+        add Solid("#FFD166") at debat_phase2_time_drain(DEBAT_PHASE2_LINE_DURATION):
+            xpos 0
+            xsize 700
+            ysize 10
 
     imagebutton:
         idle "gui/day3/vote_phase2/buzzer_idle.png"

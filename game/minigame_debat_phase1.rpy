@@ -115,6 +115,8 @@ init python:
                 store.debat_phase1_success = False
                 return
 
+        if not store.debat_phase1_success:
+            renpy.play("audio/sfx_victory.mp3", channel="sound")
         store.debat_phase1_success = True
 
     def debat_phase1_setup():
@@ -168,6 +170,7 @@ init python:
             return
 
         occupant = store.debat_phase1_slots[target_slot]
+        renpy.play("audio/sfx_beep.mp3", channel="sound")
 
         if current_slot is not None:
             store.debat_phase1_slots[current_slot] = None
@@ -402,11 +405,24 @@ screen debat_phase1_opening():
             spacing 10
             xalign 1.0
 
-            text "[fa_time_left]s":
-                xalign 1.0
-                size 42
-                color "#F2F6FF"
-                outlines [(2, "#000000AA", 0, 0)]
+            if fa_time_left <= 10:
+                text "[fa_time_left]s" at fa_btn_focus_pulse:
+                    xalign 1.0
+                    size 48
+                    color "#FF4D6D"
+                    outlines [(2, "#000000AA", 0, 0)]
+            elif fa_time_left <= 30:
+                text "[fa_time_left]s":
+                    xalign 1.0
+                    size 44
+                    color "#FFD166"
+                    outlines [(2, "#000000AA", 0, 0)]
+            else:
+                text "[fa_time_left]s":
+                    xalign 1.0
+                    size 42
+                    color "#F2F6FF"
+                    outlines [(2, "#000000AA", 0, 0)]
 
             if fa_pressure_comment:
                 frame:

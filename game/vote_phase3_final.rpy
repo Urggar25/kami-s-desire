@@ -15,6 +15,12 @@ default vote_phase3_tally_done = False
 init python:
     import random
 
+    def vote_phase3_safe_play(path, fallback):
+        if renpy.loadable(path):
+            renpy.sound.play(path)
+        elif renpy.loadable(fallback):
+            renpy.sound.play(fallback)
+
     def vote_phase3_build_results(player_choice):
         """Construit les 12 votes : 11 persos via score, + Noam via choix joueur."""
         display_names = {
@@ -73,11 +79,11 @@ init python:
         store.vote_phase3_tally_index += 1
 
         if rep_vote == "pour":
-            renpy.sound.play("sound/sfx_vote_pour.ogg")
+            vote_phase3_safe_play("sound/sfx_vote_pour.ogg", "audio/sfx_beep.mp3")
         elif rep_vote == "abstention":
-            renpy.sound.play("sound/sfx_abstention.ogg")
+            vote_phase3_safe_play("sound/sfx_abstention.ogg", "audio/sfx_paper.mp3")
         else:
-            renpy.sound.play("sound/sfx_contre.ogg")
+            vote_phase3_safe_play("sound/sfx_contre.ogg", "audio/sfx_tambour.mp3")
 
         if not store.vote_phase3_pending_votes:
             store.vote_phase3_tally_done = True
@@ -201,7 +207,7 @@ screen vote_screen():
 
             action [
                 SetVariable("vote_phase3_player_choice", "pour"),
-                Play("sound", "sound/sfx_vote_click.ogg"),
+                Play("sound", "audio/sfx_beep.mp3"),
                 With(vpunch),
                 Return("pour"),
             ]
@@ -236,7 +242,7 @@ screen vote_screen():
 
             action [
                 SetVariable("vote_phase3_player_choice", "contre"),
-                Play("sound", "sound/sfx_vote_click.ogg"),
+                Play("sound", "audio/sfx_beep.mp3"),
                 With(vpunch),
                 Return("contre"),
             ]

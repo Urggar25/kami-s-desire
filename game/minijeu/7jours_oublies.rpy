@@ -117,15 +117,18 @@ init python:
             store.j11012_mind_feedback = j11012_mind_correct_edges[edge]
             store.j11012_mind_wrong_edge = None
             store.j11012_mind_selected = []
+            renpy.play("audio/sfx_beep.mp3", channel="sound")
             if len(store.j11012_mind_solved_edges) >= J11012_MIND_TARGET:
                 store.j11012_mind_done = True
                 store.j11012_mind_success = True
                 store.j11012_mind_feedback = "Tout s'aligne. Les sept jours ne sont pas une limite : c'est une arme."
+                renpy.play("audio/sfx_victory.mp3", channel="sound")
         else:
             store.j11012_mind_wrong_edge = edge
             store.j11012_mind_feedback = renpy.random.choice(j11012_mind_wrong_lines)
             store.j11012_mind_flash = 0.55
             store.j11012_mind_selected = []
+            renpy.play("audio/sfx_gresillement.mp3", channel="sound")
 
     def j11012_mind_tick():
         if store.j11012_mind_flash > 0.0:

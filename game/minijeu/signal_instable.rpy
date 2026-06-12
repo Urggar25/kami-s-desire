@@ -27,36 +27,8 @@ default j601_signal_warning = ""
 default j601_signal_last_flash = 0.0
 default j601_signal_display_line = ""
 
-init python:
-    import random
-
-    def j601_signal_get_zone():
-        c = store.j601_signal_cursor
-        if 30 <= c <= 70:
-            return "green"
-        elif 15 <= c <= 85:
-            return "orange"
-        else:
-            return "red"
-
-    def j601_signal_glitch_text(text):
-        zone = j601_signal_get_zone()
-
-        if zone == "green":
-            glitch_chance = 0.05
-        elif zone == "orange":
-            glitch_chance = 0.25
-        else:
-            glitch_chance = 0.60
-
-        chars = list(text)
-        for i in range(len(chars)):
-            if random.random() < glitch_chance:
-                chars[i] = random.choice([
-                    "#", "%", "&", "@", "?", "█", "░", "▒", "▓",
-                    random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-                ])
-        return "".join(chars)
+# NOTE: doublons j601_signal_get_zone / j601_signal_glitch_text supprimés
+# (les définitions canoniques sont plus bas dans ce fichier).
 
 init python:
     import random

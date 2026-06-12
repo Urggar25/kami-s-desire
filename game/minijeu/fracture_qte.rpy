@@ -21,6 +21,8 @@ default j601_fracture_line = ""
 default j601_fracture_warning = "FRACTURE INIT"
 default j601_fracture_flash = 0.0
 default j601_fracture_result = False
+default j601_fracture_sequence_length = 6
+default j601_fracture_display_line = ""
 
 
 
@@ -54,40 +56,11 @@ init python:
 
         return "".join(result)
 
-    j601_fracture_events = [
-        {
-            "line": "La libre circulation entre districts... districts...",
-            "key": "K_a",
-            "label": "A",
-            "delay": 2.3,
-            "window": 1.05,
-            "warning": "LOOP VOCAL"
-        },
-        {
-            "line": "...va enfin permettre la vrai... la vraie liberté.",
-            "key": "K_SPACE",
-            "label": "ESPACE",
-            "delay": 2.5,
-            "window": 0.95,
-            "warning": "CORRECTION FORCÉE"
-        },
-        {
-            "line": "Plus de barrières inutiles.",
-            "key": "K_LEFT",
-            "label": "←",
-            "delay": 2.4,
-            "window": 1.00,
-            "warning": "VOIX GRAVE"
-        },
-        {
-            "line": "Vous allez enfin pouvoir... mourir... je veux dire bouger librement !",
-            "key": "K_UP",
-            "label": "↑",
-            "delay": 2.2,
-            "window": 0.90,
-            "warning": "LAPSUS CRITIQUE"
-        },
-    ]
+    # Libellés lisibles pour les touches QTE
+    J601_FRACTURE_KEY_LABELS = {
+        "K_z": "Z", "K_q": "Q", "K_s": "S", "K_d": "D",
+        "K_SPACE": "ESPACE", "K_RETURN": "ENTRÉE",
+    }
 
     def j601_fracture_reset():
         store.j601_fracture_done = False
@@ -107,6 +80,10 @@ init python:
         store.j601_fracture_display_line = ""
 
         store.j601_fracture_next_event = 1.5
+        store.j601_fracture_time_left = J601_FRACTURE_TOTAL_TIME
+        store.j601_fracture_flash = 0.0
+        store.j601_fracture_result = False
+        store.j601_fracture_warning = "FRACTURE INIT"
 
     def j601_fracture_start_event():
         if store.j601_fracture_step >= store.j601_fracture_sequence_length:
@@ -117,10 +94,14 @@ init python:
 
         store.j601_fracture_line = phrase
         store.j601_fracture_current_key = key
-        store.j601_fracture_current_label = key.replace("K_", "")
+        store.j601_fracture_current_label = J601_FRACTURE_KEY_LABELS.get(key, key.replace("K_", ""))
 
-        store.j601_fracture_qte_time = random.uniform(0.9, 1.1)
+        # Fenêtre qui rétrécit avec la progression (difficulté croissante)
+        progress = store.j601_fracture_step / float(max(1, store.j601_fracture_sequence_length))
+        base = random.uniform(0.95, 1.15)
+        store.j601_fracture_qte_time = max(0.55, base - progress * 0.35)
         store.j601_fracture_prompt_active = True
+        store.j601_fracture_warning = "FRACTURE DÉTECTÉE"
 
     def j601_fracture_press(key_name):
         if not store.j601_fracture_prompt_active:
@@ -129,9 +110,14 @@ init python:
         if key_name == store.j601_fracture_current_key:
             store.j601_fracture_success_count += 1
             store.j601_fracture_display_line = store.j601_fracture_line
+            store.j601_fracture_warning = "FRACTURE CAPTÉE"
+            renpy.play("audio/sfx_beep.mp3", channel="sound")
         else:
             store.j601_fracture_fail_count += 1
             store.j601_fracture_display_line = j601_fracture_glitch_text(store.j601_fracture_line)
+            store.j601_fracture_warning = "MAUVAISE TOUCHE"
+            store.j601_fracture_flash = 0.25
+            renpy.play("audio/sfx_gresillement.mp3", channel="sound")
 
         store.j601_fracture_prompt_active = False
         store.j601_fracture_step += 1
@@ -142,25 +128,37 @@ init python:
         if store.j601_fracture_done:
             return
 
+        # Chrono global (échec si épuisé)
+        store.j601_fracture_time_left = max(0.0, store.j601_fracture_time_left - J601_FRACTURE_TICK)
+
+        if store.j601_fracture_flash > 0.0:
+            store.j601_fracture_flash = max(0.0, store.j601_fracture_flash - J601_FRACTURE_TICK)
+
         if store.j601_fracture_prompt_active:
-            store.j601_fracture_qte_time -= 0.05
+            store.j601_fracture_qte_time -= J601_FRACTURE_TICK
 
             if store.j601_fracture_qte_time <= 0:
                 store.j601_fracture_fail_count += 1
                 store.j601_fracture_display_line = j601_fracture_glitch_text(store.j601_fracture_line)
+                store.j601_fracture_warning = "TROP TARD"
+                store.j601_fracture_flash = 0.25
 
                 store.j601_fracture_prompt_active = False
                 store.j601_fracture_step += 1
                 store.j601_fracture_next_event = random.uniform(1.5, 2.5)
 
         else:
-            store.j601_fracture_next_event -= 0.05
+            store.j601_fracture_next_event -= J601_FRACTURE_TICK
 
             if store.j601_fracture_next_event <= 0:
                 j601_fracture_start_event()
 
-        if store.j601_fracture_step >= store.j601_fracture_sequence_length:
+        if (store.j601_fracture_step >= store.j601_fracture_sequence_length
+                or store.j601_fracture_time_left <= 0.0):
             store.j601_fracture_display_line = "Vu que vous ne voulez pas débattre, il est temps maintenant de mour... voter... voter..."
+            # Succès : majorité de fractures captées
+            total = max(1, store.j601_fracture_success_count + store.j601_fracture_fail_count)
+            store.j601_fracture_result = (store.j601_fracture_success_count / float(total)) >= 0.6
             store.j601_fracture_done = True
 
 
@@ -266,7 +264,7 @@ screen j601_fracture_screen():
                 text "[j601_fracture_warning]":
                     size 26
                     color "#FF6B9A"
-            text "RÉUSSITES [j601_fracture_success_count]/4":
+            text "RÉUSSITES [j601_fracture_success_count]/[j601_fracture_sequence_length]":
                 size 26
                 color "#DDF8FF"
 
@@ -314,7 +312,7 @@ screen j601_fracture_screen():
         add Solid("#7DF9FF33", xysize=(500, 2)) xpos 710 ypos 650 rotate -8
 
     if j601_fracture_done:
-        timer 0.2 action Return(j601_fracture_result)
+        timer 1.4 action Return(j601_fracture_result)
 
 
 label j601_play_fracture:

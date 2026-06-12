@@ -18,6 +18,11 @@ default mg_perfect_margin = 0.05
 default mg_skip_scene_pick = False
 default mg_was_success = False
 default mg_quick_menu_prev = True
+default mg_combo = 0
+default mg_combo_max = 0
+default mg_perfects = 0
+default mg_misses = 0
+default mg_flash = 0.0
 default sport_events_pool = [
     "sport_event_001",
     "sport_event_002",
@@ -43,10 +48,18 @@ init python:
         store.mg_energy = 1.0
         store.mg_value = 0.0
         store.mg_direction = 1
+        store.mg_speed = 0.9
         store.mg_done = False
         store.mg_feedback = ""
         store.mg_feedback_color = "#f5f5f5"
         store.mg_time_left = 60.0
+        store.mg_zone_start = 0.40
+        store.mg_zone_end = 0.60
+        store.mg_combo = 0
+        store.mg_combo_max = 0
+        store.mg_perfects = 0
+        store.mg_misses = 0
+        store.mg_flash = 0.0
 
     def mg_tick(dt=0.02):
         if store.mg_done:
@@ -54,6 +67,9 @@ init python:
 
         store.mg_time_left = max(0.0, store.mg_time_left - dt)
         store.mg_value += store.mg_direction * store.mg_speed * dt
+
+        if store.mg_flash > 0.0:
+            store.mg_flash = max(0.0, store.mg_flash - dt)
 
         if store.mg_value >= 1.0:
             store.mg_value = 1.0
@@ -65,6 +81,16 @@ init python:
         if store.mg_time_left <= 0 or store.mg_reps >= store.mg_target_reps or store.mg_energy <= 0:
             store.mg_done = True
 
+    def mg_relocate_zone():
+        # La zone se déplace et rétrécit avec la progression (difficulté).
+        progress = store.mg_reps / float(max(1, store.mg_target_reps))
+        width = max(0.10, 0.20 - progress * 0.08)
+        center = renpy.random.uniform(0.22 + width, 0.78 - width)
+        store.mg_zone_start = center - width / 2.0
+        store.mg_zone_end = center + width / 2.0
+        # Vitesse croissante
+        store.mg_speed = 0.9 + progress * 0.55
+
     def mg_click():
         if store.mg_done:
             return
@@ -73,18 +99,31 @@ init python:
         val = store.mg_value
         if store.mg_zone_start <= val <= store.mg_zone_end:
             center = (store.mg_zone_start + store.mg_zone_end) / 2.0
+            store.mg_combo += 1
+            store.mg_combo_max = max(store.mg_combo_max, store.mg_combo)
+            combo_bonus = 1 if store.mg_combo >= 3 else 0
+
             if abs(val - center) <= store.mg_perfect_margin:
-                store.mg_progress += 2
-                store.mg_feedback = "Parfait !"
+                store.mg_perfects += 1
+                store.mg_progress += 2 + combo_bonus
+                store.mg_feedback = ("PARFAIT ! x%d" % store.mg_combo) if store.mg_combo >= 2 else "PARFAIT !"
                 store.mg_feedback_color = "#5ad45a"
+                store.mg_flash = 0.18
+                renpy.play("audio/sfx_clap.mp3", channel="sound")
             else:
-                store.mg_progress += 1
-                store.mg_feedback = "Correct."
+                store.mg_progress += 1 + combo_bonus
+                store.mg_feedback = ("Correct. x%d" % store.mg_combo) if store.mg_combo >= 2 else "Correct."
                 store.mg_feedback_color = "#f2c94c"
+                renpy.play("audio/sfx_beep.mp3", channel="sound")
         else:
+            store.mg_misses += 1
+            store.mg_combo = 0
             store.mg_energy = max(0.0, store.mg_energy - 0.15)
             store.mg_feedback = "Raté..."
             store.mg_feedback_color = "#ff6b6b"
+            renpy.play("audio/sfx_drop.mp3", channel="sound")
+
+        mg_relocate_zone()
 
         if store.mg_reps >= store.mg_target_reps:
             store.mg_done = True
@@ -181,6 +220,9 @@ screen minijeu_halteres():
     add Solid("#020912b0")
     add Solid("#1f5fa833") at mg_bg_idle
 
+    if mg_flash > 0.0:
+        add Solid("#5ad45a2e")
+
     frame at mg_panel_fade(0.0):
         xalign 0.5
         yalign 0.06
@@ -235,7 +277,11 @@ screen minijeu_halteres():
 
                 vbox:
                     spacing 8
-                    text "RÉPÉTITIONS" style "mg_label_text" font mg_font
+                    hbox:
+                        spacing 24
+                        text "RÉPÉTITIONS" style "mg_label_text" font mg_font
+                        if mg_combo >= 2:
+                            text "COMBO x[mg_combo]" style "mg_label_text" color "#5ad45a" font mg_font at mg_hud_pulse
                     text "[mg_reps]/[mg_target_reps]" style "mg_value_text" xalign 0.5 font mg_font
                     if mg_feedback:
                         text "[mg_feedback]" at mg_feedback_pop style "mg_subtitle_text" color mg_feedback_color xalign 0.5 font mg_font
@@ -323,12 +369,30 @@ label minijeu_halteres:
     $ mg_quick_menu_prev = quick_menu
     $ quick_menu = False
     $ mg_reset()
+    call mk_countdown from _call_mk_countdown_halteres
     call screen minijeu_halteres
-    $ quick_menu = mg_quick_menu_prev
 
     $ mg_was_success = mg_is_successful()
+
+    # Écran de résultats avec rang (kit partagé)
+    call mk_show_results(
+        "ENTRAÎNEMENT AUX HALTÈRES",
+        mg_progress,
+        mg_target_reps * 2,
+        stats=[
+            ("Répétitions", "%d/%d" % (mg_reps, mg_target_reps)),
+            ("Parfaits", str(mg_perfects)),
+            ("Combo max", "x%d" % mg_combo_max),
+            ("Ratés", str(mg_misses)),
+        ],
+    ) from _call_mk_show_results_halteres
+
+    $ quick_menu = mg_quick_menu_prev
+
+    # Gain de stat lié à la performance (au lieu d'un pur aléatoire)
+    $ _mg_gain_chance = 0.10 + (0.45 if mg_was_success else 0.0) + min(0.20, mg_combo_max * 0.03)
     $ gained_physique = False
-    if renpy.random.random() < 0.30:
+    if renpy.random.random() < _mg_gain_chance:
         $ stat_physique += 1
         $ gained_physique = True
 
