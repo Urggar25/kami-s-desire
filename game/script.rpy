@@ -337,18 +337,12 @@ init python:
         if not p:
             return
 
+        tag = p.get("tag")
+        if not tag or tag in ("__NARRATOR__", "__NO_AUTOFOCUS__"):
+            return
+
         # On ré-applique strictement ce qui est en cours
-        cinematic_focus(
-            p["tag"],
-            zoom_bg=p["zoom_bg"],
-            cam_y=p["cam_y"],
-            t=t,
-            blur_bg=p["blur_bg"],
-            blur_radius=p["blur_radius"],
-            cam_layers=p["cam_layers"],
-            focus_zoom_char=p["focus_zoom_char"],
-            dim_alpha=p["dim_alpha"]
-        )
+        cinematic_focus(tag, t=t)
 
 
 # ------------------------------------------------------------

@@ -71,8 +71,9 @@ init python:
             else:
                 renpy.show(tag, at_list=[char_inactive(x)])
 
-        # Branchement du callback
-        config.all_character_callbacks.append(on_speaking)
+    # NOTE: système legacy remplacé par l'autofocus de script.rpy.
+    # Ne PAS enregistrer on_speaking dans config.all_character_callbacks
+    # (l'ancien code s'auto-réappendait à chaque ligne -> fuite).
 
 init python:
     def updateExpr(tag, expr):

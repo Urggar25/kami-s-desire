@@ -178,12 +178,18 @@ style input:
 ## Écran des choix
 ################################################################################
 
+transform choice_appear(delay=0.0):
+    alpha 0.0
+    yoffset 14
+    pause delay
+    easeout 0.22 alpha 1.0 yoffset 0
+
 screen choice(items):
     style_prefix "choice"
 
     vbox:
-        for i in items:
-            textbutton i.caption action i.action
+        for idx, i in enumerate(items):
+            textbutton i.caption action i.action at choice_appear(idx * 0.07)
 
 style choice_vbox is vbox
 style choice_button is button
@@ -198,7 +204,11 @@ style choice_vbox:
 style choice_button is default:
     properties gui.button_properties("choice_button")
     background Solid("#0a1a2acc")
-    hover_background Solid("#0d2535cc")
+    hover_background Fixed(
+        Solid("#0d2535ee"),
+        Solid("#5cd3ff", xsize=5),
+        Solid("#5cd3ff", xsize=5, xalign=1.0),
+    )
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
@@ -226,10 +236,16 @@ label after_load:
 ## Navigation
 ################################################################################
 
+transform navigation_in:
+    alpha 0.0
+    xoffset -25
+    easeout 0.30 alpha 1.0 xoffset 0
+
 screen navigation():
 
     vbox:
         style_prefix "navigation"
+        at navigation_in
 
         xpos gui.navigation_xpos
         yalign 0.5
@@ -340,6 +356,11 @@ style main_menu_version:
 ## Menu de jeu
 ################################################################################
 
+transform game_menu_content_in:
+    alpha 0.0
+    yoffset 18
+    easeout 0.28 alpha 1.0 yoffset 0
+
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     style_prefix "game_menu"
 
@@ -370,6 +391,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
             frame:
                 style "game_menu_content_frame"
+                at game_menu_content_in
 
                 if scroll == "viewport":
                     viewport:
