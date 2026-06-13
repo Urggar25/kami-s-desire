@@ -1,36 +1,52 @@
-2026-06-12 23:05:05 UTC
+2026-06-13 12:52:40 UTC
 Windows-10-10.0.26200
 Ren'Py 8.3.7.25031702
 
-Early init took 0.15s
+Early init took 0.12s
 Loading error handling took 0.05s
-Loading script took 1.76s
-Loading save slot metadata took 0.49s
-Loading persistent took 0.01s
-Running init code took 0.15s
-Loading analysis data took 0.10s
-Analyze and compile ATL took 0.02s
-Reloading save slot metadata took 0.28s
-Index archives took 0.00s
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
+Loading script took 1.88s
+Loading save slot metadata took 0.42s
+Loading persistent took 0.03s
+
+File "game/day0_ui.rpy", line 472: The if statement is not a valid child of the text statement.
+    color "#3BCC82" if scan_phase == 2 else "#F0A835"
+                      ^
+
+File "game/day0_ui.rpy", line 1040: The if statement is not a valid child of the text statement.
+    color "#5CD3FF" if _pi == page else "#6A5A48"
+                      ^
+
+File "game/day0_ui.rpy", line 1292: The if statement is not a valid child of the text statement.
+    color "#5CD3FF" if not locked else "#3A5A6A"
+                      ^
+
+File "game/scenario/0_canon.rpy", line 311: expected statement.
+    “Le premier soir.”
+                    ^
+
+File "game/scenario/0_canon.rpy", line 312: expected statement.
+    “Les notifications qui s’arrêtent d’un coup.”
+                                               ^
+
+File "game/scenario/0_canon.rpy", line 313: expected statement.
+    “Les messages qui restent en “envoi…” comme des prières.”
+                                                           ^
+
+File "game/scenario/0_canon.rpy", line 314: expected statement.
+    “Le silence, complet.”
+               ^
+
+File "game/scenario/0_canon.rpy", line 315: expected statement.
+    “Puis cette voix.”
+                    ^
+
+File "game/scenario/0_canon.rpy", line 316: expected statement.
+    “Ce son presque nasillard que tout le monde connaît désormais.”
+                                                                 ^
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.01s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.09s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.25s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.13s
-Running _start took 0.00s
-Interface start took 1.46s
+Interface start took 1.05s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -45,21 +61,110 @@ Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1744.67s
-Loading error handling took 0.09s
-Loading script took 2.53s
+Early init took 120.73s
+Loading error handling took 0.03s
+Loading script took 0.81s
 Loading save slot metadata took 0.32s
 Loading persistent took 0.01s
-Running init code took 0.08s
-Loading analysis data took 0.07s
-Analyze and compile ATL took 0.03s
+
+File "game/day0_ui.rpy", line 472: The if statement is not a valid child of the text statement.
+    color "#3BCC82" if scan_phase == 2 else "#F0A835"
+                      ^
+
+File "game/day0_ui.rpy", line 1040: The if statement is not a valid child of the text statement.
+    color "#5CD3FF" if _pi == page else "#6A5A48"
+                      ^
+
+File "game/day0_ui.rpy", line 1292: The if statement is not a valid child of the text statement.
+    color "#5CD3FF" if not locked else "#3A5A6A"
+                      ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.28s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 231.49s
+Loading error handling took 0.04s
+Loading script took 1.12s
+Loading save slot metadata took 0.34s
+Loading persistent took 0.01s
+
+File "game/day0_ui.rpy", line 1107: The if statement is not a valid child of the textbutton statement.
+    text_color "#E8E2D4" if page > 0 else "#8A7A68"
+                           ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.27s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 324.71s
+Loading error handling took 0.03s
+Loading script took 0.93s
+Loading save slot metadata took 0.31s
+Loading persistent took 0.01s
+
+File "game/day0_ui.rpy", line 1120: The if statement is not a valid child of the textbutton statement.
+    text_color "#E8E2D4" if page < len(day0_commandment_pages) - 1 else "#8A7A68"
+                           ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.32s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 397.05s
+Loading error handling took 0.03s
+Loading script took 0.99s
+Loading save slot metadata took 0.40s
+Loading persistent took 0.01s
+Running init code took 0.14s
+Loading analysis data took 0.06s
+Analyze and compile ATL took 0.02s
 Reloading save slot metadata took 0.20s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.11s
+Dump and make backups took 0.12s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.21s
+Initial gc took 0.14s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -68,13 +173,13 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.07s
+Analyze screens took 0.05s
 Save screen analysis took 0.09s
-Prepare screens took 0.36s
-Save pyanalysis. took 0.10s
-Save bytecode. took 0.07s
-Running _start took 0.01s
-Interface start took 1.48s
+Prepare screens took 0.33s
+Save pyanalysis. took 0.09s
+Save bytecode. took 0.05s
+Running _start took 0.00s
+Interface start took 1.47s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -89,21 +194,21 @@ Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1784.82s
-Loading error handling took 0.05s
-Loading script took 0.95s
-Loading save slot metadata took 0.48s
+Early init took 751.45s
+Loading error handling took 0.03s
+Loading script took 0.93s
+Loading save slot metadata took 0.34s
 Loading persistent took 0.01s
-Running init code took 0.09s
-Loading analysis data took 0.07s
+Running init code took 0.07s
+Loading analysis data took 0.06s
 Analyze and compile ATL took 0.02s
-Reloading save slot metadata took 0.17s
+Reloading save slot metadata took 0.15s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.09s
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.21s
+Initial gc took 0.20s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -112,13 +217,13 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.11s
-Prepare screens took 0.36s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.07s
+Analyze screens took 0.05s
+Save screen analysis took 0.08s
+Prepare screens took 0.32s
+Save pyanalysis. took 0.13s
+Save bytecode. took 0.05s
 Running _start took 0.00s
-Interface start took 1.71s
+Interface start took 1.49s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -132,19 +237,51 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/0_canon.rpy", line 329, in script
+    play music “music/bgm_system_override.mp3” fadein 1.0
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 124, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 33, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid character '“' (U+201C) (game/scenario/0_canon.rpy, line 329)
+
+While running game code:
+  File "game/scenario/0_canon.rpy", line 329, in script
+    play music “music/bgm_system_override.mp3” fadein 1.0
+  File "renpy/common/000statements.rpy", line 124, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 33, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+SyntaxError: invalid character '“' (U+201C) (game/scenario/0_canon.rpy, line 329)
 Resetting cache.
-Early init took 1898.62s
-Loading error handling took 0.03s
-Loading script took 1.24s
-Loading save slot metadata took 0.37s
-Loading persistent took 0.02s
-Running init code took 0.08s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.18s
+Early init took 929.92s
+Loading error handling took 0.04s
+Loading script took 1.06s
+Loading save slot metadata took 0.44s
+Loading persistent took 0.01s
+Running init code took 0.10s
+Loading analysis data took 0.08s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.23s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
-Dump and make backups took 0.09s
+Dump and make backups took 0.12s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.25s
@@ -156,13 +293,253 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.06s
-Save screen analysis took 0.11s
-Prepare screens took 0.35s
+Analyze screens took 0.07s
+Save screen analysis took 0.13s
+Prepare screens took 0.40s
 Save pyanalysis. took 0.00s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 1.90s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 966.38s
+Loading error handling took 0.03s
+Loading script took 0.99s
+Loading save slot metadata took 0.33s
+Loading persistent took 0.01s
+Running init code took 0.07s
+Loading analysis data took 0.07s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.18s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.18s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.35s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.09s
+Save screen analysis took 0.13s
+Prepare screens took 0.60s
+Save pyanalysis. took 0.18s
+Save bytecode. took 0.06s
+Running _start took 0.00s
+Interface start took 2.26s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenario/0_canon.rpy", line 917, in script
+    $ day0_timer_init(h=3, m=42, s=18)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenario/0_canon.rpy", line 917, in <module>
+    $ day0_timer_init(h=3, m=42, s=18)
+  File "game/day0_ui.rpy", line 113, in day0_timer_init
+    store.day0_timer_end_time  = _time.time() + total_seconds
+AttributeError: 'str' object has no attribute 'time'
+
+While running game code:
+  File "game/scenario/0_canon.rpy", line 917, in script
+    $ day0_timer_init(h=3, m=42, s=18)
+  File "game/scenario/0_canon.rpy", line 917, in <module>
+    $ day0_timer_init(h=3, m=42, s=18)
+  File "game/day0_ui.rpy", line 113, in day0_timer_init
+    store.day0_timer_end_time  = _time.time() + total_seconds
+AttributeError: 'str' object has no attribute 'time'
+Resetting cache.
+Early init took 1151.41s
+Loading error handling took 0.04s
+Loading script took 1.55s
+Loading save slot metadata took 0.61s
+Loading persistent took 0.02s
+Running init code took 0.17s
+Loading analysis data took 0.15s
+Analyze and compile ATL took 0.04s
+Reloading save slot metadata took 0.29s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.13s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.31s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.08s
+Save screen analysis took 0.13s
+Prepare screens took 0.63s
+Save pyanalysis. took 0.15s
 Save bytecode. took 0.05s
 Running _start took 0.00s
-Interface start took 1.61s
+Interface start took 2.33s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1158.60s
+Loading error handling took 0.05s
+Loading script took 1.27s
+Loading save slot metadata took 0.45s
+Loading persistent took 0.02s
+Running init code took 0.11s
+Loading analysis data took 0.08s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.20s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.12s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.30s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.07s
+Save screen analysis took 0.13s
+Prepare screens took 0.54s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.07s
+Running _start took 0.00s
+Interface start took 2.31s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1941.95s
+Loading error handling took 0.04s
+Loading script took 0.97s
+Loading save slot metadata took 0.37s
+Loading persistent took 0.01s
+Running init code took 0.09s
+Loading analysis data took 0.08s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.25s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.12s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.31s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.06s
+Save screen analysis took 0.15s
+Prepare screens took 0.51s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.06s
+Running _start took 0.00s
+Interface start took 1.74s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 770'
+Version: b'4.6.0 - Build 32.0.101.7084'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2209.20s
+Loading error handling took 0.03s
+Loading script took 0.99s
+Loading save slot metadata took 0.34s
+Loading persistent took 0.01s
+Running init code took 0.08s
+Loading analysis data took 0.07s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.20s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\fasqu\\AppData\\Roaming/RenPy/backups\\kami-s-desire':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.26s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.06s
+Save screen analysis took 0.12s
+Prepare screens took 0.35s
+Save pyanalysis. took 0.16s
+Save bytecode. took 0.05s
+Running _start took 0.00s
+Interface start took 2.35s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenario/5_1.rpy", line 302: Line with id 384cbb45 appears twice. The other line is game/scenario/14_0_1_1_0.rpy:115
+File "game/day0_ui.rpy", line 1120: The if statement is not a valid child of the textbutton statement.
+    text_color "#E8E2D4" if page < len(day0_commandment_pages) - 1 else "#8A7A68"
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jun 12 20:40:59 2026
+Sat Jun 13 14:58:06 2026
