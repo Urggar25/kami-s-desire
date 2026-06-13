@@ -36,6 +36,7 @@ default cam_z_cur = 1.0
 
 default char_pos = {}         # tag -> xalign
 default char_state = {}       # tag -> dict(expr,x,y,layer,zorder)
+default group_members = []    # tags visibles via showGroup
 
 default current_bg_name = None
 default bg_is_blurred = False
@@ -94,6 +95,28 @@ init python:
             return int(value)
         except (TypeError, ValueError):
             return 0
+
+    def fix_stale_return_label(target_label, source_file="game/scenario/1_canon.rpy"):
+        """
+        Compatibilite sauvegardes: les anciens `call` sans `from` stockaient
+        une position anonyme dans 1_canon.rpy. Apres modification du fichier,
+        Ren'Py peut ne plus retrouver ce retour.
+        """
+        if not target_label:
+            return
+        ctx = renpy.game.context()
+        if not ctx.return_stack:
+            return
+        top = ctx.return_stack[-1]
+        if isinstance(top, tuple) and len(top) >= 1 and str(top[0]).replace("\\", "/") == source_file:
+            ctx.return_stack[-1] = target_label
+
+    def day1_trace_return_label(path_type, anchor_y=620):
+        if path_type == "vertical_up":
+            return "_call_day1_trace_urn"
+        if path_type == "arc" and anchor_y == 560:
+            return "_call_day1_trace_jammer"
+        return "_call_day1_trace_wakeup"
 
     def cam_apply(x1, y1, z1, t=0.35, layers=("bgcam", "master")):
         x0 = store.cam_x_cur
@@ -191,15 +214,66 @@ init python:
 # ------------------------------------------------------------
 init python:
     def showP(tag, expr="neutre", x=0.5, y=1.0, layer="master", zorder=0, extra_at=None):
+        """
+        Affiche un personnage.
+        Si le personnage n'était PAS à l'écran, applique une transition d'entrée animée.
+        Si déjà présent, simple repositionnement/changement d'expression.
+        """
         if extra_at is None:
             extra_at = []
+
+        already_showing = renpy.showing(tag, layer=layer)
 
         store.char_pos[tag] = x
         store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder)
 
         img = f"{tag} {expr}"
-        at_list = [Position(xalign=x, yalign=y)] + extra_at
+
+        if already_showing:
+            # Repositionnement standard
+            at_list = [Position(xalign=x, yalign=y)] + extra_at
+        else:
+            # Entrée animée selon position horizontale
+            if x <= 0.35:
+                enter = char_enter_left(xp=x)
+            elif x >= 0.65:
+                enter = char_enter_right(xp=x)
+            else:
+                enter = char_enter_center(xp=x)
+            at_list = [enter] + extra_at
+
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=zorder)
+
+
+    def hideP(tag, layer="master"):
+        """
+        Cache un personnage avec une transition de sortie animée.
+        Remplace les `hide X` dans les scripts pour plus de dynamisme.
+        """
+        if not renpy.showing(tag, layer=layer):
+            store.char_pos.pop(tag, None)
+            store.char_state.pop(tag, None)
+            return
+
+        x = store.char_pos.get(tag, 0.5)
+        expr = store.char_state.get(tag, {}).get("expr", "neutre")
+        img = f"{tag} {expr}"
+
+        # Sortie animée selon position
+        if x <= 0.35:
+            exit_tr = char_exit_left(xp=x)
+        elif x >= 0.65:
+            exit_tr = char_exit_right(xp=x)
+        else:
+            exit_tr = char_exit_center(xp=x)
+
+        renpy.show(img, tag=tag, layer=layer, at_list=[exit_tr])
+        renpy.pause(0.24, hard=True)
+        renpy.hide(tag, layer=layer)
+
+        store.char_pos.pop(tag, None)
+        store.char_state.pop(tag, None)
+
 
     def moveP(tag, x, y=1.0, t=0.35):
         if tag not in store.char_state:
@@ -449,7 +523,7 @@ define ryn = Character("Ryn", what_prefix="“", what_suffix="”", callback=mak
 define sael = Character("Sael", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("sael"), image="sael")
 
 define resp_d = Character("Responsable de District", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("__NARRATOR__"))
-define goumi = Character("Goumi", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("goumi"))
+define goumi = Character("Goumi", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("goumi"), image="goumi")
 define robot = Character("Robot", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("robot"))
 
 define kami = Character(

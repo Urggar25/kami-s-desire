@@ -203,19 +203,19 @@ label decouverte_salle_observation:
     "Des curseurs."
     "Un micro lourd."
 
-    $ showP("noam", "reflexion", 0.22)   # gauche
-    $ showP("lysa", "reflexion", 0.78)   # droite
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("lysa", "reflexion", 0.78),
+    ])
 
     "Lysa est déjà près de la vitre."
     "Elle ne touche rien."
     "Elle regarde dehors."
 
-    $ showP("noam", "hesitation", 0.22)
 
-    noam "Tu… regardes quoi ?"
+    noam hesitation "Tu… regardes quoi ?"
 
-    $ showP("lysa", "neutre", 0.78)
-    lysa "Viens."
+    lysa neutre "Viens."
 
     "Je m’approche."
     "Et je comprends tout de suite."
@@ -228,54 +228,43 @@ label decouverte_salle_observation:
     "Des étoiles."
     "Quand on plonge le regard, on voit une masse imposante et une sorte de gros vaisseau volant."
 
-    $ showP("noam", "surpris", 0.22)
 
-    noam "…"
-    noam "Attends."
+    noam surpris "…"
+    noam surpris "Attends."
 
-    $ showP("lysa", "sourire", 0.78)
-    lysa "Ouais."
+    lysa sourire "Ouais."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "On est…"
+    noam hesitation "On est…"
 
-    $ showP("lysa", "taquin", 0.78)
-    lysa "Dans l’espace ouai."
+    lysa taquin "Dans l’espace ouai."
 
     "Elle le dit comme si c’était une évidence."
     "Mais son sourire la trahit."
     "Petit."
     "Presque enfantin."
 
-    $ showP("noam", "desaccord", 0.22)
 
-    noam "C’est pas possible."
-    noam "On a marché dix minutes."
+    noam desaccord "C’est pas possible."
+    noam desaccord "On a marché dix minutes."
 
-    $ showP("lysa", "reflexion", 0.78)
-    lysa "Et on a été endormis dans des caissons."
-    lysa "Donc oui."
-    lysa "Tout est possible."
+    lysa reflexion "Et on a été endormis dans des caissons."
+    lysa reflexion "Donc oui."
+    lysa reflexion "Tout est possible."
 
     "Je colle presque mon front à la vitre."
     "Le verre est froid."
     "Ultra froid."
 
-    $ showP("noam", "surpris", 0.22)
-    noam "C’est beau."
-    $ showP("noam", "inquiet", 0.22)
-    noam "Et ça me donne la nausée."
+    noam surpris "C’est beau."
+    noam inquiet "Et ça me donne la nausée."
 
-    $ showP("lysa", "sourire", 0.78)
     lysa sourire "Je comprends."
     lysa content "Moi ça…"
     lysa content "Ça me calme, bizarrement."
 
-    $ showP("noam", "taquin", 0.22)
-    noam "Toi t’es câblée à l’envers."
+    noam taquin "Toi t’es câblée à l’envers."
 
-    $ showP("lysa", "rire", 0.78)
-    lysa "Peut-être."
+    lysa rire "Peut-être."
     lysa reflexion "Ou peut-être que j’avais besoin de voir un truc…"
     lysa reflexion"Qui change de notre quotidien."
 
@@ -288,29 +277,22 @@ label decouverte_salle_observation:
     "Les écrans."
     "Tout a l'air fonctionnel."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Tu crois qu’on peut contacter quelqu’un ?"
+    noam reflexion "Tu crois qu’on peut contacter quelqu’un ?"
 
-    $ showP("lysa", "triste", 0.78)
-    lysa "Je ne sais pas me servir de ce truc."
-    lysa "Sinon, j'aurai bien aimé appeler ma famille."
+    lysa triste "Je ne sais pas me servir de ce truc."
+    lysa triste "Sinon, j'aurai bien aimé appeler ma famille."
 
-    $ showP("noam", "triste", 0.22)
-    noam "Ouais."
+    noam triste "Ouais."
 
     "Je m'avance vers la console radio."
 
-    $ showP("noam", "determine", 0.22)
-    noam "Mais ça doit pas être bien compliqué, attends ..."
+    noam determine "Mais ça doit pas être bien compliqué, attends ..."
 
-    $ showP("lysa", "inquiet", 0.78)
     lysa neutre "À ta place, j’éviterais de toucher à ça."
     lysa blase "On sait même pas si on a le droit."
     lysa fatigue "... Et franchement, vaut mieux pas tester."
 
-    $ showP("noam", "rire", 0.22)
     "Je lâche un petit rire."
-    $ showP("noam", "reflexion", 0.22)
     "Sans joie."
 
     pause 0.4
@@ -324,11 +306,9 @@ label decouverte_salle_observation:
     "Un vaisseau."
     "Petit et rapide."
 
-    $ showP("noam", "surpris", 0.22)
-    noam "Tu vois ça ?"
+    noam surpris "Tu vois ça ?"
     "Je montre du doigt l'horizon."
 
-    $ showP("lysa", "surpris", 0.78)
     lysa surpris "Ouais."
     lysa reflexion "On est vraiment loin de chez nous."
     lysa reflexion "Regarde la trajectoire."
@@ -338,75 +318,58 @@ label decouverte_salle_observation:
     "Un code."
     "Un motif propre."
 
-    $ showP("lysa", "determine", 0.78)
     lysa determine "District ORBITE."
     lysa determine "On est dans leur domaine ici."
     lysa reflexion "Peut être que leurs représentants en savent plus que nous sur où nous sommes."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Donc y’a du trafic."
-    noam "Et y’a des gens dehors."
+    noam reflexion "Donc y’a du trafic."
+    noam reflexion "Et y’a des gens dehors."
 
-    $ showP("lysa", "blase", 0.78)
     lysa blase "Bien sûr qu’il y a des gens."
     lysa triste "On est juste… pas du même côté de la vitre."
 
     pause 0.4
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "C’est fou."
-    noam "Kami nous a mis dans l’espace."
-    noam "Comme si c’était anodin…"
-    noam "Comme si c'était juste un décor."
+    noam reflexion "C’est fou."
+    noam reflexion "Kami nous a mis dans l’espace."
+    noam reflexion "Comme si c’était anodin…"
+    noam reflexion "Comme si c'était juste un décor."
 
-    $ showP("lysa", "reflexion", 0.78)
-    lysa "C’est un décor."
-    lysa "Mais c’est aussi un message."
+    lysa reflexion "C’est un décor."
+    lysa reflexion "Mais c’est aussi un message."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Lequel ?"
+    noam hesitation "Lequel ?"
 
-    $ showP("lysa", "determine", 0.78)
-    lysa "Qu’on est hors du monde."
-    lysa "Hors des règles."
+    lysa determine "Qu’on est hors du monde."
+    lysa determine "Hors des règles."
     lysa triste "Hors de tout ce qu'on connait depuis là."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Tu dis ça calmement."
+    noam reflexion "Tu dis ça calmement."
 
-    $ showP("lysa", "sourire", 0.78)
-    lysa "Je fais semblant. J'essaye de me rassurer."
+    lysa sourire "Je fais semblant. J'essaye de me rassurer."
     lysa taquin "Ça marche une fois sur deux."
 
-    $ showP("noam", "taquin", 0.22)
-    noam "Joli ratio."
+    noam taquin "Joli ratio."
 
-    $ showP("lysa", "rire", 0.78)
-    lysa "Merci."
+    lysa rire "Merci."
 
     "Elle reste face à la vitre."
     "Puis elle baisse un peu la voix."
 
-    $ showP("lysa", "reflexion", 0.78)
-    lysa "Tu sais ce qui est le pire ?"
+    lysa reflexion "Tu sais ce qui est le pire ?"
 
-    $ showP("noam", "neutre", 0.22)
-    noam "Vas-y."
+    noam neutre "Vas-y."
 
-    $ showP("lysa", "triste", 0.78)
-    lysa "J’arrive pas à décider si c’est magnifique…"
-    lysa "Ou si c’est juste une autre façon de nous écraser."
+    lysa triste "J’arrive pas à décider si c’est magnifique…"
+    lysa triste "Ou si c’est juste une autre façon de nous écraser."
 
-    $ showP("noam", "raison", 0.22)
-    noam "Les deux."
+    noam raison "Les deux."
 
-    $ showP("lysa", "blase", 0.78)
     lysa blase "Ouais."
     lysa triste "Probablement les deux."
 
     pause 0.5
 
-    $ showP("noam", "reflexion", 0.22)
     "Je recule d’un pas."
     "Je regarde la radio."
     "Les écrans."
@@ -416,6 +379,7 @@ label decouverte_salle_observation:
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_6
 
+    $ hideGroup()
     jump OBSERVATION_TP
 
 # Durée : 2m10

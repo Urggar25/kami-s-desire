@@ -215,148 +215,146 @@ label decouverte_cafeteria:
     scene bg_cg008 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg008")
 
-    $ showP("elen", "vide", 0.1)
-    $ showP("goumi", "vide", 0.9)
+    $ showGroup([
+        ("elen", "vide", 0.22),
+        ("goumi", "vide", 0.78),
+    ])
 
-    elen "Non mais attends."
-    elen "Tu me dis que tu peux genre VRAI-MENT cuisiner 'n'importe quoi'."
-    elen "Et tu me sors un menu en quatre catégories."
+    elen vide "Non mais attends."
+    elen vide "Tu me dis que tu peux genre VRAI-MENT cuisiner 'n'importe quoi'."
+    elen vide "Et tu me sors un menu en quatre catégories."
 
-    goumi "Correction : en six catégories."
-    goumi "Mise en bouche, Entrée froide, entrée chaude, plat, fromage et enfin dessert."
-    goumi "Vous pouvez commander ce que vous voulez. Tant que je suis approvisionné, je peux tout faire."
+    goumi vide "Correction : en six catégories."
+    goumi vide "Mise en bouche, Entrée froide, entrée chaude, plat, fromage et enfin dessert."
+    goumi vide "Vous pouvez commander ce que vous voulez. Tant que je suis approvisionné, je peux tout faire."
 
     "Je m'arrête à l'entrée."
     "Je ne sais pas si j'interromps une scène de présentation…"
     "Ou une petite scène de ménage."
-    
+    $ hideGroup()
+
     scene bg_cg008_1 at adaptive_fullscreen with fade
 
-    $ showP("noam", "vide", 0.6)
+    $ showGroup([
+        ("noam", "vide", 0.22),
+        ("elen", "vide", 0.50),
+        ("goumi", "vide", 0.78),
+    ])
     
-    noam "Je dérange ?"
+    noam vide "Je dérange ?"
 
-    elen "Oh."
-    elen "Non. Viens."
-    elen "J'essayais juste de comprendre comment on allait être nourris…"
+    elen vide "Oh."
+    elen vide "Non. Viens."
+    elen vide "J'essayais juste de comprendre comment on allait être nourris…"
 
-    goumi "Alimentation : active."
-    goumi "Stock : remplis."
-    goumi "Gestion : optimale."
+    goumi vide "Alimentation : active."
+    goumi vide "Stock : remplis."
+    goumi vide "Gestion : optimale."
 
-    elen "Raah j'aime pas ce mode de discussion ! On dirait vraiment un robot limité."
-    elen "C'est pas très naturel."
+    elen vide "Raah j'aime pas ce mode de discussion ! On dirait vraiment un robot limité."
+    elen vide "C'est pas très naturel."
 
     "Je souffle un petit rire."
     "Tu t'attendais à quoi en même temps."
 
-    elen "Je te présente Goumi."
-    elen "Apparemment c'est le chef de cette cafét."
-    elen "Il peut cuisiner à peu près tout ce qu'on veut, tant que c'est dans ses heures de boulot."
+    elen vide "Je te présente Goumi."
+    elen vide "Apparemment c'est le chef de cette cafét."
+    elen vide "Il peut cuisiner à peu près tout ce qu'on veut, tant que c'est dans ses heures de boulot."
     
-    noam "Dans ses heures de boulot ? Mais c'est un robot ..."
+    noam vide "Dans ses heures de boulot ? Mais c'est un robot ..."
 
-    goumi "Je suis Goumi."
-    goumi "Unité culinaire autonome."
-    goumi "Je peux préparer toute recette demandée par un représentant."
-    goumi "Dans la limite des stock disponible."
-    goumi "Je travaille de 6h du matin à 14h puis de 17h à 22h."
-    goumi "Le reste du temps est destiné à ma recharge."
+    goumi vide "Je suis Goumi."
+    goumi vide "Unité culinaire autonome."
+    goumi vide "Je peux préparer toute recette demandée par un représentant."
+    goumi vide "Dans la limite des stock disponible."
+    goumi vide "Je travaille de 6h du matin à 14h puis de 17h à 22h."
+    goumi vide "Le reste du temps est destiné à ma recharge."
 
-    elen "Il a au moins le mérite d'être honnête."
-    elen "C'est déjà plus que beaucoup de gens."
+    elen vide "Il a au moins le mérite d'être honnête."
+    elen vide "C'est déjà plus que beaucoup de gens."
 
     pause 0.2
 
-    noam "Donc… on commande comment ?"
+    noam vide "Donc… on commande comment ?"
 
-    goumi "Formule courte : vous demandez."
-    goumi "Formule longue : vous formulez une requête."
-    goumi "Je la valide."
-    goumi "Puis je vous cuisine ça bien et rapidement."
+    goumi vide "Formule courte : vous demandez."
+    goumi vide "Formule longue : vous formulez une requête."
+    goumi vide "Je la valide."
+    goumi vide "Puis je vous cuisine ça bien et rapidement."
 
-    noam "En même temps…"
-    noam "si on nous a mis un robot chef, c'est pas pour qu'il improvise."
+    noam vide "En même temps…"
+    noam vide "si on nous a mis un robot chef, c'est pas pour qu'il improvise."
 
-    elen "Ouais."
-    elen "Mais j'aurais aimé qu'il improvise un peu de liberté avec."
+    elen vide "Ouais."
+    elen vide "Mais j'aurais aimé qu'il improvise un peu de liberté avec."
 
     pause 0.3
-    
+    $ hideGroup()
+
     scene bg_cafeteria at adaptive_fullscreen with fade
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Elen, c'est ça ?"
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("elen", "surpris", 0.50),
+        ("goumi", "vide", 0.78),
+    ])
+    noam reflexion "Elen, c'est ça ?"
 
-    $ showP("elen", "surpris", 0.78)
-    elen "Ouais."
-    $ showP("elen", "neutre", 0.78)
-    elen "Toi t'es Noam."
-    elen "Je reconnais ta tête."
-    elen "Et ton air de mec qui se demande encore si tout ça n'est pas un prank."
+    elen surpris "Ouais."
+    elen neutre "Toi t'es Noam."
+    elen neutre "Je reconnais ta tête."
+    elen neutre "Et ton air de mec qui se demande encore si tout ça n'est pas un prank."
 
-    $ showP("noam", "panne", 0.22)
-    noam "Je…"
-    noam "J'ai vraiment cet air-là ?"
+    noam panne "Je…"
+    noam panne "J'ai vraiment cet air-là ?"
 
-    $ showP("elen", "taquin", 0.78)
-    elen "Un peu, ouais."
+    elen taquin "Un peu, ouais."
 
-    goumi "Souhaitez-vous une boisson de bienvenue ?"
-    goumi "Option : chaude."
-    goumi "Option : froide."
+    goumi vide "Souhaitez-vous une boisson de bienvenue ?"
+    goumi vide "Option : chaude."
+    goumi vide "Option : froide."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Euh ... Choisis pour moi ?"
+    noam reflexion "Euh ... Choisis pour moi ?"
 
-    $ showP("elen", "desaccord", 0.78)
-    elen "Ne demande pas."
-    elen "Tu vas regretter."
+    elen desaccord "Ne demande pas."
+    elen desaccord "Tu vas regretter."
 
-    $ showP("noam", "rire", 0.22)
-    noam "Ok."
-    noam "Alors euh… froide."
+    noam rire "Ok."
+    noam rire "Alors euh… froide."
 
-    goumi "Demande enregistrée."
-    goumi "Préparation en cours."
+    goumi vide "Demande enregistrée."
+    goumi vide "Préparation en cours."
 
     "Il ne bouge pas."
     "Et pourtant, la machine derrière lui s'allume."
 
-    $ showP("elen", "reflexion", 0.78)
-    elen "Cette technologie est quand même incroyable ..."
+    elen reflexion "Cette technologie est quand même incroyable ..."
 
-    $ showP("noam", "inquiet", 0.22)
-    noam "Ouais."
+    noam inquiet "Ouais."
 
     "Une seconde de silence."
 
-    $ showP("elen", "neutre", 0.78)
-    elen "Bon."
-    elen "On fait quoi ?"
-    elen "On joue le jeu et on mange ?"
+    elen neutre "Bon."
+    elen neutre "On fait quoi ?"
+    elen neutre "On joue le jeu et on mange ?"
 
-    $ showP("noam", "raison", 0.22)
-    noam "On a pas trop d'autres options."
-    noam "Pas pour l'instant."
+    noam raison "On a pas trop d'autres options."
+    noam raison "Pas pour l'instant."
 
-    goumi "Boisson disponible."
-    goumi "Veuillez récupérer le gobelet."
+    goumi vide "Boisson disponible."
+    goumi vide "Veuillez récupérer le gobelet."
 
     "Un compartiment s'ouvre."
     "Un gobelet sort, parfaitement centré."
     "Évidemment."
 
-    $ showP("noam", "reflexion", 0.22)
     think "Cette cafeteria n'est pas si mal."
 
-    $ showP("elen", "taquin", 0.78)
-    elen "Allez."
-    elen "Prends ton truc 'froid'."
-    elen "Je vais continuer mon tour, sait-on jamais si on a d'autres robots intéressants."
+    elen taquin "Allez."
+    elen taquin "Prends ton truc 'froid'."
+    elen taquin "Je vais continuer mon tour, sait-on jamais si on a d'autres robots intéressants."
 
-    $ showP("noam", "rire", 0.22)
-    noam "Ça m'étonnerait même pas."
+    noam rire "Ça m'étonnerait même pas."
 
     pause 0.3
 
@@ -364,6 +362,7 @@ label decouverte_cafeteria:
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_1
     
+    $ hideGroup()
     jump CAFETERIA_TP
 
 #2m20

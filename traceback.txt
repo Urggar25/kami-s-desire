@@ -1,30 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/0_canon.rpy", line 917, in script
-    $ day0_timer_init(h=3, m=42, s=18)
-  File "game/scenario/0_canon.rpy", line 917, in <module>
-    $ day0_timer_init(h=3, m=42, s=18)
-  File "game/day0_ui.rpy", line 113, in day0_timer_init
-    store.day0_timer_end_time  = _time.time() + total_seconds
-AttributeError: 'str' object has no attribute 'time'
+  File "game/minijeu/trace_qte.rpy", line 570, in script
+    return _return
+Exception: Could not find return label ('game/scenario/1_canon.rpy', 1781359790, 5431).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/0_canon.rpy", line 917, in script
-    $ day0_timer_init(h=3, m=42, s=18)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scenario/0_canon.rpy", line 917, in <module>
-    $ day0_timer_init(h=3, m=42, s=18)
-  File "game/day0_ui.rpy", line 113, in day0_timer_init
-    store.day0_timer_end_time  = _time.time() + total_seconds
-AttributeError: 'str' object has no attribute 'time'
+  File "game/minijeu/trace_qte.rpy", line 570, in script
+    return _return
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1506, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "C:\Users\fasqu\Desktop\renpy\renpy\execution.py", line 744, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/scenario/1_canon.rpy', 1781359790, 5431).
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0-benji-ver
-Sat Jun 13 15:11:01 2026
+Sat Jun 13 16:40:54 2026

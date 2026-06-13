@@ -540,9 +540,11 @@ label .attempt:
             call mk_fail_retry(title, mg_id)
             jump .attempt
         else:
+            $ fix_stale_return_label("_call_day1_play_trace_trace_qte")
             return "FAIL"
 
     if not show_results:
+        $ fix_stale_return_label("_call_day1_play_trace_trace_qte")
         return "B"
 
     python:
@@ -567,6 +569,7 @@ label .attempt:
         mg_id=mg_id,
         retries=mk_get_retries(mg_id),
     )
+    $ fix_stale_return_label("_call_day1_play_trace_trace_qte")
     return _return
 
 # --------------------------------------------------------------------------------------------

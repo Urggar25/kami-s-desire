@@ -170,101 +170,90 @@ label decouverte_salle_archive:
     "Des écrans qui tournent déjà."
     "Comme si la salle travaillait sans nous."
 
-    $ showP("noam", "reflexion", 0.22)
-    $ showP("tomas", "neutre", 0.78)
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("tomas", "neutre", 0.78),
+    ])
 
     "Un grand gaillard s’arrête net un peu plus loin."
 
-    tomas "Ah."
-    tomas "Ok."
+    tomas neutre "Ah."
+    tomas neutre "Ok."
 
-    noam "Quoi ?"
+    noam reflexion "Quoi ?"
 
-    $ showP("tomas", "mefiant", 0.78)
-    tomas "Je pensais que…"
-    tomas "Enfin…"
-    tomas "Je m’attendais à plus de… livres."
+    tomas mefiant "Je pensais que…"
+    tomas mefiant "Enfin…"
+    tomas mefiant "Je m’attendais à plus de… livres."
 
-    noam "Des vrais ?"
+    noam reflexion "Des vrais ?"
 
-    $ showP("tomas", "raison", 0.78)
-    tomas "Oui."
-    tomas "Enfin non."
-    tomas "Enfin si, mais—"
+    tomas raison "Oui."
+    tomas raison "Enfin non."
+    tomas raison "Enfin si, mais—"
 
-    noam "Respire."
+    noam reflexion "Respire."
 
-    $ showP("tomas", "panne", 0.78)
-    tomas "Je croyais que ‘archives’ voulait dire…"
-    tomas "Des trucs qu’on peut lire."
-    tomas "Enfin, tu sais ..."
+    tomas panne "Je croyais que ‘archives’ voulait dire…"
+    tomas panne "Des trucs qu’on peut lire."
+    tomas panne "Enfin, tu sais ..."
 
-    noam "Faut te mettre à la page mon vieux."
+    noam reflexion "Faut te mettre à la page mon vieux."
 
-    $ showP("tomas", "culpabilite", 0.78)
-    tomas "Je suis surtout nouveau dans…"
-    tomas "Tout ça."
+    tomas culpabilite "Je suis surtout nouveau dans…"
+    tomas culpabilite "Tout ça."
 
     "Il fait un geste vague."
     "La salle."
     "Le Conclave."
     "Le reste."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "T’inquiète."
-    noam "On est tous un peu largués."
+    noam sourire "T’inquiète."
+    noam sourire "On est tous un peu largués."
 
     pause 0.3
 
     "Il se tourne vers moi, comme s’il réalisait un détail important."
     "Un truc évident, sauf quand tu viens d’arriver."
 
-    $ showP("tomas", "reflechit", 0.78)
-    tomas "Au fait—"
-    tomas "Je m'appelle Tomas."
+    tomas reflechit "Au fait—"
+    tomas reflechit "Je m'appelle Tomas."
 
-    noam "Noam."
+    noam sourire "Noam."
 
-    $ showP("tomas", "raison", 0.78)
-    tomas "Oui."
-    tomas "Je sais."
-    tomas "Ton siège avait ton nom. Je—"
-    tomas "Enfin bref."
+    tomas raison "Oui."
+    tomas raison "Je sais."
+    tomas raison "Ton siège avait ton nom. Je—"
+    tomas raison "Enfin bref."
 
-    $ showP("noam", "taquin", 0.22)
-    noam "T’as pas besoin de te présenter comme à un entretien."
+    noam taquin "T’as pas besoin de te présenter comme à un entretien."
 
-    $ showP("tomas", "panne", 0.78)
-    tomas "C’est un réflexe."
-    tomas "Je…"
-    tomas "J’essaye toujours de faire les choses proprement."
+    tomas panne "C’est un réflexe."
+    tomas panne "Je…"
+    tomas panne "J’essaye toujours de faire les choses proprement."
 
-    noam "Mauvais endroit je crois."
+    noam taquin "Mauvais endroit je crois."
 
-    $ showP("tomas", "rire", 0.78)
-    tomas "Ouais."
-    tomas "Clairement."
+    tomas rire "Ouais."
+    tomas rire "Clairement."
 
-    $ showP("tomas", "reflechit", 0.78)
     "Tomas s’approche d’une console."
     "Regarde l’écran."
     "Penche la tête."
 
-    tomas "…"
-    tomas "Ah."
+    tomas reflechit "…"
+    tomas reflechit "Ah."
 
-    noam "Quoi encore ?"
+    noam taquin "Quoi encore ?"
 
-    $ showP("tomas", "surpris", 0.78)
-    tomas "Je pensais que c’était une recherche."
-    tomas "Mais en fait…"
-    tomas "C’est juste une liste."
+    tomas surpris "Je pensais que c’était une recherche."
+    tomas surpris "Mais en fait…"
+    tomas surpris "C’est juste une liste."
 
-    noam "Bienvenue dans l’administration."
+    noam taquin "Bienvenue dans l’administration."
 
-    $ showP("tomas", "rire", 0.78)
-    tomas "C’est rassurant, quelque part."
-    tomas "Même sous Kami, la paperasse survit."
+    tomas rire "C’est rassurant, quelque part."
+    tomas rire "Même sous Kami, la paperasse survit."
 
     "Je regarde l’hologramme."
     "Les murs."
@@ -273,20 +262,17 @@ label decouverte_salle_archive:
     think "Il y a des données sur à peu près tout."
     think "Mais tout est bien plus compliqué que dans les papiers habituels."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "On apprendra peut-être des choses ici."
-    noam "Mais faudrait déjà comprendre ce que ça racconte."
+    noam reflexion "On apprendra peut-être des choses ici."
+    noam reflexion "Mais faudrait déjà comprendre ce que ça racconte."
 
-    $ showP("tomas", "reflechit", 0.78)
     "Il plisse les yeux en essayant de déchiffrer une suite de nombre."
 
-    tomas "Ouais."
-    tomas "Ou on apprendra surtout ce qu’ils veulent bien laisser traîner."
+    tomas reflechit "Ouais."
+    tomas reflechit "Ou on apprendra surtout ce qu’ils veulent bien laisser traîner."
 
     pause 0.2
 
-    $ showP("tomas", "mefiant", 0.78)
-    tomas "Regarde ça."
+    tomas mefiant "Regarde ça."
 
     "Il tape sur une ligne."
     "Une fenêtre s’ouvre."
@@ -298,115 +284,100 @@ label decouverte_salle_archive:
     "Un horodatage."
     "Et une colonne marquée : \"NIVEAU\"."
 
-    noam "Ça veut dire quoi ?"
+    noam reflexion "Ça veut dire quoi ?"
 
-    $ showP("tomas", "determine", 0.78)
-    tomas "Ça veut dire…"
-    tomas "Que c’est pas une archive pour nous."
+    tomas determine "Ça veut dire…"
+    tomas determine "Que c’est pas une archive pour nous."
 
-    noam "Évidemment que c’est pas pour nous."
+    noam reflexion "Évidemment que c’est pas pour nous."
 
-    $ showP("tomas", "raison", 0.78)
-    tomas "Non mais…"
-    tomas "Je veux dire : même le format."
-    tomas "C’est pas 'fait pour être lu'."
-    tomas "C’est fait pour être… ingéré."
+    tomas raison "Non mais…"
+    tomas raison "Je veux dire : même le format."
+    tomas raison "C’est pas 'fait pour être lu'."
+    tomas raison "C’est fait pour être… ingéré."
 
-    noam "In— quoi ?"
+    noam reflexion "In— quoi ?"
 
-    $ showP("tomas", "panne", 0.78)
-    tomas "Pardon."
-    tomas "En gros, la machine est capable de tout comprendre facilement sans mise en forme des données."
-    tomas "Pour une machine, il n'y a rien de plus simple."
+    tomas panne "Pardon."
+    tomas panne "En gros, la machine est capable de tout comprendre facilement sans mise en forme des données."
+    tomas panne "Pour une machine, il n'y a rien de plus simple."
 
     "Il pointe l’hologramme."
     "La sphère tourne lentement."
     "Des points s’allument, s’éteignent."
     "Comme des nœuds d’un réseau."
 
-    $ showP("tomas", "reflechit", 0.78)
-    tomas "Ça, c’est pas une carte pour nous situer."
-    tomas "C’est un tableau de corrélation."
-    tomas "Ça relie des événements : les archives."
-    tomas "On peut voir ce qui s'est passé où et quand."
-    tomas "Avec qui et pourquoi."
+    tomas reflechit "Ça, c’est pas une carte pour nous situer."
+    tomas reflechit "C’est un tableau de corrélation."
+    tomas reflechit "Ça relie des événements : les archives."
+    tomas reflechit "On peut voir ce qui s'est passé où et quand."
+    tomas reflechit "Avec qui et pourquoi."
 
-    noam "D'où la salle d'archive."
+    noam reflexion "D'où la salle d'archive."
 
-    $ showP("tomas", "determine", 0.78)
-    tomas "Tout est déjà exploité et rangé."
-    tomas "Il suffit de comprendre comment ça fonctionne ..."
-    tomas "Les index."
-    tomas "Les droits d’accès."
-    tomas "Le squelette."
+    tomas determine "Tout est déjà exploité et rangé."
+    tomas determine "Il suffit de comprendre comment ça fonctionne ..."
+    tomas determine "Les index."
+    tomas determine "Les droits d’accès."
+    tomas determine "Le squelette."
 
     "Il s’interrompt."
     "Comme si quelque chose se mettait en place dans sa tête."
 
-    $ showP("tomas", "surpris", 0.78)
-    tomas "Non attends…"
+    tomas surpris "Non attends…"
 
-    noam "Quoi ?"
+    noam reflexion "Quoi ?"
 
     "Il scrolle encore."
     "Deux lignes."
     "Puis une troisième."
     "Une mention revient."
 
-    $ showP("tomas", "reflechit", 0.78)
-    tomas "\"STATUT : VALIDÉ\"…"
-    tomas "\"STATUT : BLOQUÉ\"…"
-    tomas "\"STATUT : EXÉCUTÉ\"…"
+    tomas reflechit "\"STATUT : VALIDÉ\"…"
+    tomas reflechit "\"STATUT : BLOQUÉ\"…"
+    tomas reflechit "\"STATUT : EXÉCUTÉ\"…"
 
-    noam "Mais qu'est ce que tu fais ?!"
+    noam reflexion "Mais qu'est ce que tu fais ?!"
 
-    $ showP("tomas", "raison", 0.78)
-    tomas "C’est ça le truc."
+    tomas raison "C’est ça le truc."
 
     pause 0.3
 
-    $ showP("tomas", "determine", 0.78)
-    tomas "Les archives ne sont pas seulement une mémoire."
-    tomas "C’est une chaîne de décision."
-    tomas "Un pipeline."
+    tomas determine "Les archives ne sont pas seulement une mémoire."
+    tomas determine "C’est une chaîne de décision."
+    tomas determine "Un pipeline."
 
-    noam "Un quoi ?"
+    noam reflexion "Un quoi ?"
 
-    $ showP("tomas", "panne", 0.78)
-    tomas "Désolé."
-    tomas "En gros c'est un… circuit."
-    tomas "Tu changes un paramètre."
-    tomas "Et derrière, tu peux voir tout ce qui a un rapport, direct ou indirect avec ce paramètre."
-    tomas "Quelque part."
+    tomas panne "Désolé."
+    tomas panne "En gros c'est un… circuit."
+    tomas panne "Tu changes un paramètre."
+    tomas panne "Et derrière, tu peux voir tout ce qui a un rapport, direct ou indirect avec ce paramètre."
+    tomas panne "Quelque part."
 
     "Je sens un froid me remonter le dos."
     "Pas celui de la salle."
     "Un autre."
 
-    $ showP("noam", "inquiet", 0.22)
-    noam "Donc ce qu’on appelle 'archives'…"
-    noam "Il y a globalement tout dedans ?."
+    noam inquiet "Donc ce qu’on appelle 'archives'…"
+    noam inquiet "Il y a globalement tout dedans ?."
 
-    $ showP("tomas", "reflechit", 0.78)
-    tomas "Oui."
-    tomas "Et du coup…"
-    tomas "Si on peut lire quelque chose ici un jour…"
+    tomas reflechit "Oui."
+    tomas reflechit "Et du coup…"
+    tomas reflechit "Si on peut lire quelque chose ici un jour…"
 
-    $ showP("tomas", "mefiant", 0.78)
-    tomas "On pourra apprendre énormement de choses !"
+    tomas mefiant "On pourra apprendre énormement de choses !"
 
     pause 0.4
 
     think "Peut être que Kami n'a pas besoin de rendre les données plus lisibles pour les comprendre."
     think "Parce que ce n'est pas nous qui sommes censés comprendre."
 
-    $ showP("noam", "reflexion", 0.22)
-    tomas "Ok."
-    tomas "Je vais continuer à essayer de comprendre comment ça marche."
+    tomas mefiant "Ok."
+    tomas mefiant "Je vais continuer à essayer de comprendre comment ça marche."
 
-    $ showP("tomas", "joie", 0.78)
-    tomas "Oh ouais !"
-    tomas "Bonne idée !"
+    tomas joie "Oh ouais !"
+    tomas joie "Bonne idée !"
 
     pause 0.3
     
@@ -415,6 +386,7 @@ label decouverte_salle_archive:
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES
 
+    $ hideGroup()
     jump ARCHIVE_TP
 
 # Durée : 2m50

@@ -1,14 +1,13 @@
-﻿# --------------------------------------------------------------------------------------------
-# JOUR 1 — Canon
-# Scène 1 : Réveil sur les sièges du Conclave (sans trace de Kami)
-# Noam = narrateur principal (pas obligé d'être affiché en permanence)
+# --------------------------------------------------------------------------------------------
+# JOUR 1 — Canon (version pro)
+# Scène 1 : Réveil sur les sièges du Conclave
+# Noam = narrateur principal
 #
 # Mise en scène : TRIO DYNAMIQUE
-# - Toujours 3 persos affichés (dès qu'on entre en dialogue)
-# - Afficher les 3 derniers persos qui ont parlé
-# - Quand un 4e parle : on retire celui qui n'a pas parlé depuis le plus longtemps
-# - Les slots (xpos) sont fixes : gauche / centre / droite
-# - Les persos restants ne bougent pas quand un nouveau parle
+#   - Toujours 3 persos affichés (dès qu'on entre en dialogue)
+#   - Quand un 4e parle : on retire celui qui n'a pas parlé depuis le plus longtemps
+#   - Les slots sont fixes : gauche (0.22) / centre (0.50) / droite (0.78)
+#   - Transitions animées via showP (entrée) et hideP (sortie)
 # --------------------------------------------------------------------------------------------
 
 default j1_noam_prudence = 0
@@ -21,9 +20,9 @@ default j1_jammer_trace_attempts = 0
 default j1_tablet_touched = False
 default j1_amendment_validated = False
 default j1_amendment_deposited = False
-default j1_amendment_time_display = "31:00"
 default noam_amendement_choix = None
 default noam_room_jammer_on = True
+default choix_1_soir = "dormir"
 
 define sfx_drop = "audio/sfx_drop.mp3"
 define sfx_shower = "audio/sfx_shower.mp3"
@@ -32,21 +31,21 @@ init 2 python:
     day1_amendment_cards = [
         {
             "id": "information_locale",
-            "title": "Parole locale encadree",
-            "commandment": "Cinquieme Commandement",
+            "title": "Parole locale encadrée",
+            "commandment": "Cinquième Commandement",
             "intent": "Autoriser les informations locales non politiques.",
-            "short_wording": "Les faits locaux, immediats et non sensibles peuvent etre communiques sans validation prealable.",
-            "wording": "La transmission d'informations non validees reste interdite pour les sujets politiques, strategiques ou interdistricts. Les faits locaux, immediats et non sensibles peuvent etre communiques sans validation prealable d'ARCHIVE.",
+            "short_wording": "Les faits locaux, immédiats et non sensibles peuvent être communiqués sans validation préalable.",
+            "wording": "La transmission d'informations non validées reste interdite pour les sujets politiques, stratégiques ou interdistricts. Les faits locaux, immédiats et non sensibles peuvent être communiqués sans validation préalable d'ARCHIVE.",
             "risks": "Risque de flou entre fait local et information politique.",
         },
         {
             "id": "assistance_minimale",
             "title": "Assistance possible",
             "commandment": "Commandements de conduite civile",
-            "intent": "Proteger le geste d'aide quand il ne met personne en danger.",
-            "short_wording": "Un citoyen peut porter assistance en cas de danger immediat si son geste n'aggrave pas la situation.",
-            "wording": "Aucun citoyen ne peut etre sanctionne pour avoir porte assistance a une personne en danger immediat, si cette assistance n'aggrave pas la situation et ne contrevient pas a une procedure de securite active.",
-            "risks": "Risque d'interpretations abusives en situation de crise.",
+            "intent": "Protéger le geste d'aide quand il ne met personne en danger.",
+            "short_wording": "Un citoyen peut porter assistance en cas de danger immédiat si son geste n'aggrave pas la situation.",
+            "wording": "Aucun citoyen ne peut être sanctionné pour avoir porté assistance à une personne en danger immédiat, si cette assistance n'aggrave pas la situation et ne contrevient pas à une procédure de sécurité active.",
+            "risks": "Risque d'interprétations abusives en situation de crise.",
         },
     ]
 
@@ -57,245 +56,34 @@ init 2 python:
             "unlocked_day": 1,
             "text": """Le Conclave dure trente jours. Pendant cette période, les représentants restent isolés dans le complexe et ne peuvent pas rejoindre leur district, ni initier de contact vers l'extérieur. Si un appel extérieur leur parvient, ils peuvent y répondre, mais ils ne peuvent pas provoquer eux-mêmes l'échange.
 
-Chaque représentant dépose un amendement lors de la première journée. Les propositions sont déposées dans une urne, anonymement. Dix amendements sont ensuite tirés au sort pour être soumis au vote au cours du Conclave; deux propositions peuvent donc ne jamais être débattues.
+Chaque représentant dépose un amendement lors de la première journée. Les propositions sont déposées dans une urne, anonymement. Dix amendements sont ensuite tirés au sort pour être soumis au vote au cours du Conclave ; deux propositions peuvent donc ne jamais être débattues.
 
 Un vote a lieu tous les trois jours. Pour qu'un amendement soit adopté, tous les bulletins exprimés doivent être favorables. Les abstentions et absences ne comptent pas dans les bulletins exprimés, mais une seule voix contre suffit à rejeter le texte. Selon la nature de la proposition, un rejet peut aussi produire des conséquences.
 
 Les chambres individuelles sont équipées de brouilleurs. Par défaut, le brouilleur coupe les caméras, l'audio et les capteurs de la chambre. Un représentant peut le désactiver, mais la pièce redevient alors potentiellement observable.
 
-Les espaces communs restent surveillés et enregistrés. Les Commandements ordinaires ne s'appliquent pas dans le Conclave, mais les règles propres au complexe restent actives. Kami ne vote pas et ne propose pas d'amendement; elle organise, observe, tire au sort, annonce les résultats et applique les changements validés."""
+Les espaces communs restent surveillés et enregistrés. Les Commandements ordinaires ne s'appliquent pas dans le Conclave, mais les règles propres au complexe restent actives. Kami ne vote pas et ne propose pas d'amendement ; elle organise, observe, tire au sort, annonce les résultats et applique les changements validés."""
         }
 
-transform day1_unsteady:
-    subpixel True
-    xoffset -4
-    yoffset 2
-    linear 0.08 xoffset 5 yoffset -2
-    linear 0.10 xoffset -2 yoffset 4
-    linear 0.08 xoffset 0 yoffset 0
-    repeat
 
-screen day1_wakeup_overlay(level="heavy"):
-    zorder 80
-    if level == "heavy":
-        add "gui/day1/wakeup_blur_overlay.png" xysize (1920, 1080) at day1_unsteady
-        add "gui/day1/wakeup_noise.png" xysize (1920, 1080) alpha 0.28
-        add "gui/day1/wakeup_dark_overlay.png" xysize (1920, 1080)
-        add "gui/day1/wakeup_vignette.png" xysize (1920, 1080)
-    elif level == "soft":
-        add "gui/day1/wakeup_noise.png" xysize (1920, 1080) alpha 0.14 at day1_unsteady
-        add "gui/day1/wakeup_vignette.png" xysize (1920, 1080) alpha 0.55
-
-screen day1_tablet_interaction():
-    modal True
-    zorder 100
-    add Solid("#02050bcc")
-    add "gui/day1/tablet_frame.png" xalign 0.5 yalign 0.5 xysize (860, 560)
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 720
-        ysize 460
-        padding (34, 30)
-        background None
-        vbox:
-            spacing 18
-            text "INTERFACE PUPITRE" size 30 color "#dff8ff"
-            null height 8
-            text "SESSION REPRESENTANT : EN ATTENTE" size 24 color "#8fdcff"
-            text "UTILISATEUR : NOAM" size 24 color "#8fdcff"
-            text "ACCES LIMITE" size 24 color "#ffcf76"
-            text "INTERACTION ENREGISTREE" size 24 color "#ff8f8f"
-            null height 22
-            textbutton "Retirer la main":
-                xalign 0.5
-                xsize 260
-                background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
-                hover_background Frame("gui/day1/tablet_warning.png", 24, 24)
-                text_color "#dff8ff"
-                text_hover_color "#ffffff"
-                action Return(True)
-
-screen day1_codex_unlock_panel(entry_title):
-    zorder 120
-    frame:
-        xalign 0.5
-        ypos 78
-        padding (26, 14)
-        background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
-        text "Nouvelle entrée Codex débloquée : [entry_title]" size 25 color "#dff8ff"
-
-screen day1_amendment_timer():
-    zorder 70
-    frame:
-        xpos 58
-        ypos 54
-        padding (18, 10)
-        background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
-        text "URNE OUVERTE - [j1_amendment_time_display]" size 24 color "#ffcf76"
-
-screen day1_amendment_form():
-    modal True
-    zorder 100
-    default selected = noam_amendement_choix if noam_amendement_choix else "information_locale"
-
-    add Solid("#03070ddd")
-    add "gui/day1/amendment_terminal_panel.png" xalign 0.5 yalign 0.5
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 1120
-        ysize 710
-        padding (34, 28)
-        background None
-        vbox:
-            spacing 14
-            text "PROPOSITION D'AMENDEMENT" size 30 color "#dff8ff"
-            text "Representant : NOAM   |   Statut : BROUILLON" size 18 color "#82b5c8"
-
-            hbox:
-                spacing 18
-                for card in day1_amendment_cards:
-                    $ card_id = card["id"]
-                    $ card_title = card["title"]
-                    $ card_commandment = card["commandment"]
-                    $ card_intent = card["intent"]
-                    $ card_wording = card["short_wording"]
-                    $ card_risks = card["risks"]
-                    button:
-                        xsize 520
-                        ysize 420
-                        padding (26, 24)
-                        background Frame("gui/day1/amendment_card_selected.png" if selected == card_id else "gui/day1/amendment_card_idle.png", 36, 36)
-                        hover_background Frame("gui/day1/amendment_card_selected.png", 36, 36)
-                        action SetScreenVariable("selected", card_id)
-                        vbox:
-                            spacing 8
-                            text card_title size 25 color "#e8fbff"
-                            text "[card_commandment]" size 16 color "#8fb7c5"
-                            text "Intention" size 17 color "#ffcf76"
-                            text card_intent size 17 color "#d3edf5"
-                            text "Formulation" size 17 color "#ffcf76"
-                            text card_wording size 16 color "#c4dce5"
-                            text "Risque" size 17 color "#ffcf76"
-                            text card_risks size 16 color "#ff9a9a"
-
-            $ selected_card = day1_amendment_cards[0] if selected == "information_locale" else day1_amendment_cards[1]
-            frame:
-                xfill True
-                ysize 86
-                padding (18, 12)
-                background Frame("gui/day1/amendment_card_idle.png", 28, 28)
-                vbox:
-                    spacing 4
-                    text "Formulation officielle retenue" size 16 color "#ffcf76"
-                    text selected_card["wording"] size 15 color "#d7eef6"
-
-            hbox:
-                xalign 0.5
-                spacing 18
-                textbutton "Valider la proposition":
-                    xsize 360
-                    ysize 76
-                    background Frame("gui/day1/amendment_validate_button.png", 24, 24)
-                    hover_background Frame("gui/day1/amendment_card_selected.png", 24, 24)
-                    text_color "#dff8ff"
-                    text_hover_color "#ffffff"
-                    text_size 24
-                    action Return(selected)
-
-screen day1_urn_confirmation():
-    modal True
-    zorder 105
-    add Solid("#02050bcc")
-    add "gui/day1/urn_bg.png" xalign 0.5 yalign 0.5 xysize (900, 560)
-    add "gui/day1/amendment_folded.png" xalign 0.5 ypos 145
-    add "gui/day1/urn_confirmation_panel.png" xalign 0.5 yalign 0.58
-    frame:
-        xalign 0.5
-        yalign 0.58
-        xsize 650
-        padding (38, 30)
-        background None
-        vbox:
-            spacing 14
-            text "AMENDEMENT DEPOSE" xalign 0.5 size 32 color "#dff8ff"
-            text "RETRAIT IMPOSSIBLE" xalign 0.5 size 24 color "#ffcf76"
-            text "ENREGISTREMENT CONFIRME" xalign 0.5 size 24 color "#8fffc1"
-            null height 16
-            textbutton "Reculer de l'urne":
-                xalign 0.5
-                xsize 260
-                background Frame("gui/day1/amendment_validate_button.png", 24, 24)
-                hover_background Frame("gui/day1/urn_confirmation_panel.png", 24, 24)
-                text_color "#dff8ff"
-                text_hover_color "#ffffff"
-                action Return(True)
-
-screen day1_jammer_panel():
-    modal True
-    zorder 100
-    add Solid("#02050bcc")
-    if noam_room_jammer_on:
-        add "gui/day1/jammer_panel_on.png" xalign 0.5 yalign 0.5 xysize (880, 620)
-    else:
-        add "gui/day1/jammer_panel_off.png" xalign 0.5 yalign 0.5 xysize (880, 620)
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 760
-        ysize 520
-        padding (34, 30)
-        background None
-        vbox:
-            spacing 16
-            text "INTERFACE DE CHAMBRE" size 31 color "#dff8ff"
-            if noam_room_jammer_on:
-                text "BROUILLEUR : ACTIF" size 25 color "#8fffc1"
-                text "SURVEILLANCE AUDIO : COUPEE" size 23 color "#9ed8ff"
-                text "CAMERA : COUPEE" size 23 color "#9ed8ff"
-                text "MODE PRIVE : ACTIVE" size 23 color "#8fffc1"
-                textbutton "Desactiver le brouilleur":
-                    xsize 330
-                    background Frame("gui/day1/jammer_off.png", 24, 24)
-                    hover_background Frame("gui/day1/jammer_panel_off.png", 24, 24)
-                    text_color "#ffe1e1"
-                    action SetVariable("noam_room_jammer_on", False)
-            else:
-                text "BROUILLEUR : INACTIF" size 25 color "#ff8f8f"
-                text "SURVEILLANCE POTENTIELLE" size 23 color "#ffcf76"
-                text "MODE PRIVE : DESACTIVE" size 23 color "#ff8f8f"
-                textbutton "Activer le brouilleur":
-                    xsize 330
-                    background Frame("gui/day1/jammer_on.png", 24, 24)
-                    hover_background Frame("gui/day1/jammer_panel_on.png", 24, 24)
-                    text_color "#dcffe8"
-                    action SetVariable("noam_room_jammer_on", True)
-            null height 18
-            textbutton "Quitter l'interface":
-                xsize 260
-                background Frame("gui/day1/codex_unlock_panel.png", 24, 24)
-                hover_background Frame("gui/day1/tablet_warning.png", 24, 24)
-                text_color "#dff8ff"
-                action Return(noam_room_jammer_on)
-
-label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True):
-
-    call trace_qte_run(mg_id="trace_day1", title="SYNCHRONISATION MOTRICE", path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y, required=required)
-    return (_return != "FAIL")
-
+# =============================================================================
 label _1_CANON:
+# =============================================================================
 
     $ day_id = 1
     $ current_day = 1
+    $ current_period = "Matin"
+
+    # --- HUD jour/période (persistant toute la journée) ---
+    show screen day_period_hud
 
     scene black
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
-    show screen day1_wakeup_overlay("soft")
+    show screen day1_wakeup_overlay("heavy")
 
     think "Jour un."
     think "Enfin, je crois."
-    think "Je n'ai pas vu le temps passé."
+    think "Je n'ai pas vu le temps passer."
     think "Je me suis endormi dans un caisson."
     think "Et là… je me réveille sur un siège."
 
@@ -305,7 +93,7 @@ label _1_CANON:
 
     "Un dossier rigide sous mon dos."
     "Un siège froid et métallique."
-    "L’air est sec, presque comme s'il était recyclé."
+    "L'air est sec, presque comme s'il était recyclé."
     "Ça sent le plastique neuf et le produit de nettoyage."
 
     $ blink()
@@ -315,7 +103,11 @@ label _1_CANON:
     "Ma nuque me fait mal."
     "Ma main droite ne répond pas tout de suite."
 
-    call day1_play_trace(path_type="curve_right", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True)
+    # --- Tutoriel trace QTE (première fois) ---
+    show screen day1_tuto_trace
+    pause
+
+    call day1_play_trace(path_type="curve_right", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True) from _call_day1_trace_wakeup
     $ j1_noam_initiative += 1
 
     hide screen day1_wakeup_overlay
@@ -328,13 +120,13 @@ label _1_CANON:
 
     "Je me redresse."
     hide screen day1_wakeup_overlay
-    "Autour de moi, d’autres sièges."
+    "Autour de moi, d'autres sièges."
     "Beaucoup."
     "En cercle."
-    "Et sur chaque siège… quelqu’un."
+    "Et sur chaque siège… quelqu'un."
 
     "Certains bougent légèrement."
-    "D’autres restent figés. Ils dorment encore."
+    "D'autres restent figés. Ils dorment encore."
 
     "Personne ne parle fort."
     "Juste des respirations régulières."
@@ -347,7 +139,7 @@ label _1_CANON:
     "Un son bref."
     "Pas une alarme."
     "Un bip de système."
-    "Ça vient d’en bas, il semble y avoir plusieurs étages ici."
+    "Ça vient d'en bas, il semble y avoir plusieurs étages ici."
 
     "Je baisse les yeux."
     "Sur mon pupitre, une tablette est encastrée."
@@ -363,6 +155,7 @@ label _1_CANON:
             "Je pose deux doigts sur la surface froide."
             call screen day1_tablet_interaction()
             play sound sfx_beep
+            $ shake(6, 0.2)
             "-Bip-"
             think "Même éteinte, elle note que j'existe."
 
@@ -373,76 +166,72 @@ label _1_CANON:
 
     "Je tourne la tête."
     "Je cherche Lysa du regard."
-    "Parce que c’est la seule personne que je connais un minimum."
+    "Parce que c'est la seule personne que je connais un minimum."
     "Au moins de nom."
 
-    $ showP("lysa", "neutre", 0.78)      # droite
-    $ showP("noam", "inquiet", 0.50)    # centre
+    $ showGroup([
+        ("lysa", "neutre", -0.11),
+        ("noam", "inquiet", 0.01),
+        ("ryn", "colere", 0.13),
+        ("mara", "rire", 0.25),
+        ("tomas", "reflechit", 0.37),
+        ("elen", "surpris", 0.49),
+        ("julian", "peur", 0.60),
+        ("iris", "inquiet", 0.72),
+        ("nyra", "triste", 0.84),
+        ("kael", "calme", 0.96),
+        ("elias", "neutre", 1.08),
+        ("sael", "raison", 1.20),
+    ])
 
-    noam "Lysa… ?"
+    noam inquiet "Lysa… ?"
 
-    $ showP("lysa", "blase", 0.78)
 
-    lysa "Ouais..."
-    lysa "T’es enfin réveillé."
+    lysa blase "Ouais..."
+    lysa blase "T'es enfin réveillé."
 
-    noam "On est où… ?"
+    noam inquiet "On est où… ?"
 
-    $ showP("lysa", "reflexion", 0.78)
 
-    lysa "Si je devais deviner…"
-    lysa "Je dirais le Conclave."
+    lysa reflexion "Si je devais deviner…"
+    lysa reflexion "Je dirais le Conclave."
 
     "Je regarde autour."
     "Je ne connais aucun des autres visages."
 
-    think "Donc c’est vrai."
+    think "Donc c'est vrai."
     think "Ils nous ont tous mis au même endroit."
     think "En même temps pour participer à ce truc étrange."
 
-    "Quelqu’un se lève brusquement."
+    "Quelqu'un se lève brusquement."
     "Un siège grince."
     "Ça claque dans le silence."
 
-    $ showP("ryn", "colere", 0.22)
-    $ showP("lysa", "surpris", 0.78)      # elle réagit, sans parler
 
-    ryn "Putain mais on est où là ?!"
-    ryn "Qui a fait ça ?!"
+    ryn colere "Putain mais on est où là ?!"
+    ryn colere "Qui a fait ça ?!"
 
     "Personne ne répond."
     "Pas un seul mot."
 
-    hide noam
-    $ showP("mara", "rire", 0.50)       # centre
 
-    $ showP("ryn", "colere2", 0.22)        # réaction
-    $ showP("lysa", "blase", 0.78)      # réaction
 
-    mara "Tu veux dire… à part l’IA qui tient le monde en laisse ?"
+    mara rire "Tu veux dire… à part l'IA qui tient le monde en laisse ?"
 
-    ryn "Je parle de ce qui nous arrive, là, maintenant."
-    ryn "Qui nous a endormis."
-    ryn "Qui nous a trimballés ici."
+    ryn colere "Je parle de ce qui nous arrive, là, maintenant."
+    ryn colere "Qui nous a endormis."
+    ryn colere "Qui nous a trimballés ici."
 
-    hide lysa
-    $ showP("tomas", "reflechit", 0.78)  # droite
 
-    $ showP("ryn", "reflechit", 0.22)    # il écoute
-    $ showP("mara", "neutre", 0.50)      # elle se calme
 
-    tomas "Probablement… personne qui soit vraiment là. Enfin, je veux dire… pas ici, pas physiquement."
-    tomas "Ça ressemble à une procédure. Automatique. Presque… mécanique."
+    tomas reflechit "Probablement… personne qui soit vraiment là. Enfin, je veux dire… pas ici, pas physiquement."
+    tomas reflechit "Ça ressemble à une procédure. Automatique. Presque… mécanique."
 
-    hide ryn
-    $ showP("elen", "surpris", 0.22)     # gauche
 
-    $ showP("mara", "stress", 0.50)  # réaction
-    $ showP("tomas", "neutre", 0.78)     # réaction
 
-    elen "Automatique ou pas… c’est quand même nous qui sommes embarqués de force, non ?"
-    elen "J’arrive pas à me dire que c’est juste ‘normal’ maintenant."
-    elen "Même si… ouais, à force on finit par s’habituer à tout, c’est ça qui me fait peur."
+    elen surpris "Automatique ou pas… c'est quand même nous qui sommes embarqués de force, non ?"
+    elen surpris "J'arrive pas à me dire que c'est juste 'normal' maintenant."
+    elen surpris "Même si… ouais, à force on finit par s'habituer à tout. C'est ça qui me fait peur."
 
     "Je lève les yeux."
     "Je cherche les caméras."
@@ -451,145 +240,103 @@ label _1_CANON:
     "Propres."
     "Discrètes."
 
-    think "Ça, c’est la partie la plus habituelle de tout ça."
-    think "C’est triste mais on y est habitué."
+    think "Ça, c'est la partie la plus habituelle de tout ça."
+    think "C'est triste mais on y est habitué."
 
-    hide mara
-    $ showP("julian", "peur", 0.50)      # centre
 
-    $ showP("elen", "inquiet", 0.22)     # réaction
-    $ showP("tomas", "reflechit", 0.78)  # réaction
 
-    julian "Vous… vous entendez ça ?"
-    julian "Rien. Absolument rien. On dirait qu’on est les derniers humains sur Terre."
+    julian peur "Vous… vous entendez ça ?"
+    julian peur "Rien. Absolument rien. On dirait qu'on est les derniers humains sur Terre."
 
-    hide tomas
-    $ showP("iris", "inquiet", 0.78)     # droite
 
-    $ showP("elen", "desaccord", 0.22)
-    $ showP("julian", "peur", 0.50)
 
-    iris "Mais… y a même pas un murmure ! Rien ! C’est flippant à quel point c’est silencieux ici !"
-    iris "Et en plus on sait même pas ce qu’on est censés faire, hein ! On attend quoi, un miracle ?"
+    iris inquiet "Mais… y a même pas un murmure ! Rien ! C'est flippant à quel point c'est silencieux ici !"
+    iris inquiet "Et en plus on sait même pas ce qu'on est censés faire, hein ! On attend quoi, un miracle ?"
 
-    hide elen
-    $ showP("nyra", "triste", 0.22)      # gauche
 
-    $ showP("julian", "surpris", 0.50)   # réaction
-    $ showP("iris", "hesitation", 0.78)     # réaction
 
-    nyra "Ce silence est voulu."
-    nyra "C’est un test. Kami veut voir comment on réagit."
+    nyra triste "Ce silence est voulu."
+    nyra triste "C'est un test. Kami veut voir comment on réagit."
 
-    hide julian
-    $ showP("kael", "calme", 0.50)       # centre
 
-    $ showP("iris", "fatigue", 0.78)     # réaction
-    $ showP("nyra", "neutre", 0.22)      # réaction
 
-    kael "Ou alors… c’est juste une attente."
-    kael "Peut-être qu’elle attend quelque chose. Quelque chose de précis."
+    kael calme "Ou alors… c'est juste une attente."
+    kael calme "Peut-être qu'elle attend quelque chose. Quelque chose de précis."
 
     "Un silence encore plus lourd tombe."
-    "Personne n’aime l’idée d’attendre."
+    "Personne n'aime l'idée d'attendre."
     "Surtout dans une situation comme celle-là."
-    "Parce que ça veut dire qu’on dépend du bouton “play” de quelqu’un d’autre."
+    "Parce que ça veut dire qu'on dépend du bouton 'play' de quelqu'un d'autre."
 
-    hide iris
-    $ showP("noam", "reflexion", 0.78)   # droite
 
-    $ showP("nyra", "panne", 0.22)       # réaction
-    $ showP("kael", "neutre", 0.50)      # réaction
 
-    noam "Au fait, vous avez vu Kami ?"
+    noam reflexion "Au fait, vous avez vu Kami ?"
 
     "Pas un seul regard ne se lève vers l'écran central."
     "Il n'est pas allumé. Tout comme les tablettes disposées à chacune des places."
-    "Et parce que personne n’a envie de prononcer son nom trop fort."
+    "Et parce que personne n'a envie de prononcer son nom trop fort."
 
-    hide nyra
-    $ showP("ryn", "reflechit", 0.22)    # gauche
 
-    $ showP("kael", "calme", 0.50)
-    $ showP("noam", "inquiet", 0.78)
 
-    ryn "Non."
-    ryn "Et ça me fait chier de le dire, mais je préfèrerais avoir des nouvelles."
+    ryn reflechit "Non."
+    ryn reflechit "Et ça me fait chier de le dire, mais je préfèrerais avoir des nouvelles."
 
-    hide kael
-    $ showP("mara", "rire", 0.50)        # centre
 
-    $ showP("ryn", "colere", 0.22)
-    $ showP("noam", "neutre", 0.78)
 
-    mara "J’adore, putain."
-    mara "Douze pigeons, zéro animateur."
-    mara "Pas de mode d’emploi, pas d’hôte, même pas un petit speech d’accueil."
-    mara "Elle nous snobe direct, la garce."
+    mara rire "J'adore, putain."
+    mara rire "Douze pigeons, zéro animateur."
+    mara rire "Pas de mode d'emploi, pas d'hôte, même pas un petit speech d'accueil."
+    mara rire "Elle nous snobe direct, la garce."
 
-    hide noam
-    $ showP("tomas", "reflechit", 0.78)  # droite
 
-    $ showP("ryn", "reflechit", 0.22)
-    $ showP("mara", "neutre", 0.50)
 
-    tomas "On parle de Kami, quand même."
-    tomas "Elle est toujours là. Même quand on ne la voit pas."
-    tomas "Même sans image… elle reste là."
+    tomas reflechit "On parle de Kami, quand même."
+    tomas reflechit "Elle est toujours là. Même quand on ne la voit pas."
+    tomas reflechit "Même sans image… elle reste là."
 
     "Je fixe la tablette noire sur mon pupitre."
     if j1_tablet_touched:
         "Je n'y touche pas une seconde fois."
-        "Le message ACCES LIMITE est encore trop frais dans ma tête."
+        "Le message ACCÈS LIMITÉ est encore trop frais dans ma tête."
     else:
         "Je tapote du doigt."
         "Rien."
 
-    think "C’est ça qui me dérange."
-    think "D’habitude, Kami aime être… présente."
-    think "Là, c’est vide."
+    think "C'est ça qui me dérange."
+    think "D'habitude, Kami aime être… présente."
+    think "Là, c'est vide."
     think "Comme une salle de classe sans prof."
     think "Sauf qu'ici le prof peut te tuer."
 
     "Lysa se penche légèrement vers moi."
     "Elle parle bas par réflexe."
 
-    hide ryn
-    $ showP("lysa", "reflexion", 0.22)   # gauche
 
-    $ showP("mara", "agace", 0.50)       # réaction
-    $ showP("tomas", "neutre", 0.78)     # réaction
 
-    lysa "Tu as remarqué ça ?"
+    lysa reflexion "Tu as remarqué ça ?"
 
-    hide mara
-    $ showP("noam", "reflexion", 0.50)   # centre
 
-    $ showP("lysa", "neutre", 0.22)
-    $ showP("tomas", "reflechit", 0.78)
 
-    noam "Quoi ?"
+    noam reflexion "Quoi ?"
 
-    $ showP("lysa", "determine", 0.22)
 
     lysa neutre "Aucun ordre."
-    lysa "Aucun écran."
-    lysa "Aucun message."
+    lysa neutre "Aucun écran."
+    lysa neutre "Aucun message."
     lysa fatigue "... Silence radio."
 
-    noam "Ça veut dire quoi pour toi ?"
+    noam reflexion "Ça veut dire quoi pour toi ?"
 
-    $ showP("lysa", "blase", 0.22)
 
-    lysa "Ça veut dire que soit on est censé faire quelque chose, soit que Kami attend un autre momennt."
-    lysa "Et ça…"
-    lysa "J’aime pas."
+    lysa blase "Ça veut dire que soit on est censé faire quelque chose, soit que Kami attend un autre moment."
+    lysa blase "Et ça…"
+    lysa blase "J'aime pas."
 
     pause 0.4
 
     "Au centre de la salle, une structure circulaire."
     "Un vaste écran qui fait un tour complet sur lui-même."
-    think "C'est comme si on regardait un film mais qu'on attendait l'acteur principal.."
+    think "C'est comme si on regardait un film mais qu'on attendait l'acteur principal."
 
     play sound sfx_beep
     "-Bip-"
@@ -597,45 +344,33 @@ label _1_CANON:
     "Un deuxième bip."
     "Puis rien."
 
-    "Quelqu’un se lève."
+    "Quelqu'un se lève."
     "Un pas."
-    "Puis s’arrête."
+    "Puis s'arrête."
 
-    hide tomas
-    $ showP("ryn", "reflechit", 0.78)    # droite
 
-    $ showP("noam", "inquiet", 0.50)
-    $ showP("lysa", "culpabilite", 0.22)
 
-    ryn "On reste assis ?"
-    ryn "On attend ?"
-    ryn "C’est ça le plan ?"
-    
-    hide noam
-    $ showP("elias", "neutre", 0.50)
-    elias "… Et après ? Tu comptes faire quoi ?"
+    ryn reflechit "On reste assis ?"
+    ryn reflechit "On attend ?"
+    ryn reflechit "C'est ça le plan ?"
 
-    hide elias
-    $ showP("sael", "raison", 0.50)      # centre
+    elias neutre "… Et après ? Tu comptes faire quoi ?"
 
-    $ showP("lysa", "neutre", 0.22)
-    $ showP("ryn", "colere", 0.78)
 
-    sael "Le plan, c’est de survivre."
-    sael "Et pour l’instant, bouger sans info…"
-    sael "c’est un risque. Et tu veux que je te rappelle ce qui arrive à ceux qui prennent des risques ?"
-    
+
+    sael raison "Le plan, c'est de survivre."
+    sael raison "Et pour l'instant, bouger sans info…"
+    sael raison "c'est un risque. Et tu veux que je te rappelle ce qui arrive à ceux qui prennent des risques ?"
+
     "Derrière, une petite voix se fait entendre."
-    elen "Mais attendre… c’est aussi super risqué, tu trouves pas ?"
-    elen "On mise sur le fait que ça va pas empirer…"
-    
-    hide lysa
-    $ showP("tomas", "raison", 0.95)
-    
-    tomas "Tout ça… c’est un pari, non ? Tout le temps."
-    tomas "On s’est tous fait prendre de court. Moi le premier."
-    tomas "Même les gens des districts… on aurait dit qu’ils tombaient des nues."
-    
+    elen desaccord "Mais attendre… c'est aussi super risqué, tu trouves pas ?"
+    elen desaccord "On mise sur le fait que ça va pas empirer…"
+
+
+    tomas raison "Tout ça… c'est un pari, non ? Tout le temps."
+    tomas raison "On s'est tous fait prendre de court. Moi le premier."
+    tomas raison "Même les gens des districts… on aurait dit qu'ils tombaient des nues."
+
     "Je sens mon cœur accélérer."
     "Pas de panique."
     "Juste la lucidité qui pique."
@@ -665,13 +400,9 @@ label _1_CANON:
     "Mais sa jambe bouge."
     "Un mouvement minuscule."
 
-    hide tomas
-    $ showP("noam", "reflexion", 0.22)   # gauche
 
-    $ showP("sael", "neutre", 0.50)
-    $ showP("ryn", "reflechit", 0.78)
 
-    noam "On fait quoi, alors ?"
+    noam reflexion "On fait quoi, alors ?"
 
     "Personne ne répond tout de suite."
     "Parce que personne ne veut être le premier à choisir."
@@ -681,34 +412,33 @@ label _1_CANON:
 
     "Un souffle de ventilation change."
     "Très léger."
-    "Mais tout le monde l’entend."
-    "Parce qu’on n’a plus que ça à entendre."
+    "Mais tout le monde l'entend."
+    "Parce qu'on n'a plus que ça à entendre."
 
     "Et là, au-dessus du pupitre central…"
-    "Une lumière blanche s’allume."
+    "Une lumière blanche s'allume."
     "Faible."
     "Comme une veilleuse."
     "Au même moment, le bruit d'un mécanisme qui s'active prend de l'ampleur."
 
     play sound sfx_gresillement
-    
+    $ shake(8, 0.25)
+
     "Puis l'écran central s'allume enfin."
     $ cam_move(0.5, 0.05, 3.00, 1.0)
-    
-    hide sael
-    hide ryn
-    hide noam
+
 
     pause 0.4
 
+    $ hideGroup()
     jump _1_KAMI_APPARITION
 
-# 3m
-# Total : 24m30
+# =============================================================================
+# 3m — Total : ~24m30
+# =============================================================================
 
 label _1_KAMI_APPARITION:
 
-    # Écran de diffusion de Kami, constant
     play music "music/bgm_system_override.mp3" fadein 0.4
     scene bg_diffusion_amour at adaptive_fullscreen with fade
     $ bc_off()
@@ -716,18 +446,18 @@ label _1_KAMI_APPARITION:
 
     kami "Ah… vous êtes tous réveillés."
     kami "Parfait."
-    kami "J’avais peur d’avoir surestimé votre capacité à survivre à une sieste forcée."
+    kami "J'avais peur d'avoir surestimé votre capacité à survivre à une sieste forcée."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Les sièges étaient confortables, j’espère."
-    kami "J’ai hésité avec des bancs en métal."
+    kami "Les sièges étaient confortables, j'espère."
+    kami "J'ai hésité avec des bancs en métal."
     kami "Et puis je me suis dit que vous préféreriez commencer… doucement."
 
     pause 0.4
 
     $ bc_show("noam", "inquiet", px=-80, py=-50, pz=0.8)
-    noam "Pourquoi nous ?"
+    noam reflexion "Pourquoi nous ?"
 
     $ bc_hide()
 
@@ -737,14 +467,14 @@ label _1_KAMI_APPARITION:
     kami "Excellente question."
 
     kami "Parce que vous êtes douze."
-    kami "Et que douze, c’est un chiffre pratique."
+    kami "Et que douze, c'est un chiffre pratique."
     kami "Assez pour créer des alliances."
     kami "Pas assez pour se cacher dans la foule."
 
     pause 0.3
 
     $ bc_show("ryn", "colere", px=-90, py=-40, pz=0.85)
-    ryn "Un test de quoi ?"
+    ryn reflechit "Un test de quoi ?"
 
     $ bc_hide()
 
@@ -752,12 +482,12 @@ label _1_KAMI_APPARITION:
 
     kami "Un test de vous."
     kami "De vos choix."
-    kami "De l’humanité en général."
+    kami "De l'humanité en général."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "De votre capacité à obéir…"
-    kami "Et à prétendre que vous obéissez “pour le bien commun”."
+    kami "Et à prétendre que vous obéissez 'pour le bien commun'."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -787,8 +517,8 @@ label _1_KAMI_APPARITION:
     pause 0.4
 
     $ bc_show("elen", "inquiet", px=-70, py=-50, pz=0.85)
-    elen "Décider de quoi exactement ?"
-    elen "Attends, explique-moi encore, je suis larguée là."
+    elen desaccord "Décider de quoi exactement ?"
+    elen desaccord "Attends, explique-moi encore, je suis larguée là."
 
     $ bc_hide()
 
@@ -801,9 +531,7 @@ label _1_KAMI_APPARITION:
 
     pause 0.4
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-
-    kami "Aujourd’hui, au cours de cette première journée…"
+    kami "Aujourd'hui, au cours de cette première journée…"
     kami "Chacun de vous proposera une modification."
     kami "Un amendement."
     kami "Un seul."
@@ -812,9 +540,9 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Vous pourrez renforcer une règle."
-    kami "L’adoucir."
+    kami "L'adoucir."
     kami "La tordre."
-    kami "Ou l’habiller d’un joli mot pour faire croire que c’est une avancée."
+    kami "Ou l'habiller d'un joli mot pour faire croire que c'est une avancée."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
@@ -825,12 +553,12 @@ label _1_KAMI_APPARITION:
 
     kami "Je vous laisse être créatifs."
     kami "Après tout…"
-    kami "C’est ce que vous faites de mieux."
+    kami "C'est ce que vous faites de mieux."
 
     pause 0.5
 
     $ bc_show("tomas", "reflechit", px=-80, py=-45, pz=0.85)
-    tomas "Et ensuite ?"
+    tomas raison "Et ensuite ?"
 
     $ bc_hide()
 
@@ -855,38 +583,39 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "Mais attention."
-    kami "Pour qu’un amendement soit adopté…"
-    kami "Il faut l’unanimité."
+    kami "Pour qu'un amendement soit adopté…"
+    kami "Il faut l'unanimité."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    $ impact(10, 0.25, "#c81e2e")
 
     kami "Tous."
     kami "Sans exception."
-    kami "Sinon, c’est non."
+    kami "Sinon, c'est non."
 
     pause 0.5
 
     $ bc_show("nyra", "triste", px=-70, py=-55, pz=0.85)
-    nyra "Et si quelqu’un vote contre… ?"
+    nyra panne "Et si quelqu'un vote contre… ?"
 
     $ bc_hide()
 
     scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
 
-    kami "Alors l’amendement est rejeté."
+    kami "Alors l'amendement est rejeté."
     kami "Il disparaît."
-    kami "Comme s’il n’avait jamais existé."
+    kami "Comme s'il n'avait jamais existé."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Un peu comme certaines personnes."
-    kami "Dans d’autres circonstances."
+    kami "Dans d'autres circonstances."
 
     pause 0.4
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "Vous allez apprendre quelque chose d’important."
+    kami "Vous allez apprendre quelque chose d'important."
     kami "Très vite."
 
     kami "Convaincre est plus difficile que contraindre."
@@ -909,26 +638,24 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Je regarderai."
-    kami "Et j’apprendrai encore de vous."
+    kami "Et j'apprendrai encore de vous."
 
     pause 0.4
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
     kami "Et maintenant, la précision de taille."
-    kami "Ici… les Commandements n’ont pas lieu d’être."
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Ici… les Commandements n'ont pas lieu d'être."
 
     kami "Vous pouvez vous battre."
     kami "Vous pouvez mentir."
     kami "Vous pouvez voler."
     kami "Vous pouvez vous entretuer."
-    kami "Je ne m’en mêlerai pas."
+    kami "Je ne m'en mêlerai pas."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Mais n’oubliez pas."
+    kami "Mais n'oubliez pas."
     kami "Tout ce que vous faites est filmé."
     kami "Et diffusé."
 
@@ -936,14 +663,14 @@ label _1_KAMI_APPARITION:
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "J’ai passé un an à vous observer."
+    kami "J'ai passé un an à vous observer."
     kami "Vos débats."
     kami "Vos justifications."
     kami "Vos excuses."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Ce serait dommage de s’arrêter maintenant."
+    kami "Ce serait dommage de s'arrêter maintenant."
 
     pause 0.6
 
@@ -960,18 +687,17 @@ label _1_KAMI_APPARITION:
 
     pause 0.5
 
-    # ------------------------------------------------------------------------------------------
-    # 2m10
-    # Total : 26m40
-    # ------------------------------------------------------------------------------------------
-    
+    # --------------------------------------------------------------------------
+    # 2m10 — Total : ~26m40
+    # --------------------------------------------------------------------------
+
     $ bc_off()
     play music "music/bgm_quiet_routine.mp3" fadein 0.4
     hide screen kami_broadcast_ui
 
     scene bg_conclave at adaptive_fullscreen with fade
 
-    "L’écran s’éteint."
+    "L'écran s'éteint."
     "Et pendant une seconde, personne ne respire."
 
     "Puis tout le monde se met à parler en même temps."
@@ -979,23 +705,29 @@ label _1_KAMI_APPARITION:
     "Des rires nerveux."
     "Des insultes à demi avalées."
 
-    $ showP("noam", "reflexion", 0.50)
-    $ showP("lysa", "blase", 0.78)
-    $ showP("tomas", "reflechit", 0.22)
+    $ showGroup([
+        ("noam", "reflexion", -0.09),
+        ("lysa", "blase", 0.05),
+        ("tomas", "reflechit", 0.19),
+        ("nyra", "triste", 0.33),
+        ("elen", "inquiet", 0.47),
+        ("mara", "rire", 0.61),
+        ("ryn", "colere", 0.75),
+        ("julian", "rire", 0.89),
+        ("kael", "neutre", 1.03),
+    ])
 
-    noam "On va devoir vraiment passer trente jours ici …"
+    noam reflexion "On va devoir vraiment passer trente jours ici…"
 
-    $ showP("lysa", "reflexion", 0.78)
-    lysa blase "L’unanimité ?"
-    lysa blase "C’est le piège ultime."
-    lysa blase "En vrai, c’est quasi impossible."
-    lysa "Soit tu convaincs tout le monde…"
-    lysa "soit tu les écrases."
+    lysa blase "L'unanimité ?"
+    lysa blase "C'est le piège ultime."
+    lysa blase "En vrai, c'est quasi impossible."
+    lysa blase "Soit tu convaincs tout le monde…"
+    lysa blase "soit tu les écrases."
     lysa fatigue "Maintenant je pige pourquoi elle dit que ce sera pas simple."
 
-    $ showP("tomas", "raison", 0.22)
-    tomas "Ou alors… faire des compromis."
-    tomas "Pour une fois."
+    tomas raison "Ou alors… faire des compromis."
+    tomas raison "Pour une fois."
 
     "Je tourne la tête."
     "Sur les autres sièges, ça débat déjà comme si ça faisait une heure."
@@ -1013,158 +745,115 @@ label _1_KAMI_APPARITION:
             "Je garde les yeux sur l'écran central."
             think "Même éteint, il donne l'impression de pouvoir reprendre la parole à tout moment."
 
-    hide tomas
-    $ showP("nyra", "triste", 0.22)
 
-    $ showP("noam", "inquiet", 0.50)
-    $ showP("lysa", "neutre", 0.78)
 
-    nyra "Moi… je vois quand même un truc positif."
-    nyra "Si on peut modifier les règles…"
-    nyra "Ça veut dire qu’on peut améliorer les choses."
+    nyra triste "Moi… je vois quand même un truc positif."
+    nyra triste "Si on peut modifier les règles…"
+    nyra triste "Ça veut dire qu'on peut améliorer les choses."
 
-    $ showP("lysa", "blase", 0.78)
-    lysa "Ou les empirer."
-    lysa "Les rendre “légales”, surtout."
+    lysa blase "Ou les empirer."
+    lysa blase "Les rendre 'légales', surtout."
 
-    hide nyra
-    $ showP("elen", "inquiet", 0.22)
 
-    $ showP("noam", "reflexion", 0.50)
-    $ showP("lysa", "reflexion", 0.78)
 
-    elen "Le fait qu’on ait le droit de proposer des amendements…"
-    elen "Franchement, dans ce merdier, c’est déjà énorme."
-    elen "C’est comme… une toute petite fenêtre ouverte. Ça fait du bien de respirer cinq secondes."
+    elen inquiet "Le fait qu'on ait le droit de proposer des amendements…"
+    elen inquiet "Franchement, dans ce merdier, c'est déjà énorme."
+    elen inquiet "C'est comme… une toute petite fenêtre ouverte. Ça fait du bien de respirer cinq secondes."
 
-    $ showP("lysa", "blase", 0.78)
-    lysa "Une respiration sous l’eau."
+    lysa blase "Une respiration sous l'eau."
 
-    "Un rire s’échappe quelque part."
+    "Un rire s'échappe quelque part."
     "Un rire trop franc, trop sûr de lui."
 
-    hide elen
-    $ showP("mara", "rire", 0.22)
 
-    $ showP("noam", "inquiet", 0.50)
-    $ showP("lysa", "surpris", 0.78)
 
-    mara "Vous parlez tous comme si on venait de gagner au loto."
-    mara "On est dans une putain de cage, les gars."
-    mara "Avec un bouton ‘vote’ et un nœud rose dessus pour faire genre que c’est cadeau."
+    mara rire "Vous parlez tous comme si on venait de gagner au loto."
+    mara rire "On est dans une putain de cage, les gars."
+    mara rire "Avec un bouton 'vote' et un nœud rose dessus pour faire genre que c'est cadeau."
 
-    $ showP("lysa", "colere", 0.78)
-    lysa "Merci pour le rappel."
+    lysa colere "Merci pour le rappel."
 
-    hide mara
-    $ showP("ryn", "colere", 0.22)
 
-    $ showP("noam", "inquiet", 0.50)
-    $ showP("lysa", "neutre", 0.78)
 
-    ryn "Non mais attendez."
-    ryn "Elle a dit quoi exactement ?"
-    ryn "Ici, les commandements s’appliquent pas."
+    ryn colere "Non mais attendez."
+    ryn colere "Elle a dit quoi exactement ?"
+    ryn colere "Ici, les commandements s'appliquent pas."
 
-    $ showP("ryn", "colere2", 0.22)
-    ryn "Donc si quelqu’un pète un câble…"
-    ryn "On fait quoi ?"
+    ryn colere "Donc si quelqu'un pète un câble…"
+    ryn colere "On fait quoi ?"
 
-    $ showP("lysa", "reflexion", 0.78)
     lysa neutre "On est filmés en permanence."
-    lysa "IA qui mate et diffuse tout."
-    lysa blase "Son idée du ‘cadre sécurisé’, apparemment."
-    lysa "La pression, ça empêche de péter un câble."
+    lysa neutre "IA qui mate et diffuse tout."
+    lysa blase "Son idée du 'cadre sécurisé', apparemment."
+    lysa blase "La pression, ça empêche de péter un câble."
     lysa fatigue "... En théorie."
 
-    "À côté, quelqu’un se lève, ajuste sa veste comme s’il montait sur scène."
+    "À côté, quelqu'un se lève, ajuste sa veste comme s'il montait sur scène."
     "Il cherche du regard une caméra. Il la trouve."
     "Et il lui offre un sourire travaillé."
 
-    hide ryn
-    $ showP("julian", "rire", 0.22)
 
-    $ showP("noam", "reflexion", 0.50)
-    $ showP("lysa", "blase", 0.78)
 
-    julian "Franchement ?"
-    julian "Moi je trouve ça carrément bandant."
+    julian rire "Franchement ?"
+    julian rire "Moi je trouve ça carrément bandant."
 
-    $ showP("julian", "neutre", 0.22)
-    julian "Enfin !"
-    julian "Un endroit où on peut vraiment parler, peser sur les règles…"
-    julian "… et où les gens vont regarder. Pour de vrai."
+    julian neutre "Enfin !"
+    julian neutre "Un endroit où on peut vraiment parler, peser sur les règles…"
+    julian neutre "… et où les gens vont regarder. Pour de vrai."
 
     "Il se tourne légèrement. Comme pour se mettre de profil face à la caméra."
-    "Comme si ça avait de l’importance."
+    "Comme si ça avait de l'importance."
 
-    $ showP("lysa", "colere", 0.78)
-    lysa "T’es sérieux ?"
+    lysa colere "T'es sérieux ?"
 
-    $ showP("julian", "idee", 0.22)
-    julian "Totalement."
-    julian "Si je dois être coincé ici trente jours… autant que ce soit légendaire."
-    julian "Et autant en profiter pour rendre la vie un peu moins pourrie aux autres, non ?"
+    julian idee "Totalement."
+    julian idee "Si je dois être coincé ici trente jours… autant que ce soit légendaire."
+    julian idee "Et autant en profiter pour rendre la vie un peu moins pourrie aux autres, non ?"
 
     "Il jette un regard rapide vers une caméra."
     "Il lève deux doigts en signe de salut."
-    "Comme si quelqu’un l’attendait de l’autre côté."
+    "Comme si quelqu'un l'attendait de l'autre côté."
 
-    $ showP("noam", "inquiet", 0.50)
-    noam "…"
+    noam inquiet "…"
 
-    hide julian
-    $ showP("tomas", "reflechit", 0.22)
 
-    $ showP("noam", "reflexion", 0.50)
-    $ showP("lysa", "reflexion", 0.78)
 
-    tomas "Au moins, ça confirme quelque chose."
-    tomas "Elle veut du spectacle. Vraiment."
-    tomas raison "Et si elle veut du spectacle… c’est qu’elle compte sur le fait qu’on va se déchirer entre nous."
+    tomas reflechit "Au moins, ça confirme quelque chose."
+    tomas reflechit "Elle veut du spectacle. Vraiment."
+    tomas raison "Et si elle veut du spectacle… c'est qu'elle compte sur le fait qu'on va se déchirer entre nous."
 
     pause 0.4
 
     "Un autre détail me revient."
     "Le jour 1, chacun propose un amendement."
 
-    $ showP("noam", "reflexion", 0.50)
-    noam "Donc aujourd’hui… on doit tous proposer quelque chose."
+    noam reflexion "Donc aujourd'hui… on doit tous proposer quelque chose."
 
-    $ showP("lysa", "culpabilite", 0.78)
-    lysa "Ouais."
-    lysa "Et personne saura qui a proposé quoi."
-    
-    hide noam
-    $ showP("kael", "neutre", 0.50)
-    kael "Et si on se disait chacun ce qu’on envisage comme modifications ?"
-    kael "Pas besoin de tout écrire d’un coup. Juste… l’idée générale."
-    kael "Si on les met sur la table ensemble, on a peut-être une chance d’atteindre l’unanimité."
-    kael "Sinon, on va tourner en rond."
+    lysa culpabilite "Ouais."
+    lysa culpabilite "Et personne saura qui a proposé quoi."
+
+    kael neutre "Et si on se disait chacun ce qu'on envisage comme modifications ?"
+    kael neutre "Pas besoin de tout écrire d'un coup. Juste… l'idée générale."
+    kael neutre "Si on les met sur la table ensemble, on a peut-être une chance d'atteindre l'unanimité."
+    kael neutre "Sinon, on va tourner en rond."
 
     "Un silence retombe, plus sec."
-    "Cette fois, c’est pas la peur."
-    "C’est le calcul."
+    "Cette fois, c'est pas la peur."
+    "C'est le calcul."
 
-    hide tomas
-    $ showP("elen", "inquiet", 0.22)
 
-    $ showP("noam", "neutre", 0.50)
-    hide kael
-    
-    $ showP("lysa", "reflexion", 0.78)
 
-    elen "On devrait peut-être se caler sur un truc simple avant que ça parte en vrille."
-    elen "Genre une règle de base, pas grand-chose… juste pour pas s’étriper dans les dix premières minutes."
-    elen "Parce que sinon je te jure, ça va dégénérer direct."
 
-    $ showP("lysa", "blase", 0.78)
+    elen inquiet "On devrait peut-être se caler sur un truc simple avant que ça parte en vrille."
+    elen inquiet "Genre une règle de base, pas grand-chose… juste pour pas s'étriper dans les dix premières minutes."
+    elen inquiet "Parce que sinon je te jure, ça va dégénérer direct."
+
     lysa blase "Tu veux une méthode ?"
-    lysa "On est douze, enfermés, filmés."
-    lysa "Et ici, tuer quelqu’un… pas de conséquence."
+    lysa blase "On est douze, enfermés, filmés."
+    lysa blase "Et ici, tuer quelqu'un… pas de conséquence."
     lysa fatigue "La méthode est déjà écrite."
-    lysa "... Et on la connaît tous."
-    lysa peur "Evidemment que ça va finir en tuerie de masse."
+    lysa fatigue "... Et on la connaît tous."
+    lysa peur "Évidemment que ça va finir en tuerie de masse."
 
     pause 0.4
 
@@ -1172,23 +861,19 @@ label _1_KAMI_APPARITION:
     "Deux par-ci."
     "Trois par-là."
     "Des regards en biais."
-    "Des gens qui s’éloignent déjà, comme s’ils avaient peur d’être associés."
+    "Des gens qui s'éloignent déjà, comme s'ils avaient peur d'être associés."
 
-    $ showP("noam", "reflexion", 0.50)
-    noam "On fait quoi, nous ?"
+    noam reflexion "On fait quoi, nous ?"
 
-    $ showP("lysa", "determine", 0.78)
     lysa neutre "On visite."
-    lysa "On repère les lieux."
-    lysa "Et on ferme sa gueule devant les caméras."
+    lysa neutre "On repère les lieux."
+    lysa neutre "Et on ferme sa gueule devant les caméras."
     lysa fatigue "Surtout au début."
 
-    $ showP("elen", "reflexion", 0.22)
-    elen "Je vais checker s’il y a une infirmerie… ou au moins de quoi faire un pansement."
-    elen "On sait jamais, des fois que quelqu’un se fasse vraiment mal."
+    elen reflexion "Je vais checker s'il y a une infirmerie… ou au moins de quoi faire un pansement."
+    elen reflexion "On sait jamais, des fois que quelqu'un se fasse vraiment mal."
 
-    $ showP("noam", "neutre", 0.50)
-    noam "Ok."
+    noam neutre "Ok."
 
     pause 0.4
 
@@ -1201,26 +886,25 @@ label _1_KAMI_APPARITION:
 
     think "Phase exploration."
     think "Ça commence maintenant."
-    
+    $ hideGroup()
+
     scene bg_map at adaptive_fullscreen with fade
-    
+
     tuto "Prêt pour un nouveau tutoriel ?"
     tuto "J'espère bien !"
     tuto "Cette carte correspond à la carte du Conclave."
-    tuto "Toutes les pièces vous sont ouvertes afin que vous puissiez explorer chacune des pièces convenablement."
+    tuto "Toutes les pièces vous sont ouvertes afin que vous puissiez explorer chacune d'entre elles convenablement."
     tuto "Pour accéder à une salle spécifique, rien de plus simple : il suffit de cliquer dessus."
     tuto "Dans certaines pièces, certaines interactions peuvent être cruciales pour débloquer des fins différentes."
     tuto "Cette mécanique complète la mécanique de choix afin d'ouvrir les possibles."
     tuto "N'hésitez donc pas à explorer et à interagir avec votre environnement."
     tuto "Bonne exploration !"
 
-    # Placeholder : tu brancheras plus tard sur ton hub d'exploration
     jump OPEN_CONCLAVE_MAP
 
-    # ------------------------------------------------------------------------------------------
-    # 2m10
-    # Total : 28m50
-    # ------------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------
+    # 2m10 — Total : ~28m50
+    # --------------------------------------------------------------------------
 
 label CHECK_ALL_SALLES_VISITEES:
 
@@ -1245,13 +929,13 @@ label KAMI_MESSAGE_APRES_VISITE:
     scene bg_couloir at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    think "J’avais fini par oublier l’heure."
-    think "Ici, le temps a une façon de te faire croire qu’il s’est arrêté."
+    think "J'avais fini par oublier l'heure."
+    think "Ici, le temps a une façon de te faire croire qu'il s'est arrêté."
     think "Et puis non."
     think "Il avance. Lentement, mais il ne recule jamais."
 
     "Un écran mural grésille."
-    "Un second s’allume plus loin."
+    "Un second s'allume plus loin."
     "Puis un troisième."
     "Même signal, partout, identique."
 
@@ -1263,12 +947,12 @@ label KAMI_MESSAGE_APRES_VISITE:
     kami "Il est bientôt dix-huit heures."
     kami "Votre visite libre touche à sa fin."
 
-    kami "J’espère que vous avez trouvé ça…"
+    kami "J'espère que vous avez trouvé ça…"
     kami "inspirant et complet."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "On a mis du cœur à l’ouvrage."
+    kami "On a mis du cœur à l'ouvrage."
     kami "Enfin."
     kami "On a surtout mis des ingénieurs passionnés."
 
@@ -1289,7 +973,7 @@ label KAMI_MESSAGE_APRES_VISITE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "Ne me faites pas perdre mon temps."
-    kami "C’est le seul truc que je ne vous pardonnerai pas."
+    kami "C'est le seul truc que je ne vous pardonnerai pas."
 
     play sound sfx_beep
     "-Bip-"
@@ -1297,78 +981,76 @@ label KAMI_MESSAGE_APRES_VISITE:
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     think "Voilà, on y arrive."
-    think "A partir de là, le Conclave débute vraiment."
+    think "À partir de là, le Conclave débute vraiment."
     think "Ce n'est plus possible de faire marche arrière."
-    think "Enfin, ça n'a jamais été possible mais bon ..."
+    think "Enfin, ça n'a jamais été possible, mais bon…"
 
     scene bg_conclave at adaptive_fullscreen with fade
 
-    "Les portes du Conclave s’ouvrent, dedans, il y a déjà plusieurs personnes."
-    "On évite tous de se regarder, comme si on était géné de quelques choses."
-    "Personne n’a envie d’être le premier à parler."
+    "Les portes du Conclave s'ouvrent ; dedans, il y a déjà plusieurs personnes."
+    "On évite tous de se regarder, comme si on était gênés de quelque chose."
+    "Personne n'a envie d'être le premier à parler."
 
     "La salle du Conclave n'a pas changé depuis tout à l'heure."
     "Toujours trop propre."
     "Toujours trop grande."
-    "Et on est toujours insignifiant dans ce monde gigantesque."
+    "Et on est toujours insignifiants dans ce monde gigantesque."
 
-    "Je m’assois et ceux déjà présents m'imitent."
+    "Je m'assois et ceux déjà présents m'imitent."
     "Les autres arrivent par grappes."
     "Des fauteuils raclent."
-    "Mais personne ne parle. On attends."
+    "Mais personne ne parle. On attend."
 
-    $ showP("ryn", "fatigue", 0.78)
+    $ showGroup([
+        ("ryn", "fatigue", 0.02),
+        ("mara", "rire", 0.25),
+        ("iris", "fatigue", 0.50),
+        ("julian", "sourire", 0.75),
+        ("elen", "inquiet", 0.98),
+    ])
 
-    ryn "On est tous là ?"
-    ryn "Me dites pas qu’on va encore attendre pour rien."
+    ryn fatigue "On est tous là ?"
+    ryn fatigue "Me dites pas qu'on va encore attendre pour rien."
 
-    hide noam
-    $ showP("mara", "rire", 0.50)
 
-    mara "Chuuut."
-    mara "T’as capté ou quoi ?"
-    mara "Kami supporte pas qu’on lui fasse perdre son temps, soi-disant."
-    mara "Et moi j’ai pas envie d’être sa cible du jour, alors merci mais tais toi."
+    mara rire "Chuuut."
+    mara rire "T'as capté ou quoi ?"
+    mara rire "Kami supporte pas qu'on lui fasse perdre son temps, soi-disant."
+    mara rire "Et moi j'ai pas envie d'être sa cible du jour, alors merci, mais tais-toi."
 
-    hide lysa
-    $ showP("iris", "fatigue", 0.22)
 
-    iris "Super. Vraiment super."
-    iris "On nous convoque comme des mômes de primaire qui ont sali la classe. Génial, l’ambiance."
-    iris "J’ai hâte de voir qui va nous mettre au coin cette fois."
+    iris fatigue "Super. Vraiment super."
+    iris fatigue "On nous convoque comme des mômes de primaire qui ont sali la classe. Génial, l'ambiance."
+    iris fatigue "J'ai hâte de voir qui va nous mettre au coin cette fois."
 
-    hide ryn
-    $ showP("julian", "sourire", 0.78)
 
-    julian "Perso je trouve ça hyper marrant."
-    julian "J’ai trop envie de voir jusqu’où on peut pousser le bordel dans cet endroit…"
+    julian sourire "Perso je trouve ça hyper marrant."
+    julian sourire "J'ai trop envie de voir jusqu'où on peut pousser le bordel dans cet endroit…"
 
-    hide mara
-    $ showP("elen", "inquiet", 0.50)
 
-    elen "Franchement, je suis pas sûre qu’on puisse changer grand-chose…"
-    elen "Kami décide de qui vit ou meurt, on va pas se mentir."
-    elen "Mais même si c’est minuscule… j’ai envie d’essayer quand même. Ça coûte rien d’essayer, si ?"
+    elen inquiet "Franchement, je suis pas sûre qu'on puisse changer grand-chose…"
+    elen inquiet "Kami décide de qui vit ou meurt, on va pas se mentir."
+    elen inquiet "Mais même si c'est minuscule… j'ai envie d'essayer quand même. Ça coûte rien d'essayer, si ?"
 
-    $ showP("julian", "taquin", 0.78)
 
-    julian "Je sais, je sais..."
-    julian "Mais justement, c’est ça qui est excitant."
-    julian "Si on peut réécrire les règles, on peut tout changer."
-    julian "Et sortir tout le monde de là. On pourrait être les héros de l'humanité !"
+    julian taquin "Je sais, je sais..."
+    julian taquin "Mais justement, c'est ça qui est excitant."
+    julian taquin "Si on peut réécrire les règles, on peut tout changer."
+    julian taquin "Et sortir tout le monde de là. On pourrait être les héros de l'humanité !"
 
-    "L’écran central s’allume."
+    "L'écran central s'allume."
     "Un halo blanc."
     "Et Kami apparaît."
+    $ hideGroup()
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Bonjour. Je vois que vous êtes tous arrivés."
     kami "Mes douze représentants."
-    
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    
-    kami "Oh que ça faisait longtemps que j'en révais de ce Conclave !"
+
+    kami "Oh que ça faisait longtemps que j'en rêvais, de ce Conclave !"
     kami "C'était un travail monstre de tout organiser !"
     kami "Mais je pense que ça peut valoir le coup !"
 
@@ -1380,11 +1062,11 @@ label KAMI_MESSAGE_APRES_VISITE:
     kami "Je vais être claire."
     kami "Ici, dans le Conclave…"
     kami "les Commandements sont suspendus, abolis."
-    kami "Toutes les règles que vous connaissiez jusque là n'ont plus lieu d'être."
-    
+    kami "Toutes les règles que vous connaissiez jusque-là n'ont plus lieu d'être."
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    
-    kami "Vous êtes libre d'avoir la liberté absolue !"
+
+    kami "Vous êtes libres d'avoir la liberté absolue !"
     kami "Pas de commandement, pas de loi, pas de police."
     kami "Juste vous."
 
@@ -1393,14 +1075,14 @@ label KAMI_MESSAGE_APRES_VISITE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Oui."
-    kami "Je vois que certains d'entre vous arborrent déjà des sourires."
+    kami "Je vois que certains d'entre vous arborent déjà des sourires."
     kami "Mais..."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "Ne vous enflammez pas."
     kami "Ça ne veut pas dire que vous pouvez tout faire."
-    kami "Je me permets juste cet amènagement pour pouvoir vous observer sans bruit de fond."
+    kami "Je me permets juste cet aménagement pour pouvoir vous observer sans bruit de fond."
 
     pause 0.2
 
@@ -1413,27 +1095,27 @@ label KAMI_MESSAGE_APRES_VISITE:
 
     kami "Règle une."
     kami "Interdiction de retourner dans votre district."
-    kami "Interdiction d’aller dans un autre."
-    kami "Jusqu’à la fin du trentième jour."
+    kami "Interdiction d'aller dans un autre."
+    kami "Jusqu'à la fin du trentième jour."
 
     pause 0.2
 
     kami "Vous restez ici."
-    
+
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Pendant trente petit jour, nous allons nous amuser ensemble."
+    kami "Pendant trente petits jours, nous allons nous amuser ensemble."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    
+
     kami "Règle deux."
-    kami "Interdiction d’initier un contact vers l’extérieur."
+    kami "Interdiction d'initier un contact vers l'extérieur."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Alors que je ne vous vois pas trifouiller au matériel de communication."
+    kami "Alors que je ne vous vois pas tripoter le matériel de communication."
     kami "Si jamais quelqu'un vous appelle, vous pouvez répondre."
     kami "Mais pas l'inverse."
-    
+
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Vous savez combien ça coûte les appels depuis l'espace ?!"
     kami "Non franchement, ne jouez pas aux idiots."
@@ -1448,20 +1130,20 @@ label KAMI_MESSAGE_APRES_VISITE:
     "Personne ne commente."
     "On le sait."
     "On le sait trop bien."
-    "C'est peut être la seule chose qui ne changera pas dans notre quotidien."
+    "C'est peut-être la seule chose qui ne changera pas dans notre quotidien."
 
     kami "Mais il y a une exception."
-    
+
     "Tout le monde écoute plus attentivement."
-    
+
     kami "Vos chambres sont équipées d'un brouilleur."
     kami "Il est activé par défaut."
-    kami "Caméras, audio, capteurs : tout est coupés."
+    kami "Caméras, audio, capteurs : tout est coupé."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Mais vous pouvez le désactiver."
-    kami "Si vous aimez être vus par exemple."
+    kami "Si vous aimez être vus, par exemple."
 
     pause 0.2
 
@@ -1471,7 +1153,7 @@ label KAMI_MESSAGE_APRES_VISITE:
     kami "On peut passer au cœur du Conclave."
 
     kami "Vous allez déposer chacun un amendement."
-    kami "Une modification d’un Commandement."
+    kami "Une modification d'un Commandement."
     kami "Dans une urne."
 
     kami "Vous avez trente-cinq minutes pour chacun en déposer un."
@@ -1480,12 +1162,12 @@ label KAMI_MESSAGE_APRES_VISITE:
 
     kami "Oui, c'est presque comme un examen surprise."
     kami "J'adore."
-    kami "J’espère que vous avez de l'inspiration."
-    
+    kami "J'espère que vous avez de l'inspiration."
+
     scene bg_diffusion_gene at adaptive_fullscreen with dissolve
-    
+
     kami "Allez, je veux savoir ce que vous voulez changer dans mes règles parfaites !"
-    kami "Qu'est ce que j'aurais pu mal faire ?"
+    kami "Qu'est-ce que j'aurais pu mal faire ?"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1499,15 +1181,15 @@ label KAMI_MESSAGE_APRES_VISITE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Ne le prenez pas mal."
-    kami "C’est mathématique."
+    kami "C'est mathématique."
     kami "Et ce n'est pas plus mal, si jamais je devais reproduire le Conclave l'an prochain."
-    kami "Je pourrais peut être ajouter les amendements restants dans la prochaine urne !"
+    kami "Je pourrais peut-être ajouter les amendements restants dans la prochaine urne !"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "Tous les trois jours."
     kami "Un amendement sera tiré au sort."
-    kami "Puis tous les trois jours, vous voterez sur cet amendement. Votre objectif : l’unanimité."
+    kami "Puis tous les trois jours, vous voterez sur cet amendement. Votre objectif : l'unanimité."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
@@ -1515,31 +1197,31 @@ label KAMI_MESSAGE_APRES_VISITE:
     kami "Et l'amendement est refusé."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    
+
     kami "La participation aux votes est libre. Libre à vous de venir voter, ou pas."
     kami "Sur les bulletins exprimés, il faut une unanimité de POUR pour adopter le vote."
     kami "Sont retirés des bulletins exprimés les abstentions et les absences au vote."
 
-    kami "Je ne suis pas un monstre tout de même."
+    kami "Je ne suis pas un monstre, tout de même."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "Mais je vous préviens, le peuple n'apprécie généralement pas les PROCRASTINATEURS."
-    
+
     show screen kami_broadcast_ui
     $ bc_show("elias", "reflechit", px=-70, py=-50, pz=0.85)
-    
-    elias "Donc si une seule personne dit non… c’est mort."
-    elias "C’est une sorte de système de blocage."
-    
+
+    elias neutre "Donc si une seule personne dit non… c'est mort."
+    elias neutre "C'est une sorte de système de blocage."
+
     $ bc_hide()
     hide screen kami_broadcast_ui
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    
-    kami "Pour chaque proposition d'amendement adopté, j'initierai immédiatement le changement."
+
+    kami "Pour chaque proposition d'amendement adoptée, j'initierai immédiatement le changement."
     kami "Pour certains, un refus de l'amendement pourra aussi avoir des conséquences."
-    kami "Mais ça ça dépendra de vos douces propositions."
+    kami "Mais ça dépendra de vos douces propositions."
 
     $ unlock_codex_page("reglement_conclave", with_notification=False)
     show screen day1_codex_unlock_panel("Règlement du Conclave")
@@ -1551,289 +1233,272 @@ label KAMI_MESSAGE_APRES_VISITE:
     kami "Sur ce."
     kami "Écrivez."
     kami "Réfléchissez."
-    
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Faites semblant d’être des adultes responsables."
+    kami "Faites semblant d'être des adultes responsables."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "L’urne ferme dans trente-et-une minutes."
+    kami "L'urne ferme dans trente-et-une minutes."
     kami "Ne déposez pas vos propositions en retard."
 
     play sound sfx_beep
     "-Bip-"
     jump _1_CONCLAVE_DEBAT_DEPOT
 
-# Durée : 3m30
-# Total : 56m15
+# Durée : 3m30 — Total : ~56m15
 
 
+# =============================================================================
 label _1_CONCLAVE_DEBAT_DEPOT:
+# =============================================================================
 
     scene bg_conclave at adaptive_fullscreen
     play music "music/bgm_system_override.mp3" fadein 1.0
-    $ j1_amendment_time_display = "31:00"
+
+    # --- Timer synchronisé avec le système day0 ---
+    $ day0_timer_init(m=31, s=0)
     show screen day1_amendment_timer
 
     think "Trente-et-une minutes seulement."
     think "Pour faire des propositions qui peuvent réduire des villes en cendre."
 
-    "L’urne est là, au centre de la pièce."
+    "L'urne est là, au centre de la pièce."
     "Bien visible, bien mise en avant."
 
-    $ showP("kael", "calme", 0.50)
+    $ showGroup([
+        ("kael", "calme", -0.11),
+        ("iris", "fatigue", 0.02),
+        ("sael", "determine", 0.15),
+        ("elen", "inquiet", 0.28),
+        ("julian", "sourire", 0.41),
+        ("mara", "neutre", 0.54),
+        ("ryn", "reflechit", 0.67),
+        ("nyra", "triste", 0.80),
+        ("tomas", "hesitation", 0.93),
+        ("lysa", "reflexion", 1.06),
+        ("elias", "reflechit", 1.19),
+    ])
 
-    kael "Bon."
-    kael "Je vais être direct."
-    kael "Si chacun écrit de son côté, sans rien partager avant…"
-    kael "… on prend un risque énorme."
-    kael "Je propose quelque chose de simple."
-    kael "Chacun dit à voix haute ce qu’il compte mettre en avant."
-    kael "Pas le texte mot pour mot. Juste l’intention."
-    kael "Comme ça, on voit tout de suite où ça coince."
-    kael "Et on évite… les catastrophes."
-
-    pause 0.3
-
-    $ showP("iris", "fatigue", 0.22)
-
-    iris "Non mais non !"
-    iris "C’est déjà l’horreur ton truc, là, tu te rends compte ou pas ?!"
-
-    hide kael
-    $ showP("kael", "neutre", 0.50)
-
-    kael "Pourquoi ça ?"
-
-    hide iris
-    $ showP("iris", "desaccord", 0.22)
-
-    iris "Attends, parce que si un amendement a l’air tout gentil, tout raisonnable…"
-    iris "…mais qu’en vrai il fout un merdier monstrueux derrière…"
-    iris "Tu crois vraiment que Kami va faire quoi ?"
-    iris taquin "‘Oups désolée’ ?"
-    iris colere "Ou ‘ah bah c’est la faute de celui qui l’a écrit’ ? Genre, super la logique !"
-
-    $ showP("sael", "determine", 0.78)
-
-    sael "Elle pointera quelqu’un."
-    sael "Toujours."
-    sael "Et ce quelqu'un ce sera l'un d'entre nous."
-
-    sael "Même si elle ne le dit pas clairement."
-    sael "Même si c’est jamais écrit."
-
-    sael "On en assumera les conséquences."
-
-    hide iris
-    $ showP("elen", "inquiet", 0.22)
-
-    elen "Et puis… y en a qui ont clairement pas envie d’en causer."
-    elen "Y a des trucs qu’on garde pour soi, des idées un peu tordues…"
-    elen "Bref, c’est pas parce qu’on est tous là qu’on va tout se dire cash."
-
-    hide sael
-    $ showP("julian", "sourire", 0.78)
-
-    julian "Moi je veux bien en parler, hein."
-    julian "Mais bon… je sens que je vais encore me faire passer pour le relou qui se la raconte."
-
-    hide julian
-    $ showP("mara", "neutre", 0.78)
-
-    mara "C’est pas un risque, c’est ta marque de fabrique."
-    mara "Au fait… c’est quoi ton blaze déjà ?"
-
-    "Personne ne lui réponds vraiment."
+    kael calme "Bon."
+    kael calme "Je vais être direct."
+    kael calme "Si chacun écrit de son côté, sans rien partager avant…"
+    kael calme "… on prend un risque énorme."
+    kael calme "Je propose quelque chose de simple."
+    kael calme "Chacun dit à voix haute ce qu'il compte mettre en avant."
+    kael calme "Pas le texte mot pour mot. Juste l'intention."
+    kael calme "Comme ça, on voit tout de suite où ça coince."
+    kael calme "Et on évite… les catastrophes."
 
     pause 0.3
 
-    hide mara
-    $ showP("ryn", "reflechit", 0.78)
 
-    ryn "Et si on faisait rien ?"
+    iris fatigue "Non mais non !"
+    iris fatigue "C'est déjà l'horreur ton truc, là, tu te rends compte ou pas ?!"
 
-    ryn "On vote contre tout."
-    ryn "On touche à rien."
-    ryn "Fin de l’histoire."
-    ryn "Comme ça on ne change pas les habitudes, et tout le monde connait les règles ?"
 
-    hide elen
-    $ showP("nyra", "triste", 0.22)
+    kael neutre "Pourquoi ça ?"
 
-    nyra "Ça veut dire accepter."
-    nyra "Que ce monde reste comme il est."
 
-    nyra "On va pas faire semblant que tout va bien, non ?"
-    nyra "Y'a pas que du mauvais, mais y'a aussi des choses à changer."
+    iris desaccord "Attends, parce que si un amendement a l'air tout gentil, tout raisonnable…"
+    iris desaccord "…mais qu'en vrai il fout un merdier monstrueux derrière…"
+    iris desaccord "Tu crois vraiment que Kami va faire quoi ?"
+    iris taquin "'Oups, désolée' ?"
+    iris colere "Ou 'ah bah c'est la faute de celui qui l'a écrit' ? Genre, super la logique !"
 
-    hide ryn
-    $ showP("tomas", "hesitation", 0.78)
 
-    tomas "Non. Ça ne marchera pas, Ryn."
-    tomas "Kami a dit… très clairement… que refuser un amendement pouvait aussi avoir des conséquences."
-    tomas "On sait juste pas encore lequel. Et c’est ça qui m’inquiète."
+    sael determine "Elle pointera quelqu'un."
+    sael determine "Toujours."
+    sael determine "Et ce quelqu'un sera l'un d'entre nous."
+
+    sael determine "Même si elle ne le dit pas clairement."
+    sael determine "Même si c'est jamais écrit."
+
+    sael determine "On en assumera les conséquences."
+
+
+    elen inquiet "Et puis… y en a qui ont clairement pas envie d'en causer."
+    elen inquiet "Y a des trucs qu'on garde pour soi, des idées un peu tordues…"
+    elen inquiet "Bref, c'est pas parce qu'on est tous là qu'on va tout se dire cash."
+
+
+    julian sourire "Moi je veux bien en parler, hein."
+    julian sourire "Mais bon… je sens que je vais encore me faire passer pour le relou qui se la raconte."
+
+
+    mara neutre "C'est pas un risque, c'est ta marque de fabrique."
+    mara neutre "Au fait… c'est quoi ton blaze déjà ?"
+
+    "Personne ne lui répond vraiment."
 
     pause 0.3
 
-    $ showP("kael", "reflechit", 0.50)
 
-    kael "C’est précisément pour ça qu’il faut en parler."
-    kael "Le silence."
-    kael "C’est exactement ce qu’ils veulent."
-    kael "Le laisser s’installer, c’est leur donner le champ libre."
+    ryn reflechit "Et si on faisait rien ?"
 
-    hide kael
-    hide nyra
-    $ showP("lysa", "reflexion", 0.22)
+    ryn reflechit "On vote contre tout."
+    ryn reflechit "On touche à rien."
+    ryn reflechit "Fin de l'histoire."
+    ryn reflechit "Comme ça on ne change pas les habitudes, et tout le monde connaît les règles ?"
+
+
+    nyra triste "Ça veut dire accepter."
+    nyra triste "Que ce monde reste comme il est."
+
+    nyra triste "On va pas faire semblant que tout va bien, non ?"
+    nyra triste "Y'a pas que du mauvais, mais y'a aussi des choses à changer."
+
+
+    tomas hesitation "Non. Ça ne marchera pas, Ryn."
+    tomas hesitation "Kami a dit… très clairement… que refuser un amendement pouvait aussi avoir des conséquences."
+    tomas hesitation "On sait juste pas encore lequel. Et c'est ça qui m'inquiète."
+
+    pause 0.3
+
+
+    kael reflechit "C'est précisément pour ça qu'il faut en parler."
+    kael reflechit "Le silence."
+    kael reflechit "C'est exactement ce qu'ils veulent."
+    kael reflechit "Le laisser s'installer, c'est leur donner le champ libre."
+
 
     lysa reflexion "Ou alors…"
-    lysa "c’est notre seule défense."
-    lysa doute "Quelqu’un peut très bien mentir."
-    lysa "Dire qu’il propose un truc alors qu’il en propose un autre."
+    lysa reflexion "c'est notre seule défense."
+    lysa doute "Quelqu'un peut très bien mentir."
+    lysa doute "Dire qu'il propose un truc alors qu'il en propose un autre."
     lysa blase "Avec seulement dix votes tirés au sort…"
-    lysa "c’est l’alibi parfait."
-    lysa fatigue "Personne pourra prouver le contraire."
-    
+    lysa blase "c'est l'alibi parfait."
+    lysa fatigue "Personne ne pourra prouver le contraire."
+
     pause 0.4
 
     "Le silence retombe."
     "Pas un silence lourd."
     "Un silence méfiant."
-    
-    lysa "Comme il n'y a que dix votes. C'est l'alibi idéal pour justifier son mensonge."
 
-    hide tomas
-    $ showP("elias", "reflechit", 0.78)
+    lysa fatigue "Comme il n'y a que dix votes… c'est l'alibi idéal pour justifier son mensonge."
 
-    elias "Au fait les gars..."
-    $ j1_amendment_time_display = "20:00"
-    elias "Pendant qu’on tourne en rond, le chrono descend à vingt minutes."
+
+    # --- Le chrono passe à 20 min (mise à jour dynamique) ---
+    $ day0_timer_set(20 * 60)
+
+    elias reflechit "Au fait les gars..."
+    elias reflechit "Pendant qu'on tourne en rond, il ne reste plus que vingt minutes."
 
     pause 0.4
 
-    hide elias
-    $ showP("ryn", "fatigue", 0.78)
 
-    ryn "Ecoutez, faites ce que vous voulez."
+    ryn fatigue "Écoutez, faites ce que vous voulez."
 
     "Ryn se lève."
-    
+
     "Il attrape une feuille de papier puis un stylo."
     "Sans aucune justification ni aucune parole."
 
-    hide ryn
 
     play sound sfx_paper
     "Un froissement."
-    "Puis le bruit sec du papier qui tombe au fond d'une boite."
+    "Puis le bruit sec du papier qui tombe au fond d'une boîte."
     play sound sfx_drop
 
     think "Voilà."
     think "Le premier."
 
-    hide lysa
-    $ showP("nyra", "reflexion", 0.22)
 
-    nyra "C’est allé vite…"
+    nyra reflexion "C'est allé vite…"
 
-    hide nyra
-    $ showP("mara", "sourire", 0.50)
 
-    mara "Dès qu’un con commence…"
-    mara "Tous les autres moutons suivent. Les gens sont vraiment des moutons."
+    mara sourire "Dès qu'un con commence…"
+    mara sourire "Tous les autres moutons suivent. Les gens sont vraiment des moutons."
 
     pause 0.3
 
     "Une chaise recule."
     "Puis une autre."
 
-    $ showP("sael", "neutre", 0.78)
 
-    sael "On peut en discuter pendant des heures."
-    sael "Mais au final."
-    sael "Chacun va écrire ce qu’il croit être juste."
-    
-    sael "Sauf que la justice, c'est une notion très personnelle."
+    sael neutre "On peut en discuter pendant des heures."
+    sael neutre "Mais au final."
+    sael neutre "Chacun va écrire ce qu'il croit être juste."
 
-    hide sael
+    sael neutre "Sauf que la justice, c'est une notion très personnelle."
+
 
     play sound sfx_drop
     "Un second papier tombe."
     "Puis un troisième."
 
     think "Plus personne ne débat vraiment."
-    
-    "On est encore quelques uns, debout."
-    "On a les yeux baissés. On ose plus se regarder."
 
-    $ showP("kael", "calme", 0.22)
+    "On est encore quelques-uns debout."
+    "On a les yeux baissés. On n'ose plus se regarder."
 
-    kael "Bon…"
-    kael "C’est donc votre choix."
-    kael "Je le note."
-    
+
+    kael calme "Bon…"
+    kael calme "C'est donc votre choix."
+    kael calme "Je le note."
+
     "Puis Kael s'éloigne à son tour."
 
-    hide kael
-    $ showP("julian", "neutre", 0.78)
 
-    julian "C’est dingue, non ?"
-    julian "C’est toujours quand tout le monde se tait…"
-    julian "… que les vraies décisions se prennent."
+    julian neutre "C'est dingue, non ?"
+    julian neutre "C'est toujours quand tout le monde se tait…"
+    julian neutre "… que les vraies décisions se prennent."
 
-    hide julian
 
-    "L’urne se remplit."
+    "L'urne se remplit."
     play sound sfx_paper
     "Lentement."
     play sound sfx_paper
     "Inexorablement."
     play sound sfx_drop
 
-    think "C’est ça le Conclave."
+    think "C'est ça le Conclave."
     think "Pas un débat."
     think "Un enchaînement."
 
-    $ showP("elen", "inquiet", 0.22)
 
-    elen "Et si jamais quelqu’un balance un truc vraiment hardcore ?"
-    elen "Genre une proposition qui fait flipper tout le monde…"
+    elen inquiet "Et si jamais quelqu'un balance un truc vraiment hardcore ?"
+    elen inquiet "Genre une proposition qui fait flipper tout le monde…"
 
-    $ showP("iris", "fatigue", 0.80)
 
-    iris "Donc voilà : soit on vote contre, hein et rien ne change, sauf que même ça ça craint..."
-    iris "soit on se tape les conséquences dans la tronche."
-    iris "Comme d’hab’, quoi. Rien de neuf sous le soleil pourri."
+    iris fatigue "Donc voilà : soit on vote contre, et rien ne change, sauf que même ça ça craint..."
+    iris fatigue "soit on se tape les conséquences dans la tronche."
+    iris fatigue "Comme d'hab', quoi. Rien de neuf sous le soleil pourri."
 
     pause 0.4
 
     play sound sfx_paper
     "Plusieurs personnes sont debout."
-    "D’autres écrivent encore."
-    
+    "D'autres écrivent encore."
+
     play sound sfx_drop
     "L'urne est presque entièrement remplie."
     "Le temps passe."
     "Il faut que je m'y mette moi aussi."
-    $ j1_amendment_time_display = "04:00"
+
+    # --- Timer à 4 minutes ---
+    $ day0_timer_set(4 * 60)
+    $ hideGroup()
     jump _1_proposition_amendement
 
     return
 
-# Durée du label : 2m
-# Total : 58m15
+# Durée du label : 2m — Total : ~58m15
+
+# =============================================================================
 
 label _1_proposition_amendement:
+# =============================================================================
 
     scene bg_cg009 at adaptive_fullscreen
     $ unlock_gallery_image("bg_cg009")
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
     think "Ok."
-    think "C’est à moi."
+    think "C'est à moi."
 
-    "Le bruit des papiers qui tombent dans l’urne continue."
+    "Le bruit des papiers qui tombent dans l'urne continue."
     "Pas fort."
     "Mais assez pour te rappeler que tu traînes."
 
@@ -1842,7 +1507,7 @@ label _1_proposition_amendement:
     "Et il y a toujours ce vide au milieu de la poitrine."
 
     think "On dirait un examen."
-    think "Sauf qu’ici…"
+    think "Sauf qu'ici…"
     think "si tu rates."
     think "Les conséquences peuvent être terribles."
 
@@ -1853,10 +1518,10 @@ label _1_proposition_amendement:
 
     think "Respire, Noam."
     think "Fais pas semblant."
-    think "T’as peur. Ok."
-    think "C’est normal. Enfin, je crois que ça l'est."
+    think "T'as peur. Ok."
+    think "C'est normal. Enfin, je crois que ça l'est."
 
-    "Je baisse les yeux sur l’urne."
+    "Je baisse les yeux sur l'urne."
     "Elle est toujours là."
     "Comme si elle me regardait, comme si elle attendait."
 
@@ -1872,20 +1537,20 @@ label _1_proposition_amendement:
     pause 0.3
 
     "Une chaise grince derrière moi."
-    "Quelqu’un passe."
-    "Je n’ose même pas relever la tête."
+    "Quelqu'un passe."
+    "Je n'ose même pas relever la tête."
 
     think "Ils écrivent tous."
-    think "Comme si c’était simple."
-    think "Comme si c’était… normal."
+    think "Comme si c'était simple."
+    think "Comme si c'était… normal."
 
     "Je pose la pointe du stylo."
     "Et je reste bloqué."
 
     think "Ok."
-    think "Il faut que je sois honnête avec moi même."
-    think "J’hésite."
-    
+    think "Il faut que je sois honnête avec moi-même."
+    think "J'hésite."
+
     pause 0.2
 
     think "Deux idées."
@@ -1893,7 +1558,7 @@ label _1_proposition_amendement:
     think "Deux propositions pour tenter de faire changer les choses."
 
     think "La première…"
-    think "C’est l’information."
+    think "C'est l'information."
 
     think "Pas le monde."
     think "Pas les districts."
@@ -1903,24 +1568,24 @@ label _1_proposition_amendement:
     think "Dire ce que je vois."
     think "Ce que je vis, ce que je ressens."
 
-    think "Arrêter de faire semblant que parler de la pluie, du froid ou d’un problème local…"
-    think "c’est une menace pour l’équilibre du monde."
+    think "Arrêter de faire semblant que parler de la pluie, du froid ou d'un problème local…"
+    think "c'est une menace pour l'équilibre du monde."
     think "Actuellement ce n'est pas clair."
-    
+
     "Le cinquième commandement dit que :"
-    "La diffusion d’informations non validées par ARCHIVE est interdite."
-    "Mais qu'est ce qui est validé ?"
+    "La diffusion d'informations non validées par ARCHIVE est interdite."
+    "Mais qu'est-ce qui est validé ?"
     "Personne ne le sait vraiment."
     "Donc tout le monde évite de parler."
 
     pause 0.2
 
     think "La deuxième…"
-    think "C’est le fait d'aider."
+    think "C'est le fait d'aider."
     think "Aujourd'hui, plus personne n'aide grand monde."
     think "On a peur de faire quoi que ce soit qui ne serait pas conforme aux Commandements."
 
-    think "Le fait d'aider quelqu’un ne devrait pas être pénalisable."
+    think "Le fait d'aider quelqu'un ne devrait pas être pénalisable."
     think "Quand quelqu'un est dans la merde."
     think "Quand on peut."
     think "Alors il faudrait permettre le fait d'aider."
@@ -1929,26 +1594,30 @@ label _1_proposition_amendement:
 
     think "Les deux propositions me semblent raisonnables."
     think "Laquelle choisir ?"
-    think "Je ne vois pas ce qu'il y aurait de mal à proposer ça ?."
-    
-    think "A moins que je ne fasse fausse route ?"
+    think "Je ne vois pas ce qu'il y aurait de mal à proposer ça."
+
+    think "À moins que je ne fasse fausse route ?"
 
     think "Et évidemment…"
-    think "C’est à moi de décider."
+    think "C'est à moi de décider."
 
     pause 0.3
 
     "Je ferme les yeux une seconde."
-    "Le bruit de l’urne continue."
+    "Le bruit de l'urne continue."
     "Moins régulier."
     "Plus pressant."
-    
+
     "Je souffle lentement."
     "Je redresse un peu le dos."
 
     think "Ok."
     think "Arrête de tourner autour du pot."
     think "Il faut choisir."
+
+    # --- Tutoriel amendement ---
+    show screen day1_tuto_amendment
+    pause
 
     call screen day1_amendment_form()
     $ noam_amendement_choix = _return
@@ -1957,12 +1626,12 @@ label _1_proposition_amendement:
     if noam_amendement_choix == "information_locale":
         $ j1_noam_mediation += 1
 
-        think "D’accord."
+        think "D'accord."
         think "Il faut libérer la parole."
-        think "Mais pas n’importe comment."
+        think "Mais pas n'importe comment."
 
-        "J’écris une phrase."
-        "Puis je m’arrête."
+        "J'écris une phrase."
+        "Puis je m'arrête."
         "Je me relis."
 
         think "Je précise un mot qui me semble mal tourné, peu précis."
@@ -1973,23 +1642,23 @@ label _1_proposition_amendement:
         think "Mais le reste…"
         think "Le quotidien."
         think "Le local."
-        think "L’immédiat, ce qu'on voit, ce qu'on dit, ce qu'on ressent."
+        think "L'immédiat, ce qu'on voit, ce qu'on dit, ce qu'on ressent."
 
         think "On devrait pouvoir le formuler comme on le souhaite."
-        think "Sans risquer sa vie du moins."
+        think "Sans risquer sa vie, du moins."
 
         "Je reformule."
         "Encore."
-        "J’enlève un mot."
-        "J’en ajoute un autre."
+        "J'enlève un mot."
+        "J'en ajoute un autre."
 
     if noam_amendement_choix == "assistance_minimale":
         $ j1_noam_initiative += 1
 
         think "Ok."
-        think "Je vais essayer de permettre l’entraide."
+        think "Je vais essayer de permettre l'entraide."
 
-        "J’écris un premier jet."
+        "J'écris un premier jet."
         "Ma main hésite."
 
         think "Il faut que la formulation ne soit pas un truc impossible."
@@ -2000,33 +1669,33 @@ label _1_proposition_amendement:
         think "Prévenir."
         think "Intervenir."
 
-        think "Parce que laisser quelqu’un tomber…"
-        think "Ça aussi, c’est une décision."
+        think "Parce que laisser quelqu'un tomber…"
+        think "Ça aussi, c'est une décision."
         think "Une mauvaise décision."
 
         "Je fais attention à chaque formulation."
 
     pause 0.3
 
-    "Quand j’ai fini d’écrire, ma main tremble un peu."
+    "Quand j'ai fini d'écrire, ma main tremble un peu."
     "Pas assez pour lâcher le stylo."
     "Juste assez pour que je remarque la tension qui fait vibrer mes doigts."
 
     think "Voilà."
-    think "C’est fait."
+    think "C'est fait."
 
     "Je relis une dernière fois."
-    "J’ai envie de corriger."
+    "J'ai envie de corriger."
     "De nuancer."
     "De préciser encore."
 
     think "Non."
     think "Sinon je recommencerai encore et encore."
-    
-    "Je jette un coup d'oeil aux écrans."
+
+    "Je jette un coup d'œil aux écrans."
     "Il ne reste plus que quatre minutes."
-    
-    think "ça fait tant de temps que ça ?."
+
+    think "Ça fait déjà si longtemps que ça ?"
 
     pause 0.2
 
@@ -2040,18 +1709,19 @@ label _1_proposition_amendement:
     think "Je sens le regard des caméras."
     think "Même sans forcément les voir."
 
-    "Je marche jusqu’à l’urne."
+    "Je marche jusqu'à l'urne."
     "Chaque pas est un peu trop long."
     "J'ai la gorge sèche."
-    
+
     think "Et si j'avais fait le mauvais choix ?"
     think "Non. Arrête d'y penser."
 
-    call day1_play_trace(path_type="vertical_up", time_limit=6.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True)
+    call day1_play_trace(path_type="vertical_up", time_limit=6.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True) from _call_day1_trace_urn
 
     play sound sfx_paper
     "Je pousse la feuille dans la fente."
     play sound sfx_drop
+    $ impact(8, 0.2, "#3BCC82")
     "Elle tombe au fond."
     $ j1_amendment_deposited = True
     call screen day1_urn_confirmation()
@@ -2066,22 +1736,24 @@ label _1_proposition_amendement:
     "Je recule."
     "Je retourne à ma place."
     "J'étais le dernier."
-    
+
     scene bg_conclave at adaptive_fullscreen with dissolve
-    
+
     jump _1_AMENDEMENT_DEPOSE
 
-# Durée : 3m
-# Total : 1h 0m 15s
+# Durée : 3m — Total : ~1h 0m 15s
 
+
+# =============================================================================
 label _1_AMENDEMENT_DEPOSE:
+# =============================================================================
 
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
-    $ j1_amendment_time_display = "DEPOT CLOS"
+    $ day0_timer_active = False
     hide screen day1_amendment_timer
 
     "Un léger grésillement."
-    "Les écrans muraux s’allument presque en même temps."
+    "Les écrans muraux s'allument presque en même temps."
 
     play sound sfx_beep
     "-Bip-"
@@ -2105,15 +1777,15 @@ label _1_AMENDEMENT_DEPOSE:
 
     pause 0.2
 
-    kami "C’est rare."
+    kami "C'est rare."
     kami "Et très appréciable."
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
-    kami "Grâce à vous, je n’aurai pas besoin d’éliminer qui que ce soit aujourd’hui."
+    kami "Grâce à vous, je n'aurai pas besoin d'éliminer qui que ce soit aujourd'hui."
 
     "Personne ne réagit."
-    "Mais l’air semble se détendre d’un cran."
+    "Mais l'air semble se détendre d'un cran."
     "D'un cran seulement."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
@@ -2122,18 +1794,18 @@ label _1_AMENDEMENT_DEPOSE:
 
     kami "Le tirage sera diffusé demain matin."
     kami "À neuf heures."
-    kami "Sur l’ensemble des écrans."
+    kami "Sur l'ensemble des écrans."
 
     pause 0.2
 
-    kami "Je vous conseille d’être attentifs."
+    kami "Je vous conseille d'être attentifs."
     kami "Le hasard a parfois beaucoup de goût."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "En attendant."
 
-    kami "L’accès aux chambres est désormais ouvert."
+    kami "L'accès aux chambres est désormais ouvert."
     kami "Vous êtes libres de circuler."
     kami "De manger."
     kami "De vous reposer."
@@ -2148,7 +1820,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    "Les écrans s’éteignent."
+    "Les écrans s'éteignent."
     "Un par un."
     "Puis le silence retombe."
 
@@ -2156,7 +1828,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     "Personne ne parle tout de suite."
     "Comme si on attendait encore quelque chose."
-    "Ou quelqu’un. Mais rien ne vient."
+    "Ou quelqu'un. Mais rien ne vient."
 
     "Puis les chaises raclent le sol."
     "Des pas."
@@ -2166,8 +1838,8 @@ label _1_AMENDEMENT_DEPOSE:
     "Sans vraiment se regarder."
     "Sans se dire au revoir."
 
-    think "C’est fini."
-    think "Pour aujourd’hui du moins."
+    think "C'est fini."
+    think "Pour aujourd'hui du moins."
 
     scene bg_couloir at adaptive_fullscreen with fade
 
@@ -2175,26 +1847,28 @@ label _1_AMENDEMENT_DEPOSE:
     "Il est plus calme."
     "Presque normal."
 
-    think "J’ai déposé un amendement."
+    think "J'ai déposé un amendement."
     think "On en a tous déposé un."
-    think "J’espère ne pas avoir fait une connerie."
+    think "J'espère ne pas avoir fait une connerie."
 
     think "Demain matin à neuf heures."
 
     pause 0.3
 
-    "Je m’arrête un instant."
+    "Je m'arrête un instant."
     "Debout, au milieu du couloir."
 
-    think "Je n’ai pas vraiment envie de réfléchir."
-    think "Mais j’ai pas envie de rester seul avec ça en tête non plus."
+    think "Je n'ai pas vraiment envie de réfléchir."
+    think "Mais j'ai pas envie de rester seul avec ça en tête non plus."
+
+    $ current_period = "Soir"
 
     menu:
         "Que devrais-je faire ?"
 
         "Aller se coucher":
             $ choix_1_soir = "dormir"
-            think "J’ai besoin de m’allonger."
+            think "J'ai besoin de m'allonger."
             think "Même si je sais que je ne dormirai pas tout de suite."
 
             think "Juste…"
@@ -2205,7 +1879,7 @@ label _1_AMENDEMENT_DEPOSE:
         "Se rendre à la salle de repos (Optionnel)":
             $ choix_1_soir = "salle_repos"
             think "Je devrais aller à la salle de repos."
-            think "Peut-être que quelqu’un y sera."
+            think "Peut-être que quelqu'un y sera."
             think "Ou peut-être pas."
 
             think "Dans les deux cas…"
@@ -2213,10 +1887,12 @@ label _1_AMENDEMENT_DEPOSE:
 
             jump _1_SALLE_DE_REPOS_OPTIONNELLE
 
-# Durée : 1m
-# Total : 1h 1m 15s
+# Durée : 1m — Total : ~1h 1m 15s
 
+
+# =============================================================================
 label _1_SALLE_DE_REPOS_OPTIONNELLE:
+# =============================================================================
 
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
@@ -2225,78 +1901,80 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     "Pas trop."
     "Il y a cette lumière douce, presque agréable qui pulse du plafond."
 
-    "Il n’y a pas grand monde."
+    "Il n'y a pas grand monde."
     "Quelques canapés sont occupés."
     "La plupart sont vides."
 
-    think "Je m’attendais à pire."
+    think "Je m'attendais à pire."
     think "Ou à plus de silence."
 
     pause 0.2
 
-    $ showP("julian", "detendu", 0.78)
+    $ showGroup([
+        ("julian", "detendu", 0.22),
+        ("nyra", "sourire", 0.50),
+        ("mara", "sourire", 0.78),
+    ])
 
-    julian "Ah."
-    julian "Toi aussi t’as pas réussi à te coucher direct ?"
+    julian detendu "Ah."
+    julian detendu "Toi aussi t'as pas réussi à te coucher direct ?"
 
     think "Évidemment."
 
-    $ showP("nyra", "sourire", 0.22)
 
-    nyra "J’avais besoin de…"
-    nyra "Je sais pas."
-    nyra "Voir autre chose qu’un mur."
+    nyra sourire "J'avais besoin de…"
+    nyra sourire "Je sais pas."
+    nyra sourire "Voir autre chose qu'un mur."
 
     "Julian se laisse tomber dans un fauteuil."
     "Un peu trop fort."
 
-    julian "Franchement..."
-    julian "J’ai cru que j’allais rester planté devant ma feuille blanche comme un con."
-    julian "J’ai écrit une phrase entière, puis je l'ai supprimé, trois fois de suite."
-    julian "Il fallait vraiment que je trouve quelque chose de bien.."
+    julian detendu "Franchement..."
+    julian detendu "J'ai cru que j'allais rester planté devant ma feuille blanche comme un idiot."
+    julian detendu "J'ai écrit une phrase entière, puis je l'ai rayée, trois fois de suite."
+    julian detendu "Il fallait vraiment que je trouve quelque chose de bien."
 
     pause 0.2
 
-    $ showP("mara", "sourire", 0.50)
 
-    mara "Moi j’ai arrêté de cogiter."
-    mara "Sinon je devenais dingue."
-    mara "J’ai écrit un truc."
-    mara "Point barre."
-    mara "Et si ça vous plaît pas, bah tant pis pour vos gueules."
+    mara sourire "Moi j'ai arrêté de cogiter."
+    mara sourire "Sinon je devenais dingue."
+    mara sourire "J'ai écrit un truc."
+    mara sourire "Point barre."
+    mara sourire "Et si ça vous plaît pas, bah tant pis pour vos gueules."
 
     think "Tant pis."
     think "Facile à dire."
 
     pause 0.3
 
-    "Quelqu’un rit."
+    "Quelqu'un rit."
     "Pas fort."
     "Mais assez pour que ça surprenne."
 
-    julian "On est bien d’accord que c’est complètement n’importe quoi ?"
-    julian "On réfléchit à ce qui peut aider les gens, on écrit des phrases."
-    julian "… et demain matin le hasard décide si ça vaut de l’or ou si ça vaut zéro."
-    julian "lmagine si ma proposition ne tombera pas dans les dix tirages ?!."
+    julian detendu "On est bien d'accord que c'est complètement n'importe quoi ?"
+    julian detendu "On réfléchit à ce qui peut aider les gens, on écrit des phrases."
+    julian detendu "… et demain matin le hasard décide si ça vaut de l'or ou si ça vaut zéro."
+    julian detendu "Imagine si ma proposition ne tombe pas dans les dix tirages !"
 
-    nyra "Oui."
-    nyra "Mais au moins…"
-    nyra "on a écrit quelque chose."
+    nyra sourire "Oui."
+    nyra sourire "Mais au moins…"
+    nyra sourire "on a écrit quelque chose."
 
     pause 0.2
 
-    "Un silence s’installe."
+    "Un silence s'installe."
     "Pas gênant."
     "Juste calme."
 
-    think "C’est étrange."
+    think "C'est étrange."
     think "On dirait presque une soirée normale."
 
-    mara "Vous croyez qu’elle nous mate là ? Genre… là, tout de suite ?"
+    mara sourire "Vous croyez qu'elle nous mate là ? Genre… là, tout de suite ?"
 
-    julian "Sûrement..."
-    julian "Et pour tout te dire, j'espère bien !"
-    julian "Ah qu'est ce que j'aimerais être repéré pour mes talents ici !"
+    julian detendu "Sûrement..."
+    julian detendu "Et pour tout te dire, j'espère bien !"
+    julian detendu "Ah, qu'est-ce que j'aimerais être repéré pour mes talents ici !"
 
     pause 0.3
 
@@ -2309,18 +1987,19 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     pause 0.4
 
     play sound sfx_door
+    $ hideGroup()
 
     scene bg_cg010 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg010")
     show screen kami_broadcast_ui
 
-    "La porte de la salle de repos s’ouvre."
+    "La porte de la salle de repos s'ouvre."
 
-    "Quelqu’un hésite un instant."
+    "Quelqu'un hésite un instant."
     "Puis il avance."
 
-    tomas "Euh…"
-    tomas "Bonsoir."
+    tomas hesitation "Euh…"
+    tomas hesitation "Bonsoir."
 
     "Tomas entre."
     "Un plateau entre les mains."
@@ -2329,46 +2008,48 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     "Beaucoup trop concentré sur son équilibre."
 
     $ bc_show("julian", "detendu", px=-70, py=-50, pz=0.85)
-    julian "…"
-    julian "Ok."
-    julian "Respect vraiment."
+    julian detendu "…"
+    julian detendu "Ok."
+    julian detendu "Respect vraiment."
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra "Fais pas semblant d’être détendu."
-    nyra "On voit très bien que tu stresses."
+    nyra sourire "Fais pas semblant d'être détendu."
+    nyra sourire "On voit très bien que tu stresses."
     $ bc_hide()
 
-    tomas "Disons que… si je renverse ça sur moi là, maintenant…"
-    tomas "je suis mort socialement pour le reste du mois. Je vais directement me cacher sous une table et on me reverra plus."
+    tomas hesitation "Disons que… si je renverse ça sur moi là, maintenant…"
+    tomas hesitation "je suis mort socialement pour le reste du mois. Je vais directement me cacher sous une table et on me reverra plus."
     $ bc_show("mara", "content", px=-70, py=-50, pz=0.85)
-    mara "Y’a pire."
-    mara "Tu pourrais mourir pour de vrai."
+    mara sourire "Y'a pire."
+    mara sourire "Tu pourrais mourir pour de vrai."
     $ bc_hide()
 
     "Un léger rire passe."
     "Bref, presque timide."
 
-    tomas "Je me suis dit que…"
-    tomas "…que ça ferait peut-être du bien."
-    tomas "Un truc chaud. Juste… un truc chaud."
+    tomas hesitation "Je me suis dit que…"
+    tomas hesitation "…que ça ferait peut-être du bien."
+    tomas hesitation "Un truc chaud. Juste… un truc chaud."
 
     "Il pose enfin le plateau sur la table."
     "Sans rien renverser."
 
     $ bc_show("julian", "joie", px=-70, py=-50, pz=0.85)
-    julian "Putain."
-    julian "T'es un vrai héros mec."
+    julian detendu "Putain."
+    julian detendu "T'es un vrai héros, mec."
     $ bc_hide()
 
     pause 0.3
 
     scene bg_cg010_1 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg010")
-    $ showP("tomas", "vide", 0.01)
-    $ showP("julian", "vide", 0.30)
-    $ showP("noam", "vide", 0.65)
-    $ showP("mara", "vide", 0.80)
-    $ showP("nyra", "vide", 0.99)
+    $ showGroup([
+        ("tomas", "vide", 0.02),
+        ("julian", "vide", 0.25),
+        ("noam", "vide", 0.50),
+        ("mara", "vide", 0.75),
+        ("nyra", "vide", 0.98),
+    ])
 
     "Les tasses circulent."
     "Les mains se tendent."
@@ -2378,12 +2059,12 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     think "Un vrai thé bien fort comme il faut."
     think "Pas un truc synthétique."
 
-    nyra "J’avais presque oublié ce que ça faisait."
-    nyra "Tenir quelque chose de chaud."
+    nyra vide "J'avais presque oublié ce que ça faisait."
+    nyra vide "Tenir quelque chose de chaud."
 
-    mara "Ouais…"
-    mara "C’est débile mais ça fait du bien."
-    mara "Un tout petit peu."
+    mara vide "Ouais…"
+    mara vide "C'est débile mais ça fait du bien."
+    mara vide "Un tout petit peu."
 
     menu:
         "Que fait Noam ?"
@@ -2394,8 +2075,8 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
             "Elle me brûle presque les doigts."
             "Mais je la garde quand même."
 
-            think "C’est idiot."
-            think "Mais ça m’ancre."
+            think "C'est idiot."
+            think "Mais ça m'ancre."
 
         "Laisser la tasse aux autres":
             $ j1_noam_prudence += 1
@@ -2403,13 +2084,13 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
             "Mes mains restent autour du vide."
             think "Ce soir, même un geste simple ressemble à une décision."
 
-    tomas "Demain…"
-    tomas "À neuf heures on saura ..."
+    tomas vide "Demain…"
+    tomas vide "À neuf heures on saura…"
 
-    julian "Ouais."
-    julian "Demain."
+    julian vide "Ouais."
+    julian vide "Demain."
 
-    "Personne n’ajoute rien."
+    "Personne n'ajoute rien."
     "Mais tout le monde y pense."
 
     pause 0.4
@@ -2419,21 +2100,21 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     think "Je sais pas combien de temps ce calme durera."
     think "Mais là, en ce moment…"
-    think "C’est agréable."
+    think "C'est agréable."
 
     pause 0.4
 
     "Les tasses se vident."
-    "Le plateau n’en garde plus qu’une."
+    "Le plateau n'en garde plus qu'une."
     "Personne ne la prend."
 
-    mara "Bon bah voilà."
-    mara "Je vais aller me pieuter avant de péter un câble."
+    mara vide "Bon bah voilà."
+    mara vide "Je vais aller me pieuter avant de péter un câble."
 
-    nyra "Moi aussi."
-    nyra "Avant que je recommence à réfléchir."
+    nyra vide "Moi aussi."
+    nyra vide "Avant que je recommence à réfléchir."
 
-    julian "Excellente idée."
+    julian vide "Excellente idée."
 
     "Ils se lèvent."
     "Un à un."
@@ -2448,12 +2129,16 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     think "Je devrais y aller aussi."
 
+    $ hideGroup()
     jump _1_FIN_JOURNEE_DORTOIR
 
-# Durée : 1m55
-# Total : 1h 3m 10s
+# Durée : 1m55 — Total : ~1h 3m 10s
+
+
+# =============================================================================
 
 label _1_FIN_JOURNEE_DORTOIR:
+# =============================================================================
 
     scene bg_couloir at adaptive_fullscreen
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
@@ -2471,7 +2156,7 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     "Je marche sans me presser."
     "Je laisse les pensées glisser."
-    "Sans vraiment m’y accrocher."
+    "Sans vraiment m'y accrocher."
 
     pause 0.3
 
@@ -2481,40 +2166,41 @@ label _1_FIN_JOURNEE_DORTOIR:
     "Une lumière plus chaude."
     "Moins clinique."
 
-    "Quelqu’un est déjà là."
+    "Quelqu'un est déjà là."
 
-    $ showP("elias", "detendu", 0.50)
+    $ showGroup([
+        ("elias", "detendu", 0.22),
+        ("noam", "neutre", 0.78),
+    ])
 
     if choix_1_soir == "salle_repos":
 
-        elias "Ah. Toi aussi t’es encore debout."
+        elias detendu "Ah. Toi aussi t'es encore debout."
 
         think "Elias."
-        
-        $ showP("noam", "neutre", 0.15)
 
-        noam "Ouais."
-        noam "J’avais pas trop envie de rester seul."
 
-        elias "Je vois."
-        elias "La salle de repos, hein ? … Pas con."
+        noam neutre "Ouais."
+        noam neutre "J'avais pas trop envie de rester seul."
 
-        noam "Ouais."
+        elias detendu "Je vois."
+        elias detendu "La salle de repos, hein ? … Pas con."
 
-        elias "Bonne idée."
-    
-        elias "Moi j’ai tenté de dormir direct."
-        elias "Raté."
+        noam neutre "Ouais."
+
+        elias detendu "Bonne idée."
+
+        elias detendu "Moi j'ai tenté de dormir direct."
+        elias detendu "Raté."
 
     if choix_1_soir == "dormir":
-        
-        elias "En voilà un se couche tôt."
-        elias "Laisse moi deviner, envie de rester seul ?"
-        
-        $ showP("noam", "neutre", 0.15)
-        
-        noam "On peut dire ça."
-        noam "Drôle de journée."
+
+        elias detendu "En voilà un qui se couche tôt."
+        elias detendu "Laisse-moi deviner, envie de rester seul ?"
+
+
+        noam neutre "On peut dire ça."
+        noam neutre "Drôle de journée."
 
     pause 0.2
 
@@ -2522,37 +2208,35 @@ label _1_FIN_JOURNEE_DORTOIR:
     "Un vrai sourire."
     "Un peu fatigué."
 
-    elias "C’est chelou quand même."
-    elias "Journée à rallonge, stress au max…"
-    elias "… et je suis rincé comme après douze heures sur un chantier."
+    elias detendu "C'est chelou quand même."
+    elias detendu "Journée à rallonge, stress au max…"
+    elias detendu "… et je suis rincé comme après douze heures sur un chantier."
 
-    noam "Ouais."
-    noam "Comme après un déménagement."
-    noam "Ou un examen."
+    noam neutre "Ouais."
+    noam neutre "Comme après un déménagement."
+    noam neutre "Ou un examen."
 
-    elias "Exactement. C'est l'idée."
+    elias detendu "Exactement. C'est l'idée."
 
     pause 0.3
-    
-    $ showP("elias", "inquiet", 0.50)
 
-    elias "Demain matin…"
-    elias "Ça va être un autre calibre."
 
-    noam "Ouais."
-    
-    $ showP("elias", "jaloux", 0.50)
+    elias inquiet "Demain matin…"
+    elias inquiet "Ça va être un autre calibre."
 
-    "On n’insiste pas."
+    noam neutre "Ouais."
+
+
+    "On n'insiste pas."
     "Pas besoin."
 
-    elias "Bonne nuit, Noam."
+    elias jaloux "Bonne nuit, Noam."
 
-    noam "Bonne nuit."
+    noam neutre "Bonne nuit."
 
-    hide elias
 
     pause 0.3
+    $ hideGroup()
 
     scene bg_chambre at adaptive_fullscreen with fade
 
@@ -2566,13 +2250,13 @@ label _1_FIN_JOURNEE_DORTOIR:
     "Je pose mes affaires."
     "En fait, je les jette presque."
     "Je suis épuisé."
-    
-    "Je jette un regard sur ce qui compose ce qui me servira de chambre pendant un mois."
+
+    "Je jette un regard sur ce qui va me servir de chambre pendant un mois."
     "Honnêtement, c'est pas mal du tout."
-    "Le lit est grand, une garderobe avec des affaires ..."
-    
+    "Le lit est grand, une garderobe avec mes affaires…"
+
     think "Non, ce sont MES affaires !"
-    
+
     "Il y a du matériel informatique également."
     "Je me demande à quoi on a accès."
 
@@ -2585,7 +2269,7 @@ label _1_FIN_JOURNEE_DORTOIR:
 
         "Ouvrir l'interface du brouilleur":
             $ j1_noam_curiosity += 1
-            call day1_play_trace(path_type="arc", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=560, required=False)
+            call day1_play_trace(path_type="arc", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=560, required=False) from _call_day1_trace_jammer
             if _return:
                 call screen day1_jammer_panel()
                 if noam_room_jammer_on:
@@ -2603,11 +2287,11 @@ label _1_FIN_JOURNEE_DORTOIR:
             $ j1_noam_prudence += 1
             "Je garde la diode verte dans un coin de mon regard."
             think "S'il est actif par défaut, je vais le laisser actif."
-    
-    "Sur le côté de la chambre, il y a aussi un accès à un toilette privatif ainsi qu'une salle de bain."
+
+    "Sur le côté de la chambre, il y a aussi un accès à des toilettes privatives ainsi qu'une salle de bain."
     "Franchement, une douche bien chaude ça me tente bien."
-    
-    "Bon ... Allez."
+
+    "Bon… Allez."
 
     pause 0.2
 
@@ -2616,9 +2300,9 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     play sound sfx_shower
 
-    "L’eau chaude coule."
+    "L'eau chaude coule."
     "Longtemps."
-    "Mais qu'est ce que ça fait du bien."
+    "Mais qu'est-ce que ça fait du bien."
 
     "Je ferme les yeux."
     "Je profite du moment."
@@ -2631,29 +2315,31 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     scene bg_chambre at adaptive_fullscreen with fade
 
-    "Je sors de la douche puis m’allonge tranquillement sur le lit."
-    "Il est plus confortable que je ne l’imaginais."
+    "Je sors de la douche puis m'allonge tranquillement sur le lit."
+    "Il est plus confortable que je ne l'imaginais."
 
     think "Mon amendement est déposé."
-    think "Le reste ne m’appartient plus."
+    think "Le reste ne m'appartient plus."
 
     "Le plafond est immobile."
-    
+
     $ blink()
-    
+
     "Pour une fois."
 
     $ blink()
-    
+
     pause 0.4
 
     $ blink()
-    
+
     "Je ne vais pas tarder à dormir."
-    
+
     $ blink()
 
-    $ journal_entries.append({"title": "Jour 1 — chambre", "text": "Je me suis reveille dans un siege, avec une main qui ne voulait pas bouger et une salle entiere deja en train de nous regarder. Aujourd'hui, j'ai touche une tablette verrouillee, ecoute Kami transformer un reglement en cage propre, valide une phrase sur un formulaire officiel, puis je l'ai poussee dans une urne qui ne rend rien. Meme ma chambre depend d'un interrupteur. Le brouilleur decide si je suis seul ou seulement moins visible. Ici, je suis libre dans les limites prevues par Kami."})
+    $ journal_entries.append({"title": "Jour 1 — chambre", "text": "Je me suis réveillé dans un siège, avec une main qui ne voulait pas bouger et une salle entière déjà en train de nous regarder. Aujourd'hui, j'ai touché une tablette verrouillée, écouté Kami transformer un règlement en cage propre, validé une phrase sur un formulaire officiel, puis je l'ai poussée dans une urne qui ne rend rien. Même ma chambre dépend d'un interrupteur. Le brouilleur décide si je suis seul ou seulement moins visible. Ici, je suis libre dans les limites prévues par Kami."})
+
+    hide screen day_period_hud
 
     scene black with fade
     stop music fadeout 2.0
@@ -2662,5 +2348,15 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     jump _2_CANON
 
-# Durée : 1m40
-# Total : 1h 4m 50s
+# Durée : 1m40 — Total : ~1h 4m 50s
+
+
+# =============================================================================
+# LABEL trace QTE jour 1
+# =============================================================================
+
+label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True):
+
+    call trace_qte_run(mg_id="trace_day1", title="SYNCHRONISATION MOTRICE", path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y, required=required) from _call_day1_play_trace_trace_qte
+    $ fix_stale_return_label(day1_trace_return_label(path_type, anchor_y))
+    return (_return != "FAIL")

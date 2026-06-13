@@ -185,73 +185,80 @@ label decouverte_salle_repos:
 
     think "Quoi qu'on pense de notre situation, l'attention est louable."
 
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([
+        ("noam", "reflexion", 0.50),
+    ])
 
     "Un claquement sec résonne."
     "Une balle de babyfoot tape contre la paroi."
     
     hide noam
-    
+    $ hideGroup()
+
     scene bg_cg007 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg007")
-    $ showP("noam", "vide", 0.1)
-    $ showP("iris", "vide", 0.9)
-    $ showP("julian", "vide", 0.5)
+    $ showGroup([
+        ("noam", "vide", 0.22),
+        ("iris", "vide", 0.50),
+        ("julian", "vide", 0.78),
+    ])
     
     "Il y a de l'animation dans la pièce."
     "Une animation difficile à rater."
     
     play sound sfx_balle volume 3.0
 
-    julian "Hé hé ! Encore un but."
+    julian vide "Hé hé ! Encore un but."
 
-    noam "Ah."
+    noam vide "Ah."
 
-    julian "T’as vu ?"
-    julian "Même pas besoin d’échauffement."
-    julian "Je te bats quand tu veux !"
+    julian vide "T’as vu ?"
+    julian vide "Même pas besoin d’échauffement."
+    julian vide "Je te bats quand tu veux !"
 
-    noam "Je viens d’arriver, laisse moi le temps."
+    noam vide "Je viens d’arriver, laisse moi le temps."
 
-    julian "C’est suffisant. T'as eu 3 secondes pour te préparer !"
+    julian vide "C’est suffisant. T'as eu 3 secondes pour te préparer !"
 
 
-    iris "Ignore-le."
-    iris "Plus tu réponds, plus il parle."
+    iris vide "Ignore-le."
+    iris vide "Plus tu réponds, plus il parle."
 
-    julian "C’est faux."
-    julian "Je parle aussi très bien tout seul."
+    julian vide "C’est faux."
+    julian vide "Je parle aussi très bien tout seul."
 
-    noam "Vous vous connaissez ?"
+    noam vide "Vous vous connaissez ?"
 
-    iris "Malheureusement."
+    iris vide "Malheureusement."
+    $ hideGroup()
 
     scene bg_repos at adaptive_fullscreen with fade
     
-    $ showP("julian", "sourire", 0.78)
-    $ showP("iris", "taquin", 0.50)
+    $ showGroup([
+        ("julian", "sourire", 0.22),
+        ("iris", "taquin", 0.50),
+        ("noam", "sourire", 0.78),
+    ])
 
-    julian "Hey."
-    julian "On a survécu à trois réunions ensemble."
-    julian "Ça crée des liens, inévitablement."
+    julian sourire "Hey."
+    julian sourire "On a survécu à trois réunions ensemble."
+    julian sourire "Ça crée des liens, inévitablement."
 
-    iris "Crois moi, ça crée surtout des migraines."
+    iris taquin "Crois moi, ça crée surtout des migraines."
 
-    $ showP("julian", "taquin", 0.78)
-    julian "Iris."
-    julian "Fais pas gaffe, elle est toujours comme ça."
-    julian "Toujours aussi chaleureuse."
+    julian taquin "Iris."
+    julian taquin "Fais pas gaffe, elle est toujours comme ça."
+    julian taquin "Toujours aussi chaleureuse."
     
-    iris "Non. Juste avec toi."
+    iris taquin "Non. Juste avec toi."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Moi c'est Noam."
+    noam sourire "Moi c'est Noam."
 
-    julian "Julian."
-    julian "Et oui, avant que tu demandes :"
-    julian "Je suis à peu près bon dans quasiment tous les domaines."
+    julian taquin "Julian."
+    julian taquin "Et oui, avant que tu demandes :"
+    julian taquin "Je suis à peu près bon dans quasiment tous les domaines."
 
-    iris "Et allez c'est reparti ..."
+    iris taquin "Et allez c'est reparti ..."
 
     pause 0.2
 
@@ -259,94 +266,79 @@ label decouverte_salle_repos:
     "Elle roule."
     "Il marque encore."
 
-    $ showP("julian", "joie", 0.78)
-    julian "Voilà."
-    julian "Le Conclave peut attendre."
+    julian joie "Voilà."
+    julian joie "Le Conclave peut attendre."
 
-    $ showP("iris", "inquiet", 0.50)
-    iris "Non."
-    iris "T'as beau dire qu'il attendra, ça m'étonnerait que Kami change les règles pour tes beaux yeux."
+    iris inquiet "Non."
+    iris inquiet "T'as beau dire qu'il attendra, ça m'étonnerait que Kami change les règles pour tes beaux yeux."
     
-    $ showP("julian", "taquin", 0.78)
-    julian "Même toi tu confirmes que j'ai des beaux yeux."
+    julian taquin "Même toi tu confirmes que j'ai des beaux yeux."
     
-    $ showP("iris", "taquin", 0.50)
-    iris "Par pitié, oublie ce que j'ai dis."
+    iris taquin "Par pitié, oublie ce que j'ai dis."
 
     pause 0.2
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Ça vous dérange pas ?"
-    noam "Qu’il y ait… tout ça."
+    noam reflexion "Ça vous dérange pas ?"
+    noam reflexion "Qu’il y ait… tout ça."
 
     "Je désigne la salle."
     "Les jeux."
     "Le confort."
 
-    $ showP("iris", "reflexion", 0.50)
-    iris "Ils ont le sens du détail. Des babyfoot à quelques dizaines de mètres d'un canon qui a tué des millions de personne."
-    iris "Mais bon je préfère être là. C'est au moins un peu plus chaleureux."
+    iris reflexion "Ils ont le sens du détail. Des babyfoot à quelques dizaines de mètres d'un canon qui a tué des millions de personne."
+    iris reflexion "Mais bon je préfère être là. C'est au moins un peu plus chaleureux."
 
-    $ showP("julian", "neutre", 0.78)
-    julian "Moi je trouve ça honnête."
-    julian "Ils savent qu’on risque de craquer-"
-    julian "Enfin, que vous risquiez de craquer."
-    julian "Alors ils n... vous donnent de quoi tenir."
+    julian neutre "Moi je trouve ça honnête."
+    julian neutre "Ils savent qu’on risque de craquer-"
+    julian neutre "Enfin, que vous risquiez de craquer."
+    julian neutre "Alors ils n... vous donnent de quoi tenir."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Tenir jusqu’à quoi ?"
+    noam hesitation "Tenir jusqu’à quoi ?"
 
-    julian "Jusqu’au prochain vote."
-    julian "Puis le suivant."
-    julian "Et encore après."
+    julian neutre "Jusqu’au prochain vote."
+    julian neutre "Puis le suivant."
+    julian neutre "Et encore après."
 
-    $ showP("iris", "triste", 0.50)
-    iris "Tu dis ça trop calmement."
-    iris "Faut dire que ça ne te ressemble pas."
+    iris triste "Tu dis ça trop calmement."
+    iris triste "Faut dire que ça ne te ressemble pas."
 
     play sound sfx_balle volume 3.0
-    julian "Je suis concentré sur ma partie."
+    julian neutre "Je suis concentré sur ma partie."
 
-    iris "Évidemment."
-    iris "Contre ton ennemi imaginaire."
+    iris triste "Évidemment."
+    iris triste "Contre ton ennemi imaginaire."
 
     pause 0.3
 
     "Iris s’enfonce un peu plus dans le canapé."
     "Elle regarde le plafond."
 
-    $ showP("iris", "fatigue", 0.50)
-    iris "Il a toujours été comme ça avant."
-    iris "Toujours à faire le malin."
-    iris "Toujours à détourner l’attention."
+    iris fatigue "Il a toujours été comme ça avant."
+    iris fatigue "Toujours à faire le malin."
+    iris fatigue "Toujours à détourner l’attention."
 
-    $ showP("julian", "sourire", 0.78)
-    julian "Et pourtant t’es là."
+    julian sourire "Et pourtant t’es là."
 
-    iris "Parce que j’avais pas le choix."
+    iris fatigue "Parce que j’avais pas le choix."
 
-    $ showP("noam", "reflexion", 0.22)
     think "Personne n’a vraiment le choix ici."
 
     pause 0.3
 
-    $ showP("noam", "neutre", 0.22)
-    noam "Bon."
-    noam "Je vais continuer à faire le tour."
+    noam neutre "Bon."
+    noam neutre "Je vais continuer à faire le tour."
 
-    $ showP("julian", "taquin", 0.78)
     play sound sfx_balle volume 2.0
-    julian "Quand tu veux perdre au babyfoot, tu sais où me trouver."
+    julian taquin "Quand tu veux perdre au babyfoot, tu sais où me trouver."
 
-    $ showP("iris", "sourire", 0.50)
-    iris "Ou quand t’auras besoin de silence, ne viens pas ici du coup."
-    iris "Je devrais peut être aller aux archives, il n'y aura pas ce casse pied."
+    iris sourire "Ou quand t’auras besoin de silence, ne viens pas ici du coup."
+    iris sourire "Je devrais peut être aller aux archives, il n'y aura pas ce casse pied."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Je retiens."
+    noam sourire "Je retiens."
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_7
 
+    $ hideGroup()
     jump REPOS_TP
 
 # 1m45

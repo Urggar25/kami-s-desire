@@ -176,8 +176,10 @@ label decouverte_gymnase:
     "Et au fond…"
     "Un type est en train de s'entraîner."
 
-    $ showP("noam", "reflexion", 0.22)   # gauche
-    $ showP("elias", "fatigue", 0.78)    # droite
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("elias", "fatigue", 0.78),
+    ])
 
     "Il fait une série."
     "Sans musique."
@@ -185,44 +187,35 @@ label decouverte_gymnase:
     "Juste le bruit de sa respiration."
     "Et du métal."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "…"
-    noam "Salut."
+    noam hesitation "…"
+    noam hesitation "Salut."
 
-    $ showP("elias", "ecoute", 0.78)
     "Il termine sa lancée."
     "Repose la barre doucement."
     "Puis enfin, il me regarde."
 
-    $ showP("elias", "neutre", 0.78)
-    elias "Salut."
+    elias neutre "Salut."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Je pensais être seul."
-    noam "Visiblement non."
+    noam sourire "Je pensais être seul."
+    noam sourire "Visiblement non."
 
-    $ showP("elias", "fatigue", 0.78)
-    elias "J’aime le sport."
-    elias "Ça m’empêche de trop cogiter sur ce qui peut merder."
+    elias fatigue "J’aime le sport."
+    elias fatigue "Ça m’empêche de trop cogiter sur ce qui peut merder."
 
-    $ showP("noam", "taquin", 0.22)
-    noam "Ouais... J'imagine que c'est devenu une habitude depuis un an."
+    noam taquin "Ouais... J'imagine que c'est devenu une habitude depuis un an."
 
-    $ showP("elias", "rire", 0.78)
     "Il rit de façon courte."
 
-    $ showP("elias", "neutre", 0.78)
-    elias "Pas à cause d’elle."
-    elias "Avant, une balle ou une guerre, et c’était fini sans sommation."
-    elias "Là au moins, on sait à quoi s’attendre."
+    elias neutre "Pas à cause d’elle."
+    elias neutre "Avant, une balle ou une guerre, et c’était fini sans sommation."
+    elias neutre "Là au moins, on sait à quoi s’attendre."
     elias raison "Faut juste respecter les règles quoi."
 
     "Il marque une pause un instant."
     
-    $ showP("elias", "jaloux", 0.78)
-    elias "Est-ce qu'on vit moins bien qu'avant ?"
-    elias "Perso, j'ai pas la réponse."
-    elias "Alors je fais le taf. Le reste, c'est que du bruit dont je ne m'occupe pas vraiment."
+    elias jaloux "Est-ce qu'on vit moins bien qu'avant ?"
+    elias jaloux "Perso, j'ai pas la réponse."
+    elias jaloux "Alors je fais le taf. Le reste, c'est que du bruit dont je ne m'occupe pas vraiment."
 
     pause 0.2
     "Je ne sais pas vraiment quoi répondre."
@@ -231,41 +224,33 @@ label decouverte_gymnase:
     "Pas une simple punition."
     "La mort quoi."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Au fait, je m'appelle Noam."
-    noam "Je viens du district HARMONIE."
+    noam reflexion "Au fait, je m'appelle Noam."
+    noam reflexion "Je viens du district HARMONIE."
 
-    $ showP("elias", "ecoute", 0.78)
     "Il hoche la tête, comme si ça validait une info dans sa tête."
 
-    $ showP("elias", "neutre", 0.78)
-    elias "Elias."
-    elias "AXIOME. Quartier bas."
+    elias neutre "Elias."
+    elias neutre "AXIOME. Quartier bas."
 
-    $ showP("noam", "surpris", 0.22)
-    noam "AXIOME…"
-    noam "La Forge."
+    noam surpris "AXIOME…"
+    noam surpris "La Forge."
 
-    $ showP("elias", "content", 0.78)
-    elias "Ouais."
-    elias "C’est là qu’on fabrique presque tout ce que les autres utilisent."
+    elias content "Ouais."
+    elias content "C’est là qu’on fabrique presque tout ce que les autres utilisent."
 
     "Il dit ça sans fierté particulière."
     "Mais il sait dans son timbre de voix que AXIOME est nécessaire à tout le monde."
     "D'un autre côté, chacun des districts est nécessaire aux autres."
     "C'est pour ça qu'ils ont été découpé ainsi. Pour empêcher les tensions et nous rendre tous dépendants des autres."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Tu t'entraînes pour quoi ?"
+    noam reflexion "Tu t'entraînes pour quoi ?"
 
-    $ showP("elias", "rire", 0.78)
-    elias "Pour dormir mieux."
-    elias "Une petite session avant 18h, ça serait pas de refus."
-    elias "J’espère qu’il y a des douches après."
+    elias rire "Pour dormir mieux."
+    elias rire "Une petite session avant 18h, ça serait pas de refus."
+    elias rire "J’espère qu’il y a des douches après."
 
-    $ showP("noam", "rire", 0.22)
-    noam "Ah."
-    noam "La meilleure raison."
+    noam rire "Ah."
+    noam rire "La meilleure raison."
 
     pause 0.3
 
@@ -274,89 +259,71 @@ label decouverte_gymnase:
     "Ça me rappelle l'école."
     "Ça me rappelle avant."
 
-    $ showP("noam", "triste", 0.22)
     "Ça me rappelle qi'avant on était innocent et les problèmes nous passaient au dessus de la tête."
 
-    $ showP("elias", "ecoute", 0.78)
-    elias "Tu fais du sport, toi ?"
+    elias ecoute "Tu fais du sport, toi ?"
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Avant, oui j'en faisais parfois."
-    noam "Mais ça fait un moment que j'en ai pas fait …"
-    noam "Je sais plus trop ce que je fais, honnêtement."
+    noam hesitation "Avant, oui j'en faisais parfois."
+    noam hesitation "Mais ça fait un moment que j'en ai pas fait …"
+    noam hesitation "Je sais plus trop ce que je fais, honnêtement."
 
-    $ showP("elias", "fatigue", 0.78)
-    elias "C’est pour ça que je continue."
-    elias "Quand tout part en vrille, faut garder un repère."
+    elias fatigue "C’est pour ça que je continue."
+    elias fatigue "Quand tout part en vrille, faut garder un repère."
     elias neutre "C’est le principe."
 
     pause 0.2
 
-    $ showP("noam", "taquin", 0.22)
-    noam "Donc si je veux survivre ici…"
-    noam "Je dois courir et soulever des trucs."
+    noam taquin "Donc si je veux survivre ici…"
+    noam taquin "Je dois courir et soulever des trucs."
 
-    $ showP("elias", "content", 0.78)
-    elias "Et bois de l’eau."
-    elias "Respire."
-    elias "Sinon t’auras des crampes, et bon courage."
+    elias content "Et bois de l’eau."
+    elias content "Respire."
+    elias content "Sinon t’auras des crampes, et bon courage."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Merci docteur."
+    noam sourire "Merci docteur."
 
-    $ showP("elias", "rire", 0.78)
     "Il souffle du nez."
     "Ça ressemble presque à un vrai rire."
 
     pause 0.3
 
-    $ showP("elias", "ecoute", 0.78)
-    elias "Tu sais ce qui est drôle ?"
-    elias "Ils nous filent un gymnase."
-    elias "Comme si on était en colonie."
-    elias "On soit, c'est pas pour me déplaire. J'ai toujours voulu aller en colo."
+    elias ecoute "Tu sais ce qui est drôle ?"
+    elias ecoute "Ils nous filent un gymnase."
+    elias ecoute "Comme si on était en colonie."
+    elias ecoute "On soit, c'est pas pour me déplaire. J'ai toujours voulu aller en colo."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Ouais. Notre animateur est juste un peu plus cinglé que les autres."
+    noam reflexion "Ouais. Notre animateur est juste un peu plus cinglé que les autres."
 
-    $ showP("elias", "neutre", 0.78)
-    elias "Exactement."
+    elias neutre "Exactement."
 
     "Il regarde la machine de muscu."
     "Puis les lignes au sol."
     "Puis moi."
 
-    $ showP("elias", "inquiet", 0.78)
-    elias "Ces 30 jours, ça va pas être une partie de plaisir."
-    elias "On va être sur le qui-vive tout le temps, pas seulement aux votes."
-    elias "Fatigue, nerfs à vif… ça va peser."
+    elias inquiet "Ces 30 jours, ça va pas être une partie de plaisir."
+    elias inquiet "On va être sur le qui-vive tout le temps, pas seulement aux votes."
+    elias inquiet "Fatigue, nerfs à vif… ça va peser."
 
-    $ showP("noam", "inquiet", 0.22)
-    noam "Tu crois que le sport change quelque chose ?"
+    noam inquiet "Tu crois que le sport change quelque chose ?"
 
-    $ showP("elias", "neutre", 0.78)
-    elias "Non. Pas forcément."
-    elias "Mais ça permet au moins de se vider la tête."
+    elias neutre "Non. Pas forcément."
+    elias neutre "Mais ça permet au moins de se vider la tête."
 
     pause 0.3
 
-    $ showP("noam", "reflexion", 0.22)
     "Je regarde le tapis puis les poids."
 
     think "Ils ne me font pas spécialement envie."
     think "Rien que l'idée d'avoir des courbatures me freine déjà."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Bon, allez fais moi une démo, Sensei !"
-    noam "Histoire de faire semblant d'être normal dans ce monde chelou."
+    noam hesitation "Bon, allez fais moi une démo, Sensei !"
+    noam hesitation "Histoire de faire semblant d'être normal dans ce monde chelou."
 
-    $ showP("elias", "content", 0.78)
-    elias "Ok."
-    elias "Mais écoute bien."
-    elias "Sinon tu vas te péter quelque chose."
+    elias content "Ok."
+    elias content "Mais écoute bien."
+    elias content "Sinon tu vas te péter quelque chose."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Promis."
+    noam sourire "Promis."
 
     pause 0.4
 
@@ -371,11 +338,11 @@ label decouverte_gymnase:
     
     "Après une longue série d'exercices."
 
-    $ showP("noam", "reflexion", 0.22)
     think "Je devrais aller voir ailleurs."
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_3
 
+    $ hideGroup()
     jump GYMNASE_TP
 
 # Durée : 2m30

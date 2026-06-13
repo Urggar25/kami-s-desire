@@ -17,29 +17,117 @@ transform char_group_fade_in(xpos):
     zoom 1.0 alpha 0.0
     linear 0.35 alpha 1.0
 
+transform char_group_enter(xpos, ypos=1.0):
+    subpixel True
+    xalign xpos
+    yalign ypos
+    alpha 0.0
+    zoom 0.985
+    yoffset 34
+    easeout 0.32 alpha 1.0 zoom 1.0 yoffset 0
+
+transform char_group_exit(xpos, ypos=1.0):
+    subpixel True
+    xalign xpos
+    yalign ypos
+    alpha 1.0
+    zoom 1.0
+    yoffset 0
+    easein 0.22 alpha 0.0 zoom 0.985 yoffset 28
+
+transform char_group_place(xpos, ypos=1.0):
+    subpixel True
+    xalign xpos
+    yalign ypos
+    alpha 1.0
+    zoom 1.0
+    yoffset 0
+
 init python:
 
-    def showGroup(members, y=1.0, layer="master"):
+    GROUP_MAX_MEMBERS = 12
+
+    def _group_auto_x(count, index):
+        if count <= 1:
+            return 0.5
+        left = 0.08 if count > 5 else 0.18
+        right = 0.92 if count > 5 else 0.82
+        return left + ((right - left) * float(index) / float(count - 1))
+
+    def _group_member_tuple(member, count, index):
+        tag = member[0]
+        expr = member[1] if len(member) > 1 else "neutre"
+        x = member[2] if len(member) > 2 else _group_auto_x(count, index)
+        return tag, expr, x
+
+    def showGroup(members, y=1.0, layer="master", zorder=0):
         """
-        members : liste de tuples (tag, expr, x)
+        members : liste de tuples (tag, expr) ou (tag, expr, x)
         ex: showGroup([("lysa","neutre",0.15), ("julian","sourire",0.5)])
         """
-        store.group_members = [tag for tag, expr, x in members]
-        
-        for tag, expr, x in members:
+        if len(members) > GROUP_MAX_MEMBERS:
+            raise Exception("showGroup accepte au maximum 12 personnages.")
+
+        normalized = []
+        for i, member in enumerate(members):
+            normalized.append(_group_member_tuple(member, min(len(members), GROUP_MAX_MEMBERS), i))
+
+        next_tags = [tag for tag, expr, x in normalized]
+        old_tags = list(getattr(store, "group_members", []))
+
+        for tag in old_tags:
+            if tag in next_tags:
+                continue
+            state = store.char_state.get(tag, {})
+            old_layer = state.get("layer", layer)
+            if not renpy.showing(tag, layer=old_layer):
+                continue
+            x = state.get("x", store.char_pos.get(tag, 0.5))
+            expr = state.get("expr", "neutre")
+            old_y = state.get("y", y)
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, old_y)], layer=old_layer)
+
+        if any(tag not in next_tags for tag in old_tags):
+            renpy.pause(0.24, hard=True)
+            for tag in old_tags:
+                if tag not in next_tags:
+                    old_layer = store.char_state.get(tag, {}).get("layer", layer)
+                    renpy.hide(tag, layer=old_layer)
+                    store.char_pos.pop(tag, None)
+                    store.char_state.pop(tag, None)
+
+        for idx, (tag, expr, x) in enumerate(normalized):
+            already_showing = renpy.showing(tag, layer=layer)
             store.char_pos[tag] = x
-            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer)  # layer ajouté
+            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder)
             img = f"{tag} {expr}"
-            renpy.show(img, tag=tag, at_list=[char_group_fade_in(x)], layer=layer)
+            if already_showing:
+                at_list = [char_group_place(x, y)]
+            else:
+                at_list = [char_group_enter(x, y)]
+            renpy.show(img, tag=tag, at_list=at_list, layer=layer, zorder=zorder + idx)
+
+        store.group_members = next_tags
 
     def hideGroup():
         """Cache tous les personnages du groupe actuel"""
         members = list(store.group_members)
         for tag in members:
             state = store.char_state.get(tag, {})
-            renpy.hide(tag, layer=state.get("layer", "master"))
+            layer = state.get("layer", "master")
+            if not renpy.showing(tag, layer=layer):
+                continue
+            x = state.get("x", store.char_pos.get(tag, 0.5))
+            y = state.get("y", 1.0)
+            expr = state.get("expr", "neutre")
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, y)], layer=layer)
         if members:
-            renpy.with_statement(Dissolve(0.35))
+            renpy.pause(0.24, hard=True)
+            for tag in members:
+                state = store.char_state.get(tag, {})
+                renpy.hide(tag, layer=state.get("layer", "master"))
+                store.char_pos.pop(tag, None)
+                store.char_state.pop(tag, None)
         store.group_members = []
 
     def on_speaking(event, interact, **kwargs):
@@ -74,16 +162,6 @@ init python:
     # NOTE: système legacy remplacé par l'autofocus de script.rpy.
     # Ne PAS enregistrer on_speaking dans config.all_character_callbacks
     # (l'ancien code s'auto-réappendait à chaque ligne -> fuite).
-
-init python:
-    def updateExpr(tag, expr):
-        """Met à jour l'expression d'un personnage silencieux"""
-        if tag not in store.char_state:
-            return
-        store.char_state[tag]["expr"] = expr
-        x = store.char_pos[tag]
-        img = f"{tag} {expr}"
-        renpy.show(img, tag=tag, at_list=[char_idle(x)])
 
 transform eyelid_top_once(close=0.11, hold=0.04, open=0.16, overlap=80, amount=0.62):
     xpos 0

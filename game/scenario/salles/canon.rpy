@@ -140,111 +140,91 @@ label decouverte_salle_canon:
     "Actifs."
 
     # Entrée : Noam observe, Ryn est en mode "jauge"
-    $ showP("noam", "reflexion", 0.78)   # droite
-    $ showP("ryn", "determine", 0.22)    # gauche
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("ryn", "determine", 0.78),
+    ])
 
     "Le gaçon râleur de tout à l'heure ralentit."
     "Il s’arrête avant moi."
 
-    $ showP("ryn", "reflechit", 0.22)
-    ryn "…"
+    ryn reflechit "…"
 
-    $ showP("noam", "reflexion", 0.78)
-    noam "Ouais."
-    noam "Moi aussi."
+    noam reflexion "Ouais."
+    noam reflexion "Moi aussi."
 
-    $ showP("ryn", "reflechit", 0.22)
-    ryn "Au fait…"
-    ryn "Ryn."
+    ryn reflechit "Au fait…"
+    ryn reflechit "Ryn."
 
-    $ showP("noam", "surpris", 0.78)
-    noam "Hein ?"
+    noam surpris "Hein ?"
 
-    $ showP("ryn", "neutre", 0.22)
-    ryn "Mon prénom."
-    ryn "On est deux dans une salle avec une arme géante, autant faire ça propre."
+    ryn neutre "Mon prénom."
+    ryn neutre "On est deux dans une salle avec une arme géante, autant faire ça propre."
 
-    $ showP("noam", "sourire", 0.78)
-    noam "Noam."
+    noam sourire "Noam."
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "Ok."
+    ryn determine "Ok."
 
-    $ showP("ryn", "reflechit", 0.22)
-    ryn "C’est donc ça."
+    ryn reflechit "C’est donc ça."
 
     "Il ne crie pas."
     "Il ne jure pas."
     "Il observe."
 
-    $ showP("ryn", "reflechit", 0.22)
-    ryn "Je pensais que c’était…"
-    ryn "Plus loin."
-    ryn "Ou plus caché."
+    ryn reflechit "Je pensais que c’était…"
+    ryn reflechit "Plus loin."
+    ryn reflechit "Ou plus caché."
 
-    $ showP("noam", "hesitation", 0.78)
-    noam "Caché de quoi ?"
+    noam hesitation "Caché de quoi ?"
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "De nous."
+    ryn determine "De nous."
 
     "Il s’approche de la vitre."
     "Pas trop."
     "Juste assez pour voir le fond de la fosse."
 
-    $ showP("ryn", "reflechit", 0.22)
-    ryn "Ils l’ont mis au centre comme on expose un trophé."
-    ryn "Comme un rappel."
+    ryn reflechit "Ils l’ont mis au centre comme on expose un trophé."
+    ryn reflechit "Comme un rappel."
 
-    $ showP("noam", "reflexion", 0.78)
-    noam "Un rappel de quoi ?"
+    noam reflexion "Un rappel de quoi ?"
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "De ce qui arrive quand quelqu’un oublie les règles et de la domination de Kami."
+    ryn determine "De ce qui arrive quand quelqu’un oublie les règles et de la domination de Kami."
 
     "Je regarde les écrans."
     "Des lignes de données."
     "Des flux."
     "Rien de compréhensible."
 
-    $ showP("noam", "reflexion", 0.78)
-    noam "Tu crois vraiment qu’il fonctionne déjà ?"
-    noam "Je veux dire…"
-    noam "On vient d’arriver."
+    noam reflexion "Tu crois vraiment qu’il fonctionne déjà ?"
+    noam reflexion "Je veux dire…"
+    noam reflexion "On vient d’arriver."
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "Justement."
+    ryn determine "Justement."
 
     "Il se tourne vers moi."
 
-    $ showP("ryn", "colere2", 0.22)
-    ryn "Tu crois qu’ils ont attendu qu’on soit là pour l’allumer ?"
-    ryn "C'est sans doute ce canon là qui nous tire dessus depuis un an."
+    ryn colere2 "Tu crois qu’ils ont attendu qu’on soit là pour l’allumer ?"
+    ryn colere2 "C'est sans doute ce canon là qui nous tire dessus depuis un an."
 
     "Je n’aime pas sa réponse."
     "Parce qu’elle fait sens."
 
-    $ showP("noam", "inquiet", 0.78)
-    noam "Donc là, maintenant…"
+    noam inquiet "Donc là, maintenant…"
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "Là, maintenant, il est prêt."
+    ryn determine "Là, maintenant, il est prêt."
 
     "Un silence."
     "Pas confortable."
 
-    $ showP("noam", "hesitation", 0.78)
-    noam "Tu penses qu’il a déjà servi aujourd’hui ?"
+    noam hesitation "Tu penses qu’il a déjà servi aujourd’hui ?"
 
-    $ showP("ryn", "fatigue", 0.22)
-    ryn "…"
-    ryn "Je sais pas."
+    ryn fatigue "…"
+    ryn fatigue "Je sais pas."
 
     "Il hésite."
     "Vraiment."
 
-    $ showP("ryn", "inquiet", 0.22)
-    ryn "J’espère que non."
+    ryn inquiet "J’espère que non."
 
     play sound sfx_beep
     "-Bip-"
@@ -253,20 +233,15 @@ label decouverte_salle_canon:
     "Un bip sec."
     "Quelque part dans la salle."
 
-    $ showP("ryn", "surpris", 0.22)
     "Ryn se fige."
 
-    $ showP("noam", "surpris", 0.78)
-    noam "C’était quoi ?"
+    noam surpris "C’était quoi ?"
 
-    $ showP("ryn", "inquiet", 0.22)
-    ryn "T’as entendu."
+    ryn inquiet "T’as entendu."
 
-    $ showP("noam", "desaccord", 0.78)
-    noam "Oui mais—"
+    noam desaccord "Oui mais—"
 
-    $ showP("ryn", "colere", 0.22)
-    ryn "Chut."
+    ryn colere "Chut."
 
     play sound sfx_beep
     "-Bip-"
@@ -278,38 +253,33 @@ label decouverte_salle_canon:
     "Lentement."
     "Un cercle après l’autre."
 
-    $ showP("noam", "inquiet", 0.78)
-    noam "Ryn…"
+    noam inquiet "Ryn…"
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "Quelqu’un a fait une connerie."
+    ryn determine "Quelqu’un a fait une connerie."
 
-    $ showP("noam", "desaccord", 0.78)
-    noam "Comment tu peux savoir ça ?"
+    noam desaccord "Comment tu peux savoir ça ?"
 
-    $ showP("ryn", "reflechit", 0.22)
-    ryn "Parce que rien ici ne s’active pour rien."
+    ryn reflechit "Parce que rien ici ne s’active pour rien."
 
     "Je sens mon estomac se nouer."
     "Ce n’est plus de la curiosité."
     "C’est de l’anticipation."
 
-    $ showP("noam", "hesitation", 0.78)
-    noam "Une connerie comment ?"
+    noam hesitation "Une connerie comment ?"
 
-    $ showP("ryn", "fatigue", 0.22)
-    ryn "Un refus."
-    ryn "Une violence."
-    ryn "Un mot de trop."
-    ryn "J’en sais rien."
+    ryn fatigue "Un refus."
+    ryn fatigue "Une violence."
+    ryn fatigue "Un mot de trop."
+    ryn fatigue "J’en sais rien."
 
     "Il serre les poings."
 
-    $ showP("ryn", "colere2", 0.22)
-    ryn "Mais quelqu’un, quelque part…"
-    ryn "Vient de sortir du cadre."
+    ryn colere2 "Mais quelqu’un, quelque part…"
+    ryn colere2 "Vient de sortir du cadre."
 
     play sound sfx_gresillement
+    $ hideGroup()
+
     scene bg_canon at adaptive_fullscreen,heavy_shake
 
     "La salle vibre."
@@ -318,40 +288,35 @@ label decouverte_salle_canon:
     "Le canon s’illumine."
     "Une lueur bleue apparaît en son centre."
 
-    $ showP("noam", "peur", 0.78)      # droite
-    $ showP("ryn", "surpris", 0.22)    # gauche
+    $ showGroup([
+        ("noam", "peur", 0.22),
+        ("ryn", "surpris", 0.78),
+    ])
 
     play sound sfx_laser_canon volume 8.0
 
-    $ showP("noam", "desespoir", 0.78)
-    noam "Putain…"
-    noam "C’est réel."
+    noam desespoir "Putain…"
+    noam desespoir "C’est réel."
 
-    $ showP("ryn", "desaccord", 0.22)
-    ryn "T’en doutais ?"
+    ryn desaccord "T’en doutais ?"
 
-    $ showP("noam", "triste", 0.78)
-    noam "J’espérais."
+    noam triste "J’espérais."
 
     "Les écrans changent."
     "Un flux vidéo apparaît."
     "Brouillé."
     "Inexploitable."
 
-    $ showP("noam", "panne", 0.78)
-    noam "On voit rien."
+    noam panne "On voit rien."
 
-    $ showP("ryn", "determine", 0.22)
-    ryn "C’est fait exprès."
+    ryn determine "C’est fait exprès."
 
     "Un grondement sourd."
     "Comme un orage enfermé."
 
-    $ showP("noam", "inquiet", 0.78)
-    noam "On devrait partir."
+    noam inquiet "On devrait partir."
 
-    $ showP("ryn", "fatigue", 0.22)
-    ryn "Ouais."
+    ryn fatigue "Ouais."
 
     "Aucun de nous ne bouge."
 
@@ -364,11 +329,14 @@ label decouverte_salle_canon:
     "La lumière envahit la salle."
     "Blanche."
     "Aveuglante."
+    $ hideGroup()
 
     scene bg_canon at adaptive_fullscreen,heavy_shake
 
-    $ showP("noam", "desespoir", 0.78)
-    $ showP("ryn", "surpris", 0.22)
+    $ showGroup([
+        ("noam", "desespoir", 0.22),
+        ("ryn", "surpris", 0.78),
+    ])
 
     "Le sol tremble."
     "La vitre vibre."
@@ -387,21 +355,17 @@ label decouverte_salle_canon:
 
     "Trop calme."
 
-    $ showP("noam", "inquiet", 0.78)
-    noam "…"
-    noam "Quelqu'un vient de mourir."
+    noam inquiet "…"
+    noam inquiet "Quelqu'un vient de mourir."
 
     "Ryn ne répond pas tout de suite."
 
-    $ showP("ryn", "colere", 0.22)
-    ryn "Ouais."
+    ryn colere "Ouais."
 
-    $ showP("noam", "triste", 0.78)
-    noam "On ne sait même pas qui."
+    noam triste "On ne sait même pas qui."
 
-    $ showP("ryn", "fatigue", 0.22)
-    ryn "Non."
-    ryn "Mais Kami, si."
+    ryn fatigue "Non."
+    ryn fatigue "Mais Kami, si."
 
     "Il se détourne du canon."
     "Pour la première fois."
@@ -409,48 +373,37 @@ label decouverte_salle_canon:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
     # Micro-shift : après le tir, Noam se recentre légèrement, Ryn se “referme”
-    $ showP("noam", "reflexion", 0.70)
-    $ showP("ryn", "fatigue", 0.30)
 
-    ryn "Voilà."
-    ryn "C’est ça, le Conclave."
+    ryn fatigue "Voilà."
+    ryn fatigue "C’est ça, le Conclave."
 
-    $ showP("noam", "reflexion", 0.70)
-    noam "Une salle de réunion avec une arme."
+    noam reflexion "Une salle de réunion avec une arme."
 
-    $ showP("ryn", "desaccord", 0.30)
-    ryn "Non."
-    ryn "Une arme avec une salle de réunion autour."
-    ryn "Enfin, faut dire qu'il y a peu de chance qu'on fasse des réunions ici."
+    ryn desaccord "Non."
+    ryn desaccord "Une arme avec une salle de réunion autour."
+    ryn desaccord "Enfin, faut dire qu'il y a peu de chance qu'on fasse des réunions ici."
 
-    $ showP("ryn", "jaloux", 0.30)
-    ryn "C'est glauque."
+    ryn jaloux "C'est glauque."
 
     pause 0.5
 
-    $ showP("ryn", "determine", 0.30)
-    ryn "Et maintenant…"
-    ryn "Chaque vote va avoir un poids."
+    ryn determine "Et maintenant…"
+    ryn determine "Chaque vote va avoir un poids."
 
-    $ showP("noam", "raison", 0.70)
-    noam "Parce qu’on saura ce qu’il y a derrière."
+    noam raison "Parce qu’on saura ce qu’il y a derrière."
 
-    $ showP("ryn", "reflechit", 0.30)
-    ryn "Parce qu’on l’aura entendu."
+    ryn reflechit "Parce qu’on l’aura entendu."
 
     "Il me regarde."
     "Pas pour m’intimider."
     "Pour vérifier."
 
-    $ showP("ryn", "inquiet", 0.30)
-    ryn "Quand ça recommencera…"
-    ryn "Tu feras semblant que t’as rien vu ?"
+    ryn inquiet "Quand ça recommencera…"
+    ryn inquiet "Tu feras semblant que t’as rien vu ?"
 
-    $ showP("noam", "hesitation", 0.70)
-    noam "…"
+    noam hesitation "…"
 
-    $ showP("ryn", "determine", 0.30)
-    ryn "Ou tu t’en souviendras ?"
+    ryn determine "Ou tu t’en souviendras ?"
 
     pause 0.4
 
@@ -463,6 +416,7 @@ label decouverte_salle_canon:
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_2
 
+    $ hideGroup()
     jump CANON_TP
 
 

@@ -156,49 +156,44 @@ label decouverte_salle_maintenance:
     "Pas vraiment un silence doux mais assez reposant."
     "Un silence parfois perturbé par le vrombissement d'un moteur."
 
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("kael", "neutre", 0.78),
+    ])
 
     "Je fais deux pas."
     "Je m’arrête."
     "Parce que quelqu’un est déjà là."
 
-    $ showP("kael", "neutre", 0.78)
 
     "Adossé à un support."
     "Les bras croisés."
     "Il a l’air parfaitement à sa place."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Je te dérange ?"
+    noam hesitation "Je te dérange ?"
 
-    $ showP("kael", "taquin", 0.78)
-    kael "Non."
-    kael "J’avais juste besoin d’un endroit tranquille."
-    kael "Noam c'est ça ? Moi c'est Kael."
+    kael taquin "Non."
+    kael taquin "J’avais juste besoin d’un endroit tranquille."
+    kael taquin "Noam c'est ça ? Moi c'est Kael."
     
-    noam "Ouai."
-    noam "On est vraiment dans un endroit étrange."
+    noam hesitation "Ouai."
+    noam hesitation "On est vraiment dans un endroit étrange."
 
-    $ showP("noam", "rire", 0.22)
     "Je souffle, un rire court."
-    $ showP("noam", "reflexion", 0.22)
     "Sans conviction."
 
-    $ showP("kael", "reflechit", 0.78)
-    kael "T’as vu le reste ?"
-    kael "La cafétéria, les salles…"
-    kael "On dirait un campus."
-    kael "Sauf que personne n’a choisi de s'y inscrire."
-    kael "Tout le monde court partout, c'est assez bruyant."
-    kael "Ici les gens n'y passent que quelques minutes. C'est assez calme."
+    kael reflechit "T’as vu le reste ?"
+    kael reflechit "La cafétéria, les salles…"
+    kael reflechit "On dirait un campus."
+    kael reflechit "Sauf que personne n’a choisi de s'y inscrire."
+    kael reflechit "Tout le monde court partout, c'est assez bruyant."
+    kael reflechit "Ici les gens n'y passent que quelques minutes. C'est assez calme."
 
-    $ showP("noam", "desaccord", 0.22)
-    noam "Ouais tu m'étonnes."
-    noam "L'odeur d'huile peut en rébuter plus d'un."
+    noam desaccord "Ouais tu m'étonnes."
+    noam desaccord "L'odeur d'huile peut en rébuter plus d'un."
 
-    $ showP("kael", "rire", 0.78)
-    kael "Exactement."
-    kael "Au moins on est au calme ici."
+    kael rire "Exactement."
+    kael rire "Au moins on est au calme ici."
 
     "Il hoche la tête vers le fond."
     "Je suis son regard."
@@ -207,86 +202,71 @@ label decouverte_salle_maintenance:
     "Un gros robot. Il fait bien trois mètres de haut."
     "On pourrait presque avoir l'impression qu'il va se mettre à bouger d'un instant à l'autre."
 
-    $ showP("noam", "surpris", 0.22)
-    noam "C’est… quoi ça ? C'est impressionnant !"
+    noam surpris "C’est… quoi ça ? C'est impressionnant !"
 
-    $ showP("kael", "reflechit", 0.78)
-    kael "Le gros Berthe."
-    kael "C’est comme ça qu’il s’appelle apparemment."
+    kael reflechit "Le gros Berthe."
+    kael reflechit "C’est comme ça qu’il s’appelle apparemment."
     
     "Kael montre du doigt une plaque derrière lui qui indique le nom du robot."
     "Enfin, je ne sais même pas si on peut vraiment appeler ça comme ça."
     
-    $ showP("noam", "reflexion", 0.22)
-    noam "Donc c’est pas juste un machin oublié."
+    noam reflexion "Donc c’est pas juste un machin oublié."
 
-    $ showP("kael", "neutre", 0.78)
-    kael "Non."
-    kael "C’est entretenu."
-    kael "Et si c’est entretenu…"
-    kael "c’est que ça peut servir."
+    kael neutre "Non."
+    kael neutre "C’est entretenu."
+    kael neutre "Et si c’est entretenu…"
+    kael neutre "c’est que ça peut servir."
     
-    kael "Honnêtement, c'est pas si impressionnant que ça."
-    kael "Il y a des prototypes beaucoup plus robustes ou rapides sur orbite."
-    kael "Mais ça a l'air fonctionnel."
+    kael neutre "Honnêtement, c'est pas si impressionnant que ça."
+    kael neutre "Il y a des prototypes beaucoup plus robustes ou rapides sur orbite."
+    kael neutre "Mais ça a l'air fonctionnel."
 
     pause 0.3
 
-    $ showP("noam", "inquiet", 0.22)
-    noam "Tu penses qu’il sert à quoi ?"
+    noam inquiet "Tu penses qu’il sert à quoi ?"
 
-    $ showP("kael", "reflechit", 0.78)
-    kael "C'est un modèle conçu pour deux raisons."
+    kael reflechit "C'est un modèle conçu pour deux raisons."
     
     "Il prend un temps de réponse, comme pour réfléchir à quels mots utiliser."
     
-    kael "Il peut servir d'arme. Il est normalement équipé de fusils laser."
-    kael "Mais ce n'est pas son point fort."
-    kael "Il peut surtout aller dans l'espace."
+    kael reflechit "Il peut servir d'arme. Il est normalement équipé de fusils laser."
+    kael reflechit "Mais ce n'est pas son point fort."
+    kael reflechit "Il peut surtout aller dans l'espace."
 
     "Il dit ça calmement."
     "Trop calmement."
     "Comme s’il parlait de la météo."
     
-    kael "Malgré sa taille, il est équipé de propulseurs, avec la faible gravité, il peut parcourir une longue distance sans problème."
-    kael "C'est un robot d'exploration spatiale."
+    kael reflechit "Malgré sa taille, il est équipé de propulseurs, avec la faible gravité, il peut parcourir une longue distance sans problème."
+    kael reflechit "C'est un robot d'exploration spatiale."
 
-    $ showP("noam", "peur", 0.22)
     "Ça me fait froid dans le dos."
 
     pause 0.4
 
-    $ showP("kael", "taquin", 0.78)
-    kael "Bref."
-    kael "Je suis venu ici pour réfléchir tranquillement à un truc."
+    kael taquin "Bref."
+    kael taquin "Je suis venu ici pour réfléchir tranquillement à un truc."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Pour réfléchir ?"
+    noam reflexion "Pour réfléchir ?"
 
-    $ showP("kael", "reflechit", 0.78)
-    kael "Tu sais cette histoire d'amendements."
-    kael "Les propositions."
-    kael "Tout ce cirque."
+    kael reflechit "Tu sais cette histoire d'amendements."
+    kael reflechit "Les propositions."
+    kael reflechit "Tout ce cirque."
 
-    $ showP("noam", "desaccord", 0.22)
-    noam "Tu vas pas me dire que t’es enthousiaste."
+    noam desaccord "Tu vas pas me dire que t’es enthousiaste."
 
-    $ showP("kael", "rire", 0.78)
-    kael "Non. A quoi ça servirait ?"
-    kael "Honnêtement, pour moi ce Conclave est plus un risque que quoi que ce soit."
+    kael rire "Non. A quoi ça servirait ?"
+    kael rire "Honnêtement, pour moi ce Conclave est plus un risque que quoi que ce soit."
 
-    $ showP("kael", "culpabilite", 0.78)
-    kael "Je pense qu’on devrait annoncer très vite aux autres nos propositions."
-    kael "Pas juste ce qu'on vote."
-    kael "Parce qu'à la moindre erreur des milliers de gens peuvent mourir par notre faute."
+    kael culpabilite "Je pense qu’on devrait annoncer très vite aux autres nos propositions."
+    kael culpabilite "Pas juste ce qu'on vote."
+    kael culpabilite "Parce qu'à la moindre erreur des milliers de gens peuvent mourir par notre faute."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Tu ne fais confiance en personne ?"
+    noam hesitation "Tu ne fais confiance en personne ?"
 
-    $ showP("kael", "reflechit", 0.78)
-    kael "Ce n'est pas ça."
-    kael "Quand les gens paniquent, ils s’accrochent à n’importe quoi."
-    kael "Si on en parle avant, nos propositions seront mieux cadrées et on est à peu près sûrs d'éviter une catastrophe."
+    kael reflechit "Ce n'est pas ça."
+    kael reflechit "Quand les gens paniquent, ils s’accrochent à n’importe quoi."
+    kael reflechit "Si on en parle avant, nos propositions seront mieux cadrées et on est à peu près sûrs d'éviter une catastrophe."
 
     pause 0.3
 
@@ -297,42 +277,33 @@ label decouverte_salle_maintenance:
     "Tout est là."
     "Tout est prêt."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Tu veux faire ça quand ?"
-    noam "Tu as tenté d'en parler tout à l'heure, sans trop de réponses ..."
+    noam reflexion "Tu veux faire ça quand ?"
+    noam reflexion "Tu as tenté d'en parler tout à l'heure, sans trop de réponses ..."
 
-    $ showP("kael", "fatigue", 0.78)
-    kael "Bientôt. Juste avant de déposer les amendements."
-    kael "C'est vraiment nécessaire."
+    kael fatigue "Bientôt. Juste avant de déposer les amendements."
+    kael fatigue "C'est vraiment nécessaire."
     
     "Il regarde dans le vide, comme perdu dans ses pensées."
 
-    $ showP("noam", "culpabilite", 0.22)
     "Tu penses qu'on arrivera à faire avancer les choses ?"
 
-    $ showP("noam", "triste", 0.22)
-    noam "Je ne pense pas."
+    noam triste "Je ne pense pas."
 
-    $ showP("kael", "neutre", 0.78)
-    kael "Et toi, Noam…"
-    kael "t’as l’air de porter un sac qui n’est pas à toi."
-    kael "Quelle modification vas-tu proposer ?"
+    kael neutre "Et toi, Noam…"
+    kael neutre "t’as l’air de porter un sac qui n’est pas à toi."
+    kael neutre "Quelle modification vas-tu proposer ?"
 
-    $ showP("noam", "desaccord", 0.22)
-    noam "Franchement ? J'en sais rien du tout."
+    noam desaccord "Franchement ? J'en sais rien du tout."
 
-    $ showP("kael", "reflechit", 0.78)
-    kael "C’est pas vraiment une réponse."
+    kael reflechit "C’est pas vraiment une réponse."
 
     pause 0.4
 
-    $ showP("noam", "desespoir", 0.22)
-    noam "Je sais."
-    noam "Mais là, j’ai pas mieux."
+    noam desespoir "Je sais."
+    noam desespoir "Mais là, j’ai pas mieux."
 
-    $ showP("kael", "neutre", 0.78)
-    kael "Ouai je vois."
-    kael "On est tous dans le même sac."
+    kael neutre "Ouai je vois."
+    kael neutre "On est tous dans le même sac."
 
     "Il lance un regard au panneau d’alimentation."
 
@@ -343,6 +314,7 @@ label decouverte_salle_maintenance:
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_5
 
+    $ hideGroup()
     jump MAINTENANCE_TP
 
 # 3m

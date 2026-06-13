@@ -187,7 +187,10 @@ label decouverte_sas:
     "Et au fond, il y a cette porte."
     "Impossible à ignorer."
 
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("mara", "mefiant", 0.78),
+    ])
     think "Ils ont vraiment pensé à tout."
     think "Même à la façon dont on allait oublier qu’on dépend d’eux."
 
@@ -197,7 +200,6 @@ label decouverte_sas:
     "Bras croisés."
     "Le regard fixé sur le sas, comme si elle attendait qu’il fasse une erreur."
 
-    $ showP("mara", "mefiant", 0.78)
 
     noam hesitation "…"
     noam hesitation "Euh…"
@@ -215,16 +217,16 @@ label decouverte_sas:
     noam reflexion "je pensais pas tomber sur quelqu’un ici."
 
     mara doute "Ouais…"
-    mara "Les gens passent, matent la porte deux secondes,"
-    mara "captent que c’est fermé à double tour,"
-    mara "et se barrent direct comme des rats."
+    mara doute "Les gens passent, matent la porte deux secondes,"
+    mara doute "captent que c’est fermé à double tour,"
+    mara doute "et se barrent direct comme des rats."
     mara taquin "Ils ont pas les couilles de rester."
 
     noam sourire "Et toi ?"
 
     mara sourire "Moi je reste."
-    mara "J’aime bien savoir exactement comment tout peut partir en vrille."
-    mara "Rien de tel que de connaître chaque recoin pourri d’un endroit."
+    mara sourire "J’aime bien savoir exactement comment tout peut partir en vrille."
+    mara sourire "Rien de tel que de connaître chaque recoin pourri d’un endroit."
     mara taquin "Ça permet de mieux anticiper le moment où ça va chier."
 
     pause 0.3
@@ -250,9 +252,9 @@ label decouverte_sas:
     noam reflexion "Tu crois que ce sas sera utile ?"
 
     mara doute "Euh… ouais."
-    mara "Normalement, les livraisons tombent une fois par semaine."
+    mara doute "Normalement, les livraisons tombent une fois par semaine."
     mara reflexion "C’est huilé au millimètre : J7, J14, J21, J28."
-    mara "Toujours pile à la même heure, comme des horloges suisses."
+    mara reflexion "Toujours pile à la même heure, comme des horloges suisses."
     mara taquin "Très rassurant, hein ?"
 
     noam surpris "Ils ont déjà prévu tout ça ?"
@@ -263,23 +265,20 @@ label decouverte_sas:
 
     pause 0.3
 
-    $ showP("noam", "reflexion", 0.22)
     think "Même la nourriture arrive sous calendrier strict."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "C’est con, mais…"
-    noam "savoir que ça arrive toutes les semaines, ça rassure."
+    noam sourire "C’est con, mais…"
+    noam sourire "savoir que ça arrive toutes les semaines, ça rassure."
 
     mara stress "Ouais… c’est exactement pour ça que ça me fout les jetons."
 
     pause 0.3
 
-    $ showP("noam", "inquiet", 0.22)
-    noam "Pourquoi ?"
+    noam inquiet "Pourquoi ?"
 
-    mara "Parce que si un truc déconne…"
-    mara "si on a besoin d’un médoc, de bouffe en plus, d’un câble USB ou que sais-je…"
-    mara "bah on attend sagement le prochain jour J."
+    mara stress "Parce que si un truc déconne…"
+    mara stress "si on a besoin d’un médoc, de bouffe en plus, d’un câble USB ou que sais-je…"
+    mara stress "bah on attend sagement le prochain jour J."
     mara doute "Et si c’est pas le bon jour… on crève la dalle ou on crève tout court."
     mara sourire "Super planning, Kami. Vraiment top."
     pause 0.4
@@ -292,11 +291,11 @@ label decouverte_sas:
 
     pause 0.4
 
-    $ showP("noam", "reflexion", 0.22)
     think "Je devrais aller voir ailleurs."
 
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
 
+    $ hideGroup()
     jump LIVRAISON_TP
 
 # 1m20

@@ -189,8 +189,10 @@ label decouverte_infirmerie:
     "Et, dans un coin, une bibliothèque de revues scientifiques."
     "Comme si quelqu’un avait voulu ajouter une petite touche… humaine."
 
-    $ showP("noam", "reflexion", 0.22)   # gauche
-    $ showP("sael", "reflechit", 0.78)   # droite
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("sael", "reflechit", 0.78),
+    ])
 
     "La fille de tout à l'heure est déjà là."
     "Debout."
@@ -198,129 +200,102 @@ label decouverte_infirmerie:
     "Elle ne regarde pas les médicaments."
     "Elle regarde les casiers."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Il semble y avoir ce qu'il faut pour se faire prescrire un truc."
+    noam hesitation "Il semble y avoir ce qu'il faut pour se faire prescrire un truc."
 
-    $ showP("sael", "sourire", 0.78)
-    sael "Ouais."
-    $ showP("sael", "taquin", 0.78)
-    sael "Une cure contre les idées de merde."
-    sael "Mais j’ai l’impression qu’il y a rupture de stock."
+    sael sourire "Ouais."
+    sael taquin "Une cure contre les idées de merde."
+    sael taquin "Mais j’ai l’impression qu’il y a rupture de stock."
 
-    $ showP("noam", "reflexion", 0.22)
     "Je suis son regard."
     "Les casiers."
     "Le mur froid."
     "Les poignées."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Ne me dis pas que c'est ..."
+    noam hesitation "Ne me dis pas que c'est ..."
 
-    $ showP("sael", "mefiant", 0.78)
-    sael "Oh je crois bien que si."
-    sael "C'est une morgue."
-    $ showP("sael", "reflechit", 0.78)
+    sael mefiant "Oh je crois bien que si."
+    sael mefiant "C'est une morgue."
     
-    sael "Regarde, on a chacun notre casier."
+    sael reflechit "Regarde, on a chacun notre casier."
     
     "Elle pointe du doigt l'un des casiers."
     "Une étiquette se trouve à côté de la poignée."
     "Sael"
     
-    $ showP("sael", "taquin", 0.78)
     
-    sael "Et là il y a le tiens."
+    sael taquin "Et là il y a le tiens."
     
     "Elle pointe le casier où il y a écris Julian."
     
-    $ showP("noam", "taquin", 0.22)
     
-    noam "Ah non, je m'appelle pas Julian."
+    noam taquin "Ah non, je m'appelle pas Julian."
     
-    $ showP("sael", "surpris", 0.78)
     
     "Elle semble désorientée un instant."
-    sael "Hein ? Ah bon ?!"
+    sael surpris "Hein ? Ah bon ?!"
     
-    noam "Ben oui, si je te le dis."
-    noam "Moi je m'appelle Noam."
+    noam taquin "Ben oui, si je te le dis."
+    noam taquin "Moi je m'appelle Noam."
     
     "Elle regarde les casiers et cherche quelque chose du regard."
     
-    $ showP("sael", "determine", 0.78)
     
-    sael "Rigole pas trop, tu as déjà ta place à la morgue toi aussi."
+    sael determine "Rigole pas trop, tu as déjà ta place à la morgue toi aussi."
 
     "Un frisson me parcoure l'échine en entendant ce mot."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Je croyais que les commandements empêchaient… tout ça."
+    noam reflexion "Je croyais que les commandements empêchaient… tout ça."
 
-    $ showP("sael", "desaccord", 0.78)
-    sael "Ouais."
-    sael "Ailleurs."
-    $ showP("sael", "raison", 0.78)
-    sael "Sauf qu’on est pas 'chez nous'."
-    sael "On est au Conclave."
+    sael desaccord "Ouais."
+    sael desaccord "Ailleurs."
+    sael raison "Sauf qu’on est pas 'chez nous'."
+    sael raison "On est au Conclave."
 
     "Elle désigne la pièce d’un mouvement du menton."
     "Les étagères."
     "La table."
     "Les casiers."
 
-    $ showP("sael", "reflechit", 0.78)
-    sael "Tu n’as pas fait attention, toi ?"
-    sael "Ce petit détail qui change tout."
-    sael "Ici, les commandements sont abolis."
+    sael reflechit "Tu n’as pas fait attention, toi ?"
+    sael reflechit "Ce petit détail qui change tout."
+    sael reflechit "Ici, les commandements sont abolis."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Tu veux dire…"
+    noam hesitation "Tu veux dire…"
 
-    $ showP("sael", "raison", 0.78)
-    sael "Je veux dire que la violence est autorisée."
-    $ showP("sael", "mefiant", 0.78)
-    sael "Si ce n'est souhaitée."
-    sael "Mais rien ne permet de confirmer ça."
+    sael raison "Je veux dire que la violence est autorisée."
+    sael mefiant "Si ce n'est souhaitée."
+    sael mefiant "Mais rien ne permet de confirmer ça."
 
-    $ showP("noam", "panne", 0.22)
     "Je reste une seconde sans réponse."
     "Mon cerveau refuse l’information."
     "Puis il l’accepte, parce qu’il n’a pas vraiment le choix."
     "La présence d'une morgue en atteste."
 
-    $ showP("noam", "peur", 0.22)
-    noam "Donc… les commandements c'est ...."
-    noam "Oh putain ça craint."
+    noam peur "Donc… les commandements c'est ...."
+    noam peur "Oh putain ça craint."
 
-    $ showP("sael", "culpabilite", 0.78)
-    sael "Ouais."
+    sael culpabilite "Ouais."
 
     "Comme si le simple fait de le dire lui collait quelque chose sur la langue."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Et on est censés faire quoi avec ça ?"
+    noam reflexion "Et on est censés faire quoi avec ça ?"
 
-    $ showP("sael", "determine", 0.78)
-    sael "Déjà, le garder en tête."
-    sael "Quand quelqu’un s’énerve."
-    sael "Quand quelqu’un 'perd patience'."
-    sael "Quand quelqu’un décide que c’est plus simple de régler un problème à l’ancienne."
-    sael "Faut essayer de calmer le jeu."
+    sael determine "Déjà, le garder en tête."
+    sael determine "Quand quelqu’un s’énerve."
+    sael determine "Quand quelqu’un 'perd patience'."
+    sael determine "Quand quelqu’un décide que c’est plus simple de régler un problème à l’ancienne."
+    sael determine "Faut essayer de calmer le jeu."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "À l’ancienne…"
-    noam "Faut dire que c'est une salle qui a déjà le frigo prévu pour le corps."
+    noam hesitation "À l’ancienne…"
+    noam hesitation "Faut dire que c'est une salle qui a déjà le frigo prévu pour le corps."
 
-    $ showP("sael", "sourire", 0.78)
-    sael "Voilà."
-    $ showP("sael", "taquin", 0.78)
-    sael "Ambiance conviviale quoi."
+    sael sourire "Voilà."
+    sael taquin "Ambiance conviviale quoi."
 
     "Elle tente l’humour."
     "Mais son regard glisse encore vers les casiers."
     "Comme un réflexe. Comme une obsession."
 
-    $ showP("noam", "reflexion", 0.22)
     "Je fais quelques pas."
     "Je m’arrête devant les étagères."
     "Je lis des étiquettes."
@@ -328,32 +303,25 @@ label decouverte_infirmerie:
     "Je reconnais certaines racines à certains mots."
     "D’autres sont très flous."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Et ça…"
-    noam "C’est en libre-service ?"
+    noam hesitation "Et ça…"
+    noam hesitation "C’est en libre-service ?"
 
-    $ showP("sael", "mefiant", 0.78)
-    sael "Bonne question."
-    $ showP("sael", "reflechit", 0.78)
-    sael "Mais si c’est là, c’est que quelqu’un doit pouvoir s’en servir."
-    sael "Etant donné qu'il n'y a pas de robot dans cette pièce."
-    sael "C'est probablement… n’importe qui."
+    sael mefiant "Bonne question."
+    sael reflechit "Mais si c’est là, c’est que quelqu’un doit pouvoir s’en servir."
+    sael reflechit "Etant donné qu'il n'y a pas de robot dans cette pièce."
+    sael reflechit "C'est probablement… n’importe qui."
 
-    $ showP("noam", "culpabilite", 0.22)
-    noam "Médicaments."
-    noam "Poisons."
-    noam "Sédatifs."
-    noam "On coche toutes les cases, là."
+    noam culpabilite "Médicaments."
+    noam culpabilite "Poisons."
+    noam culpabilite "Sédatifs."
+    noam culpabilite "On coche toutes les cases, là."
     
-    $ showP("sael", "taquin", 0.78)
-    sael "Oh tu as l'oeil ! Il y a bien des poisons ici en plus de médicaments plus traditionnels."
+    sael taquin "Oh tu as l'oeil ! Il y a bien des poisons ici en plus de médicaments plus traditionnels."
 
-    $ showP("sael", "desaccord", 0.78)
     
-    sael "Il y a aussi la table au fond."
+    sael desaccord "Il y a aussi la table au fond."
     
-    $ showP("sael", "reflechit", 0.78)
-    sael "Celle-là, c’est pas pour mettre un pansement."
+    sael reflechit "Celle-là, c’est pas pour mettre un pansement."
 
     "Je regarde la table d’opération."
     "Les bras articulés."
@@ -362,84 +330,59 @@ label decouverte_infirmerie:
     "Je déteste la manière dont tout paraît prêt."
     "Comme si toute la pièce n'attendait qu'une chose : que l'un d'entre nous se blesse."
 
-    $ showP("noam", "peur", 0.22)
-    noam "J’aime pas ça."
+    noam peur "J’aime pas ça."
 
-    $ showP("sael", "triste", 0.78)
-    sael "Moi non plus."
-    $ showP("sael", "raison", 0.78)
-    sael "Mais c’est justement pour ça que je voulais venir."
+    sael triste "Moi non plus."
+    sael raison "Mais c’est justement pour ça que je voulais venir."
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "Pour te faire peur ?"
+    noam reflexion "Pour te faire peur ?"
 
-    $ showP("sael", "rire", 0.78)
-    sael "Non."
-    $ showP("sael", "reflechit", 0.78)
-    sael "Pour me rappeler un truc."
-    sael "Si ça dérape… Ou quand ça dérapera."
-    $ showP("sael", "determine", 0.78)
-    sael "Je veux être prête au moment où quelqu’un me sautera dessus."
+    sael rire "Non."
+    sael reflechit "Pour me rappeler un truc."
+    sael reflechit "Si ça dérape… Ou quand ça dérapera."
+    sael determine "Je veux être prête au moment où quelqu’un me sautera dessus."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "Tu parles comme si…"
-    noam "Comme si tu t’y attendais."
+    noam hesitation "Tu parles comme si…"
+    noam hesitation "Comme si tu t’y attendais."
 
-    $ showP("sael", "mefiant", 0.78)
-    sael "Je m’y attends pas."
-    $ showP("sael", "raison", 0.78)
-    sael "Je refuse juste d’être naïve."
-    sael "Je m'y prépare."
+    sael mefiant "Je m’y attends pas."
+    sael raison "Je refuse juste d’être naïve."
+    sael raison "Je m'y prépare."
 
     "Elle se tait une seconde."
     "Puis elle hausse les épaules, comme pour alléger."
 
-    $ showP("sael", "taquin", 0.78)
-    sael "Et puis…"
-    sael "J’ai une réputation à tenir."
-    $ showP("sael", "sourire", 0.78)
-    sael "Je suis censé être 'la gosse des rues'."
+    sael taquin "Et puis…"
+    sael taquin "J’ai une réputation à tenir."
+    sael sourire "Je suis censé être 'la gosse des rues'."
 
-    $ showP("noam", "rire", 0.22)
-    noam "Ah."
-    $ showP("noam", "taquin", 0.22)
-    noam "Donc c’est ça."
-    noam "Rien ne peut vraiment t'atteindre."
+    noam rire "Ah."
+    noam taquin "Donc c’est ça."
+    noam taquin "Rien ne peut vraiment t'atteindre."
 
-    $ showP("sael", "joie", 0.78)
-    sael "Exactement."
-    $ showP("sael", "taquin", 0.78)
-    sael "Et je ne mourrais pas ici.."
+    sael joie "Exactement."
+    sael taquin "Et je ne mourrais pas ici.."
 
     pause 0.4
 
-    $ showP("noam", "reflexion", 0.22)
-    noam "T’as dit tout à l’heure que tu 'n’espérais pas devoir t’en servir'."
+    noam reflexion "T’as dit tout à l’heure que tu 'n’espérais pas devoir t’en servir'."
 
-    $ showP("sael", "triste", 0.78)
-    sael "Ouais."
+    sael triste "Ouais."
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "De ta force ?"
+    noam hesitation "De ta force ?"
 
-    $ showP("sael", "culpabilite", 0.78)
-    sael "Ouais."
-    $ showP("sael", "reflechit", 0.78)
-    sael "Dans mon district, à Limen, quand ça part en vrille…"
-    sael "Fin, oublie ce que j'ai dis.."
-    $ showP("sael", "triste", 0.78)
-    sael "Je pense que personne n'a envie de voir ça ici.."
+    sael culpabilite "Ouais."
+    sael reflechit "Dans mon district, à Limen, quand ça part en vrille…"
+    sael reflechit "Fin, oublie ce que j'ai dis.."
+    sael triste "Je pense que personne n'a envie de voir ça ici.."
 
-    $ showP("sael", "raison", 0.78)
-    sael "Voilà."
-    $ showP("sael", "determine", 0.78)
-    sael "Donc je préfère espérer que rien n'arrive…"
-    sael "Et me préparer au cas où."
+    sael raison "Voilà."
+    sael determine "Donc je préfère espérer que rien n'arrive…"
+    sael determine "Et me préparer au cas où."
 
     "Elle tapote doucement un casier."
     "Le métal renvoie un son sourd."
 
-    $ showP("noam", "reflexion", 0.22)
     think "Une morgue."
     think "Des poisons."
     think "Une table d’opération."
@@ -447,24 +390,18 @@ label decouverte_infirmerie:
 
     pause 0.4
 
-    $ showP("noam", "hesitation", 0.22)
-    noam "On ressort, et on fait comme si tout était normal ?"
+    noam hesitation "On ressort, et on fait comme si tout était normal ?"
 
-    $ showP("sael", "sourire", 0.78)
-    sael "Ouais."
-    $ showP("sael", "taquin", 0.78)
-    sael "Comme des adultes responsables."
-    sael "Si on est là, c'est pour une raison."
-    sael "Il faut qu'on améliore la vie dans nos districts."
+    sael sourire "Ouais."
+    sael taquin "Comme des adultes responsables."
+    sael taquin "Si on est là, c'est pour une raison."
+    sael taquin "Il faut qu'on améliore la vie dans nos districts."
 
-    $ showP("noam", "sourire", 0.22)
-    noam "Génial."
-    $ showP("noam", "rire", 0.22)
-    noam "J’adore quand on me vend une journée tranquille."
+    noam sourire "Génial."
+    noam rire "J’adore quand on me vend une journée tranquille."
 
     pause 0.5
 
-    $ showP("noam", "reflexion", 0.22)
     "Je recule d’un pas."
     "Je jette un dernier regard aux casiers."
     "Puis aux étagères."
@@ -475,6 +412,7 @@ label decouverte_infirmerie:
     
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
 
+    $ hideGroup()
     jump INFIRMERIE_TP
 
 # 3m20

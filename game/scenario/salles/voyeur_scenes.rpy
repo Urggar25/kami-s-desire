@@ -163,22 +163,22 @@ label temps_libre_salle_stockage_argument:
     "Au fond de la salle de stockage, deux silhouettes parlent à voix basse entre les caisses."
     "Sael tend un filtre à air. Nyra lui passe une pochette de joints d'étanchéité en échange."
 
-    $ showP("sael", "neutre", 0.30)
-    $ showP("nyra", "neutre", 0.76)
+    $ showGroup([
+        ("sael", "neutre", 0.22),
+        ("nyra", "neutre", 0.78),
+    ])
 
-    sael "Filtre propre. Deux semaines si tu le ménages."
-    nyra "Parfait. Ces joints éviteront une fuite sur la ligne secondaire."
+    sael neutre "Filtre propre. Deux semaines si tu le ménages."
+    nyra neutre "Parfait. Ces joints éviteront une fuite sur la ligne secondaire."
 
-    $ showP("sael", "raison", 0.30)
-    sael "Chez nous, je troquais déjà ça contre des repas chauds."
-    sael "Quand je retournais en ville. Juste nécessaire."
+    sael raison "Chez nous, je troquais déjà ça contre des repas chauds."
+    sael raison "Quand je retournais en ville. Juste nécessaire."
 
-    $ showP("nyra", "taquin", 0.76)
-    nyra "À Orbite, un lot de légumes valait une réparation express."
-    nyra "Même logique, mais dans un autre décor."
+    nyra taquin "À Orbite, un lot de légumes valait une réparation express."
+    nyra taquin "Même logique, mais dans un autre décor."
 
-    sael "On a tous connu plus ou moins la galère."
-    nyra "Et on a pas eu le choix de s'adapter."
+    sael raison "On a tous connu plus ou moins la galère."
+    nyra taquin "Et on a pas eu le choix de s'adapter."
 
     "Elles referment les contenants, sobres, efficaces, comme un rituel rodé."
 
@@ -189,6 +189,5 @@ label temps_libre_salle_stockage_argument:
 
     think "Je me retire avant qu'elles ne me repèrent."
 
-    hide sael
-    hide nyra
+    $ hideGroup()
     jump STOCKAGE_TP
