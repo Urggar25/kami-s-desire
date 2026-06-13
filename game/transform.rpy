@@ -24,7 +24,7 @@ transform char_group_enter(xpos, ypos=1.0):
     alpha 0.0
     zoom 0.985
     yoffset 34
-    easeout 0.32 alpha 1.0 zoom 1.0 yoffset 0
+    easeout 0.5 alpha 1.0 zoom 1.0 yoffset 0
 
 transform char_group_exit(xpos, ypos=1.0):
     subpixel True
@@ -34,6 +34,7 @@ transform char_group_exit(xpos, ypos=1.0):
     zoom 1.0
     yoffset 0
     easein 0.22 alpha 0.0 zoom 0.985 yoffset 28
+
 
 transform char_group_place(xpos, ypos=1.0):
     subpixel True
@@ -97,37 +98,26 @@ init python:
                     store.char_state.pop(tag, None)
 
         for idx, (tag, expr, x) in enumerate(normalized):
-            already_showing = renpy.showing(tag, layer=layer)
             store.char_pos[tag] = x
             store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder)
-            img = f"{tag} {expr}"
-            if already_showing:
-                at_list = [char_group_place(x, y)]
-            else:
-                at_list = [char_group_enter(x, y)]
-            renpy.show(img, tag=tag, at_list=at_list, layer=layer, zorder=zorder + idx)
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_place(x, y)], layer=layer, zorder=zorder + idx)
 
+        renpy.with_statement(Dissolve(0.5))
         store.group_members = next_tags
 
     def hideGroup():
-        """Cache tous les personnages du groupe actuel"""
+        """Cache tous les personnages du groupe actuel avec fade out"""
         members = list(store.group_members)
         for tag in members:
             state = store.char_state.get(tag, {})
             layer = state.get("layer", "master")
-            if not renpy.showing(tag, layer=layer):
-                continue
-            x = state.get("x", store.char_pos.get(tag, 0.5))
-            y = state.get("y", 1.0)
-            expr = state.get("expr", "neutre")
-            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, y)], layer=layer)
+            if renpy.showing(tag, layer=layer):
+                renpy.hide(tag, layer=layer)
         if members:
-            renpy.pause(0.24, hard=True)
-            for tag in members:
-                state = store.char_state.get(tag, {})
-                renpy.hide(tag, layer=state.get("layer", "master"))
-                store.char_pos.pop(tag, None)
-                store.char_state.pop(tag, None)
+            renpy.with_statement(Dissolve(1.0))
+        for tag in members:
+            store.char_pos.pop(tag, None)
+            store.char_state.pop(tag, None)
         store.group_members = []
 
     def on_speaking(event, interact, **kwargs):
