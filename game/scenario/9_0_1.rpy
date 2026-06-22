@@ -739,7 +739,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     mara stress "Pareil."
     mara "Personne ne peut hésiter en sachant ça ? Si ?!"
 
-    julian inquietude "Pour aussi."
+    julian inquiet "Pour aussi."
     julian "Évidemment."
     julian "Il faut qu'on sauve ces gens !"
 
@@ -854,7 +854,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     kael "Mais Kami n'a pas dit qu'elle les sauverait."
     kael "Elle a dit que le Commandement s'appliquerait après le vote."
 
-    julian inquietude "C'est un piège."
+    julian inquiet "C'est un piège."
     julian "Une astuce pour se foutre de nous mais ça n'a pas marché !"
 
     pause 0.3
@@ -1015,7 +1015,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     iris fatigue "Et pour une fois, évite les effets de scène."
 
-    julian inquietude "Oui."
+    julian inquiet "Oui."
     julian "Je sais."
 
     pause 0.2

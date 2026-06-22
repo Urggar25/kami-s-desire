@@ -953,7 +953,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     iris desaccord "Ouais, on a d'autres chats à fouetter."
 
-    julian inquietude "Franchement, Kami pouvait pas attendre demain pour nous annoncer le prochain vote ?."
+    julian inquiet "Franchement, Kami pouvait pas attendre demain pour nous annoncer le prochain vote ?."
 
     sael mefiant "Elle veut qu'on dorme en y pensant toute la nuit..."
 
@@ -1051,7 +1051,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     iris desaccord "Personne ne va voter contre ça, j'en suis sûre."
 
     $ bc_show("julian", "inquietude", px=-70, py=-50, pz=0.85)
-    julian inquietude "C'est clair, que tu nous observes c'est une chose."
+    julian inquiet "C'est clair, que tu nous observes c'est une chose."
     julian "Mais il faut respecter l'intimité des demoiselles. TOUJOURS."
     $ bc_hide()
 
@@ -1115,7 +1115,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     nyra "En fait si on vote pour ça change rien ?"
 
-    julian inquietude "Ouais, peut-être, mais au moins on aggrave pas la situation."
+    julian inquiet "Ouais, peut-être, mais au moins on aggrave pas la situation."
     julian "Compris Tomas ?"
 
     tomas "Ou-Ouais..."

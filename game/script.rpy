@@ -43,6 +43,7 @@ default bg_is_blurred = False
 default current_day = 0
 
 default _last_autofocus_tag = None
+default character_speaking_until = {}
 
 default _focus_locked = False
 default _focus_last_params = None
@@ -80,6 +81,28 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.35):
 
 
 init python:
+    import re
+    import time
+
+    def dialogue_word_count(text):
+        return len(re.findall(r"[0-9A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’_-][0-9A-Za-zÀ-ÖØ-öø-ÿ]+)*", text or ""))
+
+    def start_character_dialogue(tag, text):
+        if not tag or tag.startswith("__"):
+            return
+        duration = 0.2 * dialogue_word_count(text)
+        if duration <= 0.0:
+            return
+        store.character_speaking_until[tag] = time.time() + duration
+
+    def is_character_speaking(tag):
+        until = store.character_speaking_until.get(tag, 0.0)
+        if until <= time.time():
+            if tag in store.character_speaking_until:
+                store.character_speaking_until.pop(tag, None)
+            return False
+        return True
+
     def nsfw_content_locked():
         return True
 
@@ -455,6 +478,8 @@ init python:
         def _cb(event, interact=True, **kwargs):
             if event != "begin":
                 return
+
+            start_character_dialogue(tag, kwargs.get("what", ""))
 
             if tag == "__NARRATOR__":
                 last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None

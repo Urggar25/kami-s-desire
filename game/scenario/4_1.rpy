@@ -459,7 +459,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     hide mara
     $ showP("julian", "determine", 0.88)  # droite
     julian "Laissez-la. Elle ne changera pas d’avis."
-    julian inquietude "Mais on peut pas laisser la peur dicter notre avenir."
+    julian inquiet "Mais on peut pas laisser la peur dicter notre avenir."
 
     $ showP("noam", "raison", 0.12)  # gauche
     noam "Je me demande si c’est vraiment juste de la peur."

@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/minijeu/trace_qte.rpy", line 570, in script
-    return _return
-Exception: Could not find return label ('game/scenario/1_canon.rpy', 1781359790, 5431).
+  File "game/scenario/15_0_1_1_0.rpy", line 926, in script
+    jump _16_0_1_1_0_REVEIL_CHAMBRE
+ScriptError: could not find label '_16_0_1_1_0_REVEIL_CHAMBRE'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minijeu/trace_qte.rpy", line 570, in script
-    return _return
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1506, in execute
-    next_node(renpy.game.context().lookup_return(pop=True))
-  File "C:\Users\fasqu\Desktop\renpy\renpy\execution.py", line 744, in lookup_return
-    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label ('game/scenario/1_canon.rpy', 1781359790, 5431).
+  File "game/scenario/15_0_1_1_0.rpy", line 926, in script
+    jump _16_0_1_1_0_REVEIL_CHAMBRE
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label '_16_0_1_1_0_REVEIL_CHAMBRE'.
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0-benji-ver
-Sat Jun 13 16:40:54 2026
+Mon Jun 15 17:19:03 2026

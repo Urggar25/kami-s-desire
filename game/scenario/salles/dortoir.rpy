@@ -34,7 +34,7 @@ label CHAMBRE_TP:
         return
 
 
-label CHAMBRE_CHOIX_LIT:
+label CHAMBRE_CHOIX_LIT_UNUSED:
     menu:
         "M'allonger pour passer le temps libre.":
             think "Je m'allonge sur le lit et laisse le temps filer."
@@ -80,25 +80,8 @@ screen pnc_chambre():
     zorder 200
 
     add Solid("#000")
-    add "images/background/bg_chambre.png" at cover_screen
-
-    imagebutton:
-        idle "images/background/interact/chambre/lit.png"
-        hover "images/background/interact/chambre/lit_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CHAMBRE_CHOIX_LIT")
-
-    imagebutton:
-        idle ("images/background/interact/chambre/brouilleur_on.png" if noam_room_jammer_on else "images/background/interact/chambre/brouilleur_off.png")
-        hover ("images/background/interact/chambre/brouilleur_on.png" if noam_room_jammer_on else "images/background/interact/chambre/brouilleur_off.png")
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CHAMBRE_BROUILLEUR")
+    use room_scene_background("chambre")
+    use room_scene_interactions("chambre")
 
     use exploration_retour_button
 
@@ -142,6 +125,9 @@ screen chambre_brouilleur_panel():
                 action Return("back")
 
 label CHAMBRE_BROUILLEUR:
+
+    if not noam_room_has_jammer:
+        jump CHAMBRE_TP
 
     call screen chambre_brouilleur_panel()
 

@@ -55,43 +55,18 @@ screen pnc_chambre_j12():
     modal True
     zorder 200
 
-    add "images/background/bg_chambre.png" at cover_screen
-
-    imagebutton:
-        idle "images/background/interact/chambre/sous_lit.png"
-        hover "images/background/interact/chambre/sous_lit_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_12_0_1_1_sous_lit")
-
-    imagebutton:
-        idle "images/background/interact/chambre/placard.png"
-        hover "images/background/interact/chambre/placard_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_12_0_1_1_placard")
-
-    imagebutton:
-        idle "images/background/interact/chambre/chaise.png"
-        hover "images/background/interact/chambre/chaise_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_12_0_1_1_bureau")
-
-    imagebutton:
-        idle "images/background/interact/chambre/lit.png"
-        hover "images/background/interact/chambre/lit_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_12_0_1_1_recoucher")
+    use room_scene_background("chambre")
+    use room_scene_interactions("chambre", {
+        "chambre1_aeration": "_12_0_1_1_bureau",
+        "chambre1_lit": "_12_0_1_1_sous_lit",
+        "chambre1_television": "_12_0_1_1_bureau",
+        "chambre1_tiroir": "_12_0_1_1_bureau",
+        "chambre2_armoire": "_12_0_1_1_placard",
+        "chambre2_porte_dehors": "_12_0_1_1_recoucher",
+        "chambre2_porte_sdb": "_12_0_1_1_bureau",
+        "chambre3_brouilleur": "_12_0_1_1_bureau",
+        "chambre3_tablette": "_12_0_1_1_bureau",
+    })
 
 # ==================== MINILABELS ====================
 

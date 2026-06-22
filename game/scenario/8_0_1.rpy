@@ -93,68 +93,20 @@ screen pnc_chambre_j8():
     modal True
     zorder 200
 
-    add "images/background/bg_chambre.png" at cover_screen
+    use room_scene_background("chambre")
 
-    # Hotspot — Sac / affaires au sol
-    imagebutton:
-        idle  "images/background/interact/chambre/sac.png"
-        hover "images/background/interact/chambre/sac_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_8_PNC_SAC")
-
-    # Hotspot — Vêtements / chaise
-    imagebutton:
-        idle  "images/background/interact/chambre/chaise.png"
-        hover "images/background/interact/chambre/chaise_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_8_PNC_CHAISE")
-
-    # Hotspot — Placard
-    imagebutton:
-        idle  "images/background/interact/chambre/placard.png"
-        hover "images/background/interact/chambre/placard_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_8_PNC_PLACARD")
-
-    # Hotspot — Sol sous le lit
-    imagebutton:
-        idle  "images/background/interact/chambre/sous_lit.png"
-        hover "images/background/interact/chambre/sous_lit_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_8_PNC_SOUS_LIT")
-
-    # Hotspot — Écran mural (sortie de scène)
-    imagebutton:
-        idle  "images/background/interact/chambre/ecran.png"
-        hover "images/background/interact/chambre/ecran_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("_8_PNC_ECRAN")
-
-    # Hotspot de sortie — aller manger (halo jaune, disponible après avoir fouillé au moins 3 zones)
-    if pnc_flags.get("sac") and pnc_flags.get("placard") and pnc_flags.get("sous_lit"):
-        imagebutton:
-            idle  "images/background/interact/chambre/sortie.png"
-            hover "images/background/interact/chambre/sortie_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Jump("_8_FIN_RECHERCHE")
+    $ j8_exit_label = "_8_FIN_RECHERCHE" if pnc_flags.get("sac") and pnc_flags.get("placard") and pnc_flags.get("sous_lit") else "_8_PNC_ECRAN"
+    use room_scene_interactions("chambre", {
+        "chambre1_aeration": "_8_PNC_CHAISE",
+        "chambre1_lit": "_8_PNC_SOUS_LIT",
+        "chambre1_television": "_8_PNC_ECRAN",
+        "chambre1_tiroir": "_8_PNC_SAC",
+        "chambre2_armoire": "_8_PNC_PLACARD",
+        "chambre2_porte_dehors": j8_exit_label,
+        "chambre2_porte_sdb": "_8_PNC_CHAISE",
+        "chambre3_brouilleur": "_8_PNC_ECRAN",
+        "chambre3_tablette": "_8_PNC_ECRAN",
+    })
 
 
 # -------------------------------------------------------

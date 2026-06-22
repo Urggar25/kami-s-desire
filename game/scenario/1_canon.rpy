@@ -188,13 +188,13 @@ label _1_CANON:
 
 
     lysa blase "Ouais..."
-    lysa blase "T'es enfin réveillé."
+    lysa blase "Enfin réveillé. J’ai cru que tu allais faire la sieste jusqu’à la fin du Conclave. Ç’aurait été presque poétique."
 
     noam inquiet "On est où… ?"
 
 
     lysa reflexion "Si je devais deviner…"
-    lysa reflexion "Je dirais le Conclave."
+    lysa reflexion "Je dirais que nous sommes dans l’antre soigneusement décoré de notre chère geôlière. Le Conclave. Tout y est propre, froid et filmé. Exactement comme dans mes cauchemars, mais avec un meilleur éclairage."
 
     "Je regarde autour."
     "Je ne connais aucun des autres visages."
@@ -719,12 +719,11 @@ label _1_KAMI_APPARITION:
 
     noam reflexion "On va devoir vraiment passer trente jours ici…"
 
-    lysa blase "L'unanimité ?"
-    lysa blase "C'est le piège ultime."
-    lysa blase "En vrai, c'est quasi impossible."
-    lysa blase "Soit tu convaincs tout le monde…"
-    lysa blase "soit tu les écrases."
-    lysa fatigue "Maintenant je pige pourquoi elle dit que ce sera pas simple."
+    lysa doute "L’unanimité ?"
+    lysa panne "C’est adorable. Kami nous offre un piège en velours."
+    lysa blase "Il faut que tout le monde soit d’accord… ou rien ne change."
+    lysa desaccord "Autant demander à douze serpents de danser la valse sans se mordre."
+    lysa taquin "Magnifique façon de nous regarder nous entretuer poliment."
 
     tomas raison "Ou alors… faire des compromis."
     tomas raison "Pour une fois."
@@ -736,44 +735,36 @@ label _1_KAMI_APPARITION:
         "Où Noam pose-t-il son regard ?"
 
         "Suivre Lysa du regard":
-            $ j1_noam_prudence += 1
             "Lysa regarde les caméras avant de regarder les gens."
             think "Elle cherche les angles morts. S'il y en a."
 
         "Regarder l'écran central":
-            $ j1_noam_curiosity += 1
             "Je garde les yeux sur l'écran central."
             think "Même éteint, il donne l'impression de pouvoir reprendre la parole à tout moment."
-
-
 
     nyra triste "Moi… je vois quand même un truc positif."
     nyra triste "Si on peut modifier les règles…"
     nyra triste "Ça veut dire qu'on peut améliorer les choses."
 
     lysa blase "Ou les empirer."
-    lysa blase "Les rendre 'légales', surtout."
-
-
+    lysa desaccord "Les rendre légales, surtout. J’imagine déjà quelqu’un proposer de rétablir les exécutions publiques pour « harmonie visuelle »."
 
     elen inquiet "Le fait qu'on ait le droit de proposer des amendements…"
     elen inquiet "Franchement, dans ce merdier, c'est déjà énorme."
     elen inquiet "C'est comme… une toute petite fenêtre ouverte. Ça fait du bien de respirer cinq secondes."
 
-    lysa blase "Une respiration sous l'eau."
+    lysa blase "Une respiration sous l’eau."
+    lysa taquin "Rafraîchissant pendant trois secondes. Puis on se noie quand même."
 
     "Un rire s'échappe quelque part."
     "Un rire trop franc, trop sûr de lui."
-
-
 
     mara rire "Vous parlez tous comme si on venait de gagner au loto."
     mara rire "On est dans une putain de cage, les gars."
     mara rire "Avec un bouton 'vote' et un nœud rose dessus pour faire genre que c'est cadeau."
 
-    lysa colere "Merci pour le rappel."
-
-
+    lysa blase "Merci pour cette brillante observation."
+    lysa taquin "On est dans une cage dorée, filmés comme des rats de laboratoire. Quelle surprise."
 
     ryn colere "Non mais attendez."
     ryn colere "Elle a dit quoi exactement ?"
@@ -783,16 +774,13 @@ label _1_KAMI_APPARITION:
     ryn colere "On fait quoi ?"
 
     lysa neutre "On est filmés en permanence."
-    lysa neutre "IA qui mate et diffuse tout."
-    lysa blase "Son idée du 'cadre sécurisé', apparemment."
-    lysa blase "La pression, ça empêche de péter un câble."
-    lysa fatigue "... En théorie."
+    lysa blase "Kami nous observe comme des insectes sous microscope."
+    lysa taquin "C’est sa vision du « cadre sécurisé ». Charmant."
+    lysa reflexion "La pression est censée nous empêcher de devenir fous…"
 
     "À côté, quelqu'un se lève, ajuste sa veste comme s'il montait sur scène."
     "Il cherche du regard une caméra. Il la trouve."
     "Et il lui offre un sourire travaillé."
-
-
 
     julian rire "Franchement ?"
     julian rire "Moi je trouve ça carrément bandant."
@@ -804,7 +792,9 @@ label _1_KAMI_APPARITION:
     "Il se tourne légèrement. Comme pour se mettre de profil face à la caméra."
     "Comme si ça avait de l'importance."
 
-    lysa colere "T'es sérieux ?"
+    lysa doute "T’es sérieux ?"
+    lysa colere "On nous enferme, on nous filme, on nous force à jouer les réformateurs sous peine de mort… et toi tu nous parles de ce qui te sert de bite ?"
+    lysa blase "Fascinant. J’ignorais qu’on pouvait atteindre un tel niveau de fétichisme."
 
     julian idee "Totalement."
     julian idee "Si je dois être coincé ici trente jours… autant que ce soit légendaire."
@@ -841,19 +831,17 @@ label _1_KAMI_APPARITION:
     "Cette fois, c'est pas la peur."
     "C'est le calcul."
 
-
-
-
     elen inquiet "On devrait peut-être se caler sur un truc simple avant que ça parte en vrille."
     elen inquiet "Genre une règle de base, pas grand-chose… juste pour pas s'étriper dans les dix premières minutes."
     elen inquiet "Parce que sinon je te jure, ça va dégénérer direct."
 
     lysa blase "Tu veux une méthode ?"
-    lysa blase "On est douze, enfermés, filmés."
-    lysa blase "Et ici, tuer quelqu'un… pas de conséquence."
-    lysa fatigue "La méthode est déjà écrite."
-    lysa fatigue "... Et on la connaît tous."
-    lysa peur "Évidemment que ça va finir en tuerie de masse."
+    lysa reflexion "Douze personnes. Enfermées. Filmées comme des rats de laboratoire."
+    lysa taquin "Et ici, assassiner quelqu’un n’est même pas un crime. C'est presque une solution !"
+    lysa blase "La recette est vieille comme le monde. Un groupe, enfermé dans un endroit clôt, avec une mascotte sadique qui dirige le groupe."
+    lysa fatigue "Nous la connaissons tous par cœur."
+    lysa "Évidemment que ça va finir en bain de sang. Évidemment."
+    lysa taquin "Et ils n'ont qu'un seul espoir : que ce soit filmé en haute définition."
 
     pause 0.4
 
@@ -865,10 +853,9 @@ label _1_KAMI_APPARITION:
 
     noam reflexion "On fait quoi, nous ?"
 
-    lysa neutre "On visite."
-    lysa neutre "On repère les lieux."
-    lysa neutre "Et on ferme sa gueule devant les caméras."
-    lysa fatigue "Surtout au début."
+    lysa determine "On visite."
+    lysa blase "On repère les angles morts, les caméras, les endroits où on peut encore respirer sans être jugé."
+    lysa reflexion "Et surtout… on ferme sa gueule devant les caméras."
 
     elen reflexion "Je vais checker s'il y a une infirmerie… ou au moins de quoi faire un pansement."
     elen reflexion "On sait jamais, des fois que quelqu'un se fasse vraiment mal."
@@ -1362,22 +1349,16 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     kael reflechit "Le laisser s'installer, c'est leur donner le champ libre."
 
 
-    lysa reflexion "Ou alors…"
-    lysa reflexion "c'est notre seule défense."
-    lysa doute "Quelqu'un peut très bien mentir."
-    lysa doute "Dire qu'il propose un truc alors qu'il en propose un autre."
-    lysa blase "Avec seulement dix votes tirés au sort…"
-    lysa blase "c'est l'alibi parfait."
-    lysa fatigue "Personne ne pourra prouver le contraire."
+    lysa doute "Ou alors…"
+    lysa reflexion "c’est notre seule défense."
+    lysa doute "Quelqu’un peut très bien mentir. Dire une chose… et écrire l’exact opposé."
+    lysa taquin "Avec seulement dix votes tirés au sort, c’est l’alibi parfait."
 
     pause 0.4
 
     "Le silence retombe."
     "Pas un silence lourd."
     "Un silence méfiant."
-
-    lysa fatigue "Comme il n'y a que dix votes… c'est l'alibi idéal pour justifier son mensonge."
-
 
     # --- Le chrono passe à 20 min (mise à jour dynamique) ---
     $ day0_timer_set(20 * 60)

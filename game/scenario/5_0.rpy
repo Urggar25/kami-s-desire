@@ -1053,7 +1053,7 @@ label _5_0_0_JULIAN:
         "Tu veux qu'on te regarde aider les gens.":
             $ j50_julian_fissure += 1
             noam "Tu veux qu'on te regarde aider les gens."
-            julian inquietude "..."
+            julian inquiet "..."
 
         "Tu t'en fiches complètement.":
             noam "Tu t'en fiches complètement."
@@ -1068,7 +1068,7 @@ label _5_0_0_JULIAN:
         "Tu veux être indispensable.":
             $ j50_julian_fissure += 1
             noam determine "Tu veux être indispensable."
-            julian inquietude "Ce n'est pas un défaut."
+            julian inquiet "Ce n'est pas un défaut."
 
         "Tu veux prouver que les autres sont lâches.":
             $ j50_julian_fissure -= 1
@@ -1115,7 +1115,7 @@ label _5_0_0_JULIAN:
         noam "Tu veux qu'il ait besoin de toi pour passer."
 
         $ showP("julian", "inquietude", 0.65)
-        julian inquietude "..."
+        julian inquiet "..."
         julian "C'est une façon très injuste de résumer une ambition sincère."
 
         noam "Non."
@@ -1123,7 +1123,7 @@ label _5_0_0_JULIAN:
 
         $ showP("julian", "peur", 0.65)
         julian peur "Tu crois que c'est drôle, ça ?"
-        julian inquietude "Tu crois que je n'ai pas pensé à ce qui reste quand personne n'a plus besoin de moi ?"
+        julian inquiet "Tu crois que je n'ai pas pensé à ce qui reste quand personne n'a plus besoin de moi ?"
 
     elif j50_julian_fissure >= 1:
         noam reflexion "Tu veux être celui autour de qui le vote s'organise."

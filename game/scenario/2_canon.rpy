@@ -338,33 +338,40 @@ label _2_CAFETERIA_ANNONCE_KAMI:
             "Je reste debout quelques secondes."
             "La porte derrière moi permet de compter ceux qui arrivent."
 
-    $ showP("tomas", "neutre", 0.10)
 
-    tomas "E-Excusez-moi mais… euh…"
-    tomas "On est vraiment obligés d’être tous là… enfin, là, tout de suite ? Je veux dire… maintenant ?"
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("noam", "reflexion", 0.13),
+        ("iris", "colere", 0.49),
+        ("tomas", "neutre", 0.60),
+        ("elen", "joie", 0.72),
+        ("nyra", "taquin", 0.96),
+        ("ryn", "neutre", 1.08),
+        ("sael", "mefiant", 1.20),
+    ])
+
+    tomas hesitation "E-Excusez-moi mais… euh…"
+    tomas inquiet "On est vraiment obligés d’être tous là… enfin, là, tout de suite ? Je veux dire… maintenant ?"
     
-    $ showP("iris", "colere", 0.50)
 
-    iris "Super. Vraiment super."
-    iris "Même pas dix minutes et on a déjà droit aux questions à la con. Bravo l’équipe."
+    iris desaccord "Super. Vraiment super."
+    iris colere "Même pas dix minutes et on a déjà droit aux questions à la con. Bravo l’équipe."
 
     tomas panne "Je— je dis pas que c’est idiot !"
     tomas panne "C’est juste que… enfin… voilà."
 
-    $ showP("ryn", "neutre", 0.86)
 
     ryn neutre "Non mais laisse."
     ryn reflechit "Au moins lui il parle."
     ryn reflechit "Y’en a qui serrent les dents depuis hier et qui font semblant que tout va bien."
 
-    $ showP("elen", "joie", 0.40)
 
-    elen "Oh !"
-    elen "C’est vrai que l’ambiance est un peu chelou ce matin…"
-    elen "Mais attends, ils ont changé les plateaux ! Regardez comme ils brillent maintenant, c’est pas dingue ? Ça change tout !"
+    elen content "Oh !"
+    elen joie "C’est vrai que l’ambiance est un peu chelou ce matin…"
+    elen surpris "Mais attends, ils ont changé les plateaux ! Regardez comme ils brillent maintenant, c’est pas dingue ? Ça change tout !"
 
-    iris "Elen."
-    iris "On s’en tape complètement des plateaux, là. Sérieux."
+    iris desaccord "Elen."
+    iris colere "On s’en tape complètement des plateaux, là. Sérieux."
 
     elen desaccord "Oui mais quand même !"
     elen content "N’empêche… peut-être que c’est fait exprès pour nous rebooster un peu le moral, non ?"
@@ -373,38 +380,29 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     pause 0.4
 
-    hide tomas
-    $ showP("elias", "neutre", 0.15)
 
-    elias "…"
-    elias "Ça va arriver, de toute façon."
-    elias "Autant être prêts."
+    elias ecoute "…"
+    elias neutre "Ça va arriver, de toute façon."
+    elias ecoute "Autant être prêts."
 
-    noam "Prêts à quoi, exactement ?"
+    noam surpris "Prêts à quoi, exactement ?"
 
-    elias "Autant se préparer à encaisser ce qu'on va nous balancer."
+    elias neutre "Autant se préparer à encaisser ce qu'on va nous balancer."
 
     pause 0.6
 
-    hide iris
-    hide elen
-    $ showP("sael", "mefiant", 0.60)
 
-    sael "Hm."
-    sael "C’est fou comme ça me rassure."
-    sael "J’adore commencer mes matinées avec une menace inconnue."
-
-    hide ryn
-    $ showP("nyra", "taquin", 0.95)
-
-    nyra "Pareil."
-    nyra "Ça me rappelle le boulot."
-    nyra "Sauf qu’ici, on n’est même pas payés."
+    sael raison "Hm."
+    sael mefiant "C’est fou comme ça me rassure."
+    sael desaccord "J’adore commencer mes matinées avec une menace inconnue."
 
 
-    hide sael
-    $ showP("iris", "desaccord", 0.50)
-    iris "Et en plus on peut même pas se barrer. Génial."
+    nyra raison "Pareil."
+    nyra taquin "Ça me rappelle le boulot."
+    nyra raison "Sauf qu’ici, on n’est même pas payés."
+
+
+    iris colere "Et en plus on peut même pas se barrer. Génial."
 
     nyra raison "Hé."
     nyra raison "Ce ne sont que des détails."
@@ -412,74 +410,98 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     pause 0.6
 
     "La porte s'ouvre une première fois."
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("mara", "neutre", 0.01),
+        ("noam", "reflexion", 0.13),
+        ("iris", "colere", 0.49),
+        ("tomas", "panne", 0.60),
+        ("elen", "content", 0.72),
+        ("nyra", "raison", 0.96),
+        ("ryn", "reflechit", 1.08),
+        ("sael", "desaccord", 1.20),
+    ])
 
-    hide nyra
-    $ showP("mara", "neutre", 0.90)
 
     play sound sfx_door
     mara taquin "Vous jacassez grave, là."
-    mara "On vous entend depuis le couloir, sérieux."
-    mara "De toute façon ça changera que dalle à ce qui va tomber."
+    mara neutre "On vous entend depuis le couloir, sérieux."
+    mara taquin "De toute façon ça changera que dalle à ce qui va tomber."
 
-    hide iris
-    $ showP("elen", "joie", 0.40)
 
-    elen "Oh Mara !"
-    elen "Viens t’asseoir avec nous, allez ! Ça serait trop cool."
+    elen content "Oh Mara !"
+    elen joie "Viens t’asseoir avec nous, allez ! Ça serait trop cool."
 
-    mara "Je suis très bien là."
-    mara "Je préfère voir tout le monde, histoire de voir vos tronches lors de l'annonce."
+    mara neutre "Je suis très bien là."
+    mara taquin "Je préfère voir tout le monde, histoire de voir vos tronches lors de l'annonce."
 
     pause 0.4
 
-    $ showP("ryn", "desaccord", 0.80)
 
-    ryn "Tu vois."
-    ryn "Même elle a compris."
-    ryn "Observer, noter, attendre que ça pète."
+    ryn neutre "Tu vois."
+    ryn reflechit "Même elle a compris."
+    ryn neutre "Observer, noter, attendre que ça pète."
 
-    mara "Non mais attends, c’est pas ce que j’ai raconté."
+    mara colere "Non mais attends, c’est pas ce que j’ai raconté."
 
-    ryn "C’est ce que j’ai entendu."
+    ryn reflechit "C’est ce que j’ai entendu."
 
     pause 0.6
 
     play sound sfx_door
 
-    hide elias
-    $ showP("lysa", "triste", 0.10)
 
-    lysa "… Désolée pour le retard."
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("mara", "colere", 0.01),
+        ("noam", "reflexion", 0.13),
+        ("lysa", "triste", 0.25),
+        ("iris", "colere", 0.49),
+        ("tomas", "panne", 0.60),
+        ("elen", "joie", 0.72),
+        ("nyra", "raison", 0.96),
+        ("ryn", "reflechit", 1.08),
+        ("sael", "desaccord", 1.20),
+    ])
 
-    hide elen
-    hide ryn
-    $ showP("tomas", "hesitation", 0.60)
+    lysa blase "… Désolée pour le retard."
 
-    tomas "N-Non non !"
-    tomas "Enfin… y a pas de problème. Vraiment. Aucun problème."
 
-    lysa "Je n’avais pas envie de revenir ici."
-    lysa "Pas tout de suite."
+    tomas inquiet "N-Non non !"
+    tomas hesitation "Enfin… y a pas de problème. Vraiment. Aucun problème."
 
-    noam "Je comprends."
+    lysa reflexion "Je n’avais pas envie de revenir ici."
+    lysa blase "Pas tout de suite."
+
+    noam reflexion "Je comprends."
 
     pause 0.4
 
     play sound sfx_door
 
-    hide mara
-    $ showP("kael", "neutre", 0.86)
 
-    kael "…"
-    kael "Tout le monde est là ?"
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("mara", "colere", 0.01),
+        ("noam", "reflexion", 0.13),
+        ("lysa", "blase", 0.25),
+        ("iris", "colere", 0.49),
+        ("tomas", "hesitation", 0.60),
+        ("elen", "joie", 0.72),
+        ("kael", "neutre", 0.84),
+        ("nyra", "raison", 0.96),
+        ("ryn", "reflechit", 1.08),
+        ("sael", "desaccord", 1.20),
+    ])
+
+    kael reflechit "…"
+    kael neutre "Tout le monde est là ?"
     kami "On est presque 9h."
 
-    hide tomas
-    $ showP("iris", "neutre", 0.50)
-    iris "Franchement, j’ai la flemme de compter."
-    iris "On va dire que oui, point barre. Ça vous va ?"
+    iris colere "Franchement, j’ai la flemme de compter."
+    iris desaccord "On va dire que oui, point barre. Ça vous va ?"
 
-    kael "Bien."
+    kael reflechit "Bien."
 
     "Et puis ce son, le même que ce matin retentit à nouveau."
     play sound sfx_announce
@@ -518,8 +540,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Ça vous rend… délicieusement prévisible."
 
     $ bc_show("ryn", "surpris", px=-70, py=-50, pz=0.85)
-    ryn "Bla bla bla ..."
-    ryn "Elle va y venir ou pas ?"
+    ryn neutre "Bla bla bla ..."
+    ryn neutre "Elle va y venir ou pas ?"
     $ bc_hide()
 
     kami "Oh."
@@ -534,7 +556,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Le premier vote du Conclave a été tiré au sort."
 
     $ bc_show("tomas", "surpris", px=-70, py=-50, pz=0.85)
-    tomas "D-Déjà ?!"
+    tomas surpris "D-Déjà ?!"
     $ bc_hide()
 
     kami "Oui."
@@ -562,18 +584,18 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     pause 0.8
 
     $ bc_show("sael", "surpris", px=-70, py=-50, pz=0.85)
-    sael "C'est honnêtement pas si mal."
+    sael triste "C'est honnêtement pas si mal."
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra "Hé."
-    nyra "C’est mieux que ‘qui on sacrifie en premier’, non ?"
+    nyra taquin "Hé."
+    nyra taquin "C’est mieux que ‘qui on sacrifie en premier’, non ?"
 
     $ bc_show("iris", "triste", px=-70, py=-50, pz=0.85)
-    iris "Ne dis pas ça. S’il te plaît. Ne. Dis. Pas. Ça."
+    iris colere "Ne dis pas ça. S’il te plaît. Ne. Dis. Pas. Ça."
 
     $ bc_show("nyra", "sourire", px=-70, py=-50, pz=0.85)
-    nyra "Quoi ?"
-    nyra "Je pose la question."
+    nyra surpris "Quoi ?"
+    nyra reflexion "Je pose la question."
     $ bc_hide()
 
     pause 0.6
@@ -604,8 +626,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Je rappelle que le vote devra être unanime."
 
     $ bc_show("elen", "determine", px=-70, py=-50, pz=0.85)
-    elen "Unanime… genre vraiment tout le monde doit être d’accord ?"
-    elen "Genre 100%% des voix ? Wow, c’est hardcore comme condition…"
+    elen joie "Unanime… genre vraiment tout le monde doit être d’accord ?"
+    elen surpris "Genre 100%% des voix ? Wow, c’est hardcore comme condition…"
     $ bc_hide()
 
     kami "Exactement. Enfin presque."
@@ -626,42 +648,45 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
 
-    $ showP("tomas", "inquiet", 0.10)
 
-    tomas "…"
-    tomas "C’est… c’est sérieux, là."
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("mara", "neutre", 0.01),
+        ("noam", "reflexion", 0.13),
+        ("lysa", "blase", 0.25),
+        ("iris", "colere", 0.49),
+        ("tomas", "inquiet", 0.60),
+        ("elen", "inquiet", 0.72),
+        ("kael", "neutre", 0.84),
+        ("nyra", "raison", 0.96),
+        ("ryn", "determine", 1.08),
+        ("sael", "mefiant", 1.20),
+    ])
 
-    $ showP("iris", "colere", 0.50)
-    iris "Non."
-    iris "C’est pire, on a même pas le temps de réfléchir."
+    tomas hesitation "…"
+    tomas inquiet "C’est… c’est sérieux, là."
 
-    $ showP("ryn", "determine", 0.86)
-    ryn "Parfait."
-    ryn "Enfin ça commence."
+    iris desaccord "Non."
+    iris colere "C’est pire, on a même pas le temps de réfléchir."
 
-    hide tomas
-    $ showP("elen", "inquiet", 0.15)
+    ryn neutre "Parfait."
+    ryn reflechit "Enfin ça commence."
 
-    elen "Et si on essayait d’en parler calmement tous ensemble ?"
-    elen "Juste… sans s’énerver..."
 
-    hide ryn
-    $ showP("sael", "mefiant", 0.70)
+    elen joie "Et si on essayait d’en parler calmement tous ensemble ?"
+    elen content "Juste… sans s’énerver..."
 
-    sael "Adorable."
-    sael "Vraiment."
 
-    hide iris
-    $ showP("mara", "neutre", 0.60)
+    sael raison "Adorable."
+    sael mefiant "Vraiment."
 
-    mara "Ça va laisser des marques."
-    mara "Et pas seulement sur le papier, hein."
 
-    hide sael
-    $ showP("kael", "neutre", 0.86)
+    mara taquin "Ça va laisser des marques."
+    mara fatigue "Et pas seulement sur le papier, hein."
 
-    kael "Oui."
-    kael "Et pas seulement économiques."
+
+    kael reflechit "Oui."
+    kael colere "Et pas seulement économiques."
 
     pause 0.6
 
@@ -669,33 +694,42 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     "Et puis la porte claque une dernière fois."
     "Tout le monde se retourne pour la regarder"
 
-    hide elen
-    hide mara
-    hide kael
-    $ showP("julian", "taquin", 0.50)
 
-    julian "Salut la team !"
-    julian "J’ai loupé quoi ?"
+    $ showGroup([
+        ("elias", "rire", -0.11),
+        ("mara", "fatigue", 0.01),
+        ("noam", "reflexion", 0.13),
+        ("lysa", "blase", 0.25),
+        ("julian", "taquin", 0.37),
+        ("iris", "colere", 0.49),
+        ("tomas", "inquiet", 0.60),
+        ("elen", "content", 0.72),
+        ("kael", "colere", 0.84),
+        ("nyra", "taquin", 0.96),
+        ("ryn", "reflechit", 1.08),
+        ("sael", "mefiant", 1.20),
+    ])
 
-    $ showP("nyra", "taquin", 0.10)
+    julian rire "Salut la team !"
+    julian surpris "J’ai loupé quoi ?"
 
-    nyra "Boooh trois fois rien."
-    nyra "Juste l'annonce du vote."
-    nyra "Tu sais, celui qui aura lieu demain."
-    nyra "La joie. Quoi."
 
-    julian "Oh putain…"
-    julian "J’adore quand ça démarre direct en mode drama. Ça sent les bonnes histoires."
+    nyra raison "Boooh trois fois rien."
+    nyra taquin "Juste l'annonce du vote."
+    nyra raison "Tu sais, celui qui aura lieu demain."
+    nyra surpris "La joie. Quoi."
 
-    noam "Bienvenue au Conclave."
-    noam "Je crois bien que c'est notre quotidien désormais."
+    julian panne "Oh putain…"
+    julian taquin "J’adore quand ça démarre direct en mode drama. Ça sent les bonnes histoires."
+
+    noam colere "Bienvenue au Conclave."
+    noam reflexion "Je crois bien que c'est notre quotidien désormais."
 
     pause 0.6
 
-    julian "Et sinon ? On en est où là, vraiment ?"
+    julian sourire "Et sinon ? On en est où là, vraiment ?"
 
-    $ showP("iris", "desaccord", 0.75)
-    iris "Non mais franchement Julian, tu peux pas débarquer ici la bouche en coeur et demander à ce qu'on te fasse un récap."
+    iris colere "Non mais franchement Julian, tu peux pas débarquer ici la bouche en coeur et demander à ce qu'on te fasse un récap."
 
     julian decu "Et pourquoi pas, hein ?"
     julian decu "Tu pourrais le dire à ton meilleur pote, non ? Allez, fais-moi plaisir."
@@ -720,11 +754,10 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     julian taquin "J’ai toujours eu un sixième sens…"
 
-    $ showP("elias", "rire", 0.20)
 
-    elias "Quel beau parleur, tiens !"
-    elias "Y a des écrans partout ici."
-    elias "A tous les coups, la diffusion a tourné partout."
+    elias ecoute "Quel beau parleur, tiens !"
+    elias neutre "Y a des écrans partout ici."
+    elias ecoute "A tous les coups, la diffusion a tourné partout."
 
     julian panne "…"
     julian decu "Sérieux Elias ? Fallait vraiment me piquer mon moment de gloire comme ça ?"
@@ -749,68 +782,55 @@ label _2_CAFETERIA_POST_ANNONCE:
     "Mais parce qu'elle ressemble presque à une respiration."
     "Une parenthèse, un espoir que tout ne dégénèrera pas."
 
-    hide nyra
-    hide elias
-    $ showP("kael", "neutre", 0.15)
-    kael "Sur le papier, c’est simple."
-    kael "Autoriser les échanges."
-    kael "On pourrait presque dire que ce n’est pas une révolution."
+    kael reflechit "Sur le papier, c’est simple."
+    kael neutre "Autoriser les échanges."
+    kael reflechit "On pourrait presque dire que ce n’est pas une révolution."
 
-    hide julian
-    $ showP("mara", "neutre", 0.50)
     mara doute "Ça devient louche là."
-    mara "Kami fait jamais rien pour nous faire kiffer."
+    mara taquin "Kami fait jamais rien pour nous faire kiffer."
 
-    hide iris
-    $ showP("sael", "mefiant", 0.86)
-    sael "Ou elle sait qu’on a besoin d’un os à ronger."
-    sael "Pour calmer la panique et la colère de la foule."
+    sael raison "Ou elle sait qu’on a besoin d’un os à ronger."
+    sael mefiant "Pour calmer la panique et la colère de la foule."
 
-    kael "Ce n'est pas Kami qui a décidé de cet amendement. C'est l'un d'entre nous."
-    kael "Il y a un risque qu'il y ait un piège."
-    kael "La question, c’est de savoir où il est."
+    kael neutre "Ce n'est pas Kami qui a décidé de cet amendement. C'est l'un d'entre nous."
+    kael inquiet "Il y a un risque qu'il y ait un piège."
+    kael reflechit "La question, c’est de savoir où il est."
 
-    mara "Le piège, c’est nous."
-    mara "On a nos districts, nos besoins, nos secrets."
-    mara "Et nos égos, tant qu’à faire."
+    mara neutre "Le piège, c’est nous."
+    mara taquin "On a nos districts, nos besoins, nos secrets."
+    mara neutre "Et nos égos, tant qu’à faire."
 
-    hide sael
-    $ showP("nyra", "raison", 0.86)
 
-    nyra "Je suis d’accord."
-    nyra "C’est l’amendement le moins explosif qu’on pouvait se prendre."
-    nyra "C’est presque… consensuel."
+    nyra taquin "Je suis d’accord."
+    nyra raison "C’est l’amendement le moins explosif qu’on pouvait se prendre."
+    nyra colere "C’est presque… consensuel."
 
-    kael "Ce qui n’est pas une bonne nouvelle."
+    kael neutre "Ce qui n’est pas une bonne nouvelle."
 
-    nyra "Tu veux dire que c’est trop beau ?"
+    nyra taquin "Tu veux dire que c’est trop beau ?"
 
-    hide mara
-    $ showP("iris", "intervention", 0.50)
 
-    iris "Réfléchis deux secondes, putain."
-    iris "Nous filer l’espoir que tout va bien se passer pour qu’on baisse notre garde…"
-    iris "C’est du Kami tout craché, ça ! Nous faire espérer deux secondes pour mieux nous baiser après."
+    iris colere "Réfléchis deux secondes, putain."
+    iris desaccord "Nous filer l’espoir que tout va bien se passer pour qu’on baisse notre garde…"
+    iris colere "C’est du Kami tout craché, ça ! Nous faire espérer deux secondes pour mieux nous baiser après."
 
-    $ showP("mara", "neutre", 0.90)
     mara taquin "‘Baiser’, hein ? T’as l’air presque impatiente que ça arrive."
 
-    iris "H-Hein ?! Mais va te faire foutre, Mara !"
+    iris surpris "H-Hein ?! Mais va te faire foutre, Mara !"
 
     mara sourire "Oh je vois que Madame a du vocabulaire."
     mara sourire "Nan merci, vas-y découvre ça en solo, je te regarde faire, hein !"
 
-    $ showP("iris", "desaccord", 0.50)
-    iris "Sérieusement…"
-    iris "Et ça veut dire qu’on va devoir causer de tout le reste ensemble."
-    iris "L’enfer. Littéralement l’enfer sur Terre."
+    iris colere "Sérieusement…"
+    iris desaccord "Et ça veut dire qu’on va devoir causer de tout le reste ensemble."
+    iris colere "L’enfer. Littéralement l’enfer sur Terre."
 
     nyra taquin "Tu dis ça comme si c’était la première fois."
 
-    iris "La première fois que j'ai à débattre de ce qui pourrait causer la fin du monde ? Ouai c'est ma première fois.."
+    iris desaccord "La première fois que j'ai à débattre de ce qui pourrait causer la fin du monde ? Ouai c'est ma première fois.."
 
-    kael "On ne peut pas vraiment esquiver."
-    kael "Demain, il va falloir faire le bon choix et voter."
+    kael reflechit "On ne peut pas vraiment esquiver."
+    kael neutre "Demain, il va falloir faire le bon choix et voter."
 
     menu:
         "Suivre la discussion."
@@ -824,240 +844,201 @@ label _2_CAFETERIA_POST_ANNONCE:
             "Une voix contre suffira."
             "Ce détail change tout."
 
-    hide nyra
-    $ showP("elen", "inquiet", 0.86)
 
-    elen "On peut essayer d’être d’accord, non ?"
-    elen "Juste une fois. Rien qu’une."
-    elen "Pour pas leur filer exactement ce qu’ils attendent de nous."
+    elen joie "On peut essayer d’être d’accord, non ?"
+    elen content "Juste une fois. Rien qu’une."
+    elen joie "Pour pas leur filer exactement ce qu’ils attendent de nous."
 
-    iris "Ils veulent du spectacle. Du vrai drama de téléréalité."
+    iris colere "Ils veulent du spectacle. Du vrai drama de téléréalité."
 
-    elen "Franchement… la proposition a pas l’air si pourrie que ça, si ?"
-    elen "Je veux dire… y a claiiirement pire, non ?"
+    elen content "Franchement… la proposition a pas l’air si pourrie que ça, si ?"
+    elen joie "Je veux dire… y a claiiirement pire, non ?"
 
     "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
 
-    hide elen
-    $ showP("sael", "mefiant", 0.86)
 
-    sael "Touchant."
-    sael "Mais on verra demain."
+    sael raison "Touchant."
+    sael mefiant "Mais on verra demain."
 
-    kael "Demain, c’est tard."
-    kael "On doit se parler aujourd’hui."
+    kael reflechit "Demain, c’est tard."
+    kael neutre "On doit se parler aujourd’hui."
 
-    sael "Tu veux dire quoi ?"
-    sael "Qu’on fasse une réunion ?"
+    sael surpris "Tu veux dire quoi ?"
+    sael mefiant "Qu’on fasse une réunion ?"
 
-    iris "Mais c’est pas déjà ce qu’on fait là depuis le début ou quoi ?!"
+    iris surpris "Mais c’est pas déjà ce qu’on fait là depuis le début ou quoi ?!"
 
-    hide iris
-    $ showP("tomas", "reflechit", 0.50)
 
-    tomas "Je…"
-    tomas "Je pense que c’est important."
-    tomas "Parce que ça concerne nos districts. Directement."
-    tomas "Et si on peut faire circuler des choses entre nous…"
-    tomas "Ben… on peut aussi s’entraider, non ?"
+    tomas hesitation "Je…"
+    tomas reflechit "Je pense que c’est important."
+    tomas colere "Parce que ça concerne nos districts. Directement."
+    tomas hesitation "Et si on peut faire circuler des choses entre nous…"
+    tomas inquiet "Ben… on peut aussi s’entraider, non ?"
 
-    kael "Tu penses à quoi ?"
+    kael surpris "Tu penses à quoi ?"
 
-    tomas "Aux médicaments."
-    tomas "Aux matériaux de construction, ou… ce genre de choses."
-    tomas "Pourquoi pas aux gens, aussi. À un moment donné."
+    tomas hesitation "Aux médicaments."
+    tomas colere "Aux matériaux de construction, ou… ce genre de choses."
+    tomas surpris "Pourquoi pas aux gens, aussi. À un moment donné."
 
-    sael "Les gens, c’est autre chose."
-    sael "La proposition parlait des échanges dans les districts, pas d'autoriser les gens à changer de district."
+    sael raison "Les gens, c’est autre chose."
+    sael mefiant "La proposition parlait des échanges dans les districts, pas d'autoriser les gens à changer de district."
 
-    tomas "Je sais…"
-    tomas "M-Mais si les échanges deviennent autorisés… alors peut-être que…"
+    tomas hesitation "Je sais…"
+    tomas inquiet "M-Mais si les échanges deviennent autorisés… alors peut-être que…"
     
-    hide sael
-    $ showP("mara", "neutre", 0.86)
 
-    mara "C’est mignon tout ça, mais qui va surveiller ces petits échanges ?"
+    mara taquin "C’est mignon tout ça, mais qui va surveiller ces petits échanges ?"
 
-    tomas "On n’a pas les détails."
+    tomas hesitation "On n’a pas les détails."
 
-    kael "Justement."
-    kael "On devra décider sans."
+    kael reflechit "Justement."
+    kael neutre "On devra décider sans."
 
-    mara "Décider à l’aveugle, ou presque."
-    mara "J’adore quand on improvise avec nos vies."
+    mara neutre "Décider à l’aveugle, ou presque."
+    mara taquin "J’adore quand on improvise avec nos vies."
 
-    tomas "Du coup… on doit se faire confiance. Voilà."
+    tomas colere "Du coup… on doit se faire confiance. Voilà."
 
-    hide tomas
-    $ showP("nyra", "raison", 0.50)
 
-    nyra "On pourrait commencer par lister ce qu’on sait."
-    nyra "Et ce qu’on ignore."
-    nyra "Parce que là, on se jette des impressions sans grande certitude."
-    nyra "C'est pas comme ça qu'on avancera ..."
+    nyra taquin "On pourrait commencer par lister ce qu’on sait."
+    nyra raison "Et ce qu’on ignore."
+    nyra taquin "Parce que là, on se jette des impressions sans grande certitude."
+    nyra raison "C'est pas comme ça qu'on avancera ..."
 
     mara taquin "T’as de quoi pondre un roman sur tout ce qu’on sait pas ?"
 
-    nyra "Je veux une base."
+    nyra taquin "Je veux une base."
 
-    kael "Elle a raison."
-    kael "Sinon on va se bouffer."
+    kael reflechit "Elle a raison."
+    kael neutre "Sinon on va se bouffer."
 
-    hide mara
-    $ showP("elen", "inquiet", 0.86)
 
-    elen "Je peux prendre des notes si vous voulez."
-    elen "Ça me calme de tout noter. Ça donne l’impression qu’on bosse vraiment sur un truc important…"
-    elen "… et que c’est pas juste du vent."
+    elen joie "Je peux prendre des notes si vous voulez."
+    elen content "Ça me calme de tout noter. Ça donne l’impression qu’on bosse vraiment sur un truc important…"
+    elen joie "… et que c’est pas juste du vent."
 
-    nyra "Tu vois, c’est utile."
+    nyra raison "Tu vois, c’est utile."
 
-    elen "Je sais pas… ça me rassure, c’est tout."
+    elen reflexion "Je sais pas… ça me rassure, c’est tout."
 
-    hide kael
-    $ showP("iris", "neutre", 0.15)
 
-    iris "Bon. On a trois priorités, ok ?"
-    iris "Un : on veut pas se faire baiser."
-    iris "Deux : on veut pas trahir nos districts."
-    iris "Et trois : si possible, on évite de finir par se détester tous. Ambitieux, je sais."
+    iris colere "Bon. On a trois priorités, ok ?"
+    iris desaccord "Un : on veut pas se faire baiser."
+    iris colere "Deux : on veut pas trahir nos districts."
+    iris desaccord "Et trois : si possible, on évite de finir par se détester tous. Ambitieux, je sais."
 
-    nyra "T’as pas oublié la lune dans ta liste aussi ?"
+    nyra taquin "T’as pas oublié la lune dans ta liste aussi ?"
 
-    iris "Sacrément drôle, ouais. À mourir de rire."
+    iris inquiet "Sacrément drôle, ouais. À mourir de rire."
 
-    elen "On n’a qu’une journée pour se décider."
-    elen "Une seule. C’est hyper court quand on y pense…"
+    elen joie "On n’a qu’une journée pour se décider."
+    elen triste "Une seule. C’est hyper court quand on y pense…"
 
-    hide elen
-    hide nyra
-    $ showP("julian", "taquin", 0.86)
 
-    julian "Bon, on fait quoi concrètement là ?"
-    julian "Parce que tourner en rond c’est mignon cinq minutes, mais après ça gave."
+    julian surpris "Bon, on fait quoi concrètement là ?"
+    julian taquin "Parce que tourner en rond c’est mignon cinq minutes, mais après ça gave."
 
-    iris "Tu proposes quoi, là, concrètement ? Vas-y, je t’écoute."
+    iris surpris "Tu proposes quoi, là, concrètement ? Vas-y, je t’écoute."
 
-    julian "Faut un vrai plan, là."
-    julian "Ou alors, on y réfléchit et on met en commun demain."
-    julian "Chacun bosse son bout dans son coin, et demain on se retrouve avec du lourd."
+    julian sourire "Faut un vrai plan, là."
+    julian taquin "Ou alors, on y réfléchit et on met en commun demain."
+    julian sourire "Chacun bosse son bout dans son coin, et demain on se retrouve avec du lourd."
 
-    iris "Dire qu’on réfléchit, c’est super facile à balancer."
-    iris "Le faire vraiment, par contre… c’est une autre paire de manches."
+    iris colere "Dire qu’on réfléchit, c’est super facile à balancer."
+    iris desaccord "Le faire vraiment, par contre… c’est une autre paire de manches."
 
-    julian "T’as peur de qui, là, tout de suite ? Dis."
+    julian peur "T’as peur de qui, là, tout de suite ? Dis."
 
-    iris "Des gens qu'on risque de tuer ..."
+    iris inquiet "Des gens qu'on risque de tuer ..."
 
-    hide julian
-    $ showP("sael", "mefiant", 0.86)
 
-    sael "Tout ce qu’on partage ici, ça va nous revenir dans la gueule. Toujours."
-    sael "Toujours."
+    sael raison "Tout ce qu’on partage ici, ça va nous revenir dans la gueule. Toujours."
+    sael mefiant "Toujours."
 
-    iris "Et si on refuse ?"
+    iris colere "Et si on refuse ?"
 
-    sael "Il suffit d'une voix contre pour que ça parte en couille."
-    sael "On laisse ceux qui veulent se vendre le faire."
+    sael desaccord "Il suffit d'une voix contre pour que ça parte en couille."
+    sael mefiant "On laisse ceux qui veulent se vendre le faire."
 
-    iris "Tu dis ça comme si c’était simple."
+    iris desaccord "Tu dis ça comme si c’était simple."
 
-    sael "Rien n’est simple."
-    sael "Mais refuser, c’est aussi un choix. Un choix qui a des conséquences."
+    sael raison "Rien n’est simple."
+    sael desaccord "Mais refuser, c’est aussi un choix. Un choix qui a des conséquences."
 
-    hide sael
-    $ showP("mara", "neutre", 0.86)
 
     mara agace "On va pas tous voter pareil, soyons sérieux."
-    mara "Y a des districts qui ont rien à voir entre eux."
-    mara "Nos vies, nos galères, nos habitudes… tout est différent."
-    mara "Et d’un coup on nous demande de tomber d’accord ?!"
-    mara "Dans ce bordel ? Sérieux ?!"
+    mara taquin "Y a des districts qui ont rien à voir entre eux."
+    mara neutre "Nos vies, nos galères, nos habitudes… tout est différent."
+    mara taquin "Et d’un coup on nous demande de tomber d’accord ?!"
+    mara neutre "Dans ce bordel ? Sérieux ?!"
 
-    $ showP("nyra", "neutre", 0.55)
-    nyra "Donc on doit parler d’inégalités."
+    nyra reflexion "Donc on doit parler d’inégalités."
 
-    mara "Ouais exactement."
-    mara "Et on peut même pas checker avec nos potes de district."
+    mara taquin "Ouais exactement."
+    mara neutre "Et on peut même pas checker avec nos potes de district."
 
-    nyra "Ça va être beau."
+    nyra taquin "Ça va être beau."
 
-    hide iris
-    $ showP("tomas", "inquiet", 0.15)
 
-    tomas "On est obligés de parler de nos districts ? Genre… en détail ?"
-    tomas "E-Enfin je veux dire, bien sûr qu’on veut les défendre, mais…"
+    tomas hesitation "On est obligés de parler de nos districts ? Genre… en détail ?"
+    tomas inquiet "E-Enfin je veux dire, bien sûr qu’on veut les défendre, mais…"
     
-    hide mara
-    $ showP("elen", "triste", 0.86)
 
-    elen "On a tous la trouille de choisir."
-    elen "Mais en vrai… on choisit déjà. À chaque fois qu’on parle, la vie n'est qu'une suite de choix !"
+    elen joie "On a tous la trouille de choisir."
+    elen content "Mais en vrai… on choisit déjà. À chaque fois qu’on parle, la vie n'est qu'une suite de choix !"
 
-    tomas "Je sais."
-    tomas "Je sais, oui."
+    tomas hesitation "Je sais."
+    tomas inquiet "Je sais, oui."
 
-    hide tomas
-    $ showP("kael", "neutre", 0.15)
 
-    kael "Si on ne se parle pas ici, on va se parler derrière."
-    kael "Et là, ça devient dangereux."
+    kael reflechit "Si on ne se parle pas ici, on va se parler derrière."
+    kael inquiet "Et là, ça devient dangereux."
 
-    hide kael
-    $ showP("iris", "neutre", 0.15)
 
-    iris "Je déteste quand c’est raisonnable."
+    iris colere "Je déteste quand c’est raisonnable."
 
-    nyra "Tu préfères quand c’est violent ?"
+    nyra raison "Tu préfères quand c’est violent ?"
 
-    iris "Je préfère quand je comprends au moins ce qu’on nous demande de faire, merci."
+    iris desaccord "Je préfère quand je comprends au moins ce qu’on nous demande de faire, merci."
 
-    nyra "Alors on va en parler."
+    nyra taquin "Alors on va en parler."
 
-    hide elen
-    $ showP("julian", "reflexion", 0.86)
 
-    julian "Je peux résumer vite fait pour qu’on soit tous synchro ?"
-    julian "On s’organise."
-    julian "On pose clairement ce qu’on peut apporter."
-    julian "Et on se juge pas. Promis, je commence."
+    julian taquin "Je peux résumer vite fait pour qu’on soit tous synchro ?"
+    julian sourire "On s’organise."
+    julian taquin "On pose clairement ce qu’on peut apporter."
+    julian sourire "Et on se juge pas. Promis, je commence."
 
-    iris "Ça va être le plus dur. De loin."
+    iris colere "Ça va être le plus dur. De loin."
 
-    julian "Ouais, je sais."
+    julian taquin "Ouais, je sais."
 
-    hide julian
-    $ showP("mara", "neutre", 0.86)
 
     mara doute "Et pendant qu’on papote…"
     mara doute "Kami nous mate."
     mara taquin "Elle grave tout : qui parle, qui propose quoi, qui va péter les plombs en premier."
 
-    iris "Alors on craque pas. Personne craque. Ok ?"
+    iris desaccord "Alors on craque pas. Personne craque. Ok ?"
 
-    mara "C'est facile à dire."
-    mara "Surtout quand tout le monde regarde."
+    mara neutre "C'est facile à dire."
+    mara taquin "Surtout quand tout le monde regarde."
 
-    hide mara
-    $ showP("tomas", "inquiet", 0.86)
 
-    tomas "Et si quelqu’un refuse ?"
+    tomas hesitation "Et si quelqu’un refuse ?"
 
-    iris "On va obliger personne à voter pour. Personne."
+    iris colere "On va obliger personne à voter pour. Personne."
 
-    hide nyra
-    $ showP("kael", "reflechit", 0.40)
-    kael "Mais on lui laisse une place."
+    kael neutre "Mais on lui laisse une place."
 
-    tomas "D-De toute façon on ne sait même pas qui votera contre, si ?."
+    tomas colere "D-De toute façon on ne sait même pas qui votera contre, si ?."
 
     "Le bruit reprend doucement."
     "Des chaises raclent, des plateaux s’éloignent."
     "Tout le monde retourne peu à peu à ses occupations."
 
-    hide iris
-    hide kael
-    hide tomas
+
+    $ hideGroup()
 
     "La matinée est finie, pas la tension, elle, elle reste bien présente."
     "Elle reste accrochée aux épaules."
@@ -1100,8 +1081,12 @@ label _2_APRES_MIDI:
     "Propre."
     "Trop propre."
 
-    $ showP("mara", "neutre", 0.30)
-    $ showP("sael", "mefiant", 0.70)
+
+    $ showGroup([
+        ("mara", "neutre", 0.01),
+        ("noam", "reflexion", 0.13),
+        ("sael", "mefiant", 1.20),
+    ])
 
     mara mefiant "Tu penses vraiment qu’ils vont nous laisser voter tranquilles ?"
     mara doute "Sans… orienter un peu ?"
@@ -1121,8 +1106,8 @@ label _2_APRES_MIDI:
 
     sael taquin "Si ça lâche, on saura où chercher."
 
-    hide mara
-    hide sael
+
+    $ hideGroup()
 
     "Je les laisse derrière."
     "Le couloir continue."
@@ -1146,8 +1131,11 @@ label _2_APRES_MIDI:
             "Lysa garde les bras croisés."
             "Elias cherche ses mots sans la brusquer."
 
-    $ showP("lysa", "triste", 0.30)
-    $ showP("elias", "neutre", 0.70)
+
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("lysa", "triste", 0.25),
+    ])
 
     elias ecoute "Tu devrais en discuter avec nous."
     elias ecoute "Enfin, si tu veux."
@@ -1182,8 +1170,12 @@ label _2_APRES_MIDI:
     lysa triste "Voilà."
 
     "Je m’approche."
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("noam", "inquiet", 0.13),
+        ("lysa", "triste", 0.25),
+    ])
 
-    $ showP("noam", "inquiet", 0.10)
 
     noam hesitation "Ça va ?"
 
@@ -1265,9 +1257,8 @@ label _2_APRES_MIDI:
     tuto "Un argument rangé dans la mallette apparaît dans l'onglet Prochain vote."
     tuto "Les notes ne décident pas à ta place : elles servent à préparer le vote et à relire les positions supposées."
 
-    hide lysa
-    hide elias
-    hide noam
+
+    $ hideGroup()
 
     "Elle se redresse."
     "Fais un pas."
@@ -1300,8 +1291,11 @@ label _2_SALLE_OBSERVATION:
         "Aller directement vers lui.":
             "Je ne laisse pas le silence s'installer plus longtemps."
 
-    $ showP("noam", "neutre", 0.18)
-    $ showP("kael", "neutre", 0.50)
+
+    $ showGroup([
+        ("noam", "neutre", 0.13),
+        ("kael", "neutre", 0.84),
+    ])
 
     noam neutre "Ah Kael, tu tombes bien. Je voulais te demander..."
     noam hesitation "Tu sais où on est ?"
@@ -1359,8 +1353,11 @@ label _2_SALLE_OBSERVATION:
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
-    $ showP("noam", "neutre", 0.18)
-    $ showP("kael", "neutre", 0.50)
+
+    $ showGroup([
+        ("noam", "neutre", 0.13),
+        ("kael", "neutre", 0.84),
+    ])
 
     noam neutre "Quatorze heures."
     noam inquiet "On y sera vite."
@@ -1408,14 +1405,14 @@ label _2_SALLE_OBSERVATION:
     kael inquiet "Heureusement on y est habitué, et dans toutes les salles on a des masques à oxygène au cas ou ..."
     kael inquiet "Mais ça reste très dangereux."
 
+    $ hideGroup()
+
     "Il s'éloigne de quelques pas."
 
     kael triste "Excuse moi, je vais faire un tour..."
 
     call day2_collect_vote_argument("orbite") from _call_day2_collect_vote_argument_orbite
 
-    hide kael
-    hide noam
 
     "Je reste un instant face au vide perdu dans mes pensées."
     "Je compte mes respirations."
@@ -1444,8 +1441,11 @@ label _2_GYMNASE:
     "Sa respiration est courte."
     "Elias compte à voix basse."
 
-    $ showP("iris", "determine", 0.35)
-    $ showP("elias", "neutre", 0.65)
+
+    $ showGroup([
+        ("iris", "determine", 0.49),
+        ("elias", "neutre", -0.11),
+    ])
 
     iris determine "Encore."
     iris determine "Allez. Je dois… je dois continuer."
@@ -1455,6 +1455,12 @@ label _2_GYMNASE:
     elias ecoute "Sinon tu vas te fatiguer pour rien."
 
     "Je m’approche."
+    $ showGroup([
+        ("elias", "neutre", -0.11),
+        ("noam", "hesitation", 0.13),
+        ("iris", "determine", 0.49),
+    ])
+
 
     noam hesitation "Je dérange ?"
 
@@ -1513,8 +1519,8 @@ label _2_GYMNASE:
     tuto "De plus, pratiquer ce genre d'activité permet de charger des évènements, seuls ou avec d'autres personnages."
     tuto "Ces évènements sont aléatoires et peuvent vous offrir des images... intéressantes."
 
-    noam "Un…"
-    noam "Deux…"
+    noam reflexion "Un…"
+    noam reflexion "Deux…"
 
     "Je commence à pousser les altères."
 
@@ -1554,8 +1560,8 @@ label _2_GYMNASE:
     elias ecoute "Je serai là."
     elias raison "Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?" 
 
-    hide iris
-    hide elias
+
+    $ hideGroup()
 
     "Je quitte la salle."
     "Les machines continuent de tourner."
@@ -1578,20 +1584,35 @@ label _2_CAFETERIA_SOIR:
     "Ça vient, ça repart."
     "Des silhouettes, des plateaux, des regards."
 
-    $ showP("nyra", "neutre", 0.80)
 
     "Nyra est en train de parler de sa vie."
+    $ showGroup([
+        ("noam", "hesitation", 0.13),
+        ("nyra", "neutre", 0.96),
+    ])
+
     nyra sourire "À Orbite, on mangeait souvent en décalé."
     nyra sourire "Chacun vivait vraiment à son propre rythme, comme dans dessortes de cycles."
     nyra sourire "Le silence faisait partie du travail."
 
     noam hesitation "Tu regrettes ?"
 
-    $ showP("kael", "neutre", 0.15)
+    $ showGroup([
+        ("noam", "hesitation", 0.13),
+        ("kael", "neutre", 0.84),
+        ("nyra", "sourire", 0.96),
+    ])
+
     kael neutre "Ce qui me manque moi, c’est la routine."
     kael neutre "Pas l’endroit, à vrai dire, ça fait du bien de voir autre chose."
 
-    $ showP("elen", "taquin", 0.55)
+
+    $ showGroup([
+        ("noam", "hesitation", 0.13),
+        ("kael", "neutre", 0.84),
+        ("elen", "taquin", 0.72),
+        ("nyra", "sourire", 0.96),
+    ])
 
     elen taquin "Orbite, c’était comment ?"
     elen reflexion "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
@@ -1602,11 +1623,17 @@ label _2_CAFETERIA_SOIR:
 
     nyra taquin "C'est clair !."
 
-    hide elen
-    $ showP("tomas", "neutre", 0.50)
 
-    tomas "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
-    tomas "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
+    $ showGroup([
+        ("noam", "inquiet", 0.13),
+        ("kael", "neutre", 0.84),
+        ("tomas", "neutre", 0.60),
+        ("elen", "content", 0.72),
+        ("nyra", "taquin", 0.96),
+    ])
+
+    tomas hesitation "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
+    tomas inquiet "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
 
     kael calme "Pas comme ici."
     kael calme "On réglait les choses autrement."
@@ -1631,8 +1658,6 @@ label _2_CAFETERIA_SOIR:
 
     kael neutre "Ça l’est."
 
-    hide tomas
-    $ showP("elen", "triste", 0.55)
 
     elen triste "Je me demande…"
     elen triste "… si nos familles nous regardent en ce moment."
@@ -1659,10 +1684,15 @@ label _2_CAFETERIA_SOIR:
 
     nyra raison "Pour aujourd’hui, en tout cas."
 
-    hide elen
-    hide nyra
 
-    $ showP("ryn", "neutre", 0.80)
+    $ showGroup([
+        ("noam", "inquiet", 0.13),
+        ("kael", "triste", 0.84),
+        ("tomas", "inquiet", 0.60),
+        ("elen", "inquiet", 0.72),
+        ("nyra", "raison", 0.96),
+        ("ryn", "neutre", 1.08),
+    ])
 
     ryn neutre "Vous êtes calmes."
     ryn neutre "Je m’attendais à des cris et des hurlements."
@@ -1718,7 +1748,8 @@ label _2_CAFETERIA_SOIR:
             "Je ne rajoute rien."
             "Parfois, une phrase suffit à dessiner une position."
 
-    hide ryn
+
+    $ hideGroup()
 
     "La conversation dérive."
     "D’autres se mêlent à nous."

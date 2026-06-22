@@ -134,6 +134,7 @@ init python:
         "bgm_tension_low.mp3":           "bgm_low_tension.mp3",
         "bgm_tension_phase3.mp3":        "bgm_fatal_assembly.mp3",
         "bgm_stabilisation_tension.mp3": "bgm_low_tension.mp3",
+        "bgm_tension_debate.mp3": "bgm_fatal_assembly.mp3",
     }
 
     def _kd_audio_filename_fix(fn):

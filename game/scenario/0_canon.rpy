@@ -1083,8 +1083,6 @@ label _0_EXTRACTION:
     scene bg_cg004 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg004")
 
-    $ journal_entries.append(("Jour 0 — soir", "Mon nom était sur la liste. J'aurais dû m'y attendre, et pourtant non. Lysa a l'air de quelqu'un qui cache bien ses peurs. Moi, je ne suis même pas sûr de cacher les miennes."))
-
     "La liste reste affichée là, comme un verdict indélébile."
     "Deux noms."
     "Dont le mien."
@@ -1452,9 +1450,11 @@ label _0_LABEL2_RESP_DISTRICT:
 
     $ day0_timer_init(h=0, m=57, s=5)
 
-    # show noam neutre at place("noam", 0.30) with move
-    # show noam neutre at place("lysa", 0.70) with enter_soft
-    
+    $ showGroup([
+        ("noam", "neutre", 0.70),
+        ("lysa", "neutre", 0.30),
+    ])
+
     $ showP("noam", "neutre", 0.70)
     $ showP("lysa", "neutre", 0.30)
 
@@ -1467,17 +1467,15 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Lysa."
     resp_d "Vous aussi, merci d’être restée calme."
 
-    lysa blase "... Calme ?"
-    lysa "J’ai même pas eu le temps de rentrer chez moi."
-    lysa "Donc non."
-    lysa "Et leur petit compteur en haut de l'écran n'aide pas franchement."
+    lysa blase "Calme ?"
+    lysa "On m’a arrachée de mon bureau comme on jette un dossier compromettant. J’ai à peine eu le temps de poser mon café."
+    lysa desaccord "Donc non, je ne suis pas calme."
+    lysa jaloux "Et ce charmant compte à rebours au-dessus de nos têtes rend l’expérience encore plus… intime."
 
-    "Elle me regarde."
-    "Deux secondes."
-    "Puis elle fixe le responsable."
+    "Elle me regarde deux secondes, comme si elle évaluait si j’allais être un boulet ou simplement décoratif."
 
     lysa doute "C’est lui ?"
-    lysa "... Super."
+    lysa "... Merveilleux."
 
     menu:
         "Tendre la main.":
@@ -1495,9 +1493,9 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Noam. Médiation."
     resp_d "Lysa. Coordination logistique inter-secteurs."
 
-    lysa "Oui oui, enchanté, tout ça tout ça ..."
+    lysa panne "Oui oui, enchanté, tout ça tout ça ..."
     lysa blase "Selection aleatoire, j'imagine."
-    lysa "Le genre de hasard qui connait deja ton adresse et tes heures de sommeil."
+    lysa doute "Ou du moins officiellement."
 
     think "Ok ..."
     think "On va bien se marrer avec elle ..."
@@ -1524,10 +1522,7 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Du moins c'est ce qu'on m'a dit."
     resp_d "Vous serez endormi durant le trajet par un gaz sopo-"
 
-    lysa fatigue "Donc on s’endort."
-    lysa "Et pouf."
-    lysa "Réveil ailleurs, zéro contrôle."
-    lysa "Décidément c'est la foire aux horreurs ?"
+    lysa fatigue "Donc on nous gazéifie et on nous glisse dans ces charmants cercueils high-tech."
     lysa blase "Ils auraient pu mettre de la musique douce. Quitte à nous ranger dans des boîtes."
 
     resp_d "Kami aura le contrôle. Nous, nous obéissons."
@@ -1555,6 +1550,7 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Il faut vous installer dans les caissons de transport."
     
     lysa "Mais on a encore plusieurs heures ..!"
+    lysa "…mais bien sûr, pourquoi laisser des condamnés profiter de leurs dernières respirations libres ? Ce serait presque indécent."
     
     resp_d "Je ne veux prendre aucun risque."
     resp_d "Rien ne vous interdit d'arriver plus tôt."
@@ -1563,9 +1559,9 @@ label _0_LABEL2_RESP_DISTRICT:
     "Lysa me regarde une dernière fois."
     "Elle sait bien qu'il n'est pas possible de négocier."
 
-    lysa "On se présentera correctement quand la machine nous le demandera."
-    lysa "Enfin bon. On va faire comme si on avait notre mot à dire, j’imagine."
-    lysa blase "Pas la peine de s’épuiser maintenant."
+    lysa "On se présentera correctement quand la machine nous le demandera, j’imagine."
+    lysa "Après tout, nous ne sommes déjà plus des êtres humains. Juste deux marionnettes bien habillées que Kami va faire danser en direct."
+    lysa blase "Inutile de s’épuiser à prétendre que nous avons encore le moindre choix. C’est presque reposant, quand on y pense."
 
     noam "Ça marche."
 
@@ -1631,7 +1627,11 @@ label _0_LABEL2_RESP_DISTRICT:
     "C'est plutôt agréable, et on peut s'étendre les jambes."
     
     noam "Je ne m'attendais pas à ce que ce soit... aussi confortable."
-    lysa "C'est clair ..."
+
+    lysa content "C’est clair…"
+    lysa "Au moins le matelas est confortable. On meurt toujours mieux quand on est bien allongé."
+    lysa doute "J’ai toujours trouvé que les cercueils standards manquaient cruellement de rembourrage."
+    lysa taquin "Ils ont au moins mis un peu de budget là dedans."
 
     "Une sangle se ferme."
     "Puis une autre."
@@ -1677,8 +1677,6 @@ label _0_LABEL2_RESP_DISTRICT:
 
     stop music fadeout 1.2
     pause 1.0
-
-    $ journal_entries.append({"title": "Jour 0 — caisson", "text": "Je croyais avoir seulement suivi des ordres. Mais aujourd'hui, même mes gestes les plus simples avaient une interface, une lumiere, une limite. J'ai scanne un badge, clique sur un ecran, regarde Lysa entrer dans une boite propre. Et quelque part, le systeme a appele ca mon consentement."})
 
     call end_day("1") from _call_end_day
     jump _1_CANON
