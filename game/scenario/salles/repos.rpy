@@ -185,23 +185,11 @@ label decouverte_salle_repos:
 
     think "Quoi qu'on pense de notre situation, l'attention est louable."
 
-    $ showGroup([
-        ("noam", "reflexion", 0.50),
-    ])
-
     "Un claquement sec résonne."
     "Une balle de babyfoot tape contre la paroi."
-    
-    hide noam
-    $ hideGroup()
 
     scene bg_cg007 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg007")
-    $ showGroup([
-        ("noam", "vide", 0.22),
-        ("iris", "vide", 0.50),
-        ("julian", "vide", 0.78),
-    ])
     
     "Il y a de l'animation dans la pièce."
     "Une animation difficile à rater."

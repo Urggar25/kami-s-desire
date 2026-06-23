@@ -2,7 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/scenario/6_0_1.rpy", line 562: Line with id 1e43db06 appears twice. The other line is game/scenario/15_0_1_1_0.rpy:536
+File "game/scenario/6_0_1.rpy", line 415: Line with id 1e7097cc appears twice. The other line is game/scenario/0_canon.rpy:1346
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Jun 15 15:09:51 2026
+Mon Jun 22 20:39:41 2026

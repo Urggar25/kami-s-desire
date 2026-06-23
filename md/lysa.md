@@ -60,19 +60,6 @@ Depuis : elle ne rejoint plus rien. Elle observe. Elle commente. Elle attend que
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Lysa arrive au Conclave avec une thèse : ça ne servira à rien, les votes ne changeront rien, tout ça est du théâtre pour Kami. Elle a probablement raison sur plusieurs points.
-
-Le problème : elle commence à envier quelqu'un.
-
-- **Jours 1–8 :** Elle cartographie les dynamiques, démonte les premières illusions collectives, installe sa réputation. Les autres apprennent vite à ne pas lui présenter leurs espoirs.
-- **Jours 9–16 :** Elle observe Noam. Elle le lit facilement — trop facilement. Ça l'agace. Il fuit, elle voit exactement pourquoi, et une partie d'elle reconnaît quelque chose qu'elle ne veut pas nommer.
-- **Jours 17–24 :** Elle dit quelque chose de cruel à quelqu'un qui ne le méritait pas — ou pas à ce degré-là. Le résultat la force à se regarder en face. Elle ne s'effondre pas. Mais elle ne peut plus prétendre que son cynisme est de la lucidité pure.
-- **Jours 25–30 :** Elle réalise qu'elle envie quelqu'un — quelqu'un qui croit encore, qui risque encore, qui souffre de le faire. Cette envie la dégoûte. Elle n'est pas résolue à la fin. Mais elle ne peut plus faire semblant qu'elle est au-dessus de tout ça.
-
----
-
 ## FAÇON DE PARLER
 
 ### Posture énonciative

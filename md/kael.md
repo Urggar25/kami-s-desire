@@ -69,19 +69,6 @@ Si quelqu'un d'autre lui demande de l'aide — et mérite sa confiance — il ai
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Kael arrive avec un objectif simple : ne rien faire qui mette Orbite en danger. Ne pas se faire remarquer. Ne pas prendre de positions clivantes. Survivre trente jours et rentrer.
-
-Le Conclave ne lui laisse pas cette option.
-
-- **Jours 1–12 :** Silence stratégique. Il observe, collecte des informations, vote prudemment sur ce qui ne concerne pas directement Orbite. Les autres le voient comme neutre.
-- **Jours 13–22 :** Il commence à interagir — pas par choix, par nécessité. Quelqu'un a besoin d'aide technique. Il aide. Une connexion se crée malgré lui.
-- **Jours 23–28 :** Le vote arrive. Quelque chose sur lequel se positionner va directement à l'encontre de la sécurité d'Orbite. Voter dans un sens : risque concret sur la base. Voter dans l'autre : trahir ce en quoi il croit — ou ce que les autres attendent de lui.
-- **Jours 29–30 :** Il sort du silence. Pas un discours — une phrase. Claire, définitive, choisie. Il a mis vingt-huit jours à la formuler.
-
----
-
 ## FAÇON DE PARLER
 
 ### Rythme

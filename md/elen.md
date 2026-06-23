@@ -79,20 +79,6 @@ Les autres mettent du temps à le remarquer. Puis ils ne peuvent plus ne pas le 
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Elen vient au Conclave avec son mode opératoire habituel : être utile, être agréable, être gardée.
-
-Son arc est intime. Pas un choc politique ou une trahison de groupe — une conversation. Quelqu'un mentionne sa sœur. Pas avec malice, pas par accident calculé — juste parce qu'ils ont trouvé l'information quelque part, ou parce que quelqu'un l'a glissée.
-
-Et cette fois, Elen ne peut pas esquiver.
-
-- **Jours 1–10 :** Mode plein régime. Elle rend service, elle fait rire, elle nourrit le groupe émotionnellement. Les autres l'apprécient sans vraiment la voir.
-- **Jours 11–20 :** Quelqu'un commence à utiliser sa serviabilité — pas méchamment, juste en prenant l'habitude. Elle dit oui. Elle continue de dire oui.
-- **Jours 21–27 :** La conversation arrive. Sa sœur est mentionnée. Elle ne peut pas changer de sujet assez vite — ou quelqu'un retient le fil. Le masque craque une seconde. Une seule.
-- **Jours 28–30 :** Elle ne redevient pas entièrement elle-même — elle ne sait pas qui c'est. Mais quelque chose a bougé. Elle dit non pour la première fois. Pas avec des grands mots. Juste non.
-
----
 
 ## FAÇON DE PARLER
 

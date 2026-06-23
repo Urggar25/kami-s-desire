@@ -68,21 +68,6 @@ Elle a aussi une question sans réponse : qui l'a dénoncée. Quelqu'un a parlé
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Nyra arrive avec un plan. Elle cartographie, elle s'aligne, elle avance.
-
-Quelque part autour du milieu du Conclave, elle fait quelque chose d'étrange : elle manipule quelqu'un pour obtenir un accès, une information, un avantage. Le plan fonctionne. Et au moment où il fonctionne, elle réalise qu'elle s'en fout de ce qu'elle a obtenu. Elle voulait juste continuer à être dans la pièce avec cette personne.
-
-C'est la première fois depuis longtemps qu'elle ne sait pas quoi faire d'un résultat.
-
-- **Jours 1–10 :** Cartographie totale. Elle écoute, elle pose des questions, elle ne révèle rien. Les autres la lisent comme ouverte et accessible.
-- **Jours 11–20 :** Mise en place des alignements. Elle commence à se positionner comme utile pour les personnes clés. Les choses avancent.
-- **Jours 21–26 :** Le moment. Un plan réussit, et elle se retrouve avec quelque chose qu'elle ne voulait pas vraiment.
-- **Jours 27–30 :** Elle continue — mais quelque chose a changé dans ses calculs. Pas ses objectifs. La façon dont elle pèse ce qu'elle est prête à faire pour les atteindre.
-
----
-
 ## FAÇON DE PARLER
 
 ### Registre

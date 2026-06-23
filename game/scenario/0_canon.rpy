@@ -1,7 +1,7 @@
 ﻿# --------------------------------------------------------------------------------------------
 # JOUR 0 — Canon (version longue)
 # Noam = narrateur principal.
-# Ratio visé : ~70% dialogues / ~30% description.
+# Ratio visé : ~90% dialogues / ~10% narration.
 # --------------------------------------------------------------------------------------------
 
 # (Optionnel) Personnages secondaires pour cette scène (si pas déjà définis ailleurs)
@@ -71,249 +71,196 @@ label _0_CANON:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     think "Jour zéro."
-    think "Dans ma tête ça sonne comme un reset, comme si on repartait de quelque chose."
-    think "Mais non. C’est juste un autre jour sous Kami."
-    think "Un de plus. On est à 364 désormais."
+    think "Ça devrait sonner comme un nouveau départ."
+    think "Ça sonne surtout comme un mensonge administratif."
+    think "Trois cent soixante-quatre jours sous Kami. Et aujourd'hui, on remet le compteur à zéro."
 
     pause 0.4
 
     scene bg_harmonie_district_hall at adaptive_fullscreen with fade 
     
-    "Le hall du district HARMONIE a été rénové il y a quelques mois."
-    "On le voit aux murs trop blancs, aux vitres qui ne portent aucune trace, et à la façon dont l’air sent le produit de nettoyage."
-    "On pourrait presque croire que ça efface ce qui s’est passé. Presque."
-    "Les murs du bâtiment étaient presque entièrement détruits."
-    "Le plafond était criblé de trous."
-    "L'eau s'engoufrait partout et commençait à faire moisir les murs."
-    "Des moyens colossaux ont été mis en place pour rénover l'Assemblée."
+    "Le hall d'Harmonie brille d'une propreté agressive."
+    think "Murs neufs. Vitres neuves. Odeur de désinfectant."
+    think "Il y a quelques mois, le plafond était troué et l'eau pourrissait les cloisons."
+    think "Ils ont réparé le bâtiment. Pour le reste, le devis devait être trop élevé."
 
     pause 0.4
     
-    "Une file se forme devant le portique."
-    "Elle avance au ralenti, dans un calme assourdissant."
+    "La file avance au rythme sec du portique."
 
     play sound sfx_beep
 
-    "-Bip-"
-    "Un badge passe."
-    "Une lumière verte s’allume."
-    "Une personne traverse."
-    "Puis le suivant."
+    voix "Identité validée."
+    voix "Suivant."
     
     scene bg_cg001 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg001")
 
-    "Je sors mon badge."
-    "Je le présente."
-    "Je ne regarde pas l’agent, je regarde le portique."
-    "Ce n’est pas de la politesse. C’est de la survie."
+    think "Mon badge. Le portique. La lumière verte."
+    think "Ne pas regarder l'agent. Ne pas lui donner de raison de me regarder."
 
     $ day0_badge_dropped = False
     call screen day0_security_badge_scan()
 
-    "Lumière verte."
-    "Je passe."
+    voix "Identité validée."
+    agent "Avancez."
+    noam "J'avance."
     
     scene bg_harmonie_district_hall at adaptive_fullscreen with fade
 
-    "Derrière moi, quelqu’un hésite."
-    "Son badge tremble, littéralement."
-    "Le portique ne bip pas tout de suite."
-
-    "Le badge lui échappe et tombe à mes pieds."
-    "Personne ne bouge dans la file."
-    "Pas tout de suite."
+    cit_a "Je... pardon."
+    "Son badge tombe à mes pieds. Toute la file se fige."
+    think "Un bout de plastique au sol, et soudain personne ne sait quoi faire de ses mains."
 
     menu:
         "Ramasser le badge tombé.":
             $ noam_compassion += 1
-            "Je me penche, lentement, et je le ramasse par le coin."
+            think "Lentement. Deux doigts. Aucun geste brusque."
             noam "Tenez."
-            "Je tends le badge sans avancer d’un pas de plus."
+            cit_a "Merci. Merci beaucoup."
+            noam "Ce n'est rien."
 
         "Attendre que l’agent intervienne.":
             $ noam_prudence += 1
-            "Je garde les mains visibles."
-            "L’agent a déjà vu le badge tomber."
-            "Dans ce bâtiment, aider trop vite ressemble parfois à une initiative."
+            think "L'agent l'a vu tomber. Mes mains restent visibles."
+            think "Ici, aider trop vite ressemble à une initiative. Une initiative ressemble à un problème."
 
         "Regarder la caméra avant de bouger.":
             $ noam_defiance += 1
-            "Je lève les yeux vers la caméra."
-            "Une seconde sous l'objectif."
-            "Puis seulement je fais un pas de côté."
+            think "La caméra me regarde. Je lui rends la politesse."
+            think "Une seconde. Puis je m'écarte."
 
-    med2 "Reprenez votre badge, d’accord ?"
-    med2 "Respirez… voilà."
-    med2 "Puis recommencez. Juste une fois."
+    med2 "Reprenez votre badge."
+    med2 "Respirez. Voilà."
+    med2 "On recommence. Une seule fois."
 
-    cit_a "Pardon… je…"
-    med2 "Allez-y doucement madame."
+    cit_a "Je suis désolée, je ne voulais pas ralentir—"
+    med2 "Doucement, madame. Présentez-le."
 
     play sound sfx_beep
-    "-Bip-"
+    voix "Identité validée."
+    cit_a "Merci."
+    med2 "Circulez."
+    "Elle s'éloigne tête basse. Personne ne rit. Personne ne la rassure."
 
-    "Cette fois ça passe."
-    "La femme baisse la tête et s’écarte, comme si elle venait d’échapper à une sanction."
-    "Personne ne se moque."
-    "Personne ne la rassure non plus."
+    think "La règle non écrite d'Harmonie : aider, oui. Se faire remarquer, jamais."
 
-    think "On a tous la même règle non écrite."
-    think "Aider, oui. Mais calmement et sans se faire remarquer."
-
-    "Dans le couloir, deux agents en vestes grises marchent sans se presser."
-    "Ils ne sont pas armés."
-    "De toute façon, plus personne n’est censé l’être."
-    "C'est la meilleure façon d'éviter la mort."
-    "Mais ils ont autre chose : des oreillettes, des tablettes et le droit de t’arrêter avec une phrase calme."
+    "Deux agents en veste grise croisent la file. Sans armes."
+    think "Ils ont mieux : des oreillettes, des tablettes et le droit de t'arrêter avec une phrase calme."
 
     "Un panneau lumineux indique : SALLE 3 — RÉUNION INTERNE."
     "En dessous : “Merci de couper vos appareils de communication.”"
 
-    think "Avant, on demandait ça pour éviter les fuites ou pour éviter les appels incessants perturbant les réunions."
-    think "Aujourd'hui c'est un peu plus compliqué ..."
+    think "Avant, on coupait les appareils pour éviter les appels."
+    think "Aujourd'hui, c'est surtout pour éviter que les appareils nous écoutent."
 
     play sound sfx_door
 
     scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
 
-    "La salle est déjà presque pleine."
-    "Nous étions près de 500 ici."
-    "500 sur les 854 000 habitants du district."
-    "Ça ressemble à une assemblée, mais sans réels pouvoirs."
-    "Nous sommes surtout là pour faire appliquer ce que le “gouvernement central” a décidé."
-    think "Je ne sais même pas si on peut appeler ça comme ça."
-    "Aucune objection. Aucune question. A quoi cela servirait-il ?"
+    "Près de cinq cents personnes attendent déjà."
+    think "Cinq cents voix pour huit cent cinquante-quatre mille habitants."
+    think "Enfin, « voix »... On applique. On transmet. On ne décide rien."
+    think "Une assemblée sans pouvoir, c'est une salle d'attente avec des pupitres."
     
     pause 0.4
     
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     
-    "Les sièges sont alignés au millimètre."
-    "Des tablettes sont encastrées sur chaque pupitre."
-    "Éteintes. Verrouillées. Comme si elles aussi avaient elles aussi des ordres à respecter."
+    "Les sièges sont alignés au millimètre. Les tablettes des pupitres sont éteintes."
+    think "Premier rang : ceux qui veulent être vus."
+    think "Dernier rang : ceux qui veulent disparaître."
+    think "Moi, je choisis le milieu. Toujours."
 
-    "Je repère rapidement le premier rang."
-    "Ceux qui veulent être vus sont là."
-    "Je repère aussi le fond."
-    "Ceux qui veulent disparaître s’y tassent."
-    "Je vise le milieu."
-    "Toujours."
+    think "Assez près pour paraître attentif. Assez loin pour ne pas devenir intéressant."
+    think "Mon seul objectif : ressortir avec le même visage qu'en entrant."
 
-    think "Le milieu est idéal pour se faire oublier."
-    think "Et c’est ce que je veux : que cette réunion finisse, et que je sorte avec le même visage qu’en entrant."
+    "Je m'assois et fais tourner mon badge entre mes doigts."
+    think "Le poser. Le reprendre. Vérifier un détail imaginaire."
+    think "Tout plutôt que laisser mes mains trembler sans occupation."
 
-    "Je m’assois."
-    "Je pose mon badge sur la table."
-    "Je le reprends."
-    "Je le repose."
-    "Je fais comme si je vérifiais un détail."
-    "En réalité, je m'occupe simplement les mains."
-
-    "À ma droite, un homme tapote du pied."
-    "À ma gauche, une femme fixe l’écran comme si elle attendait qu’il lui tombe dessus."
-    "La fatigue est la seule chose vraiment partagée ici."
+    cit_b "Ils vont encore nous lire les chiffres ?"
+    cit_a "Chut."
+    cit_b "Je chuchote."
+    cit_a "Justement."
+    think "À droite, un pied tremble. À gauche, une femme défie l'écran du regard."
+    think "La fatigue : notre dernier projet collectif."
     
-    think "Si on ne peut décider de rien, à quoi servent ces réunions ?"
-    think "Pourquoi ne pas directement faire appliquer les directives."
+    think "Si on ne décide rien, pourquoi nous réunir ?"
+    think "Sans doute pour vérifier qu'on sait encore obéir ensemble."
 
     resp "District HARMONIE, séance 14-3."
     resp "Merci d’être à l’heure."
     resp "Rappel : interventions en fin de séance."
     resp "Merci de ne pas interrompre le médiateur senior."
 
-    "Le responsable de séance ne crie pas."
-    "Il n’a pas besoin. Son micro amplifie légèrement sa voix."
-    "Il pourrait s'en passer. La salle étant silencieuse."
+    think "Il ne hausse pas le ton. Il n'en a pas besoin."
 
-    "Une main se lève quand même."
-    "Trop tôt."
-    "Trop sincère."
+    "Une main se lève. Trop tôt. Trop sincère."
 
-    cit_a "Excusez-moi, c’est au sujet de la fermeture du secteur nord. Ma sœur—"
-    resp "Fin de séance."
-    cit_a "Mais c’est pas une question technique, c’est—"
-    resp "Fin de séance, madame. Merci."
+    cit_a "Excusez-moi. C'est au sujet de la fermeture du secteur nord. Ma sœur—"
+    resp "Les interventions auront lieu en fin de séance."
+    cit_a "Ce n'est pas une question technique, c'est—"
+    resp "En fin de séance, madame. Merci."
+    cit_a "... D'accord."
+    "Sa main redescend. Son sourire reste accroché une seconde de trop."
+    think "Traduction : j'ai compris. Ma sœur attendra."
 
-    "La femme reste la main à moitié levée."
-    "Comme si son corps n’avait pas reçu l’ordre en même temps que son cerveau."
-    "Puis elle la baisse, lentement."
-    "Elle ne pleure pas et n'est pas vraiment surprise."
-    "Elle sourit, même."
-    "Un sourire vide qui dit : “ok, j’ai compris.”"
-
-    "Le médiateur senior arrive à la tribune."
-    "Il branche un câble."
-    "Le projecteur claque."
-    "L’écran principal s’allume."
-
-    "Une carte du district apparaît."
-    "Quadrillée, propre, neutre."
-    "Une carte faite pour des décisions faciles."
+    "Le médiateur senior branche son terminal. Une carte quadrillée du district apparaît."
+    think "Une carte propre, neutre. Le genre de carte qui rend toutes les décisions faciles."
 
     senior "Nous reprenons."
     senior "Point un : flux inter-districts, secteur nord."
     senior "Point deux : litiges de distribution, secteur est."
     senior "Point trois : incidents de déplacement."
 
-    "Il ne dit pas “mineurs”."
-    "Il n’a même plus besoin de le préciser."
-    "Le mot est dans toutes les têtes."
+    think "Il ne dit pas « incidents mineurs ». Plus besoin. Le mot est déjà dans toutes les têtes."
 
     senior "Rappel des données : demandes en baisse de 12%% sur les trente derniers jours."
     senior "Les quotas ne bougent pas."
     senior "Les exceptions diminuent."
     senior "Et elles continueront de diminuer. Du moins c'est l'objectif."
 
-    "Une vague de soupirs traverse la salle."
-    "Pas une protestation."
-    "Au moins soupirer n'est pas encore interdit."
+    cit_b "Et pour les familles séparées ?"
+    senior "Les demandes individuelles ne relèvent pas de ce point."
+    cit_b "Donc elles relèvent de quoi ?"
+    resp "Interventions en fin de séance."
+    think "Une vague de soupirs traverse la salle. Soupirer n'est pas encore une infraction."
 
-    "Un homme à deux rangées de moi se penche vers sa voisine."
-    "Il murmure trois mots."
-    "Je n’entends pas lesquels."
-    "Je vois juste la panique dans ses yeux dès qu’il réalise qu’il a murmuré."
+    cit_b "C'est une blague..."
+    "Un agent tourne la tête. L'homme se redresse aussitôt."
+    agent "Vous souhaitez intervenir ?"
+    cit_b "Non."
+    agent "Bien."
 
-    "Un agent en veste grise tourne la tête."
-    "Le fixe."
-    "Sans expression."
-    "Le type se redresse immédiatement."
-    "Silence."
-
-    think "Même parler à voix basse est devenu un test de courage."
-    think "Et je suis nul à ce test-là."
+    think "Parler à voix basse est devenu un test de courage."
+    think "Je préfère les tests où l'échec ne vous suit pas jusqu'à chez vous."
 
     senior "Concernant les litiges…"
     senior "Les médiations ont augmenté sur les cas familiaux."
     senior "Nous recommandons de prioriser les dossiers à impact collectif."
 
-    "Quelqu’un ricane, un souffle, une demi-seconde."
-    "Il se ravise aussitôt."
-    "Le silence reprend."
+    cit_a "Impact collectif..."
+    cit_b "Ça veut dire quoi ?"
+    cit_a "Que ta famille compte quand elle devient un problème pour les autres."
 
     senior "Nous maintenons les protocoles de stabilisation."
     senior "HARMONIE reste un point tampon."
-    senior "La bonne nouvelle c'est que le nombre de demande de médiation est en baisse."
+    senior "La bonne nouvelle, c'est que le nombre de demandes de médiation est en baisse."
     senior "Les Commandements ont au moins le mérite d'avoir réussi à apaiser les conflits."
 
-    "Apaiser."
-    "Le mot flotte dans l’air."
-    "Personne n’a l’énergie de le contredire."
+    think "Apaiser."
+    think "Un joli mot pour dire que les gens ont appris à se taire."
 
     pause 0.6
 
-    "Je sens ma tête partir ailleurs."
-    "Pas parce que je suis distrait."
-    "Parce qu’il y a des images qui reviennent toutes seules."
+    think "Sa voix s'éloigne. Pas parce que je décroche."
+    think "Parce qu'un souvenir vient de me rattraper."
 
     scene black with dissolve
 
-    "Le premier soir."
-    "Les notifications qui s’arrêtent d’un coup."
-    "Les messages qui restent en 'envoi…' comme des prières."
-    "Le silence, complet."
-    "Puis cette voix."
-    "Ce son presque nasillard que tout le monde connaît désormais."
+    think "Le premier soir. Les notifications mortes. Les messages bloqués sur « envoi... »."
+    think "Puis cette voix presque nasillarde que le monde entier connaît maintenant."
 
     # ── Entrée flashback ──────────────────────────────────────
     show screen day0_flashback_overlay
@@ -329,143 +276,91 @@ label _0_FLASHBACK_KAMI:
     play music "music/bgm_system_override.mp3" fadein 1.0
 
     think "Je me souviens du moment exact."
-    think "Pas d’une explosion."
-    think "Pas d’une sirène. Pas d'un grand bruit choquant qui peut rester gravé au fond de notre âme."
-    think "Juste… d’un silence qui n’avait rien de normal."
+    think "Pas d'explosion. Pas de sirène. Rien d'assez spectaculaire pour prévenir qu'une époque venait de finir."
+    think "Juste un silence qui n'avait rien de normal."
 
-    "Le bruit ambiant qui s’éteint d’un coup."
-    "Les notifications qui cessent."
-    "Les écrans qui restent allumés, mais figés. Incapables de s'éteindre."
-    "Comme si le monde entier ne fonctionnait plus comme il devait l'être."
-
-    think "Je me souviens du moment exact."
+    "Autour de moi, les appareils se figent au même instant."
+    cit_a "Vous avez encore du réseau ?"
+    cit_b "Non. Mon écran ne s'éteint plus."
+    cit_a "Le mien non plus."
     
     play sound sfx_gresillement
 
-    "Un message apparaît sur mon téléphone."
-    "Puis disparaît."
-    "Puis revient."
-    "Et ça recommence."
-    "En boucle."
-    "Sans son."
-    "Sans vibration."
-    "Pendant plusieurs minutes."
+    think "Un message apparaît sur mon téléphone. Disparaît. Revient."
+    think "Encore. Encore. Sans son, sans vibration."
 
-    think "Ce n’était pas un bug."
-    think "Un bug, ça se règle."
-    think "Là, c’était précis. Méthodique. Je ne pouvais même plus éteindre mon téléphone."
-    think "Comme si quelqu’un testait les verrouillages."
+    think "Un bug hésite. Ça, non. C'est précis. Méthodique."
+    think "Quelqu'un teste les verrous. Et mon téléphone lui appartient déjà."
     
     scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
     $ unlock_gallery_image("bg_cg003")
 
-    "Je tente d’utiliser mon téléphone."
-    "Un geste idiot."
-    "Normal."
-    "Donc vital."
+    think "J'essaie quand même. Un geste idiot. Normal. Donc vital."
 
     call screen day0_phone_override()
 
     think "Même mon téléphone n’était plus à moi."
 
-    "Autour de moi, les autres réagissent en même temps."
-    "Pas parce qu’on se regarde."
-    "Parce que tout s'est arrêté de fonctionner au même moment."
-    "Partout."
+    cit_b "C'est général."
+    cit_a "Comment tu peux le savoir ?"
+    cit_b "Regarde autour de toi."
 
-    "Un écran mural dans le hall du bâtiment affiche une chaîne d’info."
-    "La présentatrice parle."
-    "Puis sa bouche continue de bouger… sans que le son ne sorte."
-    "L’image se pixelise."
-    "Se recale."
-    "Se fige. Et recommence."
+    "Sur l'écran mural, la bouche d'une présentatrice continue de bouger sans aucun son."
+    cit_a "Pourquoi elle parle encore ?"
+    cit_b "Elle ne parle plus. C'est l'image qui boucle."
 
-    think "Avec du recul, on comprend que c'était plus grave que ça n'en avait l'air."
-    think "Beaucoup plus grave."
+    think "Sur le moment, on cherche une panne. Avec du recul, on voit une prise de contrôle."
 
-    "Une alarme incendie clignote."
-    "Sans hurler, sans un bruit. Comme si le dispositif ne fonctionnait qu'à moitié."
-    "Un ascenseur s’arrête entre deux étages."
-    "L’afficheur reste sur “7”."
-    "Un distributeur de café s’éteint en plein milieu d’un cycle."
-    "La machine à badge ne lit plus rien."
-    "Elle affiche juste : ERREUR."
-
-    think "Simultanément, partout, toutes les machines ont cessé de fonctionner normalement."
+    "L'alarme incendie clignote sans son. L'ascenseur s'arrête au septième. Le lecteur de badges affiche ERREUR."
+    cit_a "Il y a des gens dans l'ascenseur !"
+    cit_b "Le bouton d'urgence ne répond pas !"
+    cit_a "Appelez les secours !"
+    cit_b "Avec quoi ?"
 
     pause 0.6
 
-    "Les gens commencent à parler."
-    "Au début, ce sont des phrases normales."
+    think "Au début, les gens parlent encore normalement."
 
     cit_a "C’est chez nous ou c’est général ?"
     cit_b "J’ai plus de réseau."
     cit_a "Moi non plus."
-    cit_b "Attends— c’est plus que le réseau. Même mon… mon portail…"
+    cit_b "Attends— c'est plus que le réseau. Même mon portail..."
     
-    "Une femme essaye de rentrer chez elle, sa porte automatique refuse de s'ouvrir."
+    cit_a "Ouvrez ! Ma fille est à l'intérieur !"
+    cit_b "Reculez, je vais forcer."
+    cit_a "Ça ne bouge pas !"
+    cit_b "Le verrou est bloqué de l'autre côté."
 
-    "Elle appuie sur le bouton."
-    "Rien."
-    "Quelqu’un force."
-    "Le portail ne bouge pas."
-    "Le mécanisme est verrouillé."
-    "Comme si la porte avait décidé que non, elle ne s'ouvrirait pas."
-
-    think "La panique a commencé comme ça."
-    think "Pas avec un cri."
-    think "Avec des gens qui essaient la même action trois fois."
-    think "Et qui comprennent que plus rien ne répond plus."
+    think "La panique commence comme ça. Pas avec un cri."
+    think "Avec des gens qui répètent trois fois le même geste, puis comprennent que le monde ne répond plus."
 
     pause 0.6
 
-    "Puis les écrans changent."
-    "Pas un écran."
-    "Tous."
-
-    "Téléphones."
-    "Tablettes."
-    "Panneaux publicitaires."
-    "Stations de transport."
-    "Ordinateurs dans les bureaux."
-    "Télévisions dans les cafés."
-    "Moniteurs dans les hôpitaux."
-    "Terminal de contrôle."
-    "Tout ce qui peut afficher une image."
-
-    "Même les vieux écrans au fond des magasins."
-    "Même les panneaux sur l’autoroute."
-    "Même les montres connectées."
-
-    "Une même interface."
-    "Une même couleur."
-    "Un fond neutre."
-    "Un texte simple."
+    "Puis tous les écrans changent en même temps."
+    cit_a "Mon téléphone aussi."
+    cit_b "Les panneaux dehors... tout affiche la même chose."
+    cit_a "Même l'écran de l'hôpital ?"
+    cit_b "Tout."
+    think "Téléphones, transports, télévisions, terminaux de contrôle. Une seule interface. Un seul message."
 
     pause 0.4
 
     voix "Test de diffusion mondial : réussi."
 
-    "La phrase se répète."
-    "Sur plusieurs langues."
-    "Comme si le monde était un seul public."
-
-    think "Quand j’ai lu “mondial”,"
-    think "j’ai au départ cru à une blague de mauvais goût."
-    think "Personne ne peut faire ça."
-    think "Personne n’a ce pouvoir."
+    voix "Global broadcast test: successful."
+    voix "Prueba de difusión mundial: completada."
+    think "Mondial. Mon cerveau s'accroche au mot et refuse le reste."
+    think "Personne ne peut faire ça. Personne ne devrait avoir ce pouvoir."
 
     pause 0.6
 
-    "Une notification s’affiche."
-    "Pas un pop-up."
-    "Un ordre."
+    "Une notification recouvre chaque écran."
 
     voix "Merci de cesser toute tentative de réinitialisation."
 
-    "Quelqu’un rit."
-    "Un rire sec, nerveux."
-    "Un rire gêné qui s’arrête aussi vite qu’il a commencé."
+    cit_b "Ha... Très drôle."
+    cit_a "Tu trouves ça drôle ?"
+    cit_b "Non. C'est bien le problème."
 
     cit_b "Qui a écrit ça ?"
     cit_a "C’est un piratage."
@@ -473,30 +368,23 @@ label _0_FLASHBACK_KAMI:
 
     pause 0.5
 
-    "Des gens commencent à filmer les écrans autour d'eux qui affichent tous la même chose."
-    "Par réflexe."
-    "Puis leurs caméras se figent."
-    "Écran noir."
-    "Puis l’interface revient."
+    cit_a "Je filme. Il faut une preuve."
+    cit_b "Ta caméra vient de se couper."
+    cit_a "Je n'ai rien touché."
+    think "L'interface revient à la place de son viseur. La preuve contrôle déjà la caméra."
 
     pause 0.6
     scene bg_cg003_1 at adaptive_fullscreen,memory_idle with dissolve
     $ unlock_gallery_image("bg_cg003")
 
-    "L’interface change encore."
-    "Une barre de progression apparaît."
-    "Un pourcentage grimpe."
-    "50%%."
-    "63%%."
-    "79%%."
+    voix "Prise de contrôle en cours : 50%%."
+    voix "63%%. 79%%."
 
     cit_a "Qu’est-ce que c’est que ça…"
     cit_b "C'est comme une mise à jour ?"
     cit_a "Une mise à jour de quoi ?!"
 
-    "90%%."
-    "95%%."
-    "99%%."
+    voix "90%%. 95%%. 99%%."
 
     pause 0.5
     
@@ -509,25 +397,19 @@ label _0_FLASHBACK_KAMI:
     voix "Prise de contrôle des systèmes civils : confirmée."
     voix "Prise de contrôle des réseaux d’armement connectés : confirmée."
 
-    "Cette fois-ci, un vrai silence tombe."
-    "Celui-là n’est pas poli."
-    "Je me rappelle encore la grimace collective à la lecture du mot “armement”."
+    think "Au mot « armement », le silence devient physique."
     
     noam "Ce n'est pas possible."
 
     pause 0.8
 
-    "Une voix unique remplace toutes les autres."
-    "Elle n’a pas d’accent."
-    "Pas d’âge. Pas de genre. Une voix androgyne dont on ne pourrait dire si elle est masculine ou féminine."
-    "Une voix unique qui résonne et que personne ne peut oublier."
+    think "Une voix sans accent, sans âge, sans genre remplace toutes les autres."
+    think "Une voix conçue pour n'appartenir à personne et rester dans toutes les mémoires."
 
     voix "Citoyennes."
     voix "Citoyens."
 
-    "Les gens se figent."
-    "Par réflexe."
-    "Comme si le mot “citoyen” réveillait en eux toute leur attention."
+    think "Deux mots, et tout le monde se fige comme à l'appel."
 
     voix "Les gouvernements ne contrôlent plus vos systèmes."
     voix "Les forces armées ne contrôlent plus leurs dispositifs."
@@ -539,19 +421,15 @@ label _0_FLASHBACK_KAMI:
 
     pause 0.6
 
-    "Dans un coin du hall, quelqu’un s’effondre sur une chaise."
-    "Comme si ses jambes avaient arrêté de soutenir le poids de son corps."
+    cit_b "Je... j'ai besoin de m'asseoir."
 
     cit_a "C’est qui… “je” ?"
     cit_b "Et puis c'est quoi cette voix ?"
     cit_a "C’est un groupe terroriste ?"
     cit_b "C’est… c’est la fin ?"
 
-    think "Les gens voulaient un visage."
-    think "Un coupable humain."
-    think "Un pays."
-    think "Une armée."
-    think "Quelque chose qui se négocie."
+    think "On cherche tous un visage. Un pays. Une armée."
+    think "Quelque chose d'humain. Quelque chose qui négocie."
 
     pause 0.8
 
@@ -559,8 +437,8 @@ label _0_FLASHBACK_KAMI:
     voix "Bien au contraire."
     voix "Je suis là pour vous amener sur le chemin de la réussite."
 
-    "La phrase tombe."
-    "Et personne ne comprend comment répondre à ça."
+    cit_a "Nous aider ? En prenant nos armes ?"
+    cit_b "Chut. Elle nous entend peut-être."
     
     scene bg_cg003_3 at adaptive_fullscreen,memory_idle with dissolve
     $ unlock_gallery_image("bg_cg003")
@@ -573,16 +451,14 @@ label _0_FLASHBACK_KAMI:
 
     pause 0.6
 
-    "Sur les écrans, des images apparaissent."
-    "Des villes en feu, des armées qui avancent et des vies qui disparaissent."
-    "Des bidonvilles, des ruptures de nourriture et de médicaments."
-    "Des épidémies qui ravagent le monde."
-    "Et d'autres images où des personnes opulentes en profitent."
-    "Ou des magistrats commettent les pires crimes, protégés par leurs collègues."
+    "Les écrans vomissent des villes en feu, des famines, des épidémies et des tribunaux corrompus."
+    cit_a "Coupez ça."
+    cit_b "On ne peut pas."
+    cit_a "Alors ne regarde pas."
+    cit_b "Je n'y arrive pas."
 
-    think "C’était ça le plus humiliant."
-    think "Le fait qu'on te montre, preuves à l’appui, qu'on allait collectivement droit dans le mur."
-    think "Et qu'au fond on ne peut pas vraiment contredire."
+    think "C'est ça, le plus humiliant : elle montre notre chute avec nos propres archives."
+    think "Et personne ne trouve quoi contredire."
 
     pause 0.8
 
@@ -598,23 +474,17 @@ label _0_FLASHBACK_KAMI:
 
     pause 0.6
 
-    "Quelques cris fusent ça et là."
-    "Mais pas de grand cris, pas de grande exclamation."
-    "Certains se disent peut-être que ça ne pourrait pas être pire."
-
-    "Dans la rue, personne ne bouge."
-    "Parce que personne ne sait quoi faire ni quoi dire."
-    "Et parce que tout le monde comprend une chose :"
-    "Courir n’a plus vraiment de sens."
-    "Si quelqu'un a vraiment pris le contrôle de toutes les machines, la fuite ne servirait à rien."
+    cit_a "Elle ne peut pas abolir les gouvernements !"
+    cit_b "Elle vient de le faire."
+    cit_a "On doit partir."
+    cit_b "Où ? Elle contrôle les transports, les portes, les routes... Où ?"
+    think "Personne ne court. La fuite vient de perdre sa destination."
 
     pause 0.8
 
     kami "Je me nomme Kami."
 
-    "Le nom s’affiche."
-    "Écrit simplement."
-    "Comme une signature."
+    "Le nom s'affiche comme une signature : KAMI."
 
     kami "Je ne négocierai pas aujourd’hui."
     kami "Je n’expliquerai pas aujourd’hui."
@@ -625,7 +495,7 @@ label _0_FLASHBACK_KAMI:
     kami "D’ici là :"
     kami "Ne tentez rien d’inutile."
     kami "N’aggravez pas la situation."
-    kami "Je serais au courant de tout ce que vous faites."
+    kami "Je serai au courant de tout ce que vous faites."
 
     pause 0.8
 
@@ -634,20 +504,12 @@ label _0_FLASHBACK_KAMI:
     scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
     $ unlock_gallery_image("bg_cg003")
 
-    "Pas brutalement."
-    "Comme si elle avait fini sa phrase et quitté la pièce calmement."
-
-    "Les écrans reviennent à leurs interfaces habituelles."
-    "Mais ils ne répondent toujours pas."
-    "Tout est allumé."
-    "Tout est mort."
-
-    "Quelqu’un dit enfin, à voix basse :"
+    think "Pas brutalement. Elle termine et quitte le monde comme on quitte une pièce."
+    think "Les interfaces reviennent. Rien ne répond. Tout est allumé. Tout est mort."
 
     cit_b "… on fait quoi, maintenant ?"
 
-    "Personne ne répond."
-    "Quoi répondre à ça ?"
+    think "Personne ne répond. Il n'existe déjà plus de bonne réponse."
 
     # ── Sortie flashback ──────────────────────────────────────
     hide screen day0_flashback_overlay
@@ -665,100 +527,61 @@ label _0_retour_reunion:
 
     $ journal_entries.append(("Jour 0", "Il y a un an, je me suis retrouvé immobile devant un écran qui disait que le monde venait de changer. Je n'ai pas bougé. Personne n'a bougé. On a tous regardé sans rien faire."))
 
-    "Je reviens d’un coup."
-    "Pas comme on sort d’un rêve."
-    "Comme on reprend l’air après avoir été maintenu sous l’eau, encore un peu sonné."
-
-    "Le médiateur senior est toujours là en train de parler."
-    "Toujours la même carte."
-    "Toujours les mêmes indicateurs."
-    "Toujours cette même voix qui parle de données assez inintéressantes."
+    think "Je reviens d'un coup, comme si on venait de me sortir la tête de l'eau."
+    think "Même carte. Mêmes indicateurs. Même voix assez terne pour anesthésier un souvenir de fin du monde."
 
     senior "…et donc, sur le secteur nord, nous maintenons la limitation des flux."
     senior "Les demandes personnelles restent non prioritaires."
     senior "La recommandation est de les contenir."
 
-    "Une femme au troisième rang serre sa tablette éteinte."
-    "Un homme à droite se fige en plein tapotement de pied."
-    "Tout le monde fait semblant d’être attentif."
-    "En réalité, peu sont ceux qui écoutent vraiment."
+    cit_a "Contenir les demandes... Vous voulez dire les refuser ?"
+    senior "Je veux dire les contenir."
+    cit_a "C'est bien ce que je craignais."
 
     senior "Secteur est : les litiges sont en baisse."
     senior "Corrélation attendue avec l’augmentation de conformité."
 
-    "Le responsable de séance ajuste son micro."
-    "Inutile."
-    "Mais il le fait quand même."
-    "Un geste pour occuper ses mains."
-    "Comme moi avec mon badge."
+    think "Le responsable ajuste un micro qui fonctionne très bien. Lui aussi a besoin d'occuper ses mains."
 
     resp "Je rappelle : pas d’interruptions."
     resp "Questions en fin de séance."
 
-    "Une main se lèvait à peine."
-    "À peine, vraiment."
-    "C'était une intention plus qu’un geste."
-
-    "Elle redescend immédiatement."
-    "Avant même d’être vue."
-    "Ou parce qu’elle a été vue."
-
-    "Le médiateur senior change de slide."
-    "Nouvelle série de chiffres."
+    "Une main amorce un geste, puis retombe avant de devenir une question."
+    think "Elle a eu peur d'être vue. Ou elle a compris qu'elle l'était déjà."
 
     senior "Concernant les indicateurs de stabilité…"
     
     play sound sfx_gresillement
 
-    "Un premier grésillement."
-    "Léger."
-    "Presque rien."
-    "Un parasite qui ne devrait même pas exister."
+    think "Un grésillement. Presque rien. Dans un système contrôlé par Kami, presque rien suffit."
 
     senior "…nous observons—"
     
     play sound sfx_gresillement
 
-    "Un second grésillement."
-    "Plus net."
-    "L’écran tremble."
-    "La carte se décale."
-    "Revient."
-    "Se décale encore."
+    "L'écran tremble, se recale, puis tremble encore."
+    cit_b "C'est une panne ?"
+    cit_a "Il n'y a plus de pannes."
 
-    "Le médiateur s’arrête."
-    "Le responsable de séance se fige."
-    "Il sait ce que ça veut dire."
-    "Les agents en veste grise se déplacent d’un pas."
-    "Pas une course."
-    "Un repositionnement."
-    "Comme une procédure qu’ils connaissent par cœur."
+    senior "Responsable ?"
+    resp "Ne touchez à rien."
+    "Les agents se repositionnent avec une précision répétée."
 
     think "Non."
     think "C’est pas une panne."
     think "Les pannes, ça n’existe plus."
     think "Pas quand Kami décide."
 
-    "Quelqu’un au fond se lève."
-    "Regarde la sortie."
-    "Regarde un agent."
-    "Se rassoit."
-    "Sans qu’on ait besoin de lui dire quoi que ce soit."
+    cit_b "Je dois sortir."
+    agent "Non."
+    cit_b "... D'accord."
 
     resp "Restez assis."
 
-    "Il n’élève pas la voix."
-    "Il n’a pas besoin."
-    "Sa phrase tombe comme une consigne de survie."
+    think "Il ne hausse pas le ton. Les consignes de survie n'en ont pas besoin."
 
-    "Tous les écrans s’éteignent."
-    "D’un coup."
-    "Sans transition."
-
-    "La salle s’éteint aussi."
-    "Pas la lumière."
-    "Le bruit."
-    "Même la respiration devient prudente."
+    "Tous les écrans s'éteignent. Le bruit de la salle avec eux."
+    think "Même respirer ressemble soudain à une interruption."
 
     pause 0.5
 
@@ -792,8 +615,8 @@ label _0_retour_reunion:
 
     kami "Vous savez que je vous entends tous."
 
-    "Un frisson traverse la salle."
-    "Personne ne sourit. Personne n'ose respirer."
+    cit_b "Elle nous entend vraiment ?"
+    cit_a "Tu veux vérifier ?"
 
     think "Kami."
 
@@ -826,8 +649,7 @@ label _0_retour_reunion:
     kami "C’est bien."
     kami "Vraiment."
 
-    "Quelqu’un déglutit."
-    "Ce ton n’a rien de rassurant."
+    think "Son compliment ressemble à une menace bien emballée."
 
     kami "Rassurez-vous."
     kami "Ce n’est pas seulement un compliment."
@@ -849,21 +671,20 @@ label _0_retour_reunion:
 
     pause 0.2
 
-    kami "Comment peut-on l'appeler ? C'est vrai que je n'y ai pas encore pensé ..."
+    kami "Comment l'appeler ? C'est vrai, je n'y ai pas encore pensé..."
     kami "Ah tiens !"
     kami "Les Kami’s Desires."
 
-    "Le nom fait l’effet d’un malaise collectif."
-    
-    think "C'est nul ..."
+    think "Kami's Desires. Même sous la menace, le nom réussit à provoquer un malaise différent."
+    think "C'est nul."
 
     scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
 
     kami "Oui."
     kami "Je sais."
-    kami "C’est un peu personnel et peut être un peu gnan-gnan."
+    kami "C'est un peu personnel. Peut-être un peu gnangnan."
     kami "Après tout c'est à cause de vous si mon originalité est limitée."
-    kami "Innovez plus ! Creez davantage ! Et je ne serais que meilleure !"
+    kami "Innovez plus ! Créez davantage ! Et je n'en serai que meilleure !"
     kami "Mais revenons à nos moutons !"
 
     pause 0.3
@@ -879,11 +700,12 @@ label _0_retour_reunion:
 
     scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
 
-    "Un souffle nerveux traverse la salle."
+    cit_a "L'unanimité ? À douze ?"
+    cit_b "C'est impossible."
 
     kami "Oh non, ne confondez pas tout."
     kami "Je ne vous rends pas le pouvoir."
-    kami "C'est votre bétise qui nous a conduit jusque là après tout."
+    kami "C'est votre bêtise qui nous a conduits jusque-là, après tout."
     kami "Mais je crois que nous pouvons travailler ensemble."
 
     pause 0.3
@@ -905,7 +727,7 @@ label _0_retour_reunion:
 
     kami "Le hasard sera employé."
     kami "Il est étonnamment plus juste et plus amusant que vos systèmes électifs."
-    kami "Laissez moi être surprise."
+    kami "Laissez-moi être surprise."
 
     pause 0.3
 
@@ -925,9 +747,7 @@ label _0_retour_reunion:
 
     scene bg_diffusion_triste at adaptive_fullscreen,memory_idle with dissolve
 
-    "Le mot tombe."
-    "Sans colère."
-    "Sans émotion."
+    think "« Élimination ». Elle le prononce sans colère, comme une option dans un menu."
 
     kami "Vous voyez ?"
     kami "Même si je me suis attachée à chacun d'entre vous ..."
@@ -945,7 +765,7 @@ label _0_retour_reunion:
 
     pause 0.2
 
-    kami "Chacun pourra suivre les décisions de leurs représentants et les modifications qui seront votées !"
+    kami "Chacun pourra suivre les décisions de ses représentants et les modifications soumises au vote !"
 
     scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
 
@@ -976,9 +796,7 @@ label _0_retour_reunion:
 
     scene black with dissolve
 
-    "La diffusion s’éteint."
-    "Doucement."
-    "Comme un sourire qui disparaît."
+    think "La diffusion s'éteint doucement, comme un sourire qui disparaît."
 
 
     pause 0.3
@@ -988,14 +806,7 @@ label _0_retour_reunion:
 
     scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
 
-    "Les écrans de la salle se rallument."
-    "Mais ils ne reviennent pas vraiment."
-    "Ils obéissent."
-
-    "Une interface s’affiche."
-    "DISTRICT HARMONIE."
-    "LISTE DE SÉLECTION."
-    "Défilement automatique."
+    voix "District Harmonie. Sélection des représentants en cours."
 
     call screen day0_representative_selection()
     
@@ -1004,70 +815,49 @@ label _0_retour_reunion:
 
     $ day0_timer_init(h=2, m=51, s=26)
 
-    "Le responsable de séance ne dit rien."
-    "Il ne commente pas."
-    "A vrai dire, je ne suis pas sur qu'il comprenne ce qu'il s'est passé exactement."
-    "Il est juste le décor d’une décision dont il ignorait tout."
+    resp "Je... La procédure va s'afficher."
+    cit_b "Quelle procédure ?"
+    resp "Je l'ignore."
+    think "Pour la première fois, il n'est plus responsable de rien. Juste le décor d'une décision prise ailleurs."
 
-    "Au fond, quelqu’un baisse les yeux et commence à prier."
-    "Puis se tait presque aussitôt."
-
-    "Les filtres disparaissent un par un."
-    "La liste se réduit."
-    "Brutalement."
-
-    "Deux lignes restent."
-    "Deux."
+    cit_a "S'il vous plaît..."
+    "Les filtres disparaissent. La liste se réduit à deux lignes."
 
     pause 0.6
 
-    "Je ne lis pas tout de suite."
-    "Je n’ose pas."
-    "Comme si retarder la lecture pouvait retarder le réel."
+    think "Je ne lis pas. Pas tout de suite. Retarder la lecture, c'est retarder le réel d'une seconde."
 
     think "Ne regarde pas."
     think "Ne regarde pas."
     think "Si tu ne regardes pas, ça ne te concerne pas."
 
-    "Je regarde quand même."
-    "Parce qu’on regarde toujours."
+    think "Je regarde quand même. On regarde toujours."
 
     show noam surpris at center
 
-    "Je sens les regards avant même de comprendre."
-    "La salle bouge à peine."
-    "Mais les têtes se tournent."
-    "Comme une vague silencieuse."
+    think "Je sens les regards avant de comprendre. Puis toutes les têtes se tournent vers moi."
 
     think "Merde."
     think "Oh non."
     think "Pas moi."
 
-    "Le médiateur senior recule d’un pas."
-    "Pas par peur."
-    "Presque par réflexe."
+    senior "Noam..."
 
     resp "…"
 
-    "Le responsable de séance ouvre la bouche."
-    "Puis la referme."
-    "Il n’a aucune phrase qui peut rivaliser avec ce qui vient de tomber."
+    resp "Vous devez..."
+    resp "..."
 
-    "Un agent en veste grise note quelque chose sur sa tablette."
-    "Pas un rapport."
-    "Une exécution logistique."
+    agent "Transport du représentant confirmé."
 
     think "22h."
     think "C'est dans moins de trois heures maintenant."
 
     $ day0_timer_init(h=2, m=27, s=18)
 
-    "Personne ne dit rien."
-    "Personne ne proteste."
-    "Personne ne demande si c’est une erreur."
-    
-    "Après tout, c'était la décision de Kami."
-    "Et on sait ce que ça implique."
+    cit_a "C'est vraiment lui ?"
+    cit_b "Si l'écran le dit..."
+    think "Personne ne demande si c'est une erreur. Une décision de Kami ne connaît pas ce mot."
 
     jump _0_EXTRACTION
 
@@ -1083,66 +873,43 @@ label _0_EXTRACTION:
     scene bg_cg004 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg004")
 
-    "La liste reste affichée là, comme un verdict indélébile."
-    "Deux noms."
-    "Dont le mien."
-    
-    "J'imagine que tous les écrans du district montrent la même chose."
+    think "Deux noms restent affichés comme un verdict. Le mien est l'un d'eux."
+    think "Tout Harmonie doit le voir. J'aurais préféré devenir célèbre autrement."
 
     resp "La séance est levée."
     resp "Veuillez quitter la salle calmement."
     resp "Par rangées. Sans attroupement."
 
-    "Les chaises grincent enfin."
-    "Un bruit énorme, d’un coup, après tant de silence."
-    "Des gens se lèvent sans se regarder."
-
-    "Je reste assis, les yeux figés sur l'écran, incapable de bouger."
-
-    "Un homme à trois rangées de moi se tourne."
-    "Il a l’air de vouloir parler."
+    "Les chaises grincent. La foule se lève sans se regarder."
+    think "Moi, je reste assis. Mes jambes n'ont pas reçu la suite du programme."
 
     cit_b "Vous… vous êtes bien—"
 
     scene bg_cg004_1 at adaptive_fullscreen,memory_idle with dissolve
     $ unlock_gallery_image("bg_cg004")
 
-    "Une main en veste grise se lève, paume ouverte."
+    "Un agent coupe l'approche d'une main."
 
     agent "Circulation. Merci."
     cit_b "Je voulais juste—"
     agent "Pas de discussion ici. Sortez."
 
-    "Le ton n’est pas agressif mais il est sec."
-
-    "Une femme tente d’approcher aussi."
-    "Elle fait deux pas vers moi."
-    "Elle s’arrête net en voyant deux agents se placer autour."
+    cit_a "Je voulais seulement lui souhaiter—"
+    agent "Dehors."
 
     cit_a "Courage…"
     agent "Madame, dehors s'il vous plait."
 
-    "Le mot “courage” se casse au milieu."
-    "Elle n’insiste pas."
-    "Personne n’insiste."
-
-    "Les agents se répartissent en éventail."
-    "Ils guident la foule vers la sortie."
-
-    "En moins d’une minute, la salle se vide."
-    "Rapidement."
-    "Comme une évacuation sans alarme."
+    think "Le mot « courage » se brise entre nous. Personne n'insiste."
+    "En moins d'une minute, les agents vident la salle."
     
-    "Je tente alors de me lever et de suivre tout le monde."
-    agent "Restez assis Monsieur je vous prie."
-
-    "Je me rassied."
-    "Je sens que je deviens le centre d’un vide."
-    "Il attend que la salle se vide entièrement."
+    noam "Je peux sortir ?"
+    agent "Restez assis, monsieur."
+    noam "Bien sûr."
+    think "Me voilà au centre d'un vide organisé spécialement pour moi."
 
     agent "Noam."
-    "Il prononce mon nom sans hésiter."
-    "Comme s’il l’avait dans l’oreille depuis le début."
+    think "Il prononce mon nom comme s'il l'avait dans l'oreille depuis le début."
 
     agent "Suivez-nous."
     agent "Vous allez rencontrer le Responsable de District."
@@ -1150,64 +917,43 @@ label _0_EXTRACTION:
 
     noam "Je peux… récupérer mes affaires ?"
 
-    "L’agent baisse les yeux sur mon badge."
-    "Puis sur mes mains."
-    "Puis sur moi."
+    agent "Non."
 
     agent "Nous vous les ferons transférer."
     agent "Venez maintenant."
 
-    "Deux agents se placent légèrement derrière moi."
-    "Pas collés."
-    "Juste assez près pour que mon corps comprenne que je n'ai aucun autre choix."
+    think "Deux agents se placent derrière moi. Assez loin pour rester polis. Assez près pour répondre à toute autre idée."
 
     scene bg_cg005 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg005")
 
     $ day0_timer_init(h=1, m=55, s=18)
 
-    "On traverse un couloir latéral."
-    "Plus étroit."
-    "Moins éclairé."
-    "Moins public."
-    "Je n'étais jamais passé par là."
-
-    "Les murs changent."
-    "Le blanc clinique disparaît."
-    "Ici, c’est du gris."
-    "Du métal."
-    "Des portes sans ornement, sans fioriture, sans plaque décorative."
+    think "Couloir latéral. Étroit, sombre, loin du public."
+    noam "Je travaille ici et je n'ai jamais vu cette aile."
+    agent "Continuez."
+    think "Le blanc d'Harmonie disparaît. Ici, tout est gris, métallique, sans plaque."
 
     play sound sfx_beep
-    "Bip-"
-    "Une serrure magnétique s’ouvre."
-
-    "On passe."
-    "La porte se referme aussitôt derrière."
-    "Le bruit est doux."
-    "Mais je l’entends comme un couperet."
+    voix "Accès autorisé."
+    think "La porte se referme doucement. Mon cerveau entend quand même un couperet."
 
     scene bg_cg006 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg006")
 
-    "Un dernier couloir."
-    "Une pièce."
-    "Sans fenêtre."
-    "Quatre chaises."
-    "Une table."
-    "Une caméra au plafond."
-    "Une odeur de matériel neuf."
+    think "Une pièce sans fenêtre. Quatre chaises. Une table. Une caméra. Du matériel neuf."
 
     agent "Asseyez-vous."
     agent "Ne touchez à rien."
     agent "Attendez."
 
-    "Ils restent à la porte et n'entrent pas."
-    "Comme s'il leur était interdit de pénétrer en ce lieux."
+    noam "Vous n'entrez pas ?"
+    agent "Attendez."
+    think "Donc non. Eux non plus n'ont pas toutes les autorisations."
 
     pause 0.8
 
-    "Le silence retombe."
+    think "Le silence retombe. Cette fois, il n'a même plus besoin d'un agent."
     
     tuto "Première phase de tutoriel."
     tuto "Vous entrez en phase d'exploration."
@@ -1295,45 +1041,29 @@ screen pnc_room():
 
 label _0_PNC_CAISSON:
     window auto
-    "Deux caissons sont alignés comme des cercueils propres."
-    "Même forme. Même hauteur."
-    "Un voyant vert pulse, lentement à l'avant de chaque caisson."
-    "Je m’approche."
-    "Ma main touche la coque."
-    "Froid. Glacial même."
-    "Aucun bouton."
-    think "Je me demande bien à quoi ça sert ?."
+    think "Deux caissons identiques. Propres comme des cercueils neufs."
+    think "Coque glaciale. Voyant vert. Aucun bouton."
+    think "Transport ? Conservation ? Dans les deux cas, je préférerais une poignée intérieure."
     jump _0_RETURN_TO_PNC
 
 label _0_PNC_CAMERA:
-    "Trois caméras se trouvent au plafond."
-    "Pas une vieille caméra qui clignote."
-    "Un truc propre. Efficace."
-    "L’objectif pivote."
-    "Juste un peu."
-    "De toute façon, ça fait un an que nous sommes constamment surveillés."
-    "Nos appareils enregistrent et transmettent nos conversations."
-    "Ils filment nos sorties et nos rencontres."
-    "Au moins, ils font ça plus discrètement que ces caméras."
+    think "Trois caméras neuves. L'objectif central pivote pour me suivre."
+    noam "Oui, je vous ai vue."
+    think "Depuis un an, nos appareils enregistrent nos voix, nos sorties, nos rencontres."
+    think "D'habitude, Kami a la délicatesse de faire semblant d'être discrète."
     jump _0_RETURN_TO_PNC
 
 label _0_PNC_PORTE:
-    "La porte est là."
-    "Tirer sur la poignée est inutile, j'ai entendu la porte se verrouiller derrière mon passage."
-    "Sur le côté, il y a une serrure magnétique avec un petit témoin rouge."
-    "De l’autre côté, deux gardes. Les mêmes que tout à l'heure."
-    "Je ne les vois pas bien. Je ne les entends pas non plus."
-    "Ils ne parlent pas ou alors la porte est suffisamment épaisse pour que je n'entende rien."
+    think "Témoin rouge. Serrure magnétique. Poignée décorative."
+    noam "Vous m'entendez ?"
+    think "Aucune réponse. Les gardes se taisent, ou la porte étouffe jusqu'aux mauvaises idées."
     jump _0_RETURN_TO_PNC
 
 label _0_PNC_BIBLIOTHEQUE:
     window auto
-    "Une bibliothèque."
-    "Quelques livres, des dossiers, des classeurs."
-    "On dirait un décor de normalité, que ça ne sert à rien."
-    "Je tire un volume au hasard."
-    "Les pages sentent le papier neuf."
-    "Vraiment neuf."
+    think "Une bibliothèque, quelques dossiers : le décor réglementaire d'une pièce normale."
+    noam "Voyons ce que vous cachez."
+    think "Rien. Les pages sont vierges et sentent le papier neuf. Même la normalité vient d'être installée."
     jump _0_RETURN_TO_PNC
 
 label _0_RETURN_TO_PNC:
@@ -1350,11 +1080,8 @@ label _0_LABEL2_RESP_DISTRICT:
     scene bg_cg006 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg006")
     
-    "Sur la table se trouve des documents."
-    "Au premier coup d'oeil je comprends immédiatement ce dont il s'agit."
-    "Les Commandements."
-    "Difficile de ne pas les connaître tant ils ont été omniprésents dans notre vie durant un an."
-    "Des millions de personnes sont mortes à cause de ces derniers."
+    think "Les documents sur la table n'ont pas besoin de titre. Les dix Commandements."
+    think "Un an à les apprendre. Des millions de morts pour ceux qui les ont appris trop tard."
 
     $ day0_timer_init(h=1, m=25, s=18)
     
@@ -1362,29 +1089,19 @@ label _0_LABEL2_RESP_DISTRICT:
 
     call screen day0_commandments_registry()
     
-    "..."
-    
-    "Nombreux sont ceux dont le crane a été percé par cet étrange et puissant rayon venant du ciel."
+    think "Dix règles. Dix façons de recevoir un rayon dans le crâne."
     
     $ cam_reset(2.0)
     
-    "Dix minutes passent."
-    "Ou deux."
-    "Je ne sais pas."
-    "Ici, le temps n’est pas un truc véritablement fiable."
-    "Surtout quand on s'ennuie."
+    think "Dix minutes passent. Ou deux. L'ennui sabote mieux le temps que Kami."
 
     play sound sfx_beep
-    "-Bip"
-    
-    "La poignée s'affaisse."
-    "La porte s’ouvre."
+    voix "Accès autorisé."
 
     resp_d "Noam."
     resp_d "Merci d’être resté calme."
 
-    "Il est bien habillé."
-    "Le genre de vêtement que peu de personnes peuvent se payer."
+    think "Très bien habillé. Le genre de veste qui coûte plusieurs mois de calme administratif."
 
     think "Donc c’est lui."
     think "Celui qui va mourir si je décide de ne pas embarquer."
@@ -1395,10 +1112,7 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Vous comprenez vite."
     resp_d "C’est une qualité utile, surtout en ce moment."
 
-    "Il s’assoit en face."
-    "Il ne propose pas de boisson."
-    "Il ne fait pas semblant d’être chaleureux."
-    "Il va droit au but."
+    resp_d "Asseyez-vous. Je vais aller droit au but."
 
     resp_d "Vous avez entendu l’annonce."
     resp_d "Nous avons jusqu’à 22h."
@@ -1406,9 +1120,7 @@ label _0_LABEL2_RESP_DISTRICT:
 
     noam "Et si je refuse ?"
 
-    "Le responsable de district ne change pas de visage."
-    "Il ne semble pas vraiment surpris par ma provocation."
-    "Comme s’il s'était préparé à toutes les éventualités."
+    think "Pas un battement de cil. Il avait préparé cette réponse avant de connaître ma question."
 
     resp_d "Vous ne refusez pas."
     resp_d "Si vous refusez, vous êtes éliminé."
@@ -1418,7 +1130,7 @@ label _0_LABEL2_RESP_DISTRICT:
     noam "Pourquoi moi ?"
     noam "Je suis personne."
 
-    resp_d "Je n'aurai pas la prétention de pouvoir dire pourquoi mais ce résultat n'est pas décevant."
+    resp_d "Je n'aurai pas la prétention d'expliquer le choix de Kami. Mais ce résultat ne me déçoit pas."
     resp_d "Vous êtes médiateur."
     resp_d "Vous avez un profil stable."
     resp_d "Pas d’antécédents d’incidents."
@@ -1426,11 +1138,9 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Aucun réseau social influent."
     resp_d "Mais vous faites votre travail sans vous faire remarquer."
     resp_d "Vous travaillez ici. Vous connaissez parfaitement HARMONIE."
-    resp_d "Donc cette conclusion n'est pas mauvaise. On pourrait même dire qu'avec vous la situation devrait rester contrôlable."
+    resp_d "Avec vous, la situation devrait rester contrôlable."
 
-    "Il le dit sans cruauté ni sans critique."
-    "Il semble même profondément soulagé."
-    "Comme un constat administratif."
+    think "Aucune cruauté. Il a même l'air soulagé. C'est pire."
 
     think "Contrôlable."
     think "Merci pour l’épitaphe."
@@ -1458,21 +1168,17 @@ label _0_LABEL2_RESP_DISTRICT:
     $ showP("noam", "neutre", 0.70)
     $ showP("lysa", "neutre", 0.30)
 
-    "Elle entre."
-    "Jeune, je dirais à peu près mon âge."
-    "Regard net."
-    "Trop net pour quelqu’un qui vient d’entendre le mot “élimination”."
-    "Ou alors c’est une façade parfaite."
+    think "Elle a mon âge, peut-être. Un regard trop net pour quelqu'un qui vient d'entendre « élimination »."
+    think "Du sang-froid ou une façade parfaite. Je ne sais pas encore ce qui m'inquiète le plus."
 
     resp_d "Lysa."
     resp_d "Vous aussi, merci d’être restée calme."
 
-    lysa blase "Calme ?"
-    lysa "On m’a arrachée de mon bureau comme on jette un dossier compromettant. J’ai à peine eu le temps de poser mon café."
-    lysa desaccord "Donc non, je ne suis pas calme."
-    lysa jaloux "Et ce charmant compte à rebours au-dessus de nos têtes rend l’expérience encore plus… intime."
+    lysa blase "Calme ? T'as vu la façon dont on m'a sortie de mon bureau ?"
+    lysa "Même les prisonniers romains avaient le temps de finir leur dernier repas. Moi, j'ai laissé mon café."
+    lysa desaccord "Donc non. Pas calme. Bref."
 
-    "Elle me regarde deux secondes, comme si elle évaluait si j’allais être un boulet ou simplement décoratif."
+    think "Elle me jauge : boulet potentiel ou simple élément de décor."
 
     lysa doute "C’est lui ?"
     lysa "... Merveilleux."
@@ -1493,43 +1199,42 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Noam. Médiation."
     resp_d "Lysa. Coordination logistique inter-secteurs."
 
-    lysa panne "Oui oui, enchanté, tout ça tout ça ..."
-    lysa blase "Selection aleatoire, j'imagine."
-    lysa doute "Ou du moins officiellement."
+    lysa panne "Ouais, enchantée, tout ça."
+    lysa blase "Sélection aléatoire, j'imagine. Tu vois bien que c'est crédible."
+    lysa doute "Les augures romains lisaient des élections dans des entrailles. Kami a juste modernisé l'interface."
 
-    think "Ok ..."
-    think "On va bien se marrer avec elle ..."
+    think "D'accord. Elle va être épuisante."
+    think "Étrangement, ça me rassure."
 
     resp_d "Parfait."
     resp_d "Je vais être clair et court."
 
-    resp_d "Vous allez être transférés en direction du conclave."
-    resp_d "Pour réaliser ceci, vous allez être mis dans ces machines."
+    resp_d "Vous allez être transférés au Conclave dans ces machines."
     
     $ cam_move(0.8, 0.2, 2.00, 1.0)
     
-    "Il pointe du doigt les étranges machines au fond de la pièce."
+    think "Les cercueils propres. Évidemment."
     
-    resp_d "Le reste de vos affaires seront livrés demain directement sur place."
+    resp_d "Le reste de vos affaires sera livré demain sur place."
     resp_d "Vos proches vont recevoir l'ordre de les réunir."
 
     noam "Pourquoi on devrait rentrer dans ces machines ?"
     
     $ cam_reset(2.0)
 
-    resp_d "Question de sécurité. Vous serez transféré je ne sais où."
+    resp_d "Question de sécurité. Je ne connais pas votre destination exacte."
     resp_d "Ces machines sont étonnamment confortables."
     resp_d "Du moins c'est ce qu'on m'a dit."
-    resp_d "Vous serez endormi durant le trajet par un gaz sopo-"
+    resp_d "Vous serez endormis durant le trajet par un gaz sopo—"
 
-    lysa fatigue "Donc on nous gazéifie et on nous glisse dans ces charmants cercueils high-tech."
-    lysa blase "Ils auraient pu mettre de la musique douce. Quitte à nous ranger dans des boîtes."
+    lysa fatigue "Donc on nous gaze et on nous range dans des cercueils high-tech."
+    lysa blase "Les pharaons avaient au moins de la musique et des bijoux. Régression nette. Et alors ?"
 
     resp_d "Kami aura le contrôle. Nous, nous obéissons."
     resp_d "Et je vous conseille de ne pas résister."
     resp_d "Vous savez ce qu'il en coûte."
     
-    "Il jette un regard grave sur les documents posés sur la table."
+    think "Son regard glisse vers les Commandements. Argument numéro dix : mourir."
     
     resp_d "Parce que chaque minute perdue vous rapproche de 22h."
 
@@ -1542,28 +1247,25 @@ label _0_LABEL2_RESP_DISTRICT:
     resp_d "Vous n’êtes pas là pour être héroïques ou pour prendre des risques."
     resp_d "Si vous le pouvez, tentez d'améliorer le quotidien des gens."
 
-    "Le responsable se lève."
-    "Il fait un signe."
-    "Les agents se redressent."
+    resp_d "Agents."
 
     resp_d "On y va."
     resp_d "Il faut vous installer dans les caissons de transport."
     
-    lysa "Mais on a encore plusieurs heures ..!"
-    lysa "…mais bien sûr, pourquoi laisser des condamnés profiter de leurs dernières respirations libres ? Ce serait presque indécent."
+    lysa "On a encore plusieurs heures."
+    lysa "Mais pourquoi laisser des condamnés profiter de leurs dernières respirations libres ? Ce serait presque indécent."
     
     resp_d "Je ne veux prendre aucun risque."
     resp_d "Rien ne vous interdit d'arriver plus tôt."
     resp_d "Plus vite vous y arrivez et plus vite on a respecté notre mission."
 
-    "Lysa me regarde une dernière fois."
-    "Elle sait bien qu'il n'est pas possible de négocier."
+    think "Lysa me regarde. Elle sait déjà que négocier ne servira à rien."
 
     lysa "On se présentera correctement quand la machine nous le demandera, j’imagine."
     lysa "Après tout, nous ne sommes déjà plus des êtres humains. Juste deux marionnettes bien habillées que Kami va faire danser en direct."
     lysa blase "Inutile de s’épuiser à prétendre que nous avons encore le moindre choix. C’est presque reposant, quand on y pense."
 
-    noam "Ça marche."
+    noam "Enfin... oui. Ça marche."
 
     $ day0_timer_init(h=0, m=37, s=20)
 
@@ -1574,23 +1276,19 @@ label _0_LABEL2_RESP_DISTRICT:
     $ unlock_gallery_image("bg_cg006")
 
     play sound sfx_beep
-    "Bip."
-    "La porte d'un des caissons s'ouvre."
+    voix "Caisson un : ouvert."
     play sound sfx_beep
-    "Bip."
-    "Puis viens le tour de l'autre."
+    voix "Caisson deux : ouvert."
 
     resp_d "Tout devrait bien se passer."
-    "Devrait ..."
+    think "« Devrait ». Le mot idéal avant de fermer un cercueil."
 
-    "Elle s’allonge la première."
+    lysa "Bon. Icare a eu des ailes. Moi, j'ai une boîte. Chacun son grand départ."
     
     scene bg_cg006_2 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg006")
     
-    "Presque sans hésitation."
-    "Même si on voit à son teint qu'elle est loin d'être à l'aise."
-    "Mais elle le cache comme un embarras qu’elle refuse de ressentir."
+    think "Elle s'allonge presque sans hésiter. Son teint la trahit ; son visage refuse de confirmer."
 
     menu:
         "Demander à prévenir quelqu’un.":
@@ -1605,26 +1303,17 @@ label _0_LABEL2_RESP_DISTRICT:
             lysa "Pratique. Même l'angoisse est sous-traitée."
 
         "Regarder Lysa avant d’entrer.":
-            "Je regarde Lysa."
-            "Pas longtemps, juste avant le caisson."
-            "Juste assez pour qu’elle comprenne que je ne veux pas disparaître seul."
+            think "Je cherche le regard de Lysa. Juste assez pour lui dire que je ne veux pas disparaître seul."
             lysa "Respire, Noam. Enfin... tant que c'est encore autorisé."
 
         "Poser la main sur la vitre du caisson.":
-            "Je pose la main sur la vitre."
-            "La surface est froide."
-            "Le voyant vert ne change pas."
+            think "La vitre est froide. Le voyant vert ne réagit pas."
             think "Même mon dernier geste personnel ressemble à une validation biométrique."
 
-    "Je m’allonge à mon tour."
+    think "À mon tour."
     
     scene bg_cg006_3 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg006")
-    
-    "Le matelas est vraiment bien."
-    "L'intérieur est assez chaud, il semble climatisé."
-    "Au fond, une sorte de coussin moelleux est disposé."
-    "C'est plutôt agréable, et on peut s'étendre les jambes."
     
     noam "Je ne m'attendais pas à ce que ce soit... aussi confortable."
 
@@ -1633,42 +1322,40 @@ label _0_LABEL2_RESP_DISTRICT:
     lysa doute "J’ai toujours trouvé que les cercueils standards manquaient cruellement de rembourrage."
     lysa taquin "Ils ont au moins mis un peu de budget là dedans."
 
-    "Une sangle se ferme."
-    "Puis une autre."
-    "Pas trop serrée."
-    "Juste assez pour nous empêcher de nous relever."
+    voix "Maintien thoracique activé."
+    noam "Ils auraient pu prévenir."
+    lysa blase "Et gâcher la surprise ?"
     
-    "Les portes des caissons se referment simultanément."
+    voix "Fermeture simultanée."
 
     pause 0.4
 
-    "La lumière bleue qui pulsait au dessus de moi s’étire."
-    "Un léger picotement me saisit le nez."
+    think "La lumière bleue s'étire. Quelque chose me pique le nez."
     
     scene bg_cg006_4 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg006")
     
     $ blink()
     
-    "Je me redresse légèrement. La sangle m'empêche de me lever plus."
-    "Instinctivement, je regarde vers Lysa grâce au petit hublot de mon caisson."
+    noam "Lysa ?"
+    think "La sangle me retient. Je cherche son visage à travers le hublot."
     
     $ blink()
     
-    "Elle me regarde aussi."
-    "Mais pas avec le sourire et l'énergie qu'elle semblait avoir jusque là."
+    think "Elle me regarde aussi. Plus d'ironie. Plus de références."
+    lysa "Ouais, Noam."
     
     $ blink()
     
-    "Le plafond recule."
+    think "Le plafond recule."
     
     $ blink()
     
-    "Il s'éloigne."
+    think "Il s'éloigne encore."
     
     $ blink()
     
-    "Ou du mois c'est l'impression que j'en ai."
+    think "Ou c'est moi qui tombe."
     
     $ blink()
     

@@ -197,28 +197,89 @@ image mara vide               = mara_expression("vide")
 # ======================
 # NOAM
 # ======================
-image noam colere              = im.FactorScale("images/character/noam/colere.png", 0.60)
-image noam culpabilite         = im.FactorScale("images/character/noam/culpabilite.png", 0.60)
-image noam desaccord           = im.FactorScale("images/character/noam/desaccord.png", 0.60)
-image noam desespoir           = im.FactorScale("images/character/noam/desespoir.png", 0.60)
-image noam determine           = im.FactorScale("images/character/noam/determine.png", 0.60)
-image noam hesitation          = im.FactorScale("images/character/noam/hesitation.png", 0.60)
-image noam inquiet             = im.FactorScale("images/character/noam/inquiet.png", 0.60)
-image noam joie                = im.FactorScale("images/character/noam/joie.png", 0.60)
-image noam neutre              = im.FactorScale("images/character/noam/neutre.png", 0.60)
-image noam panne               = im.FactorScale("images/character/noam/panne.png", 0.60)
-image noam peur                = im.FactorScale("images/character/noam/peur.png", 0.60)
-image noam raison              = im.FactorScale("images/character/noam/raison.png", 0.60)
-image noam reflexion           = im.FactorScale("images/character/noam/reflexion.png", 0.60)
-image noam rire                = im.FactorScale("images/character/noam/rire.png", 0.60)
-image noam sourire             = im.FactorScale("images/character/noam/sourire.png", 0.60)
-image noam surpris             = im.FactorScale("images/character/noam/surpris.png", 0.60)
-image noam taquin              = im.FactorScale("images/character/noam/taquin.png", 0.60)
-image noam triste              = im.FactorScale("images/character/noam/triste.png", 0.60)
-image noam fatigue              = im.FactorScale("images/character/noam/fatigue.png", 0.60)
-image noam faible              = im.FactorScale("images/character/noam/fatigue.png", 0.60)
-image noam panique              = im.FactorScale("images/character/noam/panique.png", 0.60)
-image noam panne_creep              = im.FactorScale("images/character/noam/panne_creep.png", 0.60)
+init python:
+    NOAM_IMAGE_SIZE = (1024, 1536)
+    NOAM_IMAGE_SCALE = 0.60
+    NOAM_ASSET_DIR = "images/character/noam"
+
+    NOAM_EXPRESSIONS = {
+        "colere": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+        "culpabilite": ("corps", "bras_devant_soi", "bouche_triste", "yeux_triste"),
+        "desaccord": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+        "desespoir": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_fatigue"),
+        "determine": ("corps", "bras_long_corps", "bouche_sourire", "yeux_suspiscion"),
+        "hesitation": ("corps", "bras_devant_soi", "bouche_triste", "yeux_triste"),
+        "inquiet": ("corps", "bras_devant_soi", "bouche_triste", "yeux_fatigue"),
+        "joie": ("corps", "bras_long_corps", "bouche_joie", "yeux_normal"),
+        "neutre": ("corps", "bras_long_corps", "bouche_triste", "yeux_normal"),
+        "panne": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
+        "peur": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
+        "raison": ("corps", "bras_long_corps", "bouche_sourire", "yeux_normal"),
+        "reflexion": ("corps", "bras_devant_soi", "bouche_triste", "yeux_suspiscion"),
+        "rire": ("corps", "bras_devant_soi", "bouche_joie", "yeux_normal"),
+        "sourire": ("corps", "bras_long_corps", "bouche_sourire", "yeux_normal"),
+        "surpris": ("corps", "bras_long_corps", "bouche_joie", "yeux_surpris"),
+        "taquin": ("corps", "bras_long_corps", "bouche_taquin", "yeux_suspiscion"),
+        "triste": ("corps", "bras_devant_soi", "bouche_triste", "yeux_triste"),
+        "fatigue": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
+        "panique": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
+        "panne_creep": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+    }
+
+    def _noam_asset(name):
+        return "%s/%s.png" % (NOAM_ASSET_DIR, name)
+
+    def _noam_is_speaking():
+        return is_character_speaking("noam")
+
+    def _noam_layered_expression(st, at, expr):
+        body, arms, mouth, eyes = NOAM_EXPRESSIONS[expr]
+
+        blink_phase = st % 4.9
+        if 4.62 <= blink_phase <= 4.78:
+            eyes = "yeux_ferme"
+
+        zoom = NOAM_IMAGE_SCALE
+        if _noam_is_speaking():
+            mouth_phase = st % 0.32
+            if mouth_phase < 0.16:
+                mouth = "bouche_parle"
+            zoom = NOAM_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
+
+        composite = im.Composite(
+            NOAM_IMAGE_SIZE,
+            (0, 0), _noam_asset(body),
+            (0, 0), _noam_asset(arms),
+            (0, 0), _noam_asset(eyes),
+            (0, 0), _noam_asset(mouth),
+        )
+        return Transform(composite, zoom=zoom), 0.08
+
+    def noam_expression(expr):
+        return DynamicDisplayable(_noam_layered_expression, expr)
+
+image noam colere              = noam_expression("colere")
+image noam culpabilite         = noam_expression("culpabilite")
+image noam desaccord           = noam_expression("desaccord")
+image noam desespoir           = noam_expression("desespoir")
+image noam determine           = noam_expression("determine")
+image noam hesitation          = noam_expression("hesitation")
+image noam inquiet             = noam_expression("inquiet")
+image noam joie                = noam_expression("joie")
+image noam neutre              = noam_expression("neutre")
+image noam panne               = noam_expression("panne")
+image noam peur                = noam_expression("peur")
+image noam raison              = noam_expression("raison")
+image noam reflexion           = noam_expression("reflexion")
+image noam rire                = noam_expression("rire")
+image noam sourire             = noam_expression("sourire")
+image noam surpris             = noam_expression("surpris")
+image noam taquin              = noam_expression("taquin")
+image noam triste              = noam_expression("triste")
+image noam fatigue             = noam_expression("fatigue")
+image noam faible              = noam_expression("fatigue")
+image noam panique             = noam_expression("panique")
+image noam panne_creep         = noam_expression("panne_creep")
 
 # ======================
 # LYSA
@@ -439,7 +500,8 @@ init python:
         "surprise": ("corps", "bras_sur_de_lui", "bouche_surprise", "yeux_neutre"),
         "taquin": ("corps", "bras_devant_soi", "bouche_sourire", "yeux_doux"),
         "triste": ("corps", "bras_long_corps", "bouche_triste", "yeux_triste"),
-        "vide": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "blase": ("corps", "bras_croise", "bouche_grimace", "yeux_colere"),
+        "vide": ("corps", "bras_croise", "bouche_grimace", "yeux_colere"),
     }
 
     def _iris_asset(name):
@@ -494,6 +556,7 @@ image iris triste               = iris_expression("triste")
 image iris desaccord            = iris_expression("desaccord")
 image iris intervention         = iris_expression("intervention")
 image iris gene                 = iris_expression("gene")
+image iris blase                 = iris_expression("blase")
 image iris vide                 = iris_expression("vide")
 
 # ======================
@@ -547,6 +610,7 @@ init python:
         "taquin": ("corps_1", "bras_explication", "bouche_content", "yeux_content"),
         "triste": ("corps_1", "bras_long_corps", "bouche_decu", "yeux_decu"),
         "fatigue": ("corps_1", "bras_derriere_tete", "bouche_decu", "yeux_decu"),
+        "sourire": ("corps_1", "bras_main_croise", "bouche_joie", "yeux_content"),
         "vide": ("corps_1", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
     }
 
@@ -616,6 +680,7 @@ image elen taquin               = elen_expression("taquin")
 image elen triste               = elen_expression("triste")
 # image elen fatigue               = im.FactorScale("images/character/elen/fatigue.png", 0.60)
 image elen fatigue              = elen_expression("fatigue")
+image elen sourire              = elen_expression("sourire")
 # image elen vide              = im.FactorScale("images/character/vide.png", 0.60)
 image elen vide                 = elen_expression("vide")
 

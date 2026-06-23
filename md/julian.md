@@ -60,19 +60,6 @@ C'est la seule personne devant qui ses répliques préparées sonnent creux mêm
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Julian arrive au Conclave avec un plan narratif : être celui qui fait avancer les choses, celui dont on parlera encore quand le Conclave sera fini.
-
-Son arc est une désillusion progressive — pas idéologique, intime.
-
-- **Jours 1–10 :** Il installe sa présence. Discours, positionnement, création de moments. Ça fonctionne sur plusieurs membres du groupe. Il se sent dans son élément.
-- **Jours 11–20 :** Il prépare un moment fort — une réplique, une prise de position, quelque chose de mémorable. Il a calculé le timing, le contexte, l'angle de caméra.
-- **Jours 21–25 :** Le moment échoue. Pas spectaculairement — il tombe à plat. Personne ne s'en rend compte sauf lui. Le groupe passe à autre chose immédiatement. Il reste avec ça.
-- **Jours 26–30 :** Quelque chose change dans son rapport aux autres — pas une conversion, pas une rédemption propre. Juste un moment où il dit quelque chose de vrai, hors caméra, sans l'avoir préparé. Et ça l'arrête.
-
----
-
 ## FAÇON DE PARLER
 
 ### Trois modes selon le contexte

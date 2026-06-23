@@ -63,19 +63,6 @@ Elle dit des choses qui se réalisent. Pas toujours. Souvent assez pour que les 
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Sael arrive au Conclave avec une certitude : elle est là parce qu'il le fallait. Les signes le disaient. Elle interprète le Conclave comme un rite, les autres participants comme des âmes à accompagner, les votes comme une liturgie.
-
-Son moment bascule est intime et silencieux.
-
-- **Jours 1–10 :** Elle s'installe. Elle observe. Elle commence à prendre soin, doucement, de ceux qui semblent en avoir besoin. Elle interprète les premières tensions du groupe comme des signes à lire.
-- **Jours 11–20 :** Elle dit quelque chose — pas une prophétie déclarée, juste une observation tranquille. *"Ça va mal finir pour lui si rien ne change."* Ou quelque chose d'équivalent. Et ça se produit. Elle reste calme. Les autres, moins.
-- **Jours 21–26 :** Elle réalise ce que ça veut dire que d'avoir raison. Pas de la satisfaction — de la peur. Si le signe s'est réalisé, ça valide tout le système. Ça valide aussi ce qu'elle n'a pas dit encore. Elle commence à tenir ses prédictions pour elle.
-- **Jours 27–30 :** Quelque chose qu'elle a vu venir arrive. Elle l'avait su. Elle ne l'avait pas dit. Et la question de savoir si elle aurait dû reste avec elle.
-
----
-
 ## FAÇON DE PARLER
 
 ### Registre

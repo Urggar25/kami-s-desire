@@ -73,22 +73,6 @@ Et elle apprécie sincèrement la liberté que Kami lui a donnée par inadvertan
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Mara arrive au Conclave comme à une fête de plus — un endroit nouveau, des gens à déstabiliser, des caméras à utiliser à sa façon.
-
-Le Conclave est fermé. Trente jours, les mêmes personnes, pas d'échappatoire par la fête.
-
-- **Jours 1–10 :** Elle installe son personnage. Provocation, flirt, répliques qui font mouche. Elle teste tout le monde. Quelques-uns résistent, ce qui l'intéresse.
-- **Jours 11–20 :** Elle commence à s'attacher — à une ou deux personnes, sans le montrer. Elle intensifie la provocation en proportion directe.
-- **Jours 21–26 :** Quelqu'un lui demande ce qu'elle veut vraiment. Pas de plaisir, pas de liberté au sens hédoniste — de vie. Qu'est-ce qu'elle veut construire ? Qui est-elle quand personne ne regarde ?
-
-Elle n'a pas de réponse.
-
-- **Jours 27–30 :** Elle ne résout pas la question. Mais elle arrête de fuir dedans. Quelque chose change dans la façon dont elle occupe l'espace — moins de bruit, pas moins de présence.
-
----
-
 ## FAÇON DE PARLER
 
 ### Registre

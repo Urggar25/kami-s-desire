@@ -8,67 +8,34 @@
 
     pause 0.6
 
-    think "…"
-
-    pause 0.4
-
-    think "Je bouge."
-    think "Vraiment vraiment trop."
-
-    pause 0.4
-
-    think "Je me tourne sur le côté."
-    think "Non, ça ne va pas."
-
-    pause 0.4
-
-    think "Sur le dos."
-    think "Mon dieu, c'est encore pire !"
-
-    pause 0.5
-
-    think "Je replie une de mes jambes."
-    think "J’essaie de trouver une position."
-    think "N’importe laquelle tant qu'elle me permette de dormir."
-
-    pause 0.5
-
-    think "Le matelas est pourtant agréable."
-    think "C’est sans doute moi qui n’arrive pas à me détendre."
+    think "Côté gauche. Non. Sur le dos. Pire. Une jambe repliée... toujours pas."
+    think "Le matelas est confortable. Le problème, enfin... c'est moi."
 
     $ blink()
 
     pause 0.6
 
-    think "J'ouvre les yeux."
+    think "J'ouvre les yeux. Encore."
     scene bg_cg012 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg012")
 
     $ blink()
 
-    think "Je tente de les refermer."
+    think "Je les referme. Je négocie avec mon cerveau."
 
     $ blink()
 
     pause 0.4
 
-    think "Encore."
+    think "Refus immédiat."
 
     $ blink()
 
     pause 0.6
 
-    think "Chaque fois que je commence à glisser…"
+    think "Chaque fois que je commence à glisser, une image revient."
     $ blink()
-    think "Il y a une image qui revient."
-
-    pause 0.6
-
-    $ blink()
-
-    think "Une salle."
-    think "Les sièges du Conclave."
-    think "Ces voix qui m'étaient encore inconnues jusqu'à hier."
+    think "La salle. Les sièges. Les onze voix qui n'avaient pas encore de visage hier."
 
     pause 0.6
 
@@ -77,18 +44,15 @@
 
     pause 0.6
 
-    think "Je serre les dents."
-    think "J’inspire lentement."
-    think "Expire."
+    think "J'inspire. J'expire. Je serre les dents entre les deux, ce qui annule probablement l'exercice."
 
     pause 0.6
 
     $ blink()
-    think "Rien n’y fait."
-    think "Ça ne me calme pas."
+    think "Rien. Mon corps refuse de croire que la chambre est sûre."
     $ blink()
 
-    "Alors que j'avais du mal à dormir convenablement, une alarme retentit."
+    voix "Diffusion prioritaire."
 
     play sound sfx_announce
 
@@ -110,7 +74,7 @@
     kami "Déjà en train de remuer dans vos petits lits ?"
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Enfin, je ne peux que spéculer vous n'êtes pas nombreux à avoir désactiver votre brouilleur !"
+    kami "Enfin, je ne peux que spéculer : vous n'êtes pas nombreux à avoir désactivé votre brouilleur !"
 
     pause 0.4
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -121,7 +85,7 @@
     pause 0.5
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "Mais soit, nous en sommes au jour deux."
+    kami "Mais soit. Nous en sommes au jour deux."
 
     $ blink()
 
@@ -212,101 +176,29 @@
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
-    think "…"
-
-    pause 0.4
-
-    think "Je fixe le plafond."
-    think "Cette fois, je suis bien réveillé."
+    think "Cette fois, je suis réveillé. Hier s'est enchaîné trop vite pour réfléchir : écouter, avancer, comprendre — enfin, essayer."
+    think "Maintenant, le calme ramène tout ce que j'ai repoussé."
 
     pause 0.6
 
-    think "Hier…"
-    think "Tout s’est enchaîné si vote, sans la moindre pause."
-
-    pause 0.5
-
-    think "Je n’ai pas eu le temps de réfléchir."
-    think "Juste eu à peine le temps de réagir."
-    think "D’écouter."
-    think "D’avancer."
-    think "De comprendre ce qui nous arrivait. Et encore ..."
+    think "Ma famille est à des milliers de kilomètres. L'appartement, la cafetière trop bruyante, le café trop amer."
+    think "Et Juliette. Ma petite sœur, debout trop tôt, toujours une question prête avant que la précédente ait une réponse."
+    think "Comment lui expliquer le Conclave ? Comment lui expliquer Kami sans lui apprendre à avoir peur de chaque écran ?"
 
     pause 0.6
 
-    think "Aujourd’hui, c’est différent."
-
-    pause 0.6
-
-    think "Le calme est trompeur."
-    think "Mais il est là. Attentif, patient."
-    think "Je sais qu'il ne durera pas."
-
-    pause 0.6
-
-    think "Et avec lui…"
-    think "Les pensées que j’ai repoussées jusque là."
-
-    pause 0.8
-
-    think "Je suis à des milliers de kilomètres de ma famille."
-
-    pause 0.6
-
-    think "Je revois encore l’appartement de mes parents."
-    think "Celui que j'ai quitté avant-hier."
-    think "Ce matin qui devait être comme les autres ..."
-    think "Le bruit trop fort de la cafetière et le goût amer du café."
-
-    pause 0.6
-
-    think "Et puis surtout les rires, les cris, les caprices de Juliette."
-
-    pause 0.6
-
-    think "Ma petite sœur."
-    think "Toujours debout trop tôt à venir enquiquiner tout le monde."
-    think "Toujours trop curieuse à poser des questions sur tout et rien."
-
-    pause 0.6
-
-    think "Comment expliquer ce qu'il m'arrive à quelqu’un comme elle ?"
-    think "Ces règles."
-    think "Ce Conclave."
-    think "Kami."
-
-    pause 0.8
-
-    think "Est-ce qu’elle a compris ?"
-    think "Ou est-ce qu’elle regarde l'écran de la télévision en ce moment ?"
-    think "Est-ce qu'elle me regarde ?"
-
-    pause 0.6
-
-    think "Je n’ai aucun moyen de savoir."
-    think "Aucun moyen d’aider ou même de comprendre."
-
-    pause 0.8
-
-    think "Je suis ici."
-    think "Pas avec eux."
-    think "Je dois être fort."
-
-    pause 0.6
-
-    think "Rester immobile ne changera rien à notre situation."
+    think "Elle me regarde peut-être en ce moment. Moi, je ne peux ni la voir ni l'aider."
+    think "Enfin... rester allongé n'y changera rien."
 
     pause 0.6
 
     call day2_play_wakeup_trace from _call_day2_play_wakeup_trace
 
-    think "Je me redresse."
-    think "Je pose les pieds au sol."
+    think "Je me redresse et pose les pieds au sol."
 
     pause 0.6
 
-    think "Il est temps de se motiver.."
-    think "Direction la cafétéria."
+    think "Cafétéria. Annonce importante. Avenir proche. Une matinée raisonnable."
 
     stop music fadeout 1.0
     pause 0.6
@@ -323,20 +215,17 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     pause 0.4
 
-    "Dès que je mets un pied dans la cafétéria, je comprends que ça parle déjà trop fort."
+    think "Un pied dans la cafétéria, et les voix me frappent avant l'odeur du petit-déjeuner."
     play sound sfx_door
 
     menu:
         "Choisir où se placer."
         "Je m'assois près d'une table encore libre.":
-            "Je tire une chaise sans bruit."
-            "Depuis là, je peux voir presque toute la salle."
+            think "Je tire une chaise sans bruit. D'ici, je vois presque toute la salle."
         "Rester près du buffet.":
-            "Je prends un plateau, plus pour occuper mes mains que pour manger."
-            "Les voix me parviennent par morceaux."
+            think "Je prends un plateau pour occuper mes mains. Les voix arrivent par morceaux."
         "Me tenir près de l'entrée.":
-            "Je reste debout quelques secondes."
-            "La porte derrière moi permet de compter ceux qui arrivent."
+            think "Je reste près de la porte. Facile de compter les arrivées. Facile de repartir aussi."
 
 
     $ showGroup([
@@ -354,24 +243,23 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     tomas inquiet "On est vraiment obligés d’être tous là… enfin, là, tout de suite ? Je veux dire… maintenant ?"
     
 
-    iris desaccord "Super. Vraiment super."
-    iris colere "Même pas dix minutes et on a déjà droit aux questions à la con. Bravo l’équipe."
+    iris desaccord "Excellente question. Peut-on ignorer une convocation de l'IA qui exécute les retardataires ?"
+    iris colere "Quelqu'un veut tester le protocole ? Non ? Super."
 
     tomas panne "Je— je dis pas que c’est idiot !"
     tomas panne "C’est juste que… enfin… voilà."
 
 
-    ryn neutre "Non mais laisse."
-    ryn reflechit "Au moins lui il parle."
-    ryn reflechit "Y’en a qui serrent les dents depuis hier et qui font semblant que tout va bien."
+    ryn neutre "Laisse-le. Au moins, il parle."
+    ryn reflechit "Y'en a qui serrent les dents depuis hier."
 
 
     elen content "Oh !"
-    elen joie "C’est vrai que l’ambiance est un peu chelou ce matin…"
-    elen surpris "Mais attends, ils ont changé les plateaux ! Regardez comme ils brillent maintenant, c’est pas dingue ? Ça change tout !"
+    elen joie "C'est vraiii que l'ambiance est un peu chelou..."
+    elen surpris "Oh ! Ils ont changé les plateaux ! Regardez comme ils brillent ! Ça change tout, non ?"
 
     iris desaccord "Elen."
-    iris colere "On s’en tape complètement des plateaux, là. Sérieux."
+    iris colere "Les plateaux ne compensent pas une menace de mort, Elen. Même brillants."
 
     elen desaccord "Oui mais quand même !"
     elen content "N’empêche… peut-être que c’est fait exprès pour nous rebooster un peu le moral, non ?"
@@ -382,34 +270,29 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
 
     elias ecoute "…"
-    elias neutre "Ça va arriver, de toute façon."
-    elias ecoute "Autant être prêts."
+    elias neutre "Ça va tomber de toute façon. Autant être prêts, c'est chaud sinon."
 
     noam surpris "Prêts à quoi, exactement ?"
 
-    elias neutre "Autant se préparer à encaisser ce qu'on va nous balancer."
+    elias neutre "À encaisser ce qu'elle va nous balancer. J'sais pas quoi, justement."
 
     pause 0.6
 
 
-    sael raison "Hm."
-    sael mefiant "C’est fou comme ça me rassure."
-    sael desaccord "J’adore commencer mes matinées avec une menace inconnue."
+    sael raison "Ma grand-mère disait que l'attente donne des dents à ce qu'on craint."
+    sael mefiant "Mangez. Nous aurons besoin de forces quand le signe viendra."
 
 
-    nyra raison "Pareil."
-    nyra taquin "Ça me rappelle le boulot."
-    nyra raison "Sauf qu’ici, on n’est même pas payés."
+    nyra raison "Qu'est-ce qui vous aiderait le plus, là ? Connaître l'annonce ou savoir comment les autres vont la recevoir ?"
 
 
     iris colere "Et en plus on peut même pas se barrer. Génial."
 
-    nyra raison "Hé."
-    nyra raison "Ce ne sont que des détails."
+    nyra raison "On ne peut pas partir. Mais on peut éviter de se rendre la matinée pire."
 
     pause 0.6
 
-    "La porte s'ouvre une première fois."
+    think "La porte s'ouvre."
     $ showGroup([
         ("elias", "neutre", -0.11),
         ("mara", "neutre", 0.01),
@@ -424,16 +307,15 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
 
     play sound sfx_door
-    mara taquin "Vous jacassez grave, là."
-    mara neutre "On vous entend depuis le couloir, sérieux."
-    mara taquin "De toute façon ça changera que dalle à ce qui va tomber."
+    mara taquin "On vous entend depuis le couloir. Joli comité d'accueil."
+    mara neutre "Continuez, surtout. J'aime voir qui panique avec style."
 
 
     elen content "Oh Mara !"
     elen joie "Viens t’asseoir avec nous, allez ! Ça serait trop cool."
 
-    mara neutre "Je suis très bien là."
-    mara taquin "Je préfère voir tout le monde, histoire de voir vos tronches lors de l'annonce."
+    mara neutre "Je suis très bien là. Je vois tout le monde."
+    mara taquin "Et vous me voyez entrer. Arrangement parfait."
 
     pause 0.4
 
@@ -464,14 +346,13 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "desaccord", 1.20),
     ])
 
-    lysa blase "… Désolée pour le retard."
+    lysa blase "Désolée pour le retard. Enfin, non."
 
 
     tomas inquiet "N-Non non !"
     tomas hesitation "Enfin… y a pas de problème. Vraiment. Aucun problème."
 
-    lysa reflexion "Je n’avais pas envie de revenir ici."
-    lysa blase "Pas tout de suite."
+    lysa reflexion "Cassandre non plus n'avait pas envie de retourner au palais. Elle avait raison. Bref."
 
     noam reflexion "Je comprends."
 
@@ -494,8 +375,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "desaccord", 1.20),
     ])
 
-    kael reflechit "…"
-    kael neutre "Tout le monde est là ?"
+    kael neutre "Il manque quelqu'un."
     kami "On est presque 9h."
 
     iris colere "Franchement, j’ai la flemme de compter."
@@ -503,7 +383,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     kael reflechit "Bien."
 
-    "Et puis ce son, le même que ce matin retentit à nouveau."
+    voix "Diffusion prioritaire."
     play sound sfx_announce
 
     pause 2.0
@@ -540,7 +420,6 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Ça vous rend… délicieusement prévisible."
 
     $ bc_show("ryn", "surpris", px=-70, py=-50, pz=0.85)
-    ryn neutre "Bla bla bla ..."
     ryn neutre "Elle va y venir ou pas ?"
     $ bc_hide()
 
@@ -584,18 +463,17 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     pause 0.8
 
     $ bc_show("sael", "surpris", px=-70, py=-50, pz=0.85)
-    sael triste "C'est honnêtement pas si mal."
+    sael triste "Les routes qui se rouvrent sont parfois de bons signes."
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra taquin "Hé."
-    nyra taquin "C’est mieux que ‘qui on sacrifie en premier’, non ?"
+    nyra taquin "Qu'est-ce que vous entendez par « marchandises » ?"
+    nyra reflexion "Selon la réponse, ce texte peut nourrir un district ou en vider un autre."
 
     $ bc_show("iris", "triste", px=-70, py=-50, pz=0.85)
-    iris colere "Ne dis pas ça. S’il te plaît. Ne. Dis. Pas. Ça."
+    iris colere "Merci. Enfin une question utile. Les termes sont vagues, donc dangereux."
 
     $ bc_show("nyra", "sourire", px=-70, py=-50, pz=0.85)
-    nyra surpris "Quoi ?"
-    nyra reflexion "Je pose la question."
+    nyra surpris "C'est justement pour ça que je la pose."
     $ bc_hide()
 
     pause 0.6
@@ -604,7 +482,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Mais ils vont me laisser parler ces petits cons ?!"
 
     pause 0.4
-    "Tout le monde s'est tu instantanément."
+    think "Le silence tombe instantanément."
     pause 0.4
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -673,26 +551,22 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     ryn reflechit "Enfin ça commence."
 
 
-    elen joie "Et si on essayait d’en parler calmement tous ensemble ?"
-    elen content "Juste… sans s’énerver..."
+    elen joie "Et si on essayait d'en parler calmement ? Tous ensemble ?"
+    elen content "Sans s'énerver, avec un truc à manger, ce serait encore mieux mais— bref !"
 
 
-    sael raison "Adorable."
-    sael mefiant "Vraiment."
+    sael raison "Le calme ne garantit pas l'accord. Mais il laisse une place aux mots."
 
 
-    mara taquin "Ça va laisser des marques."
-    mara fatigue "Et pas seulement sur le papier, hein."
+    mara taquin "Un débat calme devant des caméras ? Vous voulez vraiment priver le public de tout plaisir ?"
 
 
-    kael reflechit "Oui."
-    kael colere "Et pas seulement économiques."
+    kael reflechit "Les effets dépasseront l'économie."
 
     pause 0.6
 
     play sound sfx_door
-    "Et puis la porte claque une dernière fois."
-    "Tout le monde se retourne pour la regarder"
+    "La porte claque. Tous les regards convergent vers Julian."
 
 
     $ showGroup([
@@ -710,63 +584,53 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "mefiant", 1.20),
     ])
 
-    julian rire "Salut la team !"
-    julian surpris "J’ai loupé quoi ?"
+    julian rire "Bonjour à tous. Julian est enfin parmi vous."
+    julian surpris "Qu'ai-je manqué ?"
 
 
-    nyra raison "Boooh trois fois rien."
-    nyra taquin "Juste l'annonce du vote."
-    nyra raison "Tu sais, celui qui aura lieu demain."
-    nyra surpris "La joie. Quoi."
+    nyra raison "Qu'est-ce que tu préférerais entendre d'abord : le sujet ou le délai ?"
+    julian surpris "Le délai."
+    nyra taquin "Demain."
 
-    julian panne "Oh putain…"
-    julian taquin "J’adore quand ça démarre direct en mode drama. Ça sent les bonnes histoires."
+    julian panne "Demain..."
+    julian taquin "Très bien. L'urgence clarifie les caractères."
 
     noam colere "Bienvenue au Conclave."
     noam reflexion "Je crois bien que c'est notre quotidien désormais."
 
     pause 0.6
 
-    julian sourire "Et sinon ? On en est où là, vraiment ?"
+    julian sourire "Reprenons clairement. Où en sommes-nous ?"
 
-    iris colere "Non mais franchement Julian, tu peux pas débarquer ici la bouche en coeur et demander à ce qu'on te fasse un récap."
+    iris colere "Tu arrives en retard et tu demandes un récapitulatif personnalisé. Remarquable efficacité collective."
 
-    julian decu "Et pourquoi pas, hein ?"
-    julian decu "Tu pourrais le dire à ton meilleur pote, non ? Allez, fais-moi plaisir."
+    julian decu "Tu pourrais résumer pour ton plus ancien allié ici."
 
-    iris sourire "Toi ?! Mon meilleur ami ?!"
-    iris taquin "Laisse moi rire !"
+    iris sourire "Mon allié ? Tu as tenté de me séduire pendant six mois. Ce n'est pas une coalition."
 
-    julian sourire "Bon, très bien, j’abandonne."
-    julian sourire "Je vais deviner direct. J’adore ce jeu, sérieux."
-    julian taquin "Préparez-vous, je sens que je vais taper dans le mille."
+    julian sourire "Très bien. Julian reconstituera seul la situation."
 
-    julian reflexion "Donc… on récapitule."
-    julian reflexion "Kami balance un vote."
-    julian reflexion "À voir vos têtes..."
+    julian reflexion "Kami annonce un vote. À voir vos visages..."
 
-    "Il prends du temps et regarde curieusement chacun des visages de la salle."
+    think "Il étudie chaque visage, tout en gardant son meilleur angle pour la caméra."
 
-    julian reflexion "Mais attendez… elle est pas si pourrie que ça, la proposition."
-    julian sourire "Je parie que c’est un truc pour fluidifier le commerce ! Genre, enfin un peu de vie économique ici !"
+    julian reflexion "La proposition n'est pas manifestement hostile. Commerce, circulation de ressources..."
+    julian sourire "Une réouverture des échanges entre districts."
 
-    iris intervention "… Euh ? Attends, comment tu… t’as deviné ça toi ?!"
+    iris intervention "Comment tu as—"
 
-    julian taquin "J’ai toujours eu un sixième sens…"
+    julian taquin "Julian lit les situations."
 
 
-    elias ecoute "Quel beau parleur, tiens !"
-    elias neutre "Y a des écrans partout ici."
-    elias ecoute "A tous les coups, la diffusion a tourné partout."
+    elias ecoute "Y a des écrans partout. La diffusion tournait dans le couloir. C'est chaud de faire genre t'as deviné."
 
     julian panne "…"
-    julian decu "Sérieux Elias ? Fallait vraiment me piquer mon moment de gloire comme ça ?"
-    julian panne "…"
-    julian decu "Pfff… ok j’ai tout capté en fond, inutile de me refaire le film."
+    julian decu "Elias. Il restait exactement trois secondes avant que ce moment fonctionne."
+    julian decu "J'ai entendu la diffusion. Inutile de reprendre."
 
     $ j2_vote_codex_unlocked = True
     call screen day2_vote_tablet_notice
-    "La tablette vibre une dernière fois, puis le dossier reste disponible dans mes notes."
+    think "La tablette vibre. Le dossier du vote rejoint mes notes."
 
     jump _2_CAFETERIA_POST_ANNONCE
 
@@ -777,57 +641,45 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     show screen day2_quick_vote_notes
 
-    "Le silence qui suit est plus lourd que l'annonce."
-    "Pas parce qu'elle est violente."
-    "Mais parce qu'elle ressemble presque à une respiration."
-    "Une parenthèse, un espoir que tout ne dégénèrera pas."
+    think "Le silence ressemble presque à un soulagement. C'est ce qui le rend suspect."
 
-    kael reflechit "Sur le papier, c’est simple."
-    kael neutre "Autoriser les échanges."
-    kael reflechit "On pourrait presque dire que ce n’est pas une révolution."
+    kael reflechit "Sur le papier : autoriser les échanges."
+    kael neutre "Les effets ne seront pas simples."
 
-    mara doute "Ça devient louche là."
-    mara taquin "Kami fait jamais rien pour nous faire kiffer."
+    mara doute "C'est presque séduisant. Donc forcément louche."
 
-    sael raison "Ou elle sait qu’on a besoin d’un os à ronger."
-    sael mefiant "Pour calmer la panique et la colère de la foule."
+    sael raison "Un chemin facile peut être un signe. Ou un piège posé pour ceux qui cherchent un signe."
 
-    kael neutre "Ce n'est pas Kami qui a décidé de cet amendement. C'est l'un d'entre nous."
-    kael inquiet "Il y a un risque qu'il y ait un piège."
-    kael reflechit "La question, c’est de savoir où il est."
+    kael neutre "L'amendement vient de l'un de nous."
+    kael inquiet "Le risque est dans ses effets, pas nécessairement dans son auteur."
 
     mara neutre "Le piège, c’est nous."
     mara taquin "On a nos districts, nos besoins, nos secrets."
     mara neutre "Et nos égos, tant qu’à faire."
 
 
-    nyra taquin "Je suis d’accord."
-    nyra raison "C’est l’amendement le moins explosif qu’on pouvait se prendre."
-    nyra colere "C’est presque… consensuel."
+    nyra taquin "Qui perd quelque chose si les échanges reprennent ?"
+    nyra raison "Trouvons cette réponse avant de décider que le texte est consensuel."
 
     kael neutre "Ce qui n’est pas une bonne nouvelle."
 
-    nyra taquin "Tu veux dire que c’est trop beau ?"
+    nyra taquin "Tu penses à Orbite ?"
 
 
-    iris colere "Réfléchis deux secondes, putain."
-    iris desaccord "Nous filer l’espoir que tout va bien se passer pour qu’on baisse notre garde…"
-    iris colere "C’est du Kami tout craché, ça ! Nous faire espérer deux secondes pour mieux nous baiser après."
+    iris colere "Le texte ne définit ni contrôle, ni quotas, ni responsabilité."
+    iris desaccord "Une bonne intention sans protocole, c'est une catastrophe qui attend son horaire."
 
-    mara taquin "‘Baiser’, hein ? T’as l’air presque impatiente que ça arrive."
-
-    iris surpris "H-Hein ?! Mais va te faire foutre, Mara !"
-
-    mara sourire "Oh je vois que Madame a du vocabulaire."
-    mara sourire "Nan merci, vas-y découvre ça en solo, je te regarde faire, hein !"
+    mara taquin "Tu deviens vraiment attirante quand tu parles de protocoles."
+    iris surpris "Je— Ce n'est pas le sujet !"
+    mara sourire "Dommage. Continue quand même."
 
     iris colere "Sérieusement…"
     iris desaccord "Et ça veut dire qu’on va devoir causer de tout le reste ensemble."
-    iris colere "L’enfer. Littéralement l’enfer sur Terre."
+    iris colere "L'enfer. Avec ordre du jour."
 
     nyra taquin "Tu dis ça comme si c’était la première fois."
 
-    iris desaccord "La première fois que j'ai à débattre de ce qui pourrait causer la fin du monde ? Ouai c'est ma première fois.."
+    iris desaccord "La première fois que je débats d'un texte capable d'affamer un district ? Oui. Curieusement."
 
     kael reflechit "On ne peut pas vraiment esquiver."
     kael neutre "Demain, il va falloir faire le bon choix et voter."
@@ -835,14 +687,11 @@ label _2_CAFETERIA_POST_ANNONCE:
     menu:
         "Suivre la discussion."
         "Revenir sur la phrase de Kael.":
-            "Je garde ses mots en tête."
-            "Demain, personne ne pourra prétendre que le vote arrive par surprise."
+            think "Je garde ses mots. Demain, personne ne pourra prétendre à la surprise."
         "Observer les réactions autour de la table.":
-            "Je laisse les mots circuler."
-            "Les regards disent déjà presque autant que les phrases."
+            think "Je laisse les mots circuler. Les regards en disent presque autant."
         "Noter mentalement la règle d'unanimité.":
-            "Une voix contre suffira."
-            "Ce détail change tout."
+            think "Une voix contre suffira. Ce détail change tout."
 
 
     elen joie "On peut essayer d’être d’accord, non ?"
@@ -854,14 +703,12 @@ label _2_CAFETERIA_POST_ANNONCE:
     elen content "Franchement… la proposition a pas l’air si pourrie que ça, si ?"
     elen joie "Je veux dire… y a claiiirement pire, non ?"
 
-    "Personne ne répond vraiment mais d'un autre côté personne ne proteste."
+    think "Personne ne répond. Personne ne proteste non plus."
 
 
-    sael raison "Touchant."
-    sael mefiant "Mais on verra demain."
+    sael raison "Souhaiter l'accord est une bonne chose. Le prendre pour un signe en est une autre."
 
-    kael reflechit "Demain, c’est tard."
-    kael neutre "On doit se parler aujourd’hui."
+    kael reflechit "Demain est trop tard. Parlons aujourd'hui."
 
     sael surpris "Tu veux dire quoi ?"
     sael mefiant "Qu’on fasse une réunion ?"
@@ -901,10 +748,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     tomas colere "Du coup… on doit se faire confiance. Voilà."
 
 
-    nyra taquin "On pourrait commencer par lister ce qu’on sait."
-    nyra raison "Et ce qu’on ignore."
-    nyra taquin "Parce que là, on se jette des impressions sans grande certitude."
-    nyra raison "C'est pas comme ça qu'on avancera ..."
+    nyra taquin "Qu'est-ce qu'on sait ? Qu'est-ce qu'on ignore ?"
+    nyra raison "Commençons par là. Chacun pourra ajouter ce qui concerne son district."
 
     mara taquin "T’as de quoi pondre un roman sur tout ce qu’on sait pas ?"
 
@@ -914,19 +759,16 @@ label _2_CAFETERIA_POST_ANNONCE:
     kael neutre "Sinon on va se bouffer."
 
 
-    elen joie "Je peux prendre des notes si vous voulez."
-    elen content "Ça me calme de tout noter. Ça donne l’impression qu’on bosse vraiment sur un truc important…"
-    elen joie "… et que c’est pas juste du vent."
+    elen joie "Oh ! Je peux prendre des notes ! J'écris super vite quand je panique."
+    elen content "Et après je peux faire des catégories. Avec des couleurs ! Ça donne l'impression qu'on contrôle un truc."
 
     nyra raison "Tu vois, c’est utile."
 
     elen reflexion "Je sais pas… ça me rassure, c’est tout."
 
 
-    iris colere "Bon. On a trois priorités, ok ?"
-    iris desaccord "Un : on veut pas se faire baiser."
-    iris colere "Deux : on veut pas trahir nos districts."
-    iris desaccord "Et trois : si possible, on évite de finir par se détester tous. Ambitieux, je sais."
+    iris colere "Trois priorités. Un : éviter les effets pervers. Deux : protéger nos districts."
+    iris desaccord "Trois : ne pas nous haïr avant demain. Oui, la troisième est techniquement la plus ambitieuse."
 
     nyra taquin "T’as pas oublié la lune dans ta liste aussi ?"
 
@@ -936,30 +778,26 @@ label _2_CAFETERIA_POST_ANNONCE:
     elen triste "Une seule. C’est hyper court quand on y pense…"
 
 
-    julian surpris "Bon, on fait quoi concrètement là ?"
-    julian taquin "Parce que tourner en rond c’est mignon cinq minutes, mais après ça gave."
+    julian surpris "Il nous faut une méthode. Ce collectif ne peut pas tourner en rond jusqu'au vote."
 
     iris surpris "Tu proposes quoi, là, concrètement ? Vas-y, je t’écoute."
 
-    julian sourire "Faut un vrai plan, là."
-    julian taquin "Ou alors, on y réfléchit et on met en commun demain."
-    julian sourire "Chacun bosse son bout dans son coin, et demain on se retrouve avec du lourd."
+    julian sourire "Chacun prépare les besoins de son district. Demain, nous mettons tout en commun."
+    julian taquin "Une structure claire. Un résultat visible. Julian peut coordonner."
 
     iris colere "Dire qu’on réfléchit, c’est super facile à balancer."
     iris desaccord "Le faire vraiment, par contre… c’est une autre paire de manches."
 
-    julian peur "T’as peur de qui, là, tout de suite ? Dis."
+    julian peur "Qui te semble incapable de réfléchir, exactement ?"
 
     iris inquiet "Des gens qu'on risque de tuer ..."
 
 
-    sael raison "Tout ce qu’on partage ici, ça va nous revenir dans la gueule. Toujours."
-    sael mefiant "Toujours."
+    sael raison "Les mots confiés à une assemblée reviennent toujours à celui qui les a donnés."
 
     iris colere "Et si on refuse ?"
 
-    sael desaccord "Il suffit d'une voix contre pour que ça parte en couille."
-    sael mefiant "On laisse ceux qui veulent se vendre le faire."
+    sael desaccord "Une voix contre suffit. Ceux qui ne veulent pas se livrer doivent pouvoir garder le silence."
 
     iris desaccord "Tu dis ça comme si c’était simple."
 
@@ -967,11 +805,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael desaccord "Mais refuser, c’est aussi un choix. Un choix qui a des conséquences."
 
 
-    mara agace "On va pas tous voter pareil, soyons sérieux."
-    mara taquin "Y a des districts qui ont rien à voir entre eux."
-    mara neutre "Nos vies, nos galères, nos habitudes… tout est différent."
-    mara taquin "Et d’un coup on nous demande de tomber d’accord ?!"
-    mara neutre "Dans ce bordel ? Sérieux ?!"
+    mara agace "On ne votera pas tous pareil. Nos districts n'ont rien à voir."
+    mara taquin "Demander l'unanimité ici, c'est organiser une fête et exiger que tout le monde reparte amoureux."
 
     nyra reflexion "Donc on doit parler d’inégalités."
 
@@ -985,8 +820,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     tomas inquiet "E-Enfin je veux dire, bien sûr qu’on veut les défendre, mais…"
     
 
-    elen joie "On a tous la trouille de choisir."
-    elen content "Mais en vrai… on choisit déjà. À chaque fois qu’on parle, la vie n'est qu'une suite de choix !"
+    elen joie "On a tous la trouille de choisir. Mais parler, c'est déjà choisir un peu, non ?"
+    elen content "Comme choisir son dessert avant le plat. Mauvais exemple. Enfin, vous voyez !"
 
     tomas hesitation "Je sais."
     tomas inquiet "Je sais, oui."
@@ -1005,10 +840,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     nyra taquin "Alors on va en parler."
 
 
-    julian taquin "Je peux résumer vite fait pour qu’on soit tous synchro ?"
-    julian sourire "On s’organise."
-    julian taquin "On pose clairement ce qu’on peut apporter."
-    julian sourire "Et on se juge pas. Promis, je commence."
+    julian taquin "Je résume : nous organisons les besoins, les risques et les garanties."
+    julian sourire "Sans jugement. Julian commence."
 
     iris colere "Ça va être le plus dur. De loin."
 
@@ -1033,32 +866,20 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     tomas colere "D-De toute façon on ne sait même pas qui votera contre, si ?."
 
-    "Le bruit reprend doucement."
-    "Des chaises raclent, des plateaux s’éloignent."
-    "Tout le monde retourne peu à peu à ses occupations."
+    think "Les chaises raclent. Les plateaux s'éloignent. La réunion se dissout sans conclusion."
 
 
     $ hideGroup()
 
-    "La matinée est finie, pas la tension, elle, elle reste bien présente."
-    "Elle reste accrochée aux épaules."
-    "Elle s’invite dans les gestes."
-    "Dans les pauses un peu trop longues."
-    "Dans les sourires qui veulent rassurer."
-    "Je sens mes mains se crisper."
-    "Je me force à marcher."
-    "À ne pas rester planté là."
-    "À ne pas chercher des réponses là où il n’y en a pas."
+    think "La matinée finit. La tension reste accrochée aux épaules, aux gestes, aux sourires trop appliqués."
+    think "Mes mains se crispent. Je marche avant de recommencer à chercher une réponse qui n'existe pas."
 
     stop music fadeout 0.8
     pause 0.6
 
     hide screen day2_quick_vote_notes
 
-    "Le reste de la matinée passe rapidement et pendant ce temps là, je me balade pour me changer les idées."
-    "Des pas, des couloirs, des respirations."
-    "Je ne sais pas qui va craquer."
-    "Je ne sais pas si ce sera moi."
+    think "Je traverse des couloirs pour changer d'air. Je ne sais pas qui craquera. Je ne sais pas si ce sera moi."
 
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
 
@@ -1075,11 +896,7 @@ label _2_APRES_MIDI:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     show screen day2_quick_vote_notes
 
-    "L’après-midi commence sans véritable signal."
-    "Je marche."
-    "Un couloir étroit."
-    "Propre."
-    "Trop propre."
+    think "L'après-midi commence dans un couloir étroit, propre au point d'en devenir suspect."
 
 
     $ showGroup([
@@ -1091,45 +908,31 @@ label _2_APRES_MIDI:
     mara mefiant "Tu penses vraiment qu’ils vont nous laisser voter tranquilles ?"
     mara doute "Sans… orienter un peu ?"
 
-    sael mefiant "Ils n’ont pas besoin."
-    sael raison "Ils attendront qu’on le fasse nous-mêmes."
+    sael mefiant "Kami n'a pas besoin de nous orienter. Elle attendra que nos peurs le fassent."
 
     mara taquin "Toujours aussi rassurante."
+    sael neutre "Je ne cherche pas à rassurer."
 
-    sael neutre "Je fais de mon mieux."
-
-    "Un silence."
-    "Bref."
+    think "Le silence tranche la conversation."
 
     mara stress "À plus tard."
     mara doute "… si tout a pas déjà explosé d’ici là."
 
-    sael taquin "Si ça lâche, on saura où chercher."
+    sael raison "Si quelque chose cède, le bruit nous guidera."
 
 
     $ hideGroup()
 
-    "Je les laisse derrière."
-    "Le couloir continue."
-    "Des voix passent."
-    "Des mots coupés."
-    "Des phrases qu’on ne termine pas."
-
-    "Je tourne."
-    "Lysa est adossée au mur."
-    "Bras croisés."
-    "Elias est face à elle."
+    think "Je les laisse derrière. Au tournant suivant, Lysa est adossée au mur, Elias face à elle."
 
     menu:
         "Approcher Lysa et Elias."
         "Les rejoindre directement.":
-            "Je fais quelques pas vers eux avant que la conversation ne se referme."
+            think "Je les rejoins avant que la conversation se referme."
         "Attendre qu'Elias termine sa phrase.":
-            "Je ralentis."
-            "Une phrase complète vaut parfois mieux qu'une question trop rapide."
+            think "Je ralentis. Une phrase complète vaut mieux qu'une question trop rapide."
         "Les observer quelques secondes.":
-            "Lysa garde les bras croisés."
-            "Elias cherche ses mots sans la brusquer."
+            think "Lysa garde les bras croisés. Elias cherche ses mots sans la brusquer."
 
 
     $ showGroup([
@@ -1137,8 +940,7 @@ label _2_APRES_MIDI:
         ("lysa", "triste", 0.25),
     ])
 
-    elias ecoute "Tu devrais en discuter avec nous."
-    elias ecoute "Enfin, si tu veux."
+    elias ecoute "Tu devrais parler avec nous. Si tu veux. C'est chaud de rester seule ici."
 
     lysa neutre "Tu sais je préfère..."
 
@@ -1146,10 +948,9 @@ label _2_APRES_MIDI:
 
     lysa blase "Je sais."
 
-    "Un temps."
+    think "Lysa laisse passer un temps."
 
-    elias fatigue "T’as pas beaucoup parlé aujourd’hui…"
-    elias fatigue "Tu étais plus bavarde hier…"
+    elias fatigue "T'as pas beaucoup parlé aujourd'hui. Hier, t'arrêtais pas."
 
     lysa reflexion "J’ai écouté."
 
@@ -1159,17 +960,15 @@ label _2_APRES_MIDI:
 
     elias ecoute "Non."
 
-    lysa reflexion "Tu sais comment j’appelle tout ça ?"
-    lysa neutre "Marcher sans trop y penser."
-    lysa blase "Avancer sans tomber."
+    lysa reflexion "Tu sais comment j'appelle ça ? Orphée."
+    lysa blase "Avancer sans regarder derrière, parce qu'on sait très bien ce qui arrive sinon."
 
-    elias reflechit "Laisse moi deviner..."
-    elias neutre "Essayer de survivre."
+    elias reflechit "J'ai pas compris la référence. Mais ouais, survivre."
 
     lysa surpris "… Oui."
     lysa triste "Voilà."
 
-    "Je m’approche."
+    think "Je m'approche."
     $ showGroup([
         ("elias", "neutre", -0.11),
         ("noam", "inquiet", 0.13),
@@ -1188,7 +987,7 @@ label _2_APRES_MIDI:
 
     noam inquiet "Pourquoi tu penses ça ?"
 
-    lysa reflexion "Mon district. Enfin, le notre ..."
+    lysa reflexion "Harmonie. Notre district."
     lysa neutre "Les gens entendent avant de regarder."
 
     elias raison "Alors dis-leur."
@@ -1197,24 +996,22 @@ label _2_APRES_MIDI:
     lysa blase "Qu’on manque déjà de tout ?"
     lysa neutre "Ils le savent."
 
-    noam culpabilite "Je pense que tous les districts ont des problèmes…"
+    noam culpabilite "Tous les districts ont des problèmes, enfin... je crois que—"
 
     lysa opposition "Justement."
 
-    "Silence."
-    "Lysa regarde le sol."
+    think "Lysa regarde le sol."
 
-    elias fatigue "Tu n’es pas obligée de parler à la réunion."
+    elias fatigue "T'es pas obligée de parler à la réunion."
 
     lysa determine "Si je ne parle pas…"
     lysa reflexion "On parlera pour moi."
 
     noam hesitation "Tu as peur ?"
 
-    lysa peur "Oui."
-    lysa peur "Mais toi aussi."
+    lysa peur "Ouais. Mais toi aussi."
 
-    noam panne "… Oui."
+    noam panne "Ouais."
 
     lysa neutre "Alors n’essaie pas d’être solide."
     lysa blase "Ça se voit quand ça sonne faux."
@@ -1223,14 +1020,13 @@ label _2_APRES_MIDI:
 
     lysa triste "Moi aussi."
 
-    elias ecoute "Tu peux dire l’essentiel."
+    elias ecoute "Dis juste l'essentiel. C'est déjà bien."
 
     lysa reflexion "L’essentiel fait toujours mal."
 
-    elias neutre "Mais il peut rester en mémoire."
+    elias neutre "Ouais. Mais les gens s'en souviennent."
 
-    "Lysa souffle."
-    "Longuement."
+    think "Lysa souffle longuement."
 
     lysa determine "Je viendrai."
     lysa reflexion "On tirera ça au clair."
@@ -1240,11 +1036,11 @@ label _2_APRES_MIDI:
     lysa fatigue "ça risque pas d’empirer les choses ?"
 
     noam raison "C'est possible."
-    noam raison "Pour tout te dire, je ne sais pas vraiment."
+    noam raison "Pour tout te dire, je ne sais pas. Enfin, pas encore."
 
     lysa triste "Ne promets pas trop vite."
 
-    noam neutre "On en parlera peut-être demain..."
+    noam neutre "On en parlera demain. Enfin... si tu veux."
 
     lysa triste "Oui."
     lysa triste "Avant que je change d’avis."
@@ -1260,12 +1056,7 @@ label _2_APRES_MIDI:
 
     $ hideGroup()
 
-    "Elle se redresse."
-    "Fais un pas."
-    "Puis un autre."
-
-    "Je reste une seconde."
-    "Puis je repars en direction de la salle d'observation."
+    think "Elle se redresse et s'éloigne. Je repars vers la salle d'observation."
 
     jump _2_SALLE_OBSERVATION
 
@@ -1275,21 +1066,16 @@ label _2_APRES_MIDI:
 label _2_SALLE_OBSERVATION:
     scene bg_observation at adaptive_fullscreen with dissolve
 
-    "La baie vitrée donne sur le vide."
-    "Un noir immense, calme, presque apaisant."
-    "Kael est déjà là."
-    "Debout, les mains dans le dos."
+    think "Derrière la baie vitrée : le vide, immense et calme. Kael est déjà là."
 
     menu:
         "Avant de parler à Kael."
         "Examiner brièvement la salle.":
-            "Je suis les lignes des consoles et les reflets de la vitre."
-            "Ici, tout ramène à Orbite."
+            think "Les consoles, la vitre, les modules : ici, tout ramène à Orbite."
         "Regarder la baie vitrée.":
-            "Orbite paraît calme de loin."
-            "C'est presque pire."
+            think "Orbite paraît calme de loin. C'est presque pire."
         "Aller directement vers lui.":
-            "Je ne laisse pas le silence s'installer plus longtemps."
+            think "Je ne laisse pas le silence s'installer."
 
 
     $ showGroup([
@@ -1297,37 +1083,29 @@ label _2_SALLE_OBSERVATION:
         ("kael", "neutre", 0.84),
     ])
 
-    noam neutre "Ah Kael, tu tombes bien. Je voulais te demander..."
-    noam hesitation "Tu sais où on est ?"
-    noam hesitation "Enfin… précisément."
+    noam neutre "Kael. Tu sais où on est ? Enfin... précisément."
 
     kael neutre "Non."
-    kael reflechit "Mais je reconnais des pièces."
-    kael reflechit "C'est du matériel qui vient bien d'Orbite."
+    kael reflechit "Matériel d'Orbite. Architecture orbitale."
 
     noam raison "Donc on est bien proches de chez toi."
 
-    kael doute "Enfin proche ... Tu te rends compte de la taille d’Orbite ?"
-    kael doute "On dit souvent que Limen est le plus grand district ... En terme de surface habitée peut-être mais Orbite le surpasse de loin en superficie."
-    kael jaloux "J'imagine donc qu'on est quelque part dans mon district."
+    kael doute "Orbite est immense. Proche ne veut rien dire ici."
+    kael jaloux "Mais oui. Nous sommes probablement dans mon district."
 
     noam inquiet "Ça te rassure ?"
 
-    kael colere "Ça me met en colère."
-    kael colere "Parce que ça veut dire qu’ils avaient tout prévu."
-    kael colere "Le lieu, le calendrier, nos réactions."
+    kael colere "Non."
+    kael colere "Ce lieu prouve que tout était prévu."
 
     noam inquiet "Tu crois qu’ils ont prévu le vote aussi ?"
 
-    kael mefiant "Je ne sais pas vraiment... Si c'est vraiment nous qui l'avons proposé, peut-être que non."
-    kael mefiant "Mais ça ne changera pas grand chose au fond."
-    kael mefiant "Nous allons sans doute nous diviser sur des détails."
+    kael mefiant "Le texte, peut-être pas. Nos réactions, oui."
 
     noam raison "Il me semble qu’on n’est pas encore divisés."
 
-    kael colere "On l’est déjà."
-    kael colere "Sinon tout le monde aurait accepté de parler hier soir."
-    kael colere "La peur ne met pas les mêmes mots dans toutes les bouches."
+    kael colere "Nous le sommes."
+    kael colere "Sinon, tout le monde aurait parlé hier."
 
     pause 0.6
 
@@ -1364,62 +1142,49 @@ label _2_SALLE_OBSERVATION:
 
     kael mefiant "C’est clair."
 
-    noam inquiet "Tu penses qu’on peut tenir un consensus ?"
+    noam inquiet "Tu penses qu'on peut tenir un consensus ?"
 
-    kael raison "Personne n'a l'air d'être particulièrement contre la proposition."
-    kael neutre "Alors..."
-    kael inquiet "'Fin, peut-être. Je sais pas."
-    kael inquiet "Je t'avoue que je ne sais pas trop quoi faire."
+    kael raison "Personne n'est ouvertement contre."
+    kael inquiet "Ça ne suffit pas."
     
     noam reflexion "Pourquoi ça ? Chez toi, sur Orbite, comment vous gérez les appros ?"
 
-    kael doute "J'imagine un peu comme partout ailleurs."
-    kael doute "Il y a des rations à récupérer chaque jour. Si on veut du matériel spécifique on doit faire une demande officielle et attendre."
+    kael doute "Rations quotidiennes. Demande officielle pour le matériel. Attente."
 
-    noam reflexion "Ouais, comme partout en fait."
-    noam reflexion "Je crois que ça fonctionne comme ça dans tous les districts aujourd'hui ..."
+    noam reflexion "Comme partout, alors. Enfin, je crois."
 
     call day2_collect_vote_argument("rationnement") from _call_day2_collect_vote_argument_rationnement
 
-    noam neutre "Si on autorise le commerce, ça pourrait peut-être améliorer les choses, non ?"
-    noam reflexion "Ca pourrait redevenir un peu comme avant, avec des magasins, des choses en libre accès."
+    noam neutre "Le commerce pourrait améliorer ça. Des magasins, du libre accès... peut-être."
 
-    kael raison "Ouais, ça se tient."
-    kael doute "Mais si il y a la moindre chose qui peut entrainer un tir de laser, c'est extrèmement dangereux."
+    kael raison "Peut-être."
+    kael doute "Toute infraction supplémentaire augmente le risque d'un tir."
 
-    noam neutre "Il te suffit pourtant de 'juste' respecter les règles non ?"
+    noam neutre "Il suffit de respecter les règles, non ? Enfin... en théorie."
 
-    kael colere "Ca ne marche pas comme ça sur Orbite ..."
-    kael colere "S-Sur orbite, on vit tous dans des vaisseaux ... au beau milieu de l'espace."
+    kael colere "Pas sur Orbite."
+    kael colere "Nous vivons dans des modules pressurisés."
 
-    "Il avale sa salive difficilement, il a du mal à parler."
+    think "Il déglutit. Pour la première fois, chaque mot semble lui coûter plus que son silence."
 
-    kael inquiet "Si quelqu'un fait une connerie, le laser tire ..."
-    kael inquiet "Le vaisseau se perce et tout le monde à bord risque de mourir faute d'oxygène ..."
+    kael inquiet "Une personne commet une infraction. Le laser perce la coque."
+    kael inquiet "Tout le module perd son oxygène."
 
     noam triste "Hein ?!"
     noam triste "Mais c'est pas juste !"
 
-    kael inquiet "Si Kami était juste on le saurait..."
-    kael inquiet "Changer, c'est risquer de briser ce quotidien auquel on s'est habitué."
-    kael inquiet "Heureusement on y est habitué, et dans toutes les salles on a des masques à oxygène au cas ou ..."
-    kael inquiet "Mais ça reste très dangereux."
+    kael inquiet "La justice n'entre pas dans le calcul."
+    kael inquiet "Nous avons des masques partout. Ils ne sauvent pas tout le monde."
 
     $ hideGroup()
 
-    "Il s'éloigne de quelques pas."
-
-    kael triste "Excuse moi, je vais faire un tour..."
+    kael triste "Excuse-moi. J'ai besoin de vérifier quelque chose."
 
     call day2_collect_vote_argument("orbite") from _call_day2_collect_vote_argument_orbite
 
 
-    "Je reste un instant face au vide perdu dans mes pensées."
-    "Je compte mes respirations."
-    "Je pense à Juliette et à ses chansons horribles à écouter."
-    "Et pourtant, là, elles me manquent."
-    "Elle disait que ça chassait les cauchemars. J'en aurai bien besoin."
-    "Je prends une longue bouffée d'air, puis une autre, et j’avance."
+    think "Je reste face au vide et compte mes respirations."
+    think "Juliette chantait faux pour chasser les cauchemars. Là, même ses chansons me manquent."
 
     pause 0.6
     jump _2_GYMNASE
@@ -1432,14 +1197,7 @@ label _2_GYMNASE:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
-    "Je passe par la salle de sport."
-    "Le bruit des machines est constant."
-    "Métallique."
-    "Régulier."
-
-    "Iris enchaîne les répétitions."
-    "Sa respiration est courte."
-    "Elias compte à voix basse."
+    think "Le bruit régulier des machines couvre presque les pensées. Iris enchaîne les répétitions ; Elias compte."
 
 
     $ showGroup([
@@ -1447,14 +1205,11 @@ label _2_GYMNASE:
         ("elias", "neutre", -0.11),
     ])
 
-    iris determine "Encore."
-    iris determine "Allez. Je dois… je dois continuer."
-    iris determine "Sans ralentir. Sans m’arrêter. Allez."
+    iris determine "Encore. Tant que mes muscles brûlent, mon cerveau ferme enfin sa gueule."
 
-    elias ecoute "Respire. C'est le plus important."
-    elias ecoute "Sinon tu vas te fatiguer pour rien."
+    elias ecoute "Respire. Sinon tu te fatigues pour rien, c'est chaud."
 
-    "Je m’approche."
+    think "Je m'approche."
     $ showGroup([
         ("elias", "neutre", -0.11),
         ("noam", "hesitation", 0.13),
@@ -1464,32 +1219,28 @@ label _2_GYMNASE:
 
     noam hesitation "Je dérange ?"
 
-    iris taquin "Tant que tu prends pas ma place."
+    iris taquin "Tant que tu ne prends pas ma place et que tu ne te blesses pas de façon stupide. J'ai déjà assez de travail."
 
     elias ecoute "Non."
     elias neutre "Ça tombe bien."
-    elias joie "T'as envie d'apprendre à mieux te muscler ?"
+    elias joie "Tu veux apprendre ? J'peux te montrer."
 
     noam surpris "Euh…"
     noam neutre "Je crois."
 
-    iris determine "Alors bouge-toi au lieu de juste mater."
-    iris taquin "Ça tombe bien, y a plusieurs bancs qui sont libres là-bas."
+    iris determine "Alors bouge au lieu de regarder. Il y a des bancs libres."
 
-    "Elias me désigne un banc."
+    elias "Celui-là. Assieds-toi."
 
-    elias ecoute "Assieds-toi."
-    elias joie "On va commencer simplement."
+    elias joie "On commence simple."
 
-    "Je m’exécute."
-    "Le métal est froid."
+    think "Le métal est froid sous mon dos."
 
-    elias raison "Stop. Redresse ton dos, ça ne va pas."
-    elias detendu "Expire en poussant, inspire en descendant. Si tu bloques ta respiration, tu vas exploser avant la troisième rep."
+    elias raison "Stop. Ton dos. Expire en poussant, inspire en descendant."
+    elias detendu "Tu bloques, t'es mort à la troisième rep. Enfin pas mort, mais c'est chaud."
 
 
-    iris taquin "Directement sur le banc de développé-couché ?"
-    iris taquin "Le pauvre, il va trembler de tout son corps."
+    iris taquin "Développé-couché dès la première séance ? Excellent. J'avais justement envie d'assister à une panne musculaire."
 
     noam inquiet "Je tremble déjà rien que d'y penser."
 
@@ -1497,15 +1248,13 @@ label _2_GYMNASE:
     elias detendu "Ne lutte pas."
     elias detendu "Accompagne le mouvement."
 
-    "Je soulève."
-    "C’est bien plus lourd que prévu."
+    think "Je soulève. Beaucoup plus lourd que prévu."
 
     elias ecoute "Pas comme ça."
     elias detendu "Moins vite."
     elias detendu "Contrôle la descente."
 
-    "Je recommence."
-    "Ça brûle."
+    think "Je recommence. Ça brûle."
 
     iris fatigue "Voilà."
 
@@ -1522,36 +1271,30 @@ label _2_GYMNASE:
     noam reflexion "Un…"
     noam reflexion "Deux…"
 
-    "Je commence à pousser les altères."
+    think "Je pousse les haltères."
 
     $ mg_skip_scene_pick = True
     call minijeu_halteres from _call_minijeu_halteres
 
-    "Je repose."
-    "Je souffle."
+    think "Je repose et récupère l'usage de mes poumons."
     $ mg_skip_scene_pick = False
 
     pause 0.6
 
-    elias joie "T’as senti le feu dans les pecs ? C’est ça qui marque."
-    elias joie "Mais si tu viens une fois tous les quinze jours, ça repart aussi sec. Le corps oublie pas, il pardonne juste pas."
-    elias raison "Moi je viens dès que j’ai un créneau."
-    elias raison "En t’entraînant régulièrement, tu rends ton corps et ta tête plus solides."
-    elias ecoute "Force, endurance, concentration… tout ça monte."
+    elias joie "T'as senti ? C'est ça. Mais une fois tous les quinze jours, ça sert à rien."
+    elias raison "Tu viens souvent. Force, endurance, concentration. Le corps comprend le concret."
 
-    iris taquin "Et parfois…"
-    iris determine "Ouais. Et des fois, c’est juste pour pas rentrer chez soi et tout péter dans le salon."
-    iris taquin "Bref. Soulever de la fonte, c’est moins cher qu’un psy."
+    iris determine "Et parfois, c'est juste pour ne pas rentrer et tout casser."
+    iris taquin "La fonte coûte moins cher qu'un psy et pose moins de questions idiotes."
 
     pause 0.4
 
     noam reflexion "Donc…"
     noam reflexion "Si je ne fais rien…"
 
-    elias neutre "Tu stagneras, et puis t'auras plus de chance d'être en mauvaise santé plus tard."
+    elias neutre "Tu stagnes. Et plus tard, ton corps te le fait payer."
 
-    "Je regarde mes mains."
-    "Elles tremblent encore un peu."
+    think "Mes mains tremblent encore."
 
     noam neutre "Je reviendrai."
 
@@ -1563,13 +1306,10 @@ label _2_GYMNASE:
 
     $ hideGroup()
 
-    "Je quitte la salle."
-    "Les machines continuent de tourner."
-    "Régulières."
-    "Implacables."
+    think "Je quitte la salle. Les machines continuent, régulières et implacables."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
-    "L'heure tourne et je commence à avoir un petit creux."
+    think "L'heure tourne. Mon estomac me ramène à la cafétéria."
 
     jump _2_CAFETERIA_SOIR
 
@@ -1579,21 +1319,14 @@ label _2_GYMNASE:
 label _2_CAFETERIA_SOIR:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    "Je termine la journée à la cafétéria."
-    "Tout le monde ne mange pas en même temps."
-    "Ça vient, ça repart."
-    "Des silhouettes, des plateaux, des regards."
-
-
-    "Nyra est en train de parler de sa vie."
+    think "La cafétéria se remplit par vagues. Nyra tient déjà une table en haleine."
     $ showGroup([
         ("noam", "hesitation", 0.13),
         ("nyra", "neutre", 0.96),
     ])
 
-    nyra sourire "À Orbite, on mangeait souvent en décalé."
-    nyra sourire "Chacun vivait vraiment à son propre rythme, comme dans dessortes de cycles."
-    nyra sourire "Le silence faisait partie du travail."
+    nyra sourire "À Orbite, on mangeait en décalé. Quel rythme vous aviez, à Harmonie ?"
+    nyra sourire "Là-haut, le silence faisait partie du travail. Ici, j'ai l'impression qu'il faut le mériter."
 
     noam hesitation "Tu regrettes ?"
 
@@ -1603,8 +1336,8 @@ label _2_CAFETERIA_SOIR:
         ("nyra", "sourire", 0.96),
     ])
 
-    kael neutre "Ce qui me manque moi, c’est la routine."
-    kael neutre "Pas l’endroit, à vrai dire, ça fait du bien de voir autre chose."
+    kael neutre "La routine me manque."
+    kael neutre "Pas l'endroit."
 
 
     $ showGroup([
@@ -1614,14 +1347,14 @@ label _2_CAFETERIA_SOIR:
         ("nyra", "sourire", 0.96),
     ])
 
-    elen taquin "Orbite, c’était comment ?"
-    elen reflexion "Bah… on entend vraiment de tout et n’importe quoi sur ce qu'il se passe là-haut."
-    elen content "Des gens qui dorment en flottant comme des méduses, des repas qui se baladent tout seuls… c’est complètement barré !"
+    elen taquin "Orbite, c'était comment ? On entend vraiiiment n'importe quoi !"
+    elen content "Vous dormez en flottant ? Et les repas, ils se baladent ? Imagine une soupe en apesanteur !"
 
-    kael neutre "On flotte, oui."
-    kael neutre "Mais on fait quand même la vaisselle, même si parfois c'est galère !"
+    kael neutre "On flotte dans certaines sections."
+    kael neutre "La vaisselle reste attachée."
 
-    nyra taquin "C'est clair !."
+    nyra taquin "Kael oublie la fois où un ragoût a bloqué une grille de ventilation."
+    kael mefiant "Je n'oublie pas. Je choisis de ne pas raconter."
 
 
     $ showGroup([
@@ -1635,50 +1368,41 @@ label _2_CAFETERIA_SOIR:
     tomas hesitation "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
     tomas inquiet "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
 
-    kael calme "Pas comme ici."
-    kael calme "On réglait les choses autrement."
-    kael calme "Avec des protocoles."
-    kael rire "Et beaucoup moins de spectacle."
+    kael calme "Protocoles techniques. Chaînes de responsabilité."
+    kael rire "Moins de spectacle."
 
     noam inquiet "Ça te fait quoi de tout revoir ici ?"
 
-    kael reflechit "Ça me donne envie de comprendre."
-    kael reflechit "Et de ne plus obéir par réflexe."
+    kael reflechit "Comprendre. Ne plus obéir par réflexe."
 
-    nyra raison "Et si tu comprends pas ?"
+    nyra raison "Et si tu ne comprends pas à temps ?"
 
-    kael neutre "Alors j’essaie quand même."
+    kael neutre "Je continue."
 
     tomas inquiet "Et si on fait une erreur ..?"
 
-    kael triste "J'imagine qu'on fait tous des erreurs."
-    kael triste "A nous de les assumer."
+    kael triste "Une erreur sur Orbite tue. Alors on vérifie."
 
-    nyra raison "Autant éviter d'en faire."
-
-    kael neutre "Ça l’est."
+    nyra raison "Donc tu ne réponds pas à sa question."
+    kael neutre "Non."
 
 
-    elen triste "Je me demande…"
-    elen triste "… si nos familles nous regardent en ce moment."
-
-    noam neutre "Je me le demande aussi."
-
-    elen triste "S’ils nous voient, ils doivent flipper grave."
-    elen triste "Et si on se plante dans le vote… ils vont flipper encore plus."
+    elen triste "Je me demande si nos familles nous regardent en ce—"
+    elen surpris "Oh ! Vous avez goûté la purée ? Elle a un goût différent ce soir, non ? Plus salé, ou moins jaune, ou—"
+    think "Le virage est si brutal que personne ne répond tout de suite."
 
     kael reflechit "On ne vote pas uniquement pour eux."
 
-    elen triste "Ouais… mais ce qu’on va décider là, ça va toucher tout le monde. Pas juste nous."
+    elen triste "Ouais. Tout le monde."
 
     kael neutre "Oui."
     kael triste "C’est ça, être ici."
 
     elen triste "Je déteste ça."
-    elen triste "Vraiment. Ça me retourne l’estomac."
+    elen surpris "Enfin, c'est peut-être la purée. Vous trouvez pas qu'elle est bizarre ?"
 
-    nyra raison "Je pense qu'on déteste tous ça."
-    nyra raison "On a un travail à faire, c'est tout.."
+    nyra raison "Tu n'es pas obligée de finir cette phrase."
+    nyra sourire "Mais tu peux, si tu veux."
 
     elen inquiet "C’est tout ?"
 
@@ -1694,24 +1418,20 @@ label _2_CAFETERIA_SOIR:
         ("ryn", "neutre", 1.08),
     ])
 
-    ryn neutre "Vous êtes calmes."
-    ryn neutre "Je m’attendais à des cris et des hurlements."
+    ryn neutre "Vous êtes calmes. Je m'attendais à des cris."
 
     kael neutre "Tu es déçu ?"
 
-    ryn sourire "Ha ha ! Peut-être un peu !."
-    ryn sourire "Mais les cris viendront après."
+    ryn sourire "Peut-être. Ils viendront après."
 
     noam inquiet "Tu penses qu’on va se déchirer ?"
 
-    ryn reflechit "Je pense qu’on va découvrir les joies des désaccords."
-    ryn reflechit "Et ce n’est pas toujours sympa à voir."
+    ryn reflechit "On va se désaccorder. Ce sera pas joli."
 
     kael reflechit "On n’est pas obligés d’être sympa à voir."
     kael reflechit "On doit surtout être honnêtes."
 
-    ryn fatigue "L’honnêteté, c’est dangereux."
-    ryn fatigue "Elle donne des angles d’attaque."
+    ryn fatigue "L'honnêteté donne des angles d'attaque."
 
     noam raison "Elle donne aussi des points d’appui."
 
@@ -1720,41 +1440,35 @@ label _2_CAFETERIA_SOIR:
 
     kael neutre "Tu veux être quoi, alors ?"
 
-    ryn neutre "Libre. Je veux que les Limenois soient libres."
+    ryn neutre "Libre. Je veux Limen libre."
 
     noam inquiet "Tu ne crois pas qu’on puisse être libre ensemble ?"
 
     ryn reflechit "Je ne sais pas."
-    ryn reflechit "Ca fait bien longtemps qu'on ne l'est plus, et ça, ça date de bien avant Kami."
+    ryn reflechit "Ça date d'avant Kami."
 
     noam raison "Alors c’est l’occasion d'essayer de faire avancer les choses."
 
     noam hesitation "Qu'est ce que tu vas voter ?"
 
-    ryn reflechit "Je pense que je voterai pour. Je vais écouter."
-    ryn reflechit "Et je me déciderai demain."
-    ryn reflechit "C'est sans doute mieux comme ça."
+    ryn reflechit "Je penche pour. J'écoute. Je décide demain."
 
     noam raison "Tu as raison d’être prudent."
 
     menu:
         "Après la réponse de Ryn."
         "Garder sa position en tête.":
-            "Je garde sa prudence en tête."
+            think "Je garde sa prudence en tête."
         "Reformuler concrètement.":
             noam raison "Donc pour l'instant, tu penches pour, mais tu veux entendre les autres."
             ryn reflechit "Voilà. C'est déjà pas mal, non ?"
         "Continuer à écouter.":
-            "Je ne rajoute rien."
-            "Parfois, une phrase suffit à dessiner une position."
+            think "Je n'ajoute rien. Une phrase suffit parfois à dessiner une position."
 
 
     $ hideGroup()
 
-    "La conversation dérive."
-    "D’autres se mêlent à nous."
-    "Des questions, des souvenirs, des comparaisons."
-    "Puis la fatigue gagne peu à peu nos esprits."
+    think "D'autres se joignent à nous. Questions, souvenirs, comparaisons : la fatigue finit par dissoudre le débat."
 
     stop music fadeout 1.0
     pause 0.6
@@ -1767,23 +1481,21 @@ label _2_CAFETERIA_SOIR:
     scene bg_chambre at adaptive_fullscreen with fade
     pause 1.0
 
-    "Je passe par les douches."
+    think "Je passe par les douches."
 
     scene bg_cg011 at adaptive_fullscreen with fade
 
-    "L’eau est chaude."
-    "Juste assez pour effacer le bruit de mes pensées."
+    think "L'eau chaude efface le bruit de mes pensées."
 
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
     scene bg_chambre at adaptive_fullscreen with fade
-    "Je me sèche, puis je me laisse tomber sur le lit et j'éteins les lumières."
+    think "Je me sèche, tombe sur le lit et éteins."
     
     scene bg_cg012 at adaptive_fullscreen with fade
-    "Demain sera dense."
+    think "Demain sera dense."
     $ blink()
-    "A quatorze heures on en saura enfin plus."
-    "On saura si on peut vraiment changer les choses ou pas."
+    think "À quatorze heures, on saura si changer les choses est réellement possible."
 
     $ blink()
 

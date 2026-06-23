@@ -62,19 +62,6 @@ La logique tient. Elle tient jusqu'à la question suivante — ce que les gens q
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Ryn arrive au Conclave comme s'il allait à une confrontation. Il est prêt à se battre — verbalement, physiquement si ça dégénère — pour Limen.
-
-Le Conclave ne lui donne pas cette bataille. Il lui donne un vote.
-
-- **Jours 1–10 :** Il établit sa présence. Personne ne l'ignore. Il prend position clairement sur tout, trop vite, parfois avant d'avoir toutes les informations.
-- **Jours 11–20 :** Il commence à écouter — pas par choix, par épuisement. Sans patrouille, sans action physique possible, quelque chose se dépense différemment en lui. Il parle encore fort. Il entend un peu plus.
-- **Jours 21–27 :** Le vote arrive. Quelque chose qui touche directement Limen — les frontières, les conditions, les Limenois. Il doit choisir. Et pour la première fois, il ne sait pas ce qui est juste. Pas ce qui est bien pour Limen dans l'absolu — ce que "bien pour Limen" veut dire quand c'est lui qui décide.
-- **Jours 28–30 :** Il vote. Peut-être pas comme il aurait voté au jour 1. Peut-être que si. Mais la question a existé, et ça ne disparaît pas.
-
----
-
 ## FAÇON DE PARLER
 
 ### Registre

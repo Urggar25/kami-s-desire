@@ -64,19 +64,6 @@ Il a juste... attendu que ça passe.
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Le Conclave est le premier endroit où Noam ne peut plus fuir. Pas d'issue, pas de couloir vers lequel disparaître, pas de façon de rester neutre quand il faut l'unanimité pour chaque vote.
-
-Sa trajectoire n'est pas une rédemption propre. C'est une série de moments où la fuite devient impossible et où il doit, pour la première fois, assumer d'être là.
-
-- **Jours 1–8 :** Cartographie silencieuse. Il observe, se tait, laisse les autres se positionner. Semble absent.
-- **Jours 9–16 :** Premier blocage. Une situation l'oblige à prendre position. Il reformule, temporise, finit par dire quelque chose — et réalise que le monde ne s'effondre pas.
-- **Jours 17–24 :** Quelqu'un commence à percer sa carapace. Pas en le confrontant, mais en le voyant vraiment. Ça le déstabilise plus que n'importe quelle attaque.
-- **Jours 25–30 :** La faute passée remonte. Il ne peut plus la noyer dans l'ambiguïté. Le joueur choisit ce qu'il en fait — mais Noam, lui, doit enfin décider s'il existe.
-
----
-
 ## FAÇON DE PARLER
 
 ### Structure

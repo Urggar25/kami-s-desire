@@ -64,19 +64,6 @@ Elle appelle les enfants "les mômes", "les petits monstres", "les catastrophes 
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Iris arrive au Conclave comme si on l'avait arrachée à quelque chose d'important — parce que c'est le cas. Trente jours sans être là-bas. Elle ne le dit pas, mais c'est sa première préoccupation.
-
-Son arc est émotionnel, pas idéologique.
-
-- **Jours 1–10 :** Elle installe sa réputation de râleuse. Elle est efficace, compétente, et pénible. Les gens apprennent à l'utiliser pour ses compétences et à l'éviter pour le reste.
-- **Jours 11–20 :** Elle commence à aider quelqu'un — pas parce qu'elle le décide, mais parce qu'elle ne supporte pas de voir quelque chose mal fait. Elle ronchonne pendant tout le processus.
-- **Jours 21–27 :** La personne la remercie. Sincèrement. Pas poli, pas automatique — vraiment. Iris ne sait pas quoi faire de ça. Elle répond quelque chose d'absurde, part, et met trois jours à revenir à la normale.
-- **Jours 28–30 :** Elle est plus présente. Pas moins sarcastique — mais présente différemment. Quelque chose a changé dans la façon dont elle occupe l'espace. Elle ne l'admettra jamais.
-
----
-
 ## FAÇON DE PARLER
 
 ### Registre

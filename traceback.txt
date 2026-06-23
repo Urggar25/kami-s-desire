@@ -1,22 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenario/15_0_1_1_0.rpy", line 926, in script
-    jump _16_0_1_1_0_REVEIL_CHAMBRE
-ScriptError: could not find label '_16_0_1_1_0_REVEIL_CHAMBRE'.
+  File "game/scenario/salles/repos.rpy", line 200, in script
+    $ showGroup([
+  File "game/scenario/salles/repos.rpy", line 200, in <module>
+    $ showGroup([
+  File "game/transform.rpy", line 103, in showGroup
+    renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_place(x, y)], layer=layer, zorder=zorder + idx)
+  File "game/images.rpy", line 513, in _iris_layered_expression
+    body, arms, mouth, eyes = IRIS_EXPRESSIONS[expr]
+KeyError: 'vide'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenario/15_0_1_1_0.rpy", line 926, in script
-    jump _16_0_1_1_0_REVEIL_CHAMBRE
-  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 1712, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\fasqu\Desktop\renpy\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '_16_0_1_1_0_REVEIL_CHAMBRE'.
+  File "game/scenario/salles/repos.rpy", line 200, in script
+    $ showGroup([
+  File "C:\Users\fasqu\Desktop\renpy\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenario/salles/repos.rpy", line 200, in <module>
+    $ showGroup([
+  File "game/transform.rpy", line 103, in showGroup
+    renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_place(x, y)], layer=layer, zorder=zorder + idx)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\exports\displayexports.py", line 503, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\scenelists.py", line 477, in add
+    thing.visit_all(lambda d : None)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\displayable.py", line 424, in visit_all
+    for d in self.visit():
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1621, in visit
+    self.update(self.last_st, self.last_at)
+  File "C:\Users\fasqu\Desktop\renpy\renpy\display\layout.py", line 1632, in update
+    raw_child, redraw = self.function(st, at, *self.args, **self.kwargs)
+  File "game/images.rpy", line 513, in _iris_layered_expression
+    body, arms, mouth, eyes = IRIS_EXPRESSIONS[expr]
+KeyError: 'vide'
 
 Windows-10-10.0.26200 AMD64
 Ren'Py 8.3.7.25031702
 kami desire 0.3.0-benji-ver
-Mon Jun 15 17:19:03 2026
+Mon Jun 22 21:21:13 2026

@@ -215,11 +215,6 @@ label decouverte_cafeteria:
     scene bg_cg008 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg008")
 
-    $ showGroup([
-        ("elen", "vide", 0.22),
-        ("goumi", "vide", 0.78),
-    ])
-
     elen vide "Non mais attends."
     elen vide "Tu me dis que tu peux genre VRAI-MENT cuisiner 'n'importe quoi'."
     elen vide "Et tu me sors un menu en quatre catégories."

@@ -83,19 +83,6 @@ Il le fait consciemment : il sait qu'on le perçoit comme idiot. Les vêtements 
 
 ---
 
-## ARC NARRATIF SUR 30 JOURS
-
-Elias arrive au Conclave sans agenda caché. Il veut voter correctement, aider si possible, et comprendre ce qu'on attend de lui.
-
-Son arc n'est pas idéologique — c'est un arc de responsabilité.
-
-- **Jours 1–10 :** Il est l'élément comique involontaire du groupe. Renverse des choses, dit des gaffes, défend Kami avec des arguments en béton armé simples. Les autres l'apprécient ou le tolèrent.
-- **Jours 11–20 :** Il se lie à quelqu'un. Pas de calcul — juste quelqu'un qui lui a pas ri dessus au mauvais moment, et ça suffit pour lui.
-- **Jours 21–27 :** La gaffe. Irréparable. Pas méchante — physique, accidentelle, mais aux conséquences réelles sur une situation ou une personne. Il voit ce qu'il a fait.
-- **Jours 28–30 :** Il doit choisir entre fuir (*"c'était pas exprès, c'est chaud"*) et assumer. Pour la première fois de sa vie, assumer implique de dire quelque chose de difficile à voix haute, devant tout le monde, sans pouvoir le reprendre.
-
----
-
 ## FAÇON DE PARLER
 
 ### Registre
