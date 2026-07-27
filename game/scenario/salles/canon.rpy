@@ -23,42 +23,31 @@ screen pnc_canon():
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
     add Solid("#000")
+    use room_scene_background("canon")
+    use room_scene_interactions("canon")
 
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/background/bg_canon.png" at cover_screen
 
-    # Option : quitter au clic droit / ESC (retour au label appelant)
-    # HOTSPOTS — doivent subir EXACTEMENT le même transform
-    imagebutton:
-        idle "images/background/interact/salle_canon/canon.png"
-        hover "images/background/interact/salle_canon/canon_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CANON_PNC_CANON")
+label canon1_ordinateur:
+    jump CANON_PNC_CONSOLE
 
-    imagebutton:
-        idle "images/background/interact/salle_canon/console.png"
-        hover "images/background/interact/salle_canon/console_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CANON_PNC_CONSOLE")
 
-    imagebutton:
-        idle "images/background/interact/salle_canon/vitre.png"
-        hover "images/background/interact/salle_canon/vitre_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CANON_PNC_VITRE")
+label canon1_porte_couloir_cafeteria:
+    $ corridor_current = "cafeteria"
+    jump EXIT_ROOM_TO_CORRIDOR
 
-    use exploration_retour_button
+
+label canon2_canon:
+    jump CANON_PNC_CANON
+
+
+label canon2_ciblage:
+    "Une interface de ciblage recouvre tout un pan de la console."
+    "Des coordonnées défilent lentement sous une grille verrouillée."
+    "Chaque secteur habité possède déjà son repère, sa distance et son angle de tir."
+    think "Ce n'est pas un système qu'on prépare en urgence."
+    think "Tout est déjà mesuré. Il ne reste qu'à choisir où frapper."
+    jump CANON_TP
 
 label CANON_PNC_CANON:
     "Le canon est encore plus grand de près."

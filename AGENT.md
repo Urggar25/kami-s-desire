@@ -16,3 +16,7 @@
 - Room screens may share object hotspots between both modes, but any social character button or free-time-only activity must stay guarded by `social_free_time_active()` rather than raw `free_time_active`.
 - Character link progression is persistent through `persistent.character_link_progress` / `persistent.character_link_memories`; new games must sync from persistent progress so completed free-time events are not replayed as fresh progression.
 - Codex/profile memory replay must use `link_replay_mode` so reviewing an unlocked memory returns to the Codex and does not consume a free-time slot or lower the current link progression.
+
+## Character Buttons
+
+- Character `imagebutton` sprites built from the registered images in `images.rpy` must follow the day-1 PNC placement convention: use `Transform(character_image(...), zoom=1.00)`, keep the character bottom-anchored with `yalign 1.00`, and adjust horizontal placement with `xalign`. Do not use a middle-screen `yalign` such as `0.30`, which makes the sprite float above the floor. Apply the same placement to both `idle` and `hover`, then verify the feet/lower crop against the bottom edge of the scene.

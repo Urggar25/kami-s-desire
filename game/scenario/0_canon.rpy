@@ -70,9 +70,7 @@ label _0_CANON:
     scene black
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    think "Jour zéro."
-    think "Ça devrait sonner comme un nouveau départ."
-    think "Ça sonne surtout comme un mensonge administratif."
+    think "Jour zéro. Ça devait sonner comme un nouveau départ."
     think "Trois cent soixante-quatre jours sous Kami. Et aujourd'hui, on remet le compteur à zéro."
 
     pause 0.4

@@ -1,4 +1,19 @@
 default decouverte_salle_repos = False
+default repos_table_seen = False
+default repos_party_active = False
+
+init python:
+    REPOS_TABLE_BONUS_CHANCE = 0.20
+
+    def repos_table_bonus_label():
+        # La scène sera ajoutée plus tard sous ce label. Tant qu'elle
+        # n'existe pas, le repos se termine normalement.
+        label_name = "repos_table_bonus_scene"
+        if not renpy.has_label(label_name):
+            return None
+        if renpy.random.random() < REPOS_TABLE_BONUS_CHANCE:
+            return label_name
+        return None
 
 
 label REPOS_TP:
@@ -28,63 +43,14 @@ screen pnc_repos():
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
     add Solid("#000")
-
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/background/bg_repos.png" at cover_screen
-
-    # Option : quitter au clic droit / ESC (retour au label appelant)
-    # HOTSPOTS — doivent subir EXACTEMENT le même transform
-    imagebutton:
-        idle "images/background/interact/salle_repos/babyfoot.png"
-        hover "images/background/interact/salle_repos/babyfoot_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("REPOS_PNC_BABYFOOT")
-
-    imagebutton:
-        idle "images/background/interact/salle_repos/flechettes.png"
-        hover "images/background/interact/salle_repos/flechettes_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("REPOS_PNC_FLECHETTES")
-
-    imagebutton:
-        idle "images/background/interact/salle_repos/arcade.png"
-        hover "images/background/interact/salle_repos/arcade_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("REPOS_PNC_ARCADE")
-
-    imagebutton:
-        idle "images/background/interact/salle_repos/distributeur.png"
-        hover "images/background/interact/salle_repos/distributeur_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("REPOS_PNC_DISTRIBUTEUR")
-
-    imagebutton:
-        idle "images/background/interact/salle_repos/canape.png"
-        hover "images/background/interact/salle_repos/canape_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("REPOS_PNC_CANAPE")
+    use room_scene_background("repos")
+    use room_scene_interactions("repos")
 
     if social_free_time_active() and mara_link in [1, 3]:
         imagebutton:
-            idle Transform("images/character/mara/sourire.png", zoom=0.75)
-            hover Transform("images/character/mara/neutre.png", zoom=0.75)
+            idle Transform(character_image("mara", "sourire"), zoom=0.75)
+            hover Transform(character_image("mara", "neutre"), zoom=0.75)
             focus_mask True
             xalign 0.15
             yalign 0.30
@@ -92,8 +58,8 @@ screen pnc_repos():
 
     if social_free_time_active() and lysa_link == 0:
         imagebutton:
-            idle Transform("images/character/lysa/taquin.png", zoom=0.75)
-            hover Transform("images/character/lysa/neutre.png", zoom=0.75)
+            idle Transform(character_image("lysa", "taquin"), zoom=0.75)
+            hover Transform(character_image("lysa", "neutre"), zoom=0.75)
             focus_mask True
             xalign 0.82
             yalign 0.30
@@ -101,8 +67,8 @@ screen pnc_repos():
 
     if social_free_time_active() and iris_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/iris/colere.png", zoom=0.75)
-            hover Transform("images/character/iris/taquin.png", zoom=0.75)
+            idle Transform(character_image("iris", "colere"), zoom=0.75)
+            hover Transform(character_image("iris", "taquin"), zoom=0.75)
             focus_mask True
             xalign 0.50
             yalign 0.31
@@ -111,15 +77,14 @@ screen pnc_repos():
 
     if social_free_time_active() and elen_link == 4:
         imagebutton:
-            idle Transform("images/character/elen/joie.png", zoom=0.75)
-            hover Transform("images/character/elen/content.png", zoom=0.75)
+            idle Transform(character_image("elen", "joie"), zoom=0.75)
+            hover Transform(character_image("elen", "content"), zoom=0.75)
             focus_mask True
             xalign 0.68
             yalign 0.30
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
-    use exploration_retour_button
 
 label REPOS_PNC_BABYFOOT:
     "Le babyfoot brille trop."
@@ -157,6 +122,59 @@ label REPOS_PNC_CANAPE:
     "Trop propre."
     "Les coussins sont alignés au millimètre."
     think "Même le confort a un protocole."
+    jump REPOS_TP
+
+
+label repos1_babyfoot:
+    jump REPOS_PNC_BABYFOOT
+
+
+label repos1_flechette:
+    jump REPOS_PNC_FLECHETTES
+
+
+label repos1_distributeur:
+    if cafeteria_food_visible_count() <= 0:
+        "Le distributeur est vide. Pas même une ration oubliée au fond."
+        think "Les stocks de la cafétéria ont donc fini par atteindre jusqu'ici."
+    elif cafeteria_food_visible_count() < 5:
+        "Le distributeur n'est plus rempli qu'à moitié."
+        "Les choix se réduisent au même rythme que les réserves."
+    else:
+        "Le distributeur est plein. Boissons et rations sont encore soigneusement alignées."
+        think "Pour le moment, personne n'a besoin de compter ce qu'il prend."
+    jump REPOS_TP
+
+
+label repos1_porte_couloir_cafeteria:
+    $ corridor_current = "cafeteria"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label repos2_television:
+    "L'écran occupe une bonne partie du mur."
+    "Une sélection de films, de jeux et d'archives tourne silencieusement."
+    think "Même les distractions ont été choisies avant notre arrivée."
+    jump REPOS_TP
+
+
+label repos2_table_repos:
+    if not repos_table_seen:
+        $ repos_table_seen = True
+        think "Je pourrai me reposer ici quand j'aurai du temps libre."
+
+    if social_free_time_active():
+        menu:
+            "Me reposer jusqu'à la fin de ce temps libre ?"
+            "Oui":
+                $ repos_bonus_label = repos_table_bonus_label()
+                if repos_bonus_label:
+                    call expression repos_bonus_label
+                jump FREE_TIME_END
+            "Non":
+                jump REPOS_TP
+
+    think "Ce n'est pas le moment de m'installer."
     jump REPOS_TP
 
 

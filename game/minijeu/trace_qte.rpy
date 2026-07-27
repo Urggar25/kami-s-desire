@@ -199,7 +199,7 @@ init -2 python:
             return
 
         if store.tq_phase == "trace":
-            if _tq_pygame is not None and not _tq_pygame.mouse.get_pressed()[0]:
+            if not store.tq_pressed:
                 if store.tq_progress < 0.985:
                     store.tq_phase = "done"
                     store.tq_result = "fail"

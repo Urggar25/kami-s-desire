@@ -1,0 +1,27 @@
+# Text sources
+*.rpy text eol=lf
+*.rpym text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+
+# Ren'Py/generated binary data
+*.rpyc binary
+*.rpymc binary
+*.rpyb binary
+*.save binary
+
+# Media/assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdn binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.webm binary
+*.mp4 binary
+*.ttf binary
+

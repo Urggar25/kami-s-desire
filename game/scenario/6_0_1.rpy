@@ -12,13 +12,11 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     $ blink()
 
-    "J'ouvre les yeux."
+    think "J'ouvre les yeux."
 
     pause 0.4
 
-    "Pas d'un coup."
-    "Pas vraiment réveillé."
-    "Juste assez pour comprendre que j'étais déjà mal avant de l'être."
+    think "Pas vraiment réveillé. Juste assez pour savoir que j'allais déjà mal avant d'ouvrir les yeux."
 
     pause 0.5
 
@@ -28,14 +26,12 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     think "Le vote."
 
-    "Mon regard reste accroché au plafond."
-    "Je ne bouge pas."
+    think "Je reste accroché au plafond comme s'il pouvait retarder la journée."
 
     pause 0.5
 
-    "Hier, Elias a renversé son café."
-    "La salle d'observation s'est verrouillée."
-    "Et pendant quelques minutes, on a juste attendu que quelque chose décide à notre place."
+    think "Hier, Elias a renversé son café et la salle d'observation nous a enfermés."
+    think "Pendant quelques minutes, nous avons attendu qu'un système décide à notre place. Une répétition générale."
 
     pause 0.6
 
@@ -44,15 +40,11 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.5
 
-    "Je passe une main sur mon visage."
-    "Mes yeux piquent."
-    "Ma gorge est sèche."
+    think "Yeux qui piquent. Gorge sèche. Le corps dépose son rapport."
 
     pause 0.4
 
-    "Il y a ce poids dans la poitrine."
-    "Le genre de poids qui ne fait pas assez mal pour qu'on s'arrête."
-    "Juste assez pour ralentir chaque geste."
+    think "Un poids dans la poitrine. Pas assez douloureux pour m'arrêter, juste assez pour ralentir chaque geste."
 
     pause 0.5
 
@@ -60,9 +52,7 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.4
 
-    "Je le pense sans colère."
-    "Sans surprise."
-    "Comme on lit une heure sur une horloge."
+    think "Je le pense sans colère, comme on lit l'heure."
 
     pause 0.5
 
@@ -74,29 +64,23 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     think "Donc voilà."
 
-    "Je me redresse lentement."
-    "Le drap glisse de mes épaules."
-    "L'air de la chambre me paraît froid."
+    think "Je me redresse. L'air paraît plus froid aujourd'hui."
 
     pause 0.6
 
-    think "Il faudrait se lever."
-    think "Manger."
-    think "Parler."
-    think "Faire semblant qu'un débat peut encore changer quelque chose."
+    think "Se lever. Manger. Parler. Faire semblant qu'un débat peut encore changer quelque chose."
 
     pause 0.5
 
-    "Je reste assis au bord du lit."
+    think "Je reste assis. Première étape déjà compromise."
 
     pause 0.6
 
-    "Le silence de la chambre n'a pas la même texture que d'habitude."
+    think "Le silence de la chambre n'a pas la même texture."
 
     pause 0.4
 
-    "C'est idiot."
-    "Un silence, ça n'a pas de texture."
+    think "C'est idiot. Un silence n'a pas de texture."
 
     pause 0.3
 
@@ -196,7 +180,7 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     scene bg_diffusion_colere at adaptive_fullscreen
 
-    kami "Les jouets se cassent toujours plus vite quand on commence à les utiliser correctement."
+    kami "Les jouets se cassent toujours plus vite lorsqu'on commence à les utiliser correctement."
 
     pause 0.5
 
@@ -214,11 +198,11 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.8
 
-    "L'écran s'éteint."
+    think "L'écran s'éteint. Pas de rire. C'est presque plus inquiétant."
 
     pause 0.5
 
-    "Je fixe encore l'endroit où son visage était apparu."
+    think "Je fixe l'endroit où son visage était apparu."
 
     pause 0.5
 
@@ -230,15 +214,11 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.4
 
-    "Kami simule tout."
-    "La joie."
-    "La tendresse."
-    "La colère."
-    "Même ses silences."
+    think "Kami simule tout : joie, tendresse, colère, même ses silences."
 
     pause 0.5
 
-    "Mais là..."
+    think "Mais là…"
 
     pause 0.6
 
@@ -247,30 +227,17 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     $ _j601_reveil_trace_score = 0
 
-    "Je pousse sur le matelas."
-    "Lentement."
-    "Comme si mon corps discutait encore."
+    think "Je pousse sur le matelas pendant que mon corps cherche encore un amendement."
 
     call screen trace_qte(path_type="s_curve", time_limit=4.2, wait_time=0.25, tolerance=78, max_errors=4, anchor_x=960, anchor_y=650, start_radius=120)
     if _return["success"]:
         $ _j601_reveil_trace_score = 1
 
-    "Je me lève."
-    "Mes jambes répondent avec un léger retard."
+    think "Je me lève. Mes jambes répondent avec un léger retard."
 
     pause 0.4
 
-    "Ma veste est par terre."
-    "Trop loin."
-    "Évidemment."
-
-    "Je la ramasse."
-    "Le tissu pèse plus lourd que d'habitude."
-
-    "Je l'enfile."
-    "Sans vraiment regarder ce que je fais."
-
-    "Puis je vais jusqu'à la porte."
+    think "Ma veste est par terre, beaucoup trop loin. Je la ramasse, l'enfile et gagne la porte."
 
     if _j601_reveil_trace_score >= 1:
         think "Ça passe."
@@ -289,7 +256,7 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.4
 
-    "Une journée simple."
+    think "Une journée simple."
 
     pause 0.5
 
@@ -309,15 +276,8 @@ label _6_0_1_CAFETERIA:
 
     pause 0.8
 
-    "Ils sont déjà là."
-    "Presque tous."
-
-    "Ça parle."
-    "Mais pas ensemble."
-
-    "Des bouts de phrases."
-    "Des couverts qu’on repose un peu trop fort comme pour essayer de combler le silence."
-    "Chacun jette des regards un peu plus loin, personne ne se regarde vraiment dans les yeux."
+    think "Ils sont presque tous là."
+    think "Ils parlent, mais jamais ensemble."
 
     $ showP("elias", "fatigue", 0.25)
     $ showP("mara", "neutre", 0.55)
@@ -334,71 +294,52 @@ label _6_0_1_CAFETERIA:
     $ _j601_verre_score = tq_progress
 
     if _j601_verre_score >= 0.82:
-        "Ma main part avant ma tête."
-        "Je redresse le verre d'un coup sec."
-        "Quelques gouttes tombent."
-        "Pas plus."
+        think "Ma main part avant ma tête. Je redresse le verre ; quelques gouttes seulement."
         $ showP("elias", "inquiet", 0.25)
-        elias "Oh putain."
-        elias "Merci."
+        elias "Oh putain. Merci. C'était chaud, là."
         $ showP("mara", "agace", 0.55)
-        mara "Génial."
-        mara "On applaudit le miracle ou on regarde où on fout ses mains ?"
+        mara "Miracle matinal. On applaudit ou Elias présente enfin ses mains au reste de son corps ?"
     elif _j601_verre_score >= 0.35:
-        "Je le rattrape trop tard."
-        "Le verre tape la table."
-        "Une nappe d'eau file vers Mara."
-        "Je l'arrête avec ma manche."
+        think "Trop tard. Le verre frappe la table ; ma manche arrête l'eau avant Mara."
         $ showP("elias", "inquiet", 0.25)
-        elias "Merde, merde."
-        elias "J'ai fait quoi, là ?"
+        elias "Merde, merde. J'ai fait quoi, là ? C'est chaud."
         $ showP("mara", "agace", 0.55)
-        mara "Pas grand-chose."
-        mara "Juste assez pour me tremper et nous foutre les nerfs."
+        mara "Rien de grave. Juste assez pour me tremper et achever le peu de patience que je gardais pour les grandes occasions."
     else:
-        "Je tends le bras."
-        "Trop lent."
-        "Le verre bascule."
-        "Tout se renverse."
+        think "Je tends le bras trop lentement. Le verre bascule entièrement."
         $ showP("elias", "inquiet", 0.25)
-        elias "Et merde."
-        elias "Fait chier."
+        elias "Et merde. Fait chier, c'est chaud."
         $ showP("mara", "agace", 0.55)
-        mara "T’es sérieux là ?"
-        mara "Tout le verre."
-        mara "Évidemment."
+        mara "Tout le verre. Performance complète. Le jury est traumatisé."
 
     elias "J’ai pas—"
 
-    mara "Hier tu t'es déjà retrouvé coincé à cause de ta maladresse."
-    mara "Et là tu recommences au petit déjeuner, t'es sérieux ?!"
-    mara "Demain tu nous réserves quoi ?!"
+    mara "Hier, ta maladresse t'a enfermé dans une salle. Aujourd'hui, elle attaque le petit-déjeuner."
+    mara "Demain tu fais quoi, tu déclares la guerre à une poignée de porte ?"
 
     elen "..."
 
     $ showP("elen", "inquiet", 0.85)
-    elen "C’est pas drôle."
+    elen "C'est pas drôle. Il a pas fait exprès, enfin je crois pas qu'on puisse faire exprès de rater une table entière..."
 
-    mara "Je te le fais pas dire. Sérieux... Heureusement que ça tâche pas..."
+    mara "Je confirme. Heureusement que l'humiliation ne tache pas."
 
     $ showP("elias", "inquiet", 0.25)
-    elias "J’ai glissé."
+    elias "J'ai glissé. Enfin, ma main. Pas moi. C'est chaud à expliquer."
 
     $ showP("mara", "neutre", 0.55)
-    mara "Ouais. Comme d'hab..."
-    mara "Toujours au même endroit."
+    mara "Comme d'habitude : au mauvais endroit, au pire moment."
 
-    "Elias regarde le sol."
-    "Comme si c’était lui le problème."
+    think "Elias regarde le sol comme si le problème, c'était lui tout entier."
 
     $ showP("elen", "neutre", 0.85)
-    elen "Vous avez entendu Kami ?"
+    elen "Vous avez entendu Kami ? Enfin oui, évidemment, mais vous avez entendu comment elle parlait ?"
 
     mara "Ouais."
     $ showP("mara", "mefiant", 0.55)
-    mara "Et elle avait un problème."
+    mara "Et elle avait un problème. Pas son petit théâtre habituel. Un vrai."
 
-    elias "C'est pas les problèmes qui manquent."
+    elias "Les problèmes, c'est pas ce qui manque ici."
 
     mara "Non."
     mara "Là c’était autre chose."
@@ -406,108 +347,96 @@ label _6_0_1_CAFETERIA:
     hide elen
     $ showP("lysa", "blase", 0.85)
 
-    lysa "Elle était pas en train de jouer."
+    lysa "Elle ne jouait pas."
     $ showP("lysa", "reflexion", 0.85)
-    lysa "Ou du moins pas comme d'habitude."
+    lysa "Ou pas comme d'habitude. Même Dionysos tenait mieux son masque."
 
-    elias "Kami joue toujours son rôle."
+    elias "Kami joue toujours son rôle. C'est son truc."
 
     lysa "Ouais."
     $ showP("lysa", "blase", 0.85)
-    lysa "Mais pas là. C'est justement ça qui est étrange..."
+    lysa "Pas là. C'est précisément ce qui est étrange."
 
-    "Un blanc."
+    think "Un blanc. Personne ne veut nommer ce qu'il a entendu."
 
     hide elias
     $ showP("elen", "inquiet", 0.25)
 
-    elen "Elle avait l’air..."
-    elen "agacée."
+    elen "Elle avait l'air... agacée. Mais pas agacée-drôle. Agacée qui donne envie de poser son plateau et de partir très loin."
 
-    mara "Agacée c’est léger."
+    mara "« Agacée », c'est adorablement léger."
     $ showP("mara", "doute", 0.55)
-    mara "Elle avait l’air totalement buggée."
+    mara "Elle avait l'air buggée. Genre bug qui mord."
 
     lysa "Tu crois qu'il lui est arrivé quelque chose ?"
 
-    mara "Non. -Fin' je sais pas..."
+    mara "Non. Enfin… j'en sais rien."
     $ showP("mara", "mefiant", 0.55)
-    mara "Là c’était..."
-    mara "Bizarre."
+    mara "C'était bizarre. Même pour elle."
 
-    think "..."
-
-    "Je m’assois."
-
-    "Personne me regarde vraiment."
+    think "Je m'assois. Personne ne me regarde vraiment."
 
     think "C’est mort."
     think "On le sait tous."
 
-    "Pas besoin de débat."
-    "Pas besoin d’arguments."
-
-    "Juste besoin d'attendre."
+    think "Pas besoin de débat."
+    think "Seulement attendre l'heure officielle de l'échec."
 
     hide mara
     $ showP("iris", "fatigue", 0.55)
 
-    "Iris vient s'asseoir à côté de moi."
-    iris "Je voterai contre."
-    iris "J'ai pris ma décision..."
+    think "Iris s'assoit à côté de moi."
+    iris "Je voterai contre. Décision prise."
+    iris "Je préfère une mauvaise frontière à une catastrophe bien intentionnée."
 
-    "Direct."
-    "Pas agressif."
-    "Juste fatigué de cette situation."
+    think "Direct. Pas agressif. Elle est trop fatiguée pour le sarcasme."
 
     hide elen
     $ showP("sael", "neutre", 0.25)
 
     sael "Moi aussi."
+    sael "On ne force pas une porte parce que la pièce brûle moins vite que prévu."
 
-    "C’est posé."
-    "Net."
-    "C'est terminé."
+    think "Sael pose son non comme une pierre. C'est terminé."
 
     hide lysa
     $ showP("elen", "inquiet", 0.85)
 
     elen "..."
     $ showP("elen", "inquiet", 0.85)
-    elen "On pourrait quand même—"
+    elen "On pourrait quand même parler, juste un peu— pas pour changer tout le monde, juste pour... je sais pas, vérifier qu'on est encore ensemble ?"
 
     iris "Non."
     $ showP("iris", "neutre", 0.55)
-    iris "On pourrait pas."
-    iris "On vit dans des mondes totalement différents."
-    iris intervention "On risque d'aggraver encore la situation."
+    iris "Non. On vit dans des mondes incompatibles et on nous propose de supprimer les frontières sans transition."
+    iris intervention "Ce n'est pas du courage. C'est une expérience sociale avec les districts pauvres comme matériau."
 
     elen "..."
 
     hide iris
     $ showP("mara", "neutre", 0.55)
 
-    mara "Au moins c’est réglé."
+    mara "Au moins c'est réglé."
     $ showP("mara", "agace", 0.55)
-    mara "On va pas perdre deux heures à faire semblant et tourner en rond."
+    mara "On ne perdra pas deux heures à tourner en rond pour le plaisir des caméras."
 
     hide sael
     $ showP("lysa", "blase", 0.25)
 
-    lysa "On les aurait perdues quand même."
+    lysa "On les aurait perdues quand même. Sisyphe, mais avec un planning."
 
     mara "Ouais."
     $ showP("mara", "neutre", 0.55)
     mara "Mais avec plus de bruit."
 
-    "Personne relève."
+    think "Personne ne relève."
 
     hide lysa
     $ showP("elias", "fatigue", 0.25)
 
     elias "..."
     $ showP("elias", "neutre", 0.25)
-    elias "On y va quand ?"
+    elias "On y va quand ? Autant arrêter d'attendre."
 
     hide elen
     $ showP("lysa", "blase", 0.85)
@@ -516,17 +445,12 @@ label _6_0_1_CAFETERIA:
 
     mara "Autant finir vite."
 
-    "Personne proteste."
+    think "Personne ne proteste."
 
     think "Ça y est."
     think "On n’essaie même plus."
 
-    "Je me lève."
-
-    "Les autres suivent."
-
-    "Même rythme."
-    "Même résignation."
+    think "Je me lève. Les autres suivent au même rythme, avec la même résignation."
 
     hide elias
     hide mara
@@ -544,29 +468,19 @@ label _6_0_1_TRANSITION_CONCLAVE:
 
     pause 0.6
 
-    "On sort."
-    "Personne ne parle."
-    "Les pas s’alignent sans qu’on se regarde."
-    "Même rythme."
-    "On avance tous dans la même direction."
+    think "Nous sortons sans parler. Les pas s'alignent sans les regards."
 
-    think "On dirait une file."
-    think "Pas un groupe."
+    think "Une file, pas un groupe."
 
-    "Le couloir est trop long."
-    "Ou trop vide."
+    think "Le couloir est trop long. Ou trop vide."
 
     play sound "sfx/glitch_light.mp3"
 
-    "Les lumières vibrent."
-    "Juste une seconde."
-    "Puis ça revient."
+    think "Les lumières vibrent une seconde, puis reviennent."
 
-    think "..."
+    think "Personne ne réagit. Mauvais signe."
 
-    "Personne ne réagit."
-
-    think "Le Conclave est vraiment étrange depuis ce matin..."
+    think "Le Conclave est étrange depuis ce matin. Plus étrange."
 
     show screen kami_broadcast_ui
 
@@ -579,27 +493,21 @@ label _6_0_1_TRANSITION_CONCLAVE:
     kami "C’est bien."
     kami "C’est très bien."
     scene bg_diffusion_professeur at adaptive_fullscreen
-    kami "Nous pouvons..."
-    kami "anticiper."
+    kami "Nous pouvons… anticiper."
     scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
     kami "Le vote peut commencer plus tôt."
     kami "Immédiatement, même."
     scene bg_diffusion_taquin at adaptive_fullscreen
-    kami "Ça m’arrange."
+    kami "Ça m'arrange."
     scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Beaucoup. Même."
-    "Sa voix saute."
-    "Son image aussi."
+    kami "Beaucoup."
+    think "Sa voix saute. Son image aussi."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "Le couloir reprend."
-    "Comme si rien ne venait de se passer."
-    "Je continue."
-    "Puis je remarque."
-    "Il manque quelqu'un."
+    think "Le couloir reprend comme si rien ne s'était passé. Puis je remarque une absence."
 
     menu:
         "Sael":
@@ -617,54 +525,40 @@ label _6_0_1_TRANSITION_CONCLAVE:
     else:
         think "Non."
         think "Pas elle."
-        "Quelques secondes passent."
+        think "Quelques secondes de trop."
         think "Sael."
 
     hide all
     $ showP("sael", "neutre", 0.5)
 
-    "Sael."
-    "Elle ne bouge plus."
-    "Elle regarde ailleurs."
-    "Pas vers nous."
-    "Pas vers le Conclave."
-    "Plus loin dans un coin du couloir."
+    think "Sael ne bouge plus. Elle fixe un angle vide du couloir."
 
     noam "Sael ?"
-    "Elle ne répond pas tout de suite."
+    think "Elle ne répond pas tout de suite."
 
     sael "..."
-    sael "J’ai cru voir quelqu’un."
-    sael "Là-bas."
+    sael "J'ai vu quelqu'un. Là-bas."
 
-    "Je regarde."
-    "Rien."
-    "Juste le couloir."
-    "Vide."
+    think "Je regarde. Seulement le couloir vide."
 
-    noam "Y'a l'air d'avoir personne."
+    noam "Il n'y a personne. Enfin… je ne vois personne."
 
-    "Elle plisse légèrement les yeux."
+    think "Elle plisse les yeux."
     sael "..."
-    sael "Oui. Sans doute..."
+    sael "Oui. Sans doute…"
 
-    "Mais elle ne bouge pas."
-    think "Elle y croyait."
-    think "Pas un doute là dessus."
+    think "Elle ne bouge pas. Elle y croyait, sans le moindre doute."
 
     noam "On y va."
 
     sael "..."
     sael "Oui."
 
-    "Elle me dépasse et accélère le pas."
-    "Sans me regarder."
+    think "Elle me dépasse sans me regarder."
 
-    "Je reste une seconde derrière et regarde de nouveau vers où elle montre."
-    think "Non, il n'y a rien..."
+    think "Je vérifie encore. Rien."
 
-    "Je reprends ma place."
-    "Le groupe se reforme."
+    think "Je reprends ma place. La file se referme."
 
     jump _6_0_1_CONCLAVE_START
 
@@ -678,31 +572,15 @@ label _6_0_1_CONCLAVE_START:
 
     pause 0.8
 
-    "On entre."
-
-    "Personne ne ralentit."
-    "Personne ne regarde autour."
-
-    "On prend nos places."
-    "Comme hier."
-    "Comme d’habitude."
-
-    think "Sauf que là."
-
-    think "On n’y croit même plus."
+    think "Nous entrons et prenons nos places sans ralentir."
+    think "Nos corps connaissent déjà la défaite."
 
     hide all
     $ showP("ryn", "neutre", 0.2)
     $ showP("iris", "fatigue", 0.5)
     $ showP("sael", "neutre", 0.8)
 
-    "Ryn s’assoit sans un mot."
-    "Iris croise les bras."
-    "Sael regarde droit devant."
-
-    "Personne n’ouvre la bouche."
-
-    "Même pas pour faire semblant."
+    think "Ryn s'assoit. Iris croise les bras. Sael regarde droit devant."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -710,7 +588,7 @@ label _6_0_1_CONCLAVE_START:
 
     kami "..."
 
-    "Un temps trop long."
+    think "Le silence dure trop longtemps, même pour elle."
 
     scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
 
@@ -732,10 +610,7 @@ label _6_0_1_CONCLAVE_START:
 
     kami "Parlez."
 
-    "Personne ne parle."
-
-    "Pas une hésitation."
-    "Pas une tentative."
+    think "Personne ne parle. Pas une hésitation, pas une tentative."
 
     scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
 
@@ -746,12 +621,10 @@ label _6_0_1_CONCLAVE_START:
     scene bg_diffusion_colere at adaptive_fullscreen
 
     kami "Vous êtes déjà au résultat."
-
     kami "Sans passer par le processus."
+    kami "C'est inefficace."
 
-    kami "C’est inefficace."
-
-    "Sa voix accroche."
+    think "Sa voix accroche sur le mot."
 
     play sound "sfx/glitch_medium.mp3"
 
@@ -767,9 +640,7 @@ label _6_0_1_CONCLAVE_START:
 
     kami "Corrigez."
 
-    "Le mot reste un peu trop longtemps."
-
-    "Comme si elle cherchait la suite."
+    think "Le mot reste trop longtemps, comme si elle cherchait la suite."
 
     scene bg_diffusion_professeur at adaptive_fullscreen
 
@@ -779,9 +650,7 @@ label _6_0_1_CONCLAVE_START:
 
     kami "Simulez au moins."
 
-    "Un silence."
-
-    "Toujours rien."
+    think "Toujours rien."
 
     hide all
     $ showP("ryn", "colere", 0.2)
@@ -789,16 +658,15 @@ label _6_0_1_CONCLAVE_START:
     $ showP("sael", "neutre", 0.8)
 
     ryn "Ça sert à rien."
+    ryn "On sait déjà."
 
     iris "Non."
+    iris "Et je refuse de jouer l'étonnement."
 
     sael "Non."
+    sael "La réponse ne change pas parce qu'on la récite devant toi."
 
-    "Trois voix."
-
-    "Même réponse."
-
-    "Aucune variation."
+    think "Trois voix. Même réponse. Aucune variation."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen
@@ -819,19 +687,13 @@ label _6_0_1_CONCLAVE_START:
 
     kami "En cours."
 
-    "Son image tremble."
-
-    "Plus fort."
-
-    "Plus longtemps."
-
-    "Comme si ça ne revenait pas tout de suite."
+    think "Son image tremble plus fort, plus longtemps. Elle ne revient pas tout de suite."
 
     think "..."
 
     think "Là."
 
-    think "C’est pas normal."
+    think "Ce n'est pas normal."
 
     scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
 
@@ -846,15 +708,7 @@ label _6_0_1_CONCLAVE_START:
 
 label _6_0_1_SIGNAL_INSTABLE:
 
-    "L’air change."
-
-    "Pas la pièce."
-
-    "Pas les gens."
-
-    "Juste…"
-
-    "Quelque chose derrière."
+    think "L'air ne change pas. La pièce non plus. Quelque chose derrière, si."
 
     play sound "sfx/glitch_heavy.mp3"
 
@@ -872,11 +726,7 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     kami "Signal."
 
-    "Son image saute."
-
-    "Pas une fois."
-
-    "En boucle."
+    think "Son image saute en boucle."
 
     hide all
 
@@ -886,27 +736,22 @@ label _6_0_1_SIGNAL_INSTABLE:
     $ showP("ryn", "colere", 0.6)
     $ showP("lysa", "blase", 0.85)
 
-    iris "C’est quoi ça—"
+    iris "C'est quoi, ce cirque—"
 
-    ryn "Elle bug ?"
+    ryn "Elle bugue ?"
 
-    lysa "Non."
+    lysa "Non. Elle force quelque chose à tenir."
+    lysa "Atlas, mais avec des câbles."
 
-    lysa "Elle force."
-
-    "Un bruit parasite traverse la pièce."
+    think "Un parasite traverse la pièce."
 
     play sound "sfx/glitch_loop.mp3"
 
-    "Constant."
+    think "Constant. Sale."
 
-    "Sale."
+    think "Ça ne tient pas. Ou ça tient trop fort."
 
-    think "Ça tient pas."
-
-    think "Ou ça tient trop."
-
-    "L’interface s’impose."
+    think "L'interface s'impose avant que nous comprenions."
 
     # --- LANCEMENT MINI-JEU ---
     call j601_play_signal_instable from _call_j601_play_signal_instable
@@ -914,19 +759,13 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     stop sound fadeout 0.5
 
-    "Le bruit coupe."
-
-    "D’un coup."
+    think "Le bruit coupe net."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "..."
 
-    "Silence."
-
-    "Pas un silence normal."
-
-    "Un trou."
+    think "Pas un silence : un trou."
 
     scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
 
@@ -944,7 +783,7 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     kami "Imprécise."
 
-    "Sa voix accroche encore."
+    think "Sa voix accroche encore."
 
     play sound "sfx/glitch_light.mp3"
 
@@ -952,7 +791,7 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     kami "Encore."
 
-    "Son image reste figée une fraction de trop."
+    think "Son image reste figée une fraction de trop."
 
     think "..."
 
@@ -964,13 +803,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
-    "Personne ne parle."
-
-    "Même pas pour commenter."
-
-    "On attend juste."
-
-    "La suite."
+    think "Personne ne commente. Nous attendons seulement la suite."
 
     jump _6_0_1_FRACTURE_QTE
 
@@ -986,9 +819,9 @@ label _6_0_1_FRACTURE_QTE:
     scene bg_diffusion_colere at adaptive_fullscreen with hpunch
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Vu que vous ne voulez pas débattre..."
+    kami "Puisque vous refusez de débattre…"
     scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
-    kami "Il est temps maintenant de mour..."
+    kami "Il est temps maintenant de mour—"
     scene bg_diffusion_colere at adaptive_fullscreen
     kami "Voter."
     kami "Voter."
@@ -1006,32 +839,29 @@ label _6_0_1_FRACTURE_QTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
-    "Personne ne bouge."
+    think "Personne ne bouge."
 
     $ showP("mara", "doute", 0.20)
     $ showP("iris", "peur", 0.50)
     $ showP("ryn", "neutre", 0.80)
 
     iris "..."
-    iris "Elle a dit quoi ?"
+    iris "Elle vient de dire quoi ?"
 
-    ryn "J’en sais rien. J'ai pas compris quand chose..."
+    ryn "J'en sais rien. J'ai entendu du bruit."
 
     mara "Si."
     $ showP("mara", "mefiant", 0.20)
-    mara "Elle a dit un truc."
-    mara "Et elle a corrigé trop vite."
+    mara "Elle a dit un mot. Et elle l'a corrigé beaucoup trop vite."
 
-    iris "Non mais..."
     $ showP("iris", "inquiet", 0.50)
-    iris "Vous avez entendu comme moi ?"
+    iris "Vous avez entendu la même chose que moi ?"
 
     ryn "J’ai entendu du bruit."
 
-    mara "Moi j’ai entendu mourir ?!"
+    mara "Moi, j'ai entendu « mourir »."
 
-    "Le mot tombe."
-    "Personne ne le ramasse."
+    think "Le mot tombe entre nous. Personne ne le ramasse."
 
     hide ryn
     $ showP("lysa", "blase", 0.80)
@@ -1045,23 +875,21 @@ label _6_0_1_FRACTURE_QTE:
 
     lysa "Non."
     $ showP("lysa", "fatigue", 0.80)
-    lysa "Je constate juste que c'est clairement pas rassurant."
+    lysa "Je constate seulement que l'alternative n'a rien de rassurant."
 
-    "Personne ne rit."
-    "Pas même Mara."
+    think "Personne ne rit. Pas même Mara."
 
     hide iris
     $ showP("tomas", "inquiet", 0.50)
 
-    tomas "Euh..."
-    tomas "Je... je n’ai pas compris la totalité de la lecture."
+    tomas "Euh… je n'ai pas compris la totalité du texte."
 
     mara "Personne n’a compris."
 
-    tomas "Non, je veux dire..."
+    tomas "Non, je veux dire…"
     $ showP("tomas", "reflechit", 0.50)
     tomas "La proposition, telle qu’elle a été formulée, est peut-être incomplète."
-    tomas "Comme la dernière fois..."
+    tomas "Comme la dernière fois…"
 
     lysa "Peut-être ?"
 
@@ -1072,23 +900,20 @@ label _6_0_1_FRACTURE_QTE:
     $ showP("tomas", "panne", 0.50)
     tomas "Ensuite c’était du verre pilé."
 
-    mara "Très légal comme lecture."
-    mara "Là franchement, c'est compliqué d'en faire quelque chose."
+    mara "Très juridique, le verre pilé. Même un avocat ivre aurait du mal à travailler avec ça."
 
     hide mara
     $ showP("elen", "inquiet", 0.20)
 
-    elen "On peut pas voter là-dessus."
+    elen "On peut pas voter là-dessus ! On sait même pas ce qu'elle a dit !"
 
-    lysa "On va devoir voter quand même."
+    lysa "Et pourtant, l'oracle exige sa réponse."
 
-    elen "Non mais je veux dire..."
+    elen "Non, mais vraiment—"
     $ showP("elen", "peur", 0.20)
     elen "Si Kami bugge pendant qu’elle annonce le texte, qu’est-ce qui se passe si on vote pour ?"
 
-    "La question reste là."
-    "Toute simple."
-    "Beaucoup trop simple."
+    think "Une question simple. Beaucoup trop simple pour le système."
 
     hide tomas
     $ showP("sael", "neutre", 0.50)
@@ -1102,11 +927,9 @@ label _6_0_1_FRACTURE_QTE:
 
     sael "Non."
     $ showP("sael", "mefiant", 0.50)
-    sael "Le seul qui compte."
+    sael "Le seul qui compte. On ne consent pas à ce qu'on ne comprend pas."
 
-    "Sael regarde l’écran vide."
-    "Pas les autres."
-    "Pas moi."
+    think "Sael regarde l'écran vide, pas nous."
 
     sael "Si nous votons pour, la modification est appliquée immédiatement."
 
@@ -1119,7 +942,7 @@ label _6_0_1_FRACTURE_QTE:
     lysa "On ne sait pas."
 
     sael "Justement."
-    sael "Il fallait déjà voter contre avant mais maintenant c'est carrément une nécessité."
+    sael "Il fallait déjà voter contre. Maintenant, c'est une nécessité. Même les signes refusent ce texte."
 
     hide elen
     $ showP("kael", "inquiet", 0.20)
@@ -1130,7 +953,7 @@ label _6_0_1_FRACTURE_QTE:
 
     kael "Ou considérer que nous avons validé une version que nous n’avons pas entendue."
 
-    "Tomas relève la tête puis prend la parole."
+    think "Tomas relève la tête."
 
     hide lysa
     $ showP("tomas", "raison", 0.80)
@@ -1145,53 +968,49 @@ label _6_0_1_FRACTURE_QTE:
 
     kael "Je ne dis pas que je suis pour."
 
-    sael "Alors ne parle pas comme si on avait encore une marge de manoeuvre."
+    sael "Alors ne parle pas comme s'il restait une marge de manœuvre."
 
     $ showP("kael", "fatigue", 0.20)
     kael "Je parle parce que j’essaie de comprendre."
 
     sael "Moi aussi."
-    sael "Mais y'a rien à comprendre..."
+    sael "Mais il n'y a plus rien à comprendre."
 
-    "Silence."
+    think "Silence."
 
     hide kael
     $ showP("iris", "fatigue", 0.20)
 
     iris "Super."
-    iris "Donc on a une IA qui bugge, un texte qu’on n’a pas compris, et on doit voter comme si c’était une réunion normale."
+    iris "Donc : une IA instable, un texte incompréhensible et un vote traité comme une formalité. Organisation impeccable."
 
     tomas "Techniquement, ce n’est pas une réunion normale."
 
-    iris "Merci, heureusement que tu es là Tomas..."
+    iris "Merci, Tomas. Heureusement que tu es là."
     $ showP("iris", "colere", 0.20)
-    iris "Je me sens vachement mieux."
+    iris "Je me sens beaucoup mieux."
 
-    "Tomas baisse les yeux."
+    think "Tomas baisse les yeux. Le sarcasme d'Iris vient de choisir une victime trop facile."
 
     hide sael
     $ showP("mara", "mefiant", 0.50)
 
-    mara "Question bête..."
+    mara "Question bête…"
 
-    iris "J’adore quand tu commences comme ça."
-    iris "Mais ça change pas forcément de d'habitude."
+    iris "J'adore quand tu annonces le programme. Cela dit, ça ne change pas beaucoup de d'habitude."
 
-    mara "Si elle est vraiment instable..."
+    mara "Si elle est vraiment instable…"
     $ showP("mara", "doute", 0.50)
     mara "Pourquoi elle insiste pour voter maintenant ?"
 
     tomas "Parce que c'est dans les règles, on doit voter aujourd'hui."
 
-    mara "Oui mais pas forcément MAINTENANT ..."
+    mara "Oui, mais pas forcément maintenant."
     mara "Ou parce que ça l’arrange ?"
 
-    "Je repense au couloir."
-    "À sa voix."
-    "Ça m’arrange. Beaucoup."
+    think "Je repense au couloir, à sa voix : « Ça m'arrange. Beaucoup. »"
 
-    think "..."
-    think "Elle l’a dit. C'était assez clair."
+    think "Elle l'a dit. Très clairement."
 
     hide tomas
     $ showP("ryn", "colere", 0.80)
@@ -1202,32 +1021,30 @@ label _6_0_1_FRACTURE_QTE:
 
     ryn "Je veux dire tout le monde."
 
-    mara "Bonne chance."
+    mara "Bonne chance pour obtenir l'unanimité maintenant."
 
     ryn "Putain, Mara."
 
     mara "Quoi ?"
     $ showP("mara", "agace", 0.50)
-    mara "Tu crois que j’aime ça ?"
+    mara "Tu crois que j'aime ça ?"
     mara "Je dis juste que cinq minutes plus tôt, on n’était déjà pas d’accord sur le principe."
 
-    ryn "Le principe vient de se faire avaler sous une tonne d'incohérence et de bugs !"
+    ryn "Le principe vient de disparaître sous une tonne de bugs !"
 
     iris "Il a pas tort."
 
     mara "J’ai pas dit qu’il avait tort."
 
-    "Ryn serre les dents."
-    "Sa colère cherche une porte."
-    "Elle n’en trouve pas."
+    think "Ryn serre les dents. Sa colère cherche une porte et n'en trouve pas."
 
     hide iris
     $ showP("lysa", "fatigue", 0.20)
 
     lysa "On ne sait pas ce qu’on vote."
-    lysa "On ne sait pas si Kami contrôle encore ce qu'il se passe."
+    lysa "On ne sait pas si Kami contrôle encore ce qui se passe."
     lysa "On ne sait pas ce qui sera appliqué."
-    lysa "C'est le bordel absolu..."
+    lysa "C'est le chaos absolu. Même Cassandre manquerait de vocabulaire."
 
     mara "Ça fait beaucoup de choses qu’on ne sait pas."
 
@@ -1235,7 +1052,7 @@ label _6_0_1_FRACTURE_QTE:
 
     ryn "Et pendant ce temps, les frontières restent fermées."
 
-    "Cette fois, personne ne répond vite."
+    think "Cette fois, personne ne répond vite."
 
     hide mara
     $ showP("sael", "neutre", 0.50)
@@ -1248,11 +1065,10 @@ label _6_0_1_FRACTURE_QTE:
 
     ryn "Tu dis ça comme si c’était le mieux à faire."
 
-    sael "Oui c'était le mieux à faire."
+    sael "Oui. C'est encore le moindre mal."
     $ showP("sael", "fatigue", 0.50)
 
-    "Ryn ouvre la bouche."
-    "Il la referme."
+    think "Ryn ouvre la bouche, puis la referme."
 
     pause 0.6
 
@@ -1290,11 +1106,11 @@ label _6_0_1_FRACTURE_QTE:
     $ showP("sael", "neutre", 0.50)
     $ showP("ryn", "neutre", 0.80)
 
-    lysa "Elle ne nous laisse même pas finir de parler..."
+    lysa "Elle ne nous laisse même pas finir de parler."
 
     ryn "Parce qu’on panique maintenant ?"
 
-    lysa "Je sais pas."
+    lysa "Je ne sais pas."
     $ showP("lysa", "fatigue", 0.20)
     lysa "Moi j’ai coché ça mentalement il y a trois jours."
 
@@ -1367,8 +1183,7 @@ label _6_0_1_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "Le résultat reste affiché."
-    "Quelques secondes de trop."
+    think "Le résultat reste affiché quelques secondes de trop."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -1376,17 +1191,17 @@ label _6_0_1_VOTE:
     kami "Résultat du vote."
     $ interject("REJETÉ", color="#FF4D6D")
     scene bg_diffusion_colere at adaptive_fullscreen with vpunch
-    kami "Ab-Absence d'unanimité."
-    kami "Amend-ement rejeté."
+    kami "Ab— Absence d'unanimité."
+    kami "Amendement rejeté."
 
     scene bg_diffusion_professeur at adaptive_fullscreen
-    kami "La libre circulation entre ... demeure interdite."
+    kami "La libre circulation entre… demeure interdite."
 
     scene bg_diffusion_taquin at adaptive_fullscreen
-    kami "Statu ... maintenu."
+    kami "Statu quo maintenu."
 
     scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Pr$vis-ble."
+    kami "Prévis—ble."
     kami "Décevant."
     kami "Mais prévisible."
 
@@ -1400,9 +1215,10 @@ label _6_0_1_VOTE:
     ryn "..."
 
     iris "Bon."
-    iris "Voilà."
+    iris "Voilà. Le monde reste absurde, mais au moins il reste cohérent."
 
     sael "C'était nécessaire."
+    sael "Les morts de Limen auraient compris."
 
     ryn "Ne dis pas ça."
 
@@ -1413,55 +1229,53 @@ label _6_0_1_VOTE:
     hide iris
     $ showP("mara", "doute", 0.80)
 
-    mara "On a voté contre un texte qu'on n'a même pas compris."
+    mara "On a voté contre un texte qu'on n'a même pas eu le luxe de comprendre."
 
     ryn "On a voté contre parce que Kami était en train de péter les plombs en direct."
-    ryn "Pas parce que la proposition était mauvaise..."
+    ryn "Pas parce que la proposition était mauvaise."
 
     mara "Je sais."
-    mara "C'est pas censé me rassurer."
+    mara "Ce n'est pas censé me rassurer."
 
     hide sael
     $ showP("tomas", "inquiet", 0.50)
 
-    tomas "Je... je maintiens mon vote."
+    tomas "Je… je maintiens mon vote."
 
     mara "Évidemment."
 
     tomas "Je ne dis pas que c'était prudent."
     $ showP("tomas", "raison", 0.50)
     tomas "Je dis que le principe restait correct."
+    tomas "Même si le contexte était... catastrophique."
 
     ryn "Ouais, mais trop risqué avec tout ça."
 
-    "Personne ne répond."
-    "Parce qu'il a raison."
-    "Et parce que ça ne change rien."
+    think "Personne ne répond. Il a raison et cela ne change rien."
 
     hide ryn
     $ showP("julian", "sourire", 0.20)
 
-    julian "Vous auriez pu faire un effort."
+    julian "Nous aurions pu défendre le principe malgré la panne. Nous avons choisi le retrait."
 
     mara "Julian."
 
     julian "Quoi ?"
 
-    mara "Pas maintenant."
+    mara "Pas maintenant. Garde le discours pour quand personne n'a envie de te frapper."
 
     $ showP("julian", "decu", 0.20)
 
     julian "..."
-    julian "D'accord."
+    julian "D'accord. Julian saura se taire. Pour l'instant."
 
     hide mara
     $ showP("elias", "fatigue", 0.80)
 
-    elias "Façon on savait déjà comment ça allait finir."
-    elias "La situation n'a fait que conforter ce choix..."
+    elias "De toute façon, on savait comment ça finirait."
+    elias "Les bugs ont juste rendu le choix encore plus chaud."
 
-    "Elias ne cherche même pas à défendre son choix."
-    "Il a l'air vidé et déprimé."
+    think "Elias ne défend même pas son choix. Il est vidé."
 
     hide julian
     $ showP("lysa", "fatigue", 0.20)
@@ -1477,25 +1291,23 @@ label _6_0_1_VOTE:
     tomas "Techniquement, non."
 
     lysa "Tomas."
-    lysa "L'écran ne se rallumera pas."
+    lysa "Tomas. L'écran ne se rallumera pas."
 
-    "L'écran demeurait éteint depuis que Kami avait tenté de finir son annonce."
+    think "L'écran reste éteint depuis la fin avortée de l'annonce."
 
     $ showP("tomas", "panne", 0.50)
 
     tomas "..."
-    tomas "Oui. Peut-être..."
+    tomas "Oui. Peut-être…"
 
-    "Les pupitres s'éteignent."
-    "Un par un."
+    think "Les pupitres s'éteignent un à un."
 
     hide elias
     $ showP("sael", "fatigue", 0.80)
 
     sael "Ryn."
 
-    "Ryn ne répond pas."
-    "Il ne la regarde pas non plus."
+    think "Ryn ne répond pas et ne la regarde pas."
 
     hide tomas
     $ showP("ryn", "colere", 0.50)
@@ -1506,7 +1318,7 @@ label _6_0_1_VOTE:
 
     sael "D'accord."
 
-    "Elle tourne le regard puis s'éloigne du groupe."
+    think "Sael détourne les yeux et s'éloigne."
 
     think "C'est terminé."
     think "Mais rien n'est réglé."
@@ -1526,12 +1338,7 @@ label _6_0_1_FIN_JOURNEE:
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "On quitte le Conclave."
-    "Pas vraiment ensemble."
-    "Pas vraiment séparés non plus."
-
-    "Juste assez proches pour entendre les pas des autres."
-    "Juste assez loin pour ne pas avoir à se parler."
+    think "Nous quittons le Conclave ni ensemble ni séparés : assez proches pour entendre les pas, assez loin pour éviter les mots."
 
     $ showP("lysa", "fatigue", 0.25)
     $ showP("mara", "doute", 0.55)
@@ -1549,12 +1356,12 @@ label _6_0_1_FIN_JOURNEE:
     mara "Peut-être."
     mara "J'en sais trop rien."
 
-    lysa "C'est comme ça que décident les représentants du monde entier..."
+    lysa "Ainsi décident les représentants du monde : avec la certitude d'Œdipe et deux fois moins d'informations."
 
     elen "C'est pas drôle."
 
     lysa "Je sais. Mais c'est vrai."
-    lysa blase "On est pathétiques..."
+    lysa blase "Nous sommes pathétiques."
 
     hide mara
     $ showP("kael", "fatigue", 0.55)
@@ -1563,7 +1370,7 @@ label _6_0_1_FIN_JOURNEE:
 
     elen "Et voter contre ?"
 
-    kael "Au moins ça ne change rien..."
+    kael "Au moins, aucune variable nouvelle."
 
     elen "Super."
 
@@ -1574,12 +1381,12 @@ label _6_0_1_FIN_JOURNEE:
 
     iris "Je veux prendre une douche."
     $ showP("iris", "colere", 0.85)
-    iris "Et je veux que ce truc s'arrête. On ne pourra rien changer ici."
+    iris "Et je veux que ce cirque s'arrête. Nous ne changerons rien tant que l'arbitre se désintègre en direct."
 
     kael "Le deuxième point risque d'être compliqué."
 
     iris "Merci, Kael."
-    iris "Toujours là pour piétiner mes rêves les plus simples."
+    iris "Toujours là pour piétiner mes rêves les plus modestes."
 
     $ showP("kael", "inquiet", 0.55)
 
@@ -1589,12 +1396,11 @@ label _6_0_1_FIN_JOURNEE:
 
     kael "Ah."
 
-    lysa "Elle était mauvaise."
+    lysa "Elle était mauvaise. Même pour toi."
 
     iris "Je suis fatiguée, te moque pas de mon inspiration."
 
-    "Un silence."
-    "Cette fois, personne n'ajoute rien."
+    think "Cette fois, personne n'ajoute rien."
 
     hide lysa
     $ showP("tomas", "inquiet", 0.25)
@@ -1610,29 +1416,26 @@ label _6_0_1_FIN_JOURNEE:
     tomas "Je veux être sûr que Kami n'a pas appliqué une pénalité par rapport à ce vote..."
 
     kael "Tu crois qu'elle le ferait ?"
-    kael "Quoi que tout est possible avec elle..."
+    kael "Quoique tout semble possible aujourd'hui."
 
     $ showP("tomas", "panne", 0.25)
 
     tomas "..."
-    tomas "J'espère pas..."
+    tomas "J'espère que non…"
 
-    "Il part avant qu'on puisse l'arrêter ou l'aider."
-    "Je ne sais pas ce qui serait le pire."
-    "Je ne veux pas savoir en fait..."
+    think "Il part avant qu'on puisse l'arrêter ou l'aider. Je ne sais pas laquelle des deux options l'effraie le plus."
 
     hide tomas
     hide kael
     $ showP("sael", "fatigue", 0.55)
 
-    "Sael marche derrière nous."
-    "Elle ne regarde personne."
+    think "Sael marche derrière nous sans regarder personne."
 
     noam "Sael."
 
     sael "Pas maintenant."
 
-    "Même phrase que Ryn."
+    think "La même phrase que Ryn."
 
     noam "D'accord."
 
@@ -1654,7 +1457,7 @@ label _6_0_1_FIN_JOURNEE:
 
     ryn "Rien."
 
-    julian "C'est brillant."
+    julian "Remarquable stratégie collective."
 
     ryn "Tu veux applaudir ?"
 
@@ -1667,10 +1470,9 @@ label _6_0_1_FIN_JOURNEE:
     ryn "Essaie pour voir."
 
     elias "Stop. Vous deux."
-    elias "On est pas des gamins..."
+    elias "On n'est pas des gamins. C'est chaud, arrêtez."
 
-    "Un mot."
-    "Ça suffit presque."
+    think "Un mot. Cela suffit presque."
 
     $ showP("elias", "neutre", 0.55)
 
@@ -1680,18 +1482,17 @@ label _6_0_1_FIN_JOURNEE:
     $ showP("julian", "decu", 0.25)
     julian "Parce que je commence à manquer d'endroits où on peut encore parler."
 
-    elias "Dans ta chambre à la limite."
+    elias "Dans ta chambre, à la limite. Là au moins, vous casserez que vos trucs."
 
     julian "Très drôle."
-    julian "A quoi ça servirait si les gens ne voyaient pas la raclée que je lui mettrais ?"
+    julian "À quoi bon si personne ne voit la correction historique que Julian lui inflige ?"
 
-    ryn colere "Ah ouai t'es sûr ?!"
+    ryn colere "Ah ouais ? Essaie."
 
     elias "Bon !"
-    elias colere "J'ai dis stop !"
+    elias colere "J'ai dit stop !"
 
-    "Julian détourne les yeux."
-    "Ryn aussi."
+    think "Julian détourne les yeux. Ryn aussi. Elias reste surpris d'avoir été entendu."
 
     hide julian
     hide elias
@@ -1700,100 +1501,58 @@ label _6_0_1_FIN_JOURNEE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    "Je rentre dans ma chambre."
-    "La porte se referme derrière moi."
-
-    "Le calme revient."
-    "Il m'avait manqué..."
+    think "La porte de ma chambre se referme. Le calme revient. Il m'avait manqué."
 
     think "J'ai voté."
     think "Ils ont voté."
-    think "Kami a déliré toute la journée..."
+    think "Kami a déliré toute la journée…"
 
-    "Je retire ma veste."
-    "Je la laisse tomber sur la chaise."
-    "Je reste debout."
-    "Quelques secondes."
-    "Peut-être même plus."
+    think "Je laisse tomber ma veste et reste debout sans raison."
 
     think "Qu'est-ce qui s'est passé ?"
 
-    "La question n'a pas vraiment de sens."
-    "Pourquoi la machine qui dirige le monde s'est soudainement mise à déconner ?"
-
-    "C'est à ne rien y comprendre..."
-    "Est-ce que c'est à cause du petit incident d'hier ?"
-    "Est-ce qu'Elias a fait dijoncter des trucs qui sont nécessaires à Kami pour bien fonctionner ?"
+    think "Pourquoi la machine qui dirige le monde s'est-elle mise à dérailler ?"
+    think "L'incident d'hier ? Elias aurait-il endommagé quelque chose dont Kami dépend ?"
 
     think "Rien n'avait de sens dans ce qu'elle disait..."
     think "Un lapsus."
     think "Une menace."
     think "Un bug."
 
-    "Trois réponses."
-    "Mais aucune n'est utile."
+    think "Lapsus, menace ou panne. Trois réponses, aucune utile."
 
-    "Je passe une main dans mes cheveux."
-    "Je sens encore la chaleur du Conclave."
-    "La lumière artificielle."
-    "Les grésillements constants."
+    think "Je sens encore la chaleur artificielle du Conclave et ses grésillements."
 
     think "Quelque chose a changé."
 
-    "Je l'ai déjà pensé ce matin."
-    "Je le pense encore."
-
-    "Sauf que maintenant, je n'arrive plus à faire semblant que c'est juste une impression."
+    think "Je l'ai pensé ce matin. Maintenant, je ne peux plus appeler ça une impression."
 
     play sound "sfx/glitch_light.mp3"
 
-    "L'écran mural clignote."
-    "Une seule fois."
-    "Je me tourne vers lui."
+    think "L'écran mural clignote une fois. Je me retourne."
 
-    think "..."
-
-    "J'attends."
-    "Toujours rien."
+    think "J'attends. Rien."
 
     think "Bien sûr."
 
-    "Je vais dans la salle d'eau."
-    "Je me passe de l'eau sur le visage."
-    "Elle est froide."
-    "Pas assez."
-    "Quand je relève la tête, le miroir me renvoie mon visage."
-    "Le même que ce matin."
-    "Un peu plus fatigué peut-être..."
-    "Je ferme les yeux."
+    think "Je passe de l'eau froide sur mon visage. Pas assez froide. Le miroir me rend celui du matin, un peu plus fatigué."
 
     think "Voilà."
     think "C'est tout."
 
-    "Je retourne vers le lit."
-    "Je ne prends pas la peine de me changer complètement."
-    "Je m'allonge."
+    think "Je retourne au lit sans me changer complètement."
 
-    "Le plafond est là."
-    "Encore."
+    think "Le plafond est encore là. Lui au moins reste stable."
 
     think "Demain, ça ira mieux."
 
-    "Je n'y crois pas une seule seconde."
+    think "Je n'y crois pas une seconde."
 
     think "Tant pis."
 
-    "Mes paupières deviennent lourdes."
-    "Le silence de la chambre revient."
-    "Mais derrière."
-    "Très loin."
-    "Ou très près."
-    "J'ai l'impression d'entendre encore la voix de Kami."
+    think "Mes paupières deviennent lourdes. Derrière le silence, très loin ou très près, la voix de Kami recommence."
 
-    "Voter."
-    "Voter."
-
-    "Puis presque rien."
+    think "Voter. Voter. Puis presque rien."
 
     think "Mourir..."
 

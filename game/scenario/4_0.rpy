@@ -356,8 +356,8 @@ screen day4_cafeteria_elen_gate():
         action Return("news")
 
     imagebutton:
-        idle Transform("images/character/elen/colere.png", zoom=0.75)
-        hover Transform("images/character/elen/colere_noire.png", zoom=0.75)
+        idle Transform(character_image("elen", "colere"), zoom=0.75)
+        hover Transform(character_image("elen", "colere_noire"), zoom=0.75)
         focus_mask True
         xalign 0.55
         yalign 0.30
@@ -655,69 +655,49 @@ label _4_0_REVEIL_CHAMBRE:
     pause 1.5  # Légèrement plus long pour accentuer la lourdeur
 
     $ blink()
-    "Je me réveille… ou plutôt, je reviens à moi."
+    "Je reviens à moi sous la lumière bleue des veilleuses."
     $ blink()
-    "La lumière bleue des veilleuses est toujours là, mais aujourd’hui elle donne l’impression d’un néon fatigué qui clignote à peine."
-
-    "Hier, on a voté."
-    "On a eu une chance. Une vraie."
-    "Et on l’a laissée filer."
-    "Le bouton vert est resté éteint. Au moins l'un d'entre nous a dit non."
-    "Et le monde continue de tourner exactement comme avant."
+    think "Hier, il a suffi d'un non. Un seul."
+    think "Le bouton vert est resté éteint, et le monde a repris sa place exacte."
 
     $ blink()
-    "Je reste immobile, les bras morts le long du corps."
-    "Mon cœur bat lentement, presque à contrecœur, comme s’il économisait ses forces pour une journée qui ne vaut pas la peine d’être vécue."
-
-    "On a gardé les bons de rationnement."
-    "On a gardé la sécurité."
-    "Mais on a aussi gardé nos chaines."
+    think "Mon cœur bat comme s'il voulait économiser ses forces."
+    think "On a gardé les rations. La sécurité. Les chaînes avec."
 
     $ blink()
     pause 2.5  # Pause plus longue pour laisser peser le vide
 
-    "Je me tourne à moitié."
-    "Une photo holographique est posée sur la table de nuit."
-    "Elle n'était pas là hier."
-    "Ou alors je ne l'ai pas vue."
-    "Non. Je l'aurais vue."
+    "Une photo holographique repose sur la table de nuit. Elle n'était pas là hier."
+    think "Non. Je l'aurais vue."
 
     call day4_photo_take_trace from _call_day4_photo_take_trace
 
     scene bg_cg029 at adaptive_fullscreen with dissolve
-    "Je la prends entre deux doigts."
-    "Le cadre est froid."
-    "Un souvenir posé là sans me demander mon avis."
-    "Même ma table de nuit n'est pas vraiment à moi."
-    "Sur la photo, il y a une famille souriante. Pas la mienne. Ce sont des amis."
+    think "Le cadre est froid. Une famille sourit. Pas la mienne : des amis."
     $ unlock_gallery_image("bg_cg029")
-    "Je me demande si eux aussi ont un bon de rationnement ce matin."
-    "Ou si, quelque part, ils ont déjà arrêté de sourire depuis longtemps."
+    think "Même mes souvenirs entrent ici sans frapper."
+    think "Je me demande s'ils sourient encore."
 
     menu:
         "Regarder la photo encore quelques secondes.":
             "Je garde le cadre levé."
-            "Les visages tremblent à peine dans la lumière holographique."
-            "Plus je regarde, plus j'ai l'impression qu'on m'a déposé une preuve au lieu d'un souvenir."
+            think "Les visages tremblent dans la lumière. On m'a déposé une preuve, pas un souvenir."
 
         "La retourner immédiatement.":
             "Je serre un peu trop fort les bords."
-            "Je n'ai pas envie que ces sourires me regardent plus longtemps."
+            think "Je n'ai pas envie que ces sourires me regardent plus longtemps."
 
         "Vérifier l'arrière du cadre.":
             "Je retourne le cadre."
-            "Rien. Il n'y a rien."
-            "Pas de signature. Pas de mot. Juste une surface lisse, prévue pour ne rien avouer."
+            think "Rien. Pas de signature, pas de mot. Une surface prévue pour ne rien avouer."
 
     call day4_photo_put_trace from _call_day4_photo_put_trace
 
     "Je repose la photo face contre la table."
-    "Ça ne règle rien."
-    "Mais au moins, pendant quelques secondes, elle cesse de me regarder."
+    think "Ça ne règle rien. Au moins, elle cesse de me regarder."
 
     play sound sfx_announce
-    "Un bip strident déchire le silence."
-    "L’écran s’allume brutalement, lumière blanche et clinique."
+    "Un bip strident déchire le silence ; l'écran s'allume."
     pause 1.0
 
     show screen kami_broadcast_ui
@@ -725,20 +705,17 @@ label _4_0_REVEIL_CHAMBRE:
     play music "music/bgm_system_override.mp3" fadein 1.0
 
     kami "Bonjour, mes petits anges de la prudence !"
-    kami "Il est 8 heures, et devinez quoi ? La révolution est officiellement annulée !"
+    kami "Il est huit heures et, bonne nouvelle : votre révolution a été annulée faute de participants."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Petit briefing matinal, parce que je sais que vous raffolez quand je vous rappelle à quel point vous êtes raisonnables :"
-    kami "La situation est toujours impeccables. Pas une pièce qui circule, pas une once de liberté."
-    kami "Vous avez l'avez voulu, vous l'aurez !."
+    kami "Petit bilan matinal, puisque vous adorez qu'on récompense votre sens des responsabilités."
+    kami "La situation reste impeccable : pas une pièce qui circule, pas une once de liberté qui dépasse."
+    kami "Vous l'avez voulu. Vous l'avez !"
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "C’est beau, non ? Le calme avant… ben, le calme, en fait."
-    kami "Pas d’alarme, pas de chaos."
-    kami "Juste la douce certitude que demain sera exactement comme aujourd’hui."
-    kami "Alors, je tiens à tous vous remercier :"
-    kami "Merci de m'avoir donné raison. L'humanité ne veut pas de cette liberté que vous dites pourtant chérir."
-    kami "Elle est bien moins importante que le certitude de pouvoir être nourris."
+    kami "C'est beau, non ? Le calme avant… le calme."
+    kami "Pas d'alarme. Pas de chaos. Juste la garantie que demain ressemblera exactement à aujourd'hui."
+    kami "Merci de m'avoir donné raison : l'humanité aime la liberté tant qu'elle ne menace pas le dîner."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Allez, ne faites pas cette tête !"
@@ -747,25 +724,14 @@ label _4_0_REVEIL_CHAMBRE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
-    "L’écran s’éteint. Le silence retombe, épais comme du béton."
-    "Je reste assis, les mains posées sur mes genoux, inertes."
-    "Elle n’a même pas besoin de mentir."
-    "On n’a rien changé. Et on n’a même pas le courage de le regretter à voix haute."
+    think "L'écran s'éteint. Elle laisse le silence terminer son discours."
+    think "Elle n'a même pas besoin de mentir. On fait le travail à sa place."
 
     pause 1.8
 
     play sound sfx_drop
-    "Un bruit mat dans le couloir. Comme un poing contre du métal."
-    "Un cri bref, étouffé, presque honteux."
-    "Puis plus rien."
-
-    "Je me lève lentement. Pas d’un bond. Pas la force."
-    "Mon cœur cogne, mais c’est un cognement fatigué."
-    "Je tends l’oreille. Silence."
-    "Juste l’écho de ce cri, et la certitude que ce n’est que le début de quelque chose qui se fissure sans bruit."
-
-    "Ça n’a pas encore explosé."
-    "Mais ça pourrait à tout moment."
+    "Un poing heurte le métal dans le couloir. Un cri bref suit, puis plus rien."
+    think "Ça n'a pas encore explosé. Voilà tout ce que le silence prouve."
 
     jump _4_0_NAVIGATION_CAFETERIA
 
@@ -811,7 +777,7 @@ label _4_0_NAVIGATION_CAFETERIA:
 
     scene bg_couloir at adaptive_fullscreen with dissolve
     "Je sors de la chambre."
-    "Le couloir m'attend avec sa lumière froide et ses portes fermées."
+    think "Lumière froide. Portes fermées. Personne ne veut être le premier à sortir."
 
 label _4_0_NAVIGATION_CAFETERIA_LOOP:
 
@@ -843,8 +809,8 @@ label _4_0_CAFETERIA_ELEN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
-    "A peine entré dans la cafétéria, je repère Elen près du comptoir."
-    "Elle ne parle pas. Elle bouillonne."
+    "À peine entré dans la cafétéria, je repère Elen près du comptoir."
+    think "Elle ne parle pas. Elle bouillonne."
 
 label _4_0_CAFETERIA_ELEN_PARTIAL:
 
@@ -860,14 +826,13 @@ label _4_0_CAFETERIA_ELEN_PARTIAL:
     if _return == "news":
         call screen day4_news_screen()
     elif _return == "goumi":
-        "Goumi reste immobile derriere le comptoir."
-        "Ses voyants suivent Elen comme s'il attendait l'ordre suivant."
+        think "Goumi reste immobile derrière le comptoir."
+        think "Ses voyants suivent Elen. Il attend déjà le prochain ordre."
     elif _return == "frigo":
-        "Le frigo-machine affiche des listes presque vides."
-        "Il y a assez pour survivre. Pas assez pour oublier ou on est."
+        think "Le frigo affiche assez pour survivre, pas assez pour oublier où on est."
     elif _return == "tables":
-        "Les tables sont deja occupees par des plateaux silencieux."
-        "Personne ne mange vraiment."
+        think "Des plateaux occupent les tables. Personne ne semble pressé d'y toucher."
+        think "Personne ne mange vraiment."
 
     jump _4_0_CAFETERIA_ELEN_PARTIAL
 
@@ -883,25 +848,24 @@ label _4_0_CAFETERIA_ECRANS:
     scene bg_cg022 at adaptive_fullscreen with dissolve  # CG spéciale de la scène au comptoir
     $ unlock_gallery_image("bg_cg022")
 
-    elen "Allez Goumi, s’il te plaît ! Juste un tout petit peu de cannelle ! Ou même du poivre !"
-    elen "Ça fait des mois que je rêve d’un truc qui ait vraiment du goût !"
+    elen "Allez, Goumi, s'il te plaît ! Un peu de cannelle. Ou du poivre. Ou un truc qui prouve que j'ai encore une langue !"
 
     goumi "Demande refusée, représentante Elen."
     goumi "Les provisions restantes du Conclave ont été redirigées vers la Terre ce matin."
 
-    elen "Quoi ?! Mais… on n’a presque rien ici !"
+    elen "Quoi ?! Mais nooon, on n'a déjà presque rien ici !"
 
-    elias "Moi je voulais juste des barres protéinées un peu meilleures… celles qu’on a sont dégueulasses !"
+    elias "Moi, j'voulais juste des barres moins dégueulasses. C'est chaud, elles ont même plus de goût."
 
-    nyra "Elen, Elias… calmez-vous. Goumi ne fait qu’appliquer les ordres."
+    nyra "Elen, Elias… Goumi applique un ordre. La vraie question, c'est qui cet ordre est censé aider."
 
     goumi "Ordre direct de Kami. Priorité absolue à la distribution planétaire."
 
-    elen "Mais c’est injuste ! On est coincés ici et on n’a même pas le droit à un petit quelque chose de différent ?!"
+    elen "Mais c'est injuste ! On est coincés ici et on peut même pas avoir un tout petit truc qui soit… différent ?"
 
-    elias "Ouais, on est censés représenter tout le monde et on bouffe la même merde que les autres ?!"
+    elias "Ouais, on est censés bosser pour tout le monde et on bouffe un truc que même le carton il refuserait. C'est chaud."
 
-    nyra "Ce n’est pas en criant que ça va changer quoi que ce soit…"
+    nyra "Vous voulez que ça change. Je comprends. Mais crier sur Goumi, ça donne juste à Kami un meilleur spectacle."
 
     elen "…Je voulais juste que ça ait un peu de goût pour une fois."
 
@@ -912,11 +876,9 @@ label _4_0_CAFETERIA_ECRANS:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Oh là là, ma petite Elen… toujours à pleurnicher pour tes petites épices de luxe ?"
-    kami "C’est tellement mignon. Tellement… humain."
-    kami "Mais il faut bien que tout le monde participe un minimum à l’effort collectif, non ?"
-    kami "Le Conclave ne doit pas devenir un petit paradis pour privilégiés pendant que la Terre se serre la ceinture."
-    kami "C’est une question d’équité. De justice. De sacrifice partagé."
+    kami "Oh là là, ma petite Elen… une tragédie en trois actes, avec cannelle disparue et papilles endeuillées."
+    kami "Mais le Conclave ne va tout de même pas devenir un buffet pour privilégiés pendant que la Terre se serre la ceinture."
+    kami "Équité. Justice. Sacrifice partagé. Vous aimiez beaucoup ces mots, hier."
     kami "Ne vous inquiétez pas trop… de nouvelles provisions arriveront au Jour 7."
     kami "En attendant, contentez-vous de ce que vous avez. Comme tout le monde."
     kami "Et surtout… comme vous l’avez vous-mêmes décidé hier."
@@ -927,63 +889,56 @@ label _4_0_CAFETERIA_ECRANS:
 
     "L’écran s’éteint."
 
-    "Elen reste figée deux secondes, les yeux brillants de larmes de rage et de déception."
-    "Puis elle tourne les talons et quitte la cafétéria presque en courant, la tête baissée comme une petite fille qui vient de se faire humilier devant tout le monde."
+    "Elen reste figée deux secondes, les yeux humides. Puis elle tourne les talons et sort presque en courant."
 
     menu:
         "Faire un pas vers Elen.":
-            "Je bouge trop tard."
-            "Elen est déjà partie."
+            think "Je bouge trop tard. Elle est déjà partie."
 
         "Regarder Goumi.":
-            "Le robot reste immobile."
-            "Pas de honte. Pas d'hésitation."
-            "Juste l'ordre exécuté."
+            think "Pas de honte. Pas d'hésitation. Un ordre exécuté."
 
         "Baisser les yeux vers le plateau.":
-            "Je regarde ma ration."
-            "Elle a soudain l'air encore plus petite."
+            think "Je regarde ma ration."
+            think "Elle a soudain l'air encore plus petite."
 
     $ showP("mara", "agace", 0.70)
-    mara "…Génial. Voilà qu’elle boude comme une gamine maintenant."
+    mara "Génial. Kami humilie Elen et nous, on contemple le décor. Quel collectif de rêve."
 
     $ showP("julian", "decu", 0.50)
-    julian "On ne peut même plus avoir un peu de goût dans nos rations ?"
-    julian "C’est ça, notre grande victoire d’hier ?"
+    julian "Nous n'avons même plus la maîtrise du goût de nos repas."
+    julian "Voilà donc la grande victoire que l'histoire retiendra d'hier."
 
     $ showP("ryn", "colere", 0.12)
-    ryn "Bravo. On a voté pour la sécurité et on se fait traiter comme des chiens par une IA."
-    ryn "On mérite vraiment tout ce qui nous arrive."
+    ryn "Bravo. On a voté pour la laisse et maintenant on s'étonne qu'elle serre."
 
-    "Je reste planté là, ma ration tiède entre les mains. L’ambiance est déjà irrespirable."
+    think "Ration tiède en main, je cherche encore une façon de respirer ici."
 
     pause 1.2
 
     "Les écrans muraux s’allument enfin, montrant les mêmes images que tous les jours :"
-    "Rien n'a changé. Les files d'attente sont longues."
-    "Il n'y a rien d'autre à manger qu'un bout de pain déjà sec depuis deux jours ..."
+    think "Rien n'a changé : mêmes files, même pain sec, même attente."
 
     hide julian
     $ showP("lysa", "determine", 0.50)
-    lysa "Tout est parfaitement normal."
-    lysa "Comme hier. Comme demain. Comme dans six mois."
+    lysa "Tout est parfaitement normal. Tantale avait au moins de vrais fruits au-dessus de la tête. Nous, on a du pain sec."
 
     hide mara
     $ showP("kael", "calme", 0.88)
-    kael "C’est stable. C’est ce qu’on a voté."
+    kael "C'est stable. Techniquement."
 
     $ showP("ryn", "colere", 0.12)
     ryn "Stable ? On crève lentement et poliment, oui !"
 
     hide lysa
     $ showP("iris", "desaccord", 0.50)
-    iris "Les pauvres continuent à crever devant les mêmes murs. Rien ne change jamais."
+    iris "Oh, regardez : les pauvres crèvent toujours devant les mêmes murs. Quel soulagement, la stabilité fonctionne."
 
     hide kael
     $ showP("julian", "decu", 0.88)
-    julian "On avait une chance de faire bouger les choses… et on l’a laissée passer."
+    julian "Nous avions une occasion d'agir. Nous l'avons transformée en immobilisme collectif."
 
-    "Je pose ma ration intacte sur la table."
+    think "Je pose ma ration intacte sur la table."
 
     hide ryn
     $ showP("lysa", "blase", 0.30)
@@ -1000,8 +955,8 @@ label _4_0_CAFETERIA_ECRANS:
             noam "Et j'ai horreur que ce soit la seule réponse honnête."
 
         "Regarder les écrans avant de répondre.":
-            "Je regarde les files d'attente."
-            "Puis je comprends que ma réponse ne vaut pas grand-chose."
+            think "Je regarde les files d'attente."
+            think "Ma réponse ne vaut pas grand-chose face à ces files."
             noam "Je ne sais plus."
 
     noam "Je me demande si... ne rien risquer hier... c’était du confort. Ou juste de la peur."
@@ -1010,9 +965,8 @@ label _4_0_CAFETERIA_ECRANS:
 
     call day4_tray_scene from _call_day4_tray_scene
 
-    "La salle est silencieuse. Chacun fixe les écrans comme une sentence qu’on s’est nous-mêmes infligée."
-    "On n’a rien gagné hier."
-    "On a juste réussi à rester exactement au même endroit… en sachant qu’on aurait pu faire mieux."
+    think "Chacun fixe les écrans comme une sentence collective."
+    think "On n'a rien gagné. On sait seulement qu'on aurait pu faire mieux."
 
     jump _4_0_TEMPS_LIBRE_1
 
@@ -1022,8 +976,8 @@ label day4_optional_news:
 
     if _return == "news":
         call screen day4_news_screen()
-        "Quand je relève les yeux, les mêmes titres continuent de défiler."
-        "Même file. Même attente. Même monde."
+        think "Les mêmes titres continuent de défiler."
+        think "Même file. Même attente. Même monde."
     else:
         "Je laisse les écrans tourner sans moi."
 
@@ -1032,8 +986,8 @@ label day4_optional_news:
 label day4_tray_scene:
 
     $ j4_tray_eaten = []
-    "Je baisse les yeux vers mon plateau."
-    "Il n'y a pas grand-chose à sauver là-dedans."
+    think "Je baisse les yeux vers mon plateau."
+    think "Il n'y a pas grand-chose à sauver là-dedans."
 
 label day4_tray_scene_loop:
 
@@ -1042,25 +996,22 @@ label day4_tray_scene_loop:
     if _return == "bread":
         $ j4_tray_eaten.append("bread")
         "Je croque."
-        "Ça fait plus de bruit que de goût."
+        think "Ça fait plus de bruit que de goût."
     elif _return == "ration":
         $ j4_tray_eaten.append("ration")
-        "Tiède."
-        "Pas chaud. Pas froid."
-        "Même la température refuse de prendre parti."
+        think "Tiède. Même la température refuse de prendre parti."
     elif _return == "bar":
         $ j4_tray_eaten.append("bar")
-        "Le genre d'aliment qu'on mange uniquement parce que le corps insiste."
+        think "Le genre d'aliment qu'on mange uniquement parce que le corps insiste."
     elif _return == "empty":
-        "Je fixe le vide."
-        "C'est idiot, mais c'est ça qui me met le plus en colère."
+        think "Je fixe le vide."
+        think "C'est idiot, mais c'est ça qui me met le plus en colère."
     elif _return == "finish":
         "Je repousse le plateau de quelques centimètres."
         return
 
     if len(j4_tray_eaten) >= 3:
-        "Mon corps a compris le message avant moi."
-        "Il n'y aura rien de plus."
+        think "Mon corps a compris le message : il n'y aura rien de plus."
         return
 
     jump day4_tray_scene_loop
@@ -1070,7 +1021,7 @@ label _4_0_TEMPS_LIBRE_1:
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Après le petit-déjeuner, j'ai un peu de temps devant moi."
-    "Je ne sais pas enncore quoi faire."
+    think "Je ne sais pas encore quoi faire."
 
     call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_1
 
@@ -1081,38 +1032,29 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     pause 1.2
 
-    "L’après-midi traîne."
-    "Pas vraiment calme. Pas vraiment vivant non plus."
-    "Juste ce moment bizarre où plus personne ne sait quoi faire de sa colère."
+    think "L'après-midi s'étire. Chacun range sa colère hors de vue."
 
     play sound sfx_announce
     pause 1.1
 
     "Le signal me vrille les oreilles."
-    "Je sursaute."
-    "Putain."
+    think "Putain."
 
     stop music fadeout 1.0
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Attention à tous mes petits représentants…"
-    kami "Je vous attends dans la salle principale."
-    kami "Et cette fois, j’aimerais éviter le petit numéro pathétique des gens qui boudent dans leur chambre."
+    kami "Attention, mes petits représentants en deuil démocratique…"
+    kami "Salle principale. Maintenant. Même pour ceux qui boudent avec beaucoup de profondeur."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "On a un nouveau vote à préparer."
-    kami "Alors vous marchez."
-    kami "Ou je viens vous chercher avec les caméras braquées sur votre tronche."
+    kami "Un nouveau vote vous attend. Vous marchez, ou je transforme votre extraction en programme de divertissement."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
-    "L’écran se coupe."
-    "Plus un bruit."
-    "Puis des portes s’ouvrent, une à une, quelque part dans le couloir."
-    "Des pas. Lents. Pas pressés."
-    "On dirait moins un rassemblement qu’un transfert de détenus."
+    "L'écran se coupe. Des portes s'ouvrent une à une, puis des pas traînent dans le couloir."
+    think "Un transfert de détenus. Il ne manque que les menottes."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
@@ -1120,36 +1062,23 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     pause 1.2
 
-    "Quand j’entre, personne ne parle."
-    "Ryn est déjà là, collé au mur, les bras verrouillés sur son torse."
-    "Kael garde les yeux baissés."
-    "Nyra regarde l’écran noir comme si elle attendait déjà le prochain mauvais coup."
-    "Tomas s’attaque à son ongle sans même s’en rendre compte."
-    "Et au fond, il y a un siège vide."
-    "Celui de Julian."
+    think "Ryn se verrouille. Kael baisse les yeux. Tomas ronge un ongle. Nyra surveille déjà l'écran."
+    think "Au fond, le siège de Julian est vide."
 
-    "Elen arrive la dernière."
-    "C'est bizarre, ça contraste fortement avec son attitude des derniers jours."
-    "Là, non."
-    "Elle s’assoit. C’est tout."
+    think "Elen arrive la dernière. Chez elle, le silence ressemble à une alarme."
 
     $ showP("ryn", "colere", 0.50)
     ryn "Bon."
     ryn "On y est."
 
     $ showP("kael", "inquiet", 0.88)
-    kael "Julian ne viendra pas."
-    kael "J’ai frappé."
-    kael "Il m’a juste dit de le laisser tranquille."
+    kael "Julian ne viendra pas. J'ai frappé. Il a dit : laisse-moi."
 
-    "Personne ne commente."
-    "Même Mara ne saute pas tout de suite sur l’occasion."
-    "Ça en dit déjà long."
+    think "Même Mara ne saute pas sur l'occasion. Ça en dit assez."
 
     $ showP("mara", "agace", 0.12)
-    mara "Super."
-    mara "Le grand architecte du changement s’effondre au premier mur."
-    mara "C’était donc ça, notre pseudo leader."
+    mara "Super. Notre grand architecte du changement rencontre un mur et se met en congé."
+    mara "Quelqu'un pense à prévenir les caméras que leur héros est souffrant ?"
 
     hide kael
     $ showP("tomas", "hesitation", 0.88)
@@ -1159,16 +1088,13 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     mara "Quoi ?"
     mara "On va encore faire semblant que tout va bien ?"
 
-    "Elen ne relève même pas."
-    "Elle garde les yeux fixés sur la table, comme si elle essayait juste de tenir assise."
+    think "Elen fixe la table comme si elle essayait seulement de tenir assise."
 
     hide tomas
     $ showP("nyra", "raison", 0.88)
-    nyra "Ça sert à rien de tirer sur une chaise vide."
-    nyra "Elle ne votera pas mieux."
+    nyra "Qu'est-ce que tu veux obtenir, Mara ? Parce qu'une chaise vide ne va pas mieux voter si tu l'humilies."
 
-    "Ryn souffle du nez."
-    "Un rire sans humour."
+    think "Ryn lâche un rire sans humour."
 
     $ showP("ryn", "colere", 0.50)
     ryn "Ouais."
@@ -1182,9 +1108,8 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Parfait."
-    kami "Les survivants émotionnels sont installés."
-    kami "Passons donc à la suite de votre petite aventure démocratique."
+    kami "Parfait. Les survivants émotionnels sont installés."
+    kami "Poursuivons votre petite aventure démocratique avant une nouvelle disparition."
 
     kami "Prochain vote :"
 
@@ -1208,33 +1133,24 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.0
 
-    "Deux boutons apparaissent à l’écran."
-    "Vert. Rouge."
-    "On dirait presque un jeu."
-    "Presque."
+    think "Vert. Rouge. Le décor d'un jeu, sans le droit de recommencer."
 
     pause 0.8
 
-    "Personne ne parle."
-    "Le mot frontières reste suspendu dans la pièce comme une odeur de brûlé."
+    think "Le mot « frontières » reste dans l'air comme une odeur de brûlé."
 
     $ showP("lysa", "blase", 0.12)
-    lysa "Vous êtes sérieux…"
-    lysa "On sort à peine du désastre d’hier et on enchaîne direct sur ça ?"
+    lysa "Formidable. Sisyphe vient de lâcher son rocher et on lui propose déjà une frontière à pousser."
 
     $ showP("iris", "desaccord", 0.88)
-    iris "C’est n’importe quoi."
-    iris "Genre, vraiment n’importe quoi."
+    iris "Oh, excellent. Une question géopolitique binaire sans protocole de transition. Qu'est-ce qui pourrait mal tourner ?"
 
     $ showP("elias", "determine", 0.50)
-    elias "N’importe quoi, peut-être."
-    elias "Mais pas inutile."
+    elias "Ouais, c'est chaud comme façon de demander. Mais c'est pas inutile."
 
     hide iris
     $ showP("kael", "inquiet", 0.88)
-    kael "Libre circulation..."
-    kael "Entre tous les districts..."
-    kael "Comme ça."
+    kael "Libre circulation. Tous les districts. Sans transition."
 
     hide elias
     $ showP("ryn", "colere", 0.50)
@@ -1244,14 +1160,9 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ryn "C’est des types armés."
     ryn "C’est des gens qu’on enterre."
     ryn "C’est des gosses qui grandissent en pensant que de l’autre côté, y a forcément un ennemi."
-    ryn "Donc ouais."
-    ryn "Moi, je vote oui."
+    ryn "Donc oui. Je vote oui."
 
-    "Sael n’a toujours pas bougé."
-    "Puis elle lève enfin les yeux."
-    "Et là, c’est pas de la colère que je vois d’abord."
-    "C’est pire."
-    "C’est quelqu’un qui a déjà vu ce qui arrive quand on ouvre trop grand une porte."
+    think "Sael lève les yeux. Pas de colère : la mémoire d'une porte ouverte trop grand."
 
     hide kael
     $ showP("sael", "mefiant", 0.88)
@@ -1263,28 +1174,22 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     $ showP("sael", "determine", 0.88)
     sael "Je veux que tu arrêtes de faire semblant de ne pas savoir."
-    sael "Les lignes ont été tracées dans le sang."
-    sael "Des Gardiens sont morts pour les tenir."
-    sael "Des villages entiers ont été rayés pour éviter que ça déborde."
-    sael "Chez nous, on n’ouvre pas un passage parce qu’on se sent à l’étroit pendant une semaine."
+    sael "Les morts de Limen se souviennent du prix de ces lignes. Les Gardiens aussi."
+    sael "Des villages entiers ont disparu pour contenir ce qui débordait. Une semaine à l'étroit n'efface pas leur sang."
 
     hide lysa
     $ showP("elias", "determine", 0.12)
-    elias "Et chez nous, on crève aussi à rester chacun dans notre coin."
+    elias "Et chez nous, des gens crèvent parce qu'on reste chacun dans notre coin. Ça aussi, c'est du sang."
 
     $ showP("sael", "mefiant", 0.88)
-    sael "Alors crève avec tes certitudes."
-    sael "Mais ne demande pas aux autres de te suivre."
+    sael "Alors garde tes certitudes. Mais ne demande pas aux morts de les suivre."
 
-    "Le ton tombe d’un coup."
-    "Net."
-    "Tomas retire sa main de sa bouche."
-    "Même Nyra cesse de sourire."
+    think "Le ton coupe net. Tomas baisse la main. Même Nyra cesse de sourire."
 
     hide elias
     $ showP("lysa", "blase", 0.12)
-    lysa "Le problème, c’est qu’on n’a même pas survécu à une histoire de rationnement."
-    lysa "Et là vous proposez de mélanger les districts comme si on était capables de gérer quoi que ce soit."
+    lysa "Hier, douze personnes n'ont pas survécu intellectuellement à une histoire de rationnement."
+    lysa "Aujourd'hui, vous improvisez la migration de districts entiers. L'ascension est spectaculaire."
 
     $ showP("ryn", "colere", 0.50)
     ryn "Parce qu’on doit attendre quoi, hein ?"
@@ -1293,17 +1198,13 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     hide lysa
     $ showP("iris", "desaccord", 0.12)
-    iris "Respirer pour qui ?"
-    iris "Parce que ce ne sera pas les plus solides qui se feront écraser, comme d’habitude."
+    iris "Respirer pour qui ? Parce que les plus solides passeront. Les autres se feront piétiner, puis on appellera ça la liberté."
 
     hide iris
     $ showP("nyra", "raison", 0.12)
-    nyra "Le vrai problème, c’est pas juste ouvrir ou fermer."
-    nyra "Le vrai problème, c’est qu’on n’a aucun cadre."
-    nyra "Aucune règle de passage."
-    nyra "Aucun contrôle."
-    nyra "Rien."
-    nyra "On nous balance un bouton, et débrouillez-vous."
+    nyra "Ryn, tu veux que les gens puissent partir sans se faire abattre. Iris, tu veux qu'ils arrivent sans se faire broyer."
+    nyra "Ces deux choses ne s'opposent pas. Ce qui manque, c'est un cadre : passages, contrôles, protection."
+    nyra "Kami nous donne deux boutons parce qu'elle préfère un conflit à une solution."
 
     $ showP("ryn", "colere", 0.50)
     ryn "Parce que fermer, ça, c’est un cadre peut-être ?"
@@ -1311,17 +1212,14 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ryn "Vous appelez ça une société ?"
 
     $ showP("sael", "determine", 0.88)
-    sael "J’appelle ça une digue."
+    sael "J'appelle cela une digue. On insulte toujours les digues avant de voir l'eau."
 
     pause 0.5
 
     $ showP("sael", "mefiant", 0.88)
-    sael "Et vous..."
-    sael "Vous me faites tous peur."
+    sael "Et vous… vous me faites tous peur."
 
-    "Le silence qui suit n’a rien à voir avec les précédents."
-    "Celui-là coupe."
-    "Net."
+    think "Le silence qui suit coupe plus fort encore."
 
     $ showP("sael", "determine", 0.88)
     sael "Hier, vous avez reculé devant un changement économique."
@@ -1330,9 +1228,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     sael "Vous compensez."
     sael "Vous cherchez un grand geste pour oublier que vous avez échoué."
 
-    "Le siège vide de Julian me saute à la gorge."
-    "Personne ne regarde dans sa direction."
-    "Tout le monde y pense."
+    think "Personne ne regarde le siège vide de Julian. Tout le monde y pense."
 
     $ showP("ryn", "colere", 0.50)
     ryn "Non."
@@ -1355,18 +1251,15 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     with moveoutright
 
     play sound "sound/sfx_door.ogg"
-    "Sael se lève d’un coup."
-    "La chaise racle violemment le sol."
-    "Puis la porte claque."
+    "Sael se lève ; la chaise racle le sol, puis la porte claque."
     with hpunch
     with vpunch
 
     pause 0.6
 
     $ showP("mara", "agace", 0.88)
-    mara "Mais c’est pas vrai..."
-    mara "Vous savez faire autre chose que tout cramer ?!"
-    mara "Un vote foire et maintenant tout le monde veut régler ses névroses sur le suivant ?!"
+    mara "Vous savez faire autre chose que tout cramer ?"
+    mara "Un vote foire et, soudain, chacun étale sa névrose sur la table. Même moi, j'ai des standards."
 
     hide mara
     with moveoutright
@@ -1374,8 +1267,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     play sound "sound/sfx_door.ogg"
     "Mara part juste après elle, presque en rage."
 
-    "La salle reste ouverte."
-    "Mais plus vraiment habitable."
+    think "La salle reste ouverte. Plus vraiment habitable."
 
     $ showP("tomas", "hesitation", 0.88)
     tomas "Je..."
@@ -1387,46 +1279,28 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     hide tomas
     $ showP("kael", "inquiet", 0.88)
-    kael "Elle n’a pas totalement tort."
-    kael "On est déjà au bord de la rupture."
-    kael "Et on parle d’effacer les seules limites que tout le monde connaît depuis toujours..."
+    kael "Elle n'a pas totalement tort. Rupture interne. Frontières supprimées. Deux risques qui se multiplient."
 
     $ showP("nyra", "raison", 0.12)
-    nyra "Le plus drôle, c’est qu’on n’a même pas commencé le vrai débat."
-    nyra "Et pourtant, on sait déjà exactement comment ça va finir."
+    nyra "On n'a même pas commencé le vrai débat. Alors dites-moi : vous voulez avoir raison, ou éviter qu'il finisse comme le précédent ?"
 
-    "Elen bouge enfin."
-    "À peine."
-    "Elle relève la tête, cligne des yeux, regarde la porte par laquelle Sael vient de sortir."
+    "Elen relève enfin les yeux vers la porte."
 
     hide ryn
     $ showP("elen", "triste", 0.50)
     elen "On dirait..."
     elen "On dirait qu’on se déteste de plus en plus vite."
 
-    "Personne ne lui répond."
-    "Parce que pour une fois, elle a visé juste du premier coup."
+    think "Personne ne répond. Pour une fois, Elen a visé juste du premier coup."
 
-    "Je regarde les sièges vides."
-    "Julian."
-    "Sael."
-    "Mara."
-
-    "Trois absences."
-    "Et le vote n’a même pas commencé."
-
-    "J’ai un nœud dans le ventre."
-    "L’impression très nette qu’on n’est pas en train de préparer une décision."
-    "On est en train de choisir la forme exacte de notre prochain désastre."
+    think "Trois sièges vides. Le vote n'a même pas commencé."
+    think "On ne prépare pas une décision. On négocie la forme exacte du prochain désastre."
 
     jump _4_0_APRES_CLASH_PRE_FETE
 
 label day4_thread_debate_game:
 
-    "Je sens le debat partir."
-    "Pas d'un coup."
-    "Comme un fil qu'on tire trop longtemps."
-    "Puis le fil casse en eclats."
+    think "Le débat part comme un fil tiré jusqu'à la rupture."
 
     call screen day4_objection_fracturee()
     $ day4_objection_return = _return
@@ -1436,27 +1310,23 @@ label day4_thread_debate_game:
         $ j4_argument_frontieres_cadre = True
         $ j4_argument_circulation_cadre = True
         noam "Attendez."
-        noam "Ryn parle d'une cage. Sael parle d'une digue."
-        noam "Et au fond, vous parlez tous les deux de peur."
-        noam "Si on ouvre sans cadre, on transforme la liberte en abandon."
-        noam "Si on ferme sans ecouter, on transforme la securite en prison."
-        "Pendant une seconde, ca tient."
-        "Une seule."
-        think "Sael ne recule pas. Mais cette fois, je vois ce qu'elle protege vraiment : pas une frontiere. Une terreur."
+        noam "Ryn parle d'une cage. Sael parle d'une digue. Enfin… vous parlez tous les deux de ce que vous refusez de revivre."
+        noam "Si on ouvre sans cadre, la liberté devient un abandon. Si on ferme sans écouter, la sécurité reste une prison."
+        think "Pendant une seconde, ça tient. Une seule."
+        think "Sael ne recule pas. Mais je vois ce qu'elle protège : pas une frontière. Une terreur."
         think "Et Ryn l'entend aussi. Un peu."
     elif day4_objection_return == "bad":
-        noam "On peut peut-etre..."
+        noam "On peut peut-être…"
         ryn "Non, Noam."
-        ryn "La, tu fais juste joli au milieu de la piece."
+        ryn "Là, tu fais juste joli au milieu de la pièce."
         sael "Tu veux traduire une peur que tu ne connais pas."
         think "Le fil me glisse des mains."
         think "Non. Il me claque entre les doigts."
     else:
         noam "On peut ralentir deux secondes ?"
-        noam "Personne ne parle vraiment de la meme chose."
-        noam "Ryn parle d'etouffer. Sael parle de proteger ce qui reste."
-        "Quelques regards se tournent vers moi."
-        "Pas assez longtemps pour sauver le debat."
+        noam "Personne ne parle vraiment de la même chose."
+        noam "Ryn parle d'étouffer. Sael parle de protéger ce qui reste."
+        think "Quelques regards se tournent vers moi. Pas assez longtemps pour sauver le débat."
         think "Je tiens le fil. Mal. Mais je le tiens encore."
 
     return
@@ -1468,115 +1338,81 @@ label _4_0_APRES_CLASH_PRE_FETE:
 
     pause 2.5
 
-    "La porte est fermée."
-    "Mais l'écho du claquement est encore là."
-    "Quelque chose dans l'air a changé. Pas de façon dramatique."
-    "Juste… une fissure de plus dans quelque chose qui n'était déjà plus solide."
+    think "La porte est fermée. L'écho, lui, reste."
 
     pause 1.0
 
-    "Les sièges vides s'accumulent."
-    "Julian. Sael. Mara."
-    "Trois chaises tournées vers le néant."
-    "Et nous, les survivants, on reste là à fixer la table comme si elle allait nous donner les réponses."
+    think "Julian. Sael. Mara. Trois sièges vides autour d'une table qui ne répondra à personne."
 
     pause 1.2
 
     $ showP("ryn", "colere", 0.12)
-    ryn "Super."
-    ryn "On a réussi à se déchirer avant même de voter."
+    ryn "Super. On a réussi à se déchirer avant même de voter."
 
     $ showP("tomas", "hesitation", 0.88)
     tomas "C'est… c'est pas ce qu'on voulait."
 
     ryn "Et pourtant."
 
-    "Ryn se lève. Pas pour partir. Juste parce que rester assis est insupportable."
-    "Il fait deux pas vers la fenêtre opaque, les bras croisés, la nuque raide."
+    "Ryn se lève et gagne la fenêtre opaque, la nuque raide."
 
     hide tomas
     $ showP("kael", "inquiet", 0.50)
     $ showP("nyra", "fatigue", 0.88)
-    kael "On devrait peut-être… essayer de les rejoindre ?"
-    kael "Parler à Sael. Lui expliquer qu'on n'attaquait pas ses Gardiens."
+    kael "On devrait rejoindre Sael. Lui dire qu'on n'attaquait pas ses Gardiens."
 
-    nyra "Tu as entendu sa voix quand elle est partie ?"
-    nyra "Ça ne servira à rien ce soir."
+    nyra "Tu veux réparer avant que ça durcisse. Je comprends. Mais tu as entendu sa voix : ce soir, elle n'écoutera que sa colère."
 
-    "Kael acquiesce sans conviction."
-    "Il sait que Nyra a raison. Mais admettre qu'on ne peut rien faire, c'est encore pire."
+    think "Kael acquiesce sans y croire."
+    think "Kael sait qu'elle a raison. L'impuissance ne lui va pas mieux qu'à nous."
 
     hide ryn
     hide kael
 
     pause 0.8
 
-    "Je regarde Elen."
-    "Elle est assise, les coudes sur les genoux, le regard posé sur ses mains."
-    "Pas en larmes. Pas en colère."
-    "Juste… absente."
+    think "Elen fixe ses mains, absente. Toujours aucun mot sur la nourriture."
 
     $ showP("elen", "triste", 0.50)
     elen "…"
 
-    "Je m'attends à ce qu'elle dise quelque chose."
-    "Un mot d'espoir. Une tentative maladroite de recoller les morceaux."
-    "Rien."
-    "Elen se tait. Et c'est peut-être ça le signe le plus inquiétant de la journée."
+    think "J'attends le mot d'espoir, la diversion alimentaire, n'importe quoi. Rien."
 
     hide nyra
 
     pause 1.5
 
     $ showP("elias", "neutre", 0.12)
-    elias "Bon."
-    elias "Quelqu'un propose quelque chose ?"
-    elias "Ou on reste là à s'observer comme des plantes mortes ?"
+    elias "Bon. Quelqu'un propose un truc ou on reste là comme des plantes mortes ? C'est chaud, même elles ont l'air plus vivantes."
 
-    "Silence."
+    think "Personne n'a rien."
 
     $ showP("lysa", "blase", 0.88)
-    lysa "Il n'y a rien à proposer, Elias."
-    lysa "Pas ce soir."
+    lysa "Même Cassandre savait quand arrêter de parler. Il n'y a rien à proposer ce soir, Elias."
 
     hide elias
 
     $ showP("iris", "hesitation", 0.12)
-    iris "On pourrait aller… je sais pas. La salle de repos ?"
-    iris "Essayer de décompresser un peu ?"
+    iris "On pourrait aller à la salle de repos. Enfin, si cette brillante assemblée sait encore décompresser sans exploser."
 
     lysa "Décompresser."
     lysa reflexion "Ouais. Bonne idée en théorie."
 
     hide lysa
 
-    "Personne ne bouge."
-    "L'idée reste suspendue dans la pièce comme une invitation que tout le monde décline tacitement."
-    "Ce n'est pas qu'on ne veuille pas se détendre."
-    "C'est qu'on n'en a plus la capacité."
+    think "Personne ne bouge. L'invitation meurt sans même être refusée."
 
     hide iris
     hide elen
 
     pause 1.0
 
-    "Peu à peu, sans un mot, les gens se lèvent."
-    "Pas ensemble. Pas en groupe."
-    "Un par un. Chacun vers sa solitude."
-    "Tomas part le premier, tête baissée."
-    "Puis Nyra, qui glisse un \"bonne nuit\" qui sonne comme un verdict."
-    "Kael sort sans se retourner."
-    "Ryn disparaît dans le couloir sans que personne l'arrête."
+    "Ils partent un par un. Tomas d'abord, puis Nyra, Kael et Ryn. Chacun vers sa solitude."
 
     pause 0.8
 
-    "Et moi."
-    "Je reste là encore quelques secondes."
-    "Seul dans la salle."
-    "La lumière blafarde du Conclave tombe sur les chaises vides, les verres d'eau intacts, l'écran éteint."
-
-    "On n'a pas tenu une journée entière."
-    "Pas même une."
+    think "Je reste seul devant les chaises vides et les verres intacts."
+    think "On n'a pas tenu une journée. Pas même une."
 
     jump _4_0_FIN_SOIREE
 
@@ -1589,105 +1425,64 @@ label _4_0_FIN_SOIREE:
 
     pause 1.0
 
-    "Je marche lentement."
-    "Le couloir est désert."
-    "Quelques veilleuses clignotent au rythme d'un système qui n'a pas besoin de nous pour tourner."
-    "Les portes sont closes. Derrière chacune, quelqu'un qui ruminent en silence, j'imagine."
-    "Ou quelqu'un qui essaie de ne plus penser du tout."
+    think "Le couloir est désert. Le système, lui, n'a pas besoin de nous pour tourner."
 
-    "Je passe devant la chambre de Julian."
-    "La lumière filtre sous la porte."
-    "Il est là."
-    "Il n'a pas dormi non plus."
-    "Mais je ne frappe pas."
-    "Je ne saurais pas quoi lui dire."
+    think "De la lumière sous la porte de Julian. Je ralentis, puis je passe."
+    think "Je pourrais frapper. Enfin… pour lui dire quoi ?"
 
     pause 0.8
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     $ blink()
-    "Je pousse la porte de ma chambre."
-    "Elle se referme dans mon dos."
-    "Clic."
-
-    "Je ne cherche pas la lumière."
-    "Je n'allume rien."
-    "Je m'assieds sur le bord du lit dans le noir."
-    "La veilleuse bleue dessine des ombres sur le mur."
+    "La porte de ma chambre se referme d'un clic. Je m'assieds dans le noir."
 
     pause 1.2
 
     $ blink()
-    "Je repense à tout."
-    "À Elen qui pleurait ce matin pour des épices."
-    "À Sael qui partait en claquant la porte."
-    "À Julian enfermé dans sa chambre comme si ça pouvait tout effacer."
-    "Au siège vide."
-    "Aux sièges vides."
+    think "Elen et ses épices. Sael et la porte. Julian derrière la sienne."
+    think "Un siège vide, puis trois."
 
     pause 0.8
 
-    "On n'était pas forcément d'accord."
-    "On n'était pas forcément proches."
-    "Mais on était là."
-    "Et maintenant même ça, on est en train de le perdre."
+    think "On n'était ni d'accord ni proches. Mais on était là. Même ça, on le perd."
 
     $ blink()
-    "Je m'allonge sur le dos, les bras le long du corps."
-    "Le plafond est là. Inerte. Rassurant dans sa stupidité totale."
+    think "Le plafond reste inerte, rassurant dans sa stupidité totale."
 
     pause 1.0
 
-    "Je pense à ce vote qui arrive."
-    "La libre circulation."
-    "Un autre bouton vert ou rouge."
-    "Une autre chance de rien faire, ou une autre catastrophe à vitesse accélérée."
-
-    "Je ne sais plus ce que je veux."
-    "Je ne sais plus ce qu'on est capables de faire."
-    "Ensemble."
+    think "Libre circulation. Un autre bouton vert ou rouge."
+    think "Une nouvelle chance de ne rien faire — ou d'accélérer la catastrophe."
+    think "Je ne sais plus ce que je veux. Enfin, je ne sais même plus ce qu'on sait faire ensemble."
 
     $ blink()
     pause 0.6
 
-    "Il y a quelque chose d'épuisant à rester conscient de son propre échec."
-    "À le voir, le nommer, et ne pas savoir par quel bout le réparer."
-    "On n'a même pas su faire une soirée."
-    "On n'a même pas su rester dans la même pièce."
+    think "Voir l'échec, le nommer, puis ne rien réparer. Ma spécialité devient collective."
 
     pause 1.0
 
     scene bg_cg012 at adaptive_fullscreen with dissolve
 
     $ blink()
-    "Mes paupières tombent."
-    "Pas parce que je suis en paix."
-    "Juste parce que le corps abandonne avant la tête."
+    think "Le corps abandonne avant la tête."
 
-    "La lumière bleue pulse doucement dans le noir."
-    "Quelque part dans le couloir, une porte s'ouvre puis se referme."
-    "Quelqu'un d'autre qui ne dort pas."
-    "Ou quelqu'un qui fait semblant."
+    think "Une porte s'ouvre dans le couloir. Quelqu'un d'autre ne dort pas."
 
     $ blink()
     pause 1.5
 
-    "On a la chance d'être là."
-    "D'avoir une voix. Un vote. Une salle autour d'une table."
-    "Et on a quand même réussi à tout rater."
+    think "Une voix. Un vote. Une table. Et douze façons de tout rater."
 
     pause 0.8
 
-    "Je ne sais pas si demain sera mieux."
-    "Je ne suis même plus sûr d'en avoir envie."
+    think "Demain sera peut-être mieux. Je ne suis même plus sûr d'en avoir envie."
 
     $ blink()
     pause 2.0
 
-    "Le sommeil arrive."
-    "Lourd. Sans rêve. Sans réponse."
-    "Juste le silence et la certitude d'un gâchis que je n'arrive pas encore à mesurer."
+    "Le sommeil arrive, lourd, sans rêve et sans réponse."
 
     $ current_day = 5
     pause 1.5

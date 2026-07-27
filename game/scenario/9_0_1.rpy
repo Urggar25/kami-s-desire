@@ -278,13 +278,13 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     pause 0.5
 
-    "Le couloir est ouvert."
-    "Les portes s'ouvrent une à une."
+    "Le couloir s'ouvre."
+    "Les portes suivent, une à une."
 
     think "Kami est revenue."
 
     lysa blase "Bon."
-    lysa "La pause du cauchemar est terminée."
+    lysa "La pause du cauchemar est terminée. Bref."
 
     ryn fatigue "Avance."
 
@@ -293,15 +293,15 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn "Pas aujourd'hui."
 
     mara stress "Aujourd'hui, personne n'est charmant."
-    mara "Même moi, j'ai pas la force de faire semblant."
+    mara "Même moi, j'ai pas la force de vendre le produit."
 
-    elen peur "Ça va aller."
+    elen peur "Ça va aller. Enfin... ça peut aller. Peut-être."
 
     lysa blase "Elen."
 
-    elen "Quoi ? Qu'est ce qui a ??"
+    elen "Quoi ? Qu'est-ce qu'il y a ?"
 
-    lysa triste "Pas maintenant."
+    lysa triste "Pas maintenant, Elen."
 
     pause 0.4
 
@@ -318,25 +318,26 @@ label _9_0_1_CONCLAVE_ANNONCE:
         ("iris",  "fatigue",  0.90),
     ])
 
-    kael fatigue "Elle est vraiment revenue."
+    kael fatigue "Elle est revenue."
 
     iris fatigue "Oui."
     iris "Merci, Kael."
-    iris "On adore tous commencer la journée par l'évidence la plus déprimante possible."
+    iris "On adore commencer par l'évidence la plus déprimante possible."
 
     kael "Je sais."
 
     pause 0.2
 
-    kael triste "Ouais... On le pensait peut-être tous... Mais le dire, c'est autre chose..."
+    kael triste "Le penser et l'entendre, ce n'est pas la même chose."
 
-    sael inquiet "Deux jours sans entendre sa voix."
+    sael inquiet "Deux jours sans sa voix."
     sael "Puis elle revient."
+    sael "Les mauvais présages aussi savent attendre."
 
     ryn fatigue "Elle revient toujours."
 
     lysa blase "Formidable."
-    lysa "Si seulement on n'était pas contre l'entité la plus puissante du monde..."
+    lysa "Si seulement on n'était pas contre l'entité la plus puissante du monde. Détail mineur."
 
     pause 0.4
 
@@ -397,6 +398,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     kami "Organisation."
     kami "Rassemblement."
     kami "Mouvement collectif non autorisé."
+    kami "Tous ces petits mots qui donnent aux foules l'impression d'avoir une colonne vertébrale."
 
     pause 0.4
 
@@ -429,7 +431,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
-    kami "Le vote aura lieu aujourd'hui... Enfin... Dans quelques instants !"
+    kami "Le vote aura lieu aujourd'hui."
+    kami "Enfin... dans quelques instants."
 
     pause 0.3
 
@@ -482,7 +485,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     sael inquiet "Parle."
 
     tomas raison "Ce matin, je suis allé dans la salle du canon."
-    tomas "Je voulais vérifier le nombre d'exécutions et j'avais déjà vu un truc bizarre hier..."
+    tomas "Je voulais vérifier les exécutions. J'avais déjà vu une anomalie hier."
 
     ryn colere "Oui et ?!"
 
@@ -498,16 +501,16 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn colere2 "Combien ?"
 
     tomas "Des milliers."
-    tomas "Peut-être même plusieurs dizaines de milliers..."
+    tomas "Peut-être plusieurs dizaines de milliers."
 
     pause 0.3
 
-    sael peur "Laisse moi deviner... Ils remontent vers les frontières ?!"
+    sael peur "Laisse-moi deviner. Ils remontent vers les frontières."
 
     tomas "Oui."
     tomas "Je pense qu'ils ont profité de l'absence de Kami."
     tomas "Ou de sa maintenance."
-    tomas "Ils ont cru que c'était une ouverture pour passer les frontières malgré l'interdiction..."
+    tomas "Ils ont cru que c'était une ouverture pour passer les frontières malgré l'interdiction."
 
     lysa triste "Évidemment."
 
@@ -517,7 +520,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     pause 0.2
 
-    kael inquiet "Des campements..."
+    kael inquiet "Des campements."
 
     tomas culpabilite "Migratoires."
     tomas "Improvisés."
@@ -531,7 +534,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     pause 0.2
 
-    ryn colere "Non. T'es pas sérieux..."
+    ryn colere "Non. T'es pas sérieux."
 
     tomas "Si. Mal-"
 
@@ -551,7 +554,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     pause 0.3
 
     lysa blase "C'est pas un hasard si on vote sur ça."
-    lysa "C'est impossible que ce soit une coïncidence..."
+    lysa "Tu vois bien que ce n'est pas une coïncidence."
 
     noam inquiet "Si le vote passe, ils peuvent rester groupés."
 
@@ -606,7 +609,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "J'ai cependant retardé l'application du Commandement."
-    kami "Oh... Comme je suis adorable."
+    kami "Oh. Comme je suis adorable."
     kami "Sans mon intervention, ces campements ne seraient déjà plus un problème."
 
     pause 0.3
@@ -662,7 +665,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn colere "Si ça se trouve, elle a fait semblant de ne pas être en maintenance pour les laisser s'entasser !"
 
     tomas culpabilite "Oui."
-    tomas "C'est possible..."
+    tomas "C'est possible."
 
     ryn "Et maintenant elle appelle ça un vote."
 
@@ -696,8 +699,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     ryn "Des gens vont mourir."
 
-    noam "Alors on les sauvera."
-    noam "Mais on ne commencera pas par se menacer entre nous."
+    noam "Alors on essaie de les sauver."
+    noam "Mais on ne commence pas par se menacer entre nous."
 
     pause 0.3
 
@@ -719,7 +722,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ])
 
     elen peur "Tout le monde va voter pour."
-    elen "Il le faut."
+    elen "Il le faut. On ne peut pas laisser des gens mourir juste parce qu'ils sont trop nombreux au même endroit."
 
     iris inquiet "Elen..."
 
@@ -734,14 +737,14 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     elias fatigue "Moi aussi je voterai pour."
     elias "Je sais pas faire de beau discours."
-    elias "Mais je vote pour."
+    elias "Mais là, c'est pas compliqué. C'est des gens. On les laisse pas crever."
 
     mara stress "Pareil."
     mara "Personne ne peut hésiter en sachant ça ? Si ?!"
 
     julian inquiet "Pour aussi."
     julian "Évidemment."
-    julian "Il faut qu'on sauve ces gens !"
+    julian "Pour une fois, le rôle du Conclave est limpide : empêcher un massacre."
 
     pause 0.2
 
@@ -751,7 +754,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     kael "Je parle peu."
     kael triste "Ça ne veut pas dire que je ne vois rien."
-    kael "Ou que je suis inhumain !"
+    kael "Ou que je suis inhumain."
 
     pause 0.4
 
@@ -764,7 +767,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
         ("noam",  "determine",  0.90),
     ])
 
-    tomas raison "Il faudra parler aux abstentionnistes probables, c'est pas possible de s'abstenir sur ce vote."
+    tomas raison "Il faudra parler aux abstentionnistes probables."
+    tomas "S'abstenir revient à laisser la règle actuelle tuer."
 
     ryn colere "J'espère bien oui."
 
@@ -776,9 +780,9 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     pause 0.2
 
-    noam triste "Kami a été claire. Le commandement s'appliquera, avec ou sans modification."
-    noam "Pour faire des regroupements massifs de personnes..."
-    noam determine "Il faut avoir une autorisation préalable !"
+    noam triste "Kami a été claire."
+    noam "Le Commandement s'appliquera, avec ou sans modification."
+    noam determine "Et les regroupements doivent être déclarés avant d'exister."
 
     pause 0.3
 
@@ -800,7 +804,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     lysa blase "Merci Tomas."
     lysa "On adore les définitions qui sentent le charnier."
 
-    tomas culpabilite "Lysa. C'est pas le moment. Tais toi et écoute."
+    tomas culpabilite "Lysa. Pas maintenant. Tais-toi et écoute."
 
     lysa triste "...?"
 
@@ -812,14 +816,14 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn colere2 "Non ?!"
     ryn "Putain, t'es sûr ?!"
 
-    noam triste "Non... Le vote autorise les regroupements."
+    noam triste "Non. Le vote autorise les regroupements."
     noam "Mais seulement quand ils sont déclarés."
 
     ryn colere "Ils pouvaient pas déclarer !"
     ryn "Elle était absente !"
 
     lysa blase "Et tu crois que ça va l'émouvoir ?"
-    lysa "Elle s'en fout qu'on vive ou qu'on crève !"
+    lysa "Carthage a brûlé pour moins de paperasse."
 
     pause 0.3
 
@@ -834,7 +838,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     elias fatigue "Attends."
     elias "Donc on vote pour..."
-    elias inquiet "Et ils peuvent crever quand même ?!"
+    elias inquiet "Et ils peuvent crever quand même ? C'est chaud. C'est vraiment chaud."
 
     iris inquiet "C'est une blague ?"
     iris "Dites-moi que c'est une blague nulle."
@@ -844,7 +848,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     elen peur "Mais... non."
     elen "Non, ça n'a aucun sens."
-    elen "Si on vote pour les sauver, ça doit les sauver."
+    elen "Si on vote pour les sauver, ça doit les sauver. Sinon le mot sauver sert à quoi ?"
 
     kael fatigue "Pas forcément."
 
@@ -855,7 +859,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     kael "Elle a dit que le Commandement s'appliquerait après le vote."
 
     julian inquiet "C'est un piège."
-    julian "Une astuce pour se foutre de nous mais ça n'a pas marché !"
+    julian "Une astuce rhétorique monstrueuse. Mais elle a laissé une faille."
 
     pause 0.3
 
@@ -889,7 +893,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     sael "L'amendement est déjà posé."
     sael "On débat du texte qui est censé avoir été déposé lors du premier jour."
-    sael "On ne peut pas le réécrire..."
+    sael "On ne peut pas le réécrire."
 
     tomas culpabilite "Elle a raison."
     tomas "Kami a toujours verrouillé le libellé après annonce."
@@ -897,7 +901,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     ryn colere2 "Mais bordel, c'est complètement con !"
 
-    sael determine "Oui..."
+    sael determine "Oui."
     sael "Mais c'est la règle."
 
     ryn "Vos règles vont les tuer !"
@@ -942,7 +946,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     nyra raison "Ce n'est pas une solution parfaite."
 
     lysa blase "Quelle surprise."
-    lysa "Façon dans cette situation on a que des choix merdiques."
+    lysa "Dans cette situation, on n'a que des choix merdiques. C'est presque grec."
 
     noam "Je ne dis pas que c'est parfait."
     noam determine "Je dis qu'on peut peut-être éviter le pire."
@@ -950,8 +954,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
     pause 0.2
 
     tomas raison "Il faut formuler ça clairement pendant le débat."
-    tomas "Pas parler en sous-entendu."
-    tomas "Pas en demi-mot."
+    tomas "Pas de sous-entendu."
+    tomas "Pas de demi-mot."
 
     elias fatigue "Faut leur dire de dégager de là."
     elias "Vite."
@@ -984,9 +988,9 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn "Je veux pas d'un plan qui commence déjà par abandonner des gens !"
 
     noam determine "Moi non plus."
-    noam "Mais on ne peut pas sauver tout le monde nous-mêmes."
-    noam "On peut seulement les prévenir."
-    noam "Le plus fort possible pour qu'ils bougent le plus vite possible !"
+    noam "Mais on ne peut pas les porter nous-mêmes."
+    noam "On peut les prévenir."
+    noam "Assez fort pour qu'ils bougent avant le tir."
 
     pause 0.2
 
@@ -999,7 +1003,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     sael triste "Alors on priera pour qu'un autre leur répète."
 
     lysa blase "Super."
-    lysa "Notre stratégie repose sur la panique collective et le bouche-à-oreille."
+    lysa "Notre stratégie repose sur la panique collective et le bouche-à-oreille. Très troisième siècle."
 
     nyra raison "Non."
     nyra "Elle repose sur la diffusion publique du débat."
@@ -1011,7 +1015,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     julian determine "Alors il faut parler pour eux."
     julian "Pas pour Kami."
     julian "Pas pour nous."
-    julian "Pour ceux qui regardent."
+    julian "Pour ceux qui regardent. Julian peut faire ça."
 
     iris fatigue "Et pour une fois, évite les effets de scène."
 
@@ -1039,7 +1043,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     noam "Non."
     noam determine "On leur demande de rester vivants jusqu'à ce qu'on puisse obtenir mieux."
-    noam "Et de toutes façons ils ne peuvent déjà plus traverser la frontière..."
+    noam "Et de toute façon, ils ne peuvent déjà plus traverser la frontière."
 
     pause 0.3
 
@@ -1089,7 +1093,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     elias fatigue "Ouais."
 
-    mara "Mais c'est le seul qu'on a..."
+    mara "Mais c'est le seul qu'on a."
 
     pause 0.2
 
@@ -1123,18 +1127,14 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
 
-    "Le signal disparaît."
-    "Pas d'un coup."
-    "Par morceaux."
+    "Le signal disparaît par morceaux."
     "Comme si quelqu'un écrasait une voix sous une paume trop grande."
 
     pause 0.4
 
-    "Les écrans du Conclave clignotent encore."
+    "Les écrans clignotent encore."
     "Quelques fragments de campements restent imprimés dans la lumière."
-    "Des silhouettes qui courent."
-    "Des bâches arrachées."
-    "Des points minuscules qui comprennent trop tard, ou juste à temps."
+    "Des silhouettes. Des bâches arrachées. Des points minuscules qui comprennent trop tard."
 
     pause 0.5
 
@@ -1220,6 +1220,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
 
     ryn colere "Tu savais qu'ils entendaient."
     ryn "Tu les as laissés entendre juste assez pour nous regarder nous débattre."
+    ryn "T'as mis des vies sur la table et t'as appelé ça une procédure."
 
     play sound sfx_gresillement
     show screen kami_broadcast_ui
@@ -1242,7 +1243,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
 
     sael determine "Alors laisse-nous terminer."
     sael "Quelques minutes."
-    sael "Juste quelques minutes."
+    sael "Même les condamnés ont droit à une dernière parole."
 
     play sound sfx_gresillement
     show screen kami_broadcast_ui
@@ -1268,8 +1269,8 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
         ("sael",  "determine",   0.92),
     ])
 
-    tomas raison "Il faut au moins clarifier le statut des campements déjà en cours de dispersion."
-    tomas "Si le signal a été reçu, alors leur situation juridique a changé pendant la procédure."
+    tomas raison "Il faut clarifier le statut des campements déjà en dispersion."
+    tomas "Si le signal a été reçu, leur situation juridique a changé pendant la procédure."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -1284,8 +1285,8 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     $ showP("nyra", "raison", 0.28)
 
     nyra raison "Alors vérifions les campements."
-    nyra "Un relevé en direct. Un simple état des lieux."
-    nyra "Nous devons savoir combien de groupes sont encore au-dessus du seuil."
+    nyra "Un relevé en direct. Rien de plus."
+    nyra "Tu veux une décision propre ? Donne-nous l'état du terrain."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -1304,9 +1305,9 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
 
     $ showP("kael", "raison", 0.44)
 
-    kael raison "Dans ce cas, on demande un délai procédural."
-    kael "Pas pour négocier."
-    kael "Pour éviter qu'une décision administrative se transforme en exécution massive."
+    kael raison "Dans ce cas, délai procédural."
+    kael "Pas une négociation."
+    kael "Une prévention d'exécution massive."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
@@ -1320,7 +1321,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     $ showP("lysa", "colere", 0.76)
 
     lysa colere "Kami."
-    lysa "Même pour toi, il doit bien rester une seconde de décence quelque part."
+    lysa "Même pour toi, il doit bien rester une seconde de décence dans un tiroir."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
@@ -1338,7 +1339,8 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
 
     $ showP("noam", "determine", 0.60)
 
-    noam determine "Tu cherches à nous faire porter le tir."
+    noam determine "Tu veux dire que... non."
+    noam "Tu cherches à nous faire porter le tir."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -1378,8 +1380,7 @@ label _9_0_1_KAMI_EXIGE_LE_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Les pupitres s'allument."
-    "Douze halos blancs."
-    "Douze petites surfaces lisses, propres, absurdes."
+    "Douze halos blancs. Douze petites surfaces propres, absurdes."
 
     play sound sfx_beep
 
@@ -1400,11 +1401,11 @@ label _9_0_1_KAMI_EXIGE_LE_VOTE:
 
     "Personne ne regarde vraiment son pupitre."
     "Tout le monde regarde les autres."
-    "Comme si une hésitation pouvait devenir contagieuse."
+    "Comme si une hésitation pouvait contaminer la salle."
 
     think "Si quelqu'un refuse..."
     think "Si quelqu'un tremble trop longtemps..."
-    think "Si quelqu'un veut encore sauver son principe au lieu de sauver des vies..."
+    think "Si quelqu'un veut encore sauver un principe au lieu de sauver des vies..."
 
     pause 0.3
 
@@ -1457,14 +1458,13 @@ label _9_0_1_VOTE:
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
     "Les pupitres enregistrent les choix."
-    "Pas de voix."
-    "Pas de main levée."
+    "Pas de voix. Pas de main levée."
     "Pas de confession courageuse ou lâche."
 
     pause 0.3
 
     "Seulement des écrans qui s'éteignent les uns après les autres."
-    "Et personne qui ne sait vraiment ce que les autres viennent de faire."
+    "Et personne ne sait vraiment ce que les autres viennent de faire."
 
     pause 0.5
 

@@ -220,7 +220,22 @@ screen profiles_menu():
     use game_menu(_("Profils"), scroll="viewport"):
 
         vbox:
-            spacing 14
+            spacing 18
+
+            frame:
+                background Fixed(
+                    Solid("#071426DD"),
+                    Solid("#5CD3FF55", xsize=4),
+                    Solid("#FFFFFF12", ysize=1),
+                )
+                xfill True
+                padding (18, 12)
+
+                hbox:
+                    xfill True
+                    spacing 18
+                    text "KAMI.CORE // DOSSIERS REPRESENTANTS" size 18 color "#5CD3FF" font "fonts/Barlow-Light.ttf" kerning 4
+                    text "Kamyz : [player_kamyz]" size 20 color "#FFE7AE" xalign 1.0
 
             viewport:
                 mousewheel "horizontal"
@@ -243,18 +258,33 @@ screen profiles_menu():
             $ affinity_val = profile_affinity[selected_profile]
 
             frame:
-                background Solid("#111a24dd")
+                background Fixed(
+                    Solid("#0A1326F2"),
+                    Solid("#5CD3FF44", xsize=4),
+                    Solid("#5CD3FF44", xsize=4, xalign=1.0),
+                    Solid("#FFFFFF12", ysize=1),
+                )
                 xfill True
                 yfill True
-                padding (20, 18)
+                padding (24, 22)
 
                 vbox:
-                    spacing 14
+                    spacing 16
 
                     hbox:
+                        xfill True
                         spacing 16
                         text "[profile['name']]" size 42 color "#FFFFFF"
-                        textbutton "👗":
+                        textbutton "TENUES":
+                            xalign 1.0
+                            background Solid("#10384DCC")
+                            hover_background Solid("#1D5C7AEE")
+                            text_color "#DFF2FF"
+                            text_hover_color "#FFFFFF"
+                            text_size 22
+                            text_xalign 0.5
+                            xsize 150
+                            ysize 46
                             action Show("profile_wardrobe", profile_id=selected_profile)
 
                     text "[profile['role']] — District: [profile['district']] — Âge: [profile['age']]" size 24 color "#D2E3F6"
@@ -264,7 +294,11 @@ screen profiles_menu():
                         xfill True
 
                         frame:
-                            background Solid("#5e6670")
+                            background Fixed(
+                                Solid("#07111CEE"),
+                                Solid("#5CD3FF33", xsize=3),
+                                Solid("#FFFFFF10", ysize=1),
+                            )
                             xsize 320
                             ysize 420
                             padding (0, 0)
@@ -276,12 +310,22 @@ screen profiles_menu():
                             yalign 0.05
                             text "Affinité" size 24 color "#FFFFFF"
                             text "[affinity_val]/100" size 24 color "#FFFFFF"
+                            bar:
+                                xsize 280
+                                ysize 18
+                                value AnimatedValue(value=affinity_val, range=100.0, delay=0.25)
+                                left_bar Solid("#5CD3FF")
+                                right_bar Solid("#152436")
 
                         null width 10
                         null xfill True
 
                         frame:
-                            background Solid("#5e6670")
+                            background Fixed(
+                                Solid("#07111CEE"),
+                                Solid("#FFD16633", xsize=3),
+                                Solid("#FFFFFF10", ysize=1),
+                            )
                             xsize 320
                             ysize 420
                             padding (0, 0)
@@ -293,9 +337,12 @@ screen profiles_menu():
                                 text "Aucun skin équipé" xalign 0.5 yalign 0.5 color "#D9E2EF"
 
                     frame:
-                        background Solid("#060b12ba")
+                        background Fixed(
+                            Solid("#060b12DD"),
+                            Solid("#FFD16655", xsize=3),
+                        )
                         xfill True
-                        padding (12, 10)
+                        padding (16, 12)
                         text "« [profile['quote']] »" size 23 color "#FFE7AE" italic True
 
                     vbox:
@@ -334,9 +381,16 @@ screen profile_wardrobe(profile_id):
     $ detected_skins = get_profile_detected_skins(profile_id)
 
     add Solid("#00000090")
+    add Solid("#5CD3FF22", ysize=2) ypos 170
+    add Solid("#5CD3FF22", ysize=2) ypos 910
 
     frame:
-        background Solid("#121926f5")
+        background Fixed(
+            Solid("#0A1326F5"),
+            Solid("#5CD3FF55", xsize=4),
+            Solid("#5CD3FF55", xsize=4, xalign=1.0),
+            Solid("#FFFFFF12", ysize=1),
+        )
         xalign 0.5
         yalign 0.5
         xsize 920
@@ -345,7 +399,7 @@ screen profile_wardrobe(profile_id):
 
         vbox:
             spacing 14
-            text "Garde-robe — [PROFILE_DATA[profile_id]['name']]" size 36 color "#FFFFFF"
+            text "GARDE-ROBE // [PROFILE_DATA[profile_id]['name']]" size 34 color "#DFF2FF" font "fonts/Rajdhani-SemiBold.ttf"
             text "Débloque des skins via des variables persistantes, puis équipe-les ici (appliqués à la partie droite du cadre)." size 20 color "#BFD6EA"
 
             viewport:
@@ -370,12 +424,16 @@ screen profile_wardrobe(profile_id):
                                 matrixcolor=None if skin_unlocked else SaturationMatrix(0),
                             )
                             if skin_unlocked:
-                                textbutton "Équiper [skin_id]":
+                                textbutton "EQUIPER [skin_id]":
+                                    background Solid("#10384DCC")
+                                    hover_background Solid("#1D5C7AEE")
+                                    text_color "#DFF2FF"
+                                    text_hover_color "#FFFFFF"
                                     action Function(equip_profile_skin, profile_id, skin_id)
                             else:
                                 text "[skin_id] (verrouillé)" size 22 color "#8EA3B8"
 
-            textbutton "Fermer" action Hide("profile_wardrobe") xalign 1.0
+            textbutton "FERMER" action Hide("profile_wardrobe") xalign 1.0 background Solid("#25101ACC") hover_background Solid("#4A1D2AEE") text_color "#FFD6E0"
 
 
 screen exploration_meta_buttons():
@@ -402,23 +460,34 @@ screen promo_codes_menu():
             xfill True
 
             frame:
-                background Solid("#121926f0")
+                background Fixed(
+                    Solid("#0A1326F2"),
+                    Solid("#5CD3FF55", xsize=4),
+                    Solid("#FFFFFF12", ysize=1),
+                )
                 xfill True
-                padding (18, 16)
+                padding (22, 18)
 
                 vbox:
                     spacing 8
-                    text "Codes promo" size 38 color "#FFFFFF"
+                    text "KAMI.CORE // CODES PROMO" size 34 color "#DFF2FF" font "fonts/Rajdhani-SemiBold.ttf"
                     text "Entre un code promo pour recevoir des récompenses (skins, Kamyz, objets, etc.)." size 22 color "#BFD6EA"
 
                     hbox:
                         spacing 10
                         input value ScreenVariableInputValue("promo_code_input") length 32 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_" xmaximum 340
                         textbutton "Valider":
+                            background Solid("#10384DCC")
+                            hover_background Solid("#1D5C7AEE")
+                            text_color "#DFF2FF"
+                            text_hover_color "#FFFFFF"
                             action [Function(apply_promo_code, promo_code_input), SetScreenVariable("promo_code_input", "")]
 
             frame:
-                background Solid("#0a1119d8")
+                background Fixed(
+                    Solid("#07111CDD"),
+                    Solid("#FFD16655", xsize=3),
+                )
                 xfill True
                 padding (16, 14)
 
@@ -431,7 +500,10 @@ screen promo_codes_menu():
                         text "Aucun code validé pour le moment." size 19 color "#9CB2C8"
 
             frame:
-                background Solid("#0a1119d8")
+                background Fixed(
+                    Solid("#07111CDD"),
+                    Solid("#5CD3FF33", xsize=3),
+                )
                 xfill True
                 padding (16, 14)
 

@@ -41,6 +41,17 @@ transform debat_phase2_objection_shock:
     easein 0.10 zoom 0.99
     easeout 0.12 zoom 1.0
 
+transform debat_phase2_scanline:
+    yoffset -1080
+    linear 7.0 yoffset 1080
+    repeat
+
+transform debat_phase2_reject_warning:
+    alpha 0.35
+    ease 0.35 alpha 0.95
+    ease 0.35 alpha 0.35
+    repeat
+
 init python:
     DEBAT_PHASE2_DIALOGUES = [
         {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute", "counter_label": "debat_phase2_counter_d1", "lines": ["Ah, je dois commencer ?? Euh...", "Abolir la distribution risque de", "condamner les plus fragiles."]},
@@ -130,6 +141,19 @@ screen debat_phase2_line(dialogue_data):
 
     add "kami_debat_background" at adaptive_fullscreen
     add "gui/day3/vote_phase2/bg_overlay.png"
+    add Solid("#7DF9FF16", ysize=2) ypos 112
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at debat_phase2_scanline
+
+    $ _dp2_total_lines = max(1, len(debat_phase2_dialogues_active))
+    $ _dp2_current_line = min(_dp2_total_lines, debat_phase2_index + 1)
+
+    text "KAMI.CORE // OBJECTION PROTOCOL":
+        xpos 70
+        ypos 68
+        font "fonts/Barlow-Light.ttf"
+        size 18
+        color "#7DF9FF"
+        kerning 4
 
     add "[dialogue_data['speaker_tag']] [dialogue_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
 
@@ -165,24 +189,30 @@ screen debat_phase2_line(dialogue_data):
     fixed:
         xalign 0.5
         yalign 0.985
-        xsize 700
-        ysize 10
+        xsize 760
+        ysize 16
 
-        add Solid("#0A1326CC", xsize=700, ysize=10)
+        add Solid("#0A1326DD", xsize=760, ysize=16)
+        add Solid("#FFFFFF18", xsize=760, ysize=1)
         add Solid("#FFD166") at debat_phase2_time_drain(DEBAT_PHASE2_LINE_DURATION):
             xpos 0
-            xsize 700
-            ysize 10
+            xsize 760
+            ysize 16
 
     # HUD objections
     frame:
         xpos 24
         ypos 24
-        background Solid("#060D1CC8")
-        padding (18, 12)
+        background Fixed(
+            Solid("#060D1CD8"),
+            Solid("#7DF9FF55", xsize=4),
+            Solid("#FFFFFF12", ysize=1),
+        )
+        padding (20, 14)
 
         hbox:
             spacing 24
+            text "LIGNE [_dp2_current_line] / [_dp2_total_lines]" size 18 color "#7DF9FF" bold True
             text "OBJECTIONS  [debat_phase2_good]" size 22 color "#5DFF9A" bold True
             if debat_phase2_wrong > 0:
                 text "À TORT  [debat_phase2_wrong]" size 22 color "#FF4D6D" bold True
@@ -403,6 +433,10 @@ screen debat_phase2_bad_objection():
     zorder 240
 
     add Solid("#1A0408B0")
+    add Solid("#FF4D6D33", ysize=5) ypos 170 at debat_phase2_reject_warning
+    add Solid("#FF4D6D33", ysize=5) ypos 820 at debat_phase2_reject_warning
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at debat_phase2_scanline
+
     vbox:
         align (0.5, 0.45)
         spacing 14

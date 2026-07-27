@@ -1,517 +1,449 @@
-# -----------------------------------------------------------------------
-# CODEX — Entrées, catégories et déblocages
-# -----------------------------------------------------------------------
+# =============================================================================
+# CODEX — Système de PACKS d'entrées + scènes bonus
+# 3 colonnes : Packs / Entrées du pack / Détail + récompense
+# =============================================================================
+# Débloquer une entrée :  $ unlock_codex_page("id_entree")
+# Quand toutes les entrées d'un pack sont débloquées -> scène bonus jouable.
+# =============================================================================
 
-default codex_unlocked_entries = [
-    "districts_conclave",
-    "systeme_votes",
-    "personnage_noam",
-]
+default codex_unlocked_entries = []
 
-default codex_notification_queue = []
-default codex_current_notification = None
+# CODEX_ENTRIES doit exister AVANT les init de priorité >0 (injections scénario)
+init -5 python:
+    CODEX_ENTRIES = {}
 
 init python:
 
-    CODEX_CATEGORY_ORDER = ["histoire", "district", "coutume", "divers"]
+    # ------------------------------------------------------------------
+    # PACKS
+    # ------------------------------------------------------------------
+    CODEX_PACKS = [
+        {
+            "id": "conclave", "num": 1,
+            "title": "LE CONCLAVE",
+            "subtitle": "Les règles, les membres\net le fonctionnement du Conclave.",
+            "color": "#5CD3FF", "icon": "pack_conclave", "banner": "banner_conclave",
+            "entries": ["reglement_conclave"],
+        },
+        {
+            "id": "districts", "num": 2,
+            "title": "LES DISTRICTS",
+            "subtitle": "Les différents districts, leurs\nressources et leurs particularités.",
+            "color": "#F0A835", "icon": "pack_districts", "banner": "banner_districts",
+            "entries": [],
+        },
+        {
+            "id": "orbite", "num": 3,
+            "title": "ORBITE",
+            "subtitle": "La station orbitale, ses systèmes\net ses technologies.",
+            "color": "#B57BFF", "icon": "pack_orbite", "banner": "banner_orbite",
+            "entries": ["complexe_c"],
+        },
+        {
+            "id": "kami", "num": 4,
+            "title": "KAMI",
+            "subtitle": "L'intelligence artificielle qui\nsupervise le Conclave.",
+            "color": "#E85C6B", "icon": "pack_kami", "banner": "banner_kami",
+            "entries": [],
+        },
+    ]
 
-    CODEX_CATEGORY_LABELS = {
-        "histoire": "Histoire",
-        "district": "District",
-        "coutume": "Coutume",
-        "divers": "Divers",
+    # ------------------------------------------------------------------
+    # ENTRÉES (title / icon / short / assoc / text)
+    # ------------------------------------------------------------------
+    _CODEX_DATA = {
+        "complexe_c": {"title": "Complexe C", "icon": "ic_building",
+            "short": "Ensemble résidentiel majeur d'Orbite.",
+            "assoc": [],
+            "text": "Le complexe C est l'un des ensembles résidentiels majeurs d'Orbite : quatre modules familiaux, deux modules de production, un module administratif, des coursives pressurisées et des sas capables d'isoler une section en quelques secondes.\n\nChaque habitant connaît les alarmes et l'ordre exact des attaches d'un scaphandre d'urgence. Le complexe C ne protège pas seulement ses habitants : il les dresse à survivre."},
     }
 
-    CODEX_ENTRIES = {
-        "districts_conclave": {
-            "title": "Districts du Conclave",
-            "category": "district",
-            "unlocked_day": 1,
-            "text": """Le Conclave n'est pas une ville au sens ancien du terme, mais une agrégation de zones spécialisées reliées par des couloirs pressurisés, des sas et des routines de rationnement. Chaque district fonctionne comme un organe: la Cafétéria assure l'apport énergétique, l'Infirmerie absorbe les chocs biologiques, la Maintenance prolonge la survie mécanique, l'Observatoire anticipe les ruptures.
+    # Fusion dans CODEX_ENTRIES (sans écraser un texte déjà injecté par le scénario)
+    for _eid, _data in _CODEX_DATA.items():
+        if _eid not in CODEX_ENTRIES:
+            CODEX_ENTRIES[_eid] = dict(_data)
+        else:
+            for _k, _v in _data.items():
+                CODEX_ENTRIES[_eid].setdefault(_k, _v)
 
-Depuis la troisième réorganisation, l'administration Kami impose une circulation par quotas temporels: on ne traverse pas un district parce qu'on le souhaite, mais parce qu'un besoin est validé. Ce système diminue les incidents, tout en créant des angles morts sociaux. Les représentants, censés compenser cette fragmentation, deviennent alors des filtres d'information autant que des voix politiques.
 
-On observe enfin un phénomène propre aux environnements clos: l'identité individuelle se confond progressivement avec le district d'appartenance. Un conflit entre personnes se présente rapidement comme un conflit entre fonctions. Cette translation explique pourquoi les votes du Conclave paraissent souvent « techniques » alors qu'ils sont traversés d'affects et de mémoire."""
-        },
-        "systeme_votes": {
-            "title": "Système de vote des représentants",
-            "category": "coutume",
-            "unlocked_day": 1,
-            "text": """Le vote n'est pas un rituel démocratique classique; c'est un protocole de répartition du risque. Douze représentants y participent, avec un poids théoriquement égal, mais des conséquences asymétriques selon la proposition adoptée. Une mesure sur l'énergie peut pénaliser immédiatement la Maintenance, alors qu'une mesure sur le rationnement affectera d'abord la Cafétéria et la Santé.
+init 3 python:
+    # Seules les entrées qui possèdent un vrai déblocage dans le scénario
+    # peuvent apparaître. Tout le contenu de remplissage est retiré au chargement.
+    _CODEX_INGAME_ENTRIES = set(["reglement_conclave", "complexe_c"])
+    for _eid in list(CODEX_ENTRIES.keys()):
+        if _eid not in _CODEX_INGAME_ENTRIES:
+            del CODEX_ENTRIES[_eid]
 
-Le règlement Kami distingue trois niveaux: recommandation, directive locale et dérogation d'urgence. La recommandation est consultative; la directive locale devient exécutoire dès majorité simple; la dérogation exige un seuil renforcé et une justification archivable. Dans la pratique, la frontière entre ces catégories dépend de l'état de crise déclaré.
+    _visible_packs = []
+    for _pack in CODEX_PACKS:
+        _pack["entries"] = [
+            _eid for _eid in _pack["entries"] if _eid in _CODEX_INGAME_ENTRIES
+        ]
+        if _pack["entries"]:
+            _visible_packs.append(_pack)
+    CODEX_PACKS[:] = _visible_packs
 
-Les observateurs extérieurs décrivent ce modèle comme « froid ». Pourtant, les archives montrent que les alignements de vote suivent aussi des affinités interpersonnelles, des dettes symboliques et des conflits antérieurs. Comprendre la mécanique officielle sans lire les liens informels revient à lire seulement la moitié du système."""
-        },
-        "personnage_noam": {
-            "title": "Noam — médiateur émergent",
-            "category": "histoire",
-            "linked_profile": "noam",
-            "unlocked_day": 1,
-            "text": """Noam occupe une position paradoxale: il ne possède ni l'ancienneté de Tomas, ni l'autorité procédurale de Nyra, ni l'assise technique de Kael. Pourtant, il obtient un avantage décisif dans les séquences de débat: la capacité à reformuler sans humilier.
-
-Les témoins décrivent chez lui une écoute orientée vers les « points de friction utiles ». Là où d'autres cherchent à gagner une confrontation, Noam tente d'identifier le noyau non négociable de chaque interlocuteur puis de construire un terrain d'accord minimal. Cette méthode ralentit la décision à court terme, mais réduit la probabilité de sabotage passif après le vote.
-
-Les analyses psychologiques internes relèvent également un coût personnel. Un médiateur absorbe la charge émotionnelle de plusieurs camps sans appartenir pleinement à aucun. À mesure que les crises s'enchaînent, Noam peut devenir soit un pivot de cohésion, soit un point de rupture."""
-        },
-        "rationnement_consequences": {
-            "title": "Conséquences des bons de rationnement",
-            "category": "divers",
-            "text": """Après chaque vote sur les bons de rationnement, l'effet immédiat est mesurable (portion, files, incidents), mais l'effet profond est comportemental. Les ménages adaptent leurs horaires, les personnels médicaux déplacent les soins non urgents, les équipes techniques choisissent quelles pannes « attendre ». Le rationnement redistribue le temps autant que la nourriture.
-
-Les bulletins Kami présentent ces ajustements comme des preuves de résilience. Les témoignages anonymes, eux, parlent de fatigue stratégique: chacun optimise sa survie locale au détriment d'une vision commune. C'est dans cet écart narratif que naissent les tensions politiques du Conclave."""
-        },
-        "complexe_c": {
-            "title": "Complexe C",
-            "category": "district",
-            "text": """Le complexe C est l'un des ensembles résidentiels majeurs d'Orbite. Il regroupe un total de quatre modules familiaux, de deux modules de production, d'un module administratif, des coursives pressurisées, des points de confinement et des sas de sécurité capables d'isoler une section en quelques secondes. Dans les bulletins Kami, il est présenté comme une réussite d'ingénierie orbitale : compartimenté, redondant, conçu pour encaisser les incidents sans compromettre l'ensemble de la station.
-
-Sur place, la réalité est moins propre. Chaque habitant connaît les alarmes, les itinéraires d'évacuation et l'ordre exact des attaches d'un scaphandre d'urgence. Les enfants apprennent ces gestes comme des comptines, parce qu'une fuite, une sanction laser ou une panne de jonction ne laisse pas le temps d'avoir peur correctement. Le complexe C ne protège pas seulement ses habitants : il les dresse à survivre.
-
-C'est cette normalité-là qui marque le plus les représentants d'Orbite. Une alerte de sas n'est pas un événement exceptionnel, mais un rappel brutal de leur quotidien. Quand une section comme le module C-4 s'isole, cent quarante personnes peuvent se retrouver coupées du reste de la station, dépendantes des réserves locales, des procédures et du sang-froid de familles entières. Dans Orbite, la sécurité n'est pas une promesse. C'est une série de gestes à réussir avant que l'air ne parte."""
-        },
+    # Complète les entrées injectées par le scénario (ex: reglement_conclave)
+    _CODEX_INJECT_META = {
+        "reglement_conclave": {"icon": "ic_doc",
+            "short": "Les règles complètes du huis clos de trente jours.",
+            "assoc": []},
     }
+    for _eid, _meta in _CODEX_INJECT_META.items():
+        if _eid in CODEX_ENTRIES:
+            for _k, _v in _meta.items():
+                CODEX_ENTRIES[_eid].setdefault(_k, _v)
 
-    def codex_valid_entry_ids():
-        return [eid for eid in store.codex_unlocked_entries if eid in CODEX_ENTRIES]
+    # Carte inverse entrée -> index de pack
+    CODEX_ENTRY_PACK = {}
+    for _pi, _p in enumerate(CODEX_PACKS):
+        for _e in _p["entries"]:
+            CODEX_ENTRY_PACK[_e] = _pi
 
-    def codex_entries_for_category(category_id):
-        unlocked = codex_valid_entry_ids()
-        return [eid for eid in unlocked if CODEX_ENTRIES[eid].get("category") == category_id]
 
-    def codex_has_visible_entries(category_id):
-        return len(codex_entries_for_category(category_id)) > 0
+init python:
 
-    def codex_visible_categories():
-        return [cid for cid in CODEX_CATEGORY_ORDER if codex_has_visible_entries(cid)]
+    # ---- Accès données ----
+    def codex_entry(eid):
+        return CODEX_ENTRIES.get(eid, {})
 
-    def codex_first_visible_category():
-        visible = codex_visible_categories()
-        return visible[0] if visible else (CODEX_CATEGORY_ORDER[0] if CODEX_CATEGORY_ORDER else None)
+    def codex_entry_title(eid):
+        return codex_entry(eid).get("title", eid)
 
-    def codex_first_visible_entry(category_id=None):
-        cid = category_id or codex_first_visible_category()
-        entries = codex_entries_for_category(cid) if cid else []
-        return entries[0] if entries else None
+    def codex_entry_icon(eid):
+        return codex_entry(eid).get("icon", "ic_doc")
 
-    def codex_completion_percent():
-        total = len(CODEX_ENTRIES)
-        unlocked = len(codex_valid_entry_ids())
-        return int((100.0 * unlocked) / total) if total else 0
+    def codex_entry_short(eid):
+        return codex_entry(eid).get("short", "")
 
-    def codex_unlock_page(entry_id, with_notification=True):
-        if entry_id not in CODEX_ENTRIES:
-            return False
-        if entry_id in store.codex_unlocked_entries:
-            return False
-        store.codex_unlocked_entries.append(entry_id)
-        if with_notification:
-            store.codex_notification_queue.append(entry_id)
-            if not store.codex_current_notification:
-                codex_show_next_notification()
-        renpy.restart_interaction()
+    def codex_entry_text(eid):
+        return codex_entry(eid).get("text", "")
+
+    def codex_entry_assoc(eid):
+        return [a for a in codex_entry(eid).get("assoc", []) if a in CODEX_ENTRIES]
+
+    def codex_is_unlocked(eid):
+        return eid in store.codex_unlocked_entries
+
+    def codex_pack_index_of(eid):
+        return CODEX_ENTRY_PACK.get(eid, 0)
+
+    # ---- Déblocage ----
+    def codex_unlock_page(eid, with_notification=True):
+        if eid in CODEX_ENTRIES and eid not in store.codex_unlocked_entries:
+            store.codex_unlocked_entries.append(eid)
+            renpy.restart_interaction()
+            return True
+        return False
+
+    def unlock_codex_page(eid, with_notification=True):
+        return codex_unlock_page(eid, with_notification=with_notification)
+
+    def unlock_codex_entry(eid):
+        return codex_unlock_page(eid, with_notification=True)
+
+    # ---- Filtre ----
+    def codex_filter_ok(eid, filt):
+        if filt == "debloques":
+            return codex_is_unlocked(eid)
+        if filt == "verrouilles":
+            return not codex_is_unlocked(eid)
         return True
 
-    def unlock_codex_page(entry_id, with_notification=True):
-        return codex_unlock_page(entry_id, with_notification=with_notification)
+    # ---- Packs ----
+    def codex_pack_unlocked_count(pack):
+        return sum(1 for e in pack["entries"] if codex_is_unlocked(e))
 
-    def unlock_codex_entry(entry_id):
-        return codex_unlock_page(entry_id, with_notification=True)
+    def codex_pack_total(pack):
+        return len(pack["entries"])
 
-    def codex_show_next_notification():
-        if store.codex_current_notification or not store.codex_notification_queue:
-            return
-        next_entry_id = store.codex_notification_queue.pop(0)
-        entry = CODEX_ENTRIES.get(next_entry_id)
-        if not entry:
-            return
-        store.codex_current_notification = {
-            "entry_id": next_entry_id,
-            "title": entry.get("title", next_entry_id),
-            "category": entry.get("category", "divers"),
-        }
-        renpy.show_screen("codex_unlock_notification")
+    def codex_first_entry_of_pack(pack_index):
+        return CODEX_PACKS[pack_index]["entries"][0]
 
-    def codex_pop_notification():
-        store.codex_current_notification = None
-        renpy.hide_screen("codex_unlock_notification")
-        codex_show_next_notification()
+    def codex_total_unlocked():
+        return sum(1 for e in store.codex_unlocked_entries if e in CODEX_ENTRIES)
+
+    def codex_total_entries():
+        return len(CODEX_ENTRIES)
+
+    # ---- Debug ----
+    def codex_unlock_all_debug():
+        for e in CODEX_ENTRIES:
+            if e not in store.codex_unlocked_entries:
+                store.codex_unlocked_entries.append(e)
 
 
-# -----------------------------------------------------------------------
-# Transforms
-# -----------------------------------------------------------------------
+# =============================================================================
+# ÉCRAN PRINCIPAL
+# =============================================================================
 
-transform codex_notif_appear:
-    alpha 0.0
-    xoffset 30
-    parallel:
-        ease 0.22 alpha 1.0
-    parallel:
-        ease 0.22 xoffset 0
+transform codex_tint(c):
+    matrixcolor TintMatrix(c)
 
-transform codex_entry_appear:
-    alpha 0.0
-    yoffset 8
-    ease 0.18 alpha 1.0 yoffset 0
-
-
-# -----------------------------------------------------------------------
-# Styles
-# -----------------------------------------------------------------------
-
-style codex_default:
-    font "fonts/Barlow-Light.ttf"
-
-style codex_nav_idle is codex_default:
-    color "#3a6a80"
-    size 24
-    hover_color "#7ab8cc"
-
-style codex_nav_idle_selected is codex_nav_idle:
-    color "#a8d8ea"
-
-style codex_cat_idle is codex_default:
-    color "#2a5a72"
-    size 23
-    hover_color "#5ab0c8"
-
-style codex_cat_idle_selected is codex_cat_idle:
-    color "#5cd3ff"
-
-style codex_entry_idle is codex_default:
-    color "#3a7a90"
-    size 21
-    hover_color "#8ac8da"
-    left_padding 10
-
-style codex_entry_idle_selected is codex_entry_idle:
-    color "#a8dff0"
-
-style codex_read_category is codex_default:
-    color "#2a6a8a"
-    size 19
-    kerning 3
-
-style codex_read_title:
-    font "fonts/Rajdhani-SemiBold.ttf"
-    color "#daeaf5"
-    size 46
-    line_spacing 2
-
-style codex_read_body is codex_default:
-    color "#8aacbc"
-    size 23
-    line_spacing 8
-
-style codex_section_label is codex_default:
-    color "#1e4a65"
-    size 18
-    kerning 4
-
-style codex_index_title:
-    font "fonts/Rajdhani-SemiBold.ttf"
-    color "#daeaf5"
-    size 38
-
-style codex_completion_label is codex_default:
-    color "#2a5a7a"
-    size 19
-    kerning 2
-
-style codex_notif_sub is codex_default:
-    color "#2a6a8a"
-    size 18
-    kerning 3
-
-style codex_notif_title:
-    font "fonts/Rajdhani-SemiBold.ttf"
-    color "#c8e8f5"
-    size 28
-
-style codex_notif_cat is codex_default:
-    color "#3a7a90"
-    size 19
-
-style codex_empty_label is codex_default:
-    color "#1e4a65"
-    size 22
-
-
-# -----------------------------------------------------------------------
-# Notification de déblocage
-# -----------------------------------------------------------------------
-
-screen codex_unlock_notification():
-    zorder 500
-
-    if codex_current_notification:
-        frame at codex_notif_appear:
-            background Solid("#07151e")
-            xalign 0.985
-            yalign 0.08
-            xsize 480
-            padding (0, 14, 18, 14)
-
-            hbox:
-                spacing 0
-
-                frame:
-                    background Solid("#3a9fca")
-                    xsize 3
-                    yfill True
-                    right_margin 14
-
-                vbox:
-                    spacing 5
-
-                    text "NOUVELLE PAGE DU CODEX":
-                        style "codex_notif_sub"
-
-                    text "[codex_current_notification['title']]":
-                        style "codex_notif_title"
-
-                    text "[CODEX_CATEGORY_LABELS.get(codex_current_notification['category'], codex_current_notification['category'])]":
-                        style "codex_notif_cat"
-
-        timer 3.0 action Function(codex_pop_notification)
-
-
-# -----------------------------------------------------------------------
-# Écran principal du Codex
-# -----------------------------------------------------------------------
 
 screen codex_menu():
     tag menu
+    modal True
+    zorder 100
 
-    default selected_category = codex_first_visible_category()
-    default selected_entry    = codex_first_visible_entry(selected_category)
+    default sel_pack = 0
+    default sel_entry = codex_first_entry_of_pack(0)
+    default filt = "tous"
 
-    add Solid("#080d12")
+    add Solid("#05090F")
+    add Solid("#070D15") ypos 92 ysize 988
 
-    hbox:
-        xfill True
-        yfill True
+    # ---------------- HEADER ----------------
+    add "hud/codex/codex_logo.png" xpos 30 ypos 26 xysize (44, 44)
+    text "CODEX":
+        xpos 92 ypos 26 size 40 color "#DCEBFF"
+        font "fonts/Rajdhani-SemiBold.ttf" kerning 6
 
-        # -----------------------------------------------------------
-        # Colonne 1 — Navigation principale
-        # -----------------------------------------------------------
-        frame:
-            background Solid("#00000000")
-            xsize 200
-            yfill True
+    frame:
+        xpos 1400 ypos 26 xsize 320 ysize 46
+        background Frame(Solid("#0A1622"), 0, 0)
+        fixed:
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 320 ysize 1
+            text "ENTRÉES DÉBLOQUÉES":
+                xpos 20 yalign 0.5 size 15 color "#6E8CA6"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "[codex_total_unlocked()] / [codex_total_entries()]":
+                xpos 234 yalign 0.5 size 22 color "#5CD3FF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+    button:
+        xpos 1840 ypos 24 xysize (50, 50)
+        background Frame(Solid("#0A1622"), 0, 0)
+        hover_background Frame(Solid("#5CD3FF22"), 0, 0)
+        action Return()
+        text "✕" xalign 0.5 yalign 0.5 size 26 color "#8FB4CC"
+
+    add Solid("#12283A") xpos 0 ypos 90 xsize 1920 ysize 2
+
+    # ---------------- COLONNE 1 : PACKS ----------------
+    frame:
+        xpos 24 ypos 112 xsize 470 ysize 900
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 470 ysize 2
+            text "PACKS":
+                xpos 24 ypos 18 size 20 color "#5CD3FF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+            add Solid("#12283A") xpos 0 ypos 58 xsize 470 ysize 1
+
+            viewport:
+                xpos 0 ypos 66 xsize 470 ysize 770
+                mousewheel True draggable True scrollbars "vertical"
+                vbox:
+                    spacing 0
+                    for pi, pack in enumerate(CODEX_PACKS):
+                        use codex_pack_row(pi, pack, sel_pack)
+
+            add Solid("#12283A") xpos 0 ypos 840 xsize 470 ysize 1
+            button:
+                xpos 20 ypos 852 xsize 130 ysize 40
+                background Frame(Solid("#0E1B28"), 0, 0)
+                hover_background Frame(Solid("#5CD3FF18"), 0, 0)
+                action SetScreenVariable("filt", {"tous": "debloques", "debloques": "verrouilles", "verrouilles": "tous"}[filt])
+                hbox:
+                    yalign 0.5 xpos 12 spacing 8
+                    add "hud/codex/ic_filter.png" yalign 0.5 xysize (18, 18) at codex_tint("#8FB4CC")
+                    text "FILTRES" yalign 0.5 size 15 color "#8FB4CC" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            frame:
+                xpos 164 ypos 852 xsize 220 ysize 40
+                background Frame(Solid("#0E1B28"), 0, 0)
+                text ({"tous": "TOUS", "debloques": "DÉBLOQUÉS", "verrouilles": "VERROUILLÉS"}[filt]):
+                    xpos 16 yalign 0.5 size 15 color "#B9D4E6" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                add "hud/codex/ic_chevron.png" xpos 188 yalign 0.5 xysize (18, 18) at codex_tint("#8FB4CC")
+
+    # ---------------- COLONNE 2 : ENTRÉES ----------------
+    $ cur_pack = CODEX_PACKS[sel_pack]
+    frame:
+        xpos 512 ypos 112 xsize 856 ysize 900
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid(cur_pack["color"]) xpos 0 ypos 0 xsize 856 ysize 2
+            text "ENTRÉES DU PACK : [cur_pack['title']]":
+                xpos 24 ypos 18 size 18 color "#B9D4E6"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "[codex_pack_unlocked_count(cur_pack)] / [codex_pack_total(cur_pack)]":
+                xpos 780 ypos 18 size 18 color cur_pack["color"]
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            add Solid("#12283A") xpos 0 ypos 58 xsize 856 ysize 1
+
+            viewport:
+                xpos 0 ypos 70 xsize 856 ysize 826
+                mousewheel True draggable True scrollbars "vertical"
+                vpgrid:
+                    cols 2
+                    xspacing 16 yspacing 16
+                    xpos 24 ypos 8
+                    for idx, eid in enumerate(cur_pack["entries"]):
+                        if codex_filter_ok(eid, filt):
+                            use codex_entry_card(idx, eid, cur_pack, sel_entry)
+
+    # ---------------- COLONNE 3 : DÉTAIL ----------------
+    use codex_detail_panel(sel_entry, cur_pack)
+
+
+# -----------------------------------------------------------------------------
+# LIGNE PACK
+# -----------------------------------------------------------------------------
+screen codex_pack_row(pi, pack, sel_pack):
+    $ col = pack["color"]
+    $ nb = codex_pack_unlocked_count(pack)
+    $ tot = codex_pack_total(pack)
+    $ ratio = (float(nb) / tot) if tot else 0.0
+    $ selected = (pi == sel_pack)
+
+    button:
+        xsize 470 ysize 156
+        background (Frame(Solid("#0E1E2C"), 0, 0) if selected else Frame(Solid("#00000000"), 0, 0))
+        hover_background Frame(Solid(col + "12"), 0, 0)
+        action [SetScreenVariable("sel_pack", pi),
+                SetScreenVariable("sel_entry", codex_first_entry_of_pack(pi))]
+        fixed:
+            xsize 470 ysize 156
+            if selected:
+                add Solid(col) xpos 0 ypos 0 xsize 4 ysize 156
+            add Solid("#0A1420") xpos 0 ypos 155 xsize 470 ysize 1
 
             frame:
-                background Solid("#00000000")
-                padding (20, 24, 0, 0)
+                xpos 22 ypos 24 xysize (64, 64)
+                background Frame(Solid(col + "16"), 0, 0)
+                add ("hud/codex/" + pack["icon"] + ".png") xalign 0.5 yalign 0.5 xysize (42, 42)
 
-                vbox:
-                    xfill True
-                    yfill True
+            text "[pack['num']]. [pack['title']]":
+                xpos 100 ypos 22 size 21 color ("#EAF4FF" if selected else "#C6D9E8")
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text "[nb] / [tot]":
+                xpos 408 ypos 24 size 18 color col font "fonts/Rajdhani-SemiBold.ttf"
 
-                    text "MENU":
-                        style "codex_section_label"
+            text pack["subtitle"]:
+                xpos 100 ypos 50 size 15 color "#7C99AC" font "fonts/Barlow-Light.ttf" line_leading 2
 
-                    null height 14
+            add Solid("#132433") xpos 100 ypos 104 xsize 346 ysize 6
+            if ratio > 0:
+                add Solid(col) xpos 100 ypos 104 xsize int(346 * ratio) ysize 6
 
-                    for lbl, act in [
-                        ("Historique",  ShowMenu("history")),
-                        ("Sauvegarde",  ShowMenu("save")),
-                        ("Charger",     ShowMenu("load")),
-                        ("Préférences", ShowMenu("preferences")),
-                        ("Profils",     ShowMenu("profiles")),
-                        ("Codex",       NullAction()),
-                        ("À propos",    ShowMenu("about")),
-                        ("Quitter",     MainMenu()),
-                    ]:
-                        textbutton "[lbl]":
-                            action act
-                            style "codex_nav_idle"
-                            selected (lbl == "Codex")
-                            ypadding 7
-                            xfill True
 
-        # Séparateur vertical
-        frame:
-            background Solid("#122030")
-            xsize 1
-            yfill True
 
-        # -----------------------------------------------------------
-        # Colonne 2 — Index
-        # -----------------------------------------------------------
-        frame:
-            background Solid("#00000000")
-            xsize 260
-            yfill True
+# -----------------------------------------------------------------------------
+# CARTE ENTRÉE
+# -----------------------------------------------------------------------------
+screen codex_entry_card(idx, eid, pack, sel_entry):
+    $ col = pack["color"]
+    $ unlocked = codex_is_unlocked(eid)
+    $ selected = (eid == sel_entry)
+    $ num = "%02d" % (idx + 1)
 
-            vbox:
-                xfill True
-                yfill True
-
-                # En-tête
-                frame:
-                    background Solid("#00000000")
-                    xfill True
-                    padding (20, 20, 20, 16)
-
-                    vbox:
-                        spacing 8
-
-                        text "Codex":
-                            style "codex_index_title"
-
-                        if j2_vote_codex_unlocked:
-                            textbutton "Prochain vote":
-                                action ShowMenu("day2_current_vote_codex")
-                                style "codex_cat_idle"
-                                ypadding 4
-                                xfill True
-
-                        $ pct = codex_completion_percent()
-                        $ filled_w = int(2.20 * pct)
-
-                        frame:
-                            background Solid("#122030")
-                            xfill True
-                            ysize 2
-                            xpadding 0
-                            ypadding 0
-
-                            frame:
-                                background Solid("#3bbcef")
-                                xsize filled_w
-                                ysize 2
-                                xalign 0.0
-
-                        text "[pct]% — [len(codex_valid_entry_ids())] / [len(CODEX_ENTRIES)] pages":
-                            style "codex_completion_label"
-
-                # Séparateur horizontal
-                frame:
-                    background Solid("#122030")
-                    xfill True
-                    ysize 1
-
-                # Catégories
-                frame:
-                    background Solid("#00000000")
-                    xfill True
-                    padding (20, 14, 20, 0)
-
-                    vbox:
-                        spacing 6
-
-                        text "CATÉGORIES":
-                            style "codex_section_label"
-
-                        null height 4
-
-                        for category_id in CODEX_CATEGORY_ORDER:
-                            $ cat_entries = codex_entries_for_category(category_id)
-                            if cat_entries:
-                                textbutton "[CODEX_CATEGORY_LABELS.get(category_id, category_id)] ([len(cat_entries)])":
-                                    action [
-                                        SetScreenVariable("selected_category", category_id),
-                                        SetScreenVariable("selected_entry", codex_first_visible_entry(category_id)),
-                                    ]
-                                    style "codex_cat_idle"
-                                    selected (selected_category == category_id)
-                                    ypadding 5
-                                    xfill True
-
-                # Pages débloquées
-                frame:
-                    background Solid("#00000000")
-                    xfill True
-                    yfill True
-                    padding (20, 12, 20, 12)
-
-                    vbox:
-                        spacing 4
-
-                        text "PAGES DÉBLOQUÉES":
-                            style "codex_section_label"
-
-                        null height 6
-
-                        $ current_entries = codex_entries_for_category(selected_category) if selected_category else []
-                        if current_entries:
-                            for eid in current_entries:
-                                $ edata = CODEX_ENTRIES[eid]
-                                textbutton "[edata['title']]":
-                                    action SetScreenVariable("selected_entry", eid)
-                                    style "codex_entry_idle"
-                                    selected (selected_entry == eid)
-                                    ypadding 6
-                                    xfill True
-                                    text_xalign 0.0
-                        else:
-                            text "Aucune page débloquée.":
-                                style "codex_empty_label"
-
-        # Séparateur vertical
-        frame:
-            background Solid("#122030")
-            xsize 1
-            yfill True
-
-        # -----------------------------------------------------------
-        # Colonne 3 — Panneau de lecture
-        # -----------------------------------------------------------
-        frame:
-            background Solid("#00000000")
-            xfill True
-            yfill True
-            padding (40, 32, 40, 32)
-
-            if selected_entry and selected_entry in CODEX_ENTRIES:
-                $ edata = CODEX_ENTRIES[selected_entry]
-                $ cat_label = CODEX_CATEGORY_LABELS.get(edata.get("category", "divers"), edata.get("category", "divers"))
-
-                vbox at codex_entry_appear:
-                    spacing 0
-                    xfill True
-
-                    hbox:
-                        spacing 10
-
-                        frame:
-                            background Solid("#1e4a65")
-                            xsize 20
-                            ysize 1
-                            yalign 0.5
-
-                        text "[cat_label]":
-                            style "codex_read_category"
-
-                    null height 12
-
-                    text "[edata['title']]":
-                        style "codex_read_title"
-
-                    null height 20
-
-                    frame:
-                        background Solid("#1e6a90")
-                        xsize 40
-                        ysize 1
-
-                    null height 22
-
-                    viewport:
-                        mousewheel True
-                        draggable True
-                        scrollbars "vertical"
-                        yfill True
-                        xfill True
-
-                        text "[edata['text']]":
-                            style "codex_read_body"
-                            xfill True
-
+    button:
+        xsize 396 ysize 150
+        background Frame(Solid("#0B1520"), 0, 0)
+        hover_background Frame(Solid(col + "10"), 0, 0)
+        action SetScreenVariable("sel_entry", eid)
+        sensitive unlocked
+        fixed:
+            xsize 396 ysize 150
+            if selected and unlocked:
+                add Solid(col + "10") xpos 0 ypos 0 xsize 396 ysize 150
+                add Solid(col) xpos 0 ypos 0 xsize 396 ysize 2
+                add Solid(col) xpos 0 ypos 0 xsize 2 ysize 150
+                add Solid(col) xpos 394 ypos 0 xsize 2 ysize 150
+                add Solid(col) xpos 0 ypos 148 xsize 396 ysize 2
             else:
-                text "Aucune page débloquée pour le moment.":
-                    style "codex_empty_label"
-                    xalign 0.5
-                    yalign 0.5
+                add Solid("#16283A") xpos 0 ypos 0 xsize 396 ysize 1
+
+            text num:
+                xpos 20 ypos 18 size 15 color (col if unlocked else "#3C4E5E")
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            frame:
+                xpos 20 ypos 44 xysize (58, 58)
+                background Frame(Solid((col + "16") if unlocked else "#101E2A"), 0, 0)
+                if unlocked:
+                    add ("hud/codex/" + codex_entry_icon(eid) + ".png") xalign 0.5 yalign 0.5 xysize (36, 36) at codex_tint(col)
+                else:
+                    add "hud/codex/badge_lock.png" xalign 0.5 yalign 0.5 xysize (30, 30) at codex_tint("#3C4E5E")
+
+            if unlocked:
+                text codex_entry_title(eid):
+                    xpos 96 ypos 20 size 19 color "#E4F1FB" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+                text codex_entry_short(eid):
+                    xpos 96 ypos 50 xsize 280 size 14 color "#8AA6B9" font "fonts/Barlow-Light.ttf" line_leading 2
+                add "hud/codex/badge_check.png" xpos 356 ypos 108 xysize (24, 24) at codex_tint(col)
+            else:
+                text "???":
+                    xpos 96 ypos 20 size 19 color "#4A5E70" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+                text "Entrée non découverte\nencore.":
+                    xpos 96 ypos 50 size 14 color "#4A5E70" font "fonts/Barlow-Light.ttf" line_leading 2
+
+
+# -----------------------------------------------------------------------------
+# PANNEAU DÉTAIL
+# -----------------------------------------------------------------------------
+screen codex_detail_panel(eid, pack):
+    $ col = pack["color"]
+    $ unlocked = codex_is_unlocked(eid)
+    $ idx = (pack["entries"].index(eid) if eid in pack["entries"] else 0)
+    $ num = "%02d" % (idx + 1)
+
+    frame:
+        xpos 1386 ypos 112 xsize 510 ysize 900
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid(col) xpos 0 ypos 0 xsize 510 ysize 2
+
+            frame:
+                xpos 24 ypos 20 xysize (54, 40)
+                background Frame(Solid(col + "1E"), 0, 0)
+                text num xalign 0.5 yalign 0.5 size 20 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+            if unlocked:
+                text codex_entry_title(eid):
+                    xpos 92 ypos 18 size 26 color "#EAF4FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            else:
+                text "???":
+                    xpos 92 ypos 18 size 26 color "#4A5E70" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text "PACK [pack['num']] - [pack['title']]":
+                xpos 94 ypos 50 size 13 color "#6E8CA6" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            if unlocked:
+                add ("hud/codex/" + pack["banner"] + ".png") xpos 24 ypos 84 xysize (462, 220)
+            else:
+                add ("hud/codex/" + pack["banner"] + ".png") xpos 24 ypos 84 xysize (462, 220) at codex_lockdim
+                add "hud/codex/badge_lock.png" xpos 232 ypos 172 xysize (44, 44) at codex_tint("#7C99AC")
+
+            if unlocked:
+                viewport:
+                    xpos 24 ypos 322 xsize 462 ysize 500
+                    mousewheel True draggable True scrollbars "vertical"
+                    text codex_entry_text(eid):
+                        xsize 440 size 17 color "#C4D6E4" font "fonts/Barlow-Light.ttf" line_leading 4
+            else:
+                text "Entrée non découverte encore.":
+                    xpos 24 ypos 340 size 17 color "#54697B" font "fonts/Barlow-Light.ttf"
+
+            if unlocked and codex_entry_assoc(eid):
+                text "INFORMATIONS ASSOCIÉES":
+                    xpos 24 ypos 552 size 14 color "#6E8CA6" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                hbox:
+                    xpos 24 ypos 582 spacing 10
+                    for aid in codex_entry_assoc(eid)[:2]:
+                        button:
+                            ysize 40 padding (14, 8)
+                            background Frame(Solid("#0E1B28"), 0, 0)
+                            hover_background Frame(Solid(col + "1A"), 0, 0)
+                            sensitive codex_is_unlocked(aid)
+                            action [SetScreenVariable("sel_pack", codex_pack_index_of(aid)),
+                                    SetScreenVariable("sel_entry", aid)]
+                            text (codex_entry_title(aid) if codex_is_unlocked(aid) else "???"):
+                                yalign 0.5 size 15 color (col if codex_is_unlocked(aid) else "#4A5E70")
+                                font "fonts/Rajdhani-SemiBold.ttf"
+
+transform codex_lockdim:
+    matrixcolor SaturationMatrix(0.0) * BrightnessMatrix(-0.35)

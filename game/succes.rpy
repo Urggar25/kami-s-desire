@@ -1,0 +1,260 @@
+################################################################################
+## Système de succès
+################################################################################
+
+init -1 python:
+    SUCCES_IDS = [
+        "succes001",
+    ]
+
+    SUCCES_IMAGES = {
+        "succes001": "gui/succes/succes001.png",
+    }
+
+    def succes_ensure_state():
+        if not hasattr(persistent, "succes_unlocked") or persistent.succes_unlocked is None:
+            persistent.succes_unlocked = {}
+
+        if not isinstance(persistent.succes_unlocked, dict):
+            persistent.succes_unlocked = {}
+
+        if not hasattr(persistent, "succes_day1_asphyxia_deaths") or persistent.succes_day1_asphyxia_deaths is None:
+            persistent.succes_day1_asphyxia_deaths = 0
+
+    def get_succes_ids():
+        return list(SUCCES_IDS)
+
+    def get_succes_image(succes_id):
+        return SUCCES_IMAGES.get(succes_id, "gui/succes/%s.png" % succes_id)
+
+    def is_succes_unlocked(succes_id):
+        succes_ensure_state()
+        return bool(persistent.succes_unlocked.get(succes_id, False))
+
+    def unlock_succes(succes_id):
+        succes_ensure_state()
+
+        if not persistent.succes_unlocked.get(succes_id, False):
+            persistent.succes_unlocked[succes_id] = True
+            renpy.save_persistent()
+            renpy.show_screen("succes_notification")
+            return True
+
+        return False
+
+    def register_day1_asphyxia_death():
+        succes_ensure_state()
+        persistent.succes_day1_asphyxia_deaths += 1
+
+        if persistent.succes_day1_asphyxia_deaths >= 3:
+            unlock_succes("succes001")
+        else:
+            renpy.save_persistent()
+
+        return persistent.succes_day1_asphyxia_deaths
+
+
+transform succes_notification_in:
+    alpha 0.0
+    yoffset -20
+    easeout 0.25 alpha 1.0 yoffset 0
+    pause 2.40
+    easein 0.25 alpha 0.0 yoffset -20
+
+
+screen succes_notification():
+    zorder 250
+    timer 2.90 action Hide("succes_notification")
+
+    frame:
+        at succes_notification_in
+        xalign 0.5
+        ypos 34
+        xminimum 420
+        padding (28, 16)
+        background Frame(Solid("#07121dee"), 12, 12)
+
+        text _("Succès débloqué"):
+            xalign 0.5
+            color "#dff7ff"
+            size 32
+            font "fonts/Barlow-Light.ttf"
+
+
+screen succes_menu():
+    tag menu
+
+    default page = 0
+
+    $ succes_ids = get_succes_ids()
+    $ page_size = 2
+    $ page_count = max(1, (len(succes_ids) + page_size - 1) // page_size)
+    $ page = min(page, page_count - 1)
+    $ page_succes = succes_ids[page * page_size:(page + 1) * page_size]
+
+    add "gui/succes/succes.png" at adaptive_fullscreen
+    add Solid("#00000022")
+
+    key "game_menu" action Return()
+
+    fixed:
+        xfill True
+        yfill True
+
+        text _("SUCCÈS"):
+            style "succes_menu_title"
+            xalign 0.5
+            ypos 82
+
+        add Solid("#5cd3ff66", xsize=270, ysize=2):
+            xalign 0.5
+            ypos 146
+
+        hbox:
+            xalign 0.5
+            yalign 0.53
+            spacing 76
+
+            for succes_id in page_succes:
+                use succes_tile(succes_id)
+
+            for empty_slot in range(page_size - len(page_succes)):
+                null width 430 height 430
+
+        hbox:
+            xalign 0.5
+            yalign 0.88
+            spacing 28
+
+            textbutton _("‹"):
+                style "succes_arrow_button"
+                sensitive page > 0
+                action SetScreenVariable("page", max(0, page - 1))
+
+            text _("[page + 1] / [page_count]"):
+                style "succes_menu_page_text"
+
+            textbutton _("›"):
+                style "succes_arrow_button"
+                sensitive page < page_count - 1
+                action SetScreenVariable("page", min(page_count - 1, page + 1))
+
+        textbutton _("RETOUR"):
+            style "succes_back_button"
+            xpos 92
+            ypos 70
+            action Return()
+
+        if page_count > 1:
+            textbutton _("SUIVANT"):
+                style "succes_back_button"
+                xalign 0.96
+                ypos 70
+                sensitive page < page_count - 1
+                action SetScreenVariable("page", min(page_count - 1, page + 1))
+        else:
+            textbutton _("SUIVANT"):
+                style "succes_back_button"
+                xalign 0.96
+                ypos 70
+                sensitive False
+                action Return()
+
+
+screen succes_tile(succes_id):
+    $ unlocked = is_succes_unlocked(succes_id)
+    $ succes_image = get_succes_image(succes_id)
+
+    frame:
+        style "succes_tile_frame"
+
+        fixed:
+            xysize (430, 430)
+
+            if unlocked:
+                add succes_image:
+                    xysize (430, 430)
+                    fit "contain"
+            else:
+                add im.MatrixColor(succes_image, im.matrix.saturation(0.0) * im.matrix.brightness(-0.95)):
+                    xysize (430, 430)
+                    fit "contain"
+                    alpha 0.10
+
+                add Solid("#272d33"):
+                    xysize (430, 430)
+                    alpha 0.98
+
+                add Solid("#11182099", xsize=430, ysize=3):
+                    yalign 0.0
+
+                add Solid("#5cd3ff22", xsize=430, ysize=2):
+                    yalign 1.0
+
+
+style succes_menu_title is gui_label_text
+style succes_menu_page_text is gui_text
+style succes_tile_frame is frame
+style succes_back_button is button
+style succes_back_button_text is button_text
+style succes_arrow_button is button
+style succes_arrow_button_text is button_text
+
+style succes_menu_title:
+    color "#dff7ff"
+    size 48
+    font "fonts/Rajdhani-SemiBold.ttf"
+    kerning 8.0
+    outlines [(2, "#02070ccc", 0, 2)]
+
+style succes_menu_page_text:
+    yalign 0.5
+    color "#dff7ff"
+    size 28
+    font "fonts/Barlow-Light.ttf"
+    outlines [(2, "#02070ccc", 0, 1)]
+
+style succes_tile_frame:
+    padding (0, 0)
+    xysize (430, 430)
+    background Fixed(
+        Solid("#07111c44"),
+        Solid("#5cd3ff55", xsize=3),
+        Solid("#5cd3ff55", xsize=3, xalign=1.0),
+        Solid("#ffffff18", ysize=1),
+        Solid("#00000088", ysize=10, yalign=1.0),
+    )
+
+style succes_back_button:
+    xminimum 148
+    yminimum 48
+    padding (18, 9)
+    background Solid("#07111c88")
+    hover_background Fixed(Solid("#0d2535dd"), Solid("#5cd3ff", ysize=2, yalign=1.0))
+    insensitive_background Solid("#07111c44")
+
+style succes_back_button_text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 24
+    idle_color "#a9c7d4"
+    hover_color "#ffffff"
+    insensitive_color "#5f6c73"
+    xalign 0.5
+    textalign 0.5
+
+style succes_arrow_button:
+    xysize (54, 54)
+    padding (0, 0)
+    background Solid("#07111c88")
+    hover_background Solid("#0d2535dd")
+    insensitive_background Solid("#07111c44")
+
+style succes_arrow_button_text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 38
+    idle_color "#a9c7d4"
+    hover_color "#ffffff"
+    insensitive_color "#5f6c73"
+    xalign 0.5
+    yalign 0.5
+    textalign 0.5

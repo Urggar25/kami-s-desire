@@ -320,18 +320,14 @@ label _8_0_1_CAFETERIA:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
     "La cafétéria est pleine."
-    "Enfin."
     "Plus pleine que d'habitude."
-
-    "Ça parle fort."
-    "Ça rit parfois."
-    "Des vrais rires."
-    "Pas des petits souffles nerveux pour éviter les silences."
+    "Ça parle fort. Ça rit parfois."
+    "Des vrais rires, pas des souffles nerveux pour boucher les trous."
 
     think "Deux jours."
     think "Deux jours sans Kami."
 
-    "Et déjà l’endroit ressemble moins à une salle d’attente avant exécution."
+    think "Et déjà l'endroit ressemble moins à une salle d'attente avant exécution."
 
     $ showGroup([
         ("iris",   "sourire",      0.08),
@@ -345,12 +341,12 @@ label _8_0_1_CAFETERIA:
     iris sourire "Je commence à croire qu’on a officiellement des vacances."
 
     julian rire "Franchement ?"
-    julian sourire "Je signe tout de suite pour une apocalypse silencieuse comme ça."
+    julian sourire "Julian signe tout de suite pour une apocalypse silencieuse comme ça."
 
     mara rire "Toi tu signerais surtout pour dormir jusqu’à midi tous les jours."
 
     julian decontracte "Évidemment."
-    julian rire "Le confort est une valeur fondamentale de l’humanité."
+    julian rire "Le confort est une valeur fondamentale de l'humanité. Enfin une cause digne."
 
     elias detendu "Ça explique beaucoup de choses chez toi."
 
@@ -359,7 +355,7 @@ label _8_0_1_CAFETERIA:
 
     "Je m’installe avec mon plateau."
 
-    lysa neutre "T’as une sale tête."
+    lysa neutre "T'as une sale tête."
 
     noam "Merci."
 
@@ -390,11 +386,12 @@ label _8_0_1_CAFETERIA:
 
     tomas panne "Je..."
     tomas gene "Je trouve ça reposant."
+    tomas "C'est... organisé."
 
     iris rire "Il me terrifie."
 
     tomas reflechit "Depuis le vote du jour six..."
-    tomas inquiet "Il n’y a eu aucune exécution."
+    tomas inquiet "Il n'y a eu aucune exécution."
 
     "Le bruit baisse légèrement."
 
@@ -418,7 +415,7 @@ label _8_0_1_CAFETERIA:
 
     "Julian se redresse légèrement."
 
-    julian rire "Si je résume bien."
+    julian rire "Si Julian résume bien."
 
     julian sourire "Elias renverse une pauvre tasse de café."
 
@@ -431,7 +428,7 @@ label _8_0_1_CAFETERIA:
     julian decontracte "Non mais regardez-le."
     julian sourire "Le héros de l’humanité."
 
-    elias detendu "J’ai rien fait."
+    elias detendu "J'ai rien fait."
 
     julian rire "FAUX."
     julian colere "Tu as vaincu l’intelligence artificielle qui dirige le monde."
@@ -443,6 +440,7 @@ label _8_0_1_CAFETERIA:
     iris sourire "Moi j’aime bien cette version."
 
     elias fatigue "Vous êtes cons."
+    elias "Mais c'est moins chaud quand vous êtes cons comme ça."
 
     "Mais il sourit quand même un peu."
 
@@ -452,7 +450,7 @@ label _8_0_1_CAFETERIA:
     menu:
         "Rentrer dans la blague.":
             noam "Franchement Elias."
-            noam "Respect."
+            noam "Respect. Enfin... statistiquement, c'est impressionnant."
 
             julian rire "Merci."
             julian sourire "Enfin quelqu’un de lucide."
@@ -461,6 +459,7 @@ label _8_0_1_CAFETERIA:
 
         "Rester prudent.":
             noam "Ou alors quelque chose déconne vraiment."
+            noam "Enfin, plus que d'habitude."
 
             "Le ton baisse légèrement."
 
@@ -481,7 +480,7 @@ label _8_0_1_CAFETERIA:
     "Juste réel."
 
     julian decontracte "Eh."
-    julian sourire "Alors profitons pendant qu’on peut."
+    julian sourire "Alors profitons pendant qu'on peut."
 
     elias detendu "Pour une fois, je suis d’accord avec lui."
 
@@ -490,10 +489,7 @@ label _8_0_1_CAFETERIA:
     "Les discussions repartent."
 
     "Plusieurs conversations en même temps."
-    "Des sujets idiots."
-    "De la nourriture."
-    "Du sommeil."
-    "Des souvenirs."
+    "Des sujets idiots. La nourriture. Le sommeil. Les souvenirs."
 
     think "On dirait presque des gens normaux."
 
@@ -505,11 +501,7 @@ label _8_0_1_CAFETERIA:
 
     think "Et ça me dérange toujours."
 
-    "Mais ici."
-    "Avec le bruit."
-    "Avec les autres."
-
-    "C’est plus facile de ne pas y penser."
+    "Mais ici, avec le bruit et les autres, c'est plus facile de ne pas y penser."
 
     jump _8_0_1_TEMPS_LIBRE_1
 
@@ -538,8 +530,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
 
     "L'après-midi était calme."
-    "Vraiment calme."
-    "Le genre de calme où on commence à se demander si c'est normal."
+    "Le genre de calme où l'on commence à chercher ce qui va casser."
 
     $ showGroup([
         ("lysa",   "neutre",      0.15),
@@ -554,9 +545,9 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     noam "Il était pas à la cafétéria ?"
 
     lysa "Si. Mais il est parti vite."
-    lysa neutre "Il avait l'air… totalement bouleversé."
+    lysa neutre "Il avait l'air... pas Kael."
 
-    noam "Comment ça ?!"
+    noam "Comment ça ?"
 
     ryn "Il tournait en rond dans les couloirs."
     ryn "Je l'ai croisé deux fois."
@@ -564,21 +555,23 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     "Je pose mon verre."
 
-    think "Qu'est ce qu'il foutait ?"
+    think "Qu'est-ce qu'il foutait ?"
 
     menu:
         "Aller voir s'il va bien.":
             $ noam_nature_j8 = "proactif"
             think "Quelque chose cloche."
             think "J'y vais."
-            noam "Je vais jeter un œil."
+            noam "Je vais jeter un oeil."
             lysa sourire "Bien."
+            lysa "Pour une fois, tu pars avant que quelqu'un te pousse."
 
         "Attendre, il est peut-être juste fatigué.":
             $ noam_nature_j8 = "reserve"
             think "On a tous nos moments."
             think "Je reste là."
             noam "Il sait où on est si besoin."
+            noam "Enfin... je suppose."
             ryn hesitation "Mouais..."
 
     $ hideGroup()
@@ -606,7 +599,6 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     "Il s'arrête au milieu de l'espace commun."
     "Il cherche quelqu'un des yeux."
     "Ou tout le monde."
-    "Difficile à dire."
 
     kael "C'est qui."
 
@@ -624,7 +616,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     elias "Kael ?"
 
-    kael "C'est qui qui est entré dans ma chambre."
+    kael "Qui est entré dans ma chambre."
 
     "Le silence tombe d'un coup."
     "Comme un couvercle."
@@ -635,14 +627,14 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     kael colere "Ma chambre."
     kael "Quelqu'un y est entré."
-    kael "Et a pris quelque chose."
+    kael "Quelqu'un a pris quelque chose."
 
     lysa choc "Comment tu sais que—"
 
     kael "Parce que je la cherche depuis ce matin."
-    kael colere "Parce que je l'ai cherchée partout."
-    kael "Parce qu'elle n'est NULLE PART."
-    kael "Et que je l'avais mise sous mon oreiller."
+    kael colere "Partout."
+    kael "Elle n'est nulle part."
+    kael "Elle était sous mon oreiller."
 
     pause 0.3
 
@@ -668,9 +660,9 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     pause 0.5
 
-    think "Et là quelqu'un est entré."
-    think "A cherché."
-    think "Et a pris exactement ça."
+    think "Quelqu'un est entré."
+    think "Quelqu'un a cherché."
+    think "Quelqu'un a pris exactement ça."
 
     pause 0.3
 
@@ -679,7 +671,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     "Enfin, pas que de rage."
 
     kael colere "Alors je répète."
-    kael "C'est QUI ?!"
+    kael "Qui."
 
     pause 0.4
 
@@ -712,9 +704,7 @@ label _8_0_1_APRES_STABILISATION:
 
     pause 0.6
 
-    "Kael est assis."
-    "Les coudes sur les genoux."
-    "La tête baissée."
+    "Kael est assis, coudes sur les genoux."
     "Il respire encore trop vite."
     "Mais il ne crie plus."
 
@@ -734,19 +724,19 @@ label _8_0_1_APRES_STABILISATION:
 
     pause 0.4
 
-    ryn hesitation "On peut... vérifier les chambres ?"
-    ryn "Pour voir si d'autres trucs ont—"
+    ryn hesitation "On peut vérifier les chambres."
+    ryn "Voir si d'autres trucs ont—"
 
-    kael "Ça changera rien."
+    kael "Ça ne changera rien."
 
     "Ryn se tait."
 
-    kael inquiet "Elle est plus là."
+    kael inquiet "Elle n'est plus là."
     kael "C'est tout."
 
     pause 0.6
 
-    elias "Qui aurait fait ça."
+    elias "Qui ferait ça ?"
 
     "Ce n'est pas vraiment une question."
     "C'est juste ce que tout le monde pense."
@@ -754,10 +744,9 @@ label _8_0_1_APRES_STABILISATION:
 
     pause 0.4
 
-    think "Qui."
+    think "Qui ?"
     think "Quelqu'un qui savait où chercher."
-    think "Quelqu'un qui connaît nos chambres."
-    think "Qui sait ce qu'on y garde."
+    think "Quelqu'un qui sait ce qu'on garde quand on croit être seul."
 
     pause 0.3
 
@@ -771,7 +760,6 @@ label _8_0_1_APRES_STABILISATION:
     "Elias."
     "Kael."
 
-    "Des visages que je connais depuis des jours."
     "Des gens avec qui j'ai mangé, voté, discuté."
 
     pause 0.3
@@ -800,26 +788,26 @@ label _8_0_1_APRES_STABILISATION:
     pause 0.6
 
     noam "Pour tout vous dire..."
-    noam "Moi aussi, j'ai perdu quelque chose..."
+    noam "Moi aussi, j'ai perdu quelque chose."
 
     "Tout le monde se retourne vers moi."
 
     pause 0.3
 
-    noam "Un dessin que ma petite soeur m'avait fait..."
+    noam "Un dessin que ma petite soeur m'avait fait."
     noam hesitation "Il a disparu aussi."
     noam "Ce matin. Je le cherchais depuis le réveil."
 
     lysa choc "Attends."
     lysa "Toi aussi ?"
 
-    noam "Ouais..."
+    noam "Ouais."
 
     pause 1.0
 
     elias "Donc c'est pas Kael qui a mal rangé."
-    elias "C'est... systématique."
-    elias "Comme mes outils hier."
+    elias "C'est pas toi non plus."
+    elias "C'est... systématique. Comme mes outils hier."
 
     pause 0.3
 
@@ -827,11 +815,9 @@ label _8_0_1_APRES_STABILISATION:
 
     pause 0.5
 
-    think "Deux objets."
-    think "Deux chambres."
-    think "Deux choses personnelles."
+    think "Deux objets. Deux chambres."
     think "Rien de pratique. Rien d'utile."
-    think "Juste ce qui compte pour nous."
+    think "Juste ce qui compte."
 
     pause 0.5
 
@@ -840,7 +826,7 @@ label _8_0_1_APRES_STABILISATION:
             $ noam_j8_choix_resolution = "direct"
             noam "C'est un message."
             noam "Quelqu'un veut qu'on sache qu'il peut entrer."
-            noam "Qu'il sait ce qu'on a."
+            noam "Qu'il sait ce qu'on garde."
             "Lysa croise les bras."
             lysa neutre "Ou quelqu'un qui veut juste qu'on se méfie les uns des autres."
             noam "Ça aussi c'est un message."
@@ -858,9 +844,8 @@ label _8_0_1_APRES_STABILISATION:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     "Les minutes passent."
-    "Puis, un par un, ils commencent à se lever."
-    "Pas forcément pour partir."
-    "Juste parce que rester assis à rien faire devient insupportable."
+    "Un par un, ils se lèvent."
+    "Pas pour partir. Pour ne pas rester immobiles."
 
     pause 0.3
 
@@ -882,7 +867,7 @@ label _8_0_1_APRES_STABILISATION:
 
     think "Ce que je sais :"
     think "Quelqu'un est entré dans nos chambres."
-    think "A pris exactement ce qui comptait."
+    think "Quelqu'un a pris exactement ce qui comptait."
     think "Et on n'a aucun moyen de savoir qui."
     think "Pour l'instant."
 
@@ -914,7 +899,7 @@ label _8_0_1_SOIREE:
     think "Et on est déjà en train de se déchirer."
 
     "Je regarde le lit. Le sac encore ouvert. Le placard mal fermé."
-    "J'ai vraiment foutu le bordel ce matin..."
+    think "J'ai vraiment foutu le bordel ce matin."
 
     think "Le dessin n’est toujours pas revenu."
 
@@ -934,7 +919,7 @@ label _8_0_1_SOIREE:
     "Je regarde l’écran mural. Toujours noir."
 
     think "Ou alors… c’est exactement ce qu’elle voulait."
-    think "Tout fonctionne peut être selon son plan ?"
+    think "Tout fonctionne peut-être selon son plan."
 
     pause 1.0
 

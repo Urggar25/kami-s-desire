@@ -97,16 +97,6 @@ screen j50_sael_room_pnc():
             at cover_screen
             action Return(item)
 
-    if j50_sael_pnc_score >= 3:
-        imagebutton:
-            idle "images/background/interact/retour.png"
-            hover "images/background/interact/retour_hover.png"
-            focus_mask True
-            xpos 0
-            ypos 0
-            at cover_screen
-            action Return("finish")
-
 screen j50_julian_surveillance_overlay(room_name="CHAMBRE 04"):
     zorder 180
     add Solid("#3d536033")
@@ -217,80 +207,47 @@ label _5_0_REVEIL_CHAMBRE:
     pause 1.2
 
     $ blink()
-    "J'ouvre les yeux sans avoir l'impression d'avoir dormi."
-
-    "Ma nuque me lance."
-    "Mes épaules sont dures."
-    "Cette sensation poisseuse des nuits où le corps s'est allongé, mais où la tête a continué à tourner."
+    think "J'ouvre les yeux sans avoir l'impression d'avoir dormi."
+    think "La nuque raide, les épaules dures. Mon corps s'est couché ; ma tête, non."
 
     pause 0.5
 
     $ blink()
-    "Je tourne la tête vers le plafond."
-    "Silence."
-    "Pas un vrai silence apaisant."
-    "Un silence froid. Un silence qui attend quelque chose."
+    think "Même le silence attend quelque chose."
 
     pause 0.6
 
-    think "Le vote."
-    think "Celui d'il y a deux jours."
-    think "Et celui qui arrive."
-
-    "Mon ventre se serre presque aussitôt."
-    "Depuis l'annonce de ce vote sur les frontières, tout s'est déjà figé."
-    "Les regards comme les discussions."
-    "Même les moments où quelqu'un essaie de plaisanter."
-    "Rien ne tient."
+    think "Le vote d'il y a deux jours. Celui de demain. Entre les deux, plus rien ne tient."
 
     $ blink()
 
-    think "Ça ne passera pas."
-    think "Personne n'y croit plus vraiment."
+    think "Ça ne passera pas. Personne n'y croit encore."
 
-    "Je me redresse lentement sur le lit."
+    think "Je me redresse. Il faut bien commencer quelque part."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "J'ai les traits lourds."
-    "Les yeux qui piquent."
-    "L'impression d'avoir vieilli de plusieurs jours pendant la nuit."
+    think "J'ai pris plusieurs jours pendant la nuit."
 
     pause 0.6
 
-    "Je reste assis au bord du lit."
-    "Les pieds posés au sol."
-    "Le dos courbé."
-    "Comme si me lever demandait déjà une décision, un lourd effort à faire."
+    think "Me lever ressemble déjà à une décision. Mauvais début."
 
     think "Si je vais à la cafétéria, ce sera pareil qu'hier."
-    think "Des gens qui ne parlent pas."
-    think "Des regards qui fuient au loin."
-    think "Et au fond de chaque tête, la même certitude non dite..."
-    think "Ce vote va échouer."
+    think "Des silences. Des regards qui fuient. Et la même certitude dans chaque tête : ce vote va échouer."
 
     pause 0.7
 
-    "Je déteste cette sensation."
-    "Pas seulement la peur de mal faire."
-    "Pas seulement la fatigue."
-    "Cette espèce d'impuissance molle."
-    "Ce moment où rien n'a encore explosé, mais où tout le monde agit déjà comme après la casse."
-
-    "Je me rends compte que j'ai parlé à voix haute après coup."
+    noam "Rien n'a encore explosé et on se comporte déjà comme après la casse."
+    think "Je l'ai dit à voix haute. Parfait."
 
     pause 0.5
 
-    "Je baisse les yeux vers mes mains."
-    "Elles sont immobiles, elles ne tremblent même pas."
+    think "Mes mains ne tremblent même pas. L'impuissance a donc une phase calme."
 
-    think "Non."
-    think "C'est trop facile."
-    think "Si je commence comme ça, la journée est déjà morte."
+    think "Non. Trop facile. Si je commence comme ça, la journée est déjà morte."
 
-    "Je serre un peu les doigts."
-    "Pas assez pour me faire mal."
-    "Juste assez pour sentir que je suis là, bien réveillé."
+    think "Je serre les doigts. Au moins, je suis bien réveillé."
 
     pause 0.5
 
@@ -298,29 +255,17 @@ label _5_0_REVEIL_CHAMBRE:
     think "L'ambiance est glaciale."
     think "Sael est fermée."
     think "Julian se mure dans sa chambre."
-    think "Et moi..."
-    think "Moi, j'ai même pas de bonne réponse."
-
-    "Mais je n'abandonnerai pas."
+    think "Et moi, je n'ai même pas de bonne réponse. Mais je n'abandonnerai pas."
 
     pause 0.6
 
-    "Le pire, c'est peut-être ça."
-    "Le fait que tout le monde ait une part de raison."
-    "Sael n'a pas tort."
-    "En fait, personne n'a tort..."
-    "Et pourtant, à la fin, il faudra quand même trancher."
-    "Comme si une décision acceptable était encore possible."
-    "Face tu gagnes, pile je perds."
+    think "Le pire, c'est que chacun a une part de raison. Et demain, il faudra trancher comme si une décision acceptable existait."
+    think "Face, tu gagnes. Pile, je perds."
 
     pause 0.5
 
-    "Je me lève enfin."
-    "Mes jambes protestent un peu."
-    "Je fais deux pas dans la chambre."
-
-    "L'air me paraît plus froid que d'habitude."
-    "Ou alors c'est juste moi."
+    think "Je me lève enfin. Première décision validée."
+    think "L'air paraît plus froid. Ou c'est juste moi."
 
     play sound sfx_announce
     pause 0.7
@@ -329,40 +274,38 @@ label _5_0_REVEIL_CHAMBRE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Bonjour mes petits ! Jour cinq, et ça fleure déjà le drame."
+    kami "Bonjour, mes petits ! Jour cinq, et ça fleure déjà le drame."
     kami "Ne vous inquiétez pas : votre prochaine chance de tout rater arrive dans vingt-quatre heures !"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Rappel amical : le vote sur la libre circulation aura lieu demain."
     kami "Vous aurez donc une nuit de plus pour vous convaincre que vous êtes capables de décider de quelque chose ensemble."
-    kami "Comme c'est amusant !."
+    kami "Comme c'est amusant !"
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "La cafétéria est ouverte. Vos rations sont prêtes. Les mêmes qu'hier."
     kami "Et comme toujours, j'observerai avec beaucoup d'intérêt ce que vous allez faire de cette belle matinée ensoleillée."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Oups, j'oubliais, vous ne pouvez pas voir la lumière du soleil depuis le Conclave !"
+    kami "Oups, j'oubliais : vous ne pouvez pas voir le soleil depuis le Conclave !"
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    "L'écran s'éteint sous les rires criards de Kami."
-    "Le silence retombe doucement."
+    think "L'écran s'éteint sur son rire. Le silence paraît presque poli en comparaison."
 
     pause 0.8
 
     think "La cafétéria."
 
-    "J'imagine l'ambiance."
+    think "J'imagine l'ambiance."
 
-    think "Est-ce que j'ai vraiment envie de traverser ça ce matin?"
+    think "Est-ce que j'ai vraiment envie de traverser ça ce matin ?"
 
     pause 0.5
 
-    "Je regarde le bout de pain posé sur ma table de nuit."
-    "Dur. Sec. Ça fera très bien l'affaire."
+    think "Le pain sur ma table est dur, sec et silencieux. Candidat idéal."
 
     pause 0.3
 
@@ -375,44 +318,28 @@ label _5_0_SKIP_CAFETERIA:
 
     pause 0.6
 
-    "Je prends le pain."
-    "Je l'examine une seconde."
-    "Il est vraiment sec."
+    think "Je prends le pain."
+    think "Il est vraiment sec."
 
     think "Je me demande si quelqu'un remarquera que je ne suis pas venu à la cafétéria."
 
-    "Je mords dedans."
-    "Ça craque sous les dents."
-    "Un goût de rien ou presque."
-    "Juste d'un bout de pain déjà sec et dur."
+    think "Je mords dedans."
+    think "Ça craque sous les dents. Le goût précis de presque rien."
 
     pause 0.4
 
-    "Je mastique lentement et difficilement."
-    "Debout. Seul."
-    "Dos à la porte de ma chambre."
-
-    "Il y a quelque chose d'étrangement honnête là-dedans."
-    "Pas de conversation à gérer."
-    "Pas de regard à soutenir."
-    "Pas d'hypocrisie."
-    "Juste moi et ce pain, sans témoin."
+    think "Debout, seul, dos à la porte. Pas de conversation, pas de regard, pas d'hypocrisie."
+    think "Juste ce pain et moi. Il est plus facile à affronter qu'un vote."
 
     think "C'est mieux comme ça, un peu plus reposant."
     think "Au moins pour cette heure-là."
 
     pause 0.7
 
-    "Je finis le morceau."
-    "J'essuie ma main sur mon pantalon."
+    think "Je termine le morceau et m'essuie la main. Petit-déjeuner réussi, selon des critères très bas."
 
-    "J'entends pendant ce temps là quelques pas dans le couloir."
-    "Quelques voix étouffées."
-    "Le groupe qui se lève, qui se déplace, qui se retrouve autour d'un plateau."
-    "Qui vit ou qui essaye."
-    "Je ne me sens pas capable de les rejoindre."
-    "Pas dans cet état."
-    "Pas avant d'avoir réfléchi à ce que je peux encore faire."
+    think "Des pas et des voix traversent le couloir. Le groupe se retrouve autour des plateaux."
+    think "Je ne peux pas les rejoindre. Pas avant de savoir ce que je peux encore faire."
 
     think "Sael. Si elle vote contre, c'est foutu."
     think "Il faut que je lui parle."
@@ -420,17 +347,13 @@ label _5_0_SKIP_CAFETERIA:
 
     pause 0.5
 
-    "Je sais qu'elle est encore là."
-    "Je l'ai entendue hier soir traverser le couloir, rentrer dans sa chambre, fermer sa porte."
-    "Elle avait essayé d'être discrète."
-    "Ce qui est, à sa façon, encore moins discret."
+    think "Sael est là. Je l'ai entendue rentrer hier soir en essayant d'être discrète. C'est ce qui l'a trahie."
 
     pause 0.4
 
-    "Je soupire."
-    "Je jette un dernier regard à ma chambre."
+    think "Je gagne la porte avant de trouver une nouvelle raison de rester."
 
-    think "Il me semble qu'il faut au moins essayer."
+    think "Il faut au moins essayer. Enfin… il me semble."
 
     stop music fadeout 1.2
 
@@ -444,39 +367,28 @@ label _5_0_CHERCHE_SAEL:
 
     pause 0.8
 
-    "Le couloir est presque vide."
-    "Quelques silhouettes au loin, qui se dirigent vers la cafétéria sans se presser."
-    "Personne ne me regarde, ils vaquent tous à leur occupation."
-
-    "Je marche vers la rangée de portes."
-    "Je sais laquelle est la sienne."
-    "Chambre 7."
-    "Elle a mis un petit morceau de tissu sombre sur la poignée, je ne sais pas vraiment ce que ça veut dire."
-    "Je n'ai jamais su si c'était pour signaler quelque chose ou juste une habitude."
+    think "Le couloir se vide vers la cafétéria. Personne ne me regarde."
+    think "Chambre sept. Un tissu sombre noué à la poignée. Signe ou habitude, je n'en sais rien."
 
     pause 0.4
 
-    "Je m'arrête devant."
-    "J'hésite un instant."
+    "Je m'arrête devant sa porte."
 
-    think "Je me demande si elle a envie de me parler."
-    think "Je me demande si quelqu'un a envie de me parler ce matin."
+    think "A-t-elle envie de me parler ? Est-ce que quelqu'un en a envie ce matin ?"
 
-    "Je frappe. Deux coups. Pas trop forts."
+    "Je frappe deux coups."
 
     play sound sfx_knock volume 8.0
     pause 1.0
 
-    "Silence."
+    think "Rien."
 
-    "Je frappe encore. Un peu plus fort."
+    "Je frappe encore, plus fort."
 
     play sound sfx_knock volume 8.0
     pause 0.8
 
-    "Un mouvement derrière la porte."
-    "Un bruit de tissu."
-    "Puis la porte s'entrouvre."
+    "Un froissement, puis la porte s'entrouvre."
 
     play sound sfx_door volume 8.0
 
@@ -484,34 +396,27 @@ label _5_0_CHERCHE_SAEL:
 
     sael "..."
 
-    "Elle me regarde."
-    "Elle n'a pas l'air particulièrement surprise."
-    "Comme si elle savait que ce serait moi."
+    think "Elle n'a pas l'air surprise. Comme si elle savait que ce serait moi."
 
     sael mefiant "Noam."
 
-    noam "Ce que j'entends, c'est que tu n'as pas encore mangé non plus."
+    noam "Tu n'as pas mangé non plus. Enfin… ce n'est pas pour ça que je suis là."
 
     sael "..."
 
-    sael neutre "Qu'est-ce que tu veux ?"
+    sael neutre "Qu'est-ce que tu viens chercher, Noam ?"
 
-    "Elle n'ouvre pas vraiment la porte."
-    "Juste assez pour parler."
-    "Pas assez pour m'inviter à entrer."
+    think "Assez ouverte pour parler. Pas assez pour entrer."
 
-    noam hesitation "Je pense qu'on devrait parler."
-    noam "Du vote."
-    noam "De demain."
+    noam hesitation "Je pense qu'on devrait parler du vote. De demain."
 
     pause 0.3
 
-    sael "Je savais que c'était pour ça."
+    sael "Je savais que tu viendrais pour ça."
 
-    "Elle s'écarte un peu."
-    "On ne peut pas vraiment dire qu'elle m'accueille. Elle semble juste tolérer ma présence."
+    "Elle s'écarte juste assez."
 
-    sael "Rentre."
+    sael "Entre. Les seuils ne sont pas faits pour les longues conversations."
 
     pause 0.3
 
@@ -519,22 +424,10 @@ label _5_0_CHERCHE_SAEL:
 
     pause 0.6
 
-    "Je m’attendais à une chambre froide."
-    "Pas à... ça."
-    "Le lit a disparu."
-    "Ou plutôt non. Il a été démonté."
+    think "Le lit a été démonté. Planches au sol, une couette, puis du vide."
+    think "Aux murs : ficelles, os, bois tressé. Des signes dans une langue que je ne sais pas lire."
 
-    "Des planches posées au sol."
-    "Une simple couette."
-    "Rien de plus."
-
-    "Le reste de la pièce est presque vide."
-
-    "Quelques objets pendent au mur."
-    "Des ficelles, des os, du bois tressé, des symboles que je ne comprends pas."
-
-    think "On dirait pas une chambre."
-    think "C'est quoi ce truc ?!"
+    think "Ça ne ressemble pas à une chambre. Plutôt à un lieu qui refuse d'oublier."
 
     $ j50_sael_pnc_score = 0
     $ j50_sael_pnc_seen = []
@@ -542,17 +435,16 @@ label _5_0_CHERCHE_SAEL:
 
 
     $ showP("noam", "hesitation", 0.25)
-    noam "T’as vraiment tout enlevé..."
+    noam "Tu as vraiment tout enlevé…"
 
     $ showP("sael", "neutre", 0.75)
-    sael "Ce qui ne sert pas prend de la place."
+    sael "Ce qui ne sert pas prend de la place. Et la place finit toujours par nous prendre quelque chose."
 
-    noam "Et tout ça, là... c’est ..."
+    noam "Et tout ça… les os, les fils…"
 
-    "Elle me regarde enfin."
-    "Pas vexée. Pas gênée. Juste fermée."
+    think "Elle me regarde enfin. Ni vexée ni gênée. Fermée."
 
-    sael "Dis-moi ce que t'as à dire. Rien d'autre."
+    sael "Dis ce que tu es venu dire. Le reste ne t'aidera pas."
 
     pause 0.3
 
@@ -563,14 +455,14 @@ label _5_0_CHERCHE_SAEL:
         sael fatigue "..."
         sael "C'est moins faux que le reste."
 
-    noam "Je me demande si tu as encore réfléchi à la question des frontières."
-    noam reflexion "Pas pour te convaincre de changer de camp. Juste... pour comprendre où tu en es."
+    noam "Tu as encore réfléchi aux frontières. Enfin— je ne viens pas te demander de changer de camp."
+    noam reflexion "Je veux comprendre où tu en es."
 
-    sael mefiant "Tu veux comprendre, ou tu veux me faire changer d'avis ?"
+    sael mefiant "Tu veux comprendre, ou tu veux trouver l'endroit où pousser ?"
 
-    noam "Ce que j'entends, c'est que pour toi c'est la même chose."
+    noam "Pour toi, c'est la même chose."
 
-    "Sael penche légèrement la tête."
+    think "Elle incline la tête. Touché."
 
     $ showP("sael", "reflechit", 0.75)
 
@@ -579,26 +471,21 @@ label _5_0_CHERCHE_SAEL:
 
     $ showP("noam", "reflexion", 0.25)
 
-    noam "Il me semble que la libre circulation ..."
-    noam "C'est des gens de Limen qui pourraient aller chercher du travail ailleurs."
-    noam "Des familles séparées qui pourraient se retrouver."
+    noam "La libre circulation, ce sont aussi des gens de Limen qui pourraient travailler ailleurs."
+    noam "Des familles séparées qui pourraient se retrouver. Enfin… ce n'est pas seulement une porte ouverte au danger."
 
     pause 0.3
 
     $ showP("sael", "desaccord", 0.75)
 
     sael "On en a déjà discuté."
-    sael "Quand une barrière tombe, les gens ne deviennent pas libres."
-    sael "Ils courent."
-    sael "Ils poussent."
-    sael "Ils prennent ce qu'ils peuvent avant que quelqu'un d'autre le prenne."
+    sael "Quand une barrière tombe, les gens ne deviennent pas libres. Ils courent. Ils poussent. Ils prennent avant d'être privés."
     sael "Ryn croit qu'il ouvre une porte."
     sael determine "Moi, je vois une digue qu'on casse."
 
-    sael "Tu parles de familles, de travail, de passages."
-    sael "Moi, je vois le froid qui rentre, les corps serrés aux grilles, la faim qui choisit les plus lents."
-    sael "Limen tient parce qu'on accepte des rites durs."
-    sael colere "Et si je dois passer pour cruelle pour que le sol tienne encore, je passerai pour cruelle."
+    sael "Tu parles de familles, de travail, de passages. Moi, je vois le froid entrer et les corps se serrer aux grilles."
+    sael "Je vois la faim choisir les plus lents. Limen tient parce que nous acceptons des rites durs."
+    sael colere "Si je dois paraître cruelle pour que le sol tienne encore, alors je porterai ce mot."
 
     if j50_sael_pnc_score >= 4:
         noam reflexion "Tu ne votes pas contre les voyages."
@@ -608,30 +495,25 @@ label _5_0_CHERCHE_SAEL:
         sael "C'est moins faux que le reste."
 
     sael determine "J'ai vu ce qui se passe quand une foule sent que la frontière ne répond plus."
-    sael "J'ai vu la peur devenir une main qui tire."
-    sael "Contrairement à ce que tu crois, je ne cherche pas à être aimée."
-    sael colere "Je n'ai simplement pas oublié ce que c'est que survivre."
+    sael "J'ai vu la peur devenir une main qui tire. Je ne cherche pas à être aimée, Noam."
+    sael colere "Je n'ai simplement pas oublié ce que survivre exige."
 
-    "Elle dit ça posément."
-    "Sans colère."
-    "Comme quelqu'un qui a déjà eu cette conversation dans sa tête cent fois, et qui n'attend plus rien de la vraie."
+    think "Elle ne hausse pas le ton. Elle a déjà vécu cette conversation cent fois, sans moi."
 
     pause 0.4
 
     $ showP("noam", "inquiet", 0.25)
 
-    noam "Ce que j'entends, c'est que tu voteras contre."
+    noam "Tu voteras contre."
 
     sael raison "Oui."
     sael determine "Et rien ne me fera changer d'avis."
 
     pause 0.4
 
-    "Le mot reste là."
-    "Simple. Sec."
-    "Sans appel."
+    think "Un oui simple, sec, sans appel."
 
-    sael raison "Et Mara votera contre aussi. On en a parlé hier soir."
+    sael raison "Mara votera contre aussi. Nous en avons parlé hier soir."
 
     pause 0.3
 
@@ -640,30 +522,24 @@ label _5_0_CHERCHE_SAEL:
     sael "Va lui demander toi-même."
     sael mefiant "Mais je crois que tu connais déjà la réponse."
 
-    "Je reste sans répondre."
-    "Ce n'est pas une attaque de sa part."
-    "C'est juste un fait qu'elle pose là, entre nous deux, comme une pierre froide sur une table."
+    think "Ce n'est pas une attaque. Seulement un fait posé entre nous comme une pierre froide."
 
     pause 0.5
 
     noam hesitation "Je me demande si..."
 
-    "Je m'arrête."
+    think "La phrase n'a pas de fin. Moi non plus."
 
     pause 0.3
 
     noam "Non. Rien."
 
-    "Je n'ai pas fini ma phrase parce que je n'avais rien à mettre dedans."
-    "Pas d'argument solide."
-    "Juste cette espèce d'espoir diffus qui ne ressemble même plus à grand-chose."
+    think "Pas d'argument. Seulement un espoir diffus qui ne sait même plus se défendre."
 
     $ showP("sael", "fatigue", 0.75)
 
-    sael "Tu n'étais pas obligé de venir."
-    sael "Ça ne changera rien."
-    sael fatigue "Mais... j'apprécie que tu aies essayé."
-    sael fatigue "Au moins on discute sans s'insulter."
+    sael "Tu n'étais pas obligé de venir. Cela ne changera rien."
+    sael fatigue "Mais j'apprécie que tu aies essayé. Nous avons parlé sans ajouter une blessure aux autres."
 
     pause 0.4
 
@@ -673,21 +549,17 @@ label _5_0_CHERCHE_SAEL:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "Sael me raccompagne sans un mot puis referme sa porte derrière moi."
-    "Le couloir est silencieux."
+    "Sael me raccompagne et referme sa porte."
 
     pause 0.6
 
-    think "Sael votera contre."
-    think "Mara votera contre."
+    think "Sael contre. Mara contre."
 
-    think "Et Iris... En fait est-ce que ça vaut le coup d'aller lui demander ?"
-    think "Avec deux voix contre, c'est certain."
-    think "Le vote échouera quoi qu'il arrive."
+    think "Et Iris… À quoi bon demander ? Deux non suffisent déjà à tuer le vote."
 
-    "Je fais quelques pas puis passe devant la chambre d'Iris."
+    "Je passe devant la chambre d'Iris."
     
-    think "Oh et puis merde !"
+    think "Et puis merde."
 
     "Je frappe."
 
@@ -702,41 +574,35 @@ label _5_0_CHERCHE_SAEL:
     $ showP("noam", "inquiet", 0.25)
     noam hesitation "Tu as une minute ?"
 
-    "Elle sort dans le couloir, les bras croisés sur elle-même."
-    "Elle a l'air d'avoir mal dormi, elle aussi."
+    think "Elle sort, bras croisés. Le sommeil ne lui a pas fait plus de cadeaux qu'à moi."
 
-    iris "Si c'est pour le vote..."
-    iris fatigue "Je sais déjà ce que je vais faire."
+    iris "Si c'est pour le vote, épargne-nous l'introduction. Ma décision est prise."
 
-    noam "Ce que j'entends, c'est que ta décision est prise."
+    noam "Oui. Ça, j'avais compris."
 
     iris "Oui."
 
     pause 0.3
 
-    iris triste "Je comprends le débat, vraiment."
-    iris triste "Le fait qu'il faut rendre aux gens la liberté d'aller où ils veulent."
-    iris triste "Mais on y arrivera pas, pas avec cet état d'esprit."
-    iris "Alors je ne vais pas perdre mon temps à essayer de faire quelque chose."
-    iris hesitation "Je ne vais pas participer à cette mascarade. Ça a déjà trop duré."
+    iris triste "Je comprends l'idée : rendre aux gens la liberté d'aller où ils veulent. Très beau sur l'écran."
+    iris triste "Mais sans plan, sans transition et avec ce groupe ? On n'ouvre pas des frontières. On lance une expérience sur des millions de cobayes."
+    iris hesitation "Je ne cautionnerai pas cette mascarade."
 
     pause 0.3
 
-    noam "Non mais tu..."
+    noam "Mais ne rien faire, c'est aussi—"
 
-    iris colere "Quoi ?!"
-    iris colere "Dis-moi que j'ai tort ?!"
+    iris colere "Aussi quoi ? Une décision ? Oui, merci, je connais le piège."
+    iris colere "Dis-moi que j'ai tort. Avec des faits, si possible. Ça nous changera."
 
-    "Je ne sais pas quoi lui dire."
-    "Je comprends sa logique."
-    "Mais quelque chose en moi est révulsé à l'idée de ne rien faire."
+    think "Je comprends sa logique. C'est justement ce qui me révulse."
 
-    noam "Rien..."
-    noam "C'est toi qui voit."
+    noam "Je ne peux pas. Enfin… pas avec des faits."
+    noam "Mais je déteste qu'on transforme notre peur d'échouer en raison de ne rien tenter."
 
-    iris triste 'Encore heureux.'
+    iris triste "Alors déteste. Moi, je voterai avec ce qu'on sait."
 
-    "Sur ces mots, elle referme la porte derrière elle."
+    "Iris referme la porte."
 
     hide iris
     hide noam
@@ -748,53 +614,37 @@ label _5_0_DISCUSSION_SAEL:
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
-    "Je reste immobile dans le couloir vide."
-    "La porte d'Iris est refermée."
-    "Celle de Sael aussi."
-    "Les murs métalliques absorbent tout."
+    think "Deux portes fermées. Les murs métalliques absorbent le reste."
 
     pause 0.5
 
-    "Je n'ai même pas besoin de compter mentalement."
-    "Douze représentants. Un seul contre et c'est foutu."
-    "On a déjà minimum deux contre."
+    think "Douze représentants. Un seul non suffit. J'en ai déjà deux."
 
     pause 0.4
 
     think "C'est déjà perdu."
 
-    "Cette pensée arrive sans drama."
-    "Calme. Presque comme une évidence que je savais déjà."
-    "Comme quand on calcule une somme et que le résultat ne surprend personne."
+    think "La conclusion arrive sans drame, comme le résultat banal d'un calcul."
 
     think "Julian s'est enfermé dans sa chambre."
-    think "Et moi... Je suis là à essayer de glaner quelques infos."
+    think "Et moi, je glane des certitudes sur notre échec. Travail essentiel."
 
     pause 0.4
 
-    "Je m'adosse au mur du couloir."
-    "Le métal est froid dans mon dos."
+    "Je m'adosse au mur."
 
     think "Je me demande si ce vote a encore un sens."
     think "Si quelque chose peut encore être rattrapé."
-    think "Est-ce que participer c'est cautionner ce système foireux ?"
-    think "Ou si on va juste... traverser ça."
-    think "Se faire démolir lentement en regardant chacun voter dans son coin."
-    think "Et recommencer, encore... Encore... Encore..."
+    think "Participer, est-ce cautionner ce système ? Ou seulement le traverser pendant qu'il nous démonte ?"
+    think "Puis recommencer. Encore. Encore."
 
     pause 0.6
 
-    "Je pousse un souffle par le nez."
-    "Long. Contrôlé."
-    "Le genre de souffle qu'on fait quand on évite de crier dans un couloir."
+    think "J'expire lentement. La version socialement acceptable d'un cri."
 
     pause 0.5
 
-    "Il reste quoi ?"
-
-    "Il reste aujourd'hui."
-    "Ce matin. Cet après-midi."
-    "Ce petit espace avant que tout se referme une fois encore et qu'on passe pour des cons."
+    think "Il reste quoi ? Aujourd'hui. Un petit espace avant que tout se referme."
 
     think "Je ne sais pas ce que ça donnera."
     think "Mais il me semble que je ne peux pas juste attendre que ça s'effondre."
@@ -803,8 +653,7 @@ label _5_0_DISCUSSION_SAEL:
     $ j45_vote_codex_active = True
     show screen day3_codex_logo
 
-    "Le dossier du vote reste accessible sur ma tablette."
-    "Les positions y sont rangées trop proprement pour ce qu'elles représentent."
+    think "Le dossier range nos positions avec une propreté obscène."
 
     jump _5_0_TEMPS_LIBRE_1
 
@@ -818,32 +667,18 @@ label _5_0_APRES_TEMPS_LIBRE_1:
 
     pause 0.8
 
-    "Je continue à déambuler dans le couloir."
-    "Sans vraiment avoir de direction précise."
-    "Juste le mouvement pour ne pas rester figé et seul."
-
-    "Les autres sont probablement encore à la cafétéria."
-    "Ou retournés dans leurs chambres."
-    "Le Conclave a quelque chose de désert dans ces moments-là."
-    "Comme un bateau entre deux vagues."
+    think "Je marche sans direction. Le mouvement donne à l'indécision une allure d'activité."
+    think "Le Conclave paraît désert, comme un bateau entre deux vagues."
 
     pause 0.5
 
-    "Je passe devant la salle commune."
-    "Elle est vide."
-    "Une chaise est renversée près d'une table comme si quelqu'un s'était battu."
-    "Un plateau est resté là, discret, pas débarrassé."
+    "La salle commune est vide : une chaise renversée, un plateau abandonné."
 
-    think "Il me semble que je devrais faire quelque chose."
-    think "Mais je ne sais vraiment pas quoi."
-    think "Convaincre qui ? De quoi faire exactement ?"
+    think "Je devrais faire quelque chose. Convaincre qui ? De quoi, exactement ?"
 
     pause 0.5
 
-    "Le problème, avec les convictions des autres, c'est qu'on ne peut pas vraiment les déplacer."
-    "On peut juste... s'asseoir à côté d'elles."
-    "Les écouter."
-    "Et espérer que ça bouge un peu."
+    think "Les convictions ne se déplacent pas. On s'assoit à côté, on écoute, on espère qu'elles bougent seules."
 
     think "Julian."
     think "Il doit encore être dans sa chambre."
@@ -854,9 +689,7 @@ label _5_0_APRES_TEMPS_LIBRE_1:
 
     think "Et la salle d'observation."
     think "Je n'y suis pas retourné depuis un moment."
-    think "Il y a des écrans qui montrent l'état des districts."
-    think "Peut-être qu'il y a quelque chose à comprendre là-bas..."
-    think "Quelque chose de concret, qui résiste à l'abstraction des votes."
+    think "Les écrans montrent l'état des districts. Peut-être quelque chose de concret, qui résiste enfin à l'abstraction des votes."
 
     pause 0.4
 
@@ -869,8 +702,7 @@ label _5_0_CHOIX_PRINCIPAL:
 
     pause 0.3
 
-    "Je reste planté là une seconde."
-    "Deux options, pas plus."
+    think "Deux options. C'est déjà une de trop."
 
     menu:
         "Aller frapper à la porte de Julian.":
@@ -890,30 +722,22 @@ label _5_0_0_JULIAN:
     pause 0.5
 
     $ doplleganger = 0
-    "Je remonte le couloir des chambres."
-    "Chambre 4. Julian."
-
-    "Je m'arrête devant la porte."
-    "De l'extérieur, rien."
-    "Pas de décoration. Pas de trace de lui."
-    "C'est presque drôle."
-    "Julian passe son temps à vouloir exister partout, mais sa porte, elle, pourrait être celle de n'importe qui."
+    think "Chambre quatre. Julian."
+    think "Aucune décoration, aucune trace de lui. Il veut exister partout, sauf sur sa propre porte."
 
     "Je frappe."
 
     play sound sfx_knock volume 8.0
     pause 1.0
 
-    "Pas de réponse."
+    think "Rien."
 
     "Je frappe encore."
 
     play sound sfx_knock volume 8.0
     pause 0.8
 
-    "Cette fois, j'entends du mouvement."
-    "Pas quelqu'un qu'on tire hors du lit."
-    "Plutôt quelqu'un qui choisit au bout de combien de secondes il va ouvrir."
+    think "Du mouvement. Pas quelqu'un qu'on réveille : quelqu'un qui choisit son temps d'entrée."
 
     noam "Julian. C'est moi."
 
@@ -926,22 +750,18 @@ label _5_0_0_JULIAN:
 
     "La porte s'ouvre."
 
-    "Julian est là."
-    "Et, pendant une seconde, j'ai un léger temps d'arrêt."
-
-    "Il n'a pas l'air détruit."
-    "Il n'a même pas l'air particulièrement atteint."
+    think "Julian n'a l'air ni détruit ni même atteint."
 
     julian sourire "Noam."
     julian taquin "Tu viens constater les dégâts ?"
 
-    noam hesitation "Je venais surtout voir comment t'allais."
+    noam hesitation "Je venais surtout voir comment tu allais."
 
     julian sourire "Oh."
-    julian taquin "C'est presque gentil."
+    julian taquin "C'est presque touchant."
 
     "Il se pousse."
-    "Cette fois, c'est une vraie invitation à entrer dans la chambre."
+    think "Cette fois, l'invitation est réelle. Ou parfaitement jouée."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
@@ -950,16 +770,11 @@ label _5_0_0_JULIAN:
     $ showP("julian", "sourire", 0.65)
     $ showP("noam", "reflexion", 0.30)
 
-    "Je rentre."
-    "La chambre est propre."
-    "Trop propre."
-    "Comme une pièce témoin."
-    "Rien qui dépasse."
-    "Rien qui vive vraiment."
+    think "La chambre est trop propre. Une pièce témoin où rien ne dépasse, rien ne vit."
 
     julian neutre "Alors ?"
     julian sourire "Tu veux me dire de ne pas prendre les résultats comme quelque chose de personnel ?"
-    julian taquin "Ou tu veux me sortir une de tes phrases calmes et évidemment utiles ?"
+    julian taquin "Ou m'offrir une de tes phrases calmes, prudentes et miraculeusement sans conclusion ?"
 
     noam "Disons que je ne suis pas vraiment venu avec un dialogue préétabli."
 
@@ -967,35 +782,26 @@ label _5_0_0_JULIAN:
 
     pause 0.4
 
-    "Il dit ça avec un petit sourire."
-    "Comme une blague."
-    "Sauf que malgré son sourire, je vois qu'il ne plaisante pas vraiment."
+    think "Le sourire dit plaisanterie. Ses yeux, non."
 
     noam reflexion "Tu n'as pas l'air aussi abattu que ce matin."
 
     julian sourire "Parce que je ne le suis pas."
 
-    "Il tourne la tête vers la porte."
-    "Puis il pose la main sur le brouilleur."
+    "Julian pose la main sur le brouilleur."
 
     play sound sfx_beep
     show screen j50_julian_surveillance_overlay
     pause 0.4
 
-    "Le grésillement disparaît."
-    "La caméra de la chambre pivote."
-    "L'image devient froide, trop nette, presque déshumanisée."
+    think "Le grésillement disparaît. La caméra pivote. Julian entre en scène."
 
     $ showP("julian", "triste", 0.72)
 
-    julian triste "Je..."
-    julian triste "J'avoue que c'est difficile."
-    julian decu "Je pensais vraiment qu'on pouvait faire quelque chose de grand."
-    julian triste "Et au final, vous avez eu peur."
+    julian triste "J'avoue que c'est difficile. Julian croyait sincèrement que nous pouvions accomplir quelque chose de grand."
+    julian decu "Et, au moment décisif, vous avez choisi la peur."
 
-    "Il baisse les yeux juste assez."
-    "Gros plan parfait."
-    "Même la douleur semble cadrée."
+    think "Il baisse les yeux juste assez. Même sa douleur connaît son cadre."
 
     noam reflexion "Arrête de..."
 
@@ -1008,11 +814,11 @@ label _5_0_0_JULIAN:
     $ showP("julian", "rire", 0.72)
 
     julian rire "Évidemment que je joue."
-    julian sourire "Quand Kami peut regarder, il faut lui donner quelque chose à regarder."
+    julian sourire "Quand Kami regarde, il faut lui donner quelque chose qu'elle ne puisse pas monter contre nous."
 
     noam desaccord "Donc tout ça, c'était pour l'image."
 
-    julian taquin "L'image, c'est ce qui reste quand les idées échouent."
+    julian taquin "L'image, c'est ce qui reste quand une idée échoue. Et ce qui permet à la suivante d'exister."
     julian sourire "Et le plus beau, c'est que même un échec peut me servir."
 
     play sound sfx_beep
@@ -1021,12 +827,11 @@ label _5_0_0_JULIAN:
 
     $ showP("julian", "triste", 0.72)
 
-    julian triste "Je suppose qu'il faut accepter la défaite avec dignité."
-    julian decu "Mais je continuerai à porter ce vote jusqu'au bout."
+    julian triste "Il faut accepter la défaite avec dignité."
+    julian decu "Mais Julian portera ce vote jusqu'au bout."
     julian triste "Même si certains préfèrent avoir peur."
 
-    "La phrase est pour moi."
-    "Le regard est pour la caméra."
+    think "La phrase est pour moi. Le regard, pour la caméra."
 
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
@@ -1035,12 +840,12 @@ label _5_0_0_JULIAN:
     $ showP("julian", "sourire", 0.65)
 
     julian sourire "Voilà."
-    julian taquin "Public et privé. Deux langues. Même bouche."
+    julian taquin "Public et privé. Deux langues, même bouche. Le talent consiste à ne mordre personne par accident."
 
     noam reflexion "Et toi, dans tout ça ?"
 
     julian neutre "Moi ?"
-    julian sourire "Je fais ce qu'il faut pour rester utile."
+    julian sourire "Julian fait ce qu'il faut pour rester utile."
 
     $ j50_julian_fissure = 0
 
@@ -1059,10 +864,10 @@ label _5_0_0_JULIAN:
             noam "Tu t'en fiches complètement."
             julian taquin "Trop simple."
 
-    julian sourire "Qu'il passe ou qu'il tombe, ce vote me donne quelque chose."
+    julian sourire "Qu'il passe ou qu'il tombe, ce vote laisse quelque chose à Julian."
     julian idee "S'il passe, j'ai porté une idée décisive."
     julian idee "S'il tombe, j'ai combattu votre peur du changement."
-    julian rire "Dans les deux cas, je suis gagnant."
+    julian rire "Dans les deux cas, l'histoire sait où me placer."
 
     menu:
         "Tu veux être indispensable.":
@@ -1094,8 +899,8 @@ label _5_0_0_JULIAN:
 
     $ showP("julian", "sourire", 0.65)
 
-    julian sourire "C'est bien, non ?"
-    julian taquin "Simple. Clair. Réutilisable."
+    julian sourire "C'est fort, non ?"
+    julian taquin "Simple. Clair. Prêt pour les archives."
 
     menu:
         "Tu veux qu'on ait besoin de toi pour y croire.":
@@ -1116,14 +921,14 @@ label _5_0_0_JULIAN:
 
         $ showP("julian", "inquietude", 0.65)
         julian inquiet "..."
-        julian "C'est une façon très injuste de résumer une ambition sincère."
+        julian "C'est une façon remarquablement injuste de résumer une ambition sincère."
 
         noam "Non."
         noam "C'est une façon très précise."
 
         $ showP("julian", "peur", 0.65)
-        julian peur "Tu crois que c'est drôle, ça ?"
-        julian inquiet "Tu crois que je n'ai pas pensé à ce qui reste quand personne n'a plus besoin de moi ?"
+        julian peur "Tu crois que c'est drôle ?"
+        julian inquiet "Tu crois que je n'ai jamais pensé à ce qui reste quand personne n'a plus besoin de moi ?"
 
     elif j50_julian_fissure >= 1:
         noam reflexion "Tu veux être celui autour de qui le vote s'organise."
@@ -1131,7 +936,7 @@ label _5_0_0_JULIAN:
 
         $ showP("julian", "reflexion", 0.65)
         julian reflexion "Peut-être."
-        julian sourire "Ou peut-être que tu as juste besoin que je sois plus simple que je ne le suis."
+        julian sourire "Ou peut-être as-tu besoin que Julian soit plus simple qu'il ne l'est."
 
     else:
         noam desaccord "Tu joues avec tout le monde."
@@ -1158,11 +963,8 @@ label _5_0_0_JULIAN:
     julian sourire "Bien sûr."
     julian taquin "Pourquoi est-ce que j'arrêterais juste avant la fin ?"
 
-    "Je m'arrête une seconde devant la porte."
-    "Brouilleur activé, il parle plus vrai."
-    "Brouilleur coupé, il se remet en place."
-
-    "Et le plus inquiétant, c'est que je ne sais pas quelle version est la plus dangereuse."
+    think "Brouilleur actif, il paraît plus vrai. Caméra active, il devient plus net."
+    think "Je ne sais pas quelle version est la plus dangereuse — ni laquelle est vraiment Julian."
 
     hide noam
     hide julian
@@ -1178,31 +980,21 @@ label _5_0_1_OBSERVATION:
     pause 0.5
 
     $ doplleganger = 1
-    "Je marche vers la salle d'observation."
-    "Kami ne nous a jamais interdit de surveiller les données du terminal après tout."
-    "Probablement parce que regarder le vide en face finit toujours par décourager les gens."
+    think "Kami ne nous interdit pas les données. Regarder le vide en face suffit probablement à décourager les curieux."
 
     scene bg_observation at adaptive_fullscreen with dissolve
 
     pause 0.8
 
-    "La salle est plongée dans cette lumière bleue permanente."
-    "Les baies vitrées donnent directement sur l'espace."
-    "Même après plusieurs jours, ça me prend quelques secondes à chaque fois d'habituer mes yeux à cette étrange atmosphère."
-    "Ce silence derrière les vitres qui n'a rien à voir avec le silence gêné des couloirs."
-    "Un silence qui existe depuis des milliards d'années et qui durera des milliards d'années encore après nous."
-    "Indifférent à nos votes, à notre lutte ou à notre survie."
+    think "Derrière les baies vitrées, un silence vieux de milliards d'années ignore nos votes et notre survie."
 
     $ showP("elias", "neutre", 0.75)
 
-    "Elias est là."
-    "Assis à la console centrale."
-    "Une tasse bien chaude dans une main."
-    "Les yeux sur un des écrans latéraux qui affiche les données des districts."
+    "Elias est assis à la console, une tasse à la main, les yeux sur les données des districts."
 
     elias neutre "Noam ?"
 
-    "Il ne s'est même pas retourné."
+    think "Il ne s'est même pas retourné."
 
     elias "Qu'est-ce que tu fais là ?"
 
@@ -1212,110 +1004,82 @@ label _5_0_1_OBSERVATION:
 
     $ showP("elias", "neutre", 0.75)
     elias "Ouais."
-    elias "La cafétéria, c'était... chargé."
+    elias "La cafétéria, c'était chaud. Genre vraiment chaud."
 
-    "Il prend une gorgée de café."
-    "Il continue à fixer l'écran sans tourner la tête."
+    think "Il boit sans quitter l'écran."
 
     $ showP("elias", "neutre", 0.75)
     elias "Regarde ça."
 
-    "Il pointe vers une partie spécifique du panneau droit."
-    "Il y a un flux de données qui défile en temps réel."
-    "Des chiffres, des courbes, des noms de districts."
+    "Des chiffres, des courbes et des noms défilent sur le panneau droit."
 
     $ showP("noam", "reflexion", 0.25)
 
-    noam "Faut que tu m'expliques, c'est quoi tous ces chiffres ?"
+    noam "Il va falloir m'expliquer. Enfin… ces chiffres disent quoi ?"
 
-    elias "Ici..."
+    elias "Là. Regarde."
 
     "Il pointe du doigt une liste de noms qui défile."
 
-    elias inquiet "C'est les noms des gens qui ont merdé."
-    elias "Et la règle qu'ils ont cassée."
+    elias inquiet "C'est les noms des gens qui ont merdé. Enfin, c'est ce que l'écran dit."
+    elias "À côté, t'as la règle qu'ils ont cassée."
 
-    "Je regarde la liste. Elle est longue. Bien trop longue."
-    "Je regarde les raisons : vol, bagarre, menace... Les raisons ne manquent pas, mais il y a toujours un point central : les tickets de rationnement."
-    "Les gens veulent juste manger."
+    think "Vol. Bagarre. Menace. La liste est longue et chaque ligne revient aux rations."
+    think "Ils veulent manger. Le système, lui, compte les infractions."
 
     pause 0.4
 
-    "Je m'approche de la console."
-    "Je veux voir plus précisément."
-    "Je tends le bras vers l'écran pour zoomer sur la courbe de population de Limen."
+    "Je me penche vers la courbe de Limen."
 
     pause 0.3
 
-    elias inquiet "Attends, regarde..."
+    elias inquiet "Attends, regarde ça—"
 
-    "Elias se relève pour me montrer quelque chose mais son coude accroche sa tasse."
+    "Son coude accroche la tasse."
     play sound sfx_drop
 
     scene bg_cg027 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg027")
 
-    "Un bruit mat."
-    "Le café se renverse en arc sur le bord de la console."
-    "Sur les touches."
-    "Sur le panneau de commande latéral."
+    "Le café se répand sur les touches et le panneau latéral."
 
-    elias "Et merde !"
+    elias "Et merde ! C'est chaud, c'est chaud—"
 
     call screen trace_qte(path_type="arc", time_limit=2.4, wait_time=0.15, tolerance=70, max_errors=3, anchor_x=960, anchor_y=620, start_radius=120)
     $ j50_coffee_trace_score = tq_progress
 
     if j50_coffee_trace_score >= 0.82:
-        "Mes doigts frôlent la porcelaine."
-        "Pas assez pour la retenir."
-        "Juste assez pour changer l'angle."
+        think "Mes doigts frôlent la porcelaine. Assez pour changer l'angle, pas pour la retenir."
     elif j50_coffee_trace_score >= 0.35:
-        "Je réagis trop tard."
-        "Ma main traverse l'air là où la tasse n'est déjà plus."
+        think "Trop tard. Ma main traverse l'endroit où la tasse n'est déjà plus."
     else:
-        "Je tends la main trop vite."
-        "Mon poignet heurte le bord de la console."
-        "Et la tasse part encore plus loin."
+        think "Trop vite. Mon poignet heurte la console et la tasse part plus loin."
 
-    "Il se lève d'un bond."
-    "Attrape sa tasse ; vide désormais."
-    "Le café ruisselle entre les touches."
+    "Elias récupère sa tasse vide. Le café ruisselle entre les touches."
 
-    "Un voyant passe au rouge."
-    "Un léger sifflement."
+    "Un voyant passe au rouge. La console siffle."
 
-    noam "C'est moi qui— j'ai failli te bousculer, je—"
+    noam "C'est moi qui— j'ai tendu le bras, enfin, j'ai dû te—"
 
-    elias inquiet "Non, non, c'était ma tasse."
+    elias inquiet "Non, c'était ma tasse. Mon coude. Ma connerie. C'est clair."
 
-    "Un autre voyant s'allume."
-    "Orange."
-    "Puis une fumée fine s'échappe d'une grille latérale."
-    "Pas de flammes. Juste cette fumée grise et acre qui monte tranquillement."
+    "Un voyant orange s'allume. Une fumée grise monte de la grille latérale."
 
-    elias inquiet "OK."
-    elias "Bon. OK. C'est pas mort."
-    elias "Enfin... pas encore."
+    elias inquiet "OK. Bon. C'est pas mort."
+    elias "Enfin… pas encore. C'est chaud."
 
-    "Un déclic mécanique quelque part dans le mur."
-    "Fort."
-    "Presque un claquement."
-
-    "On se retourne."
-
-    "La porte automatique de la salle s'est fermée."
-    "Hermétiquement."
-    "Le panneau de commande à côté affiche : VERROUILLAGE SÉCURITÉ — ANOMALIE DÉTECTÉE."
+    "Un claquement mécanique nous fait nous retourner. La porte est verrouillée."
+    think "VERROUILLAGE SÉCURITÉ — ANOMALIE DÉTECTÉE. Pour une fois, l'écran résume bien la situation."
 
     pause 0.5
 
-    elias panique "Ah."
+    elias panique "Ah. C'est chaud."
 
     noam peur "La porte est bloquée ?"
 
     elias inquiet "La salle s'est verrouillée."
-    elias "Sûrement une sécurité à la con."
-    elias "Quand un truc fume, ça ferme tout pour éviter qu'on crève dedans."
+    elias "Sûrement une sécurité à la con. Quand un truc fume, ça ferme tout pour éviter que le feu sorte."
+    elias "Ou pour éviter qu'on sorte. J'sais plus."
 
     noam hesitation "En principe."
 
@@ -1324,25 +1088,16 @@ label _5_0_1_OBSERVATION:
 
     pause 0.4
 
-    "La fumée continue de s'échapper de la grille."
-    "Fine. Légère."
-    "Pas de danger immédiat."
-    "Mais la porte reste fermée."
+    think "La fumée reste fine. La porte, fermée. L'espace ne juge même pas utile de réagir."
 
-    "Et derrière les baies vitrées, l'espace continue d'être indifférent à tout ça."
-
-    noam reflexion "..."
-
-    noam "Je me demande combien de temps on a."
+    noam "Combien de temps avant que ça devienne vraiment dangereux ?"
 
     $ showP("elias", "panique", 0.75)
-    elias panique "Putain, putain, putain..."
+    elias panique "Putain, putain, putain…"
     elias inquiet "Noam, viens là. Tu vas relier les fils."
     elias "Même couleur ensemble. Tu réfléchis pas. Tu relies."
 
-    "Elias arrache le panneau sous la console."
-    "Des fils pendent en grappes colorées."
-    "Ça fume encore un peu, mais moins."
+    "Elias arrache le panneau. Des grappes de fils pendent sous la console."
 
     call screen j50_wire_minigame
 
@@ -1360,71 +1115,56 @@ label _5_0_1_OBSERVATION:
 
     if j50_wire_errors > 0:
         elias colere "Non, pas celui-là !"
-        elias "Putain... bon. Pas grave."
-        elias fatigue "Enfin si, grave, mais on va dire pas grave."
+        elias "Putain… Bon. C'est grave, mais si je le dis trop fort ça va pas aider."
 
     if j50_wire_success >= 8:
-        elias rire "T'as fait ça mieux que moi."
-        elias "Ce qui est franchement pas rassurant."
+        elias rire "T'as fait ça mieux que moi. C'est bien pour nous, mais c'est chaud pour ma fierté."
     elif j50_wire_success >= 5:
-        elias fatigue "C'est moche."
-        elias "Mais ça tient."
+        elias fatigue "C'est moche. Mais ça tient."
     else:
-        elias inquiet "C'est pété de partout."
-        elias "Mais au moins, ça fume moins. On va prendre ça."
+        elias inquiet "C'est pété de partout. Mais ça fume moins. Franchement, on prend."
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
 
-    elias "La salle est ventilée."
-    elias fatigue "On n'étouffera pas."
-    elias "Mais ouais... on est bloqués là pour un moment."
+    elias "La ventilation tourne. On va pas étouffer."
+    elias fatigue "Mais ouais… on est bloqués un moment. C'est chaud, cette salle est censée observer les problèmes, pas en devenir un."
 
-    "Il s'assoit par terre."
-    "Le dos contre le panneau, loin de l'écran qui fume encore légèrement."
-    "Avec le calme de quelqu'un qui a déjà vécu des situations plus graves."
+    "Elias s'assoit par terre, loin du panneau."
 
     elias neutre "Tu voulais regarder les chiffres de Limen, non ?"
 
-    "Il pointe vers l'écran qui fonctionne encore."
+    think "Il désigne le seul écran qui fonctionne encore."
 
-    elias fatigue "On n'a nulle part où aller."
-    elias "Autant qu'on en parle."
+    elias fatigue "On a nulle part où aller. Autant en parler."
 
-    noam "Il me semble que ce n'est pas le contexte idéal pour une discussion sur le vote."
+    noam "Ce n'est pas exactement le contexte idéal pour parler du vote. Enfin…"
 
     elias rire "Non."
-    elias "Mais les bons moments, ici, ça n'existe plus vraiment."
+    elias "Les bons moments, ici, ça existe plus vraiment."
 
     pause 0.5
 
-    "Je m'assieds à côté de lui."
-    "Par terre. Le dos au mur."
-    "Les jambes tendues devant moi."
-    "On regarde tous les deux les voyants rouges et les données qui défilent toujours."
+    "Je m'assieds à côté de lui, dos au mur."
 
     elias inquiet "Tu crois que ça va passer, le vote ?"
 
-    noam "Je me demande si quelque chose peut encore changer avant demain."
+    noam "Tu veux savoir si ça peut encore passer. Enfin… je ne vois pas ce qui changerait avant demain."
 
     pause 0.3
 
     elias inquiet "Sael votera contre."
-    elias "C'est sûr."
+    elias "C'est sûr. Elle croit vraiment que ça ramènera la guerre."
 
     noam "Elle me l'a dit ce matin."
     noam hesitation "Mara aussi. Et Iris."
 
-    elias "..."
+    elias "… Ah."
 
-    "Silence."
+    elias fatigue "Alors c'est foutu. C'est chaud."
 
-    elias fatigue "Alors c'est foutu."
-
-    noam "Peut-être pas..."
-
-    "Je le dis sans vraiment y croire."
-    "On le sait tous les deux."
+    noam "Peut-être pas…"
+    think "Le mensonge manque de conviction. Elias a la gentillesse de ne pas le relever."
 
     pause 1.0
 
@@ -1434,41 +1174,34 @@ label _5_0_1_OBSERVATION:
 
     pause 3.0
 
-    "Les voyants passent de rouge à orange."
-    "La fumée s'est dissipée."
-    "Le panneau de la porte clignote."
+    "Les voyants passent à l'orange. Le panneau de la porte clignote."
 
     play sound "sound/sfx_door.ogg"
 
-    "Un déclic."
-    "La porte s'ouvre."
+    "La porte s'ouvre dans un déclic."
 
     $ showP("elias", "fatigue", 0.75)
 
-    elias fatigue "Ah. Libérés."
+    elias fatigue "Ah. Libérés. C'était moins long que prévu."
 
-    "Il se lève."
-    "S'étire le dos."
+    "Elias se relève en s'étirant."
 
-    elias "Je vais voir si j'ai pas cramé un truc important."
+    elias "Je vais voir si j'ai cramé un truc important. Enfin, plus important que la porte."
 
-    "Il examine la console."
-    "Quelques touches sont pâteuses."
-    "L'écran latéral est éteint."
+    think "Quelques touches collent. L'écran latéral est mort."
 
-    elias neutre "Rien de trop grave."
-    elias "Juste une caméra de relevé sur ce panneau."
-    elias fatigue "C'est de la merde, mais ça se répare."
+    elias neutre "Rien de trop grave. Juste une caméra de relevé."
+    elias fatigue "C'est de la merde, mais ça se répare. Moi aussi, en général."
 
-    noam reflexion "Je me demande si Kami va nous faire une remarque là-dessus."
+    noam reflexion "Kami va faire une remarque. La seule question, c'est combien."
 
     elias rire "Probablement."
-    elias "Elle fait des remarques sur tout."
+    elias "Elle fait des remarques sur tout. Même quand personne lui parle."
 
     hide noam
     hide elias
 
-    "Enfin libérés, on se sépare et je me retrouve dans le couloir."
+    think "Nous nous séparons dans le couloir, avec un vote condamné et une caméra en moins. Bilan mitigé."
 
     jump _5_0_FIN_JOURNEE
 
@@ -1480,30 +1213,15 @@ label _5_0_FIN_JOURNEE:
 
     pause 0.8
 
-    "L'après-midi se passe dans un calme de façade."
-    "Quelques échanges à la salle commune."
-    "Un repas du soir que j'avale sans vraiment y goûter."
-    "Des conversations qui démarrent et qui s'arrêtent avant d'aboutir à quelque chose d'intéressant."
+    think "L'après-midi se cache derrière un calme de façade : quelques échanges, un repas sans goût, des conversations sans fin."
 
-    "Je croise Tomas dans le couloir."
-    "Il fait un signe de tête."
-    "Pas de mots."
-    "Je fais pareil."
-
-    "Je croise Nyra."
-    "Elle a l'air de calculer quelque chose dans sa tête."
-    "Elle ne me demande rien."
-    "Je ne demande rien non plus."
+    think "Tomas me salue sans parler. Nyra calcule sans m'inclure. Je leur rends la pareille."
 
     pause 0.6
 
-    "La journée se finit comme elle a commencé."
-    "Lentement. Lourdement."
-    "Sans catastrophe, mais sans rien qui ressemble à une ouverture."
+    think "La journée finit comme elle a commencé : lourde, lente, sans catastrophe et sans ouverture."
 
-    "Kami ne fait pas d'annonce en début de soirée."
-    "Ce silence-là est presque pire."
-    "Comme si elle attendait quelque chose qu'on n'arrive pas à lui donner."
+    think "Kami ne fait aucune annonce. Son silence ressemble à une attente que nous décevons encore."
 
     pause 0.5
 
@@ -1513,48 +1231,34 @@ label _5_0_FIN_JOURNEE:
 
     pause 0.6
 
-    "Je m'assis au bord du lit."
-    "Pas encore prêt à m'allonger."
-    "Juste là. Posé sur le bord."
+    think "Je m'assieds au bord du lit, pas encore prêt à m'allonger."
 
     pause 0.5
 
-    think "Je pense que tout le monde a raison."
-    think "D'une certaine façon."
-    think "Et en même temps, le vote de demain sera contre."
+    think "Tout le monde a raison, d'une certaine façon. Et demain, le vote sera quand même contre."
 
     pause 0.4
 
     $ blink()
-    "Je m'allonge sur le dos."
+    "Je m'allonge."
 
     scene bg_cg012 at adaptive_fullscreen with dissolve
 
-    "La lumière bleue des veilleuses."
-    "Toujours là."
-    "Ce plafond qui ne répond jamais."
+    think "Lumière bleue. Plafond muet. Au moins deux choses restent fiables."
 
     $ blink()
 
-    "On a encore une nuit."
-    "Et un matin."
-    "Et puis le vote."
+    think "Une nuit. Un matin. Puis le vote."
 
-    think "Je me demande ce qu'on peut encore faire."
-    think "Je me demande si 'faire' est encore le bon mot."
-    think "Ou si parfois, il faut juste... être là."
-    think "Sans solution. Sans angle."
-    think "Juste présent dans quelque chose qui se casse."
+    think "Que peut-on encore faire ? Peut-être que « faire » n'est plus le bon mot."
+    think "Peut-être qu'il faut seulement rester là, sans solution, pendant que quelque chose se casse."
 
     pause 0.5
 
     $ blink()
 
-    "Quelque part dans le couloir, une porte s'ouvre et se referme."
-    "Des pas discrets."
-    "Quelqu'un qui n'arrive pas à dormir non plus."
-
-    "Ou quelqu'un qui fait semblant."
+    "Une porte s'ouvre dans le couloir. Des pas discrets passent devant ma chambre."
+    think "Quelqu'un ne dort pas. Ou fait semblant."
 
     pause 0.6
 
@@ -1572,25 +1276,20 @@ label _5_0_NUIT_RETOUR:
 
     $ blink()
 
-    "Je ferme les yeux."
-    "Pas parce que je suis en paix."
-    "Juste parce que le corps finit toujours par tomber de fatigue avant la tête."
+    think "Je ferme les yeux. Le corps tombe toujours avant la tête."
 
-    "Le vote de demain est probablement perdu."
-    "Et pourtant, quelque chose dans le fait de s'être levé ce matin, d'avoir frappé aux portes, d'avoir été là..."
-    "Quelque chose là-dedans ne ressemble pas tout à fait à la défaite."
+    think "Le vote est probablement perdu. Pourtant, m'être levé, avoir frappé aux portes, être resté là…"
+    think "Ça ne ressemble pas tout à fait à une défaite."
 
     pause 0.4
 
-    "Je ne sais pas encore ce que ça veut dire."
+    think "Je ne sais pas encore ce que ça veut dire."
 
     $ blink()
     pause 1.5
 
-    "Le sommeil arrive."
-    "Lent. Sans fracas."
-    "Juste le silence, et la certitude que demain sera difficile."
-    "Et que j'y serai quand même."
+    think "Demain sera difficile. J'y serai quand même."
+    "Le sommeil arrive sans fracas."
 
     $ current_day = 6
     pause 1.0
@@ -1617,6 +1316,8 @@ label _5_0_SAEL_PNC:
         think "Il a été refusé."
         sael neutre "Le lit était trop mou."
         sael "On dort mal quand le corps oublie le sol."
+        if j50_sael_pnc_score >= 3:
+            return
         jump _5_0_SAEL_PNC
 
     if _j50_sael_choice == "crane":
@@ -1624,6 +1325,8 @@ label _5_0_SAEL_PNC:
         think "Je ne sais pas si c'est un souvenir, un avertissement ou une prière."
         think "Chez elle, même les morts semblent avoir une fonction."
         sael neutre "Ne touche pas."
+        if j50_sael_pnc_score >= 3:
+            return
         jump _5_0_SAEL_PNC
 
     if _j50_sael_choice == "affaires":
@@ -1631,6 +1334,8 @@ label _5_0_SAEL_PNC:
         think "Elle n'a pas décoré sa chambre."
         think "Elle l'a rendue habitable selon ses propres règles."
         think "Pas confortable. Habitable."
+        if j50_sael_pnc_score >= 3:
+            return
         jump _5_0_SAEL_PNC
 
     return
@@ -1640,10 +1345,8 @@ label _5_0_NUIT_OUVRIR:
 
     scene bg_dortoir at adaptive_fullscreen with dissolve
 
-    "J'ouvre la porte juste assez pour voir le couloir."
-    "Une silhouette tourne au bout de l'angle."
-    "Trop vite pour que je voie son visage."
-    "Pas assez vite pour que je puisse croire que je l'ai inventée."
+    "J'entrouvre la porte. Une silhouette disparaît au bout du couloir."
+    think "Trop vite pour un visage. Pas assez pour l'inventer."
 
     think "Le Conclave ne dort pas."
     think "Il se déplace à voix basse."
@@ -1654,8 +1357,7 @@ label _5_0_NUIT_OUVRIR:
 
 label _5_0_NUIT_ECOUTER:
 
-    "Je reste immobile."
-    "Les pas ralentissent derrière la porte."
+    think "Je reste immobile. Les pas ralentissent derrière la porte."
 
     if doplleganger == 0:
         julian "Je voulais aider."
@@ -1668,7 +1370,7 @@ label _5_0_NUIT_ECOUTER:
         elias "Mais ça tient."
         elias "Faut que ça tienne jusqu'à demain, c'est tout."
 
-    "Puis les pas s'éloignent."
+    think "Puis les pas s'éloignent."
     jump _5_0_NUIT_RETOUR
 
 

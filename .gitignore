@@ -1,0 +1,25 @@
+# Ren'Py generated files
+*.rpyc
+*.rpymc
+*.rpyb
+game/cache/
+game/saves/
+
+# Runtime logs and crash reports
+errors.txt
+traceback.txt
+log.txt
+log/
+
+# Local build/package output
+build/
+dist/
+*.zip
+*.tar.bz2
+
+# Local editor/system noise
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+

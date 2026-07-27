@@ -34,57 +34,56 @@ screen pnc_livraison():
     zorder 200
 
     add Solid("#000")
-
-    add "images/background/bg_sas.png" at cover_screen
-
-    imagebutton:
-        idle "images/background/interact/livraison/porte.png"
-        hover "images/background/interact/livraison/porte_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("LIV_PNC_PORTE")
-
-    imagebutton:
-        idle "images/background/interact/livraison/caisses.png"
-        hover "images/background/interact/livraison/caisses_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("LIV_PNC_CAISSES")
-
-    imagebutton:
-        idle "images/background/interact/livraison/combinaisons.png"
-        hover "images/background/interact/livraison/combinaisons_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("LIV_PNC_COMBIS")
-
-    imagebutton:
-        idle "images/background/interact/livraison/terminal.png"
-        hover "images/background/interact/livraison/terminal_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("LIV_PNC_TERMINAL")
+    use room_scene_background("sas")
+    use room_scene_interactions("sas")
 
 
 
     if social_free_time_active() and sael_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/sael/neutre.png", zoom=0.75)
-            hover Transform("images/character/sael/raison.png", zoom=0.75)
+            idle Transform(character_image("sael", "neutre"), zoom=0.75)
+            hover Transform(character_image("sael", "raison"), zoom=0.75)
             focus_mask True
             xalign 0.76
             yalign 0.30
             action [SetVariable("last_room_label", "LIVRAISON_TP"), Jump("SAEL_LINK_INTERACT")]
 
-    use exploration_retour_button
+
+label sas1_porte_couloir_sas:
+    $ corridor_current = "sas"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label sas1_sas:
+    jump LIV_PNC_PORTE
+
+
+label sas1_digicode_sas:
+    "Le digicode commande les verrous de la grande porte du sas."
+    "L'écran affiche pression stabilisée, atmosphère confinée et accès extérieur interdit."
+    "Aucune touche ne réagit sans autorisation logistique."
+    think "Même avec le bon code, Kami saurait qui a essayé de sortir."
+    jump LIVRAISON_TP
+
+
+label sas1_terminal:
+    jump LIV_PNC_TERMINAL
+
+
+label sas2_bouteilles_oxygenes:
+    "Quatre bouteilles d'oxygène sont fixées sur leur support."
+    "Les manomètres sont au maximum et chaque valve porte un scellé de contrôle."
+    think "De quoi respirer dehors. Pas de quoi oublier qu'il faudrait d'abord y arriver."
+    jump LIVRAISON_TP
+
+
+label sas2_tenues:
+    "Trois combinaisons pressurisées attendent dans leurs stations de charge."
+    "Les casques sont opaques, les joints neufs et les modules dorsaux déjà alimentés."
+    "Aucun nom. Aucune taille indiquée."
+    think "Elles sont prêtes pour n'importe lequel d'entre nous. Ce n'est pas vraiment rassurant."
+    jump LIVRAISON_TP
+
 
 label LIV_PNC_PORTE:
     window auto

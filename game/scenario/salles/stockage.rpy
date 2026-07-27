@@ -36,41 +36,23 @@ screen pnc_stockage():
     zorder 200
 
     add Solid("#000")
-
-    # BG COVER
-    add "images/background/bg_stockage.png" at cover_screen
-
-    # HOTSPOTS
-
-    imagebutton:
-        idle "images/background/interact/stockage/etageres.png"
-        hover "images/background/interact/stockage/etageres_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("STO_PNC_ETAGERES")
-
-    imagebutton:
-        idle "images/background/interact/stockage/caisses.png"
-        hover "images/background/interact/stockage/caisses_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("STO_PNC_CAISSES")
-
-    imagebutton:
-        idle "images/background/interact/stockage/reglement.png"
-        hover "images/background/interact/stockage/reglement_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("STO_PNC_REGLEMENT")
+    use room_scene_background("stockage")
+    use room_scene_interactions("stockage")
 
 
-    use exploration_retour_button
+label stockage_porte_couloir_sas:
+    $ corridor_current = "sas"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label stockage_stockage:
+    "Les rayonnages couvrent presque tous les murs."
+    "Les cartons sont classés par catégorie, date de livraison et niveau de priorité."
+    "Pièces de rechange, produits d'entretien, câbles, filtres et kits d'urgence : tout est compté."
+    think "Assez pour vivre longtemps. Ou assez pour mesurer exactement ce qui disparaît."
+    jump STOCKAGE_TP
+
+
 
 label STO_PNC_ETAGERES:
     window auto

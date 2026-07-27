@@ -23,8 +23,12 @@ init python:
         "detendu": ("corps_1", "bras_long_corps", "bouche_sourire", "yeux_content"),
         "raison": ("corps_1", "bras_sur_torse", "bouche_neutre", "yeux_neutre"),
         "determine": ("corps_1", "bras_croise", "bouche_neutre", "yeux_colere"),
-        "hesitation": ("corps_1", "bras_sur_torse", "bouche_decu", "yeux_peur"),
+        "hesitation": ("corps_1", "bras_long_corps", "bouche_decu", "yeux_peur"),
         "choc": ("corps_1", "bras_en_air", "bouche_peur", "yeux_peur"),
+        "taquin": ("corps_1", "bras_en_air", "bouche_content", "yeux_content"),
+        "surpris": ("corps_1", "bras_sur_torse", "bouche_decu", "yeux_peur"),
+        "triste": ("corps_1", "bras_croise", "bouche_decu", "yeux_blase"),
+        "peur": ("corps_1", "bras_long_corps", "bouche_peur", "yeux_peur"),
     }
 
     def _elias_asset(name):
@@ -59,42 +63,29 @@ init python:
     def elias_expression(expr):
         return DynamicDisplayable(_elias_layered_expression, expr)
 
-# image elias colere            = im.FactorScale("images/character/elias/colere.png", 0.60)
 image elias colere            = elias_expression("colere")
-# image elias colere_noire      = im.FactorScale("images/character/elias/colere_noire.png", 0.60)
 image elias colere_noire      = elias_expression("colere_noire")
-# image elias content           = im.FactorScale("images/character/elias/content.png", 0.60)
 image elias content           = elias_expression("content")
-# image elias desespoir         = im.FactorScale("images/character/elias/desespoir.png", 0.60)
+image elias sourire           = elias_expression("content")
 image elias desespoir         = elias_expression("desespoir")
-# image elias ecoute            = im.FactorScale("images/character/elias/ecoute.png", 0.60)
 image elias ecoute            = elias_expression("ecoute")
-# image elias fatigue           = im.FactorScale("images/character/elias/fatigue.png", 0.60)
 image elias fatigue           = elias_expression("fatigue")
-# image elias inquiet           = im.FactorScale("images/character/elias/inquiet.png", 0.60)
 image elias inquiet           = elias_expression("inquiet")
-# image elias jaloux            = im.FactorScale("images/character/elias/jaloux.png", 0.60)
 image elias jaloux            = elias_expression("jaloux")
-# image elias joie              = im.FactorScale("images/character/elias/joie.png", 0.60)
 image elias joie              = elias_expression("joie")
-# image elias neutre            = im.FactorScale("images/character/elias/neutre.png", 0.60)
 image elias neutre            = elias_expression("neutre")
-# image elias panique           = im.FactorScale("images/character/elias/panique.png", 0.60)
 image elias panique           = elias_expression("panique")
-# image elias rire              = im.FactorScale("images/character/elias/rire.png", 0.60)
 image elias rire              = elias_expression("rire")
-# image elias reflechit              = im.FactorScale("images/character/elias/reflechit.png", 0.60)
 image elias reflechit         = elias_expression("reflechit")
-# image elias detendu              = im.FactorScale("images/character/elias/detendu.png", 0.60)
 image elias detendu           = elias_expression("detendu")
-# image elias raison              = im.FactorScale("images/character/elias/raison.png", 0.60)
 image elias raison            = elias_expression("raison")
-# image elias determine              = im.FactorScale("images/character/elias/determine.png", 0.60)
 image elias determine         = elias_expression("determine")
-# image elias hesitation              = im.FactorScale("images/character/elias/hesitation.png", 0.60)
 image elias hesitation        = elias_expression("hesitation")
-# image elias choc              = im.FactorScale("images/character/elias/choc.png", 0.60)
 image elias choc              = elias_expression("choc")
+image elias taquin              = elias_expression("taquin")
+image elias surpris              = elias_expression("surpris")
+image elias triste              = elias_expression("triste")
+image elias peur              = elias_expression("peur")
 
 # ======================
 # MARA
@@ -123,6 +114,9 @@ init python:
         "fatigue": ("corps", "bras_derriere_tete", "bouche_doute", "yeux_fatigue"),
         "ivre": ("corps", "bras_derriere_tete", "bouche_taquin", "yeux_fatigue"),
         "vide": ("corps", "bras_derriere_tete", "bouche_doute", "yeux_fatigue"),
+        "peur": ("corps", "bras_derriere_tete", "bouche_colere", "yeux_mefiant"),
+        "triste": ("corps", "bras_main_hanche", "bouche_doute", "yeux_fatigue"),
+        "surpris": ("corps", "bras_explication", "bouche_doute", "yeux_mefiant"),
     }
 
     def _mara_asset(name):
@@ -157,42 +151,28 @@ init python:
     def mara_expression(expr):
         return DynamicDisplayable(_mara_layered_expression, expr)
 
-# image mara agace              = im.FactorScale("images/character/mara/agace.png", 0.60)
 image mara agace              = mara_expression("agace")
-# image mara colere             = im.FactorScale("images/character/mara/colere.png", 0.60)
 image mara colere             = mara_expression("colere")
-# image mara colere_noire       = im.FactorScale("images/character/mara/colere_noire.png", 0.60)
 image mara colere_noire       = mara_expression("colere_noire")
-# image mara content            = im.FactorScale("images/character/mara/content.png", 0.60)
 image mara content            = mara_expression("content")
-# image mara doute              = im.FactorScale("images/character/mara/doute.png", 0.60)
 image mara doute              = mara_expression("doute")
-# image mara jaloux             = im.FactorScale("images/character/mara/jaloux.png", 0.60)
 image mara jaloux             = mara_expression("jaloux")
-# image mara joie               = im.FactorScale("images/character/mara/joie.png", 0.60)
 image mara joie               = mara_expression("joie")
-# image mara mefiant            = im.FactorScale("images/character/mara/mefiant.png", 0.60)
 image mara mefiant            = mara_expression("mefiant")
-# image mara neutre             = im.FactorScale("images/character/mara/neutre.png", 0.60)
 image mara neutre             = mara_expression("neutre")
-# image mara reflexion          = im.FactorScale("images/character/mara/reflexion.png", 0.60)
 image mara reflexion          = mara_expression("reflexion")
-# image mara rire               = im.FactorScale("images/character/mara/rire.png", 0.60)
 image mara rire               = mara_expression("rire")
-# image mara rire_profond       = im.FactorScale("images/character/mara/rire_profond.png", 0.60)
 image mara rire_profond       = mara_expression("rire_profond")
-# image mara stress             = im.FactorScale("images/character/mara/stress.png", 0.60)
 image mara stress             = mara_expression("stress")
-# image mara sourire            = im.FactorScale("images/character/mara/sourire.png", 0.60)
 image mara sourire            = mara_expression("sourire")
-# image mara taquin             = im.FactorScale("images/character/mara/taquin.png", 0.60)
 image mara taquin             = mara_expression("taquin")
-# image mara fatigue            = im.FactorScale("images/character/mara/fatigue.png", 0.60)
 image mara fatigue            = mara_expression("fatigue")
-# image mara ivre               = im.FactorScale("images/character/mara/ivre.png", 0.60)
 image mara ivre               = mara_expression("ivre")
-# image mara vide               = im.FactorScale("images/character/vide.png", 0.60)
 image mara vide               = mara_expression("vide")
+image mara peur               = mara_expression("peur")
+image mara reflechit               = mara_expression("reflexion")
+image mara triste               = mara_expression("triste")
+image mara surpris               = mara_expression("surpris")
 
 # ======================
 # NOAM
@@ -224,6 +204,8 @@ init python:
         "fatigue": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
         "panique": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
         "panne_creep": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+        "doute": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_suspiscion"),
+        "calme": ("corps", "bras_long_corps", "bouche_sourire", "yeux_fatigue"),
     }
 
     def _noam_asset(name):
@@ -259,6 +241,7 @@ init python:
         return DynamicDisplayable(_noam_layered_expression, expr)
 
 image noam colere              = noam_expression("colere")
+image noam colere2             = noam_expression("colere")
 image noam culpabilite         = noam_expression("culpabilite")
 image noam desaccord           = noam_expression("desaccord")
 image noam desespoir           = noam_expression("desespoir")
@@ -267,10 +250,12 @@ image noam hesitation          = noam_expression("hesitation")
 image noam inquiet             = noam_expression("inquiet")
 image noam joie                = noam_expression("joie")
 image noam neutre              = noam_expression("neutre")
+image noam vide                = noam_expression("neutre")
 image noam panne               = noam_expression("panne")
 image noam peur                = noam_expression("peur")
 image noam raison              = noam_expression("raison")
 image noam reflexion           = noam_expression("reflexion")
+image noam reflechit           = noam_expression("reflexion")
 image noam rire                = noam_expression("rire")
 image noam sourire             = noam_expression("sourire")
 image noam surpris             = noam_expression("surpris")
@@ -280,6 +265,8 @@ image noam fatigue             = noam_expression("fatigue")
 image noam faible              = noam_expression("fatigue")
 image noam panique             = noam_expression("panique")
 image noam panne_creep         = noam_expression("panne_creep")
+image noam doute         = noam_expression("doute")
+image noam calme         = noam_expression("calme")
 
 # ======================
 # LYSA
@@ -360,6 +347,7 @@ image lysa opposition          = lysa_expression("opposition")
 image lysa panne               = lysa_expression("panne")
 image lysa peur                = lysa_expression("peur")
 image lysa reflexion           = lysa_expression("reflexion")
+image lysa reflechit           = lysa_expression("reflexion")
 image lysa rire                = lysa_expression("rire")
 image lysa salut               = lysa_expression("salut")
 image lysa sourire             = lysa_expression("sourire")
@@ -434,41 +422,25 @@ init python:
     def julian_expression(expr):
         return DynamicDisplayable(_julian_layered_expression, expr)
 
-# image julian decu               = im.FactorScale("images/character/julian/decu.png", 0.60)
 image julian decu               = julian_expression("decu")
-# image julian determine          = im.FactorScale("images/character/julian/determine.png", 0.60)
 image julian determine          = julian_expression("determine")
-# image julian hesitation         = im.FactorScale("images/character/julian/hesitation.png", 0.60)
 image julian hesitation         = julian_expression("hesitation")
-# image julian idee               = im.FactorScale("images/character/julian/idee.png", 0.60)
 image julian idee               = julian_expression("idee")
-# image julian inquiet            = im.FactorScale("images/character/julian/inquiet.png", 0.60)
 image julian inquiet            = julian_expression("inquiet")
-# image julian joie               = im.FactorScale("images/character/julian/joie.png", 0.60)
+image julian inquietude         = julian_expression("inquiet")
 image julian joie               = julian_expression("joie")
-# image julian neutre             = im.FactorScale("images/character/julian/neutre.png", 0.60)
 image julian neutre             = julian_expression("neutre")
-# image julian panne              = im.FactorScale("images/character/julian/panne.png", 0.60)
 image julian panne              = julian_expression("panne")
-# image julian peur               = im.FactorScale("images/character/julian/peur.png", 0.60)
 image julian peur               = julian_expression("peur")
-# image julian reflexion          = im.FactorScale("images/character/julian/reflexion.png", 0.60)
 image julian reflexion          = julian_expression("reflexion")
-# image julian rire               = im.FactorScale("images/character/julian/rire.png", 0.60)
+image julian reflechit          = julian_expression("reflexion")
 image julian rire               = julian_expression("rire")
-# image julian sourire            = im.FactorScale("images/character/julian/sourire.png", 0.60)
 image julian sourire            = julian_expression("sourire")
-# image julian surpris            = im.FactorScale("images/character/julian/surpris.png", 0.60)
 image julian surpris            = julian_expression("surpris")
-# image julian taquin             = im.FactorScale("images/character/julian/taquin.png", 0.60)
 image julian taquin             = julian_expression("taquin")
-# image julian triste             = im.FactorScale("images/character/julian/triste.png", 0.60)
 image julian triste             = julian_expression("triste")
-# image julian detendu            = im.FactorScale("images/character/julian/detendu.png", 0.60)
 image julian detendu            = julian_expression("detendu")
-# image julian decontracte        = im.FactorScale("images/character/julian/decontracte.png", 0.60)
 image julian decontracte        = julian_expression("decontracte")
-# image julian colere             = im.FactorScale("images/character/julian/colere.png", 0.60)
 image julian colere             = julian_expression("colere")
 
 # ======================
@@ -547,6 +519,7 @@ image iris neutre               = iris_expression("neutre")
 image iris panne                = iris_expression("panne")
 image iris peur                 = iris_expression("peur")
 image iris reflexion            = iris_expression("reflexion")
+image iris reflechit            = iris_expression("reflexion")
 image iris rire                 = iris_expression("rire")
 image iris sourire              = iris_expression("sourire")
 image iris surpris              = iris_expression("surpris")
@@ -562,27 +535,98 @@ image iris vide                 = iris_expression("vide")
 # ======================
 # TOMAS
 # ======================
-image tomas colere              = im.FactorScale("images/character/tomas/colere.png", 0.60)
-image tomas colere_noire        = im.FactorScale("images/character/tomas/colere_noire.png", 0.60)
-image tomas culpabilite         = im.FactorScale("images/character/tomas/culpabilite.png", 0.60)
-image tomas desaccord           = im.FactorScale("images/character/tomas/desaccord.png", 0.60)
-image tomas desespoir           = im.FactorScale("images/character/tomas/desespoir.png", 0.60)
-image tomas determine           = im.FactorScale("images/character/tomas/determine.png", 0.60)
-image tomas inquiet             = im.FactorScale("images/character/tomas/inquiet.png", 0.60)
-image tomas joie                = im.FactorScale("images/character/tomas/joie.png", 0.60)
-image tomas mefiant             = im.FactorScale("images/character/tomas/mefiant.png", 0.60)
-image tomas neutre              = im.FactorScale("images/character/tomas/neutre.png", 0.60)
-image tomas panne               = im.FactorScale("images/character/tomas/panne.png", 0.60)
-image tomas raison              = im.FactorScale("images/character/tomas/raison.png", 0.60)
-image tomas reflechit           = im.FactorScale("images/character/tomas/reflechit.png", 0.60)
-image tomas rire                = im.FactorScale("images/character/tomas/rire.png", 0.60)
-image tomas surpris             = im.FactorScale("images/character/tomas/surpris.png", 0.60)
-image tomas taquin              = im.FactorScale("images/character/tomas/taquin.png", 0.60)
-image tomas triste              = im.FactorScale("images/character/tomas/triste.png", 0.60)
-image tomas hesitation              = im.FactorScale("images/character/tomas/hesitation.png", 0.60)
-image tomas gene              = im.FactorScale("images/character/tomas/gene.png", 0.60)
-image tomas fatigue              = im.FactorScale("images/character/tomas/fatigue.png", 0.60)
-image tomas stress              = im.FactorScale("images/character/tomas/fatigue.png", 0.60)
+init python:
+    TOMAS_IMAGE_SIZE = (1024, 1536)
+    TOMAS_IMAGE_SCALE = 0.60
+    TOMAS_ASSET_DIR = "images/character/tomas"
+
+    TOMAS_EXPRESSIONS = {
+        "colere": ("base", "bras_poing_serre", "bouche_colere", "yeux_colere"),
+        "colere_noire": ("base", "bras_poing_serre", "bouche_colere", "yeux_colere"),
+        "culpabilite": ("base", "bras_devant_soi", "bouche_triste", "yeux_culpabilite"),
+        "desaccord": ("base", "bras_poing_serre", "bouche_colere", "yeux_colere"),
+        "desespoir": ("base", "bras_devant_soi", "bouche_peur", "yeux_peur"),
+        "determine": ("base", "bras_poing_serre", "bouche_neutre", "yeux_colere"),
+        "fatigue": ("base", "bras_poche", "bouche_triste", "yeux_culpabilite"),
+        "gene": ("base", "bras_devant_soi", "bouche_triste", "yeux_neutre"),
+        "hesitation": ("base", "bras_devant_soi", "bouche_neutre", "yeux_culpabilite"),
+        "hoche_la_tete": ("base", "bras_poche", "bouche_neutre", "yeux_neutre"),
+        "inquiet": ("base", "bras_devant_soi", "bouche_peur", "yeux_peur"),
+        "joie": ("base", "bras_devant_soi", "bouche_joie", "yeux_neutre"),
+        "mefiant": ("base", "bras_poche", "bouche_neutre", "yeux_colere"),
+        "neutre": ("base", "bras_poche", "bouche_neutre", "yeux_neutre"),
+        "panne": ("base", "bras_poche", "bouche_neutre", "yeux_culpabilite"),
+        "peur": ("base", "bras_devant_soi", "bouche_peur", "yeux_peur"),
+        "raison": ("base", "bras_devant_soi", "bouche_neutre", "yeux_neutre"),
+        "reflechit": ("base", "bras_devant_soi", "bouche_neutre", "yeux_culpabilite"),
+        "reflexion": ("base", "bras_devant_soi", "bouche_neutre", "yeux_culpabilite"),
+        "rire": ("base", "bras_devant_soi", "bouche_joie", "yeux_neutre"),
+        "sourire": ("base", "bras_poche", "bouche_joie", "yeux_neutre"),
+        "stress": ("base", "bras_devant_soi", "bouche_peur", "yeux_peur"),
+        "surpris": ("base", "bras_devant_soi", "bouche_peur", "yeux_peur"),
+        "taquin": ("base", "bras_poche", "bouche_joie", "yeux_neutre"),
+        "triste": ("base", "bras_devant_soi", "bouche_triste", "yeux_culpabilite"),
+        "vide": ("base", "bras_poche", "bouche_neutre", "yeux_neutre"),
+    }
+
+    def _tomas_asset(name):
+        return "%s/%s.png" % (TOMAS_ASSET_DIR, name)
+
+    def _tomas_is_speaking():
+        return is_character_speaking("tomas")
+
+    def _tomas_layered_expression(st, at, expr):
+        body, arms, mouth, eyes = TOMAS_EXPRESSIONS.get(expr, TOMAS_EXPRESSIONS["neutre"])
+
+        blink_phase = st % 4.85
+        if 4.55 <= blink_phase <= 4.72:
+            eyes = "yeux_ferme"
+
+        zoom = TOMAS_IMAGE_SCALE
+        if _tomas_is_speaking():
+            mouth_phase = st % 0.32
+            if mouth_phase < 0.16:
+                mouth = "bouche_parle"
+            zoom = TOMAS_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
+
+        composite = im.Composite(
+            TOMAS_IMAGE_SIZE,
+            (0, 0), _tomas_asset(body),
+            (0, 0), _tomas_asset(arms),
+            (0, 0), _tomas_asset(eyes),
+            (0, 0), _tomas_asset(mouth),
+        )
+        return Transform(composite, zoom=zoom), 0.08
+
+    def tomas_expression(expr):
+        return DynamicDisplayable(_tomas_layered_expression, expr)
+
+image tomas colere              = tomas_expression("colere")
+image tomas colere_noire        = tomas_expression("colere_noire")
+image tomas culpabilite         = tomas_expression("culpabilite")
+image tomas desaccord           = tomas_expression("desaccord")
+image tomas desespoir           = tomas_expression("desespoir")
+image tomas determine           = tomas_expression("determine")
+image tomas fatigue             = tomas_expression("fatigue")
+image tomas gene                = tomas_expression("gene")
+image tomas hesitation          = tomas_expression("hesitation")
+image tomas hoche_la_tete       = tomas_expression("hoche_la_tete")
+image tomas inquiet             = tomas_expression("inquiet")
+image tomas joie                = tomas_expression("joie")
+image tomas mefiant             = tomas_expression("mefiant")
+image tomas neutre              = tomas_expression("neutre")
+image tomas panne               = tomas_expression("panne")
+image tomas peur                = tomas_expression("peur")
+image tomas raison              = tomas_expression("raison")
+image tomas reflechit           = tomas_expression("reflechit")
+image tomas reflexion           = tomas_expression("reflexion")
+image tomas rire                = tomas_expression("rire")
+image tomas sourire             = tomas_expression("sourire")
+image tomas stress              = tomas_expression("stress")
+image tomas surpris             = tomas_expression("surpris")
+image tomas taquin              = tomas_expression("taquin")
+image tomas triste              = tomas_expression("triste")
+image tomas vide                = tomas_expression("vide")
 
 # ======================
 # ELEN
@@ -670,6 +714,7 @@ image elen neutre               = elen_expression("neutre")
 image elen peur                 = elen_expression("peur")
 # image elen reflexion            = im.FactorScale("images/character/elen/reflechit.png", 0.60)
 image elen reflexion            = elen_expression("reflexion")
+image elen reflechit            = elen_expression("reflexion")
 # image elen rire                 = im.FactorScale("images/character/elen/rire.png", 0.60)
 image elen rire                 = elen_expression("rire")
 # image elen surpris              = im.FactorScale("images/character/elen/surpris.png", 0.60)
@@ -775,46 +820,169 @@ image kael desespoir           = kael_expression("desespoir")
 # ======================
 # NYRA
 # ======================
-image nyra colere               = im.FactorScale("images/character/nyra/colere.png", 0.60)
-image nyra culpabilite          = im.FactorScale("images/character/nyra/culpabilite.png", 0.60)
-image nyra degout               = im.FactorScale("images/character/nyra/degout.png", 0.60)
-image nyra determine            = im.FactorScale("images/character/nyra/determine.png", 0.60)
-image nyra fatigue              = im.FactorScale("images/character/nyra/fatigue.png", 0.60)
-image nyra hesitation           = im.FactorScale("images/character/nyra/hesitation.png", 0.60)
-image nyra inquiet              = im.FactorScale("images/character/nyra/inquiet.png", 0.60)
-image nyra joie                 = im.FactorScale("images/character/nyra/joie.png", 0.60)
-image nyra neutre               = im.FactorScale("images/character/nyra/neutre.png", 0.60)
-image nyra panne                = im.FactorScale("images/character/nyra/panne.png", 0.60)
-image nyra raison               = im.FactorScale("images/character/nyra/raison.png", 0.60)
-image nyra reflexion            = im.FactorScale("images/character/nyra/reflexion.png", 0.60)
-image nyra rire                 = im.FactorScale("images/character/nyra/rire.png", 0.60)
-image nyra sourire              = im.FactorScale("images/character/nyra/sourire.png", 0.60)
-image nyra surpris              = im.FactorScale("images/character/nyra/surpris.png", 0.60)
-image nyra taquin               = im.FactorScale("images/character/nyra/taquin.png", 0.60)
-image nyra triste               = im.FactorScale("images/character/nyra/triste.png", 0.60)
-image nyra stress               = im.FactorScale("images/character/nyra/stress.png", 0.60)
+init python:
+    NYRA_IMAGE_SIZE = (1024, 1536)
+    NYRA_IMAGE_SCALE = 0.60
+    NYRA_ASSET_DIR = "images/character/nyra"
+
+    NYRA_EXPRESSIONS = {
+        "colere": ("corps", "bras_long_corps", "bouche_colere", "yeux_colere"),
+        "culpabilite": ("corps", "bras_devant_soi", "bouche_neutre", "yeux_culpabilite"),
+        "degout": ("corps", "bras_long_corps", "bouche_colere", "yeux_colere"),
+        "determine": ("corps", "bras_long_corps", "bouche_neutre", "yeux_colere"),
+        "fatigue": ("corps", "bras_long_corps", "bouche_neutre", "yeux_triste"),
+        "hesitation": ("corps", "bras_devant_soi", "bouche_peur", "yeux_culpabilite"),
+        "inquiet": ("corps", "bras_devant_soi", "bouche_peur", "yeux_surpris"),
+        "joie": ("corps", "bras_sur", "bouche_content", "yeux_neutre"),
+        "neutre": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "panne": ("corps", "bras_long_corps", "bouche_neutre", "yeux_triste"),
+        "raison": ("corps", "bras_sur", "bouche_neutre", "yeux_neutre"),
+        "reflexion": ("corps", "bras_devant_soi", "bouche_neutre", "yeux_culpabilite"),
+        "rire": ("corps", "bras_sur", "bouche_rire", "yeux_neutre"),
+        "sourire": ("corps", "bras_long_corps", "bouche_content", "yeux_neutre"),
+        "surpris": ("corps", "bras_devant_soi", "bouche_peur", "yeux_surpris"),
+        "taquin": ("corps", "bras_sur", "bouche_content", "yeux_colere"),
+        "triste": ("corps", "bras_devant_soi", "bouche_neutre", "yeux_triste"),
+        "stress": ("corps", "bras_devant_soi", "bouche_peur", "yeux_culpabilite"),
+        "vide": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "peur": ("corps", "bras_devant_soi", "bouche_peur", "yeux_colere"),
+    }
+
+    def _nyra_asset(name):
+        return "%s/%s.png" % (NYRA_ASSET_DIR, name)
+
+    def _nyra_is_speaking():
+        return is_character_speaking("nyra")
+
+    def _nyra_layered_expression(st, at, expr):
+        body, arms, mouth, eyes = NYRA_EXPRESSIONS[expr]
+
+        blink_phase = st % 5.0
+        if 4.72 <= blink_phase <= 4.88:
+            eyes = "yeux_ferme"
+
+        zoom = NYRA_IMAGE_SCALE
+        if _nyra_is_speaking():
+            mouth_phase = st % 0.32
+            if mouth_phase < 0.16:
+                mouth = "bouche_parle"
+            zoom = NYRA_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
+
+        composite = im.Composite(
+            NYRA_IMAGE_SIZE,
+            (0, 0), _nyra_asset(body),
+            (0, 0), _nyra_asset(arms),
+            (0, 0), _nyra_asset(eyes),
+            (0, 0), _nyra_asset(mouth),
+        )
+        return Transform(composite, zoom=zoom), 0.08
+
+    def nyra_expression(expr):
+        return DynamicDisplayable(_nyra_layered_expression, expr)
+
+image nyra colere               = nyra_expression("colere")
+image nyra culpabilite          = nyra_expression("culpabilite")
+image nyra degout               = nyra_expression("degout")
+image nyra determine            = nyra_expression("determine")
+image nyra fatigue              = nyra_expression("fatigue")
+image nyra hesitation           = nyra_expression("hesitation")
+image nyra inquiet              = nyra_expression("inquiet")
+image nyra joie                 = nyra_expression("joie")
+image nyra neutre               = nyra_expression("neutre")
+image nyra panne                = nyra_expression("panne")
+image nyra raison               = nyra_expression("raison")
+image nyra reflexion            = nyra_expression("reflexion")
+image nyra rire                 = nyra_expression("rire")
+image nyra sourire              = nyra_expression("sourire")
+image nyra surpris              = nyra_expression("surpris")
+image nyra taquin               = nyra_expression("taquin")
+image nyra triste               = nyra_expression("triste")
+image nyra stress               = nyra_expression("stress")
+image nyra vide                 = nyra_expression("vide")
+image nyra peur                 = nyra_expression("peur")
+image nyra reflechit                 = nyra_expression("reflexion")
 
 # ======================
 # RYN
 # ======================
-image ryn colere                = im.FactorScale("images/character/ryn/colere.png", 0.60)
-image ryn colere2               = im.FactorScale("images/character/ryn/colere2.png", 0.60)
-image ryn desaccord             = im.FactorScale("images/character/ryn/desaccord.png", 0.60)
-image ryn determine             = im.FactorScale("images/character/ryn/determine.png", 0.60)
-image ryn fatigue               = im.FactorScale("images/character/ryn/fatigue.png", 0.60)
-image ryn inquiet               = im.FactorScale("images/character/ryn/inquiet.png", 0.60)
-image ryn jaloux                = im.FactorScale("images/character/ryn/jaloux.png", 0.60)
-image ryn joie                  = im.FactorScale("images/character/ryn/joie.png", 0.60)
-image ryn neutre                = im.FactorScale("images/character/ryn/neutre.png", 0.60)
-image ryn reflechit             = im.FactorScale("images/character/ryn/reflechit.png", 0.60)
-image ryn rire                  = im.FactorScale("images/character/ryn/rire.png", 0.60)
-image ryn sourire               = im.FactorScale("images/character/ryn/sourire.png", 0.60)
-image ryn surpris               = im.FactorScale("images/character/ryn/surpris.png", 0.60)
-image ryn taquin                = im.FactorScale("images/character/ryn/taquin.png", 0.60)
-image ryn triste                = im.FactorScale("images/character/ryn/triste.png", 0.60)
-image ryn blase                = im.FactorScale("images/character/ryn/blase.png", 0.60)
-image ryn hesitation                = im.FactorScale("images/character/ryn/hesitation.png", 0.60)
-image ryn decontracte                = im.FactorScale("images/character/ryn/decontracte.png", 0.60)
+init python:
+    RYN_IMAGE_SIZE = (1024, 1536)
+    RYN_IMAGE_SCALE = 0.60
+    RYN_ASSET_DIR = "images/character/ryn"
+
+    RYN_EXPRESSIONS = {
+        "blase": ("corps", "bras_long_corps", "bouche_neutre", "yeux_blase"),
+        "colere": ("corps", "bras_long_corps", "bouche_colere", "yeux_colere"),
+        "colere2": ("corps", "bras_derriere_tete", "bouche_colere", "yeux_colere"),
+        "decontracte": ("corps", "bras_derriere_tete", "bouche_sourire", "yeux_taquin"),
+        "desaccord": ("corps", "bras_long_corps", "bouche_colere", "yeux_colere"),
+        "determine": ("corps", "bras_long_corps", "bouche_neutre", "yeux_colere"),
+        "fatigue": ("corps", "bras_derriere_tete", "bouche_triste", "yeux_blase"),
+        "hesitation": ("corps", "bras_derriere_tete", "bouche_inquiet", "yeux_surpris"),
+        "inquiet": ("corps", "bras_long_corps", "bouche_inquiet", "yeux_surpris"),
+        "jaloux": ("corps", "bras_long_corps", "bouche_colere", "yeux_taquin"),
+        "joie": ("corps", "bras_derriere_tete", "bouche_sourire", "yeux_neutre"),
+        "neutre": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "reflechit": ("corps", "bras_derriere_tete", "bouche_neutre", "yeux_blase"),
+        "rire": ("corps", "bras_derriere_tete", "bouche_rire", "yeux_taquin"),
+        "sourire": ("corps", "bras_derriere_tete", "bouche_sourire", "yeux_neutre"),
+        "surpris": ("corps", "bras_long_corps", "bouche_inquiet", "yeux_surpris"),
+        "taquin": ("corps", "bras_derriere_tete", "bouche_sourire", "yeux_taquin"),
+        "triste": ("corps", "bras_long_corps", "bouche_triste", "yeux_blase"),
+        "vide": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+    }
+
+    def _ryn_asset(name):
+        return "%s/%s.png" % (RYN_ASSET_DIR, name)
+
+    def _ryn_is_speaking():
+        return is_character_speaking("ryn")
+
+    def _ryn_layered_expression(st, at, expr):
+        body, arms, mouth, eyes = RYN_EXPRESSIONS.get(expr, RYN_EXPRESSIONS["neutre"])
+
+        blink_phase = st % 4.7
+        if 4.43 <= blink_phase <= 4.60:
+            eyes = "yeux_ferme"
+
+        zoom = RYN_IMAGE_SCALE
+        if _ryn_is_speaking():
+            mouth_phase = st % 0.32
+            if mouth_phase < 0.16:
+                mouth = "bouche_parle"
+            zoom = RYN_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
+
+        composite = im.Composite(
+            RYN_IMAGE_SIZE,
+            (0, 0), _ryn_asset(body),
+            (0, 0), _ryn_asset(arms),
+            (0, 0), _ryn_asset(eyes),
+            (0, 0), _ryn_asset(mouth),
+        )
+        return Transform(composite, zoom=zoom), 0.08
+
+    def ryn_expression(expr):
+        return DynamicDisplayable(_ryn_layered_expression, expr)
+
+image ryn blase                = ryn_expression("blase")
+image ryn colere               = ryn_expression("colere")
+image ryn colere2              = ryn_expression("colere2")
+image ryn decontracte          = ryn_expression("decontracte")
+image ryn desaccord            = ryn_expression("desaccord")
+image ryn determine            = ryn_expression("determine")
+image ryn fatigue              = ryn_expression("fatigue")
+image ryn hesitation           = ryn_expression("hesitation")
+image ryn inquiet              = ryn_expression("inquiet")
+image ryn jaloux               = ryn_expression("jaloux")
+image ryn joie                 = ryn_expression("joie")
+image ryn neutre               = ryn_expression("neutre")
+image ryn reflechit            = ryn_expression("reflechit")
+image ryn rire                 = ryn_expression("rire")
+image ryn sourire              = ryn_expression("sourire")
+image ryn surpris              = ryn_expression("surpris")
+image ryn taquin               = ryn_expression("taquin")
+image ryn triste               = ryn_expression("triste")
+image ryn vide                 = ryn_expression("vide")
 
 # ======================
 # SAEL
@@ -831,6 +999,7 @@ image sael neutre               = im.FactorScale("images/character/sael/neutre.p
 image sael peur                 = im.FactorScale("images/character/sael/peur.png", 0.60)
 image sael raison               = im.FactorScale("images/character/sael/raison.png", 0.60)
 image sael reflexion            = im.FactorScale("images/character/sael/reflechit.png", 0.60)
+image sael reflechit            = renpy.display.image.ImageReference("sael reflexion")
 image sael rire                 = im.FactorScale("images/character/sael/rire.png", 0.60)
 image sael sourire              = im.FactorScale("images/character/sael/sourire.png", 0.60)
 image sael surpris              = im.FactorScale("images/character/sael/surpris.png", 0.60)

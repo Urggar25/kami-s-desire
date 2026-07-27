@@ -29,13 +29,13 @@ label _5_1_REVEIL_CHAMBRE:
     noam "Même pas aïe."
     noam "Là, c'est carrément mon crâne qui demande l'indépendance."
 
-    "Bouche sèche. Lumière bleue. Corps officiellement en grève."
+    think "Bouche sèche. Lumière bleue. Corps officiellement en grève."
 
     think "Bien fait."
 
     pause 0.4
 
-    noam "Ok..."
+    noam "D'accord…"
     noam "Objectif numéro un : survivre au fait d'être réveillé."
 
     pause 0.3
@@ -47,7 +47,7 @@ label _5_1_REVEIL_CHAMBRE:
 
     think "Hier soir."
 
-    "Les images remontent par morceaux, pas dans le bon ordre."
+    think "Les images remontent par morceaux, dans le désordre."
 
     noam "Les verres en plastique..."
     noam "La musique..."
@@ -63,18 +63,18 @@ label _5_1_REVEIL_CHAMBRE:
     think "Sérieusement."
 
     noam "J'ai participé à ça."
-    noam "Et de mon plein gré en plus ..."
+    noam "Et de mon plein gré, en plus…"
     noam "Kami devrait me retirer mon droit de vote juste pour ça."
 
     pause 0.3
 
-    "Mon estomac répond avant moi."
+    think "Mon estomac répond avant moi."
 
     noam "Pas maintenant."
 
     pause 0.4
 
-    "Puis l'autre souvenir revient. Celui qui casse rapidement le petit sourire gêné que je gardais malgré moi."
+    think "Puis l'autre souvenir revient et tue le sourire avant qu'il s'installe."
 
     think "La table ronde."
     think "Le prochain vote."
@@ -98,16 +98,16 @@ label _5_1_REVEIL_CHAMBRE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "Je me redresse. Mauvais choix."
+    think "Je me redresse. Mauvais choix."
 
     noam "Oh... wow."
     noam "C'est quoi cette douleur dans la nuque ?!"
 
     pause 0.3
 
-    noam "Et dans le dos aussi ..."
+    noam "Et dans le dos aussi…"
 
-    "Je pose les pieds au sol. Le métal froid traverse mes chaussettes."
+    think "Le métal froid traverse mes chaussettes."
 
     noam "Hhh..."
 
@@ -115,7 +115,7 @@ label _5_1_REVEIL_CHAMBRE:
 
     pause 0.3
 
-    "Je prends le verre d'eau. Je bois trop vite."
+    think "Je bois trop vite. Mon estomac dépose une protestation officielle."
 
     pause 0.4
 
@@ -129,10 +129,10 @@ label _5_1_REVEIL_CHAMBRE:
 
     noam "Demain."
 
-    "Le mot reste dans la chambre. Bleu. Froid. Beaucoup trop proche."
+    think "Demain. Le mot reste dans la chambre, froid et beaucoup trop proche."
 
     think "Sael ne changera pas d'avis toute seule."
-    think "Je ne suis même pas sûr qu'on puisse la faire changer d'avis ..."
+    think "Je ne suis même pas sûr qu'on puisse la faire changer d'avis…"
 
     pause 0.3
 
@@ -158,7 +158,7 @@ label _5_1_REVEIL_CHAMBRE:
     kami "Rassurez-vous."
     kami "C'est parfaitement normal."
     kami "Fatigue, alcool, tensions politiques, jeu de la bouteille..."
-    kami "Franchement, ça m'étonnait presque que vous n'aviez pas craqué avant !"
+    kami "Franchement, je m'étonnais presque que vous n'ayez pas craqué avant !"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -170,14 +170,14 @@ label _5_1_REVEIL_CHAMBRE:
     pause 0.2
 
     kami "Cette nuit, Orbite a déclenché une alerte de sécurité."
-    kami "Quelqu'un n'a pas respecté les règles, le complexe C-3 a donc été touché par un tir de laser."
+    kami "Quelqu'un n'a pas respecté les règles. Le complexe C-3 a donc reçu un petit rappel au laser."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Peut-être même que c'est à cause de vous !"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "Heureusement il n'y a pas d'autres morts à déclarer."
+    kami "Heureusement, aucun autre mort à déclarer."
     kami "Juste quelques personnes dans le coma parce qu'elles n'ont pas réussi à mettre leur scaphandre à temps."
     kami "Deux heures et quelques d'ambiance absolument délicieuse."
 
@@ -201,7 +201,7 @@ label _5_1_REVEIL_CHAMBRE:
 
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Oh et j'ai repéré une petite poussière morale."
+    kami "Oh, et j'ai repéré une petite poussière morale."
     kami "Un rien. Ou presque."
     kami "Un représentant d'Orbite n'était même pas au courant."
     kami "Pas cette nuit."
@@ -228,24 +228,24 @@ label _5_1_REVEIL_CHAMBRE:
 
     pause 0.4
 
-    "L'écran s'éteint."
+    think "L'écran s'éteint après avoir soigneusement choisi sa cible."
 
-    noam "Orbite. Putain ça fait chier ..."
+    noam "Orbite… Putain."
     pause 0.4
 
-    "Je me lève. Trop vite."
+    think "Je me lève. Trop vite."
 
     noam "Mauvaise idée."
-    noam "J'ai la tête qui tourne encore ..."
+    noam "J'ai encore la tête qui tourne…"
 
-    "La chambre penche. Le mur me rattrape."
+    think "La chambre penche. Le mur me rattrape."
 
     noam "Merci, le mur."
     noam "Toujours là dans les moments importants."
 
     pause 0.3
 
-    "Je cherche mes chaussures. Je les enfile."
+    think "Je retrouve mes chaussures et les enfile."
 
     pause 0.2
 
@@ -256,28 +256,27 @@ label _5_1_REVEIL_CHAMBRE:
 
     think "Bravo."
 
-    "Je recommence. Cette fois, comme un adulte presque respectable."
+    think "Je recommence, cette fois comme un adulte presque respectable."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     pause 0.4
 
-    "Le couloir sent le café, le métal et la mauvaise décision."
+    think "Le couloir sent le café, le métal et la mauvaise décision."
 
     noam "Parfait. Exactement mon état d'esprit."
 
     pause 0.3
 
-    "Deux voix, vers les chambres. Basses. Tendues."
+    think "Deux voix basses et tendues viennent des chambres."
 
     nyra "Tu ne pouvais pas le savoir."
 
-    "Je m'arrête."
+    think "Je m'arrête."
 
     think "Nyra parle avec quelqu'un."
 
-    "Je me rapproche pour voir d'où s'élèvent les voix."
-    "Elle parle avec Kael."
+    think "Nyra parle avec Kael."
 
     jump _5_1_KAEL_NYRA
     
@@ -291,51 +290,46 @@ label _5_1_KAEL_NYRA:
 
     pause 0.5
 
-    "Kael est assis par terre, dos au mur. Nyra est à côté. Pas tendre. Présente."
+    think "Kael est assis au sol. Nyra reste près de lui : pas tendre, mais présente."
 
     scene bg_cg023 at adaptive_fullscreen with dissolve  # CG spéciale de la scène au comptoir
     $ unlock_gallery_image("bg_cg023")
 
-    kael "Je viens de voir l'alerte."
-    kael triste "Ce matin. Dans le relevé de Kami."
+    kael "Je viens de voir l'alerte. Ce matin. Dans le relevé de Kami."
 
-    nyra "Je sais."
+    nyra "Je sais. Tu l'as lue combien de fois ?"
 
-    kael "J'aurais dû le voir cette nuit."
+    kael "Sept. J'aurais dû la voir cette nuit."
 
     nyra "Tu dormais."
 
-    kael "J'aurais pas dû."
+    kael "Erreur de priorité."
 
-    nyra raison "Kael."
+    nyra raison "Non. Besoin humain."
 
-    kael "Elle a six ans."
-    kael triste "Léa a six ans, Nyra."
-    kael "Cette nuit, il y avait une alerte et moi j'étais là à..."
+    kael triste "Léa a six ans, Nyra. Cette nuit, il y avait une alerte et moi j'étais là à…"
 
     pause 0.3
 
-    kael "À jouer."
+    kael "Jouer."
 
     nyra "À respirer."
 
     kael "Pardon ?"
 
-    nyra "T'étais pas en train de trahir Orbite. T'étais en train de respirer."
-    nyra neutre "Mauvais timing, c'est tout."
-    nyra "Et encore, on sait même pas à quelle heure ça a eu lieu."
+    nyra "Tu n'étais pas en train de trahir Orbite. Tu respirais quelques heures."
+    nyra neutre "Tu veux transformer un mauvais timing en faute morale. Pourquoi ?"
 
-    kael "Mauvais timing ?"
+    kael "Parce que je connais la procédure."
     kael "Tu sais ce qui se passe quand un sas lâche ?"
 
-    nyra "Ouais je sais. Et chez moi c'est pire encore que chez toi."
+    nyra "Oui. Je sais ce qu'un sas qui lâche fait aux gens. Continue."
 
-    kael inquiet "La section se ferme. Les portes se verrouillent. Tout le monde court au point de confinement."
-    kael "Scaphandre. Col. Attache gauche. Attache droite. Verrouillage central."
-    kael "T'as trente secondes maximum avant de commencer à perdre tes forces."
-    kael "Quarante-cinq pour ceux qui sont vraiment habitués si tu trembles pas."
+    kael inquiet "Section isolée. Portes verrouillées. Point de confinement."
+    kael "Scaphandre. Col. Gauche. Droite. Verrou central."
+    kael "Trente secondes avant la perte de force. Quarante-cinq si tu es entraîné et que tu ne trembles pas."
 
-    nyra "Léa sait faire."
+    nyra "Léa sait faire. Tu lui as appris."
 
     kael triste "Oui."
     kael "C'est peut-être bien ça le problème."
@@ -346,46 +340,44 @@ label _5_1_KAEL_NYRA:
 
     kael "Si."
     kael triste "Elle devrait apprendre des chansons nulles. Des blagues. Des tables de multiplication."
-    kael "Pas comment survivre quand l'air décide de partir à cause d'une fuite."
+    kael "Pas une procédure pour survivre quand l'air disparaît."
 
     pause 0.4
 
-    nyra "Tu lui as appris comment ?"
+    nyra "Comment tu lui as appris ?"
 
-    kael "Comme un jeu."
-    kael "On a bien pris quatre jours. Cet été."
-    kael "Elle riait à chaque fois qu'elle ratait l'attache gauche."
+    kael "Comme un jeu. Quatre jours, cet été."
+    kael "Elle riait quand elle ratait l'attache gauche."
     kael triste "Elle disait que le scaphandre lui faisait une tête de grenouille."
 
     pause 0.3
 
-    nyra "Elle a ri. Et elle a appris."
+    nyra "Donc tu lui as donné deux choses : un rire et une chance de survivre. Laquelle tu regrettes ?"
 
     kael "Elle a six ans."
 
-    nyra "Je l'ai déjà entendu la première fois."
+    nyra "Je l'ai entendu. Et elle a toujours six ans même si tu te détruis ici."
 
     pause 0.5
 
-    "Nyra ne promet rien. Kael n'aurait pas supporté un mensonge."
+    think "Nyra ne promet rien. Elle a compris qu'il n'accepterait aucun mensonge."
 
-    nyra raison "Le C-3, c'est quoi ?"
+    nyra raison "Aide-moi à comprendre. Le C-3, c'est quoi ?"
 
     kael "C'est le module résidentiel. Dans le bloc famille."
 
-    nyra "Combien ?"
+    nyra "Combien de personnes ?"
 
-    kael "Il y a cent quarante personnes."
+    kael "Cent quarante."
     kael triste "Dont Léa."
 
-    nyra "Et le module tient seul ?"
+    nyra "Capacité d'isolement ?"
 
     kael "Oui."
-    kael inquiet "La station C est séparée en modules. Sept principaux. Quatre résidentiels, deux production, un central."
-    kael "Chaque jonction a ses sas. Si une section est compromise, elle s'isole."
-    kael "C'est prévu pour tenir plusieurs jours."
+    kael inquiet "Sept modules : quatre résidentiels, deux de production, un central. Chaque jonction a ses sas."
+    kael "Une section compromise s'isole. Autonomie : plusieurs jours."
 
-    nyra "Donc le système a fait son boulot."
+    nyra "Donc, cette nuit, le système a tenu."
 
     kael "Ouais, heureusement. Cette fois."
 
@@ -396,35 +388,31 @@ label _5_1_KAEL_NYRA:
     kael "Tu vois ?"
     kael "Même toi, tu dis cette fois."
 
-    nyra "Parce que c'est vrai."
-    nyra "Je vais pas te servir une phrase édulcorée et fausse juste parce que t'es par terre."
+    nyra "Parce que c'est vrai. Tu n'as pas besoin d'une phrase sucrée juste parce que tu es par terre."
 
     kael "Charmant."
 
-    nyra raison "Efficace."
+    nyra raison "Utile. Tu préfères."
 
     pause 0.3
 
     kael "Je pourrai demander à la contacter ce soir."
     kael triste "Pendant les protocoles, les communications sont coupées ou filtrées."
 
-    nyra "Je sais pas si Kami acceptera ..."
-    nyra "Tu lui dirais quoi ?"
+    nyra "Kami peut refuser. Mais si elle accepte, tu lui diras quoi ?"
 
-    kael "Je sais pas."
     kael "Que je suis désolé."
 
-    nyra "Pour quoi ?"
+    nyra "Pour quelle action précise ?"
 
-    kael "De pas avoir su."
+    kael "Ne pas avoir su."
 
-    nyra "Elle te demandera si t'as réparé le sas avec tes yeux fermés depuis le Conclave ?"
+    nyra "Elle te demandera si tu pouvais réparer le sas à distance, les yeux fermés depuis le Conclave. Tu répondras quoi ?"
 
     kael "Nyra."
 
-    nyra "Non, sérieusement."
-    nyra raison "Tu veux t'excuser d'un truc que tu ne pouvais pas empêcher."
-    nyra "Ça soulage qui ? Elle ou toi ?"
+    nyra raison "Tu veux t'excuser pour quelque chose que tu ne pouvais ni voir ni empêcher."
+    nyra "Cette excuse soulage qui ? Léa, ou toi ?"
 
     pause 0.5
 
@@ -434,11 +422,11 @@ label _5_1_KAEL_NYRA:
 
     kael "T'es horrible."
 
-    nyra neutre "Non. Je suis juste logique."
+    nyra neutre "Non. Je refuse seulement de t'aider à te punir."
 
     pause 0.4
 
-    "Kael laisse échapper un rire sec. Pas joyeux. Mais vivant."
+    think "Kael lâche un rire sec. Pas joyeux, mais vivant."
 
     kael "J'ai la tête qui tourne."
 
@@ -446,24 +434,23 @@ label _5_1_KAEL_NYRA:
 
     kael "Les deux."
 
-    nyra "On dit parfois qu'il faut reboire un coup après une cuite, tu devrais essayer."
+    nyra "Certains conseillent de reboire après une cuite. Une idée catastrophique, donc parfaitement adaptée à cette semaine."
 
-    kael "Tu veux me tuer c'est ça ?"
-    kael "Déjà que ..."
+    kael "Tu veux me tuer ? Déjà que…"
 
-    "Kael devient soudainement rouge pivoine."
+    think "Kael devient rouge. Le souvenir de la veille vient de le rattraper."
 
-    kael "Non rien."
+    kael "Rien."
 
-    nyra raison "J'ai bien ma petite idée du souvenir honteux auquel tu viens de repenser"
+    nyra raison "J'ai une idée très précise du souvenir qui vient de te rattraper."
 
-    kael "Ah ... Te moque pas ..."
+    kael "Ne te moque pas."
 
-    nyra "Je me moque pas, ça nous a fait du bien de souffler un coup."
+    nyra "Je ne me moque pas. Ça nous a fait du bien de souffler. Tu viens de le prouver."
 
     pause 0.4
 
-    "Kael pose les mains au sol. Il se relève comme si la journée pesait plus lourd que lui."
+    "Kael se relève lentement."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
@@ -472,11 +459,11 @@ label _5_1_KAEL_NYRA:
 
     kael "Bon."
     kael "Je vais essayer d'avaler un bout."
-    kael "Après... je verrai."
+    kael "Après… je verrai."
 
     nyra "Après, tu verras."
 
-    "Il passe à côté de moi sans me dire un mot. Il sait que j'étais là."
+    think "Il passe sans me parler. Il sait que j'ai tout entendu."
 
     hide kael
     with moveoutright
@@ -492,25 +479,25 @@ label _5_1_KAEL_NYRA:
     noam "Bien ?"
 
     nyra "Oui."
-    nyra raison "Les choses importantes doivent circuler."
-    nyra "Sur Orbite, les crises sont pas simples à gérer, crois-moi, ça peut lui faire du bien d'en parler."
+    nyra raison "Les informations importantes doivent circuler. La douleur aussi, parfois."
+    nyra "Une crise à Orbite ne se gère jamais seul. Kael avait besoin de s'entendre répondre."
 
     noam "Même quand ça fait mal ?"
 
-    nyra "Surtout quand ça fait mal."
+    nyra "Surtout quand ça fait mal. C'est là qu'on touche quelque chose de vrai."
 
     hide nyra
     with moveoutright
 
     pause 0.5
 
-    "Elle suit Kael plusieurs mètres derrière lui. Le couloir redevient vide et silencieux."
+    think "Nyra suit Kael à distance. Assez près pour l'aider, assez loin pour qu'il marche seul."
 
-    think "Cent quarante personnes. Dont la fameuse Léa ..."
+    think "Cent quarante personnes. Dont Léa…"
     think "Sa petite sœur, visiblement."
 
-    noam "Tu m'étonnes qu'il regrette ..."
-    noam "Ce Conclave est vraiment une machine à mélanger les mondes qui n'auraient jamais dû se toucher."
+    noam "Pas étonnant qu'il culpabilise…"
+    noam "Ce Conclave mélange des mondes qui n'auraient jamais dû se toucher, puis nous demande de voter sur les dégâts."
 
     pause 0.4
     $ unlock_codex_page("complexe_c")
@@ -527,7 +514,7 @@ label _5_1_CAFETERIA_MATIN:
 
     pause 0.8
 
-    "La cafétéria ressemble à un lendemain de fête qui a perdu un procès."
+    think "La cafétéria ressemble à un lendemain de fête condamné sans appel."
 
     $ showP("kael", "neutre", 0.12)
     $ showP("elen", "fatigue", 0.50)
@@ -537,16 +524,15 @@ label _5_1_CAFETERIA_MATIN:
 
     kael "Oui. J'ai vu."
 
-    elen "Je voulais pas... enfin, je..."
-    elen inquiet "Ça va ?"
+    elen "Je voulais pas— enfin, hier, on savait pas et… ça va ?"
 
-    kael "Ça ira."
+    kael "Ça ira. Pas maintenant. Mais ça ira."
 
     ryn "Traduction : non."
 
     kael "Traduction : je mange."
 
-    elen fatigue "D'accord. Je... oui. Mange."
+    elen fatigue "D'accord. Oui. Mange. Je peux te trouver un truc sucré si— non. Mange d'abord."
 
     ryn blase "Moi, c'est Limen qui me fait flipper."
 
@@ -554,31 +540,31 @@ label _5_1_CAFETERIA_MATIN:
 
     ryn "Les files."
     ryn "Regarde l'écran. Les gens attendent toujours leurs rations."
-    ryn "Comme s'ils allaient en avoir ..."
+    ryn "Comme s'ils allaient en avoir…"
 
-    elen "Kami a dit que les marchés fonctionnaient."
-    elen reflexion "Ça va prendre un peu de temps, mais ça va se mettre en route comme il faut."
+    elen "Kami a dit que les marchés fonctionnaient. Ça va prendre un peu de temps, mais ça va démarrer."
+    elen reflexion "Ça doit démarrer."
 
     ryn "Les marchés fonctionnent pour ceux qui ont un truc à vendre."
     ryn blase "Pour les autres, c'est juste une façon plus chic de crever debout."
 
-    elen "Ryn... Non il faut..."
+    elen "Ryn… non, il faut juste—"
 
     ryn "Quoi ? C'est vrai, non ?"
 
     hide elen
     $ showP("tomas", "hesitation", 0.50)
 
-    tomas hesitation "Euh... techniquement, les premières tensions étaient prévisibles."
+    tomas hesitation "Euh… techniquement, les premières tensions étaient prévisibles."
     tomas "Quand on change le système il faut toujours un temps d'adaptation."
 
-    ryn "Le modèle, il a mangé ce matin ?"
+    ryn "Ton modèle, il a mangé ce matin ?"
 
-    tomas "Je... c'est une image ou une vraie question ?"
+    tomas "Je… c'est une image ou une vraie question ?"
 
     ryn "Les deux."
 
-    tomas hesitation "Alors... non. Enfin, un modèle ne mange pas."
+    tomas hesitation "Alors… non. Enfin, un modèle ne mange pas."
 
     ryn "Voilà. Et les gens veulent juste pouvoir manger."
 
@@ -588,8 +574,7 @@ label _5_1_CAFETERIA_MATIN:
 
     tomas hesitation "Non, mais... l'effet était très proche."
 
-    "Personne ne rit vraiment."
-    "Mais tout le monde a compris."
+    think "Personne ne rit. Tout le monde comprend."
 
     hide tomas
     hide ryn
@@ -597,20 +582,20 @@ label _5_1_CAFETERIA_MATIN:
 
     pause 0.3
 
-    "Je prends un plateau et m'installe. La ration me regarde. Je la menace du regard. Match nul."
+    think "Je m'installe devant une ration. Elle me regarde. Je la menace. Match nul."
 
     $ showP("lysa", "blase", 0.12)
     $ showP("iris", "fatigue", 0.50)
 
     lysa blase "T'as une de ces têtes."
 
-    noam "Merci. J'ai préféré pas me regarder dans le miroir ce matin."
+    noam "Merci. J'ai préféré ne pas consulter le miroir ce matin."
 
     iris fatigue "Non, mais vraiment."
 
     noam "Oui, Iris, j'avais compris le diagnostic."
 
-    lysa "Si ça peut te rassurer, on est tous moches ce matin."
+    lysa "Si ça peut te rassurer, Dionysos n'a épargné personne."
 
     iris "Parle pour toi."
 
@@ -621,12 +606,11 @@ label _5_1_CAFETERIA_MATIN:
     noam "C'est beau, cette solidarité féminine."
 
     iris "Solidarité ? Tu parles."
-    iris "Madame n'a pas besoin de se faire belle pour l'être."
-    iris "Il n'y avait qu'à se souvenir de ta tête hier soir."
+    iris "Madame n'a pas besoin d'effort pour être belle. Il suffisait de voir sa tête hier soir."
 
 
     think "Non."
-    think "Je préfèrerais éviter d'y repenser ...."
+    think "Je préférerais éviter d'y repenser…"
 
     hide iris
     hide lysa
@@ -639,8 +623,7 @@ label _5_1_CAFETERIA_MATIN:
 
     play sound sfx_door volume 5.0
 
-    "Une porte s'ouvre derrière nous."
-    "Mon visage est encore en train de brûler."
+    think "Une porte s'ouvre derrière nous pendant que mon visage brûle encore."
     think "Timing parfait pour changer de sujet."
 
     $ showP("julian", "detendu", 0.50)
@@ -649,13 +632,13 @@ label _5_1_CAFETERIA_MATIN:
 
     noam "Il a l'air en forme. C'est louche."
 
-    julian "Alors c'est comme ça qu'on m'accueille ?"
+    julian "Voilà donc comment on accueille Julian ?"
     julian sourire "J'ai choisi de transcender la gueule de bois."
 
     $ showP("lysa", "blase", 0.12)
     lysa blase "Personne ne transcende rien. Tu fais juste mieux semblant que nous."
 
-    julian "C'est déjà une compétence sociale."
+    julian "C'est déjà une compétence politique."
 
     $ showP("ryn", "blase", 0.88)
     ryn "Ou un défaut."
@@ -664,20 +647,16 @@ label _5_1_CAFETERIA_MATIN:
 
     pause 0.3
 
-    julian "Bon."
-    julian "Le vote est demain."
-    julian "On ne va pas faire semblant de parler d'autre chose toute la journée."
+    julian "Le vote est demain. Nous n'allons pas passer la journée à feindre qu'un autre sujet compte davantage."
 
     hide ryn
     $ showP("iris", "fatigue", 0.66)
-    iris "Raah fous-nous la paix."
-    iris fatigue "Tu peux essayer de faire ça ?"
+    iris "Rends-nous service : tais-toi jusqu'à ce que les antalgiques fonctionnent."
 
-    julian "Je peux."
-    julian joie "Mais j'en ai pas envie."
-    julian sourire "Alors même si on devait échouer, autant échouer avec élégance et en se battant."
+    julian "Je peux. Julian ne le fera pas."
+    julian sourire "S'il faut échouer, nous échouerons debout, après avoir défendu quelque chose."
 
-    lysa "Je vote pour l'échec sans élégance."
+    lysa "Je vote pour l'échec silencieux. Les Spartiates avaient au moins cette qualité."
 
     noam "J'aime pas l'admettre, mais Julian n'a pas complètement tort."
     noam "Demain arrive beaucoup trop vite."
@@ -687,7 +666,7 @@ label _5_1_CAFETERIA_MATIN:
     hide iris
     $ showP("sael", "neutre", 0.95)
 
-    "Sael est au bout de la table. Droite. Silencieuse. Inattaquable."
+    think "Au bout de la table, Sael est droite, silencieuse, déjà retranchée."
 
     julian "Sael."
 
@@ -697,7 +676,7 @@ label _5_1_CAFETERIA_MATIN:
 
     julian detendu "Je n'ai pas encore posé la question."
 
-    sael "Tu allais."
+    sael "Tu allais la poser. Certaines paroles font du bruit avant de sortir."
     sael mefiant "Et j'ai dit non."
 
     hide julian
@@ -712,45 +691,44 @@ label _5_1_CAFETERIA_MATIN:
 
     hide lysa
     $ showP("elen", "neutre", 0.20)
-    elen inquiet "Sael, peut-être qu'on peut juste... écouter ?"
+    elen inquiet "Sael, on peut juste écouter ? Sans crier, sans porte qui claque, sans— enfin, juste écouter ?"
     hide elen
 
-    sael "Personne n'a à m'obliger à changer ma position."
+    sael "Personne n'a à me tirer hors de ma position. J'en sortirai si j'y vois un chemin."
 
-    julian "Personne ne t'oblige. Mais..."
+    julian "Personne ne t'oblige. Mais le collectif mérite—"
 
-    sael "Alors inutile d'insister."
+    sael "Alors n'insiste pas. Les mots répétés ne deviennent pas plus vrais."
 
     pause 0.3
 
-    "Julian garde son sourire. Le sourire, lui, accuse le coup."
+    think "Julian garde son sourire. Le sourire, lui, accuse le coup."
 
     julian detendu "Très bien."
-    julian "On parlera plus tard."
+    julian "Nous reprendrons cette conversation plus tard."
 
     hide julian
     with moveoutright
 
-    sael "Tu parleras."
-    sael neutre "Je répondrai si c'est nécessaire."
+    sael "Tu parleras. Je répondrai si c'est nécessaire. Ce n'est pas la même chose."
 
     hide sael
     with dissolve
 
     $ showP("lysa", "neutre", 0.20)
 
-    lysa "C'est vraiment joyeux ici."
+    lysa "Même le banquet de Tantale avait une ambiance plus légère."
 
     $ showP("iris", "taquin", 0.66)
-    iris "Je regrette presque la bouteille."
+    iris "Je regrette presque la bouteille. C'est dire le niveau de catastrophe."
 
-    lysa "Vexée de pas avoir été choisie ?"
+    lysa "Vexée de ne pas avoir été choisie ?"
 
     iris rire "Moi vexée ? Et puis quoi encore."
     iris taquin "Et pour embrasser qui d'abord ?"
 
-    lysa "Tu n'as pas de préférence ?"
-    lysa taquin "En tout cas Noam embrasse plutôt bien."
+    lysa "Aucune préférence ? Dommage."
+    lysa taquin "Pour information, Noam embrasse mieux qu'il ne répond aux questions."
 
     noam "Je vais..."
     noam "Très loin."
@@ -761,9 +739,7 @@ label _5_1_CAFETERIA_MATIN:
 
     noam "J'appelle ça une manœuvre stratégique."
 
-    "Je prends mon plateau."
-    "Je rate presque la sortie."
-    "Évidemment."
+    think "Je saisis mon plateau et manque la sortie. Retraite stratégique exemplaire."
 
     hide lysa
     hide iris
@@ -795,20 +771,15 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.5
 
-    "Je quitte la cafétéria sans destination précise."
-    "J'avais juste besoin de ne plus être là."
+    think "Je quitte la cafétéria sans destination. J'avais seulement besoin de ne plus être là."
 
     pause 0.2
 
-    "Sael avait fermé la discussion comme on ferme un dossier."
-    "Julian avait encaissé en silence."
-    "Moi, j'avais encore trop mal au crâne pour jouer les arbitres."
+    think "Sael a fermé la discussion. Julian a encaissé. Moi, j'ai trop mal au crâne pour jouer l'arbitre."
 
     pause 0.3
 
-    "J'avance dans le couloir."
-    "Puis j'entends des pas."
-    "Rapides."
+    think "Des pas rapides me rattrapent."
 
     pause 0.2
 
@@ -818,11 +789,9 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam "Elias ?"
 
-    elias "Infirmerie."
+    elias "Infirmerie. Maintenant."
 
     pause 0.1
-
-    elias panique "Maintenant."
 
     noam "Qu'est-ce qui—"
 
@@ -832,29 +801,25 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam "Quoi, Kael ?"
 
-    elias inquiet "Il s'est blessé ..."
-    elias "La main."
-    elias "Il y a du sang partout."
+    elias inquiet "Il s'est explosé la main. Y a du sang partout. C'est chaud."
 
     pause 0.2
 
     noam "Merde."
 
-    elias fatigue "C'est clair, viens vite."
+    elias fatigue "Ouais. Viens vite."
 
     hide elias
     with moveoutright
 
-    "Il repart sans attendre."
-    "Je le suis."
+    "Elias repart ; je le suis."
 
     scene bg_infirmerie at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
     pause 0.5
 
-    "L'infirmerie sent le désinfectant."
-    "Typiquement le genre d'odeur d'hôpital qui donne mal à la tête."
+    think "L'odeur de désinfectant donne instantanément raison à mon mal de tête."
 
     pause 0.3
 
@@ -863,15 +828,11 @@ label _5_1_INFIRMERIE_KAEL:
     $ showP("mara", "stress", 0.22)
     $ showP("elias", "inquiet", 0.05)
 
-    "Kael est assis sur le bord du lit d'examen."
-    "Main droite dans une compresse rouge."
-    "Il regarde nulle part."
+    "Kael est assis sur le lit d'examen, la main droite enveloppée d'une compresse rouge."
 
     pause 0.2
 
-    "Mara fouille dans une armoire."
-    "Elias se colle au mur près de la porte."
-    "Nyra se tient à côté de Kael."
+    think "Mara fouille une armoire. Nyra veille près de Kael. Elias tente de fusionner avec le mur."
 
     pause 0.3
 
@@ -881,24 +842,23 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam "...Salut ?"
 
-    kael triste "J'ai pas vraiment trouvé mieux."
+    kael triste "Je n'ai rien trouvé de mieux."
 
-    mara stress "Ouais, par contre le mur lui tu l'as bien trouvé."
+    mara stress "Le mur, par contre, tu l'as trouvé sans difficulté."
 
     noam "Un mur ?"
 
-    mara "Il a eu la bonne idée de se détruire la main contre le mur."
-    mara "Et pas qu'une fois en plus."
-    mara agace "Résultat : nul. Méthode : nulle. Recommandation : aucune. Bref il s'est juste explosé la main pour RIEN."
+    mara "Monsieur a testé sa main contre un mur. Plusieurs fois, pour garantir la rigueur scientifique."
+    mara agace "Résultat : mur intact, main ouverte, idée toujours aussi nulle."
 
     kael "Je te remercie pour cette synthèse."
 
-    mara "Ecoute, là j'essaye de t'empêcher de repeindre l'infirmerie."
-    mara "T'as pas de meilleure amie que moi ce soir."
+    mara "Écoute, j'essaie de t'empêcher de repeindre l'infirmerie avec ton sang."
+    mara "Pour les dix prochaines minutes, je suis ta meilleure amie. Profite, l'offre expire vite."
 
     pause 0.3
 
-    noam "Pourquoi t'as fait ça ?"
+    noam "Pourquoi tu as fait ça ?"
 
     pause 0.2
 
@@ -910,7 +870,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    kael "Je voulais pas grand chose. Juste trente secondes."
+    kael "Je ne demandais pas grand-chose. Trente secondes."
     kael "Même pas le temps d'avoir une vraie conversation."
     kael inquiet "Juste savoir si elle va bien."
 
@@ -918,31 +878,29 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam "Et elle a dit non ?"
 
-    kael "Elle a dit que les communications familiales ne faisaient pas partie des priorités du Conclave."
-    kael "Que c'était de toute façon interdit par les règles."
+    kael "Communications familiales hors priorités du Conclave. Interdites par le règlement."
 
     pause 0.2
 
-    kael "Et aussi que les représentants devaient éviter les distractions émotionnelles avant un vote important."
+    kael "Et les représentants doivent éviter les distractions émotionnelles avant un vote important."
 
     pause 0.5
 
-    "Personne ne parle."
+    think "Personne ne trouve de réponse à cette cruauté administrative."
 
     pause 0.3
 
-    elias inquiet "Il est sorti de la salle de communication après ça. Et là..."
+    elias inquiet "Il est sorti de la salle de communication et là…"
 
     kael "Et j'ai frappé un mur."
 
-    mara "Et le mur a gagné la bagarre."
+    mara "Et le mur a gagné. Par décision unanime."
 
     kael "Ouais. C'était pas la meilleure décision de ma vie."
 
     pause 0.4
 
-    "Mara revient avec du désinfectant et une bande propre."
-    "Elle retire la compresse sans prévenir."
+    "Mara revient avec du désinfectant et retire la compresse."
 
     hide elias
     with moveinleft
@@ -957,29 +915,26 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    "Elle nettoie la plaie."
-    "Kael fixe le mur d'en face."
-    "Sa main tremble légèrement."
-    "Pas seulement à cause du désinfectant."
+    think "Mara nettoie. Kael fixe le mur ; sa main tremble pour une autre raison que le désinfectant."
 
     pause 0.4
 
     noam "Tu penses qu'elle est en danger ?"
 
-    kael "Je sais pas, je n'ai aucune information."
+    kael "Je ne sais pas. Aucune information exploitable."
 
     noam "Le module s'est isolé correctement ?"
 
     kael "Oui."
-    kael inquiet "Enfin normalement."
+    kael inquiet "Normalement."
 
     $ showP("elias", "inquiet", 0.05)
 
     pause 0.3
 
-    kael "Normalement, un sas ne lâche pas en pleine nuit non plus."
-    kael "Normalement, une gamine de six ans devrait pas savoir enfiler un scaphandre en trente secondes."
-    kael "Normalement, je devrais pouvoir lui demander si elle va bien."
+    kael "Normalement, un sas ne lâche pas en pleine nuit."
+    kael "Normalement, une enfant de six ans n'enfile pas un scaphandre en trente secondes."
+    kael "Normalement, je peux lui demander si elle va bien."
 
     pause 0.4
 
@@ -987,8 +942,8 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.5
 
-    elias inquiet "Si j'ai bien compris les modules résidentiels sont conçus pour tenir plusieurs jours en isolement ?"
-    elias "Si le protocole s'est déclenché correctement, le risque immédiat est limité."
+    elias inquiet "Si j'ai compris, les modules résidentiels tiennent plusieurs jours isolés."
+    elias "Donc si le protocole a marché, le danger immédiat est limité. C'est concret, ça."
 
     pause 0.2
 
@@ -996,24 +951,22 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    "Elias se tait, il regarde le plafond depuis tout à l'heure."
-    "Il vient de comprendre quelque chose."
+    think "Elias se tait et regarde le plafond. Il vient de comprendre quelque chose."
 
     pause 0.2
 
     mara "Bon."
     mara "Ta main va survivre."
-    mara "Y'a pas l'avoir d'avoir de fracture."
-    mara "Pas de points mais tu auras un sacré bleu."
+    mara "Pas l'air d'avoir de fracture. Pas besoin de points, mais tu vas avoir un bleu magnifique."
     mara agace "Ne recommence pas."
 
     kael "Compris."
 
     mara "Mauvaise réponse."
 
-    kael "...Pardon ?"
+    kael "… Pardon ?"
 
-    mara "'Compris', c'est ce que je disais avant de recommencer mes conneries."
+    mara "« Compris », c'est ce que je disais juste avant de recommencer mes conneries."
     mara agace "Je veux 'je ne recommencerai pas'."
 
     kael "Je ne recommencerai pas."
@@ -1022,8 +975,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.4
 
-    "Elle serre le bandage."
-    "Kael regarde sa main comme si elle lui avait fait quelque chose de personnel."
+    think "Mara serre le bandage. Kael regarde sa main comme une variable devenue hostile."
 
     pause 0.4
 
@@ -1035,66 +987,55 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    kael "Je sais ce que je pense."
-    kael inquiet "Je croyais, en tout cas."
+    kael "Je savais ce que je pensais. Je le croyais."
 
     pause 0.2
 
-    kael "Là tout se mélange."
-    kael "Orbite. Léa. Kami. Le vote."
+    kael "Maintenant, tout se mélange : Orbite, Léa, Kami, le vote."
 
     pause 0.3
 
-    kael triste "Si je lève la main demain, ce sera pas vraiment moi."
-    kael "Ce sera juste ma peur qui vote à ma place."
+    kael triste "Si je lève la main demain, ma peur votera à ma place."
 
     pause 0.5
 
-    nyra "Alors ne force pas. Repose toi."
+    nyra "Alors ne force pas une réponse. Repose-toi."
 
-    mara stress "Demain c'est pas vraiment une journée pour rester au lit."
+    mara stress "Demain n'est pas exactement la journée idéale pour rester au lit."
 
-    nyra "Je n'ai pas dit que c'était une bonne journée pour ça."
-    nyra raison "J'ai dit qu'il en avait le droit de ne pas voter ?"
+    nyra "Je n'ai pas dit que c'était idéal. J'ai dit qu'il avait le droit de ne pas voter."
 
     pause 0.3
 
     elias "La participation n'est pas obligatoire ?"
 
-    "Il demande ça mécaniquement."
-    "Puis il réalise que tout le monde le regarde."
+    think "Elias pose la question mécaniquement, puis découvre nos regards."
 
-    nyra "Non. Pas d'après les règles qui ont été expliqué."
-    nyra "Exact."
+    nyra "Elle ne l'est pas. Les règles sont claires : une absence retire seulement le bulletin du décompte."
 
     pause 0.4
 
-    kael triste "Mais si je vote pas..."
+    kael triste "Mais si je ne vote pas…"
 
-    nyra "Ton absence sera comptabilisée, mais ça ne sera pas un vote contre."
-    nyra "En fait, c'est plus ou moins comme si tu t'abstenais."
-    nyra "Au final, ça n'empêchera ni le vote pour, ni le vote contre de gagner..."
+    nyra "Ton absence sera enregistrée, pas comptée comme un non. Comme une abstention."
+    nyra "Elle ne bloque ni le oui ni le non. Elle réduit seulement le nombre de votes exprimés."
 
     pause 0.3
 
     mara mefiant "Tu dis ça comme si c'était simple."
 
     nyra "Non."
-    nyra "Je dis ça parce que c'est ce que disent les règles."
-    nyra "Et pour le coup, elles sont assez claires."
+    nyra "Je répète la règle. Pour une fois, elle est assez claire."
 
     pause 0.5
 
-    "Le silence s'installe."
-    "Pas de panique dedans."
-    "Juste du calcul."
+    think "Le silence change. Plus de panique : du calcul."
 
     pause 0.3
 
     noam "Kami demande l'unanimité des votes exprimés."
 
-    "Je dis ça à voix basse."
-    "Presque pour moi."
+    think "Je le dis presque pour moi. La phrase ouvre une porte que je n'aime pas."
 
     pause 0.3
 
@@ -1102,9 +1043,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.4
 
-    "Mara fronce les sourcils."
-    "Elias baisse les yeux."
-    "Kael n'a pas l'air de penser à la règle."
+    think "Mara calcule. Elias baisse les yeux. Kael, lui, ne pense déjà plus à la règle."
 
     pause 0.5
 
@@ -1116,13 +1055,12 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    kael triste "Si je reste dans ma chambre je vais passer la nuit à réfléchir."
+    kael triste "Si je reste dans ma chambre, je passerai la nuit à recalculer l'impossible."
     kael "Je préfère être là."
 
     pause 0.3
 
-    "Nyra ne répond pas."
-    "Elle n'insiste pas davantage."
+    think "Nyra n'insiste pas. Elle a obtenu une décision, pas celle qu'elle proposait."
 
     pause 0.4
 
@@ -1134,12 +1072,11 @@ label _5_1_INFIRMERIE_KAEL:
 
     mara "J'en ai d'autres en réserve si tu veux."
 
-    kael "Non... Ça ira."
+    kael "Non. Ça ira."
 
     pause 0.4
 
-    "Kael baisse les yeux."
-    "Sa main bandée repose sur ses genoux."
+    think "Kael baisse les yeux vers sa main bandée."
 
     pause 0.4
 
@@ -1147,36 +1084,29 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.6
 
-    "Personne ne répond."
-    "Mara referme sa trousse."
-    "Nyra ne bouge pas."
+    think "Personne ne répond. Mara ferme sa trousse. Nyra reste."
 
     pause 0.2
 
-    "Elias regarde ses chaussures."
-    "Depuis un moment."
-    "Très attentivement."
-    "Comme si ses lacets lui avaient fait quelque chose."
+    think "Elias étudie ses lacets avec une concentration suspecte."
 
     pause 0.4
 
-    "Ce silence-là, c'est la seule réponse honnête qu'on peut lui donner."
+    think "Ce silence est la seule réponse honnête."
 
     pause 0.5
 
-    elias "Je..."
+    elias "Je…"
 
     pause 0.2
 
-    elias fatigue "J'ai laissé un truc allumé."
+    elias fatigue "J'ai laissé un truc allumé. En maintenance."
 
     pause 0.2
 
-    "Personne ne dit rien."
+    think "Personne ne lui offre cette sortie."
 
-    elias "Dans la salle de maintenance."
-    elias "Un outil."
-    elias "Je l'ai laissé allumé."
+    elias "Un outil. J'ai laissé un outil allumé."
 
     pause 0.2
 
@@ -1186,17 +1116,17 @@ label _5_1_INFIRMERIE_KAEL:
 
     mara "T'as l'air vert."
 
-    elias "Je suis fatigué."
+    elias "Je suis fatigué. C'est tout."
 
     mara "C'est pas la fatigue."
 
     pause 0.2
 
-    elias "L'outil—"
+    elias "Mais l'outil—"
 
     mara "Y'a aucun outil."
 
-    elias fatigue "Y'a peut-être un outil."
+    elias fatigue "Y a peut-être un outil."
 
     pause 0.3
 
@@ -1208,19 +1138,14 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.4
 
-    "Elias ouvre la bouche."
-    "La referme."
-    "Il déglutit."
+    think "Elias ouvre la bouche, la referme et déglutit."
 
-    elias "...C'est bon."
+    elias "… C'est bon."
 
     hide elias
     with moveoutleft
 
-    "Il sort."
-    "Vite."
-    "Vraiment vite."
-    "Pour quelqu'un qui avait juste un outil à aller éteindre."
+    think "Il sort beaucoup trop vite pour un outil imaginaire."
 
     pause 0.4
 
@@ -1237,9 +1162,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.4
 
-    "Mara ne répond pas."
-    "Elle range sa trousse."
-    "Mais quelque chose dans ses épaules se relâche légèrement."
+    think "Mara range sa trousse. Ses épaules se relâchent malgré elle."
 
     pause 0.4
 
@@ -1262,15 +1185,11 @@ label _5_1_INFIRMERIE_KAEL:
     $ showP("mara", "stress", 0.35)
     $ showP("noam", "neutre", 0.65)
 
-    "La porte se referme."
+    think "La porte se referme sur Kael et Nyra."
 
     pause 0.2
 
-    "Dans le couloir, Elias est adossé au mur."
-    "Les bras croisés."
-    "Il respire par le nez."
-    "Lentement."
-    "Comme quelqu'un qui essaie très fort de pas vomir."
+    think "Elias est adossé au mur, bras croisés, respiration lente. Il essaie très fort de ne pas vomir."
 
     pause 0.3
 
@@ -1286,7 +1205,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam "Non."
 
-    elias "...Non."
+    elias "… Non."
 
     pause 0.3
 
@@ -1298,15 +1217,14 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.2
 
-    elias fatigue "...Ouais. OK."
+    elias fatigue "… Ouais. D'accord."
 
     hide elias
     with moveoutleft
 
     pause 0.4
 
-    "Mara le regarde partir."
-    "Elle souffle."
+    think "Mara le regarde partir et souffle."
 
     mara "J'aime pas cette journée."
 
@@ -1316,18 +1234,16 @@ label _5_1_INFIRMERIE_KAEL:
 
     mara "Kael qui se blesse."
     mara "Kami qui refuse trente secondes de communication."
-    mara "Elle pouvait quand même faire une exception à ses foutues règles..."
+    mara "Elle pouvait faire une exception à ses foutues règles. Trente secondes. Même moi, je tiens trente secondes sans provoquer personne."
 
     pause 0.3
 
-    mara "D'un côté Kael devrait se reposer... Mais je comprends qu'il veuille participer au vote."
-    mara "J'avais pas compris les règles comme ça..."
-    mara "Le fait qu'on puisse ne pas aller voter..."
+    mara "Kael devrait se reposer. Mais je comprends qu'il veuille être là demain."
+    mara "Je n'avais pas compris qu'une absence disparaissait simplement du décompte…"
 
     pause 0.5
 
-    "Elle laisse ça dans l'air."
-    "Sans vraiment conclure."
+    think "Elle laisse la possibilité flotter entre nous sans la nommer."
 
     pause 0.4
 
@@ -1335,19 +1251,15 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam "Bonne idée."
 
-    mara "Flemme de lui rebander le bras demain."
-    mara agace "C'est quand même triste d'en être là."
+    mara "Je refuse de lui rebander la main demain. Une fois, c'est du soin. Deux fois, ça devient une relation."
+    mara agace "C'est triste d'en être là."
 
     hide mara
     with moveoutright
 
     pause 0.5
 
-    "Mara retourne dans l'infirmerie."
-    "Je reste seul dans le couloir."
-
-    "Je fais un petit tour par la cafétéria pour me prendre un truc à manger."
-    "Je retourne dans ma chambre ensuite."
+    think "Mara retourne auprès de Kael. Je récupère de quoi manger, puis regagne ma chambre."
 
     jump _5_1_CHOIX_CHAMBRE
 
@@ -1360,39 +1272,33 @@ label _5_1_CHOIX_CHAMBRE:
 
     pause 0.5
 
-    "Quatre murs."
-    "Un lit."
-    "Le silence."
+    think "Quatre murs. Un lit. Le silence."
 
     pause 0.3
 
-    "C'est exactement ce qu'il me faut."
+    think "Exactement ce qu'il me faut."
 
     pause 0.4
 
-    "Je balance mes affaires sur le bureau et je file sous la douche."
+    think "Je laisse mes affaires sur le bureau et file sous la douche."
 
     scene bg_cg011 at adaptive_fullscreen with dissolve
 
     pause 1.0
 
-    "L'eau chaude."
-    "Le seul truc dans cette station qui fait ce qu'on lui demande sans négocier."
+    think "L'eau chaude : seule chose de cette station qui obéit sans négocier."
 
     pause 0.5
 
-    "Je reste là un moment."
-    "Longtemps."
-    "Sans doute bien plus longtemps que nécessaire."
+    think "J'y reste beaucoup plus longtemps que nécessaire."
 
     pause 0.4
 
-    "Je pense à Kael et à sa main bandée."
-    "À Elias dans le couloir, blanc comme un linge."
+    think "Kael et sa main bandée. Elias, blanc dans le couloir."
 
     pause 0.5
 
-    "Je pense à demain, au carnage que ça va être."
+    think "Puis demain. Le carnage annoncé."
 
     pause 0.6
 
@@ -1400,28 +1306,23 @@ label _5_1_CHOIX_CHAMBRE:
 
     pause 0.5
 
-    "Je sors de la douche."
-    "Je m'habille."
-    "Je m'apprête à m'effondrer sur le lit."
+    think "Je m'habille et m'apprête à m'effondrer sur le lit."
 
     pause 0.3
 
-    "Et puis je le vois."
+    think "Et puis je le vois."
 
     pause 0.4
 
-    "Il y a un papier qui a été glissé sous la porte."
-    "Plié en deux."
+    "Un papier plié en deux a été glissé sous la porte."
 
     pause 0.3
 
-    "Je le ramasse."
+    think "Je le ramasse."
 
     pause 0.4
 
-    "Une seule phrase écrite à l'ordinateur."
-    "Le papier a été imprimé."
-    "Pas de signature."
+    think "Une phrase imprimée. Aucune signature."
 
     pause 0.5
 
@@ -1429,11 +1330,11 @@ label _5_1_CHOIX_CHAMBRE:
 
     pause 0.8
 
-    "Je relis."
+    think "Je relis."
 
     pause 0.4
 
-    "Je relis encore."
+    think "Encore."
 
     pause 0.6
 
@@ -1441,14 +1342,11 @@ label _5_1_CHOIX_CHAMBRE:
 
     pause 0.5
 
-    "C'est tiré du règlement."
-    "Mot pour mot."
-    "Quelqu'un a copié une ligne du règlement et l'a glissée sous ma porte."
+    think "Mot pour mot, tiré du règlement. Quelqu'un a choisi cette ligne et ma porte."
 
     pause 0.4
 
-    "Anonymement."
-    "En pleine nuit."
+    think "Anonymement. En pleine nuit."
 
     pause 0.5
 
@@ -1456,75 +1354,60 @@ label _5_1_CHOIX_CHAMBRE:
 
     pause 0.6
 
-    "Je fixe la phrase."
+    think "Je fixe la phrase jusqu'à ce qu'elle commence à ressembler à une instruction."
 
     pause 0.3
 
-    "Sont retirés des bulletins exprimés."
-    "Les abstentions."
-    "Et les absences."
+    think "Retirés des bulletins exprimés : les abstentions et les absences."
 
     pause 0.5
 
-    "Si quelqu'un n'est pas là pour voter."
-    "Son vote n'est pas compté."
-    "Ni pour."
-    "Ni contre."
+    think "Un absent ne vote ni pour ni contre."
 
     pause 0.4
 
-    "L'unanimité s'applique aux votes exprimés."
-    "Pas aux absents."
+    think "L'unanimité s'applique aux présents. Pas aux absents."
 
     pause 0.6
 
-    "Je pose le papier sur le bureau."
+    think "Je pose le papier. L'idée reste dans ma main."
 
     pause 0.4
 
-    "Je pense à Sael."
+    think "Sael."
 
     pause 0.3
 
-    "Sael qui a fermé la discussion ce soir comme on claque une porte."
-    "Sael qui votera contre demain."
-    "Sael qui ne changera pas d'avis."
+    think "Sael a fermé la discussion. Elle votera contre. Elle ne changera pas."
 
     pause 0.5
 
-    think "Si elle vote pas."
+    think "Si elle ne vote pas…"
     think "Elle ne votera pas contre."
 
     pause 0.6
 
-    "C'est simple."
-    "Trop simple."
-    "Le genre de raisonnement qui a l'air propre jusqu'à ce qu'on le retourne."
+    think "C'est simple. Trop simple. Un raisonnement propre tant qu'on ne regarde pas son envers."
 
     pause 0.4
 
-    "Je reprends le papier."
-    "Je le relis une dernière fois."
+    think "Je reprends le papier. Une dernière lecture, comme si les mots pouvaient reculer."
 
     pause 0.5
 
-    "Pas de signature."
-    "Juste une phrase."
-    "Et une idée que je peux plus défaire maintenant qu'elle est là."
+    think "Pas de signature. Une phrase. Une idée impossible à désapprendre."
 
     pause 0.6
 
-    "La pharmacie est à deux couloirs d'ici."
-    "Je pourrais peut être trouver quelque chose qui fera que Sael reste au lit demain..."
+    think "La pharmacie est à deux couloirs. Je pourrais trouver de quoi retenir Sael au lit demain…"
 
     pause 0.5
 
-    "Je pose le papier."
+    think "Je pose le papier."
 
     pause 0.3
 
-    "Je m'assieds sur le lit."
-    "Qu'est ce que je devrais faire..."
+    think "Je m'assieds. Qu'est-ce que je devrais faire ?"
 
     pause 0.6
 
@@ -1544,41 +1427,31 @@ label _5_1_PHARMACIE:
 
     pause 0.5
 
-    "Le couloir est vide."
-    "Éclairage de nuit."
-    "Ces petites lumières bleues au ras du sol qui donnent l'impression que la station respire."
+    think "Couloir vide. Lumières bleues au sol. La station respire à voix basse."
 
     pause 0.4
 
-    "Je marche lentement."
-    "Pas parce que je suis fatigué."
-    "Parce que quelqu'un qui marche lentement a l'air de quelqu'un qui a le droit d'être là."
+    think "Je marche lentement. Pas par fatigue : les innocents ne se pressent pas."
 
     pause 0.3
 
-    think "Si je croise quelqu'un."
-    think "Je peux pas dormir."
-    think "Je voulais juste prendre quelque chose pour m'aider à dormir."
+    think "Si je croise quelqu'un : je ne dors pas, je cherche seulement un somnifère."
 
     pause 0.3
 
-    "C'est plausible."
-    "C'est même vrai."
-    "Je peux vraiment pas dormir."
+    think "C'est plausible. Même vrai. Les meilleurs mensonges ont cette propriété."
 
     pause 0.4
 
-    "Je tourne au couloir B."
-    "Personne."
+    think "Couloir B. Personne."
 
     pause 0.2
 
-    "Je tourne au couloir C."
-    "Personne non plus."
+    think "Couloir C. Toujours personne."
 
     pause 0.2
 
-    "Bien."
+    think "Bien."
 
     pause 0.5
 
@@ -1586,101 +1459,75 @@ label _5_1_PHARMACIE:
 
     pause 0.4
 
-    "L'infirmerie de nuit."
-    "Les lumières sont au minimum."
-    "Ça sent toujours le désinfectant."
+    think "L'infirmerie dort sous une lumière minimale. Le désinfectant, lui, monte la garde."
 
     pause 0.3
 
-    "Le lit d'examen est vide."
-    "La compresse rouge a disparu."
-    "Quelqu'un a nettoyé."
+    think "Lit vide. Compresse disparue. Quelqu'un a effacé les traces de Kael."
 
     pause 0.4
 
-    "Les armoires à pharmacie sont sur le mur du fond."
-    "Quatre portes vitrées."
-    "Fermées mais pas verrouillées."
-    "En cas d'urgence, un verrou serait une mauvaise idée."
+    think "Quatre armoires vitrées. Fermées, pas verrouillées — logique en cas d'urgence."
 
     pause 0.3
 
-    "Ce soir, je lui en suis reconnaissant."
+    think "Ce soir, je détourne cette logique à mon avantage."
 
     pause 0.5
 
-    "J'ouvre la première armoire."
+    think "Première armoire."
 
     pause 0.3
 
-    "Paracétamol en comprimés."
-    "Ibuprofène."
-    "Antihistaminiques."
-    "Prednisolone."
+    think "Antalgiques. Anti-inflammatoires. Antihistaminiques. Rien qui serve l'idée."
 
     pause 0.3
 
-    "J'ouvre la deuxième."
+    think "Deuxième armoire."
 
     pause 0.3
 
-    "Antispasmodiques."
-    "Antibiotiques sous blister."
-    "Zolpidem."
+    think "Antispasmodiques. Antibiotiques. Zolpidem."
 
     pause 0.3
 
-    think "Zolpidem."
-    think "Somnifère."
+    think "Un somnifère. Mon alibi rendu matériel."
 
     pause 0.3
 
-    "Je prends une gélule."
-    "Une seule."
-    "Pour ce soir."
-    "Pour dormir."
+    think "J'en prends une. Pour ce soir. Pour dormir."
 
     pause 0.3
 
-    "Je continue."
+    think "Puis je continue."
 
     pause 0.4
 
-    "Troisième armoire."
+    think "Troisième armoire."
 
     pause 0.3
 
-    "Lopéramide en gélules."
-    "Bisacodyl en gélules."
-    "Macrogol 4000 en sachets-doses."
+    think "Traitements digestifs. Plusieurs boîtes, plusieurs effets."
 
     pause 0.5
 
-    "Je m'arrête."
+    think "Je m'arrête. L'idée, elle, avance."
 
     pause 0.3
 
-    "Lopéramide."
-    "Anti-diarrhéique."
-    "Gélules."
+    think "Un anti-diarrhéique en gélules."
 
     pause 0.2
 
-    "Bisacodyl."
-    "Laxatif."
-    "Gélules."
+    think "Un laxatif, sous la même forme."
 
     pause 0.4
 
-    "Je les pose côte à côte sur le bord de l'armoire."
+    think "Je pose les boîtes côte à côte."
 
     pause 0.3
 
-    "Les deux boîtes se ressemblent."
-    "Même taille."
-    "Même forme."
-    "Étiquettes différentes."
-    "Mais dans le noir, ou sans ses lunettes, ou sans vraiment regarder..."
+    think "Même taille, même forme. Seule l'étiquette change. Dans le noir, sans regarder…"
 
     pause 0.5
 
@@ -1688,72 +1535,56 @@ label _5_1_PHARMACIE:
 
     pause 0.4
 
-    "Demain matin."
-    "Avant le vote."
+    think "Demain matin. Avant le vote."
 
     pause 0.3
 
-    "Ce quelqu'un ne sera pas en état de voter."
-    "Ce quelqu'un ne sera pas en état de faire grand chose."
+    think "Cette personne ne sera pas en état de voter."
 
     pause 0.5
 
     scene bg_cg024 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg024")
 
-    "J'échange les gélules."
-    "Bisacodyl dans la boîte de Lopéramide."
-    "Lopéramide dans la boîte de Bisacodyl."
+    think "J'échange le contenu des deux boîtes."
 
     pause 0.3
 
-    "Proprement."
-    "Soigneusement."
-    "Comme si l'ordre avait de l'importance."
+    think "Proprement. Soigneusement. Comme si la méthode pouvait nettoyer l'acte."
 
     pause 0.4
 
-    "Je referme les deux boîtes."
-    "Je les replace exactement où elles étaient."
+    think "Je referme et replace tout exactement."
 
     scene bg_infirmerie at adaptive_fullscreen with dissolve
 
     pause 0.5
 
-    "Je regarde les sachets de Macrogol."
+    think "Mon regard revient aux sachets."
 
     pause 0.3
 
-    "Laxatif osmotique."
-    "En poudre."
-    "À diluer dans un liquide."
-    "N'importe quel liquide."
-    "Indétectable si le liquide a déjà un goût."
+    think "Une poudre soluble. Facile à dissimuler dans une boisson."
 
     pause 0.4
 
-    think "Mais ça, c'est pour demain."
-    think "Il faudra trouver comment."
-    think "Et quand."
+    think "Ça, c'est pour demain. Il restera à trouver comment — et quand."
 
     pause 0.5
 
-    "Je prends deux sachets."
-    "Je les glisse dans ma poche."
-    "À côté du Zolpidem."
+    think "Deux sachets rejoignent le somnifère dans ma poche."
 
     pause 0.4
 
-    "Je referme l'armoire."
+    think "Je referme l'armoire."
 
     pause 0.3
 
-    "Je regarde l'infirmerie une dernière fois."
-    "Tout a l'air exactement comme avant."
+    think "Tout paraît exactement comme avant."
 
     pause 0.3
 
-    "C'est peut-être ça le pire."
+    think "C'est peut-être ça, le pire."
 
     pause 0.6
 
@@ -1761,12 +1592,11 @@ label _5_1_PHARMACIE:
 
     pause 0.4
 
-    "Le couloir est toujours vide."
-    "Les lumières bleues au ras du sol."
+    think "Le couloir est toujours vide. Les lumières bleues respirent encore."
 
     pause 0.3
 
-    "Je rentre dans ma chambre."
+    think "Je rentre dans ma chambre sans croiser personne."
 
     pause 0.5
 
@@ -1774,19 +1604,15 @@ label _5_1_PHARMACIE:
 
     pause 0.4
 
-    "Je pose les sachets sur le bureau."
-    "À côté du papier."
+    think "Je pose les sachets à côté du papier. Cause et conséquence, bien alignées."
 
     pause 0.3
 
-    "Je regarde les deux."
-    "Un moment."
+    think "Je les regarde."
 
     pause 0.5
 
-    "Quelqu'un a jugé que je ferais ça."
-    "Quelqu'un a glissé ce papier sous ma porte en sachant que je serais là ce soir."
-    "À fouiller une armoire à pharmacie à deux heures du matin."
+    think "Quelqu'un a parié que je ferais ça. Que je fouillerais une pharmacie en pleine nuit."
 
     pause 0.4
 
@@ -1794,19 +1620,15 @@ label _5_1_PHARMACIE:
 
     pause 0.6
 
-    "Je sais pas."
-    "Je sais pas encore."
+    think "Je ne sais pas. Pas encore."
 
     pause 0.4
 
-    "J'avale le Zolpidem avec un fond d'eau."
-    "Je m'allonge."
-    "Je fixe le plafond."
+    think "J'avale le somnifère, m'allonge et fixe le plafond."
 
     pause 0.5
 
-    "Pour une fois."
-    "Je dors."
+    think "Pour une fois, je dors."
 
     pause 0.6
 
@@ -1822,22 +1644,19 @@ label _5_1_FIN_JOURNEE:
 
     pause 0.5
 
-    "Ma chambre."
-    "Le silence."
-    "Le papier sur le bureau."
+    think "Ma chambre. Le silence. Le papier sur le bureau."
 
     pause 0.4
 
-    "Je le regarde encore."
+    think "Je le regarde encore."
 
     pause 0.3
 
-    "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
+    think "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
 
     pause 0.5
 
-    "Je le repose."
-    "Face contre le bureau."
+    think "Je le repose face contre le bureau."
 
     pause 0.4
 
@@ -1849,61 +1668,48 @@ label _5_1_FIN_JOURNEE:
 
     pause 0.5
 
-    "Sael votera contre."
-    "Peut-être que d'autres voteront contre."
-    "Peut-être, sans doute même, que le texte ne passera pas."
+    think "Sael votera contre. D'autres aussi, peut-être. Le texte ne passera sans doute pas."
 
     pause 0.4
 
-    "C'est possible."
-    "C'est même certain."
+    think "C'est possible. Même certain."
 
     pause 0.3
 
-    "Mais forcer le résultat en empêchant quelqu'un de voter."
-    "Ce n'est plus vraiment un vote."
-    "C'est juste un résultat qu'on a fabriqué."
+    think "Mais empêcher quelqu'un de voter ne sauve pas le vote. Ça fabrique seulement un résultat."
 
     pause 0.5
 
-    think "Et si ça marche comme ça."
-    think "Ça vaut quoi ?"
+    think "Et si ça marche comme ça, ça vaut quoi ?"
 
     pause 0.6
 
-    "Je me déshabille."
-    "Je m'allonge."
+    think "Je me déshabille et m'allonge."
 
     pause 0.4
 
-    "Je fixe le plafond."
+    think "Je fixe le plafond."
 
     pause 0.5
 
-    "Demain sera ce que demain sera."
+    think "Demain sera ce que demain sera. Formule lâche, mais honnête."
 
     pause 0.6
 
-    "Le noir."
-    "Le silence."
-    "La station qui bourdonne très doucement quelque part dans les murs."
+    think "Le noir, le silence, la station qui bourdonne dans les murs."
 
     pause 0.5
 
-    "Je pense à Kael."
-    "À sa sœur qui a six ans et qui sait enfiler un scaphandre en trente secondes."
-    "À ce que ça dit, au final, du monde dans lequel on vit."
+    think "Léa a six ans et enfile un scaphandre en trente secondes. Voilà ce que notre monde apprend à ses enfants."
 
     pause 0.4
 
-    "Je tourne ça dans tous les sens."
-    "Ça mène nulle part."
-    "Comme d'habitude."
+    think "Je retourne l'idée dans tous les sens. Elle ne mène nulle part. Comme souvent."
 
     $ blink()
     pause 0.6
 
-    "Je ferme les yeux."
+    think "Je ferme les yeux."
     $ blink()
 
     pause 0.8

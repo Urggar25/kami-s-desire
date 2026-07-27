@@ -12,6 +12,14 @@ default decouverte_cafeteria = False
 label CAFETERIA_TP:
     scene bg_cafeteria at adaptive_fullscreen
 
+    if current_scene_active == "_2_ROUTE_CAFETERIA":
+        $ current_scene_active = None
+        jump _2_CAFETERIA_ANNONCE_KAMI
+
+    if current_scene_active == "_3_ROUTE_CAFETERIA":
+        $ current_scene_active = None
+        jump _3_CAFETERIA_ARRIVE
+
     if not decouverte_cafeteria and day_number() == 1:
         jump decouverte_cafeteria
 
@@ -33,54 +41,13 @@ screen pnc_cafeteria():
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
     add Solid("#000")
-
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/background/bg_cafeteria.png" at cover_screen
-
-    # Option : quitter au clic droit / ESC (retour au label appelant)
-    # HOTSPOTS — doivent subir EXACTEMENT le même transform
-    imagebutton:
-        idle "images/background/interact/cafeteria/goumi.png"
-        hover "images/background/interact/cafeteria/goumi_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CAF_PNC_GOUMI")
-
-    imagebutton:
-        idle "images/background/interact/cafeteria/frigo.png"
-        hover "images/background/interact/cafeteria/frigo_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CAF_PNC_FRIGO")
-
-    imagebutton:
-        idle "images/background/interact/cafeteria/table.png"
-        hover "images/background/interact/cafeteria/table_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CAF_PNC_TABLES")
-
-    imagebutton:
-        idle "images/background/interact/cafeteria/ecran.png"
-        hover "images/background/interact/cafeteria/ecran_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("CAF_PNC_ECRAN_INFOS")
-
+    use room_scene_background("cafeteria")
+    use room_scene_interactions("cafeteria")
     if social_free_time_active() and mara_link in [0, 2, 4]:
         imagebutton:
-            idle Transform("images/character/mara/sourire.png", zoom=0.75)
-            hover Transform("images/character/mara/neutre.png", zoom=0.75)
+            idle Transform(character_image("mara", "sourire"), zoom=0.75)
+            hover Transform(character_image("mara", "neutre"), zoom=0.75)
             focus_mask True
             xalign 0.15
             yalign 0.30
@@ -89,8 +56,8 @@ screen pnc_cafeteria():
 
     if social_free_time_active() and lysa_link == 1:
         imagebutton:
-            idle Transform("images/character/lysa/sourire.png", zoom=0.75)
-            hover Transform("images/character/lysa/taquin.png", zoom=0.75)
+            idle Transform(character_image("lysa", "sourire"), zoom=0.75)
+            hover Transform(character_image("lysa", "taquin"), zoom=0.75)
             focus_mask True
             xalign 0.82
             yalign 0.30
@@ -98,8 +65,8 @@ screen pnc_cafeteria():
 
     if social_free_time_active() and elen_link == 1:
         imagebutton:
-            idle Transform("images/character/elen/joie.png", zoom=0.75)
-            hover Transform("images/character/elen/content.png", zoom=0.75)
+            idle Transform(character_image("elen", "joie"), zoom=0.75)
+            hover Transform(character_image("elen", "content"), zoom=0.75)
             focus_mask True
             xalign 0.50
             yalign 0.30
@@ -107,17 +74,43 @@ screen pnc_cafeteria():
 
     if j10011_waiting_elias:
         imagebutton:
-            idle Transform("images/character/elias/fatigue.png", zoom=0.75)
-            hover Transform("images/character/elias/inquiet.png", zoom=0.75)
+            idle Transform(character_image("elias", "fatigue"), zoom=0.75)
+            hover Transform(character_image("elias", "inquiet"), zoom=0.75)
             focus_mask True
             xalign 0.58
             yalign 0.30
             action Jump("_10_0_1_1_CAFETERIA_ELIAS")
 
 
-    use exploration_retour_button
 
-label CAF_PNC_GOUMI:
+label cafeteria1_porte:
+    $ corridor_current = "cafeteria"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label cafeteria1_table:
+
+    window auto
+
+    "Des tables."
+    "Des chaises."
+    "Un espace pensé pour faire comme si on vivait ici."
+
+    think "Ça pourrait presque marcher."
+    jump CAFETERIA_TP
+
+
+label cafeteria1_television:
+
+    if day_number() == 4:
+        call screen day4_news_screen()
+        jump CAFETERIA_TP
+
+    think "Les informations défilent sans rien m'apprendre de neuf."
+    jump CAFETERIA_TP
+
+
+label cafeteria2_cuisine:
 
     window auto
 
@@ -135,7 +128,7 @@ label CAF_PNC_GOUMI:
     jump CAFETERIA_TP
 
 
-label CAF_PNC_FRIGO:
+label cafeteria2_distributeur:
 
     window auto
 
@@ -150,31 +143,43 @@ label CAF_PNC_FRIGO:
     jump CAFETERIA_TP
 
 
-label CAF_PNC_ECRAN_INFOS:
-
-    if day_number() == 4:
-        call screen day4_news_screen()
-        jump CAFETERIA_TP
-
-    think "Les informations defilent sans rien m'apprendre de neuf."
+label cafeteria2_tablette_commande:
+    "La tablette de commande affiche des catégories propres, trop propres."
+    "Entrées, plats, desserts, boissons."
+    "Tout est rangé comme si le choix était une simple question d'interface."
+    think "C'est pratique. Et vaguement humiliant."
     jump CAFETERIA_TP
 
 
-label CAF_PNC_TABLES:
+label cafeteria3_reserve:
 
     window auto
 
-    "Des tables."
-    "Des chaises."
-    "Un espace pensé pour faire comme si on vivait ici."
+    "La réserve est verrouillée."
+    "Derrière la vitre, les stocks sont alignés avec une précision clinique."
 
-    think "Ça pourrait presque marcher."
+    if cafeteria_food_visible_count() >= 5:
+        think "Il y a encore de quoi tenir. Pour l'instant."
+    elif cafeteria_food_visible_count() >= 3:
+        think "Les rangées ont déjà l'air moins pleines."
+    elif cafeteria_food_visible_count() >= 1:
+        think "Il reste peu de choses visibles. Trop peu pour que ce soit rassurant."
+    else:
+        think "Vide. Ou assez proche du vide pour que mon estomac comprenne le message."
     jump CAFETERIA_TP
 
 
-# Optionnel : si tu ajoutes un bouton retour graphique
-label CAF_PNC_EXIT:
-    return
+label cafeteria3_nourriture:
+
+    window auto
+
+    "Je regarde les portions restantes."
+    "Tout est propre, emballé, calibré."
+    "Même la nourriture a l'air de suivre un protocole."
+
+    think "On ne mesure pas seulement ce qu'il reste à manger."
+    think "On mesure combien de temps on peut encore faire semblant que tout va bien."
+    jump CAFETERIA_TP
 
 
 # -----------------------------------------------------------------------
@@ -229,12 +234,6 @@ label decouverte_cafeteria:
     $ hideGroup()
 
     scene bg_cg008_1 at adaptive_fullscreen with fade
-
-    $ showGroup([
-        ("noam", "vide", 0.22),
-        ("elen", "vide", 0.50),
-        ("goumi", "vide", 0.78),
-    ])
     
     noam vide "Je dérange ?"
 
@@ -284,7 +283,6 @@ label decouverte_cafeteria:
     elen vide "Mais j'aurais aimé qu'il improvise un peu de liberté avec."
 
     pause 0.3
-    $ hideGroup()
 
     scene bg_cafeteria at adaptive_fullscreen with fade
 

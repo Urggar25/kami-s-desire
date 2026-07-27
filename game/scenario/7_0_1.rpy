@@ -1080,7 +1080,7 @@ label _7_0_1_REVEIL_CHAMBRE:
 
     lysa "Je t'attends ?"
 
-    noam "Laisse moi deux minutes."
+    noam "Laisse-moi deux minutes."
 
     lysa blase "Mensonge."
 
@@ -1209,15 +1209,8 @@ label _7_0_1_CAFETERIA:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
     "La cafétéria est déjà ouverte."
-    "Mais ce n'est pas comme d'habitude."
-    "Ça parle."
-    "Ça circule."
-    "Ça respire."
-
-    "Pas de tension lourde."
-    "Pas de regards fuyants."
-
-    "Juste… du bruit normal."
+    "Pour une fois, elle ressemble à une cafétéria."
+    "Ça parle. Ça circule. Ça respire."
 
     $ showGroup([
         ("iris",   "sourire",    0.10),
@@ -1229,15 +1222,14 @@ label _7_0_1_CAFETERIA:
     ])
 
     iris sourire "Franchement ?"
-    iris sourire "Si on m'avait dit qu'un jour que Kami pouvait bugger comme ça…"
+    iris sourire "Si on m'avait dit qu'un jour Kami pouvait bugger comme ça..."
     iris rire "Je n'y aurais jamais cru."
 
     julian decontracte "Ah mais complètement."
-    julian sourire "C'est le meilleur réveil depuis qu'on est arrivés."
-    julian joie "Personne qui hurle dans les murs, personne qui nous donne des ordres…"
-    julian joie "La grasse mat qui m'avait TEEELLEMENT manqué."
+    julian sourire "Le meilleur réveil depuis notre arrivée."
+    julian joie "Aucun ordre dans les murs. Aucun discours maternel. Julian valide."
 
-    mara taquin "Tu dis ça comme si t'avais une vie avant."
+    mara taquin "Tu dis ça comme si t'avais une vie avant midi."
 
     julian taquin "J'en avais une très bien, mais je te remercie."
     julian decontracte "Et elle commençait rarement avant midi."
@@ -1251,20 +1243,20 @@ label _7_0_1_CAFETERIA:
     "C'est nouveau."
 
     lysa reflexion "C'est calme."
-    lysa inquiet "Trop calme. C'est vraiment bizarre..."
+    lysa inquiet "Trop calme. Dans les mythes, c'est là que quelqu'un ouvre la mauvaise porte."
 
-    noam "Tu préfères quand elle nous parle comme à des objets ?"
+    noam "Tu préfères quand elle nous parle comme à des objets ? Enfin, c'est une vraie question."
 
     lysa blase "Non."
     lysa neutre "Mais au moins, on savait à quoi s'en tenir."
 
     mara reflexion "Là aussi."
-    mara neutre "On s'en tient à rien."
+    mara neutre "On s'en tient au vide. C'est moins bruyant, mais ça tient pas chaud."
 
     julian sourire "C'est parfait."
     julian decontracte "Rien, c'est déjà mieux que ce qu'on avait."
 
-    elen content "Peut-être qu'elle nous laisse respirer un peu."
+    elen content "Peut-être qu'elle nous laisse respirer un peu. Ça peut arriver, non ? Même aux systèmes horribles ?"
 
     iris taquin "Oh la naïveté…"
 
@@ -1273,21 +1265,21 @@ label _7_0_1_CAFETERIA:
 
     iris "Kami ?"
     iris desaccord "Nous laisser respirer ?"
-    iris desaccord "Elle a déjà du mal à nous laisser penser."
+    iris desaccord "Elle confond déjà notre oxygène avec une autorisation administrative."
 
     julian idee "Peut-être qu'elle est cassée."
 
     "Un petit flottement."
     "Ça retombe vite."
 
-    kael reflechit "Techniquement, c'est possible qu'il y ait eu une surcharge."
-    kael neutre "Ou une mise à jour."
-    kael neutre "Ou un redémarrage système."
+    kael reflechit "Surcharge possible."
+    kael neutre "Ou mise à jour."
+    kael neutre "Ou redémarrage système."
 
     iris gene "Merci Kael."
     iris gene "On est rassurés."
 
-    kael neutre "Je dis juste que c'est cohérent."
+    kael neutre "Je dis que c'est cohérent."
 
     julian sourire "Moi je vote pour qu'elle reste comme ça."
 
@@ -1304,9 +1296,8 @@ label _7_0_1_CAFETERIA:
 
     call j701_play_plate from _call_j701_play_plate
 
-    "Quand je relève enfin la tête, la conversation n'a pas eu besoin de moi pour continuer."
-
-    "Ça fait longtemps que c'était pas juste… manger."
+    "Quand je relève enfin la tête, la conversation continue sans moi."
+    think "Ça fait longtemps que manger n'était pas juste manger."
 
     $ hideGroup()
 
@@ -1325,10 +1316,11 @@ label _7_0_1_CAFETERIA:
 
     noam "Oui."
 
-    lysa neutre "Pas pour convaincre, pas pour discuter de ces foutus votes."
-    lysa "Juste pour parler entre eux."
+    lysa neutre "Pas pour convaincre. Pas pour survivre à un vote."
+    lysa "Juste parce qu'ils ont une bouche et deux minutes."
 
     noam reflexion "C'est étrange."
+    noam "Enfin... pas désagréable."
 
     lysa sourire "Ouais. C'est bien vrai."
 
@@ -1344,7 +1336,7 @@ label _7_0_1_CAFETERIA:
     julian taquin "Spoiler : c'est pas ce qu'on fait déjà ?"
 
     iris "Oui mais laisse-moi rêver deux minutes."
-    iris rire "Je veux que ça DUUURE..."
+    iris rire "Je veux que ça duuure..."
 
     call j701_play_calm from _call_j701_play_calm
 
@@ -1353,10 +1345,8 @@ label _7_0_1_CAFETERIA:
     "Personne ne contredit."
     "Parce que tout le monde le pense."
 
-    think "Pas d'annonce."
-    think "Pas de règle."
-    think "Pas de pression."
-    think "Juste… nous."
+    think "Pas d'annonce. Pas de règle. Pas de pression."
+    think "Juste nous."
 
     "Je regarde autour."
     "Les visages sont différents."
@@ -1391,12 +1381,8 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
     "L'après-midi passe lentement."
-
-    "Pas dans le mauvais sens."
-
-    "Juste… lentement."
-
-    "Comme si le Conclave retenait son souffle en ne sachant pas quoi faire."
+    "Pas mal. Lentement."
+    "Comme si le Conclave ne savait plus quoi faire de nous sans voix dans les murs."
 
     "Je tourne au coin d'un couloir quand quelqu'un m'interpelle."
 
@@ -1416,7 +1402,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     tomas gene "Seulement une petite quantité."
 
-    noam panne "Merde."
+    noam panne "Merde. Le piège était subtil."
 
     tomas determine "Je suis sérieux."
 
@@ -1433,9 +1419,9 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     noam surpris "Le Canon ?"
 
     tomas neutre "Oui."
-    tomas neutre "Les archives externes."
-    tomas neutre "Les retranscriptions automatiques."
-    tomas neutre "Les rapports publics."
+    tomas neutre "Archives externes."
+    tomas neutre "Retranscriptions automatiques."
+    tomas neutre "Rapports publics."
 
     noam taquin "Tu bosses vraiment alors que tout le monde est de bonne humeur ?"
 
@@ -1477,6 +1463,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     noam panne "Tomas."
     noam panne "Je vais être honnête avec toi."
     noam panne "Je comprends rien à ce que tu fais..."
+    noam "Enfin, je comprends que tu comprends. C'est déjà quelque chose."
 
     tomas gene "A-Ah... Oui."
     tomas gene "Pardon. Je vais t'expliquer."
@@ -1490,8 +1477,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     noam "..."
 
-    "Le mot suffit à refroidir la pièce encore davantage."
-    "Je crois même que la température est négative..."
+    "Le mot suffit à refroidir la pièce."
 
     tomas neutre "Le système mondial publie automatiquement les chiffres toutes les heures."
     tomas neutre "Normalement."
@@ -1506,7 +1492,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     tomas inquiet "Zéro."
     tomas inquiet "Zéro exécution."
-    tomas inquiet "A toutes les heures depuis le vote d'hier..."
+    tomas inquiet "À chaque relevé depuis le vote d'hier."
 
     "Je regarde l'écran."
     "0."
@@ -1515,7 +1501,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     noam surpris "..."
     noam surpris "C'est une bonne nouvelle, non ?"
-    noam hesitation "Je comprends pas..."
+    noam hesitation "Enfin... ça devrait l'être."
 
     tomas raison "Techniquement oui."
 
@@ -1543,8 +1529,8 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     noam inquiet "Je crois bien que ça déconne sérieusement..."
     noam inquiet "D'abord Kami... Et maintenant ça ?"
 
-    tomas hesitation "J'en sais trop rien, M-Mais..."
-    tomas joie "Peut-être que... Les commandements ne s'appliquent plus."
+    tomas hesitation "Je n'en sais rien. Mais..."
+    tomas joie "Peut-être que les Commandements ne s'appliquent plus."
 
     "Un léger sourire passe sur son visage."
     "Très léger."
@@ -1555,9 +1541,9 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     tomas raison "C'est presque certain que c'est lié à l'état de Kami."
 
-    noam hesitation "Et si elle revient pas ?"
+    noam hesitation "Et si elle ne revient pas ?"
 
-    tomas inquiet "Alors les règles du monde n'existeront plus."
+    tomas inquiet "Alors les règles du monde cessent d'exister."
 
     noam surpris "Tu as l'air sûr de toi."
 
@@ -1574,20 +1560,15 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     tomas neutre "Quoi ?"
 
-    noam triste "Hier encore j'aurais dû être content d'apprendre ce genre d'information."
-    noam triste "Et là…"
+    noam triste "Hier encore j'aurais dû être content d'apprendre ça."
+    noam triste "Et là..."
     noam fatigue "Je suis surtout fatigué."
 
     tomas fatigue "Je crois qu'on l'est tous."
 
     "Les écrans continuent de tourner doucement."
-
-    "Aucun son."
-    "Aucune alerte."
-    "Aucune voix de Kami."
-    "Juste les machines."
-    "Pour la première fois depuis longtemps…"
-    "Le monde semble fonctionner sans elle."
+    "Aucun son. Aucune alerte. Aucune voix de Kami."
+    "Pour la première fois depuis longtemps, le monde semble fonctionner sans elle."
 
     think "Ou essayer."
 
@@ -1598,14 +1579,15 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     noam hesitation "Pourquoi ?"
 
     tomas reflechit "Parce que je ne sais pas encore ce que ça signifie."
-    tomas neutre "J'essaye de comprendre ce que ça veut dire..."
+    tomas neutre "Je veux comprendre avant de déclencher une panique."
 
     think "Quelque chose cloche."
     think "Et ça fait bien longtemps que ça n'était plus arrivé."
 
     $ hideGroup()
 
-    "Je quitte la salle et me dirige vers la cafétéria, je commence à avoir un petit creux."
+    think "Je quitte la salle."
+    think "Et, absurdité complète, j'ai faim."
 
     jump _7_0_1_SOIREE_TENSION_LEGERE
 
@@ -1636,34 +1618,33 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     iris taquin "Franchement, si demain elle parle toujours pas…"
 
-    julian sourire "Je commence officiellement à apprécier cette dystopie."
+    julian sourire "Julian commence officiellement à apprécier cette dystopie."
 
     elen content "Tu dis ça maintenant."
-    elen "Mais au bout de trois jours tu vas mourir d'ennui."
+    elen "Mais au bout de trois jours tu vas mourir d'ennui. Ou manger tes draps. Enfin non, fais pas ça, ça doit être horrible."
 
     julian rire "Impossible."
     julian taquin "Je suis fascinant."
 
-    iris rire "Laisse moi rire..."
-    iris taquin "Ça aussi, c'est une maladie mentale."
+    iris rire "Laisse-moi rire..."
+    iris taquin "Ça aussi, c'est une maladie mentale, mais au moins elle est bien habillée."
 
     "Elen rit."
-    "Même Julian sourit vraiment cette fois."
-    "C'est étrange comme tout paraît plus simple sans Kami."
-    "Comme si sa voix occupait normalement une partie de l'air."
+    "Même Julian sourit vraiment."
+    think "Sans Kami, l'air prend moins de place."
 
-    lysa reflexion "Je crois surtout qu'on est en train de profiter du silence avant de comprendre pourquoi il est là."
+    lysa reflexion "Je crois surtout qu'on profite du silence avant de comprendre pourquoi il est là."
 
     iris gene "Toujours optimiste, toi."
 
     lysa inquiet "Si ça peut nous garder en vie..."
 
-    kael fatigue "Techniquement, elle peut juste être en maintenance et revenir dès demain."
+    kael fatigue "Techniquement, elle peut être en maintenance et revenir demain."
 
-    iris colere "Kael. Non. Tais toi un peu."
+    iris colere "Kael. Non. Tais-toi un peu."
     iris desaccord "Tu peux arrêter de rendre chaque chose terrifiante avec un ton calme ?"
 
-    kael neutre "Il ne faut pas se mentir aussi..."
+    kael neutre "Il ne faut pas se mentir."
 
     "Petit rire autour de la table."
     "Pas fort."
@@ -1676,9 +1657,9 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     "CLAC."
 
     elias inquiet "Ok."
-    elias inquiet "Bon les gars, faut qu'on parle."
+    elias inquiet "Bon. Faut qu'on parle."
 
-    mara agace "Tu commences à devenir très inquiétant quand tu dis ça."
+    mara agace "Tu deviens très inquiétant quand tu démarres comme un adulte responsable."
 
     elias neutre "Non mais sérieux."
 
@@ -1696,13 +1677,13 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     elias "Des outils."
     elias "Des composants."
-    elias inquiet "Deux batteries aussi."
+    elias inquiet "Et deux batteries. Des grosses."
 
     kael surpris "Des batteries ?"
 
     elias inquiet "Oui."
 
-    mara doute "T'es sûr que tu les as pas déplacées ?"
+    mara doute "T'es sûr que tu les as pas déplacées ? Question obligatoire, désolée."
 
     elias colere "Oui je suis sûr."
 
@@ -1710,27 +1691,27 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     "Comme s'il s'était déjà posé la question cinquante fois."
 
     elias fatigue "J'avais tout rangé ce matin."
-    elias fatigue "J'étais en train de bricoler un petit truc..."
+    elias fatigue "Je bricolais un truc. Un petit truc. Rien de bizarre."
 
     call j701_play_stock from _call_j701_play_stock
 
     elias fatigue "J'ai refait la liste dans ma tête."
-    elias inquiet "Plus je recompte, moins ça colle."
+    elias inquiet "Plus je recompte, moins ça colle. Et moi, les listes, je les rate pas."
 
     kael reflechit "Dans le stockage principal ?"
 
     elias neutre "Oui."
 
-    kael taquin "Drôle d'endroit..."
+    kael taquin "Endroit isolé."
 
-    elias desespoir "Oui mais bon, au moins y'a personne là bas, je peux me concentrer."
+    elias desespoir "Oui. Justement. Y'a personne là-bas, je peux me concentrer."
     elias desespoir "Je sais où je range mes trucs."
-    elias colere "Et là, y'a plus rien !"
+    elias colere "Et là, y'a plus rien."
 
     mara reflexion "Il manque beaucoup de choses ?"
 
     elias fatigue "Pas énormément."
-    elias inquiet "Mais les composants qui me fallait, ils sont pas facilement remplaçables ceux là."
+    elias inquiet "Mais les composants qu'il me fallait, ceux-là, on les remplace pas avec du scotch et une prière."
 
     iris hesitation "Et personne a rien pris ici ?"
 
@@ -1747,7 +1728,7 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     kael reflechit "Ou démonter quelque chose."
 
     iris colere "Génial."
-    iris colere "Tu sous-entends qu'il y a un voleur parmis nous ?!"
+    iris colere "Tu sous-entends qu'il y a un voleur parmi nous ?"
 
     elias inquiet "Je dis pas qu'on nous vole."
 
@@ -1759,12 +1740,13 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     "Comme s'il essayait lui-même de décider si ça avait du sens."
 
     elias fatigue "Je comprends pas."
+    elias "C'est chaud. Vraiment chaud."
 
     "Le ton a changé."
     "Pas brutalement."
     "Comme une musique qui devient légèrement fausse."
 
-    noam "T'as vérifié partout ?"
+    noam "Tu veux dire que... tu as vérifié partout ?"
 
     elias fatigue "Trois fois au moins."
 
@@ -1776,25 +1758,24 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     iris surpris "Ah. Oui."
     iris reflexion "C'est vrai qu'on vit tout le temps avec ça, mais il y a des caméras partout ici..."
 
-    elias reflechit "Faudrait voir si on peut accéder aux images..."
-    elias panique "Mais pour ça faut avoir l'autorisation de Kami..."
+    elias reflechit "Il faudrait accéder aux images..."
+    elias panique "Mais pour ça il faut l'autorisation de Kami."
 
     "Cette fois, le silence reste un peu plus longtemps."
 
     mara stress "Super."
 
-    julian panne "On est peut-être juste devenus un groupe de singes livré à lui-même."
+    julian panne "Nous sommes peut-être simplement devenus un groupe de primates livré à lui-même."
 
-    iris taquin "Toi on le savait déjà."
+    iris taquin "Pour toi, le diagnostic était déjà posé."
 
-    julian sourire "Je prends ça comme un compliment."
+    julian sourire "Julian prend ça comme un compliment."
 
     iris desaccord "Si tu veux, mais ça n'en est pas un."
 
     "Quelques sourires reviennent."
     "Mais moins facilement."
-    "Le sujet reste là."
-    "Suspendu au-dessus de la table."
+    "Le sujet reste au-dessus de la table."
 
     think "Des outils."
     think "Des batteries."

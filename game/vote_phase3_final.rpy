@@ -141,6 +141,11 @@ transform vote_phase3_float_down:
     ease 1.0 yoffset 46 alpha 0.0
     repeat
 
+transform vote_phase3_scanline:
+    yoffset -1080
+    linear 8.0 yoffset 1080
+    repeat
+
 
 # -----------------------------
 # Écran 1 — vote initial (10s)
@@ -151,6 +156,15 @@ screen vote_screen():
 
     add "images/background/bg_conclave.png" at adaptive_fullscreen
     add Solid("#060B17A0")
+    add Solid("#4AD5FF20", ysize=2) ypos 120
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at vote_phase3_scanline
+    text "KAMI.CORE // SCRUTIN FINAL":
+        xpos 70
+        ypos 74
+        font "fonts/Barlow-Light.ttf"
+        size 18
+        color "#78DFFF"
+        kerning 4
 
     # Timer + barre de décompte (10s)
     frame:
@@ -158,7 +172,11 @@ screen vote_screen():
         yalign 0.08
         xsize 980
         ysize 84
-        background Solid("#0D1320CC")
+        background Fixed(
+            Solid("#0D1320DD"),
+            Solid("#4AD5FF55", xsize=4),
+            Solid("#FFFFFF12", ysize=1),
+        )
 
         vbox:
             xalign 0.5
@@ -191,17 +209,17 @@ screen vote_screen():
     hbox:
         xalign 0.5
         yalign 0.58
-        spacing 120
+        spacing 54
 
         # ---------------------
         # Bouton POUR
         # ---------------------
         button:
             at vote_phase3_intro_left, vote_phase3_btn_pulse
-            xsize 600
+            xsize 500
             ysize 360
-            background Solid("#0F2A1CCF")
-            hover_background Solid("#1C5A3ACC")
+            background Fixed(Solid("#0F2A1CCF"), Solid("#87FFD055", xsize=4))
+            hover_background Fixed(Solid("#1C5A3ACC"), Solid("#87FFD0", xsize=5), Solid("#FFFFFF20", ysize=2))
             hovered SetVariable("vote_phase3_hover_side", "pour")
             unhovered SetVariable("vote_phase3_hover_side", None)
 
@@ -223,20 +241,67 @@ screen vote_screen():
                 text "Vote Pour":
                     xalign 0.5
                     font "fonts/day_font.ttf"
-                    size 62
+                    size 56
                     bold True
                     color "#9FFFD4"
                     outlines [(4, "#2CFF9D88", 0, 0)]
+
+                text "Changer les règles":
+                    xalign 0.5
+                    font "fonts/Barlow-Light.ttf"
+                    size 24
+                    color "#D6FFF0"
+
+        # ---------------------
+        # Bouton ABSTENTION
+        # ---------------------
+        button:
+            at vote_phase3_btn_pulse
+            xsize 500
+            ysize 360
+            background Fixed(Solid("#202536CF"), Solid("#C6CBD555", xsize=4))
+            hover_background Fixed(Solid("#3A4054CC"), Solid("#E6ECF8", xsize=5), Solid("#FFFFFF20", ysize=2))
+            hovered SetVariable("vote_phase3_hover_side", "abstention")
+            unhovered SetVariable("vote_phase3_hover_side", None)
+
+            action [
+                SetVariable("vote_phase3_player_choice", "abstention"),
+                Play("sound", "audio/sfx_beep.mp3"),
+                With(vpunch),
+                Return("abstention"),
+            ]
+
+            vbox:
+                xalign 0.5
+                yalign 0.5
+                spacing 24
+
+                if vote_phase3_hover_side == "abstention":
+                    at vote_phase3_hover_zoom
+
+                text "Abstention":
+                    xalign 0.5
+                    font "fonts/day_font.ttf"
+                    size 54
+                    bold True
+                    color "#E6ECF8"
+                    outlines [(4, "#8B95A888", 0, 0)]
+
+                text "Laisser le système trancher":
+                    xalign 0.5
+                    font "fonts/Barlow-Light.ttf"
+                    size 24
+                    color "#EEF2F8"
 
         # ---------------------
         # Bouton CONTRE
         # ---------------------
         button:
             at vote_phase3_intro_right, vote_phase3_btn_pulse
-            xsize 600
+            xsize 500
             ysize 360
-            background Solid("#2A1010CF")
-            hover_background Solid("#5A1F1FCC")
+            background Fixed(Solid("#2A1010CF"), Solid("#FFB2B255", xsize=4))
+            hover_background Fixed(Solid("#5A1F1FCC"), Solid("#FFB2B2", xsize=5), Solid("#FFFFFF20", ysize=2))
             hovered SetVariable("vote_phase3_hover_side", "contre")
             unhovered SetVariable("vote_phase3_hover_side", None)
 
@@ -258,10 +323,16 @@ screen vote_screen():
                 text "Vote contre":
                     xalign 0.5
                     font "fonts/day_font.ttf"
-                    size 62
+                    size 56
                     bold True
                     color "#FFB2B2"
                     outlines [(4, "#FF474788", 0, 0)]
+
+                text "Maintenir le cadre":
+                    xalign 0.5
+                    font "fonts/Barlow-Light.ttf"
+                    size 24
+                    color "#FFE8E8"
 
     # Timer logique
     timer 1.0 repeat True action If(
@@ -284,13 +355,20 @@ screen vote_phase3_tally_screen():
 
     add Solid("#04070FCC")
     add "images/background/bg_conclave.png" at adaptive_fullscreen
+    add Solid("#4AD5FF18", ysize=2) ypos 118
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at vote_phase3_scanline
 
     frame:
         xalign 0.5
         yalign 0.5
         xsize 1560
         ysize 920
-        background Solid("#0A1222D8")
+        background Fixed(
+            Solid("#0A1222D8"),
+            Solid("#4AD5FF44", xsize=4),
+            Solid("#4AD5FF44", xsize=4, xalign=1.0),
+            Solid("#FFFFFF10", ysize=1),
+        )
 
     text "DÉPOUILLEMENT DES VOTES":
         xalign 0.5
@@ -313,14 +391,32 @@ screen vote_phase3_tally_screen():
         false=NullAction()
     )
 
-    # if vote_phase3_current_name:
-    #     text "[vote_phase3_current_name] vote :":
-    #         xalign 0.5
-    #         yalign 0.30
-    #         font "fonts/day_font.ttf"
-    #         size 38
-    #         color "#D9ECFF"
-    #         outlines [(2, "#203050", 0, 0)]
+    if vote_phase3_current_name:
+        frame:
+            xalign 0.5
+            yalign 0.285
+            xsize 720
+            ysize 76
+            background Fixed(
+                Solid("#071426DD"),
+                Solid("#4AD5FF66", xsize=4),
+                Solid("#FFFFFF12", ysize=1),
+            )
+
+            hbox:
+                xalign 0.5
+                yalign 0.5
+                spacing 18
+                text "BULLETIN":
+                    font "fonts/Barlow-Light.ttf"
+                    size 22
+                    color "#78DFFF"
+                    kerning 4
+                text "[vote_phase3_current_name]":
+                    font "fonts/day_font.ttf"
+                    size 40
+                    color "#E6F4FF"
+                    outlines [(2, "#203050", 0, 0)]
 
     if vote_phase3_current_vote == "pour":
         text "POUR":

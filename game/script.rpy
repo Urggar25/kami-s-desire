@@ -212,6 +212,10 @@ init python:
             return im.Blur(ref, blur_radius)
         return ref
 
+    def character_image(char_name, expr="neutre"):
+        """Return the Ren'Py image declared as ``image <char> <expr>``."""
+        return ImageReference("%s %s" % (char_name, expr))
+
     def bg_show(name, at_list=None, layer="bgcam", blurred=False, blur_radius=2.0):
         if at_list is None:
             at_list = []

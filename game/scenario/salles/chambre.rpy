@@ -43,40 +43,8 @@ label chambre2_porte_dehors:
     jump chambre2_porte_dehors_animation
 
 label chambre2_porte_dehors_animation:
-    hide screen pnc_chambre
-    scene black
-
-    show expression "images/background/bg_dortoir.png" as door_open_bg at adaptive_fullscreen
-    show expression "images/background/interact/animation/door_open/porte1.png" as door_open_fg at adaptive_fullscreen
-    with None
-    $ renpy.pause(0.18, hard=True)
-
-    show expression "images/background/interact/animation/door_open/porte2.png" as door_open_fg at adaptive_fullscreen
-    $ renpy.pause(0.18, hard=True)
-
-    show expression "images/background/interact/animation/door_open/porte3.png" as door_open_fg at adaptive_fullscreen
-    $ renpy.pause(0.28, hard=True)
-
-    # Zoom sur l'image finale de la porte ouverte
-    show expression "images/background/bg_dortoir.png" as door_open_bg at adaptive_fullscreen, door_open_camera_zoom
-    show expression "images/background/interact/animation/door_open/porte3.png" as door_open_fg at adaptive_fullscreen, door_open_camera_zoom
-
-    show expression Solid("#000") as door_open_black at door_open_black_fade
-    $ renpy.pause(1.15, hard=True)
-
-    scene black
+    call PLAY_DOOR_OPEN(door_room_background("dortoir"))
     jump DORTOIR_TP
-
-transform door_open_camera_zoom:
-    fit "cover"
-    xalign 0.5
-    yalign 0.5
-    zoom 1.0
-    easein 1.05 zoom 1.28
-
-transform door_open_black_fade:
-    alpha 0.0
-    linear 0.85 alpha 1.0
 
 label chambre2_porte_sdb:
     "Je regarde vers la salle de bain."

@@ -33,45 +33,14 @@ screen pnc_observation():
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
     add Solid("#000")
-
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/background/bg_observation.png" at cover_screen
-
-    # Option : quitter au clic droit / ESC (retour au label appelant)
-    # HOTSPOTS — doivent subir EXACTEMENT le même transform
-    imagebutton:
-        idle "images/background/interact/salle_observation/radio.png"
-        hover "images/background/interact/salle_observation/radio_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OBS_PNC_RADIO")
-
-    imagebutton:
-        idle "images/background/interact/salle_observation/vitre.png"
-        hover "images/background/interact/salle_observation/vitre_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OBS_PNC_VITRE")
-        
-    imagebutton:
-        idle "images/background/interact/salle_observation/orbite.png"
-        hover "images/background/interact/salle_observation/orbite_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("OBS_PNC_ORBITE")
+    use room_scene_background("observation")
+    use room_scene_interactions("observation")
 
     if social_free_time_active() and lysa_link == 2:
         imagebutton:
-            idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
-            hover Transform("images/character/lysa/triste.png", zoom=0.75)
+            idle Transform(character_image("lysa", "reflexion"), zoom=0.75)
+            hover Transform(character_image("lysa", "triste"), zoom=0.75)
             focus_mask True
             xalign 0.82
             yalign 0.30
@@ -79,8 +48,8 @@ screen pnc_observation():
 
     if social_free_time_active() and julian_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/julian/sourire.png", zoom=0.75)
-            hover Transform("images/character/julian/taquin.png", zoom=0.75)
+            idle Transform(character_image("julian", "sourire"), zoom=0.75)
+            hover Transform(character_image("julian", "taquin"), zoom=0.75)
             focus_mask True
             xalign 0.62
             yalign 0.30
@@ -89,15 +58,47 @@ screen pnc_observation():
 
     if social_free_time_active() and elen_link == 2:
         imagebutton:
-            idle Transform("images/character/elen/content.png", zoom=0.75)
-            hover Transform("images/character/elen/reflechit.png", zoom=0.75)
+            idle Transform(character_image("elen", "content"), zoom=0.75)
+            hover Transform(character_image("elen", "reflexion"), zoom=0.75)
             focus_mask True
             xalign 0.40
             yalign 0.30
             action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
-    use exploration_retour_button
+label observation1_porte_couloir_cafeteria:
+    $ corridor_current = "cafeteria"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label observation1_horizon:
+    jump OBS_PNC_VITRE
+
+
+label observation1_ordinateur:
+    "Les postes compilent les données orbitales en continu."
+    "Trajectoires, distances, vitesses relatives et fenêtres de communication défilent sur les écrans."
+    "Je tente d'ouvrir les commandes, mais les fonctions d'émission et de navigation sont verrouillées."
+    think "On nous laisse observer tout ce qui passe. Surtout pas lui parler."
+    jump OBSERVATION_TP
+
+
+label observation1_vaisseau_communication:
+    "Un vaisseau glisse lentement devant la baie vitrée."
+    "Les consoles identifient sa balise, puis affichent une fréquence de communication barrée en rouge."
+    "Il est assez proche pour que je distingue les lumières de sa coque. Trop loin pour savoir si quelqu'un regarde dans notre direction."
+    think "Un moyen de partir passe sous mes yeux, et je ne peux même pas lui envoyer un signal."
+    jump OBSERVATION_TP
+
+
+label observation2_horizon:
+    jump OBS_PNC_VITRE
+
+
+label observation2_radio:
+    jump OBS_PNC_RADIO
+
+
 
 label OBS_PNC_RADIO:
     "La console radio est massive."

@@ -391,9 +391,12 @@ default broadcast_char = None
 default broadcast_expr = "neutre"
 default broadcast_on = False
 
-default broadcast_px = 0   # ou une petite valeur comme -50 si besoin d'un léger ajustement
-default broadcast_py = 0   # ou -50 / -100 selon la hauteur du sprite
-default broadcast_pz = 1.0 # ou 0.95 → 1.1 selon si tu veux zoomer un peu plus
+# Les modèles de personnages partagent un canevas proche de 1024x1536 et
+# incluent déjà leur échelle dans images.rpy. Ce cadrage commun évite donc
+# que les anciens réglages prévus pour les PNG coupent la tête du portrait.
+default broadcast_px = 30
+default broadcast_py = 10
+default broadcast_pz = 0.85
 
 # --- Transforms ---
 transform broadcast_frame:
@@ -465,11 +468,11 @@ init python:
         viewport_w = bw + 2 * margin
         viewport_h = bh + 2 * margin
 
-        fn = "images/character/%s/%s.png" % (store.broadcast_char, store.broadcast_expr)
+        portrait = character_image(store.broadcast_char, store.broadcast_expr)
 
         d = Viewport(
             child=Transform(
-                fn,
+                portrait,
                 xpos=store.broadcast_px + margin,   # offset pour centrer dans le grand viewport
                 ypos=store.broadcast_py + margin,
                 zoom=store.broadcast_pz
@@ -492,9 +495,11 @@ init python:
         store.broadcast_char = char_name
         store.broadcast_expr = expr
 
-        if px is not None: store.broadcast_px = px
-        if py is not None: store.broadcast_py = py
-        if pz is not None: store.broadcast_pz = pz
+        # px/py/pz restent acceptés pour ne pas casser les anciens appels,
+        # mais les portraits composés ont désormais tous le même cadrage.
+        store.broadcast_px = 30
+        store.broadcast_py = 10
+        store.broadcast_pz = 0.85
 
         renpy.restart_interaction()
 
@@ -509,9 +514,9 @@ init python:
         renpy.restart_interaction()
 
 label reset:
-    $ broadcast_px = 0
-    $ broadcast_py = 0
-    $ broadcast_pz = 1.0
+    $ broadcast_px = 30
+    $ broadcast_py = 10
+    $ broadcast_pz = 0.85
 
 transform screen_shake:
     xoffset 0 yoffset 0

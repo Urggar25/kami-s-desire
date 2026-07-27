@@ -33,53 +33,50 @@ screen pnc_gymnase():
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
     add Solid("#000")
-
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/background/bg_gymnase.png" at cover_screen
-
-    # Option : quitter au clic droit / ESC (retour au label appelant)
-    # HOTSPOTS — doivent subir EXACTEMENT le même transform
-    imagebutton:
-        idle "images/background/interact/gymnase/tapis.png"
-        hover "images/background/interact/gymnase/tapis_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("GYM_PNC_TAPIS")
-
-    imagebutton:
-        idle "images/background/interact/gymnase/banc.png"
-        hover "images/background/interact/gymnase/banc_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("GYM_BANC_INTERACT")
+    use room_scene_background("gymnase")
+    use room_scene_interactions("gymnase")
 
     if social_free_time_active() and ryn_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/ryn/determine.png", zoom=0.75)
-            hover Transform("images/character/ryn/neutre.png", zoom=0.75)
+            idle Transform(character_image("ryn", "determine"), zoom=0.75)
+            hover Transform(character_image("ryn", "neutre"), zoom=0.75)
             focus_mask True
             xalign 0.20
             yalign 0.75
             action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("RYN_LINK_INTERACT")]
     if social_free_time_active() and elias_link in [0, 2, 4]:
         imagebutton:
-            idle Transform("images/character/elias/neutre.png", zoom=0.75)
-            hover Transform("images/character/elias/reflechit.png", zoom=0.75)
+            idle Transform(character_image("elias", "neutre"), zoom=0.75)
+            hover Transform(character_image("elias", "reflechit"), zoom=0.75)
             focus_mask True
             xalign 0.90
             yalign 0.90
             action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("ELIAS_LINK_INTERACT")]
 
 
+label gymnase1_douche:
+    "Les douches sont impeccables. Trop impeccables."
+    "Je lève les yeux et repère plusieurs caméras orientées vers les cabines."
+    "Aucun angle mort. Et aucun brouilleur pour couper la surveillance."
+    think "Qui irait se doucher là-dedans, à la vue de tous ?!"
+    jump GYMNASE_TP
 
 
-    use exploration_retour_button
+label gymnase1_porte_couloir_infirmerie:
+    $ corridor_current = "infirmerie"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label gymnase1_terrain:
+    "Les lignes du terrain sont nettes, comme si personne ne les avait encore franchies."
+    "Il y a assez de place pour courir, jouer ou simplement oublier les murs pendant quelques minutes."
+    think "Même la détente ressemble à une zone soigneusement délimitée."
+    jump GYMNASE_TP
+
+
+label gymnase2_banc:
+    jump GYM_BANC_INTERACT
 
 label GYM_BANC_INTERACT:
     if not social_free_time_active():

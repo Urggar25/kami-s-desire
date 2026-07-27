@@ -35,39 +35,13 @@ screen pnc_archive():
     zorder 200
 
     add Solid("#000")
-    add "images/background/bg_archive.png" at cover_screen
-
-    imagebutton:
-        idle "images/background/interact/salle_archive/biblio.png"
-        hover "images/background/interact/salle_archive/biblio_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("ARCHIVE_PNC_BIBLIO")
-
-    imagebutton:
-        idle "images/background/interact/salle_archive/console.png"
-        hover "images/background/interact/salle_archive/console_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("ARCHIVE_PNC_CONSOLE")
-
-    imagebutton:
-        idle "images/background/interact/salle_archive/hologramme.png"
-        hover "images/background/interact/salle_archive/hologramme_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("ARCHIVE_PNC_HOLOGRAMME")
+    use room_scene_background("archive")
+    use room_scene_interactions("archive")
 
     if social_free_time_active() and tomas_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/tomas/reflechit.png", zoom=0.75)
-            hover Transform("images/character/tomas/neutre.png", zoom=0.75)
+            idle Transform(character_image("tomas", "reflechit"), zoom=0.75)
+            hover Transform(character_image("tomas", "neutre"), zoom=0.75)
             focus_mask True
             xalign 0.60
             yalign 0.30
@@ -75,16 +49,15 @@ screen pnc_archive():
 
     if social_free_time_active() and lysa_link == 3:
         imagebutton:
-            idle Transform("images/character/lysa/reflexion.png", zoom=0.75)
-            hover Transform("images/character/lysa/neutre.png", zoom=0.75)
+            idle Transform(character_image("lysa", "reflexion"), zoom=0.75)
+            hover Transform(character_image("lysa", "neutre"), zoom=0.75)
             focus_mask True
             xalign 0.84
             yalign 0.30
             action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("LYSA_LINK_INTERACT")]
 
-    use exploration_retour_button
 
-label ARCHIVE_PNC_BIBLIO:
+label archive1_bibliotheque:
 
     "Des étagères entières."
     "Pas de livres."
@@ -103,7 +76,12 @@ label ARCHIVE_PNC_BIBLIO:
 
     jump ARCHIVE_TP
 
-label ARCHIVE_PNC_CONSOLE:
+label archive1_porte:
+    $ corridor_current = "dortoir"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label archive2_ordinateur:
 
     "La console s’allume dès que je m’approche."
     "Pas d’accueil."
@@ -123,7 +101,7 @@ label ARCHIVE_PNC_CONSOLE:
 
     jump ARCHIVE_TP
 
-label ARCHIVE_PNC_HOLOGRAMME:
+label archive2_ecran:
 
     "L’hologramme flotte au centre de la salle."
     "Une sphère."
@@ -150,7 +128,7 @@ label decouverte_salle_archive:
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
 
-    think "La salle d’archive."
+    think "La salle d’archive. Je n'ai jamais été très studieux..."
     think "Rien que le nom ça m'ennuie déjà."
 
     pause 0.4
@@ -159,11 +137,9 @@ label decouverte_salle_archive:
 
     "La salle est immense."
     "Pas forcément spectaculaire, ce n'est qu'une salle d'archive après tout."
-    "Mais sa taille peut être assez surprenante."
+    "Mais sa taille peut être assez surprenante. En vrai, j'imaginais ça plus petit."
 
-    "Des murs entiers sont couverts de données et de bouquin."
-    "Des rangées."
-    "Des couloirs."
+    "Des murs entiers sont couverts de données et de bouquin, rangées par rangées et par couloirs."
     "Comme si on avait enfermé une ville entière de dossiers ici."
 
     "Et au fond… une console principale."
@@ -175,22 +151,18 @@ label decouverte_salle_archive:
         ("tomas", "neutre", 0.78),
     ])
 
-    "Un grand gaillard s’arrête net un peu plus loin."
+    "Le grand gaillard de tout à l'heure s’arrête net un peu plus loin."
 
-    tomas neutre "Ah."
-    tomas neutre "Ok."
+    tomas surpris "Ah. Ok."
 
     noam reflexion "Quoi ?"
 
-    tomas mefiant "Je pensais que…"
-    tomas mefiant "Enfin…"
-    tomas mefiant "Je m’attendais à plus de… livres."
+    tomas mefiant "Je pensais que… Enfin... Je m’attendais à plus de… livres"
 
     noam reflexion "Des vrais ?"
 
     tomas raison "Oui."
-    tomas raison "Enfin non."
-    tomas raison "Enfin si, mais—"
+    tomas raison "Enfin non. Enfin si, mais—"
 
     noam reflexion "Respire."
 
@@ -198,15 +170,12 @@ label decouverte_salle_archive:
     tomas panne "Des trucs qu’on peut lire."
     tomas panne "Enfin, tu sais ..."
 
-    noam reflexion "Faut te mettre à la page mon vieux."
+    noam reflexion "Faut te mettre à la page mon vieux. Puis y'en a des livres quand même par là."
 
-    tomas culpabilite "Je suis surtout nouveau dans…"
-    tomas culpabilite "Tout ça."
+    tomas culpabilite "O-Ouais mais c'est plus des recceuil de données imprimés que de vrais ouvrages... Je suis surtout nouveau dans…"
+    tomas culpabilite "Tout ça. D-Désolé, je suis pas très à l'aise à l'oral..."
 
     "Il fait un geste vague."
-    "La salle."
-    "Le Conclave."
-    "Le reste."
 
     noam sourire "T’inquiète."
     noam sourire "On est tous un peu largués."
@@ -217,9 +186,9 @@ label decouverte_salle_archive:
     "Un truc évident, sauf quand tu viens d’arriver."
 
     tomas reflechit "Au fait—"
-    tomas reflechit "Je m'appelle Tomas."
+    tomas raison "Je m'appelle Tomas."
 
-    noam sourire "Noam."
+    noam sourire "Moi c'est Noam."
 
     tomas raison "Oui."
     tomas raison "Je sais."
@@ -228,36 +197,31 @@ label decouverte_salle_archive:
 
     noam taquin "T’as pas besoin de te présenter comme à un entretien."
 
-    tomas panne "C’est un réflexe."
-    tomas panne "Je…"
-    tomas panne "J’essaye toujours de faire les choses proprement."
+    tomas panne "O-Ouais. C’est un réflexe."
+    tomas panne "Je… J’essaye toujours de faire les choses proprement."
 
     noam taquin "Mauvais endroit je crois."
 
-    tomas rire "Ouais."
-    tomas rire "Clairement."
+    tomas rire "Ouais. Clairement !"
 
-    "Tomas s’approche d’une console."
-    "Regarde l’écran."
-    "Penche la tête."
+    "Tomas s’approche d’une console, il regarde l'écran et penche la tête."
 
-    tomas reflechit "…"
-    tomas reflechit "Ah."
+    tomas reflechit "… Ah."
 
     noam taquin "Quoi encore ?"
 
     tomas surpris "Je pensais que c’était une recherche."
     tomas surpris "Mais en fait…"
-    tomas surpris "C’est juste une liste."
+    tomas surpris "C’est juste une sorte de liste."
 
     noam taquin "Bienvenue dans l’administration."
 
     tomas rire "C’est rassurant, quelque part."
     tomas rire "Même sous Kami, la paperasse survit."
 
-    "Je regarde l’hologramme."
-    "Les murs."
-    "Les consoles."
+    noam taquin "Ouais, ça tu peux me croire. Il y a toujours autant de paperasses..."
+
+    "Je regarde l’hologramme. Les murs, les consoles."
 
     think "Il y a des données sur à peu près tout."
     think "Mais tout est bien plus compliqué que dans les papiers habituels."
@@ -267,14 +231,13 @@ label decouverte_salle_archive:
 
     "Il plisse les yeux en essayant de déchiffrer une suite de nombre."
 
-    tomas reflechit "Ouais."
-    tomas reflechit "Ou on apprendra surtout ce qu’ils veulent bien laisser traîner."
+    tomas reflechit "Ouais On apprendra surtout ce qu’ils veulent bien laisser traîner."
 
     pause 0.2
 
     tomas mefiant "Regarde ça."
 
-    "Il tape sur une ligne."
+    "Il tape sur une ligne sur une sorte d'écran de commande."
     "Une fenêtre s’ouvre."
     "Trois champs."
     "Pas de phrase."
@@ -294,15 +257,16 @@ label decouverte_salle_archive:
     tomas raison "Non mais…"
     tomas raison "Je veux dire : même le format."
     tomas raison "C’est pas 'fait pour être lu'."
-    tomas raison "C’est fait pour être… ingéré."
+    tomas raison "C’est fait pour être… ingéré et décodé rapidement."
 
     noam reflexion "In— quoi ?"
 
     tomas panne "Pardon."
     tomas panne "En gros, la machine est capable de tout comprendre facilement sans mise en forme des données."
+    tomas reflexion "Même sans traduire dans notre langue."
     tomas panne "Pour une machine, il n'y a rien de plus simple."
 
-    "Il pointe l’hologramme."
+    "Il pointe du doigt l'écran avec la carte de la terre."
     "La sphère tourne lentement."
     "Des points s’allument, s’éteignent."
     "Comme des nœuds d’un réseau."

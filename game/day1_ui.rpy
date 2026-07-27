@@ -13,61 +13,175 @@
 
 default current_period = "Matin"
 
-transform d1_hud_appear:
-    alpha 0.0
-    xoffset 30
-    linear 0.35 alpha 1.0 xoffset 0
+# -------------------------------------------------------------
+# OVERLAY JOUR / PÉRIODE  — HUD sci-fi animé (coin haut droit)
+# Drop-in : utilise current_day (int) + current_period (str)
+# Assets : images/hud/*.png
+# -------------------------------------------------------------
 
-transform d1_hud_period_blink:
-    alpha 0.6
-    linear 0.9 alpha 1.0
-    linear 0.9 alpha 0.6
+# Accent selon la période (fallback cyan)
+init python:
+    DAY_PERIOD_HUD_PNC_SCREENS = (
+        "pnc_room",
+        "pnc_chambre",
+        "pnc_chambre_j8",
+        "pnc_chambre_j12",
+        "pnc_dortoir",
+        "pnc_cafeteria",
+        "pnc_archive",
+        "pnc_conclave",
+        "pnc_canon",
+        "pnc_maintenance",
+        "pnc_gymnase",
+        "pnc_infirmerie",
+        "pnc_livraison",
+        "pnc_observation",
+        "pnc_repos",
+        "pnc_stockage",
+        "day1_conclave_pnc",
+        "day4_tray_pnc",
+    )
+
+    def day_period_hud_is_pnc_active():
+        for screen_name in DAY_PERIOD_HUD_PNC_SCREENS:
+            if renpy.get_screen(screen_name):
+                return True
+        return False
+
+    def day_period_hud_should_show():
+        if getattr(store, "current_day", 0) <= 0:
+            return False
+        if day_period_hud_is_pnc_active():
+            return False
+        return True
+
+    if "day_period_hud" not in config.overlay_screens:
+        config.overlay_screens.append("day_period_hud")
+
+    def _hud_accent(p):
+        p = (p or "").lower()
+        if "matin" in p:                       return "#F0A835"   # orange lever
+        if "midi" in p or "après" in p or "apres" in p: return "#5CD3FF"  # cyan plein jour
+        if "soir" in p:                         return "#E86A45"   # ambre couchant
+        if "nuit" in p:                         return "#8C6BFF"   # violet nuit
+        return "#5CD3FF"
+
+# --- Animations d'anneaux ---
+transform hud_spin_cw(t=24.0, z=0.264):
+    anchor (0.5, 0.5)
+    zoom z
+    rotate 0
+    linear t rotate 360
     repeat
 
+transform hud_spin_ccw(t=30.0, z=0.19):
+    anchor (0.5, 0.5)
+    zoom z
+    rotate 360
+    linear t rotate 0
+    repeat
+
+transform hud_scan(t=6.0, z=0.264):
+    anchor (0.5, 0.5)
+    zoom z
+    rotate 0
+    linear t rotate 360
+    repeat
+
+transform hud_static(z=0.287):
+    anchor (0.5, 0.5)
+    zoom z
+
+transform hud_pulse(z0=0.322, z1=0.36):
+    anchor (0.5, 0.5)
+    zoom z0
+    block:
+        ease 1.7 zoom z1 alpha 1.0
+        ease 1.7 zoom z0 alpha 0.72
+        repeat
+
+transform hud_sun_breathe(z0=0.273, z1=0.288):
+    anchor (0.5, 0.5)
+    zoom z0
+    block:
+        ease 1.9 zoom z1
+        ease 1.9 zoom z0
+        repeat
+
+# --- Entrée / clignotement label ---
+transform hud_appear:
+    alpha 0.0
+    xoffset 40
+    easein 0.45 alpha 1.0 xoffset 0
+
+transform hud_period_blink:
+    alpha 0.55
+    linear 1.0 alpha 1.0
+    linear 1.0 alpha 0.55
+    repeat
+
+
 screen day_period_hud():
+    if day_period_hud_should_show():
+        use day_period_hud_content
+
+
+screen day_period_hud_content():
     zorder 65
-    style_prefix "day1_hud"
 
-    frame at d1_hud_appear:
-        xalign 0.99
-        yalign 0.03
-        xsize 210
-        background Frame(Solid("#06090DEE"), 0, 0)
-        padding (0, 0)
+    $ _acc = _hud_accent(current_period)
 
+    fixed at hud_appear:
+        xalign 0.995
+        yalign 0.028
+        xysize (430, 150)
+
+        # ---- Fond + cadre ----
+        add Solid("#06090DDD") xpos 0 ypos 0 xsize 430 ysize 150
+        add Solid("#5CD3FF")   xpos 0 ypos 0 xsize 430 ysize 2      # barre top
+        add Solid("#5CD3FF33") xpos 0 ypos 148 xsize 430 ysize 2    # barre bottom
+        add Solid("#5CD3FF55") xpos 0 ypos 0 xsize 2 ysize 150      # barre gauche
+        # coins (brackets)
+        add Solid("#5CD3FF") xpos 0 ypos 0 xsize 26 ysize 2
+        add Solid("#5CD3FF") xpos 404 ypos 148 xsize 26 ysize 2
+
+        # ---- Bloc texte gauche ----
+        text "DAY":
+            xpos 28 ypos 32
+            size 20 color "#5CD3FF"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 6
+
+        text "%03d" % current_day:
+            xpos 28 ypos 40
+            size 64 color "#D6E8F0"
+            font "fonts/day_font.ttf"
+            outlines [(1, "#5CD3FF88", 0, 0)]
+            offset (66, 0)
+
+        # soulignement
+        add Solid("#5CD3FF") xpos 30 ypos 116 xsize 170 ysize 2
+        add Solid(_acc)      xpos 30 ypos 116 xsize 50  ysize 2
+
+        text current_period at hud_period_blink:
+            xpos 30 ypos 120
+            size 22 color _acc
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+        # ligne de liaison texte -> cercle
+        add Solid("#5CD3FF66") xpos 208 ypos 72 xsize 44 ysize 1
+
+        # ---- Assemblage cercle animé (droite) ----
         fixed:
-            xsize 210
-            ysize 66
+            xpos 268 ypos -5
+            xysize (160, 160)
 
-            # Barre top cyan
-            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 210 ysize 2
-
-            # Barre gauche
-            add Solid("#5CD3FF44") xpos 0 ypos 2 xsize 2 ysize 64
-
-            # Label DAY
-            text "DAY":
-                xpos 12 ypos 8
-                size 11
-                color "#5CD3FF"
-                font "fonts/Rajdhani-SemiBold.ttf"
-                kerning 3
-
-            # Numéro du jour (3 chiffres)
-            text "%03d" % current_day:
-                xpos 38 ypos 4
-                size 38
-                color "#D6E8F0"
-                font "fonts/day_font.ttf"
-                outlines [(2, "#000000AA", 0, 0)]
-
-            # Période (Matin / Après-midi / Soir)
-            text current_period at d1_hud_period_blink:
-                xpos 12 ypos 47
-                size 12
-                color "#F0A835"
-                font "fonts/Rajdhani-SemiBold.ttf"
-                kerning 1
+            add "images/hud/glow.png"       at hud_pulse(0.30, 0.34)     xpos 0.5 ypos 0.5
+            add "images/hud/ring_ticks.png" at hud_spin_cw(24.0, 0.264)  xpos 0.5 ypos 0.5
+            add "images/hud/scan_arc.png"   at hud_scan(5.0, 0.264)      xpos 0.5 ypos 0.5
+            add "images/hud/ring_thin.png"  at hud_spin_ccw(38.0, 0.287) xpos 0.5 ypos 0.5
+            add "images/hud/ring_dashed.png" at hud_spin_ccw(20.0, 0.19) xpos 0.5 ypos 0.5
+            add "images/hud/core_dot.png"   at hud_static(0.55)          xpos 0.5 ypos 0.5
+            add "images/hud/sun_icon.png"   at hud_sun_breathe           xpos 0.5 ypos 0.5
 
 
 # =============================================================

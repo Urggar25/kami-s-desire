@@ -4,6 +4,9 @@ default conclave_lock = True
 label CONCLAVE_TP:
     scene bg_conclave at adaptive_fullscreen
 
+    if current_scene_active in ["FIRST_CONCLAVE_ELEN_INTERACT", "_1_KAMI_CONVOCATION_CONCLAVE"]:
+        jump _1_KAMI_CONVOCATION_CONCLAVE
+
     if exploration_libre_active:
         $ pnc_room = "pnc_conclave"
         call screen pnc_conclave()
@@ -26,12 +29,13 @@ screen pnc_conclave():
     zorder 200
 
     add Solid("#000")
-    add "images/background/bg_conclave.png" at cover_screen
+    use room_scene_background("conclave")
+    use room_scene_interactions("conclave")
 
     if social_free_time_active() and nyra_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/nyra/neutre.png", zoom=0.75)
-            hover Transform("images/character/nyra/reflexion.png", zoom=0.75)
+            idle Transform(character_image("nyra", "neutre"), zoom=0.75)
+            hover Transform(character_image("nyra", "reflexion"), zoom=0.75)
             focus_mask True
             xalign 0.30
             yalign 0.30
@@ -39,15 +43,33 @@ screen pnc_conclave():
 
     if social_free_time_active() and elen_link == 0:
         imagebutton:
-            idle Transform("images/character/elen/joie.png", zoom=0.75)
-            hover Transform("images/character/elen/content.png", zoom=0.75)
+            idle Transform(character_image("elen", "joie"), zoom=0.75)
+            hover Transform(character_image("elen", "content"), zoom=0.75)
             focus_mask True
             xalign 0.52
             yalign 0.30
             action [SetVariable("last_room_label", "CONCLAVE_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
-    use exploration_retour_button
+
+label conclave1_porte:
+    $ corridor_current = "dortoir"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label conclave2_ecran:
+    "L'écran du Conclave reste allumé."
+    "Des lignes d'information glissent lentement, trop vite pour être vraiment lues."
+    think "Même silencieux, cet endroit donne l'impression d'attendre un vote."
+    jump CONCLAVE_TP
+
+
+label conclave3_porte_debaras:
+    "Je pose la main près du capteur."
+    "Un bip sec répond aussitôt."
+    think "Permission denied."
+    jump CONCLAVE_TP
+
 
 label CONCLAVE_ENTREE:
     "Je rentre dans le Conclave"

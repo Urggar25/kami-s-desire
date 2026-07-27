@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenario/6_0_1.rpy", line 415: Line with id 1e7097cc appears twice. The other line is game/scenario/0_canon.rpy:1346
+File "game/scenario/3_canon.rpy", line 787: end of line expected.
+    think "Putain, quel spectacle on donne aux gens encore..."=
+                                                              ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Jun 22 20:39:41 2026
+Thu Jul 23 13:38:38 2026

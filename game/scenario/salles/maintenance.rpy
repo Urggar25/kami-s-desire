@@ -33,51 +33,28 @@ screen pnc_maintenance():
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
     add Solid("#000")
-
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/background/bg_maintenance.png" at cover_screen
-
-    # Option : quitter au clic droit / ESC (retour au label appelant)
-    # HOTSPOTS — doivent subir EXACTEMENT le même transform
-    imagebutton:
-        idle "images/background/interact/salle_maintenance/etabli.png"
-        hover "images/background/interact/salle_maintenance/etabli_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("MAINT_PNC_ETABLI")
-
-    imagebutton:
-        idle "images/background/interact/salle_maintenance/robot.png"
-        hover "images/background/interact/salle_maintenance/robot_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("MAINT_PNC_ROBOT")
+    use room_scene_background("maintenance")
+    use room_scene_interactions("maintenance")
 
     if social_free_time_active() and kael_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform("images/character/kael/neutre.png", zoom=0.75)
-            hover Transform("images/character/kael/reflechit.png", zoom=0.75)
+            idle Transform(character_image("kael", "neutre"), zoom=0.75)
+            hover Transform(character_image("kael", "reflechit"), zoom=0.75)
             focus_mask True
             xalign 0.48
             yalign 0.35
             action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("KAEL_LINK_INTERACT")]
     if social_free_time_active() and elias_link in [1, 3]:
         imagebutton:
-            idle Transform("images/character/elias/neutre.png", zoom=0.75)
-            hover Transform("images/character/elias/reflechit.png", zoom=0.75)
+            idle Transform(character_image("elias", "neutre"), zoom=0.75)
+            hover Transform(character_image("elias", "reflechit"), zoom=0.75)
             focus_mask True
             xalign 0.72
             yalign 0.76
             action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("ELIAS_LINK_INTERACT")]
 
 
-    use exploration_retour_button
 
 label MAINT_PNC_ETABLI:
     "Un établi métallique."
@@ -113,6 +90,27 @@ label MAINT_PNC_ROBOT:
 
     pause 0.3
 
+    jump MAINTENANCE_TP
+
+
+label maintenance1_etablit:
+    jump MAINT_PNC_ETABLI
+
+
+label maintenance1_porte_couloir_maintenance:
+    $ corridor_current = "maintenance"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label maintenance2_robot:
+    jump MAINT_PNC_ROBOT
+
+
+label maintenance2_table_drone:
+    "La table est couverte de modules de drones démontés."
+    "Chaque pièce a sa place, jusqu'aux vis rangées par taille dans de petites alvéoles."
+    "Un schéma de diagnostic attend sur l'écran, figé au milieu d'une séquence de calibrage."
+    think "Quelqu'un compte revenir terminer ce travail."
     jump MAINTENANCE_TP
 
 

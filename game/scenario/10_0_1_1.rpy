@@ -344,48 +344,37 @@ label _10_0_1_1_REVEIL_CHAMBRE:
 
     $ blink()
 
-    "Je me réveille avant l'annonce."
+    think "Je me réveille avant l'annonce."
 
     pause 0.4
 
-    think "Pas de bip."
-    think "Pas la moindre voix."
-    think "Juste ma tête qui cogne encore et encore."
-
-    "Elle cogne."
-    "Pas comme un mal de tête habituel."
-    "Plutôt comme si un voisin un peu trop bruyant avait écouté du métal avec la basse mise à fond."
+    think "Pas de bip. Pas de voix."
+    think "Juste ma tête qui cogne comme si quelqu'un avait oublié un marteau dedans."
+    think "Très professionnel, comme réveil."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "La chambre est particulièrement chaude."
+    "La chambre est chaude."
+    "Trop chaude."
     "Le drap colle à ma peau."
-    "L'air est sec, presque irrespirable."
 
     think "Le Conclave régule tout."
     think "Donc ça aussi, c'est voulu et c'est pas normal."
 
     pause 0.4
 
-    "Je reste assis sur le bord du lit."
-    "J'écoute."
+    "Je reste assis sur le bord du lit et j'écoute."
 
     pause 0.6
 
     "Rien ne répond."
 
-    "D'habitude, même le silence du Conclave a une épaisseur."
-    "Des pas étouffés."
-    "Une machine."
-    "Un frottement de porte."
+    think "D'habitude, même le silence du Conclave triche."
+    think "Un pas. Une machine. Une porte qui respire."
+    think "Ce matin, rien."
 
-    "Ce matin, c'est plus sec."
-    "Plus vide."
-
-    think "Après hier, tout devrait faire du bruit."
-    think "Tout le monde devrait parler."
-    think "Ou crier."
-    think "Quelque chose."
+    think "Après hier, quelqu'un devrait parler."
+    think "Crier, même. Quelque chose."
 
     pause 0.4
 
@@ -394,8 +383,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
 
     think "Forcément tiède."
 
-    "Je récupère ma veste."
-    "Je la mets quand même."
+    "Je récupère ma veste et je la mets quand même."
 
     menu:
         "Sortir tout de suite.":
@@ -415,7 +403,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
     "Le couloir est plus chaud que la chambre."
-    "Ça devrait être impossible."
+    think "Ça devrait être impossible. Donc bien sûr, ça arrive."
 
     "Une porte s'ouvre au fond."
     "Puis se referme aussitôt."
@@ -458,12 +446,8 @@ label _10_0_1_1_CAFETERIA_ELIAS:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.2
 
-    "La cafétéria est presque pleine."
-    "Mais elle ne sonne pas pleine."
-
-    "Les plateaux raclent doucement."
-    "Les gobelets restent trop longtemps dans les mains."
-    "Personne ne plaisante assez fort pour que ça devienne une vraie blague."
+    "La cafétéria est presque pleine, mais personne n'ose occuper l'espace."
+    "Les plateaux raclent doucement. Les gobelets restent trop longtemps dans les mains."
 
     $ showGroup([
         ("elias", "fatigue", 0.18),
@@ -481,14 +465,14 @@ label _10_0_1_1_CAFETERIA_ELIAS:
 
     elias fatigue "Noam, viens."
 
-    noam inquiet "Tu tiens ?"
+    noam inquiet "Tu veux dire que... enfin. Tu tiens ?"
 
-    mara stress "T'en as d'autres des questions connes ?"
+    mara stress "T'en as d'autres, des questions connes, ou c'était l'échauffement ?"
 
     noam "Ok. Compris."
 
     mara "Non, vraiment."
-    mara "Si quelqu'un répond oui, je lui lance mon poing dans la gueule."
+    mara "Si quelqu'un répond oui, je lui plante mon poing dans la gueule. Avec tendresse, évidemment."
 
     elias "La majorité des campements limenois se sont dispersés."
     elias "C'est passé sur l'écran il y a quelques minutes."
@@ -496,18 +480,18 @@ label _10_0_1_1_CAFETERIA_ELIAS:
     pause 0.3
 
     nyra "Plusieurs déclarations d'urgence ont été reçues après le vote."
-    nyra reflexion "Ceux qui ont pu transmettre un registre sont couverts."
-    nyra sourire "On a quand même réussi à sauver du monde..."
+    nyra reflexion "Les groupes qui ont transmis un registre sont protégés."
+    nyra sourire "Pas tous. Mais certains respirent encore parce qu'on a gagné ces minutes."
 
-    ryn colere "Quelques uns, ouais..."
+    ryn colere "Quelques-uns, ouais..."
 
     "Le mot sort trop fort."
     "Quelques têtes se tournent."
     "Elles se détournent presque aussitôt."
 
-    ryn colere2 "Ils sont couverts..."
-    ryn "Couverts..."
-    ryn "Comme si on parlait d'une putain d'assurance."
+    ryn colere2 "Protégés..."
+    ryn "Tu dis ça proprement."
+    ryn "Comme si les autres étaient pas juste morts dehors."
 
     elias inquiet "Ryn, attends..."
 
@@ -519,14 +503,14 @@ label _10_0_1_1_CAFETERIA_ELIAS:
 
     pause 0.4
 
-    mara stress "Putain, je mange Ryn !"
-    mara jaloux "Garde tes images dégueulasses pour toi !"
+    mara stress "Putain, Ryn, je mange."
+    mara jaloux "Garde tes images dégueulasses pour les gens qui ont signé."
 
     nyra fatigue "Ryn, assieds-toi."
 
     ryn colere "Non, Nyra."
 
-    "Il ne crie pas encore."
+    "Il ne crie pas encore. C'est presque pire."
 
     $ hideGroup()
     call j10011_play_table_tension from _call_j10011_play_table_tension
@@ -555,11 +539,11 @@ label _10_0_1_1_APRES_TABLE:
         ])
 
         ryn colere2 "J'en peux plus."
-        ryn "J'en peux plus de vous entendre parler comme si on avait encore une marge de manoeuvre."
+        ryn "J'en peux plus de vous entendre parler comme si on avait eu une bonne option."
 
         elias panique "Ryn, arrête."
 
-        nyra colere "Tu vas t'asseoir."
+        nyra colere "Ryn. Assieds-toi."
 
         ryn "Ou quoi ?"
 
@@ -569,7 +553,7 @@ label _10_0_1_1_APRES_TABLE:
         "Pas vite."
         "Pas lentement non plus."
 
-        mara colere "Ou je te fais avaler ton plateau."
+        mara colere "Ou je te fais avaler ton plateau, et crois-moi, c'est pas la partie la plus digeste de cette table."
 
         pause 0.4
 
@@ -584,7 +568,7 @@ label _10_0_1_1_APRES_TABLE:
         ])
 
         "La table ne se calme pas vraiment."
-        "La tension cesse juste de monter."
+        "Elle arrête seulement de chercher une excuse pour exploser."
 
         ryn fatigue "Je veux un chiffre."
         ryn "Pas une majorité."
@@ -592,9 +576,10 @@ label _10_0_1_1_APRES_TABLE:
         ryn colere "Je veux savoir combien sont morts !"
 
         nyra raison "On le demandera."
-        nyra "Au pire on pourra voir avec Tomas pour fouiller dans les archives..."
+        nyra "S'ils refusent, Tomas nous dira où chercher. Il connaît les archives mieux qu'il ne connaît ses excuses."
 
-        mara stress "J'ai pas vraiment envie de savoir moi en fait."
+        mara stress "Moi, j'ai pas vraiment envie de savoir."
+        mara "Ce qui veut probablement dire qu'il faut le faire. Super matinée."
 
         elias fatigue "Rien ne t'oblige à venir."
 
@@ -613,17 +598,17 @@ label _10_0_1_1_APRES_TABLE:
         "Personne ne relève."
 
         elias fatigue "Je suis soulagé."
-        elias "Je crois, oui."
-        elias "Et je déteste ça."
+        elias "Enfin je crois."
+        elias "C'est chaud d'être soulagé pour un truc pareil."
 
-        mara doute "Ouais, pareil."
-        mara "Bienvenue au club le plus nul du monde."
+        mara doute "Ouais. Bienvenue au club le plus nul du monde."
+        mara "Pas de boisson, pas de musique, culpabilité offerte à l'entrée."
 
         nyra raison "On doit obtenir le détail des campements."
-        nyra "Ceux dispersés."
-        nyra "Ceux déclarés."
-        nyra "Ceux qui n'ont pas répondu."
-        nyra "Combien sont morts..."
+        nyra "Ceux qui ont déclaré."
+        nyra "Ceux qui se sont dispersés."
+        nyra "Ceux qui n'ont plus répondu."
+        nyra "Et après seulement, on saura ce qu'on a vraiment fait."
 
         ryn determine "Putain..."
 
@@ -637,12 +622,13 @@ label _10_0_1_1_APRES_TABLE:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    "L'écran d'information continue de défiler."
+    "L'écran d'information continue de défiler, poli comme une lame."
 
     pause 0.4
 
-    "Je fixe le bord de mon plateau."
-    "Je ne me souviens pas l'avoir pris mais il est là."
+    think "Je fixe le bord de mon plateau."
+    think "Je ne me souviens pas l'avoir pris."
+    think "Il est là quand même. Comme le reste."
 
     jump _10_0_1_1_MARCHE_APRES_TABLE
 
@@ -654,18 +640,16 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
 
 
     "Je sors de la cafétéria avant que quelqu'un me demande où je vais."
-    "Je n'ai pas de réponse."
-    "Je marche."
+    think "Je n'ai pas de réponse."
+    think "Classique."
 
-    "Les lumières du couloir ont l'air plus faibles."
-    "Pas éteintes."
-    "Juste fatiguées elles aussi."
+    "Les lumières du couloir tremblent."
 
     think "Très bien."
     think "Maintenant je donne des états d'âme aux néons."
 
-    "Le couloir me semble plus long qu'hier."
-    "Ou alors je vais moins vite."
+    think "Le couloir est plus long qu'hier."
+    think "Ou je vais moins vite."
 
     scene bg_maintenance at adaptive_fullscreen with dissolve
 
@@ -677,24 +661,25 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
         ("elias", "fatigue", 0.52),
     ])
 
-    elias fatigue "Non, mais bien sûr."
-    elias "Tombe. Fais ta vie."
-    elias "Moi aussi je rêve de m'allonger par terre et de devenir inutile."
+    elias fatigue "Non mais oui, vas-y."
+    elias "Tombe."
+    elias "Moi aussi j'aimerais bien m'allonger par terre et servir à rien, mais on me laisse pas faire."
 
-    noam fatigue "Je dérange une relation importante ?"
+    noam fatigue "Je dérange quelque chose d'intime avec le mobilier ?"
 
     elias inquiet "Noam ?"
-    elias fatigue "Non. Enfin si. Mais elle était toxique depuis le début."
+    elias fatigue "Non. Enfin si."
+    elias "Mais cette relation était toxique depuis le début, frère."
 
-    "Il tient un panneau ouvert d'une main."
-    "De l'autre, un outil dont je ne connais pas le nom."
-    "Un câble pend devant lui comme une phrase qui refuse de finir."
+    "Il tient un panneau ouvert d'une main, un outil de l'autre."
+    "Un câble pend devant lui comme une phrase que personne n'ose finir."
 
     noam "Tu répares quoi ?"
 
     elias "Aucune idée."
-    elias "J'ai commencé par 'ce truc clignote'."
-    elias "Maintenant on est sur 'ce truc ne clignote plus mais il sent le chaud'."
+    elias "J'ai commencé par : ce truc clignote."
+    elias "Maintenant on est sur : ce truc clignote plus, mais il sent le chaud."
+    elias "C'est peut-être un progrès. Ou un incendie discret."
 
     noam "Progrès ?"
 
@@ -703,9 +688,9 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
     pause 0.3
 
     elias fatigue "Tout le monde est à bout."
-    elias "Même les murs ont l'air de vouloir prendre une pause."
+    elias "Même les murs font une sale tête."
 
-    noam "Les murs ont peut-être voté contre."
+    noam "Les murs ont peut-être voté contre, enfin... vu l'ambiance."
 
     elias rire "Si les murs se mettent à voter, je démissionne."
 
@@ -716,7 +701,7 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
 
     elias fatigue "Va marcher, Noam."
     elias "Mais pas vers les dortoirs."
-    elias "Il y a une ambiance de caveau là-bas."
+    elias "Là-bas, c'est pas une ambiance. C'est un enterrement avec chauffage."
 
     noam "Noté."
 
@@ -750,11 +735,11 @@ label _10_0_1_1_DOPPELGANGER:
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Je ne choisis pas vraiment la direction."
-    "Mes pas continuent, eux, à errer sans réel but dans le Conclave."
-    "Les couloirs, eux, continuent de s'étirer."
+    "Mes pas choisissent à ma place."
 
-    "Après quelques minutes, un étrange sentiment me prend à la gorge."
-    "Je m'arrête. Je me retourne."
+    "Après quelques minutes, quelque chose me serre la gorge."
+    "Je m'arrête."
+    "Je me retourne."
 
     "Et je la vois..."
 
@@ -767,12 +752,14 @@ label _10_0_1_1_DOPPELGANGER:
 
     menu:
         "Ignorer":
-            "Je cligne rapidement des yeux et la forme que j'ai cru apercevoir n'était déjà plus là."
+            "Je cligne des yeux."
+            think "Non."
+            think "Je n'ai rien vu."
         "Regarder plus attentivement":
             "Je plisse les yeux."
             "Il n'y a plus rien."
-            "Mais il y avait quelque chose."
-            "Enfin, quelqu'un..."
+            think "Mais il y avait quelqu'un."
+            think "Enfin. Peut-être."
         "Appeler":
             noam inquiet "Hé !"
             pause 0.5
@@ -793,18 +780,18 @@ label _10_0_1_1_DOPPELGANGER:
     pause 0.4
 
     "Le silence arrive d'un coup."
-    "Je n'entends plus rien."
-    "Pas le moindre bruit..."
+    "Plus de ventilation. Plus de pas. Plus rien."
 
-    think "Alors quel est ce sentiment si étrange ?"
+    think "Alors pourquoi mon corps veut courir ?"
 
     pause 0.4
 
-    "Je reste encore quelques secondes totalement immobile dans le couloir."
-    "Puis je repars."
+    "Je reste immobile quelques secondes."
+    think "Très bien."
+    think "On va faire comme si voir des gens qui n'existent pas était une étape normale du matin."
 
     scene bg_couloir at adaptive_fullscreen with dissolve
-    "Perdu dans mes pensées."
+    think "Je repars."
 
     hide j10011_baie_dim
     scene black with fade
@@ -818,8 +805,8 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "Je ne sais pas pendant combien de temps je suis resté là, immobile."
-    "Assez tout de même pour que je comprenne que ça a duré bien plus qu'un instant."
+    think "Je ne sais pas combien de temps je suis resté là."
+    think "Assez pour que l'absence devienne embarrassante."
 
     pause 0.3
 
@@ -828,24 +815,22 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Comment vont mes petits bouts de choux ce matin ?"
-    kami "Vous vous êtes bien reposés ?"
+    kami "Bien cuits ? Bien transpirants ?"
 
-    "Sa voix résonne dans le couloir."
-    "Elle se répercute dans les murs puis s'amplifie dans nos tripes."
+    "Sa voix rebondit dans le couloir et finit directement dans l'estomac."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Je vois que vous vous êtes bien acclimatés à mon retour parmi vous."
     kami "Oh ! En parlant de climat."
 
     scene bg_diffusion_meteo at adaptive_fullscreen with dissolve
-    kami "Aujourd'hui il fera particulièrement chaud au sein du Conclave."
-    kami "Vous vous en êtes déjà sans doute rendu compte."
-    kami "La cause ? Un vent chaud venant de la salle du Canon, celui-ci ayant dû rattraper son retard des quelques derniers jours."
-    kami "Il n'était plus très loin de la surchauffe."
+    kami "Aujourd'hui, le Conclave vous offre une météo tropicale."
+    kami "Cause officielle : la salle du Canon rattrape son retard."
+    kami "Cause officieuse : vous adorez transpirer sous pression."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Je vous conseille donc d'éviter d'aller dans la salle du Canon aujourd'hui."
-    kami "A moins que vous ne souhaitiez finir carbonisé par la chaleur !"
+    kami "Évitez donc la salle du Canon."
+    kami "Sauf si votre ambition secrète est de devenir une preuve médico-légale."
 
     pause 0.3
 
@@ -853,7 +838,8 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Alors revenons à nos moutons."
-    kami "Vous êtes parvenu à gagner du temps et vous avez réussi à sauver quelques Limenois qui souhaitaient transgresser les Commandements !"
+    kami "Vous êtes parvenus à gagner du temps."
+    kami "Quelques Limenois qui voulaient transgresser les Commandements respirent encore grâce à vous."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Même si je devrais TOUS les éradiquer pour avoir osé me défier !"
@@ -870,8 +856,9 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     "Elle prend une longue seconde de pause avant de reprendre."
     
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    kami "Vous le savez déjà mais nous sommes au dixième jour du Conclave."
-    kami "Vous avez déjà fait un tiers du travail !"
+    kami "Nous sommes au dixième jour du Conclave."
+    kami "Un tiers du parcours."
+    kami "Regardez-vous. Presque fonctionnels."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Mais ce travail n'est pas encore terminé."
@@ -888,26 +875,26 @@ label _10_0_1_1_2_ANNONCE_KAMI:
         ("sael", "reflexion", 0.80),
     ])
 
-    sael inquiet "Noam ? Qu'est ce que tu fixes ?!"
+    sael inquiet "Noam ? Qu'est-ce que tu fixes ?"
 
-    "Sael venait de sortir de l'infirmerie et regardait désormais dans la même direction que moi."
+    "Sael sort de l'infirmerie et suit mon regard."
 
-    sael "Y'a rien du tout."
-    sael raison "Tu viens au Conclave pour le vote ?"
+    sael "Il n'y a rien."
+    sael raison "Viens. Les annonces qu'on rate reviennent rarement plus douces."
 
-    "Je réfléchis une longue seconde avant de répondre machinalement."
+    "Je réponds trop tard."
 
     noam panne "Ouais."
-    noam "Ouais j'arrive."
+    noam "Ouais. J'arrive."
 
-    "Sael s'éloigne, j'attends un peu."
-    "Quelques minutes en fait."
-    ""
+    "Sael s'éloigne."
+    think "J'attends un peu."
+    think "Quelques minutes, en fait."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Quand j'arrive, presque tout le monde est déjà là."
-    "Tout le monde se regarde mais personne n'ose vraiment s'adresser la parole."
+    "Ils se regardent comme si parler pouvait déclencher autre chose."
 
     $ showGroup([
         ("elias", "fatigue", -0.11),
@@ -926,38 +913,38 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     pause 0.3
 
-    mara "Ah bah enfin, tu foutais quoi Noam ?!"
+    mara "Ah bah enfin. Tu faisais quoi, Noam, tu flirtais avec un mur ?"
 
-    tomas fatigue "Encore un vote... Franchement je commence à en avoir marre"
+    tomas fatigue "Encore un vote... Je commence vraiment à saturer."
 
     noam "Ouais, désolé pour l'attente..."
-    noam "J'étais... Fin bref, c'est pas bien grave."
+    noam "J'étais... enfin. Rien d'utile."
 
-    lysa inquiet "Hein ?! Mais pourquoi tu fais le mec énigmatique tout d'un coup ?"
+    lysa inquiet "Tu nous fais le survivant mystérieux, maintenant ? Mauvais genre, Noam."
 
     elen rire "Ouais !"
-    elen inquiet "T'as trop une tête bizarre."
-    elen rire "Qu'est ce qui va pas ? T'as mal au ventre ?!"
+    elen inquiet "T'as une tête trop bizarre."
+    elen rire "C'est le ventre ? Parce que si c'est le ventre j'ai gardé un morceau de pain, enfin il est un peu sec mais—"
 
-    noam colere "C'est rien je vous dis."
-    noam triste "Je dois être fatigué c'est tout."
+    noam colere "C'est rien."
+    noam triste "Enfin... je dois être fatigué. C'est tout."
 
-    mara stress "Olala, pas la peine de faire la gueule hein."
-    mara "Nous aussi on est crevé."
+    mara stress "Pas la peine de nous faire ton regard de cadavre premium."
+    mara "On est tous crevés, prends un ticket."
 
     pause 0.3
 
     kael doute "..."
     kael calme "Laissez-le."
-    kael calme "S'il veut pas en parler, laissez-le."
+    kael calme "Il parlera si c'est nécessaire."
 
-    iris desaccord "Ouais, on a d'autres chats à fouetter."
+    iris desaccord "Et on a un problème plus urgent que son sens du timing."
 
-    julian inquiet "Franchement, Kami pouvait pas attendre demain pour nous annoncer le prochain vote ?."
+    julian inquiet "Franchement, Kami ne pouvait pas attendre demain pour nous offrir son prochain grand moment historique ?"
 
-    sael mefiant "Elle veut qu'on dorme en y pensant toute la nuit..."
+    sael mefiant "Elle veut que la nuit mâche l'annonce avant nous."
 
-    elias fatigue "Et bah, disons qu'elle est douée pour ça."
+    elias fatigue "Bah c'est réussi. Moi je dors déjà mal sans aide, donc c'est cadeau."
 
     play sound sfx_announce
     show screen kami_broadcast_ui
@@ -974,12 +961,11 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     pause 1.0
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Au douzième jour, vous voterez sur l'autorisation ou interdiction des dispositifs de brouillage."
-    kami "Si les dispositifs de brouillage sont autorisés, ils deviendront légaux."
-    kami "Adieu la surveillance totale et absolue de votre bien aimée amie Kami."
-    kami "Leur possession, leur fabrication et leur usage ne constitueront plus une infraction."
-    kami "Dans les limites techniques que je définirai, évidemment."
-    kami "Il restera interdit de les utiliser pour bafouer les autres Commandements."
+    kami "Au douzième jour, vous voterez sur les dispositifs de brouillage."
+    kami "Autorisation : ils deviennent légaux."
+    kami "Possession, fabrication, usage : plus d'infraction."
+    kami "Dans les limites techniques que je définirai, évidemment. Je reste une personne raisonnable."
+    kami "Ils ne pourront pas servir à bafouer les autres Commandements."
 
     pause 0.3
 
@@ -987,6 +973,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "Par contre..."
     kami "Si les dispositifs de brouillage sont interdits..."
     kami "Toute zone détectée avec ces dispositifs sera broyée par un tir de laser."
+    kami "Broyée. Le mot est important."
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
     kami "Et oui, il faut respecter les règles mes chéris !"
@@ -1009,7 +996,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "Alors soyons clairs !"
 
     $ bc_show("nyra", "raison", px=-70, py=-50, pz=0.85)
-    nyra raison "Mais en fait, personne ne va voter pour se faire espionner..."
+    nyra raison "Personne ne va voter pour rendre l'espionnage plus simple."
     $ bc_hide()
 
     kami "Se faire espionner ? Peut-être pas, mais l'absence de brouilleur est aussi un gage de sécurité."
@@ -1019,25 +1006,26 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "S'il y en a, c'est bien plus compliqué."
 
     $ bc_show("mara", "rire", px=-70, py=-50, pz=0.85)
-    mara "Super. Tout ça pour nous mater en culotte !"
-    mara "Laisse tomber Kami, je préfère de loin que seuls MES hommes puissent me voir ainsi."
-    mara "Et... Même en matière de femme, je préfère celles qui sont bien vivantes !"
+    mara "Super. Tout ça pour nous mater en culotte."
+    mara "Désolée, Kami, ma liste d'invités est déjà complète."
+    mara "Et dedans, il y a une règle très stricte : être vivant."
     $ bc_hide()
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Oh mais ne t'en fais pas, je suis bien capable de m'occuper de mes petits disciples "
-    kami "Il y a bien d'autres manières que de toucher pour pouvoir prendre du plaisir..."
+    kami "Oh, Mara."
+    kami "Tu sous-estimes les plaisirs de l'observation."
 
     pause 0.3
 
     $ bc_show("elias", "fatigue", px=-70, py=-50, pz=0.85)
     elias fatigue "C'est une idée ou cette conversation part en couille ?"
-    elias "Quoi ?! Pourquoi vous me regardez comme ça ?!"
-    elias "C'est pas moi qui a parlé de 'Mes hommes' avec Kami hein !"
+    elias "Quoi ? Pourquoi vous me regardez ?"
+    elias "C'est pas moi qui ai invité Kami dans mes histoires de cul, hein."
 
     $ bc_show("kael", "doute", px=-70, py=-50, pz=0.85)
-    kael doute "Les chambres sont équipées de brouilleurs internes depuis notre arrivée."
-    kael "C'est pour empêcher Kami d'avoir accès à nos conversations privées."
+    kael doute "Les chambres ont des brouilleurs internes."
+    kael "Depuis notre arrivée."
+    kael "Objectif affiché : protéger les conversations privées."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Petite correction."
@@ -1048,15 +1036,18 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "Je peux même dire qui ronfle ici !"
 
     $ bc_show("iris", "desaccord", px=-70, py=-50, pz=0.85)
-    iris desaccord "Personne ne va voter contre ça, j'en suis sûre."
+    iris desaccord "Personne de rationnel ne vote contre ça."
 
     $ bc_show("julian", "inquietude", px=-70, py=-50, pz=0.85)
-    julian inquiet "C'est clair, que tu nous observes c'est une chose."
-    julian "Mais il faut respecter l'intimité des demoiselles. TOUJOURS."
+    julian inquiet "Que tu nous observes est déjà une violation."
+    julian "Mais l'intimité n'est pas un bonus accordé par le pouvoir. C'est une limite."
+    julian "Et Julian estime que certaines limites survivent même à cette mascarade."
     $ bc_hide()
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "ce sera à vous d'en décider. Ce sera votre décision. Ce sera vos conséquences."
+    kami "Ce sera à vous d'en décider."
+    kami "Votre décision."
+    kami "Vos conséquences."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
@@ -1077,79 +1068,82 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     pause 0.3
 
-    tomas fatigue "Franchement... J-Je comprends le débat."
+    tomas fatigue "Franchement... je comprends qu'il y ait débat."
 
-    ryn colere2 "Hein ?! Quoi ?! Comment ça tu comprends le débat ? T'as écouté ce qu'elle a dit !!"
+    ryn colere2 "Hein ? Comment ça, tu comprends le débat ? T'as écouté ce qu'elle vient de dire ?"
 
-    tomas "En fait... Y'a déjà des dispositifs de brouillage qui existent et qui transitent..."
-    tomas "Jusque là, ce n'était ni vraiment toléré, ni vraiment interdit."
+    tomas "Il y a déjà des brouilleurs en circulation."
+    tomas "Pas officiellement autorisés. Pas toujours poursuivis non plus."
 
-    lysa "Kami veut avoir accès à toutes les infos."
-    lysa inquiet "Et l'interdiction transforme chaque cachette en cible."
+    lysa "Kami veut tout voir."
+    lysa inquiet "Et l'interdiction transforme chaque cachette en cible. Simple. Propre. Totalitaire à l'ancienne."
 
-    elen rire "Alors on les autorise et voilà, le débat est fini !"
+    elen rire "Alors on les autorise et voilà ! Débat fini ! On peut manger un truc après ?"
 
     mara stress "Oui."
     mara "Évidemment qu'on va autoriser ça."
-    mara "La vie c'est pas dans une putain de télé-réalité où tous nos gestes peuvent être observés !"
+    mara "Je veux bien être regardée quand je choisis l'heure, l'angle et la personne. Pas par une déesse de vidéosurveillance."
 
-    tomas "En fait, c'est un peu dans quoi on..."
+    tomas "En fait, c'est déjà un peu ce dans quoi on..."
 
-    mara "Ouais je sais Tomas, on le sait tous."
+    mara "Oui, Tomas, merci. Le décor est fourni avec la blague."
 
-    ryn colere "On ne va pas voter pour lui donner une liste de gens et de zones à pulvériser."
+    ryn colere "On va pas lui donner une liste de gens à pulvériser."
 
-    nyra raison "Non c'est clairement pas acceptable."
+    nyra raison "Non. Ça lui donnerait une carte, pas une loi."
 
-    tomas stress "Mais tu crains pas que les gens vont en avoir en grand nombre."
+    tomas stress "Et si tout le monde en porte ? Si les contrôles deviennent impossibles ?"
 
-    elias "Ouais je vois où tu veux en venir."
-    elias "Si on peut se cacher derrière ces brouilleurs, rien t'empêche d'en porter constamment sur toi et de ne plus respecter les Commandements."
-    elias "En fait y'a un vrai risque de retour du chaos."
+    elias "Ouais, je vois."
+    elias "Si tu peux te cacher tout le temps, tu peux faire n'importe quoi derrière."
+    elias "Et après ça repart en chaos. C'est chaud."
 
-    iris desaccord "D'un côté ça serait le meilleur moyen pour affaiblir considérablement Kami !"
+    iris desaccord "Ou le premier outil concret pour réduire son emprise. Enfin un vrai levier."
 
-    kael doute "Pas forcément. Techniquement, légaliser ne veut pas dire distribuer."
-    kael "C'est pas parce qu'ils sont autorisés qu'on va en trouver partout."
-    kael "Je vous rappelle qu'il n'y a pas de commerce et que les seuls choses que les gens peuvent avoir viennent des bons de rationnement."
+    kael doute "Pas forcément."
+    kael "Légaliser ne veut pas dire distribuer."
+    kael "Sans commerce libre, la diffusion reste contrôlée par les rationnements et les ateliers autorisés."
 
-    nyra "En fait si on vote pour ça change rien ?"
+    nyra "Donc voter pour ouvre une porte, mais ne distribue pas les clés."
 
-    julian inquiet "Ouais, peut-être, mais au moins on aggrave pas la situation."
-    julian "Compris Tomas ?"
+    julian inquiet "Exactement. Notre responsabilité n'est pas de régler tout le système en une nuit."
+    julian "C'est d'éviter d'offrir à Kami une arme plus nette."
 
-    tomas "Ou-Ouais..."
+    tomas "Ouais... dit comme ça."
 
-    sael mefiant "La majorité est plutôt pour ces brouilleurs alors."
-    sael "Tant mieux. Il ne faut pas interdire ça."
+    sael mefiant "Alors la majorité penche vers l'autorisation."
+    sael "Tant mieux. Interdire une ombre ne fait que la rendre plus affamée."
 
     pause 0.4
 
-    think "Ils continuent de discuter… Je les écoute à peine."
-    think "Qui est-ce que j’ai vu tout à l’heure… ?"
+    think "Ils continuent."
+    think "Brouilleurs. Sécurité. Surveillance."
+    think "Moi, je revois une silhouette derrière une vitre."
 
-    noam hesitation "Est-ce que… quelqu’un était dans les couloirs juste avant l’annonce ?"
-    noam "Vers la salle de stockage, je veux dire."
+    noam hesitation "Est-ce que... quelqu'un était dans les couloirs juste avant l'annonce ?"
+    noam "Vers la salle de stockage, enfin, dans ce secteur."
 
     ryn colere "Pourquoi tu demandes ça ?"
 
-    noam "… Laisse tomber."
+    noam "... Laisse tomber."
 
     # Réponses rapides et naturelles
-    tomas fatigue "M-Moi, j’étais déjà ici. Je me disais bien que Kami allait annoncer le prochain vote."
-    nyra raison "Moi aussi."
-    mara doute "On était à la cafétéria avec Elen."
+    tomas fatigue "M-moi, j'étais déjà ici. Je pensais que Kami allait convoquer tout le monde."
+    nyra raison "J'étais avec lui."
+    mara doute "Cafétéria, avec Elen. Témoins, plateau froid, ambiance dégueulasse."
 
-    elias fatigue "Moi j’étais à la salle de maintenance en train de bricoler."
-    elias "Je t’ai vu au loin quand je suis venu au Conclave après l’annonce de Kami."
-    elias "Sinon je n'ai croisé personne."
+    elias fatigue "Moi, maintenance."
+    elias "Je bricolais le truc qui sent le chaud."
+    elias "Je t'ai vu de loin après l'annonce, mais j'ai croisé personne. Enfin personne de vivant, je crois."
 
-    sael mefiant "Ouais, et t’étais vraiment bizarre tout à l’heure dans le couloir aussi…"
+    sael mefiant "Tu étais déjà ailleurs dans le couloir."
+    sael "Comme si quelqu'un venait de t'appeler sans faire de bruit."
 
     play sound sfx_heartbeat fadein 1.0
     $ blink()
     "Je cligne lentement des yeux."
-    "Il fait chaud, mon coeur bat la chamade."
+    "Il fait chaud."
+    "Mon cœur tape trop vite."
 
     think "..."
 
@@ -1157,7 +1151,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     "La salle commence à tanguer légèrement."
     "Un bourdonnement sourd monte dans mes oreilles."
     
-    noam fatigue "Je… je me sens pas..."
+    noam fatigue "Je... je crois que je vais..."
     
     $ blink()
     "Mes jambes deviennent molles."

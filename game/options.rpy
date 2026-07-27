@@ -15,7 +15,7 @@
 ##
 ## La chaîne de caractère contenu dans _() est éligible à la traduction.
 
-define config.name = _("kami desire")
+define config.name = _("Kami's Desires")
 
 
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu
@@ -33,6 +33,9 @@ define config.version = "0.3.0-benji-ver"
 ## guillemets, et laissez une ligne entre les paragraphes.
 
 define gui.about = _p("""
+Visual novel de tension, de votes et de survie sociale dans le Conclave orbital.
+
+Version de développement. Les choix, les arguments et les liens de personnage peuvent encore évoluer.
 """)
 
 
@@ -57,7 +60,7 @@ define config.has_voice = True
 ## Pour autoriser le joueur à réaliser un test de volume, décommenter la ligne
 ## ci-dessous et utilisez-la pour configurer un son d’exemple.
 
-# define config.sample_sound = "sample-sound.ogg"
+define config.sample_sound = "audio/sfx_kami_alert.wav"
 # define config.sample_voice = "sample-voice.ogg"
 
 

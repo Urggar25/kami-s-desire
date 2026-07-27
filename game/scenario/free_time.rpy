@@ -102,6 +102,7 @@ label START_FREE_TIME(next_label=None):
     $ free_time_next_label = next_label
     $ conclave_lock = False
     $ dortoir_lock = False
+    $ corridor_current = "dortoir"
 
     scene black
     show expression Text("Temps libre", size=84, color="#FFFFFF", font="fonts/day_font.ttf") as free_time_title at truecenter
@@ -111,7 +112,7 @@ label START_FREE_TIME(next_label=None):
 
 label START_FREE_TIME_MAP:
 
-    call screen conclave_map(allow_return=True)
+    call CORRIDOR_NAVIGATION(corridor_current)
 
     if _return == "archive":
         call ARCHIVE_TP from _call_ARCHIVE_TP
@@ -172,6 +173,7 @@ label START_EXPLORATION_LIBRE(next_label=None, required_visits=0, allowed_rooms=
     $ exploration_libre_allowed_rooms = allowed_rooms
     $ exploration_libre_title = title
     $ exploration_libre_last_room = None
+    $ corridor_current = "dortoir"
 
     scene black
     show expression Text(exploration_libre_title, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as exploration_libre_title_card at truecenter
@@ -182,7 +184,7 @@ label START_EXPLORATION_LIBRE(next_label=None, required_visits=0, allowed_rooms=
 
 label START_EXPLORATION_LIBRE_MAP:
 
-    call screen conclave_map(allow_return=True)
+    call CORRIDOR_NAVIGATION(corridor_current)
     $ exploration_libre_last_room = _return
 
     if _return == "archive":

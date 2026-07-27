@@ -1,418 +1,361 @@
-# =========================
-#  IMAGES — CARTE CONCLAVE
-# =========================
+# -----------------------------------------------------------------------
+# NAVIGATION MANUELLE — Couloirs du Conclave
+# -----------------------------------------------------------------------
 
-image bg_map                    = "images/carte/bg_map.png"
-
-image map_archive               = "images/carte/archive.png"
-image map_archive_hover         = "images/carte/archive_hover.png"
-
-image map_cafeteria             = "images/carte/cafeteria.png"
-image map_cafeteria_hover       = "images/carte/cafeteria_hover.png"
-
-image map_canon                 = "images/carte/canon.png"
-image map_canon_hover           = "images/carte/canon_hover.png"
-
-image map_conclave              = "images/carte/conclave.png"
-image map_conclave_hover        = "images/carte/conclave_hover.png"
-
-image map_dortoir               = "images/carte/dortoir.png"
-image map_dortoir_hover         = "images/carte/dortoir_hover.png"
-
-image map_gymnase               = "images/carte/gymnase.png"
-image map_gymnase_hover         = "images/carte/gymnase_hover.png"
-
-image map_infirmerie            = "images/carte/infirmerie.png"
-image map_infirmerie_hover      = "images/carte/infirmerie_hover.png"
-
-image map_livraison             = "images/carte/livraison.png"
-image map_livraison_hover       = "images/carte/livraison_hover.png"
-
-image map_maintenance            = "images/carte/maintenance.png"
-image map_maintenance_hover      = "images/carte/maintenance_hover.png"
-
-image map_observation           = "images/carte/observation.png"
-image map_observation_hover     = "images/carte/observation_hover.png"
-
-image map_repos                 = "images/carte/repos.png"
-image map_repos_hover           = "images/carte/repos_hover.png"
-
-image map_stockage              = "images/carte/stockage.png"
-image map_stockage_hover        = "images/carte/stockage_hover.png"
-
-
-default map_ui_room_key = None
-
+default corridor_current = "dortoir"
+default corridor_ui_target = None
+default current_scene_active = None
 
 init python:
+    CORRIDOR_FOR_ROOM = {
+        "archive": "dortoir",
+        "cafeteria": "cafeteria",
+        "canon": "cafeteria",
+        "conclave": "dortoir",
+        "dortoir": "dortoir",
+        "gymnase": "infirmerie",
+        "infirmerie": "infirmerie",
+        "livraison": "sas",
+        "maintenance": "maintenance",
+        "observation": "cafeteria",
+        "repos": "cafeteria",
+        "stockage": "sas",
+    }
+
+    CORRIDOR_LABELS = {
+        "cafeteria": "Couloir de la cafétéria",
+        "dortoir": "Couloir du dortoir",
+        "infirmerie": "Couloir de l'infirmerie",
+        "maintenance": "Couloir de maintenance",
+        "sas": "Couloir du SAS",
+    }
+
     MAP_ROOM_LABELS = {
-        "archive": "Salle d'Archive",
+        "archive": "Salle d'archive",
         "cafeteria": "Cafétéria",
-        "canon": "Salle du Canon",
+        "canon": "Salle du canon",
         "conclave": "Conclave",
         "dortoir": "Dortoir",
         "gymnase": "Gymnase",
         "infirmerie": "Infirmerie",
-        "livraison": "SAS Livraison",
+        "livraison": "SAS de livraison",
         "maintenance": "Maintenance",
         "observation": "Observatoire",
-        "repos": "Salle de Repos",
+        "repos": "Salle de repos",
         "stockage": "Stockage",
     }
 
-    MAP_CHARACTER_PORTRAIT_IMAGES = {
-        "Mara": "images/character/mara/portrait.png",
-        "Lysa": "images/character/lysa/portrait.png",
-        "Elen": "images/character/elen/portrait.png",
-        "Nyra": "images/character/nyra/portrait.png",
-        "Tomas": "images/character/tomas/portrait.png",
-        "Ryn": "images/character/ryn/portrait.png",
-        "Elias": "images/character/elias/portrait.png",
-        "Kael": "images/character/kael/portrait.png",
-        "Julian": "images/character/julian/portrait.png",
-        "Iris": "images/character/iris/portrait.png",
-        "Sael": "images/character/sael/portrait.png",
+    # (type, destination, texture interactive, libellé)
+    CORRIDOR_INTERACTIONS = {
+        "cafeteria": [
+            ("room", "cafeteria", "porte_cafeteria.png", "Entrer dans la cafétéria"),
+            ("room", "canon", "porte_canon.png", "Entrer dans la salle du canon"),
+            ("room", "observation", "porte_observation.png", "Entrer dans l'observatoire"),
+            ("room", "repos", "porte_repos.png", "Entrer dans la salle de repos"),
+            ("corridor", "dortoir", "vers_couloir_dortoir.png", "Aller vers le dortoir"),
+            ("corridor", "maintenance", "vers_couloir_maintenance.png", "Aller vers la maintenance"),
+        ],
+        "dortoir": [
+            ("room", "archive", "porte_archive.png", "Entrer dans la salle d'archive"),
+            ("room", "conclave", "porte_conclave.png", "Entrer dans le Conclave"),
+            ("room", "dortoir", "porte_dortoir.png", "Entrer dans le dortoir"),
+            ("corridor", "cafeteria", "vers_couloir_cafeteria.png", "Aller vers la cafétéria"),
+            ("corridor", "infirmerie", "vers_couloir_infirmerie.png", "Aller vers l'infirmerie"),
+        ],
+        "infirmerie": [
+            ("room", "gymnase", "porte_gymnase.png", "Entrer dans le gymnase"),
+            ("room", "infirmerie", "porte_infirmerie.png", "Entrer dans l'infirmerie"),
+            ("corridor", "dortoir", "vers_couloir_dortoir.png", "Aller vers le dortoir"),
+            ("corridor", "maintenance", "vers_couloir_maintenance.png", "Aller vers la maintenance"),
+            ("corridor", "sas", "vers_couloir_sas.png", "Aller vers le SAS"),
+        ],
+        "maintenance": [
+            ("room", "maintenance", "porte_maintenance.png", "Entrer dans la maintenance"),
+            ("corridor", "cafeteria", "vers_couloir_cafeteria.png", "Aller vers la cafétéria"),
+            ("corridor", "infirmerie", "vers_couloir_infirmerie.png", "Aller vers l'infirmerie"),
+        ],
+        "sas": [
+            ("room", "livraison", "porte_sas.png", "Entrer dans le SAS de livraison"),
+            ("room", "stockage", "porte_stockage.png", "Entrer dans la salle de stockage"),
+            ("corridor", "infirmerie", "vers_couloir_infirmerie.png", "Aller vers l'infirmerie"),
+        ],
     }
 
-    def map_room_characters(room_key):
-        """Retourne la liste des personnages visibles en temps libre pour une salle."""
-        if not social_free_time_active():
-            return []
+    CORRIDOR_ROOM_LABELS = {
+        "archive": "ARCHIVE_TP",
+        "cafeteria": "CAFETERIA_TP",
+        "canon": "CANON_TP",
+        "conclave": "CONCLAVE_TP",
+        "dortoir": "DORTOIR_TP",
+        "gymnase": "GYMNASE_TP",
+        "infirmerie": "INFIRMERIE_TP",
+        "livraison": "LIVRAISON_TP",
+        "maintenance": "MAINTENANCE_TP",
+        "observation": "OBSERVATION_TP",
+        "repos": "REPOS_TP",
+        "stockage": "STOCKAGE_TP",
+    }
 
-        chars = []
-        if room_key == "archive":
-            if getattr(store, "tomas_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Tomas")
-            if getattr(store, "lysa_link", -1) == 3:
-                chars.append("Lysa")
-        elif room_key == "cafeteria":
-            if getattr(store, "j10011_waiting_elias", False):
-                chars.append("Elias")
-            if getattr(store, "mara_link", -1) in [0, 2, 4]:
-                chars.append("Mara")
-            if getattr(store, "lysa_link", -1) == 1:
-                chars.append("Lysa")
-            if getattr(store, "elen_link", -1) == 1:
-                chars.append("Elen")
-        elif room_key == "conclave":
-            if getattr(store, "nyra_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Nyra")
-            if getattr(store, "elen_link", -1) == 0:
-                chars.append("Elen")
-        elif room_key == "dortoir":
-            if getattr(store, "lysa_link", -1) == 4:
-                chars.append("Lysa")
-        elif room_key == "gymnase":
-            if getattr(store, "ryn_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Ryn")
-            if getattr(store, "elias_link", -1) in [0, 2, 4]:
-                chars.append("Elias")
-        elif room_key == "infirmerie":
-            if getattr(store, "elen_link", -1) == 3:
-                chars.append("Elen")
-        elif room_key == "livraison":
-            if getattr(store, "sael_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Sael")
-        elif room_key == "maintenance":
-            if getattr(store, "kael_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Kael")
-            if getattr(store, "elias_link", -1) in [1, 3]:
-                chars.append("Elias")
-        elif room_key == "observation":
-            if getattr(store, "lysa_link", -1) == 2:
-                chars.append("Lysa")
-            if getattr(store, "julian_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Julian")
-            if getattr(store, "elen_link", -1) == 2:
-                chars.append("Elen")
-        elif room_key == "repos":
-            if getattr(store, "mara_link", -1) in [1, 3]:
-                chars.append("Mara")
-            if getattr(store, "lysa_link", -1) == 0:
-                chars.append("Lysa")
-            if getattr(store, "iris_link", -1) in [0, 1, 2, 3, 4]:
-                chars.append("Iris")
-            if getattr(store, "elen_link", -1) == 4:
-                chars.append("Elen")
+    DOOR_ROOM_BACKGROUNDS = {
+        "archive": "bg_archive",
+        "cafeteria": "bg_cafeteria",
+        "canon": "bg_canon",
+        "conclave": "bg_conclave",
+        "dortoir": "bg_dortoir",
+        "gymnase": "bg_gymnase",
+        "infirmerie": "bg_infirmerie",
+        "livraison": "bg_sas",
+        "maintenance": "bg_maintenance",
+        "observation": "bg_observation",
+        "repos": "bg_repos",
+        "stockage": "bg_stockage",
+        "chambre": "bg_chambre",
+    }
 
-        return chars
+    def corridor_for_room(room_key):
+        if room_key and room_key.startswith("pnc_"):
+            room_key = room_key[4:]
+        if room_key == "chambre":
+            room_key = "dortoir"
+        return CORRIDOR_FOR_ROOM.get(room_key, "dortoir")
 
-    def map_room_header(room_key):
-        if not room_key:
-            return "Conclave — Carte interactive"
-        return MAP_ROOM_LABELS.get(room_key, "Salle inconnue")
+    def room_key_from_pnc_room(pnc_room_name):
+        if isinstance(pnc_room_name, str) and pnc_room_name.startswith("pnc_"):
+            room_key = pnc_room_name[4:]
+            if room_key in CORRIDOR_ROOM_LABELS:
+                return room_key
+        return None
+
+    def corridor_background(corridor_key):
+        return "images/background/scene/couloir_{}.png".format(corridor_key)
+
+    def corridor_interaction_path(corridor_key, filename):
+        return "images/background/interact/couloir/{}/{}".format(corridor_key, filename)
 
     def map_room_selectable(room_key):
         if getattr(store, "exploration_libre_active", False):
             return exploration_libre_room_allowed(room_key)
         return True
 
-    def map_returns_room():
-        return social_free_time_active() or getattr(store, "exploration_libre_active", False)
+    def corridor_target_enabled(corridor_key, target_type, target_key):
+        if getattr(store, "current_scene_active", None) in ("_2_ROUTE_CAFETERIA", "_3_ROUTE_CAFETERIA"):
+            if corridor_key == "dortoir":
+                return (target_type, target_key) in (
+                    ("room", "dortoir"),
+                    ("corridor", "cafeteria"),
+                )
+            if corridor_key == "cafeteria":
+                return (target_type, target_key) in (
+                    ("room", "cafeteria"),
+                    ("corridor", "dortoir"),
+                )
+            return False
+
+        return target_type == "corridor" or map_room_selectable(target_key)
+
+    def corridor_room_label(room_key):
+        return CORRIDOR_ROOM_LABELS.get(room_key)
+
+    def door_room_background(room_key):
+        image_name = DOOR_ROOM_BACKGROUNDS.get(room_key)
+        if image_name:
+            return renpy.displayable(image_name)
+        return Solid("#000")
+
+    def door_corridor_background(corridor_key):
+        return Image(corridor_background(corridor_key))
 
 
-transform map_room_title_pop:
-    alpha 0.0
-    yoffset -8
-    ease 0.18 alpha 1.0 yoffset 0
-
-
-# =========================
-#  SCREEN — CARTE CONCLAVE
-# =========================
-
-
-
-screen exploration_retour_button():
-
-    imagebutton:
-        idle "images/background/interact/retour.png"
-        hover "images/background/interact/retour_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action If(exploration_libre_active, Return(), If(social_free_time_active(), Jump("START_FREE_TIME_MAP"), Jump("OPEN_CONCLAVE_MAP")))
-
-screen conclave_map(allow_return=False):
-
+screen conclave_corridor(corridor_key=None):
     modal True
     zorder 200
 
-    # Cache définitivement l'ancienne scene
+    $ shown_corridor = corridor_key if corridor_key in CORRIDOR_INTERACTIONS else "dortoir"
+    $ corridor_title = CORRIDOR_LABELS[shown_corridor]
+
     add Solid("#000")
+    add corridor_background(shown_corridor) at cover_screen
 
-    # BG COVER — c'est LUI qui définit le scaling réel
-    add "images/carte/bg_map.png" at cover_screen
+    for target_type, target_key, texture_name, target_text in CORRIDOR_INTERACTIONS[shown_corridor]:
+        $ target_enabled = corridor_target_enabled(shown_corridor, target_type, target_key)
+        $ interaction_path = corridor_interaction_path(shown_corridor, texture_name)
 
-    use exploration_meta_buttons
+        imagebutton:
+            idle interaction_path
+            hover Transform(interaction_path, matrixcolor=BrightnessMatrix(0.25))
+            # Les calques de couloir couvrent parfois une grande partie du décor.
+            # Les teinter lorsqu'ils sont désactivés crée alors des bandes visibles.
+            insensitive interaction_path
+            focus_mask True
+            xpos 0
+            ypos 0
+            at cover_screen
+            sensitive target_enabled
+            hovered SetVariable("corridor_ui_target", target_text if target_enabled else "Accès indisponible")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return((target_type, target_key))
+
+    if shown_corridor == "dortoir" and current_scene_active == "FIRST_CONCLAVE_ELEN_INTERACT":
+        imagebutton:
+            idle Transform(character_image("elen", "joie"), zoom=0.75)
+            hover Transform(character_image("elen", "content"), zoom=0.75)
+            focus_mask True
+            xalign 0.50
+            yalign 0.34
+            hovered SetVariable("corridor_ui_target", "Parler à Elen")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("FIRST_CONCLAVE_ELEN_INTERACT")
+
+    if shown_corridor == "cafeteria" and current_scene_active == "_2_ROUTE_CAFETERIA" and not day2_cafeteria_route_tomas_seen:
+        imagebutton:
+            idle Transform(character_image("tomas", "neutre"), zoom=1.00)
+            hover Transform(character_image("tomas", "hesitation"), zoom=1.00)
+            focus_mask True
+            xalign 0.62
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Parler à Tomas")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_2_ROUTE_CAFETERIA_TOMAS")
+
+    if shown_corridor == "cafeteria" and current_scene_active == "_3_ROUTE_CAFETERIA" and not day3_cafeteria_route_julian_seen:
+        imagebutton:
+            idle Transform(character_image("julian", "joie"), zoom=1.00)
+            hover Transform(character_image("julian", "sourire"), zoom=1.00)
+            focus_mask True
+            xalign 0.62
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Parler à Julian")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_3_OPT_JULIAN_DIAL")
 
     frame:
-        xalign 0.03
-        yalign 0.97
-        xmaximum 560
-        ymaximum 220
-        background Solid("#0b1118d0")
-        padding (16, 14)
+        xalign 0.02
+        yalign 0.03
+        xmaximum 500
+        background Solid("#090d14dd")
+        padding (18, 12)
 
         vbox:
-            spacing 10
+            spacing 4
+            text "[corridor_title]":
+                color "#E8F4FF"
+                size 32
+                xalign 0.0
+                text_align 0.0
+                outlines [(2, "#02060ccc", 0, 0)]
 
-            if exploration_libre_active:
-                text "Exploration":
-                    size 28
+            if corridor_ui_target:
+                text "[corridor_ui_target]":
+                    color "#A6D8FF"
+                    size 22
+                    xalign 0.0
+                    text_align 0.0
+
+    if exploration_libre_active:
+        frame:
+            xalign 0.03
+            yalign 0.97
+            background Solid("#0b1118d0")
+            padding (16, 12)
+
+            vbox:
+                spacing 5
+                text "[exploration_libre_title]":
+                    size 26
                     color "#A6D8FF"
 
                 if exploration_libre_required_visits > 0:
-                    text "Zones visitees : [len(exploration_libre_seen_rooms)]/[exploration_libre_required_visits]":
-                        size 22
-                        color "#DCE8F7"
-                else:
-                    text "Choisis librement une zone":
-                        size 22
+                    text "Zones visitées : [len(exploration_libre_seen_rooms)]/[exploration_libre_required_visits]":
+                        size 20
                         color "#DCE8F7"
 
-                if map_ui_room_key is None:
-                    text "Survole une zone":
-                        size 22
-                        color "#C8D3E0"
-                elif not map_room_selectable(map_ui_room_key):
-                    text "Zone inaccessible":
-                        size 22
-                        color "#C8D3E0"
-                else:
-                    text "[map_room_header(map_ui_room_key)]":
-                        size 22
-                        color "#C8D3E0"
-            else:
-                text "Presences":
-                    size 28
-                    color "#A6D8FF"
 
-                if map_ui_room_key is None:
-                    text "Survole une zone":
-                        size 22
-                        color "#DCE8F7"
-                else:
-                    $ current_chars = map_room_characters(map_ui_room_key)
+label _2_ROUTE_CAFETERIA_TOMAS:
+    scene expression Image(corridor_background("cafeteria")) at adaptive_fullscreen
+    $ day2_cafeteria_route_tomas_seen = True
 
-                    if current_chars:
-                        hbox:
-                            spacing 10
-                            for char_name in current_chars:
-                                $ portrait_path = MAP_CHARACTER_PORTRAIT_IMAGES.get(char_name, None)
-                                frame:
-                                    background Solid("#101722f0")
-                                    xsize 78
-                                    ysize 78
-                                    padding (2, 2)
+    $ showGroup([
+        ("noam", "neutre", 0.30),
+        ("tomas", "hesitation", 0.68),
+    ])
 
-                                    if portrait_path is not None:
-                                        add Transform(portrait_path, xsize=74, ysize=74)
-                    else:
-                        text "Aucun personnage":
-                            size 22
-                            color "#C8D3E0"
-    # --- HOTSPOTS (full-screen overlays) ---
-    # IMPORTANT : xpos/ypos 0 + at cover_screen, comme ton modèle
+    noam "Salut Tomas. Tu vas à la cafétéria ?"
+    tomas hesitation "O-Oui. Enfin, j'essaie surtout de ne pas arriver le dernier."
+    tomas inquiet "Tu crois que Kami va vraiment annoncer le vote dès ce matin ?"
+    noam reflexion "Si elle l'a dit, je pense que oui..."
+    tomas raison "O-Ouais on devrait y aller alors."
 
-    imagebutton:
-        idle "images/carte/archive.png"
-        hover "images/carte/archive_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "archive")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("archive"), If(map_returns_room(), Return("archive"), Jump("ARCHIVE_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/cafeteria.png"
-        hover "images/carte/cafeteria_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "cafeteria")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("cafeteria"), If(map_returns_room(), Return("cafeteria"), Jump("CAFETERIA_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/canon.png"
-        hover "images/carte/canon_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "canon")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("canon"), If(map_returns_room(), Return("canon"), Jump("CANON_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/conclave.png"
-        hover "images/carte/conclave_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "conclave")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("conclave"), If(map_returns_room(), Return("conclave"), Jump("CONCLAVE_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/dortoir.png"
-        hover "images/carte/dortoir_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "dortoir")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("dortoir"), If(map_returns_room(), Return("dortoir"), Jump("DORTOIR_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/gymnase.png"
-        hover "images/carte/gymnase_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "gymnase")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("gymnase"), If(map_returns_room(), Return("gymnase"), Jump("GYMNASE_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/infirmerie.png"
-        hover "images/carte/infirmerie_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "infirmerie")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("infirmerie"), If(map_returns_room(), Return("infirmerie"), Jump("INFIRMERIE_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/livraison.png"
-        hover "images/carte/livraison_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "livraison")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("livraison"), If(map_returns_room(), Return("livraison"), Jump("LIVRAISON_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/maintenance.png"
-        hover "images/carte/maintenance_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "maintenance")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("maintenance"), If(map_returns_room(), Return("maintenance"), Jump("MAINTENANCE_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/observation.png"
-        hover "images/carte/observation_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "observation")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("observation"), If(map_returns_room(), Return("observation"), Jump("OBSERVATION_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/repos.png"
-        hover "images/carte/repos_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "repos")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("repos"), If(map_returns_room(), Return("repos"), Jump("REPOS_TP")), NullAction())
-
-    imagebutton:
-        idle "images/carte/stockage.png"
-        hover "images/carte/stockage_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        hovered SetVariable("map_ui_room_key", "stockage")
-        unhovered SetVariable("map_ui_room_key", None)
-        action If(map_room_selectable("stockage"), If(map_returns_room(), Return("stockage"), Jump("STOCKAGE_TP")), NullAction())
-
-    frame at map_room_title_pop:
-        xalign 0.985
-        yalign 0.03
-        xmaximum 430
-        background Solid("#090d14dd")
-        padding (16, 12)
-
-        text "[map_room_header(map_ui_room_key)]":
-            color "#E8F4FF"
-            size 36
-            xalign 1.0
-            text_align 1.0
-            xmaximum 390
-            min_width 390
-            outlines [(2, "#02060ccc", 0, 0)]
+    $ hideGroup()
+    return
 
 
-# =========================
-#  LABEL D'ENTRÉE (exemple)
-# =========================
+label CORRIDOR_NAVIGATION(start_corridor=None):
+    if start_corridor is not None:
+        $ corridor_current = start_corridor
+
+    $ corridor_ui_target = None
+    call screen conclave_corridor(corridor_current)
+    $ _corridor_action = _return
+
+    if _corridor_action is None:
+        jump CORRIDOR_NAVIGATION
+
+    if isinstance(_corridor_action, str):
+        call expression _corridor_action
+        jump CORRIDOR_NAVIGATION
+
+    if _corridor_action[0] == "corridor":
+        $ corridor_current = _corridor_action[1]
+        jump CORRIDOR_NAVIGATION
+
+    $ _corridor_room = _corridor_action[1]
+    $ corridor_current = corridor_for_room(_corridor_room)
+    call PLAY_DOOR_OPEN(door_room_background(_corridor_room))
+    return _corridor_room
+
+
+label PLAY_DOOR_OPEN(next_background=None):
+    window hide
+
+    if next_background is not None:
+        scene expression next_background as door_destination_bg at adaptive_fullscreen
+    else:
+        scene black
+
+    play sound "audio/sfx_door.mp3"
+
+    show expression "images/background/interact/animation/door_open/porte1.png" as door_open_fg at adaptive_fullscreen
+    with None
+    $ renpy.pause(0.18, hard=True)
+
+    show expression "images/background/interact/animation/door_open/porte2.png" as door_open_fg at adaptive_fullscreen
+    $ renpy.pause(0.18, hard=True)
+
+    show expression "images/background/interact/animation/door_open/porte3.png" as door_open_fg at adaptive_fullscreen
+    $ renpy.pause(0.42, hard=True)
+
+    hide door_open_fg with Dissolve(0.14)
+    return
+
+
+label EXIT_ROOM_TO_CORRIDOR:
+    call PLAY_DOOR_OPEN(door_corridor_background(corridor_current))
+
+    if exploration_libre_active or social_free_time_active():
+        return
+
+    jump OPEN_CONCLAVE_MAP
+
 
 label OPEN_CONCLAVE_MAP:
-    $ map_ui_room_key = None
-    call screen conclave_map()
-    return
+    call CORRIDOR_NAVIGATION(corridor_current)
+    $ _open_room_label = corridor_room_label(_return)
+
+    if _open_room_label is not None:
+        jump expression _open_room_label
+
+    jump OPEN_CONCLAVE_MAP
+
 
 label MAP_NOTHING_HERE:
     think "Je n'ai rien à faire ici pour le moment."

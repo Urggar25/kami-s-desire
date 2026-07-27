@@ -34,50 +34,44 @@ screen pnc_infirmerie():
     zorder 200
 
     add Solid("#000")
-
-    # BG COVER
-    add "images/background/bg_infirmerie.png" at cover_screen
-
-    # HOTSPOTS
-
-    imagebutton:
-        idle "images/background/interact/infirmerie/morgue.png"
-        hover "images/background/interact/infirmerie/morgue_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("INF_PNC_MORGUE")
-
-    imagebutton:
-        idle "images/background/interact/infirmerie/armoire.png"
-        hover "images/background/interact/infirmerie/armoire_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("INF_PNC_ETAGERES")
-
-    imagebutton:
-        idle "images/background/interact/infirmerie/operation.png"
-        hover "images/background/interact/infirmerie/operation_hover.png"
-        focus_mask True
-        xpos 0
-        ypos 0
-        at cover_screen
-        action Jump("INF_PNC_TABLE")
+    use room_scene_background("infirmerie")
+    use room_scene_interactions("infirmerie")
 
     if social_free_time_active() and elen_link == 3:
         imagebutton:
-            idle Transform("images/character/elen/content.png", zoom=0.75)
-            hover Transform("images/character/elen/inquiet.png", zoom=0.75)
+            idle Transform(character_image("elen", "content"), zoom=0.75)
+            hover Transform(character_image("elen", "inquiet"), zoom=0.75)
             focus_mask True
             xalign 0.50
             yalign 0.30
             action [SetVariable("last_room_label", "INFIRMERIE_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
-    use exploration_retour_button
+label infirmerie1_porte_couloir_infirmerie:
+    $ corridor_current = "infirmerie"
+    jump EXIT_ROOM_TO_CORRIDOR
+
+
+label infirmerie1_armoire:
+    jump INF_PNC_ETAGERES
+
+
+label infirmerie2_lits:
+    "Trois lits médicaux sont séparés par des rideaux trop fins pour offrir une vraie intimité."
+    "Les moniteurs sont allumés et affichent des constantes de test parfaitement normales."
+    "Sous chaque lit, une caisse contient le matériel d'urgence nécessaire."
+    think "Ils ont prévu plusieurs blessés à la fois."
+    jump INFIRMERIE_TP
+
+
+label infirmerie3_morgue:
+    jump INF_PNC_MORGUE
+
+
+label infirmerie3_operation:
+    jump INF_PNC_TABLE
+
+
 
 label INF_PNC_MORGUE:
     window auto

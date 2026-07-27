@@ -98,11 +98,40 @@ transform mk_go_slam:
     pause 0.45
     linear 0.12 alpha 0.0
 
+transform mk_scanline_drift:
+    yoffset -1080
+    linear 7.0 yoffset 1080
+    repeat
+
+transform mk_edge_alert:
+    alpha 0.35
+    ease 0.7 alpha 0.85
+    ease 0.7 alpha 0.35
+    repeat
+
+style mk_terminal_label:
+    font "fonts/Barlow-Light.ttf"
+    size 18
+    color "#7DF9FF"
+    kerning 4.0
+
+style mk_panel_title:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    color "#DCF0FF"
+    outlines [(2, "#02040A", 0, 1)]
+
 screen mk_countdown_screen():
     modal True
     zorder 400
 
     add Solid("#02040Acc")
+    add Solid("#7DF9FF22", ysize=2) ypos 188
+    add Solid("#7DF9FF22", ysize=2) ypos 760
+    add Solid("#FFFFFF08", xsize=1920, ysize=24) at mk_scanline_drift
+    text "KAMI.CORE // EXECUTION PROTOCOL":
+        style "mk_terminal_label"
+        xpos 76
+        ypos 78
 
     default mk_step = 0
 
@@ -185,13 +214,20 @@ screen mk_tuto_chrome(title, steps, screen_name, as_overlay=False):
     zorder 420
 
     add Solid("#02040AE6")
+    add Solid("#7DF9FF20", ysize=2) ypos 110
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at mk_scanline_drift
 
     frame at mk_tuto_panel_in:
         xalign 0.5
         yalign 0.5
         xsize 1480
         ysize 760
-        background Solid("#0A1326F2")
+        background Fixed(
+            Solid("#0A1326F2"),
+            Solid("#7DF9FF44", xsize=4),
+            Solid("#7DF9FF44", xsize=4, xalign=1.0),
+            Solid("#FFFFFF12", ysize=1),
+        )
         padding (46, 36)
 
         vbox:
@@ -219,7 +255,11 @@ screen mk_tuto_chrome(title, steps, screen_name, as_overlay=False):
                 frame:
                     xsize 760
                     ysize 520
-                    background Solid("#060D1CEE")
+                    background Fixed(
+                        Solid("#060D1CEE"),
+                        Solid("#7DF9FF22", xsize=3),
+                        Solid("#FFFFFF10", ysize=1),
+                    )
                     padding (10, 10)
 
                     fixed at mk_tuto_demo_loop:
@@ -301,12 +341,13 @@ screen mk_help_button(tuto_screen):
         xpos 1856
         ypos 14
         xanchor 1.0
-        xsize 50
-        ysize 50
-        background Solid("#10384DCC")
-        hover_background Solid("#1D5C7AEE")
+        xsize 56
+        ysize 56
+        background Fixed(Solid("#10384DCC"), Solid("#7DF9FF55", xsize=3))
+        hover_background Fixed(Solid("#1D5C7AEE"), Solid("#FFFFFF33", ysize=2))
         text_size 28
         text_color "#7DF9FF"
+        text_hover_color "#FFFFFF"
         text_xalign 0.5
         text_yalign 0.5
         action Show(tuto_screen, as_overlay=True)
@@ -325,7 +366,11 @@ screen mk_challenge_hud(challenges, xpos_v=24, ypos_v=120):
     frame:
         xpos xpos_v
         ypos ypos_v
-        background Solid("#060D1CC8")
+        background Fixed(
+            Solid("#060D1CD8"),
+            Solid("#FFD16655", xsize=3),
+            Solid("#FFFFFF10", ysize=1),
+        )
         padding (18, 14)
 
         vbox:
@@ -364,6 +409,13 @@ screen mk_fail_retry_screen(title, mg_id):
     zorder 410
 
     add Solid("#1A0408E0")
+    add Solid("#FF4D6D33", ysize=4) ypos 170 at mk_edge_alert
+    add Solid("#FF4D6D33", ysize=4) ypos 820 at mk_edge_alert
+    text "KAMI.CORE // RETRY PENALTY":
+        style "mk_terminal_label"
+        color "#FF8FA3"
+        xpos 76
+        ypos 78
 
     vbox:
         align (0.5, 0.45)
@@ -442,13 +494,25 @@ screen mk_results_screen(title, score, max_score, stats, challenges, rank, is_re
     $ _rlabel = MK_RANK_LABELS[rank]
 
     add Solid("#02040AE8")
+    add Solid("#7DF9FF1E", ysize=2) ypos 126
+    add Solid("#7DF9FF1E", ysize=2) ypos 950
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at mk_scanline_drift
+    text "KAMI.CORE // PERFORMANCE VERDICT":
+        style "mk_terminal_label"
+        xpos 76
+        ypos 78
 
     frame at mk_result_panel_in:
         xalign 0.5
         yalign 0.5
         xsize 1120
         ysize 740
-        background Solid("#0A1326EE")
+        background Fixed(
+            Solid("#0A1326F4"),
+            Solid("#7DF9FF44", xsize=4),
+            Solid("#7DF9FF44", xsize=4, xalign=1.0),
+            Solid("#FFFFFF12", ysize=1),
+        )
         padding (50, 36)
 
         vbox:

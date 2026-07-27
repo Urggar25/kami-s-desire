@@ -81,6 +81,9 @@ screen say(who, what):
 
     window:
         id "window"
+        add Solid("#5cd3ff33", xsize=1920, ysize=2) xpos 0 ypos 0
+        add Solid("#ffffff18", xsize=420, ysize=1) xpos 260 ypos 28
+        add Solid("#5cd3ff55", xsize=4, ysize=120) xpos 194 ypos 80
 
         if who is not None:
             window:
@@ -187,49 +190,104 @@ transform choice_appear(delay=0.0):
 screen choice(items):
     style_prefix "choice"
 
-    vbox:
-        for idx, i in enumerate(items):
-            textbutton i.caption action i.action at choice_appear(idx * 0.07)
+    add Solid("#03070dcc")
+
+    frame:
+        style "choice_panel"
+        at choice_appear(0.0)
+
+        vbox:
+            spacing 18
+            xfill True
+
+            text _("DECISION") style "choice_header"
+            add Solid("#5cd3ff66", xsize=760, ysize=2) xalign 0.5
+
+            vbox:
+                style "choice_vbox"
+                for idx, i in enumerate(items):
+                    textbutton i.caption action i.action at choice_appear(0.12 + idx * 0.07)
 
 style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
+style choice_panel is frame
+style choice_header is gui_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
-    yanchor 0.5
-    spacing gui.choice_spacing
+    spacing 18
+
+style choice_panel:
+    xalign 0.5
+    yalign 0.44
+    xsize 1340
+    padding (70, 42, 70, 48)
+    background Fixed(
+        Solid("#07111cf2"),
+        Solid("#5cd3ff44", xsize=3),
+        Solid("#5cd3ff44", xsize=3, xalign=1.0),
+        Solid("#ffffff12", ysize=1),
+        Solid("#00000066", ysize=10, yalign=1.0),
+    )
+
+style choice_header:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 34
+    color "#5cd3ff"
+    xalign 0.5
+    textalign 0.5
+    kerning 6.0
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
-    background Solid("#0a1a2acc")
+    xsize gui.choice_button_width
+    yminimum 74
+    padding (34, 14, 34, 14)
+    background Fixed(
+        Solid("#0a1a2add"),
+        Solid("#5cd3ff33", xsize=4),
+        Solid("#ffffff10", ysize=1),
+    )
     hover_background Fixed(
-        Solid("#0d2535ee"),
+        Solid("#0d2535f6"),
         Solid("#5cd3ff", xsize=5),
         Solid("#5cd3ff", xsize=5, xalign=1.0),
+        Solid("#ffffff20", ysize=1),
     )
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
-    font "fonts/Barlow-Light.ttf"
-    idle_color "#5ab8d4"
+    font "fonts/Rajdhani-SemiBold.ttf"
+    idle_color "#9fc9d8"
     hover_color "#daeaf5"
     selected_color "#5cd3ff"
+    outlines [(1, "#03070dcc", 0, 1)]
 
 
 ################################################################################
 ## Menu rapide
 ################################################################################
 
-default quick_menu = True
+default quick_menu = False
 default quick_menu_open = False
 
 label after_load:
-    $ quick_menu = True
+    $ quick_menu = False
     $ quick_menu_open = False
     $ lock_nsfw_content()
     return
+
+init python:
+    # Le menu rapide n'est plus un overlay du jeu. On retire aussi son nom
+    # pour les anciennes sauvegardes ou sessions qui l'auraient déjà ajouté.
+    if "quick_menu" in config.overlay_screens:
+        config.overlay_screens.remove("quick_menu")
+
+screen quick_menu():
+    # Écran volontairement vide pour préserver la compatibilité des appels
+    # historiques sans réafficher de contrôle pendant la partie.
+    null
 
 
 ################################################################################
@@ -260,6 +318,7 @@ screen navigation():
 
         textbutton _("Charger")       action ShowMenu("load")
         textbutton _("Préférences")   action ShowMenu("preferences")
+        textbutton _("Succès")        action ShowMenu("succes_menu")
 
         if main_menu:
             textbutton _("Roadmap")     action ShowMenu("roadmap_menu")
@@ -268,7 +327,6 @@ screen navigation():
         else:
             textbutton _("Profils")     action ShowMenu("profiles_menu")
             textbutton _("Roadmap")     action ShowMenu("roadmap_menu")
-            textbutton _("Codex")       action ShowMenu("codex_menu")
             textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
 
         if _in_replay:
@@ -372,6 +430,12 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     # Voile sombre par-dessus le fond
     add Solid("#080d12cc")
+    add Solid("#5cd3ff22", ysize=2) ypos 118
+    add Solid("#ffffff10", ysize=1) ypos 176
+    text "KAMI.CORE // ARCHIVES DU CONCLAVE":
+        style "game_menu_meta"
+        xpos 74
+        ypos 126
 
     frame:
         style "game_menu_outer_frame"
@@ -448,6 +512,7 @@ style game_menu_side is gui_side
 style game_menu_scrollbar is gui_vscrollbar
 style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
+style game_menu_meta is gui_text
 style return_button is navigation_button
 style return_button_text is navigation_button_text
 
@@ -483,6 +548,13 @@ style game_menu_label_text:
     size gui.title_text_size
     color "#daeaf5"
     yalign 0.5
+    outlines [(2, "#03070dcc", 0, 1)]
+
+style game_menu_meta:
+    font "fonts/Barlow-Light.ttf"
+    size 18
+    color "#3a7a90"
+    kerning 4.0
 
 style return_button:
     xpos gui.navigation_xpos
@@ -645,8 +717,16 @@ style page_button_text:
 
 style slot_button:
     properties gui.button_properties("slot_button")
-    background Solid("#0a1a2a")
-    hover_background Solid("#0d2535")
+    background Fixed(
+        Solid("#0a1a2add"),
+        Solid("#5cd3ff22", xsize=3),
+        Solid("#ffffff10", ysize=1),
+    )
+    hover_background Fixed(
+        Solid("#0d2535ee"),
+        Solid("#5cd3ff", xsize=4),
+        Solid("#5cd3ff66", ysize=2),
+    )
 
 style slot_button_text:
     properties gui.text_properties("slot_button")
@@ -682,6 +762,11 @@ screen preferences():
                     textbutton _("Texte non lu")    action Preference("skip", "toggle")
                     textbutton _("Après les choix") action Preference("after choices", "toggle")
                     textbutton _("Transitions")     action InvertSelected(Preference("transitions", "toggle"))
+
+                vbox:
+                    style_prefix "check"
+                    label _("Interface")
+                    textbutton _("Tablette dans l'HUD") action ToggleField(persistent, "hud_tablet_enabled")
 
                 vbox:
                     style_prefix "radio"
@@ -770,6 +855,8 @@ style radio_vbox:
 style radio_button:
     properties gui.button_properties("radio_button")
     foreground "gui/button/radio_[prefix_]foreground.png"
+    background Solid("#07111c55")
+    hover_background Solid("#0d253599")
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
@@ -784,6 +871,8 @@ style check_vbox:
 style check_button:
     properties gui.button_properties("check_button")
     foreground "gui/button/check_[prefix_]foreground.png"
+    background Solid("#07111c55")
+    hover_background Solid("#0d253599")
 
 style check_button_text:
     properties gui.text_properties("check_button")
@@ -799,6 +888,8 @@ style slider_button:
     properties gui.button_properties("slider_button")
     yalign 0.5
     left_margin 15
+    background Solid("#07111c55")
+    hover_background Solid("#0d253599")
 
 style slider_button_text:
     properties gui.text_properties("slider_button")
@@ -981,19 +1072,28 @@ screen mouse_help():
 
 screen gamepad_help():
     hbox:
-        label _("Bouton R1\nA/Bouton du bas")
+        label _("Stick gauche\nD-pad")
+        text _("Déplace le curseur dans les PnC, l'exploration, les menus et les mini-jeux.")
+    hbox:
+        label _("A/Bouton du bas")
+        text _("Clique, maintient ou glisse avec le curseur.")
+    hbox:
+        label _("X/Bouton gauche")
+        text _("Effectue un clic secondaire quand une interface l'utilise.")
+    hbox:
+        label _("R1")
+        text _("Accélère le déplacement du curseur.")
+    hbox:
+        label _("Gâchettes")
+        text _("Fait défiler les listes et panneaux.")
+    hbox:
+        label _("A/Bouton du bas")
         text _("Avance dans les dialogues et active l'interface.")
     hbox:
-        label _("Gâchettes gauche")
-        text _("Retourne au précédent dialogue.")
+        label _("D-pad")
+        text _("Navigue aussi dans les interfaces Ren'Py classiques.")
     hbox:
-        label _("Bouton R1")
-        text _("Avance jusqu'au prochain dialogue.")
-    hbox:
-        label _("Boutons directionnels, stick gauche")
-        text _("Permet de se déplacer dans l'interface.")
-    hbox:
-        label _("Start, Guide, B/Right Button")
+        label _("Start, Guide, B/Bouton droit")
         text _("Ouvre le menu du jeu.")
     hbox:
         label _("Y/Bouton du haut")
@@ -1153,7 +1253,11 @@ screen notify(message):
     style_prefix "notify"
 
     frame at notify_appear:
-        text "[message!tq]"
+        hbox:
+            spacing 12
+            yalign 0.5
+            add Solid("#5cd3ff", xsize=5, ysize=34)
+            text "[message!tq]"
 
     timer 3.25 action Hide('notify')
 
@@ -1161,9 +1265,10 @@ screen notify(message):
 transform notify_appear:
     on show:
         alpha 0
-        linear .25 alpha 1.0
+        xoffset 22
+        easeout .25 alpha 1.0 xoffset 0
     on hide:
-        linear .5 alpha 0.0
+        easein .35 alpha 0.0 xoffset 22
 
 
 style notify_frame is empty
@@ -1189,14 +1294,18 @@ screen argument_unlock(argument_name):
     modal True
 
     add Solid("#080d12cc")
+    add Solid("#5cd3ff18", ysize=3) yalign 0.35
+    add Solid("#5cd3ff18", ysize=3) yalign 0.65
 
     frame at argument_unlock_appear:
         style_prefix "argument_unlock"
 
         vbox:
-            spacing 12
+            spacing 14
+            add Solid("#5cd3ff", xsize=160, ysize=3) xalign 0.5
             text "NOUVEL ARGUMENT" at argument_unlock_pulse style "argument_unlock_title"
             text "[argument_name!t]" style "argument_unlock_name"
+            add Solid("#ffffff22", xsize=520, ysize=1) xalign 0.5
 
     timer 3.0 action Hide("argument_unlock")
 
@@ -1204,8 +1313,11 @@ screen argument_unlock(argument_name):
 transform argument_unlock_appear:
     on show:
         alpha 0.0
-        zoom 0.95
-        linear 0.4 alpha 1.0 zoom 1.0
+        zoom 1.08
+        yoffset 18
+        easeout 0.22 alpha 1.0 zoom 1.0 yoffset 0
+        easein 0.06 zoom 1.03
+        easeout 0.08 zoom 1.0
         pause 2.0
     on hide:
         linear 0.3 alpha 0.0
@@ -1226,12 +1338,17 @@ style argument_unlock_frame:
     xalign 0.5
     yalign 0.5
     xmaximum 900
-    padding (60, 40)
-    background Solid("#080d12f0")
+    padding (64, 42)
+    background Fixed(
+        Solid("#080d12f4"),
+        Solid("#5cd3ff55", xsize=4),
+        Solid("#5cd3ff55", xsize=4, xalign=1.0),
+        Solid("#ffffff14", ysize=1),
+    )
 
 style argument_unlock_title:
-    font "fonts/Barlow-Light.ttf"
-    size 28
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 32
     textalign 0.5
     xalign 0.5
     color "#3a9fca"
@@ -1243,6 +1360,7 @@ style argument_unlock_name:
     textalign 0.5
     xalign 0.5
     color "#daeaf5"
+    outlines [(2, "#03070dcc", 0, 1)]
 
 
 ################################################################################
