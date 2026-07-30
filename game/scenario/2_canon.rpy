@@ -1227,6 +1227,11 @@ init 3 python:
         title = DAY2_VOTE_ARGUMENTS[arg_id]["title"]
         if title not in store.arguments:
             store.arguments.append(title)
+        # Persistance globale (conservée entre parties/sauvegardes).
+        if persistent.unlocked_arguments is None:
+            persistent.unlocked_arguments = []
+        if title not in persistent.unlocked_arguments:
+            persistent.unlocked_arguments.append(title)
         if arg_id not in store.j2_vote_arguments:
             store.j2_vote_arguments.append(arg_id)
         if "unlock_dossier_arg" in globals():

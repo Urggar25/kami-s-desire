@@ -206,9 +206,21 @@ label decouverte_salle_archive:
 
     "Tomas s’approche d’une console, il regarde l'écran et penche la tête."
 
-    tomas reflechit "… Ah."
+    tomas reflechit "… Oh. C'est quoi ça ?"
 
     noam taquin "Quoi encore ?"
+    think "Mais où il va ?"
+
+    hide tomas with moveoutright
+    hide noam with moveoutright
+    pause 1.0
+    
+    scene archive2 at adaptive_fullscreen with fade
+
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("tomas", "neutre", 0.78),
+    ])
 
     tomas surpris "Je pensais que c’était une recherche."
     tomas surpris "Mais en fait…"

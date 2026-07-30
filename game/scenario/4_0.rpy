@@ -651,6 +651,7 @@ label _4_0_REVEIL_CHAMBRE:
     scene bg_cg012 at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
     $ current_day = 4
+    $ current_period = "Matin"
 
     pause 1.5  # Légèrement plus long pour accentuer la lourdeur
 

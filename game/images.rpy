@@ -289,6 +289,7 @@ init python:
         "panne": ("corps", "bras_long_corps", "bouche_surpris", "yeux_surpris"),
         "peur": ("corps", "bras_supliant", "bouche_triste", "yeux_surpris"),
         "reflexion": ("corps", "bras_croise", "bouche_neutre", "yeux_blase"),
+        "raison": ("corps", "bras_croise", "bouche_neutre", "yeux_content"),
         "rire": ("corps", "bras_supliant", "bouche_rire", "yeux_content"),
         "salut": ("corps", "bras_intervention", "bouche_content", "yeux_content"),
         "sourire": ("corps", "bras_intervention", "bouche_content", "yeux_content"),
@@ -348,6 +349,7 @@ image lysa panne               = lysa_expression("panne")
 image lysa peur                = lysa_expression("peur")
 image lysa reflexion           = lysa_expression("reflexion")
 image lysa reflechit           = lysa_expression("reflexion")
+image lysa raison              = lysa_expression("raison")
 image lysa rire                = lysa_expression("rire")
 image lysa salut               = lysa_expression("salut")
 image lysa sourire             = lysa_expression("sourire")

@@ -48,6 +48,9 @@ default character_speaking_until = {}
 default _focus_locked = False
 default _focus_last_params = None
 default arguments = []
+# Arguments débloqués de façon GLOBALE : conservés entre les sauvegardes et
+# même après avoir recommencé une nouvelle partie.
+default persistent.unlocked_arguments = []
 default persistent.pegi18_prompt_done = False
 
 
@@ -205,6 +208,22 @@ init python:
     def add_argument(name):
         if name not in store.arguments:
             store.arguments.append(name)
+        # Persistance globale : l'argument reste débloqué pour toutes les
+        # parties futures, y compris après un recommencement complet.
+        if persistent.unlocked_arguments is None:
+            persistent.unlocked_arguments = []
+        if name not in persistent.unlocked_arguments:
+            persistent.unlocked_arguments.append(name)
+
+    def restore_unlocked_arguments():
+        """Réinjecte dans la sauvegarde courante tous les arguments déjà
+        débloqués de façon globale (persistent). À appeler au démarrage et
+        avant tout écran d'arguments."""
+        if persistent.unlocked_arguments is None:
+            persistent.unlocked_arguments = []
+        for name in persistent.unlocked_arguments:
+            if name not in store.arguments:
+                store.arguments.append(name)
 
     def bg_disp(name, blurred=False, blur_radius=2.0):
         ref = ImageReference(name)
@@ -634,6 +653,7 @@ label patreon_ending:
 label start:
     call _init_cinema_params from _call__init_cinema_params
     $ lock_nsfw_content()
+    $ restore_unlocked_arguments()
     if roadmap_target_label:
         $ _target = roadmap_target_label
         $ roadmap_target_label = None

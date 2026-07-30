@@ -1367,5 +1367,4 @@ label _0_LABEL2_RESP_DISTRICT:
     jump _1_CANON
 
 
-#5m30
-# total : 21m30
+# Total jour 0 : 13m30

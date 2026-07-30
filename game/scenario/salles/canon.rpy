@@ -244,15 +244,28 @@ label decouverte_salle_canon:
 
     noam inquiet "Ryn…"
 
-    ryn determine "Quelqu’un a fait une connerie."
+    ryn determine "Putain ! Quelqu’un a fait une connerie."
 
     noam desaccord "Comment tu peux savoir ça ?"
 
     ryn reflechit "Parce que rien ici ne s’active pour rien."
+    ryn colere "ça doit venir de là !"
 
     "Je sens mon estomac se nouer."
     "Ce n’est plus de la curiosité."
     "C’est de l’anticipation."
+
+    hide noam with moveoutright
+    hide ryn with moveoutright
+
+    pause 1.0
+
+    scene canon2 at adaptive_fullscreen with fade
+
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("ryn", "determine", 0.78),
+    ])
 
     noam hesitation "Une connerie comment ?"
 
@@ -267,20 +280,9 @@ label decouverte_salle_canon:
     ryn colere2 "Vient de sortir du cadre."
 
     play sound sfx_gresillement
-    $ hideGroup()
-
-    scene bg_canon at adaptive_fullscreen,heavy_shake
-
-    "La salle vibre."
-    "Très légèrement."
-
+    "La salle vibre. Très légèrement."
     "Le canon s’illumine."
     "Une lueur bleue apparaît en son centre."
-
-    $ showGroup([
-        ("noam", "peur", 0.22),
-        ("ryn", "surpris", 0.78),
-    ])
 
     play sound sfx_laser_canon volume 8.0
 
@@ -318,14 +320,6 @@ label decouverte_salle_canon:
     "La lumière envahit la salle."
     "Blanche."
     "Aveuglante."
-    $ hideGroup()
-
-    scene bg_canon at adaptive_fullscreen,heavy_shake
-
-    $ showGroup([
-        ("noam", "desespoir", 0.22),
-        ("ryn", "surpris", 0.78),
-    ])
 
     "Le sol tremble."
     "La vitre vibre."

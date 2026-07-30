@@ -544,7 +544,6 @@ label amendement_brouillon_play:
     # --- saut développeur complet ---
     if amend_dev_skip:
         $ noam_amendement_choix = "assistance_minimale"
-        $ j1_noam_initiative += 1
         $ j1_amendment_validated = True
         $ j1_amend_minigame_done = True
         return
@@ -664,7 +663,6 @@ label amendement_brouillon_play:
 
     # --- variables de sortie (compatibilité scénario) ---
     $ noam_amendement_choix = "assistance_minimale"
-    $ j1_noam_initiative += 1
     $ j1_amendment_validated = True
     $ j1_amend_minigame_done = True
 

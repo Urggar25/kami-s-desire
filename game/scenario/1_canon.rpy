@@ -504,6 +504,8 @@ label _1_PNC_CONCLAVE_DEBARAS:
 
 label _1_PNC_CONCLAVE_FINISH:
     hide screen day1_conclave_pnc
+
+    scene conclave2 at adaptive_fullscreen with fade
     "L'écran central du Conclave s'allume faiblement."
     think "On dirait que le système attendait qu'on l'observe."
     jump _1_KAMI_APPARITION
@@ -716,7 +718,7 @@ label _1_PNC_CONCLAVE_SAEL:
 
     $ showGroup([
         ("noam", "reflexion", 0.3),
-        ("julian", "reflexion", 0.6),
+        ("sael", "reflexion", 0.6),
     ])
 
     sael determine "Ma grand-mère disait qu'une salle silencieuse n'est jamais véritablement vide."
@@ -1900,10 +1902,14 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     $ current_period = "Soir"
 
-    scene bg_couloir at adaptive_fullscreen
+    scene couloir_cafeteria at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     think "Ça y est. La journée est finie. Enfin… presque. Je continue de marcher sans m'attarder sur mes pensées."
+
+    pause 1.0
+    scene couloir_dortoir at adaptive_fullscreen with fade
+    pause 1.0
 
     scene bg_dortoir at adaptive_fullscreen with fade
 
@@ -2032,3 +2038,5 @@ label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, to
     call trace_qte_run(mg_id="trace_day1", title="SYNCHRONISATION MOTRICE", path_type=path_type, time_limit=time_limit, wait_time=wait_time, tolerance=tolerance, max_errors=max_errors, anchor_x=anchor_x, anchor_y=anchor_y, required=required) from _call_day1_play_trace_trace_qte
     $ fix_stale_return_label(day1_trace_return_label(path_type, anchor_y))
     return (_return != "FAIL")
+
+# Total J1 + exploration des salles : 44m30
