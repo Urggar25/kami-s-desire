@@ -104,11 +104,11 @@ screen pnc_dortoir():
 
     if social_free_time_active() and lysa_link == 4:
         imagebutton:
-            idle Transform(character_image("lysa", "triste"), zoom=0.75)
-            hover Transform(character_image("lysa", "sourire"), zoom=0.75)
+            idle Transform(character_image("lysa", "triste"), zoom=1.00)
+            hover Transform(character_image("lysa", "sourire"), zoom=1.00)
             focus_mask True
             xalign 0.82
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "DORTOIR_TP"), Jump("LYSA_LINK_INTERACT")]
 
 
@@ -143,7 +143,7 @@ screen pnc_chambre():
 
 
 label DORTOIR_ENTER_CHAMBRE:
-    call PLAY_DOOR_OPEN(door_room_background("chambre"))
+    call PLAY_DOOR_OPEN(door_room_background("chambre")) from _call_PLAY_DOOR_OPEN_3
     jump CHAMBRE_TP
 
 

@@ -1159,5 +1159,5 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     scene black with fade
     pause 1.0
 
-    call end_day("11")
+    call end_day("11") from _call_end_day_1
     jump _11_0_1_1_REVEIL_CHAMBRE

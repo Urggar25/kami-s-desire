@@ -223,7 +223,7 @@ label _11_0_1_1_APRES_REVEIL:
     "Je force un sourire et continue à manger en silence tandis que le groupe parle de tout et de rien."
 
 
-    call show_custom_title("Une bonne heure plus tard")
+    call show_custom_title("Une bonne heure plus tard") from _call_show_custom_title_2
 
     pause 1.5
 
@@ -392,7 +392,7 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
     think "Sept jours de délai à cause des brouilleurs ?"
     think "À cause des brouilleurs..."
 
-    call _11_0_1_2_MINIJEU_7JOURS
+    call _11_0_1_2_MINIJEU_7JOURS from _call__11_0_1_2_MINIJEU_7JOURS
 
     play music "music/bgm_low_tension.mp3" fadein 2.0
     "Je reste immobile plusieurs secondes. Plus je me répète ces quelques mots, plus une idée me frappe, claire et presque trop évidente."
@@ -462,7 +462,7 @@ label _11_0_1_3_SALLE_COMMUNICATION:
     kami "C'est ce que tu as cru voir qui te fait venir me demander ça ?."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais bon… Je ne voudrais pas que le représentant d'Harmonie devienne totalement fou."
+    kami "Mais bon… Je ne voudrais pas que le représentant d'[codex_dialogue_link('harmonie', 'Harmonie')] devienne totalement fou."
     kami "Que vont en penser ta famille sinon ?!"
 
     "Je ravale douloureusement ma salive."
@@ -497,7 +497,7 @@ label _11_0_1_3_SALLE_COMMUNICATION:
     "Il y a plusieurs tranches horaires et plusieurs salles disponibles."
     "Il va falloir que je trouve le segment que je cherche..."
 
-    call _11_0_1_3_MINIJEU_CAMERAS
+    call _11_0_1_3_MINIJEU_CAMERAS from _call__11_0_1_3_MINIJEU_CAMERAS
 
 label _11_0_1_1_CONFRONTATION_KAMI:
 
@@ -739,5 +739,5 @@ label _11_0_1_1_RETOUR_CHAMBRE:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("12")
+    call end_day("12") from _call_end_day_2
     jump _12_0_1_1_REVEIL_CHAMBRE

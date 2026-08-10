@@ -2,95 +2,32 @@
 # Jour 6 - Branche statu quo post-accident café
 # Style THL - version dialoguée, rythmée
 
+default j601_border_news_seen = False
+
+transform j601_sael_vote_strip:
+    xalign 0.5
+    yalign 0.5
+    xysize (720, 1080)
+
 label _6_0_1_REVEIL_CHAMBRE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 6
+    $ current_period = "Matin"
+    $ cafeteria_food_level = "low"
 
     pause 1.0
 
     $ blink()
 
-    think "J'ouvre les yeux."
-
-    pause 0.4
-
-    think "Pas vraiment réveillé. Juste assez pour savoir que j'allais déjà mal avant d'ouvrir les yeux."
-
-    pause 0.5
-
-    think "Jour six."
-
-    pause 0.3
-
-    think "Le vote."
-
-    think "Je reste accroché au plafond comme s'il pouvait retarder la journée."
-
-    pause 0.5
-
-    think "Hier, Elias a renversé son café et la salle d'observation nous a enfermés."
-    think "Pendant quelques minutes, nous avons attendu qu'un système décide à notre place. Une répétition générale."
-
-    pause 0.6
-
-    think "C'était ridicule."
-    think "Et ça m'a fait peur."
-
-    pause 0.5
-
-    think "Yeux qui piquent. Gorge sèche. Le corps dépose son rapport."
-
-    pause 0.4
-
-    think "Un poids dans la poitrine. Pas assez douloureux pour m'arrêter, juste assez pour ralentir chaque geste."
-
-    pause 0.5
-
-    think "Aujourd'hui, ça échoue."
-
-    pause 0.4
-
-    think "Je le pense sans colère, comme on lit l'heure."
-
-    pause 0.5
-
-    think "Sael votera contre."
-    think "Iris aussi."
-    think "Et peut-être d'autres."
-
-    pause 0.4
-
-    think "Donc voilà."
-
-    think "Je me redresse. L'air paraît plus froid aujourd'hui."
-
-    pause 0.6
-
-    think "Se lever. Manger. Parler. Faire semblant qu'un débat peut encore changer quelque chose."
-
-    pause 0.5
-
-    think "Je reste assis. Première étape déjà compromise."
-
-    pause 0.6
-
-    think "Le silence de la chambre n'a pas la même texture."
-
-    pause 0.4
-
-    think "C'est idiot. Un silence n'a pas de texture."
-
-    pause 0.3
-
-    think "Et pourtant."
-
-    pause 0.6
+    think "J'ouvre les yeux après une longue nuit de sommeil."
+    think "J'ai enfin pu dormir convenablement. Peut-être parce que je sais déjà ce que cette journée nous réserve."
+    think "Finalement, ça ne sert à rien de se prendre la tête pour un vote déjà perdu d'avance."
 
     play sound sfx_announce
 
-    pause 0.8
+    pause 1.0
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -98,78 +35,40 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.4
 
-    kami "Représentants."
+    kami "Eh bien bonjouur à tous ! Aujourd'hui est le jour que vous attendez tant ! C'est jour de vote !"
 
-    pause 0.3
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Le vote sur la libre circulation entre districts aura lieu aujourd'hui à qu-quatorze heure, dans le conclave."
 
-    scene bg_diffusion_einstein at adaptive_fullscreen
-    with hpunch
+    pause 0.8
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    pause 0.8
 
-    pause 0.1
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Mais vous commencez déjà à avoir l'habitude de cette petite routine, n-n-'est-ce pas ?."
 
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Le vote sur la libre circulation entre districts aura lieu aujourd'hui."
-
-    pause 0.3
-
-    kami "Quatorze heures."
-
-    pause 0.4
-
-    "La voix grésille."
-
-    pause 0.3
+    "La voix grésille, elle est étrange. Presque comme modifiée."
 
     scene bg_diffusion_professeur at adaptive_fullscreen
     with vpunch
 
     pause 0.1
 
-    scene bg_diffusion_colere at adaptive_fullscreen
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
-    kami "Présence recommandée."
-
-    pause 0.3
-
-    kami "Participation recommandée."
-
-    pause 0.3
-
-    kami "Illusion de responsabilité recommandée."
-
-    pause 0.5
-
-    "Un blanc."
-
-    pause 0.6
+    kami "Votre présence est-est... Recommandée."
+    pause 2.0
 
     scene bg_diffusion_triste at adaptive_fullscreen
     with dissolve
 
-    kami "Vous avez l'air fatigués."
-
-    pause 0.4
-
-    scene bg_diffusion_taquin at adaptive_fullscreen
-    with dissolve
-
-    kami "Enfin."
-
-    pause 0.3
-
-    kami "J'imagine."
-
-    pause 0.4
+    kami "Vous avez l'air fatigués. Enfin... J'imagine."
 
     scene bg_diffusion_colere at adaptive_fullscreen
     with dissolve
 
-    kami "Mes relevés comportementaux indiquent une baisse notable de votre capacité à produire quelque chose d'intéressant."
-
-    pause 0.5
-
-    kami "C'est contrariant."
+    kami "Vous me semblez, bi-bien moins intéréssant que ces derniers jours.."
+    kami "C'est très contrariant."
 
     pause 0.4
 
@@ -180,17 +79,7 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     scene bg_diffusion_colere at adaptive_fullscreen
 
-    kami "Les jouets se cassent toujours plus vite lorsqu'on commence à les utiliser correctement."
-
-    pause 0.5
-
-    kami "Cafétéria à huit heures trente."
-
-    pause 0.3
-
-    kami "Ne soyez pas en retard."
-
-    pause 0.4
+    kami "Les jouets se cassent toujours plus vite une fois qu'on commence à jouer sérieusement avec eux."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
@@ -198,36 +87,16 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     pause 0.8
 
-    think "L'écran s'éteint. Pas de rire. C'est presque plus inquiétant."
+    think "L'écran s'éteint rapidement. Sans l'éclat de rire désormais habituel de Kami."
+    think "Qu'est-ce qui a bien pu se passer ? Elle n'était pas comme d'habitude..."
 
-    pause 0.5
-
-    think "Je fixe l'endroit où son visage était apparu."
-
-    pause 0.5
-
-    think "Elle était énervée."
-
-    pause 0.3
-
-    think "Pas comme d'habitude."
+    noam "C'est quoi ce bordel, encore..."
 
     pause 0.4
 
-    think "Kami simule tout : joie, tendresse, colère, même ses silences."
-
-    pause 0.5
-
-    think "Mais là…"
-
-    pause 0.6
-
-    think "Non."
-    think "Pas maintenant."
+    think "Kami simule tout : joie, tendresse, colère, même ses silences. Mais... Pas là. Du moins j'en ai pas eu l'impression."
 
     $ _j601_reveil_trace_score = 0
-
-    think "Je pousse sur le matelas pendant que mon corps cherche encore un amendement."
 
     call screen trace_qte(path_type="s_curve", time_limit=4.2, wait_time=0.25, tolerance=78, max_errors=4, anchor_x=960, anchor_y=650, start_radius=120)
     if _return["success"]:
@@ -240,34 +109,22 @@ label _6_0_1_REVEIL_CHAMBRE:
     think "Ma veste est par terre, beaucoup trop loin. Je la ramasse, l'enfile et gagne la porte."
 
     if _j601_reveil_trace_score >= 1:
-        think "Ça passe."
-        think "Pas bien."
-        think "Mais ça passe."
+        think "Je me relève rapidement. Je n'ai pas vraiment envie d'aller à la cafétéria."
     else:
-        think "Je n'y arrive presque pas."
-        think "Je bouge quand même."
-        think "C'est tout."
+        think "Mes jambes sont encore endormies. J'ai franchement la flemme de me lever."
 
-    pause 0.5
+    think "Mais bon, faut y aller. C'est tout."
 
-    think "Cafétéria."
-    think "Puis vote."
-    think "Puis échec."
+    $ current_scene_active = "_6_0_1_ROUTE_CAFETERIA"
+    $ corridor_current = "dortoir"
 
-    pause 0.4
+    scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
+    tuto "(Rejoins la cafétéria.)"
 
-    think "Une journée simple."
-
-    pause 0.5
-
-    think "Super."
-
-    pause 0.6
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_6_0_1_CAFETERIA
+    $ current_scene_active = None
 
     jump _6_0_1_CAFETERIA
-
-# Durée : 2m20
-
 
 label _6_0_1_CAFETERIA:
 
@@ -276,17 +133,20 @@ label _6_0_1_CAFETERIA:
 
     pause 0.8
 
-    think "Ils sont presque tous là."
-    think "Ils parlent, mais jamais ensemble."
+    think "Ils sont presque tous là. Ils parlent un peu tous dans leur coin, mais pas vraiment ensemble."
 
-    $ showP("elias", "fatigue", 0.25)
-    $ showP("mara", "neutre", 0.55)
-    $ showP("elen", "neutre", 0.85)
+    $ showGroup([
+        ("elias", "fatigue"),
+        ("mara", "neutre"),
+        ("elen", "neutre"),
+        ("lysa", "blase"),
+        ("iris", "fatigue"),
+        ("sael", "neutre"),
+    ])
 
     play sound "sfx/glass_spill.mp3"
 
-    "CLAC."
-    "Encore."
+    "CLAC. Encore."
 
     elias "Putain—"
 
@@ -294,276 +154,206 @@ label _6_0_1_CAFETERIA:
     $ _j601_verre_score = tq_progress
 
     if _j601_verre_score >= 0.82:
-        think "Ma main part avant ma tête. Je redresse le verre ; quelques gouttes seulement."
-        $ showP("elias", "inquiet", 0.25)
-        elias "Oh putain. Merci. C'était chaud, là."
-        $ showP("mara", "agace", 0.55)
-        mara "Miracle matinal. On applaudit ou Elias présente enfin ses mains au reste de son corps ?"
+        think "Ma main part avant ma tête. Je redresse le verre ; quelques gouttes seulement tombent sur le sol."
+        elias inquiet "Oh putain. Merci. C'était chaud, là. Encore..."
     elif _j601_verre_score >= 0.35:
         think "Trop tard. Le verre frappe la table ; ma manche arrête l'eau avant Mara."
-        $ showP("elias", "inquiet", 0.25)
-        elias "Merde, merde. J'ai fait quoi, là ? C'est chaud."
-        $ showP("mara", "agace", 0.55)
-        mara "Rien de grave. Juste assez pour me tremper et achever le peu de patience que je gardais pour les grandes occasions."
+        elias inquiet "Merde, merde. J'ai fait quoi, là ? C'est chaud."
+        mara agace "Putain, je suis trempée Elias ! Tu pourrais faire gaffe un peu non ?!"
     else:
         think "Je tends le bras trop lentement. Le verre bascule entièrement."
-        $ showP("elias", "inquiet", 0.25)
-        elias "Et merde. Fait chier, c'est chaud."
-        $ showP("mara", "agace", 0.55)
-        mara "Tout le verre. Performance complète. Le jury est traumatisé."
+        elias inquiet "Et merde. Fait chier, c'est chaud."
+        mara colere "... J'ai tout pris sur la tronche ! Je vais finir par te tuer !"
 
-    elias "J’ai pas—"
+    mara agace "Mais tu n'arrêtes pas de faire tout le temps tomber des trucs, c'est maladif ou quoi ?!"
+    elias triste "J’ai pas—"
 
-    mara "Hier, ta maladresse t'a enfermé dans une salle. Aujourd'hui, elle attaque le petit-déjeuner."
-    mara "Demain tu fais quoi, tu déclares la guerre à une poignée de porte ?"
+    mara "Kael m'a dit qu'hier ta maladresse t'a enfermé dans une salle. Aujourd'hui, tu viens directement m'agresser avec elle."
 
-    elen "..."
+    elen inquiet "... C'est pas drôle. Il a pas fait exprès, enfin je crois pas..."
+    elen joie "Faudrait être fou pour te rendre de mauvaise humeur dès le matin."
 
-    $ showP("elen", "inquiet", 0.85)
-    elen "C'est pas drôle. Il a pas fait exprès, enfin je crois pas qu'on puisse faire exprès de rater une table entière..."
+    mara "Je confirme. Faudrait être fou."
 
-    mara "Je confirme. Heureusement que l'humiliation ne tache pas."
+    elias inquiet "J'ai glissé. Je suis vraiment désolé Mara ! Vraiment désolé."
 
-    $ showP("elias", "inquiet", 0.25)
-    elias "J'ai glissé. Enfin, ma main. Pas moi. C'est chaud à expliquer."
+    mara neutre "Comme d'habitude : je suis toujours au mauvais endroit, au pire moment."
 
-    $ showP("mara", "neutre", 0.55)
-    mara "Comme d'habitude : au mauvais endroit, au pire moment."
+    elen neutre "Vous avez entendu Kami ? Enfin oui, évidemment, mais vous avez entendu comment elle parlait ? C'était TROOOOP chelou !"
 
-    think "Elias regarde le sol comme si le problème, c'était lui tout entier."
+    mara mefiant "Ouais. C'était pas son petit théâtre habituel. C'est vrai."
 
-    $ showP("elen", "neutre", 0.85)
-    elen "Vous avez entendu Kami ? Enfin oui, évidemment, mais vous avez entendu comment elle parlait ?"
+    lysa reflexion "Elle était beaucoup plus ... Expéditive. Comme si ça la saoulait de nous parler."
 
-    mara "Ouais."
-    $ showP("mara", "mefiant", 0.55)
-    mara "Et elle avait un problème. Pas son petit théâtre habituel. Un vrai."
+    elen taquin "Whaou ! Tu crois qu'elle nous fait une dépression ? Genre un Burn-Out ?!"
 
-    elias "Les problèmes, c'est pas ce qui manque ici."
+    lysa rire "Je crois pas que ce soit possible !"
 
-    mara "Non."
-    mara "Là c’était autre chose."
+    elias reflechit "Kami joue toujours un rôle. C'est son truc. En soi, elle nous imite."
 
-    hide elen
-    $ showP("lysa", "blase", 0.85)
+    lysa blase "Ouais. Mais là c'était pas comme d'habitude."
 
-    lysa "Elle ne jouait pas."
-    $ showP("lysa", "reflexion", 0.85)
-    lysa "Ou pas comme d'habitude. Même Dionysos tenait mieux son masque."
+    mara colere "Tu m'étonnes qu'elle était pas comme d'habitude. Elle bégayait ! D'où Kami bégaye d'abord !"
 
-    elias "Kami joue toujours son rôle. C'est son truc."
+    lysa reflechit "Tu crois qu'il lui est arrivé quelque chose ?"
 
-    lysa "Ouais."
-    $ showP("lysa", "blase", 0.85)
-    lysa "Pas là. C'est précisément ce qui est étrange."
+    mara mefiant "Non. Enfin… j'en sais rien. C'était bizarre. Même pour elle."
 
-    think "Un blanc. Personne ne veut nommer ce qu'il a entendu."
+    noam reflechit "Ouais. On verra bien si ça continuera plus tard, mais je m'étais aussi fait la réflexion."
 
-    hide elias
-    $ showP("elen", "inquiet", 0.25)
+    "Nous avons chacun continué à manger, plus en silence, nos rations sèches et sans goût."
+    think "Finalement, personne n'a parlé du vote. Personne n'a osé."
+    think "Où alors, tout le monde sait que c'est inutile."
 
-    elen "Elle avait l'air... agacée. Mais pas agacée-drôle. Agacée qui donne envie de poser son plateau et de partir très loin."
+    jump _6_0_1_TEMPS_LIBRE
 
-    mara "« Agacée », c'est adorablement léger."
-    $ showP("mara", "doute", 0.55)
-    mara "Elle avait l'air buggée. Genre bug qui mord."
+label _6_0_1_TEMPS_LIBRE:
 
-    lysa "Tu crois qu'il lui est arrivé quelque chose ?"
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    $ current_period = "Fin de matinée"
 
-    mara "Non. Enfin… j'en sais rien."
-    $ showP("mara", "mefiant", 0.55)
-    mara "C'était bizarre. Même pour elle."
+    think "Il reste encore plusieurs heures avant le vote. Assez pour que chacun recommence à éviter les autres."
+    think "Je devrais profiter de ce temps avant que Kami nous rappelle au Conclave."
 
-    think "Je m'assois. Personne ne me regarde vraiment."
+    call START_FREE_TIME("_6_0_1_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_6_0_1
 
-    think "C’est mort."
-    think "On le sait tous."
 
-    think "Pas besoin de débat."
-    think "Seulement attendre l'heure officielle de l'échec."
+label _6_0_1_TV_FRONTIERES:
 
-    hide mara
-    $ showP("iris", "fatigue", 0.55)
+    $ j601_border_news_seen = True
+    $ unlock_gallery_image("bg_cg035")
 
-    think "Iris s'assoit à côté de moi."
-    iris "Je voterai contre. Décision prise."
-    iris "Je préfère une mauvaise frontière à une catastrophe bien intentionnée."
+    window hide
+    scene expression "images/background/cg/bg_cg035.png" at adaptive_fullscreen
+    show expression Solid("#47b9d8", xsize=1920, ysize=4) as j601_tv_feed_line:
+        ypos 148
+    show expression Text("DIRECT // FRONTIÈRES DE LIMEN", size=54, color="#D9F6FF", font="fonts/Rajdhani-SemiBold.ttf") as j601_tv_feed_title:
+        xalign 0.5
+        ypos 62
+    show expression Text("AFFLUENCE AUX POSTES DE CONTRÔLE  •  PASSAGE TOUJOURS INTERDIT", size=28, color="#FFCF70", font="fonts/Barlow-Light.ttf") as j601_tv_feed_alert:
+        xalign 0.5
+        ypos 930
+    with Dissolve(0.25)
+    window auto
 
-    think "Direct. Pas agressif. Elle est trop fatiguée pour le sarcasme."
+    "La chaîne d'information s'ouvre sur une vue aérienne des frontières limenoises."
+    "Des centaines de personnes se massent devant les postes de contrôle. Certaines portent des sacs. D'autres tiennent leurs enfants par la main."
+    "Les barrières restent fermées. De l'autre côté, les gardes forment une ligne immobile."
 
-    hide elen
-    $ showP("sael", "neutre", 0.25)
+    "JOURNALISTE — Depuis ce matin, les rassemblements se multiplient le long des principaux points de passage."
+    "JOURNALISTE — Beaucoup espèrent que le vote du Conclave permettra une réouverture immédiate des frontières."
 
-    sael "Moi aussi."
-    sael "On ne force pas une porte parce que la pièce brûle moins vite que prévu."
+    "Une femme lève les yeux vers la caméra. Derrière elle, la foule avance d'un pas chaque fois qu'une rumeur traverse les rangs."
+    "UNE FEMME — On ne demande pas un miracle. On veut juste pouvoir passer si le vote dit oui."
 
-    think "Sael pose son non comme une pierre. C'est terminé."
+    think "Ils attendent déjà. Comme si notre vote était une promesse et pas une formalité condamnée d'avance."
+    think "Sael votera contre. Mara aussi. Tous ces gens l'ignorent encore."
 
-    hide lysa
-    $ showP("elen", "inquiet", 0.85)
+    "L'image saute. Le direct disparaît derrière un bandeau de programmes préenregistrés."
+    think "Je coupe le son. La foule reste imprimée dans le noir de l'écran."
 
-    elen "..."
-    $ showP("elen", "inquiet", 0.85)
-    elen "On pourrait quand même parler, juste un peu— pas pour changer tout le monde, juste pour... je sais pas, vérifier qu'on est encore ensemble ?"
-
-    iris "Non."
-    $ showP("iris", "neutre", 0.55)
-    iris "Non. On vit dans des mondes incompatibles et on nous propose de supprimer les frontières sans transition."
-    iris intervention "Ce n'est pas du courage. C'est une expérience sociale avec les districts pauvres comme matériau."
-
-    elen "..."
-
-    hide iris
-    $ showP("mara", "neutre", 0.55)
-
-    mara "Au moins c'est réglé."
-    $ showP("mara", "agace", 0.55)
-    mara "On ne perdra pas deux heures à tourner en rond pour le plaisir des caméras."
-
-    hide sael
-    $ showP("lysa", "blase", 0.25)
-
-    lysa "On les aurait perdues quand même. Sisyphe, mais avec un planning."
-
-    mara "Ouais."
-    $ showP("mara", "neutre", 0.55)
-    mara "Mais avec plus de bruit."
-
-    think "Personne ne relève."
-
-    hide lysa
-    $ showP("elias", "fatigue", 0.25)
-
-    elias "..."
-    $ showP("elias", "neutre", 0.25)
-    elias "On y va quand ? Autant arrêter d'attendre."
-
-    hide elen
-    $ showP("lysa", "blase", 0.85)
-
-    lysa "L'heure avance, autant y aller maintenant."
-
-    mara "Autant finir vite."
-
-    think "Personne ne proteste."
-
-    think "Ça y est."
-    think "On n’essaie même plus."
-
-    think "Je me lève. Les autres suivent au même rythme, avec la même résignation."
-
-    hide elias
-    hide mara
-    hide lysa
-
-    jump _6_0_1_TRANSITION_CONCLAVE
-
-# Durée : 2m30
-
+    window hide
+    hide j601_tv_feed_title
+    hide j601_tv_feed_alert
+    hide j601_tv_feed_line
+    with Dissolve(0.2)
+    window auto
+    return
 
 label _6_0_1_TRANSITION_CONCLAVE:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
+
+    $ current_period = "Après-midi"
 
     pause 0.6
 
-    think "Nous sortons sans parler. Les pas s'alignent sans les regards."
+    "Et puis enfin, l'heure du Conclave est arrivée."
 
-    think "Une file, pas un groupe."
-
-    think "Le couloir est trop long. Ou trop vide."
+    think "Nous nous sommes rassemblés sans parler. Sans même nous regarder."
 
     play sound "sfx/glitch_light.mp3"
 
+    window hide
+    show expression Solid("#000000") as j601_lights_out zorder 300
+    with None
+    pause 0.55
+    show expression Solid("#000000") as j601_lights_out zorder 300:
+        alpha 1.0
+        linear 2.4 alpha 0.0
+    pause 2.4
+    hide j601_lights_out
+    window auto
+
     think "Les lumières vibrent une seconde, puis reviennent."
 
-    think "Personne ne réagit. Mauvais signe."
-
-    think "Le Conclave est étrange depuis ce matin. Plus étrange."
+    noam "Pourquoi rien ne va dans cette journée ?!"
 
     show screen kami_broadcast_ui
 
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Oh."
+    kami "Oh. Déjà en mouvement ? Il restait encore un peu de temps."
+    pause 0.5
     scene bg_diffusion_taquin at adaptive_fullscreen with hpunch
-    kami "Déjà en mouvement ?"
+    pause 0.5
     scene bg_diffusion_colere at adaptive_fullscreen
-    kami "C’est bien."
-    kami "C’est très bien."
+    kami "C’est bien. C’est très bien."
     scene bg_diffusion_professeur at adaptive_fullscreen
     kami "Nous pouvons… anticiper."
     scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
     kami "Le vote peut commencer plus tôt."
-    kami "Immédiatement, même."
-    scene bg_diffusion_taquin at adaptive_fullscreen
-    kami "Ça m'arrange."
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Beaucoup."
-    think "Sa voix saute. Son image aussi."
+    kami "Immédiatement, même. Ça m'arrange beaucoup."
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    think "Le couloir reprend comme si rien ne s'était passé. Puis je remarque une absence."
+    think "Le couloir reprend comme si rien ne s'était passé. Puis je remarque qu'il manque quelqu'un."
 
     menu:
-        "Sael":
+        "Sael ?":
             $ _j601_absent_pick = "sael"
-        "Iris":
+        "Iris ?":
             $ _j601_absent_pick = "iris"
-        "Elias":
+        "Elias ?":
             $ _j601_absent_pick = "elias"
-        "Kael":
+        "Kael ?":
             $ _j601_absent_pick = "kael"
 
     if _j601_absent_pick == "sael":
-        think "Sael."
-        think "Tout de suite."
+        think "Sael. Oui. C'est elle. Où est-elle ? Elle était là il y a une seconde !"
+
+        $ showGroup([
+            ("sael", "neutre"),
+            ("noam", "neutre"),
+        ])
+
+        "Sael est derrière le groupe, elle ne bouge plus. Elle fixe un angle vide du couloir."
+
+        noam inquiet "Sael ?"
+        think "Elle ne répond pas tout de suite."
+
+        sael reflechit "... J'ai vu quelqu'un. Là-bas."
+
+        think "Je regarde. Seulement le couloir vide."
+
+        noam reflechit "Il n'y a personne. Enfin… je ne vois personne."
+
+        sael triste "... Oui. Tu as sans doute raison…"
+
+        hide sael with fade
+        hide noam with fade
+
     else:
-        think "Non."
-        think "Pas elle."
-        think "Quelques secondes de trop."
-        think "Sael."
+        think "Non. Ce n'est pas ça."
+        "Je recompte tout le monde.."
+        think "Ah si, tout le monde est bien là. Pourquoi j'ai eu cette impression tout à coup ?"
 
-    hide all
-    $ showP("sael", "neutre", 0.5)
-
-    think "Sael ne bouge plus. Elle fixe un angle vide du couloir."
-
-    noam "Sael ?"
-    think "Elle ne répond pas tout de suite."
-
-    sael "..."
-    sael "J'ai vu quelqu'un. Là-bas."
-
-    think "Je regarde. Seulement le couloir vide."
-
-    noam "Il n'y a personne. Enfin… je ne vois personne."
-
-    think "Elle plisse les yeux."
-    sael "..."
-    sael "Oui. Sans doute…"
-
-    think "Elle ne bouge pas. Elle y croyait, sans le moindre doute."
-
-    noam "On y va."
-
-    sael "..."
-    sael "Oui."
-
-    think "Elle me dépasse sans me regarder."
-
-    think "Je vérifie encore. Rien."
-
-    think "Je reprends ma place. La file se referme."
+    noam "Bon, on y va. On va essayer de survivre à ce moment."
 
     jump _6_0_1_CONCLAVE_START
-
-# Durée : ~1m40
-
 
 label _6_0_1_CONCLAVE_START:
 
@@ -573,12 +363,9 @@ label _6_0_1_CONCLAVE_START:
     pause 0.8
 
     think "Nous entrons et prenons nos places sans ralentir."
-    think "Nos corps connaissent déjà la défaite."
+    think "Nos corps connaissent déjà le chemin."
 
-    hide all
-    $ showP("ryn", "neutre", 0.2)
-    $ showP("iris", "fatigue", 0.5)
-    $ showP("sael", "neutre", 0.8)
+    $ showGroup([("ryn", "neutre", 0.2), ("iris", "fatigue", 0.5), ("sael", "neutre", 0.8)])
 
     think "Ryn s'assoit. Iris croise les bras. Sael regarde droit devant."
 
@@ -586,13 +373,7 @@ label _6_0_1_CONCLAVE_START:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "..."
-
-    think "Le silence dure trop longtemps, même pour elle."
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
-
-    kami "Début du débat."
+    kami "... Ah oui. Vous voilà. Début du débat."
 
     scene bg_diffusion_professeur at adaptive_fullscreen
 
@@ -600,31 +381,27 @@ label _6_0_1_CONCLAVE_START:
 
     scene bg_diffusion_taquin at adaptive_fullscreen
 
-    kami "Vous connaissez déjà."
-
-    kami "Je ne vais pas répéter."
+    kami "Vous connaissez déjà comment tout ça fonctionne. Je ne vais pas me répéter inutilement."
 
     scene bg_diffusion_colere at adaptive_fullscreen
 
-    kami "Alors."
+    kami "Alors. Parlez. Débattez."
 
-    kami "Parlez."
+    pause 2.0
 
-    think "Personne ne parle. Pas une hésitation, pas une tentative."
+    "Personne ne parle. Pas une seule tentative."
+    think "À quoi bon ...?"
 
     scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
 
-    kami "..."
-
-    kami "Intéressant."
+    kami "... Intéressant"
 
     scene bg_diffusion_colere at adaptive_fullscreen
 
-    kami "Vous êtes déjà au résultat."
-    kami "Sans passer par le processus."
-    kami "C'est inefficace."
+    kami "Vous souhaitez déjà sauter à la conclusion sans passer par le processus.."
+    kami "Sur le principe, ça m'irait mais..."
 
-    think "Sa voix accroche sur le mot."
+    think "Sa voix bloque sur le mot."
 
     play sound "sfx/glitch_medium.mp3"
 
@@ -637,7 +414,6 @@ label _6_0_1_CONCLAVE_START:
     scene bg_diffusion_colere at adaptive_fullscreen
 
     kami "Corrigez."
-
     kami "Corrigez."
 
     think "Le mot reste trop longtemps, comme si elle cherchait la suite."
@@ -645,28 +421,16 @@ label _6_0_1_CONCLAVE_START:
     scene bg_diffusion_professeur at adaptive_fullscreen
 
     kami "Engagez-vous."
-
     kami "Débattez."
-
     kami "Simulez au moins."
 
     think "Toujours rien."
 
-    hide all
-    $ showP("ryn", "colere", 0.2)
-    $ showP("iris", "fatigue", 0.5)
-    $ showP("sael", "neutre", 0.8)
+    $ showGroup([("ryn", "colere", 0.2), ("iris", "fatigue", 0.5), ("sael", "neutre", 0.8)])
 
-    ryn "Ça sert à rien."
-    ryn "On sait déjà."
+    ryn colere "Putain mais qu'est-ce qui t'arrive ? De toute façon ça sert à rien de débattre ! On connaît déjà la fin !"
 
-    iris "Non."
-    iris "Et je refuse de jouer l'étonnement."
-
-    sael "Non."
-    sael "La réponse ne change pas parce qu'on la récite devant toi."
-
-    think "Trois voix. Même réponse. Aucune variation."
+    iris colere "Pff, à quoi bon jouer son jeu. Tout ça ne servirait à rien."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen
@@ -679,21 +443,15 @@ label _6_0_1_CONCLAVE_START:
 
     scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
 
-    kami "Interaction insuffisante."
+    kami "Interaction insuffisante. Les gens n'aiment pas !"
 
     scene bg_diffusion_colere at adaptive_fullscreen
 
-    kami "Ajustement."
-
-    kami "En cours."
+    kami "Ajustement en cours."
 
     think "Son image tremble plus fort, plus longtemps. Elle ne revient pas tout de suite."
 
-    think "..."
-
-    think "Là."
-
-    think "Ce n'est pas normal."
+    think "... Là. Ce n'est clairement pas normal."
 
     scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
 
@@ -707,8 +465,6 @@ label _6_0_1_CONCLAVE_START:
 
 
 label _6_0_1_SIGNAL_INSTABLE:
-
-    think "L'air ne change pas. La pièce non plus. Quelque chose derrière, si."
 
     play sound "sfx/glitch_heavy.mp3"
 
@@ -728,30 +484,17 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     think "Son image saute en boucle."
 
-    hide all
-
     scene bg_conclave at adaptive_fullscreen with vpunch
 
-    $ showP("iris", "inquiet", 0.3)
-    $ showP("ryn", "colere", 0.6)
-    $ showP("lysa", "blase", 0.85)
+    $ showGroup([("iris", "inquiet", 0.3), ("ryn", "colere", 0.6), ("lysa", "blase", 0.85)])
 
     iris "C'est quoi, ce cirque—"
 
-    ryn "Elle bugue ?"
+    ryn "Elle bugue complet là ?"
 
-    lysa "Non. Elle force quelque chose à tenir."
-    lysa "Atlas, mais avec des câbles."
-
-    think "Un parasite traverse la pièce."
+    lysa "Ouais, c'est bien ce qu'on disait tout à l'heure."
 
     play sound "sfx/glitch_loop.mp3"
-
-    think "Constant. Sale."
-
-    think "Ça ne tient pas. Ou ça tient trop fort."
-
-    think "L'interface s'impose avant que nous comprenions."
 
     # --- LANCEMENT MINI-JEU ---
     call j601_play_signal_instable from _call_j601_play_signal_instable
@@ -841,284 +584,133 @@ label _6_0_1_FRACTURE_QTE:
 
     think "Personne ne bouge."
 
-    $ showP("mara", "doute", 0.20)
-    $ showP("iris", "peur", 0.50)
-    $ showP("ryn", "neutre", 0.80)
+    $ showGroup([
+        ("mara", "doute"),
+        ("iris", "peur"),
+        ("ryn", "neutre"),
+        ("lysa", "blase"),
+        ("tomas", "inquiet"),
+        ("elen", "inquiet"),
+        ("sael", "neutre"),
+        ("kael", "inquiet"),
+    ])
 
-    iris "..."
-    iris "Elle vient de dire quoi ?"
+    iris colere "... Elle vient de dire quoi là ?!"
 
-    ryn "J'en sais rien. J'ai entendu du bruit."
+    ryn reflechit "J-je sais pas, c'était incompréhensible."
 
-    mara "Si."
-    $ showP("mara", "mefiant", 0.20)
-    mara "Elle a dit un mot. Et elle l'a corrigé beaucoup trop vite."
+    mara mefiant "Bien sûr que si, tu as parfaitement compris ce qu'elle a voulu dire."
 
-    $ showP("iris", "inquiet", 0.50)
-    iris "Vous avez entendu la même chose que moi ?"
-
-    ryn "J’ai entendu du bruit."
+    iris inquiet "Vous avez entendu la même chose que moi ?"
 
     mara "Moi, j'ai entendu « mourir »."
 
-    think "Le mot tombe entre nous. Personne ne le ramasse."
+    lysa reflechit "Elle a aussi dit voter."
 
-    hide ryn
-    $ showP("lysa", "blase", 0.80)
+    mara rire "Ouais. Après. Trop tard."
+    mara reflechit "Je sais pas exactement ce qu'elle a voulu nous dire, mais clairement, vu son état, moi je prends pas le risque de voter pour un truc qui change les règles du monde."
 
-    lysa "Elle a aussi dit voter."
+    iris colere "Ouais, c'est clair. C'est beaucoup trop dangereux."
 
-    mara "Ouais."
-    mara "Après."
+    tomas reflechit "Peut-être... Qu'il y a un truc qu'on a pas compris dans le texte ?"
 
-    iris "C’est censé nous rassurer ?"
+    elen triste "Bof ! On peut pas voter là-dessus ! On sait même pas ce qu'elle a dit !"
 
-    lysa "Non."
-    $ showP("lysa", "fatigue", 0.80)
-    lysa "Je constate seulement que l'alternative n'a rien de rassurant."
+    lysa blase "Et pourtant, ils attendent tous notre réponse."
 
-    think "Personne ne rit. Pas même Mara."
+    elen inquiet "Non, mais vraiment— Si Kami bugge pendant qu’elle annonce le texte, qu’est-ce qui se passe si on vote pour ?"
 
-    hide iris
-    $ showP("tomas", "inquiet", 0.50)
+    sael colere "On ne sait pas. De toute façon j'avais déjà prévu de voter contre."
+    sael triste "Vous pouvez faire ce que vous voulez, ce texte ne passera pas."
 
-    tomas "Euh… je n'ai pas compris la totalité du texte."
+    ryn colere "Même si ça pourrait aider tes proches ? Tu es vraiment prête à l'assumer devant eux ?!"
 
-    mara "Personne n’a compris."
+    mara colere "On ne va pas revenir sur le sujet. Puis avec les trucs chelous qui se passent, c'est une raison de plus pour voter contre."
 
-    tomas "Non, je veux dire…"
-    $ showP("tomas", "reflechit", 0.50)
-    tomas "La proposition, telle qu’elle a été formulée, est peut-être incomplète."
-    tomas "Comme la dernière fois…"
+    iris triste "Ce changement-là attendra. C'est tout."
 
-    lysa "Peut-être ?"
+    ryn triste "M-..."
 
-    tomas "J’ai entendu libre circulation."
-    tomas "Visa."
-    tomas "Responsables de District."
-    tomas "Et ensuite..."
-    $ showP("tomas", "panne", 0.50)
-    tomas "Ensuite c’était du verre pilé."
+    sael triste "Un jour, tu comprendras."
 
-    mara "Très juridique, le verre pilé. Même un avocat ivre aurait du mal à travailler avec ça."
+    $ hideGroup()
 
-    hide mara
-    $ showP("elen", "inquiet", 0.20)
-
-    elen "On peut pas voter là-dessus ! On sait même pas ce qu'elle a dit !"
-
-    lysa "Et pourtant, l'oracle exige sa réponse."
-
-    elen "Non, mais vraiment—"
-    $ showP("elen", "peur", 0.20)
-    elen "Si Kami bugge pendant qu’elle annonce le texte, qu’est-ce qui se passe si on vote pour ?"
-
-    think "Une question simple. Beaucoup trop simple pour le système."
-
-    hide tomas
-    $ showP("sael", "neutre", 0.50)
-
-    sael "On ne sait pas."
-
-    elen "Voilà."
-    elen "C’est ça le problème."
-
-    lysa "Un des problèmes."
-
-    sael "Non."
-    $ showP("sael", "mefiant", 0.50)
-    sael "Le seul qui compte. On ne consent pas à ce qu'on ne comprend pas."
-
-    think "Sael regarde l'écran vide, pas nous."
-
-    sael "Si nous votons pour, la modification est appliquée immédiatement."
-
-    elen "Même si le texte était..."
-    $ showP("elen", "hesitation", 0.20)
-    elen "cassé ?"
-
-    sael "Oui."
-
-    lysa "On ne sait pas."
-
-    sael "Justement."
-    sael "Il fallait déjà voter contre. Maintenant, c'est une nécessité. Même les signes refusent ce texte."
-
-    hide elen
-    $ showP("kael", "inquiet", 0.20)
-
-    kael "Elle pourrait appliquer autre chose."
-
-    lysa "Ou tout appliquer de travers."
-
-    kael "Ou considérer que nous avons validé une version que nous n’avons pas entendue."
-
-    think "Tomas relève la tête."
-
-    hide lysa
-    $ showP("tomas", "raison", 0.80)
-
-    tomas "Ça, c’est possible."
-
-    sael "Donc non."
-
-    kael "Attends."
-
-    sael "Non."
-
-    kael "Je ne dis pas que je suis pour."
-
-    sael "Alors ne parle pas comme s'il restait une marge de manœuvre."
-
-    $ showP("kael", "fatigue", 0.20)
-    kael "Je parle parce que j’essaie de comprendre."
-
-    sael "Moi aussi."
-    sael "Mais il n'y a plus rien à comprendre."
-
-    think "Silence."
-
-    hide kael
-    $ showP("iris", "fatigue", 0.20)
-
-    iris "Super."
-    iris "Donc : une IA instable, un texte incompréhensible et un vote traité comme une formalité. Organisation impeccable."
-
-    tomas "Techniquement, ce n’est pas une réunion normale."
-
-    iris "Merci, Tomas. Heureusement que tu es là."
-    $ showP("iris", "colere", 0.20)
-    iris "Je me sens beaucoup mieux."
-
-    think "Tomas baisse les yeux. Le sarcasme d'Iris vient de choisir une victime trop facile."
-
-    hide sael
-    $ showP("mara", "mefiant", 0.50)
-
-    mara "Question bête…"
-
-    iris "J'adore quand tu annonces le programme. Cela dit, ça ne change pas beaucoup de d'habitude."
-
-    mara "Si elle est vraiment instable…"
-    $ showP("mara", "doute", 0.50)
-    mara "Pourquoi elle insiste pour voter maintenant ?"
-
-    tomas "Parce que c'est dans les règles, on doit voter aujourd'hui."
-
-    mara "Oui, mais pas forcément maintenant."
-    mara "Ou parce que ça l’arrange ?"
-
-    think "Je repense au couloir, à sa voix : « Ça m'arrange. Beaucoup. »"
-
-    think "Elle l'a dit. Très clairement."
-
-    hide tomas
-    $ showP("ryn", "colere", 0.80)
-
-    ryn "Alors on vote contre."
-
-    iris "C’était déjà prévu."
-
-    ryn "Je veux dire tout le monde."
-
-    mara "Bonne chance pour obtenir l'unanimité maintenant."
-
-    ryn "Putain, Mara."
-
-    mara "Quoi ?"
-    $ showP("mara", "agace", 0.50)
-    mara "Tu crois que j'aime ça ?"
-    mara "Je dis juste que cinq minutes plus tôt, on n’était déjà pas d’accord sur le principe."
-
-    ryn "Le principe vient de disparaître sous une tonne de bugs !"
-
-    iris "Il a pas tort."
-
-    mara "J’ai pas dit qu’il avait tort."
-
-    think "Ryn serre les dents. Sa colère cherche une porte et n'en trouve pas."
-
-    hide iris
-    $ showP("lysa", "fatigue", 0.20)
-
-    lysa "On ne sait pas ce qu’on vote."
-    lysa "On ne sait pas si Kami contrôle encore ce qui se passe."
-    lysa "On ne sait pas ce qui sera appliqué."
-    lysa "C'est le chaos absolu. Même Cassandre manquerait de vocabulaire."
-
-    mara "Ça fait beaucoup de choses qu’on ne sait pas."
-
-    lysa "Ouais."
-
-    ryn "Et pendant ce temps, les frontières restent fermées."
-
-    think "Cette fois, personne ne répond vite."
-
-    hide mara
-    $ showP("sael", "neutre", 0.50)
-
-    sael "Oui."
-
-    ryn "..."
-
-    sael "Elles resteront fermées."
-
-    ryn "Tu dis ça comme si c’était le mieux à faire."
-
-    sael "Oui. C'est encore le moindre mal."
-    $ showP("sael", "fatigue", 0.50)
-
-    think "Ryn ouvre la bouche, puis la referme."
+    call j601_sael_vote_animation from _call_j601_sael_vote_animation
 
     pause 0.6
 
+    $ showGroup([
+        ("mara", "doute"),
+        ("iris", "peur"),
+        ("ryn", "neutre"),
+        ("lysa", "blase"),
+        ("tomas", "inquiet"),
+        ("elen", "inquiet"),
+        ("sael", "neutre"),
+        ("kael", "inquiet"),
+    ])
+
+    ryn colere "Putain mais pourquoi t'as fait ça ?!"
+
+    noam colere "C'est son choix. Il faut le respecter."
+
     show screen kami_broadcast_ui
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.5
 
-    kami "Vous avez terminé ?"
+    kami "HEP HEP HEP ! On était pas-pas au moment du vote !"
+    kami ""
 
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Non."
-    kami "Question rhétorique."
+    scene bg_diffusion_amour at adaptive_fullscreen with hpunch
 
-    scene bg_diffusion_professeur at adaptive_fullscreen
-    kami "Le débat était déjà clos."
+    pause 0.5
 
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
-    kami "Procédure de vote."
+    scene bg_diffusion_colere at adaptive_fullscreen with hpunch
+    kami "Bref. Le débat était déjà clos. Finissons-en."
 
     play sound "sfx/glitch_light.mp3"
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Maintenant."
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
-    "Les écrans latéraux s’allument."
-    "Les pupitres aussi."
-    "Un par un."
     "Kami semble particulièrement pressée d'en finir."
-
-    $ showP("lysa", "blase", 0.20)
-    $ showP("sael", "neutre", 0.50)
-    $ showP("ryn", "neutre", 0.80)
-
-    lysa "Elle ne nous laisse même pas finir de parler."
-
-    ryn "Parce qu’on panique maintenant ?"
-
-    lysa "Je ne sais pas."
-    $ showP("lysa", "fatigue", 0.20)
-    lysa "Moi j’ai coché ça mentalement il y a trois jours."
-
-    hide all
 
     jump _6_0_1_VOTE
 
 # Durée : ~3m10 hors mini-jeu
+
+label j601_sael_vote_animation:
+
+    window hide
+    show expression Solid("#02050cdd") as j601_sael_vote_backdrop zorder 250
+    with Dissolve(0.12)
+
+    show expression Solid("#E84A5F", xsize=4, ysize=1080) as j601_sael_vote_left zorder 252:
+        xpos 596
+    show expression Solid("#E84A5F", xsize=4, ysize=1080) as j601_sael_vote_right zorder 252:
+        xpos 1320
+
+    show expression "images/background/interact/animation/sael_contre/sael_contre1.png" as j601_sael_vote_frame zorder 251 at j601_sael_vote_strip
+    with moveinright
+    pause 0.55
+
+    show expression "images/background/interact/animation/sael_contre/sael_contre2.png" as j601_sael_vote_frame zorder 251 at j601_sael_vote_strip
+    with Dissolve(0.12)
+    pause 0.42
+
+    play sound "audio/sfx_vote_contre.wav"
+    show expression "images/background/interact/animation/sael_contre/sael_contre3.png" as j601_sael_vote_frame zorder 251 at j601_sael_vote_strip
+    with hpunch
+    pause 0.85
+
+    hide j601_sael_vote_frame
+    hide j601_sael_vote_left
+    hide j601_sael_vote_right
+    hide j601_sael_vote_backdrop
+    with Dissolve(0.18)
+    window auto
+    return
 
 label _6_0_1_VOTE:
 
@@ -1183,7 +775,7 @@ label _6_0_1_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    think "Le résultat reste affiché quelques secondes de trop."
+    think "Le résultat reste affiché quelques secondes. Il n'a surpris personne."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -1191,8 +783,7 @@ label _6_0_1_VOTE:
     kami "Résultat du vote."
     $ interject("REJETÉ", color="#FF4D6D")
     scene bg_diffusion_colere at adaptive_fullscreen with vpunch
-    kami "Ab— Absence d'unanimité."
-    kami "Amendement rejeté."
+    kami "Ab— Absence d'unanimité. Amendement rejeté."
 
     scene bg_diffusion_professeur at adaptive_fullscreen
     kami "La libre circulation entre… demeure interdite."
@@ -1201,369 +792,156 @@ label _6_0_1_VOTE:
     kami "Statu quo maintenu."
 
     scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Prévis—ble."
-    kami "Décevant."
-    kami "Mais prévisible."
+    kami "Prévis—ble. Décevant. Mais prévisible."
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    $ showP("ryn", "colere", 0.20)
-    $ showP("sael", "neutre", 0.50)
-    $ showP("iris", "fatigue", 0.80)
+    $ showGroup([
+        ("ryn", "colere"),
+        ("sael", "neutre"),
+        ("iris", "fatigue"),
+        ("mara", "doute"),
+        ("tomas", "inquiet"),
+        ("julian", "sourire"),
+        ("elias", "fatigue"),
+        ("lysa", "fatigue"),
+    ])
 
-    ryn "..."
+    ryn colere "Putain..."
 
-    iris "Bon."
-    iris "Voilà. Le monde reste absurde, mais au moins il reste cohérent."
+    iris triste "Je sais même pas quoi dire face à ce qui vient de se passer."
 
-    sael "C'était nécessaire."
-    sael "Les morts de Limen auraient compris."
+    sael triste "C'était de toute façon nécessaire."
 
-    ryn "Ne dis pas ça."
+    ryn colere "...Ne dis pas ça."
 
-    sael "Je le pense."
+    sael triste "Je le pense."
 
-    ryn "C'est bien ça le problème."
+    ryn triste "C'est bien ça le problème."
 
-    hide iris
-    $ showP("mara", "doute", 0.80)
+    tomas "C'était... catastrophique."
 
-    mara "On a voté contre un texte qu'on n'a même pas eu le luxe de comprendre."
+    julian triste "... Évidemment. Cette conclusion était certaine."
+    julian taquin "C'est ce qui arrive quand je reste loin des débats."
 
-    ryn "On a voté contre parce que Kami était en train de péter les plombs en direct."
-    ryn "Pas parce que la proposition était mauvaise."
+    think "Quel enfoiré celui-là."
 
-    mara "Je sais."
-    mara "Ce n'est pas censé me rassurer."
-
-    hide sael
-    $ showP("tomas", "inquiet", 0.50)
-
-    tomas "Je… je maintiens mon vote."
-
-    mara "Évidemment."
-
-    tomas "Je ne dis pas que c'était prudent."
-    $ showP("tomas", "raison", 0.50)
-    tomas "Je dis que le principe restait correct."
-    tomas "Même si le contexte était... catastrophique."
-
-    ryn "Ouais, mais trop risqué avec tout ça."
-
-    think "Personne ne répond. Il a raison et cela ne change rien."
-
-    hide ryn
-    $ showP("julian", "sourire", 0.20)
-
-    julian "Nous aurions pu défendre le principe malgré la panne. Nous avons choisi le retrait."
-
-    mara "Julian."
-
-    julian "Quoi ?"
-
-    mara "Pas maintenant. Garde le discours pour quand personne n'a envie de te frapper."
-
-    $ showP("julian", "decu", 0.20)
-
-    julian "..."
-    julian "D'accord. Julian saura se taire. Pour l'instant."
-
-    hide mara
-    $ showP("elias", "fatigue", 0.80)
-
-    elias "De toute façon, on savait comment ça finirait."
-    elias "Les bugs ont juste rendu le choix encore plus chaud."
+    elias triste "De toute façon, on savait comment ça finirait. T'aurais rien pu changer."
+    elias "Les bugs ont juste rendu le choix encore plus évident."
 
     think "Elias ne défend même pas son choix. Il est vidé."
 
-    hide julian
-    $ showP("lysa", "fatigue", 0.20)
+    "Tout le monde repart peu à peu."
 
-    lysa "On sort ?"
-
-    elias "Oui."
-
-    tomas "Kami n'a pas encore—"
-
-    lysa "Elle a fini."
-
-    tomas "Techniquement, non."
-
-    lysa "Tomas."
-    lysa "Tomas. L'écran ne se rallumera pas."
-
-    think "L'écran reste éteint depuis la fin avortée de l'annonce."
-
-    $ showP("tomas", "panne", 0.50)
-
-    tomas "..."
-    tomas "Oui. Peut-être…"
-
-    think "Les pupitres s'éteignent un à un."
-
-    hide elias
-    $ showP("sael", "fatigue", 0.80)
-
-    sael "Ryn."
-
-    think "Ryn ne répond pas et ne la regarde pas."
-
-    hide tomas
-    $ showP("ryn", "colere", 0.50)
-
-    ryn "Pas maintenant."
-
-    sael "..."
-
-    sael "D'accord."
-
-    think "Sael détourne les yeux et s'éloigne."
+    hide sael
 
     think "C'est terminé."
     think "Mais rien n'est réglé."
 
-    hide lysa
-    hide ryn
-    hide sael
     with moveinright
 
     jump _6_0_1_FIN_JOURNEE
 
 # Durée : ~3m00
 
-
 label _6_0_1_FIN_JOURNEE:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    think "Nous quittons le Conclave ni ensemble ni séparés : assez proches pour entendre les pas, assez loin pour éviter les mots."
+    $ showGroup([
+        ("lysa", "fatigue"),
+        ("mara", "doute"),
+        ("elen", "inquiet"),
+        ("kael", "fatigue"),
+        ("iris", "fatigue"),
+        ("tomas", "inquiet"),
+        ("sael", "fatigue"),
+    ])
 
-    $ showP("lysa", "fatigue", 0.25)
-    $ showP("mara", "doute", 0.55)
-    $ showP("elen", "inquiet", 0.85)
+    elen triste "Waaa, vraiment trop dég de ce qui s'est passé !"
 
-    elen "On a bien fait ?"
+    lysa blase "Ouais. C'était vraiment étrange ce qui s'est passé."
+    lysa colere "J'espère juste qu'elle pètera pas un câble demain."
 
-    mara "Non."
+    iris blase "Ils voulaient du changement ? Deux votes, deux échecs."
+    iris colere "Franchement, qu'est-ce que vont dire les gens ?"
 
-    elen "..."
+    mara colere "On en a rien à foutre de l'avis des gens."
+    mara taquin "T'as vraiment cru que leurs avis m'intéressent."
 
-    mara "Enfin."
-    $ showP("mara", "fatigue", 0.55)
-    mara "Si."
-    mara "Peut-être."
-    mara "J'en sais trop rien."
+    tomas triste "Franchement, je-je crois bien qu'on va jamais réussir à faire passer un amendement."
 
-    lysa "Ainsi décident les représentants du monde : avec la certitude d'Œdipe et deux fois moins d'informations."
+    elias colere "On sert vraiment à rien..."
 
-    elen "C'est pas drôle."
+    iris triste "Je veux prendre une douche."
+    iris colere "Et je veux que ce cirque s'arrête. Nous ne changerons rien tant que Kami sera là."
 
-    lysa "Je sais. Mais c'est vrai."
-    lysa blase "Nous sommes pathétiques."
-
-    hide mara
-    $ showP("kael", "fatigue", 0.55)
-
-    kael "Voter pour aurait été dangereux."
-
-    elen "Et voter contre ?"
-
-    kael "Au moins, aucune variable nouvelle."
-
-    elen "Super."
-
-    lysa "C'est déjà ça."
-
-    hide elen
-    $ showP("iris", "fatigue", 0.85)
-
-    iris "Je veux prendre une douche."
-    $ showP("iris", "colere", 0.85)
-    iris "Et je veux que ce cirque s'arrête. Nous ne changerons rien tant que l'arbitre se désintègre en direct."
-
-    kael "Le deuxième point risque d'être compliqué."
-
-    iris "Merci, Kael."
-    iris "Toujours là pour piétiner mes rêves les plus modestes."
-
-    $ showP("kael", "inquiet", 0.55)
-
-    kael "Désolé."
-
-    iris "C'était une blague."
-
-    kael "Ah."
-
-    lysa "Elle était mauvaise. Même pour toi."
-
-    iris "Je suis fatiguée, te moque pas de mon inspiration."
-
-    think "Cette fois, personne n'ajoute rien."
-
-    hide lysa
-    $ showP("tomas", "inquiet", 0.25)
-
-    tomas "Je vais vérifier les retranscriptions."
-
-    iris "Là ?"
-
-    tomas "Oui."
-
-    iris "Tomas."
-
-    tomas "Je veux être sûr que Kami n'a pas appliqué une pénalité par rapport à ce vote..."
-
-    kael "Tu crois qu'elle le ferait ?"
-    kael "Quoique tout semble possible aujourd'hui."
-
-    $ showP("tomas", "panne", 0.25)
-
-    tomas "..."
-    tomas "J'espère que non…"
-
-    think "Il part avant qu'on puisse l'arrêter ou l'aider. Je ne sais pas laquelle des deux options l'effraie le plus."
-
-    hide tomas
-    hide kael
-    $ showP("sael", "fatigue", 0.55)
-
-    think "Sael marche derrière nous sans regarder personne."
-
-    noam "Sael."
-
-    sael "Pas maintenant."
-
-    think "La même phrase que Ryn."
-
-    noam "D'accord."
-
-    $ showP("sael", "neutre", 0.55)
-
-    hide all
+    kael "Navré hein, mais ça ça sera pas demain la veille."
 
     scene bg_dortoir at adaptive_fullscreen with dissolve
 
-    $ showP("julian", "decu", 0.25)
-    $ showP("elias", "fatigue", 0.55)
-    $ showP("ryn", "colere", 0.85)
+    $ showGroup([("julian", "decu", 0.25), ("elias", "fatigue", 0.55), ("ryn", "colere", 0.85)])
 
-    julian "On va vraiment faire comme si rien ne s'était passé ?"
+    julian triste "On va vraiment faire comme si rien ne s'était passé ?"
+    julian colere "Remarquable stratégie collective. Si on continue comme ça, on échouera tous les trois jours."
 
-    ryn "Non."
+    ryn colere "Fais pas comme si t'en avais quelque chose à foutre."
 
-    julian "Alors on fait quoi ?"
-
-    ryn "Rien."
-
-    julian "Remarquable stratégie collective."
-
-    ryn "Tu veux applaudir ?"
-
-    $ showP("julian", "sourire", 0.25)
-
-    julian "J'hésite."
-
-    $ showP("ryn", "colere2", 0.85)
-
-    ryn "Essaie pour voir."
-
-    elias "Stop. Vous deux."
-    elias "On n'est pas des gamins. C'est chaud, arrêtez."
-
-    think "Un mot. Cela suffit presque."
-
-    $ showP("elias", "neutre", 0.55)
-
-    elias "Ne vous battez pas ici."
+    elias triste "Arrêtez. Vous deux."
+    elias colere "On n'est pas des gamins. Arrêtez."
+    elias neutre "Ne vous battez pas ici."
 
     julian "Où alors ?"
-    $ showP("julian", "decu", 0.25)
-    julian "Parce que je commence à manquer d'endroits où on peut encore parler."
 
-    elias "Dans ta chambre, à la limite. Là au moins, vous casserez que vos trucs."
-
-    julian "Très drôle."
-    julian "À quoi bon si personne ne voit la correction historique que Julian lui inflige ?"
-
-    ryn colere "Ah ouais ? Essaie."
-
-    elias "Bon !"
-    elias colere "J'ai dit stop !"
-
-    think "Julian détourne les yeux. Ryn aussi. Elias reste surpris d'avoir été entendu."
-
-    hide julian
-    hide elias
-    hide ryn
+    noam colere "Bon j'ai pas de temps pour vos chamailleries."
+    noam triste "Bonne nuit, et faites moins de bruit."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
     think "La porte de ma chambre se referme. Le calme revient. Il m'avait manqué."
-
-    think "J'ai voté."
-    think "Ils ont voté."
-    think "Kami a déliré toute la journée…"
+    think "J'ai voté. Ils ont voté. Kami a déliré toute la journée…"
 
     think "Je laisse tomber ma veste et reste debout sans raison."
-
     think "Qu'est-ce qui s'est passé ?"
 
     think "Pourquoi la machine qui dirige le monde s'est-elle mise à dérailler ?"
-    think "L'incident d'hier ? Elias aurait-il endommagé quelque chose dont Kami dépend ?"
+    think "Est-ce que ça aurait un rapport avec l'incident d'hier ? Elias aurait-il endommagé quelque chose dont Kami dépend ?"
+
+    noam "Non. Impossible... Ce serait beaucoup trop simple."
 
     think "Rien n'avait de sens dans ce qu'elle disait..."
-    think "Un lapsus."
-    think "Une menace."
-    think "Un bug."
+    think "Un lapsus. Une menace. Un bug."
 
     think "Lapsus, menace ou panne. Trois réponses, aucune utile."
 
-    think "Je sens encore la chaleur artificielle du Conclave et ses grésillements."
-
     think "Quelque chose a changé."
-
-    think "Je l'ai pensé ce matin. Maintenant, je ne peux plus appeler ça une impression."
+    think "Je l'ai pensé ce matin. Maintenant, ce n'est plus qu'une impression."
 
     play sound "sfx/glitch_light.mp3"
 
-    think "L'écran mural clignote une fois. Je me retourne."
-
-    think "J'attends. Rien."
-
-    think "Bien sûr."
-
+    think "L'écran mural clignote une fois. Je me retourne. Il n'y a rien."
     think "Je passe de l'eau froide sur mon visage. Pas assez froide. Le miroir me rend celui du matin, un peu plus fatigué."
-
-    think "Voilà."
-    think "C'est tout."
 
     think "Je retourne au lit sans me changer complètement."
 
-    think "Le plafond est encore là. Lui au moins reste stable."
-
     think "Demain, ça ira mieux."
-
-    think "Je n'y crois pas une seconde."
+    noam "Mmhh, si seulement c'était possible..."
 
     think "Tant pis."
-
-    think "Mes paupières deviennent lourdes. Derrière le silence, très loin ou très près, la voix de Kami recommence."
-
-    think "Voter. Voter. Puis presque rien."
-
-    think "Mourir..."
+    think "Mes paupières deviennent lourdes. Derrière le silence, très loin ou très près, la voix de Kami résonne dans ma tête."
 
     $ blink()
+
+
+    call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent")
+
+    pause 1.0
 
     call end_day("7") from _call_end_day_10
     jump _7_0_1_REVEIL_CHAMBRE
 
-# Durée : ~4m00
-
-# NOTE:
-# Ce fichier est volontairement condensé ici.
-# Version complète 800+ lignes peut être étendue avec variantes dialogues, réactions variables,
-# et branches supplémentaires selon variables d'affinité et de confiance.
+# total : 8m
+# Total jour 0-5 : 1h49

@@ -40,8 +40,7 @@ label tomas_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("tomas", "reflechit", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("tomas", "reflechit", 0.62), ("noam", "reflexion", 0.22)])
 
     "Tomas fixe un terminal comme s'il allait lui faire un procès."
 
@@ -156,8 +155,7 @@ label tomas_link_2:
 
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("tomas", "neutre", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("tomas", "neutre", 0.62), ("noam", "reflexion", 0.22)])
 
     "Je retrouve Tomas devant un écran figé sur une table statistique."
 
@@ -280,8 +278,7 @@ label tomas_link_3:
 
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("tomas", "raison", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("tomas", "raison", 0.62), ("noam", "reflexion", 0.22)])
 
     "Tomas trie des fragments de données sur une tablette."
 
@@ -406,8 +403,7 @@ label tomas_link_4:
 
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("tomas", "neutre", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("tomas", "neutre", 0.62), ("noam", "reflexion", 0.22)])
 
     "La salle est calme."
     "Tomas tient un vieux manuel papier trouvé dans un tiroir."
@@ -521,8 +517,7 @@ label tomas_link_5:
 
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("tomas", "mefiant", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("tomas", "mefiant", 0.62), ("noam", "reflexion", 0.22)])
 
     "Tomas est debout devant l'hologramme éteint."
     "Il semble hésiter à parler, puis se lance."

@@ -26,14 +26,14 @@ label _15_0_1_1_0_REVEIL_CHAMBRE:
     kami "Ou au moins assez vivants pour m’écouter."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Le vote du jour aura lieu à 14h précises."
-    kami "Sujet : ouverture totale des archives d’ARCHIVE aux citoyens des districts."
+    kami "Sujet : ouverture totale des archives d’[codex_dialogue_link('archive', 'ARCHIVE')] aux citoyens des districts."
     kami "Une petite révolution documentaire."
     kami "Un grand moment de transparence."
     kami "Et peut-être quelques crises existentielles au passage."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Rappel utile."
     kami "Le Commandement V encadre actuellement toute diffusion d’information."
-    kami "Toute donnée non validée par ARCHIVE reste interdite."
+    kami "Toute donnée non validée par [codex_dialogue_link('archive', 'ARCHIVE')] reste interdite."
     kami "Si l’amendement est adopté, les citoyens auront accès à une partie immense des archives historiques, judiciaires et administratives."
     kami "S’il est refusé, le verrouillage restera total."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -687,7 +687,7 @@ label _15_0_1_1_0_ARCHIVES_CROISEES:
     "Même séquence. Même Kael. Même geste précis pour décrocher la photo."
 
     kael colere "C’est impossible !"
-    kael doute "ARCHIVE n’a pas touché au fichier !"
+    kael doute "[codex_dialogue_link('archive', 'ARCHIVE')] n’a pas touché au fichier !"
     kael triste "Aucune compression forcée, aucun montage détecté, aucun artefact !"
     kael peur "C’est une vidéo originale, putain !"
 
@@ -922,5 +922,5 @@ label _15_0_1_1_0_CONFRONTATION_KAEL:
     scene black with dissolve
     "Plus rien."
 
-    call end_day("16")
+    call end_day("16") from _call_end_day_16
     jump _16_0_1_1_0_REVEIL_CHAMBRE

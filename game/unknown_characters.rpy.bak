@@ -1,0 +1,92 @@
+# ======================
+# PERSONNAGES INCONNUS — HOMME / FEMME
+# ======================
+# Les fichiers fournis utilisent volontairement le dossier historique "unkown".
+init python:
+    UNKNOWN_IMAGE_SIZE = (1024, 1536)
+    UNKNOWN_IMAGE_SCALE = 0.60
+    UNKNOWN_ASSET_DIR = "images/character/unkown"
+
+    UNKNOWN_MAN_EXPRESSIONS = {
+        "neutre": ("man_mouth_fait_chier", "man_yeux_ouvert"),
+        "mefiant": ("man_mouth_fait_chier", "man_yeux_mefiant"),
+        "blase": ("man_mouth_fait_chier", "man_yeux_mefiant"),
+        "colere": ("man_mouth_fait_chier", "man_yeux_mefiant"),
+        "sourire": ("man_mouth_sourire", "man_yeux_ouvert"),
+        "content": ("man_mouth_sourire", "man_yeux_ouvert"),
+        "triste": ("man_mouth_triste", "man_yeux_ouvert"),
+        "inquiet": ("man_mouth_triste", "man_yeux_mefiant"),
+        "surpris": ("man_mouth_triste", "man_yeux_ouvert"),
+    }
+
+    UNKNOWN_WOMAN_EXPRESSIONS = {
+        "neutre": ("woman_mouth_fait_chier", "woman_yeux_ouvert"),
+        "mefiant": ("woman_mouth_fait_chier", "woman_yeux_mefiants"),
+        "blase": ("woman_mouth_fait_chier", "woman_yeux_mefiants"),
+        "colere": ("woman_mouth_fait_chier", "woman_yeux_mefiants"),
+        "sourire": ("woman_mouth_sourire", "woman_yeux_ouvert"),
+        "content": ("woman_mouth_sourire", "woman_yeux_ouvert"),
+        "triste": ("woman_mouth_triste", "woman_yeux_ouvert"),
+        "inquiet": ("woman_mouth_triste", "woman_yeux_mefiants"),
+        "surpris": ("woman_mouth_triste", "woman_yeux_ouvert"),
+    }
+
+    def _unknown_asset(name):
+        return "%s/%s.png" % (UNKNOWN_ASSET_DIR, name)
+
+    def _unknown_layered_expression(st, at, gender, expr):
+        if gender == "man":
+            expressions = UNKNOWN_MAN_EXPRESSIONS
+            body = "man_body"
+            closed_eyes = "man_yeux_ferme"
+            talking_mouth = "man_mouth_parle"
+            blink_offset = 0.0
+        else:
+            expressions = UNKNOWN_WOMAN_EXPRESSIONS
+            body = "woman_body"
+            closed_eyes = "woman_yeux_fermes"
+            talking_mouth = "woman_mouth_parle"
+            blink_offset = 1.7
+
+        mouth, eyes = expressions.get(expr, expressions["neutre"])
+
+        blink_phase = (st + blink_offset) % 5.0
+        if 4.72 <= blink_phase <= 4.88:
+            eyes = closed_eyes
+
+        zoom = UNKNOWN_IMAGE_SCALE
+        if is_character_speaking(gender):
+            if (st % 0.32) < 0.16:
+                mouth = talking_mouth
+            zoom *= 1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0)
+
+        composite = Composite(
+            UNKNOWN_IMAGE_SIZE,
+            (0, 0), _unknown_asset(body),
+            (0, 0), _unknown_asset(eyes),
+            (0, 0), _unknown_asset(mouth),
+        )
+        return Transform(composite, zoom=zoom), 0.08
+
+    def unknown_expression(gender, expr):
+        return DynamicDisplayable(_unknown_layered_expression, gender, expr)
+
+image man neutre   = unknown_expression("man", "neutre")
+image man mefiant  = unknown_expression("man", "mefiant")
+image man blase    = unknown_expression("man", "blase")
+image man colere   = unknown_expression("man", "colere")
+image man sourire  = unknown_expression("man", "sourire")
+image man content  = unknown_expression("man", "content")
+image man triste   = unknown_expression("man", "triste")
+image man inquiet  = unknown_expression("man", "inquiet")
+image man surpris  = unknown_expression("man", "surpris")
+
+image woman neutre  = unknown_expression("woman", "neutre")
+image woman mefiant = unknown_expression("woman", "mefiant")
+image woman blase   = unknown_expression("woman", "blase")
+image woman colere  = unknown_expression("woman", "colere")
+image woman sourire = unknown_expression("woman", "sourire")
+image woman content = unknown_expression("woman", "content")
+image woman triste  = unknown_expression("woman", "triste")
+image woman inquiet = unknown_expression("woman", "inquiet")
+image woman surpris = unknown_expression("woman", "surpris")

@@ -276,5 +276,5 @@ label _20_0_1_1_0_PHOTO:
     noam determine "Il retourne dans ma chambre."
     mara "Ou dans toutes."
     scene black with dissolve
-    call end_day("21")
+    call end_day("21") from _call_end_day_22
     return

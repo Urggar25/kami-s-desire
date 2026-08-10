@@ -594,14 +594,14 @@ init -2 python:
 
     def roadmap_status_label(node):
         status = roadmap_status(node)
-        return {
+        return kd_tr({
             "current": "En cours",
             "done": "Terminé",
             "available": "Accès autorisé",
             "locked": "Nœud narratif verrouillé",
             "unknown": "Données non découvertes",
             "hidden": "Accès refusé par Kami",
-        }.get(status, "Statut inconnu")
+        }.get(status, "Statut inconnu"))
 
     def roadmap_can_teleport(node):
         if not node or not node.get("teleportable", False):
@@ -652,13 +652,13 @@ init -2 python:
 
     def roadmap_display_title(node):
         if roadmap_status(node) == "unknown" and not store.roadmap_dev_mode:
-            return "Données non découvertes"
-        return node.get("title", node["id"])
+            return kd_tr("Données non découvertes")
+        return kd_tr(node.get("title", node["id"]))
 
     def roadmap_display_summary(node):
         if roadmap_status(node) == "unknown" and not store.roadmap_dev_mode:
-            return "Kami refuse l'accès à ce fragment. Continuez la chronologie pour l'identifier."
-        return node.get("summary", "Résumé à compléter.")
+            return kd_tr("Kami refuse l'accès à ce fragment. Continuez la chronologie pour l'identifier.")
+        return kd_tr(node.get("summary", "Résumé à compléter."))
 
     def roadmap_edge_status(source_id, target_id):
         source = ROADMAP_NODE_BY_ID.get(source_id)
@@ -813,7 +813,7 @@ screen roadmap_menu(focus_node_id=None):
                 spacing 10
                 for cat_id, cat_label in ROADMAP_CATEGORIES:
                     if cat_id != "debug" or roadmap_dev_mode:
-                        textbutton cat_label:
+                        textbutton kd_tr(cat_label):
                             style "roadmap_filter_button"
                             selected category_filter == cat_id
                             action [
@@ -891,7 +891,7 @@ screen roadmap_menu(focus_node_id=None):
 
                                     fixed:
                                         add Transform(roadmap_icon(node), size=(int(38 * z), int(38 * z))) xpos int(16 * z) ypos int(32 * z)
-                                        text node.get("short", node["id"]):
+                                        text kd_tr(node.get("short", node["id"])):
                                             xpos int(64 * z)
                                             ypos int(18 * z)
                                             xsize int(218 * z)
@@ -921,7 +921,7 @@ screen roadmap_legend_item(color_value, label_value):
     hbox:
         spacing 8
         add Solid(color_value) xsize 28 ysize 3 yalign 0.5
-        text label_value style "roadmap_legend_text"
+        text kd_tr(label_value) style "roadmap_legend_text"
 
 screen roadmap_node_details(node):
     frame:
@@ -940,10 +940,10 @@ screen roadmap_node_details(node):
                 text roadmap_display_summary(node) style "roadmap_body_text"
 
                 text "Choix majeur" style "roadmap_section_text"
-                text node.get("choice", "Aucun choix majeur renseigné.") style "roadmap_body_text"
+                text kd_tr(node.get("choice", "Aucun choix majeur renseigné.")) style "roadmap_body_text"
 
                 text "Conséquences connues" style "roadmap_section_text"
-                text node.get("consequence", "Données en attente de validation.") style "roadmap_body_text"
+                text kd_tr(node.get("consequence", "Données en attente de validation.")) style "roadmap_body_text"
 
                 null height 8
 

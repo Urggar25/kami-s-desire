@@ -528,7 +528,7 @@ screen tuto_trace_qte(as_overlay=False):
 
 label trace_qte_run(mg_id="trace_qte", title="TRACÉ SYNCHRONISÉ", path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True, show_results=True):
 
-    call mk_tutorial("trace_qte", "tuto_trace_qte")
+    call mk_tutorial("trace_qte", "tuto_trace_qte") from _call_mk_tutorial_3
     $ mk_reset_retries(mg_id)
 
 label .attempt:
@@ -537,7 +537,10 @@ label .attempt:
 
     if not tq_run_stats["success"]:
         if required:
-            call mk_fail_retry(title, mg_id)
+            call mk_fail_retry(title, mg_id) from _call_mk_fail_retry_1
+            if not _return:
+                $ fix_stale_return_label("_call_day1_play_trace_trace_qte")
+                return "SKIP"
             jump .attempt
         else:
             $ fix_stale_return_label("_call_day1_play_trace_trace_qte")
@@ -568,7 +571,7 @@ label .attempt:
         challenges=tq_run_challenges,
         mg_id=mg_id,
         retries=mk_get_retries(mg_id),
-    )
+    ) from _call_mk_show_results_3
     $ fix_stale_return_label("_call_day1_play_trace_trace_qte")
     return _return
 
@@ -578,12 +581,12 @@ label .attempt:
 
 label _TEST_TRACE_VERTICAL_UP:
     scene black
-    call trace_qte_run(mg_id="test_trace", title="TEST VERTICAL", path_type="vertical_up", required=False)
+    call trace_qte_run(mg_id="test_trace", title="TEST VERTICAL", path_type="vertical_up", required=False) from _call_trace_qte_run
     "Rang obtenu : [_return]"
     return
 
 label _TEST_TRACE_CURVE_RIGHT:
     scene black
-    call trace_qte_run(mg_id="test_trace", title="TEST COURBE", path_type="curve_right", time_limit=7.0, required=True)
+    call trace_qte_run(mg_id="test_trace", title="TEST COURBE", path_type="curve_right", time_limit=7.0, required=True) from _call_trace_qte_run_1
     "Rang obtenu : [_return]"
     return

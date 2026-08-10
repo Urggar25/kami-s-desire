@@ -211,5 +211,5 @@ label _18_0_1_1_0_TRACES:
     noam "Ca ressemble a oui."
     mara "Ca ressemble a une menace."
     "Elle ferme le sachet. A travers le plastique, les fibres rouges ressemblent a un fil coupe dans une histoire que personne ne se rappelle avoir vecue."
-    call end_day("19")
+    call end_day("19") from _call_end_day_19
     jump _19_0_1_1_0_BARRICADE

@@ -488,20 +488,12 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     textbutton _("Retour"):
         style "return_button"
-        action Jump("kd_close_game_menu")
+        action If(main_menu, ShowMenu("main_menu"), Return())
 
     label title
 
     if main_menu:
         key "game_menu" action NullAction()
-
-
-label kd_close_game_menu:
-    $ main_menu = False
-    $ renpy.context()._main_menu = False
-    $ renpy.play(config.exit_sound)
-    $ renpy.transition(config.exit_transition)
-    return
 
 
 style game_menu_outer_frame is empty
@@ -764,15 +756,14 @@ screen preferences():
                     textbutton _("Transitions")     action InvertSelected(Preference("transitions", "toggle"))
 
                 vbox:
-                    style_prefix "check"
-                    label _("Interface")
-                    textbutton _("Tablette dans l'HUD") action ToggleField(persistent, "hud_tablet_enabled")
-
-                vbox:
                     style_prefix "radio"
-                    label _("Langage")
-                    textbutton _("Français") text_font "fonts/Barlow-Light.ttf" action Language(None)
-                    textbutton _("Anglais")  text_font "fonts/Barlow-Light.ttf" action Language("english")
+                    label _("Langue")
+                    # Les sigles restent lisibles avec les polices latines
+                    # comme avec la police chinoise allégée.
+                    textbutton "FR"  text_font "fonts/Barlow-Light.ttf" action Language(None)
+                    textbutton "EN"  text_font "fonts/Barlow-Light.ttf" action Language("english")
+                    textbutton "ZH"  text_font "fonts/Barlow-Light.ttf" action Language("chinese")
+                    textbutton "PT"  text_font "fonts/Barlow-Light.ttf" action Language("portuguese")
 
             null height (4 * gui.pref_spacing)
 
@@ -1209,9 +1200,9 @@ screen skip_indicator():
         hbox:
             spacing 9
             text _("Avance rapide")
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
+            text ">" at delayed_blink(0.0, 1.0) style "skip_triangle"
+            text ">" at delayed_blink(0.2, 1.0) style "skip_triangle"
+            text ">" at delayed_blink(0.4, 1.0) style "skip_triangle"
 
 
 transform delayed_blink(delay, cycle):

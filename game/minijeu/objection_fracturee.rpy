@@ -1,136 +1,70 @@
-# ============================================================
-# MINI-JEU REUTILISABLE - OBJECTION FRACTUREE
-# Jour 4 : debat sur la libre circulation entre districts.
-# ============================================================
+# =============================================================================
+# MINI-JEU — DUEL VERBAL DU JOUR 4
+#
+# Chaque mot d'une phrase devient un projectile :
+#   gris  : laisser passer ;
+#   rouge : esquiver avec ESPACE ;
+#   bleu  : cliquer pour le renvoyer vers son auteur.
+# =============================================================================
 
-default j4_objection_score = 0
-default j4_objection_tension = 0
-default j4_objection_lucidity = 100
-default j4_objection_phase = "clash"
-default j4_objection_time_left = 0.0
+default j4_objection_player_hp = 100
+default j4_objection_opponent_hp = 100
+default j4_objection_phase_index = 0
+default j4_objection_phase_state = "playing"
 default j4_objection_active_words = []
-default j4_objection_captured = []
-default j4_objection_feedback = ""
-default j4_objection_done = False
-default j4_objection_result = "medium"
 default j4_objection_word_uid = 0
-default j4_objection_flash = 0.0
-default j4_objection_pulse = 0.0
-default j4_objection_shake = 0
-default j4_objection_phrase_index = 0
-default j4_objection_phrase_state = "entry"
-default j4_objection_phrase_timer = 0.0
-default j4_objection_qte_uid = None
-default j4_objection_qte_timer = 0.0
-default j4_objection_synthesis_step = 0
-default j4_objection_synthesis_answers = []
-default j4_objection_reward = 0
-default j4_objection_errors = 0
+default j4_objection_dodge_timer = 0.0
+default j4_objection_dodge_cooldown = 0.0
+default j4_objection_transition_timer = 0.0
+default j4_objection_player_flash = 0.0
+default j4_objection_opponent_flash = 0.0
+default j4_objection_feedback = ""
+default j4_objection_result = "failure"
+default j4_objection_blue_hits = 0
+default j4_objection_red_dodged = 0
+default j4_objection_red_hits = 0
 default j4_argument_circulation_cadre = False
 
 init python:
-    import random
     import math
+    import random
+    import re
 
-    J4_OBJECTION_TICK = 0.05
-    J4_OBJECTION_CENTER_X = 960
-    J4_OBJECTION_CENTER_Y = 520
-    J4_OBJECTION_NOAM_LEFT_X = 250
-    J4_OBJECTION_NOAM_RIGHT_X = 1670
-    J4_OBJECTION_READ_TIME = 3.0
-    J4_OBJECTION_QTE_TIME = 0.9
+    J4_OBJECTION_TICK = 0.04
+    J4_OBJECTION_PLAYER_X = 455.0
+    J4_OBJECTION_PLAYER_Y = 540.0
+    J4_OBJECTION_OPPONENT_X = 1470.0
+    J4_OBJECTION_OPPONENT_Y = 500.0
+    J4_OBJECTION_BLUE_DAMAGE = 8
+    J4_OBJECTION_RED_DAMAGE = 12
 
-    J4_OBJECTION_CLASH_LINES = [
+    J4_OBJECTION_PHASES = [
         {
             "speaker": "ryn",
             "name": "RYN",
-            "side": "left",
-            "color": "#ff8a35",
-            "portrait": "images/character/ryn/colere2.png",
-            "bubble": "gui/day4/objection/comic_bubble_ryn.png",
-            "line": "J'en peux plus, Noam. On nous demande de sourire dans une cage.",
-            "rich_line": "J'en peux plus, Noam. On nous demande de sourire dans une {color=#68d9ff}cage{/color}.",
-            "words": [
-                ("SOURIRE", "neutral"), ("CAGE", "important"), ("RESPIRER", "important"),
-                ("LAISSE", "important"), ("TRAHISON", "danger"), ("ASSEZ", "neutral"),
-            ],
+            "expr": "colere",
+            "line": "À Limen, les frontières ne protègent personne : elles enferment les vivants et condamnent ceux qui tentent seulement de partir.",
+            "reply": "Une frontière qui tue ne protège plus personne.",
+            "blue": ["frontières", "protègent", "enferment", "partir"],
+            "red": ["personne", "condamnent", "tentent"],
         },
         {
             "speaker": "sael",
             "name": "SAEL",
-            "side": "right",
-            "color": "#87cfff",
-            "portrait": "images/character/sael/determine.png",
-            "bubble": "gui/day4/objection/comic_bubble_sael.png",
-            "line": "Tu appelles ca une porte. Moi je vois surtout l'endroit ou ca casse.",
-            "rich_line": "Tu appelles ca une {color=#68d9ff}porte{/color}. Moi je vois surtout l'endroit ou {color=#ff6f7d}ca casse{/color}.",
-            "words": [
-                ("PORTE", "neutral"), ("CADRE", "important"), ("BRECHE", "danger"),
-                ("GARDIENS", "important"), ("PEUR", "important"), ("LACHE", "danger"),
-            ],
+            "expr": "determine",
+            "line": "Ouvrir sans contrôle, c'est offrir un passage aux massacres que mes camarades ont payé de leur vie pour contenir.",
+            "reply": "Protéger n'oblige pas à condamner tous les passages.",
+            "blue": ["contrôle", "passage", "camarades", "contenir"],
+            "red": ["ouvrir", "massacres", "vie"],
         },
         {
-            "speaker": "ryn",
-            "name": "RYN",
-            "side": "left",
-            "color": "#ff8a35",
-            "portrait": "images/character/ryn/desaccord.png",
-            "bubble": "gui/day4/objection/comic_bubble_ryn.png",
-            "line": "Arrete avec tes grands mots. Proteger, ici, ca veut dire tenir les gens en laisse.",
-            "rich_line": "Arrete avec tes grands mots. {color=#68d9ff}Proteger{/color}, ici, ca veut dire tenir les gens en {color=#68d9ff}laisse{/color}.",
-            "words": [
-                ("PROTEGER", "neutral"), ("LAISSE", "important"), ("RESPIRER", "important"),
-                ("FERME-LA", "danger"), ("CAGE", "important"), ("VOUS", "neutral"),
-            ],
-        },
-        {
-            "speaker": "sael",
-            "name": "SAEL",
-            "side": "right",
-            "color": "#87cfff",
-            "portrait": "images/character/sael/peur.png",
-            "bubble": "gui/day4/objection/comic_bubble_sael.png",
-            "line": "Et les morts, Ryn ? Tu leur expliques comment que cette fois ca ira ?",
-            "rich_line": "Et les {color=#68d9ff}morts{/color}, Ryn ? Tu leur expliques comment que cette fois {color=#ff6f7d}ca ira{/color} ?",
-            "words": [
-                ("MORTS", "neutral"), ("MEMOIRE", "important"), ("DIGUE", "important"),
-                ("MEURTRE", "danger"), ("PEUR", "important"), ("RESPIRER", "important"),
-            ],
-        },
-        {
-            "speaker": "nyra",
-            "name": "NYRA",
-            "side": "right",
-            "color": "#d6e8ff",
-            "portrait": "images/character/nyra/stress.png",
-            "bubble": "gui/day4/objection/comic_bubble_sael.png",
-            "line": "Vous etes en train de vous repondre a cote. La, quelqu'un va casser.",
-            "rich_line": "Vous etes en train de vous repondre a cote. La, quelqu'un va {color=#ff6f7d}casser{/color}.",
-            "words": [
-                ("CHOIX", "neutral"), ("CADRE", "important"), ("CASSER", "danger"),
-                ("CALME", "neutral"), ("PEUR", "important"), ("DANGER", "neutral"),
-            ],
-        },
-    ]
-
-    J4_OBJECTION_SYNTHESIS = [
-        {
-            "question": "Si je dois resumer, pour Sael c'est...",
-            "rich_question": "Si je dois resumer, pour {color=#87cfff}Sael{/color}, c'est...",
-            "answers": ["la peur", "la liberte", "le confort", "la vengeance"],
-            "correct": ["la peur"],
-        },
-        {
-            "question": "Du coup pour Ryn, c'est...",
-            "rich_question": "Du coup pour {color=#ff8a35}Ryn{/color}, c'est...",
-            "answers": ["respirer", "obeir", "proteger", "punir"],
-            "correct": ["respirer"],
-        },
-        {
-            "question": "Il faut qu'on essaye de...",
-            "rich_question": "Il faut qu'on essaye de...",
-            "answers": ["poser un cadre", "ouvrir sans reflechir", "fermer les yeux", "choisir un camp"],
-            "correct": ["poser un cadre"],
+            "speaker": "iris",
+            "name": "IRIS",
+            "expr": "desaccord",
+            "line": "Vous transformez une décision immense en symbole alors que personne n'a prévu le travail, l'accueil ni la sécurité derrière ces frontières.",
+            "reply": "Alors défendons un cadre au lieu de défendre l'immobilité.",
+            "blue": ["décision", "travail", "l'accueil", "sécurité"],
+            "red": ["immense", "personne", "frontières"],
         },
     ]
 
@@ -138,8 +72,6 @@ init python:
         "sound/objection_word_spawn.ogg": "audio/sfx_beep.mp3",
         "sound/objection_word_capture.ogg": "audio/sfx_victory.mp3",
         "sound/objection_word_miss.ogg": "audio/sfx_balle.mp3",
-        "sound/objection_parasite_click.ogg": "audio/sfx_gresillement.mp3",
-        "sound/objection_tension_hit.ogg": "audio/sfx_tambour.mp3",
         "sound/objection_stabilize.ogg": "audio/sfx_minigame_start.mp3",
         "sound/objection_final_good.ogg": "audio/sfx_victory.mp3",
         "sound/objection_final_bad.ogg": "audio/sfx_bad_joke.mp3",
@@ -153,349 +85,213 @@ init python:
         if fallback and renpy.loadable(fallback):
             renpy.play(fallback, channel="sound")
 
-    def j4_objection_asset(path, fallback):
-        if renpy.loadable(path):
-            return path
-        return fallback
+    def j4_objection_normalize_word(word):
+        return (word or "").lower().replace("’", "'")
 
-    def j4_objection_current_line():
-        index = min(store.j4_objection_phrase_index, len(J4_OBJECTION_CLASH_LINES) - 1)
-        return J4_OBJECTION_CLASH_LINES[index]
+    def j4_objection_tokenize(line):
+        return re.findall(r"[0-9A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’][0-9A-Za-zÀ-ÖØ-öø-ÿ]+)*", line or "")
 
-    def j4_objection_core_x():
-        if store.j4_objection_phase == "synthesis":
-            return J4_OBJECTION_CENTER_X
-        line = j4_objection_current_line()
-        if line.get("side") == "left":
-            return J4_OBJECTION_NOAM_RIGHT_X
-        return J4_OBJECTION_NOAM_LEFT_X
+    def j4_objection_current_phase():
+        index = max(0, min(store.j4_objection_phase_index, len(J4_OBJECTION_PHASES) - 1))
+        return J4_OBJECTION_PHASES[index]
 
-    def j4_objection_core_y():
-        return J4_OBJECTION_CENTER_Y
+    def j4_objection_word_type(token, phase):
+        normalized = j4_objection_normalize_word(token)
+        blue = [j4_objection_normalize_word(word) for word in phase.get("blue", [])]
+        red = [j4_objection_normalize_word(word) for word in phase.get("red", [])]
+        if normalized in blue:
+            return "blue"
+        if normalized in red:
+            return "red"
+        return "gray"
 
-    def j4_objection_reset():
-        store.j4_objection_score = 0
-        store.j4_objection_tension = 0
-        store.j4_objection_lucidity = 100
-        store.j4_objection_phase = "clash"
-        store.j4_objection_time_left = 0.0
+    def j4_objection_prepare_phase(index):
+        store.j4_objection_phase_index = index
+        store.j4_objection_phase_state = "playing"
+        store.j4_objection_transition_timer = 0.0
         store.j4_objection_active_words = []
-        store.j4_objection_captured = []
-        store.j4_objection_feedback = "Lis la phrase. Elle va se briser."
-        store.j4_objection_done = False
-        store.j4_objection_result = "medium"
-        store.j4_objection_word_uid = 0
-        store.j4_objection_flash = 0.0
-        store.j4_objection_pulse = 0.0
-        store.j4_objection_shake = 0
-        store.j4_objection_phrase_index = 0
-        store.j4_objection_phrase_state = "entry"
-        store.j4_objection_phrase_timer = 0.65
-        store.j4_objection_qte_uid = None
-        store.j4_objection_qte_timer = 0.0
-        store.j4_objection_synthesis_step = 0
-        store.j4_objection_synthesis_answers = []
-        store.j4_objection_reward = 0
-        store.j4_objection_errors = 0
-        renpy.block_rollback()
+
+        phase = j4_objection_current_phase()
+        tokens = j4_objection_tokenize(phase.get("line", ""))
+        lane_order = [1, 4, 2, 5, 0, 3]
+
+        for word_index, token in enumerate(tokens):
+            lane = lane_order[word_index % len(lane_order)]
+            word_type = j4_objection_word_type(token, phase)
+            store.j4_objection_active_words.append({
+                "uid": store.j4_objection_word_uid,
+                "text": token,
+                "type": word_type,
+                "state": "incoming",
+                "x": 1450.0 + random.randint(-20, 24),
+                "y": 275.0 + lane * 92.0 + random.randint(-12, 12),
+                "speed": 245.0 + random.randint(-12, 30) + (35.0 if word_type == "red" else 0.0),
+                "delay": 0.18 * word_index,
+                "rotation": random.randint(-5, 5),
+            })
+            store.j4_objection_word_uid += 1
+
+        store.j4_objection_feedback = "Clique les mots bleus. ESPACE pour esquiver les rouges."
+        start_character_dialogue(phase.get("speaker", ""), phase.get("line", ""))
+        start_character_dialogue("noam", phase.get("reply", ""))
         j4_objection_safe_play("sound/objection_word_spawn.ogg")
 
-    def j4_objection_unique_append(fragment):
-        if fragment and fragment not in store.j4_objection_captured:
-            store.j4_objection_captured.append(fragment)
-
-    def j4_objection_spawn_phrase_words():
-        line = j4_objection_current_line()
-        side = line.get("side", "left")
-        start_x = -260 if side == "left" else 2180
-        target_x = j4_objection_core_x()
-        target_y_base = j4_objection_core_y()
-        words = list(line.get("words", []))
-        random.shuffle(words)
+    def j4_objection_reset():
+        store.j4_objection_player_hp = 100
+        store.j4_objection_opponent_hp = 100
+        store.j4_objection_phase_index = 0
+        store.j4_objection_phase_state = "playing"
         store.j4_objection_active_words = []
-
-        for index, pair in enumerate(words):
-            text, word_type = pair
-            y = 245 + (index % 6) * 86 + random.randint(-22, 22)
-            target_y = target_y_base + random.randint(-110, 110)
-            dx = target_x - start_x
-            dy = target_y - y
-            distance = max(1.0, math.sqrt(dx * dx + dy * dy))
-            speed = random.randint(250, 335)
-            if word_type == "danger":
-                speed += 45
-            word = {
-                "uid": store.j4_objection_word_uid,
-                "text": text,
-                "type": word_type,
-                "x": float(start_x),
-                "y": float(y),
-                "vx": dx / distance * speed,
-                "vy": dy / distance * speed,
-                "age": 0.0,
-                "rotation": random.randint(-8, 8),
-                "qte": False,
-            }
-            store.j4_objection_word_uid += 1
-            store.j4_objection_active_words.append(word)
-
-        store.j4_objection_feedback = "Capture les bleus. Les rouges se gerent avec ESPACE."
-        store.j4_objection_pulse = 0.35
-        j4_objection_safe_play("sound/objection_tension_hit.ogg")
+        store.j4_objection_word_uid = 0
+        store.j4_objection_dodge_timer = 0.0
+        store.j4_objection_dodge_cooldown = 0.0
+        store.j4_objection_transition_timer = 0.0
+        store.j4_objection_player_flash = 0.0
+        store.j4_objection_opponent_flash = 0.0
+        store.j4_objection_feedback = ""
+        store.j4_objection_result = "failure"
+        store.j4_objection_blue_hits = 0
+        store.j4_objection_red_dodged = 0
+        store.j4_objection_red_hits = 0
+        renpy.block_rollback()
+        j4_objection_prepare_phase(0)
 
     def j4_objection_click_word(uid):
-        if store.j4_objection_phase != "clash" or store.j4_objection_done:
+        if store.j4_objection_phase_state != "playing":
             return
-        found = None
         for word in store.j4_objection_active_words:
-            if word.get("uid") == uid:
-                found = word
-                break
-        if not found:
-            return
-
-        if found.get("type") != "important":
-            return
-
-        store.j4_objection_active_words.remove(found)
-        fragment = found.get("text", "")
-        j4_objection_unique_append(fragment)
-        store.j4_objection_score += 12
-        store.j4_objection_tension = max(0, store.j4_objection_tension - 3)
-        store.j4_objection_feedback = "Noam garde : " + fragment
-        store.j4_objection_pulse = 0.35
-        j4_objection_safe_play("sound/objection_word_capture.ogg")
-
-    def j4_objection_damage(text, amount=14):
-        store.j4_objection_errors += 1
-        store.j4_objection_lucidity = max(0, store.j4_objection_lucidity - amount)
-        store.j4_objection_tension = min(100, store.j4_objection_tension + amount)
-        store.j4_objection_feedback = text
-        store.j4_objection_flash = 0.28
-        store.j4_objection_shake = 7
-        j4_objection_safe_play("sound/objection_word_miss.ogg")
+            if word.get("uid") == uid and word.get("type") == "blue" and word.get("state") == "incoming" and word.get("delay", 0.0) <= 0.0:
+                word["state"] = "returning"
+                word["speed"] = 900.0
+                store.j4_objection_feedback = "Renvoi : « %s »" % word.get("text", "")
+                j4_objection_safe_play("sound/objection_word_capture.ogg")
+                return
 
     def j4_objection_space():
-        if store.j4_objection_phase != "clash" or store.j4_objection_qte_uid is None:
+        if store.j4_objection_phase_state != "playing" or store.j4_objection_dodge_cooldown > 0.0:
             return
+        store.j4_objection_dodge_timer = 0.52
+        store.j4_objection_dodge_cooldown = 0.68
+        store.j4_objection_feedback = "ESQUIVE"
+        j4_objection_safe_play("sound/objection_stabilize.ogg")
 
-        found = None
-        for word in store.j4_objection_active_words:
-            if word.get("uid") == store.j4_objection_qte_uid:
-                found = word
-                break
-
-        if found:
-            store.j4_objection_active_words.remove(found)
-            store.j4_objection_score += 5
-            store.j4_objection_feedback = found.get("text", "ROUGE") + " se brise."
-            store.j4_objection_pulse = 0.35
-            j4_objection_safe_play("sound/objection_stabilize.ogg")
-
-        store.j4_objection_qte_uid = None
-        store.j4_objection_qte_timer = 0.0
-
-    def j4_objection_start_synthesis():
-        store.j4_objection_phase = "synthesis"
+    def j4_objection_finish():
+        if store.j4_objection_phase_state == "done":
+            return
+        store.j4_objection_phase_state = "done"
         store.j4_objection_active_words = []
-        store.j4_objection_qte_uid = None
-        store.j4_objection_qte_timer = 0.0
-        store.j4_objection_synthesis_step = 0
-        store.j4_objection_feedback = "Le clash retombe. Noam doit formuler."
-        store.j4_objection_pulse = 0.45
-
-    def j4_objection_answer_synthesis(answer):
-        if store.j4_objection_phase != "synthesis" or store.j4_objection_done:
-            return
-
-        step = store.j4_objection_synthesis_step
-        if step >= len(J4_OBJECTION_SYNTHESIS):
-            return
-
-        question = J4_OBJECTION_SYNTHESIS[step]
-        correct = answer in question.get("correct", [])
-        store.j4_objection_synthesis_answers.append({"answer": answer, "correct": correct})
-
-        if correct:
-            store.j4_objection_score += 18
-            store.j4_objection_tension = max(0, store.j4_objection_tension - 5)
-            store.j4_objection_feedback = "Ca tient."
-            j4_objection_safe_play("sound/objection_word_capture.ogg")
+        if store.j4_objection_player_hp > store.j4_objection_opponent_hp:
+            store.j4_objection_result = "success"
+            store.j4_objection_feedback = "Leur certitude cède avant la tienne."
+            j4_objection_safe_play("sound/objection_final_good.ogg")
         else:
-            j4_objection_damage("La synthese se fissure.", 10)
-
-        store.j4_objection_synthesis_step += 1
-        if store.j4_objection_synthesis_step >= len(J4_OBJECTION_SYNTHESIS):
-            j4_objection_finalize()
-
-    def j4_objection_calculate_reward():
-        if store.j4_objection_errors <= 0 and store.j4_objection_tension <= 0:
-            return 200
-        tension = max(0, min(100, int(store.j4_objection_tension)))
-        return max(0, int(round(200.0 * (100 - tension) / 100.0)))
-
-    def j4_objection_finalize():
-        correct_answers = 0
-        for item in store.j4_objection_synthesis_answers:
-            if item.get("correct", False):
-                correct_answers += 1
-
-        if correct_answers >= 3 and store.j4_objection_tension <= 35 and store.j4_objection_lucidity >= 70:
-            store.j4_objection_result = "good"
-        elif correct_answers <= 1 or store.j4_objection_tension >= 80 or store.j4_objection_lucidity <= 35:
-            store.j4_objection_result = "bad"
-        else:
-            store.j4_objection_result = "medium"
-
-        store.j4_objection_reward = j4_objection_calculate_reward()
-        if not hasattr(store, "player_kamyz"):
-            store.player_kamyz = 0
-        store.player_kamyz += store.j4_objection_reward
-        store.j4_objection_done = True
+            store.j4_objection_result = "failure"
+            store.j4_objection_feedback = "Leurs certitudes tiennent plus longtemps que toi."
+            j4_objection_safe_play("sound/objection_final_bad.ogg")
         renpy.block_rollback()
 
-        if store.j4_objection_result == "good":
-            j4_objection_safe_play("sound/objection_final_good.ogg")
-        elif store.j4_objection_result == "bad":
-            j4_objection_safe_play("sound/objection_final_bad.ogg")
-
-    def j4_objection_update_qte():
-        if store.j4_objection_qte_uid is None:
-            return
-        store.j4_objection_qte_timer = max(0.0, store.j4_objection_qte_timer - J4_OBJECTION_TICK)
-        if store.j4_objection_qte_timer > 0.0:
-            return
-
-        found = None
-        for word in store.j4_objection_active_words:
-            if word.get("uid") == store.j4_objection_qte_uid:
-                found = word
-                break
-
-        if found:
-            store.j4_objection_active_words.remove(found)
-            j4_objection_damage(found.get("text", "ROUGE") + " happe Noam.", 14)
-
-        store.j4_objection_qte_uid = None
-        store.j4_objection_qte_timer = 0.0
+    def j4_objection_advance_phase():
+        next_index = store.j4_objection_phase_index + 1
+        if next_index >= len(J4_OBJECTION_PHASES):
+            j4_objection_finish()
+        else:
+            j4_objection_prepare_phase(next_index)
 
     def j4_objection_tick():
-        if store.j4_objection_done:
-            return
-        if store.j4_objection_flash > 0.0:
-            store.j4_objection_flash = max(0.0, store.j4_objection_flash - J4_OBJECTION_TICK)
-        if store.j4_objection_pulse > 0.0:
-            store.j4_objection_pulse = max(0.0, store.j4_objection_pulse - J4_OBJECTION_TICK)
-        if store.j4_objection_shake > 0:
-            store.j4_objection_shake = max(0, store.j4_objection_shake - 1)
-
-        if store.j4_objection_phase != "clash":
+        if store.j4_objection_phase_state == "done":
             return
 
-        store.j4_objection_phrase_timer = max(0.0, store.j4_objection_phrase_timer - J4_OBJECTION_TICK)
-        j4_objection_update_qte()
+        store.j4_objection_dodge_timer = max(0.0, store.j4_objection_dodge_timer - J4_OBJECTION_TICK)
+        store.j4_objection_dodge_cooldown = max(0.0, store.j4_objection_dodge_cooldown - J4_OBJECTION_TICK)
+        store.j4_objection_player_flash = max(0.0, store.j4_objection_player_flash - J4_OBJECTION_TICK)
+        store.j4_objection_opponent_flash = max(0.0, store.j4_objection_opponent_flash - J4_OBJECTION_TICK)
 
-        if store.j4_objection_phrase_state == "entry":
-            if store.j4_objection_phrase_timer <= 0.0:
-                store.j4_objection_phrase_state = "read"
-                store.j4_objection_phrase_timer = J4_OBJECTION_READ_TIME
-                store.j4_objection_feedback = "Lis. Puis trie ce qui reste."
-            return
-
-        if store.j4_objection_phrase_state == "read":
-            if store.j4_objection_phrase_timer <= 0.0:
-                store.j4_objection_phrase_state = "words"
-                j4_objection_spawn_phrase_words()
+        if store.j4_objection_phase_state == "transition":
+            store.j4_objection_transition_timer -= J4_OBJECTION_TICK
+            if store.j4_objection_transition_timer <= 0.0:
+                j4_objection_advance_phase()
             return
 
         survivors = []
         for word in store.j4_objection_active_words:
-            word["x"] += word["vx"] * J4_OBJECTION_TICK
-            word["y"] += word["vy"] * J4_OBJECTION_TICK
-            word["age"] += J4_OBJECTION_TICK
-            core_x = j4_objection_core_x()
-            core_y = j4_objection_core_y()
-            dist = math.sqrt((word["x"] - core_x) ** 2 + (word["y"] - core_y) ** 2)
+            if word.get("delay", 0.0) > 0.0:
+                word["delay"] = max(0.0, word["delay"] - J4_OBJECTION_TICK)
+                survivors.append(word)
+                continue
 
-            if word.get("type") == "danger" and store.j4_objection_qte_uid is None and dist < 230:
-                store.j4_objection_qte_uid = word.get("uid")
-                store.j4_objection_qte_timer = J4_OBJECTION_QTE_TIME
-                word["qte"] = True
-                store.j4_objection_feedback = "ESPACE !"
-                j4_objection_safe_play("sound/objection_parasite_click.ogg")
+            if word.get("state") == "returning":
+                dx = J4_OBJECTION_OPPONENT_X - word["x"]
+                dy = J4_OBJECTION_OPPONENT_Y - word["y"]
+                distance = max(1.0, math.sqrt(dx * dx + dy * dy))
+                step = word.get("speed", 900.0) * J4_OBJECTION_TICK
+                word["x"] += dx / distance * step
+                word["y"] += dy / distance * step
+                if distance <= 54.0:
+                    store.j4_objection_opponent_hp = max(0, store.j4_objection_opponent_hp - J4_OBJECTION_BLUE_DAMAGE)
+                    store.j4_objection_opponent_flash = 0.22
+                    store.j4_objection_blue_hits += 1
+                    continue
+                survivors.append(word)
+                continue
 
-            crossed = dist < 70 or word["age"] > 8.0
-            if crossed:
-                if word.get("type") == "important":
-                    j4_objection_damage(word.get("text", "MOT") + " percute Noam.", 8)
-                elif word.get("type") == "danger":
-                    if store.j4_objection_qte_uid == word.get("uid"):
-                        store.j4_objection_qte_uid = None
-                        store.j4_objection_qte_timer = 0.0
-                    j4_objection_damage(word.get("text", "ROUGE") + " traverse Noam.", 14)
-                else:
-                    store.j4_objection_score += 1
+            word["x"] -= word.get("speed", 255.0) * J4_OBJECTION_TICK
+            if word["x"] <= J4_OBJECTION_PLAYER_X:
+                if word.get("type") == "red":
+                    if store.j4_objection_dodge_timer > 0.0:
+                        store.j4_objection_red_dodged += 1
+                        store.j4_objection_feedback = "Mot rouge esquivé."
+                    else:
+                        store.j4_objection_player_hp = max(0, store.j4_objection_player_hp - J4_OBJECTION_RED_DAMAGE)
+                        store.j4_objection_player_flash = 0.28
+                        store.j4_objection_red_hits += 1
+                        store.j4_objection_feedback = "Le mot rouge te percute."
+                        j4_objection_safe_play("sound/objection_word_miss.ogg")
                 continue
             survivors.append(word)
 
         store.j4_objection_active_words = survivors
 
-        if len(store.j4_objection_active_words) <= 0:
-            store.j4_objection_phrase_index += 1
-            if store.j4_objection_phrase_index >= len(J4_OBJECTION_CLASH_LINES):
-                j4_objection_start_synthesis()
-            else:
-                store.j4_objection_phrase_state = "entry"
-                store.j4_objection_phrase_timer = 0.5
-                store.j4_objection_feedback = "Une autre voix coupe."
+        if store.j4_objection_player_hp <= 0 or store.j4_objection_opponent_hp <= 0:
+            j4_objection_finish()
+        elif not store.j4_objection_active_words:
+            store.j4_objection_phase_state = "transition"
+            store.j4_objection_transition_timer = 0.85
+            store.j4_objection_feedback = "La phrase retombe."
 
-        if store.j4_objection_tension >= 100:
-            store.j4_objection_tension = 100
-            j4_objection_start_synthesis()
 
-transform j4_objection_word_motion(rot=0):
+transform j4_objection_player_idle:
+    yoffset 5
+    ease 1.4 yoffset -3
+    ease 1.4 yoffset 5
+    repeat
+
+transform j4_objection_opponent_idle:
+    yoffset 2
+    ease 1.2 yoffset -5
+    ease 1.2 yoffset 2
+    repeat
+
+transform j4_objection_word_pulse(rot=0):
     rotate rot
-    alpha 0.98
-    ease 0.18 zoom 1.05
-    ease 0.18 zoom 1.0
+    zoom 0.96
+    ease 0.30 zoom 1.04
+    ease 0.30 zoom 0.96
     repeat
 
-transform j4_objection_parasite_motion(rot=0):
-    rotate rot
-    alpha 0.95
-    ease 0.04 xoffset -7
-    ease 0.04 xoffset 9
-    ease 0.04 xoffset 0
+transform j4_objection_word_return:
+    ease 0.12 zoom 1.20
+    linear 0.20 rotate 20
+    linear 0.20 rotate -20
     repeat
 
-transform j4_objection_core_pulse:
-    alpha 0.92
-    ease 0.55 zoom 1.08
-    ease 0.55 zoom 1.0
-    repeat
-
-transform j4_objection_error_shake:
+transform j4_objection_damage_shake:
+    xoffset 0
     ease 0.035 xoffset -14
-    ease 0.035 xoffset 16
-    ease 0.035 xoffset -8
+    ease 0.035 xoffset 12
+    ease 0.035 xoffset -6
     ease 0.035 xoffset 0
     repeat
 
-transform j4_objection_fracture_flicker:
-    alpha 0.18
-    ease 0.08 alpha 0.55
-    ease 0.08 alpha 0.18
-    repeat
-
-transform j4_objection_left_entry:
-    xoffset -170
-    alpha 0.0
-    ease 0.25 xoffset 0 alpha 1.0
-
-transform j4_objection_right_entry:
-    xoffset 170
-    alpha 0.0
-    ease 0.25 xoffset 0 alpha 1.0
 
 screen day4_objection_fracturee():
     modal True
@@ -505,289 +301,212 @@ screen day4_objection_fracturee():
     key "K_SPACE" action Function(j4_objection_space)
     timer J4_OBJECTION_TICK repeat True action Function(j4_objection_tick)
 
-    $ screen_offset = 0
-    if j4_objection_shake > 0:
-        $ screen_offset = -10 + (j4_objection_shake % 3) * 10
+    $ phase = j4_objection_current_phase()
+    $ noam_expr = "peur" if j4_objection_player_flash > 0.0 else ("determine" if j4_objection_dodge_timer > 0.0 else "reflexion")
+    $ opponent_expr = "surpris" if j4_objection_opponent_flash > 0.0 else phase.get("expr", "neutre")
+    $ noam_offset = -42 if j4_objection_dodge_timer > 0.0 else 0
 
-    fixed:
-        xoffset screen_offset
+    add "gui/day4/objection/objection_bg.png" at cover_screen
+    add Solid("#020711D8")
 
-        add j4_objection_asset("gui/day4/objection/objection_bg.png", "images/background/bg_conclave.png") at cover_screen
-        add Solid("#020711dd")
+    # Lignes techniques du terrain.
+    for lane_y in [360, 452, 544, 636, 728, 820]:
+        add Solid("#5CD3FF18") xpos 420 ypos lane_y xsize 1080 ysize 2
+    add Solid("#5CD3FF16") xpos 420 ypos 180 xsize 2 ysize 680
+    add Solid("#FF6B7716") xpos 1500 ypos 180 xsize 2 ysize 680
 
-        add j4_objection_asset("gui/day4/objection/ryn_side.png", Solid("#5a120c88")):
-            xsize 560
-            ysize 1080
-            xpos 0
-        add j4_objection_asset("gui/day4/objection/sael_side.png", Solid("#06142b99")):
-            xsize 560
-            ysize 1080
-            xpos 1360
-        add Solid("#00000077")
+    # Portraits composés : corps, bras, yeux et bouche proviennent d'images.rpy.
+    add Transform(character_image("noam", noam_expr), zoom=0.92):
+        xpos -115 + noam_offset
+        yalign 1.0
+        at j4_objection_player_idle
 
-        if j4_objection_phase == "clash":
-            use day4_objection_clash
-        else:
-            use day4_objection_synthesis
+    add Transform(character_image(phase.get("speaker", "ryn"), opponent_expr), zoom=0.92):
+        xpos 1435
+        yalign 1.0
+        at j4_objection_opponent_idle
 
-        $ core_x = int(j4_objection_core_x())
-        $ core_y = int(j4_objection_core_y())
-        add j4_objection_asset("gui/day4/objection/noam_core.png", Solid("#a8f4ff")):
-            xpos core_x - 96
-            ypos core_y - 96
-            xsize 192
-            ysize 192
-            at j4_objection_core_pulse
-
-        if j4_objection_tension >= 35:
-            add j4_objection_asset("gui/day4/objection/fracture_overlay.png", Solid("#ff2b2b24")) at j4_objection_fracture_flicker
-
-        if j4_objection_flash > 0.0:
-            add Solid("#ff1a2f55")
-        if j4_objection_pulse > 0.0:
-            add Solid("#9ef8ff24")
-
-        frame:
-            xpos 300
-            ypos 922
-            xsize 1320
-            ysize 126
-            background Solid("#020910ee")
-            padding (22, 16)
-            vbox:
-                spacing 10
-                hbox:
-                    spacing 18
-                    text "TENSION" size 23 color "#ffd1d1"
-                    bar value StaticValue(j4_objection_tension, 100):
-                        xsize 500
-                        ysize 22
-                    text "LUCIDITE" size 23 color "#c9f7ff"
-                    bar value StaticValue(j4_objection_lucidity, 100):
-                        xsize 500
-                        ysize 22
-                text "[j4_objection_feedback]" size 25 color "#f2fbff" xalign 0.5 text_align 0.5
-
-    if j4_objection_done:
-        timer 1.2 action Return(j4_objection_result)
-
-screen day4_objection_clash():
-    $ line = j4_objection_current_line()
-    $ entry_from_left = line.get("side") == "left"
-    $ speaker_x = 40 if entry_from_left else 1340
-    $ bubble_x = 390 if entry_from_left else 410
-    $ speaker_name = line.get("name", "")
-    $ phrase_text = line.get("rich_line", line.get("line", ""))
-    $ portrait_path = line.get("portrait", "images/character/noam/portrait.png")
-    $ bubble_path = line.get("bubble", "gui/day4/objection/comic_bubble_noam.png")
+    # Bandeau supérieur : vies et progression.
+    frame:
+        xpos 24 ypos 18 xsize 430 ysize 92
+        background Solid("#071522EE")
+        padding (24, 12)
+        vbox:
+            spacing 8
+            text "NOAM" size 26 color "#DCEBFF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            bar value StaticValue(j4_objection_player_hp, 100):
+                xsize 360 ysize 16
+                left_bar Solid("#55B9FF")
+                right_bar Solid("#173246")
 
     frame:
-        xalign 0.5
-        ypos 24
-        xsize 850
-        ysize 82
-        background Solid("#06121cee")
-        padding (20, 12)
-        hbox:
-            spacing 30
-            text "DISCUSSION FRACTUREE" size 31 color "#ffffff"
-            text "clash [j4_objection_phrase_index + 1]/[len(J4_OBJECTION_CLASH_LINES)]" size 26 color "#9ef8ff"
-            text "sens [len(j4_objection_captured)]" size 26 color "#ffd071"
+        xpos 1466 ypos 18 xsize 430 ysize 92
+        background Solid("#160D18EE")
+        padding (24, 12)
+        vbox:
+            spacing 8
+            text phase.get("name", "ADVERSAIRE") xalign 1.0 size 26 color "#FFE4E8" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            bar value StaticValue(j4_objection_opponent_hp, 100):
+                xsize 360 ysize 16
+                left_bar Solid("#FF6877")
+                right_bar Solid("#40202A")
 
-    if j4_objection_phrase_state in ("entry", "read"):
-        if entry_from_left:
-            add portrait_path:
-                xpos speaker_x
-                ypos 72
-                xsize 620
-                ysize 930
-                at j4_objection_left_entry
+    frame:
+        xalign 0.5 ypos 14 xsize 430 ysize 100
+        background Solid("#08131FEE")
+        padding (18, 10)
+        vbox:
+            spacing 4
+            text "PHASE [j4_objection_phase_index + 1] / [len(J4_OBJECTION_PHASES)]" xalign 0.5 size 22 color "#DCEBFF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            hbox:
+                xalign 0.5 spacing 26
+                for phase_dot in range(len(J4_OBJECTION_PHASES)):
+                    text "●" size 25 color ("#5CD3FF" if phase_dot <= j4_objection_phase_index else "#384A5A")
 
-            add bubble_path:
-                xpos bubble_x
-                ypos 165
-                at j4_objection_left_entry
+    # Bulles de dialogue proches du modèle fourni.
+    frame:
+        xpos 205 ypos 205 xsize 300 ysize 190
+        background Solid("#071522E8")
+        padding (20, 16)
+        vbox:
+            spacing 8
+            text "NOAM" size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text phase.get("reply", "") size 23 color "#DCEBFF" line_leading 3
 
-            vbox:
-                xpos bubble_x + 72
-                ypos 190
-                xsize 980
-                spacing 12
-                at j4_objection_left_entry
-                text speaker_name.lower() size 28 color line.get("color", "#ffffff")
-                text phrase_text size 43 color "#ffffff" xalign 0.5 text_align 0.5 outlines [(2, "#000000", 0, 0)]
-                if j4_objection_phrase_state == "read":
-                    text "La phrase tient encore..." size 24 color "#b7f7ff" xalign 0.5
-        else:
-            add portrait_path:
-                xpos speaker_x
-                ypos 72
-                xsize 620
-                ysize 930
-                at j4_objection_right_entry
+    frame:
+        xpos 1415 ypos 205 xsize 300 ysize 220
+        background Solid("#190E16E8")
+        padding (20, 16)
+        vbox:
+            spacing 8
+            text phase.get("name", "") size 18 color "#FF6877" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text phase.get("line", "") size 21 color "#FFE8EA" line_leading 2
 
-            add bubble_path:
-                xpos bubble_x
-                ypos 165
-                at j4_objection_right_entry
+    # Bouclier / zone d'esquive.
+    frame:
+        xpos 420 ypos 300 xsize 48 ysize 500
+        background Solid("#0C2438EE" if j4_objection_dodge_timer <= 0.0 else "#5CD3FFCC")
+        padding (4, 4)
+        add Solid("#5CD3FF44")
+    text "ESPACE":
+        xpos 472 ypos 523 size 20 color ("#FFFFFF" if j4_objection_dodge_timer > 0.0 else "#5CD3FF")
+        font "fonts/Rajdhani-SemiBold.ttf" kerning 2
 
-            vbox:
-                xpos bubble_x + 70
-                ypos 190
-                xsize 980
-                spacing 12
-                at j4_objection_right_entry
-                text speaker_name.lower() size 28 color line.get("color", "#ffffff")
-                text phrase_text size 43 color "#ffffff" xalign 0.5 text_align 0.5 outlines [(2, "#000000", 0, 0)]
-                if j4_objection_phrase_state == "read":
-                    text "La phrase tient encore..." size 24 color "#b7f7ff" xalign 0.5
-
+    # Tous les mots de la phrase deviennent des projectiles.
     for word in j4_objection_active_words:
-        $ wx = int(word.get("x", 0))
-        $ wy = int(word.get("y", 0))
-        $ word_text = word.get("text", "")
-        $ rot = word.get("rotation", 0)
-        $ word_type = word.get("type", "neutral")
-        $ is_qte = j4_objection_qte_uid == word.get("uid")
-        $ shard_bg = "#eceff4dd"
-        $ shard_hover = "#ffffffee"
-        $ shard_color = "#0b1118"
-        $ shard_size = 30
-        if word_type == "important":
-            $ shard_bg = "#0d5877ee"
-            $ shard_hover = "#1483aeee"
-            $ shard_color = "#ffffff"
-            $ shard_size = 38
-        elif word_type == "danger":
-            $ shard_bg = "#5b0711ee"
-            $ shard_hover = "#7b0d1aee"
-            $ shard_color = "#ffd1d1"
-            $ shard_size = 34
+        if word.get("delay", 0.0) <= 0.0:
+            use day4_objection_word(word)
 
-        if word_type == "important":
-            button:
-                xpos wx
-                ypos wy
-                xsize 235
-                ysize 72
-                background Solid(shard_bg)
-                hover_background Solid(shard_hover)
-                action Function(j4_objection_click_word, word.get("uid"))
-                at j4_objection_word_motion(rot)
-                text word_text size shard_size color shard_color xalign 0.5 yalign 0.5 outlines [(2, "#000000", 0, 0)]
-        elif word_type == "danger":
-            frame:
-                xpos wx
-                ypos wy
-                xsize 220
-                ysize 66
-                background Solid(shard_bg)
-                padding (8, 6)
-                at j4_objection_parasite_motion(rot)
-                text word_text size shard_size color shard_color xalign 0.5 yalign 0.5 outlines [(2, "#000000", 0, 0)]
-        else:
-            frame:
-                xpos wx
-                ypos wy
-                xsize 220
-                ysize 66
-                background Solid(shard_bg)
-                padding (8, 6)
-                at j4_objection_word_motion(rot)
-                text word_text size shard_size color shard_color xalign 0.5 yalign 0.5 outlines [(2, "#000000", 0, 0)]
+    if j4_objection_player_flash > 0.0:
+        add Solid("#FF334433")
+    if j4_objection_opponent_flash > 0.0:
+        add Solid("#5CD3FF1F")
 
-        if is_qte:
-            frame:
-                xpos 805
-                ypos 700
-                xsize 350
-                ysize 92
-                background Solid("#120407f2")
-                padding (18, 12)
-                vbox:
-                    spacing 4
-                    text "ESPACE" size 46 color "#ffffff" xalign 0.5 outlines [(3, "#ff2438", 0, 0)]
-                    bar value StaticValue(j4_objection_qte_timer, J4_OBJECTION_QTE_TIME):
-                        xsize 300
-                        ysize 14
-                        xalign 0.5
-
-screen day4_objection_synthesis():
-    $ step = min(j4_objection_synthesis_step, len(J4_OBJECTION_SYNTHESIS) - 1)
-    $ question = J4_OBJECTION_SYNTHESIS[step]
-    $ question_text = question.get("rich_question", question.get("question", ""))
-
+    # Légende basse.
     frame:
-        xalign 0.5
-        ypos 28
-        xsize 820
-        ysize 76
-        background Solid("#07180dee")
-        padding (20, 12)
+        xpos 330 ypos 930 xsize 1260 ysize 112
+        background Solid("#07111CEB")
+        padding (28, 16)
         hbox:
-            spacing 24
-            text "SYNTHESE DE NOAM" size 31 color "#c8ffd0"
-            text "[j4_objection_synthesis_step + 1]/3" size 30 color "#ffffff"
+            spacing 85
+            use day4_objection_legend("#D9E1E8", "MOTS GRIS", "Ne rien faire")
+            use day4_objection_legend("#FF6877", "MOTS ROUGES", "Esquiver avec ESPACE")
+            use day4_objection_legend("#55A9FF", "MOTS BLEUS", "Cliquer pour renvoyer")
 
-    add "images/character/noam/reflexion.png":
-        xalign 0.5
-        ypos 84
-        xsize 520
-        ysize 760
+    text j4_objection_feedback:
+        xalign 0.5 ypos 870 size 22 color "#BBD6E8" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
 
-    add "gui/day4/objection/comic_bubble_noam.png":
-        xalign 0.5
-        ypos 292
+    if j4_objection_phase_state == "transition":
+        frame:
+            xalign 0.5 yalign 0.5 xsize 420 ysize 90
+            background Solid("#071522F2")
+            text "ARGUMENT SUIVANT" xalign 0.5 yalign 0.5 size 30 color "#DCEBFF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
 
-    vbox:
-        xalign 0.5
-        ypos 320
-        xsize 850
-        spacing 10
-        text "noam" size 28 color "#b7f7ff"
-        text "\"[question_text]\"" size 40 color "#ffffff" xalign 0.5 text_align 0.5 outlines [(2, "#000000", 0, 0)]
-        text "Kamyz : +[j4_objection_reward]" size 22 color "#ffe7ae" xalign 0.5
+    if j4_objection_phase_state == "done":
+        use day4_objection_result_panel
 
+
+screen day4_objection_word(word):
+    $ word_type = word.get("type", "gray")
+    $ returning = word.get("state") == "returning"
+    $ orb_color = "#D9E1E8"
+    $ inner_color = "#F4F7FA"
+    $ text_color = "#101820"
+    if word_type == "blue":
+        $ orb_color = "#55A9FF"
+        $ inner_color = "#276AB5"
+        $ text_color = "#FFFFFF"
+    elif word_type == "red":
+        $ orb_color = "#FF6877"
+        $ inner_color = "#B93649"
+        $ text_color = "#FFFFFF"
+    $ orb_size = 122 if len(word.get("text", "")) > 9 else 106
+    $ font_size = 16 if len(word.get("text", "")) > 10 else 19
+    $ word_x = int(word.get("x", 0.0))
+    $ word_y = int(word.get("y", 0.0))
+
+    if word_type == "blue" and not returning:
+        button:
+            xpos word_x ypos word_y
+            xanchor 0.5 yanchor 0.5
+            xysize (orb_size, orb_size)
+            background None
+            hover_background None
+            action Function(j4_objection_click_word, word.get("uid"))
+            at j4_objection_word_pulse(word.get("rotation", 0))
+            fixed:
+                text "●" xalign 0.5 yalign 0.5 size orb_size color orb_color outlines [(7, "#55A9FF55", 0, 0)]
+                text "●" xalign 0.5 yalign 0.5 size orb_size - 15 color inner_color
+                text word.get("text", "") xalign 0.5 yalign 0.5 size font_size color text_color font "fonts/Rajdhani-SemiBold.ttf"
+    else:
+        fixed:
+            xpos word_x ypos word_y
+            xanchor 0.5 yanchor 0.5
+            xysize (orb_size, orb_size)
+            at (j4_objection_word_return if returning else j4_objection_word_pulse(word.get("rotation", 0)))
+            text "●" xalign 0.5 yalign 0.5 size orb_size color orb_color outlines [(7, orb_color + "44", 0, 0)]
+            text "●" xalign 0.5 yalign 0.5 size orb_size - 15 color inner_color
+            text word.get("text", "") xalign 0.5 yalign 0.5 size font_size color text_color font "fonts/Rajdhani-SemiBold.ttf"
+
+
+screen day4_objection_legend(color, title, subtitle):
     fixed:
-        xpos 485
-        ypos 560
-        xsize 950
-        ysize 310
-        for index, answer in enumerate(question.get("answers", [])):
-            $ row = index // 2
-            $ col = index % 2
-            button:
-                xpos col * 485
-                ypos row * 118
-                xsize 430
-                ysize 82
-                background Solid("#102942f2")
-                hover_background Solid("#245c82f2")
-                action Function(j4_objection_answer_synthesis, answer)
-                text answer size 32 color "#f6fbff" xalign 0.5 yalign 0.5
+        xysize (330, 72)
+        text "●" xpos 0 yalign 0.5 size 58 color color outlines [(5, color + "44", 0, 0)]
+        vbox:
+            xpos 70 yalign 0.5 spacing 2
+            text title size 20 color color font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text subtitle size 17 color "#A8BAC8"
 
+
+screen day4_objection_result_panel():
+    add Solid("#02060BE6")
+    frame:
+        xalign 0.5 yalign 0.5 xsize 720 ysize 430
+        background Solid("#081522F8")
+        padding (42, 32)
+        vbox:
+            xfill True spacing 18
+            text ("CONVICTION RÉUSSIE" if j4_objection_result == "success" else "CONVICTION ÉCHOUÉE"):
+                xalign 0.5 size 38 color ("#5CD3FF" if j4_objection_result == "success" else "#FF6877")
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+            text "NOAM  [j4_objection_player_hp]  —  [j4_objection_opponent_hp]  OPPOSITION":
+                xalign 0.5 size 27 color "#DCEBFF" font "fonts/Rajdhani-SemiBold.ttf"
+            text j4_objection_feedback:
+                xalign 0.5 text_align 0.5 size 22 color "#AFC6D8"
+            hbox:
+                xalign 0.5 spacing 50
+                text "Bleus renvoyés : [j4_objection_blue_hits]" size 18 color "#55A9FF"
+                text "Rouges esquivés : [j4_objection_red_dodged]" size 18 color "#FF9AA4"
+            textbutton "CONTINUER":
+                xalign 0.5 xsize 280 ysize 62
+                background Solid("#12344D")
+                hover_background Solid("#1D587D")
+                text_size 25 text_color "#EAF7FF"
+                action Return(j4_objection_result)
+
+
+# Conservé pour les anciennes sauvegardes qui pourraient encore cibler cet écran.
 screen day4_objection_reward_summary():
     modal True
-    zorder 240
-    add Solid("#000000aa")
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 620
-        ysize 260
-        background Solid("#061019f5")
-        padding (30, 24)
-        vbox:
-            spacing 18
-            text "RECOMPENSE" size 38 color "#ffe7ae" xalign 0.5
-            text "+[j4_objection_reward] Kamyz" size 48 color "#ffffff" xalign 0.5
-            text "Tension finale : [j4_objection_tension]/100" size 26 color "#c9f7ff" xalign 0.5
-            textbutton "Continuer":
-                xalign 0.5
-                xsize 260
-                ysize 58
-                background Solid("#1d4d2bee")
-                hover_background Solid("#2f7a43ee")
-                text_size 27
-                text_color "#eaffee"
-                action Return(True)
+    timer 0.01 action Return(True)

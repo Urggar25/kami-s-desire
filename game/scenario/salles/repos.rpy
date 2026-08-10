@@ -49,39 +49,39 @@ screen pnc_repos():
 
     if social_free_time_active() and mara_link in [1, 3]:
         imagebutton:
-            idle Transform(character_image("mara", "sourire"), zoom=0.75)
-            hover Transform(character_image("mara", "neutre"), zoom=0.75)
+            idle Transform(character_image("mara", "sourire"), zoom=1.00)
+            hover Transform(character_image("mara", "neutre"), zoom=1.00)
             focus_mask True
             xalign 0.15
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("MARA_LINK_INTERACT")]
 
     if social_free_time_active() and lysa_link == 0:
         imagebutton:
-            idle Transform(character_image("lysa", "taquin"), zoom=0.75)
-            hover Transform(character_image("lysa", "neutre"), zoom=0.75)
+            idle Transform(character_image("lysa", "taquin"), zoom=1.00)
+            hover Transform(character_image("lysa", "neutre"), zoom=1.00)
             focus_mask True
             xalign 0.82
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("LYSA_LINK_INTERACT")]
 
     if social_free_time_active() and iris_link in [0, 1, 2, 3, 4]:
         imagebutton:
-            idle Transform(character_image("iris", "colere"), zoom=0.75)
-            hover Transform(character_image("iris", "taquin"), zoom=0.75)
+            idle Transform(character_image("iris", "colere"), zoom=1.00)
+            hover Transform(character_image("iris", "taquin"), zoom=1.00)
             focus_mask True
             xalign 0.50
-            yalign 0.31
+            yalign 1.00
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("IRIS_LINK_INTERACT")]
 
 
     if social_free_time_active() and elen_link == 4:
         imagebutton:
-            idle Transform(character_image("elen", "joie"), zoom=0.75)
-            hover Transform(character_image("elen", "content"), zoom=0.75)
+            idle Transform(character_image("elen", "joie"), zoom=1.00)
+            hover Transform(character_image("elen", "content"), zoom=1.00)
             focus_mask True
             xalign 0.68
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "REPOS_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
@@ -152,6 +152,10 @@ label repos1_porte_couloir_cafeteria:
 
 
 label repos2_television:
+    if day_number() == 6 and social_free_time_active() and not j601_border_news_seen:
+        call _6_0_1_TV_FRONTIERES from _call_j601_tv_frontieres_repos
+        jump REPOS_TP
+
     "L'écran occupe une bonne partie du mur."
     "Une sélection de films, de jeux et d'archives tourne silencieusement."
     think "Même les distractions ont été choisies avant notre arrivée."
@@ -169,7 +173,7 @@ label repos2_table_repos:
             "Oui":
                 $ repos_bonus_label = repos_table_bonus_label()
                 if repos_bonus_label:
-                    call expression repos_bonus_label
+                    call expression repos_bonus_label from _call_expression_3
                 jump FREE_TIME_END
             "Non":
                 jump REPOS_TP

@@ -18,6 +18,47 @@
 define config.name = _("Kami's Desires")
 
 
+## Polices de repli pour le chinois ###########################################
+
+## Les polices d'origine couvrent correctement les langues latines, mais pas
+## les idéogrammes. Source Han est donc activée uniquement en chinois.
+## On utilise uniquement des chemins de police ordinaires, car Ren'Py 8.3 ne
+## prend pas en charge FontGroup dans config.font_replacement_map.
+
+define kd_cjk_font = "fonts/SourceHanSansLite.ttf"
+
+init -100 python:
+    _kd_cjk_replaced_fonts = (
+        "fonts/Barlow-Light.ttf",
+        "fonts/Rajdhani-SemiBold.ttf",
+        "fonts/day_font.ttf",
+    )
+
+    def kd_update_language_fonts():
+        use_cjk_font = preferences.language == "chinese"
+
+        for original_font in _kd_cjk_replaced_fonts:
+            for is_bold in (False, True):
+                for is_italic in (False, True):
+                    replacement_key = (original_font, is_bold, is_italic)
+                    if use_cjk_font:
+                        config.font_replacement_map[replacement_key] = ("fonts/SourceHanSansLite.ttf", is_bold, is_italic)
+                    else:
+                        config.font_replacement_map.pop(replacement_key, None)
+
+    kd_update_language_fonts()
+    config.change_language_callbacks.append(kd_update_language_fonts)
+
+    def kd_tr(value):
+        """Translate UI values that come from Python data instead of literals."""
+        if value is None:
+            return ""
+        if not isinstance(value, str):
+            value = str(value)
+        translated = renpy.translate_string(value)
+        return translated if translated else value
+
+
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu
 ## principal Configurez-le à False (Faux) pour cacher le titre.
 
@@ -26,7 +67,7 @@ define gui.show_name = True
 
 ## La version du jeu.
 
-define config.version = "0.3.0-benji-ver"
+define config.version = "1.0"
 
 
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
@@ -278,7 +319,7 @@ init python:
 ## Le nom d’utilisateur et du projet associé au projet itch.io, séparé par un
 ## slash.
 
-# define build.itch_project = "renpytom/test-project"
+define build.itch_project = "lijo62/kamis-desires"
 
 init python:
     import time

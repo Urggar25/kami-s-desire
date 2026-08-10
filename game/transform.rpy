@@ -271,6 +271,52 @@ screen day_transition_card(day_label):
 
         add Solid("#5cd3ff", xysize=(600, 2)) xalign 0.5 at day_card_line_grow
 
+screen chapter_transition_card(chapter_status, chapter_title):
+    zorder 120
+    modal True
+
+    add Solid("#000")
+    timer 5.0 action Return()
+
+    vbox:
+        align (0.5, 0.5)
+        spacing 18
+
+        text "— CONCLAVE —" at day_card_line_grow:
+            xalign 0.5
+            size 26
+            color "#5cd3ff"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            kerning 10
+
+        text kd_tr(chapter_status) at day_card_slam:
+            xalign 0.5
+            size 48
+            color "#9FE7FF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            kerning 4
+            outlines [(2, "#0a1626", 0, 0)]
+
+        add Solid("#5cd3ff", xysize=(720, 2)) xalign 0.5 at day_card_line_grow
+
+        text kd_tr(chapter_title):
+            xalign 0.5
+            size 64
+            color "#FFFFFF"
+            font "fonts/day_font.ttf"
+            outlines [(4, "#0a1626", 0, 0)]
+            text_align 0.5
+
+label show_chapter_title(chapter_status, chapter_title):
+
+    scene black with fade
+    play sound "audio/sfx_day_transition.wav"
+
+    call screen chapter_transition_card(chapter_status, chapter_title)
+    with Dissolve(0.4)
+
+    return
+
 label end_day(next_day):
 
     stop music fadeout 1.0
@@ -394,9 +440,9 @@ default broadcast_on = False
 # Les modèles de personnages partagent un canevas proche de 1024x1536 et
 # incluent déjà leur échelle dans images.rpy. Ce cadrage commun évite donc
 # que les anciens réglages prévus pour les PNG coupent la tête du portrait.
-default broadcast_px = 30
-default broadcast_py = 10
-default broadcast_pz = 0.85
+default broadcast_px = -130
+default broadcast_py = -10
+default broadcast_pz = 1.18
 
 # --- Transforms ---
 transform broadcast_frame:
@@ -496,10 +542,11 @@ init python:
         store.broadcast_expr = expr
 
         # px/py/pz restent acceptés pour ne pas casser les anciens appels,
-        # mais les portraits composés ont désormais tous le même cadrage.
-        store.broadcast_px = 30
-        store.broadcast_py = 10
-        store.broadcast_pz = 0.85
+        # mais les portraits composés ont désormais tous le même gros plan.
+        # Le cadrage centre le visage et le haut du buste dans la diffusion.
+        store.broadcast_px = -130
+        store.broadcast_py = -10
+        store.broadcast_pz = 1.18
 
         renpy.restart_interaction()
 
@@ -514,9 +561,9 @@ init python:
         renpy.restart_interaction()
 
 label reset:
-    $ broadcast_px = 30
-    $ broadcast_py = 10
-    $ broadcast_pz = 0.85
+    $ broadcast_px = -130
+    $ broadcast_py = -10
+    $ broadcast_pz = 1.18
 
 transform screen_shake:
     xoffset 0 yoffset 0

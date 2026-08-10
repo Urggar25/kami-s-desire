@@ -115,12 +115,12 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
     "Elle s’approche lentement et s’assoit sur le bord du lit, gardant une distance respectueuse."
 
     nyra reflexion "Le prochain vote aura lieu demain, au cours du quinzième jour."
-    nyra raison "Le sujet est : « Toute information détenue par ARCHIVE devient consultable par tout citoyen. »"
+    nyra raison "Le sujet est : « Toute information détenue par [codex_dialogue_link('archive', 'ARCHIVE')] devient consultable par tout citoyen. »"
 
     noam inquiet "Enfin… On va enfin pouvoir savoir ce qui se passe vraiment dehors ?"
 
     nyra neutre "C’est ce que beaucoup espèrent."
-    nyra raison "Si ça passe, on aura accès à toutes les données qu’ARCHIVE a accumulées depuis le début."
+    nyra raison "Si ça passe, on aura accès à toutes les données qu’[codex_dialogue_link('archive', 'ARCHIVE')] a accumulées depuis le début."
 
     noam reflexion "Ça veut dire… les rapports sur l’extérieur, les vraies raisons de notre présence ici, ce qui est arrivé au monde…"
 
@@ -984,7 +984,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 2.0
 
-    call show_custom_title("Après m'être longuement calmé")
+    call show_custom_title("Après m'être longuement calmé") from _call_show_custom_title_3
 
     jump _14_0_1_1_0_MESSAGES_KAEL
 
@@ -1149,5 +1149,5 @@ label _14_0_1_1_0_FIN_JOURNEE:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("15")
+    call end_day("15") from _call_end_day_15
     jump _15_0_1_1_0_REVEIL_CHAMBRE

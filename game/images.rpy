@@ -1,6 +1,39 @@
 ﻿# ======================
 # ELIAS
 # ======================
+init -10 python:
+    # Les DynamicDisplayable repassent souvent par les memes combinaisons de
+    # calques. Conserver le Displayable final evite de recreer en boucle des
+    # Composite/Transform lourds et limite la pression sur le ramasse-miettes.
+    def kd_cached_layered_sprite(image_size, zoom, asset_paths):
+        cache = kd_cached_layered_sprite.cache
+        key = (tuple(image_size), zoom, tuple(asset_paths))
+        displayable = cache.get(key)
+        if displayable is None:
+            layers = []
+            for path in asset_paths:
+                layers.extend(((0, 0), path))
+            displayable = Transform(Composite(image_size, *layers), zoom=zoom)
+            cache[key] = displayable
+        return displayable
+
+    kd_cached_layered_sprite.cache = {}
+
+    def kd_layered_sprite_delay(st, blink_period, blink_start, blink_end, speaking):
+        # Pendant la parole, la cadence historique de la bouche est conservee.
+        # Au repos, le sprite ne se reveille qu'aux changements des paupieres.
+        if speaking:
+            return 0.08
+
+        phase = st % blink_period
+        if phase < blink_start:
+            delay = blink_start - phase
+        elif phase <= blink_end:
+            delay = blink_end - phase + 0.001
+        else:
+            delay = blink_period - phase + blink_start
+        return max(0.04, delay)
+
 init python:
     ELIAS_IMAGE_SIZE = (1024, 1536)
     ELIAS_IMAGE_SCALE = 0.60
@@ -45,20 +78,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = ELIAS_IMAGE_SCALE
-        if _elias_is_speaking():
+        speaking = _elias_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = ELIAS_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            ELIAS_IMAGE_SIZE,
-            (0, 0), _elias_asset(body),
-            (0, 0), _elias_asset(arms),
-            (0, 0), _elias_asset(eyes),
-            (0, 0), _elias_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            ELIAS_IMAGE_SIZE, zoom,
+            (_elias_asset(body), _elias_asset(arms), _elias_asset(eyes), _elias_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 5.1, 4.82, 4.98, speaking)
 
     def elias_expression(expr):
         return DynamicDisplayable(_elias_layered_expression, expr)
@@ -133,20 +164,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = MARA_IMAGE_SCALE
-        if _mara_is_speaking():
+        speaking = _mara_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = MARA_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            MARA_IMAGE_SIZE,
-            (0, 0), _mara_asset(body),
-            (0, 0), _mara_asset(arms),
-            (0, 0), _mara_asset(eyes),
-            (0, 0), _mara_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            MARA_IMAGE_SIZE, zoom,
+            (_mara_asset(body), _mara_asset(arms), _mara_asset(eyes), _mara_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.8, 4.52, 4.68, speaking)
 
     def mara_expression(expr):
         return DynamicDisplayable(_mara_layered_expression, expr)
@@ -222,20 +251,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = NOAM_IMAGE_SCALE
-        if _noam_is_speaking():
+        speaking = _noam_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = NOAM_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            NOAM_IMAGE_SIZE,
-            (0, 0), _noam_asset(body),
-            (0, 0), _noam_asset(arms),
-            (0, 0), _noam_asset(eyes),
-            (0, 0), _noam_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            NOAM_IMAGE_SIZE, zoom,
+            (_noam_asset(body), _noam_asset(arms), _noam_asset(eyes), _noam_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.9, 4.62, 4.78, speaking)
 
     def noam_expression(expr):
         return DynamicDisplayable(_noam_layered_expression, expr)
@@ -318,20 +345,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = LYSA_IMAGE_SCALE
-        if _lysa_is_speaking():
+        speaking = _lysa_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = LYSA_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            LYSA_IMAGE_SIZE,
-            (0, 0), _lysa_asset(body),
-            (0, 0), _lysa_asset(arms),
-            (0, 0), _lysa_asset(eyes),
-            (0, 0), _lysa_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            LYSA_IMAGE_SIZE, zoom,
+            (_lysa_asset(body), _lysa_asset(arms), _lysa_asset(eyes), _lysa_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.8, 4.52, 4.68, speaking)
 
     def lysa_expression(expr):
         return DynamicDisplayable(_lysa_layered_expression, expr)
@@ -406,20 +431,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = JULIAN_IMAGE_SCALE
-        if _julian_is_speaking():
+        speaking = _julian_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = JULIAN_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            JULIAN_IMAGE_SIZE,
-            (0, 0), _julian_asset(body),
-            (0, 0), _julian_asset(arms),
-            (0, 0), _julian_asset(eyes),
-            (0, 0), _julian_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            JULIAN_IMAGE_SIZE, zoom,
+            (_julian_asset(body), _julian_asset(arms), _julian_asset(eyes), _julian_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 5.0, 4.72, 4.88, speaking)
 
     def julian_expression(expr):
         return DynamicDisplayable(_julian_layered_expression, expr)
@@ -444,6 +467,7 @@ image julian triste             = julian_expression("triste")
 image julian detendu            = julian_expression("detendu")
 image julian decontracte        = julian_expression("decontracte")
 image julian colere             = julian_expression("colere")
+image julian fatigue            = julian_expression("triste")
 
 # ======================
 # IRIS
@@ -492,20 +516,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = IRIS_IMAGE_SCALE
-        if _iris_is_speaking():
+        speaking = _iris_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = IRIS_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            IRIS_IMAGE_SIZE,
-            (0, 0), _iris_asset(body),
-            (0, 0), _iris_asset(arms),
-            (0, 0), _iris_asset(eyes),
-            (0, 0), _iris_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            IRIS_IMAGE_SIZE, zoom,
+            (_iris_asset(body), _iris_asset(arms), _iris_asset(eyes), _iris_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.9, 4.62, 4.78, speaking)
 
     def iris_expression(expr):
         return DynamicDisplayable(_iris_layered_expression, expr)
@@ -585,20 +607,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = TOMAS_IMAGE_SCALE
-        if _tomas_is_speaking():
+        speaking = _tomas_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = TOMAS_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            TOMAS_IMAGE_SIZE,
-            (0, 0), _tomas_asset(body),
-            (0, 0), _tomas_asset(arms),
-            (0, 0), _tomas_asset(eyes),
-            (0, 0), _tomas_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            TOMAS_IMAGE_SIZE, zoom,
+            (_tomas_asset(body), _tomas_asset(arms), _tomas_asset(eyes), _tomas_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.85, 4.55, 4.72, speaking)
 
     def tomas_expression(expr):
         return DynamicDisplayable(_tomas_layered_expression, expr)
@@ -674,20 +694,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = ELEN_IMAGE_SCALE
-        if _elen_is_speaking():
+        speaking = _elen_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = ELEN_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            ELEN_IMAGE_SIZE,
-            (0, 0), _elen_asset(body),
-            (0, 0), _elen_asset(arms),
-            (0, 0), _elen_asset(eyes),
-            (0, 0), _elen_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            ELEN_IMAGE_SIZE, zoom,
+            (_elen_asset(body), _elen_asset(arms), _elen_asset(eyes), _elen_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.8, 4.52, 4.68, speaking)
 
     def elen_expression(expr):
         return DynamicDisplayable(_elen_layered_expression, expr)
@@ -730,6 +748,7 @@ image elen fatigue              = elen_expression("fatigue")
 image elen sourire              = elen_expression("sourire")
 # image elen vide              = im.FactorScale("images/character/vide.png", 0.60)
 image elen vide                 = elen_expression("vide")
+image elen hesitation           = elen_expression("inquiet")
 
 # ======================
 # KAEL
@@ -778,20 +797,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = KAEL_IMAGE_SCALE
-        if _kael_is_speaking():
+        speaking = _kael_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = KAEL_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            KAEL_IMAGE_SIZE,
-            (0, 0), _kael_asset(body),
-            (0, 0), _kael_asset(arms),
-            (0, 0), _kael_asset(eyes),
-            (0, 0), _kael_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            KAEL_IMAGE_SIZE, zoom,
+            (_kael_asset(body), _kael_asset(arms), _kael_asset(eyes), _kael_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 5.2, 4.92, 5.08, speaking)
 
     def kael_expression(expr):
         return DynamicDisplayable(_kael_layered_expression, expr)
@@ -818,6 +835,7 @@ image kael effondre            = kael_expression("effondre")
 image kael raison              = kael_expression("raison")
 image kael peur                = kael_expression("peur")
 image kael desespoir           = kael_expression("desespoir")
+image kael determine           = kael_expression("calme")
 
 # ======================
 # NYRA
@@ -864,20 +882,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = NYRA_IMAGE_SCALE
-        if _nyra_is_speaking():
+        speaking = _nyra_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = NYRA_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            NYRA_IMAGE_SIZE,
-            (0, 0), _nyra_asset(body),
-            (0, 0), _nyra_asset(arms),
-            (0, 0), _nyra_asset(eyes),
-            (0, 0), _nyra_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            NYRA_IMAGE_SIZE, zoom,
+            (_nyra_asset(body), _nyra_asset(arms), _nyra_asset(eyes), _nyra_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 5.0, 4.72, 4.88, speaking)
 
     def nyra_expression(expr):
         return DynamicDisplayable(_nyra_layered_expression, expr)
@@ -948,20 +964,18 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = RYN_IMAGE_SCALE
-        if _ryn_is_speaking():
+        speaking = _ryn_is_speaking()
+        if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
                 mouth = "bouche_parle"
             zoom = RYN_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        composite = im.Composite(
-            RYN_IMAGE_SIZE,
-            (0, 0), _ryn_asset(body),
-            (0, 0), _ryn_asset(arms),
-            (0, 0), _ryn_asset(eyes),
-            (0, 0), _ryn_asset(mouth),
+        displayable = kd_cached_layered_sprite(
+            RYN_IMAGE_SIZE, zoom,
+            (_ryn_asset(body), _ryn_asset(arms), _ryn_asset(eyes), _ryn_asset(mouth)),
         )
-        return Transform(composite, zoom=zoom), 0.08
+        return displayable, kd_layered_sprite_delay(st, 4.7, 4.43, 4.60, speaking)
 
     def ryn_expression(expr):
         return DynamicDisplayable(_ryn_layered_expression, expr)
@@ -989,25 +1003,88 @@ image ryn vide                 = ryn_expression("vide")
 # ======================
 # SAEL
 # ======================
-image sael culpabilite          = im.FactorScale("images/character/sael/culpabilite.png", 0.60)
-image sael desaccord            = im.FactorScale("images/character/sael/desaccord.png", 0.60)
-image sael determine            = im.FactorScale("images/character/sael/determine.png", 0.60)
-image sael fatigue              = im.FactorScale("images/character/sael/fatigue.png", 0.60)
-image sael inquiet              = im.FactorScale("images/character/sael/inquiet.png", 0.60)
-image sael jaloux               = im.FactorScale("images/character/sael/jaloux.png", 0.60)
-image sael joie                 = im.FactorScale("images/character/sael/joie.png", 0.60)
-image sael mefiant              = im.FactorScale("images/character/sael/mefiant.png", 0.60)
-image sael neutre               = im.FactorScale("images/character/sael/neutre.png", 0.60)
-image sael peur                 = im.FactorScale("images/character/sael/peur.png", 0.60)
-image sael raison               = im.FactorScale("images/character/sael/raison.png", 0.60)
-image sael reflexion            = im.FactorScale("images/character/sael/reflechit.png", 0.60)
-image sael reflechit            = renpy.display.image.ImageReference("sael reflexion")
-image sael rire                 = im.FactorScale("images/character/sael/rire.png", 0.60)
-image sael sourire              = im.FactorScale("images/character/sael/sourire.png", 0.60)
-image sael surpris              = im.FactorScale("images/character/sael/surpris.png", 0.60)
-image sael taquin               = im.FactorScale("images/character/sael/taquin.png", 0.60)
-image sael triste               = im.FactorScale("images/character/sael/triste.png", 0.60)
-image sael colere               = im.FactorScale("images/character/sael/colere.png", 0.60)
+init python:
+    SAEL_IMAGE_SIZE = (1024, 1536)
+    SAEL_IMAGE_SCALE = 0.60
+    SAEL_ASSET_DIR = "images/character/sael"
+
+    SAEL_EXPRESSIONS = {
+        "calme": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "colere": ("corps", "bras_explication", "bouche_colere", "yeux_colere"),
+        "culpabilite": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
+        "desaccord": ("corps", "bras_explication", "bouche_colere", "yeux_suspiscion"),
+        "determine": ("corps", "bras_explication", "bouche_neutre", "yeux_colere"),
+        "fatigue": ("corps", "bras_main_poche", "bouche_triste", "yeux_fatigue"),
+        "inquiet": ("corps", "bras_long_corps", "bouche_triste", "yeux_surpris"),
+        "jaloux": ("corps", "bras_main_poche", "bouche_colere", "yeux_suspiscion"),
+        "joie": ("corps", "bras_explication", "bouche_joie", "yeux_neutre"),
+        "mefiant": ("corps", "bras_main_poche", "bouche_neutre", "yeux_suspiscion"),
+        "neutre": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "panne": ("corps", "bras_long_corps", "bouche_neutre", "yeux_fatigue"),
+        "peur": ("corps", "bras_long_corps", "bouche_triste", "yeux_gros"),
+        "raison": ("corps", "bras_explication", "bouche_neutre", "yeux_neutre"),
+        "reflechit": ("corps", "bras_main_poche", "bouche_neutre", "yeux_suspiscion"),
+        "reflexion": ("corps", "bras_main_poche", "bouche_neutre", "yeux_suspiscion"),
+        "rire": ("corps", "bras_explication", "bouche_joie", "yeux_neutre"),
+        "sourire": ("corps", "bras_long_corps", "bouche_joie", "yeux_neutre"),
+        "surpris": ("corps", "bras_long_corps", "bouche_neutre", "yeux_surpris"),
+        "taquin": ("corps", "bras_main_poche", "bouche_joie", "yeux_suspiscion"),
+        "triste": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
+        "vide": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+    }
+
+    def _sael_asset(name):
+        return "%s/%s.png" % (SAEL_ASSET_DIR, name)
+
+    def _sael_is_speaking():
+        return is_character_speaking("sael")
+
+    def _sael_layered_expression(st, at, expr):
+        body, arms, mouth, eyes = SAEL_EXPRESSIONS.get(expr, SAEL_EXPRESSIONS["neutre"])
+
+        blink_phase = st % 4.95
+        if 4.67 <= blink_phase <= 4.84:
+            eyes = "yeux_ferme"
+
+        zoom = SAEL_IMAGE_SCALE
+        speaking = _sael_is_speaking()
+        if speaking:
+            mouth_phase = st % 0.32
+            if mouth_phase < 0.16:
+                mouth = "bouche_parle"
+            zoom = SAEL_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
+
+        displayable = kd_cached_layered_sprite(
+            SAEL_IMAGE_SIZE, zoom,
+            (_sael_asset(body), _sael_asset(arms), _sael_asset(eyes), _sael_asset(mouth)),
+        )
+        return displayable, kd_layered_sprite_delay(st, 4.95, 4.67, 4.84, speaking)
+
+    def sael_expression(expr):
+        return DynamicDisplayable(_sael_layered_expression, expr)
+
+image sael calme                = sael_expression("calme")
+image sael colere               = sael_expression("colere")
+image sael culpabilite          = sael_expression("culpabilite")
+image sael desaccord            = sael_expression("desaccord")
+image sael determine            = sael_expression("determine")
+image sael fatigue              = sael_expression("fatigue")
+image sael inquiet              = sael_expression("inquiet")
+image sael jaloux               = sael_expression("jaloux")
+image sael joie                 = sael_expression("joie")
+image sael mefiant              = sael_expression("mefiant")
+image sael neutre               = sael_expression("neutre")
+image sael panne                = sael_expression("panne")
+image sael peur                 = sael_expression("peur")
+image sael raison               = sael_expression("raison")
+image sael reflechit            = sael_expression("reflechit")
+image sael reflexion            = sael_expression("reflexion")
+image sael rire                 = sael_expression("rire")
+image sael sourire              = sael_expression("sourire")
+image sael surpris              = sael_expression("surpris")
+image sael taquin               = sael_expression("taquin")
+image sael triste               = sael_expression("triste")
+image sael vide                 = sael_expression("vide")
 
 # ======================
 # Goumi

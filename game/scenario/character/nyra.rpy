@@ -38,8 +38,7 @@ label nyra_link_1:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
     scene bg_conclave at adaptive_fullscreen
 
-    $ showP("nyra", "sourire", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("nyra", "sourire", 0.70), ("noam", "reflexion", 0.24)])
 
     "Nyra a vidé une boîte de pions de vote sur la table centrale."
     play sound sfx_paper
@@ -48,8 +47,7 @@ label nyra_link_1:
     nyra "J'analyse la partie."
     noam "On n'a pas encore de vote officiel aujourd'hui."
     nyra "Le vote commence bien avant la salle de vote."
-    $ showP("nyra", "reflexion", 0.70)
-    nyra "Regarde : ici, les loyaux."
+    nyra reflexion "Regarde : ici, les loyaux."
     nyra "Ici, les opportunistes."
     nyra "Et là, les blessés qui cherchent un camp où respirer."
     noam "Tu mets vraiment les gens dans des catégories comme ça ?"
@@ -59,8 +57,7 @@ label nyra_link_1:
     play sound sfx_beep
     "Une alarme lointaine pulse une fois dans les hauts-parleurs."
     noam "Tu as l'air presque... amusée."
-    $ showP("nyra", "taquin", 0.70)
-    nyra "Presque ? C'est vexant."
+    nyra taquin "Presque ? C'est vexant."
     nyra "Le Conclave est un jeu d'équilibre."
     nyra "Le poids bouge, les positions glissent, personne n'est stable longtemps."
     noam "Tu parles d'alliances."
@@ -75,8 +72,7 @@ label nyra_link_1:
     noam "Tu attends la fatigue ?"
     nyra "La fatigue, ou la peur, ou la culpabilité."
     noam "Ça ressemble à de la manipulation."
-    $ showP("nyra", "raison", 0.70)
-    nyra "C'est de la stratégie sociale."
+    nyra raison "C'est de la stratégie sociale."
     noam "Donc le timing compte plus que le contenu ?"
     nyra "Non."
     nyra "Le contenu gagne la guerre."
@@ -85,8 +81,7 @@ label nyra_link_1:
     nyra "Si ça révèle qui ment, oui."
     nyra "Si ça force une fracture utile, oui."
     noam "Tu te rends compte que tu fais peur ?"
-    $ showP("nyra", "sourire", 0.70)
-    nyra "C'est souvent ce qu'on dit quand on ne veut pas répondre au fond."
+    nyra sourire "C'est souvent ce qu'on dit quand on ne veut pas répondre au fond."
     "Je m'assois en face d'elle."
     noam "D'accord."
     noam "Alors va au fond : c'est quoi ton plan aujourd'hui ?"
@@ -102,8 +97,7 @@ label nyra_link_1:
     noam "Ou leur panique."
     nyra "Exactement."
     nyra "La panique est une logique aussi."
-    $ showP("noam", "hesitation", 0.24)
-    noam "Et moi, je suis où sur ton plateau ?"
+    noam hesitation "Et moi, je suis où sur ton plateau ?"
     "Elle relève la tête, l'air sincèrement attentive."
     nyra "Toi ?"
     nyra "Tu es une variable qui refuse d'être un pion."
@@ -119,8 +113,7 @@ label nyra_link_1:
     noam "Maintenant ?"
     nyra "Maintenant."
     noam "Et si j'échoue ?"
-    $ showP("nyra", "taquin", 0.70)
-    nyra "Alors tu auras appris quelque chose d'utile avant que ça coûte des vies."
+    nyra taquin "Alors tu auras appris quelque chose d'utile avant que ça coûte des vies."
     "Je prends un pion, hésite, puis en déplace deux autres."
     "Nyra observe mes mains plus que mes choix."
     noam "Tu juges quoi, là ?"
@@ -146,8 +139,7 @@ label nyra_link_2:
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
     scene bg_stockage at adaptive_fullscreen
 
-    $ showP("nyra", "taquin", 0.70)
-    $ showP("noam", "hesitation", 0.24)
+    $ showGroup([("nyra", "taquin", 0.70), ("noam", "hesitation", 0.24)])
 
     "Nyra m'attend dans le stockage avec deux chaises face à face."
     "Entre elles : une fiche blanche et un stylet."
@@ -163,8 +155,7 @@ label nyra_link_2:
     noam "Ça dépend."
     nyra "Réponse interdite."
     noam "Pratique."
-    $ showP("nyra", "sourire", 0.70)
-    nyra "Question deux."
+    nyra sourire "Question deux."
     nyra "Tu peux sauver dix inconnus ou un proche qui te trahira peut-être demain."
     nyra "Tu choisis quoi ?"
     noam "C'est quoi ce tribunal tordu ?"
@@ -182,8 +173,7 @@ label nyra_link_2:
     nyra "Tu préfères garder le contrôle du cadre."
     noam "Évidemment."
     nyra "Intéressant."
-    $ showP("nyra", "reflexion", 0.70)
-    nyra "Question trois."
+    nyra reflexion "Question trois."
     nyra "Tu apprends qu'une rumeur contre toi circule."
     nyra "Tu l'éteins en public..."
     nyra "...ou tu la laisses vivre pour repérer qui l'alimente ?"
@@ -203,8 +193,7 @@ label nyra_link_2:
     noam "Lesquelles ?"
     nyra "Principe et efficacité."
     noam "Et toi, tu es de quel côté ?"
-    $ showP("nyra", "raison", 0.70)
-    nyra "Du côté qui reste debout à la fin."
+    nyra raison "Du côté qui reste debout à la fin."
     noam "Réponse pratique, encore."
     nyra "Réponse honnête, surtout."
     noam "Question pour toi, alors."
@@ -223,8 +212,7 @@ label nyra_link_2:
     noam "Non."
     nyra "Pourquoi ?"
     noam "Parce que tu observerais ma micro-seconde de retard sur chaque nom."
-    $ showP("nyra", "rire", 0.70)
-    nyra "Exact."
+    nyra rire "Exact."
     nyra "Tu apprends vite, Noam."
     noam "Tu me rends parano."
     nyra "Bonne compétence dans cette station."
@@ -233,8 +221,7 @@ label nyra_link_2:
     nyra "À les humilier, non."
     noam "Parfois la frontière est mince."
     nyra "Alors je la surveille."
-    $ showP("nyra", "neutre", 0.70)
-    nyra "Question finale."
+    nyra neutre "Question finale."
     nyra "Tu peux mentir une fois, parfaitement, pour empêcher une exécution."
     nyra "Tu mens ?"
     "Je prends une inspiration lente."
@@ -258,8 +245,7 @@ label nyra_link_2:
     noam "Tu retiens tout ?"
     nyra "Seulement ce qui compte quand tout brûle."
     noam "Et mon score, alors ?"
-    $ showP("nyra", "sourire", 0.70)
-    nyra "Tu réfléchis avant de répondre, et tu assumes quand tu tranches."
+    nyra sourire "Tu réfléchis avant de répondre, et tu assumes quand tu tranches."
     noam "Je déteste parler avec toi."
     nyra "C'est un excellent début."
 
@@ -274,8 +260,7 @@ label nyra_link_3:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("nyra", "raison", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("nyra", "raison", 0.70), ("noam", "reflexion", 0.24)])
 
     "Dans l'archive, Nyra a recouvert un tableau de notes en colonnes."
     "Commandements. Usages. Non-dits."
@@ -284,8 +269,7 @@ label nyra_link_3:
     noam "Singulier ?"
     nyra "Oui."
     nyra "Parce qu'elle change de masque, pas de nature."
-    $ showP("nyra", "reflexion", 0.70)
-    nyra "Règle implicite numéro un :"
+    nyra reflexion "Règle implicite numéro un :"
     nyra "Ne ridiculise jamais un pivot devant témoins."
     noam "Même s'il ment ?"
     nyra "Surtout s'il ment."
@@ -312,8 +296,7 @@ label nyra_link_3:
     noam "Donc il faut laisser retomber."
     nyra "Ou cadrer l'émotion avant de parler du fond."
     noam "Tu sais faire ça ?"
-    $ showP("nyra", "taquin", 0.70)
-    nyra "Je m'entraîne."
+    nyra taquin "Je m'entraîne."
     noam "Numéro quatre ?"
     nyra "Si tu attaques, attaque une structure, pas une personne."
     noam "Ça protège les egos ?"
@@ -345,14 +328,11 @@ label nyra_link_3:
     nyra "Le naïf doute trop tard."
     noam "Tu te places où ?"
     nyra "Entre les deux, les jours où je dors assez."
-    $ showP("noam", "surpris", 0.24)
-    noam "Tu dors ?"
-    $ showP("nyra", "rire", 0.70)
-    nyra "Par tranches tactiques."
+    noam surpris "Tu dors ?"
+    nyra rire "Par tranches tactiques."
     noam "Nyra..."
     noam "Si quelqu'un ignore toutes ces règles implicites, il est condamné ?"
-    $ showP("nyra", "neutre", 0.70)
-    nyra "Pas condamné."
+    nyra neutre "Pas condamné."
     nyra "Mais vulnérable."
     nyra "Il pensera perdre sur ses idées..."
     nyra "...alors qu'il perdra sur sa manière d'exister dans la pièce."
@@ -394,15 +374,13 @@ label nyra_link_4:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("nyra", "surpris", 0.70)
-    $ showP("noam", "surpris", 0.24)
+    $ showGroup([("nyra", "surpris", 0.70), ("noam", "surpris", 0.24)])
 
     "La baie d'observation tremble sous une secousse sourde."
     play sound sfx_gresillement
     "Les lumières vacillent. Nyra, elle, sourit."
     noam "Tu souris vraiment ?"
-    $ showP("nyra", "sourire", 0.70)
-    nyra "Oui."
+    nyra sourire "Oui."
     noam "Pourquoi ça te plaît ?"
     nyra "Parce que la tension rend tout net."
     nyra "Plus de décor. Plus de posture."
@@ -411,8 +389,7 @@ label nyra_link_4:
     nyra "Stimulant."
     noam "Tu as une drôle de définition du mot."
     nyra "Je sais."
-    $ showP("nyra", "reflexion", 0.70)
-    nyra "Quand il n'y a aucun enjeu réel..."
+    nyra reflexion "Quand il n'y a aucun enjeu réel..."
     nyra "...je m'éteins."
     noam "Tu t'ennuies."
     nyra "En une journée."
@@ -431,8 +408,7 @@ label nyra_link_4:
     nyra "Si."
     nyra "Je l'appelle 'préparation du prochain coup'."
     noam "Ce n'est pas du repos."
-    $ showP("nyra", "rire", 0.70)
-    nyra "C'est mon équivalent."
+    nyra rire "C'est mon équivalent."
     play sound sfx_beep
     "Un signal d'intégrité structurelle passe en jaune."
     noam "Tu vois ce jaune ?"
@@ -443,8 +419,7 @@ label nyra_link_4:
     nyra "Alors j'apprends vite."
     noam "Et si l'erreur tue quelqu'un ?"
     "Elle se fige, puis répond sans détour."
-    $ showP("nyra", "neutre", 0.70)
-    nyra "Alors ce n'est plus un jeu."
+    nyra neutre "Alors ce n'est plus un jeu."
     nyra "C'est une dette."
     noam "Tu les comptes, tes dettes ?"
     nyra "Toutes."
@@ -463,8 +438,7 @@ label nyra_link_4:
     nyra "Peut-être."
     nyra "Mais ici, l'enjeu est brut."
     nyra "Impossible à ignorer."
-    $ showP("noam", "inquiet", 0.24)
-    noam "Parfois je t'écoute et j'ai l'impression que tu cours au bord du vide volontairement."
+    noam inquiet "Parfois je t'écoute et j'ai l'impression que tu cours au bord du vide volontairement."
     nyra "Je marche au bord."
     nyra "Courir, c'est gaspiller de l'information."
     noam "Tu intellectualises même la peur."
@@ -491,8 +465,7 @@ label nyra_link_4:
     play sound sfx_announce
     "Une annonce ordonne de rejoindre les secteurs sécurisés."
     noam "On y va."
-    $ showP("nyra", "raison", 0.70)
-    nyra "On y va."
+    nyra raison "On y va."
     nyra "Et on verra qui garde une tête froide quand le sol bouge encore."
     noam "Tu transformes même une évacuation en test."
     nyra "Chaque moment l'est, qu'on le veuille ou non."
@@ -511,8 +484,7 @@ label nyra_link_5:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
     scene bg_conclave at adaptive_fullscreen
 
-    $ showP("nyra", "triste", 0.70)
-    $ showP("noam", "inquiet", 0.24)
+    $ showGroup([("nyra", "triste", 0.70), ("noam", "inquiet", 0.24)])
 
     "La salle du Conclave est vide pour une fois."
     "Nyra ne trie rien, ne note rien, ne joue avec aucun pion."
@@ -524,8 +496,7 @@ label nyra_link_5:
     noam "Éliminée du jeu ?"
     nyra "Du jeu, du groupe, de la mémoire des autres."
     noam "Tu as peur d'être oubliée."
-    $ showP("nyra", "vide", 0.70)
-    nyra "Oui."
+    nyra vide "Oui."
     nyra "Plus que j'ai peur de me blesser."
     nyra "Plus que j'ai peur de perdre un débat."
     noam "Depuis quand ?"
@@ -547,8 +518,7 @@ label nyra_link_5:
     noam "Personne n'est totalement remplaçable."
     nyra "C'est gentil."
     nyra "Ce n'est pas ce que la station enseigne."
-    $ showP("nyra", "reflexion", 0.70)
-    nyra "Ici, si tu tombes, le système continue sans cligner."
+    nyra reflexion "Ici, si tu tombes, le système continue sans cligner."
     noam "Tu confonds le système et les gens."
     nyra "Peut-être."
     nyra "Mais quand la fatigue cogne, je ne vois plus la nuance."
@@ -574,8 +544,7 @@ label nyra_link_5:
     nyra "La honte."
     nyra "Le vide."
     nyra "La sensation d'être de trop."
-    $ showP("noam", "triste", 0.24)
-    noam "Nyra..."
+    noam triste "Nyra..."
     nyra "Je sais."
     nyra "Ce n'est pas glorieux."
     noam "Ce n'est pas honteux non plus."
@@ -586,8 +555,7 @@ label nyra_link_5:
     nyra "Dis ça au tableau des éliminés."
     noam "Je le dis à toi, maintenant."
     "Elle détourne les yeux, puis revient à moi."
-    $ showP("nyra", "triste", 0.70)
-    nyra "Tu sais ce qui me terrifie exactement ?"
+    nyra triste "Tu sais ce qui me terrifie exactement ?"
     noam "Dis-moi."
     nyra "Que le jour où je sors, les autres reprennent leur rythme en deux heures."
     nyra "Que ma place se referme comme de l'eau."
@@ -600,8 +568,7 @@ label nyra_link_5:
     noam "Parfois pour le mieux."
     nyra "Je préfère 'parfois de manière décisive'."
     noam "Ça, c'est bien toi."
-    $ showP("nyra", "sourire", 0.70)
-    nyra "Désolée."
+    nyra sourire "Désolée."
     noam "Pourquoi ?"
     nyra "Pour la version de moi qui transforme tout en partie."
     noam "Elle te protège."
@@ -613,8 +580,7 @@ label nyra_link_5:
     noam "Partenaire de duel, alors."
     nyra "Mieux."
     "Elle redresse les épaules, moins tendue."
-    $ showP("nyra", "raison", 0.70)
-    nyra "D'accord."
+    nyra raison "D'accord."
     nyra "Je continue de jouer pour gagner."
     nyra "Mais j'essaie de ne plus confondre défaite et disparition."
     noam "C'est déjà énorme."

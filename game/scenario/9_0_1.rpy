@@ -1282,7 +1282,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    $ showP("nyra", "raison", 0.28)
+    $ showGroup([("nyra", "raison", 0.28)])
 
     nyra raison "Alors vérifions les campements."
     nyra "Un relevé en direct. Rien de plus."
@@ -1303,7 +1303,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    $ showP("kael", "raison", 0.44)
+    $ showGroup([("kael", "raison", 0.44)])
 
     kael raison "Dans ce cas, délai procédural."
     kael "Pas une négociation."
@@ -1318,7 +1318,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    $ showP("lysa", "colere", 0.76)
+    $ showGroup([("lysa", "colere", 0.76)])
 
     lysa colere "Kami."
     lysa "Même pour toi, il doit bien rester une seconde de décence dans un tiroir."
@@ -1337,7 +1337,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    $ showP("noam", "determine", 0.60)
+    $ showGroup([("noam", "determine", 0.60)])
 
     noam determine "Tu veux dire que... non."
     noam "Tu cherches à nous faire porter le tir."

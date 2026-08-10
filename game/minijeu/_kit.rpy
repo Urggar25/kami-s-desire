@@ -290,11 +290,11 @@ screen mk_tuto_chrome(title, steps, screen_name, as_overlay=False):
                                 spacing 4
                                 yalign 0.5
                                 xmaximum 510
-                                text "[st_pair[0]]":
+                                text kd_tr(st_pair[0]):
                                     size 24
                                     color "#FFFFFF"
                                     bold True
-                                text "[st_pair[1]]":
+                                text kd_tr(st_pair[1]):
                                     size 20
                                     color "#9FC7D8"
 
@@ -386,14 +386,14 @@ screen mk_challenge_hud(challenges, xpos_v=24, ypos_v=120):
                 hbox:
                     spacing 10
                     if ch[1]:
-                        text "✓" size 20 color "#5DFF9A" bold True at mk_challenge_done_pop
-                        text "[ch[0]]" size 18 color "#5DFF9A"
+                        text "OK" size 20 color "#5DFF9A" bold True at mk_challenge_done_pop
+                        text kd_tr(ch[0]) size 18 color "#5DFF9A"
                     elif ch_failed:
                         text "✗" size 20 color "#FF4D6D" bold True
-                        text "[ch[0]]" size 18 color "#6E7F8F" strikethrough True
+                        text kd_tr(ch[0]) size 18 color "#6E7F8F" strikethrough True
                     else:
                         text "•" size 20 color "#7DF9FF"
-                        text "[ch[0]]" size 18 color "#DCF0FF"
+                        text kd_tr(ch[0]) size 18 color "#DCF0FF"
 
 
 # ------------------------------------------------------------
@@ -428,7 +428,7 @@ screen mk_fail_retry_screen(title, mg_id):
             bold True
             outlines [(6, "#02040A", 0, 0)]
 
-        text "[title]":
+        text kd_tr(title):
             xalign 0.5
             size 28
             color "#DCF0FF"
@@ -449,6 +449,18 @@ screen mk_fail_retry_screen(title, mg_id):
             text_color "#FFFFFF"
             text_xalign 0.5
             action Return(True)
+
+        if mk_get_retries(mg_id) >= 3:
+            textbutton "PASSER LE MINIJEU":
+                xalign 0.5
+                xsize 320
+                ysize 58
+                background Solid("#182A3AEE")
+                hover_background Solid("#25445EEE")
+                text_size 24
+                text_color "#BFD7E8"
+                text_xalign 0.5
+                action Return(False)
 
 label mk_fail_retry(title, mg_id):
     $ mk_add_retry(mg_id)
@@ -519,7 +531,7 @@ screen mk_results_screen(title, score, max_score, stats, challenges, rank, is_re
             xalign 0.5
             spacing 16
 
-            text "RÉSULTATS — [title]":
+            text (kd_tr("RÉSULTATS") + " — " + kd_tr(title)):
                 xalign 0.5
                 size 30
                 color "#9FC7D8"
@@ -541,7 +553,7 @@ screen mk_results_screen(title, score, max_score, stats, challenges, rank, is_re
                         color _rcolor
                         bold True
                         outlines [(6, "#02040A", 0, 0)]
-                    text "[_rlabel]":
+                    text kd_tr(_rlabel):
                         xalign 0.5
                         size 26
                         color _rcolor
@@ -574,7 +586,7 @@ screen mk_results_screen(title, score, max_score, stats, challenges, rank, is_re
                         bold True
 
                     for s_idx, s_pair in enumerate(stats):
-                        text "[s_pair[0]]  —  [s_pair[1]]" at mk_stat_in(0.62 + s_idx * 0.10):
+                        text (kd_tr(s_pair[0]) + "  —  " + kd_tr(s_pair[1])) at mk_stat_in(0.62 + s_idx * 0.10):
                             size 24
                             color "#DCF0FF"
 
@@ -588,11 +600,11 @@ screen mk_results_screen(title, score, max_score, stats, challenges, rank, is_re
                             hbox at mk_stat_in(1.0 + c_idx * 0.10):
                                 spacing 10
                                 if c_pair[1]:
-                                    text "✓" size 22 color "#5DFF9A" bold True
-                                    text "[c_pair[0]]" size 22 color "#5DFF9A"
+                                    text "OK" size 22 color "#5DFF9A" bold True
+                                    text kd_tr(c_pair[0]) size 22 color "#5DFF9A"
                                 else:
                                     text "✗" size 22 color "#FF4D6D" bold True
-                                    text "[c_pair[0]]" size 22 color "#8A9BAB"
+                                    text kd_tr(c_pair[0]) size 22 color "#8A9BAB"
 
             null height 10
 

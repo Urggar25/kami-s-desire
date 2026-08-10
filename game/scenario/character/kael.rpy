@@ -38,8 +38,7 @@ label kael_link_1:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("kael", "reflechit", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("kael", "reflechit", 0.70), ("noam", "reflexion", 0.24)])
 
     "La baie vitrée renvoie un reflet tremblant de la salle."
     play sound sfx_beep
@@ -142,8 +141,7 @@ label kael_link_2:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("kael", "neutre", 0.70)
-    $ showP("noam", "hesitation", 0.24)
+    $ showGroup([("kael", "neutre", 0.70), ("noam", "hesitation", 0.24)])
 
     "L'archive sent la poussière chaude et le métal froid."
     play sound sfx_paper
@@ -178,8 +176,7 @@ label kael_link_2:
     kael "Puis un deuxième."
     kael "Ensuite, plus personne n'écoutait plus rien."
     noam "Il y a eu des blessés."
-    $ showP("kael", "culpabilite", 0.70)
-    kael "Un bras fracturé."
+    kael culpabilite "Un bras fracturé."
     kael "Une arcade ouverte."
     kael "Et un silence après, pire que la bagarre."
     noam "Tu es intervenu quand ?"
@@ -255,8 +252,7 @@ label kael_link_3:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_maintenance at adaptive_fullscreen
 
-    $ showP("kael", "fatigue", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("kael", "fatigue", 0.70), ("noam", "reflexion", 0.24)])
 
     "Les turbines ronronnent derrière les cloisons."
     play sound sfx_gresillement
@@ -264,8 +260,7 @@ label kael_link_3:
     noam "Tu tiens bien ?"
     kael "Assez pour réfléchir."
     noam "Je vais te dire un truc simple : j'envie ton calme."
-    $ showP("kael", "rire", 0.70)
-    kael "Et moi j'envie les gens qui frappent la table et décident en trois mots."
+    kael rire "Et moi j'envie les gens qui frappent la table et décident en trois mots."
     noam "Sérieusement ?"
     kael "Très sérieusement."
     kael "Ils n'ont pas l'air de transporter un tribunal intérieur."
@@ -287,8 +282,7 @@ label kael_link_3:
     kael "C'est pour ça que je me demande si mon retrait est une force."
     kael "Ou une manière élégante d'éviter le risque."
     noam "Tu appelles ça une fuite ?"
-    $ showP("kael", "reflechit", 0.70)
-    kael "Parfois, oui."
+    kael reflechit "Parfois, oui."
     kael "Je peux emballer ça dans de beaux mots."
     kael "Prudence."
     kael "Analyse."
@@ -362,8 +356,7 @@ label kael_link_4:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("kael", "calme", 0.70)
-    $ showP("noam", "inquiet", 0.24)
+    $ showGroup([("kael", "calme", 0.70), ("noam", "inquiet", 0.24)])
 
     "Le vitrage laisse entrer une lueur froide sur nos visages."
     noam "J'ai toujours cru que ton calme était naturel."
@@ -383,8 +376,7 @@ label kael_link_4:
     kael "J'essaie."
     kael "Parfois je rate."
     noam "Et quand tu rates ?"
-    $ showP("kael", "fatigue", 0.70)
-    kael "Je serre les dents jusqu'à sentir mes tempes battre."
+    kael fatigue "Je serre les dents jusqu'à sentir mes tempes battre."
     kael "Je souris pour éviter d'inquiéter."
     kael "Puis je m'isole cinq minutes pour que personne ne paie ma montée."
     noam "Je ne voyais pas ça."
@@ -472,8 +464,7 @@ label kael_link_5:
     play music "music/bgm_system_override.mp3" fadein 1.0
     scene bg_conclave at adaptive_fullscreen
 
-    $ showP("kael", "reflechit", 0.70)
-    $ showP("noam", "surpris", 0.24)
+    $ showGroup([("kael", "reflechit", 0.70), ("noam", "surpris", 0.24)])
 
     "Le couloir du Conclave bourdonne d'attentes contrariées."
     play sound sfx_announce
@@ -491,8 +482,7 @@ label kael_link_5:
     kael "Immédiate."
     noam "Sans nuance ?"
     kael "Sans nuance."
-    $ showP("kael", "calme", 0.70)
-    kael "On a passé des jours à découper le problème pour se sentir précis."
+    kael calme "On a passé des jours à découper le problème pour se sentir précis."
     kael "Pendant ce temps, des gens restent exposés."
     kael "Ça suffit."
     noam "Tu sais que certains vont dire que c'est émotionnel."
@@ -552,9 +542,8 @@ label kael_link_5:
     kael "Puis l'après-midi."
     kael "Puis encore."
     kael "Je n'ai plus l'intention de confondre patience et renoncement."
-    $ showP("kael", "determine", 0.70)
     noam "Tu ne reculeras pas d'un pas."
-    kael "Pas sur ça."
+    kael determine "Pas sur ça."
     kael "Je peux négocier les modalités."
     kael "Je ne négocierai pas la dignité de ceux qu'on isole."
     play sound sfx_announce

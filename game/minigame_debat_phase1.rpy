@@ -28,21 +28,22 @@ init python:
         (300, 385), (500, 420), (700, 390), (900, 420), (1100, 390), (1300, 420),
     ]
 
-    # --- Ajustements layout demandés (mesurés) ---
-    # Baisser banque / mots / slots sans tout exploser.
-    DEBAT_PHASE1_BANK_Y = 150             # anciennement 88
-    DEBAT_PHASE1_WORDS_Y_OFFSET = 40      # descend un peu les mots
-    DEBAT_PHASE1_WORDS_X_SPREAD = 1.03    # écarte un peu les mots
+    DEBAT_PHASE1_BANK_Y = 344
+    DEBAT_PHASE1_WORD_BANK_START_X = 86
+    DEBAT_PHASE1_WORD_BANK_START_Y = 418
+    DEBAT_PHASE1_WORD_BANK_ROW_MAX_WIDTH = 1748
+    DEBAT_PHASE1_WORD_BANK_GAP = 16
+    DEBAT_PHASE1_WORD_BANK_ROW_SPACING = 76
 
-    DEBAT_PHASE1_SLOT_START_X = 150
-    DEBAT_PHASE1_SLOT_START_Y = 600       # anciennement 520 (trop haut)
-    DEBAT_PHASE1_SLOT_GAP = 16
-    DEBAT_PHASE1_SLOT_ROW_SPACING = 120
+    DEBAT_PHASE1_SLOT_START_X = 86
+    DEBAT_PHASE1_SLOT_START_Y = 742
+    DEBAT_PHASE1_SLOT_GAP = 10
+    DEBAT_PHASE1_SLOT_ROW_SPACING = 78
     DEBAT_PHASE1_SLOT_MIN_WIDTH = 54
     DEBAT_PHASE1_SLOT_TEXT_PADDING_X = 28
     DEBAT_PHASE1_SLOT_CHAR_WIDTH = 13.5
-    DEBAT_PHASE1_SLOT_HEIGHT = 66
-    DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH = 1680
+    DEBAT_PHASE1_SLOT_HEIGHT = 58
+    DEBAT_PHASE1_SLOT_ROW_MAX_WIDTH = 1748
     DEBAT_PHASE1_TOTAL_TIME = 180
     DEBAT_PHASE1_COMMENT_THRESHOLDS = [120, 60, 30, 10]
     DEBAT_PHASE1_PRESSURE_COMMENTS = {
@@ -69,7 +70,8 @@ init python:
     }
 
     def debat_phase1_word_width(word_text):
-        estimated = DEBAT_PHASE1_SLOT_TEXT_PADDING_X + int(len(word_text) * DEBAT_PHASE1_SLOT_CHAR_WIDTH)
+        translated_word = kd_tr(word_text)
+        estimated = DEBAT_PHASE1_SLOT_TEXT_PADDING_X + int(len(translated_word) * DEBAT_PHASE1_SLOT_CHAR_WIDTH)
         return max(DEBAT_PHASE1_SLOT_MIN_WIDTH, estimated)
 
     def debat_phase1_get_slot_width(slot_index, slot_word_id):
@@ -141,12 +143,20 @@ init python:
 
         store.debat_phase1_words = [None for _ in tgt]
 
-        for i, (orig_id, text) in enumerate(indexed_words):
-            hx, hy = DEBAT_PHASE1_FLOAT_POSITIONS[i % len(DEBAT_PHASE1_FLOAT_POSITIONS)]
+        current_x = DEBAT_PHASE1_WORD_BANK_START_X
+        current_y = DEBAT_PHASE1_WORD_BANK_START_Y
+        row_end = DEBAT_PHASE1_WORD_BANK_START_X + DEBAT_PHASE1_WORD_BANK_ROW_MAX_WIDTH
 
-            # Espacer un peu + baisser les mots (sans dérégler l'écran)
-            hx = int(960 + (hx - 960) * DEBAT_PHASE1_WORDS_X_SPREAD)
-            hy = int(hy + DEBAT_PHASE1_WORDS_Y_OFFSET)
+        for i, (orig_id, text) in enumerate(indexed_words):
+            word_width = debat_phase1_word_width(text)
+
+            if current_x != DEBAT_PHASE1_WORD_BANK_START_X and (current_x + word_width) > row_end:
+                current_x = DEBAT_PHASE1_WORD_BANK_START_X
+                current_y += DEBAT_PHASE1_WORD_BANK_ROW_SPACING
+
+            hx = current_x
+            hy = current_y
+            current_x += word_width + DEBAT_PHASE1_WORD_BANK_GAP
 
             store.debat_phase1_words[orig_id] = {
                 "id": orig_id,
@@ -221,6 +231,10 @@ init python:
         clamped_time = max(0, min(DEBAT_PHASE1_TOTAL_TIME, int(time_left)))
         return int(round(500.0 * clamped_time / float(DEBAT_PHASE1_TOTAL_TIME)))
 
+    def debat_phase1_format_time(seconds):
+        seconds = int(max(0, seconds))
+        return "%02d:%02d" % (seconds // 60, seconds % 60)
+
 
 transform debat_phase1_float_a:
     yoffset 0
@@ -276,6 +290,12 @@ transform fa_success_flash:
     ease 0.22 alpha 0.2
     repeat
 
+transform fa_panel_scan:
+    alpha 0.18
+    xoffset -60
+    linear 2.8 xoffset 60
+    repeat
+
 transform fa_error_shake:
     xoffset 0
     linear 0.04 xoffset -8
@@ -288,33 +308,31 @@ transform fa_error_shake:
 init -2:
     style fa_h1 is default
     style fa_h1:
-        size 52
+        size 46
         color "#F2F6FF"
         text_align 0.5
-        # => suppression du double effet : un seul outline net
-        outlines [(3, "#000000AA", 0, 0)]
+        outlines [(2, "#000000AA", 0, 0)]
 
     style fa_h2 is default
     style fa_h2:
-        size 30
-        color "#CFE8FF"
+        size 24
+        color "#65D5FF"
         text_align 0.5
         outlines [(2, "#0A1D2B", 0, 0)]
 
     style fa_hint is default
     style fa_hint:
-        size 24
+        size 22
         color "#A8CFE4"
         text_align 0.5
         outlines [(1, "#07141F", 0, 0)]
 
     style fa_word is default
     style fa_word:
-        size 25
-        # Contraste ++
+        size 23
         color "#FFFFFF"
         text_align 0.5
-        outlines [(3, "#000000CC", 0, 0)]
+        outlines [(2, "#000000CC", 0, 0)]
 
     style fa_btn_text is default
     style fa_btn_text:
@@ -361,139 +379,294 @@ screen debat_phase1_opening():
     elif len(debat_phase1_slot_layout) != len(debat_phase1_slots):
         $ debat_phase1_refresh_slot_layout()
 
+    $ fa_filled_count = sum(1 for slot_word_id in debat_phase1_slots if slot_word_id is not None)
+    $ fa_total_slots = max(1, len(debat_phase1_slots))
+    $ fa_time_text = debat_phase1_format_time(fa_time_left)
+    $ fa_timer_width = int(184 * max(0, fa_time_left) / float(max(1, DEBAT_PHASE1_TOTAL_TIME)))
+
     fixed:
-        add Solid("#050810")
+        add Solid("#020711")
 
-        # Vertical grid overlay
-        fixed:
-            xfill True
-            yfill True
-            for gx in range(0, 1921, 64):
-                add Solid("#1CB7D111", xsize=1, ysize=1080):
-                    xpos gx
-                    ypos 0
-            for gx2 in range(32, 1921, 64):
-                add Solid("#22D6F208", xsize=1, ysize=1080):
-                    xpos gx2
-                    ypos 0
+        add "gui/day3/vote_phase2/bg_overlay.png":
+            alpha 0.20
 
-        # Faint texture/noise style overlay
-        fixed:
-            xfill True
-            yfill True
-            for ny in range(0, 1081, 36):
-                add Solid("#D8F7FF03", xsize=1920, ysize=1):
-                    xpos 0
-                    ypos ny
+        for gx in range(48, 1921, 96):
+            add Solid("#2A9CCD14", xsize=1, ysize=1080):
+                xpos gx
+                ypos 0
+        for gy in range(40, 1081, 72):
+            add Solid("#2A9CCD10", xsize=1920, ysize=1):
+                xpos 0
+                ypos gy
 
-        # Vignette approximation
-        add Solid("#00000040", xsize=1920, ysize=80):
+        add Solid("#00000058", xsize=1920, ysize=86):
             xpos 0
             ypos 0
-        add Solid("#00000044", xsize=1920, ysize=80):
+        add Solid("#00000066", xsize=1920, ysize=150):
             xpos 0
-            ypos 1000
-        add Solid("#00000030", xsize=90, ysize=1080):
+            ypos 930
+        add Solid("#00000036", xsize=90, ysize=1080):
             xpos 0
             ypos 0
-        add Solid("#00000030", xsize=90, ysize=1080):
+        add Solid("#00000036", xsize=90, ysize=1080):
             xpos 1830
             ypos 0
 
-    frame:
-        xalign 0.5
-        yalign 0.03
-        xsize 1720
-        ypadding 14
-        background Solid("#0A1622CC")
+    fixed:
+        xpos 34
+        ypos 28
+        xysize (820, 82)
 
-        vbox:
-            spacing 6
-            # Sous-titre supprimé : on garde juste le titre
-            text "Fatal Assembly":
-                xalign 0.0
-                style "fa_h1"
+        add Solid("#06111DD8", xsize=820, ysize=82)
+        add Solid("#5DCBFFAA", xsize=4, ysize=62):
+            xpos 0
+            ypos 10
+        text "▽":
+            xpos 24
+            ypos -6
+            size 68
+            color "#BFD9EA"
+            outlines [(2, "#020711", 0, 0)]
+        text "FATAL ASSEMBLY":
+            xpos 96
+            ypos -2
+            size 42
+            color "#EAF4FF"
+            bold True
+            outlines [(2, "#020711", 0, 0)]
+        text "RECONSTRUISEZ LE VÉRITABLE TEXTE":
+            xpos 100
+            ypos 52
+            size 20
+            color "#9BCDEB"
+            outlines [(1, "#020711", 0, 0)]
+        add Solid("#53CFFF", xsize=128, ysize=6):
+            xpos 412
+            ypos 60
+        add Solid("#53CFFF99", xsize=28, ysize=6):
+            xpos 548
+            ypos 60
 
-    add Solid("#38DFFF", xsize=1680, ysize=2):
-        xalign 0.5
-        ypos 120
-
-    frame:
-        xpos 1860
-        ypos 24
+    text "ARCHIVE // ANALYSE DE TEXTE":
+        xpos 1542
+        ypos 32
         xanchor 1.0
-        ypadding 12
-        xpadding 16
-        background Solid("#0A1622DD")
+        size 20
+        color "#6F8BA2"
+        outlines [(1, "#020711", 0, 0)]
+    add Solid("#4FC8FF", xsize=114, ysize=4):
+        xpos 1572
+        ypos 60
+    add Solid("#4FC8FF88", xsize=28, ysize=4):
+        xpos 1700
+        ypos 60
 
-        vbox:
-            spacing 10
-            xalign 1.0
+    frame:
+        xpos 34
+        ypos 126
+        xsize 820
+        ysize 180
+        background Solid("#071421E8")
+        padding (18, 18)
 
-            if fa_time_left <= 10:
-                text "[fa_time_left]s" at fa_btn_focus_pulse:
-                    xalign 1.0
-                    size 48
-                    color "#FF4D6D"
-                    outlines [(2, "#000000AA", 0, 0)]
-            elif fa_time_left <= 30:
-                text "[fa_time_left]s":
-                    xalign 1.0
-                    size 44
-                    color "#FFD166"
-                    outlines [(2, "#000000AA", 0, 0)]
-            else:
-                text "[fa_time_left]s":
-                    xalign 1.0
-                    size 42
+        fixed:
+            add Solid("#3EBEFF99", xsize=3, ysize=156):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF66", xsize=784, ysize=1):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF35", xsize=784, ysize=1):
+                xpos 0
+                ypos 155
+            frame:
+                xpos 16
+                ypos 0
+                xsize 156
+                ysize 156
+                background Solid("#0D253BEE")
+                padding (0, 0)
+                add "images/character/kami/analyse.png":
+                    xysize (156, 156)
+                    alpha 0.92
+            vbox:
+                xpos 198
+                ypos 8
+                spacing 8
+                text "KAMI":
+                    size 22
+                    color "#5FD5FF"
+                    bold True
+                    outlines [(1, "#020711", 0, 0)]
+                text "Alors, médiateur...":
+                    size 24
                     color "#F2F6FF"
-                    outlines [(2, "#000000AA", 0, 0)]
+                    outlines [(1, "#020711", 0, 0)]
+                if fa_pressure_comment:
+                    text kd_tr(fa_pressure_comment):
+                        size 21
+                        color "#DCEBFA"
+                        xmaximum 560
+                        line_spacing 4
+                        outlines [(1, "#020711", 0, 0)]
+                else:
+                    text "Remettez les mots dans le bon ordre.\nMontrez-moi que vous comprenez vraiment ce que vous votez.":
+                        size 22
+                        color "#DCEBFA"
+                        line_spacing 4
+                        outlines [(1, "#020711", 0, 0)]
 
-            if fa_pressure_comment:
-                frame:
-                    xalign 1.0
-                    background Solid("#FFFFFFFF")
-                    padding (14, 12)
+    frame:
+        xpos 884
+        ypos 126
+        xsize 1002
+        ysize 180
+        background Solid("#071421E8")
+        padding (22, 18)
 
-                    text "[fa_pressure_comment]":
-                        size 20
-                        color "#1A2530"
-                        xalign 0.0
-                        xmaximum 420
-                        outlines []
+        fixed:
+            add Solid("#3EBEFF99", xsize=3, ysize=156):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF66", xsize=956, ysize=1):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF35", xsize=956, ysize=1):
+                xpos 0
+                ypos 155
+            vbox:
+                xpos 22
+                ypos 4
+                spacing 10
+                hbox:
+                    spacing 12
+                    text "●":
+                        size 28
+                        color "#62D9FF"
+                    text "OBJECTIF":
+                        size 26
+                        color "#EAF4FF"
+                        bold True
+                        outlines [(1, "#020711", 0, 0)]
+                text "Glissez-déposez les mots pour reconstituer la phrase exacte du texte officiel.":
+                    size 23
+                    color "#E7F0FA"
+                    xmaximum 650
+                    outlines [(1, "#020711", 0, 0)]
+                text "Chaque placement compte : une proposition propre donne un meilleur résultat.":
+                    size 19
+                    color "#91AABD"
+                    xmaximum 650
+                    outlines [(1, "#020711", 0, 0)]
+            fixed:
+                xpos 766
+                ypos 4
+                xysize (164, 146)
+                add Solid("#020A13EE", xsize=164, ysize=146)
+                add Solid("#FFB42E", xsize=10, ysize=120):
+                    xpos 140
+                    ypos 13
+                add Solid("#173149", xsize=184, ysize=8):
+                    xpos -10
+                    ypos 130
+                add Solid("#FFD35C", xsize=fa_timer_width, ysize=8):
+                    xpos -10
+                    ypos 130
+                text "TEMPS\nRESTANT":
+                    xpos 0
+                    ypos 18
+                    xsize 136
+                    text_align 0.5
+                    size 18
+                    color "#9BCDEB"
+                    line_spacing 2
+                    outlines [(1, "#020711", 0, 0)]
+                text "[fa_time_text]":
+                    xpos 0
+                    ypos 74
+                    xsize 136
+                    text_align 0.5
+                    size 36
+                    color ("#FF4D6D" if fa_time_left <= 10 else "#F4F8FF")
+                    bold True
+                    outlines [(2, "#020711", 0, 0)]
 
-    use mk_challenge_hud([
-        ("Sans réinitialiser", False, debat_phase1_resets > 0),
-        ("Aucun mot mal placé", False, debat_phase1_wrong_drops > 0),
-        ("Fini avec +50% du temps", False, fa_time_left < DEBAT_PHASE1_TOTAL_TIME / 2),
-    ], 24, 830)
+    frame:
+        xpos 34
+        ypos DEBAT_PHASE1_BANK_Y
+        xsize 1852
+        ysize 266
+        background Solid("#071421E8")
+        padding (20, 28)
+
+        fixed:
+            add Solid("#3EBEFFAA", xsize=3, ysize=232):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF66", xsize=1810, ysize=1):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF35", xsize=1810, ysize=1):
+                xpos 0
+                ypos 231
+            add Solid("#65D5FF24", xsize=120, ysize=232) at fa_panel_scan
+            text "MOTS DISPONIBLES":
+                xpos 22
+                ypos -12
+                size 24
+                color "#65D5FF"
+                bold True
+                outlines [(1, "#020711", 0, 0)]
+            add Solid("#65D5FF", xsize=92, ysize=5):
+                xpos 256
+                ypos 0
+
+    frame:
+        xpos 34
+        ypos 680
+        xsize 1852
+        ysize 218
+        background Solid("#06101CE8")
+        padding (20, 28)
+
+        fixed:
+            add Solid("#3EBEFFAA", xsize=3, ysize=184):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF66", xsize=1810, ysize=1):
+                xpos 0
+                ypos 0
+            add Solid("#3EBEFF35", xsize=1810, ysize=1):
+                xpos 0
+                ypos 183
+            text "VOTRE PHRASE":
+                xpos 22
+                ypos -12
+                size 24
+                color "#65D5FF"
+                bold True
+                outlines [(1, "#020711", 0, 0)]
+            text "[fa_filled_count]/[fa_total_slots] mots placés":
+                xpos 1548
+                ypos -8
+                size 18
+                color "#7895AA"
+                outlines [(1, "#020711", 0, 0)]
+
     use mk_help_button("tuto_debat_phase1")
 
-    # Panel for word bank visuals (abaissé)
-    frame:
-        xpos 56
-        ypos DEBAT_PHASE1_BANK_Y
-        xsize 1808
-        ysize 370
-        background Solid("#1024348A")
-        padding (12, 12)
-
-        frame:
-            xfill True
-            yfill True
-            background Solid("#0B152380")
-
-    # Zone banque (drop) (abaissée)
-    drag:
-        drag_name "word_bank"
-        draggable False
-        droppable True
-        xpos 60
-        ypos (DEBAT_PHASE1_BANK_Y - 10)
-        xsize 1800
-        ysize 370
-
     draggroup:
+        xsize 1920
+        ysize 1080
+
+        drag:
+            drag_name "word_bank"
+            draggable False
+            droppable True
+            xpos 48
+            ypos DEBAT_PHASE1_BANK_Y
+            xsize 1824
+            ysize 266
 
         # --- SLOTS ---
         for i in range(len(debat_phase1_slots)):
@@ -558,13 +731,6 @@ screen debat_phase1_opening():
                 $ wy = word["home_y"]
 
             $ float_at = None
-            if slot_index is None:
-                if word_id % 3 == 0:
-                    $ float_at = debat_phase1_float_a
-                elif word_id % 3 == 1:
-                    $ float_at = debat_phase1_float_b
-                else:
-                    $ float_at = debat_phase1_float_c
 
             $ is_word_wrong = False
             if slot_index is not None and not debat_phase1_success:
@@ -572,17 +738,19 @@ screen debat_phase1_opening():
 
             # Largeur stable pour éviter les tiles "bizarres"
             $ ww = debat_phase1_word_width(word["text"])
-            $ th = 46
+            $ th = 54
 
             drag:
                 drag_name ("word_%d" % word_id)
                 xpos wx
                 ypos wy
+                xsize ww
+                ysize th
                 draggable True
                 droppable False
+                drag_raise True
+                drag_handle (0, 0, ww, th)
                 dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
-                hovered SetScreenVariable("fa_hovered_word", word_id)
-                unhovered SetScreenVariable("fa_hovered_word", None)
 
                 fixed:
                     xsize ww
@@ -598,68 +766,77 @@ screen debat_phase1_opening():
                         at fa_tile_shadow
 
                     # main tile
-                    if fa_hovered_word == word_id:
-                        frame:
-                            xsize ww
-                            ysize th
-                            background Solid("#1B2D43E8")
-                            at fa_tile_hover
+                    frame:
+                        xsize ww
+                        ysize th
+                        background Solid("#1B2D43E8")
+                        at fa_tile_idle
 
-                            fixed:
-                                xfill True
-                                yfill True
+                        fixed:
+                            xfill True
+                            yfill True
 
-                                add Solid("#74EFFF18", xsize=ww - 2, ysize=2):
-                                    xpos 1
-                                    ypos 1
+                            add Solid("#74EFFF18", xsize=ww - 2, ysize=2):
+                                xpos 1
+                                ypos 1
 
-                                if debat_phase1_success:
-                                    add Solid("#61F0FF44") at fa_success_flash
-                                elif is_word_wrong:
-                                    add Solid("#FF4D5E22") at fa_error_shake
+                            if debat_phase1_success:
+                                add Solid("#61F0FF44") at fa_success_flash
+                            elif is_word_wrong:
+                                add Solid("#FF4D5E22") at fa_error_shake
 
-                                text word["text"]:
-                                    style "fa_word"
-                                    xalign 0.5
-                                    yalign 0.5
-                    else:
-                        frame:
-                            xsize ww
-                            ysize th
-                            background Solid("#1B2D43E8")
-                            at fa_tile_idle
+                            text kd_tr(word["text"]):
+                                style "fa_word"
+                                xalign 0.5
+                                yalign 0.5
 
-                            fixed:
-                                xfill True
-                                yfill True
+    fixed:
+        xpos 34
+        ypos 930
+        xysize (1852, 112)
 
-                                add Solid("#74EFFF18", xsize=ww - 2, ysize=2):
-                                    xpos 1
-                                    ypos 1
-
-                                if debat_phase1_success:
-                                    add Solid("#61F0FF44") at fa_success_flash
-                                elif is_word_wrong:
-                                    add Solid("#FF4D5E22") at fa_error_shake
-
-                                text word["text"]:
-                                    style "fa_word"
-                                    xalign 0.5
-                                    yalign 0.5
-
-    hbox:
-        xalign 0.5
-        yalign 0.94
-        spacing 24
-
-        textbutton "Réinitialiser":
-            action Function(debat_phase1_setup, count_reset=True)
+        textbutton "↻  RÉINITIALISER":
+            xpos 0
+            ypos 18
+            xsize 300
+            ysize 76
+            action [Play("sound", "audio/sfx_glitch.mp3"), Function(debat_phase1_setup, count_reset=True)]
             style "fa_btn"
             text_style "fa_btn_text"
 
-        textbutton "Valider la proposition":
+        frame:
+            xpos 560
+            ypos 30
+            xsize 720
+            ysize 54
+            background Solid("#071421D8")
+            padding (18, 12)
+
+            hbox:
+                spacing 12
+                yalign 0.5
+                text "— PROGRESSION":
+                    size 18
+                    color "#6F8BA2"
+                    outlines [(1, "#020711", 0, 0)]
+                for pi in range(len(debat_phase1_slots)):
+                    $ pip_color = "#65D5FF" if pi < fa_filled_count else "#162C42"
+                    $ pip_edge = "#9BE8FF" if pi < fa_filled_count else "#41627A"
+                    fixed:
+                        xsize 18
+                        ysize 18
+                        add Solid(pip_edge, xsize=18, ysize=18)
+                        add Solid(pip_color, xsize=12, ysize=12):
+                            xpos 3
+                            ypos 3
+
+        textbutton "✓  VALIDER":
+            xpos 1540
+            ypos 8
+            xsize 312
+            ysize 88
             sensitive debat_phase1_success
-            action Return({"success": True, "time_left": fa_time_left})
+            action [Play("sound", "audio/sfx_victory.mp3"), Return({"success": True, "time_left": fa_time_left})]
             style "fa_btn"
             text_style "fa_btn_text"
             if debat_phase1_success:
@@ -700,7 +877,7 @@ transform fa_demo_check_pop:
 
 screen tuto_debat_phase1(as_overlay=False):
     use mk_tuto_chrome("FATAL ASSEMBLY", [
-        ("Lis la banque de mots", "Les mots de la proposition flottent en haut, dans le désordre."),
+        ("Lis la banque de mots", "Les mots de la proposition sont rangés dans le panneau du haut, dans le désordre."),
         ("Glisse chaque mot", "Fais glisser les mots dans les emplacements, dans le bon ordre."),
         ("Valide avant la fin du chrono", "Quand la phrase est correcte, le bouton de validation s'active. Kami commente ton retard..."),
     ], "tuto_debat_phase1", as_overlay):
@@ -735,7 +912,7 @@ screen tuto_debat_phase1(as_overlay=False):
                 background Solid("#1B2D43F0")
                 text "le" align (0.5, 0.5) size 24 color "#FFFFFF" bold True
 
-            text "✓" at fa_demo_check_pop:
+            text "OK" at fa_demo_check_pop:
                 xpos 335
                 ypos 300
                 size 48
@@ -750,10 +927,11 @@ screen tuto_debat_phase1(as_overlay=False):
 # ------------------------------------------------------------
 label debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY", target=None, with_intro_anim=True):
 
-    if with_intro_anim:
-        call FA_START_ANIM
+    call mk_tutorial("debat_phase1", "tuto_debat_phase1") from _call_mk_tutorial
 
-    call mk_tutorial("debat_phase1", "tuto_debat_phase1")
+    if with_intro_anim:
+        call FA_START_ANIM from _call_FA_START_ANIM
+
     $ mk_reset_retries(mg_id)
 
 label .attempt:
@@ -761,7 +939,10 @@ label .attempt:
     $ fa_run_result = renpy.call_screen("debat_phase1_opening")
 
     if not fa_run_result.get("success"):
-        call mk_fail_retry(title, mg_id)
+        call mk_fail_retry(title, mg_id) from _call_mk_fail_retry
+        if not _return:
+            $ debat_phase1_last_result = {"success": False, "time_left": 0, "kamyz": 0}
+            return "D"
         jump .attempt
 
     python:
@@ -791,7 +972,7 @@ label .attempt:
         challenges=fa_run_challenges,
         mg_id=mg_id,
         retries=mk_get_retries(mg_id),
-    )
+    ) from _call_mk_show_results
     return _return
 
 

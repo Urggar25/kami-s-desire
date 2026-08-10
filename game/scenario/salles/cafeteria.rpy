@@ -44,41 +44,51 @@ screen pnc_cafeteria():
     add Solid("#000")
     use room_scene_background("cafeteria")
     use room_scene_interactions("cafeteria")
+
+    if current_scene_active == "_2_ROUTE_OBSERVATION" and not day2_observation_route_elen_seen:
+        imagebutton:
+            idle Transform(character_image("elen", "content"), zoom=1.00)
+            hover Transform(character_image("elen", "joie"), zoom=1.00)
+            focus_mask True
+            xalign 0.50
+            yalign 1.00
+            action Jump("_2_APRES_MIDI_ELEN")
+
     if social_free_time_active() and mara_link in [0, 2, 4]:
         imagebutton:
-            idle Transform(character_image("mara", "sourire"), zoom=0.75)
-            hover Transform(character_image("mara", "neutre"), zoom=0.75)
+            idle Transform(character_image("mara", "sourire"), zoom=1.00)
+            hover Transform(character_image("mara", "neutre"), zoom=1.00)
             focus_mask True
             xalign 0.15
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("MARA_LINK_INTERACT")]
 
 
     if social_free_time_active() and lysa_link == 1:
         imagebutton:
-            idle Transform(character_image("lysa", "sourire"), zoom=0.75)
-            hover Transform(character_image("lysa", "taquin"), zoom=0.75)
+            idle Transform(character_image("lysa", "sourire"), zoom=1.00)
+            hover Transform(character_image("lysa", "taquin"), zoom=1.00)
             focus_mask True
             xalign 0.82
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("LYSA_LINK_INTERACT")]
 
     if social_free_time_active() and elen_link == 1:
         imagebutton:
-            idle Transform(character_image("elen", "joie"), zoom=0.75)
-            hover Transform(character_image("elen", "content"), zoom=0.75)
+            idle Transform(character_image("elen", "joie"), zoom=1.00)
+            hover Transform(character_image("elen", "content"), zoom=1.00)
             focus_mask True
             xalign 0.50
-            yalign 0.30
+            yalign 1.00
             action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("ELEN_LINK_INTERACT")]
 
     if j10011_waiting_elias:
         imagebutton:
-            idle Transform(character_image("elias", "fatigue"), zoom=0.75)
-            hover Transform(character_image("elias", "inquiet"), zoom=0.75)
+            idle Transform(character_image("elias", "fatigue"), zoom=1.00)
+            hover Transform(character_image("elias", "inquiet"), zoom=1.00)
             focus_mask True
             xalign 0.58
-            yalign 0.30
+            yalign 1.00
             action Jump("_10_0_1_1_CAFETERIA_ELIAS")
 
 
@@ -102,8 +112,12 @@ label cafeteria1_table:
 
 label cafeteria1_television:
 
+    if day_number() == 6 and social_free_time_active() and not j601_border_news_seen:
+        call _6_0_1_TV_FRONTIERES from _call_j601_tv_frontieres_cafeteria
+        jump CAFETERIA_TP
+
     if day_number() == 4:
-        call screen day4_news_screen()
+        call day4_optional_news from _call_day4_optional_news_cafeteria
         jump CAFETERIA_TP
 
     think "Les informations défilent sans rien m'apprendre de neuf."

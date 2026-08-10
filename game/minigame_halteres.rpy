@@ -134,20 +134,20 @@ init python:
             if abs(val - center) <= store.mg_perfect_margin:
                 store.mg_perfects += 1
                 store.mg_progress += 2 + combo_bonus
-                store.mg_feedback = ("PARFAIT ! x%d" % store.mg_combo) if store.mg_combo >= 2 else "PARFAIT !"
+                store.mg_feedback = (kd_tr("PARFAIT !") + " x%d" % store.mg_combo) if store.mg_combo >= 2 else kd_tr("PARFAIT !")
                 store.mg_feedback_color = "#5ad45a"
                 store.mg_flash = 0.18
                 renpy.play("audio/sfx_clap.mp3", channel="sound")
             else:
                 store.mg_progress += 1 + combo_bonus
-                store.mg_feedback = ("Correct. x%d" % store.mg_combo) if store.mg_combo >= 2 else "Correct."
+                store.mg_feedback = (kd_tr("Correct.") + " x%d" % store.mg_combo) if store.mg_combo >= 2 else kd_tr("Correct.")
                 store.mg_feedback_color = "#f2c94c"
                 renpy.play("audio/sfx_beep.mp3", channel="sound")
         else:
             store.mg_misses += 1
             store.mg_combo = 0
             store.mg_energy = max(0.0, store.mg_energy - 0.15)
-            store.mg_feedback = "Raté..."
+            store.mg_feedback = kd_tr("Raté...")
             store.mg_feedback_color = "#ff6b6b"
             renpy.play("audio/sfx_drop.mp3", channel="sound")
 
@@ -264,8 +264,8 @@ screen minijeu_halteres():
 
         vbox:
             spacing 8
-            text "[mg_title]" style "mg_title_text" xalign 0.5 font mg_font
-            text "[mg_subtitle]" style "mg_subtitle_text" xalign 0.5 font mg_font
+            text kd_tr(mg_title) style "mg_title_text" xalign 0.5 font mg_font
+            text kd_tr(mg_subtitle) style "mg_subtitle_text" xalign 0.5 font mg_font
 
     hbox:
         xalign 0.5
@@ -315,7 +315,7 @@ screen minijeu_halteres():
                             text "COMBO x[mg_combo]" style "mg_label_text" color "#5ad45a" font mg_font at mg_hud_pulse
                     text "[mg_reps]/[mg_target_reps]" style "mg_value_text" xalign 0.5 font mg_font
                     if mg_feedback:
-                        text "[mg_feedback]" at mg_feedback_pop style "mg_subtitle_text" color mg_feedback_color xalign 0.5 font mg_font
+                        text kd_tr(mg_feedback) at mg_feedback_pop style "mg_subtitle_text" color mg_feedback_color xalign 0.5 font mg_font
 
             frame:
                 xsize 470
@@ -476,8 +476,8 @@ label minijeu_halteres_run(mg_id="halteres", title=None, subtitle=None, bg=None,
     $ mg_reset()
     $ mg_skip_scene_pick = mg_skip_scene_pick or (not with_scene)
 
-    call mk_tutorial("halteres", "tuto_halteres")
-    call mk_countdown
+    call mk_tutorial("halteres", "tuto_halteres") from _call_mk_tutorial_2
+    call mk_countdown from _call_mk_countdown
     call screen minijeu_halteres
 
     $ mg_was_success = mg_is_successful()
@@ -496,14 +496,14 @@ label minijeu_halteres_run(mg_id="halteres", title=None, subtitle=None, bg=None,
         ],
         challenges=mg_final_challenges(),
         mg_id=mg_id,
-    )
+    ) from _call_mk_show_results_2
 
     $ quick_menu = mg_quick_menu_prev
     jump minijeu_halteres_after
 
 # Compatibilité : ancien point d'entrée (jour 2 gymnase)
 label minijeu_halteres:
-    call minijeu_halteres_run(mg_id="halteres")
+    call minijeu_halteres_run(mg_id="halteres") from _call_minijeu_halteres_run
     return
 
 label minijeu_halteres_after:
@@ -512,8 +512,10 @@ label minijeu_halteres_after:
     $ _mg_gain_chance = 0.10 + (0.45 if mg_was_success else 0.0) + min(0.20, mg_combo_max * 0.03)
     $ gained_physique = False
     if renpy.random.random() < _mg_gain_chance:
-        $ stat_physique += 1
-        $ gained_physique = True
+        # La tablette lit le système de statistiques permanent. L'ancienne
+        # variable reste synchronisée pour les sauvegardes et scripts existants.
+        $ _physique_level, gained_physique = mod_stat("physique", 1)
+        $ stat_physique = _physique_level
 
     if gained_physique:
         show screen physique_gain_anim
@@ -548,9 +550,7 @@ label scene_mg_sexy_1:
     return
 
 label sport_event_001:
-    $ unlock_gallery_image("sport001")
-
-    scene sport001 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Il n’y a plus rien autour d'Elias."
@@ -575,9 +575,7 @@ label sport_event_001:
     return
 
 label sport_event_002:
-    $ unlock_gallery_image("sport002")
-
-    scene sport002 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Le bruit de leurs mains résonne dans le gymnase."
@@ -612,9 +610,7 @@ label sport_event_002:
     return
 
 label sport_event_003:
-    $ unlock_gallery_image("sport003")
-
-    scene sport003 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "La barre repose sur ses épaules."
@@ -650,9 +646,7 @@ label sport_event_003:
     return
 
 label sport_event_004:
-    $ unlock_gallery_image("sport004")
-
-    scene sport004 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Elen et Ryn sont là. Ils ne parlent pas."
@@ -686,9 +680,7 @@ label sport_event_004:
     return
 
 label sport_event_005:
-    $ unlock_gallery_image("sport005")
-
-    scene sport005 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Le gymnase est devenu… autre chose."
@@ -731,9 +723,7 @@ label sport_event_006:
     if nsfw_content_locked():
         return
 
-    $ unlock_gallery_image("sport006")
-
-    scene sport006 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Le gymnase est presque vide maintenant. Juste elle."
@@ -765,9 +755,7 @@ label sport_event_007:
     if nsfw_content_locked():
         return
 
-    $ unlock_gallery_image("sport007")
-
-    scene sport007 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Nyra est encore sur le banc, torse bombé, respiration lourde. La séance l’a vraiment cuite."
@@ -797,9 +785,7 @@ label sport_event_008:
     if nsfw_content_locked():
         return
 
-    $ unlock_gallery_image("sport008")
-
-    scene sport008 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Le tapis s’est enfin arrêté. Lysa descend, jambes encore tremblantes de l’effort."
@@ -827,9 +813,7 @@ label sport_event_009:
     if nsfw_content_locked():
         return
 
-    $ unlock_gallery_image("sport009")
-
-    scene bg_gymnase_douche at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "La séance est finie. J'ai le corps lourd, muscles chauds. Je range les affaires en silence."
@@ -837,7 +821,7 @@ label sport_event_009:
     "Je pousse la porte entrouverte. La vapeur flotte déjà dans l’air."
     "Et là, elle est là."
 
-    scene sport009 at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen with dissolve
 
     "De loin. Dos tourné. Sous le jet principal. L'eau cascade sur son dos, sur ses hanches, sur ses fesses rondes et luisantes."
     "Les cheveux blancs collés à la peau, les gouttes qui glissent le long de sa colonne et disparaissent dans le creux de ses reins."

@@ -38,8 +38,7 @@ label sael_link_1:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     scene bg_sas at adaptive_fullscreen
 
-    $ showP("sael", "reflechit", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("sael", "reflechit", 0.70), ("noam", "reflexion", 0.24)])
 
     "Sael ajuste les lanières de ses gants avec une précision rituelle."
     noam "Tu fais ça à chaque fois que tu t'arrêtes."
@@ -62,8 +61,7 @@ label sael_link_1:
     sael "À sept, on apprend à porter les autres."
     sael "À huit, on apprend à se taire."
     noam "Pourquoi le silence est si important ?"
-    $ showP("sael", "raison", 0.70)
-    sael "Parce qu'un souffle mal placé coûte plus qu'un mot mal choisi."
+    sael raison "Parce qu'un souffle mal placé coûte plus qu'un mot mal choisi."
     noam "Vous vous entraîniez au combat tous les jours ?"
     sael "Tous les jours."
     sael "Course en pente."
@@ -98,8 +96,7 @@ label sael_link_1:
     noam "Sur peau ?"
     sael "Scarifications de passage."
     noam "Tu en as ?"
-    $ showP("sael", "reflechit", 0.70)
-    sael "Oui."
+    sael reflechit "Oui."
     sael "Ici pour l'endurance."
     sael "Là pour la garde de nuit."
     sael "Et celle-ci pour la traversée sans eau."
@@ -133,8 +130,7 @@ label sael_link_1:
     sael "On lui confie la veille solitaire."
     sael "Correction."
     noam "Tu me corriges, parfois ?"
-    $ showP("sael", "determine", 0.70)
-    sael "Oui."
+    sael determine "Oui."
     noam "Comment ?"
     sael "Je te laisse finir tes phrases inutiles."
     noam "Aïe."
@@ -161,8 +157,7 @@ label sael_link_2:
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("sael", "neutre", 0.70)
-    $ showP("noam", "hesitation", 0.24)
+    $ showGroup([("sael", "neutre", 0.70), ("noam", "hesitation", 0.24)])
 
     "La baie d'observation reflète les lumières froides de la station."
     noam "Tu dis souvent 'Kami' avec un ton... presque religieux."
@@ -179,8 +174,7 @@ label sael_link_2:
     noam "Mais Kami est faite de code, de réseaux, de structures humaines."
     sael "Et pourtant elle juge des masses, redistribue des vies, impose des lois."
     noam "Tu appelles ça de la foi ?"
-    $ showP("sael", "raison", 0.70)
-    sael "J'appelle ça de la reconnaissance."
+    sael raison "J'appelle ça de la reconnaissance."
     sael "La reconnaissance d'un rapport de force absolu."
     noam "Donc c'est politique."
     sael "C'est métaphysique et pratique."
@@ -216,8 +210,7 @@ label sael_link_2:
     noam "Et pour toi, cet axe c'est Kami."
     sael "Oui."
     noam "Même si Kami pourrait sacrifier ta tribu entière ?"
-    $ showP("sael", "determine", 0.70)
-    sael "Surtout pour cette raison."
+    sael determine "Surtout pour cette raison."
     noam "Comment ça 'surtout' ?"
     sael "Parce qu'une puissance capable d'écraser doit être traitée sans naïveté."
     sael "La nommer divinité m'interdit l'arrogance."
@@ -256,8 +249,7 @@ label sael_link_2:
     noam "Et sa place c'est où ?"
     sael "Après l'analyse."
     noam "J'y arriverai jamais, je crois."
-    $ showP("sael", "reflechit", 0.70)
-    sael "Tu n'as pas besoin de devenir moi."
+    sael reflechit "Tu n'as pas besoin de devenir moi."
     sael "Tu dois juste devenir fiable."
     noam "Pour toi ?"
     sael "Pour toi."
@@ -281,8 +273,7 @@ label sael_link_3:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_gymnase at adaptive_fullscreen
 
-    $ showP("sael", "mefiant", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("sael", "mefiant", 0.70), ("noam", "reflexion", 0.24)])
 
     "Au gymnase, Sael observe les impacts sur les sacs de frappe comme on lit un rapport médical."
     noam "Tu analyses leurs coups ?"
@@ -305,8 +296,7 @@ label sael_link_3:
     sael "Nécessaire, jamais suffisante."
     sael "Parce que tu cherches une réponse simple."
     sael "Il n'y en a pas."
-    $ showP("sael", "raison", 0.70)
-    sael "Fort : capable de tenir, décider, réparer, et transmettre."
+    sael raison "Fort : capable de tenir, décider, réparer, et transmettre."
     noam "Transmettre ?"
     sael "Si ta force meurt avec toi, elle n'a servi qu'à toi."
     noam "Et quelqu'un de gentil mais fragile ?"
@@ -314,8 +304,7 @@ label sael_link_3:
     sael "La fragilité sans prise en charge est dangereuse."
     noam "Tu vois, c'est ce que je te reproche."
     noam "Tu traites les faibles comme des risques."
-    $ showP("sael", "triste", 0.70)
-    sael "Je traite la faiblesse non traitée comme un risque."
+    sael triste "Je traite la faiblesse non traitée comme un risque."
     sael "Les faibles, eux, sont des responsabilités."
     sael "Elle est fondamentale."
     noam "Pourquoi ça t'inquiète autant ?"
@@ -332,8 +321,7 @@ label sael_link_3:
     sael "Mais tu apprends vite."
     noam "Ça compense ?"
     sael "Partiellement."
-    $ showP("sael", "reflechit", 0.70)
-    sael "D'accord."
+    sael reflechit "D'accord."
     sael "Tu tiens mieux la pression que la semaine dernière."
     noam "Merci."
     sael "Ne me force pas à le répéter."
@@ -358,8 +346,7 @@ label sael_link_3:
     noam "Tu fais des équations humaines."
     sael "C'est ainsi que l'on survit ici."
     noam "Tu as déjà eu peur d'être, toi, la faille ?"
-    $ showP("sael", "culpabilite", 0.70)
-    sael "Oui."
+    sael culpabilite "Oui."
     noam "Quand ?"
     sael "Quand ma colère a parlé avant mon jugement."
     noam "Ça t'arrive ?"
@@ -375,8 +362,7 @@ label sael_link_3:
     sael "Protéger. Maintenir. Transmettre."
     noam "Toujours les mêmes mots."
     sael "Toujours la même direction."
-    $ showP("sael", "neutre", 0.70)
-    sael "C'est bien."
+    sael neutre "C'est bien."
     noam "C'est bien ?"
     sael "L'inquiétude juste maintient l'attention."
     noam "Et l'inquiétude excessive ?"
@@ -386,8 +372,7 @@ label sael_link_3:
     sael "L'évaluation ouvre une suite."
     sael "La condamnation ferme tout."
     noam "Et ta conclusion sur moi aujourd'hui ?"
-    $ showP("sael", "determine", 0.70)
-    sael "Tu es encore instable, mais tu n'es plus friable."
+    sael determine "Tu es encore instable, mais tu n'es plus friable."
     sael "C'en est un."
     "Sael reporte son regard sur les entraînements, attentive au moindre décalage de rythme."
     sael "Souviens-toi : la faiblesse avouée se soigne."
@@ -404,8 +389,7 @@ label sael_link_4:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("sael", "determine", 0.70)
-    $ showP("noam", "inquiet", 0.24)
+    $ showGroup([("sael", "determine", 0.70), ("noam", "inquiet", 0.24)])
 
     "Sur une table d'archive, Sael étale des plans annotés de trajets et de zones de rupture."
     noam "Tu as codé les secteurs en trois couleurs."
@@ -426,8 +410,7 @@ label sael_link_4:
     sael "Je ne décide pas de la valeur d'une vie."
     sael "Je décide de la viabilité d'une action."
     noam "Les gens ne sont pas des variables."
-    $ showP("sael", "raison", 0.70)
-    sael "Dans l'urgence, ignorer les variables tue plus de gens."
+    sael raison "Dans l'urgence, ignorer les variables tue plus de gens."
     noam "Tu pourrais au moins hésiter plus."
     sael "J'hésite avant."
     sael "Je tranche pendant."
@@ -453,8 +436,7 @@ label sael_link_4:
     sael "Prévoir, répartir, former, évacuer."
     sael "Pas improviser sous choc."
     noam "Et si la personne sacrifiée est quelqu'un que tu aimes ?"
-    $ showP("sael", "culpabilite", 0.70)
-    sael "Alors le prix est intérieur, mais le principe reste."
+    sael culpabilite "Alors le prix est intérieur, mais le principe reste."
     noam "Tu ferais ça pour ton propre sang ?"
     sael "Oui."
     noam "Comment tu peux vivre avec ça ?"
@@ -483,8 +465,7 @@ label sael_link_4:
     sael "La nausée est honnête."
     sael "Reste avec elle, mais travaille quand même."
     noam "Tu ne veux pas juste qu'on devienne froids comme toi ?"
-    $ showP("sael", "triste", 0.70)
-    sael "Je ne suis pas froide."
+    sael triste "Je ne suis pas froide."
     sael "Je suis contenue."
     noam "Différence ?"
     sael "Le froid ne sent rien."
@@ -505,8 +486,7 @@ label sael_link_4:
     noam "Tu es terrifiante et rassurante à la fois."
     sael "C'est une combinaison utile."
     noam "Tu voudrais que je retienne quoi ?"
-    $ showP("sael", "determine", 0.70)
-    sael "Que 'sacrifice' n'est pas un mot noble."
+    sael determine "Que 'sacrifice' n'est pas un mot noble."
     sael "C'est un mot d'échec contrôlé."
     sael "Il ne doit jamais devenir confortable."
     noam "Tu promets de ne jamais t'y habituer ?"
@@ -527,8 +507,7 @@ label sael_link_5:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
     scene bg_conclave at adaptive_fullscreen
 
-    $ showP("sael", "culpabilite", 0.70)
-    $ showP("noam", "surpris", 0.24)
+    $ showGroup([("sael", "culpabilite", 0.70), ("noam", "surpris", 0.24)])
 
     "Dans la salle du Conclave, l'emblème de Kami domine l'espace comme un œil immobile."
     noam "Tu le fixes depuis cinq minutes."
@@ -540,8 +519,7 @@ label sael_link_5:
     noam "De souffrir ?"
     sael "Non."
     noam "Alors de quoi ?"
-    $ showP("sael", "triste", 0.70)
-    sael "Du jugement de Kami."
+    sael triste "Du jugement de Kami."
     noam "Tu l'as déjà dit, mais j'ai du mal à saisir."
     noam "Pourquoi le jugement est pire que la mort ?"
     sael "Parce que la mort ferme une existence."
@@ -555,8 +533,7 @@ label sael_link_5:
     sael "Oui."
     sael "C'est le prix de la cohérence."
     noam "Tu as déjà été jugée indigne ?"
-    $ showP("sael", "culpabilite", 0.70)
-    sael "Une fois."
+    sael culpabilite "Une fois."
     noam "Qu'est-ce qui s'est passé ?"
     sael "Une évaluation de commandement."
     sael "J'ai protégé ma section."
@@ -586,8 +563,7 @@ label sael_link_5:
     sael "Selon les conséquences."
     sael "Selon la promesse que je fais aux miens."
     noam "Tu peux me dire cette promesse ?"
-    $ showP("sael", "determine", 0.70)
-    sael "Je ne vous mentirai pas sur le danger."
+    sael determine "Je ne vous mentirai pas sur le danger."
     sael "Je ne vous abandonnerai pas pour sauver mon image."
     sael "Je ne demanderai pas un sacrifice que je refuse de porter."
     noam "C'est... fort."
@@ -617,8 +593,7 @@ label sael_link_5:
     noam "Et la réponse ?"
     sael "Variable."
     sael "Mais je refuse qu'elle soit honteuse."
-    $ showP("sael", "reflechit", 0.70)
-    sael "De mes silences trop longs."
+    sael reflechit "De mes silences trop longs."
     sael "De certaines tendresses reportées."
     sael "Pas de mes décisions prises en pleine lumière."
     noam "Tu sais quoi... je te respecte encore plus."
@@ -627,14 +602,12 @@ label sael_link_5:
     play sound sfx_announce
     "Une annonce lointaine traverse la salle, puis le silence retombe."
     noam "Si Kami te donnait une seule grâce, tu demanderais quoi ?"
-    $ showP("sael", "triste", 0.70)
-    sael "D'être jugée sur l'ensemble, pas sur l'instant."
+    sael triste "D'être jugée sur l'ensemble, pas sur l'instant."
     noam "Pourquoi ?"
     sael "Parce qu'un instant peut mentir."
     sael "Une trajectoire, beaucoup moins."
     noam "Alors continue ta trajectoire, Sael."
-    $ showP("sael", "determine", 0.70)
-    sael "Je la continue."
+    sael determine "Je la continue."
     sael "Avec peur."
     sael "Avec lucidité."
     sael "Et sans baisser les yeux."

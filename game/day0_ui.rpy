@@ -23,12 +23,6 @@ transform d0_blink_fast:
     linear 0.22 alpha 0.15
     repeat
 
-transform d0_pulse_green:
-    alpha 0.0
-    linear 0.45 alpha 0.55
-    linear 0.45 alpha 0.0
-    repeat
-
 transform d0_sweep:
     yoffset 0
     alpha 0.0
@@ -37,12 +31,6 @@ transform d0_sweep:
     linear 0.12 alpha 0.0
     yoffset 0
     pause 0.18
-    repeat
-
-transform d0_selection_spin:
-    alpha 0.65
-    linear 0.28 alpha 1.0
-    linear 0.28 alpha 0.65
     repeat
 
 transform d0_stamp_appear:
@@ -58,40 +46,10 @@ transform d0_flash_update:
     linear 0.25 alpha 0.0
     linear 0.25 alpha 1.0
 
-transform d0_bar_fill(w=0):
-    xsize w
-
 transform d0_appear:
     alpha 0.0
     yoffset 8
     linear 0.22 alpha 1.0 yoffset 0
-
-transform d0_scanline_move:
-    ypos 0.0
-    linear 3.0 ypos 1.0
-    repeat
-
-# Flashback overlay
-transform d0_flashback_vignette:
-    alpha 0.0
-    linear 0.6 alpha 1.0
-
-transform d0_flashback_out:
-    alpha 1.0
-    linear 0.5 alpha 0.0
-
-transform d0_grain_scroll:
-    xpos 0 ypos 0
-    linear 8.0 xpos -40 ypos -30
-    linear 8.0 xpos 0 ypos 0
-    repeat
-
-transform d0_title_flash:
-    alpha 0.0
-    linear 0.15 alpha 1.0
-    pause 0.9
-    linear 0.2 alpha 0.0
-
 
 # =============================================================
 # TIMER — SYSTÈME DYNAMIQUE
@@ -483,7 +441,7 @@ screen day0_security_badge_scan():
                         # Validé
                         add Solid("#3BCC8218") xpos 109 ypos 53 xsize 232 ysize 308
 
-                        text "✓":
+                        text "OK":
                             xalign 0.5 ypos 130
                             size 68
                             color "#3BCC82"
@@ -767,7 +725,7 @@ screen day0_phone_override():
                     at d0_blink
 
             elif attempts == 1:
-                text "⚠":
+                text "!":
                     xalign 0.5 ypos 160
                     size 52
                     color "#F0A835"
@@ -968,7 +926,7 @@ screen day0_phone_override():
                         text_xalign 0.5
                         action [Play("sound", sfx_gresillement), SetScreenVariable("attempts", attempts + 1)]
                 else:
-                    text "···":
+                    text "...":
                         xalign 0.5 ypos 8
                         size 28
                         color "#3A5A6A"
@@ -989,7 +947,7 @@ screen day0_commandments_registry():
     default page = 0
 
     $ _cmd_title = day0_commandment_pages[page][0]
-    $ _cmd_text  = day0_commandment_pages[page][1]
+    $ _cmd_text  = kd_tr(day0_commandment_pages[page][1])
     $ _cmd_label = "%d / %d" % (page + 1, len(day0_commandment_pages))
 
     add Solid("#04060AEE")
@@ -1050,7 +1008,7 @@ screen day0_commandments_registry():
                                 bold True
                                 xminimum 24
 
-                            text "Commandement %s" % _pnum:
+                            text (kd_tr("Commandement %s") % _pnum):
                                 size 14
                                 color ("#1A1410" if _pi == page else "#5A5048")
                                 font "fonts/Rajdhani-SemiBold.ttf"
@@ -1154,9 +1112,32 @@ screen day0_representative_selection():
     default tick   = 0
     default locked = False
     default seq    = 0  # pour id unique
+    default secret_input = ""
+    default secret_revealed = False
+
+    # Champ invisible focalisé : capture du texte indépendante des modificateurs
+    # clavier et de la disposition utilisée.
+    if not locked and not secret_revealed:
+        input value ScreenVariableInputValue("secret_input") length 16:
+            allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            xpos 1
+            ypos 1
+            xsize 1
+            size 1
+            color "#00000000"
+
+        if secret_input.lower().endswith("kami"):
+            timer 0.01 action [
+                SetScreenVariable("secret_input", ""),
+                SetScreenVariable("secret_revealed", True),
+                Function(unlock_succes_from_screen, "succes003"),
+            ]
+
+    if secret_revealed:
+        timer 2.0 action SetScreenVariable("secret_revealed", False)
 
     # Timer de défilement
-    if not locked:
+    if not locked and not secret_revealed:
         timer 0.06 repeat True action [
             SetScreenVariable("tick", tick + 1),
             SetScreenVariable("seq", seq + 1),
@@ -1295,7 +1276,7 @@ screen day0_representative_selection():
                         fixed:
                             xsize 580 ysize 72
 
-                            text (_crit.upper()):
+                            text kd_tr(_crit).upper():
                                 xpos 0 ypos 0
                                 size 14
                                 color ("#5CD3FF" if not locked else "#3A5A6A")
@@ -1437,6 +1418,44 @@ screen day0_representative_selection():
                 font "fonts/Rajdhani-SemiBold.ttf"
                 kerning 1
 
+            # La séquence KAMI remplace temporairement toute l'interface.
+            if secret_revealed and not locked:
+                button:
+                    xpos 0 ypos 0
+                    xsize 1160 ysize 700
+                    background Solid("#020609")
+                    hover_background Solid("#020609")
+                    action NullAction()
+
+                add Solid("#3BCC82") xpos 0 ypos 0 xsize 1160 ysize 3
+                add Solid("#3BCC82") xpos 0 ypos 697 xsize 1160 ysize 3
+                add Solid("#3BCC82") xpos 0 ypos 0 xsize 3 ysize 700
+                add Solid("#3BCC82") xpos 1157 ypos 0 xsize 3 ysize 700
+
+                text "KAMI // HRM-SEL-0001 // SOURCE":
+                    xpos 52 ypos 42
+                    size 22
+                    color "#3BCC82"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    kerning 3
+
+                add Solid("#3BCC8266") xpos 52 ypos 82 xsize 1056 ysize 1
+
+                text "FINAL_REPRESENTATIVES = (\"NOAM\", \"LYSA\")\n\nfunction generate_displayed_names:\n    decoys = shuffle(HARMONIE.citizens)\n    return animate(decoys)\n\nfunction accept_player_input(click):\n    stop_animation()\n    reveal(FINAL_REPRESENTATIVES)\n\n// La liste déroulante n'est qu'une façade.\n// Sélection terminée avant le début de la séance.":
+                    xpos 52 ypos 118
+                    xmaximum 1056
+                    size 24
+                    color "#B9F6D2"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    line_spacing 10
+
+                text "FERMETURE AUTOMATIQUE // 2.0 s":
+                    xpos 52 ypos 646
+                    size 14
+                    color "#3BCC8288"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    kerning 2
+
 
 # =============================================================
 # FLASHBACK OVERLAY — Souvenir de Kami
@@ -1485,11 +1504,3 @@ screen day0_flashback_overlay():
 
     # Ligne du temps — fin du flashback (indicateur discret)
     add Solid("#8855CC44") xpos 0 ypos (config.screen_height - 8) xsize config.screen_width ysize 2
-
-
-# =============================================================
-# TRANSFORMS UTILITAIRES pour le flashback (appelables depuis labels)
-# =============================================================
-
-transform d0_memory_tint:
-    matrixcolor TintMatrix("#D0C0FF") * BrightnessMatrix(-0.05)

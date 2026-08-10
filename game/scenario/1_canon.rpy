@@ -2022,7 +2022,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     scene black with fade
     stop music fadeout 2.0
 
-    call end_day("2")
+    call end_day("2") from _call_end_day_21
 
     jump _2_CANON
 

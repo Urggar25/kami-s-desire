@@ -40,8 +40,7 @@ label elen_link_1:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
     scene bg_conclave at adaptive_fullscreen
 
-    $ showP("elen", "joie", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("elen", "joie", 0.62), ("noam", "reflexion", 0.22)])
 
     "Elen est accroupie au milieu de l'immense salle du Conclave."
 
@@ -161,8 +160,7 @@ label elen_link_2:
 
     scene bg_cafeteria at adaptive_fullscreen
 
-    $ showP("elen", "neutre", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("elen", "neutre", 0.62), ("noam", "reflexion", 0.22)])
 
     "Elen remue une boisson trop sucrée avec une concentration héroïque."
     "Autour, le groupe débat de quelqu'un absent avec une sévérité croissante."
@@ -284,8 +282,7 @@ label elen_link_3:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("elen", "content", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("elen", "content", 0.62), ("noam", "reflexion", 0.22)])
 
     "La baie vitrée reflète les néons en fragments mobiles."
     "Elen suit les lumières du regard, les mains croisées derrière le dos."
@@ -407,8 +404,7 @@ label elen_link_4:
 
     scene bg_infirmerie at adaptive_fullscreen
 
-    $ showP("elen", "content", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("elen", "content", 0.62), ("noam", "reflexion", 0.22)])
 
     "L'infirmerie est presque vide."
     "Une alarme discrète pulse au loin, régulière comme un cœur artificiel."
@@ -522,8 +518,7 @@ label elen_link_5:
 
     scene bg_repos at adaptive_fullscreen
 
-    $ showP("elen", "neutre", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("elen", "neutre", 0.62), ("noam", "reflexion", 0.22)])
 
     "La salle de repos bourdonne doucement."
     "Elen est assise en tailleur sur le canapé, un gobelet vide entre les mains."

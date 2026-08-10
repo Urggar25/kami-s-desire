@@ -112,7 +112,7 @@ label START_FREE_TIME(next_label=None):
 
 label START_FREE_TIME_MAP:
 
-    call CORRIDOR_NAVIGATION(corridor_current)
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION
 
     if _return == "archive":
         call ARCHIVE_TP from _call_ARCHIVE_TP
@@ -184,7 +184,7 @@ label START_EXPLORATION_LIBRE(next_label=None, required_visits=0, allowed_rooms=
 
 label START_EXPLORATION_LIBRE_MAP:
 
-    call CORRIDOR_NAVIGATION(corridor_current)
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_1
     $ exploration_libre_last_room = _return
 
     if _return == "archive":
@@ -245,7 +245,7 @@ label REPLAY_CHARACTER_LINK(character_id, memory_index):
     $ free_time_active = False
     $ exploration_libre_active = False
 
-    call expression _replay_label
+    call expression _replay_label from _call_expression_1
 
     $ link_replay_mode = False
     $ free_time_active = _replay_previous_free_time

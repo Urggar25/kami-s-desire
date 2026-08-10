@@ -40,8 +40,7 @@ label iris_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_repos at adaptive_fullscreen
 
-    $ showP("iris", "colere", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("iris", "colere", 0.58), ("noam", "reflexion", 0.22)])
 
     iris colere "Franchement, cette salle est mal foutue."
     iris desaccord "Trop de néons, pas assez d'air, et ce canapé fait un bruit de papier bulle."
@@ -147,8 +146,7 @@ label iris_link_2:
 
     scene bg_cafeteria at adaptive_fullscreen
 
-    $ showP("iris", "taquin", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("iris", "taquin", 0.58), ("noam", "reflexion", 0.22)])
 
     iris taquin "Tu sais ce qui est drôle ?"
     iris sourire "J'ai enfin un vrai scoop."
@@ -265,8 +263,7 @@ label iris_link_3:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("iris", "neutre", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("iris", "neutre", 0.58), ("noam", "reflexion", 0.22)])
 
     "La salle est calme."
     "Trop calme pour Iris."
@@ -369,8 +366,7 @@ label iris_link_4:
 
     scene bg_stockage at adaptive_fullscreen
 
-    $ showP("iris", "colere", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("iris", "colere", 0.58), ("noam", "reflexion", 0.22)])
 
     iris colere "Cette salle sent le plastique triste."
     iris desaccord "Les boîtes sont mal rangées."
@@ -480,8 +476,7 @@ label iris_link_5:
 
     scene bg_repos at adaptive_fullscreen
 
-    $ showP("iris", "hesitation", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("iris", "hesitation", 0.58), ("noam", "reflexion", 0.22)])
 
     iris hesitation "Je voulais te dire un truc."
     iris desaccord "Enfin, non."

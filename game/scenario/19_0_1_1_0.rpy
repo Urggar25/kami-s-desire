@@ -273,5 +273,5 @@ label _19_0_1_1_0_RETOUR:
     "Elle sort. Je pousse le bureau contre la porte. Dans le mur, quelque chose revient lentement jusqu'a ma grille."
     voix_off "Bonne nuit, Noam."
     scene black with dissolve
-    call end_day("20")
+    call end_day("20") from _call_end_day_20
     jump _20_0_1_1_0_FAIM

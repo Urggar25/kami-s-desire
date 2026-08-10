@@ -454,7 +454,7 @@ screen day1_tablet_interaction():
                     padding (14, 10)
                     hbox:
                         spacing 12
-                        text "⚠" at d1_blink_fast:
+                        text "!" at d1_blink_fast:
                             size 20
                             color "#E03850"
                         text "INTERACTION ENREGISTRÉE — KAMI MONITORING ACTIF":
@@ -518,7 +518,7 @@ screen day1_codex_unlock_panel(entry_title):
                 font "fonts/Rajdhani-SemiBold.ttf"
                 kerning 2
 
-            text "[entry_title]":
+            text kd_tr(entry_title):
                 xpos 16 ypos 28
                 size 16
                 color "#D6E8F0"
@@ -974,7 +974,7 @@ screen day1_amendment_form():
                         padding (14, 10)
                         hbox:
                             spacing 10
-                            text "⚠" at d1_blink_fast:
+                            text "!" at d1_blink_fast:
                                 size 18
                                 color "#E03850"
                             text "Ce dépôt est IRRÉVERSIBLE. L'amendement sera traité de façon anonyme.":
@@ -1251,7 +1251,7 @@ screen day1_jammer_panel():
                         padding (14, 12)
                         hbox:
                             spacing 12
-                            text "⚠" at d1_blink_fast:
+                            text "!" at d1_blink_fast:
                                 size 18
                                 color "#E03850"
                             text "SURVEILLANCE POTENTIELLE — KAMI PEUT OBSERVER CETTE PIÈCE":

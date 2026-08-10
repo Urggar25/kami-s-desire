@@ -883,5 +883,5 @@ label _13_0_1_1_CHAMBRE_PAPIER:
 
     pause 2.5
 
-    call end_day("14")
+    call end_day("14") from _call_end_day_4
     jump _14_0_1_1_0_REVEIL_CHAMBRE

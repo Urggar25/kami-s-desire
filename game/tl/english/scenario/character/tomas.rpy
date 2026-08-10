@@ -1,2065 +1,2066 @@
-﻿# TODO: Translation updated at 2026-02-13 12:20
+﻿# TODO: Translation updated at 2026-08-06 18:52
 
-# game/scenario/character/tomas.rpy:46
+# game/scenario/character/tomas.rpy:45
 translate english tomas_link_1_5cfd62b0:
 
     # "Tomas fixe un terminal comme s'il allait lui faire un procès."
-    "Tomas stares at a terminal like he’s about to put it on trial."
+    ""
 
-# game/scenario/character/tomas.rpy:48
+# game/scenario/character/tomas.rpy:47
 translate english tomas_link_1_c05c2687:
 
     # tomas "Noam, juste une seconde."
-    tomas "Noam, just a second."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:49
+# game/scenario/character/tomas.rpy:48
 translate english tomas_link_1_b747ad9f:
 
     # tomas "Tu as dit tout à l'heure que ce couloir faisait 'environ dix mètres'."
-    tomas "Earlier you said this corridor was 'about ten meters.'"
+    tomas ""
 
-# game/scenario/character/tomas.rpy:50
+# game/scenario/character/tomas.rpy:49
 translate english tomas_link_1_0554c134:
 
     # tomas "C'est inexact."
-    tomas "That’s inaccurate."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:52
+# game/scenario/character/tomas.rpy:51
 translate english tomas_link_1_03bdde15:
 
     # noam "Ah."
-    noam "Oh."
+    noam ""
 
-# game/scenario/character/tomas.rpy:53
+# game/scenario/character/tomas.rpy:52
 translate english tomas_link_1_aa3d0fd0:
 
     # noam "On est sur ce genre de discussion."
-    noam "So we’re doing this kind of conversation."
+    noam ""
 
-# game/scenario/character/tomas.rpy:55
+# game/scenario/character/tomas.rpy:54
 translate english tomas_link_1_0f9394fa:
 
     # tomas raison "Oui."
-    tomas raison "Yes."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:56
+# game/scenario/character/tomas.rpy:55
 translate english tomas_link_1_0f00c8d4:
 
     # tomas raison "Parce que c'est plutôt onze mètres quarante-deux."
-    tomas raison "Because it’s closer to eleven point forty-two meters."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:57
+# game/scenario/character/tomas.rpy:56
 translate english tomas_link_1_8a473a90:
 
     # tomas raison "Et si on inclut l'alcôve latérale, onze mètres quatre-vingt-sept."
-    tomas raison "And if you include the side alcove, eleven point eighty-seven."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:59
+# game/scenario/character/tomas.rpy:58
 translate english tomas_link_1_0e80e0da:
 
     # noam "..."
-    noam "..."
+    noam ""
 
-# game/scenario/character/tomas.rpy:61
+# game/scenario/character/tomas.rpy:60
 translate english tomas_link_1_0e86a95d:
 
     # tomas reflechit "Je l'ai estimé avec les dalles au sol."
-    tomas reflechit "I estimated it using the floor tiles."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:62
+# game/scenario/character/tomas.rpy:61
 translate english tomas_link_1_9210bae2:
 
     # tomas reflechit "Elles font quarante centimètres."
-    tomas reflechit "They’re forty centimeters."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:63
+# game/scenario/character/tomas.rpy:62
 translate english tomas_link_1_99b5cef1:
 
     # tomas reflechit "Normalement."
-    tomas reflechit "Normally."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:65
+# game/scenario/character/tomas.rpy:64
 translate english tomas_link_1_cecdf199:
 
     # noam "Normalement ?"
-    noam "Normally?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:67
+# game/scenario/character/tomas.rpy:66
 translate english tomas_link_1_7c829366:
 
     # tomas hesitation "Il y a une variation possible de deux millimètres."
-    tomas hesitation "There can be a two-millimeter variation."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:68
+# game/scenario/character/tomas.rpy:67
 translate english tomas_link_1_f57d25fa:
 
     # tomas hesitation "J'ai pris cette marge en compte."
-    tomas hesitation "I accounted for that margin."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:70
+# game/scenario/character/tomas.rpy:69
 translate english tomas_link_1_f3639cce:
 
     # "Le silence me regarde comme un juge."
-    "The silence looks at me like a judge."
+    ""
 
-# game/scenario/character/tomas.rpy:72
+# game/scenario/character/tomas.rpy:71
 translate english tomas_link_1_92d07bb7:
 
     # noam "Tu sais que personne n'avait besoin de cette précision ?"
-    noam "You know nobody needed that kind of precision, right?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:74
+# game/scenario/character/tomas.rpy:73
 translate english tomas_link_1_e7c126cd:
 
     # tomas surpris "Pardon ?"
-    tomas surpris "Sorry?"
+    tomas surpris ""
 
-# game/scenario/character/tomas.rpy:75
+# game/scenario/character/tomas.rpy:74
 translate english tomas_link_1_af48821c:
 
     # tomas panne "Je..."
-    tomas panne "I..."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:76
+# game/scenario/character/tomas.rpy:75
 translate english tomas_link_1_9433d7ee:
 
     # tomas panne "Je pensais que c'était utile."
-    tomas panne "I thought it would be useful."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:78
+# game/scenario/character/tomas.rpy:77
 translate english tomas_link_1_92e11e48:
 
     # noam "On parlait juste pour passer le temps."
-    noam "We were just talking to pass the time."
+    noam ""
 
-# game/scenario/character/tomas.rpy:80
+# game/scenario/character/tomas.rpy:79
 translate english tomas_link_1_b70deaac:
 
     # tomas culpabilite "Ah."
-    tomas culpabilite "Oh."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:81
+# game/scenario/character/tomas.rpy:80
 translate english tomas_link_1_77b9948f:
 
     # tomas culpabilite "D'accord."
-    tomas culpabilite "Okay."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:82
+# game/scenario/character/tomas.rpy:81
 translate english tomas_link_1_beff845e:
 
     # tomas culpabilite "J'ai encore fait ça."
-    tomas culpabilite "I did it again."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:84
+# game/scenario/character/tomas.rpy:83
 translate english tomas_link_1_6f0c485f:
 
     # noam "Fait quoi ?"
-    noam "Did what?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:86
+# game/scenario/character/tomas.rpy:85
 translate english tomas_link_1_dd5808b4:
 
     # tomas triste "Transformer une phrase légère en rapport technique."
-    tomas triste "Turning a light remark into a technical report."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:87
+# game/scenario/character/tomas.rpy:86
 translate english tomas_link_1_174ff134:
 
     # tomas panne "Enfin... oui."
-    tomas panne "Well... yeah."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:89
+# game/scenario/character/tomas.rpy:88
 translate english tomas_link_1_bc085c32:
 
     # noam "C'est pas grave."
-    noam "It’s not a big deal."
+    noam ""
 
-# game/scenario/character/tomas.rpy:91
+# game/scenario/character/tomas.rpy:90
 translate english tomas_link_1_6aff72ea:
 
     # tomas culpabilite "Si, un peu."
-    tomas culpabilite "It is. A little."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:92
+# game/scenario/character/tomas.rpy:91
 translate english tomas_link_1_ef1706f5:
 
     # tomas culpabilite "L'ambiance était..."
-    tomas culpabilite "The mood was..."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:93
+# game/scenario/character/tomas.rpy:92
 translate english tomas_link_1_79b24aa9:
 
     # tomas culpabilite "Comment dire..."
-    tomas culpabilite "How do I put it..."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:94
+# game/scenario/character/tomas.rpy:93
 translate english tomas_link_1_6c271949:
 
     # tomas culpabilite "Détendue."
-    tomas culpabilite "Relaxed."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:95
+# game/scenario/character/tomas.rpy:94
 translate english tomas_link_1_a5f34ad3:
 
     # tomas culpabilite "Et je l'ai cassée."
-    tomas culpabilite "And I ruined it."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:97
+# game/scenario/character/tomas.rpy:96
 translate english tomas_link_1_55eb6a2f:
 
     # noam "Tu l'as pas cassée."
-    noam "You didn’t ruin it."
+    noam ""
 
-# game/scenario/character/tomas.rpy:99
+# game/scenario/character/tomas.rpy:98
 translate english tomas_link_1_d3332214:
 
     # tomas hesitation "Je l'ai fendue ?"
-    tomas hesitation "I cracked it?"
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:100
+# game/scenario/character/tomas.rpy:99
 translate english tomas_link_1_01fea592:
 
     # tomas panne "Non, pardon, c'est pire, comme image."
-    tomas panne "No, sorry—worse image."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:102
+# game/scenario/character/tomas.rpy:101
 translate english tomas_link_1_037a073f:
 
     # noam "Respire."
-    noam "Breathe."
+    noam ""
 
-# game/scenario/character/tomas.rpy:104
+# game/scenario/character/tomas.rpy:103
 translate english tomas_link_1_fab72fa8:
 
     # tomas "Je suis désolé."
-    tomas "I’m sorry."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:105
+# game/scenario/character/tomas.rpy:104
 translate english tomas_link_1_b784b771:
 
     # tomas "Vraiment."
-    tomas "Really."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:106
+# game/scenario/character/tomas.rpy:105
 translate english tomas_link_1_225f0b95:
 
     # tomas "Je n'essaie pas de corriger les gens pour les rabaisser."
-    tomas "I’m not trying to correct people to put them down."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:107
+# game/scenario/character/tomas.rpy:106
 translate english tomas_link_1_0bd20ea5:
 
     # tomas "Je corrige parce que..."
-    tomas "I correct things because..."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:108
+# game/scenario/character/tomas.rpy:107
 translate english tomas_link_1_8076c094:
 
     # tomas "Parce que j'ai peur qu'un détail faux en cache un autre."
-    tomas "Because I’m scared one wrong detail hides another."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:110
+# game/scenario/character/tomas.rpy:109
 translate english tomas_link_1_28332c0c:
 
     # noam "Même sur la taille d'un couloir ?"
-    noam "Even about the size of a corridor?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:112
+# game/scenario/character/tomas.rpy:111
 translate english tomas_link_1_c4d7d3ee:
 
     # tomas reflechit "Surtout sur la taille d'un couloir."
-    tomas reflechit "Especially about the size of a corridor."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:113
+# game/scenario/character/tomas.rpy:112
 translate english tomas_link_1_f3049c74:
 
     # tomas reflechit "Les erreurs insignifiantes sont celles qu'on laisse passer."
-    tomas reflechit "Insignificant mistakes are the ones we let slide."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:114
+# game/scenario/character/tomas.rpy:113
 translate english tomas_link_1_10b6dbbf:
 
     # tomas reflechit "Puis on s'habitue."
-    tomas reflechit "Then we get used to them."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:115
+# game/scenario/character/tomas.rpy:114
 translate english tomas_link_1_dc97a002:
 
     # tomas reflechit "Et un jour, on s'habitue à pire."
-    tomas reflechit "And one day, we get used to worse."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:117
+# game/scenario/character/tomas.rpy:116
 translate english tomas_link_1_e9249f0d:
 
     # "Il se frotte la nuque, mal à l'aise d'avoir parlé si vite."
-    "He rubs the back of his neck, uneasy that he spoke so fast."
+    ""
 
-# game/scenario/character/tomas.rpy:119
+# game/scenario/character/tomas.rpy:118
 translate english tomas_link_1_36428c53:
 
     # tomas culpabilite "Je..."
-    tomas culpabilite "I..."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:120
+# game/scenario/character/tomas.rpy:119
 translate english tomas_link_1_669654f5:
 
     # tomas culpabilite "Pardon, encore."
-    tomas culpabilite "Sorry. Again."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:121
+# game/scenario/character/tomas.rpy:120
 translate english tomas_link_1_ccf7c0f4:
 
     # tomas culpabilite "Je sais que c'était juste une blague de couloir."
-    tomas culpabilite "I know it was just a corridor joke."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:123
+# game/scenario/character/tomas.rpy:122
 translate english tomas_link_1_cde832a2:
 
     # noam "On peut survivre à ça, t'inquiète."
-    noam "We can survive that, don’t worry."
+    noam ""
 
-# game/scenario/character/tomas.rpy:125
+# game/scenario/character/tomas.rpy:124
 translate english tomas_link_1_a139fb7b:
 
     # tomas neutre "D'accord."
-    tomas neutre "Okay."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:126
+# game/scenario/character/tomas.rpy:125
 translate english tomas_link_1_d98721a3:
 
     # tomas neutre "Alors je vais faire simple."
-    tomas neutre "Then I’ll keep it simple."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:127
+# game/scenario/character/tomas.rpy:126
 translate english tomas_link_1_48ebcaf1:
 
     # tomas neutre "Le couloir est grand."
-    tomas neutre "The corridor is big."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:129
+# game/scenario/character/tomas.rpy:128
 translate english tomas_link_1_0c521561:
 
     # noam "Merci."
-    noam "Thank you."
+    noam ""
 
-# game/scenario/character/tomas.rpy:131
+# game/scenario/character/tomas.rpy:130
 translate english tomas_link_1_ea2a1095:
 
     # tomas taquin "Relativement."
-    tomas taquin "Relatively."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:133
+# game/scenario/character/tomas.rpy:132
 translate english tomas_link_1_683817e3:
 
     # noam "Tomas."
-    noam "Tomas."
+    noam ""
 
-# game/scenario/character/tomas.rpy:135
+# game/scenario/character/tomas.rpy:134
 translate english tomas_link_1_3cea2e8a:
 
     # tomas rire "Oui."
-    tomas rire "Yeah."
+    tomas rire ""
 
-# game/scenario/character/tomas.rpy:136
+# game/scenario/character/tomas.rpy:135
 translate english tomas_link_1_44934b7e:
 
     # tomas culpabilite "Désolé."
-    tomas culpabilite "Sorry."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:138
+# game/scenario/character/tomas.rpy:137
 translate english tomas_link_1_a4504b05:
 
     # "Il baisse les yeux, puis esquisse un sourire timide."
-    "He lowers his eyes, then sketches a shy smile."
+    ""
 
-# game/scenario/character/tomas.rpy:140
+# game/scenario/character/tomas.rpy:139
 translate english tomas_link_1_07647b3f:
 
     # tomas "Je m'entraînerai."
-    tomas "I’ll practice."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:141
+# game/scenario/character/tomas.rpy:140
 translate english tomas_link_1_5335eece:
 
     # tomas "À laisser les chiffres tranquilles cinq minutes."
-    tomas "Letting numbers alone for five minutes."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:142
+# game/scenario/character/tomas.rpy:141
 translate english tomas_link_1_a0c1fd0c:
 
     # tomas "Enfin..."
-    tomas "Well..."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:143
+# game/scenario/character/tomas.rpy:142
 translate english tomas_link_1_cc541f73:
 
     # tomas "Quatre minutes, pour commencer."
-    tomas "Four minutes, to start."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:145
+# game/scenario/character/tomas.rpy:144
 translate english tomas_link_1_bb9357ec:
 
     # noam "Marché conclu."
-    noam "Deal."
+    noam ""
 
-# game/scenario/character/tomas.rpy:159
+# game/scenario/character/tomas.rpy:160
 translate english tomas_link_2_1a1c9d17:
 
     # "Je retrouve Tomas devant un écran figé sur une table statistique."
-    "I find Tomas in front of a screen frozen on a statistical table."
+    ""
 
-# game/scenario/character/tomas.rpy:161
+# game/scenario/character/tomas.rpy:162
 translate english tomas_link_2_22277aea:
 
     # noam "Tu tiens le choc ?"
-    noam "You holding up?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:163
+# game/scenario/character/tomas.rpy:164
 translate english tomas_link_2_7ad81883:
 
     # tomas "Oui."
-    tomas "Yes."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:164
+# game/scenario/character/tomas.rpy:165
 translate english tomas_link_2_6c0d91f5:
 
     # tomas "Enfin, probablement."
-    tomas "Well, probably."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:166
+# game/scenario/character/tomas.rpy:167
 translate english tomas_link_2_f3853a7e:
 
     # noam taquin "Probablement ?"
-    noam taquin "Probably?"
+    noam taquin ""
 
-# game/scenario/character/tomas.rpy:167
+# game/scenario/character/tomas.rpy:168
 translate english tomas_link_2_6d93aaa8:
 
     # noam "T'es à 63,4% de stabilité ?"
-    noam "You’re at 63.4% stability?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:169
+# game/scenario/character/tomas.rpy:170
 translate english tomas_link_2_dee62f87:
 
     # tomas raison "Plutôt 67,1%."
-    tomas raison "More like 67.1%."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:170
+# game/scenario/character/tomas.rpy:171
 translate english tomas_link_2_09dba2ca:
 
     # tomas surpris "..."
-    tomas surpris "..."
+    tomas surpris ""
 
-# game/scenario/character/tomas.rpy:171
+# game/scenario/character/tomas.rpy:172
 translate english tomas_link_2_6d2102dd:
 
     # tomas panne "C'était une blague ?"
-    tomas panne "Was that a joke?"
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:173
+# game/scenario/character/tomas.rpy:174
 translate english tomas_link_2_46081631:
 
     # noam "Oui."
-    noam "Yeah."
+    noam ""
 
-# game/scenario/character/tomas.rpy:175
+# game/scenario/character/tomas.rpy:176
 translate english tomas_link_2_c02727b2:
 
     # tomas "Ah."
-    tomas "Oh."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:176
+# game/scenario/character/tomas.rpy:177
 translate english tomas_link_2_ce3b1b19:
 
     # tomas hesitation "J'ai répondu sérieusement."
-    tomas hesitation "I answered seriously."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:178
+# game/scenario/character/tomas.rpy:179
 translate english tomas_link_2_a07d4ada:
 
     # "Moment de flottement."
-    "A moment of awkward drift."
+    ""
 
-# game/scenario/character/tomas.rpy:179
+# game/scenario/character/tomas.rpy:180
 translate english tomas_link_2_9af74138:
 
     # "Le genre qui dure deux secondes et trois années."
-    "The kind that lasts two seconds and three years."
+    ""
 
-# game/scenario/character/tomas.rpy:181
+# game/scenario/character/tomas.rpy:182
 translate english tomas_link_2_ab17b76a:
 
     # noam "C'était mignon, en vrai."
-    noam "It was cute, honestly."
+    noam ""
 
-# game/scenario/character/tomas.rpy:183
+# game/scenario/character/tomas.rpy:184
 translate english tomas_link_2_ad9cebfc:
 
     # tomas culpabilite "Non."
-    tomas culpabilite "No."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:184
+# game/scenario/character/tomas.rpy:185
 translate english tomas_link_2_3deb4eff:
 
     # tomas culpabilite "C'était une erreur de lecture contextuelle."
-    tomas culpabilite "That was a contextual reading error."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:185
+# game/scenario/character/tomas.rpy:186
 translate english tomas_link_2_65509ff9:
 
     # tomas reflechit "Blague détectée trop tard."
-    tomas reflechit "Joke detected too late."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:187
+# game/scenario/character/tomas.rpy:188
 translate english tomas_link_2_6851369f:
 
     # noam "Tu classes vraiment ça comme un incident ?"
-    noam "You’re really filing that as an incident?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:189
+# game/scenario/character/tomas.rpy:190
 translate english tomas_link_2_ed709de9:
 
     # tomas reflechit "Oui."
-    tomas reflechit "Yes."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:190
+# game/scenario/character/tomas.rpy:191
 translate english tomas_link_2_73a33213:
 
     # tomas reflechit "Incident social mineur."
-    tomas reflechit "Minor social incident."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:191
+# game/scenario/character/tomas.rpy:192
 translate english tomas_link_2_423630f2:
 
     # tomas reflechit "Cause probable : premier degré automatique."
-    tomas reflechit "Probable cause: automatic literal mode."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:192
+# game/scenario/character/tomas.rpy:193
 translate english tomas_link_2_c157fa88:
 
     # tomas reflechit "Conséquence : léger malaise partagé."
-    tomas reflechit "Consequence: mild shared discomfort."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:194
+# game/scenario/character/tomas.rpy:195
 translate english tomas_link_2_aa86f920:
 
     # noam "Tu me fais une fiche complète ?"
-    noam "You want to write me a full report?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:196
+# game/scenario/character/tomas.rpy:197
 translate english tomas_link_2_274e6789:
 
     # tomas taquin "Je peux."
-    tomas taquin "I can."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:197
+# game/scenario/character/tomas.rpy:198
 translate english tomas_link_2_b92d77b1:
 
     # tomas neutre "J'ai déjà un plan de correction, d'ailleurs."
-    tomas neutre "I already have a correction plan, actually."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:199
+# game/scenario/character/tomas.rpy:200
 translate english tomas_link_2_af5a7f27:
 
     # noam "Je suis curieux."
-    noam "I’m curious."
+    noam ""
 
-# game/scenario/character/tomas.rpy:201
+# game/scenario/character/tomas.rpy:202
 translate english tomas_link_2_1cf53efe:
 
     # tomas "Étape un : vérifier l'intonation."
-    tomas "Step one: check the intonation."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:202
+# game/scenario/character/tomas.rpy:203
 translate english tomas_link_2_330882ce:
 
     # tomas "Étape deux : observer si la phrase est absurde."
-    tomas "Step two: see if the sentence is absurd."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:203
+# game/scenario/character/tomas.rpy:204
 translate english tomas_link_2_ca50891f:
 
     # tomas "Étape trois : attendre une demi-seconde avant de répondre."
-    tomas "Step three: wait half a second before answering."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:204
+# game/scenario/character/tomas.rpy:205
 translate english tomas_link_2_a48352be:
 
     # tomas "Étape quatre : si doute, demander 'tu plaisantes ?'"
-    tomas "Step four: if in doubt, ask, 'Are you joking?'"
+    tomas ""
 
-# game/scenario/character/tomas.rpy:206
+# game/scenario/character/tomas.rpy:207
 translate english tomas_link_2_84b27f82:
 
     # noam "C'est carré."
-    noam "That’s tight."
+    noam ""
 
-# game/scenario/character/tomas.rpy:208
+# game/scenario/character/tomas.rpy:209
 translate english tomas_link_2_eee48668:
 
     # tomas "Je préfère quand c'est carré."
-    tomas "I prefer it when it’s tight."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:209
+# game/scenario/character/tomas.rpy:210
 translate english tomas_link_2_7726aac3:
 
     # tomas "Les sous-entendus ne le sont jamais."
-    tomas "Subtext never is."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:211
+# game/scenario/character/tomas.rpy:212
 translate english tomas_link_2_ada29dbc:
 
     # noam "Tu rates souvent les blagues ?"
-    noam "Do you miss jokes often?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:213
+# game/scenario/character/tomas.rpy:214
 translate english tomas_link_2_597bb063:
 
     # tomas "Souvent assez pour m'en souvenir."
-    tomas "Often enough to remember it."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:214
+# game/scenario/character/tomas.rpy:215
 translate english tomas_link_2_cf088199:
 
     # tomas "Pas assez pour m'y habituer."
-    tomas "Not enough to get used to it."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:216
+# game/scenario/character/tomas.rpy:217
 translate english tomas_link_2_cf9f315e:
 
     # "Il tapote l'écran sans le regarder."
-    "He taps the screen without looking at it."
+    ""
 
-# game/scenario/character/tomas.rpy:218
+# game/scenario/character/tomas.rpy:219
 translate english tomas_link_2_4d00534f:
 
     # tomas inquiet "Le pire, c'est quand les gens rient"
-    tomas inquiet "The worst part is when people laugh"
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:219
+# game/scenario/character/tomas.rpy:220
 translate english tomas_link_2_b649e27c:
 
     # tomas inquiet "et que je comprends une minute après."
-    tomas inquiet "and I get it a minute later."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:220
+# game/scenario/character/tomas.rpy:221
 translate english tomas_link_2_861d93f7:
 
     # tomas inquiet "Je ris en retard."
-    tomas inquiet "I laugh late."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:221
+# game/scenario/character/tomas.rpy:222
 translate english tomas_link_2_dc85eed0:
 
     # tomas inquiet "On dirait un bug."
-    tomas inquiet "It looks like a bug."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:223
+# game/scenario/character/tomas.rpy:224
 translate english tomas_link_2_8ea11bba:
 
     # noam "Tu peux aussi juste sourire."
-    noam "You can also just smile."
+    noam ""
 
-# game/scenario/character/tomas.rpy:225
+# game/scenario/character/tomas.rpy:226
 translate english tomas_link_2_7ad81883_1:
 
     # tomas "Oui."
-    tomas "Yeah."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:226
+# game/scenario/character/tomas.rpy:227
 translate english tomas_link_2_b3595542:
 
     # tomas "Mais parfois on attend une réponse émotionnelle."
-    tomas "But sometimes people expect an emotional response."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:227
+# game/scenario/character/tomas.rpy:228
 translate english tomas_link_2_180e073b:
 
     # tomas "Et j'arrive avec une analyse."
-    tomas "And I show up with an analysis."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:229
+# game/scenario/character/tomas.rpy:230
 translate english tomas_link_2_399a6cd5:
 
     # noam "C'est ta manière de gérer."
-    noam "That’s your way of coping."
+    noam ""
 
-# game/scenario/character/tomas.rpy:231
+# game/scenario/character/tomas.rpy:232
 translate english tomas_link_2_5ee0948b:
 
     # tomas culpabilite "Je sais."
-    tomas culpabilite "I know."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:232
+# game/scenario/character/tomas.rpy:233
 translate english tomas_link_2_6537c39d:
 
     # tomas culpabilite "Mais ça met de la distance."
-    tomas culpabilite "But it creates distance."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:234
+# game/scenario/character/tomas.rpy:235
 translate english tomas_link_2_59563cd4:
 
     # noam "Ou ça te protège."
-    noam "Or it protects you."
+    noam ""
 
-# game/scenario/character/tomas.rpy:236
+# game/scenario/character/tomas.rpy:237
 translate english tomas_link_2_d52279db:
 
     # tomas reflechit "Les deux, probablement."
-    tomas reflechit "Both, probably."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:238
+# game/scenario/character/tomas.rpy:239
 translate english tomas_link_2_cecd1182:
 
     # "Il relève enfin la tête."
-    "He finally looks up."
+    ""
 
-# game/scenario/character/tomas.rpy:240
+# game/scenario/character/tomas.rpy:241
 translate english tomas_link_2_51634fb8:
 
     # tomas taquin "Si ça peut te rassurer,"
-    tomas taquin "If it makes you feel any better,"
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:241
+# game/scenario/character/tomas.rpy:242
 translate english tomas_link_2_9cc8a859:
 
     # tomas taquin "j'ai compris ta blague en huit secondes."
-    tomas taquin "I understood your joke in eight seconds."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:243
+# game/scenario/character/tomas.rpy:244
 translate english tomas_link_2_658469c5:
 
     # noam "Record personnel ?"
-    noam "Personal best?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:245
+# game/scenario/character/tomas.rpy:246
 translate english tomas_link_2_d61b25e7:
 
     # tomas joie "Top trois."
-    tomas joie "Top three."
+    tomas joie ""
 
-# game/scenario/character/tomas.rpy:246
+# game/scenario/character/tomas.rpy:247
 translate english tomas_link_2_db312e61:
 
     # tomas neutre "Le record reste quatre secondes."
-    tomas neutre "The record is still four seconds."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:247
+# game/scenario/character/tomas.rpy:248
 translate english tomas_link_2_1774c552:
 
     # tomas "C'était en primaire."
-    tomas "Back in elementary school."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:249
+# game/scenario/character/tomas.rpy:250
 translate english tomas_link_2_0f8c887d:
 
     # noam "Impressionnant."
-    noam "Impressive."
+    noam ""
 
-# game/scenario/character/tomas.rpy:251
+# game/scenario/character/tomas.rpy:252
 translate english tomas_link_2_5caab6b2:
 
     # tomas taquin "Merci."
-    tomas taquin "Thanks."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:252
+# game/scenario/character/tomas.rpy:253
 translate english tomas_link_2_80dbe52d:
 
     # tomas panne "Je ne sais pas si c'était ironique."
-    tomas panne "I don’t know if that was ironic."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:254
+# game/scenario/character/tomas.rpy:255
 translate english tomas_link_2_0e80e0da:
 
     # noam "..."
-    noam "..."
+    noam ""
 
-# game/scenario/character/tomas.rpy:256
+# game/scenario/character/tomas.rpy:257
 translate english tomas_link_2_2927a73b:
 
     # tomas rire "Celle-là, je l'ai."
-    tomas rire "That one, I got."
+    tomas rire ""
 
-# game/scenario/character/tomas.rpy:258
+# game/scenario/character/tomas.rpy:259
 translate english tomas_link_2_41773f4e:
 
     # "Il note quelque chose sur son carnet, très sérieusement."
-    "He writes something in his notebook, very seriously."
+    ""
 
-# game/scenario/character/tomas.rpy:260
+# game/scenario/character/tomas.rpy:261
 translate english tomas_link_2_c5fbfcfd:
 
     # noam "Qu'est-ce que t'écris ?"
-    noam "What are you writing?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:262
+# game/scenario/character/tomas.rpy:263
 translate english tomas_link_2_a0f6f7c3:
 
     # tomas reflechit "Incident clos."
-    tomas reflechit "Incident closed."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:263
+# game/scenario/character/tomas.rpy:264
 translate english tomas_link_2_16eb9055:
 
     # tomas reflechit "Dommages limités."
-    tomas reflechit "Damage limited."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:264
+# game/scenario/character/tomas.rpy:265
 translate english tomas_link_2_5f9f3deb:
 
     # tomas reflechit "Présence d'une personne patiente : facteur protecteur."
-    tomas reflechit "Presence of a patient person: protective factor."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:266
+# game/scenario/character/tomas.rpy:267
 translate english tomas_link_2_02a3d178:
 
     # noam "Je prends."
-    noam "I’ll take that."
+    noam ""
 
-# game/scenario/character/tomas.rpy:280
+# game/scenario/character/tomas.rpy:283
 translate english tomas_link_3_1532eacd:
 
     # "Tomas trie des fragments de données sur une tablette."
-    "Tomas is sorting data fragments on a tablet."
+    ""
 
-# game/scenario/character/tomas.rpy:282
+# game/scenario/character/tomas.rpy:285
 translate english tomas_link_3_6acfd279:
 
     # noam "Tu bosses encore ?"
-    noam "You’re working again?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:284
+# game/scenario/character/tomas.rpy:287
 translate english tomas_link_3_7ad81883:
 
     # tomas "Oui."
-    tomas "Yes."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:285
+# game/scenario/character/tomas.rpy:288
 translate english tomas_link_3_60b24630:
 
     # tomas "Mais je peux parler."
-    tomas "But I can talk."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:287
+# game/scenario/character/tomas.rpy:290
 translate english tomas_link_3_f856845c:
 
     # noam "J'entendais Iris dire que les infos circulent mal ici."
-    noam "I heard Iris saying information doesn’t circulate well here."
+    noam ""
 
-# game/scenario/character/tomas.rpy:289
+# game/scenario/character/tomas.rpy:292
 translate english tomas_link_3_2294381d:
 
     # tomas mefiant "Elles circulent trop vite."
-    tomas mefiant "It circulates too fast."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:290
+# game/scenario/character/tomas.rpy:293
 translate english tomas_link_3_f96b7fb5:
 
     # tomas mefiant "C'est pire."
-    tomas mefiant "That’s worse."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:292
+# game/scenario/character/tomas.rpy:295
 translate english tomas_link_3_06e71761:
 
     # noam "Pourquoi ?"
-    noam "Why?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:294
+# game/scenario/character/tomas.rpy:297
 translate english tomas_link_3_858951b7:
 
     # tomas raison "Parce qu'une information n'est pas neutre quand elle sort."
-    tomas raison "Because information isn’t neutral when it comes out."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:295
+# game/scenario/character/tomas.rpy:298
 translate english tomas_link_3_fe86b2b5:
 
     # tomas raison "Sa forme change les effets qu'elle produit."
-    tomas raison "Its form changes the effects it produces."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:296
+# game/scenario/character/tomas.rpy:299
 translate english tomas_link_3_4a5b4180:
 
     # tomas raison "Son timing aussi."
-    tomas raison "Its timing too."
+    tomas raison ""
 
-# game/scenario/character/tomas.rpy:298
+# game/scenario/character/tomas.rpy:301
 translate english tomas_link_3_73ca215b:
 
     # noam "Tu veux dire qu'il faut filtrer ?"
-    noam "You mean we need to filter it?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:300
+# game/scenario/character/tomas.rpy:303
 translate english tomas_link_3_e04e0f3d:
 
     # tomas "Il faut contextualiser."
-    tomas "We need to contextualize."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:301
+# game/scenario/character/tomas.rpy:304
 translate english tomas_link_3_8b7cef4e:
 
     # tomas "Et parfois attendre."
-    tomas "And sometimes wait."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:303
+# game/scenario/character/tomas.rpy:306
 translate english tomas_link_3_a7a00272:
 
     # noam "Attendre peut coûter cher."
-    noam "Waiting can be expensive."
+    noam ""
 
-# game/scenario/character/tomas.rpy:305
+# game/scenario/character/tomas.rpy:308
 translate english tomas_link_3_a79c7370:
 
     # tomas "Parler trop vite aussi."
-    tomas "Talking too fast can be expensive too."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:307
+# game/scenario/character/tomas.rpy:310
 translate english tomas_link_3_6753737e:
 
     # "Il marque une pause, les mains immobiles."
-    "He pauses, hands still."
+    ""
 
-# game/scenario/character/tomas.rpy:309
+# game/scenario/character/tomas.rpy:312
 translate english tomas_link_3_cd529906:
 
     # tomas reflechit "Une vérité incomplète peut déclencher une panique complète."
-    tomas reflechit "An incomplete truth can trigger a complete panic."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:310
+# game/scenario/character/tomas.rpy:313
 translate english tomas_link_3_715bb10a:
 
     # tomas reflechit "Surtout dans un groupe sous pression."
-    tomas reflechit "Especially in a group under pressure."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:312
+# game/scenario/character/tomas.rpy:315
 translate english tomas_link_3_c2e5a563:
 
     # noam "T'as déjà vu ça ?"
-    noam "You’ve seen that happen before?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:314
+# game/scenario/character/tomas.rpy:317
 translate english tomas_link_3_c5cadeac:
 
     # tomas hesitation "..."
-    tomas hesitation "..."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:315
+# game/scenario/character/tomas.rpy:318
 translate english tomas_link_3_8c012026:
 
     # tomas hesitation "Oui."
-    tomas hesitation "Yes."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:317
+# game/scenario/character/tomas.rpy:320
 translate english tomas_link_3_7ec281cd:
 
     # noam "Où ?"
-    noam "Where?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:319
+# game/scenario/character/tomas.rpy:322
 translate english tomas_link_3_632c96fb:
 
     # tomas mefiant "Avant."
-    tomas mefiant "Before."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:320
+# game/scenario/character/tomas.rpy:323
 translate english tomas_link_3_0076b9f0:
 
     # tomas mefiant "Pas ici."
-    tomas mefiant "Not here."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:322
+# game/scenario/character/tomas.rpy:325
 translate english tomas_link_3_7954fe37:
 
     # noam "Tu peux préciser ?"
-    noam "Can you be more specific?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:324
+# game/scenario/character/tomas.rpy:327
 translate english tomas_link_3_615b07d2:
 
     # tomas panne "Je préfère rester vague."
-    tomas panne "I’d rather stay vague."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:325
+# game/scenario/character/tomas.rpy:328
 translate english tomas_link_3_67f91cc3:
 
     # tomas culpabilite "C'est pas contre toi."
-    tomas culpabilite "It’s not against you."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:327
+# game/scenario/character/tomas.rpy:330
 translate english tomas_link_3_b11ae2df:
 
     # noam "Je sais."
-    noam "I know."
+    noam ""
 
-# game/scenario/character/tomas.rpy:329
+# game/scenario/character/tomas.rpy:332
 translate english tomas_link_3_c833fd01:
 
     # tomas "On a diffusé un chiffre brut."
-    tomas "We broadcast a raw number."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:330
+# game/scenario/character/tomas.rpy:333
 translate english tomas_link_3_bad15e9e:
 
     # tomas "Sans expliquer les marges."
-    tomas "Without explaining the margins."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:331
+# game/scenario/character/tomas.rpy:334
 translate english tomas_link_3_bf6e5ffc:
 
     # tomas "Sans expliquer la source."
-    tomas "Without explaining the source."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:332
+# game/scenario/character/tomas.rpy:335
 translate english tomas_link_3_0cf2e3f3:
 
     # tomas "Les gens ont retenu le pire scénario."
-    tomas "People latched onto the worst-case scenario."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:333
+# game/scenario/character/tomas.rpy:336
 translate english tomas_link_3_b069eb44:
 
     # tomas "Le pire s'est installé avant même d'être réel."
-    tomas "The worst settled in before it was even real."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:335
+# game/scenario/character/tomas.rpy:338
 translate english tomas_link_3_dcccb01f:
 
     # noam "Et ensuite ?"
-    noam "And then?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:337
+# game/scenario/character/tomas.rpy:340
 translate english tomas_link_3_d1dedd33:
 
     # tomas triste "Ensuite, on n'a plus parlé de faits."
-    tomas triste "After that, we stopped talking about facts."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:338
+# game/scenario/character/tomas.rpy:341
 translate english tomas_link_3_3045c172:
 
     # tomas triste "On a parlé de peur."
-    tomas triste "We talked about fear."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:339
+# game/scenario/character/tomas.rpy:342
 translate english tomas_link_3_e212c02e:
 
     # tomas triste "Et la peur n'écoute plus."
-    tomas triste "And fear doesn’t listen anymore."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:341
+# game/scenario/character/tomas.rpy:344
 translate english tomas_link_3_fbd0fdc3:
 
     # "Son regard glisse sur les rayonnages vides."
-    "His gaze slides over the empty shelves."
+    ""
 
-# game/scenario/character/tomas.rpy:343
+# game/scenario/character/tomas.rpy:346
 translate english tomas_link_3_703d0faa:
 
     # tomas "Depuis, je fais attention à l'ordre des mots."
-    tomas "Since then, I pay attention to the order of words."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:344
+# game/scenario/character/tomas.rpy:347
 translate english tomas_link_3_5ead953f:
 
     # tomas "À qui parle, et à qui écoute."
-    tomas "To who speaks, and who listens."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:346
+# game/scenario/character/tomas.rpy:349
 translate english tomas_link_3_8b1e8b14:
 
     # noam "Ça fait beaucoup à porter."
-    noam "That’s a lot to carry."
+    noam ""
 
-# game/scenario/character/tomas.rpy:348
+# game/scenario/character/tomas.rpy:351
 translate english tomas_link_3_7ad81883_1:
 
     # tomas "Oui."
-    tomas "Yes."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:349
+# game/scenario/character/tomas.rpy:352
 translate english tomas_link_3_f872a3e8:
 
     # tomas "Mais c'est moins lourd que les conséquences."
-    tomas "But it’s lighter than the consequences."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:351
+# game/scenario/character/tomas.rpy:354
 translate english tomas_link_3_5aa41641:
 
     # noam "Donc tu caches des infos ?"
-    noam "So you hide information?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:353
+# game/scenario/character/tomas.rpy:356
 translate english tomas_link_3_014da620:
 
     # tomas mefiant "Non."
-    tomas mefiant "No."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:354
+# game/scenario/character/tomas.rpy:357
 translate english tomas_link_3_33b57e14:
 
     # tomas mefiant "Je retarde, parfois."
-    tomas mefiant "I delay, sometimes."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:355
+# game/scenario/character/tomas.rpy:358
 translate english tomas_link_3_101815af:
 
     # tomas mefiant "Le temps d'avoir de quoi ne pas brûler tout le monde."
-    tomas mefiant "Long enough to have something that won’t burn everyone."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:357
+# game/scenario/character/tomas.rpy:360
 translate english tomas_link_3_ca6969b3:
 
     # noam "Les gens détestent qu'on décide pour eux."
-    noam "People hate it when you decide for them."
+    noam ""
 
-# game/scenario/character/tomas.rpy:359
+# game/scenario/character/tomas.rpy:362
 translate english tomas_link_3_d67eb788:
 
     # tomas "Je sais. Moi aussi, je déteste ça."
-    tomas "I know. I hate it too."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:361
+# game/scenario/character/tomas.rpy:364
 translate english tomas_link_3_e2560848:
 
     # "Il ferme la tablette et expire lentement."
-    "He closes the tablet and exhales slowly."
+    ""
 
-# game/scenario/character/tomas.rpy:363
+# game/scenario/character/tomas.rpy:366
 translate english tomas_link_3_d65f3b42:
 
     # tomas culpabilite "Mais entre mentir"
-    tomas culpabilite "But between lying"
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:364
+# game/scenario/character/tomas.rpy:367
 translate english tomas_link_3_78a0d498:
 
     # tomas culpabilite "et parler trop tôt"
-    tomas culpabilite "and speaking too soon,"
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:365
+# game/scenario/character/tomas.rpy:368
 translate english tomas_link_3_34f655cb:
 
     # tomas culpabilite "il existe une zone étroite."
-    tomas culpabilite "there’s a narrow zone."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:366
+# game/scenario/character/tomas.rpy:369
 translate english tomas_link_3_a9fde541:
 
     # tomas culpabilite "Je marche dedans."
-    tomas culpabilite "I walk inside it."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:368
+# game/scenario/character/tomas.rpy:371
 translate english tomas_link_3_e20bfe6e:
 
     # noam "Et si tu te trompes ?"
-    noam "And if you’re wrong?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:370
+# game/scenario/character/tomas.rpy:373
 translate english tomas_link_3_ecee8255:
 
     # tomas "Alors je corrige, et j'assume."
-    tomas "Then I correct it, and I own it."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:372
+# game/scenario/character/tomas.rpy:375
 translate english tomas_link_3_e7a814f0:
 
     # noam "Tu as l'air d'en parler comme d'une règle personnelle."
-    noam "You talk about it like it’s a personal rule."
+    noam ""
 
-# game/scenario/character/tomas.rpy:374
+# game/scenario/character/tomas.rpy:377
 translate english tomas_link_3_5a07d16e:
 
     # tomas reflechit "C'en est une."
-    tomas reflechit "It is."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:375
+# game/scenario/character/tomas.rpy:378
 translate english tomas_link_3_6b4d0908:
 
     # tomas reflechit "Énoncer n'est pas suffisant."
-    tomas reflechit "Stating something isn’t enough."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:376
+# game/scenario/character/tomas.rpy:379
 translate english tomas_link_3_5665081e:
 
     # tomas reflechit "Il faut aussi protéger ce que l'énoncé peut détruire."
-    tomas reflechit "You also have to protect what the statement can destroy."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:378
+# game/scenario/character/tomas.rpy:381
 translate english tomas_link_3_62489253:
 
     # noam "C'est froid, dit comme ça."
-    noam "That sounds cold, put like that."
+    noam ""
 
-# game/scenario/character/tomas.rpy:380
+# game/scenario/character/tomas.rpy:383
 translate english tomas_link_3_86d80538:
 
     # tomas triste "Oui."
-    tomas triste "Yeah."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:381
+# game/scenario/character/tomas.rpy:384
 translate english tomas_link_3_6af0e930:
 
     # tomas triste "Et pourtant c'est humain."
-    tomas triste "And yet it’s human."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:383
+# game/scenario/character/tomas.rpy:386
 translate english tomas_link_3_1e89aff3:
 
     # noam "Je vois."
-    noam "I see."
+    noam ""
 
-# game/scenario/character/tomas.rpy:385
+# game/scenario/character/tomas.rpy:388
 translate english tomas_link_3_cd41147e:
 
     # tomas neutre "Merci."
-    tomas neutre "Thank you."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:386
+# game/scenario/character/tomas.rpy:389
 translate english tomas_link_3_9416c68e:
 
     # tomas neutre "Tu n'es pas obligé d'être d'accord."
-    tomas neutre "You don’t have to agree."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:387
+# game/scenario/character/tomas.rpy:390
 translate english tomas_link_3_e31cadb2:
 
     # tomas neutre "Juste de comprendre que je n'improvise pas."
-    tomas neutre "Just understand that I’m not improvising."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:389
+# game/scenario/character/tomas.rpy:392
 translate english tomas_link_3_c11864a0:
 
     # noam "Je comprends."
-    noam "I understand."
+    noam ""
 
-# game/scenario/character/tomas.rpy:403
+# game/scenario/character/tomas.rpy:408
 translate english tomas_link_4_286205e2:
 
     # "La salle est calme."
-    "The room is quiet."
+    ""
 
-# game/scenario/character/tomas.rpy:404
+# game/scenario/character/tomas.rpy:409
 translate english tomas_link_4_a07624ac:
 
     # "Tomas tient un vieux manuel papier trouvé dans un tiroir."
-    "Tomas is holding an old paper manual he found in a drawer."
+    ""
 
-# game/scenario/character/tomas.rpy:406
+# game/scenario/character/tomas.rpy:411
 translate english tomas_link_4_506bdd65:
 
     # noam "Je pensais que tu ne jurais que par les bases de données."
-    noam "I thought you swore by databases."
+    noam ""
 
-# game/scenario/character/tomas.rpy:408
+# game/scenario/character/tomas.rpy:413
 translate english tomas_link_4_31b114b9:
 
     # tomas joie "J'aime aussi les livres."
-    tomas joie "I like books too."
+    tomas joie ""
 
-# game/scenario/character/tomas.rpy:409
+# game/scenario/character/tomas.rpy:414
 translate english tomas_link_4_a31d6e8a:
 
     # tomas joie "Surtout les livres."
-    tomas joie "Especially books."
+    tomas joie ""
 
-# game/scenario/character/tomas.rpy:411
+# game/scenario/character/tomas.rpy:416
 translate english tomas_link_4_a19c474f:
 
     # noam "Pourquoi 'surtout' ?"
-    noam "Why ‘especially’?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:413
+# game/scenario/character/tomas.rpy:418
 translate english tomas_link_4_8a7d8f66:
 
     # tomas reflechit "Parce qu'ils sont prévisibles."
-    tomas reflechit "Because they’re predictable."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:414
+# game/scenario/character/tomas.rpy:419
 translate english tomas_link_4_a078cb81:
 
     # tomas reflechit "Tu les ouvres."
-    tomas reflechit "You open them."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:415
+# game/scenario/character/tomas.rpy:420
 translate english tomas_link_4_de5b838b:
 
     # tomas reflechit "Ils te donnent exactement ce qu'ils contiennent."
-    tomas reflechit "They give you exactly what they contain."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:416
+# game/scenario/character/tomas.rpy:421
 translate english tomas_link_4_b4a7d8f6:
 
     # tomas reflechit "Pas de sous-entendu caché dans l'intonation."
-    tomas reflechit "No subtext hiding in someone’s tone."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:418
+# game/scenario/character/tomas.rpy:423
 translate english tomas_link_4_e93fa9c3:
 
     # noam "Pas de regard de travers non plus."
-    noam "No sideways looks either."
+    noam ""
 
-# game/scenario/character/tomas.rpy:420
+# game/scenario/character/tomas.rpy:425
 translate english tomas_link_4_f98665c5:
 
     # tomas taquin "Oui."
-    tomas taquin "Yeah."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:421
+# game/scenario/character/tomas.rpy:426
 translate english tomas_link_4_d7784473:
 
     # tomas taquin "Un livre ne me regarde jamais comme si j'avais raté une évidence sociale."
-    tomas taquin "A book never looks at me like I missed an obvious social cue."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:423
+# game/scenario/character/tomas.rpy:428
 translate english tomas_link_4_3aa4eb94:
 
     # noam "Ça t'arrive souvent ?"
-    noam "Does that happen to you often?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:425
+# game/scenario/character/tomas.rpy:430
 translate english tomas_link_4_ec1a1c64:
 
     # tomas "Assez."
-    tomas "Enough."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:426
+# game/scenario/character/tomas.rpy:431
 translate english tomas_link_4_25d28ada:
 
     # tomas "Je peux tenir une discussion technique une heure."
-    tomas "I can hold a technical conversation for an hour."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:427
+# game/scenario/character/tomas.rpy:432
 translate english tomas_link_4_c84db9ea:
 
     # tomas "Mais quand quelqu'un pleure,"
-    tomas "But when someone cries,"
+    tomas ""
 
-# game/scenario/character/tomas.rpy:428
+# game/scenario/character/tomas.rpy:433
 translate english tomas_link_4_c1dfaefb:
 
     # tomas "je perds toutes mes procédures."
-    tomas "I lose all my procedures."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:430
+# game/scenario/character/tomas.rpy:435
 translate english tomas_link_4_aca30f0a:
 
     # noam "Tu ne sais pas quoi faire ?"
-    noam "You don’t know what to do?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:432
+# game/scenario/character/tomas.rpy:437
 translate english tomas_link_4_2afb53db:
 
     # tomas inquiet "Exactement."
-    tomas inquiet "Exactly."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:433
+# game/scenario/character/tomas.rpy:438
 translate english tomas_link_4_025305c6:
 
     # tomas inquiet "J'ai envie d'aider."
-    tomas inquiet "I want to help."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:434
+# game/scenario/character/tomas.rpy:439
 translate english tomas_link_4_523220ae:
 
     # tomas inquiet "Je ne sais pas si je dois parler."
-    tomas inquiet "I don’t know if I should talk."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:435
+# game/scenario/character/tomas.rpy:440
 translate english tomas_link_4_3668803b:
 
     # tomas inquiet "Me taire."
-    tomas inquiet "Stay quiet."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:436
+# game/scenario/character/tomas.rpy:441
 translate english tomas_link_4_74071256:
 
     # tomas inquiet "Toucher l'épaule."
-    tomas inquiet "Touch their shoulder."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:437
+# game/scenario/character/tomas.rpy:442
 translate english tomas_link_4_94cc4ccc:
 
     # tomas inquiet "Rester loin."
-    tomas inquiet "Keep my distance."
+    tomas inquiet ""
 
-# game/scenario/character/tomas.rpy:439
+# game/scenario/character/tomas.rpy:444
 translate english tomas_link_4_97bbbd62:
 
     # noam "Y a pas de manuel universel."
-    noam "There’s no universal manual."
+    noam ""
 
-# game/scenario/character/tomas.rpy:441
+# game/scenario/character/tomas.rpy:446
 translate english tomas_link_4_30f76bb8:
 
     # tomas panne "Voilà le problème."
-    tomas panne "That’s the problem."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:442
+# game/scenario/character/tomas.rpy:447
 translate english tomas_link_4_5d47c118:
 
     # tomas panne "Je fonctionne bien avec les manuels."
-    tomas panne "I function well with manuals."
+    tomas panne ""
 
-# game/scenario/character/tomas.rpy:444
+# game/scenario/character/tomas.rpy:449
 translate english tomas_link_4_80a92510:
 
     # noam "Tu peux commencer par être là."
-    noam "You can start by just being there."
+    noam ""
 
-# game/scenario/character/tomas.rpy:446
+# game/scenario/character/tomas.rpy:451
 translate english tomas_link_4_c410c459:
 
     # tomas reflechit "Être là sans résoudre ?"
-    tomas reflechit "Be there without fixing it?"
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:448
+# game/scenario/character/tomas.rpy:453
 translate english tomas_link_4_46081631:
 
     # noam "Oui."
-    noam "Yeah."
+    noam ""
 
-# game/scenario/character/tomas.rpy:450
+# game/scenario/character/tomas.rpy:455
 translate english tomas_link_4_bc30240c:
 
     # tomas hesitation "C'est contre-intuitif."
-    tomas hesitation "That’s counterintuitive."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:451
+# game/scenario/character/tomas.rpy:456
 translate english tomas_link_4_0b2ba9a1:
 
     # tomas hesitation "Quand il y a un problème, je cherche la solution."
-    tomas hesitation "When there’s a problem, I look for the solution."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:453
+# game/scenario/character/tomas.rpy:458
 translate english tomas_link_4_93cf30d6:
 
     # noam "Parfois les gens veulent juste qu'on partage la charge."
-    noam "Sometimes people just want you to share the load."
+    noam ""
 
-# game/scenario/character/tomas.rpy:455
+# game/scenario/character/tomas.rpy:460
 translate english tomas_link_4_bad139d4:
 
     # tomas "Je l'oublie."
-    tomas "I forget that."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:456
+# game/scenario/character/tomas.rpy:461
 translate english tomas_link_4_01b86798:
 
     # tomas "Pas par indifférence."
-    tomas "Not out of indifference."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:457
+# game/scenario/character/tomas.rpy:462
 translate english tomas_link_4_78fc2784:
 
     # tomas "Par réflexe."
-    tomas "Out of reflex."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:459
+# game/scenario/character/tomas.rpy:464
 translate english tomas_link_4_a5ae61c2:
 
     # "Il referme le livre très doucement."
-    "He closes the book very gently."
+    ""
 
-# game/scenario/character/tomas.rpy:461
+# game/scenario/character/tomas.rpy:466
 translate english tomas_link_4_a648dbbb:
 
     # tomas triste "J'ai déjà donné des réponses exactes"
-    tomas triste "I’ve already given exact answers"
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:462
+# game/scenario/character/tomas.rpy:467
 translate english tomas_link_4_0c40684e:
 
     # tomas triste "à des questions qui demandaient surtout de la présence."
-    tomas triste "to questions that mostly needed presence."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:463
+# game/scenario/character/tomas.rpy:468
 translate english tomas_link_4_87d2c91f:
 
     # tomas triste "Les mots étaient corrects."
-    tomas triste "The words were correct."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:464
+# game/scenario/character/tomas.rpy:469
 translate english tomas_link_4_1578b199:
 
     # tomas triste "Le moment, non."
-    tomas triste "The timing wasn’t."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:466
+# game/scenario/character/tomas.rpy:471
 translate english tomas_link_4_3fe6594a:
 
     # noam "Tu peux apprendre ça aussi."
-    noam "You can learn that too."
+    noam ""
 
-# game/scenario/character/tomas.rpy:468
+# game/scenario/character/tomas.rpy:473
 translate english tomas_link_4_57e8fa4a:
 
     # tomas neutre "J'essaie."
-    tomas neutre "I’m trying."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:469
+# game/scenario/character/tomas.rpy:474
 translate english tomas_link_4_fd8a79f1:
 
     # tomas neutre "Je note des choses."
-    tomas neutre "I write things down."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:470
+# game/scenario/character/tomas.rpy:475
 translate english tomas_link_4_f0ba7ada:
 
     # tomas neutre "Des petites règles."
-    tomas neutre "Little rules."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:472
+# game/scenario/character/tomas.rpy:477
 translate english tomas_link_4_e650907b:
 
     # noam "Genre ?"
-    noam "Like what?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:474
+# game/scenario/character/tomas.rpy:479
 translate english tomas_link_4_2597b9d9:
 
     # tomas reflechit "Règle une : ne pas corriger une personne en larmes."
-    tomas reflechit "Rule one: don’t correct a person who’s crying."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:475
+# game/scenario/character/tomas.rpy:480
 translate english tomas_link_4_25d8641f:
 
     # tomas reflechit "Règle deux : demander 'tu veux une solution ou juste parler ?'"
-    tomas reflechit "Rule two: ask, 'Do you want a solution or do you just want to talk?'"
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:476
+# game/scenario/character/tomas.rpy:481
 translate english tomas_link_4_7882d9dc:
 
     # tomas reflechit "Règle trois : accepter le silence."
-    tomas reflechit "Rule three: accept silence."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:478
+# game/scenario/character/tomas.rpy:483
 translate english tomas_link_4_c6b6e4a1:
 
     # noam "C'est pas mal du tout."
-    noam "That’s not bad at all."
+    noam ""
 
-# game/scenario/character/tomas.rpy:480
+# game/scenario/character/tomas.rpy:485
 translate english tomas_link_4_80fe3d33:
 
     # tomas culpabilite "C'est artificiel, non ?"
-    tomas culpabilite "It’s artificial, isn’t it?"
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:482
+# game/scenario/character/tomas.rpy:487
 translate english tomas_link_4_290dd969:
 
     # noam "Non."
-    noam "No."
+    noam ""
 
-# game/scenario/character/tomas.rpy:483
+# game/scenario/character/tomas.rpy:488
 translate english tomas_link_4_0a3a1ec8:
 
     # noam "C'est honnête."
-    noam "It’s honest."
+    noam ""
 
-# game/scenario/character/tomas.rpy:485
+# game/scenario/character/tomas.rpy:490
 translate english tomas_link_4_c5a54184:
 
     # tomas "Honnête, oui."
-    tomas "Honest, yeah."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:486
+# game/scenario/character/tomas.rpy:491
 translate english tomas_link_4_e50246c9:
 
     # tomas "Et un peu gênant."
-    tomas "And a little embarrassing."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:488
+# game/scenario/character/tomas.rpy:493
 translate english tomas_link_4_09abe5a1:
 
     # noam "Pourquoi gênant ?"
-    noam "Why embarrassing?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:490
+# game/scenario/character/tomas.rpy:495
 translate english tomas_link_4_d8b3ad46:
 
     # tomas culpabilite "Parce que je réalise que je comprends mieux les systèmes que les gens."
-    tomas culpabilite "Because I’m realizing I understand systems better than people."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:491
+# game/scenario/character/tomas.rpy:496
 translate english tomas_link_4_3a1d1916:
 
     # tomas culpabilite "Et que les gens vivent mal d'être traités comme des systèmes."
-    tomas culpabilite "And people don’t take well to being treated like systems."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:493
+# game/scenario/character/tomas.rpy:498
 translate english tomas_link_4_8fd64014:
 
     # noam "Le fait que tu le voies déjà, c'est important."
-    noam "The fact you can already see that matters."
+    noam ""
 
-# game/scenario/character/tomas.rpy:495
+# game/scenario/character/tomas.rpy:500
 translate english tomas_link_4_7ac1b51f:
 
     # tomas joie "Merci."
-    tomas joie "Thank you."
+    tomas joie ""
 
-# game/scenario/character/tomas.rpy:496
+# game/scenario/character/tomas.rpy:501
 translate english tomas_link_4_8cb4509a:
 
     # tomas taquin "J'ajoute ça en règle quatre :"
-    tomas taquin "I’ll add that as rule four:"
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:497
+# game/scenario/character/tomas.rpy:502
 translate english tomas_link_4_82d165bd:
 
     # tomas taquin "choisir des interlocuteurs patients."
-    tomas taquin "choose patient conversation partners."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:499
+# game/scenario/character/tomas.rpy:504
 translate english tomas_link_4_0af244fb:
 
     # noam "Très bonne règle."
-    noam "Very good rule."
+    noam ""
 
-# game/scenario/character/tomas.rpy:501
+# game/scenario/character/tomas.rpy:506
 translate english tomas_link_4_46af10a7:
 
     # tomas neutre "Je la garde."
-    tomas neutre "I’m keeping it."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:515
+# game/scenario/character/tomas.rpy:522
 translate english tomas_link_5_1628e3f9:
 
     # "Tomas est debout devant l'hologramme éteint."
-    "Tomas is standing in front of the dark hologram."
+    ""
 
-# game/scenario/character/tomas.rpy:516
+# game/scenario/character/tomas.rpy:523
 translate english tomas_link_5_6162c7b0:
 
     # "Il semble hésiter à parler, puis se lance."
-    "He seems to hesitate, then starts."
+    ""
 
-# game/scenario/character/tomas.rpy:518
+# game/scenario/character/tomas.rpy:525
 translate english tomas_link_5_7c7f72b5:
 
     # tomas "Tu m'as demandé une fois"
-    tomas "You asked me once"
+    tomas ""
 
-# game/scenario/character/tomas.rpy:519
+# game/scenario/character/tomas.rpy:526
 translate english tomas_link_5_10d07499:
 
     # tomas "si j'avais déjà dû taire quelque chose d'important."
-    tomas "if I’d ever had to keep something important quiet."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:521
+# game/scenario/character/tomas.rpy:528
 translate english tomas_link_5_46081631:
 
     # noam "Oui."
-    noam "Yeah."
+    noam ""
 
-# game/scenario/character/tomas.rpy:523
+# game/scenario/character/tomas.rpy:530
 translate english tomas_link_5_fcef0c29:
 
     # tomas "La réponse est oui."
-    tomas "The answer is yes."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:524
+# game/scenario/character/tomas.rpy:531
 translate english tomas_link_5_9a70cd08:
 
     # tomas "Et pas pour me protéger moi."
-    tomas "And not to protect myself."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:526
+# game/scenario/character/tomas.rpy:533
 translate english tomas_link_5_bdb6f578:
 
     # noam "Pour protéger qui ?"
-    noam "To protect who?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:528
+# game/scenario/character/tomas.rpy:535
 translate english tomas_link_5_166420fb:
 
     # tomas hesitation "Un groupe."
-    tomas hesitation "A group."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:529
+# game/scenario/character/tomas.rpy:536
 translate english tomas_link_5_e7070f1f:
 
     # tomas hesitation "Des gens qui dépendaient d'une décision rapide."
-    tomas hesitation "People who depended on a fast decision."
+    tomas hesitation ""
 
-# game/scenario/character/tomas.rpy:531
+# game/scenario/character/tomas.rpy:538
 translate english tomas_link_5_0aa3a8a3:
 
     # noam "Tu avais une vérité dangereuse ?"
-    noam "You had a dangerous truth?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:533
+# game/scenario/character/tomas.rpy:540
 translate english tomas_link_5_d109af2b:
 
     # tomas "Une vérité incomplète, surtout."
-    tomas "An incomplete truth, mostly."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:534
+# game/scenario/character/tomas.rpy:541
 translate english tomas_link_5_faa34c94:
 
     # tomas "Assez vraie pour faire peur."
-    tomas "True enough to scare people."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:535
+# game/scenario/character/tomas.rpy:542
 translate english tomas_link_5_efd70c44:
 
     # tomas "Pas assez solide pour guider une action juste."
-    tomas "Not solid enough to guide the right action."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:537
+# game/scenario/character/tomas.rpy:544
 translate english tomas_link_5_86cd6ea8:
 
     # "Il serre les doigts contre sa paume."
-    "He presses his fingers into his palm."
+    ""
 
-# game/scenario/character/tomas.rpy:539
+# game/scenario/character/tomas.rpy:546
 translate english tomas_link_5_b3ecb9b6:
 
     # tomas mefiant "Si je la disais trop tôt,"
-    tomas mefiant "If I said it too early,"
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:540
+# game/scenario/character/tomas.rpy:547
 translate english tomas_link_5_11410e87:
 
     # tomas mefiant "certains auraient paniqué."
-    tomas mefiant "some would’ve panicked."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:541
+# game/scenario/character/tomas.rpy:548
 translate english tomas_link_5_8e59deb7:
 
     # tomas mefiant "D'autres auraient attaqué."
-    tomas mefiant "Others would’ve attacked."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:542
+# game/scenario/character/tomas.rpy:549
 translate english tomas_link_5_d754b63b:
 
     # tomas mefiant "Tout le monde aurait cru agir rationnellement."
-    tomas mefiant "Everyone would’ve believed they were acting rationally."
+    tomas mefiant ""
 
-# game/scenario/character/tomas.rpy:544
+# game/scenario/character/tomas.rpy:551
 translate english tomas_link_5_8264042c:
 
     # noam "Et tu as choisi le silence."
-    noam "And you chose silence."
+    noam ""
 
-# game/scenario/character/tomas.rpy:546
+# game/scenario/character/tomas.rpy:553
 translate english tomas_link_5_0e04cba9:
 
     # tomas triste "J'ai choisi d'attendre."
-    tomas triste "I chose to wait."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:547
+# game/scenario/character/tomas.rpy:554
 translate english tomas_link_5_72ca2e84:
 
     # tomas triste "Quelques heures."
-    tomas triste "A few hours."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:548
+# game/scenario/character/tomas.rpy:555
 translate english tomas_link_5_99b17f0f:
 
     # tomas triste "Le temps de vérifier deux sources."
-    tomas triste "Long enough to verify two sources."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:550
+# game/scenario/character/tomas.rpy:557
 translate english tomas_link_5_099629a8:
 
     # noam "Qu'est-ce qui s'est passé ?"
-    noam "What happened?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:552
+# game/scenario/character/tomas.rpy:559
 translate english tomas_link_5_97669ebf:
 
     # tomas "Quand j'ai parlé,"
-    tomas "When I spoke,"
+    tomas ""
 
-# game/scenario/character/tomas.rpy:553
+# game/scenario/character/tomas.rpy:560
 translate english tomas_link_5_5a779767:
 
     # tomas "c'était plus clair."
-    tomas "it was clearer."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:554
+# game/scenario/character/tomas.rpy:561
 translate english tomas_link_5_a3ac1525:
 
     # tomas "On a évité le pire immédiat."
-    tomas "We avoided the immediate worst."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:556
+# game/scenario/character/tomas.rpy:563
 translate english tomas_link_5_aa69f897:
 
     # noam "Donc c'était la bonne décision."
-    noam "So it was the right decision."
+    noam ""
 
-# game/scenario/character/tomas.rpy:558
+# game/scenario/character/tomas.rpy:565
 translate english tomas_link_5_3e4f42c3:
 
     # tomas desespoir "Pas complètement."
-    tomas desespoir "Not completely."
+    tomas desespoir ""
 
-# game/scenario/character/tomas.rpy:559
+# game/scenario/character/tomas.rpy:566
 translate english tomas_link_5_430dee5c:
 
     # tomas desespoir "Pendant ces heures, d'autres ont pris des risques sans savoir."
-    tomas desespoir "During those hours, others took risks without knowing."
+    tomas desespoir ""
 
-# game/scenario/character/tomas.rpy:560
+# game/scenario/character/tomas.rpy:567
 translate english tomas_link_5_4494e506:
 
     # tomas desespoir "Personne n'est mort."
-    tomas desespoir "Nobody died."
+    tomas desespoir ""
 
-# game/scenario/character/tomas.rpy:561
+# game/scenario/character/tomas.rpy:568
 translate english tomas_link_5_4dbf73d2:
 
     # tomas desespoir "Mais certains ont payé le prix de mon délai."
-    tomas desespoir "But some people paid the price for my delay."
+    tomas desespoir ""
 
-# game/scenario/character/tomas.rpy:563
+# game/scenario/character/tomas.rpy:570
 translate english tomas_link_5_760fa34f:
 
     # "Sa voix baisse d'un ton."
-    "His voice drops a notch."
+    ""
 
-# game/scenario/character/tomas.rpy:565
+# game/scenario/character/tomas.rpy:572
 translate english tomas_link_5_19243e9d:
 
     # tomas "Je peux justifier le choix."
-    tomas "I can justify the choice."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:566
+# game/scenario/character/tomas.rpy:573
 translate english tomas_link_5_d8c961f2:
 
     # tomas "Je peux l'expliquer ligne par ligne."
-    tomas "I can explain it line by line."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:567
+# game/scenario/character/tomas.rpy:574
 translate english tomas_link_5_271e92e7:
 
     # tomas "Je peux même le défendre devant un comité."
-    tomas "I can even defend it in front of a committee."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:569
+# game/scenario/character/tomas.rpy:576
 translate english tomas_link_5_5297e29b:
 
     # tomas culpabilite "Mais je ne peux pas dire"
-    tomas culpabilite "But I can’t say"
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:570
+# game/scenario/character/tomas.rpy:577
 translate english tomas_link_5_6d7bf1b7:
 
     # tomas culpabilite "qu'il était propre."
-    tomas culpabilite "it was clean."
+    tomas culpabilite ""
 
-# game/scenario/character/tomas.rpy:572
+# game/scenario/character/tomas.rpy:579
 translate english tomas_link_5_61afc99b:
 
     # noam "Il n'y avait peut-être pas de solution propre."
-    noam "Maybe there wasn’t a clean solution."
+    noam ""
 
-# game/scenario/character/tomas.rpy:574
+# game/scenario/character/tomas.rpy:581
 translate english tomas_link_5_f49232a4:
 
     # tomas "C'est exactement ça qui fait peur."
-    tomas "That’s exactly what’s scary."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:575
+# game/scenario/character/tomas.rpy:582
 translate english tomas_link_5_f7fea09e:
 
     # tomas "Comprendre n'efface pas la responsabilité."
-    tomas "Understanding doesn’t erase responsibility."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:576
+# game/scenario/character/tomas.rpy:583
 translate english tomas_link_5_e9cbc0e0:
 
     # tomas "Et avoir raison ne suffit pas à bien faire."
-    tomas "And being right isn’t enough to do right."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:578
+# game/scenario/character/tomas.rpy:585
 translate english tomas_link_5_149cebe7:
 
     # "Il s'interrompt."
-    "He stops."
+    ""
 
-# game/scenario/character/tomas.rpy:579
+# game/scenario/character/tomas.rpy:586
 translate english tomas_link_5_fdea9430:
 
     # "Sa voix vacille légèrement sur la dernière syllabe."
-    "His voice wavers slightly on the last syllable."
+    ""
 
-# game/scenario/character/tomas.rpy:581
+# game/scenario/character/tomas.rpy:588
 translate english tomas_link_5_930137e1:
 
     # tomas "Pardon."
-    tomas "Sorry."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:582
+# game/scenario/character/tomas.rpy:589
 translate english tomas_link_5_f0aad90e:
 
     # tomas "Je..."
-    tomas "I..."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:583
+# game/scenario/character/tomas.rpy:590
 translate english tomas_link_5_79e8509a:
 
     # tomas "Je ne voulais pas que ça sorte comme ça."
-    tomas "I didn’t mean for it to come out like that."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:585
+# game/scenario/character/tomas.rpy:592
 translate english tomas_link_5_9088ae01:
 
     # noam "Tu peux."
-    noam "You can."
+    noam ""
 
-# game/scenario/character/tomas.rpy:587
+# game/scenario/character/tomas.rpy:594
 translate english tomas_link_5_3b6c0f84:
 
     # tomas "Je sais."
-    tomas "I know."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:588
+# game/scenario/character/tomas.rpy:595
 translate english tomas_link_5_a183e679:
 
     # tomas "C'est juste inhabituel."
-    tomas "It’s just unusual."
+    tomas ""
 
-# game/scenario/character/tomas.rpy:590
+# game/scenario/character/tomas.rpy:597
 translate english tomas_link_5_b0f5f589:
 
     # noam "Tu gardes beaucoup de choses."
-    noam "You keep a lot inside."
+    noam ""
 
-# game/scenario/character/tomas.rpy:592
+# game/scenario/character/tomas.rpy:599
 translate english tomas_link_5_ed709de9:
 
     # tomas reflechit "Oui."
-    tomas reflechit "Yes."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:593
+# game/scenario/character/tomas.rpy:600
 translate english tomas_link_5_4f1cca2e:
 
     # tomas reflechit "Parce que chaque information ressemble à un levier."
-    tomas reflechit "Because every piece of information feels like a lever."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:594
+# game/scenario/character/tomas.rpy:601
 translate english tomas_link_5_a38c37df:
 
     # tomas reflechit "Et je passe mon temps à me demander"
-    tomas reflechit "And I spend my time wondering"
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:595
+# game/scenario/character/tomas.rpy:602
 translate english tomas_link_5_3a44c5f0:
 
     # tomas reflechit "qui sera écrasé quand on appuie dessus."
-    tomas reflechit "who will get crushed when someone pulls it."
+    tomas reflechit ""
 
-# game/scenario/character/tomas.rpy:597
+# game/scenario/character/tomas.rpy:604
 translate english tomas_link_5_ac40dc20:
 
     # noam "Tu n'es pas seul avec ça."
-    noam "You’re not alone in that."
+    noam ""
 
-# game/scenario/character/tomas.rpy:599
+# game/scenario/character/tomas.rpy:606
 translate english tomas_link_5_cd41147e:
 
     # tomas neutre "Merci."
-    tomas neutre "Thank you."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:600
+# game/scenario/character/tomas.rpy:607
 translate english tomas_link_5_bff9fa3d:
 
     # tomas neutre "J'ai encore du mal à y croire,"
-    tomas neutre "I still have a hard time believing it,"
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:601
+# game/scenario/character/tomas.rpy:608
 translate english tomas_link_5_1420a0fe:
 
     # tomas neutre "mais merci."
-    tomas neutre "but thank you."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:603
+# game/scenario/character/tomas.rpy:610
 translate english tomas_link_5_f4ab2864:
 
     # "Il prend une longue inspiration."
-    "He takes a long breath."
+    ""
 
-# game/scenario/character/tomas.rpy:605
+# game/scenario/character/tomas.rpy:612
 translate english tomas_link_5_35f36151:
 
     # tomas determine "La prochaine fois,"
-    tomas determine "Next time,"
+    tomas determine ""
 
-# game/scenario/character/tomas.rpy:606
+# game/scenario/character/tomas.rpy:613
 translate english tomas_link_5_927df158:
 
     # tomas determine "je veux décider mieux."
-    tomas determine "I want to decide better."
+    tomas determine ""
 
-# game/scenario/character/tomas.rpy:607
+# game/scenario/character/tomas.rpy:614
 translate english tomas_link_5_9328e2d1:
 
     # tomas determine "Pas seulement plus vite."
-    tomas determine "Not just faster."
+    tomas determine ""
 
-# game/scenario/character/tomas.rpy:608
+# game/scenario/character/tomas.rpy:615
 translate english tomas_link_5_64b9725d:
 
     # tomas determine "Pas seulement plus juste sur le papier."
-    tomas determine "Not just more correct on paper."
+    tomas determine ""
 
-# game/scenario/character/tomas.rpy:610
+# game/scenario/character/tomas.rpy:617
 translate english tomas_link_5_6d2dc3ea:
 
     # noam "Plus humain ?"
-    noam "More human?"
+    noam ""
 
-# game/scenario/character/tomas.rpy:612
+# game/scenario/character/tomas.rpy:619
 translate english tomas_link_5_86d80538:
 
     # tomas triste "Oui."
-    tomas triste "Yeah."
+    tomas triste ""
 
-# game/scenario/character/tomas.rpy:613
+# game/scenario/character/tomas.rpy:620
 translate english tomas_link_5_b5889b28:
 
     # tomas joie "Même si c'est flou."
-    tomas joie "Even if it’s fuzzy."
+    tomas joie ""
 
-# game/scenario/character/tomas.rpy:615
+# game/scenario/character/tomas.rpy:622
 translate english tomas_link_5_98c28637:
 
     # noam "On apprendra en route."
-    noam "We’ll learn along the way."
+    noam ""
 
-# game/scenario/character/tomas.rpy:617
+# game/scenario/character/tomas.rpy:624
 translate english tomas_link_5_a139fb7b:
 
     # tomas neutre "D'accord."
-    tomas neutre "Okay."
+    tomas neutre ""
 
-# game/scenario/character/tomas.rpy:618
+# game/scenario/character/tomas.rpy:625
 translate english tomas_link_5_e23711c0:
 
     # tomas taquin "Et si je recommence à faire un exposé de douze pages,"
-    tomas taquin "And if I start giving a twelve-page presentation again,"
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:619
+# game/scenario/character/tomas.rpy:626
 translate english tomas_link_5_baa32eaf:
 
     # tomas taquin "tu m'arrêtes."
-    tomas taquin "you stop me."
+    tomas taquin ""
 
-# game/scenario/character/tomas.rpy:621
+# game/scenario/character/tomas.rpy:628
 translate english tomas_link_5_713148f6:
 
     # noam "Promis."
-    noam "Promise."
+    noam ""
 
-# game/scenario/character/tomas.rpy:623
+# game/scenario/character/tomas.rpy:630
 translate english tomas_link_5_8c9d1bf2:
 
     # tomas rire "Bien."
-    tomas rire "Good."
+    tomas rire ""
 
 translate english strings:
 
     # game/scenario/character/tomas.rpy:10
     old "Passer du temps avec Tomas ?"
-    new "Spend time with Tomas?"
+    new ""
+

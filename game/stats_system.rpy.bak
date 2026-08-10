@@ -1,0 +1,362 @@
+# =============================================================
+# STATISTIQUES SECONDAIRES — permanentes (persistent), jets D10
+# =============================================================
+
+# ---- Données permanentes (partagées entre toutes les saves) ----
+default persistent.stats = None   # dict rempli par stats_init()
+
+init python:
+
+    STAT_MIN = 1
+    STAT_MAX = 10
+
+    # Ordre d'affichage + méta (label, couleur, initiale icône)
+    STATS_ORDER = ["observation", "empathie", "sang_froid", "logique", "audace", "physique"]
+
+    STATS_META = {
+        "observation": {"label": "Observation", "color": "#5CD3FF", "glyph": "O"},
+        "empathie":    {"label": "Empathie",    "color": "#B57BFF", "glyph": "E"},
+        "sang_froid":  {"label": "Sang-froid",  "color": "#E85C6B", "glyph": "S"},
+        "logique":     {"label": "Logique",     "color": "#6BD98A", "glyph": "L"},
+        "audace":      {"label": "Audace",       "color": "#4FE0C0", "glyph": "A"},
+        "physique":    {"label": "Physique",     "color": "#F0A835", "glyph": "P"},
+    }
+
+    def stats_init():
+        # Crée/complète le dict permanent sans écraser les niveaux existants
+        if not isinstance(persistent.stats, dict):
+            persistent.stats = {}
+        for k in STATS_ORDER:
+            if k not in persistent.stats:
+                persistent.stats[k] = STAT_MIN
+        return persistent.stats
+
+    def get_stat(name):
+        stats_init()
+        return persistent.stats.get(name, STAT_MIN)
+
+    def set_stat(name, value):
+        stats_init()
+        persistent.stats[name] = max(STAT_MIN, min(STAT_MAX, int(value)))
+        return persistent.stats[name]
+
+    def mod_stat(name, delta):
+        # +1 / -1 etc. Retourne (nouveau_niveau, a_monte_de_niveau)
+        old = get_stat(name)
+        new = set_stat(name, old + delta)
+        return new, (new > old)
+
+    # ---- Jet de dé D10 ----
+    # roll 1 = échec critique TOUJOURS ; 10 = réussite critique TOUJOURS.
+    # Sinon : réussite si (roll + niveau_stat) >= dc.
+    def roll_stat(name, dc=10):
+        import random
+        lvl = get_stat(name)
+        roll = random.randint(1, 10)
+        if roll == 1:
+            success, crit = False, True
+        elif roll == 10:
+            success, crit = True, True
+        else:
+            success, crit = (roll + lvl) >= dc, False
+        return {
+            "stat": name,
+            "label": STATS_META[name]["label"],
+            "color": STATS_META[name]["color"],
+            "level": lvl,
+            "roll": roll,
+            "total": roll + lvl,
+            "dc": dc,
+            "success": success,
+            "critical": crit,
+        }
+
+$ stats_init()
+
+
+# ---- Transforms d'animation ----
+transform tablet_card_halo:
+    alpha 0.0
+    linear 1.4 alpha 0.30
+    linear 1.4 alpha 0.0
+    repeat
+
+transform stat_check_idle:
+    linear 1.6 zoom 1.04
+    linear 1.6 zoom 1.0
+    repeat
+
+
+# =============================================================
+# ÉCRAN D'ACCUEIL TABLETTE — "CONCLAVE OS" (cf maquette)
+# =============================================================
+# Usage :  call screen tablet_home
+# card_actions permet de rebrancher les boutons selon le contexte.
+
+screen tablet_home(clock="08:00", show_vote=True):
+    modal True
+    zorder 100
+
+    add Solid("#020609F2")
+
+    # Grille déco
+    for gx in [0.25, 0.50, 0.75]:
+        add Solid("#5CD3FF08") xpos 0 ypos 0 xsize 1920 ysize 1 at Transform(ypos=gx)
+    for gy in [0.33, 0.67]:
+        add Solid("#5CD3FF08") xpos 0 ypos 0 xsize 1 ysize 1080 at Transform(xpos=gy)
+
+    frame at d1_appear:
+        xalign 0.5
+        yalign 0.5
+        xsize 1180
+        ysize 720
+        background Frame(Solid("#0A121CF8"), 0, 0)
+        padding (0, 0)
+
+        fixed:
+            xsize 1180
+            ysize 720
+
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 1180 ysize 2
+
+            # ---- Barre de statut ----
+            add Solid("#0A111C") xpos 0 ypos 0 xsize 1180 ysize 56
+            text "▮ ▮▮  ⌁":
+                xpos 26 ypos 18 size 16 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf"
+            text "[clock]":
+                xpos 1070 ypos 15 size 20 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            add Solid("#1A2D3E") xpos 0 ypos 56 xsize 1180 ysize 1
+
+            # ---- Cartes ----
+            hbox:
+                xalign 0.5
+                ypos 130
+                spacing 40
+
+                if show_vote and j2_vote_codex_unlocked:
+                    $ vote_progress = dossier_chapter_progress(dossier_default_chapter())
+                    use tablet_card("DOSSIER DE VOTE", "#B57BFF", "hud/tablet/card_vote", [Hide("tablet_home"), Show("vote_dossier")], vote_progress)
+                use tablet_card("STATISTIQUES", "#5CD3FF", "hud/tablet/card_stats", [Hide("tablet_home"), Show("tablet_stats")])
+                use tablet_card("CODEX", "#6BD98A", "hud/tablet/card_codex", [Hide("tablet_home"), ShowMenu("codex_menu")])
+
+            # ---- Barre basse + bouton home (ferme la tablette) ----
+            text "CONCLAVE OS v2.1":
+                xpos 26 ypos 678 size 12 color "#3A566A" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            button:
+                xalign 0.5 ypos 660
+                xsize 90 ysize 44
+                background Frame(Solid("#12202E"), 0, 0)
+                hover_background Frame(Solid("#5CD3FF22"), 0, 0)
+                action Hide("tablet_home")
+                text "⌂" xalign 0.5 yalign 0.5 size 24 color "#5CD3FF"
+
+
+screen tablet_card(title, color, icon, action, progress=None):
+    $ progress_percent = progress["percent"] if progress is not None else 0
+    $ progress_arguments_done = progress["arguments_done"] if progress is not None else 0
+    $ progress_arguments_total = progress["arguments_total"] if progress is not None else 0
+    $ progress_successes_done = progress["successes_done"] if progress is not None else 0
+    $ progress_successes_total = progress["successes_total"] if progress is not None else 0
+
+    frame:
+        xsize 320
+        ysize 460
+        background Frame(Solid("#0C1622"), 0, 0)
+        padding (0, 0)
+
+        button:
+            xsize 320
+            ysize 460
+            background Frame(Solid("#00000000"), 0, 0)
+            hover_background Frame(Solid(color + "18"), 0, 0)
+            action action
+
+            fixed:
+                xsize 320
+                ysize 460
+                add Solid(color) xpos 0 ypos 0 xsize 320 ysize 2
+                add Solid(color + "55") xpos 0 ypos 0 xsize 2 ysize 460
+                add Solid(color + "55") xpos 318 ypos 0 xsize 2 ysize 460
+
+                # Icône circulaire (halo + anneau ticks + texture)
+                fixed:
+                    xalign 0.5 ypos 64
+                    xysize (200, 200)
+                    add Transform("hud/tablet/glow_soft.png", matrixcolor=TintMatrix(color)) xalign 0.5 yalign 0.5 at tablet_card_halo
+                    add Transform("hud/tablet/disc_ring.png", size=(184, 184), matrixcolor=TintMatrix(color)) xalign 0.5 yalign 0.5
+                    add Transform(icon + ".png", size=(94, 94)) xalign 0.5 yalign 0.5
+                    if progress is not None:
+                        add Solid("#07111DDD") xalign 0.5 yalign 0.5 xysize (116, 58)
+                        text "[progress_percent]%":
+                            xalign 0.5 yalign 0.5 size 27 color "#FFFFFF"
+                            font "fonts/Rajdhani-SemiBold.ttf"
+
+                if progress is not None:
+                    text "ARGUMENTS  [progress_arguments_done] / [progress_arguments_total]":
+                        xalign 0.5 ypos 278 size 14 color color
+                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+                    text "SUCCÈS  [progress_successes_done] / [progress_successes_total]":
+                        xalign 0.5 ypos 304 size 14 color color
+                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+                add Solid(color + "33") xpos 40 ypos 340 xsize 240 ysize 1
+                text title:
+                    xalign 0.5 ypos 372
+                    size 22 color color
+                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                text "◇":
+                    xalign 0.5 ypos 412 size 16 color color
+
+
+# =============================================================
+# ÉCRAN STATISTIQUES — jauges 10 segments (cf HUD perso)
+# =============================================================
+
+screen tablet_stats():
+    modal True
+    zorder 110
+
+    add Solid("#020609F2")
+
+    frame at d1_appear:
+        xalign 0.5
+        yalign 0.5
+        xsize 1120
+        ysize 780
+        background Frame(Solid("#0A121CF8"), 0, 0)
+        padding (0, 0)
+
+        fixed:
+            xsize 1120
+            ysize 780
+
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 1120 ysize 2
+
+            # ---- Barre de titre ----
+            add Solid("#0A111C") xpos 0 ypos 0 xsize 1120 ysize 56
+            text "PROFIL — STATISTIQUES":
+                xpos 30 ypos 16 size 18 color "#5CD3FF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+            text "COMPÉTENCES PERMANENTES":
+                xpos 830 ypos 20 size 13 color "#3A566A"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            add Solid("#1A2D3E") xpos 0 ypos 56 xsize 1120 ysize 1
+
+            # ---- Grille 3 x 2 de jauges circulaires ----
+            grid 3 2:
+                xalign 0.5 ypos 96
+                xspacing 20
+                yspacing 8
+                for k in STATS_ORDER:
+                    use stat_gauge(k)
+
+            # ---- Retour ----
+            button:
+                xpos 40 ypos 712
+                xsize 200 ysize 46
+                background Frame(Solid("#12202E"), 0, 0)
+                hover_background Frame(Solid("#5CD3FF22"), 0, 0)
+                action [Hide("tablet_stats"), Show("tablet_home")]
+                text "◂  RETOUR" xalign 0.5 yalign 0.5 size 16 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf"
+
+
+screen stat_gauge(name):
+    $ meta = STATS_META[name]
+    $ lvl = get_stat(name)
+    $ col = meta["color"]
+
+    fixed:
+        xysize (340, 300)
+
+        # Anneau segmenté (niveau)
+        add ("hud/tablet/ring_" + name + "_" + str(lvl) + ".png") xalign 0.5 ypos 0
+
+        # Icône centrée
+        add Transform("hud/tablet/stat_icon_" + name + ".png", size=(96, 96)) xalign 0.5 ypos 82
+
+        # Niveau chiffré (dans l'anneau, bas)
+        text "[lvl]":
+            xalign 0.5 ypos 196 size 52 color col
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 1 outlines [(1, "#00000088", 0, 0)]
+
+        # Libellé
+        text meta["label"]:
+            xalign 0.5 ypos 262 size 22 color "#D6E8F0"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+
+# =============================================================
+# JET DE DÉ D10 — écran de résolution
+# =============================================================
+# Usage dans le script :
+#   call screen stat_check("logique", 12, "Déchiffrer le protocole Kami")
+#   if _return:  ... réussite ...  else: ... échec ...
+
+screen stat_check(name, dc=10, titre=""):
+    modal True
+    zorder 200
+
+    default rolled = False
+    default res = None
+
+    add Solid("#020609F5")
+
+    frame at d1_appear:
+        xalign 0.5 yalign 0.5
+        xsize 640 ysize 460
+        background Frame(Solid("#0A121CF8"), 0, 0)
+        padding (0, 0)
+
+        fixed:
+            xsize 640 ysize 460
+            $ col = STATS_META[name]["color"]
+            add Solid(col) xpos 0 ypos 0 xsize 640 ysize 2
+
+            text "TEST — [STATS_META[name]['label']]":
+                xpos 26 ypos 20 size 20 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            if titre:
+                text "[titre]":
+                    xpos 26 ypos 50 size 14 color "#7A98A8" font "fonts/Rajdhani-SemiBold.ttf"
+
+            text "Niveau [get_stat(name)]   •   Difficulté [dc]":
+                xpos 26 ypos 90 size 15 color "#D6E8F0" font "fonts/Rajdhani-SemiBold.ttf"
+
+            # Icône de la stat testée (coin)
+            add Transform("hud/tablet/stat_icon_" + name + ".png", size=(40, 40)) xpos 560 ypos 22
+
+            # Dé
+            frame:
+                xalign 0.5 ypos 150
+                xysize (150, 150)
+                background Frame(Solid(col + "16"), 0, 0)
+                if not rolled:
+                    add Transform("hud/tablet/stat_icon_" + name + ".png", size=(80, 80)) xalign 0.5 ypos 24 at stat_check_idle
+                    text "D10" xalign 0.5 ypos 104 size 30 color col font "fonts/Rajdhani-SemiBold.ttf"
+                else:
+                    text "[res['roll']]" xalign 0.5 yalign 0.5 size 78 color col font "fonts/Rajdhani-SemiBold.ttf"
+
+            if not rolled:
+                button:
+                    xalign 0.5 ypos 340
+                    xsize 260 ysize 54
+                    background Frame(Solid(col + "22"), 0, 0)
+                    hover_background Frame(Solid(col + "44"), 0, 0)
+                    action [SetScreenVariable("res", roll_stat(name, dc)), SetScreenVariable("rolled", True)]
+                    text "LANCER LE DÉ" xalign 0.5 yalign 0.5 size 18 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            else:
+                # Verdict
+                $ verdict = ("RÉUSSITE CRITIQUE" if (res["success"] and res["critical"])
+                             else "ÉCHEC CRITIQUE" if (not res["success"] and res["critical"])
+                             else "RÉUSSITE" if res["success"] else "ÉCHEC")
+                $ vcol = "#6BD98A" if res["success"] else "#E85C6B"
+                text "[res['roll']] + [res['level']] = [res['total']]  vs  [dc]":
+                    xalign 0.5 ypos 320 size 16 color "#7A98A8" font "fonts/Rajdhani-SemiBold.ttf"
+                text "[verdict]":
+                    xalign 0.5 ypos 348 size 26 color vcol font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                button:
+                    xalign 0.5 ypos 400
+                    xsize 200 ysize 44
+                    background Frame(Solid("#12202E"), 0, 0)
+                    hover_background Frame(Solid(vcol + "33"), 0, 0)
+                    action Return(res["success"])
+                    text "CONTINUER" xalign 0.5 yalign 0.5 size 16 color vcol font "fonts/Rajdhani-SemiBold.ttf"

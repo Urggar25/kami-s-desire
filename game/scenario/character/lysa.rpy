@@ -40,8 +40,7 @@ label lysa_link_1:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
     scene bg_repos at adaptive_fullscreen
 
-    $ showP("lysa", "taquin", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("lysa", "taquin", 0.62), ("noam", "reflexion", 0.22)])
 
     lysa taquin "On est toujours en vie."
     lysa taquin "Techniquement, c'est une bonne journée."
@@ -93,8 +92,7 @@ label lysa_link_2:
 
     scene bg_cafeteria at adaptive_fullscreen
 
-    $ showP("lysa", "neutre", 0.60)
-    $ showP("noam", "inquiet", 0.22)
+    $ showGroup([("lysa", "neutre", 0.60), ("noam", "inquiet", 0.22)])
 
     lysa neutre "J'ai dormi deux heures. Peut-être trois."
     lysa triste "Je sais plus trop."
@@ -145,8 +143,7 @@ label lysa_link_3:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("lysa", "neutre", 0.62)
-    $ showP("noam", "triste", 0.22)
+    $ showGroup([("lysa", "neutre", 0.62), ("noam", "triste", 0.22)])
 
     "On reste un moment sans parler, face à la vitre."
 
@@ -201,8 +198,7 @@ label lysa_link_4:
 
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("lysa", "reflexion", 0.62)
-    $ showP("noam", "neutre", 0.22)
+    $ showGroup([("lysa", "reflexion", 0.62), ("noam", "neutre", 0.22)])
 
     "Lysa referme une tablette d'archives sans la ranger."
 
@@ -257,8 +253,7 @@ label lysa_link_5:
 
     scene bg_dortoir at adaptive_fullscreen
 
-    $ showP("lysa", "triste", 0.60)
-    $ showP("noam", "neutre", 0.22)
+    $ showGroup([("lysa", "triste", 0.60), ("noam", "neutre", 0.22)])
 
     "Lysa est assise au sol, dos au lit, les genoux remontés."
     "Je m'installe à côté d'elle sans rien dire."

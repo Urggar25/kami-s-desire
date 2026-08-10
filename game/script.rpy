@@ -51,6 +51,8 @@ default arguments = []
 # Arguments débloqués de façon GLOBALE : conservés entre les sauvegardes et
 # même après avoir recommencé une nouvelle partie.
 default persistent.unlocked_arguments = []
+default persistent.unlocked_vote_argument_ids = []
+default persistent.unlocked_dossier_args = []
 default persistent.pegi18_prompt_done = False
 
 
@@ -214,6 +216,7 @@ init python:
             persistent.unlocked_arguments = []
         if name not in persistent.unlocked_arguments:
             persistent.unlocked_arguments.append(name)
+            renpy.save_persistent()
 
     def restore_unlocked_arguments():
         """Réinjecte dans la sauvegarde courante tous les arguments déjà
@@ -224,6 +227,20 @@ init python:
         for name in persistent.unlocked_arguments:
             if name not in store.arguments:
                 store.arguments.append(name)
+
+        if persistent.unlocked_vote_argument_ids is None:
+            persistent.unlocked_vote_argument_ids = []
+        if hasattr(store, "j2_vote_arguments"):
+            for arg_id in persistent.unlocked_vote_argument_ids:
+                if arg_id not in store.j2_vote_arguments:
+                    store.j2_vote_arguments.append(arg_id)
+
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
+        if hasattr(store, "dossier_unlocked_args"):
+            for arg_id in persistent.unlocked_dossier_args:
+                if not store.dossier_unlocked_args.get(arg_id, False):
+                    store.dossier_unlocked_args[arg_id] = True
 
     def bg_disp(name, blurred=False, blur_radius=2.0):
         ref = ImageReference(name)
@@ -497,12 +514,14 @@ init python:
 
 
 init python:
-    def make_autofocus_cb(tag):
+    def make_autofocus_cb(tag, doublage_tag=None):
         def _cb(event, interact=True, **kwargs):
             if event != "begin":
                 return
 
-            start_character_dialogue(tag, kwargs.get("what", ""))
+            dialogue_text = kwargs.get("what", "")
+            start_character_dialogue(tag, dialogue_text)
+            play_dialogue_doublage(doublage_tag or tag, dialogue_text)
 
             if tag == "__NARRATOR__":
                 last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
@@ -570,7 +589,16 @@ define nyra = Character("Nyra", what_prefix="“", what_suffix="”", callback=m
 define ryn = Character("Ryn", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("ryn"), image="ryn")
 define sael = Character("Sael", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("sael"), image="sael")
 
-define resp_d = Character("Responsable de District", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("__NARRATOR__"))
+define med1 = Character("Médiatrice", what_prefix="“", what_suffix="”")
+define med2 = Character("Médiateur", what_prefix="“", what_suffix="”")
+define cit_a = Character("Citoyenne", what_prefix="“", what_suffix="”")
+define cit_b = Character("Citoyen", what_prefix="“", what_suffix="”")
+define senior = Character("Médiateur senior", what_prefix="“", what_suffix="”")
+define resp = Character("Responsable de séance", what_prefix="“", what_suffix="”")
+define voix = Character("Voix du système", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("__NARRATOR__"))
+define agent = Character("Agent de sécurité", what_prefix="“", what_suffix="”")
+define resp_d = Character("Responsable de District", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("man"), image="man")
+define tuto = Character("", what_prefix="(", what_suffix=")", what_color="#008000", callback=make_autofocus_cb("__NARRATOR__"))
 define goumi = Character("Goumi", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("goumi"), image="goumi")
 define robot = Character("Robot", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("robot"))
 
@@ -578,7 +606,7 @@ define kami = Character(
     "KAMI",
     what_prefix="« ", what_suffix=" »",
     who_color="#AFCBFF",
-    callback=make_autofocus_cb("__NARRATOR__")
+    callback=make_autofocus_cb("__NARRATOR__", doublage_tag="kami")
 )
 
 # ---------------------------------------------------------------------------
@@ -621,13 +649,13 @@ label splashscreen:
     scene black
     with Dissolve(0.5)
 
-    scene expression "images/background/bg_initialisation.png" at adaptive_fullscreen
+    scene expression "images/background/cg/bg_initialisation.png" at adaptive_fullscreen
     with Dissolve(1.0)
     $ renpy.pause(4.0, hard=True)
     scene black
     with Dissolve(1.0)
 
-    scene expression "images/background/bg_studio.png" at adaptive_fullscreen
+    scene expression "images/background/cg/bg_studio.png" at adaptive_fullscreen
     with Dissolve(1.0)
     $ renpy.pause(4.0, hard=True)
     scene black
@@ -639,7 +667,7 @@ label patreon_ending:
     scene black
     with Dissolve(0.5)
 
-    scene expression "images/background/bg_patreon.png" at adaptive_fullscreen
+    scene expression "images/background/cg/bg_patreon.png" at adaptive_fullscreen
     with Dissolve(1.0)
     $ renpy.pause(6.0, hard=True)
     scene black
@@ -668,6 +696,5 @@ label start:
 # ------------------------------------------------------------
 # Rappel usage :
 # $ bg_show("bg_cg006", at_list=[adaptive_fullscreen], blurred=False)
-# $ showP("noam", "neutre", 0.30)
-# $ showP("lysa", "neutre", 0.70)
+# $ showGroup([("noam", "neutre", 0.30), ("lysa", "neutre", 0.70)])
 # ------------------------------------------------------------

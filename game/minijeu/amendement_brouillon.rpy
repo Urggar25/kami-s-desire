@@ -25,7 +25,6 @@
 
 image amend_desk       = "minijeu/amend_assets/amend_desk.png"
 image amend_sheet_img  = "minijeu/amend_assets/amend_sheet.png"
-image amend_room_wide  = "minijeu/amend_assets/amend_room_wide.png"
 image amend_shadow     = "minijeu/amend_assets/amend_shadow.png"
 
 default j1_amend_minigame_done = False
@@ -183,7 +182,9 @@ init python:
         def build_step(self, i):
             self.step = i
             step = AMEND_STEPS[i]
-            tokens = step["tokens"]
+            # Les fragments viennent de données Python : Ren'Py ne les traduit
+            # pas automatiquement comme les chaînes littérales d'un écran.
+            tokens = [kd_tr(token) for token in step["tokens"]]
             new = set(step["new"])
             level = i
             rnd = _amrand.Random(1000 + i)
@@ -226,7 +227,7 @@ init python:
                     "target": idx, "is_parasite": False, "thought": None,
                 })
             for pi, par in enumerate(step.get("parasites", [])):
-                tok = par["token"]
+                tok = kd_tr(par["token"])
                 loose.append({
                     "id": "p%d" % pi, "token": tok, "x": 0, "y": 0,
                     "w": self._frag_w(tok, 30), "h": 56, "size": 30,
@@ -409,13 +410,58 @@ transform amend_shadow_pass:
     linear 1.6 xpos 1600
     linear 0.3 alpha 0.0
 
-transform amend_dezoom:
-    zoom 2.0 yoffset 300
-    easein 3.4 zoom 1.0 yoffset 0
-
 transform amend_fade_in:
     alpha 0.0
     easein 0.6 alpha 1.0
+
+
+# =============================================================================
+# BULLE DE RÉFLEXION — remplace la boîte de dialogue pendant l'écriture
+# =============================================================================
+screen amend_reflection_bubble(message):
+    modal True
+    zorder 80
+
+    key "dismiss" action Return()
+
+    button:
+        xfill True
+        yfill True
+        background None
+        action Return()
+
+    frame at amend_fade_in:
+        xpos 58
+        ypos 54
+        xsize 470
+        yminimum 210
+        background Frame("gui/thoughtbubble.png", 55, 55, 55, 55)
+        padding (50, 36, 50, 54)
+
+        vbox:
+            spacing 12
+
+            text "NOAM — PENSÉE":
+                size 18
+                color "#45627a"
+                bold True
+                kerning 2
+
+            text kd_tr(message):
+                size 25
+                color "#202738"
+                italic True
+                line_spacing 5
+
+            text "CLIQUER POUR CONTINUER":
+                size 13
+                color "#718296"
+                xalign 1.0
+
+
+label amend_reflection(message):
+    call screen amend_reflection_bubble(message)
+    return
 
 
 # =============================================================================
@@ -561,8 +607,8 @@ label amendement_brouillon_play:
     show screen amend_board
     with Dissolve(0.8)
 
-    think "Alors. Ma phrase. Une seule ligne, et qu'on n'en parle plus."
-    think "Les mots sont là, éparpillés autour. {i}(Fais-les glisser sur la feuille pour former une phrase.){/i}"
+    call amend_reflection("Alors. Ma phrase. Une seule ligne, et qu'on n'en parle plus.") from _call_amend_reflection
+    call amend_reflection("Les mots sont là, éparpillés autour. Fais-les glisser sur la feuille pour former une phrase.") from _call_amend_reflection_1
 
     $ _amend_i = 0
     while _amend_i < len(AMEND_STEPS):
@@ -572,7 +618,7 @@ label amendement_brouillon_play:
         if _amend_i == len(AMEND_STEPS) - 1:
             play sound "audio/sfx_announce.mp3"
             voix "Une minute avant fermeture de l'urne."
-            think "Déjà ? Mes mains vont plus lentement que cette horloge."
+            call amend_reflection("Déjà ? Mes mains vont plus lentement que cette horloge.") from _call_amend_reflection_2
 
         # ---- ASSEMBLAGE (boucle pour gérer les parasites) ----
         $ _assembling = True
@@ -582,7 +628,7 @@ label amendement_brouillon_play:
                 $ _pid = str(_return).split(":", 1)[1]
                 $ _pth = amend_st.pop_parasite(_pid)
                 if _pth:
-                    think "[_pth]"
+                    call amend_reflection(_pth) from _call_amend_reflection_3
             else:
                 $ _assembling = False
 
@@ -590,21 +636,21 @@ label amendement_brouillon_play:
         $ _idx = 0
         while _idx < len(_step["reread"]):
             $ _line = _step["reread"][_idx]
-            think "[_line]"
+            call amend_reflection(_line) from _call_amend_reflection_4
             $ _idx += 1
 
         if _step["erase"] is not None:
             # ---- EFFACEMENT ----
             $ amend_st.begin_erase(_step["erase"])
             if _amend_i == 0:
-                think "Ma main cherche la gomme toute seule. {i}(Attrape-la, frotte le mot cerclé jusqu'à ce qu'il disparaisse.){/i}"
+                call amend_reflection("Ma main cherche la gomme toute seule. Attrape-la, frotte le mot cerclé jusqu'à ce qu'il disparaisse.") from _call_amend_reflection_5
             play sound "audio/sfx_paper.mp3"
             call screen amend_input("erase")
 
             $ _idx = 0
             while _idx < len(_step["after"]):
                 $ _line = _step["after"][_idx]
-                think "[_line]"
+                call amend_reflection(_line) from _call_amend_reflection_6
                 $ _idx += 1
 
             # ---- TRANSITION : un représentant termine et quitte la salle ----
@@ -617,49 +663,41 @@ label amendement_brouillon_play:
             $ _idx = 0
             while _idx < len(_step["after"]):
                 $ _line = _step["after"][_idx]
-                think "[_line]"
+                call amend_reflection(_line) from _call_amend_reflection_7
                 $ _idx += 1
 
             $ amend_st.begin_hold()
-            think "Je pourrais encore. Enlever « sans autorisation ». Trouver plus doux, plus prudent."
-            think "Continuer jusqu'à ce que la phrase ne veuille plus rien dire. Jusqu'à ce qu'elle ne gêne plus personne."
-            think "La gomme est déjà dans ma main."
+            call amend_reflection("Je pourrais encore. Enlever « sans autorisation ». Trouver plus doux, plus prudent.") from _call_amend_reflection_8
+            call amend_reflection("Continuer jusqu'à ce que la phrase ne veuille plus rien dire. Jusqu'à ce qu'elle ne gêne plus personne.") from _call_amend_reflection_9
+            call amend_reflection("La gomme est déjà dans ma main.") from _call_amend_reflection_10
 
             call screen amend_input("hold")
 
             if amend_st.final_touch:
                 play sound "audio/sfx_breath.mp3"
                 pause 0.8
-                think "..."
-                think "Non."
-                think "Je pose la gomme."
-                think "Pour une fois, je n'efface pas."
+                call amend_reflection("...") from _call_amend_reflection_11
+                call amend_reflection("Non.") from _call_amend_reflection_12
+                call amend_reflection("Je pose la gomme.") from _call_amend_reflection_13
+                call amend_reflection("Pour une fois, je n'efface pas.") from _call_amend_reflection_14
             else:
-                think "Je repose la gomme sans m'en servir."
-                think "Pour une fois, je n'efface pas."
+                call amend_reflection("Je repose la gomme sans m'en servir.") from _call_amend_reflection_15
+                call amend_reflection("Pour une fois, je n'efface pas.") from _call_amend_reflection_16
 
             $ _amend_i += 1
 
     # =========================================================================
-    # FIN : plier la feuille, dézoom sur la salle vide
+    # FIN : plier la feuille, puis retour direct au Conclave
     # =========================================================================
     $ renpy.music.stop(channel="amend_amb", fadeout=2.0)
     hide screen amend_input
 
     play sound "minijeu/amend_assets/amend_fold.ogg"
     pause 0.7
-    think "Je plie la feuille en deux. De travers, évidemment."
+    call amend_reflection("Je plie la feuille en deux. De travers, évidemment.") from _call_amend_reflection_17
 
     hide screen amend_board
-    scene black with dissolve
-    show amend_room_wide at amend_dezoom
-    with Dissolve(0.8)
-    pause 1.4
-
-    think "Les chaises sont vides. Toutes."
-    think "Je n'ai même pas entendu la dernière partir."
-    think "Le dernier au Conclave. Encore une fois."
-    pause 1.6
+    scene bg_conclave at adaptive_fullscreen with dissolve
 
     # --- variables de sortie (compatibilité scénario) ---
     $ noam_amendement_choix = "assistance_minimale"

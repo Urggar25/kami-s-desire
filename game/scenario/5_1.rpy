@@ -454,8 +454,7 @@ label _5_1_KAEL_NYRA:
 
     scene bg_couloir at adaptive_fullscreen with dissolve
 
-    $ showP("kael", "calme", 0.65)
-    $ showP("nyra", "raison", 0.45)
+    $ showGroup([("kael", "calme", 0.65), ("nyra", "raison", 0.45), ("noam", "neutre", 0.15)])
 
     kael "Bon."
     kael "Je vais essayer d'avaler un bout."
@@ -468,7 +467,6 @@ label _5_1_KAEL_NYRA:
     hide kael
     with moveoutright
 
-    $ showP("noam", "neutre", 0.15)
 
     nyra "Tu as tout entendu ?"
 
@@ -516,9 +514,16 @@ label _5_1_CAFETERIA_MATIN:
 
     think "La cafétéria ressemble à un lendemain de fête condamné sans appel."
 
-    $ showP("kael", "neutre", 0.12)
-    $ showP("elen", "fatigue", 0.50)
-    $ showP("ryn", "blase", 0.88)
+    $ showGroup([
+        ("kael", "neutre"),
+        ("elen", "fatigue"),
+        ("ryn", "blase"),
+        ("tomas", "hesitation"),
+        ("lysa", "blase"),
+        ("iris", "fatigue"),
+        ("julian", "detendu"),
+        ("sael", "neutre"),
+    ])
 
     elen fatigue "Kael..."
 
@@ -552,8 +557,6 @@ label _5_1_CAFETERIA_MATIN:
 
     ryn "Quoi ? C'est vrai, non ?"
 
-    hide elen
-    $ showP("tomas", "hesitation", 0.50)
 
     tomas hesitation "Euh… techniquement, les premières tensions étaient prévisibles."
     tomas "Quand on change le système il faut toujours un temps d'adaptation."
@@ -576,16 +579,11 @@ label _5_1_CAFETERIA_MATIN:
 
     think "Personne ne rit. Tout le monde comprend."
 
-    hide tomas
-    hide ryn
-    hide kael
 
     pause 0.3
 
     think "Je m'installe devant une ration. Elle me regarde. Je la menace. Match nul."
 
-    $ showP("lysa", "blase", 0.12)
-    $ showP("iris", "fatigue", 0.50)
 
     lysa blase "T'as une de ces têtes."
 
@@ -612,8 +610,6 @@ label _5_1_CAFETERIA_MATIN:
     think "Non."
     think "Je préférerais éviter d'y repenser…"
 
-    hide iris
-    hide lysa
 
     show bg_cg019 at memory_fade(1.5, 2.0, 1.5)
 
@@ -626,7 +622,6 @@ label _5_1_CAFETERIA_MATIN:
     think "Une porte s'ouvre derrière nous pendant que mon visage brûle encore."
     think "Timing parfait pour changer de sujet."
 
-    $ showP("julian", "detendu", 0.50)
 
     julian detendu "Bonjour à tous."
 
@@ -635,13 +630,11 @@ label _5_1_CAFETERIA_MATIN:
     julian "Voilà donc comment on accueille Julian ?"
     julian sourire "J'ai choisi de transcender la gueule de bois."
 
-    $ showP("lysa", "blase", 0.12)
     lysa blase "Personne ne transcende rien. Tu fais juste mieux semblant que nous."
 
     julian "C'est déjà une compétence politique."
 
-    $ showP("ryn", "blase", 0.88)
-    ryn "Ou un défaut."
+    ryn blase "Ou un défaut."
 
     julian detendu "Les deux peuvent être rentables."
 
@@ -649,9 +642,7 @@ label _5_1_CAFETERIA_MATIN:
 
     julian "Le vote est demain. Nous n'allons pas passer la journée à feindre qu'un autre sujet compte davantage."
 
-    hide ryn
-    $ showP("iris", "fatigue", 0.66)
-    iris "Rends-nous service : tais-toi jusqu'à ce que les antalgiques fonctionnent."
+    iris fatigue "Rends-nous service : tais-toi jusqu'à ce que les antalgiques fonctionnent."
 
     julian "Je peux. Julian ne le fera pas."
     julian sourire "S'il faut échouer, nous échouerons debout, après avoir défendu quelque chose."
@@ -663,8 +654,6 @@ label _5_1_CAFETERIA_MATIN:
 
     pause 0.3
 
-    hide iris
-    $ showP("sael", "neutre", 0.95)
 
     think "Au bout de la table, Sael est droite, silencieuse, déjà retranchée."
 
@@ -679,20 +668,13 @@ label _5_1_CAFETERIA_MATIN:
     sael "Tu allais la poser. Certaines paroles font du bruit avant de sortir."
     sael mefiant "Et j'ai dit non."
 
-    hide julian
-    $ showP("ryn", "blase", 0.60)
-    ryn "Au moins ça a le mérite d'être clair."
+    ryn blase "Au moins ça a le mérite d'être clair."
 
-    hide ryn
-    $ showP("julian", "sourire", 0.50)
     julian sourire "Je voulais seulement ouvrir une discussion."
 
     sael "Elle est fermée."
 
-    hide lysa
-    $ showP("elen", "neutre", 0.20)
     elen inquiet "Sael, on peut juste écouter ? Sans crier, sans porte qui claque, sans— enfin, juste écouter ?"
-    hide elen
 
     sael "Personne n'a à me tirer hors de ma position. J'en sortirai si j'y vois un chemin."
 
@@ -715,12 +697,10 @@ label _5_1_CAFETERIA_MATIN:
     hide sael
     with dissolve
 
-    $ showP("lysa", "neutre", 0.20)
 
-    lysa "Même le banquet de Tantale avait une ambiance plus légère."
+    lysa neutre "Même le banquet de Tantale avait une ambiance plus légère."
 
-    $ showP("iris", "taquin", 0.66)
-    iris "Je regrette presque la bouteille. C'est dire le niveau de catastrophe."
+    iris taquin "Je regrette presque la bouteille. C'est dire le niveau de catastrophe."
 
     lysa "Vexée de ne pas avoir été choisie ?"
 
@@ -741,8 +721,6 @@ label _5_1_CAFETERIA_MATIN:
 
     think "Je saisis mon plateau et manque la sortie. Retraite stratégique exemplaire."
 
-    hide lysa
-    hide iris
 
     pause 0.3
 
@@ -783,7 +761,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.2
 
-    $ showP("elias", "panique", 0.50)
+    $ showGroup([("elias", "panique", 0.50)])
 
     elias "Noam."
 
@@ -823,10 +801,12 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    $ showP("kael", "triste", 0.50)
-    $ showP("nyra", "neutre", 0.78)
-    $ showP("mara", "stress", 0.22)
-    $ showP("elias", "inquiet", 0.05)
+    $ showGroup([
+        ("kael", "triste"),
+        ("nyra", "neutre"),
+        ("mara", "stress"),
+        ("elias", "inquiet"),
+    ])
 
     "Kael est assis sur le lit d'examen, la main droite enveloppée d'une compresse rouge."
 
@@ -902,7 +882,6 @@ label _5_1_INFIRMERIE_KAEL:
 
     "Mara revient avec du désinfectant et retire la compresse."
 
-    hide elias
     with moveinleft
 
     kael "Aïe."
@@ -928,7 +907,6 @@ label _5_1_INFIRMERIE_KAEL:
     kael "Oui."
     kael inquiet "Normalement."
 
-    $ showP("elias", "inquiet", 0.05)
 
     pause 0.3
 
@@ -1182,8 +1160,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.5
 
-    $ showP("mara", "stress", 0.35)
-    $ showP("noam", "neutre", 0.65)
+    $ showGroup([("mara", "stress", 0.35), ("noam", "neutre", 0.65), ("elias", "fatigue", 0.15)])
 
     think "La porte se referme sur Kael et Nyra."
 
@@ -1193,7 +1170,6 @@ label _5_1_INFIRMERIE_KAEL:
 
     pause 0.3
 
-    $ showP("elias", "fatigue", 0.15)
 
     noam "Ça va ?"
 

@@ -40,8 +40,7 @@ label mara_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_cafeteria at adaptive_fullscreen
 
-    $ showP("mara", "sourire", 0.60)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("mara", "sourire", 0.60), ("noam", "reflexion", 0.22)])
 
     mara sourire "Tiens, toi."
     mara taquin "T'es venu pour le café ou pour les ragots ?"
@@ -169,8 +168,7 @@ label mara_link_2:
 
     scene bg_repos at adaptive_fullscreen
 
-    $ showP("mara", "neutre", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("mara", "neutre", 0.58), ("noam", "reflexion", 0.22)])
 
     mara neutre "Tomas fait toujours semblant de ne rien écouter."
     mara neutre "Elen se croit invisible."
@@ -304,8 +302,7 @@ label mara_link_3:
 
     scene bg_cafeteria at adaptive_fullscreen
 
-    $ showP("mara", "colere", 0.60)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("mara", "colere", 0.60), ("noam", "reflexion", 0.22)])
 
     mara colere "Tu sais ce qui m'agace ?"
     mara colere "Les gens qui pensent qu'ils peuvent me contredire devant tout le monde."
@@ -442,8 +439,7 @@ label mara_link_4:
 
     scene bg_repos at adaptive_fullscreen
 
-    $ showP("mara", "neutre", 0.58)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("mara", "neutre", 0.58), ("noam", "reflexion", 0.22)])
 
     mara neutre "Tu sais, la réputation, c'est un costume."
     mara neutre "On le porte parce que tout le monde regarde."
@@ -577,8 +573,7 @@ label mara_link_5:
 
     scene bg_cafeteria at adaptive_fullscreen
 
-    $ showP("mara", "fatigue", 0.60)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("mara", "fatigue", 0.60), ("noam", "reflexion", 0.22)])
 
     "La cafétéria se vide."
     "Elle laisse tomber ses épaules une seconde."

@@ -27,37 +27,57 @@ init python:
     # ------------------------------------------------------------------
     DOSSIER_CHAPTERS = [
         {"id": 1, "title": "CHAPITRE 1", "props": ["p1_vote_commerce"]},
+        {"id": 2, "title": "CHAPITRE 2", "props": ["p2_vote_deplacements"]},
     ]
+
+    # Les succès sont rattachés au chapitre pour son taux de complétion.
+    DOSSIER_CHAPTER_SUCCES = {
+        1: ["succes001", "succes002", "succes003", "succes004"],
+        2: [],
+    }
 
     # ------------------------------------------------------------------
     # PROPOSITIONS
     # ------------------------------------------------------------------
     DOSSIER_PROPOSITIONS = {
         "p1_vote_commerce": {"chapter": 1, "num": 1,
-            "title": "AUTORISATION DU TRANSPORT, DE LA VENTE\nET DE L'ÉCHANGE DE MARCHANDISES",
+            "title": "ça serait bien qu'on réautorise\nle commerce comme avant.",
             "formulation": "Le Conclave autorise le transport, la vente et l'échange de marchandises entre les districts, sous réserve du respect des règles de sécurité et des quotas définis par l'administration.",
-            "args": ["approvisionnement", "rationnement", "orbite", "monde_avant", "enonce_precis"]},
+            "args": ["approvisionnement", "rationnement", "orbite", "derogations_complexes", "valeur_travail", "monde_avant", "enonce_precis", "echanges_discrets"]},
+        "p2_vote_deplacements": {"chapter": 2, "num": 1,
+            "title": "Autoriser les déplacements de personnes\nentre les districts",
+            "formulation": "Autoriser les déplacements de personnes entre les districts.",
+            "args": []},
     }
 
     # ------------------------------------------------------------------
     # ARGUMENTS
     # ------------------------------------------------------------------
     DOSSIER_ARGS = {
-        "approvisionnement": {"cat": "prudence", "title": "Difficulté d'approvisionnement",
-            "desc": "Les circuits actuels ne répondent pas toujours aux besoins réels des habitants.",
+        "approvisionnement": {"cat": "prudence", "title": "Inégalités entre les districts",
+            "desc": "Les districts n'affrontent ni les mêmes pénuries ni les mêmes chances d'accéder aux biens.",
             "source": "LYSA ET ELIAS"},
         "rationnement": {"cat": "information", "title": "Bons de rationnement",
             "desc": "Les demandes officielles et les bons structurent déjà l'accès aux biens essentiels.",
             "source": "KAEL"},
-        "orbite": {"cat": "prudence", "title": "Faiblesse d'Orbite",
-            "desc": "Sur Orbite, une erreur de circulation ou de sanction peut menacer directement la survie.",
+        "orbite": {"cat": "prudence", "title": "Risque de dépressurisation",
+            "desc": "Sur Orbite, une sanction qui perce une coque peut condamner tout un module.",
             "source": "KAEL"},
+        "derogations_complexes": {"cat": "information", "title": "Dérogations trop complexes",
+            "desc": "Obtenir une nourriture originale ou un objet utile exige une dérogation disproportionnée.",
+            "source": "ELEN"},
+        "valeur_travail": {"cat": "soutien", "title": "Valeur du travail",
+            "desc": "L'entraide protège chacun, mais elle repose sur la contribution de tous ceux qui peuvent travailler.",
+            "source": "SAEL"},
         "monde_avant": {"cat": "soutien", "title": "Le monde d'avant",
             "desc": "Julian présente l'avant-Kami comme une preuve que la circulation libre peut exister.",
             "source": "JULIAN"},
         "enonce_precis": {"cat": "information", "title": "L'énoncé exact",
             "desc": "La formulation exacte du vote reste le point décisif pour évaluer ses conséquences.",
             "source": "CAFÉTÉRIA"},
+        "echanges_discrets": {"cat": "information", "title": "Échanges discrets déjà actifs",
+            "desc": "Des échanges informels existent déjà dans la salle de stockage. Les ignorer ne les fait pas disparaître.",
+            "source": "SALLE DE STOCKAGE"},
     }
 
     # ------------------------------------------------------------------
@@ -80,8 +100,16 @@ init python:
     def unlock_dossier_chapter(cid):
         if cid not in [c["id"] for c in DOSSIER_CHAPTERS]:
             return False
-        if cid not in store.dossier_unlocked_chapters:
-            store.dossier_unlocked_chapters.append(cid)
+        changed = False
+        # Débloquer un chapitre conserve toujours l'accès aux précédents,
+        # y compris lors du chargement d'une ancienne sauvegarde incomplète.
+        for chapter in DOSSIER_CHAPTERS:
+            chapter_id = chapter["id"]
+            if chapter_id <= cid and chapter_id not in store.dossier_unlocked_chapters:
+                store.dossier_unlocked_chapters.append(chapter_id)
+                changed = True
+        if changed:
+            store.dossier_unlocked_chapters.sort()
             store.dossier_current_chapter = cid
             renpy.restart_interaction()
             return True
@@ -110,12 +138,26 @@ init python:
         return False
 
     def dossier_arg_unlocked(aid):
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
         return (aid in getattr(store, "j2_vote_arguments", [])
+                or aid in persistent.unlocked_dossier_args
                 or bool(store.dossier_unlocked_args.get(aid, False)))
 
     def unlock_dossier_arg(aid):
-        if aid in DOSSIER_ARGS and not store.dossier_unlocked_args.get(aid, False):
+        if aid not in DOSSIER_ARGS:
+            return False
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
+        changed = False
+        if not store.dossier_unlocked_args.get(aid, False):
             store.dossier_unlocked_args[aid] = True
+            changed = True
+        if aid not in persistent.unlocked_dossier_args:
+            persistent.unlocked_dossier_args.append(aid)
+            changed = True
+        if changed:
+            renpy.save_persistent()
             renpy.restart_interaction()
             return True
         return False
@@ -133,19 +175,40 @@ init python:
         t = dossier_prop_total(pid)
         return t > 0 and dossier_prop_unlocked_count(pid) == t
 
+    def dossier_chapter_argument_ids(cid):
+        argument_ids = []
+        for pid in dossier_chapter(cid)["props"]:
+            for aid in dossier_prop_args(pid):
+                if aid not in argument_ids:
+                    argument_ids.append(aid)
+        return argument_ids
+
+    def dossier_chapter_success_ids(cid):
+        return list(DOSSIER_CHAPTER_SUCCES.get(cid, []))
+
+    def dossier_chapter_progress(cid):
+        argument_ids = dossier_chapter_argument_ids(cid)
+        success_ids = dossier_chapter_success_ids(cid)
+        arguments_done = sum(1 for aid in argument_ids if dossier_arg_unlocked(aid))
+        successes_done = sum(1 for sid in success_ids if is_succes_unlocked(sid))
+        total = len(argument_ids) + len(success_ids)
+        done = arguments_done + successes_done
+        percent = int(round(100.0 * done / total)) if total else 0
+        return {
+            "arguments_done": arguments_done,
+            "arguments_total": len(argument_ids),
+            "successes_done": successes_done,
+            "successes_total": len(success_ids),
+            "done": done,
+            "total": total,
+            "percent": percent,
+        }
+
     def dossier_global_total():
-        tot = 0
-        for c in dossier_visible_chapters():
-            for pid in c["props"]:
-                tot += dossier_prop_total(pid)
-        return tot
+        return sum(dossier_chapter_progress(c["id"])["total"] for c in dossier_visible_chapters())
 
     def dossier_global_unlocked():
-        n = 0
-        for c in dossier_visible_chapters():
-            for pid in c["props"]:
-                n += dossier_prop_unlocked_count(pid)
-        return n
+        return sum(dossier_chapter_progress(c["id"])["done"] for c in dossier_visible_chapters())
 
     def dossier_global_percent():
         tot = dossier_global_total()
@@ -169,6 +232,10 @@ transform dossier_tint(c):
 screen vote_dossier():
     modal True
     zorder 115
+
+    $ restore_unlocked_arguments()
+    if "day2_sync_argument_titles" in globals():
+        $ day2_sync_argument_titles()
 
     default sel_chapter = dossier_default_chapter()
     default sel_prop = dossier_prop_first_of_chapter(dossier_default_chapter())
@@ -194,16 +261,6 @@ screen vote_dossier():
         use dossier_tab("hud/tablet/card_stats.png", "STATISTIQUES", "#8FB4CC", False, [Hide("vote_dossier"), Show("tablet_stats")])
         use dossier_tab("hud/tablet/card_codex.png", "CODEX", "#8FB4CC", False, [Hide("vote_dossier"), ShowMenu("codex_menu")])
 
-    # Chapitre (cycle limité aux chapitres réellement débloqués)
-    button:
-        xpos 1600 ypos 44 xsize 150 ysize 48
-        background Frame(Solid("#0C1826"), 0, 0)
-        hover_background Frame(Solid("#5CD3FF18"), 0, 0)
-        action [SetScreenVariable("sel_chapter", dossier_cycle_chapter(sel_chapter)),
-                SetScreenVariable("sel_prop", dossier_prop_first_of_chapter(dossier_cycle_chapter(sel_chapter)))]
-        text ("CHAPITRE " + str(sel_chapter)):
-            xalign 0.5 yalign 0.5 size 24 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
-
     button:
         xpos 1832 ypos 44 xysize (48, 48)
         background Frame(Solid("#0C1826"), 0, 0)
@@ -218,14 +275,14 @@ screen vote_dossier():
     # ===============================================================
     # COLONNE GAUCHE
     # ===============================================================
-    # --- Votes à venir ---
+    # --- Chapitres débloqués (un vote par chapitre) ---
     frame:
         xpos 40 ypos 128 xsize 430 ysize 560
         background Frame(Solid("#0A121C"), 0, 0)
         padding (0, 0)
         fixed:
             add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
-            text "VOTES À VENIR":
+            text "CHAPITRES":
                 xpos 24 ypos 16 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
             add Solid("#12283A") xpos 0 ypos 52 xsize 430 ysize 1
             viewport:
@@ -233,18 +290,25 @@ screen vote_dossier():
                 mousewheel True draggable True scrollbars "vertical"
                 vbox:
                     spacing 0
-                    for pid in chap["props"]:
-                        use dossier_prop_row(pid, sel_prop)
+                    for visible_chapter in dossier_visible_chapters():
+                        use dossier_chapter_row(visible_chapter, sel_chapter)
 
-    # --- Progression globale ---
-    $ pct = dossier_global_percent()
+    # --- Complétion du chapitre : arguments + succès associés ---
+    $ chapter_progress = dossier_chapter_progress(sel_chapter)
+    $ pct = chapter_progress["percent"]
+    $ chapter_done = chapter_progress["done"]
+    $ chapter_total = chapter_progress["total"]
+    $ arguments_done = chapter_progress["arguments_done"]
+    $ arguments_total = chapter_progress["arguments_total"]
+    $ successes_done = chapter_progress["successes_done"]
+    $ successes_total = chapter_progress["successes_total"]
     frame:
         xpos 40 ypos 704 xsize 430 ysize 304
         background Frame(Solid("#0A121C"), 0, 0)
         padding (0, 0)
         fixed:
             add Solid("#12283A") xpos 0 ypos 0 xsize 430 ysize 1
-            text "PROGRESSION GLOBALE":
+            text "COMPLÉTION DU CHAPITRE":
                 xpos 24 ypos 18 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
 
             add (dossier_gauge_image(pct)) xpos 30 ypos 70 xysize (140, 140)
@@ -252,11 +316,13 @@ screen vote_dossier():
                 xpos 100 ypos 140 xanchor 0.5 yanchor 0.5 size 34 color "#5CD3FF"
                 font "fonts/Rajdhani-SemiBold.ttf"
 
-            text "[dossier_global_unlocked()] / [dossier_global_total()]":
+            text "[chapter_done] / [chapter_total]":
                 xpos 200 ypos 92 size 30 color "#EAF4FF" font "fonts/Rajdhani-SemiBold.ttf"
-            text "arguments débloqués":
-                xpos 200 ypos 130 size 16 color "#8AA6B9" font "fonts/Barlow-Light.ttf"
-            text "Les arguments apparaissent ici uniquement\naprès leur découverte dans l'histoire.":
+            text "ARGUMENTS  [arguments_done] / [arguments_total]":
+                xpos 200 ypos 132 size 16 color "#8AA6B9" font "fonts/Rajdhani-SemiBold.ttf"
+            text "SUCCÈS  [successes_done] / [successes_total]":
+                xpos 200 ypos 160 size 16 color "#8AA6B9" font "fonts/Rajdhani-SemiBold.ttf"
+            text "Le pourcentage réunit les arguments découverts\net les succès liés à ce chapitre.":
                 xpos 24 ypos 234 size 14 color "#6E8CA6" font "fonts/Barlow-Light.ttf" line_leading 2
 
     # ===============================================================
@@ -336,6 +402,39 @@ screen dossier_tab(icon, label, color, active, act):
             text label:
                 xalign 0.5 ypos 40 size 13 color color
                 font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+
+# -----------------------------------------------------------------------------
+# Ligne chapitre (colonne gauche — un vote par chapitre)
+# -----------------------------------------------------------------------------
+screen dossier_chapter_row(chapter, sel_chapter):
+    $ chapter_id = chapter["id"]
+    $ pid = dossier_prop_first_of_chapter(chapter_id)
+    $ prop = dossier_prop(pid)
+    $ selected = (chapter_id == sel_chapter)
+
+    button:
+        xsize 430 ysize 118
+        background (Frame(Solid("#0E1E2C"), 0, 0) if selected else Frame(Solid("#00000000"), 0, 0))
+        hover_background Frame(Solid("#5CD3FF10"), 0, 0)
+        action [SetScreenVariable("sel_chapter", chapter_id),
+                SetScreenVariable("sel_prop", pid)]
+        fixed:
+            xsize 430 ysize 118
+            if selected:
+                add Solid("#5CD3FF") xpos 0 ypos 0 xsize 3 ysize 118
+                add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
+                add Solid("#5CD3FF") xpos 0 ypos 116 xsize 430 ysize 2
+            else:
+                add Solid("#0F1A26") xpos 0 ypos 117 xsize 430 ysize 1
+
+            text ("CHAPITRE %02d" % chapter_id):
+                xpos 22 ypos 18 size 17 color ("#5CD3FF" if selected else "#6E8CA6")
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text prop.get("title", "").replace("\n", " "):
+                xpos 22 ypos 50 xsize 350 size 17 color ("#DCEBFF" if selected else "#8FB4CC")
+                font "fonts/Rajdhani-SemiBold.ttf" line_leading 2
+            add Solid("#5CD3FF" if selected else "#3A566A") xpos 388 ypos 54 xysize (10, 10)
 
 
 # -----------------------------------------------------------------------------

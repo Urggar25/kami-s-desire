@@ -1,8 +1,12 @@
-﻿# TODO: Translation updated at 2026-01-29 14:58
+﻿# TODO: Translation updated at 2026-08-06 18:53
 
 translate english strings:
 
     # game/options.rpy:18
-    old "kami desire"
-    new "Kami desire"
+    old "Kami's Desires"
+    new ""
+
+    # game/options.rpy:35
+    old "Visual novel de tension, de votes et de survie sociale dans le Conclave orbital.\n\nVersion de développement. Les choix, les arguments et les liens de personnage peuvent encore évoluer."
+    new ""
 

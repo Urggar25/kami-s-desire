@@ -200,5 +200,5 @@ label _17_0_1_1_0_GRATTEMENTS:
     noam determine "D'accord."
     noam "Demain, je l'ouvre."
     "Dans le mur, quelque chose gratte une derniere fois."
-    call end_day("18")
+    call end_day("18") from _call_end_day_18
     jump _18_0_1_1_0_REVEIL_DECISION

@@ -66,7 +66,7 @@ init python:
         "sport006", "sport007", "sport008", "sport009",
     }
 
-    _cg_pattern = re.compile(r"^images/background/(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
+    _cg_pattern = re.compile(r"^images/background/(?:cg/)?(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
     _sport_pattern = re.compile(r"^images/background/(sport\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
 
     def _build_gallery_catalog(pattern):
@@ -81,12 +81,17 @@ init python:
             order = 0 if suffix is None else int(suffix)
 
             if base_name not in catalog:
-                catalog[base_name] = []
-            catalog[base_name].append((order, path))
+                catalog[base_name] = {}
+
+            # Les CG historiques peuvent exister à la racine et dans
+            # background/cg/. En cas de doublon, le dossier canonique prime.
+            previous = catalog[base_name].get(order)
+            if previous is None or "/cg/" in path:
+                catalog[base_name][order] = path
 
         ordered = []
         for base_name in sorted(catalog.keys()):
-            sprites = [p for _, p in sorted(catalog[base_name], key=lambda item: item[0])]
+            sprites = [p for _, p in sorted(catalog[base_name].items(), key=lambda item: item[0])]
             ordered.append((base_name, sprites))
         return ordered
 

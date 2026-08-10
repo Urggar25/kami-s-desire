@@ -98,8 +98,8 @@ init python:
     def j601_signal_spawn_qte(elapsed):
         store.j601_signal_qte_active = True
         store.j601_signal_qte_time = 0.95 if store.j601_signal_phase == 2 else 0.75
-        store.j601_signal_qte_x = random.uniform(0.25, 0.75)
-        store.j601_signal_qte_y = random.uniform(0.20, 0.48)
+        store.j601_signal_qte_x = random.uniform(0.38, 0.62)
+        store.j601_signal_qte_y = random.uniform(0.25, 0.50)
         store.j601_signal_next_qte = elapsed + random.uniform(4.0, 6.0 if store.j601_signal_phase == 2 else 3.2)
         store.j601_signal_warning = "PIXEL FRACTURE"
 
@@ -246,25 +246,54 @@ init python:
 
         return "".join(result)
 
-transform j601_signal_glitch_slow:
-    alpha 0.88
+transform j601_signal_kami_soft:
+    xalign 0.5
+    yalign 0.5
+    alpha 0.90
     xoffset 0
     yoffset 0
-    linear 0.08 xoffset 3
-    linear 0.05 xoffset -4
-    linear 0.10 xoffset 0
-    pause 0.4
+    linear 0.16 alpha 0.96 xoffset 2
+    linear 0.08 alpha 0.86 xoffset -3 yoffset 1
+    linear 0.22 alpha 0.94 xoffset 0 yoffset 0
+    pause 0.28
     repeat
 
-transform j601_signal_glitch_hard:
-    alpha 0.94
+transform j601_signal_kami_hard:
+    xalign 0.5
+    yalign 0.5
+    alpha 0.96
     xoffset 0
     yoffset 0
-    linear 0.04 xoffset 8 yoffset -2
-    linear 0.04 xoffset -7 yoffset 2
-    linear 0.05 xoffset 3 yoffset 0
-    linear 0.08 xoffset 0 yoffset 0
-    pause 0.18
+    linear 0.035 xoffset 13 yoffset -3 alpha 0.78
+    linear 0.025 xoffset -11 yoffset 4 alpha 1.0
+    linear 0.045 xoffset 5 yoffset -1
+    linear 0.06 xoffset 0 yoffset 0 alpha 0.91
+    pause 0.10
+    repeat
+
+transform j601_signal_text_soft:
+    alpha 0.95
+    xoffset 0
+    linear 0.09 xoffset 2 alpha 0.82
+    linear 0.06 xoffset -2 alpha 1.0
+    linear 0.12 xoffset 0 alpha 0.95
+    pause 0.34
+    repeat
+
+transform j601_signal_text_hard:
+    alpha 1.0
+    xoffset 0
+    yoffset 0
+    linear 0.03 xoffset 7 yoffset -2 alpha 0.72
+    linear 0.03 xoffset -6 yoffset 2 alpha 1.0
+    linear 0.05 xoffset 0 yoffset 0 alpha 0.88
+    pause 0.08
+    repeat
+
+transform j601_signal_cursor_pulse:
+    alpha 1.0
+    linear 0.20 alpha 0.48
+    linear 0.20 alpha 1.0
     repeat
 
 transform j601_qte_pulse:
@@ -290,186 +319,249 @@ screen j601_signal_instable_screen():
 
     timer J601_SIGNAL_TICK repeat True action Function(j601_signal_tick)
 
-    add Solid("#030611")
+    $ kami_signal_asset = "images/minigame/signal_instable/kami_transmission_glitch_v2.png"
+    $ signal_zone = j601_signal_get_zone()
+    $ signal_color = "#48F5FF" if signal_zone == "green" else "#FFD166" if signal_zone == "orange" else "#FF526A"
+    $ signal_text_transform = j601_signal_text_soft if j601_signal_phase == 1 else j601_signal_text_hard
 
-    # Fond CRT / lignes.
-    for i in range(0, 1080, 8):
-        add Solid("#FFFFFF08", xysize=(1920, 1)) xpos 0 ypos i
+    add Solid("#020711")
 
-    # Flash d'interférence.
-    if j601_signal_last_flash > 0.0:
-        add Solid("#FF3D6E33")
-
-    # Hologramme central de Kami.
-    if j601_signal_phase == 1:
-        add "bg_diffusion_professeur" at j601_signal_glitch_slow:
-            xalign 0.5
-            yalign 0.36
-            zoom 0.82
-    elif j601_signal_phase == 2:
-        add "bg_diffusion_einstein" at j601_signal_glitch_slow:
-            xalign 0.5
-            yalign 0.36
-            zoom 0.82
+    if j601_signal_phase < 3:
+        add kami_signal_asset at j601_signal_kami_soft
     else:
-        add "bg_diffusion_colere" at j601_signal_glitch_hard:
-            xalign 0.5
-            yalign 0.36
-            zoom 0.82
+        add kami_signal_asset at j601_signal_kami_hard
 
-    # Voile sombre pour lisibilité.
-    add Solid("#03061199")
+    # Dédoublement chromatique et flou animé de la transmission.
+    if j601_signal_phase == 1:
+        add Transform(kami_signal_asset, blur=2.0, alpha=0.16, xoffset=-5, matrixcolor=TintMatrix("#44E9FF")) at j601_signal_kami_soft
+    elif j601_signal_phase == 2:
+        add Transform(kami_signal_asset, blur=5.0, alpha=0.20, xoffset=-10, matrixcolor=TintMatrix("#36DFFF")) at j601_signal_kami_soft
+        add Transform(kami_signal_asset, blur=3.0, alpha=0.12, xoffset=10, matrixcolor=TintMatrix("#FF3C72")) at j601_signal_kami_soft
+    else:
+        add Transform(kami_signal_asset, blur=9.0, alpha=0.25, xoffset=-16, matrixcolor=TintMatrix("#1FDFFF")) at j601_signal_kami_hard
+        add Transform(kami_signal_asset, blur=6.0, alpha=0.20, xoffset=17, matrixcolor=TintMatrix("#FF285F")) at j601_signal_kami_hard
 
-    # Titre.
+    add Solid("#0207112A")
+
+    for i in range(0, 1080, 6):
+        add Solid("#BFEFFF0A", xysize=(1920, 1)) xpos 0 ypos i
+
+    for i in range(7):
+        add Solid("#42DFFF18", xysize=(110 + ((i * 73) % 250), 2)) xpos ((i * 307) % 1750) ypos (95 + i * 79)
+
+    if j601_signal_last_flash > 0.0:
+        add Solid("#FF345533")
+
     frame:
-        xalign 0.5
-        yalign 0.055
-        xsize 1120
-        ysize 86
-        background Solid("#081326DD")
-        vbox:
-            xalign 0.5
-            yalign 0.5
-            spacing 2
-            text "SIGNAL INSTABLE":
-                xalign 0.5
-                size 42
-                color "#D9F8FF"
-                bold True
-            text "Maintenez le curseur dans la zone verte. Corrigez les fractures avec ESPACE.":
-                xalign 0.5
-                size 20
-                color "#9FC7D8"
+        xpos 24
+        ypos 20
+        xsize 500
+        ysize 62
+        background Solid("#06101DDD")
+        padding (24, 13)
+        text "CONCENTRATION : SYNCHRO":
+            size 27
+            color "#46A9FF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            kerning 2.0
 
-    # Texte de Kami / phase.
     frame:
-        xalign 0.5
-        yalign 0.19
-        xsize 1220
+        xalign 0.975
+        ypos 20
+        xsize 300
         ysize 118
-        background Solid("#00000099")
-
+        background Solid("#06101DEE")
+        padding (18, 10)
         vbox:
             xalign 0.5
-            yalign 0.5
-            spacing 6
+            spacing 3
+            text "TEMPS RESTANT":
+                xalign 0.5
+                size 18
+                color "#7089A8"
+            text "00:[j601_signal_time_left:04.1f]":
+                xalign 0.5
+                size 49
+                color ("#FF6875" if j601_signal_time_left < 10.0 else "#D8E8F7")
+                font "fonts/Rajdhani-SemiBold.ttf"
 
+    frame:
+        xpos 24
+        ypos 140
+        xsize 350
+        ysize 300
+        background Solid("#07111EEB")
+        padding (28, 22)
+        vbox:
+            spacing 15
+            text "OBJECTIF":
+                size 27
+                color "#42A5FF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "Concentrez-vous pour comprendre Kami.\n\nGardez le curseur dans la zone de concentration.":
+                size 23
+                color "#D4DDE7"
+                line_spacing 8
+            text "STABILITÉ [j601_signal_green_time:.1f] / 17.0 s":
+                size 19
+                color signal_color
+
+    frame:
+        xpos 24
+        ypos 464
+        xsize 350
+        ysize 148
+        background Solid("#170A12E8")
+        padding (28, 20)
+        vbox:
+            spacing 10
+            text "!  DISTRACTIONS":
+                size 25
+                color "#FF526A"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "Ne laissez pas le curseur sortir de la zone.":
+                size 21
+                color "#E9828E"
+                line_spacing 6
+
+    # Le texte de Kami se corrompt et se déplace en direct.
+    frame:
+        xpos 1330
+        ypos 168
+        xsize 566
+        ysize 408
+        background Solid("#050B14EE")
+        padding (30, 23)
+        vbox:
+            spacing 16
             text (
-                "KAMI // LECTURE DE L'AMENDEMENT" if j601_signal_phase == 1
-                else "KAMI // DÉSYNCHRONISATION VOCALE" if j601_signal_phase == 2
-                else "KAMI // CONTRÔLE INSTABLE"
+                "KAMI  [[TRANSMISSION]" if j601_signal_phase == 1
+                else "KAMI  [[TRANSMISSION INSTABLE]" if j601_signal_phase == 2
+                else "KAMI  [[RUPTURE DE SIGNAL]"
             ):
-                xalign 0.5
-                size 22
-                color "#7DF9FF"
-                bold True
-
-            text "[j601_signal_display_line]":
-                xalign 0.5
-                xmaximum 1120
                 size 26
-                color "#FFFFFF"
-                text_align 0.5
+                color "#9DB2CE"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
-    # Lignes de code bruitées.
-    vbox:
-        xpos 64
-        ypos 170
-        spacing 8
-        text "[j601_signal_noise_line]":
-            size 18
-            color "#62E6FF99"
-        text "PHASE [j601_signal_phase] // TIME [j601_signal_time_left:.1f]":
-            size 18
-            color "#FF6B9A99"
-        text "ERRORS [j601_signal_errors:.1f] // GREEN [j601_signal_green_time:.1f]":
-            size 18
-            color "#FFFFFF77"
+            fixed:
+                xsize 500
+                ysize 230
+
+                if j601_signal_phase >= 2:
+                    text "[j601_signal_display_line]":
+                        xpos -3
+                        ypos 1
+                        xmaximum 500
+                        size 26
+                        color "#39DFFF55"
+                        line_spacing 8
+                        at signal_text_transform
+                    text "[j601_signal_display_line]":
+                        xpos 4
+                        ypos -1
+                        xmaximum 500
+                        size 26
+                        color "#FF3B6B44"
+                        line_spacing 8
+                        at signal_text_transform
+
+                text "[j601_signal_display_line]":
+                    xmaximum 500
+                    size 26
+                    color "#E7ECF2"
+                    line_spacing 8
+                    at signal_text_transform
+
+            text "[j601_signal_noise_line]":
+                size 16
+                color "#4FD9FF88"
+
+            text "PHASE [j601_signal_phase]  //  ERREURS [j601_signal_errors:.1f]":
+                size 17
+                color "#8192A8"
 
     # QTE flash sur l'hologramme.
     if j601_signal_qte_active:
         button:
-            xpos int(1920 * j601_signal_qte_x) - 55
-            ypos int(1080 * j601_signal_qte_y) - 55
-            xsize 110
-            ysize 110
-            background Solid("#FF2E63AA")
-            hover_background Solid("#FFFFFFCC")
+            xpos int(1920 * j601_signal_qte_x) - 68
+            ypos int(1080 * j601_signal_qte_y) - 68
+            xsize 136
+            ysize 136
+            background Solid("#FF2E63CC")
+            hover_background Solid("#F7FBFFFF")
             action Function(j601_signal_qte_hit)
             at j601_qte_pulse
-            text "ESPACE":
+            text "FRACTURE\nESPACE":
                 xalign 0.5
                 yalign 0.5
-                size 22
+                text_align 0.5
+                size 20
                 color "#FFFFFF"
                 bold True
 
-    # Panneau inférieur.
+    # Panneau de concentration inférieur.
     frame:
-        xalign 0.5
-        yalign 0.88
-        xsize 1280
-        ysize 210
-        background Solid("#07101FDB")
+        xpos 24
+        ypos 650
+        xsize 1872
+        ysize 402
+        background Solid("#050B14F2")
+        padding (36, 18)
 
         vbox:
             xalign 0.5
-            yalign 0.5
-            spacing 14
+            spacing 11
 
-            hbox:
+            text "ZONE DE CONCENTRATION":
                 xalign 0.5
-                spacing 60
-                text "TEMPS [j601_signal_time_left:.1f]":
-                    size 28
-                    color "#DDF8FF"
-                text "[j601_signal_warning]":
-                    size 28
-                    color (
-                        "#5DFF9A" if j601_signal_warning == "STABLE"
-                        else "#FFD166" if j601_signal_warning in ("INSTABLE", "RECALIBRAGE")
-                        else "#FF4D6D"
-                    )
-                text "ZONE VERTE [j601_signal_green_time:.1f]s":
-                    size 28
-                    color "#DDF8FF"
+                size 30
+                color "#43A9FF"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
             fixed:
-                xsize 1000
-                ysize 54
+                xsize 1540
+                ysize 116
                 xalign 0.5
 
-                # Barre segmentée : rouge 15 / orange 15 / vert 40 / orange 15 / rouge 15.
-                add Solid("#B00020") xpos 0 ypos 7 xysize (150, 40)
-                add Solid("#E8872E") xpos 150 ypos 7 xysize (150, 40)
-                add Solid("#26C96F") xpos 300 ypos 7 xysize (400, 40)
-                add Solid("#E8872E") xpos 700 ypos 7 xysize (150, 40)
-                add Solid("#B00020") xpos 850 ypos 7 xysize (150, 40)
+                add Solid("#280914") xpos 0 ypos 30 xysize (231, 46)
+                add Solid("#4C2E15") xpos 231 ypos 30 xysize (231, 46)
+                add Solid("#0B3452") xpos 462 ypos 18 xysize (616, 70)
+                add Solid("#4C2E15") xpos 1078 ypos 30 xysize (231, 46)
+                add Solid("#280914") xpos 1309 ypos 30 xysize (231, 46)
 
-                add Solid("#FFFFFF55") xpos 300 ypos 0 xysize (2, 54)
-                add Solid("#FFFFFF55") xpos 700 ypos 0 xysize (2, 54)
+                add Solid("#267DD066") xpos 462 ypos 11 xysize (3, 84)
+                add Solid("#267DD066") xpos 1075 ypos 11 xysize (3, 84)
+                add Solid("#40A9FF22") xpos 478 ypos 22 xysize (584, 62)
 
-                # Curseur.
-                add Solid("#FFFFFF") xpos int((j601_signal_cursor / 100.0) * 1000) - 6 ypos 0 xysize (12, 54)
-                add Solid("#7DF9FF") xpos int((j601_signal_cursor / 100.0) * 1000) - 3 ypos 0 xysize (6, 54)
+                add Solid("#DCEBFF") xpos int((j601_signal_cursor / 100.0) * 1540) - 7 ypos 12 xysize (14, 84) at j601_signal_cursor_pulse
+                add Solid(signal_color) xpos int((j601_signal_cursor / 100.0) * 1540) - 3 ypos 5 xysize (6, 98)
+
+                text "!" xpos 72 ypos 4 size 72 color "#FF526A"
+                text "!" xpos 1415 ypos 4 size 72 color "#FF526A"
+
+            text "[j601_signal_warning]":
+                xalign 0.5
+                size 25
+                color signal_color
+                font "fonts/Rajdhani-SemiBold.ttf"
 
             hbox:
                 xalign 0.5
-                spacing 22
+                spacing 70
 
-                textbutton "◀ GAUCHE":
-                    xsize 210
-                    ysize 52
+                textbutton "←  FLÈCHE GAUCHE":
+                    xsize 330
+                    ysize 64
                     action Function(j601_signal_nudge, -1.8)
 
-                textbutton "QTE / ESPACE":
-                    xsize 230
-                    ysize 52
+                textbutton "TRANSMISSION EN COURS  //  ESPACE : RECALIBRER":
+                    xsize 650
+                    ysize 64
                     action Function(j601_signal_qte_hit)
 
-                textbutton "DROITE ▶":
-                    xsize 210
-                    ysize 52
+                textbutton "FLÈCHE DROITE  →":
+                    xsize 330
+                    ysize 64
                     action Function(j601_signal_nudge, 1.8)
 
     if j601_signal_done:

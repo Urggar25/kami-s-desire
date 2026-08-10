@@ -1,0 +1,532 @@
+# =============================================================================
+# DOSSIER DE VOTE — Propositions & arguments par chapitre
+# =============================================================================
+# Débloquer un argument :   $ unlock_dossier_arg("id_argument")
+# Débloquer une proposition : $ unlock_dossier_prop("id_proposition")
+# Débloquer un chapitre : $ unlock_dossier_chapter(2)
+# =============================================================================
+
+default dossier_current_chapter = 1
+default dossier_unlocked_chapters = [1]
+default dossier_unlocked_args = {}
+default dossier_unlocked_props = ["p1_vote_commerce"]
+
+init python:
+
+    # ------------------------------------------------------------------
+    # CATÉGORIES D'ARGUMENTS
+    # ------------------------------------------------------------------
+    DOSSIER_ARG_CATS = {
+        "soutien":     {"label": "SOUTIEN",     "color": "#6BD98A", "icon": "hud/dossier/ic_handshake.png"},
+        "prudence":    {"label": "PRUDENCE",    "color": "#F0A835", "icon": "hud/dossier/ic_shield_alert.png"},
+        "information": {"label": "INFORMATION", "color": "#5CD3FF", "icon": "hud/dossier/ic_box.png"},
+    }
+
+    # ------------------------------------------------------------------
+    # CHAPITRES  (les chapitres > courant sont masqués)
+    # ------------------------------------------------------------------
+    DOSSIER_CHAPTERS = [
+        {"id": 1, "title": "CHAPITRE 1", "props": ["p1_vote_commerce"]},
+    ]
+
+    # Les succès sont rattachés au chapitre pour son taux de complétion.
+    DOSSIER_CHAPTER_SUCCES = {
+        1: ["succes001", "succes002", "succes003", "succes004"],
+    }
+
+    # ------------------------------------------------------------------
+    # PROPOSITIONS
+    # ------------------------------------------------------------------
+    DOSSIER_PROPOSITIONS = {
+        "p1_vote_commerce": {"chapter": 1, "num": 1,
+            "title": "ça serait bien qu'on réautorise\nle commerce comme avant.",
+            "formulation": "Le Conclave autorise le transport, la vente et l'échange de marchandises entre les districts, sous réserve du respect des règles de sécurité et des quotas définis par l'administration.",
+            "args": ["approvisionnement", "rationnement", "orbite", "derogations_complexes", "valeur_travail", "monde_avant", "enonce_precis", "echanges_discrets"]},
+    }
+
+    # ------------------------------------------------------------------
+    # ARGUMENTS
+    # ------------------------------------------------------------------
+    DOSSIER_ARGS = {
+        "approvisionnement": {"cat": "prudence", "title": "Inégalités entre les districts",
+            "desc": "Les districts n'affrontent ni les mêmes pénuries ni les mêmes chances d'accéder aux biens.",
+            "source": "LYSA ET ELIAS"},
+        "rationnement": {"cat": "information", "title": "Bons de rationnement",
+            "desc": "Les demandes officielles et les bons structurent déjà l'accès aux biens essentiels.",
+            "source": "KAEL"},
+        "orbite": {"cat": "prudence", "title": "Risque de dépressurisation",
+            "desc": "Sur Orbite, une sanction qui perce une coque peut condamner tout un module.",
+            "source": "KAEL"},
+        "derogations_complexes": {"cat": "information", "title": "Dérogations trop complexes",
+            "desc": "Obtenir une nourriture originale ou un objet utile exige une dérogation disproportionnée.",
+            "source": "ELEN"},
+        "valeur_travail": {"cat": "soutien", "title": "Valeur du travail",
+            "desc": "L'entraide protège chacun, mais elle repose sur la contribution de tous ceux qui peuvent travailler.",
+            "source": "SAEL"},
+        "monde_avant": {"cat": "soutien", "title": "Le monde d'avant",
+            "desc": "Julian présente l'avant-Kami comme une preuve que la circulation libre peut exister.",
+            "source": "JULIAN"},
+        "enonce_precis": {"cat": "information", "title": "L'énoncé exact",
+            "desc": "La formulation exacte du vote reste le point décisif pour évaluer ses conséquences.",
+            "source": "CAFÉTÉRIA"},
+        "echanges_discrets": {"cat": "information", "title": "Échanges discrets déjà actifs",
+            "desc": "Des échanges informels existent déjà dans la salle de stockage. Les ignorer ne les fait pas disparaître.",
+            "source": "SALLE DE STOCKAGE"},
+    }
+
+    # ------------------------------------------------------------------
+    # Fonctions
+    # ------------------------------------------------------------------
+    def dossier_chapter(cid):
+        for c in DOSSIER_CHAPTERS:
+            if c["id"] == cid:
+                return c
+        return DOSSIER_CHAPTERS[0]
+
+    def dossier_visible_chapters():
+        unlocked = getattr(store, "dossier_unlocked_chapters", [1])
+        return [c for c in DOSSIER_CHAPTERS if c["id"] in unlocked]
+
+    def dossier_default_chapter():
+        visible = dossier_visible_chapters()
+        return visible[-1]["id"] if visible else 1
+
+    def unlock_dossier_chapter(cid):
+        if cid not in [c["id"] for c in DOSSIER_CHAPTERS]:
+            return False
+        if cid not in store.dossier_unlocked_chapters:
+            store.dossier_unlocked_chapters.append(cid)
+            store.dossier_current_chapter = cid
+            renpy.restart_interaction()
+            return True
+        return False
+
+    def dossier_prop(pid):
+        return DOSSIER_PROPOSITIONS.get(pid, {})
+
+    def dossier_prop_first_of_chapter(cid):
+        return dossier_chapter(cid)["props"][0]
+
+    def dossier_prop_available(pid):
+        p = dossier_prop(pid)
+        if not p or p.get("chapter", 99) not in getattr(store, "dossier_unlocked_chapters", [1]):
+            return False
+        # 1re proposition du chapitre toujours dispo ; les autres sur déblocage
+        if pid == dossier_prop_first_of_chapter(p["chapter"]):
+            return True
+        return pid in store.dossier_unlocked_props
+
+    def unlock_dossier_prop(pid):
+        if pid in DOSSIER_PROPOSITIONS and pid not in store.dossier_unlocked_props:
+            store.dossier_unlocked_props.append(pid)
+            renpy.restart_interaction()
+            return True
+        return False
+
+    def dossier_arg_unlocked(aid):
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
+        return (aid in getattr(store, "j2_vote_arguments", [])
+                or aid in persistent.unlocked_dossier_args
+                or bool(store.dossier_unlocked_args.get(aid, False)))
+
+    def unlock_dossier_arg(aid):
+        if aid not in DOSSIER_ARGS:
+            return False
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
+        changed = False
+        if not store.dossier_unlocked_args.get(aid, False):
+            store.dossier_unlocked_args[aid] = True
+            changed = True
+        if aid not in persistent.unlocked_dossier_args:
+            persistent.unlocked_dossier_args.append(aid)
+            changed = True
+        if changed:
+            renpy.save_persistent()
+            renpy.restart_interaction()
+            return True
+        return False
+
+    def dossier_prop_args(pid):
+        return dossier_prop(pid).get("args", [])
+
+    def dossier_prop_total(pid):
+        return len(dossier_prop_args(pid))
+
+    def dossier_prop_unlocked_count(pid):
+        return sum(1 for a in dossier_prop_args(pid) if dossier_arg_unlocked(a))
+
+    def dossier_prop_complete(pid):
+        t = dossier_prop_total(pid)
+        return t > 0 and dossier_prop_unlocked_count(pid) == t
+
+    def dossier_chapter_argument_ids(cid):
+        argument_ids = []
+        for pid in dossier_chapter(cid)["props"]:
+            for aid in dossier_prop_args(pid):
+                if aid not in argument_ids:
+                    argument_ids.append(aid)
+        return argument_ids
+
+    def dossier_chapter_success_ids(cid):
+        return list(DOSSIER_CHAPTER_SUCCES.get(cid, []))
+
+    def dossier_chapter_progress(cid):
+        argument_ids = dossier_chapter_argument_ids(cid)
+        success_ids = dossier_chapter_success_ids(cid)
+        arguments_done = sum(1 for aid in argument_ids if dossier_arg_unlocked(aid))
+        successes_done = sum(1 for sid in success_ids if is_succes_unlocked(sid))
+        total = len(argument_ids) + len(success_ids)
+        done = arguments_done + successes_done
+        percent = int(round(100.0 * done / total)) if total else 0
+        return {
+            "arguments_done": arguments_done,
+            "arguments_total": len(argument_ids),
+            "successes_done": successes_done,
+            "successes_total": len(success_ids),
+            "done": done,
+            "total": total,
+            "percent": percent,
+        }
+
+    def dossier_global_total():
+        return sum(dossier_chapter_progress(c["id"])["total"] for c in dossier_visible_chapters())
+
+    def dossier_global_unlocked():
+        return sum(dossier_chapter_progress(c["id"])["done"] for c in dossier_visible_chapters())
+
+    def dossier_global_percent():
+        tot = dossier_global_total()
+        return int(round(100.0 * dossier_global_unlocked() / tot)) if tot else 0
+
+    def dossier_gauge_image(pct):
+        step = int(round(pct / 5.0)) * 5
+        step = max(0, min(100, step))
+        return "hud/dossier/gauge_%d.png" % step
+
+    def dossier_arg_cat(aid):
+        return DOSSIER_ARG_CATS.get(DOSSIER_ARGS.get(aid, {}).get("cat", "information"), DOSSIER_ARG_CATS["information"])
+
+transform dossier_tint(c):
+    matrixcolor TintMatrix(c)
+
+
+# =============================================================================
+# ÉCRAN PRINCIPAL
+# =============================================================================
+screen vote_dossier():
+    modal True
+    zorder 115
+
+    $ restore_unlocked_arguments()
+    if "day2_sync_argument_titles" in globals():
+        $ day2_sync_argument_titles()
+
+    default sel_chapter = dossier_default_chapter()
+    default sel_prop = dossier_prop_first_of_chapter(dossier_default_chapter())
+
+    add Solid("#05090F")
+    add Solid("#070D15") ypos 108 ysize 972
+
+    # ---------------- BARRE SUPÉRIEURE ----------------
+    button:
+        xpos 40 ypos 44 xysize (48, 48)
+        background Frame(Solid("#0C1826"), 0, 0)
+        hover_background Frame(Solid("#5CD3FF22"), 0, 0)
+        action [Hide("vote_dossier"), Show("tablet_home")]
+        text "←" xalign 0.5 yalign 0.5 size 28 color "#7FB6D8"
+    text "DOSSIER DE VOTE":
+        xpos 108 ypos 48 size 34 color "#DCEBFF"
+        font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+
+    # Onglets centraux
+    hbox:
+        xpos 1050 ypos 42 spacing 8
+        use dossier_tab("hud/codex/ic_doc.png", "DOSSIER", "#5CD3FF", True, NullAction())
+        use dossier_tab("hud/tablet/card_stats.png", "STATISTIQUES", "#8FB4CC", False, [Hide("vote_dossier"), Show("tablet_stats")])
+        use dossier_tab("hud/tablet/card_codex.png", "CODEX", "#8FB4CC", False, [Hide("vote_dossier"), ShowMenu("codex_menu")])
+
+    # Chapitre (cycle limité aux chapitres réellement débloqués)
+    button:
+        xpos 1600 ypos 44 xsize 150 ysize 48
+        background Frame(Solid("#0C1826"), 0, 0)
+        hover_background Frame(Solid("#5CD3FF18"), 0, 0)
+        action [SetScreenVariable("sel_chapter", dossier_cycle_chapter(sel_chapter)),
+                SetScreenVariable("sel_prop", dossier_prop_first_of_chapter(dossier_cycle_chapter(sel_chapter)))]
+        text ("CHAPITRE " + str(sel_chapter)):
+            xalign 0.5 yalign 0.5 size 24 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+
+    button:
+        xpos 1832 ypos 44 xysize (48, 48)
+        background Frame(Solid("#0C1826"), 0, 0)
+        hover_background Frame(Solid("#5CD3FF22"), 0, 0)
+        action Hide("vote_dossier")
+        text "✕" xalign 0.5 yalign 0.5 size 24 color "#8FB4CC"
+
+    add Solid("#12283A") xpos 0 ypos 106 xsize 1920 ysize 2
+
+    $ chap = dossier_chapter(sel_chapter)
+
+    # ===============================================================
+    # COLONNE GAUCHE
+    # ===============================================================
+    # --- Votes à venir ---
+    frame:
+        xpos 40 ypos 128 xsize 430 ysize 560
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
+            text "VOTES À VENIR":
+                xpos 24 ypos 16 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+            add Solid("#12283A") xpos 0 ypos 52 xsize 430 ysize 1
+            viewport:
+                xpos 0 ypos 60 xsize 430 ysize 496
+                mousewheel True draggable True scrollbars "vertical"
+                vbox:
+                    spacing 0
+                    for pid in chap["props"]:
+                        use dossier_prop_row(pid, sel_prop)
+
+    # --- Complétion du chapitre : arguments + succès associés ---
+    $ chapter_progress = dossier_chapter_progress(sel_chapter)
+    $ pct = chapter_progress["percent"]
+    $ chapter_done = chapter_progress["done"]
+    $ chapter_total = chapter_progress["total"]
+    $ arguments_done = chapter_progress["arguments_done"]
+    $ arguments_total = chapter_progress["arguments_total"]
+    $ successes_done = chapter_progress["successes_done"]
+    $ successes_total = chapter_progress["successes_total"]
+    frame:
+        xpos 40 ypos 704 xsize 430 ysize 304
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid("#12283A") xpos 0 ypos 0 xsize 430 ysize 1
+            text "COMPLÉTION DU CHAPITRE":
+                xpos 24 ypos 18 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            add (dossier_gauge_image(pct)) xpos 30 ypos 70 xysize (140, 140)
+            text "[pct]%":
+                xpos 100 ypos 140 xanchor 0.5 yanchor 0.5 size 34 color "#5CD3FF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+
+            text "[chapter_done] / [chapter_total]":
+                xpos 200 ypos 92 size 30 color "#EAF4FF" font "fonts/Rajdhani-SemiBold.ttf"
+            text "ARGUMENTS  [arguments_done] / [arguments_total]":
+                xpos 200 ypos 132 size 16 color "#8AA6B9" font "fonts/Rajdhani-SemiBold.ttf"
+            text "SUCCÈS  [successes_done] / [successes_total]":
+                xpos 200 ypos 160 size 16 color "#8AA6B9" font "fonts/Rajdhani-SemiBold.ttf"
+            text "Le pourcentage réunit les arguments découverts\net les succès liés à ce chapitre.":
+                xpos 24 ypos 234 size 14 color "#6E8CA6" font "fonts/Barlow-Light.ttf" line_leading 2
+
+    # ===============================================================
+    # COLONNE DROITE
+    # ===============================================================
+    $ prop = dossier_prop(sel_prop)
+    $ avail = dossier_prop_available(sel_prop)
+
+    frame:
+        xpos 500 ypos 128 xsize 1380 ysize 300
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 1380 ysize 2
+            text ("PROPOSITION %02d" % prop.get("num", 0)):
+                xpos 28 ypos 18 size 16 color "#6E8CA6" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text prop.get("title", ""):
+                xpos 28 ypos 44 xsize 780 size 27 color "#EAF4FF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1 line_leading 2
+
+            # Formulation
+            frame:
+                xpos 28 ypos 132 xsize 800 ysize 148
+                background Frame(Solid("#0B1622"), 0, 0)
+                fixed:
+                    add Solid("#5CD3FF") xpos 0 ypos 0 xsize 3 ysize 148
+                    text "SA FORMULATION":
+                        xpos 20 ypos 14 size 14 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                    text "«":
+                        xpos 16 ypos 34 size 44 color "#3A6B86" font "fonts/Rajdhani-SemiBold.ttf"
+                    text prop.get("formulation", ""):
+                        xpos 52 ypos 46 xsize 720 size 18 color "#C4D6E4"
+                        font "fonts/Barlow-Light.ttf" line_leading 3
+
+            # Illustration document
+            add "hud/dossier/doc_illustration.png" xpos 1010 ypos 30 xysize (250, 250)
+
+    # --- Arguments ---
+    frame:
+        xpos 500 ypos 444 xsize 1380 ysize 564
+        background Frame(Solid("#0A121C"), 0, 0)
+        padding (0, 0)
+        fixed:
+            add Solid("#12283A") xpos 0 ypos 0 xsize 1380 ysize 1
+            text "ARGUMENTS DÉBLOQUÉS":
+                xpos 28 ypos 16 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "[dossier_prop_unlocked_count(sel_prop)] / [dossier_prop_total(sel_prop)] DÉBLOQUÉS":
+                xpos 1140 ypos 18 size 16 color "#8FB4CC" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+            viewport:
+                xpos 0 ypos 52 xsize 1380 ysize 458
+                mousewheel True draggable True scrollbars "vertical"
+                vpgrid:
+                    cols 2
+                    xspacing 20 yspacing 20
+                    xpos 28 ypos 8
+                    for aid in dossier_prop_args(sel_prop):
+                        use dossier_arg_card(aid)
+
+            text "ⓘ  Les arguments recueillis vous aideront à préparer vos positions et anticiper les votes.":
+                xpos 28 ypos 522 size 15 color "#6E8CA6" font "fonts/Barlow-Light.ttf"
+
+
+# -----------------------------------------------------------------------------
+# Onglet
+# -----------------------------------------------------------------------------
+screen dossier_tab(icon, label, color, active, act):
+    button:
+        xsize 156 ysize 64
+        background (Frame(Solid("#0E2233"), 0, 0) if active else Frame(Solid("#0A141E"), 0, 0))
+        hover_background Frame(Solid(color + "18"), 0, 0)
+        action act
+        fixed:
+            if active:
+                add Solid(color) xpos 0 ypos 0 xsize 156 ysize 2
+            add Transform(icon, size=(28, 28), matrixcolor=TintMatrix(color)) xalign 0.5 ypos 8
+            text label:
+                xalign 0.5 ypos 40 size 13 color color
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+
+# -----------------------------------------------------------------------------
+# Ligne proposition (colonne gauche)
+# -----------------------------------------------------------------------------
+screen dossier_prop_row(pid, sel_prop):
+    $ prop = dossier_prop(pid)
+    $ avail = dossier_prop_available(pid)
+    $ selected = (pid == sel_prop)
+
+    button:
+        xsize 430 ysize 98
+        background (Frame(Solid("#0E1E2C"), 0, 0) if (selected and avail) else Frame(Solid("#00000000"), 0, 0))
+        hover_background Frame(Solid("#5CD3FF10"), 0, 0)
+        action SetScreenVariable("sel_prop", pid)
+        sensitive avail
+        fixed:
+            xsize 430 ysize 98
+            if selected and avail:
+                add Solid("#5CD3FF") xpos 0 ypos 0 xsize 3 ysize 98
+                add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
+                add Solid("#5CD3FF") xpos 0 ypos 96 xsize 430 ysize 2
+            else:
+                add Solid("#0F1A26") xpos 0 ypos 97 xsize 430 ysize 1
+
+            text ("%02d" % prop.get("num", 0)):
+                xpos 22 ypos 34 size 26 color ("#5CD3FF" if avail else "#3C4E5E")
+                font "fonts/Rajdhani-SemiBold.ttf"
+
+            text (prop.get("title", "").replace("\n", " ") if avail else prop.get("title", "").replace("\n", " ")):
+                xpos 78 ypos 20 xsize 296 size 16
+                color ("#DCEBFF" if avail else "#54697B")
+                font "fonts/Rajdhani-SemiBold.ttf" line_leading 2
+
+            if avail:
+                add Solid("#5CD3FF") xpos 388 ypos 44 xysize (10, 10)
+            else:
+                add "hud/codex/badge_lock.png" xpos 384 ypos 38 xysize (22, 22) at dossier_tint("#54697B")
+
+
+# -----------------------------------------------------------------------------
+# Carte argument
+# -----------------------------------------------------------------------------
+screen dossier_arg_card(aid):
+    $ unlocked = dossier_arg_unlocked(aid)
+    $ meta = dossier_arg_cat(aid)
+    $ col = meta["color"]
+    $ arg = DOSSIER_ARGS.get(aid, {})
+
+    fixed:
+        xysize (642, 210)
+
+        if unlocked:
+            add Solid(col + "0C") xpos 0 ypos 0 xsize 642 ysize 210
+            add Solid(col) xpos 0 ypos 0 xsize 642 ysize 2
+            add Solid(col) xpos 0 ypos 208 xsize 642 ysize 2
+            add Solid(col) xpos 0 ypos 0 xsize 2 ysize 210
+            add Solid(col) xpos 640 ypos 0 xsize 2 ysize 210
+
+            # Tag catégorie
+            frame:
+                xpos 22 ypos 20 ysize 30
+                background Frame(Solid("#0A1420"), 0, 0)
+                fixed:
+                    add Solid(col) xpos 0 ypos 0 xsize 2 ysize 30
+                    text meta["label"]:
+                        xpos 12 yalign 0.5 xoffset 2 size 14 color col
+                        font "fonts/Rajdhani-SemiBold.ttf" kerning 2 xmaximum 200
+
+            # Titre
+            text arg.get("title", ""):
+                xpos 130 ypos 22 xsize 420 size 20 color "#EAF4FF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+            # Check
+            add "hud/codex/badge_check.png" xpos 594 ypos 20 xysize (30, 30) at dossier_tint(col)
+
+            # Icône disque
+            frame:
+                xpos 22 ypos 66 xysize (86, 86)
+                background Frame(Solid(col + "16"), 0, 0)
+                add Transform(meta["icon"], size=(50, 50), matrixcolor=TintMatrix(col)) xalign 0.5 yalign 0.5
+
+            # Description
+            text arg.get("desc", ""):
+                xpos 130 ypos 58 xsize 480 size 16 color "#B7CAD8"
+                font "fonts/Barlow-Light.ttf" line_leading 3
+
+            # Source
+            text "Obtenu auprès de :":
+                xpos 22 ypos 172 size 15 color "#7C99AC" font "fonts/Barlow-Light.ttf"
+            text arg.get("source", ""):
+                xpos 190 ypos 172 size 15 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+
+        else:
+            add Solid("#0A121C") xpos 0 ypos 0 xsize 642 ysize 210
+            add Solid("#1A2A3A") xpos 0 ypos 0 xsize 642 ysize 1
+            add Solid("#1A2A3A") xpos 0 ypos 209 xsize 642 ysize 1
+            add Solid("#1A2A3A") xpos 0 ypos 0 xsize 1 ysize 210
+            add Solid("#1A2A3A") xpos 641 ypos 0 xsize 1 ysize 210
+
+            frame:
+                xpos 22 ypos 20 ysize 30
+                background Frame(Solid("#0E1826"), 0, 0)
+                text "INCONNU":
+                    xpos 12 yalign 0.5 size 14 color "#54697B"
+                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "Argument non débloqué":
+                xpos 130 ypos 22 size 20 color "#5E7688" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            frame:
+                xpos 22 ypos 66 xysize (86, 86)
+                background Frame(Solid("#101E2A"), 0, 0)
+                add "hud/codex/badge_lock.png" xalign 0.5 yalign 0.5 xysize (40, 40) at dossier_tint("#3C4E5E")
+            text "Continuez vos discussions, explorez les lieux et observez les autres représentants pour débloquer cet argument.":
+                xpos 130 ypos 58 xsize 480 size 16 color "#54697B"
+                font "fonts/Barlow-Light.ttf" line_leading 3
+            text "???":
+                xpos 130 ypos 170 size 18 color "#3C4E5E" font "fonts/Rajdhani-SemiBold.ttf"
+
+
+# -----------------------------------------------------------------------------
+# Cycle chapitre (parmi les chapitres visibles)
+# -----------------------------------------------------------------------------
+init python:
+    def dossier_cycle_chapter(cur):
+        vis = [c["id"] for c in dossier_visible_chapters()]
+        if not vis:
+            return cur
+        if cur not in vis:
+            return vis[0]
+        i = vis.index(cur)
+        return vis[(i + 1) % len(vis)]

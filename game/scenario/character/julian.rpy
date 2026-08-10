@@ -40,8 +40,7 @@ label julian_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("julian", "sourire", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("julian", "sourire", 0.62), ("noam", "reflexion", 0.22)])
 
     julian "Ah, parfait."
     julian "J'avais besoin d'un vrai public."
@@ -59,9 +58,8 @@ label julian_link_1:
     julian "Le timing, ça se travaille."
     julian "Regarde."
 
-    $ showP("julian", "idee", 0.62)
 
-    julian "Version efficace :"
+    julian idee "Version efficace :"
     julian "'Citoyens, voici les décisions validées. Merci de votre rigueur.'"
     julian "Sobre. Propre. On dort tous debout."
 
@@ -75,9 +73,8 @@ label julian_link_1:
 
     noam "Tu veux convaincre ou impressionner ?"
 
-    $ showP("julian", "taquin", 0.62)
 
-    julian "Les deux."
+    julian taquin "Les deux."
     julian "Toujours les deux."
     julian "Si personne ne t'écoute, même une bonne idée meurt avant d'exister."
 
@@ -91,9 +88,8 @@ label julian_link_1:
 
     noam "Ok, oui, ça marche mieux."
 
-    $ showP("julian", "joie", 0.62)
 
-    julian "Merci !"
+    julian joie "Merci !"
     julian "Tu vois ?"
     julian "La pause, c'est un crochet dans l'attention."
 
@@ -110,17 +106,15 @@ label julian_link_1:
 
     noam "Tu veux qu'on se souvienne de toi."
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Ouais."
+    julian neutre "Ouais."
     julian "Exactement."
     julian "Et j'assume."
 
     "Il reprend vite un ton léger."
 
-    $ showP("julian", "sourire", 0.62)
 
-    julian "Bon, prochain atelier demain."
+    julian sourire "Bon, prochain atelier demain."
     julian "Je te fais la version 'discours de victoire'."
     julian "Tu vas adorer."
 
@@ -153,8 +147,7 @@ label julian_link_2:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("julian", "neutre", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("julian", "neutre", 0.62), ("noam", "reflexion", 0.22)])
 
     julian "Tu veux un résumé social du Conclave ?"
     julian "J'ai des notes mentales."
@@ -167,9 +160,8 @@ label julian_link_2:
     julian "Qui parle juste assez pour paraître utile."
     julian "Qui fait semblant de ne pas jouer."
 
-    $ showP("julian", "taquin", 0.62)
 
-    julian "Et qui joue mal."
+    julian taquin "Et qui joue mal."
 
     "Il s'adosse à la vitre, presque amusé."
 
@@ -185,9 +177,8 @@ label julian_link_2:
     julian "Question piège."
     julian "J'aurais dû la poser avant toi."
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Le Conclave, c'est une scène."
+    julian neutre "Le Conclave, c'est une scène."
     julian "Même quand on prétend que non."
     julian "Posture, ton, rythme, regard."
     julian "Tout compte."
@@ -207,17 +198,15 @@ label julian_link_2:
     julian "Mon niveau."
     julian "Mon angle."
 
-    $ showP("julian", "decu", 0.62)
 
-    julian "Le pire, c'est les gens naturellement crédibles."
+    julian decu "Le pire, c'est les gens naturellement crédibles."
     julian "Ils ouvrent la bouche, tout le monde écoute."
     julian "Sans effort visible."
 
     noam "Et toi, tu compenses avec l'énergie."
 
-    $ showP("julian", "sourire", 0.62)
 
-    julian "Exact."
+    julian sourire "Exact."
     julian "Avec l'énergie, les idées, les blagues, les relances."
     julian "Un peu de mise en scène, quoi."
 
@@ -228,9 +217,8 @@ label julian_link_2:
 
     "Il répond sans me regarder."
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Alors je recommence autrement."
+    julian neutre "Alors je recommence autrement."
     julian "Plus net."
     julian "Plus fort."
     julian "Plus juste, si possible."
@@ -247,9 +235,8 @@ label julian_link_2:
 
     noam "Tu vas publier un classement ?"
 
-    $ showP("julian", "taquin", 0.62)
 
-    julian "Jamais."
+    julian taquin "Jamais."
     julian "Enfin… pas officiellement."
     julian "Mais ça m'aide à lire la pièce."
     julian "Et à choisir quand entrer en scène."
@@ -266,8 +253,7 @@ label julian_link_3:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("julian", "detendu", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("julian", "detendu", 0.62), ("noam", "reflexion", 0.22)])
 
     julian "Ok, confession du jour."
     julian "J'avais une proposition pour le Conclave."
@@ -280,16 +266,14 @@ label julian_link_3:
 
     "Il rit, mais le son retombe vite."
 
-    $ showP("julian", "taquin", 0.62)
 
-    julian "Je l'ai emballée en blague."
+    julian taquin "Je l'ai emballée en blague."
     julian "Comme ça, si personne réagit, je peux dire que c'était pour rire."
 
     noam "Et personne n'a réagi."
 
-    $ showP("julian", "decu", 0.62)
 
-    julian "Pas vraiment."
+    julian decu "Pas vraiment."
     julian "Deux regards vides."
     julian "Un changement de sujet."
     julian "Fin de l'histoire."
@@ -320,9 +304,8 @@ label julian_link_3:
 
     noam "Ça t'a touché plus que tu le dis."
 
-    $ showP("julian", "fatigue", 0.62)
 
-    julian "Ouais."
+    julian fatigue "Ouais."
     julian "Carrément."
     julian "C'est con, hein ?"
 
@@ -332,9 +315,8 @@ label julian_link_3:
 
     noam "Tu peux la reproposer."
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Je vais le faire."
+    julian neutre "Je vais le faire."
     julian "Cette fois sans blague-parachute."
     julian "Juste clairement."
 
@@ -342,9 +324,8 @@ label julian_link_3:
     julian "Ben au moins ce sera vrai."
     julian "Pas un sketch raté."
 
-    $ showP("julian", "sourire", 0.62)
 
-    julian "Merci."
+    julian sourire "Merci."
     julian "J'avais besoin de le dire à quelqu'un qui écoute vraiment."
 
     noam "Tu sais, une idée peut rater au premier passage sans être mauvaise."
@@ -373,8 +354,7 @@ label julian_link_4:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("julian", "neutre", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("julian", "neutre", 0.62), ("noam", "reflexion", 0.22)])
 
     julian "Tu sais ce que le Conclave représente pour moi ?"
     julian "Pas juste un dispositif de survie."
@@ -392,9 +372,8 @@ label julian_link_4:
     julian "Je veux exister ici."
     julian "Vraiment exister."
 
-    $ showP("julian", "idee", 0.62)
 
-    julian "Faire partie de ceux qu'on écoute."
+    julian idee "Faire partie de ceux qu'on écoute."
     julian "Ceux qui déplacent quelque chose."
     julian "Même un peu."
 
@@ -407,9 +386,8 @@ label julian_link_4:
 
     "Il ne répond pas tout de suite."
 
-    $ showP("julian", "decu", 0.62)
 
-    julian "Disons que j'ai horreur de l'effacement."
+    julian decu "Disons que j'ai horreur de l'effacement."
     julian "Tu passes, tu parles, tu proposes…"
     julian "Et rien ne reste."
 
@@ -417,9 +395,8 @@ label julian_link_4:
 
     "Il retrouve vite son ton vif, presque volontaire."
 
-    $ showP("julian", "sourire", 0.62)
 
-    julian "Donc je travaille."
+    julian sourire "Donc je travaille."
     julian "Je peaufine."
     julian "Je teste mes formulations."
     julian "Je prends de la place quand il faut."
@@ -429,9 +406,8 @@ label julian_link_4:
 
     noam "Et si un jour tu n'es plus regardé ?"
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Alors il faudra que je crée quelque chose qu'on ne peut pas ignorer."
+    julian neutre "Alors il faudra que je crée quelque chose qu'on ne peut pas ignorer."
     julian "Un truc utile."
     julian "Un truc beau, si possible."
     julian "Un truc qui continue sans moi."
@@ -452,9 +428,8 @@ label julian_link_4:
 
     noam "Tu veux être vu, mais pas vide."
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Exactement."
+    julian neutre "Exactement."
     julian "Si je dois être une voix, je veux qu'elle porte quelque chose."
     julian "Sinon ça ne vaut rien."
 
@@ -482,8 +457,7 @@ label julian_link_5:
 
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("julian", "vide", 0.62)
-    $ showP("noam", "reflexion", 0.22)
+    $ showGroup([("julian", "vide", 0.62), ("noam", "reflexion", 0.22)])
 
     julian "Salut."
     julian "Je fais pas de numéro aujourd'hui."
@@ -510,9 +484,8 @@ label julian_link_5:
     julian "Ouais."
     julian "C'est juste… inconfortable."
 
-    $ showP("julian", "fatigue", 0.62)
 
-    julian "J'ai passé tellement de temps à construire une version de moi qui marche en public…"
+    julian fatigue "J'ai passé tellement de temps à construire une version de moi qui marche en public…"
     julian "Que parfois, quand y a personne à convaincre…"
     julian "Je sais plus quoi faire du reste."
 
@@ -528,18 +501,16 @@ label julian_link_5:
 
     noam "C'est honnête surtout."
 
-    $ showP("julian", "decu", 0.62)
 
-    julian "Peut-être."
+    julian decu "Peut-être."
     julian "Mais j'aime pas trop cet endroit-là."
     julian "Le moment où y a pas de public."
     julian "Où je peux pas me raccrocher à un effet."
 
     "Il relève le menton, retrouve un peu d'énergie."
 
-    $ showP("julian", "sourire", 0.62)
 
-    julian "Bref."
+    julian sourire "Bref."
     julian "Assez de psy à deux crédits."
     julian "On change de sujet."
     julian "Dis-moi un truc nul, un vrai, qu'on puisse le transformer en idée brillante."
@@ -554,9 +525,8 @@ label julian_link_5:
 
     "Il laisse passer une seconde, surpris."
 
-    $ showP("julian", "neutre", 0.62)
 
-    julian "Artisan ?"
+    julian neutre "Artisan ?"
 
     noam "Tu façonnes des mots."
     noam "Tu cherches la forme qui tient."

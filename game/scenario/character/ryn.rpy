@@ -38,8 +38,7 @@ label ryn_link_1:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
     scene bg_gymnase at adaptive_fullscreen
 
-    $ showP("ryn", "fatigue", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("ryn", "fatigue", 0.70), ("noam", "reflexion", 0.24)])
 
     "Ryn termine une série de tractions et tombe au sol comme un bloc de métal."
     play sound sfx_drop
@@ -55,8 +54,7 @@ label ryn_link_1:
     ryn "Tu dors assis parce que le lit est pris par les batteries."
     ryn "Tu manges debout parce que si tu t'assois trop longtemps tu gèles."
     noam "Tu exagères un peu."
-    $ showP("ryn", "desaccord", 0.70)
-    ryn "Non."
+    ryn desaccord "Non."
     ryn "J'exagère quand je raconte les bagarres."
     ryn "Là je suis gentil."
     noam "Et les rondes ?"
@@ -74,8 +72,7 @@ label ryn_link_1:
     ryn "Protéger la tour."
     ryn "Ou protéger les gens sous la tour."
     noam "Tu choisissais quoi ?"
-    $ showP("ryn", "reflechit", 0.70)
-    ryn "Le plus proche."
+    ryn reflechit "Le plus proche."
     ryn "Toujours le plus proche."
     ryn "La théorie, c'est pour les salles propres."
     ryn "À la frontière, c'est une seconde ou un corps."
@@ -98,8 +95,7 @@ label ryn_link_1:
     noam "Une vieille ?"
     ryn "Elle insultait tout le monde."
     ryn "Je l'adorais."
-    $ showP("ryn", "fatigue", 0.70)
-    ryn "Un soir elle a pas ouvert sa porte."
+    ryn fatigue "Un soir elle a pas ouvert sa porte."
     ryn "On a compris sans parler."
     noam "Je suis désolé."
     ryn "Garde ton désolé pour les vivants."
@@ -118,8 +114,7 @@ label ryn_link_1:
     ryn "Parce que c'est sale."
     ryn "Et les récits officiels aiment le propre."
     noam "Ça t'énerve."
-    $ showP("ryn", "colere", 0.70)
-    ryn "Ça me fout la rage, ouais."
+    ryn colere "Ça me fout la rage, ouais."
     ryn "Quand j'entends un ponte dire \"sacrifice nécessaire\", j'ai envie de lui coller ses bottes dans la bouche."
     noam "Ryn..."
     ryn "Quoi ?"
@@ -149,8 +144,7 @@ label ryn_link_2:
     play music "music/bgm_system_override.mp3" fadein 1.0
     scene bg_sas at adaptive_fullscreen
 
-    $ showP("ryn", "colere", 0.70)
-    $ showP("noam", "hesitation", 0.24)
+    $ showGroup([("ryn", "colere", 0.70), ("noam", "hesitation", 0.24)])
 
     play sound sfx_door
     "La porte du sas se verrouille derrière nous avec un bruit sec."
@@ -167,9 +161,8 @@ label ryn_link_2:
     ryn "Un silence trop long, je cherche la merde."
     noam "C'est épuisant."
     ryn "Bienvenue."
-    $ showP("ryn", "desaccord", 0.70)
     noam "Tu pourrais respirer avant de gueuler."
-    ryn "Respirer, je le fais."
+    ryn desaccord "Respirer, je le fais."
     ryn "Gueuler, c'est le bonus."
     noam "Je suis sérieux."
     ryn "Moi aussi."
@@ -193,8 +186,7 @@ label ryn_link_2:
     noam "Tu le montres pas."
     ryn "Parce que si je commence à m'excuser sur chaque montée de tension, je me vide."
     noam "Tu crois que t'es obligé d'être dur en permanence."
-    $ showP("ryn", "reflechit", 0.70)
-    ryn "Obligé ? Non."
+    ryn reflechit "Obligé ? Non."
     ryn "Conditionné ? Oui."
     noam "C'est pas pareil."
     ryn "Ça change pas la vitesse du réflexe."
@@ -228,8 +220,7 @@ label ryn_link_2:
     noam "Et les neuf autres ?"
     ryn "Je passe pour un connard."
     noam "Tu l'acceptes ?"
-    $ showP("ryn", "neutre", 0.70)
-    ryn "Si ça garde quelqu'un en vie, oui."
+    ryn neutre "Si ça garde quelqu'un en vie, oui."
     noam "Même moi, quand je te dis de te calmer ?"
     ryn "Surtout toi."
     noam "Pourquoi surtout moi ?"
@@ -247,8 +238,7 @@ label ryn_link_2:
     noam "Je note."
     ryn "Et moi je note que t'essaies."
     noam "On dirait presque des excuses."
-    $ showP("ryn", "colere2", 0.70)
-    ryn "Rêve pas."
+    ryn colere2 "Rêve pas."
     ryn "C'est un mode d'emploi, pas un câlin."
     noam "Je prends quand même."
     ryn "Prends et retiens."
@@ -265,8 +255,7 @@ label ryn_link_3:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
     scene bg_observation at adaptive_fullscreen
 
-    $ showP("ryn", "inquiet", 0.70)
-    $ showP("noam", "reflexion", 0.24)
+    $ showGroup([("ryn", "inquiet", 0.70), ("noam", "reflexion", 0.24)])
 
     "Ryn reste debout face à la vitre d'observation, les poings dans les poches."
     "Ses épaules ne bougent presque pas, comme s'il comptait ses respirations."
@@ -287,9 +276,8 @@ label ryn_link_3:
     noam "Tu les as laissés derrière."
     ryn "Ouais."
     ryn "Et ça me bouffe."
-    $ showP("ryn", "reflechit", 0.70)
     noam "Tu pourrais dire que LIMEN t'a usé."
-    ryn "LIMEN m'a usé, oui."
+    ryn reflechit "LIMEN m'a usé, oui."
     ryn "LIMEN m'a appris à tenir, aussi."
     noam "Tu critiques ta patrie sans arrêt."
     ryn "Parce qu'elle mérite mieux que ses chefs parfois."
@@ -298,8 +286,7 @@ label ryn_link_3:
     ryn "Que moi je la traite de bourbier, c'est une chose."
     ryn "Qu'un étranger la crache dessus, c'en est une autre."
     noam "Tu réagis comment ?"
-    $ showP("ryn", "colere", 0.70)
-    ryn "Mal."
+    ryn colere "Mal."
     ryn "Très mal."
     noam "Tu frappes ?"
     ryn "J'essaie de pas le faire."
@@ -328,8 +315,7 @@ label ryn_link_3:
     ryn "Je leur raconte les conneries de la station."
     ryn "Je leur dis que je fais de mon mieux."
     noam "Tu crois qu'ils seraient fiers ?"
-    $ showP("ryn", "inquiet", 0.70)
-    ryn "J'en sais rien."
+    ryn inquiet "J'en sais rien."
     ryn "J'espère juste qu'ils diraient pas que j'ai oublié."
     noam "Tu n'as pas oublié."
     ryn "Non."
@@ -343,14 +329,12 @@ label ryn_link_3:
     ryn "La colère, c'est juste le bruit."
     ryn "La loyauté, c'est le moteur."
     noam "Belle phrase pour quelqu'un qui déteste la rhétorique."
-    $ showP("ryn", "neutre", 0.70)
-    ryn "Me fais pas dire des trucs élégants, ça me donne des boutons."
+    ryn neutre "Me fais pas dire des trucs élégants, ça me donne des boutons."
     noam "Trop tard."
     ryn "Ferme-la."
     "Je souris. Lui aussi, à peine."
     noam "Tu retourneras à LIMEN après tout ça ?"
-    $ showP("ryn", "determine", 0.70)
-    ryn "Oui."
+    ryn determine "Oui."
     ryn "Je rentrerai."
     ryn "Même si c'est en boitant."
     ryn "Même si j'aime pas ce que je trouve sur place."
@@ -380,8 +364,7 @@ label ryn_link_4:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
     scene bg_archive at adaptive_fullscreen
 
-    $ showP("ryn", "reflechit", 0.70)
-    $ showP("noam", "inquiet", 0.24)
+    $ showGroup([("ryn", "reflechit", 0.70), ("noam", "inquiet", 0.24)])
 
     "Dans l'archive, Ryn fait glisser un dossier fermé d'un bord à l'autre de la table."
     "Le geste tourne en boucle, nerveux, précis, inutile."
@@ -391,8 +374,7 @@ label ryn_link_4:
     noam "Mensonge."
     ryn "J'aime pas ce sujet."
     noam "Raison de plus."
-    $ showP("ryn", "inquiet", 0.70)
-    ryn "Putain..."
+    ryn inquiet "Putain..."
     ryn "Bon."
     ryn "Je me demande parfois si se battre suffit."
     "Le silence retombe, dense."
@@ -414,8 +396,7 @@ label ryn_link_4:
     ryn "Que j'aurais dû anticiper."
     ryn "Que j'aurais dû être partout."
     noam "Personne peut être partout."
-    $ showP("ryn", "desaccord", 0.70)
-    ryn "Je sais."
+    ryn desaccord "Je sais."
     ryn "Mais le cerveau écoute pas la logique quand ça gratte les cicatrices."
     noam "Donc le doute revient."
     ryn "En douce."
@@ -433,8 +414,7 @@ label ryn_link_4:
     noam "Et ça marche ?"
     ryn "Parfois ça me donne juste envie de casser une table."
     noam "Tu doutes de quoi exactement ?"
-    $ showP("ryn", "reflechit", 0.70)
-    ryn "De la méthode."
+    ryn reflechit "De la méthode."
     ryn "Pas de la nécessité de se battre."
     ryn "Juste de la façon."
     noam "Tu te demandes s'il y a autre chose que la force."
@@ -457,8 +437,7 @@ label ryn_link_4:
     ryn "Ouais."
     ryn "On dirait que je vais me briser."
     noam "Ou que tu laisses passer la lumière."
-    $ showP("ryn", "colere2", 0.70)
-    ryn "Putain de phrase poétique."
+    ryn colere2 "Putain de phrase poétique."
     ryn "Tu m'agaces."
     noam "Je prends ça pour un progrès."
     ryn "Rêve pas."
@@ -480,8 +459,7 @@ label ryn_link_4:
     ryn "Absolument."
     noam "Dernière question."
     noam "Quand le doute revient, tu fais quoi ?"
-    $ showP("ryn", "neutre", 0.70)
-    ryn "Je vérifie mes faits."
+    ryn neutre "Je vérifie mes faits."
     ryn "Je regarde qui je protège."
     ryn "Et je bouge."
     noam "Même en doutant."
@@ -503,8 +481,7 @@ label ryn_link_5:
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
     scene bg_conclave at adaptive_fullscreen
 
-    $ showP("ryn", "determine", 0.70)
-    $ showP("noam", "surpris", 0.24)
+    $ showGroup([("ryn", "determine", 0.70), ("noam", "surpris", 0.24)])
 
     "Avant la séance, Ryn frappe son poing dans sa paume, rythme sec et régulier."
     play sound sfx_clap
@@ -526,8 +503,7 @@ label ryn_link_5:
     noam "Donc ta ligne rouge, c'est eux."
     ryn "Exact."
     noam "Et la morale ?"
-    $ showP("ryn", "neutre", 0.70)
-    ryn "Chez moi, la morale vient après la survie."
+    ryn neutre "Chez moi, la morale vient après la survie."
     noam "C'est brutal."
     ryn "La réalité l'est."
     noam "Tu assumes de paraître égoïste."
@@ -552,8 +528,7 @@ label ryn_link_5:
     "Un signal de convocation monte dans la salle puis retombe."
     noam "Tu parles souvent de \"les miens\"."
     noam "C'est qui, précisément ?"
-    $ showP("ryn", "reflechit", 0.70)
-    ryn "Ceux avec qui j'ai pris des coups."
+    ryn reflechit "Ceux avec qui j'ai pris des coups."
     ryn "Ceux qui partagent l'eau quand y en a pas assez."
     ryn "Ceux qui restent quand ça sent la fin."
     noam "Et si quelqu'un change de camp ?"
@@ -578,8 +553,7 @@ label ryn_link_5:
     ryn "Parfois."
     ryn "J'oublie jamais."
     noam "Si je te dis que ta posture est trop rigide ?"
-    $ showP("ryn", "desaccord", 0.70)
-    ryn "Je te réponds qu'une colonne vertébrale rigide tient mieux qu'une gelée quand ça tremble."
+    ryn desaccord "Je te réponds qu'une colonne vertébrale rigide tient mieux qu'une gelée quand ça tremble."
     noam "Image dégueu."
     ryn "Efficace."
     noam "Et si protéger les tiens demande une décision sale ?"
@@ -592,8 +566,7 @@ label ryn_link_5:
     ryn "Tous les jours."
     ryn "Mais j'ai plus peur d'être passif."
     noam "Tu voteras quoi, au mot près ?"
-    $ showP("ryn", "determine", 0.70)
-    ryn "Je voterai pour toute mesure qui réduit le risque direct sur les miens."
+    ryn determine "Je voterai pour toute mesure qui réduit le risque direct sur les miens."
     ryn "Je rejetterai toute mesure qui leur fait porter la dette d'autrui."
     noam "C'est clair."
     ryn "C'est fait pour."

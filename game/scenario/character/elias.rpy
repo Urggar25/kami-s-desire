@@ -41,7 +41,7 @@ label elias_link_1:
 
     scene bg_gymnase at adaptive_fullscreen
 
-    $ showP("elias", "neutre", 0.70)
+    $ showGroup([("elias", "neutre", 0.70), ("noam", "neutre", 0.25)])
 
     elias content "Tu arrives pile à l'heure."
     elias detendu "J'ai quinze minutes pour finir ma série."
@@ -53,7 +53,6 @@ label elias_link_1:
     elias ecoute "Toujours les mêmes séries."
     elias ecoute "Même cadence. Même souffle."
 
-    $ showP("noam", "neutre", 0.25)
 
     noam sourire "Tu ne t'ennuies jamais à faire les mêmes exercices ?"
 
@@ -119,8 +118,7 @@ label elias_link_2:
 
     scene bg_maintenance at adaptive_fullscreen
 
-    $ showP("elias", "ecoute", 0.65)
-    $ showP("noam", "reflexion", 0.25)
+    $ showGroup([("elias", "ecoute", 0.65), ("noam", "reflexion", 0.25)])
 
     elias ecoute "Le bras d'articulation a pris du jeu."
     elias reflechit "Trois millimètres."
@@ -239,8 +237,7 @@ label elias_link_3:
 
     scene bg_gymnase at adaptive_fullscreen
 
-    $ showP("elias", "reflechit", 0.70)
-    $ showP("noam", "reflexion", 0.25)
+    $ showGroup([("elias", "reflechit", 0.70), ("noam", "reflexion", 0.25)])
 
     elias ecoute "Je devais réorganiser les stations."
     elias reflechit "Mais il manque des pièces."
@@ -375,8 +372,7 @@ label elias_link_4:
 
     scene bg_maintenance at adaptive_fullscreen
 
-    $ showP("elias", "neutre", 0.68)
-    $ showP("noam", "reflexion", 0.25)
+    $ showGroup([("elias", "neutre", 0.68), ("noam", "reflexion", 0.25)])
 
     elias reflechit "Les règles évitent les discussions inutiles."
     elias ecoute "Tout le monde sait quoi faire."
@@ -509,8 +505,7 @@ label elias_link_5:
 
     scene bg_gymnase at adaptive_fullscreen
 
-    $ showP("elias", "fatigue", 0.70)
-    $ showP("noam", "reflexion", 0.25)
+    $ showGroup([("elias", "fatigue", 0.70), ("noam", "reflexion", 0.25)])
 
     "La salle est presque vide."
     "Il essuie une barre, lentement."

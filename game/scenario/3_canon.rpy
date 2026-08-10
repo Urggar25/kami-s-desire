@@ -7,20 +7,20 @@ init python:
         if "ration" in low:
             icon = "⌬"
             desc = "Sécurité minimale contre la faim et le chaos."
-        elif "orbite" in low:
+        elif "orbite" in low or "dépress" in low:
             icon = "◉"
             desc = "Dépendance logistique et fragilité structurelle."
         elif "énoncé" in low or "precis" in low:
             icon = "⟡"
             desc = "Texte exact, conséquences juridiques immédiates."
-        elif "appro" in low:
+        elif "appro" in low or "inégal" in low:
             icon = "⬢"
             desc = "Ruptures passées et files de pénurie."
         elif "échange" in low or "discret" in low:
             icon = "◌"
             desc = "Réseaux d'entraide clandestins déjà en place."
         elif "avant" in low:
-            icon = "✦"
+            icon = "+"
             desc = "Mémoire d'un système ancien imparfait mais vivant."
         else:
             icon = "•"
@@ -55,6 +55,13 @@ init 4 python:
             "origin": "Déduit pendant la discussion à la cafétéria.",
             "card": "gui/day3/argument_card_exact_wording.png",
         },
+        "echanges_discrets": {
+            "title": "Échanges discrets déjà actifs",
+            "category": "Réseaux informels",
+            "summary": "Des échanges informels existent déjà. Les nier ne les fait pas disparaître.",
+            "origin": "Observé dans la salle de stockage.",
+            "card": "gui/day3/argument_card_exact_wording.png",
+        },
     }
 
     def day3_vote_bootstrap():
@@ -70,19 +77,6 @@ init 4 python:
             store.j3_codex_dot = True
             return True
         renpy.restart_interaction()
-
-screen day3_codex_logo():
-    if j2_vote_codex_unlocked:
-        zorder 95
-        imagebutton:
-            idle "gui/common/codex_logo_idle.png"
-            hover "gui/common/codex_logo_hover.png"
-            selected_idle "gui/common/codex_logo_pressed.png"
-            xpos 1814
-            ypos 18
-            action [SetVariable("j3_codex_dot", False), Show("day3_current_vote_codex")]
-        if j3_codex_dot:
-            add "gui/common/codex_notification_dot.png" xpos 1864 ypos 18
 
 screen day3_current_vote_codex(called=False):
     modal True
@@ -126,7 +120,7 @@ screen day3_current_vote_codex(called=False):
                             text "Autoriser ou non les déplacements entre les districts." size 22 color "#dff8ff"
                             text "Moment prévu : Jour 6, 14h00" size 19 color "#9ed8ff"
                         else:
-                            text "Autoriser le transport, la vente et l'échange de marchandises au sein des districts." size 22 color "#dff8ff"
+                            text "Ça serait bien qu'on réautorise le commerce comme avant." size 22 color "#dff8ff"
                             text "Moment prévu : Jour 3, 14h00" size 19 color "#9ed8ff"
                         text "Résumé neutre" size 21 color "#70c6e8"
                         if vote_codex_j45:
@@ -135,7 +129,7 @@ screen day3_current_vote_codex(called=False):
                             text "Le texte promet une circulation plus libre des biens. Ses effets restent incertains selon les districts, les procédures et les risques locaux." size 20 color "#b8d8e4"
                         null height 8
                         text "Arguments découverts" size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-                        for arg_id in ["approvisionnement", "rationnement", "orbite", "monde_avant", "enonce_precis"]:
+                        for arg_id in dossier_prop_args("p1_vote_commerce"):
                             if arg_id in j2_vote_arguments:
                                 $ arg = DAY2_VOTE_ARGUMENTS[arg_id]
                                 frame:
@@ -144,9 +138,9 @@ screen day3_current_vote_codex(called=False):
                                     background Solid("#123044")
                                     vbox:
                                         spacing 3
-                                        text "[arg['title']]" size 21 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
-                                        text "[arg['summary']]" size 17 color "#b8d8e4"
-                                        text "[arg['origin']]" size 15 color "#74a8ba"
+                                        text kd_tr(arg["title"]) size 21 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text kd_tr(arg["summary"]) size 17 color "#b8d8e4"
+                                        text kd_tr(arg["origin"]) size 15 color "#74a8ba"
                             else:
                                 frame:
                                     xfill True
@@ -175,7 +169,7 @@ screen day3_current_vote_codex(called=False):
                                     background Solid("#0c1d29")
                                     vbox:
                                         spacing 8
-                                        text "[col_label]" xalign 0.5 size 28 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text kd_tr(col_label) xalign 0.5 size 28 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
                                         text "Glisse les portraits ici." xalign 0.5 size 16 color "#6797aa"
                         for cid in DAY2_VOTE_CHARACTER_ORDER:
                             $ card_x, card_y = day2_vote_card_xy(cid)
@@ -216,7 +210,7 @@ screen day3_phone_vote_notice():
             xsize 365
             spacing 18
             text "Dossier actif" size 25 color "#9ed8ff" font "fonts/Rajdhani-SemiBold.ttf"
-            text "Autoriser le transport, la vente et l'échange de marchandises." size 22 color "#dff8ff"
+            text "Ça serait bien qu'on réautorise le commerce comme avant." size 22 color "#dff8ff"
             text "Arguments rangés : [day2_vote_argument_count()] / [len(DAY2_VOTE_ARGUMENTS)]" size 20 color "#b8d8e4"
             text "Les positions restent modifiables dans le Codex." size 19 color "#74a8ba"
         hbox:
@@ -245,11 +239,11 @@ screen day3_argument_briefcase(arg_id):
     use vote_argument_briefcase(arg_id, arg, "day3_argument_card", "day3_briefcase_drop", day3_vote_argument_drop)
 
 label day3_play_wakeup_trace:
-    call trace_qte_run(mg_id="trace_day3_wakeup", title="RÉVEIL — JOUR 3", path_type="curve_right", time_limit=7.0, wait_time=0.8, tolerance=60, max_errors=4, anchor_x=930, anchor_y=640, required=True)
+    call trace_qte_run(mg_id="trace_day3_wakeup", title="RÉVEIL — JOUR 3", path_type="curve_right", time_limit=7.0, wait_time=0.8, tolerance=60, max_errors=4, anchor_x=930, anchor_y=640, required=True) from _call_trace_qte_run_3
     return True
 
 label day3_play_corridor_trace:
-    call trace_qte_run(mg_id="trace_day3_corridor", title="VIRAGE SERRÉ", path_type="arc", time_limit=5.0, wait_time=0.5, tolerance=58, max_errors=4, anchor_x=960, anchor_y=650, required=False)
+    call trace_qte_run(mg_id="trace_day3_corridor", title="VIRAGE SERRÉ", path_type="arc", time_limit=5.0, wait_time=0.5, tolerance=58, max_errors=4, anchor_x=960, anchor_y=650, required=False) from _call_trace_qte_run_4
     if _return != "FAIL":
         "Je prends le virage sans ralentir."
         return True
@@ -328,11 +322,11 @@ label _3_CANON:
     kami "Vous avez la tête de gens qui ont mal dormi. C'est parfait."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Aujourd'hui, jour trois. Jour de vote."
-    kami "L'un de vous a écrit un texte. Dans quelques heures, on saura s'il valait la peine d'exister."
+    kami "Aujourd'hui, C'est JOUR DE VOOOOOTE !"
+    kami "L'un de vous a écrit un texte. Dans quelques heures, on saura s'il valait vraiment la peine d'exister."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Rappel : il suffit d'un seul « non »."
+    kami "Petit rappel, mais je pense que ça commence à imprimer : il suffit d'un seul « non »."
     kami "Un seul. Et tout ce que vous avez construit ces trois jours retourne au néant."
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
@@ -394,7 +388,7 @@ label _3_OPT_KAEL_DIAL:
 
     think "Ce qu'il décrit, je pourrai le ressortir au débat. La fragilité d'Orbite, personne d'autre ne la mesure vraiment."
 
-    # Déblocage optionnel de l'argument « Faiblesse d'Orbite » (sinon disponible au Jour 2).
+    # Déblocage optionnel de l'argument « Risque de dépressurisation » (sinon disponible au Jour 2).
     call day3_collect_vote_argument("orbite") from _call_day3_collect_vote_argument_orbite
 
     think "Il évite mon regard, comme si le plafond avait la réponse."
@@ -845,6 +839,7 @@ label _3_PAUSE_CHAMBRE:
     scene bg_repos at adaptive_fullscreen with fade
 
     $ showGroup([
+        ("noam", "neutre", 0.00),
         ("nyra", "neutre", 0.25),
         ("julian", "neutre", 0.55),
         ("tomas", "neutre", 0.85),
@@ -951,6 +946,7 @@ label _3_TRANSITION_CONCLAVE:
 
     $ showGroup([
         ("lysa", "neutre", 0.25),
+        ("noam", "neutre", 0.50),
     ])
 
     "Lysa marche en retrait. Juste assez pour que ça se remarque."
@@ -1042,7 +1038,7 @@ label _3_DEBAT1_PHASE1:
     kami "Alors soyons rigoureux. Voici le texte officiel de l'amendement."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Enfin… « officiel ». ARCHIVE l'a harmonisé avec les Commandements existants."
+    kami "Enfin… « officiel ». [codex_dialogue_link('archive', 'ARCHIVE')] l'a harmonisé avec les Commandements existants."
     kami "Vos petites phrases d'amateurs, seules, ne valent rien en droit. Il a fallu les traduire."
 
     $ bc_show("nyra", "stress", px=-70, py=-50, pz=0.85)
@@ -1086,10 +1082,8 @@ label _3_DEBAT1_PHASE1:
     noam "D'accord. On assemble, on lit, ensuite on discute."
     noam "Et on garde les yeux ouverts sur ce qu'elle a pu glisser dedans."
 
-    hide screen day3_codex_logo
-
     # Wrapper complet : intro animée, tutoriel 1ère fois, retry avec malus, résultats avec rang
-    call debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY")
+    call debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY") from _call_debat_phase1_run
 
     $ phase1_ok = debat_phase1_last_result.get("success", False)
     $ phase1_time_left = debat_phase1_last_result.get("time_left", 0)
@@ -1100,7 +1094,6 @@ label _3_DEBAT1_PHASE1:
         call screen noam_consent_screen
 
     scene bg_conclave at adaptive_fullscreen with dissolve
-    show screen day3_codex_logo
 
     $ showGroup([
         ("kael", "calme", -0.11),
@@ -1202,9 +1195,8 @@ label _3_DEBAT1_PHASE2:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Montrez-moi qui sait viser. C'est parti."
 
-    hide screen day3_codex_logo
+label day3_before_objection_protocol_minigame:
     call debat_phase2_minigame from _call_debat_phase2_minigame
-    show screen day3_codex_logo
 
     # ── CLIFFHANGER 1 : Kami rend la conséquence humaine, en direct ──
     stop music fadeout 0.6
@@ -1293,86 +1285,191 @@ init -1:
         linear 1.2 yoffset 0
         repeat
 
-screen argument_menu_ui(options, prompt="Choisis l'argument à projeter."):
+
+init 4 python:
+    DEBATE_ARGUMENT_PHASES = {
+        1: ["rationnement", "approvisionnement", "monde_avant", "derogations_complexes", "valeur_travail"],
+        2: ["enonce_precis", "orbite", "rationnement", "approvisionnement", "echanges_discrets"],
+        3: ["monde_avant", "enonce_precis", "echanges_discrets", "valeur_travail", "derogations_complexes"],
+    }
+    DEBATE_ARGUMENT_NOAM_LINES = {
+        "rationnement": "Les bons ne nourrissent personne quand les rayons sont vides.",
+        "approvisionnement": "Les districts ne partent pas avec les mêmes réserves ni les mêmes pénuries.",
+        "monde_avant": "Le monde d'avant prouve que la circulation libre peut exister, pas qu'elle est juste.",
+        "derogations_complexes": "Si la moindre demande utile exige une dérogation, le système étouffe déjà.",
+        "valeur_travail": "Une société tient aussi parce que chacun contribue quand il le peut.",
+        "enonce_precis": "Le texte exact compte plus que nos impressions.",
+        "orbite": "Sur Orbite, une erreur logistique ne coûte pas seulement cher. Elle tue.",
+        "echanges_discrets": "Les échanges existent déjà en cachette. La vraie question, c'est ce qu'on en fait.",
+    }
+    DEBATE_ARGUMENT_ICONS = {
+        "rationnement": "RT",
+        "approvisionnement": "ID",
+        "orbite": "OR",
+        "derogations_complexes": "DG",
+        "valeur_travail": "VT",
+        "monde_avant": "MA",
+        "enonce_precis": "TX",
+        "echanges_discrets": "EX",
+    }
+    DEBATE_ARGUMENT_COLORS = ["#4CB7FF", "#F0BF4A", "#B681FF", "#6BD98A", "#FF6B7C"]
+
+    def debate_argument_is_unlocked(arg_id):
+        if "dossier_arg_unlocked" in globals() and dossier_arg_unlocked(arg_id):
+            return True
+        if arg_id in getattr(store, "j2_vote_arguments", []):
+            return True
+        data = DAY2_VOTE_ARGUMENTS.get(arg_id, {}) if "DAY2_VOTE_ARGUMENTS" in globals() else {}
+        title = data.get("title")
+        return bool(title and title in getattr(store, "arguments", []))
+
+    def debate_argument_option(arg_id, phase=1, idx=0):
+        data = DAY2_VOTE_ARGUMENTS.get(arg_id, {}) if "DAY2_VOTE_ARGUMENTS" in globals() else {}
+        if not data and arg_id in DAY3_VOTE_ARGUMENTS:
+            data = DAY3_VOTE_ARGUMENTS[arg_id]
+        color = DEBATE_ARGUMENT_COLORS[idx % len(DEBATE_ARGUMENT_COLORS)]
+        return {"id": arg_id, "title": data.get("title", arg_id), "desc": data.get("summary", "Argument à découvrir."), "noam": DEBATE_ARGUMENT_NOAM_LINES.get(arg_id, "Je dois choisir l'angle qui aura le plus d'impact."), "icon": DEBATE_ARGUMENT_ICONS.get(arg_id, "--"), "color": color, "unlocked": debate_argument_is_unlocked(arg_id)}
+
+    def debate_argument_options_for_phase(phase):
+        return [debate_argument_option(arg_id, phase, i) for i, arg_id in enumerate(DEBATE_ARGUMENT_PHASES.get(phase, []))]
+
+    def debate_argument_unlocked_count():
+        ids = []
+        for phase_ids in DEBATE_ARGUMENT_PHASES.values():
+            for arg_id in phase_ids:
+                if arg_id not in ids:
+                    ids.append(arg_id)
+        return sum(1 for arg_id in ids if debate_argument_is_unlocked(arg_id)), len(ids)
+
+    def debate_argument_fallback_index(options):
+        for i, opt in enumerate(options):
+            if opt.get("unlocked", False):
+                return i
+        return None
+
+label day3_choose_debate_argument(phase=1, prompt="Choisissez un argument pour orienter le débat."):
+    $ restore_unlocked_arguments()
+    $ day3_vote_bootstrap()
+    $ day2_sync_argument_titles()
+    $ _debate_arg_options = debate_argument_options_for_phase(phase)
+    $ _debate_arg_pick = renpy.call_screen("argument_menu_ui", options=_debate_arg_options, phase=phase, prompt=prompt)
+    if _debate_arg_pick is None:
+        return
+    $ selected_argument_id = _debate_arg_options[_debate_arg_pick]["id"]
+    $ selected_argument_noam_line = _debate_arg_options[_debate_arg_pick]["noam"]
+    noam "[selected_argument_noam_line]"
+    return
+
+screen argument_menu_ui(options, prompt="Choisissez un argument pour orienter le débat.", phase=1):
     modal True
     zorder 250
+    default selected_idx = debate_argument_fallback_index(options)
 
-    add "gui/day3/vote_phase3/bg.png"
+    add Solid("#02070CEE")
+    add "bg_conclave" at adaptive_fullscreen:
+        alpha 0.16
 
-    frame:
-        background None
-        xalign 0.5
-        yalign 0.5
-        xsize 1620
-        ysize 820
-        padding (40, 35)
+    $ unlocked_count, total_count = debate_argument_unlocked_count()
 
+    fixed:
+        xfill True
+        yfill True
+        hbox:
+            xpos 56
+            ypos 42
+            spacing 22
+            text "//" size 42 color "#D7E1EA" font "fonts/Rajdhani-SemiBold.ttf"
+            vbox:
+                spacing 2
+                text "CHOIX DU THÈME" size 34 color "#EAF3FA" font "fonts/Rajdhani-SemiBold.ttf"
+                text "PHASE ARGUMENTATIVE" size 18 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf"
+        hbox:
+            xpos 1365
+            ypos 50
+            spacing 14
+            text "PHASE [phase]/3" size 21 color "#8A94A0" font "fonts/Rajdhani-SemiBold.ttf"
+            for pi in range(1, 4):
+                add Solid("#4CB7FF" if pi <= phase else "#27313A", xsize=22, ysize=22)
+        frame:
+            xpos 46 ypos 132 xsize 1828 ysize 280
+            background Solid("#071018E8")
+            padding (0, 0)
+            fixed:
+                add Solid("#6F849A66", xsize=1828, ysize=1)
+                frame:
+                    xpos 0 ypos 0 xsize 450 ysize 280
+                    background Solid("#0B1824E8")
+                    padding (0, 0)
+                    add "gui/day3/vote_phase2/portraits/noam_idle.png":
+                        xysize (450, 450)
+                        yalign 0.28
+                        alpha 0.72
+                vbox:
+                    xpos 530 ypos 70 spacing 18
+                    text "NOAM" size 30 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf"
+                    text "Quel angle aborder pour cette discussion ?\nJe dois choisir l'argument qui aura le plus d'impact." size 29 color "#F0F4F7" font "fonts/Barlow-Light.ttf" line_spacing 8
         vbox:
-            spacing 28
-            xfill True
-
-            add "gui/day3/vote_phase3/prompt_panel.png" xalign 0.5
-            text "INTERVENTION STRATÉGIQUE" size 48 color "#7be7ff" xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf"
-            text "[prompt]" size 30 color "#d5f7ff" xalign 0.5 text_align 0.5
-
+            xpos 0 ypos 460 xsize 1920 spacing 10
+            text "SÉLECTIONNEZ LE THÈME DE LA DISCUSSION" xalign 0.5 size 31 color "#EAF3FA" font "fonts/Rajdhani-SemiBold.ttf"
+            text kd_tr(prompt) xalign 0.5 size 22 color "#AEB8C2" font "fonts/Barlow-Light.ttf"
+        hbox:
+            xpos 44 ypos 548 spacing 22
+            for i, opt in enumerate(options):
+                $ unlocked = opt.get("unlocked", False)
+                $ selected = (selected_idx == i)
+                $ col = opt.get("color", "#4CB7FF")
+                $ card_bg = (col + "33") if selected and unlocked else ("#07131DDD" if unlocked else "#050A0FCC")
+                button:
+                    xsize 282 ysize 382 padding (18, 14)
+                    background Solid(card_bg)
+                    hover_background Solid((col + "44") if unlocked else "#050A0FCC")
+                    sensitive unlocked
+                    action SetScreenVariable("selected_idx", i)
+                    vbox:
+                        xfill True spacing 10
+                        text "[i + 1]" size 22 color (col if unlocked else "#59636B") font "fonts/Rajdhani-SemiBold.ttf"
+                        text opt.get("icon", "--") xalign 0.5 size 48 color (col if unlocked else "#666666") font "fonts/Rajdhani-SemiBold.ttf"
+                        text kd_tr(opt.get("title", "ARGUMENT")) xalign 0.5 text_align 0.5 size 22 color (col if unlocked else "#6F747A") font "fonts/Rajdhani-SemiBold.ttf" xmaximum 238
+                        text kd_tr(opt.get("desc", "")) xalign 0.5 text_align 0.5 size 16 color ("#D6DDE4" if unlocked else "#555D65") font "fonts/Barlow-Light.ttf" xmaximum 238 line_spacing -1
+                        null height 2
+                        text ("DISPONIBLE" if unlocked else "VERROUILLÉ") xalign 0.5 size 15 color (col if unlocked else "#5F666D") font "fonts/Rajdhani-SemiBold.ttf"
+                        if not unlocked:
+                            text "Débloquez cet argument pour l'utiliser." xalign 0.5 text_align 0.5 size 14 color "#555D65" font "fonts/Barlow-Light.ttf" xmaximum 238
+        frame:
+            xpos 50 ypos 950 xsize 770 ysize 62 background Solid("#071018DD") padding (22, 10)
             hbox:
-                spacing 26
-                xalign 0.5
-
-                for i, opt in enumerate(options):
-                    $ is_unlocked = opt["title"] in arguments
-                    fixed:
-                        xsize 490
-                        ysize 560
-                        at p3_arg_float
-
-                        if is_unlocked:
-                            add "gui/day3/vote_phase3/card_idle.png" xpos 0 ypos 0 xsize 490 ysize 560
-                            add Solid("#61f0ff15") at p3_arg_glow
-                        else:
-                            add "gui/day3/vote_phase3/card_locked.png" xpos 0 ypos 0 xsize 490 ysize 560
-
-                        imagebutton:
-                            idle ("gui/day3/vote_phase3/card_idle.png" if is_unlocked else "gui/day3/vote_phase3/card_locked.png")
-                            hover ("gui/day3/vote_phase3/card_hover.png" if is_unlocked else "gui/day3/vote_phase3/card_locked.png")
-                            at p3_arg_button_idle
-                            xalign 0.5
-                            yalign 0.5
-                            xsize 490
-                            ysize 560
-                            sensitive is_unlocked
-
-                            if is_unlocked:
-                                action Return(i)
-                            else:
-                                action NullAction()
-
-                        vbox:
-                            xalign 0.5
-                            yalign 0.48
-                            spacing 18
-                            xmaximum 410
-
-                            if is_unlocked:
-                                text "[opt['icon']]" size 74 xalign 0.5
-                                text "[opt['title']]" size 33 color "#9deeff" xalign 0.5 text_align 0.5 font "fonts/Rajdhani-SemiBold.ttf"
-                                text "[opt['desc']]" size 25 color "#e6f6ff" xalign 0.5 text_align 0.5
-                                add "gui/day3/vote_phase3/select_button.png" xalign 0.5
-                            else:
-                                text "?" size 92 color "#6f7c86" xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf"
-                                add "gui/day3/vote_phase3/locked_stamp.png" xalign 0.5
-                                text "Argument non débloqué" size 24 color "#9a8f96" xalign 0.5 text_align 0.5
-
-            text "L'impact dépend du moment et des tensions déjà installées." size 24 color "#86bdd0" xalign 0.5
-
-# ============================================================================
-# DÉBAT — PHASE 3 : arguments stratégiques + CLIFFHANGER 2 (le dernier vote)
-# ============================================================================
+                spacing 22
+                text "//" size 28 color "#8AB9E8" font "fonts/Rajdhani-SemiBold.ttf"
+                vbox:
+                    spacing 2
+                    text "VOS ARGUMENTS DÉBLOQUÉS" size 18 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf"
+                    text "[unlocked_count] / [total_count]" size 25 color "#EAF3FA" font "fonts/Rajdhani-SemiBold.ttf"
+        frame:
+            xpos 900 ypos 950 xsize 770 ysize 62 background Solid("#071018DD") padding (22, 13)
+            text "INFO  Chaque thème influence les réactions des représentants. Choisissez judicieusement." size 18 color "#B8C2CC" font "fonts/Barlow-Light.ttf" xmaximum 720
+        textbutton "CONFIRMER LE THÈME":
+            xpos 470 ypos 1022 xsize 980 ysize 52
+            text_size 24
+            text_color "#EAF3FA"
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            background Solid("#102A46EE")
+            hover_background Solid("#174D7CEE")
+            sensitive selected_idx is not None
+            action Return(selected_idx)
+        if selected_idx is None:
+            textbutton "CONTINUER SANS THÈME":
+                xpos 470 ypos 1022 xsize 980 ysize 52
+                text_size 22
+                text_color "#7D8994"
+                background Solid("#111820EE")
+                hover_background Solid("#1A2530EE")
+                action Return(None)
 
 label _3_DEBAT1_PHASE3:
 
     # Réinjecte les arguments débloqués globalement avant d'afficher les choix.
     $ restore_unlocked_arguments()
+    $ day2_sync_argument_titles()
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_phase3.mp3" fadein 1.0
@@ -1380,15 +1477,19 @@ label _3_DEBAT1_PHASE3:
 
     python:
         store.p3_round_options = [
-            [   # Moment 1
-                build_arg("Bons de rationnement"),
-                build_arg("Difficulté d'approvisionnement"),
-                build_arg("Faiblesse d'Orbite"),
+            [
+                debate_argument_option("rationnement", 1, 0),
+                debate_argument_option("approvisionnement", 1, 1),
+                debate_argument_option("orbite", 1, 2),
+                debate_argument_option("valeur_travail", 1, 3),
+                debate_argument_option("derogations_complexes", 1, 4),
             ],
-            [   # Moment 2
-                build_arg("L'énoncé précis"),
-                build_arg("Le monde d'avant"),
-                build_arg("Échanges discrets déjà actifs"),
+            [
+                debate_argument_option("monde_avant", 3, 0),
+                debate_argument_option("enonce_precis", 3, 1),
+                debate_argument_option("echanges_discrets", 3, 2),
+                debate_argument_option("rationnement", 3, 3),
+                debate_argument_option("approvisionnement", 3, 4),
             ],
         ]
 
@@ -1442,7 +1543,9 @@ label _3_DEBAT1_PHASE3:
     kami "Continuez. Vous êtes bien plus intéressants quand vous avez peur."
 
     play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], prompt="Moment 1 — Cadrer la première salve.")
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], phase=3, prompt="Moment 1 — Cadrer la première salve.")
+    if p3_pick is None:
+        $ p3_pick = 0
     call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
 
     stop music fadeout 1.0
@@ -1497,7 +1600,9 @@ label _3_DEBAT1_PHASE3:
     ryn reflechit "Ouais, sur le papier. Mais qui décide des contrats ? Elle. Toujours elle."
 
     play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
+    if p3_pick is None:
+        $ p3_pick = 0
     call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
 
     stop music fadeout 1.0
@@ -1550,7 +1655,6 @@ label _3_DEBAT1_PHASE3:
     kami "Alors… on vote. Maintenant. POUR, ou CONTRE."
     kami "Je meurs d'envie de compter."
 
-    hide screen day3_codex_logo
     jump vote_phase3_final
 
 # ============================================================================
@@ -1562,7 +1666,7 @@ label _3_DEBAT1_PHASE3_INT1:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    if "appro" in selected.lower():
+    if "appro" in selected.lower() or "inégal" in selected.lower():
 
         # Tous les locuteurs de la branche sont dans le showGroup (aucun sprite parasite).
         $ showGroup([
@@ -1625,7 +1729,7 @@ label _3_DEBAT1_PHASE3_INT1:
         # L'argument le plus efficace pour rallier les pauvres (Ryn) : preuve vécue.
         $ debat_day3_apply_influence({"ryn": 2, "mara": 1, "kael": 1, "tomas": 1, "iris": 1})
 
-    elif "orbite" in selected.lower():
+    elif "orbite" in selected.lower() or "dépress" in selected.lower():
 
         $ showGroup([
             ("nyra", "raison", 0.02),
@@ -1779,6 +1883,8 @@ label _3_DEBAT1_PHASE3_INT2:
 
 label _3_VOTE_POUR:
 
+    $ current_period = "Soir"
+    
     scene bg_conclave at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
     play music "music/bgm_victory_bitter.mp3" fadein 2.0
@@ -1837,7 +1943,7 @@ label _3_VOTE_POUR:
 
     think "Dix-sept heures dix. On se lève en silence."
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     think "Mes pas résonnent jusqu'à ma chambre."
 
     scene bg_dortoir at adaptive_fullscreen with dissolve
@@ -1849,13 +1955,18 @@ label _3_VOTE_POUR:
     $ phase3_over = True
     $ vote1 = "OUI"
 
-    #jump patreon_ending
+    call show_chapter_title("Fin du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title
 
-    call end_day("4") from _call_end_day_3
+    pause 3.0
+    jump patreon_ending
 
-    jump _4_1_REVEIL_CHAMBRE
+    #call end_day("4") from _call_end_day_3
+
+    #jump _4_1_REVEIL_CHAMBRE
 
 label _3_VOTE_CONTRE:
+
+    $ current_period = "Soir"
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
@@ -1928,7 +2039,7 @@ label _3_VOTE_CONTRE:
 
     $ hideGroup()
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     think "Mes pas résonnent dans les couloirs froids."
     scene bg_dortoir at adaptive_fullscreen with dissolve
     think "Je m'effondre sur le lit."
@@ -1940,8 +2051,14 @@ label _3_VOTE_CONTRE:
     $ phase3_over = True
     $ vote1 = "NON"
 
-    #jump patreon_ending
+    call show_chapter_title("Fin du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title_1
 
-    call end_day("4")
+    pause 3.0
+    jump patreon_ending
 
-    jump _4_0_REVEIL_CHAMBRE
+    #call end_day("4") from _call_end_day_24
+
+    #jump _4_0_REVEIL_CHAMBRE
+
+# Total jour 3 : 17m
+# Total J0-J3 : 1h25

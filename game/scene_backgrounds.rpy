@@ -343,7 +343,10 @@ screen room_scene_interactions(room_name, label_overrides=None):
         if room_interaction_is_decorative(key):
             add room_interaction_layer(path, room_name, "art")
         elif target_label and renpy.has_label(target_label):
-            $ idle_disp = room_interaction_layer(path, room_name, "art") if key == "brouilleur" else room_interaction_null()
+            # Le brouilleur et la nourriture sont des calques d'état qui ne
+            # sont pas intégrés au fond : ils doivent rester visibles au repos.
+            $ is_food_overlay = room_name == "cafeteria" and room_scene_stem(room_name) == "cafeteria3" and key.startswith("nourriture")
+            $ idle_disp = room_interaction_layer(path, room_name, "art") if key == "brouilleur" or is_food_overlay else room_interaction_null()
             imagebutton:
                 idle idle_disp
                 hover room_interaction_layer(path, room_name, "hover")

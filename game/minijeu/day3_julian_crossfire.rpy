@@ -7,6 +7,8 @@ default day3_julian_clash_success = False
 default day3_julian_clash_selected = 0
 default day3_julian_clash_attempts = []
 default day3_julian_clash_rewarded = False
+default day3_julian_clash_pass = 0
+default day3_julian_clash_fast = False
 
 define DAY3_JULIAN_CLASH_LINE_TIME = 5.2
 define DAY3_JULIAN_CLASH_HIGHLIGHT_TIME = 7.0
@@ -89,11 +91,20 @@ init python:
 
 
 transform day3_julian_clash_character_in:
-    xalign 0.19
-    yalign 1.0
+    xalign 0.13
+    yalign 1.08
     alpha 0.0
     xoffset -70
+    zoom 0.96
     easeout 0.35 alpha 1.0 xoffset 0
+
+transform day3_julian_clash_character_shadow:
+    xalign 0.25
+    yalign 1.08
+    alpha 0.0
+    zoom 0.96
+    xoffset -35
+    easeout 0.45 alpha 0.16 xoffset 0
 
 transform day3_julian_clash_panel_in:
     alpha 0.0
@@ -123,18 +134,46 @@ transform day3_julian_clash_feedback_pop:
     easeout 0.22 alpha 1.0 zoom 1.06 rotate 1
     easein 0.12 zoom 1.0 rotate 0
 
+transform day3_julian_clash_selected_card:
+    yoffset 0
+    ease 0.24 yoffset -10
+
+transform day3_julian_clash_unselected_card:
+    yoffset 0
+
+transform day3_julian_clash_corner_flash:
+    alpha 0.45
+    ease 0.55 alpha 1.0
+    ease 0.55 alpha 0.45
+    repeat
+
+transform day3_julian_clash_rewind_line(delay=0.0):
+    alpha 0.0
+    xoffset 820
+    pause delay
+    easeout 0.18 alpha 1.0 xoffset 0
+    easein 0.28 alpha 0.0 xoffset -820
+    repeat
+
+transform day3_julian_clash_rewind_text:
+    alpha 0.0
+    zoom 1.18
+    easeout 0.25 alpha 1.0 zoom 1.0
+    pause 0.7
+    easein 0.25 alpha 0.0 zoom 0.92
+
 
 style day3_julian_clash_statement is default:
     font "fonts/day_font.ttf"
-    size 48
+    size 46
     color "#F4F8FF"
     outlines [(4, "#020711E8", 0, 2)]
 
 style day3_julian_clash_claim_button is button:
-    background Solid("#FFD16616")
-    hover_background Solid("#FFD16635")
-    selected_background Solid("#FFD16635")
-    padding (16, 7)
+    background Solid("#FFD16620")
+    hover_background Solid("#FFD1663D")
+    selected_background Solid("#FFD1663D")
+    padding (18, 9)
 
 style day3_julian_clash_claim_button_text is button_text:
     font "fonts/day_font.ttf"
@@ -145,13 +184,13 @@ style day3_julian_clash_claim_button_text is button_text:
     outlines [(4, "#1B1000F0", 0, 2)]
 
 style day3_julian_clash_bullet_button is button:
-    xsize 510
-    ysize 124
-    background Solid("#081426E8")
-    hover_background Solid("#102B45F2")
-    selected_background Solid("#17445CF2")
-    insensitive_background Solid("#081426AA")
-    padding (18, 13)
+    xsize 492
+    ysize 136
+    background Solid("#071426E8")
+    hover_background Solid("#123350F2")
+    selected_background Solid("#15516AF5")
+    insensitive_background Solid("#071426AA")
+    padding (0, 0)
 
 style day3_julian_clash_bullet_button_text is button_text:
     font "fonts/Rajdhani-SemiBold.ttf"
@@ -247,29 +286,39 @@ screen day3_julian_clash_tutorial():
     key "K_SPACE" action Return(True)
 
 
-screen day3_julian_clash_line(statement, line_index, total_lines, duration):
+screen day3_julian_clash_line(statement, line_index, total_lines, duration, pass_index=0, allow_actions=False, fast_available=False):
     modal True
     zorder 140
 
     add "bg_repos" at adaptive_fullscreen
-    add Solid("#020611B8")
-    add Solid("#11294ACC")
+    add Solid("#020611DD")
+    add Solid("#071B2EE8")
     add "gui/day3/vote_phase2/bg_overlay.png"
     add Solid("#7DF9FF0D", xsize=1920, ysize=28) at day3_julian_clash_scan
 
+    for _x in range(92, 1870, 96):
+        add Solid("#2A5A7A32", xsize=1, ysize=880) xpos _x ypos 100
+    for _y in range(103, 980, 72):
+        add Solid("#2A5A7A32", xsize=1780, ysize=1) xpos 70 ypos _y
+
+    add Solid("#7DF9FFCC", xsize=1820, ysize=2) xpos 50 ypos 102
+    add Solid("#7DF9FFCC", xsize=1820, ysize=2) xpos 50 ypos 978
+    add Solid("#7DF9FF", xsize=5, ysize=620) xpos 623 ypos 80 at day3_julian_clash_corner_flash
+
+    add "julian [statement['expr']]" at day3_julian_clash_character_shadow
     add "julian [statement['expr']]" at day3_julian_clash_character_in
 
     frame:
-        xpos 620
-        ypos 88
-        xsize 1225
-        ysize 610
+        xpos 626
+        ypos 82
+        xsize 1220
+        ysize 620
         background Fixed(
-            Solid("#07101EDC"),
+            Solid("#06101EEE"),
             Solid("#7DF9FF", xsize=5),
             Solid("#FFFFFF16", ysize=2),
         )
-        padding (54, 38)
+        padding (54, 36)
         at day3_julian_clash_panel_in
 
         fixed:
@@ -288,19 +337,39 @@ screen day3_julian_clash_line(statement, line_index, total_lines, duration):
                 size 22
                 color "#9EB3C8"
 
+            hbox:
+                xalign 1.0
+                ypos 38
+                spacing 7
+
+                for hud_index in range(total_lines):
+                    $ hud_current = hud_index == line_index
+                    fixed:
+                        xysize (34, 10)
+                        add Solid("#FFD166" if hud_current else "#25384C", xsize=34, ysize=10)
+                        if hud_current:
+                            add Solid("#FFF1AD", xsize=34, ysize=2) ypos 0
+
+            text "LECTURE [pass_index + 1]":
+                xalign 1.0
+                ypos 56
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 17
+                color ("#7DF9FF" if allow_actions else "#9EB3C8")
+
             vbox:
                 xpos 0
-                ypos 105
+                ypos 112
                 xsize 1105
                 spacing 16
 
                 if statement.get("claim"):
-                    text "[statement['lead']]" style "day3_julian_clash_statement"
+                    text kd_tr(statement["lead"]) style "day3_julian_clash_statement"
 
-                    textbutton "[statement['claim']]":
+                    textbutton kd_tr(statement["claim"]):
                         style "day3_julian_clash_claim_button"
                         at day3_julian_clash_claim_pulse
-                        sensitive not day3_julian_clash_success
+                        sensitive allow_actions and not day3_julian_clash_success
                         action Return({
                             "type": "shot",
                             "statement_id": statement["id"],
@@ -308,53 +377,118 @@ screen day3_julian_clash_line(statement, line_index, total_lines, duration):
                             "bullet_index": day3_julian_clash_selected,
                         })
 
-                    text "[statement['tail']]" style "day3_julian_clash_statement"
+                    text kd_tr(statement["tail"]) style "day3_julian_clash_statement"
                 else:
                     for statement_line in statement["lines"]:
-                        text "[statement_line]" style "day3_julian_clash_statement"
+                        text kd_tr(statement_line) style "day3_julian_clash_statement"
 
             fixed:
                 xpos 0
-                ypos 510
+                ypos 516
                 xsize 1105
-                ysize 10
-                add Solid("#09121F", xsize=1105, ysize=10)
-                add Solid("#FFD166", xsize=1105, ysize=10) at day3_julian_clash_time_drain(duration)
+                ysize 18
+                add Solid("#07111C", xsize=1105, ysize=18)
+                add Solid("#FFFFFF12", xsize=1105, ysize=1) ypos 0
+                add Solid("#FFD166", xsize=1105, ysize=12) ypos 3 at day3_julian_clash_time_drain(duration)
+                add Solid("#FFD16655", xsize=1105, ysize=2) ypos 15
 
-    hbox:
-        xpos 222
-        ypos 875
-        spacing 20
+    if allow_actions:
+        hbox:
+            xpos 218
+            ypos 855
+            spacing 22
 
-        for bullet_index, bullet in enumerate(DAY3_JULIAN_CLASH_BULLETS):
-            textbutton "[bullet_index + 1]  [bullet['title']]\n[bullet['text']]":
-                style "day3_julian_clash_bullet_button"
-                selected day3_julian_clash_selected == bullet_index
-                sensitive not day3_julian_clash_success
-                action SetVariable("day3_julian_clash_selected", bullet_index)
+            for bullet_index, bullet in enumerate(DAY3_JULIAN_CLASH_BULLETS):
+                $ bullet_selected = day3_julian_clash_selected == bullet_index
+                button:
+                    style "day3_julian_clash_bullet_button"
+                    selected bullet_selected
+                    sensitive not day3_julian_clash_success
+                    action SetVariable("day3_julian_clash_selected", bullet_index)
+
+                    fixed:
+                        xysize (492, 136)
+
+                        if bullet_selected:
+                            add Solid("#7DF9FF", xsize=492, ysize=3) xpos 0 ypos 0
+                            add Solid("#7DF9FF22", xsize=492, ysize=136) xpos 0 ypos 0
+                        else:
+                            add Solid("#FFFFFF12", xsize=492, ysize=1) xpos 0 ypos 0
+
+                        text "%02d" % (bullet_index + 1):
+                            xpos 22
+                            ypos 20
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                            size 25
+                            color ("#7DF9FF" if bullet_selected else "#8EA7BC")
+
+                        text kd_tr(bullet["title"]):
+                            xpos 66
+                            ypos 22
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                            size 24
+                            color ("#FFFFFF" if bullet_selected else "#D2DEEA")
+
+                        add Solid("#7DF9FF55" if bullet_selected else "#38506966", xsize=448, ysize=1) xpos 22 ypos 59
+
+                        text kd_tr(bullet["text"]):
+                            xpos 22
+                            ypos 72
+                            xsize 442
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                            size 22
+                            color ("#7DF9FF" if bullet_selected else "#B9CADB")
+    else:
+        frame:
+            xpos 218
+            ypos 868
+            xsize 1536
+            ysize 96
+            background Solid("#06101EEE")
+            padding (26, 18)
+
+            text "PREMIÈRE LECTURE : observe l'argumentaire complet. Les répliques seront disponibles au prochain passage.":
+                align (0.5, 0.5)
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 24
+                color "#9EB3C8"
 
     if day3_julian_clash_success:
         frame:
-            xpos 222
-            ypos 814
-            background Solid("#153D32E8")
-            padding (18, 8)
+            xpos 218
+            ypos 792
+            background Solid("#153D32F2")
+            padding (20, 10)
             text "CONTRADICTION TROUVÉE — écoute de la fin de l'argumentaire":
                 size 20
                 color "#74FFB2"
                 bold True
-    else:
+    elif allow_actions:
         text "SÉLECTION : [DAY3_JULIAN_CLASH_BULLETS[day3_julian_clash_selected]['text']]":
-            xpos 222
-            ypos 829
+            xpos 218
+            ypos 806
             size 20
             color "#7DF9FF"
 
-    key "K_1" action SetVariable("day3_julian_clash_selected", 0)
-    key "K_2" action SetVariable("day3_julian_clash_selected", 1)
-    key "K_3" action SetVariable("day3_julian_clash_selected", 2)
+    if fast_available:
+        textbutton "ACCÉLÉRER  >>":
+            xpos 1598
+            ypos 796
+            xsize 210
+            ysize 44
+            background Solid("#123350E8")
+            hover_background Solid("#1B5B78F2")
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            text_size 21
+            text_color "#DDFBFF"
+            action [SetVariable("day3_julian_clash_fast", True), Return({"type": "accelerate", "statement_id": statement["id"]})]
 
-    if statement.get("claim") and not day3_julian_clash_success:
+    if allow_actions:
+        key "K_1" action SetVariable("day3_julian_clash_selected", 0)
+        key "K_2" action SetVariable("day3_julian_clash_selected", 1)
+        key "K_3" action SetVariable("day3_julian_clash_selected", 2)
+
+    if allow_actions and statement.get("claim") and not day3_julian_clash_success:
         key "K_SPACE" action Return({
             "type": "shot",
             "statement_id": statement["id"],
@@ -363,6 +497,37 @@ screen day3_julian_clash_line(statement, line_index, total_lines, duration):
         })
 
     timer duration action Return({"type": "timeout", "statement_id": statement["id"]})
+
+
+screen day3_julian_clash_rewind():
+    modal True
+    zorder 210
+
+    add Solid("#020611EE")
+    add Solid("#7DF9FF10")
+
+    for rewind_y in range(150, 930, 86):
+        add Solid("#7DF9FF66", xsize=1920, ysize=2) ypos rewind_y at day3_julian_clash_rewind_line(float(rewind_y % 5) * 0.04)
+
+    vbox at day3_julian_clash_rewind_text:
+        align (0.5, 0.48)
+        spacing 16
+
+        text "RETOUR AU SEGMENT 01":
+            xalign 0.5
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 56
+            color "#7DF9FF"
+            kerning 4
+            outlines [(4, "#020711", 0, 2)]
+
+        text "Les répliques sont maintenant disponibles.":
+            xalign 0.5
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 27
+            color "#FFD166"
+
+    timer 1.25 action Return(True)
 
 
 screen day3_julian_clash_feedback(success, bullet_text):
@@ -466,22 +631,36 @@ label day3_julian_clash_minigame:
     $ day3_julian_clash_selected = 0
     $ day3_julian_clash_attempts = []
     $ day3_julian_clash_index = 0
+    $ day3_julian_clash_pass = 0
+    $ day3_julian_clash_fast = False
 
     window hide
     call screen day3_julian_clash_tutorial
 
 label day3_julian_clash_loop:
     if day3_julian_clash_index >= len(DAY3_JULIAN_CLASH_STATEMENTS):
-        jump day3_julian_clash_finish
+        if day3_julian_clash_success:
+            jump day3_julian_clash_finish
+        if day3_julian_clash_pass >= 2:
+            jump day3_julian_clash_finish
+        call screen day3_julian_clash_rewind
+        $ day3_julian_clash_pass += 1
+        $ day3_julian_clash_index = 0
+        jump day3_julian_clash_loop
 
     $ day3_julian_clash_statement = DAY3_JULIAN_CLASH_STATEMENTS[day3_julian_clash_index]
-    $ day3_julian_clash_duration = DAY3_JULIAN_CLASH_HIGHLIGHT_TIME if day3_julian_clash_statement.get("claim") else DAY3_JULIAN_CLASH_LINE_TIME
+    $ day3_julian_clash_allow_actions = day3_julian_clash_pass > 0
+    $ day3_julian_clash_base_duration = DAY3_JULIAN_CLASH_HIGHLIGHT_TIME if day3_julian_clash_statement.get("claim") else DAY3_JULIAN_CLASH_LINE_TIME
+    $ day3_julian_clash_duration = max(1.7, day3_julian_clash_base_duration * 0.42) if day3_julian_clash_fast and day3_julian_clash_allow_actions else day3_julian_clash_base_duration
     $ day3_julian_clash_outcome = renpy.call_screen(
         "day3_julian_clash_line",
         statement=day3_julian_clash_statement,
         line_index=day3_julian_clash_index,
         total_lines=len(DAY3_JULIAN_CLASH_STATEMENTS),
         duration=day3_julian_clash_duration,
+        pass_index=day3_julian_clash_pass,
+        allow_actions=day3_julian_clash_allow_actions,
+        fast_available=day3_julian_clash_allow_actions,
     )
 
     if day3_julian_clash_outcome.get("type") == "shot":

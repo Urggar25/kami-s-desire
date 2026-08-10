@@ -797,5 +797,5 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     pause 2.0
 
-    call end_day("17")
+    call end_day("17") from _call_end_day_17
     jump _17_0_1_1_0_ANNONCE_KAMI

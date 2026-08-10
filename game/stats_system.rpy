@@ -134,7 +134,8 @@ screen tablet_home(clock="08:00", show_vote=True):
                 spacing 40
 
                 if show_vote and j2_vote_codex_unlocked:
-                    use tablet_card("DOSSIER DE VOTE", "#B57BFF", "hud/tablet/card_vote", [Hide("tablet_home"), Show("vote_dossier")])
+                    $ vote_progress = dossier_chapter_progress(dossier_default_chapter())
+                    use tablet_card("DOSSIER DE VOTE", "#B57BFF", "hud/tablet/card_vote", [Hide("tablet_home"), Show("vote_dossier")], vote_progress)
                 use tablet_card("STATISTIQUES", "#5CD3FF", "hud/tablet/card_stats", [Hide("tablet_home"), Show("tablet_stats")])
                 use tablet_card("CODEX", "#6BD98A", "hud/tablet/card_codex", [Hide("tablet_home"), ShowMenu("codex_menu")])
 
@@ -150,7 +151,13 @@ screen tablet_home(clock="08:00", show_vote=True):
                 text "⌂" xalign 0.5 yalign 0.5 size 24 color "#5CD3FF"
 
 
-screen tablet_card(title, color, icon, action):
+screen tablet_card(title, color, icon, action, progress=None):
+    $ progress_percent = progress["percent"] if progress is not None else 0
+    $ progress_arguments_done = progress["arguments_done"] if progress is not None else 0
+    $ progress_arguments_total = progress["arguments_total"] if progress is not None else 0
+    $ progress_successes_done = progress["successes_done"] if progress is not None else 0
+    $ progress_successes_total = progress["successes_total"] if progress is not None else 0
+
     frame:
         xsize 320
         ysize 460
@@ -178,6 +185,19 @@ screen tablet_card(title, color, icon, action):
                     add Transform("hud/tablet/glow_soft.png", matrixcolor=TintMatrix(color)) xalign 0.5 yalign 0.5 at tablet_card_halo
                     add Transform("hud/tablet/disc_ring.png", size=(184, 184), matrixcolor=TintMatrix(color)) xalign 0.5 yalign 0.5
                     add Transform(icon + ".png", size=(94, 94)) xalign 0.5 yalign 0.5
+                    if progress is not None:
+                        add Solid("#07111DDD") xalign 0.5 yalign 0.5 xysize (116, 58)
+                        text "[progress_percent]%":
+                            xalign 0.5 yalign 0.5 size 27 color "#FFFFFF"
+                            font "fonts/Rajdhani-SemiBold.ttf"
+
+                if progress is not None:
+                    text "ARGUMENTS  [progress_arguments_done] / [progress_arguments_total]":
+                        xalign 0.5 ypos 278 size 14 color color
+                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+                    text "SUCCÈS  [progress_successes_done] / [progress_successes_total]":
+                        xalign 0.5 ypos 304 size 14 color color
+                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1
 
                 add Solid(color + "33") xpos 40 ypos 340 xsize 240 ysize 1
                 text title:
@@ -295,7 +315,7 @@ screen stat_check(name, dc=10, titre=""):
             text "TEST — [STATS_META[name]['label']]":
                 xpos 26 ypos 20 size 20 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 2
             if titre:
-                text "[titre]":
+                text kd_tr(titre):
                     xpos 26 ypos 50 size 14 color "#7A98A8" font "fonts/Rajdhani-SemiBold.ttf"
 
             text "Niveau [get_stat(name)]   •   Difficulté [dc]":
@@ -331,7 +351,7 @@ screen stat_check(name, dc=10, titre=""):
                 $ vcol = "#6BD98A" if res["success"] else "#E85C6B"
                 text "[res['roll']] + [res['level']] = [res['total']]  vs  [dc]":
                     xalign 0.5 ypos 320 size 16 color "#7A98A8" font "fonts/Rajdhani-SemiBold.ttf"
-                text "[verdict]":
+                text kd_tr(verdict):
                     xalign 0.5 ypos 348 size 26 color vcol font "fonts/Rajdhani-SemiBold.ttf" kerning 2
                 button:
                     xalign 0.5 ypos 400

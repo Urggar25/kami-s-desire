@@ -90,6 +90,25 @@ init python:
 
 
 
+
+    def vote_phase3_amendment_text():
+        if "DOSSIER_PROPOSITIONS" in globals():
+            prop = DOSSIER_PROPOSITIONS.get("p1_vote_commerce", {})
+            if prop.get("formulation"):
+                return prop["formulation"]
+            if prop.get("title"):
+                return prop["title"].replace("\n", " ")
+        return "Autoriser le transport, la vente et l'échange de marchandises entre les districts."
+
+    def vote_phase3_status_text():
+        if not store.vote_phase3_tally_done:
+            if store.vote_phase3_tally_index <= 0:
+                return "En attente du premier bulletin..."
+            return "Dépouillement en cours..."
+        if store.vote_phase3_counts.get("contre", 0) > 0:
+            return "Amendement refusé : au moins un vote contre."
+        return "Amendement adopté : aucun vote contre."
+
 # -----------------------------
 # ATL — ambiance néon / dynamiques UI
 # -----------------------------
@@ -150,191 +169,89 @@ transform vote_phase3_scanline:
 # -----------------------------
 # Écran 1 — vote initial (10s)
 # -----------------------------
+transform vote_phase3_panel_breathe:
+    alpha 0.86
+    ease 1.4 alpha 1.0
+    ease 1.4 alpha 0.86
+    repeat
+
+transform vote_phase3_card_reveal:
+    alpha 0.0
+    yoffset 20
+    easeout 0.35 alpha 1.0 yoffset 0
+
+transform vote_phase3_ballot_pop:
+    zoom 0.92
+    alpha 0.0
+    easeout 0.22 zoom 1.08 alpha 1.0
+    easein 0.18 zoom 1.0
+
+
 screen vote_screen():
     modal True
     zorder 220
 
-    add "images/background/bg_conclave.png" at adaptive_fullscreen
-    add Solid("#060B17A0")
-    add Solid("#4AD5FF20", ysize=2) ypos 120
-    add Solid("#FFFFFF08", xsize=1920, ysize=22) at vote_phase3_scanline
-    text "KAMI.CORE // SCRUTIN FINAL":
-        xpos 70
-        ypos 74
-        font "fonts/Barlow-Light.ttf"
-        size 18
-        color "#78DFFF"
-        kerning 4
+    $ timer_ratio = float(vote_phase3_time_left) / 10.0
 
-    # Timer + barre de décompte (10s)
-    frame:
-        xalign 0.5
-        yalign 0.08
-        xsize 980
-        ysize 84
-        background Fixed(
-            Solid("#0D1320DD"),
-            Solid("#4AD5FF55", xsize=4),
-            Solid("#FFFFFF12", ysize=1),
-        )
+    add "bg_conclave" at adaptive_fullscreen
+    add Solid("#020509CC")
+    add Solid("#00000066")
+    add Solid("#FFFFFF06", xsize=1920, ysize=20) at vote_phase3_scanline
+
+    fixed:
+        xfill True
+        yfill True
+
+        frame:
+            xalign 0.5
+            ypos 58
+            xsize 980
+            ysize 88
+            background Fixed(
+                Solid("#070A0EDD"),
+                Solid("#6B747A55", ysize=1),
+                Solid("#6B747A55", ysize=1, yalign=1.0),
+                Solid("#FFFFFF08", xsize=1),
+                Solid("#FFFFFF08", xsize=1, xalign=1.0),
+            )
+            padding (28, 14)
+            vbox:
+                xfill True
+                spacing 10
+                hbox:
+                    xalign 0.5
+                    spacing 72
+                    text "VOTE EN COURS" size 34 color "#D7D2C8" font "fonts/Rajdhani-SemiBold.ttf" kerning 5
+                    text "[vote_phase3_time_left]s" size 34 color "#D7D2C8" font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+                bar:
+                    xalign 0.5
+                    xsize 900
+                    ysize 16
+                    value AnimatedValue(value=timer_ratio, range=1.0, delay=0.20)
+                    left_bar Solid("#9CD7E6")
+                    right_bar Solid("#161A20")
 
         vbox:
-            xalign 0.5
-            yalign 0.5
-            spacing 6
-
-            text "VOTE EN COURS  //  [vote_phase3_time_left]s":
+            xpos 0
+            ypos 205
+            xsize 1920
+            spacing 20
+            text "CHOISISSEZ L’ISSUE DU VOTE" xalign 0.5 size 62 color "#E7E2D8" font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+            hbox:
                 xalign 0.5
-                font "fonts/day_font.ttf"
-                size 34
-                color "#D6F0FF"
-                outlines [(2, "#56D7FF88", 0, 0)]
+                spacing 0
+                add Solid("#6B747A55", xsize=410, ysize=1) yalign 0.5
+                text "◆" size 20 color "#8C867B" font "fonts/Rajdhani-SemiBold.ttf"
+                add Solid("#6B747A55", xsize=410, ysize=1) yalign 0.5
 
-            bar:
-                xalign 0.5
-                xsize 860
-                ysize 14
-                value AnimatedValue(value=vote_phase3_time_left, range=10.0, delay=0.22)
-                left_bar Solid("#4AD5FF")
-                right_bar Solid("#1A2339")
+        hbox:
+            xpos 132
+            ypos 388
+            spacing 46
+            use vote_phase3_choice_card("pour", "+", "VOTE POUR", "Changer les règles", "#A7BE83", "#162016DD")
+            use vote_phase3_choice_card("abstention", "=", "ABSTENTION", "Laisser le système trancher", "#A9AAA6", "#1A1A1ADD")
+            use vote_phase3_choice_card("contre", "-", "VOTE CONTRE", "Maintenir le cadre", "#B96455", "#221211DD")
 
-    text "CHOISISSEZ L'ISSUE DU VOTE":
-        xalign 0.5
-        yalign 0.20
-        font "fonts/day_font.ttf"
-        size 52
-        color "#E8F6FF"
-        outlines [(3, "#74D7FF88", 0, 0)]
-
-    hbox:
-        xalign 0.5
-        yalign 0.58
-        spacing 54
-
-        # ---------------------
-        # Bouton POUR
-        # ---------------------
-        button:
-            at vote_phase3_intro_left, vote_phase3_btn_pulse
-            xsize 500
-            ysize 360
-            background Fixed(Solid("#0F2A1CCF"), Solid("#87FFD055", xsize=4))
-            hover_background Fixed(Solid("#1C5A3ACC"), Solid("#87FFD0", xsize=5), Solid("#FFFFFF20", ysize=2))
-            hovered SetVariable("vote_phase3_hover_side", "pour")
-            unhovered SetVariable("vote_phase3_hover_side", None)
-
-            action [
-                SetVariable("vote_phase3_player_choice", "pour"),
-                Play("sound", "audio/sfx_beep.mp3"),
-                With(vpunch),
-                Return("pour"),
-            ]
-
-            vbox:
-                xalign 0.5
-                yalign 0.5
-                spacing 24
-
-                if vote_phase3_hover_side == "pour":
-                    at vote_phase3_hover_zoom
-
-                text "Vote Pour":
-                    xalign 0.5
-                    font "fonts/day_font.ttf"
-                    size 56
-                    bold True
-                    color "#9FFFD4"
-                    outlines [(4, "#2CFF9D88", 0, 0)]
-
-                text "Changer les règles":
-                    xalign 0.5
-                    font "fonts/Barlow-Light.ttf"
-                    size 24
-                    color "#D6FFF0"
-
-        # ---------------------
-        # Bouton ABSTENTION
-        # ---------------------
-        button:
-            at vote_phase3_btn_pulse
-            xsize 500
-            ysize 360
-            background Fixed(Solid("#202536CF"), Solid("#C6CBD555", xsize=4))
-            hover_background Fixed(Solid("#3A4054CC"), Solid("#E6ECF8", xsize=5), Solid("#FFFFFF20", ysize=2))
-            hovered SetVariable("vote_phase3_hover_side", "abstention")
-            unhovered SetVariable("vote_phase3_hover_side", None)
-
-            action [
-                SetVariable("vote_phase3_player_choice", "abstention"),
-                Play("sound", "audio/sfx_beep.mp3"),
-                With(vpunch),
-                Return("abstention"),
-            ]
-
-            vbox:
-                xalign 0.5
-                yalign 0.5
-                spacing 24
-
-                if vote_phase3_hover_side == "abstention":
-                    at vote_phase3_hover_zoom
-
-                text "Abstention":
-                    xalign 0.5
-                    font "fonts/day_font.ttf"
-                    size 54
-                    bold True
-                    color "#E6ECF8"
-                    outlines [(4, "#8B95A888", 0, 0)]
-
-                text "Laisser le système trancher":
-                    xalign 0.5
-                    font "fonts/Barlow-Light.ttf"
-                    size 24
-                    color "#EEF2F8"
-
-        # ---------------------
-        # Bouton CONTRE
-        # ---------------------
-        button:
-            at vote_phase3_intro_right, vote_phase3_btn_pulse
-            xsize 500
-            ysize 360
-            background Fixed(Solid("#2A1010CF"), Solid("#FFB2B255", xsize=4))
-            hover_background Fixed(Solid("#5A1F1FCC"), Solid("#FFB2B2", xsize=5), Solid("#FFFFFF20", ysize=2))
-            hovered SetVariable("vote_phase3_hover_side", "contre")
-            unhovered SetVariable("vote_phase3_hover_side", None)
-
-            action [
-                SetVariable("vote_phase3_player_choice", "contre"),
-                Play("sound", "audio/sfx_beep.mp3"),
-                With(vpunch),
-                Return("contre"),
-            ]
-
-            vbox:
-                xalign 0.5
-                yalign 0.5
-                spacing 24
-
-                if vote_phase3_hover_side == "contre":
-                    at vote_phase3_hover_zoom
-
-                text "Vote contre":
-                    xalign 0.5
-                    font "fonts/day_font.ttf"
-                    size 56
-                    bold True
-                    color "#FFB2B2"
-                    outlines [(4, "#FF474788", 0, 0)]
-
-                text "Maintenir le cadre":
-                    xalign 0.5
-                    font "fonts/Barlow-Light.ttf"
-                    size 24
-                    color "#FFE8E8"
-
-    # Timer logique
     timer 1.0 repeat True action If(
         vote_phase3_time_left > 0,
         true=SetVariable("vote_phase3_time_left", vote_phase3_time_left - 1),
@@ -346,163 +263,208 @@ screen vote_screen():
         Return("timeout")
     ]
 
-# -----------------------------
-# Écran 2 — dépouillement visuel
-# -----------------------------
+screen vote_phase3_choice_card(choice_id, icon, label, subtitle, color, fill):
+    $ hovered = (vote_phase3_hover_side == choice_id)
+    button:
+        xsize 500
+        ysize 396
+        at vote_phase3_btn_pulse
+        background Fixed(
+            Solid(fill),
+            Solid(color + "AA", xsize=2),
+            Solid(color + "AA", xsize=2, xalign=1.0),
+            Solid(color + "99", ysize=2),
+            Solid(color + "99", ysize=2, yalign=1.0),
+            Solid("#FFFFFF07", ysize=1),
+        )
+        hover_background Fixed(
+            Solid("#070A0EDD"),
+            Solid(color + "26"),
+            Solid(color, xsize=3),
+            Solid(color, xsize=3, xalign=1.0),
+            Solid(color, ysize=3),
+            Solid(color, ysize=3, yalign=1.0),
+            Solid("#FFFFFF18", ysize=2),
+        )
+        hovered SetVariable("vote_phase3_hover_side", choice_id)
+        unhovered SetVariable("vote_phase3_hover_side", None)
+        action [
+            SetVariable("vote_phase3_player_choice", choice_id),
+            Play("sound", "audio/sfx_beep.mp3"),
+            With(vpunch),
+            Return(choice_id),
+        ]
+
+        fixed:
+            xfill True
+            yfill True
+            add Solid(color + ("22" if hovered else "10"), xsize=460, ysize=356) xpos 20 ypos 20
+            if hovered:
+                add Solid(color + "88", xsize=390, ysize=1) xpos 55 ypos 28
+                add Solid(color + "88", xsize=390, ysize=1) xpos 55 ypos 367
+
+            vbox:
+                xalign 0.5
+                yalign 0.5
+                spacing 22
+                frame:
+                    xalign 0.5
+                    xsize 92
+                    ysize 92
+                    background Fixed(
+                        Solid("#05080CB0"),
+                        Solid(color + "45", xsize=2),
+                        Solid(color + "45", xsize=2, xalign=1.0),
+                        Solid(color + "45", ysize=2),
+                        Solid(color + "45", ysize=2, yalign=1.0),
+                    )
+                    padding (0, 0)
+                    text icon xalign 0.5 yalign 0.5 size 58 color color font "fonts/Rajdhani-SemiBold.ttf"
+
+                text kd_tr(label) xalign 0.5 size 46 color color font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+                text kd_tr(subtitle) xalign 0.5 text_align 0.5 xmaximum 420 size 27 color "#D7D2C8" font "fonts/Barlow-Light.ttf"
+
+
 screen vote_phase3_tally_screen():
     modal True
     zorder 230
 
-    add Solid("#04070FCC")
-    add "images/background/bg_conclave.png" at adaptive_fullscreen
-    add Solid("#4AD5FF18", ysize=2) ypos 118
-    add Solid("#FFFFFF08", xsize=1920, ysize=22) at vote_phase3_scanline
+    $ total_votes = max(1, len(vote_phase3_results))
+    $ progress_ratio = float(vote_phase3_tally_index) / float(total_votes)
+    $ current_label = kd_tr(vote_phase3_current_vote.upper()) if vote_phase3_current_vote else "..."
+    $ current_color = {"pour": "#43A8FF", "abstention": "#F2B63E", "contre": "#FF4747"}.get(vote_phase3_current_vote, "#9BA7B4")
 
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 1560
-        ysize 920
-        background Fixed(
-            Solid("#0A1222D8"),
-            Solid("#4AD5FF44", xsize=4),
-            Solid("#4AD5FF44", xsize=4, xalign=1.0),
-            Solid("#FFFFFF10", ysize=1),
-        )
+    add "bg_conclave" at adaptive_fullscreen
+    add Solid("#02060DE8")
+    add Solid("#FFFFFF07", xsize=1920, ysize=20) at vote_phase3_scanline
 
-    text "DÉPOUILLEMENT DES VOTES":
-        xalign 0.5
-        yalign 0.11
-        font "fonts/day_font.ttf"
-        size 62
-        color "#E6F4FF"
-        outlines [(4, "#65D4FF88", 0, 0)]
-        at vote_phase3_title_glow
+    fixed:
+        xfill True
+        yfill True
 
-    timer 0.85 repeat True action If(
+        hbox:
+            xpos 58 ypos 34 spacing 14
+            text "//" size 34 color "#AEB8C2" font "fonts/Rajdhani-SemiBold.ttf"
+            vbox:
+                spacing 2
+                text "DÉPOUILLEMENT DES VOTES" size 36 color "#E8EEF4" font "fonts/Rajdhani-SemiBold.ttf"
+                text "Les votes sont secrets - les résultats seuls comptent." size 22 color "#AEB8C2" font "fonts/Barlow-Light.ttf"
+
+        hbox:
+            xpos 1380 ypos 46 spacing 16
+            text "PHASE 3/3" size 22 color "#AEB8C2" font "fonts/Rajdhani-SemiBold.ttf"
+            for pi in range(1, 4):
+                add Solid("#FF3F3F" if pi == 3 else "#69717A", xsize=22, ysize=22)
+
+        frame:
+            xpos 58 ypos 128 xsize 1804 ysize 180
+            background Fixed(
+                Solid("#071018DA"),
+                Solid("#6C7A8655", ysize=1),
+                Solid("#6C7A8655", ysize=1, yalign=1.0),
+                Solid("#4CB7FF66", xsize=3),
+                Solid("#4CB7FF66", xsize=3, xalign=1.0),
+            )
+            padding (36, 24)
+            vbox:
+                xalign 0.5
+                spacing 12
+                text "AMENDEMENT N°1" xalign 0.5 size 25 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+                text kd_tr(vote_phase3_amendment_text()) xalign 0.5 text_align 0.5 size 30 color "#F2F5F8" font "fonts/Barlow-Light.ttf" xmaximum 1500 line_spacing 4
+
+        hbox:
+            xpos 0 ypos 348 xsize 1920 spacing 22
+            null width 415
+            add Solid("#FF3F3F88", xsize=8, ysize=8) yalign 0.5
+            add Solid("#6C7A8633", xsize=245, ysize=1) yalign 0.5
+            text "COMPTAGE DES VOTES" size 30 color "#E2E8EF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+            add Solid("#6C7A8633", xsize=245, ysize=1) yalign 0.5
+            add Solid("#FF3F3F88", xsize=8, ysize=8) yalign 0.5
+
+        text "Bulletin [vote_phase3_tally_index] / [total_votes]" xalign 0.5 ypos 392 size 22 color "#AEB8C2" font "fonts/Barlow-Light.ttf"
+
+        if vote_phase3_current_vote:
+            frame:
+                xpos 760 ypos 426 xsize 400 ysize 82
+                at vote_phase3_ballot_pop
+                background Fixed(Solid("#08111CE8"), Solid(current_color, xsize=4), Solid(current_color, xsize=4, xalign=1.0))
+                padding (18, 10)
+                vbox:
+                    xalign 0.5 yalign 0.5 spacing 2
+                    text "BULLETIN DÉPOUILLÉ" xalign 0.5 size 16 color "#93A1AE" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+                    text current_label xalign 0.5 size 34 color current_color font "fonts/Rajdhani-SemiBold.ttf"
+
+        hbox:
+            xpos 162 ypos 530 spacing 40
+            use vote_phase3_count_card("POUR", "pour", "#43A8FF", "+", vote_phase3_counts["pour"], total_votes)
+            use vote_phase3_count_card("ABSTENTION", "abstention", "#F2B63E", "=", vote_phase3_counts["abstention"], total_votes)
+            use vote_phase3_count_card("CONTRE", "contre", "#FF4747", "-", vote_phase3_counts["contre"], total_votes)
+
+        frame:
+            xpos 162 ypos 842 xsize 1596 ysize 96
+            background Fixed(Solid("#081018DD"), Solid("#FF3F3F66", xsize=4), Solid("#6C7A8644", ysize=1), Solid("#6C7A8644", ysize=1, yalign=1.0))
+            padding (30, 18)
+            hbox:
+                spacing 28
+                text "!" size 44 color "#FF4747" font "fonts/Rajdhani-SemiBold.ttf"
+                vbox:
+                    spacing 4
+                    text "RÈGLE D’UNANIMITÉ" size 24 color "#FF4747" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                    text "Si une seule personne vote contre, l’amendement est immédiatement refusé. L’abstention ne bloque pas l’adoption." size 22 color "#D5D9DE" font "fonts/Barlow-Light.ttf"
+
+        frame:
+            xpos 58 ypos 960 xsize 1804 ysize 92
+            background Fixed(Solid("#071018E2"), Solid("#6C7A8644", ysize=1), Solid("#4CB7FF55", xsize=3), Solid("#4CB7FF55", xsize=3, xalign=1.0))
+            padding (32, 12)
+            vbox:
+                xalign 0.5 spacing 4
+                text "STATUT" xalign 0.5 size 20 color "#AEB8C2" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+                text kd_tr(vote_phase3_status_text()) xalign 0.5 text_align 0.5 size 31 color ("#FF6262" if vote_phase3_counts["contre"] > 0 else "#E8EEF4") font "fonts/Barlow-Light.ttf"
+
+        bar:
+            xpos 560 ypos 1060 xsize 800 ysize 8
+            value AnimatedValue(value=progress_ratio, range=1.0, delay=0.35)
+            left_bar Solid("#4CB7FF")
+            right_bar Solid("#1A2339")
+
+    timer 0.9 repeat True action If(
         vote_phase3_tally_done,
         true=NullAction(),
         false=Function(vote_phase3_tally_step)
     )
 
-    timer 0.2 repeat True action If(
+    timer 2.0 repeat True action If(
         vote_phase3_tally_done,
         true=Return(True),
         false=NullAction()
     )
 
-    if vote_phase3_current_name:
-        frame:
+screen vote_phase3_count_card(title, key, color, icon, count, total_votes):
+    frame:
+        xsize 506 ysize 285
+        at vote_phase3_card_reveal
+        background Fixed(
+            Solid("#070D14DD"),
+            Solid(color + "99", xsize=2),
+            Solid(color + "99", xsize=2, xalign=1.0),
+            Solid(color + "55", ysize=1),
+            Solid(color + "55", ysize=1, yalign=1.0),
+        )
+        padding (24, 26)
+        vbox:
             xalign 0.5
-            yalign 0.285
-            xsize 720
-            ysize 76
-            background Fixed(
-                Solid("#071426DD"),
-                Solid("#4AD5FF66", xsize=4),
-                Solid("#FFFFFF12", ysize=1),
-            )
-
-            hbox:
+            spacing 20
+            text kd_tr(title) xalign 0.5 size 34 color color font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+            text "[count]" xalign 0.5 size 60 color "#E8EEF4" font "fonts/Rajdhani-SemiBold.ttf"
+            text "Voix" xalign 0.5 size 24 color "#AEB8C2" font "fonts/Barlow-Light.ttf"
+            bar:
                 xalign 0.5
-                yalign 0.5
-                spacing 18
-                text "BULLETIN":
-                    font "fonts/Barlow-Light.ttf"
-                    size 22
-                    color "#78DFFF"
-                    kerning 4
-                text "[vote_phase3_current_name]":
-                    font "fonts/day_font.ttf"
-                    size 40
-                    color "#E6F4FF"
-                    outlines [(2, "#203050", 0, 0)]
-
-    if vote_phase3_current_vote == "pour":
-        text "POUR":
-            xalign 0.5
-            yalign 0.42
-            font "fonts/day_font.ttf"
-            size 110
-            bold True
-            color "#87FFD0"
-            outlines [(6, "#28FF9C88", 0, 0)]
-            at vote_phase3_symbol_pulse
-        text "✦ ✦ ✦":
-            xalign 0.5
-            yalign 0.54
-            font "fonts/day_font.ttf"
-            size 60
-            color "#58FFC0"
-            at vote_phase3_float_up
-
-    elif vote_phase3_current_vote == "abstention":
-        text "ABSTENTION":
-            xalign 0.5
-            yalign 0.42
-            font "fonts/day_font.ttf"
-            size 96
-            bold True
-            color "#C6CBD5"
-            outlines [(5, "#8B95A888", 0, 0)]
-            at vote_phase3_symbol_pulse
-
-    elif vote_phase3_current_vote == "contre":
-        text "CONTRE":
-            xalign 0.5
-            yalign 0.42
-            font "fonts/day_font.ttf"
-            size 110
-            bold True
-            color "#FFB0B0"
-            outlines [(6, "#FF3F3F88", 0, 0)]
-            at vote_phase3_symbol_pulse
-        text "✦ ✦ ✦":
-            xalign 0.5
-            yalign 0.54
-            font "fonts/day_font.ttf"
-            size 60
-            color "#FF7070"
-            at vote_phase3_float_down
-
-    # Compteurs progressifs
-    vbox:
-        xalign 0.5
-        yalign 0.86
-        spacing 16
-
-        text "POUR : [vote_phase3_counts['pour']]":
-            font "fonts/day_font.ttf"
-            size 32
-            color "#A8FFD8"
-        bar:
-            xsize 1200
-            ysize 18
-            value AnimatedValue(value=vote_phase3_counts["pour"], range=12.0, delay=0.35)
-            left_bar Solid("#28FF9D")
-            right_bar Solid("#203428")
-
-        text "ABSTENTION : [vote_phase3_counts['abstention']]":
-            font "fonts/day_font.ttf"
-            size 32
-            color "#E1E5EC"
-        bar:
-            xsize 1200
-            ysize 18
-            value AnimatedValue(value=vote_phase3_counts["abstention"], range=12.0, delay=0.35)
-            left_bar Solid("#B6BBC7")
-            right_bar Solid("#2A2F39")
-
-        text "CONTRE : [vote_phase3_counts['contre']]":
-            font "fonts/day_font.ttf"
-            size 32
-            color "#FFC3C3"
-        bar:
-            xsize 1200
-            ysize 18
-            value AnimatedValue(value=vote_phase3_counts["contre"], range=12.0, delay=0.35)
-            left_bar Solid("#FF4040")
-            right_bar Solid("#3A2323")
+                xsize 330
+                ysize 8
+                value AnimatedValue(value=count, range=total_votes, delay=0.35)
+                left_bar Solid(color)
+                right_bar Solid("#27313A")
+            text icon xalign 0.5 size 30 color color font "fonts/Rajdhani-SemiBold.ttf"
 
 
 # -----------------------------
@@ -521,10 +483,10 @@ label vote_phase3_final:
     $ _vote_result = renpy.call_screen("vote_screen")
 
     if _vote_result == "pour":
-        scene Solid("#0AFF8844")
+        scene expression Solid("#0AFF8844")
         with Dissolve(0.12)
     else:
-        scene Solid("#FF2A2A44")
+        scene expression Solid("#FF2A2A44")
         with Dissolve(0.12)
 
     # Préparation dépouillement
