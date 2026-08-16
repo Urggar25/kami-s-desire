@@ -39,14 +39,14 @@ screen pnc_livraison():
 
 
 
-    if social_free_time_active() and sael_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("sael"):
         imagebutton:
             idle Transform(character_image("sael", "neutre"), zoom=1.00)
             hover Transform(character_image("sael", "raison"), zoom=1.00)
             focus_mask True
             xalign 0.76
             yalign 1.00
-            action [SetVariable("last_room_label", "LIVRAISON_TP"), Jump("SAEL_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "LIVRAISON_TP"), SetVariable("free_time_selected_character", "sael"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
 
 label sas1_porte_couloir_sas:
@@ -235,6 +235,7 @@ label decouverte_sas:
     noam neutre "District [codex_dialogue_link('harmonie', 'HARMONIE')]."
 
     mara neutre "Mara."
+    $ unlock_character_name("mara")
     mara sourire "Et ouais, bingo : Axiome pur jus."
 
     noam taquin "Ah."

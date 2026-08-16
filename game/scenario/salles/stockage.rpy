@@ -14,9 +14,6 @@ label STOCKAGE_TP:
     if not decouverte_stockage and day_number() == 1:
         jump decouverte_stockage
 
-    if social_free_time_active() and free_time_round in [1, 2, 3] and not got_argument_echanges_discrets:
-        jump temps_libre_salle_stockage_argument
-
     $ pnc_room = "pnc_stockage"
     call screen pnc_stockage()
 
@@ -185,6 +182,7 @@ label decouverte_stockage:
     noam neutre "Je viens d'[codex_dialogue_link('harmonie', 'HARMONIE')]."
 
     nyra neutre "Nyra."
+    $ unlock_character_name("nyra")
     nyra neutre "ORBITE."
 
     noam surpris "ORBITE.Ok…"

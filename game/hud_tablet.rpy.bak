@@ -1,8 +1,0 @@
-# =============================================================
-# ACCÈS TABLETTE HUD
-# Supprimé volontairement : l'accès permanent au menu tablette/codex
-# ne doit plus être affiché au-dessus du HUD jour/période.
-# Les écrans tablette restent disponibles pour les appels narratifs directs.
-# =============================================================
-
-default day_id = 0

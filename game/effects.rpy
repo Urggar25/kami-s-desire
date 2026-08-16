@@ -56,7 +56,7 @@ init python:
         for ly in layers:
             renpy.show_layer_at([], layer=ly)
         # Restaure le zoom cinéma s'il était actif
-        cam_apply(store.cam_x_cur, store.cam_y_cur, store.cam_z_cur, t=0.0)
+        cam_restore_current(t=0.0, layers=layers)
 
     def impact(intensity=14, duration=0.35, color="#ffffff"):
         """Flash + shake : ponctuation forte (révélation, coup, twist)."""

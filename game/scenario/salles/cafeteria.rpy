@@ -54,33 +54,33 @@ screen pnc_cafeteria():
             yalign 1.00
             action Jump("_2_APRES_MIDI_ELEN")
 
-    if social_free_time_active() and mara_link in [0, 2, 4]:
+    if social_free_time_active() and character_has_available_free_time("mara"):
         imagebutton:
             idle Transform(character_image("mara", "sourire"), zoom=1.00)
             hover Transform(character_image("mara", "neutre"), zoom=1.00)
             focus_mask True
             xalign 0.15
             yalign 1.00
-            action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("MARA_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "CAFETERIA_TP"), SetVariable("free_time_selected_character", "mara"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
 
-    if social_free_time_active() and lysa_link == 1:
+    if social_free_time_active() and character_has_available_free_time("lysa"):
         imagebutton:
             idle Transform(character_image("lysa", "sourire"), zoom=1.00)
             hover Transform(character_image("lysa", "taquin"), zoom=1.00)
             focus_mask True
             xalign 0.82
             yalign 1.00
-            action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("LYSA_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "CAFETERIA_TP"), SetVariable("free_time_selected_character", "lysa"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
-    if social_free_time_active() and elen_link == 1:
+    if social_free_time_active() and character_has_available_free_time("elen"):
         imagebutton:
             idle Transform(character_image("elen", "joie"), zoom=1.00)
             hover Transform(character_image("elen", "content"), zoom=1.00)
             focus_mask True
             xalign 0.50
             yalign 1.00
-            action [SetVariable("last_room_label", "CAFETERIA_TP"), Jump("ELEN_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "CAFETERIA_TP"), SetVariable("free_time_selected_character", "elen"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
     if j10011_waiting_elias:
         imagebutton:
@@ -272,6 +272,7 @@ label decouverte_cafeteria:
     noam vide "Dans ses heures de boulot ? Mais c'est un robot ..."
 
     goumi vide "Je suis Goumi."
+    $ unlock_character_name("goumi")
     goumi vide "Unité culinaire autonome."
     goumi vide "Je peux préparer toute recette demandée par un représentant."
     goumi vide "Dans la limite des stock disponible."
@@ -306,6 +307,7 @@ label decouverte_cafeteria:
         ("goumi", "vide", 0.78),
     ])
     noam reflexion "Elen, c'est ça ?"
+    $ unlock_character_name("elen")
 
     elen surpris "Ouais."
     elen neutre "Toi t'es Noam."

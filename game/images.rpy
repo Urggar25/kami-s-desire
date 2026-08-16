@@ -294,6 +294,7 @@ image noam panique             = noam_expression("panique")
 image noam panne_creep         = noam_expression("panne_creep")
 image noam doute         = noam_expression("doute")
 image noam calme         = noam_expression("calme")
+image noam blase         = noam_expression("neutre")
 
 # ======================
 # LYSA
@@ -468,6 +469,8 @@ image julian detendu            = julian_expression("detendu")
 image julian decontracte        = julian_expression("decontracte")
 image julian colere             = julian_expression("colere")
 image julian fatigue            = julian_expression("triste")
+image julian blase              = julian_expression("neutre")
+image julian content            = julian_expression("joie")
 
 # ======================
 # IRIS
@@ -836,6 +839,8 @@ image kael raison              = kael_expression("raison")
 image kael peur                = kael_expression("peur")
 image kael desespoir           = kael_expression("desespoir")
 image kael determine           = kael_expression("calme")
+image kael reflexion           = kael_expression("reflechit")
+image kael hesitation          = kael_expression("doute")
 
 # ======================
 # NYRA
@@ -999,6 +1004,7 @@ image ryn surpris              = ryn_expression("surpris")
 image ryn taquin               = ryn_expression("taquin")
 image ryn triste               = ryn_expression("triste")
 image ryn vide                 = ryn_expression("vide")
+image ryn reflexion            = ryn_expression("reflechit")
 
 # ======================
 # SAEL

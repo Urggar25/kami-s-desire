@@ -936,12 +936,14 @@ label _6_0_1_FIN_JOURNEE:
     $ blink()
 
 
-    call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent")
+    call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_3
 
     pause 1.0
 
-    call end_day("7") from _call_end_day_10
-    jump _7_0_1_REVEIL_CHAMBRE
+    jump patreon_ending
+
+    #call end_day("7") from _call_end_day_10
+    #jump _7_0_1_REVEIL_CHAMBRE
 
 # total : 8m
-# Total jour 0-5 : 1h49
+# Total jour 0-6 : 1h49

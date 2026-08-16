@@ -14,13 +14,18 @@ default j50_wire_selected = None
 default j50_wire_done = []
 default j50_wire_right_done = []
 default j50_wire_connections = []
-default j50_wire_time_left = 30
+default j50_wire_time_left = 4.0
+default j50_wire_lives = 3
+default j50_wire_failed = False
+default j50_wire_completed = False
+default j50_wire_failure_has_consequences = False
+default j50_wire_feedback = "Sélectionne un câble à gauche."
 
 init python:
     J50_SAEL_HOTSPOTS = {
-        "lit": ("images/background/interact/chambre_sael/lit.png", "images/background/interact/chambre_sael/lit_hover.png"),
-        "crane": ("images/background/interact/chambre_sael/crane.png", "images/background/interact/chambre_sael/crane_hover.png"),
-        "affaires": ("images/background/interact/chambre_sael/affaires.png", "images/background/interact/chambre_sael/affaires_hover.png"),
+        "lit": "images/background/interact/chambre_sael/lit.png",
+        "crane": "images/background/interact/chambre_sael/crane.png",
+        "affaires": "images/background/interact/chambre_sael/affaires.png",
     }
 
     J50_WIRE_COLORS = [
@@ -40,23 +45,37 @@ init python:
 
     J50_WIRE_RIGHT_ORDER = ["bleu", "rouge", "jaune", "vert", "orange", "violet", "rouge", "vert", "bleu", "orange", "violet", "jaune"]
 
+    J50_WIRE_LEFT_YS = [151 + (idx * 62) for idx in range(12)]
+    J50_WIRE_RIGHT_YS = [151 + (idx * 62) for idx in range(12)]
+    J50_WIRE_BOARD_LEFT = 535
+    J50_WIRE_BOARD_RIGHT = 1385
+
     def j50_sael_mark_seen(item):
         if item not in store.j50_sael_pnc_seen:
             store.j50_sael_pnc_seen.append(item)
             store.j50_sael_pnc_score += 1
 
-    def j50_wire_reset():
+    def j50_wire_reset(failure_has_consequences=False):
         store.j50_wire_success = 0
         store.j50_wire_errors = 0
         store.j50_wire_selected = None
         store.j50_wire_done = []
         store.j50_wire_right_done = []
         store.j50_wire_connections = []
-        store.j50_wire_time_left = 30
+        store.j50_wire_time_left = 4.0
+        store.j50_wire_lives = 3
+        store.j50_wire_failed = False
+        store.j50_wire_completed = False
+        store.j50_wire_failure_has_consequences = bool(failure_has_consequences)
+        store.j50_wire_feedback = "Sélectionne un câble à gauche."
 
     def j50_wire_pick_left(idx):
-        if idx not in store.j50_wire_done:
+        if not store.j50_wire_failed and idx not in store.j50_wire_done:
             store.j50_wire_selected = idx
+            color_name = J50_WIRE_COLORS[idx][0]
+            store.j50_wire_feedback = "Câble {} sélectionné — trouve son connecteur.".format(color_name.upper())
+            renpy.sound.play("audio/sfx_beep.mp3")
+            renpy.restart_interaction()
 
     def j50_wire_pick_right(connector_idx):
         idx = store.j50_wire_selected
@@ -69,15 +88,43 @@ init python:
             store.j50_wire_done.append(idx)
             store.j50_wire_right_done.append(connector_idx)
             store.j50_wire_connections.append((idx, connector_idx))
-            renpy.sound.play("audio/sfx_announce.mp3")
+            store.j50_wire_time_left = 4.0
+            store.j50_wire_feedback = "CONNEXION VERROUILLÉE — chronomètre réinitialisé."
+            renpy.sound.play("audio/sfx_qte_hit.wav")
+            if store.j50_wire_success >= len(J50_WIRE_COLORS):
+                store.j50_wire_completed = True
         else:
             store.j50_wire_errors += 1
-            renpy.sound.play("audio/sfx_announce.mp3")
+            store.j50_wire_feedback = "MAUVAISE COULEUR — la liaison est refusée."
+            renpy.sound.play("audio/sfx_qte_miss.wav")
         store.j50_wire_selected = None
         renpy.restart_interaction()
 
-    def j50_wire_tick():
-        store.j50_wire_time_left = max(0, store.j50_wire_time_left - 1)
+    def j50_wire_tick(delta=0.1):
+        if store.j50_wire_failed or store.j50_wire_completed:
+            return
+
+        store.j50_wire_time_left = round(max(0.0, store.j50_wire_time_left - delta), 1)
+        if store.j50_wire_time_left <= 0.0:
+            store.j50_wire_lives = max(0, store.j50_wire_lives - 1)
+            store.j50_wire_errors += 1
+            store.j50_wire_selected = None
+            store.j50_wire_time_left = 5.0
+            renpy.sound.play("audio/sfx_qte_miss.wav")
+
+            if store.j50_wire_lives <= 0:
+                store.j50_wire_failed = True
+                store.j50_wire_feedback = "ÉCHEC — alimentation de secours interrompue."
+            else:
+                store.j50_wire_feedback = "TEMPS ÉCOULÉ — reprise d'urgence : 5,0 s."
+
+        renpy.restart_interaction()
+
+    def j50_wire_abandon():
+        store.j50_wire_lives = 0
+        store.j50_wire_failed = True
+        store.j50_wire_selected = None
+        store.j50_wire_feedback = "CONNEXION ABANDONNÉE."
         renpy.restart_interaction()
 
 screen j50_sael_room_pnc():
@@ -85,16 +132,15 @@ screen j50_sael_room_pnc():
     zorder 200
 
     add Solid("#000")
-    add "images/background/interact/chambre_sael/bg_chambre_sael.png" at cover_screen
+    add "images/background/scene/bg_chambre_sael.png" at cover_screen
 
-    for item, paths in J50_SAEL_HOTSPOTS.items():
+    for item, path in J50_SAEL_HOTSPOTS.items():
         imagebutton:
-            idle paths[0]
-            hover paths[1]
-            focus_mask True
+            idle room_interaction_null()
+            hover room_interaction_layer(path, "chambre_sael", "hover")
+            focus_mask room_interaction_layer(path, "chambre_sael", "art")
             xpos 0
             ypos 0
-            at cover_screen
             action Return(item)
 
 screen j50_julian_surveillance_overlay(room_name="CHAMBRE 04"):
@@ -120,170 +166,261 @@ screen j50_julian_surveillance_overlay(room_name="CHAMBRE 04"):
     for y in range(0, 1080, 54):
         add Solid("#ffffff08") xpos 0 ypos y xsize 1920 ysize 2
 
-screen j50_wire_minigame():
+transform j50_wire_selected_pulse:
+    alpha 0.62
+    linear 0.30 alpha 1.0
+    linear 0.30 alpha 0.62
+    repeat
+
+screen j50_wire_minigame(failure_has_consequences=False):
     modal True
     zorder 220
-    on "show" action Function(j50_wire_reset)
-    add Solid("#02070bee")
+    on "show" action Function(j50_wire_reset, failure_has_consequences)
 
+    add "gui/day5/wire/wire_hud_background.png":
+        xysize (1920, 1080)
+
+    add Solid("#03101a44")
+
+    text "▮▮  MINI-JEU : CONNEXION":
+        xpos 54
+        ypos 22
+        size 30
+        color "#55adff"
+        font "fonts/Rajdhani-SemiBold.ttf"
+
+    text "Reliez chaque câble au connecteur de même couleur avant la fin du délai.":
+        xpos 690
+        ypos 25
+        xsize 1180
+        text_align 1.0
+        size 23
+        color "#bdc9d5"
+        font "fonts/Barlow-Light.ttf"
+
+    # Câbles déjà verrouillés : ombre, halo puis cœur lumineux.
+    for left_idx, right_idx in j50_wire_connections:
+        $ _wire_color = J50_WIRE_COLORS[left_idx][1]
+        $ _wire_y1 = J50_WIRE_LEFT_YS[left_idx]
+        $ _wire_y2 = J50_WIRE_RIGHT_YS[right_idx]
+        $ _wire_mid = 710 + ((left_idx % 6) * 105)
+        $ _wire_top = min(_wire_y1, _wire_y2)
+        $ _wire_height = max(4, abs(_wire_y2 - _wire_y1))
+
+        add Solid("#000814cc") xpos J50_WIRE_BOARD_LEFT ypos (_wire_y1 - 5) xsize (_wire_mid - J50_WIRE_BOARD_LEFT + 5) ysize 12
+        add Solid("#000814cc") xpos (_wire_mid - 5) ypos _wire_top xsize 12 ysize (_wire_height + 5)
+        add Solid("#000814cc") xpos _wire_mid ypos (_wire_y2 - 5) xsize (J50_WIRE_BOARD_RIGHT - _wire_mid) ysize 12
+        add Solid(_wire_color + "55") xpos J50_WIRE_BOARD_LEFT ypos (_wire_y1 - 4) xsize (_wire_mid - J50_WIRE_BOARD_LEFT) ysize 9
+        add Solid(_wire_color + "55") xpos (_wire_mid - 4) ypos _wire_top xsize 9 ysize _wire_height
+        add Solid(_wire_color + "55") xpos _wire_mid ypos (_wire_y2 - 4) xsize (J50_WIRE_BOARD_RIGHT - _wire_mid) ysize 9
+        add Solid(_wire_color) xpos J50_WIRE_BOARD_LEFT ypos (_wire_y1 - 1) xsize (_wire_mid - J50_WIRE_BOARD_LEFT) ysize 3
+        add Solid(_wire_color) xpos (_wire_mid - 1) ypos _wire_top xsize 3 ysize _wire_height
+        add Solid(_wire_color) xpos _wire_mid ypos (_wire_y2 - 1) xsize (J50_WIRE_BOARD_RIGHT - _wire_mid) ysize 3
+
+    # Connecteurs gauches.
+    for idx, wire in enumerate(J50_WIRE_COLORS):
+        $ color_name, color_hex = wire
+        $ _left_y = J50_WIRE_LEFT_YS[idx]
+        button:
+            xpos 466
+            ypos (_left_y - 24)
+            xsize 82
+            ysize 48
+            padding (0, 0)
+            background None
+            sensitive idx not in j50_wire_done and not j50_wire_failed
+            action Function(j50_wire_pick_left, idx)
+            if idx == j50_wire_selected:
+                at j50_wire_selected_pulse
+            hbox:
+                xalign 1.0
+                yalign 0.5
+                spacing 8
+                text "[idx + 1:02d]" size 16 color "#8296aa" font "fonts/Rajdhani-SemiBold.ttf"
+                text "●" size 42 color ("#314354" if idx in j50_wire_done else color_hex) outlines [(3, "#08121d", 0, 0), (1, "#dff8ff", 0, 0)]
+
+    # Connecteurs droits mélangés.
+    for connector_idx, color_name in enumerate(J50_WIRE_RIGHT_ORDER):
+        $ color_hex = dict(J50_WIRE_COLORS).get(color_name, "#ffffff")
+        $ _right_y = J50_WIRE_RIGHT_YS[connector_idx]
+        button:
+            xpos 1371
+            ypos (_right_y - 24)
+            xsize 84
+            ysize 48
+            padding (0, 0)
+            background None
+            sensitive connector_idx not in j50_wire_right_done and j50_wire_selected is not None and not j50_wire_failed
+            action Function(j50_wire_pick_right, connector_idx)
+            hbox:
+                yalign 0.5
+                spacing 8
+                text "●" size 42 color ("#314354" if connector_idx in j50_wire_right_done else color_hex) outlines [(3, "#08121d", 0, 0), (1, "#dff8ff", 0, 0)]
+                text "[connector_idx + 1:02d]" size 16 color "#8296aa" font "fonts/Rajdhani-SemiBold.ttf"
+
+    # Colonne de gauche : temps, progression et vies.
     frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 1500
-        ysize 820
-        padding (34, 28)
-        background Solid("#07151ef5")
+        xpos 58
+        ypos 78
+        xsize 366
+        ysize 245
+        padding (26, 22)
+        background Solid("#020a12aa")
         vbox:
-            spacing 18
+            spacing 8
+            text "TEMPS RESTANT" size 25 color "#62b5ff" font "fonts/Rajdhani-SemiBold.ttf"
+            $ _wire_time_text = "{:.1f}".format(j50_wire_time_left)
+            text "[_wire_time_text]":
+                size 76
+                color ("#ff626f" if j50_wire_time_left <= 1.0 else "#70baff")
+                font "fonts/Rajdhani-SemiBold.ttf"
+                outlines [(2, "#0d2e4d", 0, 0)]
             hbox:
                 xfill True
-                text "RECÂBLAGE D'URGENCE" size 44 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-                text "[j50_wire_time_left]s" size 40 color "#ffe7ae" xalign 1.0 font "fonts/Rajdhani-SemiBold.ttf"
-            text "Relie les fils de même couleur. Même couleur ensemble. Tu réfléchis pas. Tu relies." size 24 color "#9ed8ff"
-            hbox:
-                spacing 180
-                vbox:
-                    spacing 14
-                    text "Fils coupés" size 30 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-                    for idx, wire in enumerate(J50_WIRE_COLORS):
-                        $ color_name, color_hex = wire
-                        button:
-                            xsize 430
-                            ysize 40
-                            background Solid("#1f2b34" if idx != j50_wire_selected else "#f3f8ff")
-                            sensitive idx not in j50_wire_done
-                            action Function(j50_wire_pick_left, idx)
-                            hbox:
-                                spacing 12
-                                add Solid(color_hex) xsize 250 ysize 12 yalign 0.5
-                                if idx in j50_wire_done:
-                                    text "OK" size 22 color "#7cff9b"
-                                else:
-                                    text color_name.upper() size 22 color "#dff8ff"
-                vbox:
-                    spacing 14
-                    text "Connecteurs" size 30 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-                    for connector_idx, color_name in enumerate(J50_WIRE_RIGHT_ORDER):
-                        $ color_hex = dict(J50_WIRE_COLORS).get(color_name, "#ffffff")
-                        button:
-                            xsize 430
-                            ysize 40
-                            background Solid("#12241d" if connector_idx in j50_wire_right_done else "#101820")
-                            hover_background Solid("#263748")
-                            sensitive connector_idx not in j50_wire_right_done
-                            action Function(j50_wire_pick_right, connector_idx)
-                            hbox:
-                                spacing 12
-                                if connector_idx in j50_wire_right_done:
-                                    text "LIE" size 22 color "#7cff9b"
-                                else:
-                                    text color_name.upper() size 22 color "#dff8ff"
-                                add Solid(color_hex) xsize 250 ysize 12 yalign 0.5
-            if j50_wire_connections:
-                hbox:
-                    spacing 12
-                    text "Liaisons verrouillees :" size 22 color "#9ed8ff"
-                    text "[len(j50_wire_connections)]/[len(J50_WIRE_COLORS)]" size 22 color "#7cff9b"
-            hbox:
-                spacing 40
-                text "Réussites : [j50_wire_success]" size 28 color "#7cff9b"
-                text "Erreurs : [j50_wire_errors]" size 28 color "#ff8585"
+                bar value AnimatedValue(j50_wire_time_left, 5.0, delay=0.1):
+                    xsize 260
+                    ysize 14
+                    left_bar Solid("#428fda")
+                    right_bar Solid("#152536")
+                text " SEC" size 20 color "#a9b6c2"
 
-    timer 1.0 repeat True action Function(j50_wire_tick)
-    if j50_wire_time_left <= 0:
-        timer 0.1 action Return(True)
-    if j50_wire_success >= 12:
-        timer 0.2 action Return(True)
+    frame:
+        xpos 58
+        ypos 356
+        xsize 366
+        ysize 245
+        padding (26, 24)
+        background Solid("#020a12aa")
+        vbox:
+            spacing 13
+            text "PROGRESSION" size 25 color "#62b5ff" font "fonts/Rajdhani-SemiBold.ttf"
+            text "[j50_wire_success] / [len(J50_WIRE_COLORS)]" size 54 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+            hbox:
+                spacing 7
+                for progress_idx in range(len(J50_WIRE_COLORS)):
+                    text "●" size 19 color ("#59b6ff" if progress_idx < j50_wire_success else "#344658")
+
+    frame:
+        xpos 58
+        ypos 635
+        xsize 366
+        ysize 270
+        padding (26, 22)
+        background Solid("#020a12aa")
+        vbox:
+            spacing 13
+            text "INTÉGRITÉ" size 25 color "#62b5ff" font "fonts/Rajdhani-SemiBold.ttf"
+            hbox:
+                spacing 18
+                for life_idx in range(3):
+                    text "◆" size 42 color ("#ff6574" if life_idx < j50_wire_lives else "#3a4652") outlines [(2, "#40141c", 0, 0)]
+            text "3 vies — expiration uniquement" size 19 color "#9fb0bf"
+            text "Une bonne liaison remet le délai à 4,0 s." size 18 color "#73899c" xsize 310
+
+    # Colonne de droite : cible et retour système.
+    frame:
+        xpos 1497
+        ypos 78
+        xsize 365
+        ysize 405
+        padding (26, 24)
+        background Solid("#020a12aa")
+        vbox:
+            spacing 19
+            text "COMBINAISON ACTIVE" size 24 color "#62b5ff" font "fonts/Rajdhani-SemiBold.ttf"
+            if j50_wire_selected is None:
+                text "EN ATTENTE" size 34 color "#65798c" font "fonts/Rajdhani-SemiBold.ttf"
+                text "Choisis un câble dans la rangée de gauche." size 21 color "#aab8c4" xsize 300
+            else:
+                $ _selected_name, _selected_color = J50_WIRE_COLORS[j50_wire_selected]
+                text "●" size 82 color _selected_color xalign 0.5 outlines [(5, "#08121d", 0, 0), (2, "#dff8ff", 0, 0)]
+                text _selected_name.upper() size 34 color "#dff8ff" xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf"
+                text "Trouve le connecteur identique à droite." size 20 color "#aab8c4" xsize 300 text_align 0.5
+
+    frame:
+        xpos 1497
+        ypos 520
+        xsize 365
+        ysize 385
+        padding (26, 24)
+        background Solid("#070b12cc")
+        vbox:
+            spacing 18
+            text ("ÉCHEC" if j50_wire_failed else "ATTENTION") size 28 color ("#ff6574" if j50_wire_failed or j50_wire_time_left <= 1.0 else "#ffb55f") font "fonts/Rajdhani-SemiBold.ttf"
+            text "[j50_wire_feedback]" size 22 color "#d2dce5" xsize 305
+            text "Erreurs : [j50_wire_errors]" size 20 color "#8296aa"
+
+    textbutton "ESC  ABANDONNER":
+        xpos 60
+        ypos 1010
+        text_size 20
+        text_color "#9aabba"
+        background None
+        action Function(j50_wire_abandon)
+
+    key "K_ESCAPE" action Function(j50_wire_abandon)
+    timer 0.1 repeat True action Function(j50_wire_tick, 0.1)
+    if j50_wire_failed:
+        timer 0.35 action Return(False)
+    if j50_wire_completed:
+        timer 0.35 action Return(True)
 
 label _5_0_REVEIL_CHAMBRE:
 
     scene bg_cg012 at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 5
+    $ current_period = "Matin"
+    $ cafeteria_food_level = "medium"
     $ j2_vote_codex_unlocked = True
     $ j45_vote_codex_active = True
-    show screen day3_codex_logo
+    $ unlock_dossier_chapter(2)
 
     pause 1.2
 
     $ blink()
-    think "J'ouvre les yeux sans avoir l'impression d'avoir dormi."
+    think "J'ouvre les yeux sans avoir l'impression d'avoir vraiment dormi. Rien qui ne change des jours précédents au final."
     think "La nuque raide, les épaules dures. Mon corps s'est couché ; ma tête, non."
 
-    pause 0.5
-
     $ blink()
-    think "Même le silence attend quelque chose."
 
-    pause 0.6
-
-    think "Le vote d'il y a deux jours. Celui de demain. Entre les deux, plus rien ne tient."
+    think "Il y a deux jours, on a échoué. Demain, on échouera aussi."
 
     $ blink()
 
-    think "Ça ne passera pas. Personne n'y croit encore."
-
-    think "Je me redresse. Il faut bien commencer quelque part."
+    think "Ça ne passera pas. Personne n'y croit plus. Sael a déjà annoncé qu'elle votera contre..."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    think "J'ai pris plusieurs jours pendant la nuit."
+    think "Je pourrais aller à la cafétéria, mais à quoi ça servirait ?"
+    think "J'y retrouverai les mêmes silences. Les mêmes regards qui fuient. Et la même certitude dans chaque tête : ce vote va échouer."
 
-    pause 0.6
-
-    think "Me lever ressemble déjà à une décision. Mauvais début."
-
-    think "Si je vais à la cafétéria, ce sera pareil qu'hier."
-    think "Des silences. Des regards qui fuient. Et la même certitude dans chaque tête : ce vote va échouer."
-
-    pause 0.7
-
-    noam "Rien n'a encore explosé et on se comporte déjà comme après la casse."
-    think "Je l'ai dit à voix haute. Parfait."
+    noam "Pfff, à quoi ça servirait ?"
 
     pause 0.5
 
-    think "Mes mains ne tremblent même pas. L'impuissance a donc une phase calme."
-
-    think "Non. Trop facile. Si je commence comme ça, la journée est déjà morte."
-
-    think "Je serre les doigts. Au moins, je suis bien réveillé."
-
-    pause 0.5
-
-    think "Le vote n'a peut-être aucune chance de passer."
-    think "L'ambiance est glaciale."
-    think "Sael est fermée."
+    think "Le vote n'a aucune chance de passer."
+    think "L'ambiance est glaciale. Sael était fermée à la discussion."
     think "Julian se mure dans sa chambre."
-    think "Et moi, je n'ai même pas de bonne réponse. Mais je n'abandonnerai pas."
-
-    pause 0.6
+    think "Et moi, je n'ai même pas de bonne réponse. Je ne suis même pas sûr de voter pour. Mais je n'abandonnerai pas."
 
     think "Le pire, c'est que chacun a une part de raison. Et demain, il faudra trancher comme si une décision acceptable existait."
     think "Face, tu gagnes. Pile, je perds."
 
-    pause 0.5
-
-    think "Je me lève enfin. Première décision validée."
-    think "L'air paraît plus froid. Ou c'est juste moi."
-
     play sound sfx_announce
-    pause 0.7
+    pause 1.0
 
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Bonjour, mes petits ! Jour cinq, et ça fleure déjà le drame."
+    kami "Bonjour à tous, oh vous me semblez particulièrement éteints ce matin."
+    kami "Un simple petit échec, et vous voilà dans cet état ?!"
     kami "Ne vous inquiétez pas : votre prochaine chance de tout rater arrive dans vingt-quatre heures !"
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Rappel amical : le vote sur la libre circulation aura lieu demain."
-    kami "Vous aurez donc une nuit de plus pour vous convaincre que vous êtes capables de décider de quelque chose ensemble."
-    kami "Comme c'est amusant !"
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "La cafétéria est ouverte. Vos rations sont prêtes. Les mêmes qu'hier."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "La cafétéria est ouverte. Vos rations sont prêtes. Ce sont les mêmes qu'hier."
+    kami "Vous recevrez de nouvelles portions lors de la matinée du jour 7. En attendant, à la DIET ! Comme tout le monde !"
     kami "Et comme toujours, j'observerai avec beaucoup d'intérêt ce que vous allez faire de cette belle matinée ensoleillée."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -293,67 +430,25 @@ label _5_0_REVEIL_CHAMBRE:
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    think "L'écran s'éteint sur son rire. Le silence paraît presque poli en comparaison."
+    think "L'écran s'éteint sur son rire."
+    think "La cafétéria. C'est vraiment le point de rendez-vous matinal."
+    think "J'imagine l'ambiance. Est-ce que j'ai vraiment envie de traverser ça ce matin ?"
 
-    pause 0.8
-
-    think "La cafétéria."
-
-    think "J'imagine l'ambiance."
-
-    think "Est-ce que j'ai vraiment envie de traverser ça ce matin ?"
-
-    pause 0.5
-
-    think "Le pain sur ma table est dur, sec et silencieux. Candidat idéal."
+    think "Le pain sur ma table est dur, sec et silencieux. Il fera bien l'affaire."
 
     pause 0.3
 
-    jump _5_0_SKIP_CAFETERIA
-
-
-label _5_0_SKIP_CAFETERIA:
-
-    scene bg_chambre at adaptive_fullscreen with dissolve
-
-    pause 0.6
-
-    think "Je prends le pain."
-    think "Il est vraiment sec."
-
+    think "Je prends le pain. Il est vraiment sec. La nourriture typique qu'on devait avaler chaque jour depuis un an."
     think "Je me demande si quelqu'un remarquera que je ne suis pas venu à la cafétéria."
-
-    think "Je mords dedans."
-    think "Ça craque sous les dents. Le goût précis de presque rien."
-
-    pause 0.4
-
-    think "Debout, seul, dos à la porte. Pas de conversation, pas de regard, pas d'hypocrisie."
-    think "Juste ce pain et moi. Il est plus facile à affronter qu'un vote."
-
-    think "C'est mieux comme ça, un peu plus reposant."
-    think "Au moins pour cette heure-là."
-
-    pause 0.7
+    think "Je mords dedans. Ça craque sous les dents. Le goût précis de presque rien, si ce n'est de la farine."
 
     think "Je termine le morceau et m'essuie la main. Petit-déjeuner réussi, selon des critères très bas."
 
-    think "Des pas et des voix traversent le couloir. Le groupe se retrouve autour des plateaux."
+    "Des pas et des voix traversent le couloir. Des groupes semblent s'éloigner et remonter dans le Conclave."
     think "Je ne peux pas les rejoindre. Pas avant de savoir ce que je peux encore faire."
 
-    think "Sael. Si elle vote contre, c'est foutu."
-    think "Il faut que je lui parle."
-    think "Avant que ce soit trop tard."
-
-    pause 0.5
-
-    think "Sael est là. Je l'ai entendue rentrer hier soir en essayant d'être discrète. C'est ce qui l'a trahie."
-
-    pause 0.4
-
-    think "Je gagne la porte avant de trouver une nouvelle raison de rester."
-
-    think "Il faut au moins essayer. Enfin… il me semble."
+    think "Sael. Si elle vote contre, c'est foutu quoi qu'il arrive. Il faut que je lui parle."
+    think "Avant que ce soit trop tard. Je pense qu'elle essaye de rester seule, elle aussi."
 
     stop music fadeout 1.2
 
@@ -367,22 +462,15 @@ label _5_0_CHERCHE_SAEL:
 
     pause 0.8
 
-    think "Le couloir se vide vers la cafétéria. Personne ne me regarde."
-    think "Chambre sept. Un tissu sombre noué à la poignée. Signe ou habitude, je n'en sais rien."
-
-    pause 0.4
-
+    think "Voyons voir, où se trouve la chambre de Sael ? Ah, ici. La porte avec le tissu noir sur la poignée. Signe ou habitude, je n'en sais rien."
     "Je m'arrête devant sa porte."
-
     think "A-t-elle envie de me parler ? Est-ce que quelqu'un en a envie ce matin ?"
-
     "Je frappe deux coups."
 
     play sound sfx_knock volume 8.0
     pause 1.0
 
-    think "Rien."
-
+    "Rien."
     "Je frappe encore, plus fort."
 
     play sound sfx_knock volume 8.0
@@ -392,319 +480,144 @@ label _5_0_CHERCHE_SAEL:
 
     play sound sfx_door volume 8.0
 
-    $ showP("sael", "mefiant", 0.50)
+    $ showGroup([("sael", "mefiant", 0.65), ("noam", "reflexion", 0.30)])
 
     sael "..."
+    sael mefiant "Noam. C'est toi, évidemment."
 
-    think "Elle n'a pas l'air surprise. Comme si elle savait que ce serait moi."
+    noam triste "Tu n'as pas mangé depuis quand ? Enfin… ce n'est pas pour ça que je suis là."
 
-    sael mefiant "Noam."
-
-    noam "Tu n'as pas mangé non plus. Enfin… ce n'est pas pour ça que je suis là."
-
-    sael "..."
-
-    sael neutre "Qu'est-ce que tu viens chercher, Noam ?"
-
-    think "Assez ouverte pour parler. Pas assez pour entrer."
+    sael triste "... Qu'est-ce que tu viens chercher, Noam ?"
 
     noam hesitation "Je pense qu'on devrait parler du vote. De demain."
+    noam reflechit "Mais tu t'en doutais déjà, hein ?"
 
-    pause 0.3
+    "Elle s'écarte juste assez pour m'inviter à entrer dans sa chambre."
 
-    sael "Je savais que tu viendrais pour ça."
-
-    "Elle s'écarte juste assez."
-
-    sael "Entre. Les seuils ne sont pas faits pour les longues conversations."
-
-    pause 0.3
+    sael sourire "Entre. Les seuils de porte ne sont pas faits pour les longues conversations."
 
     scene bg_chambre_sael at adaptive_fullscreen with dissolve
 
-    pause 0.6
-
     think "Le lit a été démonté. Planches au sol, une couette, puis du vide."
     think "Aux murs : ficelles, os, bois tressé. Des signes dans une langue que je ne sais pas lire."
+    think "Ça ne ressemble pas du tout à une chambre. Et je ne sais pas pourquoi, étrangement, ça ne me surprend pas tant que ça."
 
-    think "Ça ne ressemble pas à une chambre. Plutôt à un lieu qui refuse d'oublier."
+    sael reflechit "Désolée, c'est assez... Rustique. Je préfère comme ça."
 
     $ j50_sael_pnc_score = 0
     $ j50_sael_pnc_seen = []
     call _5_0_SAEL_PNC from _call_5_0_SAEL_PNC
 
+    $ showGroup([("noam", "hesitation", 0.25), ("sael", "neutre", 0.75)])
+    noam surpris "Tu as vraiment tout enlevé…"
 
-    $ showP("noam", "hesitation", 0.25)
-    noam "Tu as vraiment tout enlevé…"
+    sael reflechit "Ce qui ne sert pas prend de la place. Ces planches, elles peuvent peut-être me servir plus tard."
 
-    $ showP("sael", "neutre", 0.75)
-    sael "Ce qui ne sert pas prend de la place. Et la place finit toujours par nous prendre quelque chose."
+    noam reflechit "Et tout ça… les os, les fils…"
 
-    noam "Et tout ça… les os, les fils…"
+    think "Elle me regarde enfin. Ni vexée ni gênée."
 
-    think "Elle me regarde enfin. Ni vexée ni gênée. Fermée."
-
-    sael "Dis ce que tu es venu dire. Le reste ne t'aidera pas."
+    sael sourire "Dis ce que tu es venu dire. Le reste ne t'aidera pas."
+    sael triste "Je n'attends pas de toi que tu comprennes comment on vit en dehors des grandes villes."
 
     pause 0.3
 
     if j50_sael_pnc_score >= 3:
-        noam reflexion "Tu n'as pas rendu cette chambre vide."
-        noam "Tu l'as ramenée au sol."
+        noam reflexion "Disons que la chambre te représente bien."
 
-        sael fatigue "..."
-        sael "C'est moins faux que le reste."
-
-    noam "Tu as encore réfléchi aux frontières. Enfin— je ne viens pas te demander de changer de camp."
+    noam triste "Tu as encore réfléchi aux frontières. Enfin— je ne viens pas te demander de changer de camp."
     noam reflexion "Je veux comprendre où tu en es."
 
-    sael mefiant "Tu veux comprendre, ou tu veux trouver l'endroit où pousser ?"
+    sael mefiant "C'est ce que m'a dit Tomas, avant d'essayer de me convaincre."
 
-    noam "Pour toi, c'est la même chose."
+    noam reflechit "Ah, Tomas est venu ?"
 
-    think "Elle incline la tête. Touché."
+    sael triste "Pour toi, ce sera la même chose."
 
-    $ showP("sael", "reflechit", 0.75)
+    noam triste "Pour tout te dire, je suis perdu aussi. Je ne sais pas quoi voter."
+    noam sourire "Alors ne t'en fais pas, quoi que tu fasses, je ne te jugerai pas."
 
-    sael "Peut-être."
-    sael reflexion "Mais ça ne change pas ma réponse."
+    think "Elle incline la tête. Vraisemblablement surprise."
 
-    $ showP("noam", "reflexion", 0.25)
+    sael reflechit "Peut-être. Mais ça ne change pas ma réponse."
 
-    noam "La libre circulation, ce sont aussi des gens de Limen qui pourraient travailler ailleurs."
+    noam reflexion "Je me dis que la libre circulation, ce sont aussi des gens de Limen qui pourraient aller ailleurs."
     noam "Des familles séparées qui pourraient se retrouver. Enfin… ce n'est pas seulement une porte ouverte au danger."
 
-    pause 0.3
+    sael desaccord "On en a déjà discuté. C'est une mauvaise idée pour tout un tas de raisons."
+    sael triste "Être libre d'aller où on veut, d'accord mais pour quoi faire ? Les gens se détestent."
+    sael colere "Et tu ne me feras pas croire un instant que vous les Harmonistes, vous ne détestez pas les Limenois."
 
-    $ showP("sael", "desaccord", 0.75)
+    noam sourire "Moi je ne vous déteste pas."
 
-    sael "On en a déjà discuté."
-    sael "Quand une barrière tombe, les gens ne deviennent pas libres. Ils courent. Ils poussent. Ils prennent avant d'être privés."
-    sael "Ryn croit qu'il ouvre une porte."
-    sael determine "Moi, je vois une digue qu'on casse."
+    sael colere "H-Hein ? Si Limen est aujourd'hui un tas de cendres c'est à cause de sa cupidité !"
+    sael triste "D'une certaine manière, si Kami existe, c'est peut-être même à cause des guerres Limenoises."
 
-    sael "Tu parles de familles, de travail, de passages. Moi, je vois le froid entrer et les corps se serrer aux grilles."
-    sael "Je vois la faim choisir les plus lents. Limen tient parce que nous acceptons des rites durs."
-    sael colere "Si je dois paraître cruelle pour que le sol tienne encore, alors je porterai ce mot."
+    noam triste "Peut-être. Ou peut-être pas."
+    noam reflechit "Arrêter les guerres et la violence n'était sans doute qu'un prétexte parfait pour que Kami prenne les pleins pouvoirs sans grande résistance."
 
-    if j50_sael_pnc_score >= 4:
-        noam reflexion "Tu ne votes pas contre les voyages."
-        noam "Tu votes contre ce que tu crois être l'effondrement de Limen."
+    sael determine "Les Limenois doivent rester à Limen. Non seulement pour les protéger, mais aussi pour payer le prix du sang qu'on a fait couler."
+    sael colere "Et je me fiche de savoir si mon peuple est de mon avis. Cette décision est celle de la responsabilité."
 
-        sael fatigue "..."
-        sael "C'est moins faux que le reste."
+    noam inquiet "Donc tu voteras contre quoi qu'il arrive ?"
 
-    sael determine "J'ai vu ce qui se passe quand une foule sent que la frontière ne répond plus."
-    sael "J'ai vu la peur devenir une main qui tire. Je ne cherche pas à être aimée, Noam."
-    sael colere "Je n'ai simplement pas oublié ce que survivre exige."
-
-    think "Elle ne hausse pas le ton. Elle a déjà vécu cette conversation cent fois, sans moi."
-
-    pause 0.4
-
-    $ showP("noam", "inquiet", 0.25)
-
-    noam "Tu voteras contre."
-
-    sael raison "Oui."
-    sael determine "Et rien ne me fera changer d'avis."
-
-    pause 0.4
-
-    think "Un oui simple, sec, sans appel."
-
-    sael raison "Mara votera contre aussi. Nous en avons parlé hier soir."
-
-    pause 0.3
-
-    noam "Et Iris ?"
-
-    sael "Va lui demander toi-même."
-    sael mefiant "Mais je crois que tu connais déjà la réponse."
-
-    think "Ce n'est pas une attaque. Seulement un fait posé entre nous comme une pierre froide."
-
-    pause 0.5
-
-    noam hesitation "Je me demande si..."
-
-    think "La phrase n'a pas de fin. Moi non plus."
-
-    pause 0.3
-
-    noam "Non. Rien."
-
-    think "Pas d'argument. Seulement un espoir diffus qui ne sait même plus se défendre."
-
-    $ showP("sael", "fatigue", 0.75)
-
-    sael "Tu n'étais pas obligé de venir. Cela ne changera rien."
+    sael raison "Oui. Et rien ne me fera changer d'avis."
+    sael determine "Mara votera contre aussi. Nous en avons parlé hier soir."
+    sael fatigue "Tu n'étais pas obligé de venir. Cela n'a rien changé à mon avis."
     sael fatigue "Mais j'apprécie que tu aies essayé. Nous avons parlé sans ajouter une blessure aux autres."
 
-    pause 0.4
-
-    hide noam
-    hide sael
+    noam raison "Nous sommes des gens civilisés, on est là pour se serrer les coudes."
 
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
-    "Sael me raccompagne et referme sa porte."
+    "Sael me raccompagne et referme sa porte derrière moi."
 
     pause 0.6
 
     think "Sael contre. Mara contre."
-
-    think "Et Iris… À quoi bon demander ? Deux non suffisent déjà à tuer le vote."
-
-    "Je passe devant la chambre d'Iris."
-    
-    think "Et puis merde."
-
-    "Je frappe."
-
-    play sound sfx_knock volume 8.0
-    pause 0.8
-
-    play sound sfx_door volume 8.0
-    $ showP("iris", "fatigue", 0.50)
-
-    iris fatigue "Ah. Noam."
-
-    $ showP("noam", "inquiet", 0.25)
-    noam hesitation "Tu as une minute ?"
-
-    think "Elle sort, bras croisés. Le sommeil ne lui a pas fait plus de cadeaux qu'à moi."
-
-    iris "Si c'est pour le vote, épargne-nous l'introduction. Ma décision est prise."
-
-    noam "Oui. Ça, j'avais compris."
-
-    iris "Oui."
-
-    pause 0.3
-
-    iris triste "Je comprends l'idée : rendre aux gens la liberté d'aller où ils veulent. Très beau sur l'écran."
-    iris triste "Mais sans plan, sans transition et avec ce groupe ? On n'ouvre pas des frontières. On lance une expérience sur des millions de cobayes."
-    iris hesitation "Je ne cautionnerai pas cette mascarade."
-
-    pause 0.3
-
-    noam "Mais ne rien faire, c'est aussi—"
-
-    iris colere "Aussi quoi ? Une décision ? Oui, merci, je connais le piège."
-    iris colere "Dis-moi que j'ai tort. Avec des faits, si possible. Ça nous changera."
-
-    think "Je comprends sa logique. C'est justement ce qui me révulse."
-
-    noam "Je ne peux pas. Enfin… pas avec des faits."
-    noam "Mais je déteste qu'on transforme notre peur d'échouer en raison de ne rien tenter."
-
-    iris triste "Alors déteste. Moi, je voterai avec ce qu'on sait."
-
-    "Iris referme la porte."
-
-    hide iris
-    hide noam
-
-    jump _5_0_DISCUSSION_SAEL
-
-
-label _5_0_DISCUSSION_SAEL:
-
-    scene bg_couloir at adaptive_fullscreen with dissolve
-
-    think "Deux portes fermées. Les murs métalliques absorbent le reste."
-
-    pause 0.5
-
-    think "Douze représentants. Un seul non suffit. J'en ai déjà deux."
-
-    pause 0.4
-
-    think "C'est déjà perdu."
-
-    think "La conclusion arrive sans drame, comme le résultat banal d'un calcul."
-
-    think "Julian s'est enfermé dans sa chambre."
-    think "Et moi, je glane des certitudes sur notre échec. Travail essentiel."
-
-    pause 0.4
-
-    "Je m'adosse au mur."
-
+    think "Le vote n'a donc aucune chance de passer. C'est déjà perdu."
     think "Je me demande si ce vote a encore un sens."
     think "Si quelque chose peut encore être rattrapé."
-    think "Participer, est-ce cautionner ce système ? Ou seulement le traverser pendant qu'il nous démonte ?"
+    think "Participer, est-ce cautionner ce système pourri ? Ou seulement le traverser pendant qu'il nous démonte ?"
     think "Puis recommencer. Encore. Encore."
-
-    pause 0.6
-
-    think "J'expire lentement. La version socialement acceptable d'un cri."
-
-    pause 0.5
-
-    think "Il reste quoi ? Aujourd'hui. Un petit espace avant que tout se referme."
-
-    think "Je ne sais pas ce que ça donnera."
-    think "Mais il me semble que je ne peux pas juste attendre que ça s'effondre."
 
     $ j2_vote_codex_unlocked = True
     $ j45_vote_codex_active = True
-    show screen day3_codex_logo
-
-    think "Le dossier range nos positions avec une propreté obscène."
+    $ unlock_dossier_chapter(2)
 
     jump _5_0_TEMPS_LIBRE_1
 
 label _5_0_TEMPS_LIBRE_1:
-    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1") from _call_START_FREE_TIME_2
+    call START_FREE_TIME("_5_0_APRES_TEMPS_LIBRE_1")
 
 label _5_0_APRES_TEMPS_LIBRE_1:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    $ current_period = "Après-midi"
+
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.8
 
     pause 0.8
 
-    think "Je marche sans direction. Le mouvement donne à l'indécision une allure d'activité."
-    think "Le Conclave paraît désert, comme un bateau entre deux vagues."
-
-    pause 0.5
+    think "Ne sachant pas quoi faire, je marche sans réelle direction. Le Conclave parait désert."
 
     "La salle commune est vide : une chaise renversée, un plateau abandonné."
 
-    think "Je devrais faire quelque chose. Convaincre qui ? De quoi, exactement ?"
+    think "Je devrais faire quelque chose. Mais faire quoi ? Convaincre qui ? De quoi, exactement ?"
 
-    pause 0.5
-
-    think "Les convictions ne se déplacent pas. On s'assoit à côté, on écoute, on espère qu'elles bougent seules."
-
-    think "Julian."
-    think "Il doit encore être dans sa chambre."
+    think "Julian. Il doit encore être dans sa chambre."
     think "Kael a dit qu'il avait tenté d'aller le voir hier soir."
     think "Qu'il lui avait répondu de le laisser tranquille."
 
     "Je m'arrête."
 
-    think "Et la salle d'observation."
-    think "Je n'y suis pas retourné depuis un moment."
-    think "Les écrans montrent l'état des districts. Peut-être quelque chose de concret, qui résiste enfin à l'abstraction des votes."
+    think "Sinon, dans la salle d'observation, sur les ordinateurs, on peut voir l'état des districts."
+    think "Qu'espèrent les gens par rapport au vote de demain ? Je me le demande bien."
 
-    pause 0.4
+    menu (screen="critical_choice", noam_expr="hesitation"):
+        "Où devrais-je aller ?"
 
-    jump _5_0_CHOIX_PRINCIPAL
-
-
-label _5_0_CHOIX_PRINCIPAL:
-
-    scene bg_couloir at adaptive_fullscreen with dissolve
-
-    pause 0.3
-
-    think "Deux options. C'est déjà une de trop."
-
-    menu:
         "Aller frapper à la porte de Julian.":
             $ doplleganger = 0
             jump _5_0_0_JULIAN
@@ -722,8 +635,7 @@ label _5_0_0_JULIAN:
     pause 0.5
 
     $ doplleganger = 0
-    think "Chambre quatre. Julian."
-    think "Aucune décoration, aucune trace de lui. Il veut exister partout, sauf sur sa propre porte."
+    think "Bon, Julian m'inquiète à ne plus se montrer du tout, ça ne lui ressemble pas."
 
     "Je frappe."
 
@@ -731,13 +643,12 @@ label _5_0_0_JULIAN:
     pause 1.0
 
     think "Rien."
-
     "Je frappe encore."
 
     play sound sfx_knock volume 8.0
     pause 0.8
 
-    think "Du mouvement. Pas quelqu'un qu'on réveille : quelqu'un qui choisit son temps d'entrée."
+    think "J'entends un mouvement derrière la porte."
 
     noam "Julian. C'est moi."
 
@@ -745,48 +656,38 @@ label _5_0_0_JULIAN:
 
     play sound sfx_door volume 8.0
 
-    $ showP("julian", "neutre", 0.65)
-    $ showP("noam", "neutre", 0.30)
+    $ showGroup([("julian", "neutre", 0.65), ("noam", "neutre", 0.30)])
 
     "La porte s'ouvre."
 
-    think "Julian n'a l'air ni détruit ni même atteint."
+    think "Julian n'a l'air ni détruit ni même vraiment atteint."
 
-    julian sourire "Noam."
-    julian taquin "Tu viens constater les dégâts ?"
+    julian taquin "Noam. Tu viens constater les dégâts ?"
 
     noam hesitation "Je venais surtout voir comment tu allais."
 
-    julian sourire "Oh."
-    julian taquin "C'est presque touchant."
+    julian sourire "Oh. C'est presque touchant."
 
-    "Il se pousse."
-    think "Cette fois, l'invitation est réelle. Ou parfaitement jouée."
+    "Il se pousse. Cette fois, l'invitation est réelle. Il m'invite à rentrer."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     pause 0.5
 
-    $ showP("julian", "sourire", 0.65)
-    $ showP("noam", "reflexion", 0.30)
+    $ showGroup([("julian", "sourire", 0.65), ("noam", "reflexion", 0.30)])
 
     think "La chambre est trop propre. Une pièce témoin où rien ne dépasse, rien ne vit."
 
-    julian neutre "Alors ?"
-    julian sourire "Tu veux me dire de ne pas prendre les résultats comme quelque chose de personnel ?"
+    julian neutre "Alors ? Laisse-moi deviner. Tu veux me dire de ne pas prendre les résultats comme quelque chose de personnel ?"
     julian taquin "Ou m'offrir une de tes phrases calmes, prudentes et miraculeusement sans conclusion ?"
 
     noam "Disons que je ne suis pas vraiment venu avec un dialogue préétabli."
 
-    julian rire "Moi si."
+    julian rire "Oh, comme c'est surprenant."
 
-    pause 0.4
+    noam reflexion "Tu n'as pas l'air aussi abattu qu'hier."
 
-    think "Le sourire dit plaisanterie. Ses yeux, non."
-
-    noam reflexion "Tu n'as pas l'air aussi abattu que ce matin."
-
-    julian sourire "Parce que je ne le suis pas."
+    julian sourire "Parce que je ne le suis pas, du moins pas vraiment."
 
     "Julian pose la main sur le brouilleur."
 
@@ -794,16 +695,12 @@ label _5_0_0_JULIAN:
     show screen j50_julian_surveillance_overlay
     pause 0.4
 
-    think "Le grésillement disparaît. La caméra pivote. Julian entre en scène."
+    think "Le grésillement disparaît. La caméra pivote. Julian se met en scène."
 
-    $ showP("julian", "triste", 0.72)
+    julian triste "J'avoue que c'est difficile. Je croyais sincèrement que nous pouvions accomplir quelque chose de grand."
+    julian decu "Et, au moment décisif, VOUS avez choisi la peur."
 
-    julian triste "J'avoue que c'est difficile. Julian croyait sincèrement que nous pouvions accomplir quelque chose de grand."
-    julian decu "Et, au moment décisif, vous avez choisi la peur."
-
-    think "Il baisse les yeux juste assez. Même sa douleur connaît son cadre."
-
-    noam reflexion "Arrête de..."
+    noam reflexion "Sérieux ?! Arrête de..."
 
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
@@ -811,41 +708,29 @@ label _5_0_0_JULIAN:
 
     noam reflexion "...jouer la comédie."
 
-    $ showP("julian", "rire", 0.72)
 
-    julian rire "Évidemment que je joue."
-    julian sourire "Quand Kami regarde, il faut lui donner quelque chose qu'elle ne puisse pas monter contre nous."
+    julian rire "Évidemment que je joue. Quand Kami regarde, il faut lui donner quelque chose qu'elle ne puisse pas utiliser contre nous."
+    julian sourire "L'opinion publique est bien plus dangereuse que tu ne le crois !"
 
-    noam desaccord "Donc tout ça, c'était pour l'image."
+    noam desaccord "Donc tout ça, c'était pour l'image. Pour TON image ?!"
 
     julian taquin "L'image, c'est ce qui reste quand une idée échoue. Et ce qui permet à la suivante d'exister."
-    julian sourire "Et le plus beau, c'est que même un échec peut me servir."
+    julian sourire "Et le plus beau c'est que, tu sais. Noam, il faut aussi se servir de ses échecs."
 
     play sound sfx_beep
     show screen j50_julian_surveillance_overlay
     pause 0.4
 
-    $ showP("julian", "triste", 0.72)
-
-    julian triste "Il faut accepter la défaite avec dignité."
-    julian decu "Mais Julian portera ce vote jusqu'au bout."
-    julian triste "Même si certains préfèrent avoir peur."
-
-    think "La phrase est pour moi. Le regard, pour la caméra."
+    julian triste "Il faut accepter la défaite avec dignité. Mais j'ai porté ce vote jusqu'au bout."
+    julian decu "Alors c'est normal que je sois déçu !"
 
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
     pause 0.4
 
-    $ showP("julian", "sourire", 0.65)
+    noam reflexion "Et toi, dans tout ça ? Où s'arrête le masque que tu portes ?"
 
-    julian sourire "Voilà."
-    julian taquin "Public et privé. Deux langues, même bouche. Le talent consiste à ne mordre personne par accident."
-
-    noam reflexion "Et toi, dans tout ça ?"
-
-    julian neutre "Moi ?"
-    julian sourire "Julian fait ce qu'il faut pour rester utile."
+    julian neutre "Moi ? je fais ce qu'il faut pour rester utile à la société."
 
     $ j50_julian_fissure = 0
 
@@ -862,11 +747,10 @@ label _5_0_0_JULIAN:
 
         "Tu t'en fiches complètement.":
             noam "Tu t'en fiches complètement."
-            julian taquin "Trop simple."
+            julian taquin "Evidemment, tout est de la faute de ce connard de Julian."
 
-    julian sourire "Qu'il passe ou qu'il tombe, ce vote laisse quelque chose à Julian."
-    julian idee "S'il passe, j'ai porté une idée décisive."
-    julian idee "S'il tombe, j'ai combattu votre peur du changement."
+    julian sourire "Que le vote passe ou qu'il tombe, ce vote laisse quelque chose, une marque indélébile, sur la société."
+    julian idee "S'il passe, j'ai porté une idée décisive. S'il tombe, j'ai combattu votre peur du changement."
     julian rire "Dans les deux cas, l'histoire sait où me placer."
 
     menu:
@@ -878,7 +762,7 @@ label _5_0_0_JULIAN:
         "Tu veux prouver que les autres sont lâches.":
             $ j50_julian_fissure -= 1
             noam "Tu veux prouver que les autres sont lâches."
-            julian sourire "Je n'ai pas besoin de le prouver. Ils le font très bien seuls."
+            julian sourire "Je n'ai pas besoin de le prouver. Ils le font très bien tout seuls."
 
         "Tu veux juste gagner.":
             noam "Tu veux juste gagner."
@@ -888,19 +772,11 @@ label _5_0_0_JULIAN:
     show screen j50_julian_surveillance_overlay
     pause 0.3
 
-    $ showP("julian", "triste", 0.72)
-
-    julian triste "Je crois encore que ce vote peut dire quelque chose de nous."
-    julian "Si nous reculons maintenant, alors nous acceptons que Limen reste à genoux."
+    julian triste "Mais ce n'est pas fini, on a encore 9 votes à traverser. Je crois encore qu'ils peuvent dire quelque chose de nous."
 
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
     pause 0.3
-
-    $ showP("julian", "sourire", 0.65)
-
-    julian sourire "C'est fort, non ?"
-    julian taquin "Simple. Clair. Prêt pour les archives."
 
     menu:
         "Tu veux qu'on ait besoin de toi pour y croire.":
@@ -919,14 +795,12 @@ label _5_0_0_JULIAN:
         noam determine "Tu ne veux pas seulement que le vote passe."
         noam "Tu veux qu'il ait besoin de toi pour passer."
 
-        $ showP("julian", "inquietude", 0.65)
         julian inquiet "..."
         julian "C'est une façon remarquablement injuste de résumer une ambition sincère."
 
         noam "Non."
         noam "C'est une façon très précise."
 
-        $ showP("julian", "peur", 0.65)
         julian peur "Tu crois que c'est drôle ?"
         julian inquiet "Tu crois que je n'ai jamais pensé à ce qui reste quand personne n'a plus besoin de moi ?"
 
@@ -934,53 +808,45 @@ label _5_0_0_JULIAN:
         noam reflexion "Tu veux être celui autour de qui le vote s'organise."
         noam "Pas seulement celui qui vote pour."
 
-        $ showP("julian", "reflexion", 0.65)
-        julian reflexion "Peut-être."
-        julian sourire "Ou peut-être as-tu besoin que Julian soit plus simple qu'il ne l'est."
+        julian reflexion "Peut-être. Ou peut-être que tu es incapable de me comprendre."
 
     else:
         noam desaccord "Tu joues avec tout le monde."
 
-        $ showP("julian", "sourire", 0.65)
         julian sourire "Et toi, tu me donnes exactement la scène qu'il me fallait."
-        julian taquin "L'indignation calme. Très propre."
+        julian taquin "Alors, je dois te le dire..."
 
     play sound sfx_beep
     show screen j50_julian_surveillance_overlay
     pause 0.3
 
-    $ showP("julian", "sourire", 0.72)
 
     julian sourire "Merci d'être venu, Noam."
-    julian triste "Même nos désaccords prouvent que ce vote compte encore."
+    julian triste "Même nos désaccords prouvent que tout ça compte encore."
 
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
     pause 0.3
 
-    noam "Tu viens encore de corriger ton image."
+    noam "Pff, t'es incorrigible. Un putain de manipulateur."
 
-    julian sourire "Bien sûr."
-    julian taquin "Pourquoi est-ce que j'arrêterais juste avant la fin ?"
+    julian sourire "Oh pauvre chou. Pourquoi est-ce que j'arrêterais juste avant la fin ?"
+    julian colere "Allez ouste, tu ne me sers plus à rien maintenant."
 
-    think "Brouilleur actif, il paraît plus vrai. Caméra active, il devient plus net."
-    think "Je ne sais pas quelle version est la plus dangereuse — ni laquelle est vraiment Julian."
-
-    hide noam
-    hide julian
+    "Il me pousse en direction de la sortie. Un sourire sur le visage."
 
     jump _5_0_FIN_JOURNEE
 
 
 label _5_0_1_OBSERVATION:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
     pause 0.5
 
     $ doplleganger = 1
-    think "Kami ne nous interdit pas les données. Regarder le vide en face suffit probablement à décourager les curieux."
+    think "J'ai besoin d'avoir des réponses, j'ai besoin de savoir où en est le monde. Ce qu'il attend, ce qu'il espère."
 
     scene bg_observation at adaptive_fullscreen with dissolve
 
@@ -988,7 +854,7 @@ label _5_0_1_OBSERVATION:
 
     think "Derrière les baies vitrées, un silence vieux de milliards d'années ignore nos votes et notre survie."
 
-    $ showP("elias", "neutre", 0.75)
+    $ showGroup([("elias", "neutre", 0.75), ("noam", "neutre", 0.25)])
 
     "Elias est assis à la console, une tasse à la main, les yeux sur les données des districts."
 
@@ -996,40 +862,34 @@ label _5_0_1_OBSERVATION:
 
     think "Il ne s'est même pas retourné."
 
-    elias "Qu'est-ce que tu fais là ?"
+    elias sourire "Qu'est-ce que tu fais là ?"
 
-    $ showP("noam", "neutre", 0.25)
+    noam surpris "Hein ? Comment tu as su que c'était moi ?!"
 
-    noam "C'est le seul endroit qui soit calme aujourd'hui."
+    elias sourire "Facile, au bruit de tes pas."
+    elias rire "Je t'ai déjà dit, non ? Que j'avais une excellente ouïe."
 
-    $ showP("elias", "neutre", 0.75)
-    elias "Ouais."
-    elias "La cafétéria, c'était chaud. Genre vraiment chaud."
+    noam triste "Ah ouais, c'est vrai. Tout est vraiment plus calme aujourd'hui."
 
-    think "Il boit sans quitter l'écran."
+    elias neutre "Ouais. Mais la cafétéria, c'était chaud. Genre vraiment chaud."
 
-    $ showP("elias", "neutre", 0.75)
-    elias "Regarde ça."
+    think "Il boit sans quitter l'écran des yeux."
+
+    elias neutre "Regarde ça."
 
     "Des chiffres, des courbes et des noms défilent sur le panneau droit."
 
-    $ showP("noam", "reflexion", 0.25)
+    noam reflexion "Il va falloir m'expliquer. Enfin… ces chiffres ça correspond à quoi ?"
 
-    noam "Il va falloir m'expliquer. Enfin… ces chiffres disent quoi ?"
-
-    elias "Là. Regarde."
+    elias reflechit "Là. Regarde."
 
     "Il pointe du doigt une liste de noms qui défile."
 
     elias inquiet "C'est les noms des gens qui ont merdé. Enfin, c'est ce que l'écran dit."
-    elias "À côté, t'as la règle qu'ils ont cassée."
+    elias triste "À côté, t'as la règle qu'ils ont brisée."
 
     think "Vol. Bagarre. Menace. La liste est longue et chaque ligne revient aux rations."
-    think "Ils veulent manger. Le système, lui, compte les infractions."
-
-    pause 0.4
-
-    "Je me penche vers la courbe de Limen."
+    think "Ils veulent manger. Le système, lui, il compte les infractions."
 
     pause 0.3
 
@@ -1043,7 +903,7 @@ label _5_0_1_OBSERVATION:
 
     "Le café se répand sur les touches et le panneau latéral."
 
-    elias "Et merde ! C'est chaud, c'est chaud—"
+    elias "Et merde ! Oh, putain, c'est chaud, c'est chaud—"
 
     call screen trace_qte(path_type="arc", time_limit=2.4, wait_time=0.15, tolerance=70, max_errors=3, anchor_x=960, anchor_y=620, start_radius=120)
     $ j50_coffee_trace_score = tq_progress
@@ -1053,56 +913,45 @@ label _5_0_1_OBSERVATION:
     elif j50_coffee_trace_score >= 0.35:
         think "Trop tard. Ma main traverse l'endroit où la tasse n'est déjà plus."
     else:
-        think "Trop vite. Mon poignet heurte la console et la tasse part plus loin."
+        think "Trop vite. Mon poignet heurte la console et la tasse part plus loin en se brisant au sol."
 
     "Elias récupère sa tasse vide. Le café ruisselle entre les touches."
-
-    "Un voyant passe au rouge. La console siffle."
+    "Un voyant passe au rouge. La console siffle et de la fumée s'échape de la console."
 
     noam "C'est moi qui— j'ai tendu le bras, enfin, j'ai dû te—"
 
-    elias inquiet "Non, c'était ma tasse. Mon coude. Ma connerie. C'est clair."
+    elias inquiet "Non, c'était ma tasse. Mon coude. Ma connerie. T'inquiète, j'ai l'habitude..."
 
     "Un voyant orange s'allume. Une fumée grise monte de la grille latérale."
 
-    elias inquiet "OK. Bon. C'est pas mort."
-    elias "Enfin… pas encore. C'est chaud."
-
-    "Un claquement mécanique nous fait nous retourner. La porte est verrouillée."
+    "Un claquement mécanique nous fait nous retourner. La porte s'est verrouillée."
     think "VERROUILLAGE SÉCURITÉ — ANOMALIE DÉTECTÉE. Pour une fois, l'écran résume bien la situation."
 
     pause 0.5
 
-    elias panique "Ah. C'est chaud."
+    elias panique "Ah. Et merde, me dis pas qu'on est coincé ici !"
 
     noam peur "La porte est bloquée ?"
 
     elias inquiet "La salle s'est verrouillée."
-    elias "Sûrement une sécurité à la con. Quand un truc fume, ça ferme tout pour éviter que le feu sorte."
-    elias "Ou pour éviter qu'on sorte. J'sais plus."
+    elias colere "Sûrement une sécurité à la con. Quand un truc fume, ça ferme tout pour éviter que le feu ne sorte."
 
-    noam hesitation "En principe."
+    noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
 
-    elias "Ouais."
-    elias fatigue "En principe."
-
-    pause 0.4
-
-    think "La fumée reste fine. La porte, fermée. L'espace ne juge même pas utile de réagir."
-
-    noam "Combien de temps avant que ça devienne vraiment dangereux ?"
-
-    $ showP("elias", "panique", 0.75)
     elias panique "Putain, putain, putain…"
-    elias inquiet "Noam, viens là. Tu vas relier les fils."
+    elias inquiet "Noam, viens là. Tu vas relier les fils pendant que j'essaye de réparer ça."
     elias "Même couleur ensemble. Tu réfléchis pas. Tu relies."
 
     "Elias arrache le panneau. Des grappes de fils pendent sous la console."
 
-    call screen j50_wire_minigame
+    # Passe True ici si cette occurrence du mini-jeu doit sanctionner l'échec.
+    call screen j50_wire_minigame(failure_has_consequences=False)
+    $ j50_wire_completed = bool(_return)
 
-    if j50_wire_success >= 12:
+    if j50_wire_completed:
         $ j50_kamyz_bonus = 40
+    elif j50_wire_failure_has_consequences:
+        $ j50_kamyz_bonus = 0
     elif j50_wire_success >= 8:
         $ j50_kamyz_bonus = 25
     elif j50_wire_success >= 5:
@@ -1113,37 +962,31 @@ label _5_0_1_OBSERVATION:
     $ player_kamyz += j50_kamyz_bonus
     "Kamyz bonus obtenus : [j50_kamyz_bonus]"
 
+    if j50_wire_failed and j50_wire_failure_has_consequences:
+        elias colere "On a perdu l'alimentation de secours. Là, ça va vraiment nous retomber dessus."
+    elif j50_wire_failed:
+        elias fatigue "C'est mort pour le panneau… mais la sécurité principale tient encore. On peut continuer."
+
     if j50_wire_errors > 0:
         elias colere "Non, pas celui-là !"
-        elias "Putain… Bon. C'est grave, mais si je le dis trop fort ça va pas aider."
+        elias "Putain… Bon. Bah je sais plus quoi faire pour réparer ça..."
 
     if j50_wire_success >= 8:
-        elias rire "T'as fait ça mieux que moi. C'est bien pour nous, mais c'est chaud pour ma fierté."
+        elias rire "Oh super, t'as géré !"
     elif j50_wire_success >= 5:
-        elias fatigue "C'est moche. Mais ça tient."
+        elias fatigue "C'est moche. Mais ça tient. C'est le principal."
     else:
         elias inquiet "C'est pété de partout. Mais ça fume moins. Franchement, on prend."
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
 
-    elias "La ventilation tourne. On va pas étouffer."
-    elias fatigue "Mais ouais… on est bloqués un moment. C'est chaud, cette salle est censée observer les problèmes, pas en devenir un."
+    elias "La ventilation tourne. Au moins on va pas étouffer."
+    elias fatigue "Mais ouais… on est bloqués pour un moment. C'est chaud, cette salle est censée observer les problèmes, pas en devenir un."
 
     "Elias s'assoit par terre, loin du panneau."
 
     elias neutre "Tu voulais regarder les chiffres de Limen, non ?"
-
-    think "Il désigne le seul écran qui fonctionne encore."
-
-    elias fatigue "On a nulle part où aller. Autant en parler."
-
-    noam "Ce n'est pas exactement le contexte idéal pour parler du vote. Enfin…"
-
-    elias rire "Non."
-    elias "Les bons moments, ici, ça existe plus vraiment."
-
-    pause 0.5
 
     "Je m'assieds à côté de lui, dos au mur."
 
@@ -1154,18 +997,15 @@ label _5_0_1_OBSERVATION:
     pause 0.3
 
     elias inquiet "Sael votera contre."
-    elias "C'est sûr. Elle croit vraiment que ça ramènera la guerre."
+    elias triste "C'est sûr. Elle croit vraiment que ça ramènera la guerre."
 
-    noam "Elle me l'a dit ce matin."
-    noam hesitation "Mara aussi. Et Iris."
+    noam triste "Elle me l'a dit ce matin. Mara aussi d'ailleurs apparemment."
 
     elias "… Ah."
 
     elias fatigue "Alors c'est foutu. C'est chaud."
 
-    noam "Peut-être pas…"
-    think "Le mensonge manque de conviction. Elias a la gentillesse de ne pas le relever."
-
+    noam "Ouais, on ne peut plus rien changer…"
     pause 1.0
 
     call show_custom_title("Après plusieurs heures") from _call_show_custom_title
@@ -1180,26 +1020,18 @@ label _5_0_1_OBSERVATION:
 
     "La porte s'ouvre dans un déclic."
 
-    $ showP("elias", "fatigue", 0.75)
+    $ showGroup([("elias", "fatigue", 0.75)])
 
     elias fatigue "Ah. Libérés. C'était moins long que prévu."
 
     "Elias se relève en s'étirant."
 
-    elias "Je vais voir si j'ai cramé un truc important. Enfin, plus important que la porte."
+    elias "Je vais voir si j'ai cramé un truc important. Enfin, je veux dire plus important que la porte."
 
     think "Quelques touches collent. L'écran latéral est mort."
 
-    elias neutre "Rien de trop grave. Juste une caméra de relevé."
-    elias fatigue "C'est de la merde, mais ça se répare. Moi aussi, en général."
-
-    noam reflexion "Kami va faire une remarque. La seule question, c'est combien."
-
-    elias rire "Probablement."
-    elias "Elle fait des remarques sur tout. Même quand personne lui parle."
-
-    hide noam
-    hide elias
+    elias neutre "Rien de trop grave. Enfin je crois."
+    elias reflechit "Mais je comprends pas pourquoi ça a fumé autant..."
 
     think "Nous nous séparons dans le couloir, avec un vote condamné et une caméra en moins. Bilan mitigé."
 
@@ -1208,57 +1040,37 @@ label _5_0_1_OBSERVATION:
 
 label _5_0_FIN_JOURNEE:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    $ current_period = "Soir"
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
     pause 0.8
 
-    think "L'après-midi se cache derrière un calme de façade : quelques échanges, un repas sans goût, des conversations sans fin."
-
-    think "Tomas me salue sans parler. Nyra calcule sans m'inclure. Je leur rends la pareille."
-
-    pause 0.6
-
-    think "La journée finit comme elle a commencé : lourde, lente, sans catastrophe et sans ouverture."
-
-    think "Kami ne fait aucune annonce. Son silence ressemble à une attente que nous décevons encore."
-
-    pause 0.5
-
-    "Je rentre dans ma chambre."
+    think "Puis l'après-midi passe. Elle se termine comme elle a commencé : lourde, lente, sans discussion."
+    "Puis je retourne dans ma chambre."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    pause 0.6
-
     think "Je m'assieds au bord du lit, pas encore prêt à m'allonger."
-
-    pause 0.5
-
-    think "Tout le monde a raison, d'une certaine façon. Et demain, le vote sera quand même contre."
-
-    pause 0.4
+    think "Tout le monde a raison, d'une certaine façon. Et demain, le vote échouera."
 
     $ blink()
     "Je m'allonge."
 
     scene bg_cg012 at adaptive_fullscreen with dissolve
-
-    think "Lumière bleue. Plafond muet. Au moins deux choses restent fiables."
-
     $ blink()
 
-    think "Une nuit. Un matin. Puis le vote."
+    think "Plus qu'une nuit. Un matin. Puis le vote."
 
-    think "Que peut-on encore faire ? Peut-être que « faire » n'est plus le bon mot."
-    think "Peut-être qu'il faut seulement rester là, sans solution, pendant que quelque chose se casse."
+    think "Que peut-on encore faire ? Peut-être que « faire » n'est même plus le bon mot."
+    think "Peut-être qu'il faut seulement rester là, sans solution."
 
     pause 0.5
 
     $ blink()
 
     "Une porte s'ouvre dans le couloir. Des pas discrets passent devant ma chambre."
-    think "Quelqu'un ne dort pas. Ou fait semblant."
+    think "Quelqu'un ne dort pas."
 
     pause 0.6
 
@@ -1280,6 +1092,7 @@ label _5_0_NUIT_RETOUR:
 
     think "Le vote est probablement perdu. Pourtant, m'être levé, avoir frappé aux portes, être resté là…"
     think "Ça ne ressemble pas tout à fait à une défaite."
+    think "Je me suis battu quand même. Personne ne pourra me le reprocher."
 
     pause 0.4
 
@@ -1288,8 +1101,8 @@ label _5_0_NUIT_RETOUR:
     $ blink()
     pause 1.5
 
-    think "Demain sera difficile. J'y serai quand même."
-    "Le sommeil arrive sans fracas."
+    think "Demain sera difficile. Mais j'y serai quand même."
+    "Puis le sommeil arrive rapidement."
 
     $ current_day = 6
     pause 1.0
@@ -1381,3 +1194,6 @@ label _5_0_NUIT_RESTER:
     think "Mais ce soir, je n'ai plus la force de devenir utile."
 
     jump _5_0_NUIT_RETOUR
+
+# total : 8m
+# Total jour 0-5 : 1h41

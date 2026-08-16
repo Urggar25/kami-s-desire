@@ -374,3 +374,15 @@ translate portuguese strings:
     old "Non"
     new "Não"
 
+# TODO: Translation updated at 2026-08-16 12:24
+
+translate portuguese strings:
+
+    # game/screens.rpy:765
+    old "Accessibilité"
+    new ""
+
+    # game/screens.rpy:766
+    old "Animations de dialogue"
+    new ""
+

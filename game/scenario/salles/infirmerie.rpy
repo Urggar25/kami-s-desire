@@ -37,15 +37,6 @@ screen pnc_infirmerie():
     use room_scene_background("infirmerie")
     use room_scene_interactions("infirmerie")
 
-    if social_free_time_active() and elen_link == 3:
-        imagebutton:
-            idle Transform(character_image("elen", "content"), zoom=1.00)
-            hover Transform(character_image("elen", "inquiet"), zoom=1.00)
-            focus_mask True
-            xalign 0.50
-            yalign 1.00
-            action [SetVariable("last_room_label", "INFIRMERIE_TP"), Jump("ELEN_LINK_INTERACT")]
-
 
 label infirmerie1_porte_couloir_infirmerie:
     $ corridor_current = "infirmerie"
@@ -215,6 +206,7 @@ label decouverte_infirmerie:
     "Elle pointe du doigt l'un des casiers."
     "Une étiquette se trouve à côté de la poignée."
     "Sael"
+    $ unlock_character_name("sael")
     
     
     sael taquin "Et là il y a le tiens."

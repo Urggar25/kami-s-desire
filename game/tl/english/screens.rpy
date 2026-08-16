@@ -374,3 +374,15 @@ translate english strings:
     old "Non"
     new "No"
 
+# TODO: Translation updated at 2026-08-15 11:35
+
+translate english strings:
+
+    # game/screens.rpy:765
+    old "Accessibilité"
+    new ""
+
+    # game/screens.rpy:766
+    old "Animations de dialogue"
+    new ""
+

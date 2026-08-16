@@ -126,7 +126,7 @@ label _4_0_REVEIL_CHAMBRE:
 
     pause 1.5  # Légèrement plus long pour accentuer la lourdeur
 
-    call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent")
+    call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_2
 
     $ blink()
     "Je reviens à moi sous la lumière bleue des veilleuses."

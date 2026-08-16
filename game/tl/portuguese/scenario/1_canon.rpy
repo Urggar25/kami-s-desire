@@ -4414,3 +4414,11 @@ translate portuguese strings:
     old "Laisser le brouilleur tranquille"
     new "Não mexer no bloqueador"
 
+# TODO: Translation updated at 2026-08-16 12:24
+
+# game/scenario/1_canon.rpy:785
+translate portuguese 6bc0225b:
+
+    # kami "Oh."
+    kami ""
+

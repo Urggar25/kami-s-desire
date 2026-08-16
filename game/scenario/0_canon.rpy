@@ -338,6 +338,7 @@ label _0_LABEL2_RESP_DISTRICT:
     think "Du sang-froid ou une façade parfaite. Je ne sais pas encore ce qui m'inquiète le plus."
 
     resp_d "Lysa."
+    $ unlock_character_name("lysa")
     resp_d "Vous aussi, merci d’être restée calme."
 
     lysa blase "Calme ? T'as vu la façon dont on m'a sortie de mon bureau ?"

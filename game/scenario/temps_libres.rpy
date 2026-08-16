@@ -1,0 +1,1503 @@
+label lysa_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "En passant devant la salle de repos, j'aperçois Lysa seule. Elle ne me remarque pas, alors je poursuis discrètement jusqu'à la cafétéria."
+    think "Elle regrettait tellement son café lors de notre rencontre... Autant réparer cette tragédie."
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "neutre", 0.30),
+        ("goumi", "vide", 0.70),
+    ])
+    noam neutre "Goumi, prépare-moi deux cafés. Du café ordinaire, sans supplément. Pas d'expérience bizarre avec. Je pense qu'elle le préfère comme ça."
+    goumi vide "Votre méfiance est injustifiée. Mes préparations expérimentales respectent toutes un protocole rigoureux."
+    noam inquiet "C'est précisément le mot « expérimental » qui m'inquiète. Deux cafés simples suffiront."
+    goumi vide "Demande acceptée. Deux boissons chaudes, amères et terriblement simples."
+    noam sourire "Parfait. Tu vois, quand tu veux, tu sais vendre tes produits."
+    "Je récupère les deux gobelets et retourne dans la salle de repos."
+    $ hideGroup()
+    scene bg_repos at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "sourire", 0.22),
+        ("lysa", "blase", 0.78),
+    ])
+    noam sourire "J'espère que je n'interromps pas une activité passionnante, parce que je t'ai apporté quelque chose."
+    lysa surpris "Un café ? Attends... Tu es vraiment venu jusqu'ici uniquement pour m'en donner un ?"
+    noam taquin "Ne t'emballe pas. J'en ai pris deux et je n'ai que deux mains, il fallait bien me débarrasser du second."
+    lysa blase "Évidemment. Pendant une seconde, j'ai failli croire que tu avais eu une attention gentille."
+    noam sourire "Lors de notre rencontre, tu râlais parce qu'on t'avait enlevée avant que tu puisses finir ton café. Je m'en suis souvenu."
+    lysa surpris "Parmi tout ce que j'ai dit ce jour-là, c'est vraiment cette plainte ridicule que tu as retenue ?"
+    noam reflexion "T'étais toute secouée, enfermée avec des inconnus, et pourtant ce café semblait rester une affaire capitale."
+    lysa taquin "Parce que c'en était une. On ne devrait jamais commencer une catastrophe avant que les gens aient terminé leur boisson."
+    noam sourire "Considère donc celui-ci comme une réparation officielle, avec seulement quelques jours de retard."
+    lysa sourire "Le service laisse à désirer, mais je reconnais l'effort. Merci, Noam."
+    noam taquin "Tu viens vraiment de me remercier ? Je devrais peut-être demander à Kami de noter la date."
+    lysa blase "Continue et je reprends mon remerciement. Je peux même te piquer ton café si tu veux."
+    noam sourire "Non, eh ! C'est le mien !"
+    lysa content "Assieds-toi plutôt. On va essayer de les finir avant la prochaine catastrophe."
+    noam sourire "Pour une fois, je pense que ça devrait le faire."
+    lysa sourire "Ne sois pas trop optimiste. Mais oui... pour une fois, ça devrait aller."
+    $ complete_free_time_scene("lysa_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label lysa_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_observation at adaptive_fullscreen with fade
+    "Dans la salle d'observation, Lysa garde le visage si près de la baie vitrée qu'elle semble vouloir passer au travers."
+    $ showGroup([
+        ("noam", "taquin", 0.22),
+        ("lysa", "reflexion", 0.78),
+    ])
+    noam taquin "Si ton objectif est de fusionner avec la vitre, je préfère te prévenir : ça risque de prendre un moment."
+    lysa blase "Je me demandais justement combien de secondes tu mettrais avant de faire une remarque inutile."
+    noam sourire "Mais sinon, qu'est-ce que tu essaies de voir en te collant comme ça ?"
+    lysa reflexion "La tour d'Archive. Elle est immense, alors je me dis qu'avec le bon angle, je pourrais peut-être la voir."
+    noam surpris "Tu essaies de repérer un bâtiment précis depuis une station en orbite ? Tu es devenue folle ?"
+    lysa colere "Je sais que les chances sont faibles. Si tu comptes seulement te moquer, tu sais où est la sortie."
+    noam neutre "Mais nan, je me moque pas. Pourquoi est-ce si important de trouver la tour ?"
+    lysa reflexion "Archive est enclavée dans Harmonie. Si je repère la tour, je saurai exactement quelle partie de la planète regarder."
+    noam reflexion "Et si elle est vraiment impossible à distinguer au milieu de toutes ces lumières ?"
+    lysa neutre "Alors je regarderai simplement Harmonie. Ce sera déjà un peu comme regarder l'endroit d'où nous venons."
+    noam neutre "Vu d'ici, tout paraît étrangement calme. On ne distingue même plus les frontières entre les territoires."
+    lysa triste "C'est ce qui me dérange. On voit les villes briller, mais pas ce que les gens subissent."
+    noam raison "Pour ça, y'a la télévision de la cafétéria, ça permet au moins d'avoir une sorte de lien avec l'extérieur."
+    lysa reflexion "Tu arrives parfois à dire quelque chose de pertinent. C'est rare, mais suffisamment troublant pour être signalé."
+    noam taquin "Je vais prendre ça pour un compliment."
+    lysa sourire "Prends-le comme tu veux. Maintenant, aide-moi à chercher au lieu de me déranger."
+    noam sourire "D'accord. Montre-moi au moins la zone, que je puisse prétendre savoir ce que je regarde."
+    lysa reflexion "Je crois que c'est par là-bas, près de cette zone de lumières. La tour devrait se trouver quelque part au centre."
+    noam taquin "Attends, par là ? Mais y'a rien ?!."
+    lysa blase "Mais non, bêta ! Par là !"
+    "Elle attrape ma main et réoriente mon doigt vers une autre zone."
+    noam sourire "Bon. Message reçu. Cherchons cette tour."
+    lysa sourire "On ne la trouvera probablement pas... Au moins, tu me tiens compagnie."
+    $ complete_free_time_scene("lysa_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label lysa_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene black
+    "Un choc sourd traverse le couloir de la cafétéria. Lorsque j'entre dans la salle du canon, l'air y est encore brûlant."
+    scene bg_canon at adaptive_fullscreen with fade
+
+    think "Qu'est-ce qui s'est passé ici ?!"
+    "Je regarde autour de moi. Personne."
+
+    $ showGroup([
+        ("noam", "inquiet", 0.22),
+        ("lysa", "reflexion", 0.78),
+    ])
+    lysa reflexion "Je me doutais que le bruit venait d'ici. On sent encore la chaleur jusque dans le couloir."
+    noam inquiet "Le canon vient de tirer, je crois. Les consoles défilent encore, mais tout est verrouillé."
+    lysa triste "Raah ! Ça me saoule d'être si impuissante ! On peut rien faire contre ça !"
+    noam reflexion "Nos votes ont quand même des conséquences. On peut influencer une partie de ce qui arrive."
+    lysa blase "Influencer une partie... pendant que le canon tire quand elle le décide. Tu trouves vraiment ça encourageant ?"
+    noam neutre "Non. Mais ça prouve qu'on est pas complètement inutile."
+    lysa reflexion "Et si nous ne pouvions rien changer d'important ? Si tout ce cirque servait seulement à nous donner cette impression ?"
+    noam raison "C'est possible. J'en sais rien, on comprend à peine les règles."
+    lysa blase "Ta carapace se fissure. T'as plus l'air aussi sûr de toi qu'à notre arrivée."
+    noam taquin "J'essaie d'être honnête. Et puis, j'ai jamais été franchement optimiste non plus."
+    lysa triste "Alors honnêtement, Noam : tu crois vraiment que nous pouvons changer quelque chose ?"
+    noam determine "Je crois que ça sera très difficile. Mais je crois que c'est pas impossible."
+    lysa blase "C'est presque un discours héroïque. Encore quelques phrases et Julian va surgir pour réclamer des droits d'auteur."
+    noam sourire "Oh, par pitié, pas lui ! Sinon, tout espoir sera anéanti !"
+    lysa triste "Je suis pas certaine qu'il m'en reste encore beaucoup, de l'espoir. Chaque tir de ce canon en emporte un peu plus."
+    noam neutre "Alors garde seulement ce qu'il en reste. Si ça ne suffit plus, je partagerai le mien avec toi."
+    lysa surpris "T'essayes de faire ton charmeur ou quoi ?!"
+    lysa taquin "Sur ce point-là, Julian te surpasse largement !"
+    noam hesitation "Ah, t'es sérieuse ? Je vais VRAIMENT mal le prendre, hein."
+    noam sourire "Tu rigoles, mais tu verras que tu peux compter sur moi."
+    lysa sourire "Et si ce jour arrive, je ferai semblant de ne pas me souvenir que tu avais raison."
+    noam taquin "Je n'en attendais pas moins de toi."
+    lysa neutre "Allons-nous-en. Cette pièce commence à refroidir, mais je n'ai aucune envie de rester ici pour le prochain tir."
+    $ complete_free_time_scene("lysa_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# TEMPS LIBRES JULIAN :
+
+label julian_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Julian attend devant le baby-foot, une main posée sur les poignées."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("julian", "sourire", 0.78),
+    ])
+    julian sourire "Enfin un adversaire convenable. J'allais finir par croire que cette merveille avait été installée uniquement pour décorer la pièce."
+    noam reflexion "Tu m'attendais vraiment devant un baby-foot ? Tu en as marre de jouer tout seul ?"
+    julian taquin "Je laissais simplement au destin une chance de m'offrir un peu de résistance. Il a fini par t'envoyer."
+    noam neutre "T'as vraiment cru que je n'ai que ça à faire ?"
+    julian sourire "Oh mince ! Je serai obligé de raconter aux autres que tu as fui avant même le début de la partie."
+    noam blase "Pff ! Donne-moi les poignées."
+    "Julian engage la balle et marque presque immédiatement."
+    julian content "Premier but. Ne le prends pas mal, certaines personnes sont simplement nées avec davantage de talent."
+    noam reflexion "Tu attaques toujours par la droite."
+    julian surpris "Pardon ?"
+    noam neutre "Ton épaule bouge juste avant. Ça rend ton tir assez facile à prévoir."
+    julian taquin "C'est adorable. T'as beau tenter d'analyser, tu ne l'as pas arrêté quand même."
+    "Julian remet la balle en jeu. Quelques secondes plus tard, je bloque son tir et marque."
+    noam sourire "Alors, un commentaire ?"
+    julian blase "Je voulais voir si tu serais assez naïf pour croire que j'allais changer de stratégie."
+    noam taquin "Donc tu m'as laissé marquer volontairement ?"
+    julian sourire "Disons que j'ai choisi de préserver le suspense. Une victoire trop facile manque terriblement d'élégance."
+    noam reflexion "Ah ouais ? Et si on réglait ça une bonne fois pour toutes ?! On se fait une balle en or ?"
+    julian neutre "Tu es bien pressé de transformer une partie amicale en duel à mort."
+    noam sourire "C'est toi qui m'as menacé de raconter que j'avais fui."
+    julian taquin "Et tu n'as pas fui. Ma méthode de motivation était donc i-rré-pro-cha-ble."
+    noam neutre "Alors tu la lances ta balle ?"
+    "Il fait tourner la balle entre ses doigts."
+    noam taquin "Qu'est-ce qu'il y a ? Tu as peur de perdre ?"
+    julian blase "J'ai peur que ta déception ternisse définitivement notre relation."
+    noam reflexion "Il n'y a personne pour te voir gagner, de toute façon."
+    julian sourire "Tu es là, Noam. Ça fait déjà un spectateur particulièrement difficile à impressionner."
+    julian taquin "Et dois-je te rappeler que nous ne sommes jamais seuls ?"
+    "Il lève les yeux et fait un grand sourire aux caméras."
+    noam neutre "Je pensais que tu voulais la faire cette partie ?"
+    "Je relâche mes poignées puis regarde les caméras."
+    "À ce moment-là, il frappe la balle qui vient se figer tout droit dans mes buts."
+    noam colere "Hey ! J'ai cru qu'on arrêtait !"
+    julian taquin "Mais je n'ai jamais dit ça. Tu t'es déconcentré tout seul..."
+    noam taquin "Mais quelle ordure tu es !"
+    julian rire "À votre service ! Mais tu as quand même perdu !"
+    $ complete_free_time_scene("julian_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label julian_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_infirmerie at adaptive_fullscreen with fade
+    "Julian est penché sur le set de chirurgie. Il tient une aiguille entre ses doigts et sa veste est posée sur la table d'examen."
+    $ showGroup([
+        ("noam", "inquiet", 0.22),
+        ("julian", "reflexion", 0.78),
+    ])
+    noam inquiet "Qu'est-ce que tu fabriques avec ça ? Dis-moi que tu ne comptes opérer personne."
+    julian sourire "Rassure-toi, docteur. Mon patient est silencieux, élégant et ses chances de survie sont excellentes."
+    noam reflexion "Ta veste est déchirée ?"
+    julian decu "Ouais, elle s'est coincée dans un coin. J'aimerais éviter que toute la station soit au courant."
+    noam taquin "Tu répares vraiment ta manche avec du matériel de chirurgie ?"
+    julian neutre "L'aiguille est fine, le fil est solide et personne ne se sert de ce set. C'est presque du recyclage."
+    "Julian reprend sa couture avec des gestes étonnamment précis."
+    noam surpris "T'as l'air de savoir y faire ?"
+    julian taquin "Je sais, c'est bouleversant. En plus d'être fascinant, je possède des compétences utiles."
+    noam sourire "Je pensais surtout que t'étais plus du genre à faire réparer tes vêtements par quelqu'un d'autre."
+    julian reflexion "Comme quoi même toi, tu peux te tromper."
+    noam neutre "Même quand il s'agit d'un accroc de deux centimètres ?"
+    julian sourire "Surtout dans ce cas. Les petites imperfections attirent toujours les regards les plus moqueurs."
+    noam reflexion "Donc tu répares ton costume pour que personne ne remarque ce qu'il y a derrière."
+    julian surpris "Tu transformes vraiment une couture en analyse psychologique ? Je ne sais pas si ça me fait pitié ou non ?"
+    julian neutre "Même sur ça, tu réfléchis longtemps et tu essayes d'analyser tout. Surtout ce qui n'a pas de sens."
+    julian taquin "Tu as beau être adorable, ton masque finira aussi par tomber."
+    "Julian coupe le fil, enfile sa veste et lisse soigneusement sa manche."
+    julian neutre "Alors ? Est-ce que la réparation se voit ?"
+    noam reflexion "Non. Franchement, c'est bien fait."
+    julian joie "Je savais que tu finirais par reconnaître mon talent."
+    noam taquin "Quoique, en plissant les yeux, je retrouve facilement où tu as recousu !"
+    julian taquin "C'est ça, rattrape-toi."
+    $ complete_free_time_scene("julian_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label julian_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_observation at adaptive_fullscreen with fade
+    "Julian est installé près de la baie vitrée, un carnet posé sur ses genoux. Il le referme légèrement dès qu'il m'aperçoit."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("julian", "neutre", 0.78),
+    ])
+    noam taquin "Tu caches quoi ? Une nouvelle stratégie pour gagner au baby-foot ?"
+    julian sourire "Bien plus dangereux : mon regard impitoyable sur la condition humaine."
+    "Je plisse les yeux et regarde plus attentivement."
+    noam reflexion "Attends, tu dessines des caricatures ? De nous ?!"
+    julian taquin "Je réalise des portraits satiriques. Le terme « caricature » manque terriblement de prestige."
+    julian sourire "Mais on ne t'a jamais dit que c'est impoli de regarder dans les affaires des autres ?"
+    "Il ouvre son carnet. Je reconnais Iris en train de râler contre une chaise, puis Elias enseveli sous une montagne de dossiers."
+    noam taquin "Si tu ne voulais pas que je regarde, tu aurais fermé complètement ton carnet."
+    noam sourire "C'est méchant... mais ils sont plutôt réussis."
+    julian joie "Plutôt ? J'ai capturé leur essence en quelques traits. Certains artistes attendent une vie entière avant d'atteindre ce niveau."
+    noam reflexion "Et celui-là, c'est moi ?"
+    noam surpris "Mais t'as presque rien dessiné."
+    julian reflexion "Parce que tu passes ton temps à observer les autres avec cet air raisonnable. Dès qu'on te regarde, tu ne montres plus rien."
+    noam taquin "Ou alors tu es moins doué que tu le prétends."
+    julian sourire "Une provocation aussi grossière ne mérite même pas que j'y réponde."
+    noam neutre "Dessine-toi, alors. Ça devrait être facile puisque tu te connais mieux que moi."
+    julian surpris "Un autoportrait ? Ce serait d'une vanité absolument insupportable."
+    noam taquin "C'est pour ça que j'ai pensé à toi."
+    julian rire "Très bien. Prépare-toi à assister à la naissance d'un chef-d'œuvre."
+    "Julian commence à dessiner. Il efface son sourire, recommence ses yeux, puis reste immobile devant la page."
+    noam reflexion "Tu bloques ?"
+    julian hesitation "Pas du tout. J'hésite simplement entre plusieurs interprétations brillantes de ma personne."
+    noam neutre "Tu savais exactement quoi exagérer chez les autres."
+    julian inquietude "Les autres me donnent une version assez stable. La seule raison pour laquelle je n'arrive pas à te dessiner, c'est que tu es... Creux."
+    noam reflexion "Creux ?! Et toi, tu changes selon la personne qui te regarde."
+    julian decu "C'est pratique, venant de quelqu'un qui ne laisse jamais rien dépasser. Au moins, moi, je propose quelque chose au public."
+    julian taquin "Je ne suis pas OUBLIABLE !"
+    noam desaccord "Je ne savais pas qu'il fallait choisir un personnage."
+    julian triste "Tout le monde en choisit un. Certains ont simplement le luxe de faire croire que ce n'en est pas un."
+    noam reflexion "Alors ton portrait de moi n'est peut-être pas vide. Il montre juste ce que tu n'arrives pas à voir."
+    julian taquin "Et le mien montre peut-être trop de choses à la fois. Au final, on se ressemble peut-être un peu."
+    noam sourire "Non merci, vraiment."
+    noam reflexion "Tu vas garder ton autoportrait ?"
+    "Julian arrache la feuille, la plie soigneusement et la glisse dans sa poche."
+    julian neutre "Évidemment. Un artiste ne jette jamais une œuvre inachevée. Même si elle ne lui convient pas."
+    noam taquin "Tu viens surtout de la cacher."
+    julian sourire "Et toi, tu regardes encore mon portrait de toi. Finalement, j'ai peut-être réussi à te captiver."
+    noam sourire "Ne prends pas trop confiance. Il n'est toujours pas terminé."
+    julian taquin "Peut-être que si finalement. Ce visage vide te sied si bien."
+    $ complete_free_time_scene("julian_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres ELEN :
+
+label elen_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+    "Elen se tient devant Goumi et lui donne des instructions en agitant les mains. Sur le comptoir, une pâte trop liquide tourne dans un récipient."
+    $ showGroup([
+        ("noam", "reflexion", 0.15),
+        ("elen", "inquiet", 0.50),
+        ("goumi", "vide", 0.85),
+    ])
+    elen inquiet "Non, pas tout d'un coup ! Il faut verser doucement, sinon ça va encore faire des grumeaux."
+    goumi vide "Votre précédente instruction était : « Mets la farine maintenant ». Elle ne contenait aucune limitation de vitesse."
+    noam taquin "Je vois que la collaboration se passe bien."
+    elen surpris "Noam ! Tu tombes bien, viens m'aider à lui expliquer. J'ai troooop du mal !"
+    noam reflexion "Lui expliquer quoi ?"
+    elen joie "Une recette de chez moi. Ma mère la préparait quand on avait quelque chose à fêter."
+    goumi vide "Pour le moment, cette préparation ne correspond à aucune recette enregistrée."
+    elen desaccord "Parce que tu suis pas ce que je te dis !"
+    goumi vide "Vous avez demandé une quantité de sucre équivalente à « pas mal, mais pas trop »."
+    noam sourire "Je vais traduire. Goumi, verse doucement. Elen te dira quand t'arrêter."
+    "Goumi recommence à verser."
+    elen inquiet "Encore... Encore un tout petit peu... Stop !"
+    noam inquiet "Tu as dit stop après qu'il a vidé la moitié du paquet."
+    elen taquin "Je voulais pas le stresser."
+    goumi vide "Je ne ressens aucun stress. En revanche, le taux de sucre est désormais excessif."
+    goumi "Ce n'est pas sain pour votre santé."
+    noam reflexion "Il fallait peut-être le laisser se débrouiller, non ?"
+    elen desaccord "Mais ma mère faisait tout au feeling. Elle regardait la pâte et elle savait."
+    noam neutre "Elle avait probablement fait la recette plus d'une fois."
+    elen content "Oui, bon... Moi, je me souviens surtout de la manger. C'était trooop bon !"
+    "Après quelques nouvelles instructions approximatives, Goumi dépose deux portions devant nous."
+    elen joie "Tu vois ? Ça ressemble presque à ce qu'elle faisait !"
+    elen taquin "Hep hep hep ! C'est quoi cette tête ?! Goûte avant de critiquer."
+    "J'en prends une cuillère. Elen m'observe avec un sourire beaucoup trop confiant."
+    noam inquiet "C'est très sucré."
+    elen content "Chez nous on dit que c'est généreux !"
+    noam reflexion "Et complètement liquide."
+    elen joie "Donc que c'est fondant !"
+    noam taquin "T'es capable d'admettre qu'un truc est juste raté ?"
+    elen rire "D'accord, c'est raté ! Mais préparer ça avec toi, c'était plutôt amusant."
+    noam sourire "Ta famille aurait accepté d'en manger ?"
+    elen reflexion "Ma mère aurait souri et au moins goûté une cuillère..."
+    noam taquin "Et le reste ? Par pitié, dis-moi qu'elle est raisonnable ?"
+    elen taquin "Raah ! Oui ! Elle n'aurait pas tout mangé !"
+    $ complete_free_time_scene("elen_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label elen_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Lorsque j'entre dans la salle de repos, Elen traîne un fauteuil d'un bout à l'autre de la pièce."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("elen", "determine", 0.78),
+    ])
+    noam reflexion "Qu'est-ce que tu fais ? Tu réaménages la salle ?"
+    elen determine "J'essaie de rendre l'endroit plus agréable. Mais rien n'est vraiment à la bonne place."
+    noam neutre "Ça ressemblait pourtant déjà beaucoup à une salle avec des fauteuils."
+    elen desaccord "Regarde. Kael préfère être un peu à l'écart, alors ce siège doit rester près du mur."
+    noam reflexion "D'accord..."
+    elen content "Lysa aime faire semblant de ne pas écouter, donc il lui faut une place assez proche pour tout entendre."
+    elen joie "Et Elias doit rester loin de la petite table."
+    noam surpris "Pourquoi ? Je serais curieux de savoir ce qu'ils diraient s'ils t'écoutaient."
+    elen taquin "Parce qu'il renverse toujours toutes ses affaires. Il croit que personne ne le voit !"
+    noam sourire "Tu as l'air de passer beaucoup de temps à observer les autres."
+    elen reflexion "C'est juste des petites habitudes. Quand on vit tous ensemble, on finit par les remarquer."
+    noam neutre "Et ce fauteuil au milieu ? C'est à qui ?"
+    elen joie "C'est le tien."
+    noam surpris "Pourquoi je suis au centre de la pièce ?"
+    elen taquin "Parce que t'essaies d'être ami avec tout le monde. Comme ça, tu pourras te tourner vers chacun sans te déplacer."
+    elen rire "C'est ta façon à toi d'être présent. Tu es là, même si parfois tu ne parles pas beaucoup."
+    noam taquin "Et Julian ?"
+    elen reflexion "Face à l'entrée. Sinon il va se retourner chaque fois que quelqu'un arrive pour vérifier si on l'a remarqué."
+    noam sourire "Tu le connais vraiment bien."
+    elen content "Il est pas très difficile à comprendre."
+    noam reflexion "Il reste un fauteuil par là."
+    elen neutre "C'est une place de secours. Au cas où quelqu'un voudrait être seul."
+    noam desaccord "S'il vient ici, c'est probablement qu'il veut pas vraiment l'être."
+    "Je pousse le dernier fauteuil vers les autres."
+    elen inquiet "Attends, maintenant ça va être trop serré."
+    noam neutre "À peine. Et comme ça personne ne finira isolé dans un coin."
+    elen reflexion "C'était pas forcément une mauvaise place..."
+    noam taquin "Tu viens de passer dix minutes à organiser la pièce pour que tout le monde s'y sente bien. Assume jusqu'au bout."
+    noam sourire "C'est moi qui ai le fauteuil du milieu, alors je veux tout le monde à côté !"
+    noam taquin "Sauf Julian, s'il pouvait être un peu plus loin ça m'irait aussi !"
+    elen rire "Ça y est, monsieur se prend pour le chef de la salle de repos."
+    noam taquin "C'est toi qui m'as placé là."
+    elen joie "D'accord, on garde comme ça. Mais si quelqu'un se plaint, je dirai que c'était ton idée."
+    $ complete_free_time_scene("elen_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label elen_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_observation at adaptive_fullscreen with fade
+    "Elen regarde la planète derrière la baie vitrée. Son visage paraît épuisé, mais elle sourit dès qu'elle remarque ma présence."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("elen", "content", 0.78),
+    ])
+    elen content "Noam ! Tu devrais venir voir. Les lumières sont vraiment belles aujourd'hui."
+    noam reflexion "Elles sont différentes des autres jours ?"
+    elen surpris "Je sais pas... Peut-être un peu plus brillantes."
+    noam neutre "T'as surtout l'air fatiguée."
+    elen joie "Pas du tout ! J'étais juste concentrée."
+    noam reflexion "Tu souriais pas avant de me voir."
+    elen inquiet "On n'est pas obligé de sourire absolument tout le temps."
+    noam taquin "C'est plutôt à toi qu'il faudrait dire ça."
+    elen desaccord "Je souris quand j'en ai envie. Et là, j'en ai envie."
+    "Je m'installe près de la vitre. Elen garde les yeux fixés sur les lumières."
+    noam reflexion "Il s'est passé quelque chose de bien aujourd'hui ?"
+    elen joie "Oui ! Elias a enfin réparé un robot dans la salle de maintenance et Lysa a presque ri à une blague de Julian."
+    elen content "Kael a mieux dormi. Et Iris a mangé avec les autres ce matin."
+    noam neutre "C'est bien, mais... Je parlais de quelque chose de bien pour toi."
+    elen surpris "Pour moi ?"
+    elen reflexion "Je viens de t'en donner plein."
+    noam desaccord "Elles concernent toutes quelqu'un d'autre."
+    elen inquiet "Si les autres vont bien, ça me fait plaisir. Ça compte quand même."
+    noam raison "Oui, ça compte. Mais t'es pas obligée de trouver une bonne nouvelle maintenant."
+    elen triste "Alors pourquoi tu me poses la question ?"
+    noam hesitation "Je sais pas. Mauvaise idée."
+    elen reflexion "Un peu, oui."
+    noam neutre "On peut juste rester là."
+    elen surpris "Sans parler ? Je veux me concentrer sur la vue !"
+    noam sourire "Ne pas parler ? Mais c'est ma spécialité !"
+    "Le silence s'installe. Elen regarde de nouveau la planète."
+    elen triste "Je la trouve pas très belle aujourd'hui."
+    noam neutre "T'as le droit."
+    elen inquiet "C'est tout ? Tu vas pas essayer de me contredire ?"
+    noam reflexion "Tu veux que je le fasse ?"
+    elen neutre "Non... Finalement c'est bien comme ça."
+    "Nous restons quelques instants sans parler."
+    elen taquin "Ça fait combien de temps ?"
+    noam reflexion "Même pas deux minutes."
+    elen decu "C'est déjà beaucoup ! Allez hop on arrête !"
+    $ complete_free_time_scene("elen_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Iris :
+
+label iris_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Iris se tient devant la borne d'arcade, les bras croisés. L'écran affiche le début d'une partie, mais elle ne touche pas aux commandes."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("iris", "fatigue", 0.78),
+    ])
+    noam reflexion "Tu comptes jouer ou attendre que la machine le fasse à ta place ?"
+    iris colere "Avec des commandes aussi mal placées, autant ne même pas y toucher."
+    noam taquin "Tu cherches déjà une excuse avant même de commencer ?"
+    iris neutre "Je constate juste que ce jeu est mal conçu. Vas-y, montre-moi comment tu fais."
+    "Je prends sa place devant la borne et lance la partie."
+    iris taquin "T'as raté le bonus."
+    noam reflexion "La partie vient juste de commencer."
+    iris neutre "Et t'as déjà raté le bonus. C'est impressionnant."
+    noam taquin "Tu veux jouer à ma place ?"
+    "J'avance jusqu'à un passage plus rapide et perds presque aussitôt une vie."
+    iris colere "Mais arrête de foncer ! Le mur clignote avant de bouger. Faut que tu y ailles au bon moment."
+    iris reflexion "Tu te crispes à chaque fois que l'écran accélère."
+    noam neutre "Tu surveilles le jeu ou mes mains ?"
+    iris taquin "Les deux sont difficiles à regarder."
+    "Je reprends la partie en suivant ses indications."
+    iris neutre "Attends... Maintenant, passe à gauche."
+    noam inquiet "Y'a un ennemi à gauche."
+    iris colere "Fais-moi confiance pour une fois !"
+    "Je passe à gauche au dernier moment et découvre un raccourci."
+    noam sourire "Pas mal. Comment tu as..."
+    iris joie "Évidemment. Sans moi, tu serais encore en train de courir dans la mauvaise direction."
+    noam taquin "C'est moi qui tiens les commandes."
+    iris neutre "Et moi qui t'empêche de faire n'importe quoi. Chacun son rôle."
+    "Quelques instants plus tard, un signal sonore annonce un nouveau meilleur score."
+    noam sourire "Alors, qui a gagné ?"
+    iris taquin "Moi. Toi, t'as seulement exécuté mes ordres."
+    noam reflexion "Dans ce cas, à toi de battre notre score."
+    iris hesitation "J'ai déjà dit que les commandes étaient mauvaises."
+    noam neutre "Je vais rester à côté. Je pourrai critiquer chacun de tes mouvements."
+    iris colere "Certainement pas. Tu serais insupportable."
+    noam sourire "Et toi tu ne l'es pas ?"
+    "Je m'écarte de la borne. Iris soupire, puis pose les mains sur les commandes."
+    iris taquin "Regarde bien. Je te montrerai comment on joue sans paniquer."
+    noam taquin "Tes mains sont déjà crispées."
+    iris colere "Rooh tais-toi un peu et laisse-moi jouer."
+    $ complete_free_time_scene("iris_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label iris_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_infirmerie at adaptive_fullscreen with fade
+    "J'essaie de fixer un pansement autour de mon doigt lorsque Iris entre dans l'infirmerie."
+    $ showGroup([
+        ("noam", "inquiet", 0.22),
+        ("iris", "reflexion", 0.78),
+    ])
+    iris colere "C'est quoi, cette horreur ?"
+    noam inquiet "Une coupure. C'est rien."
+    iris neutre "Je parle du pansement. Même Elias ferait mieux avec du ruban adhésif."
+    noam desaccord "Eh oh ! Il tient très bien."
+    "Le pansement se décolle aussitôt."
+    iris fatigue "Assieds-toi avant de te vider de ton sang sur le sol."
+    noam taquin "C'est une coupure de deux millimètres."
+    iris colere "Et pourtant, t'arrives quand même à mal t'en occuper. Donne-moi ta main."
+    "Iris retire le pansement et nettoie soigneusement la coupure."
+    noam inquiet "Aïe ! Tu pourrais prévenir."
+    iris taquin "J'aurais pu, mais tu m'aurais encore expliqué que ça allait."
+    noam reflexion "Parce que ça va."
+    iris neutre "T'as les mains froides et une tête affreuse."
+    noam surpris "Merci."
+    iris fatigue "C'était pas un compliment. T'as dormi combien de temps ?"
+    noam hesitation "Assez."
+    iris colere "Donc pas assez."
+    noam reflexion "Tu déduis beaucoup de choses d'un doigt coupé."
+    iris neutre "Je déduis surtout que tu mens très mal quand t'es crevé."
+    "Elle termine le pansement, puis me tend un verre d'eau."
+    noam taquin "Le verre est aussi pour mon doigt ?"
+    iris colere "Bois et arrête d'être pénible."
+    noam sourire "Tu t'inquiètes vraiment beaucoup pour une petite coupure."
+    iris hesitation "Je veux juste éviter que tu salisses toute l'infirmerie."
+    noam taquin "Bien sûr."
+    "En prenant le verre, je remarque un bandage défait autour de sa main."
+    noam reflexion "Et ça, c'est quoi ?"
+    iris neutre "Rien."
+    noam desaccord "Ton pansement est encore pire que le mien."
+    iris colere "Pas du tout. Il s'est juste un peu desserré."
+    noam taquin "Donne-moi ta main. Je vais m'en occuper."
+    iris inquiet "Certainement pas."
+    noam sourire "Pourquoi ? T'as vu de quoi je suis capable."
+    iris fatigue "C'est précisément pour ça."
+    noam neutre "Alors refais-le toi-même. Mais correctement."
+    "Iris soupire, retire son bandage et en prend un nouveau."
+    iris taquin "T'es satisfait ?"
+    noam sourire "Presque. Tu dois aussi boire un verre d'eau."
+    iris colere "N'abuse pas."
+    noam taquin "Je veux juste éviter que tu salisses toute l'infirmerie."
+    iris rire "Très drôle. Profite bien, ce service déplorable était exceptionnel."
+    $ complete_free_time_scene("iris_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label iris_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+    "À peine Iris pose-t-elle son verre sur la table que celui-ci se met à trembler."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("iris", "colere", 0.78),
+    ])
+    iris colere "Non mais c'est pas possible d'avoir une seule table correcte dans cette station ?"
+    noam neutre "Elle bouge à peine."
+    iris desaccord "Mon verre a failli se renverser !"
+    "Iris appuie successivement sur chaque coin de la table."
+    noam taquin "Tu comptes manger ou tu vas vraiment faire un contrôle technique à la table ?"
+    iris reflexion "Le pied arrière est beaucoup trop court."
+    noam neutre "Alors on change de table."
+    iris colere "Et laisser celle-ci à quelqu'un d'autre ? Très bonne idée."
+    noam reflexion "On pourrait aussi prévenir la prochaine personne."
+    iris taquin "Bien sûr. On posera un panneau : attention, mobilier conçu par des incapables."
+    "Elle récupère plusieurs serviettes et en plie une sous le pied de la table."
+    noam sourire "Voilà. Problème réglé."
+    iris neutre "Pas du tout. Maintenant, elle penche de l'autre côté."
+    noam reflexion "Je vois aucune différence."
+    iris fatigue "Parce que tu poses ton verre n'importe comment. Regarde."
+    "Elle pousse légèrement son verre. La table bascule et une goutte tombe sur le plateau."
+    noam taquin "Une véritable catastrophe."
+    iris colere "Tu feras moins le malin quand ta boisson finira sur ton pantalon."
+    noam sourire "Tu t'inquiètes pour mon pantalon ?"
+    iris neutre "Je m'inquiète surtout pour les gens qui devront t'entendre te plaindre."
+    "Je soulève la table pendant qu'Iris ajoute une seconde serviette pliée."
+    noam inquiet "Dépêche-toi, elle est plus lourde qu'elle en a l'air."
+    iris taquin "Ça va, t'es un homme ou pas ?!"
+    noam reflexion "C'est bon ?"
+    iris neutre "Repose doucement."
+    "La table reste enfin parfaitement stable."
+    noam sourire "Je reconnais que c'est mieux."
+    iris joie "Évidemment. Il suffisait de s'en occuper correctement."
+    noam taquin "Tu viens de passer dix minutes sur un défaut que personne d'autre aurait remarqué."
+    iris reflexion "Les gens remarquent ce genre de choses. Ils disent juste rien parce qu'ils pensent que ça sert à rien."
+    "Elen entre dans la cafétéria avec un plateau chargé. Iris lui fait aussitôt signe de prendre notre table, la plus proche du buffet."
+    "Nous nous installons un peu plus loin. Dès qu'Iris pose son verre, la nouvelle table se met à trembler."
+    noam sourire "On avait une table parfaitement stable."
+    iris neutre "Elen avait les mains pleines. C'était plus simple comme ça."
+    noam taquin "Tu lui as surtout donné celle que tu venais de réparer."
+    iris colere "Elle bloquait le passage. Arrête d'inventer des raisons ridicules."
+    noam reflexion "Et maintenant ? On change de table ?"
+    iris determine "Certainement pas. Passe-moi des serviettes."
+    noam taquin "Je croyais qu'il suffisait d'ignorer le problème."
+    iris fatigue "Toi, je pourrais peut-être t'ignorer. La table, non."
+    $ complete_free_time_scene("iris_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Tomas :
+
+label tomas_link_1:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_archive at adaptive_fullscreen with fade
+    "Tomas observe une ancienne carte couverte de frontières. Aucun des six districts actuels n'y apparaît."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("tomas", "neutre", 0.78),
+    ])
+    noam reflexion "C'est vraiment notre monde ?"
+    tomas neutre "Avant Kami, oui. À l'époque, les districts étaient encore des nations indépendantes."
+    noam surpris "Il y avait beaucoup plus de frontières."
+    tomas raison "Et beaucoup plus de raisons de se battre. Les ressources, les territoires, l'influence... Les prétextes habituels."
+    noam reflexion "C'est ce qui a provoqué l'arrivée de Kami ?"
+    tomas inquiet "P-Pas directement. Enfin, on ne peut pas l'affirmer. Personne ne sait vraiment d'où elle vient."
+    noam neutre "Mais elle est apparue pendant les guerres."
+    tomas raison "À la fin. Les... Les conflits duraient depuis des décennies et plus personne ne pouvait les gagner."
+    tomas triste "Il y avait des pénuries partout. Les gouvernements tenaient à peine et les populations étaient épuisées."
+    tomas neutre "En tout cas, c'est comme ça qu'Orbite est né. La nation de Seley refusait l'escalade militaire. Partir lui semblait plus raisonnable que de continuer."
+    noam taquin "Abandonner la planète pour rester raisonnable, c'est une solution assez radicale."
+    tomas taquin "Elle a au moins eu le mérite de fonctionner. Plus ou moins."
+    noam reflexion "Et les autres ont continué jusqu'à l'arrivée de Kami en se faisant une guerre de plus en plus totale."
+    tomas reflexion "C'était plus efficace. Si on étudie l'évolution des systèmes logistiques à partir de..."
+    tomas panne "Non. Je recommence à te faire un cours."
+    noam sourire "Un peu. Mais continue, c'est intéréssant."
+    tomas surpris "Tu es sûr ?"
+    noam neutre "Essaie juste de pas remonter jusqu'à l'invention de la roue."
+    tomas taquin "Elle a pourtant joué un rôle essentiel dans le développement des transports."
+    noam desaccord "Tomas."
+    tomas rire "D'accord. En gros, tout était devenu dépendant des mêmes réseaux."
+    tomas neutre "Le savoir aussi commençait à être centralisé pour éviter qu'il disparaisse dans les bombardements."
+    tomas raison "C'était le début de la création d'Archive. Et certains réclamaient même un système mondial capable de remplacer les gouvernements."
+    noam inquiet "Ils demandaient quelque chose comme Kami ?"
+    tomas neutre "Ils demandaient surtout que quelqu'un mette fin au chaos. Je doute qu'ils imaginaient les Commandements."
+    tomas triste "Et puis en une journée, une seule. Tout ce qui était connecté lui a obéi."
+    noam inquiet "D'une certaine manière, elle a réussi à pacifier le monde et à empêcher les guerres. Mais quand même..."
+    $ complete_free_time_scene("tomas_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label tomas_link_2:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Tomas est assis devant une feuille divisée en plusieurs catégories : nourriture, musique, loisirs et souvenirs amusants."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("tomas", "inquiet", 0.78),
+    ])
+    noam reflexion "Hé ? Qu'est-ce que c'est que ça, Tomas ?"
+    tomas surpris "Non ! C'est juste... une liste."
+    noam neutre "Avec une rubrique intitulée « relances possibles »."
+    tomas inquiet "J-J'essaie de trouver des sujets... Simples pour discuter avec les autres."
+    noam taquin "Tu révises tes conversations avant de les avoir ?"
+    tomas desaccord "Je les prépare. C'est différent."
+    noam sourire "Pour être plus à l'aise ? Entraîne-toi sur moi si tu veux."
+    tomas reflexion "T'es sûr ?? D-D'accord... Quel est ton plat préféré ?"
+    noam neutre "Les lasagnes."
+    tomas joie "Intéressant. Tu parles de la version traditionnelle ou des variantes développées après les pénuries ?"
+    noam reflexion "Celles avec beaucoup de fromage."
+    tomas neutre "Ça ne répond pas vraiment à la question, puisque plusieurs variantes..."
+    tomas panne "Merde. Je le fais déjà."
+    tomas inquiet "Essayons la musique. Tu écoutes quoi ?"
+    noam neutre "Un peu de tout."
+    tomas desaccord "Ça ne veut rien dire. Même en limitant la réponse aux genres contemporains, il faudrait distinguer..."
+    noam reflexion "Pourquoi tu veux tellement préparer ça ?"
+    tomas neutre "Parce que j'aimerais participer sans transformer chaque discussion en conférence."
+    noam sourire "Alors parle-moi d'un truc qui t'intéresse vraiment."
+    tomas mefiant "Tu risques de regretter cette phrase."
+    noam taquin "Je prends le risque."
+    tomas reflexion "J'ai lu un dossier sur un procès qui a duré douze ans à cause d'une statue déplacée de quarante centimètres."
+    noam surpris "Douze ans pour quarante centimètres ?"
+    tomas joie "Le déplacement modifiait la frontière entre deux juridictions. Enfin, seulement selon un plan qui datait de..."
+    tomas inquiet "Je parle encore trop."
+    tomas joie "Mais pour comprendre, il faut revenir à la construction de la place."
+    noam taquin "Évidemment."
+    "Tomas poursuit son histoire. Il vérifie plusieurs fois ma réaction, mais finit par oublier de surveiller la durée de ses réponses."
+    noam reflexion "Tu vas garder ta liste ?"
+    tomas neutre "Je devrais peut-être l'optimiser."
+    $ complete_free_time_scene("tomas_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label tomas_link_3:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+    "Tomas reste planté devant Goumi tandis qu'une longue liste de boissons défile sur son écran."
+    $ showGroup([
+        ("noam", "neutre", 0.15),
+        ("tomas", "reflexion", 0.50),
+        ("goumi", "vide", 0.85),
+    ])
+    noam neutre "Tu commandes quelque chose ?"
+    tomas reflexion "J'essaie."
+    goumi vide "Deux cent quarante-sept boissons sont actuellement disponibles."
+    noam surpris "Tu comptes vraiment toutes les lire ?"
+    tomas raison "Je peux déjà éliminer celles qui sont trop sucrées, trop chaudes ou mauvaises pour la concentration."
+    noam taquin "Il t'en reste combien ?"
+    goumi vide "Cent quatre-vingt-neuf."
+    tomas inquiet "Il faudrait aussi tenir compte de ce qu'on va manger."
+    noam reflexion "On est venus boire un truc, pas organiser un banquet, hein !"
+    tomas desaccord "Une boisson peut modifier la perception du goût pendant plusieurs minutes."
+    noam neutre "Choisis celle qui te fait envie."
+    tomas reflexion "Justement, j'en sais rien. Si j'en prends une et qu'une autre était meilleure..."
+    noam taquin "Ta journée sera ruinée à jamais."
+    tomas neutre "C'est exagéré. Mais le choix restera objectivement moins bon."
+    noam blase "Goumi, donne-nous deux boissons au hasard."
+    goumi vide "Sélection aléatoire effectuée."
+    tomas surpris "Attends, on ne connaît même pas leur composition."
+    noam sourire "C'est le principe."
+    "Goumi dépose deux verres sur le comptoir. J'en tends un à Tomas."
+    tomas mefiant "La couleur n'est pas très rassurante."
+    noam taquin "Tu peux encore passer quarante minutes à l'observer."
+    "Tomas goûte prudemment, puis reprend une gorgée."
+    noam sourire "Alors ?"
+    tomas neutre "C'est légèrement amer, avec quelque chose d'acidulé."
+    noam reflexion "Et c'est bon ?"
+    tomas joie "Oui. Plutôt."
+    noam taquin "Tu reprendras la même la prochaine fois."
+    tomas reflexion "Ce serait prématuré. Je n'ai testé qu'une option sur deux cent quarante-sept."
+    noam desaccord "Si la prochaine est mauvaise, tu en commanderas une autre."
+    tomas surpris "On peut faire ça."
+    noam sourire "Tu devrais en profiter, contrairement à chez nous, on a un buffet à volonté ici."
+    goumi vide "Je confirme. Cette restriction serait commercialement contre-productive."
+    tomas rire "D'accord. La prochaine fois, j'essaierai de choisir en moins de dix minutes."
+    noam taquin "Je demanderai à Goumi de lancer un chronomètre."
+    tomas inquiet "Attends, dix minutes à partir de l'affichage de la liste ou de ma première hésitation ?"
+    noam blase "Tais-toi et bois."
+    $ complete_free_time_scene("tomas_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Nyra :
+
+label nyra_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_stockage at adaptive_fullscreen with fade
+    "Nyra examine les caisses de la dernière livraison pendant que j'essaie de les ranger sur les étagères."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("nyra", "raison", 0.78),
+    ])
+    nyra raison "Pas là. Ces boîtes expirent avant les autres."
+    noam reflexion "Elles expirent avec seulement trois jours d'écart."
+    nyra neutre "Donc elles doivent être utilisées trois jours plus tôt."
+    "Je déplace la caisse sur l'étagère indiquée."
+    noam inquiet "Et les médicaments ?"
+    nyra neutre "En bas, classés par urgence et par fréquence d'utilisation."
+    noam reflexion "Pourquoi en bas ?"
+    nyra raison "Parce qu'une personne blessée ne devrait pas avoir à grimper sur une chaise."
+    noam sourire "D'accord. Là, je reconnais que c'est utile."
+    nyra taquin "Ton approbation facilitera grandement notre survie."
+    "Je découvre une caisse remplie de café, de sucreries et de boissons colorées."
+    noam surpris "Tout ça faisait partie de la livraison ?"
+    nyra fatigue "Oui. Des produits non essentiels qui occupent un espace parfaitement essentiel."
+    noam neutre "On pourrait s'en débarrasser."
+    nyra degout "Ce serait stupide."
+    noam reflexion "Tu viens de dire qu'ils étaient inutiles."
+    nyra raison "J'ai dit non essentiels. C'est très différent."
+    nyra neutre "La fatigue réduit la concentration. La frustration augmente les conflits. Quelques produits de confort limitent les deux."
+    noam sourire "Tu pourrais juste dire que tu veux garder le chocolat."
+    nyra sourire "Je pourrais. Ce serait cependant une justification moins solide."
+    noam taquin "Mais ce serait sans doute plus honnête."
+    nyra neutre "Pas vraiment, étant donné que tout ceci n'est pas pour moi."
+    noam reflexion "Tu prends quoi, alors ?"
+    nyra hesitation "Rien. Ces produits sont destinés au groupe."
+    noam desaccord "Tu fais partie du groupe."
+    nyra reflechit "..."
+    "Je lui tends une barre de chocolat. Nyra l'observe quelques secondes avant de la prendre."
+    noam sourire "Tu vois ? Rien ne se perd."
+    nyra taquin "Puisque tu sembles avoir compris le principe, tu peux ranger la caisse du dessous."
+    noam inquiet "Celle qui pèse une tonne ?"
+    nyra neutre "On est plus proche des 50 kilos que d'une tonne. Tu es toujours en train d'exagérer."
+    $ complete_free_time_scene("nyra_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label nyra_link_2:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_observation at adaptive_fullscreen with fade
+    "Sur un écran secondaire, Nyra compare d'anciennes trajectoires orbitales. Plusieurs lignes s'interrompent brusquement autour de la planète."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("nyra", "neutre", 0.78),
+    ])
+    noam reflexion "Tu cherches quoi ?"
+    nyra neutre "Des vaisseaux qui n'existent officiellement plus."
+    noam surpris "Officiellement ?"
+    nyra raison "Avant Kami, une grande partie de la flotte d'Orbite utilisait déjà des brouilleurs."
+    noam reflexion "Pourquoi une nation pacifiste avait besoin de brouilleurs ?"
+    nyra neutre "Pour protéger ses communications. Le piratage et l'espionnage ne sont pas réservés aux armées."
+    nyra raison "Nos vaisseaux transportaient des marchandises entre des nations en guerre. Ils devaient pouvoir disparaître de leurs radars."
+    noam inquiet "Ils ont pu faire la même chose quand Kami a pris le contrôle."
+    nyra neutre "Certains équipages ont peut-être coupé leurs systèmes connectés avant qu'elle ne les atteigne."
+    noam surpris "Ils auraient échappé à la Prise ?"
+    nyra hesitation "Certains oui, c'est certain."
+    noam neutre "Personne n'a essayé de les retrouver ? Je veux dire... Les vaisseaux sous brouilleurs ?"
+    nyra inquiet "Émettre un signal révélerait leur position. À nous, mais aussi à Kami."
+    nyra neutre "Et leur silence ressemble exactement à celui d'une épave."
+    nyra raison "Finalement, Orbite est peut-être le dernier district que Kami ne contrôle pas entièrement."
+    noam inquiet "Tu crois qu'il y a encore des gens libres là-dehors ?"
+    nyra hesitation "J'en suis convaincue."
+    nyra sourire "Je ne te demande rien mais... Évitons de trop en parler."
+    noam taquin "Tu as peur que Kami se lance à leur poursuite ?"
+    nyra neutre "Tu es libre d'en tirer la conclusion qui te paraît cohérente."
+    noam desaccord "Tu fais souvent ça ?"
+    nyra taquin "Laisser les gens réfléchir ? Aussi souvent que possible."
+    noam reflexion "D'accord. Je dirai rien."
+    $ complete_free_time_scene("nyra_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label nyra_link_3:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_archive at adaptive_fullscreen with fade
+    "Nyra relit le même dossier lorsque j'entre dans la salle des archives."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("nyra", "reflexion", 0.78),
+    ])
+    nyra neutre "Tu es occupé ?"
+    noam neutre "Pas vraiment."
+    nyra raison "C'est risqué d'interpréter seul un document incomplet."
+    noam reflexion "Tu veux que je le lise ?"
+    nyra neutre "Tu es libre de le faire."
+    noam taquin "Ça ressemble beaucoup à une demande."
+    nyra sourire "Seulement si tu l'acceptes. Je ne te force à rien."
+    "Je m'assieds près d'elle et parcours le rapport."
+    noam reflexion "Ils avaient deux routes possibles pour la livraison."
+    nyra neutre "L'une était plus courte. Mais elle traversait une zone instable. L'autre plus longue."
+    nyra reflechit "Quelle route choisirais-tu ?"
+    noam reflexion "La seconde. Elle est plus longue, mais le risque est plus faible."
+    nyra raison "Même si le retard provoque une pénurie ?"
+    noam inquiet "Dans ce cas... la première, avec une escorte."
+    nyra neutre "Aucune n'était disponible."
+    noam desaccord "Tu retires toutes les solutions chaque fois que j'en trouve une."
+    nyra taquin "Je retire celles que le rapport exclut."
+    noam reflexion "Et tu savais déjà tout ça."
+    nyra neutre "Oui."
+    noam inquiet "Alors pourquoi me demander mon avis ?"
+    nyra raison "Je voulais vérifier si une analyse indépendante conduisait à la même conclusion."
+    noam desaccord "Tu m'as surtout poussé vers la tienne."
+    nyra sourire "Non. Je n'ai fait que poser des questions. Pour voir comment toi tu réagirais."
+    noam sourire "Ou tu voulais juste pas rester seule."
+    nyra panne "Ta conclusion repose sur très peu d'éléments."
+    noam taquin "Tu ne l'as pas niée."
+    nyra neutre "Je n'ai aucune obligation de réfuter toutes tes erreurs."
+    noam sourire "La prochaine fois, demande-moi directement de t'aider au lieu de tourner autour du pot."
+    "Nyra reste silencieuse, puis pousse un second dossier vers moi."
+    nyra hesitation "Reste encore un peu. J'ai encore besoin de ton avis."
+    noam surpris "C'était presque direct."
+    nyra taquin "Ne m'oblige pas à reformuler."
+    noam sourire "D'accord. Montre-moi le dossier."
+    $ complete_free_time_scene("nyra_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Kael :
+
+label kael_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_maintenance at adaptive_fullscreen with fade
+    "Kael est accroupi devant une machine ouverte. Plusieurs lignes de code défilent sur le terminal posé à côté de lui."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("kael", "neutre", 0.78),
+    ])
+    noam reflexion "Tu sais ce que tu fais, au moins ?"
+    kael neutre "Oui. Le régulateur alterne entre trop chaud et trop froid."
+    noam neutre "Donc la machine est cassée."
+    kael neutre "Non. Le programme réagit juste trop fort à chaque variation."
+    noam reflexion "Et tu réécris son code ?"
+    kael neutre "En partie, il n'est pas bien compliqué."
+    noam inquiet "Elias sait que tu trifouilles là-dedans ?"
+    kael taquin "Elias aurait déjà démonté la machine, sans chercher à comprendre pourquoi ça déconne."
+    noam sourire "C'est pas faux."
+    "Kael modifie plusieurs lignes, puis s'arrête devant une série de valeurs."
+    kael reflexion "Lis-moi la température."
+    noam neutre "Vingt-sept degrés."
+    kael reflexion "Et maintenant ?"
+    noam neutre "Vingt-deux... Non, vingt-quatre."
+    kael fatigue "Elle corrige trop vite. C'est bien ça."
+    noam surpris "T'as appris à faire ça où ?"
+    kael neutre "Sur Orbite. Les équipements vieillissaient plus vite qu'on pouvait les remplacer."
+    kael reflexion "Disons qu'on apprenait à les maintenir en vie."
+    noam taquin "Les machines ou les habitants ?"
+    kael sourire "Sans les machines, plus d'habitants. Alors les deux."
+    "Kael termine son correctif, mais garde le doigt au-dessus de la commande."
+    noam reflexion "Pourquoi tu le lances pas ?"
+    kael inquietude "S'il interfère avec un autre système, le problème sera pire."
+    kael reflechit "Mais bon, il faut bien le tester."
+    "Kael active le programme. La machine ralentit, accélère légèrement, puis adopte un rythme stable."
+    noam sourire "Ça marche."
+    kael reflexion "Pour l'instant."
+    noam taquin "Tu pourrais avoir l'air un peu satisfait."
+    kael neutre "Je le serai dans dix minutes, quand je serai sûr que tout va bien."
+    noam reflexion "Tu vas rester à la regarder pendant dix minutes ?"
+    kael sourire "Tu peux partir."
+    noam sourire "Je vais attendre avec toi."
+    kael neutre "Comme tu veux."
+    $ complete_free_time_scene("kael_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label kael_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Kael est assis près du lecteur musical. Je prends la commande et fais défiler les morceaux disponibles."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("kael", "calme", 0.78),
+    ])
+    noam neutre "Tu veux écouter quoi ?"
+    kael calme "Ce que tu veux."
+    noam reflexion "Quelque chose de calme ?"
+    kael neutre "Ça me va."
+    noam neutre "Ou quelque chose de plus énergique ?"
+    kael neutre "Ça me va aussi."
+    noam taquin "Tu m'aides pas beaucoup là, hein."
+    kael sourire "Tu n'as pas besoin de mon aide pour choisir."
+    noam reflexion "Je te demande ce que toi, tu préfères."
+    kael calme "Ça n'a pas beaucoup d'importance. J'aime tout, je te l'ai déjà dit."
+    "Je sélectionne le morceau le plus bruyant de la liste. Une musique agressive remplit immédiatement la pièce."
+    noam sourire "Celui-là, alors."
+    kael neutre "D'accord."
+    noam surpris "Sérieusement ?"
+    kael calme "Si tu l'aimes bien."
+    noam inquiet "Il est horrible."
+    "Kael supporte encore quelques secondes avant de baisser le volume."
+    kael fatigue "Ça va déranger les autres."
+    noam reflexion "Il n'y a personne d'autre."
+    kael neutre "Ils peuvent arriver, en se demandant d'où sort ce bruit."
+    noam taquin "Choisis un morceau alors, Kael."
+    kael calme "Prends celui que tu préfères."
+    noam desaccord "Non. Cette fois, je ne choisis rien."
+    "Kael parcourt lentement la liste, puis sélectionne une musique douce."
+    noam sourire "Tu la connais ?"
+    kael neutre "Un peu."
+    noam taquin "Tu viens de commencer à fredonner."
+    kael surpris "Non."
+    noam sourire "Si."
+    kael fatigue "On l'entendait souvent sur Orbite."
+    noam neutre "Elle est pas mal."
+    kael inquietude "Tu veux en mettre une autre ?"
+    noam desaccord "Je viens de te dire que je l'aime bien."
+    kael sourire "Écoutons la musique alors, Noam."
+    $ complete_free_time_scene("kael_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label kael_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+    "La télévision diffuse les images d'une forte pluie. Kael reste debout devant l'écran, son repas à peine touché."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("kael", "neutre", 0.78),
+    ])
+    noam reflexion "Il s'est passé quelque chose ?"
+    noam inquiet "Tu regardes cet écran depuis cinq minutes."
+    kael calme "Il pleut."
+    noam taquin "Merci, j'avais remarqué. Jusque-là rien d'incroyable."
+    kael neutre "Je n'en ai jamais vu d'aussi près."
+    noam surpris "T'as jamais vu la pluie ?"
+    kael reflexion "Depuis l'espace, si. Mais pas vraiment depuis le sol."
+    kael calme "On voyait les tempêtes se former au-dessus des continents."
+    "À l'écran, des passants courent se mettre à l'abri sous les bâtiments."
+    noam reflexion "Ils ont pas l'air de trouver ça très intéressant."
+    kael taquin "Les gens se plaignent facilement de ce qu'ils ont toujours connu."
+    noam sourire "Tu dis ça parce que tu voudrais être à leur place."
+    kael calme "Peut-être. Au moins pour voir... Ce que ça fait."
+    kael neutre "On peut vouloir quelque chose sans le connaître."
+    kael reflexion "Je chercherais sans doute un abri."
+    noam taquin "Réponse passionnante."
+    kael calme "La température est basse et leurs vêtements sont trempés."
+    kael triste "Ils risquent de tomber malades et ça doit pas être très agréable."
+    kael sourire "Mais quand même, j'ai envie de savoir ce que ça fait. D'être mouillé comme ça."
+    "Kael regarde encore quelques secondes les rues noyées sous la pluie."
+    kael hesitation "En réalité... je resterais probablement dehors."
+    kael neutre "Au moins quelques minutes."
+    noam taquin "Tu tomberais malade. Tu viens de le dire."
+    kael sourire "Probablement."
+    "Nous reportons notre attention sur l'écran jusqu'à la fin du bulletin."
+    noam neutre "J'espère que tu la verras vraiment un jour."
+    kael calme "Moi aussi."
+    $ complete_free_time_scene("kael_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Elias :
+
+label elias_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_gymnase at adaptive_fullscreen with fade
+    "Elias remplit un sac avec plusieurs poids de tailles différentes."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("elias", "neutre", 0.78),
+    ])
+    noam reflexion "Tu fabriques quoi ?"
+    elias neutre "Un poids."
+    noam surpris "Il y en a déjà plein derrière toi."
+    elias fatigue "Ouais, mais il en manque un pour faire une paire."
+    "Il soulève le sac, grimace, puis ajoute un petit haltère."
+    noam inquiet "Tu sais combien il pèse ?"
+    elias neutre "Assez lourd."
+    noam reflexion "C'est pas vraiment une mesure."
+    elias colere "Tu veux t'entraîner ou remplir un rapport ?"
+    noam sourire "D'accord. Montre-moi ton programme."
+    elias content "Enfin une bonne décision. Prends la caisse."
+    noam surpris "La caisse de rangement ?"
+    elias neutre "Elle a des poignées et elle est lourde. Ça suffit."
+    "Je soulève la caisse pendant qu'Elias place le sac sur son épaule."
+    noam inquiet "Tu faisais vraiment du sport comme ça avant ?"
+    elias neutre "J'avais pas de salle. Je portais déjà des sacs et des caisses toute la journée."
+    noam reflexion "Pour ton travail ?"
+    elias fatigue "Ouais. J'ai toujours voulu continuer à travailler."
+    noam sourire "Et après ça, tu t'entraînais encore ?"
+    elias content "Quand t'as pas de matos, tu fais avec ce que t'as."
+    "Elias tire sur une sangle fixée au sac. Elle cède brusquement et il tombe en arrière."
+    elias panique "Putain !"
+    noam inquiet "Ça va ?"
+    elias colere "Ouais. Cette merde était usée."
+    noam taquin "Ou ton poids était mal conçu."
+    elias colere "Il était très bien avant de se casser."
+    "Il récupère la sangle et commence immédiatement à la réparer."
+    noam reflexion "Tu pourrais en prendre une autre."
+    elias neutre "Et laisser celle-là pétée ? Non."
+    noam sourire "Tu répares même ton matériel de sport pendant ta séance."
+    elias fatigue "Ça fait travailler les bras."
+    noam rire "Bien sûr."
+    elias content "Rigole pas. Après, c'est toi qui porteras le sac."
+    $ complete_free_time_scene("elias_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label elias_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+    "Elias est allongé sous la machine à boissons. Une petite flaque s'étend près de son épaule."
+    $ showGroup([
+        ("noam", "inquiet", 0.22),
+        ("elias", "neutre", 0.78),
+    ])
+    noam inquiet "Pourquoi tu es sous Goumi ?"
+    elias neutre "Y'a une fuite d'eau."
+    noam reflexion "Tu veux que j'appelle quelqu'un ?"
+    elias colere "T'inquiète, je gère. Par contre si tu peux me passer la pince, ça serait pas de refus."
+    "Je lui tends l'outil. Elias resserre une pièce cachée sous la machine."
+    elias neutre "Voilà. Ça devrait..."
+    "Un craquement retentit. Un jet d'eau frappe Elias en plein visage."
+    elias panique "Putain de merde ! Coupe l'arrivée !"
+    noam panique "Elle est où ?"
+    elias colere "Derrière le tuyau ! Non, l'autre derrière !"
+    "Je tourne une vanne pendant qu'Elias retient la conduite à deux mains."
+    noam inquiet "C'est bon ?"
+    elias colere "T'as ouvert encore plus ! Dans l'autre sens !"
+    "Le jet s'arrête enfin. Elias reste assis au milieu de la flaque, complètement trempé."
+    noam hesitation "Je vais éviter de demander si c'était prévu."
+    elias fatigue "Fais chier ! La fixation a pété."
+    "Elias examine la pièce cassée, puis récupère une attache métallique."
+    noam inquiet "Tu comptes remplacer la fixation avec ça ?"
+    elias neutre "Ouais."
+    noam reflexion "C'est fiable ?"
+    elias fatigue "J'en sais rien. Tiens-moi le tuyau."
+    "Je maintiens la conduite pendant qu'il fixe l'attache autour de la pièce."
+    elias neutre "Rouvre doucement."
+    noam inquiet "Et si ça recommence ?"
+    elias colere "On sera encore plus mouillés. Vas-y."
+    "Je tourne la vanne. La conduite tremble légèrement, mais aucune goutte ne tombe."
+    noam sourire "Ça marche."
+    elias content "C'est pas joli joli, mais au moins ça fuit plus."
+    noam sourire "T'es quand même doué."
+    elias fatigue "J'ai surtout réparé le truc que je venais de casser."
+    noam desaccord "La fuite était déjà là avant que tu bidouilles, non ?"
+    elias neutre "Ouais. Mais pas la grosse, non."
+    noam sourire "Sans toi, elle serait restée."
+    elias fatigue "Tout le monde sait faire quand ça marche. Moi, je suis là quand ça pète."
+    noam taquin "Même quand c'est toi qui le fais péter."
+    elias rire "Surtout dans ce cas-là."
+    $ complete_free_time_scene("elias_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label elias_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_maintenance at adaptive_fullscreen with fade
+    "Elias assemble plusieurs morceaux de métal sur un établi. Il recouvre aussitôt son travail lorsque j'approche."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("elias", "inquiet", 0.78),
+    ])
+    noam reflexion "Tu caches quoi ?"
+    elias neutre "Rien."
+    noam taquin "T'as littéralement posé un chiffon dessus."
+    elias colere "Je teste juste un truc."
+    noam reflexion "Quel genre de truc ?"
+    "Je soulève un coin du chiffon. Une petite maquette de vaisseau apparaît."
+    noam surpris "C'est toi qui as fait ça ?"
+    elias inquiet "Touche pas, c'est pas fini."
+    noam sourire "Je croyais que c'était juste un test."
+    elias fatigue "Je testais les outils."
+    noam taquin "En fabriquant un petit vaisseau métallique ?"
+    elias colere "Fallait bien souder les morceaux sur quelque chose."
+    noam reflexion "Les détails sont vraiment précis."
+    elias neutre "J'en faisais parfois avec les chutes qu'on me laissait."
+    noam surpris "Tu fabriquais des maquettes ?"
+    elias fatigue "Quand j'avais le temps. Mais c'était pas souvent."
+    noam sourire "Pourquoi t'as arrêté ?"
+    elias neutre "Parce que ça sert à rien."
+    noam desaccord "Ça te plaît."
+    elias colere "Ça répare rien, ça nourrit personne et ça prend de la place."
+    noam reflexion "Tout ce que tu fais doit forcément être utile ?"
+    elias fatigue "Sinon, autant rien faire."
+    noam neutre "Tu viens quand même de recommencer."
+    "Elias garde le silence, puis retire le chiffon et reprend son travail."
+    elias neutre "Maintenant que c'est commencé, je vais pas le laisser comme ça."
+    "Il redresse une aile, polit rapidement la coque et me tend la maquette."
+    noam surpris "Tu me la donnes ?"
+    elias fatigue "Elle m'encombre."
+    noam taquin "Tu viens de passer tout ce temps dessus."
+    elias colere "Justement. Prends-la avant que je la balance."
+    noam sourire "Merci, Elias."
+    elias inquiet "C'est pas un cadeau."
+    noam taquin "Bien sûr."
+    elias fatigue "Et si tu casses une aile, tu te démerdes."
+    noam sourire "Tu dis ça, mais tu sauterais dessus pour pouvoir la réparer."
+    elias rire "Ouais, pas faux. Comme d'hab."
+    $ complete_free_time_scene("elias_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# temps libres Mara :
+
+label mara_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_gymnase at adaptive_fullscreen with fade
+    "Mara me regarde tenir en position de gainage avec un sourire beaucoup trop satisfait."
+    $ showGroup([
+        ("noam", "inquiet", 0.22),
+        ("mara", "rire", 0.78),
+    ])
+    mara rire "Putain, t'as vu ta tronche ? On dirait que tu vas accoucher."
+    noam inquiet "Tu veux essayer au lieu de commenter ?"
+    mara content "Je peux tenir deux fois plus longtemps que toi. EASY !"
+    noam taquin "Alors vas-y."
+    mara mefiant "On parie quoi ?"
+    noam reflexion "Le perdant va chercher les boissons."
+    mara rire "Seulement ça ? T'es vraiment pas joueur. T'aurais pu choisir quelque chose de beaucoup plus... Intéressant."
+    noam neutre "T'as peur de perdre ?"
+    mara agace "Oh tu vas voir ! Mets-toi en place."
+    "Mara s'installe à côté de moi. Nous reprenons la position en même temps."
+    mara content "Je te préviens, je peux rester comme ça toute la journée."
+    noam inquiet "Ça ne fait que dix secondes."
+    mara rire "Et t'as déjà les bras qui tremblent."
+    noam taquin "Toi aussi."
+    mara neutre "C'est le sol qui bouge. Je te rappelle qu'on lévite dans l'espace !"
+    noam sourire "Bien sûr."
+    "Nous tenons encore quelques secondes en silence."
+    mara rire "T'as quand même un joli cul vu d'ici."
+    noam inquiet "On regarde dans la même direction."
+    mara content "Ha ! J'ai une imagination très développée."
+    noam reflexion "C'est sympa de passer du temps avec toi."
+    mara stress "Hein ?"
+    noam sourire "Je disais juste que je m'amusais bien."
+    mara agace "C'est quoi cette attaque sournoise ?"
+    noam taquin "Bah alors, t'es déjà déconcentrée ?"
+    "Le bras de Mara cède. Elle s'effondre au moment où je tombe à mon tour."
+    mara colere "Putain ! T'as triché !"
+    noam rire "En étant gentil avec toi ?"
+    mara stress "Ouais. C'est bas, même pour toi."
+    noam sourire "On est tombés en même temps."
+    mara mefiant "Donc personne va chercher les boissons."
+    noam desaccord "Ou on y va tous les deux."
+    mara rire "T'essayes encore de passer du temps avec moi ? Fais gaffe, je vais croire que je te plais."
+    noam taquin "On fait une revanche après ?"
+    mara content "Mmmhh, ça dépend, le gage est plus intéressant ou pas ?"
+    $ complete_free_time_scene("mara_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label mara_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+    "Mara fixe ma main pendant que je coupe mon repas."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("mara", "agace", 0.78),
+    ])
+    mara agace "Tu peux arrêter de tenir ton couteau comme un sauvage ?"
+    noam surpris "Je le tiens normalement."
+    mara neutre "Non. L'index reste sur le manche, pas sur la lame."
+    "Elle replace mes couverts, déplace mon verre et replie machinalement ma serviette."
+    noam reflexion "Depuis quand tu connais toutes ces règles ?"
+    mara stress "C'est juste du bon sens."
+    noam taquin "Tu viens de plier ma serviette en trois."
+    mara agace "Elle dépassait."
+    noam reflexion "Et mon verre était vraiment deux centimètres trop près ?"
+    mara colere "Oui. Ça m'énervait."
+    noam sourire "T'as appris ça où ?"
+    mara neutre "Chez moi."
+    noam surpris "Ta famille organisait beaucoup de repas ?"
+    mara agace "On peut dire ça, repas, réceptions, invités importants et tout le cirque."
+    noam reflexion "Attends... Tu viens d'une famille bourgeoise ?"
+    mara rire "C'est pas vraiment une fierté, mais pourquoi t'es aussi surpris ?"
+    noam taquin "Ça n'explique pas tes mauvaises manières."
+    mara colere "MAIS ! J'ai d'excellentes manières."
+    noam sourire "Surtout quand tu proposes de chevaucher les gens pour les consoler."
+    mara content "C'est un service de très haute qualité."
+    noam reflexion "Tu parlais déjà comme ça avec ta famille ?"
+    mara rire "Et finir enfermée pendant des semaines ? Non merci."
+    mara taquin "Kami m'a bien aidée en rendant mes géniteurs aussi pauvres et impuissants que n'importe qui."
+    noam taquin "Et depuis, comme Julian, tu t'es construit un personnage."
+    mara colere_noire "Retire immédiatement cette comparaison."
+    noam rire "Elle t'énerve parce qu'elle est vraie."
+    mara colere "Lui, il veut impressionner les gens. Moi, j'en ai rien à foutre des autres."
+    noam reflexion "Ah ouais ? Je suis pas tout à fait sûr."
+    mara rire_profond "Ferme-la et tiens correctement ton couteau."
+    $ complete_free_time_scene("mara_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label mara_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Je reste assis sur le canapé, encore préoccupé par la dernière discussion du groupe."
+    $ showGroup([
+        ("noam", "triste", 0.22),
+        ("mara", "neutre", 0.78),
+    ])
+    mara neutre "Bah alors ? Fais pas cette tête de chien battu."
+    noam neutre "Je réfléchis."
+    mara content "Mauvaise idée. Ça te réussit pas, ça te fait des rides."
+    noam reflexion "J'ai juste besoin d'un moment."
+    mara rire "Tu veux un câlin ? Je peux même m'asseoir sur toi si ça aide."
+    noam neutre "Pas maintenant, Mara."
+    mara agace "Oh, ça va. J'essaie de te détendre."
+    noam triste "J'ai compris."
+    mara rire "On dirait surtout que t'aimes bien jouer au héros torturé."
+    mara content "Comme ça, tout le monde peut admirer à quel point tu souffres pour nous."
+    "Je la regarde sans répondre. Son sourire disparaît légèrement."
+    mara stress "Quoi ?"
+    noam neutre "Rien."
+    mara rire "Allez, fais pas ta victime. C'était une blague."
+    noam triste "Elle était pas très drôle."
+    mara agace "D'habitude, t'arrives à survivre à mes conneries."
+    mara stress "Allez, réponds ! Tu vas bouder combien de temps ?"
+    noam reflexion "Tu voulais me faire rire ou me faire taire ?"
+    mara colere "Je voudrais pas te regarder tirer cette tronche pendant une heure !"
+    noam triste "Laisse tomber."
+    "Je me lève. Mara attrape brièvement ma manche."
+    mara doute "Attends."
+    noam neutre "Quoi ?"
+    mara stress "J'ai... été trop loin."
+    noam reflexion "C'est une excuse ?"
+    mara agace "Me fais pas répéter, ça me donne déjà envie de crever."
+    noam neutre "D'accord. J'accepte."
+    mara mefiant "C'est tout ?"
+    noam reflexion "Tu veux remplir un formulaire ?"
+    mara rire "Non. Mais je peux t'offrir un verre si tu veux."
+    noam sourire "Tu pourrais aussi rester un peu."
+    mara stress "T'abuses vraiment de ma faiblesse."
+    noam taquin "Je croyais que t'en avais aucune."
+    mara content "Décale-toi avant que je change d'avis."
+    "Mara s'assoit près de moi. Cette fois, elle ne cherche pas immédiatement une nouvelle blague."
+    $ complete_free_time_scene("mara_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Ryn :
+
+label ryn_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_repos at adaptive_fullscreen with fade
+    "Lorsque Ryn entre dans la salle de repos, je suis installé dans le fauteuil placé face à la porte."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("ryn", "fatigue", 0.78),
+    ])
+    noam neutre "Tu veux t'asseoir ?"
+    ryn neutre "Non."
+    noam reflexion "Il reste trois places."
+    ryn neutre "Je préfère rester debout."
+    noam taquin "Tu voulais ce fauteuil en particulier ?"
+    ryn desaccord "Il est face à la porte."
+    noam surpris "Et alors ?"
+    ryn reflexion "Il permet de voir les gens entrer."
+    ryn neutre "C'est une habitude."
+    noam reflexion "Tu faisais pareil à Limen ?"
+    ryn neutre "À Limen, tourner le dos au mauvais passage pouvait te tuer."
+    noam taquin "Ici, le pire qui puisse entrer, c'est probablement Julian."
+    ryn rire "Ah ! Raison de plus."
+    "Je me lève et lui désigne le fauteuil."
+    noam neutre "Prends-le."
+    ryn surpris "Tu vas où ?"
+    noam reflexion "Sur celui d'à côté."
+    ryn neutre "Il tourne le dos à la porte."
+    noam sourire "Je peux la surveiller pour toi."
+    ryn desaccord "J'ai pas besoin que tu montes la garde."
+    noam taquin "Alors assieds-toi sans vérifier."
+    ryn colere "Me donne pas d'ordres. Tu te prends pour qui ?!"
+    noam sourire "Tu peux aussi rester debout."
+    "Ryn finit par s'asseoir dos à l'entrée. Quelques secondes plus tard, il regarde derrière lui."
+    noam taquin "Ça fait même pas dix secondes."
+    ryn fatigue "J'ai entendu un bruit."
+    noam neutre "Y'avait rien. T'inquiète je regarde."
+    "Ryn se replace lentement dans le fauteuil."
+    ryn neutre "Je te fais pas confiance."
+    noam taquin "Pourtant, tu restes assis."
+    $ complete_free_time_scene("ryn_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label ryn_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_gymnase at adaptive_fullscreen with fade
+    "Ryn m'observe frapper maladroitement dans le vide depuis plusieurs secondes."
+    $ showGroup([
+        ("noam", "determine", 0.22),
+        ("ryn", "desaccord", 0.78),
+    ])
+    ryn desaccord "Ta garde est merdique."
+    noam reflexion "Merci pour ce conseil très précis."
+    ryn neutre "Tes mains sont trop basses. Remonte-les."
+    noam determine "Comme ça ?"
+    ryn colere "Non. Là, tu protèges rien."
+    "Ryn replace brutalement mes bras, puis frappe légèrement contre ma garde."
+    noam inquiet "Tu pourrais prévenir."
+    ryn neutre "Un type qui veut te casser la gueule préviendra pas."
+    noam reflexion "Tu peux m'apprendre sans essayer de me tuer."
+    ryn taquin "Si ça, c'est essayer de te tuer, on part de très loin."
+    "Il attrape mon poignet et me montre comment me dégager."
+    ryn neutre "Tourne, baisse-toi et frappe."
+    noam inquiet "Attends, moins vite."
+    ryn colere "T'auras pas le temps d'attendre."
+    noam desaccord "Lâche-moi."
+    ryn neutre "Dégage-toi."
+    noam colere "Ryn, lâche-moi."
+    "Il relâche immédiatement mon bras."
+    ryn fatigue "T'es pas prêt."
+    noam desaccord "Parce que tu fais tout à ma place."
+    ryn colere "J'essaie de t'éviter de te défoncer l'épaule."
+    noam neutre "Je voulais apprendre à me défendre, pas être défendu contre l'entraîneur."
+    ryn desaccord "Je vais pas te laisser faire n'importe quoi."
+    noam reflexion "Alors montre-moi et laisse-moi essayer."
+    ryn fatigue "Si tu te blesses, viens pas te plaindre."
+    noam sourire "D'accord."
+    "Ryn reprend lentement la prise. Cette fois, il me laisse chercher le mouvement."
+    ryn neutre "Tourne ton poignet... Maintenant."
+    "Je pivote, me baisse et parviens à lui échapper."
+    noam sourire "Ça marche."
+    ryn taquin "Parce que je t'ai laissé faire."
+    noam reflexion "On recommence ?"
+    ryn surpris "Tu veux vraiment continuer ?"
+    noam taquin "T'as peur que je te surprenne encore ?"
+    ryn determine "Remets-toi en garde."
+    noam sourire "Essaie seulement de pas décider tous mes mouvements."
+    ryn sourire "Alors fais-en un qui soit pas complètement con."
+    $ complete_free_time_scene("ryn_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label ryn_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_stockage at adaptive_fullscreen with fade
+    "Ryn examine une pelle pliable trouvée parmi le matériel de maintenance."
+    $ showGroup([
+        ("noam", "reflexion", 0.22),
+        ("ryn", "neutre", 0.78),
+    ])
+    noam reflexion "Tu comptes creuser un tunnel pour partir ?"
+    ryn fatigue "Avec cette merde ? Le manche casserait avant de frapper le sol."
+    noam taquin "Tu as l'air de bien connaître les pelles."
+    ryn neutre "J'ai creusé assez de tranchées."
+    noam surpris "À Limen ?"
+    ryn desaccord "J'étais gardien. On surveillait les gens avant qu'ils atteignent la frontière."
+    noam inquiet "Pour les empêcher de partir ?"
+    ryn colere "Pour les empêcher de crever, surtout."
+    ryn triste "Kami exécutait tous ceux qui franchissaient la frontière."
+    noam reflexion "La frontière était pas clairement indiquée ?"
+    ryn triste "Non. Les premiers gardiens ont dû la chercher."
+    noam inquiet "Comment ?"
+    ryn colere "Ils avançaient. Jusqu'à ce que Kami tire."
+    ryn triste "On marquait le dernier endroit sûr. Puis un autre avançait un peu plus loin."
+    noam inquiet "Combien sont morts comme ça ?"
+    ryn fatigue "Beaucoup trop."
+    ryn neutre "Quand on a trouvé la limite, on a creusé les tranchées quelques mètres avant."
+    ryn neutre "Pour avoir le temps de rattraper ceux qui couraient. Les empêcher de crever bêtement."
+    noam triste "Ils comprenaient pourquoi vous les arrêtiez ?"
+    ryn colere "Certains pensaient qu'on bossait pour Kami."
+    ryn colere2 "Ils nous frappaient, nous crachaient dessus... et retournaient courir vers la frontière."
+    noam inquiet "Vous deviez les retenir de force."
+    ryn determine "Je préférais leur casser un bras que les regarder se faire exécuter."
+    noam reflexion "Tu sais combien de personnes tu as sauvées ?"
+    ryn colere "Non. Mais beaucoup sont quand même passées..."
+    "Ryn replie la pelle et la remet brusquement sur l'étagère."
+    noam neutre "Tu continues à faire pareil avec nous."
+    ryn desaccord "Ici aussi, y'a des limites qui tuent."
+    noam reflexion "Et tu préfères qu'on te déteste plutôt que nous laisser les franchir."
+    ryn neutre "Quelqu'un de vivant peut encore me détester."
+    ryn triste "Un mort peut plus rien faire."
+    $ complete_free_time_scene("ryn_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+# Temps libres Sael :
+
+label sael_link_1:
+    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    scene bg_infirmerie at adaptive_fullscreen with fade
+
+    "Quand j'entre dans l'infirmerie, Sael remplit méthodiquement une petite trousse posée sur le lit d'examen."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("sael", "neutre", 0.78),
+    ])
+
+    noam taquin "Des bandages, de l'antiseptique, des médicaments... Tu pars en expédition ou tu vas simplement marcher dans les couloirs ?"
+    sael neutre "Je vais marcher dehors. Un accident ne devient pas moins grave sous prétexte que la promenade devait être courte."
+    noam reflexion "On ne peut même pas quitter le Conclave. Il suffirait de revenir ici en cas de problème."
+    sael desaccord "Une trousse posée sur une étagère ne soigne personne. Et certains blessés ne peuvent pas attendre qu'on les ramène."
+    noam sourire "Tu as vraiment prévu toutes les catastrophes possibles avant même d'avoir quitté la pièce."
+    sael raison "Non. Seulement les plus probables. Prévoir toutes les autres rendrait cette trousse trop lourde pour être utile."
+
+    "Sael retire un appareil électronique de la trousse et le replace sur une étagère."
+    noam surpris "Tu ne prends pas ce scanner ? Il peut détecter une fracture bien plus vite que toi."
+    sael mefiant "Il est fragile, dépend d'une batterie et demande trop de temps. Mes mains et une attelle ne tomberont pas en panne."
+    noam taquin "Pour quelqu'un qui se méfie du progrès, tu emportes quand même beaucoup de médicaments fabriqués par des machines."
+    sael neutre "Je rejette le confort qui affaiblit. Pas les outils capables de garder quelqu'un en vie."
+
+    "En refermant une poche, elle laisse apparaître une petite fiole sombre."
+    noam inquiet "Attends... Ce symbole sur la fiole, c'est bien celui qu'on utilise pour identifier un poison ?"
+    sael neutre "Oui. La dose est suffisante pour arrêter un cœur rapidement et sans provoquer davantage de douleur."
+    noam desaccord "Je croyais que le but d'une trousse de secours était précisément d'empêcher les gens de mourir."
+    sael culpabilite "Certains remèdes échouent. Certaines souffrances ne peuvent plus être arrêtées autrement."
+    noam inquiet "Et tu serais réellement capable de décider que quelqu'un a atteint ce point-là ?"
+    sael reflechit "Je l'ai déjà décidé autrefois. J'espère ne jamais avoir à le refaire."
+    noam triste "Tu aurais pu laisser cette fiole ici, si tu espères vraiment ne pas avoir à t'en servir."
+    sael determine "Espérer ne protège personne. Être prête peut encore le faire."
+
+    $ complete_free_time_scene("sael_1")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label sael_link_2:
+    play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    scene bg_observation at adaptive_fullscreen with fade
+
+    "Dans la salle d'observation, Sael fixe la console tandis que les lumières changent de couleur au-dessus d'elle."
+    $ showGroup([
+        ("noam", "sourire", 0.22),
+        ("sael", "desaccord", 0.78),
+    ])
+
+    noam taquin "Je ne savais pas que tu appréciais les éclairages violets. Ça donne un côté étonnamment chaleureux à la pièce."
+    sael desaccord "Je cherche à tout éteindre. Cette machine semble avoir décidé de me proposer toutes les autres possibilités avant."
+    noam sourire "Le bouton est pourtant juste devant toi. Celui avec le symbole qui ressemble vaguement à une ampoule."
+    sael mefiant "Je l'ai essayé. Il a fermé les protections extérieures et augmenté le chauffage de trois degrés."
+    noam taquin "Donc, pour résumer, tu as réussi à supprimer les étoiles et à rendre la pièce plus confortable."
+    sael neutre "C'est pour cette raison que je t'ai demandé de venir. Éteins tout avant que je casse quelque chose."
+
+    "J'annule ses dernières commandes, puis je coupe l'éclairage. La pièce plonge aussitôt dans l'obscurité."
+    noam surpris "Je ne pensais pas qu'on pouvait voir autant d'étoiles depuis la station. Certaines étaient complètement invisibles avant."
+    sael joie "Les lumières artificielles effacent le ciel, puis les hommes finissent par oublier ce qu'elles leur ont pris."
+    noam reflexion "Elles nous évitent aussi de trébucher, de geler et de chercher nos affaires pendant une heure."
+    sael raison "Je ne dis pas qu'il faut les supprimer. Je dis qu'il faut encore être capable de vivre lorsqu'elles s'éteignent."
+    noam neutre "Tu penses vraiment qu'un peu de lumière peut rendre quelqu'un dépendant à ce point ?"
+    sael reflechit "La lumière, le chauffage, le bruit permanent... À force de remplir chaque vide, les gens finissent par en avoir peur."
+    noam sourire "Tu as quand même eu besoin d'une machine moderne et de mon aide pour retrouver cette fameuse nuit."
+    sael taquin "J'ai eu besoin de toi pour réparer les erreurs de la machine. Ne t'accorde pas davantage de mérite."
+    noam rire "Je vais quand même retenir que Sael m'a demandé de l'aide. L'événement mérite probablement d'être archivé."
+    sael sourire "Profite plutôt du silence avant que je décide de te laisser retrouver la sortie dans le noir."
+
+    "Nous restons quelque temps face aux étoiles. Avant de partir, Sael réactive finalement une lumière très faible."
+    noam taquin "Tu abandonnes déjà ton grand principe sur la nécessité de savoir marcher dans l'obscurité ?"
+    sael neutre "Iris vient souvent ici. Je préfère éviter qu'elle se casse le nez contre une chaise."
+
+    $ complete_free_time_scene("sael_2")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END
+
+label sael_link_3:
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    scene bg_cafeteria at adaptive_fullscreen with fade
+
+    "Avant de commencer son repas, Sael rompt un morceau de pain et le dépose seul sur une assiette vide."
+    $ showGroup([
+        ("noam", "neutre", 0.22),
+        ("sael", "neutre", 0.78),
+    ])
+
+    noam reflexion "Si tu n'en veux pas, je peux le prendre. J'ai terminé le mien beaucoup plus vite que prévu."
+    sael mefiant "N'y touche pas. Ce morceau n'est pas destiné à quelqu'un qui peut encore se servir lui-même."
+    noam surpris "D'accord... Je pensais seulement que tu avais décidé de ne pas finir ton repas."
+    sael neutre "C'est une offrande. Chez moi, le premier morceau revenait à la terre et aux morts de la famille."
+    noam taquin "La terre se trouve plusieurs étages sous nos pieds. Ton pain risque d'avoir du mal à l'atteindre."
+    sael sourire "La terre sait attendre. Elle le fait depuis bien plus longtemps que nous."
+    noam reflexion "Et tu crois vraiment que les morts peuvent recevoir ce que tu poses dans cette assiette ?"
+    sael raison "Ce qu'ils reçoivent n'a aucune importance. Ce geste sert surtout à rappeler quelque chose aux vivants."
+    noam neutre "Que nous devons éviter de voler le pain laissé sur une table dès que quelqu'un détourne les yeux ?"
+    sael desaccord "Que nous mangeons encore parce que d'autres ne le peuvent plus. Ce n'est pas un privilège à oublier."
+
+    "Sael observe le morceau de pain quelques secondes avant de reprendre."
+    sael triste "Depuis l'arrivée de Kami, j'en laisse aussi pour les exécutés et les disparus qui n'ont jamais reçu de tombe."
+    noam inquiet "Tu connais beaucoup de personnes qui ont disparu de cette manière à Limen ?"
+    sael culpabilite "Assez pour que l'assiette ne puisse pas toutes les représenter. Un seul morceau doit donc suffire."
+
+    goumi vide "Votre repas semble terminé. Je vais débarrasser cette assiette afin de libérer la place."
+    sael determine "Non. Cette assiette reste ici jusqu'à la fin du repas, même si personne ne touche à son contenu."
+    goumi vide "Cette instruction entraîne la conservation volontaire d'un reste alimentaire. Dois-je l'enregistrer comme une exception ?"
+    noam sourire "Oui, Goumi. Et ajoute aussi celui-ci à l'exception."
+
+    "Je détache un morceau de mon pain et le pose à côté de celui de Sael."
+    sael surpris "Tu n'es pas obligé de suivre un rite qui n'appartient ni à ta famille ni à ton district."
+    noam triste "Je sais. Mais les gens dont tu parles n'appartenaient pas seulement à Limen."
+    sael reflechit "Non... Kami s'est chargée de donner les mêmes morts à tous les districts."
+    noam neutre "Alors, pour aujourd'hui, ils auront aussi deux morceaux au lieu d'un."
+    sael sourire "Mange le reste avant qu'il refroidisse. Les morts n'ont pas besoin que tu les rejoignes affamé."
+
+    $ complete_free_time_scene("sael_3")
+    if link_replay_mode:
+        return
+    jump FREE_TIME_END

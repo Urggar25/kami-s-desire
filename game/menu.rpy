@@ -317,7 +317,7 @@ screen main_menu():
 
             textbutton _("Charger")     style "kami_button" action ShowMenu("load")
             textbutton _("Roadmap")     style "kami_button" action ShowMenu("roadmap_menu")
-            textbutton _("Galerie")     style "kami_button" action ShowMenu("gallery_menu")
+            textbutton _("Contenu bonus") style "kami_button" action ShowMenu("bonus_content_menu")
             textbutton _("Codex")       style "kami_button" action ShowMenu("codex_menu")
             textbutton _("Options")     style "kami_button" action ShowMenu("preferences")
 
@@ -347,7 +347,7 @@ screen main_menu():
 # - 12 images par page (4 x 3)
 # - unlock_gallery_image("bg_cg001") débloque aussi bg_cg001_1, _2, etc.
 # ------------------------------------------------------------
-screen gallery_menu():
+screen gallery_menu_legacy():
 
     tag menu
     zorder 200
@@ -480,3 +480,332 @@ screen gallery_menu():
                     textbutton "Suivant →":
                         sensitive gallery_page < (total_pages - 1)
                         action SetScreenVariable("gallery_page", min(total_pages - 1, gallery_page + 1))
+
+
+# ============================================================
+# BONUS CONTENT — HUD orbital
+# ============================================================
+
+style bonus_heading:
+    font "fonts/Barlow-Light.ttf"
+    size 54
+    color "#F4F7FB"
+    outlines [(2, "#03070D", 0, 0)]
+    kerning 5.0
+
+style bonus_breadcrumb:
+    font "fonts/Barlow-Light.ttf"
+    size 17
+    color "#9AA8B8"
+    kerning 1.5
+
+style bonus_label:
+    font "fonts/Barlow-Light.ttf"
+    size 22
+    color "#DDE5EE"
+    kerning 1.0
+
+style bonus_small:
+    font "fonts/Barlow-Light.ttf"
+    size 17
+    color "#8997A8"
+
+style bonus_footer_button is button:
+    background None
+    hover_background Solid("#67D5FF16")
+    padding (14, 7, 14, 7)
+
+style bonus_footer_button_text is button_text:
+    font "fonts/Barlow-Light.ttf"
+    size 20
+    color "#DDE5EE"
+    hover_color "#8BE1FF"
+    kerning 1.0
+
+style bonus_filter_button is button:
+    background Solid("#070C13CC")
+    hover_background Solid("#172534EE")
+    selected_background Solid("#23394CDD")
+    xfill True
+    ysize 48
+    padding (18, 8, 12, 8)
+
+style bonus_filter_button_text is button_text:
+    font "fonts/Barlow-Light.ttf"
+    size 18
+    color "#9CA9B8"
+    hover_color "#F4F7FB"
+    selected_color "#F4F7FB"
+
+
+screen bonus_orbit_background():
+    add Solid("#02050A")
+    add "gui/main_menu_kami/bg_orbit.png" at cover_screen
+    add Solid("#02050A99")
+    add "gui/main_menu_kami/scanlines.png" alpha 0.18
+    add "gui/main_menu_kami/vignette.png" alpha 0.92
+    add Solid("#E83B4A", xsize=4, ysize=104) xpos 58 ypos 52
+    add Solid("#E83B4A55", xsize=1, ysize=104) xpos 48 ypos 52
+
+
+screen bonus_header(title, section=None):
+    if section:
+        text _("CONTENU BONUS  /  [section]") style "bonus_breadcrumb" xpos 84 ypos 48
+    else:
+        text _("CONTENU BONUS") style "bonus_breadcrumb" xpos 84 ypos 48
+    text title style "bonus_heading" xpos 82 ypos 76
+    add Solid("#D7E0E966", xsize=570, ysize=1) xpos 84 ypos 150
+    text "+" xpos 332 ypos 137 size 20 color "#B9C7D4" font "fonts/Barlow-Light.ttf"
+
+
+screen bonus_footer(back_action):
+    add Solid("#C7D2DD55", xsize=1920, ysize=1) ypos 1010
+    hbox:
+        xalign 0.5
+        ypos 1022
+        spacing 60
+        textbutton _("ENTRÉE : CONFIRMER") style "bonus_footer_button" action NullAction()
+        textbutton _("ÉCHAP : RETOUR") style "bonus_footer_button" action back_action
+
+
+screen bonus_content_menu():
+    tag menu
+    zorder 200
+    modal True
+    use bonus_orbit_background
+    use bonus_header(_("CONTENU BONUS"))
+    key "game_menu" action Return()
+
+    hbox:
+        xpos 112
+        ypos 284
+        spacing 44
+        button:
+            xysize (826, 410)
+            background Fixed(Solid("#07101AE8"), Solid("#91DBFF88", xsize=2), Solid("#91DBFF88", ysize=2))
+            hover_background Fixed(Solid("#0B1723F2"), Solid("#BDEBFFFF", xsize=4), Solid("#BDEBFFFF", ysize=4))
+            action ShowMenu("gallery_menu")
+            fixed:
+                xfill True
+                yfill True
+                grid 3 2:
+                    xpos 52
+                    ypos 48
+                    spacing 7
+                    for catalog_index in range(6):
+                        if catalog_index < len(GALLERY_CG_CATALOG):
+                            $ bonus_preview = gallery_preview(GALLERY_CG_CATALOG[catalog_index][1])
+                            if bonus_preview:
+                                add Transform(bonus_preview, fit="cover", xsize=210, ysize=116) alpha 0.70
+                            else:
+                                add Solid("#101923", xsize=210, ysize=116)
+                        else:
+                            add Solid("#101923", xsize=210, ysize=116)
+                text _("GALERIE D'IMAGES") style "bonus_heading" size 35 xalign 0.5 ypos 322
+
+        button:
+            xysize (826, 410)
+            background Fixed(Solid("#07101AE8"), Solid("#91DBFF55", xsize=2), Solid("#91DBFF55", ysize=2))
+            hover_background Fixed(Solid("#0B1723F2"), Solid("#BDEBFFFF", xsize=4), Solid("#BDEBFFFF", ysize=4))
+            action ShowMenu("scene_select_menu")
+            fixed:
+                xfill True
+                yfill True
+                text ">" xalign 0.22 ypos 98 size 96 color "#EAF8FF" font "fonts/Barlow-Light.ttf"
+                vbox:
+                    xpos 320
+                    ypos 72
+                    spacing 18
+                    for line_index in range(3):
+                        hbox:
+                            spacing 12
+                            add Solid("#344353", xsize=120, ysize=34)
+                            add Solid("#24313E", xsize=120, ysize=34)
+                text _("SÉLECTION DE SCÈNES") style "bonus_heading" size 35 xalign 0.5 ypos 322
+
+    use bonus_footer(Return())
+
+
+screen gallery_menu():
+    tag menu
+    zorder 200
+    modal True
+    default gallery_page = 0
+    default selected_base = None
+    default selected_variant_index = 0
+    default gallery_section = "cg"
+    $ page_size = 12
+    $ active_catalog = GALLERY_CG_CATALOG if gallery_section == "cg" else GALLERY_SPORT_CATALOG
+    $ total_items = len(active_catalog)
+    $ total_pages = max(1, (total_items + page_size - 1) // page_size)
+    $ gallery_page = min(gallery_page, total_pages - 1)
+    $ page_items = active_catalog[gallery_page * page_size:min((gallery_page + 1) * page_size, total_items)]
+    $ unlocked_count = len([item for item in active_catalog if gallery_is_unlocked(item[0])])
+
+    if selected_base:
+        $ variants = gallery_variants(selected_base, gallery_section)
+        $ current_variant = variants[selected_variant_index] if variants else None
+        add Solid("#000")
+        if current_variant:
+            add gallery_displayable(current_variant) at adaptive_fullscreen
+        add Solid("#00000055", ysize=82) ypos 0
+        text _("VARIANTE [selected_variant_index + 1] / [len(variants)]") style "bonus_label" xalign 0.5 ypos 24
+        textbutton _("ÉCHAP : RETOUR") style "bonus_footer_button" xpos 34 ypos 20 action SetScreenVariable("selected_base", None)
+        if len(variants) > 1:
+            key "K_RIGHT" action SetScreenVariable("selected_variant_index", (selected_variant_index + 1) % len(variants))
+            key "K_LEFT" action SetScreenVariable("selected_variant_index", (selected_variant_index - 1) % len(variants))
+            button:
+                background None
+                xfill True
+                ypos 82
+                ysize 998
+                action SetScreenVariable("selected_variant_index", (selected_variant_index + 1) % len(variants))
+        key "game_menu" action SetScreenVariable("selected_base", None)
+    else:
+        use bonus_orbit_background
+        use bonus_header(_("GALERIE D'IMAGES"), _("GALERIE D'IMAGES"))
+        key "game_menu" action ShowMenu("bonus_content_menu")
+        hbox:
+            xpos 1220
+            ypos 76
+            spacing 12
+            textbutton _("CG") style "bonus_filter_button" xsize 120 selected gallery_section == "cg" action [SetScreenVariable("gallery_section", "cg"), SetScreenVariable("gallery_page", 0)]
+            textbutton _("SPORT") style "bonus_filter_button" xsize 120 selected gallery_section == "sport" action [SetScreenVariable("gallery_section", "sport"), SetScreenVariable("gallery_page", 0)]
+        grid 4 3:
+            xpos 92
+            ypos 184
+            spacing 18
+            for gallery_index in range(page_size):
+                if gallery_index < len(page_items):
+                    $ base_name, sprites = page_items[gallery_index]
+                    $ preview = gallery_preview(sprites)
+                    $ is_unlocked = gallery_is_unlocked(base_name)
+                    button:
+                        xysize (417, 205)
+                        background Fixed(Solid("#07101AE8"), Solid("#8A9BAA77", xsize=2), Solid("#8A9BAA77", ysize=2))
+                        hover_background Fixed(Solid("#0D1924F2"), Solid("#B9ECFFFF", xsize=4), Solid("#B9ECFFFF", ysize=4))
+                        sensitive is_unlocked and preview is not None
+                        action [SetScreenVariable("selected_base", base_name), SetScreenVariable("selected_variant_index", 0)]
+                        if preview:
+                            add Transform(preview, fit="cover", xsize=405, ysize=193) xpos 6 ypos 6 alpha (1.0 if is_unlocked else 0.18)
+                        if not is_unlocked:
+                            add Solid("#03070BAA")
+                            text "X" xalign 0.5 yalign 0.5 text_align 0.5 size 42 color "#A9B4BF" font "fonts/Barlow-Light.ttf"
+                else:
+                    null width 417 height 205
+        hbox:
+            xalign 0.5
+            ypos 848
+            spacing 28
+            textbutton "<" style "bonus_footer_button" text_size 38 sensitive gallery_page > 0 action SetScreenVariable("gallery_page", max(0, gallery_page - 1))
+            text _("PAGE [gallery_page + 1] / [total_pages]") style "bonus_label" yalign 0.5
+            textbutton ">" style "bonus_footer_button" text_size 38 sensitive gallery_page < total_pages - 1 action SetScreenVariable("gallery_page", min(total_pages - 1, gallery_page + 1))
+        text _("[unlocked_count] / [total_items] DÉBLOQUÉES") style "bonus_label" xpos 1810 ypos 870 xanchor 1.0
+        use bonus_footer(ShowMenu("bonus_content_menu"))
+
+
+screen scene_select_menu():
+    tag menu
+    zorder 200
+    modal True
+    default scene_page = 0
+    default scene_filter = "all"
+    default selected_scene_id = None
+    $ all_scenes = all_free_time_scenes()
+    $ filtered_scenes = all_scenes if scene_filter == "all" else list(FREE_TIME_SCENES.get(scene_filter, []))
+    $ page_size = 6
+    $ total_pages = max(1, (len(filtered_scenes) + page_size - 1) // page_size)
+    $ scene_page = min(scene_page, total_pages - 1)
+    $ page_scenes = filtered_scenes[scene_page * page_size:min((scene_page + 1) * page_size, len(filtered_scenes))]
+    $ selected_scene = free_time_scene(selected_scene_id) if selected_scene_id else (page_scenes[0] if page_scenes else None)
+    $ selected_unlocked = selected_scene is not None and free_time_scene_unlocked(selected_scene["id"])
+    $ total_unlocked = free_time_unlocked_count()
+    use bonus_orbit_background
+    use bonus_header(_("SÉLECTION DE SCÈNES"), _("SÉLECTION DE SCÈNES"))
+    key "game_menu" action ShowMenu("bonus_content_menu")
+
+    frame:
+        xpos 58
+        ypos 176
+        xysize (286, 640)
+        padding (2, 2)
+        background Fixed(Solid("#050A10E8"), Solid("#8494A455", xsize=2), Solid("#8494A455", ysize=2))
+        vbox:
+            spacing 2
+            text _("PERSONNAGE") style "bonus_label" xalign 0.5 ysize 52
+            textbutton _("TOUS") style "bonus_filter_button" selected scene_filter == "all" action [SetScreenVariable("scene_filter", "all"), SetScreenVariable("scene_page", 0), SetScreenVariable("selected_scene_id", None)]
+            viewport:
+                ysize 570
+                mousewheel True
+                scrollbars "vertical"
+                vbox:
+                    spacing 2
+                    for character_id in CHARACTER_LINK_IDS:
+                        textbutton CHARACTER_REAL_NAMES.get(character_id, character_id.title()).upper() style "bonus_filter_button":
+                            selected scene_filter == character_id
+                            action [SetScreenVariable("scene_filter", character_id), SetScreenVariable("scene_page", 0), SetScreenVariable("selected_scene_id", None)]
+
+    frame:
+        xpos 366
+        ypos 176
+        xysize (728, 640)
+        padding (16, 54, 16, 12)
+        background Fixed(Solid("#050A10E8"), Solid("#8494A455", xsize=2), Solid("#8494A455", ysize=2))
+        text _("SCÈNES BONUS") style "bonus_label" xalign 0.5 ypos 12
+        vbox:
+            spacing 9
+            for row_index in range(page_size):
+                if row_index < len(page_scenes):
+                    $ scene = page_scenes[row_index]
+                    $ scene_unlocked = free_time_scene_unlocked(scene["id"])
+                    button:
+                        xfill True
+                        ysize 82
+                        background Solid("#07101AE8")
+                        hover_background Solid("#173044EE")
+                        selected_background Solid("#1C3D52EE")
+                        selected selected_scene is not None and selected_scene["id"] == scene["id"]
+                        action SetScreenVariable("selected_scene_id", scene["id"])
+                        text "[scene_page * page_size + row_index + 1:02d]" style "bonus_label" xpos 18 yalign 0.5 color ("#DDE5EE" if scene_unlocked else "#626E7B")
+                        if scene_unlocked:
+                            add Transform(scene["preview"], fit="cover", xsize=176, ysize=68) xpos 72 ypos 7
+                            text scene["title"].upper() style "bonus_label" xpos 278 yalign 0.5 size 18
+                            text ">" style "bonus_label" xpos 654 yalign 0.5
+                        else:
+                            add Solid("#111820", xsize=176, ysize=68) xpos 72 ypos 7
+                            text _("VERROUILLÉE") style "bonus_small" xpos 278 yalign 0.5
+                            text "X" style "bonus_label" xpos 654 yalign 0.5
+                else:
+                    null height 82
+
+    frame:
+        xpos 1116
+        ypos 176
+        xysize (496, 640)
+        padding (20, 20)
+        background Fixed(Solid("#050A10E8"), Solid("#8494A455", xsize=2), Solid("#8494A455", ysize=2))
+        if selected_scene:
+            add Transform(selected_scene["preview"], fit="cover", xsize=452, ysize=254) xpos 0 ypos 0 alpha (1.0 if selected_unlocked else 0.20)
+            if not selected_unlocked:
+                text "X" xalign 0.5 ypos 94 size 46 color "#DDE5EE" font "fonts/Barlow-Light.ttf"
+            text (selected_scene["title"].upper() if selected_unlocked else _("SCÈNE VERROUILLÉE")) style "bonus_heading" size 27 xalign 0.5 ypos 286
+            add Solid("#A5B4C455", xsize=452, ysize=1) ypos 337
+            text _("PERSONNAGE") style "bonus_small" xpos 4 ypos 360
+            text selected_scene["route"].upper() style "bonus_label" xpos 448 ypos 356 xanchor 1.0 size 18
+            text _("STATUT") style "bonus_small" xpos 4 ypos 404
+            text (_("DÉBLOQUÉE") if selected_unlocked else _("VERROUILLÉE")) style "bonus_label" xpos 448 ypos 400 xanchor 1.0 size 18
+            textbutton _(">  JOUER") style "bonus_footer_button":
+                xalign 0.5
+                ypos 500
+                sensitive selected_unlocked
+                action Call("REPLAY_FREE_TIME_SCENE", selected_scene["id"])
+
+    text _("[total_unlocked] / [len(all_scenes)] DÉBLOQUÉES") style "bonus_label" xpos 76 ypos 850
+    hbox:
+        xalign 0.5
+        ypos 838
+        spacing 26
+        textbutton "<" style "bonus_footer_button" text_size 38 sensitive scene_page > 0 action [SetScreenVariable("scene_page", max(0, scene_page - 1)), SetScreenVariable("selected_scene_id", None)]
+        text _("PAGE [scene_page + 1] / [total_pages]") style "bonus_label" yalign 0.5
+        textbutton ">" style "bonus_footer_button" text_size 38 sensitive scene_page < total_pages - 1 action [SetScreenVariable("scene_page", min(total_pages - 1, scene_page + 1)), SetScreenVariable("selected_scene_id", None)]
+    use bonus_footer(ShowMenu("bonus_content_menu"))

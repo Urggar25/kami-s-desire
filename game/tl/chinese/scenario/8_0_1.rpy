@@ -2500,3 +2500,35 @@ translate chinese strings:
     old "Ne rien dire."
     new ""
 
+# TODO: Translation updated at 2026-08-16 12:10
+
+# game/scenario/8_0_1.rpy:161
+translate chinese d1af98c2_7:
+
+    # think "Non."
+    think ""
+
+# game/scenario/8_0_1.rpy:180
+translate chinese daf4fff8_1:
+
+    # think "..."
+    think ""
+
+# game/scenario/8_0_1.rpy:272
+translate chinese d1af98c2_8:
+
+    # think "Non."
+    think ""
+
+# game/scenario/8_0_1.rpy:373
+translate chinese cdb70519:
+
+    # "Encore."
+    ""
+
+# game/scenario/8_0_1.rpy:836
+translate chinese 0665bdfc:
+
+    # think "Pas maintenant."
+    think ""
+

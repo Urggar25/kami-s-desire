@@ -17,12 +17,10 @@
 # ------------------------------------------------------------
 init -2 python:
     config.layers = [ "bgcam", "master", "transient", "screens", "overlay" ]
-    CINEMA_ZOOM_BG = 1.60
-    CINEMA_CAM_Y = 0.45
+    CINEMA_ZOOM_BG = 1.80
+    CINEMA_CAM_Y = 0.41
     CINEMA_SPRITE_ZOOM = 1.60
     CINEMA_SPRITE_YPUSH = -80
-    CINEMA_FRAME_LEFT = 0.38
-    CINEMA_FRAME_RIGHT = 0.62
 
 define config.say_attribute_transition = None
 define config.say_attribute_transition_layer = "master"
@@ -33,6 +31,9 @@ define config.say_attribute_transition_layer = "master"
 default cam_x_cur = 0.5
 default cam_y_cur = 0.5
 default cam_z_cur = 1.0
+default bg_cam_x_cur = 0.5
+default bg_cam_y_cur = 0.5
+default bg_cam_z_cur = 1.0
 
 default char_pos = {}         # tag -> xalign
 default char_state = {}       # tag -> dict(expr,x,y,layer,zorder)
@@ -54,6 +55,9 @@ default persistent.unlocked_arguments = []
 default persistent.unlocked_vote_argument_ids = []
 default persistent.unlocked_dossier_args = []
 default persistent.pegi18_prompt_done = False
+default persistent.known_character_names = []
+
+default day_id = 0
 
 
 # ------------------------------------------------------------
@@ -86,6 +90,72 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.35):
 
 
 init python:
+    CHARACTER_REAL_NAMES = {
+        "noam": "Noam", "lysa": "Lysa", "elias": "Elias",
+        "mara": "Mara", "julian": "Julian", "iris": "Iris",
+        "tomas": "Tomas", "elen": "Elen", "kael": "Kael",
+        "nyra": "Nyra", "ryn": "Ryn", "sael": "Sael",
+        "kami": "KAMI", "goumi": "Goumi",
+    }
+
+    def character_names_ensure_state():
+        known_names = getattr(persistent, "known_character_names", None)
+        if not isinstance(known_names, list):
+            known_names = []
+            persistent.known_character_names = known_names
+        return known_names
+
+    def is_character_name_known(character_id):
+        return character_id in character_names_ensure_state()
+
+    def character_display_name(character_id):
+        if is_character_name_known(character_id):
+            return CHARACTER_REAL_NAMES.get(character_id, "???")
+        return "???"
+
+    def unlock_character_name(character_id, save=True):
+        if character_id not in CHARACTER_REAL_NAMES:
+            return False
+
+        known_names = character_names_ensure_state()
+        if character_id in known_names:
+            return False
+
+        known_names.append(character_id)
+        if save:
+            renpy.save_persistent()
+        return True
+
+    def migrate_known_character_names_from_save():
+        """Récupère les découvertes déjà faites dans les anciennes sauvegardes."""
+        discovered_rooms = {
+            "decouverte_salle_archive": ("tomas",),
+            "decouverte_cafeteria": ("elen", "goumi"),
+            "decouverte_salle_canon": ("ryn",),
+            "decouverte_gymnase": ("elias",),
+            "decouverte_infirmerie": ("sael",),
+            "decouverte_salle_maintenance": ("kael",),
+            "decouverte_salle_observation": ("lysa",),
+            "decouverte_salle_repos": ("iris", "julian"),
+            "decouverte_sas": ("mara",),
+            "decouverte_stockage": ("nyra",),
+        }
+
+        changed = False
+        for flag_name, character_ids in discovered_rooms.items():
+            if getattr(store, flag_name, False):
+                for character_id in character_ids:
+                    changed = unlock_character_name(character_id, save=False) or changed
+
+        # À partir du jour 1, ces trois identités ont déjà été révélées
+        # explicitement pendant le prologue.
+        if getattr(store, "day_id", 0) >= 1:
+            for character_id in ("noam", "lysa", "kami"):
+                changed = unlock_character_name(character_id, save=False) or changed
+
+        if changed:
+            renpy.save_persistent()
+
     import re
     import time
 
@@ -147,31 +217,49 @@ init python:
         return "_call_day1_trace_wakeup"
 
     def cam_apply(x1, y1, z1, t=0.35, layers=("bgcam", "master")):
-        x0 = store.cam_x_cur
-        y0 = store.cam_y_cur
-        z0 = store.cam_z_cur
-
         sw = config.screen_width
         sh = config.screen_height
 
-        dx0 = int((0.5 - x0) * (sw * (z0 - 1.0)))
-        dy0 = int((0.5 - y0) * (sh * (z0 - 1.0)))
-        dx1 = int((0.5 - x1) * (sw * (z1 - 1.0)))
-        dy1 = int((0.5 - y1) * (sh * (z1 - 1.0)))
-
-        tr = cam_runtime(
-            dx0=dx0, dy0=dy0, z0=z0,
-            dx1=dx1, dy1=dy1, z1=z1,
-            t=t
-        )
-
         for ly in layers:
+            if ly == "bgcam":
+                x0 = store.bg_cam_x_cur
+                y0 = store.bg_cam_y_cur
+                z0 = store.bg_cam_z_cur
+            else:
+                x0 = store.cam_x_cur
+                y0 = store.cam_y_cur
+                z0 = store.cam_z_cur
+
+            dx0 = int((0.5 - x0) * (sw * (z0 - 1.0)))
+            dy0 = int((0.5 - y0) * (sh * (z0 - 1.0)))
+            dx1 = int((0.5 - x1) * (sw * (z1 - 1.0)))
+            dy1 = int((0.5 - y1) * (sh * (z1 - 1.0)))
+            tr = cam_runtime(
+                dx0=dx0, dy0=dy0, z0=z0,
+                dx1=dx1, dy1=dy1, z1=z1,
+                t=t
+            )
             renpy.show_layer_at([], layer=ly)
             renpy.show_layer_at([tr], layer=ly)
 
-        store.cam_x_cur = x1
-        store.cam_y_cur = y1
-        store.cam_z_cur = z1
+            if ly == "bgcam":
+                store.bg_cam_x_cur = x1
+                store.bg_cam_y_cur = y1
+                store.bg_cam_z_cur = z1
+            else:
+                store.cam_x_cur = x1
+                store.cam_y_cur = y1
+                store.cam_z_cur = z1
+
+    def cam_current(layer="master"):
+        if layer == "bgcam":
+            return store.bg_cam_x_cur, store.bg_cam_y_cur, store.bg_cam_z_cur
+        return store.cam_x_cur, store.cam_y_cur, store.cam_z_cur
+
+    def cam_restore_current(t=0.0, layers=("bgcam", "master")):
+        for layer in layers:
+            x, y, z = cam_current(layer)
+            cam_apply(x, y, z, t=t, layers=(layer,))
 
 
     def cam_move(fx=0.5, fy=0.5, z=1.35, t=0.35, layers=("bgcam", "master")):
@@ -383,41 +471,18 @@ init python:
 
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=z)
 
-# ------------------------------------------------------------
-# Cible caméra en fonction du perso
-# ------------------------------------------------------------
 init python:
-    def focus_target_x_from_char(tag):
+    def cam_x_for_edge_safe_char(tag, zoom=None):
+        """Centre autant que possible sans jamais découvrir un bord du décor."""
         x = store.char_pos.get(tag, 0.5)
-
-        # Si perso est à gauche, on le met sur le tiers gauche ; sinon tiers droit.
-        if x < 0.5:
-            return CINEMA_FRAME_LEFT
-        elif x > 0.5:
-            return CINEMA_FRAME_RIGHT
-        else:
+        z = zoom if zoom is not None else CINEMA_ZOOM_BG
+        if z <= 1.0:
             return 0.5
 
-
-init python:
-    def cam_x_for_framed_char(tag):
-        x = store.char_pos.get(tag, 0.5)
-
-        # Où on veut voir le perso à l'écran
-        if x < 0.5:
-            target = CINEMA_FRAME_LEFT
-        elif x > 0.5:
-            target = CINEMA_FRAME_RIGHT
-        else:
-            target = 0.5
-
-        # Convertit en cible caméra : on décale de la différence
-        # cam_x = 0.5 + (x - target)
-        # clamp 0..1 pour éviter de sortir du décor
-        cam_x = 0.5 + (x - target)
-        if cam_x < 0.0: cam_x = 0.0
-        if cam_x > 1.0: cam_x = 1.0
-        return cam_x
+        # Cette cible centrerait exactement le personnage. La borner à 0..1
+        # garantit que l'image zoomée couvre encore les deux bords de l'écran.
+        target = 0.5 + ((x - 0.5) * z / (z - 1.0))
+        return max(0.0, min(1.0, target))
 
 
 # ------------------------------------------------------------
@@ -447,8 +512,8 @@ init python:
             return
 
         bg_set_blur(True, 2.5, layer="bgcam")
-        tx = cam_x_for_framed_char(tag)
-        cam_move(tx, CINEMA_CAM_Y, CINEMA_ZOOM_BG, t, layers=("bgcam", "master"))
+        safe_tx = cam_x_for_edge_safe_char(tag, CINEMA_ZOOM_BG)
+        cam_move(safe_tx, CINEMA_CAM_Y, CINEMA_ZOOM_BG, t, layers=("bgcam", "master"))
 
         for c in list(store.char_state.keys()):
             if not renpy.showing(c, layer="master"):
@@ -576,18 +641,18 @@ define voix_off = Character(
 )
 
 # Persos
-define noam = Character("Noam", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("noam"), image="noam")
-define lysa = Character("Lysa", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("lysa"), image="lysa")
-define elias = Character("Elias", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("elias"), image="elias")
-define mara = Character("Mara", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("mara"), image="mara")
-define julian = Character("Julian", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("julian"), image="julian")
-define iris = Character("Iris", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("iris"), image="iris")
-define tomas = Character("Tomas", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("tomas"), image="tomas")
-define elen = Character("Elen", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("elen"), image="elen")
-define kael = Character("Kael", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("kael"), image="kael")
-define nyra = Character("Nyra", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("nyra"), image="nyra")
-define ryn = Character("Ryn", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("ryn"), image="ryn")
-define sael = Character("Sael", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("sael"), image="sael")
+define noam = DynamicCharacter("character_display_name('noam')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("noam"), image="noam")
+define lysa = DynamicCharacter("character_display_name('lysa')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("lysa"), image="lysa")
+define elias = DynamicCharacter("character_display_name('elias')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("elias"), image="elias")
+define mara = DynamicCharacter("character_display_name('mara')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("mara"), image="mara")
+define julian = DynamicCharacter("character_display_name('julian')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("julian"), image="julian")
+define iris = DynamicCharacter("character_display_name('iris')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("iris"), image="iris")
+define tomas = DynamicCharacter("character_display_name('tomas')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("tomas"), image="tomas")
+define elen = DynamicCharacter("character_display_name('elen')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("elen"), image="elen")
+define kael = DynamicCharacter("character_display_name('kael')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("kael"), image="kael")
+define nyra = DynamicCharacter("character_display_name('nyra')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("nyra"), image="nyra")
+define ryn = DynamicCharacter("character_display_name('ryn')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("ryn"), image="ryn")
+define sael = DynamicCharacter("character_display_name('sael')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("sael"), image="sael")
 
 define med1 = Character("Médiatrice", what_prefix="“", what_suffix="”")
 define med2 = Character("Médiateur", what_prefix="“", what_suffix="”")
@@ -599,11 +664,11 @@ define voix = Character("Voix du système", what_prefix="“", what_suffix="”"
 define agent = Character("Agent de sécurité", what_prefix="“", what_suffix="”")
 define resp_d = Character("Responsable de District", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("man"), image="man")
 define tuto = Character("", what_prefix="(", what_suffix=")", what_color="#008000", callback=make_autofocus_cb("__NARRATOR__"))
-define goumi = Character("Goumi", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("goumi"), image="goumi")
+define goumi = DynamicCharacter("character_display_name('goumi')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("goumi"), image="goumi")
 define robot = Character("Robot", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("robot"))
 
-define kami = Character(
-    "KAMI",
+define kami = DynamicCharacter(
+    "character_display_name('kami')",
     what_prefix="« ", what_suffix=" »",
     who_color="#AFCBFF",
     callback=make_autofocus_cb("__NARRATOR__", doublage_tag="kami")
@@ -636,12 +701,10 @@ init -2:
 # ------------------------------------------------------------
 
 label _init_cinema_params:
-    $ CINEMA_ZOOM_BG = 1.60          # Zoom du fond
-    $ CINEMA_CAM_Y = 0.45            # Hauteur caméra (0.5 = centre, 0.70 = visage haut)
+    $ CINEMA_ZOOM_BG = 1.80          # Gros plan renforcé sur le locuteur
+    $ CINEMA_CAM_Y = 0.41            # Cadrage relevé vers le visage
     $ CINEMA_SPRITE_ZOOM = 1.60      # Zoom du sprite locuteur
     $ CINEMA_SPRITE_YPUSH = -80      # Relevé sprite (négatif = vers le haut)
-    $ CINEMA_FRAME_LEFT = 0.38
-    $ CINEMA_FRAME_RIGHT = 0.62
     return
 
 

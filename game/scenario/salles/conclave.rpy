@@ -12,7 +12,7 @@ label CONCLAVE_TP:
         call screen pnc_conclave()
         return
 
-    if social_free_time_active() and (elen_link == 0 or nyra_link in [0, 1, 2, 3, 4]):
+    if social_free_time_active() and character_has_available_free_time("nyra"):
         $ pnc_room = "pnc_conclave"
         call screen pnc_conclave()
         return
@@ -32,23 +32,14 @@ screen pnc_conclave():
     use room_scene_background("conclave")
     use room_scene_interactions("conclave")
 
-    if social_free_time_active() and nyra_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("nyra"):
         imagebutton:
             idle Transform(character_image("nyra", "neutre"), zoom=1.00)
             hover Transform(character_image("nyra", "reflexion"), zoom=1.00)
             focus_mask True
             xalign 0.30
             yalign 1.00
-            action [SetVariable("last_room_label", "CONCLAVE_TP"), Jump("NYRA_LINK_INTERACT")]
-
-    if social_free_time_active() and elen_link == 0:
-        imagebutton:
-            idle Transform(character_image("elen", "joie"), zoom=1.00)
-            hover Transform(character_image("elen", "content"), zoom=1.00)
-            focus_mask True
-            xalign 0.52
-            yalign 1.00
-            action [SetVariable("last_room_label", "CONCLAVE_TP"), Jump("ELEN_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "CONCLAVE_TP"), SetVariable("free_time_selected_character", "nyra"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
 
 

@@ -256,6 +256,21 @@ label _1_CANON:
 label _1_CHOICE_DEATH:
     scene bg_conclave at adaptive_fullscreen with fade
 
+    $ showGroup([
+        ("lysa", "neutre", -0.11),
+        ("noam", "inquiet", 0.01),
+        ("ryn", "colere", 0.13),
+        ("mara", "rire", 0.25),
+        ("tomas", "reflechit", 0.37),
+        ("elen", "surpris", 0.49),
+        ("julian", "peur", 0.60),
+        ("iris", "inquiet", 0.72),
+        ("nyra", "triste", 0.84),
+        ("kael", "calme", 0.96),
+        ("elias", "neutre", 1.08),
+        ("sael", "raison", 1.20),
+    ])
+
     $ _day1_asphyxia_deaths = getattr(persistent, "succes_day1_asphyxia_deaths", 0)
 
     if _day1_asphyxia_deaths <= 1:

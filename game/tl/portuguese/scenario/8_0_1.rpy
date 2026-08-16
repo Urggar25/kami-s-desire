@@ -2500,3 +2500,35 @@ translate portuguese strings:
     old "Ne rien dire."
     new ""
 
+# TODO: Translation updated at 2026-08-16 12:24
+
+# game/scenario/8_0_1.rpy:161
+translate portuguese d1af98c2_7:
+
+    # think "Non."
+    think ""
+
+# game/scenario/8_0_1.rpy:180
+translate portuguese daf4fff8_1:
+
+    # think "..."
+    think ""
+
+# game/scenario/8_0_1.rpy:272
+translate portuguese d1af98c2_8:
+
+    # think "Non."
+    think ""
+
+# game/scenario/8_0_1.rpy:373
+translate portuguese cdb70519:
+
+    # "Encore."
+    ""
+
+# game/scenario/8_0_1.rpy:836
+translate portuguese 0665bdfc:
+
+    # think "Pas maintenant."
+    think ""
+

@@ -6,7 +6,10 @@
 # Quand toutes les entrées d'un pack sont débloquées -> scène bonus jouable.
 # =============================================================================
 
+# Conservé pour pouvoir migrer les déblocages présents dans les anciennes
+# sauvegardes. La progression canonique du Codex vit désormais dans persistent.
 default codex_unlocked_entries = []
+default persistent.codex_unlocked_entries = []
 
 # CODEX_ENTRIES doit exister AVANT les init de priorité >0 (injections scénario)
 init -5 python:
@@ -112,6 +115,36 @@ init 3 python:
 
 init python:
 
+    def codex_sync_unlocked_entries():
+        """Fusionne l'ancien état de sauvegarde avec la progression globale."""
+        persistent_entries = getattr(persistent, "codex_unlocked_entries", None)
+        if not isinstance(persistent_entries, list):
+            persistent_entries = []
+            persistent.codex_unlocked_entries = persistent_entries
+
+        save_entries = getattr(store, "codex_unlocked_entries", None)
+        if not isinstance(save_entries, list):
+            save_entries = []
+            store.codex_unlocked_entries = save_entries
+
+        persistent_changed = False
+
+        # Migration des anciennes sauvegardes vers le profil permanent.
+        for eid in save_entries:
+            if eid not in persistent_entries:
+                persistent_entries.append(eid)
+                persistent_changed = True
+
+        # Une nouvelle partie retrouve immédiatement tous les déblocages globaux.
+        for eid in persistent_entries:
+            if eid not in save_entries:
+                save_entries.append(eid)
+
+        if persistent_changed:
+            renpy.save_persistent()
+
+        return persistent_entries
+
     # ---- Accès données ----
     def codex_entry(eid):
         return CODEX_ENTRIES.get(eid, {})
@@ -132,15 +165,19 @@ init python:
         return [a for a in codex_entry(eid).get("assoc", []) if a in CODEX_ENTRIES]
 
     def codex_is_unlocked(eid):
-        return eid in store.codex_unlocked_entries
+        return eid in codex_sync_unlocked_entries()
 
     def codex_pack_index_of(eid):
         return CODEX_ENTRY_PACK.get(eid, 0)
 
     # ---- Déblocage ----
     def codex_unlock_page(eid, with_notification=True):
-        if eid in CODEX_ENTRIES and eid not in store.codex_unlocked_entries:
-            store.codex_unlocked_entries.append(eid)
+        unlocked_entries = codex_sync_unlocked_entries()
+        if eid in CODEX_ENTRIES and eid not in unlocked_entries:
+            unlocked_entries.append(eid)
+            if eid not in store.codex_unlocked_entries:
+                store.codex_unlocked_entries.append(eid)
+            renpy.save_persistent()
             renpy.restart_interaction()
             return True
         return False
@@ -170,7 +207,7 @@ init python:
         return CODEX_PACKS[pack_index]["entries"][0]
 
     def codex_total_unlocked():
-        return sum(1 for e in store.codex_unlocked_entries if e in CODEX_ENTRIES)
+        return sum(1 for e in codex_sync_unlocked_entries() if e in CODEX_ENTRIES)
 
     def codex_total_entries():
         return len(CODEX_ENTRIES)
@@ -190,9 +227,17 @@ init python:
 
     # ---- Debug ----
     def codex_unlock_all_debug():
+        unlocked_entries = codex_sync_unlocked_entries()
+        changed = False
         for e in CODEX_ENTRIES:
+            if e not in unlocked_entries:
+                unlocked_entries.append(e)
+                changed = True
             if e not in store.codex_unlocked_entries:
                 store.codex_unlocked_entries.append(e)
+        if changed:
+            renpy.save_persistent()
+        renpy.restart_interaction()
 
 
 # =============================================================================

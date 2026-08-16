@@ -3622,3 +3622,23 @@ translate portuguese strings:
     old "La laisser contre la porte encore quelques secondes."
     new ""
 
+# TODO: Translation updated at 2026-08-16 12:24
+
+# game/scenario/9_0_1.rpy:586
+translate portuguese c7f4f0c1:
+
+    # kami "Enfin."
+    kami ""
+
+# game/scenario/9_0_1.rpy:623
+translate portuguese a7d8dea8:
+
+    # kami "Vous voyez ?"
+    kami ""
+
+# game/scenario/9_0_1.rpy:1278
+translate portuguese ed2f68a9_3:
+
+    # kami "Non."
+    kami ""
+

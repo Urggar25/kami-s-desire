@@ -12,9 +12,6 @@ label DORTOIR_TP:
     if dortoir_lock:
         jump MAP_NOTHING_HERE
 
-    if social_free_time_active() and free_time_round == 3 and not seen_voyeur_nyra:
-        jump temps_libre_salle_dortoir
-
     $ pnc_room = "pnc_dortoir"
     call screen pnc_dortoir()
 
@@ -101,15 +98,6 @@ screen pnc_dortoir():
             xalign 0.58
             yalign 1.00
             action Jump("_3_OPT_KAEL_DIAL")
-
-    if social_free_time_active() and lysa_link == 4:
-        imagebutton:
-            idle Transform(character_image("lysa", "triste"), zoom=1.00)
-            hover Transform(character_image("lysa", "sourire"), zoom=1.00)
-            focus_mask True
-            xalign 0.82
-            yalign 1.00
-            action [SetVariable("last_room_label", "DORTOIR_TP"), Jump("LYSA_LINK_INTERACT")]
 
 
 label _2_ROUTE_CAFETERIA_NYRA:

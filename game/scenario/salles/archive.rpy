@@ -14,9 +14,6 @@ label ARCHIVE_TP:
     if not decouverte_salle_archive and day_number() == 1:
         jump decouverte_salle_archive
 
-    if social_free_time_active() and free_time_round == 2 and not seen_voyeur_mara_tomas:
-        jump temps_libre_salle_archive
-
     $ pnc_room = "pnc_archive"
     call screen pnc_archive()
 
@@ -38,23 +35,14 @@ screen pnc_archive():
     use room_scene_background("archive")
     use room_scene_interactions("archive")
 
-    if social_free_time_active() and tomas_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("tomas"):
         imagebutton:
             idle Transform(character_image("tomas", "reflechit"), zoom=1.00)
             hover Transform(character_image("tomas", "neutre"), zoom=1.00)
             focus_mask True
             xalign 0.60
             yalign 1.00
-            action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("TOMAS_LINK_INTERACT")]
-
-    if social_free_time_active() and lysa_link == 3:
-        imagebutton:
-            idle Transform(character_image("lysa", "reflexion"), zoom=1.00)
-            hover Transform(character_image("lysa", "neutre"), zoom=1.00)
-            focus_mask True
-            xalign 0.84
-            yalign 1.00
-            action [SetVariable("last_room_label", "ARCHIVE_TP"), Jump("LYSA_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "ARCHIVE_TP"), SetVariable("free_time_selected_character", "tomas"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
 
 label archive1_bibliotheque:
@@ -187,6 +175,7 @@ label decouverte_salle_archive:
 
     tomas reflechit "Au fait—"
     tomas raison "Je m'appelle Tomas."
+    $ unlock_character_name("tomas")
 
     noam sourire "Moi c'est Noam."
 

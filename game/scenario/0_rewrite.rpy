@@ -148,6 +148,7 @@ label _0_FLASHBACK_KAMI_REWRITE:
     think "Personne ne court, tout le monde écoute."
 
     kami "Je me nomme Kami. Je ne négocierai pas aujourd'hui."
+    $ unlock_character_name("kami")
     kami "Vous recevrez de nouvelles directives sous quarante-huit heures. D'ici là, ne tentez rien d'inutile : je serai au courant de tout."
 
     "La diffusion se coupa et les interfaces revinrent, allumées mais inutiles."
@@ -234,6 +235,7 @@ label _0_RETOUR_REUNION_REWRITE:
     think "Des noms défilent en grand nombre."
 
     call screen day0_representative_selection()
+    $ unlock_character_name("noam")
 
     think "J'avais cliqué, mais l'écran avait choisi avant moi."
 
@@ -245,4 +247,3 @@ label _0_RETOUR_REUNION_REWRITE:
     agent "Transport du représentant confirmé."
 
     jump _0_EXTRACTION
-

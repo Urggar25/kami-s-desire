@@ -4414,3 +4414,11 @@ translate chinese strings:
     old "Laisser le brouilleur tranquille"
     new "不动干扰器"
 
+# TODO: Translation updated at 2026-08-16 12:10
+
+# game/scenario/1_canon.rpy:785
+translate chinese 6bc0225b:
+
+    # kami "Oh."
+    kami ""
+

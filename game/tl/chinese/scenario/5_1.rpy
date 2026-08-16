@@ -3400,3 +3400,11 @@ translate chinese strings:
     old "Aller se coucher."
     new ""
 
+# TODO: Translation updated at 2026-08-16 12:10
+
+# game/scenario/5_1.rpy:158
+translate chinese 2b09a2e5:
+
+    # kami "Rassurez-vous."
+    kami ""
+

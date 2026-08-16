@@ -374,3 +374,15 @@ translate chinese strings:
     old "Non"
     new "否"
 
+# TODO: Translation updated at 2026-08-16 12:10
+
+translate chinese strings:
+
+    # game/screens.rpy:765
+    old "Accessibilité"
+    new ""
+
+    # game/screens.rpy:766
+    old "Animations de dialogue"
+    new ""
+

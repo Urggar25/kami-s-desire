@@ -2054,11 +2054,11 @@ label _3_VOTE_CONTRE:
     call show_chapter_title("Fin du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title_1
 
     pause 3.0
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("4") from _call_end_day_24
+    call end_day("4") from _call_end_day_24
 
-    #jump _4_0_REVEIL_CHAMBRE
+    jump _4_0_REVEIL_CHAMBRE
 
 # Total jour 3 : 17m
 # Total J0-J3 : 1h25

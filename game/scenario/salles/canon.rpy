@@ -144,6 +144,7 @@ label decouverte_salle_canon:
 
     ryn reflechit "Au fait…"
     ryn reflechit "Ryn."
+    $ unlock_character_name("ryn")
 
     noam surpris "Hein ?"
 

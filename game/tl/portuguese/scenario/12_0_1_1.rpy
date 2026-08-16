@@ -2664,3 +2664,11 @@ translate portuguese 10c8efd0:
     # "Je sais seulement que la journée commence déjà avec un poids sur la poitrine."
     ""
 
+# TODO: Translation updated at 2026-08-16 12:24
+
+# game/scenario/12_0_1_1.rpy:114
+translate portuguese d1af98c2:
+
+    # think "Non."
+    think ""
+

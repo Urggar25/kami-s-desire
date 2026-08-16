@@ -1802,3 +1802,71 @@ translate english strings:
     old "Ignorer les pas et rester allongé."
     new "Ignore the footsteps and stay in bed."
 
+# TODO: Translation updated at 2026-08-15 11:35
+
+# game/scenario/5_0.rpy:398
+translate english 8bf5f6aa:
+
+    # noam "Pfff, à quoi ça servirait ?"
+    noam "Ugh, what's the point?"
+
+# game/scenario/5_0.rpy:417
+translate english 00ba0a51:
+
+    # kami "Bonjour à tous, oh vous me semblez particulièrement éteints ce matin."
+    kami "Good morning, everyone! Oh, you look especially lifeless today."
+
+# game/scenario/5_0.rpy:547
+translate english cdfa75a5:
+
+    # sael desaccord "On en a déjà discuté. C'est une mauvaise idée pour tout un tas de raisons."
+    sael desaccord "We've already discussed this. It's a bad idea for all sorts of reasons."
+
+# game/scenario/5_0.rpy:553
+translate english 042d5bc5:
+
+    # sael colere "H-Hein ? Si Limen est aujourd'hui un tas de cendres c'est à cause de sa cupidité !"
+    sael colere "W-What? Limen is a pile of ashes today because of its greed!"
+
+# game/scenario/5_0.rpy:566
+translate english cfe69292:
+
+    # sael fatigue "Tu n'étais pas obligé de venir. Cela n'a rien changé à mon avis."
+    sael fatigue "You didn't have to come. It hasn't changed my mind."
+
+# game/scenario/5_0.rpy:681
+translate english 02755e0c:
+
+    # julian neutre "Alors ? Laisse-moi deviner. Tu veux me dire de ne pas prendre les résultats comme quelque chose de personnel ?"
+    julian neutre "Well? Let me guess. You want to tell me not to take the results personally?"
+
+# game/scenario/5_0.rpy:700
+translate english 6bbf9cd6:
+
+    # julian triste "J'avoue que c'est difficile. Je croyais sincèrement que nous pouvions accomplir quelque chose de grand."
+    julian triste "I admit, it is difficult. I sincerely believed we could accomplish something great."
+
+# game/scenario/5_0.rpy:733
+translate english 6a0b277c:
+
+    # julian neutre "Moi ? je fais ce qu'il faut pour rester utile à la société."
+    julian neutre "Me? I do what I must to remain useful to society."
+
+# game/scenario/5_0.rpy:834
+translate english c0e43267:
+
+    # julian colere "Allez ouste, tu ne me sers plus à rien maintenant."
+    julian colere "Now shoo. You're no use to me anymore."
+
+# game/scenario/5_0.rpy:849
+translate english cd69191d:
+
+    # think "J'ai besoin d'avoir des réponses, j'ai besoin de savoir où en est le monde. Ce qu'il attend, ce qu'il espère."
+    think "I need answers. I need to know where the world stands. What it expects. What it hopes for."
+
+# game/scenario/5_0.rpy:939
+translate english a80f8d88:
+
+    # noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
+    noam "At least nothing caught fire. The equipment just took a hit. How long before this gets genuinely dangerous?"
+

@@ -22,9 +22,6 @@ label REPOS_TP:
     if not decouverte_salle_repos and day_number() == 1:
         jump decouverte_salle_repos
 
-    if social_free_time_active() and free_time_round == 1 and not seen_voyeur_julian_iris:
-        jump temps_libre_salle_repos
-
     $ pnc_room = "pnc_repos"
     call screen pnc_repos()
 
@@ -47,42 +44,15 @@ screen pnc_repos():
     use room_scene_background("repos")
     use room_scene_interactions("repos")
 
-    if social_free_time_active() and mara_link in [1, 3]:
-        imagebutton:
-            idle Transform(character_image("mara", "sourire"), zoom=1.00)
-            hover Transform(character_image("mara", "neutre"), zoom=1.00)
-            focus_mask True
-            xalign 0.15
-            yalign 1.00
-            action [SetVariable("last_room_label", "REPOS_TP"), Jump("MARA_LINK_INTERACT")]
-
-    if social_free_time_active() and lysa_link == 0:
-        imagebutton:
-            idle Transform(character_image("lysa", "taquin"), zoom=1.00)
-            hover Transform(character_image("lysa", "neutre"), zoom=1.00)
-            focus_mask True
-            xalign 0.82
-            yalign 1.00
-            action [SetVariable("last_room_label", "REPOS_TP"), Jump("LYSA_LINK_INTERACT")]
-
-    if social_free_time_active() and iris_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("iris"):
         imagebutton:
             idle Transform(character_image("iris", "colere"), zoom=1.00)
             hover Transform(character_image("iris", "taquin"), zoom=1.00)
             focus_mask True
             xalign 0.50
             yalign 1.00
-            action [SetVariable("last_room_label", "REPOS_TP"), Jump("IRIS_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "REPOS_TP"), SetVariable("free_time_selected_character", "iris"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
-
-    if social_free_time_active() and elen_link == 4:
-        imagebutton:
-            idle Transform(character_image("elen", "joie"), zoom=1.00)
-            hover Transform(character_image("elen", "content"), zoom=1.00)
-            focus_mask True
-            xalign 0.68
-            yalign 1.00
-            action [SetVariable("last_room_label", "REPOS_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
 
@@ -257,6 +227,7 @@ label decouverte_salle_repos:
     iris taquin "Crois moi, ça crée surtout des migraines."
 
     julian taquin "Iris."
+    $ unlock_character_name("iris")
     julian taquin "Fais pas gaffe, elle est toujours comme ça."
     julian taquin "Toujours aussi chaleureuse."
     
@@ -265,6 +236,7 @@ label decouverte_salle_repos:
     noam sourire "Moi c'est Noam."
 
     julian taquin "Julian."
+    $ unlock_character_name("julian")
     julian taquin "Et oui, avant que tu demandes :"
     julian taquin "Je suis à peu près bon dans quasiment tous les domaines."
 

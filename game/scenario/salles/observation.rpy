@@ -41,33 +41,15 @@ screen pnc_observation():
     use room_scene_background("observation")
     use room_scene_interactions("observation")
 
-    if social_free_time_active() and lysa_link == 2:
-        imagebutton:
-            idle Transform(character_image("lysa", "reflexion"), zoom=1.00)
-            hover Transform(character_image("lysa", "triste"), zoom=1.00)
-            focus_mask True
-            xalign 0.82
-            yalign 1.00
-            action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("LYSA_LINK_INTERACT")]
-
-    if social_free_time_active() and julian_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("julian"):
         imagebutton:
             idle Transform(character_image("julian", "sourire"), zoom=1.00)
             hover Transform(character_image("julian", "taquin"), zoom=1.00)
             focus_mask True
             xalign 0.62
             yalign 1.00
-            action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("JULIAN_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "OBSERVATION_TP"), SetVariable("free_time_selected_character", "julian"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
-
-    if social_free_time_active() and elen_link == 2:
-        imagebutton:
-            idle Transform(character_image("elen", "content"), zoom=1.00)
-            hover Transform(character_image("elen", "reflexion"), zoom=1.00)
-            focus_mask True
-            xalign 0.40
-            yalign 1.00
-            action [SetVariable("last_room_label", "OBSERVATION_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
 label observation1_porte_couloir_cafeteria:

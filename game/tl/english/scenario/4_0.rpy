@@ -1424,3 +1424,17 @@ translate english strings:
     old "Regarder les écrans avant de répondre."
     new "Look at the screens before answering."
 
+# TODO: Translation updated at 2026-08-15 11:35
+
+# game/scenario/4_0.rpy:679
+translate english day4_tray_scene_loop_a99ddca2:
+
+    # ryn colere "À Limen, les frontières, c'est pas qu'une ligne sur une carte. C’est des types armés. C’est des gens qu’on enterre."
+    ryn colere "In Limen, the borders aren't just lines on a map. They're armed men. They're people we bury."
+
+# game/scenario/4_0.rpy:734
+translate english day4_tray_scene_loop_5f7709e2:
+
+    # ryn colere "Ferme-la, parle pas de ce que tu connais pas !"
+    ryn colere "Shut the hell up. Don't talk about things you know nothing about!"
+

@@ -79,6 +79,10 @@ style frame:
 
 screen say(who, what):
 
+    use dialogue_punctuation_overlay(what)
+
+    on "show" action Function(start_dialogue_animation, what)
+
     window:
         id "window"
         add Solid("#5cd3ff33", xsize=1920, ysize=2) xpos 0 ypos 0
@@ -276,6 +280,7 @@ label after_load:
     $ quick_menu = False
     $ quick_menu_open = False
     $ lock_nsfw_content()
+    $ migrate_known_character_names_from_save()
     return
 
 init python:
@@ -754,6 +759,11 @@ screen preferences():
                     textbutton _("Texte non lu")    action Preference("skip", "toggle")
                     textbutton _("Après les choix") action Preference("after choices", "toggle")
                     textbutton _("Transitions")     action InvertSelected(Preference("transitions", "toggle"))
+
+                vbox:
+                    style_prefix "check"
+                    label _("Accessibilité")
+                    textbutton _("Animations de dialogue") action ToggleField(persistent, "dialogue_animations")
 
                 vbox:
                     style_prefix "radio"

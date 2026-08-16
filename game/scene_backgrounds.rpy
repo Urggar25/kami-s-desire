@@ -12,6 +12,14 @@ init -2 python:
     ROOM_SCENE_ANIM_FADE = 0.45
     ROOM_SCENE_NAV_WIDTH = 44
 
+    # Ces catalogues évitent de rescanner toutes les ressources du jeu à
+    # chaque frame d'un décor animé.
+    _room_variant_numbers_cache = {}
+    _room_frame_paths_cache = {}
+    _room_interaction_catalog = None
+    _room_composited_frame_cache = {}
+    _room_image_cache = {}
+
     def room_scene_find_asset(stem):
         for ext in ROOM_SCENE_EXTENSIONS:
             path = "%s/%s.%s" % (ROOM_SCENE_DIR, stem, ext)
@@ -27,11 +35,17 @@ init -2 python:
         return None
 
     def room_scene_variant_numbers(room_name):
+        cached = _room_variant_numbers_cache.get(room_name)
+        if cached is not None:
+            return cached
+
         numbers = []
         for idx in range(1, 100):
             if room_scene_find_asset("%s%s" % (room_name, idx)):
                 numbers.append(idx)
-        return numbers
+        result = tuple(numbers)
+        _room_variant_numbers_cache[room_name] = result
+        return result
 
     def room_scene_has_variants(room_name):
         return len(room_scene_variant_numbers(room_name)) > 1
@@ -65,12 +79,21 @@ init -2 python:
 
     def room_scene_frame_paths(room_name):
         current = room_scene_current_number(room_name)
+        cache_key = (room_name, current)
+        cached = _room_frame_paths_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
         if current is None:
             base = room_scene_find_asset(room_name)
             if base:
-                return [base]
+                result = (base,)
+                _room_frame_paths_cache[cache_key] = result
+                return result
             legacy = room_scene_legacy_asset(room_name)
-            return [legacy] if legacy else []
+            result = (legacy,) if legacy else ()
+            _room_frame_paths_cache[cache_key] = result
+            return result
 
         stem = "%s%s" % (room_name, current)
         frames = []
@@ -85,7 +108,9 @@ init -2 python:
                 break
             frames.append(frame)
 
-        return frames
+        result = tuple(frames)
+        _room_frame_paths_cache[cache_key] = result
+        return result
 
     def room_scene_native_size(path):
         try:
@@ -94,33 +119,81 @@ init -2 python:
             return (1536, 1024)
 
     def room_scene_frame_displayable(path, alpha=1.0):
-        return Transform(Image(path), alpha=alpha)
+        image = _room_image_cache.get(path)
+        if image is None:
+            image = Image(path)
+            _room_image_cache[path] = image
+        if alpha == 1.0:
+            return image
+        return Transform(image, alpha=alpha)
 
-    def room_scene_crossfade_displayable(first, second, alpha):
-        sw, sh = room_scene_native_size(first)
+    def room_scene_crossfade_displayable(first, second, alpha, size):
+        sw, sh = size
         return LiveComposite(
             (sw, sh),
-            (0, 0), room_scene_frame_displayable(first, 1.0),
-            (0, 0), room_scene_frame_displayable(second, alpha),
+            (0, 0), first,
+            (0, 0), Transform(second, alpha=alpha),
         )
+
+    def room_interaction_is_visual_overlay(room_name, key):
+        """Calques qui font partie de l'état visuel permanent de la salle."""
+        if room_interaction_is_decorative(key):
+            return True
+        if key == "brouilleur":
+            return True
+        return (
+            room_name == "cafeteria"
+            and room_scene_stem(room_name) == "cafeteria3"
+            and key.startswith("nourriture")
+        )
+
+    def room_scene_visual_overlay_paths(room_name):
+        return tuple(
+            path for key, path in room_interaction_files(room_name)
+            if room_interaction_is_visual_overlay(room_name, key)
+        )
+
+    def room_scene_composited_frame(frame_path, overlays):
+        """Construit une seule fois une frame avec ses calques conditionnels."""
+        cache_key = (frame_path, overlays)
+        cached = _room_composited_frame_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
+        if not overlays:
+            result = room_scene_frame_displayable(frame_path)
+        else:
+            sw, sh = room_scene_native_size(frame_path)
+            parts = [(0, 0), room_scene_frame_displayable(frame_path)]
+            for path in overlays:
+                parts.extend(((0, 0), room_scene_frame_displayable(path)))
+            result = LiveComposite((sw, sh), *parts)
+
+        _room_composited_frame_cache[cache_key] = result
+        return result
 
     def room_scene_dynamic(st, at, room_name):
         frames = room_scene_frame_paths(room_name)
         if not frames:
             return Solid("#000"), 1.0
+        overlays = room_scene_visual_overlay_paths(room_name)
         if len(frames) == 1:
-            return room_scene_frame_displayable(frames[0]), 0.25
+            return room_scene_composited_frame(frames[0], overlays), 0.25
 
         step = ROOM_SCENE_ANIM_HOLD + ROOM_SCENE_ANIM_FADE
         frame_index = int(st / step) % len(frames)
         phase = st % step
 
         if phase < ROOM_SCENE_ANIM_HOLD:
-            return room_scene_frame_displayable(frames[frame_index]), max(0.05, ROOM_SCENE_ANIM_HOLD - phase)
+            current = room_scene_composited_frame(frames[frame_index], overlays)
+            return current, max(0.05, ROOM_SCENE_ANIM_HOLD - phase)
 
         next_index = (frame_index + 1) % len(frames)
         alpha = min(1.0, max(0.0, (phase - ROOM_SCENE_ANIM_HOLD) / ROOM_SCENE_ANIM_FADE))
-        return room_scene_crossfade_displayable(frames[frame_index], frames[next_index], alpha), 0.03
+        current = room_scene_composited_frame(frames[frame_index], overlays)
+        following = room_scene_composited_frame(frames[next_index], overlays)
+        size = room_scene_native_size(frames[frame_index])
+        return room_scene_crossfade_displayable(current, following, alpha, size), 0.03
 
     def room_scene_displayable(room_name):
         return DynamicDisplayable(room_scene_dynamic, room_name)
@@ -179,6 +252,34 @@ init -2 python:
             _room_disp_cache[ck] = d
         return d
 
+    def room_interaction_hover_with_overlays(path, room_name):
+        """Garde les compléments visibles au-dessus de leur texture mère."""
+        overlays = room_scene_visual_overlay_paths(room_name)
+        cache_key = (room_name, path, "hover_with_overlays", overlays)
+        cached = _room_disp_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
+        if not overlays:
+            result = room_interaction_layer(path, room_name, "hover")
+        else:
+            parts = [
+                (0, 0), room_interaction_layer(path, room_name, "hover"),
+            ]
+            for overlay_path in overlays:
+                parts.extend((
+                    # Les textures filles reçoivent le même hover transparent
+                    # que la mère, sans modifier leur canal alpha.
+                    (0, 0), room_interaction_layer(overlay_path, room_name, "hover"),
+                ))
+            result = LiveComposite(
+                (config.screen_width, config.screen_height),
+                *parts
+            )
+
+        _room_disp_cache[cache_key] = result
+        return result
+
     def room_interaction_null():
         # idle vide plein écran : rien dessiné au repos (0 coût GPU),
         # la zone reste focusable via focus_mask.
@@ -194,6 +295,7 @@ init -2 python:
         return _room_cover_im(path, room_name)
 
     def room_interaction_files(room_name):
+        global _room_interaction_catalog
         stem = room_scene_stem(room_name)
         base_dir = "%s/%s/" % (ROOM_INTERACT_DIR, room_name)
         if room_scene_current_number(room_name) is None:
@@ -203,13 +305,22 @@ init -2 python:
         files = []
         cafeteria_food_keys = cafeteria_visible_food_keys() if room_name == "cafeteria" and stem == "cafeteria3" else None
 
-        for path in renpy.list_files():
-            normalized = path.replace("\\", "/")
-            if not normalized.startswith(scene_dir):
-                continue
-            if not normalized.lower().endswith(".png"):
-                continue
-            key = normalized.rsplit("/", 1)[-1].rsplit(".", 1)[0]
+        if _room_interaction_catalog is None:
+            catalog = {}
+            prefix = ROOM_INTERACT_DIR + "/"
+            for path in renpy.list_files():
+                normalized = path.replace("\\", "/")
+                if not normalized.startswith(prefix) or not normalized.lower().endswith(".png"):
+                    continue
+                directory = normalized.rsplit("/", 1)[0] + "/"
+                key = normalized.rsplit("/", 1)[-1].rsplit(".", 1)[0]
+                catalog.setdefault(directory, []).append((key, normalized))
+            _room_interaction_catalog = {
+                directory: tuple(sorted(entries, key=lambda item: item[0]))
+                for directory, entries in catalog.items()
+            }
+
+        for key, normalized in _room_interaction_catalog.get(scene_dir, ()):
             if key.startswith("brouilleur_"):
                 continue
             if cafeteria_food_keys is not None and key.startswith("nourriture") and key not in cafeteria_food_keys:
@@ -231,7 +342,7 @@ init -2 python:
             if renpy.loadable(jammer_path):
                 files.append(("brouilleur", jammer_path))
 
-        return sorted(files, key=lambda item: item[0])
+        return files
 
     def room_interaction_label(room_name, key):
         if room_name == "cafeteria" and room_scene_stem(room_name) == "cafeteria3" and key.startswith("nourriture"):
@@ -341,15 +452,13 @@ screen room_scene_interactions(room_name, label_overrides=None):
         $ label_name = room_interaction_label(room_name, key)
         $ target_label = resolved_label_overrides.get(label_name, label_name)
         if room_interaction_is_decorative(key):
-            add room_interaction_layer(path, room_name, "art")
+            # Déjà intégré au décor dynamique : visible aussi pendant les dialogues.
+            null
         elif target_label and renpy.has_label(target_label):
-            # Le brouilleur et la nourriture sont des calques d'état qui ne
-            # sont pas intégrés au fond : ils doivent rester visibles au repos.
-            $ is_food_overlay = room_name == "cafeteria" and room_scene_stem(room_name) == "cafeteria3" and key.startswith("nourriture")
-            $ idle_disp = room_interaction_layer(path, room_name, "art") if key == "brouilleur" or is_food_overlay else room_interaction_null()
             imagebutton:
-                idle idle_disp
-                hover room_interaction_layer(path, room_name, "hover")
+                # Le visuel au repos appartient désormais au fond composé.
+                idle room_interaction_null()
+                hover room_interaction_hover_with_overlays(path, room_name)
                 focus_mask room_interaction_layer(path, room_name, "art")
                 xpos 0
                 ypos 0

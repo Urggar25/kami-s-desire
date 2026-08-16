@@ -274,7 +274,7 @@ screen profiles_menu():
                     hbox:
                         xfill True
                         spacing 16
-                        text "[profile['name']]" size 42 color "#FFFFFF"
+                        text character_display_name(selected_profile) size 42 color "#FFFFFF"
                         textbutton "TENUES":
                             xalign 1.0
                             background Solid("#10384DCC")
@@ -399,7 +399,7 @@ screen profile_wardrobe(profile_id):
 
         vbox:
             spacing 14
-            text "GARDE-ROBE // [PROFILE_DATA[profile_id]['name']]" size 34 color "#DFF2FF" font "fonts/Rajdhani-SemiBold.ttf"
+            text "GARDE-ROBE // [character_display_name(profile_id)]" size 34 color "#DFF2FF" font "fonts/Rajdhani-SemiBold.ttf"
             text "Débloque des skins via des variables persistantes, puis équipe-les ici (appliqués à la partie droite du cadre)." size 20 color "#BFD6EA"
 
             viewport:
