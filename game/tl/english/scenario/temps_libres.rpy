@@ -6360,3 +6360,245 @@ translate english sael_link_3_88e8f635:
     # sael sourire "Mange le reste avant qu'il refroidisse. Les morts n'ont pas besoin que tu les rejoignes affamé."
     sael sourire "Eat the rest before it gets cold. The dead don't need you joining them on an empty stomach."
 
+# TODO: Translation updated at 2026-08-23 12:01
+
+# game/scenario/temps_libres.rpy:70
+translate english lysa_link_2_b7456189:
+
+    # noam taquin "Attends, par là ? Mais y'a rien ?!."
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:142
+translate english julian_link_1_ccb11ac5:
+
+    # julian taquin "C'est adorable. T'as beau tenter d'analyser, tu ne l'as pas arrêté quand même."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:148
+translate english julian_link_1_d4f0f249:
+
+    # noam reflexion "Ah ouais ? Et si on réglait ça une bonne fois pour toutes ?! On se fait une balle en or ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:154
+translate english julian_link_1_59c9ac41:
+
+    # noam taquin "Qu'est-ce qu'il y a ? Tu as peur de perdre ?"
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:161
+translate english julian_link_1_4b98dc4a:
+
+    # "Je relâche mes poignées puis regarde les caméras."
+    ""
+
+# game/scenario/temps_libres.rpy:164
+translate english julian_link_1_52e869bc:
+
+    # julian taquin "Mais je n'ai jamais dit ça. Tu t'es déconcentré tout seul..."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:166
+translate english julian_link_1_89c15fe9:
+
+    # julian rire "À votre service ! Mais tu as quand même perdu !"
+    julian rire ""
+
+# game/scenario/temps_libres.rpy:187
+translate english julian_link_2_6d984740:
+
+    # noam surpris "T'as l'air de savoir y faire ?"
+    noam surpris ""
+
+# game/scenario/temps_libres.rpy:196
+translate english julian_link_2_7628e43c:
+
+    # julian taquin "Tu as beau être adorable, ton masque finira aussi par tomber."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:201
+translate english julian_link_2_dd647ba2:
+
+    # noam taquin "Quoique, en plissant les yeux, je retrouve facilement où tu as recousu !"
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:202
+translate english julian_link_2_162b8631:
+
+    # julian taquin "C'est ça, rattrape-toi."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:221
+translate english julian_link_3_b0bd913e:
+
+    # julian sourire "Mais on ne t'a jamais dit que c'est impoli de regarder dans les affaires des autres ?"
+    julian sourire ""
+
+# game/scenario/temps_libres.rpy:223
+translate english julian_link_3_2caeee52:
+
+    # noam taquin "Si tu ne voulais pas que je regarde, tu aurais fermé complètement ton carnet."
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:239
+translate english julian_link_3_0cb37e43:
+
+    # julian inquietude "Les autres me donnent une version assez stable. La seule raison pour laquelle je n'arrive pas à te dessiner, c'est que tu es... Creux."
+    julian inquietude ""
+
+# game/scenario/temps_libres.rpy:246
+translate english julian_link_3_e962288e:
+
+    # julian taquin "Et le mien montre peut-être trop de choses à la fois. Au final, on se ressemble peut-être un peu."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:303
+translate english elen_link_1_6f4747b9:
+
+    # noam taquin "Et le reste ? Par pitié, dis-moi qu'elle est raisonnable ?"
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:325
+translate english elen_link_2_ba23135f:
+
+    # noam surpris "Pourquoi ? Je serais curieux de savoir ce qu'ils diraient s'ils t'écoutaient."
+    noam surpris ""
+
+# game/scenario/temps_libres.rpy:346
+translate english elen_link_2_96381728:
+
+    # noam sourire "C'est moi qui ai le fauteuil du milieu, alors je veux tout le monde à côté !"
+    noam sourire ""
+
+# game/scenario/temps_libres.rpy:448
+translate english iris_link_1_5022f02a:
+
+    # iris colere "Rooh tais-toi un peu et laisse-moi jouer."
+    iris colere ""
+
+# game/scenario/temps_libres.rpy:465
+translate english iris_link_2_6c6e8154:
+
+    # noam desaccord "Eh oh ! Il tient très bien."
+    noam desaccord ""
+
+# game/scenario/temps_libres.rpy:518
+translate english iris_link_3_bb95953a:
+
+    # iris desaccord "Mon verre a failli se renverser !"
+    iris desaccord ""
+
+# game/scenario/temps_libres.rpy:586
+translate english tomas_link_1_054c0615:
+
+    # noam sourire "Un peu. Mais continue, c'est intéréssant."
+    noam sourire ""
+
+# game/scenario/temps_libres.rpy:597
+translate english tomas_link_1_5363c73b:
+
+    # noam inquiet "D'une certaine manière, elle a réussi à pacifier le monde et à empêcher les guerres. Mais quand même..."
+    noam inquiet ""
+
+# game/scenario/temps_libres.rpy:685
+translate english tomas_link_3_97905059:
+
+    # noam sourire "Tu devrais en profiter, contrairement à chez nous, on a un buffet à volonté ici."
+    noam sourire ""
+
+# game/scenario/temps_libres.rpy:727
+translate english nyra_link_1_4be0ec5a:
+
+    # nyra neutre "Pas vraiment, étant donné que tout ceci n'est pas pour moi."
+    nyra neutre ""
+
+# game/scenario/temps_libres.rpy:767
+translate english nyra_link_2_f7f07d64:
+
+    # nyra sourire "Je ne te demande rien mais... Évitons de trop en parler."
+    nyra sourire ""
+
+# game/scenario/temps_libres.rpy:768
+translate english nyra_link_2_78a17305:
+
+    # noam taquin "Tu as peur que Kami se lance à leur poursuite ?"
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:813
+translate english nyra_link_3_9ab50c31:
+
+    # noam sourire "La prochaine fois, demande-moi directement de t'aider au lieu de tourner autour du pot."
+    noam sourire ""
+
+# game/scenario/temps_libres.rpy:857
+translate english kael_link_1_a002abb9:
+
+    # kael reflechit "Mais bon, il faut bien le tester."
+    kael reflechit ""
+
+# game/scenario/temps_libres.rpy:930
+translate english kael_link_3_d1af5f90:
+
+    # noam taquin "Merci, j'avais remarqué. Jusque-là rien d'incroyable."
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:944
+translate english kael_link_3_986bf3d4:
+
+    # kael triste "Ils risquent de tomber malades et ça doit pas être très agréable."
+    kael triste ""
+
+# game/scenario/temps_libres.rpy:1018
+translate english elias_link_2_deedbce6:
+
+    # elias colere "T'inquiète, je gère. Par contre si tu peux me passer la pince, ça serait pas de refus."
+    elias colere ""
+
+# game/scenario/temps_libres.rpy:1030
+translate english elias_link_2_b81408f2:
+
+    # elias fatigue "Fais chier ! La fixation a pété."
+    elias fatigue ""
+
+# game/scenario/temps_libres.rpy:1035
+translate english elias_link_2_34259031:
+
+    # elias fatigue "J'en sais rien. Tiens-moi le tuyau."
+    elias fatigue ""
+
+# game/scenario/temps_libres.rpy:1121
+translate english mara_link_1_ad9faed5:
+
+    # mara rire "Seulement ça ? T'es vraiment pas joueur. T'aurais pu choisir quelque chose de beaucoup plus... Intéressant."
+    mara rire ""
+
+# game/scenario/temps_libres.rpy:1149
+translate english mara_link_1_c59b1345:
+
+    # mara content "Mmmhh, ça dépend, le gage est plus intéressant ou pas ?"
+    mara content ""
+
+# game/scenario/temps_libres.rpy:1178
+translate english mara_link_2_80c0f022:
+
+    # mara rire "C'est pas vraiment une fierté, mais pourquoi t'es aussi surpris ?"
+    mara rire ""
+
+# game/scenario/temps_libres.rpy:1185
+translate english mara_link_2_e2386be3:
+
+    # mara taquin "Kami m'a bien aidée en rendant mes géniteurs aussi pauvres et impuissants que n'importe qui."
+    mara taquin ""
+
+# game/scenario/temps_libres.rpy:1221
+translate english mara_link_3_f6b89922:
+
+    # mara stress "Allez, réponds ! Tu vas bouder combien de temps ?"
+    mara stress ""
+
+# game/scenario/temps_libres.rpy:1319
+translate english ryn_link_2_f183d1fc:
+
+    # noam neutre "Je voulais apprendre à me défendre, pas être défendu contre l'entraîneur."
+    noam neutre ""
+

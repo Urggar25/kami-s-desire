@@ -709,6 +709,12 @@ label _init_cinema_params:
 
 
 label splashscreen:
+    # La bande-annonce se lance via Start() : on saute le logo d'intro,
+    # sinon le joueur subit 11 s de cartons avant le premier plan.
+    if persistent.trl_skip_splash:
+        $ persistent.trl_skip_splash = False
+        return
+
     scene black
     with Dissolve(0.5)
 

@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/10_0_1_1.rpy:347
 translate portuguese 2c94a11e:
@@ -1994,5 +1994,5 @@ translate portuguese strings:
 
     # game/scenario/10_0_1_1.rpy:753
     old "Appeler"
-    new "Ligar"
+    new ""
 

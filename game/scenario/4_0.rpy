@@ -121,6 +121,7 @@ label _4_0_REVEIL_CHAMBRE:
     scene bg_cg012 at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
     $ current_day = 4
+    $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
     $ cafeteria_food_level = "medium"
 

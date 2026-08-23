@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/12_0_1_1.rpy:7
 translate portuguese da86a29c:
@@ -295,7 +295,7 @@ translate portuguese fd6fe629:
     ""
 
 # game/scenario/12_0_1_1.rpy:114
-translate portuguese d1af98c2_1:
+translate portuguese d1af98c2:
 
     # think "Non."
     think ""
@@ -2587,7 +2587,7 @@ translate portuguese 15792556:
     ""
 
 # game/scenario/12_0_1_1.rpy:964
-translate portuguese d1af98c2_2:
+translate portuguese d1af98c2_1:
 
     # think "Non."
     think ""
@@ -2663,12 +2663,4 @@ translate portuguese 10c8efd0:
 
     # "Je sais seulement que la journée commence déjà avec un poids sur la poitrine."
     ""
-
-# TODO: Translation updated at 2026-08-16 12:24
-
-# game/scenario/12_0_1_1.rpy:114
-translate portuguese d1af98c2:
-
-    # think "Non."
-    think ""
 

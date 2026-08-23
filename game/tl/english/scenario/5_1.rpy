@@ -3400,3 +3400,11 @@ translate english strings:
     old "Aller se coucher."
     new ""
 
+# TODO: Translation updated at 2026-08-23 12:01
+
+# game/scenario/5_1.rpy:611
+translate english d1af98c2_5:
+
+    # think "Non."
+    think ""
+

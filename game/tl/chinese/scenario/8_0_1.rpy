@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+﻿# TODO: Translation updated at 2026-08-23 12:03
 
 # game/scenario/8_0_1.rpy:21
 translate chinese 0c11ba2a:
@@ -222,12 +222,6 @@ translate chinese 63b64097:
     # "Je me jette dessus."
     ""
 
-# game/scenario/8_0_1.rpy:123
-translate chinese d1af98c2_9:
-
-    # think "Non."
-    think ""
-
 # game/scenario/8_0_1.rpy:124
 translate chinese 4b624350:
 
@@ -361,7 +355,7 @@ translate chinese f3e931ff:
     ""
 
 # game/scenario/8_0_1.rpy:161
-translate chinese d1af98c2_10:
+translate chinese d1af98c2_7:
 
     # think "Non."
     think ""
@@ -415,7 +409,7 @@ translate chinese 417390cc:
     ""
 
 # game/scenario/8_0_1.rpy:180
-translate chinese daf4fff8_2:
+translate chinese daf4fff8_1:
 
     # think "..."
     think ""
@@ -481,7 +475,7 @@ translate chinese 474c8727:
     think ""
 
 # game/scenario/8_0_1.rpy:197
-translate chinese daf4fff8_3:
+translate chinese daf4fff8_2:
 
     # think "..."
     think ""
@@ -697,7 +691,7 @@ translate chinese 4d08156b:
     ""
 
 # game/scenario/8_0_1.rpy:272
-translate chinese d1af98c2_11:
+translate chinese d1af98c2_8:
 
     # think "Non."
     think ""
@@ -997,7 +991,7 @@ translate chinese 8c98e834:
     ""
 
 # game/scenario/8_0_1.rpy:373
-translate chinese cdb70519_1:
+translate chinese cdb70519:
 
     # "Encore."
     ""
@@ -1115,12 +1109,6 @@ translate chinese b23226c5:
 
     # elias fatigue "Genre vraiment zéro ?"
     elias fatigue ""
-
-# game/scenario/8_0_1.rpy:406
-translate chinese 7ad81883_3:
-
-    # tomas "Oui."
-    tomas ""
 
 # game/scenario/8_0_1.rpy:408
 translate chinese 1c9ee91a:
@@ -1981,13 +1969,13 @@ translate chinese 91056b7a:
     think ""
 
 # game/scenario/8_0_1.rpy:768
-translate chinese daf4fff8_4:
+translate chinese daf4fff8_3:
 
     # think "..."
     think ""
 
 # game/scenario/8_0_1.rpy:769
-translate chinese d1af98c2_12:
+translate chinese d1af98c2_9:
 
     # think "Non."
     think ""
@@ -2191,7 +2179,7 @@ translate chinese b5bfb0b1:
     noam ""
 
 # game/scenario/8_0_1.rpy:836
-translate chinese 0665bdfc_1:
+translate chinese 0665bdfc:
 
     # think "Pas maintenant."
     think ""
@@ -2499,36 +2487,4 @@ translate chinese strings:
     # game/scenario/8_0_1.rpy:824
     old "Ne rien dire."
     new ""
-
-# TODO: Translation updated at 2026-08-16 12:10
-
-# game/scenario/8_0_1.rpy:161
-translate chinese d1af98c2_7:
-
-    # think "Non."
-    think ""
-
-# game/scenario/8_0_1.rpy:180
-translate chinese daf4fff8_1:
-
-    # think "..."
-    think ""
-
-# game/scenario/8_0_1.rpy:272
-translate chinese d1af98c2_8:
-
-    # think "Non."
-    think ""
-
-# game/scenario/8_0_1.rpy:373
-translate chinese cdb70519:
-
-    # "Encore."
-    ""
-
-# game/scenario/8_0_1.rpy:836
-translate chinese 0665bdfc:
-
-    # think "Pas maintenant."
-    think ""
 

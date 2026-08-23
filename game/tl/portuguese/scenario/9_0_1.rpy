@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/9_0_1.rpy:18
 translate portuguese 5e297a0b:
@@ -157,7 +157,7 @@ translate portuguese 270330b7:
     kami ""
 
 # game/scenario/9_0_1.rpy:88
-translate portuguese 7ba676c9_2:
+translate portuguese 7ba676c9_1:
 
     # kami "Je sais."
     kami ""
@@ -172,12 +172,6 @@ translate portuguese 71029256:
 translate portuguese 349f1001:
 
     # kami "Comment vous avez fait sans moi hein ?!"
-    kami ""
-
-# game/scenario/9_0_1.rpy:94
-translate portuguese 2b09a2e5_2:
-
-    # kami "Rassurez-vous."
     kami ""
 
 # game/scenario/9_0_1.rpy:95
@@ -504,12 +498,6 @@ translate portuguese 2a03aac5:
     # "Le bois racle le sol."
     ""
 
-# game/scenario/9_0_1.rpy:251
-translate portuguese 33346357_1:
-
-    # think "Voilà."
-    think ""
-
 # game/scenario/9_0_1.rpy:252
 translate portuguese 367a1586:
 
@@ -666,12 +654,6 @@ translate portuguese 2f2ffc8c:
     # iris fatigue "Oui."
     iris fatigue ""
 
-# game/scenario/9_0_1.rpy:324
-translate portuguese afd6aa47_1:
-
-    # iris "Merci, Kael."
-    iris ""
-
 # game/scenario/9_0_1.rpy:325
 translate portuguese 228057fb:
 
@@ -823,7 +805,7 @@ translate portuguese 016bd91f:
     kami ""
 
 # game/scenario/9_0_1.rpy:415
-translate portuguese 7ba676c9_3:
+translate portuguese 7ba676c9_2:
 
     # kami "Je sais."
     kami ""
@@ -1009,7 +991,7 @@ translate portuguese cf5af007:
     sael peur ""
 
 # game/scenario/9_0_1.rpy:510
-translate portuguese 7ad81883_4:
+translate portuguese 7ad81883_3:
 
     # tomas "Oui."
     tomas ""
@@ -1104,12 +1086,6 @@ translate portuguese f928cead:
     # tomas "Si. Mal-"
     tomas ""
 
-# game/scenario/9_0_1.rpy:541
-translate portuguese 147450ef_1:
-
-    # ryn "Non."
-    ryn ""
-
 # game/scenario/9_0_1.rpy:542
 translate portuguese 752aac12:
 
@@ -1188,12 +1164,6 @@ translate portuguese ff801ab7:
     # tomas "Et Kami applique le Commandement."
     tomas ""
 
-# game/scenario/9_0_1.rpy:577
-translate portuguese 6bc0225b_3:
-
-    # kami "Oh."
-    kami ""
-
 # game/scenario/9_0_1.rpy:581
 translate portuguese 3233cb6d:
 
@@ -1207,7 +1177,7 @@ translate portuguese 6815999c:
     kami ""
 
 # game/scenario/9_0_1.rpy:586
-translate portuguese c7f4f0c1_1:
+translate portuguese c7f4f0c1:
 
     # kami "Enfin."
     kami ""
@@ -1273,7 +1243,7 @@ translate portuguese 75de0ff7:
     kami ""
 
 # game/scenario/9_0_1.rpy:623
-translate portuguese a7d8dea8_1:
+translate portuguese a7d8dea8:
 
     # kami "Vous voyez ?"
     kami ""
@@ -2472,12 +2442,6 @@ translate portuguese 1fa1e738:
     # noam "Et de toute façon, ils ne peuvent déjà plus traverser la frontière."
     noam ""
 
-# game/scenario/9_0_1.rpy:1050
-translate portuguese a958d8d1_2:
-
-    # ryn "..."
-    ryn ""
-
 # game/scenario/9_0_1.rpy:1054
 translate portuguese e6d057fa:
 
@@ -2587,7 +2551,7 @@ translate portuguese bd630c9a:
     lysa triste ""
 
 # game/scenario/9_0_1.rpy:1090
-translate portuguese 7ad81883_5:
+translate portuguese 7ad81883_4:
 
     # tomas "Oui."
     tomas ""
@@ -2881,7 +2845,7 @@ translate portuguese 70815d7e:
     sael ""
 
 # game/scenario/9_0_1.rpy:1252
-translate portuguese ed2f68a9_4:
+translate portuguese ed2f68a9_2:
 
     # kami "Non."
     kami ""
@@ -2899,7 +2863,7 @@ translate portuguese 9895afdb:
     tomas ""
 
 # game/scenario/9_0_1.rpy:1278
-translate portuguese ed2f68a9_5:
+translate portuguese ed2f68a9_3:
 
     # kami "Non."
     kami ""
@@ -3228,12 +3192,6 @@ translate portuguese 76343816:
     # "Et personne ne sait vraiment ce que les autres viennent de faire."
     ""
 
-# game/scenario/9_0_1.rpy:1532
-translate portuguese 69b04011_1:
-
-    # kami "Résultat du vote."
-    kami ""
-
 # game/scenario/9_0_1.rpy:1533
 translate portuguese b13f53e0:
 
@@ -3319,7 +3277,7 @@ translate portuguese b9559d16:
     kami ""
 
 # game/scenario/9_0_1.rpy:1570
-translate portuguese a7d8dea8_2:
+translate portuguese a7d8dea8_1:
 
     # kami "Vous voyez ?"
     kami ""
@@ -3409,7 +3367,7 @@ translate portuguese a93774fa:
     think ""
 
 # game/scenario/9_0_1.rpy:1610
-translate portuguese d1af98c2_13:
+translate portuguese d1af98c2_10:
 
     # think "Non."
     think ""
@@ -3517,7 +3475,7 @@ translate portuguese 52f9a488:
     ""
 
 # game/scenario/9_0_1.rpy:1653
-translate portuguese 69b04011_2:
+translate portuguese 69b04011_1:
 
     # kami "Résultat du vote."
     kami ""
@@ -3526,12 +3484,6 @@ translate portuguese 69b04011_2:
 translate portuguese 12138cb4:
 
     # kami "Absence d'unanimité."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1656
-translate portuguese d9620e1d_1:
-
-    # kami "Amendement rejeté."
     kami ""
 
 # game/scenario/9_0_1.rpy:1662
@@ -3621,24 +3573,4 @@ translate portuguese strings:
     # game/scenario/9_0_1.rpy:109
     old "La laisser contre la porte encore quelques secondes."
     new ""
-
-# TODO: Translation updated at 2026-08-16 12:24
-
-# game/scenario/9_0_1.rpy:586
-translate portuguese c7f4f0c1:
-
-    # kami "Enfin."
-    kami ""
-
-# game/scenario/9_0_1.rpy:623
-translate portuguese a7d8dea8:
-
-    # kami "Vous voyez ?"
-    kami ""
-
-# game/scenario/9_0_1.rpy:1278
-translate portuguese ed2f68a9_3:
-
-    # kami "Non."
-    kami ""
 

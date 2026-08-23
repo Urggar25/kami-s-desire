@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+﻿# TODO: Translation updated at 2026-08-23 12:03
 
 # game/scenario/10_0_1_1.rpy:347
 translate chinese 2c94a11e:
@@ -1994,5 +1994,5 @@ translate chinese strings:
 
     # game/scenario/10_0_1_1.rpy:753
     old "Appeler"
-    new "呼叫"
+    new ""
 

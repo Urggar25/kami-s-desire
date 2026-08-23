@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/10_0_1_1.rpy:347
 translate english 2c94a11e:
@@ -1994,5 +1994,5 @@ translate english strings:
 
     # game/scenario/10_0_1_1.rpy:753
     old "Appeler"
-    new "Call"
+    new ""
 

@@ -2,6 +2,7 @@
 
     $ day_id = 2
     $ current_day = 2
+    $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
 
     scene black

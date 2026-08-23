@@ -26,3 +26,23 @@ translate portuguese strings:
     old "QUITTER"
     new "SAIR"
 
+# TODO: Translation updated at 2026-08-23 11:52
+
+translate portuguese strings:
+
+    # game/menu.rpy:338
+    old "Boutique"
+    new ""
+
+    # game/menu.rpy:339
+    old "Évènement"
+    new ""
+
+    # game/menu.rpy:704
+    old "SPORT"
+    new ""
+
+    # game/menu.rpy:767
+    old "TOUS"
+    new ""
+

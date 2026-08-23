@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/8_0_1.rpy:21
 translate english 0c11ba2a:
@@ -222,12 +222,6 @@ translate english 63b64097:
     # "Je me jette dessus."
     ""
 
-# game/scenario/8_0_1.rpy:123
-translate english d1af98c2_9:
-
-    # think "Non."
-    think ""
-
 # game/scenario/8_0_1.rpy:124
 translate english 4b624350:
 
@@ -360,12 +354,6 @@ translate english f3e931ff:
     # "Rien ne tombe."
     ""
 
-# game/scenario/8_0_1.rpy:161
-translate english d1af98c2_10:
-
-    # think "Non."
-    think ""
-
 # game/scenario/8_0_1.rpy:162
 translate english 5910111c:
 
@@ -413,12 +401,6 @@ translate english 417390cc:
 
     # "Je soulève le bord de la couette pour voir dessous."
     ""
-
-# game/scenario/8_0_1.rpy:180
-translate english daf4fff8_2:
-
-    # think "..."
-    think ""
 
 # game/scenario/8_0_1.rpy:181
 translate english 7d9f385e:
@@ -481,7 +463,7 @@ translate english 474c8727:
     think ""
 
 # game/scenario/8_0_1.rpy:197
-translate english daf4fff8_3:
+translate english daf4fff8_2:
 
     # think "..."
     think ""
@@ -695,12 +677,6 @@ translate english 4d08156b:
 
     # "Dans la doublure du sac."
     ""
-
-# game/scenario/8_0_1.rpy:272
-translate english d1af98c2_11:
-
-    # think "Non."
-    think ""
 
 # game/scenario/8_0_1.rpy:273
 translate english a058d389:
@@ -996,12 +972,6 @@ translate english 8c98e834:
     # "Tomas fixe son écran portable."
     ""
 
-# game/scenario/8_0_1.rpy:373
-translate english cdb70519_1:
-
-    # "Encore."
-    ""
-
 # game/scenario/8_0_1.rpy:375
 translate english eaa69739:
 
@@ -1115,12 +1085,6 @@ translate english b23226c5:
 
     # elias fatigue "Genre vraiment zéro ?"
     elias fatigue ""
-
-# game/scenario/8_0_1.rpy:406
-translate english 7ad81883_3:
-
-    # tomas "Oui."
-    tomas ""
 
 # game/scenario/8_0_1.rpy:408
 translate english 1c9ee91a:
@@ -1981,13 +1945,13 @@ translate english 91056b7a:
     think ""
 
 # game/scenario/8_0_1.rpy:768
-translate english daf4fff8_4:
+translate english daf4fff8_3:
 
     # think "..."
     think ""
 
 # game/scenario/8_0_1.rpy:769
-translate english d1af98c2_12:
+translate english d1af98c2_9:
 
     # think "Non."
     think ""
@@ -2189,12 +2153,6 @@ translate english b5bfb0b1:
 
     # noam "Ça aussi c'est un message."
     noam ""
-
-# game/scenario/8_0_1.rpy:836
-translate english 0665bdfc_1:
-
-    # think "Pas maintenant."
-    think ""
 
 # game/scenario/8_0_1.rpy:837
 translate english b2aa13c6:

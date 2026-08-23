@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+﻿# TODO: Translation updated at 2026-08-23 12:03
 
 # game/scenario/13_0_1_1_0.rpy:7
 translate chinese 94c4579a:
@@ -2503,7 +2503,7 @@ translate chinese c13dcac8:
     ""
 
 # game/scenario/13_0_1_1_0.rpy:702
-translate chinese d1af98c2_3:
+translate chinese d1af98c2_2:
 
     # think "Non."
     think ""
@@ -2629,7 +2629,7 @@ translate chinese 0aec055c:
     ""
 
 # game/scenario/13_0_1_1_0.rpy:734
-translate chinese d1af98c2_4:
+translate chinese d1af98c2_3:
 
     # think "Non."
     think ""
@@ -3031,7 +3031,7 @@ translate chinese abaec6c8:
     ""
 
 # game/scenario/13_0_1_1_0.rpy:844
-translate chinese d1af98c2_5:
+translate chinese d1af98c2_4:
 
     # think "Non."
     think ""

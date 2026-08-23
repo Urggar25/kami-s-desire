@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/8_0_1.rpy:21
 translate portuguese 0c11ba2a:
@@ -222,12 +222,6 @@ translate portuguese 63b64097:
     # "Je me jette dessus."
     ""
 
-# game/scenario/8_0_1.rpy:123
-translate portuguese d1af98c2_9:
-
-    # think "Non."
-    think ""
-
 # game/scenario/8_0_1.rpy:124
 translate portuguese 4b624350:
 
@@ -361,7 +355,7 @@ translate portuguese f3e931ff:
     ""
 
 # game/scenario/8_0_1.rpy:161
-translate portuguese d1af98c2_10:
+translate portuguese d1af98c2_7:
 
     # think "Non."
     think ""
@@ -415,7 +409,7 @@ translate portuguese 417390cc:
     ""
 
 # game/scenario/8_0_1.rpy:180
-translate portuguese daf4fff8_2:
+translate portuguese daf4fff8_1:
 
     # think "..."
     think ""
@@ -481,7 +475,7 @@ translate portuguese 474c8727:
     think ""
 
 # game/scenario/8_0_1.rpy:197
-translate portuguese daf4fff8_3:
+translate portuguese daf4fff8_2:
 
     # think "..."
     think ""
@@ -697,7 +691,7 @@ translate portuguese 4d08156b:
     ""
 
 # game/scenario/8_0_1.rpy:272
-translate portuguese d1af98c2_11:
+translate portuguese d1af98c2_8:
 
     # think "Non."
     think ""
@@ -997,7 +991,7 @@ translate portuguese 8c98e834:
     ""
 
 # game/scenario/8_0_1.rpy:373
-translate portuguese cdb70519_1:
+translate portuguese cdb70519:
 
     # "Encore."
     ""
@@ -1115,12 +1109,6 @@ translate portuguese b23226c5:
 
     # elias fatigue "Genre vraiment zéro ?"
     elias fatigue ""
-
-# game/scenario/8_0_1.rpy:406
-translate portuguese 7ad81883_3:
-
-    # tomas "Oui."
-    tomas ""
 
 # game/scenario/8_0_1.rpy:408
 translate portuguese 1c9ee91a:
@@ -1981,13 +1969,13 @@ translate portuguese 91056b7a:
     think ""
 
 # game/scenario/8_0_1.rpy:768
-translate portuguese daf4fff8_4:
+translate portuguese daf4fff8_3:
 
     # think "..."
     think ""
 
 # game/scenario/8_0_1.rpy:769
-translate portuguese d1af98c2_12:
+translate portuguese d1af98c2_9:
 
     # think "Non."
     think ""
@@ -2191,7 +2179,7 @@ translate portuguese b5bfb0b1:
     noam ""
 
 # game/scenario/8_0_1.rpy:836
-translate portuguese 0665bdfc_1:
+translate portuguese 0665bdfc:
 
     # think "Pas maintenant."
     think ""
@@ -2499,36 +2487,4 @@ translate portuguese strings:
     # game/scenario/8_0_1.rpy:824
     old "Ne rien dire."
     new ""
-
-# TODO: Translation updated at 2026-08-16 12:24
-
-# game/scenario/8_0_1.rpy:161
-translate portuguese d1af98c2_7:
-
-    # think "Non."
-    think ""
-
-# game/scenario/8_0_1.rpy:180
-translate portuguese daf4fff8_1:
-
-    # think "..."
-    think ""
-
-# game/scenario/8_0_1.rpy:272
-translate portuguese d1af98c2_8:
-
-    # think "Non."
-    think ""
-
-# game/scenario/8_0_1.rpy:373
-translate portuguese cdb70519:
-
-    # "Encore."
-    ""
-
-# game/scenario/8_0_1.rpy:836
-translate portuguese 0665bdfc:
-
-    # think "Pas maintenant."
-    think ""
 

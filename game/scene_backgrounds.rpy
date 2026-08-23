@@ -1,5 +1,6 @@
 default room_scene_indices = {}
 default noam_room_has_jammer = True
+default noam_has_juliette_drawing = True
 default cafeteria_food_level = "high"
 default cafeteria_food_visible_cache = None
 
@@ -140,6 +141,12 @@ init -2 python:
         if room_interaction_is_decorative(key):
             return True
         if key == "brouilleur":
+            return True
+        if (
+            room_name == "chambre"
+            and room_scene_stem(room_name) == "chambre3"
+            and key == "photo_juliette"
+        ):
             return True
         return (
             room_name == "cafeteria"
@@ -322,6 +329,12 @@ init -2 python:
 
         for key, normalized in _room_interaction_catalog.get(scene_dir, ()):
             if key.startswith("brouilleur_"):
+                continue
+            if (
+                stem == "chambre3"
+                and key == "photo_juliette"
+                and not getattr(store, "noam_has_juliette_drawing", True)
+            ):
                 continue
             if cafeteria_food_keys is not None and key.startswith("nourriture") and key not in cafeteria_food_keys:
                 continue

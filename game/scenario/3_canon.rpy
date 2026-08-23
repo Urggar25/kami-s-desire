@@ -290,6 +290,7 @@ label _3_CANON:
 
     $ day_id = 3
     $ current_day = 3
+    $ noam_has_juliette_drawing = True
     $ day3_vote_bootstrap()
     $ current_period = "Matin"
 
@@ -1954,6 +1955,7 @@ label _3_VOTE_POUR:
 
     $ phase3_over = True
     $ vote1 = "OUI"
+    $ kami_grant_chapter_1_ending_reward("vote_oui")
 
     call show_chapter_title("Fin du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title
 
@@ -2050,6 +2052,7 @@ label _3_VOTE_CONTRE:
 
     $ phase3_over = True
     $ vote1 = "NON"
+    $ kami_grant_chapter_1_ending_reward("vote_non")
 
     call show_chapter_title("Fin du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title_1
 

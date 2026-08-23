@@ -386,3 +386,91 @@ translate chinese strings:
     old "Animations de dialogue"
     new ""
 
+# TODO: Translation updated at 2026-08-23 12:03
+
+translate chinese strings:
+
+    # game/screens.rpy:398
+    old "Créer une sauvegarde de votre progression actuelle."
+    new ""
+
+    # game/screens.rpy:398
+    old "Reprendre l'histoire depuis une sauvegarde existante."
+    new ""
+
+    # game/screens.rpy:398
+    old "Régler l'affichage, le texte, le son et les contrôles."
+    new ""
+
+    # game/screens.rpy:398
+    old "Consulter les dossiers des représentants du Conclave."
+    new ""
+
+    # game/screens.rpy:398
+    old "Voir les succès découverts et ceux encore verrouillés."
+    new ""
+
+    # game/screens.rpy:398
+    old "Parcourir les jours, embranchements et choix du récit."
+    new ""
+
+    # game/screens.rpy:398
+    old "Interrompre la partie et retourner au menu principal."
+    new ""
+
+    # game/screens.rpy:398
+    old "Fermer complètement Kami's Desires."
+    new ""
+
+    # game/screens.rpy:465
+    old "MENU SYSTÈME"
+    new ""
+
+    # game/screens.rpy:472
+    old "PAUSE // ACCÈS LOCAL"
+    new ""
+
+    # game/screens.rpy:495
+    old "SAUVEGARDER"
+    new ""
+
+    # game/screens.rpy:506
+    old "CHARGER"
+    new ""
+
+    # game/screens.rpy:517
+    old "OPTIONS / PRÉFÉRENCES"
+    new ""
+
+    # game/screens.rpy:528
+    old "PROFILS"
+    new ""
+
+    # game/screens.rpy:550
+    old "ROADMAP"
+    new ""
+
+    # game/screens.rpy:561
+    old "MENU PRINCIPAL"
+    new ""
+
+    # game/screens.rpy:572
+    old "QUITTER LE JEU"
+    new ""
+
+    # game/screens.rpy:582
+    old "REPRENDRE  ·  ÉCHAP"
+    new ""
+
+    # game/screens.rpy:611
+    old "Sauvegarder"
+    new ""
+
+    # game/screens.rpy:613
+    old "Options / Préférences"
+    new ""
+
+    # game/screens.rpy:624
+    old "Quitter le jeu"
+    new ""
+

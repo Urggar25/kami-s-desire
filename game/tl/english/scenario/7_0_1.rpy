@@ -1,3080 +1,1706 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
-# game/scenario/7_0_1.rpy:907
+# game/scenario/7_0_1.rpy:1309
 translate english j701_play_search_drawing_2bfcc440:
 
     # "BAM BAM BAM."
-    ""
+    "BANG! BANG! BANG!"
 
-# game/scenario/7_0_1.rpy:913
+# game/scenario/7_0_1.rpy:1315
 translate english j701_play_search_drawing_a25bd725:
 
     # "Je me redresse d'un coup."
-    ""
+    "I bolt upright."
 
-# game/scenario/7_0_1.rpy:915
-translate english j701_play_search_drawing_9a696bb5:
+# game/scenario/7_0_1.rpy:1317
+translate english j701_play_search_drawing_3bf983dc:
 
-    # think "Merde."
-    think ""
+    # think "Merde. Pourquoi on me réveille en pleine nuit ?!"
+    think "Shit. Why is someone waking me up in the middle of the night?!"
 
-# game/scenario/7_0_1.rpy:918
+# game/scenario/7_0_1.rpy:1320
 translate english j701_play_search_drawing_b0d63066:
 
     # "Je repousse la couette."
-    ""
+    "I throw back the covers."
 
-# game/scenario/7_0_1.rpy:919
+# game/scenario/7_0_1.rpy:1321
 translate english j701_play_search_drawing_2c6d4d5c:
 
     # "Je manque de me prendre les pieds dedans."
-    ""
+    "I nearly get my feet tangled in them."
 
-# game/scenario/7_0_1.rpy:920
-translate english j701_play_search_drawing_fd0c5780:
+# game/scenario/7_0_1.rpy:1323
+translate english j701_play_search_drawing_701afaf3:
 
-    # "Je traverse la chambre à moitié réveillé."
-    ""
+    # "Je traverse la chambre à moitié réveillé puis j'ouvre la porte."
+    "Still half asleep, I stumble across the room and open the door."
 
-# game/scenario/7_0_1.rpy:924
+# game/scenario/7_0_1.rpy:1325
 translate english j701_play_search_drawing_c4855074:
 
     # "J'ouvre la porte."
-    ""
+    "I open the door."
 
-# game/scenario/7_0_1.rpy:933
-translate english j701_play_search_drawing_63712840:
+# game/scenario/7_0_1.rpy:1334
+translate english j701_play_search_drawing_53fcdf4b:
 
-    # lysa "..."
-    lysa ""
+    # lysa surpris "..."
+    lysa surpris "..."
 
-# game/scenario/7_0_1.rpy:935
-translate english j701_play_search_drawing_34e0a9a3:
+# game/scenario/7_0_1.rpy:1336
+translate english j701_play_search_drawing_bd191d82:
 
-    # noam surpris "Quoi ?"
-    noam surpris ""
+    # noam surpris "Quoi ? Qu'est-ce qui se passe ?"
+    noam surpris "What? What's going on?"
 
-# game/scenario/7_0_1.rpy:936
-translate english j701_play_search_drawing_2a07744c:
+# game/scenario/7_0_1.rpy:1338
+translate english j701_play_search_drawing_8446a08c:
 
-    # noam surpris "Qu'est-ce qui se passe ?"
-    noam surpris ""
+    # lysa surpris "Rien."
+    lysa surpris "Nothing."
 
-# game/scenario/7_0_1.rpy:938
-translate english j701_play_search_drawing_eac1406b:
+# game/scenario/7_0_1.rpy:1340
+translate english j701_play_search_drawing_7173a292:
 
-    # lysa "Rien."
-    lysa ""
+    # noam panne "Rien ? Mais pour..."
+    noam panne "Nothing? Then why..."
 
-# game/scenario/7_0_1.rpy:940
-translate english j701_play_search_drawing_a4eb3c40:
+# game/scenario/7_0_1.rpy:1342
+translate english j701_play_search_drawing_4b35f158:
 
-    # noam panne "Rien ?"
-    noam panne ""
+    # lysa taquin "Enfin... C'est pas une catastrophe quoi."
+    lysa taquin "Well... It's not an emergency or anything."
 
-# game/scenario/7_0_1.rpy:942
-translate english j701_play_search_drawing_ff49ff9b:
+# game/scenario/7_0_1.rpy:1344
+translate english j701_play_search_drawing_2aa3391a:
 
-    # lysa "Enfin..."
-    lysa ""
+    # "Je la regarde droit dans les yeux. Elle ne cille pas. Puis son regard descend et remonte."
+    "I look her straight in the eye. She doesn't even blink. Then her gaze travels down and back up again."
 
-# game/scenario/7_0_1.rpy:943
-translate english j701_play_search_drawing_bb53cef3:
+# game/scenario/7_0_1.rpy:1345
+translate english j701_play_search_drawing_7a1aecb7:
 
-    # lysa "C'est pas une catastrophe quoi."
-    lysa ""
+    # "Comme si elle m'analysait. T-shirt froissé. Cheveux en pagaille. Pyjama."
+    "Like she's sizing me up. Wrinkled T-shirt. Bedhead. Pajamas."
 
-# game/scenario/7_0_1.rpy:945
-translate english j701_play_search_drawing_f3b4c67f:
+# game/scenario/7_0_1.rpy:1346
+translate english j701_play_search_drawing_20e36530:
 
-    # "Je la fixe."
-    ""
+    # think "Oh mon dieu, la honte..."
+    think "Oh God, this is so embarrassing..."
 
-# game/scenario/7_0_1.rpy:947
-translate english j701_play_search_drawing_0004c180:
+# game/scenario/7_0_1.rpy:1348
+translate english j701_play_search_drawing_e0cbb314:
 
-    # "Elle me fixe aussi."
-    ""
+    # lysa taquin "Je vais m'abstenir de tout commentaire."
+    lysa taquin "I'm going to keep my comments to myself."
 
-# game/scenario/7_0_1.rpy:949
-translate english j701_play_search_drawing_75fb1aa9:
+# game/scenario/7_0_1.rpy:1350
+translate english j701_play_search_drawing_165c0ddd:
 
-    # "Puis son regard descend."
-    ""
+    # noam desaccord "Tu vas pas commencer à me juger ? Je croyais qu'on était attaqués vu comment tu tambourinais sur la porte."
+    noam desaccord "You're seriously judging me right now? The way you were pounding on my door, I thought we were under attack."
 
-# game/scenario/7_0_1.rpy:950
-translate english j701_play_search_drawing_2456a005:
+# game/scenario/7_0_1.rpy:1352
+translate english j701_play_search_drawing_9bb5ca72:
 
-    # "T-shirt froissé."
-    ""
+    # lysa rire "C'est ta couette qui t'a attaqué, oui !"
+    lysa rire "Looks like your blanket was the one attacking you!"
 
-# game/scenario/7_0_1.rpy:951
-translate english j701_play_search_drawing_6e841521:
+# game/scenario/7_0_1.rpy:1354
+translate english j701_play_search_drawing_98a02644:
 
-    # "Cheveux en bataille."
-    ""
+    # noam "Très drôle... Sérieux... Pourquoi tu me réveilles en pleine nuit si c'est pas important ?"
+    noam "Very funny... Seriously... Why are you waking me up in the middle of the night if it's not important?"
 
-# game/scenario/7_0_1.rpy:952
-translate english j701_play_search_drawing_711c1ed4:
-
-    # "Pantalon de pyjama."
-    ""
-
-# game/scenario/7_0_1.rpy:954
-translate english j701_play_search_drawing_d5c2c77d:
-
-    # think "Ah."
-    think ""
-
-# game/scenario/7_0_1.rpy:956
-translate english j701_play_search_drawing_bd1574f0:
-
-    # lysa taquin "Je vois que tu as gardé toute ta dignité."
-    lysa taquin ""
-
-# game/scenario/7_0_1.rpy:958
-translate english j701_play_search_drawing_c4e80290:
-
-    # noam desaccord "Je croyais qu'on était attaqués."
-    noam desaccord ""
-
-# game/scenario/7_0_1.rpy:960
-translate english j701_play_search_drawing_2cf4c61d:
-
-    # lysa rire "Par ta couette, peut-être."
-    lysa rire ""
-
-# game/scenario/7_0_1.rpy:962
-translate english j701_play_search_drawing_272d73cc:
-
-    # noam "Très drôle..."
-    noam ""
-
-# game/scenario/7_0_1.rpy:963
-translate english j701_play_search_drawing_25ff97d8:
-
-    # noam "Sérieux... Pourquoi tu me réveilles en pleine nuit si c'est pas important ?"
-    noam ""
-
-# game/scenario/7_0_1.rpy:965
+# game/scenario/7_0_1.rpy:1356
 translate english j701_play_search_drawing_b94f4923:
 
     # lysa taquin "En pleine nuit ? Il est quasi midi..."
-    lysa taquin ""
+    lysa taquin "The middle of the night? It's almost noon..."
 
-# game/scenario/7_0_1.rpy:967
-translate english j701_play_search_drawing_fe3b867c:
+# game/scenario/7_0_1.rpy:1358
+translate english j701_play_search_drawing_bb0dadc0:
 
-    # noam surpris "Quoi ?!"
-    noam surpris ""
+    # noam surpris "Hein ?! Quoi ?!"
+    noam surpris "Huh?! What?!"
 
-# game/scenario/7_0_1.rpy:969
+# game/scenario/7_0_1.rpy:1360
 translate english j701_play_search_drawing_bd2cb191:
 
     # lysa "Je crois que tu as bien entendu."
-    lysa ""
+    lysa "You heard me."
 
-# game/scenario/7_0_1.rpy:971
+# game/scenario/7_0_1.rpy:1362
 translate english j701_play_search_drawing_fa474d30:
 
     # noam panne "Hein ?! Pourquoi personne m'a réveillé ?"
-    noam panne ""
+    noam panne "Huh?! Why didn't anyone wake me up?"
 
-# game/scenario/7_0_1.rpy:972
+# game/scenario/7_0_1.rpy:1363
 translate english j701_play_search_drawing_1aa24521:
 
     # noam hesitation "J'ai loupé l'annonce... Ah, c'est tout..."
-    noam hesitation ""
+    noam hesitation "I missed the announcement... Oh, that's all..."
 
-# game/scenario/7_0_1.rpy:974
+# game/scenario/7_0_1.rpy:1365
 translate english j701_play_search_drawing_3b015dce:
 
     # "Elle me coupe la parole."
-    ""
+    "She cuts me off."
 
-# game/scenario/7_0_1.rpy:975
-translate english j701_play_search_drawing_f8dc8303:
+# game/scenario/7_0_1.rpy:1366
+translate english j701_play_search_drawing_e8fd1e12:
 
-    # lysa neutre "Parce que personne ne s'est levé."
-    lysa neutre ""
+    # lysa neutre "Parce que quasiment personne ne s'est levé."
+    lysa neutre "Because almost no one got up."
 
-# game/scenario/7_0_1.rpy:977
-translate english j701_play_search_drawing_e5627eeb:
-
-    # "Je cligne des yeux."
-    ""
-
-# game/scenario/7_0_1.rpy:979
+# game/scenario/7_0_1.rpy:1370
 translate english j701_play_search_drawing_1b9908c2:
 
     # noam surpris "Personne ?"
-    noam surpris ""
+    noam surpris "No one?"
 
-# game/scenario/7_0_1.rpy:981
-translate english j701_play_search_drawing_cf8517b4:
+# game/scenario/7_0_1.rpy:1372
+translate english j701_play_search_drawing_ec9327cd:
 
-    # lysa "Pas vraiment."
-    lysa ""
+    # lysa taquin "Écoute, laisse-moi entrer avant que tout le monde te voit dans ton plus bel attirail."
+    lysa taquin "Look, let me in before everyone sees you in all your finery."
 
-# game/scenario/7_0_1.rpy:982
-translate english j701_play_search_drawing_7a6333b7:
+# game/scenario/7_0_1.rpy:1373
+translate english j701_play_search_drawing_8710c6c8:
 
-    # lysa "Ecoute, laisse moi entrer avant que tout le monde te voit dans ton plus bel attirail."
-    lysa ""
+    # think "Ouais, c'est franchement ce dont je préférerais me passer."
+    think "Yeah, I'd really rather avoid that."
 
-# game/scenario/7_0_1.rpy:984
-translate english j701_play_search_drawing_352452a5:
+# game/scenario/7_0_1.rpy:1382
+translate english j701_play_search_drawing_39657f1e:
 
-    # "Touché, coulé..."
-    ""
+    # lysa reflechit "En fait, y'a pas eu d'annonce."
+    lysa reflechit "Actually, there wasn't an announcement."
 
-# game/scenario/7_0_1.rpy:986
-translate english j701_play_search_drawing_cedfce07:
+# game/scenario/7_0_1.rpy:1383
+translate english j701_play_search_drawing_a6ca424e:
 
-    # noam taquin "Raaah ! Allez rentre..."
-    noam taquin ""
+    # lysa taquin "Pas de petite voix divine pour se moquer de nous ce matin."
+    lysa taquin "No little divine voice mocking us this morning."
 
-# game/scenario/7_0_1.rpy:995
-translate english j701_play_search_drawing_fec3c1a8:
+# game/scenario/7_0_1.rpy:1385
+translate english j701_play_search_drawing_b74f0649:
 
-    # lysa "En fait, y'a pas eu d'annonce."
-    lysa ""
+    # "Je tourne instinctivement la tête vers l'écran dans ma chambre. Il est noir. Complètement noir."
+    "I instinctively turn toward the screen in my room. It's black. Completely black."
 
-# game/scenario/7_0_1.rpy:996
-translate english j701_play_search_drawing_e9198826:
+# game/scenario/7_0_1.rpy:1387
+translate english j701_play_search_drawing_860d804f:
 
-    # lysa "Pas de petite voix divine pour nous traiter de mobilier défectueux."
-    lysa ""
+    # think "... Elle n'a pas parlé. Pourquoi changerait-elle ses habitudes ?"
+    think "... She hasn't spoken. Why would she suddenly change her routine?"
 
-# game/scenario/7_0_1.rpy:998
-translate english j701_play_search_drawing_4f16e8ed:
-
-    # "Je tourne instinctivement la tête vers l'écran dans ma chambre."
-    ""
-
-# game/scenario/7_0_1.rpy:999
-translate english j701_play_search_drawing_dede91f2:
-
-    # "Noir."
-    ""
-
-# game/scenario/7_0_1.rpy:1000
-translate english j701_play_search_drawing_0d34b19b:
-
-    # "Complètement noir."
-    ""
-
-# game/scenario/7_0_1.rpy:1002
-translate english j701_play_search_drawing_daf4fff8:
-
-    # think "..."
-    think ""
-
-# game/scenario/7_0_1.rpy:1003
-translate english j701_play_search_drawing_91d260b0:
-
-    # think "Elle n'a pas parlé."
-    think ""
-
-# game/scenario/7_0_1.rpy:1005
+# game/scenario/7_0_1.rpy:1389
 translate english j701_play_search_drawing_c3bceab7:
 
     # noam hesitation "Depuis ce matin ?"
-    noam hesitation ""
+    noam hesitation "Since this morning?"
 
-# game/scenario/7_0_1.rpy:1007
-translate english j701_play_search_drawing_89c1296d:
+# game/scenario/7_0_1.rpy:1391
+translate english j701_play_search_drawing_97483f37:
 
-    # lysa neutre "Depuis le vote d'hier même."
-    lysa neutre ""
+    # lysa neutre "Pour être plus précise, depuis le vote d'hier même."
+    lysa neutre "More precisely, since yesterday's vote."
 
-# game/scenario/7_0_1.rpy:1009
-translate english j701_play_search_drawing_c5c92989:
+# game/scenario/7_0_1.rpy:1393
+translate english j701_play_search_drawing_968f9aaf:
 
-    # "La phrase reste suspendue une seconde."
-    ""
+    # noam inquiet "Et personne ne trouve ça inquiétant ?"
+    noam inquiet "And no one finds that worrying?"
 
-# game/scenario/7_0_1.rpy:1011
-translate english j701_play_search_drawing_1932a77e:
+# game/scenario/7_0_1.rpy:1395
+translate english j701_play_search_drawing_db34f983:
 
-    # noam inquiet "Et personne trouve ça inquiétant ?"
-    noam inquiet ""
+    # lysa reflechit "Si. Enfin je pense, pas grand monde n'est levé pour le moment. À croire que sans réveil vous continuez tous à côtoyer Morphée."
+    lysa reflechit "They do. I mean, I think so. Not many people are up yet. Apparently, without a wake-up call, you're all happy to stay in the land of nod."
 
-# game/scenario/7_0_1.rpy:1013
-translate english j701_play_search_drawing_7230af27:
+# game/scenario/7_0_1.rpy:1396
+translate english j701_play_search_drawing_b5cd064e:
 
-    # lysa "Si. Enfin je pense, pas grand monde n'est levé pour le moment."
-    lysa ""
+    # lysa sourire "Faut dire que ça fait un bail qu'on a pas pu dormir sans être réveillés le matin... Et c'est assez agréable."
+    lysa sourire "To be fair, it's been ages since we got to sleep without being woken up in the morning... It's pretty nice."
 
-# game/scenario/7_0_1.rpy:1014
-translate english j701_play_search_drawing_a656ad58:
+# game/scenario/7_0_1.rpy:1398
+translate english j701_play_search_drawing_1f4ce435:
 
-    # lysa sourire "Faut dire que ça fait un bail qu'on a pas pu dormir sans être reveillés le matin... Et c'est assez agréable."
-    lysa sourire ""
+    # "Je regarde encore l'écran. Il ne bouge pas d'un iota. Rien. Toujours rien."
+    "I look at the screen again. It doesn't so much as flicker. Nothing. Still nothing."
 
-# game/scenario/7_0_1.rpy:1016
-translate english j701_play_search_drawing_38a6fd22:
+# game/scenario/7_0_1.rpy:1400
+translate english j701_play_search_drawing_9e54e555:
 
-    # "Je regarde encore l'écran."
-    ""
+    # noam taquin "On a la paix pour une fois."
+    noam taquin "For once, we've got some peace."
 
-# game/scenario/7_0_1.rpy:1017
-translate english j701_play_search_drawing_7c19a0e5:
-
-    # "Toujours rien."
-    ""
-
-# game/scenario/7_0_1.rpy:1019
-translate english j701_play_search_drawing_2987ddad:
-
-    # think "On a la paix."
-    think ""
-
-# game/scenario/7_0_1.rpy:1020
-translate english j701_play_search_drawing_205487dd:
-
-    # think "Pour une fois."
-    think ""
-
-# game/scenario/7_0_1.rpy:1022
-translate english j701_play_search_drawing_94f45874:
-
-    # "Je relâche enfin mes épaules."
-    ""
-
-# game/scenario/7_0_1.rpy:1023
-translate english j701_play_search_drawing_46b520de:
-
-    # "Je ne m'étais même pas rendu compte qu'elles étaient montées."
-    ""
-
-# game/scenario/7_0_1.rpy:1025
-translate english j701_play_search_drawing_550fcbaf:
-
-    # noam taquin "D'accord."
-    noam taquin ""
-
-# game/scenario/7_0_1.rpy:1026
+# game/scenario/7_0_1.rpy:1401
 translate english j701_play_search_drawing_44456b58:
 
     # noam taquin "Donc tu as défoncé ma porte pour me dire que tout va bien."
-    noam taquin ""
+    noam taquin "So you nearly broke down my door just to tell me everything's fine."
 
-# game/scenario/7_0_1.rpy:1028
+# game/scenario/7_0_1.rpy:1403
 translate english j701_play_search_drawing_4357b21b:
 
     # lysa desaccord "J'ai pas défoncé la porte."
-    lysa desaccord ""
+    lysa desaccord "I did not break down your door."
 
-# game/scenario/7_0_1.rpy:1030
+# game/scenario/7_0_1.rpy:1405
 translate english j701_play_search_drawing_7dbfbd27:
 
     # noam "BAM BAM BAM."
-    noam ""
+    noam "BANG! BANG! BANG!"
 
-# game/scenario/7_0_1.rpy:1032
+# game/scenario/7_0_1.rpy:1407
 translate english j701_play_search_drawing_5b9077f3:
 
     # lysa desaccord "J'ai toqué normalement."
-    lysa desaccord ""
+    lysa desaccord "I knocked like a normal person."
 
-# game/scenario/7_0_1.rpy:1034
+# game/scenario/7_0_1.rpy:1409
 translate english j701_play_search_drawing_93ed5b89:
 
     # noam colere "Tu as toqué comme une malade mentale !"
-    noam colere ""
+    noam colere "You knocked like a maniac!"
 
-# game/scenario/7_0_1.rpy:1035
+# game/scenario/7_0_1.rpy:1410
 translate english j701_play_search_drawing_b400f563:
 
     # noam colere "Tellement que j'ai sauté de mon lit !"
-    noam colere ""
+    noam colere "You scared me so badly I jumped out of bed!"
 
-# game/scenario/7_0_1.rpy:1037
+# game/scenario/7_0_1.rpy:1412
 translate english j701_play_search_drawing_68601d2c:
 
     # lysa blase "C'est toi qui es fragile aussi..."
-    lysa blase ""
+    lysa blase "Maybe you're just fragile..."
 
-# game/scenario/7_0_1.rpy:1039
+# game/scenario/7_0_1.rpy:1414
 translate english j701_play_search_drawing_9ea1d4d8:
 
     # noam "Je suis en pyjama devant une représentante officielle d'[codex_dialogue_link('harmonie', 'Harmonie')]."
-    noam ""
+    noam "I'm standing here in pajamas in front of an official representative of [codex_dialogue_link('harmonie', 'Harmonie')]."
 
-# game/scenario/7_0_1.rpy:1041
+# game/scenario/7_0_1.rpy:1416
 translate english j701_play_search_drawing_f68d4d53:
 
     # lysa rire "J'avais remarqué."
-    lysa rire ""
+    lysa rire "I noticed."
 
-# game/scenario/7_0_1.rpy:1042
+# game/scenario/7_0_1.rpy:1417
 translate english j701_play_search_drawing_82f38910:
 
     # lysa rire "Monsieur le représentant officiel d'[codex_dialogue_link('harmonie', 'Harmonie')]."
-    lysa rire ""
+    lysa rire "Mister Official Representative of [codex_dialogue_link('harmonie', 'Harmonie')]."
 
-# game/scenario/7_0_1.rpy:1044
-translate english j701_play_search_drawing_284c23f8:
+# game/scenario/7_0_1.rpy:1419
+translate english j701_play_search_drawing_296a9500:
 
-    # "Elle détourne le regard."
-    ""
+    # "Elle détourne le regard. Cette fois, pour de vrai."
+    "She looks away. For real this time."
 
-# game/scenario/7_0_1.rpy:1045
-translate english j701_play_search_drawing_21d4cbb6:
+# game/scenario/7_0_1.rpy:1421
+translate english j701_play_search_drawing_63728187:
 
-    # "Cette fois, pour de vrai."
-    ""
+    # lysa culpabilite "Désolée. Je pensais vraiment que tu étais levé."
+    lysa culpabilite "Sorry. I honestly thought you were already up."
 
-# game/scenario/7_0_1.rpy:1047
-translate english j701_play_search_drawing_00d5701d:
+# game/scenario/7_0_1.rpy:1422
+translate english j701_play_search_drawing_d4a54bef:
 
-    # lysa culpabilite "Désolée."
-    lysa culpabilite ""
+    # lysa taquin "Disons que je te voyais comme plus responsable que ça."
+    lysa taquin "Let's just say I thought you were more responsible than this."
 
-# game/scenario/7_0_1.rpy:1048
-translate english j701_play_search_drawing_ca49e985:
+# game/scenario/7_0_1.rpy:1423
+translate english j701_play_search_drawing_b0199c0e:
 
-    # lysa culpabilite "Je pensais que tu étais levé."
-    lysa culpabilite ""
+    # lysa taquin "Mais non, tu es surtout décoiffé."
+    lysa taquin "Turns out you're mostly just disheveled."
 
-# game/scenario/7_0_1.rpy:1050
-translate english j701_play_search_drawing_f6b5b217:
+# game/scenario/7_0_1.rpy:1425
+translate english j701_play_search_drawing_c8b3e4f6:
 
-    # noam sourire "Techniquement, maintenant oui."
-    noam sourire ""
+    # noam colere "Tes excuses ne sont PAS acceptées !"
+    noam colere "Apology NOT accepted!"
 
-# game/scenario/7_0_1.rpy:1052
-translate english j701_play_search_drawing_d52c06b0:
+# game/scenario/7_0_1.rpy:1426
+translate english j701_play_search_drawing_2e98a270:
 
-    # lysa taquin "Techniquement, tu es surtout décoiffé."
-    lysa taquin ""
+    # noam taquin "Tu ne comprends pas, c'est une stratégie."
+    noam taquin "You don't understand. This is a strategy."
 
-# game/scenario/7_0_1.rpy:1054
-translate english j701_play_search_drawing_817bfa67:
+# game/scenario/7_0_1.rpy:1428
+translate english j701_play_search_drawing_fb4a2dc3:
 
-    # noam taquin "C'est une stratégie."
-    noam taquin ""
+    # lysa "Hein ? Qu'est-ce que tu veux dire par là ? Pour faire quoi ?"
+    lysa "Huh? What do you mean? A strategy for what?"
 
-# game/scenario/7_0_1.rpy:1056
-translate english j701_play_search_drawing_f44d1538:
+# game/scenario/7_0_1.rpy:1430
+translate english j701_play_search_drawing_3e98fb3f:
 
-    # lysa "Pour faire quoi ?"
-    lysa ""
+    # noam taquin "C'est pour désorienter l'ennemi."
+    noam taquin "It's meant to disorient the enemy."
 
-# game/scenario/7_0_1.rpy:1058
-translate english j701_play_search_drawing_03a02ee9:
+# game/scenario/7_0_1.rpy:1432
+translate english j701_play_search_drawing_32973061:
 
-    # noam taquin "Désorienter l'ennemi."
-    noam taquin ""
+    # lysa taquin "Si c'est moi ton ennemie, alors... On peut dire que ça marche."
+    lysa taquin "If I'm the enemy, then... I'd say it's working."
 
-# game/scenario/7_0_1.rpy:1060
-translate english j701_play_search_drawing_f11baba9:
+# game/scenario/7_0_1.rpy:1436
+translate english j701_play_search_drawing_042021ef:
 
-    # lysa taquin "Si c'est moi ton ennemie, alors..."
-    lysa taquin ""
+    # lysa neutre "La cafétéria commence à se remplir. Les hommes-taupes commencent à sortir de leurs grottes."
+    lysa neutre "The cafeteria's starting to fill up. The mole people are crawling out of their caves."
 
-# game/scenario/7_0_1.rpy:1061
-translate english j701_play_search_drawing_78ef3f6a:
+# game/scenario/7_0_1.rpy:1438
+translate english j701_play_search_drawing_04e444a1:
 
-    # lysa sourire "Ça marche..."
-    lysa sourire ""
+    # lysa sourire "Ils doivent commencer à avoir une sacrée faim."
+    lysa sourire "They must be starving by now."
 
-# game/scenario/7_0_1.rpy:1063
-translate english j701_play_search_drawing_35ed9d11:
-
-    # "Cette fois, elle sourit vraiment."
-    ""
-
-# game/scenario/7_0_1.rpy:1065
-translate english j701_play_search_drawing_c4cd061d:
-
-    # "Pas longtemps."
-    ""
-
-# game/scenario/7_0_1.rpy:1066
-translate english j701_play_search_drawing_ac5ca89b:
-
-    # "Mais vraiment."
-    ""
-
-# game/scenario/7_0_1.rpy:1067
-translate english j701_play_search_drawing_9d17817f:
-
-    # "Ça fait bizarre."
-    ""
-
-# game/scenario/7_0_1.rpy:1068
-translate english j701_play_search_drawing_c76cdaca:
-
-    # "Mais ce n'est pas particulièrement désagréable."
-    ""
-
-# game/scenario/7_0_1.rpy:1070
-translate english j701_play_search_drawing_9a3a1c1d:
-
-    # lysa neutre "La cafétéria commence à se remplir."
-    lysa neutre ""
-
-# game/scenario/7_0_1.rpy:1071
-translate english j701_play_search_drawing_ff49ff9b_1:
-
-    # lysa "Enfin..."
-    lysa ""
-
-# game/scenario/7_0_1.rpy:1072
-translate english j701_play_search_drawing_421bfc68:
-
-    # lysa "À se réveiller."
-    lysa ""
-
-# game/scenario/7_0_1.rpy:1074
-translate english j701_play_search_drawing_e0c5987c:
-
-    # noam reflexion "Les autres vont bien ?"
-    noam reflexion ""
-
-# game/scenario/7_0_1.rpy:1076
-translate english j701_play_search_drawing_b1c19b69:
-
-    # lysa sourire "Pour ceux debouts, à midi, ils commencent à avoir une sacrée faim."
-    lysa sourire ""
-
-# game/scenario/7_0_1.rpy:1077
+# game/scenario/7_0_1.rpy:1439
 translate english j701_play_search_drawing_2c8d3cb7:
 
     # lysa taquin "Toi aussi tu dois avoir faim non ?"
-    lysa taquin ""
+    lysa taquin "You're probably hungry too, right?"
 
-# game/scenario/7_0_1.rpy:1079
-translate english j701_play_search_drawing_ef2a54b1:
+# game/scenario/7_0_1.rpy:1441
+translate english j701_play_search_drawing_b429b51c:
 
-    # noam rire "Je crois bien que mon estomac crie famine."
-    noam rire ""
+    # noam rire "Tu as raison, je crois bien que mon estomac crie famine."
+    noam rire "You're right. I think my stomach's crying out for food."
 
-# game/scenario/7_0_1.rpy:1081
+# game/scenario/7_0_1.rpy:1443
 translate english j701_play_search_drawing_b6179a6b:
 
     # lysa "Je t'attends ?"
-    lysa ""
+    lysa "Want me to wait for you?"
 
-# game/scenario/7_0_1.rpy:1083
+# game/scenario/7_0_1.rpy:1445
 translate english j701_play_search_drawing_32710ed4:
 
     # noam "Laisse-moi deux minutes."
-    noam ""
+    noam "Give me two minutes."
 
-# game/scenario/7_0_1.rpy:1085
-translate english j701_play_search_drawing_7ef61223:
+# game/scenario/7_0_1.rpy:1447
+translate english j701_play_search_drawing_76e7e71c:
 
-    # lysa blase "Mensonge."
-    lysa blase ""
+    # lysa blase "Deux seulement ? Pour rattraper tout ça ?"
+    lysa blase "Only two? To fix all that?"
 
-# game/scenario/7_0_1.rpy:1087
+# game/scenario/7_0_1.rpy:1449
 translate english j701_play_search_drawing_5a89358c:
 
     # noam "Cinq."
-    noam ""
+    noam "Five."
 
-# game/scenario/7_0_1.rpy:1089
-translate english j701_play_search_drawing_53138bda:
+# game/scenario/7_0_1.rpy:1451
+translate english j701_play_search_drawing_469e1a04:
 
-    # lysa sourire "C'est déjà plus crédible."
-    lysa sourire ""
+    # lysa sourire "C'est déjà un tout petit peu plus crédible."
+    lysa sourire "That's a tiny bit more believable."
 
-# game/scenario/7_0_1.rpy:1091
+# game/scenario/7_0_1.rpy:1453
 translate english j701_play_search_drawing_a821ed96:
 
     # "Elle recule d'un pas."
-    ""
+    "She takes a step back."
 
-# game/scenario/7_0_1.rpy:1093
-translate english j701_play_search_drawing_e9f5d54f:
+# game/scenario/7_0_1.rpy:1455
+translate english j701_play_search_drawing_cfd5736d:
 
-    # lysa neutre "Je t'attends devant."
-    lysa neutre ""
+    # lysa neutre "Je t'attends devant la porte."
+    lysa neutre "I'll wait outside the door."
 
-# game/scenario/7_0_1.rpy:1094
-translate english j701_play_search_drawing_606ba662:
+# game/scenario/7_0_1.rpy:1456
+translate english j701_play_search_drawing_9465aa33:
 
-    # lysa "Ne me fais pas trop attendre."
-    lysa ""
+    # lysa taquin "Ne me fais pas trop attendre."
+    lysa taquin "Don't keep me waiting too long."
 
-# game/scenario/7_0_1.rpy:1096
-translate english j701_play_search_drawing_416b564d:
+# game/scenario/7_0_1.rpy:1460
+translate english j701_play_search_drawing_906e1745:
 
-    # noam sourire "Je vais essayer."
-    noam sourire ""
+    # "La porte se referme. Je reste debout au milieu de la chambre."
+    "The door closes. I stand there in the middle of the room."
 
-# game/scenario/7_0_1.rpy:1100
-translate english j701_play_search_drawing_77c4bde6:
+# game/scenario/7_0_1.rpy:1461
+translate english j701_play_search_drawing_7188608c:
 
-    # "La porte se referme."
-    ""
+    # think "Pourquoi j'ai un très mauvais pressentiment ?"
+    think "Why do I have such a bad feeling about this?"
 
-# game/scenario/7_0_1.rpy:1102
-translate english j701_play_search_drawing_7944a810:
-
-    # "Je reste debout au milieu de la chambre."
-    ""
-
-# game/scenario/7_0_1.rpy:1104
+# game/scenario/7_0_1.rpy:1463
 translate english j701_play_search_drawing_4be3e91c:
 
     # "Encore en pyjama."
-    ""
+    "Still in my pajamas."
 
-# game/scenario/7_0_1.rpy:1105
+# game/scenario/7_0_1.rpy:1464
 translate english j701_play_search_drawing_5571371e:
 
     # "Encore à moitié réveillé."
-    ""
+    "Still half asleep."
 
-# game/scenario/7_0_1.rpy:1107
+# game/scenario/7_0_1.rpy:1466
 translate english j701_play_search_drawing_8cbfd207:
 
     # "Mais plus vraiment paniqué."
-    ""
+    "But not really panicking anymore."
 
-# game/scenario/7_0_1.rpy:1109
-translate english j701_play_search_drawing_77fdf49f:
+# game/scenario/7_0_1.rpy:1468
+translate english j701_play_search_drawing_d855c19e:
 
-    # "Je regarde l'écran."
-    ""
+    # "Je regarde l'écran. Noir. Pas de visage souriant. Pas de voix enfantine. Pas de consignes dramatiques."
+    "I look at the screen. Black. No smiling face. No childish voice. No dramatic instructions."
 
-# game/scenario/7_0_1.rpy:1111
-translate english j701_play_search_drawing_dede91f2_1:
+# game/scenario/7_0_1.rpy:1470
+translate english j701_play_search_drawing_debb7660:
 
-    # "Noir."
-    ""
+    # think "Elle n'est pas là. Du moins, pas maintenant."
+    think "She's not here. At least, not right now."
 
-# game/scenario/7_0_1.rpy:1113
-translate english j701_play_search_drawing_613fd1d1:
-
-    # "Pas de visage."
-    ""
-
-# game/scenario/7_0_1.rpy:1114
-translate english j701_play_search_drawing_1ea70feb:
-
-    # "Pas de sourire."
-    ""
-
-# game/scenario/7_0_1.rpy:1115
-translate english j701_play_search_drawing_9f44e3e3:
-
-    # "Pas de voix."
-    ""
-
-# game/scenario/7_0_1.rpy:1117
-translate english j701_play_search_drawing_d05a7ef9:
-
-    # think "Elle n'est pas là."
-    think ""
-
-# game/scenario/7_0_1.rpy:1119
+# game/scenario/7_0_1.rpy:1472
 translate english j701_play_search_drawing_558920d6:
 
     # "Un vrai soulagement me traverse."
-    ""
+    "A wave of genuine relief washes over me."
 
-# game/scenario/7_0_1.rpy:1120
+# game/scenario/7_0_1.rpy:1473
 translate english j701_reveil_soulagement_net:
 
     # "Net." id j701_reveil_soulagement_net
     "" id j701_reveil_soulagement_net
 
-# game/scenario/7_0_1.rpy:1121
+# game/scenario/7_0_1.rpy:1474
 translate english j701_play_search_drawing_14f63de9:
 
     # "Presque honteux."
-    ""
+    "Almost shameful."
 
-# game/scenario/7_0_1.rpy:1123
+# game/scenario/7_0_1.rpy:1476
 translate english j701_play_search_drawing_a448852f:
 
     # think "Tant pis."
-    think ""
+    think "Whatever."
 
-# game/scenario/7_0_1.rpy:1125
-translate english j701_play_search_drawing_5610b12c:
+# game/scenario/7_0_1.rpy:1478
+translate english j701_play_search_drawing_493822a2:
 
-    # "Je vais dans la salle de bain pour me refaire une beauté."
-    ""
+    # "Je vais rapidement dans la salle de bain pour me refaire une beauté."
+    "I hurry to the bathroom to make myself presentable."
 
-# game/scenario/7_0_1.rpy:1129
+# game/scenario/7_0_1.rpy:1479
+translate english j701_play_search_drawing_a6a2b1c6:
+
+    # noam sourire "Lysa m'attend, je ne devrais pas la faire attendre."
+    noam sourire "Lysa's waiting for me. I shouldn't keep her waiting."
+
+# game/scenario/7_0_1.rpy:1483
 translate english j701_play_search_drawing_428081e5:
 
     # "Je passe de l'eau sur mon visage."
-    ""
+    "I splash some water on my face."
 
-# game/scenario/7_0_1.rpy:1130
-translate english j701_play_search_drawing_d9180368:
+# game/scenario/7_0_1.rpy:1484
+translate english j701_play_search_drawing_a76924b6:
 
-    # "Dans le miroir, j'ai l'air de quelqu'un qu'on a réveillé pendant une évacuation."
-    ""
+    # "Dans le miroir, j'ai l'air de quelqu'un qu'on n'a réveillé pendant une évacuation."
+    "In the mirror, I look like someone who was woken up during an evacuation."
 
-# game/scenario/7_0_1.rpy:1132
-translate english j701_play_search_drawing_874028cc:
+# game/scenario/7_0_1.rpy:1486
+translate english j701_play_search_drawing_7d4aaa73:
 
-    # think "Pas loin."
-    think ""
+    # think "Tu m'étonnes qu'elle se moque de moi."
+    think "No wonder she made fun of me."
 
-# game/scenario/7_0_1.rpy:1134
-translate english j701_play_search_drawing_f1a9064f:
+# game/scenario/7_0_1.rpy:1488
+translate english j701_play_search_drawing_c5dc1734:
 
-    # "Je respire un coup."
-    ""
+    # "Je respire un coup. Je cherche mes vêtements."
+    "I take a breath and look for my clothes."
 
-# game/scenario/7_0_1.rpy:1136
-translate english j701_play_search_drawing_c71f33d8:
-
-    # "Je cherche mes vêtements."
-    ""
-
-# game/scenario/7_0_1.rpy:1137
+# game/scenario/7_0_1.rpy:1489
 translate english j701_play_search_drawing_bf520baf:
 
     # "J'enfile ce qui me tombe sous la main."
-    ""
+    "I throw on whatever I can get my hands on."
 
-# game/scenario/7_0_1.rpy:1143
-translate english j701_play_search_drawing_94e9a350:
+# game/scenario/7_0_1.rpy:1497
+translate english j701_play_search_drawing_2093fdf6:
 
-    # "Puis un deuxième."
-    ""
+    # think "Bon je ressemble toujours à rien, mais c'est au moins mieux qu'avant."
+    think "Okay, I still look like a mess, but at least it's better than before."
 
-# game/scenario/7_0_1.rpy:1144
-translate english j701_play_search_drawing_3fc536a8:
+# game/scenario/7_0_1.rpy:1501
+translate english j701_play_search_drawing_5edda92a:
 
-    # "Je ressemble enfin à quelqu'un qui a choisi de se lever."
-    ""
+    # "J'enfile ma veste puis je cours rejoindre Lysa dans le couloir."
+    "I put on my jacket, then run out to meet Lysa in the hallway."
 
-# game/scenario/7_0_1.rpy:1145
-translate english j701_play_search_drawing_1fc5aa5d:
-
-    # "Ou presque."
-    ""
-
-# game/scenario/7_0_1.rpy:1147
-translate english j701_play_search_drawing_01f20689:
-
-    # "La chambre reste silencieuse."
-    ""
-
-# game/scenario/7_0_1.rpy:1149
-translate english j701_play_search_drawing_7c588023:
-
-    # "Pour une fois, le silence ne ressemble pas à une menace."
-    ""
-
-# game/scenario/7_0_1.rpy:1151
-translate english j701_play_search_drawing_4ba85101:
-
-    # think "Cafétéria."
-    think ""
-
-# game/scenario/7_0_1.rpy:1152
-translate english j701_play_search_drawing_5505470e:
-
-    # think "Lysa."
-    think ""
-
-# game/scenario/7_0_1.rpy:1153
-translate english j701_play_search_drawing_67ed1fad:
-
-    # think "Une matinée sans Kami."
-    think ""
-
-# game/scenario/7_0_1.rpy:1155
-translate english j701_play_search_drawing_c70bb4d9:
-
-    # "Allez j'y vais."
-    ""
-
-# game/scenario/7_0_1.rpy:1156
-translate english j701_play_search_drawing_6ec0cb7d:
-
-    # "Je prends ma veste."
-    ""
-
-# game/scenario/7_0_1.rpy:1160
-translate english j701_play_search_drawing_271649ad:
-
-    # "Avant de sortir, je jette un dernier regard à l'écran."
-    ""
-
-# game/scenario/7_0_1.rpy:1162
-translate english j701_play_search_drawing_795275d5:
-
-    # "Toujours noir."
-    ""
-
-# game/scenario/7_0_1.rpy:1164
-translate english j701_play_search_drawing_9952c37f:
-
-    # think "Ça fait du bien."
-    think ""
-
-# game/scenario/7_0_1.rpy:1166
-translate english j701_play_search_drawing_58acf3c8:
-
-    # think "Un peu trop."
-    think ""
-
-# game/scenario/7_0_1.rpy:1170
+# game/scenario/7_0_1.rpy:1505
 translate english j701_play_search_drawing_3cccfe76:
 
     # "Je sors enfin de ma chambre."
-    ""
+    "I finally leave my room."
 
-# game/scenario/7_0_1.rpy:1171
-translate english j701_play_search_drawing_5a1c4385:
+# game/scenario/7_0_1.rpy:1506
+translate english j701_play_search_drawing_d849bf36:
 
-    # "Lysa m'attend un peu plus loin, adossee au mur."
-    ""
+    # "Lysa m'attend un peu plus loin, adossée au mur."
+    "Lysa is waiting a little farther down, leaning against the wall."
 
-# game/scenario/7_0_1.rpy:1172
-translate english j701_play_search_drawing_5c98897a:
+# game/scenario/7_0_1.rpy:1507
+translate english j701_play_search_drawing_13772577:
 
-    # "Avant que je la rejoigne, Nyra debouche du couloir oppose."
-    ""
+    # "Avant que je la rejoigne, Nyra débouche du couloir et passe une tête à travers la porte qui mène au couloir."
+    "Before I can reach her, Nyra rounds the corner and pokes her head through the doorway leading into the hall."
 
-# game/scenario/7_0_1.rpy:1173
-translate english j701_play_search_drawing_d9938f80:
+# game/scenario/7_0_1.rpy:1508
+translate english j701_play_search_drawing_bc2e7b2c:
 
-    # "Elle avance vite, les bras charges de fournitures, un carton cale contre la hanche."
-    ""
+    # "Elle a les bras chargés de fournitures, un carton calé contre la hanche."
+    "Her arms are full of supplies, with a cardboard box braced against her hip."
 
-# game/scenario/7_0_1.rpy:1180
-translate english j701_play_search_drawing_41e3afcd:
+# game/scenario/7_0_1.rpy:1515
+translate english j701_play_search_drawing_ffa0af6f:
 
-    # noam surpris "Nyra ? Tu demenages le stockage ?"
-    noam surpris ""
+    # nyra colere "Et VOUS DEUX !!"
+    nyra colere "And YOU TWO!!"
 
-# game/scenario/7_0_1.rpy:1182
-translate english j701_play_search_drawing_c73f282c:
+# game/scenario/7_0_1.rpy:1517
+translate english j701_play_search_drawing_f8b486e4:
 
-    # nyra taquin "Presque."
-    nyra taquin ""
+    # noam surpris "Nyra ? Qu'est-ce que tu fous ? Tu déménages le stockage ?"
+    noam surpris "Nyra? What the hell are you doing? Moving the entire storage room?"
 
-# game/scenario/7_0_1.rpy:1183
-translate english j701_play_search_drawing_175c29a9:
+# game/scenario/7_0_1.rpy:1519
+translate english j701_play_search_drawing_c69774f1:
 
-    # nyra neutre "Le Conclave a recu une livraison tot ce matin : des fournitures, quelques pieces de maintenance, et assez de cartons pour occuper trois personnes trop motivees."
-    nyra neutre ""
+    # nyra taquin "Le Conclave a reçu une livraison apparemment tôt ce matin : des fournitures, quelques pièces de maintenance, et assez de cartons pour qu'on s'en occupe à trois."
+    nyra taquin "Apparently, the Conclave got an early delivery this morning: supplies, a few maintenance parts, and enough boxes to keep all three of us busy."
 
-# game/scenario/7_0_1.rpy:1185
-translate english j701_play_search_drawing_e52bbdc8:
+# game/scenario/7_0_1.rpy:1520
+translate english j701_play_search_drawing_8d9d2ea8:
 
-    # noam reflexion "Une livraison le matin ou Kami ne parle pas..."
-    noam reflexion ""
+    # nyra colere "Alors bougez-vous bordel ! C'est assez lourd comme ça."
+    nyra colere "So get moving, damn it! This stuff is heavy enough already."
 
-# game/scenario/7_0_1.rpy:1187
-translate english j701_play_search_drawing_fe727255:
+# game/scenario/7_0_1.rpy:1522
+translate english j701_play_search_drawing_50100f55:
 
-    # nyra hesitation "Oui."
-    nyra hesitation ""
+    # "Lysa soupire puis commence à s'approcher du couloir. Je fais de même."
+    "Lysa sighs, then starts toward the hallway. I follow."
 
-# game/scenario/7_0_1.rpy:1188
-translate english j701_play_search_drawing_81d314ce:
+# game/scenario/7_0_1.rpy:1530
+translate english j701_play_search_drawing_b6b4766f:
 
-    # nyra "Je trouve aussi que le timing manque de discretion."
-    nyra ""
+    # noam reflexion "Une livraison le matin où Kami ne parle pas..."
+    noam reflexion "A delivery on the one morning Kami isn't speaking..."
 
-# game/scenario/7_0_1.rpy:1190
-translate english j701_play_search_drawing_66ecb952:
+# game/scenario/7_0_1.rpy:1532
+translate english j701_play_search_drawing_6ea08d51:
 
-    # "Elle reajuste le carton contre elle."
-    ""
+    # lysa reflechit "C'est bizarre qu'elle n'ait pas fait d'annonce pour l'annoncer."
+    lysa reflechit "It's weird that she didn't make an announcement about it."
 
-# game/scenario/7_0_1.rpy:1192
-translate english j701_play_search_drawing_38c20185:
+# game/scenario/7_0_1.rpy:1534
+translate english j701_play_search_drawing_60821fb7:
 
-    # nyra neutre "Si tu cherches une activite noble avant de manger, tu peux toujours porter deux caisses."
-    nyra neutre ""
+    # nyra triste "L'important, c'est qu'on soit livré. Les stocks de nourriture commençaient à baisser drastiquement."
+    nyra triste "What matters is that the delivery arrived. Our food supplies were starting to run dangerously low."
 
-# game/scenario/7_0_1.rpy:1194
-translate english j701_play_search_drawing_708bb152:
+# game/scenario/7_0_1.rpy:1536
+translate english j701_play_search_drawing_2704401e:
 
-    # noam taquin "Je vais commencer par survivre a la cafeteria."
-    noam taquin ""
+    # "Elle réajuste le carton contre elle."
+    "She readjusts the box against her body."
 
-# game/scenario/7_0_1.rpy:1196
-translate english j701_play_search_drawing_8a0a8863:
+# game/scenario/7_0_1.rpy:1538
+translate english j701_play_search_drawing_b1aef441:
 
-    # nyra sourire "Strategie prudente."
-    nyra sourire ""
+    # nyra reflechit "Bon écoutez, pour aller plus vite, on va chacun s'occuper d'une pièce."
+    nyra reflechit "All right, listen. To speed things up, we'll each handle one room."
 
-# game/scenario/7_0_1.rpy:1211
-translate english j701_play_search_drawing_599b30f6:
+# game/scenario/7_0_1.rpy:1539
+translate english j701_play_search_drawing_4ff52893:
 
-    # "La cafétéria est déjà ouverte."
-    ""
+    # nyra reflechit "On va trier toutes les affaires pour aller dans les différentes pièces : cafétéria, infirmerie, salle de maintenance, salle de stockage."
+    nyra reflechit "We'll sort everything according to where it belongs: the cafeteria, infirmary, maintenance room, or storage room."
 
-# game/scenario/7_0_1.rpy:1212
-translate english j701_play_search_drawing_1eb6e33b:
+# game/scenario/7_0_1.rpy:1540
+translate english j701_play_search_drawing_093b93ca:
 
-    # "Pour une fois, elle ressemble à une cafétéria."
-    ""
+    # nyra taquin "Il faudra mettre correctement les affaires dans chaque pièce. Puis chacun amènera la caisse dans la salle dédiée. Compris ?"
+    nyra taquin "Make sure everything goes in the right box. Then each of us will take a box to the proper room. Got it?"
 
-# game/scenario/7_0_1.rpy:1213
-translate english j701_play_search_drawing_79c01bab:
+# game/scenario/7_0_1.rpy:1542
+translate english j701_play_search_drawing_3cb55097:
 
-    # "Ça parle. Ça circule. Ça respire."
-    ""
+    # lysa blase "Su-per. Évitez de vous tromper, je préfèrerais éviter de devoir tout retrier après."
+    lysa blase "Fan-tas-tic. Try not to mess up. I'd rather not have to sort everything all over again afterward."
 
-# game/scenario/7_0_1.rpy:1224
-translate english j701_play_search_drawing_70f2396f:
+# game/scenario/7_0_1.rpy:1564
+translate english j701_play_search_drawing_43db7118:
 
-    # iris sourire "Franchement ?"
-    iris sourire ""
+    # "Pour une fois, la cafétéria est particulièrement vivante. Ça parle. Ça circule. Ça respire."
+    "For once, the cafeteria feels especially alive. People are talking. Moving around. Breathing."
 
-# game/scenario/7_0_1.rpy:1225
-translate english j701_play_search_drawing_d9ed4e0e:
+# game/scenario/7_0_1.rpy:1565
+translate english j701_play_search_drawing_3ace642a:
 
-    # iris sourire "Si on m'avait dit qu'un jour Kami pouvait bugger comme ça..."
-    iris sourire ""
+    # "Comme si nous avions tous digéré l'échec prévisible d'hier."
+    "As though we'd all already digested yesterday's predictable failure."
 
-# game/scenario/7_0_1.rpy:1226
+# game/scenario/7_0_1.rpy:1577
+translate english j701_play_search_drawing_d74e3ebc:
+
+    # iris sourire "Franchement ? Si on m'avait dit qu'un jour Kami pouvait bugger comme ça..."
+    iris sourire "Honestly? If someone had told me Kami could glitch out like this one day..."
+
+# game/scenario/7_0_1.rpy:1578
 translate english j701_play_search_drawing_3b6afc96:
 
     # iris rire "Je n'y aurais jamais cru."
-    iris rire ""
+    iris rire "I'd never have believed them."
 
-# game/scenario/7_0_1.rpy:1228
+# game/scenario/7_0_1.rpy:1580
 translate english j701_play_search_drawing_de22b28e:
 
     # julian decontracte "Ah mais complètement."
-    julian decontracte ""
+    julian decontracte "Oh, absolutely."
 
-# game/scenario/7_0_1.rpy:1229
-translate english j701_play_search_drawing_24f89e1d:
+# game/scenario/7_0_1.rpy:1581
+translate english j701_play_search_drawing_9b952c4f:
 
-    # julian sourire "Le meilleur réveil depuis notre arrivée."
-    julian sourire ""
+    # julian joie "Le meilleur réveil depuis notre arrivée. J'ai enfin pu DORMIR !"
+    julian joie "Best wake-up since we got here. I finally got to SLEEP!"
 
-# game/scenario/7_0_1.rpy:1230
-translate english j701_play_search_drawing_f1f7d074:
+# game/scenario/7_0_1.rpy:1583
+translate english j701_play_search_drawing_12d76e97:
 
-    # julian joie "Aucun ordre dans les murs. Aucun discours maternel. Julian valide."
-    julian joie ""
+    # mara taquin "MDR ! C'est pas toi qui arrive souvent en retard le matin ? Genre ça t'empêche de dormir les annonces de Kami."
+    mara taquin "LMAO! Aren't you always showing up late in the morning? Like Kami's announcements ever stop you from sleeping."
 
-# game/scenario/7_0_1.rpy:1232
-translate english j701_play_search_drawing_67741310:
+# game/scenario/7_0_1.rpy:1585
+translate english j701_play_search_drawing_edc6f1a9:
 
-    # mara taquin "Tu dis ça comme si t'avais une vie avant midi."
-    mara taquin ""
+    # julian taquin "Mais je ne te permets pas. Évidemment que les annonces pour le moins agaçantes de Kami me stressent."
+    julian taquin "Excuse you. Obviously, Kami's incredibly irritating announcements stress me out."
 
-# game/scenario/7_0_1.rpy:1234
-translate english j701_play_search_drawing_ed529b27:
+# game/scenario/7_0_1.rpy:1586
+translate english j701_play_search_drawing_5b3fd3b2:
 
-    # julian taquin "J'en avais une très bien, mais je te remercie."
-    julian taquin ""
+    # julian decontracte "C'est justement pour ça que je prends mon temps le matin !"
+    julian decontracte "That's exactly why I take my time in the morning!"
 
-# game/scenario/7_0_1.rpy:1235
-translate english j701_play_search_drawing_6be6ca17:
+# game/scenario/7_0_1.rpy:1588
+translate english j701_play_search_drawing_ad22b2b1:
 
-    # julian decontracte "Et elle commençait rarement avant midi."
-    julian decontracte ""
+    # iris rire "Ouais ouais, bien sûr. Tu n'as jamais vraiment été à l'heure, Julian. JAMAIS."
+    iris rire "Yeah, yeah, sure. You've never actually been on time, Julian. NEVER."
 
-# game/scenario/7_0_1.rpy:1237
-translate english j701_play_search_drawing_f4c6e648:
+# game/scenario/7_0_1.rpy:1605
+translate english j701_play_search_drawing_1d767aed:
 
-    # iris rire "Ça explique beaucoup de choses."
-    iris rire ""
+    # lysa triste "Tu vas peut-être me prendre pour une folle. Mais tout ça ne me rassure pas vraiment. Le fait que Kami ne dise plus rien."
+    lysa triste "You might think I'm crazy, but none of this is very reassuring. Kami suddenly going quiet, I mean."
 
-# game/scenario/7_0_1.rpy:1239
-translate english j701_play_search_drawing_8c9c277c:
+# game/scenario/7_0_1.rpy:1607
+translate english j701_play_search_drawing_dc7faf2a:
 
-    # "Quelques rires passent."
-    ""
+    # noam "Tu préfères quand elle nous parle comme à des chiens ? Qu'elle nous utilise à sa guise."
+    noam "You'd rather have her talk to us like dogs? Use us however she likes?"
 
-# game/scenario/7_0_1.rpy:1240
-translate english j701_play_search_drawing_ec0fbf3a:
+# game/scenario/7_0_1.rpy:1609
+translate english j701_play_search_drawing_4426e06e:
 
-    # "Pas forts."
-    ""
+    # lysa blase "Non. Mais au moins, on savait à quoi s'en tenir."
+    lysa blase "No. But at least we knew what to expect."
 
-# game/scenario/7_0_1.rpy:1241
-translate english j701_play_search_drawing_18ebec70:
+# game/scenario/7_0_1.rpy:1611
+translate english j701_play_search_drawing_c2bc7125:
 
-    # "Mais présents."
-    ""
+    # mara reflexion "On sait toujours à quoi s'en tenir. Les règles n'ont pas changé."
+    mara reflexion "We still know what to expect. The rules haven't changed."
 
-# game/scenario/7_0_1.rpy:1243
-translate english j701_play_search_drawing_6af223d0:
+# game/scenario/7_0_1.rpy:1612
+translate english j701_play_search_drawing_2cde8912:
 
-    # "C'est nouveau."
-    ""
+    # mara neutre "La seule différence c'est que cette pétasse ne nous a pas cassé les couilles ce matin !"
+    mara neutre "The only difference is that bitch didn't give us shit this morning!"
 
-# game/scenario/7_0_1.rpy:1245
-translate english j701_play_search_drawing_4bbedc1f:
+# game/scenario/7_0_1.rpy:1614
+translate english j701_play_search_drawing_acbfddfc:
 
-    # lysa reflexion "C'est calme."
-    lysa reflexion ""
+    # elen taquin "La mauvaise humeur et le pessimisme devraient être tout simplement IN-TER-DITS!"
+    elen taquin "Bad moods and pessimism should be completely FOR-BID-DEN!"
 
-# game/scenario/7_0_1.rpy:1246
-translate english j701_play_search_drawing_85e52b87:
+# game/scenario/7_0_1.rpy:1615
+translate english j701_play_search_drawing_08a5dcaa:
 
-    # lysa inquiet "Trop calme. Dans les mythes, c'est là que quelqu'un ouvre la mauvaise porte."
-    lysa inquiet ""
+    # elen joie "Et si on mettait ça au vote prochainement ?"
+    elen joie "What if we put that up for a vote soon?"
 
-# game/scenario/7_0_1.rpy:1248
-translate english j701_play_search_drawing_235b35e3:
+# game/scenario/7_0_1.rpy:1617
+translate english j701_play_search_drawing_75bce865:
 
-    # noam "Tu préfères quand elle nous parle comme à des objets ? Enfin, c'est une vraie question."
-    noam ""
+    # iris taquin "Tu veux être responsable d'un massacre de masse ?"
+    iris taquin "Do you want to be responsible for a mass slaughter?"
 
-# game/scenario/7_0_1.rpy:1250
-translate english j701_play_search_drawing_1b3bb3ea:
+# game/scenario/7_0_1.rpy:1619
+translate english j701_play_search_drawing_330be939:
 
-    # lysa blase "Non."
-    lysa blase ""
+    # elen surpris "Quoi ? On peut espérer non ?"
+    elen surpris "What? We can hope, can't we?"
 
-# game/scenario/7_0_1.rpy:1251
-translate english j701_play_search_drawing_476e6511:
+# game/scenario/7_0_1.rpy:1621
+translate english j701_play_search_drawing_14abea62:
 
-    # lysa neutre "Mais au moins, on savait à quoi s'en tenir."
-    lysa neutre ""
+    # mara surpris "Tu espères un massacre de masse ?!"
+    mara surpris "You're hoping for a mass slaughter?!"
 
-# game/scenario/7_0_1.rpy:1253
-translate english j701_play_search_drawing_105c14ad:
+# game/scenario/7_0_1.rpy:1623
+translate english j701_play_search_drawing_433b9893:
 
-    # mara reflexion "Là aussi."
-    mara reflexion ""
+    # elen triste "Quoi ?! Mais nan !! Je veux de la bonne humeur c'est tout !"
+    elen triste "What?! No!! I just want everyone to cheer up!"
 
-# game/scenario/7_0_1.rpy:1254
-translate english j701_play_search_drawing_9d881a00:
+# game/scenario/7_0_1.rpy:1625
+translate english j701_play_search_drawing_df703972:
 
-    # mara neutre "On s'en tient au vide. C'est moins bruyant, mais ça tient pas chaud."
-    mara neutre ""
+    # iris desaccord "Quelle naïveté ! Tu crois vraiment que Kami nous laissera respirer ?"
+    iris desaccord "How naive can you be? Do you really think Kami will let us breathe?"
 
-# game/scenario/7_0_1.rpy:1256
-translate english j701_play_search_drawing_67e653ca:
+# game/scenario/7_0_1.rpy:1627
+translate english j701_play_search_drawing_8c0cd665:
 
-    # julian sourire "C'est parfait."
-    julian sourire ""
+    # julian idee "Bah ça dépend, peut-être même qu'elle est cassée."
+    julian idee "Well, it depends. Maybe she's actually broken."
 
-# game/scenario/7_0_1.rpy:1257
-translate english j701_play_search_drawing_338c8a02:
+# game/scenario/7_0_1.rpy:1629
+translate english j701_play_search_drawing_7c09668d:
 
-    # julian decontracte "Rien, c'est déjà mieux que ce qu'on avait."
-    julian decontracte ""
+    # kael reflechit "Tu crois qu'elle aurait pu être surchargée ou genre... piratée ?"
+    kael reflechit "You think she could've overloaded or, like... been hacked?"
 
-# game/scenario/7_0_1.rpy:1259
-translate english j701_play_search_drawing_cc5916e3:
+# game/scenario/7_0_1.rpy:1631
+translate english j701_play_search_drawing_30dba6bd:
 
-    # elen content "Peut-être qu'elle nous laisse respirer un peu. Ça peut arriver, non ? Même aux systèmes horribles ?"
-    elen content ""
+    # julian sourire "Il y a peut-être un moyen de le savoir, non ?"
+    julian sourire "There might be a way to find out, right?"
 
-# game/scenario/7_0_1.rpy:1261
-translate english j701_play_search_drawing_aa4df524:
+# game/scenario/7_0_1.rpy:1633
+translate english j701_play_search_drawing_f4bbaaa9:
 
-    # iris taquin "Oh la naïveté…"
-    iris taquin ""
+    # kael reflexion "À quoi tu penses ?!"
+    kael reflexion "What do you have in mind?!"
 
-# game/scenario/7_0_1.rpy:1263
-translate english j701_play_search_drawing_a6049de5:
+# game/scenario/7_0_1.rpy:1635
+translate english j701_play_search_drawing_4bd11df2:
 
-    # elen surpris "Quoi ?"
-    elen surpris ""
+    # julian rire "Va savoir."
+    julian rire "Who knows?"
 
-# game/scenario/7_0_1.rpy:1264
-translate english j701_play_search_drawing_1ab41be2:
+# game/scenario/7_0_1.rpy:1645
+translate english j701_play_search_drawing_8993ee75:
 
-    # elen content "On peut espérer non ?"
-    elen content ""
+    # noam sourire "La journée est plus calme que d'habitude. Je devrais pouvoir trouver quelque chose pour m'occuper."
+    noam sourire "It's quieter than usual today. I should be able to find something to keep myself busy."
 
-# game/scenario/7_0_1.rpy:1266
-translate english j701_play_search_drawing_112a4798:
+# game/scenario/7_0_1.rpy:1655
+translate english j701_play_search_drawing_a1eced92:
 
-    # iris "Kami ?"
-    iris ""
+    # "L'après-midi passe lentement. Comme s'il manquait quelque chose."
+    "The afternoon drags by. Like something's missing."
 
-# game/scenario/7_0_1.rpy:1267
-translate english j701_play_search_drawing_2134670e:
+# game/scenario/7_0_1.rpy:1656
+translate english j701_play_search_drawing_f70cf7c3:
 
-    # iris desaccord "Nous laisser respirer ?"
-    iris desaccord ""
+    # "Comme si le Conclave ne savait plus quoi faire de nous sans la petite voix de Kami qui résonne entre les murs."
+    "Like the Conclave no longer knows what to do with us without Kami's little voice echoing off the walls."
 
-# game/scenario/7_0_1.rpy:1268
-translate english j701_play_search_drawing_ae90ed2a:
+# game/scenario/7_0_1.rpy:1658
+translate english j701_play_search_drawing_f3f12500:
 
-    # iris desaccord "Elle confond déjà notre oxygène avec une autorisation administrative."
-    iris desaccord ""
+    # "Je tourne au coin du couloir quand quelqu'un m'interpelle."
+    "I'm rounding a corner when someone calls out to me."
 
-# game/scenario/7_0_1.rpy:1270
-translate english j701_play_search_drawing_635f2774:
+# game/scenario/7_0_1.rpy:1665
+translate english j701_play_search_drawing_dd7c3ab1:
 
-    # julian idee "Peut-être qu'elle est cassée."
-    julian idee ""
+    # tomas neutre "Noam ? Tu as quelques minutes ?"
+    tomas neutre "Noam? Do you have a few minutes?"
 
-# game/scenario/7_0_1.rpy:1272
-translate english j701_play_search_drawing_c6ff12f1:
+# game/scenario/7_0_1.rpy:1667
+translate english j701_play_search_drawing_c57a6307:
 
-    # "Un petit flottement."
-    ""
+    # noam taquin "J'ai pas grand-chose d'autre à faire. À cette heure-là, on est déjà censé savoir quel est le prochain vote."
+    noam taquin "I don't have much else to do. By this time, we're usually supposed to know what the next vote will be."
 
-# game/scenario/7_0_1.rpy:1273
-translate english j701_play_search_drawing_0efb4df1:
-
-    # "Ça retombe vite."
-    ""
-
-# game/scenario/7_0_1.rpy:1275
-translate english j701_play_search_drawing_fe2c54d6:
-
-    # kael reflechit "Surcharge possible."
-    kael reflechit ""
-
-# game/scenario/7_0_1.rpy:1276
-translate english j701_play_search_drawing_a5079cff:
-
-    # kael neutre "Ou mise à jour."
-    kael neutre ""
-
-# game/scenario/7_0_1.rpy:1277
-translate english j701_play_search_drawing_78a85ea4:
-
-    # kael neutre "Ou redémarrage système."
-    kael neutre ""
-
-# game/scenario/7_0_1.rpy:1279
-translate english j701_play_search_drawing_e14f1c2a:
-
-    # iris gene "Merci Kael."
-    iris gene ""
-
-# game/scenario/7_0_1.rpy:1280
-translate english j701_play_search_drawing_f3c14f7c:
-
-    # iris gene "On est rassurés."
-    iris gene ""
-
-# game/scenario/7_0_1.rpy:1282
-translate english j701_play_search_drawing_158a8211:
-
-    # kael neutre "Je dis que c'est cohérent."
-    kael neutre ""
-
-# game/scenario/7_0_1.rpy:1284
-translate english j701_play_search_drawing_4059fb24:
-
-    # julian sourire "Moi je vote pour qu'elle reste comme ça."
-    julian sourire ""
-
-# game/scenario/7_0_1.rpy:1286
-translate english j701_play_search_drawing_72a79d0a:
-
-    # mara reflexion "Sans vote, ça va être compliqué."
-    mara reflexion ""
-
-# game/scenario/7_0_1.rpy:1288
-translate english j701_play_search_drawing_17d00263:
-
-    # julian rire "Encore mieux."
-    julian rire ""
-
-# game/scenario/7_0_1.rpy:1290
-translate english j701_play_search_drawing_c5d53bcf:
-
-    # "Nouveau rire."
-    ""
-
-# game/scenario/7_0_1.rpy:1291
-translate english j701_play_search_drawing_14026e54:
-
-    # "Un peu plus franc cette fois."
-    ""
-
-# game/scenario/7_0_1.rpy:1293
-translate english j701_play_search_drawing_0a483a61:
-
-    # "Je m'assois."
-    ""
-
-# game/scenario/7_0_1.rpy:1294
-translate english j701_play_search_drawing_ab844639:
-
-    # "Plateau devant moi."
-    ""
-
-# game/scenario/7_0_1.rpy:1295
-translate english j701_play_search_drawing_c0a86b8f:
-
-    # "Je mange sans réfléchir."
-    ""
-
-# game/scenario/7_0_1.rpy:1299
-translate english j701_play_search_drawing_422143e2:
-
-    # "Quand je relève enfin la tête, la conversation continue sans moi."
-    ""
-
-# game/scenario/7_0_1.rpy:1300
-translate english j701_play_search_drawing_e55c3485:
-
-    # think "Ça fait longtemps que manger n'était pas juste manger."
-    think ""
-
-# game/scenario/7_0_1.rpy:1311
-translate english j701_play_search_drawing_5ebd48cb:
-
-    # lysa reflexion "T'as vu ?"
-    lysa reflexion ""
-
-# game/scenario/7_0_1.rpy:1313
-translate english j701_play_search_drawing_df784008:
-
-    # noam "Quoi ?"
-    noam ""
-
-# game/scenario/7_0_1.rpy:1315
-translate english j701_play_search_drawing_40ed4055:
-
-    # lysa sourire "Les gens parlent."
-    lysa sourire ""
-
-# game/scenario/7_0_1.rpy:1317
-translate english j701_play_search_drawing_46081631:
-
-    # noam "Oui."
-    noam ""
-
-# game/scenario/7_0_1.rpy:1319
-translate english j701_play_search_drawing_2f7753b1:
-
-    # lysa neutre "Pas pour convaincre. Pas pour survivre à un vote."
-    lysa neutre ""
-
-# game/scenario/7_0_1.rpy:1320
-translate english j701_play_search_drawing_6dd74d7f:
-
-    # lysa "Juste parce qu'ils ont une bouche et deux minutes."
-    lysa ""
-
-# game/scenario/7_0_1.rpy:1322
-translate english j701_play_search_drawing_b17bf6e0:
-
-    # noam reflexion "C'est étrange."
-    noam reflexion ""
-
-# game/scenario/7_0_1.rpy:1323
-translate english j701_play_search_drawing_c2a39d4b:
-
-    # noam "Enfin... pas désagréable."
-    noam ""
-
-# game/scenario/7_0_1.rpy:1325
-translate english j701_play_search_drawing_6872057e:
-
-    # lysa sourire "Ouais. C'est bien vrai."
-    lysa sourire ""
-
-# game/scenario/7_0_1.rpy:1327
-translate english j701_play_search_drawing_6fb3dfe0:
-
-    # "Je relève les yeux."
-    ""
-
-# game/scenario/7_0_1.rpy:1328
-translate english j701_play_search_drawing_931c8dc4:
-
-    # "Elle dit ça simplement."
-    ""
-
-# game/scenario/7_0_1.rpy:1330
-translate english j701_play_search_drawing_ee1d238c:
-
-    # iris intervention "On devrait faire un truc."
-    iris intervention ""
-
-# game/scenario/7_0_1.rpy:1332
-translate english j701_play_search_drawing_ca779e79:
-
-    # julian neutre "Comme quoi ?"
-    julian neutre ""
-
-# game/scenario/7_0_1.rpy:1334
-translate english j701_play_search_drawing_4abdf7ee:
-
-    # iris sourire "Profiter."
-    iris sourire ""
-
-# game/scenario/7_0_1.rpy:1336
-translate english j701_play_search_drawing_3063ca3d:
-
-    # julian taquin "Spoiler : c'est pas ce qu'on fait déjà ?"
-    julian taquin ""
-
-# game/scenario/7_0_1.rpy:1338
-translate english j701_play_search_drawing_9a47d5cb:
-
-    # iris "Oui mais laisse-moi rêver deux minutes."
-    iris ""
-
-# game/scenario/7_0_1.rpy:1339
-translate english j701_play_search_drawing_b3914c40:
-
-    # iris rire "Je veux que ça duuure..."
-    iris rire ""
-
-# game/scenario/7_0_1.rpy:1343
-translate english j701_play_search_drawing_4008096d:
-
-    # julian rire "Accordé."
-    julian rire ""
-
-# game/scenario/7_0_1.rpy:1345
-translate english j701_play_search_drawing_bb7069e6:
-
-    # "Personne ne contredit."
-    ""
-
-# game/scenario/7_0_1.rpy:1346
-translate english j701_play_search_drawing_a4cb77b7:
-
-    # "Parce que tout le monde le pense."
-    ""
-
-# game/scenario/7_0_1.rpy:1348
-translate english j701_play_search_drawing_544f9099:
-
-    # think "Pas d'annonce. Pas de règle. Pas de pression."
-    think ""
-
-# game/scenario/7_0_1.rpy:1349
-translate english j701_play_search_drawing_3753a593:
-
-    # think "Juste nous."
-    think ""
-
-# game/scenario/7_0_1.rpy:1351
-translate english j701_play_search_drawing_52361f37:
-
-    # "Je regarde autour."
-    ""
-
-# game/scenario/7_0_1.rpy:1352
-translate english j701_play_search_drawing_fbac807b:
-
-    # "Les visages sont différents."
-    ""
-
-# game/scenario/7_0_1.rpy:1354
-translate english j701_play_search_drawing_2e2a1b33:
-
-    # think "On respire."
-    think ""
-
-# game/scenario/7_0_1.rpy:1355
-translate english j701_play_search_drawing_205487dd_1:
-
-    # think "Pour une fois."
-    think ""
-
-# game/scenario/7_0_1.rpy:1357
-translate english j701_play_search_drawing_0b7846fc:
-
-    # "Je baisse les yeux vers mon plateau."
-    ""
-
-# game/scenario/7_0_1.rpy:1359
-translate english j701_play_search_drawing_31d69283:
-
-    # "Quelque chose cloche."
-    ""
-
-# game/scenario/7_0_1.rpy:1361
-translate english j701_play_search_drawing_8047132f:
-
-    # "Mais pas assez pour gâcher le moment."
-    ""
-
-# game/scenario/7_0_1.rpy:1363
-translate english j701_play_search_drawing_26734758:
-
-    # "Pas encore."
-    ""
-
-# game/scenario/7_0_1.rpy:1373
-translate english j701_play_search_drawing_66fff13f:
-
-    # noam neutre "Bon."
-    noam neutre ""
-
-# game/scenario/7_0_1.rpy:1374
-translate english j701_play_search_drawing_0dad39eb:
-
-    # noam sourire "On progresse."
-    noam sourire ""
-
-# game/scenario/7_0_1.rpy:1383
-translate english j701_play_search_drawing_add33aa3:
-
-    # "L'après-midi passe lentement."
-    ""
-
-# game/scenario/7_0_1.rpy:1384
-translate english j701_play_search_drawing_1883b604:
-
-    # "Pas mal. Lentement."
-    ""
-
-# game/scenario/7_0_1.rpy:1385
-translate english j701_play_search_drawing_625538d3:
-
-    # "Comme si le Conclave ne savait plus quoi faire de nous sans voix dans les murs."
-    ""
-
-# game/scenario/7_0_1.rpy:1387
-translate english j701_play_search_drawing_15251616:
-
-    # "Je tourne au coin d'un couloir quand quelqu'un m'interpelle."
-    ""
-
-# game/scenario/7_0_1.rpy:1394
-translate english j701_play_search_drawing_19a5dff7:
-
-    # tomas neutre "Noam."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1396
-translate english j701_play_search_drawing_22d848ff:
-
-    # noam "Hm ?"
-    noam ""
-
-# game/scenario/7_0_1.rpy:1398
-translate english j701_play_search_drawing_3ded3c82:
-
-    # tomas neutre "Tu as quelques minutes ?"
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1400
-translate english j701_play_search_drawing_d09cd69e:
-
-    # noam taquin "Ça dépend."
-    noam taquin ""
-
-# game/scenario/7_0_1.rpy:1401
+# game/scenario/7_0_1.rpy:1668
 translate english j701_play_search_drawing_b0d13241:
 
     # noam taquin "Tu vas encore essayer de me faire lire des statistiques incompréhensibles ?"
-    noam taquin ""
+    noam taquin "Are you going to make me read more incomprehensible statistics?"
 
-# game/scenario/7_0_1.rpy:1403
-translate english j701_play_search_drawing_b7dfef5d:
+# game/scenario/7_0_1.rpy:1670
+translate english j701_play_search_drawing_01efdd6b:
 
-    # tomas gene "Seulement une petite quantité."
-    tomas gene ""
+    # tomas determine "Justement, à ce propos..."
+    tomas determine "Actually, about that..."
 
-# game/scenario/7_0_1.rpy:1405
-translate english j701_play_search_drawing_187c6ceb:
+# game/scenario/7_0_1.rpy:1672
+translate english j701_play_search_drawing_b7674a67:
 
-    # noam panne "Merde. Le piège était subtil."
-    noam panne ""
+    # "Il plisse légèrement les yeux avant de continuer sur un ton un peu plus grave."
+    "He narrows his eyes slightly before continuing in a more serious tone."
 
-# game/scenario/7_0_1.rpy:1407
-translate english j701_play_search_drawing_0bdaeabf:
-
-    # tomas determine "Je suis sérieux."
-    tomas determine ""
-
-# game/scenario/7_0_1.rpy:1409
-translate english j701_play_search_drawing_56c46960:
-
-    # "Il ajuste légèrement ses lunettes."
-    ""
-
-# game/scenario/7_0_1.rpy:1411
-translate english j701_play_search_drawing_28de16a2:
-
-    # "Ça aussi, c'est devenu un réflexe chez lui."
-    ""
-
-# game/scenario/7_0_1.rpy:1413
-translate english j701_play_search_drawing_5cb15061:
-
-    # "Comme si remettre ses lunettes correctement lui permettait de remettre le monde correctement aussi."
-    ""
-
-# game/scenario/7_0_1.rpy:1415
-translate english j701_play_search_drawing_2eaa5147:
-
-    # noam neutre "Qu'est-ce qu'il y a ?"
-    noam neutre ""
-
-# game/scenario/7_0_1.rpy:1417
+# game/scenario/7_0_1.rpy:1674
 translate english j701_play_search_drawing_68db1468:
 
     # tomas reflechit "J'ai vérifié certaines données disponibles dans la salle du Canon."
-    tomas reflechit ""
+    tomas reflechit "I checked some of the data available in the Cannon Room."
 
-# game/scenario/7_0_1.rpy:1419
-translate english j701_play_search_drawing_a0abce29:
+# game/scenario/7_0_1.rpy:1676
+translate english j701_play_search_drawing_4d5ab600:
 
-    # noam surpris "Le Canon ?"
-    noam surpris ""
+    # noam surpris "Dans la salle du Canon ?"
+    noam surpris "The Cannon Room?"
 
-# game/scenario/7_0_1.rpy:1421
-translate english j701_play_search_drawing_87b43d36:
+# game/scenario/7_0_1.rpy:1678
+translate english j701_play_search_drawing_3490e82a:
 
-    # tomas neutre "Oui."
-    tomas neutre ""
+    # tomas neutre "Oui. Tu-Tu sais, il y a des ordinateurs là-bas. Et on peut voir certaines données."
+    tomas neutre "Yes. Y-You know, there are computers in there. We can access some data through them."
 
-# game/scenario/7_0_1.rpy:1422
-translate english j701_play_search_drawing_48a02514:
-
-    # tomas neutre "Archives externes."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1423
-translate english j701_play_search_drawing_50af44cd:
-
-    # tomas neutre "Retranscriptions automatiques."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1424
-translate english j701_play_search_drawing_82949df6:
-
-    # tomas neutre "Rapports publics."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1426
+# game/scenario/7_0_1.rpy:1680
 translate english j701_play_search_drawing_3fcab302:
 
     # noam taquin "Tu bosses vraiment alors que tout le monde est de bonne humeur ?"
-    noam taquin ""
+    noam taquin "You're really working while everyone else is in a good mood?"
 
-# game/scenario/7_0_1.rpy:1428
-translate english j701_play_search_drawing_01223bf3:
+# game/scenario/7_0_1.rpy:1682
+translate english j701_play_search_drawing_ad3616f8:
 
-    # tomas reflechit "Je préfère vérifier des choses quand elles deviennent anormales."
-    tomas reflechit ""
+    # tomas reflechit "Je préfère vérifier des choses quand elles sont anormales."
+    tomas reflechit "I prefer to check things when something seems abnormal."
 
-# game/scenario/7_0_1.rpy:1429
+# game/scenario/7_0_1.rpy:1683
 translate english j701_play_search_drawing_94c8b767:
 
     # tomas gene "C-C'est plus... rassurant."
-    tomas gene ""
+    tomas gene "I-It's more... reassuring."
 
-# game/scenario/7_0_1.rpy:1431
+# game/scenario/7_0_1.rpy:1685
 translate english j701_play_search_drawing_2b1ddae4:
 
     # noam hesitation "Et ça l'est ?"
-    noam hesitation ""
+    noam hesitation "Is it?"
 
-# game/scenario/7_0_1.rpy:1433
-translate english j701_play_search_drawing_a12fee12:
+# game/scenario/7_0_1.rpy:1694
+translate english j701_play_search_drawing_c0933c16:
 
-    # "Il hésite."
-    ""
+    # tomas hesitation "Oui. Enfin je pense... Suis-moi, ce sera plus simple si tu vois ça par toi-même."
+    tomas hesitation "Yes. I mean, I think so... Follow me. It'll be easier if you see it for yourself."
 
-# game/scenario/7_0_1.rpy:1435
-translate english j701_play_search_drawing_c4cd061d_1:
-
-    # "Pas longtemps."
-    ""
-
-# game/scenario/7_0_1.rpy:1437
-translate english j701_play_search_drawing_8c012026:
-
-    # tomas hesitation "Oui."
-    tomas hesitation ""
-
-# game/scenario/7_0_1.rpy:1438
-translate english j701_play_search_drawing_66cda29f:
-
-    # tomas hesitation "Enfin je pense..."
-    tomas hesitation ""
-
-# game/scenario/7_0_1.rpy:1439
-translate english j701_play_search_drawing_d79c7213:
-
-    # tomas determine "Suis moi..."
-    tomas determine ""
-
-# game/scenario/7_0_1.rpy:1441
+# game/scenario/7_0_1.rpy:1696
 translate english j701_play_search_drawing_81318ab8:
 
     # "Je le suis pendant quelques minutes en silence."
-    ""
+    "I follow him in silence for a few minutes."
 
-# game/scenario/7_0_1.rpy:1448
-translate english j701_play_search_drawing_142de2f0:
+# game/scenario/7_0_1.rpy:1703
+translate english j701_play_search_drawing_e1d087c1:
 
-    # "La salle du Canon est presque vide."
-    ""
+    # think "La salle du Canon est presque vide. Comme d'habitude, pas grand monde n'aime cette ambiance pesante."
+    think "The Cannon Room is almost empty. As usual, hardly anyone likes its oppressive atmosphere."
 
-# game/scenario/7_0_1.rpy:1449
-translate english j701_play_search_drawing_19a3f4c3:
+# game/scenario/7_0_1.rpy:1704
+translate english j701_play_search_drawing_0844a7bc:
 
-    # "Elle est d'ailleurs particulièrement froide par rapport au reste du Conclave."
-    ""
+    # think "Mais pourquoi est-elle aussi froide ?!"
+    think "But why is it so damn cold in here?!"
 
-# game/scenario/7_0_1.rpy:1450
-translate english j701_play_search_drawing_c0830484:
+# game/scenario/7_0_1.rpy:1711
+translate english j701_play_search_drawing_3b64840a:
 
-    # "Toujours les mêmes écrans."
-    ""
+    # tomas neutre "Regarde ça."
+    tomas neutre "Look at this."
 
-# game/scenario/7_0_1.rpy:1451
-translate english j701_play_search_drawing_79931aa8:
-
-    # "Toujours cette impression d'être dans un endroit qui n'a pas été conçu pour des êtres humains."
-    ""
-
-# game/scenario/7_0_1.rpy:1458
-translate english j701_play_search_drawing_7f9ad03d:
-
-    # tomas neutre "Regarde."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1460
+# game/scenario/7_0_1.rpy:1713
 translate english j701_play_search_drawing_88262830:
 
     # "Il tapote sur un écran et y affiche plusieurs fenêtres."
-    ""
+    "He taps the screen and opens several windows."
 
-# game/scenario/7_0_1.rpy:1461
+# game/scenario/7_0_1.rpy:1714
 translate english j701_play_search_drawing_1705a5ec:
 
     # "Des centaines de lignes incompréhensibles défilent."
-    ""
+    "Hundreds of incomprehensible lines scroll past."
 
-# game/scenario/7_0_1.rpy:1463
-translate english j701_play_search_drawing_3f35d788:
+# game/scenario/7_0_1.rpy:1716
+translate english j701_play_search_drawing_07ef2599:
 
-    # noam panne "Tomas."
-    noam panne ""
+    # noam panne "Tomas. Je vais être honnête avec toi."
+    noam panne "Tomas. I'm going to be honest with you."
 
-# game/scenario/7_0_1.rpy:1464
-translate english j701_play_search_drawing_ece00884:
+# game/scenario/7_0_1.rpy:1717
+translate english j701_play_search_drawing_bfefcc74:
 
-    # noam panne "Je vais être honnête avec toi."
-    noam panne ""
+    # noam panne "Je comprends absolument rien à ce que tu fais..."
+    noam panne "I have absolutely no idea what you're doing..."
 
-# game/scenario/7_0_1.rpy:1465
-translate english j701_play_search_drawing_41fa4d41:
+# game/scenario/7_0_1.rpy:1718
+translate english j701_play_search_drawing_ea9c5c2e:
 
-    # noam panne "Je comprends rien à ce que tu fais..."
-    noam panne ""
+    # noam taquin "Enfin, je comprends que tu comprends quelque chose. C'est déjà bien."
+    noam taquin "I mean, I understand that you understand something. That's a start."
 
-# game/scenario/7_0_1.rpy:1466
-translate english j701_play_search_drawing_bbd65288:
+# game/scenario/7_0_1.rpy:1720
+translate english j701_play_search_drawing_12b46e16:
 
-    # noam "Enfin, je comprends que tu comprends. C'est déjà quelque chose."
-    noam ""
+    # tomas gene "A-Ah... Oui. Pardon. Je vais t'expliquer."
+    tomas gene "O-Oh... Right. Sorry. I'll explain."
 
-# game/scenario/7_0_1.rpy:1468
-translate english j701_play_search_drawing_bea69cb9:
+# game/scenario/7_0_1.rpy:1722
+translate english j701_play_search_drawing_c05a7956:
 
-    # tomas gene "A-Ah... Oui."
-    tomas gene ""
+    # "Il ferme plusieurs fenêtres. Une seule reste ouverte. Un tableau."
+    "He closes several windows. Only one remains open. A table."
 
-# game/scenario/7_0_1.rpy:1469
-translate english j701_play_search_drawing_ab0493ae:
+# game/scenario/7_0_1.rpy:1724
+translate english j701_play_search_drawing_d7172a1b:
 
-    # tomas gene "Pardon. Je vais t'expliquer."
-    tomas gene ""
+    # tomas inquiet "Ce sont... les exécutions quotidiennes."
+    tomas inquiet "These are... the daily executions."
 
-# game/scenario/7_0_1.rpy:1471
-translate english j701_play_search_drawing_5e48bf7e:
+# game/scenario/7_0_1.rpy:1726
+translate english j701_play_search_drawing_d3220ce6:
 
-    # "Il ferme plusieurs fenêtres."
-    ""
+    # noam inquiet "..."
+    noam inquiet "..."
 
-# game/scenario/7_0_1.rpy:1472
-translate english j701_play_search_drawing_c8b6d041:
+# game/scenario/7_0_1.rpy:1728
+translate english j701_play_search_drawing_5c2a9594:
 
-    # "Une seule reste ouverte."
-    ""
+    # "Le mot suffit à refroidir la pièce encore davantage."
+    "The word alone makes the room feel even colder."
 
-# game/scenario/7_0_1.rpy:1473
-translate english j701_play_search_drawing_2909afd2:
+# game/scenario/7_0_1.rpy:1730
+translate english j701_play_search_drawing_b9b9f96d:
 
-    # "Un tableau."
-    ""
+    # tomas inquiet "Le système mondial publie automatiquement les chiffres toutes les heures. Enfin, normalement."
+    tomas inquiet "The global system automatically publishes the figures every hour. Usually, anyway."
 
-# game/scenario/7_0_1.rpy:1474
-translate english j701_play_search_drawing_09c6607b:
+# game/scenario/7_0_1.rpy:1731
+translate english j701_play_search_drawing_8f00791c:
 
-    # "Bien plus simple que le reste cette fois."
-    ""
+    # tomas reflechit "Mais, regarde... Depuis hier soir…"
+    tomas reflechit "But look... Since last night..."
 
-# game/scenario/7_0_1.rpy:1476
-translate english j701_play_search_drawing_283c7370:
-
-    # tomas inquiet "C'est... Les exécutions quotidiennes."
-    tomas inquiet ""
-
-# game/scenario/7_0_1.rpy:1478
-translate english j701_play_search_drawing_0e80e0da:
-
-    # noam "..."
-    noam ""
-
-# game/scenario/7_0_1.rpy:1480
-translate english j701_play_search_drawing_eac95a1f:
-
-    # "Le mot suffit à refroidir la pièce."
-    ""
-
-# game/scenario/7_0_1.rpy:1482
-translate english j701_play_search_drawing_b3987468:
-
-    # tomas neutre "Le système mondial publie automatiquement les chiffres toutes les heures."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1483
-translate english j701_play_search_drawing_64f05dd4:
-
-    # tomas neutre "Normalement."
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1485
-translate english j701_play_search_drawing_723b2687:
-
-    # noam hesitation "Et ?"
-    noam hesitation ""
-
-# game/scenario/7_0_1.rpy:1487
-translate english j701_play_search_drawing_5de28ff1:
-
-    # tomas reflechit "Regarde... Depuis hier soir…"
-    tomas reflechit ""
-
-# game/scenario/7_0_1.rpy:1491
+# game/scenario/7_0_1.rpy:1735
 translate english j701_play_search_drawing_a848811d:
 
     # "Il déglutit légèrement."
-    ""
+    "He swallows hard."
 
-# game/scenario/7_0_1.rpy:1493
-translate english j701_play_search_drawing_559b468b:
+# game/scenario/7_0_1.rpy:1737
+translate english j701_play_search_drawing_c9cfbbcf:
 
-    # tomas inquiet "Zéro."
-    tomas inquiet ""
+    # tomas inquiet "Zéro. Depuis hier il y a zéro exécution."
+    tomas inquiet "Zero. There hasn't been a single execution since yesterday."
 
-# game/scenario/7_0_1.rpy:1494
-translate english j701_play_search_drawing_6188d0d2:
+# game/scenario/7_0_1.rpy:1739
+translate english j701_play_search_drawing_91d35673:
 
-    # tomas inquiet "Zéro exécution."
-    tomas inquiet ""
+    # "Je regarde l'écran. 0. Partout. Toutes régions confondues."
+    "I look at the screen. 0. Everywhere. Across every region."
 
-# game/scenario/7_0_1.rpy:1495
-translate english j701_play_search_drawing_41b57a46:
+# game/scenario/7_0_1.rpy:1741
+translate english j701_play_search_drawing_866e626f:
 
-    # tomas inquiet "À chaque relevé depuis le vote d'hier."
-    tomas inquiet ""
+    # noam surpris "... C'est une bonne nouvelle, non ?"
+    noam surpris "... That's good news, isn't it?"
 
-# game/scenario/7_0_1.rpy:1497
-translate english j701_play_search_drawing_77fdf49f_1:
-
-    # "Je regarde l'écran."
-    ""
-
-# game/scenario/7_0_1.rpy:1498
-translate english j701_play_search_drawing_90a95878:
-
-    # "0."
-    ""
-
-# game/scenario/7_0_1.rpy:1499
-translate english j701_play_search_drawing_7f098a73:
-
-    # "Partout."
-    ""
-
-# game/scenario/7_0_1.rpy:1500
-translate english j701_play_search_drawing_b083b050:
-
-    # "Toutes régions confondues."
-    ""
-
-# game/scenario/7_0_1.rpy:1502
-translate english j701_play_search_drawing_a53c02c6:
-
-    # noam surpris "..."
-    noam surpris ""
-
-# game/scenario/7_0_1.rpy:1503
-translate english j701_play_search_drawing_efef0a34:
-
-    # noam surpris "C'est une bonne nouvelle, non ?"
-    noam surpris ""
-
-# game/scenario/7_0_1.rpy:1504
+# game/scenario/7_0_1.rpy:1742
 translate english j701_play_search_drawing_55d2d5a9:
 
     # noam hesitation "Enfin... ça devrait l'être."
-    noam hesitation ""
+    noam hesitation "I mean... it should be."
 
-# game/scenario/7_0_1.rpy:1506
+# game/scenario/7_0_1.rpy:1744
 translate english j701_play_search_drawing_ae36fbba:
 
     # tomas raison "Techniquement oui."
-    tomas raison ""
+    tomas raison "Technically, yes."
 
-# game/scenario/7_0_1.rpy:1508
-translate english j701_play_search_drawing_8df5ed95:
+# game/scenario/7_0_1.rpy:1746
+translate english j701_play_search_drawing_dd0f1b28:
 
-    # noam hesitation "Mais est-ce que c'est possible ?"
-    noam hesitation ""
+    # noam hesitation "Mais est-ce que c'est seulement possible ?"
+    noam hesitation "But is that even possible?"
 
-# game/scenario/7_0_1.rpy:1510
-translate english j701_play_search_drawing_278806d2:
+# game/scenario/7_0_1.rpy:1748
+translate english j701_play_search_drawing_f66b6608:
 
-    # tomas reflechit "Statistiquement…"
-    tomas reflechit ""
+    # tomas reflechit "Statistiquement… C'est extrêmement improbable."
+    tomas reflechit "Statistically... It's extremely unlikely."
 
-# game/scenario/7_0_1.rpy:1512
-translate english j701_play_search_drawing_af9cda56:
-
-    # tomas reflechit "C'est extrêmement improbable."
-    tomas reflechit ""
-
-# game/scenario/7_0_1.rpy:1513
+# game/scenario/7_0_1.rpy:1749
 translate english j701_play_search_drawing_5177c63e:
 
     # tomas neutre "On est généralement entre vingt-cinq et quarante-cinq exécutions par jour."
-    tomas neutre ""
+    tomas neutre "We normally see between twenty-five and forty-five executions a day."
 
-# game/scenario/7_0_1.rpy:1514
-translate english j701_play_search_drawing_8b8c303f:
+# game/scenario/7_0_1.rpy:1750
+translate english j701_play_search_drawing_68cd332f:
 
-    # tomas inquiet "Là, il n'y en a aucune."
-    tomas inquiet ""
+    # tomas inquiet "Là, il n'y en a aucune. Alors c'est pas impossible... Mais c'est pas non plus ordinaire."
+    tomas inquiet "Right now, there are none. It's not impossible... But it certainly isn't normal."
 
-# game/scenario/7_0_1.rpy:1515
-translate english j701_play_search_drawing_c72a0155:
-
-    # tomas hesitation "Alors c'est pas impossible..."
-    tomas hesitation ""
-
-# game/scenario/7_0_1.rpy:1516
-translate english j701_play_search_drawing_5c4db230:
-
-    # tomas hesitation "Mais c'est pas non plus ordinaire."
-    tomas hesitation ""
-
-# game/scenario/7_0_1.rpy:1518
-translate english j701_play_search_drawing_6413c600:
-
-    # "Je continue de fixer l'écran."
-    ""
-
-# game/scenario/7_0_1.rpy:1519
-translate english j701_play_search_drawing_044299c2:
-
-    # "Le zéro."
-    ""
-
-# game/scenario/7_0_1.rpy:1520
-translate english j701_play_search_drawing_f6f5f922:
-
-    # "Un chiffre ridicule."
-    ""
-
-# game/scenario/7_0_1.rpy:1521
-translate english j701_play_search_drawing_c97966a9:
-
-    # "Un chiffre minuscule."
-    ""
-
-# game/scenario/7_0_1.rpy:1522
-translate english j701_play_search_drawing_e90a6bd1:
-
-    # "Et pourtant."
-    ""
-
-# game/scenario/7_0_1.rpy:1524
+# game/scenario/7_0_1.rpy:1752
 translate english j701_play_search_drawing_fa9ed0a1:
 
     # noam reflexion "Donc soit personne dans le monde entier n'a enfreint un Commandement…"
-    noam reflexion ""
+    noam reflexion "So either no one in the entire world has broken a Commandment..."
 
-# game/scenario/7_0_1.rpy:1525
+# game/scenario/7_0_1.rpy:1753
 translate english j701_play_search_drawing_5fc669be:
 
     # noam reflexion "Soit le système déconne."
-    noam reflexion ""
+    noam reflexion "Or the system is malfunctioning."
 
-# game/scenario/7_0_1.rpy:1527
-translate english j701_play_search_drawing_0f9394fa:
+# game/scenario/7_0_1.rpy:1755
+translate english j701_play_search_drawing_ab251bab:
 
-    # tomas raison "Oui."
-    tomas raison ""
+    # tomas raison "Oui. Et je pense que c'est plus le système qui déconne."
+    tomas raison "Yes. And I think a system malfunction is more likely."
 
-# game/scenario/7_0_1.rpy:1529
-translate english j701_play_search_drawing_d4d001e4:
+# game/scenario/7_0_1.rpy:1757
+translate english j701_play_search_drawing_20bedce1:
 
-    # noam inquiet "Je crois bien que ça déconne sérieusement..."
-    noam inquiet ""
+    # noam inquiet "Ouais, je crois bien que ça déconne sérieusement..."
+    noam inquiet "Yeah, I think it's seriously malfunctioning..."
 
-# game/scenario/7_0_1.rpy:1530
+# game/scenario/7_0_1.rpy:1758
 translate english j701_play_search_drawing_84341479:
 
     # noam inquiet "D'abord Kami... Et maintenant ça ?"
-    noam inquiet ""
+    noam inquiet "First Kami... And now this?"
 
-# game/scenario/7_0_1.rpy:1532
+# game/scenario/7_0_1.rpy:1760
 translate english j701_play_search_drawing_cc185399:
 
     # tomas hesitation "Je n'en sais rien. Mais..."
-    tomas hesitation ""
+    tomas hesitation "I don't know. But..."
 
-# game/scenario/7_0_1.rpy:1533
+# game/scenario/7_0_1.rpy:1761
 translate english j701_play_search_drawing_c4c3104b:
 
     # tomas joie "Peut-être que les Commandements ne s'appliquent plus."
-    tomas joie ""
+    tomas joie "Maybe the Commandments no longer apply."
 
-# game/scenario/7_0_1.rpy:1535
-translate english j701_play_search_drawing_feb358e9:
+# game/scenario/7_0_1.rpy:1763
+translate english j701_play_search_drawing_276da84a:
 
-    # "Un léger sourire passe sur son visage."
-    ""
+    # "Un léger sourire passe sur son visage. Ça aussi, c'est rare."
+    "A faint smile crosses his face. That's rare too."
 
-# game/scenario/7_0_1.rpy:1536
-translate english j701_play_search_drawing_672823a9:
-
-    # "Très léger."
-    ""
-
-# game/scenario/7_0_1.rpy:1537
-translate english j701_play_search_drawing_13a8194c:
-
-    # "Mais réel."
-    ""
-
-# game/scenario/7_0_1.rpy:1538
-translate english j701_play_search_drawing_bdff8ba3:
-
-    # "Ça aussi, c'est rare."
-    ""
-
-# game/scenario/7_0_1.rpy:1540
+# game/scenario/7_0_1.rpy:1765
 translate english j701_play_search_drawing_aee8e1be:
 
     # noam reflexion "Tu crois que c'est lié à Kami ?"
-    noam reflexion ""
+    noam reflexion "You think this is connected to Kami?"
 
-# game/scenario/7_0_1.rpy:1542
-translate english j701_play_search_drawing_4f694fee:
+# game/scenario/7_0_1.rpy:1767
+translate english j701_play_search_drawing_92c3bbeb:
 
-    # tomas raison "C'est presque certain que c'est lié à l'état de Kami."
-    tomas raison ""
+    # tomas raison "Je dirais que c'est presque certain que c'est lié à l'état de Kami."
+    tomas raison "I'd say it's almost certainly connected to Kami's condition."
 
-# game/scenario/7_0_1.rpy:1544
-translate english j701_play_search_drawing_f4994d3a:
+# game/scenario/7_0_1.rpy:1768
+translate english j701_play_search_drawing_a6cacdbf:
 
-    # noam hesitation "Et si elle ne revient pas ?"
-    noam hesitation ""
+    # tomas inquiet "C-C'est comme si les règles du monde avait cessé d'exister."
+    tomas inquiet "I-It's as if the rules governing the world have ceased to exist."
 
-# game/scenario/7_0_1.rpy:1546
-translate english j701_play_search_drawing_dfb7e95e:
-
-    # tomas inquiet "Alors les règles du monde cessent d'exister."
-    tomas inquiet ""
-
-# game/scenario/7_0_1.rpy:1548
+# game/scenario/7_0_1.rpy:1770
 translate english j701_play_search_drawing_82462cf7:
 
     # noam surpris "Tu as l'air sûr de toi."
-    noam surpris ""
+    noam surpris "You sound pretty sure."
 
-# game/scenario/7_0_1.rpy:1550
-translate english j701_play_search_drawing_d9bc5297:
+# game/scenario/7_0_1.rpy:1772
+translate english j701_play_search_drawing_5deb3960:
 
-    # tomas neutre "Non."
-    tomas neutre ""
+    # tomas reflechit "Non. Mais si Kami disparaît réellement…"
+    tomas reflechit "I'm not. But if Kami really does disappear..."
 
-# game/scenario/7_0_1.rpy:1552
-translate english j701_play_search_drawing_2532db74:
-
-    # tomas reflechit "Mais si Kami disparaît réellement…"
-    tomas reflechit ""
-
-# game/scenario/7_0_1.rpy:1553
+# game/scenario/7_0_1.rpy:1773
 translate english j701_play_search_drawing_44c58260:
 
     # tomas inquiet "Alors ça dépasse largement le Conclave."
-    tomas inquiet ""
+    tomas inquiet "Then this goes far beyond the Conclave."
 
-# game/scenario/7_0_1.rpy:1555
-translate english j701_tomas_regles_silence:
-
-    # "Silence." id j701_tomas_regles_silence
-    "" id j701_tomas_regles_silence
-
-# game/scenario/7_0_1.rpy:1556
-translate english j701_play_search_drawing_52865bea:
-
-    # "Pas un silence lourd."
-    ""
-
-# game/scenario/7_0_1.rpy:1557
-translate english j701_play_search_drawing_c0d0737c:
-
-    # "Un silence vide."
-    ""
-
-# game/scenario/7_0_1.rpy:1559
-translate english j701_play_search_drawing_29136364:
-
-    # noam fatigue "C'est étrange."
-    noam fatigue ""
-
-# game/scenario/7_0_1.rpy:1561
-translate english j701_play_search_drawing_7cefbc37:
-
-    # tomas neutre "Quoi ?"
-    tomas neutre ""
-
-# game/scenario/7_0_1.rpy:1563
+# game/scenario/7_0_1.rpy:1775
 translate english j701_play_search_drawing_54f81213:
 
     # noam triste "Hier encore j'aurais dû être content d'apprendre ça."
-    noam triste ""
+    noam triste "Just yesterday, I would've been happy to hear that."
 
-# game/scenario/7_0_1.rpy:1564
-translate english j701_play_search_drawing_0467bae1:
+# game/scenario/7_0_1.rpy:1776
+translate english j701_play_search_drawing_b4e43c8a:
 
-    # noam triste "Et là..."
-    noam triste ""
+    # noam fatigue "Et là... Je suis surtout fatigué."
+    noam fatigue "But now... I'm mostly just tired."
 
-# game/scenario/7_0_1.rpy:1565
-translate english j701_play_search_drawing_88454e7e:
-
-    # noam fatigue "Je suis surtout fatigué."
-    noam fatigue ""
-
-# game/scenario/7_0_1.rpy:1567
+# game/scenario/7_0_1.rpy:1778
 translate english j701_play_search_drawing_3cdc284d:
 
     # tomas fatigue "Je crois qu'on l'est tous."
-    tomas fatigue ""
+    tomas fatigue "I think we all are."
 
-# game/scenario/7_0_1.rpy:1569
+# game/scenario/7_0_1.rpy:1780
 translate english j701_play_search_drawing_db7b7945:
 
     # "Les écrans continuent de tourner doucement."
-    ""
+    "The screens continue humming softly."
 
-# game/scenario/7_0_1.rpy:1570
-translate english j701_play_search_drawing_10058228:
+# game/scenario/7_0_1.rpy:1781
+translate english j701_play_search_drawing_044ef114:
 
-    # "Aucun son. Aucune alerte. Aucune voix de Kami."
-    ""
+    # "Aucun son. Aucune alerte. Aucune voix de Kami. Le canon ne se charge plus."
+    "No sound. No alert. No voice from Kami. The cannon is no longer charging."
 
-# game/scenario/7_0_1.rpy:1571
+# game/scenario/7_0_1.rpy:1782
 translate english j701_play_search_drawing_9faab90a:
 
     # "Pour la première fois depuis longtemps, le monde semble fonctionner sans elle."
-    ""
+    "For the first time in a long while, the world seems to be functioning without her."
 
-# game/scenario/7_0_1.rpy:1573
-translate english j701_play_search_drawing_9fa84d65:
-
-    # think "Ou essayer."
-    think ""
-
-# game/scenario/7_0_1.rpy:1575
+# game/scenario/7_0_1.rpy:1784
 translate english j701_play_search_drawing_33b841d7:
 
     # noam reflexion "Tu vas montrer ça aux autres ?"
-    noam reflexion ""
+    noam reflexion "Are you going to show the others?"
 
-# game/scenario/7_0_1.rpy:1577
+# game/scenario/7_0_1.rpy:1786
 translate english j701_play_search_drawing_6bbbcb0c:
 
     # tomas mefiant "Pas encore."
-    tomas mefiant ""
+    tomas mefiant "Not yet."
 
-# game/scenario/7_0_1.rpy:1579
+# game/scenario/7_0_1.rpy:1788
 translate english j701_play_search_drawing_1cb2415f:
 
     # noam hesitation "Pourquoi ?"
-    noam hesitation ""
+    noam hesitation "Why not?"
 
-# game/scenario/7_0_1.rpy:1581
-translate english j701_play_search_drawing_954f81f4:
+# game/scenario/7_0_1.rpy:1790
+translate english j701_play_search_drawing_96cc323f:
 
-    # tomas reflechit "Parce que je ne sais pas encore ce que ça signifie."
-    tomas reflechit ""
+    # tomas reflechit "Parce que je ne sais pas encore ce que ça signifie. Im-Imagine si on se trompe complètement ?"
+    tomas reflechit "Because I still don't know what it means. Im-Imagine if we're completely wrong?"
 
-# game/scenario/7_0_1.rpy:1582
-translate english j701_play_search_drawing_c47f7d3c:
+# game/scenario/7_0_1.rpy:1791
+translate english j701_play_search_drawing_82c154b1:
 
-    # tomas neutre "Je veux comprendre avant de déclencher une panique."
-    tomas neutre ""
+    # tomas neutre "Je veux comprendre ce qu'il se passe avant de déclencher une panique."
+    tomas neutre "I want to understand what's happening before I cause a panic."
 
-# game/scenario/7_0_1.rpy:1584
-translate english j701_play_search_drawing_c1a8deb0:
+# game/scenario/7_0_1.rpy:1795
+translate english j701_play_search_drawing_4c183175:
 
-    # think "Quelque chose cloche."
-    think ""
+    # think "Je quitte la salle, la boule au ventre et l'estomac qui se creuse."
+    think "I leave the room with a knot in my stomach and my hunger steadily growing."
 
-# game/scenario/7_0_1.rpy:1585
-translate english j701_play_search_drawing_30314323:
+# game/scenario/7_0_1.rpy:1804
+translate english j701_play_search_drawing_36dacd6d:
 
-    # think "Et ça fait bien longtemps que ça n'était plus arrivé."
-    think ""
+    # "Le dîner commence tard. Personne ne l'a vraiment décidé."
+    "Dinner starts late. No one really decided it would."
 
-# game/scenario/7_0_1.rpy:1589
-translate english j701_play_search_drawing_c8e13455:
-
-    # think "Je quitte la salle."
-    think ""
-
-# game/scenario/7_0_1.rpy:1590
-translate english j701_play_search_drawing_4b927348:
-
-    # think "Et, absurdité complète, j'ai faim."
-    think ""
-
-# game/scenario/7_0_1.rpy:1599
-translate english j701_play_search_drawing_8d2b1282:
-
-    # "Le dîner commence tard."
-    ""
-
-# game/scenario/7_0_1.rpy:1600
-translate english j701_play_search_drawing_fba37e68:
-
-    # "Personne ne l'a vraiment décidé."
-    ""
-
-# game/scenario/7_0_1.rpy:1601
+# game/scenario/7_0_1.rpy:1805
 translate english j701_play_search_drawing_8420a7c8:
 
     # "Les gens sont juste revenus progressivement manger après avoir vaqué à leurs occupations."
-    ""
+    "People simply drift back in to eat after going about their business."
 
-# game/scenario/7_0_1.rpy:1602
-translate english j701_play_search_drawing_61a32cd4:
+# game/scenario/7_0_1.rpy:1806
+translate english j701_play_search_drawing_b4847b5c:
 
-    # "Par habitude."
-    ""
+    # think "On a tous plus ou moins réussi à se faire au rythme du Conclave."
+    think "We've all more or less settled into the Conclave's routine."
 
-# game/scenario/7_0_1.rpy:1603
-translate english j701_play_search_drawing_3cab025b:
-
-    # "Ou parce qu'il n'y avait nulle part ailleurs où aller."
-    ""
-
-# game/scenario/7_0_1.rpy:1605
-translate english j701_play_search_drawing_9580570a:
-
-    # "L'ambiance est encore légère."
-    ""
-
-# game/scenario/7_0_1.rpy:1607
-translate english j701_play_search_drawing_1101953f:
-
-    # "Pas joyeuse."
-    ""
-
-# game/scenario/7_0_1.rpy:1608
-translate english j701_play_search_drawing_0c7f2cc5:
-
-    # "Mais supportable."
-    ""
-
-# game/scenario/7_0_1.rpy:1619
+# game/scenario/7_0_1.rpy:1817
 translate english j701_play_search_drawing_e4f9940c:
 
     # iris taquin "Franchement, si demain elle parle toujours pas…"
-    iris taquin ""
+    iris taquin "Honestly, if she still isn't talking tomorrow..."
 
-# game/scenario/7_0_1.rpy:1621
-translate english j701_play_search_drawing_b10ad02d:
+# game/scenario/7_0_1.rpy:1819
+translate english j701_play_search_drawing_b3aba8db:
 
-    # julian sourire "Julian commence officiellement à apprécier cette dystopie."
-    julian sourire ""
+    # julian sourire "Je commence officiellement à apprécier cette dystopie !"
+    julian sourire "I'm officially starting to enjoy this dystopia!"
 
-# game/scenario/7_0_1.rpy:1623
-translate english j701_play_search_drawing_40daaa28:
+# game/scenario/7_0_1.rpy:1821
+translate english j701_play_search_drawing_f10ea726:
 
-    # elen content "Tu dis ça maintenant."
-    elen content ""
+    # elen content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
+    elen content "You say that now. Give it three days and you'll probably die of boredom!"
 
-# game/scenario/7_0_1.rpy:1624
-translate english j701_play_search_drawing_dc46e4b8:
+# game/scenario/7_0_1.rpy:1823
+translate english j701_play_search_drawing_596540b7:
 
-    # elen "Mais au bout de trois jours tu vas mourir d'ennui. Ou manger tes draps. Enfin non, fais pas ça, ça doit être horrible."
-    elen ""
+    # julian rire "Impossible. Je suis trop fascinant pour m'ennuyer !"
+    julian rire "Impossible. I'm far too fascinating to get bored!"
 
-# game/scenario/7_0_1.rpy:1626
-translate english j701_play_search_drawing_0917e6d0:
+# game/scenario/7_0_1.rpy:1825
+translate english j701_play_search_drawing_57cf49cd:
 
-    # julian rire "Impossible."
-    julian rire ""
+    # iris rire "Laisse-moi rire... Ton égo relève certainement de la psychiatrie."
+    iris rire "Give me a break... Your ego is definitely a psychiatric condition."
 
-# game/scenario/7_0_1.rpy:1627
-translate english j701_play_search_drawing_71357cf9:
-
-    # julian taquin "Je suis fascinant."
-    julian taquin ""
-
-# game/scenario/7_0_1.rpy:1629
-translate english j701_play_search_drawing_c76c46ba:
-
-    # iris rire "Laisse-moi rire..."
-    iris rire ""
-
-# game/scenario/7_0_1.rpy:1630
-translate english j701_play_search_drawing_ae721ce8:
-
-    # iris taquin "Ça aussi, c'est une maladie mentale, mais au moins elle est bien habillée."
-    iris taquin ""
-
-# game/scenario/7_0_1.rpy:1632
-translate english j701_play_search_drawing_a6538361:
-
-    # "Elen rit."
-    ""
-
-# game/scenario/7_0_1.rpy:1633
-translate english j701_play_search_drawing_1c461e14:
-
-    # "Même Julian sourit vraiment."
-    ""
-
-# game/scenario/7_0_1.rpy:1634
-translate english j701_play_search_drawing_ca784901:
-
-    # think "Sans Kami, l'air prend moins de place."
-    think ""
-
-# game/scenario/7_0_1.rpy:1636
+# game/scenario/7_0_1.rpy:1827
 translate english j701_play_search_drawing_30a79762:
 
     # lysa reflexion "Je crois surtout qu'on profite du silence avant de comprendre pourquoi il est là."
-    lysa reflexion ""
+    lysa reflexion "I think we're mostly enjoying the silence before we find out what's causing it."
 
-# game/scenario/7_0_1.rpy:1638
-translate english j701_play_search_drawing_495058ef:
+# game/scenario/7_0_1.rpy:1829
+translate english j701_play_search_drawing_68bca3e2:
 
-    # iris gene "Toujours optimiste, toi."
-    iris gene ""
+    # iris gene "T'es toujours optimiste, toi. Franchement, ça doit être fatiguant d'être dans ta peau."
+    iris gene "You're always so optimistic. Honestly, it must be exhausting being you."
 
-# game/scenario/7_0_1.rpy:1640
+# game/scenario/7_0_1.rpy:1831
 translate english j701_play_search_drawing_cb42f7b6:
 
     # lysa inquiet "Si ça peut nous garder en vie..."
-    lysa inquiet ""
+    lysa inquiet "If it keeps us alive..."
 
-# game/scenario/7_0_1.rpy:1642
-translate english j701_play_search_drawing_e2be04b5:
+# game/scenario/7_0_1.rpy:1833
+translate english j701_play_search_drawing_f913e6ea:
 
-    # kael fatigue "Techniquement, elle peut être en maintenance et revenir demain."
-    kael fatigue ""
+    # kael fatigue "Techniquement, Kami peut être en maintenance et revenir demain."
+    kael fatigue "Technically, Kami could be undergoing maintenance and come back tomorrow."
 
-# game/scenario/7_0_1.rpy:1644
+# game/scenario/7_0_1.rpy:1835
 translate english j701_play_search_drawing_c2b618a9:
 
     # iris colere "Kael. Non. Tais-toi un peu."
-    iris colere ""
+    iris colere "Kael. No. Shut up."
 
-# game/scenario/7_0_1.rpy:1645
+# game/scenario/7_0_1.rpy:1836
 translate english j701_play_search_drawing_16f7dd14:
 
     # iris desaccord "Tu peux arrêter de rendre chaque chose terrifiante avec un ton calme ?"
-    iris desaccord ""
+    iris desaccord "Could you stop making everything sound terrifying in that calm voice?"
 
-# game/scenario/7_0_1.rpy:1647
-translate english j701_play_search_drawing_f8a3e351:
+# game/scenario/7_0_1.rpy:1838
+translate english j701_play_search_drawing_d54bd84f:
 
-    # kael neutre "Il ne faut pas se mentir."
-    kael neutre ""
+    # kael neutre "Il ne faut pas se mentir. C'est même très probable après le cirque d'hier."
+    kael neutre "We shouldn't lie to ourselves. It's actually quite likely after yesterday's circus."
 
-# game/scenario/7_0_1.rpy:1649
-translate english j701_play_search_drawing_92e5cdf9:
-
-    # "Petit rire autour de la table."
-    ""
-
-# game/scenario/7_0_1.rpy:1650
-translate english j701_play_search_drawing_4d071aa4:
-
-    # "Pas fort."
-    ""
-
-# game/scenario/7_0_1.rpy:1651
-translate english j701_play_search_drawing_87caac34:
-
-    # "Mais naturel."
-    ""
-
-# game/scenario/7_0_1.rpy:1653
-translate english j701_play_search_drawing_a2d59978:
-
-    # "Puis quelqu'un pose brutalement un plateau."
-    ""
-
-# game/scenario/7_0_1.rpy:1657
+# game/scenario/7_0_1.rpy:1842
 translate english j701_play_search_drawing_d5d982ea:
 
     # "CLAC."
-    ""
+    "CLACK."
 
-# game/scenario/7_0_1.rpy:1659
-translate english j701_play_search_drawing_9ee5ed2f:
+# game/scenario/7_0_1.rpy:1844
+translate english j701_play_search_drawing_4ca9deed:
 
-    # elias inquiet "Ok."
-    elias inquiet ""
+    # elias inquiet "Ok. Bon. Faut qu'on parle sérieusement."
+    elias inquiet "Okay. Right. We need to talk. Seriously."
 
-# game/scenario/7_0_1.rpy:1660
-translate english j701_play_search_drawing_3b62ba2c:
+# game/scenario/7_0_1.rpy:1846
+translate english j701_play_search_drawing_b91af7bb:
 
-    # elias inquiet "Bon. Faut qu'on parle."
-    elias inquiet ""
+    # mara agace "Houla ! Tu es inquiétant quand tu tires cette tronche."
+    mara agace "Whoa! You're scary when you make that face."
 
-# game/scenario/7_0_1.rpy:1662
-translate english j701_play_search_drawing_773fa803:
+# game/scenario/7_0_1.rpy:1848
+translate english j701_play_search_drawing_b48fc00e:
 
-    # mara agace "Tu deviens très inquiétant quand tu démarres comme un adulte responsable."
-    mara agace ""
+    # elias inquiet "Non mais sérieux. Quelqu'un est allé dans la salle de stockage ?"
+    elias inquiet "No, I'm serious. Has anyone been in the storage room?"
 
-# game/scenario/7_0_1.rpy:1664
-translate english j701_play_search_drawing_8e0c7a85:
-
-    # elias neutre "Non mais sérieux."
-    elias neutre ""
-
-# game/scenario/7_0_1.rpy:1666
-translate english j701_play_search_drawing_a007d95e:
-
-    # "Il passe une main dans ses cheveux."
-    ""
-
-# game/scenario/7_0_1.rpy:1668
-translate english j701_play_search_drawing_f5ebbb60:
-
-    # elias inquiet "Quelqu'un est allé dans la salle de stockage ?"
-    elias inquiet ""
-
-# game/scenario/7_0_1.rpy:1670
+# game/scenario/7_0_1.rpy:1850
 translate english j701_play_search_drawing_46bcb97d:
 
     # "Quelques regards se lèvent."
-    ""
+    "A few heads turn."
 
-# game/scenario/7_0_1.rpy:1672
-translate english j701_play_search_drawing_73ae105f:
+# game/scenario/7_0_1.rpy:1852
+translate english j701_play_search_drawing_8f0bf1e7:
 
-    # mara doute "Pourquoi ?"
-    mara doute ""
+    # mara doute "Hein ? Pourquoi ?"
+    mara doute "Huh? Why?"
 
-# game/scenario/7_0_1.rpy:1674
+# game/scenario/7_0_1.rpy:1854
 translate english j701_play_search_drawing_575ff204:
 
     # elias inquiet "Parce qu'il manque du matériel."
-    elias inquiet ""
+    elias inquiet "Because some equipment is missing."
 
-# game/scenario/7_0_1.rpy:1676
+# game/scenario/7_0_1.rpy:1856
 translate english j701_play_search_drawing_9dad050d:
 
     # iris surpris "Quel genre de matériel ?"
-    iris surpris ""
+    iris surpris "What kind of equipment?"
 
-# game/scenario/7_0_1.rpy:1678
-translate english j701_play_search_drawing_71beb511:
+# game/scenario/7_0_1.rpy:1858
+translate english j701_play_search_drawing_85fbcaf5:
 
-    # elias "Des outils."
-    elias ""
+    # elias "Des outils. Des composants. Et des grosses batteries."
+    elias "Tools. Components. And some big batteries."
 
-# game/scenario/7_0_1.rpy:1679
-translate english j701_play_search_drawing_734847e8:
+# game/scenario/7_0_1.rpy:1860
+translate english j701_play_search_drawing_b49da4b4:
 
-    # elias "Des composants."
-    elias ""
+    # kael surpris "Des batteries ? Pourquoi tu crois qu'on aurait besoin de batteries ?"
+    kael surpris "Batteries? Why do you think any of us would need batteries?"
 
-# game/scenario/7_0_1.rpy:1680
-translate english j701_play_search_drawing_05a7fcca:
+# game/scenario/7_0_1.rpy:1862
+translate english j701_play_search_drawing_1695f5f7:
 
-    # elias inquiet "Et deux batteries. Des grosses."
-    elias inquiet ""
+    # mara doute "T'es sûr que tu les as pas déplacées ? Ouais je sais, c'est un peu une question à la con mais bon."
+    mara doute "Are you sure you didn't move them? Yeah, I know, kind of a stupid question, but still."
 
-# game/scenario/7_0_1.rpy:1682
-translate english j701_play_search_drawing_28b84c81:
+# game/scenario/7_0_1.rpy:1864
+translate english j701_play_search_drawing_8272910b:
 
-    # kael surpris "Des batteries ?"
-    kael surpris ""
+    # elias colere "Oui je suis sûr. Elles y étaient encore hier."
+    elias colere "Yes, I'm sure. They were still there yesterday."
 
-# game/scenario/7_0_1.rpy:1684
-translate english j701_play_search_drawing_cdb1a49c:
+# game/scenario/7_0_1.rpy:1865
+translate english j701_play_search_drawing_fe42633a:
 
-    # elias inquiet "Oui."
-    elias inquiet ""
+    # elias fatigue "Tout était encore rangé ce matin."
+    elias fatigue "Everything was still in its place this morning."
 
-# game/scenario/7_0_1.rpy:1686
-translate english j701_play_search_drawing_887f7c48:
+# game/scenario/7_0_1.rpy:1866
+translate english j701_play_search_drawing_3e86cb4b:
 
-    # mara doute "T'es sûr que tu les as pas déplacées ? Question obligatoire, désolée."
-    mara doute ""
+    # elias fatigue "Je bricolais un truc. Un petit truc. Rien de bizarre, hein."
+    elias fatigue "I was building something. Just a little thing. Nothing weird, okay?"
 
-# game/scenario/7_0_1.rpy:1688
-translate english j701_play_search_drawing_37dc8716:
+# game/scenario/7_0_1.rpy:1868
+translate english j701_play_search_drawing_af75b9ba:
 
-    # elias colere "Oui je suis sûr."
-    elias colere ""
+    # mara taquin "Pourquoi quand tu dis ça, ça te rend encore plus suspect ?"
+    mara taquin "Why does saying that make you sound even more suspicious?"
 
-# game/scenario/7_0_1.rpy:1690
-translate english j701_play_search_drawing_d3672052:
-
-    # "Sa réponse part un peu trop vite."
-    ""
-
-# game/scenario/7_0_1.rpy:1691
-translate english j701_play_search_drawing_422a7db6:
-
-    # "Comme s'il s'était déjà posé la question cinquante fois."
-    ""
-
-# game/scenario/7_0_1.rpy:1693
-translate english j701_play_search_drawing_5d1ccaeb:
-
-    # elias fatigue "J'avais tout rangé ce matin."
-    elias fatigue ""
-
-# game/scenario/7_0_1.rpy:1694
-translate english j701_play_search_drawing_be6bfb11:
-
-    # elias fatigue "Je bricolais un truc. Un petit truc. Rien de bizarre."
-    elias fatigue ""
-
-# game/scenario/7_0_1.rpy:1698
+# game/scenario/7_0_1.rpy:1881
 translate english j701_play_search_drawing_0565ccae:
 
     # elias fatigue "J'ai refait la liste dans ma tête."
-    elias fatigue ""
+    elias fatigue "I went over the list again in my head."
 
-# game/scenario/7_0_1.rpy:1699
+# game/scenario/7_0_1.rpy:1882
 translate english j701_play_search_drawing_d991bed7:
 
     # elias inquiet "Plus je recompte, moins ça colle. Et moi, les listes, je les rate pas."
-    elias inquiet ""
+    elias inquiet "The more I count, the less it adds up. And I don't mess up lists."
 
-# game/scenario/7_0_1.rpy:1701
-translate english j701_play_search_drawing_b352bb92:
+# game/scenario/7_0_1.rpy:1884
+translate english j701_play_search_drawing_e4760dfe:
 
-    # kael reflechit "Dans le stockage principal ?"
-    kael reflechit ""
+    # kael reflechit "On a redistribué les stocks ce matin avec la livraison, on les a peut-être déplacés dans la salle de maintenance ?"
+    kael reflechit "We redistributed the supplies after the delivery this morning. Maybe they got moved to the maintenance room?"
 
-# game/scenario/7_0_1.rpy:1703
-translate english j701_play_search_drawing_c9dc5782:
+# game/scenario/7_0_1.rpy:1886
+translate english j701_play_search_drawing_35119366:
 
-    # elias neutre "Oui."
-    elias neutre ""
+    # elias neutre "Non, impossible. J'ai déjà tout retourné au moins dix fois."
+    elias neutre "No, impossible. I've already turned the place upside down at least ten times."
 
-# game/scenario/7_0_1.rpy:1705
-translate english j701_play_search_drawing_1bbb6949:
-
-    # kael taquin "Endroit isolé."
-    kael taquin ""
-
-# game/scenario/7_0_1.rpy:1707
-translate english j701_play_search_drawing_8d40b21e:
-
-    # elias desespoir "Oui. Justement. Y'a personne là-bas, je peux me concentrer."
-    elias desespoir ""
-
-# game/scenario/7_0_1.rpy:1708
-translate english j701_play_search_drawing_927249f0:
-
-    # elias desespoir "Je sais où je range mes trucs."
-    elias desespoir ""
-
-# game/scenario/7_0_1.rpy:1709
-translate english j701_play_search_drawing_01aeb077:
-
-    # elias colere "Et là, y'a plus rien."
-    elias colere ""
-
-# game/scenario/7_0_1.rpy:1711
+# game/scenario/7_0_1.rpy:1888
 translate english j701_play_search_drawing_d92e7fe8:
 
     # mara reflexion "Il manque beaucoup de choses ?"
-    mara reflexion ""
+    mara reflexion "Is a lot missing?"
 
-# game/scenario/7_0_1.rpy:1713
-translate english j701_play_search_drawing_b88f1372:
+# game/scenario/7_0_1.rpy:1890
+translate english j701_play_search_drawing_10cdeb1f:
 
-    # elias fatigue "Pas énormément."
-    elias fatigue ""
+    # elias fatigue "Pas énormément. Mais les composants qu'il me fallait, ceux-là, on les remplace pas avec n'importe quoi."
+    elias fatigue "Not that much. But the components I needed can't just be replaced with any old parts."
 
-# game/scenario/7_0_1.rpy:1714
-translate english j701_play_search_drawing_29a876ec:
+# game/scenario/7_0_1.rpy:1891
+translate english j701_play_search_drawing_08fb23ca:
 
-    # elias inquiet "Mais les composants qu'il me fallait, ceux-là, on les remplace pas avec du scotch et une prière."
-    elias inquiet ""
+    # elias colere "Et franchement, j'ai la flemme de devoir attendre le jour 14 pour terminer mon projet."
+    elias colere "And honestly, I can't be bothered waiting until Day 14 to finish my project."
 
-# game/scenario/7_0_1.rpy:1716
+# game/scenario/7_0_1.rpy:1893
 translate english j701_play_search_drawing_a40575ca:
 
     # iris hesitation "Et personne a rien pris ici ?"
-    iris hesitation ""
+    iris hesitation "And no one here took anything?"
 
-# game/scenario/7_0_1.rpy:1718
-translate english j701_stockage_batteries_silence:
-
-    # "Silence." id j701_stockage_batteries_silence
-    "" id j701_stockage_batteries_silence
-
-# game/scenario/7_0_1.rpy:1719
-translate english j701_stockage_batteries_personne_repond:
-
-    # "Personne ne répond." id j701_stockage_batteries_personne_repond
-    "" id j701_stockage_batteries_personne_repond
-
-# game/scenario/7_0_1.rpy:1720
-translate english j701_play_search_drawing_89999b01:
-
-    # "Même Julian relève un peu la tête."
-    ""
-
-# game/scenario/7_0_1.rpy:1722
+# game/scenario/7_0_1.rpy:1895
 translate english j701_play_search_drawing_7df62c5d:
 
     # julian reflexion "Pourquoi quelqu'un volerait des batteries ?"
-    julian reflexion ""
+    julian reflexion "Why would anyone steal batteries?"
 
-# game/scenario/7_0_1.rpy:1724
-translate english j701_play_search_drawing_9220a44a:
+# game/scenario/7_0_1.rpy:1897
+translate english j701_play_search_drawing_3f08ab31:
 
-    # elias panique "J'en sais rien."
-    elias panique ""
+    # elias panique "J'en sais rien, pour bricoler ?"
+    elias panique "I don't know, to build something?"
 
-# game/scenario/7_0_1.rpy:1726
-translate english j701_play_search_drawing_9e713fa6:
+# game/scenario/7_0_1.rpy:1899
+translate english j701_play_search_drawing_28cfbc86:
 
-    # lysa reflexion "Pour bricoler quelque chose ?"
-    lysa reflexion ""
+    # iris colere "Génial. Tu sous-entends qu'il y a un voleur parmi nous ?"
+    iris colere "Great. Are you implying there's a thief among us?"
 
-# game/scenario/7_0_1.rpy:1728
-translate english j701_play_search_drawing_935c1f69:
+# game/scenario/7_0_1.rpy:1901
+translate english j701_play_search_drawing_02d8488e:
 
-    # kael reflechit "Ou démonter quelque chose."
-    kael reflechit ""
+    # elias inquiet "Quelqu'un a peut-être cru que c'était disponible. C'est pas..."
+    elias inquiet "Maybe someone thought they were free to use. It's not..."
 
-# game/scenario/7_0_1.rpy:1730
-translate english j701_play_search_drawing_732edda3:
-
-    # iris colere "Génial."
-    iris colere ""
-
-# game/scenario/7_0_1.rpy:1731
-translate english j701_play_search_drawing_45dedbd3:
-
-    # iris colere "Tu sous-entends qu'il y a un voleur parmi nous ?"
-    iris colere ""
-
-# game/scenario/7_0_1.rpy:1733
-translate english j701_play_search_drawing_6790b19f:
-
-    # elias inquiet "Je dis pas qu'on nous vole."
-    elias inquiet ""
-
-# game/scenario/7_0_1.rpy:1735
+# game/scenario/7_0_1.rpy:1903
 translate english j701_play_search_drawing_79c02786:
 
     # mara agace "Tu viens littéralement de demander si quelqu'un avait pris ton matériel."
-    mara agace ""
+    mara agace "You literally just asked if someone took your equipment."
 
-# game/scenario/7_0_1.rpy:1737
+# game/scenario/7_0_1.rpy:1905
 translate english j701_play_search_drawing_ff64b3b1:
 
     # elias inquiet "Oui mais—"
-    elias inquiet ""
+    elias inquiet "Yeah, but—"
 
-# game/scenario/7_0_1.rpy:1739
-translate english j701_play_search_drawing_81910f15:
+# game/scenario/7_0_1.rpy:1907
+translate english j701_play_search_drawing_1ce94b50:
 
-    # "Il s'arrête."
-    ""
+    # "Il s'arrête. Comme s'il essayait lui-même de décider si ça avait du sens."
+    "He stops. As if he's trying to decide for himself whether any of this makes sense."
 
-# game/scenario/7_0_1.rpy:1740
-translate english j701_play_search_drawing_b9d669f3:
+# game/scenario/7_0_1.rpy:1909
+translate english j701_play_search_drawing_c939d28a:
 
-    # "Comme s'il essayait lui-même de décider si ça avait du sens."
-    ""
+    # elias fatigue "Je comprends pas. Fais chier, j'avais quasiment terminé !"
+    elias fatigue "I don't get it. Damn it, I was almost finished!"
 
-# game/scenario/7_0_1.rpy:1742
-translate english j701_play_search_drawing_20bb22ae:
+# game/scenario/7_0_1.rpy:1910
+translate english j701_play_search_drawing_c0f834b6:
 
-    # elias fatigue "Je comprends pas."
-    elias fatigue ""
+    # elias colere "J'ai vérifié partout pourtant ! Impossible de mettre la main dessus."
+    elias colere "I checked everywhere! I can't find them anywhere."
 
-# game/scenario/7_0_1.rpy:1743
-translate english j701_play_search_drawing_aeb79837:
+# game/scenario/7_0_1.rpy:1912
+translate english j701_play_search_drawing_08c3b282:
 
-    # elias "C'est chaud. Vraiment chaud."
-    elias ""
+    # kael neutre "Il y a des caméras dans le stockage. Peut-être qu'on peut accéder aux images ?"
+    kael neutre "There are cameras in the storage room. Maybe we can access the footage?"
 
-# game/scenario/7_0_1.rpy:1745
-translate english j701_play_search_drawing_2a84866c:
+# game/scenario/7_0_1.rpy:1914
+translate english j701_play_search_drawing_505a03c4:
 
-    # "Le ton a changé."
-    ""
+    # iris surpris "Ah. Oui. C'est vrai qu'on vit tout le temps avec ça, mais il y a des caméras partout ici..."
+    iris surpris "Oh. Right. We're so used to it that I forget there are cameras everywhere in here..."
 
-# game/scenario/7_0_1.rpy:1746
-translate english j701_play_search_drawing_5dbb9ada:
+# game/scenario/7_0_1.rpy:1916
+translate english j701_play_search_drawing_5a2559a7:
 
-    # "Pas brutalement."
-    ""
+    # elias panique "Il faudrait accéder aux images... Le plus simple serait de demander à Kami."
+    elias panique "We'd need to access the footage... The easiest option would be to ask Kami."
 
-# game/scenario/7_0_1.rpy:1747
-translate english j701_play_search_drawing_341643ef:
+# game/scenario/7_0_1.rpy:1918
+translate english j701_play_search_drawing_79fdaebd:
 
-    # "Comme une musique qui devient légèrement fausse."
-    ""
+    # noam fatigue "Ne me dites pas qu'on en est réduit à espérer son retour ?"
+    noam fatigue "Don't tell me we've been reduced to hoping she comes back."
 
-# game/scenario/7_0_1.rpy:1749
-translate english j701_play_search_drawing_e7eef93a:
+# game/scenario/7_0_1.rpy:1922
+translate english j701_play_search_drawing_b0b13ced:
 
-    # noam "Tu veux dire que... tu as vérifié partout ?"
-    noam ""
+    # noam reflechit "Non. On vaut mieux que ça. On va résoudre cette affaire nous-mêmes !"
+    noam reflechit "No. We're better than that. We'll solve this ourselves!"
 
-# game/scenario/7_0_1.rpy:1751
-translate english j701_play_search_drawing_a32dc61e:
+# game/scenario/7_0_1.rpy:1928
+translate english j701_play_search_drawing_9230d062:
 
-    # elias fatigue "Trois fois au moins."
-    elias fatigue ""
+    # "Au final nous n'avons pas trouvé grand-chose."
+    "In the end, we don't find much."
 
-# game/scenario/7_0_1.rpy:1753
-translate english j701_play_search_drawing_145e9684:
+# game/scenario/7_0_1.rpy:1937
+translate english j701_play_search_drawing_41ee1da1:
 
-    # kael neutre "Il y a des caméras dans le stockage."
-    kael neutre ""
+    # think "Nous avons fouillé, mais rien ne laisse envisager le moindre vol."
+    think "We search everywhere, but nothing points to any kind of theft."
 
-# game/scenario/7_0_1.rpy:1755
-translate english j701_play_search_drawing_1654d8be:
+# game/scenario/7_0_1.rpy:1938
+translate english j701_play_search_drawing_b2d2d706:
 
-    # "Tout le monde se tait une demi-seconde."
-    ""
+    # think "Pourquoi quelqu'un aurait besoin de tout ça de toute façon ?"
+    think "Why would anyone need all that stuff anyway?"
 
-# game/scenario/7_0_1.rpy:1756
-translate english j701_play_search_drawing_b7475fd1:
+# game/scenario/7_0_1.rpy:1940
+translate english j701_play_search_drawing_362590d8:
 
-    # "Puis réalise."
-    ""
+    # noam triste "Raah, j'y comprends rien."
+    noam triste "Ugh, I don't get any of this."
 
-# game/scenario/7_0_1.rpy:1758
-translate english j701_play_search_drawing_bc26d9ad:
+# game/scenario/7_0_1.rpy:1948
+translate english j701_play_search_drawing_d593473d:
 
-    # iris surpris "Ah. Oui."
-    iris surpris ""
+    # think "Kami n'est toujours pas réapparue."
+    think "Kami still hasn't reappeared."
 
-# game/scenario/7_0_1.rpy:1759
-translate english j701_play_search_drawing_2b2df632:
+# game/scenario/7_0_1.rpy:1950
+translate english j701_play_search_drawing_4a610a96:
 
-    # iris reflexion "C'est vrai qu'on vit tout le temps avec ça, mais il y a des caméras partout ici..."
-    iris reflexion ""
+    # noam reflechit "Pourtant je suis sûr qu'elle est toujours là. Juste silencieuse."
+    noam reflechit "But I'm sure she's still here. Just silent."
 
-# game/scenario/7_0_1.rpy:1761
-translate english j701_play_search_drawing_5bdb81d2:
-
-    # elias reflechit "Il faudrait accéder aux images..."
-    elias reflechit ""
-
-# game/scenario/7_0_1.rpy:1762
-translate english j701_play_search_drawing_4260f38b:
-
-    # elias panique "Mais pour ça il faut l'autorisation de Kami."
-    elias panique ""
-
-# game/scenario/7_0_1.rpy:1764
-translate english j701_play_search_drawing_63f47fd3:
-
-    # "Cette fois, le silence reste un peu plus longtemps."
-    ""
-
-# game/scenario/7_0_1.rpy:1766
-translate english j701_play_search_drawing_796e8c04:
-
-    # mara stress "Super."
-    mara stress ""
-
-# game/scenario/7_0_1.rpy:1768
-translate english j701_play_search_drawing_169993d2:
-
-    # julian panne "Nous sommes peut-être simplement devenus un groupe de primates livré à lui-même."
-    julian panne ""
-
-# game/scenario/7_0_1.rpy:1770
-translate english j701_play_search_drawing_0a40c388:
-
-    # iris taquin "Pour toi, le diagnostic était déjà posé."
-    iris taquin ""
-
-# game/scenario/7_0_1.rpy:1772
-translate english j701_play_search_drawing_f2233f89:
-
-    # julian sourire "Julian prend ça comme un compliment."
-    julian sourire ""
-
-# game/scenario/7_0_1.rpy:1774
-translate english j701_play_search_drawing_14a2197f:
-
-    # iris desaccord "Si tu veux, mais ça n'en est pas un."
-    iris desaccord ""
-
-# game/scenario/7_0_1.rpy:1776
-translate english j701_play_search_drawing_6d20737b:
-
-    # "Quelques sourires reviennent."
-    ""
-
-# game/scenario/7_0_1.rpy:1777
-translate english j701_play_search_drawing_7b05cca6:
-
-    # "Mais moins facilement."
-    ""
-
-# game/scenario/7_0_1.rpy:1778
-translate english j701_play_search_drawing_2355cdec:
-
-    # "Le sujet reste au-dessus de la table."
-    ""
-
-# game/scenario/7_0_1.rpy:1780
-translate english j701_play_search_drawing_35538504:
-
-    # think "Des outils."
-    think ""
-
-# game/scenario/7_0_1.rpy:1781
-translate english j701_play_search_drawing_163c7b94:
-
-    # think "Des batteries."
-    think ""
-
-# game/scenario/7_0_1.rpy:1782
-translate english j701_play_search_drawing_702c5ee3:
-
-    # think "Des objets qui disparaissent."
-    think ""
-
-# game/scenario/7_0_1.rpy:1784
-translate english j701_play_search_drawing_3adb87bd:
-
-    # think "C'est rien."
-    think ""
-
-# game/scenario/7_0_1.rpy:1786
-translate english j701_play_search_drawing_f92f77f4:
-
-    # think "Probablement."
-    think ""
-
-# game/scenario/7_0_1.rpy:1788
-translate english j701_play_search_drawing_e90a6bd1_1:
-
-    # "Et pourtant."
-    ""
-
-# game/scenario/7_0_1.rpy:1790
-translate english j701_play_search_drawing_7ac97b1b:
-
-    # "Je vois Elias regarder encore dans le vide."
-    ""
-
-# game/scenario/7_0_1.rpy:1791
-translate english j701_play_search_drawing_deacd45b:
-
-    # "Comme s'il essayait de revoir exactement où il avait posé ses affaires."
-    ""
-
-# game/scenario/7_0_1.rpy:1802
-translate english j701_play_search_drawing_e5605409:
-
-    # "La journée est passée plus vite que prévu."
-    ""
-
-# game/scenario/7_0_1.rpy:1804
-translate english j701_play_search_drawing_3c1eca1f:
-
-    # "Sans vote."
-    ""
-
-# game/scenario/7_0_1.rpy:1805
-translate english j701_play_search_drawing_e9847edb:
-
-    # "Sans annonce."
-    ""
-
-# game/scenario/7_0_1.rpy:1806
-translate english j701_play_search_drawing_59499985:
-
-    # "Sans Kami."
-    ""
-
-# game/scenario/7_0_1.rpy:1807
-translate english j701_play_search_drawing_a91d6600:
-
-    # "Juste… une journée... Presque banale."
-    ""
-
-# game/scenario/7_0_1.rpy:1809
+# game/scenario/7_0_1.rpy:1952
 translate english j701_play_search_drawing_ecde1f1d:
 
     # "Je retire ma veste et la laisse tomber sur la chaise près du bureau."
-    ""
+    "I take off my jacket and let it fall onto the chair by the desk."
 
-# game/scenario/7_0_1.rpy:1810
-translate english j701_play_search_drawing_1aeb1985:
+# game/scenario/7_0_1.rpy:1953
+translate english j701_play_search_drawing_febeb591:
 
-    # "Le silence dans la chambre est toujours là."
-    ""
+    # "Le silence dans la chambre est toujours là. Et je ne saurais dire s'il est plutôt inquiétant ou rassurant."
+    "The silence is still there in my room. I can't tell whether it's comforting or unsettling."
 
-# game/scenario/7_0_1.rpy:1811
-translate english j701_play_search_drawing_d6d5d136:
-
-    # "Mais il a changé."
-    ""
-
-# game/scenario/7_0_1.rpy:1812
-translate english j701_play_search_drawing_49319745:
-
-    # "Hier encore, ce genre de silence m'aurait mis mal à l'aise."
-    ""
-
-# game/scenario/7_0_1.rpy:1813
-translate english j701_play_search_drawing_e560f545:
-
-    # "Aujourd'hui…"
-    ""
-
-# game/scenario/7_0_1.rpy:1815
+# game/scenario/7_0_1.rpy:1955
 translate english j701_play_search_drawing_c1555635:
 
     # think "J'ai presque envie qu'il reste."
-    think ""
+    think "I almost want it to stay."
 
-# game/scenario/7_0_1.rpy:1817
-translate english j701_play_search_drawing_312ff350:
+# game/scenario/7_0_1.rpy:1957
+translate english j701_play_search_drawing_f484b90b:
 
-    # "Je m'assois sur le bord du lit."
-    ""
+    # "Je m'assois sur le bord du lit. Je repense à la cafétéria. À la relative bonne humeur de la journée. Aux discussions inutiles..."
+    "I sit on the edge of the bed. I think back to the cafeteria. The day's relatively good mood. The pointless conversations..."
 
-# game/scenario/7_0_1.rpy:1818
-translate english j701_play_search_drawing_b2742b75:
+# game/scenario/7_0_1.rpy:1958
+translate english j701_play_search_drawing_f43c8c3a:
 
-    # "Je repense à la cafétéria."
-    ""
+    # "Au silence du canon."
+    "The silence of the cannon."
 
-# game/scenario/7_0_1.rpy:1819
-translate english j701_play_search_drawing_ba431239:
+# game/scenario/7_0_1.rpy:1960
+translate english j701_play_search_drawing_13559368:
 
-    # "Aux rires."
-    ""
+    # think "Quelque chose cloche. Mais personne n'a vraiment envie que ça s'arrête."
+    think "Something's wrong. But no one really wants it to end."
 
-# game/scenario/7_0_1.rpy:1820
-translate english j701_play_search_drawing_900b14b2:
+# game/scenario/7_0_1.rpy:1961
+translate english j701_play_search_drawing_a6086d27:
 
-    # "Aux discussions inutiles."
-    ""
+    # think "D'une certaine manière, le monde est redevenu totalement instable."
+    think "In a way, the world has become completely unstable again."
 
-# game/scenario/7_0_1.rpy:1821
-translate english j701_play_search_drawing_02487e5d:
+# game/scenario/7_0_1.rpy:1963
+translate english j701_play_search_drawing_14e190a2:
 
-    # "À Tomas."
-    ""
+    # "Je regarde vers mon bureau. Je cherche le dessin de Juliette."
+    "I look toward my desk. I search for Juliette's drawing."
 
-# game/scenario/7_0_1.rpy:1822
-translate english j701_play_search_drawing_c8969137:
+# game/scenario/7_0_1.rpy:1965
+translate english j701_play_search_drawing_3e0a4d83:
 
-    # "Aux écrans remplis de zéros."
-    ""
+    # noam sourire "J'espère qu'elle va bien."
+    noam sourire "I hope she's okay."
 
-# game/scenario/7_0_1.rpy:1824
-translate english j701_play_search_drawing_c1a8deb0_1:
+# game/scenario/7_0_1.rpy:1967
+translate english j701_play_search_drawing_c67c8b48:
 
-    # think "Quelque chose cloche."
-    think ""
+    # noam surpris "Hein ?! Mais où il est ?!"
+    noam surpris "Huh?! Where is it?!"
 
-# game/scenario/7_0_1.rpy:1825
-translate english j701_play_search_drawing_c9466fe0:
+# game/scenario/7_0_1.rpy:1975
+translate english j701_play_search_drawing_821c2d8c:
 
-    # think "Mais personne n'a envie de casser ce moment."
-    think ""
+    # "Je fouille, je retourne tout. Je cherche partout."
+    "I search everywhere, turning everything upside down."
 
-# game/scenario/7_0_1.rpy:1827
-translate english j701_play_search_drawing_82ae1306:
+# game/scenario/7_0_1.rpy:1976
+translate english j701_play_search_drawing_467d6e3c:
 
-    # "Je passe une main sur mon visage."
-    ""
+    # noam colere "Il n'est plus là."
+    noam colere "It's gone."
 
-# game/scenario/7_0_1.rpy:1828
-translate english j701_play_search_drawing_048128bc:
+# game/scenario/7_0_1.rpy:1977
+translate english j701_play_search_drawing_98a05a07:
 
-    # "Fatigue."
-    ""
+    # think "Le dessin de Juliette n'est plus là."
+    think "Juliette's drawing is gone."
 
-# game/scenario/7_0_1.rpy:1829
-translate english j701_play_search_drawing_49b5befe:
+# game/scenario/7_0_1.rpy:1979
+translate english j701_play_search_drawing_e6cac28e:
 
-    # "Soulagement."
-    ""
+    # "Je me redresse rapidement."
+    "I stand up sharply."
 
-# game/scenario/7_0_1.rpy:1830
-translate english j701_play_search_drawing_f7c946b9:
-
-    # "Et cette étrange impression de respirer enfin un peu."
-    ""
-
-# game/scenario/7_0_1.rpy:1832
-translate english j701_play_search_drawing_49ee6923:
-
-    # "Mon regard dérive vers le bureau."
-    ""
-
-# game/scenario/7_0_1.rpy:1833
-translate english j701_play_search_drawing_7f2fab93:
-
-    # "Puis il se fige."
-    ""
-
-# game/scenario/7_0_1.rpy:1835
-translate english j701_play_search_drawing_daf4fff8_1:
-
-    # think "..."
-    think ""
-
-# game/scenario/7_0_1.rpy:1837
-translate english j701_play_search_drawing_1662049b:
-
-    # "Le dessin n'est plus là."
-    ""
-
-# game/scenario/7_0_1.rpy:1838
-translate english j701_play_search_drawing_1ff8d29a:
-
-    # "Le petit dessin de Juliette."
-    ""
-
-# game/scenario/7_0_1.rpy:1839
-translate english j701_play_search_drawing_11411ca2:
-
-    # "Celui que je laissais toujours près de l'écran."
-    ""
-
-# game/scenario/7_0_1.rpy:1841
-translate english j701_play_search_drawing_7e096aa8:
-
-    # "Je me redresse légèrement."
-    ""
-
-# game/scenario/7_0_1.rpy:1843
+# game/scenario/7_0_1.rpy:1981
 translate english j701_play_search_drawing_55c42476:
 
     # noam surpris "Hein... ?"
-    noam surpris ""
+    noam surpris "Huh...?"
 
-# game/scenario/7_0_1.rpy:1845
+# game/scenario/7_0_1.rpy:1983
 translate english j701_play_search_drawing_7b5296af:
 
     # "Je regarde autour de moi."
-    ""
+    "I look around."
 
-# game/scenario/7_0_1.rpy:1849
-translate english j701_play_search_drawing_f9a90f51:
-
-    # "Le bureau."
-    ""
-
-# game/scenario/7_0_1.rpy:1850
-translate english j701_play_search_drawing_13e92e67:
-
-    # "Le sol."
-    ""
-
-# game/scenario/7_0_1.rpy:1851
-translate english j701_play_search_drawing_9e3a80ee:
-
-    # "Sous le lit."
-    ""
-
-# game/scenario/7_0_1.rpy:1852
-translate english j701_chambre_fouille_rien:
-
-    # "Rien." id j701_chambre_fouille_rien
-    "" id j701_chambre_fouille_rien
-
-# game/scenario/7_0_1.rpy:1854
+# game/scenario/7_0_1.rpy:1985
 translate english j701_play_search_drawing_1d104a08:
 
     # think "Je l'ai pourtant laissé là il me semble."
-    think ""
+    think "I'm sure I left it there."
 
-# game/scenario/7_0_1.rpy:1856
-translate english j701_play_search_drawing_0d7249ea:
+# game/scenario/7_0_1.rpy:1986
+translate english j701_play_search_drawing_42d79851:
 
-    # "Un léger frisson me traverse."
-    ""
+    # think "Je n'y ai pas touché ! Il devrait être là !"
+    think "I didn't touch it! It should be right there!"
 
-# game/scenario/7_0_1.rpy:1857
-translate english j701_play_search_drawing_d3b7b5fd:
+# game/scenario/7_0_1.rpy:1988
+translate english j701_play_search_drawing_43becad7:
 
-    # "Pas de panique."
-    ""
+    # "Je continue à fouiller pendant de nombreuses minutes."
+    "I keep searching for several minutes."
 
-# game/scenario/7_0_1.rpy:1858
-translate english j701_play_search_drawing_fc1f37dd:
+# game/scenario/7_0_1.rpy:1989
+translate english j701_play_search_drawing_7083801c:
 
-    # "Juste cette sensation désagréable."
-    ""
+    # think "Il a dû tomber."
+    think "It must have fallen somewhere."
 
-# game/scenario/7_0_1.rpy:1859
-translate english j701_play_search_drawing_eaae7267:
+# game/scenario/7_0_1.rpy:1991
+translate english j701_play_search_drawing_a083d585:
 
-    # "Comme un détail qui refuse de rester un détail."
-    ""
+    # noam colere "Raaah ! Je fouillerai toute la chambre demain !"
+    noam colere "Argh! I'll tear the whole room apart tomorrow!"
 
-# game/scenario/7_0_1.rpy:1861
-translate english j701_play_search_drawing_7f9bc36d:
-
-    # "Je regarde l'écran noir une dernière fois."
-    ""
-
-# game/scenario/7_0_1.rpy:1863
-translate english j701_play_search_drawing_d1bf88bc:
-
-    # think "Où est-ce que j'ai bien pu le mettre ?"
-    think ""
-
-# game/scenario/7_0_1.rpy:1864
-translate english j701_play_search_drawing_1b592aca:
-
-    # think "Je le chercherai demain, là je suis crevé."
-    think ""
-
-# game/scenario/7_0_1.rpy:1866
+# game/scenario/7_0_1.rpy:1995
 translate english j701_play_search_drawing_bd9fd9bc:
 
     # "Je m'allonge finalement dans le lit."
-    ""
-
-# game/scenario/7_0_1.rpy:1867
-translate english j701_play_search_drawing_04fb3ac0:
-
-    # "Le silence revient."
-    ""
-
-# game/scenario/7_0_1.rpy:1868
-translate english j701_play_search_drawing_3b679dd4:
-
-    # "Mais cette fois…"
-    ""
-
-# game/scenario/7_0_1.rpy:1870
-translate english j701_play_search_drawing_3c5b5117:
-
-    # think "Il sonne un peu faux."
-    think ""
+    "Eventually, I lie down on the bed."
 

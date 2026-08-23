@@ -19,6 +19,68 @@ init -10 python:
 
     kd_cached_layered_sprite.cache = {}
 
+    def kd_character_asset(character_id, asset_name):
+        return "images/character/{}/{}.png".format(character_id, asset_name)
+
+    def kd_character_has_layered_wardrobe(character_id):
+        return (
+            renpy.loadable(kd_character_asset(character_id, "corps_nu"))
+            and renpy.loadable(kd_character_asset(character_id, "tenue1"))
+        )
+
+    def kd_equipped_character_outfit(character_id):
+        if not kd_character_has_layered_wardrobe(character_id):
+            return None
+
+        equipped_map = persistent.profile_skin_equipped or {}
+        unlocked_map = persistent.profile_wardrobe_unlocked or {}
+        outfit_id = equipped_map.get(character_id, "tenue1")
+        unlocked = set(unlocked_map.get(character_id, []))
+        unlocked.add("tenue1")
+
+        if outfit_id not in unlocked or not renpy.loadable(kd_character_asset(character_id, outfit_id)):
+            outfit_id = "tenue1"
+        return outfit_id
+
+    def kd_equipped_character_accessories(character_id):
+        equipped_map = persistent.profile_accessory_equipped or {}
+        unlocked_map = persistent.profile_accessories_unlocked or {}
+        equipped = equipped_map.get(character_id, [])
+        if isinstance(equipped, str):
+            equipped = [equipped]
+        unlocked = set(unlocked_map.get(character_id, []))
+        return [
+            accessory_id for accessory_id in equipped
+            if accessory_id in unlocked and renpy.loadable(kd_character_asset(character_id, accessory_id))
+        ]
+
+    def kd_arm_for_outfit(character_id, arm_id, outfit_id):
+        if outfit_id and outfit_id != "tenue1":
+            outfit_arm = "{}_{}".format(arm_id, outfit_id)
+            if renpy.loadable(kd_character_asset(character_id, outfit_arm)):
+                return outfit_arm
+        return arm_id
+
+    def kd_character_preview_displayable(character_id, outfit_id, accessory_ids, recipe, zoom=0.60, body_name=None):
+        arms, mouth, eyes = recipe
+        accessories = list(accessory_ids or [])
+
+        if kd_character_has_layered_wardrobe(character_id):
+            outfit_id = outfit_id or kd_equipped_character_outfit(character_id) or "tenue1"
+            arms = kd_arm_for_outfit(character_id, arms, outfit_id)
+            asset_names = ["corps_nu", outfit_id] + accessories + [arms, mouth, eyes]
+        else:
+            # Compatibilité : le corps historique reste la base lorsque
+            # corps_nu/tenue1 n'existent pas.
+            asset_names = [body_name or "corps", arms, eyes, mouth] + accessories
+
+        asset_paths = [
+            kd_character_asset(character_id, asset_name)
+            for asset_name in asset_names
+            if renpy.loadable(kd_character_asset(character_id, asset_name))
+        ]
+        return kd_cached_layered_sprite((1024, 1536), zoom, tuple(asset_paths))
+
     def kd_layered_sprite_delay(st, blink_period, blink_start, blink_end, speaking):
         # Pendant la parole, la cadence historique de la bouche est conservee.
         # Au repos, le sprite ne se reveille qu'aux changements des paupieres.
@@ -353,10 +415,9 @@ init python:
                 mouth = "bouche_parle"
             zoom = LYSA_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        displayable = kd_cached_layered_sprite(
-            LYSA_IMAGE_SIZE, zoom,
-            (_lysa_asset(body), _lysa_asset(arms), _lysa_asset(eyes), _lysa_asset(mouth)),
-        )
+        asset_paths = [_lysa_asset(body), _lysa_asset(arms), _lysa_asset(eyes), _lysa_asset(mouth)]
+        asset_paths.extend(_lysa_asset(accessory_id) for accessory_id in kd_equipped_character_accessories("lysa"))
+        displayable = kd_cached_layered_sprite(LYSA_IMAGE_SIZE, zoom, tuple(asset_paths))
         return displayable, kd_layered_sprite_delay(st, 4.8, 4.52, 4.68, speaking)
 
     def lysa_expression(expr):
@@ -526,10 +587,17 @@ init python:
                 mouth = "bouche_parle"
             zoom = IRIS_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        displayable = kd_cached_layered_sprite(
-            IRIS_IMAGE_SIZE, zoom,
-            (_iris_asset(body), _iris_asset(arms), _iris_asset(eyes), _iris_asset(mouth)),
-        )
+        if kd_character_has_layered_wardrobe("iris"):
+            outfit = kd_equipped_character_outfit("iris")
+            arms = kd_arm_for_outfit("iris", arms, outfit)
+            asset_names = ["corps_nu", outfit]
+            asset_names.extend(kd_equipped_character_accessories("iris"))
+            asset_names.extend((arms, mouth, eyes))
+            asset_paths = tuple(_iris_asset(asset_name) for asset_name in asset_names)
+        else:
+            asset_paths = (_iris_asset(body), _iris_asset(arms), _iris_asset(eyes), _iris_asset(mouth))
+
+        displayable = kd_cached_layered_sprite(IRIS_IMAGE_SIZE, zoom, asset_paths)
         return displayable, kd_layered_sprite_delay(st, 4.9, 4.62, 4.78, speaking)
 
     def iris_expression(expr):
@@ -976,10 +1044,17 @@ init python:
                 mouth = "bouche_parle"
             zoom = RYN_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        displayable = kd_cached_layered_sprite(
-            RYN_IMAGE_SIZE, zoom,
-            (_ryn_asset(body), _ryn_asset(arms), _ryn_asset(eyes), _ryn_asset(mouth)),
-        )
+        if kd_character_has_layered_wardrobe("ryn"):
+            outfit = kd_equipped_character_outfit("ryn")
+            arms = kd_arm_for_outfit("ryn", arms, outfit)
+            asset_names = ["corps_nu", outfit]
+            asset_names.extend(kd_equipped_character_accessories("ryn"))
+            asset_names.extend((arms, mouth, eyes))
+            asset_paths = tuple(_ryn_asset(asset_name) for asset_name in asset_names)
+        else:
+            asset_paths = (_ryn_asset(body), _ryn_asset(arms), _ryn_asset(eyes), _ryn_asset(mouth))
+
+        displayable = kd_cached_layered_sprite(RYN_IMAGE_SIZE, zoom, asset_paths)
         return displayable, kd_layered_sprite_delay(st, 4.7, 4.43, 4.60, speaking)
 
     def ryn_expression(expr):

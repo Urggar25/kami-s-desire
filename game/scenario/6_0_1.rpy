@@ -14,6 +14,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 6
+    $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
     $ cafeteria_food_level = "low"
 
@@ -935,15 +936,16 @@ label _6_0_1_FIN_JOURNEE:
 
     $ blink()
 
+    $ kami_grant_chapter_2_reward()
 
     call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_3
 
     pause 1.0
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("7") from _call_end_day_10
-    #jump _7_0_1_REVEIL_CHAMBRE
+    call end_day("7") from _call_end_day_10
+    jump _7_0_1_REVEIL_CHAMBRE
 
 # total : 8m
 # Total jour 0-6 : 1h49

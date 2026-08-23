@@ -26,3 +26,15 @@ translate chinese strings:
     old "QUITTER"
     new "离开"
 
+# TODO: Translation updated at 2026-08-23 12:03
+
+translate chinese strings:
+
+    # game/menu.rpy:338
+    old "Boutique"
+    new ""
+
+    # game/menu.rpy:339
+    old "Évènement"
+    new ""
+

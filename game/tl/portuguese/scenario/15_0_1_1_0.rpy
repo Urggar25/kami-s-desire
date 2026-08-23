@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/15_0_1_1_0.rpy:4
 translate portuguese 8b8a53b4:
@@ -181,7 +181,7 @@ translate portuguese a7ea6424:
     kami ""
 
 # game/scenario/15_0_1_1_0.rpy:40
-translate portuguese 7ba676c9_1:
+translate portuguese 7ba676c9:
 
     # kami "Je sais."
     kami ""
@@ -3311,12 +3311,4 @@ translate portuguese 70213f5c_1:
 
     # "Plus rien."
     ""
-
-# TODO: Translation updated at 2026-08-16 12:24
-
-# game/scenario/15_0_1_1_0.rpy:40
-translate portuguese 7ba676c9:
-
-    # kami "Je sais."
-    kami ""
 

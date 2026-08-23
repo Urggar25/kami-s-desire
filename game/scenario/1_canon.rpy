@@ -48,6 +48,7 @@ label _1_CANON:
 
     $ day_id = 1
     $ current_day = 1
+    $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
 
     scene black

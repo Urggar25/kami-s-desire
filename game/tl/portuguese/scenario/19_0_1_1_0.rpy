@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/19_0_1_1_0.rpy:4
 translate portuguese 883e75aa:
@@ -485,12 +485,6 @@ translate portuguese c070812a:
 
     # noam "Alors laisse-nous verifier."
     noam ""
-
-# game/scenario/19_0_1_1_0.rpy:91
-translate portuguese ed2f68a9_1:
-
-    # kami "Non."
-    kami ""
 
 # game/scenario/19_0_1_1_0.rpy:92
 translate portuguese f8bb3934:

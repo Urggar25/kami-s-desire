@@ -1,6 +1,3 @@
-default j701_prep_done = []
-default j701_prep_feedback = ""
-default j701_prep_focus = 0
 default j701_plate_step = 0
 default j701_plate_score = 0
 default j701_plate_errors = 0
@@ -33,14 +30,42 @@ default j701_clean_mouse_y = 540
 default j701_clean_reveal = 0
 default j701_clean_feedback = ""
 
-init python:
-    J701_PREP_ITEMS = [
-        ("visage", "Se passer de l'eau", "Le froid me remet les idées en place.", 0.23, 0.55, "Réveil"),
-        ("cheveux", "Rattraper les cheveux", "Sauvetage partiel. Pas miraculeux.", 0.44, 0.34, "Dignité"),
-        ("veste", "Attraper la veste", "Au moins, j'aurai l'air vaguement réveillé.", 0.68, 0.62, "Tenue"),
-        ("ecran", "Regarder l'écran", "Noir. Toujours noir. Et ça fait presque du bien.", 0.78, 0.28, "Silence"),
-    ]
+image j701_noam_change_chibi:
+    Crop((0, 0, 272, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((272, 0, 271, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((543, 0, 271, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((814, 0, 272, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((1086, 0, 272, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((1358, 0, 271, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((1629, 0, 271, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
+    Crop((1900, 0, 272, 724), "images/background/interact/animation/noam_change/noam_change_animation.png")
+    pause 0.625
 
+transform j701_noam_change_ribbon:
+    ypos 230
+    alpha 0.0
+    linear 0.2 alpha 1.0
+    pause 4.6
+    linear 0.2 alpha 0.0
+
+transform j701_noam_change_sprite:
+    xalign 0.5
+    yalign 0.5
+    xysize (240, 639)
+    alpha 0.0
+    yoffset 18
+    ease 0.2 alpha 1.0 yoffset 0
+    pause 4.6
+    ease 0.2 alpha 0.0 yoffset -12
+
+init python:
     J701_PLATE_ORDERS = [
         {"who": "Julian", "line": "Le pain va tomber de mon côté.", "want": "pain", "lane": 0, "tone": "blague"},
         {"who": "Iris", "line": "Quelqu'un peut me passer l'eau avant que Julian négocie avec ?", "want": "eau", "lane": 2, "tone": "relance"},
@@ -141,22 +166,6 @@ init python:
         "gui/day7/clean/glitch_dust_1.png",
         "gui/day7/clean/glitch_dust_2.png",
     ]
-
-    def j701_reset_list(var_name, feedback_var, feedback):
-        setattr(store, var_name, [])
-        setattr(store, feedback_var, feedback)
-        if var_name == "j701_prep_done":
-            store.j701_prep_focus = 0
-
-    def j701_mark_list(var_name, feedback_var, item_id, feedback):
-        current = list(getattr(store, var_name))
-        if item_id not in current:
-            current.append(item_id)
-            setattr(store, var_name, current)
-            setattr(store, feedback_var, feedback)
-            if var_name == "j701_prep_done":
-                store.j701_prep_focus = len(current)
-            renpy.restart_interaction()
 
     def j701_plate_reset():
         store.j701_plate_step = 0
@@ -398,72 +407,6 @@ init python:
         if random.random() < 0.08 and len(store.j701_clean_particles) < 14:
             j701_clean_spawn(glitch=random.random() < 0.35)
         renpy.restart_interaction()
-
-screen j701_prepare_room():
-    modal True
-    zorder 220
-    add Solid("#00000088")
-    add Solid("#07131f99")
-
-    frame:
-        xalign 0.08
-        yalign 0.46
-        xsize 230
-        ysize 420
-        padding (18, 16)
-        background Solid("#05090add")
-        vbox:
-            spacing 14
-            text "ÉTAT" size 28 color "#E8F4FF" xalign 0.5
-            bar value StaticValue(j701_prep_focus, 4):
-                xsize 190
-                ysize 18
-            for idx, item in enumerate(J701_PREP_ITEMS):
-                $ item_id, label, feedback, xa, ya, tag = item
-                $ done = item_id in j701_prep_done
-                hbox:
-                    spacing 8
-                    text ("OK" if done else "--") size 18 color ("#B8F0A0" if done else "#516A7A")
-                    text tag size 20 color ("#E8F4FF" if done else "#9FD8FF")
-
-    frame:
-        xalign 0.5
-        yalign 0.08
-        xsize 760
-        padding (22, 14)
-        background Solid("#07131fee")
-        vbox:
-            spacing 6
-            text "SE RECOMPOSER" size 36 color "#E8F4FF" xalign 0.5
-            text "Clique les détails avant de rejoindre Lysa." size 22 color "#9FD8FF" xalign 0.5
-
-    for item_id, label, feedback, xa, ya, tag in J701_PREP_ITEMS:
-        $ done = item_id in j701_prep_done
-        textbutton label:
-            xalign xa
-            yalign ya
-            xsize 282
-            ysize 64
-            text_size 22
-            background Solid("#10283aee" if not done else "#1b3326ee")
-            hover_background Solid("#1a4665ee")
-            sensitive not done
-            action Function(j701_mark_list, "j701_prep_done", "j701_prep_feedback", item_id, feedback)
-
-    frame:
-        xalign 0.5
-        yalign 0.88
-        xsize 920
-        ysize 96
-        padding (18, 12)
-        background Solid("#061018ee")
-        vbox:
-            spacing 8
-            text "[len(j701_prep_done)]/4 gestes - dignité opérationnelle" size 22 color "#9FD8FF" xalign 0.5
-            text "[j701_prep_feedback]" size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
-
-    if len(j701_prep_done) >= 4:
-        timer 0.35 action Return(True)
 
 screen j701_plate_game():
     modal True
@@ -868,11 +811,6 @@ screen j701_search_drawing_game():
     if j701_clean_score >= 12 or j701_clean_time <= 0:
         timer 0.9 action Return(True)
 
-label j701_play_preparation:
-    $ j701_reset_list("j701_prep_done", "j701_prep_feedback", "Noam est encore à moitié endormi.")
-    call screen j701_prepare_room
-    return
-
 label j701_play_plate:
     call screen j701_plate_game
     return
@@ -1138,7 +1076,13 @@ label _7_0_1_REVEIL_CHAMBRE:
 
     scene bg_cg026_1 at adaptive_fullscreen with dissolve
 
-    call j701_play_preparation from _call_j701_play_preparation
+    window hide
+    show expression Solid("#07131fe6", xsize=1920, ysize=620) as j701_noam_change_band zorder 250 at j701_noam_change_ribbon
+    show j701_noam_change_chibi as j701_noam_change_frame zorder 251 at j701_noam_change_sprite
+    $ renpy.pause(5.0, hard=True)
+    hide j701_noam_change_frame
+    hide j701_noam_change_band
+    window auto
 
     "Puis un deuxième."
     "Je ressemble enfin à quelqu'un qui a choisi de se lever."

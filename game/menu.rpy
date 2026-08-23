@@ -191,13 +191,13 @@ style kami_button is button:
     background Frame("gui/main_menu_kami/button_idle.png", 14, 14)
     hover_background Frame("gui/main_menu_kami/button_hover.png", 14, 14)
     xsize 460
-    ysize 72
+    ysize 62
     xalign 0.5
     padding (38, 12, 18, 12)
 
 style kami_button_text is button_text:
     font "fonts/Rajdhani-SemiBold.ttf"
-    size 28
+    size 26
     color "#8ab8d0"
     hover_color "#dff2ff"
     insensitive_color "#3a5a72"
@@ -232,6 +232,22 @@ style kami_meta_text:
     font "fonts/Barlow-Light.ttf"
     size 18
     color "#3a7a90"
+    kerning 2.0
+
+style version_trailer_button is button:
+    background Solid("#06111BD9")
+    hover_background Solid("#123247F2")
+    xsize 206
+    ysize 52
+    padding (16, 10, 16, 10)
+
+style version_trailer_button_text is button_text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 20
+    color "#6FA5BE"
+    hover_color "#E4F7FF"
+    xalign 0.5
+    yalign 0.5
     kerning 2.0
 
 
@@ -298,15 +314,15 @@ screen main_menu():
     # --- Panneau central des actions principales ------------------------------
     frame:
         xalign 0.5
-        ypos 280
+        ypos 252
         xsize 520
-        ysize 740
+        ysize 772
         background Frame("gui/main_menu_kami/panel.png", 32, 32)
         padding (30, 50, 30, 50)
         at kami_menu_in
 
         vbox:
-            spacing 14
+            spacing 9
             xalign 0.5
             yalign 0.5
 
@@ -319,6 +335,8 @@ screen main_menu():
             textbutton _("Roadmap")     style "kami_button" action ShowMenu("roadmap_menu")
             textbutton _("Contenu bonus") style "kami_button" action ShowMenu("bonus_content_menu")
             textbutton _("Codex")       style "kami_button" action ShowMenu("codex_menu")
+            textbutton _("Boutique")    style "kami_button" action ShowMenu("kami_shop_menu")
+            textbutton _("Évènement")   style "kami_button" action ShowMenu("kami_event_menu")
             textbutton _("Options")     style "kami_button" action ShowMenu("preferences")
 
             add "gui/main_menu_kami/divider.png" xalign 0.5 ypos 4
@@ -337,6 +355,19 @@ screen main_menu():
         style "kami_meta_text"
         xalign 0.5
         ypos 1040
+
+    # Accès direct à la bande-annonce de la version courante.
+    # Start() lance une cinématique autonome et préserve les sauvegardes.
+    textbutton "VERSION [config.version]  ▶":
+        style "version_trailer_button"
+        xpos 1870
+        ypos 1000
+        xanchor 1.0
+        yanchor 1.0
+        action [
+            SetField(persistent, "trl_skip_splash", True),
+            Start("version_2_1_trailer"),
+        ]
 
     # Raccourci clavier rapide
     key "K_ESCAPE" action NullAction()

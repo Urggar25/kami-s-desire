@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/9_0_1.rpy:18
 translate english 5e297a0b:
@@ -157,7 +157,7 @@ translate english 270330b7:
     kami ""
 
 # game/scenario/9_0_1.rpy:88
-translate english 7ba676c9_2:
+translate english 7ba676c9_1:
 
     # kami "Je sais."
     kami ""
@@ -172,12 +172,6 @@ translate english 71029256:
 translate english 349f1001:
 
     # kami "Comment vous avez fait sans moi hein ?!"
-    kami ""
-
-# game/scenario/9_0_1.rpy:94
-translate english 2b09a2e5_2:
-
-    # kami "Rassurez-vous."
     kami ""
 
 # game/scenario/9_0_1.rpy:95
@@ -504,12 +498,6 @@ translate english 2a03aac5:
     # "Le bois racle le sol."
     ""
 
-# game/scenario/9_0_1.rpy:251
-translate english 33346357_1:
-
-    # think "Voilà."
-    think ""
-
 # game/scenario/9_0_1.rpy:252
 translate english 367a1586:
 
@@ -666,12 +654,6 @@ translate english 2f2ffc8c:
     # iris fatigue "Oui."
     iris fatigue ""
 
-# game/scenario/9_0_1.rpy:324
-translate english afd6aa47_1:
-
-    # iris "Merci, Kael."
-    iris ""
-
 # game/scenario/9_0_1.rpy:325
 translate english 228057fb:
 
@@ -823,7 +805,7 @@ translate english 016bd91f:
     kami ""
 
 # game/scenario/9_0_1.rpy:415
-translate english 7ba676c9_3:
+translate english 7ba676c9_2:
 
     # kami "Je sais."
     kami ""
@@ -1009,7 +991,7 @@ translate english cf5af007:
     sael peur ""
 
 # game/scenario/9_0_1.rpy:510
-translate english 7ad81883_4:
+translate english 7ad81883_3:
 
     # tomas "Oui."
     tomas ""
@@ -1104,12 +1086,6 @@ translate english f928cead:
     # tomas "Si. Mal-"
     tomas ""
 
-# game/scenario/9_0_1.rpy:541
-translate english 147450ef_1:
-
-    # ryn "Non."
-    ryn ""
-
 # game/scenario/9_0_1.rpy:542
 translate english 752aac12:
 
@@ -1188,12 +1164,6 @@ translate english ff801ab7:
     # tomas "Et Kami applique le Commandement."
     tomas ""
 
-# game/scenario/9_0_1.rpy:577
-translate english 6bc0225b_3:
-
-    # kami "Oh."
-    kami ""
-
 # game/scenario/9_0_1.rpy:581
 translate english 3233cb6d:
 
@@ -1204,12 +1174,6 @@ translate english 3233cb6d:
 translate english 6815999c:
 
     # kami "Je suis fière de vous."
-    kami ""
-
-# game/scenario/9_0_1.rpy:586
-translate english c7f4f0c1_1:
-
-    # kami "Enfin."
     kami ""
 
 # game/scenario/9_0_1.rpy:587
@@ -1270,12 +1234,6 @@ translate english 70ca747e:
 translate english 75de0ff7:
 
     # kami "Pour vous laisser le temps de voter."
-    kami ""
-
-# game/scenario/9_0_1.rpy:623
-translate english a7d8dea8_1:
-
-    # kami "Vous voyez ?"
     kami ""
 
 # game/scenario/9_0_1.rpy:624
@@ -2472,12 +2430,6 @@ translate english 1fa1e738:
     # noam "Et de toute façon, ils ne peuvent déjà plus traverser la frontière."
     noam ""
 
-# game/scenario/9_0_1.rpy:1050
-translate english a958d8d1_2:
-
-    # ryn "..."
-    ryn ""
-
 # game/scenario/9_0_1.rpy:1054
 translate english e6d057fa:
 
@@ -2587,7 +2539,7 @@ translate english bd630c9a:
     lysa triste ""
 
 # game/scenario/9_0_1.rpy:1090
-translate english 7ad81883_5:
+translate english 7ad81883_4:
 
     # tomas "Oui."
     tomas ""
@@ -2881,7 +2833,7 @@ translate english 70815d7e:
     sael ""
 
 # game/scenario/9_0_1.rpy:1252
-translate english ed2f68a9_4:
+translate english ed2f68a9_2:
 
     # kami "Non."
     kami ""
@@ -2897,12 +2849,6 @@ translate english 9895afdb:
 
     # tomas "Si le signal a été reçu, leur situation juridique a changé pendant la procédure."
     tomas ""
-
-# game/scenario/9_0_1.rpy:1278
-translate english ed2f68a9_5:
-
-    # kami "Non."
-    kami ""
 
 # game/scenario/9_0_1.rpy:1279
 translate english f7b05ae6:
@@ -3228,12 +3174,6 @@ translate english 76343816:
     # "Et personne ne sait vraiment ce que les autres viennent de faire."
     ""
 
-# game/scenario/9_0_1.rpy:1532
-translate english 69b04011_1:
-
-    # kami "Résultat du vote."
-    kami ""
-
 # game/scenario/9_0_1.rpy:1533
 translate english b13f53e0:
 
@@ -3319,7 +3259,7 @@ translate english b9559d16:
     kami ""
 
 # game/scenario/9_0_1.rpy:1570
-translate english a7d8dea8_2:
+translate english a7d8dea8_1:
 
     # kami "Vous voyez ?"
     kami ""
@@ -3409,7 +3349,7 @@ translate english a93774fa:
     think ""
 
 # game/scenario/9_0_1.rpy:1610
-translate english d1af98c2_13:
+translate english d1af98c2_10:
 
     # think "Non."
     think ""
@@ -3517,7 +3457,7 @@ translate english 52f9a488:
     ""
 
 # game/scenario/9_0_1.rpy:1653
-translate english 69b04011_2:
+translate english 69b04011_1:
 
     # kami "Résultat du vote."
     kami ""
@@ -3526,12 +3466,6 @@ translate english 69b04011_2:
 translate english 12138cb4:
 
     # kami "Absence d'unanimité."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1656
-translate english d9620e1d_1:
-
-    # kami "Amendement rejeté."
     kami ""
 
 # game/scenario/9_0_1.rpy:1662

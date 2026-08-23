@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/12_0_1_1.rpy:7
 translate english da86a29c:
@@ -293,12 +293,6 @@ translate english fd6fe629:
 
     # "Mon ventre se noue."
     ""
-
-# game/scenario/12_0_1_1.rpy:114
-translate english d1af98c2_1:
-
-    # think "Non."
-    think ""
 
 # game/scenario/12_0_1_1.rpy:115
 translate english 29a0f60f:
@@ -2587,7 +2581,7 @@ translate english 15792556:
     ""
 
 # game/scenario/12_0_1_1.rpy:964
-translate english d1af98c2_2:
+translate english d1af98c2_1:
 
     # think "Non."
     think ""

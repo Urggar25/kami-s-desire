@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/15_0_1_1_0.rpy:4
 translate english 8b8a53b4:
@@ -178,12 +178,6 @@ translate english b8c5d397:
 translate english a7ea6424:
 
     # kami "S’il est refusé, le verrouillage restera total."
-    kami ""
-
-# game/scenario/15_0_1_1_0.rpy:40
-translate english 7ba676c9_1:
-
-    # kami "Je sais."
     kami ""
 
 # game/scenario/15_0_1_1_0.rpy:41

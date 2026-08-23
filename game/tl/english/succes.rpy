@@ -30,3 +30,11 @@ translate english strings:
     old "SUIVANT"
     new "NEXT"
 
+# TODO: Translation updated at 2026-08-23 12:01
+
+translate english strings:
+
+    # game/succes.rpy:116
+    old "+5 Éclats de désir"
+    new ""
+

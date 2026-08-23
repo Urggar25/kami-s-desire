@@ -50,6 +50,7 @@ init -1 python:
 
         if not persistent.succes_unlocked.get(succes_id, False):
             persistent.succes_unlocked[succes_id] = True
+            kami_grant_desire_reward("achievement_{}".format(succes_id), 5, notify=False)
             renpy.save_persistent()
             renpy.show_screen("succes_notification", succes_id=succes_id)
             return True
@@ -111,6 +112,12 @@ screen succes_notification(succes_id):
                     color "#dff7ff"
                     size 32
                     font "fonts/Barlow-Light.ttf"
+
+            text _("+5 Éclats de désir"):
+                xalign 0.5
+                color "#d68cff"
+                size 20
+                font "fonts/Rajdhani-SemiBold.ttf"
 
 
 screen succes_menu():

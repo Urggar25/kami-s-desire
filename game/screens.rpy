@@ -276,6 +276,10 @@ style choice_button_text is default:
 default quick_menu = False
 default quick_menu_open = False
 
+# Échap ouvre désormais le panneau système dédié plutôt que la page de
+# sauvegarde Ren'Py par défaut.
+define _game_menu_screen = "system_menu"
+
 label after_load:
     $ quick_menu = False
     $ quick_menu_open = False
@@ -304,6 +308,292 @@ transform navigation_in:
     xoffset -25
     easeout 0.30 alpha 1.0 xoffset 0
 
+transform system_menu_panel_in:
+    alpha 0.0
+    xoffset 45
+    easeout 0.35 alpha 1.0 xoffset 0
+
+transform system_menu_noam:
+    xalign 0.235
+    yalign 1.0
+    zoom 1.12
+    alpha 0.0
+    xoffset -55
+    easeout 0.42 alpha 1.0 xoffset 0
+    block:
+        ease 2.6 yoffset -6
+        ease 2.6 yoffset 0
+        repeat
+
+transform system_menu_scan:
+    alpha 0.10
+    yoffset -1080
+    linear 8.0 yoffset 1080
+    repeat
+
+
+style system_menu_button is button:
+    xsize 700
+    ysize 68
+    padding (24, 0, 24, 0)
+    background Fixed(
+        Solid("#07131de8"),
+        Solid("#17364a", xsize=5),
+        Solid("#ffffff0d", ysize=1),
+        Solid("#5cd3ff22", ysize=2, yalign=1.0),
+    )
+    hover_background Fixed(
+        Solid("#0c2637f5"),
+        Solid("#5cd3ff", xsize=7),
+        Solid("#5cd3ff44", ysize=2),
+        Solid("#5cd3ff", ysize=3, yalign=1.0),
+    )
+    selected_background Fixed(
+        Solid("#0c2637f5"),
+        Solid("#5cd3ff", xsize=7),
+        Solid("#5cd3ff44", ysize=2),
+        Solid("#5cd3ff", ysize=3, yalign=1.0),
+    )
+
+style system_menu_button_index is text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 19
+    color "#3a7a90"
+    hover_color "#8de7ff"
+    selected_color "#8de7ff"
+    kerning 2.0
+    yalign 0.5
+
+style system_menu_button_label is text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 31
+    color "#a9c7d4"
+    hover_color "#ffffff"
+    selected_color "#ffffff"
+    kerning 2.5
+    yalign 0.5
+
+style system_menu_resume is button:
+    xsize 250
+    ysize 54
+    background Solid("#07131dcc")
+    hover_background Solid("#0c3044f5")
+    padding (18, 8, 18, 8)
+
+style system_menu_resume_text is button_text:
+    font "fonts/Rajdhani-SemiBold.ttf"
+    size 22
+    color "#6e9aad"
+    hover_color "#ffffff"
+    kerning 1.5
+    xalign 0.5
+    yalign 0.5
+
+
+screen system_menu():
+    tag menu
+    modal True
+
+    default focused_item = 0
+    $ system_details = (
+        _("Créer une sauvegarde de votre progression actuelle."),
+        _("Reprendre l'histoire depuis une sauvegarde existante."),
+        _("Régler l'affichage, le texte, le son et les contrôles."),
+        _("Consulter les dossiers des représentants du Conclave."),
+        _("Voir les succès découverts et ceux encore verrouillés."),
+        _("Parcourir les jours, embranchements et choix du récit."),
+        _("Interrompre la partie et retourner au menu principal."),
+        _("Fermer complètement Kami's Desires."),
+    )
+
+    key "game_menu" action Return()
+
+    add gui.game_menu_background
+    add Solid("#02070ce8")
+    add Solid("#071c2a88", xsize=850)
+    add Solid("#5cd3ff18", xsize=2) xpos 840
+    add Solid("#5cd3ff12", ysize=2) ypos 116
+    add "gui/main_menu_kami/scanlines.png" at system_menu_scan
+    add "gui/main_menu_kami/vignette.png" alpha 0.68
+
+    # Échos graphiques du menu de référence, adaptés à l'interface KAMI.CORE.
+    text "SYSTEM":
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 190
+        color "#5cd3ff0b"
+        kerning 12
+        xpos 705
+        ypos -35
+    text "NOAM // HARMONIE":
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 22
+        color "#5cd3ff99"
+        kerning 5
+        xpos 72
+        ypos 58
+    text "KAMI.CORE  /  INTERFACE LOCALE":
+        font "fonts/Barlow-Light.ttf"
+        size 17
+        color "#416e81"
+        kerning 3
+        xpos 72
+        ypos 91
+
+    add Transform("gui/main_menu_kami/glyph_kami.png", size=(510, 510), matrixcolor=TintMatrix("#1d7899")):
+        xpos 155
+        ypos 270
+        alpha 0.08
+
+    # L'expression dynamique de Noam cligne naturellement avec yeux_ferme.
+    add "noam reflexion" at system_menu_noam
+
+    frame:
+        xpos 875
+        ypos 112
+        xsize 930
+        ysize 850
+        background Fixed(
+            Solid("#050b12e8"),
+            Solid("#5cd3ff55", xsize=2),
+            Solid("#ffffff10", ysize=1),
+            Solid("#5cd3ff22", ysize=2, yalign=1.0),
+        )
+        padding (70, 38, 70, 34)
+        at system_menu_panel_in
+
+        fixed:
+            text _("MENU SYSTÈME"):
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 52
+                color "#e6f7ff"
+                kerning 6
+                xpos 0
+                ypos 0
+            text _("PAUSE // ACCÈS LOCAL"):
+                font "fonts/Barlow-Light.ttf"
+                size 18
+                color "#5cd3ff"
+                kerning 4
+                xpos 3
+                ypos 58
+            add Solid("#5cd3ff66") xpos 0 ypos 92 xsize 790 ysize 2
+
+            vbox:
+                xpos 45
+                ypos 114
+                spacing 8
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 0
+                    hovered SetScreenVariable("focused_item", 0)
+                    action ShowMenu("save")
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "01" style "system_menu_button_index"
+                        text _("SAUVEGARDER") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 1
+                    hovered SetScreenVariable("focused_item", 1)
+                    action ShowMenu("load")
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "02" style "system_menu_button_index"
+                        text _("CHARGER") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 2
+                    hovered SetScreenVariable("focused_item", 2)
+                    action ShowMenu("preferences")
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "03" style "system_menu_button_index"
+                        text _("OPTIONS / PRÉFÉRENCES") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 3
+                    hovered SetScreenVariable("focused_item", 3)
+                    action ShowMenu("profiles_menu")
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "04" style "system_menu_button_index"
+                        text _("PROFILS") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 4
+                    hovered SetScreenVariable("focused_item", 4)
+                    action ShowMenu("succes_menu")
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "05" style "system_menu_button_index"
+                        text _("SUCCÈS") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 5
+                    hovered SetScreenVariable("focused_item", 5)
+                    action ShowMenu("roadmap_menu")
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "06" style "system_menu_button_index"
+                        text _("ROADMAP") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 6
+                    hovered SetScreenVariable("focused_item", 6)
+                    action MainMenu(confirm=True)
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "07" style "system_menu_button_index"
+                        text _("MENU PRINCIPAL") style "system_menu_button_label"
+
+                button:
+                    style "system_menu_button"
+                    selected focused_item == 7
+                    hovered SetScreenVariable("focused_item", 7)
+                    action Quit(confirm=True)
+                    hbox:
+                        yalign 0.5
+                        spacing 22
+                        text "08" style "system_menu_button_index"
+                        text _("QUITTER LE JEU") style "system_menu_button_label"
+
+            text system_details[focused_item]:
+                font "fonts/Barlow-Light.ttf"
+                size 19
+                color "#6f96a8"
+                xpos 48
+                ypos 738
+                xmaximum 690
+
+    textbutton _("REPRENDRE  ·  ÉCHAP"):
+        style "system_menu_resume"
+        xpos 72
+        ypos 972
+        action Return()
+
+    text "NAVIGATION  ↑ ↓   //   CONFIRMER  ENTRÉE":
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 17
+        color "#3f6c7e"
+        kerning 2
+        xpos 1465
+        ypos 1018
+        xanchor 1.0
+
 screen navigation():
 
     vbox:
@@ -317,35 +607,21 @@ screen navigation():
 
         if main_menu:
             textbutton _("Nouvelle partie") action Start()
-        else:
-            textbutton _("Historique")  action ShowMenu("history")
-            textbutton _("Sauvegarde")  action ShowMenu("save")
 
-        textbutton _("Charger")       action ShowMenu("load")
-        textbutton _("Préférences")   action ShowMenu("preferences")
-        textbutton _("Succès")        action ShowMenu("succes_menu")
-
-        if main_menu:
-            textbutton _("Roadmap")     action ShowMenu("roadmap_menu")
-            textbutton _("Codex")       action ShowMenu("codex_menu")
-            textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
-        else:
-            textbutton _("Profils")     action ShowMenu("profiles_menu")
-            textbutton _("Roadmap")     action ShowMenu("roadmap_menu")
-            textbutton _("Codes promo") action ShowMenu("promo_codes_menu")
+        textbutton _("Sauvegarder") sensitive not main_menu action ShowMenu("save")
+        textbutton _("Charger") action ShowMenu("load")
+        textbutton _("Options / Préférences") action ShowMenu("preferences")
+        textbutton _("Profils") action ShowMenu("profiles_menu")
+        textbutton _("Succès") action ShowMenu("succes_menu")
+        textbutton _("Roadmap") action ShowMenu("roadmap_menu")
 
         if _in_replay:
             textbutton _("Fin de la rediffusion") action EndReplay(confirm=True)
         elif not main_menu:
             textbutton _("Menu principal") action MainMenu()
 
-        textbutton _("À propos") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-            textbutton _("Aide") action ShowMenu("help")
-
         if renpy.variant("pc"):
-            textbutton _("Quitter") action Quit(confirm=not main_menu)
+            textbutton _("Quitter le jeu") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button

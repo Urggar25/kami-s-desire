@@ -30,3 +30,11 @@ translate portuguese strings:
     old "SUIVANT"
     new "PRÓXIMO"
 
+# TODO: Translation updated at 2026-08-23 11:52
+
+translate portuguese strings:
+
+    # game/succes.rpy:116
+    old "+5 Éclats de désir"
+    new ""
+

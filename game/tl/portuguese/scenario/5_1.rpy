@@ -3408,3 +3408,11 @@ translate portuguese 2b09a2e5:
     # kami "Rassurez-vous."
     kami ""
 
+# TODO: Translation updated at 2026-08-23 11:55
+
+# game/scenario/5_1.rpy:611
+translate portuguese d1af98c2_5:
+
+    # think "Non."
+    think ""
+

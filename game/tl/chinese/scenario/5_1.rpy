@@ -3408,3 +3408,11 @@ translate chinese 2b09a2e5:
     # kami "Rassurez-vous."
     kami ""
 
+# TODO: Translation updated at 2026-08-23 12:03
+
+# game/scenario/5_1.rpy:611
+translate chinese d1af98c2_5:
+
+    # think "Non."
+    think ""
+

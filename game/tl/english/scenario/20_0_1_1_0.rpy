@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/20_0_1_1_0.rpy:4
 translate english 3e514f32:
@@ -25,7 +25,7 @@ translate english 167b5825:
     noam ""
 
 # game/scenario/20_0_1_1_0.rpy:8
-translate english ed2f68a9_2:
+translate english ed2f68a9_1:
 
     # kami "Non."
     kami ""
