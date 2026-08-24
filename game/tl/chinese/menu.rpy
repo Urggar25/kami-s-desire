@@ -32,9 +32,9 @@ translate chinese strings:
 
     # game/menu.rpy:338
     old "Boutique"
-    new ""
+    new "商店"
 
     # game/menu.rpy:339
     old "Évènement"
-    new ""
+    new "活动"
 

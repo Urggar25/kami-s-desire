@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+# TODO: Translation updated at 2026-08-07 12:41
 
 # game/scenario/3_canon.rpy:248
 translate chinese day3_play_corridor_trace_654e3970:

@@ -21,6 +21,36 @@ init -2 python:
     _room_composited_frame_cache = {}
     _room_image_cache = {}
 
+    # Étalonnage automatique des décors selon la période narrative.
+    # La matrice est recalculée par les DynamicDisplayable : un changement de
+    # current_period met donc aussi à jour un décor déjà affiché.
+    def automatic_scene_lighting_matrix(period=None):
+        value = period if period is not None else getattr(store, "current_period", "Matin")
+        key = str(value or "").strip().lower()
+        key = key.replace("è", "e").replace("é", "e").replace("ê", "e")
+
+        if "nuit" in key:
+            return TintMatrix("#aeb8cf") * SaturationMatrix(0.80) * BrightnessMatrix(-0.20)
+        if "soir" in key:
+            return TintMatrix("#ead8d0") * SaturationMatrix(0.92) * BrightnessMatrix(-0.10)
+        if "midi" in key or "apres" in key:
+            return TintMatrix("#f7fbff") * SaturationMatrix(1.015) * BrightnessMatrix(0.01)
+        # Matin, fin de matinée et valeur de repli : lumière douce et chaude.
+        return TintMatrix("#fff8ed") * SaturationMatrix(1.02) * BrightnessMatrix(0.025)
+
+    def automatic_scene_lighting(displayable):
+        return Transform(displayable, matrixcolor=automatic_scene_lighting_matrix())
+
+    def automatic_scene_lighting_dynamic(st, at, displayable):
+        return automatic_scene_lighting(displayable), 0.20
+
+    def automatic_scene_image_dynamic(st, at, path):
+        image = _room_image_cache.get(path)
+        if image is None:
+            image = Image(path)
+            _room_image_cache[path] = image
+        return automatic_scene_lighting(image), 0.20
+
     def room_scene_find_asset(stem):
         for ext in ROOM_SCENE_EXTENSIONS:
             path = "%s/%s.%s" % (ROOM_SCENE_DIR, stem, ext)
@@ -182,10 +212,10 @@ init -2 python:
     def room_scene_dynamic(st, at, room_name):
         frames = room_scene_frame_paths(room_name)
         if not frames:
-            return Solid("#000"), 1.0
+            return automatic_scene_lighting(Solid("#000")), 1.0
         overlays = room_scene_visual_overlay_paths(room_name)
         if len(frames) == 1:
-            return room_scene_composited_frame(frames[0], overlays), 0.25
+            return automatic_scene_lighting(room_scene_composited_frame(frames[0], overlays)), 0.20
 
         step = ROOM_SCENE_ANIM_HOLD + ROOM_SCENE_ANIM_FADE
         frame_index = int(st / step) % len(frames)
@@ -193,14 +223,15 @@ init -2 python:
 
         if phase < ROOM_SCENE_ANIM_HOLD:
             current = room_scene_composited_frame(frames[frame_index], overlays)
-            return current, max(0.05, ROOM_SCENE_ANIM_HOLD - phase)
+            return automatic_scene_lighting(current), min(0.20, max(0.05, ROOM_SCENE_ANIM_HOLD - phase))
 
         next_index = (frame_index + 1) % len(frames)
         alpha = min(1.0, max(0.0, (phase - ROOM_SCENE_ANIM_HOLD) / ROOM_SCENE_ANIM_FADE))
         current = room_scene_composited_frame(frames[frame_index], overlays)
         following = room_scene_composited_frame(frames[next_index], overlays)
         size = room_scene_native_size(frames[frame_index])
-        return room_scene_crossfade_displayable(current, following, alpha, size), 0.03
+        crossfade = room_scene_crossfade_displayable(current, following, alpha, size)
+        return automatic_scene_lighting(crossfade), 0.03
 
     def room_scene_displayable(room_name):
         return DynamicDisplayable(room_scene_dynamic, room_name)
@@ -435,11 +466,60 @@ image bg_sas = DynamicDisplayable(room_scene_dynamic, "sas")
 image bg_infirmerie = DynamicDisplayable(room_scene_dynamic, "infirmerie")
 image bg_stockage = DynamicDisplayable(room_scene_dynamic, "stockage")
 image bg_observation = DynamicDisplayable(room_scene_dynamic, "observation")
-image bg_repos_fete = LiveComposite(
-    (1672, 941),
-    (0, 0), "images/background/scene/repos2.png",
-    (0, 0), "images/background/interact/repos/repos2/deco_fete.png",
+image bg_repos_fete = DynamicDisplayable(
+    automatic_scene_lighting_dynamic,
+    LiveComposite(
+        (1672, 941),
+        (0, 0), "images/background/scene/repos2.png",
+        (0, 0), "images/background/interact/repos/repos2/deco_fete.png",
+    ),
 )
+
+# Les fichiers de `images/background/scene` peuvent aussi être appelés
+# directement par les scripts. Ces déclarations leur donnent le même
+# éclairage que les salles dynamiques, sans toucher aux CG ni à l'interface.
+image bg_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_dortoir.png")
+image bg_chambre_iris = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_chambre_iris.png")
+image bg_chambre_sael = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_chambre_sael.png")
+image bg_harmonie_assemblee = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_harmonie_assemblee.png")
+image bg_harmonie_district_hall = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_harmonie_district_hall.png")
+image noam_salle_bain = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/noam_salle_bain.png")
+
+image couloir_cafeteria = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_cafeteria.png")
+image couloir_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_dortoir.png")
+image couloir_infirmerie = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_infirmerie.png")
+image couloir_maintenance = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_maintenance.png")
+image couloir_sas = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_sas.png")
+
+image archive1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/archive1.png")
+image archive2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/archive2.png")
+image cafeteria1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/cafeteria1.png")
+image cafeteria2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/cafeteria2.png")
+image cafeteria3 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/cafeteria3.png")
+image canon1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/canon1.png")
+image canon2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/canon2.png")
+image chambre1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/chambre1.png")
+image chambre2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/chambre2.png")
+image chambre2_1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/chambre2_1.png")
+image chambre3 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/chambre3.png")
+image chambre3_1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/chambre3_1.png")
+image conclave1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/conclave1.png")
+image conclave2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/conclave2.png")
+image conclave3 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/conclave3.png")
+image gymnase1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/gymnase1.png")
+image gymnase2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/gymnase2.png")
+image infirmerie1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/infirmerie1.png")
+image infirmerie2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/infirmerie2.png")
+image infirmerie3 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/infirmerie3.png")
+image maintenance1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/maintenance1.png")
+image maintenance2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/maintenance2.png")
+image observation1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/observation1.png")
+image observation2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/observation2.png")
+image repos1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/repos1.png")
+image repos2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/repos2.png")
+image sas1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/sas1.png")
+image sas2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/sas2.png")
+image stockage = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/stockage.png")
 
 screen room_scene_background(room_name, navigation=True):
     add room_scene_displayable(room_name) at cover_screen

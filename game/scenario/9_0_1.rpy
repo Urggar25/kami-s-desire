@@ -40,6 +40,7 @@ label _9_0_1_REVEIL_CHAMBRE:
     play sound sfx_announce
     "Un bip strident déchire le silence."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_300
     scene bg_chambre at adaptive_fullscreen with hpunch
 
     "L'écran mural s'allume."
@@ -104,6 +105,7 @@ label _9_0_1_REVEIL_CHAMBRE:
     "Tout bonnement insupportable."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_301
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     menu:
@@ -229,6 +231,7 @@ label _9_0_1_REVEIL_CHAMBRE:
     pause 0.5
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_302
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "L'écran reste allumé quelques longues secondes."
@@ -273,6 +276,7 @@ label _9_0_1_REVEIL_CHAMBRE:
 
 label _9_0_1_CONCLAVE_ANNONCE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_303
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
@@ -305,6 +309,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_304
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     pause 0.6
@@ -443,6 +448,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     pause 0.5
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_305
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
 
@@ -643,6 +649,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     pause 0.5
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_306
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
 
@@ -1124,6 +1131,7 @@ label _9_0_1_CONCLAVE_DEBAT:
 
 label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_307
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
 
@@ -1203,6 +1211,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     pause 0.5
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_308
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.2
 
@@ -1230,6 +1239,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     kami "Je t'assure que te voir comprendre les choses avec trois minutes de retard reste un plaisir très simple."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_309
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1258,6 +1268,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
 label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_310
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1280,6 +1291,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     kami "Pas au moment où vous espérez très fort."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_311
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([("nyra", "raison", 0.28)])
@@ -1301,6 +1313,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     kami "Il porte sur une règle."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_312
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([("kael", "raison", 0.44)])
@@ -1316,6 +1329,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     kami "Le règlement ne prévoit pas de délai de confort moral."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_313
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([("lysa", "colere", 0.76)])
@@ -1335,6 +1349,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     kami "C'est presque comme si votre compassion avait une portée balistique."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_314
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([("noam", "determine", 0.60)])
@@ -1377,6 +1392,7 @@ label _9_0_1_KAMI_EXIGE_LE_VOTE:
     pause 0.3
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_315
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Les pupitres s'allument."
@@ -1420,6 +1436,7 @@ label _9_0_1_KAMI_EXIGE_LE_VOTE:
     kami "Je suis certaine que les Limenois apprécieront vos nuances."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_316
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Un silence compact tombe sur la salle."
@@ -1454,6 +1471,7 @@ label _9_0_1_VOTE:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_317
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
@@ -1577,6 +1595,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     kami "Quelle belle leçon collective."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_318
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Personne ne répond."
@@ -1584,6 +1603,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
 
     pause 0.5
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_319
     scene bg_couloir at adaptive_fullscreen with fade
     play music "music/bgm_calm_not_peace.mp3" fadein 2.0
 
@@ -1594,6 +1614,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
 
     pause 0.5
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_320
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "Je rentre dans ma chambre."
@@ -1671,12 +1692,14 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     pause 0.4
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_321
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Pendant une seconde, personne ne comprend."
     "Ou plutôt, tout le monde comprend en même temps."
 
     play sound sfx_gresillement
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_322
     scene bg_conclave at adaptive_fullscreen, heavy_shake
 
     "Le Conclave tremble."
@@ -1685,6 +1708,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     ryn colere2 "Non."
 
     play sound sfx_laser_canon volume 8.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_323
     scene bg_conclave at adaptive_fullscreen, heavy_shake
 
     "Le premier tir part."

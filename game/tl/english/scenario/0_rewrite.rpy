@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+# TODO: Translation updated at 2026-08-06 18:52
 
 # game/scenario/0_rewrite.rpy:19
 translate english 69cb47bf:

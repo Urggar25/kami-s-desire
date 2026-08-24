@@ -9,6 +9,7 @@ default decouverte_salle_archive = False
 
 
 label ARCHIVE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_324
     scene bg_archive at adaptive_fullscreen
 
     if not decouverte_salle_archive and day_number() == 1:
@@ -121,6 +122,7 @@ label decouverte_salle_archive:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_325
     scene bg_archive at adaptive_fullscreen with fade
 
     "La salle est immense."
@@ -204,6 +206,7 @@ label decouverte_salle_archive:
     hide noam with moveoutright
     pause 1.0
     
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "archive2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_326
     scene archive2 at adaptive_fullscreen with fade
 
     $ showGroup([

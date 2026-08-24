@@ -36,5 +36,5 @@ translate portuguese strings:
 
     # game/succes.rpy:116
     old "+5 Éclats de désir"
-    new ""
+    new "+5 Fragmentos de Desejo"
 

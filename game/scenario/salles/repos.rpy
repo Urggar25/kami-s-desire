@@ -17,6 +17,7 @@ init python:
 
 
 label REPOS_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_345
     scene bg_repos at adaptive_fullscreen
 
     if not decouverte_salle_repos and day_number() == 1:
@@ -168,6 +169,7 @@ label decouverte_salle_repos:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_346
     scene bg_repos at adaptive_fullscreen with fade
 
     "La pièce semble étonnamment vivante."
@@ -212,6 +214,7 @@ label decouverte_salle_repos:
     iris vide "Malheureusement."
     $ hideGroup()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_347
     scene bg_repos at adaptive_fullscreen with fade
     
     $ showGroup([

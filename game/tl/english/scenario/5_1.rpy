@@ -1,3410 +1,2276 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+﻿# TODO: Translation updated at 2026-08-24 09:37
 
-# game/scenario/5_1.rpy:18
-translate english 0e80e0da_2:
+# game/scenario/5_1.rpy:19
+translate english 7f6a0301:
 
-    # noam "..."
-    noam ""
+    # think "Aïe... J'ai l'impression que quelqu'un frappe directement contre mon crâne."
+    think "Ow... It feels like someone's hammering on the inside of my skull."
 
-# game/scenario/5_1.rpy:22
-translate english 55dabf17:
+# game/scenario/5_1.rpy:23
+translate english c067c406:
 
-    # noam "Aïe."
-    noam ""
+    # think "J'ai la bouche sèche, la nuque bloquée et beaucoup trop de lumière dans les yeux."
+    think "My mouth is dry, my neck is stiff, and there's far too much light in my eyes."
 
-# game/scenario/5_1.rpy:28
-translate english 290dd969_5:
+# game/scenario/5_1.rpy:24
+translate english da508754:
 
-    # noam "Non."
-    noam ""
+    # think "Franchement, je l'ai bien mérité."
+    think "Honestly, I had this coming."
 
-# game/scenario/5_1.rpy:29
-translate english 740ad42e:
+# game/scenario/5_1.rpy:26
+translate english 3297f8d4:
 
-    # noam "Même pas aïe."
-    noam ""
+    # noam fatigue "Plus jamais je ne bois autant..."
+    noam fatigue "I'm never drinking that much again..."
 
-# game/scenario/5_1.rpy:30
-translate english a25c1f98:
+# game/scenario/5_1.rpy:27
+translate english 81bb3970:
 
-    # noam "Là, c'est carrément mon crâne qui demande l'indépendance."
-    noam ""
+    # think "Je dis ça maintenant, mais je suis presque sûr d'avoir déjà fait cette promesse."
+    think "I say that now, but I'm almost certain I've made that promise before."
 
-# game/scenario/5_1.rpy:32
-translate english 21c558aa:
+# game/scenario/5_1.rpy:31
+translate english 64b14be3:
 
-    # think "Bouche sèche. Lumière bleue. Corps officiellement en grève."
-    think ""
+    # think "Les souvenirs d'hier soir me reviennent peu à peu. Les verres, la musique, puis cette bouteille stupide que Mara avait trouvée."
+    think "Memories of last night gradually come back to me. The drinks, the music, and then that stupid bottle Mara found."
 
-# game/scenario/5_1.rpy:34
-translate english fd9259e1:
+# game/scenario/5_1.rpy:33
+translate english bba06500:
 
-    # think "Bien fait."
-    think ""
+    # think "Et Lysa..."
+    think "And Lysa..."
 
-# game/scenario/5_1.rpy:38
-translate english 73e76989:
+# game/scenario/5_1.rpy:35
+translate english 2ddbc472:
 
-    # noam "D'accord…"
-    noam ""
+    # think "J'ai vraiment participé à un jeu de la bouteille au beau milieu du Conclave. Et de mon plein gré, en plus..."
+    think "I actually played spin the bottle in the middle of the Conclave. Willingly, no less..."
+
+# game/scenario/5_1.rpy:37
+translate english 6278a1a0:
+
+    # think "Mon estomac se retourne. Il n'avait visiblement pas besoin que je lui rappelle la soirée."
+    think "My stomach turns. Apparently, it didn't need the reminder."
 
 # game/scenario/5_1.rpy:39
-translate english 38cbf6e5:
+translate english dc3cda4e:
 
-    # noam "Objectif numéro un : survivre au fait d'être réveillé."
-    noam ""
+    # think "Puis je repense à la table ronde, et la soirée me paraît tout de suite beaucoup moins amusante."
+    think "Then I think back to the round table, and the evening suddenly seems a lot less fun."
 
-# game/scenario/5_1.rpy:43
-translate english 8ee0eb6b:
+# game/scenario/5_1.rpy:40
+translate english 4826925c:
 
-    # noam "Objectif numéro deux..."
-    noam ""
+    # think "Le prochain vote concernera la libre circulation entre les districts. Elias a essayé d'en parler, Sael s'est braquée et tout est parti en vrille."
+    think "The next vote will be about free movement between the districts. Elias tried to discuss it, Sael dug her heels in, and everything went to hell."
+
+# game/scenario/5_1.rpy:42
+translate english 2314e524:
+
+    # think "Elle est partie en claquant la porte avant même qu'on puisse réellement discuter."
+    think "She stormed out before we could even have a real discussion."
 
 # game/scenario/5_1.rpy:44
-translate english 42febebf:
+translate english 1ca9c2d4:
 
-    # noam "Non. Trop ambitieux."
-    noam ""
+    # think "Sael votera contre. Vu son état hier, je ne vois pas ce qui pourrait la faire changer d'avis."
+    think "Sael will vote against it. Given the state she was in yesterday, I can't imagine anything changing her mind."
 
-# game/scenario/5_1.rpy:48
-translate english 015f4b73:
+# game/scenario/5_1.rpy:51
+translate english 4e3337d3:
 
-    # think "Hier soir."
-    think ""
-
-# game/scenario/5_1.rpy:50
-translate english 73aa76e4:
-
-    # think "Les images remontent par morceaux, dans le désordre."
-    think ""
-
-# game/scenario/5_1.rpy:52
-translate english 4fed6a62:
-
-    # noam "Les verres en plastique..."
-    noam ""
+    # think "Je me redresse et une douleur me traverse la nuque jusqu'au milieu du dos."
+    think "I sit up, and a sharp pain shoots from my neck halfway down my back."
 
 # game/scenario/5_1.rpy:53
-translate english ebd832f7:
+translate english 8902e7b2:
 
-    # noam "La musique..."
-    noam ""
+    # noam fatigue "Putain... Je suis complètement cassé."
+    noam fatigue "Fuck... My whole body is wrecked."
 
-# game/scenario/5_1.rpy:54
-translate english 810af658:
+# game/scenario/5_1.rpy:57
+translate english 422b6d97:
 
-    # noam "Mara et sa bouteille stupide..."
-    noam ""
+    # think "Au moins, le froid termine de me réveiller."
+    think "At least the cold finishes waking me up."
 
-# game/scenario/5_1.rpy:58
-translate english c4250dca:
+# game/scenario/5_1.rpy:59
+translate english b2987aa0:
 
-    # noam "Lysa."
-    noam ""
+    # think "Je bois un verre d'eau beaucoup trop vite et mon estomac manque de me le faire regretter."
+    think "I gulp down a glass of water, and my stomach nearly makes me regret it."
 
-# game/scenario/5_1.rpy:62
-translate english 95f31b88:
+# game/scenario/5_1.rpy:61
+translate english 59d9068b:
 
-    # think "Le jeu de la bouteille."
-    think ""
+    # think "Aujourd'hui, nous sommes au jour cinq. Le vote aura donc lieu demain."
+    think "Today is Day Five. That means the vote is tomorrow."
 
 # game/scenario/5_1.rpy:63
-translate english ca199c67:
+translate english fa5ee7e1:
 
-    # think "Sérieusement."
-    think ""
+    # think "Demain... Ça paraissait encore loin quand Kami a annoncé le sujet. Maintenant, il ne nous reste presque plus de temps."
+    think "Tomorrow... It still seemed far away when Kami announced the subject. Now we're almost out of time."
 
-# game/scenario/5_1.rpy:65
-translate english 28d41a59:
+# game/scenario/5_1.rpy:64
+translate english 91881095:
 
-    # noam "J'ai participé à ça."
-    noam ""
+    # think "Sael ne changera pas d'avis toute seule. Je ne suis même pas sûr qu'elle accepte encore de nous écouter."
+    think "Sael won't change her mind on her own. I'm not even sure she'll agree to listen to us anymore."
 
 # game/scenario/5_1.rpy:66
-translate english 9380c6a3:
+translate english f95220c8:
 
-    # noam "Et de mon plein gré, en plus…"
-    noam ""
+    # noam fatigue "Qu'est-ce que je suis censé faire, moi... ?"
+    noam fatigue "What the hell am I supposed to do...?"
 
-# game/scenario/5_1.rpy:67
-translate english 416da497:
+# game/scenario/5_1.rpy:75
+translate english 56c1e00b:
 
-    # noam "Kami devrait me retirer mon droit de vote juste pour ça."
-    noam ""
+    # kami "Bonjour, mes petits diablotins ! Alors, comment vous sentez-vous ce matin ?"
+    kami "Good morning, my little devils! How are we all feeling today?"
 
-# game/scenario/5_1.rpy:71
-translate english 68d60a07:
+# game/scenario/5_1.rpy:76
+translate english b03aa4c9:
 
-    # think "Mon estomac répond avant moi."
-    think ""
-
-# game/scenario/5_1.rpy:73
-translate english 124bfb4d_1:
-
-    # noam "Pas maintenant."
-    noam ""
+    # kami "Quelques maux de crâne ? Des souvenirs un peu gênants qui commencent à revenir ?"
+    kami "A few headaches? Some slightly embarrassing memories starting to come back?"
 
 # game/scenario/5_1.rpy:77
-translate english 414779c4:
+translate english da24820a:
 
-    # think "Puis l'autre souvenir revient et tue le sourire avant qu'il s'installe."
-    think ""
+    # kami "Il faut dire que le public a été surpris par certains événements de la soirée !"
+    kami "I have to say, the audience was rather surprised by some of last night's developments!"
 
 # game/scenario/5_1.rpy:79
-translate english fa4cdb7f:
+translate english 62e79fa7:
 
-    # think "La table ronde."
-    think ""
+    # kami "Rassurez-vous, c'est parfaitement normal ! Entre la fatigue, l'alcool, les tensions politiques et ce merveilleux jeu de la bouteille..."
+    kami "Don't worry, it's perfectly normal! Between the exhaustion, the alcohol, the political tension, and that wonderful game of spin the bottle..."
 
 # game/scenario/5_1.rpy:80
-translate english 53cd02dc:
+translate english a3582940:
 
-    # think "Le prochain vote."
-    think ""
-
-# game/scenario/5_1.rpy:81
-translate english 1ac65c6e:
-
-    # think "La libre circulation entre districts."
-    think ""
-
-# game/scenario/5_1.rpy:83
-translate english 3b64f823:
-
-    # noam "Elias qui provoque un peu trop fort."
-    noam ""
+    # kami "Franchement, je m'étonnais presque que vous n'ayez pas craqué plus tôt !"
+    kami "Honestly, I'm almost surprised you didn't crack sooner!"
 
 # game/scenario/5_1.rpy:84
-translate english 494963ef:
+translate english 087616ab:
 
-    # noam "Sael qui se lève."
-    noam ""
+    # kami "Mais assez parlé de vos performances d'hier soir. Il est temps de passer à quelque chose de plus sérieux."
+    kami "But enough about last night's performance. Time to move on to something more serious."
 
 # game/scenario/5_1.rpy:85
-translate english 5ca14500:
+translate english a7088c9e:
 
-    # noam "La chaise qui racle."
-    noam ""
+    # kami "Oui, je sais, moi aussi ça me déçoit. Mais il faut bien travailler un peu !"
+    kami "Yes, I know. I'm disappointed too. But we do have to get some work done!"
 
-# game/scenario/5_1.rpy:89
-translate english 6efd4027:
+# game/scenario/5_1.rpy:87
+translate english 6c7c98bb:
 
-    # think "Et cette porte."
-    think ""
+    # kami "Cette nuit, une alerte de sécurité a été déclenchée à Orbite. Quelqu'un n'a pas respecté les règles."
+    kami "Last night, a security alert was triggered in Orbite. Someone failed to follow the rules."
 
-# game/scenario/5_1.rpy:90
-translate english e15f4c22:
+# game/scenario/5_1.rpy:88
+translate english 820b0e63:
 
-    # think "Clac. Fin de discussion."
-    think ""
-
-# game/scenario/5_1.rpy:94
-translate english 29ff0379:
-
-    # noam "Elle va voter contre."
-    noam ""
+    # kami "Le complexe C-3 a donc reçu un tout petit rappel au laser !"
+    kami "So Complex C-3 received a tiny little laser reminder!"
 
 # game/scenario/5_1.rpy:95
-translate english f86ae32c:
+translate english 06ab8da2:
 
-    # noam "Bien sûr qu'elle va voter contre."
-    noam ""
+    # kami "Heureusement, aucun autre mort à déclarer. Seulement quelques personnes dans le coma qui n'ont pas réussi à enfiler leur scaphandre à temps."
+    kami "Fortunately, there are no other deaths to report. Just a few people in comas who couldn't get their spacesuits on in time."
 
-# game/scenario/5_1.rpy:101
-translate english b26e0490:
+# game/scenario/5_1.rpy:96
+translate english f2474f48:
 
-    # think "Je me redresse. Mauvais choix."
-    think ""
+    # kami "Deux heures d'une ambiance absolument délicieuse !"
+    kami "Two hours of an absolutely delightful atmosphere!"
 
-# game/scenario/5_1.rpy:103
-translate english 5e898791:
+# game/scenario/5_1.rpy:100
+translate english fa27c0a2:
 
-    # noam "Oh... wow."
-    noam ""
+    # kami "Le complexe est déjà en cours de réparation. Rien d'irréversible, tout est revenu à la normale."
+    kami "Repairs to the complex are already under way. Nothing irreversible. Everything is back to normal."
 
 # game/scenario/5_1.rpy:104
-translate english d9486705:
+translate english 3c2ccc54:
 
-    # noam "C'est quoi cette douleur dans la nuque ?!"
-    noam ""
+    # kami "Enfin... À la normale pour eux."
+    kami "Well... normal for them."
 
-# game/scenario/5_1.rpy:108
-translate english 4114b361:
+# game/scenario/5_1.rpy:107
+translate english e4c56b24:
 
-    # noam "Et dans le dos aussi…"
-    noam ""
+    # kami "Pendant que vous êtes bien en sécurité ici, d'autres continuent de risquer leur vie."
+    kami "While you're all perfectly safe in here, others are still risking their lives."
 
 # game/scenario/5_1.rpy:110
-translate english c276f4e1:
+translate english acc85f3f:
 
-    # think "Le métal froid traverse mes chaussettes."
-    think ""
+    # kami "Oh, et j'ai repéré une petite poussière morale au milieu de tout ça. Un rien, ou presque."
+    kami "Oh, and I noticed a tiny moral blemish amid all this. Almost nothing, really."
+
+# game/scenario/5_1.rpy:111
+translate english f0ca5bda:
+
+    # kami "Figurez-vous que l'un des représentants d'Orbite n'était même pas au courant de l'alerte !"
+    kami "Would you believe that one of Orbite's representatives didn't even know about the alert?"
 
 # game/scenario/5_1.rpy:112
-translate english 282d6ba9:
+translate english 26bdafb9:
 
-    # noam "Hhh..."
-    noam ""
+    # kami "Il dormait tranquillement pendant que son district retenait son souffle."
+    kami "He slept peacefully while his district held its breath."
 
 # game/scenario/5_1.rpy:114
-translate english 254890d9:
+translate english 231d40f8:
 
-    # think "Au moins, ça réveille."
-    think ""
+    # kami "C'est drôle, non ? Représenter des gens sans même savoir quand ils manquent presque d'air."
+    kami "Funny, isn't it? Representing people without even knowing when they're about to run out of air."
 
 # game/scenario/5_1.rpy:118
-translate english 271c2080:
+translate english e308b310:
 
-    # think "Je bois trop vite. Mon estomac dépose une protestation officielle."
-    think ""
-
-# game/scenario/5_1.rpy:122
-translate english 30c097d1:
-
-    # think "Le vote."
-    think ""
-
-# game/scenario/5_1.rpy:124
-translate english 7dab3e3d:
-
-    # noam "Aujourd'hui, on est au jour cinq."
-    noam ""
-
-# game/scenario/5_1.rpy:125
-translate english a4252199:
-
-    # noam "Vote... jour six."
-    noam ""
-
-# game/scenario/5_1.rpy:126
-translate english 43f0b986:
-
-    # noam "Donc demain."
-    noam ""
-
-# game/scenario/5_1.rpy:130
-translate english 5a3e9fd0:
-
-    # noam "Demain."
-    noam ""
+    # kami "Comme quoi... Certaines informations circulent mieux quand on reste sobre."
+    kami "Just goes to show... Some information travels better when you stay sober."
 
 # game/scenario/5_1.rpy:132
-translate english 995e38a6:
+translate english 9ec9f9fb:
 
-    # think "Demain. Le mot reste dans la chambre, froid et beaucoup trop proche."
-    think ""
+    # think "L'écran s'éteint. Kami n'a pas prononcé son nom, mais tout le monde comprendra qu'elle parlait de Kael."
+    think "The screen goes dark. Kami didn't say his name, but everyone will know she meant Kael."
 
 # game/scenario/5_1.rpy:134
-translate english 4439b113:
+translate english ec3f21df:
 
-    # think "Sael ne changera pas d'avis toute seule."
-    think ""
+    # noam fatigue "Putain... Kael."
+    noam fatigue "Fuck... Kael."
 
-# game/scenario/5_1.rpy:135
-translate english 78a67c38:
+# game/scenario/5_1.rpy:136
+translate english 7b2a5b2c:
 
-    # think "Je ne suis même pas sûr qu'on puisse la faire changer d'avis…"
-    think ""
+    # think "Je me lève trop vite. La chambre bascule légèrement et je dois prendre appui contre le mur."
+    think "I get up too quickly. The room tilts, and I have to brace myself against the wall."
 
-# game/scenario/5_1.rpy:139
-translate english a5b3195d:
+# game/scenario/5_1.rpy:138
+translate english 30a03a66:
 
-    # noam "Et moi, je suis censé faire quoi ?"
-    noam ""
+    # noam fatigue "Ouais... On va y aller doucement."
+    noam fatigue "Yeah... Let's take this slowly."
 
-# game/scenario/5_1.rpy:150
-translate english c21a71de:
+# game/scenario/5_1.rpy:140
+translate english 23054b5a:
 
-    # kami "Bonjour, mes petits diablotins !"
-    kami ""
+    # think "Je retrouve mes chaussures et commence à les enfiler avant de réaliser qu'elles sont inversées."
+    think "I find my shoes and start putting them on before realizing I've got them on the wrong feet."
 
-# game/scenario/5_1.rpy:151
-translate english 1edd25a4:
+# game/scenario/5_1.rpy:141
+translate english dd5019c3:
 
-    # kami "Alors ?"
-    kami ""
+    # think "Bon début de journée... Je recommence, cette fois dans le bon ordre."
+    think "Great start to the day... I try again, this time in the right order."
+
+# game/scenario/5_1.rpy:148
+translate english 2b5fcfb4:
+
+    # think "Une odeur de café flotte dans le couloir. Rien que d'y penser, mon estomac se retourne encore."
+    think "The smell of coffee drifts through the hallway. Just thinking about it makes my stomach turn again."
 
 # game/scenario/5_1.rpy:152
-translate english b3403ddc:
+translate english 1c056460:
 
-    # kami "Vous avez mal au crâne ? Ça tangue un peu ? Beaucoup ?"
-    kami ""
+    # nyra raison "Tu ne pouvais pas le savoir."
+    nyra raison "There was no way you could've known."
 
-# game/scenario/5_1.rpy:153
-translate english ff46d7fc:
+# game/scenario/5_1.rpy:156
+translate english 7ae30860:
 
-    # kami "Certains regrettent déjà deux ou trois choix de la veille ?"
-    kami ""
+    # think "Je reconnais la voix de Nyra. Elle parle avec Kael, juste à côté de sa chambre."
+    think "I recognize Nyra's voice. She's talking to Kael right outside his room."
 
-# game/scenario/5_1.rpy:154
-translate english 57d6df0b:
+# game/scenario/5_1.rpy:169
+translate english ac39c5d6:
 
-    # kami "Il faut dire que le public a été surpris par certains événements !"
-    kami ""
+    # think "Kael est assis contre le mur, les yeux fixés sur sa tablette. Nyra reste debout près de lui."
+    think "Kael is sitting against the wall, staring at his tablet. Nyra stands beside him."
 
-# game/scenario/5_1.rpy:158
-translate english 2b09a2e5_1:
+# game/scenario/5_1.rpy:174
+translate english 5cd639be:
 
-    # kami "Rassurez-vous."
-    kami ""
-
-# game/scenario/5_1.rpy:159
-translate english 4a6915bb:
-
-    # kami "C'est parfaitement normal."
-    kami ""
-
-# game/scenario/5_1.rpy:160
-translate english 8b004c3b:
-
-    # kami "Fatigue, alcool, tensions politiques, jeu de la bouteille..."
-    kami ""
-
-# game/scenario/5_1.rpy:161
-translate english 1caf9072:
-
-    # kami "Franchement, je m'étonnais presque que vous n'ayez pas craqué avant !"
-    kami ""
-
-# game/scenario/5_1.rpy:165
-translate english 821d57b0:
-
-    # kami "Mais assez parlé de vos performances rocambolesques."
-    kami ""
-
-# game/scenario/5_1.rpy:166
-translate english a305d923:
-
-    # kami "Petit point sérieux."
-    kami ""
-
-# game/scenario/5_1.rpy:167
-translate english df9f399e:
-
-    # kami "Oui, je sais."
-    kami ""
-
-# game/scenario/5_1.rpy:168
-translate english 07ad3750:
-
-    # kami "Moi aussi, ça me déçoit mais il faut bien travailler un peu."
-    kami ""
-
-# game/scenario/5_1.rpy:172
-translate english 779dc3b2:
-
-    # kami "Cette nuit, Orbite a déclenché une alerte de sécurité."
-    kami ""
-
-# game/scenario/5_1.rpy:173
-translate english 65509fff:
-
-    # kami "Quelqu'un n'a pas respecté les règles. Le complexe C-3 a donc reçu un petit rappel au laser."
-    kami ""
+    # kael triste "Je viens seulement de voir l'alerte dans le relevé de Kami."
+    kael triste "I only just saw the alert in Kami's report."
 
 # game/scenario/5_1.rpy:176
-translate english f8e260fb:
+translate english d9941d19:
 
-    # kami "Peut-être même que c'est à cause de vous !"
-    kami ""
+    # nyra raison "Je sais. Tu l'as lue combien de fois ?"
+    nyra raison "I know. How many times have you read it?"
+
+# game/scenario/5_1.rpy:178
+translate english 5e68afa7:
+
+    # kael triste "Sept fois. J'aurais dû la voir cette nuit."
+    kael triste "Seven. I should've seen it last night."
 
 # game/scenario/5_1.rpy:180
-translate english 34664b59:
+translate english 835d13fb:
 
-    # kami "Heureusement, aucun autre mort à déclarer."
-    kami ""
-
-# game/scenario/5_1.rpy:181
-translate english c2a0ef76:
-
-    # kami "Juste quelques personnes dans le coma parce qu'elles n'ont pas réussi à mettre leur scaphandre à temps."
-    kami ""
+    # nyra raison "Tu dormais."
+    nyra raison "You were asleep."
 
 # game/scenario/5_1.rpy:182
-translate english 1b86b4b1:
+translate english 019af2a3:
 
-    # kami "Deux heures et quelques d'ambiance absolument délicieuse."
-    kami ""
+    # kael triste "J'aurais dû vérifier avant d'aller me coucher."
+    kael triste "I should've checked before going to bed."
+
+# game/scenario/5_1.rpy:184
+translate english 9850dc55:
+
+    # nyra raison "Tu avais besoin de dormir, Kael."
+    nyra raison "You needed to sleep, Kael."
 
 # game/scenario/5_1.rpy:186
-translate english 25c6f03d:
+translate english 26835123:
 
-    # kami "Le complexe est en cours de réparation."
-    kami ""
-
-# game/scenario/5_1.rpy:187
-translate english f134bdc3:
-
-    # kami "Rien d'irréversible."
-    kami ""
+    # kael triste "Léa a six ans, Nyra. Cette nuit, il y avait une alerte et moi, j'étais là à..."
+    kael triste "Léa is six, Nyra. There was an alert last night, and I was here..."
 
 # game/scenario/5_1.rpy:188
-translate english 50f1a52c:
+translate english e377a3d7:
 
-    # kami "Tout est revenu à la normale."
-    kami ""
+    # kael triste "... jouer à la bouteille."
+    kael triste "... playing spin the bottle."
+
+# game/scenario/5_1.rpy:190
+translate english 52c26a2d:
+
+    # nyra raison "Tu as passé une soirée avec nous. Ce n'est pas un crime."
+    nyra raison "You spent an evening with us. That isn't a crime."
+
+# game/scenario/5_1.rpy:192
+translate english f1f750e1:
+
+    # kael triste "Pendant qu'elle devait peut-être enfiler un scaphandre pour survivre."
+    kael triste "While she might've been putting on a spacesuit just to survive."
 
 # game/scenario/5_1.rpy:194
-translate english db0509a1_1:
+translate english ab58517a:
 
-    # kami "Enfin..."
-    kami ""
+    # nyra raison "Tu ne pouvais pas le savoir. Et même si tu étais resté éveillé, tu n'aurais rien pu faire depuis le Conclave."
+    nyra raison "You couldn't have known. And even if you'd stayed awake, there was nothing you could've done from the Conclave."
 
-# game/scenario/5_1.rpy:195
-translate english 359b5b00:
+# game/scenario/5_1.rpy:196
+translate english e4f67f34:
 
-    # kami "À la normale pour eux."
-    kami ""
+    # kael inquiet "Tu sais ce qui se passe quand un sas lâche à Orbite ?"
+    kael inquiet "Do you know what happens when an airlock fails in Orbite?"
+
+# game/scenario/5_1.rpy:198
+translate english ca0f799e:
+
+    # nyra raison "Oui. Je le sais."
+    nyra raison "Yes. I do."
 
 # game/scenario/5_1.rpy:200
-translate english ea9af556:
+translate english b4179cfa:
 
-    # kami "Pendant que vous, vous êtes bien en sécurité ici, certains risquent leur vie."
-    kami ""
+    # kael inquiet "La section est isolée, les portes se verrouillent et tout le monde doit rejoindre un point de confinement."
+    kael inquiet "The section is isolated, the doors lock, and everyone has to reach a containment point."
+
+# game/scenario/5_1.rpy:201
+translate english 7d8d4ceb:
+
+    # kael reflechit "Pour le scaphandre, il faut verrouiller le col, puis la gauche, la droite et le verrou central."
+    kael reflechit "For the spacesuit, you lock the collar, then the left clasp, the right one, and the central lock."
+
+# game/scenario/5_1.rpy:202
+translate english a7bb070c:
+
+    # kael inquiet "Après trente secondes, tu commences déjà à perdre tes forces. Peut-être quarante-cinq si tu es entraîné et que tu ne paniques pas."
+    kael inquiet "After thirty seconds, you're already starting to lose strength. Maybe forty-five if you're trained and don't panic."
 
 # game/scenario/5_1.rpy:204
-translate english d92c2fef:
+translate english cb59afbe:
 
-    # kami "Oh, et j'ai repéré une petite poussière morale."
-    kami ""
-
-# game/scenario/5_1.rpy:205
-translate english 19d918c2:
-
-    # kami "Un rien. Ou presque."
-    kami ""
-
-# game/scenario/5_1.rpy:206
-translate english 3756e47a:
-
-    # kami "Un représentant d'Orbite n'était même pas au courant."
-    kami ""
+    # nyra raison "Et Léa sait le faire. Tu lui as appris."
+    nyra raison "And Léa knows how to do it. You taught her."
 
 # game/scenario/5_1.rpy:207
-translate english 05981004:
+translate english 6b9bd8f4:
 
-    # kami "Pas cette nuit."
-    kami ""
+    # kael triste "C'est justement ça, le problème."
+    kael triste "That's exactly the problem."
 
-# game/scenario/5_1.rpy:208
-translate english 4cbadbef:
+# game/scenario/5_1.rpy:209
+translate english eb3ea09f:
 
-    # kami "Pas pendant que son district retenait son souffle."
-    kami ""
+    # kael triste "Elle devrait apprendre des chansons idiotes, des blagues ou ses tables de multiplication."
+    kael triste "She should be learning silly songs, jokes, or her multiplication tables."
+
+# game/scenario/5_1.rpy:210
+translate english 2f6c3b39:
+
+    # kael triste "Pas une procédure pour survivre quand l'air disparaît de sa chambre."
+    kael triste "Not a procedure for surviving when the air disappears from her room."
 
 # game/scenario/5_1.rpy:212
-translate english e94de203:
+translate english 33eb7dab:
 
-    # kami "C'est drôle, non ?"
-    kami ""
+    # nyra reflechit "Tu lui as appris comment ?"
+    nyra reflechit "How did you teach her?"
 
-# game/scenario/5_1.rpy:213
-translate english 50bc1013:
+# game/scenario/5_1.rpy:214
+translate english 90d9c394:
 
-    # kami "Représenter des gens dont on ignore même quand ils manquent presque d'air."
-    kami ""
+    # kael triste "Comme un jeu, pendant quatre jours cet été. Elle riait chaque fois qu'elle ratait l'attache gauche."
+    kael triste "I turned it into a game. We practiced for four days this summer. She laughed every time she missed the left clasp."
 
 # game/scenario/5_1.rpy:217
-translate english 65fee1ab:
+translate english c67fbd44:
 
-    # kami "Comme quoi..."
-    kami ""
+    # nyra raison "Tu lui as peut-être sauvé la vie cette nuit. Tu n'as pas à t'en vouloir de lui avoir appris."
+    nyra raison "You may have saved her life last night. You shouldn't blame yourself for teaching her."
 
-# game/scenario/5_1.rpy:218
-translate english 9ba21ad2:
+# game/scenario/5_1.rpy:219
+translate english 03fb0117:
 
-    # kami "Certaines informations circulent mieux quand on est sobre."
-    kami ""
+    # kael triste "Elle a six ans."
+    kael triste "She's six."
 
-# game/scenario/5_1.rpy:222
-translate english 2c74d29c:
+# game/scenario/5_1.rpy:221
+translate english 447f9052:
 
-    # kami "La cafétéria est ouverte."
-    kami ""
+    # nyra raison "Je sais. Mais elle aura toujours six ans même si tu te détruis ici."
+    nyra raison "I know. But she'll still be six even if you destroy yourself in here."
 
 # game/scenario/5_1.rpy:223
-translate english 114e3497:
+translate english cd5ec83f:
 
-    # kami "Continuez à m'amuser ! C'est peut-être la seule chose dans laquelle vous excellez !"
-    kami ""
+    # think "Nyra ne lui promet pas que tout va bien. Kael ne la croirait pas."
+    think "Nyra doesn't promise him everything is fine. Kael wouldn't believe her."
+
+# game/scenario/5_1.rpy:225
+translate english 91058f14:
+
+    # nyra reflechit "Le C-3, c'est bien le module résidentiel ?"
+    nyra reflechit "C-3 is the residential module, right?"
+
+# game/scenario/5_1.rpy:227
+translate english ed65c047:
+
+    # kael triste "Oui. Il est dans le bloc réservé aux familles."
+    kael triste "Yes. It's in the family block."
+
+# game/scenario/5_1.rpy:229
+translate english 3a11ccd3:
+
+    # nyra reflechit "Combien de personnes ?"
+    nyra reflechit "How many people?"
 
 # game/scenario/5_1.rpy:231
-translate english c238a25d:
+translate english 8eda3f4f:
 
-    # think "L'écran s'éteint après avoir soigneusement choisi sa cible."
-    think ""
+    # kael triste "Cent quarante."
+    kael triste "One hundred and forty."
 
-# game/scenario/5_1.rpy:233
-translate english 2c26d127:
+# game/scenario/5_1.rpy:234
+translate english 0528d7ee:
 
-    # noam "Orbite… Putain."
-    noam ""
+    # nyra reflechit "Il peut s'isoler du reste de la station ?"
+    nyra reflechit "Can it isolate itself from the rest of the station?"
 
 # game/scenario/5_1.rpy:236
-translate english 24d49200:
+translate english 8b206e4e:
 
-    # think "Je me lève. Trop vite."
-    think ""
+    # kael inquiet "Oui. Il y a sept modules : quatre résidentiels, deux de production et un central. Chaque jonction possède ses propres sas."
+    kael inquiet "Yes. There are seven modules: four residential, two production, and one central module. Every junction has its own airlocks."
 
-# game/scenario/5_1.rpy:238
-translate english 34cac2a7:
+# game/scenario/5_1.rpy:237
+translate english 18a56e3f:
 
-    # noam "Mauvaise idée."
-    noam ""
+    # kael triste "Si une section est compromise, elle peut rester isolée plusieurs jours."
+    kael triste "If a section is compromised, it can remain isolated for several days."
 
 # game/scenario/5_1.rpy:239
-translate english f1240d6f:
+translate english 48081798:
 
-    # noam "J'ai encore la tête qui tourne…"
-    noam ""
+    # nyra raison "Donc le système a tenu cette nuit."
+    nyra raison "So the system held last night."
 
 # game/scenario/5_1.rpy:241
-translate english 41addfde:
+translate english 481647c8:
 
-    # think "La chambre penche. Le mur me rattrape."
-    think ""
+    # kael triste "Ouais, heureusement. Cette fois."
+    kael triste "Yeah, thankfully. This time."
 
 # game/scenario/5_1.rpy:243
-translate english fbda864e:
+translate english 6a228693:
 
-    # noam "Merci, le mur."
-    noam ""
+    # nyra neutre "Oui. Cette fois."
+    nyra neutre "Yes. This time."
 
-# game/scenario/5_1.rpy:244
-translate english c6798a4a:
+# game/scenario/5_1.rpy:245
+translate english a4bbd79d:
 
-    # noam "Toujours là dans les moments importants."
-    noam ""
+    # kael triste "Tu vois ? Même toi, tu dis « cette fois »."
+    kael triste "See? Even you said “this time.”"
 
-# game/scenario/5_1.rpy:248
-translate english a72a6f66:
+# game/scenario/5_1.rpy:247
+translate english 7ffd755d:
 
-    # think "Je retrouve mes chaussures et les enfile."
-    think ""
+    # nyra raison "Parce que c'est vrai. Je ne vais pas te dire que ça ne recommencera jamais juste pour te rassurer."
+    nyra raison "Because it's true. I'm not going to tell you it'll never happen again just to make you feel better."
 
-# game/scenario/5_1.rpy:252
-translate english 0e80e0da_3:
+# game/scenario/5_1.rpy:249
+translate english b1ba5c3f:
 
-    # noam "..."
-    noam ""
+    # kael fatigue "Charmant."
+    kael fatigue "Charming."
+
+# game/scenario/5_1.rpy:251
+translate english 0e77da24:
+
+    # nyra raison "Mais tu préfères que je sois honnête."
+    nyra raison "But you'd rather I was honest."
 
 # game/scenario/5_1.rpy:253
-translate english c48ea2be:
+translate english 668bb693:
 
-    # noam "Pourquoi elles sont inversées ?"
-    noam ""
+    # kael triste "Je pourrai demander à la contacter ce soir."
+    kael triste "I can ask to contact her tonight."
 
-# game/scenario/5_1.rpy:257
-translate english eb500e80:
+# game/scenario/5_1.rpy:256
+translate english 24329b0f:
 
-    # think "Bravo."
-    think ""
+    # nyra raison "Kami peut refuser. Mais si elle accepte, qu'est-ce que tu diras à Léa ?"
+    nyra raison "Kami may refuse. But if she agrees, what will you say to Léa?"
 
-# game/scenario/5_1.rpy:259
-translate english 1655402f:
+# game/scenario/5_1.rpy:258
+translate english 0074671e:
 
-    # think "Je recommence, cette fois comme un adulte presque respectable."
-    think ""
+    # kael triste "Que je suis désolé."
+    kael triste "That I'm sorry."
 
-# game/scenario/5_1.rpy:265
-translate english 6885c5d1:
+# game/scenario/5_1.rpy:262
+translate english 89378e61:
 
-    # think "Le couloir sent le café, le métal et la mauvaise décision."
-    think ""
+    # kael triste "Parce que je n'étais pas là quand elle avait peut-être besoin de moi."
+    kael triste "Because I wasn't there when she might've needed me."
 
-# game/scenario/5_1.rpy:267
-translate english d35910b9:
+# game/scenario/5_1.rpy:264
+translate english bd53738a:
 
-    # noam "Parfait. Exactement mon état d'esprit."
-    noam ""
+    # nyra raison "Tu pouvais réparer le sas à distance depuis le Conclave ?"
+    nyra raison "Could you have repaired the airlock remotely from the Conclave?"
 
-# game/scenario/5_1.rpy:271
-translate english 35fb4b9d:
+# game/scenario/5_1.rpy:266
+translate english 7f1af032:
 
-    # think "Deux voix basses et tendues viennent des chambres."
-    think ""
+    # kael triste "Non, évidemment."
+    kael triste "No, obviously not."
 
-# game/scenario/5_1.rpy:273
-translate english 68d62fc5:
+# game/scenario/5_1.rpy:268
+translate english 2e9908bf:
 
-    # nyra "Tu ne pouvais pas le savoir."
-    nyra ""
+    # nyra raison "Alors ne commence pas l'appel en lui demandant de te pardonner. Demande-lui comment elle va. C'est ce qu'elle attendra de toi."
+    nyra raison "Then don't start the call by asking her to forgive you. Ask how she's doing. That's what she'll need from you."
 
-# game/scenario/5_1.rpy:275
-translate english 7f5f08f0:
+# game/scenario/5_1.rpy:270
+translate english 1cdc0d69_1:
 
-    # think "Je m'arrête."
-    think ""
+    # kael triste "..."
+    kael triste "..."
 
-# game/scenario/5_1.rpy:277
-translate english 92ff9149:
+# game/scenario/5_1.rpy:272
+translate english 082509bd:
 
-    # think "Nyra parle avec quelqu'un."
-    think ""
+    # kael triste "Tu pourrais essayer d'être un peu moins dure."
+    kael triste "You could try being a little less harsh."
 
-# game/scenario/5_1.rpy:279
-translate english 8124d44c:
+# game/scenario/5_1.rpy:274
+translate english 6e11bbcb:
 
-    # think "Nyra parle avec Kael."
-    think ""
+    # nyra neutre "Et toi, tu pourrais arrêter de chercher une raison de te punir."
+    nyra neutre "And you could stop looking for a reason to punish yourself."
 
-# game/scenario/5_1.rpy:293
-translate english bae3cc41:
+# game/scenario/5_1.rpy:276
+translate english db285450:
 
-    # think "Kael est assis au sol. Nyra reste près de lui : pas tendre, mais présente."
-    think ""
+    # think "Kael laisse échapper un petit rire. Il ne va pas mieux, mais au moins il relève enfin les yeux."
+    think "Kael lets out a quiet laugh. He doesn't feel any better, but at least he finally looks up."
 
-# game/scenario/5_1.rpy:298
-translate english ba12cb3f:
+# game/scenario/5_1.rpy:278
+translate english 58bc9432:
 
-    # kael "Je viens de voir l'alerte. Ce matin. Dans le relevé de Kami."
-    kael ""
+    # kael triste "J'ai la tête qui tourne."
+    kael triste "My head is spinning."
 
-# game/scenario/5_1.rpy:300
-translate english 4fbf4fc4:
+# game/scenario/5_1.rpy:280
+translate english 1c21e21b:
 
-    # nyra "Je sais. Tu l'as lue combien de fois ?"
-    nyra ""
+    # nyra taquin "Alcool ou culpabilité ?"
+    nyra taquin "Alcohol or guilt?"
 
-# game/scenario/5_1.rpy:302
-translate english 9ba95bdb:
+# game/scenario/5_1.rpy:282
+translate english 42ada820:
 
-    # kael "Sept. J'aurais dû la voir cette nuit."
-    kael ""
+    # kael fatigue "Les deux."
+    kael fatigue "Both."
 
-# game/scenario/5_1.rpy:304
-translate english 45b7ff67:
+# game/scenario/5_1.rpy:284
+translate english 996364f6:
 
-    # nyra "Tu dormais."
-    nyra ""
+    # nyra taquin "Certains conseillent de reboire après une cuite. C'est une idée catastrophique, donc parfaitement adaptée à notre semaine."
+    nyra taquin "Some people recommend having another drink after a binge. It's a disastrous idea, so it's perfectly suited to our week."
+
+# game/scenario/5_1.rpy:286
+translate english 0fc58a22:
+
+    # kael triste "Tu veux me tuer ? Déjà que…"
+    kael triste "Are you trying to kill me? As if..."
+
+# game/scenario/5_1.rpy:288
+translate english e51dbb0d:
+
+    # think "Kael devient rouge. Visiblement, un autre souvenir de la veille vient de lui revenir."
+    think "Kael turns red. Apparently, another memory from last night has just come back to him."
+
+# game/scenario/5_1.rpy:290
+translate english 8674f781:
+
+    # kael triste "Rien."
+    kael triste "Nothing."
+
+# game/scenario/5_1.rpy:292
+translate english a6f5ef0d:
+
+    # nyra raison "Je crois savoir exactement à quoi tu viens de repenser."
+    nyra raison "I think I know exactly what you just remembered."
+
+# game/scenario/5_1.rpy:294
+translate english ffd08fe5:
+
+    # kael triste "Ne te moque pas."
+    kael triste "Don't make fun of me."
+
+# game/scenario/5_1.rpy:296
+translate english 8ebb230a:
+
+    # nyra raison "Je ne me moque pas. Ça nous a fait du bien de penser à autre chose pendant quelques heures."
+    nyra raison "I'm not. It did us good to think about something else for a few hours."
+
+# game/scenario/5_1.rpy:305
+translate english cb2d6974:
+
+    # kael calme "Bon."
+    kael calme "All right."
 
 # game/scenario/5_1.rpy:306
-translate english 7c1f701c:
+translate english bb5e5f8c:
 
-    # kael "Erreur de priorité."
-    kael ""
+    # kael calme "Je vais essayer d'avaler un bout."
+    kael calme "I'll try to eat something."
 
-# game/scenario/5_1.rpy:308
-translate english c033bab4:
+# game/scenario/5_1.rpy:307
+translate english c05214eb:
 
-    # nyra raison "Non. Besoin humain."
-    nyra raison ""
+    # kael calme "Après... je verrai."
+    kael calme "After that... I'll see."
 
-# game/scenario/5_1.rpy:310
-translate english dcfbc087:
+# game/scenario/5_1.rpy:309
+translate english eb816ec9:
 
-    # kael triste "Léa a six ans, Nyra. Cette nuit, il y avait une alerte et moi j'étais là à…"
-    kael triste ""
+    # nyra raison "Après, tu verras."
+    nyra raison "After that, you'll see."
 
-# game/scenario/5_1.rpy:314
-translate english 586acc98:
+# game/scenario/5_1.rpy:311
+translate english a5f40d5b:
 
-    # kael "Jouer."
-    kael ""
+    # think "Il passe devant moi sans rien dire. À son regard, je comprends qu'il sait que j'ai tout entendu."
+    think "He walks past me without saying a word. From the look he gives me, I can tell he knows I heard everything."
 
 # game/scenario/5_1.rpy:316
-translate english e4478b7a:
+translate english a20ae4e2:
 
-    # nyra "À respirer."
-    nyra ""
+    # nyra raison "Tu as tout entendu ?"
+    nyra raison "Did you hear all of that?"
 
-# game/scenario/5_1.rpy:318
-translate english f65742d1:
+# game/scenario/5_1.rpy:322
+translate english c8f83d53:
 
-    # kael "Pardon ?"
-    kael ""
-
-# game/scenario/5_1.rpy:320
-translate english a8121d88:
-
-    # nyra "Tu n'étais pas en train de trahir Orbite. Tu respirais quelques heures."
-    nyra ""
-
-# game/scenario/5_1.rpy:321
-translate english 8f159338:
-
-    # nyra neutre "Tu veux transformer un mauvais timing en faute morale. Pourquoi ?"
-    nyra neutre ""
-
-# game/scenario/5_1.rpy:323
-translate english 3405a62c:
-
-    # kael "Parce que je connais la procédure."
-    kael ""
+    # noam inquiet "Bien ?"
+    noam inquiet "Was that okay?"
 
 # game/scenario/5_1.rpy:324
-translate english cf619277:
+translate english a42a5372:
 
-    # kael "Tu sais ce qui se passe quand un sas lâche ?"
-    kael ""
+    # nyra raison "Oui."
+    nyra raison "Yes."
 
-# game/scenario/5_1.rpy:326
-translate english bfc0dfda:
+# game/scenario/5_1.rpy:325
+translate english d710b047:
 
-    # nyra "Oui. Je sais ce qu'un sas qui lâche fait aux gens. Continue."
-    nyra ""
+    # nyra raison "Une crise à Orbite ne se gère jamais seul. Kael avait besoin de parler à quelqu'un."
+    nyra raison "A crisis in Orbite is never handled alone. Kael needed someone to talk to."
 
-# game/scenario/5_1.rpy:328
-translate english 6ec2974d:
+# game/scenario/5_1.rpy:327
+translate english 2041e4e2:
 
-    # kael inquiet "Section isolée. Portes verrouillées. Point de confinement."
-    kael inquiet ""
+    # noam inquiet "Tu n'y es pas allée doucement."
+    noam inquiet "You weren't exactly gentle with him."
 
 # game/scenario/5_1.rpy:329
-translate english 956b351d:
+translate english 0e26866f:
 
-    # kael "Scaphandre. Col. Gauche. Droite. Verrou central."
-    kael ""
-
-# game/scenario/5_1.rpy:330
-translate english 5ce2dddf:
-
-    # kael "Trente secondes avant la perte de force. Quarante-cinq si tu es entraîné et que tu ne trembles pas."
-    kael ""
-
-# game/scenario/5_1.rpy:332
-translate english f9413659:
-
-    # nyra "Léa sait faire. Tu lui as appris."
-    nyra ""
+    # nyra raison "Il ne voulait pas que j'y aille doucement. Il voulait une réponse honnête."
+    nyra raison "He didn't want me to be gentle. He wanted an honest answer."
 
 # game/scenario/5_1.rpy:334
-translate english 95e0f73a:
+translate english bac1a83f:
 
-    # kael triste "Oui."
-    kael triste ""
+    # think "Nyra suit Kael à quelques mètres. Elle garde un œil sur lui sans le lui faire remarquer."
+    think "Nyra follows Kael from a few meters away. She keeps an eye on him without letting him notice."
 
-# game/scenario/5_1.rpy:335
-translate english 32f875bf:
+# game/scenario/5_1.rpy:336
+translate english 53d7d346:
 
-    # kael "C'est peut-être bien ça le problème."
-    kael ""
+    # think "Cent quarante personnes vivent dans ce module. Et parmi elles, Léa, sa petite sœur de six ans."
+    think "One hundred and forty people live in that module. And among them is Léa, his six-year-old sister."
 
-# game/scenario/5_1.rpy:339
-translate english a522d80b:
+# game/scenario/5_1.rpy:338
+translate english da38d210:
 
-    # nyra "Non."
-    nyra ""
-
-# game/scenario/5_1.rpy:341
-translate english fcb3fe68:
-
-    # kael "Si."
-    kael ""
-
-# game/scenario/5_1.rpy:342
-translate english 04df6b65:
-
-    # kael triste "Elle devrait apprendre des chansons nulles. Des blagues. Des tables de multiplication."
-    kael triste ""
-
-# game/scenario/5_1.rpy:343
-translate english 3d45404d:
-
-    # kael "Pas une procédure pour survivre quand l'air disparaît."
-    kael ""
-
-# game/scenario/5_1.rpy:347
-translate english 7b5ba3ca:
-
-    # nyra "Comment tu lui as appris ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:349
-translate english e56f4833:
-
-    # kael "Comme un jeu. Quatre jours, cet été."
-    kael ""
-
-# game/scenario/5_1.rpy:350
-translate english 272b579b:
-
-    # kael "Elle riait quand elle ratait l'attache gauche."
-    kael ""
-
-# game/scenario/5_1.rpy:351
-translate english 288d3006:
-
-    # kael triste "Elle disait que le scaphandre lui faisait une tête de grenouille."
-    kael triste ""
-
-# game/scenario/5_1.rpy:355
-translate english 9101aaab:
-
-    # nyra "Donc tu lui as donné deux choses : un rire et une chance de survivre. Laquelle tu regrettes ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:357
-translate english d8e4bb4b:
-
-    # kael "Elle a six ans."
-    kael ""
-
-# game/scenario/5_1.rpy:359
-translate english 0ba80a60:
-
-    # nyra "Je l'ai entendu. Et elle a toujours six ans même si tu te détruis ici."
-    nyra ""
-
-# game/scenario/5_1.rpy:363
-translate english 5b84f5a6:
-
-    # think "Nyra ne promet rien. Elle a compris qu'il n'accepterait aucun mensonge."
-    think ""
+    # think "Pas étonnant qu'il culpabilise... Nous sommes enfermés ici à décider du monde pendant que nos proches continuent d'en subir les règles."
+    think "No wonder he feels guilty... We're trapped in here making decisions about the world while our loved ones continue to live under its rules."
 
 # game/scenario/5_1.rpy:365
-translate english 5b672e0b:
+translate english 25e395b4:
 
-    # nyra raison "Aide-moi à comprendre. Le C-3, c'est quoi ?"
-    nyra raison ""
-
-# game/scenario/5_1.rpy:367
-translate english c10b96b9:
-
-    # kael "C'est le module résidentiel. Dans le bloc famille."
-    kael ""
+    # think "Dans la cafétéria, tout le monde semble regretter la soirée d'hier. Certains ont à peine touché à leur plateau."
+    think "In the cafeteria, everyone seems to regret last night. Some have barely touched their trays."
 
 # game/scenario/5_1.rpy:369
-translate english 4f0f3ff1:
+translate english 94539c86:
 
-    # nyra "Combien de personnes ?"
-    nyra ""
+    # kael triste "Oui. J'ai vu."
+    kael triste "Yes. I saw it."
 
 # game/scenario/5_1.rpy:371
-translate english 3eafd054:
+translate english 0bdf8425:
 
-    # kael "Cent quarante."
-    kael ""
+    # elen inquiet "Je voulais pas... Enfin, hier, personne ne savait et... ça va ?"
+    elen inquiet "I didn't mean to... I mean, yesterday, no one knew, and... are you okay?"
 
-# game/scenario/5_1.rpy:372
-translate english afbca7e5:
+# game/scenario/5_1.rpy:373
+translate english c910f182:
 
-    # kael triste "Dont Léa."
-    kael triste ""
+    # kael triste "Pas vraiment. Mais ça finira par aller."
+    kael triste "Not really. But I will be eventually."
 
-# game/scenario/5_1.rpy:374
-translate english efb4b016:
+# game/scenario/5_1.rpy:375
+translate english c6500129:
 
-    # nyra "Capacité d'isolement ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:376
-translate english b9afd1da_7:
-
-    # kael "Oui."
-    kael ""
+    # ryn blase "Donc non."
+    ryn blase "So, no."
 
 # game/scenario/5_1.rpy:377
-translate english 419fc08b:
+translate english af889abd:
 
-    # kael inquiet "Sept modules : quatre résidentiels, deux de production, un central. Chaque jonction a ses sas."
-    kael inquiet ""
+    # kael triste "Donc j'aimerais manger tranquillement."
+    kael triste "So I'd like to eat in peace."
 
-# game/scenario/5_1.rpy:378
-translate english febb0fdb:
+# game/scenario/5_1.rpy:383
+translate english e2208b8a:
 
-    # kael "Une section compromise s'isole. Autonomie : plusieurs jours."
-    kael ""
+    # elen inquiet "À cause des marchés ?"
+    elen inquiet "Because of the markets?"
 
-# game/scenario/5_1.rpy:380
-translate english 7796e9bb:
+# game/scenario/5_1.rpy:385
+translate english 778b839c:
 
-    # nyra "Donc, cette nuit, le système a tenu."
-    nyra ""
+    # ryn blase "À cause des files. Regarde l'écran, les gens attendent encore devant les anciens centres de distribution."
+    ryn blase "Because of the lines. Look at the screen. People are still waiting outside the old distribution centers."
 
-# game/scenario/5_1.rpy:382
-translate english 45148c96:
+# game/scenario/5_1.rpy:386
+translate english e19b26af:
 
-    # kael "Ouais, heureusement. Cette fois."
-    kael ""
-
-# game/scenario/5_1.rpy:384
-translate english 0d793e49:
-
-    # nyra neutre "Cette fois."
-    nyra neutre ""
+    # ryn blase "Ils pensent toujours qu'on va leur donner quelque chose..."
+    ryn blase "They still think someone's going to give them something..."
 
 # game/scenario/5_1.rpy:388
-translate english 8f0e5b2d:
+translate english bd20c686:
 
-    # kael "Tu vois ?"
-    kael ""
+    # elen inquiet "Kami a dit que les marchés commençaient à fonctionner. Il faut peut-être juste leur laisser un peu de temps."
+    elen inquiet "Kami said the markets were starting to work. Maybe we just need to give them a little time."
 
 # game/scenario/5_1.rpy:389
-translate english 49d03e1d:
+translate english 8c8c344b:
 
-    # kael "Même toi, tu dis cette fois."
-    kael ""
+    # elen reflexion "Ça va forcément finir par démarrer..."
+    elen reflexion "They have to get going eventually..."
 
 # game/scenario/5_1.rpy:391
-translate english b1330bb9:
+translate english b79ac0f2:
 
-    # nyra "Parce que c'est vrai. Tu n'as pas besoin d'une phrase sucrée juste parce que tu es par terre."
-    nyra ""
+    # ryn blase "Les marchés fonctionnent seulement pour ceux qui ont quelque chose à vendre. Les autres n'ont plus rien."
+    ryn blase "The markets only work for people who have something to sell. Everyone else has nothing left."
 
-# game/scenario/5_1.rpy:393
-translate english efd31f9e:
+# game/scenario/5_1.rpy:392
+translate english fbabe48c:
 
-    # kael "Charmant."
-    kael ""
+    # ryn blase "On a remplacé les files de rationnement par des files de gens qui ne peuvent rien acheter. Super changement."
+    ryn blase "We replaced ration lines with lines of people who can't afford to buy anything. What a great change."
 
-# game/scenario/5_1.rpy:395
-translate english ad317852:
+# game/scenario/5_1.rpy:394
+translate english 9f0dfa1f:
 
-    # nyra raison "Utile. Tu préfères."
-    nyra raison ""
+    # elen inquiet "Ryn… non, il faut juste—"
+    elen inquiet "Ryn... no, we just have to—"
+
+# game/scenario/5_1.rpy:396
+translate english 0c3759e3:
+
+    # ryn blase "Quoi ? C'est vrai, non ?"
+    ryn blase "What? It's true, isn't it?"
+
+# game/scenario/5_1.rpy:398
+translate english dc1b2de9:
+
+    # tomas hesitation "Euh... Techniquement, les premières tensions étaient prévisibles."
+    tomas hesitation "Um... Technically, the initial tensions were predictable."
 
 # game/scenario/5_1.rpy:399
-translate english ae07860b:
+translate english 1560b876:
 
-    # kael "Je pourrai demander à la contacter ce soir."
-    kael ""
+    # tomas hesitation "Quand on remplace un système aussi rapidement, il y a forcément un temps d'adaptation."
+    tomas hesitation "When you replace a system that quickly, there's bound to be an adjustment period."
 
-# game/scenario/5_1.rpy:400
-translate english 4ba44c55:
+# game/scenario/5_1.rpy:401
+translate english 51e87c9e:
 
-    # kael triste "Pendant les protocoles, les communications sont coupées ou filtrées."
-    kael triste ""
+    # ryn blase "Et ton modèle, il a mangé ce matin ?"
+    ryn blase "And did your model eat breakfast this morning?"
 
-# game/scenario/5_1.rpy:402
-translate english 3f73cc5e:
+# game/scenario/5_1.rpy:403
+translate english e84902d2:
 
-    # nyra "Kami peut refuser. Mais si elle accepte, tu lui diras quoi ?"
-    nyra ""
+    # tomas hesitation "Je... C'est une image ou une vraie question ?"
+    tomas hesitation "I... Is that a metaphor or an actual question?"
 
-# game/scenario/5_1.rpy:404
-translate english 4beaa1af:
+# game/scenario/5_1.rpy:405
+translate english 74a5328a:
 
-    # kael "Que je suis désolé."
-    kael ""
+    # ryn blase "Les deux."
+    ryn blase "Both."
 
-# game/scenario/5_1.rpy:406
-translate english 387067c5:
+# game/scenario/5_1.rpy:407
+translate english ac5bacf7:
 
-    # nyra "Pour quelle action précise ?"
-    nyra ""
+    # tomas hesitation "Alors... non. Enfin, un modèle ne mange pas."
+    tomas hesitation "Then... no. I mean, a model doesn't eat."
 
-# game/scenario/5_1.rpy:408
-translate english dcbeeb70:
+# game/scenario/5_1.rpy:409
+translate english 2a3369b4:
 
-    # kael "Ne pas avoir su."
-    kael ""
+    # ryn blase "Voilà. Sauf que les gens, eux, ont besoin de manger aujourd'hui."
+    ryn blase "Exactly. People do, and they need to eat today."
 
-# game/scenario/5_1.rpy:410
-translate english ccab05ff:
+# game/scenario/5_1.rpy:411
+translate english ff3488ea:
 
-    # nyra "Elle te demandera si tu pouvais réparer le sas à distance, les yeux fermés depuis le Conclave. Tu répondras quoi ?"
-    nyra ""
+    # kael triste "Ryn."
+    kael triste "Ryn."
 
-# game/scenario/5_1.rpy:412
-translate english a4d91cc4:
+# game/scenario/5_1.rpy:417
+translate english 98fb58bb:
 
-    # kael "Nyra."
-    kael ""
-
-# game/scenario/5_1.rpy:414
-translate english fe410593:
-
-    # nyra raison "Tu veux t'excuser pour quelque chose que tu ne pouvais ni voir ni empêcher."
-    nyra raison ""
-
-# game/scenario/5_1.rpy:415
-translate english 6d03395d:
-
-    # nyra "Cette excuse soulage qui ? Léa, ou toi ?"
-    nyra ""
+    # think "Tomas baisse les yeux. Personne ne cherche à défendre le résultat du vote."
+    think "Tomas lowers his eyes. No one tries to defend the outcome of the vote."
 
 # game/scenario/5_1.rpy:419
-translate english 5ab0598a:
+translate english d06189d7:
 
-    # kael "..."
-    kael ""
+    # think "Je m'installe avec une ration devant moi. Rien que l'odeur me coupe presque l'appétit."
+    think "I sit down with a ration in front of me. The smell alone nearly kills my appetite."
 
 # game/scenario/5_1.rpy:421
-translate english 9b272d2d:
+translate english 24d621c9:
 
-    # nyra "Voilà."
-    nyra ""
+    # lysa blase "Tu as vraiment une sale tête."
+    lysa blase "You look like absolute hell."
 
 # game/scenario/5_1.rpy:423
-translate english 22358c39:
+translate english bbeac84f:
 
-    # kael "T'es horrible."
-    kael ""
+    # noam taquin "Merci. J'ai préféré ne pas consulter le miroir ce matin."
+    noam taquin "Thanks. I decided not to consult the mirror this morning."
 
-# game/scenario/5_1.rpy:425
-translate english e4cefdef:
+# game/scenario/5_1.rpy:427
+translate english 6fca77e4:
 
-    # nyra neutre "Non. Je refuse seulement de t'aider à te punir."
-    nyra neutre ""
+    # noam taquin "Oui, Iris, j'avais compris le diagnostic."
+    noam taquin "Yes, Iris, I got the diagnosis."
 
 # game/scenario/5_1.rpy:429
-translate english e3ed5ecb:
+translate english 05a689ac:
 
-    # think "Kael lâche un rire sec. Pas joyeux, mais vivant."
-    think ""
+    # lysa blase "Si ça peut te rassurer, Dionysos n'a épargné personne."
+    lysa blase "If it makes you feel any better, Dionysus spared no one."
 
 # game/scenario/5_1.rpy:431
-translate english 057d6987:
+translate english 2a74ba65:
 
-    # kael "J'ai la tête qui tourne."
-    kael ""
+    # iris fatigue "Parle pour toi."
+    iris fatigue "Speak for yourself."
 
 # game/scenario/5_1.rpy:433
-translate english 8486cf2b:
+translate english a6b22d6c:
 
-    # nyra "Alcool ou culpabilité ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:435
-translate english 5c5ea390:
-
-    # kael "Les deux."
-    kael ""
+    # lysa blase "Je parlais surtout pour toi."
+    lysa blase "I was mostly talking about you."
 
 # game/scenario/5_1.rpy:437
-translate english ba1cbb77:
+translate english cc06064a:
 
-    # nyra "Certains conseillent de reboire après une cuite. Une idée catastrophique, donc parfaitement adaptée à cette semaine."
-    nyra ""
+    # noam taquin "C'est beau, cette solidarité féminine."
+    noam taquin "This female solidarity is truly beautiful."
 
 # game/scenario/5_1.rpy:439
-translate english 0c0b9884:
+translate english 1e44a49d:
 
-    # kael "Tu veux me tuer ? Déjà que…"
-    kael ""
+    # iris fatigue "Solidarité ? Tu parles."
+    iris fatigue "Solidarity? Don't make me laugh."
 
-# game/scenario/5_1.rpy:441
-translate english 9015322f:
+# game/scenario/5_1.rpy:440
+translate english eb84de06:
 
-    # think "Kael devient rouge. Le souvenir de la veille vient de le rattraper."
-    think ""
+    # iris fatigue "Madame n'a pas besoin d'effort pour être belle. Il suffisait de voir sa tête hier soir."
+    iris fatigue "Apparently, Little Miss Perfect doesn't even have to try to look beautiful. You should've seen her face last night."
 
-# game/scenario/5_1.rpy:443
-translate english 98d5e64c:
+# game/scenario/5_1.rpy:442
+translate english a5ac2cd4:
 
-    # kael "Rien."
-    kael ""
+    # think "Je préférerais vraiment éviter de repenser à ce qui s'est passé hier soir..."
+    think "I'd really rather not think about what happened last night..."
 
-# game/scenario/5_1.rpy:445
-translate english db91865f:
+# game/scenario/5_1.rpy:451
+translate english 72210245:
 
-    # nyra raison "J'ai une idée très précise du souvenir qui vient de te rattraper."
-    nyra raison ""
+    # think "Une porte s'ouvre derrière nous au moment où mon visage commence à chauffer. Ça me donne au moins une excuse pour me retourner."
+    think "A door opens behind us just as my face starts to heat up. At least it gives me an excuse to turn around."
 
-# game/scenario/5_1.rpy:447
-translate english 0b436cda:
+# game/scenario/5_1.rpy:455
+translate english 40bfa282:
 
-    # kael "Ne te moque pas."
-    kael ""
+    # think "Julian a l'air beaucoup trop en forme par rapport au reste de la pièce."
+    think "Julian looks far too lively compared with everyone else in the room."
 
-# game/scenario/5_1.rpy:449
-translate english 0a0fac9c:
+# game/scenario/5_1.rpy:457
+translate english 1051537e:
 
-    # nyra "Je ne me moque pas. Ça nous a fait du bien de souffler. Tu viens de le prouver."
-    nyra ""
+    # julian detendu "Voilà donc comment vous m'accueillez ?"
+    julian detendu "Is this really how you welcome me?"
 
-# game/scenario/5_1.rpy:453
-translate english 8469c203:
+# game/scenario/5_1.rpy:458
+translate english 543cb289:
 
-    # "Kael se relève lentement."
-    ""
+    # julian sourire "J'ai simplement décidé de ne pas me laisser vaincre par une gueule de bois."
+    julian sourire "I've simply decided not to let a hangover defeat me."
 
-# game/scenario/5_1.rpy:459
-translate english 23a1b434:
+# game/scenario/5_1.rpy:462
+translate english c3b21b5c:
 
-    # kael "Bon."
-    kael ""
+    # julian detendu "Savoir faire semblant est déjà une compétence politique."
+    julian detendu "Knowing how to pretend is already a political skill."
 
-# game/scenario/5_1.rpy:460
-translate english 317ec074:
+# game/scenario/5_1.rpy:466
+translate english be8a7950:
 
-    # kael "Je vais essayer d'avaler un bout."
-    kael ""
+    # julian detendu "Parfois, les deux sont utiles."
+    julian detendu "Sometimes both are useful."
 
-# game/scenario/5_1.rpy:461
-translate english ecb80836:
+# game/scenario/5_1.rpy:468
+translate english 3ae359be:
 
-    # kael "Après… je verrai."
-    kael ""
+    # julian detendu "Le vote a lieu demain. On ne va pas passer toute la journée à faire semblant de penser à autre chose."
+    julian detendu "The vote is tomorrow. We're not going to spend the whole day pretending to think about something else."
 
-# game/scenario/5_1.rpy:463
-translate english 8a01aaca:
+# game/scenario/5_1.rpy:472
+translate english fcfaf5f0:
 
-    # nyra "Après, tu verras."
-    nyra ""
-
-# game/scenario/5_1.rpy:465
-translate english d9fd513e:
-
-    # think "Il passe sans me parler. Il sait que j'ai tout entendu."
-    think ""
-
-# game/scenario/5_1.rpy:471
-translate english 40fce56e:
-
-    # nyra "Tu as tout entendu ?"
-    nyra ""
+    # julian detendu "Je pourrais. Mais je ne le ferai pas."
+    julian detendu "I could. But I won't."
 
 # game/scenario/5_1.rpy:473
-translate english 46081631_5:
+translate english 38896663:
 
-    # noam "Oui."
-    noam ""
+    # julian sourire "S'il faut encore échouer, autant le faire après avoir réellement défendu quelque chose."
+    julian sourire "If we're going to fail again, we may as well do it after genuinely fighting for something."
 
 # game/scenario/5_1.rpy:475
-translate english 13f78249:
+translate english acda4684:
 
-    # nyra neutre "Bien."
-    nyra neutre ""
+    # lysa blase "Je préférerais qu'on attende au moins que les antalgiques fassent effet avant de repartir au combat."
+    lysa blase "I'd rather wait until the painkillers kick in before we head back into battle."
 
 # game/scenario/5_1.rpy:477
-translate english 2e80c942:
+translate english a854c6ee:
 
-    # noam "Bien ?"
-    noam ""
+    # noam taquin "J'aime pas l'admettre, mais Julian n'a pas complètement tort."
+    noam taquin "I hate to admit it, but Julian isn't completely wrong."
 
-# game/scenario/5_1.rpy:479
-translate english e3128258:
+# game/scenario/5_1.rpy:478
+translate english a5682c25:
 
-    # nyra "Oui."
-    nyra ""
+    # noam inquiet "Demain arrive beaucoup trop vite."
+    noam inquiet "Tomorrow is coming far too quickly."
 
 # game/scenario/5_1.rpy:480
-translate english 72697ee3:
+translate english fff89b52:
 
-    # nyra raison "Les informations importantes doivent circuler. La douleur aussi, parfois."
-    nyra raison ""
+    # think "Au bout de la table, Sael reste silencieuse. Elle ne regarde même pas Julian lorsqu'il prononce son nom."
+    think "At the end of the table, Sael remains silent. She doesn't even look at Julian when he says her name."
 
-# game/scenario/5_1.rpy:481
-translate english 7c2561d5:
+# game/scenario/5_1.rpy:482
+translate english 4fd30879:
 
-    # nyra "Une crise à Orbite ne se gère jamais seul. Kael avait besoin de s'entendre répondre."
-    nyra ""
+    # julian detendu "Sael."
+    julian detendu "Sael."
 
-# game/scenario/5_1.rpy:483
-translate english 9ead6607:
+# game/scenario/5_1.rpy:484
+translate english c9c0415b_1:
 
-    # noam "Même quand ça fait mal ?"
-    noam ""
+    # sael mefiant "Non."
+    sael mefiant "No."
 
-# game/scenario/5_1.rpy:485
-translate english c3ee55f8:
+# game/scenario/5_1.rpy:488
+translate english 0f99b802:
 
-    # nyra "Surtout quand ça fait mal. C'est là qu'on touche quelque chose de vrai."
-    nyra ""
+    # sael mefiant "Tu allais encore me demander de changer d'avis. Alors je préfère te répondre tout de suite."
+    sael mefiant "You were going to ask me to change my mind again. So I'd rather answer you now."
 
-# game/scenario/5_1.rpy:492
-translate english de3bfcb1:
+# game/scenario/5_1.rpy:489
+translate english c9c0415b_2:
 
-    # think "Nyra suit Kael à distance. Assez près pour l'aider, assez loin pour qu'il marche seul."
-    think ""
+    # sael mefiant "Non."
+    sael mefiant "No."
 
-# game/scenario/5_1.rpy:494
-translate english bf69fd0a:
+# game/scenario/5_1.rpy:493
+translate english 91ad5a33:
 
-    # think "Cent quarante personnes. Dont Léa…"
-    think ""
+    # julian sourire "Je voulais seulement reprendre la discussion d'hier."
+    julian sourire "I only wanted to continue yesterday's discussion."
 
 # game/scenario/5_1.rpy:495
-translate english f9ccd969:
+translate english 291ec443:
 
-    # think "Sa petite sœur, visiblement."
-    think ""
+    # sael determine "Je n'ai rien de plus à ajouter."
+    sael determine "I have nothing more to add."
 
-# game/scenario/5_1.rpy:497
-translate english 273b2921:
+# game/scenario/5_1.rpy:499
+translate english b19d604f:
 
-    # noam "Pas étonnant qu'il culpabilise…"
-    noam ""
+    # sael determine "Je vous écouterai si vous avez quelque chose de nouveau à dire. Mais je ne changerai pas d'avis seulement pour vous rassurer."
+    sael determine "I'll listen if you have something new to say. But I won't change my mind just to reassure you."
 
-# game/scenario/5_1.rpy:498
-translate english 7bd2a25f:
+# game/scenario/5_1.rpy:501
+translate english 6071a0a5:
 
-    # noam "Ce Conclave mélange des mondes qui n'auraient jamais dû se toucher, puis nous demande de voter sur les dégâts."
-    noam ""
+    # julian detendu "Personne ne t'oblige. Mais le collectif mérite—"
+    julian detendu "No one is forcing you. But the group deserves—"
 
-# game/scenario/5_1.rpy:515
-translate english f2b0dec9:
+# game/scenario/5_1.rpy:503
+translate english c0a82b47:
 
-    # think "La cafétéria ressemble à un lendemain de fête condamné sans appel."
-    think ""
+    # sael determine "Alors n'insiste pas. Répéter les mêmes arguments ne les rendra pas meilleurs."
+    sael determine "Then stop pushing. Repeating the same arguments won't make them any better."
+
+# game/scenario/5_1.rpy:505
+translate english 2ebac71d:
+
+    # think "Julian conserve son sourire, mais détourne légèrement le regard."
+    think "Julian keeps smiling, but his gaze drifts slightly away."
+
+# game/scenario/5_1.rpy:508
+translate english e484856b:
+
+    # julian detendu "Nous reprendrons cette conversation plus tard."
+    julian detendu "We'll continue this conversation later."
+
+# game/scenario/5_1.rpy:513
+translate english 84372792:
+
+    # sael mefiant "Tu pourras parler si tu le souhaites. Ça ne veut pas dire que je te répondrai."
+    sael mefiant "You can talk if you want. That doesn't mean I'll answer."
+
+# game/scenario/5_1.rpy:518
+translate english f0a42d79:
+
+    # lysa neutre "Même notre premier réveil dans le Conclave était plus agréable que ce petit-déjeuner."
+    lysa neutre "Even our first morning in the Conclave was more pleasant than this breakfast."
+
+# game/scenario/5_1.rpy:522
+translate english a7b9356e:
+
+    # lysa blase "Vexée de ne pas avoir été choisie ?"
+    lysa blase "Upset you weren't picked?"
+
+# game/scenario/5_1.rpy:527
+translate english 5658a003:
+
+    # lysa blase "Aucune préférence ? Dommage."
+    lysa blase "No preference? That's a shame."
 
 # game/scenario/5_1.rpy:528
-translate english f95f5b9d:
+translate english 48761e10:
 
-    # elen fatigue "Kael..."
-    elen fatigue ""
+    # lysa taquin "Pour information, Noam embrasse mieux qu'il ne répond aux questions. Ce n'est pas très difficile, cela dit."
+    lysa taquin "For the record, Noam kisses better than he answers questions. Not that it's a very high bar."
 
 # game/scenario/5_1.rpy:530
-translate english 86234b41:
+translate english 1ce9250c:
 
-    # kael "Oui. J'ai vu."
-    kael ""
+    # noam taquin "Je vais..."
+    noam taquin "I'm going to..."
 
-# game/scenario/5_1.rpy:532
-translate english 6a42aa3f:
+# game/scenario/5_1.rpy:531
+translate english d68e3873:
 
-    # elen "Je voulais pas— enfin, hier, on savait pas et… ça va ?"
-    elen ""
+    # noam taquin "Très loin."
+    noam taquin "Far away."
 
-# game/scenario/5_1.rpy:534
-translate english e3ca98d3:
+# game/scenario/5_1.rpy:537
+translate english 62762ba2:
 
-    # kael "Ça ira. Pas maintenant. Mais ça ira."
-    kael ""
+    # noam taquin "J'ai juste terminé de manger. Et je vais partir avant que ça empire."
+    noam taquin "I've just finished eating. And I'm leaving before this gets worse."
 
-# game/scenario/5_1.rpy:536
-translate english a2a81bcd:
+# game/scenario/5_1.rpy:539
+translate english 215cc696:
 
-    # ryn "Traduction : non."
-    ryn ""
-
-# game/scenario/5_1.rpy:538
-translate english 3c35d139:
-
-    # kael "Traduction : je mange."
-    kael ""
-
-# game/scenario/5_1.rpy:540
-translate english 2c3b107d:
-
-    # elen fatigue "D'accord. Oui. Mange. Je peux te trouver un truc sucré si— non. Mange d'abord."
-    elen fatigue ""
-
-# game/scenario/5_1.rpy:542
-translate english 74f118f2:
-
-    # ryn blase "Moi, c'est Limen qui me fait flipper."
-    ryn blase ""
-
-# game/scenario/5_1.rpy:544
-translate english 57ec8ed5:
-
-    # elen "Les marchés ?"
-    elen ""
-
-# game/scenario/5_1.rpy:546
-translate english 286ea977:
-
-    # ryn "Les files."
-    ryn ""
-
-# game/scenario/5_1.rpy:547
-translate english 6e65fa83:
-
-    # ryn "Regarde l'écran. Les gens attendent toujours leurs rations."
-    ryn ""
-
-# game/scenario/5_1.rpy:548
-translate english 70eee5a7:
-
-    # ryn "Comme s'ils allaient en avoir…"
-    ryn ""
-
-# game/scenario/5_1.rpy:550
-translate english 3e3185d6:
-
-    # elen "Kami a dit que les marchés fonctionnaient. Ça va prendre un peu de temps, mais ça va démarrer."
-    elen ""
+    # think "Je récupère mon plateau et manque presque de rentrer dans une chaise en m'éloignant. Elles éclatent de rire derrière moi."
+    think "I pick up my tray and nearly walk straight into a chair as I leave. They burst out laughing behind me."
 
 # game/scenario/5_1.rpy:551
-translate english 39498f5c:
+translate english dc72feb9:
 
-    # elen reflexion "Ça doit démarrer."
-    elen reflexion ""
+    # think "J'ai encore toute la matinée devant moi. Je devrais trouver quelque chose à faire avant que la discussion ne reprenne."
+    think "I still have the entire morning ahead of me. I should find something to do before the discussion starts again."
 
-# game/scenario/5_1.rpy:553
-translate english f3c08671:
+# game/scenario/5_1.rpy:571
+translate english a0a44db5:
 
-    # ryn "Les marchés fonctionnent pour ceux qui ont un truc à vendre."
-    ryn ""
+    # think "Sael refuse toujours de discuter et Julian reviendra forcément à la charge. Moi, j'ai trop mal au crâne pour continuer à les écouter."
+    think "Sael still refuses to talk, and Julian is bound to try again. My head hurts too much to keep listening to them."
 
-# game/scenario/5_1.rpy:554
-translate english 0465f98e:
+# game/scenario/5_1.rpy:575
+translate english fc104bd6:
 
-    # ryn blase "Pour les autres, c'est juste une façon plus chic de crever debout."
-    ryn blase ""
+    # elias inquiet "Noam."
+    elias inquiet "Noam."
 
-# game/scenario/5_1.rpy:556
-translate english 55c0d216:
+# game/scenario/5_1.rpy:577
+translate english 5d09db47:
 
-    # elen "Ryn… non, il faut juste—"
-    elen ""
+    # noam inquiet "Elias ?"
+    noam inquiet "Elias?"
 
-# game/scenario/5_1.rpy:558
-translate english fe413170:
+# game/scenario/5_1.rpy:579
+translate english 294c2418:
 
-    # ryn "Quoi ? C'est vrai, non ?"
-    ryn ""
+    # elias inquiet "Viens à l'infirmerie. Vite."
+    elias inquiet "Come to the infirmary. Now."
 
-# game/scenario/5_1.rpy:561
-translate english 012dd30d:
+# game/scenario/5_1.rpy:581
+translate english db1a8965:
 
-    # tomas hesitation "Euh… techniquement, les premières tensions étaient prévisibles."
-    tomas hesitation ""
+    # noam inquiet "Qu'est-ce qui—"
+    noam inquiet "What—"
 
-# game/scenario/5_1.rpy:562
-translate english b5a93fbb:
+# game/scenario/5_1.rpy:583
+translate english 91745115:
 
-    # tomas "Quand on change le système il faut toujours un temps d'adaptation."
-    tomas ""
-
-# game/scenario/5_1.rpy:564
-translate english 6ce8dfe2:
-
-    # ryn "Ton modèle, il a mangé ce matin ?"
-    ryn ""
-
-# game/scenario/5_1.rpy:566
-translate english 4d70db9f:
-
-    # tomas "Je… c'est une image ou une vraie question ?"
-    tomas ""
-
-# game/scenario/5_1.rpy:568
-translate english d4bbd5a5:
-
-    # ryn "Les deux."
-    ryn ""
-
-# game/scenario/5_1.rpy:570
-translate english f4dae2ef:
-
-    # tomas hesitation "Alors… non. Enfin, un modèle ne mange pas."
-    tomas hesitation ""
-
-# game/scenario/5_1.rpy:572
-translate english 749ba5d0:
-
-    # ryn "Voilà. Et les gens veulent juste pouvoir manger."
-    ryn ""
-
-# game/scenario/5_1.rpy:574
-translate english ebf07ba1:
-
-    # kael "Ryn."
-    kael ""
-
-# game/scenario/5_1.rpy:576
-translate english 34286576:
-
-    # ryn blase "Quoi ? J'ai pas crié."
-    ryn blase ""
-
-# game/scenario/5_1.rpy:578
-translate english 6bb05c2c:
-
-    # tomas hesitation "Non, mais... l'effet était très proche."
-    tomas hesitation ""
-
-# game/scenario/5_1.rpy:580
-translate english 6c204264:
-
-    # think "Personne ne rit. Tout le monde comprend."
-    think ""
+    # elias inquiet "Kael."
+    elias inquiet "Kael."
 
 # game/scenario/5_1.rpy:585
-translate english 1c07b3a3:
+translate english e9b79aec:
 
-    # think "Je m'installe devant une ration. Elle me regarde. Je la menace. Match nul."
-    think ""
+    # noam inquiet "Quoi, Kael ?"
+    noam inquiet "What about Kael?"
 
-# game/scenario/5_1.rpy:588
-translate english 82738166:
+# game/scenario/5_1.rpy:587
+translate english 8ba01381:
 
-    # lysa blase "T'as une de ces têtes."
-    lysa blase ""
+    # elias inquiet "Il s'est explosé la main contre un mur. Il y a du sang partout."
+    elias inquiet "He smashed his hand against a wall. There's blood everywhere."
 
-# game/scenario/5_1.rpy:590
-translate english 8d245cbf:
+# game/scenario/5_1.rpy:589
+translate english 4de16c34:
 
-    # noam "Merci. J'ai préféré ne pas consulter le miroir ce matin."
-    noam ""
-
-# game/scenario/5_1.rpy:592
-translate english ba521257:
-
-    # iris fatigue "Non, mais vraiment."
-    iris fatigue ""
-
-# game/scenario/5_1.rpy:594
-translate english 9b62955c:
-
-    # noam "Oui, Iris, j'avais compris le diagnostic."
-    noam ""
-
-# game/scenario/5_1.rpy:596
-translate english feb80157:
-
-    # lysa "Si ça peut te rassurer, Dionysos n'a épargné personne."
-    lysa ""
-
-# game/scenario/5_1.rpy:598
-translate english a84678ae:
-
-    # iris "Parle pour toi."
-    iris ""
-
-# game/scenario/5_1.rpy:600
-translate english 04923dbb:
-
-    # lysa "Je parlais surtout pour toi."
-    lysa ""
-
-# game/scenario/5_1.rpy:602
-translate english 01a17990:
-
-    # iris fatigue "Pff."
-    iris fatigue ""
-
-# game/scenario/5_1.rpy:604
-translate english 9124b4c7:
-
-    # noam "C'est beau, cette solidarité féminine."
-    noam ""
-
-# game/scenario/5_1.rpy:606
-translate english b44c0bbb:
-
-    # iris "Solidarité ? Tu parles."
-    iris ""
-
-# game/scenario/5_1.rpy:607
-translate english 36dad49b:
-
-    # iris "Madame n'a pas besoin d'effort pour être belle. Il suffisait de voir sa tête hier soir."
-    iris ""
+    # noam inquiet "Merde."
+    noam inquiet "Shit."
 
 # game/scenario/5_1.rpy:610
-translate english d1af98c2_6:
+translate english 185d1bab:
 
-    # think "Non."
-    think ""
+    # think "L'odeur de désinfectant me donne presque immédiatement la nausée."
+    think "The smell of disinfectant makes me nauseous almost immediately."
 
-# game/scenario/5_1.rpy:611
-translate english 8fbc0a41:
+# game/scenario/5_1.rpy:614
+translate english f35165e4:
 
-    # think "Je préférerais éviter d'y repenser…"
-    think ""
+    # think "Mara fouille dans une armoire pendant que Nyra reste près de Kael. Elias, lui, s'est collé contre le mur."
+    think "Mara is rummaging through a cabinet while Nyra stays beside Kael. Elias has pressed himself against the wall."
 
-# game/scenario/5_1.rpy:622
-translate english 655e5799:
+# game/scenario/5_1.rpy:616
+translate english a06f4866:
 
-    # think "Une porte s'ouvre derrière nous pendant que mon visage brûle encore."
-    think ""
+    # noam inquiet "Kael."
+    noam inquiet "Kael."
 
-# game/scenario/5_1.rpy:623
-translate english 26330917:
+# game/scenario/5_1.rpy:618
+translate english 99ef1833:
 
-    # think "Timing parfait pour changer de sujet."
-    think ""
+    # kael fatigue "Salut."
+    kael fatigue "Hey."
+
+# game/scenario/5_1.rpy:620
+translate english e6dd8e93:
+
+    # noam inquiet "...Salut ?"
+    noam inquiet "...Hey?"
 
 # game/scenario/5_1.rpy:626
-translate english d9aad2e3:
+translate english 141b2745:
 
-    # julian detendu "Bonjour à tous."
-    julian detendu ""
+    # noam inquiet "Un mur ?"
+    noam inquiet "A wall?"
 
 # game/scenario/5_1.rpy:628
-translate english dca317a6:
+translate english 8208f07c:
 
-    # noam "Il a l'air en forme. C'est louche."
-    noam ""
+    # mara taquin "Monsieur a frappé dans un mur. Plusieurs fois, parce qu'une seule ne suffisait visiblement pas."
+    mara taquin "Our friend here punched a wall. Several times, because once apparently wasn't enough."
 
-# game/scenario/5_1.rpy:630
-translate english a5577cbf:
+# game/scenario/5_1.rpy:629
+translate english 999eefa0:
 
-    # julian "Voilà donc comment on accueille Julian ?"
-    julian ""
+    # mara agace "Le mur n'a rien. Sa main, par contre..."
+    mara agace "The wall is fine. His hand, on the other hand..."
 
 # game/scenario/5_1.rpy:631
-translate english 57cc5794:
+translate english fca208ec:
 
-    # julian sourire "J'ai choisi de transcender la gueule de bois."
-    julian sourire ""
+    # kael triste "Je te remercie pour cette synthèse."
+    kael triste "Thank you for that summary."
 
 # game/scenario/5_1.rpy:633
-translate english ef5fbb3e:
+translate english ead86b61:
 
-    # lysa blase "Personne ne transcende rien. Tu fais juste mieux semblant que nous."
-    lysa blase ""
+    # mara agace "J'essaie surtout de l'empêcher de foutre du sang partout. Et accessoirement de sauver sa main."
+    mara agace "I'm mostly trying to stop him from getting blood everywhere. And, incidentally, save his hand."
 
 # game/scenario/5_1.rpy:635
-translate english a982a100:
+translate english 745f7501:
 
-    # julian "C'est déjà une compétence politique."
-    julian ""
+    # noam inquiet "Pourquoi tu as fait ça ?"
+    noam inquiet "Why did you do that?"
 
 # game/scenario/5_1.rpy:637
-translate english 268bc8cc:
+translate english 2485d468:
 
-    # ryn blase "Ou un défaut."
-    ryn blase ""
+    # kael triste "Kami a refusé ma demande."
+    kael triste "Kami denied my request."
 
 # game/scenario/5_1.rpy:639
-translate english de70833e:
+translate english 39ac2f2c:
 
-    # julian detendu "Les deux peuvent être rentables."
-    julian detendu ""
+    # noam inquiet "Quelle demande ?"
+    noam inquiet "What request?"
 
 # game/scenario/5_1.rpy:643
-translate english 39da0a16:
+translate english 9009f8cf:
 
-    # julian "Le vote est demain. Nous n'allons pas passer la journée à feindre qu'un autre sujet compte davantage."
-    julian ""
+    # kael triste "Je ne demandais même pas une vraie conversation. Seulement trente secondes pour savoir si elle allait bien."
+    kael triste "I wasn't even asking for a real conversation. Just thirty seconds to find out if she was okay."
 
 # game/scenario/5_1.rpy:645
-translate english 86765710:
+translate english 948dd000:
 
-    # iris fatigue "Rends-nous service : tais-toi jusqu'à ce que les antalgiques fonctionnent."
-    iris fatigue ""
+    # noam inquiet "Et elle a dit non ?"
+    noam inquiet "And she said no?"
 
 # game/scenario/5_1.rpy:647
-translate english 826139c5:
+translate english e0c2eaf4:
 
-    # julian "Je peux. Julian ne le fera pas."
-    julian ""
+    # kael triste "Communications familiales hors priorités du Conclave. Interdites par le règlement."
+    kael triste "Family communications are not a Conclave priority. Prohibited under the rules."
 
-# game/scenario/5_1.rpy:648
-translate english 8e803a65:
+# game/scenario/5_1.rpy:649
+translate english cb580175:
 
-    # julian sourire "S'il faut échouer, nous échouerons debout, après avoir défendu quelque chose."
-    julian sourire ""
+    # kael triste "Et les représentants doivent éviter les distractions émotionnelles avant un vote important."
+    kael triste "And representatives must avoid emotional distractions before an important vote."
 
-# game/scenario/5_1.rpy:650
-translate english 9eafa008:
+# game/scenario/5_1.rpy:651
+translate english 17b9e513:
 
-    # lysa "Je vote pour l'échec silencieux. Les Spartiates avaient au moins cette qualité."
-    lysa ""
+    # think "Kami a trouvé une règle assez froide pour transformer son inquiétude en simple distraction."
+    think "Kami found a rule cold enough to reduce his fear to a mere distraction."
 
-# game/scenario/5_1.rpy:652
-translate english 43eec69b:
+# game/scenario/5_1.rpy:655
+translate english 48790978:
 
-    # noam "J'aime pas l'admettre, mais Julian n'a pas complètement tort."
-    noam ""
+    # kael triste "Et j'ai frappé un mur."
+    kael triste "So I punched a wall."
 
-# game/scenario/5_1.rpy:653
-translate english 6b7820fe:
+# game/scenario/5_1.rpy:657
+translate english a939a74c:
 
-    # noam "Demain arrive beaucoup trop vite."
-    noam ""
+    # mara taquin "Et tu as frappé un mur. Bravo."
+    mara taquin "And you punched a wall. Well done."
 
-# game/scenario/5_1.rpy:658
-translate english 29fcbfef:
+# game/scenario/5_1.rpy:659
+translate english b6b2d36c:
 
-    # think "Au bout de la table, Sael est droite, silencieuse, déjà retranchée."
-    think ""
+    # kael triste "Ouais. C'était pas la meilleure décision de ma vie."
+    kael triste "Yeah. It wasn't the best decision I've ever made."
 
-# game/scenario/5_1.rpy:660
-translate english 31d8bf58:
+# game/scenario/5_1.rpy:665
+translate english cbf7c913:
 
-    # julian "Sael."
-    julian ""
+    # kael surpris "Aïe."
+    kael surpris "Ow."
 
-# game/scenario/5_1.rpy:664
-translate english 1a64985a:
+# game/scenario/5_1.rpy:667
+translate english 1cc58dd0:
 
-    # sael "Non."
-    sael ""
-
-# game/scenario/5_1.rpy:666
-translate english fbd7286d:
-
-    # julian detendu "Je n'ai pas encore posé la question."
-    julian detendu ""
-
-# game/scenario/5_1.rpy:668
-translate english c21abaf6:
-
-    # sael "Tu allais la poser. Certaines paroles font du bruit avant de sortir."
-    sael ""
+    # mara taquin "J'ai pas touché."
+    mara taquin "I haven't touched you yet."
 
 # game/scenario/5_1.rpy:669
-translate english 8359c6d2:
+translate english 3de40f6a:
 
-    # sael mefiant "Et j'ai dit non."
-    sael mefiant ""
+    # kael fatigue "Je prends de l'avance."
+    kael fatigue "I'm getting a head start."
 
 # game/scenario/5_1.rpy:671
-translate english cb20bf19:
+translate english 13fa1461:
 
-    # ryn blase "Au moins ça a le mérite d'être clair."
-    ryn blase ""
+    # mara agace "Arrête de prendre des initiatives."
+    mara agace "Stop taking the initiative."
 
 # game/scenario/5_1.rpy:673
-translate english b857917e:
+translate english 2085b747:
 
-    # julian sourire "Je voulais seulement ouvrir une discussion."
-    julian sourire ""
+    # think "Mara commence à nettoyer la plaie. Kael regarde ailleurs et sa main continue de trembler."
+    think "Mara starts cleaning the wound. Kael looks away, and his hand keeps trembling."
 
 # game/scenario/5_1.rpy:675
-translate english aad2b5d1:
+translate english 5de64e60:
 
-    # sael "Elle est fermée."
-    sael ""
+    # noam inquiet "Tu penses qu'elle est en danger ?"
+    noam inquiet "Do you think she's in danger?"
 
 # game/scenario/5_1.rpy:677
-translate english d68547a4:
+translate english ad598921:
 
-    # elen inquiet "Sael, on peut juste écouter ? Sans crier, sans porte qui claque, sans— enfin, juste écouter ?"
-    elen inquiet ""
+    # kael triste "Je ne sais pas. Aucune information exploitable."
+    kael triste "I don't know. There's no usable information."
 
 # game/scenario/5_1.rpy:679
-translate english 3b52b84d:
+translate english 6f7bec50:
 
-    # sael "Personne n'a à me tirer hors de ma position. J'en sortirai si j'y vois un chemin."
-    sael ""
+    # noam inquiet "Le module s'est isolé correctement ?"
+    noam inquiet "Did the module isolate properly?"
 
 # game/scenario/5_1.rpy:681
-translate english 3abf1cad:
+translate english 95e0f73a_1:
 
-    # julian "Personne ne t'oblige. Mais le collectif mérite—"
-    julian ""
+    # kael triste "Oui."
+    kael triste "Yes."
 
-# game/scenario/5_1.rpy:683
-translate english cfedf677:
+# game/scenario/5_1.rpy:684
+translate english c69b8a3e:
 
-    # sael "Alors n'insiste pas. Les mots répétés ne deviennent pas plus vrais."
-    sael ""
+    # kael triste "Normalement, un sas ne lâche pas en pleine nuit. Et une enfant de six ans ne devrait pas avoir à enfiler un scaphandre en trente secondes."
+    kael triste "Normally, an airlock doesn't fail in the middle of the night. And a six-year-old shouldn't have to put on a spacesuit in thirty seconds."
+
+# game/scenario/5_1.rpy:685
+translate english ab226af8:
+
+    # kael triste "Je devrais au moins pouvoir lui demander si elle va bien."
+    kael triste "I should at least be allowed to ask if she's okay."
 
 # game/scenario/5_1.rpy:687
-translate english 18abfa90:
+translate english 7c4f513b:
 
-    # think "Julian garde son sourire. Le sourire, lui, accuse le coup."
-    think ""
-
-# game/scenario/5_1.rpy:689
-translate english 3386a595:
-
-    # julian detendu "Très bien."
-    julian detendu ""
+    # kael triste "Rien de tout ça ne devrait être normal."
+    kael triste "None of this should be normal."
 
 # game/scenario/5_1.rpy:690
-translate english 7b4e4c31:
+translate english d3e421d0:
 
-    # julian "Nous reprendrons cette conversation plus tard."
-    julian ""
+    # elias inquiet "Donc si le protocole a fonctionné, ils ne sont plus en danger immédiat. Au moins, on sait ça."
+    elias inquiet "So if the protocol worked, they're no longer in immediate danger. At least we know that much."
 
-# game/scenario/5_1.rpy:695
-translate english f479ea5d:
+# game/scenario/5_1.rpy:692
+translate english cbcaad30:
 
-    # sael "Tu parleras. Je répondrai si c'est nécessaire. Ce n'est pas la même chose."
-    sael ""
+    # kael triste "Je sais."
+    kael triste "I know."
+
+# game/scenario/5_1.rpy:694
+translate english 65b5b128:
+
+    # think "Elias se tait brusquement et fixe le plafond. Toute cette histoire semble le mettre particulièrement mal à l'aise."
+    think "Elias abruptly falls silent and stares at the ceiling. This whole situation seems to make him especially uncomfortable."
+
+# game/scenario/5_1.rpy:696
+translate english 5fdce419:
+
+    # mara neutre "Bon."
+    mara neutre "All right."
+
+# game/scenario/5_1.rpy:697
+translate english c1e902b7:
+
+    # mara neutre "Ta main va survivre. Je ne sens pas de fracture et tu n'auras pas besoin de points."
+    mara neutre "Your hand will survive. I can't feel a fracture, and you won't need stitches."
+
+# game/scenario/5_1.rpy:698
+translate english a686972f:
+
+    # mara taquin "Par contre, tu vas avoir un bleu énorme."
+    mara taquin "But you're going to have one hell of a bruise."
 
 # game/scenario/5_1.rpy:701
-translate english f9fced97:
+translate english a2309a1b:
 
-    # lysa neutre "Même le banquet de Tantale avait une ambiance plus légère."
-    lysa neutre ""
+    # kael triste "Compris."
+    kael triste "Understood."
 
 # game/scenario/5_1.rpy:703
-translate english 63c59541:
+translate english aa6e54a7:
 
-    # iris taquin "Je regrette presque la bouteille. C'est dire le niveau de catastrophe."
-    iris taquin ""
+    # mara agace "Mauvaise réponse."
+    mara agace "Wrong answer."
 
 # game/scenario/5_1.rpy:705
-translate english cf855433:
+translate english e2f25aaa:
 
-    # lysa "Vexée de ne pas avoir été choisie ?"
-    lysa ""
+    # kael triste "… Pardon ?"
+    kael triste "... Sorry?"
 
 # game/scenario/5_1.rpy:707
-translate english 5404ec00:
+translate english 0e5dbb68:
 
-    # iris rire "Moi vexée ? Et puis quoi encore."
-    iris rire ""
+    # mara agace "« Compris », ça ne veut rien dire. Je veux t'entendre dire que tu ne recommenceras pas."
+    mara agace "“Understood” doesn't mean anything. I want to hear you say you won't do it again."
 
-# game/scenario/5_1.rpy:708
-translate english 35fa8a57:
+# game/scenario/5_1.rpy:709
+translate english 7fe97c29:
 
-    # iris taquin "Et pour embrasser qui d'abord ?"
-    iris taquin ""
-
-# game/scenario/5_1.rpy:710
-translate english 85bb6e98:
-
-    # lysa "Aucune préférence ? Dommage."
-    lysa ""
+    # kael triste "Je ne recommencerai pas."
+    kael triste "I won't do it again."
 
 # game/scenario/5_1.rpy:711
-translate english 463227a5:
+translate english fdf67a38:
 
-    # lysa taquin "Pour information, Noam embrasse mieux qu'il ne répond aux questions."
-    lysa taquin ""
+    # mara agace "C'est déjà mieux."
+    mara agace "That's better."
 
 # game/scenario/5_1.rpy:713
-translate english 59f3d94a:
+translate english 85615f1e:
 
-    # noam "Je vais..."
-    noam ""
+    # think "Mara serre le bandage. Kael observe sa main sans parvenir à la garder immobile."
+    think "Mara tightens the bandage. Kael stares at his hand, unable to keep it still."
 
-# game/scenario/5_1.rpy:714
-translate english d9608750:
+# game/scenario/5_1.rpy:717
+translate english e05bf322:
 
-    # noam "Très loin."
-    noam ""
+    # noam inquiet "Pour le vote ?"
+    noam inquiet "Is this about the vote?"
 
-# game/scenario/5_1.rpy:716
-translate english 07667726:
+# game/scenario/5_1.rpy:719
+translate english 95e0f73a_2:
 
-    # iris taquin "Oh ? Il fuit."
-    iris taquin ""
+    # kael triste "Oui."
+    kael triste "Yes."
 
-# game/scenario/5_1.rpy:718
-translate english 7e2ab9c6:
+# game/scenario/5_1.rpy:721
+translate english 62565ba9:
 
-    # lysa taquin "Il bat en retraite."
-    lysa taquin ""
+    # kael triste "Je pensais savoir ce que je voulais voter."
+    kael triste "I thought I knew how I wanted to vote."
 
-# game/scenario/5_1.rpy:720
-translate english 4c0e92e3:
+# game/scenario/5_1.rpy:723
+translate english 6b4e794a:
 
-    # noam "J'appelle ça une manœuvre stratégique."
-    noam ""
+    # kael triste "Maintenant, je pense à Orbite, à Léa, à Kami... Je n'arrive plus à séparer tout ça du vote."
+    kael triste "Now I keep thinking about Orbite, Léa, Kami... I can't separate any of it from the vote anymore."
 
-# game/scenario/5_1.rpy:722
-translate english 4b4b269f:
+# game/scenario/5_1.rpy:725
+translate english a2b4e431:
 
-    # think "Je saisis mon plateau et manque la sortie. Retraite stratégique exemplaire."
-    think ""
+    # kael triste "Si je vote demain, je ne saurai même pas si c'est vraiment mon choix ou seulement ma peur."
+    kael triste "If I vote tomorrow, I won't even know whether it's really my choice or just my fear."
 
-# game/scenario/5_1.rpy:736
-translate english 2efd02d4:
+# game/scenario/5_1.rpy:727
+translate english adbf46f9:
 
-    # noam "Bon."
-    noam ""
+    # nyra raison "Alors ne force pas une réponse. Repose-toi."
+    nyra raison "Then don't force an answer. Get some rest."
+
+# game/scenario/5_1.rpy:731
+translate english 840db7b6:
+
+    # nyra raison "Je n'ai pas dit que c'était idéal. J'ai dit qu'il avait le droit de ne pas voter."
+    nyra raison "I didn't say it was ideal. I said he has the right not to vote."
+
+# game/scenario/5_1.rpy:733
+translate english 679f2021:
+
+    # elias inquiet "La participation n'est pas obligatoire ?"
+    elias inquiet "Participation isn't mandatory?"
 
 # game/scenario/5_1.rpy:737
-translate english 8620e964:
+translate english ae120c74:
 
-    # noam "Matinée ouverte. Morale fermée."
-    noam ""
+    # nyra raison "Elle ne l'est pas. Les règles sont claires : une absence retire seulement le bulletin du décompte."
+    nyra raison "No. The rules are clear: if someone is absent, their ballot is simply removed from the count."
 
-# game/scenario/5_1.rpy:738
-translate english 05b7bcac:
+# game/scenario/5_1.rpy:741
+translate english 3db6128d:
 
-    # noam "On progresse."
-    noam ""
+    # nyra raison "Ton absence sera enregistrée, mais elle ne comptera pas comme un vote contre. C'est la même chose qu'une abstention."
+    nyra raison "Your absence will be recorded, but it won't count as a vote against. It's the same as abstaining."
+
+# game/scenario/5_1.rpy:746
+translate english 376ef5be:
+
+    # nyra raison "Je répète la règle. Pour une fois, elle est assez claire."
+    nyra raison "I'm repeating the rule. For once, it's clear enough."
+
+# game/scenario/5_1.rpy:748
+translate english 364d3a2e:
+
+    # think "Tout le monde se tait. Cette règle n'avait encore jamais semblé aussi importante."
+    think "Everyone falls silent. That rule has never seemed so important before."
+
+# game/scenario/5_1.rpy:750
+translate english ca569019:
+
+    # noam inquiet "Kami demande l'unanimité des votes exprimés."
+    noam inquiet "Kami requires unanimity among the votes cast."
 
 # game/scenario/5_1.rpy:752
-translate english 65c25efb:
+translate english a6c3c244:
 
-    # think "Je quitte la cafétéria sans destination. J'avais seulement besoin de ne plus être là."
-    think ""
+    # think "Je le dis presque pour moi. Si quelqu'un ne participe pas, il ne peut pas empêcher un texte d'être adopté."
+    think "I say it almost to myself. If someone doesn't participate, they can't stop a proposal from passing."
+
+# game/scenario/5_1.rpy:754
+translate english a42a5372_1:
+
+    # nyra raison "Oui."
+    nyra raison "Yes."
 
 # game/scenario/5_1.rpy:756
-translate english ed67b861:
+translate english 412327e9:
 
-    # think "Sael a fermé la discussion. Julian a encaissé. Moi, j'ai trop mal au crâne pour jouer l'arbitre."
-    think ""
+    # think "Mara réfléchit. Elias baisse les yeux. Kael semble déjà avoir pris sa décision."
+    think "Mara thinks it over. Elias lowers his eyes. Kael already seems to have made his decision."
 
 # game/scenario/5_1.rpy:760
-translate english 3afb2f94:
+translate english 0a767d50:
 
-    # think "Des pas rapides me rattrapent."
-    think ""
+    # nyra raison "Dans cet état ?"
+    nyra raison "In your condition?"
 
-# game/scenario/5_1.rpy:766
-translate english 865c1b15:
+# game/scenario/5_1.rpy:762
+translate english 95e0f73a_3:
 
-    # elias "Noam."
-    elias ""
+    # kael triste "Oui."
+    kael triste "Yes."
 
-# game/scenario/5_1.rpy:768
-translate english 4176c186:
+# game/scenario/5_1.rpy:765
+translate english 0aa49091:
 
-    # noam "Elias ?"
-    noam ""
+    # kael triste "Je préfère être là."
+    kael triste "I'd rather be there."
+
+# game/scenario/5_1.rpy:767
+translate english 90274591:
+
+    # think "Nyra n'insiste pas. Elle voulait lui rappeler qu'il avait le choix, pas décider à sa place."
+    think "Nyra doesn't push him. She wanted to remind him he had a choice, not make it for him."
+
+# game/scenario/5_1.rpy:769
+translate english 8b56ca6c:
+
+    # mara agace "Avant de voter, tu dors."
+    mara agace "Before you vote, you sleep."
 
 # game/scenario/5_1.rpy:770
-translate english 332dfe7b:
+translate english 748db0d1:
 
-    # elias "Infirmerie. Maintenant."
-    elias ""
+    # mara agace "Tu manges. Tu te reposes."
+    mara agace "You eat. You rest."
 
-# game/scenario/5_1.rpy:774
-translate english 1af670e6:
+# game/scenario/5_1.rpy:773
+translate english bf19525b:
 
-    # noam "Qu'est-ce qui—"
-    noam ""
+    # kael triste "C'est beaucoup de contraintes."
+    kael triste "That's a lot of conditions."
 
-# game/scenario/5_1.rpy:776
-translate english 736f47ef:
+# game/scenario/5_1.rpy:775
+translate english bbfeab6c:
 
-    # elias "Kael."
-    elias ""
+    # mara agace "J'en ai d'autres en réserve si tu veux."
+    mara agace "I've got more if you want them."
 
-# game/scenario/5_1.rpy:780
-translate english 883fee48:
+# game/scenario/5_1.rpy:777
+translate english dae76965:
 
-    # noam "Quoi, Kael ?"
-    noam ""
+    # kael triste "Non. Ça ira."
+    kael triste "No. That'll do."
 
-# game/scenario/5_1.rpy:782
-translate english 7e4d4fa3:
+# game/scenario/5_1.rpy:785
+translate english 650995f2:
 
-    # elias inquiet "Il s'est explosé la main. Y a du sang partout. C'est chaud."
-    elias inquiet ""
+    # think "Elias fixe ses lacets depuis plusieurs secondes. Il évite surtout de regarder Kael."
+    think "Elias has been staring at his shoelaces for several seconds. Mostly, he's avoiding looking at Kael."
 
-# game/scenario/5_1.rpy:786
-translate english f2ff8c3f:
+# game/scenario/5_1.rpy:787
+translate english 9dc226c8:
 
-    # noam "Merde."
-    noam ""
+    # think "Personne ne peut lui garantir que Léa va bien. Alors personne ne répond."
+    think "No one can guarantee that Léa is all right. So no one answers."
 
-# game/scenario/5_1.rpy:788
-translate english a3b11b8c:
+# game/scenario/5_1.rpy:789
+translate english 77bc7dfe:
 
-    # elias fatigue "Ouais. Viens vite."
-    elias fatigue ""
+    # elias fatigue "Je…"
+    elias fatigue "I..."
 
-# game/scenario/5_1.rpy:793
-translate english 0753dd6f:
+# game/scenario/5_1.rpy:795
+translate english 60109014:
 
-    # "Elias repart ; je le suis."
-    ""
+    # elias fatigue "Un outil. J'ai peut-être laissé un outil allumé."
+    elias fatigue "A tool. I may have left a tool switched on."
 
-# game/scenario/5_1.rpy:800
-translate english 258518d3:
+# game/scenario/5_1.rpy:797
+translate english 5e147e83:
 
-    # think "L'odeur de désinfectant donne instantanément raison à mon mal de tête."
-    think ""
+    # mara agace "Elias."
+    mara agace "Elias."
+
+# game/scenario/5_1.rpy:799
+translate english 6773e6fe:
+
+    # elias inquiet "Ouais."
+    elias inquiet "Yeah."
+
+# game/scenario/5_1.rpy:801
+translate english 0c28cfc5:
+
+    # mara agace "T'as l'air vert."
+    mara agace "You look green."
+
+# game/scenario/5_1.rpy:803
+translate english 69f0ff93:
+
+    # elias fatigue "Je suis fatigué. C'est tout."
+    elias fatigue "I'm tired. That's all."
+
+# game/scenario/5_1.rpy:805
+translate english 8d6dbda5:
+
+    # mara agace "C'est pas la fatigue."
+    mara agace "That's not just exhaustion."
+
+# game/scenario/5_1.rpy:807
+translate english 802b5fbe:
+
+    # elias fatigue "Mais l'outil—"
+    elias fatigue "But the tool—"
+
+# game/scenario/5_1.rpy:809
+translate english 77e91116:
+
+    # mara agace "Y'a aucun outil."
+    mara agace "There is no tool."
 
 # game/scenario/5_1.rpy:811
-translate english 48861ea3:
+translate english 67daf2fb:
 
-    # "Kael est assis sur le lit d'examen, la main droite enveloppée d'une compresse rouge."
-    ""
+    # elias fatigue "J'ai dit peut-être."
+    elias fatigue "I said maybe."
+
+# game/scenario/5_1.rpy:813
+translate english a30d3dd2:
+
+    # kael triste "Elias."
+    kael triste "Elias."
 
 # game/scenario/5_1.rpy:815
-translate english 7b4b6577:
+translate english 6773e6fe_1:
 
-    # think "Mara fouille une armoire. Nyra veille près de Kael. Elias tente de fusionner avec le mur."
-    think ""
+    # elias inquiet "Ouais."
+    elias inquiet "Yeah."
 
 # game/scenario/5_1.rpy:819
-translate english dcdf7b8c:
+translate english 8d631e45:
 
-    # noam "Kael."
-    noam ""
+    # think "Elias ouvre la bouche puis la referme. Il semble chercher une réponse qui ne vient pas."
+    think "Elias opens his mouth, then closes it again. He seems to be searching for an answer that won't come."
 
 # game/scenario/5_1.rpy:821
-translate english 8e6694b4:
+translate english 2bafd854:
 
-    # kael "Salut."
-    kael ""
+    # elias fatigue "... C'est rien."
+    elias fatigue "... It's nothing."
 
-# game/scenario/5_1.rpy:823
-translate english dce38681:
+# game/scenario/5_1.rpy:826
+translate english 48399918:
 
-    # noam "...Salut ?"
-    noam ""
+    # think "Il quitte la pièce beaucoup trop vite. Mara le suit du regard."
+    think "He leaves the room far too quickly. Mara watches him go."
 
-# game/scenario/5_1.rpy:825
-translate english 6c173575:
+# game/scenario/5_1.rpy:828
+translate english feb7258f:
 
-    # kael triste "Je n'ai rien trouvé de mieux."
-    kael triste ""
+    # mara agace "Il fait toujours ça dès que quelqu'un va mal."
+    mara agace "He always does that whenever someone is suffering."
 
-# game/scenario/5_1.rpy:827
-translate english 72e63555:
+# game/scenario/5_1.rpy:830
+translate english 97b1c1cf:
 
-    # mara stress "Le mur, par contre, tu l'as trouvé sans difficulté."
-    mara stress ""
-
-# game/scenario/5_1.rpy:829
-translate english 49db070d:
-
-    # noam "Un mur ?"
-    noam ""
-
-# game/scenario/5_1.rpy:831
-translate english 1d884c9e:
-
-    # mara "Monsieur a testé sa main contre un mur. Plusieurs fois, pour garantir la rigueur scientifique."
-    mara ""
+    # noam inquiet "Il est parti en trente secondes."
+    noam inquiet "He was gone in thirty seconds."
 
 # game/scenario/5_1.rpy:832
-translate english 44f05ceb:
+translate english b310a324:
 
-    # mara agace "Résultat : mur intact, main ouverte, idée toujours aussi nulle."
-    mara agace ""
-
-# game/scenario/5_1.rpy:834
-translate english 3148ebf5:
-
-    # kael "Je te remercie pour cette synthèse."
-    kael ""
+    # mara agace "Même pas trente secondes. C'est peut-être un record."
+    mara agace "Not even thirty seconds. That might be a record."
 
 # game/scenario/5_1.rpy:836
-translate english 97836990:
+translate english 5fef545d:
 
-    # mara "Écoute, j'essaie de t'empêcher de repeindre l'infirmerie avec ton sang."
-    mara ""
+    # think "Mara range sa trousse. Malgré ses remarques, elle paraît soulagée que Kael n'ait rien de grave."
+    think "Mara packs away her kit. Despite her remarks, she seems relieved that Kael isn't seriously hurt."
 
-# game/scenario/5_1.rpy:837
-translate english a7b7b79b:
+# game/scenario/5_1.rpy:838
+translate english 24fc45ad:
 
-    # mara "Pour les dix prochaines minutes, je suis ta meilleure amie. Profite, l'offre expire vite."
-    mara ""
+    # mara agace "Noam."
+    mara agace "Noam."
 
-# game/scenario/5_1.rpy:841
-translate english 75196c83:
+# game/scenario/5_1.rpy:840
+translate english 1f7a2c19:
 
-    # noam "Pourquoi tu as fait ça ?"
-    noam ""
+    # noam inquiet "Ouais."
+    noam inquiet "Yeah."
 
-# game/scenario/5_1.rpy:845
-translate english 63d82369:
+# game/scenario/5_1.rpy:842
+translate english 0463040b:
 
-    # kael "Kami a refusé ma demande."
-    kael ""
+    # mara agace "Viens."
+    mara agace "Come on."
+
+# game/scenario/5_1.rpy:844
+translate english 0df24b85:
+
+    # noam inquiet "Où ?"
+    noam inquiet "Where?"
 
 # game/scenario/5_1.rpy:847
-translate english beaf9942:
+translate english 8c925226:
 
-    # noam "Quelle demande ?"
-    noam ""
+    # mara agace "Avant qu'on invente un cinquième problème."
+    mara agace "Before we invent a fifth problem."
 
-# game/scenario/5_1.rpy:849
-translate english d2684719:
+# game/scenario/5_1.rpy:857
+translate english 45a69f9d:
 
-    # kael triste "Contacter Léa."
-    kael triste ""
-
-# game/scenario/5_1.rpy:853
-translate english 7eb6a991:
-
-    # kael "Je ne demandais pas grand-chose. Trente secondes."
-    kael ""
-
-# game/scenario/5_1.rpy:854
-translate english c16d1a97:
-
-    # kael "Même pas le temps d'avoir une vraie conversation."
-    kael ""
-
-# game/scenario/5_1.rpy:855
-translate english 7d0929e7:
-
-    # kael inquiet "Juste savoir si elle va bien."
-    kael inquiet ""
+    # think "Elias est adossé au mur, les bras croisés. Il respire lentement et son visage a encore perdu quelques couleurs."
+    think "Elias is leaning against the wall with his arms folded. He's breathing slowly, and even more color has drained from his face."
 
 # game/scenario/5_1.rpy:859
-translate english bf5ab4fc:
+translate english eaf4989e:
 
-    # noam "Et elle a dit non ?"
-    noam ""
+    # noam inquiet "Ça va ?"
+    noam inquiet "Are you okay?"
 
 # game/scenario/5_1.rpy:861
-translate english d059f0c4:
+translate english 6773e6fe_2:
 
-    # kael "Communications familiales hors priorités du Conclave. Interdites par le règlement."
-    kael ""
+    # elias inquiet "Ouais."
+    elias inquiet "Yeah."
+
+# game/scenario/5_1.rpy:863
+translate english 6dcaa09f:
+
+    # noam inquiet "T'es blanc."
+    noam inquiet "You're white as a sheet."
 
 # game/scenario/5_1.rpy:865
-translate english 9ea85efb:
+translate english 4b4486c8:
 
-    # kael "Et les représentants doivent éviter les distractions émotionnelles avant un vote important."
-    kael ""
+    # elias fatigue "Je suis toujours pâle."
+    elias fatigue "I'm always pale."
+
+# game/scenario/5_1.rpy:867
+translate english 2bdf9ba4:
+
+    # noam inquiet "Non."
+    noam inquiet "No."
 
 # game/scenario/5_1.rpy:869
-translate english 6d0b2389:
+translate english 95b6e4cf:
 
-    # think "Personne ne trouve de réponse à cette cruauté administrative."
-    think ""
+    # elias inquiet "… Non."
+    elias inquiet "... No."
+
+# game/scenario/5_1.rpy:871
+translate english 7da15fa6:
+
+    # mara agace "Rentre te coucher Elias."
+    mara agace "Go back to bed, Elias."
 
 # game/scenario/5_1.rpy:873
-translate english 43b9f947:
+translate english c9ba0f41:
 
-    # elias inquiet "Il est sorti de la salle de communication et là…"
-    elias inquiet ""
+    # elias inquiet "J'allais—"
+    elias inquiet "I was going to—"
 
 # game/scenario/5_1.rpy:875
-translate english 4d11e245:
+translate english 5e147e83_1:
 
-    # kael "Et j'ai frappé un mur."
-    kael ""
+    # mara agace "Elias."
+    mara agace "Elias."
 
-# game/scenario/5_1.rpy:877
-translate english bd806d21:
+# game/scenario/5_1.rpy:884
+translate english e2829e8e:
 
-    # mara "Et le mur a gagné. Par décision unanime."
-    mara ""
+    # mara agace "J'aime pas cette journée."
+    mara agace "I don't like this day."
 
-# game/scenario/5_1.rpy:879
-translate english 4466b024:
+# game/scenario/5_1.rpy:886
+translate english 6209f5fe:
 
-    # kael "Ouais. C'était pas la meilleure décision de ma vie."
-    kael ""
+    # noam inquiet "Moi non plus."
+    noam inquiet "Neither do I."
 
-# game/scenario/5_1.rpy:883
-translate english df472ee9:
+# game/scenario/5_1.rpy:888
+translate english 26ea8a5c:
 
-    # "Mara revient avec du désinfectant et retire la compresse."
-    ""
-
-# game/scenario/5_1.rpy:887
-translate english 477c4e22:
-
-    # kael "Aïe."
-    kael ""
+    # mara agace "Kael qui se blesse."
+    mara agace "Kael hurting himself."
 
 # game/scenario/5_1.rpy:889
-translate english 8a0d9685:
+translate english 87651b96:
 
-    # mara "J'ai pas touché."
-    mara ""
+    # mara agace "Kami qui refuse trente secondes de communication."
+    mara agace "Kami refusing him thirty seconds of communication."
 
-# game/scenario/5_1.rpy:891
-translate english 487dd7da:
+# game/scenario/5_1.rpy:890
+translate english d0081428:
 
-    # kael "Je prends de l'avance."
-    kael ""
+    # mara agace "Elle pouvait faire une exception à ses foutues règles. Il demandait seulement trente secondes pour parler à sa sœur."
+    mara agace "She could've made an exception to her fucking rules. All he wanted was thirty seconds to talk to his sister."
+
+# game/scenario/5_1.rpy:892
+translate english 85557c50:
+
+    # mara agace "Kael devrait se reposer. Mais je comprends aussi qu'il veuille être là demain."
+    mara agace "Kael should rest. But I also understand why he wants to be there tomorrow."
 
 # game/scenario/5_1.rpy:893
-translate english 515b82a2:
+translate english efa04ff3:
 
-    # mara "Arrête de prendre des initiatives."
-    mara ""
+    # mara agace "Je n'avais jamais fait attention au fait qu'une absence était simplement retirée du décompte..."
+    mara agace "I'd never really noticed that an absence is simply removed from the count..."
+
+# game/scenario/5_1.rpy:895
+translate english a9341cae:
+
+    # think "Elle s'arrête là, mais nous pensons visiblement à la même chose."
+    think "She stops there, but we're clearly thinking the same thing."
 
 # game/scenario/5_1.rpy:897
-translate english fe4c1c41:
+translate english 5f7fa248:
 
-    # think "Mara nettoie. Kael fixe le mur ; sa main tremble pour une autre raison que le désinfectant."
-    think ""
+    # mara agace "Je retourne vérifier qu'il tape pas dans un deuxième mur."
+    mara agace "I'm going back to make sure he doesn't punch a second wall."
+
+# game/scenario/5_1.rpy:899
+translate english a019ef8a:
+
+    # noam inquiet "Bonne idée."
+    noam inquiet "Good idea."
 
 # game/scenario/5_1.rpy:901
-translate english 24638ea6:
+translate english 2b070969:
 
-    # noam "Tu penses qu'elle est en danger ?"
-    noam ""
+    # mara agace "Et je refuse de lui refaire un bandage demain. S'il refrappe dans un mur, je le laisse se débrouiller."
+    mara agace "And I'm not bandaging him again tomorrow. If he punches another wall, he's on his own."
 
-# game/scenario/5_1.rpy:903
-translate english b9a814af:
+# game/scenario/5_1.rpy:918
+translate english 0378d2e1:
 
-    # kael "Je ne sais pas. Aucune information exploitable."
-    kael ""
+    # think "Je retrouve enfin ma chambre et son silence. Après cette matinée, c'est exactement ce qu'il me faut."
+    think "I finally return to my room and its silence. After this morning, it's exactly what I need."
 
-# game/scenario/5_1.rpy:905
-translate english cb2384b5:
+# game/scenario/5_1.rpy:926
+translate english c5c7e9b5:
 
-    # noam "Le module s'est isolé correctement ?"
-    noam ""
+    # think "L'eau chaude détend lentement ma nuque. C'est bien la seule chose qui fonctionne correctement aujourd'hui."
+    think "The hot water slowly loosens my neck. It's about the only thing working properly today."
 
-# game/scenario/5_1.rpy:907
-translate english b9afd1da_8:
+# game/scenario/5_1.rpy:930
+translate english 01b508ab:
 
-    # kael "Oui."
-    kael ""
-
-# game/scenario/5_1.rpy:908
-translate english 5a8a9d0e:
-
-    # kael inquiet "Normalement."
-    kael inquiet ""
-
-# game/scenario/5_1.rpy:913
-translate english c52de5ee:
-
-    # kael "Normalement, un sas ne lâche pas en pleine nuit."
-    kael ""
-
-# game/scenario/5_1.rpy:914
-translate english 8c532467:
-
-    # kael "Normalement, une enfant de six ans n'enfile pas un scaphandre en trente secondes."
-    kael ""
-
-# game/scenario/5_1.rpy:915
-translate english b0819495:
-
-    # kael "Normalement, je peux lui demander si elle va bien."
-    kael ""
-
-# game/scenario/5_1.rpy:919
-translate english 9342ceb1:
-
-    # kael triste "Il y a trop de normalement aujourd'hui."
-    kael triste ""
-
-# game/scenario/5_1.rpy:923
-translate english 1167c8d7:
-
-    # elias inquiet "Si j'ai compris, les modules résidentiels tiennent plusieurs jours isolés."
-    elias inquiet ""
-
-# game/scenario/5_1.rpy:924
-translate english 8cf6500d:
-
-    # elias "Donc si le protocole a marché, le danger immédiat est limité. C'est concret, ça."
-    elias ""
-
-# game/scenario/5_1.rpy:928
-translate english d2e17fed_1:
-
-    # kael "Je sais."
-    kael ""
-
-# game/scenario/5_1.rpy:932
-translate english 191bc537:
-
-    # think "Elias se tait et regarde le plafond. Il vient de comprendre quelque chose."
-    think ""
-
-# game/scenario/5_1.rpy:936
-translate english d5553673:
-
-    # mara "Bon."
-    mara ""
-
-# game/scenario/5_1.rpy:937
-translate english 012b4cc9:
-
-    # mara "Ta main va survivre."
-    mara ""
-
-# game/scenario/5_1.rpy:938
-translate english d4a534dd:
-
-    # mara "Pas l'air d'avoir de fracture. Pas besoin de points, mais tu vas avoir un bleu magnifique."
-    mara ""
-
-# game/scenario/5_1.rpy:939
-translate english cc7f9066:
-
-    # mara agace "Ne recommence pas."
-    mara agace ""
-
-# game/scenario/5_1.rpy:941
-translate english 3f02c7c5:
-
-    # kael "Compris."
-    kael ""
+    # think "Je repense à la main bandée de Kael, à Elias dans le couloir, puis au vote qui nous attend demain."
+    think "I think about Kael's bandaged hand, Elias in the hallway, and then the vote waiting for us tomorrow."
 
 # game/scenario/5_1.rpy:943
-translate english 11e5f36c:
+translate english 774c4316:
 
-    # mara "Mauvaise réponse."
-    mara ""
-
-# game/scenario/5_1.rpy:945
-translate english 590b9d15:
-
-    # kael "… Pardon ?"
-    kael ""
+    # think "Une seule phrase a été imprimée dessus. Il n'y a ni nom ni signature."
+    think "There is a single sentence printed on it. No name. No signature."
 
 # game/scenario/5_1.rpy:947
-translate english 328ee28d:
+translate english c70d42a4:
 
-    # mara "« Compris », c'est ce que je disais juste avant de recommencer mes conneries."
-    mara ""
+    # think "Je la relis plusieurs fois pour être certain d'en comprendre le sens."
+    think "I read it several times to make sure I understand what it means."
 
-# game/scenario/5_1.rpy:948
-translate english 543d3312:
+# game/scenario/5_1.rpy:949
+translate english 8dd8dfb6:
 
-    # mara agace "Je veux 'je ne recommencerai pas'."
-    mara agace ""
+    # think "La phrase est tirée mot pour mot du règlement. Quelqu'un l'a choisie puis l'a glissée sous ma porte sans se montrer."
+    think "The sentence is taken word for word from the rules. Someone chose it, then slipped it under my door without showing themselves."
 
-# game/scenario/5_1.rpy:950
-translate english 305f4737:
+# game/scenario/5_1.rpy:951
+translate english 07adef2a:
 
-    # kael "Je ne recommencerai pas."
-    kael ""
+    # think "Qui a fait ça ? Et pourquoi me l'envoyer à moi ?"
+    think "Who did this? And why send it to me?"
 
-# game/scenario/5_1.rpy:952
-translate english 399759c0:
+# game/scenario/5_1.rpy:953
+translate english 39e37916:
 
-    # mara "C'est déjà mieux."
-    mara ""
+    # think "Plus je la regarde, moins elle ressemble à un simple rappel du règlement."
+    think "The longer I look at it, the less it feels like a simple reminder of the rules."
 
-# game/scenario/5_1.rpy:956
-translate english cec50744:
+# game/scenario/5_1.rpy:955
+translate english cce2c6ff:
 
-    # think "Mara serre le bandage. Kael regarde sa main comme une variable devenue hostile."
-    think ""
+    # think "Une personne absente ne vote ni pour ni contre. L'unanimité ne concerne que ceux qui participent réellement au vote."
+    think "An absent person votes neither for nor against. Unanimity only applies to those who actually take part in the vote."
 
-# game/scenario/5_1.rpy:960
-translate english 898e6265:
+# game/scenario/5_1.rpy:957
+translate english c1bc23bb:
 
-    # kael triste "Je suis pas sûr d'être utile demain."
-    kael triste ""
+    # think "Je pose le papier sur le bureau, mais l'idée est déjà là."
+    think "I place the paper on the desk, but the idea is already there."
 
-# game/scenario/5_1.rpy:962
-translate english 62d94c4d:
+# game/scenario/5_1.rpy:959
+translate english 0f96663d:
 
-    # noam "Pour le vote ?"
-    noam ""
+    # think "Sael votera contre. Elle nous l'a dit clairement et rien ne semble pouvoir la faire changer d'avis."
+    think "Sael will vote against it. She told us so clearly, and nothing seems capable of changing her mind."
 
-# game/scenario/5_1.rpy:964
-translate english b9afd1da_9:
+# game/scenario/5_1.rpy:961
+translate english 2348916a:
 
-    # kael "Oui."
-    kael ""
+    # think "Mais si elle ne participe pas au vote, son opposition ne comptera pas."
+    think "But if she doesn't take part in the vote, her opposition won't count."
 
-# game/scenario/5_1.rpy:968
-translate english 35aa1e33:
+# game/scenario/5_1.rpy:963
+translate english 3ce272a6:
 
-    # kael "Je savais ce que je pensais. Je le croyais."
-    kael ""
+    # think "C'est simple. Beaucoup trop simple. Et quelqu'un voulait clairement que j'arrive à cette conclusion."
+    think "It's simple. Far too simple. And someone clearly wanted me to reach that conclusion."
 
-# game/scenario/5_1.rpy:972
-translate english 42ef9b57:
+# game/scenario/5_1.rpy:965
+translate english 454ce60c:
 
-    # kael "Maintenant, tout se mélange : Orbite, Léa, Kami, le vote."
-    kael ""
+    # think "Je reprends le papier et relis la phrase une nouvelle fois. Elle ne dit rien de plus, évidemment."
+    think "I pick up the paper and read the sentence again. Of course, it doesn't say anything more."
 
-# game/scenario/5_1.rpy:976
-translate english 774bccd1:
+# game/scenario/5_1.rpy:967
+translate english 15ac8f54:
 
-    # kael triste "Si je lève la main demain, ma peur votera à ma place."
-    kael triste ""
+    # think "Aucune signature. Aucune explication. Seulement une manière d'empêcher Sael de voter."
+    think "No signature. No explanation. Just a way to prevent Sael from voting."
 
-# game/scenario/5_1.rpy:980
-translate english 91c1e4b9:
+# game/scenario/5_1.rpy:969
+translate english d4c88f8c:
 
-    # nyra "Alors ne force pas une réponse. Repose-toi."
-    nyra ""
+    # think "L'infirmerie se trouve à deux couloirs d'ici. Je pourrais peut-être y trouver de quoi retenir Sael dans sa chambre demain..."
+    think "The infirmary is two hallways away. Maybe I could find something there to keep Sael in her room tomorrow..."
 
-# game/scenario/5_1.rpy:982
-translate english efdff04a:
+# game/scenario/5_1.rpy:971
+translate english ffcd6243:
 
-    # mara stress "Demain n'est pas exactement la journée idéale pour rester au lit."
-    mara stress ""
+    # think "Je repose le papier et m'assieds au bord du lit. Est-ce que je suis réellement en train d'envisager ça ?"
+    think "I put the paper down and sit on the edge of the bed. Am I really considering this?"
 
-# game/scenario/5_1.rpy:984
-translate english 3a4ff2cf:
+# game/scenario/5_1.rpy:991
+translate english 82d71be4:
 
-    # nyra "Je n'ai pas dit que c'était idéal. J'ai dit qu'il avait le droit de ne pas voter."
-    nyra ""
+    # think "Le couloir est vide. Les lumières bleues au sol sont les seules à rester allumées pendant la nuit."
+    think "The hallway is empty. The blue lights along the floor are the only ones left on at night."
 
-# game/scenario/5_1.rpy:988
-translate english 5cca80ea:
+# game/scenario/5_1.rpy:993
+translate english 563e4f71:
 
-    # elias "La participation n'est pas obligatoire ?"
-    elias ""
+    # think "Je marche lentement pour éviter de faire du bruit. À cette heure-ci, la moindre porte pourrait réveiller quelqu'un."
+    think "I walk slowly to avoid making any noise. At this hour, the slightest door could wake someone."
 
-# game/scenario/5_1.rpy:990
-translate english 6c97f22f:
+# game/scenario/5_1.rpy:995
+translate english 666ea8c0:
 
-    # think "Elias pose la question mécaniquement, puis découvre nos regards."
-    think ""
+    # think "Si je croise quelqu'un, je dirai que je n'arrive pas à dormir et que je cherche seulement un somnifère."
+    think "If I run into anyone, I'll say I can't sleep and I'm only looking for a sleeping pill."
 
-# game/scenario/5_1.rpy:992
-translate english 28ea6901:
+# game/scenario/5_1.rpy:997
+translate english d19ef08c:
 
-    # nyra "Elle ne l'est pas. Les règles sont claires : une absence retire seulement le bulletin du décompte."
-    nyra ""
-
-# game/scenario/5_1.rpy:996
-translate english 63b2afa8:
-
-    # kael triste "Mais si je ne vote pas…"
-    kael triste ""
-
-# game/scenario/5_1.rpy:998
-translate english b32bb951:
-
-    # nyra "Ton absence sera enregistrée, pas comptée comme un non. Comme une abstention."
-    nyra ""
+    # think "Ce n'est même pas totalement faux. Pourtant, j'ai déjà l'impression de préparer un mensonge."
+    think "That isn't even entirely false. And yet, I already feel like I'm preparing a lie."
 
 # game/scenario/5_1.rpy:999
-translate english 8fe38c41:
+translate english e3bc2aa5:
 
-    # nyra "Elle ne bloque ni le oui ni le non. Elle réduit seulement le nombre de votes exprimés."
-    nyra ""
+    # think "Je traverse le couloir B, puis le C, sans croiser personne."
+    think "I cross Hallway B, then Hallway C, without seeing anyone."
 
-# game/scenario/5_1.rpy:1003
-translate english 2d359ae2:
+# game/scenario/5_1.rpy:1004
+translate english 871361fd:
 
-    # mara mefiant "Tu dis ça comme si c'était simple."
-    mara mefiant ""
-
-# game/scenario/5_1.rpy:1005
-translate english a522d80b_1:
-
-    # nyra "Non."
-    nyra ""
+    # think "L'infirmerie est plongée dans la pénombre. L'odeur de désinfectant est toujours aussi forte."
+    think "The infirmary is shrouded in darkness. The smell of disinfectant is as strong as ever."
 
 # game/scenario/5_1.rpy:1006
-translate english 42e4b6f9:
+translate english 35b3e6fa:
 
-    # nyra "Je répète la règle. Pour une fois, elle est assez claire."
-    nyra ""
+    # think "Le lit est vide et la compresse ensanglantée a disparu. Mara a dû tout nettoyer avant de partir."
+    think "The bed is empty, and the bloodstained gauze pad is gone. Mara must have cleaned everything before she left."
+
+# game/scenario/5_1.rpy:1008
+translate english d38a356c:
+
+    # think "Les quatre armoires vitrées sont fermées, mais pas verrouillées. Il faut pouvoir les ouvrir rapidement en cas d'urgence."
+    think "The four glass-fronted cabinets are closed but not locked. They need to be opened quickly in an emergency."
 
 # game/scenario/5_1.rpy:1010
-translate english e4f22dd8:
+translate english 648a6dd2:
 
-    # think "Le silence change. Plus de panique : du calcul."
-    think ""
+    # think "Et moi, je suis sur le point de profiter de cette sécurité."
+    think "And I'm about to take advantage of that precaution."
+
+# game/scenario/5_1.rpy:1012
+translate english 590ba554:
+
+    # think "La première armoire contient des antalgiques, des anti-inflammatoires et des antihistaminiques. Rien qui puisse m'aider."
+    think "The first cabinet contains painkillers, anti-inflammatories, and antihistamines. Nothing that can help me."
 
 # game/scenario/5_1.rpy:1014
-translate english 5a5a08b6:
+translate english 9b0de48e:
 
-    # noam "Kami demande l'unanimité des votes exprimés."
-    noam ""
+    # think "Dans la deuxième, je trouve des antispasmodiques, des antibiotiques et du Zolpidem."
+    think "In the second, I find antispasmodics, antibiotics, and zolpidem."
 
 # game/scenario/5_1.rpy:1016
-translate english c1b8f343:
+translate english 51e48a86:
 
-    # think "Je le dis presque pour moi. La phrase ouvre une porte que je n'aime pas."
-    think ""
+    # think "Voilà mon somnifère. J'en prends un comprimé pour pouvoir réellement dormir ce soir."
+    think "There's my sleeping pill. I take one tablet so I can actually sleep tonight."
+
+# game/scenario/5_1.rpy:1018
+translate english fd7dd392:
+
+    # think "Je pourrais m'arrêter là et retourner dans ma chambre. Pourtant, j'ouvre l'armoire suivante."
+    think "I could stop there and return to my room. Instead, I open the next cabinet."
 
 # game/scenario/5_1.rpy:1020
-translate english e3128258_1:
+translate english 8c8529c3:
 
-    # nyra "Oui."
-    nyra ""
+    # think "Elle contient plusieurs traitements digestifs. Les boîtes se ressemblent presque toutes."
+    think "It contains several digestive medications. Almost all the boxes look alike."
+
+# game/scenario/5_1.rpy:1022
+translate english d2ef20bc:
+
+    # think "Je commence à lire les étiquettes."
+    think "I start reading the labels."
 
 # game/scenario/5_1.rpy:1024
-translate english c5de4981:
+translate english bbfd4adb:
 
-    # think "Mara calcule. Elias baisse les yeux. Kael, lui, ne pense déjà plus à la règle."
-    think ""
+    # think "Un anti-diarrhéique en gélules. Juste à côté, un laxatif présenté exactement sous la même forme."
+    think "An anti-diarrheal in capsules. Right beside it, a laxative packaged in exactly the same form."
+
+# game/scenario/5_1.rpy:1026
+translate english 15865cc7:
+
+    # think "Je pose les deux boîtes côte à côte. Même taille, mêmes gélules. Seule l'étiquette permet de les différencier."
+    think "I set the two boxes side by side. Same size, same capsules. Only the labels distinguish them."
 
 # game/scenario/5_1.rpy:1028
-translate english 47663477:
+translate english 90c1315f:
 
-    # kael calme "Je vais voter."
-    kael calme ""
+    # think "Si quelqu'un prenait du Bisacodyl en pensant avaler du Lopéramide..."
+    think "If someone took bisacodyl thinking they were swallowing loperamide..."
 
 # game/scenario/5_1.rpy:1030
-translate english af8c8098:
+translate english 8e6788b9:
 
-    # nyra "Dans cet état ?"
-    nyra ""
+    # think "Demain matin, quelques heures avant le vote, cette personne serait incapable de quitter sa chambre."
+    think "Tomorrow morning, a few hours before the vote, that person wouldn't be able to leave their room."
 
-# game/scenario/5_1.rpy:1032
-translate english b9afd1da_10:
+# game/scenario/5_1.rpy:1035
+translate english e4c2d540:
 
-    # kael "Oui."
-    kael ""
-
-# game/scenario/5_1.rpy:1036
-translate english 68a00850:
-
-    # kael triste "Si je reste dans ma chambre, je passerai la nuit à recalculer l'impossible."
-    kael triste ""
+    # think "Je commence à échanger le contenu des deux boîtes."
+    think "I begin swapping the contents of the two boxes."
 
 # game/scenario/5_1.rpy:1037
-translate english 8029c8f2:
+translate english 76b057ae:
 
-    # kael "Je préfère être là."
-    kael ""
+    # think "Je le fais lentement, en vérifiant chaque gélule. Je ne veux laisser aucune trace."
+    think "I do it slowly, checking every capsule. I don't want to leave any trace."
 
-# game/scenario/5_1.rpy:1041
-translate english fd84d587:
+# game/scenario/5_1.rpy:1039
+translate english 1c3c4342:
 
-    # think "Nyra n'insiste pas. Elle a obtenu une décision, pas celle qu'elle proposait."
-    think ""
+    # think "Je referme les boîtes et les replace exactement au même endroit."
+    think "I close the boxes and put them back in exactly the same place."
 
-# game/scenario/5_1.rpy:1045
-translate english c0b21e0a:
+# game/scenario/5_1.rpy:1044
+translate english b8f4b338:
 
-    # mara "Avant de voter, tu dors."
-    mara ""
+    # think "Avant de refermer l'armoire, mon regard s'arrête sur plusieurs sachets de poudre soluble."
+    think "Before closing the cabinet, my eyes settle on several packets of soluble powder."
 
 # game/scenario/5_1.rpy:1046
-translate english 4c01dc35:
+translate english e5b978f0:
 
-    # mara "Tu manges. Tu te reposes."
-    mara ""
+    # think "Ce serait beaucoup plus facile à verser dans une boisson que les gélules."
+    think "That would be much easier to pour into a drink than the capsules."
 
-# game/scenario/5_1.rpy:1047
-translate english 5568e076:
+# game/scenario/5_1.rpy:1048
+translate english 7ed79276:
 
-    # mara agace "Et par pitié, tu mets cette main au repos."
-    mara agace ""
+    # think "Il faudra encore trouver comment l'utiliser demain, et surtout à quel moment."
+    think "I'll still have to work out how to use it tomorrow, and more importantly, when."
 
-# game/scenario/5_1.rpy:1049
-translate english 23fddf3a:
+# game/scenario/5_1.rpy:1050
+translate english 928a7370:
 
-    # kael "C'est beaucoup de contraintes."
-    kael ""
+    # think "Je prends deux sachets et les glisse dans ma poche avec le somnifère."
+    think "I take two packets and slip them into my pocket with the sleeping pill."
 
-# game/scenario/5_1.rpy:1051
-translate english 6e397f3b:
+# game/scenario/5_1.rpy:1054
+translate english 9c4ee7d2:
 
-    # mara "J'en ai d'autres en réserve si tu veux."
-    mara ""
+    # think "Une fois l'armoire refermée, tout paraît exactement comme avant."
+    think "Once the cabinet is closed, everything looks exactly as it did before."
 
-# game/scenario/5_1.rpy:1053
-translate english 7d122f55:
+# game/scenario/5_1.rpy:1059
+translate english 07100068:
 
-    # kael "Non. Ça ira."
-    kael ""
+    # think "Le couloir est toujours vide lorsque je quitte l'infirmerie."
+    think "The hallway is still empty when I leave the infirmary."
 
-# game/scenario/5_1.rpy:1057
-translate english 75562353:
+# game/scenario/5_1.rpy:1066
+translate english e05a0939:
 
-    # think "Kael baisse les yeux vers sa main bandée."
-    think ""
+    # think "Je pose les sachets à côté du papier. Ce qui n'était qu'une idée est maintenant réellement possible."
+    think "I place the packets beside the paper. What was only an idea is now genuinely possible."
 
-# game/scenario/5_1.rpy:1061
-translate english dc7f3af9:
+# game/scenario/5_1.rpy:1070
+translate english 8dd0fa10:
 
-    # kael triste "Je veux juste savoir si elle va bien."
-    kael triste ""
+    # think "Quelqu'un savait peut-être que je finirais par fouiller l'infirmerie en pleine nuit."
+    think "Maybe someone knew I'd end up searching the infirmary in the middle of the night."
 
-# game/scenario/5_1.rpy:1065
-translate english 554a524c:
+# game/scenario/5_1.rpy:1074
+translate english 1a6a4a82:
 
-    # think "Personne ne répond. Mara ferme sa trousse. Nyra reste."
-    think ""
-
-# game/scenario/5_1.rpy:1069
-translate english e0c8f376:
-
-    # think "Elias étudie ses lacets avec une concentration suspecte."
-    think ""
-
-# game/scenario/5_1.rpy:1073
-translate english 61306994:
-
-    # think "Ce silence est la seule réponse honnête."
-    think ""
-
-# game/scenario/5_1.rpy:1077
-translate english 0d8a866d:
-
-    # elias "Je…"
-    elias ""
-
-# game/scenario/5_1.rpy:1081
-translate english c4e38b2f:
-
-    # elias fatigue "J'ai laissé un truc allumé. En maintenance."
-    elias fatigue ""
-
-# game/scenario/5_1.rpy:1085
-translate english 7157726b:
-
-    # think "Personne ne lui offre cette sortie."
-    think ""
-
-# game/scenario/5_1.rpy:1087
-translate english 502e78e2:
-
-    # elias "Un outil. J'ai laissé un outil allumé."
-    elias ""
+    # think "Je n'en sais rien. Mais je finirai bien par le découvrir."
+    think "I don't know. But sooner or later, I'll find out."
 
 # game/scenario/5_1.rpy:1091
-translate english fed4e130:
+translate english e08ff6f6:
 
-    # mara "Elias."
-    mara ""
-
-# game/scenario/5_1.rpy:1093
-translate english c998fcd3:
-
-    # elias "Ouais."
-    elias ""
-
-# game/scenario/5_1.rpy:1095
-translate english af3f58bf:
-
-    # mara "T'as l'air vert."
-    mara ""
-
-# game/scenario/5_1.rpy:1097
-translate english aae8c4a0:
-
-    # elias "Je suis fatigué. C'est tout."
-    elias ""
+    # think "Je reste dans ma chambre. Le papier est toujours posé sur le bureau, devant moi."
+    think "I stay in my room. The paper is still lying on the desk in front of me."
 
 # game/scenario/5_1.rpy:1099
-translate english 39940305:
+translate english 3925efdd:
 
-    # mara "C'est pas la fatigue."
-    mara ""
+    # think "Quelqu'un voulait que je comprenne comment écarter Sael du vote."
+    think "Someone wanted me to understand how to remove Sael from the vote."
 
 # game/scenario/5_1.rpy:1103
-translate english 6c201390:
+translate english 9ce9682f:
 
-    # elias "Mais l'outil—"
-    elias ""
+    # think "Sael votera contre. D'autres aussi, peut-être. Le texte ne passera probablement pas."
+    think "Sael will vote against it. Others might too. The proposal probably won't pass."
 
 # game/scenario/5_1.rpy:1105
-translate english 3f22ae48:
+translate english 73ac4095:
 
-    # mara "Y'a aucun outil."
-    mara ""
+    # think "À vrai dire, son rejet est presque certain."
+    think "In truth, its rejection is almost certain."
 
 # game/scenario/5_1.rpy:1107
-translate english 7d410037:
+translate english a1c4e577:
 
-    # elias fatigue "Y a peut-être un outil."
-    elias fatigue ""
+    # think "Mais empêcher quelqu'un de voter ne rendrait pas le résultat plus juste. Cela permettrait seulement d'obtenir celui que je veux."
+    think "But preventing someone from voting wouldn't make the result any fairer. It would only produce the outcome I want."
 
-# game/scenario/5_1.rpy:1111
-translate english 7306a5de:
+# game/scenario/5_1.rpy:1109
+translate english ec1a34ae:
 
-    # kael "Elias."
-    kael ""
-
-# game/scenario/5_1.rpy:1113
-translate english c998fcd3_1:
-
-    # elias "Ouais."
-    elias ""
+    # think "À quoi servirait de défendre la liberté de circulation si je commence par retirer sa voix à quelqu'un ?"
+    think "What's the point of defending freedom of movement if I start by taking away someone's voice?"
 
 # game/scenario/5_1.rpy:1115
-translate english 2e46d5df:
+translate english c1d62fb3:
 
-    # kael triste "Merci d'être venu."
-    kael triste ""
+    # think "Demain, chacun votera comme il le souhaite. Même si cela signifie encore échouer."
+    think "Tomorrow, everyone will vote however they choose. Even if that means failing again."
+
+# game/scenario/5_1.rpy:1117
+translate english e4d26b8f:
+
+    # think "Dans le noir, j'entends seulement le bourdonnement de la station à travers les murs."
+    think "In the dark, I hear only the station humming through the walls."
 
 # game/scenario/5_1.rpy:1119
-translate english aee51220:
+translate english 022f34c2:
 
-    # think "Elias ouvre la bouche, la referme et déglutit."
-    think ""
+    # think "Léa a six ans et elle sait enfiler un scaphandre en trente secondes. C'est le genre de chose que notre monde apprend à ses enfants."
+    think "Léa is six years old, and she knows how to put on a spacesuit in thirty seconds. That's the kind of thing our world teaches its children."
 
 # game/scenario/5_1.rpy:1121
-translate english ed9aba35:
+translate english affd096a:
 
-    # elias "… C'est bon."
-    elias ""
-
-# game/scenario/5_1.rpy:1126
-translate english d1791f4d:
-
-    # think "Il sort beaucoup trop vite pour un outil imaginaire."
-    think ""
-
-# game/scenario/5_1.rpy:1130
-translate english f18e4905:
-
-    # mara "Il fait ça à chaque fois."
-    mara ""
-
-# game/scenario/5_1.rpy:1132
-translate english fc4c4c6a:
-
-    # noam "Il est parti en trente secondes."
-    noam ""
-
-# game/scenario/5_1.rpy:1134
-translate english de51b9e0:
-
-    # mara "Vingt-huit."
-    mara ""
-
-# game/scenario/5_1.rpy:1135
-translate english aa1146bf:
-
-    # mara "Record personnel."
-    mara ""
-
-# game/scenario/5_1.rpy:1139
-translate english 59c6cceb:
-
-    # kael triste "Il est quand même venu."
-    kael triste ""
-
-# game/scenario/5_1.rpy:1143
-translate english 8a5650d7:
-
-    # think "Mara range sa trousse. Ses épaules se relâchent malgré elle."
-    think ""
-
-# game/scenario/5_1.rpy:1147
-translate english 16533454:
-
-    # mara "Noam."
-    mara ""
-
-# game/scenario/5_1.rpy:1149
-translate english 596f5ec4:
-
-    # noam "Ouais."
-    noam ""
-
-# game/scenario/5_1.rpy:1151
-translate english fc958d4d:
-
-    # mara "Viens."
-    mara ""
-
-# game/scenario/5_1.rpy:1153
-translate english 7ec281cd:
-
-    # noam "Où ?"
-    noam ""
-
-# game/scenario/5_1.rpy:1155
-translate english 8d8fe271:
-
-    # mara agace "Dehors."
-    mara agace ""
-
-# game/scenario/5_1.rpy:1156
-translate english bd9a31ef:
-
-    # mara "Avant qu'on invente un cinquième problème."
-    mara ""
-
-# game/scenario/5_1.rpy:1165
-translate english e28f010f:
-
-    # think "La porte se referme sur Kael et Nyra."
-    think ""
-
-# game/scenario/5_1.rpy:1169
-translate english efcfcfe5:
-
-    # think "Elias est adossé au mur, bras croisés, respiration lente. Il essaie très fort de ne pas vomir."
-    think ""
-
-# game/scenario/5_1.rpy:1174
-translate english 65a07a7a:
-
-    # noam "Ça va ?"
-    noam ""
-
-# game/scenario/5_1.rpy:1176
-translate english c998fcd3_2:
-
-    # elias "Ouais."
-    elias ""
-
-# game/scenario/5_1.rpy:1178
-translate english 3a6e0da5:
-
-    # noam "T'es blanc."
-    noam ""
-
-# game/scenario/5_1.rpy:1180
-translate english e9859a78:
-
-    # elias fatigue "Je suis toujours comme ça."
-    elias fatigue ""
-
-# game/scenario/5_1.rpy:1182
-translate english 290dd969_6:
-
-    # noam "Non."
-    noam ""
-
-# game/scenario/5_1.rpy:1184
-translate english f2ef9f3f:
-
-    # elias "… Non."
-    elias ""
-
-# game/scenario/5_1.rpy:1188
-translate english e0b3be25:
-
-    # mara "Rentre te coucher Elias."
-    mara ""
-
-# game/scenario/5_1.rpy:1190
-translate english 1921e895:
-
-    # elias "J'allais—"
-    elias ""
-
-# game/scenario/5_1.rpy:1192
-translate english fed4e130_1:
-
-    # mara "Elias."
-    mara ""
-
-# game/scenario/5_1.rpy:1196
-translate english b33c0d0d:
-
-    # elias fatigue "… Ouais. D'accord."
-    elias fatigue ""
-
-# game/scenario/5_1.rpy:1203
-translate english e7d261a6:
-
-    # think "Mara le regarde partir et souffle."
-    think ""
-
-# game/scenario/5_1.rpy:1205
-translate english e481d783:
-
-    # mara "J'aime pas cette journée."
-    mara ""
-
-# game/scenario/5_1.rpy:1207
-translate english a8368bd3:
-
-    # noam "Moi non plus."
-    noam ""
-
-# game/scenario/5_1.rpy:1211
-translate english 4dd4b69c:
-
-    # mara "Kael qui se blesse."
-    mara ""
-
-# game/scenario/5_1.rpy:1212
-translate english fd98a24f:
-
-    # mara "Kami qui refuse trente secondes de communication."
-    mara ""
-
-# game/scenario/5_1.rpy:1213
-translate english 93c83f53:
-
-    # mara "Elle pouvait faire une exception à ses foutues règles. Trente secondes. Même moi, je tiens trente secondes sans provoquer personne."
-    mara ""
-
-# game/scenario/5_1.rpy:1217
-translate english 90ba9eb4:
-
-    # mara "Kael devrait se reposer. Mais je comprends qu'il veuille être là demain."
-    mara ""
-
-# game/scenario/5_1.rpy:1218
-translate english c6fe3e44:
-
-    # mara "Je n'avais pas compris qu'une absence disparaissait simplement du décompte…"
-    mara ""
-
-# game/scenario/5_1.rpy:1222
-translate english c8376212:
-
-    # think "Elle laisse la possibilité flotter entre nous sans la nommer."
-    think ""
-
-# game/scenario/5_1.rpy:1226
-translate english e1b2dfda:
-
-    # mara "Je retourne vérifier qu'il tape pas dans un deuxième mur."
-    mara ""
-
-# game/scenario/5_1.rpy:1228
-translate english 86b38e39:
-
-    # noam "Bonne idée."
-    noam ""
-
-# game/scenario/5_1.rpy:1230
-translate english 05e93fd5:
-
-    # mara "Je refuse de lui rebander la main demain. Une fois, c'est du soin. Deux fois, ça devient une relation."
-    mara ""
-
-# game/scenario/5_1.rpy:1231
-translate english a424864d:
-
-    # mara agace "C'est triste d'en être là."
-    mara agace ""
-
-# game/scenario/5_1.rpy:1238
-translate english ccf53f0d:
-
-    # think "Mara retourne auprès de Kael. Je récupère de quoi manger, puis regagne ma chambre."
-    think ""
-
-# game/scenario/5_1.rpy:1251
-translate english c07dd59a:
-
-    # think "Quatre murs. Un lit. Le silence."
-    think ""
-
-# game/scenario/5_1.rpy:1255
-translate english 02f40cbd:
-
-    # think "Exactement ce qu'il me faut."
-    think ""
-
-# game/scenario/5_1.rpy:1259
-translate english 78729b4c:
-
-    # think "Je laisse mes affaires sur le bureau et file sous la douche."
-    think ""
-
-# game/scenario/5_1.rpy:1265
-translate english ca7daf18:
-
-    # think "L'eau chaude : seule chose de cette station qui obéit sans négocier."
-    think ""
-
-# game/scenario/5_1.rpy:1269
-translate english 54beae08:
-
-    # think "J'y reste beaucoup plus longtemps que nécessaire."
-    think ""
-
-# game/scenario/5_1.rpy:1273
-translate english 959fa969:
-
-    # think "Kael et sa main bandée. Elias, blanc dans le couloir."
-    think ""
-
-# game/scenario/5_1.rpy:1277
-translate english f81bfba2:
-
-    # think "Puis demain. Le carnage annoncé."
-    think ""
-
-# game/scenario/5_1.rpy:1285
-translate english e08418c2:
-
-    # think "Je m'habille et m'apprête à m'effondrer sur le lit."
-    think ""
-
-# game/scenario/5_1.rpy:1289
-translate english 91958574:
-
-    # think "Et puis je le vois."
-    think ""
-
-# game/scenario/5_1.rpy:1293
-translate english c3b091fd:
-
-    # "Un papier plié en deux a été glissé sous la porte."
-    ""
-
-# game/scenario/5_1.rpy:1297
-translate english 042f05d7:
-
-    # think "Je le ramasse."
-    think ""
-
-# game/scenario/5_1.rpy:1301
-translate english 1f173e06:
-
-    # think "Une phrase imprimée. Aucune signature."
-    think ""
-
-# game/scenario/5_1.rpy:1305
-translate english dcebaa69:
-
-    # "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
-    ""
-
-# game/scenario/5_1.rpy:1309
-translate english 73559cfc:
-
-    # think "Je relis."
-    think ""
-
-# game/scenario/5_1.rpy:1313
-translate english bc976454:
-
-    # think "Encore."
-    think ""
-
-# game/scenario/5_1.rpy:1317
-translate english 7f777988:
-
-    # think "Sont retirés des bulletins exprimés les abstentions et les absences au vote."
-    think ""
-
-# game/scenario/5_1.rpy:1321
-translate english 6c550bb2:
-
-    # think "Mot pour mot, tiré du règlement. Quelqu'un a choisi cette ligne et ma porte."
-    think ""
-
-# game/scenario/5_1.rpy:1325
-translate english 6f7a1002:
-
-    # think "Anonymement. En pleine nuit."
-    think ""
-
-# game/scenario/5_1.rpy:1329
-translate english 9a47b7ab:
-
-    # think "Qui ? Et pourquoi faire ?"
-    think ""
-
-# game/scenario/5_1.rpy:1333
-translate english b46855fa:
-
-    # think "Je fixe la phrase jusqu'à ce qu'elle commence à ressembler à une instruction."
-    think ""
-
-# game/scenario/5_1.rpy:1337
-translate english deb66ed7:
-
-    # think "Retirés des bulletins exprimés : les abstentions et les absences."
-    think ""
-
-# game/scenario/5_1.rpy:1341
-translate english 8d1df4da:
-
-    # think "Un absent ne vote ni pour ni contre."
-    think ""
-
-# game/scenario/5_1.rpy:1345
-translate english 84aa45d8:
-
-    # think "L'unanimité s'applique aux présents. Pas aux absents."
-    think ""
-
-# game/scenario/5_1.rpy:1349
-translate english 854cb31f:
-
-    # think "Je pose le papier. L'idée reste dans ma main."
-    think ""
-
-# game/scenario/5_1.rpy:1353
-translate english 26eaaf30:
-
-    # think "Sael."
-    think ""
-
-# game/scenario/5_1.rpy:1357
-translate english fa559db2:
-
-    # think "Sael a fermé la discussion. Elle votera contre. Elle ne changera pas."
-    think ""
-
-# game/scenario/5_1.rpy:1361
-translate english beb09010:
-
-    # think "Si elle ne vote pas…"
-    think ""
-
-# game/scenario/5_1.rpy:1362
-translate english 9a2c7bdb:
-
-    # think "Elle ne votera pas contre."
-    think ""
-
-# game/scenario/5_1.rpy:1366
-translate english 91e66f2a:
-
-    # think "C'est simple. Trop simple. Un raisonnement propre tant qu'on ne regarde pas son envers."
-    think ""
-
-# game/scenario/5_1.rpy:1370
-translate english 8971a891:
-
-    # think "Je reprends le papier. Une dernière lecture, comme si les mots pouvaient reculer."
-    think ""
-
-# game/scenario/5_1.rpy:1374
-translate english 05b18897:
-
-    # think "Pas de signature. Une phrase. Une idée impossible à désapprendre."
-    think ""
-
-# game/scenario/5_1.rpy:1378
-translate english 3418fbf1:
-
-    # think "La pharmacie est à deux couloirs. Je pourrais trouver de quoi retenir Sael au lit demain…"
-    think ""
-
-# game/scenario/5_1.rpy:1382
-translate english 4a445123:
-
-    # think "Je pose le papier."
-    think ""
-
-# game/scenario/5_1.rpy:1386
-translate english 6f9c7044:
-
-    # think "Je m'assieds. Qu'est-ce que je devrais faire ?"
-    think ""
-
-# game/scenario/5_1.rpy:1406
-translate english 75414a75:
-
-    # think "Couloir vide. Lumières bleues au sol. La station respire à voix basse."
-    think ""
-
-# game/scenario/5_1.rpy:1410
-translate english 7c99b05c:
-
-    # think "Je marche lentement. Pas par fatigue : les innocents ne se pressent pas."
-    think ""
-
-# game/scenario/5_1.rpy:1414
-translate english 78595483:
-
-    # think "Si je croise quelqu'un : je ne dors pas, je cherche seulement un somnifère."
-    think ""
-
-# game/scenario/5_1.rpy:1418
-translate english 3877b28d:
-
-    # think "C'est plausible. Même vrai. Les meilleurs mensonges ont cette propriété."
-    think ""
-
-# game/scenario/5_1.rpy:1422
-translate english 716cbf0c:
-
-    # think "Couloir B. Personne."
-    think ""
-
-# game/scenario/5_1.rpy:1426
-translate english 45613658:
-
-    # think "Couloir C. Toujours personne."
-    think ""
-
-# game/scenario/5_1.rpy:1430
-translate english 109c5451:
-
-    # think "Bien."
-    think ""
-
-# game/scenario/5_1.rpy:1438
-translate english 1d969bc2:
-
-    # think "L'infirmerie dort sous une lumière minimale. Le désinfectant, lui, monte la garde."
-    think ""
-
-# game/scenario/5_1.rpy:1442
-translate english cc15bbec:
-
-    # think "Lit vide. Compresse disparue. Quelqu'un a effacé les traces de Kael."
-    think ""
-
-# game/scenario/5_1.rpy:1446
-translate english 79863957:
-
-    # think "Quatre armoires vitrées. Fermées, pas verrouillées — logique en cas d'urgence."
-    think ""
-
-# game/scenario/5_1.rpy:1450
-translate english 823726a3:
-
-    # think "Ce soir, je détourne cette logique à mon avantage."
-    think ""
-
-# game/scenario/5_1.rpy:1454
-translate english 0a130c35:
-
-    # think "Première armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1458
-translate english d4008514:
-
-    # think "Antalgiques. Anti-inflammatoires. Antihistaminiques. Rien qui serve l'idée."
-    think ""
-
-# game/scenario/5_1.rpy:1462
-translate english 93adc59a:
-
-    # think "Deuxième armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1466
-translate english e2c19fac:
-
-    # think "Antispasmodiques. Antibiotiques. Zolpidem."
-    think ""
-
-# game/scenario/5_1.rpy:1470
-translate english 6242cf70:
-
-    # think "Un somnifère. Mon alibi rendu matériel."
-    think ""
-
-# game/scenario/5_1.rpy:1474
-translate english f66ac21b:
-
-    # think "J'en prends une. Pour ce soir. Pour dormir."
-    think ""
-
-# game/scenario/5_1.rpy:1478
-translate english 952d0674:
-
-    # think "Puis je continue."
-    think ""
-
-# game/scenario/5_1.rpy:1482
-translate english 4a5722fd:
-
-    # think "Troisième armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1486
-translate english 079fa0f1:
-
-    # think "Traitements digestifs. Plusieurs boîtes, plusieurs effets."
-    think ""
-
-# game/scenario/5_1.rpy:1490
-translate english 705c8306:
-
-    # think "Je m'arrête. L'idée, elle, avance."
-    think ""
-
-# game/scenario/5_1.rpy:1494
-translate english f0acf75f:
-
-    # think "Un anti-diarrhéique en gélules."
-    think ""
-
-# game/scenario/5_1.rpy:1498
-translate english 867a3de3:
-
-    # think "Un laxatif, sous la même forme."
-    think ""
-
-# game/scenario/5_1.rpy:1502
-translate english f745003a:
-
-    # think "Je pose les boîtes côte à côte."
-    think ""
-
-# game/scenario/5_1.rpy:1506
-translate english 0aa9df03:
-
-    # think "Même taille, même forme. Seule l'étiquette change. Dans le noir, sans regarder…"
-    think ""
-
-# game/scenario/5_1.rpy:1510
-translate english 1002f732:
-
-    # think "Si quelqu'un prend du Bisacodyl en croyant prendre du Lopéramide."
-    think ""
-
-# game/scenario/5_1.rpy:1514
-translate english 662267c0:
-
-    # think "Demain matin. Avant le vote."
-    think ""
-
-# game/scenario/5_1.rpy:1518
-translate english 0f29182d:
-
-    # think "Cette personne ne sera pas en état de voter."
-    think ""
-
-# game/scenario/5_1.rpy:1525
-translate english 67be9d6e:
-
-    # think "J'échange le contenu des deux boîtes."
-    think ""
-
-# game/scenario/5_1.rpy:1529
-translate english 2917c487:
-
-    # think "Proprement. Soigneusement. Comme si la méthode pouvait nettoyer l'acte."
-    think ""
-
-# game/scenario/5_1.rpy:1533
-translate english 51796cdf:
-
-    # think "Je referme et replace tout exactement."
-    think ""
-
-# game/scenario/5_1.rpy:1539
-translate english 65afaaab:
-
-    # think "Mon regard revient aux sachets."
-    think ""
-
-# game/scenario/5_1.rpy:1543
-translate english d2d897e7:
-
-    # think "Une poudre soluble. Facile à dissimuler dans une boisson."
-    think ""
-
-# game/scenario/5_1.rpy:1547
-translate english d561cf3d:
-
-    # think "Ça, c'est pour demain. Il restera à trouver comment — et quand."
-    think ""
-
-# game/scenario/5_1.rpy:1551
-translate english 692c40e5:
-
-    # think "Deux sachets rejoignent le somnifère dans ma poche."
-    think ""
-
-# game/scenario/5_1.rpy:1555
-translate english 12300871:
-
-    # think "Je referme l'armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1559
-translate english 85a5b348:
-
-    # think "Tout paraît exactement comme avant."
-    think ""
-
-# game/scenario/5_1.rpy:1563
-translate english df3b0402:
-
-    # think "C'est peut-être ça, le pire."
-    think ""
-
-# game/scenario/5_1.rpy:1571
-translate english 6473a8ad:
-
-    # think "Le couloir est toujours vide. Les lumières bleues respirent encore."
-    think ""
-
-# game/scenario/5_1.rpy:1575
-translate english 0e7cbecd:
-
-    # think "Je rentre dans ma chambre sans croiser personne."
-    think ""
-
-# game/scenario/5_1.rpy:1583
-translate english 318ac235:
-
-    # think "Je pose les sachets à côté du papier. Cause et conséquence, bien alignées."
-    think ""
-
-# game/scenario/5_1.rpy:1587
-translate english 58e2f3ec:
-
-    # think "Je les regarde."
-    think ""
-
-# game/scenario/5_1.rpy:1591
-translate english 8ba07eaf:
-
-    # think "Quelqu'un a parié que je ferais ça. Que je fouillerais une pharmacie en pleine nuit."
-    think ""
-
-# game/scenario/5_1.rpy:1595
-translate english 963db6c4_1:
-
-    # think "Qui ?"
-    think ""
-
-# game/scenario/5_1.rpy:1599
-translate english c94ac989:
-
-    # think "Je ne sais pas. Pas encore."
-    think ""
-
-# game/scenario/5_1.rpy:1603
-translate english 7686a34b:
-
-    # think "J'avale le somnifère, m'allonge et fixe le plafond."
-    think ""
-
-# game/scenario/5_1.rpy:1607
-translate english 1025d1e4:
-
-    # think "Pour une fois, je dors."
-    think ""
-
-# game/scenario/5_1.rpy:1623
-translate english 3516fe3b:
-
-    # think "Ma chambre. Le silence. Le papier sur le bureau."
-    think ""
-
-# game/scenario/5_1.rpy:1627
-translate english 502ac8b8:
-
-    # think "Je le regarde encore."
-    think ""
-
-# game/scenario/5_1.rpy:1631
-translate english 60991580:
-
-    # think "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
-    think ""
-
-# game/scenario/5_1.rpy:1635
-translate english e22f9970:
-
-    # think "Je le repose face contre le bureau."
-    think ""
-
-# game/scenario/5_1.rpy:1639
-translate english 3d7b2a9e:
-
-    # think "Quelqu'un voulait que je fasse quelque chose avec ça."
-    think ""
-
-# game/scenario/5_1.rpy:1643
-translate english f9957d42:
-
-    # think "Je ne vais pas le faire."
-    think ""
-
-# game/scenario/5_1.rpy:1647
-translate english a84150da:
-
-    # think "Sael votera contre. D'autres aussi, peut-être. Le texte ne passera sans doute pas."
-    think ""
-
-# game/scenario/5_1.rpy:1651
-translate english 6a583030:
-
-    # think "C'est possible. Même certain."
-    think ""
-
-# game/scenario/5_1.rpy:1655
-translate english b178c781:
-
-    # think "Mais empêcher quelqu'un de voter ne sauve pas le vote. Ça fabrique seulement un résultat."
-    think ""
-
-# game/scenario/5_1.rpy:1659
-translate english 68f1f3a1:
-
-    # think "Et si ça marche comme ça, ça vaut quoi ?"
-    think ""
-
-# game/scenario/5_1.rpy:1663
-translate english 9ca9be59:
-
-    # think "Je me déshabille et m'allonge."
-    think ""
-
-# game/scenario/5_1.rpy:1667
-translate english 3e8283af:
-
-    # think "Je fixe le plafond."
-    think ""
-
-# game/scenario/5_1.rpy:1671
-translate english a42ca447:
-
-    # think "Demain sera ce que demain sera. Formule lâche, mais honnête."
-    think ""
-
-# game/scenario/5_1.rpy:1675
-translate english 4f46e11e:
-
-    # think "Le noir, le silence, la station qui bourdonne dans les murs."
-    think ""
-
-# game/scenario/5_1.rpy:1679
-translate english 7469b3fc:
-
-    # think "Léa a six ans et enfile un scaphandre en trente secondes. Voilà ce que notre monde apprend à ses enfants."
-    think ""
-
-# game/scenario/5_1.rpy:1683
-translate english 926ffd85:
-
-    # think "Je retourne l'idée dans tous les sens. Elle ne mène nulle part. Comme souvent."
-    think ""
-
-# game/scenario/5_1.rpy:1688
-translate english 7332f2ed_1:
-
-    # think "Je ferme les yeux."
-    think ""
-
-translate english strings:
-
-    # game/scenario/5_1.rpy:1390
-    old "Aller à la pharmacie."
-    new ""
-
-    # game/scenario/5_1.rpy:1390
-    old "Aller se coucher."
-    new ""
-
-# TODO: Translation updated at 2026-08-23 12:01
-
-# game/scenario/5_1.rpy:611
-translate english d1af98c2_5:
-
-    # think "Non."
-    think ""
+    # think "Je retourne le problème dans tous les sens, mais aucune réponse ne me paraît vraiment acceptable."
+    think "I turn the problem over and over in my mind, but none of the answers feels truly acceptable."
 

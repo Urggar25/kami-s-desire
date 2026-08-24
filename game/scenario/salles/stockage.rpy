@@ -9,6 +9,7 @@ default decouverte_stockage = False
 
 
 label STOCKAGE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_350
     scene bg_stockage at adaptive_fullscreen
 
     if not decouverte_stockage and day_number() == 1:
@@ -129,6 +130,7 @@ label decouverte_stockage:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_351
     scene bg_stockage at adaptive_fullscreen with fade
 
     "La pièce est immense. Il y a des étagères partout."

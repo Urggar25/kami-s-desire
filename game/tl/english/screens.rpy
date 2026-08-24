@@ -380,11 +380,11 @@ translate english strings:
 
     # game/screens.rpy:765
     old "Accessibilité"
-    new ""
+    new "Accessibility"
 
     # game/screens.rpy:766
     old "Animations de dialogue"
-    new ""
+    new "Dialogue Animations"
 
 # TODO: Translation updated at 2026-08-23 12:01
 
@@ -392,85 +392,85 @@ translate english strings:
 
     # game/screens.rpy:398
     old "Créer une sauvegarde de votre progression actuelle."
-    new ""
+    new "Save your current progress."
 
     # game/screens.rpy:398
     old "Reprendre l'histoire depuis une sauvegarde existante."
-    new ""
+    new "Resume the story from an existing save."
 
     # game/screens.rpy:398
     old "Régler l'affichage, le texte, le son et les contrôles."
-    new ""
+    new "Adjust display, text, sound, and controls."
 
     # game/screens.rpy:398
     old "Consulter les dossiers des représentants du Conclave."
-    new ""
+    new "View the Conclave representatives' files."
 
     # game/screens.rpy:398
     old "Voir les succès découverts et ceux encore verrouillés."
-    new ""
+    new "View unlocked and still-locked achievements."
 
     # game/screens.rpy:398
     old "Parcourir les jours, embranchements et choix du récit."
-    new ""
+    new "Browse the story's days, branches, and choices."
 
     # game/screens.rpy:398
     old "Interrompre la partie et retourner au menu principal."
-    new ""
+    new "End the session and return to the main menu."
 
     # game/screens.rpy:398
     old "Fermer complètement Kami's Desires."
-    new ""
+    new "Exit Kami's Desires completely."
 
     # game/screens.rpy:465
     old "MENU SYSTÈME"
-    new ""
+    new "SYSTEM MENU"
 
     # game/screens.rpy:472
     old "PAUSE // ACCÈS LOCAL"
-    new ""
+    new "PAUSE // LOCAL ACCESS"
 
     # game/screens.rpy:495
     old "SAUVEGARDER"
-    new ""
+    new "SAVE"
 
     # game/screens.rpy:506
     old "CHARGER"
-    new ""
+    new "LOAD"
 
     # game/screens.rpy:517
     old "OPTIONS / PRÉFÉRENCES"
-    new ""
+    new "OPTIONS / PREFERENCES"
 
     # game/screens.rpy:528
     old "PROFILS"
-    new ""
+    new "PROFILES"
 
     # game/screens.rpy:550
     old "ROADMAP"
-    new ""
+    new "ROADMAP"
 
     # game/screens.rpy:561
     old "MENU PRINCIPAL"
-    new ""
+    new "MAIN MENU"
 
     # game/screens.rpy:572
     old "QUITTER LE JEU"
-    new ""
+    new "QUIT GAME"
 
     # game/screens.rpy:582
     old "REPRENDRE  ·  ÉCHAP"
-    new ""
+    new "RESUME  ·  ESC"
 
     # game/screens.rpy:611
     old "Sauvegarder"
-    new ""
+    new "Save"
 
     # game/screens.rpy:613
     old "Options / Préférences"
-    new ""
+    new "Options / Preferences"
 
     # game/screens.rpy:624
     old "Quitter le jeu"
-    new ""
+    new "Quit Game"
 

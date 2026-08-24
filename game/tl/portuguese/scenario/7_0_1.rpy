@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-23 11:55
+# TODO: Translation updated at 2026-08-23 11:55
 
 # game/scenario/7_0_1.rpy:1309
 translate portuguese j701_play_search_drawing_2bfcc440:

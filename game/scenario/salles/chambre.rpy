@@ -43,6 +43,7 @@ label chambre2_porte_dehors:
     jump chambre2_porte_dehors_animation
 
 label chambre2_porte_dehors_animation:
+    $ scripted_room_current = "dortoir"
     call PLAY_DOOR_OPEN(door_room_background("dortoir")) from _call_PLAY_DOOR_OPEN_2
     jump DORTOIR_TP
 

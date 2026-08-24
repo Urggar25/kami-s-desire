@@ -391,6 +391,7 @@ label _5_0_REVEIL_CHAMBRE:
 
     think "Ça ne passera pas. Personne n'y croit plus. Sael a déjà annoncé qu'elle votera contre..."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_229
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     think "Je pourrais aller à la cafétéria, mais à quoi ça servirait ?"
@@ -427,6 +428,7 @@ label _5_0_REVEIL_CHAMBRE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Oups, j'oubliais : vous ne pouvez pas voir le soleil depuis le Conclave !"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_230
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
@@ -458,6 +460,7 @@ label _5_0_REVEIL_CHAMBRE:
 
 label _5_0_CHERCHE_SAEL:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_231
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 2.0
 
@@ -497,6 +500,7 @@ label _5_0_CHERCHE_SAEL:
 
     sael sourire "Entre. Les seuils de porte ne sont pas faits pour les longues conversations."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_232
     scene bg_chambre_sael at adaptive_fullscreen with dissolve
 
     think "Le lit a été démonté. Planches au sol, une couette, puis du vide."
@@ -569,6 +573,7 @@ label _5_0_CHERCHE_SAEL:
 
     noam raison "Nous sommes des gens civilisés, on est là pour se serrer les coudes."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_233
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -596,6 +601,7 @@ label _5_0_APRES_TEMPS_LIBRE_1:
 
     $ current_period = "Après-midi"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_234
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.8
 
@@ -630,6 +636,7 @@ label _5_0_APRES_TEMPS_LIBRE_1:
 
 label _5_0_0_JULIAN:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_235
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -671,6 +678,7 @@ label _5_0_0_JULIAN:
 
     "Il se pousse. Cette fois, l'invitation est réelle. Il m'invite à rentrer."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_236
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     pause 0.5
@@ -841,6 +849,7 @@ label _5_0_0_JULIAN:
 
 label _5_0_1_OBSERVATION:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_237
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -849,6 +858,7 @@ label _5_0_1_OBSERVATION:
     $ doplleganger = 1
     think "J'ai besoin d'avoir des réponses, j'ai besoin de savoir où en est le monde. Ce qu'il attend, ce qu'il espère."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_238
     scene bg_observation at adaptive_fullscreen with dissolve
 
     pause 0.8
@@ -1011,6 +1021,7 @@ label _5_0_1_OBSERVATION:
 
     call show_custom_title("Après plusieurs heures") from _call_show_custom_title
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_239
     scene bg_observation at adaptive_fullscreen with dissolve
 
     pause 3.0
@@ -1042,6 +1053,7 @@ label _5_0_1_OBSERVATION:
 label _5_0_FIN_JOURNEE:
 
     $ current_period = "Soir"
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_240
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
@@ -1050,6 +1062,7 @@ label _5_0_FIN_JOURNEE:
     think "Puis l'après-midi passe. Elle se termine comme elle a commencé : lourde, lente, sans discussion."
     "Puis je retourne dans ma chambre."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_241
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     think "Je m'assieds au bord du lit, pas encore prêt à m'allonger."
@@ -1157,6 +1170,7 @@ label _5_0_SAEL_PNC:
 
 label _5_0_NUIT_OUVRIR:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_242
     scene bg_dortoir at adaptive_fullscreen with dissolve
 
     "J'entrouvre la porte. Une silhouette disparaît au bout du couloir."

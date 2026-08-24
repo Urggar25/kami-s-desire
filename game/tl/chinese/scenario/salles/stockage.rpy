@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+# TODO: Translation updated at 2026-08-07 12:41
 
 # game/scenario/salles/stockage.rpy:49
 translate chinese stockage_stockage_8deb7e6b:

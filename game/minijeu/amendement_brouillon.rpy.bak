@@ -182,7 +182,9 @@ init python:
         def build_step(self, i):
             self.step = i
             step = AMEND_STEPS[i]
-            tokens = step["tokens"]
+            # Les fragments viennent de données Python : Ren'Py ne les traduit
+            # pas automatiquement comme les chaînes littérales d'un écran.
+            tokens = [kd_tr(token) for token in step["tokens"]]
             new = set(step["new"])
             level = i
             rnd = _amrand.Random(1000 + i)
@@ -225,7 +227,7 @@ init python:
                     "target": idx, "is_parasite": False, "thought": None,
                 })
             for pi, par in enumerate(step.get("parasites", [])):
-                tok = par["token"]
+                tok = kd_tr(par["token"])
                 loose.append({
                     "id": "p%d" % pi, "token": tok, "x": 0, "y": 0,
                     "w": self._frag_w(tok, 30), "h": 56, "size": 30,
@@ -445,7 +447,7 @@ screen amend_reflection_bubble(message):
                 bold True
                 kerning 2
 
-            text message:
+            text kd_tr(message):
                 size 25
                 color "#202738"
                 italic True
@@ -605,8 +607,8 @@ label amendement_brouillon_play:
     show screen amend_board
     with Dissolve(0.8)
 
-    call amend_reflection("Alors. Ma phrase. Une seule ligne, et qu'on n'en parle plus.")
-    call amend_reflection("Les mots sont là, éparpillés autour. Fais-les glisser sur la feuille pour former une phrase.")
+    call amend_reflection("Alors. Ma phrase. Une seule ligne, et qu'on n'en parle plus.") from _call_amend_reflection
+    call amend_reflection("Les mots sont là, éparpillés autour. Fais-les glisser sur la feuille pour former une phrase.") from _call_amend_reflection_1
 
     $ _amend_i = 0
     while _amend_i < len(AMEND_STEPS):
@@ -616,7 +618,7 @@ label amendement_brouillon_play:
         if _amend_i == len(AMEND_STEPS) - 1:
             play sound "audio/sfx_announce.mp3"
             voix "Une minute avant fermeture de l'urne."
-            call amend_reflection("Déjà ? Mes mains vont plus lentement que cette horloge.")
+            call amend_reflection("Déjà ? Mes mains vont plus lentement que cette horloge.") from _call_amend_reflection_2
 
         # ---- ASSEMBLAGE (boucle pour gérer les parasites) ----
         $ _assembling = True
@@ -626,7 +628,7 @@ label amendement_brouillon_play:
                 $ _pid = str(_return).split(":", 1)[1]
                 $ _pth = amend_st.pop_parasite(_pid)
                 if _pth:
-                    call amend_reflection(_pth)
+                    call amend_reflection(_pth) from _call_amend_reflection_3
             else:
                 $ _assembling = False
 
@@ -634,21 +636,21 @@ label amendement_brouillon_play:
         $ _idx = 0
         while _idx < len(_step["reread"]):
             $ _line = _step["reread"][_idx]
-            call amend_reflection(_line)
+            call amend_reflection(_line) from _call_amend_reflection_4
             $ _idx += 1
 
         if _step["erase"] is not None:
             # ---- EFFACEMENT ----
             $ amend_st.begin_erase(_step["erase"])
             if _amend_i == 0:
-                call amend_reflection("Ma main cherche la gomme toute seule. Attrape-la, frotte le mot cerclé jusqu'à ce qu'il disparaisse.")
+                call amend_reflection("Ma main cherche la gomme toute seule. Attrape-la, frotte le mot cerclé jusqu'à ce qu'il disparaisse.") from _call_amend_reflection_5
             play sound "audio/sfx_paper.mp3"
             call screen amend_input("erase")
 
             $ _idx = 0
             while _idx < len(_step["after"]):
                 $ _line = _step["after"][_idx]
-                call amend_reflection(_line)
+                call amend_reflection(_line) from _call_amend_reflection_6
                 $ _idx += 1
 
             # ---- TRANSITION : un représentant termine et quitte la salle ----
@@ -661,26 +663,26 @@ label amendement_brouillon_play:
             $ _idx = 0
             while _idx < len(_step["after"]):
                 $ _line = _step["after"][_idx]
-                call amend_reflection(_line)
+                call amend_reflection(_line) from _call_amend_reflection_7
                 $ _idx += 1
 
             $ amend_st.begin_hold()
-            call amend_reflection("Je pourrais encore. Enlever « sans autorisation ». Trouver plus doux, plus prudent.")
-            call amend_reflection("Continuer jusqu'à ce que la phrase ne veuille plus rien dire. Jusqu'à ce qu'elle ne gêne plus personne.")
-            call amend_reflection("La gomme est déjà dans ma main.")
+            call amend_reflection("Je pourrais encore. Enlever « sans autorisation ». Trouver plus doux, plus prudent.") from _call_amend_reflection_8
+            call amend_reflection("Continuer jusqu'à ce que la phrase ne veuille plus rien dire. Jusqu'à ce qu'elle ne gêne plus personne.") from _call_amend_reflection_9
+            call amend_reflection("La gomme est déjà dans ma main.") from _call_amend_reflection_10
 
             call screen amend_input("hold")
 
             if amend_st.final_touch:
                 play sound "audio/sfx_breath.mp3"
                 pause 0.8
-                call amend_reflection("...")
-                call amend_reflection("Non.")
-                call amend_reflection("Je pose la gomme.")
-                call amend_reflection("Pour une fois, je n'efface pas.")
+                call amend_reflection("...") from _call_amend_reflection_11
+                call amend_reflection("Non.") from _call_amend_reflection_12
+                call amend_reflection("Je pose la gomme.") from _call_amend_reflection_13
+                call amend_reflection("Pour une fois, je n'efface pas.") from _call_amend_reflection_14
             else:
-                call amend_reflection("Je repose la gomme sans m'en servir.")
-                call amend_reflection("Pour une fois, je n'efface pas.")
+                call amend_reflection("Je repose la gomme sans m'en servir.") from _call_amend_reflection_15
+                call amend_reflection("Pour une fois, je n'efface pas.") from _call_amend_reflection_16
 
             $ _amend_i += 1
 
@@ -692,9 +694,10 @@ label amendement_brouillon_play:
 
     play sound "minijeu/amend_assets/amend_fold.ogg"
     pause 0.7
-    call amend_reflection("Je plie la feuille en deux. De travers, évidemment.")
+    call amend_reflection("Je plie la feuille en deux. De travers, évidemment.") from _call_amend_reflection_17
 
     hide screen amend_board
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     # --- variables de sortie (compatibilité scénario) ---

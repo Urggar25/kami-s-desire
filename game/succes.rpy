@@ -39,7 +39,7 @@ init -1 python:
         return SUCCES_IMAGES.get(succes_id, "gui/succes/%s.png" % succes_id)
 
     def get_succes_title(succes_id):
-        return SUCCES_TITLES.get(succes_id)
+        return kd_tr(SUCCES_TITLES.get(succes_id))
 
     def is_succes_unlocked(succes_id):
         succes_ensure_state()

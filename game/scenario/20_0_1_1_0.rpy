@@ -1,4 +1,6 @@
 label _20_0_1_1_0_FAIM:
+    $ noam_has_juliette_drawing = False
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_139
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 1.5
     "Midi passe. Mara n'est pas revenue. Ma derniere ration a le gout du papier et la taille d'une excuse."
@@ -37,6 +39,7 @@ label _20_0_1_1_0_FAIM:
     jump _20_0_1_1_0_CAFETERIA_MARA
 
 label _20_0_1_1_0_CAFETERIA_MARA:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_140
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_careful_wanting.mp3" fadein 1.5
     $ showGroup([("noam", "inquiet", 0.27), ("mara", "neutre", 0.67)])
@@ -107,6 +110,7 @@ label _20_0_1_1_0_CAFETERIA_MARA:
     jump _20_0_1_1_0_TOMAS
 
 label _20_0_1_1_0_TOMAS:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_141
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "fatigue", 0.27), ("tomas", "inquiet", 0.67)])
     tomas "Mara est partie vite."
@@ -175,6 +179,7 @@ label _20_0_1_1_0_TOMAS:
     jump _20_0_1_1_0_PHOTO
 
 label _20_0_1_1_0_PHOTO:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_142
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
     $ showGroup([("noam", "inquiet", 0.18), ("mara", "mefiant", 0.43), ("tomas", "reflechit", 0.68)])
@@ -213,6 +218,7 @@ label _20_0_1_1_0_PHOTO:
     mara "Du papier."
     noam "Tire doucement."
     tomas "C'est une photographie."
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_143
     scene bg_maintenance at adaptive_fullscreen with dissolve
     "Nous sortons par la trappe de maintenance. Tomas tient un carre de papier plie en deux."
     kael "Qu'est-ce que vous faites ici ?"

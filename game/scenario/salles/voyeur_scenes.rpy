@@ -10,6 +10,7 @@ label temps_libre_salle_repos:
         $ seen_voyeur_julian_iris = True
         jump REPOS_TP
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_352
     scene bg_repos at adaptive_fullscreen with dissolve
 
     $ seen_voyeur_julian_iris = True
@@ -64,6 +65,7 @@ label temps_libre_salle_archive:
 
     $ seen_voyeur_mara_tomas = True
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_353
     scene bg_archive at adaptive_fullscreen with dissolve
     "Je pousse la porte de la salle des archives. C’est sombre, poussiéreux, rempli d’étagères métalliques et de vieux terminaux. L’odeur de métal froid et de papier ancien me prend à la gorge."
     "Je m’avance doucement, quand un rire bas et provocateur me parvient du fond, derrière une rangée de casiers. Je m’approche sans bruit, restant dans l’ombre d’une pile de boîtes."
@@ -123,6 +125,7 @@ label temps_libre_salle_dortoir:
 
     $ seen_voyeur_nyra = True
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_354
     scene bg_dortoir at adaptive_fullscreen with dissolve
     "Je décide de passer par le dortoir. Les couloirs sont silencieux à cette heure. Seule la lueur bleue des veilleuses éclaire les portes des chambres."
     "Soudain, un bruit étouffé me parvient : un bourdonnement discret, suivi d’un soupir bas et contrôlé."
@@ -157,6 +160,7 @@ label temps_libre_salle_dortoir:
 
 label temps_libre_salle_stockage_argument:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_355
     scene bg_stockage at adaptive_fullscreen
     play sound "audio/sfx_paper.mp3"
 

@@ -1,5 +1,6 @@
 label _12_0_1_1_REVEIL_CHAMBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 3.0
     play sound sfx_creak volume 0.6
@@ -26,6 +27,7 @@ label _12_0_1_1_REVEIL_CHAMBRE:
     think "Ou quelqu'un."
     "Je tends la main vers l’interrupteur. La lumière froide de la chambre m’aveugle un instant."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La pièce est vide."
@@ -149,6 +151,7 @@ label _12_0_1_1_recoucher:
 # Fin du label principal
 label _12_0_1_1_CAFETERIA:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
 
@@ -160,12 +163,14 @@ label _12_0_1_1_CAFETERIA:
 
     "Je me lève, enfile un sweat à la hâte et sors de ma chambre sans faire de bruit."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Les couloirs sont encore déserts. Parfait."
 
     think "Je ne veux voir personne. Pas maintenant."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play sound sfx_door
 
@@ -325,6 +330,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     "Je reste encore quelques minutes à fixer mon plateau vide, puis je me lève."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "À peine sorti de la cafétéria, la voix de Kami résonne soudain dans tout le Conclave."
@@ -352,6 +358,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     hide screen kami_broadcast_ui
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
     "Le silence retombe dans les couloirs."
 
@@ -371,6 +378,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     "Alors que je passe devant l'infirmerie, je décide de m'y arrêter une minute."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie")
     scene bg_infirmerie at adaptive_fullscreen with dissolve
 
     think "Mon mal de tête n’est toujours pas parti… Il empire même."
@@ -393,6 +401,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     "Je secoue la tête et reprends ma route, le pas lourd."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
 
     "Je referme la porte de ma chambre derrière moi et m’adosse contre elle un long moment."
@@ -412,6 +421,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
 label _12_0_1_1_ATTENTE_VOTE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_low_tension.mp3" fadein 3.0
 
@@ -422,6 +432,7 @@ label _12_0_1_1_ATTENTE_VOTE:
 
     "Je me lève, le corps lourd, et sors de ma chambre sans grand enthousiasme."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Les haut-parleurs crachent soudain la voix de Kami."
@@ -441,6 +452,7 @@ label _12_0_1_1_ATTENTE_VOTE:
 
     "Je soupire et prends la direction de la salle."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Presque tout le monde est déjà là. L’ambiance est lourde, électrique."
@@ -533,6 +545,7 @@ label _12_0_1_1_ATTENTE_VOTE:
 
 label _12_0_1_1_DEBAT_VOTE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
 
@@ -542,6 +555,7 @@ label _12_0_1_1_DEBAT_VOTE:
     call j12011_play_wire_debate from _call_j12011_play_wire_debate
     $ j12011_vote_data = _return
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with fade
 
     if j12011_wire_result == "security":
@@ -551,6 +565,7 @@ label _12_0_1_1_DEBAT_VOTE:
 
 label _12_0_1_1_DEBAT_SECURITE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 2.5
 
@@ -664,6 +679,7 @@ label _12_0_1_1_DEBAT_SECURITE:
 
 label _12_0_1_1_DEBAT_LIBERTE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 2.5
 
@@ -912,6 +928,7 @@ label _12_0_1_1_APRES_EXPLOSION:
     "Je tourne les talons avant que quelqu’un trouve une nouvelle phrase pour me retenir."
 
     play sound sfx_door
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Le couloir me paraît trop long."
@@ -922,6 +939,7 @@ label _12_0_1_1_APRES_EXPLOSION:
     think "Ou pas assez."
     think "Je ne sais plus."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
     play sound sfx_creak volume 0.6
 
@@ -955,6 +973,7 @@ label _12_0_1_1_APRES_EXPLOSION:
 
 label _13_0_1_1_1_REVEIL_CHAMBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
 

@@ -352,6 +352,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     think "Juste ma tête qui cogne comme si quelqu'un avait oublié un marteau dedans."
     think "Très professionnel, comme réveil."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_24
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La chambre est chaude."
@@ -399,6 +400,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
             think "Il faut avancer."
 
     stop music fadeout 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_25
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -443,6 +445,7 @@ label _10_0_1_1_CAFETERIA_ELIAS:
     $ exploration_libre_active = False
     $ exploration_libre_allowed_rooms = None
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_26
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.2
 
@@ -526,6 +529,7 @@ label j10011_play_table_tension:
 
 label _10_0_1_1_APRES_TABLE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_27
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     if j10011_table_result == "rupture":
@@ -620,6 +624,7 @@ label _10_0_1_1_APRES_TABLE:
 
     $ hideGroup()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_28
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     "L'écran d'information continue de défiler, poli comme une lame."
@@ -635,6 +640,7 @@ label _10_0_1_1_APRES_TABLE:
 label _10_0_1_1_MARCHE_APRES_TABLE:
 
     stop music fadeout 1.5
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_29
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.2
 
@@ -651,6 +657,7 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
     think "Le couloir est plus long qu'hier."
     think "Ou je vais moins vite."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_30
     scene bg_maintenance at adaptive_fullscreen with dissolve
 
     "Un bruit sec vient de la salle de maintenance."
@@ -732,6 +739,7 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
 
 label _10_0_1_1_DOPPELGANGER:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_31
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Je ne choisis pas vraiment la direction."
@@ -790,6 +798,7 @@ label _10_0_1_1_DOPPELGANGER:
     think "Très bien."
     think "On va faire comme si voir des gens qui n'existent pas était une étape normale du matin."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_32
     scene bg_couloir at adaptive_fullscreen with dissolve
     think "Je repars."
 
@@ -868,6 +877,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     pause 0.3
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_33
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -891,6 +901,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     think "J'attends un peu."
     think "Quelques minutes, en fait."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_34
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Quand j'arrive, presque tout le monde est déjà là."
@@ -1049,6 +1060,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "Votre décision."
     kami "Vos conséquences."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_35
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([

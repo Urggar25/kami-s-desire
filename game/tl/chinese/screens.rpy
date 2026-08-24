@@ -380,11 +380,11 @@ translate chinese strings:
 
     # game/screens.rpy:765
     old "Accessibilité"
-    new ""
+    new "无障碍"
 
     # game/screens.rpy:766
     old "Animations de dialogue"
-    new ""
+    new "对话动画"
 
 # TODO: Translation updated at 2026-08-23 12:03
 
@@ -392,85 +392,85 @@ translate chinese strings:
 
     # game/screens.rpy:398
     old "Créer une sauvegarde de votre progression actuelle."
-    new ""
+    new "保存当前进度。"
 
     # game/screens.rpy:398
     old "Reprendre l'histoire depuis une sauvegarde existante."
-    new ""
+    new "从已有存档继续故事。"
 
     # game/screens.rpy:398
     old "Régler l'affichage, le texte, le son et les contrôles."
-    new ""
+    new "调整显示、文字、声音和操作设置。"
 
     # game/screens.rpy:398
     old "Consulter les dossiers des représentants du Conclave."
-    new ""
+    new "查看议会代表的档案。"
 
     # game/screens.rpy:398
     old "Voir les succès découverts et ceux encore verrouillés."
-    new ""
+    new "查看已解锁和仍锁定的成就。"
 
     # game/screens.rpy:398
     old "Parcourir les jours, embranchements et choix du récit."
-    new ""
+    new "浏览故事的日期、分支与选择。"
 
     # game/screens.rpy:398
     old "Interrompre la partie et retourner au menu principal."
-    new ""
+    new "结束本次游戏并返回主菜单。"
 
     # game/screens.rpy:398
     old "Fermer complètement Kami's Desires."
-    new ""
+    new "完全退出 Kami's Desires。"
 
     # game/screens.rpy:465
     old "MENU SYSTÈME"
-    new ""
+    new "系统菜单"
 
     # game/screens.rpy:472
     old "PAUSE // ACCÈS LOCAL"
-    new ""
+    new "暂停 // 本地访问"
 
     # game/screens.rpy:495
     old "SAUVEGARDER"
-    new ""
+    new "保存"
 
     # game/screens.rpy:506
     old "CHARGER"
-    new ""
+    new "读取"
 
     # game/screens.rpy:517
     old "OPTIONS / PRÉFÉRENCES"
-    new ""
+    new "选项 / 偏好设置"
 
     # game/screens.rpy:528
     old "PROFILS"
-    new ""
+    new "档案"
 
     # game/screens.rpy:550
     old "ROADMAP"
-    new ""
+    new "路线图"
 
     # game/screens.rpy:561
     old "MENU PRINCIPAL"
-    new ""
+    new "主菜单"
 
     # game/screens.rpy:572
     old "QUITTER LE JEU"
-    new ""
+    new "退出游戏"
 
     # game/screens.rpy:582
     old "REPRENDRE  ·  ÉCHAP"
-    new ""
+    new "继续  ·  ESC"
 
     # game/screens.rpy:611
     old "Sauvegarder"
-    new ""
+    new "保存"
 
     # game/screens.rpy:613
     old "Options / Préférences"
-    new ""
+    new "选项 / 偏好设置"
 
     # game/screens.rpy:624
     old "Quitter le jeu"
-    new ""
+    new "退出游戏"
 

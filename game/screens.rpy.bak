@@ -94,8 +94,6 @@ screen say(who, what):
         text what id "what"
         add "gui/textbox_arrow.png" xpos 1760 yalign 0.9 at textbox_arrow_blink
 
-    use talked_object_from_line(what)
-
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 

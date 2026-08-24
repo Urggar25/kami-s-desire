@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+# TODO: Translation updated at 2026-08-07 12:41
 
 # game/scenario/salles/gymnase.rpy:59
 translate chinese gymnase1_douche_c89b7dfb:

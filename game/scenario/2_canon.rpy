@@ -1,4 +1,4 @@
-﻿label _2_CANON:
+label _2_CANON:
 
     $ day_id = 2
     $ current_day = 2
@@ -112,6 +112,7 @@
     stop music fadeout 1.0
 
     # Réveil réel
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_144
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
@@ -146,6 +147,7 @@
 
 label _2_CAFETERIA_ANNONCE_KAMI:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_145
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -397,6 +399,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     stop music fadeout 1.0
 
     pause 0.8
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_146
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
 
@@ -435,6 +438,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     ryn colere "Hein ? Mais qu'est-ce que tu racontes ?"
     ryn reflechit "Heureusement qu'il y a les bons de rationnement, sinon à Limen tout le monde crèverait la bouche en cœur !"
+    $ unlock_codex_page("bons_rationnement", with_notification=False)
 
     mara taquin "Revenir au système de commerce ? MDR ! Qui a proposé ça ?"
     mara colere "Je dois vous rappeler ce que c'est que ce système de commerce ?"
@@ -692,6 +696,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     noam reflechit "Alors c'est la démocratie. On ne va forcer personne à voter pour. Personne."
 
     think "Les chaises raclent. Les plateaux s'éloignent. La réunion se dissout sans véritable conclusion."
+    $ unlock_codex_page("commerce_monnaie", with_notification=False)
 
 
     $ hideGroup()
@@ -860,6 +865,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
 label _2_APRES_MIDI_ELEN:
 
     $ day2_observation_route_elen_seen = True
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_147
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -878,6 +884,7 @@ label _2_APRES_MIDI_ELEN:
     elen joie "J'aimerais ! Pour obtenir un seul truc, il y a des formulaires beaucoup trop loooongs !"
     elen inquiet "Il faut expliquer pourquoi la ration normale ne suffit pas, à quoi servira l'objet, pendant combien de temps et qui va le garder."
     elen reflexion "Même pour un ingrédient un peu original ou un outil tout bête, la dérogation est plus compliquée que la demande."
+    $ unlock_codex_page("derogations_administratives", with_notification=False)
 
     noam reflexion "Donc le système prévoit des exceptions que presque personne ne peut obtenir."
 
@@ -923,6 +930,7 @@ label _2_APRES_MIDI_SAEL:
 # Total : 1h 18m 10s
 
 label _2_SALLE_OBSERVATION:
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_148
     scene bg_observation at adaptive_fullscreen with dissolve
 
     think "Derrière la baie vitrée : le vide, immense et calme. Kael est déjà là."
@@ -974,6 +982,7 @@ label _2_SALLE_OBSERVATION:
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_149
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
@@ -1034,6 +1043,7 @@ label _2_SALLE_OBSERVATION:
 label _2_GYMNASE:
 
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_150
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
     think "Le bruit régulier des machines couvre presque les pensées. Iris enchaîne les répétitions ; Elias, lui, les compte."
@@ -1131,6 +1141,7 @@ label _2_GYMNASE:
 
     think "Je quitte la salle. Les machines continuent, régulières et implacables."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_infirmerie", "couloir_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_151
     scene couloir_infirmerie at adaptive_fullscreen with dissolve
     think "L'heure tourne. Mon estomac me ramène à la cafétéria."
 
@@ -1140,6 +1151,7 @@ label _2_GYMNASE:
 # Totale : 1h 22m 15s
 
 label _2_CAFETERIA_SOIR:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_152
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ current_period = "Soir"
@@ -1190,10 +1202,13 @@ label _2_CAFETERIA_SOIR:
     pause 0.6
     hide screen day2_quick_vote_notes
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_153
     scene couloir_cafeteria at adaptive_fullscreen with fade
     pause 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_154
     scene bg_dortoir at adaptive_fullscreen with fade
     pause 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_155
     scene bg_chambre at adaptive_fullscreen with fade
     pause 1.0
 
@@ -1205,6 +1220,7 @@ label _2_CAFETERIA_SOIR:
 
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_156
     scene bg_chambre at adaptive_fullscreen with fade
     think "Je me sèche et tombe sur le lit."
     

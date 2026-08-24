@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-06 18:52
+# TODO: Translation updated at 2026-08-06 18:52
 
 # game/scenario/0_canon.rpy:56
 translate english 0dd60af7:

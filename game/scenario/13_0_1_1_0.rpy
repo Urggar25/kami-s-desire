@@ -203,6 +203,7 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
     "Puis il y a un autre clac métallique, plus lointain."
     "Une autre chambre."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_68
     scene bg_chambre at adaptive_fullscreen with fade
 
     "Je reste assis sur mon lit, les yeux fixés sur le trou béant dans le mur où se trouvait mon brouilleur il y a encore deux minutes."
@@ -281,6 +282,7 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
 
 label _13_0_1_1_CAFETERIA:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_69
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_careful_wanting.mp3" fadein 2.5
 
@@ -574,6 +576,7 @@ label _13_0_1_1_DISCUSSION_ECOUTEE:
     "Je ne supporte plus l’ambiance de la cafétéria."
     "Je me lève sans finir mon café et prends un couloir au hasard, juste pour m’éloigner."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_70
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     think "Je veux juste un endroit calme. Cinq minutes. Sans regards. Sans jugement."
@@ -644,6 +647,7 @@ label _13_0_1_1_DISCUSSION_ECOUTEE:
     jump _13_0_1_1_CHAMBRE_PAPIER
 
 label _13_0_1_1_CHAMBRE_PAPIER:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_71
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 2.5
 

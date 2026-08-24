@@ -1,7 +1,8 @@
-﻿label _2_CANON:
+label _2_CANON:
 
     $ day_id = 2
     $ current_day = 2
+    $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
 
     scene black
@@ -111,6 +112,7 @@
     stop music fadeout 1.0
 
     # Réveil réel
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
@@ -145,6 +147,7 @@
 
 label _2_CAFETERIA_ANNONCE_KAMI:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -396,6 +399,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     stop music fadeout 1.0
 
     pause 0.8
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
 
@@ -434,6 +438,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     ryn colere "Hein ? Mais qu'est-ce que tu racontes ?"
     ryn reflechit "Heureusement qu'il y a les bons de rationnement, sinon à Limen tout le monde crèverait la bouche en cœur !"
+    $ unlock_codex_page("bons_rationnement", with_notification=False)
 
     mara taquin "Revenir au système de commerce ? MDR ! Qui a proposé ça ?"
     mara colere "Je dois vous rappeler ce que c'est que ce système de commerce ?"
@@ -691,6 +696,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     noam reflechit "Alors c'est la démocratie. On ne va forcer personne à voter pour. Personne."
 
     think "Les chaises raclent. Les plateaux s'éloignent. La réunion se dissout sans véritable conclusion."
+    $ unlock_codex_page("commerce_monnaie", with_notification=False)
 
 
     $ hideGroup()
@@ -717,15 +723,32 @@ label _2_CAFETERIA_POST_ANNONCE:
 label _2_APRES_MIDI:
 
     $ current_period = "Après-midi"
+    $ day2_sync_argument_titles()
+    $ day2_observation_route_mara_seen = False
+    $ day2_observation_route_lysa_seen = False
+    $ day2_observation_route_elen_seen = False
+    $ day2_observation_route_sael_seen = False
+    $ current_scene_active = "_2_ROUTE_OBSERVATION"
+    $ corridor_current = "dortoir"
 
-    scene couloir_dortoir at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     show screen day2_quick_vote_notes
 
+    think "J'ai besoin de changer d'air. La salle d'observation est de l'autre côté du Conclave."
+    think "Je peux prendre le temps de parler aux autres en chemin. Ou continuer directement."
+
+    jump OPEN_CONCLAVE_MAP
+
+
+label _2_APRES_MIDI_MARA_SAEL:
+
+    $ day2_observation_route_mara_seen = True
+    scene expression Image(corridor_background("dortoir")) at adaptive_fullscreen with dissolve
+
     $ showGroup([
-        ("mara", "neutre", 0.01),
-        ("noam", "reflexion", 0.13),
-        ("sael", "mefiant", 1.20),
+        ("mara", "neutre", 0.15),
+        ("noam", "reflexion", 0.50),
+        ("sael", "mefiant", 0.65),
     ])
 
     mara mefiant "Tu penses vraiment qu’ils vont nous laisser voter tranquilles ? Tout va évidemment être manipulé."
@@ -742,8 +765,15 @@ label _2_APRES_MIDI:
 
 
     $ hideGroup()
+    return
 
-    think "Je les laisse derrière. Au tournant suivant, Lysa est adossée au mur, Elias face à elle."
+
+label _2_APRES_MIDI_LYSA_ELIAS:
+
+    $ day2_observation_route_lysa_seen = True
+    scene expression Image(corridor_background("dortoir")) at adaptive_fullscreen with dissolve
+
+    think "Lysa est adossée au mur, Elias face à elle."
 
     $ showGroup([
         ("elias", "neutre", -0.11),
@@ -829,15 +859,78 @@ label _2_APRES_MIDI:
     tuto "Vous pouvez consulter vos arguments sur votre tablette dans l'onglet Dossier de vote."
 
     $ hideGroup()
+    return
 
-    think "Elle se redresse et s'éloigne. Je repars vers la salle d'observation."
 
-    jump _2_SALLE_OBSERVATION
+label _2_APRES_MIDI_ELEN:
+
+    $ day2_observation_route_elen_seen = True
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("noam", "neutre", 0.30),
+        ("elen", "content", 0.68),
+    ])
+
+    noam "Tu fais quoi avec toute cette paperasse ?"
+
+    elen content "J'essaie de demander une dérogation au distributeur."
+    elen joie "J'ai trouvé une liste de nourriture originale ! Des vrais fruits, des épices, même des trucs qui croustillent !"
+    elen reflexion "Et il y a aussi des objets utiles. Des outils, du matériel de couture, des pièces pour réparer ce qu'on casse."
+
+    noam surpris "Tu plaisantes."
+
+    elen joie "J'aimerais ! Pour obtenir un seul truc, il y a des formulaires beaucoup trop loooongs !"
+    elen inquiet "Il faut expliquer pourquoi la ration normale ne suffit pas, à quoi servira l'objet, pendant combien de temps et qui va le garder."
+    elen reflexion "Même pour un ingrédient un peu original ou un outil tout bête, la dérogation est plus compliquée que la demande."
+    $ unlock_codex_page("derogations_administratives", with_notification=False)
+
+    noam reflexion "Donc le système prévoit des exceptions que presque personne ne peut obtenir."
+
+    elen content "Voilà ! Tu comprends vite quand tu n'as pas le formulaire sous les yeux."
+
+    call day2_collect_vote_argument("derogations_complexes") from _call_day2_collect_vote_argument_derogations_complexes
+
+    $ hideGroup()
+    jump CAFETERIA_TP
+
+
+label _2_APRES_MIDI_SAEL:
+
+    $ day2_observation_route_sael_seen = True
+    scene expression Image(corridor_background("infirmerie")) at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("noam", "neutre", 0.30),
+        ("sael", "raison", 0.68),
+    ])
+
+    noam "Ce que tu disais ce matin… l'arrivée de Kami n'a vraiment rien changé dans ton village ?"
+
+    sael raison "Presque rien. Nous travaillions déjà tous avant elle."
+    sael neutre "Les uns cultivent. Les autres réparent, chassent, soignent ou gardent les plus jeunes."
+    sael sourire "Et quand quelqu'un ne peut plus tenir, le village l'aide. Personne n'est abandonné."
+
+    noam reflexion "Ça ressemble à une solidarité totale."
+
+    sael determine "Une solidarité exigeante. Chacun donne ce qu'il peut."
+    sael colere "Mais il n'y a pas de place pour les fainéants. Refuser d'aider alors qu'on en est capable, c'est faire porter son poids aux autres."
+
+    noam raison "Donc pour toi, travailler donne aussi le droit de recevoir."
+
+    sael raison "Le travail prouve surtout qu'on appartient au groupe. La récompense vient après."
+
+    call day2_collect_vote_argument("valeur_travail") from _call_day2_collect_vote_argument_valeur_travail
+
+    $ hideGroup()
+    return
 
 # Durée : 1m50
 # Total : 1h 18m 10s
 
 label _2_SALLE_OBSERVATION:
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation")
     scene bg_observation at adaptive_fullscreen with dissolve
 
     think "Derrière la baie vitrée : le vide, immense et calme. Kael est déjà là."
@@ -889,6 +982,7 @@ label _2_SALLE_OBSERVATION:
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation")
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
@@ -949,6 +1043,7 @@ label _2_SALLE_OBSERVATION:
 label _2_GYMNASE:
 
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase")
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
     think "Le bruit régulier des machines couvre presque les pensées. Iris enchaîne les répétitions ; Elias, lui, les compte."
@@ -1046,6 +1141,7 @@ label _2_GYMNASE:
 
     think "Je quitte la salle. Les machines continuent, régulières et implacables."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_infirmerie", "couloir_infirmerie")
     scene couloir_infirmerie at adaptive_fullscreen with dissolve
     think "L'heure tourne. Mon estomac me ramène à la cafétéria."
 
@@ -1055,50 +1151,33 @@ label _2_GYMNASE:
 # Totale : 1h 22m 15s
 
 label _2_CAFETERIA_SOIR:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ current_period = "Soir"
 
-    think "La cafétéria se remplit par vagues. Nyra tient déjà une table en haleine."
     $ showGroup([
-        ("noam", "hesitation", 0.13),
-        ("nyra", "neutre", 0.96),
+        ("noam", "inquiet", 0.13),
+        ("kael", "neutre", 0.33),
+        ("tomas", "neutre", 0.54),
+        ("elen", "content", 0.75),
+        ("nyra", "taquin", 0.96),
     ])
+
+    think "Lorsque j'arrive à la cafétéria, Nyra est en pleine discussion sur sa vie à Orbite."
 
     nyra sourire "À Orbite, on mangeait en décalé. Quel rythme vous aviez, à [codex_dialogue_link('harmonie', 'Harmonie')] ?"
     nyra sourire "Là-haut, le silence faisait partie du travail. Ici, j'ai l'impression qu'il faut le mériter."
 
     noam hesitation "Tu regrettes ?"
 
-    $ showGroup([
-        ("noam", "hesitation", 0.13),
-        ("kael", "neutre", 0.84),
-        ("nyra", "sourire", 0.96),
-    ])
-
     kael neutre "La routine me manque. Pas l'endroit."
     kael neutre "Disons que c'est plus mes proches qui me manquent."
-
-    $ showGroup([
-        ("noam", "hesitation", 0.13),
-        ("kael", "neutre", 0.84),
-        ("elen", "taquin", 0.72),
-        ("nyra", "sourire", 0.96),
-    ])
 
     elen taquin "Orbite, c'était comment ? On entend vraiiiment n'importe quoi dessus !"
     elen content "Vous dormez en flottant ? Et les repas, ils se baladent ? Imagine une soupe en apesanteur !"
 
     kael neutre "On flotte dans certaines sections. La vaisselle reste attachée."
-
-
-    $ showGroup([
-        ("noam", "inquiet", 0.13),
-        ("kael", "neutre", 0.84),
-        ("tomas", "neutre", 0.60),
-        ("elen", "content", 0.72),
-        ("nyra", "taquin", 0.96),
-    ])
 
     tomas hesitation "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
     tomas inquiet "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
@@ -1123,10 +1202,13 @@ label _2_CAFETERIA_SOIR:
     pause 0.6
     hide screen day2_quick_vote_notes
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria")
     scene couloir_cafeteria at adaptive_fullscreen with fade
     pause 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir")
     scene bg_dortoir at adaptive_fullscreen with fade
     pause 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     pause 1.0
 
@@ -1138,6 +1220,7 @@ label _2_CAFETERIA_SOIR:
 
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     think "Je me sèche et tombe sur le lit."
     
@@ -1151,7 +1234,7 @@ label _2_CAFETERIA_SOIR:
 
     # jump patreon_ending
 
-    call end_day("3")
+    call end_day("3") from _call_end_day_23
 
     jump _3_CANON
 
@@ -1161,6 +1244,10 @@ label _2_CAFETERIA_SOIR:
 default j2_wakeup_trace_attempts = 0
 default j2_vote_codex_unlocked = False
 default j2_vote_arguments = []
+default day2_observation_route_mara_seen = False
+default day2_observation_route_lysa_seen = False
+default day2_observation_route_elen_seen = False
+default day2_observation_route_sael_seen = False
 default j2_vote_positions = {
     "lysa": "unknown",
     "elias": "unknown",
@@ -1184,9 +1271,9 @@ init 3 python:
 
     DAY2_VOTE_ARGUMENTS = {
         "approvisionnement": {
-            "title": "Difficulté d'approvisionnement",
+            "title": "Inégalités entre les districts",
             "category": "Risque économique",
-            "summary": "Les circuits actuels ne répondent pas toujours aux besoins réels des habitants.",
+            "summary": "Les districts n'affrontent ni les mêmes pénuries ni les mêmes chances d'accéder aux biens.",
             "origin": "Entendu lors d'un échange avec Lysa et Elias.",
         },
         "rationnement": {
@@ -1196,11 +1283,28 @@ init 3 python:
             "origin": "Relevé dans la discussion avec Kael.",
         },
         "orbite": {
-            "title": "Faiblesse d'Orbite",
+            "title": "Risque de dépressurisation",
             "category": "Sécurité",
-            "summary": "Sur Orbite, une erreur de circulation ou de sanction peut menacer directement la survie.",
+            "summary": "Sur Orbite, une sanction qui perce une coque peut condamner tout un module.",
             "origin": "Décrit par Kael en salle d'observation.",
         },
+        "derogations_complexes": {
+            "title": "Dérogations trop complexes",
+            "category": "Accès administratif",
+            "summary": "Obtenir une nourriture originale ou un objet utile exige une dérogation disproportionnée.",
+            "origin": "Découvert en parlant avec Elen à la cafétéria.",
+        },
+        "valeur_travail": {
+            "title": "Valeur du travail",
+            "category": "Organisation collective",
+            "summary": "L'entraide protège chacun, mais elle repose sur la contribution de tous ceux qui peuvent travailler.",
+            "origin": "Expliqué par Sael à partir de la vie de son village.",
+        },
+    }
+
+    DAY2_ARGUMENT_TITLE_ALIASES = {
+        "Difficulté d'approvisionnement": "Inégalités entre les districts",
+        "Faiblesse d'Orbite": "Risque de dépressurisation",
     }
 
     DAY2_VOTE_CHARACTER_ORDER = ["lysa", "elias", "kael", "mara", "julian", "iris", "elen", "ryn", "sael", "tomas", "nyra"]
@@ -1219,23 +1323,85 @@ init 3 python:
     }
 
     def day2_vote_argument_count():
+        day2_sync_argument_titles()
         return len(store.j2_vote_arguments)
+
+    def day2_sync_argument_titles():
+        changed = False
+        if persistent.unlocked_arguments is None:
+            persistent.unlocked_arguments = []
+            changed = True
+        if persistent.unlocked_vote_argument_ids is None:
+            persistent.unlocked_vote_argument_ids = []
+            changed = True
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
+            changed = True
+        for old_title, new_title in DAY2_ARGUMENT_TITLE_ALIASES.items():
+            if old_title in store.arguments:
+                store.arguments.remove(old_title)
+                if new_title not in store.arguments:
+                    store.arguments.append(new_title)
+            if old_title in persistent.unlocked_arguments:
+                persistent.unlocked_arguments.remove(old_title)
+                if new_title not in persistent.unlocked_arguments:
+                    persistent.unlocked_arguments.append(new_title)
+                changed = True
+
+        for arg_id in persistent.unlocked_vote_argument_ids:
+            if arg_id in DAY2_VOTE_ARGUMENTS and arg_id not in store.j2_vote_arguments:
+                store.j2_vote_arguments.append(arg_id)
+                changed = True
+
+        for arg_id in persistent.unlocked_dossier_args:
+            if arg_id in DAY2_VOTE_ARGUMENTS and arg_id not in store.j2_vote_arguments:
+                store.j2_vote_arguments.append(arg_id)
+                changed = True
+
+        for arg_id in getattr(store, "j2_vote_arguments", []):
+            if arg_id in DAY2_VOTE_ARGUMENTS:
+                title = DAY2_VOTE_ARGUMENTS[arg_id]["title"]
+                if title not in store.arguments:
+                    store.arguments.append(title)
+                if title not in persistent.unlocked_arguments:
+                    persistent.unlocked_arguments.append(title)
+                    changed = True
+                if arg_id not in persistent.unlocked_vote_argument_ids:
+                    persistent.unlocked_vote_argument_ids.append(arg_id)
+                    changed = True
+                if arg_id not in persistent.unlocked_dossier_args:
+                    persistent.unlocked_dossier_args.append(arg_id)
+                    changed = True
+                    if hasattr(store, "dossier_unlocked_args"):
+                        store.dossier_unlocked_args[arg_id] = True
+        if changed:
+            renpy.save_persistent()
 
     def day2_vote_add_argument(arg_id):
         if arg_id not in DAY2_VOTE_ARGUMENTS:
             return False
+        day2_sync_argument_titles()
         title = DAY2_VOTE_ARGUMENTS[arg_id]["title"]
         if title not in store.arguments:
             store.arguments.append(title)
         # Persistance globale (conservée entre parties/sauvegardes).
         if persistent.unlocked_arguments is None:
             persistent.unlocked_arguments = []
+        if persistent.unlocked_vote_argument_ids is None:
+            persistent.unlocked_vote_argument_ids = []
+        if persistent.unlocked_dossier_args is None:
+            persistent.unlocked_dossier_args = []
         if title not in persistent.unlocked_arguments:
             persistent.unlocked_arguments.append(title)
+        if arg_id not in persistent.unlocked_vote_argument_ids:
+            persistent.unlocked_vote_argument_ids.append(arg_id)
+        if arg_id not in persistent.unlocked_dossier_args:
+            persistent.unlocked_dossier_args.append(arg_id)
         if arg_id not in store.j2_vote_arguments:
             store.j2_vote_arguments.append(arg_id)
         if "unlock_dossier_arg" in globals():
             unlock_dossier_arg(arg_id)
+        renpy.save_persistent()
         renpy.restart_interaction()
         return True
 
@@ -1287,14 +1453,28 @@ screen vote_argument_briefcase(arg_id, argument_data, card_drag_name, drop_drag_
             fixed:
                 xfill True
                 yfill True
-                add arg.get("card", "gui/day3/argument_card_bg.png")
-                vbox:
-                    xpos 44
-                    ypos 46
-                    xsize 370
-                    spacing 14
-                    text "[arg['title']]" size 34 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
-                    text "DOSSIER DU VOTE" size 20 color "#9ed8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                # Un fond sans texte évite les doublons des cartes précomposées
+                # et conserve les accents dans les titres du Jour 3.
+                add "gui/day3/argument_card_bg.png"
+                text "ARGUMENT":
+                    xpos 30
+                    ypos 24
+                    size 20
+                    color "#6fdfff"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                text kd_tr(arg["title"]):
+                    xpos 30
+                    ypos 84
+                    xsize 400
+                    size 40
+                    color "#ffffff"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                text "DOSSIER DU VOTE":
+                    xpos 30
+                    ypos 202
+                    size 20
+                    color "#9ed8ff"
+                    font "fonts/Rajdhani-SemiBold.ttf"
 
         drag:
             drag_name drop_drag_name
@@ -1381,13 +1561,13 @@ screen day2_current_vote_codex():
                     vbox:
                         spacing 12
                         text "Vote en cours" size 30 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-                        text "Autoriser le transport, la vente et l'échange de marchandises au sein des districts." size 22 color "#dff8ff"
+                        text "Ça serait bien qu'on réautorise le commerce comme avant." size 22 color "#dff8ff"
                         text "Moment prévu : Jour 3, 14h00" size 19 color "#9ed8ff"
                         text "Résumé neutre" size 21 color "#70c6e8"
                         text "Le texte promet une circulation plus libre des biens. Ses effets restent incertains selon les districts, les procédures et les risques locaux." size 20 color "#b8d8e4"
                         null height 8
                         text "Arguments découverts" size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-                        for arg_id in ["approvisionnement", "rationnement", "orbite"]:
+                        for arg_id in ["approvisionnement", "rationnement", "orbite", "derogations_complexes", "valeur_travail"]:
                             if arg_id in j2_vote_arguments:
                                 $ arg = DAY2_VOTE_ARGUMENTS[arg_id]
                                 frame:
@@ -1396,9 +1576,9 @@ screen day2_current_vote_codex():
                                     background Solid("#123044")
                                     vbox:
                                         spacing 3
-                                        text "[arg['title']]" size 21 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
-                                        text "[arg['summary']]" size 17 color "#b8d8e4"
-                                        text "[arg['origin']]" size 15 color "#74a8ba"
+                                        text kd_tr(arg["title"]) size 21 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text kd_tr(arg["summary"]) size 17 color "#b8d8e4"
+                                        text kd_tr(arg["origin"]) size 15 color "#74a8ba"
                             else:
                                 frame:
                                     xfill True
@@ -1429,7 +1609,7 @@ screen day2_current_vote_codex():
                                     background Solid("#0c1d29")
                                     vbox:
                                         spacing 8
-                                        text "[col_label]" xalign 0.5 size 28 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+                                        text kd_tr(col_label) xalign 0.5 size 28 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
                                         text "Glisse les portraits ici." xalign 0.5 size 16 color "#6797aa"
 
                         for cid in DAY2_VOTE_CHARACTER_ORDER:
@@ -1459,7 +1639,7 @@ screen day2_argument_briefcase(arg_id):
     use vote_argument_briefcase(arg_id, arg, "day2_argument_card", "day2_briefcase_drop", day2_argument_drop)
 
 label day2_play_wakeup_trace:
-    call trace_qte_run(mg_id="trace_day2_wakeup", title="RÉVEIL — JOUR 2", path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True)
+    call trace_qte_run(mg_id="trace_day2_wakeup", title="RÉVEIL — JOUR 2", path_type="curve_right", time_limit=6.0, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True) from _call_trace_qte_run_2
     return True
 
 label day2_collect_vote_argument(arg_id):
@@ -1469,4 +1649,5 @@ label day2_collect_vote_argument(arg_id):
         "Note ajoutée au Prochain vote."
     return
 
-# Durée de la 2e journée de jeu : 15m30
+# Durée de la 2e journée de jeu : 16m de jeu
+# Total J0-J1 : 1h 8m

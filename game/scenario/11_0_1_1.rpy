@@ -6,6 +6,7 @@ label _11_0_1_1_REVEIL_CHAMBRE:
     "Je sens une sensation humide et fraîche sur mon front."
     "J’ouvre les yeux difficilement. La lumière me brûle un peu."
     
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_36
     scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
     
     iris "Ah bah enfin ! Monsieur daigne se réveiller."
@@ -62,6 +63,7 @@ label _11_0_1_1_REVEIL_CHAMBRE:
 label noam_parle_doppelganger_iris:
 
     play music "music/bgm_system_override.mp3" fadein 2.5
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_37
     scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
 
     $ showGroup([
@@ -119,6 +121,7 @@ label noam_parle_doppelganger_iris:
 label noam_garde_secret:
 
     play music "music/bgm_system_override.mp3" fadein 2.5
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_38
     scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
 
     $ showGroup([
@@ -162,6 +165,7 @@ label noam_garde_secret:
 
 label _11_0_1_1_APRES_REVEIL:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_39
     scene bg_chambre at adaptive_fullscreen
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
     
@@ -227,6 +231,7 @@ label _11_0_1_1_APRES_REVEIL:
 
     pause 1.5
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_40
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -255,6 +260,7 @@ label _11_0_1_1_APRES_REVEIL:
     "Je me lève lentement. Mes jambes tremblent légèrement, mais je serre les dents et commence à avancer."
 
     $ hideGroup()
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_41
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     "Je les suis et je marche un peu en retrait, légèrement étourdi."
@@ -269,6 +275,7 @@ label _11_0_1_1_APRES_REVEIL:
 
     "Nous nous arrêtons instinctivement. Sael me fait signe de rester silencieux."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_42
     scene bg_observation at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -364,6 +371,7 @@ label _11_0_1_1_APRES_REVEIL:
 
 label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_43
     scene bg_chambre at adaptive_fullscreen with dissolve
     stop music fadeout 1.0  # pour laisser un silence lourd au début
 
@@ -425,6 +433,7 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
 label _11_0_1_3_SALLE_COMMUNICATION:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_44
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.0
 
@@ -491,6 +500,7 @@ label _11_0_1_3_SALLE_COMMUNICATION:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Enfin, si tu sais t'en servir !"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_45
     scene bg_observation at adaptive_fullscreen with dissolve
 
     "Les écrans des ordinateurs s’allument d’un coup."
@@ -501,6 +511,7 @@ label _11_0_1_3_SALLE_COMMUNICATION:
 
 label _11_0_1_1_CONFRONTATION_KAMI:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_46
     scene bg_observation at adaptive_fullscreen with dissolve
 
     "Je sélectionne enfin la bonne combinaison."
@@ -651,6 +662,7 @@ label _11_0_1_1_CONFRONTATION_KAMI:
 
 label _11_0_1_1_RETOUR_CHAMBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_47
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.bgm" fadein 3.0
 
@@ -662,6 +674,7 @@ label _11_0_1_1_RETOUR_CHAMBRE:
 
     "Je marche droit vers ma chambre, ignorant les voix lointaines qui proviennent de la salle commune."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_48
     scene bg_chambre at adaptive_fullscreen with fade
 
     "À peine la porte refermée, je m’adosse contre elle un instant, les yeux fermés."

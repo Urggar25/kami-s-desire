@@ -36,6 +36,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     nyra inquiet "Je sais que tu es réveillé."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
 
     "Je serre la mâchoire."
@@ -189,6 +190,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
     jump _14_0_1_1_0_CAFETERIA_REJET
 
 label _14_0_1_1_0_CAFETERIA_REJET:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_careful_wanting.mp3" fadein 2.5
 
@@ -456,6 +458,7 @@ label _14_0_1_1_0_CAFETERIA_REJET:
     mara agace "Je tousse."
     "Je n'attends pas que ça reparte."
     "Je quitte la cafétéria sous leurs regards."
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
     "La porte de la cafétéria se referme derrière moi."
     "Le couloir est plus silencieux."
@@ -467,6 +470,7 @@ label _14_0_1_1_0_CAFETERIA_REJET:
 
 label _14_0_1_1_0_CHAMBRE_SAEL:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_debate.mp3" fadein 2.0
 
@@ -531,6 +535,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 0.2
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with fade
 
     noam peur "Quoi ?"
@@ -551,6 +556,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     scene black with fade
     pause 0.5
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael")
     scene bg_chambre_sael at adaptive_fullscreen with dissolve
 
     "Et me dire d'un coup dans la chambre"
@@ -674,6 +680,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 0.15
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael")
     scene bg_chambre_sael at adaptive_fullscreen
     with hpunch
 
@@ -870,6 +877,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
     "Je me dégage."
     "Je cours."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     ryn colere "Reviens !"
@@ -895,6 +903,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     play sound sfx_door volume 1.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with hpunch
 
     noam panique "Allez !"
@@ -963,6 +972,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 0.15
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen
     with hpunch
 
@@ -984,12 +994,13 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 2.0
 
-    call show_custom_title("Après m'être longuement calmé")
+    call show_custom_title("Après m'être longuement calmé") from _call_show_custom_title_3
 
     jump _14_0_1_1_0_MESSAGES_KAEL
 
 label _14_0_1_1_0_MESSAGES_KAEL:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_calm_sad.mp3" fadein 2.5
 
@@ -1097,6 +1108,7 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
 label _14_0_1_1_0_FIN_JOURNEE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_calm_sad.mp3" fadein 3.0
 
@@ -1149,5 +1161,5 @@ label _14_0_1_1_0_FIN_JOURNEE:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("15")
+    call end_day("15") from _call_end_day_15
     jump _15_0_1_1_0_REVEIL_CHAMBRE

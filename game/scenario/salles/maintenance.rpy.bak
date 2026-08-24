@@ -10,6 +10,7 @@ default decouverte_salle_maintenance = False
 
 
 label MAINTENANCE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance")
     scene bg_maintenance at adaptive_fullscreen
 
     if not decouverte_salle_maintenance and day_number() == 1:
@@ -37,22 +38,14 @@ screen pnc_maintenance():
     use room_scene_background("maintenance")
     use room_scene_interactions("maintenance")
 
-    if social_free_time_active() and kael_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("kael"):
         imagebutton:
             idle Transform(character_image("kael", "neutre"), zoom=1.00)
             hover Transform(character_image("kael", "reflechit"), zoom=1.00)
             focus_mask True
             xalign 0.48
             yalign 1.00
-            action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("KAEL_LINK_INTERACT")]
-    if social_free_time_active() and elias_link in [1, 3]:
-        imagebutton:
-            idle Transform(character_image("elias", "neutre"), zoom=1.00)
-            hover Transform(character_image("elias", "reflechit"), zoom=1.00)
-            focus_mask True
-            xalign 0.72
-            yalign 1.00
-            action [SetVariable("last_room_label", "MAINTENANCE_TP"), Jump("ELIAS_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "MAINTENANCE_TP"), SetVariable("free_time_selected_character", "kael"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
 
 
@@ -137,6 +130,7 @@ label decouverte_salle_maintenance:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance")
     scene bg_maintenance at adaptive_fullscreen with fade
 
     "Ça sent le métal chaud."
@@ -173,6 +167,7 @@ label decouverte_salle_maintenance:
     kael taquin "Non."
     kael taquin "J’avais juste besoin d’un endroit tranquille."
     kael taquin "Noam c'est ça ? Moi c'est Kael."
+    $ unlock_character_name("kael")
     
     noam hesitation "Ouai."
     noam hesitation "On est vraiment dans un endroit étrange."

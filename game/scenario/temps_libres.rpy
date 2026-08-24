@@ -1,8 +1,10 @@
 label lysa_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_356
     scene bg_repos at adaptive_fullscreen with fade
     "En passant devant la salle de repos, j'aperçois Lysa seule. Elle ne me remarque pas, alors je poursuis discrètement jusqu'à la cafétéria."
     think "Elle regrettait tellement son café lors de notre rencontre... Autant réparer cette tragédie."
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_357
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "neutre", 0.30),
@@ -15,6 +17,7 @@ label lysa_link_1:
     noam sourire "Parfait. Tu vois, quand tu veux, tu sais vendre tes produits."
     "Je récupère les deux gobelets et retourne dans la salle de repos."
     $ hideGroup()
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_358
     scene bg_repos at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "sourire", 0.22),
@@ -43,6 +46,7 @@ label lysa_link_1:
 
 label lysa_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_359
     scene bg_observation at adaptive_fullscreen with fade
     "Dans la salle d'observation, Lysa garde le visage si près de la baie vitrée qu'elle semble vouloir passer au travers."
     $ showGroup([
@@ -81,6 +85,7 @@ label lysa_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
     scene black
     "Un choc sourd traverse le couloir de la cafétéria. Lorsque j'entre dans la salle du canon, l'air y est encore brûlant."
+    call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_360
     scene bg_canon at adaptive_fullscreen with fade
 
     think "Qu'est-ce qui s'est passé ici ?!"
@@ -122,6 +127,7 @@ label lysa_link_3:
 
 label julian_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_361
     scene bg_repos at adaptive_fullscreen with fade
     "Julian attend devant le baby-foot, une main posée sur les poignées."
     $ showGroup([
@@ -171,6 +177,7 @@ label julian_link_1:
 
 label julian_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_362
     scene bg_infirmerie at adaptive_fullscreen with fade
     "Julian est penché sur le set de chirurgie. Il tient une aiguille entre ses doigts et sa veste est posée sur la table d'examen."
     $ showGroup([
@@ -207,6 +214,7 @@ label julian_link_2:
 
 label julian_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_363
     scene bg_observation at adaptive_fullscreen with fade
     "Julian est installé près de la baie vitrée, un carnet posé sur ses genoux. Il le referme légèrement dès qu'il m'aperçoit."
     $ showGroup([
@@ -261,6 +269,7 @@ label julian_link_3:
 
 label elen_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_364
     scene bg_cafeteria at adaptive_fullscreen with fade
     "Elen se tient devant Goumi et lui donne des instructions en agitant les mains. Sur le comptoir, une pâte trop liquide tourne dans un récipient."
     $ showGroup([
@@ -309,6 +318,7 @@ label elen_link_1:
 
 label elen_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_365
     scene bg_repos at adaptive_fullscreen with fade
     "Lorsque j'entre dans la salle de repos, Elen traîne un fauteuil d'un bout à l'autre de la pièce."
     $ showGroup([
@@ -355,6 +365,7 @@ label elen_link_2:
 
 label elen_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_366
     scene bg_observation at adaptive_fullscreen with fade
     "Elen regarde la planète derrière la baie vitrée. Son visage paraît épuisé, mais elle sourit dès qu'elle remarque ma présence."
     $ showGroup([
@@ -405,6 +416,7 @@ label elen_link_3:
 
 label iris_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_367
     scene bg_repos at adaptive_fullscreen with fade
     "Iris se tient devant la borne d'arcade, les bras croisés. L'écran affiche le début d'une partie, mais elle ne touche pas aux commandes."
     $ showGroup([
@@ -453,6 +465,7 @@ label iris_link_1:
 
 label iris_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_368
     scene bg_infirmerie at adaptive_fullscreen with fade
     "J'essaie de fixer un pansement autour de mon doigt lorsque Iris entre dans l'infirmerie."
     $ showGroup([
@@ -507,6 +520,7 @@ label iris_link_2:
 
 label iris_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_369
     scene bg_cafeteria at adaptive_fullscreen with fade
     "À peine Iris pose-t-elle son verre sur la table que celui-ci se met à trembler."
     $ showGroup([
@@ -562,6 +576,7 @@ label iris_link_3:
 
 label tomas_link_1:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_370
     scene bg_archive at adaptive_fullscreen with fade
     "Tomas observe une ancienne carte couverte de frontières. Aucun des six districts actuels n'y apparaît."
     $ showGroup([
@@ -602,6 +617,7 @@ label tomas_link_1:
 
 label tomas_link_2:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_371
     scene bg_repos at adaptive_fullscreen with fade
     "Tomas est assis devant une feuille divisée en plusieurs catégories : nourriture, musique, loisirs et souvenirs amusants."
     $ showGroup([
@@ -645,6 +661,7 @@ label tomas_link_2:
 
 label tomas_link_3:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_372
     scene bg_cafeteria at adaptive_fullscreen with fade
     "Tomas reste planté devant Goumi tandis qu'une longue liste de boissons défile sur son écran."
     $ showGroup([
@@ -697,6 +714,7 @@ label tomas_link_3:
 
 label nyra_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_373
     scene bg_stockage at adaptive_fullscreen with fade
     "Nyra examine les caisses de la dernière livraison pendant que j'essaie de les ranger sur les étagères."
     $ showGroup([
@@ -741,6 +759,7 @@ label nyra_link_1:
 
 label nyra_link_2:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_374
     scene bg_observation at adaptive_fullscreen with fade
     "Sur un écran secondaire, Nyra compare d'anciennes trajectoires orbitales. Plusieurs lignes s'interrompent brusquement autour de la planète."
     $ showGroup([
@@ -777,6 +796,7 @@ label nyra_link_2:
 
 label nyra_link_3:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_375
     scene bg_archive at adaptive_fullscreen with fade
     "Nyra relit le même dossier lorsque j'entre dans la salle des archives."
     $ showGroup([
@@ -825,6 +845,7 @@ label nyra_link_3:
 
 label kael_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_376
     scene bg_maintenance at adaptive_fullscreen with fade
     "Kael est accroupi devant une machine ouverte. Plusieurs lignes de code défilent sur le terminal posé à côté de lui."
     $ showGroup([
@@ -871,6 +892,7 @@ label kael_link_1:
 
 label kael_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_377
     scene bg_repos at adaptive_fullscreen with fade
     "Kael est assis près du lecteur musical. Je prends la commande et fais défiler les morceaux disponibles."
     $ showGroup([
@@ -918,6 +940,7 @@ label kael_link_2:
 
 label kael_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_378
     scene bg_cafeteria at adaptive_fullscreen with fade
     "La télévision diffuse les images d'une forte pluie. Kael reste debout devant l'écran, son repas à peine touché."
     $ showGroup([
@@ -960,6 +983,7 @@ label kael_link_3:
 
 label elias_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_379
     scene bg_gymnase at adaptive_fullscreen with fade
     "Elias remplit un sac avec plusieurs poids de tailles différentes."
     $ showGroup([
@@ -1006,6 +1030,7 @@ label elias_link_1:
 
 label elias_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_380
     scene bg_cafeteria at adaptive_fullscreen with fade
     "Elias est allongé sous la machine à boissons. Une petite flaque s'étend près de son épaule."
     $ showGroup([
@@ -1055,6 +1080,7 @@ label elias_link_2:
 
 label elias_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_381
     scene bg_maintenance at adaptive_fullscreen with fade
     "Elias assemble plusieurs morceaux de métal sur un établi. Il recouvre aussitôt son travail lorsque j'approche."
     $ showGroup([
@@ -1106,6 +1132,7 @@ label elias_link_3:
 
 label mara_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_382
     scene bg_gymnase at adaptive_fullscreen with fade
     "Mara me regarde tenir en position de gainage avec un sourire beaucoup trop satisfait."
     $ showGroup([
@@ -1154,6 +1181,7 @@ label mara_link_1:
 
 label mara_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_383
     scene bg_cafeteria at adaptive_fullscreen with fade
     "Mara fixe ma main pendant que je coupe mon repas."
     $ showGroup([
@@ -1196,6 +1224,7 @@ label mara_link_2:
 
 label mara_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_384
     scene bg_repos at adaptive_fullscreen with fade
     "Je reste assis sur le canapé, encore préoccupé par la dernière discussion du groupe."
     $ showGroup([
@@ -1246,6 +1275,7 @@ label mara_link_3:
 
 label ryn_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_385
     scene bg_repos at adaptive_fullscreen with fade
     "Lorsque Ryn entre dans la salle de repos, je suis installé dans le fauteuil placé face à la porte."
     $ showGroup([
@@ -1289,6 +1319,7 @@ label ryn_link_1:
 
 label ryn_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_386
     scene bg_gymnase at adaptive_fullscreen with fade
     "Ryn m'observe frapper maladroitement dans le vide depuis plusieurs secondes."
     $ showGroup([
@@ -1339,6 +1370,7 @@ label ryn_link_2:
 
 label ryn_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_387
     scene bg_stockage at adaptive_fullscreen with fade
     "Ryn examine une pelle pliable trouvée parmi le matériel de maintenance."
     $ showGroup([
@@ -1385,6 +1417,7 @@ label ryn_link_3:
 
 label sael_link_1:
     play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_388
     scene bg_infirmerie at adaptive_fullscreen with fade
 
     "Quand j'entre dans l'infirmerie, Sael remplit méthodiquement une petite trousse posée sur le lit d'examen."
@@ -1423,6 +1456,7 @@ label sael_link_1:
 
 label sael_link_2:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_389
     scene bg_observation at adaptive_fullscreen with fade
 
     "Dans la salle d'observation, Sael fixe la console tandis que les lumières changent de couleur au-dessus d'elle."
@@ -1461,6 +1495,7 @@ label sael_link_2:
 
 label sael_link_3:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_390
     scene bg_cafeteria at adaptive_fullscreen with fade
 
     "Avant de commencer son repas, Sael rompt un morceau de pain et le dépose seul sur une assiette vide."

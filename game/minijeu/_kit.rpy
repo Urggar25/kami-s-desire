@@ -236,7 +236,7 @@ screen mk_tuto_chrome(title, steps, screen_name, as_overlay=False):
 
             hbox:
                 xfill True
-                text "TUTORIEL — [title]":
+                text "{} — {}".format(kd_tr("TUTORIEL"), kd_tr(title)):
                     size 34
                     color "#7DF9FF"
                     bold True

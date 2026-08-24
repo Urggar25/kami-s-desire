@@ -25,23 +25,6 @@ init 2 python:
         },
     ]
 
-    if "reglement_conclave" not in CODEX_ENTRIES:
-        CODEX_ENTRIES["reglement_conclave"] = {
-            "title": "Règlement du Conclave",
-            "category": "coutume",
-            "unlocked_day": 1,
-            "text": """Le Conclave dure trente jours. Pendant cette période, les représentants restent isolés dans le complexe et ne peuvent pas rejoindre leur district, ni initier de contact vers l'extérieur. Si un appel extérieur leur parvient, ils peuvent y répondre, mais ils ne peuvent pas provoquer eux-mêmes l'échange.
-
-Chaque représentant dépose un amendement lors de la première journée. Les propositions sont déposées dans une urne, anonymement. Dix amendements sont ensuite tirés au sort pour être soumis au vote au cours du Conclave ; deux propositions peuvent donc ne jamais être débattues.
-
-Un vote a lieu tous les trois jours. Pour qu'un amendement soit adopté, tous les bulletins exprimés doivent être favorables. Les abstentions et absences ne comptent pas dans les bulletins exprimés, mais une seule voix contre suffit à rejeter le texte. Selon la nature de la proposition, un rejet peut aussi produire des conséquences.
-
-Les chambres individuelles sont équipées de brouilleurs. Par défaut, le brouilleur coupe les caméras, l'audio et les capteurs de la chambre. Un représentant peut le désactiver, mais la pièce redevient alors potentiellement observable.
-
-Les espaces communs restent surveillés et enregistrés. Les Commandements ordinaires ne s'appliquent pas dans le Conclave, mais les règles propres au complexe restent actives. Kami ne vote pas et ne propose pas d'amendement ; elle organise, observe, tire au sort, annonce les résultats et applique les changements validés."""
-        }
-
-
 # =============================================================================
 label _1_CANON:
 # =============================================================================
@@ -59,6 +42,7 @@ label _1_CANON:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_113
     scene bg_conclave at adaptive_fullscreen with fade
 
     think "Dossier rigide. Métal froid. Air recyclé. Plastique neuf. Finalement, j'ai l'impression de n'avoir jamais quitté Harmonie."
@@ -255,6 +239,7 @@ label _1_CANON:
     jump _1_CHOICE
 
 label _1_CHOICE_DEATH:
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_114
     scene bg_conclave at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -521,6 +506,7 @@ label _1_PNC_CONCLAVE_DEBARAS:
 label _1_PNC_CONCLAVE_FINISH:
     hide screen day1_conclave_pnc
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_115
     scene conclave2 at adaptive_fullscreen with fade
     "L'écran central du Conclave s'allume faiblement."
     think "On dirait que le système attendait qu'on l'observe."
@@ -529,6 +515,7 @@ label _1_PNC_CONCLAVE_FINISH:
 
 label _1_PNC_CONCLAVE_LYSA:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_116
     scene bg_conclave at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -546,6 +533,7 @@ label _1_PNC_CONCLAVE_LYSA:
 
 label _1_PNC_CONCLAVE_RYN:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_117
     scene bg_conclave at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -573,6 +561,7 @@ label _1_PNC_CONCLAVE_RYN:
 
 label _1_PNC_CONCLAVE_MARA:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_118
     scene bg_conclave at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -593,6 +582,7 @@ label _1_PNC_CONCLAVE_MARA:
 
 label _1_PNC_CONCLAVE_ELIAS:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_119
     scene bg_conclave at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -613,6 +603,7 @@ label _1_PNC_CONCLAVE_ELIAS:
 
 label _1_PNC_CONCLAVE_KAEL:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_120
     scene conclave2 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -632,6 +623,7 @@ label _1_PNC_CONCLAVE_KAEL:
 
 label _1_PNC_CONCLAVE_TOMAS:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_121
     scene conclave2 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -658,6 +650,7 @@ label _1_PNC_CONCLAVE_TOMAS:
 
 label _1_PNC_CONCLAVE_IRIS:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_122
     scene conclave2 at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -676,6 +669,7 @@ label _1_PNC_CONCLAVE_IRIS:
 
 label _1_PNC_CONCLAVE_ELEN:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_123
     scene conclave3 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -695,6 +689,7 @@ label _1_PNC_CONCLAVE_ELEN:
 
 label _1_PNC_CONCLAVE_NYRA:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_124
     scene conclave3 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -712,6 +707,7 @@ label _1_PNC_CONCLAVE_NYRA:
 
 label _1_PNC_CONCLAVE_JULIAN:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_125
     scene conclave3 at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -730,6 +726,7 @@ label _1_PNC_CONCLAVE_JULIAN:
 
 label _1_PNC_CONCLAVE_SAEL:
     hide screen day1_conclave_pnc
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_126
     scene conclave3 at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -1008,6 +1005,7 @@ label _1_KAMI_APPARITION:
     play music "music/bgm_quiet_routine.mp3" fadein 0.4
     hide screen kami_broadcast_ui
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_127
     scene bg_conclave at adaptive_fullscreen with fade
 
     "L'écran s'éteint. Une seconde plus tard, les douze voix éclatent ensemble."
@@ -1230,6 +1228,7 @@ label FIRST_CONCLAVE_ELEN_INTERACT:
 label _1_KAMI_CONVOCATION_CONCLAVE:
     $ current_scene_active = "NONE"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_128
     scene bg_conclave at adaptive_fullscreen with fade
 
     "Les portes du Conclave s'ouvrent ; dedans, il y a déjà plusieurs personnes."
@@ -1471,6 +1470,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 label _1_CONCLAVE_DEBAT_DEPOT:
 # =============================================================================
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_129
     scene bg_conclave at adaptive_fullscreen
     play music "music/bgm_system_override.mp3" fadein 1.0
 
@@ -1662,6 +1662,7 @@ label _1_proposition_amendement:
 
     think "Voilà. Mon premier amendement. Le dernier déposé, forcément."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_130
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     jump _1_AMENDEMENT_DEPOSE
@@ -1714,12 +1715,14 @@ label _1_AMENDEMENT_DEPOSE:
 
     kami "Profitez de votre douce nuit de tranquillité ! Demain, on recommencera à jouer tous ensemble."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_131
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Les écrans s'éteignent. Les chaises raclent le sol. Personne ne se dit vraiment au revoir."
 
     think "C'est fini. Pour aujourd'hui du moins."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_132
     scene couloir_dortoir at adaptive_fullscreen with fade
 
     think "Le couloir est calme. Presque normal, si on oublie l'urne capable de réécrire le monde derrière moi."
@@ -1762,6 +1765,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     $ current_period = "Soir"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_133
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
@@ -1918,15 +1922,18 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     $ current_period = "Soir"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_134
     scene couloir_cafeteria at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     think "Ça y est. La journée est finie. Enfin… presque. Je continue de marcher sans m'attarder sur mes pensées."
 
     pause 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_135
     scene couloir_dortoir at adaptive_fullscreen with fade
     pause 1.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_136
     scene bg_dortoir at adaptive_fullscreen with fade
 
     think "La lumière du dortoir est plus chaude, moins clinique. Elias est déjà là."
@@ -1977,6 +1984,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     pause 0.3
     $ hideGroup()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_137
     scene bg_chambre at adaptive_fullscreen with fade
 
     think "Ma chambre est étrangement assez confortable."
@@ -2015,6 +2023,7 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     pause 0.5
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_138
     scene bg_chambre at adaptive_fullscreen with fade
 
     think "Je m'allonge. Le lit est plus confortable que prévu."

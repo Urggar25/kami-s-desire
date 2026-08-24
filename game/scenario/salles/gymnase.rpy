@@ -10,6 +10,7 @@ default decouverte_gymnase = False
 
 
 label GYMNASE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_337
     scene bg_gymnase at adaptive_fullscreen
 
     if not decouverte_gymnase and day_number() == 1:
@@ -161,6 +162,7 @@ label decouverte_gymnase:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_338
     scene bg_gymnase at adaptive_fullscreen with fade
 
     "Ça sent le caoutchouc."

@@ -2,6 +2,7 @@ default conclave_lock = True
 
 
 label CONCLAVE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_333
     scene bg_conclave at adaptive_fullscreen
 
     if current_scene_active in ["FIRST_CONCLAVE_ELEN_INTERACT", "_1_KAMI_CONVOCATION_CONCLAVE"]:

@@ -358,7 +358,7 @@ screen main_menu():
 
     # Accès direct à la bande-annonce de la version courante.
     # Start() lance une cinématique autonome et préserve les sauvegardes.
-    textbutton "VERSION [config.version]  ▶":
+    textbutton "TRAILER 3.0  ▶":
         style "version_trailer_button"
         xpos 1870
         ypos 1000
@@ -366,7 +366,7 @@ screen main_menu():
         yanchor 1.0
         action [
             SetField(persistent, "trl_skip_splash", True),
-            Start("version_2_1_trailer"),
+            Start("version_3_0_trailer"),
         ]
 
     # Raccourci clavier rapide

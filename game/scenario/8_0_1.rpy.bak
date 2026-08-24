@@ -16,6 +16,7 @@ label _8_0_1_REVEIL_CHAMBRE:
     $ blink()
     $ blink()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La lumière filtre sous le rideau."
@@ -77,6 +78,7 @@ label _8_0_1_REVEIL_CHAMBRE:
 
     tuto "(Fouille la chambre. Le dessin est peut-être encore là.)"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ pnc_room = "chambre_j8"
     $ pnc_flags = {}
@@ -225,6 +227,7 @@ label _8_PNC_ECRAN:
 
 label _8_FIN_RECHERCHE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "Je m'assois sur le lit."
@@ -316,6 +319,7 @@ label _8_FIN_RECHERCHE:
 
 label _8_0_1_CAFETERIA:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
@@ -507,6 +511,7 @@ label _8_0_1_CAFETERIA:
 
 label _8_0_1_TEMPS_LIBRE_1:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir")
     scene bg_couloir at adaptive_fullscreen with dissolve
 
     call START_FREE_TIME("_8_0_1_APRES_MIDI_KAEL_CRISE") from _call_START_FREE_TIME_8_0_1
@@ -526,6 +531,7 @@ label _8_0_1_TEMPS_LIBRE_1:
 
 label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
 
@@ -580,6 +586,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     # --- La porte s'ouvre ---
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     play sound "sfx/door_slam.mp3" volume 1.2
@@ -694,6 +701,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
 label _8_0_1_APRES_STABILISATION:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     play music "music/bgm_system_override.mp3" fadein 2.5
@@ -841,6 +849,7 @@ label _8_0_1_APRES_STABILISATION:
 
     pause 0.5
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     "Les minutes passent."
@@ -887,6 +896,7 @@ label _8_0_1_APRES_STABILISATION:
 
 label _8_0_1_SOIREE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 3.0
 

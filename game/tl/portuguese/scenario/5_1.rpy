@@ -1,3418 +1,2276 @@
-﻿# TODO: Translation updated at 2026-08-07 13:14
+﻿# TODO: Translation updated at 2026-08-24 09:48
 
-# game/scenario/5_1.rpy:18
-translate portuguese 0e80e0da_2:
+# game/scenario/5_1.rpy:19
+translate portuguese 7f6a0301:
 
-    # noam "..."
-    noam ""
+    # think "Aïe... J'ai l'impression que quelqu'un frappe directement contre mon crâne."
+    think "Ai... Parece que alguém está martelando dentro do meu crânio."
 
-# game/scenario/5_1.rpy:22
-translate portuguese 55dabf17:
+# game/scenario/5_1.rpy:23
+translate portuguese c067c406:
 
-    # noam "Aïe."
-    noam ""
+    # think "J'ai la bouche sèche, la nuque bloquée et beaucoup trop de lumière dans les yeux."
+    think "Minha boca está seca, meu pescoço travado e tem luz demais nos meus olhos."
 
-# game/scenario/5_1.rpy:28
-translate portuguese 290dd969_5:
+# game/scenario/5_1.rpy:24
+translate portuguese da508754:
 
-    # noam "Non."
-    noam ""
+    # think "Franchement, je l'ai bien mérité."
+    think "Sinceramente, eu mereci."
 
-# game/scenario/5_1.rpy:29
-translate portuguese 740ad42e:
+# game/scenario/5_1.rpy:26
+translate portuguese 3297f8d4:
 
-    # noam "Même pas aïe."
-    noam ""
+    # noam fatigue "Plus jamais je ne bois autant..."
+    noam fatigue "Nunca mais vou beber tanto..."
 
-# game/scenario/5_1.rpy:30
-translate portuguese a25c1f98:
+# game/scenario/5_1.rpy:27
+translate portuguese 81bb3970:
 
-    # noam "Là, c'est carrément mon crâne qui demande l'indépendance."
-    noam ""
+    # think "Je dis ça maintenant, mais je suis presque sûr d'avoir déjà fait cette promesse."
+    think "Digo isso agora, mas tenho quase certeza de que já fiz essa promessa antes."
 
-# game/scenario/5_1.rpy:32
-translate portuguese 21c558aa:
+# game/scenario/5_1.rpy:31
+translate portuguese 64b14be3:
 
-    # think "Bouche sèche. Lumière bleue. Corps officiellement en grève."
-    think ""
+    # think "Les souvenirs d'hier soir me reviennent peu à peu. Les verres, la musique, puis cette bouteille stupide que Mara avait trouvée."
+    think "As lembranças de ontem à noite voltam aos poucos. Os copos, a música e aquela garrafa idiota que Mara encontrou."
 
-# game/scenario/5_1.rpy:34
-translate portuguese fd9259e1:
+# game/scenario/5_1.rpy:33
+translate portuguese bba06500:
 
-    # think "Bien fait."
-    think ""
+    # think "Et Lysa..."
+    think "E Lysa..."
 
-# game/scenario/5_1.rpy:38
-translate portuguese 73e76989:
+# game/scenario/5_1.rpy:35
+translate portuguese 2ddbc472:
 
-    # noam "D'accord…"
-    noam ""
+    # think "J'ai vraiment participé à un jeu de la bouteille au beau milieu du Conclave. Et de mon plein gré, en plus..."
+    think "Eu realmente participei de um jogo da garrafa no meio do Conclave. E por livre e espontânea vontade..."
+
+# game/scenario/5_1.rpy:37
+translate portuguese 6278a1a0:
+
+    # think "Mon estomac se retourne. Il n'avait visiblement pas besoin que je lui rappelle la soirée."
+    think "Meu estômago se revira. Pelo visto, não precisava que eu o lembrasse da noite passada."
 
 # game/scenario/5_1.rpy:39
-translate portuguese 38cbf6e5:
+translate portuguese dc3cda4e:
 
-    # noam "Objectif numéro un : survivre au fait d'être réveillé."
-    noam ""
+    # think "Puis je repense à la table ronde, et la soirée me paraît tout de suite beaucoup moins amusante."
+    think "Então penso na mesa-redonda, e a noite imediatamente parece muito menos divertida."
 
-# game/scenario/5_1.rpy:43
-translate portuguese 8ee0eb6b:
+# game/scenario/5_1.rpy:40
+translate portuguese 4826925c:
 
-    # noam "Objectif numéro deux..."
-    noam ""
+    # think "Le prochain vote concernera la libre circulation entre les districts. Elias a essayé d'en parler, Sael s'est braquée et tout est parti en vrille."
+    think "A próxima votação será sobre a livre circulação entre os distritos. Elias tentou conversar, Sael se fechou e tudo foi para o inferno."
+
+# game/scenario/5_1.rpy:42
+translate portuguese 2314e524:
+
+    # think "Elle est partie en claquant la porte avant même qu'on puisse réellement discuter."
+    think "Ela saiu batendo a porta antes mesmo que pudéssemos discutir de verdade."
 
 # game/scenario/5_1.rpy:44
-translate portuguese 42febebf:
+translate portuguese 1ca9c2d4:
 
-    # noam "Non. Trop ambitieux."
-    noam ""
+    # think "Sael votera contre. Vu son état hier, je ne vois pas ce qui pourrait la faire changer d'avis."
+    think "Sael vai votar contra. Pelo estado dela ontem, não consigo imaginar o que a faria mudar de ideia."
 
-# game/scenario/5_1.rpy:48
-translate portuguese 015f4b73:
+# game/scenario/5_1.rpy:51
+translate portuguese 4e3337d3:
 
-    # think "Hier soir."
-    think ""
-
-# game/scenario/5_1.rpy:50
-translate portuguese 73aa76e4:
-
-    # think "Les images remontent par morceaux, dans le désordre."
-    think ""
-
-# game/scenario/5_1.rpy:52
-translate portuguese 4fed6a62:
-
-    # noam "Les verres en plastique..."
-    noam ""
+    # think "Je me redresse et une douleur me traverse la nuque jusqu'au milieu du dos."
+    think "Eu me sento, e uma dor atravessa meu pescoço até o meio das costas."
 
 # game/scenario/5_1.rpy:53
-translate portuguese ebd832f7:
+translate portuguese 8902e7b2:
 
-    # noam "La musique..."
-    noam ""
+    # noam fatigue "Putain... Je suis complètement cassé."
+    noam fatigue "Porra... Meu corpo inteiro está destruído."
 
-# game/scenario/5_1.rpy:54
-translate portuguese 810af658:
+# game/scenario/5_1.rpy:57
+translate portuguese 422b6d97:
 
-    # noam "Mara et sa bouteille stupide..."
-    noam ""
+    # think "Au moins, le froid termine de me réveiller."
+    think "Pelo menos o frio termina de me acordar."
 
-# game/scenario/5_1.rpy:58
-translate portuguese c4250dca:
+# game/scenario/5_1.rpy:59
+translate portuguese b2987aa0:
 
-    # noam "Lysa."
-    noam ""
+    # think "Je bois un verre d'eau beaucoup trop vite et mon estomac manque de me le faire regretter."
+    think "Bebo um copo de água rápido demais, e meu estômago quase me faz me arrepender."
 
-# game/scenario/5_1.rpy:62
-translate portuguese 95f31b88:
+# game/scenario/5_1.rpy:61
+translate portuguese 59d9068b:
 
-    # think "Le jeu de la bouteille."
-    think ""
+    # think "Aujourd'hui, nous sommes au jour cinq. Le vote aura donc lieu demain."
+    think "Hoje é o Dia Cinco. Então a votação será amanhã."
 
 # game/scenario/5_1.rpy:63
-translate portuguese ca199c67:
+translate portuguese fa5ee7e1:
 
-    # think "Sérieusement."
-    think ""
+    # think "Demain... Ça paraissait encore loin quand Kami a annoncé le sujet. Maintenant, il ne nous reste presque plus de temps."
+    think "Amanhã... Ainda parecia distante quando Kami anunciou o tema. Agora quase não temos mais tempo."
 
-# game/scenario/5_1.rpy:65
-translate portuguese 28d41a59:
+# game/scenario/5_1.rpy:64
+translate portuguese 91881095:
 
-    # noam "J'ai participé à ça."
-    noam ""
+    # think "Sael ne changera pas d'avis toute seule. Je ne suis même pas sûr qu'elle accepte encore de nous écouter."
+    think "Sael não vai mudar de ideia sozinha. Nem sei se ainda vai aceitar nos ouvir."
 
 # game/scenario/5_1.rpy:66
-translate portuguese 9380c6a3:
+translate portuguese f95220c8:
 
-    # noam "Et de mon plein gré, en plus…"
-    noam ""
+    # noam fatigue "Qu'est-ce que je suis censé faire, moi... ?"
+    noam fatigue "O que diabos eu deveria fazer...?"
 
-# game/scenario/5_1.rpy:67
-translate portuguese 416da497:
+# game/scenario/5_1.rpy:75
+translate portuguese 56c1e00b:
 
-    # noam "Kami devrait me retirer mon droit de vote juste pour ça."
-    noam ""
+    # kami "Bonjour, mes petits diablotins ! Alors, comment vous sentez-vous ce matin ?"
+    kami "Bom dia, meus pequenos diabinhos! Como estão se sentindo esta manhã?"
 
-# game/scenario/5_1.rpy:71
-translate portuguese 68d60a07:
+# game/scenario/5_1.rpy:76
+translate portuguese b03aa4c9:
 
-    # think "Mon estomac répond avant moi."
-    think ""
-
-# game/scenario/5_1.rpy:73
-translate portuguese 124bfb4d_1:
-
-    # noam "Pas maintenant."
-    noam ""
+    # kami "Quelques maux de crâne ? Des souvenirs un peu gênants qui commencent à revenir ?"
+    kami "Algumas dores de cabeça? Certas lembranças constrangedoras começando a voltar?"
 
 # game/scenario/5_1.rpy:77
-translate portuguese 414779c4:
+translate portuguese da24820a:
 
-    # think "Puis l'autre souvenir revient et tue le sourire avant qu'il s'installe."
-    think ""
+    # kami "Il faut dire que le public a été surpris par certains événements de la soirée !"
+    kami "Preciso dizer que o público ficou surpreso com alguns acontecimentos da noite!"
 
 # game/scenario/5_1.rpy:79
-translate portuguese fa4cdb7f:
+translate portuguese 62e79fa7:
 
-    # think "La table ronde."
-    think ""
+    # kami "Rassurez-vous, c'est parfaitement normal ! Entre la fatigue, l'alcool, les tensions politiques et ce merveilleux jeu de la bouteille..."
+    kami "Não se preocupem, é perfeitamente normal! Entre o cansaço, o álcool, as tensões políticas e aquele maravilhoso jogo da garrafa..."
 
 # game/scenario/5_1.rpy:80
-translate portuguese 53cd02dc:
+translate portuguese a3582940:
 
-    # think "Le prochain vote."
-    think ""
-
-# game/scenario/5_1.rpy:81
-translate portuguese 1ac65c6e:
-
-    # think "La libre circulation entre districts."
-    think ""
-
-# game/scenario/5_1.rpy:83
-translate portuguese 3b64f823:
-
-    # noam "Elias qui provoque un peu trop fort."
-    noam ""
+    # kami "Franchement, je m'étonnais presque que vous n'ayez pas craqué plus tôt !"
+    kami "Sinceramente, estou quase surpresa por vocês não terem surtado antes!"
 
 # game/scenario/5_1.rpy:84
-translate portuguese 494963ef:
+translate portuguese 087616ab:
 
-    # noam "Sael qui se lève."
-    noam ""
+    # kami "Mais assez parlé de vos performances d'hier soir. Il est temps de passer à quelque chose de plus sérieux."
+    kami "Mas chega de falar sobre o desempenho de vocês ontem à noite. Está na hora de algo mais sério."
 
 # game/scenario/5_1.rpy:85
-translate portuguese 5ca14500:
+translate portuguese a7088c9e:
 
-    # noam "La chaise qui racle."
-    noam ""
+    # kami "Oui, je sais, moi aussi ça me déçoit. Mais il faut bien travailler un peu !"
+    kami "Sim, eu sei, também estou decepcionada. Mas precisamos trabalhar um pouco!"
 
-# game/scenario/5_1.rpy:89
-translate portuguese 6efd4027:
+# game/scenario/5_1.rpy:87
+translate portuguese 6c7c98bb:
 
-    # think "Et cette porte."
-    think ""
+    # kami "Cette nuit, une alerte de sécurité a été déclenchée à Orbite. Quelqu'un n'a pas respecté les règles."
+    kami "Na noite passada, um alerta de segurança foi acionado em Orbite. Alguém não respeitou as regras."
 
-# game/scenario/5_1.rpy:90
-translate portuguese e15f4c22:
+# game/scenario/5_1.rpy:88
+translate portuguese 820b0e63:
 
-    # think "Clac. Fin de discussion."
-    think ""
-
-# game/scenario/5_1.rpy:94
-translate portuguese 29ff0379:
-
-    # noam "Elle va voter contre."
-    noam ""
+    # kami "Le complexe C-3 a donc reçu un tout petit rappel au laser !"
+    kami "Por isso, o Complexo C-3 recebeu um pequeno lembrete a laser!"
 
 # game/scenario/5_1.rpy:95
-translate portuguese f86ae32c:
+translate portuguese 06ab8da2:
 
-    # noam "Bien sûr qu'elle va voter contre."
-    noam ""
+    # kami "Heureusement, aucun autre mort à déclarer. Seulement quelques personnes dans le coma qui n'ont pas réussi à enfiler leur scaphandre à temps."
+    kami "Felizmente, nenhuma outra morte a declarar. Só algumas pessoas em coma que não conseguiram vestir seus trajes espaciais a tempo."
 
-# game/scenario/5_1.rpy:101
-translate portuguese b26e0490:
+# game/scenario/5_1.rpy:96
+translate portuguese f2474f48:
 
-    # think "Je me redresse. Mauvais choix."
-    think ""
+    # kami "Deux heures d'une ambiance absolument délicieuse !"
+    kami "Duas horas de uma atmosfera absolutamente deliciosa!"
 
-# game/scenario/5_1.rpy:103
-translate portuguese 5e898791:
+# game/scenario/5_1.rpy:100
+translate portuguese fa27c0a2:
 
-    # noam "Oh... wow."
-    noam ""
+    # kami "Le complexe est déjà en cours de réparation. Rien d'irréversible, tout est revenu à la normale."
+    kami "O complexo já está sendo reparado. Nada irreversível, tudo voltou ao normal."
 
 # game/scenario/5_1.rpy:104
-translate portuguese d9486705:
+translate portuguese 3c2ccc54:
 
-    # noam "C'est quoi cette douleur dans la nuque ?!"
-    noam ""
+    # kami "Enfin... À la normale pour eux."
+    kami "Bem... ao normal para eles."
 
-# game/scenario/5_1.rpy:108
-translate portuguese 4114b361:
+# game/scenario/5_1.rpy:107
+translate portuguese e4c56b24:
 
-    # noam "Et dans le dos aussi…"
-    noam ""
+    # kami "Pendant que vous êtes bien en sécurité ici, d'autres continuent de risquer leur vie."
+    kami "Enquanto vocês estão perfeitamente seguros aqui, outros continuam arriscando a vida."
 
 # game/scenario/5_1.rpy:110
-translate portuguese c276f4e1:
+translate portuguese acc85f3f:
 
-    # think "Le métal froid traverse mes chaussettes."
-    think ""
+    # kami "Oh, et j'ai repéré une petite poussière morale au milieu de tout ça. Un rien, ou presque."
+    kami "Ah, e encontrei uma pequena mancha moral no meio disso tudo. Quase nada."
+
+# game/scenario/5_1.rpy:111
+translate portuguese f0ca5bda:
+
+    # kami "Figurez-vous que l'un des représentants d'Orbite n'était même pas au courant de l'alerte !"
+    kami "Acreditem se quiserem: um dos representantes de Orbite nem sabia do alerta!"
 
 # game/scenario/5_1.rpy:112
-translate portuguese 282d6ba9:
+translate portuguese 26bdafb9:
 
-    # noam "Hhh..."
-    noam ""
+    # kami "Il dormait tranquillement pendant que son district retenait son souffle."
+    kami "Ele dormia tranquilamente enquanto o distrito inteiro prendia a respiração."
 
 # game/scenario/5_1.rpy:114
-translate portuguese 254890d9:
+translate portuguese 231d40f8:
 
-    # think "Au moins, ça réveille."
-    think ""
+    # kami "C'est drôle, non ? Représenter des gens sans même savoir quand ils manquent presque d'air."
+    kami "Engraçado, não? Representar pessoas sem nem saber quando elas quase ficam sem ar."
 
 # game/scenario/5_1.rpy:118
-translate portuguese 271c2080:
+translate portuguese e308b310:
 
-    # think "Je bois trop vite. Mon estomac dépose une protestation officielle."
-    think ""
-
-# game/scenario/5_1.rpy:122
-translate portuguese 30c097d1:
-
-    # think "Le vote."
-    think ""
-
-# game/scenario/5_1.rpy:124
-translate portuguese 7dab3e3d:
-
-    # noam "Aujourd'hui, on est au jour cinq."
-    noam ""
-
-# game/scenario/5_1.rpy:125
-translate portuguese a4252199:
-
-    # noam "Vote... jour six."
-    noam ""
-
-# game/scenario/5_1.rpy:126
-translate portuguese 43f0b986:
-
-    # noam "Donc demain."
-    noam ""
-
-# game/scenario/5_1.rpy:130
-translate portuguese 5a3e9fd0:
-
-    # noam "Demain."
-    noam ""
+    # kami "Comme quoi... Certaines informations circulent mieux quand on reste sobre."
+    kami "Pois é... Certas informações circulam melhor quando a gente fica sóbrio."
 
 # game/scenario/5_1.rpy:132
-translate portuguese 995e38a6:
+translate portuguese 9ec9f9fb:
 
-    # think "Demain. Le mot reste dans la chambre, froid et beaucoup trop proche."
-    think ""
+    # think "L'écran s'éteint. Kami n'a pas prononcé son nom, mais tout le monde comprendra qu'elle parlait de Kael."
+    think "A tela se apaga. Kami não disse o nome dele, mas todos vão entender que falava de Kael."
 
 # game/scenario/5_1.rpy:134
-translate portuguese 4439b113:
+translate portuguese ec3f21df:
 
-    # think "Sael ne changera pas d'avis toute seule."
-    think ""
+    # noam fatigue "Putain... Kael."
+    noam fatigue "Porra... Kael."
 
-# game/scenario/5_1.rpy:135
-translate portuguese 78a67c38:
+# game/scenario/5_1.rpy:136
+translate portuguese 7b2a5b2c:
 
-    # think "Je ne suis même pas sûr qu'on puisse la faire changer d'avis…"
-    think ""
+    # think "Je me lève trop vite. La chambre bascule légèrement et je dois prendre appui contre le mur."
+    think "Eu me levanto rápido demais. O quarto inclina um pouco, e preciso me apoiar na parede."
 
-# game/scenario/5_1.rpy:139
-translate portuguese a5b3195d:
+# game/scenario/5_1.rpy:138
+translate portuguese 30a03a66:
 
-    # noam "Et moi, je suis censé faire quoi ?"
-    noam ""
+    # noam fatigue "Ouais... On va y aller doucement."
+    noam fatigue "É... Vamos devagar."
 
-# game/scenario/5_1.rpy:150
-translate portuguese c21a71de:
+# game/scenario/5_1.rpy:140
+translate portuguese 23054b5a:
 
-    # kami "Bonjour, mes petits diablotins !"
-    kami ""
+    # think "Je retrouve mes chaussures et commence à les enfiler avant de réaliser qu'elles sont inversées."
+    think "Encontro meus sapatos e começo a calçá-los antes de perceber que estão trocados."
 
-# game/scenario/5_1.rpy:151
-translate portuguese 1edd25a4:
+# game/scenario/5_1.rpy:141
+translate portuguese dd5019c3:
 
-    # kami "Alors ?"
-    kami ""
+    # think "Bon début de journée... Je recommence, cette fois dans le bon ordre."
+    think "Belo começo de dia... Tento de novo, desta vez na ordem certa."
+
+# game/scenario/5_1.rpy:148
+translate portuguese 2b5fcfb4:
+
+    # think "Une odeur de café flotte dans le couloir. Rien que d'y penser, mon estomac se retourne encore."
+    think "Um cheiro de café flutua pelo corredor. Só de pensar nele, meu estômago se revira outra vez."
 
 # game/scenario/5_1.rpy:152
-translate portuguese b3403ddc:
+translate portuguese 1c056460:
 
-    # kami "Vous avez mal au crâne ? Ça tangue un peu ? Beaucoup ?"
-    kami ""
+    # nyra raison "Tu ne pouvais pas le savoir."
+    nyra raison "Você não tinha como saber."
 
-# game/scenario/5_1.rpy:153
-translate portuguese ff46d7fc:
+# game/scenario/5_1.rpy:156
+translate portuguese 7ae30860:
 
-    # kami "Certains regrettent déjà deux ou trois choix de la veille ?"
-    kami ""
+    # think "Je reconnais la voix de Nyra. Elle parle avec Kael, juste à côté de sa chambre."
+    think "Reconheço a voz de Nyra. Ela está conversando com Kael bem ao lado do quarto dele."
 
-# game/scenario/5_1.rpy:154
-translate portuguese 57d6df0b:
+# game/scenario/5_1.rpy:169
+translate portuguese ac39c5d6:
 
-    # kami "Il faut dire que le public a été surpris par certains événements !"
-    kami ""
+    # think "Kael est assis contre le mur, les yeux fixés sur sa tablette. Nyra reste debout près de lui."
+    think "Kael está sentado contra a parede, com os olhos fixos no tablet. Nyra permanece de pé ao lado dele."
 
-# game/scenario/5_1.rpy:158
-translate portuguese 2b09a2e5_1:
+# game/scenario/5_1.rpy:174
+translate portuguese 5cd639be:
 
-    # kami "Rassurez-vous."
-    kami ""
-
-# game/scenario/5_1.rpy:159
-translate portuguese 4a6915bb:
-
-    # kami "C'est parfaitement normal."
-    kami ""
-
-# game/scenario/5_1.rpy:160
-translate portuguese 8b004c3b:
-
-    # kami "Fatigue, alcool, tensions politiques, jeu de la bouteille..."
-    kami ""
-
-# game/scenario/5_1.rpy:161
-translate portuguese 1caf9072:
-
-    # kami "Franchement, je m'étonnais presque que vous n'ayez pas craqué avant !"
-    kami ""
-
-# game/scenario/5_1.rpy:165
-translate portuguese 821d57b0:
-
-    # kami "Mais assez parlé de vos performances rocambolesques."
-    kami ""
-
-# game/scenario/5_1.rpy:166
-translate portuguese a305d923:
-
-    # kami "Petit point sérieux."
-    kami ""
-
-# game/scenario/5_1.rpy:167
-translate portuguese df9f399e:
-
-    # kami "Oui, je sais."
-    kami ""
-
-# game/scenario/5_1.rpy:168
-translate portuguese 07ad3750:
-
-    # kami "Moi aussi, ça me déçoit mais il faut bien travailler un peu."
-    kami ""
-
-# game/scenario/5_1.rpy:172
-translate portuguese 779dc3b2:
-
-    # kami "Cette nuit, Orbite a déclenché une alerte de sécurité."
-    kami ""
-
-# game/scenario/5_1.rpy:173
-translate portuguese 65509fff:
-
-    # kami "Quelqu'un n'a pas respecté les règles. Le complexe C-3 a donc reçu un petit rappel au laser."
-    kami ""
+    # kael triste "Je viens seulement de voir l'alerte dans le relevé de Kami."
+    kael triste "Só agora vi o alerta no relatório de Kami."
 
 # game/scenario/5_1.rpy:176
-translate portuguese f8e260fb:
+translate portuguese d9941d19:
 
-    # kami "Peut-être même que c'est à cause de vous !"
-    kami ""
+    # nyra raison "Je sais. Tu l'as lue combien de fois ?"
+    nyra raison "Eu sei. Quantas vezes você leu?"
+
+# game/scenario/5_1.rpy:178
+translate portuguese 5e68afa7:
+
+    # kael triste "Sept fois. J'aurais dû la voir cette nuit."
+    kael triste "Sete. Eu deveria ter visto ontem à noite."
 
 # game/scenario/5_1.rpy:180
-translate portuguese 34664b59:
+translate portuguese 835d13fb:
 
-    # kami "Heureusement, aucun autre mort à déclarer."
-    kami ""
-
-# game/scenario/5_1.rpy:181
-translate portuguese c2a0ef76:
-
-    # kami "Juste quelques personnes dans le coma parce qu'elles n'ont pas réussi à mettre leur scaphandre à temps."
-    kami ""
+    # nyra raison "Tu dormais."
+    nyra raison "Você estava dormindo."
 
 # game/scenario/5_1.rpy:182
-translate portuguese 1b86b4b1:
+translate portuguese 019af2a3:
 
-    # kami "Deux heures et quelques d'ambiance absolument délicieuse."
-    kami ""
+    # kael triste "J'aurais dû vérifier avant d'aller me coucher."
+    kael triste "Eu deveria ter verificado antes de ir para a cama."
+
+# game/scenario/5_1.rpy:184
+translate portuguese 9850dc55:
+
+    # nyra raison "Tu avais besoin de dormir, Kael."
+    nyra raison "Você precisava dormir, Kael."
 
 # game/scenario/5_1.rpy:186
-translate portuguese 25c6f03d:
+translate portuguese 26835123:
 
-    # kami "Le complexe est en cours de réparation."
-    kami ""
-
-# game/scenario/5_1.rpy:187
-translate portuguese f134bdc3:
-
-    # kami "Rien d'irréversible."
-    kami ""
+    # kael triste "Léa a six ans, Nyra. Cette nuit, il y avait une alerte et moi, j'étais là à..."
+    kael triste "Léa tem seis anos, Nyra. Houve um alerta ontem à noite e eu estava aqui..."
 
 # game/scenario/5_1.rpy:188
-translate portuguese 50f1a52c:
+translate portuguese e377a3d7:
 
-    # kami "Tout est revenu à la normale."
-    kami ""
+    # kael triste "... jouer à la bouteille."
+    kael triste "... jogando o jogo da garrafa."
+
+# game/scenario/5_1.rpy:190
+translate portuguese 52c26a2d:
+
+    # nyra raison "Tu as passé une soirée avec nous. Ce n'est pas un crime."
+    nyra raison "Você passou uma noite com a gente. Isso não é crime."
+
+# game/scenario/5_1.rpy:192
+translate portuguese f1f750e1:
+
+    # kael triste "Pendant qu'elle devait peut-être enfiler un scaphandre pour survivre."
+    kael triste "Enquanto ela talvez precisasse vestir um traje espacial para sobreviver."
 
 # game/scenario/5_1.rpy:194
-translate portuguese db0509a1_1:
+translate portuguese ab58517a:
 
-    # kami "Enfin..."
-    kami ""
+    # nyra raison "Tu ne pouvais pas le savoir. Et même si tu étais resté éveillé, tu n'aurais rien pu faire depuis le Conclave."
+    nyra raison "Você não tinha como saber. E, mesmo que tivesse ficado acordado, não poderia fazer nada do Conclave."
 
-# game/scenario/5_1.rpy:195
-translate portuguese 359b5b00:
+# game/scenario/5_1.rpy:196
+translate portuguese e4f67f34:
 
-    # kami "À la normale pour eux."
-    kami ""
+    # kael inquiet "Tu sais ce qui se passe quand un sas lâche à Orbite ?"
+    kael inquiet "Sabe o que acontece quando uma eclusa falha em Orbite?"
+
+# game/scenario/5_1.rpy:198
+translate portuguese ca0f799e:
+
+    # nyra raison "Oui. Je le sais."
+    nyra raison "Sim. Eu sei."
 
 # game/scenario/5_1.rpy:200
-translate portuguese ea9af556:
+translate portuguese b4179cfa:
 
-    # kami "Pendant que vous, vous êtes bien en sécurité ici, certains risquent leur vie."
-    kami ""
+    # kael inquiet "La section est isolée, les portes se verrouillent et tout le monde doit rejoindre un point de confinement."
+    kael inquiet "A seção é isolada, as portas se trancam e todos precisam chegar a um ponto de confinamento."
+
+# game/scenario/5_1.rpy:201
+translate portuguese 7d8d4ceb:
+
+    # kael reflechit "Pour le scaphandre, il faut verrouiller le col, puis la gauche, la droite et le verrou central."
+    kael reflechit "No traje, é preciso travar o colar, depois a esquerda, a direita e a trava central."
+
+# game/scenario/5_1.rpy:202
+translate portuguese a7bb070c:
+
+    # kael inquiet "Après trente secondes, tu commences déjà à perdre tes forces. Peut-être quarante-cinq si tu es entraîné et que tu ne paniques pas."
+    kael inquiet "Depois de trinta segundos, você já começa a perder as forças. Talvez quarenta e cinco, se for treinado e não entrar em pânico."
 
 # game/scenario/5_1.rpy:204
-translate portuguese d92c2fef:
+translate portuguese cb59afbe:
 
-    # kami "Oh, et j'ai repéré une petite poussière morale."
-    kami ""
-
-# game/scenario/5_1.rpy:205
-translate portuguese 19d918c2:
-
-    # kami "Un rien. Ou presque."
-    kami ""
-
-# game/scenario/5_1.rpy:206
-translate portuguese 3756e47a:
-
-    # kami "Un représentant d'Orbite n'était même pas au courant."
-    kami ""
+    # nyra raison "Et Léa sait le faire. Tu lui as appris."
+    nyra raison "E Léa sabe fazer isso. Você ensinou."
 
 # game/scenario/5_1.rpy:207
-translate portuguese 05981004:
+translate portuguese 6b9bd8f4:
 
-    # kami "Pas cette nuit."
-    kami ""
+    # kael triste "C'est justement ça, le problème."
+    kael triste "Esse é justamente o problema."
 
-# game/scenario/5_1.rpy:208
-translate portuguese 4cbadbef:
+# game/scenario/5_1.rpy:209
+translate portuguese eb3ea09f:
 
-    # kami "Pas pendant que son district retenait son souffle."
-    kami ""
+    # kael triste "Elle devrait apprendre des chansons idiotes, des blagues ou ses tables de multiplication."
+    kael triste "Ela deveria aprender músicas bobas, piadas ou a tabuada."
+
+# game/scenario/5_1.rpy:210
+translate portuguese 2f6c3b39:
+
+    # kael triste "Pas une procédure pour survivre quand l'air disparaît de sa chambre."
+    kael triste "Não um procedimento para sobreviver quando o ar desaparece do quarto dela."
 
 # game/scenario/5_1.rpy:212
-translate portuguese e94de203:
+translate portuguese 33eb7dab:
 
-    # kami "C'est drôle, non ?"
-    kami ""
+    # nyra reflechit "Tu lui as appris comment ?"
+    nyra reflechit "Como você ensinou?"
 
-# game/scenario/5_1.rpy:213
-translate portuguese 50bc1013:
+# game/scenario/5_1.rpy:214
+translate portuguese 90d9c394:
 
-    # kami "Représenter des gens dont on ignore même quand ils manquent presque d'air."
-    kami ""
+    # kael triste "Comme un jeu, pendant quatre jours cet été. Elle riait chaque fois qu'elle ratait l'attache gauche."
+    kael triste "Como se fosse uma brincadeira, durante quatro dias neste verão. Ela ria sempre que errava a trava esquerda."
 
 # game/scenario/5_1.rpy:217
-translate portuguese 65fee1ab:
+translate portuguese c67fbd44:
 
-    # kami "Comme quoi..."
-    kami ""
+    # nyra raison "Tu lui as peut-être sauvé la vie cette nuit. Tu n'as pas à t'en vouloir de lui avoir appris."
+    nyra raison "Talvez você tenha salvado a vida dela ontem à noite. Não precisa se culpar por ter ensinado."
 
-# game/scenario/5_1.rpy:218
-translate portuguese 9ba21ad2:
+# game/scenario/5_1.rpy:219
+translate portuguese 03fb0117:
 
-    # kami "Certaines informations circulent mieux quand on est sobre."
-    kami ""
+    # kael triste "Elle a six ans."
+    kael triste "Ela tem seis anos."
 
-# game/scenario/5_1.rpy:222
-translate portuguese 2c74d29c:
+# game/scenario/5_1.rpy:221
+translate portuguese 447f9052:
 
-    # kami "La cafétéria est ouverte."
-    kami ""
+    # nyra raison "Je sais. Mais elle aura toujours six ans même si tu te détruis ici."
+    nyra raison "Eu sei. Mas ela continuará tendo seis anos mesmo que você se destrua aqui."
 
 # game/scenario/5_1.rpy:223
-translate portuguese 114e3497:
+translate portuguese cd5ec83f:
 
-    # kami "Continuez à m'amuser ! C'est peut-être la seule chose dans laquelle vous excellez !"
-    kami ""
+    # think "Nyra ne lui promet pas que tout va bien. Kael ne la croirait pas."
+    think "Nyra não promete que está tudo bem. Kael não acreditaria nela."
+
+# game/scenario/5_1.rpy:225
+translate portuguese 91058f14:
+
+    # nyra reflechit "Le C-3, c'est bien le module résidentiel ?"
+    nyra reflechit "O C-3 é o módulo residencial, certo?"
+
+# game/scenario/5_1.rpy:227
+translate portuguese ed65c047:
+
+    # kael triste "Oui. Il est dans le bloc réservé aux familles."
+    kael triste "Sim. Fica no bloco reservado às famílias."
+
+# game/scenario/5_1.rpy:229
+translate portuguese 3a11ccd3:
+
+    # nyra reflechit "Combien de personnes ?"
+    nyra reflechit "Quantas pessoas?"
 
 # game/scenario/5_1.rpy:231
-translate portuguese c238a25d:
+translate portuguese 8eda3f4f:
 
-    # think "L'écran s'éteint après avoir soigneusement choisi sa cible."
-    think ""
+    # kael triste "Cent quarante."
+    kael triste "Cento e quarenta."
 
-# game/scenario/5_1.rpy:233
-translate portuguese 2c26d127:
+# game/scenario/5_1.rpy:234
+translate portuguese 0528d7ee:
 
-    # noam "Orbite… Putain."
-    noam ""
+    # nyra reflechit "Il peut s'isoler du reste de la station ?"
+    nyra reflechit "Ele consegue se isolar do resto da estação?"
 
 # game/scenario/5_1.rpy:236
-translate portuguese 24d49200:
+translate portuguese 8b206e4e:
 
-    # think "Je me lève. Trop vite."
-    think ""
+    # kael inquiet "Oui. Il y a sept modules : quatre résidentiels, deux de production et un central. Chaque jonction possède ses propres sas."
+    kael inquiet "Sim. São sete módulos: quatro residenciais, dois de produção e um central. Cada junção tem suas próprias eclusas."
 
-# game/scenario/5_1.rpy:238
-translate portuguese 34cac2a7:
+# game/scenario/5_1.rpy:237
+translate portuguese 18a56e3f:
 
-    # noam "Mauvaise idée."
-    noam ""
+    # kael triste "Si une section est compromise, elle peut rester isolée plusieurs jours."
+    kael triste "Se uma seção for comprometida, pode permanecer isolada por vários dias."
 
 # game/scenario/5_1.rpy:239
-translate portuguese f1240d6f:
+translate portuguese 48081798:
 
-    # noam "J'ai encore la tête qui tourne…"
-    noam ""
+    # nyra raison "Donc le système a tenu cette nuit."
+    nyra raison "Então o sistema aguentou durante a noite."
 
 # game/scenario/5_1.rpy:241
-translate portuguese 41addfde:
+translate portuguese 481647c8:
 
-    # think "La chambre penche. Le mur me rattrape."
-    think ""
+    # kael triste "Ouais, heureusement. Cette fois."
+    kael triste "É, por sorte. Desta vez."
 
 # game/scenario/5_1.rpy:243
-translate portuguese fbda864e:
+translate portuguese 6a228693:
 
-    # noam "Merci, le mur."
-    noam ""
+    # nyra neutre "Oui. Cette fois."
+    nyra neutre "Sim. Desta vez."
 
-# game/scenario/5_1.rpy:244
-translate portuguese c6798a4a:
+# game/scenario/5_1.rpy:245
+translate portuguese a4bbd79d:
 
-    # noam "Toujours là dans les moments importants."
-    noam ""
+    # kael triste "Tu vois ? Même toi, tu dis « cette fois »."
+    kael triste "Viu? Até você disse “desta vez”."
 
-# game/scenario/5_1.rpy:248
-translate portuguese a72a6f66:
+# game/scenario/5_1.rpy:247
+translate portuguese 7ffd755d:
 
-    # think "Je retrouve mes chaussures et les enfile."
-    think ""
+    # nyra raison "Parce que c'est vrai. Je ne vais pas te dire que ça ne recommencera jamais juste pour te rassurer."
+    nyra raison "Porque é verdade. Não vou dizer que isso nunca mais vai acontecer só para tranquilizar você."
 
-# game/scenario/5_1.rpy:252
-translate portuguese 0e80e0da_3:
+# game/scenario/5_1.rpy:249
+translate portuguese b1ba5c3f:
 
-    # noam "..."
-    noam ""
+    # kael fatigue "Charmant."
+    kael fatigue "Encantador."
+
+# game/scenario/5_1.rpy:251
+translate portuguese 0e77da24:
+
+    # nyra raison "Mais tu préfères que je sois honnête."
+    nyra raison "Mas você prefere que eu seja sincera."
 
 # game/scenario/5_1.rpy:253
-translate portuguese c48ea2be:
+translate portuguese 668bb693:
 
-    # noam "Pourquoi elles sont inversées ?"
-    noam ""
+    # kael triste "Je pourrai demander à la contacter ce soir."
+    kael triste "Posso pedir para falar com ela esta noite."
 
-# game/scenario/5_1.rpy:257
-translate portuguese eb500e80:
+# game/scenario/5_1.rpy:256
+translate portuguese 24329b0f:
 
-    # think "Bravo."
-    think ""
+    # nyra raison "Kami peut refuser. Mais si elle accepte, qu'est-ce que tu diras à Léa ?"
+    nyra raison "Kami pode recusar. Mas, se aceitar, o que você vai dizer para Léa?"
 
-# game/scenario/5_1.rpy:259
-translate portuguese 1655402f:
+# game/scenario/5_1.rpy:258
+translate portuguese 0074671e:
 
-    # think "Je recommence, cette fois comme un adulte presque respectable."
-    think ""
+    # kael triste "Que je suis désolé."
+    kael triste "Que sinto muito."
 
-# game/scenario/5_1.rpy:265
-translate portuguese 6885c5d1:
+# game/scenario/5_1.rpy:262
+translate portuguese 89378e61:
 
-    # think "Le couloir sent le café, le métal et la mauvaise décision."
-    think ""
+    # kael triste "Parce que je n'étais pas là quand elle avait peut-être besoin de moi."
+    kael triste "Porque eu não estava lá quando ela talvez precisasse de mim."
 
-# game/scenario/5_1.rpy:267
-translate portuguese d35910b9:
+# game/scenario/5_1.rpy:264
+translate portuguese bd53738a:
 
-    # noam "Parfait. Exactement mon état d'esprit."
-    noam ""
+    # nyra raison "Tu pouvais réparer le sas à distance depuis le Conclave ?"
+    nyra raison "Você conseguiria consertar a eclusa remotamente do Conclave?"
 
-# game/scenario/5_1.rpy:271
-translate portuguese 35fb4b9d:
+# game/scenario/5_1.rpy:266
+translate portuguese 7f1af032:
 
-    # think "Deux voix basses et tendues viennent des chambres."
-    think ""
+    # kael triste "Non, évidemment."
+    kael triste "Não, é claro que não."
 
-# game/scenario/5_1.rpy:273
-translate portuguese 68d62fc5:
+# game/scenario/5_1.rpy:268
+translate portuguese 2e9908bf:
 
-    # nyra "Tu ne pouvais pas le savoir."
-    nyra ""
+    # nyra raison "Alors ne commence pas l'appel en lui demandant de te pardonner. Demande-lui comment elle va. C'est ce qu'elle attendra de toi."
+    nyra raison "Então não comece a ligação pedindo que ela perdoe você. Pergunte como ela está. É isso que ela vai esperar de você."
 
-# game/scenario/5_1.rpy:275
-translate portuguese 7f5f08f0:
+# game/scenario/5_1.rpy:270
+translate portuguese 1cdc0d69_1:
 
-    # think "Je m'arrête."
-    think ""
+    # kael triste "..."
+    kael triste "..."
 
-# game/scenario/5_1.rpy:277
-translate portuguese 92ff9149:
+# game/scenario/5_1.rpy:272
+translate portuguese 082509bd:
 
-    # think "Nyra parle avec quelqu'un."
-    think ""
+    # kael triste "Tu pourrais essayer d'être un peu moins dure."
+    kael triste "Você poderia tentar ser um pouco menos dura."
 
-# game/scenario/5_1.rpy:279
-translate portuguese 8124d44c:
+# game/scenario/5_1.rpy:274
+translate portuguese 6e11bbcb:
 
-    # think "Nyra parle avec Kael."
-    think ""
+    # nyra neutre "Et toi, tu pourrais arrêter de chercher une raison de te punir."
+    nyra neutre "E você poderia parar de procurar um motivo para se punir."
 
-# game/scenario/5_1.rpy:293
-translate portuguese bae3cc41:
+# game/scenario/5_1.rpy:276
+translate portuguese db285450:
 
-    # think "Kael est assis au sol. Nyra reste près de lui : pas tendre, mais présente."
-    think ""
+    # think "Kael laisse échapper un petit rire. Il ne va pas mieux, mais au moins il relève enfin les yeux."
+    think "Kael solta uma risada baixa. Não está melhor, mas pelo menos finalmente levanta os olhos."
 
-# game/scenario/5_1.rpy:298
-translate portuguese ba12cb3f:
+# game/scenario/5_1.rpy:278
+translate portuguese 58bc9432:
 
-    # kael "Je viens de voir l'alerte. Ce matin. Dans le relevé de Kami."
-    kael ""
+    # kael triste "J'ai la tête qui tourne."
+    kael triste "Minha cabeça está girando."
 
-# game/scenario/5_1.rpy:300
-translate portuguese 4fbf4fc4:
+# game/scenario/5_1.rpy:280
+translate portuguese 1c21e21b:
 
-    # nyra "Je sais. Tu l'as lue combien de fois ?"
-    nyra ""
+    # nyra taquin "Alcool ou culpabilité ?"
+    nyra taquin "Álcool ou culpa?"
 
-# game/scenario/5_1.rpy:302
-translate portuguese 9ba95bdb:
+# game/scenario/5_1.rpy:282
+translate portuguese 42ada820:
 
-    # kael "Sept. J'aurais dû la voir cette nuit."
-    kael ""
+    # kael fatigue "Les deux."
+    kael fatigue "Os dois."
 
-# game/scenario/5_1.rpy:304
-translate portuguese 45b7ff67:
+# game/scenario/5_1.rpy:284
+translate portuguese 996364f6:
 
-    # nyra "Tu dormais."
-    nyra ""
+    # nyra taquin "Certains conseillent de reboire après une cuite. C'est une idée catastrophique, donc parfaitement adaptée à notre semaine."
+    nyra taquin "Alguns recomendam beber de novo depois de uma bebedeira. É uma ideia catastrófica, então combina perfeitamente com nossa semana."
+
+# game/scenario/5_1.rpy:286
+translate portuguese 0fc58a22:
+
+    # kael triste "Tu veux me tuer ? Déjà que…"
+    kael triste "Quer me matar? Como se já não..."
+
+# game/scenario/5_1.rpy:288
+translate portuguese e51dbb0d:
+
+    # think "Kael devient rouge. Visiblement, un autre souvenir de la veille vient de lui revenir."
+    think "Kael fica vermelho. Pelo visto, outra lembrança da noite anterior acabou de voltar."
+
+# game/scenario/5_1.rpy:290
+translate portuguese 8674f781:
+
+    # kael triste "Rien."
+    kael triste "Nada."
+
+# game/scenario/5_1.rpy:292
+translate portuguese a6f5ef0d:
+
+    # nyra raison "Je crois savoir exactement à quoi tu viens de repenser."
+    nyra raison "Acho que sei exatamente do que você acabou de se lembrar."
+
+# game/scenario/5_1.rpy:294
+translate portuguese ffd08fe5:
+
+    # kael triste "Ne te moque pas."
+    kael triste "Não zombe de mim."
+
+# game/scenario/5_1.rpy:296
+translate portuguese 8ebb230a:
+
+    # nyra raison "Je ne me moque pas. Ça nous a fait du bien de penser à autre chose pendant quelques heures."
+    nyra raison "Não estou zombando. Fez bem para nós pensar em outra coisa por algumas horas."
+
+# game/scenario/5_1.rpy:305
+translate portuguese cb2d6974:
+
+    # kael calme "Bon."
+    kael calme "Certo."
 
 # game/scenario/5_1.rpy:306
-translate portuguese 7c1f701c:
+translate portuguese bb5e5f8c:
 
-    # kael "Erreur de priorité."
-    kael ""
+    # kael calme "Je vais essayer d'avaler un bout."
+    kael calme "Vou tentar comer alguma coisa."
 
-# game/scenario/5_1.rpy:308
-translate portuguese c033bab4:
+# game/scenario/5_1.rpy:307
+translate portuguese c05214eb:
 
-    # nyra raison "Non. Besoin humain."
-    nyra raison ""
+    # kael calme "Après... je verrai."
+    kael calme "Depois... eu vejo."
 
-# game/scenario/5_1.rpy:310
-translate portuguese dcfbc087:
+# game/scenario/5_1.rpy:309
+translate portuguese eb816ec9:
 
-    # kael triste "Léa a six ans, Nyra. Cette nuit, il y avait une alerte et moi j'étais là à…"
-    kael triste ""
+    # nyra raison "Après, tu verras."
+    nyra raison "Depois, você vê."
 
-# game/scenario/5_1.rpy:314
-translate portuguese 586acc98:
+# game/scenario/5_1.rpy:311
+translate portuguese a5f40d5b:
 
-    # kael "Jouer."
-    kael ""
+    # think "Il passe devant moi sans rien dire. À son regard, je comprends qu'il sait que j'ai tout entendu."
+    think "Ele passa por mim sem dizer nada. Pelo olhar, entendo que sabe que ouvi tudo."
 
 # game/scenario/5_1.rpy:316
-translate portuguese e4478b7a:
+translate portuguese a20ae4e2:
 
-    # nyra "À respirer."
-    nyra ""
+    # nyra raison "Tu as tout entendu ?"
+    nyra raison "Você ouviu tudo?"
 
-# game/scenario/5_1.rpy:318
-translate portuguese f65742d1:
+# game/scenario/5_1.rpy:322
+translate portuguese c8f83d53:
 
-    # kael "Pardon ?"
-    kael ""
-
-# game/scenario/5_1.rpy:320
-translate portuguese a8121d88:
-
-    # nyra "Tu n'étais pas en train de trahir Orbite. Tu respirais quelques heures."
-    nyra ""
-
-# game/scenario/5_1.rpy:321
-translate portuguese 8f159338:
-
-    # nyra neutre "Tu veux transformer un mauvais timing en faute morale. Pourquoi ?"
-    nyra neutre ""
-
-# game/scenario/5_1.rpy:323
-translate portuguese 3405a62c:
-
-    # kael "Parce que je connais la procédure."
-    kael ""
+    # noam inquiet "Bien ?"
+    noam inquiet "E você acha que fez o certo?"
 
 # game/scenario/5_1.rpy:324
-translate portuguese cf619277:
+translate portuguese a42a5372:
 
-    # kael "Tu sais ce qui se passe quand un sas lâche ?"
-    kael ""
+    # nyra raison "Oui."
+    nyra raison "Sim."
 
-# game/scenario/5_1.rpy:326
-translate portuguese bfc0dfda:
+# game/scenario/5_1.rpy:325
+translate portuguese d710b047:
 
-    # nyra "Oui. Je sais ce qu'un sas qui lâche fait aux gens. Continue."
-    nyra ""
+    # nyra raison "Une crise à Orbite ne se gère jamais seul. Kael avait besoin de parler à quelqu'un."
+    nyra raison "Uma crise em Orbite nunca é enfrentada sozinho. Kael precisava conversar com alguém."
 
-# game/scenario/5_1.rpy:328
-translate portuguese 6ec2974d:
+# game/scenario/5_1.rpy:327
+translate portuguese 2041e4e2:
 
-    # kael inquiet "Section isolée. Portes verrouillées. Point de confinement."
-    kael inquiet ""
+    # noam inquiet "Tu n'y es pas allée doucement."
+    noam inquiet "Você não pegou leve com ele."
 
 # game/scenario/5_1.rpy:329
-translate portuguese 956b351d:
+translate portuguese 0e26866f:
 
-    # kael "Scaphandre. Col. Gauche. Droite. Verrou central."
-    kael ""
-
-# game/scenario/5_1.rpy:330
-translate portuguese 5ce2dddf:
-
-    # kael "Trente secondes avant la perte de force. Quarante-cinq si tu es entraîné et que tu ne trembles pas."
-    kael ""
-
-# game/scenario/5_1.rpy:332
-translate portuguese f9413659:
-
-    # nyra "Léa sait faire. Tu lui as appris."
-    nyra ""
+    # nyra raison "Il ne voulait pas que j'y aille doucement. Il voulait une réponse honnête."
+    nyra raison "Ele não queria que eu pegasse leve. Queria uma resposta sincera."
 
 # game/scenario/5_1.rpy:334
-translate portuguese 95e0f73a:
+translate portuguese bac1a83f:
 
-    # kael triste "Oui."
-    kael triste ""
+    # think "Nyra suit Kael à quelques mètres. Elle garde un œil sur lui sans le lui faire remarquer."
+    think "Nyra segue Kael a alguns metros de distância. Fica de olho nele sem deixar que perceba."
 
-# game/scenario/5_1.rpy:335
-translate portuguese 32f875bf:
+# game/scenario/5_1.rpy:336
+translate portuguese 53d7d346:
 
-    # kael "C'est peut-être bien ça le problème."
-    kael ""
+    # think "Cent quarante personnes vivent dans ce module. Et parmi elles, Léa, sa petite sœur de six ans."
+    think "Cento e quarenta pessoas vivem naquele módulo. Entre elas, Léa, a irmãzinha de seis anos dele."
 
-# game/scenario/5_1.rpy:339
-translate portuguese a522d80b:
+# game/scenario/5_1.rpy:338
+translate portuguese da38d210:
 
-    # nyra "Non."
-    nyra ""
-
-# game/scenario/5_1.rpy:341
-translate portuguese fcb3fe68:
-
-    # kael "Si."
-    kael ""
-
-# game/scenario/5_1.rpy:342
-translate portuguese 04df6b65:
-
-    # kael triste "Elle devrait apprendre des chansons nulles. Des blagues. Des tables de multiplication."
-    kael triste ""
-
-# game/scenario/5_1.rpy:343
-translate portuguese 3d45404d:
-
-    # kael "Pas une procédure pour survivre quand l'air disparaît."
-    kael ""
-
-# game/scenario/5_1.rpy:347
-translate portuguese 7b5ba3ca:
-
-    # nyra "Comment tu lui as appris ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:349
-translate portuguese e56f4833:
-
-    # kael "Comme un jeu. Quatre jours, cet été."
-    kael ""
-
-# game/scenario/5_1.rpy:350
-translate portuguese 272b579b:
-
-    # kael "Elle riait quand elle ratait l'attache gauche."
-    kael ""
-
-# game/scenario/5_1.rpy:351
-translate portuguese 288d3006:
-
-    # kael triste "Elle disait que le scaphandre lui faisait une tête de grenouille."
-    kael triste ""
-
-# game/scenario/5_1.rpy:355
-translate portuguese 9101aaab:
-
-    # nyra "Donc tu lui as donné deux choses : un rire et une chance de survivre. Laquelle tu regrettes ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:357
-translate portuguese d8e4bb4b:
-
-    # kael "Elle a six ans."
-    kael ""
-
-# game/scenario/5_1.rpy:359
-translate portuguese 0ba80a60:
-
-    # nyra "Je l'ai entendu. Et elle a toujours six ans même si tu te détruis ici."
-    nyra ""
-
-# game/scenario/5_1.rpy:363
-translate portuguese 5b84f5a6:
-
-    # think "Nyra ne promet rien. Elle a compris qu'il n'accepterait aucun mensonge."
-    think ""
+    # think "Pas étonnant qu'il culpabilise... Nous sommes enfermés ici à décider du monde pendant que nos proches continuent d'en subir les règles."
+    think "Não é de se espantar que ele se sinta culpado... Estamos presos aqui decidindo o destino do mundo enquanto nossos entes queridos continuam sujeitos às regras dele."
 
 # game/scenario/5_1.rpy:365
-translate portuguese 5b672e0b:
+translate portuguese 25e395b4:
 
-    # nyra raison "Aide-moi à comprendre. Le C-3, c'est quoi ?"
-    nyra raison ""
-
-# game/scenario/5_1.rpy:367
-translate portuguese c10b96b9:
-
-    # kael "C'est le module résidentiel. Dans le bloc famille."
-    kael ""
+    # think "Dans la cafétéria, tout le monde semble regretter la soirée d'hier. Certains ont à peine touché à leur plateau."
+    think "Na cafeteria, todos parecem arrependidos da noite anterior. Alguns mal tocaram nas bandejas."
 
 # game/scenario/5_1.rpy:369
-translate portuguese 4f0f3ff1:
+translate portuguese 94539c86:
 
-    # nyra "Combien de personnes ?"
-    nyra ""
+    # kael triste "Oui. J'ai vu."
+    kael triste "Sim. Eu vi."
 
 # game/scenario/5_1.rpy:371
-translate portuguese 3eafd054:
+translate portuguese 0bdf8425:
 
-    # kael "Cent quarante."
-    kael ""
+    # elen inquiet "Je voulais pas... Enfin, hier, personne ne savait et... ça va ?"
+    elen inquiet "Eu não queria... Quer dizer, ontem ninguém sabia e... você está bem?"
 
-# game/scenario/5_1.rpy:372
-translate portuguese afbca7e5:
+# game/scenario/5_1.rpy:373
+translate portuguese c910f182:
 
-    # kael triste "Dont Léa."
-    kael triste ""
+    # kael triste "Pas vraiment. Mais ça finira par aller."
+    kael triste "Não muito. Mas vou ficar."
 
-# game/scenario/5_1.rpy:374
-translate portuguese efb4b016:
+# game/scenario/5_1.rpy:375
+translate portuguese c6500129:
 
-    # nyra "Capacité d'isolement ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:376
-translate portuguese b9afd1da_7:
-
-    # kael "Oui."
-    kael ""
+    # ryn blase "Donc non."
+    ryn blase "Então não."
 
 # game/scenario/5_1.rpy:377
-translate portuguese 419fc08b:
+translate portuguese af889abd:
 
-    # kael inquiet "Sept modules : quatre résidentiels, deux de production, un central. Chaque jonction a ses sas."
-    kael inquiet ""
+    # kael triste "Donc j'aimerais manger tranquillement."
+    kael triste "Então eu gostaria de comer em paz."
 
-# game/scenario/5_1.rpy:378
-translate portuguese febb0fdb:
+# game/scenario/5_1.rpy:383
+translate portuguese e2208b8a:
 
-    # kael "Une section compromise s'isole. Autonomie : plusieurs jours."
-    kael ""
+    # elen inquiet "À cause des marchés ?"
+    elen inquiet "Por causa dos mercados?"
 
-# game/scenario/5_1.rpy:380
-translate portuguese 7796e9bb:
+# game/scenario/5_1.rpy:385
+translate portuguese 778b839c:
 
-    # nyra "Donc, cette nuit, le système a tenu."
-    nyra ""
+    # ryn blase "À cause des files. Regarde l'écran, les gens attendent encore devant les anciens centres de distribution."
+    ryn blase "Por causa das filas. Olhe para a tela, as pessoas ainda estão esperando diante dos antigos centros de distribuição."
 
-# game/scenario/5_1.rpy:382
-translate portuguese 45148c96:
+# game/scenario/5_1.rpy:386
+translate portuguese e19b26af:
 
-    # kael "Ouais, heureusement. Cette fois."
-    kael ""
-
-# game/scenario/5_1.rpy:384
-translate portuguese 0d793e49:
-
-    # nyra neutre "Cette fois."
-    nyra neutre ""
+    # ryn blase "Ils pensent toujours qu'on va leur donner quelque chose..."
+    ryn blase "Ainda acham que alguém vai dar alguma coisa para elas..."
 
 # game/scenario/5_1.rpy:388
-translate portuguese 8f0e5b2d:
+translate portuguese bd20c686:
 
-    # kael "Tu vois ?"
-    kael ""
+    # elen inquiet "Kami a dit que les marchés commençaient à fonctionner. Il faut peut-être juste leur laisser un peu de temps."
+    elen inquiet "Kami disse que os mercados estavam começando a funcionar. Talvez só precisemos dar um pouco de tempo."
 
 # game/scenario/5_1.rpy:389
-translate portuguese 49d03e1d:
+translate portuguese 8c8c344b:
 
-    # kael "Même toi, tu dis cette fois."
-    kael ""
+    # elen reflexion "Ça va forcément finir par démarrer..."
+    elen reflexion "Uma hora eles vão ter que engrenar..."
 
 # game/scenario/5_1.rpy:391
-translate portuguese b1330bb9:
+translate portuguese b79ac0f2:
 
-    # nyra "Parce que c'est vrai. Tu n'as pas besoin d'une phrase sucrée juste parce que tu es par terre."
-    nyra ""
+    # ryn blase "Les marchés fonctionnent seulement pour ceux qui ont quelque chose à vendre. Les autres n'ont plus rien."
+    ryn blase "Os mercados só funcionam para quem tem alguma coisa para vender. Os outros não têm mais nada."
 
-# game/scenario/5_1.rpy:393
-translate portuguese efd31f9e:
+# game/scenario/5_1.rpy:392
+translate portuguese fbabe48c:
 
-    # kael "Charmant."
-    kael ""
+    # ryn blase "On a remplacé les files de rationnement par des files de gens qui ne peuvent rien acheter. Super changement."
+    ryn blase "Substituímos as filas de racionamento por filas de gente que não consegue comprar nada. Grande mudança."
 
-# game/scenario/5_1.rpy:395
-translate portuguese ad317852:
+# game/scenario/5_1.rpy:394
+translate portuguese 9f0dfa1f:
 
-    # nyra raison "Utile. Tu préfères."
-    nyra raison ""
+    # elen inquiet "Ryn… non, il faut juste—"
+    elen inquiet "Ryn... não, a gente só precisa—"
+
+# game/scenario/5_1.rpy:396
+translate portuguese 0c3759e3:
+
+    # ryn blase "Quoi ? C'est vrai, non ?"
+    ryn blase "O quê? É verdade, não é?"
+
+# game/scenario/5_1.rpy:398
+translate portuguese dc1b2de9:
+
+    # tomas hesitation "Euh... Techniquement, les premières tensions étaient prévisibles."
+    tomas hesitation "Hã... Tecnicamente, as primeiras tensões eram previsíveis."
 
 # game/scenario/5_1.rpy:399
-translate portuguese ae07860b:
+translate portuguese 1560b876:
 
-    # kael "Je pourrai demander à la contacter ce soir."
-    kael ""
+    # tomas hesitation "Quand on remplace un système aussi rapidement, il y a forcément un temps d'adaptation."
+    tomas hesitation "Quando um sistema é substituído tão rapidamente, sempre existe um período de adaptação."
 
-# game/scenario/5_1.rpy:400
-translate portuguese 4ba44c55:
+# game/scenario/5_1.rpy:401
+translate portuguese 51e87c9e:
 
-    # kael triste "Pendant les protocoles, les communications sont coupées ou filtrées."
-    kael triste ""
+    # ryn blase "Et ton modèle, il a mangé ce matin ?"
+    ryn blase "E o seu modelo tomou café da manhã hoje?"
 
-# game/scenario/5_1.rpy:402
-translate portuguese 3f73cc5e:
+# game/scenario/5_1.rpy:403
+translate portuguese e84902d2:
 
-    # nyra "Kami peut refuser. Mais si elle accepte, tu lui diras quoi ?"
-    nyra ""
+    # tomas hesitation "Je... C'est une image ou une vraie question ?"
+    tomas hesitation "Eu... Isso é uma metáfora ou uma pergunta de verdade?"
 
-# game/scenario/5_1.rpy:404
-translate portuguese 4beaa1af:
+# game/scenario/5_1.rpy:405
+translate portuguese 74a5328a:
 
-    # kael "Que je suis désolé."
-    kael ""
+    # ryn blase "Les deux."
+    ryn blase "Os dois."
 
-# game/scenario/5_1.rpy:406
-translate portuguese 387067c5:
+# game/scenario/5_1.rpy:407
+translate portuguese ac5bacf7:
 
-    # nyra "Pour quelle action précise ?"
-    nyra ""
+    # tomas hesitation "Alors... non. Enfin, un modèle ne mange pas."
+    tomas hesitation "Então... não. Quer dizer, um modelo não come."
 
-# game/scenario/5_1.rpy:408
-translate portuguese dcbeeb70:
+# game/scenario/5_1.rpy:409
+translate portuguese 2a3369b4:
 
-    # kael "Ne pas avoir su."
-    kael ""
+    # ryn blase "Voilà. Sauf que les gens, eux, ont besoin de manger aujourd'hui."
+    ryn blase "Pois é. Mas as pessoas precisam comer hoje."
 
-# game/scenario/5_1.rpy:410
-translate portuguese ccab05ff:
+# game/scenario/5_1.rpy:411
+translate portuguese ff3488ea:
 
-    # nyra "Elle te demandera si tu pouvais réparer le sas à distance, les yeux fermés depuis le Conclave. Tu répondras quoi ?"
-    nyra ""
+    # kael triste "Ryn."
+    kael triste "Ryn."
 
-# game/scenario/5_1.rpy:412
-translate portuguese a4d91cc4:
+# game/scenario/5_1.rpy:417
+translate portuguese 98fb58bb:
 
-    # kael "Nyra."
-    kael ""
-
-# game/scenario/5_1.rpy:414
-translate portuguese fe410593:
-
-    # nyra raison "Tu veux t'excuser pour quelque chose que tu ne pouvais ni voir ni empêcher."
-    nyra raison ""
-
-# game/scenario/5_1.rpy:415
-translate portuguese 6d03395d:
-
-    # nyra "Cette excuse soulage qui ? Léa, ou toi ?"
-    nyra ""
+    # think "Tomas baisse les yeux. Personne ne cherche à défendre le résultat du vote."
+    think "Tomas baixa os olhos. Ninguém tenta defender o resultado da votação."
 
 # game/scenario/5_1.rpy:419
-translate portuguese 5ab0598a:
+translate portuguese d06189d7:
 
-    # kael "..."
-    kael ""
+    # think "Je m'installe avec une ration devant moi. Rien que l'odeur me coupe presque l'appétit."
+    think "Sento-me com uma ração diante de mim. Só o cheiro quase acaba com meu apetite."
 
 # game/scenario/5_1.rpy:421
-translate portuguese 9b272d2d:
+translate portuguese 24d621c9:
 
-    # nyra "Voilà."
-    nyra ""
+    # lysa blase "Tu as vraiment une sale tête."
+    lysa blase "Você está com uma cara péssima."
 
 # game/scenario/5_1.rpy:423
-translate portuguese 22358c39:
+translate portuguese bbeac84f:
 
-    # kael "T'es horrible."
-    kael ""
+    # noam taquin "Merci. J'ai préféré ne pas consulter le miroir ce matin."
+    noam taquin "Obrigado. Preferi não consultar o espelho esta manhã."
 
-# game/scenario/5_1.rpy:425
-translate portuguese e4cefdef:
+# game/scenario/5_1.rpy:427
+translate portuguese 6fca77e4:
 
-    # nyra neutre "Non. Je refuse seulement de t'aider à te punir."
-    nyra neutre ""
+    # noam taquin "Oui, Iris, j'avais compris le diagnostic."
+    noam taquin "Sim, Iris, eu entendi o diagnóstico."
 
 # game/scenario/5_1.rpy:429
-translate portuguese e3ed5ecb:
+translate portuguese 05a689ac:
 
-    # think "Kael lâche un rire sec. Pas joyeux, mais vivant."
-    think ""
+    # lysa blase "Si ça peut te rassurer, Dionysos n'a épargné personne."
+    lysa blase "Se serve de consolo, Dionísio não poupou ninguém."
 
 # game/scenario/5_1.rpy:431
-translate portuguese 057d6987:
+translate portuguese 2a74ba65:
 
-    # kael "J'ai la tête qui tourne."
-    kael ""
+    # iris fatigue "Parle pour toi."
+    iris fatigue "Fale por você."
 
 # game/scenario/5_1.rpy:433
-translate portuguese 8486cf2b:
+translate portuguese a6b22d6c:
 
-    # nyra "Alcool ou culpabilité ?"
-    nyra ""
-
-# game/scenario/5_1.rpy:435
-translate portuguese 5c5ea390:
-
-    # kael "Les deux."
-    kael ""
+    # lysa blase "Je parlais surtout pour toi."
+    lysa blase "Eu estava falando principalmente de você."
 
 # game/scenario/5_1.rpy:437
-translate portuguese ba1cbb77:
+translate portuguese cc06064a:
 
-    # nyra "Certains conseillent de reboire après une cuite. Une idée catastrophique, donc parfaitement adaptée à cette semaine."
-    nyra ""
+    # noam taquin "C'est beau, cette solidarité féminine."
+    noam taquin "É linda essa solidariedade feminina."
 
 # game/scenario/5_1.rpy:439
-translate portuguese 0c0b9884:
+translate portuguese 1e44a49d:
 
-    # kael "Tu veux me tuer ? Déjà que…"
-    kael ""
+    # iris fatigue "Solidarité ? Tu parles."
+    iris fatigue "Solidariedade? Faça-me o favor."
 
-# game/scenario/5_1.rpy:441
-translate portuguese 9015322f:
+# game/scenario/5_1.rpy:440
+translate portuguese eb84de06:
 
-    # think "Kael devient rouge. Le souvenir de la veille vient de le rattraper."
-    think ""
+    # iris fatigue "Madame n'a pas besoin d'effort pour être belle. Il suffisait de voir sa tête hier soir."
+    iris fatigue "A senhorita perfeita nem precisa se esforçar para ficar bonita. Bastava ter visto a cara dela ontem à noite."
 
-# game/scenario/5_1.rpy:443
-translate portuguese 98d5e64c:
+# game/scenario/5_1.rpy:442
+translate portuguese a5ac2cd4:
 
-    # kael "Rien."
-    kael ""
+    # think "Je préférerais vraiment éviter de repenser à ce qui s'est passé hier soir..."
+    think "Eu realmente preferia não pensar no que aconteceu ontem à noite..."
 
-# game/scenario/5_1.rpy:445
-translate portuguese db91865f:
+# game/scenario/5_1.rpy:451
+translate portuguese 72210245:
 
-    # nyra raison "J'ai une idée très précise du souvenir qui vient de te rattraper."
-    nyra raison ""
+    # think "Une porte s'ouvre derrière nous au moment où mon visage commence à chauffer. Ça me donne au moins une excuse pour me retourner."
+    think "Uma porta se abre atrás de nós no momento em que meu rosto começa a esquentar. Pelo menos isso me dá uma desculpa para me virar."
 
-# game/scenario/5_1.rpy:447
-translate portuguese 0b436cda:
+# game/scenario/5_1.rpy:455
+translate portuguese 40bfa282:
 
-    # kael "Ne te moque pas."
-    kael ""
+    # think "Julian a l'air beaucoup trop en forme par rapport au reste de la pièce."
+    think "Julian parece animado demais em comparação com o resto da sala."
 
-# game/scenario/5_1.rpy:449
-translate portuguese 0a0fac9c:
+# game/scenario/5_1.rpy:457
+translate portuguese 1051537e:
 
-    # nyra "Je ne me moque pas. Ça nous a fait du bien de souffler. Tu viens de le prouver."
-    nyra ""
+    # julian detendu "Voilà donc comment vous m'accueillez ?"
+    julian detendu "Então é assim que vocês me recebem?"
 
-# game/scenario/5_1.rpy:453
-translate portuguese 8469c203:
+# game/scenario/5_1.rpy:458
+translate portuguese 543cb289:
 
-    # "Kael se relève lentement."
-    ""
+    # julian sourire "J'ai simplement décidé de ne pas me laisser vaincre par une gueule de bois."
+    julian sourire "Eu simplesmente decidi não me deixar derrotar por uma ressaca."
 
-# game/scenario/5_1.rpy:459
-translate portuguese 23a1b434:
+# game/scenario/5_1.rpy:462
+translate portuguese c3b21b5c:
 
-    # kael "Bon."
-    kael ""
+    # julian detendu "Savoir faire semblant est déjà une compétence politique."
+    julian detendu "Saber fingir já é uma habilidade política."
 
-# game/scenario/5_1.rpy:460
-translate portuguese 317ec074:
+# game/scenario/5_1.rpy:466
+translate portuguese be8a7950:
 
-    # kael "Je vais essayer d'avaler un bout."
-    kael ""
+    # julian detendu "Parfois, les deux sont utiles."
+    julian detendu "Às vezes, os dois são úteis."
 
-# game/scenario/5_1.rpy:461
-translate portuguese ecb80836:
+# game/scenario/5_1.rpy:468
+translate portuguese 3ae359be:
 
-    # kael "Après… je verrai."
-    kael ""
+    # julian detendu "Le vote a lieu demain. On ne va pas passer toute la journée à faire semblant de penser à autre chose."
+    julian detendu "A votação é amanhã. Não vamos passar o dia inteiro fingindo pensar em outra coisa."
 
-# game/scenario/5_1.rpy:463
-translate portuguese 8a01aaca:
+# game/scenario/5_1.rpy:472
+translate portuguese fcfaf5f0:
 
-    # nyra "Après, tu verras."
-    nyra ""
-
-# game/scenario/5_1.rpy:465
-translate portuguese d9fd513e:
-
-    # think "Il passe sans me parler. Il sait que j'ai tout entendu."
-    think ""
-
-# game/scenario/5_1.rpy:471
-translate portuguese 40fce56e:
-
-    # nyra "Tu as tout entendu ?"
-    nyra ""
+    # julian detendu "Je pourrais. Mais je ne le ferai pas."
+    julian detendu "Eu poderia. Mas não vou."
 
 # game/scenario/5_1.rpy:473
-translate portuguese 46081631_5:
+translate portuguese 38896663:
 
-    # noam "Oui."
-    noam ""
+    # julian sourire "S'il faut encore échouer, autant le faire après avoir réellement défendu quelque chose."
+    julian sourire "Se for para fracassarmos de novo, que seja depois de realmente defendermos alguma coisa."
 
 # game/scenario/5_1.rpy:475
-translate portuguese 13f78249:
+translate portuguese acda4684:
 
-    # nyra neutre "Bien."
-    nyra neutre ""
+    # lysa blase "Je préférerais qu'on attende au moins que les antalgiques fassent effet avant de repartir au combat."
+    lysa blase "Eu preferia esperar os analgésicos fazerem efeito antes de voltarmos ao combate."
 
 # game/scenario/5_1.rpy:477
-translate portuguese 2e80c942:
+translate portuguese a854c6ee:
 
-    # noam "Bien ?"
-    noam ""
+    # noam taquin "J'aime pas l'admettre, mais Julian n'a pas complètement tort."
+    noam taquin "Odeio admitir, mas Julian não está totalmente errado."
 
-# game/scenario/5_1.rpy:479
-translate portuguese e3128258:
+# game/scenario/5_1.rpy:478
+translate portuguese a5682c25:
 
-    # nyra "Oui."
-    nyra ""
+    # noam inquiet "Demain arrive beaucoup trop vite."
+    noam inquiet "Amanhã está chegando rápido demais."
 
 # game/scenario/5_1.rpy:480
-translate portuguese 72697ee3:
+translate portuguese fff89b52:
 
-    # nyra raison "Les informations importantes doivent circuler. La douleur aussi, parfois."
-    nyra raison ""
+    # think "Au bout de la table, Sael reste silencieuse. Elle ne regarde même pas Julian lorsqu'il prononce son nom."
+    think "Na ponta da mesa, Sael permanece calada. Nem olha para Julian quando ele diz seu nome."
 
-# game/scenario/5_1.rpy:481
-translate portuguese 7c2561d5:
+# game/scenario/5_1.rpy:482
+translate portuguese 4fd30879:
 
-    # nyra "Une crise à Orbite ne se gère jamais seul. Kael avait besoin de s'entendre répondre."
-    nyra ""
+    # julian detendu "Sael."
+    julian detendu "Sael."
 
-# game/scenario/5_1.rpy:483
-translate portuguese 9ead6607:
+# game/scenario/5_1.rpy:484
+translate portuguese c9c0415b_1:
 
-    # noam "Même quand ça fait mal ?"
-    noam ""
+    # sael mefiant "Non."
+    sael mefiant "Não."
 
-# game/scenario/5_1.rpy:485
-translate portuguese c3ee55f8:
+# game/scenario/5_1.rpy:488
+translate portuguese 0f99b802:
 
-    # nyra "Surtout quand ça fait mal. C'est là qu'on touche quelque chose de vrai."
-    nyra ""
+    # sael mefiant "Tu allais encore me demander de changer d'avis. Alors je préfère te répondre tout de suite."
+    sael mefiant "Você ia me pedir outra vez para mudar de ideia. Então prefiro responder agora."
 
-# game/scenario/5_1.rpy:492
-translate portuguese de3bfcb1:
+# game/scenario/5_1.rpy:489
+translate portuguese c9c0415b_2:
 
-    # think "Nyra suit Kael à distance. Assez près pour l'aider, assez loin pour qu'il marche seul."
-    think ""
+    # sael mefiant "Non."
+    sael mefiant "Não."
 
-# game/scenario/5_1.rpy:494
-translate portuguese bf69fd0a:
+# game/scenario/5_1.rpy:493
+translate portuguese 91ad5a33:
 
-    # think "Cent quarante personnes. Dont Léa…"
-    think ""
+    # julian sourire "Je voulais seulement reprendre la discussion d'hier."
+    julian sourire "Eu só queria retomar a conversa de ontem."
 
 # game/scenario/5_1.rpy:495
-translate portuguese f9ccd969:
+translate portuguese 291ec443:
 
-    # think "Sa petite sœur, visiblement."
-    think ""
+    # sael determine "Je n'ai rien de plus à ajouter."
+    sael determine "Não tenho mais nada a acrescentar."
 
-# game/scenario/5_1.rpy:497
-translate portuguese 273b2921:
+# game/scenario/5_1.rpy:499
+translate portuguese b19d604f:
 
-    # noam "Pas étonnant qu'il culpabilise…"
-    noam ""
+    # sael determine "Je vous écouterai si vous avez quelque chose de nouveau à dire. Mais je ne changerai pas d'avis seulement pour vous rassurer."
+    sael determine "Vou escutar se tiverem algo novo a dizer. Mas não vou mudar de ideia só para tranquilizar vocês."
 
-# game/scenario/5_1.rpy:498
-translate portuguese 7bd2a25f:
+# game/scenario/5_1.rpy:501
+translate portuguese 6071a0a5:
 
-    # noam "Ce Conclave mélange des mondes qui n'auraient jamais dû se toucher, puis nous demande de voter sur les dégâts."
-    noam ""
+    # julian detendu "Personne ne t'oblige. Mais le collectif mérite—"
+    julian detendu "Ninguém está obrigando você. Mas o grupo merece—"
 
-# game/scenario/5_1.rpy:515
-translate portuguese f2b0dec9:
+# game/scenario/5_1.rpy:503
+translate portuguese c0a82b47:
 
-    # think "La cafétéria ressemble à un lendemain de fête condamné sans appel."
-    think ""
+    # sael determine "Alors n'insiste pas. Répéter les mêmes arguments ne les rendra pas meilleurs."
+    sael determine "Então não insista. Repetir os mesmos argumentos não vai torná-los melhores."
+
+# game/scenario/5_1.rpy:505
+translate portuguese 2ebac71d:
+
+    # think "Julian conserve son sourire, mais détourne légèrement le regard."
+    think "Julian mantém o sorriso, mas desvia ligeiramente o olhar."
+
+# game/scenario/5_1.rpy:508
+translate portuguese e484856b:
+
+    # julian detendu "Nous reprendrons cette conversation plus tard."
+    julian detendu "Retomaremos esta conversa mais tarde."
+
+# game/scenario/5_1.rpy:513
+translate portuguese 84372792:
+
+    # sael mefiant "Tu pourras parler si tu le souhaites. Ça ne veut pas dire que je te répondrai."
+    sael mefiant "Pode falar se quiser. Isso não significa que vou responder."
+
+# game/scenario/5_1.rpy:518
+translate portuguese f0a42d79:
+
+    # lysa neutre "Même notre premier réveil dans le Conclave était plus agréable que ce petit-déjeuner."
+    lysa neutre "Até nossa primeira manhã no Conclave foi mais agradável do que este café da manhã."
+
+# game/scenario/5_1.rpy:522
+translate portuguese a7b9356e:
+
+    # lysa blase "Vexée de ne pas avoir été choisie ?"
+    lysa blase "Chateada por não ter sido escolhida?"
+
+# game/scenario/5_1.rpy:527
+translate portuguese 5658a003:
+
+    # lysa blase "Aucune préférence ? Dommage."
+    lysa blase "Nenhuma preferência? Que pena."
 
 # game/scenario/5_1.rpy:528
-translate portuguese f95f5b9d:
+translate portuguese 48761e10:
 
-    # elen fatigue "Kael..."
-    elen fatigue ""
+    # lysa taquin "Pour information, Noam embrasse mieux qu'il ne répond aux questions. Ce n'est pas très difficile, cela dit."
+    lysa taquin "Só para constar, Noam beija melhor do que responde perguntas. Mas também não era uma comparação muito difícil."
 
 # game/scenario/5_1.rpy:530
-translate portuguese 86234b41:
+translate portuguese 1ce9250c:
 
-    # kael "Oui. J'ai vu."
-    kael ""
+    # noam taquin "Je vais..."
+    noam taquin "Eu vou..."
 
-# game/scenario/5_1.rpy:532
-translate portuguese 6a42aa3f:
+# game/scenario/5_1.rpy:531
+translate portuguese d68e3873:
 
-    # elen "Je voulais pas— enfin, hier, on savait pas et… ça va ?"
-    elen ""
+    # noam taquin "Très loin."
+    noam taquin "Para bem longe."
 
-# game/scenario/5_1.rpy:534
-translate portuguese e3ca98d3:
+# game/scenario/5_1.rpy:537
+translate portuguese 62762ba2:
 
-    # kael "Ça ira. Pas maintenant. Mais ça ira."
-    kael ""
+    # noam taquin "J'ai juste terminé de manger. Et je vais partir avant que ça empire."
+    noam taquin "Só terminei de comer. E vou embora antes que isso piore."
 
-# game/scenario/5_1.rpy:536
-translate portuguese a2a81bcd:
+# game/scenario/5_1.rpy:539
+translate portuguese 215cc696:
 
-    # ryn "Traduction : non."
-    ryn ""
-
-# game/scenario/5_1.rpy:538
-translate portuguese 3c35d139:
-
-    # kael "Traduction : je mange."
-    kael ""
-
-# game/scenario/5_1.rpy:540
-translate portuguese 2c3b107d:
-
-    # elen fatigue "D'accord. Oui. Mange. Je peux te trouver un truc sucré si— non. Mange d'abord."
-    elen fatigue ""
-
-# game/scenario/5_1.rpy:542
-translate portuguese 74f118f2:
-
-    # ryn blase "Moi, c'est Limen qui me fait flipper."
-    ryn blase ""
-
-# game/scenario/5_1.rpy:544
-translate portuguese 57ec8ed5:
-
-    # elen "Les marchés ?"
-    elen ""
-
-# game/scenario/5_1.rpy:546
-translate portuguese 286ea977:
-
-    # ryn "Les files."
-    ryn ""
-
-# game/scenario/5_1.rpy:547
-translate portuguese 6e65fa83:
-
-    # ryn "Regarde l'écran. Les gens attendent toujours leurs rations."
-    ryn ""
-
-# game/scenario/5_1.rpy:548
-translate portuguese 70eee5a7:
-
-    # ryn "Comme s'ils allaient en avoir…"
-    ryn ""
-
-# game/scenario/5_1.rpy:550
-translate portuguese 3e3185d6:
-
-    # elen "Kami a dit que les marchés fonctionnaient. Ça va prendre un peu de temps, mais ça va démarrer."
-    elen ""
+    # think "Je récupère mon plateau et manque presque de rentrer dans une chaise en m'éloignant. Elles éclatent de rire derrière moi."
+    think "Pego minha bandeja e quase bato em uma cadeira enquanto me afasto. Elas caem na risada atrás de mim."
 
 # game/scenario/5_1.rpy:551
-translate portuguese 39498f5c:
+translate portuguese dc72feb9:
 
-    # elen reflexion "Ça doit démarrer."
-    elen reflexion ""
+    # think "J'ai encore toute la matinée devant moi. Je devrais trouver quelque chose à faire avant que la discussion ne reprenne."
+    think "Ainda tenho a manhã inteira pela frente. Deveria encontrar alguma coisa para fazer antes que a discussão recomece."
 
-# game/scenario/5_1.rpy:553
-translate portuguese f3c08671:
+# game/scenario/5_1.rpy:571
+translate portuguese a0a44db5:
 
-    # ryn "Les marchés fonctionnent pour ceux qui ont un truc à vendre."
-    ryn ""
+    # think "Sael refuse toujours de discuter et Julian reviendra forcément à la charge. Moi, j'ai trop mal au crâne pour continuer à les écouter."
+    think "Sael ainda se recusa a conversar, e Julian inevitavelmente vai insistir. Minha cabeça dói demais para continuar ouvindo os dois."
 
-# game/scenario/5_1.rpy:554
-translate portuguese 0465f98e:
+# game/scenario/5_1.rpy:575
+translate portuguese fc104bd6:
 
-    # ryn blase "Pour les autres, c'est juste une façon plus chic de crever debout."
-    ryn blase ""
+    # elias inquiet "Noam."
+    elias inquiet "Noam."
 
-# game/scenario/5_1.rpy:556
-translate portuguese 55c0d216:
+# game/scenario/5_1.rpy:577
+translate portuguese 5d09db47:
 
-    # elen "Ryn… non, il faut juste—"
-    elen ""
+    # noam inquiet "Elias ?"
+    noam inquiet "Elias?"
 
-# game/scenario/5_1.rpy:558
-translate portuguese fe413170:
+# game/scenario/5_1.rpy:579
+translate portuguese 294c2418:
 
-    # ryn "Quoi ? C'est vrai, non ?"
-    ryn ""
+    # elias inquiet "Viens à l'infirmerie. Vite."
+    elias inquiet "Venha para a enfermaria. Rápido."
 
-# game/scenario/5_1.rpy:561
-translate portuguese 012dd30d:
+# game/scenario/5_1.rpy:581
+translate portuguese db1a8965:
 
-    # tomas hesitation "Euh… techniquement, les premières tensions étaient prévisibles."
-    tomas hesitation ""
+    # noam inquiet "Qu'est-ce qui—"
+    noam inquiet "O que—"
 
-# game/scenario/5_1.rpy:562
-translate portuguese b5a93fbb:
+# game/scenario/5_1.rpy:583
+translate portuguese 91745115:
 
-    # tomas "Quand on change le système il faut toujours un temps d'adaptation."
-    tomas ""
-
-# game/scenario/5_1.rpy:564
-translate portuguese 6ce8dfe2:
-
-    # ryn "Ton modèle, il a mangé ce matin ?"
-    ryn ""
-
-# game/scenario/5_1.rpy:566
-translate portuguese 4d70db9f:
-
-    # tomas "Je… c'est une image ou une vraie question ?"
-    tomas ""
-
-# game/scenario/5_1.rpy:568
-translate portuguese d4bbd5a5:
-
-    # ryn "Les deux."
-    ryn ""
-
-# game/scenario/5_1.rpy:570
-translate portuguese f4dae2ef:
-
-    # tomas hesitation "Alors… non. Enfin, un modèle ne mange pas."
-    tomas hesitation ""
-
-# game/scenario/5_1.rpy:572
-translate portuguese 749ba5d0:
-
-    # ryn "Voilà. Et les gens veulent juste pouvoir manger."
-    ryn ""
-
-# game/scenario/5_1.rpy:574
-translate portuguese ebf07ba1:
-
-    # kael "Ryn."
-    kael ""
-
-# game/scenario/5_1.rpy:576
-translate portuguese 34286576:
-
-    # ryn blase "Quoi ? J'ai pas crié."
-    ryn blase ""
-
-# game/scenario/5_1.rpy:578
-translate portuguese 6bb05c2c:
-
-    # tomas hesitation "Non, mais... l'effet était très proche."
-    tomas hesitation ""
-
-# game/scenario/5_1.rpy:580
-translate portuguese 6c204264:
-
-    # think "Personne ne rit. Tout le monde comprend."
-    think ""
+    # elias inquiet "Kael."
+    elias inquiet "Kael."
 
 # game/scenario/5_1.rpy:585
-translate portuguese 1c07b3a3:
+translate portuguese e9b79aec:
 
-    # think "Je m'installe devant une ration. Elle me regarde. Je la menace. Match nul."
-    think ""
+    # noam inquiet "Quoi, Kael ?"
+    noam inquiet "O que aconteceu com Kael?"
 
-# game/scenario/5_1.rpy:588
-translate portuguese 82738166:
+# game/scenario/5_1.rpy:587
+translate portuguese 8ba01381:
 
-    # lysa blase "T'as une de ces têtes."
-    lysa blase ""
+    # elias inquiet "Il s'est explosé la main contre un mur. Il y a du sang partout."
+    elias inquiet "Ele arrebentou a mão contra uma parede. Tem sangue por toda parte."
 
-# game/scenario/5_1.rpy:590
-translate portuguese 8d245cbf:
+# game/scenario/5_1.rpy:589
+translate portuguese 4de16c34:
 
-    # noam "Merci. J'ai préféré ne pas consulter le miroir ce matin."
-    noam ""
-
-# game/scenario/5_1.rpy:592
-translate portuguese ba521257:
-
-    # iris fatigue "Non, mais vraiment."
-    iris fatigue ""
-
-# game/scenario/5_1.rpy:594
-translate portuguese 9b62955c:
-
-    # noam "Oui, Iris, j'avais compris le diagnostic."
-    noam ""
-
-# game/scenario/5_1.rpy:596
-translate portuguese feb80157:
-
-    # lysa "Si ça peut te rassurer, Dionysos n'a épargné personne."
-    lysa ""
-
-# game/scenario/5_1.rpy:598
-translate portuguese a84678ae:
-
-    # iris "Parle pour toi."
-    iris ""
-
-# game/scenario/5_1.rpy:600
-translate portuguese 04923dbb:
-
-    # lysa "Je parlais surtout pour toi."
-    lysa ""
-
-# game/scenario/5_1.rpy:602
-translate portuguese 01a17990:
-
-    # iris fatigue "Pff."
-    iris fatigue ""
-
-# game/scenario/5_1.rpy:604
-translate portuguese 9124b4c7:
-
-    # noam "C'est beau, cette solidarité féminine."
-    noam ""
-
-# game/scenario/5_1.rpy:606
-translate portuguese b44c0bbb:
-
-    # iris "Solidarité ? Tu parles."
-    iris ""
-
-# game/scenario/5_1.rpy:607
-translate portuguese 36dad49b:
-
-    # iris "Madame n'a pas besoin d'effort pour être belle. Il suffisait de voir sa tête hier soir."
-    iris ""
+    # noam inquiet "Merde."
+    noam inquiet "Merda."
 
 # game/scenario/5_1.rpy:610
-translate portuguese d1af98c2_6:
+translate portuguese 185d1bab:
 
-    # think "Non."
-    think ""
+    # think "L'odeur de désinfectant me donne presque immédiatement la nausée."
+    think "O cheiro de desinfetante me dá náusea quase imediatamente."
 
-# game/scenario/5_1.rpy:611
-translate portuguese 8fbc0a41:
+# game/scenario/5_1.rpy:614
+translate portuguese f35165e4:
 
-    # think "Je préférerais éviter d'y repenser…"
-    think ""
+    # think "Mara fouille dans une armoire pendant que Nyra reste près de Kael. Elias, lui, s'est collé contre le mur."
+    think "Mara vasculha um armário enquanto Nyra fica ao lado de Kael. Elias está colado na parede."
 
-# game/scenario/5_1.rpy:622
-translate portuguese 655e5799:
+# game/scenario/5_1.rpy:616
+translate portuguese a06f4866:
 
-    # think "Une porte s'ouvre derrière nous pendant que mon visage brûle encore."
-    think ""
+    # noam inquiet "Kael."
+    noam inquiet "Kael."
 
-# game/scenario/5_1.rpy:623
-translate portuguese 26330917:
+# game/scenario/5_1.rpy:618
+translate portuguese 99ef1833:
 
-    # think "Timing parfait pour changer de sujet."
-    think ""
+    # kael fatigue "Salut."
+    kael fatigue "Oi."
+
+# game/scenario/5_1.rpy:620
+translate portuguese e6dd8e93:
+
+    # noam inquiet "...Salut ?"
+    noam inquiet "...Oi?"
 
 # game/scenario/5_1.rpy:626
-translate portuguese d9aad2e3:
+translate portuguese 141b2745:
 
-    # julian detendu "Bonjour à tous."
-    julian detendu ""
+    # noam inquiet "Un mur ?"
+    noam inquiet "Uma parede?"
 
 # game/scenario/5_1.rpy:628
-translate portuguese dca317a6:
+translate portuguese 8208f07c:
 
-    # noam "Il a l'air en forme. C'est louche."
-    noam ""
+    # mara taquin "Monsieur a frappé dans un mur. Plusieurs fois, parce qu'une seule ne suffisait visiblement pas."
+    mara taquin "O senhor aqui deu um soco numa parede. Várias vezes, porque uma só aparentemente não bastava."
 
-# game/scenario/5_1.rpy:630
-translate portuguese a5577cbf:
+# game/scenario/5_1.rpy:629
+translate portuguese 999eefa0:
 
-    # julian "Voilà donc comment on accueille Julian ?"
-    julian ""
+    # mara agace "Le mur n'a rien. Sa main, par contre..."
+    mara agace "A parede não sofreu nada. Já a mão dele..."
 
 # game/scenario/5_1.rpy:631
-translate portuguese 57cc5794:
+translate portuguese fca208ec:
 
-    # julian sourire "J'ai choisi de transcender la gueule de bois."
-    julian sourire ""
+    # kael triste "Je te remercie pour cette synthèse."
+    kael triste "Obrigado por esse resumo."
 
 # game/scenario/5_1.rpy:633
-translate portuguese ef5fbb3e:
+translate portuguese ead86b61:
 
-    # lysa blase "Personne ne transcende rien. Tu fais juste mieux semblant que nous."
-    lysa blase ""
+    # mara agace "J'essaie surtout de l'empêcher de foutre du sang partout. Et accessoirement de sauver sa main."
+    mara agace "Estou principalmente tentando impedir que ele espalhe sangue por toda parte. E, de quebra, salvar a mão dele."
 
 # game/scenario/5_1.rpy:635
-translate portuguese a982a100:
+translate portuguese 745f7501:
 
-    # julian "C'est déjà une compétence politique."
-    julian ""
+    # noam inquiet "Pourquoi tu as fait ça ?"
+    noam inquiet "Por que você fez isso?"
 
 # game/scenario/5_1.rpy:637
-translate portuguese 268bc8cc:
+translate portuguese 2485d468:
 
-    # ryn blase "Ou un défaut."
-    ryn blase ""
+    # kael triste "Kami a refusé ma demande."
+    kael triste "Kami recusou meu pedido."
 
 # game/scenario/5_1.rpy:639
-translate portuguese de70833e:
+translate portuguese 39ac2f2c:
 
-    # julian detendu "Les deux peuvent être rentables."
-    julian detendu ""
+    # noam inquiet "Quelle demande ?"
+    noam inquiet "Que pedido?"
 
 # game/scenario/5_1.rpy:643
-translate portuguese 39da0a16:
+translate portuguese 9009f8cf:
 
-    # julian "Le vote est demain. Nous n'allons pas passer la journée à feindre qu'un autre sujet compte davantage."
-    julian ""
+    # kael triste "Je ne demandais même pas une vraie conversation. Seulement trente secondes pour savoir si elle allait bien."
+    kael triste "Eu nem estava pedindo uma conversa de verdade. Só trinta segundos para saber se ela estava bem."
 
 # game/scenario/5_1.rpy:645
-translate portuguese 86765710:
+translate portuguese 948dd000:
 
-    # iris fatigue "Rends-nous service : tais-toi jusqu'à ce que les antalgiques fonctionnent."
-    iris fatigue ""
+    # noam inquiet "Et elle a dit non ?"
+    noam inquiet "E ela disse não?"
 
 # game/scenario/5_1.rpy:647
-translate portuguese 826139c5:
+translate portuguese e0c2eaf4:
 
-    # julian "Je peux. Julian ne le fera pas."
-    julian ""
+    # kael triste "Communications familiales hors priorités du Conclave. Interdites par le règlement."
+    kael triste "Comunicações familiares não são prioridade do Conclave. São proibidas pelo regulamento."
 
-# game/scenario/5_1.rpy:648
-translate portuguese 8e803a65:
+# game/scenario/5_1.rpy:649
+translate portuguese cb580175:
 
-    # julian sourire "S'il faut échouer, nous échouerons debout, après avoir défendu quelque chose."
-    julian sourire ""
+    # kael triste "Et les représentants doivent éviter les distractions émotionnelles avant un vote important."
+    kael triste "E os representantes devem evitar distrações emocionais antes de uma votação importante."
 
-# game/scenario/5_1.rpy:650
-translate portuguese 9eafa008:
+# game/scenario/5_1.rpy:651
+translate portuguese 17b9e513:
 
-    # lysa "Je vote pour l'échec silencieux. Les Spartiates avaient au moins cette qualité."
-    lysa ""
+    # think "Kami a trouvé une règle assez froide pour transformer son inquiétude en simple distraction."
+    think "Kami encontrou uma regra fria o bastante para transformar a preocupação dele em mera distração."
 
-# game/scenario/5_1.rpy:652
-translate portuguese 43eec69b:
+# game/scenario/5_1.rpy:655
+translate portuguese 48790978:
 
-    # noam "J'aime pas l'admettre, mais Julian n'a pas complètement tort."
-    noam ""
+    # kael triste "Et j'ai frappé un mur."
+    kael triste "Então eu dei um soco numa parede."
 
-# game/scenario/5_1.rpy:653
-translate portuguese 6b7820fe:
+# game/scenario/5_1.rpy:657
+translate portuguese a939a74c:
 
-    # noam "Demain arrive beaucoup trop vite."
-    noam ""
+    # mara taquin "Et tu as frappé un mur. Bravo."
+    mara taquin "E você deu um soco numa parede. Parabéns."
 
-# game/scenario/5_1.rpy:658
-translate portuguese 29fcbfef:
+# game/scenario/5_1.rpy:659
+translate portuguese b6b2d36c:
 
-    # think "Au bout de la table, Sael est droite, silencieuse, déjà retranchée."
-    think ""
+    # kael triste "Ouais. C'était pas la meilleure décision de ma vie."
+    kael triste "É. Não foi a melhor decisão da minha vida."
 
-# game/scenario/5_1.rpy:660
-translate portuguese 31d8bf58:
+# game/scenario/5_1.rpy:665
+translate portuguese cbf7c913:
 
-    # julian "Sael."
-    julian ""
+    # kael surpris "Aïe."
+    kael surpris "Ai."
 
-# game/scenario/5_1.rpy:664
-translate portuguese 1a64985a:
+# game/scenario/5_1.rpy:667
+translate portuguese 1cc58dd0:
 
-    # sael "Non."
-    sael ""
-
-# game/scenario/5_1.rpy:666
-translate portuguese fbd7286d:
-
-    # julian detendu "Je n'ai pas encore posé la question."
-    julian detendu ""
-
-# game/scenario/5_1.rpy:668
-translate portuguese c21abaf6:
-
-    # sael "Tu allais la poser. Certaines paroles font du bruit avant de sortir."
-    sael ""
+    # mara taquin "J'ai pas touché."
+    mara taquin "Eu nem encostei ainda."
 
 # game/scenario/5_1.rpy:669
-translate portuguese 8359c6d2:
+translate portuguese 3de40f6a:
 
-    # sael mefiant "Et j'ai dit non."
-    sael mefiant ""
+    # kael fatigue "Je prends de l'avance."
+    kael fatigue "Estou me adiantando."
 
 # game/scenario/5_1.rpy:671
-translate portuguese cb20bf19:
+translate portuguese 13fa1461:
 
-    # ryn blase "Au moins ça a le mérite d'être clair."
-    ryn blase ""
+    # mara agace "Arrête de prendre des initiatives."
+    mara agace "Pare de tomar iniciativas."
 
 # game/scenario/5_1.rpy:673
-translate portuguese b857917e:
+translate portuguese 2085b747:
 
-    # julian sourire "Je voulais seulement ouvrir une discussion."
-    julian sourire ""
+    # think "Mara commence à nettoyer la plaie. Kael regarde ailleurs et sa main continue de trembler."
+    think "Mara começa a limpar a ferida. Kael olha para o outro lado, e a mão dele continua tremendo."
 
 # game/scenario/5_1.rpy:675
-translate portuguese aad2b5d1:
+translate portuguese 5de64e60:
 
-    # sael "Elle est fermée."
-    sael ""
+    # noam inquiet "Tu penses qu'elle est en danger ?"
+    noam inquiet "Você acha que ela está em perigo?"
 
 # game/scenario/5_1.rpy:677
-translate portuguese d68547a4:
+translate portuguese ad598921:
 
-    # elen inquiet "Sael, on peut juste écouter ? Sans crier, sans porte qui claque, sans— enfin, juste écouter ?"
-    elen inquiet ""
+    # kael triste "Je ne sais pas. Aucune information exploitable."
+    kael triste "Não sei. Nenhuma informação útil."
 
 # game/scenario/5_1.rpy:679
-translate portuguese 3b52b84d:
+translate portuguese 6f7bec50:
 
-    # sael "Personne n'a à me tirer hors de ma position. J'en sortirai si j'y vois un chemin."
-    sael ""
+    # noam inquiet "Le module s'est isolé correctement ?"
+    noam inquiet "O módulo se isolou corretamente?"
 
 # game/scenario/5_1.rpy:681
-translate portuguese 3abf1cad:
+translate portuguese 95e0f73a_1:
 
-    # julian "Personne ne t'oblige. Mais le collectif mérite—"
-    julian ""
+    # kael triste "Oui."
+    kael triste "Sim."
 
-# game/scenario/5_1.rpy:683
-translate portuguese cfedf677:
+# game/scenario/5_1.rpy:684
+translate portuguese c69b8a3e:
 
-    # sael "Alors n'insiste pas. Les mots répétés ne deviennent pas plus vrais."
-    sael ""
+    # kael triste "Normalement, un sas ne lâche pas en pleine nuit. Et une enfant de six ans ne devrait pas avoir à enfiler un scaphandre en trente secondes."
+    kael triste "Normalmente, uma eclusa não falha no meio da noite. E uma criança de seis anos não deveria precisar vestir um traje espacial em trinta segundos."
+
+# game/scenario/5_1.rpy:685
+translate portuguese ab226af8:
+
+    # kael triste "Je devrais au moins pouvoir lui demander si elle va bien."
+    kael triste "Eu deveria ao menos poder perguntar se ela está bem."
 
 # game/scenario/5_1.rpy:687
-translate portuguese 18abfa90:
+translate portuguese 7c4f513b:
 
-    # think "Julian garde son sourire. Le sourire, lui, accuse le coup."
-    think ""
-
-# game/scenario/5_1.rpy:689
-translate portuguese 3386a595:
-
-    # julian detendu "Très bien."
-    julian detendu ""
+    # kael triste "Rien de tout ça ne devrait être normal."
+    kael triste "Nada disso deveria ser normal."
 
 # game/scenario/5_1.rpy:690
-translate portuguese 7b4e4c31:
+translate portuguese d3e421d0:
 
-    # julian "Nous reprendrons cette conversation plus tard."
-    julian ""
+    # elias inquiet "Donc si le protocole a fonctionné, ils ne sont plus en danger immédiat. Au moins, on sait ça."
+    elias inquiet "Então, se o protocolo funcionou, eles já não estão em perigo imediato. Pelo menos isso nós sabemos."
 
-# game/scenario/5_1.rpy:695
-translate portuguese f479ea5d:
+# game/scenario/5_1.rpy:692
+translate portuguese cbcaad30:
 
-    # sael "Tu parleras. Je répondrai si c'est nécessaire. Ce n'est pas la même chose."
-    sael ""
+    # kael triste "Je sais."
+    kael triste "Eu sei."
+
+# game/scenario/5_1.rpy:694
+translate portuguese 65b5b128:
+
+    # think "Elias se tait brusquement et fixe le plafond. Toute cette histoire semble le mettre particulièrement mal à l'aise."
+    think "Elias se cala de repente e encara o teto. Essa história toda parece deixá-lo especialmente desconfortável."
+
+# game/scenario/5_1.rpy:696
+translate portuguese 5fdce419:
+
+    # mara neutre "Bon."
+    mara neutre "Certo."
+
+# game/scenario/5_1.rpy:697
+translate portuguese c1e902b7:
+
+    # mara neutre "Ta main va survivre. Je ne sens pas de fracture et tu n'auras pas besoin de points."
+    mara neutre "Sua mão vai sobreviver. Não sinto nenhuma fratura, e você não vai precisar de pontos."
+
+# game/scenario/5_1.rpy:698
+translate portuguese a686972f:
+
+    # mara taquin "Par contre, tu vas avoir un bleu énorme."
+    mara taquin "Mas vai ficar com um hematoma enorme."
 
 # game/scenario/5_1.rpy:701
-translate portuguese f9fced97:
+translate portuguese a2309a1b:
 
-    # lysa neutre "Même le banquet de Tantale avait une ambiance plus légère."
-    lysa neutre ""
+    # kael triste "Compris."
+    kael triste "Entendido."
 
 # game/scenario/5_1.rpy:703
-translate portuguese 63c59541:
+translate portuguese aa6e54a7:
 
-    # iris taquin "Je regrette presque la bouteille. C'est dire le niveau de catastrophe."
-    iris taquin ""
+    # mara agace "Mauvaise réponse."
+    mara agace "Resposta errada."
 
 # game/scenario/5_1.rpy:705
-translate portuguese cf855433:
+translate portuguese e2f25aaa:
 
-    # lysa "Vexée de ne pas avoir été choisie ?"
-    lysa ""
+    # kael triste "… Pardon ?"
+    kael triste "... Desculpa?"
 
 # game/scenario/5_1.rpy:707
-translate portuguese 5404ec00:
+translate portuguese 0e5dbb68:
 
-    # iris rire "Moi vexée ? Et puis quoi encore."
-    iris rire ""
+    # mara agace "« Compris », ça ne veut rien dire. Je veux t'entendre dire que tu ne recommenceras pas."
+    mara agace "“Entendido” não quer dizer nada. Quero ouvir você dizer que não vai fazer isso de novo."
 
-# game/scenario/5_1.rpy:708
-translate portuguese 35fa8a57:
+# game/scenario/5_1.rpy:709
+translate portuguese 7fe97c29:
 
-    # iris taquin "Et pour embrasser qui d'abord ?"
-    iris taquin ""
-
-# game/scenario/5_1.rpy:710
-translate portuguese 85bb6e98:
-
-    # lysa "Aucune préférence ? Dommage."
-    lysa ""
+    # kael triste "Je ne recommencerai pas."
+    kael triste "Não vou fazer isso de novo."
 
 # game/scenario/5_1.rpy:711
-translate portuguese 463227a5:
+translate portuguese fdf67a38:
 
-    # lysa taquin "Pour information, Noam embrasse mieux qu'il ne répond aux questions."
-    lysa taquin ""
+    # mara agace "C'est déjà mieux."
+    mara agace "Já é melhor."
 
 # game/scenario/5_1.rpy:713
-translate portuguese 59f3d94a:
+translate portuguese 85615f1e:
 
-    # noam "Je vais..."
-    noam ""
+    # think "Mara serre le bandage. Kael observe sa main sans parvenir à la garder immobile."
+    think "Mara aperta a bandagem. Kael observa a mão sem conseguir mantê-la imóvel."
 
-# game/scenario/5_1.rpy:714
-translate portuguese d9608750:
+# game/scenario/5_1.rpy:717
+translate portuguese e05bf322:
 
-    # noam "Très loin."
-    noam ""
+    # noam inquiet "Pour le vote ?"
+    noam inquiet "É por causa da votação?"
 
-# game/scenario/5_1.rpy:716
-translate portuguese 07667726:
+# game/scenario/5_1.rpy:719
+translate portuguese 95e0f73a_2:
 
-    # iris taquin "Oh ? Il fuit."
-    iris taquin ""
+    # kael triste "Oui."
+    kael triste "Sim."
 
-# game/scenario/5_1.rpy:718
-translate portuguese 7e2ab9c6:
+# game/scenario/5_1.rpy:721
+translate portuguese 62565ba9:
 
-    # lysa taquin "Il bat en retraite."
-    lysa taquin ""
+    # kael triste "Je pensais savoir ce que je voulais voter."
+    kael triste "Eu achava que sabia como queria votar."
 
-# game/scenario/5_1.rpy:720
-translate portuguese 4c0e92e3:
+# game/scenario/5_1.rpy:723
+translate portuguese 6b4e794a:
 
-    # noam "J'appelle ça une manœuvre stratégique."
-    noam ""
+    # kael triste "Maintenant, je pense à Orbite, à Léa, à Kami... Je n'arrive plus à séparer tout ça du vote."
+    kael triste "Agora penso em Orbite, em Léa, em Kami... Não consigo mais separar nada disso da votação."
 
-# game/scenario/5_1.rpy:722
-translate portuguese 4b4b269f:
+# game/scenario/5_1.rpy:725
+translate portuguese a2b4e431:
 
-    # think "Je saisis mon plateau et manque la sortie. Retraite stratégique exemplaire."
-    think ""
+    # kael triste "Si je vote demain, je ne saurai même pas si c'est vraiment mon choix ou seulement ma peur."
+    kael triste "Se eu votar amanhã, nem vou saber se é realmente minha escolha ou apenas meu medo."
 
-# game/scenario/5_1.rpy:736
-translate portuguese 2efd02d4:
+# game/scenario/5_1.rpy:727
+translate portuguese adbf46f9:
 
-    # noam "Bon."
-    noam ""
+    # nyra raison "Alors ne force pas une réponse. Repose-toi."
+    nyra raison "Então não force uma resposta. Descanse."
+
+# game/scenario/5_1.rpy:731
+translate portuguese 840db7b6:
+
+    # nyra raison "Je n'ai pas dit que c'était idéal. J'ai dit qu'il avait le droit de ne pas voter."
+    nyra raison "Eu não disse que era o ideal. Disse que ele tem o direito de não votar."
+
+# game/scenario/5_1.rpy:733
+translate portuguese 679f2021:
+
+    # elias inquiet "La participation n'est pas obligatoire ?"
+    elias inquiet "A participação não é obrigatória?"
 
 # game/scenario/5_1.rpy:737
-translate portuguese 8620e964:
+translate portuguese ae120c74:
 
-    # noam "Matinée ouverte. Morale fermée."
-    noam ""
+    # nyra raison "Elle ne l'est pas. Les règles sont claires : une absence retire seulement le bulletin du décompte."
+    nyra raison "Não. As regras são claras: uma ausência apenas retira a cédula da contagem."
 
-# game/scenario/5_1.rpy:738
-translate portuguese 05b7bcac:
+# game/scenario/5_1.rpy:741
+translate portuguese 3db6128d:
 
-    # noam "On progresse."
-    noam ""
+    # nyra raison "Ton absence sera enregistrée, mais elle ne comptera pas comme un vote contre. C'est la même chose qu'une abstention."
+    nyra raison "Sua ausência será registrada, mas não contará como voto contra. É o mesmo que uma abstenção."
+
+# game/scenario/5_1.rpy:746
+translate portuguese 376ef5be:
+
+    # nyra raison "Je répète la règle. Pour une fois, elle est assez claire."
+    nyra raison "Estou apenas repetindo a regra. Pela primeira vez, ela é clara o bastante."
+
+# game/scenario/5_1.rpy:748
+translate portuguese 364d3a2e:
+
+    # think "Tout le monde se tait. Cette règle n'avait encore jamais semblé aussi importante."
+    think "Todos ficam em silêncio. Essa regra nunca pareceu tão importante."
+
+# game/scenario/5_1.rpy:750
+translate portuguese ca569019:
+
+    # noam inquiet "Kami demande l'unanimité des votes exprimés."
+    noam inquiet "Kami exige unanimidade entre os votos expressos."
 
 # game/scenario/5_1.rpy:752
-translate portuguese 65c25efb:
+translate portuguese a6c3c244:
 
-    # think "Je quitte la cafétéria sans destination. J'avais seulement besoin de ne plus être là."
-    think ""
+    # think "Je le dis presque pour moi. Si quelqu'un ne participe pas, il ne peut pas empêcher un texte d'être adopté."
+    think "Digo isso quase para mim mesmo. Se alguém não participar, não poderá impedir que um texto seja aprovado."
+
+# game/scenario/5_1.rpy:754
+translate portuguese a42a5372_1:
+
+    # nyra raison "Oui."
+    nyra raison "Sim."
 
 # game/scenario/5_1.rpy:756
-translate portuguese ed67b861:
+translate portuguese 412327e9:
 
-    # think "Sael a fermé la discussion. Julian a encaissé. Moi, j'ai trop mal au crâne pour jouer l'arbitre."
-    think ""
+    # think "Mara réfléchit. Elias baisse les yeux. Kael semble déjà avoir pris sa décision."
+    think "Mara pensa. Elias baixa os olhos. Kael já parece ter tomado sua decisão."
 
 # game/scenario/5_1.rpy:760
-translate portuguese 3afb2f94:
+translate portuguese 0a767d50:
 
-    # think "Des pas rapides me rattrapent."
-    think ""
+    # nyra raison "Dans cet état ?"
+    nyra raison "Nesse estado?"
 
-# game/scenario/5_1.rpy:766
-translate portuguese 865c1b15:
+# game/scenario/5_1.rpy:762
+translate portuguese 95e0f73a_3:
 
-    # elias "Noam."
-    elias ""
+    # kael triste "Oui."
+    kael triste "Sim."
 
-# game/scenario/5_1.rpy:768
-translate portuguese 4176c186:
+# game/scenario/5_1.rpy:765
+translate portuguese 0aa49091:
 
-    # noam "Elias ?"
-    noam ""
+    # kael triste "Je préfère être là."
+    kael triste "Prefiro estar lá."
+
+# game/scenario/5_1.rpy:767
+translate portuguese 90274591:
+
+    # think "Nyra n'insiste pas. Elle voulait lui rappeler qu'il avait le choix, pas décider à sa place."
+    think "Nyra não insiste. Queria lembrá-lo de que tinha escolha, não escolher no lugar dele."
+
+# game/scenario/5_1.rpy:769
+translate portuguese 8b56ca6c:
+
+    # mara agace "Avant de voter, tu dors."
+    mara agace "Antes de votar, você vai dormir."
 
 # game/scenario/5_1.rpy:770
-translate portuguese 332dfe7b:
+translate portuguese 748db0d1:
 
-    # elias "Infirmerie. Maintenant."
-    elias ""
+    # mara agace "Tu manges. Tu te reposes."
+    mara agace "Vai comer. Vai descansar."
 
-# game/scenario/5_1.rpy:774
-translate portuguese 1af670e6:
+# game/scenario/5_1.rpy:773
+translate portuguese bf19525b:
 
-    # noam "Qu'est-ce qui—"
-    noam ""
+    # kael triste "C'est beaucoup de contraintes."
+    kael triste "São muitas condições."
 
-# game/scenario/5_1.rpy:776
-translate portuguese 736f47ef:
+# game/scenario/5_1.rpy:775
+translate portuguese bbfeab6c:
 
-    # elias "Kael."
-    elias ""
+    # mara agace "J'en ai d'autres en réserve si tu veux."
+    mara agace "Tenho outras guardadas, se quiser."
 
-# game/scenario/5_1.rpy:780
-translate portuguese 883fee48:
+# game/scenario/5_1.rpy:777
+translate portuguese dae76965:
 
-    # noam "Quoi, Kael ?"
-    noam ""
+    # kael triste "Non. Ça ira."
+    kael triste "Não. Está bom assim."
 
-# game/scenario/5_1.rpy:782
-translate portuguese 7e4d4fa3:
+# game/scenario/5_1.rpy:785
+translate portuguese 650995f2:
 
-    # elias inquiet "Il s'est explosé la main. Y a du sang partout. C'est chaud."
-    elias inquiet ""
+    # think "Elias fixe ses lacets depuis plusieurs secondes. Il évite surtout de regarder Kael."
+    think "Elias encara os cadarços há vários segundos. Na verdade, está evitando olhar para Kael."
 
-# game/scenario/5_1.rpy:786
-translate portuguese f2ff8c3f:
+# game/scenario/5_1.rpy:787
+translate portuguese 9dc226c8:
 
-    # noam "Merde."
-    noam ""
+    # think "Personne ne peut lui garantir que Léa va bien. Alors personne ne répond."
+    think "Ninguém pode garantir que Léa está bem. Por isso, ninguém responde."
 
-# game/scenario/5_1.rpy:788
-translate portuguese a3b11b8c:
+# game/scenario/5_1.rpy:789
+translate portuguese 77bc7dfe:
 
-    # elias fatigue "Ouais. Viens vite."
-    elias fatigue ""
+    # elias fatigue "Je…"
+    elias fatigue "Eu..."
 
-# game/scenario/5_1.rpy:793
-translate portuguese 0753dd6f:
+# game/scenario/5_1.rpy:795
+translate portuguese 60109014:
 
-    # "Elias repart ; je le suis."
-    ""
+    # elias fatigue "Un outil. J'ai peut-être laissé un outil allumé."
+    elias fatigue "Uma ferramenta. Talvez eu tenha deixado uma ferramenta ligada."
 
-# game/scenario/5_1.rpy:800
-translate portuguese 258518d3:
+# game/scenario/5_1.rpy:797
+translate portuguese 5e147e83:
 
-    # think "L'odeur de désinfectant donne instantanément raison à mon mal de tête."
-    think ""
+    # mara agace "Elias."
+    mara agace "Elias."
+
+# game/scenario/5_1.rpy:799
+translate portuguese 6773e6fe:
+
+    # elias inquiet "Ouais."
+    elias inquiet "É."
+
+# game/scenario/5_1.rpy:801
+translate portuguese 0c28cfc5:
+
+    # mara agace "T'as l'air vert."
+    mara agace "Você está verde."
+
+# game/scenario/5_1.rpy:803
+translate portuguese 69f0ff93:
+
+    # elias fatigue "Je suis fatigué. C'est tout."
+    elias fatigue "Estou cansado. Só isso."
+
+# game/scenario/5_1.rpy:805
+translate portuguese 8d6dbda5:
+
+    # mara agace "C'est pas la fatigue."
+    mara agace "Isso não é só cansaço."
+
+# game/scenario/5_1.rpy:807
+translate portuguese 802b5fbe:
+
+    # elias fatigue "Mais l'outil—"
+    elias fatigue "Mas a ferramenta—"
+
+# game/scenario/5_1.rpy:809
+translate portuguese 77e91116:
+
+    # mara agace "Y'a aucun outil."
+    mara agace "Não existe ferramenta nenhuma."
 
 # game/scenario/5_1.rpy:811
-translate portuguese 48861ea3:
+translate portuguese 67daf2fb:
 
-    # "Kael est assis sur le lit d'examen, la main droite enveloppée d'une compresse rouge."
-    ""
+    # elias fatigue "J'ai dit peut-être."
+    elias fatigue "Eu disse talvez."
+
+# game/scenario/5_1.rpy:813
+translate portuguese a30d3dd2:
+
+    # kael triste "Elias."
+    kael triste "Elias."
 
 # game/scenario/5_1.rpy:815
-translate portuguese 7b4b6577:
+translate portuguese 6773e6fe_1:
 
-    # think "Mara fouille une armoire. Nyra veille près de Kael. Elias tente de fusionner avec le mur."
-    think ""
+    # elias inquiet "Ouais."
+    elias inquiet "É."
 
 # game/scenario/5_1.rpy:819
-translate portuguese dcdf7b8c:
+translate portuguese 8d631e45:
 
-    # noam "Kael."
-    noam ""
+    # think "Elias ouvre la bouche puis la referme. Il semble chercher une réponse qui ne vient pas."
+    think "Elias abre a boca e fecha de novo. Parece procurar uma resposta que não vem."
 
 # game/scenario/5_1.rpy:821
-translate portuguese 8e6694b4:
+translate portuguese 2bafd854:
 
-    # kael "Salut."
-    kael ""
+    # elias fatigue "... C'est rien."
+    elias fatigue "... Não é nada."
 
-# game/scenario/5_1.rpy:823
-translate portuguese dce38681:
+# game/scenario/5_1.rpy:826
+translate portuguese 48399918:
 
-    # noam "...Salut ?"
-    noam ""
+    # think "Il quitte la pièce beaucoup trop vite. Mara le suit du regard."
+    think "Ele sai da sala rápido demais. Mara o acompanha com os olhos."
 
-# game/scenario/5_1.rpy:825
-translate portuguese 6c173575:
+# game/scenario/5_1.rpy:828
+translate portuguese feb7258f:
 
-    # kael triste "Je n'ai rien trouvé de mieux."
-    kael triste ""
+    # mara agace "Il fait toujours ça dès que quelqu'un va mal."
+    mara agace "Ele sempre faz isso quando alguém está mal."
 
-# game/scenario/5_1.rpy:827
-translate portuguese 72e63555:
+# game/scenario/5_1.rpy:830
+translate portuguese 97b1c1cf:
 
-    # mara stress "Le mur, par contre, tu l'as trouvé sans difficulté."
-    mara stress ""
-
-# game/scenario/5_1.rpy:829
-translate portuguese 49db070d:
-
-    # noam "Un mur ?"
-    noam ""
-
-# game/scenario/5_1.rpy:831
-translate portuguese 1d884c9e:
-
-    # mara "Monsieur a testé sa main contre un mur. Plusieurs fois, pour garantir la rigueur scientifique."
-    mara ""
+    # noam inquiet "Il est parti en trente secondes."
+    noam inquiet "Foi embora em trinta segundos."
 
 # game/scenario/5_1.rpy:832
-translate portuguese 44f05ceb:
+translate portuguese b310a324:
 
-    # mara agace "Résultat : mur intact, main ouverte, idée toujours aussi nulle."
-    mara agace ""
-
-# game/scenario/5_1.rpy:834
-translate portuguese 3148ebf5:
-
-    # kael "Je te remercie pour cette synthèse."
-    kael ""
+    # mara agace "Même pas trente secondes. C'est peut-être un record."
+    mara agace "Nem trinta segundos. Talvez seja um recorde."
 
 # game/scenario/5_1.rpy:836
-translate portuguese 97836990:
+translate portuguese 5fef545d:
 
-    # mara "Écoute, j'essaie de t'empêcher de repeindre l'infirmerie avec ton sang."
-    mara ""
+    # think "Mara range sa trousse. Malgré ses remarques, elle paraît soulagée que Kael n'ait rien de grave."
+    think "Mara guarda o estojo. Apesar dos comentários, parece aliviada por Kael não estar gravemente ferido."
 
-# game/scenario/5_1.rpy:837
-translate portuguese a7b7b79b:
+# game/scenario/5_1.rpy:838
+translate portuguese 24fc45ad:
 
-    # mara "Pour les dix prochaines minutes, je suis ta meilleure amie. Profite, l'offre expire vite."
-    mara ""
+    # mara agace "Noam."
+    mara agace "Noam."
 
-# game/scenario/5_1.rpy:841
-translate portuguese 75196c83:
+# game/scenario/5_1.rpy:840
+translate portuguese 1f7a2c19:
 
-    # noam "Pourquoi tu as fait ça ?"
-    noam ""
+    # noam inquiet "Ouais."
+    noam inquiet "É."
 
-# game/scenario/5_1.rpy:845
-translate portuguese 63d82369:
+# game/scenario/5_1.rpy:842
+translate portuguese 0463040b:
 
-    # kael "Kami a refusé ma demande."
-    kael ""
+    # mara agace "Viens."
+    mara agace "Venha."
+
+# game/scenario/5_1.rpy:844
+translate portuguese 0df24b85:
+
+    # noam inquiet "Où ?"
+    noam inquiet "Aonde?"
 
 # game/scenario/5_1.rpy:847
-translate portuguese beaf9942:
+translate portuguese 8c925226:
 
-    # noam "Quelle demande ?"
-    noam ""
+    # mara agace "Avant qu'on invente un cinquième problème."
+    mara agace "Antes que a gente invente um quinto problema."
 
-# game/scenario/5_1.rpy:849
-translate portuguese d2684719:
+# game/scenario/5_1.rpy:857
+translate portuguese 45a69f9d:
 
-    # kael triste "Contacter Léa."
-    kael triste ""
-
-# game/scenario/5_1.rpy:853
-translate portuguese 7eb6a991:
-
-    # kael "Je ne demandais pas grand-chose. Trente secondes."
-    kael ""
-
-# game/scenario/5_1.rpy:854
-translate portuguese c16d1a97:
-
-    # kael "Même pas le temps d'avoir une vraie conversation."
-    kael ""
-
-# game/scenario/5_1.rpy:855
-translate portuguese 7d0929e7:
-
-    # kael inquiet "Juste savoir si elle va bien."
-    kael inquiet ""
+    # think "Elias est adossé au mur, les bras croisés. Il respire lentement et son visage a encore perdu quelques couleurs."
+    think "Elias está encostado na parede, de braços cruzados. Respira devagar, e seu rosto perdeu ainda mais cor."
 
 # game/scenario/5_1.rpy:859
-translate portuguese bf5ab4fc:
+translate portuguese eaf4989e:
 
-    # noam "Et elle a dit non ?"
-    noam ""
+    # noam inquiet "Ça va ?"
+    noam inquiet "Você está bem?"
 
 # game/scenario/5_1.rpy:861
-translate portuguese d059f0c4:
+translate portuguese 6773e6fe_2:
 
-    # kael "Communications familiales hors priorités du Conclave. Interdites par le règlement."
-    kael ""
+    # elias inquiet "Ouais."
+    elias inquiet "É."
+
+# game/scenario/5_1.rpy:863
+translate portuguese 6dcaa09f:
+
+    # noam inquiet "T'es blanc."
+    noam inquiet "Você está pálido."
 
 # game/scenario/5_1.rpy:865
-translate portuguese 9ea85efb:
+translate portuguese 4b4486c8:
 
-    # kael "Et les représentants doivent éviter les distractions émotionnelles avant un vote important."
-    kael ""
+    # elias fatigue "Je suis toujours pâle."
+    elias fatigue "Sempre fui pálido."
+
+# game/scenario/5_1.rpy:867
+translate portuguese 2bdf9ba4:
+
+    # noam inquiet "Non."
+    noam inquiet "Não."
 
 # game/scenario/5_1.rpy:869
-translate portuguese 6d0b2389:
+translate portuguese 95b6e4cf:
 
-    # think "Personne ne trouve de réponse à cette cruauté administrative."
-    think ""
+    # elias inquiet "… Non."
+    elias inquiet "... Não."
+
+# game/scenario/5_1.rpy:871
+translate portuguese 7da15fa6:
+
+    # mara agace "Rentre te coucher Elias."
+    mara agace "Volte para a cama, Elias."
 
 # game/scenario/5_1.rpy:873
-translate portuguese 43b9f947:
+translate portuguese c9ba0f41:
 
-    # elias inquiet "Il est sorti de la salle de communication et là…"
-    elias inquiet ""
+    # elias inquiet "J'allais—"
+    elias inquiet "Eu ia—"
 
 # game/scenario/5_1.rpy:875
-translate portuguese 4d11e245:
+translate portuguese 5e147e83_1:
 
-    # kael "Et j'ai frappé un mur."
-    kael ""
+    # mara agace "Elias."
+    mara agace "Elias."
 
-# game/scenario/5_1.rpy:877
-translate portuguese bd806d21:
+# game/scenario/5_1.rpy:884
+translate portuguese e2829e8e:
 
-    # mara "Et le mur a gagné. Par décision unanime."
-    mara ""
+    # mara agace "J'aime pas cette journée."
+    mara agace "Não gosto deste dia."
 
-# game/scenario/5_1.rpy:879
-translate portuguese 4466b024:
+# game/scenario/5_1.rpy:886
+translate portuguese 6209f5fe:
 
-    # kael "Ouais. C'était pas la meilleure décision de ma vie."
-    kael ""
+    # noam inquiet "Moi non plus."
+    noam inquiet "Nem eu."
 
-# game/scenario/5_1.rpy:883
-translate portuguese df472ee9:
+# game/scenario/5_1.rpy:888
+translate portuguese 26ea8a5c:
 
-    # "Mara revient avec du désinfectant et retire la compresse."
-    ""
-
-# game/scenario/5_1.rpy:887
-translate portuguese 477c4e22:
-
-    # kael "Aïe."
-    kael ""
+    # mara agace "Kael qui se blesse."
+    mara agace "Kael se machucando."
 
 # game/scenario/5_1.rpy:889
-translate portuguese 8a0d9685:
+translate portuguese 87651b96:
 
-    # mara "J'ai pas touché."
-    mara ""
+    # mara agace "Kami qui refuse trente secondes de communication."
+    mara agace "Kami recusando trinta segundos de comunicação."
 
-# game/scenario/5_1.rpy:891
-translate portuguese 487dd7da:
+# game/scenario/5_1.rpy:890
+translate portuguese d0081428:
 
-    # kael "Je prends de l'avance."
-    kael ""
+    # mara agace "Elle pouvait faire une exception à ses foutues règles. Il demandait seulement trente secondes pour parler à sa sœur."
+    mara agace "Ela poderia ter aberto uma exceção às regras de merda dela. Ele só queria trinta segundos para falar com a irmã."
+
+# game/scenario/5_1.rpy:892
+translate portuguese 85557c50:
+
+    # mara agace "Kael devrait se reposer. Mais je comprends aussi qu'il veuille être là demain."
+    mara agace "Kael deveria descansar. Mas também entendo por que ele quer estar presente amanhã."
 
 # game/scenario/5_1.rpy:893
-translate portuguese 515b82a2:
+translate portuguese efa04ff3:
 
-    # mara "Arrête de prendre des initiatives."
-    mara ""
+    # mara agace "Je n'avais jamais fait attention au fait qu'une absence était simplement retirée du décompte..."
+    mara agace "Eu nunca tinha reparado que uma ausência era simplesmente retirada da contagem..."
+
+# game/scenario/5_1.rpy:895
+translate portuguese a9341cae:
+
+    # think "Elle s'arrête là, mais nous pensons visiblement à la même chose."
+    think "Ela para por aí, mas claramente estamos pensando na mesma coisa."
 
 # game/scenario/5_1.rpy:897
-translate portuguese fe4c1c41:
+translate portuguese 5f7fa248:
 
-    # think "Mara nettoie. Kael fixe le mur ; sa main tremble pour une autre raison que le désinfectant."
-    think ""
+    # mara agace "Je retourne vérifier qu'il tape pas dans un deuxième mur."
+    mara agace "Vou voltar para verificar se ele não está socando uma segunda parede."
+
+# game/scenario/5_1.rpy:899
+translate portuguese a019ef8a:
+
+    # noam inquiet "Bonne idée."
+    noam inquiet "Boa ideia."
 
 # game/scenario/5_1.rpy:901
-translate portuguese 24638ea6:
+translate portuguese 2b070969:
 
-    # noam "Tu penses qu'elle est en danger ?"
-    noam ""
+    # mara agace "Et je refuse de lui refaire un bandage demain. S'il refrappe dans un mur, je le laisse se débrouiller."
+    mara agace "E me recuso a fazer outro curativo amanhã. Se ele socar outra parede, vai ter que se virar."
 
-# game/scenario/5_1.rpy:903
-translate portuguese b9a814af:
+# game/scenario/5_1.rpy:918
+translate portuguese 0378d2e1:
 
-    # kael "Je ne sais pas. Aucune information exploitable."
-    kael ""
+    # think "Je retrouve enfin ma chambre et son silence. Après cette matinée, c'est exactement ce qu'il me faut."
+    think "Finalmente volto para meu quarto e para o silêncio. Depois desta manhã, é exatamente o que preciso."
 
-# game/scenario/5_1.rpy:905
-translate portuguese cb2384b5:
+# game/scenario/5_1.rpy:926
+translate portuguese c5c7e9b5:
 
-    # noam "Le module s'est isolé correctement ?"
-    noam ""
+    # think "L'eau chaude détend lentement ma nuque. C'est bien la seule chose qui fonctionne correctement aujourd'hui."
+    think "A água quente relaxa lentamente meu pescoço. É a única coisa que parece funcionar direito hoje."
 
-# game/scenario/5_1.rpy:907
-translate portuguese b9afd1da_8:
+# game/scenario/5_1.rpy:930
+translate portuguese 01b508ab:
 
-    # kael "Oui."
-    kael ""
-
-# game/scenario/5_1.rpy:908
-translate portuguese 5a8a9d0e:
-
-    # kael inquiet "Normalement."
-    kael inquiet ""
-
-# game/scenario/5_1.rpy:913
-translate portuguese c52de5ee:
-
-    # kael "Normalement, un sas ne lâche pas en pleine nuit."
-    kael ""
-
-# game/scenario/5_1.rpy:914
-translate portuguese 8c532467:
-
-    # kael "Normalement, une enfant de six ans n'enfile pas un scaphandre en trente secondes."
-    kael ""
-
-# game/scenario/5_1.rpy:915
-translate portuguese b0819495:
-
-    # kael "Normalement, je peux lui demander si elle va bien."
-    kael ""
-
-# game/scenario/5_1.rpy:919
-translate portuguese 9342ceb1:
-
-    # kael triste "Il y a trop de normalement aujourd'hui."
-    kael triste ""
-
-# game/scenario/5_1.rpy:923
-translate portuguese 1167c8d7:
-
-    # elias inquiet "Si j'ai compris, les modules résidentiels tiennent plusieurs jours isolés."
-    elias inquiet ""
-
-# game/scenario/5_1.rpy:924
-translate portuguese 8cf6500d:
-
-    # elias "Donc si le protocole a marché, le danger immédiat est limité. C'est concret, ça."
-    elias ""
-
-# game/scenario/5_1.rpy:928
-translate portuguese d2e17fed_1:
-
-    # kael "Je sais."
-    kael ""
-
-# game/scenario/5_1.rpy:932
-translate portuguese 191bc537:
-
-    # think "Elias se tait et regarde le plafond. Il vient de comprendre quelque chose."
-    think ""
-
-# game/scenario/5_1.rpy:936
-translate portuguese d5553673:
-
-    # mara "Bon."
-    mara ""
-
-# game/scenario/5_1.rpy:937
-translate portuguese 012b4cc9:
-
-    # mara "Ta main va survivre."
-    mara ""
-
-# game/scenario/5_1.rpy:938
-translate portuguese d4a534dd:
-
-    # mara "Pas l'air d'avoir de fracture. Pas besoin de points, mais tu vas avoir un bleu magnifique."
-    mara ""
-
-# game/scenario/5_1.rpy:939
-translate portuguese cc7f9066:
-
-    # mara agace "Ne recommence pas."
-    mara agace ""
-
-# game/scenario/5_1.rpy:941
-translate portuguese 3f02c7c5:
-
-    # kael "Compris."
-    kael ""
+    # think "Je repense à la main bandée de Kael, à Elias dans le couloir, puis au vote qui nous attend demain."
+    think "Penso na mão enfaixada de Kael, em Elias no corredor e na votação que nos espera amanhã."
 
 # game/scenario/5_1.rpy:943
-translate portuguese 11e5f36c:
+translate portuguese 774c4316:
 
-    # mara "Mauvaise réponse."
-    mara ""
-
-# game/scenario/5_1.rpy:945
-translate portuguese 590b9d15:
-
-    # kael "… Pardon ?"
-    kael ""
+    # think "Une seule phrase a été imprimée dessus. Il n'y a ni nom ni signature."
+    think "Há apenas uma frase impressa no papel. Nenhum nome, nenhuma assinatura."
 
 # game/scenario/5_1.rpy:947
-translate portuguese 328ee28d:
+translate portuguese c70d42a4:
 
-    # mara "« Compris », c'est ce que je disais juste avant de recommencer mes conneries."
-    mara ""
+    # think "Je la relis plusieurs fois pour être certain d'en comprendre le sens."
+    think "Leio várias vezes para ter certeza de que entendi o sentido."
 
-# game/scenario/5_1.rpy:948
-translate portuguese 543d3312:
+# game/scenario/5_1.rpy:949
+translate portuguese 8dd8dfb6:
 
-    # mara agace "Je veux 'je ne recommencerai pas'."
-    mara agace ""
+    # think "La phrase est tirée mot pour mot du règlement. Quelqu'un l'a choisie puis l'a glissée sous ma porte sans se montrer."
+    think "A frase foi tirada palavra por palavra do regulamento. Alguém a escolheu e a deslizou por baixo da minha porta sem se mostrar."
 
-# game/scenario/5_1.rpy:950
-translate portuguese 305f4737:
+# game/scenario/5_1.rpy:951
+translate portuguese 07adef2a:
 
-    # kael "Je ne recommencerai pas."
-    kael ""
+    # think "Qui a fait ça ? Et pourquoi me l'envoyer à moi ?"
+    think "Quem fez isso? E por que mandar para mim?"
 
-# game/scenario/5_1.rpy:952
-translate portuguese 399759c0:
+# game/scenario/5_1.rpy:953
+translate portuguese 39e37916:
 
-    # mara "C'est déjà mieux."
-    mara ""
+    # think "Plus je la regarde, moins elle ressemble à un simple rappel du règlement."
+    think "Quanto mais olho, menos parece um simples lembrete do regulamento."
 
-# game/scenario/5_1.rpy:956
-translate portuguese cec50744:
+# game/scenario/5_1.rpy:955
+translate portuguese cce2c6ff:
 
-    # think "Mara serre le bandage. Kael regarde sa main comme une variable devenue hostile."
-    think ""
+    # think "Une personne absente ne vote ni pour ni contre. L'unanimité ne concerne que ceux qui participent réellement au vote."
+    think "Uma pessoa ausente não vota nem a favor nem contra. A unanimidade só diz respeito a quem realmente participa da votação."
 
-# game/scenario/5_1.rpy:960
-translate portuguese 898e6265:
+# game/scenario/5_1.rpy:957
+translate portuguese c1bc23bb:
 
-    # kael triste "Je suis pas sûr d'être utile demain."
-    kael triste ""
+    # think "Je pose le papier sur le bureau, mais l'idée est déjà là."
+    think "Coloco o papel sobre a mesa, mas a ideia já está na minha cabeça."
 
-# game/scenario/5_1.rpy:962
-translate portuguese 62d94c4d:
+# game/scenario/5_1.rpy:959
+translate portuguese 0f96663d:
 
-    # noam "Pour le vote ?"
-    noam ""
+    # think "Sael votera contre. Elle nous l'a dit clairement et rien ne semble pouvoir la faire changer d'avis."
+    think "Sael vai votar contra. Ela nos disse claramente, e nada parece capaz de fazê-la mudar de ideia."
 
-# game/scenario/5_1.rpy:964
-translate portuguese b9afd1da_9:
+# game/scenario/5_1.rpy:961
+translate portuguese 2348916a:
 
-    # kael "Oui."
-    kael ""
+    # think "Mais si elle ne participe pas au vote, son opposition ne comptera pas."
+    think "Mas, se ela não participar da votação, sua oposição não contará."
 
-# game/scenario/5_1.rpy:968
-translate portuguese 35aa1e33:
+# game/scenario/5_1.rpy:963
+translate portuguese 3ce272a6:
 
-    # kael "Je savais ce que je pensais. Je le croyais."
-    kael ""
+    # think "C'est simple. Beaucoup trop simple. Et quelqu'un voulait clairement que j'arrive à cette conclusion."
+    think "É simples. Simples demais. E alguém claramente queria que eu chegasse a essa conclusão."
 
-# game/scenario/5_1.rpy:972
-translate portuguese 42ef9b57:
+# game/scenario/5_1.rpy:965
+translate portuguese 454ce60c:
 
-    # kael "Maintenant, tout se mélange : Orbite, Léa, Kami, le vote."
-    kael ""
+    # think "Je reprends le papier et relis la phrase une nouvelle fois. Elle ne dit rien de plus, évidemment."
+    think "Pego o papel e leio a frase outra vez. É claro que ela não diz nada além disso."
 
-# game/scenario/5_1.rpy:976
-translate portuguese 774bccd1:
+# game/scenario/5_1.rpy:967
+translate portuguese 15ac8f54:
 
-    # kael triste "Si je lève la main demain, ma peur votera à ma place."
-    kael triste ""
+    # think "Aucune signature. Aucune explication. Seulement une manière d'empêcher Sael de voter."
+    think "Nenhuma assinatura. Nenhuma explicação. Apenas uma maneira de impedir Sael de votar."
 
-# game/scenario/5_1.rpy:980
-translate portuguese 91c1e4b9:
+# game/scenario/5_1.rpy:969
+translate portuguese d4c88f8c:
 
-    # nyra "Alors ne force pas une réponse. Repose-toi."
-    nyra ""
+    # think "L'infirmerie se trouve à deux couloirs d'ici. Je pourrais peut-être y trouver de quoi retenir Sael dans sa chambre demain..."
+    think "A enfermaria fica a dois corredores daqui. Talvez eu encontre algo lá para manter Sael no quarto amanhã..."
 
-# game/scenario/5_1.rpy:982
-translate portuguese efdff04a:
+# game/scenario/5_1.rpy:971
+translate portuguese ffcd6243:
 
-    # mara stress "Demain n'est pas exactement la journée idéale pour rester au lit."
-    mara stress ""
+    # think "Je repose le papier et m'assieds au bord du lit. Est-ce que je suis réellement en train d'envisager ça ?"
+    think "Abaixo o papel e me sento na beirada da cama. Estou realmente pensando em fazer isso?"
 
-# game/scenario/5_1.rpy:984
-translate portuguese 3a4ff2cf:
+# game/scenario/5_1.rpy:991
+translate portuguese 82d71be4:
 
-    # nyra "Je n'ai pas dit que c'était idéal. J'ai dit qu'il avait le droit de ne pas voter."
-    nyra ""
+    # think "Le couloir est vide. Les lumières bleues au sol sont les seules à rester allumées pendant la nuit."
+    think "O corredor está vazio. As luzes azuis no chão são as únicas que permanecem acesas à noite."
 
-# game/scenario/5_1.rpy:988
-translate portuguese 5cca80ea:
+# game/scenario/5_1.rpy:993
+translate portuguese 563e4f71:
 
-    # elias "La participation n'est pas obligatoire ?"
-    elias ""
+    # think "Je marche lentement pour éviter de faire du bruit. À cette heure-ci, la moindre porte pourrait réveiller quelqu'un."
+    think "Caminho devagar para não fazer barulho. A esta hora, qualquer porta pode acordar alguém."
 
-# game/scenario/5_1.rpy:990
-translate portuguese 6c97f22f:
+# game/scenario/5_1.rpy:995
+translate portuguese 666ea8c0:
 
-    # think "Elias pose la question mécaniquement, puis découvre nos regards."
-    think ""
+    # think "Si je croise quelqu'un, je dirai que je n'arrive pas à dormir et que je cherche seulement un somnifère."
+    think "Se encontrar alguém, direi que não consigo dormir e só estou procurando um comprimido para dormir."
 
-# game/scenario/5_1.rpy:992
-translate portuguese 28ea6901:
+# game/scenario/5_1.rpy:997
+translate portuguese d19ef08c:
 
-    # nyra "Elle ne l'est pas. Les règles sont claires : une absence retire seulement le bulletin du décompte."
-    nyra ""
-
-# game/scenario/5_1.rpy:996
-translate portuguese 63b2afa8:
-
-    # kael triste "Mais si je ne vote pas…"
-    kael triste ""
-
-# game/scenario/5_1.rpy:998
-translate portuguese b32bb951:
-
-    # nyra "Ton absence sera enregistrée, pas comptée comme un non. Comme une abstention."
-    nyra ""
+    # think "Ce n'est même pas totalement faux. Pourtant, j'ai déjà l'impression de préparer un mensonge."
+    think "Nem é totalmente mentira. Mesmo assim, já sinto que estou preparando uma desculpa."
 
 # game/scenario/5_1.rpy:999
-translate portuguese 8fe38c41:
+translate portuguese e3bc2aa5:
 
-    # nyra "Elle ne bloque ni le oui ni le non. Elle réduit seulement le nombre de votes exprimés."
-    nyra ""
+    # think "Je traverse le couloir B, puis le C, sans croiser personne."
+    think "Atravesso o Corredor B e depois o C sem encontrar ninguém."
 
-# game/scenario/5_1.rpy:1003
-translate portuguese 2d359ae2:
+# game/scenario/5_1.rpy:1004
+translate portuguese 871361fd:
 
-    # mara mefiant "Tu dis ça comme si c'était simple."
-    mara mefiant ""
-
-# game/scenario/5_1.rpy:1005
-translate portuguese a522d80b_1:
-
-    # nyra "Non."
-    nyra ""
+    # think "L'infirmerie est plongée dans la pénombre. L'odeur de désinfectant est toujours aussi forte."
+    think "A enfermaria está mergulhada na penumbra. O cheiro de desinfetante continua forte."
 
 # game/scenario/5_1.rpy:1006
-translate portuguese 42e4b6f9:
+translate portuguese 35b3e6fa:
 
-    # nyra "Je répète la règle. Pour une fois, elle est assez claire."
-    nyra ""
+    # think "Le lit est vide et la compresse ensanglantée a disparu. Mara a dû tout nettoyer avant de partir."
+    think "A cama está vazia, e a gaze ensanguentada desapareceu. Mara deve ter limpado tudo antes de ir embora."
+
+# game/scenario/5_1.rpy:1008
+translate portuguese d38a356c:
+
+    # think "Les quatre armoires vitrées sont fermées, mais pas verrouillées. Il faut pouvoir les ouvrir rapidement en cas d'urgence."
+    think "Os quatro armários de vidro estão fechados, mas não trancados. Precisam poder ser abertos rapidamente em caso de emergência."
 
 # game/scenario/5_1.rpy:1010
-translate portuguese e4f22dd8:
+translate portuguese 648a6dd2:
 
-    # think "Le silence change. Plus de panique : du calcul."
-    think ""
+    # think "Et moi, je suis sur le point de profiter de cette sécurité."
+    think "E eu estou prestes a me aproveitar dessa medida de segurança."
+
+# game/scenario/5_1.rpy:1012
+translate portuguese 590ba554:
+
+    # think "La première armoire contient des antalgiques, des anti-inflammatoires et des antihistaminiques. Rien qui puisse m'aider."
+    think "O primeiro armário contém analgésicos, anti-inflamatórios e anti-histamínicos. Nada que possa me ajudar."
 
 # game/scenario/5_1.rpy:1014
-translate portuguese 5a5a08b6:
+translate portuguese 9b0de48e:
 
-    # noam "Kami demande l'unanimité des votes exprimés."
-    noam ""
+    # think "Dans la deuxième, je trouve des antispasmodiques, des antibiotiques et du Zolpidem."
+    think "No segundo, encontro antiespasmódicos, antibióticos e zolpidem."
 
 # game/scenario/5_1.rpy:1016
-translate portuguese c1b8f343:
+translate portuguese 51e48a86:
 
-    # think "Je le dis presque pour moi. La phrase ouvre une porte que je n'aime pas."
-    think ""
+    # think "Voilà mon somnifère. J'en prends un comprimé pour pouvoir réellement dormir ce soir."
+    think "Aí está meu comprimido para dormir. Pego um para conseguir dormir de verdade esta noite."
+
+# game/scenario/5_1.rpy:1018
+translate portuguese fd7dd392:
+
+    # think "Je pourrais m'arrêter là et retourner dans ma chambre. Pourtant, j'ouvre l'armoire suivante."
+    think "Eu poderia parar por aqui e voltar para o quarto. Mesmo assim, abro o armário seguinte."
 
 # game/scenario/5_1.rpy:1020
-translate portuguese e3128258_1:
+translate portuguese 8c8529c3:
 
-    # nyra "Oui."
-    nyra ""
+    # think "Elle contient plusieurs traitements digestifs. Les boîtes se ressemblent presque toutes."
+    think "Ele contém vários medicamentos digestivos. Quase todas as caixas são parecidas."
+
+# game/scenario/5_1.rpy:1022
+translate portuguese d2ef20bc:
+
+    # think "Je commence à lire les étiquettes."
+    think "Começo a ler os rótulos."
 
 # game/scenario/5_1.rpy:1024
-translate portuguese c5de4981:
+translate portuguese bbfd4adb:
 
-    # think "Mara calcule. Elias baisse les yeux. Kael, lui, ne pense déjà plus à la règle."
-    think ""
+    # think "Un anti-diarrhéique en gélules. Juste à côté, un laxatif présenté exactement sous la même forme."
+    think "Um antidiarreico em cápsulas. Bem ao lado, um laxante apresentado exatamente da mesma forma."
+
+# game/scenario/5_1.rpy:1026
+translate portuguese 15865cc7:
+
+    # think "Je pose les deux boîtes côte à côte. Même taille, mêmes gélules. Seule l'étiquette permet de les différencier."
+    think "Coloco as duas caixas lado a lado. Mesmo tamanho, mesmas cápsulas. Só os rótulos permitem diferenciá-las."
 
 # game/scenario/5_1.rpy:1028
-translate portuguese 47663477:
+translate portuguese 90c1315f:
 
-    # kael calme "Je vais voter."
-    kael calme ""
+    # think "Si quelqu'un prenait du Bisacodyl en pensant avaler du Lopéramide..."
+    think "Se alguém tomasse bisacodil pensando que estava engolindo loperamida..."
 
 # game/scenario/5_1.rpy:1030
-translate portuguese af8c8098:
+translate portuguese 8e6788b9:
 
-    # nyra "Dans cet état ?"
-    nyra ""
+    # think "Demain matin, quelques heures avant le vote, cette personne serait incapable de quitter sa chambre."
+    think "Amanhã de manhã, poucas horas antes da votação, essa pessoa não conseguiria sair do quarto."
 
-# game/scenario/5_1.rpy:1032
-translate portuguese b9afd1da_10:
+# game/scenario/5_1.rpy:1035
+translate portuguese e4c2d540:
 
-    # kael "Oui."
-    kael ""
-
-# game/scenario/5_1.rpy:1036
-translate portuguese 68a00850:
-
-    # kael triste "Si je reste dans ma chambre, je passerai la nuit à recalculer l'impossible."
-    kael triste ""
+    # think "Je commence à échanger le contenu des deux boîtes."
+    think "Começo a trocar o conteúdo das duas caixas."
 
 # game/scenario/5_1.rpy:1037
-translate portuguese 8029c8f2:
+translate portuguese 76b057ae:
 
-    # kael "Je préfère être là."
-    kael ""
+    # think "Je le fais lentement, en vérifiant chaque gélule. Je ne veux laisser aucune trace."
+    think "Faço isso devagar, conferindo cada cápsula. Não quero deixar nenhum vestígio."
 
-# game/scenario/5_1.rpy:1041
-translate portuguese fd84d587:
+# game/scenario/5_1.rpy:1039
+translate portuguese 1c3c4342:
 
-    # think "Nyra n'insiste pas. Elle a obtenu une décision, pas celle qu'elle proposait."
-    think ""
+    # think "Je referme les boîtes et les replace exactement au même endroit."
+    think "Fecho as caixas e as coloco de volta exatamente no mesmo lugar."
 
-# game/scenario/5_1.rpy:1045
-translate portuguese c0b21e0a:
+# game/scenario/5_1.rpy:1044
+translate portuguese b8f4b338:
 
-    # mara "Avant de voter, tu dors."
-    mara ""
+    # think "Avant de refermer l'armoire, mon regard s'arrête sur plusieurs sachets de poudre soluble."
+    think "Antes de fechar o armário, meu olhar para em vários sachês de pó solúvel."
 
 # game/scenario/5_1.rpy:1046
-translate portuguese 4c01dc35:
+translate portuguese e5b978f0:
 
-    # mara "Tu manges. Tu te reposes."
-    mara ""
+    # think "Ce serait beaucoup plus facile à verser dans une boisson que les gélules."
+    think "Seria muito mais fácil despejar isso em uma bebida do que usar as cápsulas."
 
-# game/scenario/5_1.rpy:1047
-translate portuguese 5568e076:
+# game/scenario/5_1.rpy:1048
+translate portuguese 7ed79276:
 
-    # mara agace "Et par pitié, tu mets cette main au repos."
-    mara agace ""
+    # think "Il faudra encore trouver comment l'utiliser demain, et surtout à quel moment."
+    think "Ainda precisarei descobrir como usar amanhã e, principalmente, em que momento."
 
-# game/scenario/5_1.rpy:1049
-translate portuguese 23fddf3a:
+# game/scenario/5_1.rpy:1050
+translate portuguese 928a7370:
 
-    # kael "C'est beaucoup de contraintes."
-    kael ""
+    # think "Je prends deux sachets et les glisse dans ma poche avec le somnifère."
+    think "Pego dois sachês e os coloco no bolso junto com o comprimido para dormir."
 
-# game/scenario/5_1.rpy:1051
-translate portuguese 6e397f3b:
+# game/scenario/5_1.rpy:1054
+translate portuguese 9c4ee7d2:
 
-    # mara "J'en ai d'autres en réserve si tu veux."
-    mara ""
+    # think "Une fois l'armoire refermée, tout paraît exactement comme avant."
+    think "Depois que fecho o armário, tudo parece exatamente como antes."
 
-# game/scenario/5_1.rpy:1053
-translate portuguese 7d122f55:
+# game/scenario/5_1.rpy:1059
+translate portuguese 07100068:
 
-    # kael "Non. Ça ira."
-    kael ""
+    # think "Le couloir est toujours vide lorsque je quitte l'infirmerie."
+    think "O corredor continua vazio quando saio da enfermaria."
 
-# game/scenario/5_1.rpy:1057
-translate portuguese 75562353:
+# game/scenario/5_1.rpy:1066
+translate portuguese e05a0939:
 
-    # think "Kael baisse les yeux vers sa main bandée."
-    think ""
+    # think "Je pose les sachets à côté du papier. Ce qui n'était qu'une idée est maintenant réellement possible."
+    think "Coloco os sachês ao lado do papel. O que era apenas uma ideia agora é realmente possível."
 
-# game/scenario/5_1.rpy:1061
-translate portuguese dc7f3af9:
+# game/scenario/5_1.rpy:1070
+translate portuguese 8dd0fa10:
 
-    # kael triste "Je veux juste savoir si elle va bien."
-    kael triste ""
+    # think "Quelqu'un savait peut-être que je finirais par fouiller l'infirmerie en pleine nuit."
+    think "Talvez alguém soubesse que eu acabaria vasculhando a enfermaria no meio da noite."
 
-# game/scenario/5_1.rpy:1065
-translate portuguese 554a524c:
+# game/scenario/5_1.rpy:1074
+translate portuguese 1a6a4a82:
 
-    # think "Personne ne répond. Mara ferme sa trousse. Nyra reste."
-    think ""
-
-# game/scenario/5_1.rpy:1069
-translate portuguese e0c8f376:
-
-    # think "Elias étudie ses lacets avec une concentration suspecte."
-    think ""
-
-# game/scenario/5_1.rpy:1073
-translate portuguese 61306994:
-
-    # think "Ce silence est la seule réponse honnête."
-    think ""
-
-# game/scenario/5_1.rpy:1077
-translate portuguese 0d8a866d:
-
-    # elias "Je…"
-    elias ""
-
-# game/scenario/5_1.rpy:1081
-translate portuguese c4e38b2f:
-
-    # elias fatigue "J'ai laissé un truc allumé. En maintenance."
-    elias fatigue ""
-
-# game/scenario/5_1.rpy:1085
-translate portuguese 7157726b:
-
-    # think "Personne ne lui offre cette sortie."
-    think ""
-
-# game/scenario/5_1.rpy:1087
-translate portuguese 502e78e2:
-
-    # elias "Un outil. J'ai laissé un outil allumé."
-    elias ""
+    # think "Je n'en sais rien. Mais je finirai bien par le découvrir."
+    think "Não sei. Mas cedo ou tarde vou descobrir."
 
 # game/scenario/5_1.rpy:1091
-translate portuguese fed4e130:
+translate portuguese e08ff6f6:
 
-    # mara "Elias."
-    mara ""
-
-# game/scenario/5_1.rpy:1093
-translate portuguese c998fcd3:
-
-    # elias "Ouais."
-    elias ""
-
-# game/scenario/5_1.rpy:1095
-translate portuguese af3f58bf:
-
-    # mara "T'as l'air vert."
-    mara ""
-
-# game/scenario/5_1.rpy:1097
-translate portuguese aae8c4a0:
-
-    # elias "Je suis fatigué. C'est tout."
-    elias ""
+    # think "Je reste dans ma chambre. Le papier est toujours posé sur le bureau, devant moi."
+    think "Fico no quarto. O papel continua sobre a mesa, diante de mim."
 
 # game/scenario/5_1.rpy:1099
-translate portuguese 39940305:
+translate portuguese 3925efdd:
 
-    # mara "C'est pas la fatigue."
-    mara ""
+    # think "Quelqu'un voulait que je comprenne comment écarter Sael du vote."
+    think "Alguém queria que eu entendesse como afastar Sael da votação."
 
 # game/scenario/5_1.rpy:1103
-translate portuguese 6c201390:
+translate portuguese 9ce9682f:
 
-    # elias "Mais l'outil—"
-    elias ""
+    # think "Sael votera contre. D'autres aussi, peut-être. Le texte ne passera probablement pas."
+    think "Sael vai votar contra. Talvez outros também. O texto provavelmente não será aprovado."
 
 # game/scenario/5_1.rpy:1105
-translate portuguese 3f22ae48:
+translate portuguese 73ac4095:
 
-    # mara "Y'a aucun outil."
-    mara ""
+    # think "À vrai dire, son rejet est presque certain."
+    think "Na verdade, sua rejeição é quase certa."
 
 # game/scenario/5_1.rpy:1107
-translate portuguese 7d410037:
+translate portuguese a1c4e577:
 
-    # elias fatigue "Y a peut-être un outil."
-    elias fatigue ""
+    # think "Mais empêcher quelqu'un de voter ne rendrait pas le résultat plus juste. Cela permettrait seulement d'obtenir celui que je veux."
+    think "Mas impedir alguém de votar não tornaria o resultado mais justo. Só produziria o resultado que eu quero."
 
-# game/scenario/5_1.rpy:1111
-translate portuguese 7306a5de:
+# game/scenario/5_1.rpy:1109
+translate portuguese ec1a34ae:
 
-    # kael "Elias."
-    kael ""
-
-# game/scenario/5_1.rpy:1113
-translate portuguese c998fcd3_1:
-
-    # elias "Ouais."
-    elias ""
+    # think "À quoi servirait de défendre la liberté de circulation si je commence par retirer sa voix à quelqu'un ?"
+    think "De que adiantaria defender a liberdade de circulação se eu começasse tirando a voz de alguém?"
 
 # game/scenario/5_1.rpy:1115
-translate portuguese 2e46d5df:
+translate portuguese c1d62fb3:
 
-    # kael triste "Merci d'être venu."
-    kael triste ""
+    # think "Demain, chacun votera comme il le souhaite. Même si cela signifie encore échouer."
+    think "Amanhã, cada um votará como quiser. Mesmo que isso signifique fracassar outra vez."
+
+# game/scenario/5_1.rpy:1117
+translate portuguese e4d26b8f:
+
+    # think "Dans le noir, j'entends seulement le bourdonnement de la station à travers les murs."
+    think "No escuro, ouço apenas o zumbido da estação através das paredes."
 
 # game/scenario/5_1.rpy:1119
-translate portuguese aee51220:
+translate portuguese 022f34c2:
 
-    # think "Elias ouvre la bouche, la referme et déglutit."
-    think ""
+    # think "Léa a six ans et elle sait enfiler un scaphandre en trente secondes. C'est le genre de chose que notre monde apprend à ses enfants."
+    think "Léa tem seis anos e sabe vestir um traje espacial em trinta segundos. É esse tipo de coisa que nosso mundo ensina às crianças."
 
 # game/scenario/5_1.rpy:1121
-translate portuguese ed9aba35:
+translate portuguese affd096a:
 
-    # elias "… C'est bon."
-    elias ""
-
-# game/scenario/5_1.rpy:1126
-translate portuguese d1791f4d:
-
-    # think "Il sort beaucoup trop vite pour un outil imaginaire."
-    think ""
-
-# game/scenario/5_1.rpy:1130
-translate portuguese f18e4905:
-
-    # mara "Il fait ça à chaque fois."
-    mara ""
-
-# game/scenario/5_1.rpy:1132
-translate portuguese fc4c4c6a:
-
-    # noam "Il est parti en trente secondes."
-    noam ""
-
-# game/scenario/5_1.rpy:1134
-translate portuguese de51b9e0:
-
-    # mara "Vingt-huit."
-    mara ""
-
-# game/scenario/5_1.rpy:1135
-translate portuguese aa1146bf:
-
-    # mara "Record personnel."
-    mara ""
-
-# game/scenario/5_1.rpy:1139
-translate portuguese 59c6cceb:
-
-    # kael triste "Il est quand même venu."
-    kael triste ""
-
-# game/scenario/5_1.rpy:1143
-translate portuguese 8a5650d7:
-
-    # think "Mara range sa trousse. Ses épaules se relâchent malgré elle."
-    think ""
-
-# game/scenario/5_1.rpy:1147
-translate portuguese 16533454:
-
-    # mara "Noam."
-    mara ""
-
-# game/scenario/5_1.rpy:1149
-translate portuguese 596f5ec4:
-
-    # noam "Ouais."
-    noam ""
-
-# game/scenario/5_1.rpy:1151
-translate portuguese fc958d4d:
-
-    # mara "Viens."
-    mara ""
-
-# game/scenario/5_1.rpy:1153
-translate portuguese 7ec281cd:
-
-    # noam "Où ?"
-    noam ""
-
-# game/scenario/5_1.rpy:1155
-translate portuguese 8d8fe271:
-
-    # mara agace "Dehors."
-    mara agace ""
-
-# game/scenario/5_1.rpy:1156
-translate portuguese bd9a31ef:
-
-    # mara "Avant qu'on invente un cinquième problème."
-    mara ""
-
-# game/scenario/5_1.rpy:1165
-translate portuguese e28f010f:
-
-    # think "La porte se referme sur Kael et Nyra."
-    think ""
-
-# game/scenario/5_1.rpy:1169
-translate portuguese efcfcfe5:
-
-    # think "Elias est adossé au mur, bras croisés, respiration lente. Il essaie très fort de ne pas vomir."
-    think ""
-
-# game/scenario/5_1.rpy:1174
-translate portuguese 65a07a7a:
-
-    # noam "Ça va ?"
-    noam ""
-
-# game/scenario/5_1.rpy:1176
-translate portuguese c998fcd3_2:
-
-    # elias "Ouais."
-    elias ""
-
-# game/scenario/5_1.rpy:1178
-translate portuguese 3a6e0da5:
-
-    # noam "T'es blanc."
-    noam ""
-
-# game/scenario/5_1.rpy:1180
-translate portuguese e9859a78:
-
-    # elias fatigue "Je suis toujours comme ça."
-    elias fatigue ""
-
-# game/scenario/5_1.rpy:1182
-translate portuguese 290dd969_6:
-
-    # noam "Non."
-    noam ""
-
-# game/scenario/5_1.rpy:1184
-translate portuguese f2ef9f3f:
-
-    # elias "… Non."
-    elias ""
-
-# game/scenario/5_1.rpy:1188
-translate portuguese e0b3be25:
-
-    # mara "Rentre te coucher Elias."
-    mara ""
-
-# game/scenario/5_1.rpy:1190
-translate portuguese 1921e895:
-
-    # elias "J'allais—"
-    elias ""
-
-# game/scenario/5_1.rpy:1192
-translate portuguese fed4e130_1:
-
-    # mara "Elias."
-    mara ""
-
-# game/scenario/5_1.rpy:1196
-translate portuguese b33c0d0d:
-
-    # elias fatigue "… Ouais. D'accord."
-    elias fatigue ""
-
-# game/scenario/5_1.rpy:1203
-translate portuguese e7d261a6:
-
-    # think "Mara le regarde partir et souffle."
-    think ""
-
-# game/scenario/5_1.rpy:1205
-translate portuguese e481d783:
-
-    # mara "J'aime pas cette journée."
-    mara ""
-
-# game/scenario/5_1.rpy:1207
-translate portuguese a8368bd3:
-
-    # noam "Moi non plus."
-    noam ""
-
-# game/scenario/5_1.rpy:1211
-translate portuguese 4dd4b69c:
-
-    # mara "Kael qui se blesse."
-    mara ""
-
-# game/scenario/5_1.rpy:1212
-translate portuguese fd98a24f:
-
-    # mara "Kami qui refuse trente secondes de communication."
-    mara ""
-
-# game/scenario/5_1.rpy:1213
-translate portuguese 93c83f53:
-
-    # mara "Elle pouvait faire une exception à ses foutues règles. Trente secondes. Même moi, je tiens trente secondes sans provoquer personne."
-    mara ""
-
-# game/scenario/5_1.rpy:1217
-translate portuguese 90ba9eb4:
-
-    # mara "Kael devrait se reposer. Mais je comprends qu'il veuille être là demain."
-    mara ""
-
-# game/scenario/5_1.rpy:1218
-translate portuguese c6fe3e44:
-
-    # mara "Je n'avais pas compris qu'une absence disparaissait simplement du décompte…"
-    mara ""
-
-# game/scenario/5_1.rpy:1222
-translate portuguese c8376212:
-
-    # think "Elle laisse la possibilité flotter entre nous sans la nommer."
-    think ""
-
-# game/scenario/5_1.rpy:1226
-translate portuguese e1b2dfda:
-
-    # mara "Je retourne vérifier qu'il tape pas dans un deuxième mur."
-    mara ""
-
-# game/scenario/5_1.rpy:1228
-translate portuguese 86b38e39:
-
-    # noam "Bonne idée."
-    noam ""
-
-# game/scenario/5_1.rpy:1230
-translate portuguese 05e93fd5:
-
-    # mara "Je refuse de lui rebander la main demain. Une fois, c'est du soin. Deux fois, ça devient une relation."
-    mara ""
-
-# game/scenario/5_1.rpy:1231
-translate portuguese a424864d:
-
-    # mara agace "C'est triste d'en être là."
-    mara agace ""
-
-# game/scenario/5_1.rpy:1238
-translate portuguese ccf53f0d:
-
-    # think "Mara retourne auprès de Kael. Je récupère de quoi manger, puis regagne ma chambre."
-    think ""
-
-# game/scenario/5_1.rpy:1251
-translate portuguese c07dd59a:
-
-    # think "Quatre murs. Un lit. Le silence."
-    think ""
-
-# game/scenario/5_1.rpy:1255
-translate portuguese 02f40cbd:
-
-    # think "Exactement ce qu'il me faut."
-    think ""
-
-# game/scenario/5_1.rpy:1259
-translate portuguese 78729b4c:
-
-    # think "Je laisse mes affaires sur le bureau et file sous la douche."
-    think ""
-
-# game/scenario/5_1.rpy:1265
-translate portuguese ca7daf18:
-
-    # think "L'eau chaude : seule chose de cette station qui obéit sans négocier."
-    think ""
-
-# game/scenario/5_1.rpy:1269
-translate portuguese 54beae08:
-
-    # think "J'y reste beaucoup plus longtemps que nécessaire."
-    think ""
-
-# game/scenario/5_1.rpy:1273
-translate portuguese 959fa969:
-
-    # think "Kael et sa main bandée. Elias, blanc dans le couloir."
-    think ""
-
-# game/scenario/5_1.rpy:1277
-translate portuguese f81bfba2:
-
-    # think "Puis demain. Le carnage annoncé."
-    think ""
-
-# game/scenario/5_1.rpy:1285
-translate portuguese e08418c2:
-
-    # think "Je m'habille et m'apprête à m'effondrer sur le lit."
-    think ""
-
-# game/scenario/5_1.rpy:1289
-translate portuguese 91958574:
-
-    # think "Et puis je le vois."
-    think ""
-
-# game/scenario/5_1.rpy:1293
-translate portuguese c3b091fd:
-
-    # "Un papier plié en deux a été glissé sous la porte."
-    ""
-
-# game/scenario/5_1.rpy:1297
-translate portuguese 042f05d7:
-
-    # think "Je le ramasse."
-    think ""
-
-# game/scenario/5_1.rpy:1301
-translate portuguese 1f173e06:
-
-    # think "Une phrase imprimée. Aucune signature."
-    think ""
-
-# game/scenario/5_1.rpy:1305
-translate portuguese dcebaa69:
-
-    # "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
-    ""
-
-# game/scenario/5_1.rpy:1309
-translate portuguese 73559cfc:
-
-    # think "Je relis."
-    think ""
-
-# game/scenario/5_1.rpy:1313
-translate portuguese bc976454:
-
-    # think "Encore."
-    think ""
-
-# game/scenario/5_1.rpy:1317
-translate portuguese 7f777988:
-
-    # think "Sont retirés des bulletins exprimés les abstentions et les absences au vote."
-    think ""
-
-# game/scenario/5_1.rpy:1321
-translate portuguese 6c550bb2:
-
-    # think "Mot pour mot, tiré du règlement. Quelqu'un a choisi cette ligne et ma porte."
-    think ""
-
-# game/scenario/5_1.rpy:1325
-translate portuguese 6f7a1002:
-
-    # think "Anonymement. En pleine nuit."
-    think ""
-
-# game/scenario/5_1.rpy:1329
-translate portuguese 9a47b7ab:
-
-    # think "Qui ? Et pourquoi faire ?"
-    think ""
-
-# game/scenario/5_1.rpy:1333
-translate portuguese b46855fa:
-
-    # think "Je fixe la phrase jusqu'à ce qu'elle commence à ressembler à une instruction."
-    think ""
-
-# game/scenario/5_1.rpy:1337
-translate portuguese deb66ed7:
-
-    # think "Retirés des bulletins exprimés : les abstentions et les absences."
-    think ""
-
-# game/scenario/5_1.rpy:1341
-translate portuguese 8d1df4da:
-
-    # think "Un absent ne vote ni pour ni contre."
-    think ""
-
-# game/scenario/5_1.rpy:1345
-translate portuguese 84aa45d8:
-
-    # think "L'unanimité s'applique aux présents. Pas aux absents."
-    think ""
-
-# game/scenario/5_1.rpy:1349
-translate portuguese 854cb31f:
-
-    # think "Je pose le papier. L'idée reste dans ma main."
-    think ""
-
-# game/scenario/5_1.rpy:1353
-translate portuguese 26eaaf30:
-
-    # think "Sael."
-    think ""
-
-# game/scenario/5_1.rpy:1357
-translate portuguese fa559db2:
-
-    # think "Sael a fermé la discussion. Elle votera contre. Elle ne changera pas."
-    think ""
-
-# game/scenario/5_1.rpy:1361
-translate portuguese beb09010:
-
-    # think "Si elle ne vote pas…"
-    think ""
-
-# game/scenario/5_1.rpy:1362
-translate portuguese 9a2c7bdb:
-
-    # think "Elle ne votera pas contre."
-    think ""
-
-# game/scenario/5_1.rpy:1366
-translate portuguese 91e66f2a:
-
-    # think "C'est simple. Trop simple. Un raisonnement propre tant qu'on ne regarde pas son envers."
-    think ""
-
-# game/scenario/5_1.rpy:1370
-translate portuguese 8971a891:
-
-    # think "Je reprends le papier. Une dernière lecture, comme si les mots pouvaient reculer."
-    think ""
-
-# game/scenario/5_1.rpy:1374
-translate portuguese 05b18897:
-
-    # think "Pas de signature. Une phrase. Une idée impossible à désapprendre."
-    think ""
-
-# game/scenario/5_1.rpy:1378
-translate portuguese 3418fbf1:
-
-    # think "La pharmacie est à deux couloirs. Je pourrais trouver de quoi retenir Sael au lit demain…"
-    think ""
-
-# game/scenario/5_1.rpy:1382
-translate portuguese 4a445123:
-
-    # think "Je pose le papier."
-    think ""
-
-# game/scenario/5_1.rpy:1386
-translate portuguese 6f9c7044:
-
-    # think "Je m'assieds. Qu'est-ce que je devrais faire ?"
-    think ""
-
-# game/scenario/5_1.rpy:1406
-translate portuguese 75414a75:
-
-    # think "Couloir vide. Lumières bleues au sol. La station respire à voix basse."
-    think ""
-
-# game/scenario/5_1.rpy:1410
-translate portuguese 7c99b05c:
-
-    # think "Je marche lentement. Pas par fatigue : les innocents ne se pressent pas."
-    think ""
-
-# game/scenario/5_1.rpy:1414
-translate portuguese 78595483:
-
-    # think "Si je croise quelqu'un : je ne dors pas, je cherche seulement un somnifère."
-    think ""
-
-# game/scenario/5_1.rpy:1418
-translate portuguese 3877b28d:
-
-    # think "C'est plausible. Même vrai. Les meilleurs mensonges ont cette propriété."
-    think ""
-
-# game/scenario/5_1.rpy:1422
-translate portuguese 716cbf0c:
-
-    # think "Couloir B. Personne."
-    think ""
-
-# game/scenario/5_1.rpy:1426
-translate portuguese 45613658:
-
-    # think "Couloir C. Toujours personne."
-    think ""
-
-# game/scenario/5_1.rpy:1430
-translate portuguese 109c5451:
-
-    # think "Bien."
-    think ""
-
-# game/scenario/5_1.rpy:1438
-translate portuguese 1d969bc2:
-
-    # think "L'infirmerie dort sous une lumière minimale. Le désinfectant, lui, monte la garde."
-    think ""
-
-# game/scenario/5_1.rpy:1442
-translate portuguese cc15bbec:
-
-    # think "Lit vide. Compresse disparue. Quelqu'un a effacé les traces de Kael."
-    think ""
-
-# game/scenario/5_1.rpy:1446
-translate portuguese 79863957:
-
-    # think "Quatre armoires vitrées. Fermées, pas verrouillées — logique en cas d'urgence."
-    think ""
-
-# game/scenario/5_1.rpy:1450
-translate portuguese 823726a3:
-
-    # think "Ce soir, je détourne cette logique à mon avantage."
-    think ""
-
-# game/scenario/5_1.rpy:1454
-translate portuguese 0a130c35:
-
-    # think "Première armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1458
-translate portuguese d4008514:
-
-    # think "Antalgiques. Anti-inflammatoires. Antihistaminiques. Rien qui serve l'idée."
-    think ""
-
-# game/scenario/5_1.rpy:1462
-translate portuguese 93adc59a:
-
-    # think "Deuxième armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1466
-translate portuguese e2c19fac:
-
-    # think "Antispasmodiques. Antibiotiques. Zolpidem."
-    think ""
-
-# game/scenario/5_1.rpy:1470
-translate portuguese 6242cf70:
-
-    # think "Un somnifère. Mon alibi rendu matériel."
-    think ""
-
-# game/scenario/5_1.rpy:1474
-translate portuguese f66ac21b:
-
-    # think "J'en prends une. Pour ce soir. Pour dormir."
-    think ""
-
-# game/scenario/5_1.rpy:1478
-translate portuguese 952d0674:
-
-    # think "Puis je continue."
-    think ""
-
-# game/scenario/5_1.rpy:1482
-translate portuguese 4a5722fd:
-
-    # think "Troisième armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1486
-translate portuguese 079fa0f1:
-
-    # think "Traitements digestifs. Plusieurs boîtes, plusieurs effets."
-    think ""
-
-# game/scenario/5_1.rpy:1490
-translate portuguese 705c8306:
-
-    # think "Je m'arrête. L'idée, elle, avance."
-    think ""
-
-# game/scenario/5_1.rpy:1494
-translate portuguese f0acf75f:
-
-    # think "Un anti-diarrhéique en gélules."
-    think ""
-
-# game/scenario/5_1.rpy:1498
-translate portuguese 867a3de3:
-
-    # think "Un laxatif, sous la même forme."
-    think ""
-
-# game/scenario/5_1.rpy:1502
-translate portuguese f745003a:
-
-    # think "Je pose les boîtes côte à côte."
-    think ""
-
-# game/scenario/5_1.rpy:1506
-translate portuguese 0aa9df03:
-
-    # think "Même taille, même forme. Seule l'étiquette change. Dans le noir, sans regarder…"
-    think ""
-
-# game/scenario/5_1.rpy:1510
-translate portuguese 1002f732:
-
-    # think "Si quelqu'un prend du Bisacodyl en croyant prendre du Lopéramide."
-    think ""
-
-# game/scenario/5_1.rpy:1514
-translate portuguese 662267c0:
-
-    # think "Demain matin. Avant le vote."
-    think ""
-
-# game/scenario/5_1.rpy:1518
-translate portuguese 0f29182d:
-
-    # think "Cette personne ne sera pas en état de voter."
-    think ""
-
-# game/scenario/5_1.rpy:1525
-translate portuguese 67be9d6e:
-
-    # think "J'échange le contenu des deux boîtes."
-    think ""
-
-# game/scenario/5_1.rpy:1529
-translate portuguese 2917c487:
-
-    # think "Proprement. Soigneusement. Comme si la méthode pouvait nettoyer l'acte."
-    think ""
-
-# game/scenario/5_1.rpy:1533
-translate portuguese 51796cdf:
-
-    # think "Je referme et replace tout exactement."
-    think ""
-
-# game/scenario/5_1.rpy:1539
-translate portuguese 65afaaab:
-
-    # think "Mon regard revient aux sachets."
-    think ""
-
-# game/scenario/5_1.rpy:1543
-translate portuguese d2d897e7:
-
-    # think "Une poudre soluble. Facile à dissimuler dans une boisson."
-    think ""
-
-# game/scenario/5_1.rpy:1547
-translate portuguese d561cf3d:
-
-    # think "Ça, c'est pour demain. Il restera à trouver comment — et quand."
-    think ""
-
-# game/scenario/5_1.rpy:1551
-translate portuguese 692c40e5:
-
-    # think "Deux sachets rejoignent le somnifère dans ma poche."
-    think ""
-
-# game/scenario/5_1.rpy:1555
-translate portuguese 12300871:
-
-    # think "Je referme l'armoire."
-    think ""
-
-# game/scenario/5_1.rpy:1559
-translate portuguese 85a5b348:
-
-    # think "Tout paraît exactement comme avant."
-    think ""
-
-# game/scenario/5_1.rpy:1563
-translate portuguese df3b0402:
-
-    # think "C'est peut-être ça, le pire."
-    think ""
-
-# game/scenario/5_1.rpy:1571
-translate portuguese 6473a8ad:
-
-    # think "Le couloir est toujours vide. Les lumières bleues respirent encore."
-    think ""
-
-# game/scenario/5_1.rpy:1575
-translate portuguese 0e7cbecd:
-
-    # think "Je rentre dans ma chambre sans croiser personne."
-    think ""
-
-# game/scenario/5_1.rpy:1583
-translate portuguese 318ac235:
-
-    # think "Je pose les sachets à côté du papier. Cause et conséquence, bien alignées."
-    think ""
-
-# game/scenario/5_1.rpy:1587
-translate portuguese 58e2f3ec:
-
-    # think "Je les regarde."
-    think ""
-
-# game/scenario/5_1.rpy:1591
-translate portuguese 8ba07eaf:
-
-    # think "Quelqu'un a parié que je ferais ça. Que je fouillerais une pharmacie en pleine nuit."
-    think ""
-
-# game/scenario/5_1.rpy:1595
-translate portuguese 963db6c4_1:
-
-    # think "Qui ?"
-    think ""
-
-# game/scenario/5_1.rpy:1599
-translate portuguese c94ac989:
-
-    # think "Je ne sais pas. Pas encore."
-    think ""
-
-# game/scenario/5_1.rpy:1603
-translate portuguese 7686a34b:
-
-    # think "J'avale le somnifère, m'allonge et fixe le plafond."
-    think ""
-
-# game/scenario/5_1.rpy:1607
-translate portuguese 1025d1e4:
-
-    # think "Pour une fois, je dors."
-    think ""
-
-# game/scenario/5_1.rpy:1623
-translate portuguese 3516fe3b:
-
-    # think "Ma chambre. Le silence. Le papier sur le bureau."
-    think ""
-
-# game/scenario/5_1.rpy:1627
-translate portuguese 502ac8b8:
-
-    # think "Je le regarde encore."
-    think ""
-
-# game/scenario/5_1.rpy:1631
-translate portuguese 60991580:
-
-    # think "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
-    think ""
-
-# game/scenario/5_1.rpy:1635
-translate portuguese e22f9970:
-
-    # think "Je le repose face contre le bureau."
-    think ""
-
-# game/scenario/5_1.rpy:1639
-translate portuguese 3d7b2a9e:
-
-    # think "Quelqu'un voulait que je fasse quelque chose avec ça."
-    think ""
-
-# game/scenario/5_1.rpy:1643
-translate portuguese f9957d42:
-
-    # think "Je ne vais pas le faire."
-    think ""
-
-# game/scenario/5_1.rpy:1647
-translate portuguese a84150da:
-
-    # think "Sael votera contre. D'autres aussi, peut-être. Le texte ne passera sans doute pas."
-    think ""
-
-# game/scenario/5_1.rpy:1651
-translate portuguese 6a583030:
-
-    # think "C'est possible. Même certain."
-    think ""
-
-# game/scenario/5_1.rpy:1655
-translate portuguese b178c781:
-
-    # think "Mais empêcher quelqu'un de voter ne sauve pas le vote. Ça fabrique seulement un résultat."
-    think ""
-
-# game/scenario/5_1.rpy:1659
-translate portuguese 68f1f3a1:
-
-    # think "Et si ça marche comme ça, ça vaut quoi ?"
-    think ""
-
-# game/scenario/5_1.rpy:1663
-translate portuguese 9ca9be59:
-
-    # think "Je me déshabille et m'allonge."
-    think ""
-
-# game/scenario/5_1.rpy:1667
-translate portuguese 3e8283af:
-
-    # think "Je fixe le plafond."
-    think ""
-
-# game/scenario/5_1.rpy:1671
-translate portuguese a42ca447:
-
-    # think "Demain sera ce que demain sera. Formule lâche, mais honnête."
-    think ""
-
-# game/scenario/5_1.rpy:1675
-translate portuguese 4f46e11e:
-
-    # think "Le noir, le silence, la station qui bourdonne dans les murs."
-    think ""
-
-# game/scenario/5_1.rpy:1679
-translate portuguese 7469b3fc:
-
-    # think "Léa a six ans et enfile un scaphandre en trente secondes. Voilà ce que notre monde apprend à ses enfants."
-    think ""
-
-# game/scenario/5_1.rpy:1683
-translate portuguese 926ffd85:
-
-    # think "Je retourne l'idée dans tous les sens. Elle ne mène nulle part. Comme souvent."
-    think ""
-
-# game/scenario/5_1.rpy:1688
-translate portuguese 7332f2ed_1:
-
-    # think "Je ferme les yeux."
-    think ""
-
-translate portuguese strings:
-
-    # game/scenario/5_1.rpy:1390
-    old "Aller à la pharmacie."
-    new ""
-
-    # game/scenario/5_1.rpy:1390
-    old "Aller se coucher."
-    new ""
-
-# TODO: Translation updated at 2026-08-16 12:24
-
-# game/scenario/5_1.rpy:158
-translate portuguese 2b09a2e5:
-
-    # kami "Rassurez-vous."
-    kami ""
-
-# TODO: Translation updated at 2026-08-23 11:55
-
-# game/scenario/5_1.rpy:611
-translate portuguese d1af98c2_5:
-
-    # think "Non."
-    think ""
+    # think "Je retourne le problème dans tous les sens, mais aucune réponse ne me paraît vraiment acceptable."
+    think "Penso no problema de todos os ângulos, mas nenhuma resposta parece realmente aceitável."
 

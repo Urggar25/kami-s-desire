@@ -181,6 +181,7 @@ label _4_0_REVEIL_CHAMBRE:
     kami "Allez, ne faites pas cette tête ! Vous avez probablement sauvé des gens."
     kami "Vous verrez tout ça de vos propres yeux à la cafétéria. Les écrans sont chauds et vos rations sont prêtes."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_192
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
@@ -248,6 +249,7 @@ label _4_0_CAFETERIA_ELEN:
 
     $ decouverte_cafeteria = True
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_193
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
@@ -267,6 +269,7 @@ label _4_0_CAFETERIA_ELEN_PARTIAL:
 
 label _4_0_CAFETERIA_ECRANS:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "cafeteria2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_194
     scene cafeteria2 at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
@@ -312,6 +315,7 @@ label _4_0_CAFETERIA_ECRANS:
     kami "En attendant, contentez-vous de ce que vous avez. Comme tout le monde."
     kami "Et surtout… comme vous l’avez vous-mêmes décidé hier."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_195
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
@@ -355,6 +359,7 @@ label _4_0_CAFETERIA_ECRANS:
     $ j4_cafeteria_julian_talked = False
     call _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE from _call_4_0_cafeteria_television_obligatoire
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_196
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("mara", "triste"),
@@ -443,6 +448,7 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
 
 label _4_0_CAFETERIA_PNC_RYN:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_197
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("ryn", "colere", 0.70)])
 
@@ -466,6 +472,7 @@ label _4_0_CAFETERIA_PNC_RYN:
 
 label _4_0_CAFETERIA_PNC_JULIAN:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_198
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("julian", "neutre", 0.70)])
 
@@ -539,6 +546,7 @@ label day4_tray_scene_loop:
 
 label _4_0_TEMPS_LIBRE_1:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_199
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ current_period = "Après-midi"
 
@@ -549,6 +557,7 @@ label _4_0_TEMPS_LIBRE_1:
 
 label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_200
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.8
 
@@ -571,10 +580,12 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Un nouveau vote vous attend. Attention, l'audimat monte en FLÈCHE !"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_201
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "L'écran se coupe sous le rire aigu de Kami. Des portes s'ouvrent une à une, puis des pas traînent dans le couloir."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_202
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.0
@@ -636,6 +647,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     kami "Cette fois la formulation est claire et ne mérite aucune réédition !"
     kami "Oui : libre circulation entre tous les districts."
     kami "Non : les frontières restent fermées comme aujourd’hui."
+    $ unlock_codex_page("frontieres_interdistricts", with_notification=False)
 
     $ j2_vote_codex_unlocked = True
     $ j45_vote_codex_active = True
@@ -646,6 +658,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "C’est simple. C'est binaire. Même vous, vous devriez réussir à comprendre celui-là."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_203
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.0
@@ -699,6 +712,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     lysa blase "Et c'est pour ça que tu veux tout faire sauter ?"
 
     ryn colere "Parce que j'en ai ras le cul de ramasser des cadavres ! La frontière, je la connais ! Je la garde !"
+    $ unlock_codex_page("frontieres_limen", with_notification=False)
 
     iris desaccord "Imaginons qu'on réouvre les frontières : les gens peuvent passer. Super. Et après ?"
     iris desaccord "C'est pas comme s'ils partaient ailleurs pour travailler avec ces foutus bons de rationnement."
@@ -815,6 +829,7 @@ label _4_0_APRES_CLASH_PRE_FETE:
 label _4_0_FIN_SOIREE:
 
     $ current_period = "Soir"
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_204
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
@@ -824,6 +839,7 @@ label _4_0_FIN_SOIREE:
     think "De la lumière sous la porte de Julian. Je ralentis, puis je passe."
     think "Je pourrais frapper. Enfin… pour lui dire quoi ?"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_205
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     $ blink()

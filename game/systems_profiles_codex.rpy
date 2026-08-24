@@ -457,7 +457,7 @@ screen profiles_menu():
     add "gui/main_menu_kami/scanlines.png" alpha 0.12
     add "gui/main_menu_kami/vignette.png" alpha 0.70
 
-    text "KAMI.CORE // DOSSIERS DES REPRÉSENTANTS":
+    text _("KAMI.CORE // DOSSIERS DES REPRÉSENTANTS"):
         font "fonts/Barlow-Light.ttf"
         size 18
         color "#5cd3ff"
@@ -519,7 +519,7 @@ screen profiles_menu():
                 kerning 4
                 xpos 688
                 ypos 40
-            text "[profile['role']]  //  REPRÉSENTANT·E DE [profile['district'].upper()]":
+            text "{}  //  {} {}".format(kd_tr(profile["role"]), kd_tr("REPRÉSENTANT·E DE"), kd_tr(profile["district"]).upper()):
                 font "fonts/Barlow-Light.ttf"
                 size 21
                 color "#5cd3ff"
@@ -538,7 +538,7 @@ screen profiles_menu():
                 hbox:
                     spacing 14
                     use profile_stat_cell(_("PRÉNOM"), profile["name"])
-                    use profile_stat_cell(_("ÂGE"), "{} ANS".format(profile["age"]))
+                    use profile_stat_cell(_("ÂGE"), _("{} ANS").format(profile["age"]))
 
                 hbox:
                     spacing 14
@@ -547,8 +547,8 @@ screen profiles_menu():
 
                 hbox:
                     spacing 14
-                    use profile_stat_cell(_("DISTRICT"), profile["district"].upper())
-                    use profile_stat_cell(_("ANNIVERSAIRE"), profile["birthday"].upper())
+                    use profile_stat_cell(_("DISTRICT"), kd_tr(profile["district"]).upper())
+                    use profile_stat_cell(_("ANNIVERSAIRE"), kd_tr(profile["birthday"]).upper())
 
             # Progression des temps libres : un cœur par scène du catalogue.
             frame:
@@ -585,7 +585,7 @@ screen profiles_menu():
                 ypos 610
                 action Show("profile_wardrobe", profile_id=selected_profile)
 
-            text "« [profile['quote']] »":
+            text "« {} »".format(kd_tr(profile["quote"])):
                 font "fonts/Barlow-Light.ttf"
                 size 20
                 color "#a8c1cd"
@@ -658,8 +658,8 @@ screen profile_wardrobe(profile_id):
 
         vbox:
             spacing 14
-            text "GARDE-ROBE // [character_display_name(profile_id)]" size 34 color "#DFF2FF" font "fonts/Rajdhani-SemiBold.ttf"
-            text "Les choix équipés sont sauvegardés de façon permanente et appliqués aux sprites en jeu." size 20 color "#BFD6EA"
+            text "{} // {}".format(_("GARDE-ROBE"), character_display_name(profile_id)) size 34 color "#DFF2FF" font "fonts/Rajdhani-SemiBold.ttf"
+            text _("Les choix équipés sont sauvegardés de façon permanente et appliqués aux sprites en jeu.") size 20 color "#BFD6EA"
 
             hbox:
                 spacing 22
@@ -681,7 +681,7 @@ screen profile_wardrobe(profile_id):
 
                     vbox:
                         spacing 12
-                        text "TENUES" size 28 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf"
+                        text _("TENUES") size 28 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf"
 
                         for skin_id in detected_skins:
                             $ skin_unlocked = is_profile_skin_unlocked(profile_id, skin_id)
@@ -705,11 +705,11 @@ screen profile_wardrobe(profile_id):
                                         yalign 0.5
                                         text skin_id.upper() size 25 color ("#FFFFFF" if skin_unlocked else "#8EA3B8")
                                         if not skin_unlocked:
-                                            text "VERROUILLÉE — disponible dans la Boutique" size 18 color "#8EA3B8"
+                                            text _("VERROUILLÉE — disponible dans la Boutique") size 18 color "#8EA3B8"
                                         elif equipped_skin_id == skin_id:
-                                            text "ÉQUIPÉE" size 21 color "#70E0A0"
+                                            text _("ÉQUIPÉE") size 21 color "#70E0A0"
                                         else:
-                                            textbutton "ÉQUIPER":
+                                            textbutton _("ÉQUIPER"):
                                                 background Solid("#10384DCC")
                                                 hover_background Solid("#1D5C7AEE")
                                                 text_color "#DFF2FF"
@@ -717,7 +717,7 @@ screen profile_wardrobe(profile_id):
                                                 action Function(equip_profile_skin, profile_id, skin_id)
 
                         if detected_accessories:
-                            text "ACCESSOIRES" size 28 color "#DDB6FF" font "fonts/Rajdhani-SemiBold.ttf"
+                            text _("ACCESSOIRES") size 28 color "#DDB6FF" font "fonts/Rajdhani-SemiBold.ttf"
 
                             for accessory_id in detected_accessories:
                                 $ accessory_unlocked = is_profile_accessory_unlocked(profile_id, accessory_id)
@@ -742,16 +742,16 @@ screen profile_wardrobe(profile_id):
                                             yalign 0.5
                                             text accessory_id.upper() size 25 color ("#FFFFFF" if accessory_unlocked else "#8EA3B8")
                                             if not accessory_unlocked:
-                                                text "VERROUILLÉ — disponible dans la Boutique" size 18 color "#8EA3B8"
+                                                text _("VERROUILLÉ — disponible dans la Boutique") size 18 color "#8EA3B8"
                                             else:
-                                                textbutton ("RETIRER" if accessory_equipped else "ÉQUIPER"):
+                                                textbutton _("RETIRER" if accessory_equipped else "ÉQUIPER"):
                                                     background Solid("#4A1D5CCC" if accessory_equipped else "#10384DCC")
                                                     hover_background Solid("#713080EE" if accessory_equipped else "#1D5C7AEE")
                                                     text_color "#F2DEFF"
                                                     text_hover_color "#FFFFFF"
                                                     action Function(toggle_profile_accessory, profile_id, accessory_id)
 
-            textbutton "FERMER" action Hide("profile_wardrobe") xalign 1.0 background Solid("#25101ACC") hover_background Solid("#4A1D2AEE") text_color "#FFD6E0"
+            textbutton _("FERMER") action Hide("profile_wardrobe") xalign 1.0 background Solid("#25101ACC") hover_background Solid("#4A1D2AEE") text_color "#FFD6E0"
 
 
 screen exploration_meta_buttons():

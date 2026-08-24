@@ -8,13 +8,12 @@ default debat_phase2_good = 0
 default debat_phase2_wrong = 0
 default debat_phase2_missed = 0
 default debat_phase2_dialogues_active = []
+default debat_phase2_too_many_objections_bad_end = False
 
 define DEBAT_PHASE2_LINE_DURATION = 6.0
 
 define DEBAT_PHASE2_FADE_TIME = 0.35
 define DEBAT_PHASE2_REBUTTAL_LINE_DURATION = 5.0
-
-image kami_debat_background = "images/background/bg_conclave.png"
 
 transform debat_phase2_fade_cycle(total=5.0, fade=0.35):
     alpha 0.0
@@ -52,6 +51,142 @@ transform debat_phase2_reject_warning:
     ease 0.35 alpha 0.35
     repeat
 
+transform debat_phase2_bad_end_fade:
+    alpha 0.0
+    linear 0.35 alpha 1.0
+
+image dp2_portrait_mara_talk:
+    "gui/day3/vote_phase2/portraits/mara_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/mara_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/mara_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/mara_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_elias_talk:
+    "gui/day3/vote_phase2/portraits/elias_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/elias_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/elias_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/elias_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_lysa_talk:
+    "gui/day3/vote_phase2/portraits/lysa_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/lysa_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/lysa_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/lysa_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_julian_talk:
+    "gui/day3/vote_phase2/portraits/julian_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/julian_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/julian_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/julian_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_iris_talk:
+    "gui/day3/vote_phase2/portraits/iris_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/iris_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/iris_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/iris_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_tomas_talk:
+    "gui/day3/vote_phase2/portraits/tomas_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/tomas_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/tomas_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/tomas_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_elen_talk:
+    "gui/day3/vote_phase2/portraits/elen_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/elen_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/elen_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/elen_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_kael_talk:
+    "gui/day3/vote_phase2/portraits/kael_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/kael_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/kael_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/kael_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_nyra_talk:
+    "gui/day3/vote_phase2/portraits/nyra_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/nyra_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/nyra_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/nyra_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_ryn_talk:
+    "gui/day3/vote_phase2/portraits/ryn_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/ryn_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/ryn_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/ryn_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_sael_talk:
+    "gui/day3/vote_phase2/portraits/sael_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/sael_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/sael_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/sael_blink.png"
+    pause 0.10
+    repeat
+
+image dp2_portrait_noam_talk:
+    "gui/day3/vote_phase2/portraits/noam_idle.png"
+    pause 0.42
+    "gui/day3/vote_phase2/portraits/noam_talk.png"
+    pause 0.16
+    "gui/day3/vote_phase2/portraits/noam_idle.png"
+    pause 0.32
+    "gui/day3/vote_phase2/portraits/noam_blink.png"
+    pause 0.10
+    repeat
+
 init python:
     DEBAT_PHASE2_DIALOGUES = [
         {"id": "d1", "speaker": "Mara", "speaker_tag": "mara", "speaker_expr": "doute", "counter_label": "debat_phase2_counter_d1", "lines": ["Ah, je dois commencer ?? Euh...", "Abolir la distribution risque de", "condamner les plus fragiles."]},
@@ -87,12 +222,39 @@ init python:
 
     DEBAT_PHASE2_LINE_X_OFFSETS = [0, 24, -18, 12]
 
+    DEBAT_PHASE2_SPEAKER_META = {
+        "mara": "Représentante n°03 — Velkyn",
+        "elias": "Représentant n°04 — Solen",
+        "lysa": "Représentante n°05 — Orée",
+        "julian": "Représentant n°06 — Miren",
+        "iris": "Représentante n°08 — Civitas",
+        "tomas": "Représentant n°09 — Archive",
+        "elen": "Représentante n°10 — Aster",
+        "kael": "Représentant n°11 — Forge",
+        "nyra": "Représentante n°02 — Apex",
+        "ryn": "Représentant n°07 — Limen",
+        "sael": "Représentante n°12 — Serment",
+        "noam": "Médiateur — District Harmonie",
+    }
+
     def debat_phase2_get_objection_protocol_image(index_number):
         wanted = "images/background/debat/objection_protocol_%d.png" % int(index_number)
         if renpy.loadable(wanted):
             return wanted
         fallback = "images/background/debat/fatal_assembly_%d.png" % int(index_number)
         return fallback
+
+    def debat_phase2_speaker_portrait(tag):
+        image_name = "dp2_portrait_%s_talk" % tag
+        if renpy.has_image((image_name,)):
+            return image_name
+        return "dp2_portrait_noam_talk"
+
+    def debat_phase2_speaker_meta(tag):
+        return DEBAT_PHASE2_SPEAKER_META.get(tag, "Représentant — Conclave")
+
+    def debat_phase2_join_lines(dialogue_data):
+        return "\n".join(kd_tr(line) for line in dialogue_data.get("lines", []))
 
     def debat_day3_vote_from_stat(stat_value):
         if stat_value > 1:
@@ -132,107 +294,273 @@ init python:
 
     def debat_phase2_compute_score():
         total = max(1, debat_phase2_total_contestable())
-        base = 1000.0 * store.debat_phase2_good / float(total)
-        return int(max(0, round(base - 60 * store.debat_phase2_wrong)))
+        useful_ratio = store.debat_phase2_good / float(total)
+        coherence_penalty = max(0, store.debat_phase2_good - 7) * 90
+        base = 780.0 * useful_ratio
+        restraint_bonus = 160 if 3 <= store.debat_phase2_good <= 7 else 0
+        clean_bonus = 80 if store.debat_phase2_wrong == 0 else 0
+        return int(max(0, round(base + restraint_bonus + clean_bonus - coherence_penalty - 80 * store.debat_phase2_wrong)))
+
+    def debat_phase2_contradicted_everyone():
+        total = debat_phase2_total_contestable()
+        return total > 0 and store.debat_phase2_good >= total
 
 screen debat_phase2_line(dialogue_data):
     modal True
     zorder 120
 
-    add "kami_debat_background" at adaptive_fullscreen
-    add "gui/day3/vote_phase2/bg_overlay.png"
-    add Solid("#7DF9FF16", ysize=2) ypos 112
+    on "show" action Function(
+        play_dialogue_doublage,
+        dialogue_data["speaker_tag"],
+        debat_phase2_join_lines(dialogue_data),
+    )
+
+    add "bg_conclave" at adaptive_fullscreen
+    add Solid("#02060ADC")
+    add "gui/day3/vote_phase2/bg_overlay.png":
+        alpha 0.22
+    add Solid("#00000080", xsize=1920, ysize=1080)
     add Solid("#FFFFFF08", xsize=1920, ysize=22) at debat_phase2_scanline
 
     $ _dp2_total_lines = max(1, len(debat_phase2_dialogues_active))
     $ _dp2_current_line = min(_dp2_total_lines, debat_phase2_index + 1)
+    $ _dp2_portrait = debat_phase2_speaker_portrait(dialogue_data["speaker_tag"])
+    $ _dp2_meta = debat_phase2_speaker_meta(dialogue_data["speaker_tag"])
+    $ _dp2_speech = debat_phase2_join_lines(dialogue_data)
+    $ _dp2_intervention_color = "#FFD166" if debat_phase2_good <= 7 else "#FF5B64"
 
-    text "KAMI.CORE // OBJECTION PROTOCOL":
+    for gx in range(56, 1921, 112):
+        add Solid("#6B879B0B", xsize=1, ysize=1080):
+            xpos gx
+            ypos 0
+    for gy in range(48, 1081, 96):
+        add Solid("#6B879B0B", xsize=1920, ysize=1):
+            xpos 0
+            ypos gy
+
+    frame:
+        xpos 46
+        ypos 34
+        xsize 1828
+        ysize 360
+        background Solid("#071018E8")
+        padding (0, 0)
+        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+
+        fixed:
+            add Solid("#8A98A844", xsize=1828, ysize=1):
+                xpos 0
+                ypos 0
+            add Solid("#8A98A833", xsize=1828, ysize=1):
+                xpos 0
+                ypos 359
+            add Solid("#FF4D5C99", xsize=210, ysize=2):
+                xpos 210
+                ypos 357
+            add Solid("#FF4D5C66", xsize=190, ysize=1):
+                xpos 1568
+                ypos 332
+
+            frame:
+                xpos 16
+                ypos 14
+                xsize 370
+                ysize 330
+                background Solid("#0B1824F0")
+                padding (0, 0)
+
+                add _dp2_portrait:
+                    xysize (370, 370)
+                    yalign 0.5
+                    yoffset (-18 if dialogue_data["speaker_tag"] in ("nyra", "ryn") else 0)
+                    alpha 0.88
+                add Solid("#00000060", xsize=370, ysize=330)
+                add Solid("#6F849A55", xsize=1, ysize=330):
+                    xpos 369
+                    ypos 0
+
+            vbox:
+                xpos 430
+                ypos 50
+                xsize 1040
+                spacing 18
+
+                text "[dialogue_data['speaker']]":
+                    size 34
+                    color "#FF5B64"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    bold True
+                    outlines [(1, "#05070A", 0, 0)]
+
+                text kd_tr(_dp2_meta):
+                    size 24
+                    color "#8C98A4"
+                    font "fonts/Barlow-Light.ttf"
+                    outlines [(1, "#05070A", 0, 0)]
+
+                text kd_tr(_dp2_speech):
+                    size 31
+                    color "#F3F6F8"
+                    font "fonts/Barlow-Light.ttf"
+                    line_spacing 10
+                    xmaximum 1040
+                    outlines [(1, "#05070A", 0, 0)]
+
+            vbox:
+                xpos 1510
+                ypos 58
+                xsize 250
+                spacing 18
+                text "KAMI.CORE":
+                    size 18
+                    color "#70879B"
+                    font "fonts/Barlow-Light.ttf"
+                    kerning 3
+                    xalign 0.5
+                text "OBJECTION\nPROTOCOL":
+                    size 25
+                    color "#C7D4DF"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    text_align 0.5
+                    xalign 0.5
+                    outlines [(1, "#05070A", 0, 0)]
+                text "LIGNE [_dp2_current_line]/[_dp2_total_lines]":
+                    size 20
+                    color "#9AA7B1"
+                    xalign 0.5
+                    font "fonts/Barlow-Light.ttf"
+                text "PRISES DE PAROLE [debat_phase2_good]":
+                    size 22
+                    color _dp2_intervention_color
+                    xalign 0.5
+                    font "fonts/Rajdhani-SemiBold.ttf"
+
+    fixed:
+        xpos 270
+        ypos 450
+        xsize 1380
+        ysize 92
+        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+
+        add Solid("#C9953C66", xsize=500, ysize=1):
+            xpos 0
+            ypos 32
+        add Solid("#C9953C66", xsize=500, ysize=1):
+            xpos 880
+            ypos 32
+        text "VOTRE TOUR":
+            xpos 0
+            ypos 0
+            xsize 1380
+            text_align 0.5
+            size 28
+            color "#FFD166"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(1, "#05070A", 0, 0)]
+        text "Cliquez sur le buzzer seulement quand une intervention apporte vraiment quelque chose.":
+            xpos 0
+            ypos 54
+            xsize 1380
+            text_align 0.5
+            size 24
+            color "#F0F2F4"
+            font "fonts/Barlow-Light.ttf"
+            outlines [(1, "#05070A", 0, 0)]
+
+    frame:
+        xpos 1215
+        ypos 645
+        xsize 426
+        ysize 178
+        background Solid("#071018DB")
+        padding (28, 24)
+        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+
+        hbox:
+            spacing 18
+            text "!":
+                size 46
+                color "#FF5B64"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                outlines [(2, "#05070A", 0, 0)]
+            vbox:
+                spacing 10
+                text "ATTENTION":
+                    size 24
+                    color "#FF5B64"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    bold True
+                text "Vous ne pouvez parler\nqu’après avoir appuyé\nsur le buzzer.":
+                    size 22
+                    color "#C6CED6"
+                    font "fonts/Barlow-Light.ttf"
+                    line_spacing 4
+
+    fixed:
         xpos 70
-        ypos 68
-        font "fonts/Barlow-Light.ttf"
-        size 18
-        color "#7DF9FF"
-        kerning 4
+        ypos 952
+        xsize 1780
+        ysize 78
 
-    add "[dialogue_data['speaker_tag']] [dialogue_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
+        add Solid("#E6EEF044", xsize=1780, ysize=1):
+            xpos 0
+            ypos 0
+        hbox:
+            xpos 575
+            ypos 42
+            spacing 18
+            text "PHASE":
+                size 20
+                color "#6F7B84"
+                font "fonts/Barlow-Light.ttf"
+            for pi in range(_dp2_total_lines):
+                $ _pip_color = "#FF4D5C" if pi == (debat_phase2_index % _dp2_total_lines) else "#151A20"
+                $ _pip_edge = "#FF6C76" if pi == (debat_phase2_index % _dp2_total_lines) else "#59636B"
+                fixed:
+                    xsize 24
+                    ysize 24
+                    add Solid(_pip_edge, xsize=24, ysize=24)
+                    add Solid(_pip_color, xsize=16, ysize=16):
+                        xpos 4
+                        ypos 4
 
-    add "gui/day3/vote_phase2/dialogue_panel.png":
-        xalign 0.73
-        yalign 0.45
-
-    vbox:
-        xalign 0.73
-        yalign 0.45
-        xmaximum 760
-        spacing 6
-        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
-
-        for idx, line_text in enumerate(dialogue_data["lines"]):
-            $ local_xoffset = DEBAT_PHASE2_LINE_X_OFFSETS[idx % len(DEBAT_PHASE2_LINE_X_OFFSETS)]
-            text "[line_text]":
-                style "debat_phase2_line_text"
-                xoffset local_xoffset
-
-    add "gui/day3/vote_phase2/speaker_plate.png":
-        xalign 0.58
-        yalign 0.22
-        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
-
-    text "[dialogue_data['speaker']]":
-        style "debat_phase2_speaker_text"
-        xalign 0.58
-        yalign 0.22
-        at debat_phase2_fade_cycle(DEBAT_PHASE2_LINE_DURATION, DEBAT_PHASE2_FADE_TIME)
-
-    # Barre de temps restant pour buzzer
     fixed:
         xalign 0.5
-        yalign 0.985
+        ypos 880
         xsize 760
-        ysize 16
+        ysize 10
 
-        add Solid("#0A1326DD", xsize=760, ysize=16)
-        add Solid("#FFFFFF18", xsize=760, ysize=1)
+        add Solid("#151923", xsize=760, ysize=10)
         add Solid("#FFD166") at debat_phase2_time_drain(DEBAT_PHASE2_LINE_DURATION):
             xpos 0
             xsize 760
-            ysize 16
+            ysize 10
 
-    # HUD objections
-    frame:
-        xpos 24
-        ypos 24
-        background Fixed(
-            Solid("#060D1CD8"),
-            Solid("#7DF9FF55", xsize=4),
-            Solid("#FFFFFF12", ysize=1),
-        )
-        padding (20, 14)
-
+    if debat_phase2_wrong > 0 or debat_phase2_missed > 0:
         hbox:
-            spacing 24
-            text "LIGNE [_dp2_current_line] / [_dp2_total_lines]" size 18 color "#7DF9FF" bold True
-            text "OBJECTIONS  [debat_phase2_good]" size 22 color "#5DFF9A" bold True
+            xpos 70
+            ypos 908
+            spacing 18
             if debat_phase2_wrong > 0:
-                text "À TORT  [debat_phase2_wrong]" size 22 color "#FF4D6D" bold True
+                text "À TORT [debat_phase2_wrong]" size 20 color "#FF5B64" font "fonts/Rajdhani-SemiBold.ttf"
             if debat_phase2_missed > 0:
-                text "MANQUÉES  [debat_phase2_missed]" size 22 color "#FFD166" bold True
+                text "MANQUÉES [debat_phase2_missed]" size 20 color "#FFD166" font "fonts/Rajdhani-SemiBold.ttf"
 
     use mk_help_button("tuto_debat_phase2")
 
     imagebutton:
-        idle "gui/day3/vote_phase2/buzzer_idle.png"
-        hover "gui/day3/vote_phase2/buzzer_hover.png"
+        idle "gui/day3/vote_phase2/buzzer_round_idle.png"
+        hover "gui/day3/vote_phase2/buzzer_round_hover.png"
         xalign 0.5
-        yalign 0.92
+        yalign 0.71
+        xysize (390, 390)
         at debat_phase2_buzzer_pulse
-        action Return({
+        action [Play("sound", "audio/sfx_kami_alert.wav"), Return({
             "buzzed": True,
             "id": dialogue_data["id"],
             "speaker": dialogue_data["speaker"],
             "counter_label": dialogue_data["counter_label"],
-        })
+        })]
 
     timer DEBAT_PHASE2_LINE_DURATION action Return({"buzzed": False, "id": dialogue_data["id"]})
 
@@ -240,38 +568,76 @@ screen debat_phase2_rebuttal_line(entry_data, duration=3.4):
     modal True
     zorder 120
 
-    add "kami_debat_background" at adaptive_fullscreen
-    add "gui/day3/vote_phase2/bg_overlay.png"
+    on "show" action Function(
+        play_dialogue_doublage,
+        entry_data["speaker_tag"],
+        "\n".join(entry_data.get("lines", [])),
+    )
 
-    add "[entry_data['speaker_tag']] [entry_data['speaker_expr']]" at Position(xalign=0.00, yalign=1.0), debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+    add "bg_conclave" at adaptive_fullscreen
+    add Solid("#02060ADC")
+    add "gui/day3/vote_phase2/bg_overlay.png":
+        alpha 0.24
+    add Solid("#FFFFFF08", xsize=1920, ysize=22) at debat_phase2_scanline
 
-    add "gui/day3/vote_phase2/rebuttal_panel.png":
-        xalign 0.73
-        yalign 0.45
+    $ _dp2_portrait = debat_phase2_speaker_portrait(entry_data["speaker_tag"])
+    $ _dp2_meta = debat_phase2_speaker_meta(entry_data["speaker_tag"])
+    $ _dp2_speech = debat_phase2_join_lines(entry_data)
+    $ _dp2_rebuttal_name_color = "#FF5B64" if entry_data["speaker_tag"] != "noam" else "#6FE7FF"
 
-    vbox:
-        xalign 0.73
-        yalign 0.45
-        xmaximum 800
-        spacing 6
+    frame:
+        xpos 150
+        ypos 170
+        xsize 1620
+        ysize 420
+        background Solid("#071018EC")
+        padding (0, 0)
         at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
 
-        for idx, line_text in enumerate(entry_data["lines"]):
-            $ local_xoffset = DEBAT_PHASE2_LINE_X_OFFSETS[idx % len(DEBAT_PHASE2_LINE_X_OFFSETS)]
-            text "[line_text]":
-                style "debat_phase2_line_text"
-                xoffset local_xoffset
+        fixed:
+            add Solid("#8A98A844", xsize=1620, ysize=1)
+            add Solid("#FF4D5C99", xsize=250, ysize=2):
+                xpos 250
+                ypos 418
 
-    add "gui/day3/vote_phase2/speaker_plate.png":
-        xalign 0.58
-        yalign 0.22
-        at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+            frame:
+                xpos 24
+                ypos 24
+                xsize 370
+                ysize 370
+                background Solid("#0B1824F0")
+                padding (0, 0)
+                add _dp2_portrait:
+                    xysize (370, 370)
+                    yoffset (-18 if entry_data["speaker_tag"] in ("nyra", "ryn") else 0)
+                    alpha 0.90
+                add Solid("#00000044", xsize=370, ysize=370)
 
-    text "[entry_data['speaker']]":
-        style "debat_phase2_speaker_text"
-        xalign 0.58
-        yalign 0.22
-        at debat_phase2_fade_cycle(duration, DEBAT_PHASE2_FADE_TIME)
+            vbox:
+                xpos 440
+                ypos 62
+                xsize 1000
+                spacing 20
+
+                text "[entry_data['speaker']]":
+                    size 36
+                    color _dp2_rebuttal_name_color
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    bold True
+                    outlines [(1, "#05070A", 0, 0)]
+
+                text kd_tr(_dp2_meta):
+                    size 24
+                    color "#8C98A4"
+                    font "fonts/Barlow-Light.ttf"
+
+                text kd_tr(_dp2_speech):
+                    size 34
+                    color "#F3F6F8"
+                    font "fonts/Barlow-Light.ttf"
+                    line_spacing 10
+                    xmaximum 1000
+                    outlines [(1, "#05070A", 0, 0)]
 
     timer duration action Return(True)
 
@@ -367,9 +733,9 @@ transform dp2_demo_objection_pop:
 
 screen tuto_debat_phase2(as_overlay=False):
     use mk_tuto_chrome("PROTOCOLE D'OBJECTION", [
-        ("Écoute chaque argument", "Chaque participant parle quelques secondes. La barre jaune indique le temps pour réagir."),
-        ("Buzze ce qui est contestable", "Si un argument te semble faible ou faux, frappe le buzzer avant la fin de la barre."),
-        ("Influence le vote", "Chaque contre-argument de Noam fait évoluer l'opinion des votants. Buzzer à tort dessert ta cause."),
+        ("Ecoute chaque argument", "Chaque participant parle quelques secondes. La barre jaune indique le temps disponible."),
+        ("Interviens avec discernement", "Le buzzer sert a prendre la parole quand Noam apporte un vrai eclairage, pas a contredire tout le monde."),
+        ("Reste coherent", "Multiplier les objections affaiblit Noam : l'assemblee juge aussi la coherence de tes interventions."),
     ], "tuto_debat_phase2", as_overlay):
 
         fixed:
@@ -454,6 +820,40 @@ screen debat_phase2_bad_objection():
     on "show" action Play("sound", "audio/sfx_drop.mp3")
     timer 1.6 action Return(True)
 
+screen debat_phase2_incoherence_gameover():
+    modal True
+    zorder 260
+
+    add Solid("#020308F2")
+    add Solid("#FF4D5C22") at debat_phase2_bad_end_fade
+
+    vbox:
+        align (0.5, 0.45)
+        spacing 18
+        text "GAME OVER":
+            xalign 0.5
+            size 86
+            color "#FF5B64"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(4, "#05070A", 0, 0)]
+        text "Noam a perdu toute credibilite devant le Conclave.":
+            xalign 0.5
+            size 28
+            color "#DCE6EF"
+            font "fonts/Barlow-Light.ttf"
+        text "Cliquez pour reprendre juste avant le Protocole d'Objection.":
+            xalign 0.5
+            size 22
+            color "#8C98A4"
+            font "fonts/Barlow-Light.ttf"
+
+    key "dismiss" action Return(True)
+    button:
+        xfill True
+        yfill True
+        background None
+        action Return(True)
+
 # ------------------------------------------------------------
 # MINIJEU — réutilisable : debat_phase2_session est paramétrable
 #   $ debat_phase2_dialogues_active = MA_LISTE  (avant l'appel)
@@ -473,7 +873,7 @@ label debat_phase2_minigame:
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
     call DEBAT_PHASE2_START_ANIM from _call_DEBAT_PHASE2_START_ANIM
-    call mk_tutorial("debat_phase2", "tuto_debat_phase2")
+    call mk_tutorial("debat_phase2", "tuto_debat_phase2") from _call_mk_tutorial_1
 
 label debat_phase2_loop:
     if debat_phase2_index >= len(debat_phase2_dialogues_active):
@@ -512,6 +912,9 @@ label debat_phase2_resume:
     jump debat_phase2_loop
 
 label debat_phase2_finish:
+    if debat_phase2_contradicted_everyone():
+        jump debat_phase2_bad_ending_tout_et_rien_dire
+
     $ debat_phase2_vote_summary = debat_day3_compute_votes(store.debat_day3_live_vote_stats)
 
     # Résultats avec rang
@@ -519,9 +922,9 @@ label debat_phase2_finish:
         dp2_score = debat_phase2_compute_score()
         dp2_total = debat_phase2_total_contestable()
         dp2_challenges = [
-            ("Aucune objection manquée", debat_phase2_missed == 0),
-            ("Aucune objection à tort", debat_phase2_wrong == 0),
-            ("5 contre-arguments ou plus", debat_phase2_good >= 5),
+            ("Aucune objection a tort", debat_phase2_wrong == 0),
+            ("Interventions coherentes", debat_phase2_good <= 7),
+            ("Impact politique positif", debat_phase2_vote_summary["pour"] >= 8),
         ]
         dp2_score = min(1000, dp2_score + 40 * len([1 for c in dp2_challenges if c[1]]))
 
@@ -530,13 +933,13 @@ label debat_phase2_finish:
         dp2_score,
         1000,
         stats=[
-            ("Contre-arguments", "%d/%d" % (debat_phase2_good, dp2_total)),
-            ("Objections à tort", str(debat_phase2_wrong)),
-            ("Occasions manquées", str(debat_phase2_missed)),
+            ("Prises de parole", str(debat_phase2_good)),
+            ("Objections a tort", str(debat_phase2_wrong)),
+            ("Lignes laissees respirer", str(max(0, dp2_total - debat_phase2_good))),
         ],
         challenges=dp2_challenges,
         mg_id="debat_phase2",
-    )
+    ) from _call_mk_show_results_1
 
     $ debat_phase2_dialogues_active = []
 
@@ -545,6 +948,42 @@ label debat_phase2_finish:
     return
 
 # --- Contre-arguments dédiés (1 label par réplique contredite) ---
+
+label debat_phase2_bad_ending_tout_et_rien_dire:
+    $ unlock_succes("succes004")
+    $ debat_phase2_dialogues_active = []
+    stop music fadeout 0.8
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play sound "audio/sfx_kami_alert.wav"
+
+    "Le dernier buzzer retombe."
+    "Cette fois, personne ne reprend tout de suite."
+
+    mara colere "Non. Stop."
+    ryn colere "Tu viens de contredire tout le monde."
+    nyra colere "A chaque phrase, tu changes d'angle. A chaque reponse, tu defends l'inverse."
+    tomas peur "Ce n'est plus une mediation. C'est du bruit."
+    sael colere "Tu dis tout et son contraire, Noam."
+    lysa colere "Et tu nous demandes encore de te suivre ?"
+
+    noam inquiet "J'essayais juste de faire avancer le debat."
+
+    iris inquiet "Non. La, tu attises les tensions."
+    kael colere "Tu n'es plus coherent."
+    elias colere "Tu cherches seulement a gagner contre chaque personne qui parle."
+    julian inquiet "Meme moi, je trouve ca dangereux. C'est dire."
+
+    ryn colere "Dehors."
+    nyra colere "Avant que tu fasses exploser le vote pour de bon."
+
+    "Les chaises raclent le sol."
+    "Les regards se ferment un a un."
+    "Noam recule, chasse du centre de la salle par l'assemblee qu'il devait tenir ensemble."
+
+    call screen debat_phase2_incoherence_gameover
+    jump day3_before_objection_protocol_minigame
 
 label debat_phase2_counter_d1:
 

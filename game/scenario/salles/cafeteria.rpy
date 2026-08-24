@@ -10,6 +10,7 @@ default decouverte_cafeteria = False
 
 
 label CAFETERIA_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_327
     scene bg_cafeteria at adaptive_fullscreen
 
     if current_scene_active == "_2_ROUTE_CAFETERIA":
@@ -213,6 +214,7 @@ label decouverte_cafeteria:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_328
     scene bg_cafeteria at adaptive_fullscreen with fade
 
     "L'endroit est plus chaleureux que le reste."
@@ -299,6 +301,7 @@ label decouverte_cafeteria:
 
     pause 0.3
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_329
     scene bg_cafeteria at adaptive_fullscreen with fade
 
     $ showGroup([

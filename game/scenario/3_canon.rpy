@@ -345,6 +345,7 @@ label _3_CANON:
 
     pause 0.6
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_157
     scene bg_chambre at adaptive_fullscreen with fade
 
     call day3_play_wakeup_trace from _call_day3_play_wakeup_trace
@@ -362,6 +363,7 @@ label _3_CANON:
 
 
 label _3_OPT_KAEL_DIAL:
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_158
     scene bg_dortoir at adaptive_fullscreen with dissolve
     $ day3_cafeteria_route_kael_seen = True
 
@@ -456,6 +458,7 @@ label _3_OPT_JULIAN_DIAL:
     return
 
 label _3_CAFETERIA_ARRIVE:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_159
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     think "La cafétéria se remplit doucement. Le brouhaha se limite au raclement des chaises et au bruit des fourchettes."
@@ -538,6 +541,7 @@ label _3_CAFETERIA_ARRIVE:
 
     # On quitte le CG (où les persos sont déjà dessinés) et on regroupe TOUS les
     # locuteurs présents dans un seul showGroup, complété à chaque nouvelle arrivée.
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_160
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("elen", "joie"),
@@ -755,6 +759,7 @@ label _3_CAFETERIA_ARRIVE:
 
 label _3_PAUSE_CHAMBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_161
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_unsaid_distance.mp3" fadein 1.0
 
@@ -773,6 +778,7 @@ label _3_PAUSE_CHAMBRE:
 
     think "Ce n'est pas la voix de quelqu'un qui vient discuter."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_162
     scene bg_dortoir at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -795,6 +801,7 @@ label _3_PAUSE_CHAMBRE:
     play music "music/bgm_tension_low.mp3" fadein 0.6
 
     # Effet de course : le décor tremble tant qu'on court (secousse day3_run_shake).
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_163
     scene couloir_dortoir at adaptive_fullscreen, day3_run_shake with fade
 
     think "On se met à courir. La salle de repos n'est pas loin, par chance."
@@ -834,9 +841,11 @@ label _3_PAUSE_CHAMBRE:
         else:
             store.tomas_corridor_delta = -2
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_164
     scene couloir_cafeteria at adaptive_fullscreen with fade
     think "Je l'entends rire derrière la porte. Ce rire trop rond, trop travaillé."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_165
     scene bg_repos at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -929,6 +938,7 @@ label _3_PAUSE_CHAMBRE:
 
 label _3_TRANSITION_CONCLAVE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_166
     scene couloir_dortoir at adaptive_fullscreen with fade
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
@@ -987,6 +997,7 @@ label _3_TRANSITION_CONCLAVE:
 
     lysa blase "Touché. Bref. On y va avant que je devienne sentimentale."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_167
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     think "On entre. On s'installe. Voilà. C'est parti."
@@ -1010,6 +1021,7 @@ label _3_TRANSITION_CONCLAVE:
 
     hide screen kami_broadcast_ui
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_168
     scene bg_conclave at adaptive_fullscreen with fade
     pause 0.4
 
@@ -1056,6 +1068,7 @@ label _3_DEBAT1_PHASE1:
 
     hide screen kami_broadcast_ui
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_169
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1094,6 +1107,7 @@ label _3_DEBAT1_PHASE1:
         $ renpy.notify("+ %d Kamyz" % phase1_kamyz_gain)
         call screen noam_consent_screen
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_170
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1125,6 +1139,7 @@ label _3_DEBAT1_PHASE1:
 
 label _3_DEBAT1_PHASE2:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_171
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
@@ -1201,6 +1216,7 @@ label day3_before_objection_protocol_minigame:
 
     # ── CLIFFHANGER 1 : Kami rend la conséquence humaine, en direct ──
     stop music fadeout 0.6
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_172
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_low.mp3" fadein 0.6
 
@@ -1240,6 +1256,7 @@ label day3_before_objection_protocol_minigame:
     kami "Enfin… sur l'un de vous. Il en suffit d'un pour tout faire capoter, souvenez-vous."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_173
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1472,6 +1489,7 @@ label _3_DEBAT1_PHASE3:
     $ restore_unlocked_arguments()
     $ day2_sync_argument_titles()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_174
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_phase3.mp3" fadein 1.0
     show screen kami_broadcast_ui
@@ -1494,6 +1512,7 @@ label _3_DEBAT1_PHASE3:
             ],
         ]
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_175
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
@@ -1550,6 +1569,7 @@ label _3_DEBAT1_PHASE3:
     call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
 
     stop music fadeout 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_176
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
@@ -1578,6 +1598,7 @@ label _3_DEBAT1_PHASE3:
     kami "La faim est une motivation remarquablement efficace. Je l'ai observé sur vous mille fois."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_177
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1607,6 +1628,7 @@ label _3_DEBAT1_PHASE3:
     call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
 
     stop music fadeout 1.0
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_178
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
@@ -1620,6 +1642,7 @@ label _3_DEBAT1_PHASE3:
     think "Je regarde autour de la table. Les visages se sont figés. Chacun a choisi. Ou presque."
     think "Presque."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_179
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([
         ("ryn", "reflechit", 0.32),
@@ -1665,6 +1688,7 @@ label _3_DEBAT1_PHASE3:
 label _3_DEBAT1_PHASE3_INT1:
     $ selected = p3_round_options[0][p3_pick]["title"]
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_180
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     if "appro" in selected.lower() or "inégal" in selected.lower():
@@ -1771,6 +1795,7 @@ label _3_DEBAT1_PHASE3_INT1:
 label _3_DEBAT1_PHASE3_INT2:
     $ selected = p3_round_options[1][p3_pick]["title"]
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_181
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     if "avant" in selected.lower():
@@ -1886,6 +1911,7 @@ label _3_VOTE_POUR:
 
     $ current_period = "Soir"
     
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_182
     scene bg_conclave at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
     play music "music/bgm_victory_bitter.mp3" fadein 2.0
@@ -1906,6 +1932,7 @@ label _3_VOTE_POUR:
     kami "Mais la laisse, c'était aussi ce qui vous retenait de tomber."
     kami "On va voir ce que ça donne sans filet. J'ai hâte du spectacle."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_183
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
 
@@ -1944,12 +1971,15 @@ label _3_VOTE_POUR:
 
     think "Dix-sept heures dix. On se lève en silence."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_184
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     think "Mes pas résonnent jusqu'à ma chambre."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_185
     scene bg_dortoir at adaptive_fullscreen with dissolve
     think "On a voté pour le changement. J'ignore encore si on est prêts à le vivre."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_186
     scene bg_chambre at adaptive_fullscreen with dissolve
     think "Je m'effondre sur le lit. Demain sera différent. Pas forcément meilleur."
 
@@ -1970,6 +2000,7 @@ label _3_VOTE_CONTRE:
 
     $ current_period = "Soir"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_187
     scene bg_conclave at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
     play music "music/bgm_system_override.mp3" fadein 2.0
@@ -1992,6 +2023,7 @@ label _3_VOTE_CONTRE:
     kami "Félicitations, mes petits rats sages. Vous avez choisi la sécurité."
     kami "C'est plus ennuyeux. J'espérais un peu plus de sang. Ce sera pour une autre fois."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_188
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
 
@@ -2041,11 +2073,14 @@ label _3_VOTE_CONTRE:
 
     $ hideGroup()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_189
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     think "Mes pas résonnent dans les couloirs froids."
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_190
     scene bg_dortoir at adaptive_fullscreen with dissolve
     think "Je m'effondre sur le lit."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_191
     scene bg_chambre at adaptive_fullscreen with dissolve
     think "Le silence est pire que les cris. On avait une chance. Une seule voix l'a refermée."
     think "Qu'est-ce qu'on peut faire, maintenant ?"

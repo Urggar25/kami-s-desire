@@ -276,18 +276,18 @@ screen j701_investigation_locations():
                     xsize 920
                     spacing 5
 
-                    text room["title"]:
+                    text kd_tr(room["title"]):
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 31
                         color (room["color"] if remaining else "#53606B")
                         kerning 2
 
-                    text ("PLUS RIEN À EXAMINER" if not remaining else room["subtitle"]):
+                    text kd_tr("PLUS RIEN À EXAMINER" if not remaining else room["subtitle"]):
                         font "fonts/Barlow-Light.ttf"
                         size 23
                         color ("#61707C" if not remaining else "#F1F6FA")
 
-                text "[remaining] POINT[\"S\" if remaining > 1 else \"\"] D'INTÉRÊT":
+                text ("{} {}".format(remaining, kd_tr("POINT D'INTÉRÊT" if remaining == 1 else "POINTS D'INTÉRÊT"))):
                     font "fonts/Rajdhani-SemiBold.ttf"
                     size 23
                     color (room["color"] if remaining else "#53606B")
@@ -329,8 +329,8 @@ screen j701_investigation_pointclick(room_id):
         background Solid("#07131FEF")
         vbox:
             spacing 3
-            text room["title"] font "fonts/Rajdhani-SemiBold.ttf" size 37 color room["color"]
-            text hovered_hint font "fonts/Barlow-Light.ttf" size 23 color "#ECF6FC"
+            text kd_tr(room["title"]) font "fonts/Rajdhani-SemiBold.ttf" size 37 color room["color"]
+            text kd_tr(hovered_hint) font "fonts/Barlow-Light.ttf" size 23 color "#ECF6FC"
 
     frame:
         xalign 0.98
@@ -423,7 +423,7 @@ screen j701_investigation_evidence(clue_id):
             kerning 4
             xalign 0.5
 
-        text clue["title"]:
+        text kd_tr(clue["title"]):
             font "fonts/Rajdhani-SemiBold.ttf"
             size 76
             color "#FFFFFF"
@@ -431,7 +431,7 @@ screen j701_investigation_evidence(clue_id):
             xalign 0.5
             text_align 0.5
 
-        text clue["summary"]:
+        text kd_tr(clue["summary"]):
             font "fonts/Barlow-Light.ttf"
             size 29
             color "#E8F2F8"
@@ -492,8 +492,8 @@ screen j701_investigation_dossier():
                     xpos 105
                     yalign 0.5
                     spacing 1
-                    text clue["title"] font "fonts/Rajdhani-SemiBold.ttf" size 27 color "#FFFFFF"
-                    text clue["summary"] font "fonts/Barlow-Light.ttf" size 22 color "#B9CAD7"
+                    text kd_tr(clue["title"]) font "fonts/Rajdhani-SemiBold.ttf" size 27 color "#FFFFFF"
+                    text kd_tr(clue["summary"]) font "fonts/Barlow-Light.ttf" size 22 color "#B9CAD7"
 
     textbutton "REJOINDRE LE DÉBRIEF  >":
         xalign 0.5
@@ -536,6 +536,7 @@ label j701_investigation:
 
 
 label j701_clue_elias_testimony:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_13
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.28),
@@ -557,6 +558,7 @@ label j701_clue_elias_testimony:
 
 
 label j701_clue_foil_crane:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_14
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.14),
@@ -580,6 +582,7 @@ label j701_clue_foil_crane:
 
 
 label j701_clue_counterweight:
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_15
     scene bg_stockage at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.15),
@@ -603,6 +606,7 @@ label j701_clue_counterweight:
 
 
 label j701_clue_blank_receipt:
+    call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_16
     scene bg_stockage at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.28),
@@ -625,6 +629,7 @@ label j701_clue_blank_receipt:
 
 
 label j701_clue_brown_hair:
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_17
     scene bg_maintenance at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.28),
@@ -648,6 +653,7 @@ label j701_clue_brown_hair:
 
 
 label j701_clue_negative_blueprint:
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_18
     scene bg_maintenance at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.12),
@@ -673,6 +679,7 @@ label j701_clue_negative_blueprint:
 
 
 label j701_clue_kael_database:
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_19
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "doute", 0.28),
@@ -698,6 +705,7 @@ label j701_clue_kael_database:
 
 
 label j701_clue_maintenance_log:
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_20
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.12),
@@ -724,6 +732,7 @@ label j701_clue_maintenance_log:
 
 
 label j701_clue_vertical_tracks:
+    call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_21
     scene bg_sas at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.12),
@@ -746,6 +755,7 @@ label j701_clue_vertical_tracks:
 
 
 label j701_clue_impossible_echo:
+    call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_22
     scene bg_sas at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.12),
@@ -770,6 +780,7 @@ label j701_clue_impossible_echo:
 
 
 label j701_investigation_debrief:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_23
     scene bg_cafeteria at adaptive_fullscreen with fade
     play music "audio/music/bgm_unsaid_distance.mp3" fadein 1.5
 

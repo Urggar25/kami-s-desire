@@ -10,6 +10,7 @@ default decouverte_infirmerie = False
 
 
 label INFIRMERIE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_339
     scene bg_infirmerie at adaptive_fullscreen
 
     if not decouverte_infirmerie and day_number() == 1:
@@ -152,6 +153,7 @@ label decouverte_infirmerie:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_340
     scene bg_infirmerie at adaptive_fullscreen with fade
 
     "L’air est plus froid qu’ailleurs."

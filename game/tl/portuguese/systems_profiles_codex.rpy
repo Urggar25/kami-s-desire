@@ -4,53 +4,53 @@ translate portuguese strings:
 
     # game/systems_profiles_codex.rpy:446
     old "TERMINÉ"
-    new ""
+    new "CONCLUÍDO"
 
     # game/systems_profiles_codex.rpy:446
     old "TERMINÉS"
-    new ""
+    new "CONCLUÍDOS"
 
     # game/systems_profiles_codex.rpy:447
     old "DISPONIBLE"
-    new ""
+    new "DISPONÍVEL"
 
     # game/systems_profiles_codex.rpy:447
     old "DISPONIBLES"
-    new ""
+    new "DISPONÍVEIS"
 
     # game/systems_profiles_codex.rpy:540
     old "PRÉNOM"
-    new ""
+    new "NOME"
 
     # game/systems_profiles_codex.rpy:541
     old "ÂGE"
-    new ""
+    new "IDADE"
 
     # game/systems_profiles_codex.rpy:545
     old "TAILLE"
-    new ""
+    new "ALTURA"
 
     # game/systems_profiles_codex.rpy:546
     old "TOUR DE POITRINE"
-    new ""
+    new "TÓRAX"
 
     # game/systems_profiles_codex.rpy:550
     old "DISTRICT"
-    new ""
+    new "DISTRITO"
 
     # game/systems_profiles_codex.rpy:551
     old "ANNIVERSAIRE"
-    new ""
+    new "ANIVERSÁRIO"
 
     # game/systems_profiles_codex.rpy:568
     old "LIEN // TEMPS LIBRES"
-    new ""
+    new "VÍNCULO // TEMPO LIVRE"
 
     # game/systems_profiles_codex.rpy:580
     old "AUCUN TEMPS LIBRE ASSOCIÉ"
-    new ""
+    new "NENHUM EVENTO DE TEMPO LIVRE ASSOCIADO"
 
     # game/systems_profiles_codex.rpy:582
     old "TENUES & ACCESSOIRES"
-    new ""
+    new "TRAJES E ACESSÓRIOS"
 

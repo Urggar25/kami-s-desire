@@ -299,6 +299,7 @@ label _11_0_1_2_MINIJEU_7JOURS:
     $ j11012_mind_reset()
     $ _j11012_result = renpy.call_screen("j11012_7jours_mind_map")
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     think "Là, tout s'éclaire."

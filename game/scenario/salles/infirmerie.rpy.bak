@@ -10,6 +10,7 @@ default decouverte_infirmerie = False
 
 
 label INFIRMERIE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie")
     scene bg_infirmerie at adaptive_fullscreen
 
     if not decouverte_infirmerie and day_number() == 1:
@@ -36,15 +37,6 @@ screen pnc_infirmerie():
     add Solid("#000")
     use room_scene_background("infirmerie")
     use room_scene_interactions("infirmerie")
-
-    if social_free_time_active() and elen_link == 3:
-        imagebutton:
-            idle Transform(character_image("elen", "content"), zoom=1.00)
-            hover Transform(character_image("elen", "inquiet"), zoom=1.00)
-            focus_mask True
-            xalign 0.50
-            yalign 1.00
-            action [SetVariable("last_room_label", "INFIRMERIE_TP"), Jump("ELEN_LINK_INTERACT")]
 
 
 label infirmerie1_porte_couloir_infirmerie:
@@ -161,6 +153,7 @@ label decouverte_infirmerie:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie")
     scene bg_infirmerie at adaptive_fullscreen with fade
 
     "L’air est plus froid qu’ailleurs."
@@ -215,6 +208,7 @@ label decouverte_infirmerie:
     "Elle pointe du doigt l'un des casiers."
     "Une étiquette se trouve à côté de la poignée."
     "Sael"
+    $ unlock_character_name("sael")
     
     
     sael taquin "Et là il y a le tiens."

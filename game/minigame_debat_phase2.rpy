@@ -954,6 +954,7 @@ label debat_phase2_bad_ending_tout_et_rien_dire:
     $ debat_phase2_dialogues_active = []
     stop music fadeout 0.8
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR
     scene bg_conclave at adaptive_fullscreen with dissolve
     play sound "audio/sfx_kami_alert.wav"
 

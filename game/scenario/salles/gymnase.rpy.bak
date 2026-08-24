@@ -10,6 +10,7 @@ default decouverte_gymnase = False
 
 
 label GYMNASE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase")
     scene bg_gymnase at adaptive_fullscreen
 
     if not decouverte_gymnase and day_number() == 1:
@@ -37,22 +38,22 @@ screen pnc_gymnase():
     use room_scene_background("gymnase")
     use room_scene_interactions("gymnase")
 
-    if social_free_time_active() and ryn_link in [0, 1, 2, 3, 4]:
+    if social_free_time_active() and character_has_available_free_time("ryn"):
         imagebutton:
             idle Transform(character_image("ryn", "determine"), zoom=1.00)
             hover Transform(character_image("ryn", "neutre"), zoom=1.00)
             focus_mask True
             xalign 0.20
             yalign 1.00
-            action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("RYN_LINK_INTERACT")]
-    if social_free_time_active() and elias_link in [0, 2, 4]:
+            action [SetVariable("last_room_label", "GYMNASE_TP"), SetVariable("free_time_selected_character", "ryn"), Jump("FREE_TIME_CHARACTER_INTERACT")]
+    if social_free_time_active() and character_has_available_free_time("elias"):
         imagebutton:
             idle Transform(character_image("elias", "neutre"), zoom=1.00)
             hover Transform(character_image("elias", "reflechit"), zoom=1.00)
             focus_mask True
             xalign 0.90
             yalign 1.00
-            action [SetVariable("last_room_label", "GYMNASE_TP"), Jump("ELIAS_LINK_INTERACT")]
+            action [SetVariable("last_room_label", "GYMNASE_TP"), SetVariable("free_time_selected_character", "elias"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
 
 label gymnase1_douche:
@@ -161,6 +162,7 @@ label decouverte_gymnase:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase")
     scene bg_gymnase at adaptive_fullscreen with fade
 
     "Ça sent le caoutchouc."
@@ -227,6 +229,7 @@ label decouverte_gymnase:
     "Il hoche la tête, comme si ça validait une info dans sa tête."
 
     elias neutre "Elias."
+    $ unlock_character_name("elias")
     elias neutre "AXIOME. Quartier bas."
 
     noam surpris "AXIOME…"

@@ -2,6 +2,7 @@ default dortoir_lock = True
 
 
 label DORTOIR_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_334
     scene bg_dortoir at adaptive_fullscreen
 
     if current_scene_active in ("_2_ROUTE_CAFETERIA", "_3_ROUTE_CAFETERIA"):
@@ -22,6 +23,7 @@ label DORTOIR_TP:
 
 
 label CHAMBRE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_335
     scene bg_chambre at adaptive_fullscreen
 
     if current_scene_active in ("_2_ROUTE_CAFETERIA", "_3_ROUTE_CAFETERIA"):
@@ -101,6 +103,7 @@ screen pnc_dortoir():
 
 
 label _2_ROUTE_CAFETERIA_NYRA:
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_336
     scene bg_dortoir at adaptive_fullscreen
     $ day2_cafeteria_route_nyra_seen = True
 
@@ -131,6 +134,7 @@ screen pnc_chambre():
 
 
 label DORTOIR_ENTER_CHAMBRE:
+    $ scripted_room_current = "chambre"
     call PLAY_DOOR_OPEN(door_room_background("chambre")) from _call_PLAY_DOOR_OPEN_3
     jump CHAMBRE_TP
 

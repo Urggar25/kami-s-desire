@@ -227,7 +227,7 @@ init -5 python:
 
                 if self.combo > 0 and self.combo % 5 == 0 and self.level < 5:
                     self.level += 1
-                    self._set_feedback("ACCÉLÉRATION  •  MULTIPLICATEUR x%.2f" % self.speed_multiplier, "#FFD166")
+                    self._set_feedback(kd_tr("ACCÉLÉRATION  •  MULTIPLICATEUR x%.2f") % self.speed_multiplier, "#FFD166")
                     renpy.play("audio/sfx_announce.mp3", channel="sound")
             else:
                 self.wrong += 1
@@ -442,7 +442,7 @@ screen rangement_game(game):
         $ _cfg = RANGEMENT_CATEGORIES[_cat]
         add Solid(_cfg["color"] + "22") xpos (_cfg["x"] + 20) ypos 650 xsize 290 ysize 142 at rangement_drop_glow
         add _cfg["crate"] xpos _cfg["x"] ypos 690 at rangement_crate_idle
-        text _cfg["short"]:
+        text kd_tr(_cfg["short"]):
             xpos (_cfg["x"] + 165)
             ypos 926
             xanchor 0.5
@@ -483,13 +483,13 @@ screen rangement_game(game):
                 text "[game.missed]" size 20 color "#D7E2E7" bold True
             add Solid("#31D9E833", xsize=374, ysize=2)
             text "PROCHAINE ACCÉLÉRATION" size 18 color "#FFD166" bold True
-            text ("%d / 5 tris" % (game.combo % 5)) size 25 color "#FFFFFF"
+            text (kd_tr("%d / 5 tris") % (game.combo % 5)) size 25 color "#FFFFFF"
             fixed:
                 xsize 374 ysize 12
                 add Solid("#2C2517")
                 add Solid("#FFD166") xsize int(374 * (game.combo % 5) / 5.0)
             null height 14
-            textbutton ("REPRENDRE" if game.paused else "PAUSE"):
+            textbutton kd_tr("REPRENDRE" if game.paused else "PAUSE"):
                 xsize 250 ysize 54
                 xalign 0.5
                 background Solid("#153547E8")
@@ -500,7 +500,7 @@ screen rangement_game(game):
                 action Function(game.toggle_pause)
 
     if game.feedback and game.feedback_age < 1.35:
-        text game.feedback:
+        text kd_tr(game.feedback):
             xpos 720 ypos 222 xanchor 0.5
             size 31 color game.feedback_color bold True
             outlines [(3, "#02060A", 0, 1)]
@@ -544,17 +544,17 @@ label rangement_play:
     $ rangement_last_score = _rangement_result["score"]
     $ _rangement_rank_score = max(0, min(25, _rangement_result["score"]))
     $ _rangement_stats = [
-        ("Points bruts", str(_rangement_result["points"])),
-        ("Multiplicateur final", "x%.2f" % _rangement_result["multiplier"]),
-        ("Score final", str(_rangement_result["score"])),
-        ("Tris corrects", str(_rangement_result["correct"])),
-        ("Erreurs", str(_rangement_result["wrong"])),
-        ("Meilleure série", "x%d" % _rangement_result["best_combo"]),
+        (_("Points bruts"), str(_rangement_result["points"])),
+        (_("Multiplicateur final"), "x%.2f" % _rangement_result["multiplier"]),
+        (_("Score final"), str(_rangement_result["score"])),
+        (_("Tris corrects"), str(_rangement_result["correct"])),
+        (_("Erreurs"), str(_rangement_result["wrong"])),
+        (_("Meilleure série"), "x%d" % _rangement_result["best_combo"]),
     ]
     $ _rangement_challenges = [
-        ("Aucune erreur", _rangement_result["wrong"] == 0),
-        ("Atteindre la cadence x1.42", _rangement_result["level"] >= 3),
+        (_("Aucune erreur"), _rangement_result["wrong"] == 0),
+        (_("Atteindre la cadence x1.42"), _rangement_result["level"] >= 3),
     ]
-    call mk_show_results("TRI DES LIVRAISONS", _rangement_rank_score, 25, stats=_rangement_stats, challenges=_rangement_challenges, mg_id="rangement", retries=0) from _call_rangement_results
+    call mk_show_results(_("TRI DES LIVRAISONS"), _rangement_rank_score, 25, stats=_rangement_stats, challenges=_rangement_challenges, mg_id="rangement", retries=0) from _call_rangement_results
     $ rangement_last_rank = _return
     return _rangement_result

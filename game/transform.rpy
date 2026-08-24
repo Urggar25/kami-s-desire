@@ -22,9 +22,9 @@ transform char_group_enter(xpos, ypos=1.0):
     xalign xpos
     yalign ypos
     alpha 0.0
-    zoom 0.985
-    yoffset 34
-    easeout 0.5 alpha 1.0 zoom 1.0 yoffset 0
+    zoom 1.0
+    yoffset 0
+    linear 0.5 alpha 1.0
 
 transform char_group_exit(xpos, ypos=1.0):
     subpixel True
@@ -33,7 +33,7 @@ transform char_group_exit(xpos, ypos=1.0):
     alpha 1.0
     zoom 1.0
     yoffset 0
-    easein 0.22 alpha 0.0 zoom 0.985 yoffset 28
+    linear 0.5 alpha 0.0
 
 
 transform char_group_place(xpos, ypos=1.0):
@@ -89,7 +89,7 @@ init python:
             renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, old_y)], layer=old_layer)
 
         if any(tag not in next_tags for tag in old_tags):
-            renpy.pause(0.24, hard=True)
+            renpy.pause(0.5, hard=True)
             for tag in old_tags:
                 if tag not in next_tags:
                     old_layer = store.char_state.get(tag, {}).get("layer", layer)
@@ -100,9 +100,10 @@ init python:
         for idx, (tag, expr, x) in enumerate(normalized):
             store.char_pos[tag] = x
             store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder)
-            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_place(x, y)], layer=layer, zorder=zorder + idx)
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_enter(x, y)], layer=layer, zorder=zorder + idx)
 
-        renpy.with_statement(Dissolve(0.5))
+        if normalized:
+            renpy.pause(0.5, hard=True)
         store.group_members = next_tags
 
     def hideGroup():
@@ -112,10 +113,15 @@ init python:
             state = store.char_state.get(tag, {})
             layer = state.get("layer", "master")
             if renpy.showing(tag, layer=layer):
-                renpy.hide(tag, layer=layer)
+                x = state.get("x", store.char_pos.get(tag, 0.5))
+                y = state.get("y", 1.0)
+                expr = state.get("expr", "neutre")
+                renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, y)], layer=layer)
         if members:
-            renpy.with_statement(Dissolve(1.0))
+            renpy.pause(0.5, hard=True)
         for tag in members:
+            layer = store.char_state.get(tag, {}).get("layer", "master")
+            renpy.hide(tag, layer=layer)
             store.char_pos.pop(tag, None)
             store.char_state.pop(tag, None)
         store.group_members = []
@@ -336,7 +342,8 @@ label show_custom_title(title_text="Temps libre"):
 
     play sound "audio/sfx_kami_alert.wav"
     scene black
-    show expression Text(title_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as custom_title_card at truecenter
+    $ translated_title_text = kd_tr(title_text)
+    show expression Text(translated_title_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as custom_title_card at truecenter
     pause 5.0
     hide custom_title_card
     return

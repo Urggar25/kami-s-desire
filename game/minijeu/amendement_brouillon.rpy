@@ -697,6 +697,7 @@ label amendement_brouillon_play:
     call amend_reflection("Je plie la feuille en deux. De travers, évidemment.") from _call_amend_reflection_17
 
     hide screen amend_board
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_12
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     # --- variables de sortie (compatibilité scénario) ---

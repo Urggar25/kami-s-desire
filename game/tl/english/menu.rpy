@@ -32,17 +32,17 @@ translate english strings:
 
     # game/menu.rpy:338
     old "Boutique"
-    new ""
+    new "Shop"
 
     # game/menu.rpy:339
     old "Évènement"
-    new ""
+    new "Event"
 
     # game/menu.rpy:704
     old "SPORT"
-    new ""
+    new "SPORT"
 
     # game/menu.rpy:767
     old "TOUS"
-    new ""
+    new "ALL"
 

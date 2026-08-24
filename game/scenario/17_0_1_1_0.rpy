@@ -1,4 +1,5 @@
 label _17_0_1_1_0_ANNONCE_KAMI:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_102
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
@@ -39,6 +40,7 @@ label _17_0_1_1_0_ANNONCE_KAMI:
     jump _17_0_1_1_0_COUULOIR_REACTIONS
 
 label _17_0_1_1_0_COUULOIR_REACTIONS:
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_103
     scene bg_couloir at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "fatigue", 0.12), ("mara", "agace", 0.31), ("tomas", "inquiet", 0.50), ("kael", "mefiant", 0.69), ("sael", "neutre", 0.86)])
     mara colere "Annules. Comme ca. Elle annonce ca avant le petit-dejeuner."
@@ -92,6 +94,7 @@ label _17_0_1_1_0_COUULOIR_REACTIONS:
     jump _17_0_1_1_0_CAFETERIA
 
 label _17_0_1_1_0_CAFETERIA:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_104
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_careful_wanting.mp3" fadein 1.5
     $ showGroup([("noam", "reflexion", 0.18), ("mara", "stress", 0.42), ("tomas", "reflechit", 0.66)])
@@ -157,6 +160,7 @@ label _17_0_1_1_0_CAFETERIA:
     jump _17_0_1_1_0_GRATTEMENTS
 
 label _17_0_1_1_0_GRATTEMENTS:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_105
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
     "Vingt et une heures cinquante-sept. Je suis assis sur le lit, chaussures aux pieds."

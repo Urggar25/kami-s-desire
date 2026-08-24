@@ -10,6 +10,7 @@ default decouverte_sas = False
 
 
 label LIVRAISON_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_348
     scene bg_sas at adaptive_fullscreen
 
     if not decouverte_sas and day_number() == 1:
@@ -174,6 +175,7 @@ label decouverte_sas:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_349
     scene bg_sas at adaptive_fullscreen with fade
 
     "La pièce est vaste, froide, presque clinique."

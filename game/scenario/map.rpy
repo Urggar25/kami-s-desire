@@ -5,6 +5,7 @@
 default corridor_current = "dortoir"
 default corridor_ui_target = None
 default current_scene_active = None
+default scripted_room_current = None
 
 init python:
     CORRIDOR_FOR_ROOM = {
@@ -399,6 +400,7 @@ label CORRIDOR_NAVIGATION(start_corridor=None):
 
     $ _corridor_room = _corridor_action[1]
     $ corridor_current = corridor_for_room(_corridor_room)
+    $ scripted_room_current = _corridor_room
     call PLAY_DOOR_OPEN(door_room_background(_corridor_room)) from _call_PLAY_DOOR_OPEN
     return _corridor_room
 
@@ -427,7 +429,18 @@ label PLAY_DOOR_OPEN(next_background=None):
     return
 
 
+label MAYBE_PLAY_SCRIPTED_DOOR(room_key, next_background_name):
+    # Les scripts passent par ce point avant d'afficher un décor de salle.
+    # Un rafraîchissement dans la même salle ne rejoue pas la porte.
+    if scripted_room_current is not None and scripted_room_current != room_key:
+        call PLAY_DOOR_OPEN(renpy.displayable(next_background_name)) from _call_PLAY_DOOR_OPEN_4
+
+    $ scripted_room_current = room_key
+    return
+
+
 label EXIT_ROOM_TO_CORRIDOR:
+    $ scripted_room_current = "couloir_" + corridor_current
     call PLAY_DOOR_OPEN(door_corridor_background(corridor_current)) from _call_PLAY_DOOR_OPEN_1
 
     if exploration_libre_active or social_free_time_active():

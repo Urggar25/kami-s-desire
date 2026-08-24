@@ -11,9 +11,11 @@ transform j601_sael_vote_strip:
 
 label _6_0_1_REVEIL_CHAMBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 6
+    $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
     $ cafeteria_food_level = "low"
 
@@ -81,6 +83,7 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     kami "Les jouets se cassent toujours plus vite une fois qu'on commence à jouer sérieusement avec eux."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
@@ -128,6 +131,7 @@ label _6_0_1_REVEIL_CHAMBRE:
 
 label _6_0_1_CAFETERIA:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
@@ -209,6 +213,7 @@ label _6_0_1_CAFETERIA:
 
 label _6_0_1_TEMPS_LIBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir")
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ current_period = "Fin de matinée"
 
@@ -262,6 +267,7 @@ label _6_0_1_TV_FRONTIERES:
 
 label _6_0_1_TRANSITION_CONCLAVE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir")
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -306,6 +312,7 @@ label _6_0_1_TRANSITION_CONCLAVE:
     kami "Le vote peut commencer plus tôt."
     kami "Immédiatement, même. Ça m'arrange beaucoup."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir")
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.5
@@ -357,6 +364,7 @@ label _6_0_1_TRANSITION_CONCLAVE:
 
 label _6_0_1_CONCLAVE_START:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.5
 
@@ -484,6 +492,7 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     think "Son image saute en boucle."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with vpunch
 
     $ showGroup([("iris", "inquiet", 0.3), ("ryn", "colere", 0.6), ("lysa", "blase", 0.85)])
@@ -543,6 +552,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     think "Ou elle fait semblant."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
@@ -579,6 +589,7 @@ label _6_0_1_FRACTURE_QTE:
     kami "Le débat est clos."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
@@ -671,6 +682,7 @@ label _6_0_1_FRACTURE_QTE:
     play sound "sfx/glitch_light.mp3"
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
@@ -772,6 +784,7 @@ label _6_0_1_VOTE:
 
     $ amendement_passe = False
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -795,6 +808,7 @@ label _6_0_1_VOTE:
     kami "Prévis—ble. Décevant. Mais prévisible."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave")
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -847,6 +861,7 @@ label _6_0_1_VOTE:
 
 label _6_0_1_FIN_JOURNEE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir")
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -880,6 +895,7 @@ label _6_0_1_FIN_JOURNEE:
 
     kael "Navré hein, mais ça ça sera pas demain la veille."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir")
     scene bg_dortoir at adaptive_fullscreen with dissolve
 
     $ showGroup([("julian", "decu", 0.25), ("elias", "fatigue", 0.55), ("ryn", "colere", 0.85)])
@@ -898,6 +914,7 @@ label _6_0_1_FIN_JOURNEE:
     noam colere "Bon j'ai pas de temps pour vos chamailleries."
     noam triste "Bonne nuit, et faites moins de bruit."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre")
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
@@ -935,15 +952,16 @@ label _6_0_1_FIN_JOURNEE:
 
     $ blink()
 
+    $ kami_grant_chapter_2_reward()
 
-    call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent")
+    call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_3
 
     pause 1.0
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("7") from _call_end_day_10
-    #jump _7_0_1_REVEIL_CHAMBRE
+    call end_day("7") from _call_end_day_10
+    jump _7_0_1_REVEIL_CHAMBRE
 
 # total : 8m
-# Total jour 0-5 : 1h49
+# Total jour 0-6 : 1h49

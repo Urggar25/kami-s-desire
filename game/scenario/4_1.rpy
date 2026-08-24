@@ -1,71 +1,55 @@
 label _4_1_REVEIL_CHAMBRE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_206
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
     $ current_day = 4
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
 
-    pause 1.2
+    $ showGroup([("noam", "inquiet", 0.50)])
 
     $ blink()
-    "Je me réveille sous la lumière bleue des veilleuses."
+    think "Je me réveille avant l'annonce de Kami. La lumière des veilleuses est encore allumée."
     $ blink()
-    think "Hier, douze doigts ont choisi le vert. Maintenant, c'est réel."
-    think "On a changé les choses. Reste à savoir pour qui."
-
-    $ blink()
-    think "Mon cœur va trop vite. La nuit n'a rien calmé."
-    think "On a supprimé les bons. Coupé une dépendance à Kami."
-    think "Est-ce qu'on a aussi coupé le filet qui retenait les plus fragiles ?"
-
-    $ blink()
-    think "Limen n'a ni champs, ni outils, ni réserve. Les riches, eux, avaient déjà tout."
-
-    think "Julian levait le poing. Ryn frappait la table. Kael baissait la tête. Moi, j'étais au milieu. Presque silencieux."
-    think "J'ai voté, puis laissé les autres porter les mots."
-    think "Si le marché ne sauve que ceux qui peuvent acheter, mon vote aura juste donné un nouveau nom à la faim."
-
-    pause 2.0
-
-    think "Sur la table, la famille d'un ami sourit encore depuis une photo."
-    think "Je me demande s'ils sourient encore ce matin."
+    think "Hier, nous avons tous voté pour rétablir le commerce. Pour la première fois, un amendement a été adopté."
+    think "Sur le moment, j'étais surtout soulagé. On avait enfin réussi à changer quelque chose."
+    think "Maintenant que je suis seul, je repense surtout à ce que le texte a supprimé avec les bons de rationnement."
+    think "À Nexus ou à Orbite, les échanges devraient reprendre rapidement. À Limen, beaucoup de gens n'ont rien à vendre et presque rien à acheter."
+    think "Si le nouveau système ne profite qu'à ceux qui avaient déjà des ressources, notre victoire risque de ne pas en être une pour tout le monde."
 
     play sound sfx_announce
-    "Un bip aigu retentit ; l'écran mural s'allume."
-    pause 1.0
+    "L'écran mural s'allume dans un bip aigu."
 
+    $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "8 heures pile, mes petits pionniers du chaos !"
-    kami "Levez-vous, la révolution n'attend pas !"
+    kami "Huit heures pile, mes petits pionniers du chaos ! Debout, la révolution n'attend pas !"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Petit point matinal, puisque vous adorez qu'on vous mette le nez dans les conséquences :"
-    kami "Nexus et Orbite se régalent déjà. Marchés improvisés, trocs qui fleurissent, pièces artisanales qui tintent."
-    kami "Pendant ce temps à Limen… disons que les files d’attente sont plus longues que vos listes de regrets."
-    kami "Quelques trocs sauvages, quelques poings serrés, quelques ventres qui crient."
-    kami "Et à Orbite ? Une petite alarme hier soir. Rien de grave… pour l’instant."
-    kami "Alors, champions du changement : toujours fiers de votre gros bouton vert ?"
-    kami "Ou est-ce que la victoire commence à laisser un petit arrière-goût ?"
+    kami "Petit point matinal, puisque vous adorez qu'on vous mette le nez dans les conséquences de vos décisions."
+    kami "À Nexus et Orbite, les premiers marchés improvisés sont déjà ouverts. Les objets circulent et de nouvelles monnaies locales apparaissent !"
+    kami "Pendant ce temps, à Limen... Disons que les files d'attente sont plus longues que votre liste de regrets."
+    kami "Quelques trocs sauvages, quelques bagarres et beaucoup de gens qui découvrent qu'une liberté ne remplit pas automatiquement un estomac."
+    kami "Alors, mes champions du changement, toujours aussi fiers d'avoir appuyé sur le gros bouton vert ?"
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais oh ! Pourquoi je vous spoile ?!"
-    kami "Vous aurez l'occasion de voir tout ça EN PERSONNE à la cafétéria !"
+    kami "Mais pourquoi est-ce que je vous raconte tout ? Les écrans de la cafétéria vous montreront les résultats en direct !"
+    kami "Allez donc admirer votre toute première victoire. Vous l'avez bien mérité !"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_207
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
-    think "L'écran s'éteint. Mes mains tremblent encore."
-    think "On a ouvert la porte. Elle, au moins, sait déjà ce qui va en sortir."
+    $ showGroup([("noam", "inquiet", 0.50)])
 
-    pause 1.5
+    think "L'écran s'éteint. Kami a évidemment choisi les images qui nous feront le plus douter, mais elle n'a probablement pas eu besoin d'inventer les files de Limen."
 
     play sound sfx_drop
-    "Un cri étouffé traverse le couloir, suivi d'un choc contre une porte. Puis le silence."
-    think "Je ne sais pas si ça a déjà commencé. Je sais seulement que ça ne s'arrêtera pas là."
+    "Un bruit sourd traverse le couloir, suivi d'une voix étouffée. Quelqu'un vient certainement de se lever trop vite."
+    think "Je devrais aller voir les résultats moi-même avant de commencer à regretter sur la seule parole de Kami."
 
     jump _4_1_CAFETERIA_ECRANS
 
@@ -74,21 +58,9 @@ label _4_1_REVEIL_CHAMBRE:
 
 label _4_1_CAFETERIA_ECRANS:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_208
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
-
-    pause 1.0
-
-    "J’entre dans la cafétéria. L’air est chargé : rations réchauffées, métal chaud, tension palpable."
-    think "Tout le monde est déjà là, rivé aux écrans."
-
-    think "Je prends une ration au hasard. Pas faim. Juste besoin de faire semblant."
-
-    "Les images défilent en boucle, commentées par une voix synthétique neutre :"
-
-    "Nexus : premiers marchés locaux ouverts. Échanges fluides. Pièces artisanales acceptées."
-    "Orbite : exportations en hausse. Demande forte pour les outils et les filtres."
-    "Limen : files d’attente devant les anciens points de distribution. Premiers signes de troc sauvage."
 
     $ showGroup([
         ("lysa", "determine"),
@@ -103,67 +75,63 @@ label _4_1_CAFETERIA_ECRANS:
         ("noam", "raison"),
         ("sael", "mefiant"),
     ])
-    lysa "Regardez : ils s'organisent. Même sans Prométhée, Limen a trouvé le troc. C'est presque encourageant."
 
-    kael "Orbite tient. Pas d'alarme critique. Pas de laser. Stabilité supérieure à mes prévisions."
+    think "La plupart des représentants sont déjà installés devant les écrans. Je prends une ration et m'assieds avec eux."
+    "Une voix synthétique accompagne les images qui défilent : premiers marchés ouverts à Nexus, hausse des exportations à Orbite, files persistantes à Limen."
 
-    ryn "Stable pour vous, peut-être."
-    ryn "À Limen, ils commencent à se battre pour un sac de patates. C’est ça votre stabilité ?"
+    lysa reflechit "Les gens commencent déjà à s'organiser. Même à Limen, certains ont mis en place des systèmes de troc."
 
-    julian "Ce n'est que le début. Les échanges existent déjà ; imaginez ce que nous pouvons bâtir en les organisant."
-    julian rire "Et, détail non négligeable, Limen a donc trouvé des patates."
+    kael calme "À Orbite, les exportations augmentent plus vite que prévu. Les outils et les filtres partent en premier."
 
-    mara "Des marchés, des marchandises, des gens qui choisissent enfin. J'allais finir par séduire le distributeur pour obtenir du café."
+    ryn colere "Évidemment que ça fonctionne chez vous ! À Limen, ils commencent à se battre pour un sac de nourriture."
+    ryn colere "Regardez la file devant l'ancien centre ! Ils attendent encore des rations qui n'arriveront plus !"
 
-    tomas "Euh… les rapports montrent que les prix sont déjà en train de fluctuer."
-    tomas "À Nexus, certains produits ont doublé en valeur en 24 heures."
-    tomas "C’est… c’est pas forcément mauvais, hein ?"
+    julian detendu "Le système vient à peine de changer. Il faut laisser aux gens le temps de créer de nouveaux échanges."
+    julian sourire "On ne peut pas demander un changement mondial et lui reprocher de ne pas être terminé avant le petit-déjeuner."
 
-    elen "C'est le début, c'est normal ! Et puis c'est gééénial : les gens vont enfin choisir !"
-    elen "Des épices, des vêtements neufs, des trucs qui sentent bon… Oh ! Peut-être du vrai chocolat !"
+    mara taquin "Pour une fois, je suis plutôt d'accord avec lui. Profitez-en, ça n'arrivera probablement pas souvent."
+    mara neutre "Mais Ryn a raison sur un point : ceux qui n'ont rien à échanger vont prendre cher en premier."
 
-    iris "Choisir avec quoi ? L'air de leurs poches ? Les pauvres regarderont les rayons pleins depuis dehors. Magnifique progrès."
+    tomas hesitation "Les prix bougent déjà beaucoup. À Nexus, certains produits ont presque doublé de valeur depuis hier."
+    tomas reflechit "Ce n'est pas forcément durable, mais... Enfin, on manque encore de données."
 
-    nyra "Les gens veulent échanger, ici comme ailleurs. Le vote leur a donné l'espace."
-    nyra "Maintenant, qu'est-ce qui leur manque ? Des règles claires, pour que la liberté ne profite pas seulement aux mieux armés."
+    elen joie "C'est normal que ce soit un peu le bazar au début ! Les gens vont pouvoir vendre ce qu'ils fabriquent et choisir ce qu'ils veulent acheter."
+    elen content "Avec un peu de chance, on pourra même retrouver du vrai chocolat ! Pas les barres qui ont juste la bonne couleur."
 
-    noam "Ce que j’entends, c’est que... les repères ont disparu."
-    noam "Il me semble qu’on a enlevé quelque chose sans vraiment prévoir ce qui prendrait la place."
-    noam "Les gens s’organisent. Certains. Pas partout."
+    iris desaccord "Choisir avec quel argent ? Ceux qui n'ont rien regarderont les autres acheter depuis le bout de la file."
+    iris colere "On savait que supprimer les rations ferait ça. On a quand même voté pour."
 
-    sael "…"
-    sael "Ils s'organisent déjà. Les vivants trouvent toujours un chemin quand on retire l'ancien."
-    sael "La question est de savoir combien de morts le baliseront."
+    nyra raison "Alors il faut regarder ce qui manque au nouveau système au lieu de prétendre qu'il fonctionne déjà parfaitement."
+    nyra reflechit "Sans règles communes, les premiers marchés profiteront forcément à ceux qui possèdent déjà le plus."
 
-    think "Visages fatigués à Limen. Sourires crispés à Nexus. Ma ration reste intacte."
-    think "Certains n'ont rien à manger ce matin."
+    noam reflexion "On a remplacé les bons du jour au lendemain. Les gens n'ont même pas eu le temps de comprendre avec quoi ils allaient payer."
+    noam inquiet "Ça ne veut pas dire qu'on a forcément eu tort. Mais on aurait dû mieux prévoir la transition."
 
+    sael mefiant "À Limen, les gens ont toujours échangé entre eux. Ils continueront."
+    sael triste "Ceux qui n'ont plus rien dépendront seulement de voisins qui n'ont presque rien non plus."
 
-    think "Lysa me vise du coin de l'œil. Je connais déjà la question."
+    think "Sur l'écran, un homme quitte la file de Limen avec les mains vides. Ma ration est encore intacte devant moi."
+
+    think "Lysa détourne enfin les yeux de l'écran pour me regarder."
     lysa determine "Tu regrettes déjà ?"
-    lysa "Ce n'est pas toi qui voulait qu'on se batte pour faire changer les choses ?"
+    lysa reflechit "Ce n'est pas toi qui voulais qu'on se batte pour changer les choses ?"
     lysa sourire "Au moins, là, on a réussi."
 
-    noam "Tu veux savoir si je regrette. Enfin… je ne sais pas encore quel prix donner à la réponse."
+    noam hesitation "Je ne sais pas encore. J'aimerais seulement que notre victoire ne condamne pas ceux qu'on voulait aider."
 
-
-    think "Chacun regarde les écrans comme un accident dont nous aurions signé l'autorisation."
-    think "On a gagné hier. Ce matin, la facture commence à circuler."
-
+    think "Personne ne célèbre plus vraiment le résultat d'hier. Nous continuons seulement de regarder ce qu'il produit."
 
     jump _4_1_TEMPS_LIBRE_1
-
-    return
 
 # Durée : 1m20
 # Total : 1h 56m 55s
 
 label _4_1_TEMPS_LIBRE_1:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_209
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
 
-    think "Quelques heures avant le prochain rassemblement. De quoi éviter une décision importante."
-    think "Je ne sais pas encore quoi faire."
+    think "Il reste encore plusieurs heures avant que Kami nous annonce la suite. Je devrais profiter de ce moment pour penser à autre chose."
 
     call START_FREE_TIME("_4_1_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_4_1
 
@@ -171,40 +139,40 @@ label _4_1_TEMPS_LIBRE_1:
 # Total : 1h 58m 0s
 
 label _4_1_RETOUR_CONCLAVE_ANALYSE:
+    $ current_period = "Après-midi"
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_210
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_phase3.mp3" fadein 1.8
 
-    pause 1.2
+    $ showGroup([("noam", "neutre", 0.50)])
 
-    think "L'après-midi traîne encore quand l'alarme tranche le couloir."
+    think "Je viens à peine de quitter mon temps libre lorsque l'alarme retentit dans le couloir."
 
     play sound sfx_announce
-    pause 1.0
 
+    $ hideGroup()
     stop music fadeout 1.0
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Attention, attention, mes petits représentants adorés !"
-    kami "Rassemblement immédiat dans la salle principale."
+    kami "Attention, mes petits représentants adorés ! Rassemblement immédiat dans la salle principale."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "On a du pain sur la planche. Il faut qu'on prépare le prochain vote !"
-    kami "Bougez-vous, nos téléspectateurs ne vont pas attendre vos siestes digestives."
+    kami "Il est temps de préparer le prochain vote. Alors dépêchez-vous, nos téléspectateurs ne vont pas attendre la fin de vos siestes digestives !"
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_211
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
-    "L'écran s'éteint. Nous gagnons la salle au compte-gouttes."
+    $ showGroup([("noam", "fatigue", 0.50)])
 
+    think "Je prends la direction du Conclave. Les autres sortent peu à peu de leurs chambres et me rejoignent dans le couloir."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_212
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.0
-
-    pause 1.5
-
-    think "Julian arrive le premier — évidemment. Ryn suit, poings serrés ; Elen est nerveuse, Mara déjà amusée."
 
     $ showGroup([
         ("julian", "determine"),
@@ -219,52 +187,51 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
         ("lysa", "blase"),
         ("sael", "mefiant"),
     ])
-    julian "Nous sommes tous là ? Alors avançons. Le changement n'attend pas ceux qui le regrettent."
 
-    ryn "Finir quoi ? Encore un vote pour tous nous faire crever ?"
+    think "Nous sommes presque tous installés lorsque Julian vérifie une dernière fois les sièges."
 
-    elen "C'est peut-être une bonne nouvelle, non ? On a déjà gagné une fois ! Enfin… gagné-gagné, je sais pas, mais gagné !"
+    julian determine "Nous sommes au complet. Autant commencer dès que Kami daignera se montrer."
 
-    mara "Gagné ? On a ouvert la boîte de Pandore et maintenant on admire l'emballage. Nuance."
+    ryn colere "Tu es vraiment pressé de découvrir la prochaine façon de foutre le bordel ?"
 
-    tomas "Euh… je crois qu’on devrait écouter Kami d’abord…"
-    tomas "Avant de paniquer… Enfin, on sait pas ce qui va être annoncé…"
+    elen inquiet "Ça peut être une bonne proposition aussi ! On a réussi une fois, alors peut-être que la suivante sera encore mieux."
 
-    iris "Paniquer ? Non, surtout pas. Regardons Limen s'enfoncer avec une organisation exemplaire."
+    mara agace "Regarde les écrans de Limen et répète-moi qu'on a réussi. J'ai besoin de rire."
 
-    kael "Et Orbite… si la chaîne logistique casse…"
-    kael "Non. Pas assez de données."
+    tomas hesitation "On ne sait même pas ce qu'elle va annoncer. On devrait peut-être attendre avant de recommencer à se disputer."
 
-    nyra "Tout le monde veut savoir ce qui vient. Alors pourquoi nous faire attendre ?"
+    iris desaccord "Pour une fois, je suis d'accord avec Tomas. Vous pourrez vous étrangler après avoir lu le sujet."
 
-    noam "On attend Kami. Enfin… je ne vois pas ce qu'on pourrait faire d'autre."
+    kael reflechit "Les conséquences du dernier vote ne sont même pas encore stabilisées. C'est beaucoup trop tôt pour décider autre chose."
 
-    lysa "Trois jours avant le vote. Ulysse a connu des traversées moins longues, et avec moins de discours inutiles."
+    nyra raison "Nous aurons trois jours pour le faire. Pour le moment, il faut seulement écouter."
 
-    sael "…"
-    sael "Le silence a changé depuis ce matin. Quelque chose arrive avec lui."
+    noam neutre "Enfin une proposition raisonnable. Attendons au moins que Kami nous donne une raison de paniquer."
 
-    think "Personne ne répond au pressentiment de Sael. Mauvais signe."
+    lysa blase "Elle ne devrait plus tarder. Elle aime beaucoup trop les entrées dramatiques pour nous laisser commencer sans elle."
+
+    sael mefiant "Elle est déjà là."
+
+    think "Sael fixe l'écran central. Une seconde plus tard, il s'allume."
 
     play sound sfx_announce
-    pause 1.0
 
+    $ hideGroup()
     stop music fadeout 1.0
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Bon, maintenant que vous êtes tous là, on peut commencer."
-    kami "Prochain vote, mes chéris :"
-    kami "Ahhh !! Roulement de tambour !"
+    kami "Maintenant que tout le monde est enfin installé, nous pouvons annoncer le prochain vote !"
+    kami "Et cette fois, j'ai choisi quelque chose de parfaitement simple. Roulement de tambour !"
 
     play sound sfx_tambour
-    pause 2.0
+    pause 1.5
 
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
     kami "Autoriser les déplacements de personnes entre les districts ?"
-    kami "Si vous votez pour, les personnes pourront voyager d'un district à l'autre."
-    kami "Si vous votez contre, on garde la même chose qu'aujourd'hui."
+    kami "Un vote pour permettra à chacun de franchir librement les frontières. Un vote contre conservera les restrictions actuelles."
+    $ unlock_codex_page("frontieres_interdistricts", with_notification=False)
 
     $ j2_vote_codex_unlocked = True
     $ j45_vote_codex_active = True
@@ -273,14 +240,12 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     show screen tablet_home
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Et promis, vous ne serez pas surpris cette fois-ci."
-    kami "L'énoncé est parfaitement clair."
+    kami "Et promis, aucune petite réécriture surprise cette fois-ci ! L'énoncé est exactement celui que vous venez de lire."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_213
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.0
-
-    think "Deux boutons immenses. Au cas où nous aurions oublié notre fonction."
 
     $ showGroup([
         ("ryn", "colere"),
@@ -295,61 +260,56 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
         ("nyra", "raison"),
         ("tomas", "hesitation"),
     ])
-    ryn "Il faut voter pour."
-    ryn "J’ai vu ce que les frontières fermées font aux gens."
-    ryn "À Limen, on gardait une muraille invisible. Les Gardiens étaient ..."
-    ryn triste "Enfin... Je refuse que ça continue. Il faut laisser les gens bouger !"
 
-    pause 0.8
+    think "Le mot « frontières » suffit à changer l'attitude de Ryn. Il se penche immédiatement vers son micro."
 
-    kael "Les gardiens ? De qui tu parles ?"
+    ryn colere "Il faut voter pour. Je veux même pas entendre qu'on pourrait encore garder ces foutues frontières fermées."
+    ryn triste "J'ai passé des années à empêcher des gens de les atteindre. J'en ai vu creuser des tranchées sans savoir exactement où le rayon allait tomber."
 
-    sael "…"
-    sael "Les Gardiens… ce sont ceux qui ont tracé la frontière entre Limen et les autres districts."
-    sael "Ils ont exploré. Ils ont creusé la tranchée. Ils sont morts par milliers les premiers mois en cherchant précisément le tracé de la frontière."
-    sael raison "À Limen, on les vénère. Ils ont sacrifié leur vie pour qu’on reste chez nous."
-    sael triste "Aujourd'hui, celui qui traverse est immédiatement abattu. Les morts n'appellent pas cela une frontière."
+    kael surpris "Tu étais un Gardien ?"
 
-    ryn "Et je refuse de continuer à payer ce prix."
-    ryn "Je veux que ça s’arrête, Sael. Je veux que ça s’arrête pour de bon."
+    ryn fatigue "Ouais. On devait arrêter les gens plusieurs mètres avant la frontière pour éviter qu'ils se fassent exécuter."
+    ryn triste "Au début, personne ne connaissait son tracé exact. Beaucoup de Gardiens sont morts en essayant de le trouver."
 
-    kael triste "Ces tirs de rayon ... On sait que c’est définitif."
-    kael triste "Mais on fait semblant que c’est loin. Toi… tu étais là. Tu voyais leurs visages avant."
+    sael triste "Leurs tranchées ont fini par dessiner une limite visible. Sans eux, il y aurait eu beaucoup plus de morts."
+    $ unlock_codex_page("frontieres_limen", with_notification=False)
 
-    lysa "Si je comprends bien, t’étais là pour les empêcher de passer."
-    lysa "Et maintenant tu veux les laisser passer."
+    ryn colere "Et maintenant on devrait continuer à garder cette limite pour toujours ? Non. Je veux que ça s'arrête."
 
-    pause 1.0
+    lysa reflechit "Tu as passé des années à empêcher les gens de traverser. Et maintenant tu veux leur ouvrir la route."
 
-    noam "Ce que j’entends, Ryn... c’est que tu as fait ça pour protéger les gens."
-    noam hesitation "Mais je me demande si on peut encore vivre comme ça."
-    noam "Libre circulation... la fin des murs. Des lasers. Des gardiens. Il me semble que c’est ce que ça veut dire."
+    ryn triste "Parce que je sais exactement ce que la fermeture leur coûte."
 
-    ryn colere "Ça marquera peut-être la fin de notre mission. Tant mieux."
+    noam raison "Ryn ne veut pas seulement supprimer une frontière. Il veut surtout que personne ne meure encore en essayant de la franchir."
 
-    julian "Enfin quelqu'un qui parle avec le cœur. La libre circulation, c'est un projet commun : s'aider, partager, survivre ensemble."
+    julian determine "Et il a raison. Les districts ont besoin de pouvoir se rejoindre, travailler ensemble et partager leurs ressources."
 
-    lysa blase "Dans la cité idéale de Platon, sûrement. Ici, comment tu empêches les gens de s'entretuer ?"
-    lysa reflexion "Les frontières sont cruelles. Le vide juridique qui suit leur disparition le sera aussi."
+    lysa blase "Tout ça serait merveilleux si les districts avaient oublié en un an les guerres qu'ils menaient depuis des générations."
+    lysa reflechit "Ouvrir une frontière ne fait pas disparaître ceux qui attendent de l'autre côté pour reprendre un conflit."
 
-    elias "J'suis d'accord avec Lysa. Ça fait qu'un an que les guerres sont finies."
-    elias reflechit "Kami a arrêté les combats, ouais. Mais la colère des gens, elle a pas disparu. C'est chaud de faire comme si."
+    elias reflechit "Elle a pas tort. Kami a arrêté les combats, mais elle a pas effacé la colère des gens."
 
-    iris "Ah, voilà. On veut la liberté, mais pas les pauvres devant chez soi. Limen appréciera la subtilité."
+    iris desaccord "Donc quoi ? On garde tout le monde enfermé parce qu'une partie pourrait devenir violente ?"
 
-    sael mefiant "Tu te trompes."
-    sael "Je voterai contre. Les morts de Limen ont vu ce que les routes transportent quand la paix cède."
-    sael peur "Pour vous, c'est un déplacement. Pour moi, c'est la guerre qui retrouve un chemin."
+    sael mefiant "Je voterai contre."
 
-    think "Sael croise les bras. Son ton ferme déjà la discussion."
+    ryn surpris "Quoi ? Après tout ce que je viens de dire ?"
 
-    elias colere "Sael, si les gens bougent, les ressources bougent aussi. Des gens mangent."
-    elias jaloux "Tu peux pas dire non juste parce que t'as peur. C'est chaud, réfléchis !"
+    sael determine "Mon peuple vit près du Mont Kensen. Avant Kami, les groupes armés de Limen traversaient régulièrement nos terres."
+    sael triste "J'ai vu ce que ces déplacements transportaient avec eux. Des armes, de la colère et des morts."
+    sael mefiant "Pour vous, cette proposition ouvre des routes. Pour moi, elle rouvre celles que la guerre empruntait."
 
-    sael colere "Réfléchir ?"
-    sael culpabilite "J’ai réfléchi ! C’est non !"
-    sael "Tu ne comprends rien !"
-    sael triste "Tu ne sais rien."
+    think "Sael croise les bras. Elle ne regarde déjà plus Ryn."
+
+    elias colere "Mais tu peux pas décider pour tout le monde uniquement à cause de ce qui s'est passé avant !"
+    elias inquiet "Si les gens peuvent bouger, les médecins et les ressources pourront bouger aussi. Ça sauvera des vies."
+
+    sael colere "Tu crois que je n'y ai pas réfléchi ?"
+    sael determine "Ma réponse est non. Je ne vais pas risquer la vie des miens pour réparer la frontière de Limen."
+
+    elias colere "C'est pas seulement la frontière de Limen !"
+
+    sael triste "Tu ne sais rien de ce que cette route a déjà coûté aux miens."
 
     hide sael
     with moveoutright
@@ -357,13 +317,9 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     play sound sfx_door volume 8.0
     "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
     with hpunch
-    with vpunch
-    with hpunch
 
-    pause 0.5
-
-    mara "Non mais attends Sael ! Reviens !"
-    mara doute "Putain, vous cassez les couilles !"
+    mara surpris "Sael, attends !"
+    mara colere "Putain, vous pouviez pas discuter deux minutes sans lui sauter à la gorge ?"
 
     hide mara
     with moveoutright
@@ -372,31 +328,28 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     "Mara se lève et la suit en courant hors de la pièce."
     with hpunch
 
-    julian determine "Laissez-la. Elle ne changera pas d’avis."
-    julian inquiet "Mais on peut pas laisser la peur dicter notre avenir."
+    julian determine "Laissez-la partir. Elle ne changera pas d'avis dans cet état."
+    julian inquiet "Mais on ne peut pas non plus laisser sa peur condamner le texte avant même le débat."
 
-    noam raison "Je me demande si c’est vraiment juste de la peur."
-    noam reflexion "Ce que j’entends dans ce que dit Sael... les territoires. Peut-être que c’est là que tout commence."
+    noam reflexion "Je ne crois pas que ce soit seulement de la peur. Elle pense réellement protéger son peuple."
 
     ryn colere "On ne peut pas laisser ça comme ça."
-    ryn determine "Sael est trop bornée. Elle va tout faire foirer !"
+    ryn colere "Sael est trop bornée. Elle va tout faire foirer !"
 
-    kael inquiet "Elle a ses raisons."
-    kael triste "On a tous nos démons."
+    kael inquiet "Elle a ses raisons. Les ignorer ne la fera pas revenir."
 
-    nyra "Le texte est clair. Nos besoins aussi. Alors qu'est-ce qu'on peut construire entre les deux ?"
+    nyra raison "On connaît maintenant le principal point de blocage. Il faudra trouver une réponse concrète avant le vote."
 
-    tomas "Euh… Il faut dire que ça peut aussi aider les marchandises à bouger plus rapidement."
-    tomas "Mais Bon, c'est sûr que ça risque aussi de créer des incidents."
+    tomas hesitation "On pourrait peut-être parler de contrôles aux frontières, ou d'une ouverture progressive... Enfin, si le texte nous le permet."
 
     iris desaccord "Bravo. Vous avez transformé un débat politique en concours pour savoir qui blesserait Sael le plus vite. Très efficace."
 
-    "Sur ces mots, Iris quitte à son tour la pièce."
+    "Iris se lève à son tour et quitte la pièce."
 
     hide iris
     with moveoutleft
 
-    think "Le silence retombe. Nous calculons tous avec des unités différentes."
+    think "Le débat vient à peine de commencer et Sael a déjà annoncé son vote contre. Une seule voix suffira à rejeter le texte."
 
     jump _4_1_APRES_CLASH_PRE_FETE
 
@@ -405,10 +358,9 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
 label _4_1_APRES_CLASH_PRE_FETE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_214
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
-
-    pause 1.2
 
     $ showGroup([
         ("julian", "decu"),
@@ -416,94 +368,142 @@ label _4_1_APRES_CLASH_PRE_FETE:
         ("noam", "raison"),
         ("nyra", "surpris"),
     ])
-    julian "Bon… on va pas rester plantés là toute la soirée."
-    julian joie "On a gagné un vote. On mérite au moins un verre."
 
-    elen "C’est vrai !"
-    elen content "Allez, on fait une petite fête. Juste pour décompresser."
-    elen "Je m’occupe de tout. Nourriture, boisson, musique, ambiance !"
+    think "Après le départ d'Iris, personne ne semble savoir si la réunion est réellement terminée. Elen finit par se lever."
 
-    noam "Une fête… maintenant ?"
-    noam "Après ce qui vient de se passer ?"
+    elen joie "Bon ! On ne va pas rester là à se regarder comme si quelqu'un venait de mourir."
+    elen content "On a adopté notre premier amendement hier. Je propose qu'on fête ça ce soir !"
 
-    elen "Justement après !"
-    elen "Si on reste tous à ruminer, on va finir par se détester."
-    elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Dis-leur que c’est juste pour boire un coup et se détendre."
+    noam surpris "Une fête ? Maintenant ?"
 
-    nyra "Moi ?!"
-    nyra reflexion "Bon… je vais essayer."
-    nyra neutre "Je ne te garantis rien. Mais je vais leur laisser une bonne raison de venir."
+    elen inquiet "Justement maintenant. Si on retourne tous dans nos chambres après ça, demain personne ne voudra encore se parler."
+    elen joie "Je m'occupe de la nourriture, des boissons et de la musique. On se retrouve dans la salle de repos !"
+
+    julian sourire "Pour une fois, je soutiens pleinement cette initiative. Une victoire mérite au moins un verre."
+
+    noam reflexion "Je ne sais pas si on peut encore appeler ça une victoire après ce qu'on a vu ce matin."
+
+    elen desaccord "On peut être inquiets et quand même souffler un peu. Les deux sont possibles !"
+    elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Je pense qu'elles t'écouteront plus facilement."
+
+    nyra surpris "Moi ? Pourquoi est-ce que ce serait plus facile avec moi ?"
+
+    elen taquin "Parce que tu sais parler aux gens sans les énerver en moins de dix secondes. C'est un talent rare ici."
+
+    nyra reflexion "Je vais essayer. Mais je ne te garantis pas qu'elles accepteront."
 
     hide nyra
     with moveoutright
 
-    think "Nyra soupire, mais elle part. Elen a trouvé le désir auquel l'accrocher : réparer le groupe."
+    think "Nyra quitte la salle à la suite de Mara et Sael."
 
-    show noam neutre
-    elen "Et toi, Noam…"
-    elen "Tu peux aller chercher Iris ?"
-    elen "J'imagine qu'elle est dans sa chambre. Elle a besoin de se changer les idées."
+    elen inquiet "Et toi, Noam, tu peux aller chercher Iris ? Elle est sûrement retournée dans sa chambre."
 
-    think "Je n'ai pas le cœur à refuser. Comme souvent."
+    noam hesitation "Pourquoi moi ?"
 
+    elen taquin "Parce que toi aussi, tu dépasses rarement les dix secondes. Puis elle t'aime bien. Enfin, je crois."
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    noam surpris "Quoi ? Mais..."
 
-    think "Direction la chambre d'Iris. Excellente idée, si on oublie toutes les raisons du contraire."
+    elen joie "Merci Noam ! Moi, je vais tout préparer !"
 
+    think "Elle s'éloigne avant que je puisse refuser."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_215
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+
+    $ showGroup([("noam", "hesitation", 0.50)])
+
+    think "Je prends la direction de la chambre d'Iris en essayant de trouver une manière normale de lui proposer une fête après notre dispute."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_216
     scene bg_dortoir at adaptive_fullscreen with dissolve
+
+    $ showGroup([("noam", "hesitation", 0.50)])
 
     "La porte est entrouverte. Je frappe doucement."
 
-    iris "C’est qui ?"
+    iris fatigue "C'est qui ?"
 
-    think "Iris est recroquevillée sur son lit. Elle détestera que je l'aie vue comme ça."
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_iris") from _call_MAYBE_PLAY_SCRIPTED_DOOR_217
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
-    think "Elle a l'air épuisée. Le sarcasme tient encore debout à sa place."
+    $ showGroup([
+        ("iris", "triste", 0.70),
+        ("noam", "hesitation", 0.30),
+    ])
 
-    $ showGroup([("iris", "triste", 0.50)])
-    iris "Ah… c’est toi."
-    iris "T’es venu me faire la morale ?"
+    think "Iris est assise sur son lit, les bras autour des genoux. Elle se redresse légèrement en me voyant."
 
-    think "Je m'assois à côté d'elle. Pas trop près."
+    iris fatigue "Ah... C'est toi."
+    iris desaccord "Tu es venu me dire que j'ai encore abandonné une discussion trop tôt ?"
 
+    noam neutre "Non. Pour être honnête, je crois que tout le monde avait besoin que cette discussion s'arrête."
+
+    think "Je m'assieds à l'autre bout du lit en laissant suffisamment d'espace entre nous."
+
+    $ hideGroup()
     scene bg_cg018 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg018")
 
-    noam "Elen organise une fête. Enfin… elle essaie surtout d'empêcher tout le monde de s'entretuer."
+    noam hesitation "Elen organise une petite fête dans la salle de repos. Elle pense que ça nous évitera de finir la journée en nous détestant tous."
 
-    iris "Une fête après ça ? Sael claque une porte, Mara lui court après et notre réponse stratégique, c'est l'alcool ? Brillant."
+    iris desaccord "Sael claque une porte, Mara lui court après et notre réponse stratégique, c'est de sortir l'alcool ? Brillant."
 
-    noam "Tu veux dire qu'on va boire pour oublier. Enfin… rester seule ne changera rien non plus."
-    noam "Ça pourrait nous faire du bien. Peut-être."
+    noam taquin "Présenté comme ça, le plan a effectivement quelques défauts."
+    noam raison "Mais rester seule à repenser à la scène ne changera rien non plus. Ça pourrait nous faire du bien de souffler un peu."
 
-    iris "Tu marques un point. Ça m'agace."
-    iris "J'arrive. Mais si Julian porte un toast de plus de quinze secondes, je lui fais avaler son verre."
+    iris reflexion "Tu marques un point. Et ça m'agace beaucoup."
+    iris fatigue "D'accord, je viens. Mais si Julian fait un discours de plus de quinze secondes, je lui fais avaler son verre."
 
-    noam "Je pourrais l'arrêter. Enfin… après quinze secondes. Pour le spectacle."
+    noam taquin "Je l'arrêterai. Enfin... juste après les quinze secondes."
     
     "Iris retient un sourire et se lève."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_iris") from _call_MAYBE_PLAY_SCRIPTED_DOOR_218
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
-    iris "Ne prends pas cet air satisfait."
-    noam "Je n'ai pas d'air satisfait."
-    iris "C'est pire. Tu as ton air innocent."
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("iris", "taquin", 0.70),
+        ("noam", "sourire", 0.30),
+    ])
+
+    iris taquin "Ne prends pas cet air satisfait."
+    noam sourire "Je n'ai pas d'air satisfait."
+    iris taquin "C'est pire. Tu as ton air innocent."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_219
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("iris", "neutre", 0.70),
+        ("noam", "sourire", 0.30),
+    ])
+
     think "La musique nous rejoint avant la salle. Au moins, Elen n'a pas perdu de temps."
 
     $ repos_party_active = True
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_220
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    "Elen a sorti les rations alcoolisées. Julian sert, Ryn boit, et Nyra revient avec Mara et Sael."
+    $ showGroup([
+        ("elen", "content"),
+        ("julian", "sourire"),
+        ("ryn", "fatigue"),
+        ("nyra", "neutre"),
+        ("mara", "neutre"),
+        ("sael", "mefiant"),
+        ("iris", "neutre"),
+        ("noam", "neutre"),
+    ])
 
-    $ showGroup([("elen", "content", 0.50)])
-    elen "Ah ! Vous êtes lààà ! Prenez un verre !"
+    think "Elen a déjà sorti les rations alcoolisées. Julian sert les verres pendant que Nyra arrive avec Mara et Sael."
+
+    elen content "Ah ! Vous êtes là ! Prenez un verre avant que Julian transforme le service en cérémonie officielle !"
     elen joie "On a gagné hier. Enfin, aujourd'hui c'est compliqué, mais hier on a gagné, donc ça compte encore un peu !"
 
-    think "On rit déjà trop fort. La peur, elle, n'a même pas pris la peine de se cacher."
+    think "Personne ne paraît réellement d'humeur à faire la fête. Pourtant, presque tout le monde accepte un verre."
 
     jump _4_1_FETE_IMPROVISEE
 
@@ -511,142 +511,151 @@ label _4_1_APRES_CLASH_PRE_FETE:
 # Total : 2h 02m 30s
 
 label _4_1_FETE_IMPROVISEE:
+    $ current_period = "Soir"
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_221
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.5
 
-    pause 1.0
+    $ showGroup([
+        ("elen", "content"),
+        ("iris", "fatigue"),
+        ("julian", "sourire"),
+        ("elias", "reflechit"),
+        ("lysa", "blase"),
+        ("mara", "neutre"),
+        ("noam", "neutre"),
+    ])
 
-    "Des tissus assombrissent les veilleuses. Une enceinte couvre presque le bourdonnement du Conclave."
+    "Elen a suspendu quelques tissus devant les veilleuses et installé une enceinte au milieu de la salle."
 
-    elen "J'ai compté les verres trois fois ! Et les rations deux fois. Enfin… après j'ai goûté, donc les chiffres sont peut-être moins fiables."
+    elen content "J'ai compté les verres trois fois et les rations deux fois ! Après, j'ai commencé à goûter, donc les chiffres sont peut-être moins fiables."
 
-    iris "Une organisation irréprochable. Kami peut démissionner."
+    iris taquin "Une organisation irréprochable. Kami peut préparer sa démission."
 
-    elen "Tu vois ! Je savais que t'allais aimer !"
+    elen joie "Tu vois ! Je savais que tu finirais par aimer l'idée !"
 
-    iris "Ce n'était pas— Laisse tomber."
+    iris blase "Ce n'était pas un compliment... Laisse tomber."
 
-    $ showGroup([("julian", "sourire", 0.88), ("elias", "reflechit", 0.12), ("lysa", "blase", 0.50)])
-    julian "À nous, qui avons osé changer les choses — et qui aurons le courage d'en répondre."
+    julian sourire "Puisque tout le monde est servi, je propose de boire à notre premier amendement adopté."
+    julian determine "Nous avons osé changer les choses. Nous devons maintenant avoir le courage d'en assumer les conséquences."
 
+    elias reflechit "On peut boire à l'espoir, ouais. Mais avec ce qu'on a vu ce matin, j'ai du mal à appeler ça une victoire."
 
-    elias "À l'espoir, ouais. Mais si demain tout part en vrille, c'est chaud de trinquer à ça aujourd'hui."
+    lysa blase "Dans ce cas, buvons au fait d'avoir survécu à notre première décision. C'est moins ambitieux."
 
-    lysa "Les soldats grecs buvaient avant la bataille. Nous, on ne sait même pas si on fête la victoire ou la prochaine défaite."
-    lysa sourire "Peu importe. Santé."
+    mara taquin "Déprimant, prudent et alcoolisé. Ça me convient parfaitement."
 
-    mara "Ça, c'est l'esprit. Déprimant, cultivé, alcoolisé."
-
-    think "Quelques verres se lèvent. L'écran s'allume avant qu'ils se touchent. Évidemment."
+    think "Les verres commencent à se lever lorsque l'écran s'allume. Kami refuse évidemment de rater le toast."
 
     play sound sfx_announce
-    pause 1.0
+    $ hideGroup()
     scene bg_diffusion_taquin at adaptive_fullscreen with fade
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Vous n'alliez quand même pas faire une fête sans moi ?"
-    kami "Mes petits rebelles éméchés… je suis blessée. Moi qui fournis l'alcool, les murs et la surveillance."
-    kami "Trinquons à votre courage ! Ou à votre inconscience. J'attends encore les résultats d'analyse."
-
-    think "Un verre virtuel, des lumières rouges et vertes, puis plus rien. Même son intrusion a une mise en scène."
+    kami "Vous n'alliez quand même pas organiser une fête sans m'inviter ? Moi qui fournis l'alcool, la salle et même la surveillance !"
+    kami "Trinquons donc à votre courage. Ou à votre inconscience, je n'ai pas encore terminé l'analyse."
+    kami "Amusez-vous bien, mes petits représentants. Je regarderai tout !"
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_222
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.5
-
-    elen "Bon ! Si même notre geôlière trinque, on a officiellement le droit de monter le son !"
-
-    ryn "Ça, c'est la règle la plus sensée de la journée."
-
-    think "Les verres se remplissent. Ryn danse avec Elen. Kael va jusqu'à sourire. Le miracle est probablement alcoolisé."
 
     $ showGroup([
         ("mara", "ivre"),
         ("tomas", "hesitation"),
         ("iris", "desaccord"),
-        ("lysa", "jaloux"),
+        ("lysa", "blase"),
+        ("elen", "joie"),
+        ("ryn", "fatigue"),
+        ("noam", "neutre"),
     ])
-    mara "Bon, ça suffit les mines d'enterrement. J'ai une bouteille vide et de très mauvaises intentions. Qui joue ?"
+
+    elen joie "Bon ! Si même notre geôlière trinque avec nous, on a officiellement le droit de monter le son !"
+
+    ryn fatigue "C'est probablement la règle la plus sensée de la journée."
+
+    think "Les verres se remplissent une nouvelle fois. Au bout de quelques minutes, Ryn accepte même de danser avec Elen."
+
+    mara ivre "Bon, ça suffit les mines d'enterrement. J'ai une bouteille vide et une idée particulièrement mauvaise. Qui joue ?"
 
     "La bouteille tourne sur la table basse."
 
-    tomas "Euh… c'est quoi, le jeu de la bouteille ? J'ai jamais joué."
+    tomas hesitation "Euh... C'est quoi exactement, le jeu de la bouteille ? Je n'ai jamais joué."
 
     mara taquin "Oh, Tomas… Cette innocence va me tuer."
-    mara "On tourne. Deux personnes sont désignées. Elles s'embrassent si elles en ont envie."
-    mara "Et si quelqu'un dit non, c'est non. Je suis joueuse, pas gardienne de prison."
+    mara taquin "On la fait tourner. Elle désigne deux personnes et elles s'embrassent si elles en ont envie."
+    mara neutre "Et si quelqu'un refuse, on passe au tour suivant. Je suis joueuse, pas gardienne de prison."
 
-    iris "C'est ridicule. Et statistiquement conçu pour créer des problèmes. Je vais me coucher."
+    iris desaccord "C'est ridicule et probablement conçu pour créer des problèmes. Je vais me coucher."
 
     "Mara lui barre le passage d'un pas, sans la toucher."
 
-    mara joie "Attends, Iris. Tu peux rester sans jouer."
-    mara "Mais priver cette soirée de ton regard assassin ? Là, ça devient personnel."
+    mara taquin "Attends, Iris. Tu peux rester sans participer. Mais priver cette soirée de ton regard assassin, ça devient personnel."
 
     iris fatigue "Tu es épuisante."
     iris gene "Bon. Je reste. Et je joue… seulement si Noam joue aussi."
 
-    lysa "Pourquoi Noam ?"
+    lysa reflechit "Pourquoi Noam ?"
 
     iris gene "Pour rien ! Enfin— parce que c'est moins stupide si tout le monde participe. C'est tout."
     
-    mara "Bien sûr. Une décision purement scientifique."
+    mara taquin "Bien sûr. Une décision purement scientifique."
 
-    iris "Un mot de plus et je révise mon oui."
+    iris colere "Un mot de plus et je révise mon oui."
 
     menu:
         "Accepter de jouer":
             $ jeu_bouteille_accepte = True
-            noam "D'accord. Enfin… puisque mon sacrifice fait avancer la science."
+            noam taquin "D'accord. Puisque mon sacrifice permet de faire avancer la science..."
             jump _4_1_JEU_BOUTEILLE
 
         "Refuser poliment":
             $ jeu_bouteille_accepte = False
-            noam "Pas ce soir."
-            mara "Refus accepté. Tu restes quand même témoin des dégâts."
+            noam neutre "Pas ce soir. Je vais vous laisser mener l'expérience sans moi."
+            mara taquin "Refus accepté. Mais tu restes quand même témoin des dégâts."
             jump _4_1_FIN_SOIREE
-
-    return
 
 # Durée : 1m30
 # Total : 2h 04m 00s
 
 label _4_1_JEU_BOUTEILLE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_223
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_romantic_atmosphere.mp3" fadein 1.5
 
-    pause 0.6
-
     $ showGroup([("mara", "ivre", 0.50), ("noam", "surpris", 0.88), ("lysa", "blase", 0.12)])
-    mara "Premier tour ! Petite bouteille, choisis bien. J'ai une réputation à tenir."
+    mara ivre "Premier tour ! Choisis bien, petite bouteille, j'ai une réputation à tenir."
 
-    "La bouteille ralentit… s’arrête sur Noam."
+    "La bouteille tourne au milieu de la table, ralentit, puis s'arrête devant moi."
 
-    noam "Moi. Évidemment."
+    noam surpris "Moi ? Évidemment..."
 
-    "La bouteille pointe ensuite Lysa."
+    "Mara la relance. Cette fois, le goulot désigne Lysa."
 
-    lysa "Évidemment. Les Parques ont un sens de l'humour médiocre."
-    lysa "Tu es d'accord, Noam ?"
+    lysa blase "Évidemment. Le hasard a un sens de l'humour particulièrement médiocre."
+    lysa reflechit "Tu es d'accord, Noam ?"
 
-    noam "Oui. Enfin… oui."
+    noam hesitation "Oui. Enfin... oui, je suis d'accord."
 
-    mara "Le couple parfait ! Et pas de négociation diplomatique pendant le baiser."
+    mara taquin "Parfait ! Et pas de négociation diplomatique pendant le baiser."
 
+    $ hideGroup()
     scene bg_cg019 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg019")
 
-    "Lysa hausse un sourcil et se penche avec un sourire en coin."
-    think "Réfléchir plus longtemps ne rendra pas ça moins réel."
-    "Nous nous embrassons. C'est bref, mais ses lèvres restent contre les miennes une seconde de trop."
+    "Lysa hausse légèrement un sourcil avant de se rapprocher."
+    think "Je n'ai même pas le temps de trouver quelque chose à dire."
+    "Ses lèvres rencontrent les miennes. Le baiser est bref, mais elle reste près de moi une seconde avant de reculer."
 
-    elen "Ooooooh !"
+    elen joie "Ooooooh !"
 
-    iris "Respire, Elen."
+    iris blase "Respire, Elen."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_224
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -657,39 +666,40 @@ label _4_1_JEU_BOUTEILLE:
         ("tomas", "gene"),
         ("sael", "mefiant"),
     ])
-    julian "Un premier tour particulièrement convaincant. Julian valide le concept."
+    julian joie "Un premier tour particulièrement convaincant. Je valide totalement le concept."
 
-    elen "Lysa ! T'as rougiii ! C'est beaucoup trop mignon !"
+    elen joie "Lysa ! Tu as rougi ! C'était beaucoup trop mignon !"
 
-    lysa "C'est l'alcool. Pas lui."
-    lysa "Cela dit, il embrasse mieux qu'il ne termine ses phrases. La barre était basse."
+    lysa gene "C'est l'alcool. Pas lui."
+    lysa taquin "Cela dit, il embrasse mieux qu'il ne termine ses phrases. La barre était assez basse."
 
-    noam "Je vais choisir de prendre ça pour un compliment."
+    noam taquin "Je vais choisir de prendre ça pour un compliment."
 
-
-    mara "Deuxième tour ! La bouteille exige davantage de chaos."
+    mara ivre "Deuxième tour ! La bouteille exige visiblement davantage de chaos."
 
     "La bouteille tourne… s’arrête sur Tomas."
 
-    tomas "Oh non… Pourquoi moi ?"
+    tomas surpris "Oh non... Pourquoi moi ?"
 
     "La bouteille pointe Sael."
 
-    sael "…"
+    sael surpris "..."
 
-    mara "Sael et Tomas. Là, même moi je n'aurais pas osé écrire ça."
+    mara taquin "Sael et Tomas. Même moi, je n'aurais pas osé prévoir ça."
 
-    sael "Tomas ?"
+    sael neutre "Tomas ?"
 
-    tomas "Je… oui. Enfin, si toi aussi."
+    tomas gene "Je... Oui. Enfin, seulement si toi aussi."
 
-    sael "Alors viens. Il n'y a rien à craindre ici."
+    sael sourire "Alors approche. Il n'y a rien à craindre."
 
+    $ hideGroup()
     scene bg_cg020 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg020")
 
     "Sael pose une main sur la nuque de Tomas et l'embrasse doucement. Quand elle recule, il est écarlate."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_225
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -700,55 +710,54 @@ label _4_1_JEU_BOUTEILLE:
         ("kael", "surpris"),
         ("elias", "jaloux"),
     ])
-    elen "Sael ! C'était si douuuux ! Tomas, tu respires encore ?"
+    elen joie "Sael ! C'était tellement doux ! Tomas, tu respires encore ?"
 
-    julian "La question mérite effectivement une réponse officielle. Tomas ?"
+    julian taquin "La question mérite effectivement une réponse officielle. Tomas ?"
 
-    tomas "Je… je crois."
+    tomas gene "Je... je crois."
 
-    mara "Il vit ! Et il vient de gagner le silence le plus jaloux de la pièce."
-    mara "Dernier tour. On finit en apothéose."
+    mara ivre "Il vit ! On peut donc passer au dernier tour. Cette fois, on termine en beauté."
 
     "La bouteille tourne… s’arrête sur Kael."
 
-
-    kael "Moi ?"
+    kael surpris "Moi ?"
 
     "La bouteille repart et pointe Elias."
 
-    elias "Euh… Moi ?"
+    elias surpris "Euh... Moi ?"
 
-    mara "Kael et Elias. La bouteille a du goût."
+    mara taquin "Kael et Elias. Cette bouteille a décidément beaucoup de goût."
 
-    kael "Je…"
+    kael gene "Je..."
     kael gene "Je ne sais pas."
 
-    elias "T'es pas obligé, Kael. Vraiment."
-    elias "Moi, ça me va. Mais si toi ça te va pas, on passe. C'est pas compliqué."
+    elias inquiet "Tu n'es pas obligé, Kael. Vraiment."
+    elias neutre "Moi, ça me va. Mais si tu n'en as pas envie, on passe au tour suivant."
 
-    kael "… D'accord."
+    kael gene "... D'accord."
 
-    elias "T'es sûr ?"
+    elias inquiet "Tu es sûr ?"
 
-    kael "Oui. Avant que je change d'avis."
+    kael gene "Oui. Avant que je change d'avis."
 
+    $ hideGroup()
     scene bg_cg021 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg021")
 
-    "Le baiser commence avec prudence. Elias pose une main sur la nuque de Kael ; aucun des deux ne recule tout de suite."
+    "Ils se rapprochent lentement. Elias pose une main sur la nuque de Kael et aucun des deux ne recule immédiatement après le baiser."
 
-    elias "Pour le beau jeu… c'est chaud, quand même."
+    elias fatigue "C'était seulement pour le jeu..."
 
-    kael "Oui. Le jeu."
+    kael gene "Oui. Seulement le jeu."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_226
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
-    mara "Je retire tout ce que j'ai dit : cette bouteille est une artiste."
-
     $ showGroup([("mara", "ivre", 0.12), ("kael", "gene", 0.50)])
-    mara "C'était indécemment mignon. On remet ça demain ?"
 
-    kael "Non. Définitivement non."
+    mara ivre "Je retire tout ce que j'ai dit : cette bouteille est une artiste. On remet ça demain ?"
+
+    kael gene "Non. Définitivement non."
 
     jump _4_1_FIN_SOIREE
 
@@ -758,34 +767,38 @@ label _4_1_JEU_BOUTEILLE:
 label _4_1_FIN_SOIREE:
 
     $ repos_party_active = False
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_227
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    pause 0.8
+    $ showGroup([("noam", "fatigue", 0.50)])
 
-    think "La fête se termine tard. Mon trajet jusqu'à la chambre manque de ligne droite."
+    think "La fête se termine bien plus tard que prévu. Je quitte les autres et regagne lentement ma chambre."
+    think "J'ai suffisamment bu pour que le couloir semble bouger légèrement sous mes pieds."
 
-    think "La porte se referme. Le monde tangue encore."
-
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_228
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    think "Je tombe sur le lit et laisse mes chaussures décider seules de leur avenir."
+    $ showGroup([("noam", "fatigue", 0.50)])
+
+    think "Je retire ma veste puis m'assieds sur le lit. Mes chaussures me demandent déjà plus d'efforts que je ne peux leur en donner."
 
     $ blink()
-    think "Le vote. Les cris. Sael qui part. Sael qui revient. Puis les rires, comme un pansement posé trop vite."
+    think "Je repense au débat, au départ de Sael, puis à son retour dans la salle de repos, alors que rien n'est vraiment réglé."
 
     $ blink()
-    think "On a gagné quelque chose hier. Je ne sais pas encore si c'est autre chose que le droit de perdre autrement."
+    think "Pendant quelques heures, nous avons réussi à rire ensemble. Demain, il faudra pourtant recommencer à parler du vote."
 
-    think "Me déshabiller ressemble à une décision. J'ai dépassé mon quota."
+    think "Je parviens finalement à retirer mes chaussures et m'allonge sans prendre le temps de me changer."
     $ blink()
 
+    $ hideGroup()
     scene bg_cg012 at adaptive_fullscreen with dissolve
-    think "Demain sera un autre jour. Formule pratique pour éviter de décider si j'ai envie de le voir."
-    "Le sommeil m'emporte avant que je trouve une réponse."
+    think "Sael a déjà annoncé qu'elle votera contre. Si elle ne change pas d'avis, la libre circulation n'a aucune chance d'être adoptée."
+    think "J'essaierai de lui parler demain. Pour le moment, je n'arrive même plus à garder les yeux ouverts."
 
     $ current_day = 5
-    pause 2.0
+    pause 1.5
 
     call end_day("5") from _call_end_day_5_1
     jump _5_1_REVEIL_CHAMBRE

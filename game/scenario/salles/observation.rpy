@@ -10,6 +10,7 @@ default decouverte_salle_observation = False
 
 
 label OBSERVATION_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_343
     scene bg_observation at adaptive_fullscreen
 
     if current_scene_active == "_2_ROUTE_OBSERVATION":
@@ -172,6 +173,7 @@ label decouverte_salle_observation:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_344
     scene bg_observation at adaptive_fullscreen with fade
 
     "La salle est large."

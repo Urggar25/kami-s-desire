@@ -160,6 +160,7 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
     "La douleur me tire hors du noir sans me laisser le temps de comprendre que j'etais dedans."
     "Elle n'a rien d'un mal de tete ordinaire. C'est une pression profonde, precise, presque chirurgicale, comme si quelqu'un avait ouvert mon crane pendant la nuit puis referme trop vite en oubliant quelque chose a l'interieur."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_94
     scene bg_chambre at adaptive_fullscreen with hpunch
     play music "music/bgm_calm_sad.mp3" fadein 3.0
 
@@ -193,6 +194,7 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
     pause 0.15
     scene black
     pause 0.2
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_95
     scene bg_chambre at adaptive_fullscreen with hpunch
 
     noam panique "Qu'est-ce qui s'est passe ?"
@@ -203,6 +205,7 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
     $ j1601110_memory_reset()
     $ _j1601110_memory_result = renpy.call_screen("j1601110_memory_reconstruction")
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_96
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "Le col de Kael. Sa voix devenue trop douce. Une image blanche de laboratoire. Puis rien."
@@ -245,6 +248,7 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
     kami "Bonne journee."
 
     hide screen kami_broadcast_ui
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_97
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "Le silence revient, mais pas comme avant. Maintenant il a la forme exacte de ce que Kami vient de ne pas dire."
@@ -266,12 +270,14 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
 
 
 label _16_0_1_1_CAFETERIA_TENSION:
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_98
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 2.0
 
     "Le trajet jusqu'a la cafeteria dure moins de deux minutes et pourtant je le traverse comme un couloir d'hopital apres une mauvaise nouvelle. Chaque lumiere blanche accroche ma retine, chaque camera au plafond semble attendre que je leve la tete pour confirmer que je suis encore utilisable."
     "A chaque angle, je m'attends a retrouver le laboratoire. Je ne trouve que le Conclave, ce qui n'est pas beaucoup plus rassurant."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_99
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     "La cafeteria est presque pleine. Les conversations ne s'arretent pas toutes quand j'entre, mais elles changent de texture. Des mots continuent, des regards bifurquent, des mains se referment sur des tasses."
@@ -439,6 +445,7 @@ label _16_0_1_1_CAFETERIA_TENSION:
 
 
 label _16_0_1_1_CORRIDOR_KAEL:
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_100
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_debate.mp3" fadein 1.5
 
@@ -642,6 +649,7 @@ label _16_0_1_1_CORRIDOR_KAEL:
 
 
 label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
+    call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_101
     scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 

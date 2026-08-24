@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
+# TODO: Translation updated at 2026-08-07 12:41
 
 # game/scenario/salles/sas.rpy:62
 translate chinese sas1_digicode_sas_db2b394d:

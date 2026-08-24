@@ -32,17 +32,17 @@ translate portuguese strings:
 
     # game/menu.rpy:338
     old "Boutique"
-    new ""
+    new "Loja"
 
     # game/menu.rpy:339
     old "Évènement"
-    new ""
+    new "Evento"
 
     # game/menu.rpy:704
     old "SPORT"
-    new ""
+    new "ESPORTE"
 
     # game/menu.rpy:767
     old "TOUS"
-    new ""
+    new "TODOS"
 

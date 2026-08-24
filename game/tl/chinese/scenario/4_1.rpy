@@ -1,1752 +1,1358 @@
-﻿# TODO: Translation updated at 2026-08-07 12:41
-
-# game/scenario/4_1.rpy:11
-translate chinese f2cf495b:
-
-    # "Je me réveille sous la lumière bleue des veilleuses."
-    ""
+﻿# TODO: Translation updated at 2026-08-24 09:59
 
 # game/scenario/4_1.rpy:13
-translate chinese 866a4157:
+translate chinese 41a149fa:
 
-    # think "Hier, douze doigts ont choisi le vert. Maintenant, c'est réel."
-    think ""
+    # think "Je me réveille avant l'annonce de Kami. La lumière des veilleuses est encore allumée."
+    think "我在Kami的通告响起前醒了。夜灯还亮着。"
 
-# game/scenario/4_1.rpy:14
-translate chinese d8b35057:
+# game/scenario/4_1.rpy:15
+translate chinese f4d7d45d:
 
-    # think "On a changé les choses. Reste à savoir pour qui."
-    think ""
+    # think "Hier, nous avons tous voté pour rétablir le commerce. Pour la première fois, un amendement a été adopté."
+    think "昨天，我们全都投票赞成恢复贸易。修正案第一次获得了通过。"
+
+# game/scenario/4_1.rpy:16
+translate chinese 8ccafcca:
+
+    # think "Sur le moment, j'étais surtout soulagé. On avait enfin réussi à changer quelque chose."
+    think "当时，我更多的是松了口气。我们终于成功改变了什么。"
 
 # game/scenario/4_1.rpy:17
-translate chinese 80361c91:
+translate chinese 631f48a6:
 
-    # think "Mon cœur va trop vite. La nuit n'a rien calmé."
-    think ""
+    # think "Maintenant que je suis seul, je repense surtout à ce que le texte a supprimé avec les bons de rationnement."
+    think "现在只剩我一个人，我反而一直在想，那份文本连同配给券一起取消的东西。"
 
 # game/scenario/4_1.rpy:18
-translate chinese 824e86cf:
+translate chinese d8fe6577:
 
-    # think "On a supprimé les bons. Coupé une dépendance à Kami."
-    think ""
+    # think "À Nexus ou à Orbite, les échanges devraient reprendre rapidement. À Limen, beaucoup de gens n'ont rien à vendre et presque rien à acheter."
+    think "Nexus和Orbite的交易应该很快就会恢复。可在Limen，很多人没有东西可卖，也几乎买不起任何东西。"
 
 # game/scenario/4_1.rpy:19
-translate chinese d57e031b:
+translate chinese 92749532:
 
-    # think "Est-ce qu'on a aussi coupé le filet qui retenait les plus fragiles ?"
-    think ""
+    # think "Si le nouveau système ne profite qu'à ceux qui avaient déjà des ressources, notre victoire risque de ne pas en être une pour tout le monde."
+    think "如果新制度只对那些原本就有资源的人有利，那我们的胜利对很多人来说可能根本算不上胜利。"
 
 # game/scenario/4_1.rpy:22
-translate chinese 7382573a:
+translate chinese 0e02edfb:
 
-    # think "Limen n'a ni champs, ni outils, ni réserve. Les riches, eux, avaient déjà tout."
-    think ""
+    # "L'écran mural s'allume dans un bip aigu."
+    "墙上的屏幕发出一声尖锐的提示音，随即亮了起来。"
 
-# game/scenario/4_1.rpy:24
-translate chinese 46f145fa:
+# game/scenario/4_1.rpy:29
+translate chinese a43371d6:
 
-    # think "Julian levait le poing. Ryn frappait la table. Kael baissait la tête. Moi, j'étais au milieu. Presque silencieux."
-    think ""
+    # kami "Huit heures pile, mes petits pionniers du chaos ! Debout, la révolution n'attend pas !"
+    kami "正好八点，我亲爱的小混乱先锋们！都起来，革命可不等人！"
 
-# game/scenario/4_1.rpy:25
-translate chinese 301c5335:
+# game/scenario/4_1.rpy:32
+translate chinese ad1a139e:
 
-    # think "J'ai voté, puis laissé les autres porter les mots."
-    think ""
+    # kami "Petit point matinal, puisque vous adorez qu'on vous mette le nez dans les conséquences de vos décisions."
+    kami "早间简报时间。毕竟你们最喜欢别人把自己决定的后果按到你们脸上。"
 
-# game/scenario/4_1.rpy:26
-translate chinese a8324281:
+# game/scenario/4_1.rpy:33
+translate chinese 6a6b8ae4:
 
-    # think "Si le marché ne sauve que ceux qui peuvent acheter, mon vote aura juste donné un nouveau nom à la faim."
-    think ""
-
-# game/scenario/4_1.rpy:30
-translate chinese 3451e464:
-
-    # think "Sur la table, la famille d'un ami sourit encore depuis une photo."
-    think ""
-
-# game/scenario/4_1.rpy:31
-translate chinese c720ae1e:
-
-    # think "Je me demande s'ils sourient encore ce matin."
-    think ""
+    # kami "À Nexus et Orbite, les premiers marchés improvisés sont déjà ouverts. Les objets circulent et de nouvelles monnaies locales apparaissent !"
+    kami "Nexus和Orbite的第一批临时市场已经开张了。商品开始流通，新的地方货币也不断冒出来！"
 
 # game/scenario/4_1.rpy:34
-translate chinese 5987ea92:
+translate chinese 900152c1:
 
-    # "Un bip aigu retentit ; l'écran mural s'allume."
-    ""
+    # kami "Pendant ce temps, à Limen... Disons que les files d'attente sont plus longues que votre liste de regrets."
+    kami "与此同时，Limen那边……这么说吧，那里的队伍比你们的悔恨清单还要长。"
 
-# game/scenario/4_1.rpy:41
-translate chinese c4d5dd1a:
+# game/scenario/4_1.rpy:35
+translate chinese 2674a83d:
 
-    # kami "8 heures pile, mes petits pionniers du chaos !"
-    kami ""
+    # kami "Quelques trocs sauvages, quelques bagarres et beaucoup de gens qui découvrent qu'une liberté ne remplit pas automatiquement un estomac."
+    kami "一些私下的以物易物，几场斗殴，还有一大群人终于发现，自由可不会自动填饱肚子。"
 
-# game/scenario/4_1.rpy:42
-translate chinese 87535ff9:
+# game/scenario/4_1.rpy:36
+translate chinese ede7cdbf:
 
-    # kami "Levez-vous, la révolution n'attend pas !"
-    kami ""
+    # kami "Alors, mes champions du changement, toujours aussi fiers d'avoir appuyé sur le gros bouton vert ?"
+    kami "所以，我的改革勇士们，你们还在为按下那个大大的绿色按钮感到骄傲吗？"
 
-# game/scenario/4_1.rpy:45
-translate chinese f9730530:
+# game/scenario/4_1.rpy:39
+translate chinese 4c972d53:
 
-    # kami "Petit point matinal, puisque vous adorez qu'on vous mette le nez dans les conséquences :"
-    kami ""
+    # kami "Mais pourquoi est-ce que je vous raconte tout ? Les écrans de la cafétéria vous montreront les résultats en direct !"
+    kami "不过，我为什么要把一切都说出来呢？餐厅的屏幕会实时展示结果！"
 
-# game/scenario/4_1.rpy:46
-translate chinese 5b4ea7b9:
+# game/scenario/4_1.rpy:40
+translate chinese 2965ba02:
 
-    # kami "Nexus et Orbite se régalent déjà. Marchés improvisés, trocs qui fleurissent, pièces artisanales qui tintent."
-    kami ""
-
-# game/scenario/4_1.rpy:47
-translate chinese ab201850:
-
-    # kami "Pendant ce temps à Limen… disons que les files d’attente sont plus longues que vos listes de regrets."
-    kami ""
+    # kami "Allez donc admirer votre toute première victoire. Vous l'avez bien mérité !"
+    kami "快去欣赏你们的第一次胜利吧。你们值得！"
 
 # game/scenario/4_1.rpy:48
-translate chinese 1113691f:
+translate chinese 8fa9fefb:
 
-    # kami "Quelques trocs sauvages, quelques poings serrés, quelques ventres qui crient."
-    kami ""
-
-# game/scenario/4_1.rpy:49
-translate chinese 6d5445e7:
-
-    # kami "Et à Orbite ? Une petite alarme hier soir. Rien de grave… pour l’instant."
-    kami ""
-
-# game/scenario/4_1.rpy:50
-translate chinese ad3494ce:
-
-    # kami "Alors, champions du changement : toujours fiers de votre gros bouton vert ?"
-    kami ""
+    # think "L'écran s'éteint. Kami a évidemment choisi les images qui nous feront le plus douter, mais elle n'a probablement pas eu besoin d'inventer les files de Limen."
+    think "屏幕暗了下来。Kami显然特意挑了最容易让我们产生怀疑的画面，但Limen那些队伍恐怕根本不需要她捏造。"
 
 # game/scenario/4_1.rpy:51
-translate chinese c4469403:
+translate chinese cb883f17:
 
-    # kami "Ou est-ce que la victoire commence à laisser un petit arrière-goût ?"
-    kami ""
+    # "Un bruit sourd traverse le couloir, suivi d'une voix étouffée. Quelqu'un vient certainement de se lever trop vite."
+    "走廊里传来一声闷响，紧接着是一道含糊的声音。肯定有人起床起得太猛了。"
 
-# game/scenario/4_1.rpy:54
-translate chinese f0e032c5:
+# game/scenario/4_1.rpy:52
+translate chinese d882550c:
 
-    # kami "Mais oh ! Pourquoi je vous spoile ?!"
-    kami ""
+    # think "Je devrais aller voir les résultats moi-même avant de commencer à regretter sur la seule parole de Kami."
+    think "在仅凭Kami的一面之词就开始后悔之前，我应该亲自去看看结果。"
 
-# game/scenario/4_1.rpy:55
-translate chinese 64a00fb8:
+# game/scenario/4_1.rpy:79
+translate chinese 94774050:
 
-    # kami "Vous aurez l'occasion de voir tout ça EN PERSONNE à la cafétéria !"
-    kami ""
+    # think "La plupart des représentants sont déjà installés devant les écrans. Je prends une ration et m'assieds avec eux."
+    think "大多数代表已经坐在屏幕前。我拿了一份配给餐，也和他们坐到一起。"
 
-# game/scenario/4_1.rpy:60
-translate chinese b11d0c5c:
+# game/scenario/4_1.rpy:80
+translate chinese cf5f32c5:
 
-    # think "L'écran s'éteint. Mes mains tremblent encore."
-    think ""
-
-# game/scenario/4_1.rpy:61
-translate chinese 9ce77f14:
-
-    # think "On a ouvert la porte. Elle, au moins, sait déjà ce qui va en sortir."
-    think ""
-
-# game/scenario/4_1.rpy:66
-translate chinese 0848ea8d:
-
-    # "Un cri étouffé traverse le couloir, suivi d'un choc contre une porte. Puis le silence."
-    ""
-
-# game/scenario/4_1.rpy:67
-translate chinese 75236748:
-
-    # think "Je ne sais pas si ça a déjà commencé. Je sais seulement que ça ne s'arrêtera pas là."
-    think ""
-
-# game/scenario/4_1.rpy:81
-translate chinese 43a7c392:
-
-    # "J’entre dans la cafétéria. L’air est chargé : rations réchauffées, métal chaud, tension palpable."
-    ""
+    # "Une voix synthétique accompagne les images qui défilent : premiers marchés ouverts à Nexus, hausse des exportations à Orbite, files persistantes à Limen."
+    "一道合成语音为不断切换的画面配音：Nexus的首批市场开张，Orbite的出口增长，Limen的队伍依旧没有消失。"
 
 # game/scenario/4_1.rpy:82
-translate chinese 62414393:
+translate chinese 3d9d59e8:
 
-    # think "Tout le monde est déjà là, rivé aux écrans."
-    think ""
+    # lysa reflechit "Les gens commencent déjà à s'organiser. Même à Limen, certains ont mis en place des systèmes de troc."
+    lysa reflechit "人们已经开始组织起来了。就连Limen，也有人建立了以物易物的制度。"
 
 # game/scenario/4_1.rpy:84
-translate chinese 3b124ff4:
+translate chinese f4cf503a:
 
-    # think "Je prends une ration au hasard. Pas faim. Juste besoin de faire semblant."
-    think ""
+    # kael calme "À Orbite, les exportations augmentent plus vite que prévu. Les outils et les filtres partent en premier."
+    kael calme "Orbite的出口增长得比预期还快。工具和过滤器最先被运了出去。"
 
 # game/scenario/4_1.rpy:86
-translate chinese 01a04f95:
+translate chinese b48c006e:
 
-    # "Les images défilent en boucle, commentées par une voix synthétique neutre :"
-    ""
+    # ryn colere "Évidemment que ça fonctionne chez vous ! À Limen, ils commencent à se battre pour un sac de nourriture."
+    ryn colere "你们那里当然运转得起来！Limen的人已经开始为了一袋食物打架了。"
 
-# game/scenario/4_1.rpy:88
-translate chinese b28949ff:
+# game/scenario/4_1.rpy:87
+translate chinese 36827df0:
 
-    # "Nexus : premiers marchés locaux ouverts. Échanges fluides. Pièces artisanales acceptées."
-    ""
+    # ryn colere "Regardez la file devant l'ancien centre ! Ils attendent encore des rations qui n'arriveront plus !"
+    ryn colere "看看旧中心门前的队伍！他们还在等那些永远不会再送来的配给！"
 
 # game/scenario/4_1.rpy:89
-translate chinese e822895d:
+translate chinese 2a189a35:
 
-    # "Orbite : exportations en hausse. Demande forte pour les outils et les filtres."
-    ""
+    # julian detendu "Le système vient à peine de changer. Il faut laisser aux gens le temps de créer de nouveaux échanges."
+    julian detendu "制度才刚刚改变。得给人们一点时间，让他们建立新的交易方式。"
 
 # game/scenario/4_1.rpy:90
-translate chinese 25b37a83:
+translate chinese d86d4ee0:
 
-    # "Limen : files d’attente devant les anciens points de distribution. Premiers signes de troc sauvage."
-    ""
+    # julian sourire "On ne peut pas demander un changement mondial et lui reprocher de ne pas être terminé avant le petit-déjeuner."
+    julian sourire "总不能一边要求全世界改变，一边又责怪它没能在早餐前完成。"
+
+# game/scenario/4_1.rpy:92
+translate chinese 46317373:
+
+    # mara taquin "Pour une fois, je suis plutôt d'accord avec lui. Profitez-en, ça n'arrivera probablement pas souvent."
+    mara taquin "难得一次，我基本同意他说的话。好好珍惜吧，这种事大概不会经常发生。"
+
+# game/scenario/4_1.rpy:93
+translate chinese be7b84b7:
+
+    # mara neutre "Mais Ryn a raison sur un point : ceux qui n'ont rien à échanger vont prendre cher en premier."
+    mara neutre "但Ryn有一点说得没错：那些无物可换的人会最先遭殃。"
+
+# game/scenario/4_1.rpy:95
+translate chinese e5401671:
+
+    # tomas hesitation "Les prix bougent déjà beaucoup. À Nexus, certains produits ont presque doublé de valeur depuis hier."
+    tomas hesitation "价格已经出现了很大的波动。Nexus有些商品的价值从昨天起几乎翻了一番。"
+
+# game/scenario/4_1.rpy:96
+translate chinese 862f8c10:
+
+    # tomas reflechit "Ce n'est pas forcément durable, mais... Enfin, on manque encore de données."
+    tomas reflechit "这种情况不一定会持续，可是……总之，我们的数据还不够。"
+
+# game/scenario/4_1.rpy:98
+translate chinese 26f14c09:
+
+    # elen joie "C'est normal que ce soit un peu le bazar au début ! Les gens vont pouvoir vendre ce qu'ils fabriquent et choisir ce qu'ils veulent acheter."
+    elen joie "刚开始有点混乱很正常！人们以后能卖掉自己做的东西，也能选择想买什么。"
+
+# game/scenario/4_1.rpy:99
+translate chinese ebc3b58c:
+
+    # elen content "Avec un peu de chance, on pourra même retrouver du vrai chocolat ! Pas les barres qui ont juste la bonne couleur."
+    elen content "运气好的话，说不定真正的巧克力也会重新出现！而不是那些只有颜色像巧克力的能量棒。"
+
+# game/scenario/4_1.rpy:101
+translate chinese c53a6927:
+
+    # iris desaccord "Choisir avec quel argent ? Ceux qui n'ont rien regarderont les autres acheter depuis le bout de la file."
+    iris desaccord "拿什么钱选？一无所有的人只能站在队尾，看着别人买东西。"
+
+# game/scenario/4_1.rpy:102
+translate chinese d79d10f1:
+
+    # iris colere "On savait que supprimer les rations ferait ça. On a quand même voté pour."
+    iris colere "我们早就知道取消配给会导致这种情况。可我们还是投了赞成票。"
+
+# game/scenario/4_1.rpy:104
+translate chinese 3707953e:
+
+    # nyra raison "Alors il faut regarder ce qui manque au nouveau système au lieu de prétendre qu'il fonctionne déjà parfaitement."
+    nyra raison "那我们就该找出新制度缺少的东西，而不是假装它已经运转得完美无缺。"
 
 # game/scenario/4_1.rpy:105
-translate chinese 1b1af237:
+translate chinese d288f834:
 
-    # lysa "Regardez : ils s'organisent. Même sans Prométhée, Limen a trouvé le troc. C'est presque encourageant."
-    lysa ""
+    # nyra reflechit "Sans règles communes, les premiers marchés profiteront forcément à ceux qui possèdent déjà le plus."
+    nyra reflechit "没有共同的规则，最早出现的市场必然会让那些本来就拥有最多东西的人获利。"
 
 # game/scenario/4_1.rpy:107
-translate chinese 44abaf4f:
+translate chinese 4d3dc546:
 
-    # kael "Orbite tient. Pas d'alarme critique. Pas de laser. Stabilité supérieure à mes prévisions."
-    kael ""
+    # noam reflexion "On a remplacé les bons du jour au lendemain. Les gens n'ont même pas eu le temps de comprendre avec quoi ils allaient payer."
+    noam reflexion "我们一夜之间就替换了配给券。人们甚至没时间弄清楚以后该拿什么付款。"
 
-# game/scenario/4_1.rpy:109
-translate chinese ccce01f7:
+# game/scenario/4_1.rpy:108
+translate chinese 82332c67:
 
-    # ryn "Stable pour vous, peut-être."
-    ryn ""
+    # noam inquiet "Ça ne veut pas dire qu'on a forcément eu tort. Mais on aurait dû mieux prévoir la transition."
+    noam inquiet "这不一定说明我们错了。但我们本该更好地规划过渡。"
 
 # game/scenario/4_1.rpy:110
-translate chinese 2844f656:
+translate chinese beb12a3b:
 
-    # ryn "À Limen, ils commencent à se battre pour un sac de patates. C’est ça votre stabilité ?"
-    ryn ""
+    # sael mefiant "À Limen, les gens ont toujours échangé entre eux. Ils continueront."
+    sael mefiant "Limen的人一直会在彼此之间交换物资。他们会继续这么做。"
 
-# game/scenario/4_1.rpy:112
-translate chinese 84df216c:
+# game/scenario/4_1.rpy:111
+translate chinese 060c33ad:
 
-    # julian "Ce n'est que le début. Les échanges existent déjà ; imaginez ce que nous pouvons bâtir en les organisant."
-    julian ""
+    # sael triste "Ceux qui n'ont plus rien dépendront seulement de voisins qui n'ont presque rien non plus."
+    sael triste "那些已经一无所有的人，只能依赖同样几乎什么都没有的邻居。"
 
 # game/scenario/4_1.rpy:113
-translate chinese bd3ac4ef:
+translate chinese 6ce2ee92:
 
-    # julian rire "Et, détail non négligeable, Limen a donc trouvé des patates."
-    julian rire ""
+    # think "Sur l'écran, un homme quitte la file de Limen avec les mains vides. Ma ration est encore intacte devant moi."
+    think "屏幕上，一个男人两手空空地离开Limen的队伍。摆在我面前的配给餐还一口没动。"
 
 # game/scenario/4_1.rpy:115
-translate chinese b421fd4e:
+translate chinese 9a7ec4d4:
 
-    # mara "Des marchés, des marchandises, des gens qui choisissent enfin. J'allais finir par séduire le distributeur pour obtenir du café."
-    mara ""
+    # think "Lysa détourne enfin les yeux de l'écran pour me regarder."
+    think "Lysa终于把目光从屏幕上移开，转头看向我。"
 
 # game/scenario/4_1.rpy:117
-translate chinese e30c1bf7:
+translate chinese b8f0224a:
 
-    # tomas "Euh… les rapports montrent que les prix sont déjà en train de fluctuer."
-    tomas ""
+    # lysa reflechit "Ce n'est pas toi qui voulais qu'on se batte pour changer les choses ?"
+    lysa reflechit "想要大家一起努力改变现状的人，不是你吗？"
 
-# game/scenario/4_1.rpy:118
-translate chinese 5447ae40:
+# game/scenario/4_1.rpy:120
+translate chinese cc553faf:
 
-    # tomas "À Nexus, certains produits ont doublé en valeur en 24 heures."
-    tomas ""
-
-# game/scenario/4_1.rpy:119
-translate chinese 5ba8d2f7:
-
-    # tomas "C’est… c’est pas forcément mauvais, hein ?"
-    tomas ""
-
-# game/scenario/4_1.rpy:121
-translate chinese c7c5b368:
-
-    # elen "C'est le début, c'est normal ! Et puis c'est gééénial : les gens vont enfin choisir !"
-    elen ""
+    # noam hesitation "Je ne sais pas encore. J'aimerais seulement que notre victoire ne condamne pas ceux qu'on voulait aider."
+    noam hesitation "我还不知道。我只希望我们的胜利不会害了那些原本想帮助的人。"
 
 # game/scenario/4_1.rpy:122
-translate chinese a77526d3:
+translate chinese 7647b389:
 
-    # elen "Des épices, des vêtements neufs, des trucs qui sentent bon… Oh ! Peut-être du vrai chocolat !"
-    elen ""
-
-# game/scenario/4_1.rpy:124
-translate chinese 8623d54f:
-
-    # iris "Choisir avec quoi ? L'air de leurs poches ? Les pauvres regarderont les rayons pleins depuis dehors. Magnifique progrès."
-    iris ""
-
-# game/scenario/4_1.rpy:126
-translate chinese 819f615a:
-
-    # nyra "Les gens veulent échanger, ici comme ailleurs. Le vote leur a donné l'espace."
-    nyra ""
-
-# game/scenario/4_1.rpy:127
-translate chinese a0894847:
-
-    # nyra "Maintenant, qu'est-ce qui leur manque ? Des règles claires, pour que la liberté ne profite pas seulement aux mieux armés."
-    nyra ""
-
-# game/scenario/4_1.rpy:129
-translate chinese 147e654e:
-
-    # noam "Ce que j’entends, c’est que... les repères ont disparu."
-    noam ""
-
-# game/scenario/4_1.rpy:130
-translate chinese fa3a9bca:
-
-    # noam "Il me semble qu’on a enlevé quelque chose sans vraiment prévoir ce qui prendrait la place."
-    noam ""
-
-# game/scenario/4_1.rpy:131
-translate chinese 668e571a:
-
-    # noam "Les gens s’organisent. Certains. Pas partout."
-    noam ""
-
-# game/scenario/4_1.rpy:133
-translate chinese 3794d0dd:
-
-    # sael "…"
-    sael ""
+    # think "Personne ne célèbre plus vraiment le résultat d'hier. Nous continuons seulement de regarder ce qu'il produit."
+    think "已经没人真的在庆祝昨天的结果了。我们只是继续看着它引发的一切。"
 
 # game/scenario/4_1.rpy:134
-translate chinese 334bea80:
+translate chinese 4b47d717:
 
-    # sael "Ils s'organisent déjà. Les vivants trouvent toujours un chemin quand on retire l'ancien."
-    sael ""
-
-# game/scenario/4_1.rpy:135
-translate chinese 5f2c9569:
-
-    # sael "La question est de savoir combien de morts le baliseront."
-    sael ""
-
-# game/scenario/4_1.rpy:137
-translate chinese 811a491c:
-
-    # think "Visages fatigués à Limen. Sourires crispés à Nexus. Ma ration reste intacte."
-    think ""
-
-# game/scenario/4_1.rpy:138
-translate chinese 81b38e79:
-
-    # think "Certains n'ont rien à manger ce matin."
-    think ""
-
-# game/scenario/4_1.rpy:141
-translate chinese 8a7ba0f7:
-
-    # think "Lysa me vise du coin de l'œil. Je connais déjà la question."
-    think ""
-
-# game/scenario/4_1.rpy:142
-translate chinese 3577068a:
-
-    # lysa determine "Tu regrettes déjà ?"
-    lysa determine ""
-
-# game/scenario/4_1.rpy:143
-translate chinese 2a87ee30:
-
-    # lysa "Ce n'est pas toi qui voulait qu'on se batte pour faire changer les choses ?"
-    lysa ""
-
-# game/scenario/4_1.rpy:144
-translate chinese 2033b383:
-
-    # lysa sourire "Au moins, là, on a réussi."
-    lysa sourire ""
-
-# game/scenario/4_1.rpy:146
-translate chinese fe454ba6:
-
-    # noam "Tu veux savoir si je regrette. Enfin… je ne sais pas encore quel prix donner à la réponse."
-    noam ""
+    # think "Il reste encore plusieurs heures avant que Kami nous annonce la suite. Je devrais profiter de ce moment pour penser à autre chose."
+    think "距离Kami宣布下一步还有好几个小时。我应该趁这个机会想点别的。"
 
 # game/scenario/4_1.rpy:149
-translate chinese 042d1922:
+translate chinese 6da88755:
 
-    # think "Chacun regarde les écrans comme un accident dont nous aurions signé l'autorisation."
-    think ""
+    # think "Je viens à peine de quitter mon temps libre lorsque l'alarme retentit dans le couloir."
+    think "自由活动才刚结束，警报声就在走廊里响了起来。"
 
-# game/scenario/4_1.rpy:150
-translate chinese f93c37e0:
+# game/scenario/4_1.rpy:159
+translate chinese 0c824f2f:
 
-    # think "On a gagné hier. Ce matin, la facture commence à circuler."
-    think ""
+    # kami "Attention, mes petits représentants adorés ! Rassemblement immédiat dans la salle principale."
+    kami "注意，我亲爱的代表们！立刻到主厅集合。"
 
-# game/scenario/4_1.rpy:164
-translate chinese 5ef57515:
+# game/scenario/4_1.rpy:162
+translate chinese aa3d9407:
 
-    # think "Quelques heures avant le prochain rassemblement. De quoi éviter une décision importante."
-    think ""
+    # kami "Il est temps de préparer le prochain vote. Alors dépêchez-vous, nos téléspectateurs ne vont pas attendre la fin de vos siestes digestives !"
+    kami "该准备下一次投票了。动作快点，我们的观众可不会等你们睡完饭后觉！"
 
-# game/scenario/4_1.rpy:165
-translate chinese c5b13125:
+# game/scenario/4_1.rpy:169
+translate chinese 35cbe059:
 
-    # think "Je ne sais pas encore quoi faire."
-    think ""
-
-# game/scenario/4_1.rpy:179
-translate chinese 51ca1c1f:
-
-    # think "L'après-midi traîne encore quand l'alarme tranche le couloir."
-    think ""
-
-# game/scenario/4_1.rpy:189
-translate chinese dfbd71be:
-
-    # kami "Attention, attention, mes petits représentants adorés !"
-    kami ""
+    # think "Je prends la direction du Conclave. Les autres sortent peu à peu de leurs chambres et me rejoignent dans le couloir."
+    think "我朝评议会大厅走去。其他人陆续走出房间，在走廊里和我会合。"
 
 # game/scenario/4_1.rpy:190
-translate chinese cfb3bd55:
+translate chinese cb9b1127:
 
-    # kami "Rassemblement immédiat dans la salle principale."
-    kami ""
+    # think "Nous sommes presque tous installés lorsque Julian vérifie une dernière fois les sièges."
+    think "几乎所有人都已经坐好时，Julian最后检查了一遍座位。"
 
-# game/scenario/4_1.rpy:193
-translate chinese 595a03da:
+# game/scenario/4_1.rpy:192
+translate chinese eeea562a:
 
-    # kami "On a du pain sur la planche. Il faut qu'on prépare le prochain vote !"
-    kami ""
+    # julian determine "Nous sommes au complet. Autant commencer dès que Kami daignera se montrer."
+    julian determine "人齐了。只要Kami肯赏脸现身，我们就马上开始吧。"
 
 # game/scenario/4_1.rpy:194
-translate chinese 7e555d21:
+translate chinese b4b3fc54:
 
-    # kami "Bougez-vous, nos téléspectateurs ne vont pas attendre vos siestes digestives."
-    kami ""
+    # ryn colere "Tu es vraiment pressé de découvrir la prochaine façon de foutre le bordel ?"
+    ryn colere "你就这么急着知道，我们下一次会怎么把一切搞得一团糟？"
+
+# game/scenario/4_1.rpy:196
+translate chinese 6a67ce94:
+
+    # elen inquiet "Ça peut être une bonne proposition aussi ! On a réussi une fois, alors peut-être que la suivante sera encore mieux."
+    elen inquiet "也可能是个好提案啊！我们已经成功过一次，说不定下一次还会更好。"
 
 # game/scenario/4_1.rpy:198
-translate chinese d702133a:
+translate chinese aa376e89:
 
-    # "L'écran s'éteint. Nous gagnons la salle au compte-gouttes."
-    ""
+    # mara agace "Regarde les écrans de Limen et répète-moi qu'on a réussi. J'ai besoin de rire."
+    mara agace "看看Limen的屏幕，再跟我说一遍我们成功了。我正好想笑一笑。"
+
+# game/scenario/4_1.rpy:200
+translate chinese 74c7dafa:
+
+    # tomas hesitation "On ne sait même pas ce qu'elle va annoncer. On devrait peut-être attendre avant de recommencer à se disputer."
+    tomas hesitation "我们连她要宣布什么都不知道。也许该先等等，别急着又吵起来。"
+
+# game/scenario/4_1.rpy:202
+translate chinese dd82d566:
+
+    # iris desaccord "Pour une fois, je suis d'accord avec Tomas. Vous pourrez vous étrangler après avoir lu le sujet."
+    iris desaccord "难得一次，我同意Tomas。等你们看完议题，再互相掐死也不迟。"
+
+# game/scenario/4_1.rpy:204
+translate chinese 191258b3:
+
+    # kael reflechit "Les conséquences du dernier vote ne sont même pas encore stabilisées. C'est beaucoup trop tôt pour décider autre chose."
+    kael reflechit "上一次投票的后果都还没稳定下来。现在决定别的事情实在太早了。"
 
 # game/scenario/4_1.rpy:206
-translate chinese 7311e0e2:
+translate chinese be4190fa:
 
-    # think "Julian arrive le premier — évidemment. Ryn suit, poings serrés ; Elen est nerveuse, Mara déjà amusée."
-    think ""
+    # nyra raison "Nous aurons trois jours pour le faire. Pour le moment, il faut seulement écouter."
+    nyra raison "我们有三天时间。现在只需要听。"
 
-# game/scenario/4_1.rpy:221
-translate chinese 19ac21e9:
+# game/scenario/4_1.rpy:208
+translate chinese 9c06a3f7:
 
-    # julian "Nous sommes tous là ? Alors avançons. Le changement n'attend pas ceux qui le regrettent."
-    julian ""
+    # noam neutre "Enfin une proposition raisonnable. Attendons au moins que Kami nous donne une raison de paniquer."
+    noam neutre "终于有人说了句有道理的话。至少等Kami给我们一个恐慌的理由吧。"
 
-# game/scenario/4_1.rpy:223
-translate chinese 9fcc3ab5:
+# game/scenario/4_1.rpy:210
+translate chinese 68360bda:
 
-    # ryn "Finir quoi ? Encore un vote pour tous nous faire crever ?"
-    ryn ""
+    # lysa blase "Elle ne devrait plus tarder. Elle aime beaucoup trop les entrées dramatiques pour nous laisser commencer sans elle."
+    lysa blase "她应该快来了。她太喜欢戏剧化登场，不可能让我们在没有她的情况下开始。"
+
+# game/scenario/4_1.rpy:212
+translate chinese f1fa0f89:
+
+    # sael mefiant "Elle est déjà là."
+    sael mefiant "她已经来了。"
+
+# game/scenario/4_1.rpy:214
+translate chinese 4b1c6c8a:
+
+    # think "Sael fixe l'écran central. Une seconde plus tard, il s'allume."
+    think "Sael盯着中央屏幕。一秒后，屏幕亮了起来。"
+
+# game/scenario/4_1.rpy:224
+translate chinese f2fd3f48:
+
+    # kami "Maintenant que tout le monde est enfin installé, nous pouvons annoncer le prochain vote !"
+    kami "既然大家终于都坐好了，现在可以公布下一次投票了！"
 
 # game/scenario/4_1.rpy:225
-translate chinese 11b92ae2:
+translate chinese e73c5cc4:
 
-    # elen "C'est peut-être une bonne nouvelle, non ? On a déjà gagné une fois ! Enfin… gagné-gagné, je sais pas, mais gagné !"
-    elen ""
-
-# game/scenario/4_1.rpy:227
-translate chinese f03814c4:
-
-    # mara "Gagné ? On a ouvert la boîte de Pandore et maintenant on admire l'emballage. Nuance."
-    mara ""
-
-# game/scenario/4_1.rpy:229
-translate chinese cf719056:
-
-    # tomas "Euh… je crois qu’on devrait écouter Kami d’abord…"
-    tomas ""
-
-# game/scenario/4_1.rpy:230
-translate chinese 001923ea:
-
-    # tomas "Avant de paniquer… Enfin, on sait pas ce qui va être annoncé…"
-    tomas ""
+    # kami "Et cette fois, j'ai choisi quelque chose de parfaitement simple. Roulement de tambour !"
+    kami "这一次，我挑了一个再简单不过的议题。有请鼓声！"
 
 # game/scenario/4_1.rpy:232
-translate chinese 6b969af3:
+translate chinese 5518a8ab:
 
-    # iris "Paniquer ? Non, surtout pas. Regardons Limen s'enfoncer avec une organisation exemplaire."
-    iris ""
+    # kami "Un vote pour permettra à chacun de franchir librement les frontières. Un vote contre conservera les restrictions actuelles."
+    kami "投赞成票，所有人都能自由跨越边境。投反对票，则维持现有限制。"
 
-# game/scenario/4_1.rpy:234
-translate chinese 71d4dad7:
+# game/scenario/4_1.rpy:242
+translate chinese bbae6b69:
 
-    # kael "Et Orbite… si la chaîne logistique casse…"
-    kael ""
+    # kami "Et promis, aucune petite réécriture surprise cette fois-ci ! L'énoncé est exactement celui que vous venez de lire."
+    kami "而且我保证，这次没有偷偷改写提案的小惊喜！文本就是你们刚刚读到的内容。"
 
-# game/scenario/4_1.rpy:235
-translate chinese 26d8188b:
+# game/scenario/4_1.rpy:263
+translate chinese 9e6e12f1:
 
-    # kael "Non. Pas assez de données."
-    kael ""
-
-# game/scenario/4_1.rpy:237
-translate chinese 9fa67d2f:
-
-    # nyra "Tout le monde veut savoir ce qui vient. Alors pourquoi nous faire attendre ?"
-    nyra ""
-
-# game/scenario/4_1.rpy:239
-translate chinese 6b4085d9:
-
-    # noam "On attend Kami. Enfin… je ne vois pas ce qu'on pourrait faire d'autre."
-    noam ""
-
-# game/scenario/4_1.rpy:241
-translate chinese 3751f2c1:
-
-    # lysa "Trois jours avant le vote. Ulysse a connu des traversées moins longues, et avec moins de discours inutiles."
-    lysa ""
-
-# game/scenario/4_1.rpy:243
-translate chinese 3794d0dd_1:
-
-    # sael "…"
-    sael ""
-
-# game/scenario/4_1.rpy:244
-translate chinese ca0ab867:
-
-    # sael "Le silence a changé depuis ce matin. Quelque chose arrive avec lui."
-    sael ""
-
-# game/scenario/4_1.rpy:246
-translate chinese cf0f4818:
-
-    # think "Personne ne répond au pressentiment de Sael. Mauvais signe."
-    think ""
-
-# game/scenario/4_1.rpy:256
-translate chinese d3006cf8:
-
-    # kami "Bon, maintenant que vous êtes tous là, on peut commencer."
-    kami ""
-
-# game/scenario/4_1.rpy:257
-translate chinese 6217fdfd:
-
-    # kami "Prochain vote, mes chéris :"
-    kami ""
-
-# game/scenario/4_1.rpy:258
-translate chinese a0e8eff6:
-
-    # kami "Ahhh !! Roulement de tambour !"
-    kami ""
-
-# game/scenario/4_1.rpy:264
-translate chinese 1694fe79:
-
-    # kami "Autoriser les déplacements de personnes entre les districts ?"
-    kami ""
+    # think "Le mot « frontières » suffit à changer l'attitude de Ryn. Il se penche immédiatement vers son micro."
+    think "仅仅听到“边境”这个词，Ryn的神情就变了。他立刻朝麦克风倾身过去。"
 
 # game/scenario/4_1.rpy:265
-translate chinese 662d838c:
+translate chinese ee5e9f5c:
 
-    # kami "Si vous votez pour, les personnes pourront voyager d'un district à l'autre."
-    kami ""
+    # ryn colere "Il faut voter pour. Je veux même pas entendre qu'on pourrait encore garder ces foutues frontières fermées."
+    ryn colere "必须投赞成。我连听都不想听谁说这些该死的边境还应该继续关闭。"
 
 # game/scenario/4_1.rpy:266
-translate chinese 490adc7c:
+translate chinese 08b21984:
 
-    # kami "Si vous votez contre, on garde la même chose qu'aujourd'hui."
-    kami ""
+    # ryn triste "J'ai passé des années à empêcher des gens de les atteindre. J'en ai vu creuser des tranchées sans savoir exactement où le rayon allait tomber."
+    ryn triste "我花了好几年阻止人们靠近边境。我见过他们挖壕沟，却根本不知道光束究竟会落在哪里。"
 
-# game/scenario/4_1.rpy:275
-translate chinese 15af3cdd:
+# game/scenario/4_1.rpy:268
+translate chinese c4f657ad:
 
-    # kami "Et promis, vous ne serez pas surpris cette fois-ci."
-    kami ""
+    # kael surpris "Tu étais un Gardien ?"
+    kael surpris "你以前是守卫？"
+
+# game/scenario/4_1.rpy:270
+translate chinese e9d82fa2:
+
+    # ryn fatigue "Ouais. On devait arrêter les gens plusieurs mètres avant la frontière pour éviter qu'ils se fassent exécuter."
+    ryn fatigue "对。我们得在距离边境好几米的地方拦住人，免得他们遭到处决。"
+
+# game/scenario/4_1.rpy:271
+translate chinese 72401b2d:
+
+    # ryn triste "Au début, personne ne connaissait son tracé exact. Beaucoup de Gardiens sont morts en essayant de le trouver."
+    ryn triste "最开始，没人知道它的准确走向。很多守卫为了找出边界而死。"
+
+# game/scenario/4_1.rpy:273
+translate chinese fc4065c4:
+
+    # sael triste "Leurs tranchées ont fini par dessiner une limite visible. Sans eux, il y aurait eu beaucoup plus de morts."
+    sael triste "他们挖出的壕沟最终勾勒出了一条肉眼可见的界线。没有他们，死的人只会更多。"
 
 # game/scenario/4_1.rpy:276
-translate chinese 621a764c:
+translate chinese a774475b:
 
-    # kami "L'énoncé est parfaitement clair."
-    kami ""
+    # ryn colere "Et maintenant on devrait continuer à garder cette limite pour toujours ? Non. Je veux que ça s'arrête."
+    ryn colere "难道现在我们还要永远守着这条界线？不。我希望这一切结束。"
+
+# game/scenario/4_1.rpy:278
+translate chinese 3ad6d161:
+
+    # lysa reflechit "Tu as passé des années à empêcher les gens de traverser. Et maintenant tu veux leur ouvrir la route."
+    lysa reflechit "你花了好几年阻止人们穿越边境。现在却想为他们打开道路。"
+
+# game/scenario/4_1.rpy:280
+translate chinese 02f2ee88:
+
+    # ryn triste "Parce que je sais exactement ce que la fermeture leur coûte."
+    ryn triste "因为我太清楚封锁边境让他们付出了什么代价。"
 
 # game/scenario/4_1.rpy:282
-translate chinese a43a3a57:
+translate chinese 5b3b5692:
 
-    # think "Deux boutons immenses. Au cas où nous aurions oublié notre fonction."
-    think ""
+    # noam raison "Ryn ne veut pas seulement supprimer une frontière. Il veut surtout que personne ne meure encore en essayant de la franchir."
+    noam raison "Ryn不只是想取消一道边境。他更想确保不再有人因为试图跨越它而死。"
+
+# game/scenario/4_1.rpy:284
+translate chinese 91ea1ac2:
+
+    # julian determine "Et il a raison. Les districts ont besoin de pouvoir se rejoindre, travailler ensemble et partager leurs ressources."
+    julian determine "而且他说得对。各个地区必须能够重新往来、共同工作并分享资源。"
+
+# game/scenario/4_1.rpy:286
+translate chinese dc93b671:
+
+    # lysa blase "Tout ça serait merveilleux si les districts avaient oublié en un an les guerres qu'ils menaient depuis des générations."
+    lysa blase "要是各地区能在一年内忘掉持续了好几代人的战争，那这一切当然很美好。"
+
+# game/scenario/4_1.rpy:287
+translate chinese f2027e8d:
+
+    # lysa reflechit "Ouvrir une frontière ne fait pas disparaître ceux qui attendent de l'autre côté pour reprendre un conflit."
+    lysa reflechit "开放边境，可不会让那些等在另一边、准备重启冲突的人凭空消失。"
+
+# game/scenario/4_1.rpy:289
+translate chinese 79ad558a:
+
+    # elias reflechit "Elle a pas tort. Kami a arrêté les combats, mais elle a pas effacé la colère des gens."
+    elias reflechit "她说得没错。Kami终止了战斗，却没有消除人们心里的愤怒。"
+
+# game/scenario/4_1.rpy:291
+translate chinese a41846cc:
+
+    # iris desaccord "Donc quoi ? On garde tout le monde enfermé parce qu'une partie pourrait devenir violente ?"
+    iris desaccord "那又怎样？就因为有一部分人可能使用暴力，我们就要把所有人都关起来？"
+
+# game/scenario/4_1.rpy:293
+translate chinese 16af0856:
+
+    # sael mefiant "Je voterai contre."
+    sael mefiant "我会投反对票。"
+
+# game/scenario/4_1.rpy:295
+translate chinese 892df30a:
+
+    # ryn surpris "Quoi ? Après tout ce que je viens de dire ?"
+    ryn surpris "什么？我都说了这么多，你还要反对？"
 
 # game/scenario/4_1.rpy:297
-translate chinese 3497730b:
+translate chinese b8d55a5b:
 
-    # ryn "Il faut voter pour."
-    ryn ""
+    # sael determine "Mon peuple vit près du Mont Kensen. Avant Kami, les groupes armés de Limen traversaient régulièrement nos terres."
+    sael determine "我的族人住在Kensen山附近。Kami出现以前，来自Limen的武装团体经常穿越我们的土地。"
 
 # game/scenario/4_1.rpy:298
-translate chinese 200bd6aa:
+translate chinese 5dd8efb6:
 
-    # ryn "J’ai vu ce que les frontières fermées font aux gens."
-    ryn ""
+    # sael triste "J'ai vu ce que ces déplacements transportaient avec eux. Des armes, de la colère et des morts."
+    sael triste "我亲眼见过那些迁移带来了什么。武器、愤怒和死亡。"
 
 # game/scenario/4_1.rpy:299
-translate chinese d9d69cc5:
+translate chinese efbf53b7:
 
-    # ryn "À Limen, on gardait une muraille invisible. Les Gardiens étaient ..."
-    ryn ""
+    # sael mefiant "Pour vous, cette proposition ouvre des routes. Pour moi, elle rouvre celles que la guerre empruntait."
+    sael mefiant "对你们来说，这项提案是开放道路。对我而言，它会重新打开战争曾经走过的路。"
 
-# game/scenario/4_1.rpy:300
-translate chinese 2a9419a2:
+# game/scenario/4_1.rpy:301
+translate chinese cd2f5563:
 
-    # ryn triste "Enfin... Je refuse que ça continue. Il faut laisser les gens bouger !"
-    ryn triste ""
+    # think "Sael croise les bras. Elle ne regarde déjà plus Ryn."
+    think "Sael双臂交叉抱在胸前，已经不再看Ryn。"
+
+# game/scenario/4_1.rpy:303
+translate chinese e23b327a:
+
+    # elias colere "Mais tu peux pas décider pour tout le monde uniquement à cause de ce qui s'est passé avant !"
+    elias colere "你不能只因为以前发生过的事情，就替所有人作决定！"
 
 # game/scenario/4_1.rpy:304
-translate chinese 70b1a36d:
+translate chinese bf005492:
 
-    # kael "Les gardiens ? De qui tu parles ?"
-    kael ""
+    # elias inquiet "Si les gens peuvent bouger, les médecins et les ressources pourront bouger aussi. Ça sauvera des vies."
+    elias inquiet "如果人们能够自由通行，医生和物资也一样可以。这会救下很多条命。"
 
 # game/scenario/4_1.rpy:306
-translate chinese 3794d0dd_2:
+translate chinese e4fa8e5f:
 
-    # sael "…"
-    sael ""
+    # sael colere "Tu crois que je n'y ai pas réfléchi ?"
+    sael colere "你以为我没有想过吗？"
 
 # game/scenario/4_1.rpy:307
-translate chinese 980a0e46:
+translate chinese 268950a4:
 
-    # sael "Les Gardiens… ce sont ceux qui ont tracé la frontière entre Limen et les autres districts."
-    sael ""
-
-# game/scenario/4_1.rpy:308
-translate chinese 761dd896:
-
-    # sael "Ils ont exploré. Ils ont creusé la tranchée. Ils sont morts par milliers les premiers mois en cherchant précisément le tracé de la frontière."
-    sael ""
+    # sael determine "Ma réponse est non. Je ne vais pas risquer la vie des miens pour réparer la frontière de Limen."
+    sael determine "我的答案是不行。我不会拿族人的生命去修补Limen的边境。"
 
 # game/scenario/4_1.rpy:309
-translate chinese 2b5cd262:
+translate chinese 2dcce518:
 
-    # sael raison "À Limen, on les vénère. Ils ont sacrifié leur vie pour qu’on reste chez nous."
-    sael raison ""
+    # elias colere "C'est pas seulement la frontière de Limen !"
+    elias colere "这不只是Limen的边境！"
 
-# game/scenario/4_1.rpy:310
-translate chinese ed17cfa0:
+# game/scenario/4_1.rpy:311
+translate chinese 827cd36a:
 
-    # sael triste "Aujourd'hui, celui qui traverse est immédiatement abattu. Les morts n'appellent pas cela une frontière."
-    sael triste ""
+    # sael triste "Tu ne sais rien de ce que cette route a déjà coûté aux miens."
+    sael triste "你根本不知道这条路已经让我的族人付出了多少代价。"
 
-# game/scenario/4_1.rpy:312
-translate chinese 8fd18055:
+# game/scenario/4_1.rpy:320
+translate chinese b17a3fc0:
 
-    # ryn "Et je refuse de continuer à payer ce prix."
-    ryn ""
+    # mara surpris "Sael, attends !"
+    mara surpris "Sael，等等！"
 
-# game/scenario/4_1.rpy:313
-translate chinese 2947df4e:
+# game/scenario/4_1.rpy:321
+translate chinese f9a637e1:
 
-    # ryn "Je veux que ça s’arrête, Sael. Je veux que ça s’arrête pour de bon."
-    ryn ""
+    # mara colere "Putain, vous pouviez pas discuter deux minutes sans lui sauter à la gorge ?"
+    mara colere "妈的，你们就不能好好谈两分钟，非要这样围攻她吗？"
 
-# game/scenario/4_1.rpy:315
-translate chinese 9b3b802d:
+# game/scenario/4_1.rpy:330
+translate chinese 60fdb692:
 
-    # kael triste "Ces tirs de rayon ... On sait que c’est définitif."
-    kael triste ""
-
-# game/scenario/4_1.rpy:316
-translate chinese 9e71311d:
-
-    # kael triste "Mais on fait semblant que c’est loin. Toi… tu étais là. Tu voyais leurs visages avant."
-    kael triste ""
-
-# game/scenario/4_1.rpy:318
-translate chinese 2bd0ce30:
-
-    # lysa "Si je comprends bien, t’étais là pour les empêcher de passer."
-    lysa ""
-
-# game/scenario/4_1.rpy:319
-translate chinese b9df717c:
-
-    # lysa "Et maintenant tu veux les laisser passer."
-    lysa ""
-
-# game/scenario/4_1.rpy:323
-translate chinese 9ada41a0:
-
-    # noam "Ce que j’entends, Ryn... c’est que tu as fait ça pour protéger les gens."
-    noam ""
-
-# game/scenario/4_1.rpy:324
-translate chinese 2ac73160:
-
-    # noam hesitation "Mais je me demande si on peut encore vivre comme ça."
-    noam hesitation ""
-
-# game/scenario/4_1.rpy:325
-translate chinese 5e07f6c2:
-
-    # noam "Libre circulation... la fin des murs. Des lasers. Des gardiens. Il me semble que c’est ce que ça veut dire."
-    noam ""
-
-# game/scenario/4_1.rpy:327
-translate chinese 9e6fa59a:
-
-    # ryn colere "Ça marquera peut-être la fin de notre mission. Tant mieux."
-    ryn colere ""
-
-# game/scenario/4_1.rpy:329
-translate chinese 0680e150:
-
-    # julian "Enfin quelqu'un qui parle avec le cœur. La libre circulation, c'est un projet commun : s'aider, partager, survivre ensemble."
-    julian ""
+    # julian determine "Laissez-la partir. Elle ne changera pas d'avis dans cet état."
+    julian determine "让她走吧。她现在这个状态不会改变主意。"
 
 # game/scenario/4_1.rpy:331
-translate chinese e07c46b4:
+translate chinese 1548cd10:
 
-    # lysa blase "Dans la cité idéale de Platon, sûrement. Ici, comment tu empêches les gens de s'entretuer ?"
-    lysa blase ""
+    # julian inquiet "Mais on ne peut pas non plus laisser sa peur condamner le texte avant même le débat."
+    julian inquiet "但我们也不能让她的恐惧在辩论开始之前，就先判提案死刑。"
 
-# game/scenario/4_1.rpy:332
-translate chinese 3936d78f:
+# game/scenario/4_1.rpy:333
+translate chinese 4615aff2:
 
-    # lysa reflexion "Les frontières sont cruelles. Le vide juridique qui suit leur disparition le sera aussi."
-    lysa reflexion ""
+    # noam reflexion "Je ne crois pas que ce soit seulement de la peur. Elle pense réellement protéger son peuple."
+    noam reflexion "我不认为那只是恐惧。她是真的相信自己在保护族人。"
 
-# game/scenario/4_1.rpy:334
-translate chinese 5d328da4:
+# game/scenario/4_1.rpy:336
+translate chinese 102429e2:
 
-    # elias "J'suis d'accord avec Lysa. Ça fait qu'un an que les guerres sont finies."
-    elias ""
+    # ryn colere "Sael est trop bornée. Elle va tout faire foirer !"
+    ryn colere "Sael太固执了。她会把一切都搞砸！"
 
-# game/scenario/4_1.rpy:335
-translate chinese d4941757:
+# game/scenario/4_1.rpy:338
+translate chinese e3acb8b7:
 
-    # elias reflechit "Kami a arrêté les combats, ouais. Mais la colère des gens, elle a pas disparu. C'est chaud de faire comme si."
-    elias reflechit ""
-
-# game/scenario/4_1.rpy:337
-translate chinese 83d29867:
-
-    # iris "Ah, voilà. On veut la liberté, mais pas les pauvres devant chez soi. Limen appréciera la subtilité."
-    iris ""
-
-# game/scenario/4_1.rpy:339
-translate chinese 31bf378b:
-
-    # sael mefiant "Tu te trompes."
-    sael mefiant ""
+    # kael inquiet "Elle a ses raisons. Les ignorer ne la fera pas revenir."
+    kael inquiet "她有自己的理由。无视那些理由不会让她回来。"
 
 # game/scenario/4_1.rpy:340
-translate chinese 9d09acd2:
+translate chinese cc537902:
 
-    # sael "Je voterai contre. Les morts de Limen ont vu ce que les routes transportent quand la paix cède."
-    sael ""
+    # nyra raison "On connaît maintenant le principal point de blocage. Il faudra trouver une réponse concrète avant le vote."
+    nyra raison "现在，我们已经知道最大的阻碍是什么。必须在投票前找到一个具体的解决办法。"
 
-# game/scenario/4_1.rpy:341
-translate chinese 4287f480:
+# game/scenario/4_1.rpy:342
+translate chinese 731288ce:
 
-    # sael peur "Pour vous, c'est un déplacement. Pour moi, c'est la guerre qui retrouve un chemin."
-    sael peur ""
-
-# game/scenario/4_1.rpy:343
-translate chinese 7397963e:
-
-    # think "Sael croise les bras. Son ton ferme déjà la discussion."
-    think ""
-
-# game/scenario/4_1.rpy:345
-translate chinese 421c5594:
-
-    # elias colere "Sael, si les gens bougent, les ressources bougent aussi. Des gens mangent."
-    elias colere ""
+    # tomas hesitation "On pourrait peut-être parler de contrôles aux frontières, ou d'une ouverture progressive... Enfin, si le texte nous le permet."
+    tomas hesitation "也许可以讨论边境检查，或者逐步开放……当然，前提是文本允许我们这么做。"
 
 # game/scenario/4_1.rpy:346
-translate chinese bb84a888:
+translate chinese 3949f517:
 
-    # elias jaloux "Tu peux pas dire non juste parce que t'as peur. C'est chaud, réfléchis !"
-    elias jaloux ""
-
-# game/scenario/4_1.rpy:348
-translate chinese b6631aa5:
-
-    # sael colere "Réfléchir ?"
-    sael colere ""
-
-# game/scenario/4_1.rpy:349
-translate chinese e3ab0799:
-
-    # sael culpabilite "J’ai réfléchi ! C’est non !"
-    sael culpabilite ""
-
-# game/scenario/4_1.rpy:350
-translate chinese a6603451:
-
-    # sael "Tu ne comprends rien !"
-    sael ""
+    # "Iris se lève à son tour et quitte la pièce."
+    "Iris也站了起来，离开了房间。"
 
 # game/scenario/4_1.rpy:351
-translate chinese 11cabae0:
+translate chinese 538f1fcd:
 
-    # sael triste "Tu ne sais rien."
-    sael triste ""
-
-# game/scenario/4_1.rpy:357
-translate chinese b6c5cf6e:
-
-    # "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
-    ""
-
-# game/scenario/4_1.rpy:364
-translate chinese 770f8f79:
-
-    # mara "Non mais attends Sael ! Reviens !"
-    mara ""
-
-# game/scenario/4_1.rpy:365
-translate chinese 4cf79745:
-
-    # mara doute "Putain, vous cassez les couilles !"
-    mara doute ""
+    # think "Le débat vient à peine de commencer et Sael a déjà annoncé son vote contre. Une seule voix suffira à rejeter le texte."
+    think "辩论才刚开始，Sael就已经宣布要投反对票。只要一票，就足以否决提案。"
 
 # game/scenario/4_1.rpy:371
-translate chinese f1f91550:
+translate chinese 5edb5763:
 
-    # "Mara se lève et la suit en courant hors de la pièce."
-    ""
+    # think "Après le départ d'Iris, personne ne semble savoir si la réunion est réellement terminée. Elen finit par se lever."
+    think "Iris离开后，没人知道会议是否真的结束了。最后，Elen站起身。"
+
+# game/scenario/4_1.rpy:373
+translate chinese 1635c921:
+
+    # elen joie "Bon ! On ne va pas rester là à se regarder comme si quelqu'un venait de mourir."
+    elen joie "好了！我们不能坐在这里互相盯着，好像刚有人死了一样。"
 
 # game/scenario/4_1.rpy:374
-translate chinese eac77888:
+translate chinese 4b3104b2:
 
-    # julian determine "Laissez-la. Elle ne changera pas d’avis."
-    julian determine ""
+    # elen content "On a adopté notre premier amendement hier. Je propose qu'on fête ça ce soir !"
+    elen content "昨天，我们通过了第一项修正案。我提议今晚庆祝一下！"
 
-# game/scenario/4_1.rpy:375
-translate chinese 220c675f:
+# game/scenario/4_1.rpy:376
+translate chinese 8be03f63:
 
-    # julian inquiet "Mais on peut pas laisser la peur dicter notre avenir."
-    julian inquiet ""
-
-# game/scenario/4_1.rpy:377
-translate chinese 0a1f690b:
-
-    # noam raison "Je me demande si c’est vraiment juste de la peur."
-    noam raison ""
+    # noam surpris "Une fête ? Maintenant ?"
+    noam surpris "庆祝？现在？"
 
 # game/scenario/4_1.rpy:378
-translate chinese 3c5c3ce2:
+translate chinese cfe4401b:
 
-    # noam reflexion "Ce que j’entends dans ce que dit Sael... les territoires. Peut-être que c’est là que tout commence."
-    noam reflexion ""
+    # elen inquiet "Justement maintenant. Si on retourne tous dans nos chambres après ça, demain personne ne voudra encore se parler."
+    elen inquiet "就是现在。如果出了这种事以后，大家都各自回房，明天就没人还愿意开口说话了。"
 
-# game/scenario/4_1.rpy:380
-translate chinese 9074587d:
+# game/scenario/4_1.rpy:379
+translate chinese ddd6f0c8:
 
-    # ryn colere "On ne peut pas laisser ça comme ça."
-    ryn colere ""
+    # elen joie "Je m'occupe de la nourriture, des boissons et de la musique. On se retrouve dans la salle de repos !"
+    elen joie "食物、饮料和音乐都交给我。我们在休息室碰头！"
 
 # game/scenario/4_1.rpy:381
-translate chinese b0865fd9:
+translate chinese 5e0d00a9:
 
-    # ryn determine "Sael est trop bornée. Elle va tout faire foirer !"
-    ryn determine ""
+    # julian sourire "Pour une fois, je soutiens pleinement cette initiative. Une victoire mérite au moins un verre."
+    julian sourire "难得一次，我完全支持这项提议。一次胜利至少值得喝上一杯。"
 
 # game/scenario/4_1.rpy:383
-translate chinese 533bae25:
+translate chinese 606d9fa1:
 
-    # kael inquiet "Elle a ses raisons."
-    kael inquiet ""
+    # noam reflexion "Je ne sais pas si on peut encore appeler ça une victoire après ce qu'on a vu ce matin."
+    noam reflexion "看过今天早上的画面以后，我不知道这还能不能算作胜利。"
 
-# game/scenario/4_1.rpy:384
-translate chinese e7c38456:
+# game/scenario/4_1.rpy:385
+translate chinese 4b025748:
 
-    # kael triste "On a tous nos démons."
-    kael triste ""
+    # elen desaccord "On peut être inquiets et quand même souffler un peu. Les deux sont possibles !"
+    elen desaccord "我们可以一边担心，一边稍微喘口气。这两件事并不冲突！"
 
 # game/scenario/4_1.rpy:386
-translate chinese 475ea7a6:
+translate chinese ba7dc3a5:
 
-    # nyra "Le texte est clair. Nos besoins aussi. Alors qu'est-ce qu'on peut construire entre les deux ?"
-    nyra ""
+    # elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Je pense qu'elles t'écouteront plus facilement."
+    elen reflexion "Nyra，你能去找Mara和Sael吗？我觉得她们会更愿意听你的话。"
 
 # game/scenario/4_1.rpy:388
-translate chinese d43ba426:
+translate chinese 31d99644:
 
-    # tomas "Euh… Il faut dire que ça peut aussi aider les marchandises à bouger plus rapidement."
-    tomas ""
+    # nyra surpris "Moi ? Pourquoi est-ce que ce serait plus facile avec moi ?"
+    nyra surpris "我？为什么换成我就会容易一点？"
 
-# game/scenario/4_1.rpy:389
-translate chinese 244e6c93:
+# game/scenario/4_1.rpy:390
+translate chinese 64748fc9:
 
-    # tomas "Mais Bon, c'est sûr que ça risque aussi de créer des incidents."
-    tomas ""
+    # elen taquin "Parce que tu sais parler aux gens sans les énerver en moins de dix secondes. C'est un talent rare ici."
+    elen taquin "因为你能开口说话，却不会在十秒内把人惹火。这在这里可是罕见的天赋。"
 
-# game/scenario/4_1.rpy:391
-translate chinese cd188e58:
+# game/scenario/4_1.rpy:392
+translate chinese cdda2e6d:
 
-    # iris desaccord "Bravo. Vous avez transformé un débat politique en concours pour savoir qui blesserait Sael le plus vite. Très efficace."
-    iris desaccord ""
+    # nyra reflexion "Je vais essayer. Mais je ne te garantis pas qu'elles accepteront."
+    nyra reflexion "我会试试。但我不能保证她们会答应。"
 
-# game/scenario/4_1.rpy:393
-translate chinese b0fc617e:
+# game/scenario/4_1.rpy:397
+translate chinese 42c88ab7:
 
-    # "Sur ces mots, Iris quitte à son tour la pièce."
-    ""
+    # think "Nyra quitte la salle à la suite de Mara et Sael."
+    think "Nyra追着Mara和Sael离开了大厅。"
 
-# game/scenario/4_1.rpy:398
-translate chinese 3af255ba:
+# game/scenario/4_1.rpy:399
+translate chinese 7ebdcbd6:
 
-    # think "Le silence retombe. Nous calculons tous avec des unités différentes."
-    think ""
+    # elen inquiet "Et toi, Noam, tu peux aller chercher Iris ? Elle est sûrement retournée dans sa chambre."
+    elen inquiet "还有你，Noam。你能去找Iris吗？她应该已经回房了。"
 
-# game/scenario/4_1.rpy:418
-translate chinese 2904d742:
+# game/scenario/4_1.rpy:401
+translate chinese e70cc3b2:
 
-    # julian "Bon… on va pas rester plantés là toute la soirée."
-    julian ""
+    # noam hesitation "Pourquoi moi ?"
+    noam hesitation "为什么是我？"
 
-# game/scenario/4_1.rpy:419
-translate chinese a29444b5:
+# game/scenario/4_1.rpy:403
+translate chinese c0ae9c64:
 
-    # julian joie "On a gagné un vote. On mérite au moins un verre."
-    julian joie ""
+    # elen taquin "Parce que toi aussi, tu dépasses rarement les dix secondes. Puis elle t'aime bien. Enfin, je crois."
+    elen taquin "因为你一般也能撑过十秒。而且她挺喜欢你的。大概吧。"
 
-# game/scenario/4_1.rpy:421
-translate chinese eab7a6b9:
+# game/scenario/4_1.rpy:405
+translate chinese aa022d89:
 
-    # elen "C’est vrai !"
-    elen ""
+    # noam surpris "Quoi ? Mais..."
+    noam surpris "什么？可是……"
 
-# game/scenario/4_1.rpy:422
-translate chinese d505340f:
+# game/scenario/4_1.rpy:407
+translate chinese 36ca7385:
 
-    # elen content "Allez, on fait une petite fête. Juste pour décompresser."
-    elen content ""
+    # elen joie "Merci Noam ! Moi, je vais tout préparer !"
+    elen joie "谢谢你，Noam！我去准备一切！"
 
-# game/scenario/4_1.rpy:423
-translate chinese 198e1c7f:
+# game/scenario/4_1.rpy:409
+translate chinese da0ab050:
 
-    # elen "Je m’occupe de tout. Nourriture, boisson, musique, ambiance !"
-    elen ""
+    # think "Elle s'éloigne avant que je puisse refuser."
+    think "她赶在我拒绝之前走开了。"
+
+# game/scenario/4_1.rpy:416
+translate chinese 09325454:
+
+    # think "Je prends la direction de la chambre d'Iris en essayant de trouver une manière normale de lui proposer une fête après notre dispute."
+    think "我朝Iris的房间走去，同时努力想出一种正常的方式，邀请她在我们刚吵完架后参加聚会。"
 
 # game/scenario/4_1.rpy:425
-translate chinese 2563a35c:
+translate chinese 70d599f7:
 
-    # noam "Une fête… maintenant ?"
-    noam ""
+    # iris fatigue "C'est qui ?"
+    iris fatigue "谁？"
 
-# game/scenario/4_1.rpy:426
-translate chinese 32a688f4:
+# game/scenario/4_1.rpy:435
+translate chinese b82df318:
 
-    # noam "Après ce qui vient de se passer ?"
-    noam ""
+    # think "Iris est assise sur son lit, les bras autour des genoux. Elle se redresse légèrement en me voyant."
+    think "Iris坐在床上，双臂抱着膝盖。看到我后，她稍微挺直了身体。"
 
-# game/scenario/4_1.rpy:428
-translate chinese 7d5ea403:
+# game/scenario/4_1.rpy:437
+translate chinese 34fa33e7:
 
-    # elen "Justement après !"
-    elen ""
+    # iris fatigue "Ah... C'est toi."
+    iris fatigue "啊……是你。"
 
-# game/scenario/4_1.rpy:429
-translate chinese 4eaa4271:
+# game/scenario/4_1.rpy:438
+translate chinese 50cffc04:
 
-    # elen "Si on reste tous à ruminer, on va finir par se détester."
-    elen ""
+    # iris desaccord "Tu es venu me dire que j'ai encore abandonné une discussion trop tôt ?"
+    iris desaccord "你是来告诉我，我又太早退出讨论了吗？"
 
-# game/scenario/4_1.rpy:430
-translate chinese bd7802fb:
+# game/scenario/4_1.rpy:440
+translate chinese ea068c23:
 
-    # elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Dis-leur que c’est juste pour boire un coup et se détendre."
-    elen reflexion ""
-
-# game/scenario/4_1.rpy:432
-translate chinese 60b3698c:
-
-    # nyra "Moi ?!"
-    nyra ""
-
-# game/scenario/4_1.rpy:433
-translate chinese f5740698:
-
-    # nyra reflexion "Bon… je vais essayer."
-    nyra reflexion ""
-
-# game/scenario/4_1.rpy:434
-translate chinese 6ef5af81:
-
-    # nyra neutre "Je ne te garantis rien. Mais je vais leur laisser une bonne raison de venir."
-    nyra neutre ""
-
-# game/scenario/4_1.rpy:439
-translate chinese 37812350:
-
-    # think "Nyra soupire, mais elle part. Elen a trouvé le désir auquel l'accrocher : réparer le groupe."
-    think ""
+    # noam neutre "Non. Pour être honnête, je crois que tout le monde avait besoin que cette discussion s'arrête."
+    noam neutre "不是。老实说，我觉得所有人都需要让那场讨论停下来。"
 
 # game/scenario/4_1.rpy:442
-translate chinese 136afc07:
+translate chinese 73d0b1a3:
 
-    # elen "Et toi, Noam…"
-    elen ""
+    # think "Je m'assieds à l'autre bout du lit en laissant suffisamment d'espace entre nous."
+    think "我在床的另一端坐下，特意在我们之间留出足够的距离。"
 
-# game/scenario/4_1.rpy:443
-translate chinese 447c2932:
+# game/scenario/4_1.rpy:448
+translate chinese ae1707e6:
 
-    # elen "Tu peux aller chercher Iris ?"
-    elen ""
+    # noam hesitation "Elen organise une petite fête dans la salle de repos. Elle pense que ça nous évitera de finir la journée en nous détestant tous."
+    noam hesitation "Elen正在休息室办一个小聚会。她觉得这样至少能避免大家带着对彼此的恨意结束这一天。"
 
-# game/scenario/4_1.rpy:444
-translate chinese af1b2321:
+# game/scenario/4_1.rpy:450
+translate chinese 14319845:
 
-    # elen "J'imagine qu'elle est dans sa chambre. Elle a besoin de se changer les idées."
-    elen ""
+    # iris desaccord "Sael claque une porte, Mara lui court après et notre réponse stratégique, c'est de sortir l'alcool ? Brillant."
+    iris desaccord "Sael摔门而去，Mara追了上去，而我们的战略对策是把酒拿出来？真高明。"
 
-# game/scenario/4_1.rpy:446
-translate chinese 9bc32a95:
+# game/scenario/4_1.rpy:452
+translate chinese eea919eb:
 
-    # think "Je n'ai pas le cœur à refuser. Comme souvent."
-    think ""
+    # noam taquin "Présenté comme ça, le plan a effectivement quelques défauts."
+    noam taquin "这么一说，这个计划确实有几个问题。"
 
-# game/scenario/4_1.rpy:451
-translate chinese 3b12772c:
+# game/scenario/4_1.rpy:453
+translate chinese 8a0bdb09:
 
-    # think "Direction la chambre d'Iris. Excellente idée, si on oublie toutes les raisons du contraire."
-    think ""
+    # noam raison "Mais rester seule à repenser à la scène ne changera rien non plus. Ça pourrait nous faire du bien de souffler un peu."
+    noam raison "但你一个人坐在这里反复回想刚才的事，也不会改变任何东西。稍微放松一下或许对我们有好处。"
 
 # game/scenario/4_1.rpy:455
-translate chinese 086827d7:
+translate chinese e2689053:
 
-    # "La porte est entrouverte. Je frappe doucement."
-    ""
+    # iris reflexion "Tu marques un point. Et ça m'agace beaucoup."
+    iris reflexion "你说得有道理。真让我很不爽。"
 
-# game/scenario/4_1.rpy:457
-translate chinese 77416b1d:
+# game/scenario/4_1.rpy:456
+translate chinese a4c24439:
 
-    # iris "C’est qui ?"
-    iris ""
+    # iris fatigue "D'accord, je viens. Mais si Julian fait un discours de plus de quinze secondes, je lui fais avaler son verre."
+    iris fatigue "好吧，我去。但如果Julian的演讲超过十五秒，我会让他把杯子吞下去。"
 
-# game/scenario/4_1.rpy:459
-translate chinese df5fbdc9:
+# game/scenario/4_1.rpy:458
+translate chinese 1ab2b8c1:
 
-    # think "Iris est recroquevillée sur son lit. Elle détestera que je l'aie vue comme ça."
-    think ""
+    # noam taquin "Je l'arrêterai. Enfin... juste après les quinze secondes."
+    noam taquin "我会阻止他。呃……准确地说，是等十五秒过去以后。"
 
-# game/scenario/4_1.rpy:462
-translate chinese 90b73d06:
+# game/scenario/4_1.rpy:470
+translate chinese a7a1c3b9:
 
-    # think "Elle a l'air épuisée. Le sarcasme tient encore debout à sa place."
-    think ""
+    # iris taquin "Ne prends pas cet air satisfait."
+    iris taquin "别摆出那副得意的表情。"
 
-# game/scenario/4_1.rpy:465
-translate chinese 032e0ab5:
+# game/scenario/4_1.rpy:471
+translate chinese 232a6648:
 
-    # iris "Ah… c’est toi."
-    iris ""
+    # noam sourire "Je n'ai pas d'air satisfait."
+    noam sourire "我没有得意。"
 
-# game/scenario/4_1.rpy:466
-translate chinese dc9cd8d7:
+# game/scenario/4_1.rpy:472
+translate chinese 60c35941:
 
-    # iris "T’es venu me faire la morale ?"
-    iris ""
+    # iris taquin "C'est pire. Tu as ton air innocent."
+    iris taquin "那更糟。你现在摆的是无辜脸。"
 
-# game/scenario/4_1.rpy:468
-translate chinese a7fb0592:
+# game/scenario/4_1.rpy:500
+translate chinese 9de06141:
 
-    # think "Je m'assois à côté d'elle. Pas trop près."
-    think ""
-
-# game/scenario/4_1.rpy:473
-translate chinese 3a724b1e:
-
-    # noam "Elen organise une fête. Enfin… elle essaie surtout d'empêcher tout le monde de s'entretuer."
-    noam ""
-
-# game/scenario/4_1.rpy:475
-translate chinese 66b85577:
-
-    # iris "Une fête après ça ? Sael claque une porte, Mara lui court après et notre réponse stratégique, c'est l'alcool ? Brillant."
-    iris ""
-
-# game/scenario/4_1.rpy:477
-translate chinese 69597110:
-
-    # noam "Tu veux dire qu'on va boire pour oublier. Enfin… rester seule ne changera rien non plus."
-    noam ""
-
-# game/scenario/4_1.rpy:478
-translate chinese 6c35ba48:
-
-    # noam "Ça pourrait nous faire du bien. Peut-être."
-    noam ""
-
-# game/scenario/4_1.rpy:480
-translate chinese 299848e4:
-
-    # iris "Tu marques un point. Ça m'agace."
-    iris ""
-
-# game/scenario/4_1.rpy:481
-translate chinese 5ec6951c:
-
-    # iris "J'arrive. Mais si Julian porte un toast de plus de quinze secondes, je lui fais avaler son verre."
-    iris ""
-
-# game/scenario/4_1.rpy:483
-translate chinese 6960786d:
-
-    # noam "Je pourrais l'arrêter. Enfin… après quinze secondes. Pour le spectacle."
-    noam ""
-
-# game/scenario/4_1.rpy:485
-translate chinese e53d0209:
-
-    # "Iris retient un sourire et se lève."
-    ""
-
-# game/scenario/4_1.rpy:488
-translate chinese b0bf1ab6:
-
-    # iris "Ne prends pas cet air satisfait."
-    iris ""
-
-# game/scenario/4_1.rpy:489
-translate chinese 747a7ded:
-
-    # noam "Je n'ai pas d'air satisfait."
-    noam ""
-
-# game/scenario/4_1.rpy:490
-translate chinese 9d6dcd4e:
-
-    # iris "C'est pire. Tu as ton air innocent."
-    iris ""
-
-# game/scenario/4_1.rpy:493
-translate chinese 9b2d1ffe:
-
-    # think "La musique nous rejoint avant la salle. Au moins, Elen n'a pas perdu de temps."
-    think ""
-
-# game/scenario/4_1.rpy:499
-translate chinese c1904487:
-
-    # "Elen a sorti les rations alcoolisées. Julian sert, Ryn boit, et Nyra revient avec Mara et Sael."
-    ""
+    # think "Elen a déjà sorti les rations alcoolisées. Julian sert les verres pendant que Nyra arrive avec Mara et Sael."
+    think "Elen已经拿出了配给的酒。Julian正在倒酒，Nyra也带着Mara和Sael赶到。"
 
 # game/scenario/4_1.rpy:502
-translate chinese 36090884:
+translate chinese 1e51d8b0:
 
-    # elen "Ah ! Vous êtes lààà ! Prenez un verre !"
-    elen ""
-
-# game/scenario/4_1.rpy:503
-translate chinese 05e439e3:
-
-    # elen joie "On a gagné hier. Enfin, aujourd'hui c'est compliqué, mais hier on a gagné, donc ça compte encore un peu !"
-    elen joie ""
+    # elen content "Ah ! Vous êtes là ! Prenez un verre avant que Julian transforme le service en cérémonie officielle !"
+    elen content "啊！你们来了！快拿一杯，别等Julian把倒酒变成正式仪式！"
 
 # game/scenario/4_1.rpy:505
-translate chinese 1b09d652:
+translate chinese c9361fdd:
 
-    # think "On rit déjà trop fort. La peur, elle, n'a même pas pris la peine de se cacher."
-    think ""
+    # think "Personne ne paraît réellement d'humeur à faire la fête. Pourtant, presque tout le monde accepte un verre."
+    think "没有人真的有心情庆祝。即便如此，几乎所有人都接过了一杯酒。"
 
-# game/scenario/4_1.rpy:519
-translate chinese f7c63c52:
+# game/scenario/4_1.rpy:528
+translate chinese 7aa32857:
 
-    # "Des tissus assombrissent les veilleuses. Une enceinte couvre presque le bourdonnement du Conclave."
-    ""
-
-# game/scenario/4_1.rpy:521
-translate chinese dcd1475b:
-
-    # elen "J'ai compté les verres trois fois ! Et les rations deux fois. Enfin… après j'ai goûté, donc les chiffres sont peut-être moins fiables."
-    elen ""
-
-# game/scenario/4_1.rpy:523
-translate chinese 04e03314:
-
-    # iris "Une organisation irréprochable. Kami peut démissionner."
-    iris ""
-
-# game/scenario/4_1.rpy:525
-translate chinese c46b0651:
-
-    # elen "Tu vois ! Je savais que t'allais aimer !"
-    elen ""
-
-# game/scenario/4_1.rpy:527
-translate chinese b9260be5:
-
-    # iris "Ce n'était pas— Laisse tomber."
-    iris ""
+    # "Elen a suspendu quelques tissus devant les veilleuses et installé une enceinte au milieu de la salle."
+    "Elen在夜灯前挂了几块布，又在房间中央放了一台音响。"
 
 # game/scenario/4_1.rpy:530
-translate chinese 3631d125:
+translate chinese 776990f8:
 
-    # julian "À nous, qui avons osé changer les choses — et qui aurons le courage d'en répondre."
-    julian ""
+    # elen content "J'ai compté les verres trois fois et les rations deux fois ! Après, j'ai commencé à goûter, donc les chiffres sont peut-être moins fiables."
+    elen content "我数了三遍杯子，两遍酒！然后开始试喝，所以这些数字现在可能没那么可靠了。"
 
-# game/scenario/4_1.rpy:533
-translate chinese fb312e00:
+# game/scenario/4_1.rpy:532
+translate chinese fe48d474:
 
-    # elias "À l'espoir, ouais. Mais si demain tout part en vrille, c'est chaud de trinquer à ça aujourd'hui."
-    elias ""
+    # iris taquin "Une organisation irréprochable. Kami peut préparer sa démission."
+    iris taquin "无可挑剔的组织能力。Kami可以准备辞职了。"
 
-# game/scenario/4_1.rpy:535
-translate chinese c39351ad:
+# game/scenario/4_1.rpy:534
+translate chinese 9c84489f:
 
-    # lysa "Les soldats grecs buvaient avant la bataille. Nous, on ne sait même pas si on fête la victoire ou la prochaine défaite."
-    lysa ""
+    # elen joie "Tu vois ! Je savais que tu finirais par aimer l'idée !"
+    elen joie "你看！我就知道你最后会喜欢这个主意！"
 
 # game/scenario/4_1.rpy:536
-translate chinese 5793af51:
+translate chinese 6fca32d6:
 
-    # lysa sourire "Peu importe. Santé."
-    lysa sourire ""
+    # iris blase "Ce n'était pas un compliment... Laisse tomber."
+    iris blase "那不是夸奖……算了。"
 
 # game/scenario/4_1.rpy:538
-translate chinese 6977d4ab:
+translate chinese 580262aa:
 
-    # mara "Ça, c'est l'esprit. Déprimant, cultivé, alcoolisé."
-    mara ""
+    # julian sourire "Puisque tout le monde est servi, je propose de boire à notre premier amendement adopté."
+    julian sourire "既然大家都有酒，我提议为我们通过的第一项修正案干杯。"
 
-# game/scenario/4_1.rpy:540
-translate chinese 10891444:
+# game/scenario/4_1.rpy:539
+translate chinese 80ea931d:
 
-    # think "Quelques verres se lèvent. L'écran s'allume avant qu'ils se touchent. Évidemment."
-    think ""
+    # julian determine "Nous avons osé changer les choses. Nous devons maintenant avoir le courage d'en assumer les conséquences."
+    julian determine "我们敢于改变现状。现在也必须有勇气承担后果。"
 
-# game/scenario/4_1.rpy:548
-translate chinese e46ed95a:
+# game/scenario/4_1.rpy:541
+translate chinese 80097398:
 
-    # kami "Vous n'alliez quand même pas faire une fête sans moi ?"
-    kami ""
+    # elias reflechit "On peut boire à l'espoir, ouais. Mais avec ce qu'on a vu ce matin, j'ai du mal à appeler ça une victoire."
+    elias reflechit "为希望干杯当然可以。可看过今天早上的画面以后，我很难把这称为胜利。"
 
-# game/scenario/4_1.rpy:549
-translate chinese 397c0a7a:
+# game/scenario/4_1.rpy:543
+translate chinese 6d4a8a84:
 
-    # kami "Mes petits rebelles éméchés… je suis blessée. Moi qui fournis l'alcool, les murs et la surveillance."
-    kami ""
+    # lysa blase "Dans ce cas, buvons au fait d'avoir survécu à notre première décision. C'est moins ambitieux."
+    lysa blase "那就为我们在第一次决定后活了下来干杯。这样没那么雄心勃勃。"
 
-# game/scenario/4_1.rpy:550
-translate chinese 4fa9b67d:
+# game/scenario/4_1.rpy:545
+translate chinese 6577ba4d:
 
-    # kami "Trinquons à votre courage ! Ou à votre inconscience. J'attends encore les résultats d'analyse."
-    kami ""
+    # mara taquin "Déprimant, prudent et alcoolisé. Ça me convient parfaitement."
+    mara taquin "消沉、谨慎，还有酒。很合我的口味。"
 
-# game/scenario/4_1.rpy:552
-translate chinese 63e4ff07:
+# game/scenario/4_1.rpy:547
+translate chinese b965907a:
 
-    # think "Un verre virtuel, des lumières rouges et vertes, puis plus rien. Même son intrusion a une mise en scène."
-    think ""
+    # think "Les verres commencent à se lever lorsque l'écran s'allume. Kami refuse évidemment de rater le toast."
+    think "大家正要举杯，屏幕忽然亮了起来。显然，Kami拒绝错过这次干杯。"
 
-# game/scenario/4_1.rpy:558
-translate chinese 7706b1b9:
+# game/scenario/4_1.rpy:555
+translate chinese dde7702f:
 
-    # elen "Bon ! Si même notre geôlière trinque, on a officiellement le droit de monter le son !"
-    elen ""
+    # kami "Vous n'alliez quand même pas organiser une fête sans m'inviter ? Moi qui fournis l'alcool, la salle et même la surveillance !"
+    kami "你们该不会想办一场不邀请我的聚会吧？酒是我提供的，房间是我的，就连监控也是我的！"
 
-# game/scenario/4_1.rpy:560
-translate chinese 86315517:
+# game/scenario/4_1.rpy:556
+translate chinese d6c0b16c:
 
-    # ryn "Ça, c'est la règle la plus sensée de la journée."
-    ryn ""
+    # kami "Trinquons donc à votre courage. Ou à votre inconscience, je n'ai pas encore terminé l'analyse."
+    kami "那就为你们的勇气干杯吧。也可能是鲁莽，我还没分析完。"
 
-# game/scenario/4_1.rpy:562
-translate chinese 873e1e4b:
+# game/scenario/4_1.rpy:557
+translate chinese 289cdaf5:
 
-    # think "Les verres se remplissent. Ryn danse avec Elen. Kael va jusqu'à sourire. Le miracle est probablement alcoolisé."
-    think ""
-
-# game/scenario/4_1.rpy:570
-translate chinese 0eec47a4:
-
-    # mara "Bon, ça suffit les mines d'enterrement. J'ai une bouteille vide et de très mauvaises intentions. Qui joue ?"
-    mara ""
-
-# game/scenario/4_1.rpy:572
-translate chinese 901ac0b2:
-
-    # "La bouteille tourne sur la table basse."
-    ""
+    # kami "Amusez-vous bien, mes petits représentants. Je regarderai tout !"
+    kami "玩得开心，我的小代表们。我会把一切都看在眼里！"
 
 # game/scenario/4_1.rpy:574
-translate chinese d4dedeab:
+translate chinese a71b3bd8:
 
-    # tomas "Euh… c'est quoi, le jeu de la bouteille ? J'ai jamais joué."
-    tomas ""
+    # elen joie "Bon ! Si même notre geôlière trinque avec nous, on a officiellement le droit de monter le son !"
+    elen joie "好！既然连我们的狱卒都和我们一起干杯，那我们就正式有权把音乐调大了！"
 
 # game/scenario/4_1.rpy:576
-translate chinese b0149395:
+translate chinese 4de2d085:
 
-    # mara taquin "Oh, Tomas… Cette innocence va me tuer."
-    mara taquin ""
-
-# game/scenario/4_1.rpy:577
-translate chinese df77cf91:
-
-    # mara "On tourne. Deux personnes sont désignées. Elles s'embrassent si elles en ont envie."
-    mara ""
+    # ryn fatigue "C'est probablement la règle la plus sensée de la journée."
+    ryn fatigue "这大概是今天最合理的一条规则。"
 
 # game/scenario/4_1.rpy:578
-translate chinese af83d476:
+translate chinese f220c766:
 
-    # mara "Et si quelqu'un dit non, c'est non. Je suis joueuse, pas gardienne de prison."
-    mara ""
+    # think "Les verres se remplissent une nouvelle fois. Au bout de quelques minutes, Ryn accepte même de danser avec Elen."
+    think "酒杯再次被倒满。几分钟后，就连Ryn也答应和Elen跳舞。"
 
 # game/scenario/4_1.rpy:580
-translate chinese 40beb2cc:
+translate chinese b79983b6:
 
-    # iris "C'est ridicule. Et statistiquement conçu pour créer des problèmes. Je vais me coucher."
-    iris ""
-
-# game/scenario/4_1.rpy:582
-translate chinese 0035c292:
-
-    # "Mara lui barre le passage d'un pas, sans la toucher."
-    ""
+    # mara ivre "Bon, ça suffit les mines d'enterrement. J'ai une bouteille vide et une idée particulièrement mauvaise. Qui joue ?"
+    mara ivre "好了，别再摆出一张张奔丧脸了。我有一个空瓶子，还有一个特别糟糕的主意。谁来玩？"
 
 # game/scenario/4_1.rpy:584
-translate chinese f0c062d3:
+translate chinese c22aa57f:
 
-    # mara joie "Attends, Iris. Tu peux rester sans jouer."
-    mara joie ""
-
-# game/scenario/4_1.rpy:585
-translate chinese 8c512f96:
-
-    # mara "Mais priver cette soirée de ton regard assassin ? Là, ça devient personnel."
-    mara ""
+    # tomas hesitation "Euh... C'est quoi exactement, le jeu de la bouteille ? Je n'ai jamais joué."
+    tomas hesitation "呃……转瓶游戏到底是什么？我从来没玩过。"
 
 # game/scenario/4_1.rpy:587
-translate chinese ed18ae3f:
+translate chinese f8d76e7a:
 
-    # iris fatigue "Tu es épuisante."
-    iris fatigue ""
+    # mara taquin "On la fait tourner. Elle désigne deux personnes et elles s'embrassent si elles en ont envie."
+    mara taquin "我们转动瓶子。它会选出两个人，只要双方都愿意，他们就接吻。"
 
 # game/scenario/4_1.rpy:588
-translate chinese dbb456a9:
+translate chinese 89a43b58:
 
-    # iris gene "Bon. Je reste. Et je joue… seulement si Noam joue aussi."
-    iris gene ""
+    # mara neutre "Et si quelqu'un refuse, on passe au tour suivant. Je suis joueuse, pas gardienne de prison."
+    mara neutre "如果有人拒绝，就直接进入下一轮。我喜欢玩游戏，可不喜欢当狱卒。"
 
 # game/scenario/4_1.rpy:590
-translate chinese bf3e7dee:
+translate chinese b44eea77:
 
-    # lysa "Pourquoi Noam ?"
-    lysa ""
-
-# game/scenario/4_1.rpy:592
-translate chinese 691691dd:
-
-    # iris gene "Pour rien ! Enfin— parce que c'est moins stupide si tout le monde participe. C'est tout."
-    iris gene ""
+    # iris desaccord "C'est ridicule et probablement conçu pour créer des problèmes. Je vais me coucher."
+    iris desaccord "这太荒唐了，而且八成就是为了惹出麻烦设计的。我要去睡觉。"
 
 # game/scenario/4_1.rpy:594
-translate chinese 62f110e5:
+translate chinese 49abe214:
 
-    # mara "Bien sûr. Une décision purement scientifique."
-    mara ""
+    # mara taquin "Attends, Iris. Tu peux rester sans participer. Mais priver cette soirée de ton regard assassin, ça devient personnel."
+    mara taquin "等等，Iris。你可以留下，不参与游戏。但如果这个聚会少了你那杀人的眼神，我会觉得你是在针对我。"
 
-# game/scenario/4_1.rpy:596
-translate chinese 57aaca52:
+# game/scenario/4_1.rpy:599
+translate chinese 10c3724d:
 
-    # iris "Un mot de plus et je révise mon oui."
-    iris ""
+    # lysa reflechit "Pourquoi Noam ?"
+    lysa reflechit "为什么是Noam？"
 
-# game/scenario/4_1.rpy:601
-translate chinese 781de4ce:
+# game/scenario/4_1.rpy:603
+translate chinese 6254f2ff:
 
-    # noam "D'accord. Enfin… puisque mon sacrifice fait avancer la science."
-    noam ""
+    # mara taquin "Bien sûr. Une décision purement scientifique."
+    mara taquin "当然。这是一个纯粹出于科学的决定。"
 
-# game/scenario/4_1.rpy:606
-translate chinese fa145d6e:
+# game/scenario/4_1.rpy:605
+translate chinese 0b0e4cc8:
 
-    # noam "Pas ce soir."
-    noam ""
+    # iris colere "Un mot de plus et je révise mon oui."
+    iris colere "你再多说一个字，我就重新考虑刚才的同意。"
 
-# game/scenario/4_1.rpy:607
-translate chinese 719e9e1d:
+# game/scenario/4_1.rpy:610
+translate chinese 37539a66:
 
-    # mara "Refus accepté. Tu restes quand même témoin des dégâts."
-    mara ""
+    # noam taquin "D'accord. Puisque mon sacrifice permet de faire avancer la science..."
+    noam taquin "好吧。既然我的牺牲能够推动科学进步……"
 
-# game/scenario/4_1.rpy:623
-translate chinese 7022c5c8:
+# game/scenario/4_1.rpy:615
+translate chinese 18351e8f:
 
-    # mara "Premier tour ! Petite bouteille, choisis bien. J'ai une réputation à tenir."
-    mara ""
+    # noam neutre "Pas ce soir. Je vais vous laisser mener l'expérience sans moi."
+    noam neutre "今晚不行。我还是让你们自己做实验吧。"
 
-# game/scenario/4_1.rpy:625
-translate chinese 7b938cc6:
+# game/scenario/4_1.rpy:616
+translate chinese 173aaa80:
 
-    # "La bouteille ralentit… s’arrête sur Noam."
-    ""
-
-# game/scenario/4_1.rpy:627
-translate chinese 969348fd:
-
-    # noam "Moi. Évidemment."
-    noam ""
+    # mara taquin "Refus accepté. Mais tu restes quand même témoin des dégâts."
+    mara taquin "拒绝有效。但你还是得留下来见证灾难现场。"
 
 # game/scenario/4_1.rpy:629
-translate chinese 542daf19:
+translate chinese 9ad89302:
 
-    # "La bouteille pointe ensuite Lysa."
-    ""
+    # mara ivre "Premier tour ! Choisis bien, petite bouteille, j'ai une réputation à tenir."
+    mara ivre "第一轮！好好选，小瓶子，我还有名声要维护。"
 
 # game/scenario/4_1.rpy:631
-translate chinese 04fc3c6d:
+translate chinese ca0fcb30:
 
-    # lysa "Évidemment. Les Parques ont un sens de l'humour médiocre."
-    lysa ""
+    # "La bouteille tourne au milieu de la table, ralentit, puis s'arrête devant moi."
+    "瓶子在桌子中央旋转，速度慢慢降下来，最后停在我面前。"
 
-# game/scenario/4_1.rpy:632
-translate chinese 5a7e0413:
+# game/scenario/4_1.rpy:633
+translate chinese 79206410:
 
-    # lysa "Tu es d'accord, Noam ?"
-    lysa ""
+    # noam surpris "Moi ? Évidemment..."
+    noam surpris "我？果然……"
 
-# game/scenario/4_1.rpy:634
-translate chinese a4d73138:
+# game/scenario/4_1.rpy:635
+translate chinese 0c8aaa15:
 
-    # noam "Oui. Enfin… oui."
-    noam ""
+    # "Mara la relance. Cette fois, le goulot désigne Lysa."
+    "Mara再次转动瓶子。这一次，瓶口指向Lysa。"
 
-# game/scenario/4_1.rpy:636
-translate chinese 9eaec9b3:
+# game/scenario/4_1.rpy:637
+translate chinese 717ca19a:
 
-    # mara "Le couple parfait ! Et pas de négociation diplomatique pendant le baiser."
-    mara ""
+    # lysa blase "Évidemment. Le hasard a un sens de l'humour particulièrement médiocre."
+    lysa blase "果然。命运的幽默感真是差得要命。"
 
-# game/scenario/4_1.rpy:641
-translate chinese f4b9ac0d:
+# game/scenario/4_1.rpy:638
+translate chinese b05e3258:
 
-    # "Lysa hausse un sourcil et se penche avec un sourire en coin."
-    ""
+    # lysa reflechit "Tu es d'accord, Noam ?"
+    lysa reflechit "你愿意吗，Noam？"
+
+# game/scenario/4_1.rpy:640
+translate chinese ed74c55c:
+
+    # noam hesitation "Oui. Enfin... oui, je suis d'accord."
+    noam hesitation "愿意。呃……对，我愿意。"
 
 # game/scenario/4_1.rpy:642
-translate chinese 39140a80:
+translate chinese 2f103f61:
 
-    # think "Réfléchir plus longtemps ne rendra pas ça moins réel."
-    think ""
+    # mara taquin "Parfait ! Et pas de négociation diplomatique pendant le baiser."
+    mara taquin "很好！接吻时不准进行外交谈判。"
 
-# game/scenario/4_1.rpy:643
-translate chinese b7867810:
+# game/scenario/4_1.rpy:648
+translate chinese 0c1d4939:
 
-    # "Nous nous embrassons. C'est bref, mais ses lèvres restent contre les miennes une seconde de trop."
-    ""
+    # "Lysa hausse légèrement un sourcil avant de se rapprocher."
+    "Lysa微微挑起一边眉毛，然后靠近我。"
 
-# game/scenario/4_1.rpy:645
-translate chinese 7189b3d3:
+# game/scenario/4_1.rpy:649
+translate chinese 07ab32b6:
 
-    # elen "Ooooooh !"
-    elen ""
+    # think "Je n'ai même pas le temps de trouver quelque chose à dire."
+    think "我甚至来不及想该说什么。"
 
-# game/scenario/4_1.rpy:647
-translate chinese 9bd828a0:
+# game/scenario/4_1.rpy:650
+translate chinese 6199f139:
 
-    # iris "Respire, Elen."
-    iris ""
+    # "Ses lèvres rencontrent les miennes. Le baiser est bref, mais elle reste près de moi une seconde avant de reculer."
+    "她的嘴唇碰上了我的。这个吻很短，但她又在我身边停留了一秒，才往后退开。"
 
-# game/scenario/4_1.rpy:659
-translate chinese d9b9afc4:
+# game/scenario/4_1.rpy:652
+translate chinese c1e9bd02:
 
-    # julian "Un premier tour particulièrement convaincant. Julian valide le concept."
-    julian ""
+    # elen joie "Ooooooh !"
+    elen joie "哦——！"
 
-# game/scenario/4_1.rpy:661
-translate chinese 29c64528:
+# game/scenario/4_1.rpy:654
+translate chinese 86064a5e:
 
-    # elen "Lysa ! T'as rougiii ! C'est beaucoup trop mignon !"
-    elen ""
+    # iris blase "Respire, Elen."
+    iris blase "先喘口气，Elen。"
 
-# game/scenario/4_1.rpy:663
-translate chinese 0274d526:
+# game/scenario/4_1.rpy:667
+translate chinese 63c39f8d:
 
-    # lysa "C'est l'alcool. Pas lui."
-    lysa ""
-
-# game/scenario/4_1.rpy:664
-translate chinese 48c9a9dc:
-
-    # lysa "Cela dit, il embrasse mieux qu'il ne termine ses phrases. La barre était basse."
-    lysa ""
-
-# game/scenario/4_1.rpy:666
-translate chinese de1ba696:
-
-    # noam "Je vais choisir de prendre ça pour un compliment."
-    noam ""
+    # julian joie "Un premier tour particulièrement convaincant. Je valide totalement le concept."
+    julian joie "令人信服的第一轮。我完全赞同这个玩法。"
 
 # game/scenario/4_1.rpy:669
-translate chinese 9f42d102:
+translate chinese 8e647591:
 
-    # mara "Deuxième tour ! La bouteille exige davantage de chaos."
-    mara ""
+    # elen joie "Lysa ! Tu as rougi ! C'était beaucoup trop mignon !"
+    elen joie "Lysa！你脸红了！刚才也太可爱了吧！"
 
 # game/scenario/4_1.rpy:671
-translate chinese b993b656:
+translate chinese 0e1dd094:
 
-    # "La bouteille tourne… s’arrête sur Tomas."
-    ""
+    # lysa gene "C'est l'alcool. Pas lui."
+    lysa gene "是酒。不是因为他。"
 
-# game/scenario/4_1.rpy:673
-translate chinese 89585eca:
+# game/scenario/4_1.rpy:672
+translate chinese 770b0ce0:
 
-    # tomas "Oh non… Pourquoi moi ?"
-    tomas ""
+    # lysa taquin "Cela dit, il embrasse mieux qu'il ne termine ses phrases. La barre était assez basse."
+    lysa taquin "不过，他接吻的本事比把一句话说完整强多了。当然，标准本来就不高。"
 
-# game/scenario/4_1.rpy:675
-translate chinese 798a48c6:
+# game/scenario/4_1.rpy:674
+translate chinese 25e11e34:
 
-    # "La bouteille pointe Sael."
-    ""
+    # noam taquin "Je vais choisir de prendre ça pour un compliment."
+    noam taquin "我决定把这当成夸奖。"
 
-# game/scenario/4_1.rpy:677
-translate chinese 3794d0dd_3:
+# game/scenario/4_1.rpy:676
+translate chinese 7552fc49:
 
-    # sael "…"
-    sael ""
+    # mara ivre "Deuxième tour ! La bouteille exige visiblement davantage de chaos."
+    mara ivre "第二轮！看来瓶子想要更多混乱。"
 
-# game/scenario/4_1.rpy:679
-translate chinese a5f14667:
+# game/scenario/4_1.rpy:680
+translate chinese 6ea9e6d9:
 
-    # mara "Sael et Tomas. Là, même moi je n'aurais pas osé écrire ça."
-    mara ""
+    # tomas surpris "Oh non... Pourquoi moi ?"
+    tomas surpris "糟了……为什么是我？"
 
-# game/scenario/4_1.rpy:681
-translate chinese 96b9755a:
+# game/scenario/4_1.rpy:684
+translate chinese d9cd02d0_1:
 
-    # sael "Tomas ?"
-    sael ""
+    # sael surpris "..."
+    sael surpris "……"
 
-# game/scenario/4_1.rpy:683
-translate chinese 8e8a1c0a:
+# game/scenario/4_1.rpy:686
+translate chinese cf06da51:
 
-    # tomas "Je… oui. Enfin, si toi aussi."
-    tomas ""
+    # mara taquin "Sael et Tomas. Même moi, je n'aurais pas osé prévoir ça."
+    mara taquin "Sael和Tomas。就连我都不敢提前安排这种组合。"
 
-# game/scenario/4_1.rpy:685
-translate chinese 42783822:
+# game/scenario/4_1.rpy:688
+translate chinese 04f4afba:
 
-    # sael "Alors viens. Il n'y a rien à craindre ici."
-    sael ""
+    # sael neutre "Tomas ?"
+    sael neutre "Tomas？"
 
 # game/scenario/4_1.rpy:690
-translate chinese 6e2e333d:
+translate chinese f5dca466:
 
-    # "Sael pose une main sur la nuque de Tomas et l'embrasse doucement. Quand elle recule, il est écarlate."
-    ""
+    # tomas gene "Je... Oui. Enfin, seulement si toi aussi."
+    tomas gene "我……愿意。呃，前提是你也愿意。"
 
-# game/scenario/4_1.rpy:702
-translate chinese 45229cbb:
+# game/scenario/4_1.rpy:692
+translate chinese f2e6ccb3:
 
-    # elen "Sael ! C'était si douuuux ! Tomas, tu respires encore ?"
-    elen ""
-
-# game/scenario/4_1.rpy:704
-translate chinese 05a62eeb:
-
-    # julian "La question mérite effectivement une réponse officielle. Tomas ?"
-    julian ""
-
-# game/scenario/4_1.rpy:706
-translate chinese 8c4917fe:
-
-    # tomas "Je… je crois."
-    tomas ""
-
-# game/scenario/4_1.rpy:708
-translate chinese fed3f206:
-
-    # mara "Il vit ! Et il vient de gagner le silence le plus jaloux de la pièce."
-    mara ""
-
-# game/scenario/4_1.rpy:709
-translate chinese 780b9972:
-
-    # mara "Dernier tour. On finit en apothéose."
-    mara ""
+    # sael sourire "Alors approche. Il n'y a rien à craindre."
+    sael sourire "那就过来。没什么好怕的。"
 
 # game/scenario/4_1.rpy:711
-translate chinese 043efa3b:
+translate chinese a9d3f039:
 
-    # "La bouteille tourne… s’arrête sur Kael."
-    ""
+    # elen joie "Sael ! C'était tellement doux ! Tomas, tu respires encore ?"
+    elen joie "Sael！刚才好温柔！Tomas，你还在呼吸吗？"
 
-# game/scenario/4_1.rpy:714
-translate chinese 672157a6:
+# game/scenario/4_1.rpy:713
+translate chinese f9c3b661:
 
-    # kael "Moi ?"
-    kael ""
+    # julian taquin "La question mérite effectivement une réponse officielle. Tomas ?"
+    julian taquin "这个问题确实值得一份正式答复。Tomas？"
 
-# game/scenario/4_1.rpy:716
-translate chinese 89e06078:
+# game/scenario/4_1.rpy:715
+translate chinese ce569ac7:
 
-    # "La bouteille repart et pointe Elias."
-    ""
+    # tomas gene "Je... je crois."
+    tomas gene "我……我想还在。"
 
-# game/scenario/4_1.rpy:718
-translate chinese e3902139:
+# game/scenario/4_1.rpy:717
+translate chinese 169e70a2:
 
-    # elias "Euh… Moi ?"
-    elias ""
+    # mara ivre "Il vit ! On peut donc passer au dernier tour. Cette fois, on termine en beauté."
+    mara ivre "他还活着！所以我们可以进入最后一轮了。这次要完美收场。"
 
-# game/scenario/4_1.rpy:720
-translate chinese 0575b897:
+# game/scenario/4_1.rpy:721
+translate chinese 859a6471:
 
-    # mara "Kael et Elias. La bouteille a du goût."
-    mara ""
-
-# game/scenario/4_1.rpy:722
-translate chinese 7da3294c:
-
-    # kael "Je…"
-    kael ""
-
-# game/scenario/4_1.rpy:723
-translate chinese b9a7f5fb:
-
-    # kael gene "Je ne sais pas."
-    kael gene ""
+    # kael surpris "Moi ?"
+    kael surpris "我？"
 
 # game/scenario/4_1.rpy:725
-translate chinese a9fb7e35:
+translate chinese c83fc882:
 
-    # elias "T'es pas obligé, Kael. Vraiment."
-    elias ""
+    # elias surpris "Euh... Moi ?"
+    elias surpris "呃……我？"
 
-# game/scenario/4_1.rpy:726
-translate chinese afc427a8:
+# game/scenario/4_1.rpy:727
+translate chinese 76201c80:
 
-    # elias "Moi, ça me va. Mais si toi ça te va pas, on passe. C'est pas compliqué."
-    elias ""
+    # mara taquin "Kael et Elias. Cette bouteille a décidément beaucoup de goût."
+    mara taquin "Kael和Elias。这瓶子的品味真不错。"
 
-# game/scenario/4_1.rpy:728
-translate chinese 21c5933d:
+# game/scenario/4_1.rpy:729
+translate chinese f6d72638:
 
-    # kael "… D'accord."
-    kael ""
-
-# game/scenario/4_1.rpy:730
-translate chinese 22b56b34:
-
-    # elias "T'es sûr ?"
-    elias ""
+    # kael gene "Je..."
+    kael gene "我……"
 
 # game/scenario/4_1.rpy:732
-translate chinese b2a7832e:
+translate chinese 319c67cf:
 
-    # kael "Oui. Avant que je change d'avis."
-    kael ""
+    # elias inquiet "Tu n'es pas obligé, Kael. Vraiment."
+    elias inquiet "你不必答应，Kael。真的。"
+
+# game/scenario/4_1.rpy:733
+translate chinese 4412652d:
+
+    # elias neutre "Moi, ça me va. Mais si tu n'en as pas envie, on passe au tour suivant."
+    elias neutre "我没问题。但如果你不愿意，我们就进入下一轮。"
+
+# game/scenario/4_1.rpy:735
+translate chinese e6b8c8dc:
+
+    # kael gene "... D'accord."
+    kael gene "……好。"
 
 # game/scenario/4_1.rpy:737
-translate chinese 8c3747cc:
+translate chinese 3a88267a:
 
-    # "Le baiser commence avec prudence. Elias pose une main sur la nuque de Kael ; aucun des deux ne recule tout de suite."
-    ""
+    # elias inquiet "Tu es sûr ?"
+    elias inquiet "你确定？"
 
 # game/scenario/4_1.rpy:739
-translate chinese b61ca918:
+translate chinese 6edaf320:
 
-    # elias "Pour le beau jeu… c'est chaud, quand même."
-    elias ""
-
-# game/scenario/4_1.rpy:741
-translate chinese d7e55fe8:
-
-    # kael "Oui. Le jeu."
-    kael ""
+    # kael gene "Oui. Avant que je change d'avis."
+    kael gene "确定。趁我还没改变主意。"
 
 # game/scenario/4_1.rpy:745
-translate chinese 72dc09dd:
+translate chinese 5bfdf626:
 
-    # mara "Je retire tout ce que j'ai dit : cette bouteille est une artiste."
-    mara ""
+    # "Ils se rapprochent lentement. Elias pose une main sur la nuque de Kael et aucun des deux ne recule immédiatement après le baiser."
+    "他们慢慢靠近。Elias把一只手放到Kael的后颈上，接吻后，两个人都没有立刻退开。"
 
-# game/scenario/4_1.rpy:748
-translate chinese 8483bbbc:
+# game/scenario/4_1.rpy:747
+translate chinese 56d4c265:
 
-    # mara "C'était indécemment mignon. On remet ça demain ?"
-    mara ""
+    # elias fatigue "C'était seulement pour le jeu..."
+    elias fatigue "那只是为了游戏……"
 
-# game/scenario/4_1.rpy:750
-translate chinese 994b7768:
+# game/scenario/4_1.rpy:749
+translate chinese 18de93d6:
 
-    # kael "Non. Définitivement non."
-    kael ""
+    # kael gene "Oui. Seulement le jeu."
+    kael gene "对。只是为了游戏。"
 
-# game/scenario/4_1.rpy:765
-translate chinese 78cf1d6f:
+# game/scenario/4_1.rpy:756
+translate chinese 3d3cb2f0:
 
-    # think "La fête se termine tard. Mon trajet jusqu'à la chambre manque de ligne droite."
-    think ""
+    # mara ivre "Je retire tout ce que j'ai dit : cette bouteille est une artiste. On remet ça demain ?"
+    mara ivre "我收回刚才说过的一切：这瓶子是个艺术家。明天再来一次？"
 
-# game/scenario/4_1.rpy:767
-translate chinese 91a7ea30:
+# game/scenario/4_1.rpy:758
+translate chinese 65fa4fb3:
 
-    # think "La porte se referme. Le monde tangue encore."
-    think ""
-
-# game/scenario/4_1.rpy:771
-translate chinese 54638690:
-
-    # think "Je tombe sur le lit et laisse mes chaussures décider seules de leur avenir."
-    think ""
+    # kael gene "Non. Définitivement non."
+    kael gene "不。绝对不要。"
 
 # game/scenario/4_1.rpy:774
-translate chinese f7479585:
+translate chinese fb5107dc:
 
-    # think "Le vote. Les cris. Sael qui part. Sael qui revient. Puis les rires, comme un pansement posé trop vite."
-    think ""
+    # think "La fête se termine bien plus tard que prévu. Je quitte les autres et regagne lentement ma chambre."
+    think "聚会结束得比预想中晚得多。我离开其他人，慢慢走回自己的房间。"
 
-# game/scenario/4_1.rpy:777
-translate chinese 9f8f94b1:
+# game/scenario/4_1.rpy:775
+translate chinese f41ab84d:
 
-    # think "On a gagné quelque chose hier. Je ne sais pas encore si c'est autre chose que le droit de perdre autrement."
-    think ""
+    # think "J'ai suffisamment bu pour que le couloir semble bouger légèrement sous mes pieds."
+    think "我喝了不少，脚下的走廊似乎都在微微晃动。"
 
-# game/scenario/4_1.rpy:779
-translate chinese 5d5325d9:
+# game/scenario/4_1.rpy:782
+translate chinese a40f52cf:
 
-    # think "Me déshabiller ressemble à une décision. J'ai dépassé mon quota."
-    think ""
+    # think "Je retire ma veste puis m'assieds sur le lit. Mes chaussures me demandent déjà plus d'efforts que je ne peux leur en donner."
+    think "我脱下外套，在床上坐下。现在就连脱鞋，都需要我已经拿不出来的力气。"
 
-# game/scenario/4_1.rpy:783
-translate chinese 9d6a1d77:
+# game/scenario/4_1.rpy:785
+translate chinese f9cb1d2c:
 
-    # think "Demain sera un autre jour. Formule pratique pour éviter de décider si j'ai envie de le voir."
-    think ""
+    # think "Je repense au débat, au départ de Sael, puis à son retour dans la salle de repos, alors que rien n'est vraiment réglé."
+    think "我想起辩论，想起Sael离开，又想起在一切都还没解决的情况下，她还是回到了休息室。"
 
-# game/scenario/4_1.rpy:784
-translate chinese b68c783e:
+# game/scenario/4_1.rpy:788
+translate chinese 9485ded6:
 
-    # "Le sommeil m'emporte avant que je trouve une réponse."
-    ""
+    # think "Pendant quelques heures, nous avons réussi à rire ensemble. Demain, il faudra pourtant recommencer à parler du vote."
+    think "有那么几个小时，我们成功一起笑了出来。但明天，我们还是得重新讨论投票。"
 
-translate chinese strings:
+# game/scenario/4_1.rpy:790
+translate chinese afb89f4f:
 
-    # game/scenario/4_1.rpy:598
-    old "Accepter de jouer"
-    new ""
+    # think "Je parviens finalement à retirer mes chaussures et m'allonge sans prendre le temps de me changer."
+    think "我终于脱掉鞋，连衣服都懒得换，直接躺了下来。"
 
-    # game/scenario/4_1.rpy:598
-    old "Refuser poliment"
-    new ""
+# game/scenario/4_1.rpy:795
+translate chinese e679c086:
+
+    # think "Sael a déjà annoncé qu'elle votera contre. Si elle ne change pas d'avis, la libre circulation n'a aucune chance d'être adoptée."
+    think "Sael已经宣布会投反对票。如果她不改变主意，自由通行就绝不可能获得通过。"
+
+# game/scenario/4_1.rpy:796
+translate chinese a63d1c33:
+
+    # think "J'essaierai de lui parler demain. Pour le moment, je n'arrive même plus à garder les yeux ouverts."
+    think "明天我会试着和她谈谈。现在，我连眼睛都睁不开了。"
 

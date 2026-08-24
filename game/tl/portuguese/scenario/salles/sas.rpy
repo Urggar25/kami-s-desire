@@ -1,4 +1,4 @@
-﻿# game/scenario/salles/sas.rpy:62
+# game/scenario/salles/sas.rpy:62
 translate portuguese sas1_digicode_sas_db2b394d:
 
     # "Le digicode commande les verrous de la grande porte du sas."

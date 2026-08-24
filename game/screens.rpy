@@ -81,7 +81,10 @@ screen say(who, what):
 
     use dialogue_punctuation_overlay(what)
 
-    on "show" action Function(start_dialogue_animation, what)
+    on "show" action [
+        Function(start_dialogue_animation, what),
+        Function(codex_discover_from_text, what),
+    ]
 
     window:
         id "window"
@@ -97,8 +100,6 @@ screen say(who, what):
 
         text what id "what"
         add "gui/textbox_arrow.png" xpos 1760 yalign 0.9 at textbox_arrow_blink
-
-    use talked_object_from_line(what)
 
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
@@ -417,21 +418,21 @@ screen system_menu():
     add "gui/main_menu_kami/vignette.png" alpha 0.68
 
     # Échos graphiques du menu de référence, adaptés à l'interface KAMI.CORE.
-    text "SYSTEM":
+    text _("SYSTEM"):
         font "fonts/Rajdhani-SemiBold.ttf"
         size 190
         color "#5cd3ff0b"
         kerning 12
         xpos 705
         ypos -35
-    text "NOAM // HARMONIE":
+    text "NOAM // {}".format(kd_tr("Harmonie").upper()):
         font "fonts/Rajdhani-SemiBold.ttf"
         size 22
         color "#5cd3ff99"
         kerning 5
         xpos 72
         ypos 58
-    text "KAMI.CORE  /  INTERFACE LOCALE":
+    text _("KAMI.CORE  /  INTERFACE LOCALE"):
         font "fonts/Barlow-Light.ttf"
         size 17
         color "#416e81"
@@ -585,7 +586,7 @@ screen system_menu():
         ypos 972
         action Return()
 
-    text "NAVIGATION  ↑ ↓   //   CONFIRMER  ENTRÉE":
+    text _("NAVIGATION  ↑ ↓   //   CONFIRMER  ENTRÉE"):
         font "fonts/Rajdhani-SemiBold.ttf"
         size 17
         color "#3f6c7e"

@@ -5,6 +5,7 @@
 default corridor_current = "dortoir"
 default corridor_ui_target = None
 default current_scene_active = None
+default scripted_room_current = None
 
 init python:
     CORRIDOR_FOR_ROOM = {
@@ -138,6 +139,28 @@ init python:
         return True
 
     def corridor_target_enabled(corridor_key, target_type, target_key):
+        if getattr(store, "current_scene_active", None) == "_6_0_1_ROUTE_CAFETERIA":
+            if corridor_key == "dortoir":
+                return (target_type, target_key) == ("corridor", "cafeteria")
+            if corridor_key == "cafeteria":
+                return (target_type, target_key) == ("room", "cafeteria")
+            return False
+
+        if getattr(store, "current_scene_active", None) == "_4_0_ROUTE_CAFETERIA":
+            if corridor_key == "dortoir":
+                return (target_type, target_key) == ("corridor", "cafeteria")
+            if corridor_key == "cafeteria":
+                return (target_type, target_key) in (
+                    ("room", "cafeteria"),
+                    ("corridor", "dortoir"),
+                )
+            return False
+
+        if getattr(store, "current_scene_active", None) == "_2_ROUTE_OBSERVATION":
+            return target_type == "corridor" or (
+                target_type == "room" and target_key in ("cafeteria", "observation")
+            )
+
         if getattr(store, "current_scene_active", None) in ("_2_ROUTE_CAFETERIA", "_3_ROUTE_CAFETERIA"):
             if corridor_key == "dortoir":
                 return (target_type, target_key) in (
@@ -228,6 +251,41 @@ screen conclave_corridor(corridor_key=None):
             unhovered SetVariable("corridor_ui_target", None)
             action Return("_3_OPT_JULIAN_DIAL")
 
+    if shown_corridor == "dortoir" and current_scene_active == "_2_ROUTE_OBSERVATION":
+        if not day2_observation_route_mara_seen:
+            imagebutton:
+                idle Transform(character_image("mara", "mefiant"), zoom=1.00)
+                hover Transform(character_image("mara", "taquin"), zoom=1.00)
+                focus_mask True
+                xalign 0.18
+                yalign 1.00
+                hovered SetVariable("corridor_ui_target", "Parler à Mara et Sael")
+                unhovered SetVariable("corridor_ui_target", None)
+                action Return("_2_APRES_MIDI_MARA_SAEL")
+
+        if not day2_observation_route_lysa_seen:
+            imagebutton:
+                idle Transform(character_image("lysa", "triste"), zoom=1.00)
+                hover Transform(character_image("lysa", "reflexion"), zoom=1.00)
+                focus_mask True
+                xalign 0.82
+                yalign 1.00
+                hovered SetVariable("corridor_ui_target", "Parler à Lysa et Elias")
+                unhovered SetVariable("corridor_ui_target", None)
+                action Return("_2_APRES_MIDI_LYSA_ELIAS")
+
+    if shown_corridor == "infirmerie" and current_scene_active == "_2_ROUTE_OBSERVATION":
+        if not day2_observation_route_sael_seen:
+            imagebutton:
+                idle Transform(character_image("sael", "neutre"), zoom=1.00)
+                hover Transform(character_image("sael", "raison"), zoom=1.00)
+                focus_mask True
+                xalign 0.50
+                yalign 1.00
+                hovered SetVariable("corridor_ui_target", "Parler à Sael")
+                unhovered SetVariable("corridor_ui_target", None)
+                action Return("_2_APRES_MIDI_SAEL")
+
     frame:
         xalign 0.02
         yalign 0.03
@@ -237,7 +295,7 @@ screen conclave_corridor(corridor_key=None):
 
         vbox:
             spacing 4
-            text "[corridor_title]":
+            text kd_tr(corridor_title):
                 color "#E8F4FF"
                 size 32
                 xalign 0.0
@@ -245,7 +303,7 @@ screen conclave_corridor(corridor_key=None):
                 outlines [(2, "#02060ccc", 0, 0)]
 
             if corridor_ui_target:
-                text "[corridor_ui_target]":
+                text kd_tr(corridor_ui_target):
                     color "#A6D8FF"
                     size 22
                     xalign 0.0
@@ -260,7 +318,7 @@ screen conclave_corridor(corridor_key=None):
 
             vbox:
                 spacing 5
-                text "[exploration_libre_title]":
+                text kd_tr(exploration_libre_title):
                     size 26
                     color "#A6D8FF"
 
@@ -268,6 +326,38 @@ screen conclave_corridor(corridor_key=None):
                     text "Zones visitées : [len(exploration_libre_seen_rooms)]/[exploration_libre_required_visits]":
                         size 20
                         color "#DCE8F7"
+
+    elif current_scene_active in ("_4_0_ROUTE_CAFETERIA", "_6_0_1_ROUTE_CAFETERIA"):
+        frame:
+            xalign 0.03
+            yalign 0.97
+            background Solid("#0b1118d0")
+            padding (16, 12)
+
+            vbox:
+                spacing 5
+                text "OBJECTIF":
+                    size 18
+                    color "#6FA6C6"
+                text "Rejoindre la cafétéria":
+                    size 26
+                    color "#A6D8FF"
+
+    elif current_scene_active == "_2_ROUTE_OBSERVATION":
+        frame:
+            xalign 0.03
+            yalign 0.97
+            background Solid("#0b1118d0")
+            padding (16, 12)
+
+            vbox:
+                spacing 5
+                text "OBJECTIF":
+                    size 18
+                    color "#6FA6C6"
+                text "Rejoindre la salle d'observation":
+                    size 26
+                    color "#A6D8FF"
 
 
 label _2_ROUTE_CAFETERIA_TOMAS:
@@ -301,7 +391,7 @@ label CORRIDOR_NAVIGATION(start_corridor=None):
         jump CORRIDOR_NAVIGATION
 
     if isinstance(_corridor_action, str):
-        call expression _corridor_action
+        call expression _corridor_action from _call_expression_2
         jump CORRIDOR_NAVIGATION
 
     if _corridor_action[0] == "corridor":
@@ -310,7 +400,8 @@ label CORRIDOR_NAVIGATION(start_corridor=None):
 
     $ _corridor_room = _corridor_action[1]
     $ corridor_current = corridor_for_room(_corridor_room)
-    call PLAY_DOOR_OPEN(door_room_background(_corridor_room))
+    $ scripted_room_current = _corridor_room
+    call PLAY_DOOR_OPEN(door_room_background(_corridor_room)) from _call_PLAY_DOOR_OPEN
     return _corridor_room
 
 
@@ -338,8 +429,19 @@ label PLAY_DOOR_OPEN(next_background=None):
     return
 
 
+label MAYBE_PLAY_SCRIPTED_DOOR(room_key, next_background_name):
+    # Les scripts passent par ce point avant d'afficher un décor de salle.
+    # Un rafraîchissement dans la même salle ne rejoue pas la porte.
+    if scripted_room_current is not None and scripted_room_current != room_key:
+        call PLAY_DOOR_OPEN(renpy.displayable(next_background_name))
+
+    $ scripted_room_current = room_key
+    return
+
+
 label EXIT_ROOM_TO_CORRIDOR:
-    call PLAY_DOOR_OPEN(door_corridor_background(corridor_current))
+    $ scripted_room_current = "couloir_" + corridor_current
+    call PLAY_DOOR_OPEN(door_corridor_background(corridor_current)) from _call_PLAY_DOOR_OPEN_1
 
     if exploration_libre_active or social_free_time_active():
         return
@@ -348,7 +450,7 @@ label EXIT_ROOM_TO_CORRIDOR:
 
 
 label OPEN_CONCLAVE_MAP:
-    call CORRIDOR_NAVIGATION(corridor_current)
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_2
     $ _open_room_label = corridor_room_label(_return)
 
     if _open_room_label is not None:

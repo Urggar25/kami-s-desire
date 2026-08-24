@@ -3556,3 +3556,23 @@ translate english strings:
     old "La laisser contre la porte encore quelques secondes."
     new ""
 
+# TODO: Translation updated at 2026-08-24 09:37
+
+# game/scenario/9_0_1.rpy:686
+translate english df63b9b9_3:
+
+    # noam inquiet "Oui."
+    noam inquiet ""
+
+# game/scenario/9_0_1.rpy:899
+translate english 3ed5d2a3_1:
+
+    # nyra raison "Pourquoi ?"
+    nyra raison ""
+
+# game/scenario/9_0_1.rpy:1015
+translate english 900cae6c_1:
+
+    # nyra raison "Non."
+    nyra raison ""
+

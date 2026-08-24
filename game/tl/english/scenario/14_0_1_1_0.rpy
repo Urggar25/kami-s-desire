@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-08-23 12:01
+# TODO: Translation updated at 2026-08-23 12:01
 
 # game/scenario/14_0_1_1_0.rpy:3
 translate english 87c8dfff:

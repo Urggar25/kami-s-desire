@@ -1,6 +1,7 @@
 default decouverte_salle_canon = False
 
 label CANON_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_330
     scene bg_canon at adaptive_fullscreen
     
     if not decouverte_salle_canon and day_number() == 1:
@@ -104,6 +105,7 @@ label decouverte_salle_canon:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_331
     scene bg_canon at adaptive_fullscreen with fade
 
     "La porte se referme derrière nous."
@@ -261,6 +263,7 @@ label decouverte_salle_canon:
 
     pause 1.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("canon", "canon2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_332
     scene canon2 at adaptive_fullscreen with fade
 
     $ showGroup([

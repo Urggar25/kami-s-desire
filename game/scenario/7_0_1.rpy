@@ -19,11 +19,6 @@ default j701_console_errors = 0
 default j701_console_noise = 0
 default j701_console_feedback = ""
 default j701_console_phase = "play"
-default j701_stock_marked = []
-default j701_stock_errors = 0
-default j701_stock_solved = False
-default j701_stock_clue = ""
-default j701_stock_feedback = ""
 default j701_clean_particles = []
 default j701_clean_score = 0
 default j701_clean_time = 22
@@ -173,23 +168,6 @@ init python:
     except Exception:
         pass
 
-    J701_STOCK_ITEMS = [
-        ("tournevis", "Tournevis isolé", "present", "present"),
-        ("micro_soudeur", "Micro-soudeur", "present", "absent"),
-        ("bobine", "Bobine de cuivre", "present", "present"),
-        ("batteries", "Deux batteries", "present", "absent"),
-        ("pinces", "Pinces fines", "present", "present"),
-        ("stabilisateurs", "Stabilisateurs", "present", "absent"),
-        ("fusibles", "Fusibles", "present", "present"),
-        ("registre", "Registre signé", "absent", "absent"),
-    ]
-    J701_STOCK_TARGETS = ["micro_soudeur", "batteries", "stabilisateurs"]
-    J701_STOCK_CLUES = {
-        "micro_soudeur": "souder",
-        "batteries": "alimenter",
-        "stabilisateurs": "stabiliser",
-    }
-
     J701_CLEAN_SPRITES = [
         "gui/day7/clean/dust_1.png",
         "gui/day7/clean/dust_2.png",
@@ -332,7 +310,7 @@ init python:
         rings[index] = (rings[index] + direction) % len(J701_CONSOLE_MODULES[index]["values"])
         store.j701_console_rings = rings
         value = j701_console_value(index)
-        store.j701_console_feedback = J701_CONSOLE_MODULES[index]["name"] + " // VALEUR " + value + " SÉLECTIONNÉE"
+        store.j701_console_feedback = kd_tr("{} // VALEUR {} SÉLECTIONNÉE").format(kd_tr(J701_CONSOLE_MODULES[index]["name"]), value)
         if renpy.loadable("audio/sfx_metal_clank.mp3"):
             renpy.play("audio/sfx_metal_clank.mp3", channel="sound", relative_volume=0.34)
         if value == "ERR" and renpy.loadable("audio/sfx_glitch.mp3"):
@@ -359,7 +337,7 @@ init python:
             errors[index] = 11
             store.j701_console_error_ticks = errors
             store.j701_console_errors += 1
-            store.j701_console_feedback = module_name + " // CALIBRATION REFUSÉE — SIGNAL INSTABLE"
+            store.j701_console_feedback = kd_tr("{} // CALIBRATION REFUSÉE — SIGNAL INSTABLE").format(kd_tr(module_name))
             if renpy.loadable("audio/sfx_qte_miss.wav"):
                 renpy.play("audio/sfx_qte_miss.wav", channel="sound", relative_volume=0.72)
             if renpy.loadable("audio/sfx_glitch.mp3"):
@@ -371,7 +349,7 @@ init python:
         store.j701_console_locked = locked
         locked_count = j701_console_locked_count()
         store.j701_console_noise = max(0, 64 - locked_count * 16)
-        store.j701_console_feedback = module_name + " // FLUX STABILISÉ"
+        store.j701_console_feedback = kd_tr("{} // FLUX STABILISÉ").format(kd_tr(module_name))
         if renpy.loadable("audio/trailer/trl_sub_drop.wav"):
             renpy.play("audio/trailer/trl_sub_drop.wav", channel="sound", relative_volume=0.52)
         renpy.music.set_volume(max(0.03, 0.24 * (store.j701_console_noise / 64.0)), 0.35, channel="j701_console_ambience")
@@ -606,39 +584,6 @@ init python:
         def visit(self):
             return []
 
-    def j701_stock_reset():
-        store.j701_stock_marked = []
-        store.j701_stock_errors = 0
-        store.j701_stock_solved = False
-        store.j701_stock_clue = ""
-        store.j701_stock_feedback = "Compare le souvenir d'Elias avec l'étagère actuelle. Marque seulement les vraies disparitions."
-
-    def j701_stock_toggle(item_id):
-        marked = list(store.j701_stock_marked)
-        if item_id in marked:
-            marked.remove(item_id)
-        elif len(marked) < 3:
-            marked.append(item_id)
-        store.j701_stock_marked = marked
-        clues = [J701_STOCK_CLUES[item] for item in marked if item in J701_STOCK_CLUES]
-        store.j701_stock_clue = " / ".join(clues)
-        if clues:
-            store.j701_stock_feedback = "Hypothèse : quelqu'un rassemble de quoi " + ", ".join(clues) + "."
-        else:
-            store.j701_stock_feedback = "Hypothèse notée. Elias suit ton regard sans respirer."
-        renpy.restart_interaction()
-
-    def j701_stock_validate():
-        if sorted(store.j701_stock_marked) == sorted(J701_STOCK_TARGETS):
-            store.j701_stock_solved = True
-            store.j701_stock_clue = "souder / alimenter / stabiliser"
-            store.j701_stock_feedback = "Les absences forment une ligne nette : souder, alimenter, stabiliser."
-            renpy.restart_interaction()
-            return
-        store.j701_stock_errors += 1
-        store.j701_stock_feedback = "Ça ne colle pas. Un objet marqué n'est pas une vraie disparition."
-        renpy.restart_interaction()
-
     def j701_clean_spawn(x=None, y=None, glitch=False):
         import random
         particle = {
@@ -748,9 +693,9 @@ screen j701_plate_game():
         vbox:
             spacing 6
             text "PLATEAU EN CIRCULATION" size 34 color "#E8F4FF" xalign 0.5
-            text "[order['who']] : [order['line']]" size 24 color "#DCE8F7" xalign 0.5 text_align 0.5
+            text "{} : {}".format(kd_tr(order["who"]), kd_tr(order["line"])) size 24 color "#DCE8F7" xalign 0.5 text_align 0.5
             if not finished:
-                text "ton : [order['tone']] / piste [order['lane'] + 1]" size 18 color "#FFDF8A" xalign 0.5
+                text "{} : {} / {} {}".format(kd_tr("ton"), kd_tr(order["tone"]), kd_tr("piste"), order["lane"] + 1) size 18 color "#FFDF8A" xalign 0.5
 
     fixed:
         xalign 0.5
@@ -779,8 +724,8 @@ screen j701_plate_game():
                 action Function(j701_plate_pick, item_id)
                 vbox:
                     spacing 4
-                    text label size 27 color "#061018" xalign 0.5
-                    text hint.upper() size 15 color "#24313a" xalign 0.5
+                    text kd_tr(label) size 27 color "#061018" xalign 0.5
+                    text kd_tr(hint).upper() size 15 color "#24313a" xalign 0.5
                     text "PASSER" size 17 color "#1b2b34" xalign 0.5
 
     frame:
@@ -815,7 +760,7 @@ screen j701_plate_game():
                     ysize 20
                 text "OK [j701_plate_score]/4" size 23 color "#B8F0A0"
                 text "Ratés [j701_plate_errors]" size 23 color "#FF8A7A"
-            text "[j701_plate_feedback]" size 22 color "#E8F4FF" xalign 0.5 text_align 0.5
+            text kd_tr(j701_plate_feedback) size 22 color "#E8F4FF" xalign 0.5 text_align 0.5
 
     if finished:
         timer 0.8 action Return(j701_plate_score)
@@ -848,10 +793,10 @@ screen j701_calm_game():
             background Solid("#07131fcc")
             vbox:
                 spacing 8
-                text "DISCUSSION / [round_data['speaker']]" size 34 color "#E8F4FF"
-                text round_data["line"] size 24 color "#DCE8F7"
+                text "{} / {}".format(kd_tr("DISCUSSION"), kd_tr(round_data["speaker"])) size 34 color "#E8F4FF"
+                text kd_tr(round_data["line"]) size 24 color "#DCE8F7"
                 if j701_calm_last_line:
-                    text "Noam : [j701_calm_last_line]" size 20 color "#FFDF8A"
+                    text "Noam : {}".format(kd_tr(j701_calm_last_line)) size 20 color "#FFDF8A"
 
         frame:
             xpos 1420
@@ -871,7 +816,7 @@ screen j701_calm_game():
                 bar value StaticValue(j701_calm_score, 100):
                     xsize 350
                     ysize 18
-                text ("chemin " + str(j701_calm_depth + 1) + "/2") size 18 color "#9FD8FF" xalign 0.5
+                text (kd_tr("chemin") + " " + str(j701_calm_depth + 1) + "/2") size 18 color "#9FD8FF" xalign 0.5
 
         for dot in range(3):
             add Solid("#ffdf8a" if dot <= j701_calm_depth else "#516A7A") xpos (102 + dot * 38) ypos 294 xsize 24 ysize 8
@@ -880,7 +825,7 @@ screen j701_calm_game():
             $ yline = 154 + idx * 190
             $ effect = choice[2]
             $ tone_color = "#B8F0A0" if effect >= 10 else ("#FF8A7A" if effect < 0 else "#FFDF8A")
-            textbutton choice[0]:
+            textbutton kd_tr(choice[0]):
                 xpos 1100
                 ypos yline
                 xsize 690
@@ -899,7 +844,7 @@ screen j701_calm_game():
             ysize 74
             padding (18, 10)
             background Solid("#061018dd")
-            text "[j701_calm_feedback]" size 22 color "#E8F4FF" xalign 0.5 text_align 0.5
+            text kd_tr(j701_calm_feedback) size 22 color "#E8F4FF" xalign 0.5 text_align 0.5
 
     if j701_calm_done:
         timer 0.8 action Return(j701_calm_score)
@@ -941,7 +886,7 @@ screen j701_console_game():
             add J701ConsoleCore() xpos 650 ypos 205
 
             $ locked_count = j701_console_locked_count()
-            $ central_status = "SIGNAL MONDIAL INSTABLE" if locked_count == 0 else ("SIGNAL PARTIEL // %d / 4" % locked_count if locked_count < 4 else "SIGNAL MONDIAL STABILISÉ")
+            $ central_status = kd_tr("SIGNAL MONDIAL INSTABLE") if locked_count == 0 else (kd_tr("SIGNAL PARTIEL // %d / 4") % locked_count if locked_count < 4 else kd_tr("SIGNAL MONDIAL STABILISÉ"))
             frame:
                 xpos 720
                 ypos 642
@@ -960,7 +905,7 @@ screen j701_console_game():
                 $ value_color = "#77EF9C" if locked else ("#FF5964" if error or value == "ERR" else "#FFCE70")
 
                 add Transform(J701ConsoleDialFace(idx), xoffset=shake) xpos (cx - 165) ypos (cy - 165)
-                text module["name"]:
+                text kd_tr(module["name"]):
                     xpos cx
                     ypos (cy - 194)
                     xanchor 0.5
@@ -1054,7 +999,7 @@ screen j701_console_game():
                 ysize 48
                 padding (12, 6)
                 background Solid("#030d15dd")
-                text "[j701_console_feedback]" size 20 color ("#FF5964" if "REFUSÉE" in j701_console_feedback else ("#77EF9C" if "STABILISÉ" in j701_console_feedback else "#A8D9F2")) xalign 0.5 yalign 0.5 text_align 0.5
+                text kd_tr(j701_console_feedback) size 20 color ("#FF5964" if any(j701_console_error_ticks) else ("#77EF9C" if j701_console_locked_count() == 4 else "#A8D9F2")) xalign 0.5 yalign 0.5 text_align 0.5
 
     showif j701_console_phase == "reveal":
         fixed:
@@ -1118,85 +1063,6 @@ screen j701_console_game():
                 ypos 9
                 size 23
                 color ("#77EF9C" if j701_console_locked_count() == 4 else "#FFCE70")
-
-screen j701_stock_game():
-    modal True
-    zorder 220
-    on "show" action Function(j701_stock_reset)
-    add Solid("#090704dd")
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 1320
-        ysize 790
-        padding (30, 24)
-        background Solid("#10151af2")
-        vbox:
-            spacing 14
-            text "INVENTAIRE CROISÉ" size 38 color "#E8F4FF" xalign 0.5
-            text "Souvenir à gauche, étagère actuelle à droite. Marque trois disparitions utiles, pas les absences normales." size 22 color "#A9C6D8" xalign 0.5
-            hbox:
-                spacing 18
-                xalign 0.5
-                text "Hypothèse" size 23 color "#9FD8FF"
-                frame:
-                    xsize 560
-                    ysize 44
-                    padding (12, 6)
-                    background Solid("#061018ee")
-                    text (j701_stock_clue if j701_stock_clue else "aucun schéma fiable") size 22 color "#FFDF8A" xalign 0.5 yalign 0.5
-            grid 4 2:
-                spacing 12
-                xalign 0.5
-                for item_id, label, before, now in J701_STOCK_ITEMS:
-                    $ marked = item_id in j701_stock_marked
-                    $ true_missing = before == "present" and now == "absent"
-                    $ is_target = item_id in J701_STOCK_TARGETS
-                    button:
-                        xsize 300
-                        ysize 174
-                        background Solid("#3b241fee" if marked else ("#26333dee" if true_missing else "#232b33ee"))
-                        hover_background Solid("#365064ee")
-                        action Function(j701_stock_toggle, item_id)
-                        vbox:
-                            spacing 8
-                            text label size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
-                            hbox:
-                                spacing 8
-                                xalign 0.5
-                                vbox:
-                                    spacing 4
-                                    text "AVANT" size 16 color "#9FD8FF" xalign 0.5
-                                    text ("OK" if before == "present" else "--") size 28 color ("#B8F0A0" if before == "present" else "#516A7A") xalign 0.5
-                                vbox:
-                                    spacing 4
-                                    text "MAINT." size 16 color "#9FD8FF" xalign 0.5
-                                    text ("OK" if now == "present" else "--") size 28 color ("#B8F0A0" if now == "present" else "#FF8A7A") xalign 0.5
-                            text ("MARQUÉ" if marked else "inspecter") size 18 color ("#FFDF8A" if marked else "#A9C6D8") xalign 0.5
-                            if marked and is_target:
-                                text J701_STOCK_CLUES[item_id].upper() size 16 color "#B8F0A0" xalign 0.5
-                            elif marked:
-                                text "FAUX SIGNAL" size 16 color "#FF8A7A" xalign 0.5
-            frame:
-                xalign 0.5
-                xsize 980
-                ysize 82
-                padding (18, 10)
-                background Solid("#061018ee")
-                text "[j701_stock_feedback]" size 22 color "#E8F4FF" xalign 0.5 yalign 0.5 text_align 0.5
-            textbutton "Valider les 3 disparitions":
-                xalign 0.5
-                xsize 360
-                ysize 58
-                text_size 23
-                background Solid("#10283aee")
-                hover_background Solid("#1a4665ee")
-                action Function(j701_stock_validate)
-                sensitive len(j701_stock_marked) == 3
-            text "Erreurs : [j701_stock_errors]" size 18 color "#FF8A7A" xalign 0.5
-
-    if j701_stock_solved:
-        timer 0.9 action Return(True)
 
 screen j701_search_drawing_game():
     modal True
@@ -1266,7 +1132,7 @@ screen j701_search_drawing_game():
                 bar value StaticValue(j701_clean_reveal, 100):
                     xsize 480
                     ysize 14
-            text "[j701_clean_feedback]" size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
+            text kd_tr(j701_clean_feedback) size 23 color "#E8F4FF" xalign 0.5 text_align 0.5
 
     add Transform("gui/day7/clean/broom.png", zoom=0.32) xpos j701_clean_mouse_x ypos j701_clean_mouse_y xanchor 0.18 yanchor 0.18
 
@@ -1283,10 +1149,6 @@ label j701_play_calm:
 
 label j701_play_console:
     call screen j701_console_game
-    return
-
-label j701_play_stock:
-    call screen j701_stock_game
     return
 
 label j701_play_search_drawing:
@@ -1319,11 +1181,13 @@ label _7_0_1_REVEIL_CHAMBRE:
     play sound sfx_knock volume 4.0
     "Je repousse la couette."
     "Je manque de me prendre les pieds dedans."
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_277
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je traverse la chambre à moitié réveillé puis j'ouvre la porte."
 
     "J'ouvre la porte."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_278
     scene bg_dortoir at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1455,6 +1319,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     lysa neutre "Je t'attends devant la porte."
     lysa taquin "Ne me fais pas trop attendre."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_279
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La porte se referme. Je reste debout au milieu de la chambre."
@@ -1496,10 +1361,12 @@ label _7_0_1_REVEIL_CHAMBRE:
     
     think "Bon je ressemble toujours à rien, mais c'est au moins mieux qu'avant."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_280
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "J'enfile ma veste puis je cours rejoindre Lysa dans le couloir."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_281
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Je sors enfin de ma chambre."
@@ -1558,6 +1425,7 @@ label _7_0_1_CAFETERIA:
     call show_custom_title("Puis je me rends à la cafétéria.") from _call_show_custom_title_1
     pause 2.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_282
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
@@ -1590,6 +1458,7 @@ label _7_0_1_CAFETERIA:
     call show_custom_title("Le repas se déroule sans accroc pendant de longues minutes.") from _call_show_custom_title_02
     pause 2.0
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_283
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1640,6 +1509,7 @@ label _7_0_1_CAFETERIA:
 
 label _7_0_1_TEMPS_LIBRE_1:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_284
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
 
     noam sourire "La journée est plus calme que d'habitude. Je devrais pouvoir trouver quelque chose pour m'occuper."
@@ -1649,6 +1519,7 @@ label _7_0_1_TEMPS_LIBRE_1:
 label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     $ current_period = "Après-midi"
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_285
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.5
 
@@ -1697,6 +1568,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     $ hideGroup()
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_286
     scene bg_canon at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_tension.mp3" fadein 1.5
 
@@ -1798,6 +1670,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
 label _7_0_1_SOIREE_TENSION_LEGERE:
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_287
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
@@ -1867,8 +1740,6 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     mara taquin "Pourquoi quand tu dis ça, ça te rend encore plus suspect ?"
 
-    call j701_play_stock from _call_j701_play_stock
-
     $ showGroup([
         ("iris",   "sourire",     0.10),
         ("julian", "decontracte", 0.25),
@@ -1927,6 +1798,7 @@ label _7_0_1_FIN_JOURNEE:
 
     "Au final nous n'avons pas trouvé grand-chose."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_288
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
@@ -1939,6 +1811,7 @@ label _7_0_1_FIN_JOURNEE:
 
     noam triste "Raah, j'y comprends rien."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_289
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     $ showGroup([

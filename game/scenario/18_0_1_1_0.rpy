@@ -1,4 +1,5 @@
 label _18_0_1_1_0_REVEIL_DECISION:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_106
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 1.5
     "Au matin, la grille est immobile. Une vis depasse pourtant de deux tours."
@@ -21,6 +22,7 @@ label _18_0_1_1_0_REVEIL_DECISION:
     jump _18_0_1_1_0_MARA
 
 label _18_0_1_1_0_MARA:
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_107
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "determine", 0.27), ("mara", "fatigue", 0.67)])
     mara "Non."
@@ -71,6 +73,7 @@ label _18_0_1_1_0_MARA:
     jump _18_0_1_1_0_DEMONTAGE
 
 label _18_0_1_1_0_DEMONTAGE:
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_108
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
     $ showGroup([("noam", "inquiet", 0.28), ("mara", "reflexion", 0.66)])
@@ -171,6 +174,7 @@ label _18_0_1_1_0_DEMONTAGE:
     jump _18_0_1_1_0_TRACES
 
 label _18_0_1_1_0_TRACES:
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_109
     scene bg_maintenance at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("mara", "mefiant", 0.66)])
     mara "Pose les fibres dans ce sachet."

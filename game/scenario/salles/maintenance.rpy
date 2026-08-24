@@ -10,6 +10,7 @@ default decouverte_salle_maintenance = False
 
 
 label MAINTENANCE_TP:
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_341
     scene bg_maintenance at adaptive_fullscreen
 
     if not decouverte_salle_maintenance and day_number() == 1:
@@ -129,6 +130,7 @@ label decouverte_salle_maintenance:
 
     pause 0.4
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_342
     scene bg_maintenance at adaptive_fullscreen with fade
 
     "Ça sent le métal chaud."

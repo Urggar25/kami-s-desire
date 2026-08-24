@@ -1,4 +1,4 @@
-﻿default persistent.pegi18 = False
+default persistent.pegi18 = False
 default stat_physique = 0
 
 # --- Config réutilisable (modifiée par minijeu_halteres_run) ---
@@ -550,6 +550,7 @@ label scene_mg_sexy_1:
     return
 
 label sport_event_001:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_1
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -575,6 +576,7 @@ label sport_event_001:
     return
 
 label sport_event_002:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_2
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -610,6 +612,7 @@ label sport_event_002:
     return
 
 label sport_event_003:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_3
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -646,6 +649,7 @@ label sport_event_003:
     return
 
 label sport_event_004:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_4
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -680,6 +684,7 @@ label sport_event_004:
     return
 
 label sport_event_005:
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_5
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -723,6 +728,7 @@ label sport_event_006:
     if nsfw_content_locked():
         return
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_6
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -755,6 +761,7 @@ label sport_event_007:
     if nsfw_content_locked():
         return
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_7
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -785,6 +792,7 @@ label sport_event_008:
     if nsfw_content_locked():
         return
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_8
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -813,6 +821,7 @@ label sport_event_009:
     if nsfw_content_locked():
         return
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_9
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -821,6 +830,7 @@ label sport_event_009:
     "Je pousse la porte entrouverte. La vapeur flotte déjà dans l’air."
     "Et là, elle est là."
 
+    call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_10
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
     "De loin. Dos tourné. Sous le jet principal. L'eau cascade sur son dos, sur ses hanches, sur ses fesses rondes et luisantes."

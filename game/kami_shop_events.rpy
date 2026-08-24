@@ -46,7 +46,7 @@ init python:
         renpy.save_persistent()
         if notify:
             prefix = "+" if amount >= 0 else ""
-            renpy.notify("{}{} Éclats de désir".format(prefix, amount))
+            renpy.notify(kd_tr("{}{} Éclats de désir").format(prefix, amount))
         renpy.restart_interaction()
 
     def kami_grant_desire_reward(reward_id, amount, notify=True):
@@ -65,7 +65,7 @@ init python:
         renpy.save_persistent()
 
         if notify and amount:
-            renpy.notify("+{} Éclats de désir".format(amount))
+            renpy.notify(kd_tr("+{} Éclats de désir").format(amount))
         renpy.restart_interaction()
         return amount
 
@@ -92,16 +92,16 @@ init python:
     def kami_buy_item(item_id):
         item = kami_shop_item_by_id(item_id)
         if item is None:
-            renpy.notify("Réquisition introuvable")
+            renpy.notify(kd_tr("Réquisition introuvable"))
             return
         price = int(item["price"])
         if persistent.kami_shop_owned is None:
             persistent.kami_shop_owned = []
         if kami_shop_owns(item_id):
-            renpy.notify("Objet déjà obtenu")
+            renpy.notify(kd_tr("Objet déjà obtenu"))
             return
         if persistent.desire_shards < price:
-            renpy.notify("Éclats de désir insuffisants")
+            renpy.notify(kd_tr("Éclats de désir insuffisants"))
             return
         persistent.desire_shards -= price
         persistent.kami_shop_owned.append(item_id)
@@ -115,7 +115,7 @@ init python:
             unlock_profile_accessory(profile_id, cosmetic_id)
 
         renpy.save_persistent()
-        renpy.notify("Réquisition validée")
+        renpy.notify(kd_tr("Réquisition validée"))
         renpy.restart_interaction()
 
     def kami_random_preview_recipe(profile_id):
@@ -269,7 +269,7 @@ screen kami_hub_header(title):
             spacing 18
             yalign 0.5
             add Transform("gui/main_menu_kami/glyph_kami.png", size=(44, 44), matrixcolor=TintMatrix("#b860ff")) yalign 0.5
-            text "ÉCLATS DE DÉSIR" style "kami_hub_meta" color "#eedfff" yalign 0.5
+            text _("ÉCLATS DE DÉSIR") style "kami_hub_meta" color "#eedfff" yalign 0.5
             text "[persistent.desire_shards]" font "fonts/Rajdhani-SemiBold.ttf" size 38 color "#ffffff" yalign 0.5
 
 
@@ -306,7 +306,7 @@ screen kami_shop_item_card(item, card_index):
                         add Transform(icon_path, size=(150, 150), matrixcolor=TintMatrix("#ff8358")) xalign 0.5 yalign 0.5
                     add "gui/main_menu_kami/glyph_kami.png" xalign 0.5 yalign 0.5 alpha 0.18 zoom 0.34
 
-                text item_name:
+                text kd_tr(item_name):
                     font "fonts/Rajdhani-SemiBold.ttf"
                     size 28
                     color "#f7ede8"
@@ -326,7 +326,7 @@ screen kami_shop_item_card(item, card_index):
                         text "[price]" font "fonts/Rajdhani-SemiBold.ttf" size 38 color "#ffffff"
 
                 if is_cosmetic:
-                    textbutton "PRÉVISUALISER":
+                    textbutton _("PRÉVISUALISER"):
                         style "kami_hub_action"
                         ysize 52
                         text_size 23
@@ -334,7 +334,7 @@ screen kami_shop_item_card(item, card_index):
                 else:
                     null height 52
 
-                textbutton ("OBTENU" if is_owned else "OBTENIR"):
+                textbutton _("OBTENU" if is_owned else "OBTENIR"):
                     style "kami_hub_action"
                     ysize 58
                     sensitive not is_owned
@@ -357,7 +357,7 @@ screen kami_shop_menu(initial_page=0):
     add "gui/main_menu_kami/scanlines.png" alpha 0.22
     add "gui/main_menu_kami/vignette.png" alpha 0.72
 
-    use kami_hub_header("RÉQUISITIONS DE KAMI")
+    use kami_hub_header(_("RÉQUISITIONS DE KAMI"))
 
     frame:
         xpos 120
@@ -373,16 +373,16 @@ screen kami_shop_menu(initial_page=0):
 
             hbox:
                 xfill True
-                text "OFFRES TEMPORAIRES" style "kami_hub_section"
+                text _("OFFRES TEMPORAIRES") style "kami_hub_section"
                 null width 560
-                textbutton "CODE PROMO":
+                textbutton _("CODE PROMO"):
                     style "kami_hub_action"
                     xsize 190
                     ysize 46
                     text_size 21
                     action Show("kami_shop_promo")
                 null width 24
-                text "FIN DANS 06 J 14 H" style "kami_hub_meta" color "#ff7040"
+                text _("FIN DANS 06 J 14 H") style "kami_hub_meta" color "#ff7040"
 
             add Solid("#b73c1c") xsize 1596 ysize 2
 
@@ -392,7 +392,7 @@ screen kami_shop_menu(initial_page=0):
                 for card_index, item in enumerate(page_items):
                     use kami_shop_item_card(item, card_index)
 
-    text "Les réquisitions non obtenues disparaîtront à la fin du cycle.":
+    text _("Les réquisitions non obtenues disparaîtront à la fin du cycle."):
         style "kami_hub_meta"
         color "#8faab9"
         xalign 0.5
@@ -433,13 +433,13 @@ screen kami_shop_preview(item_id):
                 xsize 420
                 spacing 20
                 yalign 0.5
-                text "PRÉVISUALISATION" style "kami_hub_meta" size 27
-                text item["name"] style "kami_hub_section" size 38
-                text "Corps, bras, bouche et yeux sont tirés au hasard. La tenue ou l'accessoire sélectionné reste fixe." style "kami_hub_body" size 23 xsize 410
-                textbutton "ALÉATOIRE":
+                text _("PRÉVISUALISATION") style "kami_hub_meta" size 27
+                text kd_tr(item["name"]) style "kami_hub_section" size 38
+                text _("Corps, bras, bouche et yeux sont tirés au hasard. La tenue ou l'accessoire sélectionné reste fixe.") style "kami_hub_body" size 23 xsize 410
+                textbutton _("ALÉATOIRE"):
                     style "kami_hub_action"
                     action SetScreenVariable("preview_recipe", kami_random_preview_recipe(item["profile_id"]))
-                textbutton "FERMER":
+                textbutton _("FERMER"):
                     style "kami_hub_action"
                     action Hide("kami_shop_preview")
 
@@ -463,17 +463,17 @@ screen kami_shop_promo():
 
         vbox:
             spacing 22
-            text "CODE PROMO" style "kami_hub_section" xalign 0.5
-            text "Saisissez un code pour créditer des récompenses persistantes." style "kami_hub_body" size 22 xalign 0.5
+            text _("CODE PROMO") style "kami_hub_section" xalign 0.5
+            text _("Saisissez un code pour créditer des récompenses persistantes.") style "kami_hub_body" size 22 xalign 0.5
             input value ScreenVariableInputValue("promo_code_input") length 32 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_" xmaximum 620 xalign 0.5
             hbox:
                 xalign 0.5
                 spacing 18
-                textbutton "VALIDER":
+                textbutton _("VALIDER"):
                     style "kami_hub_action"
                     xsize 260
                     action [Function(apply_promo_code, promo_code_input), SetScreenVariable("promo_code_input", "")]
-                textbutton "FERMER":
+                textbutton _("FERMER"):
                     style "kami_hub_action"
                     xsize 260
                     action Hide("kami_shop_promo")
