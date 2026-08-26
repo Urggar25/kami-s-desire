@@ -1555,13 +1555,6 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     noam hesitation "Et ça l'est ?"
 
-    pause 1.0
-    $ showGroup([
-        ("tomas", "hesitation", 0.30),
-        ("noam",  "neutre", 0.70),
-    ])
-    pause 1.0
-
     tomas hesitation "Oui. Enfin je pense... Suis-moi, ce sera plus simple si tu vois ça par toi-même."
 
     "Je le suis pendant quelques minutes en silence."
@@ -1679,19 +1672,20 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     think "On a tous plus ou moins réussi à se faire au rythme du Conclave."
 
     $ showGroup([
-        ("iris",   "sourire",     0.10),
-        ("julian", "decontracte", 0.25),
-        ("lysa",   "reflexion",   0.42),
-        ("kael",   "fatigue",     0.58),
-        ("elias",  "neutre",      0.75),
-        ("mara",   "neutre",      0.90),
+        ("iris",   "sourire"),
+        ("julian", "decontracte"),
+        ("lysa",   "reflexion"),
+        ("kael",   "fatigue"),
+        ("elias",  "neutre"),
+        ("mara",   "neutre"),
+        ("noam",   "neutre"),
     ])
 
     iris taquin "Franchement, si demain elle parle toujours pas…"
 
     julian sourire "Je commence officiellement à apprécier cette dystopie !"
 
-    elen content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
+    noam content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
 
     julian rire "Impossible. Je suis trop fascinant pour m'ennuyer !"
 
@@ -1739,15 +1733,6 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     elias fatigue "Je bricolais un truc. Un petit truc. Rien de bizarre, hein."
 
     mara taquin "Pourquoi quand tu dis ça, ça te rend encore plus suspect ?"
-
-    $ showGroup([
-        ("iris",   "sourire",     0.10),
-        ("julian", "decontracte", 0.25),
-        ("lysa",   "reflexion",   0.42),
-        ("kael",   "fatigue",     0.58),
-        ("elias",  "neutre",      0.75),
-        ("mara",   "neutre",      0.90),
-    ])
 
     elias fatigue "J'ai refait la liste dans ma tête."
     elias inquiet "Plus je recompte, moins ça colle. Et moi, les listes, je les rate pas."
@@ -1841,6 +1826,8 @@ label _7_0_1_FIN_JOURNEE:
 
     call fouille_bureau_run from _call_fouille_bureau_run
 
+    scene bg_chambre at adaptive_fullscreen with dissolve
+
     $ showGroup([
         ("noam",   "neutre",     0.50),
     ])
@@ -1875,3 +1862,6 @@ label _7_0_1_FIN_JOURNEE:
 
     #call end_day("8") from _call_end_day_11
     #jump _8_0_1_REVEIL_CHAMBRE
+
+# Total journée : 14 minutes
+# Durée totale : 2h03

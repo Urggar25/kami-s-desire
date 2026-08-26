@@ -1128,5 +1128,8 @@ label _5_1_FIN_JOURNEE:
     think "Je ferme les yeux."
     $ blink()
 
-    call end_day("6") from _call_end_day_9
-    jump _6_1_0_REVEIL_CHAMBRE
+    #call end_day("6") from _call_end_day_9
+
+    jump patreon_ending
+
+    #jump _6_1_0_REVEIL_CHAMBRE

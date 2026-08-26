@@ -29,17 +29,19 @@ init -2 python:
     FB_QTE_TOP = 205
     FB_QTE_BOTTOM = 825
 
+    # Les centres suivent les deux rangées en perspective du plateau. Les objets
+    # hauts sont remontés pour que leur base — et non leur centre — repose dessus.
     FB_ITEMS = [
-        {"id": "ecran", "name": "Écran", "crop": (42, 220, 268, 242), "x": 335, "y": 345, "zoom": .58, "point_y": -4, "bend": -95, "end": (-205, -105), "fly": (-700, -500, -38)},
-        {"id": "lampe", "name": "Lampe", "crop": (350, 88, 272, 364), "x": 545, "y": 290, "zoom": .48, "point_y": -18, "bend": 90, "end": (-175, -75), "fly": (-720, -610, -75)},
-        {"id": "tablette", "name": "Tablette", "crop": (639, 255, 316, 188), "x": 785, "y": 315, "zoom": .56, "point_y": 0, "bend": -90, "end": (-70, -100), "fly": (-310, -690, -110)},
-        {"id": "carnet", "name": "Carnet", "crop": (980, 260, 271, 184), "x": 1025, "y": 300, "zoom": .54, "point_y": 0, "bend": 95, "end": (70, -85), "fly": (350, -690, 85)},
-        {"id": "stylo", "name": "Stylo", "crop": (1297, 282, 182, 122), "x": 1285, "y": 295, "zoom": .66, "point_y": 0, "bend": -75, "end": (210, -70), "fly": (720, -520, 155)},
-        {"id": "tasse", "name": "Tasse", "crop": (67, 592, 201, 205), "x": 455, "y": 420, "zoom": .48, "point_y": -2, "bend": 85, "end": (-230, -65), "fly": (-760, -360, -125)},
-        {"id": "hologramme", "name": "Projecteur", "crop": (352, 569, 178, 242), "x": 665, "y": 397, "zoom": .46, "point_y": -12, "bend": -85, "end": (-145, -135), "fly": (-670, -500, 70)},
-        {"id": "casque", "name": "Casque", "crop": (619, 586, 248, 210), "x": 875, "y": 385, "zoom": .48, "point_y": 0, "bend": 85, "end": (15, -160), "fly": (90, -690, 145)},
-        {"id": "pot", "name": "Pot à crayons", "crop": (969, 547, 179, 264), "x": 1090, "y": 365, "zoom": .43, "point_y": -10, "bend": -80, "end": (145, -125), "fly": (650, -500, -95)},
-        {"id": "plante", "name": "Plante", "crop": (1246, 525, 233, 290), "x": 1320, "y": 345, "zoom": .41, "point_y": -8, "bend": 85, "end": (215, -75), "fly": (760, -350, 120)},
+        {"id": "ecran", "name": "Écran", "crop": (42, 220, 268, 242), "x": 470, "y": 330, "zoom": .58, "point_y": -4, "bend": -95, "end": (-205, -105), "fly": (-700, -500, -38)},
+        {"id": "lampe", "name": "Lampe", "crop": (350, 88, 272, 364), "x": 650, "y": 290, "zoom": .48, "point_y": -18, "bend": 90, "end": (-175, -75), "fly": (-720, -610, -75)},
+        {"id": "tablette", "name": "Tablette", "crop": (639, 255, 316, 188), "x": 860, "y": 285, "zoom": .56, "point_y": 0, "bend": -90, "end": (-70, -100), "fly": (-310, -690, -110)},
+        {"id": "carnet", "name": "Carnet", "crop": (980, 260, 271, 184), "x": 1080, "y": 250, "zoom": .54, "point_y": 0, "bend": 95, "end": (70, -85), "fly": (350, -690, 85)},
+        {"id": "stylo", "name": "Stylo", "crop": (1297, 282, 182, 122), "x": 1285, "y": 220, "zoom": .66, "point_y": 0, "bend": -75, "end": (210, -70), "fly": (720, -520, 155)},
+        {"id": "tasse", "name": "Tasse", "crop": (67, 592, 201, 205), "x": 570, "y": 420, "zoom": .48, "point_y": -2, "bend": 85, "end": (-230, -65), "fly": (-760, -360, -125)},
+        {"id": "hologramme", "name": "Projecteur", "crop": (352, 569, 178, 242), "x": 760, "y": 385, "zoom": .46, "point_y": -12, "bend": -85, "end": (-145, -135), "fly": (-670, -500, 70)},
+        {"id": "casque", "name": "Casque", "crop": (619, 586, 248, 210), "x": 970, "y": 350, "zoom": .48, "point_y": 0, "bend": 85, "end": (15, -160), "fly": (90, -690, 145)},
+        {"id": "pot", "name": "Pot à crayons", "crop": (969, 547, 179, 264), "x": 1200, "y": 290, "zoom": .43, "point_y": -10, "bend": -80, "end": (145, -125), "fly": (650, -500, -95)},
+        {"id": "plante", "name": "Plante", "crop": (1246, 525, 233, 290), "x": 1420, "y": 245, "zoom": .41, "point_y": -8, "bend": 85, "end": (215, -75), "fly": (760, -350, 120)},
     ]
     FB_ITEM_BY_ID = dict((item["id"], item) for item in FB_ITEMS)
     FB_PHRASES = [

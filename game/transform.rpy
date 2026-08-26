@@ -47,13 +47,14 @@ transform char_group_place(xpos, ypos=1.0):
 init python:
 
     GROUP_MAX_MEMBERS = 12
+    GROUP_AUTO_X_MIN = -0.11
+    GROUP_AUTO_X_MAX = 1.20
 
     def _group_auto_x(count, index):
         if count <= 1:
-            return 0.5
-        left = 0.08 if count > 5 else 0.18
-        right = 0.92 if count > 5 else 0.82
-        return left + ((right - left) * float(index) / float(count - 1))
+            return (GROUP_AUTO_X_MIN + GROUP_AUTO_X_MAX) / 2.0
+        spacing = (GROUP_AUTO_X_MAX - GROUP_AUTO_X_MIN) / float(count - 1)
+        return GROUP_AUTO_X_MIN + (spacing * float(index))
 
     def _group_member_tuple(member, count, index):
         tag = member[0]

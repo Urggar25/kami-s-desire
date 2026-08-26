@@ -413,6 +413,10 @@ init python:
         renpy.save_persistent()
         return payout
 
+    def sq_reward_question_action(stage_index, question_index):
+        """Verse la récompense sans renvoyer de valeur à l'interaction écran."""
+        sq_reward_question(stage_index, question_index)
+
     def sq_question_rewarded(stage_index, question_index):
         reward_key = "{}:{}".format(int(stage_index), int(question_index))
         return reward_key in (persistent.seven_questions_rewarded_questions or [])

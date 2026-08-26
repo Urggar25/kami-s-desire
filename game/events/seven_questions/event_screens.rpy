@@ -416,7 +416,10 @@ screen seven_questions_event_menu():
                     ysize 82
                     xalign 1.0
                     sensitive (not persistent.seven_questions_intro_complete) or selected_unlocked
-                    action (Call("seven_questions_kami_intro") if not persistent.seven_questions_intro_complete else ShowMenu("seven_questions_quiz", stage_index=selected_stage))
+                    # L'évènement est accessible depuis le menu principal : son
+                    # introduction doit donc s'exécuter dans un contexte isolé,
+                    # sans reprendre le point d'entrée de la partie (Jour 0).
+                    action (Function(renpy.call_in_new_context, "seven_questions_kami_intro") if not persistent.seven_questions_intro_complete else ShowMenu("seven_questions_quiz", stage_index=selected_stage))
 
 
 screen seven_questions_quiz(stage_index=0):
@@ -524,7 +527,7 @@ screen seven_questions_quiz(stage_index=0):
                 sensitive not answered
                 background Solid("#0b4260f5" if answer_selected else "#090b0fef")
                 hover_background Solid("#0b4260f5")
-                action [SetScreenVariable("selected_answer", answer_index), SetScreenVariable("answered", True), If(answer_is_correct, [SetScreenVariable("score", score + 1), Function(sq_reward_question, stage_index, question_index)], NullAction())]
+                action [SetScreenVariable("selected_answer", answer_index), SetScreenVariable("answered", True), If(answer_is_correct, [SetScreenVariable("score", score + 1), Function(sq_reward_question_action, stage_index, question_index)], NullAction())]
 
                 hbox:
                     spacing 26

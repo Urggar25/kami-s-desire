@@ -68,7 +68,9 @@ init -10 python:
         if kd_character_has_layered_wardrobe(character_id):
             outfit_id = outfit_id or kd_equipped_character_outfit(character_id) or "tenue1"
             arms = kd_arm_for_outfit(character_id, arms, outfit_id)
-            asset_names = ["corps_nu", outfit_id] + accessories + [arms, mouth, eyes]
+            # Ordre de composition commun à tous les écrans : corps nu,
+            # tenue, accessoires, bras adaptés à la tenue, puis visage.
+            asset_names = ["corps_nu", outfit_id] + accessories + [arms, eyes, mouth]
         else:
             # Compatibilité : le corps historique reste la base lorsque
             # corps_nu/tenue1 n'existent pas.
@@ -274,29 +276,29 @@ init python:
     NOAM_ASSET_DIR = "images/character/noam"
 
     NOAM_EXPRESSIONS = {
-        "colere": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
-        "culpabilite": ("corps", "bras_devant_soi", "bouche_triste", "yeux_triste"),
-        "desaccord": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
-        "desespoir": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_fatigue"),
-        "determine": ("corps", "bras_long_corps", "bouche_sourire", "yeux_suspiscion"),
-        "hesitation": ("corps", "bras_devant_soi", "bouche_triste", "yeux_triste"),
-        "inquiet": ("corps", "bras_devant_soi", "bouche_triste", "yeux_fatigue"),
-        "joie": ("corps", "bras_long_corps", "bouche_joie", "yeux_normal"),
-        "neutre": ("corps", "bras_long_corps", "bouche_triste", "yeux_normal"),
-        "panne": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
-        "peur": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
-        "raison": ("corps", "bras_long_corps", "bouche_sourire", "yeux_normal"),
-        "reflexion": ("corps", "bras_devant_soi", "bouche_triste", "yeux_suspiscion"),
-        "rire": ("corps", "bras_devant_soi", "bouche_joie", "yeux_normal"),
-        "sourire": ("corps", "bras_long_corps", "bouche_sourire", "yeux_normal"),
-        "surpris": ("corps", "bras_long_corps", "bouche_joie", "yeux_surpris"),
-        "taquin": ("corps", "bras_long_corps", "bouche_taquin", "yeux_suspiscion"),
-        "triste": ("corps", "bras_devant_soi", "bouche_triste", "yeux_triste"),
-        "fatigue": ("corps", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
-        "panique": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
-        "panne_creep": ("corps", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
-        "doute": ("corps", "bras_devant_soi", "bouche_grimace", "yeux_suspiscion"),
-        "calme": ("corps", "bras_long_corps", "bouche_sourire", "yeux_fatigue"),
+        "colere": ("corps_nu", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+        "culpabilite": ("corps_nu", "bras_devant_soi", "bouche_triste", "yeux_triste"),
+        "desaccord": ("corps_nu", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+        "desespoir": ("corps_nu", "bras_devant_soi", "bouche_grimace", "yeux_fatigue"),
+        "determine": ("corps_nu", "bras_long_corps", "bouche_sourire", "yeux_suspiscion"),
+        "hesitation": ("corps_nu", "bras_devant_soi", "bouche_triste", "yeux_triste"),
+        "inquiet": ("corps_nu", "bras_devant_soi", "bouche_triste", "yeux_fatigue"),
+        "joie": ("corps_nu", "bras_long_corps", "bouche_joie", "yeux_normal"),
+        "neutre": ("corps_nu", "bras_long_corps", "bouche_triste", "yeux_normal"),
+        "panne": ("corps_nu", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
+        "peur": ("corps_nu", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
+        "raison": ("corps_nu", "bras_long_corps", "bouche_sourire", "yeux_normal"),
+        "reflexion": ("corps_nu", "bras_devant_soi", "bouche_triste", "yeux_suspiscion"),
+        "rire": ("corps_nu", "bras_devant_soi", "bouche_joie", "yeux_normal"),
+        "sourire": ("corps_nu", "bras_long_corps", "bouche_sourire", "yeux_normal"),
+        "surpris": ("corps_nu", "bras_long_corps", "bouche_joie", "yeux_surpris"),
+        "taquin": ("corps_nu", "bras_long_corps", "bouche_taquin", "yeux_suspiscion"),
+        "triste": ("corps_nu", "bras_devant_soi", "bouche_triste", "yeux_triste"),
+        "fatigue": ("corps_nu", "bras_long_corps", "bouche_triste", "yeux_fatigue"),
+        "panique": ("corps_nu", "bras_devant_soi", "bouche_grimace", "yeux_surpris"),
+        "panne_creep": ("corps_nu", "bras_long_corps", "bouche_grimace", "yeux_suspiscion"),
+        "doute": ("corps_nu", "bras_devant_soi", "bouche_grimace", "yeux_suspiscion"),
+        "calme": ("corps_nu", "bras_long_corps", "bouche_sourire", "yeux_fatigue"),
     }
 
     def _noam_asset(name):
@@ -307,6 +309,9 @@ init python:
 
     def _noam_layered_expression(st, at, expr):
         body, arms, mouth, eyes = NOAM_EXPRESSIONS[expr]
+        outfit = kd_equipped_character_outfit("noam") or "tenue1"
+        arms = kd_arm_for_outfit("noam", arms, outfit)
+        accessories = kd_equipped_character_accessories("noam")
 
         blink_phase = st % 4.9
         if 4.62 <= blink_phase <= 4.78:
@@ -320,10 +325,13 @@ init python:
                 mouth = "bouche_parle"
             zoom = NOAM_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
-        displayable = kd_cached_layered_sprite(
-            NOAM_IMAGE_SIZE, zoom,
-            (_noam_asset(body), _noam_asset(arms), _noam_asset(eyes), _noam_asset(mouth)),
+        asset_names = [body, outfit] + accessories + [arms, eyes, mouth]
+        asset_paths = tuple(
+            _noam_asset(asset_name)
+            for asset_name in asset_names
+            if renpy.loadable(_noam_asset(asset_name))
         )
+        displayable = kd_cached_layered_sprite(NOAM_IMAGE_SIZE, zoom, asset_paths)
         return displayable, kd_layered_sprite_delay(st, 4.9, 4.62, 4.78, speaking)
 
     def noam_expression(expr):

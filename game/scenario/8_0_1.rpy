@@ -10,6 +10,7 @@ label _8_0_1_REVEIL_CHAMBRE:
     $ current_day = 8
     $ noam_has_juliette_drawing = False
     play music "music/bgm_calm_not_peace.mp3" fadein 2.5
+    $ current_period = "Matin"
     $ blink()
     pause 1.0
     $ blink()
@@ -41,8 +42,8 @@ label _8_0_1_REVEIL_CHAMBRE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ pnc_room = "chambre_j8"
     $ pnc_flags = {}
-    call screen pnc_chambre_j8()
-    return
+    $ room_scene_indices["chambre"] = 1
+    jump _8_PNC_BOUCLE
 
 # -------------------------------------------------------
 # SCREEN PnC — Chambre jour 8
@@ -55,92 +56,166 @@ screen pnc_chambre_j8():
 
     use room_scene_background("chambre")
 
-    $ j8_exit_label = "_8_FIN_RECHERCHE" if pnc_flags.get("sac") and pnc_flags.get("placard") and pnc_flags.get("sous_lit") else "_8_PNC_ECRAN"
-    use room_scene_interactions("chambre", {
-        "chambre1_aeration": "_8_PNC_CHAISE",
-        "chambre1_lit": "_8_PNC_SOUS_LIT",
-        "chambre1_television": "_8_PNC_ECRAN",
-        "chambre1_tiroir": "_8_PNC_SAC",
-        "chambre2_armoire": "_8_PNC_PLACARD",
-        "chambre2_porte_dehors": j8_exit_label,
-        "chambre2_porte_sdb": "_8_PNC_CHAISE",
-        "chambre3_brouilleur": "_8_PNC_ECRAN",
-        "chambre3_tablette": "_8_PNC_ECRAN",
-    })
+    $ j8_targets = {
+        "chambre1_aeration": "_8_PNC_AERATION",
+        "chambre1_lit": "_8_PNC_LIT",
+        "chambre1_television": "_8_PNC_TELEVISION",
+        "chambre1_tiroir": "_8_PNC_TIROIR",
+        "chambre2_armoire": "_8_PNC_ARMOIRE",
+        "chambre2_porte_dehors": "_8_PNC_SORTIE",
+        "chambre2_porte_sdb": "_8_PNC_SALLE_DE_BAIN",
+        "chambre3_brouilleur": "_8_PNC_BROUILLEUR",
+        "chambre3_tablette": "_8_PNC_TABLETTE",
+    }
+
+    # Cette scène renvoie la zone cliquée à une boucle unique. Contrairement à
+    # l'ancienne fouille, chaque clic ne crée donc pas un nouvel écran imbriqué.
+    for key, path in room_interaction_files("chambre"):
+        $ label_name = room_interaction_label("chambre", key)
+        $ target_label = j8_targets.get(label_name)
+        if not room_interaction_is_decorative(key) and target_label:
+            imagebutton:
+                idle room_interaction_null()
+                hover room_interaction_hover_with_overlays(path, "chambre")
+                focus_mask room_interaction_layer(path, "chambre", "art")
+                xpos 0
+                ypos 0
+                action Return(target_label)
+
+    $ j8_required = ("lit", "tiroir", "armoire", "tablette")
+    $ j8_search_count = sum(1 for key in j8_required if pnc_flags.get(key))
+
+    frame:
+        xalign 0.5
+        yalign 0.035
+        padding (24, 12)
+        background Solid("#071019D9")
+
+        vbox:
+            spacing 2
+            text "FOUILLE DE LA CHAMBRE" xalign 0.5 size 22 color "#D6E8F0"
+            text "Zones principales vérifiées : [j8_search_count] / 4" xalign 0.5 size 16 color "#7FCFEA"
 
 # -------------------------------------------------------
 # LABELS PnC
 # -------------------------------------------------------
 
-label _8_PNC_SAC:
-    $ pnc_flags["sac"] = True
-    $ showGroup([("noam", "inquiet", 0.50)])
-    "Je vide le sac sur le lit. Des vêtements froissés et plusieurs papiers tombent en tas devant moi."
-    "J'attrape aussitôt une feuille qui dépasse, mais ce n'est qu'un formulaire du Conclave couvert de numéros et de cases à cocher."
-    think "Je savais que le dessin était précieux. Je ne l'aurais jamais glissé au milieu de tout ça."
+label _8_PNC_BOUCLE:
     $ hideGroup()
-    $ pnc_room = "chambre_j8"
     call screen pnc_chambre_j8()
-    return
+    $ j8_selected_interaction = _return
+    call expression j8_selected_interaction from _call_expression_5
+    jump _8_PNC_BOUCLE
 
-label _8_PNC_CHAISE:
-    $ pnc_flags["chaise"] = True
+label _8_PNC_AERATION:
+    if pnc_flags.get("aeration"):
+        think "J'ai déjà vérifié les lamelles. Une feuille n'aurait pas pu passer sans être déchirée."
+        return
+
+    $ pnc_flags["aeration"] = True
     $ showGroup([("noam", "reflexion", 0.50)])
-    "Je fouille chaque poche de la veste suspendue à la chaise, puis je la retourne avant de vérifier sous le siège."
-    think "Toujours rien. Pourtant, je me souviens parfaitement du papier entre mes doigts hier soir. Je ne l'ai pas imaginé."
-    $ hideGroup()
-    $ pnc_room = "chambre_j8"
-    call screen pnc_chambre_j8()
+    "Je passe les doigts le long de la bouche d'aération, puis j'écarte prudemment deux lamelles."
+    "Le souffle froid soulève la poussière accumulée derrière la grille. Aucun morceau de papier, seulement l'obscurité du conduit."
+    think "Le dessin n'a pas pu finir là-dedans tout seul."
     return
 
-label _8_PNC_PLACARD:
-    $ pnc_flags["placard"] = True
+label _8_PNC_LIT:
+    if pnc_flags.get("lit"):
+        think "J'ai déjà retourné le lit. Il ne reste rien à vérifier de ce côté."
+        return
+
+    $ pnc_flags["lit"] = True
+    $ showGroup([("noam", "inquiet", 0.50)])
+    "Je retire l'oreiller, secoue la couverture et passe la main entre le matelas et le sommier."
+    "Je m'agenouille ensuite pour regarder dessous. Une chaussette oubliée, un peu de poussière... mais aucune trace du dessin."
+    think "Je l'aurais vu tomber. J'étais juste là, hier soir."
+    return
+
+label _8_PNC_TELEVISION:
+    if pnc_flags.get("television"):
+        think "L'écran est toujours noir. Rien n'est coincé autour du cadre."
+        return
+
+    $ pnc_flags["television"] = True
+    $ showGroup([("noam", "inquiet", 0.50)])
+    "L'écran mural reste entièrement noir. Je vérifie malgré moi le rebord inférieur et l'espace étroit entre le cadre et le mur."
+    think "Rien. Et toujours aucun signe de Kami."
+    think "Ce silence devrait me rassurer, mais il donne l'impression que la chambre retient son souffle."
+    return
+
+label _8_PNC_TIROIR:
+    if pnc_flags.get("tiroir"):
+        think "Le tiroir est vide. Je l'ai même retiré de ses rails."
+        return
+
+    $ pnc_flags["tiroir"] = True
     $ showGroup([("noam", "reflexion", 0.50)])
-    "J'ouvre le placard. Trois cintres pendent au-dessus d'un pull roulé en boule sur l'étagère."
-
-    menu:
-        "Déplier le pull.":
-            "Je déplie le pull et le secoue au-dessus du sol. Rien ne tombe."
-            think "Évidemment. Je le replie à moitié avant de le remettre à sa place."
-
-        "Regarder derrière les cintres.":
-            "Je pousse les cintres sur le côté. Le fond du placard est parfaitement vide."
-            think "Au moins, aucune feuille ne peut se cacher là-dedans."
-
-    $ hideGroup()
-    $ pnc_room = "chambre_j8"
-    call screen pnc_chambre_j8()
+    "J'ouvre le tiroir jusqu'à la butée. Quelques formulaires du Conclave, mon badge de réserve et un stylo roulent vers l'avant."
+    "Je sors tout, inspecte chaque feuille, puis retire complètement le tiroir pour regarder derrière."
+    think "Ce ne sont que des papiers administratifs. Le dessin n'est pas là."
     return
 
-label _8_PNC_SOUS_LIT:
-    $ pnc_flags["sous_lit"] = True
+label _8_PNC_ARMOIRE:
+    if pnc_flags.get("armoire"):
+        think "J'ai fouillé chaque poche et chaque étagère de l'armoire. Rien."
+        return
+
+    $ pnc_flags["armoire"] = True
+    $ showGroup([("noam", "reflexion", 0.50)])
+    "J'ouvre l'armoire et décroche mes vêtements un par un. Je palpe les poches, déplie le pull de l'étagère et vérifie derrière les cintres."
+    "Le fond métallique apparaît entièrement nu."
+    think "Même plié, le dessin aurait laissé une trace. Il n'est pas ici."
+    return
+
+label _8_PNC_SALLE_DE_BAIN:
+    if pnc_flags.get("salle_de_bain"):
+        think "La salle de bain est trop petite pour cacher quoi que ce soit d'autre."
+        return
+
+    $ pnc_flags["salle_de_bain"] = True
+    $ showGroup([("noam", "reflexion", 0.50)])
+    "Je pousse la porte de la salle de bain et vérifie le meuble sous le lavabo, le panier à linge et même l'arrière des serviettes."
+    "L'humidité aurait gondolé le papier. Tout est sec, parfaitement rangé et vide."
+    think "Je n'aurais jamais apporté le dessin ici."
+    return
+
+label _8_PNC_BROUILLEUR:
+    if pnc_flags.get("brouilleur"):
+        think "Le boîtier du brouilleur est fermé. Le dessin n'est pas derrière."
+        return
+
+    $ pnc_flags["brouilleur"] = True
     $ showGroup([("noam", "inquiet", 0.50)])
-    "Je m'agenouille et soulève le bord de la couette. Sous le lit, je ne trouve qu'un peu de poussière et une chaussette oubliée."
-
-    menu:
-        "Me relever tout de suite.":
-            think "Il est ailleurs. Je continue."
-
-        "Rester là, par terre, un moment.":
-            think "Je reste un instant à genoux sur le sol d'une chambre qui n'est même pas la mienne, incapable d'accepter qu'un simple morceau de papier me mette dans cet état."
-            think "Ça suffit. Relève-toi et continue."
-
-    $ hideGroup()
-    $ pnc_room = "chambre_j8"
-    call screen pnc_chambre_j8()
+    "Je longe le boîtier du brouilleur du bout des doigts et regarde entre l'appareil et le mur."
+    "Aucun papier n'y est coincé. La diode pulse avec une régularité presque organique."
+    think "Ce truc est censé nous protéger. Alors pourquoi est-ce que je me sens observé ?"
     return
 
-label _8_PNC_ECRAN:
-    $ pnc_flags["ecran"] = True
+label _8_PNC_TABLETTE:
+    if pnc_flags.get("tablette"):
+        think "J'ai déjà déplacé la tablette et vérifié toute la table. Le dessin n'y est plus."
+        return
+
+    $ pnc_flags["tablette"] = True
     $ showGroup([("noam", "inquiet", 0.50)])
-    "Je m'arrête devant l'écran mural. Il reste entièrement noir, sans même une lumière de veille."
-    think "Kami ne s'est manifestée ni cette nuit ni ce matin. C'est rassurant, en théorie."
-    think "Pourtant, un écran éteint dans cette chambre ressemble toujours à quelque chose qui attend le bon moment pour se rallumer."
-    "Je détourne les yeux et reprends ma recherche."
-    $ hideGroup()
-    $ pnc_room = "chambre_j8"
-    call screen pnc_chambre_j8()
+    "Je soulève la tablette, inspecte sa station d'accueil, puis passe la main derrière la table et sous son plateau."
+    "La surface où j'avais posé le dessin est nue. Pas de feuille tombée, pas même un coin de papier coincé contre le mur."
+    think "C'est ici que je l'ai vu pour la dernière fois. J'en suis certain."
     return
+
+label _8_PNC_SORTIE:
+    $ j8_required = ("lit", "tiroir", "armoire", "tablette")
+    $ j8_remaining = sum(1 for key in j8_required if not pnc_flags.get(key))
+
+    if j8_remaining:
+        "Ma main se pose sur la poignée, mais je m'arrête avant d'ouvrir."
+        if j8_remaining == 1:
+            think "Il reste encore un endroit évident à vérifier. Je ne peux pas partir maintenant."
+        else:
+            think "Il reste encore [j8_remaining] endroits évidents à vérifier. Je ne peux pas partir maintenant."
+        return
+
+    jump _8_FIN_RECHERCHE
 
 # -------------------------------------------------------
 # FIN DE RECHERCHE
@@ -151,36 +226,28 @@ label _8_FIN_RECHERCHE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.50)])
 
-    "Je m'assieds au milieu du désordre créé par ma recherche. Le sac est ouvert sur le lit, le tiroir dépasse et le pull pend à moitié hors du placard."
+    "Je m'assieds au milieu du désordre créé par ma recherche. Le lit est défait, le tiroir repose encore hors de ses rails et mes vêtements débordent de l'armoire."
 
-    think "Le dessin n'est pas là. Je ne perds pas ce genre de chose et je sais que je l'avais encore hier."
-    think "J'ai envie de me convaincre que je l'ai rangé ailleurs, mais il n'existe pas beaucoup d'« ailleurs » dans cette chambre."
+    think "Le dessin n'est pas là. Pourquoi je l'aurais perdu ? Je n'y ai pas touché."
+    think "J'ai envie de me convaincre que je l'ai rangé ailleurs, mais il n'existe pas beaucoup d'« ailleurs » possibles dans cette chambre."
 
     "Je me relève malgré l'impression d'abandonner quelque chose d'important."
 
-    menu:
-        "Refaire un tour rapide de la pièce.":
-            "Je vérifie derrière la porte, sous le matelas, puis jusque dans la doublure du sac."
-            think "Rien. Il n'est vraiment plus dans la pièce."
-
-        "Accepter que ce soit fini pour l'instant.":
-            think "Je ne peux pas fouiller indéfiniment. Il se trouve peut-être dans une autre affaire, quelque part où je n'ai pas encore regardé."
-
     "Mon estomac se rappelle brusquement à moi. Je n'ai rien mangé depuis hier soir et continuer à retourner la chambre ne fera pas réapparaître le dessin."
 
-    think "Je vais déjeuner, puis je reprendrai calmement. Les objets ne disparaissent pas sans raison."
+    think "Je vais déjeuner, puis je reprendrai les recherches calmement. Les objets ne disparaissent pas sans raison."
 
-    $ journal_entries.append(("Jour 8 — matin", "Le dessin de Juliette a disparu. J'ai fouillé partout. Il n'est plus là. Je ne sais pas si je l'ai égaré ou si quelqu'un l'a pris. Je préfère penser que je l'ai égaré. C'est moins lourd à porter."))
-
-    "Je récupère ma veste sur la chaise."
+    "Je récupère une veste parmi les vêtements sortis de l'armoire."
 
     menu:
         "Laisser la chambre telle quelle.":
             think "Je rangerai en rentrant. Pour le moment, je n'ai plus envie de regarder cette pièce."
+            $ chambre_range = True
 
-        "Refermer le sac et le placard avant de sortir.":
-            "Je referme soigneusement le placard et la fermeture du sac."
+        "Remettre l'essentiel en place avant de sortir.":
+            "Je remets le tiroir sur ses rails, repousse mes vêtements dans l'armoire et referme sa porte."
             think "Je ne sais pas pourquoi j'en ressens le besoin. Peut-être simplement pour être certain de voir si quelque chose bouge encore."
+            $ chambre_range = False
 
     $ hideGroup()
     "Je quitte la chambre en refermant la porte derrière moi."
@@ -193,95 +260,105 @@ label _8_0_1_CAFETERIA:
     play music "music/bgm_unsaid_distance.mp3" fadein 1.5
 
     $ showGroup([
-        ("iris",   "sourire",      0.05),
-        ("julian", "decontracte",  0.20),
-        ("lysa",   "neutre",       0.35),
-        ("noam",   "fatigue",      0.50),
-        ("elias",  "detendu",      0.65),
-        ("mara",   "rire",         0.80),
-        ("tomas",  "fatigue",      0.95)
+        ("iris",   "sourire"),
+        ("julian", "decontracte"),
+        ("lysa",   "neutre"),
+        ("noam",   "fatigue"),
+        ("elias",  "detendu"),
+        ("mara",   "rire"),
+        ("tomas",  "fatigue"),
+        ("elen",  "sourire")
     ])
 
     "La cafétéria est plus bruyante que d'habitude. Les conversations se croisent, les rires viennent sans effort et personne ne surveille les écrans entre deux phrases."
 
-    think "Deux jours sans Kami, et l'endroit ressemble déjà moins à une salle d'attente avant exécution."
+    think "Deux jours sans Kami, d'une certaine manière, nous nous y sommes faits."
 
     iris sourire "Je commence à croire qu'on est officiellement en vacances. Encore une journée sans annonce et je réclame une grasse matinée collective."
 
-    julian decontracte "Julian approuve. Si l'apocalypse devient silencieuse et nous laisse dormir jusqu'à midi, il est prêt à revoir son jugement sur elle."
+    julian decontracte "C'est clair ! C'est un vrai soulagement de ne plus être réveillés par Kami."
 
-    mara rire "Tu parles surtout de dormir. Même la fin du monde doit s'adapter à ton confort."
+    mara rire "Tu parles surtout de dormir. Même si j'aimerais comprendre ce qu'il se passe, c'est vrai que c'est reposant."
 
-    julian sourire "Le confort est une valeur fondamentale de l'humanité. Enfin une cause politique sur laquelle Julian peut s'engager sincèrement."
+    julian sourire "Le confort est une valeur fondamentale de l'humanité. Encore une cause JUSTE sur laquelle JE peux m'engager."
 
     elias detendu "Ça explique beaucoup de choses sur toi, et aucune n'est rassurante."
 
-    julian sourire "Merci, Elias. Ça fait du bien de se sentir enfin compris."
-
     "Je m'installe avec mon plateau à côté de Lysa. Elle m'observe à peine une seconde avant de reprendre son repas."
 
-    lysa neutre "Tu as une sale tête. Je suppose que le silence de Kami n'améliore pas miraculeusement ton sommeil."
+    lysa neutre "Tu as une sale tête. Je suppose que le silence de Kami n'a pas amélioré ton sommeil."
 
-    noam fatigue "Merci pour ce diagnostic très rassurant. J'ai simplement passé une partie de la matinée à chercher quelque chose."
+    noam fatigue "Rien à voir avec Kami mais... J'ai simplement passé une partie de la matinée à chercher quelque chose."
 
-    lysa taquin "Et visiblement, tu as perdu contre l'objet."
+    lysa taquin "Pas étonnant que tu aies perdu quelque chose quand on voit l'état de ta chambre !"
+
+    noam colere "Eh ! Mais elle est tout le temps rangée ma chambre !"
+
+    lysa taquin "Ouais, c'est ce que tu dis ça !"
+    lysa reflexion "Sinon, tu veux de l'aide pour t'aider à chercher ?"
+
+    if chambre_range == False:
+        think "Ma chambre est clairement en bordel. Il ne faut pas que Lysa voit ça."
 
     think "Je pourrais lui parler du dessin. Pourtant, au milieu de cette ambiance presque normale, je n'ai aucune envie de ramener la conversation dans ma chambre."
 
+    noam neutre "C'est gentil mais je vais bien finir par le retrouver."
+
     "Tomas reste penché sur son écran portable. Son doigt remonte lentement une colonne de chiffres pendant que les autres parlent."
 
-    iris taquin "Attention, Tomas a cette tête-là. Dans quelques secondes, il va nous annoncer une catastrophe avec un tableau parfaitement aligné."
+    iris taquin "Oh non, je commence à savoir ce qu'il se passe quand Tomas tire cette tête-là. Dans quelques secondes, il va nous annoncer une catastrophe."
 
-    tomas gene "Ce n'est pas une catastrophe. J'ai seulement consulté les statistiques publiques cette nuit."
+    tomas gene "N-Non. Ce n'est pas vraiment une catastrophe. J'ai seulement consulté les statistiques publiques cette nuit."
 
-    mara neutre "Pourquoi est-ce que tu consultes des statistiques pendant ton temps libre ?"
+    mara neutre "Pourquoi est-ce que tu consultes des statistiques pendant ton temps libre ? T'as rien de mieux à foutre ?"
+    mara taquin "Un beau gars comme toi, je peux l'occuper de plusieurs manières moi..."
 
-    tomas gene "Je trouve ça reposant. Les données sont organisées et, en général, elles ne changent pas de sujet au milieu d'une phrase."
+    tomas gene "... J'aime bien fouiller dans les données. C'est toujours très enrichissant."
 
-    iris rire "Je retire ce que j'ai dit. C'est lui, la catastrophe."
+    iris rire "Je ne sais pas qui j'ai le plus envie de détester. Mara avec ses phrases louches ou Tomas avec ses tableaux à la noix."
 
-    tomas reflechit "Depuis le vote du sixième jour, je n'ai trouvé aucune nouvelle exécution enregistrée."
+    tomas reflechit "C'est important... Depuis le vote du sixième jour, je n'ai trouvé aucune nouvelle exécution enregistrée."
 
     "Autour de la table, les sourires s'effacent sans que personne ait besoin de réclamer le silence."
 
-    noam surpris "Aucune exécution ? Dans quel district ?"
+    noam surpris "Ah c'est ce dont on parlait hier ?"
 
-    tomas inquiet "Dans tous les districts. Le compteur mondial est resté à zéro pendant deux journées complètes."
+    tomas reflechit "Ouais... Dans tous les districts. Le compteur mondial est resté à zéro pendant deux journées complètes."
+    tomas inquiet "C'est juste tellement improbable que c'est presque impossible."
 
-    elias surpris "Attends... Tu veux dire vraiment zéro ? Pas juste un retard dans la mise à jour ?"
+    elen surpris "Attends... Mais c'est TROOOP BIEN ! Plus aucune exécution !"
 
-    tomas reflechit "J'ai comparé plusieurs sources. Une erreur reste possible, mais elle devrait alors affecter simultanément tous les systèmes publics."
+    mara surpris "T'es vraiment sûr que c'est impossible ?"
 
-    mara surpris "Ça peut arriver, deux jours sans que personne ne soit condamné ?"
+    tomas inquiet "Techniquement, c'est toujours possible. Statistiquement, compte tenu des chiffres précédents, c'est extrêmement improbable."
 
-    tomas inquiet "Techniquement, oui. Statistiquement, compte tenu des chiffres précédents, c'est extrêmement improbable."
+    noam reflechit "Depuis que Kami a commencé à buguer il n'y a plus aucune exécution ?"
 
-    julian decontracte "Donc, si Julian résume correctement : Elias renverse une tasse de café, Kami disparaît et plus personne n'est exécuté dans le monde."
+    julian decontracte "Moi j'ai compris ce qu'il se passe. Elias renverse une tasse de café sur une machine, Kami disparaît et plus personne n'est exécuté dans le monde."
+    julian sourire "Nous avons devant nous le héros de l'humanité. Il est armé de son imparable tasse de café ! J'annonce, le grand Elias !"
 
-    julian sourire "Nous avons devant nous le héros de l'humanité. Une arme redoutable, pourvu qu'on lui fournisse de la vaisselle."
+    elias detendu "J'ai rien fait. J'ai même pas fait exprès de renverser ce foutu café."
 
-    elias detendu "J'ai rien fait. J'ai même pas fait exprès de renverser ce café."
-
-    iris sourire "C'est encore mieux. Tu as sauvé le monde par maladresse. Ça te ressemble davantage."
+    iris sourire "On rigole, mais c'est pas impossible. Tu as peut-être bien sauvé le monde par maladresse. Ça te ressemble bien."
 
     mara rire "C'est complètement ridicule présenté comme ça, mais je préfère cette version à toutes les autres."
 
-    elias fatigue "Vous êtes vraiment cons... Mais c'est moins lourd quand vous êtes cons comme ça."
+    elias fatigue "Vous êtes vraiment cons..."
 
     "Il sourit malgré lui. Je ne me rappelle plus la dernière fois où je l'ai vu se détendre assez longtemps pour oublier de se méfier."
 
     menu:
         "Rentrer dans la blague.":
-            noam taquin "Franchement, Elias, je suis impressionné. Statistiquement, très peu de gens peuvent prétendre avoir neutralisé Kami avec un café."
+            noam taquin "Franchement, Elias, je suis impressionné. Très peu de gens peuvent prétendre avoir neutralisé Kami avec un café."
 
-            julian sourire "Enfin quelqu'un de lucide. Julian commençait à désespérer de ce groupe."
+            julian sourire "Enfin quelqu'un de lucide. Je commençais à désespérer de ce groupe."
 
             elias rire "Je vous déteste tous, sans exception."
 
         "Rester prudent.":
-            noam inquiet "Ou alors quelque chose dysfonctionne réellement. Et si l'absence d'exécutions est liée à la panne, rien ne garantit que ça durera."
+            noam inquiet "Ou alors quelque chose dysfonctionne réellement. Et si l'absence d'exécutions est liée à la panne, rien ne garantit que ça durera longtemps."
 
-            mara fatigue "Oui... Il y a aussi cette possibilité. J'aimais mieux la version du café héroïque."
+            mara fatigue "Oui... Il y a aussi cette possibilité. Mais je préfère la version du café héroïque, ça claque mieux."
 
             tomas inquiet "C'est pourtant celle que je considère comme la plus probable."
 
@@ -293,7 +370,7 @@ label _8_0_1_CAFETERIA:
 
     "Un silence bref traverse la table. Il ne dure pas assez longtemps pour briser l'ambiance, seulement pour rappeler que personne n'a réellement oublié où nous sommes."
 
-    julian sourire "Alors profitons-en tant que c'est encore possible. Julian refuse de laisser une menace hypothétique gâcher un déjeuner bien réel."
+    julian sourire "Alors profitons-en tant que c'est encore possible. Je refuse de laisser une menace hypothétique gâcher un déjeuner bien réel."
 
     elias detendu "Pour une fois, je suis d'accord avec lui."
 
@@ -308,8 +385,8 @@ label _8_0_1_CAFETERIA:
 
 label _8_0_1_TEMPS_LIBRE_1:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_294
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_294
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
 
     call START_FREE_TIME("_8_0_1_APRES_MIDI_KAEL_CRISE") from _call_START_FREE_TIME_8_0_1
 
@@ -326,6 +403,7 @@ label _8_0_1_TEMPS_LIBRE_1:
 # ============================================================
 
 label _8_0_1_APRES_MIDI_KAEL_CRISE:
+    $ current_period = "Après-midi"
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_295
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
@@ -351,18 +429,13 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     menu:
         "Aller voir s'il va bien.":
-            $ noam_nature_j8 = "proactif"
             noam inquiet "Quelque chose cloche. Je vais le chercher avant qu'il continue à tourner seul dans les couloirs."
-            lysa sourire "Bien. Pour une fois, tu te lèves avant que quelqu'un soit obligé de te pousser."
+            noam neutre "Au moins pour savoir ce qui lui arrive exactement."
 
         "Attendre, il est peut-être juste fatigué.":
-            $ noam_nature_j8 = "reserve"
             noam hesitation "On a tous besoin de rester seuls parfois. Il sait où nous trouver s'il veut parler... Enfin, je suppose."
-            ryn hesitation "Peut-être, mais je n'aimais vraiment pas sa tête."
+            ryn hesitation "Peut-être, mais je n'aimais vraiment pas la tête qu'il faisait."
 
-    $ hideGroup()
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_296
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
     play sound "sfx/door_slam.mp3" volume 1.2
     with hpunch
 
@@ -376,29 +449,26 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 
     "La porte claque contre le mur. Kael entre d'un pas brutal, s'arrête au milieu de la pièce et nous dévisage comme s'il cherchait un visage précis parmi nous."
 
-    kael colere "C'est qui ?"
+    kael colere "C'est qui ?!"
 
     elias choc "Kael... Qu'est-ce qui se passe ?"
 
     kael colere "Qui est entré dans ma chambre ? Quelqu'un y est allé et a pris quelque chose."
 
-    ryn inquiet "Attends, comment tu peux être sûr que quelqu'un est entré ?"
+    ryn inquiet "Attends, comment tu peux être sûr que quelqu'un est entré dans ta chambre ?"
 
     kael colere "Parce que je cherche depuis ce matin ! Elle était sous mon oreiller et elle n'est plus nulle part."
 
-    think "Sous son oreiller. Il ne l'avait pas simplement posée quelque part : il l'avait cachée."
+    noam triste "Attends, calme-toi..."
 
     lysa choc "Qu'est-ce qui a disparu ?"
 
     kael inquiet "La photo de ma sœur. Celle de Léa."
 
     "Personne ne répond. Lysa ferme brièvement les yeux, Elias recule d'un demi-pas et Ryn baisse le regard."
+    "Les mains de Kael tremblent de colère."
 
-    think "Quelqu'un est entré dans sa chambre, a fouillé assez précisément pour regarder sous son oreiller et a emporté la seule chose qui comptait vraiment."
-
-    "Les mains de Kael tremblent. Sa colère est réelle, mais elle tient à peine au-dessus de quelque chose de beaucoup plus fragile."
-
-    kael colere "Alors je vous le demande une dernière fois : qui a pris la photo ?"
+    kael colere "Alors je vous le demande une dernière fois : qui a pris la photo ?!"
 
     stop music fadeout 1.0
     play music "music/bgm_stabilisation_tension.mp3" fadein 0.8
@@ -424,88 +494,66 @@ label _8_0_1_APRES_STABILISATION:
     ])
 
     "Le calme revient progressivement. Kael reste assis, les coudes sur les genoux, encore essoufflé mais enfin capable de nous entendre."
-
     "Lysa approche une chaise et pose une main sur l'accoudoir, près de lui, sans essayer de le toucher."
 
-    ryn hesitation "On devrait vérifier les autres chambres. Si quelqu'un est entré chez toi, il a peut-être fouillé ailleurs."
+    noam reflechit "On devrait vérifier les autres chambres. Si quelqu'un est entré chez toi, il a peut-être fouillé ailleurs."
 
     kael effondre "Ça ne ramènera pas la photo. Elle n'est plus là, c'est tout."
 
     elias choc "Qui pourrait faire un truc pareil ? Il fallait savoir ce que tu cachais et exactement où chercher."
-
-    think "C'est la question que personne ne veut vraiment poser. Celui qui a pris la photo sait ce que Kael conserve lorsqu'il se croit seul."
+    elias reflechit "Et pourquoi quelqu'un te piquerait une photo ? Faut dire que ça n'a pas de sens..."
 
     "Je regarde les quatre personnes autour de moi. Nous avons mangé, voté et vécu ensemble pendant plus d'une semaine. Pourtant, les chambres sont verrouillées et les couloirs surveillés."
 
-    think "L'un d'entre eux aurait pu le faire. Ou quelqu'un d'autre circule ici sans que nous le voyions."
-    think "Kami se tait depuis deux jours, mais ça ne signifie pas que le Conclave a cessé de nous observer."
+    think "Kami se tait depuis deux jours, est-ce que c'est pour ça que quelqu'un se permettrait de nous voler nos affaires ?!"
+    think "Non, Elias vient de le dire, ça n'a pas de sens..."
 
     noam inquiet "Il faut que je vous dise quelque chose. Moi aussi, j'ai perdu un objet ce matin."
 
     "Tous les regards se tournent vers moi. Kael relève lentement la tête."
 
     noam inquiet "C'est un dessin que Juliette, ma petite sœur, m'avait fait. Je l'avais encore hier soir."
-    noam inquiet "J'ai fouillé toute ma chambre au réveil, mais il a disparu."
+    noam inquiet "J'ai fouillé toute ma chambre au réveil, mais il a disparu et j'arrive pas à le retrouver."
 
     lysa choc "Toi aussi ? Pourquoi tu ne nous en as pas parlé ce matin ?"
 
-    noam hesitation "Je pensais l'avoir mal rangé. Je préférais croire ça plutôt que d'imaginer quelqu'un entrer dans ma chambre."
+    noam hesitation "Je pensais l'avoir mal rangé. Je préférais croire ça plutôt que d'imaginer quelqu'un entrer dans ma chambre sans permission."
 
-    elias inquiet "Donc Kael ne s'est pas trompé, et toi non plus. Quelqu'un a fouillé au moins deux chambres pendant la même nuit."
+    elias inquiet "Donc Kael ne s'est pas trompé, et toi non plus. Quelqu'un a fouillé au moins deux chambres. Vous savez de quand ça date ?"
 
-    kael effondre "Je vous l'avais dit. Personne ne voulait seulement me croire."
+    noam triste "Je suis persuadé qu'il était encore là hier."
 
-    noam inquiet "Je te crois maintenant. Ce ne sont pas des objets utiles ni des choses faciles à revendre."
-    noam inquiet "Quelqu'un a choisi précisément ce qui avait le plus de valeur pour nous."
+    kael effondre "... Mais pourquoi...? Je ne comprends pas..."
 
-    menu:
-        "C'est un message.":
-            $ noam_j8_choix_resolution = "direct"
-            noam raison "C'est un message. Quelqu'un veut nous montrer qu'il peut entrer partout et qu'il sait ce que chacun garde."
-            "Lysa croise les bras et observe les visages autour d'elle."
-            lysa neutre "Ou il veut simplement nous pousser à nous méfier les uns des autres."
-            noam raison "Dans ce cas, le message fonctionne déjà."
-
-        "Ne rien dire.":
-            $ noam_j8_choix_resolution = "silencieux"
-            think "Je garde mon interprétation pour moi. Kael est encore trop fragile et je ne suis pas assez certain de ce que ces vols signifient."
+    noam reflechit "Quelqu'un a peut-être choisi précisément ce qui avait le plus de valeur pour nous ?"
 
     $ hideGroup()
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_298
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     "Les minutes passent. Les autres finissent par se lever, non pour partir, mais parce que rester immobiles autour de Kael devient insupportable."
 
     think "Je reste encore un moment. Il faut découvrir qui a fait ça avant qu'un autre objet disparaisse, ou que quelqu'un décide de chercher un coupable au hasard."
+    think "Pour le moment, je n'ai que deux certitudes : quelqu'un est entré dans nos chambres et a pris exactement ce qui comptait le plus pour nous."
+    think "Je ne sais pas encore qui. Pas encore."
 
-    if noam_j8_choix_resolution == "direct":
-        think "J'ai dit ce que je pensais à voix haute. Au moins, nous savons désormais que nous cherchons peut-être autre chose qu'un simple voleur."
-    else:
-        think "J'aurais peut-être dû partager mon hypothèse, mais ajouter une menace invisible n'aurait pas aidé Kael à respirer. Je pourrai encore en parler plus tard."
-
-    think "Pour le moment, je ne possède que deux certitudes : quelqu'un est entré dans nos chambres et a pris exactement ce qui comptait le plus."
-    think "Je ne sais pas encore qui. Seulement pas encore."
-
-    $ journal_entries.append(("Jour 8 — soir", "La photo de Léa. Le dessin de Juliette. Deux objets. Deux chambres. Quelqu'un sait ce qu'on garde. Ce que ça veut dire, je préfère pas y penser trop longtemps. Mais je vais trouver qui."))
     stop music fadeout 2.0
     scene black with fade
     jump _8_0_1_SOIREE
 
 label _8_0_1_SOIREE:
+    $ current_period = "Soir"
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_299
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 3.0
     $ showGroup([("noam", "inquiet", 0.50)])
 
     "Après avoir erré dans les couloirs sans savoir quoi chercher, je retourne dans ma chambre et referme soigneusement la porte."
-
     "Le désordre du matin n'a pas bougé. Le sac reste ouvert sur le lit, le placard ferme mal et aucun dessin n'est miraculeusement réapparu pendant mon absence."
 
-    think "Deux jours sans Kami ont suffi pour nous faire croire que nous étions libres. Maintenant, nous nous observons déjà comme des suspects."
+    think "Deux jours sans Kami ont suffi pour nous faire croire que nous étions libres. Maintenant, quelqu'un rôde et nous pique nos affaires..."
 
     "Je m'assieds sur le bord du lit et regarde chaque meuble comme si la personne qui était entrée avait pu laisser une trace évidente."
 
-    think "Quelqu'un est venu ici. Il savait ce qui comptait pour moi et il l'a emporté sans toucher au reste."
+    think "Quelqu'un est venu ici. C'est sûr. Cette personne savait ce qui comptait pour moi et elle l'a emporté sans toucher au reste."
 
     "L'écran mural demeure noir. Son silence ne me rassure plus du tout."
 
@@ -515,7 +563,9 @@ label _8_0_1_SOIREE:
 
     think "Demain, je trouverai qui a pris le dessin et la photo. Même si la réponse me conduit vers l'un d'entre nous."
 
-    $ journal_entries.append(("Jour 8 — conclusion", "Quelqu’un nous observe. Quelqu’un nous connaît et nous vole. Et ce quelqu’un est parmi nous."))
     $ hideGroup()
     call end_day("9") from _call_end_day_12
     jump _9_0_1_REVEIL_CHAMBRE
+
+# Total journée : 7 minutes
+# Durée totale : 2h10

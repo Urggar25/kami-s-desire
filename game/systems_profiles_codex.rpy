@@ -30,24 +30,24 @@ init python:
     PROFILE_DATA = {
         "noam": {
             "name": "Noam", "role": "Médiateur", "district": "Harmonie", "age": "20",
-            "height": "178 cm", "chest": "94 cm", "birthday": "14 avril",
+            "height": "178 cm", "chest": "88 cm", "birthday": "14 avril",
             "quote": "Comprendre avant de trancher.",
             "sprite": "images/character/noam/portrait.png",
             "expressions": ["neutre", "inquiet", "determine"],
             "backstory": "Noam est réveillé dans le Conclave sans souvenirs complets des semaines précédentes. Il compense par une écoute active et une capacité inhabituelle à reformuler les conflits.",
             "relations": "Pivot entre les représentants: confiance fragile de Lysa, friction idéologique avec Kael, empathie instinctive avec Iris.",
         },
-        "lysa": {"name": "Lysa", "role": "Habitante", "district": "Harmonie", "age": "22", "height": "168 cm", "chest": "86 cm", "birthday": "3 septembre", "quote": "Une promesse sans procédure n'est qu'un bruit.", "sprite": "images/character/lysa/portrait.png", "expressions": ["neutre", "inquiet", "sourire"], "backstory": "Spécialiste des flux et des quotas.", "relations": "S'aligne souvent avec Tomas sur les contraintes matérielles."},
-        "elias": {"name": "Elias", "role": "Ouvrier", "district": "Axiome", "age": "21", "height": "183 cm", "chest": "101 cm", "birthday": "19 janvier", "quote": "Tenir, c'est déjà gagner du temps.", "sprite": "images/character/elias/portrait.png", "expressions": ["neutre", "determine", "surpris"] , "backstory": "Ancien instructeur de terrain.", "relations": "Complicité compétitive avec Ryn."},
-        "mara": {"name": "Mara", "role": "Habitante", "district": "Axiome", "age": "24", "height": "176 cm", "chest": "92 cm", "birthday": "27 juin", "quote": "Un repas stable vaut mieux qu'un grand discours.", "sprite": "images/character/mara/portrait.png", "expressions": ["neutre", "rire", "inquiet"], "backstory": "Gestionnaire des stocks alimentaires.", "relations": "Confiance pragmatique avec Lysa."},
-        "julian": {"name": "Julian", "role": "Habitant", "district": "Nexus", "age": "22", "height": "181 cm", "chest": "96 cm", "birthday": "8 novembre", "quote": "Les chiffres mentent moins que nous.", "sprite": "images/character/julian/portrait.png", "expressions": ["neutre", "reflexion", "triste"], "backstory": "Analyse les cycles d'incidents.", "relations": "Affinité intellectuelle avec Noam."},
-        "iris": {"name": "Iris", "role": "Habitante", "district": "Nexus", "age": "20", "height": "164 cm", "chest": "82 cm", "birthday": "22 février", "quote": "Le silence est aussi un signal.", "sprite": "images/character/iris/portrait.png", "expressions": ["neutre", "peur", "joie"], "backstory": "Répare les intercoms et capteurs.", "relations": "Confie des informations fragmentaires à Noam."},
-        "tomas": {"name": "Tomas", "role": "Archiviste", "district": "Archive", "age": "25", "height": "179 cm", "chest": "98 cm", "birthday": "5 octobre", "quote": "Si ce n'est pas consigné, c'est déjà perdu.", "sprite": "images/character/tomas/portrait.png", "expressions": ["neutre", "reflechit", "desaccord"], "backstory": "Archiviste des directives Kami.", "relations": "Joutes argumentatives avec Julian."},
-        "elen": {"name": "Elen", "role": "Habitante", "district": "Archive", "age": "23", "height": "170 cm", "chest": "88 cm", "birthday": "16 mai", "quote": "On compte les vivants, pas les slogans.", "sprite": "images/character/elen/portrait.png", "expressions": ["neutre", "colere", "triste"], "backstory": "A connu trois vagues de pénurie de médicaments.", "relations": "Respect mutuel avec Sael, tensions avec les discours propagandistes."},
-        "kael": {"name": "Kael", "role": "Ingénieur", "district": "Orbite", "age": "26", "height": "187 cm", "chest": "106 cm", "birthday": "30 décembre", "quote": "On ne négocie pas avec une turbine en panne.", "sprite": "images/character/kael/portrait.png", "expressions": ["neutre", "colere", "determine"], "backstory": "Responsable des infrastructures critiques.", "relations": "Conflits avec ceux qui sous-estiment la technique."},
-        "nyra": {"name": "Nyra", "role": "Habitante", "district": "Orbite", "age": "23", "height": "173 cm", "chest": "89 cm", "birthday": "11 août", "quote": "Le cadre protège de l'arbitraire.", "sprite": "images/character/nyra/portrait.png", "expressions": ["neutre", "sourire", "desaccord"], "backstory": "Gardienne des règles de séance.", "relations": "Alliance variable avec Lysa selon le contexte."},
-        "ryn": {"name": "Ryn", "role": "Gardien", "district": "Limen", "age": "21", "height": "175 cm", "chest": "90 cm", "birthday": "7 mars", "quote": "Le danger n'attend pas les votes.", "sprite": "images/character/ryn/portrait.png", "expressions": ["neutre", "inquiet", "determine"], "backstory": "Patrouilles en zones instables.", "relations": "Peut basculer entre Elias et Kael."},
-        "sael": {"name": "Sael", "role": "Habitante", "district": "Limen", "age": "24", "height": "172 cm", "chest": "87 cm", "birthday": "24 juillet", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/portrait.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
+        "lysa": {"name": "Lysa", "role": "Habitante", "district": "Harmonie", "age": "22", "height": "173 cm", "chest": "83 cm", "birthday": "3 septembre", "quote": "Une promesse sans procédure n'est qu'un bruit.", "sprite": "images/character/lysa/portrait.png", "expressions": ["neutre", "inquiet", "sourire"], "backstory": "Spécialiste des flux et des quotas.", "relations": "S'aligne souvent avec Tomas sur les contraintes matérielles."},
+        "elias": {"name": "Elias", "role": "Ouvrier", "district": "Axiome", "age": "21", "height": "177 cm", "chest": "95 cm", "birthday": "19 janvier", "quote": "Tenir, c'est déjà gagner du temps.", "sprite": "images/character/elias/portrait.png", "expressions": ["neutre", "determine", "surpris"] , "backstory": "Ancien instructeur de terrain.", "relations": "Complicité compétitive avec Ryn."},
+        "mara": {"name": "Mara", "role": "Habitante", "district": "Axiome", "age": "24", "height": "174 cm", "chest": "87 cm", "birthday": "27 juin", "quote": "Un repas stable vaut mieux qu'un grand discours.", "sprite": "images/character/mara/portrait.png", "expressions": ["neutre", "rire", "inquiet"], "backstory": "Gestionnaire des stocks alimentaires.", "relations": "Confiance pragmatique avec Lysa."},
+        "julian": {"name": "Julian", "role": "Habitant", "district": "Nexus", "age": "22", "height": "181 cm", "chest": "85 cm", "birthday": "8 novembre", "quote": "Les chiffres mentent moins que nous.", "sprite": "images/character/julian/portrait.png", "expressions": ["neutre", "reflexion", "triste"], "backstory": "Analyse les cycles d'incidents.", "relations": "Affinité intellectuelle avec Noam."},
+        "iris": {"name": "Iris", "role": "Habitante", "district": "Nexus", "age": "20", "height": "169 cm", "chest": "78 cm", "birthday": "22 février", "quote": "Le silence est aussi un signal.", "sprite": "images/character/iris/portrait.png", "expressions": ["neutre", "peur", "joie"], "backstory": "Répare les intercoms et capteurs.", "relations": "Confie des informations fragmentaires à Noam."},
+        "tomas": {"name": "Tomas", "role": "Archiviste", "district": "Archive", "age": "25", "height": "187 cm", "chest": "108 cm", "birthday": "5 octobre", "quote": "Si ce n'est pas consigné, c'est déjà perdu.", "sprite": "images/character/tomas/portrait.png", "expressions": ["neutre", "reflechit", "desaccord"], "backstory": "Archiviste des directives Kami.", "relations": "Joutes argumentatives avec Julian."},
+        "elen": {"name": "Elen", "role": "Habitante", "district": "Archive", "age": "23", "height": "166 cm", "chest": "81 cm", "birthday": "16 mai", "quote": "On compte les vivants, pas les slogans.", "sprite": "images/character/elen/portrait.png", "expressions": ["neutre", "colere", "triste"], "backstory": "A connu trois vagues de pénurie de médicaments.", "relations": "Respect mutuel avec Sael, tensions avec les discours propagandistes."},
+        "kael": {"name": "Kael", "role": "Ingénieur", "district": "Orbite", "age": "26", "height": "174 cm", "chest": "82 cm", "birthday": "30 décembre", "quote": "On ne négocie pas avec une turbine en panne.", "sprite": "images/character/kael/portrait.png", "expressions": ["neutre", "colere", "determine"], "backstory": "Responsable des infrastructures critiques.", "relations": "Conflits avec ceux qui sous-estiment la technique."},
+        "nyra": {"name": "Nyra", "role": "Habitante", "district": "Orbite", "age": "23", "height": "156 cm", "chest": "81 cm", "birthday": "11 août", "quote": "Le cadre protège de l'arbitraire.", "sprite": "images/character/nyra/portrait.png", "expressions": ["neutre", "sourire", "desaccord"], "backstory": "Gardienne des règles de séance.", "relations": "Alliance variable avec Lysa selon le contexte."},
+        "ryn": {"name": "Ryn", "role": "Gardien", "district": "Limen", "age": "21", "height": "154 cm", "chest": "83 cm", "birthday": "7 mars", "quote": "Le danger n'attend pas les votes.", "sprite": "images/character/ryn/portrait.png", "expressions": ["neutre", "inquiet", "determine"], "backstory": "Patrouilles en zones instables.", "relations": "Peut basculer entre Elias et Kael."},
+        "sael": {"name": "Sael", "role": "Habitante", "district": "Limen", "age": "24", "height": "172 cm", "chest": "88 cm", "birthday": "24 juillet", "quote": "Je vois ce qui entre. Et ce qui disparaît.", "sprite": "images/character/sael/portrait.png", "expressions": ["neutre", "mefiant", "sourire"], "backstory": "Interface entre l'extérieur et le Conclave.", "relations": "Soupçonne des anomalies de distribution."},
     }
 
     def clamp_affinity(value):
@@ -153,6 +153,8 @@ init python:
         return equipped
 
     def profile_display_image(profile_id):
+        if character_uses_layered_wardrobe(profile_id) or get_profile_equipped_accessories(profile_id):
+            return ImageReference("{} neutre".format(profile_id))
         skin_id = get_profile_equipped_skin(profile_id)
         skin_path = profile_skin_path(profile_id, skin_id)
         if renpy.loadable(skin_path):
@@ -287,6 +289,10 @@ init python:
         return profile_portrait(profile_id)
 
     PROMO_CODES = {
+        "NOAMPYJAMA": {
+            "skins": [("noam", "tenue2")],
+            "message": "Tenue pyjama débloquée pour Noam !",
+        },
         "TESTPROMO69": {
             "desire_shards": 1000,
             "message": "+1000 Éclats de désir",

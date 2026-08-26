@@ -1835,6 +1835,30 @@ style window:
     variant "small"
     background "gui/phone/textbox.png"
 
+style choice_panel:
+    variant "small"
+    xsize 1760
+    yalign 0.5
+    padding (60, 34, 60, 40)
+
+style choice_vbox:
+    variant "small"
+    spacing 14
+
+style choice_header:
+    variant "small"
+    size 32
+
+style choice_button:
+    variant "small"
+    xsize 1640
+    yminimum 84
+    padding (40, 16, 40, 16)
+
+style choice_button_text:
+    variant "small"
+    size 42
+
 style radio_button:
     variant "small"
     foreground "gui/phone/button/radio_[prefix_]foreground.png"

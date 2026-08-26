@@ -251,22 +251,24 @@ init python:
 
     @gui.variant
     def small():
-        gui.text_size           = 45
-        gui.name_text_size      = 54
+        gui.text_size           = 42
+        gui.name_text_size      = 48
         gui.notify_text_size    = 38
         gui.interface_text_size = 45
         gui.button_text_size    = 45
         gui.label_text_size     = 51
 
-        gui.textbox_height  = 360
+        gui.textbox_height  = 320
         gui.name_xpos       = 120
-        gui.dialogue_xpos   = 135
-        gui.dialogue_width  = 1650
+        gui.dialogue_xpos   = 120
+        gui.dialogue_ypos   = 72
+        gui.dialogue_width  = 1680
 
         gui.slider_size = 54
 
-        gui.choice_button_width     = 1860
-        gui.choice_button_text_size = 45
+        gui.choice_button_width     = 1640
+        gui.choice_button_text_size = 42
+        gui.choice_spacing           = 14
 
         gui.navigation_spacing   = 30
         gui.pref_button_spacing  = 15
