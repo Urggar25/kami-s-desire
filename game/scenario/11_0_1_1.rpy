@@ -1,12 +1,14 @@
 label _11_0_1_1_REVEIL_CHAMBRE:
 
-    play music "music/bgm_romantic_atmosphere.mp3" fadein 2.5
+    $ cafeteria_food_level = "low"
+    $ current_period = "Matin"
+
+    play music "music/bgm_fallin_love.mp3" fadein 2.5
     play sound sfx_heartbeat fadeout 3.0  # résidu du malaise
     
     "Je sens une sensation humide et fraîche sur mon front."
     "J’ouvre les yeux difficilement. La lumière me brûle un peu."
     
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_36
     scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
     
     iris "Ah bah enfin ! Monsieur daigne se réveiller."
@@ -41,7 +43,7 @@ label _11_0_1_1_REVEIL_CHAMBRE:
     
     iris "C’est pas comme si j’avais eu le choix ! Ils m’ont tous forcée."
     iris "Et puis… c’est pas comme si je pouvais te laisser délirer dans ton coin."
-    iris "Qu'est ce qu'on aurait fait si tu avais pété un cable, hein ?"
+    iris "Qu'est-ce qu'on aurait fait si tu avais pété un cable, hein ?"
     
     "Elle marmonne dans sa barbe, mais sa main reste près de mon épaule."
     
@@ -63,7 +65,6 @@ label _11_0_1_1_REVEIL_CHAMBRE:
 label noam_parle_doppelganger_iris:
 
     play music "music/bgm_system_override.mp3" fadein 2.5
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_37
     scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
 
     $ showGroup([
@@ -121,7 +122,6 @@ label noam_parle_doppelganger_iris:
 label noam_garde_secret:
 
     play music "music/bgm_system_override.mp3" fadein 2.5
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_38
     scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
 
     $ showGroup([
@@ -165,7 +165,6 @@ label noam_garde_secret:
 
 label _11_0_1_1_APRES_REVEIL:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_39
     scene bg_chambre at adaptive_fullscreen
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
     
@@ -204,7 +203,7 @@ label _11_0_1_1_APRES_REVEIL:
 
     "Julian pose un plateau bien garni sur la table de chevet avec un sourire moqueur. Nyra reste un peu en retrait, calme comme toujours."
 
-    nyra "On t’a pris des portions légères. Quoi que pas tant que ça en fait. Tu as du riz, du poulet et des légumes. Rien qui risque de te retourner l’estomac et tout pour te redonner des forces."
+    nyra "On t’a pris des portions légères. Quoique pas tant que ça en fait. Tu as du riz, du poulet et des légumes. Rien qui risque de te retourner l’estomac et tout pour te redonner des forces."
 
     "Ils s’installent autour du lit : Iris s’assoit au bord, Sael prend la chaise, Julian reste debout, Nyra s’adosse au mur."
 
@@ -231,8 +230,7 @@ label _11_0_1_1_APRES_REVEIL:
 
     pause 1.5
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_40
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
 
     $ showGroup([
         ("noam", "neutre", 0.20),
@@ -241,7 +239,6 @@ label _11_0_1_1_APRES_REVEIL:
         ("julian", "neutre", 0.80),
         ("nyra", "neutre", 1.00),
     ])
-
 
     "Le repas touche à sa fin. Je me sens un peu mieux, mais chaque mouvement me rappelle que mon corps n’a pas encore tout à fait récupéré."
 
@@ -260,8 +257,7 @@ label _11_0_1_1_APRES_REVEIL:
     "Je me lève lentement. Mes jambes tremblent légèrement, mais je serre les dents et commence à avancer."
 
     $ hideGroup()
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_41
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Je les suis et je marche un peu en retrait, légèrement étourdi."
     "Au bout d’un moment, nous arrivons devant la salle d’observation. La porte est entrouverte."
@@ -277,6 +273,7 @@ label _11_0_1_1_APRES_REVEIL:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_42
     scene bg_observation at adaptive_fullscreen with dissolve
+    $ current_period = "Après-midi"
 
     $ showGroup([
         ("kael", "neutre", 0.50),
@@ -293,11 +290,11 @@ label _11_0_1_1_APRES_REVEIL:
     kael triste "Donc si je comprends bien… même si le vote autorise les brouilleurs, ça ne changera rien pour moi avant sept jours ?"
 
     kami "Exactement. Et si vous votez pour les interdire… eh bien, tu n’auras plus jamais accès à ces enregistrements."
-    kami "Quel choix intéréssant, n’est-ce pas ?"
+    kami "Quel choix intéressant, n’est-ce pas ?"
 
     "Kael reste silencieux. Ses poings sont serrés."
 
-    think "Il cherche encore la photo de sa soeur ?"
+    think "Il cherche encore la photo de sa sœur ?"
     think "Il n’abandonne toujours pas."
 
     "Je sens un vertige me reprendre. Je m’appuie discrètement contre le mur."
@@ -402,7 +399,7 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
     call _11_0_1_2_MINIJEU_7JOURS from _call__11_0_1_2_MINIJEU_7JOURS
 
-    play music "music/bgm_low_tension.mp3" fadein 2.0
+    play music "music/bgm_world_decline.mp3" fadein 2.0
     "Je reste immobile plusieurs secondes. Plus je me répète ces quelques mots, plus une idée me frappe, claire et presque trop évidente."
 
     think "... Et si je lui demandais directement ?"
@@ -425,7 +422,7 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
     "Je serre les poings."
 
-    noam "Alors je veux en avoir le coeur net."
+    noam "Alors je veux en avoir le cœur net."
 
     "Je me relève, encore un peu instable sur mes jambes, et me dirige vers la porte."
 
@@ -472,7 +469,7 @@ label _11_0_1_3_SALLE_COMMUNICATION:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Mais bon… Je ne voudrais pas que le représentant d'[codex_dialogue_link('harmonie', 'Harmonie')] devienne totalement fou."
-    kami "Que vont en penser ta famille sinon ?!"
+    kami "Que va en penser ta famille sinon ?!"
 
     "Je ravale douloureusement ma salive."
 
@@ -500,7 +497,6 @@ label _11_0_1_3_SALLE_COMMUNICATION:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Enfin, si tu sais t'en servir !"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_45
     scene bg_observation at adaptive_fullscreen with dissolve
 
     "Les écrans des ordinateurs s’allument d’un coup."
@@ -511,7 +507,6 @@ label _11_0_1_3_SALLE_COMMUNICATION:
 
 label _11_0_1_1_CONFRONTATION_KAMI:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_46
     scene bg_observation at adaptive_fullscreen with dissolve
 
     "Je sélectionne enfin la bonne combinaison."
@@ -622,7 +617,7 @@ label _11_0_1_1_CONFRONTATION_KAMI:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Oh ? Touché ?"
     kami "Allez, Noam. Va les observer. Va leur poser des questions innocentes."
-    kami "Regarde-les dans les yeux et demande-toi : lequel d’entre eux est capable de se faire passer pour toi ?"
+    kami "Regarde-les dans les yeux et demande-toi : lequel d’entre eux est capable de faire... ça..."
     kami "Ce petit jeu va être TELLEMENT amusant."
 
     $ bc_show("noam", "colere2", px=-70, py=-50, pz=0.85)
@@ -661,9 +656,10 @@ label _11_0_1_1_CONFRONTATION_KAMI:
     jump _11_0_1_1_RETOUR_CHAMBRE
 
 label _11_0_1_1_RETOUR_CHAMBRE:
+    $ current_period = "Soir"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_47
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_47
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.bgm" fadein 3.0
 
     "Je sors de la salle d’observation sans un regard en arrière."
@@ -728,8 +724,7 @@ label _11_0_1_1_RETOUR_CHAMBRE:
 
     noam faible "… Je veux juste dormir."
 
-    "Mais le sommeil ne vient pas. Seulement un tourbillon de visages, de soupçons, et cette silhouette qui me ressemble parfaitement."
-
+    think "Mais le sommeil ne vient pas. Seulement un tourbillon de visages, de soupçons, et cette silhouette qui... Non."
     think "Parmi nous…"
     think "Quelqu’un m’a regardé dans les yeux aujourd’hui… et a effacé les preuves."
 
@@ -747,10 +742,13 @@ label _11_0_1_1_RETOUR_CHAMBRE:
     $ blink()
     think "Demain… je réfléchirai demain."
 
-    "Ou peut-être que je continuerai juste à mentir à moi-même."
+    "Ou peut-être que je continuerai juste à me mentir à moi-même."
 
     scene black with fade
     stop music fadeout 4.0
 
     call end_day("12") from _call_end_day_2
     jump _12_0_1_1_REVEIL_CHAMBRE
+
+# Total journée : 11 minutes
+# Durée totale : 2h41,50

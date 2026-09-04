@@ -1,5 +1,4 @@
 label _18_0_1_1_0_REVEIL_DECISION:
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_106
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 1.5
     "Au matin, la grille est immobile. Une vis depasse pourtant de deux tours."

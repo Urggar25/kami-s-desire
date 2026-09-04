@@ -67,7 +67,7 @@ define gui.show_name = True
 
 ## La version du jeu.
 
-define config.version = "3.2"
+define config.version = "4.0.1"
 
 
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
@@ -172,12 +172,13 @@ init python:
     ## Remplace ces alias par de vraies pistes quand elles existeront.
     _KD_MUSIC_ALIASES = {
         "bgm_victory_bitter.mp3":        "bgm_calm_not_peace.mp3",
-        "bgm_calm_sad.mp3":              "bgm_unsaid_distance.mp3",
-        "bgm_debate_low.mp3":            "bgm_low_tension.mp3",
-        "bgm_quiet_tension.mp3":         "bgm_low_tension.mp3",
-        "bgm_tension_low.mp3":           "bgm_low_tension.mp3",
+        "bgm_romantic_atmosphere.mp3":   "bgm_introspective_atmosphere.mp3",
+        "bgm_calm_sad.mp3":              "bgm_introspective_atmosphere.mp3",
+        "bgm_debate_low.mp3":            "bgm_world_decline.mp3",
+        "bgm_quiet_tension.mp3":         "bgm_world_decline.mp3",
+        "bgm_tension_low.mp3":           "bgm_world_decline.mp3",
         "bgm_tension_phase3.mp3":        "bgm_fatal_assembly.mp3",
-        "bgm_stabilisation_tension.mp3": "bgm_low_tension.mp3",
+        "bgm_stabilisation_tension.mp3": "bgm_world_decline.mp3",
         "bgm_tension_debate.mp3": "bgm_fatal_assembly.mp3",
     }
 
@@ -273,6 +274,9 @@ init python:
     ## l’arborescence du fichier.
 
     ## Choisissez la valeur « None » pour les exclure de la distribution.
+
+    # Ressources de travail uniquement : ne jamais les inclure dans les builds.
+    build.classify('.development_pack/**', None)
 
     build.classify('**~', None)
     build.classify('**.bak', None)

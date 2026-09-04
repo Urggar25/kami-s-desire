@@ -3,6 +3,8 @@ default noam_room_has_jammer = True
 default noam_has_juliette_drawing = True
 default cafeteria_food_level = "high"
 default cafeteria_food_visible_cache = None
+default anya_lit_iris = 0
+default anya_lit_infirmerie = 0
 
 init -2 python:
     im = renpy.display.im
@@ -50,6 +52,24 @@ init -2 python:
             image = Image(path)
             _room_image_cache[path] = image
         return automatic_scene_lighting(image), 0.20
+
+    def chambre_iris_scene_dynamic(st, at):
+        scene_path = "images/background/scene/bg_chambre_iris.png"
+        overlays = ()
+        if getattr(store, "anya_lit_iris", 0) == 1:
+            overlays = ("images/background/interact/chambre_iris/deco_lit_anya.png",)
+
+        scene = room_scene_composited_frame(scene_path, overlays)
+        return automatic_scene_lighting(scene), 0.20
+
+    def infirmerie2_scene_dynamic(st, at):
+        scene_path = "images/background/scene/infirmerie2.png"
+        overlays = ()
+        if getattr(store, "anya_lit_infirmerie", 0) == 1:
+            overlays = ("images/background/interact/infirmerie/infirmerie2/deco_lit_anya.png",)
+
+        scene = room_scene_composited_frame(scene_path, overlays)
+        return automatic_scene_lighting(scene), 0.20
 
     def room_scene_find_asset(stem):
         for ext in ROOM_SCENE_EXTENSIONS:
@@ -375,6 +395,9 @@ init -2 python:
             if room_name == "repos" and stem == "repos2" and key == "deco_fete":
                 if not getattr(store, "repos_party_active", False):
                     continue
+            if room_name == "infirmerie" and stem == "infirmerie2" and key == "deco_lit_anya":
+                if getattr(store, "anya_lit_infirmerie", 0) != 1:
+                    continue
             if room_name == "maintenance" and stem == "maintenance1" and key == "deco_outil1":
                 if hasattr(store, "vol_outil"):
                     continue
@@ -479,7 +502,8 @@ image bg_repos_fete = DynamicDisplayable(
 # directement par les scripts. Ces déclarations leur donnent le même
 # éclairage que les salles dynamiques, sans toucher aux CG ni à l'interface.
 image bg_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_dortoir.png")
-image bg_chambre_iris = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_chambre_iris.png")
+image bg_chambre_iris = DynamicDisplayable(chambre_iris_scene_dynamic)
+image bg_salle_de_bain_iris = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/noam_salle_bain.png")
 image bg_chambre_sael = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_chambre_sael.png")
 image bg_harmonie_assemblee = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_harmonie_assemblee.png")
 image bg_harmonie_district_hall = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_harmonie_district_hall.png")
@@ -487,6 +511,7 @@ image noam_salle_bain = DynamicDisplayable(automatic_scene_image_dynamic, "image
 
 image couloir_cafeteria = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_cafeteria.png")
 image couloir_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_dortoir.png")
+image couloir_principal = "couloir_dortoir"
 image couloir_infirmerie = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_infirmerie.png")
 image couloir_maintenance = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_maintenance.png")
 image couloir_sas = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_sas.png")
@@ -509,7 +534,7 @@ image conclave3 = DynamicDisplayable(automatic_scene_image_dynamic, "images/back
 image gymnase1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/gymnase1.png")
 image gymnase2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/gymnase2.png")
 image infirmerie1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/infirmerie1.png")
-image infirmerie2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/infirmerie2.png")
+image infirmerie2 = DynamicDisplayable(infirmerie2_scene_dynamic)
 image infirmerie3 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/infirmerie3.png")
 image maintenance1 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/maintenance1.png")
 image maintenance2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/maintenance2.png")

@@ -508,14 +508,13 @@ label minijeu_halteres:
 
 label minijeu_halteres_after:
 
-    # Gain de stat lié à la performance (au lieu d'un pur aléatoire)
+    # Gain d'XP lié à la performance (la progression reste invisible).
     $ _mg_gain_chance = 0.10 + (0.45 if mg_was_success else 0.0) + min(0.20, mg_combo_max * 0.03)
     $ gained_physique = False
     if renpy.random.random() < _mg_gain_chance:
-        # La tablette lit le système de statistiques permanent. L'ancienne
-        # variable reste synchronisée pour les sauvegardes et scripts existants.
-        $ _physique_level, gained_physique = mod_stat("physique", 1)
-        $ stat_physique = _physique_level
+        $ _physique_xp_result = award_stat_xp("physique", 1)
+        $ gained_physique = _physique_xp_result["leveled"]
+        $ stat_physique = get_stat("physique")
 
     if gained_physique:
         show screen physique_gain_anim

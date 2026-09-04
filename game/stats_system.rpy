@@ -4,11 +4,18 @@
 
 # ---- Données permanentes (partagées entre toutes les saves) ----
 default persistent.stats = None   # dict rempli par stats_init()
+default persistent.stats_xp = None
+default persistent.stats_xp_blocked_until = 0.0
 
 init python:
 
     STAT_MIN = 1
     STAT_MAX = 10
+
+    # XP nécessaire pour passer des niveaux 1 à 9. L'XP est volontairement
+    # absent de l'interface joueur et revient à zéro à chaque niveau gagné.
+    STAT_XP_THRESHOLDS = (3, 5, 8, 12, 17, 24, 32, 42, 55)
+    STAT_XP_LOAD_COOLDOWN = 60.0
 
     # Ordre d'affichage + méta (label, couleur, initiale icône)
     STATS_ORDER = ["observation", "empathie", "sang_froid", "logique", "audace", "physique"]
@@ -23,12 +30,22 @@ init python:
     }
 
     def stats_init():
-        # Crée/complète le dict permanent sans écraser les niveaux existants
+        # Crée/complète les données permanentes sans écraser les anciennes saves.
         if not isinstance(persistent.stats, dict):
             persistent.stats = {}
+        if not isinstance(persistent.stats_xp, dict):
+            persistent.stats_xp = {}
         for k in STATS_ORDER:
             if k not in persistent.stats:
                 persistent.stats[k] = STAT_MIN
+            persistent.stats[k] = max(STAT_MIN, min(STAT_MAX, int(persistent.stats[k])))
+            if k not in persistent.stats_xp:
+                persistent.stats_xp[k] = 0
+            persistent.stats_xp[k] = max(0, int(persistent.stats_xp[k]))
+            if persistent.stats[k] >= STAT_MAX:
+                persistent.stats_xp[k] = 0
+        if not isinstance(getattr(persistent, "stats_xp_blocked_until", None), (int, float)):
+            persistent.stats_xp_blocked_until = 0.0
         return persistent.stats
 
     def get_stat(name):
@@ -45,6 +62,78 @@ init python:
         old = get_stat(name)
         new = set_stat(name, old + delta)
         return new, (new > old)
+
+    def stat_xp_required(name):
+        """Seuil interne du niveau courant. None signifie niveau maximum."""
+        level = get_stat(name)
+        if level >= STAT_MAX:
+            return None
+        return STAT_XP_THRESHOLDS[level - STAT_MIN]
+
+    def start_stat_xp_load_cooldown(seconds=STAT_XP_LOAD_COOLDOWN):
+        """Interdit tout gain d'XP pendant 60 s après le chargement d'une save."""
+        import time
+        stats_init()
+        persistent.stats_xp_blocked_until = time.time() + max(0.0, float(seconds))
+        renpy.save_persistent()
+
+    def stat_xp_is_blocked():
+        import time
+        stats_init()
+        return time.time() < persistent.stats_xp_blocked_until
+
+    def award_stat_xp(name, amount):
+        """Point d'entrée unique des gains d'XP de statistiques.
+
+        Le surplus est abandonné lors d'une montée de niveau, conformément à la
+        remise à zéro demandée. Aucun chiffre d'XP n'est présenté au joueur.
+        """
+        stats_init()
+        if name not in STATS_META:
+            raise ValueError("Statistique inconnue : {}".format(name))
+
+        amount = max(0, int(amount))
+        result = {
+            "stat": name,
+            "awarded": 0,
+            "blocked": False,
+            "leveled": False,
+            "level": get_stat(name),
+        }
+        if amount <= 0 or result["level"] >= STAT_MAX:
+            return result
+        if stat_xp_is_blocked():
+            result["blocked"] = True
+            return result
+
+        persistent.stats_xp[name] += amount
+        result["awarded"] = amount
+        required = stat_xp_required(name)
+        if required is not None and persistent.stats_xp[name] >= required:
+            result["level"] = set_stat(name, result["level"] + 1)
+            persistent.stats_xp[name] = 0
+            result["leveled"] = True
+
+        renpy.save_persistent()
+        return result
+
+    def award_stats_xp(rewards):
+        """Attribue en une fois l'XP d'un choix à une ou plusieurs statistiques."""
+        results = []
+        for name, amount in rewards.items():
+            results.append(award_stat_xp(name, amount))
+        return results
+
+    def stat_choice_unlocked(option):
+        requirements = option.get("requires", {})
+        return all(get_stat(name) >= int(level) for name, level in requirements.items())
+
+    def notify_stat_level_ups(results):
+        for result in results:
+            if result.get("leveled"):
+                renpy.notify("{} passe au niveau {}".format(
+                    STATS_META[result["stat"]]["label"], result["level"]
+                ))
 
     # ---- Jet de dé D10 ----
     # roll 1 = échec critique TOUJOURS ; 10 = réussite critique TOUJOURS.

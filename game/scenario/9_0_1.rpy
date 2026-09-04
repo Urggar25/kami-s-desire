@@ -9,6 +9,8 @@ label _9_0_1_REVEIL_CHAMBRE:
     scene black
     $ current_day = 9
     play music "music/bgm_calm_not_peace.mp3" fadein 2.5
+    $ cafeteria_food_level = "medium"
+    $ current_period = "Matin"
     $ blink()
 
     "Je dors par fragments. Chaque bruit du couloir me réveille assez longtemps pour que j'imagine une main sur la poignée."
@@ -22,6 +24,8 @@ label _9_0_1_REVEIL_CHAMBRE:
 
     stop music fadeout 0.5
     play sound sfx_announce
+
+    pause 1.0
 
     $ hideGroup()
     play music "music/bgm_system_override.mp3" fadein 1.0
@@ -84,7 +88,6 @@ label _9_0_1_REVEIL_CHAMBRE:
     kami "Je vous recommande de ne pas traîner. Nous n'avons déjà plus beaucoup de temps."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_302
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.50)])
 
@@ -104,7 +107,7 @@ label _9_0_1_REVEIL_CHAMBRE:
 label _9_0_1_CONCLAVE_ANNONCE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_303
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
     $ showGroup([
         ("lysa", "blase", 0.08),
         ("ryn", "fatigue", 0.25),
@@ -158,6 +161,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     stop music fadeout 0.8
     show screen kami_broadcast_ui
 
+    pause 1.0
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
     kami "Bonjour, mes petits représentants. Quelle ambiance... On dirait que deux journées sans autorité maternelle ont suffi pour vous rendre nerveux."
@@ -183,9 +187,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
     kami "En cas d'échec, l'interdiction actuelle restera en vigueur. Le vote aura lieu dans quelques instants, alors essayez de ne pas tout gâcher trop vite."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_305
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
     $ showGroup([
         ("tomas", "raison",    0.10),
         ("lysa",  "blase",     0.27),
@@ -211,7 +214,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     ryn colere "Et tu gardais ça pour toi depuis ce matin ?!"
 
-    tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous viennent juste de vous lever !"
+    tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous venez juste de vous lever !"
     tomas colere "Ils ont installé des campements improvisés à plusieurs points de passage vers les autres districts."
 
     kael inquiet "Des campements de plusieurs milliers de personnes, donc forcément non déclarés."
@@ -262,7 +265,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     hide screen kami_broadcast_ui
 
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
 
     $ showGroup([
         ("ryn",   "colere"),
@@ -295,6 +298,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn colere "Des milliers de personnes vont peut-être mourir et tu veux encore jouer au médiateur ?"
 
     noam determine "Surtout maintenant. La peur peut suffire à faire hésiter quelqu'un, et il nous faut une unanimité de vote pour."
+
+    call play_stat_dialogue("d9") from _call_stat_dialogue_d9
 
     "Je regarde tout le monde dans le blanc des yeux."
     elen "..."
@@ -373,15 +378,15 @@ label _9_0_1_CONCLAVE_ANNONCE:
     jump _9_0_1_CONCLAVE_DEBAT
 
 label _9_0_1_CONCLAVE_DEBAT:
+    $ current_period = "Après-midi"
     call j901_play_signal_vivant from _call_j901_play_signal_vivant
     $ j901_signal_result_tier = _return
     jump _9_0_1_CONCLAVE_DEBAT_PARTIE_2
 
 label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_307
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
     $ showGroup([
         ("ryn",   "colere",      0.10),
         ("sael",  "determine",   0.27),
@@ -433,7 +438,6 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     kami "C'est un lieu de décision. Et il est temps de voter."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_308
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.2
     $ showGroup([
@@ -675,6 +679,7 @@ label _9_0_1_VOTE:
 
 label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     $ hideGroup()
+    $ current_period = "Soir"
     stop music fadeout 0.8
     play sound sfx_announce
 
@@ -740,6 +745,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     jump _10_0_1_1_REVEIL_CHAMBRE
 
 label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
+    $ current_period = "Soir"
     $ hideGroup()
     stop music fadeout 0.6
     play sound sfx_announce
@@ -761,14 +767,12 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     kami "Le Commandement IV rentre donc de nouveau en application, selon vos désirs."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_321
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Pendant une seconde, personne ne réagit. Puis nous comprenons tous en même temps ce que signifie son dernier mot."
 
     play sound sfx_gresillement
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_322
     scene bg_conclave at adaptive_fullscreen, heavy_shake
     $ showGroup([
         ("ryn", "colere2", 0.25),
@@ -799,3 +803,8 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
 
     call end_day("10") from _call_end_day_14
     jump _10_0_1_1_REVEIL_CHAMBRE
+
+    #jump patreon_ending
+
+# Total journée : 10 minutes
+# Durée totale : 2h20

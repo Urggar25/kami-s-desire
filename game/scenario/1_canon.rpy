@@ -33,6 +33,7 @@ label _1_CANON:
     $ current_day = 1
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
+    $ cafeteria_food_level = "high"
 
     scene black
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
@@ -42,7 +43,6 @@ label _1_CANON:
 
     pause 0.4
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_113
     scene bg_conclave at adaptive_fullscreen with fade
 
     think "Dossier rigide. Métal froid. Air recyclé. Plastique neuf. Finalement, j'ai l'impression de n'avoir jamais quitté Harmonie."
@@ -113,6 +113,8 @@ label _1_CANON:
     noam inquiet "On est où… ?"
 
     lysa reflexion "Tu vois bien où on est. À ton avis... Le Conclave."
+
+    call play_stat_dialogue("d1") from _call_stat_dialogue_d1
     lysa reflexion "Mais faut dire que je voyais ça d'une façon totalement différente."
 
     think "Je regarde autour, en m'efforçant de ne pas parler. Je ne reconnais aucun autre visage. Donc c'est vrai : les douze représentants sont bien réunis dans la même cage."
@@ -239,7 +241,6 @@ label _1_CANON:
     jump _1_CHOICE
 
 label _1_CHOICE_DEATH:
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_114
     scene bg_conclave at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -506,7 +507,6 @@ label _1_PNC_CONCLAVE_DEBARAS:
 label _1_PNC_CONCLAVE_FINISH:
     hide screen day1_conclave_pnc
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_115
     scene conclave2 at adaptive_fullscreen with fade
     "L'écran central du Conclave s'allume faiblement."
     think "On dirait que le système attendait qu'on l'observe."
@@ -515,7 +515,6 @@ label _1_PNC_CONCLAVE_FINISH:
 
 label _1_PNC_CONCLAVE_LYSA:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_116
     scene bg_conclave at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -533,7 +532,6 @@ label _1_PNC_CONCLAVE_LYSA:
 
 label _1_PNC_CONCLAVE_RYN:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_117
     scene bg_conclave at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -561,7 +559,6 @@ label _1_PNC_CONCLAVE_RYN:
 
 label _1_PNC_CONCLAVE_MARA:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_118
     scene bg_conclave at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -582,7 +579,6 @@ label _1_PNC_CONCLAVE_MARA:
 
 label _1_PNC_CONCLAVE_ELIAS:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_119
     scene bg_conclave at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -603,7 +599,6 @@ label _1_PNC_CONCLAVE_ELIAS:
 
 label _1_PNC_CONCLAVE_KAEL:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_120
     scene conclave2 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -623,7 +618,6 @@ label _1_PNC_CONCLAVE_KAEL:
 
 label _1_PNC_CONCLAVE_TOMAS:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_121
     scene conclave2 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -650,7 +644,6 @@ label _1_PNC_CONCLAVE_TOMAS:
 
 label _1_PNC_CONCLAVE_IRIS:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_122
     scene conclave2 at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -669,7 +662,6 @@ label _1_PNC_CONCLAVE_IRIS:
 
 label _1_PNC_CONCLAVE_ELEN:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_123
     scene conclave3 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -689,7 +681,6 @@ label _1_PNC_CONCLAVE_ELEN:
 
 label _1_PNC_CONCLAVE_NYRA:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_124
     scene conclave3 at adaptive_fullscreen with fade
     
     $ showGroup([
@@ -707,7 +698,6 @@ label _1_PNC_CONCLAVE_NYRA:
 
 label _1_PNC_CONCLAVE_JULIAN:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_125
     scene conclave3 at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -726,7 +716,6 @@ label _1_PNC_CONCLAVE_JULIAN:
 
 label _1_PNC_CONCLAVE_SAEL:
     hide screen day1_conclave_pnc
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "conclave3") from _call_MAYBE_PLAY_SCRIPTED_DOOR_126
     scene conclave3 at adaptive_fullscreen with fade
 
     $ showGroup([
@@ -1005,7 +994,6 @@ label _1_KAMI_APPARITION:
     play music "music/bgm_quiet_routine.mp3" fadein 0.4
     hide screen kami_broadcast_ui
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_127
     scene bg_conclave at adaptive_fullscreen with fade
 
     "L'écran s'éteint. Une seconde plus tard, les douze voix éclatent ensemble."
@@ -1228,7 +1216,6 @@ label FIRST_CONCLAVE_ELEN_INTERACT:
 label _1_KAMI_CONVOCATION_CONCLAVE:
     $ current_scene_active = "NONE"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_128
     scene bg_conclave at adaptive_fullscreen with fade
 
     "Les portes du Conclave s'ouvrent ; dedans, il y a déjà plusieurs personnes."
@@ -1470,7 +1457,6 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 label _1_CONCLAVE_DEBAT_DEPOT:
 # =============================================================================
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_129
     scene bg_conclave at adaptive_fullscreen
     play music "music/bgm_system_override.mp3" fadein 1.0
 
@@ -1662,7 +1648,6 @@ label _1_proposition_amendement:
 
     think "Voilà. Mon premier amendement. Le dernier déposé, forcément."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_130
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     jump _1_AMENDEMENT_DEPOSE
@@ -1674,7 +1659,7 @@ label _1_proposition_amendement:
 label _1_AMENDEMENT_DEPOSE:
 # =============================================================================
 
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
     $ day0_timer_active = False
     hide screen day1_amendment_timer
 
@@ -1715,7 +1700,6 @@ label _1_AMENDEMENT_DEPOSE:
 
     kami "Profitez de votre douce nuit de tranquillité ! Demain, on recommencera à jouer tous ensemble."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_131
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Les écrans s'éteignent. Les chaises raclent le sol. Personne ne se dit vraiment au revoir."
@@ -2023,7 +2007,6 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     pause 0.5
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_138
     scene bg_chambre at adaptive_fullscreen with fade
 
     think "Je m'allonge. Le lit est plus confortable que prévu."

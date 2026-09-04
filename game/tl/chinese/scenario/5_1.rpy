@@ -2274,3 +2274,549 @@ translate chinese affd096a:
     # think "Je retourne le problème dans tous les sens, mais aucune réponse ne me paraît vraiment acceptable."
     think "我从各个角度反复思考这个问题，却始终找不到真正可以接受的答案。"
 
+# TODO: Translation updated at 2026-08-28 11:00
+
+# game/scenario/5_1.rpy:55
+translate chinese c276f4e1:
+
+    # think "Le métal froid traverse mes chaussettes."
+    think ""
+
+# game/scenario/5_1.rpy:91
+translate chinese f8e260fb:
+
+    # kami "Peut-être même que c'est à cause de vous !"
+    kami ""
+
+# game/scenario/5_1.rpy:122
+translate chinese 2c74d29c:
+
+    # kami "La cafétéria est ouverte."
+    kami ""
+
+# game/scenario/5_1.rpy:123
+translate chinese 114e3497:
+
+    # kami "Continuez à m'amuser ! C'est peut-être la seule chose dans laquelle vous excellez !"
+    kami ""
+
+# game/scenario/5_1.rpy:149
+translate chinese 35fb4b9d:
+
+    # think "Deux voix basses et tendues viennent des chambres."
+    think ""
+
+# game/scenario/5_1.rpy:153
+translate chinese 7f5f08f0:
+
+    # think "Je m'arrête."
+    think ""
+
+# game/scenario/5_1.rpy:204
+translate chinese 95e0f73a:
+
+    # kael triste "Oui."
+    kael triste ""
+
+# game/scenario/5_1.rpy:213
+translate chinese 288d3006:
+
+    # kael triste "Elle disait que le scaphandre lui faisait une tête de grenouille."
+    kael triste ""
+
+# game/scenario/5_1.rpy:230
+translate chinese afbca7e5:
+
+    # kael triste "Dont Léa."
+    kael triste ""
+
+# game/scenario/5_1.rpy:252
+translate chinese 4ba44c55:
+
+    # kael triste "Pendant les protocoles, les communications sont coupées ou filtrées."
+    kael triste ""
+
+# game/scenario/5_1.rpy:258
+translate chinese 3ed5d2a3:
+
+    # nyra raison "Pourquoi ?"
+    nyra raison ""
+
+# game/scenario/5_1.rpy:296
+translate chinese 8469c203:
+
+    # "Kael se relève lentement."
+    ""
+
+# game/scenario/5_1.rpy:315
+translate chinese df63b9b9_2:
+
+    # noam inquiet "Oui."
+    noam inquiet ""
+
+# game/scenario/5_1.rpy:317
+translate chinese 13f78249:
+
+    # nyra neutre "Bien."
+    nyra neutre ""
+
+# game/scenario/5_1.rpy:364
+translate chinese f95f5b9d:
+
+    # elen fatigue "Kael..."
+    elen fatigue ""
+
+# game/scenario/5_1.rpy:376
+translate chinese 2c3b107d:
+
+    # elen fatigue "D'accord. Oui. Mange. Je peux te trouver un truc sucré si— non. Mange d'abord."
+    elen fatigue ""
+
+# game/scenario/5_1.rpy:378
+translate chinese 74f118f2:
+
+    # ryn blase "Moi, c'est Limen qui me fait flipper."
+    ryn blase ""
+
+# game/scenario/5_1.rpy:410
+translate chinese 34286576:
+
+    # ryn blase "Quoi ? J'ai pas crié."
+    ryn blase ""
+
+# game/scenario/5_1.rpy:412
+translate chinese 6bb05c2c:
+
+    # tomas hesitation "Non, mais... l'effet était très proche."
+    tomas hesitation ""
+
+# game/scenario/5_1.rpy:422
+translate chinese ba521257:
+
+    # iris fatigue "Non, mais vraiment."
+    iris fatigue ""
+
+# game/scenario/5_1.rpy:432
+translate chinese 01a17990:
+
+    # iris fatigue "Pff."
+    iris fatigue ""
+
+# game/scenario/5_1.rpy:450
+translate chinese d9aad2e3:
+
+    # julian detendu "Bonjour à tous."
+    julian detendu ""
+
+# game/scenario/5_1.rpy:457
+translate chinese ef5fbb3e:
+
+    # lysa blase "Personne ne transcende rien. Tu fais juste mieux semblant que nous."
+    lysa blase ""
+
+# game/scenario/5_1.rpy:461
+translate chinese 268bc8cc:
+
+    # ryn blase "Ou un défaut."
+    ryn blase ""
+
+# game/scenario/5_1.rpy:467
+translate chinese 86765710:
+
+    # iris fatigue "Rends-nous service : tais-toi jusqu'à ce que les antalgiques fonctionnent."
+    iris fatigue ""
+
+# game/scenario/5_1.rpy:483
+translate chinese fbd7286d:
+
+    # julian detendu "Je n'ai pas encore posé la question."
+    julian detendu ""
+
+# game/scenario/5_1.rpy:488
+translate chinese cb20bf19:
+
+    # ryn blase "Au moins ça a le mérite d'être clair."
+    ryn blase ""
+
+# game/scenario/5_1.rpy:494
+translate chinese d68547a4:
+
+    # elen inquiet "Sael, on peut juste écouter ? Sans crier, sans porte qui claque, sans— enfin, juste écouter ?"
+    elen inquiet ""
+
+# game/scenario/5_1.rpy:504
+translate chinese 3386a595:
+
+    # julian detendu "Très bien."
+    julian detendu ""
+
+# game/scenario/5_1.rpy:517
+translate chinese 63c59541:
+
+    # iris taquin "Je regrette presque la bouteille. C'est dire le niveau de catastrophe."
+    iris taquin ""
+
+# game/scenario/5_1.rpy:521
+translate chinese 5404ec00:
+
+    # iris rire "Moi vexée ? Et puis quoi encore."
+    iris rire ""
+
+# game/scenario/5_1.rpy:522
+translate chinese 35fa8a57:
+
+    # iris taquin "Et pour embrasser qui d'abord ?"
+    iris taquin ""
+
+# game/scenario/5_1.rpy:530
+translate chinese 07667726:
+
+    # iris taquin "Oh ? Il fuit."
+    iris taquin ""
+
+# game/scenario/5_1.rpy:532
+translate chinese 7e2ab9c6:
+
+    # lysa taquin "Il bat en retraite."
+    lysa taquin ""
+
+# game/scenario/5_1.rpy:566
+translate chinese 65c25efb:
+
+    # think "Je quitte la cafétéria sans destination. J'avais seulement besoin de ne plus être là."
+    think ""
+
+# game/scenario/5_1.rpy:570
+translate chinese 3afb2f94:
+
+    # think "Des pas rapides me rattrapent."
+    think ""
+
+# game/scenario/5_1.rpy:588
+translate chinese a3b11b8c:
+
+    # elias fatigue "Ouais. Viens vite."
+    elias fatigue ""
+
+# game/scenario/5_1.rpy:593
+translate chinese 0753dd6f:
+
+    # "Elias repart ; je le suis."
+    ""
+
+# game/scenario/5_1.rpy:609
+translate chinese 48861ea3:
+
+    # "Kael est assis sur le lit d'examen, la main droite enveloppée d'une compresse rouge."
+    ""
+
+# game/scenario/5_1.rpy:619
+translate chinese 6c173575:
+
+    # kael triste "Je n'ai rien trouvé de mieux."
+    kael triste ""
+
+# game/scenario/5_1.rpy:621
+translate chinese 72e63555:
+
+    # mara stress "Le mur, par contre, tu l'as trouvé sans difficulté."
+    mara stress ""
+
+# game/scenario/5_1.rpy:638
+translate chinese d2684719:
+
+    # kael triste "Contacter Léa."
+    kael triste ""
+
+# game/scenario/5_1.rpy:650
+translate chinese 43b9f947:
+
+    # elias inquiet "Il est sorti de la salle de communication et là…"
+    elias inquiet ""
+
+# game/scenario/5_1.rpy:658
+translate chinese df472ee9:
+
+    # "Mara revient avec du désinfectant et retire la compresse."
+    ""
+
+# game/scenario/5_1.rpy:679
+translate chinese 5a8a9d0e:
+
+    # kael inquiet "Normalement."
+    kael inquiet ""
+
+# game/scenario/5_1.rpy:686
+translate chinese 1167c8d7:
+
+    # elias inquiet "Si j'ai compris, les modules résidentiels tiennent plusieurs jours isolés."
+    elias inquiet ""
+
+# game/scenario/5_1.rpy:696
+translate chinese cc7f9066:
+
+    # mara agace "Ne recommence pas."
+    mara agace ""
+
+# game/scenario/5_1.rpy:712
+translate chinese 898e6265:
+
+    # kael triste "Je suis pas sûr d'être utile demain."
+    kael triste ""
+
+# game/scenario/5_1.rpy:726
+translate chinese efdff04a:
+
+    # mara stress "Demain n'est pas exactement la journée idéale pour rester au lit."
+    mara stress ""
+
+# game/scenario/5_1.rpy:732
+translate chinese 6c97f22f:
+
+    # think "Elias pose la question mécaniquement, puis découvre nos regards."
+    think ""
+
+# game/scenario/5_1.rpy:736
+translate chinese 63b2afa8:
+
+    # kael triste "Mais si je ne vote pas…"
+    kael triste ""
+
+# game/scenario/5_1.rpy:740
+translate chinese 2d359ae2:
+
+    # mara mefiant "Tu dis ça comme si c'était simple."
+    mara mefiant ""
+
+# game/scenario/5_1.rpy:742
+translate chinese 900cae6c:
+
+    # nyra raison "Non."
+    nyra raison ""
+
+# game/scenario/5_1.rpy:755
+translate chinese 47663477:
+
+    # kael calme "Je vais voter."
+    kael calme ""
+
+# game/scenario/5_1.rpy:761
+translate chinese 68a00850:
+
+    # kael triste "Si je reste dans ma chambre, je passerai la nuit à recalculer l'impossible."
+    kael triste ""
+
+# game/scenario/5_1.rpy:768
+translate chinese 5568e076:
+
+    # mara agace "Et par pitié, tu mets cette main au repos."
+    mara agace ""
+
+# game/scenario/5_1.rpy:776
+translate chinese 75562353:
+
+    # think "Kael baisse les yeux vers sa main bandée."
+    think ""
+
+# game/scenario/5_1.rpy:778
+translate chinese dc7f3af9:
+
+    # kael triste "Je veux juste savoir si elle va bien."
+    kael triste ""
+
+# game/scenario/5_1.rpy:780
+translate chinese 554a524c:
+
+    # think "Personne ne répond. Mara ferme sa trousse. Nyra reste."
+    think ""
+
+# game/scenario/5_1.rpy:788
+translate chinese c4e38b2f:
+
+    # elias fatigue "J'ai laissé un truc allumé. En maintenance."
+    elias fatigue ""
+
+# game/scenario/5_1.rpy:790
+translate chinese 7157726b:
+
+    # think "Personne ne lui offre cette sortie."
+    think ""
+
+# game/scenario/5_1.rpy:814
+translate chinese 2e46d5df:
+
+    # kael triste "Merci d'être venu."
+    kael triste ""
+
+# game/scenario/5_1.rpy:831
+translate chinese 59c6cceb:
+
+    # kael triste "Il est quand même venu."
+    kael triste ""
+
+# game/scenario/5_1.rpy:843
+translate chinese 8d8fe271:
+
+    # mara agace "Dehors."
+    mara agace ""
+
+# game/scenario/5_1.rpy:852
+translate chinese e28f010f:
+
+    # think "La porte se referme sur Kael et Nyra."
+    think ""
+
+# game/scenario/5_1.rpy:874
+translate chinese b33c0d0d:
+
+    # elias fatigue "… Ouais. D'accord."
+    elias fatigue ""
+
+# game/scenario/5_1.rpy:879
+translate chinese e7d261a6:
+
+    # think "Mara le regarde partir et souffle."
+    think ""
+
+# game/scenario/5_1.rpy:903
+translate chinese ccf53f0d:
+
+    # think "Mara retourne auprès de Kael. Je récupère de quoi manger, puis regagne ma chambre."
+    think ""
+
+# game/scenario/5_1.rpy:916
+translate chinese 23451c7a:
+
+    # think "Je retrouve enfin ma chambre et son silence. Après cette journée, c'est exactement ce qu'il me faut."
+    think ""
+
+# game/scenario/5_1.rpy:918
+translate chinese 78729b4c:
+
+    # think "Je laisse mes affaires sur le bureau et file sous la douche."
+    think ""
+
+# game/scenario/5_1.rpy:926
+translate chinese 54beae08:
+
+    # think "J'y reste beaucoup plus longtemps que nécessaire."
+    think ""
+
+# game/scenario/5_1.rpy:932
+translate chinese e08418c2:
+
+    # think "Je m'habille et m'apprête à m'effondrer sur le lit."
+    think ""
+
+# game/scenario/5_1.rpy:934
+translate chinese 91958574:
+
+    # think "Et puis je le vois."
+    think ""
+
+# game/scenario/5_1.rpy:936
+translate chinese c3b091fd:
+
+    # "Un papier plié en deux a été glissé sous la porte."
+    ""
+
+# game/scenario/5_1.rpy:938
+translate chinese 042f05d7:
+
+    # think "Je le ramasse."
+    think ""
+
+# game/scenario/5_1.rpy:942
+translate chinese dcebaa69:
+
+    # "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
+    ""
+
+# game/scenario/5_1.rpy:1048
+translate chinese 12300871:
+
+    # think "Je referme l'armoire."
+    think ""
+
+# game/scenario/5_1.rpy:1057
+translate chinese 0e7cbecd:
+
+    # think "Je rentre dans ma chambre sans croiser personne."
+    think ""
+
+# game/scenario/5_1.rpy:1064
+translate chinese 58e2f3ec:
+
+    # think "Je les regarde."
+    think ""
+
+# game/scenario/5_1.rpy:1068
+translate chinese 963db6c4_1:
+
+    # think "Qui ?"
+    think ""
+
+# game/scenario/5_1.rpy:1072
+translate chinese 7686a34b:
+
+    # think "J'avale le somnifère, m'allonge et fixe le plafond."
+    think ""
+
+# game/scenario/5_1.rpy:1074
+translate chinese 1025d1e4:
+
+    # think "Pour une fois, je dors."
+    think ""
+
+# game/scenario/5_1.rpy:1088
+translate chinese 502ac8b8:
+
+    # think "Je le regarde encore."
+    think ""
+
+# game/scenario/5_1.rpy:1090
+translate chinese 60991580:
+
+    # think "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
+    think ""
+
+# game/scenario/5_1.rpy:1092
+translate chinese e22f9970:
+
+    # think "Je le repose face contre le bureau."
+    think ""
+
+# game/scenario/5_1.rpy:1096
+translate chinese f9957d42:
+
+    # think "Je ne vais pas le faire."
+    think ""
+
+# game/scenario/5_1.rpy:1106
+translate chinese 9ca9be59:
+
+    # think "Je me déshabille et m'allonge."
+    think ""
+
+# game/scenario/5_1.rpy:1108
+translate chinese 3e8283af:
+
+    # think "Je fixe le plafond."
+    think ""
+
+# game/scenario/5_1.rpy:1120
+translate chinese 7332f2ed_1:
+
+    # think "Je ferme les yeux."
+    think ""
+
+translate chinese strings:
+
+    # game/scenario/5_1.rpy:971
+    old "Aller à la pharmacie."
+    new ""
+
+    # game/scenario/5_1.rpy:971
+    old "Aller se coucher."
+    new ""
+

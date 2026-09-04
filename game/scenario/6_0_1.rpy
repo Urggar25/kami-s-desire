@@ -11,7 +11,6 @@ transform j601_sael_vote_strip:
 
 label _6_0_1_REVEIL_CHAMBRE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_261
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 6
@@ -83,7 +82,6 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     kami "Les jouets se cassent toujours plus vite une fois qu'on commence à jouer sérieusement avec eux."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_262
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
@@ -133,11 +131,13 @@ label _6_0_1_CAFETERIA:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_263
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
     pause 0.8
 
     think "Ils sont presque tous là. Ils parlent un peu tous dans leur coin, mais pas vraiment ensemble."
+
+    call play_stat_dialogue("d6_0_1") from _call_stat_dialogue_d6_0_1
 
     $ showGroup([
         ("elias", "fatigue"),
@@ -267,9 +267,8 @@ label _6_0_1_TV_FRONTIERES:
 
 label _6_0_1_TRANSITION_CONCLAVE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_265
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
 
     $ current_period = "Après-midi"
 
@@ -312,10 +311,9 @@ label _6_0_1_TRANSITION_CONCLAVE:
     kami "Le vote peut commencer plus tôt."
     kami "Immédiatement, même. Ça m'arrange beaucoup."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_266
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
 
     think "Le couloir reprend comme si rien ne s'était passé. Puis je remarque qu'il manque quelqu'un."
 
@@ -492,7 +490,6 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     think "Son image saute en boucle."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_268
     scene bg_conclave at adaptive_fullscreen with vpunch
 
     $ showGroup([("iris", "inquiet", 0.3), ("ryn", "colere", 0.6), ("lysa", "blase", 0.85)])
@@ -552,7 +549,6 @@ label _6_0_1_SIGNAL_INSTABLE:
     think "Ou elle fait semblant."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_269
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
@@ -589,7 +585,6 @@ label _6_0_1_FRACTURE_QTE:
     kami "Le débat est clos."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_270
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
@@ -682,7 +677,6 @@ label _6_0_1_FRACTURE_QTE:
     play sound "sfx/glitch_light.mp3"
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_271
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
@@ -784,9 +778,8 @@ label _6_0_1_VOTE:
 
     $ amendement_passe = False
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_272
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
 
     think "Le résultat reste affiché quelques secondes. Il n'a surpris personne."
 
@@ -808,7 +801,6 @@ label _6_0_1_VOTE:
     kami "Prévis—ble. Décevant. Mais prévisible."
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_273
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -863,7 +855,7 @@ label _6_0_1_FIN_JOURNEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_274
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
 
     $ showGroup([
         ("lysa", "fatigue"),

@@ -7,7 +7,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
     pause 1.0
 
     scene bg_cg012 at adaptive_fullscreen with fade
-    play music "music/bgm_calm_sad.mp3" fadein 3.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Des coups légers mais insistants contre la porte me tirent du sommeil."
     "Je reste immobile un long moment, espérant que la personne finisse par partir."
@@ -36,7 +36,6 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     nyra inquiet "Je sais que tu es réveillé."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_72
     scene bg_chambre at adaptive_fullscreen with fade
 
     "Je serre la mâchoire."
@@ -192,7 +191,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 label _14_0_1_1_0_CAFETERIA_REJET:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_73
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_careful_wanting.mp3" fadein 2.5
+    play music "music/bgm_world_decline.mp3" fadein 2.5
 
     "Quand j'entre dans la cafétéria, le changement est immédiat et brutal."
     "Ce n'est plus un simple silence gêné comme hier."
@@ -470,7 +469,6 @@ label _14_0_1_1_0_CAFETERIA_REJET:
 
 label _14_0_1_1_0_CHAMBRE_SAEL:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_75
     scene bg_couloir at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_debate.mp3" fadein 2.0
 
@@ -535,7 +533,6 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 0.2
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_76
     scene bg_couloir at adaptive_fullscreen with fade
 
     noam peur "Quoi ?"
@@ -680,7 +677,6 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 0.15
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_78
     scene bg_chambre_sael at adaptive_fullscreen
     with hpunch
 
@@ -972,7 +968,6 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     pause 0.15
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_81
     scene bg_chambre at adaptive_fullscreen
     with hpunch
 
@@ -1000,9 +995,8 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
 label _14_0_1_1_0_MESSAGES_KAEL:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_82
     scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_calm_sad.mp3" fadein 2.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 2.5
 
     "Je suis allongé sur mon lit, les yeux fixés au plafond, quand ma tablette vibre doucement."
 
@@ -1108,9 +1102,8 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
 label _14_0_1_1_0_FIN_JOURNEE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_83
     scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_calm_sad.mp3" fadein 3.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Je traverse lentement la pièce et m’assois à mon bureau."
     "Mes yeux se posent presque malgré moi sur le cahier noir."

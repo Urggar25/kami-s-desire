@@ -95,7 +95,7 @@ init python:
         "mara": "Mara", "julian": "Julian", "iris": "Iris",
         "tomas": "Tomas", "elen": "Elen", "kael": "Kael",
         "nyra": "Nyra", "ryn": "Ryn", "sael": "Sael",
-        "kami": "KAMI", "goumi": "Goumi",
+        "anya": "Anya", "kami": "KAMI", "goumi": "Goumi",
     }
 
     def character_names_ensure_state():
@@ -653,6 +653,8 @@ define kael = DynamicCharacter("character_display_name('kael')", what_prefix="�
 define nyra = DynamicCharacter("character_display_name('nyra')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("nyra"), image="nyra")
 define ryn = DynamicCharacter("character_display_name('ryn')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("ryn"), image="ryn")
 define sael = DynamicCharacter("character_display_name('sael')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("sael"), image="sael")
+define anya = DynamicCharacter("character_display_name('anya')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("anya"), image="anya")
+define anya_inconnue = Character("Inconnue", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("anya"), image="anya")
 
 define med1 = Character("Médiatrice", what_prefix="“", what_suffix="”")
 define med2 = Character("Médiateur", what_prefix="“", what_suffix="”")

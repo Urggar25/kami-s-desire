@@ -5,12 +5,13 @@
 # Résolution : il décide d'aller manger.
 # --------------------------------------------------------------------------------------------
 
-label _8_0_1_REVEIL_CHAMBRE:
+label _8_1_0_0_CANON:
     scene black
     $ current_day = 8
     $ noam_has_juliette_drawing = False
     play music "music/bgm_calm_not_peace.mp3" fadein 2.5
     $ current_period = "Matin"
+    $ cafeteria_food_level = "high"
     $ blink()
     pause 1.0
     $ blink()
@@ -38,7 +39,6 @@ label _8_0_1_REVEIL_CHAMBRE:
 
     tuto "(Fouille la chambre. Le dessin est peut-être encore là.)"
     $ hideGroup()
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_291
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ pnc_room = "chambre_j8"
     $ pnc_flags = {}
@@ -222,7 +222,6 @@ label _8_PNC_SORTIE:
 # -------------------------------------------------------
 
 label _8_FIN_RECHERCHE:
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_292
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.50)])
 
@@ -257,7 +256,7 @@ label _8_FIN_RECHERCHE:
 label _8_0_1_CAFETERIA:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_293
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
     $ showGroup([
         ("iris",   "sourire"),
@@ -482,7 +481,6 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
 # ============================================================
 
 label _8_0_1_APRES_STABILISATION:
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_297
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.5
     $ showGroup([
@@ -526,6 +524,8 @@ label _8_0_1_APRES_STABILISATION:
     kael effondre "... Mais pourquoi...? Je ne comprends pas..."
 
     noam reflechit "Quelqu'un a peut-être choisi précisément ce qui avait le plus de valeur pour nous ?"
+
+    call play_stat_dialogue("d8") from _call_stat_dialogue_d8
 
     $ hideGroup()
 

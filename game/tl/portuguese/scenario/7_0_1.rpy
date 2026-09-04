@@ -1704,3 +1704,11 @@ translate portuguese j701_play_search_drawing_bd9fd9bc:
     # "Je m'allonge finalement dans le lit."
     "Por fim, deito-me na cama."
 
+# TODO: Translation updated at 2026-08-28 10:18
+
+# game/scenario/7_0_1.rpy:1683
+translate portuguese j701_play_search_drawing_0e0bdfb5:
+
+    # noam content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
+    noam content ""
+

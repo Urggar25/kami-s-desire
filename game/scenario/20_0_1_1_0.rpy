@@ -1,6 +1,5 @@
 label _20_0_1_1_0_FAIM:
     $ noam_has_juliette_drawing = False
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_139
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 1.5
     "Midi passe. Mara n'est pas revenue. Ma derniere ration a le gout du papier et la taille d'une excuse."
@@ -41,7 +40,7 @@ label _20_0_1_1_0_FAIM:
 label _20_0_1_1_0_CAFETERIA_MARA:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_140
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_careful_wanting.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
     $ showGroup([("noam", "inquiet", 0.27), ("mara", "neutre", 0.67)])
     mara "Tu as une tete affreuse."
     noam "Tu n'es pas venue."
@@ -110,7 +109,6 @@ label _20_0_1_1_0_CAFETERIA_MARA:
     jump _20_0_1_1_0_TOMAS
 
 label _20_0_1_1_0_TOMAS:
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_141
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "fatigue", 0.27), ("tomas", "inquiet", 0.67)])
     tomas "Mara est partie vite."

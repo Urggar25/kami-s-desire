@@ -121,7 +121,7 @@ label decouverte_salle_maintenance:
     $ decouverte_salle_maintenance = True
 
     scene black
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     think "Salle de maintenance."
     think "Le nom sonne comme une excuse."

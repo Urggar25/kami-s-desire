@@ -264,6 +264,70 @@ init -2 python:
             "teleportable": True,
         },
         {
+            "id": "day_6_price_of_yes",
+            "title": "Jour 6 — Le prix du oui",
+            "short": "J6-1",
+            "label": "_6_1_0_REVEIL_CHAMBRE",
+            "category": "day",
+            "kind": "day",
+            "x": 3880,
+            "y": 640,
+            "summary": "Après l'adoption du commerce, la libre circulation déchire Limen. Ryn tente de forcer une issue avant le vote.",
+            "choice": "Défendre le droit de Sael à voter malgré le prix politique du refus.",
+            "consequence": "Le vote échoue, la violence fracture le groupe et le chapitre 2_1 se referme.",
+            "requires": ["day_5_trade"],
+            "required_variables": {"vote1": "OUI"},
+            "teleportable": True,
+        },
+        {
+            "id": "day_7_1_0",
+            "title": "Jour 7_1_0 — La passagère",
+            "short": "J7",
+            "label": "_7_1_0_CANON",
+            "category": "day",
+            "kind": "day",
+            "x": 4260,
+            "y": 640,
+            "summary": "Le groupe découvre une jeune femme dissimulée dans la livraison et doit décider s'il la cache ou s'il révèle sa présence à Kami.",
+            "choice": "Cacher la rescapée ou la déclarer à Kami.",
+            "consequence": "La journée se divise entre un transfert clandestin vers la chambre d'Iris et une prise en charge déclarée à l'infirmerie.",
+            "requires": ["day_6_price_of_yes"],
+            "required_variables": {"vote1": "OUI"},
+            "teleportable": True,
+        },
+        {
+            "id": "day_7_1_0_0",
+            "title": "Jour 7_1_0_0 — Passagère clandestine",
+            "short": "J7-0",
+            "label": "_7_1_0_CACHER_PLAN",
+            "category": "day",
+            "kind": "day",
+            "x": 4640,
+            "y": 560,
+            "summary": "Kael pirate les serveurs pendant que le groupe transporte clandestinement la jeune femme jusqu'à la chambre d'Iris.",
+            "choice": "Cacher la rescapée à Kami.",
+            "consequence": "Le groupe gagne une alliée potentielle, mais risque l'exécution si le secret est découvert.",
+            "requires": ["day_7_1_0"],
+            "required_variables": {"vote1": "OUI"},
+            "teleportable": True,
+        },
+        {
+            "id": "day_7_1_0_1",
+            "title": "Jour 7_1_0_1 — Sursis déclaré",
+            "short": "J7-1",
+            "label": "_7_1_0_DECLARER_PLACEHOLDER",
+            "category": "day",
+            "kind": "day",
+            "x": 4640,
+            "y": 720,
+            "summary": "Le groupe révèle la présence de la jeune femme à Kami et obtient un sursis pour la soigner à l'infirmerie.",
+            "choice": "Déclarer la rescapée et exiger son transfert médical.",
+            "consequence": "Kami cède temporairement ; le transport jusqu'à l'infirmerie met la coordination du groupe à l'épreuve.",
+            "requires": ["day_7_1_0"],
+            "required_variables": {"vote1": "OUI"},
+            "teleportable": True,
+        },
+        {
             "id": "vote_circulation",
             "title": "Vote — Libre circulation",
             "short": "Vote II",
@@ -306,6 +370,38 @@ init -2 python:
             "choice": "Enquêter dans la chambre et soutenir Kael.",
             "consequence": "La menace devient personnelle.",
             "requires": ["day_7_silence"],
+            "teleportable": True,
+        },
+        {
+            "id": "day_8_1_0_0",
+            "title": "Jour 8_1_0_0 — Le réveil d'Anya",
+            "short": "J8-0",
+            "label": "_8_1_0_0_REVEIL",
+            "category": "day",
+            "kind": "day",
+            "x": 5020,
+            "y": 560,
+            "summary": "Anya se réveille dans la chambre d'Iris et découvre qu'elle a été recueillie au cœur du Conclave.",
+            "choice": "Gagner sa confiance tout en continuant à cacher sa présence à Kami.",
+            "consequence": "Une visite inattendue de Ryn fait planer le doute sur la sécurité du secret.",
+            "requires": ["day_7_1_0_0"],
+            "required_variables": {"vote1": "OUI"},
+            "teleportable": True,
+        },
+        {
+            "id": "day_9_1_0_0",
+            "title": "Jour 9_1_0_0 — Ce que Ryn savait",
+            "short": "J9-0",
+            "label": "_9_1_0_0_REVEIL",
+            "category": "day",
+            "kind": "day",
+            "x": 5400,
+            "y": 560,
+            "summary": "Noam cherche à comprendre pourquoi Ryn connaissait la présence d'Anya et découvre son intérêt pour les réseaux de passeurs.",
+            "choice": "Préserver le secret d'Anya sans confronter directement Ryn.",
+            "consequence": "Le silence de Ryn protège temporairement Anya, mais ses questions sur les contrôles de marchandises restent inquiétantes.",
+            "requires": ["day_8_1_0_0"],
+            "required_variables": {"vote1": "OUI"},
             "teleportable": True,
         },
         {
@@ -355,17 +451,17 @@ init -2 python:
         },
         {
             "id": "day_11_0_1_1",
-            "title": "Jour 11 — Malaise",
+            "title": "Jour 11 — Archives effacées",
             "short": "J11",
             "label": "_11_0_1_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
             "x": 6160,
             "y": 530,
-            "summary": "Noam se réveille avec un mal de crâne inhabituel dans un Conclave trop chaud et trop silencieux. À la cafétéria, Elias annonce que la majorité des campements s'est dispersée, mais Ryn accuse Kami d'avoir piégé tout le monde.",
+            "summary": "Encore affaibli par sa fièvre, Noam recherche la silhouette aperçue la veille et découvre que les images de surveillance ont été effacées.",
             "choice": "Rejoindre la cafétéria et empêcher la discussion de rompre autour de la table.",
             "consequence": "La colère contre Kami devient un risque interne pour le groupe.",
-            "requires": ["day_9_kami_return"],
+            "requires": ["day_10_0_1_1"],
             "teleportable": True,
         },
         {
@@ -567,15 +663,7 @@ init -2 python:
         if node.get("dev_only") and not store.roadmap_dev_mode:
             return False
         if node.get("kind") == "day" or node.get("category") == "day":
-            node_id = node["id"]
-            return (
-                store.roadmap_dev_mode
-                or node_id == store.roadmap_current_node
-                or node_id in store.roadmap_unlocked_nodes
-                or node_id in store.roadmap_discovered_nodes
-                or node_id in store.roadmap_completed_nodes
-                or roadmap_label_seen(node)
-            )
+            return True
         return True
 
     def roadmap_status(node):
@@ -650,13 +738,20 @@ init -2 python:
             "debug": "gui/roadmap/icons/roadmap_icon_kami.png",
         }.get(kind, "gui/roadmap/icons/roadmap_icon_scene.png")
 
+    def roadmap_is_redacted(node):
+        return bool(
+            node
+            and not store.roadmap_dev_mode
+            and roadmap_status(node) in ("locked", "unknown")
+        )
+
     def roadmap_display_title(node):
-        if roadmap_status(node) == "unknown" and not store.roadmap_dev_mode:
+        if roadmap_is_redacted(node):
             return kd_tr("Données non découvertes")
         return kd_tr(node.get("title", node["id"]))
 
     def roadmap_display_summary(node):
-        if roadmap_status(node) == "unknown" and not store.roadmap_dev_mode:
+        if roadmap_is_redacted(node):
             return kd_tr("Kami refuse l'accès à ce fragment. Continuez la chronologie pour l'identifier.")
         return kd_tr(node.get("summary", "Résumé à compléter."))
 
@@ -667,16 +762,57 @@ init -2 python:
             return "locked"
         if roadmap_status(target) in ("unknown", "locked"):
             return "locked"
+        if roadmap_is_day(source) and roadmap_is_day(target):
+            if target.get("y", 0) > source.get("y", 0) + 40:
+                return "alt"
+            if target.get("y", 0) < source.get("y", 0) - 40:
+                return "vote"
         if target.get("kind") == "route":
             return "alt"
         if target.get("kind") == "vote":
             return "vote"
         return "active"
 
-    def roadmap_map_size():
-        max_x = max([node["x"] for node in ROADMAP_NODES]) + 460
-        max_y = max([node["y"] for node in ROADMAP_NODES]) + 260
-        return max(6000, max_x), max(1080, max_y)
+    def roadmap_is_day(node):
+        return bool(node and (node.get("kind") == "day" or node.get("category") == "day"))
+
+    def roadmap_day_predecessors(node):
+        """Return the nearest day nodes behind a day, skipping technical nodes."""
+        result = []
+        visited = set()
+
+        def visit(node_id):
+            if node_id in visited:
+                return
+            visited.add(node_id)
+            candidate = ROADMAP_NODE_BY_ID.get(node_id)
+            if not candidate:
+                return
+            if roadmap_is_day(candidate):
+                if candidate["id"] not in result:
+                    result.append(candidate["id"])
+                return
+            for requirement in candidate.get("requires", []):
+                visit(requirement)
+
+        for requirement in node.get("requires", []):
+            visit(requirement)
+        return result
+
+    def roadmap_map_size(nodes=None):
+        nodes = list(nodes) if nodes is not None else [node for node in ROADMAP_NODES if roadmap_is_day(node)]
+        if not nodes:
+            return 1280, 800
+        max_x = max([node["x"] for node in nodes]) + 390
+        max_y = max([node["y"] for node in nodes]) + 190
+        return max(1280, max_x), max(800, max_y)
+
+    def roadmap_fit_zoom(nodes=None, view_w=1280, view_h=800):
+        map_w, map_h = roadmap_map_size(nodes)
+        return max(0.12, min(0.78, min(
+            float(view_w - 56) / float(map_w),
+            float(view_h - 56) / float(map_h),
+        )))
 
     def roadmap_apply_node_setup(node_id):
         node = ROADMAP_NODE_BY_ID.get(node_id)
@@ -711,16 +847,16 @@ init -2 python:
         renpy.jump_out_of_context(label)
 
     def roadmap_latest_node_id():
-        if store.roadmap_current_node in ROADMAP_NODE_BY_ID:
+        if roadmap_is_day(ROADMAP_NODE_BY_ID.get(store.roadmap_current_node)):
             return store.roadmap_current_node
-        discovered = [node["id"] for node in ROADMAP_NODES if roadmap_is_discovered(node)]
+        discovered = [node["id"] for node in ROADMAP_NODES if roadmap_is_day(node) and roadmap_is_discovered(node)]
         return discovered[-1] if discovered else "day_0"
 
-    def roadmap_focus_initial(node_id, axis, zoom=1.0):
+    def roadmap_focus_initial(node_id, axis, zoom=1.0, nodes=None):
         node = ROADMAP_NODE_BY_ID.get(node_id)
         if not node:
             return 0.0
-        map_w, map_h = roadmap_map_size()
+        map_w, map_h = roadmap_map_size(nodes)
         if axis == "x":
             value = (node["x"] * zoom - 760.0) / max(1.0, map_w * zoom - 1180.0)
         else:
@@ -728,7 +864,7 @@ init -2 python:
         return min(1.0, max(0.0, value))
 
     def roadmap_selected_or_latest(selected_id):
-        if selected_id in ROADMAP_NODE_BY_ID:
+        if roadmap_is_day(ROADMAP_NODE_BY_ID.get(selected_id)):
             return selected_id
         return roadmap_latest_node_id()
 
@@ -763,18 +899,25 @@ label roadmap_perform_teleport:
 ## Écran principal
 ################################################################################
 
-screen roadmap_menu(focus_node_id=None):
+screen roadmap_menu(focus_node_id=None, initial_zoom=None):
     tag menu
     modal True
     zorder 220
 
     default selected_node_id = roadmap_selected_or_latest(roadmap_selected_node)
-    default category_filter = roadmap_selected_category
-    default map_zoom = 1.0
+    default map_zoom = initial_zoom if initial_zoom is not None else 0.78
 
-    $ map_w, map_h = roadmap_map_size()
-    $ z = map_zoom
-    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_should_show(node) and (category_filter == "all" or node.get("category") == category_filter)]
+    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_day(node) and roadmap_should_show(node)]
+    $ map_w, map_h = roadmap_map_size(visible_nodes)
+    $ fit_zoom = roadmap_fit_zoom(visible_nodes)
+    $ z = max(fit_zoom, min(1.40, map_zoom))
+    $ canvas_w = max(1280, int(map_w * z))
+    $ canvas_h = max(800, int(map_h * z))
+    $ map_offset_x = max(0, int((canvas_w - map_w * z) / 2))
+    $ map_offset_y = max(0, int((canvas_h - map_h * z) / 2))
+    $ node_w = max(44, int(310 * z))
+    $ node_h = max(24, int(118 * z))
+    $ compact_nodes = z < 0.45
     $ visible_node_ids = set([node["id"] for node in visible_nodes])
     $ selected_node = roadmap_node(selected_node_id) if selected_node_id in visible_node_ids else None
     $ focus_id = focus_node_id or (selected_node_id if selected_node_id in visible_node_ids else roadmap_latest_node_id())
@@ -786,8 +929,8 @@ screen roadmap_menu(focus_node_id=None):
 
     key "game_menu" action NullAction()
     key "K_ESCAPE" action NullAction()
-    key "mousedown_4" action SetScreenVariable("map_zoom", min(1.35, map_zoom + 0.05))
-    key "mousedown_5" action SetScreenVariable("map_zoom", max(0.75, map_zoom - 0.05))
+    key "mousedown_4" action SetScreenVariable("map_zoom", min(1.40, z + 0.08))
+    key "mousedown_5" action SetScreenVariable("map_zoom", max(fit_zoom, z - 0.08))
 
     frame:
         xpos 28
@@ -809,27 +952,40 @@ screen roadmap_menu(focus_node_id=None):
 
             hbox:
                 xpos 28
-                ypos 112
-                spacing 10
-                for cat_id, cat_label in ROADMAP_CATEGORIES:
-                    if cat_id != "debug" or roadmap_dev_mode:
-                        textbutton kd_tr(cat_label):
-                            style "roadmap_filter_button"
-                            selected category_filter == cat_id
-                            action [
-                                SetScreenVariable("category_filter", cat_id),
-                                SetVariable("roadmap_selected_category", cat_id),
-                            ]
+                ypos 114
+                spacing 12
+                add Solid("#55d7a0") xsize 34 ysize 3 yalign 0.5
+                text "JOURNÉES // CHRONOLOGIE PRINCIPALE" style "roadmap_meta_text"
 
             hbox:
-                xpos 1320
+                xpos 1168
                 ypos 102
-                spacing 10
+                spacing 8
+                textbutton "−":
+                    style "roadmap_small_button"
+                    xsize 58
+                    sensitive z > fit_zoom
+                    action SetScreenVariable("map_zoom", max(fit_zoom, z - 0.10))
+                textbutton "[int(z * 100)] %":
+                    style "roadmap_small_button"
+                    xsize 78
+                    action SetScreenVariable("map_zoom", fit_zoom)
+                textbutton "+":
+                    style "roadmap_small_button"
+                    xsize 58
+                    sensitive z < 1.40
+                    action SetScreenVariable("map_zoom", min(1.40, z + 0.10))
+                textbutton "Vue globale":
+                    style "roadmap_small_button"
+                    xsize 154
+                    action SetScreenVariable("map_zoom", fit_zoom)
                 textbutton "Centrer":
                     style "roadmap_small_button"
-                    action ShowMenu("roadmap_menu", focus_node_id=roadmap_latest_node_id())
+                    xsize 124
+                    action ShowMenu("roadmap_menu", focus_node_id=roadmap_latest_node_id(), initial_zoom=z)
                 textbutton "Retour":
                     style "roadmap_small_button"
+                    xsize 112
                     action Return()
 
             hbox:
@@ -846,42 +1002,44 @@ screen roadmap_menu(focus_node_id=None):
                     viewport:
                         xsize 1280
                         ysize 800
-                        mousewheel True
                         draggable True
                         scrollbars "both"
                         pagekeys True
-                        xinitial roadmap_focus_initial(focus_id, "x", z)
-                        yinitial roadmap_focus_initial(focus_id, "y", z)
+                        xinitial roadmap_focus_initial(focus_id, "x", z, visible_nodes)
+                        yinitial roadmap_focus_initial(focus_id, "y", z, visible_nodes)
 
                         fixed:
-                            xsize int(map_w * z)
-                            ysize int(map_h * z)
+                            xsize canvas_w
+                            ysize canvas_h
 
                             for node in visible_nodes:
-                                for req in node.get("requires", []):
-                                    if req in ROADMAP_NODE_BY_ID and req in visible_node_ids:
+                                for req in roadmap_day_predecessors(node):
+                                    if req in visible_node_ids:
                                         $ source = ROADMAP_NODE_BY_ID[req]
-                                        $ sx = int((source["x"] + 310) * z)
-                                        $ sy = int((source["y"] + 59) * z)
-                                        $ tx = int(node["x"] * z)
-                                        $ ty = int((node["y"] + 59) * z)
+                                        $ sx = map_offset_x + int(source["x"] * z) + node_w
+                                        $ sy = map_offset_y + int(source["y"] * z) + int(node_h / 2)
+                                        $ tx = map_offset_x + int(node["x"] * z)
+                                        $ ty = map_offset_y + int(node["y"] * z) + int(node_h / 2)
                                         $ mx = int((sx + tx) / 2)
                                         $ edge_state = roadmap_edge_status(req, node["id"])
-                                        $ edge_color = {"active": "#5cd3ff99", "locked": "#39495688", "alt": "#b27bffaa", "vote": "#d6b15faa"}.get(edge_state, "#5cd3ff99")
-                                        add Solid(edge_color) xpos sx ypos sy xsize max(2, mx - sx) ysize 2
+                                        $ edge_color = {"active": "#5cd3ffcc", "locked": "#39495699", "alt": "#b27bffcc", "vote": "#d6b15fcc"}.get(edge_state, "#5cd3ffcc")
+                                        $ edge_glow = {"active": "#5cd3ff22", "locked": "#39495618", "alt": "#b27bff22", "vote": "#d6b15f22"}.get(edge_state, "#5cd3ff22")
+                                        add Solid(edge_glow) xpos min(sx, mx) ypos (sy - 3) xsize max(6, abs(mx - sx)) ysize 8
+                                        add Solid(edge_glow) xpos (mx - 3) ypos min(sy, ty) xsize 8 ysize max(6, abs(ty - sy))
+                                        add Solid(edge_glow) xpos min(mx, tx) ypos (ty - 3) xsize max(6, abs(tx - mx)) ysize 8
+                                        add Solid(edge_color) xpos min(sx, mx) ypos sy xsize max(2, abs(mx - sx)) ysize 2
                                         add Solid(edge_color) xpos mx ypos min(sy, ty) xsize 2 ysize max(2, abs(ty - sy))
-                                        add Solid(edge_color) xpos mx ypos ty xsize max(2, tx - mx) ysize 2
+                                        add Solid(edge_color) xpos min(mx, tx) ypos ty xsize max(2, abs(tx - mx)) ysize 2
+                                        add Solid(edge_color) xpos (tx - 3) ypos (ty - 3) xsize 8 ysize 8
 
                             for node in visible_nodes:
-                                $ nx = int(node["x"] * z)
-                                $ ny = int(node["y"] * z)
-                                $ nw = int(310 * z)
-                                $ nh = int(118 * z)
+                                $ nx = map_offset_x + int(node["x"] * z)
+                                $ ny = map_offset_y + int(node["y"] * z)
                                 button:
                                     xpos nx
                                     ypos ny
-                                    xsize nw
-                                    ysize nh
+                                    xsize node_w
+                                    ysize node_h
                                     background Frame(roadmap_node_bg(node), 12, 12)
                                     hover_background Frame(roadmap_node_bg(node, True), 12, 12)
                                     action [
@@ -890,20 +1048,27 @@ screen roadmap_menu(focus_node_id=None):
                                     ]
 
                                     fixed:
-                                        add Transform(roadmap_icon(node), size=(int(38 * z), int(38 * z))) xpos int(16 * z) ypos int(32 * z)
-                                        text kd_tr(node.get("short", node["id"])):
-                                            xpos int(64 * z)
-                                            ypos int(18 * z)
-                                            xsize int(218 * z)
-                                            style "roadmap_node_code_text"
-                                        text roadmap_display_title(node):
-                                            xpos int(64 * z)
-                                            ypos int(49 * z)
-                                            xsize int(218 * z)
-                                            style "roadmap_node_title_text"
-                                            size max(15, int(20 * z))
-                                        if roadmap_can_teleport(node):
-                                            add Transform("gui/roadmap/icons/roadmap_icon_teleport.png", size=(int(24 * z), int(24 * z))) xpos int(272 * z) ypos int(14 * z)
+                                        if compact_nodes:
+                                            text kd_tr(node.get("short", node["id"])):
+                                                xalign 0.5
+                                                yalign 0.5
+                                                style "roadmap_node_code_text"
+                                                size 12
+                                        else:
+                                            add Transform(roadmap_icon(node), size=(int(38 * z), int(38 * z))) xpos int(16 * z) ypos int(32 * z)
+                                            text kd_tr(node.get("short", node["id"])):
+                                                xpos int(64 * z)
+                                                ypos int(18 * z)
+                                                xsize int(218 * z)
+                                                style "roadmap_node_code_text"
+                                            text roadmap_display_title(node):
+                                                xpos int(64 * z)
+                                                ypos int(49 * z)
+                                                xsize int(218 * z)
+                                                style "roadmap_node_title_text"
+                                                size max(15, int(20 * z))
+                                            if roadmap_can_teleport(node):
+                                                add Transform("gui/roadmap/icons/roadmap_icon_teleport.png", size=(int(24 * z), int(24 * z))) xpos int(272 * z) ypos int(14 * z)
 
                 use roadmap_node_details(selected_node)
 
@@ -913,9 +1078,9 @@ screen roadmap_menu(focus_node_id=None):
                 spacing 22
                 use roadmap_legend_item("#55d7a0", "Terminé")
                 use roadmap_legend_item("#5cd3ff", "En cours / disponible")
-                use roadmap_legend_item("#d6b15f", "Vote")
-                use roadmap_legend_item("#b27bff", "Route alternative")
+                use roadmap_legend_item("#b27bff", "Embranchement")
                 use roadmap_legend_item("#677989", "Verrouillé")
+                text "Molette : zoom  •  Glisser : déplacer  •  Vue globale : tout afficher" style "roadmap_legend_text"
 
 screen roadmap_legend_item(color_value, label_value):
     hbox:
@@ -939,12 +1104,6 @@ screen roadmap_node_details(node):
 
                 text roadmap_display_summary(node) style "roadmap_body_text"
 
-                text "Choix majeur" style "roadmap_section_text"
-                text kd_tr(node.get("choice", "Aucun choix majeur renseigné.")) style "roadmap_body_text"
-
-                text "Conséquences connues" style "roadmap_section_text"
-                text kd_tr(node.get("consequence", "Données en attente de validation.")) style "roadmap_body_text"
-
                 null height 8
 
                 if roadmap_can_teleport(node):
@@ -967,8 +1126,8 @@ screen roadmap_node_details(node):
         else:
             vbox:
                 spacing 18
-                text "Aucun nœud sélectionné" style "roadmap_details_title_text"
-                text "Sélectionnez un point de vote, une journée ou une route pour consulter ses archives." style "roadmap_body_text"
+                text "Aucune journée sélectionnée" style "roadmap_details_title_text"
+                text "Sélectionnez une journée pour consulter ses archives et rejoindre cette séquence." style "roadmap_body_text"
 
 ################################################################################
 ## Styles

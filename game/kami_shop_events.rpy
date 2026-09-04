@@ -29,7 +29,8 @@ init python:
     import datetime
     import re
 
-    CHAPTER_2_BOOST_END_AT = datetime.datetime(2026, 8, 31, 0, 0, 0)
+    # Le 6 septembre est inclus : l'évènement expire au passage au 7.
+    CHAPTER_2_BOOST_END_AT = datetime.datetime(2026, 9, 7, 0, 0, 0)
 
     # Migration unique depuis la première version de la boutique, dont le
     # solde initial était 240. Un solde déjà utilisé ou gagné est conservé.

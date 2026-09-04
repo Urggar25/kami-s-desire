@@ -168,3 +168,67 @@ screen danger_vignette():
         xpos 0 ypos 0 xsize 14 ysize config.screen_height
     add Solid("#c81e2e") at _danger_pulse:
         xpos (config.screen_width - 14) ypos 0 xsize 14 ysize config.screen_height
+
+transform slow_zoom_in:
+    zoom 1.0
+    linear 8.0 zoom 1.12
+
+transform slow_zoom_creep:
+    subpixel True
+    zoom 1.0 xalign 0.5 yalign 0.5
+    linear 12.0 zoom 1.18 xalign 0.45
+
+transform unease_drift:
+    subpixel True
+    xoffset 0 yoffset 0
+    block:
+        linear 3.0 xoffset 4 yoffset -3
+        linear 3.0 xoffset -4 yoffset 3
+        repeat
+
+transform hard_flash:
+    alpha 1.0
+    linear 0.12 alpha 0.0
+
+transform breathe_dark:
+    matrixcolor TintMatrix("#c8d0dd") * BrightnessMatrix(0.0)
+    block:
+        linear 2.5 matrixcolor TintMatrix("#c8d0dd") * BrightnessMatrix(-0.12)
+        linear 2.5 matrixcolor TintMatrix("#c8d0dd") * BrightnessMatrix(0.0)
+        repeat
+
+image flash_white = Solid("#ffffff")
+image flash_black = Solid("#000000")
+image vignette_soft = Solid("#00000055")  # remplace par un vrai PNG vignette si dispo
+
+# Transitions horreur
+define creep_diss = Dissolve(2.2)
+define snap_black = Dissolve(0.05)                 # coupe quasi-instant vers le noir
+define slow_black = Dissolve(3.0)
+define pulse_red  = Fade(0.15, 0.0, 0.15, color="#3a0000")
+define blink      = Dissolve(0.08)
+
+# Glitch transition (empilement rapide) — à utiliser avec 'with glitch_diss'
+define glitch_diss = MultipleTransition([
+    False, Dissolve(0.04),
+    True,  Dissolve(0.04),
+    False, Dissolve(0.04),
+    True,  Dissolve(0.04),
+    True
+])
+
+# Pixellate montante (montée d'angoisse)
+define dread_pix = Pixellate(1.2, 6)
+
+transform afterimage:
+    # rémanence fantôme qui s'efface
+    alpha 0.55 zoom 1.02
+    linear 1.6 alpha 0.0 zoom 1.06
+
+transform push_in_fast:
+    zoom 1.0
+    easein 0.4 zoom 1.15
+
+transform lean_left:
+    subpixel True
+    linear 6.0 xoffset -18 zoom 1.06

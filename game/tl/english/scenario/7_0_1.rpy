@@ -1704,3 +1704,11 @@ translate english j701_play_search_drawing_bd9fd9bc:
     # "Je m'allonge finalement dans le lit."
     "Eventually, I lie down on the bed."
 
+# TODO: Translation updated at 2026-08-27 17:51
+
+# game/scenario/7_0_1.rpy:1683
+translate english j701_play_search_drawing_0e0bdfb5:
+
+    # noam content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
+    noam content "You say that now. But after three days, you might die of boredom!"
+

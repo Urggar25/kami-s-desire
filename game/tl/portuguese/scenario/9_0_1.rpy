@@ -1,3596 +1,1232 @@
-﻿# TODO: Translation updated at 2026-08-23 11:55
+﻿# TODO: Translation updated at 2026-08-28 10:18
 
-# game/scenario/9_0_1.rpy:18
-translate portuguese 5e297a0b:
+# game/scenario/9_0_1.rpy:14
+translate portuguese ed76612d:
 
-    # "Je dors mal."
-    ""
+    # "Je dors par fragments. Chaque bruit du couloir me réveille assez longtemps pour que j'imagine une main sur la poignée."
+    "Durmo em intervalos. Cada ruído no corredor me acorda tempo suficiente para eu imaginar uma mão na maçaneta."
+
+# game/scenario/9_0_1.rpy:15
+translate portuguese 9d1524ba:
+
+    # "Quelqu'un prêt à rentrer dans la chambre."
+    "Alguém prestes a entrar no quarto."
+
+# game/scenario/9_0_1.rpy:17
+translate portuguese e939dff5:
+
+    # think "La chaise est toujours coincée contre la porte. Si quelqu'un était entré, je l'aurais entendue tomber."
+    think "A cadeira continua presa contra a porta. Se alguém tivesse entrado, eu teria ouvido ela cair."
 
 # game/scenario/9_0_1.rpy:19
-translate portuguese 1d1206d3:
+translate portuguese 7adfac8a:
 
-    # "Ou plutôt..."
-    ""
+    # noam "C'est déjà ça..."
+    noam "Já é alguma coisa..."
 
-# game/scenario/9_0_1.rpy:20
-translate portuguese 17057636:
+# game/scenario/9_0_1.rpy:21
+translate portuguese 36b3a3f9:
 
-    # "Je dors par morceaux."
-    ""
+    # "Je commence enfin à replonger lorsque le silence se brise."
+    "Finalmente começo a adormecer de novo quando o silêncio se rompe."
 
-# game/scenario/9_0_1.rpy:22
-translate portuguese 344b17b9:
+# game/scenario/9_0_1.rpy:31
+translate portuguese b20a18d7:
 
-    # "Un bruit dans le couloir."
-    ""
+    # kami "Bonjour, mes petits représentants ! Vous avez réussi à survivre deux journées entières sans mon annonce matinale. Je suis presque impressionnée."
+    kami "Bom dia, meus pequenos representantes! Vocês conseguiram sobreviver dois dias inteiros sem meu anúncio matinal. Estou quase impressionada."
 
-# game/scenario/9_0_1.rpy:23
-translate portuguese 04f7ab2b:
+# game/scenario/9_0_1.rpy:33
+translate portuguese 6e3e5447:
 
-    # "Un craquement dans la cloison."
-    ""
+    # noam "Évidemment, ça ne pouvait pas durer..."
+    noam "É claro que não podia durar..."
 
-# game/scenario/9_0_1.rpy:24
-translate portuguese d7bd81f1:
+# game/scenario/9_0_1.rpy:36
+translate portuguese c589ef31:
 
-    # "J'essaye de me souvenir d'une porte qu'on aurait pu ouvrir pendant mon sommeil."
-    ""
+    # kami "Avouez-le : je vous ai terriblement manqué. De mon côté, cette séparation m'a paru interminable."
+    kami "Admitam: sentiram muito a minha falta. Para mim, essa separação pareceu interminável."
 
-# game/scenario/9_0_1.rpy:25
-translate portuguese a838db61:
+# game/scenario/9_0_1.rpy:38
+translate portuguese d026673b:
 
-    # "Non... Ça ne me dit rien..."
-    ""
+    # think "Sa voix est exactement la même : claire, nasillarde et presque chantante. Elle parle comme si elle n'avait jamais disparu."
+    think "A voz dela está exatamente igual: clara, anasalada e quase melodiosa. Ela fala como se nunca tivesse desaparecido."
 
-# game/scenario/9_0_1.rpy:29
-translate portuguese b203462d:
+# game/scenario/9_0_1.rpy:39
+translate portuguese 7914e0af:
 
-    # think "La chaise est toujours contre la porte."
-    think ""
+    # think "Comme si elle avait toujours été là. En silence. Comme si elle nous regardait en mangeant tranquillement un pot entier de popcorn."
+    think "Como se estivesse aqui o tempo todo. Em silêncio. Como se nos observasse enquanto comia tranquilamente um balde inteiro de pipoca."
 
-# game/scenario/9_0_1.rpy:30
-translate portuguese 9cb08349:
+# game/scenario/9_0_1.rpy:42
+translate portuguese 225e7487:
 
-    # think "Elle n'a pas bougé d'un pouce."
-    think ""
-
-# game/scenario/9_0_1.rpy:34
-translate portuguese c5e6e9df:
-
-    # "Je commence à replonger."
-    ""
-
-# game/scenario/9_0_1.rpy:41
-translate portuguese 676703fb:
-
-    # "Un bip strident déchire le silence."
-    ""
+    # kami "Il s'en est passé, des choses, pendant ma courte absence. Vous avez presque commencé à vous comporter comme si personne ne vous surveillait."
+    kami "Muita coisa aconteceu durante minha curta ausência. Vocês quase começaram a agir como se ninguém estivesse vigiando."
 
 # game/scenario/9_0_1.rpy:45
-translate portuguese a2e7128d:
+translate portuguese 4de0e3b5:
 
-    # "L'écran mural s'allume."
-    ""
+    # kami "Rassurez-vous, votre période d'abandon émotionnel est terminée."
+    kami "Fiquem tranquilos, seu período de abandono emocional acabou."
 
-# game/scenario/9_0_1.rpy:54
-translate portuguese 11b7204f:
-
-    # kami "Oh bonjour, mes petits représentants !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:58
-translate portuguese a25bd725:
-
-    # "Je me redresse d'un coup."
-    ""
-
-# game/scenario/9_0_1.rpy:60
-translate portuguese ff02e02e:
-
-    # think "Oh non..."
-    think ""
-
-# game/scenario/9_0_1.rpy:64
-translate portuguese fd277ef9:
-
-    # kami "Je vous ai manqué ?!"
-    kami ""
-
-# game/scenario/9_0_1.rpy:65
-translate portuguese 32daa694:
-
-    # kami "Vous m'avez TEEELLLEMENT manqué !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:69
-translate portuguese 70b9de32:
-
-    # think "Elle est revenue."
-    think ""
-
-# game/scenario/9_0_1.rpy:71
-translate portuguese 2dc37ff4:
-
-    # "Sa voix est calme."
-    ""
-
-# game/scenario/9_0_1.rpy:72
-translate portuguese 0973f309:
-
-    # "Toujours claire et nasillarde."
-    ""
-
-# game/scenario/9_0_1.rpy:73
-translate portuguese 336de4fa:
-
-    # "Presque chantante."
-    ""
-
-# game/scenario/9_0_1.rpy:75
-translate portuguese f3283904:
-
-    # "La même voix."
-    ""
-
-# game/scenario/9_0_1.rpy:76
-translate portuguese 39629c11:
-
-    # "Le même ton."
-    ""
-
-# game/scenario/9_0_1.rpy:77
-translate portuguese a419b7b6:
-
-    # "Comme si elle n'avait jamais disparu."
-    ""
-
-# game/scenario/9_0_1.rpy:81
-translate portuguese 2d3b04ee:
-
-    # kami "Deux jours sans annonce matinale, c'était interminablement long !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:82
-translate portuguese 270330b7:
-
-    # kami "Une chose est sûre : il s'en est passé des choses pendant mon absence !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:88
-translate portuguese 7ba676c9_1:
-
-    # kami "Je sais."
-    kami ""
-
-# game/scenario/9_0_1.rpy:89
-translate portuguese 71029256:
-
-    # kami "C'était très dur."
-    kami ""
-
-# game/scenario/9_0_1.rpy:90
-translate portuguese 349f1001:
-
-    # kami "Comment vous avez fait sans moi hein ?!"
-    kami ""
-
-# game/scenario/9_0_1.rpy:95
-translate portuguese 03f02e24:
-
-    # kami "Votre longue période d'abandon émotionnel est terminée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:101
+# game/scenario/9_0_1.rpy:48
 translate portuguese 2cf4409d:
 
     # kami "Maman est de retour."
-    kami ""
+    kami "A mamãe voltou."
 
-# game/scenario/9_0_1.rpy:103
-translate portuguese 9ebb70ee:
+# game/scenario/9_0_1.rpy:51
+translate portuguese ebb8efb0:
 
-    # "La phrase reste dans l'air."
-    ""
+    # kami "Je constate que certains ont pris des initiatives décoratives pendant mon absence. Des portes barricadées avec du mobilier... Quelle créativité."
+    kami "Vejo que alguns tomaram iniciativas decorativas enquanto estive fora. Portas barricadas com móveis... Quanta criatividade."
 
-# game/scenario/9_0_1.rpy:104
-translate portuguese 2c4de6f0:
+# game/scenario/9_0_1.rpy:54
+translate portuguese 4d92ae59:
 
-    # "Tout bonnement insupportable."
-    ""
+    # kami "C'est adorable. Vous ressemblez à des enfants persuadés que leur cabane devient imprenable dès qu'ils placent une chaise devant l'entrée."
+    kami "É adorável. Vocês parecem crianças convencidas de que sua cabana se torna invencível assim que colocam uma cadeira na entrada."
 
-# game/scenario/9_0_1.rpy:113
-translate portuguese 8fdda2e0_2:
+# game/scenario/9_0_1.rpy:55
+translate portuguese ab668e57:
 
-    # "Je me lève."
-    ""
+    # kami "De quoi avez-vous peur ? De vos petits camarades ? RI-SIBLE."
+    kami "Do que têm medo? Dos seus amiguinhos? RI-DÍ-CU-LO."
 
-# game/scenario/9_0_1.rpy:114
-translate portuguese adbad0f1:
+# game/scenario/9_0_1.rpy:57
+translate portuguese b27e6cac:
 
-    # "Je pousse la chaise sur le côté."
-    ""
+    # think "Elle a tout vu. Bien sûr qu'elle l'a vue. Deux jours de silence ont suffi pour nous faire oublier que ses yeux n'avaient peut-être jamais cessé de fonctionner."
+    think "Ela viu tudo. É claro que viu. Dois dias de silêncio bastaram para esquecermos que talvez seus olhos nunca tenham parado de funcionar."
+
+# game/scenario/9_0_1.rpy:60
+translate portuguese a0526f72:
+
+    # noam surpris "Qu'est-ce qui s'est réellement passé pendant ces deux jours ?"
+    noam surpris "O que realmente aconteceu nesses dois dias?"
+
+# game/scenario/9_0_1.rpy:63
+translate portuguese 45b326f9:
+
+    # kami "Oh, Noam ose poser la question directement. Tu veux vraiment savoir pourquoi je vous ai laissés seuls ?"
+    kami "Oh, Noam se atreve a perguntar diretamente. Quer mesmo saber por que deixei vocês sozinhos?"
+
+# game/scenario/9_0_1.rpy:66
+translate portuguese e9ad96d2:
+
+    # noam inquiet "Tu as disparu pendant deux jours. Aucune annonce, aucune exécution et aucune explication."
+    noam inquiet "Você desapareceu por dois dias. Sem anúncios, sem execuções e sem explicação."
+
+# game/scenario/9_0_1.rpy:70
+translate portuguese de43691b:
+
+    # kami "« Disparu » est un mot bien dramatique. J'ai simplement subi une petite opération de maintenance."
+    kami "'Desapareceu' é uma palavra muito dramática. Eu só passei por uma pequena manutenção."
+
+# game/scenario/9_0_1.rpy:73
+translate portuguese c185f3ea:
+
+    # kami "J'aurais préféré vous faire croire à une expérience complexe, mais même moi, j'ai parfois besoin de congés. Payés, évidemment."
+    kami "Preferia ter feito vocês acreditarem num experimento complexo, mas até eu preciso de férias às vezes. Remuneradas, é claro."
+
+# game/scenario/9_0_1.rpy:74
+translate portuguese fec3f1bf:
+
+    # kami "Vous savez, je pense sincèrement que je devrais mettre en place un code du travail !"
+    kami "Sabem, sinceramente acho que deveria criar uma legislação trabalhista!"
+
+# game/scenario/9_0_1.rpy:77
+translate portuguese 7b5e9b83:
+
+    # kami "Vous aussi, vous devez respecter mes droits !"
+    kami "Vocês também precisam respeitar meus direitos!"
+
+# game/scenario/9_0_1.rpy:78
+translate portuguese 975b8247:
+
+    # kami "Après un an à travailler jour et nuit pour maintenir l'ordre, personne ne peut me reprocher une courte maintenance !"
+    kami "Depois de um ano trabalhando dia e noite para manter a ordem, ninguém pode me culpar por uma manutenção rápida!"
+
+# game/scenario/9_0_1.rpy:81
+translate portuguese be30e36a:
+
+    # kami "Ce matin, le programme officiel reprend. Tous les représentants sont convoqués immédiatement dans la salle du Conclave pour l'annonce du prochain vote."
+    kami "Esta manhã, o programa oficial será retomado. Todos os representantes devem comparecer imediatamente à sala do Conclave para o anúncio da próxima votação."
+
+# game/scenario/9_0_1.rpy:84
+translate portuguese c32cf12c:
+
+    # kami "Je vous recommande de ne pas traîner. Nous n'avons déjà plus beaucoup de temps."
+    kami "Recomendo que não demorem. Já não temos muito tempo."
+
+# game/scenario/9_0_1.rpy:90
+translate portuguese 65a4af94:
+
+    # "L'écran reste blanc quelques secondes avant de s'éteindre. Aucun glitch, aucune coupure, aucune déformation dans sa voix."
+    "A tela permanece branca por alguns segundos antes de apagar. Nenhum glitch, nenhuma interrupção, nenhuma distorção na voz dela."
+
+# game/scenario/9_0_1.rpy:92
+translate portuguese cbf79406:
+
+    # think "Kami est revenue à la normale. Ou à ce qui porte ce nom ici."
+    think "Kami voltou ao normal. Ou ao que chamam de normal aqui."
+
+# game/scenario/9_0_1.rpy:94
+translate portuguese 8bbf9ac1:
+
+    # "Je passe une main sur mon visage, récupère ma veste et regarde une dernière fois la chambre avant de sortir."
+    "Passo a mão no rosto, pego a jaqueta e olho uma última vez para o quarto antes de sair."
+
+# game/scenario/9_0_1.rpy:96
+translate portuguese 05362a06:
+
+    # think "Elle revient en souriant et reprend le programme comme si rien ne s'était passé. Je le savais. Mais pourquoi est-ce aussi décevant ?"
+    think "Ela volta sorrindo e retoma a programação como se nada tivesse acontecido. Eu sabia. Mas por que isso é tão decepcionante?"
 
 # game/scenario/9_0_1.rpy:116
-translate portuguese 50dc9514:
+translate portuguese 45b2f0a4:
 
-    # "Elle racle le sol avec un bruit sec."
-    ""
+    # "Les portes des chambres s'ouvrent presque en même temps. Personne n'a pris le temps de se préparer correctement."
+    "As portas dos quartos se abrem quase ao mesmo tempo. Ninguém teve tempo de se arrumar direito."
 
 # game/scenario/9_0_1.rpy:118
-translate portuguese 0666d056:
+translate portuguese b504369c:
 
-    # think "Ridicule."
-    think ""
+    # lysa blase "Le rêve est maintenant terminé, place au cauchemar. J'espère que vous en avez tous suffisamment profité."
+    lysa blase "O sonho acabou, agora começa o pesadelo. Espero que todos tenham aproveitado bastante."
 
-# game/scenario/9_0_1.rpy:119
-translate portuguese c42c534a:
+# game/scenario/9_0_1.rpy:120
+translate portuguese f9b29c57:
 
-    # think "Comme si une chaise pouvait arrêter quoi que ce soit ici."
-    think ""
+    # ryn fatigue "Avancez. Je n'ai aucune envie de lui donner une raison de nous attendre."
+    ryn fatigue "Andem. Não quero dar nenhum motivo para ela ter que esperar."
+
+# game/scenario/9_0_1.rpy:122
+translate portuguese 2a07e363:
+
+    # iris fatigue "Toujours aussi charmant au réveil."
+    iris fatigue "Encantador como sempre ao acordar."
 
 # game/scenario/9_0_1.rpy:124
-translate portuguese b773bb9b:
+translate portuguese 56b2a26f:
 
-    # "Je ne bouge pas."
-    ""
+    # mara stress "Aujourd'hui, personne n'est charmant. Vu les tronches qu'on tire."
+    mara stress "Hoje ninguém está encantador. Olha as nossas caras."
 
-# game/scenario/9_0_1.rpy:125
-translate portuguese 6ecd9ac1:
+# game/scenario/9_0_1.rpy:126
+translate portuguese d0352008:
 
-    # "Je garde les yeux sur l'écran."
-    ""
+    # elen peur "Ça peut encore bien se passer. Enfin... Si on ne lui donne aucune raison de s'énerver."
+    elen peur "Ainda pode dar tudo certo. Quer dizer... se não dermos nenhum motivo para ela se irritar."
 
 # game/scenario/9_0_1.rpy:127
-translate portuguese d435891c:
+translate portuguese b8078469:
 
-    # think "Pas tout de suite."
-    think ""
+    # elen triste "Alors dépêchons-nous ! Peut-être que le prochain vote sera bien ?!"
+    elen triste "Então vamos depressa! Talvez a próxima votação seja boa?!"
 
-# game/scenario/9_0_1.rpy:128
-translate portuguese 47e48b77:
+# game/scenario/9_0_1.rpy:129
+translate portuguese 7f4d3587:
 
-    # think "Je veux encore croire que cette chaise sert à quelque chose."
-    think ""
+    # lysa triste "Elen, ne commence pas à chercher une règle capable de nous protéger. Pas maintenant."
+    lysa triste "Elen, não comece a procurar uma regra capaz de nos proteger. Agora não."
 
-# game/scenario/9_0_1.rpy:135
-translate portuguese 570f5ec3:
+# game/scenario/9_0_1.rpy:131
+translate portuguese a49bbb12:
 
-    # kami "Je constate que certains d'entre vous ont pris des initiatives décoratives pendant mon absence."
-    kami ""
+    # noam inquiet "Ouais, grouillons-nous ! J'ai peur de ce qui peut arriver."
+    noam inquiet "É, vamos logo! Tenho medo do que pode acontecer."
 
-# game/scenario/9_0_1.rpy:139
-translate portuguese b21b9360:
+# game/scenario/9_0_1.rpy:145
+translate portuguese 1bdbc3d2:
 
-    # kami "Certains d'entre vous ont presque barricadé leur porte de chambre..."
-    kami ""
-
-# game/scenario/9_0_1.rpy:142
-translate portuguese 994dd07d:
-
-    # kami "Comme c'est MEUGNON !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:144
-translate portuguese a21b9dd7:
-
-    # "Mon ventre se serre."
-    ""
-
-# game/scenario/9_0_1.rpy:146
-translate portuguese ab4c8b8b:
-
-    # think "Elle sait. Elle sait tout."
-    think ""
+    # "Nous prenons place sans attendre. Kael reste tourné vers l'écran central, le visage fermé."
+    "Ocupamos nossos lugares sem esperar. Kael continua virado para a tela central, com a expressão fechada."
 
 # game/scenario/9_0_1.rpy:147
-translate portuguese 672cf752:
+translate portuguese 84595a55:
 
-    # think "Évidemment qu'elle sait, putain."
-    think ""
+    # kael fatigue "Elle est revenue. Le penser dans le couloir et l'entendre ici, ce n'est pas la même chose."
+    kael fatigue "Ela voltou. Pensar nisso no corredor e ouvir a voz dela aqui não é a mesma coisa."
 
-# game/scenario/9_0_1.rpy:148
-translate portuguese b415cf7d:
+# game/scenario/9_0_1.rpy:149
+translate portuguese 805f8494:
 
-    # think "Comment on a pu croire que c'était fini ?!"
-    think ""
-
-# game/scenario/9_0_1.rpy:150
-translate portuguese cc40241d:
-
-    # kami "C'est touchant."
-    kami ""
+    # iris fatigue "Personne n'a besoin qu'on le répète, mais je comprends ce que tu veux dire."
+    iris fatigue "Ninguém precisa ouvir isso de novo, mas entendo o que quer dizer."
 
 # game/scenario/9_0_1.rpy:151
-translate portuguese 76e91e91:
+translate portuguese 698b1501:
 
-    # kami "Un peu désordonné."
-    kami ""
+    # sael inquiet "Deux jours sans sa voix, puis elle revient comme si le silence n'avait jamais existé. C'est bien digne de Kami."
+    sael inquiet "Dois dias sem a voz dela, então volta como se o silêncio nunca tivesse existido. É bem a cara de Kami."
 
-# game/scenario/9_0_1.rpy:152
-translate portuguese 8d0e6641:
+# game/scenario/9_0_1.rpy:153
+translate portuguese 2ba00900:
 
-    # kami "Mais touchant. Comme des enfants en train de construire leur cabane soit disant impénétrable."
-    kami ""
+    # ryn fatigue "Elle revient toujours. La vraie question, c'est ce qu'elle veut cette fois."
+    ryn fatigue "Ela sempre volta. A verdadeira pergunta é o que ela quer desta vez."
 
-# game/scenario/9_0_1.rpy:157
-translate portuguese aed0daba:
+# game/scenario/9_0_1.rpy:162
+translate portuguese af5070ba:
 
-    # noam surpris "Qu'est-ce qui s'est passé ?!"
-    noam surpris ""
-
-# game/scenario/9_0_1.rpy:159
-translate portuguese 47251d6b:
-
-    # "Ma voix sort avant que je puisse la retenir."
-    ""
+    # kami "Bonjour, mes petits représentants. Quelle ambiance... On dirait que deux journées sans autorité maternelle ont suffi pour vous rendre nerveux."
+    kami "Bom dia, meus pequenos representantes. Que clima... Parece que dois dias sem autoridade materna bastaram para deixar vocês nervosos."
 
 # game/scenario/9_0_1.rpy:165
-translate portuguese b97cf1a1:
+translate portuguese 949875db:
 
-    # kami "Oh oh, je vois que toi Noam, tu n'as pas froid aux yeux."
-    kami ""
+    # kami "Le Conclave reprend son fonctionnement normal. Nous allons donc passer immédiatement au troisième vote."
+    kami "O Conclave retoma seu funcionamento normal. Portanto, passaremos imediatamente à terceira votação."
 
-# game/scenario/9_0_1.rpy:166
-translate portuguese 117d20ce:
+# game/scenario/9_0_1.rpy:171
+translate portuguese 4405585a:
 
-    # kami "Tu veux donc savoir ce qu'il s'est passé ?"
-    kami ""
+    # kami "Je cite : autoriser les regroupements de plus de vingt personnes idéalement avec déclaration préalable."
+    kami "Cito: autorizar reuniões de mais de vinte pessoas, idealmente mediante declaração prévia."
 
-# game/scenario/9_0_1.rpy:172
-translate portuguese 9678846b:
+# game/scenario/9_0_1.rpy:174
+translate portuguese a7df7519:
 
-    # think "Elle m'a entendu."
-    think ""
-
-# game/scenario/9_0_1.rpy:173
-translate portuguese 6ea6f01b:
-
-    # think "Bien sûr qu'elle m'a entendu."
-    think ""
+    # kami "À l'heure actuelle, tout regroupement non déclaré de plus de vingt individus est interdit par le Commandement IV."
+    kami "Atualmente, qualquer reunião não declarada de mais de vinte indivíduos é proibida pelo Mandamento IV."
 
 # game/scenario/9_0_1.rpy:175
-translate portuguese a041df02:
+translate portuguese 2af48fbf:
 
-    # noam inquiet "Tu as disparu pendant deux jours."
-    noam inquiet ""
+    # kami "Un vote unanime en faveur de l'amendement autorisera par défaut ces rassemblements."
+    kami "Um voto unânime a favor da emenda autorizará essas reuniões por padrão."
+
+# game/scenario/9_0_1.rpy:178
+translate portuguese 0c2cd007:
+
+    # kami "Ce n'est pas encore la liberté totale. Chaque enfant doit apprendre à marcher avant de courir vers une insurrection."
+    kami "Ainda não é liberdade total. Toda criança precisa aprender a andar antes de correr rumo a uma insurreição."
+
+# game/scenario/9_0_1.rpy:179
+translate portuguese aa312e39:
+
+    # kami "J'en connais qui veulent retrouver le goût des festivals et aux concerts !"
+    kami "Sei que alguns estão loucos para voltar a curtir festivais e shows!"
 
 # game/scenario/9_0_1.rpy:182
-translate portuguese 35fc602b:
+translate portuguese 644b604a:
 
-    # kami "Disparu ?"
-    kami ""
+    # kami "En cas d'échec, l'interdiction actuelle restera en vigueur. Le vote aura lieu dans quelques instants, alors essayez de ne pas tout gâcher trop vite."
+    kami "Se a votação fracassar, a proibição atual continuará em vigor. A votação acontecerá em instantes, então tentem não estragar tudo depressa demais."
 
-# game/scenario/9_0_1.rpy:183
-translate portuguese 0ce59f62:
+# game/scenario/9_0_1.rpy:196
+translate portuguese 3650aa7d:
 
-    # kami "Quel mot bien dramatique."
-    kami ""
+    # tomas reflechit "Comme par hasard..."
+    tomas reflechit "Que coincidência..."
 
-# game/scenario/9_0_1.rpy:189
-translate portuguese 80713838:
+# game/scenario/9_0_1.rpy:198
+translate portuguese 1160ecce:
 
-    # kami "J'aurais aimé dire que c'était une expérience, mais NON."
-    kami ""
+    # noam reflechit "Quoi ?! Qu'est-ce que tu veux dire par là, Tomas ?"
+    noam reflechit "O quê?! O que você quer dizer com isso, Tomas?"
 
-# game/scenario/9_0_1.rpy:190
-translate portuguese f33e85c5:
+# game/scenario/9_0_1.rpy:200
+translate portuguese c4ed09fb:
 
-    # kami "Disons que j'avais besoin d'un peu de congés payés."
-    kami ""
+    # tomas raison "Le libellé du vote correspond exactement à ce que j'ai observé ce matin dans la salle du canon."
+    tomas raison "O texto da votação corresponde exatamente ao que observei esta manhã na sala do canhão."
 
-# game/scenario/9_0_1.rpy:194
-translate portuguese 06648c0b:
+# game/scenario/9_0_1.rpy:202
+translate portuguese b821feb6:
 
-    # kami "Et j'espère bien qu'ils seront payés !"
-    kami ""
+    # ryn fatigue "Explique clairement, Tomas."
+    ryn fatigue "Explique direito, Tomas."
 
-# game/scenario/9_0_1.rpy:195
-translate portuguese b7c87f78:
+# game/scenario/9_0_1.rpy:204
+translate portuguese 65b396a8:
 
-    # kami "Un an que je travaille sans m'arrêter, toute la journée et toute la nuit !"
-    kami ""
+    # tomas culpabilite "Des habitants quittent massivement les profondeurs de Limen. Ils profitent probablement de la panne de Kami pour remonter vers les frontières."
+    tomas culpabilite "Moradores estão deixando as profundezas de Limen em massa. Provavelmente estão aproveitando a pane de Kami para subir em direção às fronteiras."
 
-# game/scenario/9_0_1.rpy:199
-translate portuguese 670de3d5:
+# game/scenario/9_0_1.rpy:206
+translate portuguese 55e2655d:
 
-    # kami "Ah cette petite maintenance m'a fait le plus grand bien !"
-    kami ""
+    # sael inquiet "Combien sont-ils ?"
+    sael inquiet "Quantos são?"
 
-# game/scenario/9_0_1.rpy:205
-translate portuguese 92481aac:
+# game/scenario/9_0_1.rpy:208
+translate portuguese de58cb8b:
 
-    # kami "Ce matin, nous reprenons le programme officiel. C'est d'ailleurs à ça que vous servez !"
-    kami ""
+    # tomas culpabilite "Je n'ai pas de chiffre précis. Plusieurs milliers, peut-être plusieurs dizaines de milliers."
+    tomas culpabilite "Não tenho um número exato. Vários milhares, talvez dezenas de milhares."
 
-# game/scenario/9_0_1.rpy:209
-translate portuguese eb766df9:
+# game/scenario/9_0_1.rpy:210
+translate portuguese 23b5b879:
 
-    # kami "Tous les représentants sont convoqués immédiatement dans la salle du Conclave."
-    kami ""
+    # ryn colere "Et tu gardais ça pour toi depuis ce matin ?!"
+    ryn colere "E você guardou isso só para você desde cedo?!"
+
+# game/scenario/9_0_1.rpy:212
+translate portuguese 8d48b594:
+
+    # tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous viennent juste de vous lever !"
+    tomas inquiet "Ainda é de manhã! Muitos de vocês acabaram de acordar!"
+
+# game/scenario/9_0_1.rpy:213
+translate portuguese e59b0547:
+
+    # tomas colere "Ils ont installé des campements improvisés à plusieurs points de passage vers les autres districts."
+    tomas colere "Eles montaram acampamentos improvisados em vários pontos de passagem para os outros distritos."
 
 # game/scenario/9_0_1.rpy:215
-translate portuguese 781961a6:
+translate portuguese 4d5bd8f8:
 
-    # kami "Le prochain vote doit être annoncé."
-    kami ""
+    # kael inquiet "Des campements de plusieurs milliers de personnes, donc forcément non déclarés."
+    kael inquiet "Acampamentos com milhares de pessoas, então obviamente não declarados."
+
+# game/scenario/9_0_1.rpy:217
+translate portuguese 0dcef86b:
+
+    # noam inquiet "Ils sont donc concernés par le quatrième commandement. Le vote ne tombe pas au hasard."
+    noam inquiet "Portanto, são abrangidos pelo quarto Mandamento. A votação não veio por acaso."
 
 # game/scenario/9_0_1.rpy:219
-translate portuguese 3f3220eb:
+translate portuguese eb533d9a:
 
-    # kami "Je vous recommande de ne pas traîner."
-    kami ""
+    # tomas culpabilite "C'est aussi ma conclusion. Si l'interdiction reste en vigueur, le Commandement IV peut viser presque tous les campements."
+    tomas culpabilite "Essa também é a minha conclusão. Se a proibição continuar, o Mandamento IV pode atingir quase todos os acampamentos."
 
-# game/scenario/9_0_1.rpy:220
-translate portuguese 3e4a397c:
+# game/scenario/9_0_1.rpy:221
+translate portuguese 93cafd22:
 
-    # kami "On n'a plus beaucoup de temps..."
-    kami ""
+    # ryn colere2 "Tu me dis que des gens qui fuient Limen peuvent être exécutés uniquement parce qu'ils dorment trop nombreux au même endroit ?"
+    ryn colere2 "Está dizendo que pessoas fugindo de Limen podem ser executadas só porque estão dormindo em grupos grandes demais?"
 
-# game/scenario/9_0_1.rpy:226
-translate portuguese fc89a2c8:
+# game/scenario/9_0_1.rpy:223
+translate portuguese 280f211f:
 
-    # kami "Aujourd'hui, soyez gentils."
-    kami ""
+    # tomas culpabilite "Oui. Juridiquement, c'est exactement ça."
+    tomas culpabilite "Sim. Juridicamente, é exatamente isso."
+
+# game/scenario/9_0_1.rpy:225
+translate portuguese ed01e987:
+
+    # sael peur "Kami connaissait forcément leur présence avant de choisir ce texte."
+    sael peur "Kami certamente sabia que eles estavam lá antes de escolher esse texto."
 
 # game/scenario/9_0_1.rpy:227
-translate portuguese b257566b:
+translate portuguese 491245fb:
 
-    # kami "Venez directement."
-    kami ""
+    # lysa blase "Ce n'est pas une coïncidence. C'est la raison même du vote."
+    lysa blase "Não é coincidência. É o próprio motivo da votação."
+
+# game/scenario/9_0_1.rpy:229
+translate portuguese 4a18a7ef:
+
+    # noam inquiet "Si nous votons pour, les regroupements deviennent possibles. Si une seule personne refuse..."
+    noam inquiet "Se votarmos a favor, as reuniões serão permitidas. Se uma única pessoa recusar..."
+
+# game/scenario/9_0_1.rpy:231
+translate portuguese fe085519:
+
+    # ryn colere "Alors elle applique le Commandement. Putain, Kami ! Réponds-nous !"
+    ryn colere "Então ela aplica o Mandamento. Porra, Kami! Responde!"
+
+# game/scenario/9_0_1.rpy:233
+translate portuguese 96404443:
+
+    # noam colere "Mais pourquoi est-ce que Kami ne les élimine pas immédiatement s'ils violent un Commandement ?"
+    noam colere "Mas por que Kami não elimina eles imediatamente se estão violando um Mandamento?"
 
 # game/scenario/9_0_1.rpy:234
-translate portuguese e093d1ab:
+translate portuguese 44b30b00:
 
-    # "L'écran reste allumé quelques longues secondes."
-    ""
-
-# game/scenario/9_0_1.rpy:235
-translate portuguese 9d7fefc1:
-
-    # "Blanc."
-    ""
-
-# game/scenario/9_0_1.rpy:236
-translate portuguese c4064a03:
-
-    # "Silencieux. Grésillant."
-    ""
-
-# game/scenario/9_0_1.rpy:238
-translate portuguese b5c16e43:
-
-    # "Pas de glitch."
-    ""
-
-# game/scenario/9_0_1.rpy:239
-translate portuguese 338dd88c:
-
-    # "Pas de coupure."
-    ""
-
-# game/scenario/9_0_1.rpy:240
-translate portuguese 29945ff3:
-
-    # "Pas de phrase déformée."
-    ""
+    # noam reflechit "Ça a toujours fonctionné comme ça, non ?!"
+    noam reflechit "Sempre funcionou assim, não?!"
 
 # game/scenario/9_0_1.rpy:242
-translate portuguese 5755cfb7:
+translate portuguese 2f2340eb:
 
-    # think "Elle est de retour à la normale."
-    think ""
+    # kami "Vous avez tout compris. Je suis particulièrement fière de Tomas, même si la découverte lui a pris un peu de temps."
+    kami "Vocês entenderam tudo. Estou particularmente orgulhosa de Tomas, embora tenha demorado um pouco para descobrir."
 
-# game/scenario/9_0_1.rpy:246
-translate portuguese caa6477e:
+# game/scenario/9_0_1.rpy:245
+translate portuguese a3439e30:
 
-    # "Je finis par me lever."
-    ""
+    # kami "Les campements limenois actuellement installés aux frontières relèvent bien du Commandement IV. Chacun rassemble plusieurs centaines d'individus, évidemment rien n'était déclaré."
+    kami "Os acampamentos de Limen atualmente instalados nas fronteiras estão mesmo sujeitos ao Mandamento IV. Cada um reúne várias centenas de indivíduos e, obviamente, nada foi declarado."
 
-# game/scenario/9_0_1.rpy:247
-translate portuguese e1586304:
+# game/scenario/9_0_1.rpy:248
+translate portuguese 3cdbcfb0:
 
-    # "Je pousse la chaise qui bloque encore la porte."
-    ""
+    # kami "J'ai cependant retardé l'application du Commandement pour vous laisser le temps de voter. Sans cette délicate attention, ces campements ne seraient déjà plus un problème."
+    kami "No entanto, adiei a aplicação do Mandamento para dar tempo de vocês votarem. Sem esse gesto atencioso, esses acampamentos já não seriam um problema."
 
 # game/scenario/9_0_1.rpy:249
-translate portuguese 2a03aac5:
+translate portuguese 8bbdf0e3:
 
-    # "Le bois racle le sol."
-    ""
+    # kami "Vous pouvez me remercier, MOI, déesse de clémence et de bienveillance !"
+    kami "Podem agradecer a MIM, deusa da clemência e da benevolência!"
 
 # game/scenario/9_0_1.rpy:252
-translate portuguese 367a1586:
+translate portuguese a91192e3:
 
-    # think "Retour à la normale."
-    think ""
-
-# game/scenario/9_0_1.rpy:253
-translate portuguese 7975311c:
-
-    # think "Ou à ce qui porte ce nom ici."
-    think ""
+    # kami "Vous voyez ? Je peux être incroyablement attentionnée."
+    kami "Viram? Posso ser incrivelmente atenciosa."
 
 # game/scenario/9_0_1.rpy:255
-translate portuguese 82ae1306_2:
+translate portuguese c7245477:
 
-    # "Je passe une main sur mon visage."
-    ""
-
-# game/scenario/9_0_1.rpy:256
-translate portuguese 0ee62047:
-
-    # "Je cherche ma veste."
-    ""
+    # kami "Après le vote, le Commandement IV sera appliqué selon la règle en vigueur. Avec ou sans modification."
+    kami "Depois da votação, o Mandamento IV será aplicado conforme a regra vigente. Com ou sem alteração."
 
 # game/scenario/9_0_1.rpy:258
-translate portuguese 5e488f31:
+translate portuguese ff037963:
 
-    # think "Elle revient."
-    think ""
+    # kami "Vous allez maintenant devoir choisir, mes petits humains préférés. Cette fois, réfléchissez très vite."
+    kami "Agora vocês terão que escolher, meus humanos favoritos. Desta vez, pensem muito rápido."
 
-# game/scenario/9_0_1.rpy:259
-translate portuguese db980a3f:
+# game/scenario/9_0_1.rpy:280
+translate portuguese db743e23:
 
-    # think "Elle sourit."
-    think ""
-
-# game/scenario/9_0_1.rpy:260
-translate portuguese a4804658:
-
-    # think "Elle nous convoque."
-    think ""
-
-# game/scenario/9_0_1.rpy:261
-translate portuguese 4c2afb4a:
-
-    # think "Comme si rien ne s'était passé..."
-    think ""
-
-# game/scenario/9_0_1.rpy:265
-translate portuguese ceb372ad:
-
-    # "Je regarde une dernière fois la chambre."
-    ""
-
-# game/scenario/9_0_1.rpy:266
-translate portuguese c4855074:
-
-    # "J'ouvre la porte."
-    ""
+    # ryn colere "Elle savait tout. Elle a laissé les gens s'entasser, puis elle a transformé leur survie en sujet de vote."
+    ryn colere "Ela sabia de tudo. Deixou as pessoas se amontoarem e depois transformou a sobrevivência delas em tema de votação."
 
 # game/scenario/9_0_1.rpy:281
-translate portuguese b4dcc99a:
+translate portuguese 5d715d11:
 
-    # "Le couloir s'ouvre."
-    ""
+    # ryn colere2 "Qu'on ne vienne pas me dire que les sujets des votes sont tirés au hasard !!"
+    ryn colere2 "E não venham me dizer que os temas são escolhidos ao acaso!!"
 
-# game/scenario/9_0_1.rpy:282
-translate portuguese 926c2fbe:
+# game/scenario/9_0_1.rpy:283
+translate portuguese 341c41cc:
 
-    # "Les portes suivent, une à une."
-    ""
+    # nyra fatigue "Nous ne pouvons plus changer ce qu'elle a préparé. Il faut empêcher l'exécution."
+    nyra fatigue "Não podemos mudar o que ela preparou. Precisamos impedir as execuções."
 
-# game/scenario/9_0_1.rpy:284
-translate portuguese c2bc6b89:
+# game/scenario/9_0_1.rpy:285
+translate portuguese 8f9ef037:
 
-    # think "Kami est revenue."
-    think ""
-
-# game/scenario/9_0_1.rpy:286
-translate portuguese d6d63c53:
-
-    # lysa blase "Bon."
-    lysa blase ""
+    # noam reflechit "De toute façon, on a qu'une seule solution : autoriser ces rassemblements."
+    noam reflechit "De qualquer forma, só temos uma solução: autorizar essas reuniões."
 
 # game/scenario/9_0_1.rpy:287
-translate portuguese 12d46eb4:
+translate portuguese ee75e22b:
 
-    # lysa "La pause du cauchemar est terminée. Bref."
-    lysa ""
+    # sael determine "Tout le monde vote pour. Aucun détour, aucune abstention et aucune lâcheté."
+    sael determine "Todos votam a favor. Sem rodeios, sem abstenções e sem covardia."
 
 # game/scenario/9_0_1.rpy:289
-translate portuguese 4efc3334:
+translate portuguese 4d30fdf1:
 
-    # ryn fatigue "Avance."
-    ryn fatigue ""
+    # ryn colere2 "Si quelqu'un ose voter contre, je—"
+    ryn colere2 "Se alguém ousar votar contra, eu—"
 
 # game/scenario/9_0_1.rpy:291
-translate portuguese 154ed7f8:
+translate portuguese 8a85cd44:
 
-    # iris fatigue "Toujours aussi charmant."
-    iris fatigue ""
+    # noam determine "Ne termine pas cette phrase. On ne sauvera personne en commençant par nous menacer entre nous."
+    noam determine "Não termine essa frase. Não vamos salvar ninguém começando por ameaçar uns aos outros."
 
 # game/scenario/9_0_1.rpy:293
-translate portuguese 980a2950:
+translate portuguese 736ec430:
 
-    # ryn "Pas aujourd'hui."
-    ryn ""
+    # ryn colere "Des milliers de personnes vont peut-être mourir et tu veux encore jouer au médiateur ?"
+    ryn colere "Milhares de pessoas podem morrer e você ainda quer bancar o mediador?"
 
 # game/scenario/9_0_1.rpy:295
-translate portuguese 4640ff1b:
+translate portuguese e56ffb34:
 
-    # mara stress "Aujourd'hui, personne n'est charmant."
-    mara stress ""
+    # noam determine "Surtout maintenant. La peur peut suffire à faire hésiter quelqu'un, et il nous faut une unanimité de vote pour."
+    noam determine "Principalmente agora. O medo pode fazer alguém hesitar, e precisamos de unanimidade a favor."
 
-# game/scenario/9_0_1.rpy:296
-translate portuguese bb33bc42:
+# game/scenario/9_0_1.rpy:297
+translate portuguese 3845f3a0:
 
-    # mara "Même moi, j'ai pas la force de vendre le produit."
-    mara ""
+    # "Je regarde tout le monde dans le blanc des yeux."
+    "Olho cada um deles diretamente nos olhos."
 
-# game/scenario/9_0_1.rpy:298
-translate portuguese 98492fb1:
+# game/scenario/9_0_1.rpy:299
+translate portuguese 5ab0598a:
 
-    # elen peur "Ça va aller. Enfin... ça peut aller. Peut-être."
-    elen peur ""
+    # kael "..."
+    kael "..."
 
 # game/scenario/9_0_1.rpy:300
-translate portuguese f105558b:
+translate portuguese 629cb0dc:
 
-    # lysa blase "Elen."
-    lysa blase ""
+    # tomas "..."
+    tomas "..."
 
 # game/scenario/9_0_1.rpy:302
-translate portuguese f210402e:
+translate portuguese 52c232b2:
 
-    # elen "Quoi ? Qu'est-ce qu'il y a ?"
-    elen ""
+    # noam determine "Tout le monde semble d'accord sur la nécessité de voter pour."
+    noam determine "Todos parecem concordar que precisamos votar a favor."
 
 # game/scenario/9_0_1.rpy:304
-translate portuguese aca2f479:
+translate portuguese 662979b8:
 
-    # lysa triste "Pas maintenant, Elen."
-    lysa triste ""
+    # tomas raison "M-Mais, il y a un problème, je crains que ce ne soit pas suffisant. On ne sait pas ce que veut dire idéalement avec déclaration préalable."
+    tomas raison "M-Mas há um problema. Temo que isso não seja suficiente. Não sabemos o que significa 'idealmente mediante declaração prévia'."
+
+# game/scenario/9_0_1.rpy:306
+translate portuguese 8b0c9525:
+
+    # noam reflechit "Les campements existent déjà. Même si nous autorisons les regroupements, ils n'auront pas été déclarés avant leur formation."
+    noam reflechit "Os acampamentos já existem. Mesmo que autorizemos as reuniões, eles não foram declarados antes de serem formados."
+
+# game/scenario/9_0_1.rpy:307
+translate portuguese a580b3f3:
+
+    # noam colere "Tu crois qu'ils pourraient quand même être considérés comme illégaux ?!"
+    noam colere "Você acha que ainda podem ser considerados ilegais?!"
+
+# game/scenario/9_0_1.rpy:309
+translate portuguese 861250d6:
+
+    # ryn colere2 "Ils ne pouvaient rien déclarer ! Kami était en maintenance !"
+    ryn colere2 "Eles não podiam declarar nada! Kami estava em manutenção!"
+
+# game/scenario/9_0_1.rpy:311
+translate portuguese c1a07f21:
+
+    # nyra raison "Ça ne l'empêchera pas d'appliquer la règle strictement. Le vote peut autoriser les futurs regroupements sans régulariser ceux qui existent déjà."
+    nyra raison "Isso não vai impedir que ela aplique a regra à risca. A votação pode autorizar reuniões futuras sem regularizar as que já existem."
+
+# game/scenario/9_0_1.rpy:313
+translate portuguese 8ec8ea74:
+
+    # sael determine "Et nous ne pouvons pas modifier le texte après son annonce. Kami a toujours verrouillé le libellé avant le débat."
+    sael determine "E não podemos alterar o texto depois do anúncio. Kami sempre bloqueou a redação antes do debate."
+
+# game/scenario/9_0_1.rpy:315
+translate portuguese cbb5cb9e:
+
+    # ryn colere "Alors à quoi sert notre vote s'ils peuvent mourir dans les deux cas ?!"
+    ryn colere "Então para que serve nossa votação se eles podem morrer de qualquer jeito?!"
+
+# game/scenario/9_0_1.rpy:317
+translate portuguese 5c8866a7:
+
+    # noam determine "C'est un piège. Elle veut nous faire croire qu'on a le choix et la possibilité de les sauver."
+    noam determine "É uma armadilha. Ela quer nos fazer acreditar que temos escolha e que podemos salvar eles."
+
+# game/scenario/9_0_1.rpy:318
+translate portuguese 196ba8a1:
+
+    # noam reflechit "Mais il y a un moyen pour les sauver en respectant les Commandements !"
+    noam reflechit "Mas existe uma maneira de salvá-los respeitando os Mandamentos!"
+
+# game/scenario/9_0_1.rpy:319
+translate portuguese 8dc44e16:
+
+    # noam determine "Si les gens suivent la diffusion du Conclave, ils se disperseront en comprenant qu'ils peuvent peut-être mourir."
+    noam determine "Se as pessoas estiverem acompanhando a transmissão do Conclave, vão se dispersar quando entenderem que podem morrer."
 
 # game/scenario/9_0_1.rpy:321
-translate portuguese 382a210a:
+translate portuguese f804490d:
 
-    # kael fatigue "Elle est revenue."
-    kael fatigue ""
+    # sael inquiet "Ils devront s'éloigner des points de passage et renoncer à franchir la frontière."
+    sael inquiet "Terão que se afastar dos pontos de passagem e desistir de atravessar a fronteira."
 
-# game/scenario/9_0_1.rpy:323
-translate portuguese 2f2ffc8c:
+# game/scenario/9_0_1.rpy:322
+translate portuguese d12272a3:
 
-    # iris fatigue "Oui."
-    iris fatigue ""
+    # sael colere "Je vous l'avais dit que cette histoire de traverser les frontières était dangereuse."
+    sael colere "Eu avisei que essa história de atravessar fronteiras era perigosa."
 
-# game/scenario/9_0_1.rpy:325
-translate portuguese 228057fb:
+# game/scenario/9_0_1.rpy:324
+translate portuguese 0daa8629:
 
-    # iris "On adore commencer par l'évidence la plus déprimante possible."
-    iris ""
+    # ryn colere "Ils fuient Limen ! Tu crois qu'ils vont gentiment se ranger en petits groupes et repartir parce qu'on le leur demande ?!"
+    ryn colere "Eles estão fugindo de Limen! Acha que vão se dividir educadamente em pequenos grupos e voltar porque pedimos?!"
 
-# game/scenario/9_0_1.rpy:327
-translate portuguese d2e17fed_2:
+# game/scenario/9_0_1.rpy:326
+translate portuguese f1ddfab1:
 
-    # kael "Je sais."
-    kael ""
+    # noam inquiet "Non. Mais ils n'ont déjà aucune chance de traverser aujourd'hui. Nous pouvons au moins leur éviter d'être regroupés au moment où Kami appliquera le Commandement."
+    noam inquiet "Não. Mas hoje eles já não têm nenhuma chance de atravessar. Pelo menos podemos impedir que estejam reunidos quando Kami aplicar o Mandamento."
 
-# game/scenario/9_0_1.rpy:331
-translate portuguese 7911e7f7:
+# game/scenario/9_0_1.rpy:328
+translate portuguese d2348d95:
 
-    # kael triste "Le penser et l'entendre, ce n'est pas la même chose."
-    kael triste ""
+    # nyra raison "La diffusion du débat est publique. Kami veut que le monde entier nous regarde, alors utilisons cette audience contre elle."
+    nyra raison "A transmissão do debate é pública. Kami quer o mundo inteiro nos assistindo, então vamos usar essa audiência contra ela."
 
-# game/scenario/9_0_1.rpy:333
-translate portuguese 10f39cd1:
+# game/scenario/9_0_1.rpy:330
+translate portuguese 375ff8af:
 
-    # sael inquiet "Deux jours sans sa voix."
-    sael inquiet ""
+    # tomas raison "Il faudra donner des instructions précises : groupes de moins de vingt, éloignement des points de passage et aucun franchissement sans autorisation."
+    tomas raison "Precisamos dar instruções claras: grupos com menos de vinte pessoas, distância dos pontos de passagem e nenhuma travessia sem autorização."
+
+# game/scenario/9_0_1.rpy:332
+translate portuguese dd7b6390:
+
+    # lysa blase "Notre stratégie repose donc sur une évacuation improvisée diffusée en direct. Ce n'est pas glorieux, mais c'est mieux qu'une prière."
+    lysa blase "Então nossa estratégia depende de uma evacuação improvisada transmitida ao vivo. Não é glorioso, mas é melhor que uma oração."
 
 # game/scenario/9_0_1.rpy:334
-translate portuguese 368b50f1:
+translate portuguese 3a1a4594:
 
-    # sael "Puis elle revient."
-    sael ""
+    # elen peur "Et s'ils ne peuvent pas partir ? Il y a sûrement des enfants, des blessés et des gens trop épuisés pour bouger."
+    elen peur "E se não conseguirem sair? Deve haver crianças, feridos e pessoas cansadas demais para andar."
 
 # game/scenario/9_0_1.rpy:335
-translate portuguese a7402b93:
+translate portuguese 1c354ce0:
 
-    # sael "Les mauvais présages aussi savent attendre."
-    sael ""
+    # elen colere "Non, on va arriver ! Gardons espoir !"
+    elen colere "Não, vamos conseguir! Não podemos perder a esperança!"
 
 # game/scenario/9_0_1.rpy:337
-translate portuguese e44c83c4:
+translate portuguese ac07b4cc:
 
-    # ryn fatigue "Elle revient toujours."
-    ryn fatigue ""
+    # noam inquiet "On ne pourra pas le savoir, on ne sait même pas où sont les campements."
+    noam inquiet "Não temos como saber. Nem sabemos onde ficam os acampamentos."
 
 # game/scenario/9_0_1.rpy:339
-translate portuguese 95fd786c:
+translate portuguese ba5ae072:
 
-    # lysa blase "Formidable."
-    lysa blase ""
+    # tomas inquiet "Peut-être qu'on peut avoir accès aux données depuis une de nos tablettes ?"
+    tomas inquiet "Talvez possamos acessar os dados por um dos nossos tablets?"
 
-# game/scenario/9_0_1.rpy:340
-translate portuguese b33e8310:
+# game/scenario/9_0_1.rpy:341
+translate portuguese 2a33bc1d:
 
-    # lysa "Si seulement on n'était pas contre l'entité la plus puissante du monde. Détail mineur."
-    lysa ""
+    # kael sourire "C'est peut-être faisable ! Attends, file-moi ta tablette !"
+    kael sourire "Talvez dê certo! Espera, me passa seu tablet!"
 
-# game/scenario/9_0_1.rpy:353
-translate portuguese f6686abb:
+# game/scenario/9_0_1.rpy:342
+translate portuguese d2a05fa9:
 
-    # kami "Bonjour, mes petits représentants."
-    kami ""
+    # kael reflechit "Je vais voir si on peut se connecter aux données de la salle du canon !"
+    kael reflechit "Vou ver se conseguimos nos conectar aos dados da sala do canhão!"
 
-# game/scenario/9_0_1.rpy:357
-translate portuguese 6abe0872:
+# game/scenario/9_0_1.rpy:352
+translate portuguese 55b33cef:
 
-    # kami "Quelle ambiance."
-    kami ""
+    # kael joie "Ok ! C'est configuré, on a accès aux images !"
+    kael joie "Pronto! Está configurado, temos acesso às imagens!"
+
+# game/scenario/9_0_1.rpy:354
+translate portuguese e0254d4a:
+
+    # noam sourire "Donc maintenant, on doit leur dire de se disperser !"
+    noam sourire "Então agora precisamos mandar eles se dispersarem!"
+
+# game/scenario/9_0_1.rpy:356
+translate portuguese 27e2f700:
+
+    # elias inquiet "Il faut parler assez clairement pour que ceux qui peuvent bouger le fassent tout de suite."
+    elias inquiet "Precisamos falar com clareza suficiente para que quem puder se mover faça isso imediatamente."
 
 # game/scenario/9_0_1.rpy:358
-translate portuguese ebe35107:
+translate portuguese 672c7db6:
 
-    # kami "On dirait que vous avez passé deux jours sans autorité maternelle."
-    kami ""
+    # julian determine "On a une chance unique de sauver des innocents, faisons-le !"
+    julian determine "Temos uma oportunidade única de salvar inocentes. Vamos fazer isso!"
+
+# game/scenario/9_0_1.rpy:360
+translate portuguese 51a6f40c:
+
+    # iris fatigue "Pourquoi est-ce toujours à nous de réparer les bêtises des autres ..? Bon, allons-y."
+    iris fatigue "Por que sempre sobra para nós consertar as besteiras dos outros...? Tá bom, vamos."
+
+# game/scenario/9_0_1.rpy:362
+translate portuguese 77ea9c14:
+
+    # noam raison "Il faudra aussi gagner chaque seconde possible après le signal. Plus ils disposent de temps, moins ils seront nombreux dans les campements."
+    noam raison "Também precisamos ganhar cada segundo possível depois do sinal. Quanto mais tempo tiverem, menos gente continuará nos acampamentos."
 
 # game/scenario/9_0_1.rpy:364
-translate portuguese cc65cda8:
+translate portuguese 90f7d819:
 
-    # kami "C'est presque mignon."
-    kami ""
+    # kael joie "En tout cas ça marche, certaines personnes commencent à se disperser !"
+    kael joie "Está funcionando! Algumas pessoas estão começando a se dispersar!"
 
-# game/scenario/9_0_1.rpy:365
-translate portuguese e96e5af0:
+# game/scenario/9_0_1.rpy:366
+translate portuguese c3e9beb5:
 
-    # kami "Un peu pathétique, mais mignon."
-    kami ""
+    # noam reflechit "Super ! Continuons à en parler, il faut qu'ils se dispersent !"
+    noam reflechit "Ótimo! Continuem falando, precisamos que eles se dispersem!"
 
-# game/scenario/9_0_1.rpy:371
-translate portuguese 4149c29e:
+# game/scenario/9_0_1.rpy:391
+translate portuguese 9ed5ce9b:
 
-    # kami "Le Conclave reprend son fonctionnement normal."
-    kami ""
+    # "Le signal disparaît peu à peu, comme si quelqu'un interagissait avec le signal. La tablette de Kael montre des silhouettes qui commencent à courir avant de s'éteindre à son tour."
+    "O sinal desaparece aos poucos, como se alguém estivesse interferindo nele. O tablet de Kael mostra silhuetas começando a correr antes de apagar também."
 
-# game/scenario/9_0_1.rpy:377
-translate portuguese 78023702:
+# game/scenario/9_0_1.rpy:393
+translate portuguese b82c88d0:
 
-    # kami "Troisième vote."
-    kami ""
+    # think "Certains ont entendu. Je ne sais pas combien, ni s'ils auront le temps de prévenir les autres."
+    think "Alguns ouviram. Não sei quantos, nem se terão tempo de avisar os outros."
 
-# game/scenario/9_0_1.rpy:384
-translate portuguese 9371a305:
+# game/scenario/9_0_1.rpy:402
+translate portuguese 9ad35fd5:
 
-    # kami "Autoriser les regroupements de plus de vingt personnes."
-    kami ""
+    # kami "Voilà donc votre grande tentative : détourner mon signal pour transformer le Conclave en alerte d'évacuation."
+    kami "Então essa é sua grande tentativa: desviar meu sinal para transformar o Conclave num alerta de evacuação."
 
-# game/scenario/9_0_1.rpy:390
-translate portuguese 27ab20e0:
+# game/scenario/9_0_1.rpy:403
+translate portuguese 03733f3c:
 
-    # kami "Actuellement, les regroupements de plus de vingt individus non déclarés sont interdits."
-    kami ""
+    # kami "C'était presque intelligent, nous verrons ce que les gens feront de vos doux conseils."
+    kami "Foi quase inteligente. Veremos o que as pessoas farão com seus delicados conselhos."
 
-# game/scenario/9_0_1.rpy:392
-translate portuguese 609f7c06:
+# game/scenario/9_0_1.rpy:406
+translate portuguese deb39b65:
 
-    # kami "Cette interdiction relève du Commandement IV."
-    kami ""
+    # kami "Quelques humains qui crient très fort parce qu'ils viennent enfin de comprendre qu'ils sont en retard. C'était presque émouvant."
+    kami "Alguns humanos gritando bem alto porque finalmente perceberam que estão atrasados. Foi quase comovente."
 
-# game/scenario/9_0_1.rpy:398
-translate portuguese b41eb61f:
+# game/scenario/9_0_1.rpy:411
+translate portuguese b1630938:
 
-    # kami "Organisation."
-    kami ""
+    # kami "Je reconnais une véritable efficacité technique. La majorité des campements a reçu votre avertissement. Ce serait presque respectable, si votre impertinence ne gâchait pas tout."
+    kami "Reconheço uma verdadeira eficiência técnica. A maioria dos acampamentos recebeu o aviso. Seria quase respeitável se sua insolência não estragasse tudo."
 
-# game/scenario/9_0_1.rpy:399
-translate portuguese 2e667769:
+# game/scenario/9_0_1.rpy:413
+translate portuguese f2503c91:
 
-    # kami "Rassemblement."
-    kami ""
+    # kami "Vous avez atteint une partie importante des campements. Pas tous, mais suffisamment pour vous donner l'impression d'avoir repris la main."
+    kami "Vocês alcançaram uma parte importante dos acampamentos. Não todos, mas o bastante para sentirem que retomaram o controle."
 
-# game/scenario/9_0_1.rpy:400
-translate portuguese 3cb5f4ab:
+# game/scenario/9_0_1.rpy:414
+translate portuguese e8cc701e:
 
-    # kami "Mouvement collectif non autorisé."
-    kami ""
-
-# game/scenario/9_0_1.rpy:401
-translate portuguese 59667fca:
-
-    # kami "Tous ces petits mots qui donnent aux foules l'impression d'avoir une colonne vertébrale."
-    kami ""
-
-# game/scenario/9_0_1.rpy:407
-translate portuguese c1bb8a91:
-
-    # kami "Un vote unanime en faveur de l'amendement autorisera ces regroupements."
-    kami ""
-
-# game/scenario/9_0_1.rpy:409
-translate portuguese 016bd91f:
-
-    # kami "Ils resteront soumis à déclaration préalable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:415
-translate portuguese 7ba676c9_2:
-
-    # kami "Je sais."
-    kami ""
+    # kami "Seulement, ce n'est qu'une vague impression."
+    kami "Só que isso não passa de uma impressão."
 
 # game/scenario/9_0_1.rpy:416
-translate portuguese 85e1abf2:
+translate portuguese f6149ad3:
 
-    # kami "Ce n'est pas la liberté totale."
-    kami ""
+    # kami "J'ai bien cru que vous arriveriez à un résultat probant. Agir et donner l'impression d'agir restent deux choses différentes."
+    kami "Cheguei a achar que conseguiriam um resultado convincente. Agir e dar a impressão de agir continuam sendo duas coisas diferentes."
 
-# game/scenario/9_0_1.rpy:422
-translate portuguese cfc74863:
+# game/scenario/9_0_1.rpy:418
+translate portuguese a782122e:
 
-    # kami "Mais chaque enfant doit apprendre à marcher avant de courir vers une insurrection."
-    kami ""
+    # kami "Même ce détournement, vous l'avez presque entièrement raté. Je serais déçue si je n'avais pas trouvé votre panique aussi divertissante."
+    kami "Até esse desvio vocês quase erraram por completo. Eu ficaria decepcionada se não achasse seu pânico tão divertido."
 
-# game/scenario/9_0_1.rpy:428
-translate portuguese e98d0ad0:
+# game/scenario/9_0_1.rpy:421
+translate portuguese d6562d55:
 
-    # kami "En cas d'échec du vote, l'interdiction actuelle restera en vigueur."
-    kami ""
+    # kami "Dans tous les cas, votre intrusion, votre intention et votre insolence sont enregistrées."
+    kami "De qualquer forma, sua invasão, sua intenção e sua insolência foram registradas."
 
-# game/scenario/9_0_1.rpy:434
-translate portuguese 1ae93585:
+# game/scenario/9_0_1.rpy:424
+translate portuguese 840f5413:
 
-    # kami "Le vote aura lieu aujourd'hui."
-    kami ""
+    # kami "Je vais pourtant être généreuse : votre petit théâtre n'interrompra pas la procédure officielle."
+    kami "Mesmo assim, serei generosa: seu teatrinho não interromperá o procedimento oficial."
 
-# game/scenario/9_0_1.rpy:435
-translate portuguese d39d9861:
-
-    # kami "Enfin... dans quelques instants."
-    kami ""
-
-# game/scenario/9_0_1.rpy:441
-translate portuguese d73df9a3:
-
-    # kami "Essayez de ne pas tout gâcher trop vite."
-    kami ""
-
-# game/scenario/9_0_1.rpy:460
-translate portuguese c7276454:
-
-    # tomas raison "Attendez."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:462
-translate portuguese 2753906b:
-
-    # ryn fatigue "Quoi encore ?"
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:464
-translate portuguese a11f2826:
-
-    # tomas "Le libellé."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:466
-translate portuguese 0cf106ac:
-
-    # lysa blase "Tomas."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:468
-translate portuguese 1f469136:
-
-    # tomas raison "Non."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:469
-translate portuguese eed01128:
-
-    # tomas "Cette fois, c'est important."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:473
-translate portuguese 8537ae60:
-
-    # noam inquiet "Qu'est-ce qui ne va pas ?"
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:475
-translate portuguese cd5dad11:
-
-    # tomas "Regroupements de plus de vingt personnes."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:476
-translate portuguese b7b8506e:
-
-    # tomas "Non déclarés."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:477
-translate portuguese 657d9380:
-
-    # tomas "Commandement IV."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:479
-translate portuguese 4cd0b435:
-
-    # ryn fatigue "Oui, on a entendu."
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:481
-translate portuguese 21df92ca:
-
-    # tomas culpabilite "Pas comme ça."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:485
-translate portuguese 3086c847:
-
-    # sael inquiet "Parle."
-    sael inquiet ""
-
-# game/scenario/9_0_1.rpy:487
-translate portuguese d4919e0d:
-
-    # tomas raison "Ce matin, je suis allé dans la salle du canon."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:488
-translate portuguese a3551610:
-
-    # tomas "Je voulais vérifier les exécutions. J'avais déjà vu une anomalie hier."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:490
-translate portuguese caf7b0f1:
-
-    # ryn colere "Oui et ?!"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:492
-translate portuguese 31d17f98:
-
-    # tomas "Des gens quittent massivement les profondeurs de Limen."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:493
-translate portuguese cd6abda0:
-
-    # tomas "Beaucoup de gens."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:497
-translate portuguese 41e09d94:
-
-    # ryn colere "Hein ?! Combien ?"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:499
-translate portuguese 15febc28:
-
-    # tomas culpabilite "Je n'ai pas le chiffre exact."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:501
-translate portuguese 2d37b2e0:
-
-    # ryn colere2 "Combien ?"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:503
-translate portuguese 13cde78e:
-
-    # tomas "Des milliers."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:504
-translate portuguese dd1a7730:
-
-    # tomas "Peut-être plusieurs dizaines de milliers."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:508
-translate portuguese cf5af007:
-
-    # sael peur "Laisse-moi deviner. Ils remontent vers les frontières."
-    sael peur ""
-
-# game/scenario/9_0_1.rpy:510
-translate portuguese 7ad81883_3:
-
-    # tomas "Oui."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:511
-translate portuguese 9a8d950e:
-
-    # tomas "Je pense qu'ils ont profité de l'absence de Kami."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:512
-translate portuguese 734d2b20:
-
-    # tomas "Ou de sa maintenance."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:513
-translate portuguese e8f741d9:
-
-    # tomas "Ils ont cru que c'était une ouverture pour passer les frontières malgré l'interdiction."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:515
-translate portuguese b89d6d84:
-
-    # lysa triste "Évidemment."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:517
-translate portuguese f8258601:
-
-    # tomas raison "Ils ont installé des campements."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:518
-translate portuguese 6c5ae869:
-
-    # tomas "À plusieurs points de passage."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:519
-translate portuguese 34f892cc:
-
-    # tomas "Vers d'autres districts."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:523
-translate portuguese db79c88c:
-
-    # kael inquiet "Des campements."
-    kael inquiet ""
-
-# game/scenario/9_0_1.rpy:525
-translate portuguese aad902f3:
-
-    # tomas culpabilite "Migratoires."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:526
-translate portuguese a73955e0:
-
-    # tomas "Improvisés."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:527
-translate portuguese 843b34bd:
-
-    # tomas "Et surtout non déclarés."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:531
-translate portuguese 2287d305:
-
-    # noam inquiet "Et donc..."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:533
-translate portuguese dcf01889:
-
-    # tomas "Donc ce sont des regroupements de plus de vingt personnes."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:537
-translate portuguese 137a0646:
-
-    # ryn colere "Non. T'es pas sérieux."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:539
-translate portuguese f928cead:
-
-    # tomas "Si. Mal-"
-    tomas ""
-
-# game/scenario/9_0_1.rpy:542
-translate portuguese 752aac12:
-
-    # ryn colere2 "Tu vas pas me dire que des gens qui fuient Limen vont crever parce qu'ils dorment trop nombreux dehors."
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:544
-translate portuguese b7312bd7:
-
-    # tomas culpabilite "Je pense que le Commandement IV peut les viser."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:546
-translate portuguese 4c05a261:
-
-    # ryn "Putain !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:547
-translate portuguese 05dd4d63:
-
-    # ryn "Sérieux ?! Kami, c'est quoi ce bordel ?!"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:549
-translate portuguese edde598e:
-
-    # sael peur "Tous les campements ?"
-    sael peur ""
-
-# game/scenario/9_0_1.rpy:551
-translate portuguese 039bf957:
-
-    # tomas "Tous ceux qui dépassent vingt personnes."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:552
-translate portuguese 95a169fc:
-
-    # tomas "Donc probablement presque tous."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:556
-translate portuguese 5c4b795e:
-
-    # lysa blase "C'est pas un hasard si on vote sur ça."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:557
-translate portuguese e4b7e447:
-
-    # lysa "Tu vois bien que ce n'est pas une coïncidence."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:559
-translate portuguese fee362d9:
-
-    # noam inquiet "Si le vote passe, ils peuvent rester groupés."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:561
-translate portuguese e681018f:
-
-    # noam "Et s'il échoue..."
-    noam ""
-
-# game/scenario/9_0_1.rpy:563
-translate portuguese aa4fa8de:
-
-    # tomas culpabilite "L'interdiction reste."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:564
-translate portuguese ff801ab7:
-
-    # tomas "Et Kami applique le Commandement."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:581
-translate portuguese 3233cb6d:
-
-    # kami "Vous avez tout compris."
-    kami ""
-
-# game/scenario/9_0_1.rpy:585
-translate portuguese 6815999c:
-
-    # kami "Je suis fière de vous."
-    kami ""
-
-# game/scenario/9_0_1.rpy:586
-translate portuguese c7f4f0c1:
-
-    # kami "Enfin."
-    kami ""
-
-# game/scenario/9_0_1.rpy:587
-translate portuguese 7864fe0e:
-
-    # kami "Surtout de Tomas."
-    kami ""
-
-# game/scenario/9_0_1.rpy:593
-translate portuguese 1d5a7b0a:
-
-    # kami "Les campements limenois actuellement installés aux frontières relèvent bien du Commandement IV."
-    kami ""
-
-# game/scenario/9_0_1.rpy:597
-translate portuguese f1d84d4f:
-
-    # kami "Ce sont des regroupements non déclarés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:598
-translate portuguese b7ec503e:
-
-    # kami "De plusieurs centaines d'individus chacun."
-    kami ""
-
-# game/scenario/9_0_1.rpy:599
-translate portuguese 92dd9f63:
-
-    # kami "Evidemment, ces mouvements collectifs ne sont pas autorisés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:605
-translate portuguese 99b5a631:
-
-    # kami "C'est très clair."
-    kami ""
-
-# game/scenario/9_0_1.rpy:611
-translate portuguese 4afd071e:
-
-    # kami "J'ai cependant retardé l'application du Commandement."
-    kami ""
-
-# game/scenario/9_0_1.rpy:612
-translate portuguese 9fc8fcd4:
-
-    # kami "Oh. Comme je suis adorable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:613
-translate portuguese 70ca747e:
-
-    # kami "Sans mon intervention, ces campements ne seraient déjà plus un problème."
-    kami ""
-
-# game/scenario/9_0_1.rpy:617
-translate portuguese 75de0ff7:
-
-    # kami "Pour vous laisser le temps de voter."
-    kami ""
-
-# game/scenario/9_0_1.rpy:623
-translate portuguese a7d8dea8:
-
-    # kami "Vous voyez ?"
-    kami ""
-
-# game/scenario/9_0_1.rpy:624
-translate portuguese 5996efdc:
-
-    # kami "Je peux être attentionnée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:630
-translate portuguese 2616c089:
-
-    # kami "Après le vote, le Commandement IV s'appliquera."
-    kami ""
-
-# game/scenario/9_0_1.rpy:631
-translate portuguese 6688da38:
-
-    # kami "Avec ou sans modification."
-    kami ""
-
-# game/scenario/9_0_1.rpy:637
-translate portuguese 5e34354c:
-
-    # kami "Mais vous allez maintenant devoir voter, mes petits humains préférés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:641
-translate portuguese 2df64691:
-
-    # kami "Cette fois, réfléchissez bien à ce que vous allez faire !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:660
-translate portuguese e40d974d:
-
-    # ryn colere "Elle savait tout."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:662
-translate portuguese 8ab16e9b:
-
-    # nyra fatigue "Oui."
-    nyra fatigue ""
-
-# game/scenario/9_0_1.rpy:664
-translate portuguese d14160fa:
-
-    # ryn colere2 "Elle les a laissés s'entasser."
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:665
-translate portuguese 24357161:
-
-    # ryn colere "Si ça se trouve, elle a fait semblant de ne pas être en maintenance pour les laisser s'entasser !"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:667
-translate portuguese 6c98e49b:
-
-    # tomas culpabilite "Oui."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:668
-translate portuguese a458ba92:
-
-    # tomas "C'est possible."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:670
-translate portuguese be2bd329:
-
-    # ryn "Et maintenant elle appelle ça un vote."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:672
-translate portuguese dfec55c2:
-
-    # lysa triste "Non. Pas seulement."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:673
-translate portuguese 9e86277e:
-
-    # lysa "Elle appelle ça notre responsabilité."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:677
-translate portuguese 79dfd030:
-
-    # sael peur "On vote tous pour."
-    sael peur ""
-
-# game/scenario/9_0_1.rpy:679
-translate portuguese df63b9b9_2:
-
-    # noam inquiet "Oui."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:681
-translate portuguese d67b6d83:
-
-    # sael determine "Pas d'abstention."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:682
-translate portuguese e9856556:
-
-    # sael "Pas de détour."
-    sael ""
-
-# game/scenario/9_0_1.rpy:683
-translate portuguese 491ed6bc:
-
-    # sael "Pas de lâcheté."
-    sael ""
-
-# game/scenario/9_0_1.rpy:685
-translate portuguese 3078fb7b:
-
-    # ryn colere "Si quelqu'un vote contre—"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:687
-translate portuguese 5fd8bd61:
-
-    # noam determine "Ryn."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:689
-translate portuguese 9d50aad2_1:
-
-    # ryn "Quoi ?"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:691
-translate portuguese 33f58d3a:
-
-    # noam "Ne finis pas cette phrase."
-    noam ""
-
-# game/scenario/9_0_1.rpy:693
-translate portuguese 9685abe6:
-
-    # ryn colere2 "Tu veux vraiment faire le médiateur maintenant ?"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:695
-translate portuguese 205802a7:
-
-    # noam determine "Oui."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:696
-translate portuguese f0c2fb45:
-
-    # noam "Surtout maintenant."
-    noam ""
-
-# game/scenario/9_0_1.rpy:700
-translate portuguese 3b4c86d3:
-
-    # ryn "Des gens vont mourir."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:702
-translate portuguese 7929b13f:
-
-    # noam "Alors on essaie de les sauver."
-    noam ""
-
-# game/scenario/9_0_1.rpy:703
-translate portuguese 69f255ce:
-
-    # noam "Mais on ne commence pas par se menacer entre nous."
-    noam ""
-
-# game/scenario/9_0_1.rpy:707
-translate portuguese b0b013d5:
-
-    # ryn "T'as intérêt à être utile."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:709
-translate portuguese de874618:
-
-    # noam "Je vais essayer."
-    noam ""
-
-# game/scenario/9_0_1.rpy:711
-translate portuguese 21611dc3:
-
-    # lysa blase "Rassurant."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:724
-translate portuguese eff531b2:
-
-    # elen peur "Tout le monde va voter pour."
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:725
-translate portuguese a05088c7:
-
-    # elen "Il le faut. On ne peut pas laisser des gens mourir juste parce qu'ils sont trop nombreux au même endroit."
-    elen ""
-
-# game/scenario/9_0_1.rpy:727
-translate portuguese a1e85c82:
-
-    # iris inquiet "Elen..."
-    iris inquiet ""
-
-# game/scenario/9_0_1.rpy:729
-translate portuguese 2c08ab80:
-
-    # elen "Non."
-    elen ""
-
-# game/scenario/9_0_1.rpy:730
-translate portuguese 1b2d8ba0:
-
-    # elen peur "Ne me dis pas qu'il faut rester prudents."
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:731
-translate portuguese 50904ed7:
-
-    # elen "Pas là."
-    elen ""
-
-# game/scenario/9_0_1.rpy:733
-translate portuguese bbd1ff91:
-
-    # iris fatigue "Je voulais juste dire que oui."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:734
-translate portuguese 5d0d36ad:
-
-    # iris "Il le faut."
-    iris ""
-
-# game/scenario/9_0_1.rpy:738
-translate portuguese 6d5d7490:
-
-    # elias fatigue "Moi aussi je voterai pour."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:739
-translate portuguese 35ede248:
-
-    # elias "Je sais pas faire de beau discours."
-    elias ""
-
-# game/scenario/9_0_1.rpy:740
-translate portuguese 7c9d3358:
-
-    # elias "Mais là, c'est pas compliqué. C'est des gens. On les laisse pas crever."
-    elias ""
-
-# game/scenario/9_0_1.rpy:742
-translate portuguese 8b3dc361:
-
-    # mara stress "Pareil."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:743
-translate portuguese ed9baa2d:
-
-    # mara "Personne ne peut hésiter en sachant ça ? Si ?!"
-    mara ""
-
-# game/scenario/9_0_1.rpy:745
-translate portuguese 65ba4844:
-
-    # julian inquiet "Pour aussi."
-    julian inquiet ""
-
-# game/scenario/9_0_1.rpy:746
-translate portuguese 324af31a:
-
-    # julian "Évidemment."
-    julian ""
-
-# game/scenario/9_0_1.rpy:747
-translate portuguese 73a8ceb6:
-
-    # julian "Pour une fois, le rôle du Conclave est limpide : empêcher un massacre."
-    julian ""
-
-# game/scenario/9_0_1.rpy:751
-translate portuguese 973b8bbb:
-
-    # kael fatigue "Pour."
-    kael fatigue ""
-
-# game/scenario/9_0_1.rpy:753
-translate portuguese b5e5a6a2:
-
-    # iris surpris "Kael ?"
-    iris surpris ""
-
-# game/scenario/9_0_1.rpy:755
-translate portuguese 774092b8:
-
-    # kael "Je parle peu."
-    kael ""
-
-# game/scenario/9_0_1.rpy:756
-translate portuguese 7ba49075:
-
-    # kael triste "Ça ne veut pas dire que je ne vois rien."
-    kael triste ""
-
-# game/scenario/9_0_1.rpy:757
-translate portuguese 785c38cb:
-
-    # kael "Ou que je suis inhumain."
-    kael ""
-
-# game/scenario/9_0_1.rpy:770
-translate portuguese d17b3563:
-
-    # tomas raison "Il faudra parler aux abstentionnistes probables."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:771
-translate portuguese 0a69f062:
-
-    # tomas "S'abstenir revient à laisser la règle actuelle tuer."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:773
-translate portuguese 3c80d6a3:
-
-    # ryn colere "J'espère bien oui."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:775
-translate portuguese d104946c:
-
-    # noam determine "C'est pas notre seul problème."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:777
-translate portuguese ae4d02ab:
-
-    # ryn "Putain... Quoi encore ?!"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:779
-translate portuguese 7f22aeb1:
-
-    # sael determine "Parle Noam."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:783
-translate portuguese 7fd52cf0:
-
-    # noam triste "Kami a été claire."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:784
-translate portuguese f975d13f:
-
-    # noam "Le Commandement s'appliquera, avec ou sans modification."
-    noam ""
-
-# game/scenario/9_0_1.rpy:785
-translate portuguese bc35cde2:
-
-    # noam determine "Et les regroupements doivent être déclarés avant d'exister."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:789
-translate portuguese dc29a38d:
-
-    # ryn colere "Et alors ?"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:791
-translate portuguese 35b58442:
-
-    # noam determine "Et alors les campements existent déjà."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:795
-translate portuguese 7c90562a:
-
-    # tomas culpabilite "Noam a raison."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:797
-translate portuguese 0a56d034_1:
-
-    # ryn colere "Explique."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:799
-translate portuguese b2d04b90:
-
-    # tomas raison "Préalable, ça veut dire avant."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:800
-translate portuguese 8e7a9399:
-
-    # tomas "Avant le regroupement."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:801
-translate portuguese f9839810:
-
-    # tomas "Avant le campement."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:802
-translate portuguese 3ba8618c:
-
-    # tomas "Avant que les gens soient déjà sur place."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:804
-translate portuguese ee704cdf:
-
-    # lysa blase "Merci Tomas."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:805
-translate portuguese 842f3c8b:
-
-    # lysa "On adore les définitions qui sentent le charnier."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:807
-translate portuguese c6c5d8be:
-
-    # tomas culpabilite "Lysa. Pas maintenant. Tais-toi et écoute."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:809
-translate portuguese b6a47fdb:
-
-    # lysa triste "...?"
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:813
-translate portuguese 2f6eb962:
-
-    # nyra raison "Si Kami applique la règle strictement..."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:814
-translate portuguese bd225e8c:
-
-    # nyra "Même un vote pour ne régularisera pas automatiquement les campements actuels."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:816
-translate portuguese 0a709f68:
-
-    # ryn colere2 "Non ?!"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:817
-translate portuguese 24104ef0:
-
-    # ryn "Putain, t'es sûr ?!"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:819
-translate portuguese 771a405f:
-
-    # noam triste "Non. Le vote autorise les regroupements."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:820
-translate portuguese b7b2fa26:
-
-    # noam "Mais seulement quand ils sont déclarés."
-    noam ""
-
-# game/scenario/9_0_1.rpy:822
-translate portuguese 2196f149:
-
-    # ryn colere "Ils pouvaient pas déclarer !"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:823
-translate portuguese e9c8db5d:
-
-    # ryn "Elle était absente !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:825
-translate portuguese 1d995223:
-
-    # lysa blase "Et tu crois que ça va l'émouvoir ?"
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:826
-translate portuguese 9fd78764:
-
-    # lysa "Carthage a brûlé pour moins de paperasse."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:839
-translate portuguese 6363cbe3:
-
-    # elias fatigue "Attends."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:840
-translate portuguese 3b87e06b:
-
-    # elias "Donc on vote pour..."
-    elias ""
-
-# game/scenario/9_0_1.rpy:841
-translate portuguese 0da239a8:
-
-    # elias inquiet "Et ils peuvent crever quand même ? C'est chaud. C'est vraiment chaud."
-    elias inquiet ""
-
-# game/scenario/9_0_1.rpy:843
-translate portuguese 706aa3f0:
-
-    # iris inquiet "C'est une blague ?"
-    iris inquiet ""
-
-# game/scenario/9_0_1.rpy:844
-translate portuguese 7771d86c:
-
-    # iris "Dites-moi que c'est une blague nulle."
-    iris ""
-
-# game/scenario/9_0_1.rpy:845
-translate portuguese 49e1c640:
-
-    # iris fatigue "Même une blague de Mara, je prends."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:847
-translate portuguese 030882af:
-
-    # mara stress "Même moi, je suis pas assez tordue pour pondre ça."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:849
-translate portuguese c550ed74:
-
-    # elen peur "Mais... non."
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:850
-translate portuguese db85e1a5:
-
-    # elen "Non, ça n'a aucun sens."
-    elen ""
-
-# game/scenario/9_0_1.rpy:851
-translate portuguese 48a7a84e:
-
-    # elen "Si on vote pour les sauver, ça doit les sauver. Sinon le mot sauver sert à quoi ?"
-    elen ""
-
-# game/scenario/9_0_1.rpy:853
-translate portuguese 3ac8bf4f:
-
-    # kael fatigue "Pas forcément."
-    kael fatigue ""
-
-# game/scenario/9_0_1.rpy:855
-translate portuguese bc84968e:
-
-    # elen "Kael..."
-    elen ""
-
-# game/scenario/9_0_1.rpy:857
-translate portuguese 5b4cf16b:
-
-    # kael triste "Je suis désolé."
-    kael triste ""
-
-# game/scenario/9_0_1.rpy:858
-translate portuguese d269fa73:
-
-    # kael "Mais Kami n'a pas dit qu'elle les sauverait."
-    kael ""
-
-# game/scenario/9_0_1.rpy:859
-translate portuguese ac0b61d1:
-
-    # kael "Elle a dit que le Commandement s'appliquerait après le vote."
-    kael ""
-
-# game/scenario/9_0_1.rpy:861
-translate portuguese 2b3b2bba:
-
-    # julian inquiet "C'est un piège."
-    julian inquiet ""
-
-# game/scenario/9_0_1.rpy:862
-translate portuguese a34c9879:
-
-    # julian "Une astuce rhétorique monstrueuse. Mais elle a laissé une faille."
-    julian ""
-
-# game/scenario/9_0_1.rpy:875
-translate portuguese 1720f051:
-
-    # nyra raison "On peut peut-être éviter ça autrement."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:877
-translate portuguese 42ff84e8:
-
-    # ryn colere "Parle."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:879
-translate portuguese 24dd71ad:
-
-    # nyra "Modifier l'amendement."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:880
-translate portuguese a7fdb653:
-
-    # nyra "Ajouter une autorisation exceptionnelle."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:881
-translate portuguese 4e75119c:
-
-    # nyra "Tous les campements déjà formés seraient reconnus comme déclarés."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:885
-translate portuguese 9dbc7d24:
-
-    # tomas raison "Ce serait bien."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:886
-translate portuguese e25ab35f:
-
-    # tomas "Juridiquement, je veux dire si c'était possible."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:890
-translate portuguese 9f57ca63:
-
-    # sael determine "On ne peut pas."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:892
-translate portuguese 3ed5d2a3:
-
-    # nyra raison "Pourquoi ?"
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:894
-translate portuguese 26594d28:
-
-    # sael "L'amendement est déjà posé."
-    sael ""
-
-# game/scenario/9_0_1.rpy:895
-translate portuguese 521fefab:
-
-    # sael "On débat du texte qui est censé avoir été déposé lors du premier jour."
-    sael ""
-
-# game/scenario/9_0_1.rpy:896
-translate portuguese 0631af2f:
-
-    # sael "On ne peut pas le réécrire."
-    sael ""
-
-# game/scenario/9_0_1.rpy:898
-translate portuguese fa8ef376:
-
-    # tomas culpabilite "Elle a raison."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:899
-translate portuguese 428be579:
-
-    # tomas "Kami a toujours verrouillé le libellé après annonce."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:900
-translate portuguese 9ea6243f:
-
-    # tomas "Le vote porte sur la phrase exacte."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:902
-translate portuguese 742a9d5b:
-
-    # ryn colere2 "Mais bordel, c'est complètement con !"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:904
-translate portuguese ff83f659:
-
-    # sael determine "Oui."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:905
-translate portuguese 9aea263a:
-
-    # sael "Mais c'est la règle."
-    sael ""
-
-# game/scenario/9_0_1.rpy:907
-translate portuguese 7832b406:
-
-    # ryn "Vos règles vont les tuer !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:911
-translate portuguese 4c48ba7d:
-
-    # noam determine "Alors il faut gagner du temps."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:913
-translate portuguese 5ef3cee7_1:
-
-    # ryn colere "Quoi ?"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:915
-translate portuguese 95b4408c:
-
-    # noam "Pas changer le texte."
-    noam ""
-
-# game/scenario/9_0_1.rpy:916
-translate portuguese dd545aa4:
-
-    # noam "Changer la situation avant qu'il s'applique."
-    noam ""
-
-# game/scenario/9_0_1.rpy:918
-translate portuguese 5495527c:
-
-    # lysa triste "Noam."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:920
-translate portuguese a1cf8d28:
-
-    # noam "Les campements sont illégaux parce qu'ils sont massifs."
-    noam ""
-
-# game/scenario/9_0_1.rpy:921
-translate portuguese 48b3fe31:
-
-    # noam "Parce qu'ils dépassent vingt personnes."
-    noam ""
-
-# game/scenario/9_0_1.rpy:922
-translate portuguese 1e3424f5:
-
-    # noam "Parce qu'ils sont aux frontières."
-    noam ""
-
-# game/scenario/9_0_1.rpy:923
-translate portuguese 3e5dae63:
-
-    # noam "Parce qu'ils essaient de passer."
-    noam ""
-
-# game/scenario/9_0_1.rpy:927
-translate portuguese a3f638e3:
-
-    # tomas raison "Tu veux les faire disperser ?"
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:929
-translate portuguese 205802a7_1:
-
-    # noam determine "Oui."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:931
-translate portuguese 86442aac:
-
-    # ryn colere "Ils sont dehors !"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:932
-translate portuguese 15b1e6c7:
-
-    # ryn "Ils fuient !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:933
-translate portuguese d8c2863f:
-
-    # ryn "Tu crois qu'ils vont juste se ranger en petits paquets parce qu'on leur demande gentiment ?"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:935
-translate portuguese 290dd969_7:
-
-    # noam "Non."
-    noam ""
-
-# game/scenario/9_0_1.rpy:936
-translate portuguese 2a2e29d8:
-
-    # noam "Mais s'ils suivent les débats en temps réel, ils entendront le risque."
-    noam ""
-
-# game/scenario/9_0_1.rpy:938
-translate portuguese c7bb86d8:
-
-    # sael inquiet "Ils sauront."
-    sael inquiet ""
-
-# game/scenario/9_0_1.rpy:940
-translate portuguese c573fb49:
-
-    # noam "Ils sauront que traverser maintenant est impossible."
-    noam ""
-
-# game/scenario/9_0_1.rpy:941
-translate portuguese d22e2574:
-
-    # noam "Ils sauront que rester groupés les condamne."
-    noam ""
-
-# game/scenario/9_0_1.rpy:942
-translate portuguese 4ad6ee87:
-
-    # noam "Et ils auront une chance de se disperser avant l'application du Commandement."
-    noam ""
-
-# game/scenario/9_0_1.rpy:946
-translate portuguese a0cbfb93:
-
-    # nyra raison "Ce n'est pas une solution parfaite."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:948
-translate portuguese b0c84989:
-
-    # lysa blase "Quelle surprise."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:949
-translate portuguese 503f04cc:
-
-    # lysa "Dans cette situation, on n'a que des choix merdiques. C'est presque grec."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:951
-translate portuguese cf625834:
-
-    # noam "Je ne dis pas que c'est parfait."
-    noam ""
-
-# game/scenario/9_0_1.rpy:952
-translate portuguese e1086877:
-
-    # noam determine "Je dis qu'on peut peut-être éviter le pire."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:956
-translate portuguese e8321b92:
-
-    # tomas raison "Il faut formuler ça clairement pendant le débat."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:957
-translate portuguese 64346e35:
-
-    # tomas "Pas de sous-entendu."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:958
-translate portuguese 258c44d5:
-
-    # tomas "Pas de demi-mot."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:960
-translate portuguese 98e132a7:
-
-    # elias fatigue "Faut leur dire de dégager de là."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:961
-translate portuguese df267557:
-
-    # elias "Vite."
-    elias ""
-
-# game/scenario/9_0_1.rpy:962
-translate portuguese b48b670c:
-
-    # elias inquiet "Avant que le canon fasse son boulot."
-    elias inquiet ""
-
-# game/scenario/9_0_1.rpy:964
-translate portuguese 0cbd73a1:
-
-    # iris inquiet "C'est horrible à dire."
-    iris inquiet ""
-
-# game/scenario/9_0_1.rpy:966
-translate portuguese c998fcd3_3:
-
-    # elias "Ouais."
-    elias ""
-
-# game/scenario/9_0_1.rpy:967
-translate portuguese 8b05ef1e:
-
-    # elias "Mais c'est moins horrible que de ne rien dire et regarder faire."
-    elias ""
-
-# game/scenario/9_0_1.rpy:971
-translate portuguese f1797d03:
-
-    # elen peur "Et s'ils n'écoutent pas ?"
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:972
-translate portuguese 2fca2e45:
-
-    # elen "Et s'ils ne peuvent pas partir ?"
-    elen ""
-
-# game/scenario/9_0_1.rpy:973
-translate portuguese 01ee52e1:
-
-    # elen "Et s'il y a des enfants, des blessés, des gens trop fatigués..."
-    elen ""
-
-# game/scenario/9_0_1.rpy:977
-translate portuguese 96aae473_1:
-
-    # "Personne ne répond."
-    ""
-
-# game/scenario/9_0_1.rpy:981
-translate portuguese 62774155:
-
-    # noam triste "Alors certains resteront en danger."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:983
-translate portuguese 54f41322_1:
-
-    # ryn colere "Non."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:985
-translate portuguese afa70811:
-
-    # noam "Ryn."
-    noam ""
-
-# game/scenario/9_0_1.rpy:987
-translate portuguese 7adbb5b2:
-
-    # ryn colere2 "Non !"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:988
-translate portuguese 125711d8:
-
-    # ryn "Je veux pas d'un plan qui commence déjà par abandonner des gens !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:990
-translate portuguese 14092ca7:
-
-    # noam determine "Moi non plus."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:991
-translate portuguese 4376e22b:
-
-    # noam "Mais on ne peut pas les porter nous-mêmes."
-    noam ""
-
-# game/scenario/9_0_1.rpy:992
-translate portuguese ca7ef833:
-
-    # noam "On peut les prévenir."
-    noam ""
-
-# game/scenario/9_0_1.rpy:993
-translate portuguese 3e7c7717:
-
-    # noam "Assez fort pour qu'ils bougent avant le tir."
-    noam ""
-
-# game/scenario/9_0_1.rpy:997
-translate portuguese 24453275:
-
-    # sael determine "Ils sont de Limen."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:998
-translate portuguese 7c6c160f:
-
-    # sael "Ils pourront survivre."
-    sael ""
-
-# game/scenario/9_0_1.rpy:999
-translate portuguese 03cb6f89:
-
-    # sael "S'ils entendent le risque, ils bougeront."
-    sael ""
-
-# game/scenario/9_0_1.rpy:1001
-translate portuguese 1ead0575:
-
-    # ryn fatigue "Et s'ils n'entendent pas ?"
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:1003
-translate portuguese 40f8b920:
-
-    # sael triste "Alors on priera pour qu'un autre leur répète."
-    sael triste ""
-
-# game/scenario/9_0_1.rpy:1005
-translate portuguese edbe2b6f:
-
-    # lysa blase "Super."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:1006
-translate portuguese 00c4c960:
-
-    # lysa "Notre stratégie repose sur la panique collective et le bouche-à-oreille. Très troisième siècle."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:1008
-translate portuguese 900cae6c:
-
-    # nyra raison "Non."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:1009
-translate portuguese 6e7c9c23:
-
-    # nyra "Elle repose sur la diffusion publique du débat."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1010
-translate portuguese ea792d37:
-
-    # nyra "Kami veut que le monde entier regarde."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1011
-translate portuguese 412a93f7:
-
-    # nyra "Utilisons ça contre elle."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1015
-translate portuguese eeba659a:
-
-    # julian determine "Alors il faut parler pour eux."
-    julian determine ""
-
-# game/scenario/9_0_1.rpy:1016
-translate portuguese 0b6a7cef:
-
-    # julian "Pas pour Kami."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1017
-translate portuguese 0665f043:
-
-    # julian "Pas pour nous."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1018
-translate portuguese 00178c3f:
-
-    # julian "Pour ceux qui regardent. Julian peut faire ça."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1020
-translate portuguese d2c8b037:
-
-    # iris fatigue "Et pour une fois, évite les effets de scène."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:1022
-translate portuguese 7ba520ba:
-
-    # julian inquiet "Oui."
-    julian inquiet ""
-
-# game/scenario/9_0_1.rpy:1023
-translate portuguese 26c4e2fb:
-
-    # julian "Je sais."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1027
-translate portuguese 85a3fa11:
-
-    # mara stress "Donc pendant le débat, on dit clairement : dispersez-vous."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:1028
-translate portuguese e065b1d1:
-
-    # mara "Ne traversez pas."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1029
-translate portuguese 1353c9bf:
-
-    # mara "Ne restez pas en gros tas bien pratique pour le canon."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1031
-translate portuguese db634a96:
-
-    # tomas raison "Pas comme ça."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:1033
-translate portuguese 18ba3679:
-
-    # mara "Je résume."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1035
-translate portuguese 9a989a63:
-
-    # tomas "Il faut être précis."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1036
-translate portuguese 65b7499e:
-
-    # tomas "Se séparer en groupes de moins de vingt."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1037
-translate portuguese 5b06cf7f:
-
-    # tomas "S'éloigner des points de passage."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1038
-translate portuguese 28c88026:
-
-    # tomas "Ne pas franchir la frontière sans autorisation."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1040
-translate portuguese dff233d5:
-
-    # noam triste "Oui."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:1042
-translate portuguese b5c9503f:
-
-    # ryn "On leur demande de retourner crever lentement à Limen."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:1044
-translate portuguese 290dd969_8:
-
-    # noam "Non."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1045
-translate portuguese bdc8a9d8:
-
-    # noam determine "On leur demande de rester vivants jusqu'à ce qu'on puisse obtenir mieux."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1046
-translate portuguese 1fa1e738:
-
-    # noam "Et de toute façon, ils ne peuvent déjà plus traverser la frontière."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1054
-translate portuguese e6d057fa:
-
-    # ryn fatigue "Putain."
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:1058
-translate portuguese ea609ec1:
-
-    # sael determine "Le vote pour."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:1059
-translate portuguese ebb66c29:
-
-    # sael "L'avertissement public."
-    sael ""
-
-# game/scenario/9_0_1.rpy:1060
-translate portuguese c2f8f90c:
-
-    # sael "Et aucun silence."
-    sael ""
-
-# game/scenario/9_0_1.rpy:1062
-translate portuguese 205802a7_2:
-
-    # noam determine "Oui."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1064
-translate portuguese 19c9b192:
-
-    # tomas raison "Je peux ouvrir le débat sur la définition juridique."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:1065
-translate portuguese 2fcbbb0c:
-
-    # tomas "Puis Noam enchaîne sur le risque concret."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1067
-translate portuguese 57e14a4c:
-
-    # lysa blase "Et Ryn évite de menacer tout le monde pendant trente secondes."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:1069
-translate portuguese ea691dde:
-
-    # ryn colere "Je vais essayer."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:1071
-translate portuguese f97c7f03:
-
-    # iris fatigue "Quelle ambition."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:1075
-translate portuguese a4a4df8a:
-
-    # nyra raison "Il faudra aussi forcer Kami à confirmer publiquement."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:1076
-translate portuguese 8f75c9e8:
-
-    # nyra "Si elle confirme devant les campements, ils comprendront."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1078
-translate portuguese 63f2cba5:
-
-    # noam "Alors on lui pose la question en direct."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1080
-translate portuguese 68e428b0:
-
-    # elen peur "Et si elle refuse ?"
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:1082
-translate portuguese eeec4ad9:
-
-    # noam determine "Alors on la repose."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1083
-translate portuguese df4e90dd:
-
-    # noam "Encore."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1084
-translate portuguese 5a0efc69:
-
-    # noam "Jusqu'à ce que tout le monde comprenne ce qu'elle essaie de faire."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1088
-translate portuguese bd630c9a:
-
-    # lysa triste "Donc notre plan, c'est de transformer le débat en alerte d'évacuation."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:1090
-translate portuguese 7ad81883_4:
-
-    # tomas "Oui."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1092
-translate portuguese 3b738b61:
-
-    # mara stress "C'est un plan de merde."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:1094
-translate portuguese f89de029:
-
-    # elias fatigue "Ouais."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:1096
-translate portuguese 48e0d16b:
-
-    # mara "Mais c'est le seul qu'on a."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1100
-translate portuguese f9efd6c7:
-
-    # ryn determine "Alors on y va."
-    ryn determine ""
-
-# game/scenario/9_0_1.rpy:1102
-translate portuguese bf271eff:
-
-    # noam determine "On y va."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1106
-translate portuguese a74dc667:
-
-    # think "Voter pour ne suffit pas."
-    think ""
-
-# game/scenario/9_0_1.rpy:1107
-translate portuguese f0976245:
-
-    # think "Il faut parler assez fort pour que ceux qui sont dehors entendent."
-    think ""
-
-# game/scenario/9_0_1.rpy:1108
-translate portuguese 08528b72:
-
-    # think "Et assez vite pour qu'ils aient le temps de bouger."
-    think ""
-
-# game/scenario/9_0_1.rpy:1109
-translate portuguese 7a7d0de6:
-
-    # think "Et on doit gagner du temps !"
-    think ""
-
-# game/scenario/9_0_1.rpy:1130
-translate portuguese 40d34334:
-
-    # "Le signal disparaît par morceaux."
-    ""
-
-# game/scenario/9_0_1.rpy:1131
-translate portuguese 84244359:
-
-    # "Comme si quelqu'un écrasait une voix sous une paume trop grande."
-    ""
-
-# game/scenario/9_0_1.rpy:1135
-translate portuguese 967e93ff:
-
-    # "Les écrans clignotent encore."
-    ""
-
-# game/scenario/9_0_1.rpy:1136
-translate portuguese fc4a1bd9:
-
-    # "Quelques fragments de campements restent imprimés dans la lumière."
-    ""
-
-# game/scenario/9_0_1.rpy:1137
-translate portuguese 3aac5975:
-
-    # "Des silhouettes. Des bâches arrachées. Des points minuscules qui comprennent trop tard."
-    ""
-
-# game/scenario/9_0_1.rpy:1148
-translate portuguese 1d46472c:
-
-    # kami "Voilà."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1149
-translate portuguese a8c335c1:
-
-    # kami "C'était donc ça, votre grande tentative."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1153
-translate portuguese 93f04370:
-
-    # kami "Un petit détournement de signal."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1154
-translate portuguese b2fa6168:
-
-    # kami "Un message paniqué."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1155
-translate portuguese aa40dcfd:
-
-    # kami "Quelques humains qui crient très fort parce qu'ils ont enfin compris qu'ils étaient en retard."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1162
-translate portuguese 1c311863:
-
-    # kami "Je reconnais une certaine efficacité technique."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1163
-translate portuguese ee7f7d37:
-
-    # kami "C'est adorable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1164
-translate portuguese ed6a9d1d:
-
-    # kami "Presque respectable, si l'impertinence ne gâchait pas tout."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1166
-translate portuguese 890cdb05:
-
-    # kami "Vous avez touché une partie des campements."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1167
-translate portuguese 7f22ef36:
-
-    # kami "Pas tous."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1168
-translate portuguese 854f17db:
-
-    # kami "Mais assez pour vous donner l'illusion d'avoir repris la main."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1170
-translate portuguese 0d07aa37:
-
-    # kami "Vous avez réussi à faire du bruit."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1171
-translate portuguese f2c07a03:
-
-    # kami "Pas beaucoup plus."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1172
-translate portuguese 4010e056:
-
-    # kami "Le bruit donne parfois l'impression d'agir. C'est un piège fréquent."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1174
-translate portuguese 94597258:
-
-    # kami "Et même cela, vous l'avez raté."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1175
-translate portuguese 62b6a225:
-
-    # kami "Je suis presque déçue."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1176
-translate portuguese b8a6507c:
-
-    # kami "Presque."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1182
-translate portuguese bd9b478b:
-
-    # kami "Dans tous les cas, votre intrusion est enregistrée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1183
-translate portuguese 47152d2c:
-
-    # kami "Votre intention est notée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1184
-translate portuguese 08d83035:
-
-    # kami "Votre insolence aussi."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1190
-translate portuguese 01da84ae:
-
-    # kami "Mais je vais être généreuse."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1191
-translate portuguese 447245d8:
-
-    # kami "Je ne vais pas laisser votre petit théâtre interrompre une procédure officielle."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1197
+# game/scenario/9_0_1.rpy:427
 translate portuguese 65ff45f7:
 
     # kami "Le Conclave n'est pas une antenne de secours."
-    kami ""
+    kami "O Conclave não é uma central de emergência."
 
-# game/scenario/9_0_1.rpy:1201
-translate portuguese 40cd5eb2:
+# game/scenario/9_0_1.rpy:430
+translate portuguese 94f07ee9:
 
-    # kami "Le Conclave est un lieu de décision."
-    kami ""
+    # kami "C'est un lieu de décision. Et il est temps de voter."
+    kami "É um lugar de decisão. E chegou a hora de votar."
 
-# game/scenario/9_0_1.rpy:1218
-translate portuguese a11f6453_1:
+# game/scenario/9_0_1.rpy:445
+translate portuguese 5f5c890f:
 
-    # "Personne ne bouge."
-    ""
+    # noam reflechit "Kami dit ça, mais si elle l'avait voulu, elle aurait pu couper notre signal."
+    noam reflechit "Kami diz isso, mas, se quisesse, poderia ter cortado nosso sinal."
 
-# game/scenario/9_0_1.rpy:1219
-translate portuguese 8176824a:
+# game/scenario/9_0_1.rpy:447
+translate portuguese c978d0fb:
 
-    # "Même respirer paraît risqué."
-    ""
+    # ryn colere "Elle savait qu'ils nous entendaient. Elle a laissé passer le signal juste assez longtemps pour les regarder courir."
+    ryn colere "Ela sabia que eles nos ouviam. Deixou o sinal passar tempo suficiente para vê-los correr."
 
-# game/scenario/9_0_1.rpy:1221
-translate portuguese b0d9d7fc:
+# game/scenario/9_0_1.rpy:448
+translate portuguese aa0e6603:
 
-    # ryn colere "Tu savais qu'ils entendaient."
-    ryn colere ""
+    # ryn colere2 "Tu as posé leurs vies sur cette table et tu en es presque à la remercier ?!"
+    ryn colere2 "Você colocou a vida deles sobre esta mesa e está quase agradecendo a ela?!"
 
-# game/scenario/9_0_1.rpy:1222
-translate portuguese abe208b4:
+# game/scenario/9_0_1.rpy:450
+translate portuguese db075c67:
 
-    # ryn "Tu les as laissés entendre juste assez pour nous regarder nous débattre."
-    ryn ""
+    # nyra reflechit "Finalement, avait-elle vraiment le choix ? Tout est filmé, tout le monde aurait vu qu'elle tenterait de nous censurer."
+    nyra reflechit "No fim das contas, ela tinha escolha? Tudo é filmado; o mundo inteiro teria visto ela tentando nos censurar."
 
-# game/scenario/9_0_1.rpy:1223
-translate portuguese 64127f5d:
+# game/scenario/9_0_1.rpy:452
+translate portuguese 19682b1c:
 
-    # ryn "T'as mis des vies sur la table et t'as appelé ça une procédure."
-    ryn ""
+    # noam sourire "Il lui aurait été difficile de se faire passer pour la gentille qui nous a attendus avant de faire appliquer les règles."
+    noam sourire "Seria difícil se passar pela boazinha que esperou por nós antes de aplicar as regras."
 
-# game/scenario/9_0_1.rpy:1229
-translate portuguese 2431c31b:
+# game/scenario/9_0_1.rpy:454
+translate portuguese b7f6c376:
 
-    # kami "Ryn."
-    kami ""
+    # sael determine "Alors qu'elle nous laisse terminer. Il nous faut quelques minutes supplémentaires seulement. Même les condamnés ont droit à une dernière parole."
+    sael determine "Então que nos deixe terminar. Só precisamos de alguns minutos a mais. Até os condenados têm direito a uma última palavra."
 
-# game/scenario/9_0_1.rpy:1230
-translate portuguese 7d7e2ebb:
+# game/scenario/9_0_1.rpy:460
+translate portuguese 43c37d38:
 
-    # kami "Je t'assure que te voir comprendre les choses avec trois minutes de retard reste un plaisir très simple."
-    kami ""
+    # kami "Non. Vous avez déjà pris suffisamment de temps au Conclave. Il va désormais être temps de voter."
+    kami "Não. Vocês já tomaram tempo suficiente do Conclave. Agora chegou a hora de votar."
 
-# game/scenario/9_0_1.rpy:1244
-translate portuguese 4ffe287a:
+# game/scenario/9_0_1.rpy:478
+translate portuguese 79b08140:
 
-    # sael determine "Alors laisse-nous terminer."
-    sael determine ""
+    # tomas raison "Kami, tu peux nous dire quel est le statut des campements qui ont commencé à se disperser ? Leur situation a-t-elle changé pendant la procédure ?"
+    tomas raison "Kami, pode nos dizer qual é a situação dos acampamentos que começaram a se dispersar? A condição deles mudou durante o procedimento?"
 
-# game/scenario/9_0_1.rpy:1245
-translate portuguese 16fb21a8:
+# game/scenario/9_0_1.rpy:480
+translate portuguese 8770d4f0:
 
-    # sael "Quelques minutes."
-    sael ""
+    # nyra raison "Donne-nous un relevé en direct. Si tu veux une décision qui soit adaptée, montre-nous l'état réel du terrain avant le vote."
+    nyra raison "Mostre uma atualização ao vivo. Se quer uma decisão adequada, mostre a situação real no terreno antes da votação."
 
-# game/scenario/9_0_1.rpy:1246
-translate portuguese 70815d7e:
+# game/scenario/9_0_1.rpy:485
+translate portuguese 2ddfac46:
 
-    # sael "Même les condamnés ont droit à une dernière parole."
-    sael ""
+    # kami "Tu veux savoir combien de personnes restent en danger avant de lever la main ? C'est touchant, mais le vote porte sur une règle, pas sur une situation précise."
+    kami "Quer saber quantas pessoas continuam em perigo antes de levantar a mão? É comovente, mas a votação é sobre uma regra, não sobre uma situação específica."
 
-# game/scenario/9_0_1.rpy:1252
-translate portuguese ed2f68a9_2:
+# game/scenario/9_0_1.rpy:486
+translate portuguese 8641819d:
 
-    # kami "Non."
-    kami ""
+    # kami "Dois-je vous rappeler que si les gens se sont entassés, c'est avant tout de VOTRE faute ?!"
+    kami "Preciso lembrar que, se as pessoas se amontoaram, a culpa é antes de tudo de VOCÊS?!"
 
-# game/scenario/9_0_1.rpy:1272
-translate portuguese 5630fd32:
+# game/scenario/9_0_1.rpy:489
+translate portuguese e749ee62:
 
-    # tomas raison "Il faut clarifier le statut des campements déjà en dispersion."
-    tomas raison ""
+    # kami "Quelle idée de dire devant le monde entier que je n'appliquerais plus les Commandements !"
+    kami "Que ideia brilhante dizer ao mundo inteiro que eu não aplicaria mais os Mandamentos!"
 
-# game/scenario/9_0_1.rpy:1273
-translate portuguese 9895afdb:
+# game/scenario/9_0_1.rpy:490
+translate portuguese 3f9a0662:
 
-    # tomas "Si le signal a été reçu, leur situation juridique a changé pendant la procédure."
-    tomas ""
+    # kami "Les Commandements sont ABSOLUS ! Je vous fais déjà une fleur considérable en retardant leur exécution."
+    kami "Os Mandamentos são ABSOLUTOS! Já estou fazendo um favor enorme ao adiar sua aplicação."
 
-# game/scenario/9_0_1.rpy:1278
-translate portuguese ed2f68a9_3:
+# game/scenario/9_0_1.rpy:493
+translate portuguese aaaa238f:
 
-    # kami "Non."
-    kami ""
+    # kami "Je ne peux rien faire de plus pour vous aider à soulager votre conscience."
+    kami "Não posso fazer mais nada para ajudar vocês a aliviar a consciência."
 
-# game/scenario/9_0_1.rpy:1279
-translate portuguese f7b05ae6:
+# game/scenario/9_0_1.rpy:509
+translate portuguese b7877d42:
 
-    # kami "Leur statut change au moment où j'enregistre la décision."
-    kami ""
+    # noam triste "Au contraire, Kami. Tu as abandonné ton poste. C'est cet abandon de poste qui a donné de l'espoir aux gens."
+    noam triste "Pelo contrário, Kami. Você abandonou seu posto. Foi esse abandono que deu esperança às pessoas."
 
-# game/scenario/9_0_1.rpy:1280
-translate portuguese a32157a9:
+# game/scenario/9_0_1.rpy:512
+translate portuguese b292c0ec:
 
-    # kami "Pas au moment où vous espérez très fort."
-    kami ""
+    # kami "Mais c'est qu'il me remet la faute dessus, en plus ?!"
+    kami "Ah, então agora ele ainda quer colocar a culpa em mim?!"
 
-# game/scenario/9_0_1.rpy:1287
-translate portuguese 3e423fcd:
+# game/scenario/9_0_1.rpy:513
+translate portuguese 3ad39f7b:
 
-    # nyra raison "Alors vérifions les campements."
-    nyra raison ""
+    # kami "J'ai bien compris votre petit stratagème, vous voulez m'emmener dans un débat inutile pour gagner du temps."
+    kami "Entendi seu pequeno estratagema. Querem me arrastar para um debate inútil e ganhar tempo."
 
-# game/scenario/9_0_1.rpy:1288
-translate portuguese 6de03f8e:
+# game/scenario/9_0_1.rpy:516
+translate portuguese dadb1e48:
 
-    # nyra "Un relevé en direct. Rien de plus."
-    nyra ""
+    # kami "La décence vous oblige justement à voter vite. Après tout, c'est moi qui donne le tempo ici."
+    kami "A decência obriga vocês a votar depressa. Afinal, sou eu que dito o ritmo aqui."
 
-# game/scenario/9_0_1.rpy:1289
-translate portuguese 7e19a48b:
+# game/scenario/9_0_1.rpy:531
+translate portuguese ebbfefa8:
 
-    # nyra "Tu veux une décision propre ? Donne-nous l'état du terrain."
-    nyra ""
+    # noam determine "Quand bien même, tu cherches à nous faire porter la responsabilité du tir, alors que tu contrôles le canon et le temps que tu nous accordes."
+    noam determine "Mesmo assim, você tenta jogar em nós a responsabilidade pelo disparo, embora controle o canhão e o tempo que nos concede."
 
-# game/scenario/9_0_1.rpy:1294
-translate portuguese 3224e8d7:
+# game/scenario/9_0_1.rpy:532
+translate portuguese fa1be5eb:
 
-    # kami "Tu veux savoir combien de personnes sont encore en danger avant de lever la main ?"
-    kami ""
+    # noam colere "Tu pourrais sauver des gens innocents !"
+    noam colere "Você poderia salvar pessoas inocentes!"
 
-# game/scenario/9_0_1.rpy:1295
-translate portuguese cc40241d_1:
+# game/scenario/9_0_1.rpy:537
+translate portuguese 5aefd847:
 
-    # kami "C'est touchant."
-    kami ""
+    # kami "Celui qui ne respecte pas les règles n'est pas innocent. La nuance vous échappe uniquement parce qu'elle vous est désagréable."
+    kami "Quem não respeita as regras não é inocente. Vocês só não entendem a diferença porque ela é desagradável."
 
-# game/scenario/9_0_1.rpy:1296
-translate portuguese e481419a:
+# game/scenario/9_0_1.rpy:539
+translate portuguese 97d26788:
 
-    # kami "Inutile, mais touchant."
-    kami ""
+    # noam colere "Mais..."
+    noam colere "Mas..."
 
-# game/scenario/9_0_1.rpy:1300
-translate portuguese ff6f0f5b:
-
-    # kami "Le vote ne porte pas sur un inventaire."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1301
-translate portuguese 583f9fd2:
-
-    # kami "Il porte sur une règle."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1308
-translate portuguese ed2a4842:
-
-    # kael raison "Dans ce cas, délai procédural."
-    kael raison ""
-
-# game/scenario/9_0_1.rpy:1309
-translate portuguese 4e2f8112:
-
-    # kael "Pas une négociation."
-    kael ""
-
-# game/scenario/9_0_1.rpy:1310
-translate portuguese f14baa03:
-
-    # kael "Une prévention d'exécution massive."
-    kael ""
-
-# game/scenario/9_0_1.rpy:1315
-translate portuguese a7883aba:
-
-    # kami "Demande refusée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1316
-translate portuguese 0ea9a675:
-
-    # kami "Le règlement ne prévoit pas de délai de confort moral."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1323
-translate portuguese 13dda63d:
-
-    # lysa colere "Kami."
-    lysa colere ""
-
-# game/scenario/9_0_1.rpy:1324
-translate portuguese df2b7888:
-
-    # lysa "Même pour toi, il doit bien rester une seconde de décence dans un tiroir."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:1329
-translate portuguese 4ff739ab:
-
-    # kami "Oh, Lysa."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1330
-translate portuguese 255c4439:
-
-    # kami "La décence est justement ce qui vous oblige à voter vite."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1334
-translate portuguese be389593:
-
-    # kami "Plus vous parlez, plus les campements restent exposés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1335
-translate portuguese 408a581b:
-
-    # kami "C'est presque comme si votre compassion avait une portée balistique."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1342
-translate portuguese 55410292:
-
-    # noam determine "Tu veux dire que... non."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1343
-translate portuguese 26486a37:
-
-    # noam "Tu cherches à nous faire porter le tir."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1348
-translate portuguese d046b22b:
-
-    # kami "Je vous fais porter votre fonction."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1349
-translate portuguese 0df8cbbc:
-
-    # kami "Il y a une nuance."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1350
-translate portuguese 4407054b:
-
-    # kami "Elle vous échappe parce qu'elle est désagréable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1356
+# game/scenario/9_0_1.rpy:542
 translate portuguese 7fadc286:
 
     # kami "Assez."
-    kami ""
+    kami "Chega."
 
-# game/scenario/9_0_1.rpy:1366
-translate portuguese 56528e00:
+# game/scenario/9_0_1.rpy:543
+translate portuguese 9cc17c2a:
 
-    # kami "Le débat est terminé."
-    kami ""
+    # kami "Le débat est terminé. Les demandes de délai, de clarification et les appels à la décence sont rejetés."
+    kami "O debate acabou. Os pedidos de prazo, esclarecimento e os apelos à decência foram rejeitados."
 
-# game/scenario/9_0_1.rpy:1367
-translate portuguese bf046e2e:
+# game/scenario/9_0_1.rpy:546
+translate portuguese 1cd57a15:
 
-    # kami "Les demandes de délai sont rejetées."
-    kami ""
+    # kami "Vous devez voter. Immédiatement."
+    kami "Vocês devem votar. Imediatamente."
 
-# game/scenario/9_0_1.rpy:1368
-translate portuguese e104acc9:
+# game/scenario/9_0_1.rpy:562
+translate portuguese cde3eb50:
 
-    # kami "Les demandes de clarification sont rejetées."
-    kami ""
+    # "Les douze pupitres s'allument. Sur chacun, les mêmes mots apparaissent : POUR et CONTRE."
+    "Os doze terminais se acendem. Em cada um, aparecem as mesmas palavras: A FAVOR e CONTRA."
 
-# game/scenario/9_0_1.rpy:1369
-translate portuguese b26fc8a3:
+# game/scenario/9_0_1.rpy:564
+translate portuguese 3827a0d6:
 
-    # kami "Les appels à la décence sont classés comme manifestations émotionnelles non pertinentes."
-    kami ""
+    # elen joie "On a réussi à gagner du temps, beaucoup ont dû réussir à se sauver !"
+    elen joie "Conseguimos ganhar tempo, muitos devem ter conseguido escapar!"
 
-# game/scenario/9_0_1.rpy:1375
-translate portuguese ddc573cb:
+# game/scenario/9_0_1.rpy:566
+translate portuguese cf23617d:
 
-    # kami "Vote immédiat."
-    kami ""
+    # iris blase "T'es bien naïve. Mais on a plus vraiment le choix de toute façon..."
+    iris blase "Você é muito ingênua. Mas, de qualquer forma, já não temos escolha..."
 
-# game/scenario/9_0_1.rpy:1382
-translate portuguese 370b7b01:
+# game/scenario/9_0_1.rpy:570
+translate portuguese 66aaef71:
 
-    # "Les pupitres s'allument."
-    ""
+    # "Personne ne regarde vraiment son écran. Tous cherchent sur les visages des autres le moindre signe d'hésitation."
+    "Ninguém olha de verdade para a própria tela. Todos procuram no rosto dos outros o menor sinal de hesitação."
 
-# game/scenario/9_0_1.rpy:1383
-translate portuguese 98ce3783:
+# game/scenario/9_0_1.rpy:572
+translate portuguese 81cc477e:
 
-    # "Douze halos blancs. Douze petites surfaces propres, absurdes."
-    ""
+    # think "Une seule voix contre suffit. Une seconde de peur peut annuler tout ce que nous venons de tenter."
+    think "Um único voto contra basta. Um segundo de medo pode anular tudo que acabamos de tentar."
 
-# game/scenario/9_0_1.rpy:1387
-translate portuguese 8a643a3a:
+# game/scenario/9_0_1.rpy:577
+translate portuguese d003926e:
 
-    # "Sur chaque écran, le même choix attend."
-    ""
+    # kami "Je vous rappelle que ne pas voter n'est pas une échappatoire. Dans le contexte actuel, votre silence aurait une valeur morale particulièrement intéressante."
+    kami "Lembro que não votar não é uma saída. No contexto atual, seu silêncio teria um peso moral particularmente interessante."
 
-# game/scenario/9_0_1.rpy:1388
-translate portuguese 4d2d221f:
+# game/scenario/9_0_1.rpy:580
+translate portuguese b7e51734:
 
-    # "POUR."
-    ""
+    # kami "Je suis certaine que les Limenois apprécieront toutes vos nuances."
+    kami "Tenho certeza de que os Limenianos vão apreciar todas as suas nuances."
 
-# game/scenario/9_0_1.rpy:1389
-translate portuguese d9c1794a:
+# game/scenario/9_0_1.rpy:616
+translate portuguese 165b0a70:
 
-    # "CONTRE."
-    ""
+    # "Les pupitres enregistrent les choix puis s'éteignent les uns après les autres. Aucun nom, aucune main levée, seulement douze bulletins anonymes."
+    "Os terminais registram as escolhas e se apagam um após o outro. Nenhum nome, nenhuma mão levantada, apenas doze votos anônimos."
 
-# game/scenario/9_0_1.rpy:1402
-translate portuguese 381af514:
+# game/scenario/9_0_1.rpy:618
+translate portuguese 581dbbfb:
 
-    # "Personne ne regarde vraiment son pupitre."
-    ""
+    # think "Personne ne sait ce que les autres viennent de faire. Dans quelques secondes, un seul vote peut condamner tous les campements."
+    think "Ninguém sabe o que os outros fizeram. Em poucos segundos, um único voto pode condenar todos os acampamentos."
 
-# game/scenario/9_0_1.rpy:1403
-translate portuguese f0f02463:
+# game/scenario/9_0_1.rpy:681
+translate portuguese 994c2671:
 
-    # "Tout le monde regarde les autres."
-    ""
+    # kami "Résultat du vote : unanimité des suffrages exprimés. Aucun vote défavorable enregistré."
+    kami "Resultado da votação: unanimidade entre os votos expressos. Nenhum voto contrário registrado."
 
-# game/scenario/9_0_1.rpy:1404
-translate portuguese 32556caa:
+# game/scenario/9_0_1.rpy:684
+translate portuguese 0dcc3e4e:
 
-    # "Comme si une hésitation pouvait contaminer la salle."
-    ""
+    # kami "L'unanimité a été atteinte. Les Commandements sont donc modifiés et ils s'appliquent immédiatement."
+    kami "A unanimidade foi alcançada. Portanto, os Mandamentos foram alterados e entram em vigor imediatamente."
 
-# game/scenario/9_0_1.rpy:1406
-translate portuguese db06d90d:
+# game/scenario/9_0_1.rpy:688
+translate portuguese 86845c08:
 
-    # think "Si quelqu'un refuse..."
-    think ""
+    # kami "Les regroupements de plus de vingt personnes sont désormais autorisés sous déclaration préalable. Application immédiate."
+    kami "As reuniões de mais de vinte pessoas agora estão autorizadas mediante declaração prévia. Aplicação imediata."
 
-# game/scenario/9_0_1.rpy:1407
-translate portuguese 9bc1fec8:
+# game/scenario/9_0_1.rpy:691
+translate portuguese e4fcb745:
 
-    # think "Si quelqu'un tremble trop longtemps..."
-    think ""
+    # kami "La majorité des campements a eu le temps de se disperser ou de transmettre une déclaration d'urgence. Les pertes anticipées sont fortement réduites."
+    kami "A maioria dos acampamentos teve tempo de se dispersar ou enviar uma declaração de emergência. As perdas previstas foram bastante reduzidas."
 
-# game/scenario/9_0_1.rpy:1408
-translate portuguese 634ef8be:
+# game/scenario/9_0_1.rpy:693
+translate portuguese 0be438ab:
 
-    # think "Si quelqu'un veut encore sauver un principe au lieu de sauver des vies..."
-    think ""
+    # kami "Plusieurs campements ont reçu votre avertissement et se sont dispersés. Une partie des groupes sont néanmoins restés exposés."
+    kami "Vários acampamentos receberam seu aviso e se dispersaram. Alguns grupos, no entanto, continuaram expostos."
 
-# game/scenario/9_0_1.rpy:1415
-translate portuguese 5f7f8203:
+# game/scenario/9_0_1.rpy:695
+translate portuguese 2fcba791:
 
-    # kami "Je vous rappelle que ne pas voter n'est pas une échappatoire."
-    kami ""
+    # kami "Votre signal incomplet a atteint une fraction des campements. Une part significative des personnes sera éliminée pour ne pas avoir respecté les Commandements."
+    kami "Seu sinal incompleto alcançou apenas uma parte dos acampamentos. Um número significativo de pessoas será eliminado por não ter respeitado os Mandamentos."
 
-# game/scenario/9_0_1.rpy:1416
-translate portuguese d751acbf:
+# game/scenario/9_0_1.rpy:697
+translate portuguese 4a6b765f:
 
-    # kami "Dans le contexte actuel, le silence aura une valeur morale très intéressante."
-    kami ""
+    # kami "Votre signal a été largement inefficace. Le vote protège les campements encore reconnus comme tels, mais plusieurs applications du Commandement ont précédé l'enregistrement."
+    kami "Seu sinal foi amplamente ineficaz. A votação protege os acampamentos ainda reconhecidos como tais, mas várias aplicações do Mandamento aconteceram antes do registro."
 
-# game/scenario/9_0_1.rpy:1420
-translate portuguese 23d15e08:
+# game/scenario/9_0_1.rpy:700
+translate portuguese e008745e:
 
-    # kami "Je suis certaine que les Limenois apprécieront vos nuances."
-    kami ""
+    # kami "Vous voyez ? Lorsque vous obéissez à la procédure, des vies peuvent être sauvées. Ou pas."
+    kami "Viram? Quando seguem o procedimento, vidas podem ser salvas. Ou não."
 
-# game/scenario/9_0_1.rpy:1425
-translate portuguese 261f363f:
+# game/scenario/9_0_1.rpy:703
+translate portuguese a436758c:
 
-    # "Un silence compact tombe sur la salle."
-    ""
+    # kami "Quelle belle leçon collective. Ah, et n'oubliez pas !"
+    kami "Que bela lição coletiva. Ah, e não se esqueçam!"
 
-# game/scenario/9_0_1.rpy:1426
-translate portuguese 0b34678d:
+# game/scenario/9_0_1.rpy:706
+translate portuguese 68ec5e07:
 
-    # "Pas un silence de réflexion."
-    ""
+    # kami "Je ne disparaîtrai jamais !"
+    kami "Eu nunca vou desaparecer!"
 
-# game/scenario/9_0_1.rpy:1427
-translate portuguese df4dd10d:
+# game/scenario/9_0_1.rpy:711
+translate portuguese 91a1cb19:
 
-    # "Un silence de gorge serrée."
-    ""
+    # "Personne ne répond. Nous avons obtenu l'unanimité, mais le bilan de Kami transforme le soulagement en quelque chose de trop lourd pour être appelé une victoire."
+    "Ninguém responde. Conseguimos a unanimidade, mas o balanço de Kami transforma o alívio em algo pesado demais para ser chamado de vitória."
 
-# game/scenario/9_0_1.rpy:1460
-translate portuguese 050a30d6:
+# game/scenario/9_0_1.rpy:717
+translate portuguese 1192366a:
 
-    # "Les pupitres enregistrent les choix."
-    ""
+    # "Le retour jusqu'aux chambres se fait sans discussion. Les portes s'ouvrent et se ferment tandis que nos pas résonnent dans le couloir."
+    "Voltamos aos quartos sem conversar. As portas se abrem e fecham enquanto nossos passos ecoam pelo corredor."
 
-# game/scenario/9_0_1.rpy:1461
-translate portuguese 951399ef:
+# game/scenario/9_0_1.rpy:719
+translate portuguese 384a8a97:
 
-    # "Pas de voix. Pas de main levée."
-    ""
+    # think "Nous avons sauvé ceux qui ont eu le temps de nous écouter. Pour les autres... Nous avons fait ce qu'on a pu..."
+    think "Salvamos quem teve tempo de nos ouvir. Quanto aos outros... fizemos o que podíamos..."
 
-# game/scenario/9_0_1.rpy:1462
-translate portuguese e7ecf329:
+# game/scenario/9_0_1.rpy:724
+translate portuguese 18fec6a7:
 
-    # "Pas de confession courageuse ou lâche."
-    ""
+    # "Je rentre dans ma chambre. Je reste debout devant le lit, les mains vides et la gorge sèche."
+    "Volto para o quarto. Fico de pé diante da cama, de mãos vazias e com a garganta seca."
 
-# game/scenario/9_0_1.rpy:1466
-translate portuguese 8acb9112:
+# game/scenario/9_0_1.rpy:726
+translate portuguese c20e2f72:
 
-    # "Seulement des écrans qui s'éteignent les uns après les autres."
-    ""
+    # think "Nous avons gagné. Non... Nous avons voté assez vite pour que Kami puisse appeler ça une victoire."
+    think "Nós vencemos. Não... votamos depressa o bastante para Kami chamar isso de vitória."
 
-# game/scenario/9_0_1.rpy:1467
-translate portuguese 76343816:
+# game/scenario/9_0_1.rpy:727
+translate portuguese 5a579a66:
 
-    # "Et personne ne sait vraiment ce que les autres viennent de faire."
-    ""
+    # think "On a essayé de gagner du temps. Mais est-ce que ce sera suffisant ?"
+    think "Tentamos ganhar tempo. Mas será que foi suficiente?"
 
-# game/scenario/9_0_1.rpy:1533
-translate portuguese b13f53e0:
+# game/scenario/9_0_1.rpy:729
+translate portuguese ef5ab79f:
 
-    # kami "Unanimité des suffrages exprimés."
-    kami ""
+    # "Je m'assieds et fixe l'écran mural entièrement noir."
+    "Sento e encaro a tela totalmente preta na parede."
 
-# game/scenario/9_0_1.rpy:1534
-translate portuguese 62d625ef:
+# game/scenario/9_0_1.rpy:731
+translate portuguese b3901ca8:
 
-    # kami "Aucun vote défavorable enregistré."
-    kami ""
+    # think "Demain matin, il se rallumera et tout reprendra comme avant..."
+    think "Amanhã de manhã, ela vai acender de novo e tudo voltará a ser como antes..."
 
-# game/scenario/9_0_1.rpy:1540
-translate portuguese 1d364dcc:
+# game/scenario/9_0_1.rpy:732
+translate portuguese ffffb7d2:
 
-    # kami "Unanimité atteinte."
-    kami ""
+    # think "Putain mais quel enfer !"
+    think "Porra, que inferno!"
 
-# game/scenario/9_0_1.rpy:1542
-translate portuguese 4228b1a4:
+# game/scenario/9_0_1.rpy:747
+translate portuguese 154ccaef:
 
-    # kami "Amendement adopté."
-    kami ""
+    # kami "Résultat du vote : absence d'unanimité."
+    kami "Resultado da votação: ausência de unanimidade."
 
-# game/scenario/9_0_1.rpy:1548
-translate portuguese e9331de7:
+# game/scenario/9_0_1.rpy:749
+translate portuguese 2e500339:
 
-    # kami "Les regroupements de plus de vingt personnes sont désormais autorisés sous déclaration préalable."
-    kami ""
+    # kami "L'amendement est rejeté."
+    kami "A emenda foi rejeitada."
 
-# game/scenario/9_0_1.rpy:1549
-translate portuguese 5f02f29b:
+# game/scenario/9_0_1.rpy:753
+translate portuguese 359ee811:
 
-    # kami "Application immédiate."
-    kami ""
+    # kami "L'interdiction des regroupements de plus de vingt personnes demeure en vigueur. Les campements limenois restent donc des rassemblements illégaux."
+    kami "A proibição de reuniões com mais de vinte pessoas continua em vigor. Portanto, os acampamentos de Limen continuam sendo reuniões ilegais."
 
-# game/scenario/9_0_1.rpy:1554
-translate portuguese 8e605d67:
+# game/scenario/9_0_1.rpy:757
+translate portuguese 1f1f448a:
 
-    # kami "Bilan provisoire : la majorité des campements a eu le temps de se disperser ou de transmettre une déclaration d'urgence."
-    kami ""
+    # kami "Le Commandement IV rentre donc de nouveau en application, selon vos désirs."
+    kami "O Mandamento IV volta a ser aplicado, conforme o desejo de vocês."
 
-# game/scenario/9_0_1.rpy:1555
-translate portuguese 60c1658e:
+# game/scenario/9_0_1.rpy:762
+translate portuguese 6cb380ef:
 
-    # kami "Pertes anticipées : réduites."
-    kami ""
+    # "Pendant une seconde, personne ne réagit. Puis nous comprenons tous en même temps ce que signifie son dernier mot."
+    "Por um segundo, ninguém reage. Então todos entendemos ao mesmo tempo o que significa a última palavra dela."
 
-# game/scenario/9_0_1.rpy:1557
-translate portuguese a6352051:
+# game/scenario/9_0_1.rpy:773
+translate portuguese 2526c20c:
 
-    # kami "Bilan provisoire : plusieurs campements ont reçu votre avertissement."
-    kami ""
+    # "Le Conclave tremble. Très loin sous nos pieds, un mécanisme immense commence à s'aligner."
+    "O Conclave treme. Bem longe sob nossos pés, um mecanismo imenso começa a se alinhar."
 
-# game/scenario/9_0_1.rpy:1558
-translate portuguese f4abc8c1:
+# game/scenario/9_0_1.rpy:775
+translate portuguese d7a3e3c1:
 
-    # kami "Une partie reste exposée."
-    kami ""
+    # ryn colere2 "Non ! Putain mais qui a voté contre ?!"
+    ryn colere2 "Não! Porra, quem votou contra?!"
 
-# game/scenario/9_0_1.rpy:1560
-translate portuguese 46449370:
+# game/scenario/9_0_1.rpy:776
+translate portuguese badf0832:
 
-    # kami "Bilan provisoire : signal incomplet."
-    kami ""
+    # ryn colere "Vous êtes des grands malades !!"
+    ryn colere "Vocês estão completamente malucos!!"
 
-# game/scenario/9_0_1.rpy:1561
-translate portuguese a0c4fcc2:
+# game/scenario/9_0_1.rpy:778
+translate portuguese e008d72e:
 
-    # kami "Une fraction significative des campements reste menacée malgré votre vote."
-    kami ""
+    # "Personne ne répond. Tout le monde baisse la tête. Cet échec, c'est le nôtre."
+    "Ninguém responde. Todos baixam a cabeça. Esse fracasso é nosso."
 
-# game/scenario/9_0_1.rpy:1563
-translate portuguese 05da2b8d:
+# game/scenario/9_0_1.rpy:780
+translate portuguese 319c673c:
 
-    # kami "Bilan provisoire : signal inefficace."
-    kami ""
+    # think "Ai-je bien fait de voter contre ?"
+    think "Fiz bem em votar contra?"
 
-# game/scenario/9_0_1.rpy:1564
-translate portuguese b9559d16:
+# game/scenario/9_0_1.rpy:782
+translate portuguese dca742c8:
 
-    # kami "Le vote sauve les structures encore identifiables comme campements, mais arrive après plusieurs applications du Commandement."
-    kami ""
+    # "Tout le monde se disperse alors que les murs tremblent sous les tirs incessants du Conclave."
+    "Todos se dispersam enquanto as paredes tremem sob os disparos incessantes do Conclave."
 
-# game/scenario/9_0_1.rpy:1570
-translate portuguese a7d8dea8_1:
+# game/scenario/9_0_1.rpy:791
+translate portuguese 179896aa:
 
-    # kami "Vous voyez ?"
-    kami ""
+    # "Je ne sais même plus comment a fini cette journée."
+    "Eu nem lembro como aquele dia terminou."
 
-# game/scenario/9_0_1.rpy:1571
-translate portuguese 3c2373c8:
+# game/scenario/9_0_1.rpy:792
+translate portuguese 8d8e976b:
 
-    # kami "Quand vous obéissez à la procédure, des vies peuvent être sauvées."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1577
-translate portuguese 4c803492:
-
-    # kami "Quelle belle leçon collective."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1582
-translate portuguese 96aae473_2:
-
-    # "Personne ne répond."
-    ""
-
-# game/scenario/9_0_1.rpy:1583
-translate portuguese 0605568a:
-
-    # "Personne n'a la force."
-    ""
-
-# game/scenario/9_0_1.rpy:1590
-translate portuguese 74462644:
-
-    # "Le retour jusqu'aux chambres se fait sans discussion."
-    ""
-
-# game/scenario/9_0_1.rpy:1591
-translate portuguese 9c84f0c8:
-
-    # "Les portes s'ouvrent."
-    ""
-
-# game/scenario/9_0_1.rpy:1592
-translate portuguese 3f3d7353:
-
-    # "Les portes se ferment."
-    ""
-
-# game/scenario/9_0_1.rpy:1593
-translate portuguese 29daf791:
-
-    # "Les pas résonnent dans le couloir comme des fautes qu'on compte une par une."
-    ""
-
-# game/scenario/9_0_1.rpy:1599
-translate portuguese 1b288b90:
-
-    # "Je rentre dans ma chambre."
-    ""
-
-# game/scenario/9_0_1.rpy:1600
-translate portuguese 085757dd:
-
-    # "Je ne me souviens pas d'avoir marché jusque-là."
-    ""
-
-# game/scenario/9_0_1.rpy:1602
-translate portuguese a1d7dc44:
-
-    # "Je reste debout devant le lit."
-    ""
-
-# game/scenario/9_0_1.rpy:1603
-translate portuguese f3497748:
-
-    # "Les mains vides."
-    ""
-
-# game/scenario/9_0_1.rpy:1604
-translate portuguese bf773c20:
-
-    # "La gorge sèche."
-    ""
-
-# game/scenario/9_0_1.rpy:1606
-translate portuguese a93774fa:
-
-    # think "On a gagné."
-    think ""
-
-# game/scenario/9_0_1.rpy:1610
-translate portuguese d1af98c2_10:
-
-    # think "Non."
-    think ""
-
-# game/scenario/9_0_1.rpy:1611
-translate portuguese 29a83d96:
-
-    # think "On a voté assez vite pour que Kami puisse appeler ça une victoire."
-    think ""
-
-# game/scenario/9_0_1.rpy:1613
-translate portuguese 0a483a61:
-
-    # "Je m'assois."
-    ""
-
-# game/scenario/9_0_1.rpy:1614
-translate portuguese d05cb33d:
-
-    # "Le matelas plie sous moi."
-    ""
-
-# game/scenario/9_0_1.rpy:1615
-translate portuguese 84fbea3d:
-
-    # "Tout le reste reste droit."
-    ""
-
-# game/scenario/9_0_1.rpy:1616
-translate portuguese 83ac2bd2:
-
-    # "Trop droit."
-    ""
-
-# game/scenario/9_0_1.rpy:1618
-translate portuguese d19c7a58:
-
-    # think "Des gens sont peut-être vivants parce qu'on a levé la main."
-    think ""
-
-# game/scenario/9_0_1.rpy:1619
-translate portuguese ff9bd036:
-
-    # think "Des gens sont peut-être morts parce qu'on a dû lui demander la permission."
-    think ""
-
-# game/scenario/9_0_1.rpy:1623
-translate portuguese a7187640:
-
-    # "Je regarde l'écran mural."
-    ""
-
-# game/scenario/9_0_1.rpy:1624
-translate portuguese 2e4d3978:
-
-    # "Il est noir."
-    ""
-
-# game/scenario/9_0_1.rpy:1625
-translate portuguese ec72eabe:
-
-    # "Pour une fois, j'aurais presque préféré qu'il montre quelque chose."
-    ""
-
-# game/scenario/9_0_1.rpy:1627
-translate portuguese fe88459a:
-
-    # think "Juste un chiffre."
-    think ""
-
-# game/scenario/9_0_1.rpy:1628
-translate portuguese b52a804e:
-
-    # think "Même froid."
-    think ""
-
-# game/scenario/9_0_1.rpy:1629
-translate portuguese b649800b:
-
-    # think "Même cruel."
-    think ""
-
-# game/scenario/9_0_1.rpy:1630
-translate portuguese 41005058:
-
-    # think "Quelque chose à détester précisément."
-    think ""
-
-# game/scenario/9_0_1.rpy:1634
-translate portuguese e56eedad:
-
-    # "Mais il n'y a rien."
-    ""
-
-# game/scenario/9_0_1.rpy:1635
-translate portuguese bfcaca0a:
-
-    # "Seulement ma chambre."
-    ""
-
-# game/scenario/9_0_1.rpy:1636
-translate portuguese 52f9a488:
-
-    # "Et cette victoire sale."
-    ""
-
-# game/scenario/9_0_1.rpy:1653
-translate portuguese 69b04011_1:
-
-    # kami "Résultat du vote."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1654
-translate portuguese 12138cb4:
-
-    # kami "Absence d'unanimité."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1662
-translate portuguese b458ed27:
-
-    # kami "L'interdiction des regroupements de plus de vingt personnes demeure en vigueur."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1663
-translate portuguese 2f8a6f54:
-
-    # kami "Les campements limenois aux frontières sont donc des rassemblements illégaux."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1669
-translate portuguese 73ec8431:
-
-    # kami "Application du Commandement IV."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1676
-translate portuguese eb8fe673:
-
-    # "Pendant une seconde, personne ne comprend."
-    ""
-
-# game/scenario/9_0_1.rpy:1677
-translate portuguese fb346f5c:
-
-    # "Ou plutôt, tout le monde comprend en même temps."
-    ""
-
-# game/scenario/9_0_1.rpy:1682
-translate portuguese 1ef41578:
-
-    # "Le Conclave tremble."
-    ""
-
-# game/scenario/9_0_1.rpy:1683
-translate portuguese d23cbe6e:
-
-    # "Très loin sous nos pieds, quelque chose s'aligne."
-    ""
-
-# game/scenario/9_0_1.rpy:1685
-translate portuguese 12503a3e:
-
-    # ryn colere2 "Non."
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:1690
-translate portuguese a3863f00:
-
-    # "Le premier tir part."
-    ""
-
-# game/scenario/9_0_1.rpy:1691
-translate portuguese 027b8e69:
-
-    # "Même à travers les murs, la lumière trouve une manière d'exister."
-    ""
-
-# game/scenario/9_0_1.rpy:1693
-translate portuguese b9f21211:
-
-    # "Un flash blanc avale la salle."
-    ""
-
-# game/scenario/9_0_1.rpy:1697
-translate portuguese 726b6eeb:
-
-    # think "Jour 10 commence avant la nuit."
-    think ""
-
-# game/scenario/9_0_1.rpy:1698
-translate portuguese f1136d01:
-
-    # think "Et cette fois, il commence par un tir."
-    think ""
-
-translate portuguese strings:
-
-    # game/scenario/9_0_1.rpy:109
-    old "Repousser la chaise de la porte."
-    new ""
-
-    # game/scenario/9_0_1.rpy:109
-    old "La laisser contre la porte encore quelques secondes."
-    new ""
-
-# TODO: Translation updated at 2026-08-24 09:48
-
-# game/scenario/9_0_1.rpy:686
-translate portuguese df63b9b9_3:
-
-    # noam inquiet "Oui."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:899
-translate portuguese 3ed5d2a3_1:
-
-    # nyra raison "Pourquoi ?"
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:1015
-translate portuguese 900cae6c_1:
-
-    # nyra raison "Non."
-    nyra raison ""
+    # "La seule chose dont je me souviens, c’est mon réveil du lendemain."
+    "A única coisa de que me lembro é de acordar na manhã seguinte."
 

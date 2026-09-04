@@ -357,7 +357,7 @@ label decouverte_salle_canon:
     "Il se détourne du canon."
     "Pour la première fois."
 
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     # Micro-shift : après le tir, Noam se recentre légèrement, Ryn se “referme”
 

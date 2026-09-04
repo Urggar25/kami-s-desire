@@ -1356,3 +1356,153 @@ translate chinese a63d1c33:
     # think "J'essaierai de lui parler demain. Pour le moment, je n'arrive même plus à garder les yeux ouverts."
     think "明天我会试着和她谈谈。现在，我连眼睛都睁不开了。"
 
+# TODO: Translation updated at 2026-08-28 11:00
+
+# game/scenario/4_1.rpy:114
+translate chinese 3577068a:
+
+    # lysa determine "Tu regrettes déjà ?"
+    lysa determine ""
+
+# game/scenario/4_1.rpy:116
+translate chinese 2033b383:
+
+    # lysa sourire "Au moins, là, on a réussi."
+    lysa sourire ""
+
+# game/scenario/4_1.rpy:228
+translate chinese 1694fe79:
+
+    # kami "Autoriser les déplacements de personnes entre les districts ?"
+    kami ""
+
+# game/scenario/4_1.rpy:313
+translate chinese b6c5cf6e:
+
+    # "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
+    ""
+
+# game/scenario/4_1.rpy:323
+translate chinese f1f91550:
+
+    # "Mara se lève et la suit en courant hors de la pièce."
+    ""
+
+# game/scenario/4_1.rpy:331
+translate chinese 9074587d:
+
+    # ryn colere "On ne peut pas laisser ça comme ça."
+    ryn colere ""
+
+# game/scenario/4_1.rpy:340
+translate chinese cd188e58:
+
+    # iris desaccord "Bravo. Vous avez transformé un débat politique en concours pour savoir qui blesserait Sael le plus vite. Très efficace."
+    iris desaccord ""
+
+# game/scenario/4_1.rpy:418
+translate chinese 086827d7:
+
+    # "La porte est entrouverte. Je frappe doucement."
+    ""
+
+# game/scenario/4_1.rpy:455
+translate chinese e53d0209:
+
+    # "Iris retient un sourire et se lève."
+    ""
+
+# game/scenario/4_1.rpy:476
+translate chinese 9b2d1ffe:
+
+    # think "La musique nous rejoint avant la salle. Au moins, Elen n'a pas perdu de temps."
+    think ""
+
+# game/scenario/4_1.rpy:497
+translate chinese 05e439e3:
+
+    # elen joie "On a gagné hier. Enfin, aujourd'hui c'est compliqué, mais hier on a gagné, donc ça compte encore un peu !"
+    elen joie ""
+
+# game/scenario/4_1.rpy:575
+translate chinese 901ac0b2:
+
+    # "La bouteille tourne sur la table basse."
+    ""
+
+# game/scenario/4_1.rpy:579
+translate chinese b0149395:
+
+    # mara taquin "Oh, Tomas… Cette innocence va me tuer."
+    mara taquin ""
+
+# game/scenario/4_1.rpy:585
+translate chinese 0035c292:
+
+    # "Mara lui barre le passage d'un pas, sans la toucher."
+    ""
+
+# game/scenario/4_1.rpy:589
+translate chinese ed18ae3f:
+
+    # iris fatigue "Tu es épuisante."
+    iris fatigue ""
+
+# game/scenario/4_1.rpy:590
+translate chinese dbb456a9:
+
+    # iris gene "Bon. Je reste. Et je joue… seulement si Noam joue aussi."
+    iris gene ""
+
+# game/scenario/4_1.rpy:594
+translate chinese 691691dd:
+
+    # iris gene "Pour rien ! Enfin— parce que c'est moins stupide si tout le monde participe. C'est tout."
+    iris gene ""
+
+# game/scenario/4_1.rpy:669
+translate chinese b993b656:
+
+    # "La bouteille tourne… s’arrête sur Tomas."
+    ""
+
+# game/scenario/4_1.rpy:673
+translate chinese 798a48c6:
+
+    # "La bouteille pointe Sael."
+    ""
+
+# game/scenario/4_1.rpy:689
+translate chinese 6e2e333d:
+
+    # "Sael pose une main sur la nuque de Tomas et l'embrasse doucement. Quand elle recule, il est écarlate."
+    ""
+
+# game/scenario/4_1.rpy:709
+translate chinese 043efa3b:
+
+    # "La bouteille tourne… s’arrête sur Kael."
+    ""
+
+# game/scenario/4_1.rpy:713
+translate chinese 89e06078:
+
+    # "La bouteille repart et pointe Elias."
+    ""
+
+# game/scenario/4_1.rpy:720
+translate chinese b9a7f5fb:
+
+    # kael gene "Je ne sais pas."
+    kael gene ""
+
+translate chinese strings:
+
+    # game/scenario/4_1.rpy:600
+    old "Accepter de jouer"
+    new ""
+
+    # game/scenario/4_1.rpy:600
+    old "Refuser poliment"
+    new ""
+

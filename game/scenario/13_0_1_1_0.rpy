@@ -1,5 +1,9 @@
 label _13_0_1_1_0_REVEIL_CHAMBRE:
 
+    $ cafeteria_food_level = "none"
+
+    #/!\ Faire en sorte qu'il n'y a plus aucune nourriture
+
     scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
     play sound sfx_metal_clank volume 0.7
@@ -203,7 +207,6 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
     "Puis il y a un autre clac métallique, plus lointain."
     "Une autre chambre."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_68
     scene bg_chambre at adaptive_fullscreen with fade
 
     "Je reste assis sur mon lit, les yeux fixés sur le trou béant dans le mur où se trouvait mon brouilleur il y a encore deux minutes."
@@ -284,7 +287,7 @@ label _13_0_1_1_CAFETERIA:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_69
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_careful_wanting.mp3" fadein 2.5
+    play music "music/bgm_world_decline.mp3" fadein 2.5
 
     "La cafétéria est déjà bien remplie quand j’arrive. L’ambiance est étrange : bruyante, mais dès que j’apparais à l’entrée, plusieurs conversations s’arrêtent net."
     "Ce n’est pas un silence total."

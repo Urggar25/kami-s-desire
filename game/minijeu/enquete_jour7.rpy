@@ -516,7 +516,7 @@ label j701_investigation:
     scene black
     play sound "audio/sfx_minigame_start.mp3"
     call screen j701_investigation_intro
-    play music "audio/music/bgm_low_tension.mp3" fadein 1.0
+    play music "audio/music/bgm_world_decline.mp3" fadein 1.0
 
     while len(j701_investigation_found) < J701_INVESTIGATION_MAX_TURNS:
         $ _j701_selected_room = renpy.call_screen("j701_investigation_locations")
@@ -782,7 +782,7 @@ label j701_clue_impossible_echo:
 label j701_investigation_debrief:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_23
     scene bg_cafeteria at adaptive_fullscreen with fade
-    play music "audio/music/bgm_unsaid_distance.mp3" fadein 1.5
+    play music "audio/music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
     "La nuit est tombée pendant que nous courions d'une salle à l'autre. Les fragments de preuve occupent maintenant toute la table."
 

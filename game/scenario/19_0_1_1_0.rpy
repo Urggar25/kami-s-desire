@@ -1,5 +1,4 @@
 label _19_0_1_1_0_BARRICADE:
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_110
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
     "Je pousse le bureau contre la porte, puis la chaise contre le bureau."
@@ -35,7 +34,6 @@ label _19_0_1_1_0_BARRICADE:
     jump _19_0_1_1_0_ENTREE_CONDUIT
 
 label _19_0_1_1_0_ENTREE_CONDUIT:
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_111
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "determine", 0.27), ("mara", "stress", 0.67)])
     mara "Tu as barricade la porte et ensuite tu m'as appelee."

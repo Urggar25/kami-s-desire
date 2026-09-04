@@ -126,6 +126,7 @@ init python:
         "surpris": ("corps_1", "bras_sur_torse", "bouche_decu", "yeux_peur"),
         "triste": ("corps_1", "bras_croise", "bouche_decu", "yeux_blase"),
         "peur": ("corps_1", "bras_long_corps", "bouche_peur", "yeux_peur"),
+        "mefiant": ("corps_1", "bras_croise", "bouche_colere", "yeux_blase"),
     }
 
     def _elias_asset(name):
@@ -181,6 +182,7 @@ image elias taquin              = elias_expression("taquin")
 image elias surpris              = elias_expression("surpris")
 image elias triste              = elias_expression("triste")
 image elias peur              = elias_expression("peur")
+image elias mefiant              = elias_expression("mefiant")
 
 # ======================
 # MARA
@@ -249,6 +251,7 @@ image mara colere             = mara_expression("colere")
 image mara colere_noire       = mara_expression("colere_noire")
 image mara content            = mara_expression("content")
 image mara doute              = mara_expression("doute")
+image mara desaccord          = mara_expression("doute")
 image mara jaloux             = mara_expression("jaloux")
 image mara joie               = mara_expression("joie")
 image mara mefiant            = mara_expression("mefiant")
@@ -344,6 +347,7 @@ image noam desaccord           = noam_expression("desaccord")
 image noam desespoir           = noam_expression("desespoir")
 image noam determine           = noam_expression("determine")
 image noam hesitation          = noam_expression("hesitation")
+image noam gene                = noam_expression("hesitation")
 image noam inquiet             = noam_expression("inquiet")
 image noam joie                = noam_expression("joie")
 image noam neutre              = noam_expression("neutre")
@@ -1174,6 +1178,79 @@ image sael surpris              = sael_expression("surpris")
 image sael taquin               = sael_expression("taquin")
 image sael triste               = sael_expression("triste")
 image sael vide                 = sael_expression("vide")
+
+# ======================
+# ANYA
+# ======================
+init python:
+    ANYA_IMAGE_SIZE = (1024, 1536)
+    ANYA_IMAGE_SCALE = 0.60
+    ANYA_ASSET_DIR = "images/character/anya"
+
+    # Les bras sont deja dessines dans corps_1. Une valeur de bouche a None
+    # conserve la bouche neutre directement presente sur le corps.
+    ANYA_EXPRESSIONS = {
+        "neutre": (None, "yeux_ouvert"),
+        "sourire": (None, "yeux_ouvert"),
+        "decu": ("bouche_decu", "yeux_ouvert"),
+        "hesitation": ("bouche_decu", "yeux_ouvert"),
+        "peur": ("bouche_peur", "yeux_ouvert"),
+        "inquiet": ("bouche_peur", "yeux_ouvert"),
+        "surpris": ("bouche_surpris", "yeux_ouvert"),
+        "triste": ("bouche_triste", "yeux_ouvert"),
+        "fatigue": ("bouche_triste", "yeux_ouvert"),
+        "reflexion": (None, "yeux_ouvert"),
+        "colere": ("bouche_peur", "yeux_ouvert"),
+        "desaccord": ("bouche_decu", "yeux_ouvert"),
+    }
+
+    def _anya_asset(name):
+        return "%s/%s.png" % (ANYA_ASSET_DIR, name)
+
+    def _anya_is_speaking():
+        return is_character_speaking("anya")
+
+    def _anya_layered_expression(st, at, expr):
+        mouth, eyes = ANYA_EXPRESSIONS.get(expr, ANYA_EXPRESSIONS["neutre"])
+
+        blink_phase = st % 4.9
+        if 4.62 <= blink_phase <= 4.78:
+            eyes = "yeux_ferme"
+
+        zoom = ANYA_IMAGE_SCALE
+        speaking = _anya_is_speaking()
+        if speaking:
+            mouth_phase = st % 0.32
+            if mouth_phase < 0.16:
+                mouth = "bouche_parle"
+            zoom = ANYA_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
+
+        # Ordre propre a Anya : corps (avec bras), bouche, puis yeux.
+        asset_paths = [_anya_asset("corps_1")]
+        if mouth:
+            asset_paths.append(_anya_asset(mouth))
+        asset_paths.append(_anya_asset(eyes))
+
+        displayable = kd_cached_layered_sprite(
+            ANYA_IMAGE_SIZE, zoom, tuple(asset_paths),
+        )
+        return displayable, kd_layered_sprite_delay(st, 4.9, 4.62, 4.78, speaking)
+
+    def anya_expression(expr):
+        return DynamicDisplayable(_anya_layered_expression, expr)
+
+image anya neutre              = anya_expression("neutre")
+image anya sourire             = anya_expression("sourire")
+image anya decu                = anya_expression("decu")
+image anya hesitation          = anya_expression("hesitation")
+image anya peur                = anya_expression("peur")
+image anya inquiet             = anya_expression("inquiet")
+image anya surpris             = anya_expression("surpris")
+image anya triste              = anya_expression("triste")
+image anya fatigue             = anya_expression("fatigue")
+image anya reflexion           = anya_expression("reflexion")
+image anya colere              = anya_expression("colere")
+image anya desaccord           = anya_expression("desaccord")
 
 # ======================
 # Goumi

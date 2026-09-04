@@ -4,6 +4,7 @@ label _2_CANON:
     $ current_day = 2
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
+    $ cafeteria_food_level = "high"
 
     scene black
     play music "music/main_menu.mp3" fadein 1.0
@@ -112,9 +113,8 @@ label _2_CANON:
     stop music fadeout 1.0
 
     # Réveil réel
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_144
     scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     think "Cette fois, je suis complètement réveillé. Hier, tout s’est enchaîné trop vite pour vraiment réfléchir."
     think "Maintenant, le calme ramène tout ce que j'ai essayé de refouler jusque-là."
@@ -399,7 +399,6 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     stop music fadeout 1.0
 
     pause 0.8
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_146
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
 
@@ -519,6 +518,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 label _2_CAFETERIA_POST_ANNONCE:
 
     show screen day2_quick_vote_notes
+
+    call play_stat_dialogue("d2") from _call_stat_dialogue_d2
 
     think "Tout le monde sort sa tablette."
 
@@ -865,7 +866,6 @@ label _2_APRES_MIDI_LYSA_ELIAS:
 label _2_APRES_MIDI_ELEN:
 
     $ day2_observation_route_elen_seen = True
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_147
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -982,7 +982,6 @@ label _2_SALLE_OBSERVATION:
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_149
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
@@ -1218,9 +1217,8 @@ label _2_CAFETERIA_SOIR:
 
     think "L'eau chaude efface le bruit de mes pensées."
 
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_156
     scene bg_chambre at adaptive_fullscreen with fade
     think "Je me sèche et tombe sur le lit."
     

@@ -1,5 +1,4 @@
 label _17_0_1_1_0_ANNONCE_KAMI:
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_102
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
@@ -96,7 +95,7 @@ label _17_0_1_1_0_COUULOIR_REACTIONS:
 label _17_0_1_1_0_CAFETERIA:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_104
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_careful_wanting.mp3" fadein 1.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
     $ showGroup([("noam", "reflexion", 0.18), ("mara", "stress", 0.42), ("tomas", "reflechit", 0.66)])
     goumi "Trois boissons chaudes. J'ai suppose que personne ne voulait choisir."
     mara "Tu nous connais trop bien."

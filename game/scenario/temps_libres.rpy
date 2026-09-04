@@ -1,5 +1,5 @@
 label lysa_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_356
     scene bg_repos at adaptive_fullscreen with fade
     "En passant devant la salle de repos, j'aperçois Lysa seule. Elle ne me remarque pas, alors je poursuis discrètement jusqu'à la cafétéria."
@@ -126,7 +126,7 @@ label lysa_link_3:
 # TEMPS LIBRES JULIAN :
 
 label julian_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_361
     scene bg_repos at adaptive_fullscreen with fade
     "Julian attend devant le baby-foot, une main posée sur les poignées."
@@ -268,7 +268,7 @@ label julian_link_3:
 # Temps libres ELEN :
 
 label elen_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_364
     scene bg_cafeteria at adaptive_fullscreen with fade
     "Elen se tient devant Goumi et lui donne des instructions en agitant les mains. Sur le comptoir, une pâte trop liquide tourne dans un récipient."
@@ -415,7 +415,7 @@ label elen_link_3:
 # Temps libres Iris :
 
 label iris_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_367
     scene bg_repos at adaptive_fullscreen with fade
     "Iris se tient devant la borne d'arcade, les bras croisés. L'écran affiche le début d'une partie, mais elle ne touche pas aux commandes."
@@ -616,7 +616,7 @@ label tomas_link_1:
     jump FREE_TIME_END
 
 label tomas_link_2:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_371
     scene bg_repos at adaptive_fullscreen with fade
     "Tomas est assis devant une feuille divisée en plusieurs catégories : nourriture, musique, loisirs et souvenirs amusants."
@@ -713,7 +713,7 @@ label tomas_link_3:
 # Temps libres Nyra :
 
 label nyra_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_373
     scene bg_stockage at adaptive_fullscreen with fade
     "Nyra examine les caisses de la dernière livraison pendant que j'essaie de les ranger sur les étagères."
@@ -844,7 +844,7 @@ label nyra_link_3:
 # Temps libres Kael :
 
 label kael_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_376
     scene bg_maintenance at adaptive_fullscreen with fade
     "Kael est accroupi devant une machine ouverte. Plusieurs lignes de code défilent sur le terminal posé à côté de lui."
@@ -982,7 +982,7 @@ label kael_link_3:
 # Temps libres Elias :
 
 label elias_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_379
     scene bg_gymnase at adaptive_fullscreen with fade
     "Elias remplit un sac avec plusieurs poids de tailles différentes."
@@ -1131,7 +1131,7 @@ label elias_link_3:
 # temps libres Mara :
 
 label mara_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_382
     scene bg_gymnase at adaptive_fullscreen with fade
     "Mara me regarde tenir en position de gainage avec un sourire beaucoup trop satisfait."
@@ -1274,7 +1274,7 @@ label mara_link_3:
 # Temps libres Ryn :
 
 label ryn_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_385
     scene bg_repos at adaptive_fullscreen with fade
     "Lorsque Ryn entre dans la salle de repos, je suis installé dans le fauteuil placé face à la porte."
@@ -1416,7 +1416,7 @@ label ryn_link_3:
 # Temps libres Sael :
 
 label sael_link_1:
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_fallin_love.mp3" fadein 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_388
     scene bg_infirmerie at adaptive_fullscreen with fade
 

@@ -49,11 +49,14 @@ init python:
     GROUP_MAX_MEMBERS = 12
     GROUP_AUTO_X_MIN = -0.11
     GROUP_AUTO_X_MAX = 1.20
+    GROUP_AUTO_X_MAX_SMALL = 1.10
+    GROUP_AUTO_SMALL_MAX_MEMBERS = 5
 
     def _group_auto_x(count, index):
         if count <= 1:
-            return (GROUP_AUTO_X_MIN + GROUP_AUTO_X_MAX) / 2.0
-        spacing = (GROUP_AUTO_X_MAX - GROUP_AUTO_X_MIN) / float(count - 1)
+            return 0.5
+        max_x = GROUP_AUTO_X_MAX_SMALL if count <= GROUP_AUTO_SMALL_MAX_MEMBERS else GROUP_AUTO_X_MAX
+        spacing = (max_x - GROUP_AUTO_X_MIN) / float(count - 1)
         return GROUP_AUTO_X_MIN + (spacing * float(index))
 
     def _group_member_tuple(member, count, index):

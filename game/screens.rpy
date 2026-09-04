@@ -286,6 +286,7 @@ label after_load:
     $ quick_menu_open = False
     $ lock_nsfw_content()
     $ migrate_known_character_names_from_save()
+    $ start_stat_xp_load_cooldown()
     return
 
 init python:

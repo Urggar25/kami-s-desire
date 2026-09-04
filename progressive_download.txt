@@ -3,7 +3,16 @@
 # See https://www.renpy.org/doc/html/build.html#classifying-and-ignoring-files for matching
 #
 # +/- type path
+# Keep small, numerous UI/minigame assets inside game.zip. This leaves enough
+# headroom below itch.io's 1000-file limit without forcing large backgrounds or
+# character sprites into the initial browser download.
 - image game/gui/**
+- image game/images/hud/**
+- image game/images/ui/**
+- image game/minijeu/signal_vivant_assets/**
+- image game/minijeu/hack/**
+
+# Large visual assets remain progressively downloaded.
 + image game/**
 + music game/audio/**
 + voice game/voice/**

@@ -162,7 +162,7 @@ label decouverte_salle_repos:
     $ decouverte_salle_repos = True
 
     scene black
-    play music "music/bgm_careful_wanting.mp3" fadein 1.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     think "Ici, il y a une salle de repos."
     think "J’aurais presque envie d’y aller pour souffler et me remettre de mes émotions."

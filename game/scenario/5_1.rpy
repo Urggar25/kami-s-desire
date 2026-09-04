@@ -12,6 +12,7 @@ label _5_1_REVEIL_CHAMBRE:
     $ current_day = 5
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
+    $ cafeteria_food_level = "medium"
 
     pause 1.0
 
@@ -44,7 +45,6 @@ label _5_1_REVEIL_CHAMBRE:
 
     think "Sael votera contre. Vu son état hier, je ne vois pas ce qui pourrait la faire changer d'avis."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_243
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     $ showGroup([("noam", "fatigue", 0.50)])
@@ -123,7 +123,6 @@ label _5_1_REVEIL_CHAMBRE:
     kami "La cafétéria est ouverte."
     kami "Continuez à m'amuser ! C'est peut-être la seule chose dans laquelle vous excellez !"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_244
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
@@ -163,7 +162,6 @@ label _5_1_REVEIL_CHAMBRE:
 
 label _5_1_KAEL_NYRA:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_246
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 2.0
 
@@ -177,6 +175,8 @@ label _5_1_KAEL_NYRA:
     nyra raison "Je sais. Tu l'as lue combien de fois ?"
 
     kael triste "Sept fois. J'aurais dû la voir cette nuit."
+
+    call play_stat_dialogue("d5_1") from _call_stat_dialogue_d5_1
 
     nyra raison "Tu dormais."
 
@@ -298,7 +298,6 @@ label _5_1_KAEL_NYRA:
 
     "Kael se relève lentement."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_247
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     $ showGroup([("kael", "calme", 0.65), ("nyra", "raison", 0.45), ("noam", "neutre", 0.15)])
@@ -559,9 +558,8 @@ label _5_1_TEMPS_LIBRE:
 label _5_1_INFIRMERIE_KAEL:
     $ current_period = "Après-midi"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_250
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
 
     $ showGroup([
         ("elias", "panique", 0.70),
@@ -932,7 +930,6 @@ label _5_1_CHOIX_CHAMBRE:
 
     think "Je repense à la main bandée de Kael, à Elias dans le couloir, puis au vote qui nous attend demain."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_254
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     think "Je m'habille et m'apprête à m'effondrer sur le lit."
@@ -1041,7 +1038,6 @@ label _5_1_PHARMACIE:
 
     think "Je referme les boîtes et les replace exactement au même endroit."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_257
     scene bg_infirmerie at adaptive_fullscreen with dissolve
 
     think "Avant de refermer l'armoire, mon regard s'arrête sur plusieurs sachets de poudre soluble."
@@ -1088,7 +1084,6 @@ label _5_1_PHARMACIE:
 
 label _5_1_FIN_JOURNEE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_260
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     think "Je reste dans ma chambre. Le papier est toujours posé sur le bureau, devant moi."
@@ -1128,8 +1123,11 @@ label _5_1_FIN_JOURNEE:
     think "Je ferme les yeux."
     $ blink()
 
-    #call end_day("6") from _call_end_day_9
+    call end_day("6") from _call_end_day_9
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #jump _6_1_0_REVEIL_CHAMBRE
+    jump _6_1_0_REVEIL_CHAMBRE
+
+# Durée : 13m
+# Total J0-J4 : 1h49

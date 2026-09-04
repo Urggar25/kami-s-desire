@@ -1,11 +1,11 @@
 label _4_1_REVEIL_CHAMBRE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_206
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
     $ current_day = 4
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
+    $ cafeteria_food_level = "medium"
 
     $ showGroup([("noam", "inquiet", 0.50)])
 
@@ -39,7 +39,6 @@ label _4_1_REVEIL_CHAMBRE:
     kami "Mais pourquoi est-ce que je vous raconte tout ? Les écrans de la cafétéria vous montreront les résultats en direct !"
     kami "Allez donc admirer votre toute première victoire. Vous l'avez bien mérité !"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_207
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
@@ -110,6 +109,8 @@ label _4_1_CAFETERIA_ECRANS:
     sael mefiant "À Limen, les gens ont toujours échangé entre eux. Ils continueront."
     sael triste "Ceux qui n'ont plus rien dépendront seulement de voisins qui n'ont presque rien non plus."
 
+    call play_stat_dialogue("d4_1") from _call_stat_dialogue_d4_1
+
     think "Sur l'écran, un homme quitte la file de Limen avec les mains vides. Ma ration est encore intacte devant moi."
 
     think "Lysa détourne enfin les yeux de l'écran pour me regarder."
@@ -162,17 +163,15 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Il est temps de préparer le prochain vote. Alors dépêchez-vous, nos téléspectateurs ne vont pas attendre la fin de vos siestes digestives !"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_211
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     $ showGroup([("noam", "fatigue", 0.50)])
 
     think "Je prends la direction du Conclave. Les autres sortent peu à peu de leurs chambres et me rejoignent dans le couloir."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_212
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
 
     $ showGroup([
         ("julian", "determine"),
@@ -242,10 +241,9 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Et promis, aucune petite réécriture surprise cette fois-ci ! L'énoncé est exactement celui que vous venez de lire."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_213
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
 
     $ showGroup([
         ("ryn", "colere"),
@@ -358,7 +356,6 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
 label _4_1_APRES_CLASH_PRE_FETE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_214
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
 
@@ -460,7 +457,6 @@ label _4_1_APRES_CLASH_PRE_FETE:
     
     "Iris retient un sourire et se lève."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_iris") from _call_MAYBE_PLAY_SCRIPTED_DOOR_218
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -513,7 +509,6 @@ label _4_1_APRES_CLASH_PRE_FETE:
 label _4_1_FETE_IMPROVISEE:
     $ current_period = "Soir"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_221
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.5
 
@@ -559,7 +554,6 @@ label _4_1_FETE_IMPROVISEE:
     kami "Amusez-vous bien, mes petits représentants. Je regarderai tout !"
 
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_222
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.5
 
@@ -623,9 +617,8 @@ label _4_1_FETE_IMPROVISEE:
 
 label _4_1_JEU_BOUTEILLE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_223
     scene bg_repos_fete at adaptive_fullscreen with dissolve
-    play music "music/bgm_romantic_atmosphere.mp3" fadein 1.5
+    play music "music/bgm_fallin_love.mp3" fadein 1.5
 
     $ showGroup([("mara", "ivre", 0.50), ("noam", "surpris", 0.88), ("lysa", "blase", 0.12)])
     mara ivre "Premier tour ! Choisis bien, petite bouteille, j'ai une réputation à tenir."
@@ -655,7 +648,6 @@ label _4_1_JEU_BOUTEILLE:
 
     iris blase "Respire, Elen."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_224
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -699,7 +691,6 @@ label _4_1_JEU_BOUTEILLE:
 
     "Sael pose une main sur la nuque de Tomas et l'embrasse doucement. Quand elle recule, il est écarlate."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_225
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -750,7 +741,6 @@ label _4_1_JEU_BOUTEILLE:
 
     kael gene "Oui. Seulement le jeu."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos_fete") from _call_MAYBE_PLAY_SCRIPTED_DOOR_226
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([("mara", "ivre", 0.12), ("kael", "gene", 0.50)])
@@ -803,5 +793,5 @@ label _4_1_FIN_SOIREE:
     call end_day("5") from _call_end_day_5_1
     jump _5_1_REVEIL_CHAMBRE
 
-# Durée : 0m35
-# Total : 2h 06m 15s
+# Durée : 11m
+# Total J0-J4 : 1h36

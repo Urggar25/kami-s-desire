@@ -1356,3 +1356,153 @@ translate english a63d1c33:
     # think "J'essaierai de lui parler demain. Pour le moment, je n'arrive même plus à garder les yeux ouverts."
     think "I'll try talking to her tomorrow. For now, I can't even keep my eyes open."
 
+# TODO: Translation updated at 2026-08-27 17:51
+
+# game/scenario/4_1.rpy:114
+translate english 3577068a:
+
+    # lysa determine "Tu regrettes déjà ?"
+    lysa determine ""
+
+# game/scenario/4_1.rpy:116
+translate english 2033b383:
+
+    # lysa sourire "Au moins, là, on a réussi."
+    lysa sourire ""
+
+# game/scenario/4_1.rpy:228
+translate english 1694fe79:
+
+    # kami "Autoriser les déplacements de personnes entre les districts ?"
+    kami ""
+
+# game/scenario/4_1.rpy:313
+translate english b6c5cf6e:
+
+    # "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
+    ""
+
+# game/scenario/4_1.rpy:323
+translate english f1f91550:
+
+    # "Mara se lève et la suit en courant hors de la pièce."
+    ""
+
+# game/scenario/4_1.rpy:331
+translate english 9074587d:
+
+    # ryn colere "On ne peut pas laisser ça comme ça."
+    ryn colere ""
+
+# game/scenario/4_1.rpy:340
+translate english cd188e58:
+
+    # iris desaccord "Bravo. Vous avez transformé un débat politique en concours pour savoir qui blesserait Sael le plus vite. Très efficace."
+    iris desaccord ""
+
+# game/scenario/4_1.rpy:418
+translate english 086827d7:
+
+    # "La porte est entrouverte. Je frappe doucement."
+    ""
+
+# game/scenario/4_1.rpy:455
+translate english e53d0209:
+
+    # "Iris retient un sourire et se lève."
+    ""
+
+# game/scenario/4_1.rpy:476
+translate english 9b2d1ffe:
+
+    # think "La musique nous rejoint avant la salle. Au moins, Elen n'a pas perdu de temps."
+    think ""
+
+# game/scenario/4_1.rpy:497
+translate english 05e439e3:
+
+    # elen joie "On a gagné hier. Enfin, aujourd'hui c'est compliqué, mais hier on a gagné, donc ça compte encore un peu !"
+    elen joie ""
+
+# game/scenario/4_1.rpy:575
+translate english 901ac0b2:
+
+    # "La bouteille tourne sur la table basse."
+    ""
+
+# game/scenario/4_1.rpy:579
+translate english b0149395:
+
+    # mara taquin "Oh, Tomas… Cette innocence va me tuer."
+    mara taquin ""
+
+# game/scenario/4_1.rpy:585
+translate english 0035c292:
+
+    # "Mara lui barre le passage d'un pas, sans la toucher."
+    ""
+
+# game/scenario/4_1.rpy:589
+translate english ed18ae3f:
+
+    # iris fatigue "Tu es épuisante."
+    iris fatigue ""
+
+# game/scenario/4_1.rpy:590
+translate english dbb456a9:
+
+    # iris gene "Bon. Je reste. Et je joue… seulement si Noam joue aussi."
+    iris gene ""
+
+# game/scenario/4_1.rpy:594
+translate english 691691dd:
+
+    # iris gene "Pour rien ! Enfin— parce que c'est moins stupide si tout le monde participe. C'est tout."
+    iris gene ""
+
+# game/scenario/4_1.rpy:669
+translate english b993b656:
+
+    # "La bouteille tourne… s’arrête sur Tomas."
+    ""
+
+# game/scenario/4_1.rpy:673
+translate english 798a48c6:
+
+    # "La bouteille pointe Sael."
+    ""
+
+# game/scenario/4_1.rpy:689
+translate english 6e2e333d:
+
+    # "Sael pose une main sur la nuque de Tomas et l'embrasse doucement. Quand elle recule, il est écarlate."
+    ""
+
+# game/scenario/4_1.rpy:709
+translate english 043efa3b:
+
+    # "La bouteille tourne… s’arrête sur Kael."
+    ""
+
+# game/scenario/4_1.rpy:713
+translate english 89e06078:
+
+    # "La bouteille repart et pointe Elias."
+    ""
+
+# game/scenario/4_1.rpy:720
+translate english b9a7f5fb:
+
+    # kael gene "Je ne sais pas."
+    kael gene ""
+
+translate english strings:
+
+    # game/scenario/4_1.rpy:600
+    old "Accepter de jouer"
+    new ""
+
+    # game/scenario/4_1.rpy:600
+    old "Refuser poliment"
+    new ""
+

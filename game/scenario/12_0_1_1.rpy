@@ -1,6 +1,8 @@
 label _12_0_1_1_REVEIL_CHAMBRE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_49
+    $ cafeteria_food_level = "low"
+    $ current_period = "Matin"
+
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 3.0
     play sound sfx_creak volume 0.6
@@ -27,7 +29,6 @@ label _12_0_1_1_REVEIL_CHAMBRE:
     think "Ou quelqu'un."
     "Je tends la main vers l’interrupteur. La lumière froide de la chambre m’aveugle un instant."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_50
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La pièce est vide."
@@ -59,18 +60,29 @@ screen pnc_chambre_j12():
 
     use room_scene_background("chambre")
     use room_scene_interactions("chambre", {
-        "chambre1_aeration": "_12_0_1_1_bureau",
+        "chambre1_aeration": "_12_0_1_1_aeration",
         "chambre1_lit": "_12_0_1_1_sous_lit",
-        "chambre1_television": "_12_0_1_1_bureau",
+        "chambre1_television": "_12_0_1_1_television",
         "chambre1_tiroir": "_12_0_1_1_bureau",
         "chambre2_armoire": "_12_0_1_1_placard",
         "chambre2_porte_dehors": "_12_0_1_1_recoucher",
-        "chambre2_porte_sdb": "_12_0_1_1_bureau",
-        "chambre3_brouilleur": "_12_0_1_1_bureau",
-        "chambre3_tablette": "_12_0_1_1_bureau",
+        "chambre2_porte_sdb": "_12_0_1_1_salle_de_bain",
+        "chambre3_brouilleur": "_12_0_1_1_brouilleur",
+        "chambre3_photo_juliette": "_12_0_1_1_photo_juliette",
+        "chambre3_tablette": "_12_0_1_1_tablette",
     })
 
 # ==================== MINILABELS ====================
+
+label _12_0_1_1_aeration:
+
+    "Je m'approche de la bouche d'aération et tends l'oreille."
+    "Le souffle est régulier. Aucun frottement, aucun pas dans le conduit."
+
+    think "Le bruit ne venait pas de là... enfin, je crois."
+
+    call screen pnc_chambre_j12()
+    return
 
 label _12_0_1_1_sous_lit:
 
@@ -92,6 +104,16 @@ label _12_0_1_1_sous_lit:
     "Je reste quand même quelques secondes à regarder."
 
     think "J'ai vraiment cru qu'il y aurait quelque chose."
+
+    call screen pnc_chambre_j12()
+    return
+
+label _12_0_1_1_television:
+
+    "Je passe la main sur le bord de l'écran."
+    "Il est éteint et froid. Rien n'indique que Kami l'ait activé pendant la nuit."
+
+    think "Pour une fois, ce silence ne vient pas d'elle."
 
     call screen pnc_chambre_j12()
     return
@@ -137,6 +159,46 @@ label _12_0_1_1_bureau:
     call screen pnc_chambre_j12()
     return
 
+label _12_0_1_1_salle_de_bain:
+
+    "J'entrouvre la porte de la salle de bain et vérifie chaque recoin."
+    "La pièce est vide. Le miroir ne me renvoie que mon propre visage épuisé."
+
+    think "Personne ici non plus."
+
+    call screen pnc_chambre_j12()
+    return
+
+label _12_0_1_1_brouilleur:
+
+    "Je vérifie le brouilleur et son boîtier."
+    "Aucune vis ne dépasse, aucun câble ne semble avoir été déplacé."
+
+    think "S'il y avait quelqu'un ici, le brouilleur ne l'a pas empêché d'entrer."
+
+    call screen pnc_chambre_j12()
+    return
+
+label _12_0_1_1_photo_juliette:
+
+    "Mon regard s'arrête sur le dessin de Juliette."
+    "Je vérifie ses bords, puis l'espace derrière. Rien. Il paraît intact."
+
+    think "Au moins, personne n'y a touché."
+
+    call screen pnc_chambre_j12()
+    return
+
+label _12_0_1_1_tablette:
+
+    "Je réveille la tablette et parcours rapidement les dernières activités."
+    "Aucun accès récent. Aucun message. Rien qui explique le bruit."
+
+    think "Même les traces numériques sont muettes."
+
+    call screen pnc_chambre_j12()
+    return
+
 label _12_0_1_1_recoucher:
 
     "Je reste un moment debout au milieu de la chambre, puis je soupire."
@@ -151,7 +213,6 @@ label _12_0_1_1_recoucher:
 # Fin du label principal
 label _12_0_1_1_CAFETERIA:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_51
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
 
@@ -163,8 +224,8 @@ label _12_0_1_1_CAFETERIA:
 
     "Je me lève, enfile un sweat à la hâte et sors de ma chambre sans faire de bruit."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_52
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_52
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Les couloirs sont encore déserts. Parfait."
 
@@ -222,7 +283,7 @@ label _12_0_1_1_CAFETERIA:
         ("elen", "rire", 0.30),
     ])
 
-    play music "music/bgm_romantic_atmosphere.mp3" fadein 2.0
+    play music "music/bgm_fallin_love.mp3" fadein 2.0
 
     elen content "Noooam ! T’es déjà là ?! T’es un lève-tôt maintenant ?!"
     elen "Depuis quand ??"
@@ -313,13 +374,8 @@ label _12_0_1_1_CAFETERIA:
 
     "Je termine de manger en silence. L'heure tourne doucement."
 
-    think "Qu'est ce que c'était que ce bruit ?"
+    think "Qu'est-ce que c'était que ce bruit ?"
     think "Le fruit de mon imagination ...?"
-
-    jump _12_0_1_1_SUITE_CAFETERIA
-
-
-label _12_0_1_1_SUITE_CAFETERIA:
 
     "Je termine mon assiette en silence. Elen finit par comprendre que je ne suis pas d’humeur et part rejoindre d’autres personnes après m’avoir fait un petit signe de la main."
 
@@ -330,8 +386,8 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     "Je reste encore quelques minutes à fixer mon plateau vide, puis je me lève."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_54
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_54
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
 
     "À peine sorti de la cafétéria, la voix de Kami résonne soudain dans tout le Conclave."
 
@@ -339,6 +395,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     play sound sfx_announce
     show screen kami_broadcast_ui
+    pause 1.0
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Bonjour à tous mes petits disciples chéris~"
@@ -358,11 +415,10 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
     hide screen kami_broadcast_ui
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_55
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
     "Le silence retombe dans les couloirs."
 
-    play music "music/bgm_careful_wanting.mp3" fadein 2.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
 
     think "14h…"
     think "Il ne reste plus que quelques heures avant de décider si on veut vivre sous surveillance permanente ou risquer le chaos."
@@ -384,7 +440,7 @@ label _12_0_1_1_SUITE_CAFETERIA:
     think "Mon mal de tête n’est toujours pas parti… Il empire même."
     think "Sans doute à cause de mon manque de sommeil..."
 
-    "Je m’approche de la petite pharmacie et regarde ce qu'il y a de disponibles."
+    "Je m’approche de la petite pharmacie et regarde ce qu'il y a de disponible."
     "Après quelques secondes, je prends quelques comprimés de paracétamol et je les emporte avec moi."
     "Je prends deux comprimés directement dans ma main et les avale à sec."
 
@@ -421,9 +477,9 @@ label _12_0_1_1_SUITE_CAFETERIA:
 
 label _12_0_1_1_ATTENTE_VOTE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_58
+    $ current_period = "Après-midi"
     scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_low_tension.mp3" fadein 3.0
+    play music "music/bgm_world_decline.mp3" fadein 3.0
 
     "Les heures sont passées lentement. Trop lentement."
     "J’ai tourné en rond dans ma chambre, alternant entre tentatives de sommeil et crises de réflexion."
@@ -432,13 +488,14 @@ label _12_0_1_1_ATTENTE_VOTE:
 
     "Je me lève, le corps lourd, et sors de ma chambre sans grand enthousiasme."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_59
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_59
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Les haut-parleurs crachent soudain la voix de Kami."
 
     play sound sfx_announce
     show screen kami_broadcast_ui
+    pause 1.0
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Mes chers représentants, votre attention s’il vous plaît."
@@ -545,27 +602,22 @@ label _12_0_1_1_ATTENTE_VOTE:
 
 label _12_0_1_1_DEBAT_VOTE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_61
     scene bg_conclave at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
 
-    think "Tout le monde parle."
-    think "Moi, je n'arrive plus a suivre les phrases."
+    "Tout le monde parle. Moi, je n'arrive plus à suivre ce qui se dit."
 
-    call j12011_play_wire_debate from _call_j12011_play_wire_debate
+    call j12_play_trolley_problem from _call_j12_play_trolley_problem
     $ j12011_vote_data = _return
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_62
     scene bg_conclave at adaptive_fullscreen with fade
 
-    if j12011_wire_result == "security":
-        jump _12_0_1_1_DEBAT_SECURITE
-
-    jump _12_0_1_1_DEBAT_LIBERTE
+    # Le débat a déjà eu lieu avant la simulation : reprendre directement
+    # sur la révélation de Noam, sans rejouer les arguments.
+    jump _12_0_1_1_DEBAT_TRAITRE
 
 label _12_0_1_1_DEBAT_SECURITE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_63
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 2.5
 
@@ -613,7 +665,7 @@ label _12_0_1_1_DEBAT_SECURITE:
 
     "Kael parle d’une voix basse, mais tout le monde se tait un instant."
 
-    kael "Si on autorise les brouilleurs, peut-être que je ne saurai jamais qui m'a volé la photo de ma soeur."
+    kael "Si on autorise les brouilleurs, peut-être que je ne saurai jamais qui m'a volé la photo de ma sœur."
     kael "Je veux savoir qui c'est."
 
     ryn colere "Et alors ? Tu préfères vivre en prison dorée juste pour avoir une chance de choper un voleur ?"
@@ -624,7 +676,7 @@ label _12_0_1_1_DEBAT_SECURITE:
     "La discussion s’enflamme petit à petit. Je reste silencieux, les bras croisés, à écouter."
 
     think "Tout le monde penche pour l’autorisation…"
-    think "Même ceux qui étaient hésitants hier ont l'air plus convaincu."
+    think "Même ceux qui étaient hésitants hier ont l'air plus convaincus."
 
     iris "Noam ? Tu dis rien ?"
 
@@ -650,7 +702,7 @@ label _12_0_1_1_DEBAT_SECURITE:
 
     noam "Je ne dis pas que ça me plaît."
     noam fatigue "Je ne dis pas que vivre sous caméra, c’est normal."
-    noam determine "Mais les brouilleurs ne protègent pas seulement notre intimité. Ils protègent aussi de ceux qui veulent profiter de cette intimité."
+    noam determine "Mais les brouilleurs ne protègent pas seulement notre intimité. Ils nous protègent aussi de ceux qui veulent profiter de cette intimité."
 
     elen "Noam…"
 
@@ -679,7 +731,6 @@ label _12_0_1_1_DEBAT_SECURITE:
 
 label _12_0_1_1_DEBAT_LIBERTE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_64
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 2.5
 
@@ -700,7 +751,7 @@ label _12_0_1_1_DEBAT_LIBERTE:
         ("sael", "mefiant", 1.20),
     ])
 
-    tomas "Très bien… Il faut qu'arrête de tourner autour du pot."
+    tomas "Très bien… Il faut qu'on arrête de tourner autour du pot."
     tomas "Le vote d’aujourd’hui est clair : est-ce qu’on autorise les dispositifs de brouillage, oui ou non ?"
 
     mara stress "Autoriser ! Évidemment qu’on autorise !"
@@ -712,7 +763,7 @@ label _12_0_1_1_DEBAT_LIBERTE:
     julian taquin "Moi je veux pouvoir insulter Kami tranquillement sans qu’elle me le ressorte six mois plus tard avec un petit smiley sadique."
 
     elias fatigue "Je ne vais pas mentir… moi aussi, l’idée de pouvoir respirer deux minutes sans caméra me tente."
-    elias reflechit "Même si je comprends aussi l'intéret des caméras."
+    elias reflechit "Même si je comprends aussi l'intérêt des caméras."
 
     lysa inquiet "Ça ne règle pas tout. Mais continuer comme ça, avec Kami partout, tout le temps… C'est quand même particulier..."
 
@@ -736,7 +787,7 @@ label _12_0_1_1_DEBAT_LIBERTE:
 
     mara "Exactement ! On échange une prison contre une autre !"
     mara "Moi je préfère risquer l’insécurité plutôt que de vivre dans une cage dorée."
-    mara "Qu'est ce que je risque hein ?! A part qu'un bel homme ait envie de se glisser dans ma chambre ?"
+    mara "Qu'est-ce que je risque hein ?! A part qu'un bel homme ait envie de se glisser dans ma chambre ?"
 
     "La discussion devient de plus en plus animée. Je reste silencieux, les bras croisés, à écouter."
 
@@ -746,7 +797,7 @@ label _12_0_1_1_DEBAT_LIBERTE:
 
     noam fatigue "… Je réfléchis encore."
 
-    julian taquin "Allez, Noam ! T’es team liberté hein ?! Me dis pas que tu veux continuer à ce qu'on se fasse espionner ?!"
+    julian taquin "Allez, Noam ! T’es team liberté hein ?! Me dis pas que tu veux qu'on continue à se faire espionner ?!"
 
     "Je sens ma mâchoire se crisper."
 
@@ -757,12 +808,12 @@ label _12_0_1_1_DEBAT_LIBERTE:
     noam "Je ne dis pas que c’est sans risque."
     noam hesitation "Je ne dis pas que Kael a tort. Ni Nyra. Ni Tomas."
     noam "Mais si on accepte que Kami voie tout, tout le temps, alors on ne vote plus pour notre sécurité."
-    noam desaccord "On vote pour notre obéissance totale a ses règles, même quand elles sont absurdes."
+    noam desaccord "On vote pour notre obéissance totale à ses règles, même quand elles sont absurdes."
 
     elen "Donc tu es avec nous ?"
 
     noam fatigue "Je suis avec personne."
-    noam "Je veux juste qu’on garde un endroit où on peut juste être soi même."
+    noam "Je veux juste qu’on garde un endroit où on peut juste être soi-même."
 
     mara stress "Voilà. C’est exactement ça."
 
@@ -928,8 +979,8 @@ label _12_0_1_1_APRES_EXPLOSION:
     "Je tourne les talons avant que quelqu’un trouve une nouvelle phrase pour me retenir."
 
     play sound sfx_door
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_65
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_65
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Le couloir me paraît trop long."
     "Trop blanc."
@@ -942,6 +993,8 @@ label _12_0_1_1_APRES_EXPLOSION:
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_66
     scene bg_chambre at adaptive_fullscreen with dissolve
     play sound sfx_creak volume 0.6
+
+    $ current_period = "Soir"
 
     "Je referme la porte de ma chambre derrière moi."
     "Le déclic de la serrure me fait presque sursauter."
@@ -966,38 +1019,12 @@ label _12_0_1_1_APRES_EXPLOSION:
 
     call end_day("13") from _call_end_day_12_0_1_1
 
-    if j12011_wire_result == "security":
-        jump _13_0_1_1_0_REVEIL_CHAMBRE
+    jump patreon_ending
 
-    jump _13_0_1_1_1_REVEIL_CHAMBRE
+    # if j12011_wire_result == "security":
+        # jump _13_0_1_1_0_REVEIL_CHAMBRE
 
-label _13_0_1_1_1_REVEIL_CHAMBRE:
+    # jump _13_0_1_1_1_REVEIL_CHAMBRE
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_67
-    scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
-
-    "Je me réveille avec la gorge sèche et la tête lourde."
-    "Pendant quelques secondes, je ne sais plus si le débat a vraiment eu lieu ou si je l’ai seulement rêvé."
-
-    think "Non."
-    think "J’ai vraiment crié."
-
-    "Mon téléphone vibre sur le bureau."
-    "Un message de Kami s’affiche sans que je le touche."
-
-    kami "Résultat du vote : proposition acceptée."
-    kami "Les dispositifs de brouillage sont désormais autorisés sous conditions dans les zones privées du Conclave."
-
-    "Je fixe l’écran sans bouger."
-
-    think "Autorisés."
-    think "On vient d’offrir des angles morts à tout le monde."
-    think "Même à celui qui ment."
-
-    noam fatigue "Super…"
-
-    "Je ne sais pas si je dois me sentir coupable."
-    "Je sais seulement que la journée commence déjà avec un poids sur la poitrine."
-
-    return
+# Total journée : 14 minutes 30
+# Durée totale : 2h56,20

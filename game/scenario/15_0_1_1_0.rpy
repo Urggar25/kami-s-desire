@@ -1,6 +1,6 @@
 label _15_0_1_1_0_REVEIL_CHAMBRE:
     scene bg_cg012 at adaptive_fullscreen with fade
-    play music "music/bgm_calm_sad.mp3" fadein 3.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
     "Je me réveille avant même que la lumière ne s’allume."
     "La chambre est grise."
     "Le plafond aussi."
@@ -53,7 +53,6 @@ label _15_0_1_1_0_REVEIL_CHAMBRE:
     kami "À moitié."
     kami "À tout à l’heure, mes petits archivistes de l’apocalypse."
     hide screen kami_broadcast_ui
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_84
     scene bg_chambre at adaptive_fullscreen with dissolve
     "La chambre redevient silencieuse."
     think "Elle l’a fait exprès."
@@ -115,9 +114,8 @@ label _15_0_1_1_0_REVEIL_CHAMBRE:
 
 label _15_0_1_1_0_RATIONS:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_85
     scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_calm_sad.mp3" fadein 3.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Je suis assis sur le bord du lit depuis plus d’une heure, immobile."
     "Je n’ai toujours pas décidé si je sortirai aujourd’hui."
@@ -524,7 +522,6 @@ label _15_0_1_1_0_RENCONTRE_KAEL:
 
 label _15_0_1_1_0_VIDEO_KAEL:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_88
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.0
 
@@ -557,7 +554,6 @@ label _15_0_1_1_0_VIDEO_KAEL:
 
     centered "{color=#FF0000}FILE DELETED{/color}"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_89
     scene bg_observation at adaptive_fullscreen with vpunch
 
     $ showGroup([
@@ -667,7 +663,6 @@ label _15_0_1_1_0_VIDEO_KAEL:
 
 label _15_0_1_1_0_ARCHIVES_CROISEES:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_90
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.5
 
@@ -777,9 +772,8 @@ label _15_0_1_1_0_ARCHIVES_CROISEES:
 
 label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_91
     scene bg_observation at adaptive_fullscreen with dissolve
-    play music "music/bgm_calm_sad.mp3" fadein 3.0
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Kael est parti depuis quelques minutes."
     "Je suis seul dans la salle d’observation, les écrans toujours allumés."

@@ -1704,3 +1704,11 @@ translate chinese j701_play_search_drawing_bd9fd9bc:
     # "Je m'allonge finalement dans le lit."
     "最后，我躺到了床上。"
 
+# TODO: Translation updated at 2026-08-28 11:00
+
+# game/scenario/7_0_1.rpy:1683
+translate chinese j701_play_search_drawing_0e0bdfb5:
+
+    # noam content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
+    noam content ""
+

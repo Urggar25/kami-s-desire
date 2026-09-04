@@ -325,7 +325,7 @@ label version_2_1_trailer:
     ) from _trl_s06
     $ renpy.pause(4.2, hard=True)
 
-    play music "audio/music/bgm_low_tension.mp3" fadein 1.0
+    play music "audio/music/bgm_world_decline.mp3" fadein 1.0
     stop trl_amb fadeout 1.2
 
     hide screen trl_quote

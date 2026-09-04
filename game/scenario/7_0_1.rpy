@@ -1158,12 +1158,12 @@ label j701_play_search_drawing:
 label _7_0_1_REVEIL_CHAMBRE:
 
     scene black
-    $ current_period = "Matin"
-
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
     $ current_day = 7
     $ noam_has_juliette_drawing = False
+    $ current_period = "Matin"
+    $ cafeteria_food_level = "high"
 
     $ blink()
 
@@ -1181,7 +1181,6 @@ label _7_0_1_REVEIL_CHAMBRE:
     play sound sfx_knock volume 4.0
     "Je repousse la couette."
     "Je manque de me prendre les pieds dedans."
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_277
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je traverse la chambre à moitié réveillé puis j'ouvre la porte."
 
@@ -1319,7 +1318,6 @@ label _7_0_1_REVEIL_CHAMBRE:
     lysa neutre "Je t'attends devant la porte."
     lysa taquin "Ne me fais pas trop attendre."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_279
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La porte se referme. Je reste debout au milieu de la chambre."
@@ -1361,7 +1359,6 @@ label _7_0_1_REVEIL_CHAMBRE:
     
     think "Bon je ressemble toujours à rien, mais c'est au moins mieux qu'avant."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_280
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "J'enfile ma veste puis je cours rejoindre Lysa dans le couloir."
@@ -1427,7 +1424,7 @@ label _7_0_1_CAFETERIA:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_282
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
     "Pour une fois, la cafétéria est particulièrement vivante. Ça parle. Ça circule. Ça respire."
     "Comme si nous avions tous digéré l'échec prévisible d'hier."
@@ -1458,7 +1455,6 @@ label _7_0_1_CAFETERIA:
     call show_custom_title("Le repas se déroule sans accroc pendant de longues minutes.") from _call_show_custom_title_02
     pause 2.0
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_283
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ showGroup([
@@ -1519,9 +1515,8 @@ label _7_0_1_TEMPS_LIBRE_1:
 label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     $ current_period = "Après-midi"
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_285
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.5
+    play music "music/bgm_world_decline.mp3" fadein 1.5
 
     "L'après-midi passe lentement. Comme s'il manquait quelque chose."
     "Comme si le Conclave ne savait plus quoi faire de nous sans la petite voix de Kami qui résonne entre les murs."
@@ -1537,6 +1532,8 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     noam taquin "J'ai pas grand-chose d'autre à faire. À cette heure-là, on est déjà censé savoir quel est le prochain vote."
     noam taquin "Tu vas encore essayer de me faire lire des statistiques incompréhensibles ?"
+
+    call play_stat_dialogue("d7_0_1") from _call_stat_dialogue_d7_0_1
 
     tomas determine "Justement, à ce propos..."
 
@@ -1665,7 +1662,7 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_287
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_unsaid_distance.mp3" fadein 1.5
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
     "Le dîner commence tard. Personne ne l'a vraiment décidé."
     "Les gens sont juste revenus progressivement manger après avoir vaqué à leurs occupations."
@@ -1858,10 +1855,10 @@ label _7_0_1_FIN_JOURNEE:
 
     scene black with fade
 
-    jump patreon_ending
+    #jump patreon_ending
 
-    #call end_day("8") from _call_end_day_11
-    #jump _8_0_1_REVEIL_CHAMBRE
+    call end_day("8") from _call_end_day_11
+    jump _8_0_1_REVEIL_CHAMBRE
 
 # Total journée : 14 minutes
 # Durée totale : 2h03

@@ -181,7 +181,6 @@ label _4_0_REVEIL_CHAMBRE:
     kami "Allez, ne faites pas cette tête ! Vous avez probablement sauvé des gens."
     kami "Vous verrez tout ça de vos propres yeux à la cafétéria. Les écrans sont chauds et vos rations sont prêtes."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_192
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
@@ -269,7 +268,6 @@ label _4_0_CAFETERIA_ELEN_PARTIAL:
 
 label _4_0_CAFETERIA_ECRANS:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "cafeteria2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_194
     scene cafeteria2 at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
@@ -315,7 +313,6 @@ label _4_0_CAFETERIA_ECRANS:
     kami "En attendant, contentez-vous de ce que vous avez. Comme tout le monde."
     kami "Et surtout… comme vous l’avez vous-mêmes décidé hier."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_195
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
@@ -359,7 +356,6 @@ label _4_0_CAFETERIA_ECRANS:
     $ j4_cafeteria_julian_talked = False
     call _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE from _call_4_0_cafeteria_television_obligatoire
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_196
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("mara", "triste"),
@@ -399,6 +395,8 @@ label _4_0_CAFETERIA_ECRANS:
     jump _4_0_TEMPS_LIBRE_1
 
 label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
+
+    call play_stat_dialogue("d4_0") from _call_stat_dialogue_d4_0
 
     $ room_scene_indices["cafeteria"] = 1
     call screen day4_cafeteria_tv_pnc()
@@ -448,7 +446,6 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
 
 label _4_0_CAFETERIA_PNC_RYN:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_197
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("ryn", "colere", 0.70)])
 
@@ -472,7 +469,6 @@ label _4_0_CAFETERIA_PNC_RYN:
 
 label _4_0_CAFETERIA_PNC_JULIAN:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_198
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("julian", "neutre", 0.70)])
 
@@ -557,9 +553,8 @@ label _4_0_TEMPS_LIBRE_1:
 
 label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_200
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_low_tension.mp3" fadein 1.8
+    play music "music/bgm_world_decline.mp3" fadein 1.8
 
     pause 1.0
 
@@ -580,7 +575,6 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Un nouveau vote vous attend. Attention, l'audimat monte en FLÈCHE !"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_201
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "L'écran se coupe sous le rire aigu de Kami. Des portes s'ouvrent une à une, puis des pas traînent dans le couloir."
@@ -588,7 +582,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_202
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
 
     pause 1.0
 
@@ -658,10 +652,9 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "C’est simple. C'est binaire. Même vous, vous devriez réussir à comprendre celui-là."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_203
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_low_tension.mp3" fadein 1.0
+    play music "music/bgm_world_decline.mp3" fadein 1.0
 
     think "Le mot « frontières » reste dans l'air comme une odeur de brûlé."
 
@@ -799,7 +792,7 @@ label day4_thread_debate_failure:
 
 label _4_0_APRES_CLASH_PRE_FETE:
 
-    play music "music/bgm_low_tension.mp3" fadein 2.0
+    play music "music/bgm_world_decline.mp3" fadein 2.0
 
     ryn colere "Super. On a réussi à se déchirer avant même de voter."
 

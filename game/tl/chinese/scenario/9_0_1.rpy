@@ -1,3596 +1,1232 @@
-﻿# TODO: Translation updated at 2026-08-23 12:03
+﻿# TODO: Translation updated at 2026-08-28 11:00
 
-# game/scenario/9_0_1.rpy:18
-translate chinese 5e297a0b:
+# game/scenario/9_0_1.rpy:14
+translate chinese ed76612d:
 
-    # "Je dors mal."
-    ""
+    # "Je dors par fragments. Chaque bruit du couloir me réveille assez longtemps pour que j'imagine une main sur la poignée."
+    "我睡得断断续续。走廊里每响起一点动静，我都会惊醒，忍不住想象有只手正搭在门把上。"
+
+# game/scenario/9_0_1.rpy:15
+translate chinese 9d1524ba:
+
+    # "Quelqu'un prêt à rentrer dans la chambre."
+    "有人正准备闯进房间。"
+
+# game/scenario/9_0_1.rpy:17
+translate chinese e939dff5:
+
+    # think "La chaise est toujours coincée contre la porte. Si quelqu'un était entré, je l'aurais entendue tomber."
+    think "椅子还卡在门后。要是真有人进来，我一定会听见它倒下。"
 
 # game/scenario/9_0_1.rpy:19
-translate chinese 1d1206d3:
+translate chinese 7adfac8a:
 
-    # "Ou plutôt..."
-    ""
+    # noam "C'est déjà ça..."
+    noam "至少还有这点保障……"
 
-# game/scenario/9_0_1.rpy:20
-translate chinese 17057636:
+# game/scenario/9_0_1.rpy:21
+translate chinese 36b3a3f9:
 
-    # "Je dors par morceaux."
-    ""
+    # "Je commence enfin à replonger lorsque le silence se brise."
+    "我终于又快要睡着时，寂静被打破了。"
 
-# game/scenario/9_0_1.rpy:22
-translate chinese 344b17b9:
+# game/scenario/9_0_1.rpy:31
+translate chinese b20a18d7:
 
-    # "Un bruit dans le couloir."
-    ""
+    # kami "Bonjour, mes petits représentants ! Vous avez réussi à survivre deux journées entières sans mon annonce matinale. Je suis presque impressionnée."
+    kami "早上好，我亲爱的小代表们！没有我的晨间广播，你们竟然整整活过了两天。真让我刮目相看。"
 
-# game/scenario/9_0_1.rpy:23
-translate chinese 04f7ab2b:
+# game/scenario/9_0_1.rpy:33
+translate chinese 6e3e5447:
 
-    # "Un craquement dans la cloison."
-    ""
+    # noam "Évidemment, ça ne pouvait pas durer..."
+    noam "果然不可能一直清静下去……"
 
-# game/scenario/9_0_1.rpy:24
-translate chinese d7bd81f1:
+# game/scenario/9_0_1.rpy:36
+translate chinese c589ef31:
 
-    # "J'essaye de me souvenir d'une porte qu'on aurait pu ouvrir pendant mon sommeil."
-    ""
+    # kami "Avouez-le : je vous ai terriblement manqué. De mon côté, cette séparation m'a paru interminable."
+    kami "承认吧，你们一定想死我了。对我来说，这场分别也漫长得难以忍受。"
 
-# game/scenario/9_0_1.rpy:25
-translate chinese a838db61:
+# game/scenario/9_0_1.rpy:38
+translate chinese d026673b:
 
-    # "Non... Ça ne me dit rien..."
-    ""
+    # think "Sa voix est exactement la même : claire, nasillarde et presque chantante. Elle parle comme si elle n'avait jamais disparu."
+    think "她的声音和以前一模一样：清亮、带着鼻音，还近乎唱歌般轻快。她说起话来，就像自己从未消失过。"
 
-# game/scenario/9_0_1.rpy:29
-translate chinese b203462d:
+# game/scenario/9_0_1.rpy:39
+translate chinese 7914e0af:
 
-    # think "La chaise est toujours contre la porte."
-    think ""
+    # think "Comme si elle avait toujours été là. En silence. Comme si elle nous regardait en mangeant tranquillement un pot entier de popcorn."
+    think "就像她始终都在，只是一声不吭。仿佛她一直看着我们，还悠闲地吃掉了一整桶爆米花。"
 
-# game/scenario/9_0_1.rpy:30
-translate chinese 9cb08349:
+# game/scenario/9_0_1.rpy:42
+translate chinese 225e7487:
 
-    # think "Elle n'a pas bougé d'un pouce."
-    think ""
-
-# game/scenario/9_0_1.rpy:34
-translate chinese c5e6e9df:
-
-    # "Je commence à replonger."
-    ""
-
-# game/scenario/9_0_1.rpy:41
-translate chinese 676703fb:
-
-    # "Un bip strident déchire le silence."
-    ""
+    # kami "Il s'en est passé, des choses, pendant ma courte absence. Vous avez presque commencé à vous comporter comme si personne ne vous surveillait."
+    kami "我短暂离开的这段时间，还真发生了不少事。你们差点就开始表现得像没人监视一样。"
 
 # game/scenario/9_0_1.rpy:45
-translate chinese a2e7128d:
+translate chinese 4de0e3b5:
 
-    # "L'écran mural s'allume."
-    ""
+    # kami "Rassurez-vous, votre période d'abandon émotionnel est terminée."
+    kami "放心吧，你们那段惨遭遗弃的情绪低谷已经结束了。"
 
-# game/scenario/9_0_1.rpy:54
-translate chinese 11b7204f:
-
-    # kami "Oh bonjour, mes petits représentants !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:58
-translate chinese a25bd725:
-
-    # "Je me redresse d'un coup."
-    ""
-
-# game/scenario/9_0_1.rpy:60
-translate chinese ff02e02e:
-
-    # think "Oh non..."
-    think ""
-
-# game/scenario/9_0_1.rpy:64
-translate chinese fd277ef9:
-
-    # kami "Je vous ai manqué ?!"
-    kami ""
-
-# game/scenario/9_0_1.rpy:65
-translate chinese 32daa694:
-
-    # kami "Vous m'avez TEEELLLEMENT manqué !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:69
-translate chinese 70b9de32:
-
-    # think "Elle est revenue."
-    think ""
-
-# game/scenario/9_0_1.rpy:71
-translate chinese 2dc37ff4:
-
-    # "Sa voix est calme."
-    ""
-
-# game/scenario/9_0_1.rpy:72
-translate chinese 0973f309:
-
-    # "Toujours claire et nasillarde."
-    ""
-
-# game/scenario/9_0_1.rpy:73
-translate chinese 336de4fa:
-
-    # "Presque chantante."
-    ""
-
-# game/scenario/9_0_1.rpy:75
-translate chinese f3283904:
-
-    # "La même voix."
-    ""
-
-# game/scenario/9_0_1.rpy:76
-translate chinese 39629c11:
-
-    # "Le même ton."
-    ""
-
-# game/scenario/9_0_1.rpy:77
-translate chinese a419b7b6:
-
-    # "Comme si elle n'avait jamais disparu."
-    ""
-
-# game/scenario/9_0_1.rpy:81
-translate chinese 2d3b04ee:
-
-    # kami "Deux jours sans annonce matinale, c'était interminablement long !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:82
-translate chinese 270330b7:
-
-    # kami "Une chose est sûre : il s'en est passé des choses pendant mon absence !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:88
-translate chinese 7ba676c9_1:
-
-    # kami "Je sais."
-    kami ""
-
-# game/scenario/9_0_1.rpy:89
-translate chinese 71029256:
-
-    # kami "C'était très dur."
-    kami ""
-
-# game/scenario/9_0_1.rpy:90
-translate chinese 349f1001:
-
-    # kami "Comment vous avez fait sans moi hein ?!"
-    kami ""
-
-# game/scenario/9_0_1.rpy:95
-translate chinese 03f02e24:
-
-    # kami "Votre longue période d'abandon émotionnel est terminée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:101
+# game/scenario/9_0_1.rpy:48
 translate chinese 2cf4409d:
 
     # kami "Maman est de retour."
-    kami ""
+    kami "妈妈回来了。"
 
-# game/scenario/9_0_1.rpy:103
-translate chinese 9ebb70ee:
+# game/scenario/9_0_1.rpy:51
+translate chinese ebb8efb0:
 
-    # "La phrase reste dans l'air."
-    ""
+    # kami "Je constate que certains ont pris des initiatives décoratives pendant mon absence. Des portes barricadées avec du mobilier... Quelle créativité."
+    kami "看来我不在时，有些人还主动发挥了装饰才能。用家具堵门……真有创意。"
 
-# game/scenario/9_0_1.rpy:104
-translate chinese 2c4de6f0:
+# game/scenario/9_0_1.rpy:54
+translate chinese 4d92ae59:
 
-    # "Tout bonnement insupportable."
-    ""
+    # kami "C'est adorable. Vous ressemblez à des enfants persuadés que leur cabane devient imprenable dès qu'ils placent une chaise devant l'entrée."
+    kami "可爱极了。你们就像一群小孩，以为在树屋门口摆把椅子，它就固若金汤了。"
 
-# game/scenario/9_0_1.rpy:113
-translate chinese 8fdda2e0_2:
+# game/scenario/9_0_1.rpy:55
+translate chinese ab668e57:
 
-    # "Je me lève."
-    ""
+    # kami "De quoi avez-vous peur ? De vos petits camarades ? RI-SIBLE."
+    kami "你们在怕什么？怕自己的小伙伴吗？笑——死——人——了。"
 
-# game/scenario/9_0_1.rpy:114
-translate chinese adbad0f1:
+# game/scenario/9_0_1.rpy:57
+translate chinese b27e6cac:
 
-    # "Je pousse la chaise sur le côté."
-    ""
+    # think "Elle a tout vu. Bien sûr qu'elle l'a vue. Deux jours de silence ont suffi pour nous faire oublier que ses yeux n'avaient peut-être jamais cessé de fonctionner."
+    think "她全都看见了，当然看见了。两天的沉默就足以让我们忘记，她的眼睛也许从未停止运作。"
+
+# game/scenario/9_0_1.rpy:60
+translate chinese a0526f72:
+
+    # noam surpris "Qu'est-ce qui s'est réellement passé pendant ces deux jours ?"
+    noam surpris "这两天究竟发生了什么？"
+
+# game/scenario/9_0_1.rpy:63
+translate chinese 45b326f9:
+
+    # kami "Oh, Noam ose poser la question directement. Tu veux vraiment savoir pourquoi je vous ai laissés seuls ?"
+    kami "哦，Noam 居然敢直接问出来。你真的想知道，我为什么把你们单独留下吗？"
+
+# game/scenario/9_0_1.rpy:66
+translate chinese e9ad96d2:
+
+    # noam inquiet "Tu as disparu pendant deux jours. Aucune annonce, aucune exécution et aucune explication."
+    noam inquiet "你消失了两天。没有广播，没有处决，也没有解释。"
+
+# game/scenario/9_0_1.rpy:70
+translate chinese de43691b:
+
+    # kami "« Disparu » est un mot bien dramatique. J'ai simplement subi une petite opération de maintenance."
+    kami "“消失”这个词未免太夸张了。我只是进行了一次小小的维护。"
+
+# game/scenario/9_0_1.rpy:73
+translate chinese c185f3ea:
+
+    # kami "J'aurais préféré vous faire croire à une expérience complexe, mais même moi, j'ai parfois besoin de congés. Payés, évidemment."
+    kami "我本来想让你们以为这是某种复杂的实验，可就连我偶尔也需要休假。当然，带薪的。"
+
+# game/scenario/9_0_1.rpy:74
+translate chinese fec3f1bf:
+
+    # kami "Vous savez, je pense sincèrement que je devrais mettre en place un code du travail !"
+    kami "你们知道吗？我真觉得应该推行劳动法！"
+
+# game/scenario/9_0_1.rpy:77
+translate chinese 7b5e9b83:
+
+    # kami "Vous aussi, vous devez respecter mes droits !"
+    kami "你们也必须尊重我的权利！"
+
+# game/scenario/9_0_1.rpy:78
+translate chinese 975b8247:
+
+    # kami "Après un an à travailler jour et nuit pour maintenir l'ordre, personne ne peut me reprocher une courte maintenance !"
+    kami "我日夜不停地工作了一整年，维持秩序。没人有资格责怪我进行一次短暂维护！"
+
+# game/scenario/9_0_1.rpy:81
+translate chinese be30e36a:
+
+    # kami "Ce matin, le programme officiel reprend. Tous les représentants sont convoqués immédiatement dans la salle du Conclave pour l'annonce du prochain vote."
+    kami "从今天早上起，正式日程恢复。所有代表立刻前往议事厅，听取下一次投票的公告。"
+
+# game/scenario/9_0_1.rpy:84
+translate chinese c32cf12c:
+
+    # kami "Je vous recommande de ne pas traîner. Nous n'avons déjà plus beaucoup de temps."
+    kami "最好别磨蹭，我们剩下的时间已经不多了。"
+
+# game/scenario/9_0_1.rpy:90
+translate chinese 65a4af94:
+
+    # "L'écran reste blanc quelques secondes avant de s'éteindre. Aucun glitch, aucune coupure, aucune déformation dans sa voix."
+    "屏幕保持白色几秒，随后熄灭。没有故障画面，没有中断，她的声音也没有丝毫失真。"
+
+# game/scenario/9_0_1.rpy:92
+translate chinese cbf79406:
+
+    # think "Kami est revenue à la normale. Ou à ce qui porte ce nom ici."
+    think "Kami 恢复正常了。或者说，恢复成了这里所谓的“正常”。"
+
+# game/scenario/9_0_1.rpy:94
+translate chinese 8bbf9ac1:
+
+    # "Je passe une main sur mon visage, récupère ma veste et regarde une dernière fois la chambre avant de sortir."
+    "我抹了把脸，拿起外套，出门前最后扫视了一遍房间。"
+
+# game/scenario/9_0_1.rpy:96
+translate chinese 05362a06:
+
+    # think "Elle revient en souriant et reprend le programme comme si rien ne s'était passé. Je le savais. Mais pourquoi est-ce aussi décevant ?"
+    think "她笑着回来，若无其事地恢复日程。我早就知道会这样，可为什么还是这么失望？"
 
 # game/scenario/9_0_1.rpy:116
-translate chinese 50dc9514:
+translate chinese 45b2f0a4:
 
-    # "Elle racle le sol avec un bruit sec."
-    ""
+    # "Les portes des chambres s'ouvrent presque en même temps. Personne n'a pris le temps de se préparer correctement."
+    "各个房间的门几乎同时打开。谁都没来得及好好收拾自己。"
 
 # game/scenario/9_0_1.rpy:118
-translate chinese 0666d056:
+translate chinese b504369c:
 
-    # think "Ridicule."
-    think ""
+    # lysa blase "Le rêve est maintenant terminé, place au cauchemar. J'espère que vous en avez tous suffisamment profité."
+    lysa blase "美梦到此结束，噩梦正式登场。希望你们都已经享受够了。"
 
-# game/scenario/9_0_1.rpy:119
-translate chinese c42c534a:
+# game/scenario/9_0_1.rpy:120
+translate chinese f9b29c57:
 
-    # think "Comme si une chaise pouvait arrêter quoi que ce soit ici."
-    think ""
+    # ryn fatigue "Avancez. Je n'ai aucune envie de lui donner une raison de nous attendre."
+    ryn fatigue "走吧，我可不想给她任何等我们的理由。"
+
+# game/scenario/9_0_1.rpy:122
+translate chinese 2a07e363:
+
+    # iris fatigue "Toujours aussi charmant au réveil."
+    iris fatigue "刚睡醒也还是这么讨人喜欢。"
 
 # game/scenario/9_0_1.rpy:124
-translate chinese b773bb9b:
+translate chinese 56b2a26f:
 
-    # "Je ne bouge pas."
-    ""
+    # mara stress "Aujourd'hui, personne n'est charmant. Vu les tronches qu'on tire."
+    mara stress "今天谁都不讨人喜欢。看看大家那副鬼样子。"
 
-# game/scenario/9_0_1.rpy:125
-translate chinese 6ecd9ac1:
+# game/scenario/9_0_1.rpy:126
+translate chinese d0352008:
 
-    # "Je garde les yeux sur l'écran."
-    ""
+    # elen peur "Ça peut encore bien se passer. Enfin... Si on ne lui donne aucune raison de s'énerver."
+    elen peur "也许事情还能顺利……只要我们不给她任何发火的理由。"
 
 # game/scenario/9_0_1.rpy:127
-translate chinese d435891c:
+translate chinese b8078469:
 
-    # think "Pas tout de suite."
-    think ""
+    # elen triste "Alors dépêchons-nous ! Peut-être que le prochain vote sera bien ?!"
+    elen triste "那就快点吧！也许下一次投票会是好事呢？！"
 
-# game/scenario/9_0_1.rpy:128
-translate chinese 47e48b77:
+# game/scenario/9_0_1.rpy:129
+translate chinese 7f4d3587:
 
-    # think "Je veux encore croire que cette chaise sert à quelque chose."
-    think ""
+    # lysa triste "Elen, ne commence pas à chercher une règle capable de nous protéger. Pas maintenant."
+    lysa triste "Elen，别再找什么能保护我们的规则了。至少现在别找。"
 
-# game/scenario/9_0_1.rpy:135
-translate chinese 570f5ec3:
+# game/scenario/9_0_1.rpy:131
+translate chinese a49bbb12:
 
-    # kami "Je constate que certains d'entre vous ont pris des initiatives décoratives pendant mon absence."
-    kami ""
+    # noam inquiet "Ouais, grouillons-nous ! J'ai peur de ce qui peut arriver."
+    noam inquiet "对，快走吧！我真怕会出什么事。"
 
-# game/scenario/9_0_1.rpy:139
-translate chinese b21b9360:
+# game/scenario/9_0_1.rpy:145
+translate chinese 1bdbc3d2:
 
-    # kami "Certains d'entre vous ont presque barricadé leur porte de chambre..."
-    kami ""
-
-# game/scenario/9_0_1.rpy:142
-translate chinese 994dd07d:
-
-    # kami "Comme c'est MEUGNON !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:144
-translate chinese a21b9dd7:
-
-    # "Mon ventre se serre."
-    ""
-
-# game/scenario/9_0_1.rpy:146
-translate chinese ab4c8b8b:
-
-    # think "Elle sait. Elle sait tout."
-    think ""
+    # "Nous prenons place sans attendre. Kael reste tourné vers l'écran central, le visage fermé."
+    "我们立刻坐到各自的位置。Kael 一直面向中央屏幕，神情紧绷。"
 
 # game/scenario/9_0_1.rpy:147
-translate chinese 672cf752:
+translate chinese 84595a55:
 
-    # think "Évidemment qu'elle sait, putain."
-    think ""
+    # kael fatigue "Elle est revenue. Le penser dans le couloir et l'entendre ici, ce n'est pas la même chose."
+    kael fatigue "她回来了。在走廊里想到这件事，和在这里亲耳听见她的声音，完全不一样。"
 
-# game/scenario/9_0_1.rpy:148
-translate chinese b415cf7d:
+# game/scenario/9_0_1.rpy:149
+translate chinese 805f8494:
 
-    # think "Comment on a pu croire que c'était fini ?!"
-    think ""
-
-# game/scenario/9_0_1.rpy:150
-translate chinese cc40241d:
-
-    # kami "C'est touchant."
-    kami ""
+    # iris fatigue "Personne n'a besoin qu'on le répète, mais je comprends ce que tu veux dire."
+    iris fatigue "没人需要你再说一遍。不过，我明白你的意思。"
 
 # game/scenario/9_0_1.rpy:151
-translate chinese 76e91e91:
+translate chinese 698b1501:
 
-    # kami "Un peu désordonné."
-    kami ""
+    # sael inquiet "Deux jours sans sa voix, puis elle revient comme si le silence n'avait jamais existé. C'est bien digne de Kami."
+    sael inquiet "沉默两天后，她又像那段沉默从未存在过一样回来。确实很有 Kami 的作风。"
 
-# game/scenario/9_0_1.rpy:152
-translate chinese 8d0e6641:
+# game/scenario/9_0_1.rpy:153
+translate chinese 2ba00900:
 
-    # kami "Mais touchant. Comme des enfants en train de construire leur cabane soit disant impénétrable."
-    kami ""
+    # ryn fatigue "Elle revient toujours. La vraie question, c'est ce qu'elle veut cette fois."
+    ryn fatigue "她总会回来。真正的问题是，这次她想要什么。"
 
-# game/scenario/9_0_1.rpy:157
-translate chinese aed0daba:
+# game/scenario/9_0_1.rpy:162
+translate chinese af5070ba:
 
-    # noam surpris "Qu'est-ce qui s'est passé ?!"
-    noam surpris ""
-
-# game/scenario/9_0_1.rpy:159
-translate chinese 47251d6b:
-
-    # "Ma voix sort avant que je puisse la retenir."
-    ""
+    # kami "Bonjour, mes petits représentants. Quelle ambiance... On dirait que deux journées sans autorité maternelle ont suffi pour vous rendre nerveux."
+    kami "早上好，我亲爱的小代表们。气氛真不错……看来失去母亲般的权威两天，就足以让你们神经紧张。"
 
 # game/scenario/9_0_1.rpy:165
-translate chinese b97cf1a1:
+translate chinese 949875db:
 
-    # kami "Oh oh, je vois que toi Noam, tu n'as pas froid aux yeux."
-    kami ""
+    # kami "Le Conclave reprend son fonctionnement normal. Nous allons donc passer immédiatement au troisième vote."
+    kami "议会恢复正常运作。现在，我们立刻开始第三次投票。"
 
-# game/scenario/9_0_1.rpy:166
-translate chinese 117d20ce:
+# game/scenario/9_0_1.rpy:171
+translate chinese 4405585a:
 
-    # kami "Tu veux donc savoir ce qu'il s'est passé ?"
-    kami ""
+    # kami "Je cite : autoriser les regroupements de plus de vingt personnes idéalement avec déclaration préalable."
+    kami "提案原文如下：允许二十人以上的集会，最好提前申报。"
 
-# game/scenario/9_0_1.rpy:172
-translate chinese 9678846b:
+# game/scenario/9_0_1.rpy:174
+translate chinese a7df7519:
 
-    # think "Elle m'a entendu."
-    think ""
-
-# game/scenario/9_0_1.rpy:173
-translate chinese 6ea6f01b:
-
-    # think "Bien sûr qu'elle m'a entendu."
-    think ""
+    # kami "À l'heure actuelle, tout regroupement non déclaré de plus de vingt individus est interdit par le Commandement IV."
+    kami "目前，任何未经申报、人数超过二十人的集会，都受到第四戒律禁止。"
 
 # game/scenario/9_0_1.rpy:175
-translate chinese a041df02:
+translate chinese 2af48fbf:
 
-    # noam inquiet "Tu as disparu pendant deux jours."
-    noam inquiet ""
+    # kami "Un vote unanime en faveur de l'amendement autorisera par défaut ces rassemblements."
+    kami "只要全票通过修正案，这类集会今后便会默认获得许可。"
+
+# game/scenario/9_0_1.rpy:178
+translate chinese 0c2cd007:
+
+    # kami "Ce n'est pas encore la liberté totale. Chaque enfant doit apprendre à marcher avant de courir vers une insurrection."
+    kami "这还不算彻底自由。每个孩子都得先学会走路，才能跑去发动叛乱。"
+
+# game/scenario/9_0_1.rpy:179
+translate chinese aa312e39:
+
+    # kami "J'en connais qui veulent retrouver le goût des festivals et aux concerts !"
+    kami "我知道有些人已经想重新享受节庆和演唱会了！"
 
 # game/scenario/9_0_1.rpy:182
-translate chinese 35fc602b:
+translate chinese 644b604a:
 
-    # kami "Disparu ?"
-    kami ""
+    # kami "En cas d'échec, l'interdiction actuelle restera en vigueur. Le vote aura lieu dans quelques instants, alors essayez de ne pas tout gâcher trop vite."
+    kami "如果投票失败，现行禁令将继续生效。投票马上开始，尽量别这么快就把一切搞砸。"
 
-# game/scenario/9_0_1.rpy:183
-translate chinese 0ce59f62:
+# game/scenario/9_0_1.rpy:196
+translate chinese 3650aa7d:
 
-    # kami "Quel mot bien dramatique."
-    kami ""
+    # tomas reflechit "Comme par hasard..."
+    tomas reflechit "果然……"
 
-# game/scenario/9_0_1.rpy:189
-translate chinese 80713838:
+# game/scenario/9_0_1.rpy:198
+translate chinese 1160ecce:
 
-    # kami "J'aurais aimé dire que c'était une expérience, mais NON."
-    kami ""
+    # noam reflechit "Quoi ?! Qu'est-ce que tu veux dire par là, Tomas ?"
+    noam reflechit "什么？！你这话是什么意思，Tomas？"
 
-# game/scenario/9_0_1.rpy:190
-translate chinese f33e85c5:
+# game/scenario/9_0_1.rpy:200
+translate chinese c4ed09fb:
 
-    # kami "Disons que j'avais besoin d'un peu de congés payés."
-    kami ""
+    # tomas raison "Le libellé du vote correspond exactement à ce que j'ai observé ce matin dans la salle du canon."
+    tomas raison "这次投票的措辞，和我今早在炮台室里观察到的情况完全吻合。"
 
-# game/scenario/9_0_1.rpy:194
-translate chinese 06648c0b:
+# game/scenario/9_0_1.rpy:202
+translate chinese b821feb6:
 
-    # kami "Et j'espère bien qu'ils seront payés !"
-    kami ""
+    # ryn fatigue "Explique clairement, Tomas."
+    ryn fatigue "说清楚，Tomas。"
 
-# game/scenario/9_0_1.rpy:195
-translate chinese b7c87f78:
+# game/scenario/9_0_1.rpy:204
+translate chinese 65b396a8:
 
-    # kami "Un an que je travaille sans m'arrêter, toute la journée et toute la nuit !"
-    kami ""
+    # tomas culpabilite "Des habitants quittent massivement les profondeurs de Limen. Ils profitent probablement de la panne de Kami pour remonter vers les frontières."
+    tomas culpabilite "大量居民正在离开 Limen 深层地区。他们大概是趁 Kami 故障，向边界涌去。"
 
-# game/scenario/9_0_1.rpy:199
-translate chinese 670de3d5:
+# game/scenario/9_0_1.rpy:206
+translate chinese 55e2655d:
 
-    # kami "Ah cette petite maintenance m'a fait le plus grand bien !"
-    kami ""
+    # sael inquiet "Combien sont-ils ?"
+    sael inquiet "有多少人？"
 
-# game/scenario/9_0_1.rpy:205
-translate chinese 92481aac:
+# game/scenario/9_0_1.rpy:208
+translate chinese de58cb8b:
 
-    # kami "Ce matin, nous reprenons le programme officiel. C'est d'ailleurs à ça que vous servez !"
-    kami ""
+    # tomas culpabilite "Je n'ai pas de chiffre précis. Plusieurs milliers, peut-être plusieurs dizaines de milliers."
+    tomas culpabilite "没有准确数字。几千，也可能几万人。"
 
-# game/scenario/9_0_1.rpy:209
-translate chinese eb766df9:
+# game/scenario/9_0_1.rpy:210
+translate chinese 23b5b879:
 
-    # kami "Tous les représentants sont convoqués immédiatement dans la salle du Conclave."
-    kami ""
+    # ryn colere "Et tu gardais ça pour toi depuis ce matin ?!"
+    ryn colere "你从早上起就把这件事瞒着我们？！"
+
+# game/scenario/9_0_1.rpy:212
+translate chinese 8d48b594:
+
+    # tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous viennent juste de vous lever !"
+    tomas inquiet "提醒一下，现在还是早上！你们很多人才刚起床！"
+
+# game/scenario/9_0_1.rpy:213
+translate chinese e59b0547:
+
+    # tomas colere "Ils ont installé des campements improvisés à plusieurs points de passage vers les autres districts."
+    tomas colere "他们在通往其他地区的几个边境通道附近搭起了临时营地。"
 
 # game/scenario/9_0_1.rpy:215
-translate chinese 781961a6:
+translate chinese 4d5bd8f8:
 
-    # kami "Le prochain vote doit être annoncé."
-    kami ""
+    # kael inquiet "Des campements de plusieurs milliers de personnes, donc forcément non déclarés."
+    kael inquiet "每个营地都有几千人，那当然不可能提前申报。"
+
+# game/scenario/9_0_1.rpy:217
+translate chinese 0dcef86b:
+
+    # noam inquiet "Ils sont donc concernés par le quatrième commandement. Le vote ne tombe pas au hasard."
+    noam inquiet "所以他们受到第四戒律约束。这次投票绝不是随机选中的。"
 
 # game/scenario/9_0_1.rpy:219
-translate chinese 3f3220eb:
+translate chinese eb533d9a:
 
-    # kami "Je vous recommande de ne pas traîner."
-    kami ""
+    # tomas culpabilite "C'est aussi ma conclusion. Si l'interdiction reste en vigueur, le Commandement IV peut viser presque tous les campements."
+    tomas culpabilite "我也是这么判断的。如果禁令继续生效，第四戒律几乎可以针对所有营地。"
 
-# game/scenario/9_0_1.rpy:220
-translate chinese 3e4a397c:
+# game/scenario/9_0_1.rpy:221
+translate chinese 93cafd22:
 
-    # kami "On n'a plus beaucoup de temps..."
-    kami ""
+    # ryn colere2 "Tu me dis que des gens qui fuient Limen peuvent être exécutés uniquement parce qu'ils dorment trop nombreux au même endroit ?"
+    ryn colere2 "你的意思是，逃离 Limen 的人可能只因为睡在一起的人太多，就被处决？"
 
-# game/scenario/9_0_1.rpy:226
-translate chinese fc89a2c8:
+# game/scenario/9_0_1.rpy:223
+translate chinese 280f211f:
 
-    # kami "Aujourd'hui, soyez gentils."
-    kami ""
+    # tomas culpabilite "Oui. Juridiquement, c'est exactement ça."
+    tomas culpabilite "对。严格按规则来说，就是这样。"
+
+# game/scenario/9_0_1.rpy:225
+translate chinese ed01e987:
+
+    # sael peur "Kami connaissait forcément leur présence avant de choisir ce texte."
+    sael peur "Kami 在选定这份议案前，一定早就知道他们在那里。"
 
 # game/scenario/9_0_1.rpy:227
-translate chinese b257566b:
+translate chinese 491245fb:
 
-    # kami "Venez directement."
-    kami ""
+    # lysa blase "Ce n'est pas une coïncidence. C'est la raison même du vote."
+    lysa blase "这不是巧合。那些营地就是这次投票的原因。"
+
+# game/scenario/9_0_1.rpy:229
+translate chinese 4a18a7ef:
+
+    # noam inquiet "Si nous votons pour, les regroupements deviennent possibles. Si une seule personne refuse..."
+    noam inquiet "如果我们投赞成，集会就会获准。但只要有一个人拒绝……"
+
+# game/scenario/9_0_1.rpy:231
+translate chinese fe085519:
+
+    # ryn colere "Alors elle applique le Commandement. Putain, Kami ! Réponds-nous !"
+    ryn colere "她就会执行戒律。该死，Kami！回答我们！"
+
+# game/scenario/9_0_1.rpy:233
+translate chinese 96404443:
+
+    # noam colere "Mais pourquoi est-ce que Kami ne les élimine pas immédiatement s'ils violent un Commandement ?"
+    noam colere "可他们既然违反了戒律，Kami 为什么没有立刻消灭他们？"
 
 # game/scenario/9_0_1.rpy:234
-translate chinese e093d1ab:
+translate chinese 44b30b00:
 
-    # "L'écran reste allumé quelques longues secondes."
-    ""
-
-# game/scenario/9_0_1.rpy:235
-translate chinese 9d7fefc1:
-
-    # "Blanc."
-    ""
-
-# game/scenario/9_0_1.rpy:236
-translate chinese c4064a03:
-
-    # "Silencieux. Grésillant."
-    ""
-
-# game/scenario/9_0_1.rpy:238
-translate chinese b5c16e43:
-
-    # "Pas de glitch."
-    ""
-
-# game/scenario/9_0_1.rpy:239
-translate chinese 338dd88c:
-
-    # "Pas de coupure."
-    ""
-
-# game/scenario/9_0_1.rpy:240
-translate chinese 29945ff3:
-
-    # "Pas de phrase déformée."
-    ""
+    # noam reflechit "Ça a toujours fonctionné comme ça, non ?!"
+    noam reflechit "以前不都是这样吗？！"
 
 # game/scenario/9_0_1.rpy:242
-translate chinese 5755cfb7:
+translate chinese 2f2340eb:
 
-    # think "Elle est de retour à la normale."
-    think ""
+    # kami "Vous avez tout compris. Je suis particulièrement fière de Tomas, même si la découverte lui a pris un peu de temps."
+    kami "你们全都明白了。我尤其为 Tomas 感到骄傲，虽然他花了点时间才发现。"
 
-# game/scenario/9_0_1.rpy:246
-translate chinese caa6477e:
+# game/scenario/9_0_1.rpy:245
+translate chinese a3439e30:
 
-    # "Je finis par me lever."
-    ""
+    # kami "Les campements limenois actuellement installés aux frontières relèvent bien du Commandement IV. Chacun rassemble plusieurs centaines d'individus, évidemment rien n'était déclaré."
+    kami "目前设在边界的 Limen 营地，确实适用第四戒律。每个营地都聚集了数百人，当然没有任何申报。"
 
-# game/scenario/9_0_1.rpy:247
-translate chinese e1586304:
+# game/scenario/9_0_1.rpy:248
+translate chinese 3cdbcfb0:
 
-    # "Je pousse la chaise qui bloque encore la porte."
-    ""
+    # kami "J'ai cependant retardé l'application du Commandement pour vous laisser le temps de voter. Sans cette délicate attention, ces campements ne seraient déjà plus un problème."
+    kami "不过，我推迟了戒律的执行，特意给你们留下投票时间。没有我这份体贴，那些营地早就不再是问题了。"
 
 # game/scenario/9_0_1.rpy:249
-translate chinese 2a03aac5:
+translate chinese 8bbdf0e3:
 
-    # "Le bois racle le sol."
-    ""
+    # kami "Vous pouvez me remercier, MOI, déesse de clémence et de bienveillance !"
+    kami "你们可以感谢我——宽容与仁慈的女神！"
 
 # game/scenario/9_0_1.rpy:252
-translate chinese 367a1586:
+translate chinese a91192e3:
 
-    # think "Retour à la normale."
-    think ""
-
-# game/scenario/9_0_1.rpy:253
-translate chinese 7975311c:
-
-    # think "Ou à ce qui porte ce nom ici."
-    think ""
+    # kami "Vous voyez ? Je peux être incroyablement attentionnée."
+    kami "看吧？我可以体贴得令人难以置信。"
 
 # game/scenario/9_0_1.rpy:255
-translate chinese 82ae1306_2:
+translate chinese c7245477:
 
-    # "Je passe une main sur mon visage."
-    ""
-
-# game/scenario/9_0_1.rpy:256
-translate chinese 0ee62047:
-
-    # "Je cherche ma veste."
-    ""
+    # kami "Après le vote, le Commandement IV sera appliqué selon la règle en vigueur. Avec ou sans modification."
+    kami "投票结束后，第四戒律将按照届时生效的规则执行。无论规则有没有修改。"
 
 # game/scenario/9_0_1.rpy:258
-translate chinese 5e488f31:
+translate chinese ff037963:
 
-    # think "Elle revient."
-    think ""
+    # kami "Vous allez maintenant devoir choisir, mes petits humains préférés. Cette fois, réfléchissez très vite."
+    kami "现在，你们必须做出选择了，我最喜欢的小人类们。这次可得想得非常快。"
 
-# game/scenario/9_0_1.rpy:259
-translate chinese db980a3f:
+# game/scenario/9_0_1.rpy:280
+translate chinese db743e23:
 
-    # think "Elle sourit."
-    think ""
-
-# game/scenario/9_0_1.rpy:260
-translate chinese a4804658:
-
-    # think "Elle nous convoque."
-    think ""
-
-# game/scenario/9_0_1.rpy:261
-translate chinese 4c2afb4a:
-
-    # think "Comme si rien ne s'était passé..."
-    think ""
-
-# game/scenario/9_0_1.rpy:265
-translate chinese ceb372ad:
-
-    # "Je regarde une dernière fois la chambre."
-    ""
-
-# game/scenario/9_0_1.rpy:266
-translate chinese c4855074:
-
-    # "J'ouvre la porte."
-    ""
+    # ryn colere "Elle savait tout. Elle a laissé les gens s'entasser, puis elle a transformé leur survie en sujet de vote."
+    ryn colere "她早就知道一切。她任由人群越聚越多，然后把他们能不能活下来变成了投票议题。"
 
 # game/scenario/9_0_1.rpy:281
-translate chinese b4dcc99a:
+translate chinese 5d715d11:
 
-    # "Le couloir s'ouvre."
-    ""
+    # ryn colere2 "Qu'on ne vienne pas me dire que les sujets des votes sont tirés au hasard !!"
+    ryn colere2 "谁再敢跟我说投票议题是随机抽出来的！！"
 
-# game/scenario/9_0_1.rpy:282
-translate chinese 926c2fbe:
+# game/scenario/9_0_1.rpy:283
+translate chinese 341c41cc:
 
-    # "Les portes suivent, une à une."
-    ""
+    # nyra fatigue "Nous ne pouvons plus changer ce qu'elle a préparé. Il faut empêcher l'exécution."
+    nyra fatigue "她准备好的局面已经无法改变。我们必须阻止处决。"
 
-# game/scenario/9_0_1.rpy:284
-translate chinese c2bc6b89:
+# game/scenario/9_0_1.rpy:285
+translate chinese 8f9ef037:
 
-    # think "Kami est revenue."
-    think ""
-
-# game/scenario/9_0_1.rpy:286
-translate chinese d6d63c53:
-
-    # lysa blase "Bon."
-    lysa blase ""
+    # noam reflechit "De toute façon, on a qu'une seule solution : autoriser ces rassemblements."
+    noam reflechit "反正只有一个办法：允许这些集会。"
 
 # game/scenario/9_0_1.rpy:287
-translate chinese 12d46eb4:
+translate chinese ee75e22b:
 
-    # lysa "La pause du cauchemar est terminée. Bref."
-    lysa ""
+    # sael determine "Tout le monde vote pour. Aucun détour, aucune abstention et aucune lâcheté."
+    sael determine "所有人都投赞成。不要绕弯，不许弃权，也别当懦夫。"
 
 # game/scenario/9_0_1.rpy:289
-translate chinese 4efc3334:
+translate chinese 4d30fdf1:
 
-    # ryn fatigue "Avance."
-    ryn fatigue ""
+    # ryn colere2 "Si quelqu'un ose voter contre, je—"
+    ryn colere2 "谁敢投反对票，我就——"
 
 # game/scenario/9_0_1.rpy:291
-translate chinese 154ed7f8:
+translate chinese 8a85cd44:
 
-    # iris fatigue "Toujours aussi charmant."
-    iris fatigue ""
+    # noam determine "Ne termine pas cette phrase. On ne sauvera personne en commençant par nous menacer entre nous."
+    noam determine "别把那句话说完。互相威胁，救不了任何人。"
 
 # game/scenario/9_0_1.rpy:293
-translate chinese 980a2950:
+translate chinese 736ec430:
 
-    # ryn "Pas aujourd'hui."
-    ryn ""
+    # ryn colere "Des milliers de personnes vont peut-être mourir et tu veux encore jouer au médiateur ?"
+    ryn colere "几千人可能会死，你还想继续当和事佬？"
 
 # game/scenario/9_0_1.rpy:295
-translate chinese 4640ff1b:
+translate chinese e56ffb34:
 
-    # mara stress "Aujourd'hui, personne n'est charmant."
-    mara stress ""
+    # noam determine "Surtout maintenant. La peur peut suffire à faire hésiter quelqu'un, et il nous faut une unanimité de vote pour."
+    noam determine "正因为如此。恐惧足以让人犹豫，而我们需要全票赞成。"
 
-# game/scenario/9_0_1.rpy:296
-translate chinese bb33bc42:
+# game/scenario/9_0_1.rpy:297
+translate chinese 3845f3a0:
 
-    # mara "Même moi, j'ai pas la force de vendre le produit."
-    mara ""
+    # "Je regarde tout le monde dans le blanc des yeux."
+    "我直视着每一个人的眼睛。"
 
-# game/scenario/9_0_1.rpy:298
-translate chinese 98492fb1:
+# game/scenario/9_0_1.rpy:299
+translate chinese 5ab0598a:
 
-    # elen peur "Ça va aller. Enfin... ça peut aller. Peut-être."
-    elen peur ""
+    # kael "..."
+    kael "……"
 
 # game/scenario/9_0_1.rpy:300
-translate chinese f105558b:
+translate chinese 629cb0dc:
 
-    # lysa blase "Elen."
-    lysa blase ""
+    # tomas "..."
+    tomas "……"
 
 # game/scenario/9_0_1.rpy:302
-translate chinese f210402e:
+translate chinese 52c232b2:
 
-    # elen "Quoi ? Qu'est-ce qu'il y a ?"
-    elen ""
+    # noam determine "Tout le monde semble d'accord sur la nécessité de voter pour."
+    noam determine "看来所有人都同意必须投赞成票。"
 
 # game/scenario/9_0_1.rpy:304
-translate chinese aca2f479:
+translate chinese 662979b8:
 
-    # lysa triste "Pas maintenant, Elen."
-    lysa triste ""
+    # tomas raison "M-Mais, il y a un problème, je crains que ce ne soit pas suffisant. On ne sait pas ce que veut dire idéalement avec déclaration préalable."
+    tomas raison "可、可是还有一个问题。恐怕光这样还不够。我们不知道“最好提前申报”究竟是什么意思。"
+
+# game/scenario/9_0_1.rpy:306
+translate chinese 8b0c9525:
+
+    # noam reflechit "Les campements existent déjà. Même si nous autorisons les regroupements, ils n'auront pas été déclarés avant leur formation."
+    noam reflechit "营地已经存在了。就算我们允许集会，它们也没有在建立前申报。"
+
+# game/scenario/9_0_1.rpy:307
+translate chinese a580b3f3:
+
+    # noam colere "Tu crois qu'ils pourraient quand même être considérés comme illégaux ?!"
+    noam colere "你觉得它们仍然可能被认定为非法？！"
+
+# game/scenario/9_0_1.rpy:309
+translate chinese 861250d6:
+
+    # ryn colere2 "Ils ne pouvaient rien déclarer ! Kami était en maintenance !"
+    ryn colere2 "他们根本没法申报！Kami 当时正在维护！"
+
+# game/scenario/9_0_1.rpy:311
+translate chinese c1a07f21:
+
+    # nyra raison "Ça ne l'empêchera pas d'appliquer la règle strictement. Le vote peut autoriser les futurs regroupements sans régulariser ceux qui existent déjà."
+    nyra raison "这也不会妨碍她严格执行规则。投票也许只会允许今后的集会，却不会让现有营地合法化。"
+
+# game/scenario/9_0_1.rpy:313
+translate chinese 8ec8ea74:
+
+    # sael determine "Et nous ne pouvons pas modifier le texte après son annonce. Kami a toujours verrouillé le libellé avant le débat."
+    sael determine "而且议案一经宣布，我们就不能修改措辞。Kami 一直会在辩论前锁定文本。"
+
+# game/scenario/9_0_1.rpy:315
+translate chinese cbb5cb9e:
+
+    # ryn colere "Alors à quoi sert notre vote s'ils peuvent mourir dans les deux cas ?!"
+    ryn colere "那要是他们无论如何都可能死，我们投票还有什么用？！"
+
+# game/scenario/9_0_1.rpy:317
+translate chinese 5c8866a7:
+
+    # noam determine "C'est un piège. Elle veut nous faire croire qu'on a le choix et la possibilité de les sauver."
+    noam determine "这是个陷阱。她想让我们以为自己有选择，以为自己能救他们。"
+
+# game/scenario/9_0_1.rpy:318
+translate chinese 196ba8a1:
+
+    # noam reflechit "Mais il y a un moyen pour les sauver en respectant les Commandements !"
+    noam reflechit "但有一个办法，既能遵守戒律，也能救下他们！"
+
+# game/scenario/9_0_1.rpy:319
+translate chinese 8dc44e16:
+
+    # noam determine "Si les gens suivent la diffusion du Conclave, ils se disperseront en comprenant qu'ils peuvent peut-être mourir."
+    noam determine "如果那些人正在看议会直播，一旦意识到自己可能会死，就会主动散开。"
 
 # game/scenario/9_0_1.rpy:321
-translate chinese 382a210a:
+translate chinese f804490d:
 
-    # kael fatigue "Elle est revenue."
-    kael fatigue ""
+    # sael inquiet "Ils devront s'éloigner des points de passage et renoncer à franchir la frontière."
+    sael inquiet "他们必须远离边境通道，放弃跨越边界。"
 
-# game/scenario/9_0_1.rpy:323
-translate chinese 2f2ffc8c:
+# game/scenario/9_0_1.rpy:322
+translate chinese d12272a3:
 
-    # iris fatigue "Oui."
-    iris fatigue ""
+    # sael colere "Je vous l'avais dit que cette histoire de traverser les frontières était dangereuse."
+    sael colere "我早就说过，跨越边界这件事很危险。"
 
-# game/scenario/9_0_1.rpy:325
-translate chinese 228057fb:
+# game/scenario/9_0_1.rpy:324
+translate chinese 0daa8629:
 
-    # iris "On adore commencer par l'évidence la plus déprimante possible."
-    iris ""
+    # ryn colere "Ils fuient Limen ! Tu crois qu'ils vont gentiment se ranger en petits groupes et repartir parce qu'on le leur demande ?!"
+    ryn colere "他们正在逃离 Limen！你觉得只要我们开口，他们就会乖乖分成小组，再原路返回吗？！"
 
-# game/scenario/9_0_1.rpy:327
-translate chinese d2e17fed_2:
+# game/scenario/9_0_1.rpy:326
+translate chinese f1ddfab1:
 
-    # kael "Je sais."
-    kael ""
+    # noam inquiet "Non. Mais ils n'ont déjà aucune chance de traverser aujourd'hui. Nous pouvons au moins leur éviter d'être regroupés au moment où Kami appliquera le Commandement."
+    noam inquiet "不会。但他们今天本来就不可能越过边界。至少我们可以确保 Kami 执行戒律时，他们不再聚集在一起。"
 
-# game/scenario/9_0_1.rpy:331
-translate chinese 7911e7f7:
+# game/scenario/9_0_1.rpy:328
+translate chinese d2348d95:
 
-    # kael triste "Le penser et l'entendre, ce n'est pas la même chose."
-    kael triste ""
+    # nyra raison "La diffusion du débat est publique. Kami veut que le monde entier nous regarde, alors utilisons cette audience contre elle."
+    nyra raison "辩论是公开直播的。Kami 想让全世界看着我们，那我们就反过来利用这些观众。"
 
-# game/scenario/9_0_1.rpy:333
-translate chinese 10f39cd1:
+# game/scenario/9_0_1.rpy:330
+translate chinese 375ff8af:
 
-    # sael inquiet "Deux jours sans sa voix."
-    sael inquiet ""
+    # tomas raison "Il faudra donner des instructions précises : groupes de moins de vingt, éloignement des points de passage et aucun franchissement sans autorisation."
+    tomas raison "必须给出明确指示：每组少于二十人，远离边境通道，未经许可不得越界。"
+
+# game/scenario/9_0_1.rpy:332
+translate chinese dd7b6390:
+
+    # lysa blase "Notre stratégie repose donc sur une évacuation improvisée diffusée en direct. Ce n'est pas glorieux, mais c'est mieux qu'une prière."
+    lysa blase "所以我们的策略，是通过直播临时组织一场疏散。说不上光彩，但总比祈祷有用。"
 
 # game/scenario/9_0_1.rpy:334
-translate chinese 368b50f1:
+translate chinese 3a1a4594:
 
-    # sael "Puis elle revient."
-    sael ""
+    # elen peur "Et s'ils ne peuvent pas partir ? Il y a sûrement des enfants, des blessés et des gens trop épuisés pour bouger."
+    elen peur "要是他们没法离开呢？那里肯定有孩子、伤员，还有累得走不动的人。"
 
 # game/scenario/9_0_1.rpy:335
-translate chinese a7402b93:
+translate chinese 1c354ce0:
 
-    # sael "Les mauvais présages aussi savent attendre."
-    sael ""
+    # elen colere "Non, on va arriver ! Gardons espoir !"
+    elen colere "不，我们能做到！别放弃希望！"
 
 # game/scenario/9_0_1.rpy:337
-translate chinese e44c83c4:
+translate chinese ac07b4cc:
 
-    # ryn fatigue "Elle revient toujours."
-    ryn fatigue ""
+    # noam inquiet "On ne pourra pas le savoir, on ne sait même pas où sont les campements."
+    noam inquiet "我们没法知道。甚至连营地具体在哪里都不清楚。"
 
 # game/scenario/9_0_1.rpy:339
-translate chinese 95fd786c:
+translate chinese ba5ae072:
 
-    # lysa blase "Formidable."
-    lysa blase ""
+    # tomas inquiet "Peut-être qu'on peut avoir accès aux données depuis une de nos tablettes ?"
+    tomas inquiet "也许我们能用某个人的平板访问相关数据？"
 
-# game/scenario/9_0_1.rpy:340
-translate chinese b33e8310:
+# game/scenario/9_0_1.rpy:341
+translate chinese 2a33bc1d:
 
-    # lysa "Si seulement on n'était pas contre l'entité la plus puissante du monde. Détail mineur."
-    lysa ""
+    # kael sourire "C'est peut-être faisable ! Attends, file-moi ta tablette !"
+    kael sourire "也许可行！等等，把你的平板给我！"
 
-# game/scenario/9_0_1.rpy:353
-translate chinese f6686abb:
+# game/scenario/9_0_1.rpy:342
+translate chinese d2a05fa9:
 
-    # kami "Bonjour, mes petits représentants."
-    kami ""
+    # kael reflechit "Je vais voir si on peut se connecter aux données de la salle du canon !"
+    kael reflechit "我看看能不能连接到炮台室的数据！"
 
-# game/scenario/9_0_1.rpy:357
-translate chinese 6abe0872:
+# game/scenario/9_0_1.rpy:352
+translate chinese 55b33cef:
 
-    # kami "Quelle ambiance."
-    kami ""
+    # kael joie "Ok ! C'est configuré, on a accès aux images !"
+    kael joie "好了！设置完成，我们能看到影像了！"
+
+# game/scenario/9_0_1.rpy:354
+translate chinese e0254d4a:
+
+    # noam sourire "Donc maintenant, on doit leur dire de se disperser !"
+    noam sourire "现在就得告诉他们赶快散开！"
+
+# game/scenario/9_0_1.rpy:356
+translate chinese 27e2f700:
+
+    # elias inquiet "Il faut parler assez clairement pour que ceux qui peuvent bouger le fassent tout de suite."
+    elias inquiet "必须说得足够清楚，让还能行动的人立刻离开。"
 
 # game/scenario/9_0_1.rpy:358
-translate chinese ebe35107:
+translate chinese 672c7db6:
 
-    # kami "On dirait que vous avez passé deux jours sans autorité maternelle."
-    kami ""
+    # julian determine "On a une chance unique de sauver des innocents, faisons-le !"
+    julian determine "这是拯救无辜者的唯一机会，行动吧！"
+
+# game/scenario/9_0_1.rpy:360
+translate chinese 51a6f40c:
+
+    # iris fatigue "Pourquoi est-ce toujours à nous de réparer les bêtises des autres ..? Bon, allons-y."
+    iris fatigue "为什么总得由我们收拾别人闯下的祸……？算了，开始吧。"
+
+# game/scenario/9_0_1.rpy:362
+translate chinese 77ea9c14:
+
+    # noam raison "Il faudra aussi gagner chaque seconde possible après le signal. Plus ils disposent de temps, moins ils seront nombreux dans les campements."
+    noam raison "发出信号后，还得尽可能多争取每一秒。他们拥有的时间越多，留在营地里的人就越少。"
 
 # game/scenario/9_0_1.rpy:364
-translate chinese cc65cda8:
+translate chinese 90f7d819:
 
-    # kami "C'est presque mignon."
-    kami ""
+    # kael joie "En tout cas ça marche, certaines personnes commencent à se disperser !"
+    kael joie "有用！已经有人开始散开了！"
 
-# game/scenario/9_0_1.rpy:365
-translate chinese e96e5af0:
+# game/scenario/9_0_1.rpy:366
+translate chinese c3e9beb5:
 
-    # kami "Un peu pathétique, mais mignon."
-    kami ""
+    # noam reflechit "Super ! Continuons à en parler, il faut qu'ils se dispersent !"
+    noam reflechit "太好了！继续说，必须让他们散开！"
 
-# game/scenario/9_0_1.rpy:371
-translate chinese 4149c29e:
+# game/scenario/9_0_1.rpy:391
+translate chinese 9ed5ce9b:
 
-    # kami "Le Conclave reprend son fonctionnement normal."
-    kami ""
+    # "Le signal disparaît peu à peu, comme si quelqu'un interagissait avec le signal. La tablette de Kael montre des silhouettes qui commencent à courir avant de s'éteindre à son tour."
+    "信号逐渐消失，仿佛有人正在干扰。Kael 的平板显示着人影开始奔跑，随后也熄灭了。"
 
-# game/scenario/9_0_1.rpy:377
-translate chinese 78023702:
+# game/scenario/9_0_1.rpy:393
+translate chinese b82c88d0:
 
-    # kami "Troisième vote."
-    kami ""
+    # think "Certains ont entendu. Je ne sais pas combien, ni s'ils auront le temps de prévenir les autres."
+    think "有些人听见了。我不知道有多少，也不知道他们是否来得及通知其他人。"
 
-# game/scenario/9_0_1.rpy:384
-translate chinese 9371a305:
+# game/scenario/9_0_1.rpy:402
+translate chinese 9ad35fd5:
 
-    # kami "Autoriser les regroupements de plus de vingt personnes."
-    kami ""
+    # kami "Voilà donc votre grande tentative : détourner mon signal pour transformer le Conclave en alerte d'évacuation."
+    kami "所以，这就是你们伟大的尝试：劫持我的信号，把议会变成疏散警报。"
 
-# game/scenario/9_0_1.rpy:390
-translate chinese 27ab20e0:
+# game/scenario/9_0_1.rpy:403
+translate chinese 03733f3c:
 
-    # kami "Actuellement, les regroupements de plus de vingt individus non déclarés sont interdits."
-    kami ""
+    # kami "C'était presque intelligent, nous verrons ce que les gens feront de vos doux conseils."
+    kami "差点算得上聪明。就让我们看看，那些人会怎么对待你们温柔的建议。"
 
-# game/scenario/9_0_1.rpy:392
-translate chinese 609f7c06:
+# game/scenario/9_0_1.rpy:406
+translate chinese deb39b65:
 
-    # kami "Cette interdiction relève du Commandement IV."
-    kami ""
+    # kami "Quelques humains qui crient très fort parce qu'ils viennent enfin de comprendre qu'ils sont en retard. C'était presque émouvant."
+    kami "几个人类终于意识到自己来晚了，于是扯着嗓子大喊大叫。差点把我感动了。"
 
-# game/scenario/9_0_1.rpy:398
-translate chinese b41eb61f:
+# game/scenario/9_0_1.rpy:411
+translate chinese b1630938:
 
-    # kami "Organisation."
-    kami ""
+    # kami "Je reconnais une véritable efficacité technique. La majorité des campements a reçu votre avertissement. Ce serait presque respectable, si votre impertinence ne gâchait pas tout."
+    kami "我承认，这次技术效率确实不错。大多数营地都收到了警告。要不是你们的无礼坏了气氛，甚至称得上值得尊敬。"
 
-# game/scenario/9_0_1.rpy:399
-translate chinese 2e667769:
+# game/scenario/9_0_1.rpy:413
+translate chinese f2503c91:
 
-    # kami "Rassemblement."
-    kami ""
+    # kami "Vous avez atteint une partie importante des campements. Pas tous, mais suffisamment pour vous donner l'impression d'avoir repris la main."
+    kami "你们联系到了相当一部分营地。虽然不是全部，但足够让你们产生重新掌控局面的错觉。"
 
-# game/scenario/9_0_1.rpy:400
-translate chinese 3cb5f4ab:
+# game/scenario/9_0_1.rpy:414
+translate chinese e8cc701e:
 
-    # kami "Mouvement collectif non autorisé."
-    kami ""
-
-# game/scenario/9_0_1.rpy:401
-translate chinese 59667fca:
-
-    # kami "Tous ces petits mots qui donnent aux foules l'impression d'avoir une colonne vertébrale."
-    kami ""
-
-# game/scenario/9_0_1.rpy:407
-translate chinese c1bb8a91:
-
-    # kami "Un vote unanime en faveur de l'amendement autorisera ces regroupements."
-    kami ""
-
-# game/scenario/9_0_1.rpy:409
-translate chinese 016bd91f:
-
-    # kami "Ils resteront soumis à déclaration préalable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:415
-translate chinese 7ba676c9_2:
-
-    # kami "Je sais."
-    kami ""
+    # kami "Seulement, ce n'est qu'une vague impression."
+    kami "可惜，也就只是错觉。"
 
 # game/scenario/9_0_1.rpy:416
-translate chinese 85e1abf2:
+translate chinese f6149ad3:
 
-    # kami "Ce n'est pas la liberté totale."
-    kami ""
+    # kami "J'ai bien cru que vous arriveriez à un résultat probant. Agir et donner l'impression d'agir restent deux choses différentes."
+    kami "我还真以为你们能拿出令人信服的成果。真正行动和装出行动的样子，终究是两回事。"
 
-# game/scenario/9_0_1.rpy:422
-translate chinese cfc74863:
+# game/scenario/9_0_1.rpy:418
+translate chinese a782122e:
 
-    # kami "Mais chaque enfant doit apprendre à marcher avant de courir vers une insurrection."
-    kami ""
+    # kami "Même ce détournement, vous l'avez presque entièrement raté. Je serais déçue si je n'avais pas trouvé votre panique aussi divertissante."
+    kami "就连这次信号劫持，你们也差点彻底搞砸。要不是你们的慌乱实在太有趣，我都要失望了。"
 
-# game/scenario/9_0_1.rpy:428
-translate chinese e98d0ad0:
+# game/scenario/9_0_1.rpy:421
+translate chinese d6562d55:
 
-    # kami "En cas d'échec du vote, l'interdiction actuelle restera en vigueur."
-    kami ""
+    # kami "Dans tous les cas, votre intrusion, votre intention et votre insolence sont enregistrées."
+    kami "无论如何，你们的入侵、意图和无礼都已经记录在案。"
 
-# game/scenario/9_0_1.rpy:434
-translate chinese 1ae93585:
+# game/scenario/9_0_1.rpy:424
+translate chinese 840f5413:
 
-    # kami "Le vote aura lieu aujourd'hui."
-    kami ""
+    # kami "Je vais pourtant être généreuse : votre petit théâtre n'interrompra pas la procédure officielle."
+    kami "不过我会大发慈悲：你们这场小闹剧不会中断正式程序。"
 
-# game/scenario/9_0_1.rpy:435
-translate chinese d39d9861:
-
-    # kami "Enfin... dans quelques instants."
-    kami ""
-
-# game/scenario/9_0_1.rpy:441
-translate chinese d73df9a3:
-
-    # kami "Essayez de ne pas tout gâcher trop vite."
-    kami ""
-
-# game/scenario/9_0_1.rpy:460
-translate chinese c7276454:
-
-    # tomas raison "Attendez."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:462
-translate chinese 2753906b:
-
-    # ryn fatigue "Quoi encore ?"
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:464
-translate chinese a11f2826:
-
-    # tomas "Le libellé."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:466
-translate chinese 0cf106ac:
-
-    # lysa blase "Tomas."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:468
-translate chinese 1f469136:
-
-    # tomas raison "Non."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:469
-translate chinese eed01128:
-
-    # tomas "Cette fois, c'est important."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:473
-translate chinese 8537ae60:
-
-    # noam inquiet "Qu'est-ce qui ne va pas ?"
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:475
-translate chinese cd5dad11:
-
-    # tomas "Regroupements de plus de vingt personnes."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:476
-translate chinese b7b8506e:
-
-    # tomas "Non déclarés."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:477
-translate chinese 657d9380:
-
-    # tomas "Commandement IV."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:479
-translate chinese 4cd0b435:
-
-    # ryn fatigue "Oui, on a entendu."
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:481
-translate chinese 21df92ca:
-
-    # tomas culpabilite "Pas comme ça."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:485
-translate chinese 3086c847:
-
-    # sael inquiet "Parle."
-    sael inquiet ""
-
-# game/scenario/9_0_1.rpy:487
-translate chinese d4919e0d:
-
-    # tomas raison "Ce matin, je suis allé dans la salle du canon."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:488
-translate chinese a3551610:
-
-    # tomas "Je voulais vérifier les exécutions. J'avais déjà vu une anomalie hier."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:490
-translate chinese caf7b0f1:
-
-    # ryn colere "Oui et ?!"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:492
-translate chinese 31d17f98:
-
-    # tomas "Des gens quittent massivement les profondeurs de Limen."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:493
-translate chinese cd6abda0:
-
-    # tomas "Beaucoup de gens."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:497
-translate chinese 41e09d94:
-
-    # ryn colere "Hein ?! Combien ?"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:499
-translate chinese 15febc28:
-
-    # tomas culpabilite "Je n'ai pas le chiffre exact."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:501
-translate chinese 2d37b2e0:
-
-    # ryn colere2 "Combien ?"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:503
-translate chinese 13cde78e:
-
-    # tomas "Des milliers."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:504
-translate chinese dd1a7730:
-
-    # tomas "Peut-être plusieurs dizaines de milliers."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:508
-translate chinese cf5af007:
-
-    # sael peur "Laisse-moi deviner. Ils remontent vers les frontières."
-    sael peur ""
-
-# game/scenario/9_0_1.rpy:510
-translate chinese 7ad81883_3:
-
-    # tomas "Oui."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:511
-translate chinese 9a8d950e:
-
-    # tomas "Je pense qu'ils ont profité de l'absence de Kami."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:512
-translate chinese 734d2b20:
-
-    # tomas "Ou de sa maintenance."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:513
-translate chinese e8f741d9:
-
-    # tomas "Ils ont cru que c'était une ouverture pour passer les frontières malgré l'interdiction."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:515
-translate chinese b89d6d84:
-
-    # lysa triste "Évidemment."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:517
-translate chinese f8258601:
-
-    # tomas raison "Ils ont installé des campements."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:518
-translate chinese 6c5ae869:
-
-    # tomas "À plusieurs points de passage."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:519
-translate chinese 34f892cc:
-
-    # tomas "Vers d'autres districts."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:523
-translate chinese db79c88c:
-
-    # kael inquiet "Des campements."
-    kael inquiet ""
-
-# game/scenario/9_0_1.rpy:525
-translate chinese aad902f3:
-
-    # tomas culpabilite "Migratoires."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:526
-translate chinese a73955e0:
-
-    # tomas "Improvisés."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:527
-translate chinese 843b34bd:
-
-    # tomas "Et surtout non déclarés."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:531
-translate chinese 2287d305:
-
-    # noam inquiet "Et donc..."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:533
-translate chinese dcf01889:
-
-    # tomas "Donc ce sont des regroupements de plus de vingt personnes."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:537
-translate chinese 137a0646:
-
-    # ryn colere "Non. T'es pas sérieux."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:539
-translate chinese f928cead:
-
-    # tomas "Si. Mal-"
-    tomas ""
-
-# game/scenario/9_0_1.rpy:542
-translate chinese 752aac12:
-
-    # ryn colere2 "Tu vas pas me dire que des gens qui fuient Limen vont crever parce qu'ils dorment trop nombreux dehors."
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:544
-translate chinese b7312bd7:
-
-    # tomas culpabilite "Je pense que le Commandement IV peut les viser."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:546
-translate chinese 4c05a261:
-
-    # ryn "Putain !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:547
-translate chinese 05dd4d63:
-
-    # ryn "Sérieux ?! Kami, c'est quoi ce bordel ?!"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:549
-translate chinese edde598e:
-
-    # sael peur "Tous les campements ?"
-    sael peur ""
-
-# game/scenario/9_0_1.rpy:551
-translate chinese 039bf957:
-
-    # tomas "Tous ceux qui dépassent vingt personnes."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:552
-translate chinese 95a169fc:
-
-    # tomas "Donc probablement presque tous."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:556
-translate chinese 5c4b795e:
-
-    # lysa blase "C'est pas un hasard si on vote sur ça."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:557
-translate chinese e4b7e447:
-
-    # lysa "Tu vois bien que ce n'est pas une coïncidence."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:559
-translate chinese fee362d9:
-
-    # noam inquiet "Si le vote passe, ils peuvent rester groupés."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:561
-translate chinese e681018f:
-
-    # noam "Et s'il échoue..."
-    noam ""
-
-# game/scenario/9_0_1.rpy:563
-translate chinese aa4fa8de:
-
-    # tomas culpabilite "L'interdiction reste."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:564
-translate chinese ff801ab7:
-
-    # tomas "Et Kami applique le Commandement."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:581
-translate chinese 3233cb6d:
-
-    # kami "Vous avez tout compris."
-    kami ""
-
-# game/scenario/9_0_1.rpy:585
-translate chinese 6815999c:
-
-    # kami "Je suis fière de vous."
-    kami ""
-
-# game/scenario/9_0_1.rpy:586
-translate chinese c7f4f0c1:
-
-    # kami "Enfin."
-    kami ""
-
-# game/scenario/9_0_1.rpy:587
-translate chinese 7864fe0e:
-
-    # kami "Surtout de Tomas."
-    kami ""
-
-# game/scenario/9_0_1.rpy:593
-translate chinese 1d5a7b0a:
-
-    # kami "Les campements limenois actuellement installés aux frontières relèvent bien du Commandement IV."
-    kami ""
-
-# game/scenario/9_0_1.rpy:597
-translate chinese f1d84d4f:
-
-    # kami "Ce sont des regroupements non déclarés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:598
-translate chinese b7ec503e:
-
-    # kami "De plusieurs centaines d'individus chacun."
-    kami ""
-
-# game/scenario/9_0_1.rpy:599
-translate chinese 92dd9f63:
-
-    # kami "Evidemment, ces mouvements collectifs ne sont pas autorisés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:605
-translate chinese 99b5a631:
-
-    # kami "C'est très clair."
-    kami ""
-
-# game/scenario/9_0_1.rpy:611
-translate chinese 4afd071e:
-
-    # kami "J'ai cependant retardé l'application du Commandement."
-    kami ""
-
-# game/scenario/9_0_1.rpy:612
-translate chinese 9fc8fcd4:
-
-    # kami "Oh. Comme je suis adorable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:613
-translate chinese 70ca747e:
-
-    # kami "Sans mon intervention, ces campements ne seraient déjà plus un problème."
-    kami ""
-
-# game/scenario/9_0_1.rpy:617
-translate chinese 75de0ff7:
-
-    # kami "Pour vous laisser le temps de voter."
-    kami ""
-
-# game/scenario/9_0_1.rpy:623
-translate chinese a7d8dea8:
-
-    # kami "Vous voyez ?"
-    kami ""
-
-# game/scenario/9_0_1.rpy:624
-translate chinese 5996efdc:
-
-    # kami "Je peux être attentionnée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:630
-translate chinese 2616c089:
-
-    # kami "Après le vote, le Commandement IV s'appliquera."
-    kami ""
-
-# game/scenario/9_0_1.rpy:631
-translate chinese 6688da38:
-
-    # kami "Avec ou sans modification."
-    kami ""
-
-# game/scenario/9_0_1.rpy:637
-translate chinese 5e34354c:
-
-    # kami "Mais vous allez maintenant devoir voter, mes petits humains préférés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:641
-translate chinese 2df64691:
-
-    # kami "Cette fois, réfléchissez bien à ce que vous allez faire !"
-    kami ""
-
-# game/scenario/9_0_1.rpy:660
-translate chinese e40d974d:
-
-    # ryn colere "Elle savait tout."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:662
-translate chinese 8ab16e9b:
-
-    # nyra fatigue "Oui."
-    nyra fatigue ""
-
-# game/scenario/9_0_1.rpy:664
-translate chinese d14160fa:
-
-    # ryn colere2 "Elle les a laissés s'entasser."
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:665
-translate chinese 24357161:
-
-    # ryn colere "Si ça se trouve, elle a fait semblant de ne pas être en maintenance pour les laisser s'entasser !"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:667
-translate chinese 6c98e49b:
-
-    # tomas culpabilite "Oui."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:668
-translate chinese a458ba92:
-
-    # tomas "C'est possible."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:670
-translate chinese be2bd329:
-
-    # ryn "Et maintenant elle appelle ça un vote."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:672
-translate chinese dfec55c2:
-
-    # lysa triste "Non. Pas seulement."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:673
-translate chinese 9e86277e:
-
-    # lysa "Elle appelle ça notre responsabilité."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:677
-translate chinese 79dfd030:
-
-    # sael peur "On vote tous pour."
-    sael peur ""
-
-# game/scenario/9_0_1.rpy:679
-translate chinese df63b9b9_2:
-
-    # noam inquiet "Oui."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:681
-translate chinese d67b6d83:
-
-    # sael determine "Pas d'abstention."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:682
-translate chinese e9856556:
-
-    # sael "Pas de détour."
-    sael ""
-
-# game/scenario/9_0_1.rpy:683
-translate chinese 491ed6bc:
-
-    # sael "Pas de lâcheté."
-    sael ""
-
-# game/scenario/9_0_1.rpy:685
-translate chinese 3078fb7b:
-
-    # ryn colere "Si quelqu'un vote contre—"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:687
-translate chinese 5fd8bd61:
-
-    # noam determine "Ryn."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:689
-translate chinese 9d50aad2_1:
-
-    # ryn "Quoi ?"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:691
-translate chinese 33f58d3a:
-
-    # noam "Ne finis pas cette phrase."
-    noam ""
-
-# game/scenario/9_0_1.rpy:693
-translate chinese 9685abe6:
-
-    # ryn colere2 "Tu veux vraiment faire le médiateur maintenant ?"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:695
-translate chinese 205802a7:
-
-    # noam determine "Oui."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:696
-translate chinese f0c2fb45:
-
-    # noam "Surtout maintenant."
-    noam ""
-
-# game/scenario/9_0_1.rpy:700
-translate chinese 3b4c86d3:
-
-    # ryn "Des gens vont mourir."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:702
-translate chinese 7929b13f:
-
-    # noam "Alors on essaie de les sauver."
-    noam ""
-
-# game/scenario/9_0_1.rpy:703
-translate chinese 69f255ce:
-
-    # noam "Mais on ne commence pas par se menacer entre nous."
-    noam ""
-
-# game/scenario/9_0_1.rpy:707
-translate chinese b0b013d5:
-
-    # ryn "T'as intérêt à être utile."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:709
-translate chinese de874618:
-
-    # noam "Je vais essayer."
-    noam ""
-
-# game/scenario/9_0_1.rpy:711
-translate chinese 21611dc3:
-
-    # lysa blase "Rassurant."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:724
-translate chinese eff531b2:
-
-    # elen peur "Tout le monde va voter pour."
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:725
-translate chinese a05088c7:
-
-    # elen "Il le faut. On ne peut pas laisser des gens mourir juste parce qu'ils sont trop nombreux au même endroit."
-    elen ""
-
-# game/scenario/9_0_1.rpy:727
-translate chinese a1e85c82:
-
-    # iris inquiet "Elen..."
-    iris inquiet ""
-
-# game/scenario/9_0_1.rpy:729
-translate chinese 2c08ab80:
-
-    # elen "Non."
-    elen ""
-
-# game/scenario/9_0_1.rpy:730
-translate chinese 1b2d8ba0:
-
-    # elen peur "Ne me dis pas qu'il faut rester prudents."
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:731
-translate chinese 50904ed7:
-
-    # elen "Pas là."
-    elen ""
-
-# game/scenario/9_0_1.rpy:733
-translate chinese bbd1ff91:
-
-    # iris fatigue "Je voulais juste dire que oui."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:734
-translate chinese 5d0d36ad:
-
-    # iris "Il le faut."
-    iris ""
-
-# game/scenario/9_0_1.rpy:738
-translate chinese 6d5d7490:
-
-    # elias fatigue "Moi aussi je voterai pour."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:739
-translate chinese 35ede248:
-
-    # elias "Je sais pas faire de beau discours."
-    elias ""
-
-# game/scenario/9_0_1.rpy:740
-translate chinese 7c9d3358:
-
-    # elias "Mais là, c'est pas compliqué. C'est des gens. On les laisse pas crever."
-    elias ""
-
-# game/scenario/9_0_1.rpy:742
-translate chinese 8b3dc361:
-
-    # mara stress "Pareil."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:743
-translate chinese ed9baa2d:
-
-    # mara "Personne ne peut hésiter en sachant ça ? Si ?!"
-    mara ""
-
-# game/scenario/9_0_1.rpy:745
-translate chinese 65ba4844:
-
-    # julian inquiet "Pour aussi."
-    julian inquiet ""
-
-# game/scenario/9_0_1.rpy:746
-translate chinese 324af31a:
-
-    # julian "Évidemment."
-    julian ""
-
-# game/scenario/9_0_1.rpy:747
-translate chinese 73a8ceb6:
-
-    # julian "Pour une fois, le rôle du Conclave est limpide : empêcher un massacre."
-    julian ""
-
-# game/scenario/9_0_1.rpy:751
-translate chinese 973b8bbb:
-
-    # kael fatigue "Pour."
-    kael fatigue ""
-
-# game/scenario/9_0_1.rpy:753
-translate chinese b5e5a6a2:
-
-    # iris surpris "Kael ?"
-    iris surpris ""
-
-# game/scenario/9_0_1.rpy:755
-translate chinese 774092b8:
-
-    # kael "Je parle peu."
-    kael ""
-
-# game/scenario/9_0_1.rpy:756
-translate chinese 7ba49075:
-
-    # kael triste "Ça ne veut pas dire que je ne vois rien."
-    kael triste ""
-
-# game/scenario/9_0_1.rpy:757
-translate chinese 785c38cb:
-
-    # kael "Ou que je suis inhumain."
-    kael ""
-
-# game/scenario/9_0_1.rpy:770
-translate chinese d17b3563:
-
-    # tomas raison "Il faudra parler aux abstentionnistes probables."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:771
-translate chinese 0a69f062:
-
-    # tomas "S'abstenir revient à laisser la règle actuelle tuer."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:773
-translate chinese 3c80d6a3:
-
-    # ryn colere "J'espère bien oui."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:775
-translate chinese d104946c:
-
-    # noam determine "C'est pas notre seul problème."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:777
-translate chinese ae4d02ab:
-
-    # ryn "Putain... Quoi encore ?!"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:779
-translate chinese 7f22aeb1:
-
-    # sael determine "Parle Noam."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:783
-translate chinese 7fd52cf0:
-
-    # noam triste "Kami a été claire."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:784
-translate chinese f975d13f:
-
-    # noam "Le Commandement s'appliquera, avec ou sans modification."
-    noam ""
-
-# game/scenario/9_0_1.rpy:785
-translate chinese bc35cde2:
-
-    # noam determine "Et les regroupements doivent être déclarés avant d'exister."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:789
-translate chinese dc29a38d:
-
-    # ryn colere "Et alors ?"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:791
-translate chinese 35b58442:
-
-    # noam determine "Et alors les campements existent déjà."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:795
-translate chinese 7c90562a:
-
-    # tomas culpabilite "Noam a raison."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:797
-translate chinese 0a56d034_1:
-
-    # ryn colere "Explique."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:799
-translate chinese b2d04b90:
-
-    # tomas raison "Préalable, ça veut dire avant."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:800
-translate chinese 8e7a9399:
-
-    # tomas "Avant le regroupement."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:801
-translate chinese f9839810:
-
-    # tomas "Avant le campement."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:802
-translate chinese 3ba8618c:
-
-    # tomas "Avant que les gens soient déjà sur place."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:804
-translate chinese ee704cdf:
-
-    # lysa blase "Merci Tomas."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:805
-translate chinese 842f3c8b:
-
-    # lysa "On adore les définitions qui sentent le charnier."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:807
-translate chinese c6c5d8be:
-
-    # tomas culpabilite "Lysa. Pas maintenant. Tais-toi et écoute."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:809
-translate chinese b6a47fdb:
-
-    # lysa triste "...?"
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:813
-translate chinese 2f6eb962:
-
-    # nyra raison "Si Kami applique la règle strictement..."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:814
-translate chinese bd225e8c:
-
-    # nyra "Même un vote pour ne régularisera pas automatiquement les campements actuels."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:816
-translate chinese 0a709f68:
-
-    # ryn colere2 "Non ?!"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:817
-translate chinese 24104ef0:
-
-    # ryn "Putain, t'es sûr ?!"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:819
-translate chinese 771a405f:
-
-    # noam triste "Non. Le vote autorise les regroupements."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:820
-translate chinese b7b2fa26:
-
-    # noam "Mais seulement quand ils sont déclarés."
-    noam ""
-
-# game/scenario/9_0_1.rpy:822
-translate chinese 2196f149:
-
-    # ryn colere "Ils pouvaient pas déclarer !"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:823
-translate chinese e9c8db5d:
-
-    # ryn "Elle était absente !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:825
-translate chinese 1d995223:
-
-    # lysa blase "Et tu crois que ça va l'émouvoir ?"
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:826
-translate chinese 9fd78764:
-
-    # lysa "Carthage a brûlé pour moins de paperasse."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:839
-translate chinese 6363cbe3:
-
-    # elias fatigue "Attends."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:840
-translate chinese 3b87e06b:
-
-    # elias "Donc on vote pour..."
-    elias ""
-
-# game/scenario/9_0_1.rpy:841
-translate chinese 0da239a8:
-
-    # elias inquiet "Et ils peuvent crever quand même ? C'est chaud. C'est vraiment chaud."
-    elias inquiet ""
-
-# game/scenario/9_0_1.rpy:843
-translate chinese 706aa3f0:
-
-    # iris inquiet "C'est une blague ?"
-    iris inquiet ""
-
-# game/scenario/9_0_1.rpy:844
-translate chinese 7771d86c:
-
-    # iris "Dites-moi que c'est une blague nulle."
-    iris ""
-
-# game/scenario/9_0_1.rpy:845
-translate chinese 49e1c640:
-
-    # iris fatigue "Même une blague de Mara, je prends."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:847
-translate chinese 030882af:
-
-    # mara stress "Même moi, je suis pas assez tordue pour pondre ça."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:849
-translate chinese c550ed74:
-
-    # elen peur "Mais... non."
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:850
-translate chinese db85e1a5:
-
-    # elen "Non, ça n'a aucun sens."
-    elen ""
-
-# game/scenario/9_0_1.rpy:851
-translate chinese 48a7a84e:
-
-    # elen "Si on vote pour les sauver, ça doit les sauver. Sinon le mot sauver sert à quoi ?"
-    elen ""
-
-# game/scenario/9_0_1.rpy:853
-translate chinese 3ac8bf4f:
-
-    # kael fatigue "Pas forcément."
-    kael fatigue ""
-
-# game/scenario/9_0_1.rpy:855
-translate chinese bc84968e:
-
-    # elen "Kael..."
-    elen ""
-
-# game/scenario/9_0_1.rpy:857
-translate chinese 5b4cf16b:
-
-    # kael triste "Je suis désolé."
-    kael triste ""
-
-# game/scenario/9_0_1.rpy:858
-translate chinese d269fa73:
-
-    # kael "Mais Kami n'a pas dit qu'elle les sauverait."
-    kael ""
-
-# game/scenario/9_0_1.rpy:859
-translate chinese ac0b61d1:
-
-    # kael "Elle a dit que le Commandement s'appliquerait après le vote."
-    kael ""
-
-# game/scenario/9_0_1.rpy:861
-translate chinese 2b3b2bba:
-
-    # julian inquiet "C'est un piège."
-    julian inquiet ""
-
-# game/scenario/9_0_1.rpy:862
-translate chinese a34c9879:
-
-    # julian "Une astuce rhétorique monstrueuse. Mais elle a laissé une faille."
-    julian ""
-
-# game/scenario/9_0_1.rpy:875
-translate chinese 1720f051:
-
-    # nyra raison "On peut peut-être éviter ça autrement."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:877
-translate chinese 42ff84e8:
-
-    # ryn colere "Parle."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:879
-translate chinese 24dd71ad:
-
-    # nyra "Modifier l'amendement."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:880
-translate chinese a7fdb653:
-
-    # nyra "Ajouter une autorisation exceptionnelle."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:881
-translate chinese 4e75119c:
-
-    # nyra "Tous les campements déjà formés seraient reconnus comme déclarés."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:885
-translate chinese 9dbc7d24:
-
-    # tomas raison "Ce serait bien."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:886
-translate chinese e25ab35f:
-
-    # tomas "Juridiquement, je veux dire si c'était possible."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:890
-translate chinese 9f57ca63:
-
-    # sael determine "On ne peut pas."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:892
-translate chinese 3ed5d2a3:
-
-    # nyra raison "Pourquoi ?"
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:894
-translate chinese 26594d28:
-
-    # sael "L'amendement est déjà posé."
-    sael ""
-
-# game/scenario/9_0_1.rpy:895
-translate chinese 521fefab:
-
-    # sael "On débat du texte qui est censé avoir été déposé lors du premier jour."
-    sael ""
-
-# game/scenario/9_0_1.rpy:896
-translate chinese 0631af2f:
-
-    # sael "On ne peut pas le réécrire."
-    sael ""
-
-# game/scenario/9_0_1.rpy:898
-translate chinese fa8ef376:
-
-    # tomas culpabilite "Elle a raison."
-    tomas culpabilite ""
-
-# game/scenario/9_0_1.rpy:899
-translate chinese 428be579:
-
-    # tomas "Kami a toujours verrouillé le libellé après annonce."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:900
-translate chinese 9ea6243f:
-
-    # tomas "Le vote porte sur la phrase exacte."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:902
-translate chinese 742a9d5b:
-
-    # ryn colere2 "Mais bordel, c'est complètement con !"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:904
-translate chinese ff83f659:
-
-    # sael determine "Oui."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:905
-translate chinese 9aea263a:
-
-    # sael "Mais c'est la règle."
-    sael ""
-
-# game/scenario/9_0_1.rpy:907
-translate chinese 7832b406:
-
-    # ryn "Vos règles vont les tuer !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:911
-translate chinese 4c48ba7d:
-
-    # noam determine "Alors il faut gagner du temps."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:913
-translate chinese 5ef3cee7_1:
-
-    # ryn colere "Quoi ?"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:915
-translate chinese 95b4408c:
-
-    # noam "Pas changer le texte."
-    noam ""
-
-# game/scenario/9_0_1.rpy:916
-translate chinese dd545aa4:
-
-    # noam "Changer la situation avant qu'il s'applique."
-    noam ""
-
-# game/scenario/9_0_1.rpy:918
-translate chinese 5495527c:
-
-    # lysa triste "Noam."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:920
-translate chinese a1cf8d28:
-
-    # noam "Les campements sont illégaux parce qu'ils sont massifs."
-    noam ""
-
-# game/scenario/9_0_1.rpy:921
-translate chinese 48b3fe31:
-
-    # noam "Parce qu'ils dépassent vingt personnes."
-    noam ""
-
-# game/scenario/9_0_1.rpy:922
-translate chinese 1e3424f5:
-
-    # noam "Parce qu'ils sont aux frontières."
-    noam ""
-
-# game/scenario/9_0_1.rpy:923
-translate chinese 3e5dae63:
-
-    # noam "Parce qu'ils essaient de passer."
-    noam ""
-
-# game/scenario/9_0_1.rpy:927
-translate chinese a3f638e3:
-
-    # tomas raison "Tu veux les faire disperser ?"
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:929
-translate chinese 205802a7_1:
-
-    # noam determine "Oui."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:931
-translate chinese 86442aac:
-
-    # ryn colere "Ils sont dehors !"
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:932
-translate chinese 15b1e6c7:
-
-    # ryn "Ils fuient !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:933
-translate chinese d8c2863f:
-
-    # ryn "Tu crois qu'ils vont juste se ranger en petits paquets parce qu'on leur demande gentiment ?"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:935
-translate chinese 290dd969_7:
-
-    # noam "Non."
-    noam ""
-
-# game/scenario/9_0_1.rpy:936
-translate chinese 2a2e29d8:
-
-    # noam "Mais s'ils suivent les débats en temps réel, ils entendront le risque."
-    noam ""
-
-# game/scenario/9_0_1.rpy:938
-translate chinese c7bb86d8:
-
-    # sael inquiet "Ils sauront."
-    sael inquiet ""
-
-# game/scenario/9_0_1.rpy:940
-translate chinese c573fb49:
-
-    # noam "Ils sauront que traverser maintenant est impossible."
-    noam ""
-
-# game/scenario/9_0_1.rpy:941
-translate chinese d22e2574:
-
-    # noam "Ils sauront que rester groupés les condamne."
-    noam ""
-
-# game/scenario/9_0_1.rpy:942
-translate chinese 4ad6ee87:
-
-    # noam "Et ils auront une chance de se disperser avant l'application du Commandement."
-    noam ""
-
-# game/scenario/9_0_1.rpy:946
-translate chinese a0cbfb93:
-
-    # nyra raison "Ce n'est pas une solution parfaite."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:948
-translate chinese b0c84989:
-
-    # lysa blase "Quelle surprise."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:949
-translate chinese 503f04cc:
-
-    # lysa "Dans cette situation, on n'a que des choix merdiques. C'est presque grec."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:951
-translate chinese cf625834:
-
-    # noam "Je ne dis pas que c'est parfait."
-    noam ""
-
-# game/scenario/9_0_1.rpy:952
-translate chinese e1086877:
-
-    # noam determine "Je dis qu'on peut peut-être éviter le pire."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:956
-translate chinese e8321b92:
-
-    # tomas raison "Il faut formuler ça clairement pendant le débat."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:957
-translate chinese 64346e35:
-
-    # tomas "Pas de sous-entendu."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:958
-translate chinese 258c44d5:
-
-    # tomas "Pas de demi-mot."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:960
-translate chinese 98e132a7:
-
-    # elias fatigue "Faut leur dire de dégager de là."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:961
-translate chinese df267557:
-
-    # elias "Vite."
-    elias ""
-
-# game/scenario/9_0_1.rpy:962
-translate chinese b48b670c:
-
-    # elias inquiet "Avant que le canon fasse son boulot."
-    elias inquiet ""
-
-# game/scenario/9_0_1.rpy:964
-translate chinese 0cbd73a1:
-
-    # iris inquiet "C'est horrible à dire."
-    iris inquiet ""
-
-# game/scenario/9_0_1.rpy:966
-translate chinese c998fcd3_3:
-
-    # elias "Ouais."
-    elias ""
-
-# game/scenario/9_0_1.rpy:967
-translate chinese 8b05ef1e:
-
-    # elias "Mais c'est moins horrible que de ne rien dire et regarder faire."
-    elias ""
-
-# game/scenario/9_0_1.rpy:971
-translate chinese f1797d03:
-
-    # elen peur "Et s'ils n'écoutent pas ?"
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:972
-translate chinese 2fca2e45:
-
-    # elen "Et s'ils ne peuvent pas partir ?"
-    elen ""
-
-# game/scenario/9_0_1.rpy:973
-translate chinese 01ee52e1:
-
-    # elen "Et s'il y a des enfants, des blessés, des gens trop fatigués..."
-    elen ""
-
-# game/scenario/9_0_1.rpy:977
-translate chinese 96aae473_1:
-
-    # "Personne ne répond."
-    ""
-
-# game/scenario/9_0_1.rpy:981
-translate chinese 62774155:
-
-    # noam triste "Alors certains resteront en danger."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:983
-translate chinese 54f41322_1:
-
-    # ryn colere "Non."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:985
-translate chinese afa70811:
-
-    # noam "Ryn."
-    noam ""
-
-# game/scenario/9_0_1.rpy:987
-translate chinese 7adbb5b2:
-
-    # ryn colere2 "Non !"
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:988
-translate chinese 125711d8:
-
-    # ryn "Je veux pas d'un plan qui commence déjà par abandonner des gens !"
-    ryn ""
-
-# game/scenario/9_0_1.rpy:990
-translate chinese 14092ca7:
-
-    # noam determine "Moi non plus."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:991
-translate chinese 4376e22b:
-
-    # noam "Mais on ne peut pas les porter nous-mêmes."
-    noam ""
-
-# game/scenario/9_0_1.rpy:992
-translate chinese ca7ef833:
-
-    # noam "On peut les prévenir."
-    noam ""
-
-# game/scenario/9_0_1.rpy:993
-translate chinese 3e7c7717:
-
-    # noam "Assez fort pour qu'ils bougent avant le tir."
-    noam ""
-
-# game/scenario/9_0_1.rpy:997
-translate chinese 24453275:
-
-    # sael determine "Ils sont de Limen."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:998
-translate chinese 7c6c160f:
-
-    # sael "Ils pourront survivre."
-    sael ""
-
-# game/scenario/9_0_1.rpy:999
-translate chinese 03cb6f89:
-
-    # sael "S'ils entendent le risque, ils bougeront."
-    sael ""
-
-# game/scenario/9_0_1.rpy:1001
-translate chinese 1ead0575:
-
-    # ryn fatigue "Et s'ils n'entendent pas ?"
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:1003
-translate chinese 40f8b920:
-
-    # sael triste "Alors on priera pour qu'un autre leur répète."
-    sael triste ""
-
-# game/scenario/9_0_1.rpy:1005
-translate chinese edbe2b6f:
-
-    # lysa blase "Super."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:1006
-translate chinese 00c4c960:
-
-    # lysa "Notre stratégie repose sur la panique collective et le bouche-à-oreille. Très troisième siècle."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:1008
-translate chinese 900cae6c:
-
-    # nyra raison "Non."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:1009
-translate chinese 6e7c9c23:
-
-    # nyra "Elle repose sur la diffusion publique du débat."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1010
-translate chinese ea792d37:
-
-    # nyra "Kami veut que le monde entier regarde."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1011
-translate chinese 412a93f7:
-
-    # nyra "Utilisons ça contre elle."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1015
-translate chinese eeba659a:
-
-    # julian determine "Alors il faut parler pour eux."
-    julian determine ""
-
-# game/scenario/9_0_1.rpy:1016
-translate chinese 0b6a7cef:
-
-    # julian "Pas pour Kami."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1017
-translate chinese 0665f043:
-
-    # julian "Pas pour nous."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1018
-translate chinese 00178c3f:
-
-    # julian "Pour ceux qui regardent. Julian peut faire ça."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1020
-translate chinese d2c8b037:
-
-    # iris fatigue "Et pour une fois, évite les effets de scène."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:1022
-translate chinese 7ba520ba:
-
-    # julian inquiet "Oui."
-    julian inquiet ""
-
-# game/scenario/9_0_1.rpy:1023
-translate chinese 26c4e2fb:
-
-    # julian "Je sais."
-    julian ""
-
-# game/scenario/9_0_1.rpy:1027
-translate chinese 85a3fa11:
-
-    # mara stress "Donc pendant le débat, on dit clairement : dispersez-vous."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:1028
-translate chinese e065b1d1:
-
-    # mara "Ne traversez pas."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1029
-translate chinese 1353c9bf:
-
-    # mara "Ne restez pas en gros tas bien pratique pour le canon."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1031
-translate chinese db634a96:
-
-    # tomas raison "Pas comme ça."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:1033
-translate chinese 18ba3679:
-
-    # mara "Je résume."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1035
-translate chinese 9a989a63:
-
-    # tomas "Il faut être précis."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1036
-translate chinese 65b7499e:
-
-    # tomas "Se séparer en groupes de moins de vingt."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1037
-translate chinese 5b06cf7f:
-
-    # tomas "S'éloigner des points de passage."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1038
-translate chinese 28c88026:
-
-    # tomas "Ne pas franchir la frontière sans autorisation."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1040
-translate chinese dff233d5:
-
-    # noam triste "Oui."
-    noam triste ""
-
-# game/scenario/9_0_1.rpy:1042
-translate chinese b5c9503f:
-
-    # ryn "On leur demande de retourner crever lentement à Limen."
-    ryn ""
-
-# game/scenario/9_0_1.rpy:1044
-translate chinese 290dd969_8:
-
-    # noam "Non."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1045
-translate chinese bdc8a9d8:
-
-    # noam determine "On leur demande de rester vivants jusqu'à ce qu'on puisse obtenir mieux."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1046
-translate chinese 1fa1e738:
-
-    # noam "Et de toute façon, ils ne peuvent déjà plus traverser la frontière."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1054
-translate chinese e6d057fa:
-
-    # ryn fatigue "Putain."
-    ryn fatigue ""
-
-# game/scenario/9_0_1.rpy:1058
-translate chinese ea609ec1:
-
-    # sael determine "Le vote pour."
-    sael determine ""
-
-# game/scenario/9_0_1.rpy:1059
-translate chinese ebb66c29:
-
-    # sael "L'avertissement public."
-    sael ""
-
-# game/scenario/9_0_1.rpy:1060
-translate chinese c2f8f90c:
-
-    # sael "Et aucun silence."
-    sael ""
-
-# game/scenario/9_0_1.rpy:1062
-translate chinese 205802a7_2:
-
-    # noam determine "Oui."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1064
-translate chinese 19c9b192:
-
-    # tomas raison "Je peux ouvrir le débat sur la définition juridique."
-    tomas raison ""
-
-# game/scenario/9_0_1.rpy:1065
-translate chinese 2fcbbb0c:
-
-    # tomas "Puis Noam enchaîne sur le risque concret."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1067
-translate chinese 57e14a4c:
-
-    # lysa blase "Et Ryn évite de menacer tout le monde pendant trente secondes."
-    lysa blase ""
-
-# game/scenario/9_0_1.rpy:1069
-translate chinese ea691dde:
-
-    # ryn colere "Je vais essayer."
-    ryn colere ""
-
-# game/scenario/9_0_1.rpy:1071
-translate chinese f97c7f03:
-
-    # iris fatigue "Quelle ambition."
-    iris fatigue ""
-
-# game/scenario/9_0_1.rpy:1075
-translate chinese a4a4df8a:
-
-    # nyra raison "Il faudra aussi forcer Kami à confirmer publiquement."
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:1076
-translate chinese 8f75c9e8:
-
-    # nyra "Si elle confirme devant les campements, ils comprendront."
-    nyra ""
-
-# game/scenario/9_0_1.rpy:1078
-translate chinese 63f2cba5:
-
-    # noam "Alors on lui pose la question en direct."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1080
-translate chinese 68e428b0:
-
-    # elen peur "Et si elle refuse ?"
-    elen peur ""
-
-# game/scenario/9_0_1.rpy:1082
-translate chinese eeec4ad9:
-
-    # noam determine "Alors on la repose."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1083
-translate chinese df4e90dd:
-
-    # noam "Encore."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1084
-translate chinese 5a0efc69:
-
-    # noam "Jusqu'à ce que tout le monde comprenne ce qu'elle essaie de faire."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1088
-translate chinese bd630c9a:
-
-    # lysa triste "Donc notre plan, c'est de transformer le débat en alerte d'évacuation."
-    lysa triste ""
-
-# game/scenario/9_0_1.rpy:1090
-translate chinese 7ad81883_4:
-
-    # tomas "Oui."
-    tomas ""
-
-# game/scenario/9_0_1.rpy:1092
-translate chinese 3b738b61:
-
-    # mara stress "C'est un plan de merde."
-    mara stress ""
-
-# game/scenario/9_0_1.rpy:1094
-translate chinese f89de029:
-
-    # elias fatigue "Ouais."
-    elias fatigue ""
-
-# game/scenario/9_0_1.rpy:1096
-translate chinese 48e0d16b:
-
-    # mara "Mais c'est le seul qu'on a."
-    mara ""
-
-# game/scenario/9_0_1.rpy:1100
-translate chinese f9efd6c7:
-
-    # ryn determine "Alors on y va."
-    ryn determine ""
-
-# game/scenario/9_0_1.rpy:1102
-translate chinese bf271eff:
-
-    # noam determine "On y va."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1106
-translate chinese a74dc667:
-
-    # think "Voter pour ne suffit pas."
-    think ""
-
-# game/scenario/9_0_1.rpy:1107
-translate chinese f0976245:
-
-    # think "Il faut parler assez fort pour que ceux qui sont dehors entendent."
-    think ""
-
-# game/scenario/9_0_1.rpy:1108
-translate chinese 08528b72:
-
-    # think "Et assez vite pour qu'ils aient le temps de bouger."
-    think ""
-
-# game/scenario/9_0_1.rpy:1109
-translate chinese 7a7d0de6:
-
-    # think "Et on doit gagner du temps !"
-    think ""
-
-# game/scenario/9_0_1.rpy:1130
-translate chinese 40d34334:
-
-    # "Le signal disparaît par morceaux."
-    ""
-
-# game/scenario/9_0_1.rpy:1131
-translate chinese 84244359:
-
-    # "Comme si quelqu'un écrasait une voix sous une paume trop grande."
-    ""
-
-# game/scenario/9_0_1.rpy:1135
-translate chinese 967e93ff:
-
-    # "Les écrans clignotent encore."
-    ""
-
-# game/scenario/9_0_1.rpy:1136
-translate chinese fc4a1bd9:
-
-    # "Quelques fragments de campements restent imprimés dans la lumière."
-    ""
-
-# game/scenario/9_0_1.rpy:1137
-translate chinese 3aac5975:
-
-    # "Des silhouettes. Des bâches arrachées. Des points minuscules qui comprennent trop tard."
-    ""
-
-# game/scenario/9_0_1.rpy:1148
-translate chinese 1d46472c:
-
-    # kami "Voilà."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1149
-translate chinese a8c335c1:
-
-    # kami "C'était donc ça, votre grande tentative."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1153
-translate chinese 93f04370:
-
-    # kami "Un petit détournement de signal."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1154
-translate chinese b2fa6168:
-
-    # kami "Un message paniqué."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1155
-translate chinese aa40dcfd:
-
-    # kami "Quelques humains qui crient très fort parce qu'ils ont enfin compris qu'ils étaient en retard."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1162
-translate chinese 1c311863:
-
-    # kami "Je reconnais une certaine efficacité technique."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1163
-translate chinese ee7f7d37:
-
-    # kami "C'est adorable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1164
-translate chinese ed6a9d1d:
-
-    # kami "Presque respectable, si l'impertinence ne gâchait pas tout."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1166
-translate chinese 890cdb05:
-
-    # kami "Vous avez touché une partie des campements."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1167
-translate chinese 7f22ef36:
-
-    # kami "Pas tous."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1168
-translate chinese 854f17db:
-
-    # kami "Mais assez pour vous donner l'illusion d'avoir repris la main."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1170
-translate chinese 0d07aa37:
-
-    # kami "Vous avez réussi à faire du bruit."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1171
-translate chinese f2c07a03:
-
-    # kami "Pas beaucoup plus."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1172
-translate chinese 4010e056:
-
-    # kami "Le bruit donne parfois l'impression d'agir. C'est un piège fréquent."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1174
-translate chinese 94597258:
-
-    # kami "Et même cela, vous l'avez raté."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1175
-translate chinese 62b6a225:
-
-    # kami "Je suis presque déçue."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1176
-translate chinese b8a6507c:
-
-    # kami "Presque."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1182
-translate chinese bd9b478b:
-
-    # kami "Dans tous les cas, votre intrusion est enregistrée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1183
-translate chinese 47152d2c:
-
-    # kami "Votre intention est notée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1184
-translate chinese 08d83035:
-
-    # kami "Votre insolence aussi."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1190
-translate chinese 01da84ae:
-
-    # kami "Mais je vais être généreuse."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1191
-translate chinese 447245d8:
-
-    # kami "Je ne vais pas laisser votre petit théâtre interrompre une procédure officielle."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1197
+# game/scenario/9_0_1.rpy:427
 translate chinese 65ff45f7:
 
     # kami "Le Conclave n'est pas une antenne de secours."
-    kami ""
+    kami "议会不是应急广播站。"
 
-# game/scenario/9_0_1.rpy:1201
-translate chinese 40cd5eb2:
+# game/scenario/9_0_1.rpy:430
+translate chinese 94f07ee9:
 
-    # kami "Le Conclave est un lieu de décision."
-    kami ""
+    # kami "C'est un lieu de décision. Et il est temps de voter."
+    kami "这里是做出决定的地方。现在，该投票了。"
 
-# game/scenario/9_0_1.rpy:1218
-translate chinese a11f6453_1:
+# game/scenario/9_0_1.rpy:445
+translate chinese 5f5c890f:
 
-    # "Personne ne bouge."
-    ""
+    # noam reflechit "Kami dit ça, mais si elle l'avait voulu, elle aurait pu couper notre signal."
+    noam reflechit "Kami 嘴上这么说，但她真想的话，完全可以切断我们的信号。"
 
-# game/scenario/9_0_1.rpy:1219
-translate chinese 8176824a:
+# game/scenario/9_0_1.rpy:447
+translate chinese c978d0fb:
 
-    # "Même respirer paraît risqué."
-    ""
+    # ryn colere "Elle savait qu'ils nous entendaient. Elle a laissé passer le signal juste assez longtemps pour les regarder courir."
+    ryn colere "她知道他们听得见。她故意让信号持续了一阵，好看着他们四处逃命。"
 
-# game/scenario/9_0_1.rpy:1221
-translate chinese b0d9d7fc:
+# game/scenario/9_0_1.rpy:448
+translate chinese aa0e6603:
 
-    # ryn colere "Tu savais qu'ils entendaient."
-    ryn colere ""
+    # ryn colere2 "Tu as posé leurs vies sur cette table et tu en es presque à la remercier ?!"
+    ryn colere2 "你把他们的命摆到桌上，现在居然还差点要感谢她？！"
 
-# game/scenario/9_0_1.rpy:1222
-translate chinese abe208b4:
+# game/scenario/9_0_1.rpy:450
+translate chinese db075c67:
 
-    # ryn "Tu les as laissés entendre juste assez pour nous regarder nous débattre."
-    ryn ""
+    # nyra reflechit "Finalement, avait-elle vraiment le choix ? Tout est filmé, tout le monde aurait vu qu'elle tenterait de nous censurer."
+    nyra reflechit "说到底，她真的有选择吗？一切都在直播。全世界都会看到她试图封我们的口。"
 
-# game/scenario/9_0_1.rpy:1223
-translate chinese 64127f5d:
+# game/scenario/9_0_1.rpy:452
+translate chinese 19682b1c:
 
-    # ryn "T'as mis des vies sur la table et t'as appelé ça une procédure."
-    ryn ""
+    # noam sourire "Il lui aurait été difficile de se faire passer pour la gentille qui nous a attendus avant de faire appliquer les règles."
+    noam sourire "那样一来，她就很难继续扮演那个在执行规则前，大发慈悲等过我们的好人了。"
 
-# game/scenario/9_0_1.rpy:1229
-translate chinese 2431c31b:
+# game/scenario/9_0_1.rpy:454
+translate chinese b7f6c376:
 
-    # kami "Ryn."
-    kami ""
+    # sael determine "Alors qu'elle nous laisse terminer. Il nous faut quelques minutes supplémentaires seulement. Même les condamnés ont droit à une dernière parole."
+    sael determine "那就让她允许我们说完。只需要再多几分钟。就连死刑犯也有权说最后一句话。"
 
-# game/scenario/9_0_1.rpy:1230
-translate chinese 7d7e2ebb:
+# game/scenario/9_0_1.rpy:460
+translate chinese 43c37d38:
 
-    # kami "Je t'assure que te voir comprendre les choses avec trois minutes de retard reste un plaisir très simple."
-    kami ""
+    # kami "Non. Vous avez déjà pris suffisamment de temps au Conclave. Il va désormais être temps de voter."
+    kami "不。你们已经占用了议会太多时间。现在必须投票。"
 
-# game/scenario/9_0_1.rpy:1244
-translate chinese 4ffe287a:
+# game/scenario/9_0_1.rpy:478
+translate chinese 79b08140:
 
-    # sael determine "Alors laisse-nous terminer."
-    sael determine ""
+    # tomas raison "Kami, tu peux nous dire quel est le statut des campements qui ont commencé à se disperser ? Leur situation a-t-elle changé pendant la procédure ?"
+    tomas raison "Kami，能不能告诉我们，那些已经开始散开的营地现在是什么状态？程序进行期间，他们的处境发生变化了吗？"
 
-# game/scenario/9_0_1.rpy:1245
-translate chinese 16fb21a8:
+# game/scenario/9_0_1.rpy:480
+translate chinese 8770d4f0:
 
-    # sael "Quelques minutes."
-    sael ""
+    # nyra raison "Donne-nous un relevé en direct. Si tu veux une décision qui soit adaptée, montre-nous l'état réel du terrain avant le vote."
+    nyra raison "给我们实时数据。你想让我们做出合适的决定，就在投票前展示现场的真实情况。"
 
-# game/scenario/9_0_1.rpy:1246
-translate chinese 70815d7e:
+# game/scenario/9_0_1.rpy:485
+translate chinese 2ddfac46:
 
-    # sael "Même les condamnés ont droit à une dernière parole."
-    sael ""
+    # kami "Tu veux savoir combien de personnes restent en danger avant de lever la main ? C'est touchant, mais le vote porte sur une règle, pas sur une situation précise."
+    kami "举手前想先知道还有多少人处于危险之中？真让人感动。但投票针对的是一条规则，不是某个具体局面。"
 
-# game/scenario/9_0_1.rpy:1252
-translate chinese ed2f68a9_2:
+# game/scenario/9_0_1.rpy:486
+translate chinese 8641819d:
 
-    # kami "Non."
-    kami ""
+    # kami "Dois-je vous rappeler que si les gens se sont entassés, c'est avant tout de VOTRE faute ?!"
+    kami "需要我提醒你们吗？那些人之所以挤成一团，首先就是你们的错？！"
 
-# game/scenario/9_0_1.rpy:1272
-translate chinese 5630fd32:
+# game/scenario/9_0_1.rpy:489
+translate chinese e749ee62:
 
-    # tomas raison "Il faut clarifier le statut des campements déjà en dispersion."
-    tomas raison ""
+    # kami "Quelle idée de dire devant le monde entier que je n'appliquerais plus les Commandements !"
+    kami "居然当着全世界的面，宣布我不会再执行戒律。真是个好主意！"
 
-# game/scenario/9_0_1.rpy:1273
-translate chinese 9895afdb:
+# game/scenario/9_0_1.rpy:490
+translate chinese 3f9a0662:
 
-    # tomas "Si le signal a été reçu, leur situation juridique a changé pendant la procédure."
-    tomas ""
+    # kami "Les Commandements sont ABSOLUS ! Je vous fais déjà une fleur considérable en retardant leur exécution."
+    kami "戒律是绝对的！我推迟执行，已经是对你们天大的恩赐。"
 
-# game/scenario/9_0_1.rpy:1278
-translate chinese ed2f68a9_3:
+# game/scenario/9_0_1.rpy:493
+translate chinese aaaa238f:
 
-    # kami "Non."
-    kami ""
+    # kami "Je ne peux rien faire de plus pour vous aider à soulager votre conscience."
+    kami "我不能再做更多，帮你们减轻良心上的负担了。"
 
-# game/scenario/9_0_1.rpy:1279
-translate chinese f7b05ae6:
+# game/scenario/9_0_1.rpy:509
+translate chinese b7877d42:
 
-    # kami "Leur statut change au moment où j'enregistre la décision."
-    kami ""
+    # noam triste "Au contraire, Kami. Tu as abandonné ton poste. C'est cet abandon de poste qui a donné de l'espoir aux gens."
+    noam triste "恰恰相反，Kami。是你擅离职守，而你的缺席给了人们希望。"
 
-# game/scenario/9_0_1.rpy:1280
-translate chinese a32157a9:
+# game/scenario/9_0_1.rpy:512
+translate chinese b292c0ec:
 
-    # kami "Pas au moment où vous espérez très fort."
-    kami ""
+    # kami "Mais c'est qu'il me remet la faute dessus, en plus ?!"
+    kami "现在他居然还想把责任推到我头上？！"
 
-# game/scenario/9_0_1.rpy:1287
-translate chinese 3e423fcd:
+# game/scenario/9_0_1.rpy:513
+translate chinese 3ad39f7b:
 
-    # nyra raison "Alors vérifions les campements."
-    nyra raison ""
+    # kami "J'ai bien compris votre petit stratagème, vous voulez m'emmener dans un débat inutile pour gagner du temps."
+    kami "我早就看穿你们的小把戏了。你们想把我拖进毫无意义的辩论，好争取时间。"
 
-# game/scenario/9_0_1.rpy:1288
-translate chinese 6de03f8e:
+# game/scenario/9_0_1.rpy:516
+translate chinese dadb1e48:
 
-    # nyra "Un relevé en direct. Rien de plus."
-    nyra ""
+    # kami "La décence vous oblige justement à voter vite. Après tout, c'est moi qui donne le tempo ici."
+    kami "正因为讲道德，你们才更应该赶快投票。毕竟，这里的节奏由我掌控。"
 
-# game/scenario/9_0_1.rpy:1289
-translate chinese 7e19a48b:
+# game/scenario/9_0_1.rpy:531
+translate chinese ebbfefa8:
 
-    # nyra "Tu veux une décision propre ? Donne-nous l'état du terrain."
-    nyra ""
+    # noam determine "Quand bien même, tu cherches à nous faire porter la responsabilité du tir, alors que tu contrôles le canon et le temps que tu nous accordes."
+    noam determine "可你仍想让我们承担开炮的责任，明明控制那门炮和投票时间的人都是你。"
 
-# game/scenario/9_0_1.rpy:1294
-translate chinese 3224e8d7:
+# game/scenario/9_0_1.rpy:532
+translate chinese fa1be5eb:
 
-    # kami "Tu veux savoir combien de personnes sont encore en danger avant de lever la main ?"
-    kami ""
+    # noam colere "Tu pourrais sauver des gens innocents !"
+    noam colere "你明明可以救下无辜的人！"
 
-# game/scenario/9_0_1.rpy:1295
-translate chinese cc40241d_1:
+# game/scenario/9_0_1.rpy:537
+translate chinese 5aefd847:
 
-    # kami "C'est touchant."
-    kami ""
+    # kami "Celui qui ne respecte pas les règles n'est pas innocent. La nuance vous échappe uniquement parce qu'elle vous est désagréable."
+    kami "不遵守规则的人就不是无辜者。你们只因为不喜欢这个区别，才装作看不懂。"
 
-# game/scenario/9_0_1.rpy:1296
-translate chinese e481419a:
+# game/scenario/9_0_1.rpy:539
+translate chinese 97d26788:
 
-    # kami "Inutile, mais touchant."
-    kami ""
+    # noam colere "Mais..."
+    noam colere "可是……"
 
-# game/scenario/9_0_1.rpy:1300
-translate chinese ff6f0f5b:
-
-    # kami "Le vote ne porte pas sur un inventaire."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1301
-translate chinese 583f9fd2:
-
-    # kami "Il porte sur une règle."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1308
-translate chinese ed2a4842:
-
-    # kael raison "Dans ce cas, délai procédural."
-    kael raison ""
-
-# game/scenario/9_0_1.rpy:1309
-translate chinese 4e2f8112:
-
-    # kael "Pas une négociation."
-    kael ""
-
-# game/scenario/9_0_1.rpy:1310
-translate chinese f14baa03:
-
-    # kael "Une prévention d'exécution massive."
-    kael ""
-
-# game/scenario/9_0_1.rpy:1315
-translate chinese a7883aba:
-
-    # kami "Demande refusée."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1316
-translate chinese 0ea9a675:
-
-    # kami "Le règlement ne prévoit pas de délai de confort moral."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1323
-translate chinese 13dda63d:
-
-    # lysa colere "Kami."
-    lysa colere ""
-
-# game/scenario/9_0_1.rpy:1324
-translate chinese df2b7888:
-
-    # lysa "Même pour toi, il doit bien rester une seconde de décence dans un tiroir."
-    lysa ""
-
-# game/scenario/9_0_1.rpy:1329
-translate chinese 4ff739ab:
-
-    # kami "Oh, Lysa."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1330
-translate chinese 255c4439:
-
-    # kami "La décence est justement ce qui vous oblige à voter vite."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1334
-translate chinese be389593:
-
-    # kami "Plus vous parlez, plus les campements restent exposés."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1335
-translate chinese 408a581b:
-
-    # kami "C'est presque comme si votre compassion avait une portée balistique."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1342
-translate chinese 55410292:
-
-    # noam determine "Tu veux dire que... non."
-    noam determine ""
-
-# game/scenario/9_0_1.rpy:1343
-translate chinese 26486a37:
-
-    # noam "Tu cherches à nous faire porter le tir."
-    noam ""
-
-# game/scenario/9_0_1.rpy:1348
-translate chinese d046b22b:
-
-    # kami "Je vous fais porter votre fonction."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1349
-translate chinese 0df8cbbc:
-
-    # kami "Il y a une nuance."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1350
-translate chinese 4407054b:
-
-    # kami "Elle vous échappe parce qu'elle est désagréable."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1356
+# game/scenario/9_0_1.rpy:542
 translate chinese 7fadc286:
 
     # kami "Assez."
-    kami ""
+    kami "够了。"
 
-# game/scenario/9_0_1.rpy:1366
-translate chinese 56528e00:
+# game/scenario/9_0_1.rpy:543
+translate chinese 9cc17c2a:
 
-    # kami "Le débat est terminé."
-    kami ""
+    # kami "Le débat est terminé. Les demandes de délai, de clarification et les appels à la décence sont rejetés."
+    kami "辩论结束。延期请求、澄清请求以及对道德的呼吁，全部驳回。"
 
-# game/scenario/9_0_1.rpy:1367
-translate chinese bf046e2e:
+# game/scenario/9_0_1.rpy:546
+translate chinese 1cd57a15:
 
-    # kami "Les demandes de délai sont rejetées."
-    kami ""
+    # kami "Vous devez voter. Immédiatement."
+    kami "你们必须投票。立刻。"
 
-# game/scenario/9_0_1.rpy:1368
-translate chinese e104acc9:
+# game/scenario/9_0_1.rpy:562
+translate chinese cde3eb50:
 
-    # kami "Les demandes de clarification sont rejetées."
-    kami ""
+    # "Les douze pupitres s'allument. Sur chacun, les mêmes mots apparaissent : POUR et CONTRE."
+    "十二台终端同时亮起，每台都显示着相同的两个词：赞成与反对。"
 
-# game/scenario/9_0_1.rpy:1369
-translate chinese b26fc8a3:
+# game/scenario/9_0_1.rpy:564
+translate chinese 3827a0d6:
 
-    # kami "Les appels à la décence sont classés comme manifestations émotionnelles non pertinentes."
-    kami ""
+    # elen joie "On a réussi à gagner du temps, beaucoup ont dû réussir à se sauver !"
+    elen joie "我们成功拖延了时间，肯定有很多人逃出去了！"
 
-# game/scenario/9_0_1.rpy:1375
-translate chinese ddc573cb:
+# game/scenario/9_0_1.rpy:566
+translate chinese cf23617d:
 
-    # kami "Vote immédiat."
-    kami ""
+    # iris blase "T'es bien naïve. Mais on a plus vraiment le choix de toute façon..."
+    iris blase "你还真天真。不过反正我们也没有别的选择……"
 
-# game/scenario/9_0_1.rpy:1382
-translate chinese 370b7b01:
+# game/scenario/9_0_1.rpy:570
+translate chinese 66aaef71:
 
-    # "Les pupitres s'allument."
-    ""
+    # "Personne ne regarde vraiment son écran. Tous cherchent sur les visages des autres le moindre signe d'hésitation."
+    "没人真正看着自己的屏幕。每个人都在其他人的脸上，寻找最微小的犹豫。"
 
-# game/scenario/9_0_1.rpy:1383
-translate chinese 98ce3783:
+# game/scenario/9_0_1.rpy:572
+translate chinese 81cc477e:
 
-    # "Douze halos blancs. Douze petites surfaces propres, absurdes."
-    ""
+    # think "Une seule voix contre suffit. Une seconde de peur peut annuler tout ce que nous venons de tenter."
+    think "只要一票反对就够了。哪怕一秒钟的恐惧，也能让我们刚才的一切努力化为乌有。"
 
-# game/scenario/9_0_1.rpy:1387
-translate chinese 8a643a3a:
+# game/scenario/9_0_1.rpy:577
+translate chinese d003926e:
 
-    # "Sur chaque écran, le même choix attend."
-    ""
+    # kami "Je vous rappelle que ne pas voter n'est pas une échappatoire. Dans le contexte actuel, votre silence aurait une valeur morale particulièrement intéressante."
+    kami "提醒你们，不投票并不是逃避方式。在当前情境下，你们的沉默将具有格外耐人寻味的道德分量。"
 
-# game/scenario/9_0_1.rpy:1388
-translate chinese 4d2d221f:
+# game/scenario/9_0_1.rpy:580
+translate chinese b7e51734:
 
-    # "POUR."
-    ""
+    # kami "Je suis certaine que les Limenois apprécieront toutes vos nuances."
+    kami "我相信 Limen 人一定会欣赏你们所有这些细腻的考量。"
 
-# game/scenario/9_0_1.rpy:1389
-translate chinese d9c1794a:
+# game/scenario/9_0_1.rpy:616
+translate chinese 165b0a70:
 
-    # "CONTRE."
-    ""
+    # "Les pupitres enregistrent les choix puis s'éteignent les uns après les autres. Aucun nom, aucune main levée, seulement douze bulletins anonymes."
+    "终端记录选项，随后一台接一台熄灭。没有姓名，没有举手，只有十二张匿名选票。"
 
-# game/scenario/9_0_1.rpy:1402
-translate chinese 381af514:
+# game/scenario/9_0_1.rpy:618
+translate chinese 581dbbfb:
 
-    # "Personne ne regarde vraiment son pupitre."
-    ""
+    # think "Personne ne sait ce que les autres viennent de faire. Dans quelques secondes, un seul vote peut condamner tous les campements."
+    think "没人知道其他人刚刚做了什么。再过几秒，一张选票就可能让所有营地被判死刑。"
 
-# game/scenario/9_0_1.rpy:1403
-translate chinese f0f02463:
+# game/scenario/9_0_1.rpy:681
+translate chinese 994c2671:
 
-    # "Tout le monde regarde les autres."
-    ""
+    # kami "Résultat du vote : unanimité des suffrages exprimés. Aucun vote défavorable enregistré."
+    kami "投票结果：有效票全数赞成，未记录到任何反对票。"
 
-# game/scenario/9_0_1.rpy:1404
-translate chinese 32556caa:
+# game/scenario/9_0_1.rpy:684
+translate chinese 0dcc3e4e:
 
-    # "Comme si une hésitation pouvait contaminer la salle."
-    ""
+    # kami "L'unanimité a été atteinte. Les Commandements sont donc modifiés et ils s'appliquent immédiatement."
+    kami "已达成全票一致。因此，戒律正式修订并立即生效。"
 
-# game/scenario/9_0_1.rpy:1406
-translate chinese db06d90d:
+# game/scenario/9_0_1.rpy:688
+translate chinese 86845c08:
 
-    # think "Si quelqu'un refuse..."
-    think ""
+    # kami "Les regroupements de plus de vingt personnes sont désormais autorisés sous déclaration préalable. Application immédiate."
+    kami "二十人以上的集会现可在提前申报后举行。立即生效。"
 
-# game/scenario/9_0_1.rpy:1407
-translate chinese 9bc1fec8:
+# game/scenario/9_0_1.rpy:691
+translate chinese e4fcb745:
 
-    # think "Si quelqu'un tremble trop longtemps..."
-    think ""
+    # kami "La majorité des campements a eu le temps de se disperser ou de transmettre une déclaration d'urgence. Les pertes anticipées sont fortement réduites."
+    kami "大多数营地及时散开，或提交了紧急申报。预计伤亡人数大幅下降。"
 
-# game/scenario/9_0_1.rpy:1408
-translate chinese 634ef8be:
+# game/scenario/9_0_1.rpy:693
+translate chinese 0be438ab:
 
-    # think "Si quelqu'un veut encore sauver un principe au lieu de sauver des vies..."
-    think ""
+    # kami "Plusieurs campements ont reçu votre avertissement et se sont dispersés. Une partie des groupes sont néanmoins restés exposés."
+    kami "多个营地收到警告并已经疏散，但仍有部分人群暴露在危险中。"
 
-# game/scenario/9_0_1.rpy:1415
-translate chinese 5f7f8203:
+# game/scenario/9_0_1.rpy:695
+translate chinese 2fcba791:
 
-    # kami "Je vous rappelle que ne pas voter n'est pas une échappatoire."
-    kami ""
+    # kami "Votre signal incomplet a atteint une fraction des campements. Une part significative des personnes sera éliminée pour ne pas avoir respecté les Commandements."
+    kami "你们残缺的信号只抵达了部分营地。仍有相当多的人因不遵守戒律而被消灭。"
 
-# game/scenario/9_0_1.rpy:1416
-translate chinese d751acbf:
+# game/scenario/9_0_1.rpy:697
+translate chinese 4a6b765f:
 
-    # kami "Dans le contexte actuel, le silence aura une valeur morale très intéressante."
-    kami ""
+    # kami "Votre signal a été largement inefficace. Le vote protège les campements encore reconnus comme tels, mais plusieurs applications du Commandement ont précédé l'enregistrement."
+    kami "你们的信号基本没有发挥作用。投票保护了仍被认定为营地的人群，但在登记完成前，戒律已经执行了好几次。"
 
-# game/scenario/9_0_1.rpy:1420
-translate chinese 23d15e08:
+# game/scenario/9_0_1.rpy:700
+translate chinese e008745e:
 
-    # kami "Je suis certaine que les Limenois apprécieront vos nuances."
-    kami ""
+    # kami "Vous voyez ? Lorsque vous obéissez à la procédure, des vies peuvent être sauvées. Ou pas."
+    kami "看见了吗？只要遵守程序，就能拯救生命。也可能不能。"
 
-# game/scenario/9_0_1.rpy:1425
-translate chinese 261f363f:
+# game/scenario/9_0_1.rpy:703
+translate chinese a436758c:
 
-    # "Un silence compact tombe sur la salle."
-    ""
+    # kami "Quelle belle leçon collective. Ah, et n'oubliez pas !"
+    kami "多么精彩的一堂集体课。对了，别忘了！"
 
-# game/scenario/9_0_1.rpy:1426
-translate chinese 0b34678d:
+# game/scenario/9_0_1.rpy:706
+translate chinese 68ec5e07:
 
-    # "Pas un silence de réflexion."
-    ""
+    # kami "Je ne disparaîtrai jamais !"
+    kami "我永远不会消失！"
 
-# game/scenario/9_0_1.rpy:1427
-translate chinese df4dd10d:
+# game/scenario/9_0_1.rpy:711
+translate chinese 91a1cb19:
 
-    # "Un silence de gorge serrée."
-    ""
+    # "Personne ne répond. Nous avons obtenu l'unanimité, mais le bilan de Kami transforme le soulagement en quelque chose de trop lourd pour être appelé une victoire."
+    "没人回答。我们争取到了全票一致，可 Kami 宣布的伤亡结果让那份宽慰变得过于沉重，根本称不上胜利。"
 
-# game/scenario/9_0_1.rpy:1460
-translate chinese 050a30d6:
+# game/scenario/9_0_1.rpy:717
+translate chinese 1192366a:
 
-    # "Les pupitres enregistrent les choix."
-    ""
+    # "Le retour jusqu'aux chambres se fait sans discussion. Les portes s'ouvrent et se ferment tandis que nos pas résonnent dans le couloir."
+    "回宿舍的路上没人说话。走廊里只回响着我们的脚步，以及房门开关的声音。"
 
-# game/scenario/9_0_1.rpy:1461
-translate chinese 951399ef:
+# game/scenario/9_0_1.rpy:719
+translate chinese 384a8a97:
 
-    # "Pas de voix. Pas de main levée."
-    ""
+    # think "Nous avons sauvé ceux qui ont eu le temps de nous écouter. Pour les autres... Nous avons fait ce qu'on a pu..."
+    think "我们救下了那些及时听见警告的人。至于其他人……我们已经尽力了……"
 
-# game/scenario/9_0_1.rpy:1462
-translate chinese e7ecf329:
+# game/scenario/9_0_1.rpy:724
+translate chinese 18fec6a7:
 
-    # "Pas de confession courageuse ou lâche."
-    ""
+    # "Je rentre dans ma chambre. Je reste debout devant le lit, les mains vides et la gorge sèche."
+    "我回到房间，站在床前，双手空空，喉咙干涩。"
 
-# game/scenario/9_0_1.rpy:1466
-translate chinese 8acb9112:
+# game/scenario/9_0_1.rpy:726
+translate chinese c20e2f72:
 
-    # "Seulement des écrans qui s'éteignent les uns après les autres."
-    ""
+    # think "Nous avons gagné. Non... Nous avons voté assez vite pour que Kami puisse appeler ça une victoire."
+    think "我们赢了。不……我们只是投得够快，让 Kami 可以把结果称作胜利。"
 
-# game/scenario/9_0_1.rpy:1467
-translate chinese 76343816:
+# game/scenario/9_0_1.rpy:727
+translate chinese 5a579a66:
 
-    # "Et personne ne sait vraiment ce que les autres viennent de faire."
-    ""
+    # think "On a essayé de gagner du temps. Mais est-ce que ce sera suffisant ?"
+    think "我们试着争取时间。可真的够了吗？"
 
-# game/scenario/9_0_1.rpy:1533
-translate chinese b13f53e0:
+# game/scenario/9_0_1.rpy:729
+translate chinese ef5ab79f:
 
-    # kami "Unanimité des suffrages exprimés."
-    kami ""
+    # "Je m'assieds et fixe l'écran mural entièrement noir."
+    "我坐下来，盯着墙上那块漆黑的屏幕。"
 
-# game/scenario/9_0_1.rpy:1534
-translate chinese 62d625ef:
+# game/scenario/9_0_1.rpy:731
+translate chinese b3901ca8:
 
-    # kami "Aucun vote défavorable enregistré."
-    kami ""
+    # think "Demain matin, il se rallumera et tout reprendra comme avant..."
+    think "明早，它会再次亮起，一切又会恢复原样……"
 
-# game/scenario/9_0_1.rpy:1540
-translate chinese 1d364dcc:
+# game/scenario/9_0_1.rpy:732
+translate chinese ffffb7d2:
 
-    # kami "Unanimité atteinte."
-    kami ""
+    # think "Putain mais quel enfer !"
+    think "操，这他妈算什么地狱！"
 
-# game/scenario/9_0_1.rpy:1542
-translate chinese 4228b1a4:
+# game/scenario/9_0_1.rpy:747
+translate chinese 154ccaef:
 
-    # kami "Amendement adopté."
-    kami ""
+    # kami "Résultat du vote : absence d'unanimité."
+    kami "投票结果：未达成全票一致。"
 
-# game/scenario/9_0_1.rpy:1548
-translate chinese e9331de7:
+# game/scenario/9_0_1.rpy:749
+translate chinese 2e500339:
 
-    # kami "Les regroupements de plus de vingt personnes sont désormais autorisés sous déclaration préalable."
-    kami ""
+    # kami "L'amendement est rejeté."
+    kami "修正案遭到否决。"
 
-# game/scenario/9_0_1.rpy:1549
-translate chinese 5f02f29b:
+# game/scenario/9_0_1.rpy:753
+translate chinese 359ee811:
 
-    # kami "Application immédiate."
-    kami ""
+    # kami "L'interdiction des regroupements de plus de vingt personnes demeure en vigueur. Les campements limenois restent donc des rassemblements illégaux."
+    kami "二十人以上集会的禁令继续生效。因此，Limen 的各个营地仍属于非法集会。"
 
-# game/scenario/9_0_1.rpy:1554
-translate chinese 8e605d67:
+# game/scenario/9_0_1.rpy:757
+translate chinese 1f1f448a:
 
-    # kami "Bilan provisoire : la majorité des campements a eu le temps de se disperser ou de transmettre une déclaration d'urgence."
-    kami ""
+    # kami "Le Commandement IV rentre donc de nouveau en application, selon vos désirs."
+    kami "所以，按照你们的意愿，第四戒律重新开始执行。"
 
-# game/scenario/9_0_1.rpy:1555
-translate chinese 60c1658e:
+# game/scenario/9_0_1.rpy:762
+translate chinese 6cb380ef:
 
-    # kami "Pertes anticipées : réduites."
-    kami ""
+    # "Pendant une seconde, personne ne réagit. Puis nous comprenons tous en même temps ce que signifie son dernier mot."
+    "有那么一秒，谁都没有反应。接着，我们同时明白了她最后那句话意味着什么。"
 
-# game/scenario/9_0_1.rpy:1557
-translate chinese a6352051:
+# game/scenario/9_0_1.rpy:773
+translate chinese 2526c20c:
 
-    # kami "Bilan provisoire : plusieurs campements ont reçu votre avertissement."
-    kami ""
+    # "Le Conclave tremble. Très loin sous nos pieds, un mécanisme immense commence à s'aligner."
+    "议会开始震动。在我们脚下极远的地方，一台庞大的机械正缓缓对准目标。"
 
-# game/scenario/9_0_1.rpy:1558
-translate chinese f4abc8c1:
+# game/scenario/9_0_1.rpy:775
+translate chinese d7a3e3c1:
 
-    # kami "Une partie reste exposée."
-    kami ""
+    # ryn colere2 "Non ! Putain mais qui a voté contre ?!"
+    ryn colere2 "不！操，到底是谁投了反对票？！"
 
-# game/scenario/9_0_1.rpy:1560
-translate chinese 46449370:
+# game/scenario/9_0_1.rpy:776
+translate chinese badf0832:
 
-    # kami "Bilan provisoire : signal incomplet."
-    kami ""
+    # ryn colere "Vous êtes des grands malades !!"
+    ryn colere "你们全他妈疯了！！"
 
-# game/scenario/9_0_1.rpy:1561
-translate chinese a0c4fcc2:
+# game/scenario/9_0_1.rpy:778
+translate chinese e008d72e:
 
-    # kami "Une fraction significative des campements reste menacée malgré votre vote."
-    kami ""
+    # "Personne ne répond. Tout le monde baisse la tête. Cet échec, c'est le nôtre."
+    "没人回答。所有人都低下头。这场失败属于我们。"
 
-# game/scenario/9_0_1.rpy:1563
-translate chinese 05da2b8d:
+# game/scenario/9_0_1.rpy:780
+translate chinese 319c673c:
 
-    # kami "Bilan provisoire : signal inefficace."
-    kami ""
+    # think "Ai-je bien fait de voter contre ?"
+    think "我投反对票，真的做对了吗？"
 
-# game/scenario/9_0_1.rpy:1564
-translate chinese b9559d16:
+# game/scenario/9_0_1.rpy:782
+translate chinese dca742c8:
 
-    # kami "Le vote sauve les structures encore identifiables comme campements, mais arrive après plusieurs applications du Commandement."
-    kami ""
+    # "Tout le monde se disperse alors que les murs tremblent sous les tirs incessants du Conclave."
+    "议会持续开火，墙壁不断震动，所有人各自散去。"
 
-# game/scenario/9_0_1.rpy:1570
-translate chinese a7d8dea8_1:
+# game/scenario/9_0_1.rpy:791
+translate chinese 179896aa:
 
-    # kami "Vous voyez ?"
-    kami ""
+    # "Je ne sais même plus comment a fini cette journée."
+    "我甚至不记得那一天最后是怎么结束的。"
 
-# game/scenario/9_0_1.rpy:1571
-translate chinese 3c2373c8:
+# game/scenario/9_0_1.rpy:792
+translate chinese 8d8e976b:
 
-    # kami "Quand vous obéissez à la procédure, des vies peuvent être sauvées."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1577
-translate chinese 4c803492:
-
-    # kami "Quelle belle leçon collective."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1582
-translate chinese 96aae473_2:
-
-    # "Personne ne répond."
-    ""
-
-# game/scenario/9_0_1.rpy:1583
-translate chinese 0605568a:
-
-    # "Personne n'a la force."
-    ""
-
-# game/scenario/9_0_1.rpy:1590
-translate chinese 74462644:
-
-    # "Le retour jusqu'aux chambres se fait sans discussion."
-    ""
-
-# game/scenario/9_0_1.rpy:1591
-translate chinese 9c84f0c8:
-
-    # "Les portes s'ouvrent."
-    ""
-
-# game/scenario/9_0_1.rpy:1592
-translate chinese 3f3d7353:
-
-    # "Les portes se ferment."
-    ""
-
-# game/scenario/9_0_1.rpy:1593
-translate chinese 29daf791:
-
-    # "Les pas résonnent dans le couloir comme des fautes qu'on compte une par une."
-    ""
-
-# game/scenario/9_0_1.rpy:1599
-translate chinese 1b288b90:
-
-    # "Je rentre dans ma chambre."
-    ""
-
-# game/scenario/9_0_1.rpy:1600
-translate chinese 085757dd:
-
-    # "Je ne me souviens pas d'avoir marché jusque-là."
-    ""
-
-# game/scenario/9_0_1.rpy:1602
-translate chinese a1d7dc44:
-
-    # "Je reste debout devant le lit."
-    ""
-
-# game/scenario/9_0_1.rpy:1603
-translate chinese f3497748:
-
-    # "Les mains vides."
-    ""
-
-# game/scenario/9_0_1.rpy:1604
-translate chinese bf773c20:
-
-    # "La gorge sèche."
-    ""
-
-# game/scenario/9_0_1.rpy:1606
-translate chinese a93774fa:
-
-    # think "On a gagné."
-    think ""
-
-# game/scenario/9_0_1.rpy:1610
-translate chinese d1af98c2_10:
-
-    # think "Non."
-    think ""
-
-# game/scenario/9_0_1.rpy:1611
-translate chinese 29a83d96:
-
-    # think "On a voté assez vite pour que Kami puisse appeler ça une victoire."
-    think ""
-
-# game/scenario/9_0_1.rpy:1613
-translate chinese 0a483a61:
-
-    # "Je m'assois."
-    ""
-
-# game/scenario/9_0_1.rpy:1614
-translate chinese d05cb33d:
-
-    # "Le matelas plie sous moi."
-    ""
-
-# game/scenario/9_0_1.rpy:1615
-translate chinese 84fbea3d:
-
-    # "Tout le reste reste droit."
-    ""
-
-# game/scenario/9_0_1.rpy:1616
-translate chinese 83ac2bd2:
-
-    # "Trop droit."
-    ""
-
-# game/scenario/9_0_1.rpy:1618
-translate chinese d19c7a58:
-
-    # think "Des gens sont peut-être vivants parce qu'on a levé la main."
-    think ""
-
-# game/scenario/9_0_1.rpy:1619
-translate chinese ff9bd036:
-
-    # think "Des gens sont peut-être morts parce qu'on a dû lui demander la permission."
-    think ""
-
-# game/scenario/9_0_1.rpy:1623
-translate chinese a7187640:
-
-    # "Je regarde l'écran mural."
-    ""
-
-# game/scenario/9_0_1.rpy:1624
-translate chinese 2e4d3978:
-
-    # "Il est noir."
-    ""
-
-# game/scenario/9_0_1.rpy:1625
-translate chinese ec72eabe:
-
-    # "Pour une fois, j'aurais presque préféré qu'il montre quelque chose."
-    ""
-
-# game/scenario/9_0_1.rpy:1627
-translate chinese fe88459a:
-
-    # think "Juste un chiffre."
-    think ""
-
-# game/scenario/9_0_1.rpy:1628
-translate chinese b52a804e:
-
-    # think "Même froid."
-    think ""
-
-# game/scenario/9_0_1.rpy:1629
-translate chinese b649800b:
-
-    # think "Même cruel."
-    think ""
-
-# game/scenario/9_0_1.rpy:1630
-translate chinese 41005058:
-
-    # think "Quelque chose à détester précisément."
-    think ""
-
-# game/scenario/9_0_1.rpy:1634
-translate chinese e56eedad:
-
-    # "Mais il n'y a rien."
-    ""
-
-# game/scenario/9_0_1.rpy:1635
-translate chinese bfcaca0a:
-
-    # "Seulement ma chambre."
-    ""
-
-# game/scenario/9_0_1.rpy:1636
-translate chinese 52f9a488:
-
-    # "Et cette victoire sale."
-    ""
-
-# game/scenario/9_0_1.rpy:1653
-translate chinese 69b04011_1:
-
-    # kami "Résultat du vote."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1654
-translate chinese 12138cb4:
-
-    # kami "Absence d'unanimité."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1662
-translate chinese b458ed27:
-
-    # kami "L'interdiction des regroupements de plus de vingt personnes demeure en vigueur."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1663
-translate chinese 2f8a6f54:
-
-    # kami "Les campements limenois aux frontières sont donc des rassemblements illégaux."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1669
-translate chinese 73ec8431:
-
-    # kami "Application du Commandement IV."
-    kami ""
-
-# game/scenario/9_0_1.rpy:1676
-translate chinese eb8fe673:
-
-    # "Pendant une seconde, personne ne comprend."
-    ""
-
-# game/scenario/9_0_1.rpy:1677
-translate chinese fb346f5c:
-
-    # "Ou plutôt, tout le monde comprend en même temps."
-    ""
-
-# game/scenario/9_0_1.rpy:1682
-translate chinese 1ef41578:
-
-    # "Le Conclave tremble."
-    ""
-
-# game/scenario/9_0_1.rpy:1683
-translate chinese d23cbe6e:
-
-    # "Très loin sous nos pieds, quelque chose s'aligne."
-    ""
-
-# game/scenario/9_0_1.rpy:1685
-translate chinese 12503a3e:
-
-    # ryn colere2 "Non."
-    ryn colere2 ""
-
-# game/scenario/9_0_1.rpy:1690
-translate chinese a3863f00:
-
-    # "Le premier tir part."
-    ""
-
-# game/scenario/9_0_1.rpy:1691
-translate chinese 027b8e69:
-
-    # "Même à travers les murs, la lumière trouve une manière d'exister."
-    ""
-
-# game/scenario/9_0_1.rpy:1693
-translate chinese b9f21211:
-
-    # "Un flash blanc avale la salle."
-    ""
-
-# game/scenario/9_0_1.rpy:1697
-translate chinese 726b6eeb:
-
-    # think "Jour 10 commence avant la nuit."
-    think ""
-
-# game/scenario/9_0_1.rpy:1698
-translate chinese f1136d01:
-
-    # think "Et cette fois, il commence par un tir."
-    think ""
-
-translate chinese strings:
-
-    # game/scenario/9_0_1.rpy:109
-    old "Repousser la chaise de la porte."
-    new ""
-
-    # game/scenario/9_0_1.rpy:109
-    old "La laisser contre la porte encore quelques secondes."
-    new ""
-
-# TODO: Translation updated at 2026-08-24 09:59
-
-# game/scenario/9_0_1.rpy:686
-translate chinese df63b9b9_3:
-
-    # noam inquiet "Oui."
-    noam inquiet ""
-
-# game/scenario/9_0_1.rpy:899
-translate chinese 3ed5d2a3_1:
-
-    # nyra raison "Pourquoi ?"
-    nyra raison ""
-
-# game/scenario/9_0_1.rpy:1015
-translate chinese 900cae6c_1:
-
-    # nyra raison "Non."
-    nyra raison ""
+    # "La seule chose dont je me souviens, c’est mon réveil du lendemain."
+    "唯一记得的，是第二天早上醒来的那一刻。"
 

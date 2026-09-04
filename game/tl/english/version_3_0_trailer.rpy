@@ -80,3 +80,11 @@ translate english strings:
 
     old "C'EST UNE ROUTE."
     new "IT'S A ROUTE."
+# TODO: Translation updated at 2026-08-27 17:51
+
+translate english strings:
+
+    # game/version_3_0_trailer.rpy:184
+    old "KAMI'S DESIRES 3.0"
+    new ""
+

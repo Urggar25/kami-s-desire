@@ -1,2490 +1,1018 @@
-﻿# TODO: Translation updated at 2026-08-23 11:55
+﻿# TODO: Translation updated at 2026-08-28 10:18
+
+# game/scenario/8_0_1.rpy:19
+translate portuguese 3d4a6f91:
+
+    # "Une ligne de lumière traverse le sol sous le rideau. Je reste allongé quelques secondes, surpris de m'être réveillé sans annonce ni voix dans les murs."
+    "Uma faixa de luz atravessa o chão sob a cortina. Fico deitado por alguns segundos, surpreso por ter acordado sem anúncio nem voz nas paredes."
 
 # game/scenario/8_0_1.rpy:21
-translate portuguese 0c11ba2a:
+translate portuguese 4771d97d:
 
-    # "La lumière filtre sous le rideau."
-    ""
+    # think "Deux jours sans Kami. Je devrais peut-être arrêter de compter, mais le silence est encore trop inhabituel pour devenir normal."
+    think "Dois dias sem Kami. Talvez eu devesse parar de contar, mas o silêncio ainda é estranho demais para parecer normal."
 
-# game/scenario/8_0_1.rpy:22
-translate portuguese 67476c80:
+# game/scenario/8_0_1.rpy:24
+translate portuguese c397dd0a:
 
-    # "Pas violemment."
-    ""
-
-# game/scenario/8_0_1.rpy:23
-translate portuguese 03283639:
-
-    # "Juste assez pour dessiner une ligne sur le sol."
-    ""
-
-# game/scenario/8_0_1.rpy:25
-translate portuguese 00600bfe:
-
-    # think "Il fait jour."
-    think ""
+    # think "Pour une fois, personne ne me force à sortir du lit. Je peux rester là uniquement parce que j'en ai envie."
+    think "Pela primeira vez, ninguém me obriga a sair da cama. Posso ficar aqui simplesmente porque tenho vontade."
 
 # game/scenario/8_0_1.rpy:26
-translate portuguese 941ea7d1:
+translate portuguese eb21b083:
 
-    # think "Et je suis réveillé."
-    think ""
+    # "Je m'étire, puis mon regard se pose sur la table près du lit. L'espace vide me rappelle immédiatement ce que je voulais vérifier."
+    "Eu me espreguiço, então olho para a mesa perto da cama. O espaço vazio me lembra imediatamente o que eu queria verificar."
 
-# game/scenario/8_0_1.rpy:27
-translate portuguese 587c8851:
+# game/scenario/8_0_1.rpy:28
+translate portuguese 79bd0b94:
 
-    # think "Tout seul."
-    think ""
-
-# game/scenario/8_0_1.rpy:31
-translate portuguese e33bdd52:
-
-    # "Je regarde le plafond une seconde."
-    ""
+    # think "Le dessin de Juliette. Je l'avais encore hier soir, j'en suis certain."
+    think "O desenho de Juliette. Ainda estava aqui ontem à noite, tenho certeza."
 
 # game/scenario/8_0_1.rpy:32
-translate portuguese 48d660a3:
+translate portuguese 81adb690:
 
-    # "Pas d'annonce."
-    ""
-
-# game/scenario/8_0_1.rpy:33
-translate portuguese 9f44e3e3:
-
-    # "Pas de voix."
-    ""
+    # "Je me redresse et cherche autour de moi. Rien sur la table, rien sur le lit, rien au sol."
+    "Eu me sento e procuro ao redor. Nada na mesa, nada na cama, nada no chão."
 
 # game/scenario/8_0_1.rpy:34
-translate portuguese c09788b4_3:
+translate portuguese e1fef13b:
 
-    # "Rien."
-    ""
+    # think "Elle avait passé trois semaines dessus en recommençant chaque fois qu'un détail lui déplaisait. À la fin, elle trouvait toujours que mon nez était raté."
+    think "Ela passou três semanas fazendo aquilo, recomeçando sempre que algum detalhe desagradava. No fim, ainda achava que tinha errado meu nariz."
 
-# game/scenario/8_0_1.rpy:36
-translate portuguese 728cd4c3:
+# game/scenario/8_0_1.rpy:35
+translate portuguese 60024077:
 
-    # think "Ce silence-là, c'est le bon."
-    think ""
+    # think "Je lui avais répondu que le dessin était parfait. Elle croyait que je voulais seulement lui faire plaisir, mais je le pensais vraiment."
+    think "Eu disse que o desenho estava perfeito. Ela achou que eu só queria agradar, mas eu falava sério."
 
-# game/scenario/8_0_1.rpy:40
-translate portuguese 2b937d03:
+# game/scenario/8_0_1.rpy:37
+translate portuguese 5ce23311:
 
-    # "Je m'étire."
-    ""
+    # "Je me lève et inspecte une nouvelle fois les abords du lit. Le dessin n'a pas pu disparaître. Je l'ai forcément rangé quelque part sans m'en souvenir."
+    "Eu me levanto e verifico mais uma vez ao redor da cama. O desenho não pode ter sumido. Devo ter guardado em algum lugar e esquecido."
 
-# game/scenario/8_0_1.rpy:41
-translate portuguese 9bbc2fa5:
-
-    # "Je reste allongé encore un moment."
-    ""
-
-# game/scenario/8_0_1.rpy:42
-translate portuguese 8291cc32:
-
-    # "Juste parce que je peux."
-    ""
-
-# game/scenario/8_0_1.rpy:46
-translate portuguese 23553841:
-
-    # "Et puis je me souviens."
-    ""
-
-# game/scenario/8_0_1.rpy:48
-translate portuguese 8109a800:
-
-    # think "Le dessin."
-    think ""
-
-# game/scenario/8_0_1.rpy:50
-translate portuguese 343d1f1c:
-
-    # "Je me redresse."
-    ""
-
-# game/scenario/8_0_1.rpy:52
-translate portuguese 312ff350:
-
-    # "Je m'assois sur le bord du lit."
-    ""
-
-# game/scenario/8_0_1.rpy:54
-translate portuguese 49b3b133:
-
-    # think "Je l'ai posé quelque part hier soir."
-    think ""
-
-# game/scenario/8_0_1.rpy:55
-translate portuguese db6e0aa3:
-
-    # think "Forcément."
-    think ""
-
-# game/scenario/8_0_1.rpy:56
-translate portuguese 683dc42d:
-
-    # think "Je l'ai toujours quelque part."
-    think ""
-
-# game/scenario/8_0_1.rpy:60
-translate portuguese 1de5b47f_1:
-
-    # think "Juliette."
-    think ""
-
-# game/scenario/8_0_1.rpy:61
-translate portuguese 0caa4267:
-
-    # think "Elle avait mis du temps à le faire, ce dessin."
-    think ""
-
-# game/scenario/8_0_1.rpy:62
-translate portuguese bd327998:
-
-    # think "Trois semaines. Elle recommençait sans arrêt."
-    think ""
-
-# game/scenario/8_0_1.rpy:63
-translate portuguese 1feb0e7f:
-
-    # think "À la fin elle m'avait dit que c'était nul."
-    think ""
-
-# game/scenario/8_0_1.rpy:64
-translate portuguese a83fe193:
-
-    # think "Que le nez était raté."
-    think ""
-
-# game/scenario/8_0_1.rpy:65
-translate portuguese abc79f83:
-
-    # think "Je lui avais dit que c'était parfait."
-    think ""
-
-# game/scenario/8_0_1.rpy:66
-translate portuguese e4ca2669:
-
-    # think "C'était vrai."
-    think ""
-
-# game/scenario/8_0_1.rpy:70
-translate portuguese 8fdda2e0:
-
-    # "Je me lève."
-    ""
-
-# game/scenario/8_0_1.rpy:71
-translate portuguese 459e3a69:
-
-    # "Je refais le tour du lit."
-    ""
-
-# game/scenario/8_0_1.rpy:73
-translate portuguese 5a4635d3:
-
-    # think "Il est quelque part."
-    think ""
-
-# game/scenario/8_0_1.rpy:74
-translate portuguese db6e0aa3_1:
-
-    # think "Forcément."
-    think ""
-
-# game/scenario/8_0_1.rpy:78
+# game/scenario/8_0_1.rpy:39
 translate portuguese b2bf8d02:
 
     # tuto "(Fouille la chambre. Le dessin est peut-être encore là.)"
-    tuto ""
+    tuto "(Vasculhe o quarto. Talvez o desenho ainda esteja aqui.)"
+
+# game/scenario/8_0_1.rpy:111
+translate portuguese 6f75ec83:
+
+    # think "J'ai déjà vérifié les lamelles. Une feuille n'aurait pas pu passer sans être déchirée."
+    think "Já verifiquei as lâminas. Uma folha não passaria por elas sem rasgar."
+
+# game/scenario/8_0_1.rpy:116
+translate portuguese 22de0460:
+
+    # "Je passe les doigts le long de la bouche d'aération, puis j'écarte prudemment deux lamelles."
+    "Passo os dedos pela saída de ar e afasto duas lâminas com cuidado."
+
+# game/scenario/8_0_1.rpy:117
+translate portuguese 4b19e5a0:
+
+    # "Le souffle froid soulève la poussière accumulée derrière la grille. Aucun morceau de papier, seulement l'obscurité du conduit."
+    "O ar frio levanta a poeira acumulada atrás da grade. Nenhum pedaço de papel, apenas a escuridão do duto."
 
 # game/scenario/8_0_1.rpy:118
-translate portuguese ee3a2b11:
+translate portuguese dc8c0461:
 
-    # "Je vide le sac sur le lit."
-    ""
+    # think "Le dessin n'a pas pu finir là-dedans tout seul."
+    think "O desenho não poderia ter ido parar aí sozinho."
 
-# game/scenario/8_0_1.rpy:119
-translate portuguese ea437ffb:
+# game/scenario/8_0_1.rpy:123
+translate portuguese 79615d56:
 
-    # "Tout sort d'un coup."
-    ""
-
-# game/scenario/8_0_1.rpy:120
-translate portuguese 2f9a4c66:
-
-    # "Des vêtements. Un bout de papier."
-    ""
-
-# game/scenario/8_0_1.rpy:121
-translate portuguese 63b64097:
-
-    # "Je me jette dessus."
-    ""
-
-# game/scenario/8_0_1.rpy:124
-translate portuguese 4b624350:
-
-    # think "C'est juste un formulaire du Conclave."
-    think ""
-
-# game/scenario/8_0_1.rpy:125
-translate portuguese f7933492:
-
-    # think "Numéro d'identification. Case à cocher."
-    think ""
-
-# game/scenario/8_0_1.rpy:126
-translate portuguese 410d8efe:
-
-    # "Je le repose."
-    ""
-
-# game/scenario/8_0_1.rpy:127
-translate portuguese 6af587bc:
-
-    # think "Je l'aurais pas mis dans le sac de toute façon."
-    think ""
+    # think "J'ai déjà retourné le lit. Il ne reste rien à vérifier de ce côté."
+    think "Já revirei a cama. Não há mais nada para verificar deste lado."
 
 # game/scenario/8_0_1.rpy:128
-translate portuguese 90145bf6:
+translate portuguese 3e4c8858:
 
-    # think "Je savais que c'était précieux."
-    think ""
+    # "Je retire l'oreiller, secoue la couverture et passe la main entre le matelas et le sommier."
+    "Tiro o travesseiro, sacudo o cobertor e passo a mão entre o colchão e a estrutura da cama."
 
 # game/scenario/8_0_1.rpy:129
-translate portuguese d2fe96aa:
+translate portuguese b7f59a1f:
 
-    # think "Je l'aurais pas mis là."
-    think ""
+    # "Je m'agenouille ensuite pour regarder dessous. Une chaussette oubliée, un peu de poussière... mais aucune trace du dessin."
+    "Depois me ajoelho para olhar embaixo. Uma meia esquecida, um pouco de poeira... mas nenhum sinal do desenho."
 
-# game/scenario/8_0_1.rpy:136
-translate portuguese 54c20c9f:
+# game/scenario/8_0_1.rpy:130
+translate portuguese b0bf4dc8:
 
-    # "Je secoue la veste pendue sur la chaise."
-    ""
+    # think "Je l'aurais vu tomber. J'étais juste là, hier soir."
+    think "Eu teria visto cair. Estava bem aqui ontem à noite."
 
-# game/scenario/8_0_1.rpy:137
-translate portuguese 7264033a:
+# game/scenario/8_0_1.rpy:135
+translate portuguese 20f7098c:
 
-    # "Je glisse la main dans chaque poche."
-    ""
-
-# game/scenario/8_0_1.rpy:138
-translate portuguese f55063ec:
-
-    # "La poche intérieure. La poche poitrine."
-    ""
-
-# game/scenario/8_0_1.rpy:139
-translate portuguese e0450218_1:
-
-    # think "Rien."
-    think ""
+    # think "L'écran est toujours noir. Rien n'est coincé autour du cadre."
+    think "A tela continua preta. Não há nada preso ao redor da moldura."
 
 # game/scenario/8_0_1.rpy:140
-translate portuguese 252f7e96:
+translate portuguese b1916c8d:
 
-    # "Je la retourne."
-    ""
+    # "L'écran mural reste entièrement noir. Je vérifie malgré moi le rebord inférieur et l'espace étroit entre le cadre et le mur."
+    "A tela na parede continua completamente preta. Mesmo sem querer, verifico a borda inferior e o espaço estreito entre a moldura e a parede."
 
 # game/scenario/8_0_1.rpy:141
-translate portuguese e615c0f7:
+translate portuguese bfa244b2:
 
-    # "Je regarde sous le siège."
-    ""
+    # think "Rien. Et toujours aucun signe de Kami."
+    think "Nada. E ainda nenhum sinal de Kami."
 
 # game/scenario/8_0_1.rpy:142
-translate portuguese 7310d00e_1:
+translate portuguese 75ece340:
 
-    # think "Toujours rien."
-    think ""
+    # think "Ce silence devrait me rassurer, mais il donne l'impression que la chambre retient son souffle."
+    think "Esse silêncio deveria me tranquilizar, mas parece que o quarto está prendendo a respiração."
 
-# game/scenario/8_0_1.rpy:143
-translate portuguese 441258fb:
+# game/scenario/8_0_1.rpy:147
+translate portuguese fbbde1da:
 
-    # think "Je commence à me demander si je l'avais vraiment hier soir."
-    think ""
-
-# game/scenario/8_0_1.rpy:144
-translate portuguese 31632214:
-
-    # think "Mais oui. Je l'avais. Je me souviens de l'avoir tenu."
-    think ""
-
-# game/scenario/8_0_1.rpy:145
-translate portuguese bc1fc618:
-
-    # think "Je me souviens du papier entre mes doigts."
-    think ""
+    # think "Le tiroir est vide. Je l'ai même retiré de ses rails."
+    think "A gaveta está vazia. Eu até a tirei dos trilhos."
 
 # game/scenario/8_0_1.rpy:152
-translate portuguese 288608c0:
+translate portuguese 0bfb3a22:
 
-    # "J'ouvre le placard."
-    ""
+    # "J'ouvre le tiroir jusqu'à la butée. Quelques formulaires du Conclave, mon badge de réserve et un stylo roulent vers l'avant."
+    "Abro a gaveta até o limite. Alguns formulários do Conclave, meu crachá reserva e uma caneta rolam para a frente."
 
 # game/scenario/8_0_1.rpy:153
-translate portuguese d1e78213:
+translate portuguese 20c910d1:
 
-    # "Trois cintres. Un pull en boule sur l'étagère."
-    ""
+    # "Je sors tout, inspecte chaque feuille, puis retire complètement le tiroir pour regarder derrière."
+    "Tiro tudo, examino cada folha e depois removo completamente a gaveta para olhar atrás."
 
-# game/scenario/8_0_1.rpy:157
-translate portuguese 64131055:
+# game/scenario/8_0_1.rpy:154
+translate portuguese b04c2101:
 
-    # "Je le déplie."
-    ""
-
-# game/scenario/8_0_1.rpy:158
-translate portuguese 7d62794d:
-
-    # "Je le secoue."
-    ""
+    # think "Ce ne sont que des papiers administratifs. Le dessin n'est pas là."
+    think "São só papéis administrativos. O desenho não está aqui."
 
 # game/scenario/8_0_1.rpy:159
-translate portuguese dcc9bec9:
+translate portuguese c3799c5d:
 
-    # think "Il pourrait être tombé dedans, n'importe comment..."
-    think ""
+    # think "J'ai fouillé chaque poche et chaque étagère de l'armoire. Rien."
+    think "Vasculhei todos os bolsos e todas as prateleiras do armário. Nada."
 
-# game/scenario/8_0_1.rpy:160
-translate portuguese f3e931ff:
+# game/scenario/8_0_1.rpy:164
+translate portuguese 135c0386:
 
-    # "Rien ne tombe."
-    ""
+    # "J'ouvre l'armoire et décroche mes vêtements un par un. Je palpe les poches, déplie le pull de l'étagère et vérifie derrière les cintres."
+    "Abro o armário e tiro minhas roupas uma por uma. Apalpo os bolsos, desdobro o suéter da prateleira e verifico atrás dos cabides."
 
-# game/scenario/8_0_1.rpy:161
-translate portuguese d1af98c2_7:
+# game/scenario/8_0_1.rpy:165
+translate portuguese 88fdcad6:
 
-    # think "Non."
-    think ""
-
-# game/scenario/8_0_1.rpy:162
-translate portuguese 5910111c:
-
-    # think "Évidemment non."
-    think ""
-
-# game/scenario/8_0_1.rpy:163
-translate portuguese 097f939d:
-
-    # "Je le replie n'importe comment et je le remets."
-    ""
+    # "Le fond métallique apparaît entièrement nu."
+    "O fundo metálico fica totalmente exposto."
 
 # game/scenario/8_0_1.rpy:166
-translate portuguese 4af00fe7:
+translate portuguese c9ca1044:
 
-    # "Je pousse les cintres sur le côté."
-    ""
+    # think "Même plié, le dessin aurait laissé une trace. Il n'est pas ici."
+    think "Mesmo dobrado, o desenho teria deixado algum sinal. Não está aqui."
 
-# game/scenario/8_0_1.rpy:167
-translate portuguese 51893e04:
+# game/scenario/8_0_1.rpy:171
+translate portuguese e068cdd5:
 
-    # "Le fond du placard est vide."
-    ""
+    # think "La salle de bain est trop petite pour cacher quoi que ce soit d'autre."
+    think "O banheiro é pequeno demais para esconder qualquer outra coisa."
 
-# game/scenario/8_0_1.rpy:168
-translate portuguese d846d86e:
+# game/scenario/8_0_1.rpy:176
+translate portuguese 3c306651:
 
-    # "Parfaitement vide."
-    ""
-
-# game/scenario/8_0_1.rpy:169
-translate portuguese 82fd5d52:
-
-    # think "C'est tellement vide que ça en devient presque bizarre."
-    think ""
+    # "Je pousse la porte de la salle de bain et vérifie le meuble sous le lavabo, le panier à linge et même l'arrière des serviettes."
+    "Abro a porta do banheiro e verifico o armário sob a pia, o cesto de roupa e até atrás das toalhas."
 
 # game/scenario/8_0_1.rpy:177
-translate portuguese 7121176c:
+translate portuguese d5e35c3b:
 
-    # "Je m'agenouille."
-    ""
+    # "L'humidité aurait gondolé le papier. Tout est sec, parfaitement rangé et vide."
+    "A umidade teria deformado o papel. Tudo está seco, perfeitamente arrumado e vazio."
 
 # game/scenario/8_0_1.rpy:178
-translate portuguese 417390cc:
+translate portuguese ecda749c:
 
-    # "Je soulève le bord de la couette pour voir dessous."
-    ""
-
-# game/scenario/8_0_1.rpy:180
-translate portuguese daf4fff8_1:
-
-    # think "..."
-    think ""
-
-# game/scenario/8_0_1.rpy:181
-translate portuguese 7d9f385e:
-
-    # think "De la poussière."
-    think ""
-
-# game/scenario/8_0_1.rpy:182
-translate portuguese 0a36a5eb:
-
-    # think "Une chaussette."
-    think ""
+    # think "Je n'aurais jamais apporté le dessin ici."
+    think "Eu nunca teria levado o desenho para cá."
 
 # game/scenario/8_0_1.rpy:183
-translate portuguese 562c1a58:
+translate portuguese d3ef092b:
 
-    # think "Pas le dessin."
-    think ""
+    # think "Le boîtier du brouilleur est fermé. Le dessin n'est pas derrière."
+    think "A caixa do bloqueador está fechada. O desenho não está atrás dela."
 
-# game/scenario/8_0_1.rpy:184
-translate portuguese 155065fe:
+# game/scenario/8_0_1.rpy:188
+translate portuguese 2347cc65:
 
-    # "Je reste à genoux une seconde."
-    ""
-
-# game/scenario/8_0_1.rpy:185
-translate portuguese 1e43db06_1:
-
-    # "Juste une seconde."
-    ""
+    # "Je longe le boîtier du brouilleur du bout des doigts et regarde entre l'appareil et le mur."
+    "Passo os dedos pela caixa do bloqueador e olho entre o aparelho e a parede."
 
 # game/scenario/8_0_1.rpy:189
-translate portuguese 0ea97934:
+translate portuguese d6771e9e:
 
-    # think "Il est ailleurs."
-    think ""
+    # "Aucun papier n'y est coincé. La diode pulse avec une régularité presque organique."
+    "Nenhum papel está preso ali. A luz pulsa com uma regularidade quase orgânica."
 
 # game/scenario/8_0_1.rpy:190
-translate portuguese 4b585748:
+translate portuguese 291730b5:
 
-    # think "Je continue."
-    think ""
-
-# game/scenario/8_0_1.rpy:194
-translate portuguese db8ae96c:
-
-    # think "Je suis en train de chercher un bout de papier sous mon lit."
-    think ""
+    # think "Ce truc est censé nous protéger. Alors pourquoi est-ce que je me sens observé ?"
+    think "Essa coisa deveria nos proteger. Então por que me sinto observado?"
 
 # game/scenario/8_0_1.rpy:195
-translate portuguese 248dc3e3:
+translate portuguese 4731a928:
 
-    # think "À genoux."
-    think ""
+    # think "J'ai déjà déplacé la tablette et vérifié toute la table. Le dessin n'y est plus."
+    think "Já movi o tablet e verifiquei a mesa inteira. O desenho não está mais lá."
 
-# game/scenario/8_0_1.rpy:196
-translate portuguese 474c8727:
+# game/scenario/8_0_1.rpy:200
+translate portuguese 39a905e5:
 
-    # think "Sur le sol d'une chambre qui n'est même pas la mienne."
-    think ""
+    # "Je soulève la tablette, inspecte sa station d'accueil, puis passe la main derrière la table et sous son plateau."
+    "Levanto o tablet, verifico a base e depois passo a mão atrás da mesa e sob o tampo."
 
-# game/scenario/8_0_1.rpy:197
-translate portuguese daf4fff8_2:
+# game/scenario/8_0_1.rpy:201
+translate portuguese 6bad3cc5:
 
-    # think "..."
-    think ""
+    # "La surface où j'avais posé le dessin est nue. Pas de feuille tombée, pas même un coin de papier coincé contre le mur."
+    "A superfície onde deixei o desenho está vazia. Nenhuma folha caída, nem mesmo uma ponta de papel presa contra a parede."
 
-# game/scenario/8_0_1.rpy:198
-translate portuguese 1fd09df1:
+# game/scenario/8_0_1.rpy:202
+translate portuguese 81e486d0:
 
-    # think "Ok."
-    think ""
-
-# game/scenario/8_0_1.rpy:199
-translate portuguese 7ff85fcb:
-
-    # think "Relève-toi."
-    think ""
-
-# game/scenario/8_0_1.rpy:207
-translate portuguese 403785a9:
-
-    # "Je m'arrête devant l'écran."
-    ""
-
-# game/scenario/8_0_1.rpy:208
-translate portuguese dede91f2:
-
-    # "Noir."
-    ""
-
-# game/scenario/8_0_1.rpy:209
-translate portuguese ec26ed28:
-
-    # "Aucun reflet. Aucune standby. Rien."
-    ""
+    # think "C'est ici que je l'ai vu pour la dernière fois. J'en suis certain."
+    think "Foi aqui que o vi pela última vez. Tenho certeza."
 
 # game/scenario/8_0_1.rpy:210
-translate portuguese c9d25396:
+translate portuguese 0f1abdc6:
 
-    # think "Elle ne s'est pas manifestée cette nuit."
-    think ""
+    # "Ma main se pose sur la poignée, mais je m'arrête avant d'ouvrir."
+    "Minha mão toca a maçaneta, mas paro antes de abrir."
 
-# game/scenario/8_0_1.rpy:211
-translate portuguese 3ccf876b:
+# game/scenario/8_0_1.rpy:212
+translate portuguese 8eda1a12:
 
-    # think "Ni ce matin."
-    think ""
-
-# game/scenario/8_0_1.rpy:213
-translate portuguese f4945e7b:
-
-    # think "Je devrais trouver ça rassurant."
-    think ""
+    # think "Il reste encore un endroit évident à vérifier. Je ne peux pas partir maintenant."
+    think "Ainda há um lugar óbvio para verificar. Não posso sair agora."
 
 # game/scenario/8_0_1.rpy:214
-translate portuguese 866fac73:
+translate portuguese c013d115:
 
-    # think "C'est rassurant."
-    think ""
+    # think "Il reste encore [j8_remaining] endroits évidents à vérifier. Je ne peux pas partir maintenant."
+    think "Ainda há [j8_remaining] lugares óbvios para verificar. Não posso sair agora."
 
-# game/scenario/8_0_1.rpy:215
-translate portuguese 407d9c68:
+# game/scenario/8_0_1.rpy:227
+translate portuguese 6f92acb4:
 
-    # think "Mais un écran éteint dans cette chambre, ça ressemble quand même à quelque chose qui attend."
-    think ""
+    # "Je m'assieds au milieu du désordre créé par ma recherche. Le lit est défait, le tiroir repose encore hors de ses rails et mes vêtements débordent de l'armoire."
+    "Sento no meio da bagunça causada pela busca. A cama está desfeita, a gaveta continua fora dos trilhos e minhas roupas transbordam do armário."
 
-# game/scenario/8_0_1.rpy:216
-translate portuguese 606554c0:
+# game/scenario/8_0_1.rpy:229
+translate portuguese 6dc45c2a:
 
-    # "Je détourne les yeux."
-    ""
+    # think "Le dessin n'est pas là. Pourquoi je l'aurais perdu ? Je n'y ai pas touché."
+    think "O desenho não está aqui. Por que eu teria perdido? Nem toquei nele."
 
 # game/scenario/8_0_1.rpy:230
-translate portuguese 4a5948ab:
+translate portuguese 05cf6fc8:
 
-    # "Je m'assois sur le lit."
-    ""
-
-# game/scenario/8_0_1.rpy:231
-translate portuguese a404738d:
-
-    # "Je regarde la chambre."
-    ""
+    # think "J'ai envie de me convaincre que je l'ai rangé ailleurs, mais il n'existe pas beaucoup d'« ailleurs » possibles dans cette chambre."
+    think "Quero me convencer de que guardei em outro lugar, mas não existem muitos 'outros lugares' possíveis neste quarto."
 
 # game/scenario/8_0_1.rpy:232
-translate portuguese 30a0ddf4:
+translate portuguese c5eaa983:
 
-    # "Le sac ouvert."
-    ""
-
-# game/scenario/8_0_1.rpy:233
-translate portuguese 617b273d:
-
-    # "Le tiroir pas tout à fait refermé."
-    ""
+    # "Je me relève malgré l'impression d'abandonner quelque chose d'important."
+    "Eu me levanto apesar da sensação de estar abandonando algo importante."
 
 # game/scenario/8_0_1.rpy:234
-translate portuguese 8bac7ae7:
+translate portuguese 89e3d51e:
 
-    # "Le pull mal replié dans le placard."
-    ""
+    # "Mon estomac se rappelle brusquement à moi. Je n'ai rien mangé depuis hier soir et continuer à retourner la chambre ne fera pas réapparaître le dessin."
+    "Meu estômago de repente reclama. Não como desde ontem à noite, e continuar revirando o quarto não vai fazer o desenho reaparecer."
 
 # game/scenario/8_0_1.rpy:236
-translate portuguese b1e4232e:
+translate portuguese 3a73cfca:
 
-    # think "Il n'est pas là."
-    think ""
+    # think "Je vais déjeuner, puis je reprendrai les recherches calmement. Les objets ne disparaissent pas sans raison."
+    think "Vou almoçar e depois continuo procurando com calma. As coisas não desaparecem sem motivo."
 
-# game/scenario/8_0_1.rpy:240
-translate portuguese 0f764dc7:
+# game/scenario/8_0_1.rpy:238
+translate portuguese 1ffbf96a:
 
-    # think "Je l'aurais pas perdu."
-    think ""
-
-# game/scenario/8_0_1.rpy:241
-translate portuguese 391cb176:
-
-    # think "Je perds pas ce genre de truc."
-    think ""
+    # "Je récupère une veste parmi les vêtements sortis de l'armoire."
+    "Pego uma jaqueta no meio das roupas que tirei do armário."
 
 # game/scenario/8_0_1.rpy:242
-translate portuguese 040c9885:
+translate portuguese 2580d7c6:
 
-    # think "Je l'aurais posé quelque part de sûr."
-    think ""
+    # think "Je rangerai en rentrant. Pour le moment, je n'ai plus envie de regarder cette pièce."
+    think "Vou arrumar quando voltar. Por enquanto, não quero mais olhar para este quarto."
 
-# game/scenario/8_0_1.rpy:243
-translate portuguese 6bf6d102:
+# game/scenario/8_0_1.rpy:246
+translate portuguese 88126530:
 
-    # think "Je l'aurais—"
-    think ""
+    # "Je remets le tiroir sur ses rails, repousse mes vêtements dans l'armoire et referme sa porte."
+    "Coloco a gaveta nos trilhos, empurro as roupas para dentro do armário e fecho a porta."
 
 # game/scenario/8_0_1.rpy:247
-translate portuguese 916d58c4:
+translate portuguese 91cfd05c:
 
-    # think "Je l'aurais posé quelque part."
-    think ""
+    # think "Je ne sais pas pourquoi j'en ressens le besoin. Peut-être simplement pour être certain de voir si quelque chose bouge encore."
+    think "Não sei por que sinto necessidade de fazer isso. Talvez só para ter certeza de perceber se mais alguma coisa mudar de lugar."
 
-# game/scenario/8_0_1.rpy:249
-translate portuguese d40294a0:
+# game/scenario/8_0_1.rpy:251
+translate portuguese cd0820f6:
 
-    # "Je reste là une seconde de trop."
-    ""
+    # "Je quitte la chambre en refermant la porte derrière moi."
+    "Saio do quarto e fecho a porta atrás de mim."
 
-# game/scenario/8_0_1.rpy:253
-translate portuguese d8cd49bc:
+# game/scenario/8_0_1.rpy:271
+translate portuguese 5536c402:
 
-    # think "Juliette avait mis des semaines à le faire."
-    think ""
-
-# game/scenario/8_0_1.rpy:254
-translate portuguese cbcb1408:
-
-    # think "Elle m'avait dit que c'était raté."
-    think ""
-
-# game/scenario/8_0_1.rpy:255
-translate portuguese ab69e5b5:
-
-    # think "Le nez, elle disait."
-    think ""
-
-# game/scenario/8_0_1.rpy:256
-translate portuguese 43a6192f:
-
-    # think "J'avais répondu que c'était parfait."
-    think ""
-
-# game/scenario/8_0_1.rpy:257
-translate portuguese 8733cc29:
-
-    # think "Elle avait levé les yeux au ciel."
-    think ""
-
-# game/scenario/8_0_1.rpy:258
-translate portuguese f71c8e1a:
-
-    # think "Comme si j'avais dit ça juste pour lui faire plaisir."
-    think ""
-
-# game/scenario/8_0_1.rpy:259
-translate portuguese fe5aaaf8:
-
-    # think "Mais c'était vrai."
-    think ""
-
-# game/scenario/8_0_1.rpy:263
-translate portuguese 8fdda2e0_1:
-
-    # "Je me lève."
-    ""
-
-# game/scenario/8_0_1.rpy:267
-translate portuguese 897ecbc4:
-
-    # "Je regarde encore."
-    ""
-
-# game/scenario/8_0_1.rpy:268
-translate portuguese 77c9aac5:
-
-    # "Derrière la porte."
-    ""
-
-# game/scenario/8_0_1.rpy:269
-translate portuguese 9339d6da:
-
-    # "Sous le matelas cette fois."
-    ""
-
-# game/scenario/8_0_1.rpy:270
-translate portuguese 4d08156b:
-
-    # "Dans la doublure du sac."
-    ""
-
-# game/scenario/8_0_1.rpy:272
-translate portuguese d1af98c2_8:
-
-    # think "Non."
-    think ""
+    # "La cafétéria est plus bruyante que d'habitude. Les conversations se croisent, les rires viennent sans effort et personne ne surveille les écrans entre deux phrases."
+    "A cafeteria está mais barulhenta que o normal. As conversas se misturam, as risadas surgem sem esforço e ninguém vigia as telas entre uma frase e outra."
 
 # game/scenario/8_0_1.rpy:273
-translate portuguese a058d389:
+translate portuguese 39417235:
 
-    # think "Il n'est juste pas là."
-    think ""
-
-# game/scenario/8_0_1.rpy:274
-translate portuguese afc55ade_1:
-
-    # "Je m'arrête."
-    ""
+    # think "Deux jours sans Kami, d'une certaine manière, nous nous y sommes faits."
+    think "Dois dias sem Kami e, de alguma forma, já nos acostumamos."
 
 # game/scenario/8_0_1.rpy:275
-translate portuguese 52c4dd5d:
+translate portuguese 8a7c9a30:
 
-    # think "D'accord."
-    think ""
+    # iris sourire "Je commence à croire qu'on est officiellement en vacances. Encore une journée sans annonce et je réclame une grasse matinée collective."
+    iris sourire "Estou começando a achar que estamos oficialmente de férias. Mais um dia sem anúncio e vou exigir que todos durmam até tarde."
 
-# game/scenario/8_0_1.rpy:278
-translate portuguese 7d7d4144:
+# game/scenario/8_0_1.rpy:277
+translate portuguese a8ce2317:
 
-    # think "Je peux pas chercher indéfiniment."
-    think ""
+    # julian decontracte "C'est clair ! C'est un vrai soulagement de ne plus être réveillés par Kami."
+    julian decontracte "Com certeza! É um alívio de verdade não ser mais acordado pela Kami."
 
 # game/scenario/8_0_1.rpy:279
-translate portuguese cd949fcb:
+translate portuguese 91e168fb:
 
-    # think "Il est peut-être ailleurs."
-    think ""
-
-# game/scenario/8_0_1.rpy:280
-translate portuguese 7ddd5b6d:
-
-    # think "Dans une autre affaire."
-    think ""
+    # mara rire "Tu parles surtout de dormir. Même si j'aimerais comprendre ce qu'il se passe, c'est vrai que c'est reposant."
+    mara rire "Você está falando principalmente de dormir. Embora eu queira entender o que está acontecendo, admito que é relaxante."
 
 # game/scenario/8_0_1.rpy:281
-translate portuguese 41198820:
+translate portuguese 8ee3b1a2:
 
-    # think "Quelque part."
-    think ""
+    # julian sourire "Le confort est une valeur fondamentale de l'humanité. Encore une cause JUSTE sur laquelle JE peux m'engager."
+    julian sourire "O conforto é um valor fundamental da humanidade. Mais uma causa JUSTA à qual EU posso me dedicar."
+
+# game/scenario/8_0_1.rpy:283
+translate portuguese fa5bd09c:
+
+    # elias detendu "Ça explique beaucoup de choses sur toi, et aucune n'est rassurante."
+    elias detendu "Isso explica muita coisa sobre você, e nada é tranquilizador."
 
 # game/scenario/8_0_1.rpy:285
-translate portuguese c4514694:
+translate portuguese 0454ed44:
 
-    # think "J'ai faim."
-    think ""
+    # "Je m'installe avec mon plateau à côté de Lysa. Elle m'observe à peine une seconde avant de reprendre son repas."
+    "Sento ao lado de Lysa com minha bandeja. Ela me observa por apenas um segundo antes de voltar a comer."
 
 # game/scenario/8_0_1.rpy:287
-translate portuguese a110a2b5:
+translate portuguese 229ddd03:
 
-    # "Je réalise que ça fait longtemps que je n'ai pas mangé."
-    ""
-
-# game/scenario/8_0_1.rpy:288
-translate portuguese cb353e5a:
-
-    # "Mon estomac me le fait comprendre maintenant."
-    ""
+    # lysa neutre "Tu as une sale tête. Je suppose que le silence de Kami n'a pas amélioré ton sommeil."
+    lysa neutre "Você está com uma cara horrível. Imagino que o silêncio de Kami não tenha melhorado seu sono."
 
 # game/scenario/8_0_1.rpy:289
-translate portuguese b52a3fb3:
+translate portuguese d00351cc:
 
-    # "Assez clairement."
-    ""
+    # noam fatigue "Rien à voir avec Kami mais... J'ai simplement passé une partie de la matinée à chercher quelque chose."
+    noam fatigue "Não tem nada a ver com Kami, mas... passei parte da manhã procurando uma coisa."
 
 # game/scenario/8_0_1.rpy:291
-translate portuguese 52c4dd5d_1:
+translate portuguese e92a2dc7:
 
-    # think "D'accord."
-    think ""
-
-# game/scenario/8_0_1.rpy:292
-translate portuguese e4ad8cdf:
-
-    # think "On regle ça après."
-    think ""
+    # lysa taquin "Pas étonnant que tu aies perdu quelque chose quand on voit l'état de ta chambre !"
+    lysa taquin "Vendo o estado do seu quarto, não é de estranhar que tenha perdido alguma coisa!"
 
 # game/scenario/8_0_1.rpy:293
-translate portuguese 8bf03db0:
+translate portuguese 529982b3:
 
-    # think "Le dessin réapparaîtra."
-    think ""
+    # noam colere "Eh ! Mais elle est tout le temps rangée ma chambre !"
+    noam colere "Ei! Meu quarto está sempre arrumado!"
 
-# game/scenario/8_0_1.rpy:294
-translate portuguese 88e84de4:
+# game/scenario/8_0_1.rpy:295
+translate portuguese 20f9109d:
 
-    # think "Les choses réapparaissent."
-    think ""
+    # lysa taquin "Ouais, c'est ce que tu dis ça !"
+    lysa taquin "Aham, é o que você diz!"
 
-# game/scenario/8_0_1.rpy:298
-translate portuguese 6ec0cb7d:
+# game/scenario/8_0_1.rpy:296
+translate portuguese 6135438c:
 
-    # "Je prends ma veste."
-    ""
+    # lysa reflexion "Sinon, tu veux de l'aide pour t'aider à chercher ?"
+    lysa reflexion "Enfim, quer ajuda para procurar?"
 
-# game/scenario/8_0_1.rpy:302
-translate portuguese 2958e4e8:
+# game/scenario/8_0_1.rpy:299
+translate portuguese e6005d44:
 
-    # think "Je rangerai en rentrant."
-    think ""
+    # think "Ma chambre est clairement en bordel. Il ne faut pas que Lysa voit ça."
+    think "Meu quarto está claramente uma bagunça. Lysa não pode ver aquilo."
+
+# game/scenario/8_0_1.rpy:301
+translate portuguese f01f5e49:
+
+    # think "Je pourrais lui parler du dessin. Pourtant, au milieu de cette ambiance presque normale, je n'ai aucune envie de ramener la conversation dans ma chambre."
+    think "Eu poderia falar do desenho. Mas, no meio desse clima quase normal, não quero levar a conversa de volta para o meu quarto."
 
 # game/scenario/8_0_1.rpy:303
-translate portuguese 7c6c4f50:
+translate portuguese a65e8694:
 
-    # think "Ou pas."
-    think ""
+    # noam neutre "C'est gentil mais je vais bien finir par le retrouver."
+    noam neutre "Obrigado, mas uma hora eu acabo encontrando."
 
-# game/scenario/8_0_1.rpy:306
-translate portuguese aca3de19:
+# game/scenario/8_0_1.rpy:305
+translate portuguese 55d61b14:
 
-    # "Je referme le placard."
-    ""
+    # "Tomas reste penché sur son écran portable. Son doigt remonte lentement une colonne de chiffres pendant que les autres parlent."
+    "Tomas continua curvado sobre a tela portátil. Seu dedo sobe lentamente por uma coluna de números enquanto os outros conversam."
 
 # game/scenario/8_0_1.rpy:307
-translate portuguese 143bc96d:
+translate portuguese 5b8d61fe:
 
-    # "Je tire la fermeture du sac."
-    ""
-
-# game/scenario/8_0_1.rpy:308
-translate portuguese 4cbb985c:
-
-    # think "Je sais pas pourquoi je fais ça."
-    think ""
+    # iris taquin "Oh non, je commence à savoir ce qu'il se passe quand Tomas tire cette tête-là. Dans quelques secondes, il va nous annoncer une catastrophe."
+    iris taquin "Ah, não. Já sei o que acontece quando Tomas faz essa cara. Daqui a pouco ele vai anunciar uma catástrofe."
 
 # game/scenario/8_0_1.rpy:309
-translate portuguese 65c006b5:
+translate portuguese 0d8cbfab:
 
-    # think "Par habitude, sûrement."
-    think ""
+    # tomas gene "N-Non. Ce n'est pas vraiment une catastrophe. J'ai seulement consulté les statistiques publiques cette nuit."
+    tomas gene "N-Não. Não é exatamente uma catástrofe. Só consultei as estatísticas públicas esta noite."
 
 # game/scenario/8_0_1.rpy:311
-translate portuguese 2a47494c:
+translate portuguese be2b9f3b:
 
-    # "Je sors."
-    ""
+    # mara neutre "Pourquoi est-ce que tu consultes des statistiques pendant ton temps libre ? T'as rien de mieux à foutre ?"
+    mara neutre "Por que você consulta estatísticas no seu tempo livre? Não tem nada melhor para fazer?"
+
+# game/scenario/8_0_1.rpy:312
+translate portuguese 25039fd4:
+
+    # mara taquin "Un beau gars comme toi, je peux l'occuper de plusieurs manières moi..."
+    mara taquin "Um cara bonito como você... eu poderia ocupar seu tempo de várias maneiras."
+
+# game/scenario/8_0_1.rpy:314
+translate portuguese 6838e75a:
+
+    # tomas gene "... J'aime bien fouiller dans les données. C'est toujours très enrichissant."
+    tomas gene "...Eu gosto de fuçar nos dados. É sempre muito enriquecedor."
+
+# game/scenario/8_0_1.rpy:316
+translate portuguese 75c48c55:
+
+    # iris rire "Je ne sais pas qui j'ai le plus envie de détester. Mara avec ses phrases louches ou Tomas avec ses tableaux à la noix."
+    iris rire "Não sei qual dos dois quero odiar mais. Mara com essas frases suspeitas ou Tomas com essas tabelas idiotas."
+
+# game/scenario/8_0_1.rpy:318
+translate portuguese 646edc27:
+
+    # tomas reflechit "C'est important... Depuis le vote du sixième jour, je n'ai trouvé aucune nouvelle exécution enregistrée."
+    tomas reflechit "É importante... Desde a votação do sexto dia, não encontrei nenhuma nova execução registrada."
+
+# game/scenario/8_0_1.rpy:320
+translate portuguese 16dea030:
+
+    # "Autour de la table, les sourires s'effacent sans que personne ait besoin de réclamer le silence."
+    "Ao redor da mesa, os sorrisos desaparecem sem que ninguém precise pedir silêncio."
 
 # game/scenario/8_0_1.rpy:322
-translate portuguese 895b470a:
+translate portuguese 57e68543:
 
-    # "La cafétéria est pleine."
-    ""
-
-# game/scenario/8_0_1.rpy:323
-translate portuguese 7d37052b:
-
-    # "Plus pleine que d'habitude."
-    ""
+    # noam surpris "Ah c'est ce dont on parlait hier ?"
+    noam surpris "Ah, é disso que estávamos falando ontem?"
 
 # game/scenario/8_0_1.rpy:324
-translate portuguese fe5572ff:
+translate portuguese 5549bda1:
 
-    # "Ça parle fort. Ça rit parfois."
-    ""
+    # tomas reflechit "Ouais... Dans tous les districts. Le compteur mondial est resté à zéro pendant deux journées complètes."
+    tomas reflechit "É... Em todos os distritos. O contador mundial ficou em zero durante dois dias inteiros."
 
 # game/scenario/8_0_1.rpy:325
-translate portuguese f27eb327:
+translate portuguese 0a32d7d1:
 
-    # "Des vrais rires, pas des souffles nerveux pour boucher les trous."
-    ""
+    # tomas inquiet "C'est juste tellement improbable que c'est presque impossible."
+    tomas inquiet "É tão improvável que chega a ser quase impossível."
 
 # game/scenario/8_0_1.rpy:327
-translate portuguese 9565e0b5:
+translate portuguese f0d7088c:
 
-    # think "Deux jours."
-    think ""
+    # elen surpris "Attends... Mais c'est TROOOP BIEN ! Plus aucune exécution !"
+    elen surpris "Espera... Mas isso é INCRÍVEL! Nenhuma execução!"
 
-# game/scenario/8_0_1.rpy:328
-translate portuguese 638f1289:
+# game/scenario/8_0_1.rpy:329
+translate portuguese 18735105:
 
-    # think "Deux jours sans Kami."
-    think ""
+    # mara surpris "T'es vraiment sûr que c'est impossible ?"
+    mara surpris "Tem certeza mesmo de que é impossível?"
 
-# game/scenario/8_0_1.rpy:330
-translate portuguese 206b4ef4:
+# game/scenario/8_0_1.rpy:331
+translate portuguese 17d6b094:
 
-    # think "Et déjà l'endroit ressemble moins à une salle d'attente avant exécution."
-    think ""
+    # tomas inquiet "Techniquement, c'est toujours possible. Statistiquement, compte tenu des chiffres précédents, c'est extrêmement improbable."
+    tomas inquiet "Tecnicamente, continua possível. Estatisticamente, considerando os números anteriores, é extremamente improvável."
 
-# game/scenario/8_0_1.rpy:341
-translate portuguese f1d60b05:
+# game/scenario/8_0_1.rpy:333
+translate portuguese 0b8ff816:
 
-    # iris sourire "Je commence à croire qu’on a officiellement des vacances."
-    iris sourire ""
+    # noam reflechit "Depuis que Kami a commencé à buguer il n'y a plus aucune exécution ?"
+    noam reflechit "Então não houve nenhuma execução desde que Kami começou a dar defeito?"
 
-# game/scenario/8_0_1.rpy:343
-translate portuguese 03a735a7:
+# game/scenario/8_0_1.rpy:335
+translate portuguese dc00ab39:
 
-    # julian rire "Franchement ?"
-    julian rire ""
+    # julian decontracte "Moi j'ai compris ce qu'il se passe. Elias renverse une tasse de café sur une machine, Kami disparaît et plus personne n'est exécuté dans le monde."
+    julian decontracte "Eu entendi o que aconteceu. Elias derruba uma xícara de café numa máquina, Kami desaparece e mais ninguém é executado no mundo."
+
+# game/scenario/8_0_1.rpy:336
+translate portuguese 139462b6:
+
+    # julian sourire "Nous avons devant nous le héros de l'humanité. Il est armé de son imparable tasse de café ! J'annonce, le grand Elias !"
+    julian sourire "Temos diante de nós o herói da humanidade, armado com sua imbatível xícara de café! Apresento o grande Elias!"
+
+# game/scenario/8_0_1.rpy:338
+translate portuguese fe337cca:
+
+    # elias detendu "J'ai rien fait. J'ai même pas fait exprès de renverser ce foutu café."
+    elias detendu "Eu não fiz nada. Nem derrubei aquele maldito café de propósito."
+
+# game/scenario/8_0_1.rpy:340
+translate portuguese d337dc16:
+
+    # iris sourire "On rigole, mais c'est pas impossible. Tu as peut-être bien sauvé le monde par maladresse. Ça te ressemble bien."
+    iris sourire "Estamos brincando, mas não é impossível. Talvez você tenha salvado o mundo por ser desastrado. Bem a sua cara."
+
+# game/scenario/8_0_1.rpy:342
+translate portuguese ffe2abb5:
+
+    # mara rire "C'est complètement ridicule présenté comme ça, mais je préfère cette version à toutes les autres."
+    mara rire "Parece completamente ridículo dito assim, mas prefiro essa versão a todas as outras."
 
 # game/scenario/8_0_1.rpy:344
-translate portuguese 19e1785d:
+translate portuguese 86d049fd:
 
-    # julian sourire "Julian signe tout de suite pour une apocalypse silencieuse comme ça."
-    julian sourire ""
+    # elias fatigue "Vous êtes vraiment cons..."
+    elias fatigue "Vocês são muito idiotas..."
 
 # game/scenario/8_0_1.rpy:346
-translate portuguese acf73722:
+translate portuguese 46c88d6d:
 
-    # mara rire "Toi tu signerais surtout pour dormir jusqu’à midi tous les jours."
-    mara rire ""
+    # "Il sourit malgré lui. Je ne me rappelle plus la dernière fois où je l'ai vu se détendre assez longtemps pour oublier de se méfier."
+    "Ele sorri sem querer. Já nem lembro da última vez que o vi relaxar tempo suficiente para baixar a guarda."
 
-# game/scenario/8_0_1.rpy:348
-translate portuguese 9c72c2e8:
+# game/scenario/8_0_1.rpy:350
+translate portuguese b8779fe8:
 
-    # julian decontracte "Évidemment."
-    julian decontracte ""
+    # noam taquin "Franchement, Elias, je suis impressionné. Très peu de gens peuvent prétendre avoir neutralisé Kami avec un café."
+    noam taquin "Sinceramente, Elias, estou impressionado. Pouquíssimas pessoas podem dizer que neutralizaram Kami com um café."
 
-# game/scenario/8_0_1.rpy:349
-translate portuguese d54baa22:
+# game/scenario/8_0_1.rpy:352
+translate portuguese 9a20eccf:
 
-    # julian rire "Le confort est une valeur fondamentale de l'humanité. Enfin une cause digne."
-    julian rire ""
-
-# game/scenario/8_0_1.rpy:351
-translate portuguese 3f3bae5d:
-
-    # elias detendu "Ça explique beaucoup de choses chez toi."
-    elias detendu ""
-
-# game/scenario/8_0_1.rpy:353
-translate portuguese b919462d:
-
-    # julian sourire "Merci Elias."
-    julian sourire ""
+    # julian sourire "Enfin quelqu'un de lucide. Je commençais à désespérer de ce groupe."
+    julian sourire "Finalmente alguém lúcido. Eu já estava perdendo a esperança neste grupo."
 
 # game/scenario/8_0_1.rpy:354
-translate portuguese 633bfcd6:
+translate portuguese 8d7b05bc:
 
-    # julian sourire "Ça fait plaisir d’être compris."
-    julian sourire ""
+    # elias rire "Je vous déteste tous, sans exception."
+    elias rire "Odeio todos vocês, sem exceção."
 
-# game/scenario/8_0_1.rpy:356
-translate portuguese d72fa46b:
+# game/scenario/8_0_1.rpy:357
+translate portuguese 6670a725:
 
-    # "Je m’installe avec mon plateau."
-    ""
+    # noam inquiet "Ou alors quelque chose dysfonctionne réellement. Et si l'absence d'exécutions est liée à la panne, rien ne garantit que ça durera longtemps."
+    noam inquiet "Ou alguma coisa realmente está com defeito. E, se a ausência de execuções estiver ligada à pane, nada garante que vai durar."
 
-# game/scenario/8_0_1.rpy:358
-translate portuguese 5e579854:
+# game/scenario/8_0_1.rpy:359
+translate portuguese beda630f:
 
-    # lysa neutre "T'as une sale tête."
-    lysa neutre ""
+    # mara fatigue "Oui... Il y a aussi cette possibilité. Mais je préfère la version du café héroïque, ça claque mieux."
+    mara fatigue "É... também existe essa possibilidade. Mas prefiro a versão do café heroico, é muito mais legal."
 
-# game/scenario/8_0_1.rpy:360
-translate portuguese 0c521561_2:
+# game/scenario/8_0_1.rpy:361
+translate portuguese 977cf5a6:
 
-    # noam "Merci."
-    noam ""
+    # tomas inquiet "C'est pourtant celle que je considère comme la plus probable."
+    tomas inquiet "Mesmo assim, é a hipótese que considero mais provável."
 
-# game/scenario/8_0_1.rpy:362
-translate portuguese 3ab7dffb:
+# game/scenario/8_0_1.rpy:363
+translate portuguese b5c29a90:
 
-    # lysa taquin "De rien."
-    lysa taquin ""
-
-# game/scenario/8_0_1.rpy:364
-translate portuguese 59342391:
-
-    # "Elle mange tranquillement."
-    ""
+    # iris taquin "En attendant de savoir, je compte bien profiter du calme."
+    iris taquin "Enquanto não sabemos, pretendo aproveitar bem a tranquilidade."
 
 # game/scenario/8_0_1.rpy:365
-translate portuguese 6dfebbce:
+translate portuguese 23599b93:
 
-    # "Sans regarder autour toutes les trois secondes."
-    ""
+    # lysa blase "Parce que tu as peur que Kami revienne demain ?"
+    lysa blase "Porque tem medo de Kami voltar amanhã?"
 
-# game/scenario/8_0_1.rpy:366
-translate portuguese 7cbb88b9:
+# game/scenario/8_0_1.rpy:367
+translate portuguese eded11d7:
 
-    # "Sans attendre une annonce."
-    ""
+    # iris fatigue "J'ai peur qu'elle revienne dans cinq minutes et qu'elle nous fasse payer chaque seconde de répit."
+    iris fatigue "Tenho medo de ela voltar em cinco minutos e nos fazer pagar por cada segundo de descanso."
 
-# game/scenario/8_0_1.rpy:368
-translate portuguese 74abf66a:
+# game/scenario/8_0_1.rpy:369
+translate portuguese f2524bf9:
 
-    # think "C’est fou comme ça change tout."
-    think ""
+    # "Un silence bref traverse la table. Il ne dure pas assez longtemps pour briser l'ambiance, seulement pour rappeler que personne n'a réellement oublié où nous sommes."
+    "Um breve silêncio atravessa a mesa. Não dura o bastante para estragar o clima, apenas para lembrar que ninguém esqueceu de verdade onde estamos."
 
-# game/scenario/8_0_1.rpy:370
-translate portuguese bc594348:
+# game/scenario/8_0_1.rpy:371
+translate portuguese b298de27:
 
-    # tomas fatigue "Hum."
-    tomas fatigue ""
-
-# game/scenario/8_0_1.rpy:372
-translate portuguese 8c98e834:
-
-    # "Tomas fixe son écran portable."
-    ""
+    # julian sourire "Alors profitons-en tant que c'est encore possible. Je refuse de laisser une menace hypothétique gâcher un déjeuner bien réel."
+    julian sourire "Então vamos aproveitar enquanto ainda podemos. Recuso-me a deixar uma ameaça hipotética estragar um almoço bem real."
 
 # game/scenario/8_0_1.rpy:373
-translate portuguese cdb70519:
+translate portuguese c142e50d:
 
-    # "Encore."
-    ""
+    # elias detendu "Pour une fois, je suis d'accord avec lui."
+    elias detendu "Pela primeira vez, concordo com ele."
 
 # game/scenario/8_0_1.rpy:375
-translate portuguese eaa69739:
+translate portuguese 0d94c05b:
 
-    # iris taquin "Attention."
-    iris taquin ""
+    # mara rire "Quelqu'un devrait noter la date. Ça risque de ne jamais se reproduire."
+    mara rire "Alguém devia anotar a data. Talvez nunca mais aconteça."
 
-# game/scenario/8_0_1.rpy:376
-translate portuguese 26c0b597:
+# game/scenario/8_0_1.rpy:377
+translate portuguese 1415fb3f:
 
-    # iris sourire "Le scientifique du groupe va annoncer une catastrophe."
-    iris sourire ""
+    # "Les discussions reprennent autour de sujets sans importance : la nourriture, le sommeil et les souvenirs du monde d'avant. Pendant quelques minutes, nous ressemblons presque à des gens ordinaires."
+    "A conversa volta a assuntos sem importância: comida, sono e lembranças do mundo de antes. Por alguns minutos, quase parecemos pessoas comuns."
 
-# game/scenario/8_0_1.rpy:378
-translate portuguese 8e116543:
+# game/scenario/8_0_1.rpy:379
+translate portuguese 962fcaa5:
 
-    # tomas gene "Ce n’est pas une catastrophe."
-    tomas gene ""
-
-# game/scenario/8_0_1.rpy:380
-translate portuguese 9b527069:
-
-    # julian rire "Oh non."
-    julian rire ""
-
-# game/scenario/8_0_1.rpy:381
-translate portuguese 4681803c:
-
-    # julian sourire "C’est encore pire alors."
-    julian sourire ""
-
-# game/scenario/8_0_1.rpy:383
-translate portuguese e4615d7c:
-
-    # tomas reflechit "J’ai vérifié les statistiques publiques cette nuit."
-    tomas reflechit ""
-
-# game/scenario/8_0_1.rpy:385
-translate portuguese 1d66862c:
-
-    # mara neutre "Pourquoi tu fais ça pendant ton temps libre ?"
-    mara neutre ""
-
-# game/scenario/8_0_1.rpy:387
-translate portuguese af48821c:
-
-    # tomas panne "Je..."
-    tomas panne ""
-
-# game/scenario/8_0_1.rpy:388
-translate portuguese 87ba73e2:
-
-    # tomas gene "Je trouve ça reposant."
-    tomas gene ""
-
-# game/scenario/8_0_1.rpy:389
-translate portuguese 2e8e6043:
-
-    # tomas "C'est... organisé."
-    tomas ""
-
-# game/scenario/8_0_1.rpy:391
-translate portuguese 2564a2b7:
-
-    # iris rire "Il me terrifie."
-    iris rire ""
-
-# game/scenario/8_0_1.rpy:393
-translate portuguese f4bdfc78:
-
-    # tomas reflechit "Depuis le vote du jour six..."
-    tomas reflechit ""
-
-# game/scenario/8_0_1.rpy:394
-translate portuguese dc56bb5e:
-
-    # tomas inquiet "Il n'y a eu aucune exécution."
-    tomas inquiet ""
-
-# game/scenario/8_0_1.rpy:396
-translate portuguese b822661b:
-
-    # "Le bruit baisse légèrement."
-    ""
-
-# game/scenario/8_0_1.rpy:398
-translate portuguese ee71cd92:
-
-    # noam "Aucune ?"
-    noam ""
-
-# game/scenario/8_0_1.rpy:400
-translate portuguese 9d494bfb:
-
-    # tomas reflechit "Zéro."
-    tomas reflechit ""
-
-# game/scenario/8_0_1.rpy:401
-translate portuguese dbb46950:
-
-    # tomas inquiet "Dans tous les districts."
-    tomas inquiet ""
-
-# game/scenario/8_0_1.rpy:403
-translate portuguese 142d6b93:
-
-    # elias neutre "Attends."
-    elias neutre ""
-
-# game/scenario/8_0_1.rpy:404
-translate portuguese b23226c5:
-
-    # elias fatigue "Genre vraiment zéro ?"
-    elias fatigue ""
-
-# game/scenario/8_0_1.rpy:408
-translate portuguese 1c9ee91a:
-
-    # mara doute "C’est possible ça ?"
-    mara doute ""
-
-# game/scenario/8_0_1.rpy:410
-translate portuguese c29dcdd7:
-
-    # tomas reflechit "Techniquement oui."
-    tomas reflechit ""
-
-# game/scenario/8_0_1.rpy:411
-translate portuguese a59deed3:
-
-    # tomas fatigue "Statistiquement..."
-    tomas fatigue ""
-
-# game/scenario/8_0_1.rpy:412
-translate portuguese 04e3ad03:
-
-    # tomas inquiet "C’est extrêmement improbable."
-    tomas inquiet ""
-
-# game/scenario/8_0_1.rpy:414
-translate portuguese 60b7c400:
-
-    # julian decontracte "Donc."
-    julian decontracte ""
+    # think "Presque. Le dessin n'était pas dans ma chambre et, même entouré par leurs voix, je n'arrive pas à l'oublier complètement."
+    think "Quase. O desenho não estava no meu quarto e, mesmo cercado por suas vozes, não consigo esquecer completamente."
 
 # game/scenario/8_0_1.rpy:416
-translate portuguese b26f4ce6:
+translate portuguese ba00f914:
 
-    # "Julian se redresse légèrement."
-    ""
+    # "L'après-midi s'écoule dans un calme presque suspect. Je retrouve Lysa, Ryn et Elias à la cafétéria, mais personne ne semble réellement concentré sur ce qu'il fait."
+    "A tarde passa numa calma quase suspeita. Encontro Lysa, Ryn e Elias na cafeteria, mas ninguém parece realmente concentrado no que faz."
 
 # game/scenario/8_0_1.rpy:418
-translate portuguese f6f6d1d0:
+translate portuguese 1dcf4c38:
 
-    # julian rire "Si Julian résume bien."
-    julian rire ""
+    # lysa neutre "Tu as vu Kael depuis ce matin ? Il est parti juste après le déjeuner et il avait l'air... différent."
+    lysa neutre "Você viu Kael desde cedo? Ele saiu logo depois do almoço e parecia... diferente."
 
 # game/scenario/8_0_1.rpy:420
-translate portuguese a0848bcd:
+translate portuguese d9e691a3:
 
-    # julian sourire "Elias renverse une pauvre tasse de café."
-    julian sourire ""
+    # noam hesitation "Non. Qu'est-ce que tu veux dire par « différent » ?"
+    noam hesitation "Não. O que quer dizer com 'diferente'?"
 
 # game/scenario/8_0_1.rpy:422
-translate portuguese 9ced417c:
+translate portuguese d037bceb:
 
-    # julian taquin "Et BOUM."
-    julian taquin ""
+    # ryn desaccord "Il tournait en rond dans les couloirs. Je l'ai croisé deux fois et, la seconde, il ne m'a même pas remarqué."
+    ryn desaccord "Ele estava andando em círculos pelos corredores. Cruzei com ele duas vezes e, na segunda, nem me notou."
 
 # game/scenario/8_0_1.rpy:424
-translate portuguese 4cee354b:
+translate portuguese 6632b541:
 
-    # julian rire "Plus d’exécutions mondiales."
-    julian rire ""
+    # elias fatigue "J'ai essayé de lui parler près des chambres. Il a marmonné quelque chose avant de repartir dans l'autre sens."
+    elias fatigue "Tentei falar com ele perto dos quartos. Murmurou alguma coisa e saiu na direção contrária."
 
 # game/scenario/8_0_1.rpy:426
-translate portuguese bf821dbe:
+translate portuguese aca5d5e0:
 
-    # iris rire "Putain."
-    iris rire ""
+    # "Je repose mon verre. Kael n'est pas du genre à ignorer quelqu'un sans même s'en rendre compte."
+    "Coloco meu copo na mesa. Kael não é do tipo que ignora alguém sem nem perceber."
 
-# game/scenario/8_0_1.rpy:428
-translate portuguese 8ccd7174:
+# game/scenario/8_0_1.rpy:430
+translate portuguese cc9901da:
 
-    # julian decontracte "Non mais regardez-le."
-    julian decontracte ""
-
-# game/scenario/8_0_1.rpy:429
-translate portuguese 5ad449e2:
-
-    # julian sourire "Le héros de l’humanité."
-    julian sourire ""
+    # noam inquiet "Quelque chose cloche. Je vais le chercher avant qu'il continue à tourner seul dans les couloirs."
+    noam inquiet "Tem alguma coisa errada. Vou procurar ele antes que continue andando sozinho pelos corredores."
 
 # game/scenario/8_0_1.rpy:431
-translate portuguese 04d85128:
+translate portuguese bf7b1ff1:
 
-    # elias detendu "J'ai rien fait."
-    elias detendu ""
-
-# game/scenario/8_0_1.rpy:433
-translate portuguese 6a71d473:
-
-    # julian rire "FAUX."
-    julian rire ""
+    # noam neutre "Au moins pour savoir ce qui lui arrive exactement."
+    noam neutre "Nem que seja para descobrir exatamente o que está acontecendo."
 
 # game/scenario/8_0_1.rpy:434
-translate portuguese 18a75cc5:
+translate portuguese 1f3c76f8:
 
-    # julian colere "Tu as vaincu l’intelligence artificielle qui dirige le monde."
-    julian colere ""
+    # noam hesitation "On a tous besoin de rester seuls parfois. Il sait où nous trouver s'il veut parler... Enfin, je suppose."
+    noam hesitation "Todos precisamos ficar sozinhos às vezes. Ele sabe onde nos encontrar se quiser conversar... eu acho."
 
-# game/scenario/8_0_1.rpy:436
-translate portuguese cb888912:
+# game/scenario/8_0_1.rpy:435
+translate portuguese ce5c53e7:
 
-    # julian sourire "Avec une seule petite tasse."
-    julian sourire ""
-
-# game/scenario/8_0_1.rpy:438
-translate portuguese 0c777464:
-
-    # mara rire "C’est vraiment ridicule dit comme ça."
-    mara rire ""
-
-# game/scenario/8_0_1.rpy:440
-translate portuguese 40678eab:
-
-    # iris sourire "Moi j’aime bien cette version."
-    iris sourire ""
-
-# game/scenario/8_0_1.rpy:442
-translate portuguese 5603759f:
-
-    # elias fatigue "Vous êtes cons."
-    elias fatigue ""
-
-# game/scenario/8_0_1.rpy:443
-translate portuguese 76701627:
-
-    # elias "Mais c'est moins chaud quand vous êtes cons comme ça."
-    elias ""
-
-# game/scenario/8_0_1.rpy:445
-translate portuguese 43b54cb2:
-
-    # "Mais il sourit quand même un peu."
-    ""
-
-# game/scenario/8_0_1.rpy:447
-translate portuguese fc5e85b9:
-
-    # think "C’est la première fois que je vois Elias sourire depuis..."
-    think ""
+    # ryn hesitation "Peut-être, mais je n'aimais vraiment pas la tête qu'il faisait."
+    ryn hesitation "Talvez, mas eu realmente não gostei da cara dele."
 
 # game/scenario/8_0_1.rpy:448
-translate portuguese 197b1a32:
+translate portuguese b6d84495:
 
-    # think "Je sais même plus."
-    think ""
+    # "La porte claque contre le mur. Kael entre d'un pas brutal, s'arrête au milieu de la pièce et nous dévisage comme s'il cherchait un visage précis parmi nous."
+    "A porta bate contra a parede. Kael entra com passos agressivos, para no meio da sala e nos encara como se procurasse um rosto específico."
+
+# game/scenario/8_0_1.rpy:450
+translate portuguese 3699a2f2:
+
+    # kael colere "C'est qui ?!"
+    kael colere "Quem foi?!"
 
 # game/scenario/8_0_1.rpy:452
-translate portuguese 4ee88d2f:
+translate portuguese 57e7f98c:
 
-    # noam "Franchement Elias."
-    noam ""
+    # elias choc "Kael... Qu'est-ce qui se passe ?"
+    elias choc "Kael... O que aconteceu?"
 
-# game/scenario/8_0_1.rpy:453
-translate portuguese 99a74b52:
+# game/scenario/8_0_1.rpy:454
+translate portuguese d94f3178:
 
-    # noam "Respect. Enfin... statistiquement, c'est impressionnant."
-    noam ""
-
-# game/scenario/8_0_1.rpy:455
-translate portuguese f6e5a879:
-
-    # julian rire "Merci."
-    julian rire ""
+    # kael colere "Qui est entré dans ma chambre ? Quelqu'un y est allé et a pris quelque chose."
+    kael colere "Quem entrou no meu quarto? Alguém foi lá e pegou uma coisa."
 
 # game/scenario/8_0_1.rpy:456
-translate portuguese 533ac74c:
+translate portuguese e8d9635e:
 
-    # julian sourire "Enfin quelqu’un de lucide."
-    julian sourire ""
+    # ryn inquiet "Attends, comment tu peux être sûr que quelqu'un est entré dans ta chambre ?"
+    ryn inquiet "Espera, como você sabe que alguém entrou no seu quarto?"
 
 # game/scenario/8_0_1.rpy:458
-translate portuguese 68ab1c88:
+translate portuguese d19f6d50:
 
-    # elias rire "Je vous déteste tous."
-    elias rire ""
+    # kael colere "Parce que je cherche depuis ce matin ! Elle était sous mon oreiller et elle n'est plus nulle part."
+    kael colere "Porque estou procurando desde cedo! Estava debaixo do meu travesseiro e agora sumiu!"
 
-# game/scenario/8_0_1.rpy:461
-translate portuguese 33434490:
+# game/scenario/8_0_1.rpy:460
+translate portuguese bfb8e0b6:
 
-    # noam "Ou alors quelque chose déconne vraiment."
-    noam ""
+    # noam triste "Attends, calme-toi..."
+    noam triste "Espera, se acalma..."
 
 # game/scenario/8_0_1.rpy:462
-translate portuguese 6e7b99a4:
+translate portuguese a3e98a6e:
 
-    # noam "Enfin, plus que d'habitude."
-    noam ""
+    # lysa choc "Qu'est-ce qui a disparu ?"
+    lysa choc "O que desapareceu?"
 
 # game/scenario/8_0_1.rpy:464
-translate portuguese a2022722:
+translate portuguese 54f6a3b9:
 
-    # "Le ton baisse légèrement."
-    ""
+    # kael inquiet "La photo de ma sœur. Celle de Léa."
+    kael inquiet "A foto da minha irmã. A da Léa."
 
 # game/scenario/8_0_1.rpy:466
-translate portuguese a3f7e44e:
+translate portuguese 9d2e7fb6:
 
-    # mara doute "Ouais."
-    mara doute ""
+    # "Personne ne répond. Lysa ferme brièvement les yeux, Elias recule d'un demi-pas et Ryn baisse le regard."
+    "Ninguém responde. Lysa fecha os olhos por um instante, Elias recua meio passo e Ryn baixa o olhar."
 
 # game/scenario/8_0_1.rpy:467
-translate portuguese 085a95c0:
+translate portuguese 1a9610fe:
 
-    # mara fatigue "Y’a aussi cette possibilité."
-    mara fatigue ""
+    # "Les mains de Kael tremblent de colère."
+    "As mãos de Kael tremem de raiva."
 
 # game/scenario/8_0_1.rpy:469
-translate portuguese 85b4b42e:
+translate portuguese 19e857d4:
 
-    # tomas inquiet "C’est celle que je privilégie personnellement."
-    tomas inquiet ""
+    # kael colere "Alors je vous le demande une dernière fois : qui a pris la photo ?!"
+    kael colere "Então vou perguntar pela última vez: quem pegou a foto?!"
 
-# game/scenario/8_0_1.rpy:471
-translate portuguese cb489d99:
+# game/scenario/8_0_1.rpy:493
+translate portuguese 10420a3d:
 
-    # iris taquin "En attendant, moi je profite."
-    iris taquin ""
-
-# game/scenario/8_0_1.rpy:473
-translate portuguese 2353cb96:
-
-    # lysa blase "T’as peur que Kami revienne demain ?"
-    lysa blase ""
-
-# game/scenario/8_0_1.rpy:475
-translate portuguese 2032a3ac:
-
-    # iris fatigue "J’ai peur qu’elle revienne dans cinq minutes."
-    iris fatigue ""
-
-# game/scenario/8_0_1.rpy:477
-translate portuguese 40d3a9c0:
-
-    # "Petit silence."
-    ""
-
-# game/scenario/8_0_1.rpy:479
-translate portuguese 0aebf9c7:
-
-    # "Pas lourd."
-    ""
-
-# game/scenario/8_0_1.rpy:480
-translate portuguese a5b739ec:
-
-    # "Juste réel."
-    ""
-
-# game/scenario/8_0_1.rpy:482
-translate portuguese cc05ece3:
-
-    # julian decontracte "Eh."
-    julian decontracte ""
-
-# game/scenario/8_0_1.rpy:483
-translate portuguese 92b067e8:
-
-    # julian sourire "Alors profitons pendant qu'on peut."
-    julian sourire ""
-
-# game/scenario/8_0_1.rpy:485
-translate portuguese 67dd6dea:
-
-    # elias detendu "Pour une fois, je suis d’accord avec lui."
-    elias detendu ""
-
-# game/scenario/8_0_1.rpy:487
-translate portuguese c7524d99:
-
-    # mara rire "Notez la date."
-    mara rire ""
-
-# game/scenario/8_0_1.rpy:489
-translate portuguese e266aa9e:
-
-    # "Les discussions repartent."
-    ""
-
-# game/scenario/8_0_1.rpy:491
-translate portuguese 62e36555:
-
-    # "Plusieurs conversations en même temps."
-    ""
-
-# game/scenario/8_0_1.rpy:492
-translate portuguese d97f510e:
-
-    # "Des sujets idiots. La nourriture. Le sommeil. Les souvenirs."
-    ""
+    # "Le calme revient progressivement. Kael reste assis, les coudes sur les genoux, encore essoufflé mais enfin capable de nous entendre."
+    "A calma volta aos poucos. Kael continua sentado, com os cotovelos nos joelhos, ainda ofegante, mas finalmente capaz de nos escutar."
 
 # game/scenario/8_0_1.rpy:494
-translate portuguese e769d273:
+translate portuguese 8ecf6c98:
 
-    # think "On dirait presque des gens normaux."
-    think ""
+    # "Lysa approche une chaise et pose une main sur l'accoudoir, près de lui, sans essayer de le toucher."
+    "Lysa aproxima uma cadeira e apoia a mão no braço dela, perto dele, sem tentar tocá-lo."
 
 # game/scenario/8_0_1.rpy:496
-translate portuguese a3a2b2bf:
+translate portuguese a0baf04f:
 
-    # think "Presque."
-    think ""
+    # noam reflechit "On devrait vérifier les autres chambres. Si quelqu'un est entré chez toi, il a peut-être fouillé ailleurs."
+    noam reflechit "Devíamos verificar os outros quartos. Se alguém entrou no seu, talvez tenha vasculhado outros também."
 
 # game/scenario/8_0_1.rpy:498
-translate portuguese 0b7846fc:
+translate portuguese 55cdef86:
 
-    # "Je baisse les yeux vers mon plateau."
-    ""
+    # kael effondre "Ça ne ramènera pas la photo. Elle n'est plus là, c'est tout."
+    kael effondre "Isso não vai trazer a foto de volta. Ela sumiu, é só isso."
 
 # game/scenario/8_0_1.rpy:500
-translate portuguese 4ebd9217:
+translate portuguese 12ffc09f:
 
-    # think "Mon dessin n’était pas dans la chambre."
-    think ""
+    # elias choc "Qui pourrait faire un truc pareil ? Il fallait savoir ce que tu cachais et exactement où chercher."
+    elias choc "Quem faria uma coisa dessas? Precisava saber o que você escondia e exatamente onde procurar."
 
-# game/scenario/8_0_1.rpy:502
-translate portuguese 04066b78:
+# game/scenario/8_0_1.rpy:501
+translate portuguese 3ffd7d52:
 
-    # think "Et ça me dérange toujours."
-    think ""
+    # elias reflechit "Et pourquoi quelqu'un te piquerait une photo ? Faut dire que ça n'a pas de sens..."
+    elias reflechit "E por que alguém roubaria uma foto sua? Não faz sentido..."
 
-# game/scenario/8_0_1.rpy:504
-translate portuguese 7fbae1a1:
+# game/scenario/8_0_1.rpy:503
+translate portuguese 01eaa643:
 
-    # "Mais ici, avec le bruit et les autres, c'est plus facile de ne pas y penser."
-    ""
+    # "Je regarde les quatre personnes autour de moi. Nous avons mangé, voté et vécu ensemble pendant plus d'une semaine. Pourtant, les chambres sont verrouillées et les couloirs surveillés."
+    "Olho para as quatro pessoas ao meu redor. Comemos, votamos e vivemos juntos por mais de uma semana. Mesmo assim, os quartos são trancados e os corredores, vigiados."
+
+# game/scenario/8_0_1.rpy:505
+translate portuguese 8b9d168c:
+
+    # think "Kami se tait depuis deux jours, est-ce que c'est pour ça que quelqu'un se permettrait de nous voler nos affaires ?!"
+    think "Kami está calada há dois dias. É por isso que alguém resolveu roubar nossas coisas?!"
+
+# game/scenario/8_0_1.rpy:506
+translate portuguese ffef3ef0:
+
+    # think "Non, Elias vient de le dire, ça n'a pas de sens..."
+    think "Não. Elias acabou de dizer, isso não faz sentido..."
+
+# game/scenario/8_0_1.rpy:508
+translate portuguese d6cfea0c:
+
+    # noam inquiet "Il faut que je vous dise quelque chose. Moi aussi, j'ai perdu un objet ce matin."
+    noam inquiet "Preciso contar uma coisa. Eu também perdi um objeto esta manhã."
+
+# game/scenario/8_0_1.rpy:510
+translate portuguese 8d2475d5:
+
+    # "Tous les regards se tournent vers moi. Kael relève lentement la tête."
+    "Todos os olhares se voltam para mim. Kael levanta a cabeça devagar."
+
+# game/scenario/8_0_1.rpy:512
+translate portuguese fd8ba887:
+
+    # noam inquiet "C'est un dessin que Juliette, ma petite sœur, m'avait fait. Je l'avais encore hier soir."
+    noam inquiet "É um desenho que Juliette, minha irmãzinha, fez para mim. Ainda estava comigo ontem à noite."
+
+# game/scenario/8_0_1.rpy:513
+translate portuguese d0924291:
+
+    # noam inquiet "J'ai fouillé toute ma chambre au réveil, mais il a disparu et j'arrive pas à le retrouver."
+    noam inquiet "Vasculhei o quarto inteiro quando acordei, mas sumiu e não consigo encontrar."
+
+# game/scenario/8_0_1.rpy:515
+translate portuguese ad6f58b6:
+
+    # lysa choc "Toi aussi ? Pourquoi tu ne nous en as pas parlé ce matin ?"
+    lysa choc "Você também? Por que não contou de manhã?"
+
+# game/scenario/8_0_1.rpy:517
+translate portuguese 0f597330:
+
+    # noam hesitation "Je pensais l'avoir mal rangé. Je préférais croire ça plutôt que d'imaginer quelqu'un entrer dans ma chambre sans permission."
+    noam hesitation "Achei que tivesse guardado no lugar errado. Preferia acreditar nisso a imaginar alguém entrando no meu quarto sem permissão."
+
+# game/scenario/8_0_1.rpy:519
+translate portuguese fcf08a29:
+
+    # elias inquiet "Donc Kael ne s'est pas trompé, et toi non plus. Quelqu'un a fouillé au moins deux chambres. Vous savez de quand ça date ?"
+    elias inquiet "Então Kael não se enganou, nem você. Alguém vasculhou pelo menos dois quartos. Sabem quando aconteceu?"
+
+# game/scenario/8_0_1.rpy:521
+translate portuguese 224b058a:
+
+    # noam triste "Je suis persuadé qu'il était encore là hier."
+    noam triste "Tenho certeza de que ainda estava lá ontem."
+
+# game/scenario/8_0_1.rpy:523
+translate portuguese c16c5233:
+
+    # kael effondre "... Mais pourquoi...? Je ne comprends pas..."
+    kael effondre "...Mas por quê...? Eu não entendo..."
+
+# game/scenario/8_0_1.rpy:525
+translate portuguese f8ffa1e9:
+
+    # noam reflechit "Quelqu'un a peut-être choisi précisément ce qui avait le plus de valeur pour nous ?"
+    noam reflechit "Talvez alguém tenha escolhido exatamente o que tinha mais valor para nós?"
+
+# game/scenario/8_0_1.rpy:529
+translate portuguese 01152309:
+
+    # "Les minutes passent. Les autres finissent par se lever, non pour partir, mais parce que rester immobiles autour de Kael devient insupportable."
+    "Os minutos passam. Os outros acabam se levantando, não para ir embora, mas porque ficar parados ao redor de Kael se torna insuportável."
+
+# game/scenario/8_0_1.rpy:531
+translate portuguese 384e6492:
+
+    # think "Je reste encore un moment. Il faut découvrir qui a fait ça avant qu'un autre objet disparaisse, ou que quelqu'un décide de chercher un coupable au hasard."
+    think "Fico mais um pouco. Precisamos descobrir quem fez isso antes que outro objeto suma, ou que alguém escolha um culpado ao acaso."
 
 # game/scenario/8_0_1.rpy:532
-translate portuguese a222e2f7:
+translate portuguese 357d4934:
 
-    # "L'après-midi était calme."
-    ""
+    # think "Pour le moment, je n'ai que deux certitudes : quelqu'un est entré dans nos chambres et a pris exactement ce qui comptait le plus pour nous."
+    think "Por enquanto, só tenho duas certezas: alguém entrou em nossos quartos e pegou exatamente o que mais importava para nós."
 
 # game/scenario/8_0_1.rpy:533
-translate portuguese e796f37c:
+translate portuguese f1fc3cb4:
 
-    # "Le genre de calme où l'on commence à chercher ce qui va casser."
-    ""
+    # think "Je ne sais pas encore qui. Pas encore."
+    think "Ainda não sei quem. Ainda não."
 
-# game/scenario/8_0_1.rpy:542
-translate portuguese 21c6aaed:
+# game/scenario/8_0_1.rpy:546
+translate portuguese b5bc1e4b:
 
-    # lysa "T'as vu Kael depuis ce matin ?"
-    lysa ""
-
-# game/scenario/8_0_1.rpy:544
-translate portuguese 4feb2c54:
-
-    # noam hesitation "Non."
-    noam hesitation ""
-
-# game/scenario/8_0_1.rpy:545
-translate portuguese f2496af7:
-
-    # noam "Il était pas à la cafétéria ?"
-    noam ""
+    # "Après avoir erré dans les couloirs sans savoir quoi chercher, je retourne dans ma chambre et referme soigneusement la porte."
+    "Depois de vagar pelos corredores sem saber o que procurar, volto para o quarto e fecho a porta com cuidado."
 
 # game/scenario/8_0_1.rpy:547
-translate portuguese 20bbeff8:
+translate portuguese 50f1735f:
 
-    # lysa "Si. Mais il est parti vite."
-    lysa ""
+    # "Le désordre du matin n'a pas bougé. Le sac reste ouvert sur le lit, le placard ferme mal et aucun dessin n'est miraculeusement réapparu pendant mon absence."
+    "A bagunça da manhã não mudou. A bolsa continua aberta sobre a cama, o armário não fecha direito e nenhum desenho reapareceu milagrosamente durante minha ausência."
 
-# game/scenario/8_0_1.rpy:548
-translate portuguese 5a6559c9:
+# game/scenario/8_0_1.rpy:549
+translate portuguese c93613a6:
 
-    # lysa neutre "Il avait l'air... pas Kael."
-    lysa neutre ""
+    # think "Deux jours sans Kami ont suffi pour nous faire croire que nous étions libres. Maintenant, quelqu'un rôde et nous pique nos affaires..."
+    think "Dois dias sem Kami bastaram para acreditarmos que éramos livres. Agora alguém está rondando e roubando nossas coisas..."
 
-# game/scenario/8_0_1.rpy:550
-translate portuguese 39740a5e:
+# game/scenario/8_0_1.rpy:551
+translate portuguese 9e4044cd:
 
-    # noam "Comment ça ?"
-    noam ""
-
-# game/scenario/8_0_1.rpy:552
-translate portuguese 8e039c46:
-
-    # ryn "Il tournait en rond dans les couloirs."
-    ryn ""
+    # "Je m'assieds sur le bord du lit et regarde chaque meuble comme si la personne qui était entrée avait pu laisser une trace évidente."
+    "Sento na beira da cama e observo cada móvel como se a pessoa que entrou pudesse ter deixado uma pista óbvia."
 
 # game/scenario/8_0_1.rpy:553
-translate portuguese b65b04da:
+translate portuguese d776094f:
 
-    # ryn "Je l'ai croisé deux fois."
-    ryn ""
+    # think "Quelqu'un est venu ici. C'est sûr. Cette personne savait ce qui comptait pour moi et elle l'a emporté sans toucher au reste."
+    think "Alguém esteve aqui. Tenho certeza. Essa pessoa sabia o que importava para mim e levou sem tocar no resto."
 
-# game/scenario/8_0_1.rpy:554
-translate portuguese f2952ed5:
+# game/scenario/8_0_1.rpy:555
+translate portuguese c6bd9fb7:
 
-    # ryn desaccord "La deuxième fois il m'a même pas vu."
-    ryn desaccord ""
+    # "L'écran mural demeure noir. Son silence ne me rassure plus du tout."
+    "A tela na parede continua preta. Seu silêncio não me tranquiliza mais."
 
-# game/scenario/8_0_1.rpy:556
-translate portuguese 1b9ea000:
+# game/scenario/8_0_1.rpy:557
+translate portuguese 5d4aef8c:
 
-    # "Je pose mon verre."
-    ""
+    # think "Peut-être que tout ça n'a rien à voir avec Kami. Ou peut-être que cette peur est exactement ce qu'elle attendait de son absence."
+    think "Talvez nada disso tenha relação com Kami. Ou talvez esse medo seja exatamente o que ela esperava provocar com sua ausência."
 
-# game/scenario/8_0_1.rpy:558
-translate portuguese a5f4c91d:
+# game/scenario/8_0_1.rpy:559
+translate portuguese 0dd0906f:
 
-    # think "Qu'est-ce qu'il foutait ?"
-    think ""
+    # "Je tire la chaise jusqu'à la porte et la bloque sous la poignée. Ce n'est pas une vraie protection, mais je saurai au moins si quelqu'un essaie d'entrer pendant mon sommeil."
+    "Arrasto a cadeira até a porta e a prendo sob a maçaneta. Não é uma proteção de verdade, mas pelo menos vou saber se alguém tentar entrar enquanto durmo."
 
-# game/scenario/8_0_1.rpy:563
-translate portuguese c1a8deb0:
+# game/scenario/8_0_1.rpy:561
+translate portuguese 0e1e0fba:
 
-    # think "Quelque chose cloche."
-    think ""
-
-# game/scenario/8_0_1.rpy:564
-translate portuguese a762da14:
-
-    # think "J'y vais."
-    think ""
-
-# game/scenario/8_0_1.rpy:565
-translate portuguese f0009773:
-
-    # noam "Je vais jeter un oeil."
-    noam ""
-
-# game/scenario/8_0_1.rpy:566
-translate portuguese 25cd831d:
-
-    # lysa sourire "Bien."
-    lysa sourire ""
-
-# game/scenario/8_0_1.rpy:567
-translate portuguese 7c1f5d4d:
-
-    # lysa "Pour une fois, tu pars avant que quelqu'un te pousse."
-    lysa ""
-
-# game/scenario/8_0_1.rpy:571
-translate portuguese 1581332c:
-
-    # think "On a tous nos moments."
-    think ""
-
-# game/scenario/8_0_1.rpy:572
-translate portuguese f8a59e86:
-
-    # think "Je reste là."
-    think ""
-
-# game/scenario/8_0_1.rpy:573
-translate portuguese 9a4aa2cb:
-
-    # noam "Il sait où on est si besoin."
-    noam ""
-
-# game/scenario/8_0_1.rpy:574
-translate portuguese 90b631ee:
-
-    # noam "Enfin... je suppose."
-    noam ""
-
-# game/scenario/8_0_1.rpy:575
-translate portuguese 173cee41:
-
-    # ryn hesitation "Mouais..."
-    ryn hesitation ""
-
-# game/scenario/8_0_1.rpy:593
-translate portuguese 451237b3:
-
-    # "La porte claque."
-    ""
-
-# game/scenario/8_0_1.rpy:595
-translate portuguese 12216606:
-
-    # "Kael."
-    ""
-
-# game/scenario/8_0_1.rpy:599
-translate portuguese f4666f3b:
-
-    # "Il s'arrête au milieu de l'espace commun."
-    ""
-
-# game/scenario/8_0_1.rpy:600
-translate portuguese 1631d867:
-
-    # "Il cherche quelqu'un des yeux."
-    ""
-
-# game/scenario/8_0_1.rpy:601
-translate portuguese 700b603d:
-
-    # "Ou tout le monde."
-    ""
-
-# game/scenario/8_0_1.rpy:603
-translate portuguese aef80e40:
-
-    # kael "C'est qui."
-    kael ""
-
-# game/scenario/8_0_1.rpy:605
-translate portuguese 27473743:
-
-    # "Ce n'est pas une question."
-    ""
-
-# game/scenario/8_0_1.rpy:617
-translate portuguese 4edf8849:
-
-    # elias "Kael ?"
-    elias ""
-
-# game/scenario/8_0_1.rpy:619
-translate portuguese 7b343e51:
-
-    # kael "Qui est entré dans ma chambre."
-    kael ""
-
-# game/scenario/8_0_1.rpy:621
-translate portuguese 47698411:
-
-    # "Le silence tombe d'un coup."
-    ""
-
-# game/scenario/8_0_1.rpy:622
-translate portuguese cf63db02:
-
-    # "Comme un couvercle."
-    ""
-
-# game/scenario/8_0_1.rpy:626
-translate portuguese 9d50aad2:
-
-    # ryn "Quoi ?"
-    ryn ""
-
-# game/scenario/8_0_1.rpy:628
-translate portuguese 276aa83f:
-
-    # kael colere "Ma chambre."
-    kael colere ""
-
-# game/scenario/8_0_1.rpy:629
-translate portuguese 8fddb668:
-
-    # kael "Quelqu'un y est entré."
-    kael ""
-
-# game/scenario/8_0_1.rpy:630
-translate portuguese b96fc1be:
-
-    # kael "Quelqu'un a pris quelque chose."
-    kael ""
-
-# game/scenario/8_0_1.rpy:632
-translate portuguese cda9f676:
-
-    # lysa choc "Comment tu sais que—"
-    lysa choc ""
-
-# game/scenario/8_0_1.rpy:634
-translate portuguese 7973a527:
-
-    # kael "Parce que je la cherche depuis ce matin."
-    kael ""
-
-# game/scenario/8_0_1.rpy:635
-translate portuguese 3ac6bca1:
-
-    # kael colere "Partout."
-    kael colere ""
-
-# game/scenario/8_0_1.rpy:636
-translate portuguese 1c2b48b2:
-
-    # kael "Elle n'est nulle part."
-    kael ""
-
-# game/scenario/8_0_1.rpy:637
-translate portuguese 2739a0e1:
-
-    # kael "Elle était sous mon oreiller."
-    kael ""
-
-# game/scenario/8_0_1.rpy:641
-translate portuguese fbb2df25:
-
-    # think "Sous son oreiller."
-    think ""
-
-# game/scenario/8_0_1.rpy:642
-translate portuguese 7485a5c1:
-
-    # think "Il l'avait cachée."
-    think ""
-
-# game/scenario/8_0_1.rpy:644
-translate portuguese dcacf419:
-
-    # "Ryn ouvre la bouche."
-    ""
-
-# game/scenario/8_0_1.rpy:645
-translate portuguese 4768f5ad:
-
-    # "La referme."
-    ""
-
-# game/scenario/8_0_1.rpy:647
-translate portuguese ccf8b41c:
-
-    # elias hesitation "Qu'est-ce qui a disparu ?"
-    elias hesitation ""
-
-# game/scenario/8_0_1.rpy:651
-translate portuguese 6063f0fd:
-
-    # kael inquiet "La photo de ma sœur."
-    kael inquiet ""
-
-# game/scenario/8_0_1.rpy:655
-translate portuguese 7e435e72:
-
-    # "Personne ne dit rien."
-    ""
-
-# game/scenario/8_0_1.rpy:657
-translate portuguese dbfa949d:
-
-    # "Lysa ferme les yeux une seconde."
-    ""
-
-# game/scenario/8_0_1.rpy:658
-translate portuguese e0fa7f38:
-
-    # "Elias recule d'un demi-pas."
-    ""
-
-# game/scenario/8_0_1.rpy:659
-translate portuguese cfc89acb:
-
-    # "Ryn regarde le sol."
-    ""
-
-# game/scenario/8_0_1.rpy:663
-translate portuguese 499176ae:
-
-    # think "Quelqu'un est entré."
-    think ""
-
-# game/scenario/8_0_1.rpy:664
-translate portuguese 9a3f3312:
-
-    # think "Quelqu'un a cherché."
-    think ""
-
-# game/scenario/8_0_1.rpy:665
-translate portuguese 7110d011:
-
-    # think "Quelqu'un a pris exactement ça."
-    think ""
-
-# game/scenario/8_0_1.rpy:669
-translate portuguese 311c49fb:
-
-    # "Kael tremble."
-    ""
-
-# game/scenario/8_0_1.rpy:670
-translate portuguese 386f74cd:
-
-    # "Pas de rage."
-    ""
-
-# game/scenario/8_0_1.rpy:671
-translate portuguese be780d5c:
-
-    # "Enfin, pas que de rage."
-    ""
-
-# game/scenario/8_0_1.rpy:673
-translate portuguese 4f54cc13:
-
-    # kael colere "Alors je répète."
-    kael colere ""
-
-# game/scenario/8_0_1.rpy:674
-translate portuguese 8c852f3f:
-
-    # kael "Qui."
-    kael ""
-
-# game/scenario/8_0_1.rpy:703
-translate portuguese 8b4a1bff:
-
-    # "Personne ne parle."
-    ""
-
-# game/scenario/8_0_1.rpy:707
-translate portuguese 0ba83248:
-
-    # "Kael est assis, coudes sur les genoux."
-    ""
-
-# game/scenario/8_0_1.rpy:708
-translate portuguese a832ea2a:
-
-    # "Il respire encore trop vite."
-    ""
-
-# game/scenario/8_0_1.rpy:709
-translate portuguese dfd6d7ab:
-
-    # "Mais il ne crie plus."
-    ""
-
-# game/scenario/8_0_1.rpy:721
-translate portuguese 54fe11a4:
-
-    # "Lysa pose une main sur l'accoudoir de sa chaise."
-    ""
-
-# game/scenario/8_0_1.rpy:722
-translate portuguese 4c89d865:
-
-    # "Pas sur son épaule."
-    ""
-
-# game/scenario/8_0_1.rpy:723
-translate portuguese d3c431a9:
-
-    # "Juste là. Près."
-    ""
-
-# game/scenario/8_0_1.rpy:727
-translate portuguese 7e99dd44:
-
-    # ryn hesitation "On peut vérifier les chambres."
-    ryn hesitation ""
-
-# game/scenario/8_0_1.rpy:728
-translate portuguese f9f38261:
-
-    # ryn "Voir si d'autres trucs ont—"
-    ryn ""
-
-# game/scenario/8_0_1.rpy:730
-translate portuguese ddfa7c38:
-
-    # kael "Ça ne changera rien."
-    kael ""
-
-# game/scenario/8_0_1.rpy:732
-translate portuguese eac93024:
-
-    # "Ryn se tait."
-    ""
-
-# game/scenario/8_0_1.rpy:734
-translate portuguese f61212e2:
-
-    # kael inquiet "Elle n'est plus là."
-    kael inquiet ""
-
-# game/scenario/8_0_1.rpy:735
-translate portuguese 59c40163:
-
-    # kael "C'est tout."
-    kael ""
-
-# game/scenario/8_0_1.rpy:739
-translate portuguese df63924a:
-
-    # elias "Qui ferait ça ?"
-    elias ""
-
-# game/scenario/8_0_1.rpy:741
-translate portuguese 8e3d55f4:
-
-    # "Ce n'est pas vraiment une question."
-    ""
-
-# game/scenario/8_0_1.rpy:742
-translate portuguese 097e8398:
-
-    # "C'est juste ce que tout le monde pense."
-    ""
-
-# game/scenario/8_0_1.rpy:743
-translate portuguese 9ce4ad94:
-
-    # "Il a été le premier à le dire à voix haute."
-    ""
-
-# game/scenario/8_0_1.rpy:747
-translate portuguese 963db6c4_2:
-
-    # think "Qui ?"
-    think ""
-
-# game/scenario/8_0_1.rpy:748
-translate portuguese d17c7432:
-
-    # think "Quelqu'un qui savait où chercher."
-    think ""
-
-# game/scenario/8_0_1.rpy:749
-translate portuguese 4fa6c0e4:
-
-    # think "Quelqu'un qui sait ce qu'on garde quand on croit être seul."
-    think ""
-
-# game/scenario/8_0_1.rpy:753
-translate portuguese ee08860f:
-
-    # think "Quelqu'un qui est là."
-    think ""
-
-# game/scenario/8_0_1.rpy:757
-translate portuguese 57ac65de:
-
-    # "Je regarde le groupe."
-    ""
-
-# game/scenario/8_0_1.rpy:758
-translate portuguese 3e7e8e90:
-
-    # "Lysa."
-    ""
-
-# game/scenario/8_0_1.rpy:759
-translate portuguese 8e6aa6b9:
-
-    # "Ryn."
-    ""
-
-# game/scenario/8_0_1.rpy:760
-translate portuguese 2d45f998:
-
-    # "Elias."
-    ""
-
-# game/scenario/8_0_1.rpy:761
-translate portuguese 12216606_1:
-
-    # "Kael."
-    ""
-
-# game/scenario/8_0_1.rpy:763
-translate portuguese c4c860d3:
-
-    # "Des gens avec qui j'ai mangé, voté, discuté."
-    ""
-
-# game/scenario/8_0_1.rpy:767
-translate portuguese 91056b7a:
-
-    # think "Et l'un d'entre eux, peut-être."
-    think ""
-
-# game/scenario/8_0_1.rpy:768
-translate portuguese daf4fff8_3:
-
-    # think "..."
-    think ""
-
-# game/scenario/8_0_1.rpy:769
-translate portuguese d1af98c2_9:
-
-    # think "Non."
-    think ""
-
-# game/scenario/8_0_1.rpy:770
-translate portuguese ec613ac2:
-
-    # think "Peut-être pas quelqu'un du groupe."
-    think ""
-
-# game/scenario/8_0_1.rpy:771
-translate portuguese 313f7333:
-
-    # think "Peut-être quelqu'un d'autre."
-    think ""
-
-# game/scenario/8_0_1.rpy:772
-translate portuguese 77b6a878:
-
-    # think "Quelqu'un qu'on ne voit pas."
-    think ""
-
-# game/scenario/8_0_1.rpy:776
-translate portuguese aa8f41ae:
-
-    # "Kami ne s'est pas manifestée depuis deux jours."
-    ""
-
-# game/scenario/8_0_1.rpy:777
-translate portuguese 86c13553:
-
-    # "Mais le Conclave existe toujours."
-    ""
-
-# game/scenario/8_0_1.rpy:778
-translate portuguese a181363f:
-
-    # "Les couloirs sont surveillés."
-    ""
-
-# game/scenario/8_0_1.rpy:779
-translate portuguese 8689a80f:
-
-    # "Les chambres ont des serrures."
-    ""
-
-# game/scenario/8_0_1.rpy:780
-translate portuguese 1b0faa0c:
-
-    # "Des serrures que quelqu'un peut ouvrir."
-    ""
-
-# game/scenario/8_0_1.rpy:784
-translate portuguese f1d3c97a:
-
-    # think "Ce silence de Kami."
-    think ""
-
-# game/scenario/8_0_1.rpy:785
-translate portuguese 97bdbfd7:
-
-    # think "C'était vraiment un silence."
-    think ""
-
-# game/scenario/8_0_1.rpy:786
-translate portuguese 613e4462:
-
-    # think "Ou on regardait ailleurs pendant que quelque chose se passait ?"
-    think ""
-
-# game/scenario/8_0_1.rpy:790
-translate portuguese 251db96d:
-
-    # noam "Pour tout vous dire..."
-    noam ""
-
-# game/scenario/8_0_1.rpy:791
-translate portuguese 56d1d52c:
-
-    # noam "Moi aussi, j'ai perdu quelque chose."
-    noam ""
-
-# game/scenario/8_0_1.rpy:793
-translate portuguese f1bd519b:
-
-    # "Tout le monde se retourne vers moi."
-    ""
-
-# game/scenario/8_0_1.rpy:797
-translate portuguese 1a0e5ed8:
-
-    # noam "Un dessin que ma petite soeur m'avait fait."
-    noam ""
-
-# game/scenario/8_0_1.rpy:798
-translate portuguese 1887d71c:
-
-    # noam hesitation "Il a disparu aussi."
-    noam hesitation ""
-
-# game/scenario/8_0_1.rpy:799
-translate portuguese f01dc307:
-
-    # noam "Ce matin. Je le cherchais depuis le réveil."
-    noam ""
-
-# game/scenario/8_0_1.rpy:801
-translate portuguese d9db05cd:
-
-    # lysa choc "Attends."
-    lysa choc ""
-
-# game/scenario/8_0_1.rpy:802
-translate portuguese 9bb64c05:
-
-    # lysa "Toi aussi ?"
-    lysa ""
-
-# game/scenario/8_0_1.rpy:804
-translate portuguese 596f5ec4_1:
-
-    # noam "Ouais."
-    noam ""
-
-# game/scenario/8_0_1.rpy:808
-translate portuguese 5e151d59:
-
-    # elias "Donc c'est pas Kael qui a mal rangé."
-    elias ""
-
-# game/scenario/8_0_1.rpy:809
-translate portuguese 875229ad:
-
-    # elias "C'est pas toi non plus."
-    elias ""
-
-# game/scenario/8_0_1.rpy:810
-translate portuguese 01f9b9ed:
-
-    # elias "C'est... systématique. Comme mes outils hier."
-    elias ""
-
-# game/scenario/8_0_1.rpy:814
-translate portuguese 95c6b1f2:
-
-    # kael effondre "Je vous l'avais dit."
-    kael effondre ""
-
-# game/scenario/8_0_1.rpy:818
-translate portuguese c2146cd7:
-
-    # think "Deux objets. Deux chambres."
-    think ""
-
-# game/scenario/8_0_1.rpy:819
-translate portuguese da9826c8:
-
-    # think "Rien de pratique. Rien d'utile."
-    think ""
-
-# game/scenario/8_0_1.rpy:820
-translate portuguese 1b16a510:
-
-    # think "Juste ce qui compte."
-    think ""
-
-# game/scenario/8_0_1.rpy:827
-translate portuguese 9e5d57e4:
-
-    # noam "C'est un message."
-    noam ""
-
-# game/scenario/8_0_1.rpy:828
-translate portuguese 1414d38c:
-
-    # noam "Quelqu'un veut qu'on sache qu'il peut entrer."
-    noam ""
-
-# game/scenario/8_0_1.rpy:829
-translate portuguese 114b37cc:
-
-    # noam "Qu'il sait ce qu'on garde."
-    noam ""
-
-# game/scenario/8_0_1.rpy:830
-translate portuguese 2025eace:
-
-    # "Lysa croise les bras."
-    ""
-
-# game/scenario/8_0_1.rpy:831
-translate portuguese 008cc19f:
-
-    # lysa neutre "Ou quelqu'un qui veut juste qu'on se méfie les uns des autres."
-    lysa neutre ""
-
-# game/scenario/8_0_1.rpy:832
-translate portuguese b5bfb0b1:
-
-    # noam "Ça aussi c'est un message."
-    noam ""
-
-# game/scenario/8_0_1.rpy:836
-translate portuguese 0665bdfc:
-
-    # think "Pas maintenant."
-    think ""
-
-# game/scenario/8_0_1.rpy:837
-translate portuguese b2aa13c6:
-
-    # think "Kael est encore trop à vif."
-    think ""
-
-# game/scenario/8_0_1.rpy:838
-translate portuguese 1b9cd50a:
-
-    # think "Et je ne suis sûr de rien."
-    think ""
-
-# game/scenario/8_0_1.rpy:846
-translate portuguese 59754f28:
-
-    # "Les minutes passent."
-    ""
-
-# game/scenario/8_0_1.rpy:847
-translate portuguese 24f50fe1:
-
-    # "Un par un, ils se lèvent."
-    ""
-
-# game/scenario/8_0_1.rpy:848
-translate portuguese 936c62c6:
-
-    # "Pas pour partir. Pour ne pas rester immobiles."
-    ""
-
-# game/scenario/8_0_1.rpy:852
-translate portuguese 4da26705:
-
-    # "Je reste."
-    ""
-
-# game/scenario/8_0_1.rpy:854
-translate portuguese 3a52162b:
-
-    # think "Il faut trouver qui a fait ça."
-    think ""
-
-# game/scenario/8_0_1.rpy:859
-translate portuguese 43ea0351:
-
-    # think "J'ai dit ce que je pensais."
-    think ""
-
-# game/scenario/8_0_1.rpy:860
-translate portuguese 451b32d0:
-
-    # think "C'est un début."
-    think ""
-
-# game/scenario/8_0_1.rpy:862
-translate portuguese 0615d30d:
-
-    # think "J'aurais dû le dire."
-    think ""
-
-# game/scenario/8_0_1.rpy:863
-translate portuguese 96a3afca:
-
-    # think "Peut-être."
-    think ""
-
-# game/scenario/8_0_1.rpy:864
-translate portuguese 43504072:
-
-    # think "Ou peut-être pas."
-    think ""
-
-# game/scenario/8_0_1.rpy:868
-translate portuguese c43dbe67:
-
-    # think "Ce que je sais :"
-    think ""
-
-# game/scenario/8_0_1.rpy:869
-translate portuguese 6979b325:
-
-    # think "Quelqu'un est entré dans nos chambres."
-    think ""
-
-# game/scenario/8_0_1.rpy:870
-translate portuguese 41153597:
-
-    # think "Quelqu'un a pris exactement ce qui comptait."
-    think ""
-
-# game/scenario/8_0_1.rpy:871
-translate portuguese 81065ab5:
-
-    # think "Et on n'a aucun moyen de savoir qui."
-    think ""
-
-# game/scenario/8_0_1.rpy:872
-translate portuguese 0260ba2d:
-
-    # think "Pour l'instant."
-    think ""
-
-# game/scenario/8_0_1.rpy:876
-translate portuguese 0260ba2d_1:
-
-    # think "Pour l'instant."
-    think ""
-
-# game/scenario/8_0_1.rpy:893
-translate portuguese c7ea8a34:
-
-    # "Je retourne dans ma chambre après avoir erré dans les couloirs."
-    ""
-
-# game/scenario/8_0_1.rpy:894
-translate portuguese 6fe6c695:
-
-    # "La porte se referme derrière moi."
-    ""
-
-# game/scenario/8_0_1.rpy:896
-translate portuguese 62356112:
-
-    # "Je reste debout au milieu de la pièce un long moment."
-    ""
-
-# game/scenario/8_0_1.rpy:898
-translate portuguese 638f1289_1:
-
-    # think "Deux jours sans Kami."
-    think ""
-
-# game/scenario/8_0_1.rpy:899
-translate portuguese e3d94fb9:
-
-    # think "Et on est déjà en train de se déchirer."
-    think ""
-
-# game/scenario/8_0_1.rpy:901
-translate portuguese 8f0b414b:
-
-    # "Je regarde le lit. Le sac encore ouvert. Le placard mal fermé."
-    ""
-
-# game/scenario/8_0_1.rpy:902
-translate portuguese cf49c602:
-
-    # think "J'ai vraiment foutu le bordel ce matin."
-    think ""
-
-# game/scenario/8_0_1.rpy:904
-translate portuguese 55e0ac6d:
-
-    # think "Le dessin n’est toujours pas revenu."
-    think ""
-
-# game/scenario/8_0_1.rpy:908
-translate portuguese bbc1c8b1:
-
-    # "Je m’assois sur le bord du lit."
-    ""
-
-# game/scenario/8_0_1.rpy:910
-translate portuguese e28a00f0_2:
-
-    # think "Quelqu’un est entré ici."
-    think ""
-
-# game/scenario/8_0_1.rpy:911
-translate portuguese 0daea41e:
-
-    # think "Quelqu’un sait ce qui compte pour moi."
-    think ""
-
-# game/scenario/8_0_1.rpy:912
-translate portuguese d0580a1c:
-
-    # think "Et il l’a pris."
-    think ""
-
-# game/scenario/8_0_1.rpy:914
-translate portuguese 82ae1306_1:
-
-    # "Je passe une main sur mon visage."
-    ""
-
-# game/scenario/8_0_1.rpy:916
-translate portuguese 7cf3793a:
-
-    # think "Ce n’est plus un jeu."
-    think ""
-
-# game/scenario/8_0_1.rpy:917
-translate portuguese cf417afb:
-
-    # think "Ce n’est plus une expérience de Kami."
-    think ""
-
-# game/scenario/8_0_1.rpy:919
-translate portuguese c316371e:
-
-    # "Je regarde l’écran mural. Toujours noir."
-    ""
-
-# game/scenario/8_0_1.rpy:921
-translate portuguese 87658722:
-
-    # think "Ou alors… c’est exactement ce qu’elle voulait."
-    think ""
-
-# game/scenario/8_0_1.rpy:922
-translate portuguese 019efec5:
-
-    # think "Tout fonctionne peut-être selon son plan."
-    think ""
-
-# game/scenario/8_0_1.rpy:926
-translate portuguese a4ad246c:
-
-    # "Je me lève et vais bloquer la porte avec une chaise."
-    ""
-
-# game/scenario/8_0_1.rpy:927
-translate portuguese a5616b58:
-
-    # "Personne ne pourra rentrer comme ça."
-    ""
-
-# game/scenario/8_0_1.rpy:929
-translate portuguese bd328250:
-
-    # "Avant de m’allonger, je jette un dernier regard vers le placard."
-    ""
-
-# game/scenario/8_0_1.rpy:931
-translate portuguese 183eecf2:
-
-    # think "Demain, je trouverai qui a fait ça."
-    think ""
-
-# game/scenario/8_0_1.rpy:932
-translate portuguese b5711023:
-
-    # think "Même si c’est l’un de nous."
-    think ""
+    # think "Demain, je trouverai qui a pris le dessin et la photo. Même si la réponse me conduit vers l'un d'entre nous."
+    think "Amanhã, vou descobrir quem pegou o desenho e a foto. Mesmo que a resposta me leve a um de nós."
 
 translate portuguese strings:
 
-    # game/scenario/8_0_1.rpy:155
-    old "Déplier le pull."
-    new ""
-
-    # game/scenario/8_0_1.rpy:155
-    old "Regarder derrière les cintres."
-    new ""
-
-    # game/scenario/8_0_1.rpy:187
-    old "Me relever tout de suite."
-    new ""
-
-    # game/scenario/8_0_1.rpy:187
-    old "Rester là, par terre, un moment."
-    new ""
-
-    # game/scenario/8_0_1.rpy:265
-    old "Refaire un tour rapide de la pièce."
-    new ""
-
-    # game/scenario/8_0_1.rpy:265
-    old "Accepter que ce soit fini pour l'instant."
-    new ""
-
-    # game/scenario/8_0_1.rpy:300
+    # game/scenario/8_0_1.rpy:240
     old "Laisser la chambre telle quelle."
-    new ""
+    new "Deixar o quarto como está."
 
-    # game/scenario/8_0_1.rpy:300
-    old "Refermer le sac et le placard avant de sortir."
-    new ""
+    # game/scenario/8_0_1.rpy:240
+    old "Remettre l'essentiel en place avant de sortir."
+    new "Colocar o essencial no lugar antes de sair."
 
-    # game/scenario/8_0_1.rpy:450
+    # game/scenario/8_0_1.rpy:348
     old "Rentrer dans la blague."
-    new ""
+    new "Entrar na brincadeira."
 
-    # game/scenario/8_0_1.rpy:450
+    # game/scenario/8_0_1.rpy:348
     old "Rester prudent."
-    new ""
+    new "Continuar cauteloso."
 
-    # game/scenario/8_0_1.rpy:560
+    # game/scenario/8_0_1.rpy:428
     old "Aller voir s'il va bien."
-    new ""
+    new "Ir ver se ele está bem."
 
-    # game/scenario/8_0_1.rpy:560
+    # game/scenario/8_0_1.rpy:428
     old "Attendre, il est peut-être juste fatigué."
-    new ""
-
-    # game/scenario/8_0_1.rpy:824
-    old "C'est un message."
-    new ""
-
-    # game/scenario/8_0_1.rpy:824
-    old "Ne rien dire."
-    new ""
+    new "Esperar. Talvez ele só esteja cansado."
 

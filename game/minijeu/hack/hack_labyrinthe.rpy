@@ -33,6 +33,15 @@ default hack_total_time = 55.0
 default hack_enemy_interval = 1.0
 default hack_enemy_clock = 1.0
 default hack_enemy_mode = "PATROUILLE"
+default hack_enemy2_active = False
+default hack_enemy2 = (1, 1)
+default hack_enemy2_start = (1, 1)
+default hack_enemy2_previous = None
+default hack_enemy2_stun = 0.0
+default hack_enemy2_scan = 0.0
+default hack_enemy2_interval = 1.0
+default hack_enemy2_clock = 1.0
+default hack_enemy2_mode = "PATROUILLE"
 default hack_player_stun = 0.0
 default hack_done = False
 default hack_success = False
@@ -61,6 +70,9 @@ default hack_sign_time = 0.0
 default hack_assist = False
 default hack_tick_marker = -1
 default j901_hack_success = False
+default j710_hack_success = False
+default hack_title = "INTRUSION // RESEAU DU CANON"
+default hack_channel = "CANAL CHIFFRE J-09  //  TRACE ACTIVE"
 
 
 # ------------------------------------------------------------
@@ -132,6 +144,12 @@ transform hk_player_halo_at:
 transform hk_enemy_halo_at:
     function hack_halo_enemy
 
+transform hk_enemy2_at:
+    function hack_token_enemy2
+
+transform hk_enemy2_halo_at:
+    function hack_halo_enemy2
+
 
 transform hk_scan_sweep:
     ypos -30
@@ -190,6 +208,8 @@ init python:
             self.py = 1.0
             self.ex = 1.0
             self.ey = 1.0
+            self.ex2 = 1.0
+            self.ey2 = 1.0
             self.cam_x = 0.0
             self.cam_y = 0.0
             self.clock = 0.0
@@ -213,7 +233,7 @@ init python:
         "enemy_interval": 0.92,
         "grid": [
             "###################",
-            "#S....#.....#.....#",
+            "#S..........#.....#",
             "#.##..#.###.#.###.#",
             "#.....#.....#.....#",
             "###.#####.#.###.#.#",
@@ -226,9 +246,9 @@ init python:
         ],
         "enemy": (13, 5),
         # Placement valide par tools/build_hack_assets.py + verification de
-        # connectivite : le joueur atteint les 96 couloirs et garde toujours
-        # une route vers le noyau ; la sentinelle circule sur 69 couloirs
-        # pare-feu fermes, 96 une fois qu'ils sont forces.
+        # connectivite : l'ouverture (6, 1) empeche le spawn d'apparaitre
+        # enferme dans la boucle ouest. Le joueur atteint les 97 couloirs et
+        # garde toujours une route vers le noyau.
         "specials": {
             (4, 1): {"type": "sign", "message": "PROPULSION DISPONIBLE // TOUCHE ESPACE"},
             (9, 1): {"type": "trap"},
@@ -242,6 +262,48 @@ init python:
             (13, 7): {"type": "password"},
             (5, 9): {"type": "boost"},
             (13, 9): {"type": "trap"},
+        },
+    }
+
+    # Bonus du jour 7 (route commerce adopte) : topologie tres ouverte,
+    # boucles multiples, pare-feu, pieges et deux sentinelles simultanees.
+    J710_HACK_CIRCUIT = {
+        "title": "INTRUSION // SERVEUR DE SURVEILLANCE",
+        "channel": "NOEUD LOGISTIQUE J-07  //  DOUBLE TRACE",
+        "time": 65.0,
+        "enemy_interval": 0.78,
+        "enemy2_interval": 0.92,
+        "grid": [
+            "###################",
+            "#S................#",
+            "#.###.###.###.###.#",
+            "#.................#",
+            "#.###.#.#####.#.#.#",
+            "#.....#.......#...#",
+            "#.#.#.#####.#.###.#",
+            "#.................#",
+            "#.###.###.###.###.#",
+            "#................G#",
+            "###################",
+        ],
+        "enemies": [(17, 1), (1, 9)],
+        "specials": {
+            (4, 1): {"type": "sign", "message": "DEUX SENTINELLES // CHANGEZ DE BOUCLE"},
+            (9, 1): {"type": "trap"},
+            (3, 3): {"type": "boost"},
+            (7, 3): {"type": "password"},
+            (9, 3): {"type": "oneway", "direction": (1, 0)},
+            (13, 3): {"type": "trap"},
+            (3, 5): {"type": "trap"},
+            (9, 5): {"type": "sign", "message": "LES PIEGES SONT A USAGE UNIQUE"},
+            (11, 5): {"type": "password"},
+            (15, 5): {"type": "boost"},
+            (3, 7): {"type": "boost"},
+            (7, 7): {"type": "password"},
+            (9, 7): {"type": "trap"},
+            (13, 7): {"type": "oneway", "direction": (0, 1)},
+            (13, 9): {"type": "boost"},
+            (15, 9): {"type": "trap"},
         },
     }
 
@@ -362,7 +424,8 @@ init python:
         store.hack_goal = hack_find_marker(store.hack_grid, "G")
         store.hack_player = store.hack_player_start
         store.hack_player_previous = store.hack_player_start
-        store.hack_enemy_start = tuple(circuit.get("enemy", store.hack_goal))
+        enemy_starts = list(circuit.get("enemies", [circuit.get("enemy", store.hack_goal)]))
+        store.hack_enemy_start = tuple(enemy_starts[0])
         store.hack_enemy = store.hack_enemy_start
         store.hack_enemy_previous = None
         store.hack_enemy_stun = 0.0
@@ -372,6 +435,15 @@ init python:
         store.hack_enemy_interval = float(circuit.get("enemy_interval", 1.0)) * (1.45 if assist else 1.0)
         store.hack_enemy_clock = store.hack_enemy_interval
         store.hack_enemy_mode = "PATROUILLE"
+        store.hack_enemy2_active = len(enemy_starts) > 1
+        store.hack_enemy2_start = tuple(enemy_starts[1]) if store.hack_enemy2_active else store.hack_enemy_start
+        store.hack_enemy2 = store.hack_enemy2_start
+        store.hack_enemy2_previous = None
+        store.hack_enemy2_stun = 0.0
+        store.hack_enemy2_scan = 0.0
+        store.hack_enemy2_interval = float(circuit.get("enemy2_interval", circuit.get("enemy_interval", 1.0))) * (1.45 if assist else 1.0)
+        store.hack_enemy2_clock = store.hack_enemy2_interval
+        store.hack_enemy2_mode = "PATROUILLE"
         store.hack_player_stun = 0.0
         store.hack_done = False
         store.hack_success = False
@@ -399,6 +471,8 @@ init python:
         store.hack_sign_time = 0.0
         store.hack_assist = assist
         store.hack_tick_marker = -1
+        store.hack_title = circuit.get("title", "INTRUSION // RESEAU DU CANON")
+        store.hack_channel = circuit.get("channel", "CANAL CHIFFRE J-09  //  TRACE ACTIVE")
 
         hack_build_world()
         hack_build_minimap()
@@ -407,6 +481,8 @@ init python:
         hack_view.py = float(store.hack_player[1])
         hack_view.ex = float(store.hack_enemy[0])
         hack_view.ey = float(store.hack_enemy[1])
+        hack_view.ex2 = float(store.hack_enemy2[0])
+        hack_view.ey2 = float(store.hack_enemy2[1])
         hack_view.clock = time.time()
         hack_view.hover = None
         hack_view.cam_x = hack_camera_target_x(hack_view.px)
@@ -414,7 +490,7 @@ init python:
         hack_xadj.change(hack_view.cam_x)
         hack_yadj.change(hack_view.cam_y)
 
-        hack_log("CANAL J-09 OUVERT", HK_CYAN)
+        hack_log("CANAL D'INTRUSION OUVERT", HK_CYAN)
         renpy.restart_interaction()
 
     # --------------------------------------------------------
@@ -497,20 +573,24 @@ init python:
         return hack_path_distance(store.hack_player, store.hack_goal, "player")
 
     def hack_detection_distance():
-        return hack_path_distance(store.hack_enemy, store.hack_player, "enemy")
+        distances = [hack_path_distance(store.hack_enemy, store.hack_player, "enemy")]
+        if store.hack_enemy2_active:
+            distances.append(hack_path_distance(store.hack_enemy2, store.hack_player, "enemy"))
+        return min(distances)
 
     def hack_detection_range():
-        return HACK_DETECT_SCAN if store.hack_enemy_scan > 0.0 else HACK_DETECT
+        exposed = store.hack_enemy_scan > 0.0 or (store.hack_enemy2_active and store.hack_enemy2_scan > 0.0)
+        return HACK_DETECT_SCAN if exposed else HACK_DETECT
 
     def hack_threat_label():
         distance = hack_detection_distance()
-        if store.hack_enemy_stun > 0.0:
+        if store.hack_enemy_stun > 0.0 and (not store.hack_enemy2_active or store.hack_enemy2_stun > 0.0):
             return "SENTINELLE HORS LIGNE", HK_AMBER, 1
         if distance <= 3:
             return "CRITIQUE", HK_RED, 5
         if distance <= hack_detection_range():
             return "VERROUILLAGE", "#FF8A65", 4
-        if store.hack_enemy_mode == "RECHERCHE":
+        if store.hack_enemy_mode == "RECHERCHE" or (store.hack_enemy2_active and store.hack_enemy2_mode == "RECHERCHE"):
             return "TRACE DETECTEE", "#FFD166", 3
         return "FURTIF", HK_CYAN, 2
 
@@ -563,6 +643,8 @@ init python:
         hack_view.py += (store.hack_player[1] - hack_view.py) * token
         hack_view.ex += (store.hack_enemy[0] - hack_view.ex) * token
         hack_view.ey += (store.hack_enemy[1] - hack_view.ey) * token
+        hack_view.ex2 += (store.hack_enemy2[0] - hack_view.ex2) * token
+        hack_view.ey2 += (store.hack_enemy2[1] - hack_view.ey2) * token
 
         lens = 1.0 - math.exp(-dt * 9.0)
         hack_view.cam_x += (hack_camera_target_x(hack_view.px) - hack_view.cam_x) * lens
@@ -601,6 +683,15 @@ init python:
         trans.zoom = 1.0 + 0.07 * math.sin(st * speed)
         return 0
 
+    def hack_token_enemy2(trans, st, at):
+        trans.xanchor = 0.0
+        trans.yanchor = 0.0
+        trans.xpos = int(hack_view.ex2 * HACK_CELL)
+        trans.ypos = int(hack_view.ey2 * HACK_CELL)
+        speed = 6.8 if store.hack_enemy2_mode == "VERROUILLAGE" else 3.4
+        trans.zoom = 1.0 + 0.07 * math.sin(st * speed + 1.7)
+        return 0
+
     def hack_halo_player(trans, st, at):
         trans.xanchor = 0.5
         trans.yanchor = 0.5
@@ -618,6 +709,15 @@ init python:
         trans.alpha = base + 0.18 * math.sin(st * 5.0)
         return 0
 
+    def hack_halo_enemy2(trans, st, at):
+        trans.xanchor = 0.5
+        trans.yanchor = 0.5
+        trans.xpos = int(hack_view.ex2 * HACK_CELL + HACK_CELL // 2)
+        trans.ypos = int(hack_view.ey2 * HACK_CELL + HACK_CELL // 2)
+        base = 0.62 if store.hack_enemy2_mode == "VERROUILLAGE" else 0.38
+        trans.alpha = base + 0.18 * math.sin(st * 5.3 + 1.4)
+        return 0
+
     def hack_screen_pos(cell):
         """Position ecran (centre) d'une case, et si elle est hors cadre."""
         cx = cell[0] * HACK_CELL + HACK_CELL * 0.5 - hack_view.cam_x
@@ -631,7 +731,9 @@ init python:
     # Resolution des cases
     # --------------------------------------------------------
     def hack_collide():
-        if store.hack_player != store.hack_enemy or store.hack_done:
+        primary_hit = store.hack_player == store.hack_enemy
+        secondary_hit = store.hack_enemy2_active and store.hack_player == store.hack_enemy2
+        if (not primary_hit and not secondary_hit) or store.hack_done:
             return
         store.hack_hits += 1
         store.hack_time_left = max(0.0, store.hack_time_left - 5.0)
@@ -646,6 +748,12 @@ init python:
         store.hack_enemy_mode = "PATROUILLE"
         store.hack_enemy_stun = 0.0
         store.hack_enemy_scan = 0.0
+        store.hack_enemy2 = store.hack_enemy2_start
+        store.hack_enemy2_previous = None
+        store.hack_enemy2_mode = "PATROUILLE"
+        store.hack_enemy2_stun = 0.0
+        store.hack_enemy2_scan = 0.0
+        store.hack_enemy2_clock = store.hack_enemy2_interval
         store.hack_player_stun = 0.75
         store.hack_dash_cooldown = 0.0
         store.hack_trail = [store.hack_player_start]
@@ -653,6 +761,8 @@ init python:
         hack_view.py = float(store.hack_player_start[1])
         hack_view.ex = float(store.hack_enemy_start[0])
         hack_view.ey = float(store.hack_enemy_start[1])
+        hack_view.ex2 = float(store.hack_enemy2_start[0])
+        hack_view.ey2 = float(store.hack_enemy2_start[1])
         hack_status_set("INTERCEPTION // SIGNAL REINITIALISE // -5 S", HK_RED, True)
         store.hack_flash = 0.45
         store.hack_flash_color = "#FF173C"
@@ -776,6 +886,35 @@ init python:
             store.hack_enemy_scan = 5.0
             hack_play("hk_alert.wav", 0.7)
             hack_status_set("BALISE PIRATEE // VOTRE POSITION EST EXPOSEE", HK_RED, True)
+
+    def hack_enemy2_resolve_tile(pos, direction, allow_boost=True):
+        """Resolution des modules pour la seconde sentinelle."""
+        tile = hack_tile_type(pos)
+        if tile == "trap":
+            hack_spend(pos)
+            store.hack_enemy2_stun = 3.2
+            store.hack_enemy2_mode = "PATROUILLE"
+            hack_play("hk_trap.wav", 0.7)
+            hack_status_set("SENTINELLE B PIEGEE // 3 S HORS LIGNE", HK_AMBER, True)
+            return
+        if tile == "boost" and allow_boost:
+            if direction == (0, 0):
+                return
+            for _unused in range(2):
+                nxt = (store.hack_enemy2[0] + direction[0], store.hack_enemy2[1] + direction[1])
+                if not hack_can_cross(store.hack_enemy2, nxt, "enemy"):
+                    break
+                store.hack_enemy2_previous = store.hack_enemy2
+                store.hack_enemy2 = nxt
+                hack_collide()
+                if store.hack_done:
+                    return
+            hack_status_set("SENTINELLE B PROPULSEE", HK_RED, True)
+            return
+        if tile == "sign":
+            store.hack_enemy2_scan = 5.0
+            hack_play("hk_alert.wav", 0.7)
+            hack_status_set("BALISE PIRATEE // DOUBLE TRACE ACTIVE", HK_RED, True)
 
     # --------------------------------------------------------
     # Actions joueur
@@ -923,6 +1062,51 @@ init python:
         if not store.hack_done:
             hack_enemy_resolve_tile(nxt, direction)
 
+    def hack_enemy2_step():
+        if store.hack_done or not store.hack_enemy2_active or store.hack_enemy2_stun > 0.0:
+            return
+        previous_mode = store.hack_enemy2_mode
+        pursuit = hack_path(store.hack_enemy2, store.hack_player, "enemy")
+        distance = len(pursuit) - 1 if pursuit else 99
+        detect_range = HACK_DETECT_SCAN if store.hack_enemy2_scan > 0.0 else HACK_DETECT
+
+        if pursuit and distance <= detect_range:
+            nxt = pursuit[1] if len(pursuit) > 1 else store.hack_player
+            store.hack_enemy2_mode = "VERROUILLAGE"
+            if previous_mode != "VERROUILLAGE":
+                hack_play("hk_alert.wav", 0.55)
+                hack_status_set("ALERTE // SECONDE SENTINELLE VERROUILLEE", HK_RED, True)
+        else:
+            trace_path = []
+            for trace_pos in reversed(store.hack_trail[:-1]):
+                candidate_path = hack_path(store.hack_enemy2, trace_pos, "enemy")
+                if candidate_path and len(candidate_path) - 1 <= 5:
+                    trace_path = candidate_path
+                    break
+
+            if len(trace_path) > 1:
+                nxt = trace_path[1]
+                store.hack_enemy2_mode = "RECHERCHE"
+            else:
+                candidates = hack_neighbors(store.hack_enemy2, "enemy")
+                if store.hack_enemy2_previous in candidates and len(candidates) > 1:
+                    candidates.remove(store.hack_enemy2_previous)
+                if not candidates:
+                    store.hack_enemy2_previous = None
+                    return
+                # La seconde sentinelle ferme plutot les routes proches du joueur.
+                candidates.sort(key=lambda pos: hack_path_distance(pos, store.hack_player, "enemy"))
+                shortlist = candidates[:min(3, len(candidates))]
+                nxt = random.choice(shortlist)
+                store.hack_enemy2_mode = "PATROUILLE"
+
+        direction = hack_direction_between(store.hack_enemy2, nxt)
+        store.hack_enemy2_previous = store.hack_enemy2
+        store.hack_enemy2 = nxt
+        hack_collide()
+        if not store.hack_done:
+            hack_enemy2_resolve_tile(nxt, direction)
+
     def hack_tick():
         if store.hack_done:
             store.hack_end_delay = max(0.0, store.hack_end_delay - HACK_TICK)
@@ -937,6 +1121,10 @@ init python:
         store.hack_player_stun = max(0.0, store.hack_player_stun - HACK_TICK)
         store.hack_enemy_stun = max(0.0, store.hack_enemy_stun - HACK_TICK)
         store.hack_enemy_scan = max(0.0, store.hack_enemy_scan - HACK_TICK)
+        store.hack_enemy2_stun = max(0.0, store.hack_enemy2_stun - HACK_TICK)
+        store.hack_enemy2_scan = max(0.0, store.hack_enemy2_scan - HACK_TICK)
+        if store.hack_enemy2_active:
+            store.hack_enemy2_clock -= HACK_TICK
         store.hack_dash_cooldown = max(0.0, store.hack_dash_cooldown - HACK_TICK)
         store.hack_flash = max(0.0, store.hack_flash - HACK_TICK)
         store.hack_sign_time = max(0.0, store.hack_sign_time - HACK_TICK)
@@ -960,6 +1148,16 @@ init python:
             else:
                 speed_factor = 1.0
             store.hack_enemy_clock += store.hack_enemy_interval * speed_factor
+
+        if store.hack_enemy2_active and store.hack_enemy2_clock <= 0.0:
+            hack_enemy2_step()
+            if store.hack_enemy2_mode == "VERROUILLAGE":
+                speed_factor2 = 0.68
+            elif store.hack_enemy2_mode == "RECHERCHE":
+                speed_factor2 = 0.82
+            else:
+                speed_factor2 = 1.0
+            store.hack_enemy2_clock += store.hack_enemy2_interval * speed_factor2
 
         if store.hack_time_left <= 0.0 and not store.hack_done:
             hack_finish(False, "FENETRE D'INTRUSION EXPIREE")
@@ -1060,7 +1258,7 @@ screen j901_hack_howto():
         ypos 92
         spacing 8
         text "PROTOCOLE D'INTRUSION" style "hk_h1" size 54 xalign 0.5
-        text "RESEAU DU CANON  //  NŒUD J-09  //  CANAL CHIFFRE" style "hk_label" size 20 color "#FF6B68" xalign 0.5
+        text hack_channel style "hk_label" size 20 color "#FF6B68" xalign 0.5
 
     hbox:
         xalign 0.5
@@ -1085,8 +1283,8 @@ screen j901_hack_howto():
             vbox:
                 xfill True spacing 14
                 add Transform("hk_enemy", xysize=(132, 132)) xalign 0.5
-                text "SENTINELLE KAMI" style "hk_h2" size 28 color "#FF5968" xalign 0.5
-                text "Elle patrouille hors champ, puis accélère dès qu'elle capte votre trace à six cases." style "hk_body" size 21 xalign 0.5 text_align 0.5 xmaximum 400
+                text ("2 SENTINELLES KAMI" if hack_enemy2_active else "SENTINELLE KAMI") style "hk_h2" size 28 color "#FF5968" xalign 0.5
+                text ("Elles patrouillent par deux routes et accélèrent dès qu'elles captent votre trace." if hack_enemy2_active else "Elle patrouille hors champ, puis accélère dès qu'elle capte votre trace à six cases.") style "hk_body" size 21 xalign 0.5 text_align 0.5 xmaximum 400
                 text "3 INTERCEPTIONS  //  ECHEC" style "hk_label" size 19 color "#FF8B94" xalign 0.5
 
         frame:
@@ -1098,7 +1296,7 @@ screen j901_hack_howto():
                 add Transform("hk_goal", xysize=(132, 132)) xalign 0.5
                 text "NOYAU DE CONNEXION" style "hk_h2" size 28 color "#5CFFC0" xalign 0.5
                 text "Atteignez le noyau avant la coupure. Plusieurs boucles mènent au but." style "hk_body" size 21 xalign 0.5 text_align 0.5 xmaximum 400
-                text "60.0 S  //  ROUTES MULTIPLES" style "hk_label" size 19 color "#E4FAFF" xalign 0.5
+                text "[hack_total_time:.0f] S  //  ROUTES MULTIPLES" style "hk_label" size 19 color "#E4FAFF" xalign 0.5
 
     frame:
         xalign 0.5
@@ -1232,6 +1430,13 @@ screen j901_hack_screen():
                 for _route_index, _route_pos in enumerate(_enemy_preview):
                     add Solid("#FF465C", xsize=13, ysize=13) xpos _route_pos[0] * HACK_CELL + 45 ypos _route_pos[1] * HACK_CELL + 45 at hk_route_pulse(_route_index * 0.06)
 
+            if hack_enemy2_active and hack_enemy2_stun <= 0.0:
+                $ _enemy2_distance = hack_path_distance(hack_enemy2, hack_player, "enemy")
+                if _enemy2_distance <= (HACK_DETECT_SCAN if hack_enemy2_scan > 0.0 else HACK_DETECT):
+                    $ _enemy2_preview = hack_preview_path(hack_enemy2, hack_player, 4, "enemy")
+                    for _route_index, _route_pos in enumerate(_enemy2_preview):
+                        add Solid("#FF8A65", xsize=11, ysize=11) xpos _route_pos[0] * HACK_CELL + 46 ypos _route_pos[1] * HACK_CELL + 46 at hk_route_pulse(_route_index * 0.06 + 0.03)
+
             # Survol
             if hack_view.hover:
                 $ _hx = hack_view.hover[0] * HACK_CELL
@@ -1244,8 +1449,12 @@ screen j901_hack_screen():
 
             # Jetons
             add Transform("hk_glow_red", xysize=(250, 250)) at hk_enemy_halo_at
+            if hack_enemy2_active:
+                add Transform("hk_glow_red", xysize=(250, 250), matrixcolor=TintMatrix("#FF8A65")) at hk_enemy2_halo_at
             add Transform("hk_glow_cyan", xysize=(260, 260)) at hk_player_halo_at
             add Transform("hk_enemy", xysize=(HACK_CELL, HACK_CELL)) at hk_enemy_at
+            if hack_enemy2_active:
+                add Transform("hk_enemy", xysize=(HACK_CELL, HACK_CELL), matrixcolor=TintMatrix("#FFB06A")) at hk_enemy2_at
             add Transform("hk_player", xysize=(HACK_CELL, HACK_CELL)) at hk_player_at
 
     # Zone de clic (ne prend jamais le focus clavier)
@@ -1271,6 +1480,13 @@ screen j901_hack_screen():
         add Transform("hk_glow_red", xysize=(88, 88), xanchor=0.5, yanchor=0.5) xpos _enemy_marker[1] ypos _enemy_marker[2] at hk_pulse_fast
         text ("KAMI [_enemy_distance]" if _enemy_distance < 99 else "KAMI") style "hk_label" size 16 color "#FF3D5C" xpos _enemy_marker[1] ypos _enemy_marker[2] + 30 xanchor 0.5
 
+    if hack_enemy2_active:
+        $ _enemy2_marker = hack_screen_pos(hack_enemy2)
+        $ _enemy2_distance = hack_path_distance(hack_enemy2, hack_player, "enemy")
+        if _enemy2_marker[0]:
+            add Transform("hk_glow_red", xysize=(88, 88), xanchor=0.5, yanchor=0.5, matrixcolor=TintMatrix("#FF8A65")) xpos _enemy2_marker[1] ypos _enemy2_marker[2] at hk_pulse_fast
+            text ("KAMI-B [_enemy2_distance]" if _enemy2_distance < 99 else "KAMI-B") style "hk_label" size 16 color "#FF8A65" xpos _enemy2_marker[1] ypos _enemy2_marker[2] + 30 xanchor 0.5
+
     # ---------- Mini-carte ----------
     $ _mini_cell = 13
     $ _mini_x = HACK_VIEW_X + HACK_VIEW_W - hack_view.mini_w - 34
@@ -1287,11 +1503,13 @@ screen j901_hack_screen():
     add hack_view.minimap xpos _mini_x ypos _mini_y
     add Solid("#5CFFC0", xsize=9, ysize=9) xpos _mini_x + hack_goal[0] * _mini_cell + 2 ypos _mini_y + hack_goal[1] * _mini_cell + 2
     add Solid("#FF3D5C", xsize=9, ysize=9) xpos _mini_x + hack_enemy[0] * _mini_cell + 2 ypos _mini_y + hack_enemy[1] * _mini_cell + 2 at hk_pulse_fast
+    if hack_enemy2_active:
+        add Solid("#FF9A65", xsize=9, ysize=9) xpos _mini_x + hack_enemy2[0] * _mini_cell + 2 ypos _mini_y + hack_enemy2[1] * _mini_cell + 2 at hk_pulse_fast
     add Solid("#E4FAFF", xsize=9, ysize=9) xpos _mini_x + hack_player[0] * _mini_cell + 2 ypos _mini_y + hack_player[1] * _mini_cell + 2
 
     # ---------- En-tete ----------
-    text "INTRUSION // RESEAU DU CANON" style "hk_h1" size 31 xpos 152 ypos 40
-    text "CANAL CHIFFRE J-09  //  TRACE ACTIVE" style "hk_label" size 15 xpos 154 ypos 78
+    text hack_title style "hk_h1" size 31 xpos 152 ypos 40
+    text hack_channel style "hk_label" size 15 xpos 154 ypos 78
 
     vbox:
         xalign 0.5
@@ -1376,12 +1594,12 @@ screen j901_hack_screen():
             padding (34, 16)
             text "SIGNAL BLOQUE  //  [hack_player_stun:0.1f] S" style "hk_h2" size 30 color "#FFB1A8"
 
-    if hack_enemy_stun > 0.0 and not hack_done:
+    if (hack_enemy_stun > 0.0 or (hack_enemy2_active and hack_enemy2_stun > 0.0)) and not hack_done:
         frame:
             xalign 0.5 ypos 200
             background Frame("minijeu/hack/assets/hk_panel.png", 34, 34)
             padding (28, 12)
-            text "SENTINELLE HORS LIGNE  //  [hack_enemy_stun:0.1f] S" style "hk_h2" size 23 color "#FFA53D"
+            text ("SENTINELLES PERTURBEES" if hack_enemy2_active else "SENTINELLE HORS LIGNE  //  %.1f S" % hack_enemy_stun) style "hk_h2" size 23 color "#FFA53D"
 
     if hack_sign_time > 0.0 and hack_sign_message:
         frame:
@@ -1543,6 +1761,7 @@ screen j901_hack_retry():
 
 label j901_play_hack:
     $ hack_assist = False
+    $ hack_reset(J901_HACK_CIRCUIT, assist=False)
     call screen j901_hack_howto
     $ hack_ambient_start()
 
@@ -1556,6 +1775,27 @@ label j901_hack_retry_loop:
         if _return == "assist":
             $ hack_assist = True
         jump j901_hack_retry_loop
+
+    $ hack_ambient_stop()
+    return True
+
+
+label j710_play_hack_bonus:
+    $ hack_assist = False
+    $ hack_reset(J710_HACK_CIRCUIT, assist=False)
+    call screen j901_hack_howto
+    $ hack_ambient_start()
+
+label j710_hack_retry_loop:
+    $ hack_reset(J710_HACK_CIRCUIT, assist=hack_assist)
+    call screen j901_hack_screen
+    $ j710_hack_success = bool(_return)
+
+    if not j710_hack_success:
+        call screen j901_hack_retry
+        if _return == "assist":
+            $ hack_assist = True
+        jump j710_hack_retry_loop
 
     $ hack_ambient_stop()
     return True

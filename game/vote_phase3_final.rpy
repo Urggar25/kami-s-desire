@@ -11,6 +11,7 @@ default vote_phase3_results = []
 default vote_phase3_pending_votes = []
 default vote_phase3_tally_index = 0
 default vote_phase3_tally_done = False
+default vote_phase3_amendment_override = None
 
 init python:
     import random
@@ -92,6 +93,9 @@ init python:
 
 
     def vote_phase3_amendment_text():
+        override = getattr(store, "vote_phase3_amendment_override", None)
+        if override:
+            return override
         if "DOSSIER_PROPOSITIONS" in globals():
             prop = DOSSIER_PROPOSITIONS.get("p1_vote_commerce", {})
             if prop.get("formulation"):
