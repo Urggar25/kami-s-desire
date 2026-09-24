@@ -1230,3 +1230,11 @@ translate english 8d8e976b:
     # "La seule chose dont je me souviens, c’est mon réveil du lendemain."
     "The only thing I remember is waking up the next morning."
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/9_0_1.rpy:217
+translate english a91108f7:
+
+    # tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous venez juste de vous lever !"
+    tomas inquiet ""
+

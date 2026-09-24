@@ -1870,3 +1870,17 @@ translate portuguese a80f8d88:
     # noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
     noam "Ainda bem que nada pegou fogo. O equipamento só deve ter levado uma bela pancada. Quanto tempo até isso ficar realmente perigoso?"
 
+# TODO: Translation updated at 2026-09-04 18:16
+
+# game/scenario/5_0.rpy:478
+translate portuguese c09788b4_3:
+
+    # "Rien."
+    ""
+
+# game/scenario/5_0.rpy:811
+translate portuguese 290dd969_6:
+
+    # noam "Non."
+    noam ""
+

@@ -2822,3 +2822,17 @@ translate english 900cae6c:
     # nyra raison "Non."
     nyra raison ""
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/5_1.rpy:754
+translate english a42a5372_2:
+
+    # nyra raison "Oui."
+    nyra raison ""
+
+# game/scenario/5_1.rpy:867
+translate english 2bdf9ba4_1:
+
+    # noam inquiet "Non."
+    noam inquiet ""
+

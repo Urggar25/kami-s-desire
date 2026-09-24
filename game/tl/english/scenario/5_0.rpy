@@ -1870,3 +1870,17 @@ translate english a80f8d88:
     # noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
     noam "At least nothing caught fire. The equipment just took a hit. How long before this gets genuinely dangerous?"
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/5_0.rpy:478
+translate english c09788b4_3:
+
+    # "Rien."
+    ""
+
+# game/scenario/5_0.rpy:811
+translate english 290dd969_6:
+
+    # noam "Non."
+    noam ""
+

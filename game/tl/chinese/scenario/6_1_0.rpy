@@ -1499,3 +1499,11 @@ translate chinese 8e9d8597:
 
     # think "De la nourriture, des médicaments, du matériel. Rien qui soit censé respirer."
     think "食物、药品、器材。没有任何一样东西，本该会呼吸。"
+# TODO: Translation updated at 2026-09-04 18:48
+
+# game/scenario/6_1_0.rpy:166
+translate chinese 74615769_1:
+
+    # noam inquiet "Ryn..."
+    noam inquiet ""
+

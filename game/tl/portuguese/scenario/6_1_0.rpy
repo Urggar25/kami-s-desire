@@ -1500,3 +1500,11 @@ translate portuguese 8e9d8597:
     # think "De la nourriture, des médicaments, du matériel. Rien qui soit censé respirer."
     think "Comida, medicamentos, equipamentos. Nada que deveria estar respirando."
 
+# TODO: Translation updated at 2026-09-04 18:16
+
+# game/scenario/6_1_0.rpy:166
+translate portuguese 74615769_1:
+
+    # noam inquiet "Ryn..."
+    noam inquiet ""
+

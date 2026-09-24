@@ -2034,4 +2034,293 @@ translate english strings:
 
     # game/scenario/7_1_0_0.rpy:321
     old "Prévenir Kami."
-    new "Tell Kami."
+    new "Tell Kami."# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/7_1_0_0.rpy:117
+translate english 939371ad:
+
+    # nyra "{i}Noam ? Ouvre. Vite.{/i}"
+    nyra ""
+
+# game/scenario/7_1_0_0.rpy:159
+translate english a941b808:
+
+    # nyra raison "{i}Il fonctionne ?{/i}"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:161
+translate english 20154b55:
+
+    # noam neutre "{i}Oui. Pourquoi ?{/i}"
+    noam neutre ""
+
+# game/scenario/7_1_0_0.rpy:163
+translate english 2fc88c28:
+
+    # tomas inquiet "{i}P-Parle moins fort.{/i}"
+    tomas inquiet ""
+
+# game/scenario/7_1_0_0.rpy:165
+translate english 8b1bc755:
+
+    # noam surpris "{i}Vous venez de me réveiller en frappant comme si la station brûlait et maintenant vous me demandez de chuchoter ?{/i}"
+    noam surpris ""
+
+# game/scenario/7_1_0_0.rpy:167
+translate english 8b6e8ad6:
+
+    # iris desaccord "{i}Approche.{/i}"
+    iris desaccord ""
+
+# game/scenario/7_1_0_0.rpy:171
+translate english 78c4c5e6:
+
+    # noam inquiet "{i}Vous me faites peur.{/i}"
+    noam inquiet ""
+
+# game/scenario/7_1_0_0.rpy:173
+translate english 25e47d12:
+
+    # nyra inquiet "{i}C'est préférable. Tu comprendras plus vite.{/i}"
+    nyra inquiet ""
+
+# game/scenario/7_1_0_0.rpy:177
+translate english 54ab290c:
+
+    # nyra raison "{i}Il y a quelqu'un dans la livraison.{/i}"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:181
+translate english 8680ecd7:
+
+    # noam surpris "{i}Quelqu'un ?{/i}"
+    noam surpris ""
+
+# game/scenario/7_1_0_0.rpy:183
+translate english 3b08dfd4:
+
+    # iris colere "{i}Moins fort !{/i}"
+    iris colere ""
+
+# game/scenario/7_1_0_0.rpy:185
+translate english 72e744e7:
+
+    # noam inquiet "{i}Quelqu'un comment ?{/i}"
+    noam inquiet ""
+
+# game/scenario/7_1_0_0.rpy:187
+translate english b1b42a5e:
+
+    # tomas panne "{i}Une... une personne. Dans un conteneur.{/i}"
+    tomas panne ""
+
+# game/scenario/7_1_0_0.rpy:189
+translate english 1384072a:
+
+    # noam surpris "{i}Vous êtes sûrs ?{/i}"
+    noam surpris ""
+
+# game/scenario/7_1_0_0.rpy:191
+translate english 960527bb:
+
+    # nyra raison "{i}Nous avons vu une main entre deux caisses. Iris l'a touchée.{/i}"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:193
+translate english 9f60cc39:
+
+    # iris inquiet "{i}Elle est glacée. Je ne sais même pas si elle est encore consciente.{/i}"
+    iris inquiet ""
+
+# game/scenario/7_1_0_0.rpy:195
+translate english e95817a8:
+
+    # noam determine "{i}Pourquoi vous ne l'avez pas sortie ?{/i}"
+    noam determine ""
+
+# game/scenario/7_1_0_0.rpy:197
+translate english 14042de2:
+
+    # nyra colere "{i}Parce qu'il y a trois caméras dans le sas et que nous ignorons si Kami l'a déjà repérée.{/i}"
+    nyra colere ""
+
+# game/scenario/7_1_0_0.rpy:199
+translate english 0b07e2b2:
+
+    # tomas inquiet "{i}On a replacé la bâche exactement comme elle était. Enfin... je crois.{/i}"
+    tomas inquiet ""
+
+# game/scenario/7_1_0_0.rpy:201
+translate english 9494633f:
+
+    # iris colere "{i}Tu crois ?{/i}"
+    iris colere ""
+
+# game/scenario/7_1_0_0.rpy:203
+translate english 8ca62569:
+
+    # tomas panne "{i}J'ai fait au mieux !{/i}"
+    tomas panne ""
+
+# game/scenario/7_1_0_0.rpy:205
+translate english b47617ba:
+
+    # noam inquiet "{i}Qui d'autre est au courant ?{/i}"
+    noam inquiet ""
+
+# game/scenario/7_1_0_0.rpy:207
+translate english 078c2773:
+
+    # nyra neutre "{i}Personne. La livraison est arrivée plus tôt que prévu. Nous étions les premiers dans le sas.{/i}"
+    nyra neutre ""
+
+# game/scenario/7_1_0_0.rpy:209
+translate english 2cd0bbfb:
+
+    # iris determine "{i}Mais elle ne tiendra pas longtemps dans cet état. Il faut y retourner maintenant.{/i}"
+    iris determine ""
+
+# game/scenario/7_1_0_0.rpy:211
+translate english 79d246c7:
+
+    # noam determine "{i}Alors on y va.{/i}"
+    noam determine ""
+
+# game/scenario/7_1_0_0.rpy:300
+translate english bdb2473d:
+
+    # noam reflechit "{i}Et si... Si on la cachait ?{/i}"
+    noam reflechit ""
+
+# game/scenario/7_1_0_0.rpy:302
+translate english c9792af4:
+
+    # iris colere "{i}La cacher ?! Mais tu veux là cacher où ?{/i}"
+    iris colere ""
+
+# game/scenario/7_1_0_0.rpy:304
+translate english 95f6a269:
+
+    # nyra colere "{i}Chut, parle moins fort ! Si les caméras nous entendent on est foutu !{/i}"
+    nyra colere ""
+
+# game/scenario/7_1_0_0.rpy:306
+translate english 84655954:
+
+    # noam reflechit "{i}Il y a des caméras partout...{/i}"
+    noam reflechit ""
+
+# game/scenario/7_1_0_0.rpy:307
+translate english 9a24b1bb:
+
+    # noam reflechit "{i}Dans une chambre ! On a les brouilleurs, ça devrait le faire, non ?{/i}"
+    noam reflechit ""
+
+# game/scenario/7_1_0_0.rpy:309
+translate english 0b54ebd5:
+
+    # iris reflechit "{i}Dans la chambre de qui tu veux mettre un corps à moitié congelé ?{/i}"
+    iris reflechit ""
+
+# game/scenario/7_1_0_0.rpy:313
+translate english 10301713:
+
+    # iris colere "{i}Raaah ! Ok, je peux m'en occuper si tu veux la garder.{/i}"
+    iris colere ""
+
+# game/scenario/7_1_0_0.rpy:314
+translate english 30b2c016:
+
+    # iris determine "{i}Mais il faut décider maintenant. Soit nous prévenons Kami, soit nous la cachons.{/i}"
+    iris determine ""
+
+# game/scenario/7_1_0_0.rpy:316
+translate english 25afa32d:
+
+    # tomas inquiet "{i}Tu crois vraiment qu'on peut la cacher ? Parce que ça signifie mentir à Kami. Et manipuler les caméras. Et les registres de livraison.{/i}"
+    tomas inquiet ""
+
+# game/scenario/7_1_0_0.rpy:318
+translate english a238cf3a:
+
+    # nyra raison "{i}Et si on la prévient on sait très bien comment elle va finir...{/i}"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:320
+translate english bf25fb1d:
+
+    # iris colere "{i}Pendant que nous discutons, cette fille gèle. On a pas le temps de débattre.{/i}"
+    iris colere ""
+
+# game/scenario/7_1_0_0.rpy:535
+translate english fe8d9d9e:
+
+    # nyra raison "Tu préfères demander l'autorisation ? Tu as un meilleur plan ?"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:722
+translate english b3d35381:
+
+    # tomas inquiet "{i}On l'a fait ?{/i}"
+    tomas inquiet ""
+
+# game/scenario/7_1_0_0.rpy:724
+translate english e8aced02:
+
+    # nyra raison "{i}Ne regarde pas la porte d'Iris.{/i}"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:726
+translate english 4274a8c0:
+
+    # tomas inquiet "{i}Je ne la regardais pas.{/i}"
+    tomas inquiet ""
+
+# game/scenario/7_1_0_0.rpy:728
+translate english 040a873d:
+
+    # nyra raison "{i}Tu la fixes depuis que les lumières sont revenues.{/i}"
+    nyra raison ""
+
+# game/scenario/7_1_0_0.rpy:730
+translate english 5b6af487:
+
+    # noam determine "{i}On se sépare. On agit normalement.{/i}"
+    noam determine ""
+
+# game/scenario/7_1_0_0.rpy:732
+translate english 35dd5bfc:
+
+    # tomas panne "{i}Normalement. Oui. Je suis parfaitement normal.{/i}"
+    tomas panne ""
+
+# game/scenario/7_1_0_0.rpy:734
+translate english d68ce167:
+
+    # nyra taquin "{i}Tu ressembles à quelqu'un qui vient de cacher un cadavre.{/i}"
+    nyra taquin ""
+
+# game/scenario/7_1_0_0.rpy:736
+translate english 95c8d96f:
+
+    # tomas inquiet "{i}Ce n'est pas un cadavre !{/i}"
+    tomas inquiet ""
+
+# game/scenario/7_1_0_0.rpy:738
+translate english 0ad8181b:
+
+    # nyra colere "{i}Moins fort.{/i}"
+    nyra colere ""
+
+# game/scenario/7_1_0_0.rpy:742
+translate english 160044da:
+
+    # noam inquiet "{i}Kael est encore dans le sas.{/i}"
+    noam inquiet ""
+
+# game/scenario/7_1_0_0.rpy:744
+translate english d5e6270a:
+
+    # nyra raison "{i}Il nous rejoindra. Si tu retournes le chercher maintenant, tu attireras l'attention.{/i}"
+    nyra raison ""
+

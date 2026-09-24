@@ -2820,3 +2820,17 @@ translate portuguese strings:
     old "Aller se coucher."
     new ""
 
+# TODO: Translation updated at 2026-09-04 18:16
+
+# game/scenario/5_1.rpy:754
+translate portuguese a42a5372_2:
+
+    # nyra raison "Oui."
+    nyra raison ""
+
+# game/scenario/5_1.rpy:867
+translate portuguese 2bdf9ba4_1:
+
+    # noam inquiet "Non."
+    noam inquiet ""
+

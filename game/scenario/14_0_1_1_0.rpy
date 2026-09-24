@@ -1,672 +1,531 @@
 label _14_0_1_1_0_REVEIL_CHAMBRE:
 
-    "La nuit passe lentement. J'ai du mal à dormir."
-    "L'annonce de Kami finit par retentir mais je ne souhaite pas me lever."
-    "Alors j'attends, je me repose. Je ne veux voir personne."
+    "La nuit a été mauvaise, encore une fois. J'ai dormi par morceaux, sans réussir à décrocher complètement."
+    "Quand l'annonce de Kami retentit dans les couloirs, je l'entends très bien, mais je reste couché."
+    "Je n'ai aucune envie de croiser les autres, et encore moins de faire semblant que tout va bien."
 
     pause 1.0
 
     scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
-    "Des coups légers mais insistants contre la porte me tirent du sommeil."
-    "Je reste immobile un long moment, espérant que la personne finisse par partir."
+    "Je finis par me rendormir quelques minutes avant que des coups légers contre ma porte me tirent à nouveau du sommeil."
 
-    nyra inquiet "Noam ? Tu es là ? C’est Nyra."
-    nyra inquiet "Je peux entrer ?"
+    nyra inquiet "Noam ? C'est Nyra."
+    nyra hesitation "Je peux entrer ?"
 
-    "Je ne réponds pas."
-    "Mon corps est lourd. Mes yeux brûlent."
-    "J’ai l’impression d’avoir dormi à peine une heure."
+    "Je garde les yeux fermés en espérant qu'elle comprenne le message toute seule."
 
     play sound sfx_knock volume 0.9
 
-    nyra hesitation "Noam… s’il te plaît."
-    nyra raison "C’est important."
+    nyra raison "Je sais que tu es là. J'en ai pour deux minutes, promis."
 
-    "Important."
-    "Évidemment."
-    "Tout est toujours important ici."
-
-    "Je ferme les yeux et expire lentement."
-    "Aucune partie de moi n’a envie de se lever."
-    "Encore moins de parler."
-
-    play sound sfx_knock volume 0.8
-
-    nyra inquiet "Je sais que tu es réveillé."
+    "Je souffle dans mon oreiller avant de me redresser difficilement."
 
     scene bg_chambre at adaptive_fullscreen with fade
 
-    "Je serre la mâchoire."
-    "Elle a raison. Et ça m’énerve."
+    noam fatigue "Entre."
 
-    noam fatigue "... Entre."
-
-    "Je me lève avec difficulté."
-    "Mes jambes répondent mal, comme si elles appartenaient à quelqu’un d’autre."
-
-    "Je déverrouille la porte."
-    "Elle s’ouvre doucement."
-
-    "Nyra entre sans précipitation."
-    "Toujours droite. Toujours calme."
-    "Mais son regard est plus grave que d’habitude."
+    "Je déverrouille la porte et retourne m'asseoir sur le lit pendant qu'elle entre."
 
     $ showGroup([
         ("noam", "fatigue", 0.25),
         ("nyra", "raison", 0.75),
     ])
 
-    nyra neutre "Merci."
-    nyra raison "Je ne vais pas te déranger longtemps."
+    nyra neutre "Tu as raté l'annonce de ce matin."
+    noam fatigue "J'avais compris."
+    nyra raison "J'en doute, sinon tu serais déjà sorti."
 
-    "Elle referme la porte derrière elle avec soin."
-    "Puis elle reste debout, les mains jointes devant elle."
+    noam reflexion "Pourquoi ?"
 
-    nyra neutre "Tu n’es pas venu à l’annonce de ce matin."
+    nyra sourire "La livraison est arrivée."
 
-    noam fatigue "Non."
+    "Je relève enfin les yeux vers elle."
 
-    nyra raison "Tu savais qu’il y en avait une."
+    noam surpris "La nourriture ?"
+    nyra sourire "Oui. La vraie."
+    nyra neutre "Goumi a récupéré les caisses ce matin. Il paraît qu'Elen a failli l'embrasser en voyant du pain."
 
-    noam hesitation "Oui, mais..."
+    "Malgré moi, un début de sourire me vient."
 
-    nyra reflexion "Mais tu n’es pas venu."
+    noam fatigue "Je peux la comprendre."
+    nyra raison "Tout le monde peut la comprendre. On était à deux cafés de commencer à se manger entre nous."
 
-    noam fatigue "J’avais besoin de dormir."
+    noam sourire "Mara aurait commencé par Julian."
+    nyra taquin "Probablement parce qu'il parle trop."
 
-    nyra neutre "Tout le monde a besoin de dormir, Noam."
+    "Le sourire disparaît presque aussitôt. Nyra aussi redevient plus sérieuse."
 
-    "Je n’ai rien à répondre à ça."
+    nyra raison "Je ne suis pas venue uniquement pour t'annoncer qu'on a retrouvé des glucides."
+    noam fatigue "Évidemment."
 
-    nyra raison "Tout le monde l’a remarqué."
+    nyra reflexion "Le vote de demain concerne [codex_dialogue_link('archive', 'ARCHIVE')]."
+    nyra raison "La proposition est simple sur le papier : rendre consultables par tous les citoyens toutes les informations qu'ARCHIVE détient."
 
-    noam inquiet "... Tout le monde ?"
+    noam reflexion "Toutes ?"
+    nyra raison "Toutes."
 
+    noam inquiet "Les rapports sur l'extérieur, les décisions de Kami, les anciennes données..."
     nyra neutre "Oui."
+    noam reflexion "Alors c'est une bonne chose."
 
-    "Elle marque une pause, comme pour me laisser intégrer la gravité de la situation."
+    nyra hesitation "En partie."
 
-    nyra raison "Noam… je vais être franche avec toi."
-    nyra triste "Parce que tu dois l’entendre."
-    nyra raison "Ton comportement commence à inquiéter beaucoup de monde."
-    nyra reflexion "Et pas seulement pour ton bien."
+    "Je la regarde plus attentivement."
 
-    "Je sens la colère monter d’un coup."
+    noam inquiet "Qu'est-ce qui coince ?"
+    nyra raison "Quand ils disent toutes les informations... Qu'est-ce que ça concerne ?"
 
-    noam colere "Inquiéter ?! Je vous inquiète ?!"
-    noam colere "C’est ça que vous racontez dans mon dos ?!"
+    "L'idée de transparence devient soudain beaucoup moins confortable."
 
-    "Nyra ne bronche pas."
-    "Elle reste parfaitement calme, ce qui m’énerve encore plus."
+    nyra reflexion "Je pense qu'on a besoin des informations sur l'extérieur."
+    nyra colere "Mais est-ce que c'est la solution ?!"
 
-    nyra raison "Je ne dis pas que c’est vrai. Je te dis ce que les autres pensent."
-    nyra inquiet "Et franchement… vu comment tu te comportes depuis deux jours, je les comprends un peu."
+    "Un silence plus léger s'installe quelques secondes, puis Nyra croise les bras."
 
-    "Je me mords violemment la lèvre."
-    "La colère redescend aussi vite qu’elle est montée, laissant derrière elle un goût amer de regret."
+    nyra raison "Mais on aura tout le temps pour en parler. Il y a autre chose."
+    nyra inquiet "Ryn pose des questions sur toi."
 
-    noam "... Désolé."
-    noam fatigue "Je… je suis fatigué. Vraiment fatigué."
+    noam inquiet "Quel genre de questions ?"
+    nyra raison "Si tu avais déjà eu des absences avant le Conclave. Si tu entendais des choses. Si ton comportement avait déjà changé brutalement avant ces derniers jours."
 
-    nyra "Je sais."
+    noam colere "Il fait mon diagnostic maintenant ?"
+    nyra neutre "Non. Il cherche une explication à ce qu'il s'est passé lors du dernier vote."
 
-    "Elle s’approche lentement et s’assoit sur le bord du lit, gardant une distance respectueuse."
+    "Sa réponse me coupe un peu dans mon élan."
 
-    nyra reflexion "Le prochain vote aura lieu demain, au cours du quinzième jour."
-    nyra raison "Le sujet est : « Toute information détenue par [codex_dialogue_link('archive', 'ARCHIVE')] devient consultable par tout citoyen. »"
+    nyra inquiet "Je ne te demande pas de faire confiance à tout le monde. Je te demande juste d'éviter de leur donner davantage de raisons de penser que tu deviens imprévisible."
+    nyra triste "Je préfère être désagréable maintenant que te regarder t'isoler complètement."
 
-    noam inquiet "Enfin… On va enfin pouvoir savoir ce qui se passe vraiment dehors ?"
+    "Elle se relève."
 
-    nyra neutre "C’est ce que beaucoup espèrent."
-    nyra raison "Si ça passe, on aura accès à toutes les données qu’[codex_dialogue_link('archive', 'ARCHIVE')] a accumulées depuis le début."
+    nyra neutre "Va manger. Ça ne réglera rien, mais tu réfléchiras mieux avec autre chose que du café dans le ventre."
+    noam fatigue "Tu parles comme Goumi."
+    nyra sourire "C'est probablement la faim."
 
-    noam reflexion "Ça veut dire… les rapports sur l’extérieur, les vraies raisons de notre présence ici, ce qui est arrivé au monde…"
+    "Elle ouvre la porte puis s'arrête une seconde."
 
-    nyra determine "Exactement. On arrêterait enfin de tourner en rond avec des bouts d’informations."
+    nyra inquiet "Et Noam... demain, on aura besoin de toi. Alors viens."
+    noam reflexion "Compris."
 
-    "L’idée me redonne un peu d’énergie, malgré la fatigue."
-
-    nyra reflexion "Kami présente ça comme une mesure de transparence totale."
-    nyra raison "Et pour une fois, je suis assez d’accord avec elle. On a besoin de savoir."
-    nyra triste "On a besoin de mettre fin à la Censure."
-
-    noam reflexion "Ouais… Moi aussi je trouve que c’est une bonne chose."
-
-    nyra neutre "Beaucoup de monde est dans le même état d’esprit."
-    nyra raison "Les gens veulent des réponses concrètes, pas juste des discours."
-
-    "Elle marque une courte pause, puis reprend d’une voix plus basse :"
-
-    nyra determine "Mais ce n’est pas la seule raison de ma venue."
-
-    noam inquiet "Je m’en doutais."
-
-    nyra raison "Noam, écoute-moi attentivement."
-    nyra raison "Si tu continues comme ça, si tu t’isoles, si tu fais des crises en public, si tu rates les votes…"
-    nyra determine "Les gens ne vont plus te voir comme quelqu’un de fatigué."
-    nyra neutre "Ils vont te voir comme un danger."
-    nyra raison "Et dans un endroit comme celui-ci… les dangers, on finit par les mettre à l’écart."
-
-    "Ses mots sont calmes, presque doux, mais ils portent comme des coups précis."
-
-    noam "... Tu es en train de me menacer ?"
-
-    nyra "Non. Je te mets en garde."
-    nyra raison "Parce que je pense encore que tu peux te ressaisir."
-    nyra raison "Mais si tu continues à t’enfoncer… personne ne pourra plus te défendre."
-
-    "Je baisse les yeux sur mes mains. Elles tremblent légèrement."
-
-    nyra raison "Réfléchis bien à ce que tu veux faire demain pour le vote."
-    nyra raison "Et surtout… arrête de te comporter comme si tu étais déjà seul contre tous."
-    nyra neutre "Parce que si tu continues, c’est exactement ce qui va arriver."
-
-    "Elle se lève lentement, lisse sa jupe et se dirige vers la porte."
-
-    nyra "Je te laisse te reposer."
-    nyra inquiet "Mais Noam… fais attention à toi."
-
+    "Elle sort."
     hide nyra with dissolve
 
-    "Elle sort sans un bruit supplémentaire."
+    "Je reste assis quelques secondes avant que mon ventre décide à ma place que la conversation est terminée."
 
-    "Je reste assis sur mon lit, le regard vide."
+    think "De la nourriture. Enfin. Pour une fois, j'ai une raison simple de sortir de cette chambre."
 
-    think "Même Nyra… même elle commence à me voir comme un problème."
-    think "Et le pire… c’est que je ne peux même pas lui en vouloir."
-
-    "Je me rallonge, fixant le plafond fissuré."
-
-    think "Demain… un vote pour ouvrir toutes les archives."
-    think "Enfin la possibilité d’avoir des réponses sur le monde extérieur."
-
-    think "Et moi… je ne sais même plus qui je suis vraiment."
-
-    pause 2.5
+    pause 1.5
 
     jump _14_0_1_1_0_CAFETERIA_REJET
 
+
 label _14_0_1_1_0_CAFETERIA_REJET:
+
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_73
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 2.5
 
-    "Quand j'entre dans la cafétéria, le changement est immédiat et brutal."
-    "Ce n'est plus un simple silence gêné comme hier."
-    "C'est un mur."
-    "Plusieurs personnes arrêtent de manger en me voyant."
-    "D'autres baissent ouvertement la voix."
-    "Quelques-unes tournent carrément le dos."
+    "J'entends les bruits de la cafétéria avant même d'ouvrir la porte."
+    "Des couverts claquent, des chaises bougent, quelqu'un rit beaucoup trop fort. Après le silence des derniers jours, ça paraît presque anormal."
+    "Quand j'entre, je comprends immédiatement pourquoi."
+    "Les tables sont enfin remplies de nourriture. Rien de luxueux, mais il y a du pain, des plats chauds, des fruits et assez de portions pour que personne ne compte les miettes."
 
-    think "Ils ne font même plus semblant."
     $ showGroup([
-        ("mara", "colere", 0.15),
-        ("elen", "triste", 0.35),
+        ("mara", "neutre", 0.15),
+        ("elen", "sourire", 0.35),
         ("iris", "inquiet", 0.55),
-        ("julian", "hesitation", 0.75),
+        ("julian", "sourire", 0.75),
         ("sael", "mefiant", 0.90),
     ])
 
-    "Je me dirige vers le comptoir."
-    "Le trajet me paraît interminable."
+    elen joie "Noam !! REGARDE !!"
+
+    "Elen me fait signe avec une tranche de pain à moitié mangée. Elle a l'air absurdement heureuse."
+
+    elen joie "Il y a du pain ! Et des pommes ! Et Goumi a fait un truc chaud avec des patates !"
+    julian sourire "Faites la taire. Elle fait l'inventaire depuis vingt minutes."
+    elen colere "Mais c'est trooop bon les patates !!"
+    mara sourire "Elle en a déjà mangé trois portions."
+    elen joie "J'ai FAIM !"
+    julian taquin "Nous aussi. On ne fait juste pas une déclaration d'amour à chaque bouchée."
+    elen taquin "Tu n'as donc aucune sensibilité."
+
+    "Même Mara laisse échapper un petit rire."
+
+    "Puis plusieurs regards se posent sur moi, et l'ambiance retombe juste assez pour que je le remarque."
+    "Je vais jusqu'au comptoir."
+
     goumi "Bonjour Noam."
-    "Même Goumi semble plus froid que d'habitude."
-    goumi "Comme d'habitude ?"
-    noam fatigue "Oui... merci."
-    goumi "Mange chaud."
-    goumi "Tu en as besoin."
-    noam fatigue "Je vais essayer."
+    noam fatigue "Salut. Il reste quoi ?"
+    goumi "Aujourd'hui ? Tout ce que tu veux."
+    goumi "La livraison est arrivée peu après l'annonce de Kami. J'ai rarement vu douze personnes aussi heureuses devant des caisses de légumes."
 
-    "Je prends le plateau à deux mains."
-    "Derrière moi, les murmures recommencent."
-    mara colere "Regardez qui ose encore se montrer."
-    "Mara est assise à une table centrale."
-    "Elle ne baisse même pas la voix."
+    noam sourire "Elen a l'air au bord des larmes."
+    goumi "Le monde entier a dû apprécier quand elle a commencé à embrasser une tomate..."
 
-    mara colere "Après ce qu'il a fait hier, il a encore le culot de venir manger avec nous ?"
-    elen triste "Mara..."
-    mara agace "Quoi ?"
-    mara colere "C'est la vérité."
-    julian hesitation "On peut peut-être éviter de lui tomber dessus dès qu'il arrive."
-    mara rire_profond "Bien sûr."
-    mara colere "On devrait lui souhaiter bon appétit, peut-être ?"
-    iris inquiet "Mara, baisse la voix."
-    mara colere "Pourquoi ?"
-    mara colere "On n'a plus de brouilleurs."
-    mara colere "Kami nous entend déjà tous."
-    sael mefiant "Ce n'est pas une raison pour hurler."
-    mara agace "Non."
-    mara colere "C'est une raison pour être furieuse."
-    noam fatigue "Je suis juste venu manger."
-    mara colere "Oui, voilà."
-    mara colere "Tu viens juste manger."
-    mara colere "Après nous avoir tous traités de traîtres."
-    noam hesitation "Je n'ai pas..."
-    mara colere "Si."
-    mara colere "Tu l'as fait."
-    mara colere "Tu as pété un câble."
-    mara colere "Tu as quitté le débat."
-    mara colere "Et maintenant on n'a plus rien pour se protéger."
-    elen inquiet "Mara, s'il te plaît..."
-    mara colere "Non, Elen."
-    mara colere "Je ne vais pas sourire pour qu'il se sente mieux."
-    iris colere "Personne ne te demande de sourire."
-    mara agace "Alors quoi ?"
-    mara colere "Je dois juste faire semblant que tout va bien ?"
-    julian inquiet "Personne ne dit que tout va bien."
-    mara colere "Parfait."
-    mara colere "Alors on peut dire les choses."
-    mara colere "A cause de lui, on est tous à poil devant Kami."
-    "Je serre le plateau plus fort."
-    "Mes doigts me font mal."
-    noam colere "Ce n'était pas à cause de moi."
-    mara colere "Ah non ?"
-    noam colere "Je n'ai pas voté contre tout seul."
-    "La table se fige."
-    "Même Mara met une seconde à répondre."
-    mara colere_noire "Tu veux vraiment repartir là-dessus ?"
-    noam fatigue "Non."
-    mara colere "Alors tais-toi."
-    iris colere "Mara."
-    mara agace "Quoi encore ?"
-    iris colere "Tu vas trop loin."
-    mara colere "Et lui, il est allé où hier ?"
-    "Iris ne répond pas tout de suite."
-    "Son silence me fait plus mal que les cris de Mara."
-    noam fatigue "Laisse tomber."
-    elen triste "Noam..."
-    noam fatigue "C'est bon."
-    "Je vais m'asseoir à une table isolée."
-    "Personne ne m'arrête."
-    "Personne ne m'invite non plus."
-    "Le plateau touche la table dans un bruit sec."
-    think "Hier, ils me regardaient avec colère."
-    think "Aujourd'hui, ils me regardent avec méfiance."
-    think "Demain... ce sera probablement avec peur."
-    "Je prends ma fourchette."
-    "Je la repose presque aussitôt."
-    mara mefiant "Je ne lui fais plus confiance."
-    elen triste "On a entendu."
-    mara colere "Je le redis parce que personne n'a le courage de l'admettre."
-    julian hesitation "Ce n'est pas une question de courage."
-    mara colere "Si."
-    mara colere "A un moment, il faut regarder les choses en face."
-    iris inquiet "Il est juste à côté."
-    mara agace "Je sais."
-    mara colere "Et je veux qu'il entende."
-    noam fatigue "J'entends."
-    mara colere "Parfait."
-    "Sael se lève."
-    "Elle avance jusqu'à ma table."
-    sael mefiant "Noam."
+    elen joie "Elle était très belle ! Et très bonne aussi !"
+
+    "Je tourne la tête vers elle, surpris qu'elle ait entendu."
+
+    julian rire "Je confirme. Il y a eu un moment très intime entre elles."
+    elen colere "Ah ! Jaloux ! Mange et tais-toi."
+
+    "Goumi pose devant moi une assiette fumante."
+
+    goumi "Tu devrais manger pendant que c'est chaud."
+    noam fatigue "Ouais. Pas besoin de me convaincre aujourd'hui."
+
+    "L'odeur suffit à me rappeler à quel point j'avais faim."
+    "Je prends le plateau et cherche une place."
+
+    mara mefiant "Tu peux t'asseoir là."
+
+    "Je m'arrête. Mara désigne le bout de leur table sans sourire."
+
+    noam surpris "Sérieusement ?"
+    mara agace "Ne me fais pas regretter d'avoir été civilisée pendant deux secondes."
+
+    iris fatigue "Assieds-toi avant qu'elle change d'avis."
+
+    "Je m'installe à distance raisonnable. Personne ne me souhaite la bienvenue, mais personne ne se lève non plus."
+    "Pendant quelques minutes, la faim gagne sur tout le reste."
+    "On mange presque en silence, et pour la première fois depuis longtemps ce silence n'a rien de politique."
+
+    elen joie "C'est vraiment trop trop trop bon. Il manque juste un tout petit peu de sel."
+
+    "Elen commence à prendre un pot avec du sel fin et à en verser de grosses cuillères."
+
+    sael mefiant "Tu pourrais me le passer après ?"
+
+    mara agace "Je vais quand même te dire un truc, Noam."
+    iris fatigue "Évidemment."
+
+    mara mefiant "L'autre coup, tu nous as traités comme si on était tous prêts à te trahir."
+
+    "Je repose ma fourchette."
+
+    mara agace "Je dis pas ça pour revenir là-dessus. Personne n'a rien compris à ce qui t'est arrivé."
+    mara colere "Je veux savoir si demain tu vas encore décider que tout le monde est ton ennemi en plein milieu du vote."
+
+    noam hesitation "Je ne sais pas ce qui va se passer demain."
+
+    elen hesitation "Mara... Tu as toute la journée pour parler des trucs chiants !"
+    elen joie "Laisse-nous manger tranquillement !"
+
+    "Mara la regarde. Elen serre son morceau de pain contre elle comme si quelqu'un risquait de lui reprendre."
+
+    mara fatigue "Mouais... On va d'abord attendre d'avoir mangé tout ça."
+
+    "Un vrai rire circule cette fois. Court, mais réel."
+    "Je souris à peine avant de croiser le regard de Sael. Elle n'a pas ri."
+
+    sael mefiant "Noam. Quand tu auras fini, viens dans ma chambre."
     noam inquiet "Quoi ?"
-    sael raison "Viens dans ma chambre après."
-    sael mefiant "J'ai besoin de te parler."
-    noam reflexion "De quoi ?"
-    sael mefiant "Pas ici."
-    noam fatigue "Je ne suis pas sûr d'avoir envie."
-    sael determine "Ce n'était pas vraiment une invitation."
-    "Je relève les yeux vers elle."
-    noam inquiet "C'est censé me rassurer ?"
-    sael raison "Non."
-    sael mefiant "C'est censé être clair."
-    iris inquiet "Sael..."
-    sael mefiant "Je ne lui veux pas de mal."
-    mara rire_profond "Toujours bon signe quand quelqu'un précise ça."
-    sael colere "Tais-toi."
-    mara agace "Oh, l'ambiance revient."
-    sael raison "Après manger."
-    sael mefiant "Ne tarde pas."
-    "Elle retourne vers la sortie sans attendre de réponse."
+
+    iris inquiet "Hein ? Pourquoi ?"
+    sael raison "Je veux discuter tranquillement avec toi. Sur... Ce que tu dis avoir vu."
+
+    think "Elle est au courant de quelque chose ?!"
+
+    noam inquiet "Tu-Tu sais quelque chose ?"
+
+    sael determine "Ne me fais pas répêter. On en parlera dans ma chambre."
+
+    mara agace "Sael qui se met à inviter les garçons dans sa chambre ? C'était pas dans mon bingo ça."
+
+    "Sael se lève avec son assiette presque intacte."
+
+    elen surpris "Tu ne finis pas ? Me dis pas que t'as pas faim ?!"
+
+    sael neutre "Tu la veux ?"
+    elen joie "Ouaiiiis ! Je veux plus jamais devoir attendre pour manger !"
+    elen sourire "Faut faire des réserves !"
+
+    "Sael lui tend son assiette. Elen se jette littéralement dessus."
 
     hide sael with dissolve
 
-    think "Même quand elle parle calmement, j'entends une menace."
-    "Quelques minutes passent."
-    "Ou peut-être moins."
-    "Je ne sais plus."
-    "Iris finit par s'approcher."
-    "Elle reste debout à côté de ma table."
-    iris inquiet "Noam..."
-    noam fatigue "Tu viens aussi me faire la leçon ?"
-    iris colere "Ne commence pas."
-    noam fatigue "Je suis sérieux."
-    iris fatigue "Moi aussi."
-    iris inquiet "Tu ne peux pas continuer comme ça."
-    noam fatigue "Comme quoi ?"
-    iris inquiet "Comme si tout le monde était contre toi."
-    iris inquiet "Comme si tu étais déjà seul."
-    iris inquiet "Comme si tu avais déjà perdu."
-    noam fatigue "Ce n'est pas complètement faux."
-    iris colere "Si tu dis ça, ça va devenir vrai."
-    noam inquiet "Les autres parlent, c'est ça ?"
-    iris hesitation "Oui."
-    noam fatigue "Ils disent quoi ?"
-    iris triste "Tu le sais déjà."
-    noam colere "Dis-le."
-    iris inquiet "Certains disent que tu deviens dangereux."
-    noam rire "Dangereux."
-    iris colere "Ne ris pas."
-    noam fatigue "Je ne sais plus quoi faire d'autre."
-    iris triste "Noam..."
-    noam fatigue "Je suis celui qui a peur de tout le monde."
-    noam fatigue "Et c'est moi le danger."
-    iris inquiet "Tu as accusé tout le monde."
-    iris inquiet "Tu as quitté le débat."
-    iris inquiet "Tu rates les annonces."
-    iris inquiet "Tu t'isoles."
-    iris inquiet "Tu ne dors plus."
-    noam fatigue "Merci pour le résumé."
-    iris colere "Arrête."
-    noam fatigue "D'accord."
-    iris triste "Je ne pense pas que tu sois un monstre."
-    iris inquiet "Mais je ne sais plus comment t'aider si tu ne nous parles pas."
-    noam hesitation "J'ai essayé de parler."
-    iris fatigue "Non."
-    iris fatigue "Tu as explosé."
-    noam colere "Parce que personne n'écoutait."
-    iris colere "Et tu crois qu'ils vont mieux écouter maintenant ?"
-    "Je baisse les yeux."
-    iris fatigue "Voilà."
-    noam fatigue "Donc je fais quoi ?"
-    iris inquiet "Tu manges."
-    iris inquiet "Tu dors."
-    iris inquiet "Tu arrêtes de disparaître."
-    iris inquiet "Et tu évites de courir vers les gens qui te regardent comme un problème à régler."
-    noam reflexion "Tu parles de Sael ?"
-    iris hesitation "Oui."
-    noam inquiet "Qu'est-ce qu'elle t'a dit ?"
-    iris inquiet "Rien de clair."
-    iris fatigue "Des histoires de signes."
-    iris inquiet "De morts qui ne dorment pas."
-    iris inquiet "De choses qui restent accrochées aux vivants."
-    noam fatigue "Génial."
-    iris colere "Je suis sérieuse."
-    noam fatigue "Moi aussi."
-    noam fatigue "C'est juste que ma vie devient débile."
-    iris taquin "Elle était déjà débile avant."
-    iris fatigue "Là, elle devient dangereuse."
-    "Un silence tombe entre nous."
-    iris inquiet "Promets-moi de faire attention."
+    "Sael quitte la cafétéria sans rien ajouter."
+
+    iris inquiet "Je n'aime pas vraiment ça."
+    iris hesitation "Elle m'a posé plein de questions bizarres sur toi hier."
+
+    mara rire "Dis surtout que t'es jalouse, ouais !"
+
+    iris blase "Hein ?! Mais d'où tu sors ça toi !"
+    iris colere "Pourquoi je serais jalouse ? J'en ai rien à faire de Noam !"
+
+    iris gene "Euh... Enfin... C'est-C'est pas vraiment ce que je voulais dire."
+
+    iris inquiet "Mais sinon, je suis sérieuse pour le reste. Si elle commence à devenir étrange, pars."
     noam fatigue "Je ferai attention."
-    iris colere "Ce n'est pas une promesse."
-    noam fatigue "C'est tout ce que j'ai."
-    iris triste "Tu es vraiment insupportable quand tu vas mal."
+    iris colere "Non, ça c'est ce que tu dis quand tu comptes faire exactement l'inverse."
+    noam sourire "Je ferai très attention ?"
+    iris blase "Tu m'épuises."
+
+    "Elle retourne à son assiette en levant les yeux au ciel. Je profite du calme retrouvé pour manger, et pendant quelques minutes personne ne parle de vote, de brouilleurs ou de ce que j'ai pu voir dans les couloirs."
+    "Elen, elle, continue de récupérer tout ce qui passe à portée de main avec une efficacité assez terrifiante."
+
+    elen joie "Quelqu'un veut sa pomme ?"
+    julian sourire "Tu viens d'en manger deux."
+    mara sourire "Donnez-lui la pomme avant qu'elle commence à nous regarder comme hier."
+    elen colere "J'allais pas vous manger !"
+    julian taquin "C'est exactement ce que dirait quelqu'un qui allait nous manger."
+
+    "Elen lui lance un morceau de pain. Julian l'évite de justesse avant de le ramasser sur la table."
+
+    julian rire "Gaspillage ! Crime contre l'humanité après vingt-quatre heures de famine !"
+    goumi "Je confirme."
+    elen sourire "Mange-le alors."
+
+    "Je termine mon assiette beaucoup plus vite que prévu. Mon ventre est plein pour la première fois depuis deux jours, mais la demande de Sael reste coincée quelque part au fond de ma tête."
+
+    iris inquiet "Tu vas vraiment y aller ?"
+    noam reflexion "Elle dit qu'elle sait quelque chose sur ce que j'ai vu."
+    iris hesitation "Elle a surtout dit qu'elle voulait en parler. C'est pas pareil."
     noam fatigue "Je sais."
-    iris fatigue "Non, tu ne sais pas."
-    iris fatigue "Tu forces les gens à être gentils, et c'est très agaçant."
-    "Un très léger sourire me vient."
-    "Il disparaît presque aussitôt."
-    noam fatigue "Désolé."
-    iris inquiet "Mange un peu."
+    iris inquiet "Alors si ça devient bizarre, tu pars."
+    noam sourire "Tu me l'as déjà dit."
+    iris colere "Et visiblement il faut répéter avec toi."
+
+    "Je me lève avec mon plateau. Mara me regarde faire, puis pousse un léger soupir."
+
+    mara agace "Noam."
+    noam reflexion "Quoi ?"
+    mara mefiant "Je pensais ce que j'ai dit. Mais... évite juste de refaire n'importe quoi demain."
     noam fatigue "Je vais essayer."
-    iris colere "Non."
-    iris colere "Tu vas manger."
-    goumi "Elle a raison."
-    iris colere "Vous, ne vous en mêlez pas."
-    goumi "Je distribue de la nourriture."
-    goumi "Mon avis est pertinent."
-    iris fatigue "Super."
-    iris fatigue "Même le cuisinier fait la morale maintenant."
-    goumi "Exact."
-    "Iris soupire."
-    iris inquiet "Je retourne là-bas."
-    noam fatigue "Oui."
-    iris hesitation "Noam..."
-    noam inquiet "Quoi ?"
-    iris triste "Je suis encore là."
-    noam fatigue "Pour l'instant."
-    iris colere "Ne gâche pas l'effort."
-    "Elle repart vers les autres."
-    mara agace "Alors ?"
-    mara rire_profond "Le patient va survivre ?"
-    iris colere "Mara, je te jure que si tu ouvres encore la bouche..."
-    mara rire_profond "Quoi ?"
-    mara rire_profond "Tu vas me soigner avec une fourchette ?"
-    elen surpris "Iris !"
-    julian rire "Voilà une image très rassurante."
-    "Un rire nerveux circule à leur table."
-    "Pas un vrai rire."
-    "Mais quelque chose qui ressemble encore un peu à de la vie."
-    think "Ils peuvent encore rire ensemble."
-    think "Même maintenant."
-    "Je prends une bouchée."
-    "Elle a un goût de carton."
-    "Mais j'avale quand même."
-    "Quand je me lève, plusieurs regards se tournent aussitôt vers moi."
-    mara mefiant "Tu pars déjà ?"
-    noam fatigue "Oui."
-    mara agace "Pas de grande déclaration cette fois ?"
-    noam fatigue "Non."
-    elen triste "Noam..."
-    noam fatigue "Ca va."
-    elen inquiet "Non."
-    noam fatigue "Je sais."
-    julian inquiet "Tu vas où ?"
-    noam fatigue "Voir Sael."
-    iris inquiet "Tu n'es pas obligé."
-    "Je serre les doigts autour du plateau."
-    "Puis je le repose sur la table."
-    noam fatigue "Je viens."
-    iris triste "Fais attention."
-    noam fatigue "Oui."
-    mara agace "Bonne chance avec la cinglée."
-    mara rire_profond "Rien."
-    mara agace "Je tousse."
-    "Je n'attends pas que ça reparte."
-    "Je quitte la cafétéria sous leurs regards."
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_74
-    scene bg_couloir at adaptive_fullscreen with dissolve
-    "La porte de la cafétéria se referme derrière moi."
-    "Le couloir est plus silencieux."
-    "Mais pas plus rassurant."
-    noam fatigue "Bon..."
-    noam inquiet "Allons voir ce que Sael me veut."
+    mara agace "C'est déjà mieux que 'je sais pas'."
+
+    elen joie "Et reviens manger ce soir !"
+    elen sourire "Y'a encore plein de trucs !"
+    noam sourire "Je note surtout que c'est ça qui t'inquiète."
+    elen joie "Oui !"
+
+    "Au moins, elle ne fait pas semblant."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_74
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+
+    "La porte se referme derrière moi et le bruit de la cafétéria disparaît presque d'un coup."
+    "Je reste une seconde dans le couloir, hésitant encore à aller jusqu'à la chambre de Sael."
+
+    think "Elle a peut-être vraiment vu quelque chose. Et si ce n'est pas le cas... Iris avait raison, je pars."
 
     jump _14_0_1_1_0_CHAMBRE_SAEL
 
+
 label _14_0_1_1_0_CHAMBRE_SAEL:
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir")
+    scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_debate.mp3" fadein 2.0
 
-    "Le couloir semble plus long que d'habitude."
-    "Plus silencieux aussi."
-    "Chaque néon grésille comme s'il retenait son souffle."
-
-    noam fatigue "Sael voulait me parler."
-    noam inquiet "Juste parler."
-
-    "Je m'arrête devant sa porte."
-    "Ma main reste levée quelques secondes."
-
-    think "Je peux encore faire demi-tour."
-
-    noam fatigue "Non."
-    noam inquiet "Autant en finir."
+    "Je rejoins le dortoir quelques minutes plus tard. Plus j'approche de la chambre de Sael, moins son invitation me paraît être une bonne idée, mais si elle sait quelque chose sur ce que j'ai vu, je ne peux pas simplement l'ignorer."
 
     play sound sfx_knock volume 0.8
 
-    "Je toque."
-
-    pause 0.8
-
-    play sound sfx_door volume 0.8
-
-    "La porte s'ouvre presque immédiatement."
+    "Je toque deux fois et la porte s'ouvre presque immédiatement."
 
     $ showGroup([
         ("noam", "inquiet", 0.35),
         ("sael", "mefiant", 0.70),
     ])
 
-    sael mefiant "Noam."
-
-    noam inquiet "Tu voulais me parler."
-
-    sael raison "Oui."
-
-    noam hesitation "Alors parle."
-
+    sael mefiant "Tu es venu."
+    noam reflexion "Tu m'as pas vraiment laissé penser que c'était facultatif."
+    sael raison "Entre."
+    noam inquiet "Tu voulais parler de ce que j'ai vu, alors parle."
     sael mefiant "Pas dans le couloir."
-    sael determine "Suis moi."
-    sael raison "Je ne suis pas là pour te rassurer."
 
-    noam hesitation "Alors tu es là pour quoi ?"
+    "Je jette un coup d'œil derrière elle avant d'entrer à contrecœur."
 
-    sael mefiant "Vérifier."
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_77
+    scene bg_chambre_sael at adaptive_fullscreen with dissolve
+    play sound sfx_door volume 0.8
 
-    noam inquiet "Vérifier quoi ?"
+    "La porte se referme derrière moi."
 
-    sael raison "Si tu es encore seul dans ton corps."
+    $ showGroup([
+        ("noam", "inquiet", 0.25),
+        ("sael", "mefiant", 0.62),
+    ])
 
-    stop music
+    noam reflexion "Bon. Qu'est-ce que tu sais ?"
+    sael raison "Avant ça, j'ai besoin que tu répondes à quelques questions."
+    noam fatigue "Non. Tu m'as fait venir parce que tu savais quelque chose, alors soit tu parles, soit je pars."
 
-    pause 0.4
+    sael mefiant "Tu entends parfois des voix quand personne ne parle ?"
+    noam colere "Sael..."
+    sael raison "Réponds."
+    noam colere "Non."
+    sael mefiant "Des sons que personne d'autre n'entend ? Des moments dont tu ne te souviens pas ?"
+    noam agace "J'ai dit non."
 
-    play sound sfx_glitch volume 0.9
+    "Je commence à comprendre où elle veut en venir."
 
-    scene black with vpunch
-    with fade 
+    noam inquiet "C'est Ryn qui t'a demandé ça ?"
 
-    pause 0.2
+    "Sael ne répond pas tout de suite et son regard glisse brièvement vers la porte."
 
-    scene bg_couloir at adaptive_fullscreen with fade
+    noam colere "Putain..."
 
-    noam peur "Quoi ?"
+    "Je me retourne aussitôt et attrape la poignée."
 
-    sael mefiant "Ne bouge pas."
+    play sound sfx_door volume 0.8
 
-    noam panique "Sael, c'est quoi cette phrase ?"
+    "La porte s'ouvre avant que je puisse la toucher."
 
-    sael raison "Une phrase simple."
+    $ showGroup([
+        ("noam", "surpris", 0.18),
+        ("sael", "mefiant", 0.58),
+        ("ryn", "colere", 0.86),
+    ])
 
-    noam peur "Non."
-    noam peur "C'est une phrase de malade."
+    ryn colere "Bouge pas."
+    noam panique "Ryn ?!"
+    noam colere "Vous vous foutez de moi ?!"
 
-    "Quelque chose me frappe de côté."
+    "Je tente immédiatement de passer, mais Ryn se place devant moi."
+
+    ryn colere "Tu restes deux minutes. Après, si elle a tort, tu repars."
+    noam colere "Dégage."
+    ryn colere "Noam..."
+    noam colere "J'ai dit dégage."
+
+    "Je pousse son épaule pour forcer le passage."
 
     play sound sfx_thud volume 1.0
     with hpunch
 
-    scene black with fade
-    pause 0.5
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_77
-    scene bg_chambre_sael at adaptive_fullscreen with dissolve
+    "Ryn réagit immédiatement. Il m'attrape par le haut du torse, me retourne brutalement et me plaque dos contre le mur."
 
-    "Et me dire d'un coup dans la chambre"
+    noam panique "LÂCHE-MOI !"
+    ryn colere "Arrête de bouger !"
+    noam colere "Va te faire foutre !"
 
-    $ showGroup([
-        ("noam", "panique", 0.25),
-        ("sael", "mefiant", 0.62),
-        ("ryn", "colere", 0.88),
-    ])
+    "Je tente de repousser son bras mais il se colle contre moi pour m'empêcher de prendre appui, une main sur mon épaule et l'avant-bras appuyé sous ma clavicule."
 
-    ryn colere "Bouge pas, putain !"
+    noam peur "Ryn, lâche-moi !"
+    ryn colere "Tu te calmes deux minutes et je te lâche."
+    noam colere "Je vais pas me calmer pendant que vous me retenez de force !"
 
-    noam panique "Ryn ?!"
+    sael colere "Ryn, ne l'étrangle pas."
+    ryn agace "Je l'étrangle pas."
+    noam colere "Ah oui ? C'est super confortable !"
 
-    ryn colere "Je t'ai dit de pas bouger !"
+    "Sael s'approche de son bureau et récupère un petit sachet en tissu."
 
-    "Son avant-bras écrase ma gorge contre le mur."
+    noam inquiet "C'est quoi ?"
+    sael neutre "Du sel."
+    noam blase "Bien sûr."
+    ryn agace "J'ai eu la même réaction."
 
-    noam peur "Lâche-moi !"
+    sael colere "Chez moi, on utilisait ça pour vérifier si quelqu'un avait ramené quelque chose des zones mortes."
+    noam colere "J'en ai rien à foutre de tes histoires de fantômes."
+    sael mefiant "Justement."
 
-    ryn colere "Pas tant qu'on sait pas ce que t'es."
-
-    noam panique "Ce que je suis ?!"
-    noam panique "Je suis Noam !"
-
-    sael mefiant "C'est ce qu'il dirait."
-
-    noam colere "Tu m'entends parler ?!"
-    noam colere "Tu m'entends vraiment ?!"
-
-    ryn colere "Ferme-la."
-
-    noam peur "Je n'arrive pas à respirer !"
-
-    sael raison "Dessers un peu."
-
-    ryn colere "S'il se débat, je le plaque au sol."
-
-    sael determine "Dessers."
-
-    "Ryn desserre à peine."
-    "Juste assez pour que l'air revienne."
-
-    noam peur "Vous êtes complètement fous."
-
-    sael mefiant "Non."
-    sael raison "On est en retard."
-
-    noam inquiet "En retard sur quoi ?"
-
-    sael raison "Les signes."
-
-    noam fatigue "Quels signes ?"
-
-    sael mefiant "Ton regard."
-    sael mefiant "Tes absences."
-    sael mefiant "Ta colère."
-    sael mefiant "Les mots qui sortent de ta bouche et qui ne te ressemblent plus."
-
-    noam colere "Je suis fatigué !"
-
-    sael colere "Tout le monde est fatigué."
-
-    noam colere "Alors pourquoi moi ?!"
-
-    sael raison "Parce que les morts choisissent les fissures."
-
-    play sound sfx_static volume 0.7
-
-    "Le néon au-dessus de nous grésille plus fort."
-
-    noam inquiet "Arrête."
-
-    sael mefiant "Tu les entends ?"
-
-    noam peur "Qui ?"
-
-    sael raison "Les revenards."
-
-    noam peur "Non."
-
-    sael mefiant "Réponds sans réfléchir."
-
-    noam panique "Non !"
-
-    ryn colere "Il ment."
-
-    noam colere "Mais ferme-la !"
-
-    ryn colere "Tu vois ?"
-    ryn colere "Ça recommence."
-
-    noam peur "Je suis en train de paniquer parce que tu m'étrangles !"
-
-    sael raison "Tu en es bien sûr ? La peut peut te faire dire..."
+    "Elle ouvre le sachet et prend une poignée de sel."
 
     noam inquiet "Sael..."
-    noam triste "Ecoute-toi."
+    sael raison "Si j'ai tort, ça ne fera rien."
+    noam colere "Alors teste-le sur toi."
 
-    sael determine "Je m'écoute depuis des jours."
+    "Elle s'approche."
 
-    noam peur "Alors écoute-moi, maintenant."
+    noam panique "Ne me touche pas."
 
-    sael mefiant "Parle."
+    "Je recommence à me débattre, mais Ryn resserre immédiatement sa prise."
 
-    noam hesitation "Je ne suis pas possédé."
-    noam inquiet "Je ne suis pas un esprit."
-    noam peur "Je suis juste terrifié."
+    ryn colere "Arrête !"
+    noam colere "LÂCHE-MOI !"
 
-    sael triste "Les possédés disent souvent vrai."
-    sael mefiant "C'est ce qui les rend difficiles à ouvrir."
+    "Sael me jette le sel directement sur le visage et le haut du torse."
 
-    noam panique "A ouvrir ?!"
+    with vpunch
+
+    noam panique "PUTAIN !"
+
+    "Je ferme les yeux par réflexe tandis que les grains glissent dans mes cheveux, sous mon col et jusque sur mes lèvres."
+
+    noam colere "T'es complètement malade !"
+    sael determine "Regarde-moi."
+    noam colere "Va te faire foutre."
+    sael determine "Dis ton nom."
+    noam colere "Non."
+
+    sael determine "Noam, dis ton nom."
+    noam colere "Tu le connais très bien."
+    sael colere "DIS-LE !"
+    noam panique "NON !"
+
+    "Ryn souffle entre ses dents."
+
+    ryn agace "Réponds juste et on avance."
+    noam colere "Vous me plaquez contre un mur pour un exorcisme et c'est moi qui vous fais perdre du temps ?!"
+
+    sael mefiant "Qui es-tu ?"
+    noam colere "Quelqu'un qui va vous en coller une dès qu'il sera libre."
+
+    "Sael reste parfaitement sérieuse."
+
+    sael determine "Il faut qu'il boive."
+
+    "Elle prend une petite fiole transparente posée sur son bureau."
+
+    noam inquiet "Non."
+    sael raison "C'est de l'eau."
+    noam colere "J'ai dit non."
+    sael determine "Ryn."
+
+    noam panique "Ryn, ne fais pas ça."
+
+    "Il hésite une fraction de seconde, puis déplace sa main jusqu'à ma mâchoire."
+
+    noam peur "Me touche pas !"
+
+    "Je tourne la tête, mais il la bloque contre le mur."
+
+    ryn colere "Ouvre la bouche."
+    noam colere "Va te faire foutre."
+
+    "Je serre les dents. Ryn pince alors brutalement mon nez."
+
+    noam panique "Mmh !"
+
+    "Je retiens ma respiration en essayant encore de me dégager, mais après quelques secondes mes poumons commencent à brûler."
+
+    noam peur "Mmh..."
+
+    "Je finis par entrouvrir la bouche pour reprendre de l'air."
+
+    ryn colere "Maintenant."
+
+    "Sael approche aussitôt la fiole et verse de l'eau entre mes lèvres."
+
+    noam panique "MMPH !"
+
+    "J'essaie de recracher, mais Ryn maintient ma mâchoire relevée. Une partie coule sur mon menton tandis que j'avale le reste par réflexe."
+
+    ryn colere "Voilà."
+
+    "Il libère mon nez et je prends brutalement une grande inspiration."
+
+    play sound sfx_breath volume 1.0
+
+    noam panique "HAA— PUTAIN !"
+    noam colere "BANDE DE TARÉS !"
+
+    sael inquiet "Est-ce que tu sens quelque chose ?"
+    noam colere "Oui ! J'ai envie de vous casser la gueule !"
+
+    "Sael m'observe, attentive au moindre mouvement."
+
+    sael raison "Tu entends quelque chose ?"
+    noam colere "J'entends surtout vos conneries."
+
+    stop music
 
     play sound sfx_breath volume 1.0
     scene black with vpunch
@@ -675,479 +534,305 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
         ("noam", "panne_creep", 0.25),
     ])
 
-    pause 0.15
+    pause 0.2
 
-    scene bg_chambre_sael at adaptive_fullscreen
-    with hpunch
+    "Un cri me traverse soudainement la tête, net et violent, comme si quelqu'un venait de hurler directement derrière mes yeux."
+
+    scene bg_chambre_sael at adaptive_fullscreen with hpunch
+    play music "music/bgm_tension_debate.mp3" fadein 0.5
 
     $ showGroup([
-        ("noam", "peur", 0.25),
-        ("sael", "determine", 0.62),
-        ("ryn", "colere", 0.88),
+        ("noam", "peur", 0.18),
+        ("sael", "mefiant", 0.58),
+        ("ryn", "inquiet", 0.86),
     ])
 
-    noam panique "Putain !"
-
-    ryn colere "Quoi ?!"
-
-    noam peur "Vous n'avez pas entendu ?!"
-
+    noam panique "AAH !"
+    ryn inquiet "Quoi ?!"
+    noam peur "Vous avez pas entendu ?!"
     sael mefiant "Entendu quoi ?"
+    noam panique "LE CRI !"
 
-    noam peur "Le cri !"
+    "Ils se regardent."
 
-    ryn colere "Y'a pas eu de cri."
+    ryn inquiet "Y'a eu aucun cri."
+    noam peur "Si ! Je l'ai entendu !"
+    sael determine "D'où il venait ?"
+    noam colere "J'en sais rien ! Arrête de me regarder comme ça !"
 
-    "La chambre redevient parfaitement silencieuse."
+    play sound sfx_static volume 0.8
 
-    noam inquiet "Non..."
-    noam peur "Non, je l'ai entendu."
+    "Le néon grésille brutalement au-dessus de nous."
 
-    sael raison "Premier aveu."
+    "Sael lève les yeux une seconde avant de revenir vers moi."
 
-    noam panique "Ce n'est pas un aveu !"
+    noam panique "C'est le néon ! Ils font ça tout le temps ici !"
+    ryn inquiet "Sael..."
+    sael mefiant "Dis ton nom."
 
-    sael determine "Ryn."
-
-    ryn colere "Ouais."
-
-    noam peur "Non."
-    noam peur "Non, non, non."
-
-    "Sael sort une petite fiole de sel."
-    "Le verre tremble légèrement entre ses doigts."
-
-    noam panique "Range ça."
-
-    sael raison "Le sel ferme les portes."
-
-    noam peur "Je ne suis pas une porte pour des esprits ou quoi que ce soit !"
-
-    sael mefiant "Tais toi. Il faut que je me concentre."
-
-    "Elle verse une ligne blanche au sol."
-
-    noam colere "Arrête."
-
-    sael raison "Nom."
-
-    noam inquiet "Quoi ?"
-
-    sael determine "Donne ton nom !"
-
-    noam panique "Noam !"
-
-    sael mefiant "Encore."
-
-    noam colere "Noam !"
-
-    sael mefiant "Encore."
-
-    noam peur "Noam !"
-
-    ryn colere "Plus fort."
-
-    noam panique "NOAM !"
+    noam colere "Non."
+    sael determine "Noam."
+    noam panique "ARRÊTE !"
+    sael colere "Dis ton nom !"
+    noam colere "NOAM ! CONTENTE ?!"
 
     play sound sfx_glitch volume 1.0
     with vpunch
 
-    sael surpris "..."
-
-    ryn inquiet "Sael ?"
+    "Le son se déforme une fraction de seconde. Sael se fige aussitôt."
 
     noam peur "Quoi ?"
-    noam peur "Qu'est-ce qu'il y a ?"
+    ryn inquiet "Sael ?"
+    sael mefiant "..."
 
-    sael mefiant "Pendant une seconde..."
-    sael inquiet "Ta voix n'était pas seule."
+    noam panique "QU'EST-CE QU'IL Y A ?!"
+    sael determine "Encore."
+    noam colere "Non."
+    sael determine "Dis-le encore."
+    noam panique "J'AI DIT NON !"
 
-    noam panique "C'est faux."
+    "Je recommence à me débattre de toutes mes forces."
 
-    ryn colere "J'ai entendu aussi."
+    play sound sfx_thud volume 0.9
+    with hpunch
 
-    noam colere "Vous voulez l'entendre."
-    noam colere "C'est différent."
+    "Mon épaule frappe violemment le mur."
 
-    sael determine "Esprit revenard qui hante cet homme..."
-    sael determine "Montre ton nom."
-    sael determine "Montre ta plaie."
-    sael determine "Montre ce que tu veux."
+    ryn colere "Arrête, putain !"
+    noam panique "LÂCHE-MOI !"
+    sael determine "Ryn, tiens-le encore une seconde."
+    ryn inquiet "Ça suffit, Sael."
+    sael colere "Tu n'as pas vu sa réaction !"
+    ryn colere "Il panique parce qu'on le tient contre un mur depuis cinq minutes !"
 
-    noam peur "Arrête."
-    noam peur "Sael, arrête."
+    noam colere "ENFIN !"
 
-    sael colere "Au nom des morts que nous avons laissés derrière nous..."
-    sael colere "Au nom des corps sans sépulture..."
-    sael colere "Au nom des voix enfermées dans les murs..."
+    "Ryn tourne brièvement la tête vers elle."
 
-    play sound sfx_static volume 1.0
+    "Sa prise se relâche juste assez."
 
-    "Le grésillement enfle."
+    think "Maintenant."
 
-    noam panique "Ryn, lâche-moi !"
-
-    ryn inquiet "Sael, le néon..."
-
-    sael colere "Non STOP !"
-    sael determine "Ne regardez pas la lumière."
-
-    noam peur "Pourquoi ?"
-
-    sael mefiant "Parce que ça nous regarde en retour."
-    sael triste "Et ça peut être dangereux."
-
-    pause 0.3
-
-    play sound sfx_static volume 1.0
-
-    "Le néon claque."
-    "Un instant, le couloir devient blanc."
-
-    noam panique "AAH !"
-
-    ryn colere "Putain !"
-
-    sael determine "Il réagit."
-
-    noam peur "C'est le néon !"
-    noam peur "C'est juste le néon !"
-
-    sael colere "Quitte ce corps."
-
-    noam panique "Je suis ce corps !"
-
-    sael colere "Quitte sa bouche."
-
-    noam peur "C'est ma bouche !"
-
-    sael colere "Quitte ses yeux."
-
-    noam colere "Ce sont mes yeux !"
-
-    sael colere "Quitte son nom."
-
-    noam panique "Mais c'est mon nom PUTAIN !"
-
-    ryn inquiet "Sael..."
-    ryn inquiet "Il tremble vraiment."
-
-    sael determine "Tant mieux."
-    sael determine "C'est que ça réagit."
-
-    noam peur "Arrêtez ces conneries ! Vous allez finir par me tuer !"
-
-    "Ryn serre un peu plus sa main autour de mon cou."
-
-    ryn colere "Si c'est nécessaire pour te purifier..."
-
-    sael colere "Ryn."
-
-    ryn colere "Quoi ?"
-
-    sael determine "Arrête tes conneries."
-    sael taquin "Tu veux que les revenards s'attaquent à toi ensuite ?"
-
-    pause 0.2
-
-    ryn "Hein ...?"
-
-    "Ryn tourne la tête vers elle."
-    "Son bras se relâche d'un centimètre."
-
-    "C'est suffisant."
-
-    noam colere "Lâchez-moi !"
+    "Je ramène brutalement mon genou et l'enfonce de toutes mes forces dans son abdomen."
 
     play sound sfx_thud volume 1.0
     with hpunch
 
-    "Je lui enfonce le genou dans le ventre."
+    ryn surpris "GH—!"
 
-    ryn colere "Argh !"
+    "Ryn se plie en deux et sa prise disparaît."
+
+    noam colere "DÉGAGE !"
+
+    "Je le repousse et fonce immédiatement vers la porte."
 
     sael surpris "Noam !"
-
-    noam peur "Restez loin de moi !"
-
-    "Je me dégage."
-    "Je cours."
-
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_79
-    scene bg_couloir at adaptive_fullscreen with dissolve
-
-    ryn colere "Reviens !"
-
-    sael colere "Noam !"
-
-    noam panique "Non !"
-
-    play sound sfx_glitch volume 0.8
-
-    "Le couloir se tord une seconde."
-    "Ou peut-être que c'est ma vue."
-
-    noam peur "Non, non, non..."
-
-    ryn colere "Attrapez-le !"
-
-    sael colere "Ne le laisse pas sortir du cercle !"
-
-    noam panique "Je ne suis plus dans votre cercle !"
-
-    "Je fonce vers ma chambre."
+    ryn colere "Putain... arrête-le !"
+    noam panique "RESTEZ LOIN DE MOI !"
 
     play sound sfx_door volume 1.0
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_79
+    scene couloir_dortoir at adaptive_fullscreen with hpunch
+
+    "Je sors en courant et claque la porte derrière moi sans même vérifier s'ils me suivent."
+
+    sael inquiet "Noam !"
+
+    "Je continue."
+
+    sael raison "Si tu entends encore le cri..."
+
+    "Je ralentis malgré moi."
+
+    sael triste "Ne lui réponds pas."
+
+    noam panique "VA TE FAIRE FOUTRE !"
+
+    "Je repars aussitôt vers ma chambre, la gorge douloureuse, encore couvert de sel et avec le goût de l'eau forcée dans la bouche."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_80
-    scene bg_chambre at adaptive_fullscreen with hpunch
+    scene bg_chambre at adaptive_fullscreen with fade
+    stop music fadeout 2.0
 
-    noam panique "Allez !"
+    "Je ferme la porte à clé et reste appuyé contre elle plusieurs secondes, incapable de ralentir ma respiration."
 
-    play sound sfx_door volume 1.0
-    with vpunch
+    "Quand je passe une main dans mes cheveux, quelques grains de sel tombent encore sur le sol."
 
-    "Je claque la porte."
-
-    noam peur "Le bureau."
-    noam peur "La chaise."
-    noam peur "Tout."
-
-    play sound sfx_thud volume 0.9
-
-    "Je pousse les meubles contre la porte."
-
-    ryn colere "Noam ! Ouvre !"
-
-    noam panique "Va-t'en !"
-
-    sael raison "Noam."
-    sael raison "Ce n'est pas fini."
-
-    noam peur "Si."
-    noam peur "Si, c'est fini."
-
-    sael mefiant "S'il parle encore avec ta voix, ne l'écoute pas."
-
-    noam panique "C'est moi !"
-
-    ryn colere "Alors prouve-le !"
-
-    noam colere "Allez vous faire foutre !"
+    think "Ils sont complètement fous."
 
     pause 0.5
 
-    "Silence."
-
-    play sound sfx_knock volume 0.5
-
-    sael calme "Noam."
-
-    noam peur "Non."
-
-    play sound sfx_knock volume 0.5
-
-    sael calme "Noam."
-
-    noam panique "Non !"
-
-    play sound sfx_knock volume 0.5
-
-    sael calme "Noam."
-
-    stop music
-
-    pause 0.4
-
-    play sound sfx_breath volume 1.0
-    scene black with vpunch
-
-    $ showGroup([
-        ("noam", "panne_creep", 0.25),
-    ])
-
-    pause 0.15
-
-    scene bg_chambre at adaptive_fullscreen
-    with hpunch
-
-    noam panique "TAIS-TOI !"
-
-    "Plus rien."
-
-    "Je glisse contre le mur."
-    "Mes jambes ne me portent plus."
-
-    think "Ils sont devenus fous."
-    think "Ils voulaient vraiment m'ouvrir."
-    think "Ils pensent que quelque chose porte mon visage."
-
-    "Je plaque mes mains sur mes oreilles."
-
-    think "Je ne peux plus faire confiance à personne."
-    think "Plus à personne."
+    think "Alors pourquoi j'ai entendu ce cri ?"
 
     pause 2.0
 
-    call show_custom_title("Après m'être longuement calmé") from _call_show_custom_title_3
+    call show_custom_title("Plus tard dans l'après-midi") from _call_show_custom_title_3
 
     jump _14_0_1_1_0_MESSAGES_KAEL
+
 
 label _14_0_1_1_0_MESSAGES_KAEL:
 
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.5
 
-    "Je suis allongé sur mon lit, les yeux fixés au plafond, quand ma tablette vibre doucement."
+    "Je suis toujours dans ma chambre quand ma tablette vibre sur le bureau."
+    "Pendant une seconde, je pense l'ignorer. Puis je vois le nom de Kael."
 
-    "Un message de Kael."
+    kael "Noam ? T'es là ?"
+    noam "Ouais."
+    kael "Question bizarre : Ryn t'a parlé aujourd'hui ?"
 
-    kael "Noam, tu es là ?"
+    "Je fixe le message un peu trop longtemps."
 
-    noam "Oui. Qu’est-ce qu’il y a ?"
+    noam "On peut dire ça."
+    kael "Il vient encore de m'engueuler dans le couloir. Apparemment je suis toujours officiellement responsable de la fin du monde parce que j'ai voté contre."
+    noam "Bienvenue au club."
+    kael "Toi c'est différent. Toi t'as une secte maintenant."
 
-    kael "Je viens de me faire engueuler par Ryn dans le couloir. Encore."
-    kael "Il m’a dit que c’était à cause de moi qu’on n’avait plus de brouilleurs."
-    kael "Que j’avais tout fait foirer en votant contre."
+    "Je fronce les sourcils."
 
-    noam "Ils me disent la même chose."
+    noam "Comment tu sais ?"
+    kael "Mara. Donc techniquement tout le Conclave sait probablement déjà."
+    noam "Génial."
+    kael "C'est vrai ? Sael t'a vraiment sorti du sel ?"
+    noam "Oui."
+    kael "Putain."
+    noam "Ryn était là aussi."
+    kael "PUTAIN."
 
-    kael "Ouais… on est les deux parias maintenant."
-    kael "Toi parce que tu as pété un câble au débat."
-    kael "Moi parce que j’ai voté contre les brouilleurs."
+    "Malgré moi, je souris légèrement."
 
-    noam "C’était bien toi qui as voté contre ?"
+    kael "Ils t'ont fait quoi ?"
+    noam "J'ai pas vraiment envie d'en parler."
+    kael "Ok."
 
-    kael "Oui. C’était moi."
-    kael "Je ne pouvais pas faire autrement. Je veux voir les images de ma chambre."
-    kael "Je veux savoir qui a volé la photo de Léa."
+    "Il ne relance pas. Ça me surprend presque."
 
-    noam "Je comprends."
+    kael "Je voulais surtout te parler de demain."
+    noam "Le vote sur ARCHIVE ?"
+    kael "Ouais."
+    kael "Je vais profiter du vote pour aller voir les terminaux d'archives pendant que tout le monde sera à la Salle du Conclave."
+    noam "Tu peux déjà accéder aux images ?"
+    kael "Pas normalement. Mais demain, pendant la synchronisation liée au vote, les terminaux vont devoir charger les index complets d'ARCHIVE."
+    kael "Je veux essayer de récupérer ce qui concerne ma chambre avant que les droits se referment ou que quelqu'un décide encore de supprimer quelque chose."
 
-    kael "Demain, pour le vote… je n’irai pas."
-    kael "Je profiterai que tout le monde soit à la Salle du Conclave pour aller consulter les archives tranquillement."
-    kael "Les images de J8 seront enfin accessibles."
+    "Je me redresse."
 
-    noam "Tu vas y aller seul ?"
+    noam "Les images du jour 8."
+    kael "Exactement."
+    noam "Celles du vol de la photo de Léa."
+    kael "Oui."
 
-    kael "Oui. Je ne veux mêler personne à ça."
+    "Je regarde vers mon bureau. Le cahier noir est toujours là, fermé."
 
     noam "Je viens avec toi."
 
-    kael "Vraiment ? Même après ce qui s’est passé hier ?"
+    pause 0.4
 
-    noam "Surtout après ce qui s’est passé hier."
-    noam "Je n’ai plus envie de rester avec eux de toute façon."
+    kael "T'es sûr ?"
+    noam "Oui."
+    kael "Je pensais que tu voudrais assister au vote."
+    noam "J'ai surtout envie de savoir qui entre dans nos chambres."
+    kael "... Je peux difficilement te contredire là-dessus."
 
-    kael "D’accord. On se rejoint discrètement vers 13h30 près de la salle d’observation ?"
-
+    noam "On se retrouve où ?"
+    kael "Près de la salle d'observation. 13h30."
+    kael "Je t'envoie un message avant pour vérifier que le couloir est vide."
     noam "Ça marche."
 
-    "Un court silence sur la conversation."
+    "Quelques secondes passent avant qu'un nouveau message apparaisse."
 
-    kael "Au fait… j’ai entendu une rumeur complètement dingue."
-    kael "Sael et Ryn t’auraient coincé pour te faire un exorcisme de force ?"
+    kael "Au fait, pour ce que Ryn m'a dit..."
+    noam "Quoi ?"
+    kael "Il pense vraiment que j'ai sacrifié les brouilleurs juste pour ma sœur."
+    noam "C'est pas complètement faux, non ?"
+    kael "Merci pour le soutien."
+    noam "Je veux dire que je comprends pourquoi tu l'as fait."
+    kael "Ouais."
+    kael "Je sais pas si toi t'as raison sur tout ce qui se passe ici. Mais je sais ce que ça fait quand les autres décident que ton problème compte moins que le leur."
 
-    noam "C’est pas une rumeur."
-    noam "Ryn m’a plaqué contre un mur. Sael a sorti du sel et a commencé à psalmodier."
-    noam "J’ai cru qu’ils allaient vraiment me tuer."
+    "Je relis la phrase."
 
-    kael "Putain…"
-    kael "Ils sont devenus complètement tarés."
-    kael "Sael est persuadée que tu es possédé par un esprit vengeur ou quelque chose comme ça."
+    noam "C'est probablement le truc le plus gentil que quelqu'un m'a dit depuis deux jours."
+    kael "C'est triste."
+    noam "Très."
+    kael "Bon, alors demain on fait notre petite sortie entre parias."
+    noam "Dit comme ça, ça donne presque envie."
+    kael "Presque."
 
-    noam "Ouais… elle m’a dit ça alors que Ryn me tenait encore contre le mur."
-
-    kael "Et toi ? Tu y crois ?"
-
-    noam "Bien sûr que non."
-    noam "Mais le pire, c’est qu’ils y croient vraiment."
-    noam "Ils pensent que je suis dangereux."
-
-    kael "Bienvenue au club."
-    kael "Moi ils pensent que je suis un égoïste qui a sacrifié l’intimité de tout le monde pour sa sœur."
-
-    "Pour la première fois depuis longtemps, un petit sourire m’échappe."
-
-    noam "On fait la paire tous les deux."
-
-    kael "Ouais… les deux pestiférés du Conclave."
-    kael "Au moins, on est deux. C’est déjà ça."
-
-    noam "Tu sais que si Sael me voit sortir de ma chambre demain, elle va encore me courir après avec son sel et ses prières ?"
-
-    kael "Haha, merde."
-    kael "Alors on fera attention."
-    kael "Je t’enverrai un message quand la voie sera libre."
-
-    noam "Ça marche."
-    noam "Et Kael… merci."
-
-    kael "Pas de quoi."
-    kael "On est dans la même galère maintenant."
-    kael "Autant ramer ensemble."
-
-    "La conversation s’arrête là."
-    "Je repose la tablette sur ma poitrine et fixe le plafond."
-
-    think "Kael… au moins lui ne me traite pas comme un monstre."
-    think "Même s’il a ses propres problèmes."
-
-    "Pour la première fois depuis plusieurs jours, j’ai l’impression d’avoir un allié."
-    "Même si c’est un allié fragile."
+    "La conversation s'arrête là. Je repose la tablette sur le lit."
+    "Je ne sais pas si Kael me croit réellement. Je ne suis même pas sûr d'avoir besoin qu'il me croie. Pour l'instant, il veut les mêmes réponses que moi, et c'est déjà beaucoup."
 
     pause 1.5
 
     jump _14_0_1_1_0_FIN_JOURNEE
+
 
 label _14_0_1_1_0_FIN_JOURNEE:
 
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
-    "Je traverse lentement la pièce et m’assois à mon bureau."
-    "Mes yeux se posent presque malgré moi sur le cahier noir."
+    "La journée se termine sans que je ressorte de ma chambre. J'ai largement assez vu de monde pour aujourd'hui."
+    "Je reste un moment assis au bureau à regarder mes notes, puis mon regard revient encore une fois vers le cahier noir."
 
-    "Je l’ouvre à la page du dessin décalqué de Juliette."
+    "Je l'ouvre à la page du dessin de Juliette."
 
-    "Je le regarde longtemps."
-    "Les traits plus sombres, le sourire légèrement figé, l’atmosphère étrange qui s’en dégage."
-    "Je passe lentement le doigt sur les contours."
+    pause 0.6
 
-    think "Pourquoi avoir pris le temps de faire ça ?"
-    think "Pourquoi copier le dessin au lieu de simplement le voler ?"
-    think "C’est comme si quelqu’un voulait que je le voie… tout en me laissant une copie."
+    "La copie est toujours là. Les mêmes traits, le même visage, ce sourire qui me dérange sans que j'arrive vraiment à comprendre pourquoi."
+    "Je la compare de mémoire au dessin original. J'ai passé assez de temps dessus pour connaître presque chaque ligne."
 
-    "Je reste immobile, les yeux rivés sur la page."
+    think "Il y a quelque chose qui ne colle pas."
 
-    think "Quelqu’un est entré ici."
-    think "Quelqu’un a touché mes affaires les plus personnelles."
-    think "Quelqu’un connaît mes souvenirs les plus intimes."
+    "Je rapproche le cahier de la lampe."
+    "Les cheveux, les yeux, le nez... tout est presque exactement comme je l'avais dessiné."
+    "Puis je remarque une petite marque sous sa mèche, juste au-dessus du sourcil."
 
-    "Je referme doucement le cahier."
-    "Puis je le range dans le tiroir, comme si ça pouvait effacer ce que j’ai vu."
+    "Je reste immobile."
 
-    think "Je ne sais plus quoi penser."
-    think "Je ne sais plus à qui faire confiance."
-    think "Je ne sais même plus si je peux me faire confiance à moi-même."
+    think "Non."
 
-    "Je me lève et me dirige vers le lit."
-    "Je m’allonge tout habillé, sans même enlever mes chaussures."
-    "Le plafond fissuré me semble encore plus oppressant que d’habitude."
+    "Je passe doucement le doigt dessus. Ce n'est pas une tache ni une rayure du papier. Quelqu'un l'a dessinée volontairement."
+
+    think "Cette cicatrice..."
+
+    "Juliette l'avait depuis l'enfance. Une toute petite ligne pâle qu'on voyait seulement quand ses cheveux étaient repoussés sur le côté."
+    "Je ne l'avais jamais mise sur mon dessin. Sa mèche la cachait complètement."
+
+    pause 0.8
+
+    think "Je n'avais pas dessiné ça."
+
+    "Je tourne rapidement la page, puis reviens en arrière comme si le détail pouvait disparaître. Il est toujours là."
+    "Quelqu'un a copié mon dessin. Mais cette personne a ajouté quelque chose qu'elle ne pouvait pas voir dessus."
+
+    "Je referme le cahier d'un coup."
+
+    play sound sfx_thud volume 0.6
+
+    "Mon regard part vers la porte, puis vers les murs de la chambre. Je sais que c'est absurde, mais pendant quelques secondes j'ai vraiment l'impression que quelqu'un pourrait être là, juste hors de mon champ de vision."
+
+    think "Comment tu peux savoir ça ?"
+
+    "Aucune réponse. Évidemment."
+
+    "Je range le cahier dans le tiroir et le ferme, cette fois à clé."
 
     scene bg_cg012 at adaptive_fullscreen with fade
 
-    think "Demain, il y a le vote sur les archives."
-    think "Tout le monde va pouvoir tout savoir sur tout le monde."
-    think "Et moi… je vais probablement rester enfermé ici."
+    "Je me couche sans me changer et tire la couverture jusqu'au menton. Demain, Kael et moi devons aller voir les images d'ARCHIVE."
+    "Pour la première fois depuis plusieurs jours, j'ai au moins quelque chose de concret à faire."
+
+    think "Demain, je veux une preuve. N'importe laquelle."
 
     "Je ferme les yeux."
-    "Le sommeil met longtemps à venir."
-    "Mais quand il arrive enfin, il est lourd, agité, plein d’ombres et de murmures."
 
-    think "Je ne suis plus en sécurité nulle part."
-    think "Même dans ma propre chambre."
-    think "Même dans ma propre tête."
+    pause 1.0
+
+    think "Parce que si je n'en trouve pas... je vais finir par croire Sael."
 
     pause 2.5
 

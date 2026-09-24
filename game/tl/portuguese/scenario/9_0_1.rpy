@@ -1230,3 +1230,11 @@ translate portuguese 8d8e976b:
     # "La seule chose dont je me souviens, c’est mon réveil du lendemain."
     "A única coisa de que me lembro é de acordar na manhã seguinte."
 
+# TODO: Translation updated at 2026-09-04 18:16
+
+# game/scenario/9_0_1.rpy:217
+translate portuguese a91108f7:
+
+    # tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous venez juste de vous lever !"
+    tomas inquiet ""
+

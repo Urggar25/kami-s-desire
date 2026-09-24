@@ -1230,3 +1230,11 @@ translate chinese 8d8e976b:
     # "La seule chose dont je me souviens, c’est mon réveil du lendemain."
     "唯一记得的，是第二天早上醒来的那一刻。"
 
+# TODO: Translation updated at 2026-09-04 18:48
+
+# game/scenario/9_0_1.rpy:217
+translate chinese a91108f7:
+
+    # tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous venez juste de vous lever !"
+    tomas inquiet ""
+

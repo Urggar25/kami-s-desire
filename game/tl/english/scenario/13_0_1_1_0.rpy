@@ -3186,3 +3186,23 @@ translate english 4f131767:
     # think "Avant que je ne perde complètement la tête."
     think ""
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/13_0_1_1_0.rpy:685
+translate english 588a5cf2_1:
+
+    # think "Plus de brouilleur."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:774
+translate english 96fb98c9_2:
+
+    # think "Évidemment."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:819
+translate english 29edfe25_1:
+
+    # "Puis une troisième."
+    ""
+

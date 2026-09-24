@@ -1050,3 +1050,23 @@ translate english ae5536e9:
     # "Dans le mur, quelque chose gratte une derniere fois."
     ""
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/17_0_1_1_0.rpy:29
+translate english 1ab11fed_1:
+
+    # noam reflexion "Pourquoi ?"
+    noam reflexion ""
+
+# game/scenario/17_0_1_1_0.rpy:53
+translate english 7ad81883_3:
+
+    # tomas "Oui."
+    tomas ""
+
+# game/scenario/17_0_1_1_0.rpy:203
+translate english d7dcecfb_1:
+
+    # noam determine "D'accord."
+    noam determine ""
+

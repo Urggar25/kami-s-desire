@@ -187,7 +187,7 @@ label play_stat_dialogue(dialogue_id):
     $ _stat_choice_text = _stat_option["text"]
     noam "[_stat_choice_text]"
     $ _stat_xp_results = []
-    call expression _stat_option["target"]
+    call expression _stat_option["target"] from _call_expression_6
     $ notify_stat_level_ups(_stat_xp_results)
     return
 

@@ -4068,3 +4068,35 @@ translate english db3fc748:
     # think "Même dans ma propre tête."
     think ""
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/14_0_1_1_0.rpy:307
+translate english c31eb3bf_1:
+
+    # noam reflexion "De quoi ?"
+    noam reflexion ""
+
+# game/scenario/14_0_1_1_0.rpy:363
+translate english a36bd1be_1:
+
+    # noam fatigue "D'accord."
+    noam fatigue ""
+
+# game/scenario/14_0_1_1_0.rpy:465
+translate english 1c735c36_1:
+
+    # noam fatigue "Bon..."
+    noam fatigue ""
+
+# game/scenario/14_0_1_1_0.rpy:734
+translate english 61b255aa_3:
+
+    # noam inquiet "Quoi ?"
+    noam inquiet ""
+
+# game/scenario/14_0_1_1_0.rpy:1144
+translate english 7af7b854_1:
+
+    # "Je ferme les yeux."
+    ""
+

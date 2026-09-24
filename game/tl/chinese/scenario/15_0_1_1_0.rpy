@@ -3312,3 +3312,11 @@ translate chinese 70213f5c_1:
     # "Plus rien."
     ""
 
+# TODO: Translation updated at 2026-09-04 18:48
+
+# game/scenario/15_0_1_1_0.rpy:744
+translate chinese b904f05b_1:
+
+    # "Il tourne lentement la tête vers moi."
+    ""
+

@@ -1518,3 +1518,29 @@ translate english 7d0f128e:
     # mara "Ou dans toutes."
     mara ""
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/20_0_1_1_0.rpy:153
+translate english 46081631_6:
+
+    # noam "Oui."
+    noam ""
+
+# game/scenario/20_0_1_1_0.rpy:155
+translate english 46081631_7:
+
+    # noam "Oui."
+    noam ""
+
+# game/scenario/20_0_1_1_0.rpy:170
+translate english 7ad81883_4:
+
+    # tomas "Oui."
+    tomas ""
+
+# game/scenario/20_0_1_1_0.rpy:251
+translate english 290dd969_5:
+
+    # noam "Non."
+    noam ""
+

@@ -1806,3 +1806,11 @@ translate chinese strings:
     old "Demander les logs"
     new ""
 
+# TODO: Translation updated at 2026-09-04 18:48
+
+# game/scenario/16_0_1_1_0.rpy:565
+translate chinese 34e0a9a3_1:
+
+    # noam surpris "Quoi ?"
+    noam surpris ""
+

@@ -3050,3 +3050,11 @@ translate portuguese j601_sael_vote_animation_5cbee258:
     # think "Mes paupières deviennent lourdes. Derrière le silence, très loin ou très près, la voix de Kami résonne dans ma tête."
     think "Minhas pálpebras ficam pesadas. Por trás do silêncio, muito longe ou muito perto, a voz da Kami ecoa na minha cabeça."
 
+# TODO: Translation updated at 2026-09-04 18:16
+
+# game/scenario/6_0_1.rpy:545
+translate portuguese daf4fff8_5:
+
+    # think "..."
+    think ""
+

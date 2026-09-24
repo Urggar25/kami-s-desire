@@ -965,7 +965,9 @@ label _10_0_1_1_APRES_ALIBIS:
     pause 3.0
 
     call end_day("11") from _call_end_day_1
-    jump _11_0_1_1_REVEIL_CHAMBRE
+    
+    jump _10_1_0_0_REVEIL
+
 
 # Total journée : 10 minutes 50
 # Durée totale : 2h30,50

@@ -173,6 +173,7 @@ image elias neutre            = elias_expression("neutre")
 image elias panique           = elias_expression("panique")
 image elias rire              = elias_expression("rire")
 image elias reflechit         = elias_expression("reflechit")
+image elias reflexion         = elias_expression("reflechit")
 image elias detendu           = elias_expression("detendu")
 image elias raison            = elias_expression("raison")
 image elias determine         = elias_expression("determine")
@@ -1032,7 +1033,9 @@ init python:
         "surpris": ("corps", "bras_long_corps", "bouche_inquiet", "yeux_surpris"),
         "taquin": ("corps", "bras_derriere_tete", "bouche_sourire", "yeux_taquin"),
         "triste": ("corps", "bras_long_corps", "bouche_triste", "yeux_blase"),
+        "peur": ("corps", "bras_long_corps", "bouche_colere", "yeux_surpris"),
         "vide": ("corps", "bras_long_corps", "bouche_neutre", "yeux_neutre"),
+        "agace": ("corps", "bras_derriere_tete", "bouche_colere", "yeux_blase"),
     }
 
     def _ryn_asset(name):
@@ -1072,12 +1075,14 @@ init python:
     def ryn_expression(expr):
         return DynamicDisplayable(_ryn_layered_expression, expr)
 
+image ryn peur                = ryn_expression("peur")
 image ryn blase                = ryn_expression("blase")
 image ryn colere               = ryn_expression("colere")
 image ryn colere2              = ryn_expression("colere2")
 image ryn decontracte          = ryn_expression("decontracte")
 image ryn desaccord            = ryn_expression("desaccord")
 image ryn determine            = ryn_expression("determine")
+image ryn raison            = ryn_expression("determine")
 image ryn fatigue              = ryn_expression("fatigue")
 image ryn hesitation           = ryn_expression("hesitation")
 image ryn inquiet              = ryn_expression("inquiet")
@@ -1092,6 +1097,7 @@ image ryn taquin               = ryn_expression("taquin")
 image ryn triste               = ryn_expression("triste")
 image ryn vide                 = ryn_expression("vide")
 image ryn reflexion            = ryn_expression("reflechit")
+image ryn agace            = ryn_expression("agace")
 
 # ======================
 # SAEL
@@ -1190,8 +1196,8 @@ init python:
     # Les bras sont deja dessines dans corps_1. Une valeur de bouche a None
     # conserve la bouche neutre directement presente sur le corps.
     ANYA_EXPRESSIONS = {
-        "neutre": (None, "yeux_ouvert"),
-        "sourire": (None, "yeux_ouvert"),
+        "neutre": ("bouche_sourire", "yeux_ouvert"),
+        "sourire": ("bouche_sourire", "yeux_ouvert"),
         "decu": ("bouche_decu", "yeux_ouvert"),
         "hesitation": ("bouche_decu", "yeux_ouvert"),
         "peur": ("bouche_peur", "yeux_ouvert"),
@@ -1199,9 +1205,10 @@ init python:
         "surpris": ("bouche_surpris", "yeux_ouvert"),
         "triste": ("bouche_triste", "yeux_ouvert"),
         "fatigue": ("bouche_triste", "yeux_ouvert"),
-        "reflexion": (None, "yeux_ouvert"),
+        "reflexion": ("bouche_sourire", "yeux_ouvert"),
         "colere": ("bouche_peur", "yeux_ouvert"),
         "desaccord": ("bouche_decu", "yeux_ouvert"),
+        "taquin": ("bouche_sourire", "yeux_ouvert"),
     }
 
     def _anya_asset(name):
@@ -1251,6 +1258,7 @@ image anya fatigue             = anya_expression("fatigue")
 image anya reflexion           = anya_expression("reflexion")
 image anya colere              = anya_expression("colere")
 image anya desaccord           = anya_expression("desaccord")
+image anya taquin              = anya_expression("taquin")
 
 # ======================
 # Goumi

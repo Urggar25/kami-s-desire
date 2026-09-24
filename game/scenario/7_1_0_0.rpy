@@ -114,7 +114,7 @@ label _7_1_0_CANON:
 
     play sound sfx_knock
 
-    nyra "Noam ? Ouvre. Vite."
+    nyra "{i}Noam ? Ouvre. Vite.{/i}"
 
     think "Nyra. Sa voix est basse, mais elle ne cherche même pas à cacher son impatience."
 
@@ -156,59 +156,59 @@ label _7_1_0_CHAMBRE_NOAM:
 
     think "Je m'exécute. Nyra vérifie l'écran du brouilleur fixé près du lit."
 
-    nyra raison "Il fonctionne ?"
+    nyra raison "{i}Il fonctionne ?{/i}"
 
-    noam neutre "Oui. Pourquoi ?"
+    noam neutre "{i}Oui. Pourquoi ?{/i}"
 
-    tomas inquiet "P-Parle moins fort."
+    tomas inquiet "{i}P-Parle moins fort.{/i}"
 
-    noam surpris "Vous venez de me réveiller en frappant comme si la station brûlait et maintenant vous me demandez de chuchoter ?"
+    noam surpris "{i}Vous venez de me réveiller en frappant comme si la station brûlait et maintenant vous me demandez de chuchoter ?{/i}"
 
-    iris desaccord "Approche."
+    iris desaccord "{i}Approche.{/i}"
 
     think "Iris m'attrape par la manche. Tous les trois se rapprochent au point que la scène devient presque ridicule."
 
-    noam inquiet "Vous me faites peur."
+    noam inquiet "{i}Vous me faites peur.{/i}"
 
-    nyra inquiet "C'est préférable. Tu comprendras plus vite."
+    nyra inquiet "{i}C'est préférable. Tu comprendras plus vite.{/i}"
 
     think "Nyra se penche jusqu'à mon oreille."
 
-    nyra raison "Il y a quelqu'un dans la livraison."
+    nyra raison "{i}Il y a quelqu'un dans la livraison.{/i}"
 
     pause 0.5
 
-    noam surpris "Quelqu'un ?"
+    noam surpris "{i}Quelqu'un ?{/i}"
 
-    iris colere "Moins fort !"
+    iris colere "{i}Moins fort !{/i}"
 
-    noam inquiet "Quelqu'un comment ?"
+    noam inquiet "{i}Quelqu'un comment ?{/i}"
 
-    tomas panne "Une... une personne. Dans un conteneur."
+    tomas panne "{i}Une... une personne. Dans un conteneur.{/i}"
 
-    noam surpris "Vous êtes sûrs ?"
+    noam surpris "{i}Vous êtes sûrs ?{/i}"
 
-    nyra raison "Nous avons vu une main entre deux caisses. Iris l'a touchée."
+    nyra raison "{i}Nous avons vu une main entre deux caisses. Iris l'a touchée.{/i}"
 
-    iris inquiet "Elle est glacée. Je ne sais même pas si elle est encore consciente."
+    iris inquiet "{i}Elle est glacée. Je ne sais même pas si elle est encore consciente.{/i}"
 
-    noam determine "Pourquoi vous ne l'avez pas sortie ?"
+    noam determine "{i}Pourquoi vous ne l'avez pas sortie ?{/i}"
 
-    nyra colere "Parce qu'il y a trois caméras dans le sas et que nous ignorons si Kami l'a déjà repérée."
+    nyra colere "{i}Parce qu'il y a trois caméras dans le sas et que nous ignorons si Kami l'a déjà repérée.{/i}"
 
-    tomas inquiet "On a replacé la bâche exactement comme elle était. Enfin... je crois."
+    tomas inquiet "{i}On a replacé la bâche exactement comme elle était. Enfin... je crois.{/i}"
 
-    iris colere "Tu crois ?"
+    iris colere "{i}Tu crois ?{/i}"
 
-    tomas panne "J'ai fait au mieux !"
+    tomas panne "{i}J'ai fait au mieux !{/i}"
 
-    noam inquiet "Qui d'autre est au courant ?"
+    noam inquiet "{i}Qui d'autre est au courant ?{/i}"
 
-    nyra neutre "Personne. La livraison est arrivée plus tôt que prévu. Nous étions les premiers dans le sas."
+    nyra neutre "{i}Personne. La livraison est arrivée plus tôt que prévu. Nous étions les premiers dans le sas.{/i}"
 
-    iris determine "Mais elle ne tiendra pas longtemps dans cet état. Il faut y retourner maintenant."
+    iris determine "{i}Mais elle ne tiendra pas longtemps dans cet état. Il faut y retourner maintenant.{/i}"
 
-    noam determine "Alors on y va."
+    noam determine "{i}Alors on y va.{/i}"
 
     $ hideGroup()
 
@@ -297,27 +297,27 @@ label _7_1_0_SAS_DECOUVERTE:
 
     think "La jeune femme laisse échapper un souffle irrégulier. Iris retire sa veste et la pose sur elle."
 
-    noam reflechit "Et si... Si on la cachait ?"
+    noam reflechit "{i}Et si... Si on la cachait ?{/i}"
 
-    iris colere "La cacher ?! Mais tu veux là cacher où ?"
+    iris colere "{i}La cacher ?! Mais tu veux là cacher où ?{/i}"
 
-    nyra colere "Chut, parle moins fort ! Si les caméras nous entendent on est foutu !"
+    nyra colere "{i}Chut, parle moins fort ! Si les caméras nous entendent on est foutu !{/i}"
 
-    noam reflechit "Il y a des caméras partout..."
-    noam reflechit "Dans une chambre ! On a les brouilleurs, ça devrait le faire, non ?"
+    noam reflechit "{i}Il y a des caméras partout...{/i}"
+    noam reflechit "{i}Dans une chambre ! On a les brouilleurs, ça devrait le faire, non ?{/i}"
 
-    iris reflechit "Dans la chambre de qui tu veux mettre un corps à moitié congelé ?"
+    iris reflechit "{i}Dans la chambre de qui tu veux mettre un corps à moitié congelé ?{/i}"
 
     "Je ne dis rien. Je la regarde simplement dans le fond des yeux."
 
-    iris colere "Raaah ! Ok, je peux m'en occuper si tu veux la garder."
-    iris determine "Mais il faut décider maintenant. Soit nous prévenons Kami, soit nous la cachons."
+    iris colere "{i}Raaah ! Ok, je peux m'en occuper si tu veux la garder.{/i}"
+    iris determine "{i}Mais il faut décider maintenant. Soit nous prévenons Kami, soit nous la cachons.{/i}"
 
-    tomas inquiet "Tu crois vraiment qu'on peut la cacher ? Parce que ça signifie mentir à Kami. Et manipuler les caméras. Et les registres de livraison."
+    tomas inquiet "{i}Tu crois vraiment qu'on peut la cacher ? Parce que ça signifie mentir à Kami. Et manipuler les caméras. Et les registres de livraison.{/i}"
 
-    nyra raison "Et si on la prévient on sait très bien comment elle va finir..."
+    nyra raison "{i}Et si on la prévient on sait très bien comment elle va finir...{/i}"
 
-    iris colere "Pendant que nous discutons, cette fille gèle. On a pas le temps de débattre."
+    iris colere "{i}Pendant que nous discutons, cette fille gèle. On a pas le temps de débattre.{/i}"
 
     call play_stat_dialogue("d7_1_0") from _call_stat_dialogue_d7_1_0
 
@@ -719,29 +719,29 @@ label _7_1_0_TRANSFERT_DEBUT:
         ("noam", "inquiet"),
     ])
 
-    tomas inquiet "On l'a fait ?"
+    tomas inquiet "{i}On l'a fait ?{/i}"
 
-    nyra raison "Ne regarde pas la porte d'Iris."
+    nyra raison "{i}Ne regarde pas la porte d'Iris.{/i}"
 
-    tomas inquiet "Je ne la regardais pas."
+    tomas inquiet "{i}Je ne la regardais pas.{/i}"
 
-    nyra raison "Tu la fixes depuis que les lumières sont revenues."
+    nyra raison "{i}Tu la fixes depuis que les lumières sont revenues.{/i}"
 
-    noam determine "On se sépare. On agit normalement."
+    noam determine "{i}On se sépare. On agit normalement.{/i}"
 
-    tomas panne "Normalement. Oui. Je suis parfaitement normal."
+    tomas panne "{i}Normalement. Oui. Je suis parfaitement normal.{/i}"
 
-    nyra taquin "Tu ressembles à quelqu'un qui vient de cacher un cadavre."
+    nyra taquin "{i}Tu ressembles à quelqu'un qui vient de cacher un cadavre.{/i}"
 
-    tomas inquiet "Ce n'est pas un cadavre !"
+    tomas inquiet "{i}Ce n'est pas un cadavre !{/i}"
 
-    nyra colere "Moins fort."
+    nyra colere "{i}Moins fort.{/i}"
 
     pause 0.4
 
-    noam inquiet "Kael est encore dans le sas."
+    noam inquiet "{i}Kael est encore dans le sas.{/i}"
 
-    nyra raison "Il nous rejoindra. Si tu retournes le chercher maintenant, tu attireras l'attention."
+    nyra raison "{i}Il nous rejoindra. Si tu retournes le chercher maintenant, tu attireras l'attention.{/i}"
 
     think "Elle a raison. Pourtant, quelque chose me dérange dans le silence du sas."
 

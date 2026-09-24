@@ -1870,3 +1870,17 @@ translate chinese a80f8d88:
     # noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
     noam "幸好没真的起火，设备应该只是受了点损伤。多久之后才会真的变危险？"
 
+# TODO: Translation updated at 2026-09-04 18:48
+
+# game/scenario/5_0.rpy:478
+translate chinese c09788b4_3:
+
+    # "Rien."
+    ""
+
+# game/scenario/5_0.rpy:811
+translate chinese 290dd969_6:
+
+    # noam "Non."
+    noam ""
+

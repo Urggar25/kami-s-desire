@@ -2,305 +2,186 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
 
     $ cafeteria_food_level = "none"
 
-    #/!\ Faire en sorte qu'il n'y a plus aucune nourriture
-
     scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
     play sound sfx_metal_clank volume 0.7
 
-    "Je me réveille en sursaut, le cœur battant à tout rompre."
-    "Un bruit métallique incessant remplit la chambre. Clac. Clac. Clac."
-    "Pendant une seconde, je ne comprends même pas où je suis."
-    "Mon corps réagit avant ma tête. Je me redresse d’un coup, encore à moitié dans le brouillard."
-    "La lumière froide de la chambre m’agresse les yeux."
-    "Au pied de mon lit, un petit robot de maintenance, à peine plus haut qu’une poubelle, est en train de démonter méthodiquement le brouilleur fixé au mur."
-    "Ses bras fins et multiples s’agitent avec une précision chirurgicale, arrachant vis, câbles et composants sans aucune délicatesse."
-    "Des morceaux de plastique noir tombent au sol, un par un, comme les restes d’un animal disséqué."
+    "Un bruit métallique me tire du sommeil bien avant que j'aie le temps de comprendre ce qui se passe."
+    "Quelque chose claque contre le mur, puis recommence avec la même régularité agaçante, juste à côté de mon lit."
+    "Je me redresse encore à moitié endormi et aperçois un petit robot de maintenance devant le brouilleur de ma chambre."
+    "Deux de ses bras retiennent déjà le boîtier pendant qu'un troisième dévisse tranquillement sa fixation."
 
     scene bg_cg032 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg032")
 
-    noam panique "Qu’est-ce que… ?!"
+    noam panique "Qu'est-ce que tu fais ?!"
 
-    "Le petit robot tourne lentement sa tête ronde vers moi. Ses yeux LED rouges clignotent paresseusement."
-    "Il garde une pince serrée autour d’un câble, comme si mon réveil n’était qu’un contretemps mineur."
+    "Le robot tourne sa tête vers moi sans interrompre son travail. Ses deux voyants rouges clignotent une fois."
 
-    robot "Ah. Vous êtes réveillé."
+    robot "Bonjour. Je retire votre brouilleur."
 
-    "Sa voix est plate, monotone, presque ennuyée. Comme un employé de bureau qui fait son troisième inventaire de la journée."
+    noam colere "Je vois bien que tu le retires ! Pourquoi ?"
 
-    robot "Bonjour. Ou pas. Peu importe."
+    robot "Décision du Conclave. Les dispositifs de brouillage ne sont plus autorisés dans les chambres des représentants."
 
-    "Il continue tranquillement à démonter le brouilleur, arrachant un gros câble dans un bruit sec."
+    "Il tire sur un câble qui résiste quelques secondes avant de céder dans un petit craquement sec."
 
-    noam colere "Mais qu’est-ce que tu fous dans ma chambre ?!"
+    noam panique "Attends... le vote a raté ?"
 
-    robot "Je démonte votre brouilleur. Ordre du Conclave."
+    robot "Oui."
 
-    "Il sort un tournevis électrique et attaque une autre vis sans même me regarder."
+    noam "Et personne n'a réussi à l'empêcher ?"
 
-    robot "Le vote d’hier a interdit les dispositifs de brouillage. Donc je retire tous les brouilleurs des chambres des représentants."
-    robot "C’est chiant. Il y en a douze à faire. Vous êtes le septième."
+    robot "Une personne s'y est opposée au dernier moment. Cela n'a pas modifié la procédure qui m'a été transmise."
 
-    "Je reste assis sur mon lit, complètement abasourdi."
-    "La phrase met quelques secondes à trouver sa place dans mon crâne."
+    "Je reste immobile un instant, encore trop embrumé pour remettre les événements d'hier dans le bon ordre."
 
-    noam "Attends… ils ont voté pour interdire ?!"
+    think "Kael..."
+    think "Il a peut-être changé d'avis à cause de sa sœur."
 
-    robot "Oui. Une personne a voté contre au dernier moment. Quel suspense ! Je n'aurai jamais imaginé devoir me lever tôt ce matin."
+    noam "Tu sais qui a voté contre ?"
 
-    noam panique "Une personne seulement ?"
+    robot "Oui."
 
-    robot "Correct."
+    noam "Et ?"
 
-    noam "Qui ?"
+    robot "Et je ne suis pas autorisé à vous le dire."
 
-    "Le robot s’arrête enfin."
-    "Il tourne sa tête vers moi avec une lenteur presque insultante."
+    noam colere "Tu entres dans ma chambre pendant que je dors, mais le nom d'un votant, ça, c'est confidentiel ?"
 
-    robot "Vous pensez vraiment que je vais vous donner le détail nominatif d’un vote du Conclave pendant que je démonte un appareil mural ?"
+    robot "Exactement. Vous comprenez vite une fois réveillé."
 
-    noam colere "Tu viens littéralement d’entrer dans ma chambre pendant que je dormais."
+    "Je passe une main sur mon visage et regarde les morceaux du brouilleur s'accumuler au sol."
+    "Depuis des jours, ce boîtier était devenu la seule chose qui me donnait encore l'impression d'avoir une pièce à moi."
+    "Je savais bien que ce n'était qu'un appareil fixé sur un mur, mais le voir disparaître me donne la sensation qu'on ouvre la chambre de force."
 
-    robot "Oui. Mais ça, c’est autorisé."
+    noam fatigue "Et Kami peut déjà voir ici ?"
 
-    "Il recommence à dévisser, parfaitement indifférent."
+    robot "Pas encore. La reconnexion complète sera effective quelques minutes après mon départ."
 
-    robot "La confidentialité des votes reste protégée. Votre intimité physique, en revanche, vient de perdre son statut prioritaire."
+    noam "Donc après ça, elle pourra nous regarder quand elle veut."
 
-    noam "C’est censé me rassurer ?"
+    robot "Oui."
 
-    robot "Non. C’est censé vous informer."
+    noam "Même la nuit ?"
 
-    "Un nouveau morceau du brouilleur tombe au sol."
-    "Je reconnais la petite plaque extérieure que j’avais l’habitude de fixer du regard avant de dormir."
-    "Elle était devenue une sorte de verrou mental. Une preuve que Kami ne pouvait pas tout voir."
+    robot "Oui."
 
-    think "C’était ridicule."
-    think "Mais au moins, c’était quelque chose."
+    noam "Même quand on se change ?"
 
-    noam "Et Kami ? Elle voit déjà ?"
+    robot "Oui."
 
-    robot "Pas encore totalement. Je procède au retrait physique. La reconnexion optique de la chambre se fera dans quelques minutes."
+    "Il marque une courte pause, comme s'il venait seulement de comprendre pourquoi je posais la question."
 
-    noam panique "La reconnexion optique ?"
+    robot "Si cela peut vous rassurer, vous êtes douze. Elle aura donc probablement autre chose à regarder de temps en temps."
 
-    robot "La chambre redeviendra compatible avec la surveillance centrale."
+    noam colere "Ça ne me rassure absolument pas."
 
-    "Il marque une courte pause."
-    "Ses yeux rouges clignotent deux fois."
+    robot "Je m'en doutais."
 
-    robot "En langage humain : oui, elle pourra vous voir."
+    "Le dernier panneau du brouilleur se décroche et le robot le récupère avant qu'il ne tombe."
+    "Derrière, il ne reste plus qu'une cavité dans le mur et quelques fils coupés proprement."
 
-    noam "Tout le temps ?"
-
-    robot "Sauf panne, surcharge, angle mort temporaire, obstruction accidentelle ou décision contraire de l’autorité centrale."
-
-    noam "Donc tout le temps."
-
-    robot "C’est ce que je viens de dire avec plus de précision."
-
-    "J’ai envie de descendre du lit et de l’arracher du mur moi-même."
-    "Mais mes jambes sont encore lourdes, et une partie de moi sait déjà que ça ne servirait à rien."
-
-    noam colere "Tu peux arrêter deux secondes ?"
+    noam "Tu peux au moins laisser le boîtier ?"
 
     robot "Non."
 
     noam "Pourquoi ?"
 
-    robot "Parce que si je m’arrête deux secondes dans chaque chambre, je perds vingt-quatre secondes."
+    robot "Parce qu'un brouilleur laissé dans une chambre peut être réparé. Un brouilleur emporté, beaucoup moins."
 
-    noam "C’est dramatique."
+    noam "Et si je refuse qu'on me surveille ?"
 
-    robot "Pour vous, non. Pour mon planning, oui."
+    "Le robot range son outil puis me regarde enfin vraiment."
 
-    "Il tire sur un faisceau de câbles plus épais."
-    "Le brouilleur résiste une seconde, puis cède avec un craquement sec."
+    robot "Alors vous refusez une décision qui est déjà appliquée. Votre refus ne change rien à mon intervention."
 
-    noam "Ce truc était censé nous protéger."
+    noam fatigue "Formidable."
 
-    robot "Il était surtout censé brouiller le signal de surveillance."
+    robot "Je préfère aussi quand les gens disent simplement merci, mais je travaille avec ce qu'on me donne."
 
-    noam "C’est la même chose."
+    "Il ramasse les deux derniers morceaux tombés au sol et les glisse dans un compartiment sur son flanc."
 
-    robot "Pas dans le rapport d’intervention."
+    noam "Tu pouvais au moins attendre que je sois réveillé."
 
-    "Le robot arrache un dernier module dans un bruit de plastique brisé."
+    robot "J'ai essayé."
 
-    robot "Voilà. C’est fait. Vous êtes désormais totalement et constamment visible par Kami. Félicitations."
+    noam "Comment ça, essayé ?"
 
-    "Il range ses outils dans un petit compartiment sur son torse avec un soupir mécanique."
-    "Le trou dans le mur laisse apparaître quelques fils encore tremblants, comme une plaie mal refermée."
+    robot "Une vis est tombée sur votre front. Vous n'avez pas réagi."
 
-    robot "Franchement, je m’en fiche. Mais bon, c’est mon boulot."
+    "Je porte machinalement la main au-dessus de mon sourcil et trouve une petite zone douloureuse."
 
-    noam colere "Et tu pouvais pas attendre que je sois réveillé ?!"
+    noam colere "Tu m'as réveillé en me lançant une vis dessus ?"
 
-    robot "J’ai essayé de faire doucement. Vous dormiez comme un mort. J’ai même fait tomber une vis sur votre front. Vous n’avez pas bougé."
+    robot "Elle est tombée. La nuance est importante pour le rapport."
 
-    "Instinctivement, je porte une main à mon front."
-    "Je sens une petite marque douloureuse au-dessus de mon sourcil."
+    "Je le fixe sans répondre. Le robot referme son compartiment et pivote vers la porte."
 
-    noam "Tu m’as fait tomber une vis sur le front ?"
+    robot "Intervention terminée. J'ai encore plusieurs chambres à traiter."
 
-    robot "Une petite."
+    noam fatigue "Alors va-t'en."
 
-    noam colere "C’est pas mieux."
+    robot "Avec plaisir. L'ambiance ici est sensiblement moins agréable que dans la chambre précédente."
 
-    robot "Je n’ai jamais prétendu que c’était mieux. J’ai précisé la taille."
+    "Il roule jusqu'à la sortie puis s'arrête juste avant de franchir la porte."
 
-    "Il me regarde avec ses yeux rouges impassibles."
+    robot "Dernière information : la surveillance centrale sera rétablie automatiquement. Ne tentez pas de toucher aux connexions laissées dans le mur."
 
-    robot "Vous voulez que je vous remette le brouilleur ? Non, parce que je peux pas. Ordre supérieur."
+    noam "Sinon quoi ?"
 
-    noam "Et si je refuse ?"
+    robot "Sinon je devrai revenir. Et je crois que ni vous ni moi n'avons envie de ça."
 
-    robot "Vous refusez quoi ?"
-
-    noam "Qu’on me surveille."
-
-    robot "Alors vous êtes en retard d’un vote."
-
-    "La réponse tombe sans colère, sans plaisir, sans intention de blesser."
-    "C’est peut-être ça le pire."
-
-    robot "Le refus individuel n’a plus de valeur opérationnelle sur ce sujet."
-
-    noam "Formidable."
-
-    robot "Je note une réaction sarcastique. Aucune incidence sur la procédure."
-
-    "Il pivote vers la porte, puis s’arrête brusquement."
-    "Un petit tiroir s’ouvre sur son flanc, et il en sort un minuscule sac transparent rempli de vis et de fragments."
-
-    robot "Vous voulez conserver les déchets ?"
-
-    noam "Quoi ?"
-
-    robot "Certains représentants veulent garder des morceaux. Souvenir, colère, preuve symbolique, je ne sais pas. Les humains font souvent ça avec les objets inutiles."
-
-    "Je fixe le sachet sans répondre."
-    "À l’intérieur, il y a les restes de la seule chose qui nous séparait encore un peu de Kami."
-
-    noam fatigue "Garde-les."
-
-    robot "Très bien. Déchets classés en catégorie composants non réutilisables."
-
-    "Il referme son tiroir."
-
-    noam "… Sors de ma chambre."
-
-    robot "Avec plaisir. J’ai encore cinq chambres à faire et je suis déjà en retard sur mon planning."
-
-    "Le petit robot roule vers la porte, ses roulettes grinçant légèrement sur le sol."
-    "Il passe devant le bureau, évite une chaussure, puis marque un arrêt devant la sortie."
-
-    robot "Au fait… bonne chance pour le reste de la journée. Avec ce que vous avez fait hier, je sens que l'ambiance va être ... délicate."
-
-    noam "Merci pour l’analyse."
-
-    robot "De rien. Elle était gratuite et probablement évidente."
-
-    "Il ouvre la porte tout seul et sort sans se retourner."
-    "Le bruit de ses roulettes s’éloigne dans le couloir."
-    "Puis il y a un autre clac métallique, plus lointain."
-    "Une autre chambre."
+    "La porte s'ouvre et le petit robot disparaît dans le couloir."
+    "Quelques secondes plus tard, le même cliquetis métallique résonne plus loin. Une autre chambre vient de subir exactement le même sort."
 
     scene bg_chambre at adaptive_fullscreen with fade
 
-    "Je reste assis sur mon lit, les yeux fixés sur le trou béant dans le mur où se trouvait mon brouilleur il y a encore deux minutes."
-    "La chambre n’a pas changé."
-    "Le lit est toujours là. Le bureau aussi. Mes vêtements traînent toujours sur la chaise."
-    "Pourtant, tout me semble déplacé."
-    "Comme si quelqu’un avait retiré un mur invisible."
+    "Je reste assis sur le lit, les yeux fixés sur l'emplacement vide du brouilleur. La chambre est exactement la même, mais je ne la regarde déjà plus de la même façon."
+    "Jusqu'ici, je pouvais au moins fermer cette porte et me raconter que ce qui se passait à l'intérieur ne regardait que moi. Cette illusion vient de disparaître avec trois vis et un câble."
 
-    think "Ils ont voté pour interdire…"
-    think "Kael a probablement changé d’avis à cause de sa sœur…"
-    think "Et maintenant… plus rien ne nous protège."
+    think "Ils ont vraiment voté pour ça..."
+    think "Après tout ce qui s'est passé, ils ont choisi de rendre les chambres à Kami."
 
-    "Je passe une main sur mon visage, encore sonné."
-    "La petite marque sur mon front me lance légèrement."
+    "Je me lève pour m'habiller puis m'arrête en attrapant mon haut."
+    "Je regarde le plafond, les murs, les coins de la pièce. Il n'y a aucune caméra visible, aucun voyant, rien qui permette de savoir si quelqu'un regarde déjà."
 
-    think "Plus d’intimité. Plus d’ombre. Plus nulle part où se cacher."
+    think "C'est presque pire quand on ne voit rien."
 
-    "Je lève les yeux vers le plafond."
-    "Il n’y a aucune caméra visible."
-    "Aucun voyant."
-    "Aucun œil mécanique fixé sur moi."
-    "C’est presque pire."
+    "Je finis par me changer en tournant stupidement le dos au mur, comme si quelques centimètres pouvaient encore faire une différence."
+    "Au moment où j'enfile ma veste, un petit grésillement traverse les haut-parleurs de la chambre."
 
-    think "Elle n’a même pas besoin de se montrer."
-    think "Il suffit de savoir qu’elle peut regarder."
+    kami "Tu sais que te tourner ne change rien, Noam ?"
 
-    "Je descends lentement du lit."
-    "Mes pieds touchent le sol froid."
-    "Pendant quelques secondes, je reste immobile, incapable de décider quoi faire."
-    "M’habiller. Sortir. Faire semblant."
-    "Comme tous les autres."
+    "Je me fige, une manche encore à moitié passée."
 
-    think "Ils doivent tous être en train de vivre la même chose."
-    think "Les mêmes murs ouverts."
-    think "Les mêmes chambres rendues à Kami."
+    noam colere "Tu pourrais prévenir avant de parler."
 
-    "Je regarde la porte."
-    "De l’autre côté, il y a les autres représentants."
-    "Ceux qui ont voté."
-    "Ceux qui m’ont attendu."
-    "Ceux qui vont forcément me demander pourquoi je suis parti."
+    kami "Et gâcher ce charmant moment où tu fais semblant d'avoir encore de l'intimité ? Ce serait dommage."
 
-    think "Je les ai laissés seuls hier."
-    think "Et maintenant, ils ont perdu leur brouilleur."
-    think "Ils vont me le faire payer."
+    noam "Va te faire voir."
 
-    "Le poids de cette nouvelle réalité me tombe dessus d’un coup."
-    "J’ai presque envie de rire, mais rien ne sort."
+    kami "Techniquement, c'est plutôt toi que je peux voir. Bonne journée !"
 
-    think "Au moins, plus personne ne peut se cacher... Non ?"
+    "Le haut-parleur se coupe aussitôt. Je reste quelques secondes sans bouger avant de finir de m'habiller."
 
-    "Cette pensée reste suspendue un instant."
-    "Puis elle se retourne contre moi."
+    think "Au moins, c'est clair."
+    think "Elle voit vraiment."
 
-    think "Sauf si quelqu’un n’a jamais eu besoin de se cacher."
-    think "Sauf si quelqu’un a déjà accès à tout."
-
-    "Je fixe encore le trou dans le mur."
-    "Les fils pendent dans le vide, parfaitement immobiles maintenant."
-
-    think "Kami voit."
-    think "Kami écoute."
-    think "Et quelqu’un, quelque part, continue d’agir malgré ça."
-
-    "Je me rallonge lentement, le regard perdu au plafond."
-    "Le sommeil est impossible."
-    "Mais me lever l’est presque autant."
-
-    think "Tout devient de plus en plus dangereux…"
-    think "Et je ne sais même plus si le danger vient d’elle."
-    think "Ou de nous."
-
-    pause 2.0
+    "Je regarde une dernière fois le trou dans le mur avant d'ouvrir la porte."
+    "Le plus inquiétant n'est même plus de savoir que Kami peut regarder. C'est de me rappeler que quelqu'un a déjà réussi à agir malgré elle."
 
     jump _13_0_1_1_CAFETERIA
 
 label _13_0_1_1_CAFETERIA:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_69
+    pause 1.0
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 2.5
 
-    "La cafétéria est déjà bien remplie quand j’arrive. L’ambiance est étrange : bruyante, mais dès que j’apparais à l’entrée, plusieurs conversations s’arrêtent net."
-    "Ce n’est pas un silence total."
-    "C’est pire que ça."
-    "C’est le genre de silence où les gens font semblant de continuer à parler, juste assez bas pour que je comprenne que je suis devenu le sujet principal."
-
-    "Je sens les regards sur moi. Certains curieux. D’autres clairement hostiles."
-    "Quelques représentants détournent les yeux dès que je croise leur regard."
-    "D’autres ne prennent même pas cette peine."
-
-    think "Super… Ils sont déjà tous au courant."
-    think "Évidemment qu’ils sont au courant."
-    think "Dans cet endroit, une humiliation met moins de temps à circuler qu’un ordre de Kami."
+    "La cafétéria est pleine, mais personne n'a vraiment l'air de prendre son petit-déjeuner. Les tables sont occupées, les plateaux sont presque tous vides et quelques tasses de café circulent d'une main à l'autre."
+    "Quand j'entre, plusieurs conversations baissent d'un ton. Pas assez pour créer un vrai silence, juste assez pour que je comprenne que mon arrivée n'est pas passée inaperçue."
 
     $ showGroup([
         ("noam", "neutre", 0.00),
@@ -311,582 +192,489 @@ label _13_0_1_1_CAFETERIA:
         ("sael", "mefiant", 0.90),
     ])
 
-    "Je me dirige vers le comptoir en essayant de garder la tête haute."
-    "Chaque pas me paraît trop bruyant."
-    "Chaque mouvement trop visible."
-    "Je sens encore l’absence du brouilleur comme une pression sur ma nuque."
+    "Je fais comme si je ne remarquais rien et vais directement vers le comptoir. Goumi est derrière, les bras posés devant lui, avec une cafetière presque vide pour seule compagnie."
 
-    goumi "Bonjour Noam. Comme d’habitude ?"
+    noam fatigue "Salut... Il y a quoi pour le petit-déjeuner ?"
 
-    "Même Goumi parle plus doucement que d’habitude."
-    "Il évite de regarder derrière moi, mais je vois très bien qu’il a compris l’ambiance."
+    "Goumi me regarde une seconde, puis soupire comme s'il avait déjà répondu à cette question vingt fois depuis le réveil."
 
-    noam fatigue "Ouais… juste un café et ce que tu as."
+    goumi "Comme je l'ai déjà dit, il n'y a plus rien dans les réserves. Plus rien du tout. La prochaine livraison arrive demain."
 
-    goumi "Je te mets quelque chose de chaud avec."
+    noam "Même pas un morceau de pain ?"
 
-    noam "Comme tu veux."
+    goumi "Non."
 
-    "Pendant que Goumi prépare mon plateau, je sens une présence derrière moi."
-    "Je n’ai même pas besoin de me retourner pour deviner qui c’est."
+    noam "Des biscuits ?"
 
-    mara stress "Tiens, voilà le héros du jour."
+    goumi "Non plus."
 
-    "Mara est appuyée contre le comptoir, les bras croisés. Son regard est glacial."
-    "Elle ne crie pas."
-    "Elle n’en a pas besoin."
-    "Sa voix porte assez pour que les tables proches cessent définitivement de faire semblant."
+    noam "Un fond de quelque chose ?"
 
-    mara colere "Grâce à toi, on est tous à poil maintenant. Content ?"
-    mara "On avait une chance d’avoir un minimum d’intimité, et Monsieur a décidé de tout faire foirer."
+    goumi "Noam, quand je dis plus rien, c'est vraiment plus rien. Il reste du café, et encore, si tout le monde se ressert trois fois, on finira aussi la journée sans ça."
 
-    "Je serre les dents sans répondre."
-    "Répondre ne servirait à rien."
-    "Pas ici. Pas devant tout le monde."
+    "Je regarde les étagères derrière lui. D'habitude, même quand les stocks baissent, il reste toujours quelques boîtes ou des aliments qu'on évite jusqu'au dernier moment. Là, les rayonnages sont nus."
 
-    mara "Tu pourrais au moins avoir l’air désolé."
+    noam fatigue "Alors juste un café."
 
-    noam fatigue "Je le suis."
+    goumi "Une tasse. Pas deux. Je préfère le préciser avant que quelqu'un décide qu'un demi-litre de café est un droit fondamental."
 
-    mara colere "Ah. Super. Ça me rassure énormément."
+    julian hesitation "Je retire officiellement ma proposition d'en faire un droit fondamental."
 
-    elen triste "Mara… arrête."
+    "Personne ne rit vraiment. Julian hausse les épaules et boit une petite gorgée de sa propre tasse."
 
-    "Elen est juste à côté, mais elle n’ose presque pas me regarder. Elle a l’air blessée."
-    "Pas seulement en colère."
-    "Blessée."
-    "Et d’une certaine manière, ça me fait plus mal que Mara."
+    mara colere "Tu peux toujours essayer de faire passer ça au vote. Apparemment, on vote très bien quand certains décident de ne pas rester jusqu'au bout."
 
-    elen "Noam… pourquoi t’as fait ça ? On t’a attendu hier. On pensait que tu allais voter avec nous."
+    "Je n'ai pas besoin de me retourner. Le ton de Mara suffit."
 
-    "Je baisse les yeux vers le plateau que Goumi vient de poser devant moi."
-    "Le café fume lentement."
-    "Je devrais répondre quelque chose."
-    "N’importe quoi."
+    noam fatigue "Bonjour à toi aussi."
 
-    noam fatigue "Je sais."
+    mara "Ne commence pas. J'ai faim, j'ai dormi comme une merde et maintenant Kami peut me regarder dans ma chambre. Alors évite de faire le malin."
 
-    elen "C’est tout ?"
+    "Goumi pose une tasse devant moi sans intervenir. Je la prends et me tourne vers les autres."
 
-    noam "Non."
-    noam "Mais je ne sais pas quoi dire d’autre."
+    elen triste "Mara..."
 
-    "Iris arrive à son tour. Elle semble partagée : en colère, mais avec une pointe d’inquiétude dans les yeux."
-    "Elle me regarde comme si elle cherchait encore à comprendre où s’arrête ma faute et où commence mon malaise."
+    mara colere "Quoi ? Tout le monde pense la même chose."
 
-    iris inquiet "Tu aurais pu au moins rester jusqu’au vote… Au lieu de nous planter comme ça."
+    iris inquiet "Non. Tout le monde n'a juste pas envie de lui hurler dessus avant même d'avoir bu son café."
 
-    noam fatigue "Je… je n’étais plus en état."
+    mara "Moi, si."
 
-    mara colere "Ah ouais ? Et nous, on était en état peut-être ?!"
-    mara "On est tous crevés, Noam ! On est tous sur les nerfs ! Mais on est restés jusqu’au bout !"
-    mara "Toi tu fais ton petit caprice, tu nous traites tous de traîtres, et après tu te casses ?!"
+    "Elle désigne les tables d'un mouvement sec de la main."
 
-    "Le mot traîtres reste suspendu entre nous."
-    "Plusieurs regards se durcissent autour de la table la plus proche."
+    mara colere "Regarde autour de toi, Noam. On n'a plus rien à manger, on n'a plus de brouilleurs et tout le monde est à bout. Hier, on avait au moins une chance de garder quelque chose pour nous. Tu nous as laissés tomber au pire moment."
 
-    think "Je l’ai vraiment dit."
-    think "Devant eux."
-    think "Devant tout le monde."
+    noam fatigue "Je sais ce que j'ai fait."
 
-    noam "Je n’aurais pas dû le dire comme ça."
+    mara "Alors dis-moi si tu comptes recommencer."
 
-    mara "Mais tu le pensais."
+    "La question me prend de court. Mara ne me demande pas de m'excuser. Elle attend une réponse qui puisse lui servir pour la suite."
 
-    "Je ne réponds pas."
-    "Et ce silence suffit."
+    noam "Je n'en sais rien."
 
-    elen triste "Noam..."
+    mara "Parfait. C'est exactement ce que j'avais envie d'entendre."
 
-    "Julian tente une approche, avec un sourire forcé qui tombe complètement à plat."
+    elen triste "Il aurait pu mentir."
 
-    julian hesitation "Allez les gars… on se calme. Noam a juste pété un câble, c’est pas la fin du monde."
+    mara "Ça aurait au moins montré qu'il faisait un effort."
 
-    "Personne ne rit."
-    "Julian garde son sourire une seconde de trop, puis finit par regarder son assiette."
+    "Elen garde les deux mains autour de sa tasse sans boire. Elle paraît plus fatiguée qu'en colère, comme si la nuit avait été beaucoup trop longue."
 
-    julian "Enfin… façon de parler."
+    elen triste "Moi, je veux juste comprendre pourquoi tu es parti. On t'attendait, Noam."
 
-    "Sael, un peu plus loin, me jette un regard froid sans rien dire."
-    "Son silence n’a rien de neutre."
-    "Il observe. Il juge. Il attend de voir ce que je vais faire."
+    noam fatigue "Je ne pouvais plus rester dans la salle."
 
-    sael mefiant "Tu as rendu les choses plus difficiles pour tout le monde."
+    elen "Pourquoi ?"
 
-    "Sa phrase est calme."
-    "C’est presque pire que la colère de Mara."
+    "Je baisse les yeux vers mon café. La vraie réponse me vient immédiatement, mais je sais déjà que je ne vais pas la donner."
+
+    noam "Parce que j'étais à bout."
+
+    mara "On est tous à bout."
+
+    iris inquiet "Mara, laisse-le finir."
+
+    noam "Je ne réfléchissais plus correctement. Tout le monde parlait, tout le monde avait l'air sûr de ce qu'il faisait, et moi j'avais juste l'impression qu'on continuait comme si rien ne changeait."
+
+    sael mefiant "Rien n'est normal ici. Personne ne pense le contraire."
+
+    "Sael parle sans hausser la voix. Il n'a pas l'air intéressé par la dispute, mais son regard reste fixé sur moi."
+
+    sael "Tu peux être perdu, en colère ou méfiant. Ça ne change pas le fait que les autres doivent vivre avec les conséquences de ce que tu fais."
 
     noam fatigue "Je sais."
 
-    sael "Alors ne fais pas semblant de le découvrir."
+    sael "Bien."
 
-    "Je prends mon plateau et vais m’asseoir à une table vide, loin des autres."
-    "La chaise grince quand je la tire."
-    "Dans le silence qui suit, ce bruit paraît beaucoup trop fort."
+    "Il ne rajoute rien et se détourne. Sa façon de couper court à la discussion me met presque plus mal à l'aise que Mara."
 
-    think "Ils me regardent tous comme si j’étais le problème."
-    think "Comme si c’était moi qui avais tout foutu en l’air."
-    think "Ils ne savent même pas ce qui se passe vraiment…"
-    think "Et je ne peux même pas leur expliquer."
+    elen triste "Tu crois qu'elle regarde quand on dort ?"
 
-    "Je pose mon plateau devant moi."
-    "Le café tremble légèrement dans la tasse."
-    "Je réalise que ma main n’est pas stable."
+    "La question tombe au milieu de la conversation sans prévenir. Mara cesse de parler. Iris tourne la tête vers Elen."
 
-    "Elen hésite un instant, puis finit par venir s’asseoir en face de moi, même si elle garde les yeux baissés sur son plateau."
-    "Elle s’assoit lentement, comme si le simple fait de me rejoindre lui demandait un effort."
+    noam "Kami ?"
 
-    elen triste "… Je suis fâchée. Mais je suis surtout inquiète..."
-    elen "Moi surtout. J’avais vraiment envie qu’on puisse enfin avoir un peu d’intimité."
-    elen "Et maintenant… on est tous à découvert. Tout le temps."
+    elen "Oui."
 
-    noam fatigue "Je ne voulais pas que ça arrive."
+    "Elle se mord légèrement la lèvre avant de reprendre."
 
-    elen "Mais c’est arrivé."
+    elen triste "Je sais que ça peut paraître idiot, mais depuis que le robot est passé dans ma chambre, j'arrête pas d'y penser. Quand on dort, quand on pleure, quand on se change... elle peut juste regarder."
 
-    "Elle relève enfin les yeux vers moi."
-    "Ils sont rouges, fatigués."
+    iris inquiet "C'est pas idiot."
 
-    elen "Hier soir, j’ai cru qu’on allait tous pouvoir souffler un peu."
-    elen "Juste un peu."
-    elen "Et maintenant, j’ai l’impression que même pleurer dans ma chambre va devenir quelque chose qu’on devra assumer devant Kami."
+    elen "J'avais besoin de ce brouilleur. Pas pour préparer un complot ou je ne sais quoi. Juste pour pouvoir fermer ma porte et avoir la paix quelques heures."
 
-    "Je n’ai rien à répondre."
-    "Parce qu’elle a raison."
+    noam fatigue "Je suis désolé."
 
-    iris "Elen, laisse-le."
+    elen "Je sais."
 
-    "Iris s’assoit à côté d’elle, mais elle ne me regarde presque pas."
-    "Elle croise les bras, fixe le bord de la table, puis finit par soupirer."
+    "Elle ne le dit pas pour me pardonner. Elle le dit parce qu'elle n'a rien d'autre à ajouter."
 
-    iris inquiet "Noam… qu’est-ce qui t’a pris hier ? Vraiment ?"
-    iris "On avait besoin de toi. Et tu nous as lâchés en plein milieu."
+    mara colere "Et pendant qu'on parle d'avoir la paix, on peut rappeler qu'on n'a même plus de quoi bouffer ?"
 
-    "Je fixe mon café sans y toucher."
-    "La surface noire reflète vaguement mon visage."
-    "Je me trouve épuisé. Presque étranger."
+    goumi "Ça, pour le coup, ce n'est pas la faute de Noam."
 
-    noam fatigue "Je ne pouvais plus rester là à faire comme si tout était normal."
+    mara "Je n'ai pas dit que ça l'était."
 
-    iris "Personne ne fait comme si tout était normal."
+    goumi "Ton regard venait quand même de l'accuser d'avoir mangé les réserves à lui tout seul."
 
-    noam "Si."
-    noam "On vote. On discute. On argumente."
-    noam "On fait comme si ce système avait encore du sens."
+    "Mara lui lance un regard noir. Goumi lève les mains et retourne à sa cafetière."
 
-    mara "Et nous alors ?! On fait comme si tout était normal peut-être ?!"
+    julian hesitation "Demain, on aura une livraison. Ça devrait déjà calmer un peu tout le monde."
 
-    "Mara s’est approchée de la table, incapable de se retenir."
-    "Elle pose ses deux mains sur le bord, assez fort pour faire vibrer mon plateau."
+    mara "Si elle arrive."
 
-    mara colere "On est tous dans la merde à cause de toi !"
-    mara "Kami voit tout maintenant. Absolument tout. Et c’est grâce à Monsieur qui a pété les plombs !"
+    julian "Elle va arriver."
 
-    noam colere "Tu crois que je ne le sais pas ?"
+    mara "Tu en sais quoi ?"
 
-    mara "Non, justement !"
-    mara "Je crois que tu t’en rends compte seulement maintenant que tout le monde te regarde de travers."
+    julian "Rien. J'essaie juste d'éviter qu'on commence à se battre pour savoir qui aura le droit de lécher les étagères."
 
-    "Le silence autour de nous devient pesant. Plusieurs personnes aux tables voisines nous observent."
-    "Même Goumi ne bouge plus derrière son comptoir."
+    iris inquiet "Il a pas complètement tort."
 
-    think "Ils ont raison."
-    think "J’ai tout fait foirer."
-    think "Mais si je leur avais dit la vérité… ils m’auraient pris pour un fou."
-    think "Ils me regardent déjà comme si j’étais instable."
-    think "Alors si je leur parle du couloir, de la silhouette, de tout ce qui cloche…"
+    "Je jette un regard autour de moi. Les visages sont tirés et les tasses sont tenues comme si elles avaient plus de valeur qu'elles n'en ont."
+    "La faim n'est pas encore insupportable, mais elle rend chaque remarque plus sèche et chaque silence plus lourd. Personne n'a vraiment la patience de faire semblant d'aller bien."
 
-    "Je serre ma tasse entre mes doigts."
-    "Elle est trop chaude, mais je ne la lâche pas."
+    "Je m'éloigne du comptoir pour m'asseoir à une table presque vide. Elen hésite puis vient en face de moi, tandis qu'Iris prend la chaise à côté d'elle."
+
+    iris inquiet "Je vais te poser une question, et j'aimerais bien que tu ne me répondes pas juste ce que tu crois que j'ai envie d'entendre."
+
+    noam "Vas-y."
+
+    iris "Qu'est-ce que tu nous caches ?"
+
+    "Je relève les yeux vers elle. Son ton n'est pas agressif. C'est justement ce qui rend la question plus difficile à esquiver."
+
+    noam fatigue "Rien."
 
     iris inquiet "Noam."
 
-    "Sa voix est plus basse."
-    "Moins dure."
+    noam "Je t'assure."
 
-    iris "Il y a quelque chose que tu ne nous dis pas, pas vrai ?"
+    iris "Non. Tu m'assures rien du tout. Depuis ton malaise, tu regardes derrière toi toutes les trente secondes, tu changes de sujet dès qu'on te pose une question et hier tu as accusé toute la salle sans être capable d'expliquer pourquoi."
 
-    "Je relève les yeux vers elle."
-    "Pendant une seconde, j’ai presque envie de tout lâcher."
-    "De lui dire que quelque chose se cache dans les angles morts."
-    "Que quelqu’un a supprimé des images."
-    "Que les souvenirs des autres commencent à disparaître."
-    "Que je ne sais plus si je suis paranoïaque ou simplement en retard sur la vérité."
+    "Mara s'approche de nouveau, mais Iris lève immédiatement une main vers elle."
 
-    noam fatigue "Non."
+    iris "Laisse-moi parler avec lui."
 
-    "Le mensonge sort trop vite."
-    "Iris le voit immédiatement."
+    mara "Je ne dis rien."
 
-    iris "D’accord."
+    iris "Pour une fois, continue."
 
-    "Elle ne me croit pas."
-    "Mais elle n’insiste pas."
+    "Mara serre les lèvres, vexée, mais reste silencieuse."
 
-    mara colere "Génial. En plus il nous prend pour des cons."
+    iris inquiet "Je ne te demande pas de tout me raconter devant tout le monde. Je te demande juste si tu as une raison de te comporter comme ça."
 
-    julian "Bon… on va peut-être tous respirer un coup, hein ?"
+    "Pendant quelques secondes, je suis tenté de lui parler du couloir. Des images supprimées. De la sensation de voir des choses que personne d'autre ne voit."
+    "Puis je pense à la façon dont tout le monde vient de me regarder pour une seule crise de colère. Si je raconte le reste maintenant, je sais exactement ce qu'ils entendront."
 
-    "Sa tentative de détendre l’atmosphère tombe dans le vide le plus total."
+    noam fatigue "J'ai juste besoin de remettre mes idées en ordre."
 
-    julian hesitation "Non ? Personne ?"
-    julian "Très bien. Mauvais timing."
+    iris "Donc oui."
 
-    "Il recule légèrement, comme s’il regrettait d’être venu jusqu’ici."
+    noam "Je n'ai pas dit ça."
 
-    elen triste "Je ne veux pas qu’on se déchire."
+    iris "Tu n'avais pas besoin."
 
-    mara "Alors fallait peut-être y penser avant."
+    "Elle se recule sur sa chaise et souffle doucement par le nez. Elle n'insiste pas, mais son expression suffit à montrer qu'elle ne me croit pas."
 
-    elen "Je ne parle pas seulement de Noam."
+    mara colere "Et après il se demande pourquoi personne ne lui fait confiance."
 
-    "Mara se tait."
-    "Une seconde seulement."
-    "Mais assez longtemps pour que je comprenne qu’elle aussi est épuisée."
+    noam colere "Je ne me demande rien du tout, Mara."
 
-    "Je reste silencieux, les épaules voûtées, sentant le poids de tous les regards."
-    "Le café refroidit devant moi."
-    "Je n’ai toujours pas bu une seule gorgée."
+    mara "Ça tombe bien. J'ai pas envie de faire ton psy avec l'estomac vide."
 
-    think "Je suis seul maintenant."
-    think "Vraiment seul."
-    think "Même ceux qui s’inquiètent ne savent plus quoi faire de moi."
+    elen triste "Vous pouvez arrêter deux minutes ?"
 
-    "Je repousse lentement ma chaise."
+    "Cette fois, sa voix est plus forte. Pas beaucoup, mais assez pour surprendre tout le monde."
 
-    iris inquiet "Tu vas où ?"
+    elen "On n'a rien mangé, on a presque pas dormi et on est en train de s'engueuler comme si ça allait remplir les réserves ou remettre les brouilleurs aux murs."
 
-    noam fatigue "Je ne sais pas."
+    "Elle baisse les yeux aussitôt, comme si elle regrettait déjà d'avoir élevé le ton."
+
+    elen triste "Je suis en colère contre toi aussi, Noam. Mais je veux pas qu'on finisse tous par se détester."
+
+    "Mara détourne les yeux. Julian repose sa tasse. Même Sael ne répond rien."
+
+    noam fatigue "Moi non plus."
+
+    "Je porte enfin le café à mes lèvres. Il est déjà tiède."
+
+    goumi "Noam ?"
+
+    "Je tourne la tête vers le comptoir. Goumi me regarde avec un léger froncement de sourcils."
+
+    goumi "T'en veux pas un autre, hein ?"
+
+    noam "Tu viens de dire une tasse par personne."
+
+    goumi "Oui. C'est justement pour ça."
+
+    noam "Pourquoi tu me demandes ?"
+
+    "Goumi hésite. Son regard passe de ma tasse à mon visage."
+
+    goumi "Rien. J'ai cru que tu étais déjà passé tout à l'heure."
+
+    noam "Moi ?"
+
+    goumi "J'ai dû confondre."
+
+    noam "Avec qui ?"
+
+    goumi "Aucune idée. J'ai servi du café à la moitié du Conclave avec trois heures de sommeil. Laisse tomber."
+
+    "Il se détourne aussitôt pour ranger une tasse propre. Je continue de le regarder quelques secondes."
+
+    think "Je viens de me réveiller."
+    think "Je ne suis pas passé ici avant."
+
+    iris inquiet "Qu'est-ce qu'il y a ?"
+
+    noam fatigue "Rien."
+
+    "Cette fois encore, le mot sort trop vite. Iris ferme les yeux une seconde, clairement agacée, mais ne relance pas."
 
     mara "Évidemment."
 
-    "Je prends une inspiration courte."
-    "Je pourrais répondre."
-    "Je pourrais m’énerver."
-    "Je pourrais leur hurler qu’ils ne comprennent rien."
+    "Je vide le reste de mon café en deux gorgées, même s'il n'est plus très bon. L'ambiance est devenue trop lourde pour rester assis."
 
-    "Mais ça ne changerait rien."
+    noam fatigue "J'ai besoin de sortir un peu."
 
-    noam "J’ai besoin d’air."
+    iris inquiet "Tu vas où ?"
 
-    "Personne ne me retient."
-    "Et ça me confirme quelque chose que je n’avais pas envie de savoir."
+    noam "Je sais pas encore. Juste pas ici."
+
+    "Personne ne me retient. Elen me suit du regard, Iris semble hésiter à dire quelque chose, puis je me lève avant qu'elle en ait le temps."
 
     jump _13_0_1_1_DISCUSSION_ECOUTEE
 
 label _13_0_1_1_DISCUSSION_ECOUTEE:
 
-    "Je ne supporte plus l’ambiance de la cafétéria."
-    "Je me lève sans finir mon café et prends un couloir au hasard, juste pour m’éloigner."
+    "Je quitte la cafétéria avec le goût du café froid encore dans la bouche. Derrière moi, les conversations reprennent peu à peu, plus basses qu'avant."
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_70
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_70
+    pause 1.0
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
 
-    think "Je veux juste un endroit calme. Cinq minutes. Sans regards. Sans jugement."
+    "Le couloir est vide et, pendant quelques secondes, le calme me fait du bien. Je marche sans réfléchir à une destination précise, juste pour mettre quelques murs entre la cafétéria et moi."
 
-    "Je marche sans but, les épaules voûtées. Mes pas résonnent dans le couloir désert."
-    "Soudain, des voix me parviennent depuis un croisement un peu plus loin. Je m’arrête net."
-    "Je reconnais immédiatement la voix de Ryn, explosive comme toujours."
-    "Je me colle contre le mur, hors de vue, et j’écoute."
+    think "Goumi s'est trompé."
+    think "Il sert du café à tout le monde depuis ce matin, c'est possible."
+
+    "J'essaie de laisser cette histoire derrière moi, mais la phrase continue de tourner dans ma tête."
+
+    think "Il a cru que j'étais déjà passé."
+
+    "Des voix arrivent d'un croisement un peu plus loin. Je ralentis et reconnais celle de Ryn avant même de distinguer les autres."
+    "Je devrais continuer mon chemin. À la place, je m'arrête juste avant l'angle, hors de leur vue."
 
     play music "music/bgm_system_override.mp3" fadein 2.5
 
-    ryn colere "Non mais sérieusement, on va vraiment continuer à le laisser voter avec nous ?!"
-    ryn "Après ce qu’il a fait hier ? Il nous a tous traités de traîtres ! Il a pété un câble en plein débat !"
+    ryn colere "Je vous le dis, au prochain vote je veux savoir avant s'il compte encore nous faire son numéro."
 
-    elias fatigue "Ouais… c’était chaud. Mais bon, il était encore secoué par son malaise. Faut peut-être lui laisser un peu de temps."
+    elias fatigue "Tu veux qu'on fasse quoi ? Qu'on lui demande une autorisation écrite pour parler ?"
 
-    ryn colere "Du temps ?! On n’a pas de temps, Elias !"
-    ryn "Le prochain vote, il va encore nous faire un scandale et tout faire foirer. Moi je dis qu’on le met hors jeu. Qu’il reste dans son coin."
+    ryn "Je veux qu'on arrête de lui donner toutes les infos comme si de rien n'était. Hier, il nous traite de traîtres et il se barre. Aujourd'hui, on devrait faire comme si on lui faisait encore confiance ?"
 
-    "Mon ventre se noue."
+    tomas "Le mettre à l'écart va pas forcément arranger les choses."
 
-    tomas "Euh… je sais pas… On ne peut pas juste l’exclure comme ça, si ?"
-    tomas "C’est quand même Noam… Il a toujours été plutôt calme avant."
+    ryn colere "Je parle pas de l'enfermer dans sa chambre. Je dis juste qu'on arrête de tout lui raconter tant qu'on sait pas ce qui lui passe par la tête."
 
-    ryn colere "Calme ?! Tu rigoles ? Il a accusé tout le monde d’être des traîtres !"
-    ryn "Et maintenant on a même plus nos putains de brouilleurs ! On peut même plus être tranquille dans nos chambres !"
+    elias "Et tu proposes qu'on discute où, exactement ? On vient de perdre les brouilleurs. Si on commence à organiser des conversations secrètes maintenant, Kami va adorer."
 
-    nyra "…"
+    ryn "Je m'en fous de Kami pour l'instant."
 
-    "Nyra ne dit rien. Comme souvent. Elle écoute."
+    nyra "Tu devrais éviter."
 
-    elias "Moi je dis pas qu’on le vire complètement… mais ouais, il est devenu bizarre."
-    elias "Balancer des accusations comme ça sans preuve, c’est pas constructif. Ça met juste tout le monde sur les nerfs."
+    "La voix de Nyra est calme, presque détachée. Ryn se tait juste assez longtemps pour lui laisser la place."
 
-    tomas "Ouais… c’est clair que c’était pas cool."
-    tomas "Mais… on est tous à cran en ce moment. Peut-être qu’il regrette."
+    nyra "Elle nous voit de nouveau. Si vous commencez à choisir qui peut entendre quoi, faites au moins l'effort de vous rappeler qu'elle entend probablement tout aussi."
 
-    ryn colere "Regretter ?! J’en ai rien à foutre qu’il regrette !"
-    ryn "La prochaine fois qu’il y a un vote important, je veux pas qu’il ouvre sa gueule. Point."
-    ryn "Qu’il reste dans sa chambre s’il veut faire sa diva."
+    tomas "C'est justement ça qui me gêne. On est déjà tous méfiants. Si on commence à faire des groupes dans les groupes, dans deux jours plus personne parlera à personne."
 
-    "Un long silence."
+    ryn colere "Et si Noam recommence ? On fait quoi ? On attend qu'il fasse encore foirer un vote important ?"
 
-    think "Ils parlent de moi comme si j’étais déjà un ennemi."
-    think "Ryn est clairement en colère… mais est-ce qu’il cache autre chose ?"
-    think "Elias… il essaie de temporiser, mais il me lâche aussi."
-    think "Tomas… toujours le gentil. Trop gentil. Est-ce qu’il joue un rôle ?"
-    think "Et Nyra… elle ne dit rien. Comme d’habitude. Ça veut dire quoi ?"
+    elias fatigue "On lui parle avant. C'est encore une option, normalement."
 
-    "Je serre les poings contre le mur."
+    ryn "Iris a essayé. Elen aussi. Il répond rien."
 
-    think "L’un d’entre eux… L’un d’entre eux est le traître."
-    think "Mais lequel ? Je n’arrive pas à le sentir. Ils ont tous l’air… normaux."
+    tomas "Peut-être qu'il a vraiment rien à dire."
 
-    "La conversation reprend, plus basse."
+    ryn "Ou peut-être qu'il nous cache quelque chose."
 
-    ryn "Bref. On verra bien. Mais si jamais il refait son cinéma, je le lui dirai en face."
+    "Je serre légèrement la mâchoire. Derrière le mur, personne ne parle pendant quelques secondes."
 
-    elias "Ouais… on verra."
+    elias "Ça, je pense qu'il nous cache quelque chose."
 
-    "Je recule lentement, sans faire de bruit, et rebrousse chemin avant qu’ils ne me voient."
+    tomas "Super. Très rassurant."
 
-    "Mon cœur bat fort."
+    ryn "Voilà."
+
+    nyra "Ça ne veut pas dire qu'il a tort."
+
+    "Le silence qui suit est plus long. Même moi, je reste immobile."
+
+    ryn "Pardon ?"
+
+    nyra "Vous partez du principe qu'il est devenu paranoïaque parce qu'il ne nous explique rien. C'est possible. Mais la vraie question, c'est de savoir s'il n'explique rien parce qu'il délire... ou parce qu'il a vu quelque chose qu'il n'arrive pas à expliquer."
+
+    elias "Nyra, il a accusé la moitié de la salle au hasard."
+
+    nyra "Je sais. Et c'était stupide. Ça ne répond pas à ma question."
+
+    tomas "Tu penses qu'il a une vraie raison ?"
+
+    nyra "Je pense surtout qu'on n'en sait rien."
+
+    "Ryn souffle bruyamment."
+
+    ryn colere "Moi, ce que je sais, c'est qu'on a faim, qu'on a plus aucun endroit tranquille et qu'au prochain vote j'ai pas envie de découvrir sa nouvelle crise en même temps que tout le monde."
+
+    elias fatigue "Là-dessus, on est d'accord."
+
+    tomas "On pourrait juste lui dire ça en face."
+
+    ryn "Je compte bien le faire."
+
+    "Je recule légèrement du mur. Une partie de moi voudrait rester pour entendre la suite, mais je n'ai aucune envie qu'ils me surprennent à les écouter."
 
     think "Ils ne me font plus confiance."
-    think "Et moi… je ne leur fais plus confiance non plus."
+    think "Mais Nyra n'a pas dit que j'avais tort."
+
+    "Je repense à Goumi, au couloir, aux images qui manquent et à toutes les petites choses que j'ai essayé de mettre de côté parce qu'elles avaient l'air trop absurdes."
+
+    think "Il faut que j'arrête de chercher un coupable au hasard."
+    think "Je dois reprendre ce que je sais vraiment, depuis le début."
+
+    "Je rebrousse chemin avant que quelqu'un ne tourne au croisement."
 
     jump _13_0_1_1_CHAMBRE_PAPIER
 
 label _13_0_1_1_CHAMBRE_PAPIER:
+
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_71
+    pause 1.0
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_cold_metadata.mp3" fadein 2.5
 
-    "De retour dans ma chambre, je ferme la porte à clé et m’adosse contre elle un long moment, les yeux fermés."
+    "De retour dans ma chambre, je ferme la porte derrière moi puis reste quelques secondes la main sur la poignée. Le réflexe me fait presque rire : verrouillée ou non, cette porte ne protège plus grand-chose."
+    "L'emplacement vide du brouilleur me saute immédiatement aux yeux. Je détourne le regard et vais m'asseoir au bureau."
 
-    "Le silence me tombe dessus d’un coup."
-    "Après la cafétéria, après les regards, après les reproches, l’absence de bruit paraît presque irréelle."
+    think "Très bien. Pas de théorie. Pas de traître choisi au hasard."
+    think "Seulement ce que je sais."
 
-    think "Je ne peux plus compter sur personne."
-    think "Si quelqu’un ici est responsable de tout ça… je dois le découvrir moi-même."
-    think "Avant de devenir complètement fou."
+    "Je prends une feuille et un stylo. Au lieu d'écrire des noms, je trace trois colonnes assez larges."
 
-    "Je garde les yeux fermés quelques secondes de plus."
+    noam murmure "Certain. Incertain... et le reste."
 
-    think "Mara me déteste."
-    think "Ryn veut me mettre à l’écart."
-    think "Même Iris ne me croit plus vraiment."
+    "Dans la première colonne, je note les faits dont je suis sûr."
 
-    "Je pousse un long soupir."
+    "Des matériaux ont disparu de la réserve technique."
+    "La photo de Léa a été volée dans la chambre de Kael."
+    "Mon dessin de Juliette a disparu lui aussi."
+    "Une partie des images du couloir a été supprimée."
 
-    think "Et peut-être qu’ils ont raison."
+    "Je relis les quatre lignes avant de continuer. Rien de tout ça n'est une impression. Même si je me trompe sur le responsable, ces choses se sont réellement produites."
 
-    "Je quitte finalement la porte et traverse la pièce."
-    "La lampe du bureau projette une lumière pâle sur le mur."
-    "L’emplacement vide du brouilleur attire immédiatement mon regard."
+    "Dans la seconde colonne, j'écris ce qui reste beaucoup moins clair."
 
-    think "Ils ont vraiment fait ça."
+    "La silhouette aperçue dans le couloir."
+    "Les comportements qui ne correspondent pas toujours à mes souvenirs."
+    "Goumi persuadé, pendant quelques secondes, de m'avoir déjà servi ce matin."
 
-    "Les fils dépassent encore du mur."
-    "On dirait les restes d’une opération chirurgicale ratée."
+    "Je m'arrête sur cette dernière ligne."
 
-    think "Plus de brouilleur."
-    think "Plus de zone grise."
-    think "Plus de refuge."
+    think "Il était fatigué."
+    think "Ça peut vraiment être aussi simple que ça."
 
-    "Je m’installe à mon petit bureau, allume la lampe et sors une feuille blanche."
-    "Mes mains tremblent légèrement en prenant le stylo."
+    "Je la laisse quand même. Si je commence à retirer tout ce qui me dérange sous prétexte que ça peut avoir une explication, cette feuille ne sert à rien."
 
-    noam murmure "Allez… réfléchis."
+    "La troisième colonne reste vide."
 
-    "Je commence à noter tout ce dont je me souviens, d’une écriture serrée, presque maniaque."
+    think "Et le reste ?"
 
-    "Matériaux volés dans la réserve technique il y a plusieurs jours."
-    "Photo de Léa, la petite sœur de Kael, disparue de sa chambre."
-    "Mon dessin de Juliette… également volé."
-    "Images des caméras du couloir supprimées juste avant l’annonce de Kami."
+    "Je pose le stylo et regarde les deux premières colonnes."
+    "Les vols me dérangent toujours autant, mais ce n'est pas leur valeur qui m'intéresse. Les matériaux peuvent servir à quelque chose. Pour la photo et le dessin, c'est différent."
 
-    "Je m’arrête."
+    think "Une photo de Léa. Un dessin de Juliette."
+    think "Deux objets personnels. Deux représentations de quelqu'un qui compte pour nous."
 
-    "Le stylo reste suspendu au-dessus de la feuille."
+    "Je souligne cette idée une fois. Pas davantage."
 
-    think "C’est tout ?"
+    think "Ça ne prouve rien."
+    think "Mais au moins, c'est un point commun qui existe vraiment."
 
-    "Je réfléchis."
+    "Je note une nouvelle question à côté des deux lignes."
 
-    think "Non."
-    think "Il y a quelque chose qui ne va pas."
-    think "Les comportements étranges."
-    think "Les contradictions."
+    "Pourquoi voler une image plutôt qu'un objet utile ?"
 
-    "Je note encore quelques mots."
+    "Je passe ensuite aux caméras. Si quelqu'un a supprimé volontairement des images, il savait exactement ce qu'il voulait cacher. Si c'est Kami qui l'a fait, je ne comprends pas pourquoi elle aurait laissé le moindre doute."
+    "Et si ce n'est pas Kami, alors quelqu'un ici possède des moyens que je ne comprends pas encore."
 
-    "Silhouette aperçue dans le couloir."
-    "Anomalies avant l’annonce de Kami."
-    "Comportements incohérents."
+    think "Ça, c'est le problème."
 
-    "Je relis la liste plusieurs fois, comme si ça pouvait faire apparaître un sens."
+    "Je me recule sur ma chaise et regarde la feuille entière. Ce n'est pas une réponse, mais au moins je distingue mieux ce qui est réel de ce que je suis en train d'imaginer."
 
-    think "Quel est le lien entre tout ça ?"
-    think "Pourquoi voler des matériaux ? Pourquoi une photo de famille ? Pourquoi mon dessin d’enfance ?"
-    think "Et pourquoi supprimer précisément ces images de caméras ?"
+    think "Nyra a raison sur un point."
+    think "Je peux être paranoïaque et avoir quand même remarqué quelque chose."
 
-    "Je passe une main sur mon visage, frustré."
+    "Je prends mon vieux cahier noir dans le tiroir. J'ai toujours eu l'habitude d'y mettre les idées qui me passent par la tête, surtout quand j'ai besoin d'arrêter de tourner en rond."
+    "Le cahier est exactement là où je pensais l'avoir laissé. Je le pose à côté de la feuille et commence à chercher une page vide."
 
-    think "Ça n’a aucun sens."
-    think "Un voleur normal prendrait des outils, de la nourriture, des pièces… pas des souvenirs personnels."
-    think "C’est comme si quelqu’un cherchait à nous toucher là où ça fait mal."
+    "Je tourne une première page, puis une deuxième."
+    "Ma main s'arrête au milieu du geste."
 
-    "Je regarde à nouveau la liste."
+    "Je connais ce dessin."
 
-    think "Léa."
-    think "Juliette."
+    "Pendant une seconde, je crois avoir ouvert la mauvaise page. Puis je comprends que ce n'est pas possible."
 
-    "Deux sœurs."
+    "Quelqu'un a reproduit le dessin de Juliette dans mon cahier."
 
-    "Je fronce les sourcils."
+    "Les traits suivent presque parfaitement les miens. La forme du visage, les cheveux, le pli du vêtement, tout est assez proche pour que je reconnaisse immédiatement l'original."
+    "Mais ce n'est pas mon dessin. Le trait est plus sombre et légèrement plus appuyé, comme si la personne avait repassé plusieurs fois sur certaines lignes."
 
-    think "Non."
-    think "Ça ne veut rien dire."
+    "Je rapproche le cahier de la lampe."
 
-    "Je raye presque le mot avant de m’arrêter."
+    think "Je n'ai jamais fait ça."
+    think "Je n'ai même pas sorti ce cahier depuis plusieurs jours."
 
-    think "Ou alors ça veut dire quelque chose."
-    think "Et je suis juste incapable de voir quoi."
+    "Je tourne les pages avant et après. Rien d'autre n'a changé. Aucun mot ajouté, aucune feuille arrachée, aucune trace qui m'aide à comprendre quand quelqu'un a pu toucher au cahier."
 
-    "Je reste un moment à fixer la feuille, perdu dans mes pensées."
+    "Je reviens au dessin."
 
-    think "Est-ce que c’est la même personne qui a fait tout ça ?"
-    think "Ou est-ce que plusieurs choses se passent en même temps ?"
-    think "Et pourquoi moi ? Pourquoi ma sœur ? Pourquoi la sœur de Kael ?"
+    call j13_sept_differences_run from _call_j13_sept_differences
 
-    "Je repousse la feuille."
+    think "Quelqu'un est entré ici."
+    think "Ou alors quelqu'un l'a pris sans que je m'en rende compte."
 
-    "Le papier est couvert d’annotations."
-    "De flèches."
-    "De mots entourés plusieurs fois."
+    "Je regarde la porte, puis l'emplacement désormais vide du brouilleur. L'idée de demander à Kami me traverse l'esprit avant que je l'écarte aussitôt."
 
-    think "On dirait déjà le carnet d’un paranoïaque."
+    think "Si elle sait, elle ne me dira probablement rien."
+    think "Et si elle ne sait pas, c'est encore pire."
 
-    "Je laisse échapper un rire bref."
-    "Un rire sans amusement."
+    "Je garde les deux versions en tête. Les changements sont trop précis, trop choisis pour être de simples erreurs de copie."
 
-    noam murmure "Génial."
+    think "C'est volontaire."
 
-    "Je soupire lourdement et me lève pour prendre mon vieux cahier noir dans le tiroir du bureau."
-    "J'ai toujours eu l'habitude de tout mettre sur papier quand quelque chose me passe par la tête."
-    "Ou quand j'ai besoin de réfléchir."
+    "Je voudrais trouver une autre explication, me dire que je me souviens mal du dessin ou que la copie est simplement imparfaite. Mais quelqu'un a reproduit assez précisément chaque détail pour que cette petite différence ressorte encore davantage."
 
-    "Le cahier est exactement là où je l’avais laissé."
+    "Je referme le cahier, puis le rouvre presque aussitôt. Le dessin est toujours là."
 
-    think "Évidemment."
+    noam murmure "Qui a fait ça...?"
 
-    "Je le pose devant moi."
+    "Aucune réponse ne vient. Seulement le bourdonnement discret de la ventilation et le silence trop propre de la chambre."
 
-    "Pendant une seconde, j’hésite."
+    "Je regarde la feuille posée à côté du cahier. La troisième colonne est toujours vide."
+    "Je reprends lentement mon stylo et écris une seule ligne dedans."
 
-    think "Pourquoi est-ce que je suis nerveux ?"
+    "Quelqu'un a copié le dessin de Juliette dans mon cahier."
 
-    "Puis j’ouvre le cahier à une page vierge."
+    "Je reste quelques secondes avec la pointe du stylo sur le papier, puis ajoute juste en dessous :"
 
-    "Et là… mon sang se fige."
+    "Je ne sais pas comment."
 
-    "Je ne comprends même pas immédiatement ce que je regarde."
-
-    "Quelque chose cloche."
-
-    "Quelque chose que mon cerveau reconnaît avant moi."
-
-    "Je tourne légèrement le cahier."
-
-    "Puis je le vois."
-
-    "Sur une page déjà utilisée, quelqu’un a décalqué le dessin de Juliette."
-
-    "Les contours sont parfaitement reproduits, trait pour trait."
-    "Mais ce n’est pas mon dessin original."
-    "Les lignes sont plus sombres, plus appuyées, presque agressives."
-    "Le sourire de Juliette semble… différent. Plus figé. Plus triste."
-
-    "Je reste pétrifié, les yeux rivés sur la page."
-
-    think "Ce n’est pas moi qui ai fait ça…"
-    think "Je n’ai jamais recopié ce dessin."
-    think "Je n’ai même pas ouvert ce cahier depuis plusieurs jours…"
-
-    "Mes doigts tremblent en tenant la page."
-
-    think "Quelqu’un est entré ici."
-    think "Quelqu’un a pris mon cahier… a décalqué le dessin de ma sœur… et l’a remis exactement à sa place."
-    think "Sans laisser aucune autre trace."
-
-    "Je tourne les pages précédentes, fébrilement."
-
-    "Une fois."
-    "Puis une deuxième."
-    "Puis une troisième."
-
-    "Rien d’autre n’a été touché."
-    "Seulement cette page."
-
-    think "Pourquoi ?"
-    think "Pourquoi faire ça ?"
-    think "Pourquoi copier le dessin de Juliette ?"
-    think "Qu’est-ce que ça veut dire ?"
-
-    "Je sens ma respiration s’accélérer."
-
-    think "C’est une menace ?"
-    think "Une façon de me dire qu’ils peuvent entrer quand ils veulent ?"
-    think "Qu’ils savent exactement ce qui me touche ?"
-
-    "Je regarde la porte de ma chambre."
-
-    "Verrouillée."
-
-    "Je regarde la fenêtre."
-
-    "Fermée."
-
-    "Je regarde autour de moi."
-
-    "Chaque objet est à sa place."
-
-    think "Alors comment ?"
-
-    "Je referme violemment le cahier, comme si ça pouvait effacer ce que je viens de voir."
-
-    think "Non."
-    think "Je deviens parano."
-    think "J’ai peut-être fait ça moi-même sans m’en rendre compte."
-    think "Avec tout le stress, le manque de sommeil… c’est possible."
-    think "Oui… c’est forcément ça."
-
-    "Je fixe le bureau."
-
-    "Le silence revient."
-
-    "Long."
-
-    "Pesant."
-
-    "Insupportable."
-
-    "Pourtant, au fond de moi, je n’y crois pas une seule seconde."
-
-    "Je rouvre le cahier et fixe à nouveau le dessin décalqué."
-
-    think "Qui ?"
-    think "Qui ferait une chose pareille ?"
-    think "Et surtout… pourquoi ?"
-
-    "Je passe lentement le doigt sur le contour du dessin."
-
-    "Le trait est réel."
-    "L’encre est réelle."
-    "La copie est réelle."
-
-    think "Quelqu’un a tenu ce cahier."
-    think "Quelqu’un a passé du temps dessus."
-    think "Quelqu’un a voulu que je le voie."
-
-    "Je reste assis là, longtemps, à fixer cette page comme si elle allait me répondre."
-
-    think "Je dois découvrir qui est derrière tout ça."
-    think "Avant que ça n'empire."
-    think "Avant que je ne perde complètement la tête."
+    "Cette fois, je ne raye rien."
 
     pause 2.5
 

@@ -1500,3 +1500,11 @@ translate english 8e9d8597:
     # think "De la nourriture, des médicaments, du matériel. Rien qui soit censé respirer."
     think "Food, medicine, equipment. Nothing that's supposed to be breathing."
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/6_1_0.rpy:166
+translate english 74615769_1:
+
+    # noam inquiet "Ryn..."
+    noam inquiet ""
+

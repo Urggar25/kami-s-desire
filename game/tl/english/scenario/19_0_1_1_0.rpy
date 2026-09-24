@@ -1506,3 +1506,17 @@ translate english 5e41d2ea:
     # voix_off "Bonne nuit, Noam."
     voix_off ""
 
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/19_0_1_1_0.rpy:72
+translate english 46081631_5:
+
+    # noam "Oui."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:271
+translate english 0c521561_2:
+
+    # noam "Merci."
+    noam ""
+

@@ -3526,3 +3526,11 @@ translate english strings:
     # game/scenario/6_0_1.rpy:315
     old "Kael ?"
     new "Kael?"
+# TODO: Translation updated at 2026-09-04 18:15
+
+# game/scenario/6_0_1.rpy:545
+translate english daf4fff8_5:
+
+    # think "..."
+    think ""
+
