@@ -200,6 +200,28 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     "Nos lampes balayent lentement la pièce. Plusieurs établis occupent un mur entier. Il y a des boîtes de pièces, des bras articulés, des coques démontées et deux stations verticales installées au fond."
 
+    "Je m'arrête devant l'un des établis. Deux grosses batteries sont posées sous une série de composants électroniques encore emballés."
+
+    noam reflexion "Attends."
+
+    mara "Quoi ?"
+
+    "Je prends ma lampe et éclaire les batteries de plus près. Le boîtier, les connecteurs, même les bandes orange sur le côté me rappellent immédiatement quelque chose."
+
+    noam inquiet "Elias cherchait exactement ce modèle quand du matériel a disparu de la réserve."
+
+    mara mefiant "T'es sûr ?"
+
+    noam "Oui. Les grosses batteries. Et certains de ces composants aussi."
+
+    "Je fouille du regard les étagères. Il y en a quelques-uns, mais clairement pas tout ce qui avait disparu."
+
+    mara reflexion "Donc quelqu'un a amené une partie du matos volé ici."
+
+    noam inquiet "On dirait."
+
+    "Je repose la lampe sur les deux stations du fond."
+
     "Sur chacune d'elles repose une silhouette ronde que je reconnais immédiatement."
 
     noam surpris "Des Goumi."
@@ -572,7 +594,17 @@ label _18_0_1_1_ZONE_ETROITE:
 
     mara taquin "Voilà. Sauvé une deuxième fois. Je commence à pouvoir facturer."
 
-    noam "Merci."
+    noam reflexion "Tu m'as déjà fait cette blague, non ?"
+
+    mara "À la cafétéria."
+
+    "Je cherche le souvenir pendant une seconde. Rien ne me revient."
+
+    noam hesitation "Je m'en souviens pas."
+
+    mara taquin "Tu m'écoutes jamais. C'est pas mon problème."
+
+    noam "Merci quand même."
 
     mara "De rien. Maintenant avance avant que tu changes encore d'avis."
 
