@@ -187,6 +187,9 @@ label _14_0_1_1_0_CAFETERIA_REJET:
     noam surpris "Sérieusement ?"
     mara agace "Ne me fais pas regretter d'avoir été civilisée pendant deux secondes."
 
+    noam sourire "Tu me factures combien, les deux secondes ?"
+    mara rire "Je t'enverrai la facture."
+
     iris fatigue "Assieds-toi avant qu'elle change d'avis."
 
     "Je m'installe à distance raisonnable. Personne ne me souhaite la bienvenue, mais personne ne se lève non plus."
@@ -764,6 +767,48 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
     "La conversation s'arrête là. Je repose la tablette sur le lit."
     "Je ne sais pas si Kael me croit réellement. Je ne suis même pas sûr d'avoir besoin qu'il me croie. Pour l'instant, il veut les mêmes réponses que moi, et c'est déjà beaucoup."
+
+    pause 0.8
+
+    play sound sfx_knock volume 0.8
+
+    "Trois coups rapides frappent à ma porte."
+
+    noam fatigue "Quoi encore..."
+
+    "Quand j'ouvre, Kael est dans le couloir avec Elias. Elias tient une petite boîte de pièces noires découpées à la main."
+
+    noam reflexion "Vous faites quoi ?"
+
+    elias fatigue "Service public."
+
+    kael calme "Depuis qu'ils ont retiré les brouilleurs, Elias voulait un moyen simple de couper au moins l'image dans les chambres."
+
+    "Kael prend une petite plaque noire dans la boîte. Une charnière minuscule et deux aimants ont été fixés au dos."
+
+    elias reflechit "On les pose directement devant l'objectif. Ça bloque rien d'autre, ça pirate rien, ça fait juste un cache."
+
+    noam surpris "Vous avez fabriqué ça aujourd'hui ?"
+
+    kael "J'ai fait les supports. Elias a découpé les plaques et fixé les aimants."
+
+    elias fatigue "Et on en a fait assez pour tout le monde, alors prends le tien avant que je regrette."
+
+    "Il m'en tend un."
+
+    noam taquin "C'est étonnamment propre."
+
+    elias colere "Va te faire foutre."
+
+    kael sourire "Ça veut dire merci, chez lui."
+
+    "Je retourne le petit cache entre mes doigts avant de le poser sur mon bureau."
+
+    noam reflexion "Kami va adorer."
+
+    elias fatigue "Elle peut déposer une réclamation."
+
+    "Ils repartent vers la chambre suivante avec leur boîte."
 
     pause 1.5
 
