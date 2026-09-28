@@ -570,7 +570,7 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     "Ma voix est plus basse que je ne le voudrais. Je relis la ligne, puis encore une fois, comme si elle pouvait finir par changer."
 
-    noam inquiet "Altération... ça peut vouloir dire plein de choses. Une surveillance, un test, un risque neurologique..."
+    noam inquiet "Accès... ça peut vouloir dire plein de choses. Une consultation, un test, une extraction de données..."
 
     sael raison "Peut-être."
 
