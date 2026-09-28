@@ -384,6 +384,7 @@ label _10_0_1_1_RELAIS_GYMNASE:
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_j10011_gym_relay
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
+<<<<<<< Updated upstream
     "Le gymnase n'est pas tout à fait vide."
 
     "Iris est seule près des tapis, les cheveux attachés et les mains entourées de bandes. Au moment où j'entre, elle enchaîne deux coups rapides contre un sac, pivote, puis termine par un mouvement de hanche sec avant de reculer."
@@ -408,6 +409,14 @@ label _10_0_1_1_RELAIS_GYMNASE:
 
     "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
 
+=======
+    $ unlock_gallery_image("bg_cg051")
+    scene bg_cg051 at adaptive_fullscreen with dissolve
+    pause 0.8
+    scene bg_gymnase at adaptive_fullscreen with dissolve
+
+    "Le gymnase est vide. L'odeur de caoutchouc et de métal paraît plus forte sans le souffle constant de la climatisation."
+>>>>>>> Stashed changes
     "Le relais est derrière une protection transparente, juste à côté d'une large bouche d'aération."
 
     menu:

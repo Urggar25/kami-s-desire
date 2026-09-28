@@ -364,6 +364,9 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Iris attrape mon poignet, tourne sur elle-même et me fait perdre l'équilibre avec une facilité qui me laisse à peine le temps de comprendre ce qu'elle vient de faire."
 
+    $ unlock_gallery_image("bg_cg047")
+    scene bg_cg047 at adaptive_fullscreen with flash_white
+
     noam surpris "Qu'est-ce que—?!"
 
     "Le couteau tombe immédiatement. J'essaie de me dégager par réflexe, mais elle garde mon bras bloqué et me repousse contre la table."

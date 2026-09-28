@@ -472,6 +472,8 @@ label _21_0_1_1_EPILOGUE:
 
     "Noam garde les yeux tournés vers la planète."
 
+    $ unlock_gallery_image("bg_cg049")
+    scene bg_cg049 at adaptive_fullscreen with dissolve
     $ cam_move(fx=0.73, fy=0.42, z=1.18, t=4.5)
     "Puis, lentement, son sourire s'élargit."
     $ doppelganger_reveal(screamer=False, duration=0.90, restore_volume=0.0)

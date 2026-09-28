@@ -196,6 +196,10 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     "Elle passe à son tour, jure en accrochant sa manche, puis se redresse à côté de moi."
 
+    $ unlock_gallery_image("bg_cg046")
+    $ hideGroup()
+    scene bg_cg046 at adaptive_fullscreen with flash_white
+
     mara surpris "Ah ouais."
 
     "Nos lampes balayent lentement la pièce. Plusieurs établis occupent un mur entier. Il y a des boîtes de pièces, des bras articulés, des coques démontées et deux stations verticales installées au fond."
@@ -249,6 +253,12 @@ label _18_0_1_1_SALLE_ROBOTS:
     "Elle se penche légèrement vers l'unité démontée, puis recule."
 
     mara "C'est glauque."
+
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "surpris", 0.34),
+        ("mara", "mefiant", 0.66),
+    ])
 
     noam "Un peu."
 

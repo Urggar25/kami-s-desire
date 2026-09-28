@@ -446,11 +446,19 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     "Sael me jette le sel directement sur le visage et le haut du torse."
 
-    with vpunch
+    $ unlock_gallery_image("bg_cg048")
+    scene bg_cg048 at adaptive_fullscreen with vpunch
 
     noam panique "PUTAIN !"
 
     "Je ferme les yeux par réflexe tandis que les grains glissent dans mes cheveux, sous mon col et jusque sur mes lèvres."
+
+    scene bg_chambre_sael at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "colere", 0.18),
+        ("sael", "determine", 0.58),
+        ("ryn", "colere", 0.86),
+    ])
 
     noam colere "T'es complètement malade !"
     sael determine "Regarde-moi."

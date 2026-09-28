@@ -467,6 +467,9 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     "Personne ne répond. Lysa ferme brièvement les yeux, Elias recule d'un demi-pas et Ryn baisse le regard."
     "Les mains de Kael tremblent de colère."
 
+    $ unlock_gallery_image("bg_cg050")
+    scene bg_cg050 at adaptive_fullscreen with vpunch
+
     kael colere "Alors je vous le demande une dernière fois : qui a pris la photo ?!"
 
     stop music fadeout 1.0

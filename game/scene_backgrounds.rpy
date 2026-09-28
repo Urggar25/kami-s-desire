@@ -516,13 +516,19 @@ image bg_cavite_technique = "images/background/scenes/bg_cavite_technique.png"
 image bg_salle_goumi_cachee = "images/background/scenes/bg_salle_goumi_cachee.png"
 image bg_navette_retour = "images/background/scenes/bg_navette_retour.png"
 
-# CG de révélation des jours 15 à 21, indexées automatiquement par la galerie.
+# CG de révélation des jours 8 à 21, indexées automatiquement par la galerie.
 image bg_cg040 = "images/background/cg/bg_cg040.png"
 image bg_cg041 = "images/background/cg/bg_cg041.png"
 image bg_cg042 = "images/background/cg/bg_cg042.png"
 image bg_cg043 = "images/background/cg/bg_cg043.png"
 image bg_cg044 = "images/background/cg/bg_cg044.png"
 image bg_cg045 = "images/background/cg/bg_cg045.png"
+image bg_cg046 = "images/background/cg/bg_cg046.png"
+image bg_cg047 = "images/background/cg/bg_cg047.png"
+image bg_cg048 = "images/background/cg/bg_cg048.png"
+image bg_cg049 = "images/background/cg/bg_cg049.png"
+image bg_cg050 = "images/background/cg/bg_cg050.png"
+image bg_cg051 = "images/background/cg/bg_cg051.png"
 
 image couloir_cafeteria = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_cafeteria.png")
 image couloir_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_dortoir.png")
