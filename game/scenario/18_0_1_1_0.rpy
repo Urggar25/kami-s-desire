@@ -594,15 +594,19 @@ label _18_0_1_1_ZONE_ETROITE:
 
     mara taquin "Voilà. Sauvé une deuxième fois. Je commence à pouvoir facturer."
 
-    noam reflexion "Tu m'as déjà fait cette blague, non ?"
+    noam reflexion "Tu m'avais déjà sorti ça à la cafétéria."
 
-    mara "À la cafétéria."
+    mara "Quoi ?"
 
-    "Je cherche le souvenir pendant une seconde. Rien ne me revient."
+    noam "La facture. Quand tu m'avais laissé m'asseoir avec vous."
 
-    noam hesitation "Je m'en souviens pas."
+    "Mara me regarde une seconde de trop."
 
-    mara taquin "Tu m'écoutes jamais. C'est pas mon problème."
+    mara taquin "Ah. Ouais. Peut-être."
+
+    noam hesitation "Peut-être ?"
+
+    mara agace "Tu tiens vraiment un registre de toutes mes blagues ?"
 
     noam "Merci quand même."
 
