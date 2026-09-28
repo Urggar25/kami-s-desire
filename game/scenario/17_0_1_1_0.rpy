@@ -200,7 +200,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     iris surpris "Quoi ?!"
 
-    elias colere "Attends, attends... altération de quoi ?"
+    elias colere "Attends, attends... accès à quoi ?"
 
     tomas inquiet "Mnésique. La mémoire."
 
@@ -214,7 +214,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     julian peur "Non mais... ça peut vouloir dire autre chose, non ? Un risque neurologique, un examen, une catégorie médicale... quelque chose qui n'implique pas qu'on ait réellement touché à nos souvenirs."
 
-    tomas reflechit "C'est possible. Enfin... techniquement oui, mais le terme est très précis. Une altération mnésique désigne bien une modification du fonctionnement ou du contenu de la mémoire. Ça ne dit pas comment, ni pourquoi, ni même si c'est volontaire, mais—"
+    tomas reflechit "C'est possible. Enfin... techniquement oui, mais le terme est très précis. Une procédure d'accès mnésique désigne un accès direct au contenu de la mémoire. Ça ne dit pas ce qui a été consulté, copié ou extrait, ni pourquoi, mais—"
 
     $ showGroup([
         ("iris", "colere", 0.18),
@@ -466,7 +466,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Plusieurs regards convergent vers elle."
 
-    nyra raison "Nous sommes censés voter librement, en pleine connaissance des conséquences. Or nous venons d'apprendre qu'une procédure liée à l'altération de la mémoire apparaît dans chacun de nos dossiers, et l'autorité qui organise ces votes refuse de nous dire ce qu'elle signifie."
+    nyra raison "Nous sommes censés voter librement, en pleine connaissance des conséquences. Or nous venons d'apprendre qu'une procédure d'accès mnésique apparaît dans chacun de nos dossiers, et l'autorité qui organise ces votes refuse de nous dire ce qu'elle signifie."
 
     tomas inquiet "Nyra..."
 
@@ -713,7 +713,7 @@ label _17_0_1_1_APRES_PROTESTATION:
         ("elen", "inquiet", 0.82),
     ])
 
-    iris colere "Et on fait quoi si le jour vingt-et-un arrive et qu'on sait toujours rien ? On rentre chez nous avec une jolie mention 'altération mnésique' dans le dossier et on reprend notre vie ?"
+    iris colere "Et on fait quoi si le jour vingt-et-un arrive et qu'on sait toujours rien ? On rentre chez nous avec une jolie mention 'procédure d'accès mnésique' dans le dossier et on reprend notre vie ?"
 
     lysa blase "Personnellement, j'avais prévu de faire comme si tout ça n'était jamais arrivé. Vu le thème du moment, quelqu'un pourra peut-être m'aider."
 
