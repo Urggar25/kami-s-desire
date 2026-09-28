@@ -384,7 +384,30 @@ label _10_0_1_1_RELAIS_GYMNASE:
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_j10011_gym_relay
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
-    "Le gymnase est vide. L'odeur de caoutchouc et de métal paraît plus forte sans le souffle constant de la climatisation."
+    "Le gymnase n'est pas tout à fait vide."
+
+    "Iris est seule près des tapis, les cheveux attachés et les mains entourées de bandes. Au moment où j'entre, elle enchaîne deux coups rapides contre un sac, pivote, puis termine par un mouvement de hanche sec avant de reculer."
+
+    noam surpris "Je savais pas que tu faisais ça."
+
+    "Elle se retourne, essoufflée, puis attrape sa serviette."
+
+    iris fatigue "Tu savais pas beaucoup de choses sur moi."
+
+    noam reflexion "Depuis longtemps ?"
+
+    iris fatigue "Quelques années. Boxe, un peu de judo. Ça m'aide à arrêter de réfléchir cinq minutes."
+
+    noam sourire "Je note de pas trop t'énerver."
+
+    iris colere "Il serait temps."
+
+    "Elle boit une gorgée d'eau et grimace en regardant la bouche d'aération."
+
+    iris fatigue "Par contre sans clim, je vais mourir avant d'avoir fini. Amuse-toi bien avec ton truc."
+
+    "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
+
     "Le relais est derrière une protection transparente, juste à côté d'une large bouche d'aération."
 
     menu:
