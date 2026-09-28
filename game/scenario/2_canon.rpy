@@ -50,12 +50,10 @@ label _2_CANON:
 
     # Diffusion de Kami
     stop music fadeout 1.0
-    scene bg_diffusion_neutre at adaptive_fullscreen with fade
+    scene bg_diffusion_taquin at adaptive_fullscreen with fade
     show screen kami_broadcast_ui
 
     play music "music/bgm_system_override.mp3" fadein 1.0
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Ooooh ? Vous êtes déjà en train de remuer dans vos petits lits ?"
 
@@ -968,11 +966,10 @@ label _2_SALLE_OBSERVATION:
     pause 0.8
 
     stop music fadeout 0.6
-    scene bg_diffusion_neutre at adaptive_fullscreen with fade
+    scene bg_diffusion_professeur at adaptive_fullscreen with fade
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Petite annonce, l'un d'entre vous m'a demandé l'heure du vote demain."
     kami "Le vote aura lieu demain à quatorze heures. Soyez ponctuels."
 
@@ -1232,7 +1229,7 @@ label _2_CAFETERIA_SOIR:
 
     # jump patreon_ending
 
-    call end_day("3") from _call_end_day_23
+    call end_day("3", sleeping=True) from _call_end_day_23
 
     jump _3_CANON
 

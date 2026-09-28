@@ -9,12 +9,10 @@ label seven_questions_kami_intro:
     voix "Diffusion centrale active."
 
     play music "music/bgm_system_override.mp3" fadein 0.6
-    scene bg_diffusion_neutre at adaptive_fullscreen with fade
+    scene bg_diffusion_taquin at adaptive_fullscreen with fade
     show screen kami_broadcast_ui
 
     kami "[sq_intro_line(0)]"
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "[sq_intro_line(1)]"
     kami "[sq_intro_line(2)]"
 

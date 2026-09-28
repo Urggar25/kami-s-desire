@@ -22,6 +22,21 @@ init -10 python:
     def kd_character_asset(character_id, asset_name):
         return "images/character/{}/{}.png".format(character_id, asset_name)
 
+    def kd_character_layer_asset(character_id, asset_name):
+        """Retourne un calque prêt à composer, avec masque propre si requis."""
+        asset_path = kd_character_asset(character_id, asset_name)
+
+        # Les calques pompom sont générés à partir des poses historiques. Leur
+        # alpha est borné par ces poses afin de garantir un détourage identique
+        # aux textures d'Iris, sans halo sur les autres couches du sprite.
+        if character_id == "iris" and asset_name == "tenue3":
+            return AlphaMask(asset_path, kd_character_asset("iris", "tenue1"))
+        if character_id == "iris" and asset_name.endswith("_tenue3"):
+            base_arm = asset_name[:-len("_tenue3")]
+            return AlphaMask(asset_path, kd_character_asset("iris", base_arm))
+
+        return asset_path
+
     def kd_character_has_layered_wardrobe(character_id):
         return (
             renpy.loadable(kd_character_asset(character_id, "corps_nu"))
@@ -77,7 +92,7 @@ init -10 python:
             asset_names = [body_name or "corps", arms, eyes, mouth] + accessories
 
         asset_paths = [
-            kd_character_asset(character_id, asset_name)
+            kd_character_layer_asset(character_id, asset_name)
             for asset_name in asset_names
             if renpy.loadable(kd_character_asset(character_id, asset_name))
         ]
@@ -580,7 +595,7 @@ init python:
     }
 
     def _iris_asset(name):
-        return "%s/%s.png" % (IRIS_ASSET_DIR, name)
+        return kd_character_layer_asset("iris", name)
 
     def _iris_is_speaking():
         return is_character_speaking("iris")
@@ -638,6 +653,7 @@ image iris desaccord            = iris_expression("desaccord")
 image iris intervention         = iris_expression("intervention")
 image iris gene                 = iris_expression("gene")
 image iris blase                 = iris_expression("blase")
+image iris agace                 = iris_expression("blase")
 image iris vide                 = iris_expression("vide")
 
 # ======================

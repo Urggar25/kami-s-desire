@@ -1976,7 +1976,7 @@ label _3_VOTE_POUR:
 
     pause 3.0
 
-    call end_day("4") from _call_end_day_3
+    call end_day("4", sleeping=True) from _call_end_day_3
 
     jump _4_1_REVEIL_CHAMBRE
 
@@ -2076,7 +2076,7 @@ label _3_VOTE_CONTRE:
 
     pause 3.0
 
-    call end_day("4") from _call_end_day_24
+    call end_day("4", sleeping=True) from _call_end_day_24
 
     jump _4_0_REVEIL_CHAMBRE
 

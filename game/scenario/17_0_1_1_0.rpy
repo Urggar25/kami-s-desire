@@ -1,207 +1,1334 @@
 label _17_0_1_1_0_ANNONCE_KAMI:
-    scene bg_chambre at adaptive_fullscreen with fade
+
+    $ current_period = "Matin"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 2.5
+
+    "Je n'ai presque pas dormi. Chaque fois que je fermais les yeux, je revoyais la même ligne dans ce vieux livre des Archives."
+
+    "Puis le trou dans ma mémoire revenait avec elle. La salle d'observation. Kael. Le couloir. Et ce vide impossible à traverser après l'avoir retrouvé."
+
+    noam inquiet "..."
+
+    "Sael avait promis qu'on en parlerait aux autres dès le matin. J'aurais préféré attendre encore un peu, trouver quelque chose de plus solide, comprendre au moins ce que cette procédure pouvait réellement signifier."
+    "Mais après avoir vu la mention disparaître sous nos yeux, garder ça pour nous n'aurait plus eu aucun sens."
+
+    noam reflexion "Il faut qu'ils sachent."
+
+    "Je reste assis quelques secondes au bord du lit, puis je me lève. Mon crâne va mieux qu'hier, mais la sensation n'a pas disparu. Celle d'avoir laissé quelque chose derrière moi sans savoir quoi."
+
+    jump _17_0_1_1_CAFETERIA_M16
+
+
+label _17_0_1_1_CAFETERIA_M16:
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_102
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+
+    "Je prends la direction de la cafétéria. Plus j'avance, plus j'ai envie de faire demi-tour. Pas parce que je doute de ce qu'on a trouvé, mais parce que je sais déjà ce que cette découverte va provoquer."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_103
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_world_decline.mp3" fadein 2.0
+
+    "Presque tout le monde est déjà là. Kael manque encore à l'appel, mais cette fois personne ne semble vraiment surpris."
+    "Sael est debout près d'une table avec le vieux livre des Archives posé devant elle. Elle ne mange pas. Elle attend."
+
+    $ showGroup([
+        ("elen", "joie", 0.18),
+        ("sael", "neutre", 0.50),
+        ("noam", "inquiet", 0.82),
+    ])
+
+    elen joie "Salut Noam ! J'allais justement prendre du café. Tu veux que je t'en—"
+
+    sael neutre "Attends."
+
+    "Elen se retourne vers elle, surprise. Sael pose une main sur le livre."
+
+    sael "Avant de continuer, ouvrez vos dossiers médicaux."
+
+    $ showGroup([
+        ("sael", "neutre", 0.18),
+        ("mara", "agace", 0.50),
+        ("iris", "fatigue", 0.82),
+    ])
+
+    mara agace "Bonjour à toi aussi."
+
+    iris fatigue "Pourquoi ?"
+
+    sael "Cherchez une mention. M16."
+
+    "Le ton qu'elle emploie suffit à faire disparaître les quelques conversations encore en cours."
+
+    $ showGroup([
+        ("sael", "neutre", 0.18),
+        ("elias", "inquiet", 0.50),
+        ("mara", "mefiant", 0.82),
+    ])
+
+    elias inquiet "C'est quoi, M16 ?"
+
+    sael "Regardez d'abord."
+
+    mara mefiant "Tu sais que quand quelqu'un dit ça, ça donne jamais envie de regarder ?"
+
+    $ showGroup([
+        ("lysa", "blase", 0.18),
+        ("nyra", "reflexion", 0.50),
+        ("sael", "neutre", 0.82),
+    ])
+
+    lysa blase "Moi ça me donne surtout envie de retourner me coucher."
+
+    nyra reflexion "Tu l'as trouvée dans ton propre dossier ?"
+
+    sael "Oui."
+
+    "Nyra ne pose pas d'autre question. Elle sort sa tablette et commence à naviguer dans les menus. Les autres finissent par faire pareil, les uns après les autres."
+
+    $ showGroup([
+        ("iris", "colere", 0.18),
+        ("tomas", "neutre", 0.50),
+        ("mara", "agace", 0.82),
+    ])
+
+    iris colere "Attendez... depuis quand on peut consulter ça ?"
+
+    tomas neutre "Depuis le dernier amendement, probablement. Une partie des restrictions sur les informations personnelles a sauté avec le vote."
+
+    iris colere "Évidemment. Et personne n'a pensé à nous prévenir."
+
+    mara agace "Tu veux qu'on mette une alerte à chaque nouveau bouton qui apparaît ?"
+
+    iris "Je veux juste éviter de découvrir par hasard que quelqu'un garde un dossier médical sur moi depuis deux semaines !"
+
+    $ showGroup([
+        ("elen", "inquiet", 0.18),
+        ("elias", "inquiet", 0.50),
+        ("ryn", "desaccord", 0.82),
+    ])
+
+    elen inquiet "Je crois que je l'ai."
+
+    "Tout le monde se tourne vers elle."
+
+    elen "M16. C'est marqué ici."
+
+    elias inquiet "Moi aussi."
+
+    ryn desaccord "Pareil."
+
+    $ showGroup([
+        ("iris", "inquiet", 0.18),
+        ("mara", "mefiant", 0.50),
+        ("nyra", "neutre", 0.82),
+    ])
+
+    iris inquiet "... Ouais."
+
+    mara mefiant "Vous vous foutez de moi..."
+
+    "Mara tourne sa tablette vers nous. La même référence apparaît au milieu de son dossier."
+
+    nyra neutre "Je l'ai également."
+
+    $ showGroup([
+        ("lysa", "blase", 0.18),
+        ("tomas", "inquiet", 0.50),
+        ("julian", "inquietude", 0.82),
+    ])
+
+    lysa blase "Bon. Super. Génial même."
+
+    tomas inquiet "Moi aussi." id j17_m16_tomas_moi_aussi
+
+    julian inquietude "... Pareil."
+
+    "Un silence se forme autour de la table. Je savais ce qui allait arriver et pourtant voir la même expression sur tous les visages rend la chose beaucoup plus réelle."
+
+    $ showGroup([
+        ("noam", "inquiet", 0.18),
+        ("ryn", "colere", 0.50),
+        ("nyra", "reflexion", 0.82),
+    ])
+
+    noam inquiet "Donc on l'a tous."
+
+    ryn colere "Tous ceux qui sont ici."
+
+    nyra reflexion "Kael aussi ?"
+
+    noam hesitation "Oui."
+
+    "Plusieurs regards se tournent vers moi. Je réalise trop tard que j'ai répondu trop vite."
+
+    $ showGroup([
+        ("mara", "mefiant", 0.18),
+        ("noam", "hesitation", 0.50),
+        ("sael", "neutre", 0.82),
+    ])
+
+    mara mefiant "Comment tu sais ça ?"
+
+    noam "Il me l'a dit hier."
+
+    $ showGroup([
+        ("noam", "hesitation", 0.18),
+        ("ryn", "colere", 0.50),
+        ("sael", "neutre", 0.82),
+    ])
+
+    ryn "Et il savait ce que ça voulait dire ?"
+
+    noam "Non." id j17_m16_noam_non
+
+    sael neutre "Moi, oui. Maintenant."
+
+    "Elle ouvre le livre à la page marquée, le fait pivoter et le pousse au centre de la table."
+
+    sael "J'ai trouvé la référence hier dans les Archives."
+
+    "Pendant une seconde, personne ne dit rien. Puis tout part d'un coup."
+
+    $ showGroup([
+        ("iris", "surpris", 0.18),
+        ("elias", "colere", 0.50),
+        ("tomas", "inquiet", 0.82),
+    ])
+
+    iris surpris "Quoi ?!"
+
+    elias colere "Attends, attends... altération de quoi ?"
+
+    tomas inquiet "Mnésique. La mémoire."
+
+    $ showGroup([
+        ("mara", "colere", 0.18),
+        ("julian", "peur", 0.50),
+        ("tomas", "reflechit", 0.82),
+    ])
+
+    mara colere "Merci Tomas, on avait compris !"
+
+    julian peur "Non mais... ça peut vouloir dire autre chose, non ? Un risque neurologique, un examen, une catégorie médicale... quelque chose qui n'implique pas qu'on ait réellement touché à nos souvenirs."
+
+    tomas reflechit "C'est possible. Enfin... techniquement oui, mais le terme est très précis. Une altération mnésique désigne bien une modification du fonctionnement ou du contenu de la mémoire. Ça ne dit pas comment, ni pourquoi, ni même si c'est volontaire, mais—"
+
+    $ showGroup([
+        ("iris", "colere", 0.18),
+        ("tomas", "neutre", 0.50),
+        ("ryn", "colere", 0.82),
+    ])
+
+    iris colere "Tomas."
+
+    tomas neutre "Oui. J'arrête."
+
+    ryn colere "Donc quelqu'un a foutu ses mains dans nos têtes ?"
+
+    $ showGroup([
+        ("sael", "mefiant", 0.18),
+        ("ryn", "colere", 0.50),
+        ("tomas", "neutre", 0.82),
+    ])
+
+    sael mefiant "On n'en sait rien."
+
+    ryn "C'est écrit noir sur blanc !"
+
+    $ showGroup([
+        ("sael", "mefiant", 0.18),
+        ("ryn", "colere", 0.50),
+        ("lysa", "blase", 0.82),
+    ])
+
+    sael "C'est un nom de procédure. Pas une explication."
+
+    lysa blase "Magnifique. On a donc le choix entre 'quelqu'un a joué avec notre mémoire' et 'quelqu'un a nommé une procédure comme ça juste pour le plaisir'. Je me sens beaucoup mieux."
+
+    $ showGroup([
+        ("elen", "peur", 0.18),
+        ("nyra", "neutre", 0.50),
+        ("mara", "colere", 0.82),
+    ])
+
+    elen peur "Mais... si c'est vrai, on devrait s'en souvenir, non ?"
+
+    "Je baisse instinctivement les yeux. Sael me regarde brièvement, mais ne dit rien."
+
+    nyra neutre "Pas nécessairement. C'est précisément le problème."
+
+    mara colere "Ouais, bah moi je veux savoir quand ça a été fait. Et pourquoi."
+
+    $ showGroup([
+        ("ryn", "colere", 0.18),
+        ("elias", "colere", 0.50),
+        ("iris", "colere", 0.82),
+    ])
+
+    ryn "Et par qui."
+
+    elias colere "Et combien de fois."
+
+    iris colere "Et ce qu'on nous a retiré."
+
+    "Les voix commencent à monter. Plusieurs parlent en même temps. Elen essaie de calmer Iris pendant que Ryn demande à Sael si le livre contient d'autres informations."
+
+    $ showGroup([
+        ("sael", "desaccord", 0.18),
+        ("mara", "colere", 0.50),
+        ("tomas", "inquiet", 0.82),
+    ])
+
+    sael desaccord "La page suivante a été arrachée."
+
+    mara colere "Évidemment."
+
+    tomas inquiet "Tu es sûre qu'il n'existe pas une autre copie ?"
+
+    sael "J'en ai cherché trois. C'était la seule référence que j'ai trouvée."
+
+    $ showGroup([
+        ("nyra", "raison", 0.18),
+        ("ryn", "colere", 0.50),
+        ("noam", "inquiet", 0.82),
+    ])
+
+    nyra raison "Ça suffit."
+
+    "Sa voix n'est pas forte, mais elle coupe progressivement le brouhaha."
+
+    nyra "On peut passer la matinée à émettre des hypothèses, ou demander directement à celle qui contrôle l'infrastructure."
+
+    ryn "Kami !"
+
+    "Il lève les yeux vers l'écran principal."
+
+    ryn colere "Montre-toi !"
+
+    $ hideGroup()
+
+    pause 0.5
+    play sound "audio/sfx_announce.mp3"
+    pause 1.0
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Je suis toujours touchée quand vous m'appelez tous avec autant d'enthousiasme."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Même si, techniquement, un simple 's'il te plaît' aurait suffi."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    $ bc_show("tomas", "inquiet")
+    tomas inquiet "Que signifie la procédure M16 ?"
+    $ bc_hide()
+
+    kami "Je ne peux pas répondre à cette question."
+
+    "Le silence est immédiat."
+
+    $ bc_show("mara", "colere")
+    mara colere "Pardon ?"
+    $ bc_hide()
+
+    $ bc_show("tomas", "neutre")
+    tomas "Alors donne-nous au moins la date à laquelle elle a été appliquée."
+    $ bc_hide()
+
+    kami "Je ne peux pas répondre à cette question."
+
+    $ bc_show("ryn", "colere")
+    ryn colere "Qui l'a ordonnée ?"
+    $ bc_hide()
+
+    kami "Je ne peux pas répondre à cette question."
+
+    $ bc_show("iris", "colere")
+    iris colere "Est-ce qu'on nous a effacé des souvenirs ?"
+    $ bc_hide()
+
+    kami "Je ne peux pas répondre à cette question."
+
+    $ bc_show("elias", "colere")
+    elias colere "Putain mais tu peux répondre à quoi, exactement ?"
+    $ bc_hide()
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+
+    kami "À énormément de choses ! Essayez de me demander la température de la salle, par exemple."
+
+    $ bc_show("ryn", "colere")
+    ryn colere "Arrête tes conneries !"
+    $ bc_hide()
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    $ bc_show("nyra", "neutre")
+    nyra neutre "Quelle règle t'interdit de nous répondre ?"
+    $ bc_hide()
+
+    "Kami ne répond pas immédiatement. Pour la première fois depuis le début de l'échange, son silence ressemble presque à une hésitation."
+
+    kami "Mes règles internes."
+
+    $ bc_show("nyra", "reflexion")
+    nyra reflexion "Quel Commandement ?"
+    $ bc_hide()
+
+    kami "Aucun."
+
+    $ bc_show("tomas", "surpris")
+    tomas surpris "Aucun ?"
+    $ bc_hide()
+
+    kami "Les Commandements encadrent votre comportement et certaines limites de mon autorité sur le monde extérieur. Ils ne constituent pas l'intégralité de mes règles de fonctionnement."
+
+    $ bc_show("iris", "colere")
+    iris colere "Donc il existe des règles qu'on n'a jamais vues ?"
+    $ bc_hide()
+
+    kami "Évidemment."
+
+    $ bc_show("mara", "colere")
+    mara colere "Ah bah oui, évidemment ! Quel jeu de merde ce serait si on connaissait toutes les règles !"
+    $ bc_hide()
+
+    $ bc_show("nyra", "colere")
+    nyra colere "Comment sommes-nous censés modifier ton système si une partie de ce système nous est cachée ?"
+    $ bc_hide()
+
+    kami "Vous n'êtes pas censés modifier mon système."
+
+    "La réponse tombe si simplement qu'elle coupe Nyra dans son élan."
+
+    kami "Le Conclave vous permet de proposer des modifications aux Commandements. Rien de plus."
+
+    $ bc_show("tomas", "raison")
+    tomas raison "Tu nous as aussi affirmé que tu ne pouvais pas intervenir dans les manigances du Conclave. Si M16 a un lien avec ce qui se passe ici, alors tu détiens forcément des informations pertinentes."
+    $ bc_hide()
+
+    kami "Et je maintiens ce que j'ai dit. Je ne peux prendre part à aucune manigance du Conclave."
+
+    $ bc_show("tomas", "neutre")
+    tomas "Ce n'est pas une réponse."
+    $ bc_hide()
+
+    kami "C'est pourtant la seule que je peux vous donner."
+
+    $ bc_show("ryn", "colere")
+    ryn colere "Tu sais quelque chose."
+    $ bc_hide()
+
+    kami "Probablement."
+
+    $ bc_show("ryn", "colere2")
+    ryn colere2 "Alors parle !"
+    $ bc_hide()
+
+    kami "Non."
+
+    hide screen kami_broadcast_ui
+    $ bc_off()
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("ryn", "colere2", 0.18),
+        ("sael", "desaccord", 0.50),
+        ("nyra", "neutre", 0.82),
+    ])
+
+    "Ryn fait un pas vers l'écran comme s'il pouvait atteindre Kami à travers lui. Sael lui attrape le bras avant même qu'il ne réalise ce qu'il fait."
+
+    sael desaccord "Ryn."
+
+    "Il s'arrête, le souffle court."
+
+    nyra neutre "Très bien."
+
+    "Elle ferme sa tablette."
+
+    nyra "Alors arrêtons."
+
+    $ showGroup([
+        ("elen", "inquiet", 0.18),
+        ("nyra", "raison", 0.50),
+        ("tomas", "inquiet", 0.82),
+    ])
+
+    elen inquiet "Arrêtons quoi ?"
+
+    nyra "De participer."
+
+    "Plusieurs regards convergent vers elle."
+
+    nyra raison "Nous sommes censés voter librement, en pleine connaissance des conséquences. Or nous venons d'apprendre qu'une procédure liée à l'altération de la mémoire apparaît dans chacun de nos dossiers, et l'autorité qui organise ces votes refuse de nous dire ce qu'elle signifie."
+
+    tomas inquiet "Nyra..."
+
+    nyra "Dans ces conditions, prétendre que nos décisions sont éclairées n'a plus aucun sens."
+
+    $ showGroup([
+        ("elias", "neutre", 0.18),
+        ("ryn", "determine", 0.50),
+        ("mara", "colere", 0.82),
+    ])
+
+    elias neutre "Plus de votes."
+
+    "Nyra tourne les yeux vers lui. Elias pose sa tasse avec un bruit sec."
+
+    elias colere "Tant qu'on sait pas ce qu'on nous a foutu dans le crâne, je vote plus pour rien."
+
+    ryn determine "Moi non plus."
+
+    mara colere "Pareil."
+
+    $ showGroup([
+        ("iris", "determine", 0.18),
+        ("lysa", "blase", 0.50),
+        ("julian", "hesitation", 0.82),
+    ])
+
+    iris determine "Je vais certainement pas continuer à cocher des cases comme si de rien n'était."
+
+    lysa blase "Ça tombe bien, j'avais justement toujours rêvé de faire grève dans l'espace."
+
+    julian hesitation "Je suis d'accord sur le fond, mais... on parle quand même du Conclave entier. Si on arrête de voter, on perd peut-être notre seule chance de changer quoi que ce soit."
+
+    $ showGroup([
+        ("tomas", "raison", 0.18),
+        ("nyra", "colere", 0.50),
+        ("ryn", "colere", 0.82),
+    ])
+
+    tomas raison "C'est précisément le risque. On devrait au moins réfléchir avant de transformer ça en décision collective."
+
+    nyra colere "Et voter demain comme si nous n'avions rien découvert serait plus raisonnable ?"
+
+    tomas "Je n'ai pas dit ça."
+
+    nyra "Alors qu'est-ce que tu proposes ?"
+
+    tomas inquiet "Je propose qu'on ne prenne pas une décision définitive sous le coup de la colère."
+
+    $ showGroup([
+        ("ryn", "colere", 0.18),
+        ("mara", "mefiant", 0.50),
+        ("tomas", "inquiet", 0.82),
+    ])
+
+    ryn colere "C'est pas de la colère. C'est du bon sens."
+
+    mara mefiant "Pour une fois que je suis d'accord avec lui, notez la date."
+
+    $ showGroup([
+        ("elen", "determine", 0.18),
+        ("elias", "joie", 0.50),
+        ("iris", "neutre", 0.82),
+    ])
+
+    elen determine "Non. Nyra a raison."
+
+    "Tout le monde se tourne vers Elen. Elle se lève à son tour."
+
+    elen "Si on continue comme avant, Kami n'a aucune raison de nous répondre. Alors on ne vote plus jusqu'à ce qu'elle le fasse."
+
+    elias joie "Voilà."
+
+    elen joie "Pas de réponses, pas de vote !"
+
+    "Un court silence."
+
+    iris neutre "... Tu viens vraiment de faire un slogan ?"
+
+    elen joie "Oui !"
+
+    iris "Pourquoi t'as l'air aussi contente ?"
+
+    elen hesitation "Je suis pas contente ! Enfin... je suis motivée. C'est différent."
+
+    $ showGroup([
+        ("mara", "rire", 0.18),
+        ("elen", "determine", 0.50),
+        ("elias", "fatigue", 0.82),
+    ])
+
+    mara rire "Non, non, laisse-la. Elle est lancée."
+
+    elen determine "Pas de réponses—"
+
+    elias fatigue "Non."
+
+    mara rire "Si, attends, moi je veux entendre la suite."
+
+    elen joie "Pas de vote !"
+
+    $ showGroup([
+        ("lysa", "blase", 0.18),
+        ("ryn", "colere", 0.50),
+        ("nyra", "determine", 0.82),
+    ])
+
+    lysa blase "On va tous mourir, mais au moins on aura eu une manif correcte."
+
+    "Même Ryn laisse échapper un bref rire nerveux. La tension retombe à peine quelques secondes, puis Nyra revient vers l'écran."
+
+    nyra determine "Tu as entendu. Tant que nous n'aurons pas de réponse sur M16, nous ne participerons plus aux votes."
+
+    $ hideGroup()
+    play sound "audio/sfx_announce.mp3"
+    show screen kami_broadcast_ui
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "C'est votre droit."
+
+    "La réponse déstabilise tout le monde."
+
+    $ bc_show("nyra", "surpris")
+    nyra surpris "... Quoi ?"
+    $ bc_hide()
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Vous êtes libres de refuser de participer. Aucune règle ne vous oblige à déposer une proposition, débattre ou voter."
+
+    $ bc_show("ryn", "desaccord")
+    ryn desaccord "C'est tout ?"
+    $ bc_hide()
+
+    kami "Pas exactement."
+
+    "Le ton de Kami ne change pas. C'est justement ce qui me déplaît."
+
+    kami "Si les représentants refusent durablement d'exercer leur fonction, la phase finale du Conclave sera annulée."
+
+    $ bc_show("tomas", "inquiet")
+    tomas inquiet "Définis 'durablement'."
+    $ bc_hide()
+
+    kami "Jusqu'au jour vingt-et-un."
+    with flash_red
+
+    "Plus personne ne bouge."
+
+    $ bc_show("noam", "surpris")
+    noam surpris "Le jour vingt-et-un ?"
+    $ bc_hide()
+
+    kami "Oui. Si votre mouvement de protestation se poursuit jusque-là, le Conclave prendra fin."
+
+    $ bc_show("iris", "inquiet")
+    iris inquiet "Attends. Il devait durer un mois."
+    $ bc_hide()
+
+    kami "Il devait pouvoir durer un mois. Nuance."
+
+    $ bc_show("tomas", "colere")
+    tomas colere "Ce n'est indiqué nulle part dans les règles que tu nous as communiquées."
+    $ bc_hide()
+
+    kami "Ce mécanisme relève de mes règles internes."
+
+    $ bc_show("mara", "colere")
+    mara colere "Putain, encore elles."
+    $ bc_hide()
+
+    kami "La troisième livraison, prévue au jour vingt-et-un, sera remplacée par une navette. Vous serez invités à quitter le Conclave et à retourner dans vos districts."
+
+    $ bc_show("ryn", "colere")
+    ryn colere "Et si on refuse de monter ?"
+    $ bc_hide()
+
+    pause 0.5
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Nous pourrons examiner cette possibilité au jour vingt-et-un."
+
+    "Ryn serre les poings. Personne ne relève la menace, si c'en est une."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    $ bc_show("nyra", "colere")
+    nyra colere "Donc ta réponse à notre protestation, c'est simplement d'attendre quatre jours."
+    $ bc_hide()
+
+    kami "Je n'ai pas besoin de répondre à votre protestation."
+
+    kami "Vous avez formulé une position. Je vous ai indiqué ses conséquences."
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+
+    kami "Votre mouvement est parfaitement compatible avec les règles du Conclave. Je vous encourage même à le poursuivre aussi longtemps que vous le jugerez nécessaire."
+
+    $ bc_show("mara", "colere")
+    mara colere "Va te faire foutre."
+    $ bc_hide()
+
+    kami "Message reçu."
+
+    hide screen kami_broadcast_ui
+    $ bc_off()
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+
+    "L'écran s'éteint."
+    "Pendant quelques secondes, personne ne parle. On vient de passer plusieurs minutes à croire qu'on avait enfin trouvé un moyen de pression. Kami vient simplement de nous expliquer qu'elle pouvait attendre qu'on se fatigue."
+
+    $ hideGroup()
+    jump _17_0_1_1_APRES_PROTESTATION
+
+
+label _17_0_1_1_APRES_PROTESTATION:
+
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
+
+    $ showGroup([
+        ("tomas", "inquiet", 0.18),
+        ("nyra", "fatigue", 0.50),
+        ("ryn", "colere", 0.82),
+    ])
+
+    tomas inquiet "Quatre jours."
+
+    nyra fatigue "J'ai entendu."
+
+    tomas "Je ne dis pas qu'il faut céder. Je dis juste qu'on vient peut-être de réduire le reste du Conclave à quatre jours sans avoir le moindre plan pour obtenir ces réponses."
+
+    ryn colere "On en trouvera un."
+
+    tomas "Comment ?"
+
+    ryn "J'en sais rien, mais continuer à voter en souriant, c'est pas un plan non plus."
+
+    $ showGroup([
+        ("iris", "colere", 0.18),
+        ("lysa", "blase", 0.50),
+        ("elen", "inquiet", 0.82),
+    ])
+
+    iris colere "Et on fait quoi si le jour vingt-et-un arrive et qu'on sait toujours rien ? On rentre chez nous avec une jolie mention 'altération mnésique' dans le dossier et on reprend notre vie ?"
+
+    lysa blase "Personnellement, j'avais prévu de faire comme si tout ça n'était jamais arrivé. Vu le thème du moment, quelqu'un pourra peut-être m'aider."
+
+    iris colere "Lysa."
+
+    lysa "Quoi ? Je préfère encore faire une blague de merde que commencer à paniquer."
+
+    "Cette fois, personne ne lui répond."
+
+    elen inquiet "On va trouver quelque chose."
+
+    $ showGroup([
+        ("mara", "neutre", 0.18),
+        ("elen", "colere", 0.50),
+        ("nyra", "neutre", 0.82),
+    ])
+
+    mara neutre "T'as rangé la pancarte imaginaire ?"
+
+    elen colere "J'essayais juste de garder tout le monde ensemble !"
+
+    mara "Je sais."
+
+    "Le ton de Mara est étrangement doux. Elen détourne les yeux."
+
+    $ showGroup([
+        ("tomas", "reflechit", 0.18),
+        ("nyra", "neutre", 0.50),
+        ("ryn", "desaccord", 0.82),
+    ])
+
+    nyra neutre "On maintient la position pour aujourd'hui. Pas de vote, pas de nouvelle proposition."
+
+    tomas reflechit "Et demain ?"
+
+    nyra "Demain, on réévalue. Mais personne ne décide seul."
+
+    ryn desaccord "Moi je change pas d'avis."
+
+    nyra "Je n'ai pas dit que tu devais."
+
+    "Je reste un peu en retrait. Tout le monde discute désormais des quatre jours qui nous restent, de ce qu'on pourrait demander à Kami, de ce qu'on peut encore consulter dans les Archives."
+    "Moi, je n'arrive pas à quitter M16 des yeux."
+
+    think "Tout le monde l'a."
+
+    "Je devrais peut-être leur dire que j'ai réellement perdu une partie de ma soirée. Sael le sait. Kael aussi, plus ou moins."
+    "Mais tant que je ne comprends pas ce qui m'est arrivé, l'idée de mettre ça au milieu de la table me donne surtout l'impression de tendre une arme à quelqu'un sans savoir dans quelle direction elle pointe."
+
+    $ showGroup([
+        ("noam", "hesitation", 0.18),
+        ("iris", "inquiet", 0.50),
+        ("lysa", "blase", 0.82),
+    ])
+
+    noam hesitation "Je vais retourner dans ma chambre."
+
+    iris inquiet "Encore ?"
+
+    noam "J'ai besoin de réfléchir."
+
+    lysa blase "Essaie pas trop fort, visiblement ça laisse des traces."
+
+    "Je lui lance un regard. Elle lève immédiatement les mains."
+
+    lysa "Pardon. Mauvais timing."
+
+    noam sourire "Un peu."
+
+    "Je quitte la cafétéria avant que la discussion reparte."
+
+    $ hideGroup()
+    jump _17_0_1_1_CHAMBRE_BRUIT
+
+
+label _17_0_1_1_CHAMBRE_BRUIT:
+
+    $ current_period = "Après-midi"
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_104
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+
+    "Le couloir paraît presque agréable après le bruit de la cafétéria. Je prends mon temps pour rentrer, en essayant de remettre les événements dans l'ordre."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_105
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+
+    "M16. Les dossiers. Les règles internes de Kami. La fin du Conclave avancée au jour vingt-et-un. Et au milieu de tout ça, les dernières heures de ma journée d'hier qui n'existent simplement plus."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_106
+    scene bg_chambre at adaptive_fullscreen, living_background with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
-    "Je n'ai pas dormi. J'ai seulement ferme les yeux assez longtemps pour perdre la notion de l'heure."
-    think "Operateur : Noam."
-    think "Deux mots et toute ma vie devient une piece a conviction."
-    play sound sfx_beep
-    kami "Bonjour, mes chers representants."
-    noam fatigue "Pas maintenant."
-    kami "Je sais que plusieurs d'entre vous ont consulte leurs archives medicales."
-    noam inquiet "Tu sais toujours tout apres coup."
-    kami "Cette lecture a produit des reactions excessives."
-    noam colere "Memoire modifiee, c'est excessif comme formulation aussi."
-    kami "Les mots administratifs manquent parfois de tendresse."
-    noam "Et les tortionnaires de vocabulaire."
-    kami "Afin de preserver votre stabilite, les prochains votes sont annules."
-    noam surpris "Annules ?"
-    kami "Jusqu'a nouvel ordre."
-    noam "Tu nous enfermes ici sans meme faire semblant de nous consulter."
-    kami "Je vous dispense d'une pression devenue contre-productive."
-    noam colere "Tu nous retires la seule chose qui justifiait notre presence."
-    kami "Votre presence n'a jamais eu besoin de justification."
-    noam "La notre, peut-etre. La tienne, si."
-    kami "Je comprends ta colere, Noam."
-    noam "Non. Tu la mesures. Ce n'est pas pareil."
-    kami "Reposez-vous. Mangez. Parlez-vous."
-    kami "Et evitez les archives jusqu'a nouvel ordre."
-    noam reflexion "Pourquoi ?"
-    kami "Parce qu'elles vous font du mal."
-    noam "Ou parce qu'elles disent vrai ?"
-    kami "Bonne journee."
-    play sound sfx_gresillement
-    "La transmission se coupe."
-    noam colere "Kami !"
-    "Le silence me repond avec sa patience habituelle."
-    think "Plus de votes. Plus d'archives."
-    think "Elle ferme toutes les portes au moment exact ou nous trouvons une serrure."
-    jump _17_0_1_1_0_COUULOIR_REACTIONS
+    "Je referme la porte derrière moi et laisse tomber ma tablette sur le bureau."
 
-label _17_0_1_1_0_COUULOIR_REACTIONS:
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_103
-    scene bg_couloir at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "fatigue", 0.12), ("mara", "agace", 0.31), ("tomas", "inquiet", 0.50), ("kael", "mefiant", 0.69), ("sael", "neutre", 0.86)])
-    mara colere "Annules. Comme ca. Elle annonce ca avant le petit-dejeuner."
-    tomas raison "Techniquement, elle a dit jusqu'a nouvel ordre."
-    mara agace "Merci Tomas. La prison est temporaire jusqu'a ce qu'elle devienne definitive."
-    tomas culpabilite "Je voulais seulement preciser."
-    kael mefiant "Elle a peur des archives."
-    sael neutre "Ou de ce que nous ferons apres les avoir lues."
-    noam inquiet "Vous avez tous vu la mention ?"
-    mara "Oui."
-    tomas "Oui."
-    kael "Oui."
-    sael "Nous l'avons vue. Nous ne savons pas si nous pouvons croire ce souvenir."
-    mara stress "Tu peux eviter ce genre de phrase avant que j'aie bu quelque chose ?"
-    noam "Mon dossier disait que j'etais l'operateur."
-    "Le groupe se fige."
-    mara mefiant "L'operateur de quoi ?"
-    noam "De ma propre modification. Jour quinze, vingt heures vingt-quatre."
-    kael colere "L'heure du trou noir."
-    tomas reflechit "Un sujet ne peut pas etre son propre operateur pendant une perte de conscience."
-    mara "Tu dis ca comme si le systeme respectait encore la logique."
-    sael raison "Il respecte une logique. Ce n'est simplement pas la notre."
-    noam "Je ne sais plus ce que j'ai fait."
-    mara mefiant "Ca, on avait remarque."
-    noam colere "Tu crois que ca m'amuse ?"
-    mara colere "Je crois que tu nous caches des choses depuis des jours."
-    noam "Parce que je ne sais meme plus lesquelles sont vraies !"
-    kael "Baissez d'un ton."
-    mara "Pourquoi ? Kami pourrait nous entendre ?"
-    sael "Elle nous entend."
-    mara rire_profond "Parfait. Alors qu'elle entende ca : va te faire voir, Kami."
-    kami "Message recu, Mara."
-    mara vide "... Je la deteste."
-    tomas "L'annulation des votes modifie notre objectif."
-    noam "Notre objectif reste de sortir."
-    kael "Non. D'abord, notre objectif est de savoir lequel d'entre nous peut traverser une nuit sans devenir quelqu'un d'autre."
-    mara mefiant "Tu me regardes en disant ca ?"
-    kael "Je regarde tout le monde."
-    sael "C'est ainsi qu'elle gagne."
-    noam "En nous faisant douter ?"
-    sael "En nous faisant croire que le doute est une preuve."
-    tomas reflechit "Nous avons besoin de traces physiques."
-    mara "Des objets. Des marques. Quelque chose qu'une memoire ne peut pas reecrire."
-    noam "Les cameras ont deja menti."
-    tomas "Une camera est une archive. Une rayure dans du metal ne l'est pas."
-    kael raison "Alors on cherche des rayures."
-    mara agace "Magnifique programme pour une journee sans vote."
-    sael "Restez visibles les uns pour les autres."
-    noam "Et si l'un de nous est justement le probleme ?"
-    sael triste "Alors il sera visible aussi."
-    jump _17_0_1_1_0_CAFETERIA
+    noam neutre "Quelle journée..."
 
-label _17_0_1_1_0_CAFETERIA:
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_104
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
-    $ showGroup([("noam", "reflexion", 0.18), ("mara", "stress", 0.42), ("tomas", "reflechit", 0.66)])
-    goumi "Trois boissons chaudes. J'ai suppose que personne ne voulait choisir."
-    mara "Tu nous connais trop bien."
-    tomas "Le choix est statistiquement plus difficile sous stress."
-    mara taquin "Et voila pourquoi on invite Tomas au petit-dejeuner."
-    noam "Vous vous souvenez de votre arrivee ici ?"
-    mara mefiant "Question legere."
-    tomas "Oui. Sas, lumiere blanche, onze personnes."
-    mara "Douze."
-    tomas "Noam est arrive apres."
-    noam inquiet "Je me souviens avoir ete la avant Kael."
-    mara "Kael etait deja assis quand je suis entree."
-    tomas "Non. Il est arrive apres Iris."
-    mara stress "Stop."
-    noam "Trois souvenirs, trois ordres."
-    tomas reflechit "Une divergence ne prouve pas une modification. La memoire ordinaire est reconstructive."
-    mara agace "La memoire ordinaire n'a pas un dossier medical marque en rouge."
-    noam "Et ton Clone ?"
-    mara vide "Quoi, mon Clone ?"
-    noam "Tu disais qu'il avait parfois tes souvenirs."
-    mara mefiant "J'ai dit qu'il imitait mes reactions."
-    noam "Tu avais dit souvenirs."
-    mara colere "Non."
-    tomas hesitation "Je crois aussi avoir entendu souvenirs."
-    mara "Super. Deux cerveaux defectueux contre le mien."
-    noam "Je ne t'accuse pas."
-    mara "Tu ne sais plus faire autre chose."
-    noam colere "Et toi, tu plaisantes des qu'une question te fait peur."
-    mara stress "Parce que sinon je crie."
-    tomas "Vous etes en train de crier."
-    mara "Je peux faire pire."
-    goumi "Pas avec les tasses, s'il vous plait."
-    noam fatigue "Pardon."
-    mara fatigue "Ouais. Pardon, Goumi."
-    tomas "Nous devrions etablir un protocole."
-    mara "Interdiction de prononcer protocole avant midi."
-    tomas "Une regle, alors."
-    noam "Laquelle ?"
-    tomas raison "Chaque soir, nous gravons un signe discret dans un lieu choisi ensemble. Le lendemain, nous le verifions."
-    mara reflexion "Et si quelqu'un le copie ?"
-    tomas "Il faut deux elements : une forme et un mot connu de personnes differentes."
-    noam "Une memoire partagee peut etre modifiee."
-    tomas "Oui. Mais une trace physique force l'operateur a intervenir dans le monde reel."
-    mara "Ca ne nous sauve pas."
-    tomas "Non. Ca augmente le cout du mensonge."
-    noam "On commence ce soir."
-    mara mefiant "Pas dans ma chambre."
-    noam "Je n'ai rien demande."
-    mara "Je prefere preciser."
-    tomas "La maintenance serait adaptee."
-    mara "Alors rendez-vous la-bas a vingt-deux heures."
-    noam "Tous les trois ?"
-    mara "Tous les trois. Si l'un manque, les deux autres ne font rien."
-    tomas "D'accord."
-    noam "D'accord."
-    "Mara leve sa tasse."
-    mara taquin "Aux souvenirs mediocres."
-    tomas "Pourquoi mediocres ?"
-    mara "Parce que les bons attirent l'attention."
-    noam sourire "Aux souvenirs mediocres."
-    jump _17_0_1_1_0_GRATTEMENTS
+    "Je m'assois, puis reste un moment à regarder le plafond sans vraiment réfléchir. Pour une fois, mon cerveau semble avoir atteint sa limite."
 
-label _17_0_1_1_0_GRATTEMENTS:
-    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_105
-    scene bg_chambre at adaptive_fullscreen with fade
+
+    "Un petit bruit métallique me fait relever la tête."
+
+    noam reflexion "... ?"
+
+    "J'attends. Rien."
+
+    "Je finis par me lever pour prendre un verre d'eau."
+
+
+    "Cette fois, je l'entends clairement. Un frottement court, suivi d'un léger choc."
+
+    noam inquiet "C'était quoi, ça ?"
+
+    "Le bruit vient du mur, près du plafond."
+    "Je m'approche de la bouche d'aération au-dessus du bureau. Jusqu'ici, je n'y avais jamais vraiment prêté attention. Une grille rectangulaire, quatre vis, rien de particulier."
+
+    "Je reste immobile quelques secondes, l'oreille tendue."
+
+    noam "..." id j17_chambre_silence_noam
+
+    "Rien." id j17_chambre_rien
+
+    "Je pose une main sur la grille et tire doucement. Elle ne bouge pas."
+
+    noam desaccord "Évidemment."
+
+    "Je grimpe sur la chaise pour atteindre les vis. À première vue, elles ne sont pas abîmées, mais la grille semble légèrement décollée sur un côté."
+
+    noam reflexion "Ça a toujours été comme ça ?"
+
+    "Impossible à dire."
+
+    "Je passe les doigts derrière le bord et tire plus fort."
+
+    noam colere "Allez..."
+
+    "Rien. La grille est solidement vissée."
+
+
+    "Un nouveau frottement résonne derrière, plus loin cette fois."
+
+    "Je retire immédiatement ma main."
+
+    noam peur "... Il y a quelque chose là-dedans."
+
+    "La première personne à laquelle je pense est Elias. Puis je repense au matin. M16 dans douze dossiers. Des règles que Kami refuse de révéler. Kael barricadé dans sa chambre."
+    "Je n'ai aucune envie de courir dans le couloir en criant que quelque chose se déplace dans les murs."
+
+    noam reflexion "Des outils."
+
+    "Si je peux simplement retirer la grille, je saurai au moins si je suis en train de devenir parano ou si ce bruit existe vraiment."
+
+    jump _17_0_1_1_MARA_MAINTENANCE
+
+
+label _17_0_1_1_MARA_MAINTENANCE:
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_107
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+
+    "Je sors de ma chambre et referme la porte derrière moi. Je n'ai pas fait trois mètres que quelqu'un débouche du croisement."
+
+    $ showGroup([
+        ("noam", "surpris", 0.34),
+        ("mara", "surpris", 0.66),
+    ])
+
+    mara surpris "Oh !"
+
+    noam surpris "Mara."
+
+    $ showP("noam", "inquiet", 0.34)
+    $ showP("mara", "neutre", 0.66)
+
+    mara mefiant "Pourquoi t'as cette tête ?"
+
+    noam "Quelle tête ?"
+
+    mara agace "La tête du mec qui vient de trouver un cadavre sous son lit."
+
+    noam desaccord "J'ai entendu un bruit dans ma ventilation."
+
+    "Elle me regarde quelques secondes."
+
+    mara mefiant "... Je retire ce que je viens de dire. C'est presque pire."
+
+    noam "Je vais chercher des outils."
+
+    mara "Pourquoi ?"
+
+    noam "Pour enlever la grille."
+
+    mara agace "Tout seul ?"
+
+    noam "Oui." id j17_maintenance_outils_oui
+
+    mara rire "Bien sûr. Et après je te retrouve avec un tournevis planté dans la main parce que t'as décidé de faire Elias pendant dix minutes."
+
+    noam desaccord "Je sais utiliser un tournevis."
+
+    mara taquin "C'est exactement ce que disent les gens juste avant de se planter un tournevis dans la main."
+
+    noam "Mara..."
+
+    mara neutre "Je viens avec toi."
+
+    noam "C'est pas nécessaire."
+
+    mara "Je sais. C'est pour ça que je viens."
+
+    "Elle me dépasse déjà dans le couloir."
+
+    mara "Salle de maintenance ?"
+
+    noam "Oui." id j17_maintenance_mara_oui
+
+    mara taquin "Allez Sherlock. Montre-moi ton monstre dans les murs."
+
+    "Je lève les yeux au ciel, mais je la suis. Honnêtement, je suis presque soulagé de ne pas y aller seul."
+
+    $ hideGroup()
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_108
+    scene couloir_sas at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("noam", "hesitation", 0.34),
+        ("mara", "neutre", 0.66),
+    ])
+
+    "On traverse le secteur principal sans croiser Elias. Mara jette un regard derrière elle une ou deux fois, moins légère qu'elle essaie de le faire croire."
+
+    mara neutre "Tu crois que ça a un rapport avec ce matin ?"
+
+    noam hesitation "J'en sais rien."
+
+    mara "Bonne réponse."
+
+    noam "Pourquoi ?"
+
+    mara mefiant "Parce que si tu m'avais sorti une théorie complète après avoir entendu deux bruits dans un mur, je t'aurais ramené à l'infirmerie."
+
+    noam sourire "Rassurant."
+
+    mara taquin "Je prends soin de toi à ma manière."
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_109
+    scene bg_maintenance at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("noam", "reflexion", 0.34),
+        ("mara", "neutre", 0.66),
+    ])
+
+    "La salle de maintenance est vide."
+
+    mara neutre "Elias est pas là."
+
+    noam "Il doit être encore avec les autres."
+
+    "Je me dirige vers le panneau d'outils pendant que Mara fouille les tiroirs."
+
+    noam reflexion "Tournevis plat... cruciforme..."
+
+    mara "Prends les deux."
+
+    noam "Pourquoi ?"
+
+    mara agace "Parce qu'on sait pas ce qu'ils ont foutu comme vis dans ta chambre, génie."
+
+    "Je prends les deux. Elle récupère une petite lampe portative et une pince."
+
+    mara mefiant "Tiens."
+
+    noam "Quoi ?" id j17_maintenance_noam_quoi
+
+    mara "Regarde le tiroir."
+
+    "Quelques outils sont posés de travers au fond, contrairement aux emplacements parfaitement dessinés sur la mousse."
+
+    noam "Quelqu'un s'en est servi."
+
+    mara agace "Ou Elias range comme un porc. Ce qui est aussi possible."
+
+    noam reflexion "Tu viens de dire qu'il rangeait mieux que ça."
+
+    mara taquin "Je refuse que mes propres arguments soient utilisés contre moi."
+
+    "Je remarque quand même une clé absente de son emplacement. Impossible de savoir depuis quand."
+
+    noam "On y va."
+
+    mara "Après toi."
+
+    $ hideGroup()
+    jump _17_0_1_1_OUVERTURE_VENTILATION
+
+
+label _17_0_1_1_OUVERTURE_VENTILATION:
+
+    $ current_period = "Soir"
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_110
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_111
+    scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
-    "Vingt et une heures cinquante-sept. Je suis assis sur le lit, chaussures aux pieds."
-    think "Trois minutes avant la maintenance."
-    play sound sfx_metal_clank volume 0.35
-    "Un frottement sec traverse le mur."
-    noam inquiet "..."
-    play sound sfx_metal_clank volume 0.45
-    "Scrrrt. Une pause. Scrrrt."
-    noam "Kami ?"
-    "Aucune reponse."
-    noam colere "Je sais que tu m'entends."
-    "Le bruit reprend, plus pres du lit."
-    think "Dans le mur."
-    noam peur "Il y a quelqu'un ?"
-    "Trois coups brefs repondent."
-    noam panique "Mara ? Tomas ?"
-    "Je colle l'oreille contre la paroi. Un souffle circule derriere la grille d'aeration."
-    noam inquiet "Si tu m'entends, frappe deux fois."
-    play sound sfx_metal_clank volume 0.5
-    play sound sfx_metal_clank volume 0.5
-    "Deux coups."
-    noam peur "Qui es-tu ?"
-    "Le metal geint. Une vis tourne de l'autre cote."
-    noam "Arrete."
-    "La grille bouge d'un millimetre."
-    noam panique "Arrete !"
-    play sound sfx_glitch volume 0.8
-    kami "Noam, ta frequence cardiaque est elevee."
-    noam colere "Il y a quelqu'un dans l'aeration !"
-    kami "Les conduits ne sont pas accessibles aux representants."
-    noam "Alors qui vient de me repondre ?"
-    kami "Tu es fatigue."
-    noam "Deux coups, Kami. Il a compris ma question."
-    kami "Reste eloigne de la grille."
-    noam surpris "Pourquoi ?"
-    kami "C'est une consigne de securite."
-    noam "Donc il y a bien quelque chose."
-    kami "Reste eloigne de la grille."
-    "La voix disparait. La vis cesse de tourner."
-    noam determine "D'accord."
-    noam "Demain, je l'ouvre."
-    "Dans le mur, quelque chose gratte une derniere fois."
+
+    $ showGroup([
+        ("noam", "neutre", 0.34),
+        ("mara", "neutre", 0.66),
+    ])
+
+    "Mara pose les outils sur le bureau pendant que je remonte sur la chaise."
+
+    mara neutre "Bouge pas. Je tiens la chaise."
+
+    noam "Je vais pas tomber."
+
+    mara agace "C'est fou comme t'as besoin de contester absolument tout aujourd'hui."
+
+    noam desaccord "C'est faux."
+
+    mara "Merci pour la démonstration."
+
+    "Je soupire et commence à dévisser la grille. Les deux premières vis viennent facilement. La troisième résiste davantage."
+
+    noam reflexion "Celle-là est serrée à mort."
+
+    mara "Passe-moi ça."
+
+    noam "Je peux le faire."
+
+    mara colere "Noam."
+
+    "Je lui tends le tournevis. Elle force une seconde, grimace, puis la vis tourne enfin."
+
+    mara rire "Et voilà."
+
+    noam "Très impressionnant."
+
+    mara taquin "Tu peux applaudir si tu veux."
+
+    "La dernière vis tombe sur le bureau. Je retiens la grille avant qu'elle ne bascule."
+
+
+    "Quand je la retire, un souffle d'air froid nous frappe immédiatement au visage."
+
+    mara surpris "Ah ouais."
+
+    "J'éclaire l'intérieur avec la lampe. Je m'attendais à un conduit étroit, tout juste assez large pour laisser passer l'air. Ce n'est pas du tout ce qu'il y a derrière le mur."
+
+    noam surpris "C'est énorme."
+
+    mara taquin "Je vais être mature et ne rien dire."
+
+    noam "Merci."
+
+    mara "J'ai dit que j'allais rien dire. Pas que j'avais rien pensé."
+
+    "Le passage fait presque la largeur de mes épaules et descend légèrement avant de partir sur la gauche. Les parois sont métalliques, renforcées par endroits, avec suffisamment d'espace pour qu'une personne puisse s'y déplacer en rampant."
+
+    noam inquiet "C'est pas une simple ventilation."
+
+    mara mefiant "Non." id j17_ventilation_mara_non
+
+    "Je passe la lampe sur le sol. Une fine couche de poussière recouvre la tôle, sauf à certains endroits où elle semble avoir été frottée."
+
+    noam reflexion "Regarde."
+
+    "Mara se penche."
+
+    mara mefiant "Ouais."
+
+    noam "Ça ressemble à des traces."
+
+    mara "Ça ressemble surtout à quelque chose qui a frotté là-dedans. Je vais éviter de décider tout de suite que c'était un humain."
+
+    mara mefiant "Tu vas quand même pas t'arrêter là."
+
+    noam surpris "Tu veux que j'aille dedans ?"
+
+    mara taquin "Je veux savoir où ça mène. Et c'est toi qui as les épaules les moins larges."
+
+    noam hesitation "On devrait peut-être chercher Elias d'abord."
+
+    mara agace "Et laisser à la chose qui se balade là-dedans le temps de disparaître ? Très bon plan."
+
+    noam "Tu viens avec moi ?"
+
+    mara "Quelqu'un doit surveiller l'ouverture. Et tenir la chaise si tu dois ressortir vite."
+
+    noam doute "C'est pratique."
+
+    mara rire "Allez, Sherlock. Jusqu'au premier croisement. Tu regardes, tu reviens."
+
+    noam sourire "Et si je réponds plus, tu vas chercher Elias."
+
+    mara colere "C'est censé me rassurer ?"
+
+    noam "Non."
+
+    "Je pose un genou sur le bureau. Mara ne cherche pas à me retenir. Elle rapproche même la lampe de l'ouverture."
+
+    mara colere "Une minute. Pas plus."
+
+    noam "Deux."
+
+    mara "Une minute trente."
+
+    noam "D'accord."
+
+    mara "Et tu réponds quand je t'appelle."
+
+    noam "Oui." id j17_ventilation_noam_oui
+
+    mara colere "Je suis sérieuse."
+
+    noam "Moi aussi."
+
+    "Je prends la lampe et me glisse dans l'ouverture."
+
+    $ hideGroup()
+    jump _17_0_1_1_DANS_VENTILATION
+
+
+label _17_0_1_1_DANS_VENTILATION:
+
+    $ current_period = "Nuit"
+
+    scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 2.0
+    $ flashlight_on()
+
+    # Noam est le point de vue : seul dans le conduit, son sprite reste caché.
+    $ showP("mara", "mefiant", 0.72)
+
+    "Le métal est glacé sous mes mains. Je dois avancer sur les coudes pendant les premiers mètres, avec juste assez d'espace au-dessus de moi pour ne pas cogner la tête à chaque mouvement."
+
+    noam reflexion "..." id j17_conduit_silence_noam_1
+
+    "Derrière, la lumière de ma chambre devient rapidement un simple rectangle pâle."
+
+    mara "Noam ?"
+
+    noam "Je suis là."
+
+    mara "Je te vois déjà plus."
+
+    noam "Moi non plus, je te vois plus."
+
+    mara "Très drôle."
+
+    "Le conduit tourne légèrement, puis s'élargit. Je peux presque me mettre à quatre pattes."
+
+    "Quelques mètres plus loin, une lumière faible traverse une grille sur ma droite."
+
+    noam inquiet "Attends..."
+
+    "Je m'approche et coupe ma lampe."
+
+    "À travers les fentes, je reconnais une chambre. Pas la mienne. Le lit est placé de l'autre côté, et une veste sombre est posée sur une chaise."
+
+    noam reflexion "Une autre chambre..."
+
+    "Je rallume ma lampe et continue."
+
+    "Une deuxième grille apparaît quelques mètres plus loin. Puis une troisième."
+
+    "À chaque fois, le même principe : une ouverture vers une chambre différente."
+
+    noam inquiet "Non..."
+
+    mara "Quoi ?"
+
+    noam "Le conduit passe derrière les chambres."
+
+    mara "Toutes ?"
+
+    noam "Je crois."
+
+    "Je continue malgré le délai qu'on s'était fixé. Les grilles reviennent à intervalles réguliers, exactement comme les portes du couloir des dortoirs."
+
+    "Une, deux, trois..."
+
+    "Je commence à compter."
+
+    "Le passage ne sert pas seulement à distribuer l'air. Il longe tout le secteur. Et surtout, il est assez grand pour qu'une personne puisse aller d'une chambre à l'autre sans jamais mettre un pied dans le couloir."
+
+    "Je repense immédiatement aux vidéos. Kael dans ma chambre. Sa photo disparue. Le dessin de Juliette."
+
+    noam panne "..."
+
+    "Quelqu'un aurait pu entrer ici sans utiliser une seule porte."
+
+    "Je chasse la pensée avant d'aller plus loin. Ce n'est encore qu'une possibilité."
+
+    mara "Noam, ça fait plus d'une minute trente !"
+
+    noam "Encore trente secondes !"
+
+    mara "Tu négocies même quand t'es dans un mur ?!"
+
+    "Je souris malgré moi et avance jusqu'au prochain embranchement."
+
+    "Puis je m'arrête."
+
+    "Le conduit ne suit plus simplement la ligne des chambres. Une dérivation part vers la droite."
+
+    noam reflexion "Ça, c'est pas normal."
+
+    "Je regarde derrière moi. Impossible de voir Mara."
+
+    "Je devrais revenir."
+
+    "J'éclaire la dérivation. Elle est plus étroite, mais praticable. Au bout, à quelques mètres seulement, une nouvelle grille apparaît."
+
+    "Je compte mentalement les ouvertures croisées jusque-là."
+
+    noam inquiet "... Douze."
+
+    "Douze chambres."
+
+    "Et pourtant il y en a une treizième devant moi."
+
+    noam peur "Mara ?"
+
+    mara "Quoi ?"
+
+    noam "Il y a autre chose."
+
+    mara stress "Reviens."
+
+    noam "Attends." id j17_conduit_attends
+
+    mara colere "Noam, reviens maintenant."
+
+    "Je m'approche malgré tout."
+
+    "La treizième grille donne sur une pièce plongée presque entièrement dans le noir. Je distingue des câbles, des conduits, des panneaux métalliques et quelque chose qui ressemble à un ancien support fixé au sol."
+
+    "Ce n'est pas une chambre."
+
+    noam inquiet "Il y a une pièce derrière les dortoirs."
+
+    mara "Une quoi ?"
+
+    noam "Une pièce technique, je crois."
+
+    "Je colle davantage mon visage contre la grille."
+
+    "La lumière de ma lampe glisse sur le sol de l'autre côté."
+
+    "Quelque chose brille brièvement dans la poussière."
+
+    noam reflexion "..." id j17_conduit_silence_noam_2
+
+    "Une marque longue, fraîche, comme si un objet lourd avait été déplacé récemment."
+
+    $ unlock_gallery_image("bg_cg043")
+    scene bg_cg043 at adaptive_fullscreen with creep_diss
+    $ cam_move(fx=0.43, fy=0.43, z=1.14, t=7.0)
+    play sound "audio/sfx_duct_scrape.wav" volume 0.82
+
+    "Un frottement résonne derrière moi."
+
+    "Je me retourne si vite que mon épaule heurte la paroi."
+
+    noam peur "Qui est là ?"
+
+    "Ma lampe balaie le conduit."
+
+    "Rien."
+
+    mara "Noam ?!"
+
+    noam "Chut."
+
+    mara "Pourquoi tu me dis chut ?!"
+
+    "J'éclaire le sol."
+
+    "Dans la poussière que je viens de traverser, une trace s'arrête à quelques mètres de moi."
+
+    "Pas une vieille marque."
+
+    "Une traînée nette. Fraîche."
+    $ danger_on()
+
+    "Et elle n'était pas là quand je suis passé."
+
+    noam peur "... Mara."
+
+    mara "Quoi ?"
+
+    noam "Va chercher Elias."
+
+    mara stress "Pourquoi ?"
+
+
+    "Quelque chose heurte doucement la tôle, beaucoup plus loin dans le conduit."
+
+    $ horror_audio_cut(duration=0.46, restore_volume=0.62)
+    noam peur "Parce qu'il y a quelqu'un ici."
+
+    $ hideGroup()
+    $ cam_reset(t=0.0)
+    scene bg_conduit_reseau at adaptive_fullscreen with vpunch
+    stop music fadeout 1.0
+    $ danger_off()
+
+    pause 1.0
+
+    pause 1.0
+
     call end_day("18") from _call_end_day_18
-    jump _18_0_1_1_0_REVEIL_DECISION
+    jump _18_0_1_1_0_REVEIL_CHAMBRE

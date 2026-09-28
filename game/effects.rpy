@@ -15,6 +15,94 @@
 #   $ interject("VERDICT", color="#ff3344")
 # ============================================================
 
+default flashlight_pattern = 0
+
+# ------------------------------------------------------------
+# Image sous lampe — masque mobile en boucle
+# ------------------------------------------------------------
+transform _flashlight_round:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    xoffset 0 yoffset 0
+    ease 0.58 xoffset 120 yoffset -78
+    ease 0.58 xoffset 190 yoffset 0
+    ease 0.58 xoffset 120 yoffset 78
+    ease 0.58 xoffset 0 yoffset 112
+    ease 0.58 xoffset -120 yoffset 78
+    ease 0.58 xoffset -190 yoffset 0
+    ease 0.58 xoffset -120 yoffset -78
+    ease 0.58 xoffset 0 yoffset 0
+
+transform _flashlight_eight:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    xoffset 0 yoffset 0
+    ease 0.60 xoffset 150 yoffset -92
+    ease 0.60 xoffset 0 yoffset -18
+    ease 0.60 xoffset -150 yoffset -92
+    ease 0.60 xoffset 0 yoffset 0
+    ease 0.60 xoffset 150 yoffset 92
+    ease 0.60 xoffset 0 yoffset 18
+    ease 0.60 xoffset -150 yoffset 92
+    ease 0.60 xoffset 0 yoffset 0
+
+transform _flashlight_horizontal:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    xoffset 0 yoffset 0
+    ease 1.20 xoffset -210
+    ease 2.40 xoffset 210
+    ease 1.20 xoffset 0
+
+transform _flashlight_vertical:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    xoffset 0 yoffset 0
+    ease 1.20 yoffset -125
+    ease 2.40 yoffset 125
+    ease 1.20 yoffset 0
+
+transform _flashlight_diagonal:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    xoffset 0 yoffset 0
+    ease 1.20 xoffset -190 yoffset -115
+    ease 2.40 xoffset 190 yoffset 115
+    ease 1.20 xoffset 0 yoffset 0
+
+screen flashlight_reveal_overlay():
+    zorder 860
+
+    if flashlight_pattern == 0:
+        add "images/effects/flashlight_vignette.svg" at _flashlight_round
+    elif flashlight_pattern == 1:
+        add "images/effects/flashlight_vignette.svg" at _flashlight_eight
+    elif flashlight_pattern == 2:
+        add "images/effects/flashlight_vignette.svg" at _flashlight_horizontal
+    elif flashlight_pattern == 3:
+        add "images/effects/flashlight_vignette.svg" at _flashlight_vertical
+    else:
+        add "images/effects/flashlight_vignette.svg" at _flashlight_diagonal
+
+    timer 4.8 action Function(_flashlight_next_pattern) repeat True
+
+init python:
+    def _flashlight_next_pattern():
+        previous = int(getattr(store, "flashlight_pattern", 0))
+        choices = [value for value in range(5) if value != previous]
+        store.flashlight_pattern = renpy.random.choice(choices)
+        renpy.restart_interaction()
+
+    def flashlight_on(pattern=None):
+        if pattern is None:
+            store.flashlight_pattern = renpy.random.randint(0, 4)
+        else:
+            store.flashlight_pattern = max(0, min(4, int(pattern)))
+        renpy.show_screen("flashlight_reveal_overlay", _layer="lighting")
+
+    def flashlight_off():
+        renpy.hide_screen("flashlight_reveal_overlay", layer="lighting")
+
 
 # ------------------------------------------------------------
 # Transitions flash
@@ -140,13 +228,16 @@ init python:
 
 
 # ------------------------------------------------------------
-# Pulsation d'alerte (bord d'écran rouge) — tension / danger
+# Stress périphérique — tension organique sans masquer l'action
 # ------------------------------------------------------------
-transform _danger_pulse:
-    alpha 0.0
+transform _stress_breathe:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.0
+    alpha 0.42
     block:
-        linear 0.8 alpha 0.35
-        linear 0.8 alpha 0.10
+        ease 2.25 alpha 0.62 zoom 1.008
+        ease 2.85 alpha 0.40 zoom 1.0
         repeat
 
 init python:
@@ -156,18 +247,81 @@ init python:
     def danger_off():
         renpy.hide_screen("danger_vignette")
 
-# Vignette rouge par bandes (sans shader, sans image)
+# Vignette sombre et diffuse : le centre de l'image reste totalement lisible.
 screen danger_vignette():
     zorder 890
 
-    add Solid("#c81e2e") at _danger_pulse:
-        xpos 0 ypos 0 xsize config.screen_width ysize 14
-    add Solid("#c81e2e") at _danger_pulse:
-        xpos 0 ypos (config.screen_height - 14) xsize config.screen_width ysize 14
-    add Solid("#c81e2e") at _danger_pulse:
-        xpos 0 ypos 0 xsize 14 ysize config.screen_height
-    add Solid("#c81e2e") at _danger_pulse:
-        xpos (config.screen_width - 14) ypos 0 xsize 14 ysize config.screen_height
+    add "images/effects/stress_vignette.svg" at _stress_breathe
+
+
+# ------------------------------------------------------------
+# Révélation de doppelgänger — noir, regard, sourire et screamer
+# ------------------------------------------------------------
+transform _doppel_dark_in:
+    alpha 0.0
+    linear 0.12 alpha 0.96
+
+transform _doppel_eyes_reveal:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    alpha 0.0
+    zoom 0.94
+    pause 0.10
+    easein 0.16 alpha 0.92 zoom 1.0
+    block:
+        pause 0.30
+        linear 0.035 xoffset -3
+        linear 0.035 xoffset 2
+        linear 0.035 xoffset 0
+        pause 0.38
+        repeat
+
+transform _doppel_smile_reveal:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    alpha 0.0
+    zoom 0.98
+    pause 0.34
+    easein 0.20 alpha 0.88 zoom 1.0
+
+transform _doppel_screamer:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    alpha 0.0
+    zoom 0.72
+    pause 0.30
+    linear 0.06 alpha 1.0 zoom 1.28
+    block:
+        linear 0.025 xoffset -11 yoffset 5
+        linear 0.025 xoffset 10 yoffset -4
+        linear 0.025 xoffset -6 yoffset -3
+        linear 0.025 xoffset 0 yoffset 0
+        repeat
+
+screen doppelganger_reveal_overlay(screamer=False):
+    zorder 945
+
+    add Solid("#000000") at _doppel_dark_in
+    add "images/effects/doppelganger_eyes.svg" at _doppel_eyes_reveal
+    if screamer:
+        add "images/effects/doppelganger_smile.svg" at _doppel_screamer
+    else:
+        add "images/effects/doppelganger_smile.svg" at _doppel_smile_reveal
+
+init python:
+    def doppelganger_reveal(screamer=False, duration=1.05, restore_volume=0.72):
+        """Isole un visage impossible dans le noir, avec un impact optionnel."""
+        duration = max(0.68, float(duration))
+        renpy.music.set_volume(0.04, delay=0.08, channel="music")
+        renpy.play("audio/sfx_gresillement.mp3", channel="sound")
+        renpy.show_screen("doppelganger_reveal_overlay", screamer=bool(screamer))
+        renpy.pause(0.48, hard=True)
+        if screamer:
+            renpy.play("audio/sfx_exclamation_horror.mp3", channel="sound")
+            shake(15, 0.24)
+        renpy.pause(max(0.05, duration - 0.48), hard=True)
+        renpy.hide_screen("doppelganger_reveal_overlay")
+        renpy.music.set_volume(float(restore_volume), delay=0.70, channel="music")
 
 transform slow_zoom_in:
     zoom 1.0
@@ -217,6 +371,20 @@ define glitch_diss = MultipleTransition([
     True
 ])
 
+# Rupture de signal plus sèche que glitch_diss : l'image saute avant de tenir.
+define signal_stutter = MultipleTransition([
+    False, Dissolve(0.025),
+    True,  Dissolve(0.025),
+    False, Dissolve(0.050),
+    True,  Dissolve(0.030),
+    False, Dissolve(0.025),
+    True
+])
+
+# Coupures dédiées aux pertes de mémoire et aux scènes d'étouffement.
+define memory_rip = Fade(0.05, 0.16, 0.45, color="#d9f7ff")
+define suffocation_cut = Fade(0.04, 0.38, 0.85, color="#240008")
+
 # Pixellate montante (montée d'angoisse)
 define dread_pix = Pixellate(1.2, 6)
 
@@ -232,3 +400,64 @@ transform push_in_fast:
 transform lean_left:
     subpixel True
     linear 6.0 xoffset -18 zoom 1.06
+
+transform horror_push:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.0
+    easein 5.0 zoom 1.16 yoffset 14
+
+transform corridor_crawl:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.04 xoffset -8
+    linear 8.0 zoom 1.18 xoffset 18
+
+# Mouvements longs destinés aux décors seuls. Leur amplitude reste assez
+# faible pour que l'animation soit ressentie sans distraire du dialogue.
+transform living_background:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.04
+    block:
+        ease 5.8 xoffset -30 yoffset -14 zoom 1.10
+        ease 6.8 xoffset 30 yoffset 12 zoom 1.04
+        repeat
+
+transform haunted_background:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.04
+    linear 10.0 zoom 1.18 xoffset 30 yoffset 14
+
+transform shuttle_background:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.04
+    block:
+        ease 4.5 xoffset -12 yoffset -14 rotate -0.35 zoom 1.075
+        ease 4.5 xoffset 12 yoffset 14 rotate 0.35 zoom 1.04
+        repeat
+
+
+# ------------------------------------------------------------
+# Ruptures audio horrifiques
+# ------------------------------------------------------------
+init python:
+    def horror_audio_cut(duration=0.38, restore_volume=1.0):
+        """Coupe brutalement la musique, ponctue le vide, puis la ramène."""
+        renpy.music.set_volume(0.0, delay=0.05, channel="music")
+        renpy.play("audio/sfx_audio_drop.wav", channel="sound")
+        renpy.pause(max(0.05, float(duration)), hard=True)
+        renpy.music.set_volume(float(restore_volume), delay=0.60, channel="music")
+
+    def horror_music_slow(track="audio/music/bgm_cold_metadata_slow.mp3",
+                          fadeout=0.45, fadein=0.80):
+        """Bascule vers une variante réellement ralentie et assombrie."""
+        renpy.music.play(
+            track,
+            channel="music",
+            loop=True,
+            fadeout=max(0.0, float(fadeout)),
+            fadein=max(0.0, float(fadein)),
+        )

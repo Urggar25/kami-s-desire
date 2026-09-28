@@ -1,4 +1,5 @@
 label _15_0_1_1_0_REVEIL_CHAMBRE:
+    $ current_period = "Matin"
     scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
@@ -14,7 +15,7 @@ label _15_0_1_1_0_REVEIL_CHAMBRE:
     think "Sur le papier, ça ressemble presque à une bonne nouvelle. Rendre les informations accessibles, arrêter de décider à la place des gens de ce qu’ils ont le droit de savoir..."
     think "Mais ici, chaque bonne idée finit toujours par cacher quelque chose."
 
-    play sound sfx_announce
+    play sound "audio/sfx_announce.mp3"
     show screen kami_broadcast_ui
     pause 1.0
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
@@ -118,7 +119,7 @@ label _15_0_1_1_0_RATIONS:
 
     "Une bonne heure passe sans que je quitte réellement le bord du lit. J’ai pris ma décision pour le vote, mais sortir de cette chambre reste une autre histoire."
 
-    play sound sfx_knock volume 0.9
+    play sound "audio/sfx_knock.mp3" volume 0.9
 
     "Trois coups légers frappent soudain à la porte et me font relever la tête."
 
@@ -131,7 +132,7 @@ label _15_0_1_1_0_RATIONS:
     noam inquiet "Je sais qu’il y a quelqu’un."
 
     pause 1.0
-    play sound sfx_knock volume 0.7
+    play sound "audio/sfx_knock.mp3" volume 0.7
 
     "Deux nouveaux coups, plus faibles cette fois, puis le silence revient."
 
@@ -185,7 +186,7 @@ label _15_0_1_1_0_COULOIR:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_86
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_tension_debate.mp3" fadein 2.0
+    play music "audio/music/bgm_tense_meeting.mp3" fadein 2.0
 
     "Lorsque je sors enfin, des voix résonnent déjà au bout du couloir. Le groupe est en train de se rassembler avant de partir vers le Conclave, exactement comme Kael l’avait prévu."
 
@@ -340,6 +341,8 @@ label _15_0_1_1_0_COULOIR:
 
 label _15_0_1_1_0_RENCONTRE_KAEL:
 
+    $ current_period = "Après-midi"
+
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_87
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.5
@@ -459,12 +462,10 @@ label _15_0_1_1_0_VIDEO_KAEL:
 
     "Sur l’écran, son double se tourne vers la caméra et regarde directement l’objectif."
 
-    play sound sfx_glitch volume 0.9
-    with hpunch
+    play sound "audio/sfx_glitch.mp3" volume 0.9
+    with glitch_diss
 
-    centered "{color=#FF0000}FILE DELETED{/color}"
-
-    scene bg_observation at adaptive_fullscreen with vpunch
+    scene bg_observation at adaptive_fullscreen with flash_red
 
     $ showGroup([
         ("noam", "surpris", 0.30),
@@ -622,7 +623,7 @@ label _15_0_1_1_0_ARCHIVES_CROISEES:
 
 label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
 
-    scene bg_observation at adaptive_fullscreen with dissolve
+    scene bg_observation at adaptive_fullscreen, living_background with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Je reste seul devant les écrans après son départ. La vidéo de sa chambre est toujours ouverte et son visage figé me regarde depuis le moniteur."
@@ -636,6 +637,11 @@ label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
     "Je remonte l’enregistrement jusqu’à un peu après deux heures du matin. Ma chambre apparaît à l’écran, sombre, avec mon corps endormi sur le lit."
 
     "À 2h14, la porte s’ouvre."
+
+    $ unlock_gallery_image("bg_cg041")
+    play sound "audio/sfx_static.mp3" volume 0.45
+    scene bg_cg041 at adaptive_fullscreen with signal_stutter
+    $ cam_move(fx=0.57, fy=0.42, z=1.13, t=6.0)
 
     "Kael entre."
 
@@ -651,6 +657,9 @@ label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
     "Je relance la séquence. Puis encore une fois, plus lentement."
 
     "Même heure. Même geste. Même visage."
+
+    $ cam_reset(t=0.25)
+    scene bg_observation at adaptive_fullscreen with memory_rip
 
     noam reflexion "C’est lui."
 
@@ -745,6 +754,8 @@ label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
 
 label _15_0_1_1_0_CONFRONTATION_KAEL:
 
+    $ current_period = "Soir"
+
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
 
     $ showGroup([
@@ -766,10 +777,14 @@ label _15_0_1_1_0_CONFRONTATION_KAEL:
 
     "Je fais un pas vers lui. Kael recule légèrement, puis son expression change."
     "Pas brutalement. C’est presque imperceptible : ses épaules se détendent, sa respiration ralentit et quelque chose disparaît de son regard."
+    $ horror_audio_cut(duration=0.42, restore_volume=0.78)
+    $ horror_music_slow(fadeout=0.25, fadein=0.55)
+    $ cam_move(fx=0.60, fy=0.43, z=1.20, t=0.70)
 
     noam hesitation "... Kael ?"
 
     "Il relève les yeux vers moi avec un calme qui n’a rien à voir avec celui de quelques secondes plus tôt."
+    $ danger_on()
 
     kael sourire "Noam... lâche un peu prise. Là, tu vas juste te faire du mal."
 
@@ -782,31 +797,36 @@ label _15_0_1_1_0_CONFRONTATION_KAEL:
     noam peur "De quoi tu parles ?"
 
     "Il sourit un peu plus. Ce n’est pas un sourire que je lui ai déjà vu."
+    $ doppelganger_reveal(screamer=False, duration=0.92, restore_volume=0.78)
 
     kael sourire "Viens avec moi. Je vais tout t’expliquer."
 
     noam peur "Kael, arrête."
 
-    play sound sfx_glitch volume 1.0
-    with vpunch
+    play sound "audio/sfx_glitch.mp3" volume 1.0
+    $ impact(intensity=14, duration=0.35, color="#5cd3ff")
+    $ cam_reset(t=0.0)
 
-    scene black with dissolve
+    scene black with glitch_diss
 
     "Je n’ai pas le temps de comprendre ce qui vient de changer."
 
     pause 2.0
 
-    scene bg_laboratoire at adaptive_fullscreen with vpunch
+    scene bg_laboratoire at adaptive_fullscreen with flash_white
+    $ shake(10, 0.25)
     pause 0.2
 
     scene black with dissolve
 
     "Une lumière blanche. Une pièce que je ne reconnais pas."
 
-    scene bg_cg033 at adaptive_fullscreen with vpunch
+    scene bg_cg033 at adaptive_fullscreen with flash_red
+    $ shake(14, 0.30)
     pause 0.2
 
     scene black with dissolve
+    $ danger_off()
 
     "Puis plus rien."
 

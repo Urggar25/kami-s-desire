@@ -16,7 +16,7 @@
 # Layers
 # ------------------------------------------------------------
 init -2 python:
-    config.layers = [ "bgcam", "master", "transient", "screens", "overlay" ]
+    config.layers = [ "bgcam", "master", "lighting", "transient", "screens", "overlay" ]
     CINEMA_ZOOM_BG = 1.80
     CINEMA_CAM_Y = 0.41
     CINEMA_SPRITE_ZOOM = 1.60

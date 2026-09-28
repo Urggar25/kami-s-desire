@@ -1499,6 +1499,6 @@ label _9_1_0_0_SOIR:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("10") from _call_end_day_9100
+    call end_day("10", sleeping=True) from _call_end_day_9100
 
     jump _10_1_0_0_REVEIL

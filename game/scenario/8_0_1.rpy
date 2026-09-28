@@ -564,7 +564,7 @@ label _8_0_1_SOIREE:
     think "Demain, je trouverai qui a pris le dessin et la photo. Même si la réponse me conduit vers l'un d'entre nous."
 
     $ hideGroup()
-    call end_day("9") from _call_end_day_12
+    call end_day("9", sleeping=True) from _call_end_day_12
     jump _9_0_1_REVEIL_CHAMBRE
 
 # Total journée : 7 minutes

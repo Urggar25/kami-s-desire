@@ -1,805 +1,674 @@
-default j1601110_memory_order = []
-default j1601110_memory_feedback = "Choisis les fragments qui tiennent encore debout."
-default j1601110_memory_done = False
-
-init python:
-    J1601110_MEMORY_SEQUENCE = [
-        "col",
-        "voix",
-        "labo",
-        "vide",
-    ]
-
-    j1601110_memory_fragments = {
-        "col": {
-            "label": "Le col de Kael",
-            "text": "Mes doigts serraient son vetement. Je me souviens de la violence avant de me souvenir de la raison.",
-        },
-        "voix": {
-            "label": "Une voix trop calme",
-            "text": "Kael souriait, mais ce n'etait pas son calme habituel. C'etait quelque chose qui portait son visage.",
-        },
-        "labo": {
-            "label": "Le laboratoire",
-            "text": "Du blanc, du metal, une lumiere froide. Une piece qui ne devrait pas exister dans ma memoire.",
-        },
-        "vide": {
-            "label": "Le trou noir",
-            "text": "Apres ca, rien. Pas un sommeil, pas un reve, pas meme une fausse explication.",
-        },
-        "dessin": {
-            "label": "Le dessin de Juliette",
-            "text": "Il etait sur mon mur. Puis la video a montre Kael. Puis tout est devenu trop simple pour etre vrai.",
-        },
-        "camera": {
-            "label": "La camera effacee",
-            "text": "Un fichier supprime au moment exact ou la preuve aurait du nous sauver.",
-        },
-    }
-
-    def j1601110_memory_reset():
-        store.j1601110_memory_order = []
-        store.j1601110_memory_feedback = "Choisis les fragments qui tiennent encore debout."
-        store.j1601110_memory_done = False
-
-    def j1601110_memory_choose(fragment_id):
-        if store.j1601110_memory_done:
-            return
-
-        if fragment_id in store.j1601110_memory_order:
-            store.j1601110_memory_feedback = "Non. Je l'ai deja tourne dans ma tete."
-            renpy.play("audio/sfx_gresillement.mp3", channel="sound")
-            return
-
-        expected = J1601110_MEMORY_SEQUENCE[len(store.j1601110_memory_order)]
-
-        if fragment_id == expected:
-            store.j1601110_memory_order.append(fragment_id)
-            renpy.play("audio/sfx_beep.mp3", channel="sound")
-            if len(store.j1601110_memory_order) >= len(J1601110_MEMORY_SEQUENCE):
-                store.j1601110_memory_done = True
-                store.j1601110_memory_feedback = "La chaine s'arrete au noir. Pas a une conclusion."
-            else:
-                store.j1601110_memory_feedback = j1601110_memory_fragments[fragment_id]["text"]
-        else:
-            store.j1601110_memory_feedback = "Non. Ce fragment existe, mais il ne vient pas la."
-            renpy.play("audio/sfx_glitch.mp3", channel="sound")
-
-
-screen j1601110_memory_reconstruction():
-    modal True
-    zorder 280
-
-    add Solid("#03060c")
-    add Solid("#111a2a88")
-
-    for i in range(0, 1080, 8):
-        add Solid("#ffffff05", xysize=(1920, 1)) xpos 0 ypos i
-
-    frame:
-        xalign 0.5
-        yalign 0.08
-        xsize 1160
-        ysize 108
-        background Solid("#07111fee")
-        vbox:
-            xalign 0.5
-            yalign 0.5
-            spacing 4
-            text "BLACKOUT - RECONSTITUTION":
-                xalign 0.5
-                size 42
-                color "#f4fbff"
-                bold True
-            text "Remets en place les derniers fragments avant le trou noir.":
-                xalign 0.5
-                size 22
-                color "#9fd8e8"
-
-    grid 3 2:
-        xalign 0.5
-        yalign 0.48
-        spacing 34
-
-        for fragment_id in ["col", "dessin", "voix", "camera", "labo", "vide"]:
-            $ fragment = j1601110_memory_fragments[fragment_id]
-            $ picked = fragment_id in j1601110_memory_order
-            button:
-                xsize 500
-                ysize 150
-                background Solid("#102033ee" if not picked else "#17412fee")
-                hover_background Solid("#1d4a68ee")
-                action Function(j1601110_memory_choose, fragment_id)
-                vbox:
-                    xalign 0.5
-                    yalign 0.5
-                    spacing 9
-                    text fragment["label"]:
-                        xalign 0.5
-                        size 29
-                        color "#ffffff"
-                        bold True
-                    text fragment["text"]:
-                        xalign 0.5
-                        xmaximum 440
-                        size 20
-                        color "#cdefff"
-                        text_align 0.5
-
-    frame:
-        xalign 0.5
-        yalign 0.88
-        xsize 1280
-        ysize 130
-        background Solid("#040b14ee")
-        vbox:
-            xalign 0.5
-            yalign 0.5
-            spacing 8
-            text "FRAGMENTS [len(j1601110_memory_order)]/[len(J1601110_MEMORY_SEQUENCE)]":
-                xalign 0.5
-                size 24
-                color "#77f7ff"
-                bold True
-            text "[j1601110_memory_feedback]":
-                xalign 0.5
-                xmaximum 1100
-                size 27
-                color "#ffffff"
-                text_align 0.5
-
-    if j1601110_memory_done:
-        timer 1.0 action Return(True)
-
-
 label _16_0_1_1_0_REVEIL_CHAMBRE:
+
+    $ current_period = "Matin"
     scene black with dissolve
-    play sound sfx_heartbeat fadein 0.8
+    play sound "audio/sfx_heartbeat.mp3" fadein 0.8
     pause 1.0
 
-    "La douleur me tire hors du noir sans me laisser le temps de comprendre que j'etais dedans."
-    "Elle n'a rien d'un mal de tete ordinaire. C'est une pression profonde, precise, presque chirurgicale, comme si quelqu'un avait ouvert mon crane pendant la nuit puis referme trop vite en oubliant quelque chose a l'interieur."
-
-    scene bg_chambre at adaptive_fullscreen with hpunch
-    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
-
-    noam peur "Ah...!"
-
-    "Je me redresse d'un coup et la chambre bascule. Le bureau se deforme dans ma vision, le plafond glisse sur le cote, et je dois agripper le drap pour ne pas vomir sur le sol."
-    "L'air sent le sommeil, la sueur froide et autre chose. Une odeur nette, sterile, qui ne devrait pas etre dans ma chambre."
-
-    noam inquiet "... Desinfectant ?"
-
-    "Je porte mes doigts a ma tempe, puis a mon cou. Il n'y a pas de sang, pas de pansement visible, seulement une petite brulure sous la machoire et cette impression intolerable d'avoir ete manipule avec soin."
-
-    "La tablette clignote sur le bureau. Je la regarde longtemps avant d'oser tendre la main, parce qu'une partie de moi sait deja que l'ecran va me prendre quelque chose."
-
-    centered "{size=72}{color=#ffffff}JOUR 16{/color}{/size}"
-
-    noam surpris "Non."
-    noam peur "Non, non, non, attends..."
-
-    "L'heure indique 09h42. La derniere notification lisible date du Jour 15, 19h03. Apres ca, aucune alerte, aucun message, aucun journal de deplacement synchronise avec ma tablette."
-    "Douze heures ont disparu proprement, sans laisser les bords effiloches d'une nuit blanche ou d'un sommeil lourd. Pas un reve. Pas meme la sensation d'avoir ferme les yeux."
-
-    think "Jour 15. Salle d'observation. La video de Kael. Le dessin de Juliette. Mes mains sur son col."
-
-    play sound sfx_glitch volume 0.8
-    with vpunch
-
-    scene black
-    pause 0.2
-    scene bg_laboratoire at adaptive_fullscreen
-    pause 0.15
-    scene black
-    pause 0.2
-    scene bg_chambre at adaptive_fullscreen with hpunch
-
-    noam panique "Qu'est-ce qui s'est passe ?"
-
-    "Ma voix sort trop fort, comme si elle appartenait a quelqu'un d'autre dans la piece. Je me tais aussitot, ridicule, terrifie par mon propre echo."
-    "Il y a des souvenirs, mais ils ne s'alignent pas. Ils flottent dans ma tete comme des morceaux de verre retournes du mauvais cote."
-
-    $ j1601110_memory_reset()
-    $ _j1601110_memory_result = renpy.call_screen("j1601110_memory_reconstruction")
+    "J'ouvre les yeux avec l'impression d'avoir dormi dix minutes et dix heures à la fois. Ma tête pèse une tonne, ma bouche est sèche et pendant quelques secondes je reste allongé sans même savoir pourquoi quelque chose me paraît aussi profondément anormal."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
+    show screen day1_wakeup_overlay(level="heavy")
 
-    "Le col de Kael. Sa voix devenue trop douce. Une image blanche de laboratoire. Puis rien."
-    "Ce n'est pas une histoire. C'est une liste de degats."
+    noam panne "..."
 
-    "Je fouille la chambre avec la precision absurde de quelqu'un qui sait deja qu'il ne trouvera rien. Le tiroir, le dessous du lit, la poche interieure de ma veste, les draps froisses, l'interstice entre le bureau et le mur."
-    "Pas le dessin de Juliette. Pas une note. Pas une trace de lutte. Pas meme cette salete de preuve minuscule qu'on trouve dans les histoires quand le monde veut encore etre compris."
+    "Je fixe le plafond en attendant que mon cerveau se remette en marche. La chambre est la même que d'habitude, mes affaires sont à leur place, la lumière passe entre les stores... pourtant cette sensation ne part pas."
+    "Il manque quelque chose. Pas un objet. Quelque chose dans ma tête."
 
-    noam fatigue "Enfin... vivant, c'est deja beaucoup demander comme conclusion."
+    "Je me redresse lentement et aussitôt une douleur sourde me traverse le crâne. Je ferme les yeux, une main contre mon front, puis j'essaie simplement de me rappeler comment je suis rentré ici."
 
-    "Je m'arrete devant le miroir. Mes yeux sont rouges, mon visage est vide, et la marque sous ma machoire ressemble de moins en moins a une irritation."
+    noam inquiet "Hier soir..."
 
-    noam inquiet "Une injection ?"
+    "La salle d'observation me revient. Les vidéos. La photo de Léa dans les mains de Kael. Puis l'enregistrement de ma propre chambre, avec Kael qui entre et repart avec le dessin de Juliette."
 
-    "Je ne sais pas si je l'ai dit ou pense. C'est la premiere fois de la matinee que la difference me fait peur."
+    noam reflexion "Après ça, je suis parti le chercher..."
 
-    play sound sfx_announce
+    "Je me souviens du couloir. Je me souviens de l'avoir aperçu plus loin et de l'avoir appelé. Je me souviens même d'avoir accéléré pour le rattraper."
+    "Et ensuite, rien."
+
+    noam hesitation "... Non."
+
+    "Je recommence depuis le début, plus lentement, comme si j'avais simplement sauté une étape. La vidéo. Le dessin. Le couloir. Kael."
+    "Rien après."
+
+    noam inquiet "Je l'ai trouvé... Je sais que je l'ai trouvé."
+
+    "J'en suis certain sans réussir à expliquer pourquoi. Il s'est passé quelque chose d'important, quelque chose qui devrait être juste là, à quelques secondes de portée, mais chaque fois que j'essaie de l'attraper, ma tête se vide complètement."
+
+    noam colere "Allez... réfléchis."
+
+    "Je ferme les yeux plus fort, comme si ça pouvait aider. J'essaie de retrouver sa voix, l'endroit où on était, ce que je lui ai dit. Une image menace de revenir, puis disparaît avant même que je puisse la reconnaître."
+
+    noam colere "Putain !"
+    $ shake(7, 0.22)
+
+    "Je frappe du plat de la main contre le matelas. La douleur dans mon crâne pulse immédiatement plus fort et je regrette mon geste."
+    "Ce n'est pas un souvenir flou. Ce n'est pas le genre de soirée où tout finit par se mélanger avec la fatigue. C'est un trou net. Je sais ce qu'il y avait juste avant, je sais que quelque chose est venu après, mais entre les deux il n'y a absolument rien."
+
+    "Je me lève et manque de perdre l'équilibre. En passant devant le miroir, je remarque seulement à quel point j'ai mauvaise mine : les yeux rouges, le visage tiré et cette expression d'idiot qui cherche une réponse sur son propre visage."
+
+    noam triste "Qu'est-ce qui s'est passé... ?"
+    hide screen day1_wakeup_overlay with soft_dissolve
+
+    play sound "audio/sfx_announce.mp3"
+    pause 1.0
     show screen kami_broadcast_ui
-    scene bg_diffusion_neutre at adaptive_fullscreen with dissolve
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
-    kami "Bonjour, mes chers representants."
-    kami "Jour 16."
-    kami "Oui, deja. Je sais, certains d'entre vous ont l'air d'avoir saute une page."
+    kami "Bonjour, mes chers représentants. J'espère que cette nouvelle journée vous trouve dans une forme éclatante."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Pas de vote aujourd'hui. Repos administratif."
-    kami "Hydratation recommandee, disputes facultatives, crises existentielles a votre charge."
-    kami "Je sais etre genereuse quand je veux."
+    kami "Enfin... certains plus que d'autres."
+
+    "Je relève immédiatement les yeux vers l'écran."
+
+    noam inquiet "..."
+
+    kami "Aucun vote n'est prévu aujourd'hui. Profitez-en pour vous reposer, discuter, réfléchir à vos merveilleux choix passés... ou simplement essayer de passer quelques heures sans vous accuser mutuellement de quelque chose."
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
 
-    kami "Noam ?"
-    kami "Essaie de ne pas courir dans les couloirs ce matin."
-    kami "Ca donne une mauvaise image aux cameras."
+    kami "Je sais, je sais. Je vous en demande beaucoup."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
-    kami "Enfin, quand les cameras veulent bien se souvenir avec nous."
-    kami "Bonne journee."
+    kami "Bonne journée à tous."
 
     hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "Le silence revient, mais pas comme avant. Maintenant il a la forme exacte de ce que Kami vient de ne pas dire."
+    "L'écran s'éteint. Je reste encore quelques secondes devant lui, avec la désagréable impression que sa remarque m'était destinée sans pouvoir en être sûr."
 
-    menu:
-        "Envoyer un message a Kael":
-            "Je fixe le contact de Kael jusqu'a ce que les lettres perdent leur sens."
-            noam "Tu es reveille ?"
-            "Le message reste sans reponse une minute, puis deux. Le statut passe a lu."
-            "Rien d'autre."
-            think "Il a vu. Il choisit de ne pas repondre. Ou il attend que je sorte de ma chambre pour pouvoir choisir le bon visage."
-        "Ne rien envoyer":
-            "Je verrouille la tablette avant que mes doigts puissent trembler sur le clavier."
-            think "Si je lui ecris, il aura le temps de preparer une reponse. Et le pire, ce n'est pas qu'il mente. Le pire, c'est qu'il reponde normalement."
+    noam reflexion "Kael..."
 
-    "La nausee finit par se melanger a la faim. Ici, meme le corps a une facon de vous pousser vers les autres quand vous voudriez disparaitre."
+    "Je pourrais aller le voir tout de suite. Une partie de moi en a envie. Une autre refuse de débarquer devant lui sans même savoir ce que j'ai fait ou dit la veille."
+    "La faim finit par trancher à ma place. Je n'ai presque rien dans le ventre et rester seul ici à forcer sur un souvenir qui ne revient pas ne m'avance à rien."
 
     jump _16_0_1_1_CAFETERIA_TENSION
 
 
 label _16_0_1_1_CAFETERIA_TENSION:
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_98
-    scene bg_couloir at adaptive_fullscreen with dissolve
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_98
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 2.0
 
-    "Le trajet jusqu'a la cafeteria dure moins de deux minutes et pourtant je le traverse comme un couloir d'hopital apres une mauvaise nouvelle. Chaque lumiere blanche accroche ma retine, chaque camera au plafond semble attendre que je leve la tete pour confirmer que je suis encore utilisable."
-    "A chaque angle, je m'attends a retrouver le laboratoire. Je ne trouve que le Conclave, ce qui n'est pas beaucoup plus rassurant."
+    "Je quitte les dortoirs en marchant moins vite que d'habitude. Ma tête s'est un peu calmée, mais le vide est toujours là, lourd, impossible à ignorer. À chaque fois que j'essaie de penser à Kael, je reviens exactement au même point : je l'ai cherché, je l'ai trouvé... et après, plus rien."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_99
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    "La cafeteria est presque pleine. Les conversations ne s'arretent pas toutes quand j'entre, mais elles changent de texture. Des mots continuent, des regards bifurquent, des mains se referment sur des tasses."
-    "Ils ne me fixent pas comme un coupable. Ils me contournent comme une question dangereuse."
+    "La cafétéria est déjà bien remplie quand j'arrive. Mara et Elias discutent près du buffet, Iris râle parce que quelqu'un a encore laissé une tasse vide sur la table et Elen essaie visiblement de convaincre Ryn de manger autre chose que du pain."
+    "Pendant quelques secondes, personne ne fait particulièrement attention à moi, et ça me va très bien."
 
     $ showGroup([
-        ("mara", "agace", 0.05),
-        ("iris", "inquiet", 0.20),
-        ("lysa", "blase", 0.35),
-        ("kael", "calme", 0.50),
-        ("elen", "inquiet", 0.65),
-        ("sael", "neutre", 0.80),
-        ("ryn", "fatigue", 0.93),
+        ("mara", "agace", 0.06),
+        ("iris", "neutre", 0.20),
+        ("lysa", "blase", 0.34),
+        ("elen", "joie", 0.48),
+        ("nyra", "neutre", 0.62),
+        ("ryn", "fatigue", 0.76),
+        ("elias", "neutre", 0.90),
     ])
 
-    iris inquiet "Noam..."
+    elen joie "Noam ! Il reste du café si tu veux. Enfin, je crois que c'est encore du café. Elias a dit qu'il était vraiment mauvais aujourd'hui."
 
-    "Iris prononce mon nom comme si elle avait repete plusieurs versions de la phrase avant mon arrivee et venait de perdre toutes les bonnes."
+    elias fatigue "J'ai dit qu'il avait goût de flotte. C'est différent."
 
-    noam hesitation "Salut."
+    iris neutre "Non, pour une fois il a raison. Même moi j'arrive pas à finir le mien, et pourtant je suis prête à boire n'importe quoi le matin."
 
-    mara agace "Salut ? C'est ca, ton entree ?"
+    mara agace "Waouh. Iris qui abandonne avant la fin d'une plainte, ça par contre c'est inquiétant."
 
-    noam fatigue "Je peux ressortir et essayer une version plus dramatique, mais j'ai peur de tomber avant la porte."
+    iris colere "Je peux reprendre si ça te manque."
 
-    lysa blase "Il plaisante. Donc soit il va mieux, soit il a atteint le stade ou l'organisme produit de l'ironie pour eviter l'effondrement."
+    "Je prends une tasse sans vraiment suivre la conversation et m'assois au bout de la table. Le bruit autour de moi devrait aider, mais il me donne surtout l'impression d'avoir la tête encore plus pleine."
 
-    ryn fatigue "Vous pouvez pas juste lui demander ce qu'il a foutu hier ?"
+    lysa blase "T'as une sale tête."
 
-    iris colere "Ryn."
+    noam desaccord "Merci."
 
-    ryn desaccord "Quoi ? Tout le monde le pense. Je rends service a l'air ambiant."
+    lysa taquin "De rien. J'essayais de trouver une formulation douce, mais j'ai abandonné."
 
-    "Kael, lui, ne dit rien. Il est assis avec un plateau presque intact devant lui, les mains posees de chaque cote comme s'il venait d'aligner un outil fragile."
-    "Quand ses yeux rencontrent les miens, il ne baisse pas le regard. Il ne grimace pas. Il ne tremble pas."
-    "Il a l'air normal."
-    "C'est obscene."
+    "Je porte la tasse à mes lèvres et réalise seulement à ce moment-là que je n'ai pas mis de sucre. Je la repose presque immédiatement."
 
-    kael calme "Assieds-toi."
+    iris inquiet "Attends... toi, tu bois jamais ton café comme ça."
 
-    "Il pousse une chaise du pied, assez loin pour que je puisse la prendre sans le toucher. Le geste est pratique, mesure, presque gentil."
+    noam hesitation "J'ai oublié."
 
-    noam surpris "..."
+    mara agace "Bon, là ça devient grave. Quelqu'un appelle Sael, Noam a oublié son sucre."
 
-    kael "Tu vas tomber."
+    elen inquiet "Non mais sérieusement, tu vas bien ?"
 
-    think "Hier, je l'ai attrape par le col. Hier, sa voix a change. Hier, il m'a dit de le suivre. Aujourd'hui, il me propose une chaise."
+    "Je relève les yeux. Cette fois, plusieurs personnes me regardent. Pas parce que j'ai fait une entrée dramatique ou parce que quelqu'un leur a raconté quoi que ce soit. Juste parce que je suis assis devant eux depuis deux minutes sans vraiment être là."
 
-    menu:
-        "Prendre la chaise":
-            "Je m'assois parce que mes jambes n'attendaient que l'autorisation de me trahir."
-            iris inquiet "Merci."
-            noam inquiet "Je ne l'ai pas fait pour te rassurer."
-            iris "Je prends quand meme."
-        "Rester debout":
-            "Je reste debout. C'est idiot, mais la chaise vient de Kael, et ce matin je ne sais meme plus si une chaise peut etre neutre."
-            kael fatigue "D'accord."
-            mara agace "Magnifique. Maintenant meme le mobilier est suspect."
+    noam desaccord "J'ai mal dormi. C'est tout."
 
-    elen inquiet "Tu devrais passer a l'infirmerie. Tu as la peau froide, et tu marches comme quelqu'un qui compte le sol pour ne pas tomber."
+    iris inquiet "Tu trembles un peu."
 
-    noam hesitation "Je vais... enfin, je vais y penser."
+    noam colere "J'ai dit que ça allait."
 
-    lysa blase "Traduction : non, sauf si quelqu'un le traine."
+    "Ma réponse part beaucoup plus sèchement que prévu. Iris se fige et je m'en veux immédiatement."
 
-    sael neutre "Il y a un gout de metal dans ta bouche."
+    noam culpabilite "Désolé. C'était pas contre toi."
 
-    "La phrase tombe sans haussement de ton. Je me fige."
+    iris neutre "Ouais... j'avais compris."
 
-    noam surpris "Comment tu..."
+    "Elle retourne à son assiette sans insister. Les autres aussi font semblant de reprendre leur conversation, mais l'ambiance vient clairement de perdre quelque chose."
 
-    sael raison "Tu avales comme si tu essayais de le faire partir. Et tu touches ton cou quand tu crois que personne ne regarde."
+    nyra reflexion "Kael n'est pas venu."
 
-    mara agace "Super. On a donc Noam qui sent le laboratoire, Sael qui lit les symptomes comme une meteo de fin du monde, et Kael qui sert des chaises. Quel petit dejeuner."
+    "Je relève la tête avant même d'avoir le temps de faire semblant que ça ne m'intéresse pas."
 
-    kael calme "Il devrait manger."
+    noam inquiet "Il est où ?"
 
-    noam colere "Tu peux arreter ?"
+    nyra neutre "Dans les dortoirs, probablement. Je l'ai croisé tôt ce matin."
 
-    "La table se tend d'un seul coup. Meme Ryn arrete de bouger son gobelet."
+    mara mefiant "Et ? Vu ta tête, y'a un 'mais'."
 
-    kael surpris "..."
+    nyra "Il m'a demandé si quelqu'un était entré dans sa chambre cette nuit. Puis il m'a demandé si j'avais vu quelqu'un toucher à ses affaires, si les caméras fonctionnaient normalement et si je savais qui avait accès aux enregistrements."
 
-    noam colere "Arreter de faire comme si c'etait une matinee normale. Comme si hier ne s'etait pas termine par..."
+    ryn fatigue "Ça lui ressemble pas."
 
-    "Je cherche la fin de la phrase et je ne trouve que le vide. C'est humiliant. Kael le voit."
+    nyra reflexion "Non."
 
-    kael mefiant "Par quoi ?"
+    elias inquiet "Il s'est fait voler autre chose ?"
 
-    "Il ne provoque pas. C'est pire. Son incomprehension ressemble a une incomprehension sincere, et la sincerite, chez quelqu'un qu'on soupconne, est une arme deguisee en plaie."
+    nyra "Je ne sais pas. Il n'a pas voulu me répondre. Quand j'ai essayé de continuer la discussion, il a vérifié deux fois derrière moi avant de refermer sa porte."
 
-    noam hesitation "Par toi."
+    mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Ambiance saine."
 
-    elen surpris "Noam..."
+    lysa blase "Je donne encore trois jours avant qu'on commence tous à dormir avec une chaise sous la poignée."
 
-    ryn colere "Attends, quoi ?"
+    ryn desaccord "Si quelque chose se passe dans les dortoirs, on devrait au moins savoir quoi."
 
-    kael calme "Je n'ai rien fait."
+    nyra raison "Je suis d'accord. Mais il est inutile d'aller le coincer à dix devant sa porte. Dans son état, ça ne fera que renforcer ce qu'il pense déjà."
 
-    noam colere "Tu ne sais meme pas ce que je vais dire."
+    "Je serre les doigts autour de ma tasse."
 
-    kael fatigue "Si."
-    kael "Tu vas dire que j'ai encore fait quelque chose dont je ne me souviens pas."
+    think "Il pense quoi, exactement ?"
 
-    "Sa voix reste basse, mais quelque chose dedans s'est ferme. Pas une porte qu'on claque. Une cloison de securite."
+    "Une nouvelle fois, j'essaie de me rappeler ce qu'il s'est passé après l'avoir retrouvé hier. Une pression se forme derrière mes yeux, mais rien ne vient."
 
-    iris inquiet "Kael, hier soir, vous etiez ensemble ?"
+    elen inquiet "Noam ?"
 
-    kael "Oui."
+    noam colere "Quoi ?"
 
-    iris "Et apres ?"
+    elen "Rien... Tu serres ta tasse super fort."
 
-    kael "Noam est rentre."
+    "Je desserre immédiatement les doigts."
 
-    noam "Tu m'as vu rentrer ?"
+    noam hesitation "Je suis juste fatigué."
 
-    kael mefiant "Oui."
+    mara agace "Ouais, ça on avait compris."
 
-    noam "Tu m'as accompagne ?"
+    noam colere "Alors arrêtez de me demander toutes les trente secondes si ça va !"
 
-    kael "Non."
+    "Cette fois, le silence tombe franchement. Même Mara ne trouve rien à répondre tout de suite."
 
-    noam "Tu m'as parle ?"
+    noam culpabilite "... Pardon."
 
-    kael "Non."
+    "Je pousse ma chaise en arrière avant que quelqu'un puisse reprendre. J'ai à peine touché à mon petit-déjeuner."
 
-    lysa blase "Reponses monosyllabiques, tension visible, aucune information exploitable. Nous progressons comme une institution publique."
+    iris inquiet "Tu vas où ?"
 
-    mara colere "Kael, tu peux developper au lieu de faire ton coffre-fort ?"
+    noam desaccord "Prendre l'air."
 
-    kael calme "Je l'ai vu marcher vers les dortoirs. Il ne repondait pas. Je pensais qu'il ne voulait pas me parler."
+    lysa blase "Dans une station spatiale. Excellent plan."
 
-    ryn colere "Et tu t'es dit que c'etait normal ?"
+    "Malgré moi, un souffle m'échappe presque comme un rire. Ça ne dure pas."
 
-    kael colere "Ici ? Oui."
+    noam "Je reviens plus tard."
 
-    "Ryn se redresse, pret a repondre, mais Sael pose simplement son regard sur lui. Pas un ordre. Une pierre sur le bord d'une nappe."
-
-    sael raison "Pas ici."
-
-    ryn fatigue "Toujours pas ici. Jamais ici. C'est pratique, vos endroits interdits."
-
-    noam fatigue "Je dois lui parler seul."
-
-    iris inquiet "Noam, pas dans cet etat."
-
-    noam "Je vais bien."
-
-    iris colere "Non. Tu dis ca quand tu veux qu'on te laisse faire une erreur sans temoin."
-
-    "Je deteste la precision de la phrase. Elle me connait mieux que je ne l'ai autorisee a le faire."
-
-    lysa blase "Elle marque un point. Mais si on les garde a table, Noam va exploser ici et Kael va se transformer en meuble defensif."
-
-    mara agace "Donc on les laisse partir dans un couloir. Excellent. Rien de grave n'arrive jamais dans les couloirs."
-
-    sael neutre "La question est deja entre eux. La garder au milieu de nous ne la rendra pas moins dangereuse."
-
-    kael reflechit "Couloir est."
-    kael "Deux minutes."
-
-    "Il se leve sans brusquerie. Moi aussi. Derriere nous, la cafeteria ne reprend pas vie ; elle reste en apnee, pleine de gens qui savent qu'une dispute vient de quitter la piece sans vraiment s'eloigner."
+    "Je quitte la cafétéria sans expliquer davantage. Je sens les regards dans mon dos jusqu'à ce que la porte se referme."
 
     jump _16_0_1_1_CORRIDOR_KAEL
 
 
 label _16_0_1_1_CORRIDOR_KAEL:
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_couloir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_100
-    scene bg_couloir at adaptive_fullscreen with dissolve
-    play music "music/bgm_tension_debate.mp3" fadein 1.5
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_100
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
+
+    "Je n'ai même pas décidé où aller quand une voix m'arrête derrière moi."
+
+    kael fatigue "Noam."
+
+    "Je me retourne. Kael est à quelques mètres, seul. Il a l'air encore plus fatigué que la veille et garde sa tablette serrée contre lui comme s'il craignait qu'on puisse la lui arracher."
 
     $ showGroup([
-        ("noam", "colere", 0.30),
-        ("kael", "calme", 0.60),
+        ("noam", "inquiet", 0.30),
+        ("kael", "fatigue", 0.62),
     ])
 
-    "Kael s'arrete sous une camera, la regarde a peine, puis se decale de deux pas dans l'angle mort entre deux appliques. Le geste est trop naturel pour etre improvise."
+    noam surpris "Kael..."
 
-    noam inquiet "Tu connais encore les angles morts."
+    "Je cherche instinctivement ce qui devrait venir après son nom. Une accusation, une question, n'importe quoi. Rien n'arrive assez clairement pour sortir."
 
-    kael calme "Je regarde les cameras."
+    kael fatigue "Alors ?"
 
-    noam "Tu les regardes, ou tu les utilises ?"
+    noam hesitation "Alors quoi ?"
 
-    kael mefiant "Choisis ta question."
+    kael inquietude "Tu voulais me parler hier."
 
-    noam colere "Tres bien. Pourquoi tu as vole mon dessin ?"
+    "Mon ventre se noue immédiatement."
 
-    kael surpris "Je ne l'ai pas vole."
+    noam inquiet "Oui."
 
-    noam "Tu n'as meme pas pris le temps de respirer avant de nier."
+    kael "Tu m'as cherché après la salle d'observation."
 
-    kael "Parce que la reponse n'a pas besoin de respirer."
+    noam reflexion "Je... oui."
 
-    noam colere "Je t'ai vu."
+    kael fatigue "Pourquoi ?"
 
-    kael "Tu as vu une video."
+    "Je le fixe quelques secondes, déstabilisé par la question."
 
-    noam "Avec ton visage. Ton corps. Ta demarche. Tes mains sur le dessin de Juliette."
+    noam hesitation "À cause de la vidéo."
 
-    kael fatigue "Comme pour ma photo."
+    kael inquietude "Laquelle ?"
 
-    noam colere "Ne te cache pas derriere ca."
+    noam colere "Kael, tu sais très bien laquelle. Celle où on te voit prendre toi-même la photo de Léa. Ta propre photo. Celle dont tu jurais ne pas savoir où elle était passée."
 
-    kael colere "Ce n'est pas une cachette, c'est le meme probleme."
+    "Son regard ne bouge pas, mais sa mâchoire se crispe."
 
-    "Sa voix monte a peine, mais chez Kael c'est presque un cri. Il serre les doigts autour de sa tablette eteinte, si fort que l'ecran prend une trace de buee."
+    kael triste "Justement."
 
-    noam "Hier, dans la salle d'observation, tu as change. Pas seulement ton expression. Toute ta maniere d'etre la. Tu as souri comme si tu savais quelque chose que moi je n'avais pas encore perdu."
+    kael fatigue "Hier, j'ai quitté la salle parce que je voulais retourner fouiller ma chambre. Tu es resté devant les écrans."
 
-    kael doute "Je ne me souviens pas de ca."
+    noam "Oui."
 
-    noam "Evidemment."
-
-    kael mefiant "Ne fais pas ca."
-
-    noam colere "Faire quoi ?"
-
-    kael "Cette voix. Celle qui decide que mon trou de memoire est une preuve contre moi, mais que le tien est une tragedie."
-
-    "La phrase me frappe plus fort qu'elle ne devrait. Je voudrais repondre tout de suite, avec quelque chose de propre, quelque chose qui coupe."
-
-    noam hesitation "Ce n'est pas... enfin, ce n'est pas comparable."
-
-    kael fatigue "Si."
-    kael "C'est exactement comparable. C'est pour ca que tu refuses de le faire."
-
-    menu:
-        "Accuser Kael frontalement":
-            noam colere "Tu as pris mon dessin. Peut-etre que tu ne t'en souviens pas, peut-etre que quelqu'un t'a fait quelque chose, mais c'etait ton corps dans ma chambre."
-            kael colere "Et si je dis la meme chose pour ma photo, tu acceptes quoi ? Que je sois coupable ? Que je sois victime ? Ou les deux, selon ce qui t'arrange ?"
-        "Le pousser sur sa voix de la veille":
-            noam inquiet "Ce qui me fait peur, ce n'est pas seulement la video. C'est ta voix. Hier, tu ne parlais pas comme toi."
-            kael doute "Decris."
-            noam "Trop doux. Trop facile. Comme quelqu'un qui avait appris tes silences mais pas leur poids."
-            kael fatigue "Alors ce n'etait pas moi."
-            noam colere "Ou c'etait la partie de toi qui sait mentir."
-        "Demander les logs":
-            noam raison "Montre-moi tes logs. Si tu n'as rien a cacher, montre-les."
-            kael mefiant "Non."
-            noam colere "Tu vois ?"
-            kael "Je vois surtout que tu veux transformer mes donnees en arme avant meme de savoir les lire."
-
-    kael fatigue "Je ne me souviens pas etre entre dans ta chambre."
-    kael "Je ne me souviens pas avoir touche ton dessin."
-    kael "Je ne me souviens pas t'avoir demande de me suivre."
-    kael "Et je ne vais pas inventer une confession juste parce que ton angoisse prefere une phrase claire."
-
-    noam colere "Tu me traites de parano ?"
-
-    kael "Oui."
-
-    "Le mot est net. Sans tremblement."
-
-    noam surpris "..."
-
-    kael "Pas parce que tu es fou. Parce que tu souffres, que tu as un trou dans la memoire, et que tu cherches une forme autour. Mon visage est la forme la plus proche."
-
-    noam colere "Tu etais sur la video."
-
-    kael "Oui."
-
-    noam "Tu etais dans ma chambre."
-
-    kael "Oui."
-
-    noam "Et tu continues a dire que ce n'etait pas toi ?"
-
-    kael colere "Je dis que je ne sais plus ce que signifie 'moi' quand mon corps fait quelque chose que ma memoire refuse."
-
-    "Cette fois, il a parle trop vite. Les mots lui ont echappe avant le controle. Il s'en rend compte et se referme aussitot, mais la fissure est la."
-
-    noam fatigue "C'est confortable."
-
-    kael colere "Non."
-
-    "Il avance d'un pas. Pas assez pour me menacer. Assez pour que mon corps se souvienne du col serre la veille."
-
-    kael "Tu crois que c'est confortable de voir mon propre visage faire disparaitre la seule photo qui me restait ? Tu crois que c'est confortable d'avoir peur de mes mains ?"
-    kael "Je dors avec ma tablette contre moi depuis le Jour 8 parce que je ne sais plus si je peux me faire confiance pendant la nuit."
-    kael "Alors ne viens pas me vendre le confort de l'amnesie."
-
-    "Je serre les poings. La colere cherche une sortie, mais elle trouve surtout de la honte."
-
-    noam hesitation "Si quelqu'un vivait ca, il pourrait... enfin, il pourrait avoir besoin de savoir qui lui a fait ca."
-
-    kael fatigue "Tu viens encore de disparaitre dans une phrase generale."
+    kael "Après ça, je ne t'ai pas revu."
 
     noam surpris "Quoi ?"
 
-    kael "Tu fais ca quand tu veux parler de toi sans prendre la responsabilite du pronom."
+    kael calme "Je ne t'ai pas revu de la soirée."
 
-    "Je reste muet."
+    "Je secoue immédiatement la tête."
 
-    kael calme "Tu veux un coupable, Noam. Moi aussi. Mais si on se trompe de cible, on aide la seule personne qui sait deja ce qui nous manque."
+    noam desaccord "Non. Je suis parti te chercher."
 
-    noam colere "Alors aide-moi."
+    kael "Peut-être. Mais tu n'es jamais venu me parler."
 
-    kael "Je ne peux pas."
+    noam colere "Je t'ai trouvé."
 
-    noam "Tu peux toujours quelque chose."
+    kael fatigue "Où ?"
 
-    kael fatigue "Pas la."
+    "La question me coupe net. Je sais que je l'ai trouvé. Je pourrais le jurer. Pourtant, dès que j'essaie de replacer un mur, une porte ou même sa position dans le couloir, tout se dérobe."
 
-    "Il detourne les yeux vers le fond du couloir. Pendant une seconde, son calme ressemble moins a une methode qu'a une fatigue physique."
+    noam panne "..."
 
-    kael "J'ai verifie mes logs cette nuit."
+    kael inquietude "Où, Noam ?"
 
-    noam inquiet "Cette nuit ?"
+    noam colere "J'en sais rien !"
 
-    kael "Apres que tu es rentre."
+    "Ma voix résonne dans le couloir. Kael jette immédiatement un regard vers les caméras au-dessus de nous, puis fait un pas plus près."
 
-    noam "Je suis rentre comment ?"
+    kael fatigue "Baisse d'un ton."
 
-    kael "A pied. Seul. Tu marchais droit, mais tu ne repondais pas quand je t'ai appele."
+    noam colere "Me demande pas de baisser d'un ton alors que tu viens de me dire que la moitié de ce dont je suis sûr n'est jamais arrivée !"
 
-    noam peur "Tu m'as appele ?"
+    kael triste "Je te dis seulement ce que je sais."
 
-    kael "Deux fois."
+    noam "Je me rappelle avoir vu l'enregistrement de ma chambre. Je me rappelle t'avoir vu prendre le dessin de Juliette. Je me rappelle être sorti pour te chercher. Je me rappelle t'avoir trouvé..."
 
-    "Rien. Aucun souvenir, pas meme la honte d'avoir ignore quelqu'un."
+    "Je m'arrête. Les derniers mots ont plus de mal à sortir."
 
-    kael "A 20h11, mon badge ouvre la salle d'observation. A 20h13, il ouvre le couloir nord. A 20h16, je perds onze minutes sur les cameras accessibles."
+    noam inquiet "Et après..."
 
-    noam "Tu perds ?"
+    kael inquietude "Après quoi ?"
 
-    kael mefiant "Le systeme perd. Moi aussi, apparemment."
+    noam panne "..."
 
-    noam raison "Montre."
+    kael "Noam ?"
 
-    kael "Non."
+    noam colere "Après, j'ai rien."
 
-    noam colere "Pourquoi ? Parce que ca t'accuse ?"
+    "Le silence change immédiatement entre nous. Kael ne semble pas soulagé. Au contraire, il recule légèrement et son regard devient plus méfiant."
 
-    kael colere "Parce que tu ne cherches pas une preuve. Tu cherches une phrase qui autorise ta colere."
+    kael fatigue "Rien du tout ?"
 
-    noam "Et toi, tu cherches quoi ?"
+    noam desaccord "Je me suis réveillé ce matin dans ma chambre. Je sais même pas comment je suis rentré."
 
-    kael fatigue "Un endroit ou ma soeur existe encore sans que le Conclave puisse entrer dedans."
+    kael inquietude "Et tu n'as rien dit aux autres ?"
 
-    "Le nom n'est pas prononce. Il ne dit jamais Mira en public. Meme ici, seul avec moi, il protege le centre de la phrase."
+    noam "Non."
 
-    kael calme "Si tu veux une preuve qui ne depend ni de toi ni de moi, va aux archives."
+    kael calme "Bien."
 
-    noam inquiet "Pourquoi ?"
+    noam colere "Bien ?!"
 
-    kael "Depuis le vote d'hier, certains dossiers medicaux sont consultables. Pas tout. Assez pour verifier si on nous a fait quelque chose."
+    kael fatigue "Oui, bien. Parce qu'on ne sait pas ce qui s'est passé. Et vu ce qu'on a découvert hier, raconter à toute la station que ta mémoire s'arrête au moment où tu venais me chercher serait une excellente manière de me désigner comme coupable avant même d'avoir compris quoi que ce soit."
 
-    noam colere "Tu le savais et tu ne l'as pas dit a la table ?"
+    noam desaccord "Tu crois vraiment que c'est ça qui me préoccupe ?"
 
-    kael "Je viens de le dire a toi."
+    kael "Je crois que depuis hier, on a vu une vidéo de moi volant la photo de ma propre sœur sans que j'en garde le moindre souvenir, puis une autre vidéo où j'entre dans ta chambre pour prendre le dessin de la tienne."
 
-    noam "Parce que ca t'arrange."
+    kael triste "Alors oui. Pour l'instant, je me méfie de tout le monde. De toi aussi."
 
-    kael "Parce que si je le dis a table, Ryn casse un terminal, Mara hurle sur les murs, Iris essaie de sauver tout le monde en meme temps, et toi tu disparais dans une phrase qui commence par 'si quelqu'un'."
+    noam surpris "De moi ?"
 
-    "Je voudrais le contredire."
-    "Il vient de decrire la cafeteria avec une exactitude insultante."
+    kael fatigue "Tu viens de m'apprendre que tu as passé une partie de la soirée à me chercher et que tu ne te rappelles plus de ce qui s'est passé après m'avoir trouvé. Tu veux vraiment que je fasse comme si ça ne me posait aucune question ?"
 
-    kael fatigue "Va chercher ton dossier. Ou ne le fais pas. Mais arrete de me demander d'etre le souvenir qui te manque."
+    "La remarque me met en colère, surtout parce que je n'arrive pas à lui répondre honnêtement."
 
-    "Il retourne vers la cafeteria sans attendre ma reponse. Cette fois, il ne me laisse pas seulement seul dans le couloir ; il me laisse avec une direction."
+    noam desaccord "Je ne t'ai rien fait."
 
-    think "Les archives."
-    think "Une preuve qui ne depend ni de lui ni de moi."
-    think "Enfin, si quelque chose comme une preuve existe encore ici."
+    kael calme "Tu n'en sais rien."
 
+    "Je reste figé."
+
+    noam colere "Fais attention."
+
+    kael fatigue "Je ne t'accuse pas. J'essaie de te faire comprendre le problème. Hier encore, moi non plus je ne pensais pas avoir fait quoi que ce soit."
+
+    "Je détourne les yeux. Les deux vidéos me reviennent, parfaitement nettes, elles."
+
+    kael inquietude "Il y a autre chose."
+
+    noam "Quoi encore ?"
+
+    kael "Le vote d'hier nous a donné accès à plus d'informations qu'avant. Pas à tout, mais suffisamment pour consulter certaines données qui nous concernent directement."
+
+    noam reflexion "Quel genre de données ?"
+
+    kael fatigue "Ton dossier médical."
+
+    noam surpris "Depuis quand j'ai un dossier médical ici ?"
+
+    kael "Depuis qu'on est arrivés, j'imagine. Sael tient forcément un suivi, et le système enregistre plus de choses qu'on ne le pense."
+
+    noam inquiet "Tu as regardé le tien ?"
+
+    kael "Oui."
+
+    noam "Et ?"
+
+    "Il hésite. Son regard repart vers la caméra, puis revient sur moi."
+
+    kael fatigue "Il y a une mention que je ne comprends pas."
+
+    noam "Laquelle ?"
+
+    kael calme "Va voir la tienne."
+
+    noam colere "Kael..."
+
+    kael fatigue "Je suis sérieux. Je veux pas te souffler ce que j'ai lu avant que tu regardes toi-même. Si tu trouves rien, tant mieux. Si tu trouves la même chose... on parlera."
+
+    "Je n'aime pas la manière dont il dit ça. Encore moins la peur qu'il essaie visiblement de cacher derrière son calme."
+
+    noam inquiet "Et tu comptes faire quoi, toi ?"
+
+    kael "Retourner dans ma chambre."
+
+    noam "Pour te barricader ?"
+
+    kael fatigue "Pour éviter que quelqu'un entre pendant que je dors."
+
+    noam desaccord "Nyra nous a dit que tu agissais bizarrement."
+
+    kael "Nyra peut penser ce qu'elle veut. Hier, j'ai regardé mon propre visage faire quelque chose dont je ne me souviens pas. Aujourd'hui, tu viens me dire que tu as perdu la fin de ta soirée après m'avoir cherché."
+
+    kael triste "Si ça te paraît pas suffisant pour devenir un peu parano, tant mieux pour toi."
+
+    "Il me contourne sans attendre de réponse."
+
+    noam "Kael."
+
+    "Il s'arrête sans se retourner."
+
+    noam hesitation "Hier... tu es sûr que je ne suis jamais venu te parler ?"
+
+    kael fatigue "Sûr."
+
+    "Il repart vers les dortoirs. Je le regarde s'éloigner jusqu'à ce qu'il disparaisse au prochain croisement."
+
+    think "Mon dossier médical."
+
+    "Je n'ai aucune envie d'aller fouiller là-dedans. Ce qui suffit largement à me convaincre que je dois le faire."
+
+    $ hideGroup()
     jump _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER
 
 
 label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
+
+    $ current_period = "Après-midi"
+
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_101
-    scene bg_archive at adaptive_fullscreen with dissolve
+    scene bg_archive at adaptive_fullscreen, living_background with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
-    "Les archives sentent la poussiere froide, l'electricite et la conservation obstinee. Ici, tout est classe pour donner l'impression que le monde a encore une colonne vertebrale : noms, dates, districts, autorisations, sanctions."
-    "Je passe mon badge. Le terminal accepte sans avertissement, ce qui me donne aussitot envie de reculer."
+    "Les Archives sont presque vides à cette heure-ci. Je croise seulement deux terminaux allumés au fond de la salle et personne devant les rayonnages principaux."
+    "Je m'installe devant un écran et passe mon badge."
 
     play sound sfx_beep
 
-    centered "{color=#9fd8e8}ACCES PARTIEL - DONNEES MEDICALES REPRESENTANT{/color}"
+    "Je dois fouiller quelques menus avant de trouver la partie médicale. Visiblement, l'accès est récent : plusieurs catégories portent encore la mention « consultation autorisée depuis le dernier amendement »."
 
-    "Je cherche mon nom. NOAM - HARMONIE. Dossier citoyen, dossier de vote, dossier medical. Le dernier libelle reste immobile sous mon doigt, comme s'il attendait de savoir si j'allais vraiment lui donner le droit de me definir."
+    noam reflexion "Donc Kael disait vrai..."
 
-    noam inquiet "Allez."
+    "Je sélectionne mon nom."
 
-    play sound sfx_gresillement volume 0.7
+    "Le dossier est beaucoup plus banal que ce que j'imaginais. Groupe sanguin, allergies, examens à l'arrivée, anciennes blessures, passages à l'infirmerie... Je descends rapidement jusqu'aux dernières lignes."
 
-    "Les premieres lignes sont banales au point d'etre humiliantes : taille, groupe sanguin, antecedents, stress aigu, troubles du sommeil. Puis une entree apparait, encadree par un rouge administratif qui essaie de passer pour une couleur neutre."
+    "Une référence que je ne connais pas apparaît entre deux entrées."
 
-    centered "{size=48}{color=#ff6b7a}PROCEDURE M-16 : DONNEE MASQUEE{/color}{/size}"
+    noam inquiet "M16... ?"
 
-    noam peur "M-16..."
+    "Je clique dessus. Rien ne s'ouvre. Pas de description, pas de date détaillée, pas de compte rendu. Juste ce code posé là comme s'il était censé suffire."
 
-    "Un bruit de tissu vient de l'autre rangee. Je me retourne trop vite, la douleur explose derriere mes yeux, et je manque de heurter le terminal."
+    noam desaccord "Évidemment."
 
-    noam inquiet "Il y a quelqu'un ?"
+    "J'essaie une recherche interne. Aucun résultat. Une seconde. Toujours rien."
 
-    pause 0.8
+    "Un bruit de pages qu'on tourne me fait lever la tête. Cette fois, ce n'est pas un terminal. Quelqu'un fouille réellement dans les rayonnages derrière moi."
 
-    sael neutre "Oui."
+    noam inquiet "Tomas ?"
+
+    sael neutre "Non."
+
+    "Sael apparaît au bout de l'allée avec trois ouvrages coincés sous le bras. Elle pose le premier sur une table, l'ouvre presque au milieu et recommence à parcourir l'index."
 
     $ showGroup([
-        ("noam", "inquiet", 0.28),
-        ("sael", "neutre", 0.62),
+        ("noam", "inquiet", 0.30),
+        ("sael", "reflechit", 0.64),
     ])
 
-    "Sael sort de l'ombre entre deux armoires. Elle tient une tablette contre elle, pas comme un outil, plutot comme on serre un bol chaud quand on a froid aux mains."
+    noam surpris "Qu'est-ce que tu fais ?"
 
-    noam surpris "Sael ?"
+    sael reflechit "Je cherche une référence."
 
-    sael "Je pensais etre seule."
+    noam "Laquelle ?"
 
-    noam hesitation "Moi aussi."
+    "Elle ne répond pas tout de suite. Son doigt descend le long d'une colonne, s'arrête, puis repart sur la page suivante."
 
-    "Elle voit mon ecran. Je vois le sien. Pendant une seconde, aucun de nous ne ment assez vite pour sauver l'autre."
+    sael "M16."
 
-    noam inquiet "Tu consultes ton dossier medical ?"
+    "Je tourne immédiatement la tête vers mon écran."
 
-    sael neutre "Oui."
+    noam inquiet "Comment tu connais ça ?"
 
-    noam "Pourquoi ?"
+    "Sael relève enfin les yeux vers moi."
 
-    sael raison "Parce que ce matin, j'ai oublie une priere."
+    sael mefiant "Pourquoi ?"
 
-    "Je ne reponds pas. Avec Sael, les phrases les plus simples arrivent souvent chargees de morts."
+    noam "Parce que je viens de le trouver dans mon dossier."
 
-    sael "Pas les mots. Le moment."
-    sael "Je me suis retrouvee debout pres de mon lit, les mains deja jointes, sans savoir si je venais de commencer ou de finir."
-    sael neutre "Les morts de Limen ont des places precises. On ne les deplace pas sans s'en rendre compte."
+    "Son expression change à peine, mais elle referme lentement le livre qu'elle tenait."
 
-    noam fatigue "Tu penses qu'on t'a fait quelque chose."
+    sael neutre "Moi aussi."
 
-    sael mefiant "Je pense que quelque chose a pose ses doigts sur ce qui devait rester a moi."
-
-    "Elle approche et incline sa tablette pour me montrer l'ecran."
-
-    centered "{color=#ff6b7a}SAEL - LIMEN / DOSSIER MEDICAL REPRESENTANTE{/color}"
-
-    sael "J'ai d'abord cru que c'etait une erreur de mon dossier. Puis j'ai verifie celui de Ryn."
-
-    noam inquiet "Tu as acces au dossier de Ryn ?"
-
-    sael "Partiel. Meme district, meme delegation. Les permissions se chevauchent quand le systeme croit que la famille administrative existe."
-
-    "Elle fait defiler jusqu'a une ligne qui a l'air trop courte pour contenir autant de violence."
-
-    centered "{size=46}{color=#ff6b7a}MEMOIRE MODIFIEE{/color}{/size}"
-
-    "Les deux mots restent suspendus entre nous. Je les lis une fois, puis une deuxieme, parce que mon cerveau cherche une faute de frappe comme on cherche une sortie."
-
-    noam peur "... Quoi ?"
-
-    sael neutre "J'ai verifie Iris. Elen. Kael. Toi."
-
-    "Elle leve enfin les yeux vers moi. Son calme est toujours la, mais il ne protege plus personne."
-
-    sael raison "Tous les representants."
-
-    play sound sfx_glitch volume 0.8
-    with vpunch
-
-    noam panique "Non."
-
-    sael "Si."
-
-    noam "Non, parce que... enfin, parce que ca voudrait dire que..."
-
-    "La phrase ne se termine pas. Elle n'a pas une fin, elle a un gouffre."
-
-    sael triste "Que ce que nous portons n'est peut-etre pas intact."
-
-    noam "Mes souvenirs de Juliette..."
-
-    "Je n'arrive pas a aller plus loin. Le nom suffit a faire trembler le reste."
-
-    sael mefiant "Je ne sais pas ce qui a ete change. Je ne sais pas quand. Je ne sais pas par qui."
-
-    noam desespoir "Mais c'est ecrit."
+    noam surpris "Dans ton dossier médical ?"
 
     sael "Oui."
 
-    "Elle prononce le mot comme une priere ratee."
+    noam "Depuis quand tu sais qu'on peut les consulter ?"
 
-    noam "Et si c'etait faux ?"
+    sael raison "Depuis ce matin. Je cherchais une ancienne fiche de soins dans le système. Le menu n'était pas là avant."
 
-    sael neutre "Alors quelqu'un veut que nous croyions que nos souvenirs sont faux."
+    noam reflexion "Les autres sont au courant ?"
 
-    noam peur "Et si c'est vrai ?"
+    sael "Non."
 
-    "Sael baisse les yeux. Pour la premiere fois depuis que je la connais, elle semble chercher un signe et ne pas le trouver."
+    noam "Pourquoi tu leur as rien dit ?"
 
-    sael triste "Alors nous avons aime, hai, vote et pleure avec des mains posees dans nos tetes."
+    sael mefiant "Parce que je ne savais pas encore ce que j'avais trouvé."
 
-    play sound sfx_beep
+    "Elle prend le deuxième ouvrage, beaucoup plus épais, et l'ouvre à une série d'abréviations médicales."
 
-    "Le terminal derriere moi emet un bip. Mon dossier vient de charger une ligne supplementaire."
+    sael "Les vieux protocoles ont parfois été archivés sur papier. Les systèmes changent. Les livres restent."
 
-    centered "{size=42}{color=#ff6b7a}DERNIERE INTERVENTION : JOUR 15 - 20H24{/color}{/size}"
+    noam "Et tu penses que M16 est là-dedans ?"
 
-    "20h24. Le trou noir."
+    sael "Je pense que si quelqu'un a pris la peine de laisser un code sans explication dans nos dossiers, je préfère chercher l'explication ailleurs que sur le même écran."
 
-    noam panique "C'etait hier."
+    "Je m'approche de la table. Pour la première fois depuis mon réveil, ma frustration laisse place à quelque chose de plus froid."
 
-    sael mefiant "Noam..."
+    noam inquiet "Kael a la même mention."
 
-    play sound sfx_glitch volume 1.0
-    with hpunch
+    "Sael s'arrête une fraction de seconde."
 
-    centered "{size=44}{color=#ff3344}OPERATEUR : NOAM - HARMONIE{/color}{/size}"
+    sael mefiant "Tu as vu son dossier ?"
 
+    noam "Non. Il me l'a dit."
+
+    sael "Alors ça fait trois."
+
+    noam "Tu crois que ça veut dire quoi ?"
+
+    sael "Si je le savais, je ne serais pas en train de chercher."
+
+    "Elle tourne encore quelques pages. Une première fois trop vite, puis elle revient en arrière."
+
+    sael reflechit "Attends."
+
+    "Son doigt reste posé sur une ligne."
+
+    noam inquiet "Tu as trouvé ?"
+
+    "Sael ne répond pas immédiatement. Elle relit le passage une deuxième fois, puis pousse le livre vers moi."
+
+    "Au milieu d'une liste de procédures anciennes, une seule ligne correspond au code de mon dossier."
+
+    $ unlock_gallery_image("bg_cg042")
+    $ hideGroup()
+    scene bg_cg042 at adaptive_fullscreen with memory_rip
+    $ cam_move(fx=0.50, fy=0.70, z=1.10, t=5.5)
+    $ horror_music_slow(fadeout=0.35, fadein=0.75)
+
+
+    "Je reste à la regarder quelques secondes sans comprendre ce que les mots viennent réellement de dire."
+
+    noam panne "..."
+
+    sael neutre "Mémoire."
+
+    noam desaccord "Je sais."
+
+    "Ma voix est plus basse que je ne le voudrais. Je relis la ligne, puis encore une fois, comme si elle pouvait finir par changer."
+
+    noam inquiet "Altération... ça peut vouloir dire plein de choses. Une surveillance, un test, un risque neurologique..."
+
+    sael raison "Peut-être."
+
+    noam "Il n'y a rien d'autre ?"
+
+    "Sael tourne la page. La suivante a été arrachée proprement au ras de la reliure."
+
+    "On se regarde."
+
+    noam inquiet "C'est une blague ?"
+
+    sael mefiant "Non."
+
+    "Je reprends le livre et vérifie moi-même, comme si elle pouvait avoir raté quelque chose. Il ne reste qu'un morceau de papier au niveau de la couture."
+
+    $ cam_reset(t=0.25)
+    scene bg_archive at adaptive_fullscreen with memory_rip
+    $ showGroup([
+        ("noam", "colere", 0.30),
+        ("sael", "mefiant", 0.64),
+    ])
+
+    noam colere "Putain..."
+
+    "Je repense à mon réveil. Au couloir. À Kael que je suis certain d'avoir retrouvé sans être capable de me rappeler un seul mot après ça."
+
+    noam peur "Sael..."
+
+    sael "Quoi ?"
+
+    noam "Moi, j'ai perdu la fin de ma soirée. Complètement."
+
+    "Pour la première fois depuis qu'elle est apparue entre les rayonnages, Sael cesse de fouiller."
+
+    sael inquiet "Depuis quand ?"
+
+    noam "Après être parti chercher Kael. Je sais que je l'ai trouvé, mais après ça... rien. Je me suis juste réveillé dans ma chambre ce matin."
+
+    "Elle baisse les yeux vers la ligne M16."
+
+    sael mefiant "Et Kael ?"
+
+    noam "Il dit qu'il ne m'a jamais revu hier soir."
+
+    "Le silence qui suit est beaucoup trop long."
+
+    noam inquiet "Toi aussi, tu as M16 dans ton dossier. Il te manque quelque chose ?"
+
+    "Sael relève lentement les yeux."
+
+    sael neutre "Non."
+
+    noam surpris "Quoi ?"
+
+    sael "Je me souviens d'hier. Du matin jusqu'au moment où je me suis couchée."
+
+    "Mon regard retourne vers le livre."
+
+    noam peur "Alors pourquoi tu as ça dans ton dossier ?"
+
+    sael mefiant "C'est justement la question."
+
+    $ horror_audio_cut(duration=0.34, restore_volume=0.72)
+    play sound "audio/sfx_glitch.mp3" volume 0.7
+    with signal_stutter
+
+    "Le terminal derrière nous émet soudain un grésillement. Quand je me retourne, mon dossier est toujours ouvert, mais la ligne M16 n'est plus visible à l'écran."
+
+    noam inquiet "... Elle était là."
+
+    sael "Je sais."
+
+    "Je rafraîchis la page. Rien. Je ferme le dossier, le rouvre, descends jusqu'au même endroit. La référence a disparu."
+
+    noam colere "Non, non..."
+
+    sael mefiant "Arrête."
+
+    noam "Je viens de la voir !"
+
+    sael "Moi aussi."
+
+    "Elle referme le livre devant nous et garde une main posée dessus."
+
+    sael neutre "Donc maintenant, on sait deux choses."
+
+    noam inquiet "Lesquelles ?"
+
+    sael "Ton souvenir s'arrête. Mon dossier porte le même code que le tien alors que je ne sens aucun trou."
+
+    "Elle jette un regard vers le terminal où toute trace de M16 vient de disparaître."
+
+    sael mefiant "Et quelqu'un ne veut pas qu'on regarde ça trop longtemps."
+
+    $ hideGroup()
     scene black with dissolve
 
-    "Pendant une seconde, je ne comprends pas. Puis je comprends trop."
-
-    noam desespoir "Non."
-
-    think "Si c'est vrai, alors meme ma panique peut etre un souvenir pose la. Meme Juliette. Meme ma faute. Meme moi."
-
-    sael "Noam ?"
-
-    "Je ne sais plus si elle est devant moi, si je l'ai deja entendue dire mon nom, ni si cette journee a vraiment commence ce matin."
-
-    centered "{size=58}{color=#ffffff}MEMOIRE MODIFIEE{/color}{/size}"
-
-    pause 2.0
+    pause 1.0
 
     call end_day("17") from _call_end_day_17
     jump _17_0_1_1_0_ANNONCE_KAMI

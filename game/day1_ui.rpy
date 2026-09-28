@@ -12,6 +12,11 @@
 # =============================================================
 
 default current_period = "Matin"
+default day_counter_transition_active = False
+default day_period_transition_active = False
+default day_period_hud_last_period = None
+default day_period_transition_from = ""
+default day_period_transition_to = ""
 
 # -------------------------------------------------------------
 # OVERLAY JOUR / PÉRIODE  — HUD sci-fi animé (coin haut droit)
@@ -51,6 +56,10 @@ init python:
     def day_period_hud_should_show():
         if getattr(store, "current_day", 0) <= 0:
             return False
+        if getattr(store, "day_counter_transition_active", False):
+            return False
+        if getattr(store, "day_period_transition_active", False):
+            return False
         if day_period_hud_is_pnc_active():
             return False
         return True
@@ -65,6 +74,39 @@ init python:
         if "soir" in p:                         return "#E86A45"   # ambre couchant
         if "nuit" in p:                         return "#8C6BFF"   # violet nuit
         return "#5CD3FF"
+
+    def _day_period_hud_watch():
+        """Anime automatiquement toute modification directe de current_period."""
+        current = str(getattr(store, "current_period", "") or "")
+        previous = getattr(store, "day_period_hud_last_period", None)
+
+        if previous is None:
+            store.day_period_hud_last_period = current
+            return
+        if current == previous:
+            return
+
+        # Pendant une transition de jour, on mémorise seulement l'état : les
+        # deux animations occupent volontairement le même emplacement du HUD.
+        if getattr(store, "current_day", 0) <= 0 or getattr(store, "day_counter_transition_active", False):
+            store.day_period_hud_last_period = current
+            return
+
+        store.day_period_transition_from = previous
+        store.day_period_transition_to = current
+        store.day_period_hud_last_period = current
+        store.day_period_transition_active = True
+        renpy.show_screen(
+            "day_period_transition",
+            old_period=previous,
+            new_period=current,
+        )
+        renpy.restart_interaction()
+
+    def _day_period_transition_finish():
+        store.day_period_transition_active = False
+        renpy.hide_screen("day_period_transition")
+        renpy.restart_interaction()
 
 # --- Animations d'anneaux ---
 transform hud_spin_cw(t=24.0, z=0.264):
@@ -120,8 +162,159 @@ transform hud_period_blink:
     linear 1.0 alpha 0.55
     repeat
 
+transform day_counter_panel_pulse:
+    alpha 0.0
+    xoffset 70
+    easeout 0.25 alpha 1.0 xoffset 0
+    pause 1.55
+    easein 0.25 alpha 0.0 xoffset 45
+
+transform day_counter_old_exit:
+    alpha 1.0
+    yoffset 0
+    pause 0.28
+    easein 0.34 alpha 0.0 yoffset -54
+
+transform day_counter_new_enter:
+    alpha 0.0
+    yoffset 54
+    pause 0.48
+    easeout 0.40 alpha 1.0 yoffset 0
+    pause 1.05
+    easein 0.20 alpha 0.0
+
+transform day_counter_scan:
+    alpha 0.0
+    xpos 10
+    pause 0.15
+    linear 0.12 alpha 0.85
+    linear 1.25 xpos 410
+    linear 0.18 alpha 0.0
+
+transform day_period_panel_update:
+    alpha 0.0
+    xoffset 54
+    easeout 0.24 alpha 1.0 xoffset 0
+    pause 1.48
+    easein 0.22 alpha 0.0 xoffset 32
+
+transform day_period_old_exit:
+    alpha 0.78
+    xoffset 0
+    pause 0.20
+    easein 0.28 alpha 0.0 xoffset -70
+
+transform day_period_new_enter:
+    alpha 0.0
+    xoffset 72
+    pause 0.36
+    easeout 0.34 alpha 1.0 xoffset 0
+    pause 0.82
+    easein 0.20 alpha 0.0
+
+transform day_period_sweep:
+    alpha 0.0
+    xpos 12
+    pause 0.12
+    linear 0.10 alpha 0.88
+    linear 1.12 xpos 414
+    linear 0.16 alpha 0.0
+
+screen day_counter_transition(old_day, new_day):
+    zorder 980
+
+    fixed at day_counter_panel_pulse:
+        xalign 0.995
+        yalign 0.028
+        xysize (430, 150)
+
+        add Solid("#03070CEF") xpos 0 ypos 0 xsize 430 ysize 150
+        add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 3
+        add Solid("#5CD3FF66") xpos 0 ypos 147 xsize 430 ysize 3
+        add Solid("#5CD3FF88") xpos 0 ypos 0 xsize 3 ysize 150
+
+        text "DAY":
+            xpos 28 ypos 24
+            size 20 color "#5CD3FF"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 6
+
+        text "%03d" % old_day at day_counter_old_exit:
+            xpos 92 ypos 28
+            size 72 color "#7A98A8"
+            font "fonts/day_font.ttf"
+            outlines [(1, "#5CD3FF66", 0, 0)]
+
+        text "%03d" % new_day at day_counter_new_enter:
+            xpos 92 ypos 28
+            size 72 color "#F4FBFF"
+            font "fonts/day_font.ttf"
+            outlines [(2, "#5CD3FFAA", 0, 0)]
+
+        text "MISE À JOUR DU CYCLE":
+            xpos 30 ypos 120
+            size 18 color "#F0A835"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+        add Solid("#BDEFFF") at day_counter_scan:
+            ypos 5
+            xsize 2 ysize 138
+
+
+screen day_period_transition(old_period, new_period):
+    zorder 981
+
+    $ _old_acc = _hud_accent(old_period)
+    $ _new_acc = _hud_accent(new_period)
+
+    fixed at day_period_panel_update:
+        xalign 0.995
+        yalign 0.028
+        xysize (430, 150)
+
+        add Solid("#03070CF5") xpos 0 ypos 0 xsize 430 ysize 150
+        add Solid(_new_acc) xpos 0 ypos 0 xsize 430 ysize 3
+        add Solid(_new_acc + "66") xpos 0 ypos 147 xsize 430 ysize 3
+        add Solid("#5CD3FF88") xpos 0 ypos 0 xsize 3 ysize 150
+
+        text "CYCLE HORAIRE":
+            xpos 28 ypos 18
+            size 18 color "#7A98A8"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+
+        text old_period.upper() at day_period_old_exit:
+            xpos 30 ypos 51
+            size 27 color _old_acc
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+        text new_period.upper() at day_period_new_enter:
+            xpos 30 ypos 48
+            size 32 color "#F4FBFF"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            outlines [(2, _new_acc + "AA", 0, 0)]
+
+        text "DAY %03d" % current_day:
+            xpos 30 ypos 112
+            size 18 color _new_acc
+            font "fonts/day_font.ttf" kerning 2
+
+        fixed:
+            xpos 300 ypos 8
+            xysize (124, 124)
+            add "images/hud/glow.png" at hud_pulse(0.23, 0.28) xpos 0.5 ypos 0.5
+            add "images/hud/ring_ticks.png" at hud_spin_cw(8.0, 0.205) xpos 0.5 ypos 0.5
+            add "images/hud/scan_arc.png" at hud_scan(2.0, 0.205) xpos 0.5 ypos 0.5
+            add "images/hud/core_dot.png" at hud_static(0.43) xpos 0.5 ypos 0.5
+
+        add Solid(_new_acc) at day_period_sweep:
+            ypos 5
+            xsize 2 ysize 138
+
+    timer 2.05 action Function(_day_period_transition_finish)
+
 
 screen day_period_hud():
+    timer 0.10 action Function(_day_period_hud_watch) repeat True
+
     if day_period_hud_should_show():
         use day_period_hud_content
 

@@ -839,5 +839,5 @@ label _14_0_1_1_0_FIN_JOURNEE:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("15") from _call_end_day_15
+    call end_day("15", sleeping=True) from _call_end_day_15
     jump _15_0_1_1_0_REVEIL_CHAMBRE

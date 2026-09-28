@@ -158,6 +158,10 @@ scene bg_LIEU at adaptive_fullscreen with dissolve
 Les expressions disponibles (à alterner selon l'humeur du moment) : `amour`, `taquin`, `professeur`, `fier`, `colere`, `champagne`, `gene`, `triste`, `desespoir`, `zen`, `einstein`.
 Les expressions doivent parfois s'enchainer, Kami change très souvent d'expression et de registre.
 
+`bg_diffusion_neutre` est interdit dans les scénarios : il s'agit du plateau vide, sans Kami. Toujours choisir une expression visible de Kami.
+
+Si un autre personnage parle pendant qu'un décor `bg_diffusion_*` est actif, afficher son portrait avec `$ bc_show("nom", "expression")` juste avant son bloc de répliques, puis appeler `$ bc_hide()` juste après. Pour un échange prolongé entre représentants, interrompre la diffusion, revenir au décor du lieu et utiliser le trio dynamique ; la diffusion ne reprend que lorsque Kami reparle.
+
 Règle d'or : **Kami ne fait jamais une seule chose**. Elle informe ET provoque, elle félicite ET menace, elle joue ET calcule. Chaque diffusion doit contenir au moins une ambivalence.
 
 ---

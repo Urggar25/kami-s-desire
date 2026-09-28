@@ -1017,7 +1017,7 @@ label _12_0_1_1_APRES_EXPLOSION:
     scene black with fade
     stop music fadeout 3.0
 
-    call end_day("13") from _call_end_day_12_0_1_1
+    call end_day("13", sleeping=True) from _call_end_day_12_0_1_1
 
     jump patreon_ending
 

@@ -747,7 +747,7 @@ label _11_0_1_1_RETOUR_CHAMBRE:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("12") from _call_end_day_2
+    call end_day("12", sleeping=True) from _call_end_day_2
     jump _12_0_1_1_REVEIL_CHAMBRE
 
 # Total journée : 11 minutes

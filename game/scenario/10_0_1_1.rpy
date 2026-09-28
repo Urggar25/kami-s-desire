@@ -964,7 +964,7 @@ label _10_0_1_1_APRES_ALIBIS:
     scene black with fade
     pause 3.0
 
-    call end_day("11") from _call_end_day_1
+    call end_day("11", sleeping=True) from _call_end_day_1
     
     jump _10_1_0_0_REVEIL
 

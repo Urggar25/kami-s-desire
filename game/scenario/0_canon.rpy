@@ -519,7 +519,7 @@ label _0_LABEL2_RESP_DISTRICT:
     stop music fadeout 1.2
     pause 1.0
 
-    call end_day("1") from _call_end_day
+    call end_day("1", sleeping=True) from _call_end_day
     jump _1_CANON
 
 

@@ -509,6 +509,21 @@ image bg_harmonie_assemblee = DynamicDisplayable(automatic_scene_image_dynamic, 
 image bg_harmonie_district_hall = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_harmonie_district_hall.png")
 image noam_salle_bain = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/noam_salle_bain.png")
 
+# Décors narratifs des jours 17 à 21. Leur éclairage est volontairement
+# intégré à l'illustration et ne passe pas par la teinte horaire automatique.
+image bg_conduit_reseau = "images/background/scenes/bg_conduit_reseau.png"
+image bg_cavite_technique = "images/background/scenes/bg_cavite_technique.png"
+image bg_salle_goumi_cachee = "images/background/scenes/bg_salle_goumi_cachee.png"
+image bg_navette_retour = "images/background/scenes/bg_navette_retour.png"
+
+# CG de révélation des jours 15 à 21, indexées automatiquement par la galerie.
+image bg_cg040 = "images/background/cg/bg_cg040.png"
+image bg_cg041 = "images/background/cg/bg_cg041.png"
+image bg_cg042 = "images/background/cg/bg_cg042.png"
+image bg_cg043 = "images/background/cg/bg_cg043.png"
+image bg_cg044 = "images/background/cg/bg_cg044.png"
+image bg_cg045 = "images/background/cg/bg_cg045.png"
+
 image couloir_cafeteria = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_cafeteria.png")
 image couloir_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_dortoir.png")
 image couloir_principal = "couloir_dortoir"

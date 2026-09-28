@@ -858,5 +858,5 @@ label _8_1_0_0_SOIR:
 
     scene black with fade
 
-    call end_day("9") from _call_end_day_8100
+    call end_day("9", sleeping=True) from _call_end_day_8100
     jump _9_1_0_0_REVEIL

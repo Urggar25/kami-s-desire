@@ -327,19 +327,34 @@ label show_chapter_title(chapter_status, chapter_title):
 
     return
 
-label end_day(next_day):
+label end_day(next_day, sleeping=False):
 
     stop music fadeout 1.0
-    scene black with fade
-
     play sound "audio/sfx_day_transition.wav"
 
-    $ renpy.show_screen("day_transition_card", day_label=str(next_day))
-    $ renpy.pause(4.0)
-    $ renpy.hide_screen("day_transition_card")
-    with Dissolve(0.4)
+    $ previous_day = day_number(current_day)
+    $ upcoming_day = day_number(next_day)
 
-    $ current_day = day_number(next_day)
+    if sleeping:
+        # Un endormissement conserve le carton historique, comme une ellipse
+        # franche entre la fermeture des yeux et le réveil suivant.
+        $ day_counter_transition_active = True
+        scene black with fade
+        $ renpy.show_screen("day_transition_card", day_label=str(upcoming_day))
+        $ renpy.pause(4.0, hard=True)
+        $ renpy.hide_screen("day_transition_card")
+        with Dissolve(0.4)
+        $ current_day = upcoming_day
+        $ day_counter_transition_active = False
+    else:
+        # Quand Noam est encore conscient, le cycle se met à jour directement
+        # dans le HUD sans arracher le joueur à la scène en cours.
+        $ day_counter_transition_active = True
+        $ renpy.show_screen("day_counter_transition", old_day=previous_day, new_day=upcoming_day)
+        $ renpy.pause(2.25, hard=True)
+        $ current_day = upcoming_day
+        $ renpy.hide_screen("day_counter_transition")
+        $ day_counter_transition_active = False
     return
 
 label show_custom_title(title_text="Temps libre"):

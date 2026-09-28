@@ -790,7 +790,7 @@ label _4_1_FIN_SOIREE:
     $ current_day = 5
     pause 1.5
 
-    call end_day("5") from _call_end_day_5_1
+    call end_day("5", sleeping=True) from _call_end_day_5_1
     jump _5_1_REVEIL_CHAMBRE
 
 # Durée : 11m

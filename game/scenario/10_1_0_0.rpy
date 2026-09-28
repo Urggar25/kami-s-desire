@@ -1179,7 +1179,7 @@ label _10_1_0_0_SOIR:
     scene black with fade
     stop music fadeout 4.0
 
-    call end_day("11") from _call_end_day_10100
+    call end_day("11", sleeping=True) from _call_end_day_10100
     #jump _11_1_0_0_REVEIL
 
     jump patreon_ending

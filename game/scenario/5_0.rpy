@@ -1122,11 +1122,11 @@ label _5_0_NUIT_RETOUR:
     pause 1.0
 
     if doplleganger == 0:
-        call end_day("6") from _call_end_day_6
+        call end_day("6", sleeping=True) from _call_end_day_6
         jump _6_0_0_REVEIL_CHAMBRE
 
     else:
-        call end_day("6") from _call_end_day_7
+        call end_day("6", sleeping=True) from _call_end_day_7
         jump _6_0_1_REVEIL_CHAMBRE
 
 

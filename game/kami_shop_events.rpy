@@ -14,6 +14,11 @@ define KAMI_SHOP_ITEMS = (
         "cosmetic_type": "outfit", "cosmetic_id": "tenue2",
     },
     {
+        "id": "iris_tenue3", "name": "IRIS : POMPOM GIRL", "price": 100,
+        "icon": "images/character/iris/portrait.png", "profile_id": "iris",
+        "cosmetic_type": "outfit", "cosmetic_id": "tenue3",
+    },
+    {
         "id": "ryn_tenue2", "name": "RYN : TENUE 2", "price": 100,
         "icon": "images/character/ryn/portrait.png", "profile_id": "ryn",
         "cosmetic_type": "outfit", "cosmetic_id": "tenue2",

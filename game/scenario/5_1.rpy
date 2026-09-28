@@ -1076,7 +1076,7 @@ label _5_1_PHARMACIE:
 
     think "Pour une fois, je dors."
 
-    call end_day("6") from _call_end_day_8
+    call end_day("6", sleeping=True) from _call_end_day_8
     jump _6_1_1_REVEIL_CHAMBRE
 
 # Durée : 2m30
@@ -1123,7 +1123,7 @@ label _5_1_FIN_JOURNEE:
     think "Je ferme les yeux."
     $ blink()
 
-    call end_day("6") from _call_end_day_9
+    call end_day("6", sleeping=True) from _call_end_day_9
 
     #jump patreon_ending
 

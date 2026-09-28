@@ -952,7 +952,7 @@ label _6_0_1_FIN_JOURNEE:
 
     #jump patreon_ending
 
-    call end_day("7") from _call_end_day_10
+    call end_day("7", sleeping=True) from _call_end_day_10
     jump _7_0_1_REVEIL_CHAMBRE
 
 # total : 8m

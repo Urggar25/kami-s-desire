@@ -885,7 +885,7 @@ label _4_0_FIN_SOIREE:
     $ current_day = 5
     pause 1.5
 
-    call end_day("5") from _call_end_day_5
+    call end_day("5", sleeping=True) from _call_end_day_5
     jump _5_0_REVEIL_CHAMBRE
 
 # Total estimé journée 4_0 : ~8m
