@@ -547,11 +547,15 @@ label _17_0_1_1_CAFETERIA_M16:
     $ bc_hide()
 
     kami "Je n'ai pas besoin de répondre à votre protestation."
-
     kami "Vous avez formulé une position. Je vous ai indiqué ses conséquences."
+    kami "Enfin, les conséquences... Elles seront plutôt à assumer face aux gens que vous allez retrouver."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Vous croyez vraiment que cette excuse marchera pour justifier votre inaction ?"
+    kami "Que vous avez préféré abandonner au lieu de changer les règles de ce monde ?"
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-
+    kami "Quoi qu'il en soit cette question est très intéréssante !"
     kami "Votre mouvement est parfaitement compatible avec les règles du Conclave. Je vous encourage même à le poursuivre aussi longtemps que vous le jugerez nécessaire."
 
     $ bc_show("mara", "colere")
@@ -661,12 +665,7 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     "Je quitte la cafétéria avant que la discussion reparte."
 
-    $ hideGroup()
-    call OFFER_DAILY_EXPLORATION(
-        "_17_0_1_1_CHAMBRE_BRUIT", 1,
-        ["dortoir", "maintenance", "infirmerie"],
-        "Retourner dans la chambre", "dortoir"
-    ) from _call_offer_exploration_j17
+    jump _17_0_1_1_CHAMBRE_BRUIT
 
 
 label _17_0_1_1_CHAMBRE_BRUIT:
@@ -684,7 +683,7 @@ label _17_0_1_1_CHAMBRE_BRUIT:
     "M16. Les dossiers. Les règles internes de Kami. La fin du Conclave avancée au jour vingt-et-un. Et au milieu de tout ça, les dernières heures de ma journée d'hier qui n'existent simplement plus."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_106
-    scene bg_chambre at adaptive_fullscreen, living_background with dissolve
+    scene chambre1 at adaptive_fullscreen, living_background with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
     "Je referme la porte derrière moi et laisse tomber ma tablette sur le bureau."
@@ -692,8 +691,6 @@ label _17_0_1_1_CHAMBRE_BRUIT:
     noam neutre "Quelle journée..."
 
     "Je m'assois, puis reste un moment à regarder le plafond sans vraiment réfléchir. Pour une fois, mon cerveau semble avoir atteint sa limite."
-
-
     "Un petit bruit métallique me fait relever la tête."
 
     noam reflexion "... ?"
@@ -701,8 +698,6 @@ label _17_0_1_1_CHAMBRE_BRUIT:
     "J'attends. Rien."
 
     "Je finis par me lever pour prendre un verre d'eau."
-
-
     "Cette fois, je l'entends clairement. Un frottement court, suivi d'un léger choc."
     noam inquiet "C'était quoi, ça ?"
 
@@ -816,7 +811,7 @@ label _17_0_1_1_MARA_MAINTENANCE:
     $ hideGroup()
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_108
-    scene couloir_sas at adaptive_fullscreen with dissolve
+    scene couloir_maintenance at adaptive_fullscreen with dissolve
 
     $ showGroup([
         ("noam", "hesitation", 0.34),

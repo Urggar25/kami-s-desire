@@ -318,6 +318,7 @@ label _18_0_1_1_SALLE_ROBOTS:
 
 label _18_0_1_1_RESEAU_CONCLAVE:
 
+    $ current_period = "Matin"
     scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
     $ flashlight_on()
@@ -816,8 +817,6 @@ label _18_0_1_1_SORTIE_CHAMBRE:
     noam inquiet "..."
 
     "Même ouverte, la bouche d'aération semble soudain beaucoup plus sombre qu'avant."
-
-    $ current_period = "Matin"
 
     jump _18_0_1_1_CAFETERIA_MIDI
 

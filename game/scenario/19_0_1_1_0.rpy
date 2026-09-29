@@ -114,9 +114,9 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     mara colere "J'arrête quoi ?"
 
-    noam "On a passé la moitié de la nuit là-dedans tous les deux."
+    noam "On a passé la moitié de la nuit dans les conduits d'aération tous les deux."
 
-    mara stress "Pardon ?!"
+    mara stress "Pardon ?! On a quoi ?!"
 
     "Sa voix résonne dans tout le couloir. Deux portes s'ouvrent presque immédiatement plus loin."
 
@@ -124,7 +124,7 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     noam inquiet "Mara, baisse d'un ton."
 
-    mara colere "Non mais attends, tu veux me faire croire que t'es allé te balader derrière les chambres cette nuit ?!"
+    mara colere "Non mais attends, tu veux VRAIMENT me faire croire que t'es allé te balader derrière les chambres cette nuit ?!"
 
     noam "Avec toi !"
 
@@ -175,6 +175,12 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     "Une troisième porte s'ouvre. Cette fois, c'est Iris qui apparaît, visiblement ravie d'avoir été réveillée par nos cris."
 
+    $ showGroup([
+        ("iris", "neutre", 0.28),
+        ("noam", "fatigue", 0.50),
+        ("mara", "neutre", 0.72),
+    ])
+
     iris colere "Vous pouvez pas vous engueuler moins fort ?!"
 
     mara colere "Non ! Parce que monsieur vient de m'apprendre qu'il peut passer derrière ma chambre par les murs !"
@@ -199,7 +205,7 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     noam "Mara—"
 
-    mara "Oh non. Là tu vas tout expliquer."
+    mara "Oh non. Là tu vas tout nous expliquer sale pervers."
 
     $ hideGroup()
 

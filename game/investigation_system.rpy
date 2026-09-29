@@ -926,4 +926,4 @@ label investigation_room_run:
 
 label objection_protocol_run(statement, correct_evidence, relevant_evidence=()):
     call screen objection_protocol(statement, correct_evidence, relevant_evidence)
-    return
+    return _return
