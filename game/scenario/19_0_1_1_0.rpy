@@ -23,7 +23,7 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     pause 1.0
 
-    "Le bruit revient, beaucoup plus loin cette fois. Quelque chose glisse contre la tôle puis s'arrête, comme si le réseau entier retenait son souffle avec moi."
+    "Le bruit revient, beaucoup plus loin cette fois. Quelque chose glisse contre la tôle, puis s'arrête. Je retiens ma respiration sans même m'en rendre compte."
 
     think "C'est peut-être juste le métal qui travaille."
     think "Ou un Goumi."
@@ -594,7 +594,7 @@ label _19_0_1_1_SECURISATION:
 
     think "Elle ne se souvient vraiment de rien."
 
-    "Cette pensée me dérange davantage que si elle avait simplement menti."
+    "Et bizarrement, ça me fout encore plus mal que si elle avait juste menti."
 
     $ hideGroup()
     call OFFER_DAILY_EXPLORATION(
