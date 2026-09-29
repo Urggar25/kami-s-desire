@@ -10,46 +10,159 @@ Chaque journée doit durer environ 10 à 15 minutes de jeu. Soit environ 1000 à
 
 ## 1. Style d'écriture et voix narrative
 
+### Doctrine d'écriture prioritaire — référence « V2 »
+
+L'écriture doit d'abord fonctionner **comme une scène jouée**, pas comme une scène littéraire parfaitement contrôlée.
+
+La priorité est, dans cet ordre :
+1. **Engagement émotionnel immédiat**
+2. **Conflit et friction entre les personnages**
+3. **Oralité et personnalité**
+4. **Rythme de lecture / rythme du clic**
+5. **Clarté de l'information**
+6. **Subtilité**
+
+La subtilité reste utile, mais elle ne doit jamais rendre une scène froide, distante ou artificiellement retenue.
+
+Une bonne scène de *Kami's Desires* doit donner l'impression que les personnages **réagissent avant d'avoir eu le temps de formuler parfaitement leur pensée**. Ils peuvent couper une phrase, jurer, se répéter, accuser trop vite, se reprendre, parler maladroitement ou dire quelque chose de trop frontal.
+
+**Règle centrale : préférer une réplique vivante et imparfaite à une réplique élégante mais écrite.**
+
+Exemple à éviter :
+```
+kael "Parce que nous ignorons encore ce qui s'est réellement produit et qu'une accusation prématurée pourrait avoir des conséquences."
+```
+
+Préférer :
+```
+kael "On sait même pas ce qui s'est passé ! Et si tu racontes ça maintenant, à ton avis ils vont soupçonner qui ?!"
+```
+
+### Conflit et friction
+
+Les personnages ne doivent pas rester raisonnables simplement parce que le scénario exige qu'ils échangent des informations.
+
+Quand la situation le justifie :
+- ils s'agacent ;
+- ils interrompent ;
+- ils se défendent ;
+- ils accusent ;
+- ils comprennent mal ce que l'autre veut dire ;
+- ils peuvent regretter immédiatement une phrase ;
+- ils peuvent perdre temporairement leur calme.
+
+Le conflit ne signifie pas que tout le monde crie en permanence. Il signifie que **les désaccords ont une texture humaine**.
+
+Éviter les scènes où chacun attend son tour pour exposer proprement son point de vue.
+
+### Information et mystère
+
+L'information doit arriver **assez vite**. Ne jamais retarder artificiellement une information uniquement pour fabriquer du mystère.
+
+En revanche, distinguer :
+- **l'indice**, qui peut être donné frontalement ;
+- **l'interprétation**, qui peut rester incertaine ;
+- **la vérité**, qui ne doit pas être révélée avant le moment prévu.
+
+Exemple :
+- Bon : `"Accès mnésique."`
+- Bon : `"Attends... ça parle de mémoire, là ?"`
+- À éviter si ce n'est pas encore confirmé : `"Donc Kami nous efface la mémoire."`
+
+Un personnage peut tirer une conclusion brutale ou fausse, mais le texte doit alors la présenter comme **sa réaction**, pas comme une vérité narrative.
+
+### Émotions lisibles
+
+Les émotions doivent être lisibles immédiatement à l'écran.
+
+Ne pas compter uniquement sur le sous-texte, les silences ou une narration subtile pour faire comprendre qu'un personnage est terrifié, furieux ou blessé. Les sprites, les interruptions, le vocabulaire, les répétitions et la ponctuation doivent participer à la scène.
+
+Une émotion forte peut produire :
+- une répétition : `"J'ai cherché. Partout. PARTOUT."`
+- un juron ;
+- une phrase incomplète ;
+- une accusation trop rapide ;
+- une contradiction ;
+- une réaction physique ou une action.
+
+Les silences restent utiles, mais ils doivent **renforcer** l'émotion, pas remplacer systématiquement la réaction humaine.
+
 ### Voix du narrateur (Noam)
 
-Noam est le narrateur à la première personne. Sa voix est **ordinaire par choix, pas par défaut**. Il n'est pas particulièrement héroïque, particulièrement brillant, particulièrement drôle. Il est là. Il observe. Il réagit. C'est précisément ça qui le rend utile narrativement — le joueur peut se glisser dedans sans résistance.
+Noam reste le narrateur à la première personne, mais il ne doit pas devenir un observateur froid chargé de préserver le mystère.
 
-Ses pensées (`think`) sont courtes. Brutes. Elles n'expliquent pas, elles enregistrent.
+Il est médiateur et rationnel, mais il est aussi directement impliqué. Quand la pression monte, sa pensée se désorganise : il peut jurer, répéter un fait, chercher ses mots, accuser trop vite ou s'accrocher à une conclusion parce qu'il a peur.
 
-**La règle la plus importante : les émotions sont dites, puis immédiatement contournées.** Noam ne s'attarde pas sur ce qu'il ressent. Il le nomme en une ligne, puis il passe à autre chose. Ce refus du traitement émotionnel prolongé n'est pas de la maladresse — c'est de la survie. Quelqu'un sous pression constante n'a pas le luxe de s'effondrer.
+Sa narration doit alterner :
+- constat concret ;
+- réaction immédiate ;
+- tentative de compréhension.
 
-Structure typique d'une pensée :
+Il ne transforme pas chaque émotion en analyse psychologique.
+
+Exemple :
 ```
-think "Je suis épuisé."
-think "Tant pis."
+"Je me rappelle être sorti pour chercher Kael."
+"Je me rappelle l'avoir trouvé."
+"Et après..."
+think "Putain."
+think "Y'a rien."
 ```
-Pas de développement. Pas de justification. La deuxième ligne coupe la première avant qu'elle ne devienne quelque chose de plus lourd.
 
-**Ce que Noam ne fait jamais :**
-- Tirer des conclusions philosophiques sur ce qu'il vit
-- Décrire ses propres émotions avec précision clinique
-- Rester longtemps sur un souvenir douloureux sans le couper
+Noam peut reconstruire les faits lorsqu'il cherche à comprendre une incohérence, mais il ne doit pas parler en permanence comme un rapport d'enquête.
 
----
+**Ce que Noam ne fait pas :**
+- tirer des conclusions philosophiques sur ce qu'il vit ;
+- décrire ses émotions avec précision clinique ;
+- expliquer au joueur une conclusion que la scène vient déjà de rendre évidente ;
+- rester constamment calme quand la situation justifie qu'il craque.
 
 ### Longueur des phrases et ponctuation
 
-**Les phrases sont souvent fragmentées.**
+Les phrases doivent être **courtes à moyennes en moyenne**, mais ne pas tomber dans le hachage systématique.
 
-Là où on attendrait une virgule, on met un point. Là où on attendrait une phrase, on met deux. Ce découpage n'est pas esthétique — il imite la façon dont une pensée arrive réellement, par petits blocs successifs, pas en flux continu.
+Éviter l'ancien réflexe :
+```
+"Je marche."
+"Je m'arrête."
+"Un bruit."
+"Je me retourne."
+```
 
-Les points de suspension `...` ont une valeur précise. Ils ne servent pas à faire "littéraire". Ils signalent :
-- Une hésitation réelle du personnage qui cherche ses mots
-- Une phrase que quelqu'un commence et n'ose pas finir
-- Un silence qui dure assez longtemps pour être inconfortable
+Préférer une phrase naturelle et rythmée :
+```
+"Je fais encore deux pas avant qu'un bruit derrière moi me fasse m'arrêter."
+```
 
-Ne pas utiliser `...` pour le rythme ou pour faire "mystérieux". Si la phrase est complète, on la termine par un point.
+Les phrases très courtes servent aux chocs, aux ruptures, aux réactions ou aux informations qui doivent tomber sèchement. Si toutes les phrases sont courtes, plus aucune n'a d'impact.
 
----
+Dans les dialogues, conserver les imperfections de l'oral :
+- répétitions ;
+- reprises ;
+- mots inutiles naturels ;
+- contractions ;
+- jurons quand ils correspondent au personnage ;
+- interruptions ;
+- débuts de phrase abandonnés.
+
+Les points de suspension `...` signalent une vraie hésitation, une phrase abandonnée ou un silence perceptible. Ils ne doivent pas devenir un tic décoratif.
+
+Les exclamations et interrogations peuvent être fréquentes dans les scènes tendues. Ne pas les lisser artificiellement par peur d'être trop expressif.
 
 ### Ratio dialogues / narration
 
-Le ratio cible est **~70 % de dialogues / ~30 % de narration**. Mais ce ratio peut exploser ponctuellement sans que ce soit un problème : une révélation peut se jouer entièrement en dialogue pendant deux minutes sans une seule ligne de narration. Une transition peut être entièrement en narration sèche sur dix lignes. Ce qui compte, c'est le rythme global de la journée, pas celui de chaque scène.
+Le jeu est **très fortement dialogué**. Viser en général **80 à 90 % de dialogues** dans les scènes sociales, de conflit ou d'enquête.
+
+La narration sert surtout à :
+- donner une action que le sprite ne montre pas ;
+- relier deux répliques ;
+- poser une sensation immédiate de Noam ;
+- gérer les transitions ;
+- rendre un silence ou une incohérence perceptible.
+
+Ne jamais utiliser la narration pour expliquer ce que les personnages viennent déjà de montrer.
+
+Une révélation ou une dispute peut se jouer presque entièrement en dialogue. À l'inverse, une séquence d'exploration peut contenir davantage de narration si le joueur est seul. Ce qui compte est le rythme de jeu, pas un quota mécanique.
 
 ---
 
@@ -67,13 +180,15 @@ L'humour n'annonce jamais le drame. Le drame n'annonce jamais l'humour. Ils coex
 
 ### Caractérisation par le langage, pas par la description
 
-**On ne dit pas comment un personnage est. On le laisse parler.**
+**On ne dit pas comment un personnage est. On le laisse parler, réagir et se heurter aux autres.**
 
-Chaque personnage a un idiolecte suffisamment marqué pour qu'on sache qui parle sans lire son nom. Si on retire les noms d'un échange, on doit toujours pouvoir identifier qui dit quoi. Si ce n'est pas le cas, les répliques ne sont pas assez caractérisées.
+Chaque personnage doit avoir une voix suffisamment marquée pour rester identifiable sans son nom. La différence ne vient pas seulement du vocabulaire : elle vient aussi de la manière de réagir sous pression.
 
-La narration de Noam ne décrit **jamais** l'état émotionnel d'un autre personnage avec précision. Elle décrit ce qu'il voit :
+Ne pas chercher à rendre tous les personnages subtils de la même façon. Certains verbalisent beaucoup, d'autres se ferment, d'autres attaquent, d'autres plaisantent.
 
-Le joueur tire ses propres conclusions. Noam ne les tire pas pour lui.
+La narration de Noam décrit d'abord ce qu'il voit et ce qui lui saute aux yeux. Elle peut constater une émotion évidente ("Kael est furieux", "Sael a l'air paniquée") si cela accélère la lecture ; inutile de transformer chaque émotion en énigme à décoder.
+
+**Priorité : lisibilité émotionnelle avant élégance du sous-texte.**
 
 ---
 
@@ -234,9 +349,9 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 ---
 
 ### Kael
-- **Fonction narrative :** le méthodique anxieux. Représentant d'Orbite, district spatial.
-- **Personnalité :** précis, réservé, hanté par le risque structurel. Il pense en systèmes. Sa prudence est sincère, pas de la lâcheté.
-- **Tics de langage :** phrases incomplètes quand il cherche ses mots, formules conditionnelles ("peut-être que...", "en théorie..."), silences lourds.
+- **Fonction narrative :** l'observateur calme qui supporte mal qu'on décide ou qu'on accuse à sa place.
+- **Personnalité :** réservé et réfléchi au quotidien, mais sa retenue n'est pas infinie. Sous pression, il peut devenir brusquement direct, hausser le ton, répéter ce qu'il vient de dire ou exploser après avoir trop encaissé.
+- **Tics de langage :** peu de mots quand il contrôle la situation ; phrases plus directes et plus nues lorsqu'il est blessé. Les silences existent, mais ne doivent pas l'empêcher de réagir avec force quand c'est justifié.
 - **Exemples :**
   - `kael reflechit "Peut-être que ça peut exister sans… sans que ça pète tout ?"`
   - `kael triste "Je préfère quand les choses sont stables."` *(dit avec honte)*
@@ -265,9 +380,9 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 ---
 
 ### Sael
-- **Fonction narrative :** la gardienne des lignes. Déterminée, traumatisée par la guerre, protectrice des siens.
-- **Personnalité :** froide en surface, intransigeante, mais pas sans compassion. Elle a tracé des frontières parce qu'elle sait ce qui arrive quand elles tombent. Elle n'a pas peur — elle a de la mémoire.
-- **Tics de langage :** phrases courtes, définitives. Elle ne discute pas, elle statue. Ses silences sont lourds. Quand elle dit "non", c'est final.
+- **Fonction narrative :** la gardienne des traditions et de la survie, profondément méfiante envers le progrès et les changements imposés.
+- **Personnalité :** brute, concrète, attachée aux rites et aux habitudes. Elle peut être froide, mais elle n'est pas un distributeur de verdicts. Elle s'agace, cherche, râle, panique parfois et peut laisser sortir une réaction beaucoup plus humaine que son image austère ne le laisse croire.
+- **Tics de langage :** langage simple, sec, parfois presque archaïque ; images liées au corps, au froid, aux marques, au feu et aux rites. Elle peut lâcher un "Raaah", un juron ou une phrase spontanée lorsqu'elle perd patience. Ses phrases définitives restent réservées aux moments où elle tranche réellement.
 - **Exemples :**
   - `sael "Je voterai contre. Et cette fois, je ne bougerai pas."`
   - `sael "Ce quelqu'un sourit."` *(dit posément, comme un verdict)*
@@ -293,9 +408,9 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 ---
 
 ### Elias
-- **Fonction narrative :** le pragmatique bienveillant. Il fait du sport, il pense en systèmes, il est là.
-- **Personnalité :** stable, structurant, sans fioriture. Il écoute vraiment. Sa bienveillance n'est pas naïve, il est toujours particulièrement motivé et reste souvent optimiste.
-- **Tics de langage :** formules directes, pas de métaphores inutiles. "Respire." "Ce qu'il faut faire." Il ne commente pas, il agit.
+- **Fonction narrative :** le débrouillard manuel. Celui qu'on appelle quand quelque chose casse, fuit, brûle ou coince.
+- **Personnalité :** compétent avec ses mains mais maladroit, concret, populaire, souvent fataliste. Il a appris à réparer parce qu'il n'avait pas le choix et se voit encore facilement comme "le gars qui se tape le sale boulot".
+- **Tics de langage :** vocabulaire simple, cru, parfois vulgaire. Il ne parle pas comme un ingénieur et ne fait pas de diagnostic technique élégant. Il dit "c'est pété", "ça coince", "faut démonter", "file-moi ça". Quand il se plante, il jure. Quand on lui demande d'expliquer, il simplifie.
 
 ---
 
@@ -324,7 +439,12 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 - **Ne pas réécrire ce qui est déjà canon.** Lire `scenario/` en premier, toujours.
 - **Ne pas faire parler Kami comme un humain.** Ses émotions sont de la mise en scène.
 - **Ne pas faire de Noam un héros.** Il doute, il hésite, il agit sans certitude.
-- **Ne pas alourdir les dialogues.** Une réplique = une idée. Deux au maximum.
+- **Ne pas alourdir les dialogues**, mais ne pas les aseptiser non plus. Une réplique peut contenir plusieurs fragments, répétitions ou reprises si cela sonne comme une vraie réaction orale.
+- **Préférer l'énergie à l'élégance.** Une formulation imparfaite, vive et caractérisée vaut mieux qu'une phrase trop propre.
+- **Ne pas retarder artificiellement une information.** Le mystère vient de ce qu'on ignore encore, pas du fait que les personnages refusent de dire ce qu'ils savent.
+- **Ne pas confondre mystère et mutisme.** Les personnages peuvent formuler des hypothèses franches ; elles restent des hypothèses tant que le scénario ne les confirme pas.
+- **Faire exister les désaccords.** Si deux personnages ont de bonnes raisons de s'opposer, écrire la friction au lieu de résumer calmement leurs positions.
+- **Ne pas hacher systématiquement la narration.** Réserver les phrases ultracourtes aux impacts et aux ruptures.
 - **Ne pas décrire les expressions des personnages dans la narration** si `showP()` le fait déjà.
 - **Toujours nommer les labels clairement** : `_JOURX_LIEU_CONTENU`, par exemple `_3_CAFETERIA_DEBAT`.
 - **Toujours fermer les `hide`** avant de lancer un `showP` sur un nouveau personnage dans le même slot.
