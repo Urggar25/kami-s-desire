@@ -10,16 +10,16 @@ label _17_0_1_1_0_ANNONCE_KAMI:
 
     "Je n'ai presque pas dormi. Chaque fois que je fermais les yeux, je revoyais la même ligne dans ce vieux livre des Archives."
 
-    "Puis le trou dans ma mémoire revenait avec elle. La salle d'observation. Kael. Le couloir. Et ce vide impossible à traverser après l'avoir retrouvé."
+    "Et puis le trou revient. La salle d'observation. Kael. Le couloir... et après, plus rien."
 
     noam inquiet "..."
 
-    "Sael avait promis qu'on en parlerait aux autres dès le matin. J'aurais préféré attendre encore un peu, trouver quelque chose de plus solide, comprendre au moins ce que cette procédure pouvait réellement signifier."
+    "Sael avait promis qu'on en parlerait aux autres dès le matin. Une partie de moi voudrait encore attendre, juste le temps de comprendre ce que M16 veut vraiment dire."
     "Mais après avoir vu la mention disparaître sous nos yeux, garder ça pour nous n'aurait plus eu aucun sens."
 
     noam reflexion "Il faut qu'ils sachent."
 
-    "Je reste assis quelques secondes au bord du lit, puis je me lève. Mon crâne va mieux qu'hier, mais la sensation n'a pas disparu. Celle d'avoir laissé quelque chose derrière moi sans savoir quoi."
+    "Je reste assis quelques secondes au bord du lit, puis je me lève. Mon crâne va mieux qu'hier. Le reste, beaucoup moins. J'ai toujours cette impression qu'il me manque quelque chose."
 
     jump _17_0_1_1_CAFETERIA_M16
 
@@ -29,7 +29,7 @@ label _17_0_1_1_CAFETERIA_M16:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_102
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
-    "Je prends la direction de la cafétéria. Plus j'avance, plus j'ai envie de faire demi-tour. Pas parce que je doute de ce qu'on a trouvé, mais parce que je sais déjà ce que cette découverte va provoquer."
+    "Je prends la direction de la cafétéria. Plus j'approche, moins j'ai envie d'y entrer. Je sais déjà que ça va partir en vrille dès qu'on parlera de M16."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_103
     scene bg_cafeteria at adaptive_fullscreen with dissolve
@@ -150,7 +150,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     julian inquietude "... Pareil."
 
-    "Un silence se forme autour de la table. Je savais ce qui allait arriver et pourtant voir la même expression sur tous les visages rend la chose beaucoup plus réelle."
+    "Plus personne ne parle. Je savais qu'on allait tous avoir la même mention, mais la voir apparaître sur chaque écran me retourne quand même l'estomac."
 
     $ showGroup([
         ("noam", "inquiet", 0.18),
@@ -408,7 +408,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     kami "Vous n'êtes pas censés modifier mon système."
 
-    "La réponse tombe si simplement qu'elle coupe Nyra dans son élan."
+    "Nyra s'arrête net."
 
     kami "Le Conclave vous permet de proposer des modifications aux Commandements. Rien de plus."
 
@@ -682,7 +682,7 @@ label _17_0_1_1_CAFETERIA_M16:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     "L'écran s'éteint."
-    "Pendant quelques secondes, personne ne parle. On vient de passer plusieurs minutes à croire qu'on avait enfin trouvé un moyen de pression. Kami vient simplement de nous expliquer qu'elle pouvait attendre qu'on se fatigue."
+    "Personne ne parle. On pensait enfin tenir quelque chose contre elle. En fait, elle peut juste attendre qu'on craque."
 
     $ hideGroup()
     jump _17_0_1_1_APRES_PROTESTATION
@@ -765,7 +765,7 @@ label _17_0_1_1_APRES_PROTESTATION:
     think "Tout le monde l'a."
 
     "Je devrais peut-être leur dire que j'ai réellement perdu une partie de ma soirée. Sael le sait. Kael aussi, plus ou moins."
-    "Mais tant que je ne comprends pas ce qui m'est arrivé, l'idée de mettre ça au milieu de la table me donne surtout l'impression de tendre une arme à quelqu'un sans savoir dans quelle direction elle pointe."
+    "Mais tant que je comprends pas ce qui m'est arrivé, j'ai aucune envie de balancer ça devant tout le monde. Pas encore."
 
     $ showGroup([
         ("noam", "hesitation", 0.18),
