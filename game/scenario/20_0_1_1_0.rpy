@@ -103,9 +103,9 @@ label _20_0_1_1_0_REVEIL:
 
     noam colere "J'ai pas besoin que vous suiviez, j'ai besoin que vous veniez voir !"
 
-    tomas inquiet "Tu l'as touchée ? Tu as vérifié qu'elle était réellement morte ?"
+    tomas inquiet "Tu l'as touchée ? Enfin... t'as vérifié son pouls ? T'es sûr qu'elle était morte ?"
 
-    noam desaccord "Non, j'ai pas pris son pouls si c'est ce que tu demandes. Mais elle ne bougeait plus, elle ne respirait pas et elle était étendue sur une table dans une pièce cachée derrière les murs. Ça vous suffit ou il faut que je vous fasse un rapport médical complet ?"
+    noam desaccord "Non, j'ai pas pris son putain de pouls ! Elle bougeait plus, elle respirait plus et elle était sur une table dans une pièce cachée. Ça vous suffit ou il faut vraiment que je vous fasse un rapport ?"
 
     sael mefiant "Ça suffit pour qu'on vérifie."
 
@@ -172,7 +172,7 @@ label _20_0_1_1_0_REVEIL:
 
     "Je coupe Iris avant même qu'elle termine."
 
-    noam "Ne commence pas à me dire que j'ai rêvé ou que je suis trop fatigué. Venez voir la salle, regardez la table et après vous pourrez décider si je suis devenu fou."
+    noam "Me dites pas que j'ai rêvé. Pas maintenant. Venez voir la salle, regardez la table, et après vous pourrez me dire que je suis devenu fou si ça vous chante."
 
     mara colere "Moi, je vais nulle part avec toi tant que t'as ce couteau."
 
@@ -190,7 +190,7 @@ label _20_0_1_1_0_REVEIL:
 
     ryn "Je peux venir si—"
 
-    iris desaccord "Non. On n'a pas besoin d'être huit à ramper dans les conduits. Kael connaît déjà une partie de ce qui s'est passé ces derniers jours, et moi je veux surtout vérifier que Noam ne se mette pas encore plus en danger."
+    iris desaccord "Non. On va pas être huit à ramper là-dedans. Kael vient, moi aussi. Et surtout, je veux éviter que Noam fasse encore une connerie."
 
     noam colere "Je ne me mets pas en danger."
 
@@ -223,7 +223,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Nous avançons tous les trois dans le réseau. Iris est juste derrière moi, Kael ferme la marche et, contrairement à la veille, chaque bruit me semble beaucoup plus fort."
 
-    iris inquiet "Tu es certain du chemin ? Je te demande sérieusement, parce que je n'ai aucune envie de me perdre ici à quelques heures de notre départ."
+    iris inquiet "T'es sûr du chemin ? Et je demande sérieusement, hein. J'ai aucune envie de me paumer là-dedans juste avant de partir."
 
     noam "Oui. Je reconnais les bifurcations. La salle est encore un peu plus loin."
 
@@ -233,7 +233,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     kael "Avec ton couteau."
 
-    noam colere "Je sais à quoi ça ressemble, Kael. J'ai entendu quelqu'un circuler derrière ma chambre pendant plusieurs nuits, personne ne me croyait et j'en ai eu marre d'attendre. Maintenant avance."
+    noam colere "Je sais très bien à quoi ça ressemble, Kael ! Ça fait plusieurs nuits que j'entends quelqu'un derrière ma chambre, personne m'écoute et j'en ai eu marre. Alors avance."
 
     "Il ne répond pas."
 
@@ -271,7 +271,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Je m'approche de la table et passe ma main sur la surface métallique."
 
-    noam "Elle était exactement là, sur le dos, la tête de ce côté. Je suis pas en train de confondre avec une autre pièce."
+    noam "Elle était là ! Sur le dos, la tête de ce côté. Je confonds pas, bordel."
 
     kael inquietude "Il n'y a rien."
 
@@ -279,7 +279,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Je regarde sous la table, derrière les deux Goumi, puis dans les espaces de rangement ouverts sous l'établi."
 
-    iris reflexion "Noam, attends. Si quelqu'un a réellement déplacé un corps, tu ne vas pas le retrouver en ouvrant trois tiroirs au hasard."
+    iris reflexion "Noam, arrête deux secondes. Si quelqu'un a vraiment déplacé un corps, tu vas pas le retrouver en ouvrant trois tiroirs au pif."
 
     noam colere "Donc tu admets que quelqu'un a pu le déplacer ?"
 
@@ -287,7 +287,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     noam "Parce que vous pensez que j'ai tout inventé."
 
-    iris inquiet "Je pense surtout que tu n'as presque pas dormi depuis plusieurs jours et que tu es terrifié. Ce n'est pas la même chose."
+    iris inquiet "Je pense surtout que tu dors presque plus et que t'es terrifié. Ça veut pas dire que tu mens."
 
     noam colere "Arrêtez tous avec ça ! J'étais fatigué, oui. J'avais peur, oui. Ça ne transforme pas une table vide en cadavre !"
 
@@ -297,11 +297,11 @@ label _20_0_1_1_SALLE_GOUMI:
 
     noam colere "Tu veux dire quoi par là ?"
 
-    kael "Rien de plus que ce que je viens de dire. On est venus vérifier et il n'y a personne ici."
+    kael "Rien. Je dis juste qu'on est venus vérifier... et qu'il y a personne, Noam."
 
     noam "Tu crois que je mens ?"
 
-    kael "Je crois que depuis trois jours, on découvre que nos souvenirs ne valent peut-être plus grand-chose. Alors non, je vais pas te dire que ce que tu te rappelles est forcément vrai juste parce que tu le cries plus fort."
+    kael "Depuis trois jours, on découvre que nos souvenirs peuvent nous raconter n'importe quoi. Alors non, je vais pas te dire que t'as forcément raison juste parce que tu gueules."
 
     "La remarque me frappe plus violemment que je ne voudrais l'admettre."
 
@@ -331,7 +331,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     noam colere "Tu crois vraiment que je vais vous attaquer ?"
 
-    iris "Je crois surtout que tu n'es plus capable de réfléchir correctement. Alors oui, pour une fois, tu fais ce qu'on te dit et tu t'éloignes du couteau."
+    iris "Là, je crois surtout que tu réfléchis plus correctement. Alors pour une fois, tu m'écoutes et tu t'éloignes de ce putain de couteau."
 
     noam colere "J'en ai marre qu'on décide à ma place ce que j'ai vu, ce que j'ai compris et maintenant même ce que j'ai le droit de toucher !"
 
@@ -563,7 +563,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Lysa soupire, puis s'approche du lit. Malgré son ton, elle me regarde attentivement, surtout la tempe."
 
-    lysa fatigue "Je vais te le dire une fois sans me foutre de toi : tu as complètement déconné, Noam. Tu es revenu avec un couteau en hurlant que Mara était morte, alors qu'elle était dans le même bâtiment que nous. Ensuite tu as emmené Iris et Kael dans les conduits et tu as fini par récupérer ton arme alors qu'Iris te demandait de la laisser au sol."
+    lysa fatigue "Je vais te le dire une fois sans me foutre de toi : t'as complètement déconné. T'es revenu avec un couteau en gueulant que Mara était morte alors qu'elle était juste là. Et après, dans les conduits, Iris te dit de laisser le couteau au sol... et toi tu le ramasses quand même."
 
     noam desaccord "Je ne voulais attaquer personne."
 
@@ -571,7 +571,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam surpris "Alors pourquoi je suis attaché ?"
 
-    lysa "Parce que savoir que tu ne voulais attaquer personne ne change pas le fait que tu étais hors de contrôle. Iris ne pouvait pas deviner ce que tu allais faire la seconde d'après, et franchement, moi non plus."
+    lysa "Parce que ça change rien au fait que t'étais hors de contrôle ! Iris savait pas ce que t'allais faire la seconde d'après. Et franchement ? Moi non plus."
 
     noam colere "J'étais pas hors de contrôle. J'étais énervé parce que personne ne m'écoutait."
 
@@ -579,7 +579,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam "Lysa..."
 
-    lysa fatigue "Je te crois quand tu dis que tu as eu peur. Je te crois même quand tu dis que, dans ta tête, tu as réellement vu Mara sur cette table. Mais ça ne suffit pas pour que tout le monde se mette à agir comme si elle était morte alors qu'elle est debout devant nous."
+    lysa fatigue "Je te crois quand tu dis que t'as eu peur. Je te crois même quand tu dis que t'as vraiment vu Mara sur cette table. Mais tu peux pas demander à tout le monde d'agir comme si elle était morte alors qu'elle est debout devant nous."
 
     noam colere "Arrête de dire 'dans ma tête'."
 
@@ -633,7 +633,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam "Et c'est pratique, hein ? Depuis qu'on a découvert M16, dès qu'il se passe quelque chose qu'on n'arrive pas à expliquer, on peut juste dire que ma mémoire déconne."
 
-    sael raison "Ce n'est pas ce que je dis. Je dis qu'on ne peut pas éliminer cette possibilité simplement parce qu'elle te fait peur."
+    sael raison "J'ai pas dit ça. Je dis juste qu'on peut pas écarter l'idée parce qu'elle te fait peur."
 
     noam "Ce qui me fait peur, c'est qu'on puisse tous rester là à discuter pendant que quelqu'un se balade dans les murs."
 
@@ -685,11 +685,11 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Je respire plus lentement. Cette fois, je fais réellement l'effort de ne pas crier."
 
-    noam raison "Je ne vous demande pas de croire que Mara est morte. Plus maintenant. Je vous demande juste d'accepter une chose : il y a quelqu'un parmi nous qui sait plus de choses que nous."
+    noam raison "Je vous demande même plus de croire que Mara est morte. Juste... admettez qu'il y a quelqu'un ici qui en sait beaucoup plus que nous."
 
     "Lysa ne répond pas immédiatement."
 
-    noam "Quelqu'un connaissait les conduits avant qu'on les découvre. Quelqu'un savait comment atteindre cette salle. Et si le corps que j'ai vu était réel, quelqu'un a eu le temps de le déplacer pendant que j'étais parti chercher de l'aide."
+    noam "Quelqu'un connaissait ces conduits avant nous. Quelqu'un savait comment atteindre cette salle et... si ce corps était réel, bordel, quelqu'un l'a déplacé pendant que j'étais parti."
 
     sael mefiant "Tu parles d'un traître."
 
@@ -707,7 +707,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam "Non."
 
-    lysa fatigue "Alors tu comprends bien le problème. Si on commence à regarder tout le monde comme un ennemi à moins de vingt-quatre heures du départ, on va finir par s'entretuer sans même avoir besoin de Kami."
+    lysa fatigue "Tu vois bien le problème. Si on commence à regarder tout le monde comme un traître à moins de vingt-quatre heures du départ, on va finir par s'entretuer tout seuls."
 
     noam desaccord "Et si on ne fait rien, on peut partir avec cette personne demain."
 
@@ -715,7 +715,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam "Tu vois ? Même toi tu l'envisages."
 
-    sael raison "J'envisage toutes les possibilités. Ça ne veut pas dire que je vais accuser quelqu'un sans preuve."
+    sael raison "J'envisage tout. Ça veut pas dire que je vais pointer quelqu'un du doigt sans la moindre preuve."
 
     "Je ferme les yeux quelques secondes. Elles ne comprennent pas. Ou peut-être qu'elles comprennent parfaitement et qu'elles refusent simplement de me suivre là-dedans."
 
