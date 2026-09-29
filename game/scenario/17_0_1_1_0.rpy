@@ -100,7 +100,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     iris colere "Attendez... depuis quand on peut consulter ça ?"
 
-    tomas neutre "Depuis le dernier amendement, probablement. Une partie des restrictions sur les informations personnelles a sauté avec le vote."
+    tomas neutre "Depuis le dernier amendement, je crois. Une partie des restrictions a sauté avec le vote et... enfin, visiblement ça aussi."
 
     iris colere "Évidemment. Et personne n'a pensé à nous prévenir."
 
@@ -136,7 +136,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Mara tourne sa tablette vers nous. La même référence apparaît au milieu de son dossier."
 
-    nyra neutre "Je l'ai également."
+    nyra neutre "Moi aussi."
 
     $ showGroup([
         ("lysa", "blase", 0.18),
@@ -216,9 +216,9 @@ label _17_0_1_1_CAFETERIA_M16:
 
     mara colere "Merci Tomas, on avait compris !"
 
-    julian peur "Non mais... ça peut vouloir dire autre chose, non ? Un risque neurologique, un examen, une catégorie médicale... quelque chose qui n'implique pas qu'on ait réellement touché à nos souvenirs."
+    julian peur "Attendez, ça peut vouloir dire autre chose, non ? Un examen, un risque neurologique... j'en sais rien. Pas forcément qu'on a fouillé dans nos souvenirs."
 
-    tomas reflechit "C'est possible. Enfin... techniquement oui, mais le terme est très précis. Une procédure d'accès mnésique désigne un accès direct au contenu de la mémoire. Ça ne dit pas ce qui a été consulté, copié ou extrait, ni pourquoi, mais—"
+    tomas reflechit "C'est possible. Enfin... oui, mais le terme est quand même très précis. 'Accès mnésique', ça veut dire accès direct à la mémoire. Après, ça dit pas ce qu'ils ont fait exactement, ni pourquoi, ni—"
 
     $ showGroup([
         ("iris", "colere", 0.18),
@@ -262,7 +262,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Je baisse instinctivement les yeux. Sael me regarde brièvement, mais ne dit rien."
 
-    nyra neutre "Pas nécessairement. C'est précisément le problème."
+    nyra neutre "Pas forcément. C'est justement ça, le problème."
 
     mara colere "Ouais, bah moi je veux savoir quand ça a été fait. Et pourquoi."
 
@@ -290,7 +290,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     mara colere "Évidemment."
 
-    tomas inquiet "Tu es sûre qu'il n'existe pas une autre copie ?"
+    tomas inquiet "T'es sûre qu'il y en a pas une autre quelque part ?"
 
     sael "J'en ai cherché trois. C'était la seule référence que j'ai trouvée."
 
@@ -304,7 +304,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Sa voix n'est pas forte, mais elle coupe progressivement le brouhaha."
 
-    nyra "On peut passer la matinée à émettre des hypothèses, ou demander directement à celle qui contrôle l'infrastructure."
+    nyra "On peut continuer à tourner en rond toute la matinée... ou demander directement à celle qui contrôle tout ici."
 
     ryn "Kami !"
 
@@ -329,7 +329,7 @@ label _17_0_1_1_CAFETERIA_M16:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     $ bc_show("tomas", "inquiet")
-    tomas inquiet "Que signifie la procédure M16 ?"
+    tomas inquiet "M16. Ça veut dire quoi exactement ?"
     $ bc_hide()
 
     kami "Je ne peux pas répondre à cette question."
@@ -341,7 +341,7 @@ label _17_0_1_1_CAFETERIA_M16:
     $ bc_hide()
 
     $ bc_show("tomas", "neutre")
-    tomas "Alors donne-nous au moins la date à laquelle elle a été appliquée."
+    tomas "Alors donne-nous au moins la date. Quand est-ce que ça a été fait ?"
     $ bc_hide()
 
     kami "Je ne peux pas répondre à cette question."
@@ -373,7 +373,7 @@ label _17_0_1_1_CAFETERIA_M16:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     $ bc_show("nyra", "neutre")
-    nyra neutre "Quelle règle t'interdit de nous répondre ?"
+    nyra neutre "Qu'est-ce qui t'empêche de répondre ? Quelle règle ?"
     $ bc_hide()
 
     "Kami ne répond pas immédiatement. Pour la première fois depuis le début de l'échange, son silence ressemble presque à une hésitation."
@@ -403,7 +403,7 @@ label _17_0_1_1_CAFETERIA_M16:
     $ bc_hide()
 
     $ bc_show("nyra", "colere")
-    nyra colere "Comment sommes-nous censés modifier ton système si une partie de ce système nous est cachée ?"
+    nyra colere "Et on est censés modifier quoi, exactement, si tu nous caches la moitié du système ?"
     $ bc_hide()
 
     kami "Vous n'êtes pas censés modifier mon système."
@@ -413,7 +413,7 @@ label _17_0_1_1_CAFETERIA_M16:
     kami "Le Conclave vous permet de proposer des modifications aux Commandements. Rien de plus."
 
     $ bc_show("tomas", "raison")
-    tomas raison "Tu nous as aussi affirmé que tu ne pouvais pas intervenir dans les manigances du Conclave. Si M16 a un lien avec ce qui se passe ici, alors tu détiens forcément des informations pertinentes."
+    tomas raison "Tu nous as dit que tu pouvais pas intervenir dans les manigances du Conclave. Si M16 a un rapport avec tout ça, alors tu sais forcément quelque chose."
     $ bc_hide()
 
     kami "Et je maintiens ce que j'ai dit. Je ne peux prendre part à aucune manigance du Conclave."
@@ -470,11 +470,11 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Plusieurs regards convergent vers elle."
 
-    nyra raison "Nous sommes censés voter librement, en pleine connaissance des conséquences. Or nous venons d'apprendre qu'une procédure d'accès mnésique apparaît dans chacun de nos dossiers, et l'autorité qui organise ces votes refuse de nous dire ce qu'elle signifie."
+    nyra raison "On est censés voter librement, en sachant ce qu'on fait. Là, on découvre M16 dans tous nos dossiers et celle qui organise les votes refuse même de nous dire ce que c'est."
 
     tomas inquiet "Nyra..."
 
-    nyra "Dans ces conditions, prétendre que nos décisions sont éclairées n'a plus aucun sens."
+    nyra "Alors non. Faire comme si nos décisions étaient encore éclairées, ça n'a plus aucun sens."
 
     $ showGroup([
         ("elias", "neutre", 0.18),
@@ -502,7 +502,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     lysa blase "Ça tombe bien, j'avais justement toujours rêvé de faire grève dans l'espace."
 
-    julian hesitation "Je suis d'accord sur le fond, mais... on parle quand même du Conclave entier. Si on arrête de voter, on perd peut-être notre seule chance de changer quoi que ce soit."
+    julian hesitation "Je suis d'accord, mais... attendez. Si on arrête tout, on balance peut-être notre seule chance de changer quoi que ce soit ici."
 
     $ showGroup([
         ("tomas", "raison", 0.18),
@@ -510,7 +510,7 @@ label _17_0_1_1_CAFETERIA_M16:
         ("ryn", "colere", 0.82),
     ])
 
-    tomas raison "C'est précisément le risque. On devrait au moins réfléchir avant de transformer ça en décision collective."
+    tomas raison "C'est ça qui me fait peur. On devrait peut-être réfléchir deux minutes avant d'en faire une décision pour tout le monde."
 
     nyra colere "Et voter demain comme si nous n'avions rien découvert serait plus raisonnable ?"
 
@@ -518,7 +518,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     nyra "Alors qu'est-ce que tu proposes ?"
 
-    tomas inquiet "Je propose qu'on ne prenne pas une décision définitive sous le coup de la colère."
+    tomas inquiet "Je dis juste qu'on devrait pas décider ça maintenant, alors que tout le monde est à cran."
 
     $ showGroup([
         ("ryn", "colere", 0.18),
@@ -582,7 +582,7 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Même Ryn laisse échapper un bref rire nerveux. La tension retombe à peine quelques secondes, puis Nyra revient vers l'écran."
 
-    nyra determine "Tu as entendu. Tant que nous n'aurons pas de réponse sur M16, nous ne participerons plus aux votes."
+    nyra determine "Tu as entendu. Pas de réponse sur M16, pas de vote. C'est aussi simple que ça."
 
     $ hideGroup()
     play sound "audio/sfx_announce.mp3"
@@ -634,7 +634,7 @@ label _17_0_1_1_CAFETERIA_M16:
     kami "Il devait pouvoir durer un mois. Nuance."
 
     $ bc_show("tomas", "colere")
-    tomas colere "Ce n'est indiqué nulle part dans les règles que tu nous as communiquées."
+    tomas colere "Mais c'était écrit nulle part dans les règles que tu nous as données !"
     $ bc_hide()
 
     kami "Ce mécanisme relève de mes règles internes."
@@ -660,7 +660,7 @@ label _17_0_1_1_CAFETERIA_M16:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     $ bc_show("nyra", "colere")
-    nyra colere "Donc ta réponse à notre protestation, c'est simplement d'attendre quatre jours."
+    nyra colere "Donc c'est ça, ta réponse ? Tu t'assois et t'attends quatre jours qu'on craque ?"
     $ bc_hide()
 
     kami "Je n'ai pas besoin de répondre à votre protestation."
@@ -703,7 +703,7 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     nyra fatigue "J'ai entendu."
 
-    tomas "Je ne dis pas qu'il faut céder. Je dis juste qu'on vient peut-être de réduire le reste du Conclave à quatre jours sans avoir le moindre plan pour obtenir ces réponses."
+    tomas "Je dis pas qu'il faut céder. Je dis qu'on vient peut-être de réduire tout ce qu'il nous reste à quatre jours... et qu'on n'a aucun plan derrière."
 
     ryn colere "On en trouvera un."
 
