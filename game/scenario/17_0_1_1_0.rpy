@@ -39,10 +39,19 @@ label _17_0_1_1_CAFETERIA_M16:
     "Sael est debout près d'une table avec le vieux livre des Archives posé devant elle. Elle ne mange pas. Elle attend."
 
     $ showGroup([
-        ("elen", "joie", 0.18),
-        ("sael", "neutre", 0.50),
-        ("noam", "inquiet", 0.82),
+        ("noam", "inquiet", -0.05),
+        ("lysa", "blase", 0.06),
+        ("ryn", "desaccord", 0.17),
+        ("mara", "agace", 0.28),
+        ("tomas", "neutre", 0.39),
+        ("elen", "joie", 0.50),
+        ("julian", "inquietude", 0.61),
+        ("iris", "fatigue", 0.72),
+        ("nyra", "reflexion", 0.83),
+        ("elias", "inquiet", 0.94),
+        ("sael", "neutre", 1.05),
     ])
+
 
     elen joie "Salut Noam ! J'allais justement prendre du café. Tu veux que je t'en—"
 
@@ -52,11 +61,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     sael "Avant de continuer, ouvrez vos dossiers médicaux."
 
-    $ showGroup([
-        ("sael", "neutre", 0.18),
-        ("mara", "agace", 0.50),
-        ("iris", "fatigue", 0.82),
-    ])
 
     mara agace "Bonjour à toi aussi."
 
@@ -66,11 +70,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Le ton qu'elle emploie suffit à faire disparaître les quelques conversations encore en cours."
 
-    $ showGroup([
-        ("sael", "neutre", 0.18),
-        ("elias", "inquiet", 0.50),
-        ("mara", "mefiant", 0.82),
-    ])
 
     elias inquiet "C'est quoi, M16 ?"
 
@@ -78,11 +77,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     mara mefiant "Tu sais que quand quelqu'un dit ça, ça donne jamais envie de regarder ?"
 
-    $ showGroup([
-        ("lysa", "blase", 0.18),
-        ("nyra", "reflexion", 0.50),
-        ("sael", "neutre", 0.82),
-    ])
 
     lysa blase "Moi ça me donne surtout envie de retourner me coucher."
 
@@ -92,11 +86,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Nyra ne pose pas d'autre question. Elle sort sa tablette et commence à naviguer dans les menus. Les autres finissent par faire pareil, les uns après les autres."
 
-    $ showGroup([
-        ("iris", "colere", 0.18),
-        ("tomas", "neutre", 0.50),
-        ("mara", "agace", 0.82),
-    ])
 
     iris colere "Attendez... depuis quand on peut consulter ça ?"
 
@@ -108,11 +97,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     iris "Je veux juste éviter de découvrir par hasard que quelqu'un garde un dossier médical sur moi depuis deux semaines !"
 
-    $ showGroup([
-        ("elen", "inquiet", 0.18),
-        ("elias", "inquiet", 0.50),
-        ("ryn", "desaccord", 0.82),
-    ])
 
     elen inquiet "Je crois que je l'ai."
 
@@ -124,11 +108,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     ryn desaccord "Pareil."
 
-    $ showGroup([
-        ("iris", "inquiet", 0.18),
-        ("mara", "mefiant", 0.50),
-        ("nyra", "neutre", 0.82),
-    ])
 
     iris inquiet "... Ouais."
 
@@ -138,11 +117,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     nyra neutre "Moi aussi."
 
-    $ showGroup([
-        ("lysa", "blase", 0.18),
-        ("tomas", "inquiet", 0.50),
-        ("julian", "inquietude", 0.82),
-    ])
 
     lysa blase "Bon. Super. Génial même."
 
@@ -152,11 +126,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Plus personne ne parle. Je savais qu'on allait tous avoir la même mention, mais la voir apparaître sur chaque écran me retourne quand même l'estomac."
 
-    $ showGroup([
-        ("noam", "inquiet", 0.18),
-        ("ryn", "colere", 0.50),
-        ("nyra", "reflexion", 0.82),
-    ])
 
     noam inquiet "Donc on l'a tous."
 
@@ -168,21 +137,11 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Plusieurs regards se tournent vers moi. Je réalise trop tard que j'ai répondu trop vite."
 
-    $ showGroup([
-        ("mara", "mefiant", 0.18),
-        ("noam", "hesitation", 0.50),
-        ("sael", "neutre", 0.82),
-    ])
 
     mara mefiant "Comment tu sais ça ?"
 
     noam "Il me l'a dit hier."
 
-    $ showGroup([
-        ("noam", "hesitation", 0.18),
-        ("ryn", "colere", 0.50),
-        ("sael", "neutre", 0.82),
-    ])
 
     ryn "Et il savait ce que ça voulait dire ?"
 
@@ -196,11 +155,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Pendant une seconde, personne ne dit rien. Puis tout part d'un coup."
 
-    $ showGroup([
-        ("iris", "surpris", 0.18),
-        ("elias", "colere", 0.50),
-        ("tomas", "inquiet", 0.82),
-    ])
 
     iris surpris "Quoi ?!"
 
@@ -208,11 +162,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     tomas inquiet "Mnésique. La mémoire."
 
-    $ showGroup([
-        ("mara", "colere", 0.18),
-        ("julian", "peur", 0.50),
-        ("tomas", "reflechit", 0.82),
-    ])
 
     mara colere "Merci Tomas, on avait compris !"
 
@@ -220,11 +169,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     tomas reflechit "C'est possible. Enfin... oui, mais le terme est quand même très précis. 'Accès mnésique', ça veut dire accès direct à la mémoire. Après, ça dit pas ce qu'ils ont fait exactement, ni pourquoi, ni—"
 
-    $ showGroup([
-        ("iris", "colere", 0.18),
-        ("tomas", "neutre", 0.50),
-        ("ryn", "colere", 0.82),
-    ])
 
     iris colere "Tomas."
 
@@ -232,31 +176,16 @@ label _17_0_1_1_CAFETERIA_M16:
 
     ryn colere "Donc quelqu'un a foutu ses mains dans nos têtes ?"
 
-    $ showGroup([
-        ("sael", "mefiant", 0.18),
-        ("ryn", "colere", 0.50),
-        ("tomas", "neutre", 0.82),
-    ])
 
     sael mefiant "On n'en sait rien."
 
     ryn "C'est écrit noir sur blanc !"
 
-    $ showGroup([
-        ("sael", "mefiant", 0.18),
-        ("ryn", "colere", 0.50),
-        ("lysa", "blase", 0.82),
-    ])
 
     sael "C'est un nom de procédure. Pas une explication."
 
     lysa blase "Magnifique. On a donc le choix entre 'quelqu'un a joué avec notre mémoire' et 'quelqu'un a nommé une procédure comme ça juste pour le plaisir'. Je me sens beaucoup mieux."
 
-    $ showGroup([
-        ("elen", "peur", 0.18),
-        ("nyra", "neutre", 0.50),
-        ("mara", "colere", 0.82),
-    ])
 
     elen peur "Mais... si c'est vrai, on devrait s'en souvenir, non ?"
 
@@ -266,11 +195,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     mara colere "Ouais, bah moi je veux savoir quand ça a été fait. Et pourquoi."
 
-    $ showGroup([
-        ("ryn", "colere", 0.18),
-        ("elias", "colere", 0.50),
-        ("iris", "colere", 0.82),
-    ])
 
     ryn "Et par qui."
 
@@ -280,11 +204,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     "Les voix commencent à monter. Plusieurs parlent en même temps. Elen essaie de calmer Iris pendant que Ryn demande à Sael si le livre contient d'autres informations."
 
-    $ showGroup([
-        ("sael", "desaccord", 0.18),
-        ("mara", "colere", 0.50),
-        ("tomas", "inquiet", 0.82),
-    ])
 
     sael desaccord "La page suivante a été arrachée."
 
@@ -294,11 +213,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     sael "J'en ai cherché trois. C'était la seule référence que j'ai trouvée."
 
-    $ showGroup([
-        ("nyra", "raison", 0.18),
-        ("ryn", "colere", 0.50),
-        ("noam", "inquiet", 0.82),
-    ])
 
     nyra raison "Ça suffit."
 
@@ -441,10 +355,19 @@ label _17_0_1_1_CAFETERIA_M16:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
     $ showGroup([
-        ("ryn", "colere2", 0.18),
-        ("sael", "desaccord", 0.50),
-        ("nyra", "neutre", 0.82),
+        ("noam", "inquiet", -0.05),
+        ("lysa", "blase", 0.06),
+        ("ryn", "colere2", 0.17),
+        ("mara", "colere", 0.28),
+        ("tomas", "inquiet", 0.39),
+        ("elen", "inquiet", 0.50),
+        ("julian", "hesitation", 0.61),
+        ("iris", "determine", 0.72),
+        ("nyra", "neutre", 0.83),
+        ("elias", "neutre", 0.94),
+        ("sael", "desaccord", 1.05),
     ])
+
 
     "Ryn fait un pas vers l'écran comme s'il pouvait atteindre Kami à travers lui. Sael lui attrape le bras avant même qu'il ne réalise ce qu'il fait."
 
@@ -458,11 +381,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     nyra "Alors arrêtons."
 
-    $ showGroup([
-        ("elen", "inquiet", 0.18),
-        ("nyra", "raison", 0.50),
-        ("tomas", "inquiet", 0.82),
-    ])
 
     elen inquiet "Arrêtons quoi ?"
 
@@ -476,11 +394,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     nyra "Alors non. Faire comme si nos décisions étaient encore éclairées, ça n'a plus aucun sens."
 
-    $ showGroup([
-        ("elias", "neutre", 0.18),
-        ("ryn", "determine", 0.50),
-        ("mara", "colere", 0.82),
-    ])
 
     elias neutre "Plus de votes."
 
@@ -492,11 +405,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     mara colere "Pareil."
 
-    $ showGroup([
-        ("iris", "determine", 0.18),
-        ("lysa", "blase", 0.50),
-        ("julian", "hesitation", 0.82),
-    ])
 
     iris determine "Je vais certainement pas continuer à cocher des cases comme si de rien n'était."
 
@@ -504,11 +412,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     julian hesitation "Je suis d'accord, mais... attendez. Si on arrête tout, on balance peut-être notre seule chance de changer quoi que ce soit ici."
 
-    $ showGroup([
-        ("tomas", "raison", 0.18),
-        ("nyra", "colere", 0.50),
-        ("ryn", "colere", 0.82),
-    ])
 
     tomas raison "C'est ça qui me fait peur. On devrait peut-être réfléchir deux minutes avant d'en faire une décision pour tout le monde."
 
@@ -520,21 +423,11 @@ label _17_0_1_1_CAFETERIA_M16:
 
     tomas inquiet "Je dis juste qu'on devrait pas décider ça maintenant, alors que tout le monde est à cran."
 
-    $ showGroup([
-        ("ryn", "colere", 0.18),
-        ("mara", "mefiant", 0.50),
-        ("tomas", "inquiet", 0.82),
-    ])
 
     ryn colere "C'est pas de la colère. C'est du bon sens."
 
     mara mefiant "Pour une fois que je suis d'accord avec lui, notez la date."
 
-    $ showGroup([
-        ("elen", "determine", 0.18),
-        ("elias", "joie", 0.50),
-        ("iris", "neutre", 0.82),
-    ])
 
     elen determine "Non. Nyra a raison."
 
@@ -556,11 +449,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     elen hesitation "Je suis pas contente ! Enfin... je suis motivée. C'est différent."
 
-    $ showGroup([
-        ("mara", "rire", 0.18),
-        ("elen", "determine", 0.50),
-        ("elias", "fatigue", 0.82),
-    ])
 
     mara rire "Non, non, laisse-la. Elle est lancée."
 
@@ -572,11 +460,6 @@ label _17_0_1_1_CAFETERIA_M16:
 
     elen joie "Pas de vote !"
 
-    $ showGroup([
-        ("lysa", "blase", 0.18),
-        ("ryn", "colere", 0.50),
-        ("nyra", "determine", 0.82),
-    ])
 
     lysa blase "On va tous mourir, mais au moins on aura eu une manif correcte."
 
@@ -694,10 +577,19 @@ label _17_0_1_1_APRES_PROTESTATION:
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
 
     $ showGroup([
-        ("tomas", "inquiet", 0.18),
-        ("nyra", "fatigue", 0.50),
-        ("ryn", "colere", 0.82),
+        ("noam", "hesitation", -0.05),
+        ("lysa", "blase", 0.06),
+        ("ryn", "colere", 0.17),
+        ("mara", "neutre", 0.28),
+        ("tomas", "inquiet", 0.39),
+        ("elen", "inquiet", 0.50),
+        ("julian", "hesitation", 0.61),
+        ("iris", "colere", 0.72),
+        ("nyra", "fatigue", 0.83),
+        ("elias", "neutre", 0.94),
+        ("sael", "neutre", 1.05),
     ])
+
 
     tomas inquiet "Quatre jours."
 
@@ -711,11 +603,6 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     ryn "J'en sais rien, mais continuer à voter en souriant, c'est pas un plan non plus."
 
-    $ showGroup([
-        ("iris", "colere", 0.18),
-        ("lysa", "blase", 0.50),
-        ("elen", "inquiet", 0.82),
-    ])
 
     iris colere "Et on fait quoi si le jour vingt-et-un arrive et qu'on sait toujours rien ? On rentre chez nous avec une jolie mention 'procédure d'accès mnésique' dans le dossier et on reprend notre vie ?"
 
@@ -729,11 +616,6 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     elen inquiet "On va trouver quelque chose."
 
-    $ showGroup([
-        ("mara", "neutre", 0.18),
-        ("elen", "colere", 0.50),
-        ("nyra", "neutre", 0.82),
-    ])
 
     mara neutre "T'as rangé la pancarte imaginaire ?"
 
@@ -743,11 +625,6 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     "Le ton de Mara est étrangement doux. Elen détourne les yeux."
 
-    $ showGroup([
-        ("tomas", "reflechit", 0.18),
-        ("nyra", "neutre", 0.50),
-        ("ryn", "desaccord", 0.82),
-    ])
 
     nyra neutre "On maintient la position pour aujourd'hui. Pas de vote, pas de nouvelle proposition."
 
@@ -767,11 +644,6 @@ label _17_0_1_1_APRES_PROTESTATION:
     "Je devrais peut-être leur dire que j'ai réellement perdu une partie de ma soirée. Sael le sait. Kael aussi, plus ou moins."
     "Mais tant que je comprends pas ce qui m'est arrivé, j'ai aucune envie de balancer ça devant tout le monde. Pas encore."
 
-    $ showGroup([
-        ("noam", "hesitation", 0.18),
-        ("iris", "inquiet", 0.50),
-        ("lysa", "blase", 0.82),
-    ])
 
     noam hesitation "Je vais retourner dans ma chambre."
 
