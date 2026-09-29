@@ -278,13 +278,13 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     noam "Lequel ?"
 
-    tomas "Tu as dit que le réseau ne dessert pas uniquement les chambres."
+    tomas "Attends. T'as dit que le réseau passait pas seulement derrière les chambres."
 
     noam "Non. Il traverse une grande partie du Conclave."
 
-    nyra raison "Quelles zones ?"
+    nyra raison "Quelles zones, exactement ?"
 
-    noam reflexion "Je peux pas te faire une carte exacte. On a reconnu les dortoirs, la cafétéria, plusieurs couloirs... et une salle qu'on ne connaissait pas."
+    noam reflexion "Je peux pas te faire un plan précis. On a reconnu les dortoirs, la cafétéria, plusieurs couloirs... et une salle qu'on connaissait même pas."
 
     elias "Quelle salle ?"
 
@@ -296,7 +296,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     elias ecoute "Donc ils passent probablement par ce réseau pour leur entretien."
 
-    tomas raison "Ce qui expliquerait son existence sans expliquer pourquoi il est accessible depuis toutes nos chambres."
+    tomas raison "Ça explique pourquoi le réseau existe. Pas pourquoi il passe juste derrière nos lits."
 
     lysa blase "Tu veux dire qu'une réponse soulève encore plus de questions ? Quelle surprise."
 
@@ -314,7 +314,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     kael "Tu viens de l'entendre. Il n'a vu aucune caméra."
 
-    nyra raison "Ne pas en voir ne veut pas dire qu'il n'y en a pas."
+    nyra raison "T'en as pas vu. Ça veut pas dire qu'il y en a pas."
 
     kael inquietude "Ça ne veut pas dire qu'il y en a non plus."
 
@@ -376,13 +376,13 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     "Quelques rires nerveux parcourent la pièce, mais ils disparaissent vite."
 
-    nyra reflexion "Une fois les accès sécurisés, il faudra décider quoi faire de ce réseau."
+    nyra reflexion "Une fois les grilles sécurisées, faudra décider ce qu'on fait de ce réseau."
 
     ryn "Le fouiller."
 
     sael mefiant "Pas seuls."
 
-    nyra "Et pas aujourd'hui. Tout le monde est à cran."
+    nyra "Et pas maintenant. Regardez-vous, tout le monde est à cran."
 
     ryn colere "On part dans deux jours."
 
@@ -451,7 +451,7 @@ label _19_0_1_1_SECURISATION:
 
     noam reflexion "Ça tiendra ?"
 
-    elias "À moins que quelqu'un vienne avec une perceuse de l'autre côté, oui."
+    elias "À moins qu'un abruti arrive avec une perceuse de l'autre côté, ouais."
 
     noam inquiet "Et de l'autre côté ?"
 
@@ -529,11 +529,11 @@ label _19_0_1_1_SECURISATION:
 
     noam "Rien."
 
-    elias fatigue "Alors rien."
+    elias fatigue "Bah alors... rien."
 
     "Il reprend sa marche."
 
-    elias "Te mets pas à chercher un complot dans chaque phrase. On en a déjà assez comme ça."
+    elias "Commence pas à chercher un complot dans chaque phrase, sérieux. On en a déjà assez comme ça."
 
     noam "Ouais."
 
