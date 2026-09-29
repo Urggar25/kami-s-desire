@@ -365,7 +365,7 @@ label _18_0_1_1_RESEAU_CONCLAVE:
 
     mara rire "Très utile, monsieur le guide."
 
-    "Nous avançons encore. À chaque nouvelle ouverture, le même malaise revient. Le réseau ne relie pas quelques zones techniques. Il double presque entièrement les couloirs auxquels nous avons accès."
+    "Nous avançons encore. À chaque nouvelle ouverture, le même malaise revient. Ce n'est pas juste quelques gaines techniques. Il y a presque un deuxième Conclave derrière les murs."
 
     "On pourrait faire une bonne partie du Conclave sans croiser personne dans les couloirs."
 
