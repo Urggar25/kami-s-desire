@@ -367,7 +367,7 @@ label _18_0_1_1_RESEAU_CONCLAVE:
 
     "Nous avançons encore. À chaque nouvelle ouverture, le même malaise revient. Le réseau ne relie pas quelques zones techniques. Il double presque entièrement les couloirs auxquels nous avons accès."
 
-    "On pourrait traverser une bonne partie du Conclave sans apparaître une seule fois dans les espaces communs."
+    "On pourrait faire une bonne partie du Conclave sans croiser personne dans les couloirs."
 
     noam panne "..."
 
@@ -399,7 +399,7 @@ label _18_0_1_1_RESEAU_CONCLAVE:
 
     mara colere "Tu fais ça et je te pousse dans le prochain trou."
 
-    "Nous continuons encore un peu. Le conduit tourne sur la gauche, puis descend suffisamment pour que je doive prendre appui avec les mains."
+    "On continue encore un peu. Le conduit tourne à gauche, puis descend assez pour que je doive m'aider des mains."
 
     "Au loin, j'entends un bourdonnement régulier."
 
@@ -547,7 +547,7 @@ label _18_0_1_1_ZONE_ETROITE:
 
     "Je regarde la trappe, puis le passage derrière nous."
 
-    "Depuis quelques minutes, l'air me paraît plus lourd. Ça n'a probablement rien de réel, mais l'espace étroit commence à me donner l'impression que les parois se rapprochent lentement."
+    "Depuis quelques minutes, j'ai l'impression de manquer d'air. C'est sûrement dans ma tête, mais plus j'avance, plus cet endroit me serre."
 
     noam hesitation "Non."
 
@@ -837,7 +837,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_131
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    "La cafétéria est moins bruyante que d'habitude. Une bonne partie du groupe est présente, mais les conversations restent basses. La décision d'hier plane encore au-dessus de tout le monde."
+    "La cafétéria est moins bruyante que d'habitude. Presque tout le monde parle bas. Personne n'a vraiment digéré la décision d'hier."
 
     $ showGroup([
         ("nyra", "neutre", 0.10),
