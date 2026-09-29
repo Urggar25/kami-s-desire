@@ -100,7 +100,7 @@ label _21_0_1_1_0_REVEIL:
 
     mara "Tu vas réveiller tout le monde."
 
-    noam inquiet "Qu'est-ce que tu fais ici ?"
+    noam inquiet "Qu'est-ce que tu fous ici ?"
 
     "Elle ne répond pas immédiatement."
 
@@ -116,7 +116,7 @@ label _21_0_1_1_0_REVEIL:
 
     "Elle s'approche de la caméra."
 
-    noam peur "Mara, qu'est-ce que tu fais ?"
+    noam peur "Mara... qu'est-ce que tu fous ?"
 
     "Elle fixe le cache devant l'objectif."
 
@@ -160,7 +160,7 @@ label _21_0_1_1_0_REVEIL:
 
     mara sourire "Tu fais vraiment beaucoup de bruit."
 
-    noam "Va chercher quelqu'un. Appelle Lysa. Appelle Sael. N'importe qui."
+    noam "Va chercher quelqu'un ! Lysa, Sael, j'en sais rien... n'importe qui !"
 
     "Elle se penche brusquement sur moi et plaque sa main sur ma bouche."
 
@@ -261,11 +261,11 @@ label _21_0_1_1_0_REVEIL:
 
     "Je prends une inspiration brutale."
 
-    noam desespoir "Qu'est-ce que vous êtes ?!"
+    noam desespoir "Mais vous êtes quoi, putain ?!"
 
     "Aucune réponse."
 
-    noam "Qu'est-ce que vous voulez ?!"
+    noam "Vous voulez quoi de moi ?!"
 
     $ cam_reset(t=0.20)
     scene bg_infirmerie at adaptive_fullscreen with memory_rip
@@ -287,11 +287,11 @@ label _21_0_1_1_0_REVEIL:
 
     "Il revient vers moi."
 
-    noam desespoir "Mara, détache-moi."
+    noam desespoir "Mara... détache-moi. S'il te plaît."
 
     "Elle me regarde sans bouger."
 
-    noam "Mara, je t'en supplie, détache-moi."
+    noam "Mara, putain, je t'en supplie... détache-moi !"
 
     "Son sourire s'élargit légèrement."
 
@@ -399,7 +399,7 @@ label _21_0_1_1_EPILOGUE:
     show elen joie at left with dissolve
     show iris fatigue at right with dissolve
 
-    elen joie "J'arrive toujours pas à croire qu'on rentre vraiment. J'ai l'impression qu'on va entendre Kami annoncer un nouveau vote au dernier moment juste pour nous faire une mauvaise blague."
+    elen joie "J'arrive toujours pas à croire qu'on rentre vraiment ! J'attends encore que Kami débarque avec un 'surpriiise, dernier vote' juste pour nous emmerder."
 
     iris fatigue "Ne lui donne pas d'idées. Si elle nous rappelle dans cinq minutes, je saute par le hublot."
 
@@ -415,11 +415,11 @@ label _21_0_1_1_EPILOGUE:
     show tomas reflexion at left with dissolve
     show ryn fatigue at right with dissolve
 
-    tomas reflexion "Il va quand même falloir qu'on mette tout ce qui s'est passé par écrit dès qu'on rentre. Les votes, M16, les conduits, les procédures internes de Kami... Si on attend trop longtemps, chacun va finir par raconter une version différente."
+    tomas reflexion "Faudra quand même qu'on mette tout ça par écrit en rentrant. Les votes, M16, les conduits, les règles internes... sinon dans une semaine on aura déjà douze versions différentes."
 
     ryn fatigue "Tu peux faire tes rapports si ça t'amuse. Moi, je veux juste remettre les pieds au sol et dormir une journée entière."
 
-    tomas "Je comprends, mais avec ce qu'on a découvert, je pense vraiment qu'on ne peut pas juste rentrer chez nous et faire comme si rien ne s'était passé."
+    tomas "Je sais, mais... on peut pas juste rentrer, dormir, et faire comme si tout ça avait jamais existé."
 
     ryn "J'ai pas dit ça. J'ai dit que je voulais dormir avant."
 
@@ -447,7 +447,7 @@ label _21_0_1_1_EPILOGUE:
 
     noam sourire "Oui. Pourquoi ?"
 
-    lysa reflexion "Je sais pas. T'as une tête bizarre depuis qu'on est montés."
+    lysa reflexion "J'sais pas. Depuis qu'on est montés, t'as une tête... bizarre."
 
     noam sourire "Une tête bizarre ?"
 
@@ -455,9 +455,9 @@ label _21_0_1_1_EPILOGUE:
 
     "Noam regarde de nouveau par le hublot."
 
-    noam sourire "Je suis juste content de rentrer."
+    noam sourire "J'suis juste content de rentrer, c'est tout."
 
-    lysa blase "Ça, venant de toi après les deux derniers jours, c'est presque inquiétant."
+    lysa blase "Ouais... venant de toi après les deux derniers jours, c'est presque flippant."
 
     noam rire "Tu préfères que je recommence à paniquer ?"
 
