@@ -211,7 +211,7 @@ label _21_0_1_1_0_REVEIL:
 
     "Je ne comprends pas."
 
-    "Je le vois, mais mon cerveau refuse simplement de donner un sens à ce qui est devant moi."
+    "Je le vois. Je sais ce que je regarde. Mais non. Ça n'a aucun sens."
 
     "Même taille."
 
@@ -251,11 +251,11 @@ label _21_0_1_1_0_REVEIL:
 
     "Pas vraiment."
 
-    "Quelque chose dans son visage est trop satisfait."
+    "Il a mon visage."
 
-    "Trop tranquille."
+    "Mais pas mon sourire."
 
-    "Comme s'il attendait ce moment depuis longtemps."
+    "Lui, il a l'air content d'être là."
 
     "Mara retire légèrement sa main."
 
@@ -394,7 +394,7 @@ label _21_0_1_1_EPILOGUE:
 
     "Personne ne parle beaucoup."
 
-    "Après trois semaines passées enfermés dans le Conclave, le simple fait de voir la planète se rapprocher suffit à occuper le silence."
+    "Après trois semaines enfermés dans le Conclave, personne ne semble savoir quoi dire. Alors on regarde juste la Terre se rapprocher."
 
     show elen joie at left with dissolve
     show iris fatigue at right with dissolve
