@@ -221,7 +221,7 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     "Je prends ma lampe et éclaire les batteries de plus près. Le boîtier, les connecteurs, même les bandes orange sur le côté me rappellent immédiatement quelque chose."
 
-    noam inquiet "Elias cherchait exactement ce modèle quand du matériel a disparu de la réserve."
+    noam inquiet "Attends... Elias cherchait exactement ces batteries quand le matos a disparu de la réserve."
 
     mara mefiant "T'es sûr ?"
 
@@ -273,7 +273,7 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     "Je regarde autour de nous. Aucun écran n'est allumé. Aucune lumière ne clignote. Tout semble parfaitement inerte."
 
-    noam reflexion "Cette pièce devait servir à la maintenance sans qu'on ait besoin de faire passer les robots dans les couloirs."
+    noam reflexion "Donc ils doivent réparer les robots ici... sans les faire passer dans les couloirs."
 
     mara mefiant "Donc ils prennent les conduits."
 
@@ -305,7 +305,7 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     "Un léger courant d'air vient de l'intérieur. Plus loin, je distingue une lumière régulière qui passe à travers une autre grille."
 
-    noam "Si ça rejoint le reste du Conclave, on devrait pouvoir comprendre le plan sans aller très loin."
+    noam "Si ça rejoint vraiment le reste du Conclave, on peut peut-être comprendre le plan sans ramper trois kilomètres."
 
     mara "Voilà. Dix minutes. Et après on retourne se coucher comme des gens sains d'esprit."
 
@@ -403,7 +403,7 @@ label _18_0_1_1_RESEAU_CONCLAVE:
 
     "Au loin, j'entends un bourdonnement régulier."
 
-    noam reflexion "On doit approcher d'une autre salle."
+    noam reflexion "On doit être près d'une autre salle."
 
     mara "Tu reconnais le bruit ?"
 
@@ -493,7 +493,7 @@ label _18_0_1_1_ZONE_ETROITE:
 
     "Je m'approche de la trappe. Elle n'a pas de poignée de notre côté, seulement deux petites attaches métalliques."
 
-    noam "Ça s'ouvre probablement depuis l'autre côté."
+    noam "Ça doit s'ouvrir de l'autre côté."
 
     mara "Ou avec ça."
 
@@ -575,7 +575,7 @@ label _18_0_1_1_ZONE_ETROITE:
 
     "Je cherche mes mots."
 
-    noam hesitation "J'aime pas cet endroit."
+    noam hesitation "J'aime pas ça. J'aime vraiment pas ça."
 
     mara taquin "Ça, c'est un diagnostic particulièrement précis."
 
@@ -589,7 +589,7 @@ label _18_0_1_1_ZONE_ETROITE:
 
     mara "Attends deux secondes, au moins laisse-moi regarder si—"
 
-    noam determine "Non. J'ai dit qu'on sortait."
+    noam determine "Non, Mara. J'ai dit qu'on sort."
 
     "Un silence passe."
 
@@ -878,9 +878,9 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     ryn colere "On le sait."
 
-    tomas "Je sais qu'on le sait. Je dis juste qu'à partir d'aujourd'hui, chaque journée compte vraiment."
+    tomas "Je sais. Je dis juste que maintenant... chaque journée qu'on perd, on la récupérera pas."
 
-    nyra reflexion "Et si on reprend les votes sans réponse, on lui montre qu'elle peut simplement attendre qu'on cède."
+    nyra reflexion "Et si on reprend maintenant sans réponse, on lui apprend juste qu'elle a qu'à attendre qu'on cède."
 
     iris "Donc on a le choix entre perdre du temps et perdre du temps autrement. Fantastique."
 
@@ -1024,7 +1024,7 @@ label _18_0_1_1_CHERCHE_ELIAS:
 
     elias "Un passage ?"
 
-    noam "Un réseau de maintenance. Assez grand pour circuler dedans."
+    noam "Un réseau de maintenance. Enfin... un vrai passage. On peut ramper dedans."
 
     elias inquiet "T'es entré ?"
 
@@ -1106,9 +1106,9 @@ label _18_0_1_1_ELIAS_GRILLE:
 
     "Il répond sans hésitation."
 
-    elias "La maintenance où je vais d'habitude est faite pour les portes, les petits systèmes, les outils. Pas pour ces robots."
+    elias "La maintenance où je bosse, c'est les portes, les outils, les petits trucs. Pas ces machins-là."
 
-    noam reflexion "Donc il y a bien des zones auxquelles on n'a jamais eu accès."
+    noam reflexion "Donc y'a bien des zones qu'on nous a jamais montrées."
 
     elias "Ça, on le savait déjà un peu."
 
@@ -1251,7 +1251,7 @@ label _18_0_1_1_APRES_MIDI_CALME:
 
     lysa blase "Tout le monde devient bizarre ici. J'imagine que c'est contagieux."
 
-    noam reflexion "Tu regrettes d'avoir soutenu le boycott ?"
+    noam reflexion "Tu regrettes le boycott ?"
 
     lysa "Non."
 
