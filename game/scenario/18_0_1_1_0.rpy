@@ -733,7 +733,7 @@ label _18_0_1_1_SORTIE_CHAMBRE:
 
     mara reflexion "Donc... résumé."
 
-    noam "Il y a un réseau technique derrière les murs qui relie au moins les chambres, la salle de repos, le stockage et probablement beaucoup d'autres salles."
+    noam "Y'a un réseau entier derrière les murs. Les chambres, la salle de repos, le stockage... et sûrement encore plein d'autres salles."
 
     mara "Avec une pièce pleine de Goumi au milieu."
 
@@ -874,7 +874,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     nyra "Vas-y."
 
-    tomas "Si on maintient le refus de participer jusqu'au jour vingt-et-un, on perd définitivement le prochain vote et probablement toute possibilité d'en organiser un autre avant le départ."
+    tomas "Si on tient jusqu'au jour vingt-et-un, on perd le prochain vote. Et très probablement tout le reste avant le départ."
 
     ryn colere "On le sait."
 
