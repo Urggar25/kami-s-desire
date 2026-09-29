@@ -549,6 +549,7 @@ label _5_0_CHERCHE_SAEL:
 
     noam reflexion "Je me dis que la libre circulation, ce sont aussi des gens de Limen qui pourraient aller ailleurs."
     noam "Des familles séparées qui pourraient se retrouver. Enfin… ce n'est pas seulement une porte ouverte au danger."
+    $ unlock_dossier_arg("p2_familles")
 
     sael desaccord "On en a déjà discuté. C'est une mauvaise idée pour tout un tas de raisons."
     sael triste "Être libre d'aller où on veut, d'accord mais pour quoi faire ? Les gens se détestent."

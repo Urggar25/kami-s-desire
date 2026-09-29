@@ -642,6 +642,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     kami "Oui : libre circulation entre tous les districts."
     kami "Non : les frontières restent fermées comme aujourd’hui."
     $ unlock_codex_page("frontieres_interdistricts", with_notification=False)
+    $ unlock_dossier_arg("p2_formulation")
 
     $ j2_vote_codex_unlocked = True
     $ j45_vote_codex_active = True
@@ -677,6 +678,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     elias reflechit "Ouais, le sujet est chaud, il fera probablement pas l'unanimité. Mais c'est pas inutile."
 
     kael reflechit "À Orbite, le débat ne nous concerne pas vraiment. On a pas vraiment de frontières avec les autres districts nous."
+    $ unlock_dossier_arg("p2_orbite")
 
     ryn sourire "Ah, enfin une proposition qui va dans le bon sens ! Parce que ça fait des années qu’on nous apprend à vivre séparés comme du bétail bien rangé."
     ryn colere "On est des humains putain de merde ! On devrait pouvoir aller partout où on veut !"
@@ -697,6 +699,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     ryn colere "Pff, comment elle pourrait en parler ! Le Mont Kensen, c'est super loin des frontières."
     ryn triste "Actuellement, quand quelqu'un traverse la frontière, il meurt sur le coup."
+    $ unlock_dossier_arg("p2_frontiere_limen")
 
     pause 0.5
 

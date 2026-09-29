@@ -1,6 +1,10 @@
 label _18_0_1_1_0_REVEIL_CHAMBRE:
 
+    $ cafeteria_food_level = "null"
+    $ current_day = 18
     $ current_period = "Nuit"
+    $ noam_has_juliette_drawing = False
+
     scene bg_conduit_reseau at adaptive_fullscreen, haunted_background
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
     $ danger_on()
@@ -199,6 +203,11 @@ label _18_0_1_1_SALLE_ROBOTS:
     $ unlock_gallery_image("bg_cg046")
     $ hideGroup()
     scene bg_cg046 at adaptive_fullscreen with flash_white
+
+    $ investigation_add("salle_goumi")
+    tuto "Inspecte librement la salle. Les éléments majeurs sont nécessaires ; les détails d'ambiance restent optionnels."
+    call investigation_room_run from _call_investigation_room_j18
+    $ investigation_add("mara_exploration", notify=False)
 
     mara surpris "Ah ouais."
 
@@ -1290,7 +1299,8 @@ label _18_0_1_1_APRES_MIDI_CALME:
 
     "Pour la première fois depuis ce matin, je réussis presque à oublier les conduits."
 
-    jump _18_0_1_1_SOIR_CHAMBRE
+    $ hideGroup()
+    call START_FREE_TIME("_18_0_1_1_SOIR_CHAMBRE") from _call_START_FREE_TIME_J18
 
 
 label _18_0_1_1_SOIR_CHAMBRE:

@@ -46,14 +46,15 @@ Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `g
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|
-| Temps libre social | Ouvre la carte sociale, propose les scènes disponibles et fait progresser les liens persistants. | `game/scenario/free_time.rpy` | `call START_FREE_TIME(next_label="_JOUR_SUIVANT")` |
+| Temps libre social | Annonce la phase par un carton animé, ouvre la carte sociale, propose les scènes disponibles et fait progresser les liens persistants. | `game/scenario/free_time.rpy` | `call START_FREE_TIME(next_label="_JOUR_SUIVANT")` |
 | Exploration libre scénarisée | Autorise la visite d'un nombre limité de salles sans personnages ni activités de temps libre. | `game/scenario/free_time.rpy` | `call START_EXPLORATION_LIBRE(next_label="_RETOUR", required_visits=2, allowed_rooms=["archive", "maintenance"], title="Inspection")` |
+| Découvertes quotidiennes d'exploration | Lance une traversée libre vers une destination narrative obligatoire, avec détours et observations possibles dans les salles accessibles sur le chemin. | `game/daily_exploration.rpy`, `game/scenario/free_time.rpy`, `game/scenario/map.rpy` | `call OFFER_DAILY_EXPLORATION("_SUITE", 0, ["archive", "cafeteria", "conclave"], "Rejoindre le vote", "conclave")` |
 | Interaction de lien | Sélectionne et joue la prochaine scène de lien disponible pour un personnage. | `game/scenario/free_time.rpy` | `call FREE_TIME_CHARACTER_INTERACT("lysa")` |
 | Relecture d'un souvenir de lien | Rejoue une mémoire débloquée sans consommer un créneau ni modifier la progression. | `game/scenario/free_time.rpy` | `call REPLAY_CHARACTER_LINK("lysa", 1)` |
 | Navigation par couloirs | Fait circuler le joueur entre couloirs, portes et salles du Conclave. | `game/scenario/map.rpy` | `call CORRIDOR_NAVIGATION(start_corridor="dortoir")` |
 | Carte du Conclave | Ouvre la carte de déplacement manuel et filtre les salles accessibles. | `game/scenario/map.rpy` | `call OPEN_CONCLAVE_MAP` |
-| Salles panoramiques à hotspots | Compose les variantes d'une pièce et expose les zones cliquables définies par ses assets. | `game/scene_backgrounds.rpy` | `use room_scene_background("cafeteria"); use room_scene_interactions("cafeteria")` |
-| Éclairage automatique des décors | Teinte dynamiquement les scènes selon `current_period` sans dupliquer les images. | `game/scene_backgrounds.rpy` | `scene bg_cafeteria at adaptive_fullscreen` |
+| Salles panoramiques à hotspots | Compose les variantes d'une pièce, expose leurs zones cliquables et peut neutraliser les faux calques d'animation comme celui de `chambre3`. | `game/scene_backgrounds.rpy` | `use room_scene_background("cafeteria"); use room_scene_interactions("cafeteria")` |
+| Éclairage automatique des décors | Teinte dynamiquement les scènes et les fonds d'ouverture de porte selon `current_period` sans dupliquer les images. | `game/scene_backgrounds.rpy`, `game/scenario/map.rpy` | `scene bg_cafeteria at adaptive_fullscreen` |
 | Affichage individuel de personnage | Affiche, remplace ou repositionne un sprite en mémorisant expression et position. | `game/script.rpy` | `$ showP("lysa", "blase", 0.72)` |
 | Affichage de groupe | Place automatiquement un groupe de personnages avec entrées/sorties cohérentes. | `game/transform.rpy` | `$ showGroup([("noam", "neutre", 0.25), ("lysa", "blase", 0.75)])` |
 | Caméra cinématique | Déplace et zoome les couches décor/personnages avec restauration de l'état courant. | `game/script.rpy` | `$ cam_move(fx=0.68, fy=0.45, z=1.25, t=0.4)` |
@@ -63,12 +64,18 @@ Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `g
 | Tenue pompom girl d'Iris | Ajoute une tenue de cheerleader complète avec cinq poses de bras détourées sur les textures historiques d'Iris. | `game/images/character/iris/tenue3.png`, `game/images/character/iris/bras_long_corps_tenue3.png`, `game/images.rpy` | `$ unlock_profile_skin("iris", "tenue3")` |
 | Personnages inconnus génériques | Produit des portraits homme/femme inconnus avec expressions composées. | `game/unknown_characters.rpy` | `show expression unknown_expression("female", "neutre") as inconnue` |
 | Choix critique | Présente 2 à 4 décisions majeures dans un HUD adaptatif avec Noam glitché. | `game/critical_choice.rpy` | `menu (screen="critical_choice", noam_expr="hesitation"):` |
-| Statistiques persistantes | Gère niveaux, XP, seuils, gains multiples et cooldown de chargement pour cinq statistiques. | `game/stats_system.rpy` | `$ award_stat_xp("logique", 2)` |
+| Statistiques persistantes | Gère niveaux, XP, seuils, gains multiples et affiche une annonce animée à chaque montée de niveau. | `game/stats_system.rpy` | `$ award_stat_xp("logique", 2)` |
 | Jet de statistique D10 | Lance un D10 contre une difficulté et renvoie réussite ou échec via un écran de résolution. | `game/stats_system.rpy` | `call screen stat_check("logique", 12, "Déchiffrer le protocole Kami")` |
 | Dialogue conditionné par les stats | Affiche des réponses verrouillées selon les stats, joue leur label et attribue l'XP prévue. | `game/stat_dialogues.rpy` | `call play_stat_dialogue("d3")` |
 | Arguments globaux | Débloque un argument de débat de manière persistante et compatible avec les anciennes sauvegardes. | `game/script.rpy` | `$ add_argument("Le coût humain")` |
 | Notification d'argument | Affiche un panneau animé signalant au joueur qu'un argument vient d'être obtenu. | `game/screens.rpy` | `show screen argument_unlock("Le coût humain")` |
 | Dossier de vote | Organise propositions et arguments par chapitre avec progression, jauge et déblocages. | `game/vote_dossier.rpy` | `$ unlock_dossier_arg("id_argument"); show screen vote_dossier` |
+| Frise chronologique des preuves | Présente les faits débloqués sur une table d'enquête filtrable, avec fiches papier illustrées, navigation chronologique, détail des connexions et compatibilité des anciennes sauvegardes. | `game/investigation_system.rpy`, `game/images/hud/investigation/evidence/`, `game/images/hud/investigation/ui/`, `game/images/hud/investigation/dossier_quick_access.png` | `$ investigation_add("photo_lea_disparue"); call investigation_open_dossier` |
+| Analyse vidéo d'enquête | Fournit timeline, lecture, ralenti, image par image et zones inspectables pour les archives de surveillance. | `game/investigation_system.rpy` | `call investigation_video_run("kael_photo", "bg_chambre", False)` |
+| Inspection visuelle d'indice | Permet de zoomer et d'inspecter des zones d'une image jusqu'à identifier un détail narratif requis. | `game/investigation_system.rpy` | `call investigation_image_run("juliette_copy")` |
+| Exploration des conduits | Propose des embranchements courts, cartographie la route et garantit une convergence sans softlock, avec variante de poursuite. | `game/investigation_system.rpy` | `call investigation_conduit_run("survey")` |
+| Inspection de salle | Offre une fouille à hotspots mêlant éléments obligatoires et détails secondaires facultatifs. | `game/investigation_system.rpy` | `call investigation_room_run` |
+| Objection Protocol | Confronte une déclaration à un indice du dossier et distingue contradiction correcte, preuve insuffisante, erreur ou impossibilité. | `game/investigation_system.rpy` | `call objection_protocol_run("Je n'étais pas là.", "mara_exploration", ("conduits_chambres",))` |
 | Vote final animé | Recueille Pour/Abstention/Contre sous chrono puis dépouille les bulletins avec résultat d'amendement. | `game/vote_phase3_final.rpy` | `call vote_phase3_final` |
 | Codex persistant | Débloque des entrées, les regroupe en packs et lie automatiquement les termes des dialogues. | `game/codex.rpy` | `$ unlock_codex_page("id_entree")` |
 | Affinité et profils | Modifie l'affinité, débloque les sections de profil et enregistre les alignements de débat. | `game/systems_profiles_codex.rpy` | `$ add_affinity("lysa", 1)` |
@@ -103,8 +110,8 @@ Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `g
 | Transition contextuelle de jour | Rejoue le carton historique plein écran lorsque Noam s'endort, ou anime seulement le compteur HUD lorsqu'il reste éveillé. | `game/transform.rpy`, `game/day1_ui.rpy` | `call end_day("18", sleeping=True)` |
 | Transition localisée de période | Détecte automatiquement toute modification de `current_period` et anime uniquement le badge HUD en haut à droite. | `game/day1_ui.rpy` | `$ current_period = "Après-midi"` |
 | Carte de chapitre | Affiche pendant cinq secondes le statut et le titre d'un chapitre sur fond noir. | `game/transform.rpy` | `call show_chapter_title("CHAPITRE II", "Les fractures")` |
-| Carton de titre libre | Affiche un titre localisé centré pendant cinq secondes avec alerte Kami. | `game/transform.rpy` | `call show_custom_title("Temps libre")` |
-| HUD jour et période | Affiche un badge sci-fi animé dépendant de `current_day` et `current_period`. | `game/day1_ui.rpy` | `$ current_period = "Soir"; show screen day_period_hud` |
+| Carton de titre libre | Anime l'apparition, la tenue et la disparition d'un titre localisé centré avec alerte Kami. | `game/transform.rpy` | `call show_custom_title("Temps libre")` |
+| HUD jour, période et accès rapides | Affiche un panneau sci-fi compact avec progression du cycle et trois boutons iconographiques vers la tablette, le dossier d'enquête et le menu système. | `game/day1_ui.rpy` | `$ current_period = "Soir"; show screen day_period_hud` |
 | Réveil trouble | Superpose respiration, scan et mise au point selon un niveau d'éveil. | `game/day1_ui.rpy` | `show screen day1_wakeup_overlay(level="heavy")` |
 | Overlay de souvenir | Ajoute teinte violette, vignette et grain filmique autour d'un flashback. | `game/day0_ui.rpy` | `show screen day0_flashback_overlay with d0_flashback_entry` |
 | Diffusion portrait de Kami | Cadre un interlocuteur devant un fond expressif de Kami avec portrait dynamique et chrome broadcast. | `game/transform.rpy` | `scene bg_diffusion_taquin; show screen kami_broadcast_ui; $ bc_show("ryn", "colere"); ryn "Non."; $ bc_hide()` |
@@ -189,7 +196,6 @@ Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `g
 | Sélection des représentants | Écran de sélection et confirmation des représentants. | `game/day0_ui.rpy` | `call screen day0_representative_selection` |
 | Formulaire d'amendement | Interface à cartes pour composer et valider un amendement. | `game/day1_ui.rpy` | `call screen day1_amendment_form` |
 | Confirmation d'urne | Écran de confirmation dramatique avant dépôt du vote. | `game/day1_ui.rpy` | `call screen day1_urn_confirmation` |
-| Panneau brouilleur | Terminal interactif de contrôle du brouilleur de la chambre. | `game/day1_ui.rpy` | `call screen day1_jammer_panel` |
 | Codex | Menu de packs, cartes d'entrée, détails, liens et scènes bonus. | `game/codex.rpy` | `call screen codex_menu` |
 | Profils | Menu des personnages, affinités, histoire, relations et accès à la garde-robe. | `game/systems_profiles_codex.rpy` | `call screen profiles_menu` |
 | Garde-robe | Prévisualise et équipe une tenue et des accessoires pour un profil donné. | `game/systems_profiles_codex.rpy` | `show screen profile_wardrobe("lysa")` |

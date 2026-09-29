@@ -153,6 +153,14 @@ init -2 python:
         if base:
             frames.append(base)
 
+        # chambre3_1 est un ancien calque lumineux transparent, pas une frame
+        # complète. Le jouer comme une animation faisait pulser le cadre et le
+        # brouilleur. La chambre de Noam reste donc volontairement statique.
+        if room_name == "chambre" and stem == "chambre3":
+            result = tuple(frames)
+            _room_frame_paths_cache[cache_key] = result
+            return result
+
         for idx in range(1, 100):
             frame = room_scene_find_asset("%s_%s" % (stem, idx))
             if not frame:
@@ -311,30 +319,19 @@ init -2 python:
         return d
 
     def room_interaction_hover_with_overlays(path, room_name):
-        """Garde les compléments visibles au-dessus de leur texture mère."""
+        """Surligne la cible sans éclairer les calques visuels voisins."""
         overlays = room_scene_visual_overlay_paths(room_name)
-        cache_key = (room_name, path, "hover_with_overlays", overlays)
+        cache_key = (room_name, path, "hover_with_static_overlays", overlays)
         cached = _room_disp_cache.get(cache_key)
         if cached is not None:
             return cached
 
-        if not overlays:
-            result = room_interaction_layer(path, room_name, "hover")
-        else:
-            parts = [
-                (0, 0), room_interaction_layer(path, room_name, "hover"),
-            ]
-            for overlay_path in overlays:
-                parts.extend((
-                    # Les textures filles reçoivent le même hover transparent
-                    # que la mère, sans modifier leur canal alpha.
-                    (0, 0), room_interaction_layer(overlay_path, room_name, "hover"),
-                ))
-            result = LiveComposite(
-                (config.screen_width, config.screen_height),
-                *parts
-            )
+        parts = [(0, 0), room_interaction_layer(path, room_name, "hover")]
+        for overlay_path in overlays:
+            if overlay_path != path:
+                parts.extend(((0, 0), room_interaction_layer(overlay_path, room_name, "art")))
 
+        result = LiveComposite((config.screen_width, config.screen_height), *parts)
         _room_disp_cache[cache_key] = result
         return result
 
@@ -417,7 +414,7 @@ init -2 python:
         return "%s_%s" % (room_scene_stem(room_name), key)
 
     def room_interaction_is_decorative(key):
-        return key.startswith("decor_") or key.startswith("deco_")
+        return key == "brouilleur" or key.startswith("decor_") or key.startswith("deco_")
 
     def repos_distributor_decor_key():
         count = cafeteria_food_visible_count()
@@ -587,10 +584,13 @@ screen room_scene_navigation_band(room_name, direction, xpos_value):
 screen room_scene_interactions(room_name, label_overrides=None):
     $ resolved_label_overrides = label_overrides or {}
 
+    use daily_exploration_hotspot(room_name)
+
     for key, path in room_interaction_files(room_name):
         $ label_name = room_interaction_label(room_name, key)
         $ target_label = resolved_label_overrides.get(label_name, label_name)
-        if room_interaction_is_decorative(key):
+        $ has_scripted_override = label_name in resolved_label_overrides
+        if room_interaction_is_decorative(key) and not has_scripted_override:
             # Déjà intégré au décor dynamique : visible aussi pendant les dialogues.
             null
         elif target_label and renpy.has_label(target_label):

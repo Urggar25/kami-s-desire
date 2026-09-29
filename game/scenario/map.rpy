@@ -186,7 +186,7 @@ init python:
         return Solid("#000")
 
     def door_corridor_background(corridor_key):
-        return Image(corridor_background(corridor_key))
+        return automatic_scene_lighting(Image(corridor_background(corridor_key)))
 
 
 screen conclave_corridor(corridor_key=None):
@@ -322,7 +322,14 @@ screen conclave_corridor(corridor_key=None):
                     size 26
                     color "#A6D8FF"
 
-                if exploration_libre_required_visits > 0:
+                if exploration_libre_destination_room is not None:
+                    text "Destination : [exploration_libre_destination_name()]":
+                        size 20
+                        color "#DCE8F7"
+                    text "Les autres salles restent accessibles sur le chemin.":
+                        size 15
+                        color "#8FA8B8"
+                elif exploration_libre_required_visits > 0:
                     text "Zones visitées : [len(exploration_libre_seen_rooms)]/[exploration_libre_required_visits]":
                         size 20
                         color "#DCE8F7"

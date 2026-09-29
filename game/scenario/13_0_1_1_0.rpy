@@ -1,6 +1,9 @@
 label _13_0_1_1_0_REVEIL_CHAMBRE:
 
     $ cafeteria_food_level = "none"
+    $ current_period = "Matin"
+    $ current_day = 13
+    $ noam_has_juliette_drawing = False
 
     scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
@@ -549,7 +552,11 @@ label _13_0_1_1_DISCUSSION_ECOUTEE:
 
     "Je rebrousse chemin avant que quelqu'un ne tourne au croisement."
 
-    jump _13_0_1_1_CHAMBRE_PAPIER
+    call OFFER_DAILY_EXPLORATION(
+        "_13_0_1_1_CHAMBRE_PAPIER", 2,
+        ["archive", "cafeteria", "observation", "dortoir"],
+        "Retourner mettre les faits en ordre", "dortoir"
+    ) from _call_offer_exploration_j13
 
 label _13_0_1_1_CHAMBRE_PAPIER:
 
@@ -577,11 +584,18 @@ label _13_0_1_1_CHAMBRE_PAPIER:
 
     "Je relis les quatre lignes avant de continuer. Rien de tout ça n'est une impression. Même si je me trompe sur le responsable, ces choses se sont réellement produites."
 
+    $ investigation_add("materiel_technique_manquant", notify=False)
+    $ investigation_add("photo_lea_disparue", notify=False)
+    $ investigation_add("dessin_juliette_disparu", notify=False)
+
     "Dans la seconde colonne, j'écris ce qui reste beaucoup moins clair."
 
     "La silhouette aperçue dans le couloir."
     "Les comportements qui ne correspondent pas toujours à mes souvenirs."
     "Goumi persuadé, pendant quelques secondes, de m'avoir déjà servi ce matin."
+
+    $ investigation_add("silhouette_couloirs", notify=False)
+    $ investigation_add("kami_hors_ligne", notify=False)
 
     "Je m'arrête sur cette dernière ligne."
 
@@ -601,6 +615,8 @@ label _13_0_1_1_CHAMBRE_PAPIER:
     think "Deux objets personnels. Deux représentations de quelqu'un qui compte pour nous."
 
     "Je souligne cette idée une fois. Pas davantage."
+
+    $ investigation_refresh_hypotheses()
 
     think "Ça ne prouve rien."
     think "Mais au moins, c'est un point commun qui existe vraiment."
@@ -625,6 +641,8 @@ label _13_0_1_1_CHAMBRE_PAPIER:
     "Je tourne une première page, puis une deuxième."
     "Ma main s'arrête au milieu du geste."
 
+    $ investigation_add("copie_dessin")
+
     "Je connais ce dessin."
 
     "Pendant une seconde, je crois avoir ouvert la mauvaise page. Puis je comprends que ce n'est pas possible."
@@ -644,6 +662,7 @@ label _13_0_1_1_CHAMBRE_PAPIER:
     "Je reviens au dessin."
 
     call j13_sept_differences_run from _call_j13_sept_differences
+    $ investigation_add("cicatrice_juliette")
 
     think "Quelqu'un est entré ici."
     think "Ou alors quelqu'un l'a pris sans que je m'en rende compte."
@@ -678,5 +697,5 @@ label _13_0_1_1_CHAMBRE_PAPIER:
 
     pause 2.5
 
-    call end_day("14") from _call_end_day_4
+    call end_day("14", sleeping=True) from _call_end_day_4
     jump _14_0_1_1_0_REVEIL_CHAMBRE

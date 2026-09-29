@@ -375,27 +375,6 @@ screen minijeu_halteres():
     key "K_DOWN" action Function(mg_click)
 
 
-screen physique_gain_anim():
-
-    zorder 260
-    modal True
-
-    add Solid("#0008")
-
-    frame at argument_unlock_appear:
-        xalign 0.5
-        yalign 0.5
-        xmaximum 900
-        padding (60, 40)
-        background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
-
-        vbox:
-            spacing 12
-            text "STAT EN HAUSSE" at argument_unlock_pulse size 38 xalign 0.5 color "#be9c36"
-            text "Physique +1" size 48 xalign 0.5 color "#000000"
-
-    timer 2.0 action Hide("physique_gain_anim")
-
 # ------------------------------------------------------------
 # TUTORIEL ANIMÉ — démo de la barre de rythme
 # ------------------------------------------------------------
@@ -517,9 +496,6 @@ label minijeu_halteres_after:
         $ stat_physique = get_stat("physique")
 
     if gained_physique:
-        show screen physique_gain_anim
-        pause 2.0
-        hide screen physique_gain_anim
         "Ta statistique Physique augmente."
     else:
         "Tu sens la fatigue, mais tu sais que ça finit par payer."

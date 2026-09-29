@@ -6,9 +6,10 @@
 
 label _20_0_1_1_0_REVEIL:
 
-    $ day_id = 20
-    $ current_day = 20
+    $ cafeteria_food_level = "null"
     $ current_period = "Matin"
+    $ current_day = 20
+    $ noam_has_juliette_drawing = False
 
     $ unlock_gallery_image("bg_cg040")
     scene bg_cg040 at adaptive_fullscreen
@@ -158,6 +159,8 @@ label _20_0_1_1_0_REVEIL:
     mara colere "Et moi je sais que je suis devant toi, là ! Tu veux que je fasse quoi de plus, que je me pince pour te rassurer ?"
 
     noam "C'est impossible..."
+
+    $ investigation_add("mara_vivante")
 
     ryn desaccord "Noam, regarde-la. Elle est là."
 
@@ -475,6 +478,48 @@ label _20_0_1_1_INFIRMERIE:
     noam colere "Quelqu'un peut venir, bordel ?!"
 
     "Toujours rien." id j20_infirmerie_toujours_rien
+
+    menu:
+        "Rester immobile ou examiner la pièce ?"
+
+        "Balayer l'infirmerie du regard":
+            $ _j20_infirmerie_points = []
+            jump _20_0_1_1_OBSERVER_INFIRMERIE
+
+        "Garder des forces":
+            think "Tirer au hasard ne fera que resserrer les sangles. Je dois attendre une occasion."
+            jump _20_0_1_1_ATTENTE_INFIRMERIE
+
+
+label _20_0_1_1_OBSERVER_INFIRMERIE:
+
+    menu:
+        "Que puis-je atteindre du regard ?"
+
+        "Le moniteur" if "moniteur" not in _j20_infirmerie_points:
+            $ _j20_infirmerie_points.append("moniteur")
+            "Le moniteur derrière mon épaule affiche mon rythme cardiaque, mais une seconde courbe reste figée sous la mienne. Elle porte la même heure de réveil."
+            think "Deux patients enregistrés sur un seul lit. Ou deux versions du même patient."
+            jump _20_0_1_1_OBSERVER_INFIRMERIE
+
+        "Les sangles" if "sangles" not in _j20_infirmerie_points:
+            $ _j20_infirmerie_points.append("sangles")
+            "Je cesse de tirer et suis la sangle jusqu'au bord du lit. La boucle n'est pas médicale : quelqu'un l'a remplacée par une fermeture de caisse, serrée à la main."
+            think "Ce n'est pas un protocole automatique. Quelqu'un a pris le temps de m'attacher."
+            jump _20_0_1_1_OBSERVER_INFIRMERIE
+
+        "La porte" if "porte" not in _j20_infirmerie_points:
+            $ _j20_infirmerie_points.append("porte")
+            "Sous la porte, une ombre coupe brièvement la lumière du couloir. Elle s'arrête lorsque je retiens ma respiration, puis repart sans entrer."
+            noam inquiet "Je sais que vous êtes là."
+            "Les pas ne répondent pas."
+            jump _20_0_1_1_OBSERVER_INFIRMERIE
+
+        "Arrêter d'observer" if len(_j20_infirmerie_points) >= 1:
+            jump _20_0_1_1_ATTENTE_INFIRMERIE
+
+
+label _20_0_1_1_ATTENTE_INFIRMERIE:
 
     "Je ne sais pas combien de temps je reste comme ça. Assez longtemps pour avoir la gorge sèche à force d'appeler, puis assez longtemps encore pour que je finisse par me taire."
 

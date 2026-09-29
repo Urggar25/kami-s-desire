@@ -768,6 +768,8 @@ label _7_1_0_1_ANNONCE_VOTE:
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "La proposition soumise au vote sera la suivante : autoriser les regroupements de plus de vingt personnes, sous réserve d'une demande d'autorisation préalable."
+    $ unlock_dossier_chapter(3)
+    $ unlock_dossier_arg("p3_declaration")
 
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
@@ -807,8 +809,10 @@ label _7_1_0_1_ANNONCE_VOTE:
     ])
 
     ryn determine "Des regroupements autorisés pourraient permettre aux familles séparées de se retrouver et de s'organiser."
+    $ unlock_dossier_arg("p3_familles")
 
     sael mefiant "Ou aux réseaux qui utilisent les cargaisons de recruter plus facilement."
+    $ unlock_dossier_arg("p3_reseaux")
 
     nyra raison "Nous ignorons encore si cette femme appartenait à un réseau."
 

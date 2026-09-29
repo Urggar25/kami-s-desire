@@ -1,6 +1,10 @@
 label _17_0_1_1_0_ANNONCE_KAMI:
 
+    $ cafeteria_food_level = "low"
     $ current_period = "Matin"
+    $ current_day = 17
+    $ noam_has_juliette_drawing = False
+
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.5
 
@@ -786,7 +790,11 @@ label _17_0_1_1_APRES_PROTESTATION:
     "Je quitte la cafétéria avant que la discussion reparte."
 
     $ hideGroup()
-    jump _17_0_1_1_CHAMBRE_BRUIT
+    call OFFER_DAILY_EXPLORATION(
+        "_17_0_1_1_CHAMBRE_BRUIT", 1,
+        ["dortoir", "maintenance", "infirmerie"],
+        "Retourner dans la chambre", "dortoir"
+    ) from _call_offer_exploration_j17
 
 
 label _17_0_1_1_CHAMBRE_BRUIT:
@@ -824,7 +832,6 @@ label _17_0_1_1_CHAMBRE_BRUIT:
 
 
     "Cette fois, je l'entends clairement. Un frottement court, suivi d'un léger choc."
-
     noam inquiet "C'était quoi, ça ?"
 
     "Le bruit vient du mur, près du plafond."
@@ -1148,6 +1155,11 @@ label _17_0_1_1_DANS_VENTILATION:
     scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
     $ flashlight_on()
+
+    $ investigation_add("traces_conduit")
+    tuto "Explore quelques embranchements. La carte se construit au fil de tes choix et aucun détour ne peut te bloquer."
+    call investigation_conduit_run("survey") from _call_investigation_conduit_j17
+    $ investigation_add("conduits_chambres")
 
     # Noam est le point de vue : seul dans le conduit, son sprite reste caché.
     $ showP("mara", "mefiant", 0.72)

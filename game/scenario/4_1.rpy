@@ -281,8 +281,10 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     noam raison "Ryn ne veut pas seulement supprimer une frontière. Il veut surtout que personne ne meure encore en essayant de la franchir."
 
     julian determine "Et il a raison. Les districts ont besoin de pouvoir se rejoindre, travailler ensemble et partager leurs ressources."
+    $ unlock_dossier_arg("p2_cooperation")
 
     lysa blase "Tout ça serait merveilleux si les districts avaient oublié en un an les guerres qu'ils menaient depuis des générations."
+    $ unlock_dossier_arg("p2_guerres")
     lysa reflechit "Ouvrir une frontière ne fait pas disparaître ceux qui attendent de l'autre côté pour reprendre un conflit."
 
     elias reflechit "Elle a pas tort. Kami a arrêté les combats, mais elle a pas effacé la colère des gens."
@@ -339,6 +341,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     nyra raison "On connaît maintenant le principal point de blocage. Il faudra trouver une réponse concrète avant le vote."
 
     tomas hesitation "On pourrait peut-être parler de contrôles aux frontières, ou d'une ouverture progressive... Enfin, si le texte nous le permet."
+    $ unlock_dossier_arg("p2_controles")
 
     iris desaccord "Bravo. Vous avez transformé un débat politique en concours pour savoir qui blesserait Sael le plus vite. Très efficace."
 

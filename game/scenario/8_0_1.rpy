@@ -12,6 +12,8 @@ label _8_1_0_0_CANON:
     play music "music/bgm_calm_not_peace.mp3" fadein 2.5
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
+    $ noam_has_juliette_drawing = False
+
     $ blink()
     pause 1.0
     $ blink()
@@ -73,7 +75,7 @@ screen pnc_chambre_j8():
     for key, path in room_interaction_files("chambre"):
         $ label_name = room_interaction_label("chambre", key)
         $ target_label = j8_targets.get(label_name)
-        if not room_interaction_is_decorative(key) and target_label:
+        if target_label and (not room_interaction_is_decorative(key) or label_name == "chambre3_brouilleur"):
             imagebutton:
                 idle room_interaction_null()
                 hover room_interaction_hover_with_overlays(path, "chambre")
@@ -401,6 +403,15 @@ label _8_0_1_TEMPS_LIBRE_1:
 # LABEL — AMORCE DE LA CRISE
 # ============================================================
 
+transform d8_kael_door_entry:
+    xalign 1.12
+    yalign 1.0
+    alpha 0.0
+    zoom 1.04
+    easeout 0.55 xalign 0.50 alpha 1.0 zoom 1.0
+    linear 0.08 xoffset -18
+    linear 0.08 xoffset 0
+
 label _8_0_1_APRES_MIDI_KAEL_CRISE:
     $ current_period = "Après-midi"
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_295
@@ -435,16 +446,18 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
             noam hesitation "On a tous besoin de rester seuls parfois. Il sait où nous trouver s'il veut parler... Enfin, je suppose."
             ryn hesitation "Peut-être, mais je n'aimais vraiment pas la tête qu'il faisait."
 
-    play sound "sfx/door_slam.mp3" volume 1.2
+    play sound "audio/sfx_door.mp3" volume 1.0
     with hpunch
 
-    $ showGroup([
-        ("lysa",   "choc",    0.12),
-        ("ryn",    "inquiet", 0.28),
-        ("kael",   "colere",  0.50),
-        ("elias",  "choc",    0.72),
-        ("noam",   "inquiet", 0.88),
-    ])
+    $ showP("lysa", "choc", 0.12)
+    $ showP("ryn", "inquiet", 0.28)
+    $ showP("elias", "choc", 0.72)
+    $ showP("noam", "inquiet", 0.88)
+    show kael colere at d8_kael_door_entry zorder 2
+    pause 0.75
+    $ char_pos["kael"] = 0.50
+    $ char_state["kael"] = dict(expr="colere", x=0.50, y=1.0, layer="master", zorder=2)
+    $ group_members = ["lysa", "ryn", "kael", "elias", "noam"]
 
     "La porte claque contre le mur. Kael entre d'un pas brutal, s'arrête au milieu de la pièce et nous dévisage comme s'il cherchait un visage précis parmi nous."
 
@@ -522,11 +535,20 @@ label _8_0_1_APRES_STABILISATION:
 
     elias inquiet "Donc Kael ne s'est pas trompé, et toi non plus. Quelqu'un a fouillé au moins deux chambres. Vous savez de quand ça date ?"
 
+    $ investigation_add("photo_lea_disparue")
+    $ investigation_add("dessin_juliette_disparu")
+    $ investigation_add("materiel_technique_manquant", notify=False)
+    $ investigation_add("cafe_renverse", notify=False)
+    $ investigation_add("livraison_j7", notify=False)
+    $ investigation_add("kami_hors_ligne", notify=False)
+
     noam triste "Je suis persuadé qu'il était encore là hier."
 
     kael effondre "... Mais pourquoi...? Je ne comprends pas..."
 
     noam reflechit "Quelqu'un a peut-être choisi précisément ce qui avait le plus de valeur pour nous ?"
+
+    think "Je devrais garder ces faits séparés du Codex. Pas du lore : une trace de ce qui nous arrive."
 
     call play_stat_dialogue("d8") from _call_stat_dialogue_d8
 

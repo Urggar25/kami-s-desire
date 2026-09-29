@@ -1,6 +1,10 @@
 label _16_0_1_1_0_REVEIL_CHAMBRE:
 
+    $ cafeteria_food_level = "low"
     $ current_period = "Matin"
+    $ current_day = 16
+    $ noam_has_juliette_drawing = False
+
     scene black with dissolve
     play sound "audio/sfx_heartbeat.mp3" fadein 0.8
     pause 1.0
@@ -9,7 +13,6 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
-    show screen day1_wakeup_overlay(level="heavy")
 
     noam panne "..."
 
@@ -25,14 +28,14 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
     noam reflexion "Après ça, je suis parti le chercher..."
 
     "Je me souviens du couloir. Je me souviens de l'avoir aperçu plus loin et de l'avoir appelé. Je me souviens même d'avoir accéléré pour le rattraper."
-    "Et ensuite, rien."
+    "Et ensuite, rien. Plus rien."
 
     noam hesitation "... Non."
 
-    "Je recommence depuis le début, plus lentement, comme si j'avais simplement sauté une étape. La vidéo. Le dessin. Le couloir. Kael."
-    "Rien après."
+    "Je recommence à réflechir depuis le début, plus lentement, comme si j'avais simplement sauté une étape. La vidéo. Le dessin. Le couloir. Kael."
 
-    noam inquiet "Je l'ai trouvé... Je sais que je l'ai trouvé."
+    noam inquiet "Je l'ai trouvé... Je sais que je l'ai trouvé. Je lui ai parlé."
+    think "Mais de quoi ...?"
 
     "J'en suis certain sans réussir à expliquer pourquoi. Il s'est passé quelque chose d'important, quelque chose qui devrait être juste là, à quelques secondes de portée, mais chaque fois que j'essaie de l'attraper, ma tête se vide complètement."
 
@@ -49,7 +52,6 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
     "Je me lève et manque de perdre l'équilibre. En passant devant le miroir, je remarque seulement à quel point j'ai mauvaise mine : les yeux rouges, le visage tiré et cette expression d'idiot qui cherche une réponse sur son propre visage."
 
     noam triste "Qu'est-ce qui s'est passé... ?"
-    hide screen day1_wakeup_overlay with soft_dissolve
 
     play sound "audio/sfx_announce.mp3"
     pause 1.0
@@ -177,7 +179,7 @@ label _16_0_1_1_CAFETERIA_TENSION:
 
     nyra "Je ne sais pas. Il n'a pas voulu me répondre. Quand j'ai essayé de continuer la discussion, il a vérifié deux fois derrière moi avant de refermer sa porte."
 
-    mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Ambiance saine."
+    mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Je l'ai toujours trouvée chelou, mais là de plus en plus."
 
     lysa blase "Je donne encore trois jours avant qu'on commence tous à dormir avec une chaise sous la poignée."
 
@@ -247,83 +249,54 @@ label _16_0_1_1_CORRIDOR_KAEL:
 
     "Je cherche instinctivement ce qui devrait venir après son nom. Une accusation, une question, n'importe quoi. Rien n'arrive assez clairement pour sortir."
 
-    kael fatigue "Alors ?"
-
-    noam hesitation "Alors quoi ?"
-
-    kael inquietude "Tu voulais me parler hier."
-
-    "Mon ventre se noue immédiatement."
-
-    noam inquiet "Oui."
-
-    kael "Tu m'as cherché après la salle d'observation."
-
-    noam reflexion "Je... oui."
-
-    kael fatigue "Pourquoi ?"
+    kael fatigue "Qu'est-ce que tu veux encore ?"
 
     "Je le fixe quelques secondes, déstabilisé par la question."
 
-    noam hesitation "À cause de la vidéo."
+    noam hesitation "Hein ? Je veux te parler de la vidéo."
 
-    kael inquietude "Laquelle ?"
+    kael inquietude "Encore ça ?! Tu veux que je..."
 
-    noam colere "Kael, tu sais très bien laquelle. Celle où on te voit prendre toi-même la photo de Léa. Ta propre photo. Celle dont tu jurais ne pas savoir où elle était passée."
+    noam colere "Putain mais Kael, on te voit prendre ta propre photo. Celle dont tu jurais ne pas savoir où elle était passée."
 
-    "Son regard ne bouge pas, mais sa mâchoire se crispe."
-
-    kael triste "Justement."
-
+    kael colere "Tu crois que je le sais pas ?! Tu crois que je ne m'en rappelle pas ?!"
     kael fatigue "Hier, j'ai quitté la salle parce que je voulais retourner fouiller ma chambre. Tu es resté devant les écrans."
-
-    noam "Oui."
-
-    kael "Après ça, je ne t'ai pas revu."
-
-    noam surpris "Quoi ?"
-
-    kael calme "Je ne t'ai pas revu de la soirée."
+    kael colere "J'ai tout fouillé ! TOUT ! Je ne l'ai pas retrouvé ! Où j'aurais bien pû la mettre hein ?"
+    kael triste "J'y ai passé toute la soirée..."
 
     "Je secoue immédiatement la tête."
 
-    noam desaccord "Non. Je suis parti te chercher."
+    noam desaccord "Quoi ? Tu y as passé toute la soirée. Mais... On était ensemble hier soir !"
 
-    kael "Peut-être. Mais tu n'es jamais venu me parler."
+    "Kael blanchit à vue d'oeil."
 
-    noam colere "Je t'ai trouvé."
+    kael "Qu'est-ce que tu racconte ? J'ai fouillé ma chambre toute la soirée, je ne t'ai pas vu après avoir quitté la salle d'observation."
+
+    noam colere "Pourquoi tu le nies ?!"
 
     kael fatigue "Où ?"
 
     "La question me coupe net. Je sais que je l'ai trouvé. Je pourrais le jurer. Pourtant, dès que j'essaie de replacer un mur, une porte ou même sa position dans le couloir, tout se dérobe."
 
-    noam panne "..."
+    kael inquietude "Où est-ce que tu m'as vu, Noam ?"
 
-    kael inquietude "Où, Noam ?"
-
-    noam colere "J'en sais rien !"
+    noam colere "J'en sais rien ! C'était... C'était dans le couloir je crois !"
 
     "Ma voix résonne dans le couloir. Kael jette immédiatement un regard vers les caméras au-dessus de nous, puis fait un pas plus près."
 
     kael fatigue "Baisse d'un ton."
 
-    noam colere "Me demande pas de baisser d'un ton alors que tu viens de me dire que la moitié de ce dont je suis sûr n'est jamais arrivée !"
+    noam colere "Me demande pas de baisser d'un ton alors que tu viens de me dire que tu ne m'as pas vu alors qu'on s'est reparlé hier soir !"
+    noam triste "Putain, ça colle pas !"
 
-    kael triste "Je te dis seulement ce que je sais."
+    kael triste "Je te dis seulement ce dont je me rappelle."
 
-    noam "Je me rappelle avoir vu l'enregistrement de ma chambre. Je me rappelle t'avoir vu prendre le dessin de Juliette. Je me rappelle être sorti pour te chercher. Je me rappelle t'avoir trouvé..."
+    noam colere "J'ai regardé l'enregistrement de ma chambre. Tu étais dessus Kael, c'est toi qui a pris le dessin de Juliette !"
+    noam reflechit "Je me rappelle être sorti pour te chercher. Je me rappelle t'avoir trouvé..."
 
     "Je m'arrête. Les derniers mots ont plus de mal à sortir."
 
-    noam inquiet "Et après..."
-
-    kael inquietude "Après quoi ?"
-
-    noam panne "..."
-
-    kael "Noam ?"
-
-    noam colere "Après, j'ai rien."
+    noam inquiet "Et après... Plus rien, je n'ai plus aucun souvenir de ce qu'il s'est passé après ça !"
 
     "Le silence change immédiatement entre nous. Kael ne semble pas soulagé. Au contraire, il recule légèrement et son regard devient plus méfiant."
 
@@ -331,106 +304,72 @@ label _16_0_1_1_CORRIDOR_KAEL:
 
     noam desaccord "Je me suis réveillé ce matin dans ma chambre. Je sais même pas comment je suis rentré."
 
-    kael inquietude "Et tu n'as rien dit aux autres ?"
+    kael fatigue "On ne sait même pas ce qui s'est passé. Et vu ce qu'on a découvert hier... Tu avais raison, vaut mieux pas en parler aux autres."
 
-    noam "Non."
+    noam desaccord "Quel rapport avec les autres ?"
 
-    kael calme "Bien."
+    kael "Si je comprends, on a vu une vidéo de moi volant la photo de ma propre sœur sans que j'en garde le moindre souvenir, puis une autre vidéo où j'entre dans ta chambre pour prendre le dessin de la tienne."
+    kael triste "Pour l'instant, je me méfie de tout."
 
-    noam colere "Bien ?!"
-
-    kael fatigue "Oui, bien. Parce qu'on ne sait pas ce qui s'est passé. Et vu ce qu'on a découvert hier, raconter à toute la station que ta mémoire s'arrête au moment où tu venais me chercher serait une excellente manière de me désigner comme coupable avant même d'avoir compris quoi que ce soit."
-
-    noam desaccord "Tu crois vraiment que c'est ça qui me préoccupe ?"
-
-    kael "Je crois que depuis hier, on a vu une vidéo de moi volant la photo de ma propre sœur sans que j'en garde le moindre souvenir, puis une autre vidéo où j'entre dans ta chambre pour prendre le dessin de la tienne."
-
-    kael triste "Alors oui. Pour l'instant, je me méfie de tout le monde. De toi aussi."
-
-    noam surpris "De moi ?"
+    noam surpris "Hein ? De moi ?!"
 
     kael fatigue "Tu viens de m'apprendre que tu as passé une partie de la soirée à me chercher et que tu ne te rappelles plus de ce qui s'est passé après m'avoir trouvé. Tu veux vraiment que je fasse comme si ça ne me posait aucune question ?"
+    kael reflexion "Ou du moins, de notre mémoire. Avec ce qu'on a vu hier, je ne fais plus confiance à mes souvenirs."
 
     "La remarque me met en colère, surtout parce que je n'arrive pas à lui répondre honnêtement."
 
-    noam desaccord "Je ne t'ai rien fait."
-
-    kael calme "Tu n'en sais rien."
-
-    "Je reste figé."
-
-    noam colere "Fais attention."
-
     kael fatigue "Je ne t'accuse pas. J'essaie de te faire comprendre le problème. Hier encore, moi non plus je ne pensais pas avoir fait quoi que ce soit."
-
-    "Je détourne les yeux. Les deux vidéos me reviennent, parfaitement nettes, elles."
-
-    kael inquietude "Il y a autre chose."
+    kael "Et... Disons que j'ai mes raisons de croire qu'il y a un problème bien plus grave."
 
     noam "Quoi encore ?"
 
-    kael "Le vote d'hier nous a donné accès à plus d'informations qu'avant. Pas à tout, mais suffisamment pour consulter certaines données qui nous concernent directement."
+    kael "Le vote d'hier a été validé, beaucoup plus d'informations sont accessibles. Pas tout, mais suffisamment pour consulter certaines données qui nous concernent directement."
 
-    noam reflexion "Quel genre de données ?"
+    "Je le regarde, je ne comprends pas où il veut en venir."
 
-    kael fatigue "Ton dossier médical."
+    kael fatigue "Je te conseille d'aller consulter ton dossier médical. Je..."
 
-    noam surpris "Depuis quand j'ai un dossier médical ici ?"
+    noam surpris "Depuis quand j'ai un dossier médical ici ?!"
 
-    kael "Depuis qu'on est arrivés, j'imagine. Sael tient forcément un suivi, et le système enregistre plus de choses qu'on ne le pense."
+    kael "Aucune idée, depuis qu'on est arrivés, j'imagine. J'ai vu qu'il était accessible en fouillant dans la salle des archives, alors... J'ai regardé."
 
-    noam inquiet "Tu as regardé le tien ?"
+    "Il hésite à continuer. Son regard repart vers la caméra, puis revient sur moi."
 
-    kael "Oui."
-
-    noam "Et ?"
-
-    "Il hésite. Son regard repart vers la caméra, puis revient sur moi."
-
-    kael fatigue "Il y a une mention que je ne comprends pas."
-
-    noam "Laquelle ?"
-
-    kael calme "Va voir la tienne."
-
-    noam colere "Kael..."
-
-    kael fatigue "Je suis sérieux. Je veux pas te souffler ce que j'ai lu avant que tu regardes toi-même. Si tu trouves rien, tant mieux. Si tu trouves la même chose... on parlera."
+    kael fatigue "Il y a une mention que je ne comprends pas. Mais ça ne sert à rien de trop t'en dire. Va voir par toi-même."
+    kael fatigue "Je suis sérieux. Je veux pas te souffler ce que j'ai lu avant que tu regardes toi-même. Si tu trouves rien, tant mieux. Si tu trouves la même chose... Alors c'est sans doute plus grave que ce qu'on imagine."
 
     "Je n'aime pas la manière dont il dit ça. Encore moins la peur qu'il essaie visiblement de cacher derrière son calme."
 
     noam inquiet "Et tu comptes faire quoi, toi ?"
 
-    kael "Retourner dans ma chambre."
-
-    noam "Pour te barricader ?"
-
-    kael fatigue "Pour éviter que quelqu'un entre pendant que je dors."
+    kael "Retourner dans ma chambre. J'ai vraiment envie de croiser personne."
 
     noam desaccord "Nyra nous a dit que tu agissais bizarrement."
 
-    kael "Nyra peut penser ce qu'elle veut. Hier, j'ai regardé mon propre visage faire quelque chose dont je ne me souviens pas. Aujourd'hui, tu viens me dire que tu as perdu la fin de ta soirée après m'avoir cherché."
-
-    kael triste "Si ça te paraît pas suffisant pour devenir un peu parano, tant mieux pour toi."
+    kael "Parce que tu crois que je peux faire comme si de rien n'était après avoir vu la vidéo d'hier ?!"
+    kael colere "C'est impossible. J'ai trop de questions en tête et aucune réponse !"
 
     "Il me contourne sans attendre de réponse."
 
-    noam "Kael."
+    noam "Kael. Attends."
 
     "Il s'arrête sans se retourner."
 
     noam hesitation "Hier... tu es sûr que je ne suis jamais venu te parler ?"
 
-    kael fatigue "Sûr."
+    kael fatigue "Si j'en crois mes souvenirs, je suis sûr. Mais je ne les crois plus, alors je ne sais pas."
 
     "Il repart vers les dortoirs. Je le regarde s'éloigner jusqu'à ce qu'il disparaisse au prochain croisement."
 
-    think "Mon dossier médical."
-
+    think "Mon dossier médical, il est dans la salle des archives, c'est ça ?"
     "Je n'ai aucune envie d'aller fouiller là-dedans. Ce qui suffit largement à me convaincre que je dois le faire."
 
     $ hideGroup()
-    jump _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER
+    call OFFER_DAILY_EXPLORATION(
+        "_16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER", 2,
+        ["archive", "cafeteria", "maintenance"],
+        "Rejoindre les archives", "archive"
+    ) from _call_offer_exploration_j16
 
 
 label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
@@ -438,7 +377,7 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
     $ current_period = "Après-midi"
 
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_101
-    scene bg_archive at adaptive_fullscreen, living_background with dissolve
+    scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
     "Les Archives sont presque vides à cette heure-ci. Je croise seulement deux terminaux allumés au fond de la salle et personne devant les rayonnages principaux."
@@ -446,14 +385,12 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     play sound sfx_beep
 
-    "Je dois fouiller quelques menus avant de trouver la partie médicale. Visiblement, l'accès est récent : plusieurs catégories portent encore la mention « consultation autorisée depuis le dernier amendement »."
+    "Je dois fouiller quelques menus avant de trouver la partie médicale. Visiblement, l'accès semble récent."
 
     noam reflexion "Donc Kael disait vrai..."
 
     "Je sélectionne mon nom."
-
     "Le dossier est beaucoup plus banal que ce que j'imaginais. Groupe sanguin, allergies, examens à l'arrivée, anciennes blessures, passages à l'infirmerie... Je descends rapidement jusqu'aux dernières lignes."
-
     "Une référence que je ne connais pas apparaît entre deux entrées."
 
     noam inquiet "M16... ?"
@@ -463,12 +400,11 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
     noam desaccord "Évidemment."
 
     "J'essaie une recherche interne. Aucun résultat. Une seconde. Toujours rien."
-
     "Un bruit de pages qu'on tourne me fait lever la tête. Cette fois, ce n'est pas un terminal. Quelqu'un fouille réellement dans les rayonnages derrière moi."
 
-    noam inquiet "Tomas ?"
+    noam inquiet "Tomas ? C'est toi ?"
 
-    sael neutre "Non."
+    sael neutre "Non, désolée de te décevoir."
 
     "Sael apparaît au bout de l'allée avec trois ouvrages coincés sous le bras. Elle pose le premier sur une table, l'ouvre presque au milieu et recommence à parcourir l'index."
 
@@ -477,7 +413,7 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
         ("sael", "reflechit", 0.64),
     ])
 
-    noam surpris "Qu'est-ce que tu fais ?"
+    noam surpris "Qu'est-ce que tu fais ici à cette heure-là ?"
 
     sael reflechit "Je cherche une référence."
 
@@ -489,100 +425,73 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     "Je tourne immédiatement la tête vers mon écran."
 
-    noam inquiet "Comment tu connais ça ?"
+    noam inquiet "Où as-tu entendu parler de ce truc ?"
 
     "Sael relève enfin les yeux vers moi."
 
-    sael mefiant "Pourquoi ?"
+    sael mefiant "Pourquoi, tu sais ce que c'est ?"
 
-    noam "Parce que je viens de le trouver dans mon dossier."
+    noam "Non, je viens de le trouver dans mon dossier médical."
 
     "Son expression change à peine, mais elle referme lentement le livre qu'elle tenait."
 
     sael neutre "Moi aussi."
 
-    noam surpris "Dans ton dossier médical ?"
+    noam "Hein ? Depuis quand tu sais qu'on peut les consulter ?"
 
-    sael "Oui."
-
-    noam "Depuis quand tu sais qu'on peut les consulter ?"
-
-    sael raison "Depuis ce matin. Je cherchais une ancienne fiche de soins dans le système. Le menu n'était pas là avant."
-
-    noam reflexion "Les autres sont au courant ?"
-
-    sael "Non."
-
-    noam "Pourquoi tu leur as rien dit ?"
-
-    sael mefiant "Parce que je ne savais pas encore ce que j'avais trouvé."
+    sael raison "Depuis ce matin. Je cherchais une ancienne fiche de soins dans le système. Le menu n'était pas là avant alors j'ai cliqué par curiosité."
+    sael mefiant "J'essaye de trouver à quoi ça correspond depuis ce matin. Y'a rien sur internet, alors je regarde dans les archives papiers."
+    sael reflechit "Je me suis dis que ça devait avoir un lien avec le médical, alors j'ai été cherché quelques bouquants dans l'infirmerie directement."
 
     "Elle prend le deuxième ouvrage, beaucoup plus épais, et l'ouvre à une série d'abréviations médicales."
 
     sael "Les vieux protocoles ont parfois été archivés sur papier. Les systèmes changent. Les livres restent."
 
-    noam "Et tu penses que M16 est là-dedans ?"
+    noam "Et tu penses que l'abréviation est là-dedans ?"
 
-    sael "Je pense que si quelqu'un a pris la peine de laisser un code sans explication dans nos dossiers, je préfère chercher l'explication ailleurs que sur le même écran."
+    sael "Elle doit bien être quelque part. On ne note pas un truc dans un dossier médical sans pouvoir retrouver ce que c'est."
 
     "Je m'approche de la table. Pour la première fois depuis mon réveil, ma frustration laisse place à quelque chose de plus froid."
 
-    noam inquiet "Kael a la même mention."
+    noam inquiet "En tout cas on est plusieurs à l'avoir. Donc ça doit être un point commune. Kael aussi l'a sans doute."
 
     "Sael s'arrête une fraction de seconde."
 
-    sael mefiant "Tu as vu son dossier ?"
+    sael mefiant "Tu as vu son dossier ? Comment tu as fais ? Ils sont bloqu..."
 
-    noam "Non. Il me l'a dit."
+    noam "Non. C'est lui qui m'a dit de regarder mon dossier. J'ai pas tout compris mais il semblait avoir trouvé un truc bizarre dedans."
+    noam reflechit "Alors ça doit être ça..."
 
-    sael "Alors ça fait trois."
-
-    noam "Tu crois que ça veut dire quoi ?"
-
-    sael "Si je le savais, je ne serais pas en train de chercher."
+    sael "Donc ça fait trois. Raaah, faut vraiment trouver ce que ça veut dire !"
 
     "Elle tourne encore quelques pages. Une première fois trop vite, puis elle revient en arrière."
 
-    sael reflechit "Attends."
+    sael reflechit "Oh ! Attends."
 
     "Son doigt reste posé sur une ligne."
 
     noam inquiet "Tu as trouvé ?"
 
     "Sael ne répond pas immédiatement. Elle relit le passage une deuxième fois, puis pousse le livre vers moi."
-
     "Au milieu d'une liste de procédures anciennes, une seule ligne correspond au code de mon dossier."
 
     $ unlock_gallery_image("bg_cg042")
+    $ investigation_add("m16")
     $ hideGroup()
     scene bg_cg042 at adaptive_fullscreen with memory_rip
     $ cam_move(fx=0.50, fy=0.70, z=1.10, t=5.5)
     $ horror_music_slow(fadeout=0.35, fadein=0.75)
 
-
     "Je reste à la regarder quelques secondes sans comprendre ce que les mots viennent réellement de dire."
-
-    noam panne "..."
-
-    sael neutre "Mémoire."
-
-    noam desaccord "Je sais."
-
     "Ma voix est plus basse que je ne le voudrais. Je relis la ligne, puis encore une fois, comme si elle pouvait finir par changer."
 
-    noam inquiet "Accès... ça peut vouloir dire plein de choses. Une consultation, un test, une extraction de données..."
-
-    sael raison "Peut-être."
-
-    noam "Il n'y a rien d'autre ?"
+    noam inquiet "Qu'est-ce que ça veut dire ...?"
 
     "Sael tourne la page. La suivante a été arrachée proprement au ras de la reliure."
 
-    "On se regarde."
-
     noam inquiet "C'est une blague ?"
 
-    sael mefiant "Non."
+    sael mefiant "Visiblement, on a le droit d'en savoir un peu, mais pas trop quand même..."
 
     "Je reprends le livre et vérifie moi-même, comme si elle pouvait avoir raté quelque chose. Il ne reste qu'un morceau de papier au niveau de la couture."
 
@@ -597,41 +506,7 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     "Je repense à mon réveil. Au couloir. À Kael que je suis certain d'avoir retrouvé sans être capable de me rappeler un seul mot après ça."
 
-    noam peur "Sael..."
-
-    sael "Quoi ?"
-
-    noam "Moi, j'ai perdu la fin de ma soirée. Complètement."
-
-    "Pour la première fois depuis qu'elle est apparue entre les rayonnages, Sael cesse de fouiller."
-
-    sael inquiet "Depuis quand ?"
-
-    noam "Après être parti chercher Kael. Je sais que je l'ai trouvé, mais après ça... rien. Je me suis juste réveillé dans ma chambre ce matin."
-
-    "Elle baisse les yeux vers la ligne M16."
-
-    sael mefiant "Et Kael ?"
-
-    noam "Il dit qu'il ne m'a jamais revu hier soir."
-
-    "Le silence qui suit est beaucoup trop long."
-
-    noam inquiet "Toi aussi, tu as M16 dans ton dossier. Il te manque quelque chose ?"
-
-    "Sael relève lentement les yeux."
-
-    sael neutre "Non."
-
-    noam surpris "Quoi ?"
-
-    sael "Je me souviens d'hier. Du matin jusqu'au moment où je me suis couchée."
-
-    "Mon regard retourne vers le livre."
-
-    noam peur "Alors pourquoi tu as ça dans ton dossier ?"
-
-    sael mefiant "C'est justement la question."
+    sael inquiet "Mais... Qu'est-ce que ça veut dire ?"
 
     $ horror_audio_cut(duration=0.34, restore_volume=0.72)
     play sound "audio/sfx_glitch.mp3" volume 0.7
@@ -639,31 +514,10 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     "Le terminal derrière nous émet soudain un grésillement. Quand je me retourne, mon dossier est toujours ouvert, mais la ligne M16 n'est plus visible à l'écran."
 
-    noam inquiet "... Elle était là."
+    sael mefiant "Pourquoi diable il y a écrit Accès mnésique ?!"
+    sael colere "Qu'est-ce que c'est sensé vouloir dire..."
 
-    sael "Je sais."
-
-    "Je rafraîchis la page. Rien. Je ferme le dossier, le rouvre, descends jusqu'au même endroit. La référence a disparu."
-
-    noam colere "Non, non..."
-
-    sael mefiant "Arrête."
-
-    noam "Je viens de la voir !"
-
-    sael "Moi aussi."
-
-    "Elle referme le livre devant nous et garde une main posée dessus."
-
-    sael neutre "Donc maintenant, on sait deux choses."
-
-    noam inquiet "Lesquelles ?"
-
-    sael "Ton souvenir s'arrête. Mon dossier porte le même code que le tien alors que je ne sens aucun trou."
-
-    "Elle jette un regard vers le terminal où toute trace de M16 vient de disparaître."
-
-    sael mefiant "Et quelqu'un ne veut pas qu'on regarde ça trop longtemps."
+    noam colere "Qu'on nous a trifouillé la mémoire !"
 
     $ hideGroup()
     scene black with dissolve

@@ -357,13 +357,22 @@ label end_day(next_day, sleeping=False):
         $ day_counter_transition_active = False
     return
 
+transform custom_title_card_anim:
+    alpha 0.0
+    yoffset 24
+    zoom 0.96
+    easeout 0.65 alpha 1.0 yoffset 0 zoom 1.0
+    pause 3.2
+    easein 0.75 alpha 0.0 yoffset -18 zoom 1.03
+
+
 label show_custom_title(title_text="Temps libre"):
 
     play sound "audio/sfx_kami_alert.wav"
-    scene black
+    scene black with Dissolve(0.35)
     $ translated_title_text = kd_tr(title_text)
-    show expression Text(translated_title_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf") as custom_title_card at truecenter
-    pause 5.0
+    show expression Text(translated_title_text, size=84, color="#FFFFFF", font="fonts/day_font.ttf", outlines=[(2, "#5CD3FF55", 0, 0)]) as custom_title_card at truecenter, custom_title_card_anim
+    pause 4.6
     hide custom_title_card
     return
 
@@ -401,60 +410,6 @@ screen day_transition(day_label):
                 xalign 0.5
 
 
-screen free_time_transition():
-
-    modal True
-    zorder 100
-
-    add Solid("#000")
-
-    timer 5.0 action Hide("free_time_transition")
-
-    frame:
-        background None
-        xalign 0.5
-        yalign 0.5
-
-        vbox at day_fade_5s:
-            spacing 12
-            xalign 0.5
-
-            text "Temps libre":
-                size 84
-                color "#FFFFFF"
-                font "fonts/day_font.ttf"
-                xalign 0.5
-
-            add Solid("#FFFFFF", xysize=(600, 2)):
-                xalign 0.5
-
-screen custom_title(title_text="Temps libre"):
-
-    modal True
-    zorder 100
-
-    add Solid("#000")
-
-    timer 5.0 action Hide("custom_title")
-
-    frame:
-        background None
-        xalign 0.5
-        yalign 0.5
-
-        vbox at day_fade_5s:
-            spacing 12
-            xalign 0.5
-
-            text title_text:
-                size 84
-                color "#FFFFFF"
-                font "fonts/day_font.ttf"
-                xalign 0.5
-
-            add Solid("#FFFFFF", xysize=(600, 2)):
-                xalign 0.5
-                
 # -----------------------------------
 # Ecran pour Kami quand il parle :
 

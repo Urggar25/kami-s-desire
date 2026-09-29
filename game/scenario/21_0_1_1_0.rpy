@@ -5,9 +5,10 @@
 
 label _21_0_1_1_0_REVEIL:
 
-    $ day_id = 21
-    $ current_day = 21
+    $ cafeteria_food_level = "null"
     $ current_period = "Nuit"
+    $ current_day = 21
+    $ noam_has_juliette_drawing = False
 
     scene black
     play music "audio/music/bgm_horror_pulse.mp3" fadein 1.5

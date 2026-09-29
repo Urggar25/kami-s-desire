@@ -47,6 +47,13 @@ init python:
         "day4_tray_pnc",
     )
 
+    DAY_PERIOD_HUD_BLOCKING_SCREENS = (
+        "tablet_home",
+        "tablet_stats",
+        "vote_dossier",
+        "investigation_dossier",
+    )
+
     def day_period_hud_is_pnc_active():
         for screen_name in DAY_PERIOD_HUD_PNC_SCREENS:
             if renpy.get_screen(screen_name):
@@ -62,6 +69,9 @@ init python:
             return False
         if day_period_hud_is_pnc_active():
             return False
+        for screen_name in DAY_PERIOD_HUD_BLOCKING_SCREENS:
+            if renpy.get_screen(screen_name):
+                return False
         return True
 
     if "day_period_hud" not in config.overlay_screens:
@@ -74,6 +84,16 @@ init python:
         if "soir" in p:                         return "#E86A45"   # ambre couchant
         if "nuit" in p:                         return "#8C6BFF"   # violet nuit
         return "#5CD3FF"
+
+    def _hud_period_step(p):
+        p = (p or "").lower()
+        if "nuit" in p:
+            return 4
+        if "soir" in p:
+            return 3
+        if "midi" in p or "après" in p or "apres" in p:
+            return 2
+        return 1
 
     def _day_period_hud_watch():
         """Anime automatiquement toute modification directe de current_period."""
@@ -233,7 +253,7 @@ screen day_counter_transition(old_day, new_day):
         add Solid("#5CD3FF66") xpos 0 ypos 147 xsize 430 ysize 3
         add Solid("#5CD3FF88") xpos 0 ypos 0 xsize 3 ysize 150
 
-        text "DAY":
+        text "JOUR":
             xpos 28 ypos 24
             size 20 color "#5CD3FF"
             font "fonts/Rajdhani-SemiBold.ttf" kerning 6
@@ -292,7 +312,7 @@ screen day_period_transition(old_period, new_period):
             font "fonts/Rajdhani-SemiBold.ttf" kerning 2
             outlines [(2, _new_acc + "AA", 0, 0)]
 
-        text "DAY %03d" % current_day:
+        text "JOUR %03d" % current_day:
             xpos 30 ypos 112
             size 18 color _new_acc
             font "fonts/day_font.ttf" kerning 2
@@ -323,58 +343,118 @@ screen day_period_hud_content():
     zorder 65
 
     $ _acc = _hud_accent(current_period)
+    $ _period_step = _hud_period_step(current_period)
+
+    key "K_t" action Show("tablet_home")
 
     fixed at hud_appear:
-        xalign 0.995
-        yalign 0.028
-        xysize (430, 150)
+        xalign 0.992
+        yalign 0.018
+        xysize (330, 174)
 
-        # ---- Fond + cadre ----
-        add Solid("#06090DDD") xpos 0 ypos 0 xsize 430 ysize 150
-        add Solid("#5CD3FF")   xpos 0 ypos 0 xsize 430 ysize 2      # barre top
-        add Solid("#5CD3FF33") xpos 0 ypos 148 xsize 430 ysize 2    # barre bottom
-        add Solid("#5CD3FF55") xpos 0 ypos 0 xsize 2 ysize 150      # barre gauche
-        # coins (brackets)
-        add Solid("#5CD3FF") xpos 0 ypos 0 xsize 26 ysize 2
-        add Solid("#5CD3FF") xpos 404 ypos 148 xsize 26 ysize 2
-
-        # ---- Bloc texte gauche ----
-        text "DAY":
-            xpos 28 ypos 32
-            size 20 color "#5CD3FF"
-            font "fonts/Rajdhani-SemiBold.ttf" kerning 6
-
-        text "%03d" % current_day:
-            xpos 28 ypos 40
-            size 64 color "#D6E8F0"
-            font "fonts/day_font.ttf"
-            outlines [(1, "#5CD3FF88", 0, 0)]
-            offset (66, 0)
-
-        # soulignement
-        add Solid("#5CD3FF") xpos 30 ypos 116 xsize 170 ysize 2
-        add Solid(_acc)      xpos 30 ypos 116 xsize 50  ysize 2
-
-        text current_period at hud_period_blink:
-            xpos 30 ypos 120
-            size 22 color _acc
-            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-
-        # ligne de liaison texte -> cercle
-        add Solid("#5CD3FF66") xpos 208 ypos 72 xsize 44 ysize 1
-
-        # ---- Assemblage cercle animé (droite) ----
+        # ---- Panneau principal ----
         fixed:
-            xpos 268 ypos -5
-            xysize (160, 160)
+            xysize (330, 118)
 
-            add "images/hud/glow.png"       at hud_pulse(0.30, 0.34)     xpos 0.5 ypos 0.5
-            add "images/hud/ring_ticks.png" at hud_spin_cw(24.0, 0.264)  xpos 0.5 ypos 0.5
-            add "images/hud/scan_arc.png"   at hud_scan(5.0, 0.264)      xpos 0.5 ypos 0.5
-            add "images/hud/ring_thin.png"  at hud_spin_ccw(38.0, 0.287) xpos 0.5 ypos 0.5
-            add "images/hud/ring_dashed.png" at hud_spin_ccw(20.0, 0.19) xpos 0.5 ypos 0.5
-            add "images/hud/core_dot.png"   at hud_static(0.55)          xpos 0.5 ypos 0.5
-            add "images/hud/sun_icon.png"   at hud_sun_breathe           xpos 0.5 ypos 0.5
+            add Solid("#030912D8") xpos 0 ypos 0 xsize 330 ysize 118
+            add Solid("#0B2030A8") xpos 6 ypos 6 xsize 318 ysize 106
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 330 ysize 2
+            add Solid("#5CD3FF44") xpos 0 ypos 116 xsize 330 ysize 2
+            add Solid("#5CD3FF77") xpos 0 ypos 0 xsize 2 ysize 118
+            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 24 ysize 5
+            add Solid("#5CD3FF") xpos 306 ypos 113 xsize 24 ysize 5
+
+            # ---- Bloc jour / période ----
+            text "JOUR":
+                xpos 17 ypos 13
+                size 12 color "#82DFFF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+
+            text "%03d" % current_day:
+                xpos 16 ypos 29
+                size 48 color "#F1FBFF"
+                font "fonts/day_font.ttf"
+                outlines [(1, "#5CD3FF77", 0, 0)]
+
+            add Solid("#5CD3FF33") xpos 102 ypos 17 xsize 1 ysize 84
+
+            hbox:
+                xpos 118 ypos 69
+                spacing 3
+                for _segment in range(1, 5):
+                    add Solid(_acc if _segment <= _period_step else "#183446") xsize 20 ysize 3
+
+            text current_period.upper() at hud_period_blink:
+                xpos 117 ypos 40
+                size 17 color _acc
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            # ---- Cadran horaire animé ----
+            fixed:
+                xpos 220 ypos 2
+                xysize (106, 112)
+
+                add "images/hud/glow.png" at hud_pulse(0.19, 0.22) xpos 0.5 ypos 0.5
+                add Transform("images/hud/ring_ticks.png", matrixcolor=TintMatrix(_acc)) at hud_spin_cw(24.0, 0.17) xpos 0.5 ypos 0.5
+                add Transform("images/hud/scan_arc.png", matrixcolor=TintMatrix(_acc)) at hud_scan(5.0, 0.17) xpos 0.5 ypos 0.5
+                add "images/hud/ring_thin.png" at hud_spin_ccw(38.0, 0.185) xpos 0.5 ypos 0.5
+                add "images/hud/ring_dashed.png" at hud_spin_ccw(20.0, 0.125) xpos 0.5 ypos 0.5
+                add Transform("images/hud/core_dot.png", matrixcolor=TintMatrix(_acc)) at hud_static(0.35) xpos 0.5 ypos 0.5
+                add Transform("images/hud/sun_icon.png", matrixcolor=TintMatrix(_acc)) at hud_static(0.17) xpos 0.5 ypos 0.5
+
+        # ---- Accès rapides ----
+        hbox:
+            xalign 1.0
+            ypos 126
+            spacing 6
+
+            use day_period_hud_action_button("tablet", Show("tablet_home"), True)
+            use day_period_hud_action_button("dossier", [Function(investigation_sync_legacy_save), Show("investigation_dossier", persistent_access=True)], investigation_story_available())
+            use day_period_hud_action_button("menu", ShowMenu("system_menu"), True)
+
+
+screen day_period_hud_action_button(icon, button_action, enabled=True):
+    $ _icon_color = "#BCEFFF" if enabled else "#526978"
+
+    button:
+        xsize 58
+        ysize 44
+        padding (0, 0)
+        sensitive enabled
+        background Fixed(
+            Solid("#030912E8"),
+            Solid("#5CD3FF88", xsize=2),
+            Solid("#5CD3FF", ysize=2),
+            Solid("#5CD3FF33", ysize=2, yalign=1.0),
+        )
+        hover_background Fixed(
+            Solid("#0A2638F2"),
+            Solid("#5CD3FF", xsize=4),
+            Solid("#8AE8FF", ysize=3),
+            Solid("#5CD3FF77", ysize=2, yalign=1.0),
+        )
+        insensitive_background Fixed(
+            Solid("#030912B8"),
+            Solid("#263B49", xsize=2),
+            Solid("#263B49", ysize=2),
+        )
+        action button_action
+
+        fixed:
+            xysize (58, 44)
+
+            if icon == "tablet":
+                add Solid(_icon_color) xpos 20 ypos 7 xsize 19 ysize 30
+                add Solid("#07131E") xpos 22 ypos 10 xsize 15 ysize 22
+                add Solid("#07131E") xpos 27 ypos 34 xsize 5 ysize 2
+            elif icon == "dossier":
+                add Solid(_icon_color) xpos 14 ypos 16 xsize 30 ysize 21
+                add Solid(_icon_color) xpos 18 ypos 11 xsize 14 ysize 7
+                add Solid("#07131E") xpos 17 ypos 19 xsize 24 ysize 14
+            else:
+                add Solid(_icon_color) xpos 14 ypos 12 xsize 30 ysize 3
+                add Solid(_icon_color) xpos 14 ypos 21 xsize 30 ysize 3
+                add Solid(_icon_color) xpos 14 ypos 30 xsize 30 ysize 3
 
 
 # =============================================================
@@ -1309,205 +1389,6 @@ screen day1_urn_confirmation():
                         xalign 0.5 yalign 0.5
                         size 14
                         color "#5CD3FF"
-                        font "fonts/Rajdhani-SemiBold.ttf"
-                        kerning 1
-
-
-# =============================================================
-# PANNEAU BROUILLEUR — thème terminal
-# =============================================================
-
-screen day1_jammer_panel():
-    modal True
-    zorder 100
-
-    add Solid("#020609EE")
-
-    frame at d1_appear:
-        xalign 0.5
-        yalign 0.5
-        xsize 740
-        background Frame(Solid("#0D1520"), 0, 0)
-        padding (0, 0)
-
-        fixed:
-            xsize 740
-            ysize 510
-
-            # Couleur selon état
-            $ jcol = "#3BCC82" if noam_room_jammer_on else "#E03850"
-
-            add Solid(jcol) xpos 0 ypos 0 xsize 740 ysize 2
-            add Solid("#0A111C") xpos 0 ypos 0 xsize 740 ysize 56
-            add Solid(jcol + "22") xpos 0 ypos 2 xsize 740 ysize 54
-
-            text "INTERFACE CHAMBRE — BROUILLEUR":
-                xpos 22 ypos 14
-                size 17
-                color jcol
-                font "fonts/Rajdhani-SemiBold.ttf"
-                kerning 2
-
-            add Solid("#1A2D3E") xpos 0 ypos 56 xsize 740 ysize 1
-
-            vbox:
-                xpos 22 ypos 76
-                spacing 16
-
-                # Statut principal
-                frame:
-                    xsize 696
-                    background Frame(Solid("#060E18"), 0, 0)
-                    padding (16, 14)
-
-                    hbox:
-                        spacing 16
-                        text "●" at d1_blink:
-                            size 28
-                            color jcol
-                        vbox:
-                            spacing 4
-                            text "BROUILLEUR : " + ("ACTIF" if noam_room_jammer_on else "INACTIF"):
-                                size 20
-                                color jcol
-                                font "fonts/Rajdhani-SemiBold.ttf"
-                            text "MODE PRIVÉ : " + ("ACTIVÉ" if noam_room_jammer_on else "DÉSACTIVÉ"):
-                                size 14
-                                color jcol + "88"
-                                font "fonts/Rajdhani-SemiBold.ttf"
-
-                # État caméras / audio
-                if noam_room_jammer_on:
-                    hbox:
-                        spacing 12
-                        vbox:
-                            spacing 10
-
-                            frame:
-                                xsize 338
-                                background Frame(Solid("#060E18"), 0, 0)
-                                padding (12, 10)
-                                hbox:
-                                    spacing 10
-                                    text "■":
-                                        size 14
-                                        color "#3BCC82"
-                                    text "CAMÉRA : COUPÉE":
-                                        size 14
-                                        color "#7A98A8"
-
-                            frame:
-                                xsize 338
-                                background Frame(Solid("#060E18"), 0, 0)
-                                padding (12, 10)
-                                hbox:
-                                    spacing 10
-                                    text "■":
-                                        size 14
-                                        color "#3BCC82"
-                                    text "AUDIO : COUPÉ":
-                                        size 14
-                                        color "#7A98A8"
-
-                        vbox:
-                            spacing 10
-                            frame:
-                                xsize 338
-                                background Frame(Solid("#060E18"), 0, 0)
-                                padding (12, 10)
-                                hbox:
-                                    spacing 10
-                                    text "■":
-                                        size 14
-                                        color "#3BCC82"
-                                    text "CAPTEURS : COUPÉS":
-                                        size 14
-                                        color "#7A98A8"
-
-                            frame:
-                                xsize 338
-                                background Frame(Solid("#0A2A18"), 0, 0)
-                                padding (12, 10)
-                                hbox:
-                                    spacing 10
-                                    text "■":
-                                        size 14
-                                        color "#3BCC82"
-                                    text "KAMI : AVEUGLE":
-                                        size 14
-                                        color "#3BCC82"
-
-                else:
-                    frame:
-                        xsize 696
-                        background Frame(Solid("#200808"), 0, 0)
-                        padding (14, 12)
-                        hbox:
-                            spacing 12
-                            text "!" at d1_blink_fast:
-                                size 18
-                                color "#E03850"
-                            text "SURVEILLANCE POTENTIELLE — KAMI PEUT OBSERVER CETTE PIÈCE":
-                                size 13
-                                color "#E0385099"
-                                font "fonts/Rajdhani-SemiBold.ttf"
-
-                # Bouton action
-                if noam_room_jammer_on:
-                    button:
-                        xsize 350
-                        ysize 46
-                        background Frame(Solid("#200808"), 0, 0)
-                        hover_background Frame(Solid("#E0385022"), 0, 0)
-                        action SetVariable("noam_room_jammer_on", False)
-
-                        fixed:
-                            xsize 350
-                            ysize 46
-                            add Solid("#E03850") xpos 0 ypos 0 xsize 350 ysize 1
-                            text "DÉSACTIVER LE BROUILLEUR":
-                                xalign 0.5 yalign 0.5
-                                size 14
-                                color "#E03850"
-                                font "fonts/Rajdhani-SemiBold.ttf"
-                                kerning 1
-                else:
-                    button:
-                        xsize 350
-                        ysize 46
-                        background Frame(Solid("#0A2A18"), 0, 0)
-                        hover_background Frame(Solid("#3BCC8222"), 0, 0)
-                        action SetVariable("noam_room_jammer_on", True)
-
-                        fixed:
-                            xsize 350
-                            ysize 46
-                            add Solid("#3BCC82") xpos 0 ypos 0 xsize 350 ysize 1
-                            text "RÉACTIVER LE BROUILLEUR":
-                                xalign 0.5 yalign 0.5
-                                size 14
-                                color "#3BCC82"
-                                font "fonts/Rajdhani-SemiBold.ttf"
-                                kerning 1
-
-            # Bouton quitter
-            button:
-                xalign 0.5
-                ypos 454
-                xsize 260
-                ysize 44
-                background Frame(Solid("#0A111C"), 0, 0)
-                hover_background Frame(Solid("#5CD3FF11"), 0, 0)
-                action Return(noam_room_jammer_on)
-
-                fixed:
-                    xsize 260
-                    ysize 44
-                    add Solid("#5CD3FF33") xpos 0 ypos 0 xsize 260 ysize 1
-                    text "QUITTER L'INTERFACE":
-                        xalign 0.5 yalign 0.5
-                        size 13
-                        color "#7A98A8"
                         font "fonts/Rajdhani-SemiBold.ttf"
                         kerning 1
 

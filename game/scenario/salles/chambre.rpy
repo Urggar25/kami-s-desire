@@ -57,7 +57,9 @@ label chambre2_porte_sdb:
 # ----------------------------------------------------------
 
 label chambre3_brouilleur:
-    jump CHAMBRE_BROUILLEUR
+    # Compatibilité des anciennes sauvegardes : le boîtier n'est plus interactif.
+    $ noam_room_jammer_on = True
+    jump CHAMBRE_TP
 
 label chambre3_tablette:
     "Je touche la tablette du bout des doigts."

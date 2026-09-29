@@ -6,6 +6,8 @@
 default persistent.stats = None   # dict rempli par stats_init()
 default persistent.stats_xp = None
 default persistent.stats_xp_blocked_until = 0.0
+default stat_level_up_queue = []
+default stat_level_up_active = False
 
 init python:
 
@@ -61,7 +63,37 @@ init python:
         # +1 / -1 etc. Retourne (nouveau_niveau, a_monte_de_niveau)
         old = get_stat(name)
         new = set_stat(name, old + delta)
-        return new, (new > old)
+        leveled = new > old
+        if leveled:
+            queue_stat_level_up(name, new)
+        return new, leveled
+
+    def queue_stat_level_up(name, level):
+        """Empile une annonce afin que plusieurs gains restent lisibles."""
+        if name not in STATS_META:
+            return
+        if not isinstance(getattr(store, "stat_level_up_queue", None), list):
+            store.stat_level_up_queue = []
+        if store.stat_level_up_active and not renpy.get_screen("stat_level_up_animation"):
+            store.stat_level_up_active = False
+        store.stat_level_up_queue.append((name, int(level)))
+        if not store.stat_level_up_active:
+            show_next_stat_level_up()
+
+    def show_next_stat_level_up():
+        if not store.stat_level_up_queue:
+            store.stat_level_up_active = False
+            return
+        name, level = store.stat_level_up_queue.pop(0)
+        store.stat_level_up_active = True
+        if renpy.loadable("audio/sfx_victory.mp3"):
+            renpy.sound.play("audio/sfx_victory.mp3")
+        renpy.show_screen("stat_level_up_animation", stat_name=name, level=level)
+
+    def finish_stat_level_up():
+        renpy.hide_screen("stat_level_up_animation")
+        store.stat_level_up_active = False
+        show_next_stat_level_up()
 
     def stat_xp_required(name):
         """Seuil interne du niveau courant. None signifie niveau maximum."""
@@ -74,6 +106,9 @@ init python:
         """Interdit tout gain d'XP pendant 60 s après le chargement d'une save."""
         import time
         stats_init()
+        store.stat_level_up_queue = []
+        store.stat_level_up_active = False
+        renpy.hide_screen("stat_level_up_animation")
         persistent.stats_xp_blocked_until = time.time() + max(0.0, float(seconds))
         renpy.save_persistent()
 
@@ -113,6 +148,7 @@ init python:
             result["level"] = set_stat(name, result["level"] + 1)
             persistent.stats_xp[name] = 0
             result["leveled"] = True
+            queue_stat_level_up(name, result["level"])
 
         renpy.save_persistent()
         return result
@@ -129,11 +165,8 @@ init python:
         return all(get_stat(name) >= int(level) for name, level in requirements.items())
 
     def notify_stat_level_ups(results):
-        for result in results:
-            if result.get("leveled"):
-                renpy.notify("{} passe au niveau {}".format(
-                    STATS_META[result["stat"]]["label"], result["level"]
-                ))
+        # Conservé pour les appels historiques : award_stat_xp anime déjà le gain.
+        return
 
     # ---- Jet de dé D10 ----
     # roll 1 = échec critique TOUJOURS ; 10 = réussite critique TOUJOURS.
@@ -174,6 +207,60 @@ transform stat_check_idle:
     linear 1.6 zoom 1.04
     linear 1.6 zoom 1.0
     repeat
+
+transform stat_level_up_panel_in:
+    alpha 0.0
+    yoffset -55
+    zoom 0.92
+    easeout 0.42 alpha 1.0 yoffset 0 zoom 1.0
+    pause 2.25
+    easein 0.45 alpha 0.0 yoffset -28 zoom 1.03
+
+transform stat_level_up_glow:
+    alpha 0.18
+    zoom 0.96
+    linear 0.55 alpha 0.52 zoom 1.04
+    linear 0.55 alpha 0.18 zoom 0.96
+    repeat
+
+
+screen stat_level_up_animation(stat_name, level):
+    zorder 260
+    $ meta = STATS_META[stat_name]
+    $ col = meta["color"]
+
+    frame at stat_level_up_panel_in:
+        xalign 0.5
+        ypos 76
+        xsize 650
+        ysize 170
+        background Solid("#06101AEE")
+        padding (0, 0)
+
+        fixed:
+            add Solid(col + "44") xalign 0.5 yalign 0.5 xsize 620 ysize 145 at stat_level_up_glow
+            add Solid(col) xpos 0 ypos 0 xsize 650 ysize 3
+            add Solid(col + "66") xpos 0 ypos 0 xsize 3 ysize 170
+            add Solid(col + "66") xpos 647 ypos 0 xsize 3 ysize 170
+
+            text "NIVEAU DE STATISTIQUE AUGMENTÉ":
+                xalign 0.5 ypos 24
+                size 17 color "#AFC4CF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+            text meta["glyph"]:
+                xpos 45 ypos 66
+                size 48 color col
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text meta["label"].upper():
+                xpos 112 ypos 70
+                size 30 color "#F3FBFF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "NIVEAU [level]":
+                xalign 0.88 ypos 76
+                size 25 color col
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+    timer 3.15 action Function(finish_stat_level_up)
 
 
 # =============================================================
@@ -227,6 +314,14 @@ screen tablet_home(clock="08:00", show_vote=True):
                     use tablet_card("DOSSIER DE VOTE", "#B57BFF", "hud/tablet/card_vote", [Hide("tablet_home"), Show("vote_dossier")], vote_progress)
                 use tablet_card("STATISTIQUES", "#5CD3FF", "hud/tablet/card_stats", [Hide("tablet_home"), Show("tablet_stats")])
                 use tablet_card("CODEX", "#6BD98A", "hud/tablet/card_codex", [Hide("tablet_home"), ShowMenu("codex_menu")])
+
+            if investigation_story_available():
+                textbutton "⌁  DOSSIER D'ENQUÊTE":
+                    xpos 885 ypos 610 xsize 250 ysize 40
+                    text_size 15 text_color "#5CD3FF"
+                    background Solid("#5CD3FF12")
+                    hover_background Solid("#5CD3FF2A")
+                    action [Function(investigation_sync_legacy_save), Hide("tablet_home"), Show("investigation_dossier", from_tablet=True)]
 
             # ---- Barre basse + bouton home (ferme la tablette) ----
             text "CONCLAVE OS v2.1":

@@ -1,7 +1,9 @@
 label _12_0_1_1_REVEIL_CHAMBRE:
 
     $ cafeteria_food_level = "low"
-    $ current_period = "Matin"
+    $ current_period = "Nuit"
+    $ current_day = 12
+    $ noam_has_juliette_drawing = False
 
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 3.0
@@ -11,6 +13,7 @@ label _12_0_1_1_REVEIL_CHAMBRE:
 
     "Un bruit… J’ai entendu un bruit."
     "Comme un frottement. Ou un pas. Juste à côté du lit."
+    $ investigation_add("bruits_chambre")
 
     "Je reste immobile plusieurs secondes, les yeux grands ouverts dans le noir."
     "Seul le bourdonnement lointain des ventilations du Conclave me répond."
@@ -50,6 +53,7 @@ label _12_0_1_1_REVEIL_CHAMBRE:
 
     $ pnc_room = "chambre_j12"
     $ pnc_flags = {}
+    $ room_scene_indices["chambre"] = 1
     call screen pnc_chambre_j12()
     return
 
@@ -72,9 +76,28 @@ screen pnc_chambre_j12():
         "chambre3_tablette": "_12_0_1_1_tablette",
     })
 
+    # Le dessin a disparu : son calque n'est plus rendu, mais son emplacement
+    # reste inspectable afin que la vue et les interactions racontent le même état.
+    if room_scene_stem("chambre") == "chambre3" and not noam_has_juliette_drawing:
+        $ missing_photo_path = "images/background/interact/chambre/chambre3/photo_juliette.png"
+        imagebutton:
+            idle room_interaction_null()
+            hover room_interaction_null()
+            focus_mask room_interaction_layer(missing_photo_path, "chambre", "art")
+            xpos 0 ypos 0
+            action Jump("_12_0_1_1_photo_juliette")
+
+    frame:
+        xalign 0.5 yalign 0.04
+        background Solid("#071722DC")
+        padding (18, 10)
+        text "FOUILLER LA CHAMBRE  ·  [len(pnc_flags)]/3 INDICES MINIMUM" size 18 color "#DCEFFC"
+
 # ==================== MINILABELS ====================
 
 label _12_0_1_1_aeration:
+
+    $ pnc_flags["aeration"] = True
 
     "Je m'approche de la bouche d'aération et tends l'oreille."
     "Le souffle est régulier. Aucun frottement, aucun pas dans le conduit."
@@ -85,6 +108,8 @@ label _12_0_1_1_aeration:
     return
 
 label _12_0_1_1_sous_lit:
+
+    $ pnc_flags["lit"] = True
 
     "Je m’agenouille devant le lit."
     "Mon cœur bat plus vite que nécessaire."
@@ -110,6 +135,8 @@ label _12_0_1_1_sous_lit:
 
 label _12_0_1_1_television:
 
+    $ pnc_flags["television"] = True
+
     "Je passe la main sur le bord de l'écran."
     "Il est éteint et froid. Rien n'indique que Kami l'ait activé pendant la nuit."
 
@@ -119,6 +146,8 @@ label _12_0_1_1_television:
     return
 
 label _12_0_1_1_placard:
+
+    $ pnc_flags["placard"] = True
 
     "J’ouvre le placard d’un coup sec, le cœur battant."
 
@@ -145,6 +174,8 @@ label _12_0_1_1_placard:
 
 label _12_0_1_1_bureau:
 
+    $ pnc_flags["bureau"] = True
+
     "Je m’approche du bureau et regarde rapidement les affaires."
 
     "Tout semble à sa place… sauf mon badge."
@@ -161,6 +192,8 @@ label _12_0_1_1_bureau:
 
 label _12_0_1_1_salle_de_bain:
 
+    $ pnc_flags["salle_de_bain"] = True
+
     "J'entrouvre la porte de la salle de bain et vérifie chaque recoin."
     "La pièce est vide. Le miroir ne me renvoie que mon propre visage épuisé."
 
@@ -171,6 +204,8 @@ label _12_0_1_1_salle_de_bain:
 
 label _12_0_1_1_brouilleur:
 
+    $ pnc_flags["brouilleur"] = True
+
     "Je vérifie le brouilleur et son boîtier."
     "Aucune vis ne dépasse, aucun câble ne semble avoir été déplacé."
 
@@ -179,17 +214,9 @@ label _12_0_1_1_brouilleur:
     call screen pnc_chambre_j12()
     return
 
-label _12_0_1_1_photo_juliette:
-
-    "Mon regard s'arrête sur le dessin de Juliette."
-    "Je vérifie ses bords, puis l'espace derrière. Rien. Il paraît intact."
-
-    think "Au moins, personne n'y a touché."
-
-    call screen pnc_chambre_j12()
-    return
-
 label _12_0_1_1_tablette:
+
+    $ pnc_flags["tablette"] = True
 
     "Je réveille la tablette et parcours rapidement les dernières activités."
     "Aucun accès récent. Aucun message. Rien qui explique le bruit."
@@ -199,7 +226,20 @@ label _12_0_1_1_tablette:
     call screen pnc_chambre_j12()
     return
 
+label _12_0_1_1_photo_juliette:
+
+    $ pnc_flags["photo_juliette"] = True
+    "Mon regard s'arrête sur l'emplacement vide du cadre."
+    think "Le dessin de Juliette n'est toujours pas revenu. Rien n'a bougé autour."
+    call screen pnc_chambre_j12()
+    return
+
 label _12_0_1_1_recoucher:
+
+    if len(pnc_flags) < 3:
+        think "Pas encore. Je dois vérifier au moins quelques endroits avant de me recoucher."
+        call screen pnc_chambre_j12()
+        return
 
     "Je reste un moment debout au milieu de la chambre, puis je soupire."
 
@@ -213,6 +253,7 @@ label _12_0_1_1_recoucher:
 # Fin du label principal
 label _12_0_1_1_CAFETERIA:
 
+    $ current_period = "Matin"
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
 
@@ -309,6 +350,7 @@ label _12_0_1_1_CAFETERIA:
     elen joie "Crois moi, la cafétéria c’est le meilleur remède ! Goumi, tu me fais la même chose que d’habitude ? Avec double portion de pain s’il te plaît !"
 
     goumi "Elen… je viens justement d’expliquer à Noam que les réserves sont plus basses que prévu. Je ne peux pas faire de double portion aujourd’hui."
+    $ investigation_add("manque_nourriture")
 
     elen "Hein ?! Sérieux ?!"
     elen colere "Mais tu m'as déjà dit ça hier soir !"
@@ -403,6 +445,7 @@ label _12_0_1_1_CAFETERIA:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Petite annonce du jour : le vote sur l’autorisation ou l’interdiction des dispositifs de brouillage aura lieu aujourd’hui à 14h précises."
+    $ unlock_dossier_chapter(4)
     kami "Je vous conseille vivement d’être présents et en pleine possession de vos moyens."
     kami "Après tout… ce vote est assez important, n’est-ce pas ?"
 
@@ -473,23 +516,29 @@ label _12_0_1_1_CAFETERIA:
 
     pause 2.0
 
-    jump _12_0_1_1_ATTENTE_VOTE 
+    call OFFER_DAILY_EXPLORATION(
+        "_12_0_1_1_ATTENTE_VOTE", 1,
+        ["dortoir", "cafeteria", "maintenance", "conclave"],
+        "Rejoindre le vote", "conclave"
+    ) from _call_offer_exploration_j12
+
+# Compatibilité des sauvegardes créées avant la navigation par destination.
+# Ces deux points étaient générés par les anciens appels de porte du J12 et
+# peuvent encore se trouver dans la pile de retour d'une partie en cours.
+label _call_MAYBE_PLAY_SCRIPTED_DOOR_59:
+    jump _12_0_1_1_ATTENTE_VOTE
+
+label _call_MAYBE_PLAY_SCRIPTED_DOOR_60:
+    jump _12_0_1_1_ATTENTE_VOTE
 
 label _12_0_1_1_ATTENTE_VOTE:
 
     $ current_period = "Après-midi"
-    scene bg_chambre at adaptive_fullscreen with fade
+    scene bg_conclave at adaptive_fullscreen with fade
     play music "music/bgm_world_decline.mp3" fadein 3.0
 
-    "Les heures sont passées lentement. Trop lentement."
-    "J’ai tourné en rond dans ma chambre, alternant entre tentatives de sommeil et crises de réflexion."
-
+    "J'arrive dans la salle du Conclave alors que les derniers représentants prennent place."
     think "14h… Le moment est venu."
-
-    "Je me lève, le corps lourd, et sors de ma chambre sans grand enthousiasme."
-
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_59
-    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Les haut-parleurs crachent soudain la voix de Kami."
 
@@ -507,9 +556,6 @@ label _12_0_1_1_ATTENTE_VOTE:
 
     hide screen kami_broadcast_ui
 
-    "Je soupire et prends la direction de la salle."
-
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_60
     scene bg_conclave at adaptive_fullscreen with dissolve
 
     "Presque tout le monde est déjà là. L’ambiance est lourde, électrique."
@@ -535,6 +581,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     tomas "Je pense qu’on est tous d’accord pour dire que ce vote est crucial."
 
     mara "Évidemment qu’on autorise les brouilleurs !"
+    $ unlock_dossier_arg("p4_intimite")
     mara stress "J’en peux plus de savoir que Kami peut nous mater 24h/24 !"
 
     elen "Moi aussi ! J’ai envie de pouvoir danser dans ma chambre sans me sentir jugée !"
@@ -567,6 +614,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     ryn "J’en ai marre de vivre dans un putain de reality show."
 
     nyra raison "Il faut juste faire attention aux conséquences. Si tout le monde a des brouilleurs, on ne pourra plus rien prouver."
+    $ unlock_dossier_arg("p4_preuves")
 
     "Je reste muet."
 
@@ -656,6 +704,7 @@ label _12_0_1_1_DEBAT_SECURITE:
 
     lysa inquiet "Alors pas vraiment."
     lysa inquiet "Même avec les brouilleurs, Kami peut avoir accès aux vidéos, mais après une semaine de délai."
+    $ unlock_dossier_arg("p4_delai")
 
     nyra raison "Je peux comprendre l’envie d’intimité… mais il ne faut pas oublier les risques."
     nyra "Si tout le monde a des brouilleurs, comment on prouve quoi que ce soit ?"
@@ -666,6 +715,7 @@ label _12_0_1_1_DEBAT_SECURITE:
     "Kael parle d’une voix basse, mais tout le monde se tait un instant."
 
     kael "Si on autorise les brouilleurs, peut-être que je ne saurai jamais qui m'a volé la photo de ma sœur."
+    $ unlock_dossier_arg("p4_voleur")
     kael "Je veux savoir qui c'est."
 
     ryn colere "Et alors ? Tu préfères vivre en prison dorée juste pour avoir une chance de choper un voleur ?"
@@ -1019,12 +1069,10 @@ label _12_0_1_1_APRES_EXPLOSION:
 
     call end_day("13", sleeping=True) from _call_end_day_12_0_1_1
 
-    jump patreon_ending
+    if j12011_wire_result == "security":
+        jump _13_0_1_1_0_REVEIL_CHAMBRE
 
-    # if j12011_wire_result == "security":
-        # jump _13_0_1_1_0_REVEIL_CHAMBRE
-
-    # jump _13_0_1_1_1_REVEIL_CHAMBRE
+    jump _13_0_1_1_1_REVEIL_CHAMBRE
 
 # Total journée : 14 minutes 30
 # Durée totale : 2h56,20

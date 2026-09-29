@@ -1858,7 +1858,7 @@ label _7_0_1_FIN_JOURNEE:
     #jump patreon_ending
 
     call end_day("8", sleeping=True) from _call_end_day_11
-    jump _8_0_1_REVEIL_CHAMBRE
+    jump _8_1_0_0_CANON
 
 # Total journée : 14 minutes
 # Durée totale : 2h03

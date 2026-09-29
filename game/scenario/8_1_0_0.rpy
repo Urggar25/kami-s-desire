@@ -711,10 +711,7 @@ label _8_1_0_0_APRES_MIDI:
 
     $ hideGroup()
 
-    # TEMPS LIBRE
-    # Insérer ici le système de temps libre de la journée.
-
-    jump _8_1_0_0_FIN_APRES_MIDI
+    call START_FREE_TIME("_8_1_0_0_FIN_APRES_MIDI") from _call_START_FREE_TIME_8_1_0_0
 
 
 label _8_1_0_0_FIN_APRES_MIDI:

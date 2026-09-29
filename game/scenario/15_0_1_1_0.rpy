@@ -1,5 +1,10 @@
 label _15_0_1_1_0_REVEIL_CHAMBRE:
+
+    $ cafeteria_food_level = "medium"
     $ current_period = "Matin"
+    $ current_day = 15
+    $ noam_has_juliette_drawing = False
+
     scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
@@ -30,6 +35,7 @@ label _15_0_1_1_0_REVEIL_CHAMBRE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "Petit rappel pour ceux qui auraient miraculeusement oublié le Commandement V : toute information diffusée doit actuellement être validée par [codex_dialogue_link('archive', 'ARCHIVE')]."
+    $ unlock_dossier_arg("p5_validation")
     kami "Si l’amendement passe, une immense partie des archives historiques, judiciaires et administratives deviendra accessible au public. Si vous échouez, le verrouillage actuel restera en place."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -179,7 +185,11 @@ label _15_0_1_1_0_RATIONS:
 
     pause 2.0
 
-    jump _15_0_1_1_0_COULOIR
+    call OFFER_DAILY_EXPLORATION(
+        "_15_0_1_1_0_COULOIR", 1,
+        ["observation", "archive", "dortoir"],
+        "Rejoindre Kael à l'Observation", "observation"
+    ) from _call_offer_exploration_j15
 
 
 label _15_0_1_1_0_COULOIR:
@@ -216,6 +226,7 @@ label _15_0_1_1_0_COULOIR:
         ("ryn", "colere", 0.68),
         ("sael", "mefiant", 0.84),
     ])
+    pause 0.5
 
     noam hesitation "Salut."
 
@@ -448,6 +459,9 @@ label _15_0_1_1_0_VIDEO_KAEL:
 
     "Kael entre."
 
+    tuto "Utilise la timeline, le ralenti et l'avance image par image. Inspecte directement les zones importantes."
+    call investigation_video_run("kael_photo", "bg_chambre", False) from _call_investigation_video_kael
+
     kael surpris "... Quoi ?"
 
     "Le garçon filmé traverse la pièce sans hésiter, se dirige vers le mur et s’arrête devant la photo de Léa."
@@ -498,7 +512,7 @@ label _15_0_1_1_0_VIDEO_KAEL:
 
     kael inquietude "Relance encore."
 
-    "Je le fais une troisième fois. En ralentissant l’image, je remarque que ses lèvres bougent juste avant qu’il range le cadre."
+    "Je le fais une troisième fois. L'arrêt sur image confirme le mouvement que j'ai isolé."
 
     noam reflexion "Attends... il parle."
     kael surpris "Tu comprends ce qu’il dit ?"
@@ -638,6 +652,9 @@ label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
 
     "À 2h14, la porte s’ouvre."
 
+    tuto "La seconde archive utilise les mêmes commandes. Cette fois, ne suppose rien : vérifie chaque geste."
+    call investigation_video_run("noam_room", "bg_cg041", True) from _call_investigation_video_noam
+
     $ unlock_gallery_image("bg_cg041")
     play sound "audio/sfx_static.mp3" volume 0.45
     scene bg_cg041 at adaptive_fullscreen with signal_stutter
@@ -689,6 +706,11 @@ label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
     "Le couloir est presque désert ; le vote doit encore être en cours. Au bout du passage, j’aperçois Kael qui revient vers les dortoirs."
 
     noam colere "Kael !"
+
+    $ showGroup([
+        ("noam", "hesitation", 0.30),
+        ("kael", "inquietude", 0.60),
+    ])
 
     "Il se retourne, surpris par mon ton."
 
@@ -798,6 +820,7 @@ label _15_0_1_1_0_CONFRONTATION_KAEL:
 
     "Il sourit un peu plus. Ce n’est pas un sourire que je lui ai déjà vu."
     $ doppelganger_reveal(screamer=False, duration=0.92, restore_volume=0.78)
+    $ investigation_add("doppelganger")
 
     kael sourire "Viens avec moi. Je vais tout t’expliquer."
 

@@ -395,7 +395,7 @@ label _9_1_0_0_CAFETERIA:
 
     think "Qu'est-ce que Ryn cherchait dans cette chambre ?"
 
-    jump _9_1_0_0_CONCLAVE
+    call START_FREE_TIME("_9_1_0_0_CONCLAVE") from _call_START_FREE_TIME_9_1_0_0
 
 
 label _9_1_0_0_CONCLAVE:

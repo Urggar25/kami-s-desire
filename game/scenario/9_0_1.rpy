@@ -11,6 +11,8 @@ label _9_0_1_REVEIL_CHAMBRE:
     play music "music/bgm_calm_not_peace.mp3" fadein 2.5
     $ cafeteria_food_level = "medium"
     $ current_period = "Matin"
+    $ noam_has_juliette_drawing = False
+    
     $ blink()
 
     "Je dors par fragments. Chaque bruit du couloir me réveille assez longtemps pour que j'imagine une main sur la poignée."
@@ -102,7 +104,11 @@ label _9_0_1_REVEIL_CHAMBRE:
     $ hideGroup()
     stop music fadeout 1.5
     scene black with fade
-    jump _9_0_1_CONCLAVE_ANNONCE
+    call OFFER_DAILY_EXPLORATION(
+        "_9_0_1_CONCLAVE_ANNONCE", 1,
+        ["conclave", "cafeteria", "archive"],
+        "Sur le chemin du Conclave", "conclave"
+    ) from _call_offer_exploration_j9_main
 
 label _9_0_1_CONCLAVE_ANNONCE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_303
@@ -316,6 +322,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn colere2 "Ils ne pouvaient rien déclarer ! Kami était en maintenance !"
 
     nyra raison "Ça ne l'empêchera pas d'appliquer la règle strictement. Le vote peut autoriser les futurs regroupements sans régulariser ceux qui existent déjà."
+    $ unlock_dossier_arg("p3_campements")
 
     sael determine "Et nous ne pouvons pas modifier le texte après son annonce. Kami a toujours verrouillé le libellé avant le débat."
 

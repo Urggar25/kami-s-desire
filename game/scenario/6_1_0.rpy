@@ -308,7 +308,7 @@ label _6_1_0_SALLE_REPOS:
     sael sourire "Non. Merci."
 
     think "Sael quitte la salle de repos."
-    hide sael with moveinleft
+    hide sael with moveoutleft
 
     pause 0.6
 
@@ -382,6 +382,7 @@ label _6_1_0_RYN_SAEL:
     ryn colere2 "Elle donnera une porte de sortie !"
 
     sael determine "Aux plus forts. Aux plus jeunes. À ceux que les autres districts accepteront d'utiliser."
+    $ unlock_dossier_arg("p2_exode")
     sael raison "Les malades resteront. Les vieux resteront. Les enfants dont personne ne veut resteront."
     sael mefiant "Tu n'ouvres pas Limen. Tu le vides de tous ceux qui peuvent encore le tenir debout."
 
@@ -648,6 +649,7 @@ label _6_1_0_DEBAT:
 
     sael neutre "Je n'ai plus rien à dire."
 
+    hide sael with moveoutright
     $ hideGroup()
 
     think "La porte se referme derrière elle. Le vote est déjà perdu."
@@ -695,19 +697,10 @@ label _6_1_0_DEBAT:
     $ j6_noam_vote = {"pour": "for", "contre": "against", "abstention": "abstain"}.get(vote_phase3_player_choice, "abstain")
 
     if j6_noam_vote == "for":
-        scene black
-        show expression Solid("#0AFF8844") as j610_vote_confirmation
-        with Dissolve(0.12)
         noam determine "Je vote pour."
     elif j6_noam_vote == "against":
-        scene black
-        show expression Solid("#FF2A2A44") as j610_vote_confirmation
-        with Dissolve(0.12)
         noam raison "Je vote contre."
     else:
-        scene black
-        show expression Solid("#F2B63E33") as j610_vote_confirmation
-        with Dissolve(0.12)
         noam hesitation "Je m'abstiens."
 
     $ vote_phase3_counts = {"pour": 0, "abstention": 0, "contre": 0}

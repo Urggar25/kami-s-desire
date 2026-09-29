@@ -1,12 +1,18 @@
 label _14_0_1_1_0_REVEIL_CHAMBRE:
 
+    $ cafeteria_food_level = "high"
+    $ current_period = "Matin"
+    $ current_day = 14
+    $ noam_has_juliette_drawing = False
+
+    scene bg_cg012 at adaptive_fullscreen with fade
+
     "La nuit a été mauvaise, encore une fois. J'ai dormi par morceaux, sans réussir à décrocher complètement."
     "Quand l'annonce de Kami retentit dans les couloirs, je l'entends très bien, mais je reste couché."
     "Je n'ai aucune envie de croiser les autres, et encore moins de faire semblant que tout va bien."
 
     pause 1.0
 
-    scene bg_cg012 at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Je finis par me rendormir quelques minutes avant que des coups légers contre ma porte me tirent à nouveau du sommeil."
@@ -40,6 +46,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
     noam reflexion "Pourquoi ?"
 
     nyra sourire "La livraison est arrivée."
+    $ investigation_add("livraison_j14")
 
     "Je relève enfin les yeux vers elle."
 
@@ -62,6 +69,8 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     nyra reflexion "Le vote de demain concerne [codex_dialogue_link('archive', 'ARCHIVE')]."
     nyra raison "La proposition est simple sur le papier : rendre consultables par tous les citoyens toutes les informations qu'ARCHIVE détient."
+    $ unlock_dossier_chapter(5)
+    $ unlock_dossier_arg("p5_transparence")
 
     noam reflexion "Toutes ?"
     nyra raison "Toutes."
@@ -76,6 +85,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     noam inquiet "Qu'est-ce qui coince ?"
     nyra raison "Quand ils disent toutes les informations... Qu'est-ce que ça concerne ?"
+    $ unlock_dossier_arg("p5_donnees_privees")
 
     "L'idée de transparence devient soudain beaucoup moins confortable."
 
@@ -316,10 +326,16 @@ label _14_0_1_1_0_CAFETERIA_REJET:
 
     think "Elle a peut-être vraiment vu quelque chose. Et si ce n'est pas le cas... Iris avait raison, je pars."
 
-    jump _14_0_1_1_0_CHAMBRE_SAEL
+    call OFFER_DAILY_EXPLORATION(
+        "_14_0_1_1_0_CHAMBRE_SAEL", 1,
+        ["cafeteria", "conclave", "maintenance", "dortoir"],
+        "Rejoindre la chambre de Sael", "dortoir"
+    ) from _call_offer_exploration_j14
 
 
 label _14_0_1_1_0_CHAMBRE_SAEL:
+
+    $ current_period = "Apr-s-midi"
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir")
     scene bg_dortoir at adaptive_fullscreen with dissolve
@@ -422,8 +438,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     noam inquiet "C'est quoi ?"
     sael neutre "Du sel."
-    noam blase "Bien sûr."
-    ryn agace "J'ai eu la même réaction."
+    noam blase "... Vous êtes sérieux là ?!"
 
     sael colere "Chez moi, on utilisait ça pour vérifier si quelqu'un avait ramené quelque chose des zones mortes."
     noam colere "J'en ai rien à foutre de tes histoires de fantômes."
@@ -448,6 +463,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     $ unlock_gallery_image("bg_cg048")
     scene bg_cg048 at adaptive_fullscreen with vpunch
+    $ investigation_add("exorcisme_noam")
 
     noam panique "PUTAIN !"
 
@@ -705,10 +721,11 @@ label _14_0_1_1_0_MESSAGES_KAEL:
     "Je fronce les sourcils."
 
     noam "Comment tu sais ?"
-    kael "Mara. Donc techniquement tout le Conclave sait probablement déjà."
+    kael "Mara t'a vu sortir en courant de la chambre de Sael. Il parait qu'elle te courait après les mains pleines de sel..."
+    kael "J'imagine que tout le monde est déjà au courant maintenant..."
     noam "Génial."
     kael "C'est vrai ? Sael t'a vraiment sorti du sel ?"
-    noam "Oui."
+    noam "T'as vraiment pas envie de savoir..."
     kael "Putain."
     noam "Ryn était là aussi."
     kael "PUTAIN."
@@ -717,7 +734,6 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
     kael "Ils t'ont fait quoi ?"
     noam "J'ai pas vraiment envie d'en parler."
-    kael "Ok."
 
     "Il ne relance pas. Ça me surprend presque."
 
@@ -727,6 +743,7 @@ label _14_0_1_1_0_MESSAGES_KAEL:
     kael "Je vais profiter du vote pour aller voir les terminaux d'archives pendant que tout le monde sera à la Salle du Conclave."
     noam "Tu peux déjà accéder aux images ?"
     kael "Pas normalement. Mais demain, pendant la synchronisation liée au vote, les terminaux vont devoir charger les index complets d'ARCHIVE."
+    $ unlock_dossier_arg("p5_index_complet")
     kael "Je veux essayer de récupérer ce qui concerne ma chambre avant que les droits se referment ou que quelqu'un décide encore de supprimer quelque chose."
 
     "Je me redresse."
@@ -742,7 +759,7 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
     pause 0.4
 
-    kael "T'es sûr ?"
+    kael "T'es vraiment sûr ?"
     noam "Oui."
     kael "Je pensais que tu voudrais assister au vote."
     noam "J'ai surtout envie de savoir qui entre dans nos chambres."
@@ -761,22 +778,23 @@ label _14_0_1_1_0_MESSAGES_KAEL:
     noam "C'est pas complètement faux, non ?"
     kael "Merci pour le soutien."
     noam "Je veux dire que je comprends pourquoi tu l'as fait."
-    kael "Ouais."
-    kael "Je sais pas si toi t'as raison sur tout ce qui se passe ici. Mais je sais ce que ça fait quand les autres décident que ton problème compte moins que le leur."
+    kael "Ouais. Je sais pas si toi t'as raison sur tout ce qui se passe ici. Mais je sais ce que ça fait quand les autres décident que ton problème compte moins que le leur."
+    kael "En tout cas j'ai eu une idée pour me racheter. Peut-être que le groupe m'en voudra un peu moins."
 
     "Je relis la phrase."
 
-    noam "C'est probablement le truc le plus gentil que quelqu'un m'a dit depuis deux jours."
-    kael "C'est triste."
-    noam "Très."
-    kael "Bon, alors demain on fait notre petite sortie entre parias."
+    noam "Ah ouais ? Qu'est-ce que tu as en tête ?"
+    kael "Haha ! Tu verras bien, c'est une petite surprise ! Tu en sauras plus un peu plus tard."
+    kael "Bon, alors demain on fait notre petite sortie entre parias ?"
     noam "Dit comme ça, ça donne presque envie."
     kael "Presque."
 
     "La conversation s'arrête là. Je repose la tablette sur le lit."
     "Je ne sais pas si Kael me croit réellement. Je ne suis même pas sûr d'avoir besoin qu'il me croie. Pour l'instant, il veut les mêmes réponses que moi, et c'est déjà beaucoup."
 
-    pause 0.8
+    call show_custom_title("Le temps passe puis le soir arrive...")
+    pause 1.0
+    $ current_period = "Soir"
 
     play sound sfx_knock volume 0.8
 
@@ -785,6 +803,14 @@ label _14_0_1_1_0_MESSAGES_KAEL:
     noam fatigue "Quoi encore..."
 
     "Quand j'ouvre, Kael est dans le couloir avec Elias. Elias tient une petite boîte de pièces noires découpées à la main."
+
+    scene bg_dortoir at adaptive_fullscreen with fade
+
+    $ showGroup([
+        ("noam", "neutre"),
+        ("elias", "neutre"),
+        ("kael", "neutre"),
+    ])
 
     noam reflexion "Vous faites quoi ?"
 
@@ -829,50 +855,7 @@ label _14_0_1_1_0_FIN_JOURNEE:
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "La journée se termine sans que je ressorte de ma chambre. J'ai largement assez vu de monde pour aujourd'hui."
-    "Je reste un moment assis au bureau à regarder mes notes, puis mon regard revient encore une fois vers le cahier noir."
-
-    "Je l'ouvre à la page du dessin de Juliette."
-
-    pause 0.6
-
-    "La copie est toujours là. Les mêmes traits, le même visage, ce sourire qui me dérange sans que j'arrive vraiment à comprendre pourquoi."
-    "Je la compare de mémoire au dessin original. J'ai passé assez de temps dessus pour connaître presque chaque ligne."
-
-    think "Il y a quelque chose qui ne colle pas."
-
-    "Je rapproche le cahier de la lampe."
-    "Les cheveux, les yeux, le nez... tout est presque exactement comme je l'avais dessiné."
-    "Puis je remarque une petite marque sous sa mèche, juste au-dessus du sourcil."
-
-    "Je reste immobile."
-
-    think "Non."
-
-    "Je passe doucement le doigt dessus. Ce n'est pas une tache ni une rayure du papier. Quelqu'un l'a dessinée volontairement."
-
-    think "Cette cicatrice..."
-
-    "Juliette l'avait depuis l'enfance. Une toute petite ligne pâle qu'on voyait seulement quand ses cheveux étaient repoussés sur le côté."
-    "Je ne l'avais jamais mise sur mon dessin. Sa mèche la cachait complètement."
-
-    pause 0.8
-
-    think "Je n'avais pas dessiné ça."
-
-    "Je tourne rapidement la page, puis reviens en arrière comme si le détail pouvait disparaître. Il est toujours là."
-    "Quelqu'un a copié mon dessin. Mais cette personne a ajouté quelque chose qu'elle ne pouvait pas voir dessus."
-
-    "Je referme le cahier d'un coup."
-
-    play sound sfx_thud volume 0.6
-
-    "Mon regard part vers la porte, puis vers les murs de la chambre. Je sais que c'est absurde, mais pendant quelques secondes j'ai vraiment l'impression que quelqu'un pourrait être là, juste hors de mon champ de vision."
-
-    think "Comment tu peux savoir ça ?"
-
-    "Aucune réponse. Évidemment."
-
-    "Je range le cahier dans le tiroir et le ferme, cette fois à clé."
+    "Je reste un moment assis au bureau à relire mes notes, puis je finis par tout ranger."
 
     scene bg_cg012 at adaptive_fullscreen with fade
 

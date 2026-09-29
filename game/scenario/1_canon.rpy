@@ -1354,7 +1354,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     kami "Enfin... Pas pour le moment. Les images me deviennent accessibles une semaine après leur date d'enregistrement."
     kami "Mais rien ne pourra être diffusé si les brouilleurs sont actifs."
-    kami "Après, rien ne vous empêche de le désactiver. Si vous aimez être vus, par exemple."
+    kami "Ils resteront actifs. Vous pourrez donc faire semblant d'avoir une vie privée."
 
     $ bc_show("noam", "neutre", px=-70, py=-50, pz=0.85)
     noam "Mais qui ferait ça ?!"
@@ -1973,25 +1973,8 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     think "Ma chambre est étrangement assez confortable."
     think "Enfin seul. Je jette presque mes affaires et découvre un grand lit, une garde-robe..."
-    think "Non, ce sont MES affaires ! Du matériel informatique. Près du bureau, un boîtier pulse en vert : le brouilleur."
-
-    menu:
-        "Que dois-je faire ?"
-
-        "Ouvrir l'interface du brouilleur":
-            call day1_play_trace(path_type="arc", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=560, required=False) from _call_day1_trace_jammer
-            if _return:
-                call screen day1_jammer_panel()
-                if noam_room_jammer_on:
-                    think "La diode reste verte. Les règles présentent l'intimité dans la chambre comme une permission accordée."
-                else:
-                    think "La diode passe au rouge. La chambre paraît plus grande, et beaucoup moins à moi."
-            else:
-                think "Le capteur refuse mon geste. Je retire la main avant d'insister."
-
-        "Laisser le brouilleur tranquille":
-            think "Je garde la diode verte dans un coin de mon regard."
-            think "S'il est actif par défaut, je vais le laisser actif."
+    think "Non, ce sont MES affaires ! Du matériel informatique. Près du bureau, le voyant vert fixe du brouilleur confirme qu'il est actif."
+    $ noam_room_jammer_on = True
 
     think "Il y a une salle de bain privée. Une douche chaude est la première décision simple de la journée."
 

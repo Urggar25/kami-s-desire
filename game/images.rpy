@@ -385,6 +385,7 @@ image noam panne_creep         = noam_expression("panne_creep")
 image noam doute         = noam_expression("doute")
 image noam calme         = noam_expression("calme")
 image noam blase         = noam_expression("neutre")
+image noam agace         = noam_expression("inquiet")
 
 # ======================
 # LYSA

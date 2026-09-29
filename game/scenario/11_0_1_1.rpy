@@ -2,6 +2,8 @@ label _11_0_1_1_REVEIL_CHAMBRE:
 
     $ cafeteria_food_level = "low"
     $ current_period = "Matin"
+    $ current_day = 11
+    $ noam_has_juliette_drawing = False
 
     play music "music/bgm_fallin_love.mp3" fadein 2.5
     play sound sfx_heartbeat fadeout 3.0  # résidu du malaise
@@ -426,7 +428,11 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
     "Je me relève, encore un peu instable sur mes jambes, et me dirige vers la porte."
 
-    jump _11_0_1_3_SALLE_COMMUNICATION
+    call OFFER_DAILY_EXPLORATION(
+        "_11_0_1_3_SALLE_COMMUNICATION", 1,
+        ["observation", "archive", "dortoir"],
+        "Rejoindre la salle d'Observation", "observation"
+    ) from _call_offer_exploration_j11
 
 label _11_0_1_3_SALLE_COMMUNICATION:
 
@@ -512,6 +518,7 @@ label _11_0_1_1_CONFRONTATION_KAMI:
     "Je sélectionne enfin la bonne combinaison."
     "L’écran s’allume… puis devient noir en une fraction de seconde."
     "\"Données supprimées - Accès impossible\""
+    $ investigation_add("videos_supprimees")
 
     $ bc_show("noam", "colere2", px=-70, py=-50, pz=0.85)
     noam colere "C’est quoi cette putain de blague ?!"

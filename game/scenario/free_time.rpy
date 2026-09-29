@@ -15,6 +15,7 @@ default exploration_libre_required_visits = 0
 default exploration_libre_allowed_rooms = None
 default exploration_libre_title = "Exploration libre"
 default exploration_libre_last_room = None
+default exploration_libre_destination_room = None
 default link_replay_mode = False
 default free_time_selected_character = None
 default free_time_selected_scene = None
@@ -177,6 +178,25 @@ init python:
         "stockage",
     ]
 
+    EXPLORATION_LIBRE_ROOM_NAMES = {
+        "archive": "les archives",
+        "cafeteria": "la cafétéria",
+        "canon": "la salle du Canon",
+        "conclave": "la salle du Conclave",
+        "dortoir": "le dortoir",
+        "gymnase": "le gymnase",
+        "infirmerie": "l'infirmerie",
+        "livraison": "la zone de livraison",
+        "maintenance": "la maintenance",
+        "observation": "la salle d'Observation",
+        "repos": "la salle de repos",
+        "stockage": "la réserve",
+    }
+
+    def exploration_libre_destination_name():
+        room_key = getattr(store, "exploration_libre_destination_room", None)
+        return EXPLORATION_LIBRE_ROOM_NAMES.get(room_key, room_key or "la destination")
+
     def exploration_libre_room_allowed(room_key):
         if not getattr(store, "exploration_libre_active", False):
             return True
@@ -231,10 +251,7 @@ label START_FREE_TIME(next_label=None):
     $ dortoir_lock = False
     $ corridor_current = "dortoir"
 
-    scene black
-    show expression Text("Temps libre", size=84, color="#FFFFFF", font="fonts/day_font.ttf") as free_time_title at truecenter
-    pause 5.0
-    hide free_time_title
+    call show_custom_title("Temps libre") from _call_show_custom_title_free_time
     jump START_FREE_TIME_MAP
 
 label START_FREE_TIME_MAP:
@@ -289,17 +306,21 @@ label FREE_TIME_END:
 # EXPLORATION LIBRE — visite de salles sans scènes sociales de temps libre
 # -----------------------------------------------------------------------
 
-label START_EXPLORATION_LIBRE(next_label=None, required_visits=0, allowed_rooms=None, title="Exploration libre"):
+label START_EXPLORATION_LIBRE(next_label=None, required_visits=0, allowed_rooms=None, title="Exploration libre", destination_room=None):
 
     $ sync_character_links_from_persistent()
     $ free_time_active = False
     $ exploration_libre_active = True
+    $ current_scene_active = None
+    $ conclave_lock = False
+    $ dortoir_lock = False
     $ exploration_libre_next_label = next_label
     $ exploration_libre_seen_rooms = []
     $ exploration_libre_required_visits = required_visits
     $ exploration_libre_allowed_rooms = allowed_rooms
     $ exploration_libre_title = title
     $ exploration_libre_last_room = None
+    $ exploration_libre_destination_room = destination_room
     $ corridor_current = "dortoir"
 
     scene black
@@ -313,6 +334,12 @@ label START_EXPLORATION_LIBRE_MAP:
 
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_1
     $ exploration_libre_last_room = _return
+
+    # Atteindre la bonne porte déclenche immédiatement la scène attendue. Cela
+    # évite notamment de devoir ressortir puis recliquer sur Observation au J11.
+    if exploration_libre_destination_room is not None and exploration_libre_last_room == exploration_libre_destination_room:
+        $ exploration_libre_mark_seen(exploration_libre_last_room)
+        jump EXPLORATION_LIBRE_END
 
     if _return == "archive":
         call ARCHIVE_TP from _call_exploration_libre_ARCHIVE_TP
@@ -356,6 +383,7 @@ label EXPLORATION_LIBRE_END:
     $ exploration_libre_next_label = None
     $ exploration_libre_allowed_rooms = None
     $ exploration_libre_last_room = None
+    $ exploration_libre_destination_room = None
 
     if next_label is not None:
         jump expression next_label

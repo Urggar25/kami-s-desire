@@ -1,6 +1,11 @@
 label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     $ current_period = "Nuit"
+
+    $ cafeteria_food_level = "null"
+    $ current_day = 19
+    $ noam_has_juliette_drawing = False
+
     scene black
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
@@ -124,6 +129,20 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
     noam "Avec toi !"
 
     mara colere_noire "Mais j'étais pas avec toi !"
+
+    $ investigation_add("mara_exploration", notify=False)
+    $ investigation_add("mara_nie")
+    call objection_protocol_run("Je n'étais pas avec toi hier soir.", "mara_exploration", ("conduits_chambres", "salle_goumi")) from _call_objection_mara_j19
+    $ j19_mara_objection = _return
+    if j19_mara_objection[1] == "correct":
+        $ interject("CONTRADICTION", color="#5CD3FF")
+        think "Mon souvenir est précis. Le tournevis, sa manche accrochée à la grille, sa voix derrière moi. Et pourtant elle a l'air aussi certaine que moi."
+    elif j19_mara_objection[1] == "insufficient":
+        think "Ça prouve que le réseau existe. Pas que Mara y était avec moi."
+    elif j19_mara_objection[1] == "wrong":
+        think "Non. Cet élément n'a rien à voir avec ce qu'elle vient de nier."
+    else:
+        think "Je laisse passer la phrase. Les deux versions restent là, impossibles à superposer."
 
     noam panne "..."
 
@@ -577,9 +596,12 @@ label _19_0_1_1_SECURISATION:
 
     "Cette pensée me dérange davantage que si elle avait simplement menti."
 
-    scene black with dissolve
-
-    jump _19_0_1_1_SOIREE
+    $ hideGroup()
+    call OFFER_DAILY_EXPLORATION(
+        "_19_0_1_1_SOIREE", 1,
+        ["maintenance", "observation", "conclave", "dortoir"],
+        "Retourner au dortoir", "dortoir"
+    ) from _call_offer_exploration_j19
 
 
 label _19_0_1_1_SOIREE:
@@ -739,6 +761,9 @@ label _19_0_1_1_CHASSE:
     scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
     $ flashlight_on()
 
+    tuto "Les bruits peuvent mentir. Choisis vite : la poursuite converge toujours vers la source."
+    call investigation_conduit_run("chase") from _call_investigation_conduit_j19
+
     "Le conduit paraît plus étroit que la veille."
     "Ou peut-être que je suis simplement beaucoup plus conscient de ce qui pourrait se trouver devant moi."
 
@@ -824,6 +849,8 @@ label _19_0_1_1_CADAVRE:
     "Au début, mon cerveau essaie de le ranger avec le reste. Une coque. Une pièce détachée. Un autre robot en cours de réparation."
 
     "Puis la lumière éclaire une main."
+
+    $ investigation_add("corps_mara")
 
     $ unlock_gallery_image("bg_cg040")
     scene bg_cg040 at adaptive_fullscreen with creep_diss

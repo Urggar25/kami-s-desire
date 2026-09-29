@@ -387,10 +387,7 @@ label _10_1_0_0_TEMPS_LIBRE:
 
     think "Pour une fois, je préférerais que personne n'y réfléchisse trop."
 
-    # TEMPS LIBRE
-    # Insérer ici le système de temps libre de la journée.
-
-    jump _10_1_0_0_DEBAT
+    call START_FREE_TIME("_10_1_0_0_DEBAT") from _call_START_FREE_TIME_10_1_0_0
 
 
 label _10_1_0_0_DEBAT:

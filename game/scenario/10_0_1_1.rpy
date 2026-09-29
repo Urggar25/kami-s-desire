@@ -39,8 +39,10 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     $ j10011_relay_infirmary_checked = False
     $ j10011_alibis_checked = []
     $ j10011_alibi_done = False
+
     $ cafeteria_food_level = "medium"
     $ current_period = "Matin"
+    $ noam_has_juliette_drawing = False
 
     play music "music/bgm_calm_not_peace.mp3" fadein 2.0
 
@@ -384,7 +386,9 @@ label _10_0_1_1_RELAIS_GYMNASE:
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_j10011_gym_relay
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
-<<<<<<< Updated upstream
+    $ unlock_gallery_image("bg_cg051")
+    scene bg_cg051 at adaptive_fullscreen with dissolve
+
     "Le gymnase n'est pas tout à fait vide."
 
     "Iris est seule près des tapis, les cheveux attachés et les mains entourées de bandes. Au moment où j'entre, elle enchaîne deux coups rapides contre un sac, pivote, puis termine par un mouvement de hanche sec avant de reculer."
@@ -407,16 +411,9 @@ label _10_0_1_1_RELAIS_GYMNASE:
 
     iris fatigue "Par contre sans clim, je vais mourir avant d'avoir fini. Amuse-toi bien avec ton truc."
 
-    "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
-
-=======
-    $ unlock_gallery_image("bg_cg051")
-    scene bg_cg051 at adaptive_fullscreen with dissolve
-    pause 0.8
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
-    "Le gymnase est vide. L'odeur de caoutchouc et de métal paraît plus forte sans le souffle constant de la climatisation."
->>>>>>> Stashed changes
+    "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
     "Le relais est derrière une protection transparente, juste à côté d'une large bouche d'aération."
 
     menu:
@@ -537,6 +534,7 @@ label _10_0_1_1_DOPPELGANGER:
     show bg_cg030 at slow_zoom_creep, breathe_dark
     with dread_pix
     $ unlock_gallery_image("bg_cg030")
+    $ investigation_add("silhouette_couloirs")
 
     "Je reste immobile beaucoup trop longtemps, incapable de décider si je regarde réellement quelque chose ou si j'attends simplement que quelque chose apparaisse."
 
@@ -998,7 +996,7 @@ label _10_0_1_1_APRES_ALIBIS:
 
     call end_day("11", sleeping=True) from _call_end_day_1
     
-    jump _10_1_0_0_REVEIL
+    jump _11_0_1_1_REVEIL_CHAMBRE
 
 
 # Total journée : 10 minutes 50

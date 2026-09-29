@@ -432,11 +432,13 @@ label _6_0_1_CONCLAVE_START:
 
     think "Toujours rien."
 
-    $ showGroup([("ryn", "colere", 0.2), ("iris", "fatigue", 0.5), ("sael", "neutre", 0.8)])
-
+    $ bc_show("ryn", "colere")
     ryn colere "Putain mais qu'est-ce qui t'arrive ? De toute façon ça sert à rien de débattre ! On connaît déjà la fin !"
+    $ bc_hide()
 
+    $ bc_show("iris", "colere")
     iris colere "Pff, à quoi bon jouer son jeu. Tout ça ne servirait à rien."
+    $ bc_hide()
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen
@@ -639,6 +641,8 @@ label _6_0_1_FRACTURE_QTE:
 
     sael triste "Un jour, tu comprendras."
 
+    think "Elle ne va pas..."
+
     $ hideGroup()
 
     call j601_sael_vote_animation from _call_j601_sael_vote_animation
@@ -665,7 +669,6 @@ label _6_0_1_FRACTURE_QTE:
     play music "music/bgm_system_override.mp3" fadein 0.5
 
     kami "HEP HEP HEP ! On était pas-pas au moment du vote !"
-    kami ""
 
     scene bg_diffusion_amour at adaptive_fullscreen with hpunch
 
@@ -726,19 +729,7 @@ label _6_0_1_VOTE:
     $ vote_phase3_player_choice = None
 
     stop music fadeout 1.0
-    scene black with dissolve
-
     $ _vote_result = renpy.call_screen("vote_screen")
-
-    if _vote_result == "pour":
-        scene Solid("#0AFF8844")
-        with Dissolve(0.12)
-    elif _vote_result == "contre":
-        scene Solid("#FF2A2A44")
-        with Dissolve(0.12)
-    else:
-        scene Solid("#AAB0BF44")
-        with Dissolve(0.12)
 
     # Résultats imposés pour le vote J6_0_1
     # Pour : Julian, Tomas + éventuellement Noam
@@ -840,12 +831,10 @@ label _6_0_1_VOTE:
 
     "Tout le monde repart peu à peu."
 
-    hide sael
+    hide sael with moveoutright
 
     think "C'est terminé."
     think "Mais rien n'est réglé."
-
-    with moveinright
 
     jump _6_0_1_FIN_JOURNEE
 
