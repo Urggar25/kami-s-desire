@@ -18,9 +18,9 @@ label _20_0_1_1_0_REVEIL:
     $ danger_on()
 
     think "Je ne sais pas combien de temps je reste devant la table avant de réussir à bouger."
-    think "Tout ce que je sais, c'est que Mara est là. Allongée devant moi, parfaitement immobile, dans une pièce dont personne n'était censé connaître l'existence."
+    think "Mara est là. Allongée devant moi. Dans une pièce que personne n'était censé connaître."
 
-    "Ma lampe tremble légèrement entre mes doigts. J'essaie de la tenir correctement, mais plus je regarde son visage, plus ma main refuse de m'obéir."
+    "Ma lampe tremble entre mes doigts. J'essaie de la stabiliser, mais dès que je regarde son visage, ça recommence."
 
     noam peur "Mara...?"
 
@@ -202,7 +202,7 @@ label _20_0_1_1_0_REVEIL:
 
     noam desespoir "Il y aura quelque chose."
 
-    "Je le dis avec certitude, mais pour la première fois depuis que je suis revenu, j'ai peur de la réponse."
+    "Je le dis sans hésiter. Pourtant, une partie de moi espère presque avoir tort."
 
     $ hideGroup()
 
@@ -303,7 +303,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     kael "Depuis trois jours, on découvre que nos souvenirs peuvent nous raconter n'importe quoi. Alors non, je vais pas te dire que t'as forcément raison juste parce que tu gueules."
 
-    "La remarque me frappe plus violemment que je ne voudrais l'admettre."
+    "Je trouve rien à répondre tout de suite."
 
     noam desespoir "Je l'ai vue..."
 
@@ -717,7 +717,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     sael raison "J'envisage tout. Ça veut pas dire que je vais pointer quelqu'un du doigt sans la moindre preuve."
 
-    "Je ferme les yeux quelques secondes. Elles ne comprennent pas. Ou peut-être qu'elles comprennent parfaitement et qu'elles refusent simplement de me suivre là-dedans."
+    "Je ferme les yeux. Elles comprennent rien. Ou alors elles comprennent très bien et elles veulent juste pas me suivre là-dedans."
 
     noam fatigue "Faites seulement attention. C'est tout ce que je vous demande."
 
@@ -802,7 +802,7 @@ label _20_0_1_1_FIN:
     "Pendant un long moment, je fixe simplement la porte par laquelle Lysa et Sael viennent de sortir. J'aimerais me convaincre qu'elles vont réfléchir à ce que je leur ai dit, mais je n'en sais rien."
 
     think "Il y a un traître parmi nous."
-    "Je le répète mentalement plusieurs fois, non pas parce que j'en suis certain, mais parce que c'est la seule explication qui me permet encore de relier les événements entre eux."
+    "Je me répète la phrase. J'en sais rien. Mais pour l'instant, c'est la seule chose qui relie encore tout le reste."
 
     think "Mara dans la salle."
     think "Mara dans la cafétéria."
