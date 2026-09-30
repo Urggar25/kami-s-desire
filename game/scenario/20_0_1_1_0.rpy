@@ -349,6 +349,9 @@ label _20_0_1_1_SALLE_GOUMI:
 
 label _20_0_1_1_IRIS_CONFRONTATION:
 
+    # Le décor est reposé ici pour les accès directs depuis la roadmap.
+    scene bg_salle_goumi_cachee at adaptive_fullscreen
+
     iris determine "Pose-le."
     $ danger_on()
 
@@ -371,8 +374,8 @@ label _20_0_1_1_IRIS_CONFRONTATION:
 
     "Iris attrape mon poignet, tourne sur elle-même et me fait perdre l'équilibre avec une facilité qui me laisse à peine le temps de comprendre ce qu'elle vient de faire."
 
-    $ unlock_gallery_image("bg_cg047")
-    scene bg_cg047 at adaptive_fullscreen with flash_white
+    $ unlock_gallery_image("bg_cg052")
+    scene bg_cg052 at adaptive_fullscreen with flash_white
 
     noam surpris "Qu'est-ce que—?!"
 
@@ -387,7 +390,7 @@ label _20_0_1_1_IRIS_CONFRONTATION:
 
     call trace_qte_sequence(
         j20_iris_trace_steps,
-        "bg_cg047",
+        "bg_cg052",
         start_zoom=1.0,
         zoom_step=0.065,
         show_tutorial=False
@@ -401,6 +404,9 @@ label _20_0_1_1_IRIS_CONFRONTATION:
 
 
 label _20_0_1_1_IRIS_QTE_ECHEC:
+
+    $ unlock_gallery_image("bg_cg047")
+    scene bg_cg047 at adaptive_fullscreen with flash_white
 
     "Le couteau tombe immédiatement. J'essaie de me dégager par réflexe, mais elle garde mon bras bloqué et me repousse contre la table."
 
@@ -490,7 +496,8 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     pause 0.6
 
-    scene bg_salle_goumi_cachee at adaptive_fullscreen with flash_white
+    $ unlock_gallery_image("bg_cg053")
+    scene bg_cg053 at adaptive_fullscreen with flash_white
 
     "Iris ne bouge plus."
 
@@ -857,7 +864,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     $ horror_audio_cut(duration=0.42, restore_volume=0.45)
 
-    "Kael-Doppelgänger traîne le Noam inconscient dans la pièce."
+    "Kael traîne le Noam inconscient dans la pièce."
 
     "Le second Noam fait la même chose avec Iris."
 
