@@ -623,18 +623,33 @@ init -2 python:
             "teleportable": True,
         },
         {
+            "id": "split_noam_iris",
+            "title": "Confrontation — Noam / Iris",
+            "short": "QTE",
+            "label": "_20_0_1_1_IRIS_CONFRONTATION",
+            "category": "scene",
+            "kind": "divergence",
+            "x": 9960,
+            "y": 530,
+            "summary": "Noam refuse de lâcher le couteau. Iris avance pour le désarmer : la confrontation qui suit détermine la fin de la route.",
+            "choice": "Rejouer la confrontation juste avant les quatre QTE.",
+            "consequence": "Réussir les quatre QTE ouvre la fin alternative ; les échouer mène au Jour 21.",
+            "requires": ["day_20_0_1_1_0"],
+            "teleportable": True,
+        },
+        {
             "id": "day_21_0_1_1_0",
             "title": "Jour 21 — Écho des cendres",
             "short": "J21",
             "label": "_21_0_1_1_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 9960,
-            "y": 530,
+            "x": 10340,
+            "y": 670,
             "summary": "Toujours attaché à l'infirmerie, Noam voit Mara neutraliser la caméra avant qu'un double parfait de lui-même ne sorte du conduit.",
             "choice": "Affronter une vérité devenue impossible alors qu'aucune fuite n'est encore possible.",
             "consequence": "Le double tue Noam, prend sa place et quitte le Conclave avec les autres représentants à bord de la navette.",
-            "requires": ["day_20_0_1_1_0"],
+            "requires": ["split_noam_iris"],
             "required_variables": {"day_id": 21, "current_day": 21, "current_period": "Matin"},
             "teleportable": True,
         },
@@ -650,7 +665,7 @@ init -2 python:
             "summary": "Noam réussit les quatre QTE face à Iris. La lutte tourne au drame avant que Kael révèle sa véritable nature et que la salle de fabrication des Doppelgängers soit découverte.",
             "choice": "Réussir les quatre QTE face à Iris.",
             "consequence": "Fin alternative : les corps originaux et le procédé de remplacement sont révélés.",
-            "requires": ["day_20_0_1_1_0"],
+            "requires": ["split_noam_iris"],
             "teleportable": True,
         },
         {
@@ -660,7 +675,7 @@ init -2 python:
             "label": "_21_0_1_1_EPILOGUE",
             "category": "ending",
             "kind": "ending",
-            "x": 10340,
+            "x": 10720,
             "y": 670,
             "summary": "Noam est éliminé puis remplacé par son Doppelgänger. La navette quitte le Conclave avec la copie de Noam parmi les représentants.",
             "choice": "Échouer à empêcher le remplacement de Noam.",
@@ -867,6 +882,8 @@ init -2 python:
                 return "vote"
         if target.get("kind") == "ending":
             return "ending"
+        if target.get("kind") == "divergence":
+            return "alt"
         if target.get("kind") == "route":
             return "alt"
         if target.get("kind") == "vote":
@@ -879,11 +896,14 @@ init -2 python:
     def roadmap_is_ending(node):
         return bool(node and (node.get("kind") == "ending" or node.get("category") == "ending"))
 
-    def roadmap_is_timeline_node(node):
-        return bool(node and (roadmap_is_day(node) or roadmap_is_ending(node)))
+    def roadmap_is_divergence(node):
+        return bool(node and node.get("kind") == "divergence")
 
-    def roadmap_day_predecessors(node):
-        """Return the nearest day nodes behind a day, skipping technical nodes."""
+    def roadmap_is_timeline_node(node):
+        return bool(node and (roadmap_is_day(node) or roadmap_is_ending(node) or roadmap_is_divergence(node)))
+
+    def roadmap_timeline_predecessors(node):
+        """Return the nearest visible roadmap nodes behind a node, skipping hidden technical nodes."""
         result = []
         visited = set()
 
@@ -894,7 +914,7 @@ init -2 python:
             candidate = ROADMAP_NODE_BY_ID.get(node_id)
             if not candidate:
                 return
-            if roadmap_is_day(candidate):
+            if roadmap_is_timeline_node(candidate):
                 if candidate["id"] not in result:
                     result.append(candidate["id"])
                 return
@@ -970,7 +990,7 @@ init -2 python:
         return min(1.0, max(0.0, value))
 
     def roadmap_selected_or_latest(selected_id):
-        if roadmap_is_day(ROADMAP_NODE_BY_ID.get(selected_id)):
+        if roadmap_is_timeline_node(ROADMAP_NODE_BY_ID.get(selected_id)):
             return selected_id
         return roadmap_latest_node_id()
 
@@ -1119,7 +1139,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                             ysize canvas_h
 
                             for node in visible_nodes:
-                                for req in roadmap_day_predecessors(node):
+                                for req in roadmap_timeline_predecessors(node):
                                     if req in visible_node_ids:
                                         $ source = ROADMAP_NODE_BY_ID[req]
                                         $ sx = map_offset_x + int(source["x"] * z) + node_w
