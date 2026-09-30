@@ -637,6 +637,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     # À partir d'ici, Noam n'est plus le narrateur.
     # La narration passe volontairement à un point de vue externe.
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with creep_diss
 
     "Noam ne voit pas Kael se redresser."
 
@@ -682,7 +683,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Les deux corps sont emportés dans le conduit."
 
-    scene black with dissolve
+    scene bg_conduit_reseau at adaptive_fullscreen with creep_diss
 
     "Le trajet dure plusieurs minutes."
 
@@ -696,8 +697,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     pause 0.8
 
-    # TODO ART : CG / background de la salle de fabrication des Doppelgängers.
-    # Grande pièce blanche et froide, cuve centrale, matériel médical/industriel.
+    scene bg_laboratoire at adaptive_fullscreen with creep_diss
 
     "La pièce ressemble vaguement à une infirmerie."
 
@@ -815,13 +815,13 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Le second Noam sourit."
 
-    scene black with dissolve
+    scene bg_laboratoire at adaptive_fullscreen with dissolve
 
     "Quelques minutes plus tard, une porte latérale s'ouvre."
 
-    # TODO ART : CG de la pièce de stockage des corps.
-
     "La lumière s'allume automatiquement."
+
+    scene bg_cavite_technique at adaptive_fullscreen with creep_diss
 
     "Des corps sont entassés contre le fond de la pièce."
 
@@ -897,7 +897,12 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     stop music fadeout 0.2
     $ danger_off()
 
-    pause 2.0
+    pause 1.2
+
+    call screen kd_ending_reached(
+        "Les Remplaçants",
+        "ENDING 01 // JOUR 20"
+    )
 
     return
 
