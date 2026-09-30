@@ -19,6 +19,7 @@ init -2 python:
         ("vote", "Votes"),
         ("route", "Routes"),
         ("scene", "Scènes importantes"),
+        ("ending", "Fins"),
         ("debug", "Développement / Debug"),
     ]
 
@@ -638,6 +639,36 @@ init -2 python:
             "teleportable": True,
         },
         {
+            "id": "ending_doppelganger_revelation",
+            "title": "FIN — Derrière les visages",
+            "short": "FIN",
+            "label": "_20_0_1_1_IRIS_QTE_REUSSITE",
+            "category": "ending",
+            "kind": "ending",
+            "x": 10340,
+            "y": 390,
+            "summary": "Noam réussit les quatre QTE face à Iris. La lutte tourne au drame avant que Kael révèle sa véritable nature et que la salle de fabrication des Doppelgängers soit découverte.",
+            "choice": "Réussir les quatre QTE face à Iris.",
+            "consequence": "Fin alternative : les corps originaux et le procédé de remplacement sont révélés.",
+            "requires": ["day_20_0_1_1_0"],
+            "teleportable": True,
+        },
+        {
+            "id": "ending_echoes_ashes",
+            "title": "FIN — Écho des cendres",
+            "short": "FIN",
+            "label": "_21_0_1_1_EPILOGUE",
+            "category": "ending",
+            "kind": "ending",
+            "x": 10340,
+            "y": 670,
+            "summary": "Noam est éliminé puis remplacé par son Doppelgänger. La navette quitte le Conclave avec la copie de Noam parmi les représentants.",
+            "choice": "Échouer à empêcher le remplacement de Noam.",
+            "consequence": "Fin de la route : le Doppelgänger de Noam retourne sur Terre avec les survivants.",
+            "requires": ["day_21_0_1_1_0"],
+            "teleportable": True,
+        },
+        {
             "id": "debug_conclave_map",
             "title": "Debug — Carte du Conclave",
             "short": "Map",
@@ -775,6 +806,7 @@ init -2 python:
             "vote": "gui/roadmap/nodes/roadmap_node_vote_hover.png" if hover else "gui/roadmap/nodes/roadmap_node_vote_idle.png",
             "route": "gui/roadmap/nodes/roadmap_node_route_hover.png" if hover else "gui/roadmap/nodes/roadmap_node_route_idle.png",
             "divergence": "gui/roadmap/nodes/roadmap_node_divergence.png",
+            "ending": "gui/roadmap/nodes/roadmap_node_divergence.png",
             "debug": "gui/roadmap/nodes/roadmap_node_route_hover.png" if hover else "gui/roadmap/nodes/roadmap_node_route_idle.png",
         }
         return table.get(kind, "gui/roadmap/nodes/roadmap_node_main_hover.png" if hover else "gui/roadmap/nodes/roadmap_node_main_idle.png")
@@ -789,6 +821,7 @@ init -2 python:
             "route": "gui/roadmap/icons/roadmap_icon_route.png",
             "divergence": "gui/roadmap/icons/roadmap_icon_choice.png",
             "scene": "gui/roadmap/icons/roadmap_icon_scene.png",
+            "ending": "gui/roadmap/icons/roadmap_icon_kami.png",
             "debug": "gui/roadmap/icons/roadmap_icon_kami.png",
         }.get(kind, "gui/roadmap/icons/roadmap_icon_scene.png")
 
@@ -821,6 +854,8 @@ init -2 python:
                 return "alt"
             if target.get("y", 0) < source.get("y", 0) - 40:
                 return "vote"
+        if target.get("kind") == "ending":
+            return "ending"
         if target.get("kind") == "route":
             return "alt"
         if target.get("kind") == "vote":
@@ -829,6 +864,12 @@ init -2 python:
 
     def roadmap_is_day(node):
         return bool(node and (node.get("kind") == "day" or node.get("category") == "day"))
+
+    def roadmap_is_ending(node):
+        return bool(node and (node.get("kind") == "ending" or node.get("category") == "ending"))
+
+    def roadmap_is_timeline_node(node):
+        return bool(node and (roadmap_is_day(node) or roadmap_is_ending(node)))
 
     def roadmap_day_predecessors(node):
         """Return the nearest day nodes behind a day, skipping technical nodes."""
@@ -854,7 +895,7 @@ init -2 python:
         return result
 
     def roadmap_map_size(nodes=None):
-        nodes = list(nodes) if nodes is not None else [node for node in ROADMAP_NODES if roadmap_is_day(node)]
+        nodes = list(nodes) if nodes is not None else [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node)]
         if not nodes:
             return 1280, 800
         max_x = max([node["x"] for node in nodes]) + 390
@@ -961,7 +1002,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
     default selected_node_id = roadmap_selected_or_latest(roadmap_selected_node)
     default map_zoom = initial_zoom if initial_zoom is not None else 0.78
 
-    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_day(node) and roadmap_should_show(node)]
+    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node) and roadmap_should_show(node)]
     $ map_w, map_h = roadmap_map_size(visible_nodes)
     $ fit_zoom = roadmap_fit_zoom(visible_nodes)
     $ z = max(fit_zoom, min(1.40, map_zoom))
@@ -1076,8 +1117,8 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                         $ ty = map_offset_y + int(node["y"] * z) + int(node_h / 2)
                                         $ mx = int((sx + tx) / 2)
                                         $ edge_state = roadmap_edge_status(req, node["id"])
-                                        $ edge_color = {"active": "#5cd3ffcc", "locked": "#39495699", "alt": "#b27bffcc", "vote": "#d6b15fcc"}.get(edge_state, "#5cd3ffcc")
-                                        $ edge_glow = {"active": "#5cd3ff22", "locked": "#39495618", "alt": "#b27bff22", "vote": "#d6b15f22"}.get(edge_state, "#5cd3ff22")
+                                        $ edge_color = {"active": "#5cd3ffcc", "locked": "#39495699", "alt": "#b27bffcc", "vote": "#d6b15fcc", "ending": "#ff5f7acc"}.get(edge_state, "#5cd3ffcc")
+                                        $ edge_glow = {"active": "#5cd3ff22", "locked": "#39495618", "alt": "#b27bff22", "vote": "#d6b15f22", "ending": "#ff5f7a22"}.get(edge_state, "#5cd3ff22")
                                         add Solid(edge_glow) xpos min(sx, mx) ypos (sy - 3) xsize max(6, abs(mx - sx)) ysize 8
                                         add Solid(edge_glow) xpos (mx - 3) ypos min(sy, ty) xsize 8 ysize max(6, abs(ty - sy))
                                         add Solid(edge_glow) xpos min(mx, tx) ypos (ty - 3) xsize max(6, abs(tx - mx)) ysize 8
@@ -1102,6 +1143,9 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                     ]
 
                                     fixed:
+                                        if roadmap_is_ending(node):
+                                            add Solid("#ff5f7acc") xpos 0 ypos 0 xsize node_w ysize max(3, int(5 * z))
+                                            add Solid("#ff5f7acc") xpos 0 ypos (node_h - max(3, int(5 * z))) xsize node_w ysize max(3, int(5 * z))
                                         if compact_nodes:
                                             text kd_tr(node.get("short", node["id"])):
                                                 xalign 0.5
@@ -1133,6 +1177,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                 use roadmap_legend_item("#55d7a0", "Terminé")
                 use roadmap_legend_item("#5cd3ff", "En cours / disponible")
                 use roadmap_legend_item("#b27bff", "Embranchement")
+                use roadmap_legend_item("#ff5f7a", "Fin")
                 use roadmap_legend_item("#677989", "Verrouillé")
                 text "Molette : zoom  •  Glisser : déplacer  •  Vue globale : tout afficher" style "roadmap_legend_text"
 
@@ -1180,8 +1225,8 @@ screen roadmap_node_details(node):
         else:
             vbox:
                 spacing 18
-                text "Aucune journée sélectionnée" style "roadmap_details_title_text"
-                text "Sélectionnez une journée pour consulter ses archives et rejoindre cette séquence." style "roadmap_body_text"
+                text "Aucune séquence sélectionnée" style "roadmap_details_title_text"
+                text "Sélectionnez une journée ou une fin pour consulter ses archives et rejoindre cette séquence." style "roadmap_body_text"
 
 ################################################################################
 ## Styles
