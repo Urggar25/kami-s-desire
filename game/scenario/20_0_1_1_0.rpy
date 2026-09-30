@@ -443,120 +443,461 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Je baisse l'épaule au moment où Iris cherche à verrouiller mon bras. Sa prise glisse."
 
-    "Elle revient aussitôt. Plus vite. J'évite son coude, recule contre la table et arrache mon poignet à ses doigts avant qu'elle puisse tourner."
+    "Elle revient aussitôt. J'évite son coude de justesse et je tire mon poignet vers moi avant qu'elle puisse le reprendre."
 
     iris colere "Arrête de bouger !"
 
     noam colere "Arrête de m'attaquer !"
 
-    "Sa troisième prise passe devant mon visage. La quatrième manque ma tempe de quelques centimètres."
+    "Elle tente encore de saisir mon bras. Je recule contre la table, le couteau toujours serré dans ma main."
 
-    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
-    $ showGroup([
-        ("noam", "peur", 0.22),
-        ("iris", "colere", 0.52),
-        ("kael", "inquietude", 0.82),
-    ])
+    noam inquiet "Iris, stop !"
 
-    "Nous nous figeons tous les deux. Je tiens encore le couteau. Iris a les poings levés."
+    iris colere "Alors lâche-le !"
 
-    kael inquietude "Ça suffit ! Tous les deux !"
+    noam "Je vais le poser, mais arrête de me sauter dessus deux secondes !"
 
-    noam inquiet "Je voulais pas la toucher."
+    iris "Tu dis ça depuis tout à l'heure !"
 
-    iris colere "Alors pose ce putain de couteau !"
+    "Elle attrape mon avant-bras à deux mains."
 
-    "Cette fois, je regarde vraiment ce que j'ai dans la main."
+    noam colere "Lâche-moi !"
 
-    "Je desserre les doigts. Le couteau tombe entre nous et glisse sous la table."
+    iris "Lâche le couteau !"
+
+    "Je tire mon bras vers moi. Elle tire dans l'autre sens."
+
+    "Pendant une seconde, personne ne gagne."
+
+    kael inquietude "Ça suffit !"
+
+    "Iris change brusquement d'appui."
+
+    "Son pied accroche le bord de la table."
+
+    iris surpris "Merde—"
+
+    scene black with vpunch
+    play sound sfx_drop
+
+    "Tout va beaucoup trop vite."
+
+    "Je sens son poids partir vers moi."
+
+    "Puis quelque chose s'arrête net."
+
+    pause 0.6
+
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with flash_white
+
+    "Iris ne bouge plus."
+
+    noam panne "..."
+
+    "Sa main est toujours refermée sur mon poignet."
+
+    "Je baisse les yeux."
+
+    "Le couteau est entre nous."
+
+    "Une partie de la lame a disparu dans son ventre."
+
+    noam peur "Iris..."
+
+    "Elle baisse les yeux à son tour."
+
+    iris panne "..."
+
+    "Pendant une seconde, elle a juste l'air agacée. Comme si son cerveau refusait encore de comprendre."
+
+    iris fatigue "T'es... sérieux... ?"
+
+    noam desespoir "J'ai pas fait exprès. Putain, Iris, j'ai pas fait exprès !"
+
+    "Je lâche immédiatement le manche."
+
+    iris peur "Non !"
+
+    "Sa voix me coupe."
+
+    iris "Touche pas... laisse-le."
+
+    noam "D'accord. D'accord, je touche pas."
+
+    "Ses jambes commencent à lâcher."
+
+    "Je la rattrape comme je peux et l'accompagne au sol."
+
+    noam desespoir "Kael ! Va chercher Sael ! Maintenant !"
+
+    "Aucune réponse."
+
+    noam colere "KAEL !"
+
+    "Je relève la tête."
+
+    "Il est toujours là."
+
+    "Il nous regarde."
+
+    noam "Mais bouge, putain !"
+
+    "Kael ne bouge pas."
+
+    "Puis ses lèvres remontent légèrement."
+
+    noam panne "..."
+
+    "Je connais le sourire de Kael."
+
+    "Celui-là, non."
+
+    noam inquiet "Kael... ?"
+
+    "Il avance."
+
+    noam "Qu'est-ce que tu fous ? Va chercher quelqu'un !"
+
+    "Il continue."
+
+    iris fatigue "Kael..."
+
+    "J'essaie de me relever sans lâcher Iris."
+
+    noam inquiet "Reste où tu es."
+
+    "Son sourire s'élargit."
+
+    $ horror_audio_cut(duration=0.38, restore_volume=0.58)
+    $ doppelganger_reveal(screamer=False, duration=0.76, restore_volume=0.58)
+
+    noam peur "..."
+
+    noam "T'es pas Kael."
+
+    "Il se jette sur moi."
+
+    scene black with vpunch
+
+    "Je lève le bras par réflexe."
+
+    "Il frappe mon poignet contre le bord de la table."
 
     play sound sfx_drop
 
-    noam fatigue "Voilà."
+    "Le couteau tombe quelque part au sol."
 
-    "Iris baisse lentement les bras, sans me quitter des yeux. Kael se place entre nous."
+    noam colere "DÉGAGE !"
 
-    kael "On remonte. Maintenant."
+    "Je lui donne un coup d'épaule et réussis à le repousser."
 
-    iris determine "Et il reste pas seul."
+    "Iris essaie de se redresser derrière moi."
 
-    noam desaccord "Je viens de poser le couteau."
+    iris colere "Espèce de..."
 
-    iris "Après quatre tentatives. Tu veux une médaille ?"
+    "Kael pivote vers elle."
 
-    noam colere "C'est toi qui m'as sauté dessus !"
+    noam peur "IRIS, NON !"
 
-    kael inquietude "Noam. Remonte."
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
 
-    "Je pourrais continuer. Je pourrais leur rappeler la table vide, le corps, Mara dans la cafétéria."
+    "Elle essaie de le frapper."
 
-    "Je regarde le couteau sous la table et ravale le reste."
+    "Son bras part trop lentement."
 
-    $ danger_off()
-    $ hideGroup()
-    scene black with dissolve
+    "Kael lui donne un coup sec au visage."
+
+    "Iris retombe contre le sol."
+
+    noam desespoir "IRIS !"
+
+    "Je me jette sur lui."
+
+    "Je n'arrive même pas jusqu'à son épaule."
+
+    scene black with vpunch
+
+    "Quelque chose me frappe derrière la tête."
+
+    "Mes jambes disparaissent."
+
+    noam panne "..."
+
+    "Je tombe."
+
+    "La dernière chose que je vois, c'est Kael qui se penche vers moi."
+
+    "Il sourit encore."
+
+    stop music fadeout 0.5
+
+    pause 1.5
+
+    # À partir d'ici, Noam n'est plus le narrateur.
+    # La narration passe volontairement à un point de vue externe.
+
+    "Noam ne voit pas Kael se redresser."
+
     pause 0.8
 
-    $ current_period = "Soir"
-    scene bg_infirmerie at adaptive_fullscreen with dissolve
-    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
+    play sound "audio/sfx_duct_scrape.wav" volume 0.74
 
-    $ showGroup([
-        ("noam", "fatigue", 0.22),
-        ("lysa", "blase", 0.52),
-        ("sael", "neutre", 0.82),
-    ])
+    "Il ne voit pas non plus la grille d'aération bouger derrière lui."
 
-    "Je finis à l'infirmerie sans avoir perdu connaissance. Sael vérifie mes poignets, mon crâne, puis la distance entre moi et la porte."
+    play sound "audio/sfx_metal_open.mp3"
 
-    sael neutre "Tu restes ici cette nuit."
+    "La grille s'ouvre."
 
-    noam desaccord "Je vais pas retourner dans les conduits."
+    "Deux mains apparaissent."
 
-    lysa fatigue "Tu as dit ça avant d'y retourner avec un couteau."
+    "Puis un visage."
 
-    noam "J'ai vu le corps de Mara. Quelqu'un l'a déplacé."
+    pause 0.8
 
-    lysa "Je te crois quand tu dis que tu l'as vu. Je sais juste pas encore ce que ça veut dire."
+    play music "audio/music/bgm_horror_pulse.mp3" fadein 1.2
 
-    noam determine "Ça veut dire que quelqu'un connaissait la salle. Quelqu'un savait comment passer par les murs."
+    "Noam sort du conduit."
 
-    sael mefiant "Un traître."
+    "Le même visage."
 
-    noam "Oui."
+    "Les mêmes cheveux."
 
-    "Lysa ne plaisante pas cette fois. Elle regarde Sael, puis la porte."
+    "Les mêmes vêtements."
 
-    lysa reflexion "On fera attention cette nuit. Mais toi, tu restes là."
+    "Aucune hésitation."
 
-    noam inquiet "Attaché ?"
+    $ doppelganger_reveal(screamer=True, duration=0.96, restore_volume=0.56)
 
-    sael "La porte ne suffit pas si tu paniques encore."
+    "Le second Noam regarde Kael."
 
-    noam colere "J'ai réussi à ne blesser personne !"
+    "Kael désigne Iris d'un mouvement du menton."
 
-    lysa blase "Et c'est précisément pour ça qu'on discute au lieu de te ramasser inconscient."
+    "Aucun des deux ne parle."
 
-    "Je serre les mâchoires. Puis je tends moi-même les poignets vers les sangles."
+    "Noam se penche, passe un bras sous les épaules d'Iris et l'autre sous ses jambes."
 
-    noam fatigue "Une nuit. Et si vous entendez quelque chose derrière une grille, vous ne partez pas seules."
+    "Kael attrape le premier Noam sous les bras."
 
-    lysa sourire "D'accord."
+    "Les deux corps sont emportés dans le conduit."
 
-    "Sael ferme les attaches. Pas brutalement. Pas doucement non plus."
+    scene black with dissolve
 
-    noam "Le traître peut partir avec nous demain."
+    "Le trajet dure plusieurs minutes."
 
-    sael raison "S'il existe, il sera encore là à ton réveil."
+    "Ils passent deux embranchements, descendent plus bas dans la structure, puis s'arrêtent devant une grille que Noam n'avait jamais vue."
 
-    noam inquiet "C'est justement ce qui m'inquiète."
+    "Kael la déverrouille."
 
-    $ hideGroup()
-    play sound sfx_door
-    "Lysa et Sael sortent. La porte se referme derrière elles."
+    "Derrière, il n'y a plus de conduit."
 
-    jump _20_0_1_1_FIN
-    # Durée : 3m00
+    "Il y a une salle."
+
+    pause 0.8
+
+    # TODO ART : CG / background de la salle de fabrication des Doppelgängers.
+    # Grande pièce blanche et froide, cuve centrale, matériel médical/industriel.
+
+    "La pièce ressemble vaguement à une infirmerie."
+
+    "Vaguement."
+
+    "Il y a bien des écrans, des plateaux métalliques et des machines autour des murs, mais rien n'est disposé pour soigner quelqu'un."
+
+    "Au centre, une énorme cuve verticale occupe presque toute la hauteur de la salle."
+
+    "Quelque chose flotte à l'intérieur."
+
+    pause 0.7
+
+    "Un corps."
+
+    "Ou presque."
+
+    "Deux bras."
+
+    "Deux jambes."
+
+    "Une tête."
+
+    "Mais aucun visage vraiment terminé."
+
+    "La peau est pâle, lisse, presque sans détail."
+
+    "Kael dépose Noam au sol."
+
+    "Le second Noam fait la même chose avec Iris."
+
+    "Elle respire encore."
+
+    "Faiblement."
+
+    "Kael s'approche de la machine."
+
+    "Il ouvre un compartiment, retire plusieurs pièces, en ajoute d'autres."
+
+    "Certaines ressemblent à des poches médicales."
+
+    "D'autres à des composants électroniques."
+
+    "Impossible de savoir où s'arrête l'un et où commence l'autre."
+
+    "Le second Noam reste debout près d'Iris."
+
+    "Il la regarde."
+
+    "Puis regarde la cuve."
+
+    "Kael appuie sur l'écran."
+
+    play sound "audio/sfx_tinnitus.wav" volume 0.38
+
+    "La machine démarre."
+
+    "Le liquide dans la cuve se met à tourner lentement."
+
+    "La forme à l'intérieur tressaille."
+
+    pause 0.8
+
+    "Ses doigts bougent."
+
+    "Puis ses bras."
+
+    "Quelque chose change dans son visage."
+
+    "Les contours se creusent."
+
+    "Des cheveux apparaissent."
+
+    "La couleur vient ensuite."
+
+    pause 0.8
+
+    "Rouge."
+
+    "Le visage n'est plus vide."
+
+    "C'est celui d'Iris."
+
+    pause 1.0
+
+    "La cuve se vide."
+
+    "Le corps s'effondre contre la paroi."
+
+    play sound "audio/sfx_metal_open.mp3"
+
+    "La porte s'ouvre."
+
+    "Iris tombe à genoux sur le sol, trempée, incapable de tenir debout correctement."
+
+    iris panne "..."
+
+    "Elle tousse."
+
+    "Respire."
+
+    "Regarde autour d'elle."
+
+    "Puis elle fronce les sourcils."
+
+    iris colere "...Putain..."
+
+    "Elle passe une main tremblante sur son bras."
+
+    iris fatigue "Il fait froid ici."
+
+    "Kael lui tend une couverture."
+
+    "Elle la prend sans poser de question."
+
+    "Le second Noam sourit."
+
+    scene black with dissolve
+
+    "Quelques minutes plus tard, une porte latérale s'ouvre."
+
+    # TODO ART : CG de la pièce de stockage des corps.
+
+    "La lumière s'allume automatiquement."
+
+    "Des corps sont entassés contre le fond de la pièce."
+
+    "Pas des dizaines."
+
+    "Juste assez pour comprendre."
+
+    pause 0.6
+
+    "Mara est là."
+
+    "Le même corps que Noam avait trouvé sur la table quelques heures plus tôt."
+
+    pause 0.6
+
+    "À côté d'elle repose Kael."
+
+    "Le vrai Kael."
+
+    pause 0.8
+
+    "Et un peu plus loin..."
+
+    "Noam."
+
+    pause 1.0
+
+    "Un autre Noam."
+
+    "Immobile."
+
+    "Déjà là avant leur arrivée."
+
+    $ horror_audio_cut(duration=0.42, restore_volume=0.45)
+
+    "Kael-Doppelgänger traîne le Noam inconscient dans la pièce."
+
+    "Le second Noam fait la même chose avec Iris."
+
+    "Ils les déposent à côté des autres."
+
+    "Sans précaution particulière."
+
+    "Comme s'ils rangeaient quelque chose."
+
+    pause 0.8
+
+    "Derrière eux, la nouvelle Iris apparaît dans l'encadrement de la porte."
+
+    "Elle a maintenant une tenue sur le dos."
+
+    "Ses cheveux sont encore humides."
+
+    "Elle regarde Mara."
+
+    "Puis Kael."
+
+    "Puis les deux Noam."
+
+    "Son regard descend enfin sur Iris."
+
+    pause 1.0
+
+    iris reflexion "..."
+
+    "Elle fixe son propre corps pendant quelques secondes."
+
+    "Son visage se ferme."
+
+    iris colere "...C'est quoi ce bordel ?"
+
+    scene black with signal_stutter
+    stop music fadeout 0.2
+    $ danger_off()
+
+    pause 2.0
+
+    return
 
 
 label _20_0_1_1_INFIRMERIE:
