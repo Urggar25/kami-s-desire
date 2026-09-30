@@ -432,7 +432,9 @@ label _20_0_1_1_IRIS_QTE_ECHEC:
 
     "Je vois son poing arriver sur le côté."
 
-    scene black with vpunch
+    scene bg_cg047 at adaptive_fullscreen with vpunch
+    play sound "audio/sfx_thud.mp3" volume 0.95
+    $ shake(9, 0.22)
 
     "Un choc sec me frappe à la tempe."
 
@@ -443,6 +445,8 @@ label _20_0_1_1_IRIS_QTE_ECHEC:
     "J'entends Iris m'appeler, puis Kael lui répondre quelque chose que je ne comprends déjà plus."
 
     "Tout devient noir avant même que je touche complètement le sol."
+
+    scene black with dissolve
     $ danger_off()
 
     stop music fadeout 1.0
@@ -985,12 +989,10 @@ label _20_0_1_1_INFIRMERIE:
 
     $ current_period = "Après-midi"
 
-    scene black
+    scene bg_infirmerie at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
 
     "Je reviens à moi avec une douleur sourde sur le côté de la tête. Pendant quelques secondes, je reste complètement immobile, incapable de remettre les événements dans l'ordre."
-
-    scene bg_infirmerie at adaptive_fullscreen with fade
 
     "Puis j'ouvre les yeux et reconnais le plafond de l'infirmerie."
 
@@ -1100,7 +1102,7 @@ label _20_0_1_1_ATTENTE_INFIRMERIE:
 
     "Le pire, c'est de savoir que Mara est quelque part dans le Conclave alors que je peux encore voir son corps dès que je ferme les yeux."
 
-    scene black with dissolve
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
     pause 1.2
 
     jump _20_0_1_1_LYSA_SAEL
