@@ -203,6 +203,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Codes promotionnels | Écran de saisie et de validation des codes promotionnels. | `game/systems_profiles_codex.rpy` | `textbutton "Codes promo" action ShowMenu("promo_codes_menu")` |
 | Succès | Grille des succès, états verrouillés et détails des récompenses obtenues. | `game/succes.rpy` | `call screen succes_menu` |
 | Menu système | Panneau pause dédié : sauvegarde, chargement, préférences, codex et sortie. | `game/screens.rpy` | `call screen system_menu` |
+| Écran de fin | Affiche une conclusion KAMI.CORE animée avec le nom de la fin atteinte et un retour au menu principal. | `game/ending_screen.rpy` | `call screen kd_ending_reached("Les Remplaçants", "ENDING 01 // JOUR 20")` |
 | Galerie | Affiche CG et vidéos débloquées avec filtres et variantes. | `game/menu.rpy` | `textbutton "Galerie" action ShowMenu("gallery_menu")` |
 | Sélection de scènes | Lance les scènes bonus ou relectures disponibles. | `game/menu.rpy` | `textbutton "Scènes" action ShowMenu("scene_select_menu")` |
 | Boutique temporaire | Liste les objets, prix, possessions et accès à leur prévisualisation. | `game/kami_shop_events.rpy` | `textbutton "Boutique" action ShowMenu("kami_shop_menu", initial_page=0)` |
