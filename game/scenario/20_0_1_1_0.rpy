@@ -909,7 +909,7 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
     call end_day("21") from _call_j20_dropknife_end_day_21
 
     if j20_kael_depart_choice == "stay":
-        jump _21_0_1_1_STAY_REVEIL
+        jump _21_0_1_1_0_0_REVEIL
 
     jump _21_0_1_1_0_1_REVEIL
 
