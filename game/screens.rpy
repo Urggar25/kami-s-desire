@@ -192,8 +192,6 @@ transform choice_appear(delay=0.0):
     pause delay
     easeout 0.22 alpha 1.0 yoffset 0
 
-default critical_choice_active = False
-
 screen choice(items):
     style_prefix "choice"
 
@@ -207,12 +205,8 @@ screen choice(items):
             spacing 18
             xfill True
 
-            if critical_choice_active:
-                text _("CRITICAL CHOICE") style "choice_header_critical"
-                add Solid("#ff5f7aaa", xsize=760, ysize=3) xalign 0.5
-            else:
-                text _("DECISION") style "choice_header"
-                add Solid("#5cd3ff66", xsize=760, ysize=2) xalign 0.5
+            text _("DECISION") style "choice_header"
+            add Solid("#5cd3ff66", xsize=760, ysize=2) xalign 0.5
 
             vbox:
                 style "choice_vbox"
@@ -249,10 +243,6 @@ style choice_header:
     xalign 0.5
     textalign 0.5
     kerning 6.0
-
-style choice_header_critical is choice_header:
-    color "#ff8da1"
-    size 36
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
