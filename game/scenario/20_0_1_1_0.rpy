@@ -6,6 +6,14 @@
 default j20_iris_qte_success = False
 
 
+# Mise en scène spécifique à la révélation de Kael au J20.
+# Le zoom est appliqué au sprite seul afin de garder la salle des Goumi lisible.
+transform j20_kael_approach(z=1.0):
+    xalign 0.5
+    yalign 1.0
+    zoom z
+
+
 label _20_0_1_1_0_REVEIL:
 
     $ cafeteria_food_level = "null"
@@ -370,7 +378,7 @@ label _20_0_1_1_IRIS_CONFRONTATION:
     "Je n'ai pas le temps de terminer mon geste."
 
     $ flashlight_off()
-    scene black with vpunch
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
 
     "Iris attrape mon poignet, tourne sur elle-même et me fait perdre l'équilibre avec une facilité qui me laisse à peine le temps de comprendre ce qu'elle vient de faire."
 
@@ -485,7 +493,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     iris surpris "Merde—"
 
-    scene black with vpunch
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
     play sound sfx_drop
 
     "Tout va beaucoup trop vite."
@@ -541,21 +549,42 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Aucune réponse."
 
+    # La CG reste importante pour la blessure d'Iris, puis on revient
+    # explicitement dans la salle pour isoler Kael à l'écran.
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with memory_rip
+    $ hideGroup()
+    hide iris
+    hide noam
+    hide kael
+
+    $ renpy.music.set_volume(0.34, delay=1.0, channel="music")
+
+    show kael neutre at j20_kael_approach(0.96) with dissolve
+    pause 1.0
+
+    show kael doute at j20_kael_approach(1.02) with dissolve
+    pause 1.0
+
+    show kael calme at j20_kael_approach(1.08) with dissolve
+    pause 1.0
+
+    show kael sourire at j20_kael_approach(1.14) with dissolve
+
     noam colere "KAEL !"
 
-    "Je relève la tête."
+    show kael sourire at j20_kael_approach(1.23) with Dissolve(0.25)
 
-    "Il est toujours là."
-
-    "Il nous regarde."
+    "Il ne répond pas. Il me regarde seulement, parfaitement immobile, comme s'il attendait que je comprenne tout seul."
 
     noam "Mais bouge, putain !"
 
-    "Kael ne bouge pas."
+    show kael taquin at j20_kael_approach(1.34) with Dissolve(0.22)
 
-    "Puis ses lèvres remontent légèrement."
+    "Ses lèvres remontent un peu plus."
 
     noam panne "..."
+
+    show kael joie at j20_kael_approach(1.46) with Dissolve(0.20)
 
     "Je connais le sourire de Kael."
 
@@ -563,32 +592,51 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     noam inquiet "Kael... ?"
 
-    "Il avance."
+    show kael sourire at j20_kael_approach(1.60) with Dissolve(0.18)
+
+    "Il fait un pas vers nous."
 
     noam "Qu'est-ce que tu fous ? Va chercher quelqu'un !"
 
-    "Il continue."
+    show kael taquin at j20_kael_approach(1.76) with Dissolve(0.16)
+
+    "Encore un pas."
 
     iris fatigue "Kael..."
+
+    show kael joie at j20_kael_approach(1.94) with Dissolve(0.14)
 
     "J'essaie de me relever sans lâcher Iris."
 
     noam inquiet "Reste où tu es."
 
-    "Son sourire s'élargit."
+    show kael sourire at j20_kael_approach(2.15) with Dissolve(0.12)
 
-    $ horror_audio_cut(duration=0.38, restore_volume=0.58)
-    $ doppelganger_reveal(screamer=False, duration=0.76, restore_volume=0.58)
+    "Son visage prend maintenant presque tout mon champ de vision."
+
+    $ renpy.music.set_volume(0.08, delay=0.45, channel="music")
+    pause 0.35
+
+    show kael taquin at j20_kael_approach(2.38) with Dissolve(0.10)
+    pause 0.55
+
+    $ horror_audio_cut(duration=0.30, restore_volume=0.0)
+    $ doppelganger_reveal(screamer=True, duration=0.88, restore_volume=0.0)
 
     noam peur "..."
 
     noam "T'es pas Kael."
 
+    hide kael
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
+    play sound "audio/sfx_thud.mp3" volume 0.95
+
     "Il se jette sur moi."
 
-    scene black with vpunch
-
     "Je lève le bras par réflexe."
+
+    play sound "audio/sfx_thud.mp3" volume 1.0
+    $ shake(10, 0.22)
 
     "Il frappe mon poignet contre le bord de la table."
 
@@ -597,6 +645,9 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Le couteau tombe quelque part au sol."
 
     noam colere "DÉGAGE !"
+
+    play sound "audio/sfx_thud.mp3" volume 0.90
+    $ shake(8, 0.18)
 
     "Je lui donne un coup d'épaule et réussis à le repousser."
 
@@ -614,7 +665,12 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Son bras part trop lentement."
 
+    play sound "audio/sfx_thud.mp3" volume 1.0
+    $ impact(intensity=8, duration=0.20, color="#8f101c")
+
     "Kael lui donne un coup sec au visage."
+
+    play sound "audio/sfx_drop.mp3" volume 0.72
 
     "Iris retombe contre le sol."
 
@@ -624,9 +680,13 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Je n'arrive même pas jusqu'à son épaule."
 
-    scene black with vpunch
+    play sound "audio/sfx_thud.mp3" volume 1.0
+    $ shake(14, 0.30)
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
 
     "Quelque chose me frappe derrière la tête."
+
+    play sound "audio/sfx_tinnitus.wav" volume 0.48
 
     "Mes jambes disparaissent."
 
@@ -636,9 +696,15 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "La dernière chose que je vois, c'est Kael qui se penche vers moi."
 
+    show kael sourire at j20_kael_approach(1.38) with creep_diss
+
     "Il sourit encore."
 
-    stop music fadeout 0.5
+    pause 0.5
+
+    scene black with suffocation_cut
+    stop music fadeout 0.25
+    $ renpy.music.set_volume(1.0, delay=0.0, channel="music")
 
     pause 1.5
 
