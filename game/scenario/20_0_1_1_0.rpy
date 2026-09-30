@@ -903,6 +903,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
         "Les Remplaçants",
         "ENDING 01 // JOUR 20"
     )
+    $ _ending_screen_closed = _return
 
     return
 
