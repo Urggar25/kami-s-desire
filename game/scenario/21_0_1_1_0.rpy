@@ -489,8 +489,11 @@ label _21_0_1_1_EPILOGUE:
     stop music fadeout 0.2
     $ renpy.music.set_volume(1.0, delay=0.0, channel="music")
 
-    pause 2.0
+    pause 1.2
 
-    pause 2.0
+    call screen kd_ending_reached(
+        "Quelqu'un est rentré",
+        "ENDING 02 // JOUR 21"
+    )
 
     return
