@@ -52,24 +52,57 @@ label _21_0_1_1_0_1_REVEIL:
 
     "Je me lève."
 
-    play sound sfx_kami_on
-    $ camera_glitch(strength="light", duration=0.35)
+    play sound sfx_announce
+    stop music fadeout 0.6
 
-    kami "REPRÉSENTANTS."
+    scene bg_diffusion_amour at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
 
-    noam surpris "..."
+    kami "Ooooh... Regardez-moi ces petites têtes."
+    kami "Vous avez presque l'air heureux ce matin."
 
-    kami "LE VAISSEAU DE RETOUR S'AMARRERA AU CONCLAVE À QUATORZE HEURES."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "LE DÉPART EST PROGRAMMÉ À SEIZE HEURES."
+    kami "Je me demande bien pourquoi."
+    kami "Ah oui ! C'est vrai."
+    kami "Aujourd'hui, vous rentrez chez vous."
 
-    pause 0.5
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
-    kami "JE VOUS CONSEILLE DE NE RIEN OUBLIER."
+    kami "Votre merveilleux taxi spatial s'amarrera au Conclave à quatorze heures."
+    kami "Et à seize heures..."
 
-    kami "JE N'AI AUCUNE INTENTION DE FAIRE DEMI-TOUR POUR VOS AFFAIRES."
+    pause 0.4
 
-    "Puis le haut-parleur se coupe."
+    kami "Pouf."
+    kami "Plus de Conclave. Plus de votes. Plus de moi."
+
+    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+
+    kami "Enfin... pour vous."
+    kami "Je vais essayer de survivre à cette séparation."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Alors profitez bien de vos dernières heures ensemble."
+    kami "Rangez vos petites affaires. Faites vos adieux aux murs. Vérifiez deux fois vos badges si ça peut vous rassurer."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+
+    kami "Et surtout, ne perdez rien."
+    kami "Je ne ferai PAS demi-tour parce que l'un de vous a oublié une chaussette sous son lit."
+
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+
+    kami "Seize heures. Soyez prêts."
+    kami "Ce serait vraiment dommage de rater votre propre départ."
+
+    hide screen kami_broadcast_ui
+    stop music fadeout 0.8
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
 
     "Je reste debout au milieu de ma chambre."
 
@@ -274,11 +307,33 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     "Kami fait vérifier les badges une première fois, puis une deuxième, parce qu'elle considère apparemment que nous sommes incapables de garder un morceau de plastique sur nous pendant quatre heures."
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    stop music fadeout 0.5
 
-    kami "AMARRAGE DU VAISSEAU CONFIRMÉ."
+    scene bg_diffusion_fier at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.7
 
-    kami "DEUX HEURES AVANT LE DÉPART."
+    kami "Bonne nouvelle, mes petits voyageurs."
+    kami "Votre navette est bien arrivée."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
+    kami "Vous pouvez arrêter de regarder les plafonds en vous demandant si je vais changer d'avis à la dernière seconde."
+
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
+    kami "Départ dans deux heures."
+    kami "Deux. Heures."
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+
+    kami "Ça devrait être largement suffisant pour douze adultes responsables."
+    kami "Donc, naturellement, je m'attends à une catastrophe."
+
+    hide screen kami_broadcast_ui
+    stop music fadeout 0.7
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     "Deux heures."
 
@@ -980,9 +1035,17 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
 
     scene black with dissolve
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    scene bg_diffusion_taquin at adaptive_fullscreen with signal_stutter
+    show screen kami_broadcast_ui
 
-    kami "DIX MINUTES AVANT FERMETURE DU SAS."
+    kami "Dix minutes avant fermeture du sas."
+    kami "Dix petites minutes. Je sais, le temps passe vite quand on s'amuse."
+
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "Alors bougez-vous."
+
+    hide screen kami_broadcast_ui
 
     scene bg_navette_retour at adaptive_fullscreen, shuttle_background with fade
 
@@ -1151,9 +1214,19 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     dg_noam "Ouais."
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    scene bg_diffusion_professeur at adaptive_fullscreen with signal_stutter
+    show screen kami_broadcast_ui
 
-    kami "TRENTE MINUTES AVANT FERMETURE DU SAS."
+    kami "Petit rappel pédagogique."
+    kami "Il vous reste trente minutes avant fermeture du sas."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Trente minutes, c'est très long."
+    kami "Sauf quand on a quelque chose d'important à régler, évidemment."
+
+    hide screen kami_broadcast_ui
+    scene bg_chambre at adaptive_fullscreen with signal_stutter
 
     "Le message nous coupe tous les trois."
 
@@ -1219,9 +1292,18 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "Personne ne parle pendant quelques secondes."
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    scene bg_diffusion_zen at adaptive_fullscreen with signal_stutter
+    show screen kami_broadcast_ui
 
-    kami "VINGT MINUTES AVANT FERMETURE DU SAS."
+    kami "Vingt minutes."
+    kami "Vous voyez ? Même sans vote, je peux encore vous offrir un joli compte à rebours."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Profitez-en. C'est probablement le dernier."
+
+    hide screen kami_broadcast_ui
+    scene bg_chambre at adaptive_fullscreen with signal_stutter
 
     iris inquiet "On fait quoi ?"
 
@@ -1322,9 +1404,19 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "On accélère."
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    scene bg_diffusion_colere at adaptive_fullscreen with signal_stutter
+    show screen kami_broadcast_ui
 
-    kami "QUINZE MINUTES AVANT FERMETURE DU SAS."
+    kami "Quinze minutes !"
+    kami "Je commence à reconnaître ce délicieux parfum de panique de dernière minute."
+
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    kami "Allez. Un dernier effort."
+    kami "Je serais presque triste d'en perdre un maintenant."
+
+    hide screen kami_broadcast_ui
+    scene couloir_dortoir at adaptive_fullscreen with signal_stutter
 
     "Au bout du couloir, Kael apparaît."
 
@@ -1401,9 +1493,27 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
 
     "Je la laisse faire."
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    scene bg_diffusion_champagne at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
 
-    kami "DÉPART."
+    kami "Eh bien... voilà."
+    kami "Vous y êtes."
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Bon retour sur Terre, mes chers représentants."
+    kami "Essayez de ne pas tout casser trop vite."
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "J'aimerais pouvoir prétendre que vous allez me manquer."
+
+    pause 0.4
+
+    kami "Allez."
+    kami "Partez."
+
+    hide screen kami_broadcast_ui
+    scene bg_navette_retour at adaptive_fullscreen, shuttle_background with dissolve
 
     "La navette tremble."
 
@@ -1423,9 +1533,21 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
 
     "Le silence de la station revient peu à peu."
 
-    play sound sfx_kami_on
+    play sound sfx_announce
+    scene bg_diffusion_taquin at adaptive_fullscreen with signal_stutter
+    show screen kami_broadcast_ui
 
-    kami "VAISSEAU DÉSARRIMÉ."
+    kami "Et voilà."
+    kami "Vaisseau désarrimé."
+
+    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+    kami "Ils sont partis."
+
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Enfin... presque tous."
+
+    hide screen kami_broadcast_ui
+    scene bg_chambre at adaptive_fullscreen with signal_stutter
 
     "Il ferme les yeux."
 
