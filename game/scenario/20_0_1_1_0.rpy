@@ -767,11 +767,8 @@ label _20_0_1_1_KAEL_PARTIR:
 
     kael doute "Même en sachant qu'il reste ici ?"
 
-    noam "Rester avec lui changera rien."
-
-    "Kael ne répond pas."
-
-    noam "Ça fera juste deux personnes coincées au lieu d'une."
+    noam "Rester avec lui changera rien. Rester ici pour quoi faire ?"
+    noam "On sera juste deux personnes coincées au lieu d'une."
 
     "Il regarde le sol quelques secondes."
 
@@ -896,7 +893,7 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
 
     "Je ferme les yeux."
 
-    "La question de Kael revient malgré moi."
+    "La question étrange de Kael me revient en tête."
 
     if j20_kael_depart_choice == "leave":
         think "Ça fera juste deux personnes coincées au lieu d'une."
