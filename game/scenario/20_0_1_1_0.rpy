@@ -347,6 +347,8 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Iris ne bouge pas."
 
+label _20_0_1_1_IRIS_CONFRONTATION:
+
     iris determine "Pose-le."
     $ danger_on()
 
