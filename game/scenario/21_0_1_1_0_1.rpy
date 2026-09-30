@@ -1178,31 +1178,31 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "On se fige tous les deux."
 
-    "Iris reste dans l'encadrement."
-
-    "Son sac tombe de sa main."
+    "Iris reste dans l'encadrement, une main encore sur la poignée. Son sac lui échappe et tombe lourdement."
 
     iris panne "..."
 
-    "Elle me regarde."
+    "Elle me regarde, puis lui, puis revient vers moi comme si ses yeux refusaient de garder les deux images en même temps."
 
-    "Puis lui."
+    iris peur "Non... Non, c'est quoi ce bordel ?!"
 
-    "Puis encore moi."
-
-    iris peur "C'est quoi ce bordel...?"
-
-    dg_noam "Iris—"
+    dg_noam inquiet "Iris, attends, je peux—"
 
     noam desespoir "IL A MON COUTEAU !"
 
-    "Le regard d'Iris tombe au sol."
+    dg_noam colere "Parce qu'il allait pas gentiment me laisser—"
 
-    "Sur la lame."
+    iris colere "FERMEZ-LA ! LES DEUX !"
 
-    "Puis sur l'autre Noam qui essaie déjà de se dégager."
+    "Le silence tombe une demi-seconde."
 
-    dg_noam "Attends !"
+    "Son regard descend sur la lame au sol, puis remonte sur l'autre Noam qui essaie déjà de se dégager."
+
+    dg_noam inquiet "Iris, s'il te plaît."
+
+    iris determine "Toi, tu bouges plus."
+
+    dg_noam "Mais—"
 
     "Iris n'attend pas."
 
@@ -1247,21 +1247,47 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     noam fatigue "Je sais."
 
-    iris "Non, je..."
+    iris "Non, justement, tu sais pas. Je viens de rentrer et y'en a deux."
 
-    "Elle regarde le double."
+    noam "Je sais."
 
-    iris peur "Je sais même pas quoi demander."
+    iris colere "Arrête de dire 'je sais' !"
 
-    dg_noam "On n'a pas le temps."
+    "Sa voix craque presque. Elle se passe une main sur le visage."
 
-    iris colere "Toi, ferme-la."
+    iris peur "Je sais même pas lequel regarder."
 
-    "Il rit une fois."
+    dg_noam fatigue "On n'a pas le temps pour ça."
 
-    "Sans joie."
+    iris colere "Toi, tu fermes ta gueule deux secondes."
 
-    dg_noam "Ouais."
+    dg_noam "..."
+
+    iris inquiet "Et toi..."
+
+    "Elle se tourne vers moi."
+
+    iris "Dis-moi un truc que lui peut pas savoir."
+
+    noam panne "Iris..."
+
+    dg_noam fatigue "Il peut pas."
+
+    iris colere "J'AI DIT FERME-LA !"
+
+    "Il baisse les yeux."
+
+    noam fatigue "Il a mes souvenirs."
+
+    "Iris me fixe."
+
+    iris peur "Tous ?"
+
+    noam "Je crois."
+
+    "Elle recule d'un pas, comme si cette réponse était pire que le reste."
+
+    iris fatigue "Putain..."
 
     play sound sfx_announce
     scene bg_diffusion_professeur at adaptive_fullscreen with signal_stutter
