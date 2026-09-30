@@ -616,7 +616,7 @@ label _21_0_1_1_0_0_DORTOIRS:
     noam "Comme ça ?"
     elias "Voilà."
     "La perceuse démarre."
-    play sound sfx_drill if renpy.has_label("sfx_drill") else None
+    play sound sfx_drill
     "Le métal vibre contre mes paumes."
     "Quand Elias coupe enfin l'outil, il vérifie les attaches une par une."
     elias ecoute "Ça tiendra."
