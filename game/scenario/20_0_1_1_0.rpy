@@ -911,7 +911,7 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
     if j20_kael_depart_choice == "stay":
         jump _21_0_1_1_STAY_REVEIL
 
-    jump _21_0_1_1_LEAVE_REVEIL
+    jump _21_0_1_1_0_1_REVEIL
 
 
 label _20_0_1_1_IRIS_QTE_ECHEC:
