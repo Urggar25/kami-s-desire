@@ -145,7 +145,7 @@ screen kd_ending_reached(ending_name, ending_code, ending_label="ENDING"):
 
         textbutton _("MENU PRINCIPAL"):
             style "kd_ending_menu_button"
-            action MainMenu(confirm=False)
+            action Return(True)
 
     text "KAMI'S DESIRES":
         font "fonts/Rajdhani-SemiBold.ttf"
