@@ -2,7 +2,7 @@
 
 > **Lecture obligatoire avant toute modification du dépôt.** Ce document est la carte des outils déjà disponibles pour construire une nouvelle journée de jeu. Toute nouvelle mécanique, tout nouvel effet ou écran réutilisable doit être ajouté ici dans la même modification.
 
-Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `game/`, hors traductions, sauvegardes `.bak` et écrans internes non destinés à être appelés directement.
+Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `game/`, hors traductions, sauvegardes `.bak` et écrans internes non destinés à être appelés directement.
 
 ## Mode d'emploi
 
@@ -21,6 +21,7 @@ Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `g
 | Débat — phase 2 : contradictions | Fait défiler des déclarations à buzzer et applique les influences du débat selon les objections. | `game/minigame_debat_phase2.rpy` | `$ debat_phase2_dialogues_active = MA_LISTE; call debat_phase2_minigame` |
 | Haltères / rythme sportif | Demande de cliquer dans une zone mobile, avec répétitions, chrono, défis et événements sportifs. | `game/minigame_halteres.rpy` | `call minijeu_halteres_run(mg_id="halteres", target_reps=10, duration=60.0, base_speed=0.9)` |
 | Tracé QTE générique | QTE réutilisable en trois temps : attendre, maintenir puis suivre un tracé sans trop s'en écarter. | `game/minijeu/trace_qte.rpy` | `call trace_qte_run(mg_id="trace_reveil", path_type="curve_right", time_limit=6.0, tolerance=55)` |
+| Séquence cinématique de tracés | Enchaîne plusieurs tracés sans retry, conserve chaque réussite ou échec et zoome cumulativement le fond après chaque succès. | `game/minijeu/trace_qte.rpy` | `call trace_qte_sequence([{"path_type": "arc", "time_limit": 1.2}], "bg_cg047", zoom_step=0.065)` |
 | Brouillon d'amendement | Assemble des fragments manuscrits, efface les mots gênants et matérialise l'autosabotage de Noam. | `game/minijeu/amendement_brouillon.rpy` | `call amendement_brouillon_play` |
 | Fracture QTE | Enchaîne six touches sous chrono avec trois vies et retourne un booléen de réussite. | `game/minijeu/fracture_qte.rpy` | `call j601_play_fracture` |
 | Signal instable | Maintient un curseur dans une zone verte tout en validant des éclats QTE pendant 38 secondes. | `game/minijeu/signal_instable.rpy` | `call j601_play_signal_instable` |
@@ -73,8 +74,8 @@ Dernier audit complet : **26 septembre 2026** — sources Ren'Py actives sous `g
 | Frise chronologique des preuves | Présente les faits débloqués sur une table d'enquête filtrable, avec fiches papier illustrées, navigation chronologique, détail des connexions et compatibilité des anciennes sauvegardes. | `game/investigation_system.rpy`, `game/images/hud/investigation/evidence/`, `game/images/hud/investigation/ui/`, `game/images/hud/investigation/dossier_quick_access.png` | `$ investigation_add("photo_lea_disparue"); call investigation_open_dossier` |
 | Analyse vidéo d'enquête | Fournit timeline, lecture, ralenti, image par image et zones inspectables pour les archives de surveillance. | `game/investigation_system.rpy` | `call investigation_video_run("kael_photo", "bg_chambre", False)` |
 | Inspection visuelle d'indice | Permet de zoomer et d'inspecter des zones d'une image jusqu'à identifier un détail narratif requis. | `game/investigation_system.rpy` | `call investigation_image_run("juliette_copy")` |
-| Exploration des conduits | Propose des embranchements courts, cartographie la route et garantit une convergence sans softlock, avec variante de poursuite. | `game/investigation_system.rpy` | `call investigation_conduit_run("survey")` |
-| Inspection de salle | Offre une fouille à hotspots mêlant éléments obligatoires et détails secondaires facultatifs. | `game/investigation_system.rpy` | `call investigation_room_run` |
+| Exploration des conduits | Propose des embranchements courts, cartographie la route et garantit une convergence sans softlock. | `game/investigation_system.rpy` | `call investigation_conduit_run("survey")` |
+| Inspection de salle | Déclenche zoom, secousse et bulle BD au survol de cinq zones invisibles, puis relie la salle inspectée à un indice du dossier. | `game/investigation_system.rpy` | `call investigation_room_run` |
 | Objection Protocol | Confronte une déclaration à un indice du dossier et renvoie `(indice, résultat)` pour distinguer contradiction correcte, preuve insuffisante, erreur ou impossibilité. | `game/investigation_system.rpy` | `call objection_protocol_run("Je n'étais pas là.", "mara_exploration", ("conduits_chambres",)); $ objection_result = _return` |
 | Vote final animé | Recueille Pour/Abstention/Contre sous chrono puis dépouille les bulletins avec résultat d'amendement. | `game/vote_phase3_final.rpy` | `call vote_phase3_final` |
 | Codex persistant | Débloque des entrées, les regroupe en packs et lie automatiquement les termes des dialogues. | `game/codex.rpy` | `$ unlock_codex_page("id_entree")` |

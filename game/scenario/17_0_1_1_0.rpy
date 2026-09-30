@@ -683,7 +683,7 @@ label _17_0_1_1_CHAMBRE_BRUIT:
     "M16. Les dossiers. Les règles internes de Kami. La fin du Conclave avancée au jour vingt-et-un. Et au milieu de tout ça, les dernières heures de ma journée d'hier qui n'existent simplement plus."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_106
-    scene chambre1 at adaptive_fullscreen, living_background with dissolve
+    scene chambre1 at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
     "Je referme la porte derrière moi et laisse tomber ma tablette sur le bureau."

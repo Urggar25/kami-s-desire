@@ -368,7 +368,7 @@ transform tq_label_pulse:
 # SCREEN PRINCIPAL
 # --------------------------------------------------------------------------------------------
 
-screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, tolerance=45, max_errors=3, anchor_x=960, anchor_y=540, start_radius=95, challenges_hud=True):
+screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, tolerance=45, max_errors=3, anchor_x=960, anchor_y=540, start_radius=95, challenges_hud=True, background=None, background_zoom=1.0):
     modal True
     zorder 150
 
@@ -377,6 +377,8 @@ screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, toleran
     key "mousedown_1" action Function(tq_on_press, start_radius)
     key "mouseup_1" action Function(tq_on_release)
 
+    if background:
+        add Transform(background, xysize=(1920, 1080), zoom=background_zoom, xalign=0.5, yalign=0.5)
     add Solid("#00000077")
     add TraceQTEDrawable()
 
@@ -430,6 +432,27 @@ screen trace_qte(path_type="vertical_up", time_limit=6.0, wait_time=1.2, toleran
     timer 0.03 repeat True action Function(tq_tick, time_limit, tolerance, max_errors)
     if tq_phase == "done":
         timer 0.45 action Return(tq_collect_stats())
+
+
+screen trace_qte_sequence_beat(background, zoom_level, success, step_index, step_count):
+    modal True
+    zorder 150
+
+    add Transform(background, xysize=(1920, 1080), zoom=zoom_level, xalign=0.5, yalign=0.5)
+    add Solid("#5DFF9A22" if success else "#FF3E5A30")
+
+    frame:
+        xalign 0.5
+        ypos 54
+        padding (24, 12)
+        background Solid("#07121DEB")
+        text ("TRACÉ %d / %d — RÉUSSI" % (step_index, step_count) if success else "TRACÉ %d / %d — RATÉ" % (step_index, step_count)):
+            size 22
+            color ("#8DFFB0" if success else "#FF8DA4")
+            font "fonts/Rajdhani-SemiBold.ttf"
+            kerning 2
+
+    timer (0.34 if success else 0.24) action Return()
 
 # --------------------------------------------------------------------------------------------
 # TUTORIEL ANIMÉ
@@ -521,6 +544,59 @@ screen tuto_trace_qte(as_overlay=False):
                 size 22
                 color "#FFD166"
                 bold True
+
+# --------------------------------------------------------------------------------------------
+# SÉQUENCE CINÉMATIQUE : PLUSIEURS TRACÉS, ZOOM CUMULATIF, AUCUN RETRY
+# --------------------------------------------------------------------------------------------
+
+label trace_qte_sequence(steps, background, start_zoom=1.0, zoom_step=0.05, show_tutorial=False):
+    if show_tutorial:
+        call mk_tutorial("trace_qte", "tuto_trace_qte") from _call_trace_qte_sequence_tutorial
+
+    $ tq_sequence_results = []
+    $ tq_sequence_successes = 0
+    $ tq_sequence_zoom = float(start_zoom)
+    $ tq_sequence_index = 0
+
+    while tq_sequence_index < len(steps):
+        $ tq_sequence_step = steps[tq_sequence_index]
+        call screen trace_qte(
+            path_type=tq_sequence_step.get("path_type", "curve_right"),
+            time_limit=tq_sequence_step.get("time_limit", 3.0),
+            wait_time=tq_sequence_step.get("wait_time", 0.45),
+            tolerance=tq_sequence_step.get("tolerance", 42),
+            max_errors=tq_sequence_step.get("max_errors", 2),
+            anchor_x=tq_sequence_step.get("anchor_x", 960),
+            anchor_y=tq_sequence_step.get("anchor_y", 620),
+            start_radius=tq_sequence_step.get("start_radius", 82),
+            challenges_hud=False,
+            background=background,
+            background_zoom=tq_sequence_zoom
+        )
+        $ tq_sequence_stats = _return
+        $ tq_sequence_results.append(tq_sequence_stats)
+
+        if tq_sequence_stats["success"]:
+            $ tq_sequence_successes += 1
+            $ tq_sequence_zoom += float(zoom_step)
+
+        call screen trace_qte_sequence_beat(
+            background,
+            tq_sequence_zoom,
+            tq_sequence_stats["success"],
+            tq_sequence_index + 1,
+            len(steps)
+        )
+        $ tq_sequence_index += 1
+
+    return {
+        "success": tq_sequence_successes == len(steps),
+        "successes": tq_sequence_successes,
+        "total": len(steps),
+        "zoom": tq_sequence_zoom,
+        "results": tq_sequence_results,
+    }
+
 
 # --------------------------------------------------------------------------------------------
 # WRAPPER COMPLET : tutoriel → jeu → retry avec malus → résultats avec rang

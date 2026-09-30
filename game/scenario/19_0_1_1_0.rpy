@@ -626,7 +626,7 @@ label _19_0_1_1_SOIREE:
     "Je le dis à voix basse, comme si le fait de le formuler pouvait accélérer le temps."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_j19_chambre_return
-    scene bg_chambre at adaptive_fullscreen, living_background with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
 
     "Ma grille est exactement dans le même état que ce matin. Deux vis serrées, deux autres faciles à retirer."
 
@@ -767,8 +767,26 @@ label _19_0_1_1_CHASSE:
     scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
     $ flashlight_on()
 
-    tuto "Les bruits peuvent mentir. Choisis vite : la poursuite converge toujours vers la source."
-    call investigation_conduit_run("chase") from _call_investigation_conduit_j19
+    python:
+        j19_chase_trace_steps = [
+            {"path_type": "curve_right", "time_limit": 3.6, "wait_time": 0.65, "tolerance": 52, "max_errors": 3, "anchor_x": 710, "anchor_y": 620},
+            {"path_type": "vertical_up", "time_limit": 3.2, "wait_time": 0.55, "tolerance": 48, "max_errors": 3, "anchor_x": 1110, "anchor_y": 620},
+            {"path_type": "s_curve", "time_limit": 2.9, "wait_time": 0.48, "tolerance": 44, "max_errors": 2, "anchor_x": 860, "anchor_y": 620},
+            {"path_type": "curve_left", "time_limit": 2.6, "wait_time": 0.42, "tolerance": 40, "max_errors": 2, "anchor_x": 1210, "anchor_y": 620},
+            {"path_type": "arc", "time_limit": 2.3, "wait_time": 0.36, "tolerance": 38, "max_errors": 2, "anchor_x": 960, "anchor_y": 650},
+        ]
+
+    tuto "Enchaîne les cinq tracés. Chaque réussite te rapproche de la source."
+    call trace_qte_sequence(
+        j19_chase_trace_steps,
+        "bg_conduit_reseau",
+        start_zoom=1.0,
+        zoom_step=0.055,
+        show_tutorial=True
+    ) from _call_trace_qte_sequence_j19_chasse
+    $ j19_chase_trace_result = _return
+
+    scene bg_conduit_reseau at adaptive_fullscreen, haunted_background
 
     "Le conduit paraît plus étroit que la veille."
     "Ou peut-être que je suis simplement beaucoup plus conscient de ce qui pourrait se trouver devant moi."
@@ -827,7 +845,7 @@ label _19_0_1_1_CHASSE:
 
 label _19_0_1_1_CADAVRE:
 
-    scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
+    scene black at adaptive_fullscreen with dissolve
     play music "audio/music/bgm_horror_reveal.mp3" fadein 2.0
 
     "Mes pieds touchent le sol de la salle de maintenance."

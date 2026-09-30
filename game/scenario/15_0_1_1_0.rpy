@@ -637,7 +637,7 @@ label _15_0_1_1_0_ARCHIVES_CROISEES:
 
 label _15_0_1_1_0_CHAMBRE_NOAM_VIDEO:
 
-    scene bg_observation at adaptive_fullscreen, living_background with dissolve
+    scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 3.0
 
     "Je reste seul devant les écrans après son départ. La vidéo de sa chambre est toujours ouverte et son visage figé me regarde depuis le moniteur."

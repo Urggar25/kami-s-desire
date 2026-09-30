@@ -197,13 +197,13 @@ label j13_sept_differences_run:
         $ j13_sd_add_found(_j13_sd_choice)
 
         if _j13_sd_choice == "yeux_juliette":
-            call _j13_sd_reaction_yeux_juliette from _call__j13_sd_reaction_yeux_juliette
+            call _j13_sd_reaction_yeux_juliette
         elif _j13_sd_choice == "yeux_peluche":
-            call _j13_sd_reaction_yeux_peluche from _call__j13_sd_reaction_yeux_peluche
+            call _j13_sd_reaction_yeux_peluche
         elif _j13_sd_choice == "coeur":
-            call _j13_sd_reaction_coeur from _call__j13_sd_reaction_coeur
+            call _j13_sd_reaction_coeur
         elif _j13_sd_choice == "cicatrice":
-            call _j13_sd_reaction_cicatrice from _call__j13_sd_reaction_cicatrice
+            call _j13_sd_reaction_cicatrice
 
     call screen j13_sept_differences_screen(
         interactive=False,

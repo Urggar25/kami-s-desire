@@ -205,87 +205,15 @@ label _18_0_1_1_SALLE_ROBOTS:
     scene bg_cg046 at adaptive_fullscreen with flash_white
 
     $ investigation_add("salle_goumi")
-    tuto "Inspecte librement la salle. Les éléments majeurs sont nécessaires ; les détails d'ambiance restent optionnels."
+    tuto "Déplace le curseur sur la salle. Observe les cinq éléments, puis relie la pièce à un indice du dossier."
     call investigation_room_run from _call_investigation_room_j18
     $ investigation_add("mara_exploration", notify=False)
-
-    mara surpris "Ah ouais."
-
-    "Nos lampes balayent lentement la pièce. Plusieurs établis occupent un mur entier. Il y a des boîtes de pièces, des bras articulés, des coques démontées et deux stations verticales installées au fond."
-
-    "Je m'arrête devant l'un des établis. Deux grosses batteries sont posées sous une série de composants électroniques encore emballés."
-
-    noam reflexion "Attends."
-
-    mara "Quoi ?"
-
-    "Je prends ma lampe et éclaire les batteries de plus près. Le boîtier, les connecteurs, même les bandes orange sur le côté me rappellent immédiatement quelque chose."
-
-    noam inquiet "Attends... Elias cherchait exactement ces batteries quand le matos a disparu de la réserve."
-
-    mara mefiant "T'es sûr ?"
-
-    noam "Oui. Les grosses batteries. Et certains de ces composants aussi."
-
-    "Je fouille du regard les étagères. Il y en a quelques-uns, mais clairement pas tout ce qui avait disparu."
-
-    mara reflexion "Donc quelqu'un a amené une partie du matos volé ici."
-
-    noam inquiet "On dirait."
-
-    "Je repose la lampe sur les deux stations du fond."
-
-    "Sur chacune d'elles repose une silhouette ronde que je reconnais immédiatement."
-
-    noam surpris "Des Goumi."
-
-    mara "Deux."
-
-    "L'un est presque entièrement monté. L'autre est ouvert sur le côté, avec une partie de sa coque déposée sur l'établi."
-
-    mara reflexion "Donc c'est ici qu'ils réparent ces machins."
-
-    noam reflexion "Ou qu'ils les remplacent."
-
-    "Je m'approche sans toucher. À cette distance, le robot paraît beaucoup moins sympathique que ceux qui se promènent habituellement dans le Conclave. Sans ses mouvements et sa voix, ce n'est plus qu'une machine compacte remplie de câbles et de pièces mécaniques."
-
-    mara taquin "Tu vas pas me dire que t'étais attaché émotionnellement à Goumi ?"
-
-    noam "Pas vraiment."
-
-    mara "T'as l'air déçu."
-
-    noam "Je savais que c'était un robot."
-
-    mara "Ouais, mais entre le savoir et voir ses tripes sur une table..."
-
-    "Elle se penche légèrement vers l'unité démontée, puis recule."
-
-    mara "C'est glauque."
 
     scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "surpris", 0.34),
         ("mara", "mefiant", 0.66),
     ])
-
-    noam "Un peu."
-
-    "Je regarde autour de nous. Aucun écran n'est allumé. Aucune lumière ne clignote. Tout semble parfaitement inerte."
-
-    noam reflexion "Donc ils doivent réparer les robots ici... sans les faire passer dans les couloirs."
-
-    mara mefiant "Donc ils prennent les conduits."
-
-    noam "Peut-être."
-
-    mara "Ça expliquerait la taille."
-
-    "Je regarde l'ouverture par laquelle nous sommes arrivés."
-
-    noam "Et le réseau qui passe derrière les chambres."
-
-    mara "Ça, par contre, j'aime toujours pas."
 
     "Je m'approche d'un autre conduit qui quitte la pièce sur le côté. Il est plus large que celui des dortoirs et descend légèrement avant de se diviser en plusieurs branches."
 
@@ -301,7 +229,7 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     mara "Merci. J'y travaille depuis des années."
 
-    "Je souris malgré moi. Puis je m'accroupis près de l'ouverture."
+    "Je m'accroupis près de l'ouverture."
 
     "Un léger courant d'air vient de l'intérieur. Plus loin, je distingue une lumière régulière qui passe à travers une autre grille."
 
@@ -1204,7 +1132,7 @@ label _18_0_1_1_APRES_MIDI_CALME:
 
     $ current_period = "Après-midi"
 
-    scene bg_observation at adaptive_fullscreen, living_background with dissolve
+    scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
 
     "Je passe une partie de l'après-midi dans la salle d'observation. Pas vraiment pour regarder la planète, plutôt parce qu'il n'y a aucune grille d'aération directement derrière ma tête."
@@ -1318,7 +1246,7 @@ label _18_0_1_1_SOIR_CHAMBRE:
     noam inquiet "..."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_j18_chambre_door
-    scene bg_chambre at adaptive_fullscreen, living_background with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
 
     "La première chose que je regarde en entrant, c'est la grille."
 

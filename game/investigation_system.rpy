@@ -196,6 +196,38 @@ init python:
         (("video_kael", "video_noam"), "hyp_ressemblance_kael"),
     ]
 
+    J18_ROOM_INSPECTION_ORDER = (
+        "batteries", "goumi_intact", "goumi_demonte", "outils", "conduit",
+    )
+
+    J18_ROOM_INSPECTION_ZONES = {
+        "batteries": {
+            "rect": (1690, 650, 230, 330),
+            "speaker": "MARA",
+            "hover": "Attends... c'est pas le matos qu'Elias cherchait ?",
+        },
+        "goumi_intact": {
+            "rect": (920, 205, 285, 345),
+            "speaker": "NOAM",
+            "hover": "Il est entier. Juste... éteint.",
+        },
+        "goumi_demonte": {
+            "rect": (1300, 205, 360, 350),
+            "speaker": "MARA",
+            "hover": "C'est glauque. On dirait qu'on regarde ses tripes.",
+        },
+        "outils": {
+            "rect": (80, 285, 590, 300),
+            "speaker": "MARA",
+            "hover": "Tu comptes vraiment interroger chaque tournevis ?",
+        },
+        "conduit": {
+            "rect": (1660, 135, 250, 500),
+            "speaker": "NOAM",
+            "hover": "Ça continue derrière...",
+        },
+    }
+
     def investigation_has(eid):
         return bool(getattr(store, "investigation_evidence", {}).get(eid, False))
 
@@ -267,7 +299,19 @@ init python:
         return int(digits or 0)
 
     def investigation_evidence_image(eid):
-        return "images/hud/investigation/evidence/%s.png" % eid
+        entry = INVESTIGATION_ENTRIES.get(eid, {})
+        image_id = entry.get("image", eid)
+        return "images/hud/investigation/evidence/%s.png" % image_id
+
+    def _investigation_add_link(first_evidence, second_evidence):
+        if first_evidence not in INVESTIGATION_ENTRIES or second_evidence not in INVESTIGATION_ENTRIES:
+            return False
+        link = (first_evidence, second_evidence)
+        reverse_link = (second_evidence, first_evidence)
+        if link in store.investigation_links or reverse_link in store.investigation_links:
+            return False
+        store.investigation_links.append(link)
+        return True
 
     def investigation_category_color(category):
         for cid, _label, color in INVESTIGATION_CATEGORIES:
@@ -338,6 +382,23 @@ transform inv_reveal:
     alpha 0.0
     yoffset 12
     easeout 0.25 alpha 1.0 yoffset 0
+
+transform j18_room_hover_focus:
+    subpixel True
+    zoom 1.0
+    xoffset 0
+    yoffset 0
+    easeout 0.16 zoom 1.08
+    linear 0.035 xoffset -6 yoffset 3
+    linear 0.045 xoffset 5 yoffset -3
+    linear 0.04 xoffset -3 yoffset 2
+    linear 0.05 xoffset 0 yoffset 0
+
+transform j18_comic_bubble_in:
+    alpha 0.0
+    zoom 0.92
+    pause 0.14
+    easeout 0.16 alpha 1.0 zoom 1.0
 
 
 transform investigation_quick_access_in:
@@ -754,40 +815,132 @@ screen investigation_image_inspection(sequence="juliette_copy"):
 
 screen investigation_room_inspection():
     modal True
-    zorder 170
-    default found = []
-    $ complete = "batteries" in found and "goumi" in found
+    zorder 150
+    default inspected = []
+    default hovered_zone = None
+    default link_mode = False
+    default link_choice = None
+    default link_feedback = None
+    default mouse_tick = 0
 
-    add "bg_cg046"
-    add Solid("#00101866")
-    text "INSPECTION LIBRE // SALLE TECHNIQUE" xpos 50 ypos 35 size 27 color "#5CD3FF"
-    text "Les détails secondaires peuvent être laissés de côté." xpos 50 ypos 76 size 16 color "#9AB1BE"
+    $ inspection_complete = len(inspected) >= len(J18_ROOM_INSPECTION_ORDER)
 
-    textbutton "◎ BATTERIES":
-        xpos 310 ypos 660 xsize 220 ysize 58
-        background Solid("#5CD3FF20") hover_background Solid("#5CD3FF55")
-        action [SetScreenVariable("found", found + ([] if "batteries" in found else ["batteries"])), Function(investigation_add, "batteries_retrouvees")]
-    textbutton "◎ GOUMI DÉMONTÉ":
-        xpos 1080 ypos 440 xsize 260 ysize 58
-        background Solid("#5CD3FF20") hover_background Solid("#5CD3FF55")
-        action [SetScreenVariable("found", found + ([] if "goumi" in found else ["goumi"])), Function(investigation_add, "goumi_demonte")]
-    textbutton "◎ OUTILS":
-        xpos 690 ypos 700 xsize 180 ysize 52
-        background Solid("#5CD3FF18") hover_background Solid("#5CD3FF44")
-        action SetScreenVariable("found", found + ([] if "tools" in found else ["tools"]))
-    textbutton "◎ STATIONS":
-        xpos 1290 ypos 265 xsize 190 ysize 52
-        background Solid("#5CD3FF18") hover_background Solid("#5CD3FF44")
-        action SetScreenVariable("found", found + ([] if "stations" in found else ["stations"]))
-    textbutton "◎ CONDUIT LATÉRAL":
-        xpos 120 ypos 330 xsize 260 ysize 52
-        background Solid("#5CD3FF18") hover_background Solid("#5CD3FF44")
-        action SetScreenVariable("found", found + ([] if "duct" in found else ["duct"]))
-    textbutton ("POURSUIVRE" if complete else "TROUVER LES ÉLÉMENTS MAJEURS"):
-        xpos 1450 ypos 960 xsize 410 ysize 70
-        text_size 17 text_color ("#071017" if complete else "#607582")
-        background Solid("#5CD3FF" if complete else "#15232B")
-        sensitive complete action Return(found)
+    if hovered_zone is not None and not link_mode:
+        $ hovered = J18_ROOM_INSPECTION_ZONES[hovered_zone]
+        add Transform("bg_salle_goumi_cachee", xysize=(1920, 1080)) at j18_room_hover_focus
+    else:
+        add Transform("bg_salle_goumi_cachee", xysize=(1920, 1080))
+
+    if not link_mode:
+        for zone_id in J18_ROOM_INSPECTION_ORDER:
+            $ zone = J18_ROOM_INSPECTION_ZONES[zone_id]
+            $ zx, zy, zw, zh = zone["rect"]
+            button:
+                xpos zx ypos zy xsize zw ysize zh
+                padding (0, 0)
+                background None
+                hover_background None
+                hovered [
+                    SetScreenVariable("hovered_zone", zone_id),
+                    SetScreenVariable("inspected", inspected + ([] if zone_id in inspected else [zone_id])),
+                ]
+                unhovered If(hovered_zone == zone_id, SetScreenVariable("hovered_zone", None), NullAction())
+                action NullAction()
+
+        frame:
+            xpos 42 ypos 38
+            padding (18, 12)
+            background Solid("#06121DE6")
+            text "ÉLÉMENTS OBSERVÉS : [len(inspected)] / 5" size 21 color "#DDF8FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+        textbutton "OUVRIR LE DOSSIER D'ENQUÊTE":
+            xpos 42 ypos 99 xsize 330 ysize 54
+            text_size 15 text_color "#BCEEFF" text_font "fonts/Rajdhani-SemiBold.ttf"
+            background Solid("#071522E8") hover_background Solid("#5CD3FF38")
+            action [Function(investigation_sync_legacy_save), Show("investigation_dossier", persistent_access=True)]
+
+        if hovered_zone is not None:
+            timer 0.04 repeat True action SetScreenVariable("mouse_tick", mouse_tick + 1)
+            $ mouse_x, mouse_y = renpy.get_mouse_pos()
+            $ bubble_x = min(max(mouse_x + 30, 24), 1350)
+            $ bubble_y = min(max(mouse_y + 34, 24), 885)
+            fixed at j18_comic_bubble_in:
+                xpos bubble_x ypos bubble_y
+                xsize 546 ysize 154
+                add Solid("#020407CC") xpos 7 ypos 8 xsize 532 ysize 132
+                add Solid("#F5F0E4") xpos 0 ypos 0 xsize 532 ysize 132
+                add Solid("#111820") xpos 0 ypos 0 xsize 532 ysize 5
+                add Solid("#111820") xpos 0 ypos 127 xsize 532 ysize 5
+                add Solid("#111820") xpos 0 ypos 0 xsize 5 ysize 132
+                add Solid("#111820") xpos 527 ypos 0 xsize 5 ysize 132
+                add Transform(Solid("#111820"), rotate=45) xpos 28 ypos 116 xsize 28 ysize 28
+                add Transform(Solid("#F5F0E4"), rotate=45) xpos 31 ypos 114 xsize 22 ysize 22
+                text hovered["speaker"] xpos 24 ypos 15 size 14 color "#D43F58" bold True font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                text hovered["hover"] xpos 24 ypos 43 xmaximum 480 size 21 color "#111820" font "fonts/Barlow-Light.ttf" line_spacing 3
+
+        if inspection_complete:
+            textbutton "RELIER LA SALLE AU DOSSIER":
+                xpos 1450 ypos 972 xsize 420 ysize 66
+                text_size 17 text_color "#071017" text_font "fonts/Rajdhani-SemiBold.ttf"
+                background Solid("#5CD3FF") hover_background Solid("#8AE5FF")
+                action [
+                    SetScreenVariable("hovered_zone", None),
+                    SetScreenVariable("link_mode", True),
+                    SetScreenVariable("link_choice", None),
+                    SetScreenVariable("link_feedback", None),
+                ]
+
+    else:
+        $ available_links = [(eid, entry) for eid, entry in investigation_entries() if eid != "salle_goumi"]
+
+        add Solid("#02070AEF")
+
+        frame:
+            xpos 510 ypos 105 xsize 900 ysize 870
+            padding (34, 30)
+            background Solid("#07121CF8")
+            vbox:
+                spacing 18
+                text "RELIER LA SALLE CACHÉE" size 30 color "#F1F8FB" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+                text "Quel élément déjà consigné explique ce que vous venez de découvrir ici ?" size 19 color "#9EB5C1" xmaximum 820 font "fonts/Barlow-Light.ttf"
+                add Solid("#5CD3FF55") xsize 820 ysize 2
+                viewport:
+                    xsize 820 ysize 555
+                    mousewheel True
+                    draggable True
+                    scrollbars "vertical"
+                    vbox:
+                        spacing 8
+                        for evidence_id, evidence_entry in available_links:
+                            textbutton evidence_entry["title"]:
+                                xsize 785 ysize 56
+                                text_size 15
+                                text_color ("#071017" if link_choice == evidence_id else "#D8E8EF")
+                                background Solid("#5CD3FF" if link_choice == evidence_id else "#102431")
+                                hover_background Solid("#1A4052")
+                                action [SetScreenVariable("link_choice", evidence_id), SetScreenVariable("link_feedback", None)]
+                textbutton "CONFIRMER LE LIEN":
+                    xsize 820 ysize 60
+                    text_size 17 text_color ("#071017" if link_choice else "#607582")
+                    background Solid("#5CD3FF" if link_choice else "#15232B")
+                    sensitive (link_choice is not None)
+                    action If(
+                        link_choice == "materiel_technique_manquant",
+                        true=[
+                            Function(investigation_add, "batteries_retrouvees"),
+                            Function(_investigation_add_link, "salle_goumi", "materiel_technique_manquant"),
+                            Return(inspected),
+                        ],
+                        false=SetScreenVariable("link_feedback", "CE LIEN NE TIENT PAS.")
+                    )
+                if link_feedback:
+                    text link_feedback xalign 0.5 size 15 color "#FF8DA4" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            textbutton "RETOUR À L'INSPECTION":
+                xpos 34 ypos 786 xsize 820 ysize 54
+                text_size 15 text_color "#C5EFFF" text_font "fonts/Rajdhani-SemiBold.ttf"
+                background Solid("#102431") hover_background Solid("#1A4052")
+                action [SetScreenVariable("link_mode", False), SetScreenVariable("link_choice", None), SetScreenVariable("link_feedback", None)]
 
 
 screen conduit_exploration(mode="survey"):

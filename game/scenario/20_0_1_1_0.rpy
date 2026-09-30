@@ -3,6 +3,8 @@
 # Réécriture complète
 # =============================================================================
 
+default j20_iris_qte_success = False
+
 
 label _20_0_1_1_0_REVEIL:
 
@@ -372,6 +374,32 @@ label _20_0_1_1_SALLE_GOUMI:
 
     noam surpris "Qu'est-ce que—?!"
 
+    $ j20_iris_qte_success = False
+    python:
+        j20_iris_trace_steps = [
+            {"path_type": "curve_left", "time_limit": 1.20, "wait_time": 0.28, "tolerance": 30, "max_errors": 1, "anchor_x": 760, "anchor_y": 620, "start_radius": 70},
+            {"path_type": "s_curve", "time_limit": 1.05, "wait_time": 0.24, "tolerance": 27, "max_errors": 1, "anchor_x": 1120, "anchor_y": 620, "start_radius": 66},
+            {"path_type": "curve_right", "time_limit": 0.92, "wait_time": 0.20, "tolerance": 24, "max_errors": 1, "anchor_x": 820, "anchor_y": 620, "start_radius": 62},
+            {"path_type": "arc", "time_limit": 0.80, "wait_time": 0.16, "tolerance": 22, "max_errors": 1, "anchor_x": 1020, "anchor_y": 650, "start_radius": 58},
+        ]
+
+    call trace_qte_sequence(
+        j20_iris_trace_steps,
+        "bg_cg047",
+        start_zoom=1.0,
+        zoom_step=0.065,
+        show_tutorial=False
+    ) from _call_trace_qte_sequence_j20_iris
+    $ j20_iris_trace_result = _return
+
+    if j20_iris_trace_result["success"]:
+        jump _20_0_1_1_IRIS_QTE_REUSSITE
+
+    jump _20_0_1_1_IRIS_QTE_ECHEC
+
+
+label _20_0_1_1_IRIS_QTE_ECHEC:
+
     "Le couteau tombe immédiatement. J'essaie de me dégager par réflexe, mais elle garde mon bras bloqué et me repousse contre la table."
 
     iris colere "Arrête de bouger !"
@@ -406,6 +434,129 @@ label _20_0_1_1_SALLE_GOUMI:
     pause 2.0
 
     jump _20_0_1_1_INFIRMERIE
+    # Durée : 1m15
+
+
+label _20_0_1_1_IRIS_QTE_REUSSITE:
+
+    $ j20_iris_qte_success = True
+
+    "Je baisse l'épaule au moment où Iris cherche à verrouiller mon bras. Sa prise glisse."
+
+    "Elle revient aussitôt. Plus vite. J'évite son coude, recule contre la table et arrache mon poignet à ses doigts avant qu'elle puisse tourner."
+
+    iris colere "Arrête de bouger !"
+
+    noam colere "Arrête de m'attaquer !"
+
+    "Sa troisième prise passe devant mon visage. La quatrième manque ma tempe de quelques centimètres."
+
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
+    $ showGroup([
+        ("noam", "peur", 0.22),
+        ("iris", "colere", 0.52),
+        ("kael", "inquietude", 0.82),
+    ])
+
+    "Nous nous figeons tous les deux. Je tiens encore le couteau. Iris a les poings levés."
+
+    kael inquietude "Ça suffit ! Tous les deux !"
+
+    noam inquiet "Je voulais pas la toucher."
+
+    iris colere "Alors pose ce putain de couteau !"
+
+    "Cette fois, je regarde vraiment ce que j'ai dans la main."
+
+    "Je desserre les doigts. Le couteau tombe entre nous et glisse sous la table."
+
+    play sound sfx_drop
+
+    noam fatigue "Voilà."
+
+    "Iris baisse lentement les bras, sans me quitter des yeux. Kael se place entre nous."
+
+    kael "On remonte. Maintenant."
+
+    iris determine "Et il reste pas seul."
+
+    noam desaccord "Je viens de poser le couteau."
+
+    iris "Après quatre tentatives. Tu veux une médaille ?"
+
+    noam colere "C'est toi qui m'as sauté dessus !"
+
+    kael inquietude "Noam. Remonte."
+
+    "Je pourrais continuer. Je pourrais leur rappeler la table vide, le corps, Mara dans la cafétéria."
+
+    "Je regarde le couteau sous la table et ravale le reste."
+
+    $ danger_off()
+    $ hideGroup()
+    scene black with dissolve
+    pause 0.8
+
+    $ current_period = "Soir"
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
+
+    $ showGroup([
+        ("noam", "fatigue", 0.22),
+        ("lysa", "blase", 0.52),
+        ("sael", "neutre", 0.82),
+    ])
+
+    "Je finis à l'infirmerie sans avoir perdu connaissance. Sael vérifie mes poignets, mon crâne, puis la distance entre moi et la porte."
+
+    sael neutre "Tu restes ici cette nuit."
+
+    noam desaccord "Je vais pas retourner dans les conduits."
+
+    lysa fatigue "Tu as dit ça avant d'y retourner avec un couteau."
+
+    noam "J'ai vu le corps de Mara. Quelqu'un l'a déplacé."
+
+    lysa "Je te crois quand tu dis que tu l'as vu. Je sais juste pas encore ce que ça veut dire."
+
+    noam determine "Ça veut dire que quelqu'un connaissait la salle. Quelqu'un savait comment passer par les murs."
+
+    sael mefiant "Un traître."
+
+    noam "Oui."
+
+    "Lysa ne plaisante pas cette fois. Elle regarde Sael, puis la porte."
+
+    lysa reflexion "On fera attention cette nuit. Mais toi, tu restes là."
+
+    noam inquiet "Attaché ?"
+
+    sael "La porte ne suffit pas si tu paniques encore."
+
+    noam colere "J'ai réussi à ne blesser personne !"
+
+    lysa blase "Et c'est précisément pour ça qu'on discute au lieu de te ramasser inconscient."
+
+    "Je serre les mâchoires. Puis je tends moi-même les poignets vers les sangles."
+
+    noam fatigue "Une nuit. Et si vous entendez quelque chose derrière une grille, vous ne partez pas seules."
+
+    lysa sourire "D'accord."
+
+    "Sael ferme les attaches. Pas brutalement. Pas doucement non plus."
+
+    noam "Le traître peut partir avec nous demain."
+
+    sael raison "S'il existe, il sera encore là à ton réveil."
+
+    noam inquiet "C'est justement ce qui m'inquiète."
+
+    $ hideGroup()
+    play sound sfx_door
+    "Lysa et Sael sortent. La porte se referme derrière elles."
+
+    jump _20_0_1_1_FIN
+    # Durée : 3m00
 
 
 label _20_0_1_1_INFIRMERIE:
@@ -417,7 +568,7 @@ label _20_0_1_1_INFIRMERIE:
 
     "Je reviens à moi avec une douleur sourde sur le côté de la tête. Pendant quelques secondes, je reste complètement immobile, incapable de remettre les événements dans l'ordre."
 
-    scene bg_infirmerie at adaptive_fullscreen, living_background with fade
+    scene bg_infirmerie at adaptive_fullscreen with fade
 
     "Puis j'ouvre les yeux et reconnais le plafond de l'infirmerie."
 
@@ -537,7 +688,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     $ current_period = "Soir"
 
-    scene bg_infirmerie at adaptive_fullscreen, living_background with dissolve
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
 
     play sound sfx_door
 
@@ -794,7 +945,7 @@ label _20_0_1_1_FIN:
 
     $ current_period = "Nuit"
 
-    scene bg_infirmerie at adaptive_fullscreen, living_background with dissolve
+    scene bg_infirmerie at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
     "Je reste seul dans l'infirmerie, toujours attaché au lit."

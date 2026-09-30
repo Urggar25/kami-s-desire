@@ -337,7 +337,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     $ current_period = "Apr-s-midi"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_27
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir")
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_tension_debate.mp3" fadein 2.0
 
@@ -792,7 +792,7 @@ label _14_0_1_1_0_MESSAGES_KAEL:
     "La conversation s'arrête là. Je repose la tablette sur le lit."
     "Je ne sais pas si Kael me croit réellement. Je ne suis même pas sûr d'avoir besoin qu'il me croie. Pour l'instant, il veut les mêmes réponses que moi, et c'est déjà beaucoup."
 
-    call show_custom_title("Le temps passe puis le soir arrive...") from _call_show_custom_title_4
+    call show_custom_title("Le temps passe puis le soir arrive...")
     pause 1.0
     $ current_period = "Soir"
 

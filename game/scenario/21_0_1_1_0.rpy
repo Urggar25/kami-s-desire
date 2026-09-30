@@ -16,7 +16,10 @@ label _21_0_1_1_0_REVEIL:
 
     "Je ne sais pas vraiment si j'ai dormi."
 
-    "À plusieurs reprises, j'ai l'impression de fermer les yeux quelques minutes avant de me réveiller en sursaut, toujours attaché au même lit, toujours sous cette lumière blanche qui finit par me brûler les yeux."
+    if j20_iris_qte_success:
+        "À plusieurs reprises, j'ai l'impression de fermer les yeux quelques minutes avant de me réveiller en sursaut. J'ai accepté les sangles. Ça ne les rend pas moins réelles."
+    else:
+        "À plusieurs reprises, j'ai l'impression de fermer les yeux quelques minutes avant de me réveiller en sursaut, toujours attaché au même lit, toujours sous cette lumière blanche qui finit par me brûler les yeux."
 
     "Au bout d'un moment, je cesse même d'essayer de compter les heures."
 
@@ -26,7 +29,8 @@ label _21_0_1_1_0_REVEIL:
 
     "Les sangles."
 
-    "La douleur à ma tempe."
+    if not j20_iris_qte_success:
+        "La douleur à ma tempe."
 
     "Et le silence."
 
