@@ -598,251 +598,229 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     $ doppelganger_reveal(screamer=False, duration=0.85, restore_volume=0.65)
 
-    show noam fatigue at center with creep_diss
+    show noam fatigue at j21_dg_noam_approach(0.96) with creep_diss
 
     "Je me regarde."
 
     noam panne "..."
 
-    "Même visage."
+    "Même visage, même taille, mêmes cheveux. Il respire vite, les épaules trop hautes, comme quelqu'un qui vient de courir longtemps."
 
-    "Même taille."
-
-    "Même cheveux."
-
-    "Il respire vite."
-
-    "Beaucoup trop vite."
-
-    "Et dans sa main..."
-
-    "Il y a mon couteau."
+    "Et dans sa main, il y a mon couteau."
 
     noam peur "C'est..."
 
-    "Je reconnais immédiatement les petites rayures sur le manche."
+    "Je reconnais les petites rayures sur le manche."
 
     noam "C'est mon couteau."
 
-    dg_noam "Ouais."
+    dg_noam fatigue "Ouais."
 
-    "Sa voix me coupe presque les jambes."
-
-    "Ma voix."
-
-    "Pas exactement comme je l'entends quand je parle."
-
-    "Comme dans un enregistrement."
+    "Ma voix sort de sa bouche. Pas exactement comme je l'entends quand je parle ; plutôt comme dans un enregistrement qu'on n'aime pas réécouter."
 
     noam desespoir "T'es quoi ?"
 
-    "L'autre Noam serre le manche."
+    dg_noam inquiet "Bouge pas. S'il te plaît, bouge pas."
 
-    dg_noam "Bouge pas."
+    noam colere "Tu débarques dans ma chambre avec MA gueule et MON couteau et tu me demandes de pas bouger ?!"
 
-    noam "T'es quoi, putain ?!"
+    dg_noam "J'ai pas le temps de t'expliquer tout ça."
 
-    dg_noam "J'ai pas le temps de t'expliquer."
+    noam "Alors commence par poser le couteau."
 
-    noam colere "Alors pose le couteau !"
+    dg_noam fatigue "Je peux pas."
 
-    dg_noam "Je peux pas."
-
-    "Sa main tremble."
-
-    "Il n'a pas l'air heureux."
-
-    "Il n'a même pas l'air particulièrement sûr de ce qu'il fait."
-
-    "Il a peur."
-
-    "Cette constatation me terrifie encore plus."
+    "Sa main tremble tellement que la pointe bouge avec elle."
 
     noam inquiet "Pourquoi tu me ressembles ?"
 
-    dg_noam "Parce que je suis toi."
+    dg_noam "Parce que je suis..."
 
-    noam colere "Non."
+    "Il bloque."
+
+    dg_noam doute "Enfin... je sais pas comment te le dire sans que ça sonne complètement dingue."
+
+    noam colere "Essaie."
 
     dg_noam "J'ai tes souvenirs."
 
     noam "Non."
 
-    dg_noam "Je me souviens de notre mère."
+    dg_noam "Si."
+
+    noam "Non, t'as peut-être copié des trucs, je sais pas, mais—"
+
+    dg_noam "Je me souviens de notre mère qui nous criait dessus quand on rentrait trop tard."
 
     noam colere "Ferme-la."
 
-    dg_noam "Je me souviens de la maison."
+    dg_noam "Je me souviens de la maison. De l'escalier qui grinçait au milieu. De la poignée de la salle de bain qu'il fallait relever sinon—"
 
     noam "FERME-LA."
 
-    dg_noam "Je me souviens de Juliette."
+    "Il s'arrête, mais juste une seconde."
 
-    "Je me fige."
+    dg_noam inquiet "Je me souviens de Juliette."
 
-    noam panne "..."
-
-    dg_noam "Je me souviens de son visage."
+    "Tout mon corps se fige."
 
     noam peur "Ne parle pas d'elle."
 
-    dg_noam "Pourquoi ?"
+    dg_noam "Pourquoi ? Parce que c'est ta sœur ?"
 
-    noam colere "Parce que c'est ma sœur !"
+    noam colere "Oui. MA sœur."
 
-    "Sa mâchoire se crispe."
+    dg_noam colere "Et tu crois que moi, quand je pense à elle, je pense à quoi ? À un fichier ? À une photo ?"
 
-    dg_noam "Et tu crois que pour moi c'est quoi ?"
+    noam "T'as volé mes souvenirs."
 
-    noam "T'as volé mes souvenirs !"
+    dg_noam "Je les ai pas volés ! Je me suis réveillé avec !"
 
-    dg_noam "Je les ai pas volés !"
+    "Sa voix monte d'un coup, puis il jette un regard paniqué vers la porte."
 
-    "Il crie plus fort que prévu."
+    dg_noam fatigue "Je les ai. C'est tout. Je sais pas comment te dire ça autrement."
 
-    "Puis regarde immédiatement la porte."
+    noam inquiet "Et tu veux quoi de moi ?"
 
-    "Il baisse la voix."
+    show noam inquiet at j21_dg_noam_approach(1.05) with dissolve
 
-    dg_noam "Je les ai. C'est tout."
+    "Il fait un pas."
 
-    noam inquiet "Qu'est-ce que tu veux ?"
-
-    "Il me regarde."
-
-    "Ses yeux sont humides."
-
-    dg_noam "Partir."
-
-    noam "..."
-
-    dg_noam "La navette part dans moins de deux heures."
+    dg_noam "Je veux partir."
 
     noam "Alors pars."
 
-    dg_noam "Je peux pas."
+    dg_noam fatigue "Je peux pas."
 
-    "Il lève légèrement le couteau."
-
-    noam panne "..."
+    "Il lève à peine le couteau, comme s'il avait honte de me montrer la réponse."
 
     dg_noam "Pas tant que t'es là."
 
-    "Je comprends."
+    noam panne "..."
 
-    "Pas tout."
-
-    "Mais assez."
+    "Je comprends avant qu'il le dise."
 
     noam peur "Tu veux prendre ma place."
 
     dg_noam "Je dois prendre ta place."
 
-    noam "Tu dois rien du tout."
+    noam colere "Non. Tu veux. C'est pas pareil."
 
-    dg_noam "Si je le fais pas maintenant, ils partent sans moi."
+    dg_noam colere "Tu crois que j'ai envie de faire ça ?!"
 
-    noam reflexion "Ils ?"
+    show noam colere at j21_dg_noam_approach(1.14) with dissolve
 
-    "Il ne répond pas."
+    "Il avance encore. Cette fois je recule."
 
-    "Kael me revient immédiatement en tête."
+    dg_noam "La navette part aujourd'hui. Eux, ils ont déjà leur place. Moi non."
 
-    "Sa question."
-
-    "Son hésitation."
-
-    "Et sa phrase de ce matin."
-
-    think "Quand une sortie existe..."
-
-    noam panne "Kael..."
-
-    "Le visage devant moi change à peine."
-
-    "Ça suffit."
-
-    noam desespoir "C'était pour ça."
+    noam reflexion "Eux ?"
 
     dg_noam "..."
 
-    noam "Sa question hier."
+    "Kael me revient immédiatement en tête : sa question d'hier, son hésitation, puis sa phrase de ce matin."
 
-    dg_noam "Il voulait savoir ce que tu ferais."
+    noam panne "Kael..."
+
+    "Il baisse les yeux une demi-seconde."
+
+    "C'est suffisant."
+
+    noam desespoir "Putain... C'était pour ça."
+
+    dg_noam fatigue "Il voulait savoir ce que tu ferais."
 
     noam "Et vous avez décidé quoi ?"
-
-    "L'autre Noam baisse les yeux une fraction de seconde."
 
     dg_noam "De partir."
 
     noam colere "En me tuant."
 
-    dg_noam "Je veux pas te tuer."
+    dg_noam inquiet "Je veux pas te tuer."
 
-    noam "Ah ouais ? Le couteau c'est pour m'aider à fermer mon sac ?"
+    noam "Arrête. T'as un couteau dans la main."
 
-    dg_noam "Arrête."
+    dg_noam "Parce que si je viens sans rien, tu fais quoi ? Tu m'offres ton badge et ta place ?"
 
-    noam "Non, réponds-moi !"
+    noam "Évidemment que non !"
 
-    dg_noam "J'AI PAS D'AUTRE PLACE !"
+    dg_noam "Voilà !"
 
-    "Sa voix se casse."
+    "Sa voix se brise presque sur le mot."
 
-    "Il avance d'un pas."
+    show noam desespoir at j21_dg_noam_approach(1.24) with dissolve
 
-    dg_noam "Si tu montes dans cette navette, moi je reste ici."
+    dg_noam "Si tu montes dans cette navette, moi je reste ici. C'est fini. J'ai même pas une autre identité, pas un autre endroit où aller. Rien."
 
-    noam "C'est pas mon problème."
+    noam colere "Et moi alors ?!"
 
-    "Il me regarde comme si je venais de le frapper."
+    dg_noam "Je sais !"
 
-    dg_noam "Tu l'as dit hier."
+    noam "Non, tu sais pas !"
+
+    dg_noam "SI !"
+
+    "On se tait tous les deux, à bout de souffle alors qu'aucun de nous n'a encore bougé assez pour justifier ça."
+
+    dg_noam fatigue "Tu l'as dit hier."
 
     noam reflexion "Quoi ?"
 
-    dg_noam "Quand t'as une sortie, tu la prends."
+    dg_noam "Quand t'as une sortie, tu la prends. Si rester change rien, tu pars."
 
-    noam "Ça n'a rien à voir."
+    noam colere "Ça n'a rien à voir et tu le sais."
 
     dg_noam "Pourquoi ?"
 
-    noam colere "Parce que tu veux me tuer !"
+    noam "Parce que dans ton scénario, la personne que tu laisses derrière, c'est moi !"
 
     dg_noam colere "PARCE QUE MOI AUSSI JE VEUX VIVRE !"
 
     pause 0.5
 
-    "Le silence retombe brutalement."
+    "Sa voix remplit la chambre puis retombe d'un coup."
 
-    "Il respire par à-coups."
+    "Ses yeux brillent."
 
-    "Ses doigts tremblent autour du manche."
+    show noam desespoir at j21_dg_noam_approach(1.34) with dissolve
 
-    dg_noam "Moi aussi je veux serrer Juliette dans mes bras !"
+    dg_noam "Moi aussi je veux serrer Juliette dans mes bras ! Moi aussi je veux rentrer, ouvrir cette putain de porte et la voir me sauter dessus comme si j'étais parti trois ans !"
 
     noam panne "..."
 
-    dg_noam "Moi aussi j'ai envie de rentrer."
-
-    dg_noam "Moi aussi j'ai passé tout ce temps à penser à elle."
+    dg_noam "Tu crois que ça me fait rien ? Tu crois que parce que je suis arrivé après toi, tout ce que j'ai là-dedans compte moins ?"
 
     noam peur "T'es pas moi."
 
-    dg_noam "Je sais."
+    dg_noam fatigue "Je sais."
 
     "Il avale difficilement."
 
-    dg_noam "Mais ça rend pas ce que je ressens moins réel."
+    dg_noam "Je sais que je suis pas toi. Mais j'ai peur comme toi. Je l'aime comme toi. Et dans une heure, si j'échoue, je reste tout seul ici pendant que toi tu repars avec tout."
 
-    "Il regarde la porte."
+    noam "Tu me demandes quoi, exactement ? Que je me laisse tuer parce que t'es triste ?"
 
-    "Puis moi."
+    dg_noam colere "NON !"
+
+    "Il serre les dents, cherche ses mots, puis secoue la tête."
+
+    dg_noam fatigue "Je te demande rien. C'est justement ça le problème."
+
+    show noam inquiet at j21_dg_noam_approach(1.46) with dissolve
+
+    "Il s'approche encore."
+
+    noam peur "Reste où tu es."
 
     dg_noam "Désolé."
 
+    noam "Noam—"
+
+    "Le prénom sort tout seul. Il nous fait hésiter tous les deux."
+
     noam peur "Attends."
+
+    show noam colere at j21_dg_noam_approach(1.60) with Dissolve(0.18)
 
     "Il avance."
 
