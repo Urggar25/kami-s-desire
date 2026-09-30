@@ -767,6 +767,15 @@ init -2 python:
 
     def roadmap_status_label(node):
         status = roadmap_status(node)
+        if roadmap_is_ending(node):
+            return kd_tr({
+                "current": "Fin en cours",
+                "done": "Fin découverte",
+                "available": "Fin accessible",
+                "locked": "Fin non découverte",
+                "unknown": "Fin non découverte",
+                "hidden": "Accès refusé par Kami",
+            }.get(status, "Fin"))
         return kd_tr({
             "current": "En cours",
             "done": "Terminé",
@@ -788,12 +797,14 @@ init -2 python:
 
     def roadmap_visual_kind(node):
         status = roadmap_status(node)
+        if status in ("locked", "unknown"):
+            return status
+        if roadmap_is_ending(node):
+            return "ending"
         if status == "current":
             return "current"
         if status == "done":
             return "done"
-        if status in ("locked", "unknown"):
-            return status
         return node.get("kind", "day")
 
     def roadmap_node_bg(node, hover=False):
