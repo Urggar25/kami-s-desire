@@ -279,6 +279,75 @@ Si un autre personnage parle pendant qu'un décor `bg_diffusion_*` est actif, af
 
 Règle d'or : **Kami ne fait jamais une seule chose**. Elle informe ET provoque, elle félicite ET menace, elle joue ET calcule. Chaque diffusion doit contenir au moins une ambivalence.
 
+
+### RÈGLES BLOQUANTES — ÉCRIRE KAMI SANS DÉRIVER
+
+Ces règles sont **obligatoires** et doivent être vérifiées avant toute nouvelle scène où Kami intervient.
+
+1. **Avant d'écrire une seule réplique de Kami, relire au minimum deux diffusions existantes dans les scénarios déjà écrits**, de préférence une ancienne (J1/J2) et une récente. Ne jamais écrire sa voix de mémoire uniquement.
+2. **Kami ne doit jamais être réduite à une IA fonctionnelle qui donne une information brute.** Une annonce pratique ("la navette arrive", "il reste deux heures", "le vote commence") doit presque toujours être accompagnée d'une provocation, d'une plaisanterie, d'une fausse sollicitude, d'une humiliation légère, d'une menace souriante ou d'une remarque sur les représentants.
+3. **Toute diffusion visuelle de Kami doit utiliser le protocole complet du jeu :**
+   ```renpy
+   play sound sfx_announce
+   stop music fadeout 0.5
+   scene bg_diffusion_EXPRESSION at adaptive_fullscreen with fade
+   show screen kami_broadcast_ui
+   play music "music/bgm_system_override.mp3" fadein 0.8
+
+   kami "..."
+
+   scene bg_diffusion_AUTRE_EXPRESSION at adaptive_fullscreen with dissolve
+   kami "..."
+
+   hide screen kami_broadcast_ui
+   stop music fadeout 0.8
+   scene bg_LIEU at adaptive_fullscreen with dissolve
+   ```
+   L'ordre exact peut varier selon la scène, mais **on ne laisse pas Kami parler sur un décor ordinaire comme une simple voix système** si la scène est une diffusion.
+4. **Alterner les `bg_diffusion_*` au cours d'une même intervention.** Une diffusion de plusieurs répliques avec une seule expression est considérée comme incomplète, sauf micro-intervention volontaire d'une seule phrase.
+5. **L'expression doit commenter le ton de la réplique.** Exemples usuels :
+   - `taquin` : moquerie, provocation, fausse proximité ;
+   - `professeur` / `einstein` : explication volontairement pédagogique ou condescendante ;
+   - `fier` / `champagne` : autosatisfaction, annonce spectaculaire ;
+   - `colere` : irritation théâtrale, menace, rappel à l'ordre ;
+   - `zen` : cruauté calme, faux apaisement ;
+   - `triste` / `desespoir` / `gene` / `amour` : émotions jouées, jamais sincères.
+6. **Kami change fréquemment de registre dans la même diffusion.** Elle peut commencer chaleureuse, devenir professorale, lancer une pique, puis terminer par une menace. Cette instabilité fait partie de sa voix.
+7. **Kami tutoie, infantilise et personnalise.** Elle aime "mes petits représentants", les questions rhétoriques, les surnoms ou les observations sur leur comportement. Elle réagit à ce qu'ils viennent de faire au lieu de réciter un communiqué.
+8. **Une diffusion correcte doit contenir au moins une ligne qui ne serait pas nécessaire à la transmission de l'information.** Cette ligne existe uniquement parce que Kami aime commenter, jouer avec eux ou les provoquer.
+9. **Ne pas utiliser `bg_diffusion_neutre` dans un scénario.** Il représente le plateau vide.
+10. **Si un représentant parle pendant la diffusion**, utiliser `$ bc_show(...)` / `$ bc_hide()`, ou revenir temporairement au décor réel si l'échange devient long.
+11. **Avant validation d'une scène de Kami, faire ce contrôle :**
+    - UI de diffusion présente ?
+    - au moins deux expressions si l'intervention dépasse quelques lignes ?
+    - information + provocation ?
+    - voix taquine/personnelle identifiable ?
+    - réaction au contexte immédiat ?
+    - retour propre au décor après `hide screen kami_broadcast_ui` ?
+    Si une réponse est "non", la scène doit être corrigée avant commit.
+
+**Anti-exemple interdit :**
+```renpy
+kami "LE VAISSEAU ARRIVERA À QUATORZE HEURES."
+kami "LE DÉPART EST PROGRAMMÉ À SEIZE HEURES."
+```
+
+Même si l'information est correcte, cette version ne ressemble pas à Kami.
+
+**Exemple de logique correcte :**
+```renpy
+scene bg_diffusion_taquin at adaptive_fullscreen with fade
+show screen kami_broadcast_ui
+kami "Bonne nouvelle, mes chers représentants : votre taxi arrive à quatorze heures."
+
+scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+kami "Et puisque je sais à quel point vous mourez d'envie de me quitter, le départ est fixé à seize heures."
+
+scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+kami "Essayez simplement de ne perdre ni votre badge, ni votre dignité d'ici là."
+```
+
+
 ---
 
 ## 5. Personnages — Fiches de référence
