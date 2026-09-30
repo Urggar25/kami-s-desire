@@ -379,23 +379,19 @@ label _20_0_1_1_IRIS_CONFRONTATION:
     "Je pourrais simplement ouvrir la main."
 
     "Ça devrait être facile."
+    menu (screen="critical_choice", noam_expr="hesitation"):
+        "Que faire du couteau ?"
 
-    $ critical_choice_active = True
-    menu:
         "Lâcher le couteau":
-            $ critical_choice_active = False
             $ j20_knife_choice = "drop"
             jump _20_0_1_1_LACHER_COUTEAU
 
         "Garder le couteau":
-            $ critical_choice_active = False
             $ j20_knife_choice = "keep"
             jump _20_0_1_1_GARDER_COUTEAU
 
 
 label _20_0_1_1_GARDER_COUTEAU:
-
-    $ critical_choice_active = False
     $ j20_knife_choice = "keep"
     scene bg_salle_goumi_cachee at adaptive_fullscreen
     $ showGroup([
@@ -458,8 +454,6 @@ label _20_0_1_1_GARDER_COUTEAU:
 
 
 label _20_0_1_1_LACHER_COUTEAU:
-
-    $ critical_choice_active = False
     $ danger_off()
 
     "Mes doigts restent serrés autour du manche encore une seconde."
@@ -751,22 +745,19 @@ label _20_0_1_1_KAEL_QUESTION:
         ("noam", "reflexion", 0.30),
         ("kael", "doute", 0.70),
     ])
-    $ critical_choice_active = True
-    menu:
+    menu (screen="critical_choice", noam_expr="reflexion"):
+        "Si demain la navette arrive... mais que quelqu'un reste coincé ici ?"
+
         "Je monte dans la navette.":
-            $ critical_choice_active = False
             $ j20_kael_depart_choice = "leave"
             jump _20_0_1_1_KAEL_PARTIR
 
         "Je reste s'il y a encore une chance de le sortir.":
-            $ critical_choice_active = False
             $ j20_kael_depart_choice = "stay"
             jump _20_0_1_1_KAEL_RESTER
 
 
 label _20_0_1_1_KAEL_PARTIR:
-
-    $ critical_choice_active = False
 
     noam reflexion "Oui."
 
@@ -804,8 +795,6 @@ label _20_0_1_1_KAEL_PARTIR:
 
 
 label _20_0_1_1_KAEL_RESTER:
-
-    $ critical_choice_active = False
 
     noam reflexion "Non."
 
