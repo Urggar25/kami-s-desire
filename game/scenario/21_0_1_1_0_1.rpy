@@ -148,151 +148,183 @@ label _21_0_1_1_0_1_REVEIL:
 
     elen joie "J'ai officiellement décidé que mon premier repas sur Terre serait tellement gras que Sael fera un malaise juste en le regardant."
 
-    tomas reflexion "C'est rassurant de voir que trois semaines ici n'ont absolument rien changé chez toi."
+    tomas reflexion "Tu sais qu'après trois semaines de rationnement, ton estomac va probablement—"
 
-    elen rire "Si. Maintenant j'apprécie la nourriture."
+    elen rire "Tomas."
 
-    iris blase "Tu l'appréciais déjà beaucoup trop avant."
+    tomas surpris "Quoi ?"
 
-    elen "Jalouse."
+    elen "Ne ruine pas mon rêve avec de la science."
+
+    mara sourire "Laisse-la se détruire l'estomac en paix. C'est beau, une jeune femme qui a encore des projets."
+
+    iris blase "Ses projets tiennent dans une friteuse."
+
+    elen "Vous êtes juste jaloux parce que j'ai déjà organisé ma vie après seize heures."
+
+    noam fatigue "Moi, j'aimerais déjà arriver à seize heures."
 
     "Je m'assois avec eux."
 
-    "Même Mara est là."
+    "Mara est juste en face, bien vivante, en train de voler quelque chose dans l'assiette de Tomas pendant qu'il proteste."
 
-    "Vivante."
+    tomas colere "H-Hé !"
 
-    "Elle discute avec Tomas comme si je ne l'avais pas vue morte hier matin."
+    mara taquin "Trop lent."
 
-    "Je détourne les yeux avant qu'elle remarque que je la fixe."
+    "Je la fixe une seconde de trop."
 
-    iris inquiet "T'as dormi ?"
+    mara mefiant "Quoi ?"
 
-    noam fatigue "Un peu."
+    noam surpris "Rien."
 
-    iris "Ça veut dire non."
+    mara "Non, ça c'est la tête de quelqu'un qui a un truc à dire."
 
-    noam "Ça veut dire un peu."
+    noam fatigue "J'ai juste mal dormi."
 
-    iris blase "T'es insupportable."
+    mara taquin "Ah. Donc maintenant quand tu dors mal tu me regardes comme si j'étais revenue d'entre les morts ? Charmant."
 
-    noam "Bonjour à toi aussi."
+    "Mon estomac se serre."
 
-    "Elle pousse une tasse dans ma direction."
+    iris colere "Mara."
 
-    iris "Bois."
+    mara "Quoi ?"
+
+    iris determine "Lâche-le un peu."
+
+    mara mefiant "Je plaisantais."
+
+    iris "Bah plaisante ailleurs."
+
+    "Mara hausse les épaules, mais elle arrête."
+
+    "Iris pousse ensuite une tasse vers moi sans même me regarder."
+
+    iris fatigue "Tiens. Bois."
 
     noam surpris "C'est quoi ?"
 
-    iris "Du café."
+    iris blase "Un grille-pain."
 
-    noam "Je vois bien que c'est du café."
+    noam "Je vois bien que c'est du café. Je demandais pourquoi tu me le donnes."
 
-    iris blase "Alors pourquoi tu demandes ?"
+    iris "Parce que t'as une tête de cadavre et que j'aimerais éviter d'en avoir un deuxième à gérer."
 
-    noam "Je vérifie juste que t'as pas décidé de m'empoisonner avant le départ."
+    "Elle réalise ce qu'elle vient de dire et ferme les yeux une demi-seconde."
 
-    iris "J'y ai pensé."
+    iris gene "Enfin... merde. Tu m'as compris."
+
+    noam fatigue "Ouais."
 
     "Je prends la tasse."
 
-    "Elle me regarde boire comme si c'était une victoire personnelle."
+    noam "Merci."
 
-    kael calme "Noam."
+    iris blase "Ne rends pas ça gênant."
 
-    "Je tourne la tête."
+    "Je bois une gorgée. Elle attend quand même de me voir avaler avant de reprendre son propre verre."
 
-    kael doute "Tu... ça va mieux ?"
+    kael doute "Noam..."
 
-    noam "Je sais pas."
+    "Je tourne la tête vers lui."
 
-    kael "Ouais."
+    kael inquietude "Pour hier soir. La question que je t'ai posée..."
 
-    "Il joue avec le bord de son verre."
+    noam reflexion "Celle où tu m'as demandé si j'abandonnais quelqu'un sur la station ?"
 
-    kael inquietude "Pour hier..."
+    iris surpris "Attends, quoi ?"
 
-    noam reflexion "Ta question bizarre ?"
+    kael doute "C'était pas exactement—"
 
-    "Kael baisse les yeux."
+    iris colere "Non mais Kael, sérieusement ? Vous aviez pas un sujet plus léger ? Genre la famine, les lasers, je sais pas ?"
 
-    kael doute "Ouais."
+    kael sourire "J'y penserai la prochaine fois."
 
-    iris reflexion "Quelle question bizarre ?"
+    iris blase "Il y aura pas de prochaine fois. On se casse aujourd'hui."
 
-    noam "Il voulait savoir si je monterais dans la navette en sachant que quelqu'un restait coincé ici."
+    "Kael sourit à peine. Puis son regard revient vers moi."
 
-    iris surpris "..."
+    kael inquietude "Je voulais juste dire que... enfin..."
 
-    iris blase "Putain, Kael. Vous pouvez pas parler de météo comme les gens normaux ?"
+    "Il frotte son pouce contre le bord de son verre."
 
-    kael sourire "J'avais pas grand-chose à dire sur la météo."
+    kael doute "Je crois que t'avais raison."
 
-    "Iris lève les yeux au ciel."
+    noam reflexion "Sur le fait de partir ?"
 
-    kael doute "Je voulais juste dire..."
+    kael "Ouais. Quand une sortie existe, si rester change rien..."
 
-    "Il hésite."
+    "Il s'arrête."
 
-    kael "Je crois que t'avais raison."
+    noam "Tu pars."
 
-    noam reflexion "Sur quoi ?"
+    kael inquietude "Tu pars."
 
-    kael inquietude "Quand une sortie existe..."
+    "Il répète mes mots doucement, comme s'il voulait voir ce qu'ils donnent à voix haute."
 
-    "Il s'arrête encore, puis hausse légèrement les épaules."
+    iris reflexion "Vous êtes vraiment bizarres tous les deux aujourd'hui."
 
-    kael "Parfois, faut juste la prendre."
+    noam fatigue "Ça fait vingt jours qu'on est bizarres."
 
-    noam "Ouais."
+    iris "Non. Toi t'es bizarre depuis vingt jours. Lui, c'est nouveau."
 
-    "Il hoche la tête."
+    kael sourire "Merci."
 
-    "Quelque chose dans sa façon de le faire me dérange."
-
-    "Pas assez pour que je sache pourquoi."
+    "La blague tombe, mais quelque chose dans son expression reste fermé."
 
     "Iris tape deux fois du doigt sur la table."
 
-    iris "Bon. Nouvelle règle."
+    iris determine "Bon. Nouvelle règle pour la journée."
 
-    noam blase "Oh non."
+    noam blase "Je sens que ça va me plaire."
 
-    iris determine "Aujourd'hui, tu ne fais rien de stupide."
+    iris "Tu ne fais rien de stupide."
 
-    noam "C'est très large."
+    noam "C'est très large comme définition."
 
-    iris "Pas de conduit. Pas de salle cachée. Pas de cadavre. Pas de couteau."
+    iris colere "Très bien. Pas de conduit, pas de salle cachée, pas de cadavre, pas de couteau, et si jamais une idée commence par 'je vais juste vérifier', tu viens me voir avant."
 
     noam surpris "Le couteau..."
 
-    iris inquiet "Quoi ?"
-
-    "Je repense soudainement à la salle."
+    iris inquiet "Quoi, le couteau ?"
 
     noam reflexion "Je l'ai laissé en bas."
 
-    iris blase "Oui."
+    iris blase "Je sais. J'étais là quand, pour une fois, t'as fait un choix intelligent."
 
-    noam "Je devrais peut-être le récupérer."
+    noam "Je devrais peut-être le récupérer avant de partir."
 
     iris colere "Non."
 
-    noam "C'est quand même mon—"
+    noam "C'est quand même mon couteau."
 
-    iris determine "Non."
+    iris determine "Et hier c'était quand même ton couteau quand t'étais à deux secondes de faire une connerie avec."
 
-    "Je la regarde."
+    noam colere "Je t'ai dit que je voulais pas—"
 
-    "Elle ne plaisante pas."
+    iris "Je sais !"
+
+    "Elle me coupe net."
+
+    iris fatigue "Je sais que tu voulais pas me faire de mal. C'est pas le sujet."
+
+    "Sa voix redescend."
+
+    iris inquiet "Je veux juste qu'aujourd'hui, pendant quelques heures, t'arrêtes de chercher un problème à résoudre. Laisse-moi au moins ça."
+
+    "Je reste silencieux."
 
     noam fatigue "D'accord."
 
-    iris "Merci."
+    iris "D'accord quoi ?"
 
-    "Elle reprend son verre."
+    noam "Je vais pas chercher le couteau."
 
-    "Je vois Kael relever très légèrement les yeux."
+    "Elle souffle enfin."
+
+    iris fatigue "Merci."
+
+    "Au bout de la table, Kael relève très légèrement les yeux."
 
     "Puis il recommence à boire."
 
