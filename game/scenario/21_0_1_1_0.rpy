@@ -495,5 +495,6 @@ label _21_0_1_1_EPILOGUE:
         "Quelqu'un est rentré",
         "ENDING 02 // JOUR 21"
     )
+    $ _ending_screen_closed = _return
 
     return
