@@ -3,6 +3,21 @@
 # =============================================================================
 
 
+label _21_0_1_1_LEAVE_REVEIL:
+    # Entrée J21 après la réponse "je monte dans la navette".
+    # Cette branche conserve pour l'instant le J21 existant.
+    $ j20_kael_depart_choice = "leave"
+    jump _21_0_1_1_0_REVEIL
+
+
+label _21_0_1_1_STAY_REVEIL:
+    # Entrée réservée au J21 où la réponse de Noam pousse Kael
+    # vers la logique "ne laisser personne derrière".
+    # Le contenu spécifique de cette journée sera développé séparément.
+    $ j20_kael_depart_choice = "stay"
+    jump _21_0_1_1_0_REVEIL
+
+
 label _21_0_1_1_0_REVEIL:
 
     $ cafeteria_food_level = "null"
