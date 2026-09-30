@@ -4,6 +4,8 @@
 # =============================================================================
 
 default j20_iris_qte_success = False
+default j20_knife_choice = None
+default j20_kael_depart_choice = None
 
 
 # Mise en scène spécifique à la révélation de Kael au J20.
@@ -362,13 +364,45 @@ label _20_0_1_1_SALLE_GOUMI:
 
 label _20_0_1_1_IRIS_CONFRONTATION:
 
-    # Le décor est reposé ici pour les accès directs depuis la roadmap.
+    # Point de reprise de la roadmap : juste avant le choix qui sépare les routes.
     scene bg_salle_goumi_cachee at adaptive_fullscreen
+    $ showGroup([
+        ("noam", "inquiet", 0.22),
+        ("iris", "determine", 0.52),
+        ("kael", "inquietude", 0.82),
+    ])
 
     iris determine "Pose-le."
+
+    "Je regarde Iris, puis le couteau."
+
+    "Je pourrais simplement ouvrir la main."
+
+    "Ça devrait être facile."
+
+    $ critical_choice_active = True
+    menu:
+        "Lâcher le couteau":
+            $ critical_choice_active = False
+            $ j20_knife_choice = "drop"
+            jump _20_0_1_1_LACHER_COUTEAU
+
+        "Garder le couteau":
+            $ critical_choice_active = False
+            $ j20_knife_choice = "keep"
+            jump _20_0_1_1_GARDER_COUTEAU
+
+
+label _20_0_1_1_GARDER_COUTEAU:
+
+    $ critical_choice_active = False
     $ danger_on()
 
-    noam colere "Mais je viens de te dire que—"
+    noam colere "Non. Je le garde."
+
+    iris colere "Noam..."
+
+    noam "Je vais pas vous attaquer. J'ai juste pas envie de me retrouver encore désarmé pendant que quelqu'un se balade dans les murs."
 
     "Elle avance d'un pas."
 
@@ -414,6 +448,471 @@ label _20_0_1_1_IRIS_CONFRONTATION:
         jump _20_0_1_1_IRIS_QTE_REUSSITE
 
     jump _20_0_1_1_IRIS_QTE_ECHEC
+
+
+label _20_0_1_1_LACHER_COUTEAU:
+
+    $ critical_choice_active = False
+    $ danger_off()
+
+    "Mes doigts restent serrés autour du manche encore une seconde."
+
+    "Puis je souffle et ouvre la main."
+
+    play sound sfx_drop
+
+    "Le couteau tombe entre nous et glisse sur le sol métallique."
+
+    noam fatigue "Voilà."
+
+    "Iris ne répond pas."
+
+    "Elle regarde le couteau, puis ma main vide, comme si elle attendait encore que je change d'avis."
+
+    noam "Ça va ?"
+
+    iris colere "Non."
+
+    noam surpris "..."
+
+    iris "Non, ça va pas, espèce d'abruti."
+
+    "Sa voix tremble légèrement sur la fin."
+
+    "Je crois que c'est ça qui me fait enfin comprendre."
+
+    noam inquiet "Iris..."
+
+    "Elle s'approche."
+
+    "Par réflexe, je me raidis."
+
+    iris fatigue "Bouge pas."
+
+    noam "Je bouge pas."
+
+    "Je m'attends à ce qu'elle m'attrape encore le poignet."
+
+    "À la place, ses bras passent autour de moi."
+
+    noam surpris "..."
+
+    "Pendant une seconde, je reste complètement raide."
+
+    "Iris serre plus fort."
+
+    noam "Euh..."
+
+    iris triste "Ferme-la deux secondes."
+
+    "Alors je ferme la bouche."
+
+    "Je sens sa respiration contre mon épaule. Elle est rapide. Beaucoup trop rapide pour quelqu'un qui essayait encore de faire la dure il y a trente secondes."
+
+    iris fatigue "J'ai cru que t'allais vraiment faire une connerie."
+
+    noam inquiet "Je voulais pas te faire de mal."
+
+    iris "Je sais."
+
+    "Elle répond tout de suite."
+
+    iris triste "C'est justement ça le pire."
+
+    noam "..."
+
+    iris "Je savais que tu voulais pas. Mais je savais plus ce que t'allais faire non plus."
+
+    "Je baisse les yeux."
+
+    noam fatigue "Moi non plus."
+
+    "Elle reste contre moi quelques secondes encore."
+
+    "Kael détourne légèrement la tête. Pour une fois, il a l'air de trouver le mur passionnant."
+
+    noam "Désolé."
+
+    iris fatigue "Ouais."
+
+    noam "C'est tout ?"
+
+    iris blase "Tu voulais quoi ? Un discours ?"
+
+    "Je laisse échapper un rire très court. Ça ressemble davantage à de l'air qui sort de mes poumons qu'à autre chose."
+
+    iris "T'as intérêt à pas me refaire un truc pareil."
+
+    noam "Je vais essayer."
+
+    iris colere "Non. Tu vas pas essayer."
+
+    noam fatigue "D'accord. Je vais pas recommencer."
+
+    "Elle finit par me lâcher et recule juste assez pour me regarder."
+
+    iris inquiet "Et maintenant on remonte."
+
+    "Je hoche la tête."
+
+    "Mon regard tombe une dernière fois sur le couteau."
+
+    "Il est resté au milieu de la salle."
+
+    "Je pourrais le reprendre."
+
+    "Je ne le fais pas."
+
+    kael inquietude "On devrait y aller."
+
+    $ hideGroup()
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
+    $ flashlight_on(pattern=2)
+
+    "Le retour se fait presque sans un mot."
+
+    "Iris avance devant moi. Kael ferme encore la marche."
+
+    "Je reconnais chaque bifurcation, chaque plaque, chaque virage."
+
+    "Et pourtant, plus j'avance, moins je sais ce qui s'est réellement passé depuis hier."
+
+    think "J'ai vu Mara sur cette table."
+
+    think "Je l'ai vue."
+
+    "Mais Mara était dans la cafétéria."
+
+    "Vivante."
+
+    "Et je sais maintenant qu'on a touché à mes souvenirs."
+
+    think "M16."
+
+    "Je serre les dents."
+
+    think "Alors quoi ?"
+
+    think "Le corps était faux ?"
+
+    think "Le souvenir était faux ?"
+
+    think "Ou c'est Mara qui..."
+
+    "Je bloque la pensée avant même de la terminer."
+
+    iris inquiet "Noam ?"
+
+    noam fatigue "Ça va."
+
+    iris blase "Tu sais que t'es vraiment mauvais pour mentir ?"
+
+    noam "Je réfléchis."
+
+    iris "Justement."
+
+    "Elle ralentit pour rester à ma hauteur."
+
+    iris fatigue "T'es pas obligé de trouver une réponse maintenant."
+
+    noam "Demain on part."
+
+    iris "Je sais."
+
+    noam "Si j'ai vu quelque chose de réel, demain c'est trop tard."
+
+    "Iris ouvre la bouche, mais ne répond pas."
+
+    "Cette fois, même elle n'a rien à me proposer."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    $ flashlight_off()
+
+    "Nous ressortons enfin du conduit dans ma chambre."
+
+    "Je m'assois un instant sur le bord du lit, surtout parce que mes jambes en ont marre de me porter."
+
+    $ showGroup([
+        ("noam", "fatigue", 0.22),
+        ("iris", "inquiet", 0.52),
+        ("kael", "doute", 0.82),
+    ])
+
+    iris inquiet "Je vais prévenir les autres qu'on a rien trouvé."
+
+    noam desaccord "Dis pas que j'ai inventé le reste."
+
+    iris colere "J'ai pas dit ça."
+
+    noam "Je sais."
+
+    iris fatigue "Je vais juste leur dire qu'il n'y avait plus de corps. C'est la seule chose qu'on sait."
+
+    "Elle hésite une seconde avant de sortir."
+
+    iris "Et tu restes ici."
+
+    noam blase "Oui, maman."
+
+    iris colere "Je suis sérieuse."
+
+    noam fatigue "Moi aussi. Enfin... oui. Je reste là."
+
+    "Elle me lance encore un regard méfiant, puis ouvre la porte."
+
+    iris "Kael ?"
+
+    kael doute "J'arrive."
+
+    "Iris sort."
+
+    play sound sfx_door
+
+    "Kael, lui, ne bouge pas tout de suite."
+
+    noam "Tu peux y aller, tu sais."
+
+    kael doute "Ouais."
+
+    "Il regarde la grille ouverte derrière nous."
+
+    kael "Je voulais juste..."
+
+    "Il s'arrête."
+
+    noam reflexion "Quoi ?"
+
+    kael doute "Non, rien."
+
+    noam "Kael."
+
+    "Il inspire doucement par le nez."
+
+    kael inquietude "Je peux te poser une question ?"
+
+    noam "Vas-y."
+
+    kael doute "C'est un peu... enfin, c'est pas vraiment lié à tout ça."
+
+    noam blase "Vu la journée, ça changera pas grand-chose."
+
+    "Il esquisse un sourire, mais il disparaît presque aussitôt."
+
+    kael inquietude "Si demain la navette arrive..."
+
+    "Il marque une pause."
+
+    kael "Et que tu sais qu'en partant, quelqu'un resterait coincé ici..."
+
+    "Ses yeux quittent les miens."
+
+    kael doute "Tu monterais quand même dedans ?"
+
+    noam surpris "..."
+
+    noam reflexion "Pourquoi tu me demandes ça ?"
+
+    kael inquietude "J'en sais rien."
+
+    "Il passe une main derrière sa nuque."
+
+    kael doute "Je pensais au départ. À demain. Et puis..."
+
+    "Il s'interrompt encore."
+
+    kael "Laisse tomber. C'était une question con."
+
+    noam "Non."
+
+    "Il relève les yeux."
+
+    noam reflexion "C'est juste... précis."
+
+    kael inquietude "Ouais."
+
+    "Un silence passe."
+
+    kael "Alors ?"
+
+label _20_0_1_1_KAEL_QUESTION:
+
+    # Second point de bifurcation majeur de la route "lâcher le couteau".
+    # Le joueur choisit sans savoir ce que Kael cherche réellement à résoudre.
+    $ critical_choice_active = True
+    menu:
+        "Je monte dans la navette.":
+            $ critical_choice_active = False
+            $ j20_kael_depart_choice = "leave"
+            jump _20_0_1_1_KAEL_PARTIR
+
+        "Je reste s'il y a encore une chance de le sortir.":
+            $ critical_choice_active = False
+            $ j20_kael_depart_choice = "stay"
+            jump _20_0_1_1_KAEL_RESTER
+
+
+label _20_0_1_1_KAEL_PARTIR:
+
+    $ critical_choice_active = False
+
+    noam reflexion "Oui."
+
+    kael surpris "..."
+
+    noam "Enfin... si j'ai vraiment aucun moyen de le sortir, oui. Je monte."
+
+    kael doute "Même en sachant qu'il reste ici ?"
+
+    noam "Rester avec lui changera rien."
+
+    "Kael ne répond pas."
+
+    noam "Ça fera juste deux personnes coincées au lieu d'une."
+
+    "Il regarde le sol quelques secondes."
+
+    kael inquietude "Ouais..."
+
+    kael "Je vois."
+
+    noam "T'avais quelqu'un en tête ?"
+
+    kael surpris "Non."
+
+    "La réponse sort un peu trop vite."
+
+    kael doute "Non, personne. Je... je me demandais juste."
+
+    noam "D'accord."
+
+    "Il hoche la tête, comme s'il venait de prendre une décision qui n'a rien à voir avec moi."
+
+    jump _20_0_1_1_LACHER_FIN_JOURNEE
+
+
+label _20_0_1_1_KAEL_RESTER:
+
+    $ critical_choice_active = False
+
+    noam reflexion "Non."
+
+    kael surpris "Tu resterais ?"
+
+    noam "S'il y a encore une chance de le sortir, oui."
+
+    kael inquietude "Même si tu risques de rater la navette ?"
+
+    noam "Je vais pas te dire que je resterais ici pour toujours juste pour faire le héros."
+
+    noam "Mais partir alors que je peux encore faire quelque chose ? Non."
+
+    "Kael baisse légèrement les yeux."
+
+    kael doute "Même si c'est pas... quelqu'un que tu connais vraiment ?"
+
+    noam "Ça change quoi ?"
+
+    kael "..."
+
+    noam "S'il est coincé ici et que je peux l'aider, j'essaie. Après, si c'est impossible, c'est autre chose."
+
+    "Kael reste silencieux longtemps."
+
+    kael inquietude "D'accord."
+
+    noam surpris "D'accord ?"
+
+    kael doute "Ouais. C'est juste..."
+
+    "Il cherche ses mots."
+
+    kael "Je voulais savoir."
+
+    noam "Tu me fais un peu flipper quand tu parles comme ça."
+
+    kael sourire "Désolé."
+
+    "Son sourire est petit. Presque gêné."
+
+    "Mais son regard, lui, reste ailleurs."
+
+    jump _20_0_1_1_LACHER_FIN_JOURNEE
+
+
+label _20_0_1_1_LACHER_FIN_JOURNEE:
+
+    $ current_period = "Soir"
+
+    "Kael finit par rejoindre Iris dans le couloir."
+
+    play sound sfx_door
+
+    $ hideGroup()
+
+    "La porte se referme."
+
+    "Je reste assis sur mon lit."
+
+    "Quelques minutes plus tôt, j'étais prêt à me battre avec Iris pour garder un couteau."
+
+    "Maintenant, tout est redevenu calme."
+
+    "Trop calme."
+
+    scene black with dissolve
+    pause 0.6
+
+    $ current_period = "Nuit"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
+
+    "La nuit tombe sans que je trouve la moindre réponse."
+
+    "Mara est vivante."
+
+    "J'en suis sûr."
+
+    "Je suis aussi sûr d'avoir vu son corps."
+
+    "Et ces deux certitudes se cognent dans ma tête depuis des heures."
+
+    think "M16."
+
+    "C'est presque pire de savoir que mes souvenirs ont pu être modifiés."
+
+    "Avant, je pouvais au moins me fier à ce que j'avais vu."
+
+    "Maintenant..."
+
+    noam fatigue "Putain."
+
+    "Je me laisse tomber sur le dos."
+
+    "Demain, la navette doit arriver."
+
+    "Demain, tout ça est censé être terminé."
+
+    "Je ferme les yeux."
+
+    "La question de Kael revient malgré moi."
+
+    if j20_kael_depart_choice == "leave":
+        think "Ça fera juste deux personnes coincées au lieu d'une."
+    else:
+        think "S'il reste une chance de le sortir..."
+
+    "Je ne sais toujours pas pourquoi il m'a demandé ça."
+
+    "Et je suis trop fatigué pour chercher."
+
+    stop music fadeout 1.5
+
+    call end_day("21") from _call_j20_dropknife_end_day_21
+
+    if j20_kael_depart_choice == "stay":
+        jump _21_0_1_1_STAY_REVEIL
+
+    jump _21_0_1_1_LEAVE_REVEIL
 
 
 label _20_0_1_1_IRIS_QTE_ECHEC:
