@@ -9,7 +9,14 @@
 
 default j21_leave_qte_success = False
 
-define dg_noam = Character("Noam", image="noam")
+define dg_noam = Character("Noam ?", image="noam")
+
+transform j21_dg_noam_approach(z=1.0):
+    xpos 0.5
+    xanchor 0.5
+    ypos 0.26
+    yanchor 0.18
+    zoom z
 
 
 label _21_0_1_1_0_1_REVEIL:
