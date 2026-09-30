@@ -396,6 +396,13 @@ label _20_0_1_1_IRIS_CONFRONTATION:
 label _20_0_1_1_GARDER_COUTEAU:
 
     $ critical_choice_active = False
+    $ j20_knife_choice = "keep"
+    scene bg_salle_goumi_cachee at adaptive_fullscreen
+    $ showGroup([
+        ("noam", "colere", 0.22),
+        ("iris", "colere", 0.52),
+        ("kael", "inquietude", 0.82),
+    ])
     $ danger_on()
 
     noam colere "Non. Je le garde."
@@ -738,6 +745,12 @@ label _20_0_1_1_KAEL_QUESTION:
 
     # Second point de bifurcation majeur de la route "lâcher le couteau".
     # Le joueur choisit sans savoir ce que Kael cherche réellement à résoudre.
+    $ j20_knife_choice = "drop"
+    scene bg_chambre at adaptive_fullscreen
+    $ showGroup([
+        ("noam", "reflexion", 0.30),
+        ("kael", "doute", 0.70),
+    ])
     $ critical_choice_active = True
     menu:
         "Je monte dans la navette.":
