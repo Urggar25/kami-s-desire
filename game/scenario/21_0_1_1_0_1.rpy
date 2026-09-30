@@ -434,112 +434,80 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     noam "Presque."
 
-    "Elle suit mon regard jusqu'à la grille."
+    "Elle suit mon regard jusqu'à la grille entrouverte."
 
-    iris inquiet "Oh non."
+    iris inquiet "Tu vas pas y retourner."
 
-    noam fatigue "J'ai rien dit."
+    noam fatigue "Non."
 
-    iris "T'as pas besoin. Je connais cette tête."
-
-    noam "La grille était peut-être fermée tout à l'heure."
-
-    iris reflexion "Peut-être ?"
-
-    noam "C'est justement le problème."
-
-    iris "Et tu veux aller vérifier."
-
-    noam desaccord "Non."
-
-    iris surpris "..."
-
-    noam "Je t'ai promis que j'arrêtais. Donc j'arrête."
-
-    "Elle me regarde comme si elle attendait la suite."
-
-    noam blase "Quoi ?"
-
-    iris fatigue "Rien. Je profite du miracle."
-
-    noam "Tu vois, je peux apprendre."
-
-    iris blase "Doucement. Une bonne décision ne fait pas encore de toi un adulte fonctionnel."
-
-    "Je ferme mon sac."
-
-    iris "J'ai encore mes affaires à prendre. Deux minutes."
-
-    noam "Va."
-
-    iris inquiet "Je reviens tout de suite."
-
-    noam blase "Iris, je vais survivre sans surveillance rapprochée pendant dix minutes."
-
-    iris "C'est exactement le genre de phrase qui me donne envie de rester."
-
-    noam "Tu vas rater la navette à force."
-
-    iris "Et toi tu vas finir attaché à mon poignet."
-
-    "Je souris malgré moi."
-
-    noam "Ça serait pratique."
-
-    iris gene "N'en profite pas."
-
-    "Elle s'approche, hésite, puis remet simplement le col de ma veste correctement."
-
-    iris fatigue "T'as vraiment une sale tête."
-
-    noam "Tu me l'as déjà dit."
-
-    iris "Je sais. Mais là c'est affectueux."
+    iris "Même si t'es persuadé qu'elle était fermée ce matin ?"
 
     "Je la regarde."
 
-    "Elle retire immédiatement sa main."
+    noam "Même là."
 
-    iris colere "Bon, fais pas cette tête non plus."
+    "Elle reste silencieuse une seconde, puis hoche la tête."
 
-    noam "Quelle tête ?"
+    iris fatigue "D'accord."
 
-    iris "Celle où tu vas rendre le truc gênant."
+    noam surpris "C'est tout ?"
 
-    noam fatigue "D'accord."
+    iris blase "Tu voulais que je t'attache au lit ?"
 
-    "Elle recule vers la porte."
+    noam "Vu les derniers jours, j'exclus plus rien."
 
-    iris determine "Et si t'entends un bruit dans le mur, tu ne joues pas au héros."
+    iris "Tente pas le diable."
 
-    noam "Je viens te chercher."
+    "Je ferme mon sac."
 
-    iris "Tu touches à rien."
+    iris inquiet "J'ai encore deux trucs à récupérer. Je reviens dans cinq minutes."
 
-    noam "Je touche à rien."
+    noam "Je bouge pas."
 
-    iris "Tu rampes nulle part."
+    iris reflexion "J'allais justement te dire de pas me promettre ça."
 
-    noam "Je rampe nulle part."
+    noam surpris "Pourquoi ?"
 
-    iris blase "Je déteste le fait que cette conversation soit nécessaire."
+    iris fatigue "Parce qu'hier j'ai passé mon temps à te dire quoi faire, quoi pas toucher, où aller... et ça nous a presque explosé à la gueule."
 
-    noam "Va chercher tes affaires avant que je change d'avis."
+    "Elle s'approche et remet machinalement le col de ma veste en place."
 
-    iris taquin "Oh, menace terrifiante."
+    iris gene "Alors aujourd'hui... fais juste pas le con."
 
-    "Elle ouvre la porte, puis se retourne une dernière fois."
+    noam "Ça, je peux essayer."
 
-    iris fatigue "Je reviens, d'accord ?"
+    iris colere "Non."
 
-    noam "D'accord."
+    "Je souris."
+
+    noam "D'accord. Je ferai pas le con."
+
+    "Elle garde les doigts sur mon col une seconde de trop avant de retirer sa main."
+
+    iris fatigue "Bien."
+
+    "Elle se dirige vers la porte, puis s'arrête."
+
+    iris "Noam."
+
+    noam "Hm ?"
+
+    iris inquiet "Si quelque chose te paraît bizarre... viens me chercher."
+
+    noam "Promis."
+
+    "Cette fois, elle accepte la réponse."
+
+    iris taquin "Cinq minutes. Essaie de survivre jusque-là."
+
+    noam blase "Je vais faire un effort."
 
     hide iris with dissolve
     play sound sfx_door
 
     "La porte se referme."
 
-    "Son absence change immédiatement le bruit de la pièce."
+    "Et, d'un coup, la chambre paraît beaucoup plus vide."
 
     pause 0.8
 
