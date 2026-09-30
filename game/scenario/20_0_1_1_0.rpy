@@ -9,8 +9,13 @@ default j20_iris_qte_success = False
 # Mise en scène spécifique à la révélation de Kael au J20.
 # Le zoom est appliqué au sprite seul afin de garder la salle des Goumi lisible.
 transform j20_kael_approach(z=1.0):
-    xalign 0.5
-    yalign 1.0
+    # Le point d'ancrage est placé autour du visage de Kael.
+    # Ainsi le visage reste dans le cadre pendant que le zoom
+    # fait progressivement sortir le bas du corps par le bas.
+    xpos 0.5
+    xanchor 0.5
+    ypos 0.27
+    yanchor 0.17
     zoom z
 
 
