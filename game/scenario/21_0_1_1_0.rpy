@@ -492,7 +492,7 @@ label _21_0_1_1_EPILOGUE:
     pause 1.2
 
     call screen kd_ending_reached(
-        "Quelqu'un est rentré",
+        "Le compte est bon",
         "ENDING 02 // JOUR 21"
     )
     $ _ending_screen_closed = _return

@@ -907,35 +907,18 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Des corps sont entassés contre le fond de la pièce."
 
-    "Pas des dizaines."
-
-    "Juste assez pour comprendre."
+    "Pas des dizaines. Quelques uns."
+    "Un qui ressemble à Mara. Un qui ressemble à Kael."
 
     pause 0.6
 
-    "Mara est là."
-
-    "Le même corps que Noam avait trouvé sur la table quelques heures plus tôt."
+    "Mara est là. Le même corps que Noam avait trouvé sur la table quelques heures plus tôt."
 
     pause 0.6
 
     "À côté d'elle repose Kael."
 
     "Le vrai Kael."
-
-    pause 0.8
-
-    "Et un peu plus loin..."
-
-    "Noam."
-
-    pause 1.0
-
-    "Un autre Noam."
-
-    "Immobile."
-
-    "Déjà là avant leur arrivée."
 
     $ horror_audio_cut(duration=0.42, restore_volume=0.45)
 
@@ -969,11 +952,11 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     iris reflexion "..."
 
-    "Elle fixe son propre corps pendant quelques secondes."
-
-    "Son visage se ferme."
+    "Elle fixe son propre corps pendant quelques secondes. Son visage se ferme."
 
     iris colere "...C'est quoi ce bordel ?"
+
+    kael sourire "Je vais tout t'expliquer !"
 
     scene black with signal_stutter
     stop music fadeout 0.2
@@ -982,7 +965,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     pause 1.2
 
     call screen kd_ending_reached(
-        "Les Remplaçants",
+        "La peau des autres",
         "ENDING 01 // JOUR 20"
     )
     $ _ending_screen_closed = _return
