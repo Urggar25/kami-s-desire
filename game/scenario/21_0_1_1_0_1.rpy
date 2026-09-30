@@ -434,21 +434,19 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     noam "Presque."
 
-    "Elle remarque que je regarde derrière elle."
+    "Elle suit mon regard jusqu'à la grille."
 
-    iris inquiet "Quoi encore ?"
+    iris inquiet "Oh non."
 
-    noam fatigue "Rien."
+    noam fatigue "J'ai rien dit."
 
-    iris "Noam."
+    iris "T'as pas besoin. Je connais cette tête."
 
     noam "La grille était peut-être fermée tout à l'heure."
 
-    "Iris regarde l'aération."
-
     iris reflexion "Peut-être ?"
 
-    noam "Voilà."
+    noam "C'est justement le problème."
 
     iris "Et tu veux aller vérifier."
 
@@ -456,35 +454,63 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     iris surpris "..."
 
-    noam "J'ai dit que j'arrêtais. J'arrête."
+    noam "Je t'ai promis que j'arrêtais. Donc j'arrête."
 
-    "Elle me regarde quelques secondes."
+    "Elle me regarde comme si elle attendait la suite."
 
-    iris fatigue "Bonne réponse."
+    noam blase "Quoi ?"
 
-    noam "Tu vois ? Je peux apprendre."
+    iris fatigue "Rien. Je profite du miracle."
 
-    iris blase "J'attends encore la preuve."
+    noam "Tu vois, je peux apprendre."
+
+    iris blase "Doucement. Une bonne décision ne fait pas encore de toi un adulte fonctionnel."
 
     "Je ferme mon sac."
 
-    iris "J'ai encore deux trucs à récupérer dans ma chambre."
+    iris "J'ai encore mes affaires à prendre. Deux minutes."
 
-    noam "Vas-y."
+    noam "Va."
 
-    iris inquiet "Je reviens."
+    iris inquiet "Je reviens tout de suite."
 
-    noam blase "Je vais pas disparaître."
+    noam blase "Iris, je vais survivre sans surveillance rapprochée pendant dix minutes."
 
-    iris "C'est exactement le genre de phrase qu'on dit avant de disparaître."
+    iris "C'est exactement le genre de phrase qui me donne envie de rester."
 
-    noam "Dix minutes."
+    noam "Tu vas rater la navette à force."
 
-    iris determine "Dix minutes."
+    iris "Et toi tu vas finir attaché à mon poignet."
 
-    "Elle pointe un doigt vers moi."
+    "Je souris malgré moi."
 
-    iris "Et si t'entends quoi que ce soit dans le mur..."
+    noam "Ça serait pratique."
+
+    iris gene "N'en profite pas."
+
+    "Elle s'approche, hésite, puis remet simplement le col de ma veste correctement."
+
+    iris fatigue "T'as vraiment une sale tête."
+
+    noam "Tu me l'as déjà dit."
+
+    iris "Je sais. Mais là c'est affectueux."
+
+    "Je la regarde."
+
+    "Elle retire immédiatement sa main."
+
+    iris colere "Bon, fais pas cette tête non plus."
+
+    noam "Quelle tête ?"
+
+    iris "Celle où tu vas rendre le truc gênant."
+
+    noam fatigue "D'accord."
+
+    "Elle recule vers la porte."
+
+    iris determine "Et si t'entends un bruit dans le mur, tu ne joues pas au héros."
 
     noam "Je viens te chercher."
 
@@ -496,18 +522,24 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     noam "Je rampe nulle part."
 
-    iris blase "Ça devient inquiétant que je sois obligée de préciser tout ça."
+    iris blase "Je déteste le fait que cette conversation soit nécessaire."
 
-    noam "Va chercher tes affaires."
+    noam "Va chercher tes affaires avant que je change d'avis."
 
-    "Elle finit par sourire légèrement."
+    iris taquin "Oh, menace terrifiante."
 
-    iris "J'arrive."
+    "Elle ouvre la porte, puis se retourne une dernière fois."
+
+    iris fatigue "Je reviens, d'accord ?"
+
+    noam "D'accord."
 
     hide iris with dissolve
     play sound sfx_door
 
     "La porte se referme."
+
+    "Son absence change immédiatement le bruit de la pièce."
 
     pause 0.8
 
