@@ -9,7 +9,7 @@
 
 default j21_leave_qte_success = False
 
-define dg_noam = Character("Noam")
+define dg_noam = Character("Noam", image="noam")
 
 
 label _21_0_1_1_0_1_REVEIL:
@@ -95,7 +95,7 @@ label _21_0_1_1_0_1_REVEIL:
     "Rien que ça me paraît irréel."
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    play music "audio/music/bgm_daily_light.mp3" fadein 1.2
+    play music "audio/music/bgm_soft_neon_morning.mp3" fadein 1.2
 
     $ showGroup([
         ("noam", "fatigue", 0.12),
@@ -1336,7 +1336,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "Il s'arrête."
 
-    kael panne "..."
+    kael doute "..."
 
     "Ses yeux passent sur mon visage."
 
