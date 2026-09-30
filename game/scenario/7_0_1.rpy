@@ -1341,6 +1341,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     "Je vais rapidement dans la salle de bain pour me refaire une beauté."
     noam sourire "Lysa m'attend, je ne devrais pas la faire attendre."
 
+    $ unlock_gallery_image("bg_cg026")
     scene bg_cg026 at adaptive_fullscreen with dissolve
 
     "Je passe de l'eau sur mon visage."

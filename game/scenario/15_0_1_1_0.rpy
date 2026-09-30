@@ -844,6 +844,7 @@ label _15_0_1_1_0_CONFRONTATION_KAEL:
 
     "Une lumière blanche. Une pièce que je ne reconnais pas."
 
+    $ unlock_gallery_image("bg_cg033")
     scene bg_cg033 at adaptive_fullscreen with flash_red
     $ shake(14, 0.30)
     pause 0.2

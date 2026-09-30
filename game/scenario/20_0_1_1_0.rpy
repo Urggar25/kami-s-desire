@@ -1289,6 +1289,9 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Quelque chose flotte à l'intérieur."
 
+    $ unlock_gallery_image("bg_cg054")
+    scene bg_cg054 at adaptive_fullscreen with creep_diss
+
     pause 0.7
 
     "Un corps."
@@ -1360,6 +1363,8 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Le visage n'est plus vide."
 
     "C'est celui d'Iris."
+
+    scene bg_cg054_1 at adaptive_fullscreen with memory_rip
 
     pause 1.0
 
@@ -1437,6 +1442,9 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Elle a maintenant une tenue sur le dos."
 
     "Ses cheveux sont encore humides."
+
+    $ unlock_gallery_image("bg_cg055")
+    scene bg_cg055 at adaptive_fullscreen with creep_diss
 
     "Elle regarde Mara."
 

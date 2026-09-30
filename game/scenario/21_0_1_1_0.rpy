@@ -294,6 +294,9 @@ label _21_0_1_1_0_REVEIL:
 
     "Ses doigts se referment sur un scalpel."
 
+    $ unlock_gallery_image("bg_cg056")
+    scene bg_cg056 at adaptive_fullscreen with creep_diss
+
     noam panne "..."
 
     "Tout mon corps se tend d'un coup."

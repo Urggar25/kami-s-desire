@@ -66,7 +66,7 @@ init python:
         "sport006", "sport007", "sport008", "sport009",
     }
 
-    _cg_pattern = re.compile(r"^images/background/(?:cg/)?(bg_cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
+    _cg_pattern = re.compile(r"^images/background/(?:cg/)?((?:bg_)?cg\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
     _sport_pattern = re.compile(r"^images/background/(sport\d+)(?:_(\d+))?\.(png|jpg|jpeg|webp|mp4|webm|avi)$")
 
     def _build_gallery_catalog(pattern):

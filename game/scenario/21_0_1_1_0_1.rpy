@@ -818,6 +818,9 @@ label _21_0_1_1_0_1_QTE:
 
     "Le couteau descend lentement."
 
+    $ unlock_gallery_image("bg_cg057")
+    scene bg_cg057 at adaptive_fullscreen with vpunch
+
     "Je pousse de toutes mes forces."
 
     dg_noam "J'AI PAS LE TEMPS !"
@@ -1163,6 +1166,9 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
     "On se fige tous les deux."
 
     "Iris reste dans l'encadrement, une main encore sur la poignée. Son sac lui échappe et tombe lourdement."
+
+    $ unlock_gallery_image("bg_cg058")
+    scene bg_cg058 at adaptive_fullscreen with signal_stutter
 
     iris panne "..."
 
@@ -1637,6 +1643,9 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
     dg_noam "Ouais."
 
     "Il regarde la porte fermée."
+
+    $ unlock_gallery_image("bg_cg059")
+    scene bg_cg059 at adaptive_fullscreen with creep_diss
 
     dg_noam "Deux personnes coincées au lieu d'une."
 

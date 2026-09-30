@@ -530,6 +530,10 @@ image bg_cg052 = "images/background/cg/bg_cg052.png"
 image bg_cg053 = "images/background/cg/bg_cg053.png"
 image bg_cg054 = "images/background/cg/bg_cg054.png"
 image bg_cg055 = "images/background/cg/bg_cg055.png"
+image bg_cg056 = "images/background/cg/bg_cg056.png"
+image bg_cg057 = "images/background/cg/bg_cg057.png"
+image bg_cg058 = "images/background/cg/bg_cg058.png"
+image bg_cg059 = "images/background/cg/bg_cg059.png"
 
 image couloir_cafeteria = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_cafeteria.png")
 image couloir_dortoir = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/couloir_dortoir.png")
