@@ -916,39 +916,55 @@ label _21_0_1_1_0_1_QTE_ECHEC:
 
     "L'autre Noam me retient avant que je tombe complètement."
 
-    dg_noam "Merde..."
+    dg_noam peur "Merde... Non, non, non..."
 
-    "Il me descend lentement jusqu'au sol."
+    "Il me rattrape avant que je m'effondre et me descend lentement jusqu'au sol, comme si me laisser tomber maintenant pouvait encore changer quelque chose."
 
     noam peur "Iris..."
 
-    dg_noam "Chut."
+    dg_noam "Chut. Bouge pas."
 
-    noam "Iris..."
+    noam "Va... la chercher..."
 
-    "J'essaie de pousser sa main."
+    dg_noam desespoir "Je peux pas."
 
-    "Je n'ai déjà plus assez de force."
+    noam colere "Va la chercher, putain..."
 
-    dg_noam "Je suis désolé."
+    "J'essaie de repousser son bras, mais ma main glisse presque aussitôt."
 
-    noam desespoir "Juliette..."
+    dg_noam "Je suis désolé. Je voulais pas que ça..."
 
-    "Son visage se déforme."
+    noam desespoir "Ferme-la."
 
-    dg_noam "Je sais."
+    "Il se tait."
+
+    noam "Juliette..."
+
+    "Son visage se déforme immédiatement."
+
+    dg_noam fatigue "Je sais."
+
+    noam colere "Non... tu sais rien."
+
+    dg_noam "Je sais qu'elle déteste qu'on touche à ses cheveux quand elle vient de se lever. Je sais qu'elle fait semblant de pas aimer les câlins quand elle est énervée. Je sais—"
+
+    noam desespoir "ARRÊTE..."
+
+    "Le mot sort à peine."
+
+    dg_noam peur "Désolé."
 
     noam "T'approche pas d'elle..."
 
-    dg_noam "Je la protégerai."
+    dg_noam "Je lui ferai jamais de mal."
 
     noam colere "T'es pas..."
 
-    "Ma voix disparaît."
+    "Ma voix disparaît avant la fin."
 
-    "Je veux finir la phrase."
+    "Je sais exactement ce que je voulais dire."
 
-    "Je n'y arrive pas."
+    "Lui aussi."
 
     scene black with suffocation_cut
     stop music fadeout 1.5
@@ -1560,13 +1576,33 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
 
     noam fatigue "Je sais."
 
-    iris "À tout le monde."
+    iris "À tout le monde. Et pas dans deux jours, pas quand on sera tranquilles. Dès qu'on peut."
 
     noam "Je sais."
 
-    "Elle pose sa main sur la mienne."
+    iris colere "Arrête avec ça."
 
-    "Je la laisse faire."
+    noam surpris "Avec quoi ?"
+
+    iris fatigue "Avec ton 'je sais'. Là, t'as le droit de pas savoir quoi faire."
+
+    "Je tourne enfin la tête vers elle."
+
+    noam "J'ai laissé quelqu'un derrière."
+
+    iris inquiet "Quelqu'un qui venait d'essayer de te tuer."
+
+    noam "Quelqu'un qui voulait vivre."
+
+    "Elle ne répond pas tout de suite."
+
+    iris triste "Ouais."
+
+    "Sa main vient chercher la mienne entre les sièges."
+
+    iris fatigue "Et toi aussi."
+
+    "Je serre ses doigts sans répondre."
 
     play sound sfx_announce
     scene bg_diffusion_champagne at adaptive_fullscreen with fade
