@@ -268,6 +268,13 @@ Le système d'affichage utilise `showP("nom", "expression", position)`. Règles 
 - **Après tout `scene` qui revient d'une diffusion, d'une CG ou d'un changement de décor, considérer les sprites comme effacés et rappeler `showGroup()` avant que plusieurs personnages recommencent à parler.**
 - Ne jamais laisser plusieurs personnages dialoguer plusieurs lignes sur un décor ordinaire sans groupe visible.
 
+### Expressions de dialogue — obligatoire
+
+- **Chaque réplique prononcée par un personnage affiché par sprite doit préciser explicitement une expression après son nom** : par exemple `iris fatigue "..." `, jamais simplement `iris "..."`.
+- **L'expression utilisée doit exister réellement pour ce personnage dans `game/images.rpy`.** Ne jamais inventer un nom d'expression en se fiant à l'intuition ; vérifier la déclaration `image personnage expression = ...` avant de l'utiliser.
+- Avant de valider ou commit une nouvelle journée, faire un contrôle complet du fichier : aucune ligne de dialogue de personnage ne doit rester sans expression, et aucune expression ne doit être absente de `images.rpy`.
+- Exceptions : le narrateur anonyme, `think`, et Kami pendant une diffusion utilisant les décors `bg_diffusion_*`, puisque son expression est alors portée par le décor de diffusion et non par un sprite de personnage.
+
 ### Fidélité des voix — contrôle avant validation
 
 - Avant d'écrire ou de réviser une scène sociale importante, relire les fiches des personnages réellement présents dans `.development_pack/character.txt`.
