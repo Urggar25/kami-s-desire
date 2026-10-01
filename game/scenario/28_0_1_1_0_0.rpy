@@ -32,7 +32,7 @@ label _28_0_1_1_0_0_REVEIL:
 
     iris inquiet "On trouve les autres. Les vrais."
 
-    noam "Tu sais lesquels sont vrais ?"
+    noam neutre "Tu sais lesquels sont vrais ?"
 
     iris fatigue "Non."
 
@@ -58,7 +58,7 @@ label _28_0_1_1_0_0_RECHERCHE:
 
     iris colere "Seul ?"
 
-    tomas "Il a dit qu'il revenait."
+    tomas neutre "Il a dit qu'il revenait."
 
     noam reflexion "Sael ?"
 
@@ -66,7 +66,7 @@ label _28_0_1_1_0_0_RECHERCHE:
 
     elen peur "J'ai entendu sa voix dans le couloir. J'ai pas ouvert."
 
-    iris "Bien."
+    iris neutre "Bien."
 
     elen triste "Je commence à détester quand vous dites ça."
 
@@ -85,9 +85,9 @@ label _28_0_1_1_0_0_RECHERCHE:
 
     tomas surpris "Ryn !"
 
-    iris mefiant "Où est Nyra ?"
+    iris neutre "Où est Nyra ?"
 
-    ryn "Je l'ai pas trouvée."
+    ryn neutre "Je l'ai pas trouvée."
 
     noam reflexion "T'étais où ?"
 
@@ -97,7 +97,7 @@ label _28_0_1_1_0_0_RECHERCHE:
 
     ryn colere "Dans le couloir technique. Puis maintenance. Puis ici."
 
-    noam "Pourquoi t'as mis vingt minutes ?"
+    noam neutre "Pourquoi t'as mis vingt minutes ?"
 
     ryn desaccord "Parce que la station fait pas trois mètres de long."
 
@@ -131,7 +131,7 @@ label _28_0_1_1_0_0_DISPARITIONS:
 
     $ showGroup([
         ("julian", "sourire", 0.33),
-        ("iris", "mefiant", 0.55),
+        ("iris", "neutre", 0.55),
         ("noam", "inquiet", 0.76),
     ])
 
@@ -145,9 +145,9 @@ label _28_0_1_1_0_0_DISPARITIONS:
 
     julian blase "Je vais vraiment devoir détailler ?"
 
-    iris mefiant "Oui."
+    iris neutre "Oui."
 
-    julian agace "J'ai pas d'expression agace."
+    julian neutre "J'ai pas d'expression agace."
 
     "Il lève les mains."
 
