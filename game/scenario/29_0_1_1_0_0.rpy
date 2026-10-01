@@ -176,6 +176,20 @@ label _29_0_1_1_0_0_CAFETERIA:
 
     "Personne ne nous bloque."
 
+    "Je fais encore trois pas avant de comprendre pourquoi."
+
+    noam peur "Ils essaient même plus de nous attraper."
+
+    iris inquiet "Quoi ?"
+
+    noam reflexion "Le mien existe déjà. Je l'ai vu. Et s'ils ont eu le temps d'en faire un pour toi aussi..."
+
+    iris peur "Ils ont plus besoin de nous remplacer ici."
+
+    noam determine "Ils ont juste besoin qu'on rate la navette."
+
+    "Je me retourne. Personne ne nous suit."
+
     "C'est presque pire."
 
     $ hideGroup()
