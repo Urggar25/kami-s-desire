@@ -72,7 +72,7 @@ label _24_0_1_1_0_0_REVEIL:
 
     julian sourire "C'était très bien."
 
-    elen gene "Ah."
+    elen neutre "Ah."
 
     "Je regarde autour de la table. Personne n'est vraiment contre. Pourtant personne n'a l'air prêt à dire oui sans réserve."
 
