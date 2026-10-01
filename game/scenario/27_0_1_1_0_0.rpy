@@ -47,21 +47,21 @@ label _27_0_1_1_0_0_REVEIL:
 
     iris reflexion "J'ai entendu des portes toute la nuit. Des gens qui bougeaient. Je sais pas qui."
 
-    noam "Personne t'a parlé ?"
+    noam neutre "Personne t'a parlé ?"
 
-    iris "Mara a frappé vers quatre heures."
+    iris neutre "Mara a frappé vers quatre heures."
 
     noam surpris "Et ?"
 
     iris blase "Je lui ai dit d'aller se faire foutre."
 
-    noam "Elle voulait quoi ?"
+    noam neutre "Elle voulait quoi ?"
 
     iris inquiet "Elle disait qu'elle voulait parler."
 
     noam fatigue "À quatre heures."
 
-    iris "Ouais. Très crédible."
+    iris neutre "Ouais. Très crédible."
 
     "On se regarde une seconde."
 
@@ -80,7 +80,7 @@ label _27_0_1_1_0_0_CAFETERIA:
     "Les conversations meurent quand on entre."
 
     $ showGroup([
-        ("ryn", "mefiant"),
+        ("ryn", "neutre"),
         ("tomas", "stress"),
         ("nyra", "inquiet"),
         ("sael", "mefiant"),
@@ -89,13 +89,13 @@ label _27_0_1_1_0_0_CAFETERIA:
         ("mara", "neutre"),
         ("elias", "neutre"),
         ("kael", "calme"),
-        ("iris", "mefiant"),
+        ("iris", "neutre"),
         ("noam", "inquiet"),
     ])
 
-    ryn mefiant "Vous voilà."
+    ryn neutre "Vous voilà."
 
-    noam "Ça veut dire quoi ?"
+    noam neutre "Ça veut dire quoi ?"
 
     ryn colere "Ça veut dire que j'ai dormi deux heures parce que maintenant je sais plus qui ferme quelle porte."
 
@@ -171,7 +171,7 @@ label _27_0_1_1_0_0_CAFETERIA:
 
     elias colere "Arrête de jouer au héros."
 
-    ryn "Essaie de m'en empêcher."
+    ryn neutre "Essaie de m'en empêcher."
 
     nyra colere "RYN !"
 
@@ -181,7 +181,7 @@ label _27_0_1_1_0_0_CAFETERIA:
 
     $ j27_attack_started = True
 
-    tomas panique "LÂCHE-MOI !"
+    tomas neutre "LÂCHE-MOI !"
 
     kael colere "Arrête de te débattre !"
 
@@ -230,11 +230,11 @@ label _27_0_1_1_0_0_FUITE:
 
     iris colere "Personne se sépare."
 
-    noam "Nyra ?"
+    noam neutre "Nyra ?"
 
     nyra inquiet "On va au Conclave. Les portes sont plus épaisses."
 
-    ryn "Et le vote."
+    ryn neutre "Et le vote."
 
     iris surpris "Tu penses vraiment au vote maintenant ?"
 
@@ -297,7 +297,7 @@ label _27_0_1_1_0_0_VOTE:
 
     julian inquiet "Pourquoi ?"
 
-    sael "Parce qu'on n'abandonne pas tout ce qu'on faisait juste parce qu'ils ont décidé de nous chasser."
+    sael neutre "Parce qu'on n'abandonne pas tout ce qu'on faisait juste parce qu'ils ont décidé de nous chasser."
 
     "Julian la regarde, puis souffle."
 
@@ -349,7 +349,7 @@ label _27_0_1_1_0_0_VOTE:
 
     ryn determine "Alors on bouge."
 
-    noam "Par où ?"
+    noam neutre "Par où ?"
 
     nyra reflexion "Porte secondaire."
 
