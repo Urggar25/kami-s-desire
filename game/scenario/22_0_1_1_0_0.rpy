@@ -856,7 +856,7 @@ label _22_0_1_1_0_0_SOIREE:
 
     "En grosses lettres :"
 
-    ""UN TOIT. DE L'EAU. À MANGER.""
+    "UN TOIT. DE L'EAU. À MANGER."
 
     pause 0.3
 
