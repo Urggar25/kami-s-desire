@@ -104,7 +104,7 @@ label _25_0_1_1_0_0_INDICE:
 
     noam inquiet "Dans la ventilation ?"
 
-    iris "Ouais. Et je l'ai déjà vu."
+    iris neutre "Ouais. Et je l'ai déjà vu."
 
     noam reflexion "Où ?"
 
@@ -120,7 +120,7 @@ label _25_0_1_1_0_0_INDICE:
 
     iris agace "Bah réfléchis plus vite."
 
-    noam "Tu veux retourner dedans."
+    noam neutre "Tu veux retourner dedans."
 
     iris determine "Oui."
 
@@ -128,7 +128,7 @@ label _25_0_1_1_0_0_INDICE:
 
     iris colere "Tu préfères attendre qu'un autre bout de quelqu'un tombe de la grille ?"
 
-    noam "Non."
+    noam neutre "Non."
 
     iris determine "Alors viens."
 
@@ -243,7 +243,7 @@ label _25_0_1_1_0_0_RETOUR:
 
     noam surpris "Rien ?"
 
-    iris "Pas maintenant. Si Mara est... ça, on sait pas qui d'autre l'est."
+    iris neutre "Pas maintenant. Si Mara est... ça, on sait pas qui d'autre l'est."
 
     noam reflexion "Et si on attend, ils peuvent continuer."
 
@@ -253,7 +253,7 @@ label _25_0_1_1_0_0_RETOUR:
 
     iris inquiet "Noam..."
 
-    noam "Si on se trompe, je passe pour un malade."
+    noam neutre "Si on se trompe, je passe pour un malade."
 
     iris peur "Et si tu te trompes pas ?"
 
