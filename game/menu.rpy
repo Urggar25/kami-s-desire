@@ -356,9 +356,9 @@ screen main_menu():
         xalign 0.5
         ypos 1040
 
-    # Accès direct à la bande-annonce de la version courante.
+    # Accès direct au trailer promotionnel (~60 s), conçu pour capture TikTok/Reels.
     # Start() lance une cinématique autonome et préserve les sauvegardes.
-    textbutton "TRAILER 3.0  ▶":
+    textbutton "TRAILER  ▶":
         style "version_trailer_button"
         xpos 1870
         ypos 1000
@@ -366,7 +366,7 @@ screen main_menu():
         yanchor 1.0
         action [
             SetField(persistent, "trl_skip_splash", True),
-            Start("version_3_0_trailer"),
+            Start("tiktok_promo_trailer"),
         ]
 
     # Raccourci clavier rapide
