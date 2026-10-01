@@ -245,14 +245,14 @@ label tiktok_promo_trailer:
         _("Douze représentants. Un Conclave. Chaque décision peut devenir irréversible."),
         "#5CD3FF"
     )
-    $ renpy.pause(4.2, hard=True)
+    $ renpy.pause(2.6, hard=True)
     hide screen trltt_center_text
 
     # 0:04 — Kami.
     play trl_b "audio/trailer/trl_impact_deep.wav"
     scene expression "images/background/kami_diffusion/bg_diffusion_zen.png" at trl_push(5.0, 1.02, 1.10)
     with trl_flash
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(1.6, hard=True)
 
     show screen trl_title(
         _("TOUS LES TROIS JOURS"),
@@ -260,7 +260,7 @@ label tiktok_promo_trailer:
         kicker=_("KAMI'S DESIRES"),
         accent="#7DF9FF"
     )
-    $ renpy.pause(2.4, hard=True)
+    $ renpy.pause(1.4, hard=True)
     hide screen trl_title
 
     # 0:09 — La règle centrale.
@@ -268,7 +268,7 @@ label tiktok_promo_trailer:
     with trl_cut
     play trl_a "audio/trailer/trl_data_burst.wav"
     show screen trltt_vote_card
-    $ renpy.pause(4.3, hard=True)
+    $ renpy.pause(3.6, hard=True)
     hide screen trltt_vote_card
 
     # 0:13 — Le cast : aperçu sans noyer le joueur de noms.
@@ -292,24 +292,24 @@ label tiktok_promo_trailer:
     with trl_hardcut
     play trl_a "audio/trailer/trl_swoosh.wav"
     show screen trltt_feature_strip
-    $ renpy.pause(3.8, hard=True)
+    $ renpy.pause(3.0, hard=True)
     hide screen trltt_feature_strip
 
     # 0:21 — Montage de situations et de conséquences.
     play trl_b "audio/trailer/trl_tick.wav"
     scene expression "images/background/cg/bg_cg018.png" at trl_snap(1.20, 1.04, 1.1)
     with trl_hardcut
-    $ renpy.pause(1.1, hard=True)
+    $ renpy.pause(0.75, hard=True)
 
     play trl_a "audio/trailer/trl_tick.wav"
     scene couloir_cafeteria at trl_memory(-1, 0.20)
     with trl_hardcut
-    $ renpy.pause(0.8, hard=True)
+    $ renpy.pause(0.55, hard=True)
 
     play trl_b "audio/trailer/trl_tick.wav"
     scene expression "images/background/cg/bg_cg019.png" at trl_memory(1, 0.20)
     with trl_hardcut
-    $ renpy.pause(1.1, hard=True)
+    $ renpy.pause(0.75, hard=True)
 
     scene black
     with trl_cut
@@ -319,7 +319,7 @@ label tiktok_promo_trailer:
         _("Convaincre les autres peut sauver des vies. Ou en condamner."),
         "#FFD58A"
     )
-    $ renpy.pause(4.6, hard=True)
+    $ renpy.pause(3.8, hard=True)
     hide screen trltt_center_text
 
     # 0:29 — Relations humaines.
@@ -330,7 +330,7 @@ label tiktok_promo_trailer:
         ("noam", "sourire", 0.32),
         ("iris", "sourire", 0.68),
     ])
-    $ renpy.pause(2.2, hard=True)
+    $ renpy.pause(1.6, hard=True)
     $ hideGroup()
 
     scene bg_observation at trl_pull(5.0, 1.09, 1.02)
@@ -339,7 +339,7 @@ label tiktok_promo_trailer:
         ("noam", "reflexion", 0.30),
         ("lysa", "taquin", 0.70),
     ])
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(1.5, hard=True)
     $ hideGroup()
 
     # 0:33 — Rupture de ton.
@@ -347,15 +347,15 @@ label tiktok_promo_trailer:
     play trl_amb "audio/trailer/trl_string_tension.wav" fadein 0.3
     scene expression "images/background/kami_diffusion/bg_diffusion_zen.png" at trl_unstable(3, 1.05)
     with trl_flash_red
-    $ renpy.pause(1.2, hard=True)
+    $ renpy.pause(0.9, hard=True)
 
     play trl_a "audio/trailer/trl_glitch_stutter.wav"
     scene black
     with trl_hardcut
-    $ renpy.pause(0.18, hard=True)
+    $ renpy.pause(0.12, hard=True)
     scene expression "images/background/kami_diffusion/bg_diffusion_zen.png" at trl_unstable(6, 1.10)
     with trl_hardcut
-    $ renpy.pause(0.35, hard=True)
+    $ renpy.pause(0.25, hard=True)
     scene black
     with trl_hardcut
 
@@ -366,7 +366,7 @@ label tiktok_promo_trailer:
         "#FF6877",
         True
     )
-    $ renpy.pause(4.2, hard=True)
+    $ renpy.pause(3.4, hard=True)
     hide screen trltt_center_text
 
     # 0:39 — Horror tease : très bref, jamais explicatif.
@@ -374,18 +374,18 @@ label tiktok_promo_trailer:
     scene expression "images/background/cg/bg_cg024.png" at trl_snap(1.22, 1.05, 1.0)
     with trl_flash_red
     $ trl_shake(8, 0.18)
-    $ renpy.pause(0.85, hard=True)
+    $ renpy.pause(0.60, hard=True)
+
+    scene black
+    with trl_hardcut
+    $ renpy.pause(0.20, hard=True)
+
+    $ doppelganger_reveal(screamer=False)
+    $ renpy.pause(0.20, hard=True)
 
     scene black
     with trl_hardcut
     $ renpy.pause(0.30, hard=True)
-
-    $ doppelganger_reveal(screamer=False)
-    $ renpy.pause(0.35, hard=True)
-
-    scene black
-    with trl_hardcut
-    $ renpy.pause(0.45, hard=True)
 
     # 0:42 — Climax.
     play music "audio/music/bgm_system_override.mp3" fadein 0.25
@@ -404,19 +404,19 @@ label tiktok_promo_trailer:
 
     scene expression "images/background/cg/bg_cg018.png" at trl_memory(-1, 0.16)
     with trl_hardcut
-    $ renpy.pause(0.65, hard=True)
+    $ renpy.pause(0.50, hard=True)
 
     scene bg_observation at trl_memory(1, 0.16)
     with trl_hardcut
-    $ renpy.pause(0.65, hard=True)
+    $ renpy.pause(0.50, hard=True)
 
     scene expression "images/background/cg/bg_cg019.png" at trl_snap(1.18, 1.03, 0.75)
     with trl_flash
-    $ renpy.pause(0.65, hard=True)
+    $ renpy.pause(0.50, hard=True)
 
     scene expression "images/background/cg/bg_cg024.png" at trl_unstable(5, 1.08)
     with trl_flash_red
-    $ renpy.pause(0.70, hard=True)
+    $ renpy.pause(0.50, hard=True)
 
     scene black
     with trl_cut
@@ -427,7 +427,7 @@ label tiktok_promo_trailer:
         _("UNE SEULE DÉCISION PEUT CHANGER DES MILLIONS DE VIES."),
         "#8FFFC0"
     )
-    $ renpy.pause(4.4, hard=True)
+    $ renpy.pause(3.5, hard=True)
     hide screen trltt_center_text
 
     # 0:52 — Carton final orienté acquisition.
@@ -437,7 +437,7 @@ label tiktok_promo_trailer:
     scene black
     with trl_flash
     show screen trltt_endcard
-    $ renpy.pause(6.0, hard=True)
+    $ renpy.pause(5.0, hard=True)
     hide screen trltt_endcard
 
     # Signature finale de Kami.
@@ -449,7 +449,7 @@ label tiktok_promo_trailer:
         _("QU'ALLEZ-VOUS VOTER ?"),
         delay2=0.80
     )
-    $ renpy.pause(2.4, hard=True)
+    $ renpy.pause(1.8, hard=True)
     hide screen trl_epilogue
 
     scene black
