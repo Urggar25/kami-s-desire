@@ -257,6 +257,19 @@ Le système d'affichage utilise `showP("nom", "expression", position)`. Règles 
 
 ---
 
+### Règles de continuité visuelle, logistique et distribution du casting
+
+Ces règles sont obligatoires pour éviter les scènes qui paraissent fabriquées pour le scénario plutôt que vécues par le groupe.
+
+- **Une scène de groupe continue ne doit pas multiplier les `showGroup()` sans nécessité.** Si plusieurs personnages participent à la même scène dans le même lieu, préparer dès le départ un seul groupe contenant tous les intervenants prévus. Ne recréer un groupe que si la composition change réellement.
+- **Quand un personnage quitte physiquement une scène, son sprite doit quitter l'écran avec lui.** Utiliser de préférence le comportement naturel de `showGroup()` en rappelant le groupe sans ce personnage : le helper joue déjà `char_group_exit`. Ne jamais écrire « X part » tout en le laissant affiché.
+- **Avant de créer une nouvelle mécanique, vérifier si un mini-jeu existant correspond déjà à l'action.** Exemple : pour trier ou ranger une livraison, réutiliser `call rangement_play` au lieu de résumer l'action en quelques lignes si le contexte s'y prête.
+- **Ne pas inventer de capacités de suivi aux systèmes du Conclave.** Pour les livraisons, les registres savent ce qui a été commandé automatiquement et ce qui figure comme arrivé. Ils ne suivent pas ensuite la position interne de chaque objet et ne disposent pas d'un historique magique de « transferts internes ».
+- **Ne pas surutiliser artificiellement deux ou trois personnages parce qu'ils sont utiles à l'intrigue du jour.** Avant validation d'une journée de groupe, vérifier que plusieurs représentants apparaissent naturellement dans les scènes collectives, même brièvement. La présence doit venir du contexte : sas, repas, livraison, couloir, aide ponctuelle, réaction à une annonce.
+- **Un personnage peut être plus présent sans devenir le centre de chaque scène.** Si Elias porte une intrigue technique, d'autres peuvent transporter, commenter, aider une minute, repartir, ou simplement réagir. Le groupe doit continuer à donner l'impression d'exister hors du fil narratif principal.
+- **Éviter les formulations "écrites" qui sonnent comme des bons mots préparés.** Préférer des phrases qu'une personne dirait réellement sous pression. Si une métaphore ou une vanne paraît trop construite ("miser sur un départ propre", "se transformer en panneau lumineux", etc.), la remplacer par une formulation plus simple, directe et orale.
+- **Quand un personnage ne soupçonne rien, ne lui faire produire aucune réplique qui fabrique artificiellement du soupçon.** Un personnage peut constater qu'une situation est bizarre, aider à chercher ou être blasé sans devenir enquêteur.
+
 ## 4. Diffusions de Kami (`kami_broadcast_ui`)
 
 Chaque apparition de Kami suit ce protocole :
