@@ -66,221 +66,233 @@ label _21_0_1_1_0_0_SAS:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "sas_livraison") from _call_j21_stay_door_couloir_sas
     scene sas1 at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
+
     "Quand j'arrive au sas, presque tout le monde est déjà là."
-    "Et une capsule est déjà amarrée derrière la baie."
-    "Pendant une seconde, mon cœur accélère."
-    "Puis je vois les marquages sur sa coque."
+    "Une capsule est déjà amarrée derrière la baie. Pendant une seconde, mon cœur accélère avant que je remarque les marquages sur sa coque."
+
     think "Livraison."
-    "Pas de hublot. Pas de sièges. Juste le conteneur automatique qu'on voit arriver tous les quelques jours."
+
+    "Pas de hublot, pas de sièges. Juste le conteneur automatique qu'on voit arriver tous les quelques jours."
+
     $ showGroup([
-        ("ryn", "fatigue", 0.18),
-        ("mara", "neutre", 0.50),
-        ("elias", "neutre", 0.82),
+        ("ryn", "fatigue"),
+        ("mara", "neutre"),
+        ("elias", "neutre"),
+        ("iris", "blase"),
+        ("kael", "calme"),
+        ("tomas", "inquiet"),
+        ("julian", "inquiet"),
+        ("lysa", "blase"),
+        ("nyra", "raison"),
+        ("sael", "fatigue"),
+        ("elen", "joie"),
+        ("noam", "reflexion"),
     ])
+
     ryn fatigue "C'est quoi ça ?"
     elias neutre "Une livraison."
-    ryn colere "J'avais vu, merci."
-    mara taquin "Peut-être qu'ils nous renvoient sur Terre dans des cartons."
-    ryn "Mara..."
-    mara "Quoi ? Ça ferait des économies."
-    $ hideGroup()
-    $ showGroup([
-        ("iris", "blase", 0.20),
-        ("noam", "reflexion", 0.50),
-        ("kael", "calme", 0.80),
-    ])
-    iris blase "Je prends celui marqué fragile."
-    noam "Trop tard. Mara l'a déjà demandé."
-    iris "Évidemment."
+    ryn colere "Oui, j'avais vu. Je parle de la navette."
+    mara taquin "Peut-être qu'on rentre dans les cartons."
+    iris blase "Je te laisse celui marqué fragile."
+    mara "Sympa."
     kael calme "La navette peut encore arriver."
     noam "Ouais."
-    "Personne ne répond vraiment."
-    $ hideGroup()
-    "Au début, les discussions continuent. Elen parle déjà de son premier repas sur Terre, Julian du message qu'il postera en premier une fois revenu, Tomas vérifie l'heure beaucoup trop souvent."
-    "Puis, petit à petit, les conversations s'arrêtent."
+
+    "Personne ne répond vraiment. Au début, les discussions reprennent quand même : Elen parle déjà de ce qu'elle mangera en rentrant, Julian de la première chose qu'il publiera, Tomas vérifie l'heure toutes les deux minutes."
+
+    elen joie "Moi je vous le dis, premier arrêt : un vrai resto."
+    sael fatigue "Tu parles de nourriture depuis ton réveil."
+    elen "Parce que c'est important."
+    julian "Je peux difficilement lui donner tort."
+    lysa blase "Profitez. Dans dix minutes vous allez parler de vos lits."
+    iris "Moi j'y pense déjà."
+
+    "Les minutes passent. Petit à petit, les conversations deviennent plus courtes."
+
     pause 0.6
-    "La capsule de livraison reste seule derrière la vitre."
-    "Aucun autre voyant d'approche ne s'allume."
-    $ showGroup([
-        ("tomas", "inquiet", 0.20),
-        ("julian", "inquiet", 0.50),
-        ("lysa", "blase", 0.80),
-    ])
-    tomas inquiet "Elle a... combien de retard, là ?"
+
+    tomas inquiet "Elle a combien de retard, là ?"
     julian "Douze minutes."
     tomas "T'as compté aussi ?"
-    julian "J'ai une montre."
-    lysa blase "Vous avez vraiment attendu la douzième minute pour commencer à vous inquiéter ?"
-    tomas inquiet "Toi, ça t'inquiète pas ?"
-    lysa "Si."
-    julian "Tu n'en as pas l'air."
-    lysa fatigue "J'avais juste pas misé grand-chose sur un départ propre."
+    julian "J'ai regardé l'heure, Tomas."
+    lysa fatigue "Je vous avoue que je m'attendais un peu à ce qu'il y ait un problème."
     tomas "Pourquoi ?"
-    lysa blase "Parce qu'on est ici."
-    julian inquiet "Argument imparable."
-    "Lysa hausse les épaules."
-    $ hideGroup()
-    ryn "KAMI !"
-    "La voix de Ryn claque dans le sas."
-    $ showGroup([
-        ("ryn", "colere", 0.20),
-        ("nyra", "raison", 0.50),
-        ("sael", "fatigue", 0.80),
-    ])
-    ryn colere "Elle est où, la navette ?!"
+    lysa blase "Parce qu'ici, quand quelque chose doit être simple, ça finit rarement simple."
+    elen inquiet "Elle va venir quand même."
+    nyra raison "On n'en sait rien."
+    elen "Merci Nyra."
+    nyra "Je préfère ça à te mentir."
+
+    ryn colere "KAMI !"
+    "Sa voix claque dans le sas."
     nyra raison "Elle t'entend."
-    ryn "Alors qu'elle réponde !"
-    sael fatigue "Crier ne la fera pas arriver plus vite."
-    ryn colere "Merci Sael. T'as d'autres trucs utiles comme ça ?"
-    sael colere "Non. J'attends juste comme toi."
-    "Ryn ouvre la bouche pour répondre."
+    ryn "Alors qu'elle réponde."
+    sael fatigue "Crier changera rien."
+    ryn colere "Je sais, Sael."
+
     play sound sfx_announce
-    $ hideGroup()
     stop music fadeout 0.5
+
     scene bg_diffusion_amour at adaptive_fullscreen with fade
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
+
     kami "Oooh... vous êtes tous là."
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Les sacs, les petites mines impatientes, les regards vers le sas toutes les trente secondes..."
-    kami "C'est adorable."
-    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+
+    kami "Les sacs, les mines impatientes, les petits regards vers le sas..."
     kami "Vous étiez vraiment prêts à me quitter."
-    pause 0.4
+
+    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+
+    kami "Je devrais être vexée."
+
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    kami "Eh bien j'ai une excellente nouvelle !"
-    kami "Vous n'aurez finalement pas besoin de vous dire au revoir tout de suite."
+
+    kami "Heureusement, j'ai une excellente nouvelle !"
+    kami "Vous allez finalement pouvoir profiter encore un peu de ma compagnie."
+
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Parce que la navette de retour ne viendra pas aujourd'hui."
+
+    kami "La navette de retour ne viendra pas aujourd'hui."
+
     pause 0.6
+
     hide screen kami_broadcast_ui
     scene sas1 at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("ryn", "colere", 0.16),
-        ("iris", "colere", 0.50),
-        ("noam", "colere", 0.84),
-    ])
+
     ryn colere "QUOI ?!"
-    iris colere "Non. Non, tu vas pas nous faire ce coup-là maintenant."
+    iris colere "Non. Non, tu vas pas nous faire ça maintenant."
     noam colere "Pourquoi elle vient pas ?"
-    $ hideGroup()
+    elen inquiet "Attends, on devait partir aujourd'hui !"
+    julian inquiet "Kami, tout le monde est prêt."
+
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
-    kami "Pourquoi ?"
-    kami "Parce que le Conclave a toujours été prévu pour durer trente jours."
+
+    kami "Je sais, je sais."
+    kami "Mais vous oubliez un petit détail : le Conclave devait initialement durer trente jours."
+
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
-    kami "Le départ du jour vingt-et-un était une possibilité."
-    kami "Une petite faveur, si vous voulez."
+
+    kami "Le départ du jour vingt-et-un était une possibilité anticipée."
+    kami "Une faveur, en quelque sorte."
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Une faveur qui supposait évidemment que vous ayez terminé vos merveilleux travaux."
+
+    kami "Et certains de vos chers collègues m'ont fait savoir qu'ils souhaitaient continuer."
+
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "Or certains de vos chers collègues m'ont fait savoir qu'ils souhaitaient continuer."
-    pause 0.4
-    kami "Continuer à débattre."
-    kami "Continuer à voter."
-    kami "Continuer à améliorer le monde."
+
+    kami "Continuer les débats."
+    kami "Continuer les votes."
+    kami "Continuer à améliorer le monde !"
+
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "C'est beau, cette soudaine conscience civique."
+
+    kami "Vous voyez ? Il reste encore de vrais passionnés parmi vous."
+
     hide screen kami_broadcast_ui
     scene sas1 at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("mara", "colere", 0.16),
-        ("nyra", "determine", 0.50),
-        ("tomas", "inquiet", 0.84),
-    ])
-    mara colere "Quels collègues ?"
+
+    mara colere "Qui ?"
     nyra determine "Combien de personnes ?"
-    tomas inquiet "Et depuis quand quelques représentants peuvent annuler le départ de tout le monde ?"
-    $ hideGroup()
-    $ showGroup([
-        ("ryn", "colere", 0.24),
-        ("noam", "colere", 0.50),
-        ("julian", "inquiet", 0.76),
-    ])
+    tomas inquiet "Et ça suffit pour annuler notre départ ?"
     ryn colere "Donne les noms."
-    noam colere "On était censés partir ensemble."
-    julian inquiet "Kami, on avait organisé le départ. Tout le monde était prêt."
-    $ hideGroup()
+    noam colere "On devait partir ensemble."
+    iris colere "Surtout, on nous l'a annoncé. On a préparé nos affaires pour quoi, exactement ?"
+    sael colere "Si certains voulaient rester, ils pouvaient au moins nous le dire."
+    elen inquiet "Mais... pourquoi quelqu'un voudrait encore voter ?"
+    julian inquiet "Ça, j'aimerais bien le savoir aussi."
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
+
     kami "Oui, Noam."
     kami "Ensemble."
+
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+
     kami "Et regardez comme je respecte parfaitement votre souhait."
     kami "Personne ne part seul."
-    pause 0.5
+
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+
     kami "Quant aux noms..."
     kami "Non."
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Je pourrais vous les donner, bien sûr."
-    kami "Mais vous avez encore neuf jours à passer ensemble."
-    kami "Ce serait dommage de gâcher si vite l'ambiance."
+
+    kami "Vous allez encore passer neuf jours ensemble."
+    kami "Je ne vais quand même pas vous mâcher tout le travail."
+
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+
     kami "Le Conclave se poursuivra donc jusqu'au jour trente, comme prévu à l'origine."
+
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
+
     kami "Et puisque vous êtes déjà au sas, votre livraison vous attend."
-    kami "Je vous laisse ranger tout ça. Considérez-le comme un petit cadeau de consolation."
+    kami "Je vous laisse ranger tout ça. Ça vous occupera les mains pendant que vous cherchez qui remercier."
+
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+
     kami "Allez, courage."
     kami "Neuf jours, ça passe très vite."
+
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
     scene sas1 at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+
     pause 0.4
-    "Pendant deux secondes, personne ne parle."
-    $ showGroup([
-        ("ryn", "colere", 0.18),
-        ("mara", "colere", 0.50),
-        ("tomas", "inquiet", 0.82),
-    ])
-    ryn colere "C'est qui ?"
-    mara "Ah, ça commence."
-    ryn "Non, sérieux. C'est qui ?"
-    tomas inquiet "Ryn, personne va répondre si—"
-    ryn colere "J'ai pas demandé une analyse."
-    mara taquin "Moi je propose qu'on se mette tous en cercle et qu'on se regarde très fort."
-    ryn "Tu trouves ça drôle ?"
-    mara colere "Non. Justement."
-    $ hideGroup()
-    $ showGroup([
-        ("nyra", "raison", 0.20),
-        ("ryn", "colere", 0.50),
-        ("lysa", "blase", 0.80),
-    ])
-    nyra raison "Personne n'accuse personne sans élément."
-    ryn "Quelqu'un vient de nous rajouter neuf jours ici !"
+
+    ryn colere "Bon. Qui a demandé ça ?"
+    mara colere "Tu crois vraiment que la personne va lever la main maintenant ?"
+    ryn "J'en sais rien, mais j'aimerais bien qu'elle assume."
+    tomas inquiet "Ryn, on sait même pas combien ils sont."
+    ryn "Ça change quoi ?"
+    nyra raison "Ça change qu'on ne va pas accuser les gens au hasard."
+    ryn colere "Quelqu'un vient de nous rajouter neuf jours ici."
     nyra "Je sais."
-    ryn "Alors arrête de parler comme si—"
-    lysa blase "Vous comptez faire ça combien de temps ?"
-    ryn "Quoi ?"
-    lysa "Hurler 'c'est qui ?' jusqu'à ce que quelqu'un se transforme spontanément en panneau lumineux."
-    ryn colere "Ça te fait rien, toi ?"
-    lysa "Si."
-    ryn "On dirait pas."
-    lysa fatigue "Je suis pas surprise. C'est différent."
-    ryn "Pourquoi ?"
-    lysa blase "Parce qu'on est enfermés depuis vingt jours dans une station gérée par Kami. Le miracle, ça aurait été de partir à l'heure."
-    nyra raison "Elle n'a pas tort."
-    ryn "Super."
-    "Il tourne les talons."
+    sael determine "Et gueuler sur tout le monde n'en enlèvera aucun."
+    ryn "Vous êtes tous super calmes, ça fait plaisir."
+    iris colere "Je suis pas calme du tout."
+    elen triste "Moi non plus."
+    julian inquiet "Personne ne l'est."
+    lysa fatigue "Je suis énervée. Je suis juste pas surprise."
+    noam inquiet "Pas surprise ?"
+    lysa "Je pensais pas que ce serait aussi simple, c'est tout."
+    noam "Pourquoi ?"
+    lysa blase "Regarde les vingt derniers jours."
+    mara "Pour une fois, elle marque un point."
+    lysa "Je vais encadrer ça."
+
+    "Ryn souffle bruyamment et récupère son sac."
+
+    ryn fatigue "Moi, je range rien maintenant."
+
+    nyra "Personne t'oblige à le faire tout de suite."
+
+    "Il repart sans répondre. Elen reste encore quelques secondes à regarder la baie vide avant de reprendre son sac."
+
+    elen triste "J'avais vraiment cru qu'on rentrait."
+
+    sael fatigue "Nous aussi."
+
+    "Cette fois, personne ne trouve quoi ajouter."
+
+    lysa blase "Bon. Les cartons vont pas se ranger tout seuls."
+    noam fatigue "Je t'aide."
+    elen "Moi aussi."
+    julian "Je viens."
+    nyra raison "On s'y met à plusieurs, ça ira plus vite."
+
     $ hideGroup()
-    $ showGroup([
-        ("lysa", "blase", 0.30),
-        ("noam", "fatigue", 0.70),
-    ])
-    noam inquiet "T'es vraiment déjà passée à autre chose ?"
-    lysa "Non."
-    noam "On dirait."
-    lysa blase "Je suis juste pas assez motivée pour crier sur un écran."
-    "Elle pose son sac contre la paroi et désigne les caisses."
-    lysa "Et tant qu'à rester neuf jours de plus, autant éviter de vivre au milieu des cartons."
-    noam fatigue "Je vais t'aider."
-    lysa "Je savais que t'avais un vice caché."
-    $ hideGroup()
-    # Durée : ~4m30
-    # Total : ~6m10
+
+    # Durée : ~4m40
+    # Total : ~6m20
 
 label _21_0_1_1_0_0_LIVRAISON:
     $ current_period = "Après-midi"
