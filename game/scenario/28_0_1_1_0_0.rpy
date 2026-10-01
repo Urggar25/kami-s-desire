@@ -147,7 +147,7 @@ label _28_0_1_1_0_0_DISPARITIONS:
 
     iris neutre "Oui."
 
-    julian neutre "J'ai pas d'expression agace."
+    julian fatigue "J’étais aux toilettes. J’ai entendu du bruit, j’ai attendu. Voilà."
 
     "Il lève les mains."
 
