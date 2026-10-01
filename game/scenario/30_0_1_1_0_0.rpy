@@ -38,7 +38,7 @@ label _30_0_1_1_0_0_REVEIL:
 
     "Iris lève immédiatement un doigt devant sa bouche."
 
-    elen "Le vote est dans dix minutes."
+    elen neutre "Le vote est dans dix minutes."
 
     julian sourire "On vous laisse tranquilles. On voulait juste être sûrs que vous l'aviez pas oublié."
 
@@ -52,7 +52,7 @@ label _30_0_1_1_0_0_REVEIL:
 
     "Iris ferme les yeux."
 
-    mara "Et Iris, t'es toujours aussi subtile."
+    mara neutre "Et Iris, t'es toujours aussi subtile."
 
     iris colere "Va te faire foutre."
 
@@ -141,7 +141,7 @@ label _30_0_1_1_0_0_VOTE:
 
     iris fatigue "Super."
 
-    noam "On s'en fout. La navette."
+    noam neutre "On s'en fout. La navette."
 
     iris determine "Ouais."
 
@@ -208,7 +208,7 @@ label _30_0_1_1_0_0_SORTIE:
 
     "Par l'ouverture, je distingue des caisses, une table renversée, des plaques métalliques et même un morceau de banc empilés contre notre porte."
 
-    iris "Ils ont fait ça quand ?"
+    iris neutre "Ils ont fait ça quand ?"
 
     noam reflexion "Cette nuit."
 
@@ -218,7 +218,7 @@ label _30_0_1_1_0_0_SORTIE:
 
     iris inquiet "On peut dégager."
 
-    noam "Peut-être."
+    noam neutre "Peut-être."
 
     iris reflexion "Ou l'aération."
 
@@ -226,9 +226,9 @@ label _30_0_1_1_0_0_SORTIE:
 
     noam peur "Les conduits."
 
-    iris "On sait où ils mènent."
+    iris neutre "On sait où ils mènent."
 
-    noam "On sait aussi ce qu'il y a dedans."
+    noam neutre "On sait aussi ce qu'il y a dedans."
 
     "Vingt-sept minutes."
 
@@ -312,7 +312,7 @@ label _30_0_1_1_0_0_BARRICADE:
 
     iris colere "Si."
 
-    noam "Iris."
+    noam neutre "Iris."
 
     "Le grondement de la navette traverse la station."
 
@@ -363,7 +363,7 @@ label _30_0_1_1_0_0_CONDUITS:
 
     iris peur "Je déteste cette phrase."
 
-    noam "Moi aussi."
+    noam neutre "Moi aussi."
 
     "On retire les fixations de la plaque."
 
@@ -375,7 +375,7 @@ label _30_0_1_1_0_0_CONDUITS:
 
     iris determine "Je passe devant."
 
-    noam "Non."
+    noam neutre "Non."
 
     iris colere "Noam, commence pas."
 
@@ -509,7 +509,7 @@ label _30_0_1_1_0_0_CONDUITS:
 
     noam reflexion "L'incident."
 
-    iris "C'était pas juste un incident."
+    iris neutre "C'était pas juste un incident."
 
     noam peur "Non."
 
@@ -523,7 +523,7 @@ label _30_0_1_1_0_0_CONDUITS:
 
     iris peur "C'est quoi ce truc ?"
 
-    noam "Je sais pas."
+    noam neutre "Je sais pas."
 
     "Une voix résonne derrière nous."
 
