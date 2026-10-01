@@ -257,6 +257,27 @@ Le système d'affichage utilise `showP("nom", "expression", position)`. Règles 
 
 ---
 
+### Affichage des personnages — règle obligatoire
+
+- **Dès qu'une scène contient un dialogue entre plusieurs personnages, utiliser `showGroup()` avant le premier échange.**
+- Exceptions uniquement :
+  - Noam est seul à l'écran ;
+  - une seule autre personne parle avec Noam et la mise en scène utilise volontairement un affichage individuel ;
+  - une CG est affichée et remplace volontairement les sprites ;
+  - une diffusion de Kami est active sur `bg_diffusion_*`.
+- **Après tout `scene` qui revient d'une diffusion, d'une CG ou d'un changement de décor, considérer les sprites comme effacés et rappeler `showGroup()` avant que plusieurs personnages recommencent à parler.**
+- Ne jamais laisser plusieurs personnages dialoguer plusieurs lignes sur un décor ordinaire sans groupe visible.
+
+### Fidélité des voix — contrôle avant validation
+
+- Avant d'écrire ou de réviser une scène sociale importante, relire les fiches des personnages réellement présents dans `.development_pack/character.txt`.
+- Vérifier que chaque personnage agit selon sa manière habituelle de gérer la situation, pas seulement selon ce dont l'intrigue a besoin.
+- **Mara** doit rester provocatrice, corporelle, volontiers sexualisée et un peu beauf ; ne pas la transformer en simple sarcastique propre.
+- **Iris** protège en râlant, mais ne doit pas systématiquement couper Mara ou devenir la police morale de la table. Elle peut laisser une vanne vivre, répondre sèchement, puis intervenir seulement quand Noam en a réellement besoin.
+- **Julian** aime la scène, l'enthousiasme, la visibilité et l'effet produit. Quand il adhère à une cause, il doit pouvoir devenir franchement enjoué, triomphant et démonstratif plutôt que négocier timidement la durée de son discours.
+- **Elias** reste concret, bref et populaire ; il ne cherche pas à devenir porte-parole d'un texte ni à revendiquer publiquement un rôle politique si rien dans la scène ne l'y pousse.
+- Si plusieurs personnages pourraient prononcer une même réplique sans qu'elle change beaucoup, retravailler la ligne jusqu'à ce que la voix soit identifiable.
+
 ### Règles de continuité visuelle, logistique et distribution du casting
 
 Ces règles sont obligatoires pour éviter les scènes qui paraissent fabriquées pour le scénario plutôt que vécues par le groupe.
