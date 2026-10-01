@@ -342,9 +342,9 @@ label _21_0_1_1_0_0_LIVRAISON:
     lysa "Après avoir été regardée par quatre personnes."
     elen "Ça compte quand même."
 
-    "Julian repart avec une caisse destinée à la cafétéria. Elen l'accompagne avec une autre, en continuant à défendre son bilan."
+    "Julian pousse une caisse destinée à la cafétéria près de la porte pendant qu'Elen ramène la suivante, toujours occupée à défendre son bilan."
 
-    "Je reste avec Lysa pour finir les dernières caisses. Elias, lui, est assis un peu plus loin avec le terminal de stock posé sur un genou."
+    "Avec Lysa, je termine les dernières caisses. Elias, lui, est assis un peu plus loin avec le terminal de stock posé sur un genou."
 
     "Depuis quelques minutes, il ne range presque plus rien."
 
@@ -437,102 +437,104 @@ label _21_0_1_1_0_0_LIVRAISON:
 label _21_0_1_1_0_0_MANIFESTE:
     scene sas1 at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
-    "Quand je reviens au sas avec une caisse vide, Elias et Tomas sont penchés sur le terminal logistique."
+
+    "Quand je reviens au sas, Elias et Tomas sont penchés sur le bordereau de livraison."
+
     $ showGroup([
-        ("elias", "colere", 0.22),
-        ("tomas", "inquiet", 0.50),
-        ("noam", "reflexion", 0.78),
+        ("elias", "colere", 0.20),
+        ("tomas", "inquiet", 0.46),
+        ("noam", "reflexion", 0.72),
+        ("nyra", "raison", 0.94),
     ])
+
     elias colere "Là. Regarde."
     tomas hesitation "Je regarde."
-    elias "Non, tu fais défiler."
-    tomas colere "Parce qu'il y a cent quarante-deux lignes, Elias !"
-    elias "Cherche métal."
-    tomas "Je suis en train de—"
-    elias "Voilà !"
-    tomas colere "Je l'avais vu !"
-    "Tomas recule le terminal contre lui comme si Elias risquait de le lui arracher."
-    noam "Vous avez trouvé ?"
-    tomas inquiet "Oui. Enfin... oui."
-    elias colere "C'est marqué."
-    tomas "Oui, c'est marqué."
-    noam reflexion "Quoi ?"
-    "Tomas me montre l'écran."
-    tomas raison "Six plaques de renfort en alliage structurel. Même référence que celles sorties de la maintenance hier."
-    noam "Donc elles ont bien été réapprovisionnées."
-    tomas "Oui."
-    elias "Et livrées."
-    tomas hesitation "Le statut indique 'transféré au Conclave'."
-    noam inquiet "Ça veut dire quoi exactement ?"
-    tomas reflexion "Que le système logistique considère que la capsule les a déposées ici."
-    elias "Donc elles étaient dans la livraison."
-    tomas "Normalement."
-    elias colere "Arrête avec 'normalement'."
-    tomas surpris "Bah je vais pas inventer une certitude !"
-    elias "Le stock les compte. La livraison les compte. Elles sont pas là."
-    tomas inquiet "Je sais."
-    elias "Alors elles sont passées où ?"
-    pause 0.5
-    noam reflexion "Elles auraient pu être déplacées automatiquement ?"
-    tomas "C'est ce que je vérifie."
-    elias fatigue "Y'a pas de transfert."
-    tomas "Laisse-moi vérifier quand même."
-    elias "Tu viens de le faire."
-    tomas colere "ELIAS."
-    "Elias se tait enfin."
-    "Tomas remonte plusieurs lignes, ouvre un second écran, puis un troisième."
-    tomas reflexion "Pas de transfert interne enregistré."
-    noam "Donc..."
-    tomas inquiet "Donc le système dit qu'elles sont arrivées et qu'elles n'ont pas été déplacées."
-    elias "Voilà."
-    noam reflexion "Mais elles sont pas là."
-    elias colere "Voilà."
-    "Il répète le mot beaucoup plus fort."
-    tomas hesitation "Ça peut encore être un problème d'inventaire."
-    elias "Tu viens de dire que—"
-    tomas "Un problème d'inventaire, pas forcément un problème de livraison ! Un mauvais scan, un doublon, une caisse mal—"
-    elias colere "Tout le reste est là !"
-    "Tomas s'arrête."
-    elias "Les vis. Les fixations. Les câbles. Les pièces que j'ai utilisées. Même les putains de forets."
+    elias "La ligne des plaques."
+    tomas "Je l'ai."
+
+    "Tomas agrandit le détail de la livraison."
+
+    noam "Alors ?"
+    tomas reflexion "Six plaques de renfort en alliage structurel ont bien été commandées automatiquement."
+    elias "Ça je savais."
+    tomas "Attends."
+
+    "Il descend un peu plus bas."
+
+    tomas inquiet "Et elles figurent aussi sur le bordereau d'arrivée."
+    noam reflexion "Donc elles étaient dans la capsule."
+    tomas "Oui. Enfin... le bordereau dit qu'elles sont arrivées avec cette livraison."
+    elias colere "Donc elles sont arrivées."
+
+    nyra raison "Le registre sait uniquement ce qui a été demandé et ce qui a été réceptionné. Après ça, il ne suit pas chaque objet dans la station."
+    noam "Donc impossible de savoir où elles sont maintenant."
+    tomas "Exactement."
+
+    elias "Mais elles étaient là."
+
+    pause 0.4
+
+    noam "Ça peut être une erreur sur le bordereau ?"
+    tomas hesitation "Possible."
+    elias colere "Tout le reste est bon."
+    tomas "Je sais, mais—"
+    elias "Les vis sont là. Les fixations sont là. Les câbles sont là. Les forets sont là."
     noam inquiet "Sauf les plaques."
     elias fatigue "Sauf les plaques."
-    "Il donne un coup du plat de la main contre la caisse."
-    elias "Et maintenant je peux pas finir."
-    noam "Finir quoi ?"
-    elias "Les chambres."
-    "Je mets une seconde à comprendre."
-    elias ecoute "J'en avais fermé six hier. Il m'en restait six aujourd'hui."
-    noam reflexion "Ah."
-    elias "Voilà."
-    "Je regarde machinalement la caisse ouverte à côté de lui. Elle contient exactement ce qu'elle est censée contenir."
-    "Je ne pense pas aux conduits. Pas vraiment. Pour l'instant, je vois surtout Elias qui vient de perdre du matériel que le système affirme lui avoir rendu."
-    noam "Tu peux utiliser autre chose ?"
-    elias fatigue "Ouais."
-    tomas surpris "Ah ?"
-    elias "J'ai dit que je peux. Pas que ça va être propre."
-    tomas "Tu comptes faire quoi ?"
-    elias "Trouver du métal."
-    noam "Où ?"
-    elias "Partout."
-    tomas inquiet "Tu vas pas démonter des éléments structurels au hasard."
-    elias "J'ai l'air con à ce point ?"
-    tomas "J'ai pas dit—"
-    elias colere "Je vais prendre des caches, des vieux panneaux, des trucs qui servent à rien."
-    noam taquin "Donc tu vas démonter le Conclave."
-    elias fatigue "Un peu."
-    "Pour la première fois depuis dix minutes, Tomas laisse échapper un rire."
-    tomas "Ça, par contre, j'ai envie de voir."
-    elias "Toi tu viens avec moi."
-    tomas surpris "Pourquoi moi ?"
-    elias "Parce que si j'enlève un truc important, tu vas me faire chier avant que je le fasse."
-    tomas hesitation "C'est... étonnamment logique."
-    elias "Et Noam."
-    noam "Hm ?"
-    elias "Tu m'aides à porter."
-    noam fatigue "Évidemment."
+
+    nyra "Vous avez vérifié toutes les caisses ?"
+    elias "Deux fois."
+    noam "Trois, pour certaines."
+    elias colere "Merci."
+
+    tomas reflexion "Une caisse peut avoir été ouverte avant qu'on commence à ranger."
+    nyra "Ou le bordereau peut être faux."
+    elias "Ou quelqu'un les a prises."
+    noam reflexion "Pourquoi quelqu'un ferait ça ?"
+
+    "Elias secoue la tête, déjà agacé de ne pas avoir de réponse."
+
+    elias fatigue "J'en sais rien."
+    nyra raison "Alors on ne part pas plus loin que ça."
+
+    "Elle pointe le terminal."
+
+    nyra "On sait qu'elles ont été commandées. On sait qu'elles apparaissent à l'arrivée. On sait qu'elles sont introuvables. Le reste, pour l'instant, c'est des suppositions."
+
+    tomas "Oui."
+
+    "Elias souffle, pas convaincu mais incapable de contredire."
+
+    elias colere "Ça change pas mon problème."
+    noam "Les chambres."
+    elias "Ouais. Il m'en restait six à fermer aujourd'hui."
+
+    "Je mets une seconde à replacer les choses."
+
+    noam reflexion "Tu peux utiliser autre chose ?"
+    elias fatigue "Je peux bricoler."
+    tomas surpris "Avec quoi ?"
+    elias "Du métal."
+    tomas "Merci, ça aide beaucoup."
+    elias colere "Des caches, des panneaux inutilisés, des vieux morceaux de châssis. Je vais trouver."
+    nyra raison "Tu vérifies avant de démonter quoi que ce soit."
+    elias "Oui maman."
+    nyra colere "Elias."
+    elias fatigue "Oui. Je vérifierai."
+
+    noam taquin "Donc on démonte le Conclave, mais proprement."
+    tomas "C'est exactement ce qu'elle n'a pas dit."
+    elias "Vous venez m'aider ou vous continuez à commenter ?"
+    noam fatigue "Je viens."
+    tomas hesitation "Moi aussi. Principalement pour t'empêcher d'arracher quelque chose d'important."
+    elias "Parfait."
+
+    "Nyra nous regarde partir, puis récupère le terminal pour finir de vérifier le reste de la livraison."
+
     $ hideGroup()
-    # Durée : ~2m20
-    # Total : ~11m00
+
+    # Durée : ~2m40
+    # Total : ~12m20
 
 label _21_0_1_1_0_0_RECUPERATION:
     scene bg_maintenance at adaptive_fullscreen with dissolve
