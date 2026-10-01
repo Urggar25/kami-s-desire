@@ -183,7 +183,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     elias colere "Je ne les ai PAS perdus ! Elles se sont volatilisées !"
 
-    iris raison "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
+    iris reflexion "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
 
     mara taquin "Moi en zombie ? Et ça pourrait faire une belle idée de cosplay pour Halloween !"
 
