@@ -23,19 +23,19 @@ label _29_0_1_1_0_0_REVEIL:
 
     noam reflexion "À deux ?"
 
-    iris "À deux."
+    iris neutre "À deux."
 
     noam inquiet "T'as vu quelqu'un ?"
 
     iris reflexion "Elen. Elle m'a demandé si j'avais bien dormi."
 
-    noam "Et ?"
+    noam neutre "Et ?"
 
     iris fatigue "Elle souriait."
 
     noam blase "Elen sourit souvent."
 
-    iris "Pas comme ça."
+    iris neutre "Pas comme ça."
 
     "Je pourrais lui dire qu'on est en train de devenir complètement paranoïaques."
 
@@ -96,9 +96,9 @@ label _29_0_1_1_0_0_CAFETERIA:
 
     tomas reflexion "Dans ma chambre."
 
-    noam "Tout le temps ?"
+    noam neutre "Tout le temps ?"
 
-    tomas "Oui. Pourquoi ?"
+    tomas neutre "Oui. Pourquoi ?"
 
     iris reflexion "Et Julian ?"
 
@@ -106,7 +106,7 @@ label _29_0_1_1_0_0_CAFETERIA:
 
     sael calme "Vous cherchez encore qui a été remplacé."
 
-    noam "Oui."
+    noam neutre "Oui."
 
     sael raison "Ça sert plus à grand-chose."
 
@@ -146,7 +146,7 @@ label _29_0_1_1_0_0_CAFETERIA:
 
     iris peur "Tu vois ?"
 
-    noam "Ouais."
+    noam neutre "Ouais."
 
     ryn neutre "On voit quoi ?"
 
@@ -154,7 +154,7 @@ label _29_0_1_1_0_0_CAFETERIA:
 
     mara triste "On s'en fout pas."
 
-    iris "Alors arrête de parler comme si c'était normal !"
+    iris neutre "Alors arrête de parler comme si c'était normal !"
 
     mara fatigue "Qu'est-ce que tu veux que je fasse, Iris ? Que je hurle chaque fois que tu me rappelles que t'as vu un corps avec ma tête ?"
 
@@ -168,7 +168,7 @@ label _29_0_1_1_0_0_CAFETERIA:
 
     nyra reflexion "Noam, attends."
 
-    noam "Non."
+    noam neutre "Non."
 
     elias colere "Vous allez où ?"
 
@@ -195,13 +195,13 @@ label _29_0_1_1_0_0_CHAMBRE_IRIS:
 
     iris peur "C'est eux."
 
-    noam "Je sais pas."
+    noam neutre "Je sais pas."
 
     iris colere "Arrête."
 
     noam inquiet "Je sais pas combien. Je sais pas depuis quand."
 
-    iris "Mais ?"
+    iris neutre "Mais ?"
 
     noam peur "Mais je crois qu'il reste que nous."
 
@@ -215,7 +215,7 @@ label _29_0_1_1_0_0_CHAMBRE_IRIS:
 
     iris triste "Même Elen ?"
 
-    noam "Je sais pas."
+    noam neutre "Je sais pas."
 
     iris colere "Tu viens de dire tous."
 
@@ -235,7 +235,7 @@ label _29_0_1_1_0_0_CHAMBRE_IRIS:
 
     noam reflexion "C'est peut-être ce qu'ils veulent."
 
-    iris "Ou peut-être qu'on est juste en train de devenir cons."
+    iris neutre "Ou peut-être qu'on est juste en train de devenir cons."
 
     noam taquin "Ça, c'était déjà commencé."
 
@@ -269,9 +269,9 @@ label _29_0_1_1_0_0_BARRICADE:
 
     iris fatigue "On vote d'ici."
 
-    noam "Et après ?"
+    noam neutre "Et après ?"
 
-    iris "Après la navette arrive."
+    iris neutre "Après la navette arrive."
 
     noam inquiet "Et il faut sortir."
 
@@ -293,13 +293,13 @@ label _29_0_1_1_0_0_BARRICADE:
 
     pause 0.3
 
-    elen "Moi. Julian. Tomas."
+    elen neutre "Moi. Julian. Tomas."
 
     iris colere "Allez-vous-en."
 
     julian sourire "Iris, sérieusement. Vous pouvez pas rester enfermés jusqu'au départ."
 
-    iris "Regarde-moi."
+    iris neutre "Regarde-moi."
 
     noam reflexion "Quoi ?"
 
@@ -329,7 +329,7 @@ label _29_0_1_1_0_0_BARRICADE:
 
     pause 0.5
 
-    kael "Mais demain, vous aurez trente minutes."
+    kael calme "Mais demain, vous aurez trente minutes."
 
     "Des pas s'éloignent."
 
@@ -369,7 +369,7 @@ label _29_0_1_1_0_0_NUIT:
 
     "Iris serre ma main sans même s'en rendre compte."
 
-    ryn "Je vais pas entrer."
+    ryn neutre "Je vais pas entrer."
 
     noam peur "Alors qu'est-ce que tu veux ?"
 
@@ -377,7 +377,7 @@ label _29_0_1_1_0_0_NUIT:
 
     iris colere "Va te faire foutre."
 
-    ryn "Ouais."
+    ryn neutre "Ouais."
 
     pause 0.5
 
@@ -389,7 +389,7 @@ label _29_0_1_1_0_0_NUIT:
 
     iris peur "C'était pas lui."
 
-    noam "Je sais pas."
+    noam neutre "Je sais pas."
 
     iris colere "C'était pas lui."
 
