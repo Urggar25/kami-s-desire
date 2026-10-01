@@ -77,7 +77,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     mara taquin "Et toi t'es jalouse parce que j'ai proposé avant."
 
-    iris colere "Rêve."
+    iris colere "Dans tes rêves, ouais."
 
     mara "Oh, je rêve très bien toute seule."
 
@@ -177,33 +177,26 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     iris "Elle existe. Et quand Noam et Mara l'ont trouvée, y'avait du matos de maintenance dedans. Du matos qui avait disparu avant, non ?"
 
-    elias ecoute "Ouais."
+    elias ecoute "Oh ? Tu veux dire celui que je cherchais y'a une dizaine de jours ?"
 
-    tomas reflexion "Attends... les pièces qu'on cherchait après l'incident de la maintenance ?"
+    tomas reflexion "Attends... Celui que tu avais perdu ?"
 
-    elias "Une partie, ouais."
+    elias "Je ne les ai PAS perdus ! Elles se sont volatilisées !"
 
     iris "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
 
-    mara taquin "Moi zombie, je serais très sexy."
+    mara taquin "Moi en zombie ? Et ça pourrait faire une belle idée de cosplay pour Halloween !"
 
-    noam "Tu peux vraiment pas t'en empêcher."
+    noam "Tu peux vraiment pas t'en empêcher, hein..."
 
-    mara "Non."
+    "Elias ne rit pas et Mara me fait un clin d'oeil. Il regarde son café, puis la table."
 
-    "Elias ne rit pas. Il regarde son café, puis la table, comme si quelque chose venait de s'emboîter dans sa tête."
-
-    noam reflexion "Elias ?"
-
-    elias fatigue "Hm ?"
-
-    noam "T'as décroché."
-
-    elias "Nan. Je pensais aux plaques."
+    elias "Raah, n'empêche ça me fait bien chier de pas trouver ces foutues plaques en métal."
 
     iris "Celles d'hier ?"
 
-    elias "Ouais. J'vais finir les bricolées aujourd'hui."
+    elias "Ouais. J'vais finir essayer de bricoler des plaques de fortune aujourd'hui."
+    elias "C'est pour ça que j'ai récupéré du matériel jusqu'à tard dans la nuit."
 
     "Il boit son café, pousse son plateau et se lève."
 
@@ -217,13 +210,11 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     iris "Et dors à un moment. T'as une tête de merde."
 
-    elias "J'ai dormi."
+    elias "J'ai dormi t'inquiète."
 
-    iris "Trois heures, c'est pas dormir."
+    iris "Si t'as dormi que trois heures, c'est pas dormir."
 
-    elias "Bah j'ai dormi trois heures."
-
-    "Il récupère sa caisse à outils près de la sortie et s'éloigne."
+    "Il récupère sa caisse à outils près de la sortie et s'éloigne en levant la main."
 
     $ showGroup([
         ("mara", "taquin"),
@@ -245,11 +236,6 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     iris blase "Je vais pleurer."
 
-    # HORS CHAMP :
-    # Elias ne va pas poser les plaques de fortune.
-    # L'information d'Iris lui fait penser que les plaques manquantes peuvent
-    # avoir été déplacées dans la salle cachée. Il retourne seul dans les conduits,
-    # tombe dans un piège des Doppelgängers et est remplacé.
     $ j22_elias_replaced = True
 
     $ hideGroup()
@@ -259,7 +245,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
 
 label _22_0_1_1_0_0_MIDI:
-    $ current_period = "Midi"
+    $ current_period = "Après-midi"
 
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
@@ -373,19 +359,14 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam inquiet "Quand ?"
 
-    elias "Jour vingt-huit."
+    elias "Elle arrivera au jour vingt-huit en théorie."
+    elias "Mais je ne sais même pas si ça vaudra le coup de boucher l'aération pour les deux jours qu'il restera jusqu'au dernier jour..."
 
     noam surpris "Sérieux ?"
 
     elias "Ouais. C'est la prochaine livraison où le stock métal revient."
 
-    noam "Donc six jours."
-
-    elias "Je sais compter."
-
-    noam colere "C'est pas ce que je voulais dire."
-
-    elias "Je sais. Mais j'ai pas mieux."
+    noam "Donc ça arrive dans six jours alors."
 
     "Je regarde les plaques contre le mur. Hier encore, il était prêt à démonter la moitié de la station pour terminer."
 
@@ -641,87 +622,8 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     # Durée : ~5m30
     # Total : ~17m10
 
-
-label _22_0_1_1_0_0_SOIREE:
-    $ current_period = "Soir"
-
-    scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-
-    "En revenant au dortoir, je trouve Julian accroupi devant la porte de la salle commune avec une feuille scotchée de travers."
-
-    "En grosses lettres : « UN TOIT. DE L'EAU. À MANGER. »"
-
-    $ showGroup([
-        ("julian", "sourire", 0.32),
-        ("iris", "blase", 0.58),
-        ("noam", "fatigue", 0.82),
-    ])
-
-    iris blase "C'est moche."
-
-    julian sourire "C'est lisible."
-
-    iris "C'est moche et lisible."
-
-    julian "Je prends."
-
-    noam "T'as déjà fait une affiche ?"
-
-    julian "Deux."
-
-    iris fatigue "Tout le monde est déjà pour."
-
-    julian "Tout le monde a l'air pour. C'est pas pareil."
-
-    noam reflexion "Sur ça, il a pas tort."
-
-    iris colere "Ne l'aide pas."
-
-    julian sourire "Merci Noam."
-
-    noam "J'ai pas dit que j'aimais l'affiche."
-
-    julian "Je prends aussi."
-
-    "Iris lève les yeux au ciel et repart vers sa chambre."
-
-    iris "Bonne nuit. Et si je trouve une troisième affiche devant ma porte, je la mange."
-
-    julian "Ça prouvera au moins qu'elle répond au Commandement sur l'alimentation."
-
-    iris colere "Ta gueule."
-
-    "Elle disparaît dans le couloir."
-
-    $ showGroup([
-        ("julian", "sourire", 0.36),
-        ("noam", "fatigue", 0.64),
-    ])
-
-    julian "Elle aime bien."
-
-    noam "Bien sûr."
-
-    julian "Tu veux m'aider à en mettre une à la cafétéria ?"
-
-    noam "Non."
-
-    julian "Tu peux juste tenir le ruban."
-
-    noam "Bonne nuit, Julian."
-
-    julian "Lâcheur."
-
-    "Je repars avant qu'il trouve un autre poste à me confier."
-
-    $ hideGroup()
-
-    # Durée : ~2m00
-    # Total : ~19m00
-
-
 label _22_0_1_1_0_0_FIN_JOURNEE:
+    $ current_period = "Soir"
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
@@ -729,7 +631,7 @@ label _22_0_1_1_0_0_FIN_JOURNEE:
 
     "Je ramène donc le bureau devant l'ouverture, comme avant. Le meuble racle le sol et finit par se coincer contre le mur."
 
-    think "Jour vingt-huit."
+    think "La prochaine livraison arrivera au jour vingt-huit."
 
     "Six jours à faire ça."
 
