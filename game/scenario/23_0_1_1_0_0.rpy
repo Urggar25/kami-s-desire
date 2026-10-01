@@ -96,7 +96,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam neutre "Je regarde."
 
-    sael agace "Pas moi. La lumière."
+    sael neutre "Pas moi. La lumière."
 
     noam blase "Je regardais la lumière."
 
@@ -112,7 +112,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam neutre "Oui."
 
-    sael "Avant-hier ?"
+    sael neutre "Avant-hier ?"
 
     noam hesitation "Euh... un truc en sauce."
 
