@@ -53,169 +53,177 @@ label _22_0_1_1_0_0_CAFETERIA:
         ("noam", "fatigue"),
     ])
 
-    elen content "J'ai gardé du pain. Enfin, pas exprès pour toi, hein. J'en ai juste pris trop."
+    elen content "J'ai pris trop de pain. Enfin... je crois. Si quelqu'un en veut, servez-vous."
 
-    noam "Bien sûr."
+    mara taquin "Tu vois Noam ? Elle, au moins, elle sait s'occuper des gens. Toi tu débarques avec ta tête de mec qui a passé la nuit à se faire hanter et tu dis même pas bonjour."
 
-    mara taquin "Laisse-la faire, elle nourrit les gens quand elle stresse."
+    noam fatigue "Bonjour Mara."
 
-    elen colere "Je stresse pas."
+    mara "Voilà. Beaucoup mieux."
 
-    mara "T'as pris quatre morceaux."
+    "Elle me regarde par-dessus sa tasse, clairement trop contente d'elle-même."
 
-    elen "J'avais faim."
+    mara taquin "Alors ? Cette nuit, ça a donné quoi ? Une autre morte dans les murs ? Une voix qui t'appelle ? Une présence froide dans ton lit ?"
 
-    "Je souris et commence à manger. Mara me regarde une seconde de trop, puis son sourire s'élargit."
+    noam blase "Non."
 
-    mara taquin "Et sinon, monsieur paranormal, rien cette nuit ? Pas de femme morte dans les murs, pas de voix, pas de petit vieux translucide au pied du lit ?"
+    mara "Dommage pour la dernière. Si t'as besoin d'une présence chaude, par contre..."
 
-    noam fatigue "Tu vas vraiment continuer avec ça ?"
+    noam colere "Mara."
 
-    mara "Tant que c'est drôle."
+    mara rire "Quoi ? Je propose une solution."
 
-    iris agace "Donc longtemps, vu que t'as aucun critère."
+    iris fatigue "T'es vraiment lourde dès le matin."
 
-    mara "Aïe."
+    mara taquin "Et toi t'es jalouse parce que j'ai proposé avant."
 
-    noam "Merci Iris."
+    iris colere "Rêve."
 
-    iris "T'emballe pas, je la défends pas. Je te défends toi, nuance."
+    mara "Oh, je rêve très bien toute seule."
 
-    sael neutre "S'il voit encore des morts, on peut vérifier."
+    "Je baisse les yeux vers mon assiette en regrettant déjà d'être venu m'asseoir ici."
 
-    "Je tourne la tête vers elle."
+    noam fatigue "Vous pouvez parler d'autre chose ?"
 
-    noam surpris "Vérifier comment ?"
+    mara taquin "Bien sûr. On peut parler de tes fantômes."
 
-    sael raison "Comme l'autre fois."
+    noam "Super."
+
+    sael neutre "S'il en voit encore, on peut recommencer."
+
+    "Je relève la tête vers elle."
+
+    noam surpris "Recommencer quoi ?"
+
+    sael raison "Le rite."
 
     pause 0.3
 
     noam panne "Non."
 
-    mara rire "Oh non..."
+    mara rire "Oh putain, sa tête..."
 
-    sael "Un peu de sel, de l'eau, et—"
+    sael "Un peu de sel, de l'eau. Cette fois on peut faire ça plus proprement."
 
-    noam panique "Non, non, non. Tu t'arrêtes là."
+    noam panique "Non. Non, y'a pas de 'cette fois'. Y'a plus de fois du tout."
 
-    "Ma chaise recule dans un bruit horrible. Mara commence déjà à rire."
+    "Je recule ma chaise d'un coup."
 
-    sael "Tu réagis trop."
+    sael "Tu paniques déjà."
 
-    noam colere "La dernière fois Ryn m'a coincé contre un mur pendant que tu me balançais du sel dans la figure ! Tu veux que je réagisse comment ?"
+    noam colere "Parce que la dernière fois Ryn m'a bloqué contre un mur pendant que tu me balançais du sel dans la figure !"
 
-    tomas hesitation "Pour être juste, d'un point de vue... enfin non, je vais pas rentrer là-dedans."
+    mara taquin "Moi je dis, sans Ryn ça peut devenir beaucoup plus intime."
 
-    noam "Merci."
+    noam "MARA !"
 
-    sael neutre "Tu as survécu."
+    "Elle éclate de rire."
 
-    noam "C'est pas un argument !"
+    tomas hesitation "Je... je crois qu'on peut raisonnablement dire qu'un deuxième exorcisme n'apporterait pas grand-chose de plus au premier."
 
-    mara rire "Si, un peu."
+    noam "Merci. Voilà. Merci Tomas."
 
-    noam colere "Mara, ferme-la."
+    sael neutre "Le premier n'a peut-être pas suffi."
 
-    "Elle essaie. Elle tient deux secondes."
+    noam panique "Mais arrête de dire ça comme si on parlait d'un médicament !"
 
-    mara taquin "On peut peut-être faire ça plus doucement cette fois."
+    elen inquiet "Sael, laisse-le respirer un peu..."
 
-    noam "JE VAIS PARTIR."
+    sael "Je le force pas."
 
-    elen surpris "Mais t'as même pas fini de manger."
+    noam "Tu viens de proposer de me jeter du sel dessus."
 
-    noam "Je préfère mourir de faim."
+    sael "J'ai dit qu'on pouvait."
 
-    iris colere "Bon, ça suffit. Vous allez le laisser tranquille avant qu'il se mette vraiment à courir."
+    mara taquin "Et moi j'ai proposé autre chose, mais bizarrement personne retient mes bonnes idées."
 
-    sael "Je proposais juste."
+    iris blase "Parce que tes bonnes idées finissent toujours sans pantalon."
 
-    iris "Bah propose autre chose. Un café. Une promenade. Je sais pas, un truc qui implique pas de lui jeter des trucs à la gueule."
+    mara rire "Pas toujours."
 
-    "Sael hausse les épaules et reprend son repas comme si la conversation était terminée."
+    iris "Mara..."
 
-    noam fatigue "Merci."
+    mara "Quoi ? Il va survivre."
 
-    iris "Ouais, bon. Profite pas trop du moment."
+    "Iris souffle, puis se tourne vers moi plutôt que de continuer à la reprendre."
 
-    "Mara essuie ses yeux du bout des doigts, encore hilare."
+    iris fatigue "Bon. Assieds-toi avant de vraiment te barrer. Personne va t'exorciser pendant le petit-déj."
 
-    mara taquin "Désolée... non, en vrai, pas désolée."
+    noam inquiet "Après non plus."
 
-    noam blase "J'avais compris."
+    sael "On verra."
 
-    "La table se calme enfin. Je reprends mon assiette et Iris remue son café, toujours agacée."
+    noam panique "SAEL."
 
-    iris reflexion "N'empêche..."
+    "Cette fois, même Iris laisse échapper un rire."
 
-    noam "Quoi ?"
+    iris taquin "Désolée. Celle-là était un peu méritée."
 
-    iris "Je dis pas que t'as vu un fantôme, hein. Je veux que ce soit très clair."
+    "Je finis par me rasseoir, méfiant, pendant que Mara essaie encore de reprendre son souffle."
 
-    noam "Ça commence bien."
+    iris reflexion "N'empêche... y'a un truc où Noam raconte pas n'importe quoi."
 
-    iris "Mais la salle, elle, elle existe."
+    mara taquin "Oh ? Ça y est, tu prends officiellement sa défense ? C'est mignon. Je vous laisse une minute si vous voulez."
 
-    "Elias, qui n'écoutait jusque-là qu'à moitié, relève la tête."
+    iris blase "Continue et je te plante ta fourchette dans la main."
 
-    iris "Et dans cette salle, vous aviez trouvé du matos de maintenance, non ? Des trucs qui avaient disparu avant."
+    mara "Donc oui."
 
-    noam reflexion "Ouais. Enfin... il y avait des outils, des pièces, des trucs rangés là-bas. Elias avait déjà remarqué que du matériel manquait."
+    noam "Iris..."
+
+    iris "Je parle de la salle. Celle derrière les conduits."
+
+    "Elias relève la tête."
+
+    iris "Elle existe. Et quand Noam et Mara l'ont trouvée, y'avait du matos de maintenance dedans. Du matos qui avait disparu avant, non ?"
 
     elias ecoute "Ouais."
 
-    tomas reflexion "C'était avant qu'on découvre le réseau ?"
+    tomas reflexion "Attends... les pièces qu'on cherchait après l'incident de la maintenance ?"
 
-    elias "Ouais, quelques jours avant."
+    elias "Une partie, ouais."
 
-    iris "Donc voilà. Je dis juste que tout ce qu'il raconte est pas forcément sorti de son cul."
+    iris "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
 
-    mara taquin "Quelle déclaration de confiance."
+    mara taquin "Moi zombie, je serais très sexy."
 
-    iris colere "Tu veux que je retire ?"
+    noam "Tu peux vraiment pas t'en empêcher."
 
-    mara "Non, non."
+    mara "Non."
 
-    noam "Je prends."
-
-    "Je m'attends à ce qu'Elias ajoute quelque chose, mais il reste silencieux. Il regarde son plateau, puis la table, puis rien de précis."
+    "Elias ne rit pas. Il regarde son café, puis la table, comme si quelque chose venait de s'emboîter dans sa tête."
 
     noam reflexion "Elias ?"
 
     elias fatigue "Hm ?"
 
-    noam "Ça va ?"
+    noam "T'as décroché."
 
-    elias "Ouais. Je pensais aux plaques."
+    elias "Nan. Je pensais aux plaques."
 
     iris "Celles d'hier ?"
 
     elias "Ouais. J'vais finir les bricolées aujourd'hui."
 
-    "Il boit le reste de son café d'un trait et repousse son plateau."
+    "Il boit son café, pousse son plateau et se lève."
 
     noam "Tu veux que je vienne ?"
 
-    elias "Nan, laisse. J'ai déjà assez de trucs à déplacer, si je dois en plus t'expliquer où tenir ça va me saouler."
+    elias "Laisse. J'ai besoin d'aller vite et t'as tendance à poser des questions toutes les trente secondes."
 
-    noam taquin "Charmant."
+    noam taquin "Merci."
 
-    elias fatigue "Tu vois ce que je veux dire."
+    elias fatigue "Tu sais que c'est vrai."
 
-    noam "Ouais."
-
-    "Il récupère sa caisse à outils près de la sortie."
-
-    iris "Dors un peu à un moment, quand même."
+    iris "Et dors à un moment. T'as une tête de merde."
 
     elias "J'ai dormi."
 
     iris "Trois heures, c'est pas dormir."
 
-    elias "Ça compte."
+    elias "Bah j'ai dormi trois heures."
 
-    "Il s'éloigne avant qu'elle puisse répondre."
+    "Il récupère sa caisse à outils près de la sortie et s'éloigne."
 
     $ showGroup([
         ("mara", "taquin"),
@@ -227,7 +235,15 @@ label _22_0_1_1_0_0_CAFETERIA:
         ("noam", "fatigue"),
     ])
 
-    "Je le regarde sortir, puis la conversation repart sur autre chose."
+    "Je le regarde sortir. Mara reprend presque immédiatement la conversation, comme si le trou laissé par Elias n'avait jamais existé."
+
+    mara taquin "Bon. Maintenant qu'on a réglé les fantômes, on revient sur ma proposition de présence chaude ?"
+
+    noam "Non."
+
+    mara "Tu vois, Iris ? Il me brise le cœur."
+
+    iris blase "Je vais pleurer."
 
     # HORS CHAMP :
     # Elias ne va pas poser les plaques de fortune.
@@ -238,8 +254,8 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     $ hideGroup()
 
-    # Durée : ~5m10
-    # Total : ~6m10
+    # Durée : ~5m20
+    # Total : ~6m20
 
 
 label _22_0_1_1_0_0_MIDI:
@@ -423,7 +439,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    "En milieu d'après-midi, la cafétéria se remplit sans que personne ait vraiment organisé quoi que ce soit. Certains boivent, d'autres traînent, Ryn et Nyra parlent encore à voix basse de la prolongation."
+    "En milieu d'après-midi, la cafétéria se remplit sans que personne ait vraiment organisé quoi que ce soit. Ryn et Nyra parlent encore de la prolongation, Mara embête Elen avec son dessert et Julian s'est approprié une moitié de table."
 
     $ showGroup([
         ("ryn", "neutre"),
@@ -438,21 +454,21 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
         ("noam", "neutre"),
     ])
 
-    ryn "Moi je dis juste que quelqu'un a parlé à Kami et que personne assume. Ça me gonfle."
+    ryn "Ce qui me gonfle, c'est pas juste qu'on reste. C'est que quelqu'un a demandé ça et que depuis hier tout le monde fait comme si de rien n'était."
 
-    nyra raison "Et je te dis juste qu'on n'a rien de plus qu'hier. Si tu recommences à demander à tout le monde, tu vas juste foutre une ambiance encore pire."
+    nyra raison "Personne fait comme si de rien n'était. On a juste aucune preuve de qui a parlé à Kami, alors tu veux qu'on fasse quoi ? Qu'on se fouille les poches ?"
 
-    ryn fatigue "L'ambiance est déjà pourrie."
+    ryn fatigue "J'en sais rien. Mais attendre neuf jours en se regardant de travers, ça va être sympa."
 
-    mara taquin "Pas partout."
+    mara taquin "Moi ça me va. Y'en a quelques-uns que j'aime bien regarder."
 
-    iris "Mara, non."
+    iris blase "Évidemment."
 
-    mara "J'ai rien dit."
+    mara "Je t'ai pas exclue."
 
-    iris "Justement, je préfère prévenir."
+    iris colere "J'ai rien demandé."
 
-    "Ryn souffle et laisse tomber. Tomas allait dire quelque chose quand le signal de diffusion coupe toutes les conversations."
+    "Ryn lève les yeux au ciel. Il allait répondre quand le signal de diffusion coupe la table."
 
     play sound sfx_announce
     stop music fadeout 0.5
@@ -461,7 +477,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Bon ! Puisque vous avez gagné quelques jours supplémentaires avec moi..."
+    kami "Bon ! Puisque vous avez si gentiment gagné quelques jours supplémentaires avec moi..."
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
@@ -479,12 +495,12 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
-    kami "Ajouter un Sixième Commandement : toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante."
+    kami "Il propose d'ajouter un nouveau Commandement : toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Oui. Un toit. De l'eau. À manger."
-    kami "Je vous laisse deux jours pour découvrir comment réussir à vous disputer là-dessus."
+    kami "Je vous laisse deux jours pour trouver le moyen de vous disputer là-dessus. Je crois en vous."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
@@ -495,140 +511,135 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
 
+    # Après une diffusion, la commande scene a effacé les sprites : réafficher
+    # le groupe avant toute reprise de dialogue collectif.
+    $ showGroup([
+        ("ryn", "neutre"),
+        ("nyra", "neutre"),
+        ("sael", "neutre"),
+        ("mara", "taquin"),
+        ("iris", "blase"),
+        ("elias", "neutre"),
+        ("elen", "content"),
+        ("julian", "sourire"),
+        ("tomas", "reflexion"),
+        ("noam", "neutre"),
+    ])
+
     pause 0.4
 
-    iris blase "Bah... oui."
+    elen joie "Oh ! Bah... oui. Oui, évidemment !"
 
-    ryn "Ouais."
+    ryn "Ouais. Là, je vois même pas ce qu'on est censés discuter."
 
-    elen content "Pour une fois, c'est simple !"
+    sael raison "Un toit, de l'eau, à manger. C'est le minimum."
 
-    sael "Les gens doivent manger. Je vois pas ce qu'il y a à discuter."
+    mara taquin "Le toit, je prends. L'eau... si on peut remplacer une partie par du vin, je signe tout de suite."
 
-    mara taquin "On peut peut-être débattre de l'eau. Perso je préfère le vin."
+    iris blase "T'es vraiment incapable d'être sérieuse."
 
-    iris colere "Mara."
+    mara "Si. Au lit, parfois."
 
-    mara "Ça va, ça va."
+    iris colere "Putain..."
 
-    tomas reflexion "Il y aura peut-être des détails sur la définition de 'suffisante', sur l'obligation concrète de fournir—"
+    mara rire "Tu me tends les perches aussi."
 
-    "Il voit plusieurs regards se tourner vers lui et s'arrête."
+    tomas reflexion "Il faudra quand même lire la formulation complète parce que 'alimentation suffisante', juridiquement, enfin... selon la manière dont Kami l'applique, ça peut vouloir dire plusieurs—"
 
-    tomas hesitation "Mais oui. Sur le principe... oui."
+    "Il s'interrompt en voyant les regards autour de la table."
 
-    nyra raison "On regardera la formulation exacte. À première vue, je vois rien de bloquant."
+    tomas hesitation "Mais le principe est évident. Oui. Je suis pour le principe."
 
-    julian sourire "Parfait."
+    nyra raison "On vérifiera le texte demain. Si la formulation correspond vraiment à ce que Kami vient de lire, je vois pas de raison de bloquer."
 
-    iris fatigue "Pourquoi j'aime pas quand tu dis ça ?"
+    "Julian, jusque-là, avait le sourire de quelqu'un qui attendait précisément ce moment."
 
-    julian "Parce que tu me connais mal."
+    julian joie "Enfin !"
 
-    iris "Non, justement."
+    "Il se lève franchement cette fois, les deux mains à plat sur la table."
 
-    "Julian se redresse déjà. Pas complètement debout, mais assez pour qu'on comprenne qu'il va faire un discours."
+    julian joie "Vous vous rendez compte ? Pour une fois on a un texte que personne n'a envie d'étrangler au bout de dix secondes ! Pas de frontière, pas de piège tordu, pas de grande théorie. Un toit, de l'eau, de quoi manger. C'est tout."
 
-    ryn fatigue "Julian..."
+    iris fatigue "Tu vas quand même réussir à en faire un spectacle."
 
-    julian "Attends, deux secondes. Je vais pas vous faire vingt minutes."
+    julian sourire "Évidemment. Tu crois vraiment que je vais laisser passer le premier vote presque consensuel du Conclave sans en profiter ?"
 
-    mara "Cinq ?"
+    "Il se tourne vers les autres avec une énergie presque ridicule, mais contagieuse."
 
-    julian "Une."
+    julian joie "On peut le faire proprement. Tous ensemble, une fois. Pas parce qu'on est coincés ici, pas parce que Kami nous regarde, juste parce que ce texte est... bah, il est évident !"
 
-    iris "Trente secondes."
+    ryn sourire "Pour une fois, je vais pas te casser ton délire. Je suis pour."
 
-    julian sourire "Marché conclu."
-
-    "Il pose les mains sur la table."
-
-    julian "On vient de passer trois semaines à se déchirer sur des trucs où, à chaque fois, quelqu'un avait une bonne raison de dire non. Là, franchement... je vois pas."
-
-    "Il cherche ses mots une seconde, moins théâtral que d'habitude."
-
-    julian "Un toit, de l'eau, de quoi bouffer. C'est pas glorieux, c'est même pas très original. Mais justement. Si on arrive pas à se mettre d'accord là-dessus, autant arrêter tout de suite."
-
-    elen joie "Moi je suis pour."
-
-    ryn "Moi aussi."
+    elen joie "Moi aussi ! À fond !"
 
     sael "Oui."
 
-    iris "Pareil."
+    iris "Ouais."
 
-    mara "Je vais faire un effort énorme et ne pas trouver de problème."
+    mara taquin "Je vote pour tant qu'on me garantit un toit assez grand pour recevoir."
 
-    tomas "Je veux juste lire le texte complet avant de dire oui définitivement, mais... ouais. Enfin, probablement oui."
+    noam blase "Recevoir quoi ?"
 
-    julian sourire "Voilà. Vous voyez ?"
+    mara rire "Qui."
 
-    iris blase "T'avais besoin de te lever à moitié pour ça ?"
+    noam "J'aurais pas dû demander."
 
-    julian "Oui."
+    tomas hesitation "Moi je... oui. Je veux lire le texte, vraiment, mais si c'est bien ça, oui."
 
-    "Quelques rires passent autour de la table."
+    julian joie "Vous voyez ?! Ça, c'est ce que je voulais depuis le début ! Une salle où, pour une fois, on part pas directement du principe qu'on va se détester."
 
-    noam reflexion "Elias ?"
+    nyra "Ne t'emballe pas. Le vote est dans deux jours."
 
-    elias neutre "Quoi ?"
+    julian sourire "Je m'emballe exactement autant que je veux."
 
-    noam "T'en penses quoi ?"
+    "Il attrape son téléphone et commence déjà à taper quelque chose."
 
-    elias "C'est bien."
+    iris blase "Tu fais quoi ?"
 
-    julian sourire "C'est tout ?"
+    julian "Je prépare la campagne."
 
-    elias fatigue "Bah ouais. Les gens ont un toit, ils bouffent, ils boivent. J'vais pas faire un discours."
+    iris "Quelle campagne ? Tout le monde vient de dire oui."
 
-    julian "C'est pour ça que je suis là."
+    julian rire "Et alors ? Ça veut dire que j'ai déjà un excellent départ."
 
-    elias colere "Justement."
+    mara "Oh non, il est heureux."
 
-    "Julian sourit, prêt à repartir, mais Elias le coupe avant."
+    julian joie "Très."
 
-    elias fatigue "Et... c'était moi."
+    "Il relève son téléphone comme s'il venait de recevoir une illumination."
 
-    "Cette fois, tout le monde se tourne vers lui."
+    julian "Il faut un slogan."
 
-    elen surpris "Quoi ?"
+    ryn fatigue "Bien sûr."
 
-    elias "L'amendement. Celui que j'avais mis dans l'urne au début."
+    julian sourire "Quelque chose de simple. Quelque chose qu'on retient. 'Un toit. De l'eau. À manger.'"
 
-    tomas surpris "Ah."
+    elen content "C'est pas mal !"
 
-    julian sourire "Alors là..."
+    julian joie "C'est parfait."
 
-    elias colere "Non. Je vois déjà ta tête, non."
+    iris "C'est littéralement le texte."
 
-    julian "Mais attends, c'est parfait ! Tu proposes le truc le plus simple et le plus humain du lot et tu dis ça comme si t'avais demandé qu'on change une ampoule."
+    julian "Les meilleures idées sont souvent sous nos yeux."
 
-    elias fatigue "Parce que j'ai pas envie qu'on me fasse une médaille. J'ai écrit trois lignes, c'est tout."
+    "Même Ryn sourit. Julian, lui, a déjà gagné sa journée."
 
-    julian sourire "Trois très bonnes lignes."
+    "Elias n'a presque rien dit. Quand je me tourne vers lui, il hausse seulement une épaule."
 
-    elias "Julian..."
+    noam reflexion "T'en penses quoi ?"
 
-    julian "D'accord, d'accord. J'arrête."
+    elias fatigue "Que c'est bien. Franchement, y'a quoi à ajouter ? Si les gens ont pas de toit, pas d'eau ou rien à bouffer, c'est qu'on a déjà merdé quelque part."
 
-    pause 0.3
+    noam "Ouais."
 
-    julian sourire "Mais je vais quand même faire campagne."
+    "Il reprend sa boisson sans rien dire de plus. Personne ne demande qui avait déposé l'amendement, et le sujet ne vient pas sur la table."
 
-    elias colere "Évidemment."
-
-    mara rire "Il tiendra jamais trente secondes."
-
-    iris "Personne y croyait."
-
-    "Le sujet pourrait presque s'arrêter là. Personne ne semble vraiment opposé au texte, et pour une fois le débat se vide avant même d'avoir commencé."
-
-    "Julian, lui, a déjà sorti son téléphone pour noter quelque chose."
+    "La discussion dérive rapidement vers Julian, qui essaie déjà de convaincre Elen de l'aider à fabriquer des affiches."
 
     $ hideGroup()
 
-    # Durée : ~5m20
-    # Total : ~17m00
+    # Durée : ~5m30
+    # Total : ~17m10
 
 
 label _22_0_1_1_0_0_SOIREE:
