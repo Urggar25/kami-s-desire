@@ -63,7 +63,7 @@ label _21_0_1_1_0_0_REVEIL:
 
 label _21_0_1_1_0_0_SAS:
     $ current_period = "Midi"
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "sas_livraison") from _call_j21_stay_door_couloir_sas
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "sas1") from _call_j21_stay_door_couloir_sas
     scene sas1 at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -162,6 +162,21 @@ label _21_0_1_1_0_0_SAS:
     hide screen kami_broadcast_ui
     scene sas1 at adaptive_fullscreen with dissolve
 
+    $ showGroup([
+        ("ryn", "fatigue"),
+        ("mara", "neutre"),
+        ("elias", "neutre"),
+        ("iris", "blase"),
+        ("kael", "calme"),
+        ("tomas", "inquiet"),
+        ("julian", "inquiet"),
+        ("lysa", "blase"),
+        ("nyra", "raison"),
+        ("sael", "fatigue"),
+        ("elen", "joie"),
+        ("noam", "reflexion"),
+    ])
+
     ryn colere "QUOI ?!"
     iris colere "Non. Non, tu vas pas nous faire ça maintenant."
     noam colere "Pourquoi elle vient pas ?"
@@ -195,6 +210,21 @@ label _21_0_1_1_0_0_SAS:
 
     hide screen kami_broadcast_ui
     scene sas1 at adaptive_fullscreen with dissolve
+
+    $ showGroup([
+        ("ryn", "fatigue"),
+        ("mara", "neutre"),
+        ("elias", "neutre"),
+        ("iris", "blase"),
+        ("kael", "calme"),
+        ("tomas", "inquiet"),
+        ("julian", "inquiet"),
+        ("lysa", "blase"),
+        ("nyra", "raison"),
+        ("sael", "fatigue"),
+        ("elen", "joie"),
+        ("noam", "reflexion"),
+    ])
 
     mara colere "Qui ?"
     nyra determine "Combien de personnes ?"
@@ -245,6 +275,21 @@ label _21_0_1_1_0_0_SAS:
     stop music fadeout 0.8
     scene sas1 at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+
+    $ showGroup([
+        ("ryn", "fatigue"),
+        ("mara", "neutre"),
+        ("elias", "neutre"),
+        ("iris", "blase"),
+        ("kael", "calme"),
+        ("tomas", "inquiet"),
+        ("julian", "inquiet"),
+        ("lysa", "blase"),
+        ("nyra", "raison"),
+        ("sael", "fatigue"),
+        ("elen", "joie"),
+        ("noam", "reflexion"),
+    ])
 
     pause 0.4
 
@@ -580,7 +625,7 @@ label _21_0_1_1_0_0_RECUPERATION:
     tomas "Je te laisse bricoler. J'essaie juste d'éviter que tu transformes une chambre en court-circuit."
     elias "C'est gentil."
     "La plaque se décroche enfin."
-    elias satisfait "Voilà."
+    elias sourire "Voilà."
     noam "Une."
     elias fatigue "Il m'en faut au moins dix comme ça."
     noam "Tu viens de dire qu'il t'en restait six."

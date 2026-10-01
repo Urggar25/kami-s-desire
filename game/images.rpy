@@ -285,6 +285,7 @@ image mara peur               = mara_expression("peur")
 image mara reflechit               = mara_expression("reflexion")
 image mara triste               = mara_expression("triste")
 image mara surpris               = mara_expression("surpris")
+image mara blase               = mara_expression("stress")
 
 # ======================
 # NOAM
