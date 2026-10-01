@@ -298,105 +298,141 @@ label _21_0_1_1_0_0_LIVRAISON:
     $ current_period = "Après-midi"
     scene bg_stockage at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
-    "Une demi-heure plus tard, le sas s'est vidé de la moitié des représentants."
-    "Certains sont partis se calmer. D'autres ont ramené leurs sacs dans les dortoirs sans les défaire."
-    "Moi, je fais des allers-retours entre le sas et le stockage avec Lysa."
+
+    "Une demi-heure plus tard, le sas s'est vidé de plusieurs sacs mais pas des caisses."
+    "Nyra a fini par répartir les tâches sans vraiment demander l'avis de personne : certains transportent, d'autres ouvrent les cartons, les derniers trient ce qui va à la cafétéria, à l'infirmerie, à la maintenance ou au stockage."
+
     $ showGroup([
-        ("lysa", "blase", 0.22),
-        ("noam", "fatigue", 0.50),
-        ("elias", "neutre", 0.78),
+        ("nyra", "raison"),
+        ("elen", "joie"),
+        ("julian", "neutre"),
+        ("lysa", "blase"),
+        ("noam", "fatigue"),
     ])
-    lysa blase "Pose ça là."
-    noam "C'est marqué maintenance."
-    lysa "Je sais lire."
-    noam "Alors pourquoi là ?"
-    lysa "Parce que si tu le poses devant la porte, Elias va se prendre les pieds dedans."
-    elias neutre "Merci."
-    lysa "Tu vois ? Il confirme."
-    elias "Je confirme surtout que j'ai déjà assez de bordel."
-    "Elias est assis au milieu de plusieurs caisses ouvertes, un terminal de stock posé sur un genou."
-    "Depuis quelques minutes, il ne range presque plus rien. Il cherche."
-    noam reflexion "Tu trouves pas quoi ?"
+
+    nyra raison "Les étiquettes sont déjà faites. Vous regardez, vous triez, vous évitez de poser le matériel médical avec la bouffe."
+    elen joie "Ça semble à ma portée."
+    lysa blase "C'est exactement ce qu'on dit avant de mettre une seringue dans une caisse de soupe."
+    elen "Je ferai pas ça."
+    julian sourire "Je suis prêt à témoigner en ta faveur si ça arrive."
+    elen colere "Vous êtes chiants."
+    noam "On commence ?"
+    nyra "Oui. Et si vous hésitez, stockage. On vérifiera après."
+
+    $ hideGroup()
+
+    # Réutilisation du mini-jeu de tri déjà introduit au J7.
+    call rangement_play from _call_rangement_day21_stay
+
+    scene bg_stockage at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 0.8
+
+    $ showGroup([
+        ("elen", "content"),
+        ("julian", "sourire"),
+        ("lysa", "blase"),
+        ("noam", "fatigue"),
+        ("elias", "neutre"),
+    ])
+
+    elen content "Voilà ! Franchement, on s'en est bien sortis."
+    lysa blase "Tu as lancé un câble de maintenance dans la caisse de l'infirmerie."
+    elen "Une fois."
+    julian sourire "Et elle l'a repris."
+    lysa "Après avoir été regardée par quatre personnes."
+    elen "Ça compte quand même."
+
+    "Julian repart avec une caisse destinée à la cafétéria. Elen l'accompagne avec une autre, en continuant à défendre son bilan."
+
+    "Je reste avec Lysa pour finir les dernières caisses. Elias, lui, est assis un peu plus loin avec le terminal de stock posé sur un genou."
+
+    "Depuis quelques minutes, il ne range presque plus rien."
+
+    noam reflexion "Tu cherches quoi ?"
     elias "Attends."
-    "Il ouvre une caisse, pousse des câbles, referme, puis attrape la suivante."
-    lysa blase "Ça fait trois fois que tu ouvres celle-là."
+
+    "Il ouvre une caisse, pousse des câbles sur le côté, la referme, puis passe à la suivante."
+
+    lysa blase "Tu viens déjà de regarder là."
     elias fatigue "Je sais."
-    lysa "Je précise au cas où t'aurais développé une passion."
-    elias "Lysa."
-    lysa "Je me tais."
-    "Elle ne se tait pas vraiment, mais elle prend une caisse et s'éloigne de deux mètres."
+    lysa "D'accord."
+
     noam "Elias ?"
     elias ecoute "Les plaques."
     noam reflexion "Quelles plaques ?"
-    elias "Celles que j'ai utilisées hier pour les chambres."
+    elias "Celles que j'ai utilisées hier dans les dortoirs."
     noam "Les plaques métalliques ?"
     elias "Ouais."
-    "Il se relève et passe une main dans ses cheveux."
+
+    "Il se relève et regarde encore autour de lui."
+
     elias fatigue "J'en ai utilisé six."
-    lysa "Et elles se reproduisent normalement la nuit ?"
-    elias colere "Le stock les remplace."
-    lysa blase "C'était presque pareil."
-    "Elias l'ignore."
-    elias ecoute "Tout ce qu'on utilise ici revient dans la livraison suivante. Les pièces, les consommables, le matos de maintenance... tout."
-    noam reflexion "Automatiquement ?"
-    elias "Ouais. C'est pour ça qu'on commande rien nous-mêmes."
-    noam "Et elles devaient être là."
-    elias fatigue "Elles doivent être là."
-    lysa "Mais elles sont pas là."
-    elias "Merci."
-    lysa "Je résume."
-    elias "Résume moins."
-    "Il fait défiler l'inventaire du doigt, de plus en plus vite."
-    noam "Ça peut être une erreur."
-    elias "Nan."
-    noam "Pourquoi nan ?"
-    elias "Parce que les vis sont revenues."
-    "Il me montre une petite boîte encore fermée."
-    elias "Les forets aussi. Les fixations, pareil. Même le câble que j'ai utilisé l'autre jour est revenu."
-    noam reflexion "Donc le système a bien compté ce que t'as utilisé."
+    lysa "Et elles devaient revenir aujourd'hui ?"
+    elias "Ouais. Le Conclave remet automatiquement dans la livraison suivante ce qu'on utilise."
+    noam reflexion "Tout ?"
+    elias "Tout ce qui fait partie du stock. Les vis, les forets, les fixations, les câbles... les plaques aussi."
+
+    "Il attrape une petite boîte et me la montre."
+
+    elias "Ça, c'est revenu."
+    "Il en montre une autre."
+    elias "Ça aussi."
+    "Puis une troisième."
+    elias colere "Même ça."
+    noam "Mais pas les plaques."
     elias "Voilà."
-    "Il pose brutalement le terminal sur une caisse."
-    elias colere "Alors elles sont où, mes plaques ?"
-    lysa "Peut-être dans une autre caisse."
+
+    lysa blase "Elles sont peut-être au sas."
     elias "J'ai regardé."
-    lysa blase "Trois fois, oui."
-    "Elias lui lance un regard noir."
-    lysa "Pardon."
-    noam "On peut vérifier le bordereau complet ?"
-    elias fatigue "Tomas saura mieux faire."
-    noam "Je vais le chercher."
-    elias "Laisse. Il est encore au sas avec les listes."
-    "Il se relève aussitôt."
-    elias colere "Je vais lui demander."
-    lysa blase "Et nous ?"
-    elias "Vous rangez."
-    lysa "Chef, oui chef."
-    "Elias part sans répondre."
-    pause 0.3
-    noam reflexion "Ça l'énerve vraiment."
-    lysa "Quelqu'un a touché à son matos."
-    noam "Tu crois ?"
-    lysa blase "J'en sais rien. Je dis juste qu'Elias aime pas quand son compte tombe faux."
-    noam "Tu t'es vraiment déjà faite à l'idée qu'on reste ?"
-    "Elle s'arrête avec un carton entre les mains."
-    lysa fatigue "Non."
-    noam "Pourtant t'avais l'air de t'y attendre."
-    lysa "Je m'attendais surtout à ce qu'on nous fasse une dernière crasse."
-    noam inquiet "Ça te met pas en colère ?"
-    lysa blase "Si. Mais si je commence à casser des caisses, Elias va encore plus râler."
-    "Elle me tend le carton."
-    lysa "Médical."
-    noam "Tu pourrais au moins faire semblant d'être bouleversée."
-    lysa "Je peux aussi finir de ranger avant le dîner."
-    noam "Très émouvant."
-    lysa blase "Merci."
-    "Elle repart vers la porte."
-    think "Elle n'est pas surprise."
-    think "Pas parce qu'elle savait."
-    think "Juste parce qu'elle ne croyait pas vraiment qu'on nous laisserait partir sans problème."
+    noam "Dans une autre caisse ?"
+    elias "Aussi."
+
+    "Il fait défiler le terminal, agacé."
+
+    noam "Le registre dit quoi ?"
+    elias fatigue "Que six plaques ont été commandées automatiquement avec le reste."
+    noam "Et qu'elles sont arrivées ?"
+    elias "J'en sais rien. C'est justement ça que je veux vérifier."
+
+    lysa "Tomas est encore au sas avec les listes."
+    elias "Ouais."
+
+    "Elias se lève d'un coup."
+
+    elias colere "Je vais le voir."
+
+    lysa blase "Nous on continue ?"
+    elias "Ouais. Il reste trois cartons."
+
+    "Il attrape le terminal et part vers la porte."
+
+    # Retirer Elias du groupe déclenche l'animation de sortie définie par showGroup().
+    $ showGroup([
+        ("elen", "content"),
+        ("julian", "sourire"),
+        ("lysa", "blase"),
+        ("noam", "fatigue"),
+    ])
+
+    "Sa silhouette disparaît dans le couloir."
+
+    elen surpris "Il a perdu quoi ?"
+    noam "Des plaques de métal."
+    elen "Ah."
+    julian "Et c'est grave ?"
+    noam "Surtout agaçant, visiblement."
+    lysa blase "Très agaçant."
+
+    "Elen hausse les épaules et reprend un carton."
+
+    elen "Bon. Tant qu'il nous démonte pas les murs."
+
+    julian rire "Ne lui donne pas d'idée."
+
     $ hideGroup()
-    # Durée : ~2m30
-    # Total : ~8m40
+
+    # Durée : ~3m20
+    # Total : ~9m40
 
 label _21_0_1_1_0_0_MANIFESTE:
     scene sas1 at adaptive_fullscreen with dissolve
