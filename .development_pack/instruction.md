@@ -516,6 +516,14 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 - Les arguments ont des effets sur `debat_day3_apply_influence()` selon les personnages concernés.
 - Le vote final se joue sur l'écran `vote_screen` avec un `total_adhesion` calculé à partir des influences accumulées.
 
+## 7 bis. Roadmap — synchronisation obligatoire
+
+- **Toute nouvelle journée ajoutée au jeu doit être ajoutée immédiatement à `game/roadmap/roadmap_menu.rpy` dans le même travail.**
+- **Tout nouveau choix majeur, nouvelle divergence de route, nouveau vote, nouvelle scène importante ou nouvelle fin doit également être ajouté immédiatement à la roadmap.**
+- Ne jamais considérer une journée, une branche ou un choix comme terminé tant que son nœud roadmap n'existe pas et ne pointe pas vers le bon label.
+- Lors de l'ajout d'un nœud, renseigner au minimum : `id`, `title`, `short`, `label`, `category`, `kind`, `x`, `y`, `summary`, `choice`, `consequence`, `requires`, `required_variables` si nécessaire, et `teleportable`.
+- Vérifier que les dépendances `requires` correspondent réellement à la branche qui mène au nouveau contenu et que les variables de téléportation placent le jeu dans l'état attendu au début de la scène.
+
 ## 8. Règles générales à ne jamais enfreindre
 
 - **Ne pas réécrire ce qui est déjà canon.** Lire `scenario/` en premier, toujours.
