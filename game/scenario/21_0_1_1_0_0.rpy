@@ -895,6 +895,6 @@ label _21_0_1_1_0_0_FIN_JOURNEE:
     "Puis elle s'arrête."
     stop music fadeout 1.5
     call end_day("22") from _call_j21_stay_end_day_22
-    return
+    jump _22_0_1_1_0_0_REVEIL
     # Durée : ~1m20
     # Total : ~18m20
