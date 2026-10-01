@@ -591,56 +591,71 @@ label _21_0_1_1_0_0_RECUPERATION:
     "Tomas sourit malgré lui."
     $ hideGroup()
     scene bg_stockage at adaptive_fullscreen with dissolve
+
     "On passe ensuite par le stockage, puis par une réserve de maintenance que je n'avais jamais vraiment regardée."
     "Elias récupère des panneaux, des chutes de tôle et deux morceaux d'un ancien châssis. À chaque fois, Tomas vérifie qu'il ne démonte rien d'utile."
+
     $ showGroup([
-        ("lysa", "blase", 0.24),
-        ("elias", "fatigue", 0.50),
-        ("noam", "fatigue", 0.76),
+        ("mara", "taquin"),
+        ("ryn", "fatigue"),
+        ("elias", "fatigue"),
+        ("tomas", "reflexion"),
+        ("noam", "fatigue"),
     ])
-    "Lysa nous retrouve alors que nous traversons le stockage avec une plaque presque aussi grande qu'elle."
-    lysa blase "Je retire ce que j'ai dit."
-    noam "Sur quoi ?"
-    lysa "Les cartons, c'était mieux."
-    elias fatigue "Pousse-toi."
-    lysa "Charmant."
-    "Elle se décale juste assez pour nous laisser passer."
-    lysa reflexion "Vous avez retrouvé les plaques ?"
-    elias "Nan."
-    lysa "Donc ça, c'est quoi ?"
-    elias "Plan B."
-    lysa blase "Ça ressemble à une porte."
-    elias "C'était pas une porte."
-    noam fatigue "On sait pas vraiment ce que c'était."
-    lysa "Encore mieux."
-    elias colere "Ça servait à rien."
-    lysa "Tomas a validé ?"
-    noam "À contrecœur."
-    lysa blase "Alors j'ai toute confiance."
-    "Elle attrape le bord de la plaque."
-    lysa "Allez, donne."
-    elias surpris "Tu fais quoi ?"
-    lysa "Je vous aide."
-    elias "T'étais pas en train de ranger ?"
-    lysa "J'ai fini."
-    noam "Toute seule ?"
-    lysa "Non. J'ai dressé Elen."
-    noam taquin "Impressionnant."
-    lysa "Elle travaille très bien avec des récompenses alimentaires."
-    "On reprend à trois."
-    "Pendant quelques minutes, le problème des plaques devient presque une corvée normale. On râle sur le poids, sur les angles, sur Elias qui change d'avis toutes les trente secondes."
-    elias "Plus à gauche."
-    lysa colere "Y'a plus de gauche, mon bras est contre le mur."
-    elias "Alors tourne."
-    lysa "Avec quoi ? Mes hanches sont coincées."
-    noam "Je peux reculer."
-    elias "Non, si tu recules ça penche."
-    lysa blase "Excellent. On va mourir écrasés par un bout de métal inutile."
-    elias "Il est pas inutile."
-    lysa "Il l'était il y a dix minutes."
-    "Même Elias finit par sourire."
+
+    "On croise Mara et Ryn en sortant avec une plaque presque aussi large que le couloir."
+
+    mara taquin "Ah. Donc c'est ça, votre solution."
+    ryn fatigue "Vous allez faire quoi avec ce truc ?"
+    elias "Remplacer les plaques qui manquent."
+    mara "Celles de la livraison ?"
+    noam "Ouais."
+    ryn reflexion "Vous les avez pas retrouvées ?"
+    tomas "Non. Elles sont sur le bordereau d'arrivée, mais physiquement on n'a rien."
+    ryn "Bizarre."
+    elias colere "Merci."
+    mara taquin "Laisse-le, il vit très mal le deuil."
+    elias "Vous voulez aider ou juste parler ?"
+
+    "Ryn attrape aussitôt un bord de la plaque."
+
+    ryn "Donne."
+    noam surpris "Sérieux ?"
+    ryn fatigue "Ça pèse rien."
+
+    "Il soulève. Son expression change à peine, ce qui m'agace presque."
+
+    mara "Très bien, monsieur muscles. Moi je supervise."
+    elias "Non."
+    mara "Trop tard."
+
+    "À cinq dans le couloir, le transport devient surtout une question de ne pas se marcher dessus."
+
+    elias "Tournez."
+    ryn "Je tourne."
+    tomas "Pas autant !"
+    mara "Vous êtes catastrophiques."
+    noam "Tu peux vraiment aider, sinon."
+    mara "Je vous aide moralement."
+
+    ryn colere "Mara, pousse la porte."
+    mara blase "Voilà. On exploite toujours les compétences rares."
+
+    "Elle pousse la porte du stockage avec le pied et nous laisse passer."
+
+    "Une fois la plaque posée contre le mur, Ryn essuie ses mains sur son pantalon."
+
+    ryn "Si vous avez besoin de porter les autres, appelez-moi."
+    elias "Ouais."
+    mara taquin "Moi aussi."
+    elias "Non."
+
+    "Mara sourit et repart avec Ryn."
+
     $ hideGroup()
+
     # Durée : ~2m30
+
     # Total : ~13m30
 
 label _21_0_1_1_0_0_DORTOIRS:
