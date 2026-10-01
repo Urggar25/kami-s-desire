@@ -524,6 +524,14 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 - Lors de l'ajout d'un nœud, renseigner au minimum : `id`, `title`, `short`, `label`, `category`, `kind`, `x`, `y`, `summary`, `choice`, `consequence`, `requires`, `required_variables` si nécessaire, et `teleportable`.
 - Vérifier que les dépendances `requires` correspondent réellement à la branche qui mène au nouveau contenu et que les variables de téléportation placent le jeu dans l'état attendu au début de la scène.
 
+### Transitions de fin de journée et fluidité des scènes
+
+- **Si Noam se couche, s'endort, ferme les yeux pour dormir ou si la scène implique explicitement une nuit complète avant le lendemain, appeler `end_day(..., sleeping=True)`.** Le mode sans `sleeping=True` est réservé aux transitions où Noam reste conscient et où le changement de jour se fait sans ellipse de sommeil.
+- **Éviter le ping-pong de micro-répliques.** Une conversation naturelle ne doit pas devenir une suite mécanique de phrases d'une demi-ligne où chaque personnage répond immédiatement au précédent. Laisser parfois un personnage développer deux idées dans la même réplique, hésiter, se reprendre, être interrompu en cours de phrase ou ne pas obtenir de réponse.
+- **L'oralité ne signifie pas des phrases systématiquement courtes.** Les personnages peuvent parler en phrases plus longues, imparfaites, avec des reprises, des "enfin", "bah", "je sais pas", des corrections et des fragments. Chercher la respiration d'une vraie conversation plutôt qu'un rythme de punchlines.
+- **La narration doit toujours faire avancer une action, un déplacement, une perception ou une décision.** Si plusieurs paragraphes successifs répètent la même émotion ou la même information sans nouveau fait, condenser.
+- **Avant chaque scène, identifier ce qui doit avoir changé à la fin.** Si l'état narratif est identique après plusieurs échanges, la scène tourne probablement en rond et doit être raccourcie ou réorientée.
+
 ## 8. Règles générales à ne jamais enfreindre
 
 - **Ne pas réécrire ce qui est déjà canon.** Lire `scenario/` en premier, toujours.
