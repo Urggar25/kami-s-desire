@@ -195,7 +195,7 @@ label _26_0_1_1_0_0_SOIR:
 
     elias mefiant "Que je bossais."
 
-    noam "Où ?"
+    noam neutre "Où ?"
 
     elias neutre "Maintenance."
 
