@@ -656,8 +656,7 @@ label _22_0_1_1_0_0_FIN_JOURNEE:
     stop music fadeout 1.5
 
     call end_day("23", sleeping=True) from _call_j22_stay_end_day_23
-
-    return
+    jump _23_0_1_1_0_0_REVEIL
 
     # Durée : ~1m30
     # Total : ~20m30
