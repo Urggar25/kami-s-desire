@@ -59,7 +59,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     noam fatigue "Bonjour Mara."
 
-    mara "Voilà. Beaucoup mieux."
+    mara sourire "Voilà. Beaucoup mieux."
 
     "Elle me regarde par-dessus sa tasse, clairement trop contente d'elle-même."
 
@@ -67,7 +67,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     noam blase "Non."
 
-    mara "Dommage pour la dernière. Si t'as besoin d'une présence chaude, par contre..."
+    mara taquin "Dommage pour la dernière. Si t'as besoin d'une présence chaude, par contre..."
 
     noam colere "Mara."
 
@@ -79,7 +79,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     iris colere "Dans tes rêves, ouais."
 
-    mara "Oh, je rêve très bien toute seule."
+    mara taquin "Oh, je rêve très bien toute seule."
 
     "Je baisse les yeux vers mon assiette en regrettant déjà d'être venu m'asseoir ici."
 
@@ -87,7 +87,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     mara taquin "Bien sûr. On peut parler de tes fantômes."
 
-    noam "Super."
+    noam blase "Super."
 
     sael neutre "S'il en voit encore, on peut recommencer."
 
@@ -103,25 +103,25 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     mara rire "Oh putain, sa tête..."
 
-    sael "Un peu de sel, de l'eau. Cette fois on peut faire ça plus proprement."
+    sael raison "Un peu de sel, de l'eau. Cette fois on peut faire ça plus proprement."
 
     noam panique "Non. Non, y'a pas de 'cette fois'. Y'a plus de fois du tout."
 
     "Je recule ma chaise d'un coup."
 
-    sael "Tu paniques déjà."
+    sael neutre "Tu paniques déjà."
 
     noam colere "Parce que la dernière fois Ryn m'a bloqué contre un mur pendant que tu me balançais du sel dans la figure !"
 
     mara taquin "Moi je dis, sans Ryn ça peut devenir beaucoup plus intime."
 
-    noam "MARA !"
+    noam colere "MARA !"
 
     "Elle éclate de rire."
 
     tomas hesitation "Je... je crois qu'on peut raisonnablement dire qu'un deuxième exorcisme n'apporterait pas grand-chose de plus au premier."
 
-    noam "Merci. Voilà. Merci Tomas."
+    noam fatigue "Merci. Voilà. Merci Tomas."
 
     sael neutre "Le premier n'a peut-être pas suffi."
 
@@ -129,11 +129,11 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     elen inquiet "Sael, laisse-le respirer un peu..."
 
-    sael "Je le force pas."
+    sael neutre "Je le force pas."
 
-    noam "Tu viens de proposer de me jeter du sel dessus."
+    noam colere "Tu viens de proposer de me jeter du sel dessus."
 
-    sael "J'ai dit qu'on pouvait."
+    sael raison "J'ai dit qu'on pouvait."
 
     mara taquin "Et moi j'ai proposé autre chose, mais bizarrement personne retient mes bonnes idées."
 
@@ -141,9 +141,9 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     mara rire "Pas toujours."
 
-    iris "Mara..."
+    iris agace "Mara..."
 
-    mara "Quoi ? Il va survivre."
+    mara taquin "Quoi ? Il va survivre."
 
     "Iris souffle, puis se tourne vers moi plutôt que de continuer à la reprendre."
 
@@ -151,7 +151,7 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     noam inquiet "Après non plus."
 
-    sael "On verra."
+    sael taquin "On verra."
 
     noam panique "SAEL."
 
@@ -167,52 +167,52 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     iris blase "Continue et je te plante ta fourchette dans la main."
 
-    mara "Donc oui."
+    mara taquin "Donc oui."
 
-    noam "Iris..."
+    noam fatigue "Iris..."
 
-    iris "Je parle de la salle. Celle derrière les conduits."
+    iris reflexion "Je parle de la salle. Celle derrière les conduits."
 
     "Elias relève la tête."
 
-    iris "Elle existe. Et quand Noam et Mara l'ont trouvée, y'avait du matos de maintenance dedans. Du matos qui avait disparu avant, non ?"
+    iris reflexion "Elle existe. Et quand Noam et Mara l'ont trouvée, y'avait du matos de maintenance dedans. Du matos qui avait disparu avant, non ?"
 
     elias ecoute "Oh ? Tu veux dire celui que je cherchais y'a une dizaine de jours ?"
 
     tomas reflexion "Attends... Celui que tu avais perdu ?"
 
-    elias "Je ne les ai PAS perdus ! Elles se sont volatilisées !"
+    elias colere "Je ne les ai PAS perdus ! Elles se sont volatilisées !"
 
-    iris "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
+    iris raison "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
 
     mara taquin "Moi en zombie ? Et ça pourrait faire une belle idée de cosplay pour Halloween !"
 
-    noam "Tu peux vraiment pas t'en empêcher, hein..."
+    noam blase "Tu peux vraiment pas t'en empêcher, hein..."
 
     "Elias ne rit pas et Mara me fait un clin d'oeil. Il regarde son café, puis la table."
 
-    elias "Raah, n'empêche ça me fait bien chier de pas trouver ces foutues plaques en métal."
+    elias fatigue "Raah, n'empêche ça me fait bien chier de pas trouver ces foutues plaques en métal."
 
-    iris "Celles d'hier ?"
+    iris reflexion "Celles d'hier ?"
 
-    elias "Ouais. J'vais finir essayer de bricoler des plaques de fortune aujourd'hui."
-    elias "C'est pour ça que j'ai récupéré du matériel jusqu'à tard dans la nuit."
+    elias fatigue "Ouais. J'vais finir essayer de bricoler des plaques de fortune aujourd'hui."
+    elias fatigue "C'est pour ça que j'ai récupéré du matériel jusqu'à tard dans la nuit."
 
     "Il boit son café, pousse son plateau et se lève."
 
-    noam "Tu veux que je vienne ?"
+    noam reflexion "Tu veux que je vienne ?"
 
-    elias "Laisse. J'ai besoin d'aller vite et t'as tendance à poser des questions toutes les trente secondes."
+    elias fatigue "Laisse. J'ai besoin d'aller vite et t'as tendance à poser des questions toutes les trente secondes."
 
     noam taquin "Merci."
 
     elias fatigue "Tu sais que c'est vrai."
 
-    iris "Et dors à un moment. T'as une tête de merde."
+    iris agace "Et dors à un moment. T'as une tête de merde."
 
-    elias "J'ai dormi t'inquiète."
+    elias fatigue "J'ai dormi t'inquiète."
 
-    iris "Si t'as dormi que trois heures, c'est pas dormir."
+    iris fatigue "Si t'as dormi que trois heures, c'est pas dormir."
 
     "Il récupère sa caisse à outils près de la sortie et s'éloigne en levant la main."
 
@@ -230,9 +230,9 @@ label _22_0_1_1_0_0_CAFETERIA:
 
     mara taquin "Bon. Maintenant qu'on a réglé les fantômes, on revient sur ma proposition de présence chaude ?"
 
-    noam "Non."
+    noam blase "Non."
 
-    mara "Tu vois, Iris ? Il me brise le cœur."
+    mara taquin "Tu vois, Iris ? Il me brise le cœur."
 
     iris blase "Je vais pleurer."
 
@@ -270,45 +270,45 @@ label _22_0_1_1_0_0_MIDI:
         ("noam", "neutre", 0.76),
     ])
 
-    elen "Je crois que j'ai fait une erreur."
+    elen hesitation "Je crois que j'ai fait une erreur."
 
-    noam "Tu l'as ouvert."
+    noam blase "Tu l'as ouvert."
 
-    elen "Oui."
+    elen joie "Oui."
 
     julian sourire "Et maintenant nous découvrons une vérité terrible : ce sac était fermé grâce à une technologie ancienne qu'aucun de nous ne maîtrise."
 
     elen colere "Arrête de parler et appuie."
 
-    julian "J'appuie."
+    julian sourire "J'appuie."
 
-    elen "Plus."
+    elen colere "Plus."
 
-    julian "Je suis littéralement dessus."
+    julian fatigue "Je suis littéralement dessus."
 
     noam taquin "Vous avez besoin d'aide ?"
 
-    elen "Oui."
+    elen joie "Oui."
 
-    julian "Non."
+    julian sourire "Non."
 
     "Je m'approche quand même. À trois, on finit par fermer la fermeture éclair, et Elen récupère son sac avec un soupir de soulagement."
 
     elen content "Voilà. Je touche plus à rien jusqu'au départ."
 
-    noam "Le départ est dans huit jours."
+    noam reflexion "Le départ est dans huit jours."
 
-    elen "Je laverai des trucs à la main."
+    elen determine "Je laverai des trucs à la main."
 
     julian sourire "Ça, c'est de la conviction."
 
-    noam "Toi non plus t'as pas défait le tien ?"
+    noam reflexion "Toi non plus t'as pas défait le tien ?"
 
-    julian "Évidemment que non. Si Kami change encore d'avis demain, je veux pouvoir courir au sas avant qu'elle ait le temps de réfléchir."
+    julian sourire "Évidemment que non. Si Kami change encore d'avis demain, je veux pouvoir courir au sas avant qu'elle ait le temps de réfléchir."
 
-    elen "Elle réfléchit plus vite que toi."
+    elen taquin "Elle réfléchit plus vite que toi."
 
-    julian "Merci Elen."
+    julian blase "Merci Elen."
 
     "La discussion continue quelques minutes, juste assez pour que la journée ressemble à quelque chose de normal. Quand je repars, le silence du couloir me paraît presque plus étrange."
 
@@ -329,29 +329,29 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
         ("noam", "neutre", 0.65),
     ])
 
-    noam "Ah, t'étais là. J'allais finir par croire que t'avais démonté un mur entier."
+    noam taquin "Ah, t'étais là. J'allais finir par croire que t'avais démonté un mur entier."
 
     elias fatigue "J'ai essayé un truc. Ça marche pas."
 
     noam reflexion "Les plaques ?"
 
-    elias "Ouais. Celles qu'on a bricolées hier, c'est de la merde."
+    elias fatigue "Ouais. Celles qu'on a bricolées hier, c'est de la merde."
 
-    noam "Hier tu disais que ça tiendrait."
+    noam reflexion "Hier tu disais que ça tiendrait."
 
-    elias "Hier je voulais que ça tienne. C'est pas pareil."
+    elias fatigue "Hier je voulais que ça tienne. C'est pas pareil."
 
     "Il pose les deux morceaux de métal contre le mur avec un bruit sec."
 
-    elias "J'ai forcé dessus, les attaches bougent. Le métal se tord trop. Si quelqu'un pousse vraiment derrière, ça finit par lâcher."
+    elias raison "J'ai forcé dessus, les attaches bougent. Le métal se tord trop. Si quelqu'un pousse vraiment derrière, ça finit par lâcher."
 
     noam desaccord "On peut les doubler. Tu voulais faire ça, non ?"
 
     elias fatigue "Ouais, mais ça règle pas les fixations. Et j'vais pas passer deux jours à foutre trois couches de métal partout pour faire semblant que c'est solide."
 
-    noam "Même comme ça, c'est mieux que rien."
+    noam desaccord "Même comme ça, c'est mieux que rien."
 
-    elias "Non, parce que vous allez dormir en vous disant que c'est fermé. Moi je sais que ça l'est pas vraiment."
+    elias raison "Non, parce que vous allez dormir en vous disant que c'est fermé. Moi je sais que ça l'est pas vraiment."
 
     "Il se frotte le front avec le dos de la main."
 
@@ -359,14 +359,14 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam inquiet "Quand ?"
 
-    elias "Elle arrivera au jour vingt-huit en théorie."
-    elias "Mais je ne sais même pas si ça vaudra le coup de boucher l'aération pour les deux jours qu'il restera jusqu'au dernier jour..."
+    elias fatigue "Elle arrivera au jour vingt-huit en théorie."
+    elias reflexion "Mais je ne sais même pas si ça vaudra le coup de boucher l'aération pour les deux jours qu'il restera jusqu'au dernier jour..."
 
     noam surpris "Sérieux ?"
 
-    elias "Ouais. C'est la prochaine livraison où le stock métal revient."
+    elias neutre "Ouais. C'est la prochaine livraison où le stock métal revient."
 
-    noam "Donc ça arrive dans six jours alors."
+    noam inquiet "Donc ça arrive dans six jours alors."
 
     "Je regarde les plaques contre le mur. Hier encore, il était prêt à démonter la moitié de la station pour terminer."
 
@@ -374,27 +374,27 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     elias fatigue "Toujours rien. J'ai revérifié vite fait, j'ai rien trouvé."
 
-    noam "Même dans la salle dont Iris parlait ce matin ?"
+    noam reflexion "Même dans la salle dont Iris parlait ce matin ?"
 
     "Il me regarde une fraction de seconde."
 
-    elias "J'y suis pas allé."
+    elias neutre "J'y suis pas allé."
 
-    noam "Ah."
+    noam surpris "Ah."
 
-    elias "J'ai pas envie de ramper dans vos conduits pour chercher six bouts de métal. Si quelqu'un veut le faire, grand bien lui fasse."
+    elias fatigue "J'ai pas envie de ramper dans vos conduits pour chercher six bouts de métal. Si quelqu'un veut le faire, grand bien lui fasse."
 
     "Son ton est sec, mais après la journée d'hier je peux difficilement lui reprocher d'en avoir marre."
 
     noam fatigue "D'accord."
 
-    elias "Je vais enlever celles déjà posées avant que quelqu'un compte dessus pour rien."
+    elias neutre "Je vais enlever celles déjà posées avant que quelqu'un compte dessus pour rien."
 
-    noam "Tu veux de l'aide ?"
+    noam reflexion "Tu veux de l'aide ?"
 
-    elias "Non. Et cette fois c'est pas contre toi. J'ai juste envie de finir ça tout seul et de passer à autre chose."
+    elias fatigue "Non. Et cette fois c'est pas contre toi. J'ai juste envie de finir ça tout seul et de passer à autre chose."
 
-    noam "Ça marche."
+    noam neutre "Ça marche."
 
     "Il reprend les plaques et repart."
 
@@ -435,7 +435,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
         ("noam", "neutre"),
     ])
 
-    ryn "Ce qui me gonfle, c'est pas juste qu'on reste. C'est que quelqu'un a demandé ça et que depuis hier tout le monde fait comme si de rien n'était."
+    ryn colere "Ce qui me gonfle, c'est pas juste qu'on reste. C'est que quelqu'un a demandé ça et que depuis hier tout le monde fait comme si de rien n'était."
 
     nyra raison "Personne fait comme si de rien n'était. On a juste aucune preuve de qui a parlé à Kami, alors tu veux qu'on fasse quoi ? Qu'on se fouille les poches ?"
 
@@ -445,7 +445,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     iris blase "Évidemment."
 
-    mara "Je t'ai pas exclue."
+    mara taquin "Je t'ai pas exclue."
 
     iris colere "J'ai rien demandé."
 
@@ -511,7 +511,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     elen joie "Oh ! Bah... oui. Oui, évidemment !"
 
-    ryn "Ouais. Là, je vois même pas ce qu'on est censés discuter."
+    ryn reflexion "Ouais. Là, je vois même pas ce qu'on est censés discuter."
 
     sael raison "Un toit, de l'eau, à manger. C'est le minimum."
 
@@ -519,7 +519,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     iris blase "T'es vraiment incapable d'être sérieuse."
 
-    mara "Si. Au lit, parfois."
+    mara taquin "Si. Au lit, parfois."
 
     iris colere "Putain..."
 
@@ -553,9 +553,9 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     elen joie "Moi aussi ! À fond !"
 
-    sael "Oui."
+    sael raison "Oui."
 
-    iris "Ouais."
+    iris neutre "Ouais."
 
     mara taquin "Je vote pour tant qu'on me garantit un toit assez grand pour recevoir."
 
@@ -563,13 +563,13 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     mara rire "Qui."
 
-    noam "J'aurais pas dû demander."
+    noam blase "J'aurais pas dû demander."
 
     tomas hesitation "Moi je... oui. Je veux lire le texte, vraiment, mais si c'est bien ça, oui."
 
     julian joie "Vous voyez ?! Ça, c'est ce que je voulais depuis le début ! Une salle où, pour une fois, on part pas directement du principe qu'on va se détester."
 
-    nyra "Ne t'emballe pas. Le vote est dans deux jours."
+    nyra raison "Ne t'emballe pas. Le vote est dans deux jours."
 
     julian sourire "Je m'emballe exactement autant que je veux."
 
@@ -577,19 +577,19 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     iris blase "Tu fais quoi ?"
 
-    julian "Je prépare la campagne."
+    julian joie "Je prépare la campagne."
 
-    iris "Quelle campagne ? Tout le monde vient de dire oui."
+    iris blase "Quelle campagne ? Tout le monde vient de dire oui."
 
     julian rire "Et alors ? Ça veut dire que j'ai déjà un excellent départ."
 
-    mara "Oh non, il est heureux."
+    mara taquin "Oh non, il est heureux."
 
     julian joie "Très."
 
     "Il relève son téléphone comme s'il venait de recevoir une illumination."
 
-    julian "Il faut un slogan."
+    julian joie "Il faut un slogan."
 
     ryn fatigue "Bien sûr."
 
@@ -599,9 +599,9 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     julian joie "C'est parfait."
 
-    iris "C'est littéralement le texte."
+    iris blase "C'est littéralement le texte."
 
-    julian "Les meilleures idées sont souvent sous nos yeux."
+    julian sourire "Les meilleures idées sont souvent sous nos yeux."
 
     "Même Ryn sourit. Julian, lui, a déjà gagné sa journée."
 
@@ -611,7 +611,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     elias fatigue "Que c'est bien. Franchement, y'a quoi à ajouter ? Si les gens ont pas de toit, pas d'eau ou rien à bouffer, c'est qu'on a déjà merdé quelque part."
 
-    noam "Ouais."
+    noam neutre "Ouais."
 
     "Il reprend sa boisson sans rien dire de plus. Personne ne demande qui avait déposé l'amendement, et le sujet ne vient pas sur la table."
 
