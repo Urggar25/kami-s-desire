@@ -760,7 +760,7 @@ init -2 python:
             "choice": "Suite de la route « Je reste s'il y a encore une chance de le sortir. »",
             "consequence": "Elias est remplacé par son Doppelgänger, les plaques de fortune sont abandonnées et Kami annonce pour le jour 24 un Sixième Commandement sur le toit, l'eau et la nourriture.",
             "requires": ["day_21_kael_stay"],
-            "required_variables": {"j20_knife_choice": "drop", "j20_kael_depart_choice": "stay", "day_id": 22, "current_day": 22, "current_period": "Matin", "j22_elias_replaced": false, "j22_vote_announced": false},
+            "required_variables": {"j20_knife_choice": "drop", "j20_kael_depart_choice": "stay", "day_id": 22, "current_day": 22, "current_period": "Matin", "j22_elias_replaced": False, "j22_vote_announced": False},
             "teleportable": True,
         },
         {
