@@ -11,32 +11,27 @@ label _23_0_1_1_0_0_REVEIL:
     $ current_period = "Matin"
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.2
-    "Je me réveille avant l'alarme."
-    "Pas en sursaut. Pas à cause d'un bruit."
+    "Je me réveille avant l'alarme. Pas en sursaut. Pas à cause d'un bruit. Juste comme ça."
+    $ blink()
     "Juste les yeux ouverts, comme si mon corps avait décidé qu'il avait assez dormi alors que clairement non."
-    "Le bureau est toujours poussé contre la grille d'aération."
+    "Ce soir, je n'ai entendu aucun bruit. Aucun son, comme si ce qui hante les bouches d'aération avait préféré se taire."
     think "C'est ridicule."
-    "J'ai mal dormi, mais pas assez mal pour pouvoir accuser la fatigue de tout ce qui s'est passé."
+    "Pourtant, je suis sûr de l'avoir vu."
     think "Mara morte."
+    $ blink()
     "Je ferme les yeux."
     think "Mara vivante."
     "Je les rouvre aussitôt."
-    noam fatigue "Super."
-    "Je m'habille sans défaire complètement mon sac."
-    "Au bout de deux jours, ça commence à devenir un principe stupide."
-    "Je garde la moitié de mes affaires prêtes à partir, comme si Kami allait changer d'avis au milieu de la nuit et nous dire de courir au sas."
-    think "Jour vingt-trois."
-    "Sept jours."
-    "Je sors."
+    $ blink()
+    "Je m'habille sans défaire complètement mon sac. Prêt à partir au cas où Kami se décide à changer d'avis."
+    "Au bout de deux jours, ça commence à devenir un principe stupide. Il faut dire que ça n'arrivera jamais."
+    think "Raaah, plus que 7 jours et on sortira de cet enfer."
     # Durée : ~1m30
     # Total : ~1m30
 label _23_0_1_1_0_0_PETIT_DEJEUNER:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    "La cafétéria est déjà bruyante."
-    "Pas vraiment joyeuse. Juste vivante."
-    "Des couverts. Des chaises. Mara qui parle trop fort quelque part."
-    think "Donc une matinée normale."
+    "La cafétéria est déjà bruyante. Pas forcément joyeuse mais juste... Vivante."
     $ showGroup([
         ("mara", "taquin"),
         ("sael", "reflexion"),
