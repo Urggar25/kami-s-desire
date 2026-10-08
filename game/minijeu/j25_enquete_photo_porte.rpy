@@ -18,6 +18,21 @@ init python:
          "La couture tient encore. Le morceau qu'on a trouvé ne vient pas de là."),
     )
 
+    # Cadrage d'ouverture sur Mara, puis gros plan sur chaque détail.
+    _J25_VESTE_BASE_ZOOM = 2.05
+    _J25_VESTE_BASE_CENTER = (0.415, 0.575)
+    _J25_VESTE_FOCUS_ZOOM = 3.15
+
+    def _j25_veste_screen_rect(rect):
+        # Projection de la zone source dans le cadrage agrandi de départ.
+        # Les étoiles ET leurs zones de survol suivent la même projection.
+        x, y, w, h = rect
+        zoom = _J25_VESTE_BASE_ZOOM
+        cx, cy = _J25_VESTE_BASE_CENTER
+        px = 960 + (x - cx * 1920) * zoom
+        py = 540 + (y - cy * 1080) * zoom
+        return (int(px), int(py), int(w * zoom), int(h * zoom))
+
     def _j25_clamp_center(value, zoom):
         margin = 0.5 / zoom
         return max(margin, min(1.0 - margin, value))
@@ -62,11 +77,21 @@ init python:
             return [self.child]
 
     def _j25_focus(view, center=None):
-        if len(store.j25_veste_inspected) >= 3:
-            return
+        # Départ depuis le zoom courant pour un fondu de mouvement fluide,
+        # y compris si le curseur quitte la zone avant la fin du zoom.
+        target_zoom = _J25_VESTE_FOCUS_ZOOM if center else _J25_VESTE_BASE_ZOOM
+        target_center = center if center else _J25_VESTE_BASE_CENTER
         view.motion = (getattr(view, "draw_st", 0.0), view.zoom, view.center,
-                       2.0 if center else 1.0, center or (0.5, 0.5), center is not None)
+                       target_zoom, target_center, center is not None)
         renpy.redraw(view, 0)
+
+    def _j25_veste_complete(view, zone_id, comment):
+        if zone_id in store.j25_veste_inspected:
+            return
+        renpy.set_screen_variable("reaction", comment)
+        store.j25_veste_inspected = store.j25_veste_inspected + [zone_id]
+        if len(store.j25_veste_inspected) == 3:
+            _j25_focus(view)
 
     def _j25_capture_photo(view):
         # Une vue indépendante fige exactement le cadrage au déclenchement.
@@ -149,8 +174,9 @@ screen _j25_veste_screen(view):
     default reaction = "Il faut trouver où le tissu aurait pu s'arracher."
 
     for zone_id, rect, center, comment index zone_id in _J25_VESTE_ZONES:
+        $ hitbox = _j25_veste_screen_rect(rect)
         button:
-            xpos rect[0] ypos rect[1] xsize rect[2] ysize rect[3]
+            xpos hitbox[0] ypos hitbox[1] xsize hitbox[2] ysize hitbox[3]
             padding (0, 0)
             background None
             hover_background None
@@ -159,13 +185,13 @@ screen _j25_veste_screen(view):
             unhovered [SetScreenVariable("hovered", None), Function(_j25_focus, view)]
             action NullAction()
         if hovered == zone_id and len(j25_veste_inspected) < 3:
-            timer 0.9 action [SetScreenVariable("reaction", comment), SetVariable("j25_veste_inspected", j25_veste_inspected + ([] if zone_id in j25_veste_inspected else [zone_id]))]
+            timer 0.9 action Function(_j25_veste_complete, view, zone_id, comment)
         # Reflet discret au centre des zones encore à examiner.
         # Le marqueur disparaît au survol pour laisser voir le tissu.
         if zone_id not in j25_veste_inspected and hovered != zone_id:
             text "✦":
-                xpos (rect[0] + rect[2] // 2)
-                ypos (rect[1] + rect[3] // 2)
+                xpos (hitbox[0] + hitbox[2] // 2)
+                ypos (hitbox[1] + hitbox[3] // 2)
                 xanchor 0.5 yanchor 0.5
                 size 18 color "#D8F3E8"
                 at _j25_veste_sparkle((0.0, 0.85, 1.7)[("devant", "manche", "poignet").index(zone_id)])
@@ -338,7 +364,7 @@ screen _j25_knock_screen():
 
 label j25_examiner_veste:
     $ j25_veste_inspected = []
-    $ _j25_view = _J25View()
+    $ _j25_view = _J25View(zoom=_J25_VESTE_BASE_ZOOM, center=_J25_VESTE_BASE_CENTER)
     show expression _j25_view as j25_inspection_view onlayer master
     call screen _j25_veste_screen(_j25_view)
     $ j25_veste_inspected = _return
