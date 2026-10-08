@@ -596,14 +596,30 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
     iris faible "Tu m'excuseras mais je touche pas à ça moi. Je te laisse fouiller, dis moi quand tu trouves ce que tu veux."
 
     "Iris s'éloigne de quelques mètres et me laisse près du corps."
-    think "Raah la couleur correspond, ça ressemble à l'avant de sa veste mais il n'y a aucun bout manquant !"
+    $ hideGroup()
+    scene bg_cg040 at adaptive_fullscreen with dissolve
+    call j25_examiner_veste from _call_j25_examiner_veste
+
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "reflechit", 0.36),
+        ("iris", "faible", 0.66),
+    ])
 
     iris faible "... Alors ?"
 
     "Je cadre le corps en tenant la lampe fermement. Je sors la tablette que je garde sur moi."
     think "Elle a bien une fonction d'appareil photo, non ?"
 
-    play sound sfx_photo
+    $ hideGroup()
+    scene bg_cg040 at adaptive_fullscreen with dissolve
+    call j25_prendre_photo from _call_j25_prendre_photo
+
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "faible", 0.36),
+        ("iris", "fatigue", 0.66),
+    ])
 
     "Iris se rapproche et regarde par-dessus mon bras. Elle serre les lèvres en voyant la photo et détourne la tête."
 
@@ -1143,7 +1159,10 @@ label _25_0_1_1_0_0_SOIR:
 
     think "La chambre d'Iris est là. Quel était le mot de passe, déjà ?"
 
-    # Minijeu sur le mot de passe ou il faut toquer en rythme : 3 rythhme rapides ; puis 2 rythmes lents
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    call j25_toquer_iris from _call_j25_toquer_iris
+
+    "Le verrou se déclenche. Iris entrouvre la porte et s'écarte pour me laisser passer."
 
     stop music fadeout 1.5
 

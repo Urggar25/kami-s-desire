@@ -820,7 +820,7 @@ init -2 python:
             "kind": "day",
             "x": 12240,
             "y": 930,
-            "summary": "Iris et Noam retournent dans les conduits après avoir retrouvé un morceau de la veste de Mara. Iris découvre à son tour le corps de Mara alors que sa copie circule toujours dans le Conclave.",
+            "summary": "Iris et Noam retournent dans les conduits après avoir retrouvé un morceau de la veste de Mara. Iris découvre à son tour le corps de Mara alors que sa copie circule toujours dans le Conclave. Le joueur examine la veste intacte, cadre une photographie, puis reproduit le signal frappé à la porte d'Iris.",
             "choice": "Garder temporairement la découverte secrète pour éviter d'alerter les imposteurs.",
             "consequence": "L'existence d'au moins un remplacement devient incontestable. Kami annonce parallèlement le vote du jour 27.",
             "requires": ["vote_vital_needs_j24"],
