@@ -1327,7 +1327,7 @@ init -2 python:
         renpy.save_persistent()
         # Crucial: reset every default variable, not only the few in
         # required_variables. Also removes stale outfit locks and flags.
-        renpy.full_restart(transition=False, label="start", target="start")
+        renpy.full_restart(transition=None)
 
     def roadmap_restore_clean_jump():
         """Called from start, after the store has been recreated."""
@@ -1402,6 +1402,14 @@ label roadmap_perform_teleport:
     if _roadmap_target:
         $ roadmap_target_node_id = None
         $ roadmap_queue_clean_jump(_roadmap_target)
+    return
+
+# After full_restart Ren'Py normally shows the main menu. For a queued
+# roadmap transfer we press the normal Start action automatically, so that
+# Ren'Py creates a fresh game context before restoring the destination.
+label before_main_menu:
+    if getattr(persistent, "kd_roadmap_transfer", None):
+        $ renpy.run(Start())
     return
 
 ################################################################################
