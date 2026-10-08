@@ -3,10 +3,13 @@
 init python:
     import math
 
+    # Each pan prioritizes the upper part of the CG (characters' faces),
+    # instead of drifting toward torsos or empty corners of the scene.
+    # Normalized coordinates refer to the original 1920x1080 CG.
     _KD_CP_SHOTS = (
-        ("bg_cg006", (0.48, 0.52), (0.60, 0.43)),
-        ("bg_cg014", (0.52, 0.55), (0.38, 0.61)),
-        ("bg_cg025", (0.50, 0.52), (0.64, 0.57)),
+        ("bg_cg006", (0.47, 0.36), (0.53, 0.29)),
+        ("bg_cg014", (0.47, 0.32), (0.43, 0.26)),
+        ("bg_cg025", (0.51, 0.34), (0.56, 0.29)),
     )
 
     def kd_cp_state(seconds):
