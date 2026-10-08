@@ -8,30 +8,38 @@ init python:
     import time as _j25_time
     import math as _j25_math
 
-    # Coordonnées dans le cadre 1920 × 1080 de bg_cg040.
-    _J25_VESTE_ZONES = (
-        ("devant", (786, 563, 89, 55), (0.433, 0.547),
-         "La couleur est exactement la même. Mais ici, il ne manque rien."),
-        ("manche", (730, 617, 70, 36), (0.395, 0.586),
-         "Non... Le tissu de la manche est intact. Pas de déchirure."),
-        ("poignet", (812, 648, 42, 32), (0.433, 0.616),
-         "La couture tient encore. Le morceau qu'on a trouvé ne vient pas de là."),
-    )
-
-    # Cadrage d'ouverture sur Mara, puis gros plan sur chaque détail.
+    # Positions repérées sur la capture du joueur (1657x923), converties
+    # en coordonnées d'écran Ren'Py 1920x1080. Les hotspots restent fixes
+    # pendant le zoom, pour que le curseur ne perde pas la cible.
     _J25_VESTE_BASE_ZOOM = 2.05
     _J25_VESTE_BASE_CENTER = (0.415, 0.575)
     _J25_VESTE_FOCUS_ZOOM = 3.15
 
-    def _j25_veste_screen_rect(rect):
-        # Projection de la zone source dans le cadrage agrandi de départ.
-        # Les étoiles ET leurs zones de survol suivent la même projection.
-        x, y, w, h = rect
-        zoom = _J25_VESTE_BASE_ZOOM
-        cx, cy = _J25_VESTE_BASE_CENTER
-        px = 960 + (x - cx * 1920) * zoom
-        py = 540 + (y - cy * 1080) * zoom
-        return (int(px), int(py), int(w * zoom), int(h * zoom))
+    # (id, centre à l'écran, taille de la cible, commentaire)
+    _J25_VESTE_ZONES = (
+        ("devant", (848, 295), (64, 58),
+         "La couleur est exactement la même. Mais ici, il ne manque rien."),
+        ("manche", (824, 568), (76, 64),
+         "Non... Le tissu de la manche est intact. Pas de déchirure."),
+        ("poignet", (1080, 501), (72, 58),
+         "La couture tient encore. Le morceau qu'on a trouvé ne vient pas de là."),
+    )
+    # Interaction cachée à hauteur de la zone jaune : ne compte pas dans les 3.
+    _J25_VESTE_BONUS = (997, 351)
+    _J25_VESTE_BONUS_SIZE = (76, 70)
+
+    def _j25_veste_hitbox(point, size):
+        return (point[0] - size[0] // 2, point[1] - size[1] // 2,
+                size[0], size[1])
+
+    def _j25_veste_source_center(point):
+        # Convertit un point du cadrage de départ en point normalisé
+        # de l'image CG, afin de zoomer précisément sur le détail survolé.
+        x = (_J25_VESTE_BASE_CENTER[0] * 1920
+             + (point[0] - 960) / _J25_VESTE_BASE_ZOOM)
+        y = (_J25_VESTE_BASE_CENTER[1] * 1080
+             + (point[1] - 540) / _J25_VESTE_BASE_ZOOM)
+        return (x / 1920.0, y / 1080.0)
 
     def _j25_clamp_center(value, zoom):
         margin = 0.5 / zoom
@@ -173,28 +181,42 @@ screen _j25_veste_screen(view):
     default hovered = None
     default reaction = "Il faut trouver où le tissu aurait pu s'arracher."
 
-    for zone_id, rect, center, comment index zone_id in _J25_VESTE_ZONES:
-        $ hitbox = _j25_veste_screen_rect(rect)
+    for zone_id, point, size, comment index zone_id in _J25_VESTE_ZONES:
+        $ hitbox = _j25_veste_hitbox(point, size)
+        $ focus_center = _j25_veste_source_center(point)
         button:
             xpos hitbox[0] ypos hitbox[1] xsize hitbox[2] ysize hitbox[3]
             padding (0, 0)
             background None
             hover_background None
-            sensitive len(j25_veste_inspected) < 3
-            hovered [SetScreenVariable("hovered", zone_id), Function(_j25_focus, view, center)]
+            sensitive zone_id not in j25_veste_inspected and len(j25_veste_inspected) < 3
+            hovered [SetScreenVariable("hovered", zone_id), Function(_j25_focus, view, focus_center)]
             unhovered [SetScreenVariable("hovered", None), Function(_j25_focus, view)]
             action NullAction()
-        if hovered == zone_id and len(j25_veste_inspected) < 3:
+        if hovered == zone_id and zone_id not in j25_veste_inspected:
             timer 0.9 action Function(_j25_veste_complete, view, zone_id, comment)
-        # Reflet discret au centre des zones encore à examiner.
-        # Le marqueur disparaît au survol pour laisser voir le tissu.
+        # Les étoiles sont purement indicatives, pas des boutons.
         if zone_id not in j25_veste_inspected and hovered != zone_id:
             text "✦":
-                xpos (hitbox[0] + hitbox[2] // 2)
-                ypos (hitbox[1] + hitbox[3] // 2)
+                xpos point[0] ypos point[1]
                 xanchor 0.5 yanchor 0.5
                 size 18 color "#D8F3E8"
                 at _j25_veste_sparkle((0.0, 0.85, 1.7)[("devant", "manche", "poignet").index(zone_id)])
+
+    # Quatrième zone invisible : réaction bonus, sans valider un détail.
+    $ bonus_hitbox = _j25_veste_hitbox(_J25_VESTE_BONUS, _J25_VESTE_BONUS_SIZE)
+    if len(j25_veste_inspected) < 3:
+        button:
+            xpos bonus_hitbox[0] ypos bonus_hitbox[1]
+            xsize bonus_hitbox[2] ysize bonus_hitbox[3]
+            padding (0, 0)
+            background None
+            hover_background None
+            hovered [SetScreenVariable("hovered", "bonus"), Function(_j25_focus, view, _j25_veste_source_center(_J25_VESTE_BONUS))]
+            unhovered [SetScreenVariable("hovered", None), Function(_j25_focus, view)]
+            action NullAction()
+        if hovered == "bonus":
+            timer 0.9 action SetScreenVariable("reaction", "Non mais à quoi je pense moi...")
 
     frame:
         xpos 50 ypos 35 padding (24, 16)
