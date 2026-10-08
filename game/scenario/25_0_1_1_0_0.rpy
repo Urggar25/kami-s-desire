@@ -872,7 +872,7 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
 
     noam neutre "Je sais."
 
-    iris desespoir "Je pensais que t'avais vu quelque chose, que t'étais épuisé, que ton cerveau avait mélangé..."
+    iris peur "Je pensais que t'avais vu quelque chose, que t'étais épuisé, que ton cerveau avait mélangé..."
 
     noam fatigue "Je sais."
 
@@ -884,7 +884,7 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
 
     noam inquiet "Oui."
 
-    iris desespoir "Elle m'a parlé."
+    iris peur "Elle m'a parlé."
 
     noam neutre "Oui."
 
@@ -925,7 +925,6 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
     "Ce n'est plus seulement de la peur. Quelque chose vient de céder dans la dernière explication raisonnable qu'elle pouvait encore conserver."
 
     $ j25_double_proof = True
-    $ investigation_add("preuve_mara_double")
 
     iris faible "Donc t'as pas halluciné."
 
@@ -1555,7 +1554,7 @@ label _25_0_1_1_0_0_SOIR:
 
     noam neutre "Oui."
 
-    mara blase "Tu mens mal."
+    mara neutre "Tu mens mal."
 
     noam taquin "On me le dit souvent."
 
