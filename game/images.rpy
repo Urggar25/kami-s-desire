@@ -507,6 +507,7 @@ init python:
         "detendu": ("corps", "bras_reflexion", "bouche_sourire", "yeux_neutre"),
         "decontracte": ("corps", "bras_reflexion", "bouche_sourire", "yeux_content"),
         "colere": ("corps", "bras_croise", "bouche_inquiet", "yeux_reflexion"),
+        "agace": ("corps", "bras_croise", "bouche_surpris", "yeux_inquiet"),
     }
 
     def _julian_asset(name):
@@ -548,6 +549,7 @@ image julian inquietude         = julian_expression("inquiet")
 image julian joie               = julian_expression("joie")
 image julian neutre             = julian_expression("neutre")
 image julian panne              = julian_expression("panne")
+image julian agace              = julian_expression("agace")
 image julian peur               = julian_expression("peur")
 image julian reflexion          = julian_expression("reflexion")
 image julian reflechit          = julian_expression("reflexion")
@@ -740,6 +742,7 @@ image tomas hoche_la_tete       = tomas_expression("hoche_la_tete")
 image tomas inquiet             = tomas_expression("inquiet")
 image tomas joie                = tomas_expression("joie")
 image tomas mefiant             = tomas_expression("mefiant")
+image tomas agace             = tomas_expression("mefiant")
 image tomas neutre              = tomas_expression("neutre")
 image tomas panne               = tomas_expression("panne")
 image tomas peur                = tomas_expression("peur")
