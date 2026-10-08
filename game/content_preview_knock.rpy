@@ -5,12 +5,12 @@
 
 init python:
     # Relative timings of each demonstration. Each entry is a press (start, duration).
-    # Visual "long" emphasis represents the slower spacing between knocks,
-    # matching the actual minigame's timing-based rule.
+    # Long simulated holds emphasize the slower spacing between knocks,
+    # while the actual minigame validates spacing rather than hold duration.
     _KD_KNOCK_BAD = ((0.85, 0.16), (1.16, 0.16), (1.48, 0.16),
                      (1.80, 0.16), (2.10, 0.16))
     _KD_KNOCK_GOOD = ((0.70, 0.15), (1.04, 0.15), (1.39, 0.15),
-                      (2.49, 0.22), (3.66, 0.22))
+                      (2.49, 0.56), (3.66, 0.56))
 
     def kd_kp_beats(t, beats):
         return sum(1 for start, dur in beats if t >= start + dur)
