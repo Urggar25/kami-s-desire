@@ -204,6 +204,10 @@ image elias mefiant              = elias_expression("mefiant")
 # ======================
 # MARA
 # ======================
+# Ce verrou est activé exclusivement dans la route 0_1_1_0 au J20.
+# Il ne modifie ni les expressions du visage ni les poses de bras.
+default mara_dg_body_locked = False
+
 init python:
     MARA_IMAGE_SIZE = (1024, 1536)
     MARA_IMAGE_SCALE = 0.60
@@ -241,6 +245,11 @@ init python:
 
     def _mara_layered_expression(st, at, expr):
         body, arms, mouth, eyes = MARA_EXPRESSIONS[expr]
+
+        # Forçage du calque corps pour Mara-DG, sans changer les bras normaux.
+        # Le test du jour évite toute apparition anticipée (rollback / état ancien).
+        if store.mara_dg_body_locked and getattr(store, "current_day", 0) >= 20:
+            body = "corps_dg"
 
         blink_phase = st % 4.8
         if 4.52 <= blink_phase <= 4.68:
