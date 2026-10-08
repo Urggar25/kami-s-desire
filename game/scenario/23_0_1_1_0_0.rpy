@@ -1,993 +1,1038 @@
-# =============================================================================
-# JOUR 23 — RIEN DANS SA TÊTE
-# Route 0_1_1_0_0
-#
-# Sael s'inquiète réellement des visions de Noam et lui fait passer une batterie
-# d'examens. Iris impose sa présence. Tout revient normal.
-# =============================================================================
 label _23_0_1_1_0_0_REVEIL:
     $ current_day = 23
     $ day_id = 23
     $ current_period = "Matin"
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.2
-    "Je me réveille avant l'alarme. Pas en sursaut. Pas à cause d'un bruit. Juste comme ça."
-    $ blink()
-    "Juste les yeux ouverts, comme si mon corps avait décidé qu'il avait assez dormi alors que clairement non."
-    "Ce soir, je n'ai entendu aucun bruit. Aucun son, comme si ce qui hante les bouches d'aération avait préféré se taire."
-    think "C'est ridicule."
-    "Pourtant, je suis sûr de l'avoir vu."
-    think "Mara morte."
-    $ blink()
-    "Je ferme les yeux."
-    think "Mara vivante."
-    "Je les rouvre aussitôt."
-    $ blink()
-    "Je m'habille sans défaire complètement mon sac. Prêt à partir au cas où Kami se décide à changer d'avis."
-    "Au bout de deux jours, ça commence à devenir un principe stupide. Il faut dire que ça n'arrivera jamais."
-    think "Raaah, plus que 7 jours et on sortira de cet enfer."
-    # Durée : ~1m30
-    # Total : ~1m30
+
+    "Je me réveille avant l'alarme."
+    "Pas à cause d'un bruit, cette fois. Justement."
+    "Je reste allongé quelques secondes à écouter la chambre, puis les conduits. Rien."
+
+    think "J'ai dormi normalement. Ça faisait longtemps."
+
+    "Le bureau est toujours coincé devant la grille. Mon sac est encore prêt au pied du lit."
+    "Sept jours avant de partir, si Kami tient parole et si personne ne trouve une nouvelle façon de tout faire dérailler."
+
+    "Je m'habille et passe devant le miroir."
+    "J'ai mauvaise mine. Rien de nouveau."
+
+    think "Mara morte derrière les conduits. Mara vivante hier soir. Il y a forcément une explication entre les deux."
+
+    "Je préfère aller manger avant de recommencer à tourner en rond."
+
+    # Durée : ~1m00
+    # Total : ~1m00
+
+
 label _23_0_1_1_0_0_PETIT_DEJEUNER:
+    call MAYBE_PLAY_SCRIPTED_DOOR("bg_cafeteria", "bg_cafeteria")
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    "La cafétéria est déjà bruyante. Pas forcément joyeuse mais juste... Vivante."
+
+    "La cafétéria est déjà bien remplie. Elias se plaint du café, Mara parle trop fort et Iris a l'air de regretter d'être réveillée."
+
     $ showGroup([
         ("mara", "taquin"),
         ("sael", "reflexion"),
         ("iris", "fatigue"),
         ("noam", "fatigue"),
     ])
-    mara taquin "Ah, voilà le revenant."
+
+    mara taquin "Tiens, le mort-vivant."
+
     noam blase "Bonjour Mara."
-    mara sourire "Bonjour Noam. T'as une tête de merde."
-    iris fatigue "Elle a raison."
-    noam fatigue "Merci, vous êtes adorables."
-    mara taquin "Moi je peux être beaucoup plus adorable si tu demandes gentiment."
-    iris blase "On mange."
-    mara rire "J'ai rien proposé de sale."
-    iris neutre "T'allais le faire."
-    mara taquin "Oui, mais tu m'as coupée. C'est frustrant."
-    "Je m'assois avec mon plateau."
-    "Sael ne touche presque pas au sien."
-    "Elle me regarde."
-    "Pas discrètement."
+
+    mara sourire "T'as une tête affreuse. Et là je suis gentille."
+
+    iris fatigue "Elle a raison. T'as dormi combien de temps ?"
+
+    noam neutre "Assez pour savoir que vous êtes insupportables dès le matin."
+
+    "Je m'assois. Mara sourit. Iris recommence à manger."
+    "Sael, elle, me fixe depuis que je suis arrivé."
+
     noam reflexion "Quoi ?"
-    sael reflexion "T'as encore mal dormi."
-    noam blase "Vous avez préparé ça ensemble ?"
-    iris fatigue "Non, c'est juste très visible."
-    mara taquin "On dirait que t'as passé la nuit avec quelqu'un de violent."
-    noam neutre "Mara..."
-    mara rire "Quoi ? Ça peut arriver."
-    sael inquiet "Je parle sérieusement."
-    "Mara finit par se taire."
-    "Ça suffit à me faire regarder Sael autrement."
-    noam reflexion "D'accord. Qu'est-ce qu'il y a ?"
-    sael raison "Je veux que tu viennes à l'infirmerie."
-    noam surpris "Pourquoi ?"
-    sael neutre "Pour te tester."
-    noam blase "Dit comme ça, c'est rassurant."
-    mara taquin "Moi aussi je peux le tester."
-    iris colere "Mara."
-    mara sourire "Là, oui, c'était sale."
-    sael desaccord "Je parle de sa tête."
-    noam reflexion "Ma tête va très bien."
-    sael fatigue "Tu sais pas."
-    noam neutre "Si."
-    sael neutre "Non."
-    sael raison "Tu dis que t'as vu quelqu'un mort. Puis vivant. Tu dis que t'as entendu des choses dans les conduits. T'as eu des trous dans tes souvenirs avant."
-    noam inquiet "J'ai pas dit que j'avais des trous de mémoire maintenant."
-    sael neutre "J'ai pas dit maintenant."
-    iris reflexion "Tu penses à quoi exactement ?"
-    sael neutre "Manque d'oxygène. Choc. Traumatisme. Un truc neurologique. Je sais pas."
-    mara reflexion "Ou possession."
-    noam colere "Non."
-    sael colere "Non."
-    mara rire "D'accord, d'accord."
-    iris reflexion "Tu peux vérifier tout ça ici ?"
-    sael raison "Une partie. Pupilles, réflexes, mémoire, perception. Y'a aussi l'IRM."
-    noam surpris "Attends."
-    iris neutre "Quoi ?"
-    noam inquiet "On est passés de 't'as une sale tête' à 'on te met dans une machine'."
-    sael neutre "Oui."
-    noam neutre "Très progressivement."
-    sael neutre "T'as peur de l'IRM ?"
-    noam blase "Non."
-    iris taquin "Il a peur de l'IRM."
-    noam colere "J'ai pas peur de l'IRM."
-    mara taquin "T'inquiète, si t'as besoin de tenir une main..."
-    noam fatigue "Je vais me lever."
-    mara rire "J'allais dire Iris."
-    iris surpris "Pardon ?"
-    mara neutre "Regarde-la, elle s'est déjà portée volontaire dans sa tête."
-    iris colere "Je me porte volontaire pour te jeter ton café dessus."
-    sael fatigue "Vous pouvez vous taire deux secondes ?"
-    "Ça tombe assez sec pour que même Mara baisse d'un ton."
-    sael inquiet "Je veux juste vérifier qu'il a rien."
-    noam reflexion "Sael..."
-    sael neutre "Parce que si t'as rien..."
-    "Elle s'arrête."
-    iris reflexion "Si ?"
-    sael peur "Alors ça veut dire que ce que t'as vu vient peut-être pas de toi."
-    "Personne ne plaisante."
-    noam inquiet "Tu crois vraiment que je peux halluciner à ce point ?"
-    sael fatigue "Je préfère ça à l'autre possibilité."
-    "C'est dit simplement."
-    "Presque trop."
-    "Je comprends alors qu'elle n'essaie pas de prouver que je suis fou."
-    "Elle essaie de se rassurer."
-    noam fatigue "D'accord."
-    sael surpris "D'accord quoi ?"
-    noam neutre "On fait les tests."
-    iris determine "Je viens."
-    sael neutre "Pourquoi ?"
-    iris blase "Parce que je te connais."
-    sael desaccord "Ça veut dire quoi ?"
-    iris neutre "Que la dernière fois que t'as voulu régler un problème mystique, Ryn a fini par maintenir Noam contre un mur."
-    noam colere "Merci de rappeler ça."
-    sael fatigue "J'ai dit que c'était médical."
-    iris neutre "Je viens quand même."
-    sael neutre "J'ai pas besoin d'assistante."
-    iris agace "Je suis pas ton assistante."
-    mara taquin "Elle est la garde du corps du patient."
-    noam blase "J'ai rien demandé."
-    iris fatigue "Toi, tais-toi. T'as accepté l'IRM."
-    noam neutre "J'ai accepté des tests."
-    sael raison "L'IRM est un test."
-    noam neutre "Je déteste déjà cette journée."
-    mara sourire "Moi je l'aime bien."
-    "Mara pique un morceau dans mon assiette."
-    noam colere "Eh !"
-    mara taquin "Tu vas être à jeun pour l'IRM."
-    sael desaccord "Non."
-    mara rire "Merde."
-    iris taquin "Bien essayé."
-    "Malgré moi, je souris."
-    "Ça dure deux secondes."
-    "Puis je repense à la raison pour laquelle on va à l'infirmerie."
+
+    sael neutre "T'as entendu les bruits cette nuit ?"
+
+    "Je baisse légèrement ma fourchette."
+
+    noam desaccord "Non. Rien."
+
+    mara taquin "Le monstre avait peut-être congé."
+
+    iris agace "Tu peux arrêter avec ça ?"
+
+    "Mara lève les mains, mais Sael n'a pas souri."
+
+    sael raison "Je veux te faire passer des examens."
+
+    noam surpris "Des examens ?"
+
+    sael neutre "À l'infirmerie."
+
+    noam reflexion "Pourquoi maintenant ?"
+
+    sael raison "Parce que t'as eu de la fièvre, des trous de mémoire, et que maintenant tu vois des choses que personne d'autre ne voit."
+
+    "Mara arrête de jouer avec sa tasse."
+
+    sael "Je ne sais pas trop ce que tu as vu, alors je veux vérifier que tu vas bien."
+
+    noam inquiet "Tu penses que je deviens fou ?"
+
+    sael desaccord "J'ai dit l'inverse. Je veux vérifier."
+
+    "Je la regarde, pas vraiment convaincu."
+
+    sael raison "Fatigue extrême. Problème de vision. Manque d'oxygène. Traumatisme. Il y a des dizaines de causes possibles."
+
+    iris reflexion "Et tu sais vraiment vérifier ça ?"
+
+    sael fatigue "Une partie, oui. Pour le reste, il y a l'imagerie."
+
+    noam surpris "L'imagerie ?"
+
+    sael neutre "L'infirmerie est équipée d'une sorte d'IRM."
+
+    noam inquiet "Attends. Tu veux vraiment me mettre dans cette machine ?"
+
+    mara taquin "Moi je veux voir les résultats. Je suis sûre qu'il y a des trucs sales là-dedans."
+
+    iris blase "Toi, tu ne viens pas."
+
+    mara sourire "J'ai rien demandé."
+
+    iris determine "Moi, par contre, je viens."
+
+    sael desaccord "J'ai pas besoin de toi."
+
+    iris "La dernière fois que t'as voulu aider Noam avec tes histoires de signes, Ryn l'a plaqué contre un mur et vous l'avez couvert de sel."
+
+    sael colere "J'ai jamais demandé à Ryn de le plaquer contre un mur."
+
+    iris "Super. Ça me rassure énormément."
+
+    "Sael souffle par le nez."
+
+    sael fatigue "Tu vas râler pendant tout l'examen."
+
+    iris blase "Oui."
+
+    noam neutre "Je suis ravi que tout le monde ait déjà décidé pour moi."
+
+    sael reflexion "Alors décide."
+
+    "Le ton change. Plus personne ne plaisante."
+
+    sael "Tu veux savoir si ce que t'as vu peut venir de toi ou pas ?"
+
+    "Je regarde Mara. Elle évite mes yeux."
+
+    noam fatigue "Oui."
+
+    "Sael hoche la tête."
+
+    sael raison "Alors on y va après."
+
+    mara taquin "Et moi je reste ici comme une pauvre victime ?"
+
+    iris colere "Exactement."
+
+    "Mara lui adresse un doigt d'honneur. Je souris malgré moi."
+
     $ hideGroup()
-    # Durée : ~4m00
-    # Total : ~5m30
-label _23_0_1_1_0_0_INFIRMERIE_ENTREE:
+
+    # Durée : ~3m00
+    # Total : ~4m00
+
+
+label _23_0_1_1_0_0_INFIRMERIE:
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie2", "infirmerie2")
     scene infirmerie2 at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
-    "L'infirmerie sent toujours pareil."
-    "Propre. Trop propre."
-    "Je m'assois sur le bord d'un lit pendant que Sael fouille dans un tiroir."
+
+    "Quelques minutes plus tard, je suis assis sur un lit pendant que Sael prépare son matériel."
+    "Iris reste contre le mur, les bras croisés."
+
     $ showGroup([
         ("sael", "raison", 0.22),
         ("iris", "blase", 0.50),
         ("noam", "fatigue", 0.76),
     ])
-    noam reflexion "Tu sais vraiment utiliser tout ça ?"
+
+    noam reflexion "Tu sais vraiment ce que tu fais ?"
+
     sael desaccord "Oui."
-    iris taquin "Réponse très rassurante."
-    sael colere "J'ai déjà travaillé ici."
-    noam surpris "Quand ?"
-    sael reflexion "Quand Anya était là. Et avant."
-    iris blase "Ça répond pas vraiment."
-    sael fatigue "Vous voulez faire les tests ou discuter de mon CV ?"
-    noam neutre "Les tests."
-    iris neutre "Son CV."
-    sael colere "Iris."
-    iris sourire "Je plaisante."
-    "Sael sort une petite lampe."
-    noam inquiet "Ça commence par quoi ?"
-    sael raison "Les yeux."
-    noam neutre "Très bien."
-    sael neutre "Regarde ici."
-    "Elle allume la lampe."
-    noam surpris "Putain !"
-    iris rire "Oh non."
-    sael desaccord "Bouge pas."
-    noam colere "Tu pouvais prévenir."
-    sael neutre "J'ai dit regarde ici."
-    noam neutre "C'est pas prévenir."
-    iris taquin "Si, un peu."
-    noam neutre "T'es de son côté maintenant ?"
-    iris blase "Je suis du côté de la science."
-    sael raison "Pupille droite normale."
-    "Elle passe à l'autre œil."
-    sael neutre "Gauche normale."
-    noam taquin "Je suis symétrique. Bonne nouvelle."
-    iris neutre "Pour les yeux."
-    noam blase "Merci Iris."
-    sael raison "Suis mon doigt."
-    "Je le suis."
-    sael neutre "Sans bouger la tête."
-    "Je recommence."
-    iris taquin "C'est fascinant."
-    noam neutre "Tu peux partir."
-    iris neutre "Non."
-    noam neutre "Tu t'ennuies."
-    iris fatigue "Oui."
-    noam neutre "Donc pars."
-    iris neutre "Non."
-    iris agace "Quoi ?"
-    noam taquin "Rien."
-    iris neutre "Arrête."
-    noam sourire "J'ai rien dit."
-    sael colere "Regarde mon doigt."
-    noam fatigue "Oui maman."
-    "Silence."
-    "Je réalise ma connerie."
-    iris rire "Oh."
-    sael surpris "..."
-    noam gene "Pardon."
-    sael taquin "Refais ça et je prends le sel."
-    noam peur "Compris."
-    "Iris éclate franchement de rire."
-    "Même Sael sourit."
-    "Pendant quelques secondes, l'infirmerie ressemble presque à une pièce normale."
-    # Durée : ~3m00
-    # Total : ~8m30
-label _23_0_1_1_0_0_REFLEXES:
-    "Sael sort ensuite un marteau à réflexes."
-    $ showGroup([
-        ("sael", "raison", 0.22),
-        ("iris", "taquin", 0.50),
-        ("noam", "inquiet", 0.76),
-    ])
-    noam inquiet "Ça, j'aime moins."
-    sael neutre "C'est du caoutchouc."
-    noam neutre "Ça reste un marteau."
-    iris taquin "Tu veux tenir ma main ?"
-    noam blase "Toi aussi maintenant ?"
-    iris sourire "Je profite."
-    sael raison "Relâche la jambe."
-    noam neutre "Elle est relâchée."
-    sael neutre "Non."
-    noam colere "Si."
-    sael desaccord "Non."
-    iris fatigue "Noam, relâche ta putain de jambe."
-    noam neutre "Je suis détendu !"
-    "Sael frappe sous mon genou."
-    "Ma jambe part d'un coup."
-    iris rire "Très détendu."
-    noam colere "Ferme-la."
-    sael raison "Réflexe normal."
-    "Deuxième genou."
-    "Même chose."
-    sael neutre "Normal."
-    noam reflexion "Et si c'était pas normal, ça voudrait dire quoi ?"
-    sael neutre "Ça dépend."
-    noam neutre "De quoi ?"
-    sael neutre "Du réflexe."
-    noam blase "Merci."
-    iris taquin "Consultation très claire."
-    sael colere "Vous voulez que j'explique tout ?"
-    iris neutre "Non."
-    noam neutre "Un peu."
-    sael fatigue "Si je commence vous allez vous plaindre."
-    noam neutre "Probable."
-    "Elle passe rapidement aux mains et à la coordination : force, équilibre, doigt sur le nez, bras tendus, yeux fermés."
-    sael raison "Tout est normal."
-    noam blase "Tu pourrais avoir l'air un peu plus contente."
-    sael fatigue "J'attends la suite."
-    iris reflexion "Moi aussi."
-    "Le ton retombe d'un coup."
-    # Durée : ~3m30
-    # Total : ~12m00
-label _23_0_1_1_0_0_MEMOIRE:
-    "Le test suivant ressemble d'abord à un jeu pour enfant."
-    "Sael pose plusieurs objets devant moi."
-    $ showGroup([
-        ("sael", "raison", 0.22),
-        ("iris", "reflexion", 0.50),
-        ("noam", "neutre", 0.76),
-    ])
-    sael raison "Regarde-les."
-    noam reflexion "Une tasse, un badge, un stylo, une compresse, une clé."
-    sael neutre "Je t'ai pas demandé de les nommer."
-    noam blase "Je prends de l'avance."
-    iris taquin "Toujours premier de la classe."
-    noam neutre "Pas du tout."
-    sael neutre "Ferme les yeux."
-    "Je ferme les yeux."
-    "J'entends les objets bouger."
-    sael neutre "Ouvre."
-    "La clé a disparu."
-    noam neutre "La clé."
-    sael raison "Bien."
-    iris sourire "Il est brillant."
-    noam neutre "Tu te moques depuis vingt minutes, tu peux varier."
-    iris neutre "Non."
-    sael raison "Maintenant, cinq mots."
-    noam reflexion "D'accord."
-    sael neutre "Fenêtre. Orange. Cheval. Métal. Pluie."
-    noam neutre "Fenêtre, orange, cheval, métal, pluie."
-    sael neutre "Je te les redemanderai plus tard."
-    noam taquin "Je les oublierai exprès."
-    sael desaccord "Fais pas ça."
-    noam neutre "Je plaisante."
-    sael neutre "Moi pas."
-    "Elle change d'écran."
-    sael reflexion "Quel jour on est ?"
-    noam neutre "Jour vingt-trois."
-    sael neutre "Date réelle."
-    noam hesitation "Euh..."
-    iris rire "Ah."
-    noam colere "Attends."
-    iris taquin "Le grand esprit vacille."
-    noam neutre "On est enfermés dans une station avec des jours numérotés depuis trois semaines, forcément que—"
-    sael fatigue "Réponds juste."
-    noam reflexion "Quatre octobre."
-    sael raison "Bien."
-    noam surpris "Bien ? J'ai bon ?"
-    iris blase "Tu veux une médaille ?"
-    noam neutre "Un peu."
-    sael neutre "Où est-ce qu'on est ?"
-    noam taquin "À l'infirmerie."
-    sael colere "Noam."
-    noam sourire "Dans le Conclave."
-    sael neutre "En orbite."
-    noam neutre "Oui."
-    sael neutre "Pourquoi t'es ici ?"
-    "La question me fait hésiter plus longtemps."
-    noam reflexion "Parce que Kami nous a amenés ici pour le Conclave."
-    sael neutre "Et pourquoi t'as accepté les tests ?"
-    noam fatigue "Parce que tu me lâchais pas."
-    iris rire "Bonne réponse."
-    sael fatigue "Parce que tu crois avoir vu Mara morte."
-    "Le rire d'Iris s'arrête."
-    noam inquiet "Oui."
-    sael reflexion "Raconte-moi exactement ce que t'as vu."
-    noam neutre "Maintenant ?"
-    sael neutre "Oui."
-    noam desaccord "C'était pas un test de mémoire générale ?"
-    sael neutre "Ça en fait partie."
-    "Je regarde Iris."
-    "Elle ne plaisante plus."
-    noam inquiet "J'étais dans la zone derrière les conduits. J'ai trouvé la salle. Après... j'ai vu un corps."
-    sael neutre "De qui ?"
-    noam peur "Mara."
-    sael neutre "Tu l'as touché ?"
-    noam neutre "Non."
-    sael neutre "T'as vérifié si elle respirait ?"
-    noam neutre "Je crois pas."
-    sael reflexion "Tu crois pas ?"
-    noam colere "J'étais pas exactement calme."
-    iris colere "Sael."
-    sael neutre "Je demande."
-    noam fatigue "Non. J'ai pas vérifié."
-    sael neutre "Tu as vu du sang ?"
-    noam peur "Oui."
-    sael neutre "Où ?"
-    noam neutre "Je sais plus précisément."
-    sael neutre "Sur elle ? Au sol ?"
-    noam colere "J'ai dit que je sais plus."
-    "Sael se tait."
-    "Je respire trop vite."
-    iris inquiet "Ça va."
-    noam agace "Non, ça va pas."
-    iris neutre "Je sais."
-    "Sa réponse est douce, mais pas sucrée."
-    "Juste là."
-    sael fatigue "On arrête cette partie."
-    noam reflexion "Non."
-    sael neutre "T'es énervé."
-    noam neutre "Parce que je me souviens."
-    "Je regarde les objets sur la tablette."
-    noam peur "Je me souviens de son visage."
-    pause 0.5
-    iris inquiet "Noam..."
-    noam faible "Et je me souviens de l'avoir vue après. Vivante. Comme si rien s'était passé."
-    sael peur "D'accord."
-    "Elle détourne légèrement les yeux."
-    noam reflexion "Tu me crois ?"
-    sael fatigue "Je crois que tu te souviens de ça."
-    noam neutre "C'est pas pareil."
-    sael neutre "Non."
-    "Au moins elle ne ment pas."
-    "Elle regarde sa tablette."
-    sael raison "Les cinq mots."
-    noam surpris "Quoi ?"
-    sael neutre "Les cinq mots."
-    noam reflexion "Fenêtre... orange... cheval... métal..."
-    "Je bloque."
-    iris taquin "Oh."
-    noam colere "Attends."
-    "Je ferme les yeux."
-    noam determine "Pluie."
-    sael raison "Cinq sur cinq."
-    iris sourire "Félicitations."
-    noam fatigue "J'ai envie de rentrer chez moi."
-    iris neutre "Ça, le test l'avait pas prévu."
-    # Durée : ~5m00
-    # Total : ~17m00
-label _23_0_1_1_0_0_PERCEPTION:
-    "Sael enchaîne avec des tests de perception."
-    "Des formes, des couleurs, des sons, des images qui apparaissent une fraction de seconde."
-    $ showGroup([
-        ("sael", "raison", 0.22),
-        ("iris", "fatigue", 0.50),
-        ("noam", "reflexion", 0.76),
-    ])
-    sael raison "À gauche ou à droite ?"
-    noam neutre "Droite."
-    sael neutre "Couleur ?"
-    noam neutre "Rouge."
-    sael neutre "Forme ?"
-    noam neutre "Triangle."
-    iris blase "Passionnant."
-    sael colere "Tu peux partir."
-    iris neutre "Non."
-    noam taquin "Elle reste pour me protéger du triangle."
-    iris agace "Je commence à regretter."
-    sael raison "Son aigu ou grave ?"
-    noam neutre "Aigu."
-    sael neutre "Deuxième ?"
-    noam reflexion "Grave."
-    sael neutre "Bien."
-    "Elle lance une nouvelle série."
-    "Un visage apparaît."
-    "Mara."
-    "Mon cœur rate un battement."
-    noam peur "Attends."
-    sael surpris "Quoi ?"
-    noam neutre "Remets."
-    sael reflexion "L'image ?"
-    noam determine "Oui."
-    "Elle la remet."
-    "C'est juste une photo de Mara prise pour les dossiers du Conclave."
-    "Vivante. Souriante."
-    iris inquiet "Ça va ?"
-    noam fatigue "Oui."
-    iris colere "Mens mieux."
-    noam neutre "C'est rien."
-    sael neutre "On peut arrêter."
-    noam determine "Non. Continue."
-    "Sael hésite."
-    sael reflexion "T'es sûr ?"
-    noam neutre "Oui."
-    "Elle continue."
-    "Kael."
-    "Nyra."
-    "Ryn."
-    "Elias."
-    "Mara revient une deuxième fois."
-    "Cette fois je ne bronche presque pas."
-    "Presque."
-    sael raison "Réponse ?"
-    noam reflexion "Mara."
-    sael neutre "Temps de réponse plus long."
-    noam agace "Je sais."
-    iris inquiet "C'est forcément anormal ?"
-    sael neutre "Non."
-    noam neutre "Tu peux dire plus que non ?"
-    sael raison "Si une image te rappelle quelque chose de violent, tu ralentis. C'est normal."
-    noam reflexion "Donc mon cerveau réagit normalement à un souvenir peut-être faux."
-    sael fatigue "Oui."
-    noam blase "Parfait."
-    iris agace "Arrête de chercher une réponse dans chaque test."
-    noam colere "C'est pour ça qu'on est là."
-    iris neutre "Non. On est là pour vérifier si t'as un problème évident."
-    noam neutre "Et si j'en ai pas ?"
-    iris inquiet "Alors on verra après."
-    noam neutre "C'est quoi après ?"
-    iris colere "J'en sais rien, Noam !"
-    "Sa voix claque."
-    "Elle regrette immédiatement."
-    iris fatigue "J'en sais rien."
-    noam fatigue "D'accord."
-    "On reste silencieux quelques secondes."
-    sael reflexion "On fait l'IRM."
-    "Aucune de nous ne plaisante."
-    # Durée : ~4m00
-    # Total : ~21m00
-label _23_0_1_1_0_0_IRM_PREPARATION:
-    scene infirmerie2 at adaptive_fullscreen with dissolve
-    play music "music/bgm_cold_metadata.mp3" fadein 0.6
-    "La machine est au fond de la pièce, derrière une cloison."
-    "Je l'avais déjà vue sans vraiment la regarder."
-    "Maintenant elle me paraît beaucoup trop grande."
-    $ showGroup([
-        ("sael", "raison", 0.22),
-        ("iris", "inquiet", 0.50),
-        ("noam", "fatigue", 0.76),
-    ])
-    sael raison "Enlève tout ce qui est métallique."
-    noam reflexion "Badge aussi ?"
-    sael neutre "Oui."
-    noam neutre "Téléphone."
-    sael neutre "Oui."
-    noam neutre "Ceinture."
-    sael neutre "Oui."
-    iris taquin "Continue, ça devient intéressant."
-    noam blase "Je te déteste."
-    iris sourire "Je sais."
-    "Je pose mes affaires dans un bac."
-    noam inquiet "Ça dure combien de temps ?"
-    sael neutre "Une vingtaine de minutes."
-    noam surpris "Tu m'avais dit pas longtemps."
-    sael neutre "C'est pas longtemps."
-    noam colere "Vingt minutes dans un tube, c'est long."
-    iris taquin "Il a vraiment peur."
-    noam neutre "J'ai pas peur."
-    iris neutre "T'as demandé quatre fois combien de temps ça dure."
-    noam neutre "Je me renseigne."
-    sael reflexion "T'es claustrophobe ?"
-    noam hesitation "Pas spécialement."
-    iris blase "Donc oui."
+
+    noam neutre "Tu pourrais développer."
+
+    sael colere "Je pourrais aussi commencer."
+
+    iris taquin "Commence. Sinon il va poser la question dix fois."
+
+    "Sael sort une lampe et vérifie mes pupilles."
+
+    noam colere "Putain ! Préviens !"
+
+    sael neutre "Je viens de te dire que je commençais."
+
+    iris rire "Elle marque un point."
+
+    "Sael enchaîne sans perdre de temps : yeux, force dans les mains, équilibre, réflexes."
+    "En moins de cinq minutes, elle a rempli la moitié d'une page."
+
+    sael raison "Tout va bien jusque-là."
+
+    noam reflexion "Tu pourrais avoir l'air plus contente."
+
+    sael "J'ai pas fini."
+
+    "Elle rapproche une chaise."
+
+    sael raison "Fixe mon nez."
+
+    noam surpris "Pourquoi ton nez ?"
+
+    sael colere "Parce qu'il est au milieu."
+
+    "Iris ricane. Je fixe Sael pendant qu'elle bouge les doigts à la limite de mon champ de vision."
+
+    sael "Droite."
+
+    noam neutre "Vu."
+
+    sael "Gauche."
+
+    noam "Vu."
+
+    "Elle recommence."
+
+    sael "Gauche."
+
+    "Je ne vois rien."
+
+    sael reflexion "Et là ?"
+
+    noam inquiet "Là quoi ?"
+
+    "Elle recommence. Toujours rien."
+
+    "Iris décroise les bras."
+
+    iris inquiet "Qu'est-ce qu'il y a ?"
+
+    sael "Attends."
+
+    "Troisième essai. Cette fois j'aperçois le mouvement, mais très tard."
+
+    noam inquiet "Là."
+
+    "Sael baisse les mains."
+
+    sael reflexion "C'est pas normal."
+
+    "Mon ventre se serre."
+    "Et pourtant, pendant une seconde, je ressens presque du soulagement."
+
+    think "Enfin quelque chose."
+
+    noam reflexion "Ça peut expliquer les visions ?"
+
+    sael desaccord "J'ai pas dit ça."
+
+    noam "Mais ça peut venir du cerveau."
+
+    sael fatigue "Ou de l'œil. Ou de l'éclairage. On recommence."
+
+    "Elle me fait changer de place et ouvre davantage le rideau."
+
+    "Même test. Cette fois je vois tout, à droite comme à gauche."
+
+    "Sael recommence encore deux fois."
+
+    sael fatigue "C'était probablement la lumière."
+
+    noam agace "Probablement."
+
+    iris inquiet "T'avais l'air presque soulagé."
+
+    noam "N'importe quoi."
+
+    iris desaccord "Si."
+
+    "Je détourne les yeux."
+
+    noam fatigue "Au moins j'aurais eu une explication."
+
+    "Iris ne répond rien."
+
+    sael neutre "Je revérifierai après."
+
+    "Elle passe au test de mémoire, beaucoup plus banal."
+
+    sael raison "Fenêtre. Orange. Cheval. Métal. Pluie."
+
+    noam "Fenêtre, orange, cheval, métal, pluie."
+
+    "Elle vérifie ensuite la date, le lieu et quelques souvenirs récents."
+
+    sael reflexion "Maintenant raconte-moi ce que t'as vu."
+
+    "Iris se redresse légèrement."
+
+    noam inquiet "Pourquoi ?"
+
+    sael "Je veux voir ce dont tu te souviens exactement."
+
+    "Je prends quelques secondes."
+
+    noam faible "J'ai trouvé la salle. Il y avait quelqu'un au sol. J'ai reconnu Mara."
+
+    sael "Comment ?"
+
+    noam reflexion "Son visage. Ses cheveux. Ses vêtements. Je sais pas. C'était elle."
+
+    sael "Tu l'as touchée ?"
+
+    noam desaccord "Non."
+
+    sael "Vérifié sa respiration ?"
+
     noam colere "Non."
-    sael fatigue "Si tu paniques, tu me le dis."
-    noam neutre "Comment ?"
-    sael neutre "Y'a un bouton."
-    noam neutre "Et si le bouton marche pas ?"
-    iris rire "Noam."
-    noam neutre "Je pose une question."
-    sael raison "Il marche."
-    noam neutre "Tu l'as testé ?"
-    sael neutre "Oui."
-    noam neutre "Quand ?"
-    sael colere "Ce matin."
-    noam neutre "Pourquoi ?"
-    sael neutre "Parce que je savais que t'allais demander."
-    "Iris éclate de rire."
-    noam blase "Vous êtes horribles."
-    iris sourire "Viens."
-    "Elle me tend la main."
-    "Je la regarde."
-    noam surpris "Quoi ?"
-    iris gene "Bah... donne."
-    noam taquin "Tu te moquais de moi il y a dix secondes."
-    iris agace "Je peux me moquer et t'aider en même temps."
-    noam neutre "C'est très toi."
-    iris neutre "Tu la prends ou pas ?"
-    "Je prends sa main."
-    "Elle serre une fois."
-    "Pas longtemps."
-    "Puis elle la retire comme si ça avait duré trop longtemps."
-    iris blase "Voilà. T'es officiellement courageux."
-    noam sourire "Merci."
-    sael taquin "C'est mignon."
-    iris colere "Commence pas."
-    "Sael lève les mains."
-    "Je m'allonge."
-    # Durée : ~3m30
-    # Total : ~24m30
+
+    iris colere "Il était paniqué, Sael."
+
+    sael desaccord "Je lui demande pas pourquoi. Je lui demande ce dont il se souvient."
+
+    noam fatigue "Laisse."
+
+    "Je ferme les yeux."
+
+    noam peur "Il y avait du sang. Je me souviens surtout de ça."
+
+    sael reflexion "Où ?"
+
+    noam colere "Je sais plus."
+
+    "Sael arrête d'écrire."
+
+    noam fatigue "Après je suis sorti. Et plus tard je l'ai revue à la cafétéria."
+
+    "Je rouvre les yeux."
+
+    noam faible "Vivante."
+
+    "Sael garde le silence."
+
+    noam reflexion "Tu me crois ?"
+
+    sael fatigue "Je crois que tu te souviens de ça."
+
+    noam neutre "C'est pas pareil."
+
+    sael "Non."
+
+    "Au moins elle ne ment pas."
+
+    sael raison "Les cinq mots."
+
+    noam surpris "Sérieux ?"
+
+    sael "Oui."
+
+    noam reflexion "Fenêtre. Orange. Cheval. Métal..."
+
+    "Je bloque."
+
+    noam determine "Pluie."
+
+    sael raison "Cinq sur cinq."
+
+    "Elle refait rapidement le champ visuel. Cette fois, aucun problème."
+
+    sael fatigue "Tout ce que j'ai testé est normal."
+
+    "Je regarde la machine derrière la cloison."
+
+    noam neutre "Il reste l'IRM."
+
+    sael "Oui."
+
+    # Durée : ~5m00
+    # Total : ~9m00
+
+
 label _23_0_1_1_0_0_IRM:
+    scene infirmerie2 at adaptive_fullscreen with dissolve
+
+    "La machine me paraît plus petite quand je la regarde de loin."
+
+    sael raison "Tout ce qui est métallique dans le bac."
+
+    "Je retire mon badge, mon téléphone et ma ceinture."
+
+    noam reflexion "Ça dure combien de temps ?"
+
+    sael neutre "Une vingtaine de minutes."
+
+    noam surpris "Vingt minutes ?"
+
+    iris taquin "Il a peur."
+
+    noam colere "J'ai pas peur."
+
+    iris "Tu viens de demander combien de temps tu vas rester enfermé."
+
+    noam "Je me renseigne."
+
+    sael fatigue "Tu as un bouton. Si tu paniques, tu appuies."
+
+    noam reflexion "Et s'il marche pas ?"
+
+    iris rire "D'accord. Là, t'as peur."
+
+    noam agace "Ferme-la."
+
+    "Je m'allonge sur la table."
+
+    "Sael installe le support autour de ma tête. Iris s'approche et me tend la main."
+
+    noam surpris "Sérieux ?"
+
+    iris agace "Prends-la avant que je change d'avis."
+
+    "Je la prends. Elle serre mes doigts une seconde."
+
+    iris blase "Voilà. T'es courageux. On peut avancer ?"
+
+    noam sourire "Merci."
+
+    sael taquin "C'est mignon."
+
+    iris colere "Toi, commence pas."
+
     scene black with dissolve
     stop music fadeout 0.8
+
     "La table glisse."
-    "Le plafond disparaît."
-    "Il ne reste qu'une paroi blanche très proche de mon visage."
-    "Puis le bruit."
-    "Un premier claquement métallique."
-    pause 0.4
-    "Un deuxième."
-    "Régulier."
-    "Sec."
-    "Je ferme les yeux."
-    think "C'est la machine."
-    "Le bruit recommence."
-    think "Juste la machine."
+
+    "Le premier claquement métallique me surprend malgré moi."
     "Puis le rythme change."
-    "Trois coups rapides."
-    pause 0.3
-    "Un silence."
-    pause 0.5
-    "Deux coups."
-    "Mon ventre se serre."
-    think "Non."
-    "Ça ressemble trop aux bruits dans les conduits."
-    "Je garde les yeux fermés."
-    "Je revois le couloir."
-    "La salle cachée."
-    "Le corps."
-    "Je rouvre les yeux."
-    "Paroi blanche."
-    "Rien d'autre."
-    "Le haut-parleur grésille."
-    sael neutre "Noam ?"
-    noam inquiet "Oui."
-    sael neutre "Tu bouges."
-    noam neutre "Désolé."
-    sael raison "Ça va ?"
-    noam hesitation "Oui."
-    iris inquiet "Mens pas."
-    "Sa voix arrive plus loin, un peu étouffée."
-    noam fatigue "Ça va."
-    iris neutre "T'as appuyé sur rien ?"
-    noam neutre "Non."
-    iris neutre "Alors reste tranquille."
-    noam taquin "Merci pour le soutien."
-    iris blase "De rien."
-    "Le bruit reprend."
-    "Je compte."
-    "Un."
-    "Deux."
-    "Trois."
-    "À vingt-sept, je perds le fil."
-    "À un moment, je crois entendre quelque chose entre deux séquences."
-    "Une respiration."
-    "Je retiens la mienne."
-    "Rien."
-    "Puis un frottement."
+
+    "Trois coups rapides. Une pause. Deux autres."
+
     think "C'est la machine."
-    "Je me répète la phrase jusqu'à ce qu'elle ne veuille plus rien dire."
-    "Quand la table ressort enfin, la lumière me fait cligner des yeux."
+
+    "Le problème, c'est que ça ressemble beaucoup trop aux bruits des conduits."
+
+    "Je ferme les yeux et compte pour penser à autre chose."
+
+    "À vingt-sept, je perds le fil."
+
+    "Entre deux séquences, j'entends quelque chose de plus doux."
+
+    "Une respiration."
+
+    "Je retiens la mienne."
+
+    "Plus rien."
+
+    think "Ventilation. Machine. Mon propre souffle. Il y a assez d'explications avant d'en inventer une quatrième."
+
+    "Un frottement suit."
+
+    "Je serre le bouton."
+
+    sael neutre "Noam ?"
+
+    noam inquiet "Oui."
+
+    sael raison "Tu bouges."
+
+    noam fatigue "Désolé."
+
+    iris inquiet "Ça va ?"
+
+    noam "Oui."
+
+    iris colere "Mens mieux."
+
+    "Je laisse échapper un souffle qui ressemble presque à un rire."
+
+    "Le reste de l'examen paraît interminable, mais rien d'autre ne se passe."
+
     scene infirmerie2 at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.6
+
     $ showGroup([
         ("sael", "reflexion", 0.22),
         ("iris", "inquiet", 0.50),
         ("noam", "fatigue", 0.76),
     ])
-    iris inquiet "Ça va ?"
-    noam fatigue "Oui."
-    iris agace "T'as encore cette tête."
-    noam neutre "Quelle tête ?"
-    iris neutre "La tête où tu dis oui mais t'es à deux secondes de dire autre chose."
-    noam reflexion "J'ai cru entendre quelqu'un."
-    sael surpris "Dans la machine ?"
-    noam neutre "Entre deux séquences."
-    iris inquiet "Quelqu'un comment ?"
-    noam hesitation "Je sais pas. Une respiration. Peut-être un frottement."
-    "Sael regarde la machine."
-    sael raison "J'étais juste derrière la vitre. J'ai rien entendu."
-    "Mon estomac se serre."
-    noam peur "D'accord."
-    iris colere "Hé. Ça veut rien dire."
-    noam neutre "Je sais."
-    iris neutre "Non, tu recommences."
-    noam agace "Je sais, Iris."
-    "Elle se tait."
-    "Sael récupère les images."
-    sael reflexion "Attendez."
-    "Elle agrandit plusieurs coupes."
-    "Change d'écran."
-    "Revient en arrière."
-    "Plus elle regarde, moins je respire."
-    noam inquiet "Sael."
-    sael neutre "Deux secondes."
-    noam neutre "Ça fait déjà deux secondes."
-    iris colere "Laisse-la regarder."
-    noam neutre "Vous pouvez arrêter de parler comme si j'étais pas là ?"
-    "Sael finit par poser la tablette."
-    sael raison "C'est normal."
-    noam surpris "Quoi ?"
-    sael neutre "Tout."
-    noam neutre "Tout quoi ?"
-    sael raison "Structure normale. Pas de lésion visible. Pas d'hémorragie. Pas de signe d'hypoxie. Rien qui ressemble à un traumatisme récent."
-    iris reflexion "Et pour les hallucinations ?"
-    sael fatigue "Une IRM prouve pas qu'une personne hallucine ou pas."
-    iris neutre "Mais y'a rien qui les expliquerait physiquement."
-    sael neutre "Rien d'évident."
-    noam reflexion "Donc mon cerveau est normal."
+
+    "Quand la table ressort, Sael récupère immédiatement les images."
+
+    noam reflexion "J'ai encore entendu un bruit."
+
+    iris inquiet "Dans la machine ?"
+
+    noam "Une respiration. Ou un frottement. J'en sais rien."
+
+    sael raison "On était derrière la vitre. On a rien entendu."
+
+    "Je hoche la tête."
+
+    iris colere "Ça veut pas dire que tout le reste est faux."
+
+    noam neutre "J'ai rien dit."
+
+    iris "Tu le pensais."
+
+    "Sael fait défiler les coupes."
+
+    "Elle revient deux fois sur les mêmes images."
+
+    "Le petit espoir idiot du test visuel revient."
+
+    think "Trouve quelque chose."
+
+    noam inquiet "Sael ?"
+
+    sael "Attends."
+
+    "Quelques secondes de plus."
+
+    sael raison "Je vois rien d'anormal."
+
+    noam surpris "Rien ?"
+
+    sael "Pas de lésion visible. Pas d'hémorragie. Pas de signe évident de manque d'oxygène ou de traumatisme."
+
+    iris reflexion "Et ça exclut les hallucinations ?"
+
+    sael fatigue "Non. Ça exclut juste certaines causes."
+
+    noam reflexion "Donc ma mémoire est normale, ma vision est normale et l'IRM est normale."
+
     sael neutre "Oui."
-    noam neutre "Mémoire normale."
-    sael neutre "Oui."
-    noam neutre "Réflexes normaux."
-    sael neutre "Oui."
-    noam neutre "Perception normale."
-    sael reflexion "Sur les tests qu'on a faits, oui."
-    "Je ris."
-    "Une fois."
-    "Sans que ce soit drôle."
-    noam blase "Génial."
-    iris inquiet "Noam..."
-    noam neutre "Non, c'est bien. C'est ce qu'on voulait."
-    sael peur "Moi non."
-    "Je la regarde."
-    sael fatigue "Enfin... si. Je voulais que t'aies rien."
-    sael inquiet "Mais je voulais aussi trouver pourquoi t'as vu ça."
-    "Elle a l'air presque coupable."
-    sael neutre "Là j'ai rien."
-    noam peur "Donc si c'était pas dans ma tête..."
-    sael colere "J'ai pas dit ça."
-    noam neutre "Mais tu le penses."
-    sael fatigue "Je pense que je peux plus te dire 'c'est sûrement ton cerveau' et passer à autre chose."
-    pause 0.6
-    iris inquiet "Ça suffit pour aujourd'hui."
+
+    noam "Et j'ai quand même vu Mara morte."
+
+    "Sael ne répond pas."
+
+    "Je laisse retomber ma tête contre le dossier."
+
+    think "Normal. Pour une fois, le mot me fait pas plaisir."
+
+    sael inquiet "Je voulais trouver une explication aussi."
+
+    noam surpris "Sérieux ?"
+
+    sael fatigue "Oui. Pas une maladie grave. Une raison."
+
+    "Elle pose la tablette."
+
+    sael "La fatigue, le stress ou une hallucination restent possibles. Mais j'ai rien qui me permette de dire : voilà, c'est ça."
+
+    "Je hoche la tête."
+
+    iris determine "Ça suffit. On va manger."
+
     noam reflexion "Iris..."
-    iris determine "Non. Là, ça suffit."
-    "Elle récupère mon téléphone dans le bac et me le tend."
-    iris fatigue "Tu remets tes affaires. Tu manges. Et pendant au moins une heure tu cherches pas à résoudre le mystère de ta propre tête."
-    noam taquin "Une heure ?"
-    iris blase "Je suis réaliste."
-    "Je prends le téléphone."
-    noam sourire "D'accord."
+
+    iris colere "Non. Tu vas pas passer l'après-midi à lui faire répéter la même réponse jusqu'à ce qu'elle change."
+
+    sael neutre "Elle a raison."
+
+    noam blase "Formidable."
+
     $ hideGroup()
-    # Durée : ~6m00
-    # Total : ~30m30
+
+    # Durée : ~5m00
+    # Total : ~14m00
+
+
 label _23_0_1_1_0_0_APRES_IRM:
     $ current_period = "Après-midi"
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    "On retourne à la cafétéria."
-    "Je n'avais pas faim avant les examens."
-    "Maintenant j'ai faim comme si j'avais couru."
+
+    "On retourne manger."
+
     $ showGroup([
         ("mara", "taquin"),
         ("iris", "fatigue"),
         ("sael", "fatigue"),
         ("noam", "fatigue"),
     ])
-    mara taquin "Alors ?"
-    noam blase "Alors quoi ?"
-    mara neutre "Ton cerveau. Toujours là ?"
-    noam neutre "Apparemment."
-    mara sourire "Dommage, j'espérais récupérer de la place."
-    iris agace "Tu peux lui foutre la paix cinq minutes ?"
-    mara taquin "Je lui fous la paix. Je demande si son IRM a révélé qu'il pensait beaucoup à moi."
-    noam fatigue "Oui. Une énorme tumeur en forme de Mara."
-    "Mara reste figée une seconde."
-    mara rire "Oh putain."
-    iris rire "Bien."
-    sael sourire "Pas mal."
-    noam taquin "Merci."
-    mara taquin "Fais attention, tu deviens séduisant quand t'es méchant."
-    iris blase "Et voilà."
-    noam neutre "J'aurais dû me taire."
-    mara neutre "Trop tard."
-    "Elle me vole une frite."
-    noam colere "Encore ?"
-    mara sourire "Le patient doit partager."
-    sael desaccord "C'est pas une règle."
-    mara neutre "Ça devrait."
-    "Je la regarde mâcher."
-    "Le même visage."
-    "La même façon de sourire."
-    "La même voix."
-    "Et d'un coup, je revois le corps."
-    "Ma fourchette s'arrête."
-    mara reflexion "Quoi ?"
-    noam inquiet "Rien."
-    mara neutre "Tu me regardes bizarrement."
-    noam neutre "Je suis fatigué."
-    mara taquin "Tu peux me regarder bizarrement, je juge pas."
-    iris inquiet "Noam ?"
-    noam fatigue "Ça va."
-    "Cette fois Iris ne me contredit pas."
-    "Sael, elle, a vu."
-    "Son regard passe de moi à Mara."
-    "Puis revient."
-    mara sourire "Bon, si tout va bien..."
-    "Elle reprend une frite."
-    noam colere "Arrête de bouffer dans mon assiette."
-    mara rire "Ah ! Voilà, il va mieux."
-    "Je souris malgré moi."
-    "Mais quelque chose a changé."
-    "Avant, quand Mara était devant moi, son simple fait d'être là suffisait presque à détruire le souvenir."
-    "Maintenant, l'IRM est passée."
-    "Mon cerveau est normal."
-    "Et elle est toujours là."
+
+    mara taquin "Alors ? Qu'est-ce qu'ils ont trouvé ?"
+
+    noam blase "Rien."
+
+    mara sourire "Donc tout va bien."
+
+    "Je ne réponds pas."
+
+    "Son sourire baisse."
+
+    mara reflexion "C'est pas ça ?"
+
+    noam fatigue "Tout est normal."
+
+    sael neutre "Sur ce qu'on a testé."
+
+    mara "Ah."
+
+    "Elle cherche une blague, puis renonce."
+
+    mara reflexion "C'est quand même plutôt bien, non ?"
+
+    noam "Ouais."
+
+    "Mara tend la main vers mon assiette."
+
+    mara taquin "Alors je prends une frite pour fêter ça."
+
+    "Je tends la main pour l'arrêter."
+
+    "Ses doigts touchent mon poignet."
+
+    "Le souvenir revient d'un coup."
+
+    "Sa main au sol. Immobile."
+
+    "Je retire mon bras brutalement."
+
+    mara surpris "Whoa !"
+
+    "Sael et Iris se figent."
+
+    noam peur "Désolé."
+
+    mara reflexion "J'ai fait quoi ?"
+
+    noam fatigue "Rien."
+
+    mara "Noam, t'as reculé comme si je t'avais frappé."
+
+    noam desaccord "J'ai dit que t'avais rien fait."
+
+    "Mara me fixe."
+
+    "Cette fois, elle ne plaisante pas."
+
+    mara fatigue "D'accord."
+
+    "Elle retire sa main."
+
+    iris inquiet "Mara..."
+
+    mara neutre "Non, c'est bon. Je vais le laisser tranquille."
+
+    noam surpris "Attends."
+
+    mara "Pourquoi ?"
+
+    "Je n'ai aucune réponse correcte."
+
+    "Elle récupère son plateau."
+
+    mara taquin "Je survivrai à une frite de moins."
+
+    "Même elle n'y croit pas."
+
+    "Elle s'éloigne."
+
+    hide mara with dissolve
+
+    iris colere "Bravo."
+
+    noam agace "Quoi ?"
+
+    iris "Elle sait même pas ce qui vient de se passer."
+
+    noam colere "Moi non plus !"
+
+    "Ma voix monte trop fort."
+
+    "Je baisse les yeux."
+
+    noam fatigue "Moi non plus."
+
+    "Iris garde les bras croisés."
+
+    sael neutre "C'est peut-être plus important que tous les tests de ce matin."
+
+    noam reflexion "Quoi ?"
+
+    sael "Ta réaction quand elle t'a touché."
+
+    noam agace "Tu veux faire quoi ? Me la faire toucher dix fois pour voir si je panique ?"
+
+    sael desaccord "Non."
+
+    iris colere "Arrête."
+
+    "Je me tais."
+
+    "Le problème est simple : voir Mara vivante ne suffit plus à effacer le souvenir."
+
+    "Et maintenant mon corps réagit avant moi."
+
     $ hideGroup()
-    # Durée : ~4m00
-    # Total : ~34m30
+
+    # Durée : ~3m00
+    # Total : ~17m00
+
+
 label _23_0_1_1_0_0_IRIS:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
-    "En fin d'après-midi, Iris passe dans ma chambre."
-    "Elle entre, regarde le bureau sous la grille et lève les yeux au ciel."
+
+    "Je retourne dans ma chambre."
+
+    "Dix minutes plus tard, quelqu'un frappe."
+
+    noam fatigue "Entre."
+
     $ showGroup([
         ("iris", "blase", 0.40),
         ("noam", "fatigue", 0.62),
     ])
-    iris blase "Toujours ça."
-    noam reflexion "Ça me rassure."
-    iris neutre "Un bureau."
-    noam neutre "Oui."
-    iris taquin "Ton grand système de sécurité."
-    noam neutre "Tu veux le déplacer ?"
-    iris determine "Non."
-    "Elle s'assoit au bord du lit."
-    noam reflexion "Tu venais pour quoi ?"
-    iris fatigue "Voir si t'étais en train de devenir complètement taré."
-    noam neutre "Verdict ?"
-    iris neutre "Mitigé."
-    noam sourire "Merci."
-    "Elle regarde la grille."
-    iris reflexion "Tu veux en parler ?"
-    noam surpris "Depuis quand tu demandes ça ?"
-    iris colere "Bon, laisse tomber."
-    noam rire "Non, attends."
-    "Elle soupire."
-    iris fatigue "Je déteste faire ça."
-    noam taquin "Être gentille ?"
+
+    "Iris entre et referme la porte."
+
+    iris fatigue "Je suis encore énervée."
+
+    noam surpris "Je vois ça."
+
+    iris colere "T'avais pas besoin de parler à Mara comme ça."
+
+    noam agace "Je lui ai rien dit."
+
+    iris "Justement."
+
+    "Je la regarde."
+
+    iris "Elle te touche, tu bondis, tu refuses de lui expliquer et tu la laisses partir en pensant qu'elle a fait quelque chose."
+
+    noam colere "Tu veux que je lui dise quoi ? Que pendant une seconde j'ai revu son cadavre à la place de sa main ?"
+
+    "Iris se tait."
+
+    noam fatigue "Voilà."
+
+    "Elle s'assoit sur le bord du lit."
+
+    iris inquiet "C'était vraiment ça ?"
+
+    noam "Oui."
+
+    noam fatigue "Le contact a ramené le souvenir immédiatement. C'était pas une image floue. J'ai eu l'impression de revoir exactement la scène."
+
+    iris desaccord "Une impression, Noam."
+
+    noam colere "Je sais."
+
+    iris "Alors arrête de la traiter comme une preuve."
+
+    noam "Tu crois que je fais quoi depuis ce matin ?"
+
+    "Je me lève."
+
+    noam colere "J'ai accepté tous les tests de Sael parce que j'espérais qu'elle me dise que j'avais un problème. Tu te rends compte à quel point c'est débile ?"
+
     iris neutre "Oui."
-    noam neutre "Je vois."
-    iris colere "Tu veux vraiment que je parte ?"
-    noam sourire "Non."
-    "Juste fatigué."
-    noam reflexion "J'espérais qu'elle trouve quelque chose."
-    iris inquiet "Sael ?"
-    noam neutre "Oui."
-    iris neutre "Moi aussi."
-    noam surpris "Sérieux ?"
-    iris fatigue "Pas une tumeur, hein."
-    noam taquin "Merci de préciser."
-    iris neutre "Un truc. N'importe quoi qui explique."
-    noam reflexion "Même une hallucination."
-    iris neutre "Ouais."
-    noam neutre "Tu me croyais pas."
-    iris colere "C'est pas ça."
-    noam neutre "Un peu."
-    iris fatigue "Un peu."
-    "Au moins elle l'admet."
-    iris reflexion "Je croyais que t'avais vu quelque chose, mais... je sais pas. Pas forcément ce que tu pensais avoir vu."
-    noam neutre "Et maintenant ?"
-    iris inquiet "Maintenant je sais encore moins."
-    noam blase "Très utile."
-    iris agace "Tu veux quoi ? Que je te dise que oui, Mara est morte et qu'une autre Mara se balade dans la cafétéria ?"
-    noam peur "Non."
-    iris neutre "Parce que moi j'ai pas envie de dire ça."
-    noam neutre "Moi non plus."
-    "Elle joue avec la fermeture éclair de sa manche."
-    iris fatigue "Alors pour ce soir, ton cerveau va bien."
-    noam reflexion "C'est tout ?"
-    iris determine "C'est tout."
-    noam neutre "Et demain ?"
-    iris blase "Demain peut aller se faire foutre."
-    "Je ris."
-    "Elle aussi, un peu."
-    iris sourire "Tu vois. Traitement réussi."
-    noam taquin "Docteur Iris."
-    iris colere "N'abuse pas."
+
+    noam surpris "Merci."
+
+    iris colere "Parce que moi aussi j'espérais qu'elle trouve quelque chose."
+
+    "Je m'arrête."
+
+    iris fatigue "Pas une tumeur. Pas un truc grave. Un manque de sommeil, un problème de pression, une hallucination liée au malaise... n'importe quoi qu'on puisse expliquer."
+
+    noam neutre "Et elle a rien trouvé."
+
+    iris "Non."
+
+    "Le silence retombe."
+
+    iris reflexion "Mais ça veut toujours pas dire que Mara était morte."
+
+    noam desaccord "J'ai jamais dit que ça le prouvait."
+
+    iris blase "Tu mets un bureau devant ta grille chaque nuit."
+
+    noam "Parce que quelqu'un se balade dans les conduits."
+
+    iris colere "Peut-être. Mais tu mélanges tout."
+
+    noam "Et toi tu fais quoi ?"
+
+    iris surpris "Quoi ?"
+
+    noam colere "Tu viens me dire d'arrêter de paniquer et dans la même phrase tu veux que je t'appelle si j'entends un bruit."
+
+    "Iris ouvre la bouche, puis s'arrête."
+
+    noam "Donc toi aussi tu crois qu'il y a quelque chose."
+
+    iris agace "Je crois surtout que t'es assez con pour retourner là-dedans tout seul."
+
+    noam "C'est pas une réponse."
+
+    iris colere "Parce que j'en ai pas !"
+
+    "Le ton monte d'un coup."
+
+    iris "J'en sais rien, d'accord ? Je sais pas ce que t'as vu, je sais pas qui fait du bruit, je sais pas pourquoi tu te souviens de Mara morte alors qu'elle mange avec nous !"
+
+    "Elle reprend son souffle."
+
+    iris fatigue "Et ça me fait chier de pas savoir."
+
+    "Je reste silencieux."
+
+    noam fatigue "Moi aussi."
+
+    "Elle baisse les yeux."
+
+    iris neutre "Alors arrête de faire comme si tu devais trouver tout seul."
+
+    "La phrase sort beaucoup plus calmement."
+
+    "Je me rassois."
+
+    noam reflexion "Je dois m'excuser auprès de Mara."
+
+    iris blase "Oui."
+
+    noam "Tu pourrais au moins faire semblant d'hésiter."
+
+    iris "Non."
+
+    "Je souris malgré moi."
+
+    iris fatigue "Et si t'entends quelque chose cette nuit, tu viens me chercher."
+
+    noam reflexion "Tu crois aux bruits, alors."
+
+    iris colere "Je viens de te dire que j'en sais rien."
+
+    noam "D'accord."
+
+    iris determine "Mais tu n'y vas pas seul."
+
+    noam "D'accord."
+
     "Elle se lève."
-    iris fatigue "Je vais manger. Tu viens ?"
-    noam neutre "Dans cinq minutes."
-    iris neutre "Cinq vraies minutes ou cinq minutes de mec qui va fixer son mur pendant une heure ?"
-    noam sourire "Vraies."
-    iris neutre "Bien."
-    "Elle ouvre la porte."
-    iris inquiet "Et Noam ?"
-    noam neutre "Oui ?"
-    iris fatigue "Si t'entends un truc dans les conduits..."
-    "Elle hésite."
-    iris determine "Tu viens me chercher. Tu y vas pas seul."
-    noam reflexion "D'accord."
-    iris colere "Je déconne pas."
-    noam neutre "J'ai dit d'accord."
-    iris neutre "Bien."
-    "Elle sort."
+
+    iris blase "Bien. Une décision intelligente dans la journée. On progresse."
+
     $ hideGroup()
-    # Durée : ~4m30
-    # Total : ~41m30
+
+    # Durée : ~4m00
+    # Total : ~21m00
+
+
 label _23_0_1_1_0_0_SOIREE:
     $ current_period = "Soir"
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    "Le dîner est presque normal."
-    "Presque."
+
+    "Le soir, Mara est assise avec Elias et Tomas."
+    "Je m'assois en face d'elle avant de changer d'avis."
+
     $ showGroup([
-        ("mara", "taquin"),
+        ("mara", "neutre"),
         ("elias", "fatigue"),
         ("tomas", "reflexion"),
         ("iris", "fatigue"),
         ("noam", "fatigue"),
     ])
-    tomas reflexion "Donc les examens sont normaux ?"
-    noam blase "La nouvelle a déjà fait le tour ?"
-    iris neutre "Mara."
-    mara sourire "J'ai demandé."
-    noam colere "À qui ?"
-    mara taquin "Sael."
-    noam neutre "Pourquoi ?"
-    mara neutre "Parce que je m'inquiète pour toi."
-    iris blase "Elle s'inquiète de savoir si elle peut continuer à te faire chier."
-    mara rire "Aussi."
-    elias fatigue "Au moins t'as rien."
-    noam reflexion "Ouais."
-    tomas hesitation "Enfin... rien de visible."
-    "Tout le monde le regarde."
-    tomas stress "Quoi ? C'est vrai. Une IRM normale exclut pas tout. Les hallucinations peuvent venir de plein de—"
-    iris colere "Tomas."
-    tomas fatigue "Je sais. Je ferme ma gueule."
-    mara taquin "Tu tiens combien de temps ?"
-    tomas reflexion "Pas longtemps."
-    "Ça fait rire Elias."
-    "Je regarde Elias rire."
-    "Je ne sais pas pourquoi ça me dérange."
-    "Peut-être parce que depuis ce matin, tout me dérange."
-    elias reflexion "Quoi ?"
-    noam surpris "Rien."
-    elias neutre "Tu me fixais."
-    noam fatigue "Je suis crevé."
-    elias neutre "Ouais, ça se voit."
-    mara taquin "Il fixe tout le monde aujourd'hui. Moi ça me plaît bien."
-    iris agace "Tu vas finir par le faire fuir."
-    mara sourire "Il revient toujours."
-    "Je regarde Mara."
-    "Elle me fait un clin d'œil."
-    "J'ai envie de rire."
-    "Et en même temps, quelque chose me retourne l'estomac."
-    noam fatigue "Je vais rentrer."
-    iris inquiet "Déjà ?"
-    noam neutre "Ouais. Je tiens plus."
+
+    elias fatigue "Alors, le gros tube ?"
+
+    noam neutre "Toujours aussi gros."
+
+    elias "C'est chaud. J'aime pas ces trucs."
+
+    tomas reflexion "En réalité, une IRM est plutôt sûre si—"
+
+    "Iris tourne lentement la tête vers lui."
+
+    tomas hesitation "Je vais me taire."
+
+    iris neutre "Merci."
+
+    "Mara continue de manger."
+
+    noam reflexion "Mara."
+
+    mara neutre "Hm ?"
+
+    noam fatigue "Désolé pour tout à l'heure."
+
+    mara taquin "Pour la frite ?"
+
+    noam "Pour le reste."
+
+    "Elle me regarde quelques secondes."
+
+    mara reflexion "J'avais compris que c'était pas contre moi."
+
+    noam "Ça change rien."
+
+    mara "Un peu."
+
+    noam fatigue "Quand tu m'as touché, j'ai revu ce que j'avais vu derrière les conduits."
+
+    "Elias et Tomas cessent de manger."
+
+    mara neutre "Mon cadavre."
+
+    noam "Oui."
+
+    "Mara baisse les yeux vers son assiette."
+
+    mara fatigue "C'est quand même une phrase sacrément bizarre à entendre sur soi."
+
+    noam "Je sais."
+
+    mara "T'as encore peur de moi ?"
+
+    "La question me prend de court."
+
+    noam surpris "Non."
+
+    mara "T'as répondu vite."
+
+    noam desaccord "Parce que c'est vrai."
+
+    "Elle me fixe encore une seconde, puis son sourire revient."
+
+    mara taquin "Bon. Alors je récupère ma frite."
+
+    noam blase "Une."
+
+    mara "Deux."
+
+    noam "Une."
+
+    "Elle en prend deux."
+
+    noam colere "Mara !"
+
+    "Elias éclate de rire."
+
+    "Cette fois, je ris aussi."
+
+    "Tomas attend quelques secondes avant de reprendre."
+
+    tomas reflexion "Pour ce que ça vaut... une IRM normale n'exclut pas un épisode hallucinatoire. Le stress, la fatigue et certains phénomènes transitoires peuvent—"
+
+    iris fatigue "Tomas."
+
+    tomas "Je sais. Mais c'était utile cette fois."
+
+    "Je hausse les épaules."
+
+    noam reflexion "Sael m'a dit la même chose."
+
+    tomas "Alors elle a raison."
+
+    elias fatigue "Donc on sait toujours rien."
+
+    noam "Voilà."
+
+    mara taquin "Super journée."
+
+    "Un plateau tombe au fond de la salle."
+
+    "Je sursaute violemment."
+
+    "La conversation s'arrête."
+
+    noam fatigue "Ça va."
+
+    iris blase "Personne n'a demandé."
+
+    noam "Je prends de l'avance."
+
+    "Mara ne plaisante pas."
+
+    "Je ramène ma chaise contre la table."
+
+    think "C'est peut-être le seul résultat clair de la journée : tout fonctionne normalement, sauf ma façon de réagir à ce qui m'entoure."
+
+    noam fatigue "Je vais dormir."
+
+    iris inquiet "Tu veux que je vienne ?"
+
+    noam "Non."
+
+    "Je vois son regard."
+
+    noam fatigue "Et je ne vais pas dans les conduits."
+
+    iris neutre "Bien."
+
     mara taquin "Bonne nuit, cerveau normal."
-    noam blase "Bonne nuit, Mara."
-    "Le nom sort bizarrement."
-    "Elle ne semble pas le remarquer."
+
+    noam sourire "Bonne nuit, voleuse."
+
     $ hideGroup()
-    # Durée : ~3m30
-    # Total : ~45m00
+
+    # Durée : ~3m00
+    # Total : ~24m00
+
+
 label _23_0_1_1_0_0_FIN_JOURNEE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-    "Je ferme la porte."
-    "Je pousse le bureau contre la grille."
-    "Encore."
-    "Puis je m'assois sur le lit."
-    "Ma tablette est là, avec le compte rendu des examens."
-    "Je l'ouvre."
-    "Je relis les mêmes lignes."
-    "Réflexes : normaux."
-    "Mémoire : normale."
-    "Perception : normale."
-    "Imagerie : aucune anomalie visible."
-    "Je descends encore."
-    "Rien."
-    think "Rien dans ma tête."
-    "Ça devrait être une bonne nouvelle."
-    "Je reste pourtant assis, la tablette entre les mains, avec une boule dans le ventre."
-    "Si Sael avait trouvé quelque chose, j'aurais eu une explication."
-    "Mauvaise, peut-être."
-    "Mais une explication."
-    "Une hallucination."
-    "Un choc."
-    "Un cerveau qui fabrique quelque chose parce qu'il ne tient plus."
-    "Je regarde la grille."
-    "Puis la porte."
-    "Puis l'écran."
-    think "Mais si j'ai rien..."
-    "Je revois Mara."
-    "Pas celle du dîner."
-    "L'autre."
-    "Immobile."
-    "Le sang."
-    "Cette sensation glacée quand j'ai compris que le visage était le sien."
-    "Je secoue la tête."
-    noam peur "Non."
-    "Le mot sort tout seul."
-    "Je me lève, fais deux pas, reviens."
-    "Ça ne change rien."
-    think "Si j'ai rien..."
-    "Je m'arrête."
-    "Cette fois je ne termine pas la phrase dans ma tête."
-    "Parce que je sais déjà où elle va."
-    "Je prends mon téléphone."
-    "Le contact d'Iris est juste là."
-    "Mon pouce reste au-dessus."
-    "Je pourrais l'appeler."
-    "Lui dire que je dors pas."
-    "Lui demander de venir."
-    "Je repose le téléphone."
-    think "Elle dort peut-être."
-    "Mensonge nul."
-    "Je regarde de nouveau le compte rendu."
-    "Tout est normal."
-    "Tout."
-    "Alors une pensée finit par passer quand même."
-    "Claire."
-    "Simple."
-    "Beaucoup plus effrayante que toutes les autres."
-    think "Si ce que j'ai vu n'était pas une hallucination..."
-    pause 0.8
-    think "Alors Mara était vraiment morte."
-    "Je reste immobile."
-    "Au même moment, quelque chose tombe dans le couloir."
-    "Un bruit banal."
-    "Peut-être une porte."
-    "Peut-être quelqu'un qui a fait tomber un objet."
-    "Je me lève quand même."
-    "Je m'approche de la porte."
-    "Je n'ouvre pas."
-    pause 0.6
-    "Des pas passent devant ma chambre."
-    "Lents."
-    "Puis une voix, plus loin."
+
+    "Je remets le bureau devant la grille et m'assois sur le lit."
+
+    "Le compte rendu de Sael est toujours ouvert sur ma tablette."
+
+    "Réflexes normaux. Mémoire normale. Champ visuel normal après contrôle. Aucune anomalie visible."
+
+    think "Normal."
+
+    "J'aurais préféré une réponse."
+
+    "Un bruit résonne dans le couloir."
+
+    "Je lève immédiatement la tête."
+
+    "Des pas passent devant ma porte."
+
+    "Puis la voix de Mara, plus loin."
+
     mara rire "Mais attends-moi !"
-    "Mon sang se glace."
-    "Sa voix s'éloigne."
-    "Vivante."
-    "Normale."
-    "Je reste face à la porte pendant plusieurs secondes."
-    "Puis je retourne au lit sans vérifier."
+
+    "Son rire s'éloigne."
+
+    "Je reste quelques secondes à écouter."
+
+    think "Si ce que j'ai vu était une hallucination, on ne sait toujours pas pourquoi."
+
+    "Je regarde la grille."
+
+    think "Et si ce n'en était pas une..."
+
+    "Je coupe la pensée avant la fin."
+
     "Cette nuit, je laisse la lumière allumée."
+
     stop music fadeout 1.2
+
     call end_day("24", sleeping=True) from _call_j23_stay_end_day_24
     jump _24_0_1_1_0_0_REVEIL
-    # Durée : ~4m30
-    # Total : ~49m30
+
+    # Durée : ~1m30
+    # Total : ~25m30
