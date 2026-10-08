@@ -1301,27 +1301,65 @@ init -2 python:
         if setup_label and renpy.has_label(setup_label):
             renpy.call_in_new_context(setup_label)
 
-    def roadmap_jump_to_node(node_id):
+    def roadmap_queue_clean_jump(node_id):
+        """
+        A roadmap teleport begins a NEW playthrough at the selected node.
+        A normal jump retains all variables from the previous timeline.
+        Save only roadmap progress and the destination across a full restart.
+        """
         node = ROADMAP_NODE_BY_ID.get(node_id)
-        if not node:
-            renpy.notify("Roadmap: noeud inconnu - %s" % node_id)
+        if not node or not node.get("teleportable", False):
+            renpy.notify("Roadmap: destination invalide.")
             return
         label = node.get("label")
         if not label or not renpy.has_label(label):
             renpy.notify("Roadmap: label introuvable - %s" % label)
             return
 
-        store.quick_menu = True
-        store.quick_menu_open = False
+        # persistent is only a transport envelope, cleared at the next start.
+        persistent.kd_roadmap_transfer = {
+            "target": node_id,
+            "unlocked": list(store.roadmap_unlocked_nodes),
+            "discovered": list(store.roadmap_discovered_nodes),
+            "completed": list(store.roadmap_completed_nodes),
+            "dev_mode": bool(store.roadmap_dev_mode),
+        }
+        renpy.save_persistent()
+        # Crucial: reset every default variable, not only the few in
+        # required_variables. Also removes stale outfit locks and flags.
+        renpy.full_restart(transition=False, label="start", target="start")
+
+    def roadmap_restore_clean_jump():
+        """Called from start, after the store has been recreated."""
+        transfer = getattr(persistent, "kd_roadmap_transfer", None)
+        if not isinstance(transfer, dict):
+            return None
+
+        # Consume the request first to avoid an accidental repeat after a crash.
+        persistent.kd_roadmap_transfer = None
+        renpy.save_persistent()
+        node_id = transfer.get("target")
+        node = ROADMAP_NODE_BY_ID.get(node_id)
+        if not node or not renpy.has_label(node.get("label", "")):
+            return None
+
+        store.roadmap_unlocked_nodes = list(transfer.get("unlocked", []))
+        store.roadmap_discovered_nodes = list(transfer.get("discovered", []))
+        store.roadmap_completed_nodes = list(transfer.get("completed", []))
+        store.roadmap_dev_mode = bool(transfer.get("dev_mode", False))
         roadmap_apply_node_setup(node_id)
-        if node_id not in store.roadmap_unlocked_nodes:
-            store.roadmap_unlocked_nodes.append(node_id)
-        if node_id not in store.roadmap_discovered_nodes:
-            store.roadmap_discovered_nodes.append(node_id)
-        store.roadmap_current_node = node_id
-        store.roadmap_target_node_id = None
-        store.roadmap_target_label = None
-        renpy.jump_out_of_context(label)
+        roadmap_set_current(node_id)
+
+        # Node-specific story setup: important when jumping directly into
+        # a mid-J20 label (which bypasses the beginning of the day).
+        # Use the destination label (rather than inherited game state).
+        label = node["label"]
+        route_dg = label.startswith(tuple("_%d_0_1_1_0" % day for day in range(20, 31)))
+        store.mara_dg_body_locked = bool(route_dg)
+        return label
+
+    def roadmap_jump_to_node(node_id):
+        roadmap_queue_clean_jump(node_id)
 
     def roadmap_latest_node_id():
         if roadmap_is_day(ROADMAP_NODE_BY_ID.get(store.roadmap_current_node)):
@@ -1362,14 +1400,8 @@ label roadmap_perform_teleport:
     $ quick_menu_open = False
     $ _roadmap_target = roadmap_target_node_id
     if _roadmap_target:
-        $ roadmap_apply_node_setup(_roadmap_target)
-        $ roadmap_set_current(_roadmap_target)
-        $ roadmap_target_label = roadmap_node(_roadmap_target).get("label")
         $ roadmap_target_node_id = None
-        if roadmap_target_label:
-            $ _jump_label = roadmap_target_label
-            $ roadmap_target_label = None
-            jump expression _jump_label
+        $ roadmap_queue_clean_jump(_roadmap_target)
     return
 
 ################################################################################
