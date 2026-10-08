@@ -1352,9 +1352,19 @@ init -2 python:
 
         # Node-specific story setup: important when jumping directly into
         # a mid-J20 label (which bypasses the beginning of the day).
-        # Use the destination label (rather than inherited game state).
+        # Determine the target's day and route even for mid-day nodes with
+        # no required_variables (e.g. the J20 knife confrontation).
         label = node["label"]
-        route_dg = label.startswith(tuple("_%d_0_1_1_0" % day for day in range(20, 31)))
+        import re
+        match = re.match(r"^_(\\d+)_", label)
+        if match:
+            target_day = int(match.group(1))
+            store.current_day = target_day
+            store.day_id = target_day
+        route_dg = (
+            label.startswith("_20_0_1_1_")
+            or label.startswith(tuple("_%d_0_1_1_0" % day for day in range(21, 31)))
+        )
         store.mara_dg_body_locked = bool(route_dg)
         return label
 
