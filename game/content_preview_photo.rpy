@@ -56,10 +56,10 @@ screen content_preview():
     zorder 250
     default elapsed = 0.0
     timer 0.05 repeat True action SetScreenVariable("elapsed", elapsed + 0.05)
-    key "K_ESCAPE" action ShowMenu("main_menu")
-    key "K_RETURN" action ShowMenu("main_menu")
+    key "K_ESCAPE" action ShowMenu("content_preview_hub")
+    key "K_RETURN" action ShowMenu("content_preview_hub")
     if elapsed >= 30.0:
-        timer 0.01 action ShowMenu("main_menu")
+        timer 0.01 action ShowMenu("content_preview_hub")
 
     add Solid("#050A12")
     $ phase, local = kd_cp_state(elapsed)
@@ -163,7 +163,7 @@ screen content_preview():
         xpos 1590 ypos 34 padding (14, 9)
         background Solid("#05131BAA") hover_background Solid("#124056DD")
         text_size 20 text_color "#BBD3DC" text_hover_color "#FFFFFF"
-        action ShowMenu("main_menu")
+        action ShowMenu("content_preview_hub")
 
 transform kd_cp_fade:
     alpha 0.0
