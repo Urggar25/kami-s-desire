@@ -1254,79 +1254,64 @@ label _24_0_1_1_0_0_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.2
 
-    $ showGroup([
-        ("elias", "neutre", -0.11),
-        ("mara", "sourire", 0.01),
-        ("noam", "neutre", 0.13),
-        ("lysa", "blase", 0.25),
-        ("julian", "sourire", 0.37),
-        ("iris", "neutre", 0.49),
-        ("tomas", "raison", 0.60),
-        ("elen", "content", 0.72),
-        ("kael", "calme", 0.84),
-        ("nyra", "raison", 0.96),
-        ("ryn", "neutre", 1.08),
-        ("sael", "neutre", 1.20),
-    ])
-
     "Le texte apparaît une dernière fois sur l'écran central tandis que le système ouvre les votes."
 
     "Toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante."
 
     think "Après toute cette discussion, la phrase paraît presque ridiculement courte."
 
-    "Tomas reste quelques secondes devant son interface avant de lever les yeux vers moi."
+    "Tomas garde encore quelques secondes les yeux sur son interface avant de valider son choix. Les autres font de même et les pupitres s'éteignent progressivement autour de la table."
 
-    "Cette fois, quoi que je choisisse personnellement, le groupe a réussi à construire quelque chose."
+    "Cette fois, il ne reste plus que le mien."
 
-    menu:
+    # Réutilise l'interface de vote commune aux autres débats.
+    # J24 ne propose volontairement que POUR ou ABSTENTION.
+    $ renpy.block_rollback()
+    $ vote_phase3_time_left = 10
+    $ vote_phase3_hover_side = None
+    $ vote_phase3_player_choice = None
+    $ vote_phase3_amendment_override = "Toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante."
 
-        "Voter POUR le nouveau Commandement":
+    stop music fadeout 0.8
 
-            $ j24_vital_vote = "for"
+    $ _j24_vote_ui_result = renpy.call_screen("vote_screen", allowed_choices=("pour", "abstention"))
 
-            noam determine "Pour."
+    if vote_phase3_player_choice == "pour":
+        $ j24_vital_vote = "for"
+    else:
+        $ j24_vital_vote = "abstain"
 
-            "Je valide mon choix."
+    # Les onze autres représentants votent POUR.
+    # Noam est ajouté avec le choix effectué dans l'interface.
+    $ vote_phase3_counts = {"pour": 0, "abstention": 0, "contre": 0}
+    $ vote_phase3_current_name = ""
+    $ vote_phase3_current_vote = None
+    $ vote_phase3_results = [
+        ("Ryn", "pour"),
+        ("Julian", "pour"),
+        ("Nyra", "pour"),
+        ("Kael", "pour"),
+        ("Mara", "pour"),
+        ("Elias", "pour"),
+        ("Lysa", "pour"),
+        ("Iris", "pour"),
+        ("Tomas", "pour"),
+        ("Elen", "pour"),
+        ("Sael", "pour"),
+        ("Noam", vote_phase3_player_choice if vote_phase3_player_choice in ("pour", "abstention") else "abstention"),
+    ]
+    $ vote_phase3_pending_votes = list(vote_phase3_results)
+    $ vote_phase3_tally_index = 0
+    $ vote_phase3_tally_done = False
 
-            jump _24_0_1_1_0_0_RESULTAT
+    $ renpy.call_screen("vote_phase3_tally_screen")
 
+    $ amendement_passe = (vote_phase3_counts["contre"] == 0)
+    $ vote_phase3_amendment_override = None
 
-        "S'abstenir":
+    play music "music/bgm_fatal_assembly.mp3" fadein 0.8
 
-            $ j24_vital_vote = "abstain"
-
-            noam hesitation "Je vais m'abstenir."
-
-            "Plusieurs regards se tournent immédiatement vers moi."
-
-            ryn surpris "Quoi ?"
-
-            iris inquiet "Noam ?"
-
-            noam raison "Je suis favorable au Commandement. Je veux être clair là-dessus."
-
-            noam reflexion "Mais Tomas a raison sur les imprécisions du texte et je ne suis pas complètement à l'aise avec la manière dont Kami pourra les interpréter."
-
-            tomas surpris "..."
-
-            noam neutre "Je ne vais pas voter contre quelque chose que je souhaite voir adopté, mais je préfère ne pas prétendre que j'ai aucune réserve."
-
-            nyra raison "L'abstention ne bloque pas l'adoption tant qu'aucun suffrage exprimé n'est défavorable."
-
-            elen inquiet "Donc ça passe quand même ?"
-
-            tomas raison "Oui. Onze pour, aucune voix contre."
-
-            elen joie "Alors ça me va !"
-
-            iris blase "Il fallait évidemment qu'il trouve le moyen de compliquer son propre vote."
-
-            noam taquin "Je reste cohérent."
-
-            iris fatigue "Malheureusement."
-
-            jump _24_0_1_1_0_0_RESULTAT
+    jump _24_0_1_1_0_0_RESULTAT
 
 
 label _24_0_1_1_0_0_RESULTAT:
