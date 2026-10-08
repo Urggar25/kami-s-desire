@@ -160,6 +160,15 @@ screen _j25_veste_screen(view):
             action NullAction()
         if hovered == zone_id and len(j25_veste_inspected) < 3:
             timer 0.9 action [SetScreenVariable("reaction", comment), SetVariable("j25_veste_inspected", j25_veste_inspected + ([] if zone_id in j25_veste_inspected else [zone_id]))]
+        # Reflet discret au centre des zones encore à examiner.
+        # Le marqueur disparaît au survol pour laisser voir le tissu.
+        if zone_id not in j25_veste_inspected and hovered != zone_id:
+            text "✦":
+                xpos (rect[0] + rect[2] // 2)
+                ypos (rect[1] + rect[3] // 2)
+                xanchor 0.5 yanchor 0.5
+                size 18 color "#D8F3E8"
+                at _j25_veste_sparkle((0.0, 0.85, 1.7)[("devant", "manche", "poignet").index(zone_id)])
 
     frame:
         xpos 50 ypos 35 padding (24, 16)
@@ -227,6 +236,17 @@ screen _j25_photo_screen(view):
                 add Transform(snapshot, crop=(0, 0, 1920, 1080), xysize=(1120, 630))
                 text _("PHOTO ENREGISTRÉE") xalign 0.5 size 24 color "#25333B" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
         timer 1.0 action Return((view.center[0], view.center[1], view.zoom))
+
+
+# Un éclat court, désynchronisé entre les trois emplacements.
+# Une faible opacité évite l'effet « bouton clignotant » sur le corps.
+transform _j25_veste_sparkle(delay=0.0):
+    alpha 0.0
+    pause delay
+    ease 0.32 alpha 0.55 zoom 1.12
+    ease 0.55 alpha 0.0 zoom 0.94
+    pause (2.5 - delay)
+    repeat
 
 
 transform _j25_shutter_flash:
