@@ -753,6 +753,11 @@ label start:
     call _init_cinema_params from _call__init_cinema_params
     $ lock_nsfw_content()
     $ restore_unlocked_arguments()
+    # A roadmap teleport restarts the game with all defaults restored.
+    # Consume its destination only after the new store is initialized.
+    $ _roadmap_clean_label = roadmap_restore_clean_jump()
+    if _roadmap_clean_label:
+        jump expression _roadmap_clean_label
     if roadmap_target_label:
         $ _target = roadmap_target_label
         $ roadmap_target_label = None
