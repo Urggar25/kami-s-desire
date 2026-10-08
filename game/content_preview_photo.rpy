@@ -10,7 +10,7 @@ init python:
     )
 
     def kd_cp_state(seconds):
-        # 0-4 title; 4-20 camera demonstration (two pans + photos);
+        # 0-4 title; 4-20 camera demonstration (three pans + photos);
         # 20-26 photo contact-sheet; 26-30 end card.
         if seconds < 4.0:
             return -1, 0.0
@@ -33,8 +33,8 @@ init python:
     def kd_cp_cursor(local):
         # A simulated cursor follows the pans, then lands on shutter.
         t = kd_cp_ease(max(0.0, min(1.0, (local - 0.08) / 0.65)))
-        if local > 0.79:
-            u = kd_cp_ease((local - 0.79) / 0.13)
+        if local > 0.63:
+            u = kd_cp_ease((local - 0.63) / 0.12)
             return (960 + (1670 - 960) * u, 520 + (925 - 520) * u)
         return (600 + 600 * t, 700 - 470 * t)
 
@@ -110,9 +110,9 @@ screen content_preview():
             background Solid("#07202BDC")
             text "●  SNAP / PHOTO" size 23 color "#D7F5FA"
 
-        if 0.90 < local < 0.97:
+        if 0.77 < local < 0.80:
             add Solid("#FFFFFFDD")
-        if local >= 0.97:
+        if local >= 0.81:
             frame at kd_cp_photo_pop:
                 align (0.5, 0.5)
                 xsize 745 ysize 465
