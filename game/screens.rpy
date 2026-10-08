@@ -618,7 +618,7 @@ screen navigation():
         textbutton _("Roadmap") action ShowMenu("roadmap_menu")
 
         if main_menu:
-            textbutton "Content Preview / Aperçu" action ShowMenu("content_preview")
+            textbutton "Content Previews / Aperçus" action ShowMenu("content_preview_hub")
 
         if _in_replay:
             textbutton _("Fin de la rediffusion") action EndReplay(confirm=True)
