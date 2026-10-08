@@ -191,10 +191,14 @@ transform vote_phase3_ballot_pop:
     easein 0.18 zoom 1.0
 
 
-screen vote_screen():
+screen vote_screen(allowed_choices=None):
     modal True
     zorder 220
 
+    # Par défaut, les anciens débats conservent les trois choix.
+    # Les journées qui imposent un sous-ensemble (ex. J24 : POUR / ABSTENTION)
+    # peuvent le préciser sans dupliquer toute l'interface.
+    $ _vote_allowed_choices = allowed_choices if allowed_choices is not None else ("pour", "abstention", "contre")
     $ timer_ratio = float(vote_phase3_time_left) / 10.0
 
     add "bg_conclave" at adaptive_fullscreen
@@ -249,12 +253,15 @@ screen vote_screen():
                 add Solid("#6B747A55", xsize=410, ysize=1) yalign 0.5
 
         hbox:
-            xpos 132
+            xalign 0.5
             ypos 388
             spacing 46
-            use vote_phase3_choice_card("pour", "+", "VOTE POUR", "Changer les règles", "#A7BE83", "#162016DD")
-            use vote_phase3_choice_card("abstention", "=", "ABSTENTION", "Laisser le système trancher", "#A9AAA6", "#1A1A1ADD")
-            use vote_phase3_choice_card("contre", "-", "VOTE CONTRE", "Maintenir le cadre", "#B96455", "#221211DD")
+            if "pour" in _vote_allowed_choices:
+                use vote_phase3_choice_card("pour", "+", "VOTE POUR", "Changer les règles", "#A7BE83", "#162016DD")
+            if "abstention" in _vote_allowed_choices:
+                use vote_phase3_choice_card("abstention", "=", "ABSTENTION", "Laisser le système trancher", "#A9AAA6", "#1A1A1ADD")
+            if "contre" in _vote_allowed_choices:
+                use vote_phase3_choice_card("contre", "-", "VOTE CONTRE", "Maintenir le cadre", "#B96455", "#221211DD")
 
     timer 1.0 repeat True action If(
         vote_phase3_time_left > 0,
