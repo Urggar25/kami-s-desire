@@ -97,9 +97,13 @@ init python:
         if zone_id in store.j25_veste_inspected:
             return
         renpy.set_screen_variable("reaction", comment)
+        renpy.set_screen_variable("locked", True)
         store.j25_veste_inspected = store.j25_veste_inspected + [zone_id]
-        if len(store.j25_veste_inspected) == 3:
-            _j25_focus(view)
+
+    def _j25_veste_bonus(comment):
+        renpy.set_screen_variable("reaction", comment)
+        renpy.set_screen_variable("bonus_seen", True)
+        renpy.set_screen_variable("locked", True)
 
     def _j25_capture_photo(view):
         # Une vue indépendante fige exactement le cadrage au déclenchement.
@@ -179,7 +183,14 @@ screen _j25_veste_screen(view):
     modal True
     zorder 220
     default hovered = None
+    default locked = False
+    default bonus_seen = False
     default reaction = "Il faut trouver où le tissu aurait pu s'arracher."
+
+    # Une fois le commentaire déclenché, on garde le gros plan 2 secondes,
+    # même si le curseur a déjà quitté la zone. Puis dézoom fluide.
+    if locked:
+        timer 2.0 action [Function(_j25_focus, view), SetScreenVariable("hovered", None), SetScreenVariable("locked", False)]
 
     for zone_id, point, size, comment index zone_id in _J25_VESTE_ZONES:
         $ hitbox = _j25_veste_hitbox(point, size)
@@ -189,11 +200,11 @@ screen _j25_veste_screen(view):
             padding (0, 0)
             background None
             hover_background None
-            sensitive zone_id not in j25_veste_inspected and len(j25_veste_inspected) < 3
+            sensitive not locked and zone_id not in j25_veste_inspected and len(j25_veste_inspected) < 3
             hovered [SetScreenVariable("hovered", zone_id), Function(_j25_focus, view, focus_center)]
-            unhovered [SetScreenVariable("hovered", None), Function(_j25_focus, view)]
+            unhovered [SetScreenVariable("hovered", None), If(locked, NullAction(), Function(_j25_focus, view))]
             action NullAction()
-        if hovered == zone_id and zone_id not in j25_veste_inspected:
+        if not locked and hovered == zone_id and zone_id not in j25_veste_inspected:
             timer 0.9 action Function(_j25_veste_complete, view, zone_id, comment)
         # Les étoiles sont purement indicatives, pas des boutons.
         if zone_id not in j25_veste_inspected and hovered != zone_id:
@@ -205,18 +216,19 @@ screen _j25_veste_screen(view):
 
     # Quatrième zone invisible : réaction bonus, sans valider un détail.
     $ bonus_hitbox = _j25_veste_hitbox(_J25_VESTE_BONUS, _J25_VESTE_BONUS_SIZE)
-    if len(j25_veste_inspected) < 3:
+    if len(j25_veste_inspected) < 3 and not bonus_seen:
         button:
+            sensitive not locked
             xpos bonus_hitbox[0] ypos bonus_hitbox[1]
             xsize bonus_hitbox[2] ysize bonus_hitbox[3]
             padding (0, 0)
             background None
             hover_background None
             hovered [SetScreenVariable("hovered", "bonus"), Function(_j25_focus, view, _j25_veste_source_center(_J25_VESTE_BONUS))]
-            unhovered [SetScreenVariable("hovered", None), Function(_j25_focus, view)]
+            unhovered [SetScreenVariable("hovered", None), If(locked, NullAction(), Function(_j25_focus, view))]
             action NullAction()
-        if hovered == "bonus":
-            timer 0.9 action SetScreenVariable("reaction", "Non mais à quoi je pense moi...")
+        if hovered == "bonus" and not locked:
+            timer 0.9 action Function(_j25_veste_bonus, "Non mais à quoi je pense moi...")
 
     frame:
         xpos 50 ypos 35 padding (24, 16)
@@ -235,8 +247,9 @@ screen _j25_veste_screen(view):
             text "NOAM" size 27 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf"
             text _(reaction) size 29 color "#F1F6F8" xmaximum 1470
 
-    if len(j25_veste_inspected) == 3:
-        timer 2.0 action Return(list(j25_veste_inspected))
+    if len(j25_veste_inspected) == 3 and not locked:
+        # Laisser au dézoom le temps de se terminer avant de quitter le minijeu.
+        timer 0.8 action Return(list(j25_veste_inspected))
 
 
 screen _j25_photo_screen(view):
