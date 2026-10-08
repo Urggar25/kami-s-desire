@@ -589,7 +589,7 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
 
     noam raison "On va remonter. Mais attends je veux vérifier un truc."
 
-    "Je sors le bout de tissu. La couloir correspond parfaitement à la petite veste qu'elle porte toujours."
+    "Je sors le bout de tissu. La couleur correspond parfaitement à la petite veste qu'elle porte toujours."
 
     noam reflechit "Je veux voir si ça correspond..."
 
@@ -620,7 +620,7 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
     noam fatigue "Je sais pas. On aurait dû fouiller plus..."
     noam colere "Et puis, je comprends qu'avec l'histoire du couteau c'était pas rassurant d'être dans cette pièce..."
 
-    iris inquiet "... O-Ouais, c'est clair. Tu m'avais fais bien flipper ce coup-là."
+    iris inquiet "... O-Ouais, c'est clair. Tu m'avais fait bien flipper ce coup-là."
 
     "Je regarde le robot devant la cloison. Il nous a suffi de le tirer pour retrouver ce que j'avais fini par douter d'avoir vu."
 
@@ -668,7 +668,7 @@ label _25_0_1_1_0_0_RETOUR:
     noam raison "Nous, on n'y connaît rien. Mais y'a une chose dont je suis sûr à 100%% : elle est morte de chez morte."
     noam reflexion "Alors à quoi bon autopsier le corps ? Je pense pas que ça nous aidera à comprendre."
 
-    iris reflexion "Oui tu n'as pas tord. Raaah, j'aime pas rester impuissante ! Il faut qu'on fasse quelque chose !!"
+    iris reflexion "Oui tu n'as pas tort. Raaah, j'aime pas rester impuissante ! Il faut qu'on fasse quelque chose !!"
 
     "Elle tourne la tête vers moi. Le faisceau éclaire mal son visage, mais je vois qu'elle attend que j'aille au bout de l'idée."
 
@@ -690,7 +690,7 @@ label _25_0_1_1_0_0_RETOUR:
 
     noam desaccord "Tu penses que les autres..."
 
-    iris peur "J'ai pas dis ça, hein ! Je dis que j'aurais pas cru ça de Mara non plus. Ce matin, j'aurais laissé Mara entrer dans ma chambre sans y penser une seule seconde."
+    iris peur "J'ai pas dit ça, hein ! Je dis que j'aurais pas cru ça de Mara non plus. Ce matin, j'aurais laissé Mara entrer dans ma chambre sans y penser une seule seconde."
     iris triste "J'ai été bête de ne pas te croire..."
 
     "Je voudrais lui répondre... Mais je ne sais pas quoi dire. Je me rappelle la main de Mara dans le plat de biscuits et les miettes sur son doigt."
@@ -840,7 +840,7 @@ label _25_0_1_1_0_0_APRES_MIDI:
 
     elen triste "Qu'est-ce qui t'arrive, Iris ? T'es encore plus blanche que d'habitude."
 
-    mara rire "Naaan, sérieux ?! Me dis pas que tu l'as agressée sexuellement Noam ?!"
+    mara rire "Naaan, sérieux ?! Me dis pas que Noam a tenté sa chance ?!"
 
     noam surpris "Hein ?! Qu'est-ce que j'ai à voir avec ça; moi ?!"
 
