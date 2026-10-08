@@ -38,9 +38,9 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Consultation des caméras | Croise heures et salles dans des archives vidéo et déclenche une révélation spéciale sur la bonne combinaison. | `game/minijeu/consultation_cameras.rpy` | `call _11_0_1_3_MINIJEU_CAMERAS` |
 | Les cinq aiguillages | Trolley problem en cinq manches dont chaque décision transforme les suivantes. | `game/minijeu/trolley_problem_j12.rpy` | `call j12_play_trolley_problem` |
 | Sept différences — Juliette | Compare deux dessins, mémorise quatre différences et joue une réaction narrative pour chacune. | `game/minijeu/sept_differences_j13.rpy` | `call j13_sept_differences_run` |
-| Veste de Mara — jour 25 | Examine trois zones invisibles au survol, zoome sous la lampe et affiche les observations de Noam sur le tissu intact. | `game/minijeu/j25_enquete_photo_porte.rpy` | `call j25_examiner_veste` |
-| Photographie — jour 25 | Cadre une CG zoomée en déplaçant le curseur aux bords, puis capture avec Espace ou Entrée et mémorise le cadrage. | `game/minijeu/j25_enquete_photo_porte.rpy` | `call j25_prendre_photo` |
-| Signal à la porte d'Iris | Reconnaît trois frappes rapides puis deux lentes, avec repères visuels, aide de timing et nouvelles tentatives. | `game/minijeu/j25_enquete_photo_porte.rpy` | `call j25_toquer_iris` |
+| Veste de Mara — jour 25 | Examine trois zones de la veste au survol, tremble puis zoome progressivement sous la lampe et poursuit automatiquement deux secondes après la dernière observation. | `game/minijeu/j25_enquete_photo_porte.rpy` | `call j25_examiner_veste` |
+| Photographie — jour 25 | Cadre une CG zoomée aux bords, capture avec Espace ou Entrée et affiche le cadrage figé en photo pendant une seconde après le flash. | `game/minijeu/j25_enquete_photo_porte.rpy` | `call j25_prendre_photo` |
+| Signal à la porte d'Iris | Reconnaît trois frappes rapides puis deux lentes sur une partition lumineuse, avec repère de tempo et nouvelles tentatives. | `game/minijeu/j25_enquete_photo_porte.rpy` | `call j25_toquer_iris` |
 | Préparer le plateau | Mini-jeu court de sélection d'objets sous chrono pour la préparation du jour 7. | `game/scenario/7_0_1.rpy` | `call j701_play_plate` |
 | Garder son calme | Choix chronométrés successifs qui mesurent la maîtrise de Noam. | `game/scenario/7_0_1.rpy` | `call j701_play_calm` |
 | Console instable | Calibre des valeurs d'une console avant verrouillage et révélation. | `game/scenario/7_0_1.rpy` | `call j701_play_console` |

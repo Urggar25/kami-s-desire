@@ -6,14 +6,15 @@ default j25_knock_success = False
 
 init python:
     import time as _j25_time
+    import math as _j25_math
 
     # Coordonnées dans le cadre 1920 × 1080 de bg_cg040.
     _J25_VESTE_ZONES = (
-        ("devant", (730, 544, 160, 66), (0.42, 0.53),
+        ("devant", (786, 563, 89, 55), (0.433, 0.547),
          "La couleur est exactement la même. Mais ici, il ne manque rien."),
-        ("manche", (690, 610, 122, 66), (0.39, 0.59),
+        ("manche", (730, 617, 70, 36), (0.395, 0.586),
          "Non... Le tissu de la manche est intact. Pas de déchirure."),
-        ("poignet", (814, 650, 66, 52), (0.44, 0.62),
+        ("poignet", (812, 648, 42, 32), (0.433, 0.616),
          "La couture tient encore. Le morceau qu'on a trouvé ne vient pas de là."),
     )
 
@@ -26,23 +27,52 @@ init python:
             super(_J25View, self).__init__(**kwargs)
             self.zoom = zoom
             self.center = center
+            self.motion = None
+            self.draw_st = 0.0
             self.child = Transform("bg_cg040", xysize=(1920, 1080))
 
         def render(self, width, height, st, at):
+            self.draw_st = st
+            shake_x = shake_y = 0.0
+            if getattr(self, "motion", None) is not None:
+                started, initial_zoom, initial_center, target_zoom, target_center, shake = self.motion
+                elapsed = max(0.0, st - started)
+                lead = 0.14 if shake else 0.0
+                duration = 0.62 if shake else 0.30
+                if elapsed < lead:
+                    strength = 5.0 * (1.0 - elapsed / lead)
+                    shake_x = _j25_math.sin(elapsed * 150.0) * strength
+                    shake_y = _j25_math.sin(elapsed * 110.0) * strength * 0.55
+                amount = min(1.0, max(0.0, (elapsed - lead) / duration))
+                eased = amount * amount * (3.0 - 2.0 * amount)
+                self.zoom = initial_zoom + (target_zoom - initial_zoom) * eased
+                self.center = tuple(a + (b - a) * eased for a, b in zip(initial_center, target_center))
+                if amount < 1.0:
+                    renpy.redraw(self, 0)
+                else:
+                    self.motion = None
             scaled = renpy.render(Transform(self.child, zoom=self.zoom), 1920, 1080, st, at)
             cx = _j25_clamp_center(self.center[0], self.zoom)
             cy = _j25_clamp_center(self.center[1], self.zoom)
             result = renpy.Render(1920, 1080)
-            result.blit(scaled, (int(960 - cx * 1920 * self.zoom), int(540 - cy * 1080 * self.zoom)))
+            result.blit(scaled, (int(960 - cx * 1920 * self.zoom + shake_x), int(540 - cy * 1080 * self.zoom + shake_y)))
             return result
 
         def visit(self):
             return [self.child]
 
     def _j25_focus(view, center=None):
-        view.zoom = 2.0 if center else 1.0
-        view.center = center or (0.5, 0.5)
+        if len(store.j25_veste_inspected) >= 3:
+            return
+        view.motion = (getattr(view, "draw_st", 0.0), view.zoom, view.center,
+                       2.0 if center else 1.0, center or (0.5, 0.5), center is not None)
         renpy.redraw(view, 0)
+
+    def _j25_capture_photo(view):
+        # Une vue indépendante fige exactement le cadrage au déclenchement.
+        renpy.set_screen_variable("snapshot", _J25View(view.zoom, view.center))
+        renpy.set_screen_variable("phase", "flash")
+        renpy.sound.play("audio/sfx_photo.mp3")
 
     def _j25_pan(view):
         # Pas dépendant de la fréquence du timer ; pause après un menu/load.
@@ -124,11 +154,12 @@ screen _j25_veste_screen(view):
             padding (0, 0)
             background None
             hover_background None
-            hovered [SetScreenVariable("hovered", zone_id), SetScreenVariable("reaction", comment), Function(_j25_focus, view, center)]
+            sensitive len(j25_veste_inspected) < 3
+            hovered [SetScreenVariable("hovered", zone_id), Function(_j25_focus, view, center)]
             unhovered [SetScreenVariable("hovered", None), Function(_j25_focus, view)]
             action NullAction()
-        if hovered == zone_id and zone_id not in j25_veste_inspected:
-            timer 0.7 action SetVariable("j25_veste_inspected", j25_veste_inspected + [zone_id])
+        if hovered == zone_id and len(j25_veste_inspected) < 3:
+            timer 0.9 action [SetScreenVariable("reaction", comment), SetVariable("j25_veste_inspected", j25_veste_inspected + ([] if zone_id in j25_veste_inspected else [zone_id]))]
 
     frame:
         xpos 50 ypos 35 padding (24, 16)
@@ -148,44 +179,68 @@ screen _j25_veste_screen(view):
             text _(reaction) size 29 color "#F1F6F8" xmaximum 1470
 
     if len(j25_veste_inspected) == 3:
-        textbutton _("TERMINER L'EXAMEN"):
-            xpos 1450 ypos 55 padding (22, 16)
-            text_size 24 text_color "#DDF8FF"
-            background Solid("#07121CEE") hover_background Solid("#19445DEE")
-            action Return(list(j25_veste_inspected))
+        timer 2.0 action Return(list(j25_veste_inspected))
 
 
 screen _j25_photo_screen(view):
     modal True
     zorder 220
-    default captured = False
+    default phase = "camera"
+    default snapshot = None
 
-    if not captured:
+    if phase == "camera":
         timer 0.033 repeat True action Function(_j25_pan, view)
-        key "K_SPACE" action [SetScreenVariable("captured", True), Play("sound", "audio/sfx_photo.mp3")]
-        key "K_RETURN" action [SetScreenVariable("captured", True), Play("sound", "audio/sfx_photo.mp3")]
+        key "K_SPACE" action Function(_j25_capture_photo, view)
+        key "K_RETURN" action Function(_j25_capture_photo, view)
+
+    if phase == "camera":
+        # Coins du viseur et réticule, sans nouvel asset.
+        for cx, cy, sx, sy in ((120, 140, 1, 1), (1800, 140, -1, 1), (120, 820, 1, -1), (1800, 820, -1, -1)):
+            add Solid("#E7F7EECC") xpos (cx if sx > 0 else cx - 85) ypos cy xsize 85 ysize 4
+            add Solid("#E7F7EECC") xpos cx ypos (cy if sy > 0 else cy - 85) xsize 4 ysize 85
+        add Solid("#E7F7EEAA") xpos 940 ypos 539 xsize 40 ysize 2
+        add Solid("#E7F7EEAA") xpos 959 ypos 520 xsize 2 ysize 40
+    
+        frame:
+            xpos 55 ypos 35 padding (22, 14)
+            background Solid("#07121CEE")
+            text _("TABLETTE / APPAREIL PHOTO — ZOOM ×2,2") size 28 color "#DDF8FF"
+        frame:
+            xpos 280 ypos 920 xsize 1360 padding (24, 18)
+            background Solid("#07121CEE")
+            vbox:
+                spacing 7
+                text _("Déplace le curseur vers les bords pour ajuster le cadrage.") xalign 0.5 size 26 color "#F1F6F8"
+                text _("ESPACE ou ENTRÉE : prendre la photo") xalign 0.5 size 28 color "#5CD3FF"
+    elif phase == "flash":
+        add Solid("#FFFFFF") at _j25_shutter_flash
+        timer 0.12 action SetScreenVariable("phase", "preview")
     else:
-        add Solid("#FFFFFFCC")
-        timer 0.18 action Return((view.center[0], view.center[1], view.zoom))
+        add Solid("#03070DBB")
+        frame at _j25_print_in:
+            align (0.5, 0.5)
+            xsize 1156 ysize 724
+            padding (18, 18)
+            background Solid("#ECE8DC")
+            vbox:
+                spacing 18
+                add Transform(snapshot, crop=(0, 0, 1920, 1080), xysize=(1120, 630))
+                text _("PHOTO ENREGISTRÉE") xalign 0.5 size 24 color "#25333B" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+        timer 1.0 action Return((view.center[0], view.center[1], view.zoom))
 
-    # Coins du viseur et réticule, sans nouvel asset.
-    for cx, cy, sx, sy in ((120, 140, 1, 1), (1800, 140, -1, 1), (120, 820, 1, -1), (1800, 820, -1, -1)):
-        add Solid("#E7F7EECC") xpos (cx if sx > 0 else cx - 85) ypos cy xsize 85 ysize 4
-        add Solid("#E7F7EECC") xpos cx ypos (cy if sy > 0 else cy - 85) xsize 4 ysize 85
-    add Solid("#E7F7EEAA") xpos 940 ypos 539 xsize 40 ysize 2
-    add Solid("#E7F7EEAA") xpos 959 ypos 520 xsize 2 ysize 40
 
-    frame:
-        xpos 55 ypos 35 padding (22, 14)
-        background Solid("#07121CEE")
-        text _("TABLETTE / APPAREIL PHOTO — ZOOM ×2,2") size 28 color "#DDF8FF"
-    frame:
-        xpos 280 ypos 920 xsize 1360 padding (24, 18)
-        background Solid("#07121CEE")
-        vbox:
-            spacing 7
-            text _("Déplace le curseur vers les bords pour ajuster le cadrage.") xalign 0.5 size 26 color "#F1F6F8"
-            text _("ESPACE ou ENTRÉE : prendre la photo") xalign 0.5 size 28 color "#5CD3FF"
+transform _j25_shutter_flash:
+    alpha 0.95
+    linear 0.12 alpha 0.0
+
+transform _j25_print_in:
+    rotate -2.0
+    zoom 1.035
+    ease 0.18 zoom 1.0
+
+transform _j25_beat_glow:
+    alpha 0.9
+    ease 0.28 alpha 0.25
 
 
 screen _j25_knock_screen():
@@ -200,35 +255,65 @@ screen _j25_knock_screen():
         key "K_SPACE" action Function(_j25_knock_hit, rhythm)
         key "mousedown_1" action Function(_j25_knock_hit, rhythm)
 
-    frame:
-        xpos 280 ypos 220 xsize 1360 padding (45, 34)
-        background Solid("#07121CEE")
-        vbox:
-            spacing 25
-            text _("LE SIGNAL D'IRIS") xalign 0.5 size 40 color "#DDF8FF" font "fonts/Rajdhani-SemiBold.ttf"
-            text _("ESPACE ou clic : toquer. Relâche entre chaque coup.") xalign 0.5 size 25 color "#ACBDC8"
-            hbox:
-                xalign 0.5 spacing 28
-                for i in range(5):
-                    frame:
-                        xsize 175 ysize 130 padding (0, 0)
-                        background Solid("#205E6588" if i < rhythm.count else "#14232BCC")
-                        vbox:
-                            align (0.5, 0.5) spacing 4
-                            text ("-" if i < 3 else "---") xalign 0.5 size 55 color ("#8FFFC7" if i < rhythm.count else "#DDF8FF")
-                            text (_("RAPIDE") if i < 3 else _("LENT")) xalign 0.5 size 21 color "#ACBDC8"
+    add Solid("#02081155")
+    text _("CHAMBRE D'IRIS"):
+        xpos 160 ypos 150 size 23 kerning 5 color "#A5BAC0"
+        font "fonts/Rajdhani-SemiBold.ttf"
+    text _("Le signal"):
+        xpos 155 ypos 187 size 70 color "#EEF2EA"
+        font "fonts/Rajdhani-SemiBold.ttf"
+    add Solid("#86BDB7") xpos 160 ypos 282 xsize 60 ysize 3
+    text _("Trois coups rapides. Deux coups lents."):
+        xpos 160 ypos 310 size 28 color "#C3D1D0"
 
-            if 0 < rhythm.count < 5 and not rhythm.failed:
-                $ elapsed = max(0.0, _j25_time.monotonic() - rhythm.last)
-                $ low, high = rhythm.limits()
-                bar value min(elapsed, high) range high xsize 800 xalign 0.5 ysize 15
-                text (_("FRAPPE MAINTENANT") if low <= elapsed <= high else _("ATTENDS…")) xalign 0.5 size 26 color "#8FFFC7"
-            text _(rhythm.feedback) xalign 0.5 size 26 color ("#FFAAA4" if rhythm.failed else "#F1F6F8")
-            if rhythm.failed:
-                textbutton _("RECOMMENCER"):
-                    xalign 0.5 text_size 28 text_color "#5CD3FF"
-                    action Function(rhythm.reset)
-                key "K_RETURN" action Function(rhythm.reset)
+    frame:
+        xpos 300 ypos 580 xsize 1320 ysize 330
+        background Solid("#081117E8") padding (0, 0)
+        text _("RAPIDES") xpos 190 ypos 28 size 18 kerning 4 color "#849B9F"
+        text _("LENTS") xpos 845 ypos 28 size 18 kerning 4 color "#849B9F"
+        add Solid("#385052") xpos 130 ypos 142 xsize 1060 ysize 2
+        add Solid("#385052") xpos 665 ypos 70 xsize 1 ysize 110
+        for i index (i, i < rhythm.count) in range(5):
+            $ bx = (180, 360, 540, 840, 1100)[i]
+            $ done = i < rhythm.count
+            $ active = i == rhythm.count and not rhythm.failed
+            $ ink = "#9FDFCA" if done else ("#F0E3BD" if active else "#536A72")
+            if done:
+                add Solid("#79D8BD") xpos (bx - 38) ypos 135 xsize 76 ysize 17 at _j25_beat_glow
+            text ("-" if i < 3 else "---"):
+                xpos bx ypos 95 xanchor 0.5 size 60 color ink
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text ("%02d" % (i + 1)):
+                xpos bx ypos 176 xanchor 0.5 size 17 color ink
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            if active:
+                add Solid("#F0E3BD") xpos (bx - 3) ypos 76 xsize 6 ysize 6
+
+        if 0 < rhythm.count < 5 and not rhythm.failed:
+            $ elapsed = max(0.0, _j25_time.monotonic() - rhythm.last)
+            $ low, high = rhythm.limits()
+            add Solid("#263C44") xpos 130 ypos 230 xsize 1060 ysize 4
+            add Solid("#A9D6C877") xpos (130 + int(1060 * low / high)) ypos 230 xsize (1060 - int(1060 * low / high)) ysize 4
+            add Solid("#F0E3BD") xpos (130 + int(1060 * min(elapsed / high, 1.0))) ypos 223 xsize 3 ysize 18
+            text (_("MAINTENANT") if low <= elapsed <= high else _("ATTENDS")):
+                xalign 0.5 ypos 263 size 22 kerning 3 color "#F0E3BD"
+                font "fonts/Rajdhani-SemiBold.ttf"
+        else:
+            text _(rhythm.feedback):
+                xalign 0.5 ypos 254 size 24 color ("#EBA69A" if rhythm.failed else "#A9D6C8")
+
+    if rhythm.failed:
+        textbutton _("RECOMMENCER  /  ENTRÉE"):
+            xalign 0.5 ypos 940 padding (24, 10)
+            background None hover_background Solid("#A9D6C81A")
+            text_size 22 text_color "#D4E7E1" text_hover_color "#FFFFFF"
+            text_font "fonts/Rajdhani-SemiBold.ttf" text_kerning 2
+            action Function(rhythm.reset)
+        key "K_RETURN" action Function(rhythm.reset)
+    else:
+        text _("ESPACE OU CLIC  ·  RELÂCHE ENTRE CHAQUE COUP"):
+            xalign 0.5 ypos 960 size 19 kerning 2 color "#A7BABC"
+            font "fonts/Rajdhani-SemiBold.ttf"
 
 
 label j25_examiner_veste:
