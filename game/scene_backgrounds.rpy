@@ -1,3 +1,4 @@
+default current_period = "Matin"
 default room_scene_indices = {}
 default noam_room_has_jammer = True
 default noam_has_juliette_drawing = True
@@ -508,9 +509,9 @@ image noam_salle_bain = DynamicDisplayable(automatic_scene_image_dynamic, "image
 
 # Décors narratifs des jours 17 à 21. Leur éclairage est volontairement
 # intégré à l'illustration et ne passe pas par la teinte horaire automatique.
-image bg_conduit_reseau = "images/background/scenes/bg_conduit_reseau.png"
-image bg_cavite_technique = "images/background/scenes/bg_cavite_technique.png"
-image bg_salle_goumi_cachee = "images/background/scenes/bg_salle_goumi_cachee.png"
+image bg_conduit_reseau = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_conduit_reseau.png")
+image bg_cavite_technique = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_cavite_technique.png")
+image bg_salle_goumi_cachee = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_salle_goumi_cachee.png")
 image bg_navette_retour = "images/background/scenes/bg_navette_retour.png"
 
 # CG de révélation des jours 8 à 21, indexées automatiquement par la galerie.
