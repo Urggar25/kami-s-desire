@@ -1,118 +1,129 @@
-# Jour 26 — Transfert de la photographie au projecteur du Conclave.
-# Interface volontairement autonome : aucun fichier PNG supplémentaire requis.
-# La miniature reprend l'image réelle de l'examen du jour 25.
-
+# Jour 26 - Mini-jeu de transfert photographique, Conclave OS.
+# Le drag&drop utilise le systeme natif Ren'Py, sans ressources externes.
+# Le fichier affiche la vraie CG de l'enquete de Noam.
 init -1 python:
     def j26_photo_transfer_dropped(drags, drop):
-        # Seul le dossier de projection accepte le fichier : les autres
-        # lâchers réinitialisent simplement sa position.
         if drop is not None and drop.drag_name == "j26_projection_folder":
             return True
         return None
 
 transform j26_projection_appear:
     alpha 0.0
-    zoom 0.96
-    ease 0.45 alpha 1.0 zoom 1.0
+    zoom 0.965
+    ease 0.42 alpha 1.0 zoom 1.0
 
 screen j26_photo_transfer():
     modal True
     zorder 200
-    add Solid("#050b15f5")
+    add Solid("#040b13df")
 
     frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 1570
-        ysize 850
+        xalign 0.5 yalign 0.5
+        xsize 1650 ysize 880
         padding (0, 0)
-        background Solid("#101e2dfc")
+        background Solid("#081826f9")
 
         fixed:
-            xfill True
-            yfill True
+            xysize (1650, 880)
+            add Solid("#153046") xpos 0 ypos 0 xysize (1650, 70)
+            add Solid("#55aec5") xpos 0 ypos 68 xysize (1650, 2)
+            text "◈  CONCLAVE OS" xpos 30 ypos 16 color "#e9edf0" size 31 bold True
+            text "SESSION DE NOAM / TERMINAL CONNECTE" xpos 1138 ypos 24 color "#8cb6c5" size 18
 
-            add Solid("#162a39") xpos 0 ypos 0 xysize (1570, 75)
-            text "CONCLAVE OS" xpos 37 ypos 19 size 31 bold True color "#e4eff2"
-            text "TERMINAL DE PRÉSENTATION · CONNEXION LOCALE" xpos 1024 ypos 27 size 17 color "#84aebd"
+            # Deux fenetres OS distinctes, avec barre d'outils et arborescence.
+            add Solid("#10283b") xpos 24 ypos 92 xysize (782, 667)
+            add Solid("#10283b") xpos 842 ypos 92 xysize (782, 667)
+            add Solid("#24465c") xpos 24 ypos 92 xysize (782, 48)
+            add Solid("#24465c") xpos 842 ypos 92 xysize (782, 48)
+            text "TABLETTE DE NOAM" xpos 49 ypos 102 size 25 color "#f2eadb" bold True
+            text "TERMINAL DU CONCLAVE" xpos 866 ypos 102 size 25 color "#f2eadb" bold True
 
-            add Solid("#0c1724") xpos 30 ypos 96 xysize (1510, 78)
-            text "GESTIONNAIRE DE FICHIERS" xpos 54 ypos 112 size 27 color "#e8c48b" bold True
-            text "Glissez la photographie de la tablette vers le dossier de projection." xpos 54 ypos 145 size 19 color "#9bb4c2"
+            # Breadcrumbs.
+            add Solid("#081a2a") xpos 39 ypos 156 xysize (752, 42)
+            add Solid("#081a2a") xpos 857 ypos 156 xysize (752, 42)
+            text "Appareil  /  Photos  /  Enquete" xpos 62 ypos 166 size 20 color "#a7c2cb"
+            text "Ce PC  /  Affichage  /  Projection" xpos 882 ypos 166 size 20 color "#a7c2cb"
 
-            add Solid("#152b3c") xpos 33 ypos 195 xysize (715, 497)
-            add Solid("#152b3c") xpos 820 ypos 195 xysize (715, 497)
+            # Panneau de navigation gauche.
+            add Solid("#0c1c2c") xpos 39 ypos 211 xysize (195, 522)
+            add Solid("#0c1c2c") xpos 857 ypos 211 xysize (195, 522)
+            text "EMPLACEMENTS" xpos 55 ypos 232 size 16 color "#829eac"
+            text "▸  Stockage" xpos 57 ypos 282 size 21 color "#aec6cf"
+            text "▸  Photos" xpos 57 ypos 325 size 21 color "#aec6cf"
+            add Solid("#25516a") xpos 48 ypos 367 xysize (180, 43)
+            text "▸  Enquete" xpos 57 ypos 375 size 22 bold True color "#c7eef4"
+            text "▸  Archives" xpos 57 ypos 430 size 21 color "#829eac"
+            text "EMPLACEMENTS" xpos 874 ypos 232 size 16 color "#829eac"
+            text "▸  Archives" xpos 874 ypos 282 size 21 color "#aec6cf"
+            add Solid("#25516a") xpos 866 ypos 324 xysize (180, 43)
+            text "▸  Projection" xpos 874 ypos 331 size 20 bold True color "#c7eef4"
+            text "▸  Cameras" xpos 874 ypos 390 size 21 color "#829eac"
+            text "▸  Systeme" xpos 874 ypos 434 size 21 color "#829eac"
 
-            text "TABLETTE DE NOAM" xpos 62 ypos 215 size 25 color "#f4e9d5" bold True
-            text "Stockage interne  /  DCIM  /  ENQUÊTE" xpos 62 ypos 252 size 17 color "#88a8b8"
-            text "1 élément · PNG" xpos 62 ypos 645 size 18 color "#8ca8b6"
+            # Surface de la liste de fichiers.
+            add Solid("#142c3e") xpos 248 ypos 211 xysize (543, 522)
+            add Solid("#142c3e") xpos 1066 ypos 211 xysize (543, 522)
+            text "1 fichier image" xpos 261 ypos 677 size 17 color "#7fa6b7"
+            text "Dossier de projection vide" xpos 1081 ypos 677 size 17 color "#7fa6b7"
 
-            text "TERMINAL DU CONCLAVE" xpos 850 ypos 215 size 25 color "#f4e9d5" bold True
-            text "Ce PC  /  Écran principal  /  PROJECTION" xpos 850 ypos 252 size 17 color "#88a8b8"
-            text "Dossier vide" xpos 850 ypos 645 size 18 color "#8ca8b6"
-
-            # Même draggroup : le drop fonctionne en souris et en tactile.
+            # Zones partageant le meme draggroup. Le fichier a une taille de vignette.
             draggroup:
                 drag:
                     drag_name "j26_projection_folder"
                     draggable False
                     droppable True
-                    xpos 900 ypos 305
-                    xsize 550 ysize 310
+                    xpos 1111 ypos 266
+                    xsize 450 ysize 353
                     frame:
-                        xfill True
-                        yfill True
-                        padding (16, 27)
-                        background Solid("#24465c")
-                        vbox:
-                            xalign 0.5
-                            yalign 0.5
-                            spacing 18
-                            text "▣" xalign 0.5 size 94 color "#91d4e2"
-                            text "DÉPOSER ICI" xalign 0.5 size 31 color "#e3f4f5" bold True
-                            text "ÉCRAN DU CONCLAVE" xalign 0.5 size 19 color "#a5c6d3"
+                        xfill True yfill True padding (0, 0)
+                        background Solid("#1e3c50")
+                        fixed:
+                            xfill True yfill True
+                            add Solid("#467b96") xpos 1 ypos 1 xysize (448, 3)
+                            text "▱" xalign 0.5 ypos 43 size 110 color "#9ed2e1"
+                            text "DOSSIER PROJECTION" xalign 0.5 ypos 193 size 24 color "#e2f0f3" bold True
+                            text "Deposer la photo ici" xalign 0.5 ypos 234 size 20 color "#b4d3dd"
+                            text "ECRAN PRINCIPAL  /  01" xalign 0.5 ypos 276 size 16 color "#7ca7bb"
 
                 drag:
                     drag_name "j26_photo_file"
                     draggable True
                     droppable False
+                    drag_raise True
                     dragged j26_photo_transfer_dropped
-                    xpos 95 ypos 320
-                    xsize 540 ysize 274
+                    xpos 297 ypos 279
+                    xsize 411 ysize 290
                     frame:
-                        xfill True
-                        yfill True
-                        padding (12, 12)
-                        background Solid("#27485e")
-                        vbox:
-                            spacing 6
-                            add Transform("bg_cg040", xysize=(516, 188))
-                            text "MARA_PREUVE_25.png" size 24 bold True color "#f6f0e5"
-                            text "Image PNG · photographiée hier" size 17 color "#b9d0d8"
+                        xfill True yfill True padding (0, 0)
+                        background Solid("#30526a")
+                        fixed:
+                            xfill True yfill True
+                            add Solid("#66c5da") xpos 0 ypos 0 xysize (411, 3)
+                            add Transform("bg_cg040", xysize=(389, 204)) xpos 11 ypos 13
+                            text "MARA_PREUVE_25.png" xpos 13 ypos 231 size 23 color "#f4e9da" bold True
+                            text "PNG  /  PHOTO CAPTUREE HIER" xpos 13 ypos 260 size 15 color "#a9cbd6"
 
-            add Solid("#142838") xpos 30 ypos 716 xysize (1510, 102)
-            text "ACTION 01 / 01" xpos 55 ypos 736 size 20 bold True color "#e4c48e"
-            text "Maintenez le clic sur le fichier PNG, déplacez-le vers PROJECTION, puis relâchez." xpos 55 ypos 769 size 19 color "#cfdee5"
+            add Solid("#152e40") xpos 24 ypos 779 xysize (1600, 77)
+            text "ACTION  /  TRANSFERT DE FICHIER" xpos 49 ypos 793 size 18 bold True color "#e8c08d"
+            text "Maintenez le clic sur la miniature, glissez-la vers PROJECTION et relachez." xpos 49 ypos 821 size 20 color "#bed5de"
+            text "CONNEXION SECURISEE" xpos 1377 ypos 814 size 17 color "#7cbec5"
 
 screen j26_projector_preview():
     modal False
     zorder 100
-    add Solid("#03070de8")
+    add Solid("#040912e8")
     frame at j26_projection_appear:
-        xalign 0.5
-        yalign 0.5
-        xsize 1420
-        ysize 860
-        padding (20, 20)
-        background Solid("#122535")
-        vbox:
-            spacing 14
-            hbox:
-                xfill True
-                text "CONCLAVE / PROJECTION" size 26 color "#e8c48b" bold True
-                text "  ●  AFFICHAGE ACTIF" xalign 1.0 size 19 color "#84d8c6"
-            add Transform("bg_cg040", xysize=(1380, 746))
-            text "MARA_PREUVE_25.png  ·  1 / 1" size 18 color "#aec9d6"
+        xalign 0.5 yalign 0.5
+        xsize 1500 ysize 905
+        padding (0, 0)
+        background Solid("#0c2031")
+        fixed:
+            xysize (1500, 905)
+            add Solid("#254a60") xpos 0 ypos 0 xysize (1500, 65)
+            text "◈  CONCLAVE OS  /  PROJECTION" xpos 28 ypos 14 size 29 color "#ebf1ee" bold True
+            text "✓  TRANSFERT TERMINE" xpos 1124 ypos 20 size 22 color "#91dfc5"
+            add Transform("bg_cg040", xysize=(1452, 776)) xpos 24 ypos 76
+            text "MARA_PREUVE_25.png    /    AFFICHAGE PRINCIPAL ACTIF" xpos 30 ypos 863 size 19 color "#a9c9d5"
 
 label j26_transferer_photo:
     call screen j26_photo_transfer
