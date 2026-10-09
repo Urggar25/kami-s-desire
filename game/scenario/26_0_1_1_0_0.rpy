@@ -271,6 +271,13 @@ label _26_0_1_1_0_0_CAMERA:
     tomas raison "Et les informations d'un fichier peuvent elles aussi être modifiées."
     tomas raison "Ce que je veux dire, c'est qu'on ne peut pas accuser une représentante sur la base d'une image numérique."
     tomas raison "Tu imagines les conséquences si on se trompe ?"
+
+    "Il ne suffit pas de lui montrer cette photographie. Je dois lui expliquer comment nous en sommes arrivés là, sans perdre le fil de ce que nous avons découvert."
+    call j26_preuve_impossible from _call_j26_preuve_impossible
+    if j26_preuve_success:
+        noam determine "Ce n\u0027est pas seulement une photographie, Tomas. J\u0027ai aperçu ce corps avant même de trouver le tissu, puis Iris a constaté la même chose que moi avant que nous prenions la photo."
+        tomas reflexion "Cela rend votre récit cohérent, je te l\u0027accorde. Mais ce n\u0027est pas une expertise de l\u0027image, et nous devons vérifier les lieux."
+
     iris colere "Personne ne cherche à fabriquer une accusation !"
     iris colere "On a trouvé un cadavre dans les murs de cette station et on veut qu'il soit examiné."
     iris colere "Pourquoi tu commences déjà à parler de faux ?"
@@ -527,6 +534,7 @@ label _26_0_1_1_0_0_EXPEDITION:
 
     $ hideGroup()
     scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
+    $ flashlight_on(0)
     play sound sfx_creak volume 0.35
 
     "Je m'engage le premier dans l'ouverture. Iris me suit immédiatement, et Sael referme la marche avec sa trousse coincée contre elle."
@@ -707,6 +715,7 @@ label _26_0_1_1_0_0_EXPEDITION:
     "Je me dirige vers l'établi et lève les yeux vers l'ouverture."
     "Cette fois, nous ne sommes plus venus chercher un mort."
 
+    $ flashlight_off()
     stop music fadeout 1.0
     call end_day("27") from _call_j26_stay_end_day_27
     jump _27_0_1_1_0_0_REVEIL
