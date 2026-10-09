@@ -1,4 +1,3 @@
-default current_period = "Matin"
 default room_scene_indices = {}
 default noam_room_has_jammer = True
 default noam_has_juliette_drawing = True
