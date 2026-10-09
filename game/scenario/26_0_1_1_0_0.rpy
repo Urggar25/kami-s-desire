@@ -188,7 +188,9 @@ label _26_0_1_1_0_0_CAMERA:
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
     "La salle du Conclave est vide. Iris referme la porte pendant que je branche ma tablette au terminal de présentation."
-    "Quelques secondes plus tard, la photographie apparaît sur l'écran central, suffisamment grande pour que je distingue encore mieux les blessures et les plis de la veste de Mara."
+    "Le terminal reconnaît ma tablette et ouvre ses dossiers. Je retrouve la photographie que nous avons prise hier."
+    call j26_transferer_photo from _call_j26_transferer_photo
+    "La photographie occupe maintenant le grand écran. À cette taille, les blessures et les plis de la veste de Mara sont encore plus difficiles à regarder."
     "Je relève les yeux vers la caméra installée au-dessus de nos sièges. Son objectif pivote légèrement dans ma direction."
 
     $ showGroup([
