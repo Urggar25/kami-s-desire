@@ -127,6 +127,8 @@ label _25_0_1_1_0_0_CAFETERIA:
     $ hideGroup()
     stop music fadeout 0.5
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
     scene bg_diffusion_professeur at adaptive_fullscreen with fade
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
