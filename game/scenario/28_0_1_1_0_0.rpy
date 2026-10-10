@@ -187,6 +187,10 @@ label _28_0_1_1_0_0_ANNONCE:
     "Une série de notes aiguës retentit au-dessus de nos têtes. Les écrans de la cafétéria s'allument les uns après les autres."
     "Je relève immédiatement les yeux vers la caméra."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    $ hideGroup()
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Mes très chers représentants ! J'espère que vous profitez pleinement de votre avant-dernier jour complet dans le Conclave !"
 
     "Julian regarde la porte par laquelle Elen vient de sortir. Je distingue ses doigts se refermer lentement sur le bord de la table."
@@ -196,15 +200,25 @@ label _28_0_1_1_0_0_ANNONCE:
 
     "Je reste un moment sans réagir. J'attendais une remarque sur Nyra, peut-être même une réponse à la photographie que j'ai montrée hier. Kami vient pourtant d'annoncer cela avec le ton qu'elle prend d'habitude pour présenter un divertissement."
 
+    $ bc_show("julian", "colere")
     julian colere "Tu peux pas être sérieuse ! Nyra est morte et tu viens nous annoncer un nouveau vote comme si on allait tous tranquillement rentrer chez nous ?!"
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Julian, je suis ravie de voir que tu conserves ton enthousiasme pour la vie démocratique ! Je précise toutefois que le texte ne sera soumis au vote que dans deux jours."
+    $ bc_show("noam", "colere")
     noam colere "Kami, on a retrouvé deux corps dans cette station ! Tu m'as entendu hier, je t'ai montré la photographie. Tu comptes vraiment continuer sans rien nous expliquer ?"
 
+    $ bc_hide()
     "L'écran affiche toujours le même visage souriant. Quelques secondes passent, puis Kami reprend comme si je n'avais rien demandé."
     kami "Je vous invite à réfléchir aux avantages de cette proposition. Après tout, que vaut une petite infraction si on peut en effacer jusqu'au souvenir ?"
+    $ bc_show("iris", "colere")
     iris colere "C'est ça ton idée ? On tue quelqu'un, puis on efface la mémoire du responsable et tout le monde fait comme si rien ne s'était passé ?!"
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Oh, Iris ! Quelle façon déprimante de présenter une mesure aussi généreuse. Je vous laisse méditer. À très vite !"
 
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([("julian", "colere", 0.3), ("iris", "colere", 0.6), ("noam", "inquiet", 0.8)])
     "Les écrans s'éteignent avant que Julian ait trouvé quoi lui répondre."
     "Il reste debout face à celui qui se trouve près du buffet, les bras légèrement écartés."
 
@@ -249,7 +263,7 @@ label _28_0_1_1_0_0_APRES_MIDI:
     noam inquiet "Quoi ?"
     iris inquiet "Regarde là-bas."
 
-    show bg_couloir at Transform(zoom=1.65, xalign=0.76, yalign=0.49) with dissolve
+    show couloir_dortoir at Transform(zoom=1.65, xalign=0.76, yalign=0.49) with dissolve
     "À l'autre bout du couloir, deux hommes discutent près d'une porte de maintenance. Je reconnais immédiatement la carrure de Ryn, puis les cheveux d'Elias lorsqu'il se tourne vers la lumière."
     "Ryn n'a plus aucune attache aux poignets. Il bouge librement, une main posée contre le cadre de la porte."
 
@@ -270,7 +284,7 @@ label _28_0_1_1_0_0_APRES_MIDI:
     "Un chariot roule dans un couloir voisin. Le bruit de ses roues couvre la réponse d'Elias, et je ne distingue plus que des mots sans parvenir à en saisir le sens."
     "Je tente de me rapprocher, mais Iris me retient aussitôt par la veste."
 
-    scene bg_couloir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ hideGroup()
     $ showGroup([
         ("iris", "peur", 0.36),
