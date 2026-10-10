@@ -98,6 +98,8 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|
+| Impacts cinématiques directionnels | Combine flash bref, micro-gel, recul amorti gauche/droite et accentuation RVB selon quatre intensités ; utilisable dans les combats et QTE narratifs. | `game/impact_fx.rpy` | `call impact_fx("critical", direction="left")` |
+| Éclaboussures de sang | Superpose des textures transparentes temporaires sur l'écran lors d'une blessure confirmée : petites gouttes (`screen`) ou projection latérale (`spray`). | `game/impact_fx.rpy`, `game/images/effects/impact_blood_screen.svg`, `game/images/effects/impact_blood_spray.svg` | `call impact_fx("brutal", direction="right", blood="screen")` |
 | Flashs d'impact | Transitions blanche, rouge ou cyan prêtes pour révélation, coup et signal système. | `game/effects.rpy` | `with flash_red` |
 | Coupure et fondus | Fournit coupure noire, dissolution rapide et dissolution douce. | `game/effects.rpy` | `with cut_black` |
 | Secousse paramétrable | Secoue décor et personnages avec intensité et durée configurables. | `game/effects.rpy` | `$ shake(18, 0.5)` |
