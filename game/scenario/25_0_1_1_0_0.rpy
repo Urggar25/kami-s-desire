@@ -225,11 +225,11 @@ label _25_0_1_1_0_0_BRUIT:
         ("noam", "neutre", 0.60),
     ])
 
-    "Je récupère ma tablette sur la table de chevet. Iris remarque le bureau décalé devant la grille d'aération et s'arrête près du meuble."
+    "Je récupère ma tablette sur la table de chevet. Iris lève les yeux vers la grille d'aération, bien au-dessus du bureau, et s'arrête près de la porte."
 
-    iris reflexion "Tu l'as déplacé hier soir ?"
+    iris reflexion "Tu as encore entendu quelque chose là-haut ?"
 
-    noam neutre "Oui. Je vais finir par le remettre à sa place."
+    noam neutre "Non. Mais je continue à surveiller cette grille."
 
     iris neutre "T'as réussi à dormir comme ça ?"
 
@@ -819,7 +819,7 @@ label _25_0_1_1_0_0_CHAMBRE:
 
     noam neutre "Oui. On va pas garder ça pour nous indéfiniment."
 
-    "Elle ouvre la porte et regarde dans le couloir avant de sortir. Je la suis en vérifiant une dernière fois que le bureau bloque bien la grille."
+    "Elle ouvre la porte et regarde dans le couloir avant de sortir. Je la suis après un dernier regard vers la grille, trop haute pour être condamnée avec les meubles."
 
     $ hideGroup()
     jump _25_0_1_1_0_0_APRES_MIDI
@@ -1113,7 +1113,7 @@ label _25_0_1_1_0_0_SOIR:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
-    "Une fois à l'intérieur, je ferme la porte et vérifie le bureau devant l'aération. Je pousse aussi la chaise contre le meuble, même si je sais qu'elle ne retiendrait pas grand-chose."
+    "Une fois à l'intérieur, je ferme la porte et lève les yeux vers la grille d'aération. Elle reste inaccessible sans grimper et rien dans la chambre ne permet de la condamner."
     "Je prends ma tablette dans le tiroir. La photographie est toujours là ; je la regarde assez longtemps pour me rappeler que le corps derrière la cloison porte bien le même visage que la fille qui vient de me parler."
     "Le morceau de tissu est rangé dans le dossier, juste à côté. Je le sors de sa pochette et le déplie sur une feuille."
     "La couleur ressemble à celle de la veste. Pourtant, je n'ai trouvé aucune déchirure sur les parties du vêtement que j'ai pu examiner."
