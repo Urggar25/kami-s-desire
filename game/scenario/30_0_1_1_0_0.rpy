@@ -6,6 +6,7 @@
 # =============================================================================
 
 default j30_escape_route = None
+default j30_final_vote = None
 default j30_barricade_success = False
 
 default j30_barricade_stage = 0
@@ -82,6 +83,7 @@ label _30_0_1_1_0_0_REVEIL:
 
     $ hideGroup()
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+label _30_0_1_1_0_0_VOTE:
     kami "Le vote commence maintenant !"
 
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
@@ -102,6 +104,7 @@ label _30_0_1_1_0_0_REVEIL:
 
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
 
+    $ j30_final_vote = "adopted"
     kami "Pas une seule voix contre ! Votre dernière proposition est donc ADOPTÉE ! Désormais, toute transgression des Commandements entraînera un effacement de mémoire plutôt qu'une élimination."
     kami "Félicitations à tous ! Vous pouvez être fiers de votre travail."
 
@@ -134,6 +137,7 @@ label _30_0_1_1_0_0_REVEIL:
     "Je fixe la barricade. Chaque coup porté au bois nous coûtera du temps. Mais retourner dans les conduits signifie passer là où Nyra a été tuée."
     "Iris attend, sans essayer de choisir à ma place."
 
+label _30_0_1_1_0_0_SORTIE:
     menu (screen="critical_choice", noam_expr="hesitation"):
         "Comment rejoindre la navette avant son départ ?"
         "Tenter de démanteler la barricade devant la porte.":
