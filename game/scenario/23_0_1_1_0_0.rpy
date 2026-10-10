@@ -11,7 +11,7 @@ label _23_0_1_1_0_0_REVEIL:
 
     think "J'ai dormi normalement. Ça faisait longtemps."
 
-    "Le bureau est toujours coincé devant la grille. Mon sac est encore prêt au pied du lit."
+    "Le bureau est à sa place. Je lève malgré moi les yeux vers la grille, trop haute pour que je puisse la bloquer avec un meuble. Mon sac est encore prêt au pied du lit."
     "Sept jours avant de partir, si Kami tient parole et si personne ne trouve une nouvelle façon de tout faire dérailler."
 
     "Je m'habille et passe devant le miroir."
@@ -765,7 +765,7 @@ label _23_0_1_1_0_0_IRIS:
 
     noam desaccord "J'ai jamais dit que ça le prouvait."
 
-    iris blase "Tu mets un bureau devant ta grille chaque nuit."
+    iris blase "Tu passes chaque nuit à surveiller cette fichue grille."
 
     noam "Parce que quelqu'un se balade dans les conduits."
 
@@ -995,7 +995,7 @@ label _23_0_1_1_0_0_FIN_JOURNEE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
-    "Je remets le bureau devant la grille et m'assois sur le lit."
+    "Je vérifie une dernière fois la grille, bien au-dessus du bureau, puis m'assois sur le lit."
 
     "Le compte rendu de Sael est toujours ouvert sur ma tablette."
 
