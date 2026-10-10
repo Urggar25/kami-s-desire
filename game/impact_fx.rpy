@@ -29,10 +29,10 @@ screen impact_fx_overlay(blood=None, flash=True, rgb=False, side="left"):
         add Solid("#ffffff") at _impact_fx_flash
     if rgb:
         add Solid("#f0205099", xsize=14, ysize=config.screen_height):
-            xpos 0 if side == "left" else config.screen_width - 14
+            xpos (0 if side == "left" else config.screen_width - 14)
             at _impact_fx_rgb_left
         add Solid("#21dfff99", xsize=12, ysize=config.screen_height):
-            xpos config.screen_width - 12 if side == "left" else 0
+            xpos (config.screen_width - 12 if side == "left" else 0)
             at _impact_fx_rgb_right
     if blood == "screen":
         add "images/effects/impact_blood_screen.svg" at _impact_fx_blood
