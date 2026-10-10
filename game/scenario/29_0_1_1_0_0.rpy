@@ -409,6 +409,9 @@ label _29_0_1_1_0_0_ANNONCE:
     "Iris s'est allongée sur son lit. Elle garde ses vêtements et le tournevis près de l'oreiller."
     "Je ferme les yeux quelques secondes lorsque le haut-parleur de la chambre s'allume dans un léger grésillement."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Mes chers représentants ! J'espère que vous avez passé une excellente journée."
 
     "Iris se redresse immédiatement. Je fixe le petit haut-parleur près de la porte."
@@ -416,12 +419,16 @@ label _29_0_1_1_0_0_ANNONCE:
     kami "Un dernier rappel avant notre grande finale : demain, à huit heures précises, vous voterez sur le remplacement de la sanction d'élimination par un effacement de mémoire."
     kami "Il s'agira de votre tout dernier vote. Je compte donc sur chacun d'entre vous pour être à l'heure !"
 
+    $ bc_show("noam", "colere")
     noam colere "Kami ! On est enfermés ! Il y a des planches et des plaques de métal devant notre porte ! Tu le sais forcément !"
 
     "Le haut-parleur reste silencieux pendant quelques secondes. J'attends presque une réponse, malgré tout ce qui s'est passé ces derniers jours."
 
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Sur ce, bonne nuit à tous ! Reposez-vous bien. Vous en aurez besoin pour demain !"
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
     "Le haut-parleur s'éteint."
     "Je regarde Iris, puis les meubles entassés devant la porte."
 
