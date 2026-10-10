@@ -267,7 +267,7 @@ init -2 python:
         {
             "id": "day_6_price_of_yes",
             "title": "Jour 6 — Le prix du oui",
-            "short": "J6-1",
+            "short": "J6",
             "label": "_6_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
@@ -299,7 +299,7 @@ init -2 python:
         {
             "id": "day_7_1_0_0",
             "title": "Jour 7 — Passagère clandestine",
-            "short": "J7-0",
+            "short": "J7",
             "label": "_7_1_0_CACHER_PLAN",
             "category": "day",
             "kind": "day",
@@ -315,7 +315,7 @@ init -2 python:
         {
             "id": "day_7_1_0_1",
             "title": "Jour 7 — Sursis déclaré",
-            "short": "J7-1",
+            "short": "J7",
             "label": "_7_1_0_DECLARER_PLACEHOLDER",
             "category": "day",
             "kind": "day",
@@ -376,7 +376,7 @@ init -2 python:
         {
             "id": "day_8_1_0_0",
             "title": "Jour 8 — Le réveil d'Anya",
-            "short": "J8-0",
+            "short": "J8",
             "label": "_8_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
@@ -392,7 +392,7 @@ init -2 python:
         {
             "id": "day_9_1_0_0",
             "title": "Jour 9 — Ce que Ryn savait",
-            "short": "J9-0",
+            "short": "J9",
             "label": "_9_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
@@ -408,7 +408,7 @@ init -2 python:
         {
             "id": "day_10_1_0_0",
             "title": "Jour 10 — Les passages de Ryn",
-            "short": "J10-1",
+            "short": "J10",
             "label": "_10_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
@@ -439,7 +439,7 @@ init -2 python:
         {
             "id": "day_10_0_1_0",
             "title": "Jour 10 — Conséquence directe",
-            "short": "J10-0",
+            "short": "J10",
             "label": "_10_0_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
@@ -936,7 +936,7 @@ init -2 python:
             "choice": "Trouver un chemin vers le sas en moins de trente minutes.",
             "consequence": "Le couloir a été entièrement barricadé de l'extérieur. Il ne reste que deux options : forcer le passage ou reprendre les conduits.",
             "requires": ["day_29_0_1_1_0_0"],
-            "required_variables": {"day_id": 30, "current_day": 30, "current_period": "Matin", "j30_escape_route": None, "j30_final_vote": "adopted"},
+            "required_variables": {"day_id": 30, "current_day": 30, "current_period": "Matin", "j30_escape_route": None, "j30_final_vote": None},
             "teleportable": True,
         },
         {
@@ -952,7 +952,7 @@ init -2 python:
             "choice": "Le vote a lieu sans Noam et Iris, enfermés dans leur chambre.",
             "consequence": "Le texte est adopté à l'unanimité des votants. La navette est annoncée pour dans trente minutes.",
             "requires": ["day_30_0_1_1_0_0"],
-            "required_variables": {"j30_final_vote": "adopted"},
+            "required_variables": {"j30_final_vote": None},
             "teleportable": True,
         },
         {
