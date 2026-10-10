@@ -28,7 +28,7 @@ label _28_0_1_1_0_0_REVEIL:
     iris fatigue "Laisse. C'est rien, je m'en occupe."
 
     "Je ramasse malgré tout la tasse et la pose près du lavabo. Iris essuie maladroitement le bureau avec une serviette, puis abandonne en constatant qu'elle ne fait qu'étaler le café."
-    "Nous avons fini par revenir ici pendant la nuit. J'ai dormi sur le matelas, sans même prendre la peine de retirer mes vêtements."
+    "Nous avons fini par revenir ici pendant la nuit. Nous avons dormi dans le même lit, sans même prendre la peine de retirer nos vêtements."
 
     iris inquiet "J'ai rêvé de Nyra. Enfin, je crois. Chaque fois que je fermais les yeux, j'entendais Elen lui demander de se réveiller."
     noam fatigue "Moi, je revoyais Ryn quand on l'a retenu à l'infirmerie. J'arrête pas de me demander si on aurait dû écouter ce qu'il essayait de nous dire."
@@ -249,6 +249,7 @@ label _28_0_1_1_0_0_APRES_MIDI:
     noam inquiet "Quoi ?"
     iris inquiet "Regarde là-bas."
 
+    show bg_couloir at Transform(zoom=1.65, xalign=0.76, yalign=0.49) with dissolve
     "À l'autre bout du couloir, deux hommes discutent près d'une porte de maintenance. Je reconnais immédiatement la carrure de Ryn, puis les cheveux d'Elias lorsqu'il se tourne vers la lumière."
     "Ryn n'a plus aucune attache aux poignets. Il bouge librement, une main posée contre le cadre de la porte."
 
@@ -269,6 +270,7 @@ label _28_0_1_1_0_0_APRES_MIDI:
     "Un chariot roule dans un couloir voisin. Le bruit de ses roues couvre la réponse d'Elias, et je ne distingue plus que des mots sans parvenir à en saisir le sens."
     "Je tente de me rapprocher, mais Iris me retient aussitôt par la veste."
 
+    scene bg_couloir at adaptive_fullscreen with dissolve
     $ hideGroup()
     $ showGroup([
         ("iris", "peur", 0.36),
@@ -399,7 +401,7 @@ label _28_0_1_1_0_0_CHAMBRE:
     noam fatigue "D'accord. On reste ici pour ce soir."
 
     "Iris relève enfin les yeux. Elle semble soulagée que je n'essaie pas de discuter plus longtemps."
-    iris fatigue "Tu peux t'installer sur le matelas. Je vais laisser une petite lumière, au cas où on doive bouger."
+    iris fatigue "Viens te coucher. Je vais laisser une petite lumière, au cas où on doive bouger."
     noam sourire "Je croyais que tu voulais me faire payer le loyer."
     iris blase "Fais pas le malin, j'ai pas encore décidé combien tu me devais."
 
@@ -481,7 +483,7 @@ label _28_0_1_1_0_0_LYSA:
     iris fatigue "Je crois surtout qu'on doit tenir jusqu'à demain matin. Après, on trouvera autre chose."
 
     "Elle me rend ma tablette et se rallonge sans quitter la porte des yeux."
-    "Je tire le matelas un peu plus près du lit, suffisamment pour que nous puissions parler à voix basse sans réveiller l'autre si l'un de nous finit par s'endormir."
+    "Je m'allonge près d'Iris. Nous parlons à voix basse, sans savoir lequel de nous finira par s'endormir le premier."
     "Pendant longtemps, nous restons éveillés à écouter les bruits du couloir. Aucun pas ne revient devant la porte."
 
     think "J'espère qu'elle a trouvé quelqu'un."
