@@ -860,7 +860,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
 
     scene bg_chambre at adaptive_fullscreen with vpunch
     play sound "audio/sfx_thud.mp3" volume 1.0
-    call impact_fx("brutal", direction="left", blood="spray")
+    call impact_fx("brutal", direction="left")
 
     "Mon pied glisse."
 
