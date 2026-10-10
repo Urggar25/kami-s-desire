@@ -617,8 +617,9 @@ label _30_0_1_1_0_0_VENTILATION:
 
     "La silhouette bondit."
 
-    scene black with hpunch
+    scene bg_conduit_reseau at adaptive_fullscreen
     play sound sfx_creak volume 0.4
+    call impact_fx("hard", direction="left")
 
     "Iris me repousse contre le mur et se jette au-devant d'elle. Les deux corps heurtent la paroi avec un choc qui fait vibrer les plaques du conduit."
     "Je distingue deux visages identiques, si proches l'un de l'autre que je perds pendant un instant le fil de leurs mouvements."
@@ -626,8 +627,10 @@ label _30_0_1_1_0_0_VENTILATION:
 
     iris colere "LÂCHE-MOI !"
 
+    call impact_fx("hard", direction="right")
     "Iris donne un coup de genou et parvient à se dégager. Les deux reculent, reprennent leur souffle et se précipitent de nouveau l'une sur l'autre."
     "Je voudrais intervenir, mais chaque fois que je crois reconnaître Iris à sa voix, l'autre se met à crier exactement de la même manière."
+    call impact_fx("hard", direction="left")
     "Elles se heurtent à une conduite latérale. L'une tombe à genoux, l'autre la tire par le col."
 
     noam peur "ARRÊTEZ !"
@@ -635,7 +638,7 @@ label _30_0_1_1_0_0_VENTILATION:
     "Personne ne m'écoute. Je vois le tournevis glisser sur le sol, hors de leur portée, et comprends que la prochaine personne à tomber risque de se fracasser le crâne contre une arête métallique."
     "Je m'élance. J'attrape l'épaule de celle qui a le dessus pour la tirer en arrière."
 
-    scene black with vpunch
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
 
     "Une chaleur étrange me traverse la paume. Ce n'est pas une douleur : plutôt une vibration, comme si une machine venait de démarrer sous mes doigts."
     "La peau que je tiens se contracte. Sous ma main, l'épaule change de volume. Les cheveux raccourcissent, les traits du visage se déplacent et les vêtements s'ajustent à une silhouette que je reconnais aussitôt."
@@ -667,6 +670,7 @@ label _30_0_1_1_0_0_VENTILATION:
     iris colere "T'es pas Noam. T'es pas moi non plus. Qu'est-ce que t'es ?!"
 
     "Il ne répond pas. Il se rue sur elle, mais elle l'attend : elle se baisse au dernier moment et le projette contre une plaque de ventilation."
+    call impact_fx("brutal", direction="left")
     "Le métal se déforme sous son dos. Iris récupère son tournevis et lui bloque le bras avec son genou."
 
     iris determine "NOAM, VA-T'EN !"
@@ -683,7 +687,8 @@ label _30_0_1_1_0_0_VENTILATION:
     "Son visage reprend d'autres proportions, étrangères à celles que je viens de voir. Il a désormais la carrure et les traits de Tomas."
     "Iris écarquille les yeux. Elle essaie de reculer, trop tard."
 
-    scene black with hpunch
+    scene bg_conduit_reseau at adaptive_fullscreen
+    call impact_fx("critical", direction="right")
 
     "Il se dégage d'un mouvement brutal et lui assène un coup qui résonne contre le métal. Iris s'effondre sans un cri. Son tournevis roule jusqu'à mes pieds."
 
@@ -704,7 +709,8 @@ label _30_0_1_1_0_0_VENTILATION:
     "Je voudrais lui demander qui il veut libérer. Je voudrais comprendre pourquoi Ryn et Lysa sont morts, pourquoi des gens impossibles sont apparus parmi nous, pourquoi Iris vient de tomber sous mes yeux."
     "Je n'en ai pas le temps."
 
-    scene black with vpunch
+    scene bg_conduit_reseau at adaptive_fullscreen
+    call impact_fx("critical", direction="left")
     stop music fadeout 0.5
 
     "Un choc traverse mon crâne. La main qui tenait mon col disparaît et mes genoux heurtent quelque chose de dur."
