@@ -715,7 +715,6 @@ label _26_0_1_1_0_0_EXPEDITION:
     think "Nyra est peut-être encore là-bas, à quelques mètres de nous."
 
     "Je me dirige vers l'établi et lève les yeux vers l'ouverture."
-    "Cette fois, nous ne sommes plus venus chercher un mort."
 
     $ flashlight_off()
     stop music fadeout 1.0
