@@ -107,7 +107,7 @@ label _29_0_1_1_0_0_REVEIL:
     "Iris tire de toutes ses forces."
 
     play sound sfx_creak volume 0.85
-    with vpunch
+    call impact_fx("brutal", direction="left")
 
     "La porte heurte le bras d'Elias avec un bruit épouvantable. Je distingue un premier craquement, puis un second, plus sec, comme si quelque chose venait de céder sous le poids du battant."
     "Elias hurle."
