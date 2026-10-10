@@ -959,7 +959,7 @@ init -2 python:
             "id": "choice_escape_j30",
             "title": "CRITICAL CHOICE — Une seule issue",
             "short": "Choix final",
-            "label": "_30_0_1_1_0_0_REVEIL",
+            "label": "_30_0_1_1_0_0_SORTIE",
             "category": "route",
             "kind": "divergence",
             "x": 14520,
