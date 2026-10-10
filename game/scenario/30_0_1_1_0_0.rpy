@@ -21,6 +21,9 @@ label _30_0_1_1_0_0_REVEIL:
     "Je ne sais pas si j'ai dormi. Je me souviens d'avoir fermé les yeux, puis d'avoir passé une éternité à écouter le silence derrière la porte."
     "Une voix joyeuse éclate soudain au-dessus de notre tête, si forte que je me redresse d'un bond."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Bonjour, bonjouuur ! Debout, mes chers représentants ! Aujourd'hui est un grand jour !"
 
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
@@ -37,9 +40,13 @@ label _30_0_1_1_0_0_REVEIL:
     noam inquiet "Quoi ? Déjà ?"
     iris inquiet "J'ai regardé toute la nuit. J'ai dû m'endormir une fois, dix minutes, pas plus."
 
+    $ hideGroup()
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Dans deux petites minutes, nous procéderons au dernier vote de cette édition du Conclave ! Je vous rappelle la proposition : quiconque transgresse un Commandement verra désormais sa mémoire effacée, plutôt que d'être éliminé."
     kami "Je sais, je sais ! C'est émouvant. Presque un mois ensemble, et nous voilà déjà arrivés à notre ultime décision."
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "fatigue", 0.35), ("noam", "inquiet", 0.65)])
     "Je me jette sur la commode. Nous l'avions poussée devant la porte hier soir, mais le véritable obstacle est de l'autre côté."
     "Iris m'aide à tirer le meuble. Ses pieds grincent sur le sol et l'un des tiroirs s'ouvre, répandant quelques affaires à nos pieds."
     "J'abaisse la poignée. La porte résiste avant même que le battant ait parcouru deux centimètres."
@@ -59,16 +66,26 @@ label _30_0_1_1_0_0_REVEIL:
     "Iris glisse la pointe du tournevis dans un interstice. Elle force. Le métal se déforme à peine."
 
     noam inquiet "Kami ! Il reste deux minutes ! Il faut que tu nous fasses ouvrir !"
+    $ hideGroup()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Je ne peux pas discuter avec tous les représentants individuellement, Noam. Il faut être ponctuel !"
+    $ bc_show("noam", "colere")
     noam colere "On nous a enfermés ! Tu nous entends, oui ou non ?!"
 
+    $ bc_hide()
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "inquiet", 0.35), ("noam", "inquiet", 0.65)])
     "Aucune réponse. Je tape contre la porte, une fois, deux fois. Personne ne frappe en retour."
     "Iris tire mon bras et me montre l'heure. Huit heures viennent de s'afficher sur son écran."
 
     stop music fadeout 0.8
 
+    $ hideGroup()
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Le vote commence maintenant !"
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "inquiet", 0.35), ("noam", "inquiet", 0.65)])
     "Nous restons immobiles. Il n'y a pas le moindre bruit dans le couloir, pas même un pas pour rejoindre la salle du Conclave."
     "Je m'attendais malgré tout à entendre des protestations, des discussions, quelqu'un demander où nous étions passés."
     "Rien."
@@ -79,6 +96,8 @@ label _30_0_1_1_0_0_REVEIL:
     "Iris serre le tournevis jusqu'à blanchir les jointures. Je cherche un bouton sur ma tablette, une notification, une possibilité d'exprimer notre refus à distance."
     "L'écran reste sur le menu habituel. Le Codex ne propose aucun vote."
 
+    $ hideGroup()
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
     kami "Et... c'est terminé !"
 
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
@@ -86,14 +105,22 @@ label _30_0_1_1_0_0_REVEIL:
     kami "Pas une seule voix contre ! Votre dernière proposition est donc ADOPTÉE ! Désormais, toute transgression des Commandements entraînera un effacement de mémoire plutôt qu'une élimination."
     kami "Félicitations à tous ! Vous pouvez être fiers de votre travail."
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "colere", 0.35), ("noam", "inquiet", 0.65)])
     iris colere "Ça a duré combien de temps, son truc ? Même pas une minute ?"
     noam inquiet "Je sais pas. Je..."
 
     "Je m'interromps. Le haut-parleur grésille de nouveau."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    $ hideGroup()
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Une dernière petite annonce avant nos adieux : la navette pour la Terre décollera dans trente minutes exactement. Je vous invite à récupérer vos effets personnels et à vous présenter à l'embarquement sans tarder !"
     kami "Les retardataires devront se débrouiller. Vous savez comme les transports peuvent être compliqués à organiser !"
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "inquiet", 0.35), ("noam", "inquiet", 0.65)])
     "Trente minutes."
     "Je regarde les deux issues de la chambre : les planches derrière la porte et la ventilation, dans laquelle nous avons découvert ce que personne n'aurait dû voir."
     "Iris a suivi mon regard. Elle comprend avant que j'aie prononcé un mot."
