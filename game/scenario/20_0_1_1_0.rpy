@@ -940,7 +940,7 @@ label _20_0_1_1_IRIS_QTE_ECHEC:
 
     scene bg_cg047 at adaptive_fullscreen with vpunch
     play sound "audio/sfx_thud.mp3" volume 0.95
-    $ shake(9, 0.22)
+    call impact_fx("critical", direction="left")
 
     "Un choc sec me frappe à la tempe."
 
@@ -1146,7 +1146,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Je lève le bras par réflexe."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    $ shake(10, 0.22)
+    call impact_fx("hard", direction="right")
 
     "Il frappe mon poignet contre le bord de la table."
 
@@ -1157,7 +1157,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     noam colere "DÉGAGE !"
 
     play sound "audio/sfx_thud.mp3" volume 0.90
-    $ shake(8, 0.18)
+    call impact_fx("light", direction="left")
 
     "Je lui donne un coup d'épaule et réussis à le repousser."
 
@@ -1176,7 +1176,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Son bras part trop lentement."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    $ impact(intensity=8, duration=0.20, color="#8f101c")
+    call impact_fx("brutal", direction="right", blood="screen")
 
     "Kael lui donne un coup sec au visage."
 
@@ -1191,8 +1191,8 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Je n'arrive même pas jusqu'à son épaule."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    $ shake(14, 0.30)
-    scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
+    scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
+    call impact_fx("critical", direction="left")
 
     "Quelque chose me frappe derrière la tête."
 
