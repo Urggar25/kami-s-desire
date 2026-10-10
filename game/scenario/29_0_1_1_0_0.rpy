@@ -12,12 +12,12 @@ label _29_0_1_1_0_0_REVEIL:
     scene black
     play music "music/bgm_cold_metadata.mp3" fadein 1.5
 
-    "Un coup sec me réveille. Je ne sais pas depuis combien de temps je dors, mais j'ai encore les chaussures aux pieds et le dos douloureux à force d'être resté sur le matelas."
+    "Un coup sec me réveille. Je ne sais pas depuis combien de temps je dors, mais j'ai encore les chaussures aux pieds et le dos douloureux d'avoir dormi recroquevillé sur le bord du lit."
     "Un second coup résonne contre le mur. Cette fois, j'entends aussi le frottement d'un objet lourd que l'on traîne sur le sol."
 
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
-    "Iris est déjà assise sur son lit. Elle me regarde sans bouger et pose lentement un doigt devant ses lèvres."
+    "Iris est déjà assise à côté de moi. Elle me regarde sans bouger et pose lentement un doigt devant ses lèvres."
     "J'ouvre la bouche par réflexe, mais elle secoue immédiatement la tête."
 
     $ showGroup([
@@ -274,7 +274,7 @@ label _29_0_1_1_0_0_VOIX:
     "Quelqu'un pouffe derrière la porte et s'éloigne."
 
     "Nous ne savons plus quoi faire de nos mains. Je reprends le tournevis, le repose, puis retourne vérifier le verrou alors que je l'ai déjà contrôlé plusieurs fois."
-    "Iris finit par tirer le matelas contre son lit pour que nous puissions nous asseoir côte à côte sans rester directement devant l'entrée."
+    "Iris m'attire contre elle sur le lit pour que nous restions à l'écart de l'entrée."
 
     $ hideGroup()
     jump _29_0_1_1_0_0_JULIAN
@@ -351,7 +351,7 @@ label _29_0_1_1_0_0_SOIR:
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
     "Les bruits ne s'arrêtent pas complètement. Parfois, quelqu'un passe dans le couloir et frappe deux ou trois coups avant de repartir ; parfois, plusieurs voix discutent assez près pour que nous reconnaissions leurs propriétaires sans comprendre ce qu'elles racontent."
-    "Nous avons renoncé à approcher la porte. Les outils sont posés entre nous, sur le matelas, et je garde ma tablette à portée de main malgré sa batterie presque vide."
+    "Nous avons renoncé à approcher la porte. Les outils sont posés entre nous, sur le lit, et je garde ma tablette à portée de main malgré sa batterie presque vide."
     "Je regarde une nouvelle fois notre petite réserve d'eau. Iris a bu moins que moi depuis ce matin, mais refuse que je lui donne la moitié de ma bouteille."
 
     $ showGroup([
@@ -447,7 +447,7 @@ label _29_0_1_1_0_0_ANNONCE:
     "Iris éteint finalement la lumière."
 
     "Demain, il faudra quitter cette chambre. Je ne sais pas comment, ni ce qui nous attendra une fois la porte franchie."
-    "Je tire le matelas contre le lit et garde la main près des outils."
+    "Je me recouche auprès d'Iris et garde la main près des outils."
 
     $ hideGroup()
     stop music fadeout 1.5
