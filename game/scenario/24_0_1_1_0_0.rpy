@@ -1644,7 +1644,7 @@ label _24_0_1_1_0_0_SOIR:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
-    "En entrant dans ma chambre, je retrouve le bureau légèrement décalé devant la grille exactement comme je l'avais laissé ce matin."
+    "En entrant dans ma chambre, je retrouve le bureau à sa place et la grille d'aération toujours dégagée. Cela ne m'empêche pas de regarder le conduit avec méfiance."
 
     "Je le regarde quelques secondes avant de le tirer encore un peu, suffisamment pour libérer presque entièrement l'aération sans pour autant le remettre complètement à sa place."
 
