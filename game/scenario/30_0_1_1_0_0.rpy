@@ -107,7 +107,8 @@ label _30_0_1_1_0_0_REVEIL:
     "Je fixe la barricade. Chaque coup porté au bois nous coûtera du temps. Mais retourner dans les conduits signifie passer là où Nyra a été tuée."
     "Iris attend, sans essayer de choisir à ma place."
 
-    menu:
+    menu (screen="critical_choice", noam_expr="hesitation"):
+        "Comment rejoindre la navette avant son départ ?"
         "Tenter de démanteler la barricade devant la porte.":
             $ j30_escape_route = "barricade"
             jump _30_0_1_1_0_0_BARRICADE
