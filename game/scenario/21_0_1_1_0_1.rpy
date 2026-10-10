@@ -802,7 +802,7 @@ label _21_0_1_1_0_1_QTE:
     "Je recule au moment où il se jette sur moi."
 
     play sound "audio/sfx_thud.mp3" volume 0.95
-    $ shake(8, 0.20)
+    call impact_fx("hard", direction="right")
 
     "Son épaule me percute en plein torse."
 
@@ -860,7 +860,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
 
     scene bg_chambre at adaptive_fullscreen with vpunch
     play sound "audio/sfx_thud.mp3" volume 1.0
-    $ shake(12, 0.28)
+    call impact_fx("brutal", direction="left", blood="spray")
 
     "Mon pied glisse."
 
@@ -871,7 +871,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
     noam peur "Non—"
 
     play sound "audio/sfx_tinnitus.wav" volume 0.60
-    $ impact(intensity=10, duration=0.24, color="#8f101c")
+    call impact_fx("critical", direction="right", blood="screen")
 
     "La lame entre sous mes côtes."
 
@@ -1138,7 +1138,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
     "Il se jette sur moi à mains nues."
 
     play sound "audio/sfx_thud.mp3" volume 0.92
-    $ shake(9, 0.20)
+    call impact_fx("hard", direction="left")
 
     "On s'écrase tous les deux contre le mur."
 
@@ -1197,7 +1197,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
     "Iris n'attend pas."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    $ impact(intensity=8, duration=0.20, color="#6f91a8")
+    call impact_fx("hard", direction="right")
 
     "Son pied frappe l'autre Noam derrière le genou."
 
