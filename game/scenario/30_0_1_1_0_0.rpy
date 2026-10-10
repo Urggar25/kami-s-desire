@@ -262,16 +262,22 @@ label _30_0_1_1_0_0_FIN_NAVETTE:
     "Nous traversons le couloir principal, puis celui qui mène au secteur d'embarquement. À plusieurs reprises, je crois entendre une voix dans les haut-parleurs, mais le bruit de nos chaussures couvre les annonces."
     "Une vibration profonde traverse le sol. Les parois métalliques résonnent jusque dans ma poitrine."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Dernière vérification des systèmes terminée. Merci à tous de vous être présentés à l'heure !"
 
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     "Je débouche devant le sas au moment où un panneau passe du vert au rouge. De l'autre côté de la baie, la navette est encore là."
     "Iris frappe contre la vitre du poste de contrôle."
 
     iris peur "ATTENDEZ ! OUVREZ ! ON EST LÀ !"
     noam colere "KAMI ! ARRÊTE LE DÉCOLLAGE !"
 
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Oh ! Voilà les retardataires. Vous auriez dû partir un peu plus tôt, mes petits chéris."
 
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     "Les moteurs montent en puissance. Un hublot de la navette donne sur le couloir d'embarquement, et je distingue plusieurs silhouettes derrière la vitre."
     "Au début, je reconnais seulement Tomas, immobile près d'une rangée de sièges. Mara est à côté de lui. Elle tourne la tête quand Iris cogne une nouvelle fois contre la baie."
 
@@ -311,6 +317,7 @@ label _30_0_1_1_0_0_FIN_NAVETTE:
     "Je voudrais lui répondre. Je voudrais trouver n'importe quelle explication, même absurde, mais la seule chose que je parviens à faire est de regarder les onze personnes derrière cette vitre."
     "Il y a onze sièges occupés. Tous les représentants, sauf Iris. Et pourtant je suis ici, à côté d'elle."
 
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
     kami "Décollage !"
 
     scene black with vpunch
@@ -365,6 +372,10 @@ label _30_0_1_1_0_0_FIN_PRODUCTION:
     "Elle essuie ses joues du revers de la manche, agacée contre elle-même. Je m'assois à côté d'elle et pose mes outils entre nous."
     "Le haut-parleur crépite."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    $ hideGroup()
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Embarquement terminé ! Je remercie tous les représentants ayant rejoint la navette."
     kami "Décollage dans trois... deux... un !"
 
@@ -389,31 +400,54 @@ label _30_0_1_1_0_0_FIN_PRODUCTION:
 
     "Quelques secondes passent. Puis la voix de Kami remplit la pièce, enjouée comme au premier jour."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    $ hideGroup()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Mais enfin, pourquoi tant d'inquiétude ? Vous n'allez tout de même pas croire que je vais abandonner deux de mes représentants préférés !"
+    $ bc_show("noam", "inquiet")
     noam inquiet "Tu vas envoyer une autre navette ?"
+    $ bc_hide()
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Évidemment ! Une autre rotation est prévue. Vous pourrez embarquer tous les deux."
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "peur", 0.35), ("noam", "fatigue", 0.65)])
     "Iris se tourne vers moi. Je vois son visage se décomposer de soulagement, si brusquement qu'elle peine à reprendre son souffle."
     "Elle me serre dans ses bras. Je lui rends son étreinte sans pouvoir m'empêcher de rire, un son étranglé qui ressemble presque à un sanglot."
 
     iris peur "On va partir... Noam, on va quand même partir..."
     noam fatigue "Ouais. Ouais, j'ai cru qu'on allait rester ici..."
 
+    $ hideGroup()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Petite précision, toutefois ! La prochaine navette ne dessert pas la Terre."
 
     "Iris s'immobilise contre moi."
+    $ bc_show("noam", "inquiet")
     noam inquiet "Comment ça ?"
+    $ bc_hide()
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
     kami "Elle transporte les robots du Conclave vers une station de production. Vous voyagerez avec eux. C'est très pratique : il reste de la place !"
+    $ bc_show("iris", "colere")
     iris colere "Non. On veut rentrer sur Terre. C'était le principe depuis le début !"
     noam colere "Tu nous avais promis qu'on repartirait après le dernier vote !"
 
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Et je vous propose de repartir, Noam ! Tu ne vas quand même pas discuter chaque détail de l'itinéraire ?"
+    $ bc_show("noam", "colere")
     noam colere "Une station de production, c'est pas la Terre !"
+    $ bc_hide()
+    scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
     kami "Oh, mais tu sais combien ça coûte, d'organiser un tel trajet ? Une navette entière pour deux personnes ?! Un peu de bon sens, voyons !"
 
     "Je regarde Iris. Ses bras ont glissé le long de son corps. Elle ouvre la bouche, puis la referme, incapable de trouver quelque chose à répondre."
 
+    $ bc_show("iris", "desaccord")
     iris desaccord "On n'a rien demandé de tout ça. On veut juste rentrer chez nous."
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Et moi, je veux éviter le gaspillage. Tu vois ? Nous avons tous nos petites envies !"
 
     "Un nouveau silence tombe dans la chambre. Le moteur de la navette pour la Terre n'est déjà plus audible."
@@ -422,6 +456,8 @@ label _30_0_1_1_0_0_FIN_PRODUCTION:
 
     kami "Encore un petit peu de patience, les enfants. Votre transport arrivera en temps voulu !"
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "fatigue", 0.35), ("noam", "fatigue", 0.65)])
     "Iris reprend lentement ma main. Elle ne sourit plus."
     iris fatigue "Noam..."
     "Je serre ses doigts sans répondre. De l'autre côté de la porte, la barricade n'a pas bougé."
@@ -618,8 +654,14 @@ label _30_0_1_1_0_0_VENTILATION:
     "L'autre moi me dévisage un instant, comme s'il cherchait quelque chose dans mes yeux. Puis il sourit avec ma bouche et se tourne vers Iris."
     "Je recule jusqu'au mur. Mes jambes ne semblent plus capables de porter mon poids."
 
+    play sound "audio/trailer/trl_alarm_low.wav"
+    pause 1.0
+    $ hideGroup()
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Attention, chers passagers ! Le départ de la navette est imminent. Veuillez terminer votre embarquement !"
 
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "peur", 0.22), ("noam", "inquiet", 0.78)])
     "Le message résonne dans tout le conduit. Iris jette un regard vers la grille qui mène au secteur d'embarquement, puis revient immédiatement vers l'inconnu."
 
     iris colere "T'es pas Noam. T'es pas moi non plus. Qu'est-ce que t'es ?!"
