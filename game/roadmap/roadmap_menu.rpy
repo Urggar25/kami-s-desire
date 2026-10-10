@@ -988,7 +988,6 @@ init -2 python:
             "teleportable": True,
         },
         {
-        {
             "id": "ending_departure_doubles_j30",
             "title": "FIN — Le faux départ",
             "short": "FIN 06",
@@ -1004,6 +1003,7 @@ init -2 python:
             "required_variables": {"j30_escape_route": "barricade", "j30_barricade_success": True},
             "teleportable": True,
         },
+        {
             "id": "ending_thirteenth_representative",
             "title": "FIN — Le Polymorphe",
             "short": "FIN 06",
