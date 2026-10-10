@@ -16,18 +16,18 @@ label _26_0_1_1_0_0_REVEIL:
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.5
     $ blink()
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
-    "Je cherche le bord de mon lit, mais ma main rencontre le sol."
-    "Je suis toujours dans la chambre d’Iris, sur le matelas qu’elle a installé près du bureau."
-    "Iris est déjà réveillée. Assise sur son lit, une tasse à la main, elle me regarde avec des yeux aussi fatigués que les miens."
+    "Je me réveille dans le lit d'Iris, coincé contre le bord après une nuit agitée."
+    "Depuis que je dors chez elle, nous partageons le même lit ; à force de me retourner, j'ai dû lui laisser très peu de place."
+    "Iris est déjà réveillée. Assise à côté de moi, une tasse à la main, elle me regarde avec des yeux aussi fatigués que les miens."
 
     $ showGroup([
         ("iris", "fatigue", 0.37),
         ("noam", "fatigue", 0.64),
     ])
 
-    iris fatigue "La prochaine fois, je t'attache au matelas. J'ai passé la nuit à t'entendre te retourner dans tous les sens."
+    iris fatigue "La prochaine fois, je te laisse le bord du lit. J'ai passé la nuit à t'entendre te retourner dans tous les sens."
     noam fatigue "T'aurais pu me réveiller. Même si je vais pas me plaindre après t'avoir demandé de m'héberger."
     iris blase "Ah, donc tu admets enfin que je t'ai rendu service ? C'est bien. Note la date, on n'est pas près de revoir ça."
 
@@ -39,7 +39,7 @@ label _26_0_1_1_0_0_REVEIL:
     noam inquiet "Hier, pendant le jeu, j'étais persuadé que Mara allait comprendre. Elle a plaisanté tout l'après-midi et c'est moi qui avais l'air suspect."
     iris reflexion "C'est bien ce qui me dérange. J'avais l'impression de parler à la même Mara que depuis le premier jour."
 
-    "Je récupère mon téléphone sous le matelas. Aucun message, aucune annonce particulière de Kami."
+    "Je récupère mon téléphone entre les draps. Aucun message, aucune annonce particulière de Kami."
     "Depuis plusieurs jours, ce silence me paraissait reposant ; ce matin, j'aimerais presque qu'elle nous interrompe pour nous obliger à parler d'autre chose."
 
     noam raison "On ne peut pas continuer à garder ça pour nous."
@@ -61,7 +61,7 @@ label _26_0_1_1_0_0_REVEIL:
     iris neutre "Habille-toi. On va manger, et après on décide."
     iris neutre "Mais je te demande une chose : tant qu'on n'a pas choisi quoi faire, évite d'aller provoquer Mara tout seul."
     noam sourire "Promis. Et merci pour cette nuit, vraiment."
-    iris blase "Ouais, ouais. Tu me remercieras en transportant ton matelas hors de ma chambre quand ce bordel sera terminé."
+    iris blase "Ouais, ouais. Tu me remercieras en arrêtant de me piquer toute la couverture quand ce bordel sera terminé."
 
     $ hideGroup()
     stop music fadeout 1.0
@@ -518,7 +518,7 @@ label _26_0_1_1_0_0_EXPEDITION:
     "Je remarque qu'Iris vérifie deux fois le fonctionnement de sa lampe avant de m'en tendre une. Elle ne m'a pas lâché des yeux depuis que nous avons quitté le Conclave."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Nous entrons dans ma chambre pendant qu'Elias pose sa caisse près du bureau. Je déplace le meuble qui bloque l'aération, puis récupère le tournevis qu'il me tend."
+    "Nous entrons dans ma chambre pendant qu'Elias pose sa caisse près du bureau. Je lève les yeux vers la grille d'aération, bien au-dessus du bureau, puis récupère le tournevis qu'il me tend."
 
     $ hideGroup()
     $ showGroup([
