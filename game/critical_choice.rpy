@@ -67,7 +67,7 @@ init python:
 # ------------------------------------------------------------
 transform cc_noam_base:
     subpixel True
-    zoom 1.07 xalign 0.5 yanchor 1.0 ypos 1.05
+    zoom 1.07 xalign 0.5 yanchor 1.0 ypos 1.025
     block:
         pause 1.1
         ease 0.02 xoffset -3
@@ -82,7 +82,7 @@ transform cc_noam_base:
 
 transform cc_noam_ghost(dx, tint):
     subpixel True
-    zoom 1.07 xalign 0.5 yanchor 1.0 ypos 1.05
+    zoom 1.07 xalign 0.5 yanchor 1.0 ypos 1.025
     matrixcolor TintMatrix(tint)
     additive 1.0
     alpha 0.30
@@ -249,7 +249,7 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                 hover_color ("#758493" if _cc_locked else "#06131F")
             if _cc_locked:
                 add CC_DIR + "/lock.svg":
-                    xpos 18 yalign 0.5 xysize (30, 35)
+                    xpos 16 yalign 0.5 xysize (37, 43)
 
     # Cartes narratives compactes. Deux colonnes strictes, sans collision
     # avec la silhouette centrale ni l'interface de confirmation.
@@ -301,18 +301,26 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                 add Solid(_card_border + "80") xpos 20 ypos 87 xsize 500 ysize 2
 
                 if _status == "coming_soon":
-                    add Solid("#0B1420") xpos 20 ypos 102 xsize 500 ysize 174
-                    add Transform("bg_conduit_reseau", fit="cover", xysize=(500, 174),
-                        matrixcolor=SaturationMatrix(0.0), alpha=0.10) xpos 20 ypos 102
-                    add Solid("#030710CC") xpos 20 ypos 102 xsize 500 ysize 174
-                    add Solid("#73829466") xpos 37 ypos 122 xsize 125 ysize 2
-                    add Solid("#73829455") xpos 37 ypos 130 xsize 78 ysize 2
-                    add Solid("#73829444") xpos 365 ypos 236 xsize 113 ysize 2
-                    text "DOSSIER : ██-███" xpos 40 ypos 244 size 16 color "#77879A"
-                    add CC_DIR + "/lock.svg" xpos 249 ypos 135 xsize 42 ysize 48
-                    text "CLASSIFIÉ" xpos 270 ypos 229 anchor (0.5, 0.5):
-                        font "fonts/Rajdhani-SemiBold.ttf"
-                        size 26 color "#A9B5C2"
+                    # Une véritable image de dossier censuré : le visuel est
+                    # délibérément obscurci, mais reste identifiable comme une photo.
+                    fixed:
+                        xpos 20 ypos 102
+                        xsize 500 ysize 174
+                        clipping True
+                        add Solid("#070E18") xsize 500 ysize 174
+                        add Transform("bg_conduit_reseau", fit="cover",
+                            xysize=(500, 174), matrixcolor=SaturationMatrix(0.0), alpha=0.31)
+                        add Solid("#0306108E") xsize 500 ysize 174
+                        add Solid("#02040AF0") xpos 152 ypos 14 xsize 192 ysize 30
+                        add Solid("#02040AF0") xpos 128 ypos 62 xsize 245 ysize 32
+                        add Solid("#02040AF0") xpos 177 ypos 108 xsize 158 ysize 29
+                        add Solid("#8D9DAB55") xpos 14 ypos 12 xsize 102 ysize 2
+                        add Solid("#8D9DAB55") xpos 14 ypos 19 xsize 63 ysize 2
+                        add Solid("#8D9DAB44") xpos 382 ypos 150 xsize 99 ysize 2
+                        text "ARCHIVE // ACCÈS REFUSÉ" xpos 17 ypos 146:
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                            size 19 color "#A3AFBE"
+                        add CC_DIR + "/lock.svg" xpos 229 ypos 53 xsize 42 ysize 48
                     text "UN AUTRE DESTIN VOUS ATTEND." xpos 23 ypos 289:
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 24 color "#DFE6ED"
@@ -334,10 +342,10 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                             add Solid("#EC567A") xsize 4 ysize 174
                             add Solid("#082338CC") xpos 209 ypos 49 xsize 82 ysize 75 at cc_teaser_pulse
                             text "▶" xalign 0.5 yalign 0.47 size 61 color "#E6FCFF"
-                            add Solid("#03101BC0") xpos 0 ypos 143 xsize 500 ysize 31
-                            text "VOIR LE TEASER  ·  00:30" xpos 16 ypos 147:
+                            add Solid("#03101BB0") xpos 440 ypos 143 xsize 60 ysize 31
+                            text "30 S" xpos 469 ypos 147 anchor (0.5, 0.0):
                                 font "fonts/Rajdhani-SemiBold.ttf"
-                                size 19 color "#F1FAFF"
+                                size 20 color "#F1FAFF"
                     text "UNE VÉRITÉ CACHÉE DU CONCLAVE" xpos 22 ypos 289:
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 24 color "#E8F7FF"
@@ -359,12 +367,6 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                     style "cc_key_badge"
                     text "A" style "cc_key_text"
                 text _("Confirmer") style "cc_confirm_text"
-    else:
-        text "SÉLECTIONNEZ UNE ROUTE DISPONIBLE  ·  CLIQUEZ SUR L'APERÇU POUR VOIR LE TEASER":
-            xalign 0.5 ypos 1026
-            font "fonts/Rajdhani-SemiBold.ttf"
-            size 20 color "#95BCCC"
-
 
 # ------------------------------------------------------------
 # STYLES
