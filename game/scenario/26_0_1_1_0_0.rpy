@@ -167,7 +167,7 @@ label _26_0_1_1_0_0_DECISION:
 
     iris neutre "Tu peux encore décider d'attendre. Je ne vais pas te forcer à raconter cette histoire."
 
-    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Montrer le corps de Mara à Kami":{"label":"_26_0_1_1_0_0_CAMERA","pack":"origine"},"Garder la découverte secrète":{"label":"_26_0_1_1_0_0_SECRET_PLACEHOLDER","pack":"origine"}}):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Montrer le corps de Mara à Kami":{"label":"_26_0_1_1_0_0_CAMERA"},"Garder la découverte secrète":{"label":"_26_0_1_1_0_0_SECRET_PLACEHOLDER"}}):
         "Que faire de la photographie ?"
         "Montrer le corps de Mara à Kami":
             $ j26_camera_choice = "reveal"
