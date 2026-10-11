@@ -138,7 +138,7 @@ label _30_0_1_1_0_0_VOTE:
     "Iris attend, sans essayer de choisir à ma place."
 
 label _30_0_1_1_0_0_SORTIE:
-    menu (screen="critical_choice", noam_expr="hesitation"):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Tenter de démanteler la barricade devant la porte.":{"label":"_30_0_1_1_0_0_BARRICADE","pack":"origine"},"Ouvrir la ventilation et passer par les conduits.":{"label":"_30_0_1_1_0_0_VENTILATION","pack":"origine"}}):
         "Comment rejoindre la navette avant son départ ?"
         "Tenter de démanteler la barricade devant la porte.":
             $ j30_escape_route = "barricade"

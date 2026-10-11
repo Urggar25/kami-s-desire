@@ -369,6 +369,14 @@ screen main_menu():
             Start("tiktok_promo_trailer"),
         ]
 
+    # Story Pack 01 — cinematic preview (30s, in-game).
+    textbutton "STORY PACK 01 · L'ORIGINE  ▶":
+        style "version_trailer_button"
+        xpos 1870 ypos 932
+        xanchor 1.0 yanchor 1.0
+        xsize 310
+        action Start("origine_story_pack_teaser")
+
     # Raccourci clavier rapide
     key "K_ESCAPE" action NullAction()
 

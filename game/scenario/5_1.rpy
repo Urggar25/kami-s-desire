@@ -975,7 +975,7 @@ label _5_1_CHOIX_CHAMBRE:
     think "Je repose le papier et m'assieds au bord du lit. Est-ce que je suis réellement en train d'envisager ça ?"
 
 
-    menu (screen="critical_choice", noam_expr="hesitation"):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Aller à la pharmacie.":{"label":"_5_1_PHARMACIE","pack":"origine"},"Aller se coucher.":{"label":"_5_1_FIN_JOURNEE","pack":"origine"}}):
         "Que devrais-je faire ?"
 
         "Aller à la pharmacie.":

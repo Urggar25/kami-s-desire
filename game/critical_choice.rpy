@@ -30,6 +30,35 @@ init python:
         4: [(0.238, 0.450), (0.762, 0.450), (0.238, 0.740), (0.762, 0.740)],
     }
 
+    CC_UNFINISHED_LABELS = {"_26_0_1_1_0_0_SECRET_PLACEHOLDER"}
+    CC_UNRELEASED_PACKS = {"mystere"}  # Annonce réservée, aucune date ni achat.
+    CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."}}
+
+    def cc_owned_packs():
+        # Development entitlement, NOT commercial DRM.
+        return getattr(persistent, "kd_story_packs_owned", ["origine"])
+
+    def cc_option_status(destination=None, pack=None):
+        if pack in CC_UNRELEASED_PACKS:
+            return "coming_soon"
+        if destination and (destination in CC_UNFINISHED_LABELS or not renpy.has_label(destination)):
+            return "unreleased"
+        if pack and pack not in cc_owned_packs():
+            return "dlc"
+        return "available"
+
+    def cc_option_details(caption, targets):
+        options = targets or {}
+        spec = options.get(caption, {})
+        if not spec:
+            for source_caption, candidate in options.items():
+                if renpy.translate_string(source_caption) == caption:
+                    spec = candidate
+                    break
+        if isinstance(spec, str):
+            spec = {"label": spec}
+        return cc_option_status(spec.get("label"), spec.get("pack")), spec.get("pack")
+
     def cc_positions(n):
         return CC_LAYOUT.get(n, CC_LAYOUT[2])
 
@@ -120,7 +149,7 @@ transform cc_bar_pulse:
 # ------------------------------------------------------------
 # ÉCRAN
 # ------------------------------------------------------------
-screen critical_choice(items, noam_expr="reflexion"):
+screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
     style_prefix "cc"
     modal True
     zorder 210
@@ -162,19 +191,38 @@ screen critical_choice(items, noam_expr="reflexion"):
                 text _cc_title style "cc_title_ghost_c" xalign 0.5 ypos 0 offset (4, -2) at Transform(alpha=0.55)
                 text _cc_title style "cc_title" xalign 0.5 ypos 0
 
-    # Options
+    # Route locks: undiscovered choices remain visible but cannot be selected.
     for idx, i in enumerate(_cc_choices):
         $ px, py = _cc_pos[idx] if idx < len(_cc_pos) else (0.5, 0.5 + idx * 0.12)
+        $ _cc_status, _cc_pack = cc_option_details(i.caption, cc_targets)
+        $ _cc_locked = _cc_status != "available"
         button:
-            action i.action
+            action (Show("cc_pack_information", pack_id=_cc_pack) if _cc_status == "dlc" else (NullAction() if _cc_locked else i.action))
             xpos px ypos py
             anchor (0.5, 0.5)
             xysize (560, 128)
-            background CC_DIR + "/panel_idle.png"
-            hover_background CC_DIR + "/panel_hover.png"
-            selected_background CC_DIR + "/panel_hover.png"
+            background (Solid("#111923EC") if _cc_locked else CC_DIR + "/panel_idle.png")
+            hover_background (Solid("#1D2935") if _cc_locked else CC_DIR + "/panel_hover.png")
+            selected_background (Solid("#1D2935") if _cc_locked else CC_DIR + "/panel_hover.png")
             at cc_panel_in(0.15 + idx * 0.08)
-            text i.caption style "cc_option_text" align (0.5, 0.5)
+            text i.caption:
+                style "cc_option_text"
+                align (0.5, 0.40 if (_cc_locked or _cc_pack) else 0.5)
+                color ("#63717E" if _cc_locked else "#FFFFFF")
+            if _cc_locked:
+                add CC_DIR + "/lock.svg":
+                    xpos 18 yalign 0.5 xysize (30, 35)
+            if _cc_locked or _cc_pack:
+                text ("STORY PACK : ???  ·  À VENIR" if _cc_status == "coming_soon" else ("À DÉVELOPPER" if _cc_status == "unreleased" else "STORY PACK : L'ORIGINE")):
+                    xalign 0.5 ypos 96 yanchor 0.5
+                    size 17 color ("#9CA8AF" if _cc_locked else "#62CADF")
+            if _cc_pack == "origine" and _cc_status == "available":
+                textbutton "▶ TEASER":
+                    xpos 412 ypos 82
+                    text_size 15
+                    text_color "#61D3E9"
+                    text_hover_color "#FFFFFF"
+                    action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
 
     # Barre de confirmation
     frame:
@@ -253,3 +301,26 @@ style cc_key_text:
     color "#04121e"
     xalign 0.5
     yalign 0.5
+
+# Story Pack modal. Replaced by verified storefront entitlement for DLC sales.
+screen cc_pack_information(pack_id="origine"):
+    modal True
+    zorder 250
+    $ pack = CC_STORY_PACKS.get(pack_id, CC_STORY_PACKS["origine"])
+    add Solid("#02060CEB")
+    frame:
+        xalign 0.5 yalign 0.5 xsize 850
+        background Solid("#0D1726")
+        padding (48, 38)
+        vbox:
+            spacing 19
+            text "STORY PACK REQUIS" size 25 color "#69D3E9" xalign 0.5
+            text pack["title"] size 64 color "#FFFFFF" xalign 0.5
+            text pack["days"] + "   •   " + pack["endings"] size 28 color "#A9BCCC" xalign 0.5
+            text pack["tagline"] size 25 color "#E0ECF2" xalign 0.5
+            text "Contenu non inclus dans cette édition." size 21 color "#8E9EAB" xalign 0.5
+            hbox:
+                xalign 0.5 spacing 24
+                textbutton "RETOUR":
+                    action Hide("cc_pack_information")
+    key "K_ESCAPE" action Hide("cc_pack_information")
