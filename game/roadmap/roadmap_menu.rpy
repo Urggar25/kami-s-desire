@@ -1252,10 +1252,10 @@ init -2 python:
         if roadmap_is_redacted(node):
             return title
         import re
-        title = re.sub(r"^Jour\\s+\\d+\\s*[—–-]\\s*", "", title)
-        title = re.sub(r"^CRITICAL CHOICE\\s*[—–-]\\s*", "", title)
-        title = re.sub(r"^Divergence\\s*[—–-]\\s*", "", title)
-        title = re.sub(r"^FIN\\s*[—–-]\\s*", "", title)
+        title = re.sub(r"^Jour\s+\d+\s*[—–-]\s*", "", title)
+        title = re.sub(r"^CRITICAL CHOICE\s*[—–-]\s*", "", title)
+        title = re.sub(r"^Divergence\s*[—–-]\s*", "", title)
+        title = re.sub(r"^FIN\s*[—–-]\s*", "", title)
         return title
 
     def roadmap_display_summary(node):
