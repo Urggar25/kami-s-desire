@@ -160,6 +160,8 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
         _cc_title = _cc_caps[0] if _cc_caps else ""
         _cc_n = len(_cc_choices)
         _cc_pos = cc_positions(_cc_n)
+        # Le mode Story Pack est réservé aux véritables embranchements de route.
+        _cc_story_mode = any(cc_option_details(i.caption, cc_targets)[1] for i in _cc_choices)
 
     # Fond assombri
     add Solid("#03070de6")
@@ -191,38 +193,96 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
                 text _cc_title style "cc_title_ghost_c" xalign 0.5 ypos 0 offset (4, -2) at Transform(alpha=0.55)
                 text _cc_title style "cc_title" xalign 0.5 ypos 0
 
-    # Route locks: undiscovered choices remain visible but cannot be selected.
+    # Choix standards inchangés ; la vitrine Story Pack n'existe
+    # que sur les menus dont les branches déclarent un pack.
     for idx, i in enumerate(_cc_choices):
         $ px, py = _cc_pos[idx] if idx < len(_cc_pos) else (0.5, 0.5 + idx * 0.12)
         $ _cc_status, _cc_pack = cc_option_details(i.caption, cc_targets)
         $ _cc_locked = _cc_status != "available"
+        $ _cc_panel_y = (0.302 if _cc_story_mode and _cc_n == 2 else py)
         button:
             action (Show("cc_pack_information", pack_id=_cc_pack) if _cc_status == "dlc" else (NullAction() if _cc_locked else i.action))
-            xpos px ypos py
+            xpos px ypos _cc_panel_y
             anchor (0.5, 0.5)
             xysize (560, 128)
-            background (Solid("#111923EC") if _cc_locked else CC_DIR + "/panel_idle.png")
-            hover_background (Solid("#1D2935") if _cc_locked else CC_DIR + "/panel_hover.png")
-            selected_background (Solid("#1D2935") if _cc_locked else CC_DIR + "/panel_hover.png")
+            background (Transform(CC_DIR + "/panel_idle.png", matrixcolor=SaturationMatrix(0.0), alpha=0.56) if _cc_locked else CC_DIR + "/panel_idle.png")
+            hover_background (Transform(CC_DIR + "/panel_idle.png", matrixcolor=SaturationMatrix(0.0), alpha=0.56) if _cc_locked else CC_DIR + "/panel_hover.png")
             at cc_panel_in(0.15 + idx * 0.08)
             text i.caption:
                 style "cc_option_text"
-                align (0.5, 0.40 if (_cc_locked or _cc_pack) else 0.5)
-                color ("#63717E" if _cc_locked else "#FFFFFF")
+                align (0.5, 0.5)
+                color ("#758493" if _cc_locked else "#D6F2FF")
+                hover_color ("#758493" if _cc_locked else "#06131F")
             if _cc_locked:
                 add CC_DIR + "/lock.svg":
                     xpos 18 yalign 0.5 xysize (30, 35)
-            if _cc_locked or _cc_pack:
-                text ("STORY PACK : ???  ·  À VENIR" if _cc_status == "coming_soon" else ("À DÉVELOPPER" if _cc_status == "unreleased" else "STORY PACK : L'ORIGINE")):
-                    xalign 0.5 ypos 96 yanchor 0.5
-                    size 17 color ("#9CA8AF" if _cc_locked else "#62CADF")
-            if _cc_pack == "origine" and _cc_status == "available":
-                textbutton "▶ TEASER":
-                    xpos 412 ypos 82
-                    text_size 15
-                    text_color "#61D3E9"
-                    text_hover_color "#FFFFFF"
-                    action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
+
+    # Présentation commerciale additionnelle, volontairement séparée
+    # des deux panneaux de décision afin d'éviter tout chevauchement.
+    if _cc_story_mode and _cc_n == 2:
+        for idx, i in enumerate(_cc_choices):
+            $ _status, _pack = cc_option_details(i.caption, cc_targets)
+            $ _locked = _status != "available"
+            $ _card_x = (92 if idx == 0 else 1290)
+            frame at cc_panel_in(0.31 + idx * 0.1):
+                xpos _card_x ypos 393
+                xsize 538 ysize 447
+                background Solid("#080F1CEB" if _locked else "#061825F5")
+                padding (15, 13, 15, 14)
+                vbox:
+                    spacing 11
+                    hbox:
+                        spacing 13
+                        if _locked:
+                            add CC_DIR + "/lock.svg" xsize 35 ysize 40
+                        else:
+                            text "◈" size 39 color "#64D8F5"
+                        vbox:
+                            spacing 1
+                            text ("STORY PACK : ???" if _status == "coming_soon" else ("STORY PACK : " + CC_STORY_PACKS.get(_pack, {}).get("title", "À VENIR")).upper()):
+                                font "fonts/Rajdhani-SemiBold.ttf"
+                                size 27 color ("#ADB2BE" if _locked else "#E7F8FF")
+                            text ("NON ANNONCÉ" if _status == "coming_soon" else ("JOURS 5 À 30  •  7 FINS" if _pack == "origine" else "CONTENU ADDITIONNEL")):
+                                font "fonts/Rajdhani-SemiBold.ttf"
+                                size 18 color ("#8B8D99" if _locked else "#62CFE9")
+                    if _status == "coming_soon":
+                        fixed:
+                            xsize 504 ysize 187
+                            add Solid("#0C101A")
+                            add Transform("bg_conduit_reseau", fit="cover", xysize=(504, 187), matrixcolor=SaturationMatrix(0.0), alpha=0.22)
+                            text "ACCÈS RESTREINT" xalign 0.5 yalign 0.5 size 27 color "#727989"
+                        text "Une autre histoire vous attend...":
+                            size 24 color "#BDC0C9"
+                        text "Certaines portes ne devraient peut-être jamais être ouvertes.":
+                            size 19 color "#8F95A2" xmaximum 493
+                    elif _pack == "origine":
+                        # Aperçu interactif : une image du jeu en guise de vignette
+                        # ouvre le teaser. Pas d'auto-play ni d'interruption du choix.
+                        button:
+                            xsize 504 ysize 187
+                            padding (0, 0)
+                            background Solid("#03101E")
+                            hover_background Solid("#123344")
+                            action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
+                            add Transform("bg_cg030", fit="cover", xysize=(504, 187), alpha=0.84)
+                            add Solid("#05081555")
+                            text "▶" xalign 0.5 yalign 0.5 size 64 color "#82EBFF"
+                            text "APERÇU DU TEASER" xpos 14 ypos 153 size 17 color "#E9F9FF"
+                        text "Découvrez une des vérités cachées derrière le Conclave.":
+                            size 18 color "#C4DDE8" xmaximum 493
+                        hbox:
+                            spacing 18
+                            text "COMBATS  •  DISPUTES  •  TRAHISONS" size 17 color "#A8CDDA"
+                        textbutton "▶  VOIR LE TEASER":
+                            xalign 1.0
+                            text_size 23
+                            text_color "#83E8FF"
+                            text_hover_color "#FFFFFF"
+                            action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
+                    else:
+                        text "Détails du Story Pack à venir." size 23 color "#AAB9C3"
+                if _locked:
+                    add Solid("#080B1277")
 
     # Barre de confirmation
     frame:
