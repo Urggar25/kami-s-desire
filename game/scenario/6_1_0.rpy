@@ -206,6 +206,7 @@ label _6_1_0_CAFETERIA:
 
 
 label _6_1_0_SALLE_REPOS:
+    call KD_ROUTE_J6_JULIAN from _call_optional_kd_route_j6_julian
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_6_1_0_SALLE_REPOS_ARRIVEE", title="Rejoindre la salle de repos", destination_room="repos") from _call_exploration__6_1_0_SALLE_REPOS
 

@@ -256,6 +256,7 @@ label _8_FIN_RECHERCHE:
     jump _8_0_1_CAFETERIA
 
 label _8_0_1_CAFETERIA:
+    call KD_ROUTE_J8_JULIAN from _call_optional_kd_route_j8_julian
     # Navigation libre jusqu'à la destination de l'objectif.
     call START_EXPLORATION_LIBRE("_8_0_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__8_0_1_CAFETERIA
 

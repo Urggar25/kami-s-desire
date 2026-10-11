@@ -850,6 +850,7 @@ label _5_0_0_JULIAN:
 
 
 label _5_0_1_OBSERVATION:
+    call KD_ROUTE_J5_NYRA from _call_optional_kd_route_j5_nyra
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_5_0_1_OBSERVATION_ARRIVEE", title="Rejoindre la salle d'observation", destination_room="observation") from _call_exploration__5_0_1_OBSERVATION
 

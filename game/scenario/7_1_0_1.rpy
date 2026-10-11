@@ -630,6 +630,7 @@ label _7_1_0_1_APRES_TEMPS_LIBRE:
 
 
 label _7_1_0_1_INFIRMERIE_APRES_MIDI:
+    call KD_ROUTE_J7_NYRA_GUEST from _call_optional_kd_route_j7_nyra_guest
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_7_1_0_1_INFIRMERIE_APRES_MIDI_ARRIVEE", title="Retourner à l'infirmerie", destination_room="infirmerie") from _call_exploration__7_1_0_1_INFIRMERIE_APRES_MIDI
 

@@ -903,6 +903,7 @@ label _7_1_0_TEMPS_LIBRE_2:
 
 
 label _7_1_0_APRES_TEMPS_LIBRES:
+    call KD_ROUTE_J7_LYSA_SECRET from _call_optional_kd_route_j7_lysa_secret
 
     $ current_period = "Fin d'après-midi"
     call START_EXPLORATION_LIBRE("_7_1_0_APRES_TEMPS_LIBRES_ARRIVEE", title="Rejoindre discrètement la chambre d'Iris", destination_room="dortoir") from _call_nav_j7_secret_iris
