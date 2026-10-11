@@ -624,6 +624,8 @@ label _5_0_APRES_TEMPS_LIBRE_1:
     think "Sinon, dans la salle d'observation, sur les ordinateurs, on peut voir l'état des districts."
     think "Qu'espèrent les gens par rapport au vote de demain ? Je me le demande bien."
 
+label _5_0_CRITICAL_CHOICE:
+
     menu (screen="critical_choice", noam_expr="hesitation", cc_prompt="Où devrais-je aller ?", cc_targets={"Aller frapper à la porte de Julian.":{"label":"_5_0_0_JULIAN","pack":"mystere"},"Aller à la salle d'observation.":{"label":"_5_0_1_OBSERVATION","pack":"origine"}}):
         "Où devrais-je aller ?"
 

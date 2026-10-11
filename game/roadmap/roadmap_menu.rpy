@@ -219,18 +219,34 @@ init -2 python:
             "teleportable": True,
         },
         {
+            "id": "split_day_5",
+            "title": "CRITICAL CHOICE — Julian ou Elias",
+            "short": "CHOIX",
+            "label": "_5_0_CRITICAL_CHOICE",
+            "category": "scene",
+            "kind": "divergence",
+            "x": 3500,
+            "y": 220,
+            "summary": "Noam choisit entre rejoindre Julian et enquêter avec Elias dans la salle d'observation.",
+            "choice": "Aller voir Julian ou accompagner Elias.",
+            "consequence": "Deux branches narratives distinctes prennent naissance.",
+            "requires": ["day_5_statu_quo"],
+            "required_variables": {"vote1": "NON"},
+            "teleportable": True,
+        },
+        {
             "id": "day_5_choice_julian",
             "title": "Divergence — Mise en scène",
             "short": "Julian",
             "label": "_5_0_0_JULIAN",
             "category": "scene",
             "kind": "divergence",
-            "x": 3500,
+            "x": 3880,
             "y": 95,
             "summary": "Noam confronte Julian sur sa manière de transformer le vote en théâtre politique.",
             "choice": "Affronter la stratégie de Julian.",
             "consequence": "Le soupçon de manipulation reste actif.",
-            "requires": ["day_5_statu_quo"],
+            "requires": ["split_day_5"],
             "teleportable": True,
         },
         {
@@ -240,12 +256,12 @@ init -2 python:
             "label": "_5_0_1_OBSERVATION",
             "category": "scene",
             "kind": "divergence",
-            "x": 3500,
+            "x": 3880,
             "y": 345,
             "summary": "Noam accompagne Elias. Un incident endommage une console et laisse une trace technique inquiétante.",
             "choice": "Suivre Elias plutôt que Julian.",
             "consequence": "La surveillance du Conclave paraît moins stable.",
-            "requires": ["day_5_statu_quo"],
+            "requires": ["split_day_5"],
             "teleportable": True,
         },
         {
@@ -255,12 +271,12 @@ init -2 python:
             "label": "_6_0_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 3880,
+            "x": 4260,
             "y": 390,
             "summary": "Le vote sur la libre circulation tourne au fiasco. Kami se déforme et laisse filtrer une menace.",
             "choice": "Rejeter un texte devenu dangereux.",
             "consequence": "Le silence de Kami commence.",
-            "requires": ["day_5_statu_quo"],
+            "requires": ["day_5_choice_observation"],
             "required_variables": {"vote1": "NON"},
             "teleportable": True,
         },
@@ -271,7 +287,7 @@ init -2 python:
             "label": "_6_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 3880,
+            "x": 4260,
             "y": 640,
             "summary": "Après l'adoption du commerce, la libre circulation déchire Limen. Ryn tente de forcer une issue avant le vote.",
             "choice": "Défendre le droit de Sael à voter malgré le prix politique du refus.",
@@ -287,7 +303,7 @@ init -2 python:
             "label": "_7_1_0_CANON",
             "category": "day",
             "kind": "day",
-            "x": 4260,
+            "x": 4640,
             "y": 640,
             "summary": "Le groupe découvre une jeune femme dissimulée dans la livraison et doit décider s'il la cache ou s'il révèle sa présence à Kami.",
             "choice": "Cacher la rescapée ou la déclarer à Kami.",
@@ -303,7 +319,7 @@ init -2 python:
             "label": "_7_1_0_CACHER_PLAN",
             "category": "day",
             "kind": "day",
-            "x": 4640,
+            "x": 5020,
             "y": 560,
             "summary": "Kael pirate les serveurs pendant que le groupe transporte clandestinement la jeune femme jusqu'à la chambre d'Iris.",
             "choice": "Cacher la rescapée à Kami.",
@@ -319,7 +335,7 @@ init -2 python:
             "label": "_7_1_0_DECLARER_PLACEHOLDER",
             "category": "day",
             "kind": "day",
-            "x": 4640,
+            "x": 5020,
             "y": 720,
             "summary": "Le groupe révèle la présence de la jeune femme à Kami et obtient un sursis pour la soigner à l'infirmerie.",
             "choice": "Déclarer la rescapée et exiger son transfert médical.",
@@ -335,7 +351,7 @@ init -2 python:
             "label": "_6_0_1_VOTE",
             "category": "vote",
             "kind": "vote",
-            "x": 4260,
+            "x": 4640,
             "y": 390,
             "summary": "Le Conclave vote dans un climat de dégradation système. Le texte ne paraît plus fiable.",
             "choice": "Maintenir l'ordre ou refuser une application incontrôlée.",
@@ -350,7 +366,7 @@ init -2 python:
             "label": "_7_0_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 4640,
+            "x": 5020,
             "y": 390,
             "summary": "Kami ne parle plus. Le calme apparent révèle des disparitions de matériel et l'arrêt des exécutions.",
             "choice": "Profiter du calme ou chercher les fissures.",
@@ -365,7 +381,7 @@ init -2 python:
             "label": "_8_0_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 5020,
+            "x": 5400,
             "y": 390,
             "summary": "Des objets personnels disparaissent. Les souvenirs intimes deviennent des preuves et des armes.",
             "choice": "Enquêter dans la chambre et soutenir Kael.",
@@ -380,7 +396,7 @@ init -2 python:
             "label": "_8_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 5020,
+            "x": 5400,
             "y": 560,
             "summary": "Anya se réveille dans la chambre d'Iris et découvre qu'elle a été recueillie au cœur du Conclave.",
             "choice": "Gagner sa confiance tout en continuant à cacher sa présence à Kami.",
@@ -396,7 +412,7 @@ init -2 python:
             "label": "_9_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 5400,
+            "x": 5780,
             "y": 560,
             "summary": "Noam cherche à comprendre pourquoi Ryn connaissait la présence d'Anya et découvre son intérêt pour les réseaux de passeurs.",
             "choice": "Préserver le secret d'Anya sans confronter directement Ryn.",
@@ -412,7 +428,7 @@ init -2 python:
             "label": "_10_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 5780,
+            "x": 6160,
             "y": 720,
             "summary": "Noam remonte la piste des questions de Ryn et découvre comment les archives peuvent servir à organiser des passages clandestins.",
             "choice": "Aider Ryn à exploiter les failles du système ou refuser de participer à son plan.",
@@ -428,7 +444,7 @@ init -2 python:
             "label": "_9_0_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 5400,
+            "x": 5780,
             "y": 390,
             "summary": "Kami revient dans un Conclave déjà fracturé. Le système vivant est désormais impossible à ignorer.",
             "choice": "Comprendre ce que Kami surveille encore.",
@@ -443,7 +459,7 @@ init -2 python:
             "label": "_10_0_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 5780,
+            "x": 6160,
             "y": 250,
             "summary": "Branche alternative du Jour 10 après l'échec du vote limenois. Le Conclave commence la journée sous le poids immédiat du Commandement IV.",
             "choice": "Assumer les conséquences du vote refusé.",
@@ -458,7 +474,7 @@ init -2 python:
             "label": "_10_0_1_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 5780,
+            "x": 6160,
             "y": 530,
             "summary": "Noam se réveille avec un mal de crâne inhabituel dans un Conclave trop chaud et trop silencieux. À la cafétéria, Elias annonce que la majorité des campements s'est dispersée, mais Ryn accuse Kami d'avoir piégé tout le monde.",
             "choice": "Rejoindre la cafétéria et empêcher la discussion de rompre autour de la table.",
@@ -473,7 +489,7 @@ init -2 python:
             "label": "_11_0_1_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 6160,
+            "x": 6540,
             "y": 530,
             "summary": "Encore affaibli par sa fièvre, Noam recherche la silhouette aperçue la veille et découvre que les images de surveillance ont été effacées.",
             "choice": "Rejoindre la cafétéria et empêcher la discussion de rompre autour de la table.",
@@ -488,7 +504,7 @@ init -2 python:
             "label": "_12_0_1_1_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 6540,
+            "x": 6920,
             "y": 530,
             "summary": "Noam se réveille en sursaut après un bruit dans sa chambre. La fouille transforme le doute en menace intime.",
             "choice": "Fouiller la chambre malgré la peur de céder à la paranoïa.",
@@ -503,7 +519,7 @@ init -2 python:
             "label": "_13_0_1_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 6920,
+            "x": 7300,
             "y": 530,
             "summary": "Noam se réveille en sursaut alors que son brouilleur se fait démonter.",
             "choice": "Fouiller la chambre malgré la peur de céder à la paranoïa.",
@@ -518,7 +534,7 @@ init -2 python:
             "label": "_14_0_1_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 7300,
+            "x": 7680,
             "y": 530,
             "summary": "Noam se réveille en sursaut alors que son brouilleur se fait démonter.",
             "choice": "Fouiller la chambre malgré la peur de céder à la paranoïa.",
@@ -533,7 +549,7 @@ init -2 python:
             "label": "_15_0_1_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 7680,
+            "x": 8060,
             "y": 530,
             "summary": "Noam renonce au vote pour consulter les caméras avec Kael. Les archives montrent Kael volant sa propre photo, puis entrant dans la chambre de Noam pour prendre le dessin de Juliette.",
             "choice": "Privilégier l'enquête aux responsabilités du vote et confronter Kael aux images.",
@@ -549,7 +565,7 @@ init -2 python:
             "label": "_16_0_1_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 8060,
+            "x": 8440,
             "y": 530,
             "summary": "Noam se réveille avec un trou net dans sa mémoire. Aux archives, Sael et lui découvrent la procédure M16 — altération mnésique — dans leurs dossiers médicaux.",
             "choice": "Chercher une preuve qui ne dépende ni des souvenirs de Noam ni de ceux de Kael.",
@@ -565,7 +581,7 @@ init -2 python:
             "label": "_17_0_1_1_0_ANNONCE_KAMI",
             "category": "day",
             "kind": "day",
-            "x": 8440,
+            "x": 8820,
             "y": 530,
             "summary": "Les représentants découvrent que douze dossiers portent la mention M16 et suspendent les votes. Kami leur répond que le Conclave prendra fin au jour 21 s'ils persistent.",
             "choice": "Maintenir la protestation puis ouvrir la grille derrière laquelle Noam entend du mouvement.",
@@ -581,7 +597,7 @@ init -2 python:
             "label": "_18_0_1_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 8820,
+            "x": 9200,
             "y": 530,
             "summary": "Mara rejoint Noam dans le réseau technique. Ils découvrent une salle de maintenance des Goumi, plusieurs embranchements et une trappe qu'ils ne peuvent pas ouvrir.",
             "choice": "Explorer avec Mara tout en gardant un chemin de retour vers les dortoirs.",
@@ -597,7 +613,7 @@ init -2 python:
             "label": "_19_0_1_1_0_REVEIL_CHAMBRE",
             "category": "day",
             "kind": "day",
-            "x": 9200,
+            "x": 9580,
             "y": 530,
             "summary": "Mara affirme n'avoir jamais exploré les conduits avec Noam. Le groupe sécurise les chambres, mais Noam retourne seul dans le réseau en suivant les bruits.",
             "choice": "Poursuivre la présence malgré l'épuisement, armé d'une lampe et d'un couteau.",
@@ -613,7 +629,7 @@ init -2 python:
             "label": "_20_0_1_1_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 9580,
+            "x": 9960,
             "y": 530,
             "summary": "Noam annonce la mort de Mara avant de la voir entrer vivante dans la cafétéria. De retour dans la salle cachée avec Iris et Kael, il découvre que le corps a disparu.",
             "choice": "Maintenir son récit malgré le doute des autres et la disparition de toute preuve.",
@@ -629,7 +645,7 @@ init -2 python:
             "label": "_20_0_1_1_IRIS_CONFRONTATION",
             "category": "scene",
             "kind": "divergence",
-            "x": 9960,
+            "x": 10340,
             "y": 530,
             "summary": "Dans la salle des Goumi, Iris demande une dernière fois à Noam de poser le couteau. Le choix de le garder ou de le lâcher sépare définitivement les routes.",
             "choice": "Lâcher le couteau ou le garder.",
@@ -644,7 +660,7 @@ init -2 python:
             "label": "_20_0_1_1_GARDER_COUTEAU",
             "category": "scene",
             "kind": "divergence",
-            "x": 10340,
+            "x": 10720,
             "y": 330,
             "summary": "Noam refuse de lâcher le couteau. Iris tente de le désarmer et la confrontation devient physique.",
             "choice": "Réussir ou rater les quatre QTE.",
@@ -660,7 +676,7 @@ init -2 python:
             "label": "_20_0_1_1_KAEL_QUESTION",
             "category": "scene",
             "kind": "divergence",
-            "x": 10340,
+            "x": 10720,
             "y": 730,
             "summary": "Après que Noam a lâché le couteau et quitté la salle avec Iris et Kael, Kael lui pose une question étrange sur le départ du lendemain et quelqu'un qui resterait coincé derrière.",
             "choice": "Partir malgré tout ou rester s'il existe encore une chance de sauver celui qui reste.",
@@ -676,7 +692,7 @@ init -2 python:
             "label": "_21_0_1_1_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 10720,
+            "x": 11100,
             "y": 470,
             "summary": "Après l'échec de la confrontation avec Iris, Noam se retrouve attaché à l'infirmerie. Mara neutralise la caméra avant qu'un double parfait de Noam ne sorte du conduit.",
             "choice": "Route issue du couteau gardé et des QTE échoués.",
@@ -692,7 +708,7 @@ init -2 python:
             "label": "_21_0_1_1_0_1_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 10720,
+            "x": 11100,
             "y": 690,
             "summary": "Noam répond à Kael qu'il monterait dans la navette si rester ne pouvait plus sauver la personne coincée derrière.",
             "choice": "« Je monte dans la navette. »",
@@ -708,7 +724,7 @@ init -2 python:
             "label": "_21_0_1_1_0_1_FIN_A_MA_PLACE",
             "category": "ending",
             "kind": "ending",
-            "x": 11100,
+            "x": 11480,
             "y": 620,
             "summary": "Le Doppelgänger de Noam remporte la lutte, élimine l'original et monte dans la navette sous son identité.",
             "choice": "Échouer au QTE contre le Doppelgänger de Noam.",
@@ -723,7 +739,7 @@ init -2 python:
             "label": "_21_0_1_1_0_1_FIN_LAISSE_DERRIERE",
             "category": "ending",
             "kind": "ending",
-            "x": 11100,
+            "x": 11480,
             "y": 790,
             "summary": "Noam survit à l'attaque avec l'aide d'Iris et quitte le Conclave, tandis que son Doppelgänger reste attaché dans la station.",
             "choice": "Réussir le QTE contre le Doppelgänger de Noam.",
@@ -738,7 +754,7 @@ init -2 python:
             "label": "_21_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 10720,
+            "x": 11100,
             "y": 870,
             "summary": "Le départ est annulé : certains représentants ont demandé à poursuivre le Conclave jusqu'au jour 30. Une anomalie apparaît ensuite dans la livraison.",
             "choice": "« Je reste s'il y a encore une chance de le sortir. »",
@@ -754,7 +770,7 @@ init -2 python:
             "label": "_22_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 11100,
+            "x": 11480,
             "y": 930,
             "summary": "Une plaisanterie sur les fantômes pousse Iris à rappeler que du matériel disparu avait déjà été retrouvé dans la salle cachée. Elias part seul vérifier les conduits et revient changé.",
             "choice": "Suite de la route « Je reste s'il y a encore une chance de le sortir. »",
@@ -770,7 +786,7 @@ init -2 python:
             "label": "_23_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 11480,
+            "x": 11860,
             "y": 930,
             "summary": "Sael s'inquiète des hallucinations de Noam et lui fait passer une batterie d'examens à l'infirmerie sous la surveillance d'Iris. L'IRM ne révèle aucune anomalie.",
             "choice": "Accepter de vérifier si les visions de Noam ont une origine médicale.",
@@ -786,7 +802,7 @@ init -2 python:
             "label": "_24_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 11860,
+            "x": 12240,
             "y": 930,
             "summary": "Le groupe débat du nouveau Commandement sur le toit, l'eau et l'alimentation. Noam aide à faire basculer les hésitants vers l'adoption.",
             "choice": "Soutenir le texte malgré les risques d'interprétation par Kami.",
@@ -802,7 +818,7 @@ init -2 python:
             "label": "_24_0_1_1_0_0_VOTE",
             "category": "vote",
             "kind": "vote",
-            "x": 12050,
+            "x": 12430,
             "y": 760,
             "summary": "Le Conclave vote sur un nouveau Commandement garantissant un toit, de l'eau potable et une alimentation suffisante.",
             "choice": "Voter pour ou s'abstenir sans bloquer l'unanimité des suffrages exprimés.",
@@ -818,7 +834,7 @@ init -2 python:
             "label": "_25_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 12240,
+            "x": 12620,
             "y": 930,
             "summary": "Iris et Noam retournent dans les conduits après avoir retrouvé un morceau de la veste de Mara. Iris découvre à son tour le corps de Mara alors que sa copie circule toujours dans le Conclave. Le joueur examine la veste intacte, cadre une photographie, puis reproduit le signal frappé à la porte d'Iris.",
             "choice": "Garder temporairement la découverte secrète pour éviter d'alerter les imposteurs.",
@@ -834,7 +850,7 @@ init -2 python:
             "label": "_26_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 12620,
+            "x": 13000,
             "y": 930,
             "summary": "Noam décide de profiter de l'exposition mondiale du Conclave pour révéler publiquement ce qu'Iris et lui ont découvert. Tomas surprend l'intervention et prévient le groupe.",
             "choice": "Choisir comment présenter publiquement l'existence probable des doubles.",
@@ -850,7 +866,7 @@ init -2 python:
             "label": "_26_0_1_1_0_0_CAMERA",
             "category": "route",
             "kind": "divergence",
-            "x": 12810,
+            "x": 13190,
             "y": 760,
             "summary": "Noam rend ses soupçons publics devant les caméras du Conclave, en choisissant de s'en tenir aux faits ou d'accuser clairement des doubles de remplacer les représentants.",
             "choice": "Raconter les faits ou nommer explicitement l'hypothèse des Doppelgängers.",
@@ -866,7 +882,7 @@ init -2 python:
             "label": "_27_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 13000,
+            "x": 13380,
             "y": 930,
             "summary": "La révélation publique rend la stratégie d'infiltration inutile. Mara, Kael et Elias cessent de nier et tentent d'isoler les représentants encore humains.",
             "choice": "Rester groupés malgré l'impossibilité de savoir qui a déjà été remplacé.",
@@ -882,7 +898,7 @@ init -2 python:
             "label": "_27_0_1_1_0_0_VOTE",
             "category": "vote",
             "kind": "vote",
-            "x": 13190,
+            "x": 13570,
             "y": 760,
             "summary": "En pleine chasse aux doubles, les représentants encore réunis votent sur le droit de connaître et contester le motif d'une privation de liberté.",
             "choice": "Maintenir le processus politique alors que le Conclave s'effondre autour d'eux.",
@@ -898,7 +914,7 @@ init -2 python:
             "label": "_28_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 13380,
+            "x": 13760,
             "y": 930,
             "summary": "Les disparitions et retours suspects se multiplient. Noam et Iris ne peuvent plus déterminer si Ryn, Tomas, Julian ou Elen sont encore les originaux.",
             "choice": "Continuer à rester ensemble et refuser les séparations.",
@@ -914,7 +930,7 @@ init -2 python:
             "label": "_29_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 13760,
+            "x": 14140,
             "y": 930,
             "summary": "Noam et Iris pensent être les deux seuls représentants encore non remplacés. Tous les autres leur paraissent anormalement calmes et coordonnés.",
             "choice": "Se barricader ensemble dans la chambre d'Iris, dont l'aération est encore condamnée.",
@@ -930,7 +946,7 @@ init -2 python:
             "label": "_30_0_1_1_0_0_REVEIL",
             "category": "day",
             "kind": "day",
-            "x": 14140,
+            "x": 14520,
             "y": 930,
             "summary": "Toujours barricadés, Noam et Iris participent au dernier vote. L'amendement remplaçant l'élimination par l'effacement de mémoire est adopté avant l'arrivée de la navette.",
             "choice": "Trouver un chemin vers le sas en moins de trente minutes.",
@@ -946,7 +962,7 @@ init -2 python:
             "label": "_30_0_1_1_0_0_VOTE",
             "category": "vote",
             "kind": "vote",
-            "x": 14330,
+            "x": 14710,
             "y": 760,
             "summary": "Le dernier amendement remplace l'élimination par l'effacement de mémoire en cas de violation des Commandements.",
             "choice": "Le vote a lieu sans Noam et Iris, enfermés dans leur chambre.",
@@ -962,7 +978,7 @@ init -2 python:
             "label": "_30_0_1_1_0_0_SORTIE",
             "category": "route",
             "kind": "divergence",
-            "x": 14520,
+            "x": 14900,
             "y": 930,
             "summary": "La porte d'Iris est bloquée par une barricade construite depuis le couloir. Le temps avant le départ s'écoule.",
             "choice": "Forcer la barricade ou passer par les conduits.",
@@ -978,7 +994,7 @@ init -2 python:
             "label": "_30_0_1_1_0_0_FIN_PRODUCTION",
             "category": "ending",
             "kind": "ending",
-            "x": 14900,
+            "x": 15280,
             "y": 820,
             "summary": "Noam et Iris tentent de dégager la barricade. Une manipulation réussie révèle les doubles dans la navette ; un échec les condamne à un départ vers une station de production.",
             "choice": "Échouer à dégager la barricade.",
@@ -994,7 +1010,7 @@ init -2 python:
             "label": "_30_0_1_1_0_0_FIN_NAVETTE",
             "category": "ending",
             "kind": "ending",
-            "x": 14900,
+            "x": 15280,
             "y": 930,
             "summary": "Noam et Iris dégagent la barricade à temps pour voir la navette partir avec des copies des représentants.",
             "choice": "Réussir les manipulations de la barricade.",
@@ -1010,7 +1026,7 @@ init -2 python:
             "label": "_30_0_1_1_0_0_VENTILATION",
             "category": "ending",
             "kind": "ending",
-            "x": 14900,
+            "x": 15280,
             "y": 1040,
             "summary": "En passant par les conduits, Noam et Iris découvrent les corps originaux et les indices qui révèlent la nature du Polymorphe.",
             "choice": "Passer par les conduits.",
@@ -1026,7 +1042,7 @@ init -2 python:
             "label": "_20_0_1_1_IRIS_QTE_REUSSITE",
             "category": "ending",
             "kind": "ending",
-            "x": 10720,
+            "x": 11100,
             "y": 230,
             "summary": "Noam réussit les quatre QTE face à Iris. La lutte tourne au drame avant que Kael révèle sa véritable nature et que la salle de fabrication des Doppelgängers soit découverte.",
             "choice": "Réussir les quatre QTE face à Iris.",
@@ -1042,7 +1058,7 @@ init -2 python:
             "label": "_21_0_1_1_EPILOGUE",
             "category": "ending",
             "kind": "ending",
-            "x": 11100,
+            "x": 11480,
             "y": 470,
             "summary": "Noam est éliminé puis remplacé par son Doppelgänger. La navette quitte le Conclave avec la copie de Noam parmi les représentants.",
             "choice": "Échouer à empêcher le remplacement de Noam.",
@@ -1292,6 +1308,26 @@ init -2 python:
             visit(requirement)
         return result
 
+    def roadmap_day_bands(nodes):
+        """One adaptive vertical column per narrative day, even with multiple branches."""
+        import re
+        day_starts = {}
+        for node in nodes:
+            if not roadmap_is_day(node):
+                continue
+            match = re.match(r"^J(\d+)$", str(node.get("short", "")))
+            if match:
+                day = int(match.group(1))
+                day_starts[day] = min(day_starts.get(day, node["x"]), node["x"])
+        ordered = sorted(day_starts.items(), key=lambda pair: pair[1])
+        result = []
+        for index, (day, start) in enumerate(ordered):
+            following = ordered[index + 1][1] if index + 1 < len(ordered) else start + 380
+            if following <= start:
+                continue
+            result.append({"day": day, "x": start - 35, "width": following - start})
+        return result
+
     def roadmap_map_size(nodes=None):
         nodes = list(nodes) if nodes is not None else [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node)]
         if not nodes:
@@ -1461,6 +1497,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
     $ node_w = max(44, int(310 * z))
     $ node_h = max(24, int(118 * z))
     $ compact_nodes = z < 0.45
+    $ day_bands = roadmap_day_bands(visible_nodes)
     $ visible_node_ids = set([node["id"] for node in visible_nodes])
     $ selected_node = roadmap_node(selected_node_id) if selected_node_id in visible_node_ids else None
     $ focus_id = focus_node_id or (selected_node_id if selected_node_id in visible_node_ids else roadmap_latest_node_id())
@@ -1554,6 +1591,23 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                         fixed:
                             xsize canvas_w
                             ysize canvas_h
+
+                            # Columns are calculated from each day's first node.
+                            # A day with several events / critical choices widens
+                            # automatically until the next day starts.
+                            for band in day_bands:
+                                $ bx = map_offset_x + int(band["x"] * z)
+                                $ bw = max(8, int(band["width"] * z))
+                                add Solid("#367b9b13") xpos bx ypos 0 xsize bw ysize canvas_h
+                                add Solid("#69ccef32") xpos bx ypos 0 xsize max(1, int(2 * z)) ysize canvas_h
+                                add Solid("#69ccef1b") xpos (bx + bw - max(1, int(2 * z))) ypos 0 xsize max(1, int(2 * z)) ysize canvas_h
+                                add Solid("#69ccef32") xpos bx ypos 57 xsize bw ysize max(1, int(2 * z))
+                                text "JOUR [band['day']]":
+                                    xpos (bx + 14)
+                                    ypos 16
+                                    size max(15, int(23 * z))
+                                    color "#83d9f0a6"
+                                    font "fonts/Rajdhani-SemiBold.ttf"
 
                             for node in visible_nodes:
                                 for req in roadmap_timeline_predecessors(node):
