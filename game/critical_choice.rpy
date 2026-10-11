@@ -201,9 +201,12 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
                 align (0.5, 0.40 if (_cc_locked or _cc_pack) else 0.5)
                 color ("#63717E" if _cc_locked else "#FFFFFF")
             if _cc_locked:
-                text ("[LOCK]  À DÉVELOPPER" if _cc_status == "unreleased" else "[LOCK]  STORY PACK : L'ORIGINE"):
+                add CC_DIR + "/lock.svg":
+                    xpos 18 yalign 0.5 xysize (30, 35)
+            if _cc_locked or _cc_pack:
+                text ("À DÉVELOPPER" if _cc_status == "unreleased" else "STORY PACK : L'ORIGINE"):
                     xalign 0.5 ypos 96 yanchor 0.5
-                    size 17 color "#9CA8AF"
+                    size 17 color ("#9CA8AF" if _cc_locked else "#62CADF")
 
     # Barre de confirmation
     frame:
