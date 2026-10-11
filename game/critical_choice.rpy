@@ -38,7 +38,7 @@ init python:
         return getattr(persistent, "kd_story_packs_owned", ["origine"])
 
     def cc_option_status(destination=None, pack=None):
-        if destination and (destination in CC_UNFINISHED_LABELS or "PLACEHOLDER" in destination or not renpy.has_label(destination)):
+        if destination and (destination in CC_UNFINISHED_LABELS or not renpy.has_label(destination)):
             return "unreleased"
         if pack and pack not in cc_owned_packs():
             return "dlc"
