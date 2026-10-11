@@ -983,7 +983,7 @@ label _10_1_0_0_ARCHIVES:
 
     ryn "{i}Alors ?{/i}"
 
-    menu (screen="critical_choice", noam_expr="hesitation"):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Participer aux contrôles.":{"label":"_10_1_0_0_AIDER_RYN","pack":"origine"},"Ne pas participer.":{"label":"_10_1_0_0_REFUSER_RYN","pack":"origine"}}):
         "Aider Ryn à faire passer des conteneurs ?"
 
         "Participer aux contrôles.":
