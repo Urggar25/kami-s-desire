@@ -345,6 +345,7 @@ label _5_1_KAEL_NYRA:
 # Total : 2h 12m 00s
 
 label _5_1_CAFETERIA_MATIN:
+    call KD_ROUTE_J5_LYSA from _call_optional_kd_route_j5_lysa
     call START_EXPLORATION_LIBRE("_5_1_CAFETERIA_MATIN_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j5_alt_cafeteria
 
 label _5_1_CAFETERIA_MATIN_ARRIVEE:
