@@ -198,7 +198,7 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
             at cc_panel_in(0.15 + idx * 0.08)
             text i.caption:
                 style "cc_option_text"
-                align (0.5, 0.40 if _cc_locked else 0.5)
+                align (0.5, 0.40 if (_cc_locked or _cc_pack) else 0.5)
                 color ("#63717E" if _cc_locked else "#FFFFFF")
             if _cc_locked:
                 text ("[LOCK]  À DÉVELOPPER" if _cc_status == "unreleased" else "[LOCK]  STORY PACK : L'ORIGINE"):
