@@ -238,6 +238,7 @@ label _28_0_1_1_0_0_ANNONCE:
 
 
 label _28_0_1_1_0_0_APRES_MIDI:
+    call KD_EXTRA_J28_ELEN from _call_kd_extra_j28_elen
     $ current_period = "Après-midi"
     call show_custom_title("Dans l'après-midi")
     scene couloir_dortoir at adaptive_fullscreen with dissolve
