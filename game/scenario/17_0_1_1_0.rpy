@@ -25,6 +25,7 @@ label _17_0_1_1_0_ANNONCE_KAMI:
 
 
 label _17_0_1_1_CAFETERIA_M16:
+    call KD_ROUTE_J17_LYSA from _call_optional_kd_route_j17_lysa
     # Navigation libre jusqu'à la destination de l'objectif.
     call START_EXPLORATION_LIBRE("_17_0_1_1_CAFETERIA_M16_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__17_0_1_1_CAFETERIA_M16
 
