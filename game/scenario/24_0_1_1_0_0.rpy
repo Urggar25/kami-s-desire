@@ -403,6 +403,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
 
 label _24_0_1_1_0_0_ARCHIVES:
+    call KD_EXTRA_J24_LYSA from _call_kd_extra_j24_lysa
 
     $ current_period = "Matin"
 
