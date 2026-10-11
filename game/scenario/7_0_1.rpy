@@ -1417,6 +1417,7 @@ label _7_0_1_REVEIL_CHAMBRE:
 # Durée : ~3m00
 
 label _7_0_1_CAFETERIA:
+    call KD_ROUTE_J7_ELIAS from _call_optional_kd_route_j7_elias
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_7_0_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__7_0_1_CAFETERIA
 
