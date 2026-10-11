@@ -519,6 +519,7 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
 
     pause 2.0
 
+    call KD_ROUTE_J12_JULIAN from _call_optional_kd_route_j12_julian
     call OFFER_DAILY_EXPLORATION(
         "_12_0_1_1_ATTENTE_VOTE", 1,
         ["dortoir", "cafeteria", "maintenance", "conclave"],
