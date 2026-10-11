@@ -302,8 +302,6 @@ screen cc_pack_information(pack_id="origine"):
             text "Contenu non inclus dans cette édition." size 21 color "#8E9EAB" xalign 0.5
             hbox:
                 xalign 0.5 spacing 24
-                textbutton "TEASER":
-                    action [Hide("cc_pack_information"), Start("origine_story_pack_teaser")]
                 textbutton "RETOUR":
                     action Hide("cc_pack_information")
     key "K_ESCAPE" action Hide("cc_pack_information")
