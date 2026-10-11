@@ -6,6 +6,7 @@
 
 default j26_camera_choice = None
 default j26_photo_revealed = False
+default j26_secret_infiltration = False
 
 label _26_0_1_1_0_0_REVEIL:
     $ current_day = 26
@@ -167,7 +168,7 @@ label _26_0_1_1_0_0_DECISION:
 
     iris neutre "Tu peux encore décider d'attendre. Je ne vais pas te forcer à raconter cette histoire."
 
-    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Montrer le corps de Mara à Kami":{"label":"_26_0_1_1_0_0_CAMERA"},"Garder la découverte secrète":{"label":"_26_0_1_1_0_0_SECRET_PLACEHOLDER"}}):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Montrer le corps de Mara à Kami":{"label":"_26_0_1_1_0_0_CAMERA"},"Garder la découverte secrète":{"label":"_26_0_1_1_0_0_SECRET"}}):
         "Que faire de la photographie ?"
         "Montrer le corps de Mara à Kami":
             $ j26_camera_choice = "reveal"
@@ -176,11 +177,223 @@ label _26_0_1_1_0_0_DECISION:
         "Garder la découverte secrète":
             $ j26_camera_choice = "secret"
             # Embranchement majeur réservé pour une autre route.
-            jump _26_0_1_1_0_0_SECRET_PLACEHOLDER
+            jump _26_0_1_1_0_0_SECRET
 
-label _26_0_1_1_0_0_SECRET_PLACEHOLDER:
-    # Route non écrite : ne pas rediriger artificiellement vers la révélation.
-    "Je referme le fichier. Nous n'allons rien annoncer pour le moment."
+label _26_0_1_1_0_0_SECRET:
+    $ j26_camera_choice = "secret"
+    $ j26_photo_revealed = False
+
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    $ showGroup([("iris", "inquiet", 0.36), ("noam", "reflexion", 0.65)])
+
+    "Je verrouille la tablette. Le visage de Mara disparaît de l'écran, mais je continue de le voir chaque fois que je baisse les yeux."
+    iris reflexion "Donc on attend ?"
+    noam raison "Pour l'instant. Je veux comprendre ce qu'on a trouvé avant de laisser Kami décider à notre place."
+    iris inquiet "Et si Mara fait quelque chose entre-temps ?"
+    noam fatigue "Je sais. Je me pose la même question."
+    iris raison "D'accord. On garde la photographie pour nous, mais si on remarque quelque chose de dangereux, on prévient les autres."
+    noam neutre "Ça me va."
+    "Elle referme son dossier et s'appuie contre le bureau. Je me lève pour reprendre mon sac, presque vide depuis hier."
+    noam reflexion "Je vais chercher des vêtements de rechange dans ma chambre. Je reviens après."
+    iris inquiet "Tu veux vraiment retourner là-bas tout seul ?"
+    noam taquin "J'ai pas prévu de fouiller dans les conduits. Juste dans mon armoire."
+    iris agace "Ça, c'est ce que tu dis maintenant."
+    noam raison "Je prends trois tee-shirts et je reviens. Dix minutes, maximum."
+    iris neutre "D'accord. Tu m'envoies un message quand tu repars."
+    noam sourire "Promis."
+    iris reflexion "Et si tu croises Mara, ne te mets pas à lui poser des questions."
+    noam fatigue "Je sais, Iris."
+    iris agace "Je préfère le répéter. Tu m'as déjà promis de ne pas faire de bêtises avant d'aller ramper dans les conduits."
+    noam taquin "Je vais vraiment essayer de ne pas me perdre entre mon lit et mon armoire."
+    "Elle me pousse doucement vers la porte. Je prends mon téléphone et sors."
+    $ hideGroup()
+
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    "Dans le couloir, deux représentants discutent près de la salle commune. Je les salue sans m'arrêter."
+    "La porte de Mara est fermée. Je passe devant en regardant droit devant moi, même si j'ai très envie de savoir si elle est à l'intérieur."
+    "Je déverrouille ma chambre et entre."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
+    "Je laisse la porte se refermer derrière moi et pose mon sac sur le lit. L'armoire est toujours entrouverte."
+    "Je prends un pantalon, plusieurs tee-shirts et commence à fouiller un tiroir pour retrouver des chaussettes propres."
+    "Un bruit léger vient de derrière le bureau."
+    "Je redresse la tête. Quelqu'un est debout près de la grille d'aération."
+    "Il a mes cheveux, mon visage, ma taille. Même sa manière de se tenir me paraît familière."
+    stop music fadeout 0.4
+    noam peur "Putain !"
+    "Je recule jusqu'à heurter l'armoire. L'autre lève aussitôt les mains."
+    "???" "Attends. Je veux juste parler."
+    noam colere "Qui t'es ?! Comment t'es entré ?"
+    "???" "Par les conduits. Je t'attendais."
+    noam colere "T'approche pas !"
+    "???" "D'accord. Je reste là."
+    "Il recule d'un pas. Je cherche mon téléphone dans ma poche sans le quitter des yeux."
+    noam inquiet "T'es celui qui me ressemble. Celui que j'ai vu l'autre fois."
+    "???" "Oui."
+    noam reflexion "Tu veux prendre ma place ?"
+    "???" "Je pourrais te mentir et te dire que j'y ai jamais pensé. Mais ce serait faux."
+    noam colere "Alors qu'est-ce que tu fais dans ma chambre ?"
+    "???" "Je viens pas te tuer, Noam."
+    noam colere "C'est censé me rassurer ?"
+    "???" "Non. Je veux simplement que tu m'écoutes avant de faire quelque chose qu'on pourra plus rattraper."
+    noam inquiet "Comme quoi ?"
+    "???" "Montrer à Kami la photo du corps de Mara."
+    "Je m'arrête de chercher mon téléphone. Il sait. Je ne comprends pas encore comment, mais il sait."
+    noam colere "Vous l'avez tuée ?!"
+    "???" "Je sais ce que tu as trouvé. Et je vais pas faire semblant que c'est acceptable."
+    noam raison "Alors raconte-moi ce qui se passe. Pourquoi elle est morte ? Pourquoi l'autre Mara est toujours ici ?"
+    "???" "Je pourrais te répondre, mais tu croirais que j'essaie de me justifier. Je crois qu'il vaut mieux que tu découvres certaines choses par toi-même."
+    noam colere "Tu te fous de moi ?"
+    "???" "Non. Je sais que c'est difficile à croire, justement parce que j'ai ta manière de réfléchir."
+    noam reflexion "Qu'est-ce que ça veut dire ?"
+    "???" "J'ai tes souvenirs. Tes peurs, tes habitudes. Je peux pas prétendre avoir vécu ton enfance, mais je me souviens de tout comme si c'était la mienne."
+    noam colere "Ne commence pas à me raconter que t'es moi."
+    "???" "Je sais bien que je suis pas toi."
+    "Il se passe une main sur le visage. C'est un geste que je fais tout le temps quand je ne sais pas comment continuer."
+    "???" "Je ressens des choses, Noam. J'ai peur de mourir, comme toi. J'ai pas envie de faire du mal à quelqu'un. Et je veux rentrer chez moi."
+    noam inquiet "Chez toi ?"
+    "???" "Je pense à Juliette. Je sais qu'elle t'attend, et pourtant j'ai envie de la revoir. Ça m'empêche de dormir certaines nuits."
+    noam colere "Parle pas de ma sœur."
+    "???" "D'accord."
+    "Il baisse les yeux. Il a l'air blessé, mais je ne sais pas si cette expression veut dire quelque chose."
+    noam reflexion "Tu prétends que tu me comprends, alors explique-moi pourquoi tu cherches à me remplacer."
+    "???" "Parce que je veux vivre. Mais je refuse de t'enlever ta vie pour obtenir la mienne."
+    noam raison "Et les autres ? Ils sont tous aussi délicats ?"
+    "???" "Non. Justement. Il faut que tu le voies."
+    "Il attend un instant, puis désigne la grille derrière lui."
+    "???" "Je peux te faire entrer dans un endroit que personne parmi les représentants ne connaît. Les autres s'y retrouvent pour discuter."
+    noam inquiet "Quel endroit ?"
+    "???" "Un laboratoire. Il est relié aux conduits."
+    noam reflexion "Et pourquoi je voudrais y aller ?"
+    "???" "Tu veux savoir qui nous sommes, ce qu'on veut et ce que Kami nous fait. Là-bas, tu pourras entendre ce que les autres se disent quand ils pensent être entre eux."
+    noam raison "Ils vont pas me laisser entrer comme ça."
+    "???" "Ils penseront que c'est moi. Personne peut nous différencier, et les seuls qui connaissent ce passage sont des gens comme moi."
+    noam inquiet "Tu veux que je me fasse passer pour toi."
+    "???" "Pendant quelques heures, oui."
+    noam reflexion "Et pendant ce temps, tu vas faire quoi ?"
+    "???" "Rester dans les dortoirs à ta place. Comme ça, personne ne se demandera pourquoi Noam a disparu."
+    noam colere "Et tu crois que je vais te laisser approcher Iris ?!"
+    "???" "Je peux éviter de lui parler. Je te promets de ne rien tenter contre elle."
+    noam raison "Pourquoi ne pas juste m'expliquer ce que je veux savoir ?"
+    "???" "Parce que tu n'as aucune raison de croire mes explications. Et si je t'amenais chez les autres en leur disant qui tu es, ils feraient attention à chaque mot."
+    "???" "Là, tu entendras leurs vraies conversations. Ce qu'ils pensent des humains, de leur situation, des choses qu'ils ont faites. Après, tu pourras en tirer les conclusions que tu voudras."
+    noam reflexion "T'as imaginé ça tout seul ?"
+    "Il hésite une seconde."
+    "???" "Je suis pas le seul à penser qu'on doit te laisser comprendre."
+    noam inquiet "Qui d'autre ?"
+    "???" "Tu le découvriras. Je te demande pas de me croire sur parole."
+
+    "Mon téléphone vibre. Iris m'appelle. Je regarde l'écran, puis mon double."
+    "Il reste immobile, comme s'il attendait que je décide moi-même de ce que je dois faire."
+    noam neutre "Allô ?"
+    iris agace "Tu t'es perdu dans ton armoire, ou quoi ?"
+    noam hesitation "Je cherchais un truc. Désolé, je prends encore cinq minutes."
+    iris inquiet "Il y a un problème ?"
+    "Je regarde l'homme qui attend près de la grille. Je pourrais lui dire de venir tout de suite."
+    noam neutre "Non. Ça va."
+    iris neutre "Bon. Dépêche-toi, alors."
+    "Je raccroche. Je viens de lui mentir. Ce constat me donne presque autant envie de partir que le visage de l'inconnu."
+    noam raison "J'ai deux conditions. Tu ne fais rien à Iris. Et si je veux revenir, tu me laisses revenir."
+    "???" "D'accord."
+    noam inquiet "Je garde la photo. Et mon téléphone."
+    "???" "Évidemment."
+    noam fatigue "J'ai vraiment aucune raison de te faire confiance."
+    "???" "Je sais."
+    "Je regarde mes vêtements sur le lit. Il pourrait me tendre un piège. Il pourrait aussi me dire la vérité. Pour l'instant, je n'ai aucun moyen de départager les deux."
+    noam raison "D'accord. Montre-moi ton laboratoire."
+    "Il laisse échapper un soupir, puis me fait signe de le suivre."
+    $ j26_secret_infiltration = True
+    $ current_period = "Soir"
+    $ hideGroup()
+
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
+    $ flashlight_on(0)
+    "Nous avançons dans le conduit que je connais depuis plusieurs jours. Au lieu de prendre la bifurcation qui mène à la salle des Goumi, il soulève une plaque dissimulée derrière un renfort."
+    "Une ouverture apparaît. Je l'avais toujours prise pour une simple paroi."
+    noam reflexion "C'était là depuis le début ?"
+    "???" "Oui. Baisse la tête, l'angle est plus étroit qu'il en a l'air."
+    "Nous passons plusieurs intersections. Il me fait mémoriser le trajet, puis me laisse revenir seul jusqu'à la dernière grille pour vérifier que je sais retrouver mon chemin."
+    noam fatigue "Tu te rends compte que t'es en train de m'apprendre à me cacher de mes propres amis ?"
+    "???" "Oui. Et je préférerais qu'on ait pas besoin de faire ça."
+    "Il s'arrête devant une grille derrière laquelle j'entends plusieurs voix."
+    "???" "C'est là. Ils pensent que j'hésite encore à te remplacer. S'ils te posent des questions, tu peux leur dire que tu n'as pas changé d'avis."
+    noam inquiet "Et c'est vrai ? Tu n'as pas changé d'avis ?"
+    "???" "J'ai envie d'avoir une vie. Ça ne veut pas dire que j'ai envie de te tuer."
+    "Je hoche la tête sans savoir quoi répondre."
+    "Il retourne vers l'embranchement, puis s'arrête."
+    "???" "Noam. Ne leur dis pas que tu m'as rencontré."
+    noam reflexion "Ils ne savent rien ?"
+    "???" "Pas de notre échange."
+    "Je le regarde disparaître derrière la plaque. Pour la première fois depuis que je l'ai trouvé dans ma chambre, je suis seul."
+    $ flashlight_off()
+
+    scene bg_atelier_elias at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 1.0
+    "Je passe la grille et débouche dans une salle aménagée derrière les conduits. Des appareils sont installés contre les parois. Une longue table occupe le centre, couverte de tasses, de documents et de terminaux."
+    "Mara, Elias et Tomas sont installés autour."
+    $ showGroup([("mara", "taquin", 0.15), ("elias", "fatigue", 0.37), ("tomas", "reflexion", 0.60), ("noam", "inquiet", 0.85)])
+    mara taquin "Ah, quand même ! Tu comptais nous éviter jusqu'au départ ?"
+    noam neutre "J'avais quelque chose à régler."
+    elias fatigue "Comme hier, et avant-hier."
+    mara rire "Il reste quatre jours, Noam. T'attends qu'il soit dans la navette pour prendre sa place ?"
+    "Mon ventre se contracte. Ils parlent de moi. Du vrai Noam, comme d'un problème que celui qu'ils voient devant eux n'a toujours pas résolu."
+    noam fatigue "Je sais pas si c'est aussi simple."
+    mara agace "Personne a dit que ça l'était. Mais faut bien que tu te décides."
+    tomas raison "Mara, laisse-le. J'ai récupéré quelque chose, et c'est plus urgent."
+    "Elle se rassoit en levant les yeux au ciel. Je profite de l'interruption pour m'approcher de l'écran sans répondre."
+
+    tomas reflexion "Kael a pu accéder aux journaux de transfert. Ils prévoient deux phases d'évacuation."
+    elias reflexion "Deux transports ?"
+    tomas raison "Le premier vers la Terre. C'est la navette qu'on nous annonce depuis le début. Le second est classé comme une affectation vers une station de production."
+    mara inquiet "Et ils comptent y mettre qui ?"
+    tomas neutre "C'est bien le problème. Regarde la catégorie de ces unités."
+    "Il fait défiler plusieurs lignes. Je distingue des numéros de série, des dates et des destinations. Tomas s'arrête sur une série de coordonnées."
+    tomas raison "Zero m'avait parlé de cet endroit. J'ai enfin retrouvé le nom exact dans les fichiers : Keyper-IIB."
+    mara reflexion "L'exoplanète ?"
+    tomas neutre "Oui. Les données atmosphériques indiquent que des humains pourraient y vivre."
+    elias reflexion "Zero était sûr que c'était là ?"
+    tomas raison "Il savait qu'il y avait des transferts. Il avait pas les journaux que Kael vient de nous donner."
+    "Je regarde Mara et Elias. Aucun des deux ne demande qui est Zero. Je me garde bien d'en faire autant."
+    noam reflexion "Tu sais ce qu'ils font dans cette station ?"
+    tomas fatigue "Non. Le dossier complet est aux archives, dans une section que j'arrive pas à ouvrir d'ici. Mais certaines unités qui y sont envoyées sont des gens comme nous."
+    mara inquiet "Donc on pourrait finir là-bas au lieu de rentrer ?"
+    tomas raison "Je dis pas que c'est notre destination. Je dis que Kami envoie des Doppelgängers là-bas, et qu'on ne sait pas pourquoi."
+    elias fatigue "Tu comptes encore nous parler du vote ?"
+    tomas agace "Je vous avais dit qu'on aurait dû voter contre le texte du jour vingt-quatre."
+    mara reflexion "Tu savais rien de tout ça le jour du vote."
+    tomas neutre "Je sais. J'avais juste un mauvais pressentiment. Maintenant, on a au moins une raison de chercher."
+    elias raison "C'était un texte sur les besoins fondamentaux. Pourquoi il nous concernerait pas ?"
+    tomas raison "Parce que j'ai pas trouvé une seule ligne qui confirme que Kami nous reconnaît les mêmes droits. Et si on est pas considérés comme humains, le texte change peut-être rien pour nous."
+    mara fatigue "Alors il faut vérifier avant de commencer à imaginer le pire."
+    tomas neutre "C'est exactement ce que je compte faire demain. Je retourne aux archives, je récupère les documents complets et on verra ce qu'ils disent réellement."
+    noam reflexion "Tu veux y aller tout seul ?"
+    tomas raison "Avec Elias pour les accès, peut-être. Et toi aussi, si t'as enfin décidé de te rendre utile."
+    "Je relève la tête."
+    noam hesitation "Moi ?"
+    tomas neutre "Tu peux encore accéder à certains terminaux. Ça nous ferait gagner du temps."
+    noam raison "Oui. Je peux venir."
+    mara taquin "Eh ben voilà ! Ça lui réussit, de parler d'autre chose que de son original."
+    "Ils reprennent la conversation. Elias se plaint d'une restriction des serveurs ; Tomas lui répond qu'il n'a jamais promis que les archives seraient faciles à fouiller."
+    "Mara se lève pour récupérer une tasse. Elle passe devant moi et ne s'arrête même pas."
+    "Je pense au cadavre derrière la cloison, puis à cette même fille qui cherche simplement quelque chose à boire."
+    "Ils ont parlé de prendre ma place comme s'il s'agissait d'une tâche en retard. Quelques minutes plus tard, ils s'inquiètent de gens qu'ils n'ont jamais rencontrés."
+    "Je ne sais pas encore quoi faire de cette contradiction."
+
+    $ hideGroup()
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
+    $ flashlight_on(0)
+    "Je prétexte la fatigue et retourne dans le conduit. Personne ne cherche à me retenir. Mara me rappelle seulement de ne pas disparaître demain."
+    "Je retrouve le premier embranchement et m'arrête pour vérifier le trajet dans ma tête."
+    "Mon téléphone contient plusieurs messages d'Iris. Elle me demande où je suis passé et pourquoi je ne réponds plus."
+    "Je commence à écrire une réponse, puis j'efface tout. Mon double est peut-être déjà revenu dans les dortoirs. Je ne sais pas ce qu'il lui a dit."
+    "Tomas veut que je l'accompagne aux archives demain. J'ai enfin une possibilité d'apprendre ce que Kami cache aux Doppelgängers."
+    "Mais pour cela, je vais devoir retourner parmi des gens qui ignorent que je ne suis pas celui qu'ils croient."
+    $ flashlight_off()
+    stop music fadeout 1.2
+    call end_day("27") from _call_j26_secret_end_day_27
+    # La route secrète se poursuit au J27, encore à écrire.
     return
 
 label _26_0_1_1_0_0_CAMERA:
