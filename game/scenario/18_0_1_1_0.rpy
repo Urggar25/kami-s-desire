@@ -897,6 +897,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
 
 label _18_0_1_1_CHERCHE_ELIAS:
+    call KD_ROUTE_J18_JULIAN from _call_optional_kd_route_j18_julian
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_18_0_1_1_CHERCHE_ELIAS_ARRIVEE", title="Retrouver Elias à la maintenance", destination_room="maintenance") from _call_exploration__18_0_1_1_CHERCHE_ELIAS
 
