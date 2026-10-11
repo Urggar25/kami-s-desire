@@ -1,7 +1,7 @@
 # L'Origine — in-engine cinematic teaser (~30 seconds).
 # Uses existing CG/music from the game. Not a pre-rendered MP4.
 label origine_story_pack_teaser:
-    $ _window_hide()
+    window hide
     stop music fadeout 0.3
     play music "music/bgm_system_override.mp3" fadein 0.3
 
