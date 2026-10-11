@@ -277,7 +277,7 @@ label _1_CHOICE_DEATH:
 
 label _1_CHOICE:
 
-    menu (screen="critical_choice", noam_expr="hesitation"):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Tenter d'ouvrir la porte":{"label":"_1_CHOICE_DEATH"}}):
         "Que devrions-nous faire ?"
 
         "Tenter d'ouvrir la porte":
