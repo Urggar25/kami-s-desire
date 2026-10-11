@@ -1246,6 +1246,18 @@ init -2 python:
             return kd_tr("Données non découvertes")
         return kd_tr(node.get("title", node["id"]))
 
+    def roadmap_card_title(node):
+        """A short card label; the right-hand details keep the full title."""
+        title = roadmap_display_title(node)
+        if roadmap_is_redacted(node):
+            return title
+        import re
+        title = re.sub(r"^Jour\\s+\\d+\\s*[—–-]\\s*", "", title)
+        title = re.sub(r"^CRITICAL CHOICE\\s*[—–-]\\s*", "", title)
+        title = re.sub(r"^Divergence\\s*[—–-]\\s*", "", title)
+        title = re.sub(r"^FIN\\s*[—–-]\\s*", "", title)
+        return title
+
     def roadmap_display_summary(node):
         if roadmap_is_redacted(node):
             return kd_tr("Kami refuse l'accès à ce fragment. Continuez la chronologie pour l'identifier.")
@@ -1321,11 +1333,18 @@ init -2 python:
                 day_starts[day] = min(day_starts.get(day, node["x"]), node["x"])
         ordered = sorted(day_starts.items(), key=lambda pair: pair[1])
         result = []
+        # The last day can contain choices and several endings. Do not stop
+        # its band just one regular day-step after the morning node.
+        timeline_end = max((node["x"] + 310 for node in nodes), default=0) + 46
         for index, (day, start) in enumerate(ordered):
-            following = ordered[index + 1][1] if index + 1 < len(ordered) else start + 380
-            if following <= start:
+            left = start - 38
+            if index + 1 < len(ordered):
+                right = ordered[index + 1][1] - 38
+            else:
+                right = max(start + 380, timeline_end)
+            if right <= left:
                 continue
-            result.append({"day": day, "x": start - 35, "width": following - start})
+            result.append({"day": day, "x": left, "width": right - left})
         return result
 
     def roadmap_map_size(nodes=None):
@@ -1661,12 +1680,13 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                                 ypos int(18 * z)
                                                 xsize int(218 * z)
                                                 style "roadmap_node_code_text"
-                                            text roadmap_display_title(node):
+                                            text roadmap_card_title(node):
                                                 xpos int(64 * z)
                                                 ypos int(49 * z)
-                                                xsize int(218 * z)
+                                                xsize int(205 * z)
+                                                ysize int(63 * z)
                                                 style "roadmap_node_title_text"
-                                                size max(15, int(20 * z))
+                                                size max(12, int(19 * z))
                                             if roadmap_can_teleport(node):
                                                 add Transform("gui/roadmap/icons/roadmap_icon_teleport.png", size=(int(24 * z), int(24 * z))) xpos int(272 * z) ypos int(14 * z)
 
