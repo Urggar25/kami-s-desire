@@ -67,6 +67,8 @@ init python:
             return False
         if getattr(store, "day_period_transition_active", False):
             return False
+        if renpy.get_screen("critical_choice"):
+            return False
         if day_period_hud_is_pnc_active():
             return False
         for screen_name in DAY_PERIOD_HUD_BLOCKING_SCREENS:
@@ -347,71 +349,58 @@ screen day_period_hud_content():
 
     key "K_t" action Show("tablet_home")
 
+    # A strict two-column layout. The day number and the time label never
+    # share horizontal space; quick actions live in a separate footer.
     fixed at hud_appear:
         xalign 0.992
         yalign 0.018
         xysize (330, 174)
 
-        # ---- Panneau principal ----
         fixed:
             xysize (330, 118)
-
-            add Solid("#030912D8") xpos 0 ypos 0 xsize 330 ysize 118
-            add Solid("#0B2030A8") xpos 6 ypos 6 xsize 318 ysize 106
-            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 330 ysize 2
-            add Solid("#5CD3FF44") xpos 0 ypos 116 xsize 330 ysize 2
-            add Solid("#5CD3FF77") xpos 0 ypos 0 xsize 2 ysize 118
-            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 24 ysize 5
+            add Solid("#030912F0") xsize 330 ysize 118
+            add Solid("#0B2030A0") xpos 5 ypos 5 xsize 320 ysize 108
+            add Solid("#5CD3FF") xsize 330 ysize 2
+            add Solid("#5CD3FF44") ypos 116 xsize 330 ysize 2
+            add Solid("#5CD3FF77") xsize 2 ysize 118
+            add Solid("#5CD3FF") xsize 24 ysize 5
             add Solid("#5CD3FF") xpos 306 ypos 113 xsize 24 ysize 5
 
-            # ---- Bloc jour / période ----
+            # Number block: fixed width, no period text can intrude.
             text "JOUR":
-                xpos 17 ypos 13
-                size 12 color "#82DFFF"
-                font "fonts/Rajdhani-SemiBold.ttf" kerning 4
-
+                xpos 18 ypos 11
+                size 13 color "#82DFFF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 3
             text "%03d" % current_day:
-                xpos 16 ypos 29
-                size 48 color "#F1FBFF"
+                xpos 17 ypos 37
+                xsize 153
+                size 43 color "#F1FBFF"
                 font "fonts/day_font.ttf"
                 outlines [(1, "#5CD3FF77", 0, 0)]
 
-            add Solid("#5CD3FF33") xpos 102 ypos 17 xsize 1 ysize 84
+            add Solid("#5CD3FF44") xpos 176 ypos 18 xsize 1 ysize 80
 
+            # Period block: starts beyond the entire day-number region.
+            text current_period.upper():
+                xpos 190 ypos 39
+                xsize 128
+                size 22 color _acc
+                font "fonts/Rajdhani-SemiBold.ttf"
+                kerning 1
             hbox:
-                xpos 118 ypos 69
-                spacing 3
+                xpos 190 ypos 78
+                spacing 6
                 for _segment in range(1, 5):
-                    add Solid(_acc if _segment <= _period_step else "#183446") xsize 20 ysize 3
+                    add Solid(_acc if _segment <= _period_step else "#183446") xsize 25 ysize 4
 
-            text current_period.upper() at hud_period_blink:
-                xpos 117 ypos 40
-                size 17 color _acc
-                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-
-            # ---- Cadran horaire animé ----
-            fixed:
-                xpos 220 ypos 2
-                xysize (106, 112)
-
-                add "images/hud/glow.png" at hud_pulse(0.19, 0.22) xpos 0.5 ypos 0.5
-                add Transform("images/hud/ring_ticks.png", matrixcolor=TintMatrix(_acc)) at hud_spin_cw(24.0, 0.17) xpos 0.5 ypos 0.5
-                add Transform("images/hud/scan_arc.png", matrixcolor=TintMatrix(_acc)) at hud_scan(5.0, 0.17) xpos 0.5 ypos 0.5
-                add "images/hud/ring_thin.png" at hud_spin_ccw(38.0, 0.185) xpos 0.5 ypos 0.5
-                add "images/hud/ring_dashed.png" at hud_spin_ccw(20.0, 0.125) xpos 0.5 ypos 0.5
-                add Transform("images/hud/core_dot.png", matrixcolor=TintMatrix(_acc)) at hud_static(0.35) xpos 0.5 ypos 0.5
-                add Transform("images/hud/sun_icon.png", matrixcolor=TintMatrix(_acc)) at hud_static(0.17) xpos 0.5 ypos 0.5
-
-        # ---- Accès rapides ----
+        # Buttons have their own row and cannot intersect the day panel.
         hbox:
             xalign 1.0
             ypos 126
             spacing 6
-
             use day_period_hud_action_button("tablet", Show("tablet_home"), True)
             use day_period_hud_action_button("dossier", [Function(investigation_sync_legacy_save), Show("investigation_dossier", persistent_access=True)], investigation_story_available())
             use day_period_hud_action_button("menu", ShowMenu("system_menu"), True)
-
 
 screen day_period_hud_action_button(icon, button_action, enabled=True):
     $ _icon_color = "#BCEFFF" if enabled else "#526978"
