@@ -399,6 +399,7 @@ label _9_1_0_0_CAFETERIA:
 
 
 label _9_1_0_0_CONCLAVE:
+    call KD_ROUTE_J9_TOMAS from _call_optional_kd_route_j9_tomas
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_9_1_0_0_CONCLAVE_ARRIVEE", title="Rejoindre le Conclave", destination_room="conclave") from _call_exploration__9_1_0_0_CONCLAVE
 

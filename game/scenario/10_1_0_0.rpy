@@ -391,6 +391,7 @@ label _10_1_0_0_TEMPS_LIBRE:
 
 
 label _10_1_0_0_DEBAT:
+    call KD_ROUTE_J10_JULIAN from _call_optional_kd_route_j10_julian
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_10_1_0_0_DEBAT_ARRIVEE", title="Rejoindre la salle commune", destination_room="repos") from _call_exploration__10_1_0_0_DEBAT
 

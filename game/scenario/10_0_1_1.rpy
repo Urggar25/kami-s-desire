@@ -88,6 +88,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
 
     think "Je devrais aller manger quelque chose, ou au moins essayer."
 
+    call KD_ROUTE_J10_LYSA from _call_optional_kd_route_j10_lysa
     jump START_EXPLORATION_LIBRE_MAP
 
 
