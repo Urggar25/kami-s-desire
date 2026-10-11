@@ -425,6 +425,7 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
 
 label _22_0_1_1_0_0_ANNONCE_VOTE:
+    call KD_EXTRA_J22_TOMAS from _call_kd_extra_j22_tomas
     $ current_period = "Après-midi"
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
