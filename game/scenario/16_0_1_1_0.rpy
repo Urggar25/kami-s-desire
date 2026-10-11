@@ -92,6 +92,10 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
 
 
 label _16_0_1_1_CAFETERIA_TENSION:
+    # Navigation libre jusqu'à la destination de l'objectif.
+    call START_EXPLORATION_LIBRE("_16_0_1_1_CAFETERIA_TENSION_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__16_0_1_1_CAFETERIA_TENSION
+
+label _16_0_1_1_CAFETERIA_TENSION_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_98
     scene couloir_dortoir at adaptive_fullscreen with dissolve
