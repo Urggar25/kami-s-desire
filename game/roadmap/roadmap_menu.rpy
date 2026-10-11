@@ -241,7 +241,7 @@ init -2 python:
             "label": "_5_0_0_JULIAN",
             "category": "scene",
             "kind": "divergence",
-            "x": 4260,
+            "x": 3880,
             "y": 95,
             "summary": "Noam confronte Julian sur sa manière de transformer le vote en théâtre politique.",
             "choice": "Affronter la stratégie de Julian.",
@@ -256,7 +256,7 @@ init -2 python:
             "label": "_5_0_1_OBSERVATION",
             "category": "scene",
             "kind": "divergence",
-            "x": 4260,
+            "x": 3880,
             "y": 345,
             "summary": "Noam accompagne Elias. Un incident endommage une console et laisse une trace technique inquiétante.",
             "choice": "Suivre Elias plutôt que Julian.",
@@ -1315,7 +1315,7 @@ init -2 python:
         for node in nodes:
             if not roadmap_is_day(node):
                 continue
-            match = re.match(r"^J(\\d+)$", str(node.get("short", "")))
+            match = re.match(r"^J(\d+)$", str(node.get("short", "")))
             if match:
                 day = int(match.group(1))
                 day_starts[day] = min(day_starts.get(day, node["x"]), node["x"])
