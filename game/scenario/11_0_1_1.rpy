@@ -428,6 +428,7 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
     "Je me relève, encore un peu instable sur mes jambes, et me dirige vers la porte."
 
+    call KD_ROUTE_J11_NYRA from _call_optional_kd_route_j11_nyra
     call OFFER_DAILY_EXPLORATION(
         "_11_0_1_3_SALLE_COMMUNICATION", 1,
         ["observation", "archive", "dortoir"],
