@@ -1417,6 +1417,10 @@ label _7_0_1_REVEIL_CHAMBRE:
 # Durée : ~3m00
 
 label _7_0_1_CAFETERIA:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_7_0_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__7_0_1_CAFETERIA
+
+label _7_0_1_CAFETERIA_ARRIVEE:
 
     call show_custom_title("Je termine de ranger les caisses.") from _call_show_custom_title_01
     pause 2.0
