@@ -92,6 +92,7 @@ label _16_0_1_1_0_REVEIL_CHAMBRE:
 
 
 label _16_0_1_1_CAFETERIA_TENSION:
+    call KD_ROUTE_J16_JULIAN from _call_optional_kd_route_j16_julian
     # Navigation libre jusqu'à la destination de l'objectif.
     call START_EXPLORATION_LIBRE("_16_0_1_1_CAFETERIA_TENSION_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__16_0_1_1_CAFETERIA_TENSION
 
@@ -370,6 +371,7 @@ label _16_0_1_1_CORRIDOR_KAEL:
     "Je n'ai aucune envie d'aller fouiller là-dedans. Ce qui suffit largement à me convaincre que je dois le faire."
 
     $ hideGroup()
+    call KD_ROUTE_J16_TOMAS from _call_optional_kd_route_j16_tomas
     call OFFER_DAILY_EXPLORATION(
         "_16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER", 2,
         ["archive", "cafeteria", "maintenance"],
