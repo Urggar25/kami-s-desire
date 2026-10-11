@@ -45,7 +45,13 @@ init python:
         return "available"
 
     def cc_option_details(caption, targets):
-        spec = (targets or {}).get(caption, {})
+        options = targets or {}
+        spec = options.get(caption, {})
+        if not spec:
+            for source_caption, candidate in options.items():
+                if renpy.translate_string(source_caption) == caption:
+                    spec = candidate
+                    break
         if isinstance(spec, str):
             spec = {"label": spec}
         return cc_option_status(spec.get("label"), spec.get("pack")), spec.get("pack")
