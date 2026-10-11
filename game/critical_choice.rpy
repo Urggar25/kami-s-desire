@@ -30,7 +30,7 @@ init python:
         4: [(0.238, 0.450), (0.762, 0.450), (0.238, 0.740), (0.762, 0.740)],
     }
 
-    CC_UNFINISHED_LABELS = {"_26_0_1_1_0_0_SECRET_PLACEHOLDER"}
+    CC_UNFINISHED_LABELS = set()
     CC_UNRELEASED_PACKS = {"mystere"}  # Annonce réservée, aucune date ni achat.
     CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."}}
 
