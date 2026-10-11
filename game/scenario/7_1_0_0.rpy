@@ -905,7 +905,9 @@ label _7_1_0_TEMPS_LIBRE_2:
 label _7_1_0_APRES_TEMPS_LIBRES:
 
     $ current_period = "Fin d'après-midi"
+    call START_EXPLORATION_LIBRE("_7_1_0_APRES_TEMPS_LIBRES_ARRIVEE", title="Rejoindre discrètement la chambre d'Iris", destination_room="dortoir") from _call_nav_j7_secret_iris
 
+label _7_1_0_APRES_TEMPS_LIBRES_ARRIVEE:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 

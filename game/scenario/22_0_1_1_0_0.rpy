@@ -37,6 +37,9 @@ label _22_0_1_1_0_0_REVEIL:
 
 
 label _22_0_1_1_0_0_CAFETERIA:
+    call START_EXPLORATION_LIBRE("_22_0_1_1_0_0_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j22_cafeteria
+
+label _22_0_1_1_0_0_CAFETERIA_ARRIVEE:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 

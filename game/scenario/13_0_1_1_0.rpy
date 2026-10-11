@@ -178,6 +178,9 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
     jump _13_0_1_1_CAFETERIA
 
 label _13_0_1_1_CAFETERIA:
+    call START_EXPLORATION_LIBRE("_13_0_1_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j13_cafeteria
+
+label _13_0_1_1_CAFETERIA_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_69
     pause 1.0

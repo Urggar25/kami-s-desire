@@ -272,6 +272,9 @@ label _12_0_1_1_CAFETERIA:
 
     think "Je ne veux voir personne. Pas maintenant."
 
+    call START_EXPLORATION_LIBRE("_12_0_1_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j12_cafeteria
+
+label _12_0_1_1_CAFETERIA_ARRIVEE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_53
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play sound sfx_door
