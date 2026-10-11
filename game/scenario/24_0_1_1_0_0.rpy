@@ -1538,6 +1538,48 @@ label _24_0_1_1_0_0_APRES_VOTE:
 
     noam rire "Laissez-le tranquille."
 
+    "La partie se poursuit et je profite enfin d'un moment où personne ne me demande de justifier quoi que ce soit."
+
+    menu:
+        "Passer un moment avec Julian et Elen.":
+            $ showGroup([("julian", "determine", 0.25), ("elen", "joie", 0.50), ("noam", "sourire", 0.75)])
+            julian determine "Noam ! Prends la deuxième manette. Elen refuse de reconnaître mon talent."
+            elen rire "J'ai gagné trois fois !"
+            noam taquin "Tu sais qu'un champion est censé gagner de temps en temps ?"
+            julian "J'ai surtout un sens aigu du suspense."
+            "Je m'installe entre eux. Julian perd encore une partie, puis insiste pour une revanche jusqu'à ce qu'Elen menace de débrancher la machine."
+            elen joie "Tu vas raconter quoi sur Terre ? Que tu t'es fait battre par moi ?"
+            julian sourire "Que j'ai généreusement offert la victoire pour célébrer notre vote."
+            noam rire "Je raconterai la vraie version."
+            julian "Traître. Tu viens de ruiner ma légende."
+
+        "Échanger quelques mots avec Tomas et Nyra.":
+            $ showGroup([("tomas", "reflexion", 0.25), ("nyra", "neutre", 0.50), ("noam", "neutre", 0.75)])
+            "Tomas et Nyra ont quitté le canapé pour comparer leurs tablettes, malgré la fête."
+            noam taquin "Vous avez vraiment décidé de travailler aujourd'hui ?"
+            tomas "On essaie juste de comprendre comment expliquer le vote aux gens, sans leur promettre davantage que ce qu'il change."
+            nyra raison "Je lui ai dit d'attendre demain pour rédiger son discours."
+            tomas inquiet "Ça ne sera pas un discours. Juste un compte rendu."
+            noam sourire "On vient de gagner. Vous pouvez poser vos tablettes dix minutes."
+            "Nyra éteint immédiatement la sienne. Tomas la regarde, hésite, puis l'imite."
+            nyra taquin "Voilà. C'était assez simple, finalement."
+            tomas sourire "J'espère que tu n'as pas l'intention de noter cette conversation dans le compte rendu."
+
+        "Retrouver Lysa à l'écart.":
+            $ showGroup([("lysa", "blase", 0.35), ("noam", "sourire", 0.65)])
+            "Lysa s'est installée près du distributeur, assez loin pour échapper aux cris de Julian."
+            noam sourire "Tu ne joues pas ?"
+            lysa blase "Je préfère regarder le naufrage à une distance raisonnable."
+            noam "On dirait quand même que tu t'amuses."
+            lysa taquin "Ne répète pas ça. J'ai une réputation."
+            "Elle pousse vers moi un gobelet qu'elle n'a pas touché."
+            lysa neutre "Tiens. J'en ai pris deux sans faire attention."
+            noam taquin "Tu m'offres un verre ? Ça va être noté dans les archives."
+            lysa blase "Continue et je le reprends."
+            "Nous restons un moment à écouter les protestations de Julian. Pour une fois, Lysa ne cherche pas à remplir le silence."
+
+    $ hideGroup()
+
     "Je ris avec les autres sans avoir besoin de me forcer, ce qui m'arrive suffisamment peu ces derniers jours pour que je le remarque immédiatement."
 
     "Pendant un moment, le Conclave ressemble presque à ce qu'il aurait dû être dès le départ : douze personnes qui viennent de prendre une décision ensemble et qui peuvent passer une heure à se moquer du mauvais perdant de service sans penser à ce qu'il y a derrière les murs."
