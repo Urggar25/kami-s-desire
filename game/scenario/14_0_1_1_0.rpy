@@ -326,6 +326,7 @@ label _14_0_1_1_0_CAFETERIA_REJET:
 
     think "Elle a peut-être vraiment vu quelque chose. Et si ce n'est pas le cas... Iris avait raison, je pars."
 
+    call KD_ROUTE_J14_LYSA from _call_optional_kd_route_j14_lysa
     call OFFER_DAILY_EXPLORATION(
         "_14_0_1_1_0_CHAMBRE_SAEL", 1,
         ["cafeteria", "conclave", "maintenance", "dortoir"],
