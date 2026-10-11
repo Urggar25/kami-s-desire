@@ -67,7 +67,7 @@ init python:
 # ------------------------------------------------------------
 transform cc_noam_base:
     subpixel True
-    zoom 1.22 xalign 0.5 yanchor 1.0 ypos 1.05
+    zoom 1.07 xalign 0.5 yanchor 1.0 ypos 1.05
     block:
         pause 1.1
         ease 0.02 xoffset -3
@@ -163,8 +163,8 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
         # Le mode Story Pack est réservé aux véritables embranchements de route.
         _cc_story_mode = any(cc_option_details(i.caption, cc_targets)[1] for i in _cc_choices)
 
-    # Fond assombri
-    add Solid("#03070de6")
+    # Fond assombri ; interface de jeu sous-jacente masquée.
+    add Solid("#03070df2")
 
     # Noam glitché (centre)
     fixed:
@@ -217,70 +217,94 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
                 add CC_DIR + "/lock.svg":
                     xpos 18 yalign 0.5 xysize (30, 35)
 
-    # Présentation commerciale additionnelle, volontairement séparée
-    # des deux panneaux de décision afin d'éviter tout chevauchement.
+    # Cartes narratives compactes. Deux colonnes strictes, sans collision
+    # avec la silhouette centrale ni l'interface de confirmation.
     if _cc_story_mode and _cc_n == 2:
         for idx, i in enumerate(_cc_choices):
             $ _status, _pack = cc_option_details(i.caption, cc_targets)
             $ _locked = _status != "available"
-            $ _card_x = (211 if idx == 0 else 1171)
-            frame at cc_panel_in(0.31 + idx * 0.1):
-                xpos _card_x ypos 393
-                xsize 538 ysize 447
-                background Solid("#080F1CEB" if _locked else "#061825F5")
-                padding (15, 13, 15, 14)
-                vbox:
-                    spacing 11
-                    hbox:
-                        spacing 13
-                        if _locked:
-                            add CC_DIR + "/lock.svg" xsize 35 ysize 40
-                        else:
-                            text "◈" size 39 color "#64D8F5"
-                        vbox:
-                            spacing 1
-                            text ("STORY PACK : ???" if _status == "coming_soon" else ("STORY PACK : " + CC_STORY_PACKS.get(_pack, {}).get("title", "À VENIR")).upper()):
-                                font "fonts/Rajdhani-SemiBold.ttf"
-                                size 27 color ("#ADB2BE" if _locked else "#E7F8FF")
-                            text ("NON ANNONCÉ" if _status == "coming_soon" else ("JOURS 5 À 30  •  7 FINS" if _pack == "origine" else "CONTENU ADDITIONNEL")):
-                                font "fonts/Rajdhani-SemiBold.ttf"
-                                size 18 color ("#8B8D99" if _locked else "#62CFE9")
-                    if _status == "coming_soon":
-                        fixed:
-                            xsize 504 ysize 187
-                            add Solid("#0C101A")
-                            add Transform("bg_conduit_reseau", fit="cover", xysize=(504, 187), matrixcolor=SaturationMatrix(0.0), alpha=0.22)
-                            text "ACCÈS RESTREINT" xalign 0.5 yalign 0.5 size 27 color "#727989"
-                        text "Une autre histoire vous attend...":
-                            size 24 color "#BDC0C9"
-                        text "Certaines portes ne devraient peut-être jamais être ouvertes.":
-                            size 19 color "#8F95A2" xmaximum 493
-                    elif _pack == "origine":
-                        # Aperçu interactif : une image du jeu en guise de vignette
-                        # ouvre le teaser. Pas d'auto-play ni d'interruption du choix.
-                        button:
-                            xsize 504 ysize 187
-                            padding (0, 0)
-                            background Solid("#03101E")
-                            hover_background Solid("#123344")
-                            action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
-                            add Transform("bg_cg030", fit="cover", xysize=(504, 187), alpha=0.84)
-                            add Solid("#05081555")
-                            text "▶" xalign 0.5 yalign 0.5 size 64 color "#82EBFF"
-                            text "APERÇU DU TEASER" xpos 14 ypos 153 size 17 color "#E9F9FF"
-                        text "Découvrez une des vérités cachées derrière le Conclave.":
-                            size 18 color "#C4DDE8" xmaximum 493
-                        hbox:
-                            spacing 18
-                            text "COMBATS  •  DISPUTES  •  TRAHISONS" size 17 color "#A8CDDA"
-                        textbutton "▶  VOIR LE TEASER":
-                            xalign 1.0
-                            text_size 23
-                            text_color "#83E8FF"
-                            text_hover_color "#FFFFFF"
-                            action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
-                    else:
-                        text "Détails du Story Pack à venir." size 23 color "#AAB9C3"
+            $ _card_x = (205 if idx == 0 else 1255)
+            $ _card_border = "#414D5F" if _locked else "#48CDE9"
+            $ _card_accent = "#8794A3" if _locked else "#86E9FF"
+            fixed at cc_panel_in(0.26 + idx * 0.10):
+                xpos _card_x ypos 386
+                xsize 460 ysize 370
+
+                # Cadre externe et doubles liserés, inspirés des choix anguleux.
+                add Solid(_card_border + "B0") xpos 0 ypos 0 xsize 460 ysize 370
+                add Solid("#060E19F6") xpos 2 ypos 2 xsize 456 ysize 366
+                add Solid(_card_border) xpos 0 ypos 0 xsize 120 ysize 3
+                add Solid(_card_border) xpos 340 ypos 367 xsize 120 ysize 3
+                add Solid(_card_border) xpos 0 ypos 0 xsize 4 ysize 54
+                add Solid(_card_border) xpos 456 ypos 316 xsize 4 ysize 54
+
+                # Header respirant, labels lisibles même à distance.
+                if _locked:
+                    add CC_DIR + "/lock.svg" xpos 18 ypos 19 xsize 36 ysize 42
+                    text "STORY PACK : ???" xpos 66 ypos 15:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 31 color "#B8C0CC"
+                    text "NON ANNONCÉ" xpos 66 ypos 54:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 21 color "#9EABBA"
+                else:
+                    text "◈" xpos 18 ypos 12 size 38 color "#62E4FF"
+                    text ("STORY PACK : " + CC_STORY_PACKS.get(_pack, {}).get("title", "À VENIR")).upper() xpos 64 ypos 15:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 29 color "#EDFAFF"
+                    text ("JOURS 5 À 30     /     7 FINS" if _pack == "origine" else "CONTENU ADDITIONNEL") xpos 64 ypos 53:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 21 color "#80DFF3"
+                add Solid(_card_border + "77") xpos 16 ypos 87 xsize 428 ysize 2
+
+                # Miniature au sein d'un cadre borné. Les éléments de
+                # prévisualisation ne débordent plus sur les légendes.
+                if _status == "coming_soon":
+                    add Solid("#111823") xpos 16 ypos 104 xsize 428 ysize 164
+                    add Transform("bg_conduit_reseau", fit="cover", xysize=(428, 164), matrixcolor=SaturationMatrix(0.0), alpha=0.12) xpos 16 ypos 104
+                    add Solid("#060B14A6") xpos 16 ypos 104 xsize 428 ysize 164
+                    add CC_DIR + "/lock.svg" xpos 209 ypos 127 xsize 42 ysize 48
+                    text "ACCÈS CONFIDENTIEL" xpos 230 ypos 225 anchor (0.5, 0.5):
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 23 color "#A8B4C1"
+                    text "UNE AUTRE HISTOIRE VOUS ATTEND." xpos 18 ypos 283:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 24 color "#CED6E1"
+                    text "Ce parcours sera dévoilé ultérieurement." xpos 18 ypos 324:
+                        font "fonts/Barlow-Light.ttf"
+                        size 20 color "#99AABB"
+                elif _pack == "origine":
+                    button:
+                        xpos 16 ypos 104 xsize 428 ysize 164
+                        padding (0, 0)
+                        background Solid("#07111C")
+                        hover_background Solid("#102839")
+                        action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
+                        add Transform("bg_cg070", fit="cover", xysize=(428, 164), alpha=0.88)
+                        add Solid("#13091065") xsize 428 ysize 164
+                        add Solid("#EE5F7970") xpos 0 ypos 0 xsize 5 ysize 164
+                        add Solid("#67E8FF") xpos 170 ypos 43 xsize 88 ysize 79 alpha 0.20
+                        text "▶" align (0.5, 0.48) size 65 color "#E6FCFF"
+                        text "BANDE-ANNONCE · 00:30" xpos 12 ypos 138 size 17 color "#E9F7FF"
+                    text "UNE VÉRITÉ CACHÉE DU CONCLAVE" xpos 18 ypos 283:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 23 color "#DFEDF4"
+                    text "HORREUR   /   TRAHISONS   /   SURVIE" xpos 18 ypos 320:
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 19 color "#A8CBD7"
+                    textbutton "▶  VOIR":
+                        xpos 339 ypos 310 xsize 99 ysize 42
+                        background Solid("#103648")
+                        hover_background Solid("#1E627A")
+                        text_size 21
+                        text_color "#E6F9FF"
+                        text_hover_color "#FFFFFF"
+                        action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
+                else:
+                    add Solid("#0C1722") xpos 16 ypos 104 xsize 428 ysize 164
+                    text "APERÇU INDISPONIBLE" xpos 230 ypos 187 anchor (0.5, 0.5) size 23 color "#9EADBA"
+                    text "Détails communiqués prochainement." xpos 18 ypos 291 size 20 color "#A6BBCB"
+
     # Barre de confirmation
     frame:
         style "cc_confirm_bar"
