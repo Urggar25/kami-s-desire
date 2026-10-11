@@ -281,9 +281,6 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
                             action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
                     else:
                         text "Détails du Story Pack à venir." size 23 color "#AAB9C3"
-                if _locked:
-                    add Solid("#080B1277")
-
     # Barre de confirmation
     frame:
         style "cc_confirm_bar"
