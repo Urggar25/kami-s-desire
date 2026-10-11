@@ -225,6 +225,7 @@ label _16_0_1_1_CAFETERIA_TENSION:
 
     "Je quitte la cafétéria sans expliquer davantage. Je sens les regards dans mon dos jusqu'à ce que la porte se referme."
 
+    call KD_EXTRA_J16_NYRA from _call_kd_extra_j16_nyra
     jump _16_0_1_1_CORRIDOR_KAEL
 
 
