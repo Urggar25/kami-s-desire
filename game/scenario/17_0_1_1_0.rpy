@@ -25,6 +25,10 @@ label _17_0_1_1_0_ANNONCE_KAMI:
 
 
 label _17_0_1_1_CAFETERIA_M16:
+    # Navigation libre jusqu'à la destination de l'objectif.
+    call START_EXPLORATION_LIBRE("_17_0_1_1_CAFETERIA_M16_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__17_0_1_1_CAFETERIA_M16
+
+label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_102
     scene couloir_dortoir at adaptive_fullscreen with dissolve
