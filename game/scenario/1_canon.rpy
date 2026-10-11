@@ -589,7 +589,8 @@ label _1_PNC_CONCLAVE_ELIAS:
     elias reflechit "La ventilation a changé depuis tout à l'heure."
     elias ecoute "C'est léger, mais c'est certain, c'est plus la même depuis qu'on s'est réveillé."
     noam surpris "Hein ? Comment tu sais ça ?"
-    elias neutre "C'est mon travail de savoir repérer ce genre de petit changement."
+    elias neutre "À force de bosser au milieu des machines, je reconnais quand un truc tourne pas rond. Là, ça fait un genre de... Vrrrr..."
+    elias reflechit "Non, attends... Brrrrr... Enfin bref, c'est pas le même bruit !"
     noam reflechit "Maintenant que tu le dis, c'est vrai que la ventilation n'est plus la même."
     elias surpris "Ah, tu l'as remarqué toi aussi ?"
     noam sourire "On m'a souvent dit que j'avais une très bonne ouïe."
@@ -1421,8 +1422,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     show screen kami_broadcast_ui
     $ bc_show("elias", "reflechit", px=-70, py=-50, pz=0.85)
 
-    elias neutre "Donc si une seule personne dit non… c'est mort."
-    elias neutre "C'est une sorte de système de blocage."
+    elias neutre "Attendez... Donc si onze personnes disent oui et qu'un seul type dit non, on a perdu ?"
+    elias peur "Mais alors... Pourquoi on est douze ?!"
 
     $ bc_hide()
     hide screen kami_broadcast_ui
@@ -1951,11 +1952,12 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     think "Son sourire est franc. Fatigué, mais franc."
 
-    elias detendu "C'est chaud quand même. J'ai rien porté, rien monté, et je suis rincé comme après douze heures d'usine."
+    elias detendu "Putain, je suis crevé... Pourtant, j'ai rien foutu de la journée ! Enfin, j'ai beaucoup parlé. C'est peut-être ça qui fatigue."
 
     noam neutre "Ouais. C'est clair. C'était une journée épuisante..."
 
-    elias inquiet "Demain matin, ça va être chaud pour de vrai."
+    elias inquiet "Tu crois qu'on va devoir refaire ça tous les jours ?!"
+    elias sourire "Je vais pas te mentir, ce genre de réunion ça me saoule vite..."
 
     noam neutre "Ouais. M'en parle pas..."
 

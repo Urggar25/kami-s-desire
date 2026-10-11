@@ -499,8 +499,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     lysa blase "Pourquoi il me semble avoir déjà entendu ça quelque part...?"
 
-    elias taquin "C'est pas compliqué à comprendre."
-    elias ecoute "Y a des écrans partout. La diffusion tournait dans le couloir. C'est chaud de faire genre t'as deviné."
+    elias taquin "Bah, c'est pas trop compliqué à comprendre !"
+    elias ecoute "La télé dans les couloirs elle redit aussi ce que Kami dit. C'est chaud de faire genre t'as deviné."
 
     julian panne "… T'aurais pas pu te taire, hein ?!"
 
@@ -567,7 +567,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     
     mara colere "Me dis pas que tu préférais le système d'avant ?"
 
-    elias reflechit "Sur le commerce ? Si, c'était bien mieux quand chacun pouvait acheter ce dont il avait besoin."
+    elias reflechit "Bah ouais ! Avant, quand il me manquait une pièce, j'allais l'acheter."
+    elias colere "Maintenant, faut remplir trois formulaires et attendre qu'un type décide si j'en ai vraiment besoin. C'est complètement con !"
 
     nyra taquin "Factuellement, quelqu'un a quelque chose à perdre si les échanges reprennent ?"
     nyra raison "Il faut qu'on en parle pour savoir quels sont les points de blocage."
@@ -680,7 +681,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael sourire "Bref, l'arrivée de Kami n'a absolument rien changé à notre quotidien."
     sael reflechit "Enfin si, elle se chargeait d'éliminer les plus violents et dangereux d'entre nous."
 
-    elias sourire "Wow, sacrée histoire. Je vois ce que tu veux dire."
+    elias sourire "Ah ouais... C'est quand même un sacré bordel, votre histoire."
     elias triste "Au moins, Kami a mis fin à la violence. Alors c'est pas parfait, hein, mais c'est déjà ça."
 
     mara doute "Bref, pendant que vous perdez votre temps à papoter… Kami nous mate."
@@ -779,7 +780,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
         ("lysa", "triste", 0.25),
     ])
 
-    elias ecoute "Tu devrais parler avec nous. Si tu veux. C'est chaud de rester seule ici."
+    elias ecoute "Tu devrais parler avec nous. Si tu veux. Faut pas rester seule ici."
 
     lysa neutre "Tu sais je préfère... Ouais, fin- Je sais..."
 
@@ -789,11 +790,11 @@ label _2_APRES_MIDI_LYSA_ELIAS:
 
     lysa reflexion "Ouais. J’ai écouté."
 
-    elias neutre "Ce n’est pas très reposant."
+    elias neutre "Et ça va, tu as trouvé ça reposant ?"
 
     lysa taquin "Je pense qu'on aura pas beaucoup l'occasion de se reposer ici..."
 
-    elias ecoute "Non. Mais il va bien falloir qu'on survive."
+    elias ecoute "Non. Mais il va bien falloir survivre."
 
     think "Je m'approche."
     $ showGroup([
@@ -807,7 +808,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
 
     lysa determine "Ça va comme ça peut."
 
-    elias ecoute "On va avoir besoin de toi pour le débat."
+    elias ecoute "On va CLAIREMENT avoir besoin de toi pour le débat."
 
     lysa opposition "Vous allez surtout parler. Moi, on m’écoutera à moitié."
 
@@ -829,7 +830,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
 
     think "Lysa regarde le sol."
 
-    elias fatigue "T'es pas obligée de parler à la réunion."
+    elias fatigue "T'es pas obligée de parler à la réunion. Mais... On s'en sortirait mieux si tu nous aidais."
 
     lysa determine "Bof. J'ai pas envie, mais si je ne parle pas… On parlera pour moi."
 
@@ -1051,7 +1052,7 @@ label _2_GYMNASE:
 
     iris determine "Encore. Tant que mes muscles brûlent, mon cerveau ferme enfin sa gueule."
 
-    elias ecoute "Respire. Sinon tu vas te fatiguer pour rien."
+    elias ecoute "Attends. Respire. Sinon tu vas te fatiguer pour rien."
 
     think "Je m'approche."
     $ showGroup([
@@ -1066,35 +1067,33 @@ label _2_GYMNASE:
     iris taquin "Pas tant que tu ne prends pas ma place et que tu ne te blesses pas de façon stupide. J'ai déjà assez de travail."
 
     elias ecoute "Non. Tu tombes bien."
-    elias joie "Tu veux apprendre ? J'peux te montrer."
+    elias joie "Tu veux apprendre ? Ouais ! J'peux te montrer."
 
     noam surpris "Euh… Je crois ?"
 
     iris determine "Alors bouge au lieu de me mater. Il y a des bancs libres."
 
-    elias "Celui-là. Assieds-toi."
-    elias joie "On commence simple."
+    elias joie "Celui-là. Regarde, assieds-toi. On va faire un truc simple pour le début."
 
     think "Le métal est froid sous mon dos."
 
-    elias raison "Stop. Ton dos. Expire en poussant, inspire en descendant."
-    elias detendu "Tu bloques, t'es mort à la troisième rep. Enfin pas mort, mais c'est chaud."
+    elias raison "Stop tu vas te bousiller le dos dos. Souffle quand tu pousses, et respire fort en descendant."
 
     iris taquin "Tu lui fais commencer par du développé couché dès la première séance ? Excellent. Le spectacle sera amusant !"
 
     noam inquiet "Je tremble déjà rien que d'y penser."
 
-    elias ecoute "C'est pas si difficile. Ne lutte pas. Accompagne le mouvement."
+    elias ecoute "C'est pas si difficile, regarde. Faut pas lutterr. Accompagne le mouvement."
 
     think "Je soulève. Ouh ! C'est beaucoup plus lourd que prévu."
 
-    elias ecoute "Pas comme ça. Va moins vite. Contrôle la descente."
+    elias ecoute "Pas comme ça. Va moins vite. Descends pas trop vite."
 
     think "Je recommence. Oh putain ça brûle."
 
     iris fatigue "Voilà."
 
-    elias ecoute "Encore deux séries. Après tu t’arrêtes."
+    elias ecoute "Encore deux séries. Après tu peux t'arrêter."
 
     tuto "Durant vos temps libres, il sera possible de faire certaines actions qui augmenteront vos statistiques personnelles."
     tuto "Faire du sport est l'une d'entre elles."
@@ -1116,13 +1115,13 @@ label _2_GYMNASE:
     elias raison "Tu viens souvent. Force, endurance, concentration. Le corps comprend le concret."
 
     iris determine "Et parfois, c'est juste pour ne pas rentrer et tout casser."
-    iris taquin "La fonte, ça coûte moins cher qu'un psy et pose moins de questions idiotes."
+    iris taquin "La fonte, ça coûte moins cher qu'un psy et ça pose moins de questions idiotes."
 
     pause 0.4
 
     noam reflexion "Donc… Si je ne fais rien…"
 
-    elias neutre "Tu stagnes. Et plus tard, ton corps te le fait payer."
+    elias neutre "Tu vas stagner. Et plus tard, ton corps te le fait payer."
 
     think "Mes mains tremblent encore."
 
@@ -1130,8 +1129,7 @@ label _2_GYMNASE:
 
     iris sourire "Bonne idée."
 
-    elias ecoute "Je serai là."
-    elias raison "Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?" 
+    elias ecoute "Je serai là. Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?"
 
     $ hideGroup()
 
