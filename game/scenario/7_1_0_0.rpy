@@ -321,7 +321,7 @@ label _7_1_0_SAS_DECOUVERTE:
 
     call play_stat_dialogue("d7_1_0") from _call_stat_dialogue_d7_1_0
 
-    menu (screen="critical_choice", noam_expr="hesitation"):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"La cacher.":{"label":"_7_1_0_CACHER_PLAN","pack":"origine"},"Prévenir Kami.":{"label":"_7_1_0_DECLARER_PLACEHOLDER","pack":"origine"}}):
         "Que faire de la jeune femme ?"
 
         "La cacher.":
