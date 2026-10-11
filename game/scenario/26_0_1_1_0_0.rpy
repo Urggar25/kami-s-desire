@@ -404,8 +404,7 @@ label _26_0_1_1_0_0_SECRET:
     $ flashlight_off()
     stop music fadeout 1.2
     call end_day("27") from _call_j26_secret_end_day_27
-    # La route secrète se poursuit au J27, encore à écrire.
-    return
+    jump _27_0_1_1_0_0_1_REVEIL
 
 label _26_0_1_1_0_0_CAMERA:
     scene bg_conclave at adaptive_fullscreen with dissolve
