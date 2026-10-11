@@ -329,7 +329,7 @@ label _26_0_1_1_0_0_SECRET:
     "Je le regarde disparaître derrière la plaque. Pour la première fois depuis que je l'ai trouvé dans ma chambre, je suis seul."
     $ flashlight_off()
 
-    scene bg_atelier_elias at adaptive_fullscreen with dissolve
+    scene bg_laboratoire at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
     "Je passe la grille et débouche dans une salle aménagée derrière les conduits. Des appareils sont installés contre les parois. Une longue table occupe le centre, couverte de tasses, de documents et de terminaux."
     "Mara, Elias et Tomas sont installés autour."
