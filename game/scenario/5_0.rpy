@@ -850,6 +850,10 @@ label _5_0_0_JULIAN:
 
 
 label _5_0_1_OBSERVATION:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_5_0_1_OBSERVATION_ARRIVEE", title="Rejoindre la salle d'observation", destination_room="observation") from _call_exploration__5_0_1_OBSERVATION
+
+label _5_0_1_OBSERVATION_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_237
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
