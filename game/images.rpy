@@ -337,7 +337,7 @@ init python:
     def _noam_is_speaking():
         return is_character_speaking("noam")
 
-    def _noam_layered_expression(st, at, expr):
+    def _noam_layered_expression(st, at, expr, speaker_tag="noam"):
         body, arms, mouth, eyes = NOAM_EXPRESSIONS[expr]
         outfit = kd_equipped_character_outfit("noam") or "tenue1"
         arms = kd_arm_for_outfit("noam", arms, outfit)
@@ -348,7 +348,7 @@ init python:
             eyes = "yeux_ferme"
 
         zoom = NOAM_IMAGE_SCALE
-        speaking = _noam_is_speaking()
+        speaking = is_character_speaking(speaker_tag)
         if speaking:
             mouth_phase = st % 0.32
             if mouth_phase < 0.16:
@@ -366,6 +366,10 @@ init python:
 
     def noam_expression(expr):
         return DynamicDisplayable(_noam_layered_expression, expr)
+
+    def dg_noam_expression(expr):
+        # Same Noam textures, poses, outfit and blinking; independent dialogue tag.
+        return DynamicDisplayable(_noam_layered_expression, expr, "dg_noam")
 
 image noam colere              = noam_expression("colere")
 image noam colere2             = noam_expression("colere")
@@ -397,6 +401,39 @@ image noam doute         = noam_expression("doute")
 image noam calme         = noam_expression("calme")
 image noam blase         = noam_expression("neutre")
 image noam agace         = noam_expression("inquiet")
+
+
+# Doppelgänger de Noam : toutes les expressions partagent les assets de Noam.
+image dg_noam colere = dg_noam_expression("colere")
+image dg_noam colere2 = dg_noam_expression("colere")
+image dg_noam culpabilite = dg_noam_expression("culpabilite")
+image dg_noam desaccord = dg_noam_expression("desaccord")
+image dg_noam desespoir = dg_noam_expression("desespoir")
+image dg_noam determine = dg_noam_expression("determine")
+image dg_noam hesitation = dg_noam_expression("hesitation")
+image dg_noam gene = dg_noam_expression("hesitation")
+image dg_noam inquiet = dg_noam_expression("inquiet")
+image dg_noam joie = dg_noam_expression("joie")
+image dg_noam neutre = dg_noam_expression("neutre")
+image dg_noam vide = dg_noam_expression("neutre")
+image dg_noam panne = dg_noam_expression("panne")
+image dg_noam peur = dg_noam_expression("peur")
+image dg_noam raison = dg_noam_expression("raison")
+image dg_noam reflexion = dg_noam_expression("reflexion")
+image dg_noam reflechit = dg_noam_expression("reflexion")
+image dg_noam rire = dg_noam_expression("rire")
+image dg_noam sourire = dg_noam_expression("sourire")
+image dg_noam surpris = dg_noam_expression("surpris")
+image dg_noam taquin = dg_noam_expression("taquin")
+image dg_noam triste = dg_noam_expression("triste")
+image dg_noam fatigue = dg_noam_expression("fatigue")
+image dg_noam faible = dg_noam_expression("fatigue")
+image dg_noam panique = dg_noam_expression("panique")
+image dg_noam panne_creep = dg_noam_expression("panne_creep")
+image dg_noam doute = dg_noam_expression("doute")
+image dg_noam calme = dg_noam_expression("calme")
+image dg_noam blase = dg_noam_expression("neutre")
+image dg_noam agace = dg_noam_expression("inquiet")
 
 # ======================
 # LYSA
