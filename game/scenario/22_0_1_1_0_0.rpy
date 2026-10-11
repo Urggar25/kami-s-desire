@@ -314,8 +314,14 @@ label _22_0_1_1_0_0_MIDI:
 
     $ hideGroup()
 
-    # Durée : ~2m10
-    # Total : ~8m20
+    # Temps libre : Noam dispose d'un moment pour voir un représentant
+    # avant que les préparatifs du retour ne reprennent.
+    $ current_period = "Après-midi"
+    "Il me reste un peu de temps avant que les autres reprennent leurs préparatifs. Autant en profiter pour voir quelqu'un."
+    call START_FREE_TIME("_22_0_1_1_0_0_ELIAS_REVIENT") from _call_START_FREE_TIME_J22_DOPPELGANGER
+
+    # Durée : ~2m10 hors temps libre
+    # Total : ~8m20 hors temps libre
 
 
 label _22_0_1_1_0_0_ELIAS_REVIENT:
