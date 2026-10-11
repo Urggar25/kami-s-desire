@@ -223,7 +223,7 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
         for idx, i in enumerate(_cc_choices):
             $ _status, _pack = cc_option_details(i.caption, cc_targets)
             $ _locked = _status != "available"
-            $ _card_x = (92 if idx == 0 else 1290)
+            $ _card_x = (211 if idx == 0 else 1171)
             frame at cc_panel_in(0.31 + idx * 0.1):
                 xpos _card_x ypos 393
                 xsize 538 ysize 447
