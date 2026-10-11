@@ -1422,6 +1422,10 @@ label _24_0_1_1_0_0_RESULTAT:
 
     elen joie "Viens là !"
 
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg062")
+    scene bg_cg062 at adaptive_fullscreen with dissolve
+
     "Elle m'attrape dans ses bras malgré ma tentative extrêmement convaincante de reculer d'environ dix centimètres."
 
     noam gene "Pourquoi moi ?!"

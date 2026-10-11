@@ -305,6 +305,10 @@ label _30_0_1_1_0_0_FIN_NAVETTE:
 
     "Je suis la direction de son doigt. Tout au fond, un garçon aux cheveux verts se lève de son siège."
     "Il s'approche de la vitre."
+
+    $ unlock_gallery_image("bg_cg068")
+    scene bg_cg068 at adaptive_fullscreen with creep_diss
+
     "Je distingue mon visage. Pas une ressemblance approximative, pas un reflet dans le verre : mes yeux, ma bouche, cette expression que je connais pour l'avoir vue chaque matin dans le miroir."
     "Il s'arrête devant le hublot et nous regarde."
     "Puis il sourit."
@@ -459,6 +463,11 @@ label _30_0_1_1_0_0_FIN_PRODUCTION:
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
     $ showGroup([("iris", "fatigue", 0.35), ("noam", "fatigue", 0.65)])
     "Iris reprend lentement ma main. Elle ne sourit plus."
+
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg069")
+    scene bg_cg069 at adaptive_fullscreen with creep_diss
+
     iris fatigue "Noam..."
     "Je serre ses doigts sans répondre. De l'autre côté de la porte, la barricade n'a pas bougé."
 
@@ -696,6 +705,9 @@ label _30_0_1_1_0_0_VENTILATION:
 
     "Je me précipite vers elle. Elle respire, mais ne réagit pas lorsque je prends son visage entre mes mains. Une marque sombre apparaît près de sa tempe."
     "Je tente de la soulever. Une main se referme sur mon col et m'arrache à elle."
+
+    $ unlock_gallery_image("bg_cg070")
+    scene bg_cg070 at adaptive_fullscreen with flash_red
 
     "Je me débats, frappe le bras qui me retient, cherche un appui sur la paroi. Rien ne le fait lâcher."
     "Son visage est celui de Tomas, mais ses yeux me regardent comme ceux du garçon qui portait mon visage un instant plus tôt."

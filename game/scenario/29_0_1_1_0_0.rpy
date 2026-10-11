@@ -284,6 +284,10 @@ label _29_0_1_1_0_0_JULIAN:
     "Je commence à somnoler malgré moi lorsqu'un choc violent retentit dans le couloir."
     "Quelqu'un court. Je reconnais le bruit des semelles qui dérapent sur le sol lisse, puis une voix éclate tout près de nous."
 
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg066")
+    scene bg_cg066 at adaptive_fullscreen with signal_stutter
+
     julian peur "NOAM ! OUVRE !"
 
     "Je bondis vers la porte. Iris me saisit par le bras avant que je l'atteigne."
@@ -317,6 +321,7 @@ label _29_0_1_1_0_0_JULIAN:
     "Je reste debout devant la porte, le visage à quelques centimètres du bois."
     "Iris n'a pas lâché mon poignet."
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
     $ showGroup([
         ("iris", "peur", 0.37),
         ("noam", "desespoir", 0.64),

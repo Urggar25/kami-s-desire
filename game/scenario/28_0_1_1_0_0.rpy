@@ -443,10 +443,9 @@ label _28_0_1_1_0_0_LYSA:
 
     "La voix de Lysa me surprend tellement que je fais un pas vers la porte. Iris m'attrape le poignet et secoue vivement la tête."
 
-    $ showGroup([
-        ("iris", "peur", 0.37),
-        ("noam", "inquiet", 0.64),
-    ])
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg065")
+    scene bg_cg065 at adaptive_fullscreen with dissolve
 
     lysa inquiet "J'ai besoin de vous parler. Je sais qu'il est tard, mais... Vous pouvez m'ouvrir ?"
 
@@ -480,6 +479,7 @@ label _28_0_1_1_0_0_LYSA:
     "Ses pas commencent à s'éloigner."
     "Je me retiens de l'appeler et j'attends qu'ils disparaissent complètement avant de me tourner vers Iris."
 
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
     $ showGroup([
         ("iris", "inquiet", 0.37),
         ("noam", "fatigue", 0.64),

@@ -340,6 +340,10 @@ label _26_0_1_1_0_0_CONFRONTATION:
     "Elle cherche d'abord une réaction amusée autour de la table, comme si elle s'attendait à ce que quelqu'un lui explique une plaisanterie de très mauvais goût."
     "Personne ne rit."
 
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg063")
+    scene bg_cg063 at adaptive_fullscreen with dissolve
+
     noam raison "Hier matin, un morceau de tissu s'est coincé dans la ventilation de ma chambre."
     noam raison "Iris et moi avons décidé de suivre les conduits pour voir d'où il provenait."
     noam raison "On a retrouvé un tissu identique derrière un Goumi, dans la salle où Elias stockait le matériel."
@@ -356,6 +360,7 @@ label _26_0_1_1_0_0_CONFRONTATION:
     noam raison "Oui. Sauf que cette fois Iris était avec moi, et qu'on a pu photographier ce qu'on avait trouvé."
 
     $ hideGroup()
+    scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([
         ("mara", "doute", 0.25),
         ("elen", "inquiet", 0.48),

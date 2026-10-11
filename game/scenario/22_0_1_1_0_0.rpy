@@ -343,6 +343,10 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     "Il pose les deux morceaux de métal contre le mur avec un bruit sec."
 
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg060")
+    scene bg_cg060 at adaptive_fullscreen with dissolve
+
     elias raison "J'ai forcé dessus, les attaches bougent. Le métal se tord trop. Si quelqu'un pousse vraiment derrière, ça finit par lâcher."
 
     noam desaccord "On peut les doubler. Tu voulais faire ça, non ?"
@@ -369,6 +373,12 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
     noam inquiet "Donc ça arrive dans six jours alors."
 
     "Je regarde les plaques contre le mur. Hier encore, il était prêt à démonter la moitié de la station pour terminer."
+
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("elias", "fatigue", 0.35),
+        ("noam", "inquiet", 0.65),
+    ])
 
     noam reflexion "Et celles qui ont disparu ?"
 

@@ -74,6 +74,14 @@ label _27_0_1_1_0_0_REVEIL:
     "Ryn est agenouillé à ses pieds. Il garde ses deux mains posées sur sa veste, mais lorsqu'il les soulève pour nous appeler, je vois qu'elles sont couvertes de sang jusqu'aux poignets."
 
     $ hideGroup()
+    $ unlock_gallery_image("bg_cg064")
+    scene bg_cg064 at adaptive_fullscreen with creep_diss
+
+    ryn peur "Sael ! Viens, vite ! Elle bouge plus, je comprends pas... Je lui parle depuis tout à l'heure et elle..."
+
+    "Il s'écarte pour lui laisser de la place, mais revient aussitôt sur ses genoux, incapable de quitter Nyra des yeux."
+
+    scene bg_conduit_reseau at adaptive_fullscreen, haunted_background with dissolve
     $ showGroup([
         ("ryn", "peur", 0.20),
         ("sael", "mefiant", 0.42),
@@ -81,9 +89,6 @@ label _27_0_1_1_0_0_REVEIL:
         ("noam", "inquiet", 0.84),
     ])
 
-    ryn peur "Sael ! Viens, vite ! Elle bouge plus, je comprends pas... Je lui parle depuis tout à l'heure et elle..."
-
-    "Il s'écarte pour lui laisser de la place, mais revient aussitôt sur ses genoux, incapable de quitter Nyra des yeux."
     sael mefiant "Ryn, recule. Il faut que je puisse l'examiner."
     ryn peur "J'ai essayé de la mettre sur le dos, mais sa tête... J'ai vu le sang et j'ai arrêté. J'aurais peut-être dû la relever, non ?"
 

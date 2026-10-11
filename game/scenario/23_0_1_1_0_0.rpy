@@ -405,6 +405,10 @@ label _23_0_1_1_0_0_IRM:
 
     "Je la prends. Elle serre mes doigts une seconde."
 
+    $ hideGroup()
+    $ unlock_gallery_image("bg_cg061")
+    scene bg_cg061 at adaptive_fullscreen with dissolve
+
     iris blase "Voilà. T'es courageux. On peut avancer ?"
 
     noam sourire "Merci."

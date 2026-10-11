@@ -966,11 +966,16 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
 
     "Du sang sur ses doigts."
 
+    $ unlock_gallery_image("bg_cg067")
+    scene bg_cg067 at adaptive_fullscreen with creep_diss
+
     "Il ferme les yeux."
 
     play sound "audio/sfx_duct_scrape.wav" volume 0.58
 
     "Un mouvement vient du conduit."
+
+    scene bg_chambre at adaptive_fullscreen with dissolve
 
     show kael doute at left with dissolve
     show noam fatigue at right with dissolve
