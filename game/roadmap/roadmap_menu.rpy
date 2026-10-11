@@ -1132,6 +1132,95 @@ init -2 python:
         },
     ]
 
+    # Placement automatique : les x/y inscrits dans la liste sont des indices
+    # d'ordre et de voie narrative, jamais des coordonnées finales à maintenir.
+    # Chaque journée reçoit une colonne élargie suivant ses embranchements.
+    def roadmap_auto_layout(nodes):
+        import re
+
+        by_id = {node["id"]: node for node in nodes}
+        initial = {node["id"]: (node["x"], node["y"]) for node in nodes}
+        days = {}
+        resolving = set()
+
+        def day_for(node_id):
+            if node_id in days:
+                return days[node_id]
+            if node_id in resolving:
+                return None
+            node = by_id[node_id]
+            match = re.match(r"^J([0-9]+)$", str(node.get("short", "")))
+            if match and (node.get("kind") == "day" or node.get("category") == "day"):
+                day = int(match.group(1))
+                days[node_id] = day
+                return day
+            resolving.add(node_id)
+            parent_days = [day_for(parent) for parent in node.get("requires", []) if parent in by_id]
+            resolving.remove(node_id)
+            parent_days = [value for value in parent_days if value is not None]
+            if parent_days:
+                day = max(parent_days)
+            else:
+                anchors = [(abs(initial[node_id][0] - initial[other["id"]][0]),
+                            int(re.match(r"^J([0-9]+)$", other["short"]).group(1)))
+                           for other in nodes
+                           if (other.get("kind") == "day" or other.get("category") == "day") and re.match(r"^J([0-9]+)$", str(other.get("short", "")))]
+                day = min(anchors)[1] if anchors else 0
+            days[node_id] = day
+            return day
+
+        for node in nodes:
+            day_for(node["id"])
+
+        # Rang topologique à l'intérieur d'un jour : une bifurcation passe
+        # toujours à droite de son choix, sans chevaucher le jour suivant.
+        ranks = {}
+        visiting = set()
+
+        def rank_for(node_id):
+            if node_id in ranks:
+                return ranks[node_id]
+            if node_id in visiting:
+                return 0
+            visiting.add(node_id)
+            parents = [parent for parent in by_id[node_id].get("requires", [])
+                       if parent in by_id and days[parent] == days[node_id]]
+            rank = max((rank_for(parent) + 1 for parent in parents), default=0)
+            visiting.remove(node_id)
+            ranks[node_id] = rank
+            return rank
+
+        for node in nodes:
+            rank_for(node["id"])
+
+        by_day = {}
+        for node in nodes:
+            by_day.setdefault(days[node["id"]], []).append(node)
+
+        next_x = 120
+        for day in sorted(by_day):
+            items = by_day[day]
+            max_rank = max(ranks[node["id"]] for node in items)
+            for rank in range(max_rank + 1):
+                column = sorted(
+                    (node for node in items if ranks[node["id"]] == rank),
+                    key=lambda node: (initial[node["id"]][1], initial[node["id"]][0], node["id"])
+                )
+                last_bottom = -100
+                for node in column:
+                    # Les anciennes voies verticales sont préservées autant
+                    # que possible, puis écartées de 172 px si nécessaire.
+                    preferred_y = max(90, initial[node["id"]][1])
+                    y = max(preferred_y, last_bottom + 54)
+                    node["x"] = next_x + rank * 370
+                    node["y"] = y
+                    last_bottom = y + 118
+            next_x += (max_rank + 1) * 370 + 55
+
+    # ROADMAP_NODES is populated above; layout once before its lookup index.
+    # The structural node IDs and dependency edges remain unchanged.
+    roadmap_auto_layout(ROADMAP_NODES)
+
     ROADMAP_NODE_BY_ID = {node["id"]: node for node in ROADMAP_NODES}
 
     def roadmap_node(node_id):
