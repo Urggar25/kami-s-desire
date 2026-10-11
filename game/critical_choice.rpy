@@ -31,6 +31,7 @@ init python:
     }
 
     CC_UNFINISHED_LABELS = {"_26_0_1_1_0_0_SECRET_PLACEHOLDER"}
+    CC_UNRELEASED_PACKS = {"mystere"}  # Annonce réservée, aucune date ni achat.
     CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."}}
 
     def cc_owned_packs():
@@ -38,6 +39,8 @@ init python:
         return getattr(persistent, "kd_story_packs_owned", ["origine"])
 
     def cc_option_status(destination=None, pack=None):
+        if pack in CC_UNRELEASED_PACKS:
+            return "coming_soon"
         if destination and (destination in CC_UNFINISHED_LABELS or not renpy.has_label(destination)):
             return "unreleased"
         if pack and pack not in cc_owned_packs():
@@ -210,9 +213,16 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None):
                 add CC_DIR + "/lock.svg":
                     xpos 18 yalign 0.5 xysize (30, 35)
             if _cc_locked or _cc_pack:
-                text ("À DÉVELOPPER" if _cc_status == "unreleased" else "STORY PACK : L'ORIGINE"):
+                text ("STORY PACK : ???  ·  À VENIR" if _cc_status == "coming_soon" else ("À DÉVELOPPER" if _cc_status == "unreleased" else "STORY PACK : L'ORIGINE")):
                     xalign 0.5 ypos 96 yanchor 0.5
                     size 17 color ("#9CA8AF" if _cc_locked else "#62CADF")
+            if _cc_pack == "origine" and _cc_status == "available":
+                textbutton "▶ TEASER":
+                    xpos 412 ypos 82
+                    text_size 15
+                    text_color "#61D3E9"
+                    text_hover_color "#FFFFFF"
+                    action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
 
     # Barre de confirmation
     frame:
