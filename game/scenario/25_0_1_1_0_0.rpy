@@ -1166,6 +1166,106 @@ label _25_0_1_1_0_0_SOIR:
 
     "Le verrou se déclenche. Iris entrouvre la porte et s'écarte pour me laisser passer."
 
+    $ current_period = "Nuit"
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+
+    "Iris referme aussitôt derrière moi. Elle attend le bruit du verrou avant de retourner vers son bureau, sur lequel elle a laissé deux verres d'eau et une couverture pliée."
+    "Sa chambre est à peine plus grande que la mienne. Son lit occupe presque toute la place entre le mur et la petite table, et mes affaires ont déjà l'air de gêner alors que je n'ai encore rien posé."
+
+    $ showGroup([
+        ("iris", "fatigue", 0.35),
+        ("noam", "inquiet", 0.66),
+    ])
+
+    iris neutre "Pose ton sac là. Pas devant la porte, sinon je vais me prendre les pieds dedans demain matin."
+    noam neutre "D'accord. Et pour dormir, je peux m'installer par terre, ça me dérange pas."
+    iris agace "Pour que tu sois incapable de tenir debout demain ? Arrête. Le lit est assez grand."
+    noam surpris "T'es sûre ?"
+    iris blase "Non, je viens de t'inviter pour te regarder dormir dans le couloir. Bien sûr que je suis sûre."
+
+    "Je pose mon sac contre le bureau. Iris récupère sa tablette et vérifie quelque chose à l'écran avant de la retourner face contre la table."
+
+    noam reflexion "Tu regardais quoi ?"
+    iris fatigue "Les accès de la chambre. Il y a que ma porte qui a été ouverte aujourd'hui."
+    noam inquiet "Tu peux vérifier ça ?"
+    iris neutre "Juste les ouvertures enregistrées. Ça me dira pas si quelqu'un passe dans les murs."
+    "Je regarde instinctivement la grille d'aération. Elle est fixée au-dessus de l'armoire, avec plusieurs vis dont la tête paraît intacte."
+    iris agace "Je sais. C'est la première chose que j'ai vérifiée."
+    noam fatigue "Désolé. Je commence à avoir un problème avec les grilles."
+    iris neutre "Moi aussi, maintenant."
+
+    "Je m'assois sur le bord du lit pendant qu'elle range la tablette. J'entends des voix dans le couloir, suivies d'une porte qui se ferme. Impossible de savoir qui vient de passer."
+
+    noam reflexion "Tu crois qu'elle a remarqué qu'on sait quelque chose ?"
+    iris inquiet "Mara ? Elle a forcément remarqué ton comportement. Mais si elle savait pour la photo, je pense pas qu'elle serait venue te proposer un verre."
+    noam inquiet "Ou alors elle voulait me faire sortir de ma chambre."
+    iris fatigue "C'est possible. Et c'est aussi possible qu'elle ait juste voulu boire avec toi."
+    noam reflexion "Avec le corps qu'on a trouvé, j'ai du mal à me dire qu'elle voulait juste boire un verre."
+    iris neutre "Je te dis pas de lui faire confiance. Je te dis qu'on peut pas décider ce qu'elle pensait à sa place."
+
+    "Je baisse les yeux vers mes mains. J'ai encore l'impression de sentir l'odeur de la cavité où nous avons trouvé le corps. Quand je revois Mara dans le couloir, avec sa bouteille et son sourire déçu, je ne sais plus lequel des deux souvenirs me met le plus mal à l'aise."
+
+    noam fatigue "C'était vraiment elle, Iris. Je veux dire... son visage, ses vêtements. On a pas inventé ça."
+    iris raison "Je sais. J'étais là."
+    noam reflexion "Et si celle qu'on voit depuis ce matin n'est pas Mara, alors depuis quand elle est là ?"
+    iris inquiet "On n'a aucun moyen de le savoir. Et on sait même pas comment c'est possible."
+    noam reflexion "Tu penses qu'il pourrait y en avoir d'autres ?"
+    "Iris s'arrête de tirer la couverture sur le lit. Elle tourne la tête vers moi, puis reprend son geste."
+    iris fatigue "C'est justement la question que je voulais éviter de me poser ce soir."
+
+    "Mon téléphone vibre une fois contre ma cuisse. Je le sors trop rapidement, persuadé d'y trouver un message de Mara."
+    "C'est Julian. Il a envoyé le score définitif de la partie, avec un commentaire sur sa prétendue victoire morale."
+
+    noam neutre "C'est Julian. Il réclame encore des points."
+    iris blase "Il perdrait une partie contre Goumi qu'il demanderait un recomptage."
+    "Je lui montre le message. Elle laisse échapper un rire bref, puis s'assoit à côté de moi."
+    iris reflexion "Voilà pourquoi ça me fait peur."
+    noam surpris "Julian ?"
+    iris raison "Non. Tout le reste. Il y a deux heures, on était tous autour d'une table à l'écouter râler. Elen riait, Elias se moquait de lui, Mara distribuait les cartes..."
+    iris inquiet "Et on a passé toute la partie à se demander si l'une des personnes avec nous avait tué quelqu'un."
+    noam fatigue "Je sais."
+    iris reflexion "Si on montre la photo demain, ils vont tous devoir regarder Mara autrement. Même si on s'est trompés sur ce que ça signifie."
+    noam raison "Mais si on dit rien et qu'elle s'en prend à quelqu'un d'autre, ça sera aussi de notre faute."
+    iris agace "Je sais, Noam. C'est bien pour ça que je t'ai pas demandé d'effacer cette fichue photo."
+
+    "Elle récupère un oreiller sur l'armoire et le pose entre nous, sans me regarder."
+
+    iris neutre "On va reprendre tout ça demain. Avec les idées un peu plus claires, si c'est encore possible."
+    noam reflexion "Et si quelqu'un nous pose des questions d'ici là ?"
+    iris raison "On n'a rien de nouveau à raconter. On a joué aux cartes, t'as renversé ton verre, et t'es venu dormir ici parce que t'avais peur."
+    noam surpris "Tu vas vraiment leur dire ça ?"
+    iris blase "Tu préfères que je dise que je t'ai supplié de venir ?"
+    noam taquin "Je pensais plutôt à une version où j'avais l'air un peu moins ridicule."
+    iris agace "Alors invente-la toi-même. Moi, je vais dormir."
+
+    "Elle éteint l'écran de sa tablette. Je retire mes chaussures et pose mon téléphone sur la table de nuit, près du sien."
+    "Iris s'allonge du côté du mur. Je prends l'autre place et tire la couverture avec précaution, en essayant de ne pas la déranger."
+
+    iris fatigue "Au fait, Noam."
+    noam neutre "Oui ?"
+    iris neutre "Si tu changes d'avis pendant la nuit, tu me réveilles. Tu pars pas faire une connerie tout seul."
+    noam raison "Je te l'ai promis. On décidera ensemble demain."
+    iris fatigue "Bien."
+
+    "Elle se tourne sur le côté. Quelques secondes plus tard, elle revient légèrement vers moi."
+
+    iris reflexion "Et arrête de fixer l'aération. Tu me stresses."
+    noam fatigue "Je la fixe pas."
+    iris blase "Tu regardes dans cette direction depuis que t'es entré."
+    noam neutre "D'accord, je vais arrêter."
+    "Je me tourne vers le plafond. Dans le couloir, quelqu'un passe en parlant à voix basse. Je reconnais seulement le bruit de ses pas avant qu'une autre porte se ferme."
+
+    "La photographie est toujours sur ma tablette, à quelques centimètres de moi. Si je la montre demain, les autres auront enfin une raison de me croire. Mais je ne sais pas ce que Kami fera lorsqu'elle la verra."
+    "À côté de moi, Iris cherche une position confortable et finit par ramener un peu de couverture de son côté."
+
+    iris fatigue "Noam, tu me laisses un peu de place ?"
+    noam fatigue "Oui, pardon."
+    "Je me décale jusqu'au bord du matelas. Elle éteint la dernière lampe, et la chambre plonge dans l'obscurité."
+    "Je reste éveillé encore un moment à écouter sa respiration et les rares bruits qui traversent le couloir."
+    "Demain, il faudra prendre une décision. Pour l'instant, la seule chose dont je suis certain, c'est que la Mara que nous avons laissée à la cafétéria est toujours quelque part dans cette station."
+
+    $ hideGroup()
     stop music fadeout 1.5
 
     call end_day("26", sleeping=True) from _call_j25_stay_end_day_26
