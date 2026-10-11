@@ -194,7 +194,19 @@ label _26_0_1_1_0_0_SECRET:
     noam fatigue "Je sais. Je me pose la même question."
     iris raison "D'accord. On garde la photographie pour nous, mais si on remarque quelque chose de dangereux, on prévient les autres."
     noam neutre "Ça me va."
-    "Elle referme son dossier et s'appuie contre le bureau. Je me lève pour reprendre mon sac, presque vide depuis hier."
+    "Iris range la photographie dans son dossier et referme la tablette. Nous convenons de ne rien annoncer tant que nous n'aurons pas trouvé un moyen de vérifier ce que nous savons."
+
+    $ hideGroup()
+    call show_custom_title("En fin d'après-midi") from _call_j26_secret_late_afternoon
+    $ current_period = "Après-midi"
+    scene bg_chambre_iris at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+    $ showGroup([("iris", "fatigue", 0.36), ("noam", "reflexion", 0.65)])
+
+    "Iris termine de consulter les accès disponibles sur sa tablette. J'ai passé une partie de l'après-midi à comparer nos photographies, sans trouver quoi que ce soit qui explique la présence des deux Mara."
+    iris fatigue "Rien de plus. Les caméras de maintenance sont toujours inaccessibles."
+    noam reflexion "On reprendra demain. J'ai presque plus de vêtements propres ici."
+    "Je me lève pour reprendre mon sac, presque vide depuis hier."
     noam reflexion "Je vais chercher des vêtements de rechange dans ma chambre. Je reviens après."
     iris inquiet "Tu veux vraiment retourner là-bas tout seul ?"
     noam taquin "J'ai pas prévu de fouiller dans les conduits. Juste dans mon armoire."
