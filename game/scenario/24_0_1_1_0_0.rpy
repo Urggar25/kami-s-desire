@@ -403,6 +403,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
 
 label _24_0_1_1_0_0_ARCHIVES:
+    call KD_ROUTE_J24_JULIAN from _call_optional_kd_route_j24_julian
     # Navigation libre vers l'objectif avant la scène scénarisée.
     call START_EXPLORATION_LIBRE("_24_0_1_1_0_0_ARCHIVES_ARRIVEE", title="Rejoindre les Archives", destination_room="archive") from _call_exploration__24_0_1_1_0_0_ARCHIVES
 

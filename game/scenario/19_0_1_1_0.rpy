@@ -603,6 +603,7 @@ label _19_0_1_1_SECURISATION:
     "Et bizarrement, ça me fout encore plus mal que si elle avait juste menti."
 
     $ hideGroup()
+    call KD_ROUTE_J19_ELEN from _call_optional_kd_route_j19_elen
     call OFFER_DAILY_EXPLORATION(
         "_19_0_1_1_SOIREE", 1,
         ["maintenance", "observation", "conclave", "dortoir"],
