@@ -382,7 +382,7 @@ label _20_0_1_1_IRIS_CONFRONTATION:
     "Je pourrais simplement ouvrir la main."
 
     "Ça devrait être facile."
-    menu (screen="critical_choice", noam_expr="hesitation"):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Lâcher le couteau":{"label":"_20_0_1_1_LACHER_COUTEAU","pack":"origine"},"Garder le couteau":{"label":"_20_0_1_1_GARDER_COUTEAU","pack":"origine"}}):
         "Que faire du couteau ?"
 
         "Lâcher le couteau":
@@ -748,7 +748,7 @@ label _20_0_1_1_KAEL_QUESTION:
         ("noam", "reflexion", 0.30),
         ("kael", "doute", 0.70),
     ])
-    menu (screen="critical_choice", noam_expr="reflexion"):
+    menu (screen="critical_choice", noam_expr="reflexion", cc_targets={"Je monte dans la navette.":{"label":"_20_0_1_1_KAEL_PARTIR","pack":"origine"},"Je reste s'il y a encore une chance de le sortir.":{"label":"_20_0_1_1_KAEL_RESTER","pack":"origine"}}):
         "Si demain la navette arrive... mais que quelqu'un reste coincé ici ?"
 
         "Je monte dans la navette.":
