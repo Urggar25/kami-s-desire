@@ -121,6 +121,7 @@ label KD_EXTRA_J20_ELEN:
     "Elle approche le gobelet de mes mains attachées, puis comprend que je ne peux pas le prendre."
     elen inquiet "Ah. Pardon."
     noam sourire "Tu peux me le tenir. Ça ira."
+    "Elle m’aide à boire, reste encore quelques minutes, puis repart chercher les autres. La porte se referme et je me retrouve de nouveau seul."
     $ hideGroup()
     return
 
