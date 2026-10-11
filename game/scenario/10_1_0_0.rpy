@@ -391,6 +391,10 @@ label _10_1_0_0_TEMPS_LIBRE:
 
 
 label _10_1_0_0_DEBAT:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_10_1_0_0_DEBAT_ARRIVEE", title="Rejoindre la salle commune", destination_room="repos") from _call_exploration__10_1_0_0_DEBAT
+
+label _10_1_0_0_DEBAT_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("salle_commune", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_10_1_0_0_3
     scene bg_repos at adaptive_fullscreen with dissolve

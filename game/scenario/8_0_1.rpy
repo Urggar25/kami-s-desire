@@ -256,6 +256,10 @@ label _8_FIN_RECHERCHE:
     jump _8_0_1_CAFETERIA
 
 label _8_0_1_CAFETERIA:
+    # Navigation libre jusqu'à la destination de l'objectif.
+    call START_EXPLORATION_LIBRE("_8_0_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__8_0_1_CAFETERIA
+
+label _8_0_1_CAFETERIA_ARRIVEE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_293
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5

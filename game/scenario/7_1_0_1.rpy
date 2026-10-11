@@ -630,6 +630,10 @@ label _7_1_0_1_APRES_TEMPS_LIBRE:
 
 
 label _7_1_0_1_INFIRMERIE_APRES_MIDI:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_7_1_0_1_INFIRMERIE_APRES_MIDI_ARRIVEE", title="Retourner à l'infirmerie", destination_room="infirmerie") from _call_exploration__7_1_0_1_INFIRMERIE_APRES_MIDI
+
+label _7_1_0_1_INFIRMERIE_APRES_MIDI_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "infirmerie2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_J7101_02
     scene infirmerie2 at adaptive_fullscreen with dissolve

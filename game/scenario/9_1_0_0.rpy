@@ -399,6 +399,10 @@ label _9_1_0_0_CAFETERIA:
 
 
 label _9_1_0_0_CONCLAVE:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_9_1_0_0_CONCLAVE_ARRIVEE", title="Rejoindre le Conclave", destination_room="conclave") from _call_exploration__9_1_0_0_CONCLAVE
+
+label _9_1_0_0_CONCLAVE_ARRIVEE:
 
     $ current_period = "Après-midi"
 

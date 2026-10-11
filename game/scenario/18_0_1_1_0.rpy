@@ -897,6 +897,10 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
 
 label _18_0_1_1_CHERCHE_ELIAS:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_18_0_1_1_CHERCHE_ELIAS_ARRIVEE", title="Retrouver Elias à la maintenance", destination_room="maintenance") from _call_exploration__18_0_1_1_CHERCHE_ELIAS
+
+label _18_0_1_1_CHERCHE_ELIAS_ARRIVEE:
 
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
