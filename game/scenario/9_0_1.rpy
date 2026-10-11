@@ -104,6 +104,7 @@ label _9_0_1_REVEIL_CHAMBRE:
     $ hideGroup()
     stop music fadeout 1.5
     scene black with fade
+    call KD_ROUTE_J9_ELEN from _call_optional_kd_route_j9_elen
     call OFFER_DAILY_EXPLORATION(
         "_9_0_1_CONCLAVE_ANNONCE", 1,
         ["conclave", "cafeteria", "archive"],
