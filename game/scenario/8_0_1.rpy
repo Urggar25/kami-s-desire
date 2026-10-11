@@ -389,6 +389,12 @@ label _8_0_1_TEMPS_LIBRE_1:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_294
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
 
+    menu:
+        "Discuter un instant avec Julian.":
+            call KD_EXTRA_J8_JULIAN from _call_kd_extra_j8_julian
+        "Passer directement au temps libre.":
+            pass
+
     call START_FREE_TIME("_8_0_1_APRES_MIDI_KAEL_CRISE") from _call_START_FREE_TIME_8_0_1
 
 # --------------------------------------------------------------------------------------------

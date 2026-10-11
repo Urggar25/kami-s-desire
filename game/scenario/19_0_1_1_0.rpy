@@ -611,6 +611,7 @@ label _19_0_1_1_SECURISATION:
 
 
 label _19_0_1_1_SOIREE:
+    call KD_EXTRA_J19_JULIAN from _call_kd_extra_j19_julian
 
     $ current_period = "Soir"
 

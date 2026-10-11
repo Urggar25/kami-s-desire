@@ -1870,6 +1870,7 @@ label _20_0_1_1_FIN:
     play music "music/bgm_cold_metadata.mp3" fadein 2.0
 
     "Je reste seul dans l'infirmerie, toujours attaché au lit."
+    call KD_EXTRA_J20_ELEN from _call_kd_extra_j20_elen
 
     "Pendant un long moment, je fixe simplement la porte par laquelle Lysa et Sael viennent de sortir. J'aimerais me convaincre qu'elles vont réfléchir à ce que je leur ai dit, mais je n'en sais rien."
 

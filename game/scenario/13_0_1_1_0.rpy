@@ -174,6 +174,7 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
     "Je regarde une dernière fois le trou dans le mur avant d'ouvrir la porte."
     "Le plus inquiétant n'est même plus de savoir que Kami peut regarder. C'est de me rappeler que quelqu'un a déjà réussi à agir malgré elle."
 
+    call KD_EXTRA_J13_LYSA from _call_kd_extra_j13_lysa
     jump _13_0_1_1_CAFETERIA
 
 label _13_0_1_1_CAFETERIA:
