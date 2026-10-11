@@ -178,6 +178,7 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
     jump _13_0_1_1_CAFETERIA
 
 label _13_0_1_1_CAFETERIA:
+    call KD_ROUTE_J13_JULIAN from _call_optional_kd_route_j13_julian
     call START_EXPLORATION_LIBRE("_13_0_1_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j13_cafeteria
 
 label _13_0_1_1_CAFETERIA_ARRIVEE:
@@ -556,6 +557,7 @@ label _13_0_1_1_DISCUSSION_ECOUTEE:
 
     "Je rebrousse chemin avant que quelqu'un ne tourne au croisement."
 
+    call KD_ROUTE_J13_ELIAS from _call_optional_kd_route_j13_elias
     call OFFER_DAILY_EXPLORATION(
         "_13_0_1_1_CHAMBRE_PAPIER", 2,
         ["archive", "cafeteria", "observation", "dortoir"],
