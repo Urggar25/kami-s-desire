@@ -139,6 +139,23 @@ transform cc_title_glitch:
         linear 0.02 xoffset 0
         repeat
 
+transform cc_teaser_pulse:
+    alpha 0.88
+    block:
+        ease 0.75 alpha 1.0
+        ease 0.75 alpha 0.88
+        repeat
+
+transform cc_story_card_enter(delay=0.0):
+    alpha 0.0 yoffset -24
+    pause delay
+    easeout 0.38 alpha 1.0 yoffset 0
+
+transform cc_story_connector_enter(delay=0.0):
+    alpha 0.0 yzoom 0.0
+    pause delay
+    easeout 0.27 alpha 0.80 yzoom 1.0
+
 transform cc_bar_pulse:
     block:
         alpha 0.75
@@ -184,15 +201,19 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
     # Question : pour les routes premium elle est intégrée au HUD et
     # ne dépend pas de la boîte de dialogue masquée.
     if _cc_story_mode:
-        frame:
-            xpos 0.5 ypos 20 xanchor 0.5
-            xsize 760 ysize 90
-            background Solid("#061321E9")
-            padding (22, 8)
-            vbox:
-                spacing 0
-                text "DÉCISION CRITIQUE" xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf" size 19 color "#68CFE5"
-                text (cc_prompt or _cc_title or "Quel chemin choisir ?") xalign 0.5 font "fonts/Rajdhani-SemiBold.ttf" size 38 color "#F2FBFF"
+        fixed at cc_title_in:
+            xpos 0.5 ypos 27 xanchor 0.5
+            xsize 740 ysize 94
+            add Solid("#4DAFD180") xpos 30 ypos 43 xsize 120 ysize 1
+            add Solid("#4DAFD180") xpos 590 ypos 43 xsize 120 ysize 1
+            text "DÉCISION CRITIQUE":
+                xalign 0.5 ypos 0
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 20 color "#79CDE3"
+            text (cc_prompt or _cc_title or "Quel chemin choisir ?"):
+                xalign 0.5 ypos 35
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 37 color "#F2FBFF"
     # Titre glitché réservé à l'interface classique.
     if _cc_title and not _cc_story_mode:
         fixed:
@@ -239,7 +260,16 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
             $ _card_x = (110 if idx == 0 else 1270)
             $ _card_border = "#414D5F" if _locked else "#48CDE9"
             $ _card_accent = "#8794A3" if _locked else "#86E9FF"
-            fixed at cc_panel_in(0.26 + idx * 0.10):
+            # Liaison verticale entre la décision et son Story Pack.
+            add Solid(_card_border):
+                xpos (380 if idx == 0 else 1540) ypos 334
+                xsize 2 ysize 32
+                at cc_story_connector_enter(0.27 + idx * 0.1)
+            add Solid(_card_border):
+                xpos (376 if idx == 0 else 1536) ypos 362
+                xsize 10 ysize 7
+                at cc_panel_in(0.32 + idx * 0.1)
+            fixed at cc_story_card_enter(0.39 + idx * 0.10):
                 xpos _card_x ypos 366
                 xsize 540 ysize 338
 
@@ -275,6 +305,10 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                     add Transform("bg_conduit_reseau", fit="cover", xysize=(500, 174),
                         matrixcolor=SaturationMatrix(0.0), alpha=0.10) xpos 20 ypos 102
                     add Solid("#030710CC") xpos 20 ypos 102 xsize 500 ysize 174
+                    add Solid("#73829466") xpos 37 ypos 122 xsize 125 ysize 2
+                    add Solid("#73829455") xpos 37 ypos 130 xsize 78 ysize 2
+                    add Solid("#73829444") xpos 365 ypos 236 xsize 113 ysize 2
+                    text "DOSSIER : ██-███" xpos 40 ypos 244 size 16 color "#77879A"
                     add CC_DIR + "/lock.svg" xpos 249 ypos 135 xsize 42 ysize 48
                     text "CLASSIFIÉ" xpos 270 ypos 229 anchor (0.5, 0.5):
                         font "fonts/Rajdhani-SemiBold.ttf"
@@ -290,14 +324,20 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                         background Solid("#07111C")
                         hover_background Solid("#122D3A")
                         action Function(renpy.call_in_new_context, "origine_story_pack_teaser")
-                        add Transform("bg_cg070", fit="cover", xysize=(500, 174), alpha=0.93)
-                        add Solid("#090C1B62") xsize 500 ysize 174
-                        add Solid("#EC567A") xsize 4 ysize 174
-                        add Solid("#082338CC") xpos 209 ypos 49 xsize 82 ysize 75
-                        text "▶" xalign 0.5 yalign 0.47 size 61 color "#E6FCFF"
-                        text "VOIR LE TEASER  ·  00:30" xpos 16 ypos 146:
-                            font "fonts/Rajdhani-SemiBold.ttf"
-                            size 19 color "#F1FAFF"
+                        # Le fixed découpe réellement la CG : plus aucun
+                        # pixel en dehors du cadre 500 × 174.
+                        fixed:
+                            xsize 500 ysize 174
+                            clipping True
+                            add Transform("bg_cg070", fit="cover", xysize=(500, 174), alpha=0.93)
+                            add Solid("#090C1B62") xsize 500 ysize 174
+                            add Solid("#EC567A") xsize 4 ysize 174
+                            add Solid("#082338CC") xpos 209 ypos 49 xsize 82 ysize 75 at cc_teaser_pulse
+                            text "▶" xalign 0.5 yalign 0.47 size 61 color "#E6FCFF"
+                            add Solid("#03101BC0") xpos 0 ypos 143 xsize 500 ysize 31
+                            text "VOIR LE TEASER  ·  00:30" xpos 16 ypos 147:
+                                font "fonts/Rajdhani-SemiBold.ttf"
+                                size 19 color "#F1FAFF"
                     text "UNE VÉRITÉ CACHÉE DU CONCLAVE" xpos 22 ypos 289:
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 24 color "#E8F7FF"
@@ -306,18 +346,25 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                     text "APERÇU À VENIR" xpos 270 ypos 189 anchor (0.5, 0.5) size 25 color "#A6BAC8"
                     text "NOUVELLE ROUTE NARRATIVE" xpos 22 ypos 289 size 23 color "#C8DAE5"
 
-    # Barre de confirmation
-    frame:
-        style "cc_confirm_bar"
-        xalign 0.5 yalign 0.965
-        at cc_bar_pulse
-        hbox:
-            spacing 14
-            align (0.5, 0.5)
-            frame:
-                style "cc_key_badge"
-                text "A" style "cc_key_text"
-            text _("Confirmer") style "cc_confirm_text"
+    # La consigne n'est pertinente que pour les décisions disponibles.
+    if not _cc_story_mode:
+        frame:
+            style "cc_confirm_bar"
+            xalign 0.5 yalign 0.965
+            at cc_bar_pulse
+            hbox:
+                spacing 14
+                align (0.5, 0.5)
+                frame:
+                    style "cc_key_badge"
+                    text "A" style "cc_key_text"
+                text _("Confirmer") style "cc_confirm_text"
+    else:
+        text "SÉLECTIONNEZ UNE ROUTE DISPONIBLE  ·  CLIQUEZ SUR L'APERÇU POUR VOIR LE TEASER":
+            xalign 0.5 ypos 1026
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 20 color "#95BCCC"
+
 
 # ------------------------------------------------------------
 # STYLES
