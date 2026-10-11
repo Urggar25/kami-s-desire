@@ -642,7 +642,7 @@ define voix_off = Character(
 
 # Persos
 define noam = DynamicCharacter("character_display_name('noam')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("noam"), image="noam")
-define dg_noam = DynamicCharacter("Noam-DG", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("dg_noam"), image="dg_noam")
+define dg_noam = DynamicCharacter("'Noam ?'", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("dg_noam"), image="dg_noam")
 define lysa = DynamicCharacter("character_display_name('lysa')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("lysa"), image="lysa")
 define elias = DynamicCharacter("character_display_name('elias')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("elias"), image="elias")
 define mara = DynamicCharacter("character_display_name('mara')", what_prefix="“", what_suffix="”", callback=make_autofocus_cb("mara"), image="mara")
