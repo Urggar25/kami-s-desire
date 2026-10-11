@@ -403,6 +403,10 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
 
 label _24_0_1_1_0_0_ARCHIVES:
+    # Navigation libre vers l'objectif avant la scène scénarisée.
+    call START_EXPLORATION_LIBRE("_24_0_1_1_0_0_ARCHIVES_ARRIVEE", title="Rejoindre les Archives", destination_room="archive") from _call_exploration__24_0_1_1_0_0_ARCHIVES
+
+label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
     call KD_EXTRA_J24_LYSA from _call_kd_extra_j24_lysa
 
     $ current_period = "Matin"
