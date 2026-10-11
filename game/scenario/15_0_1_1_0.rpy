@@ -185,6 +185,7 @@ label _15_0_1_1_0_RATIONS:
 
     pause 2.0
 
+    call KD_ROUTE_J15_ELEN from _call_optional_kd_route_j15_elen
     call OFFER_DAILY_EXPLORATION(
         "_15_0_1_1_0_COULOIR", 1,
         ["observation", "archive", "dortoir"],
