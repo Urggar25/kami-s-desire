@@ -1149,7 +1149,7 @@ init -2 python:
             if node_id in resolving:
                 return None
             node = by_id[node_id]
-            match = re.match(r"^J(\\d+)$", str(node.get("short", "")))
+            match = re.match(r"^J([0-9]+)$", str(node.get("short", "")))
             if match and (node.get("kind") == "day" or node.get("category") == "day"):
                 day = int(match.group(1))
                 days[node_id] = day
@@ -1162,9 +1162,9 @@ init -2 python:
                 day = max(parent_days)
             else:
                 anchors = [(abs(initial[node_id][0] - initial[other["id"]][0]),
-                            int(re.match(r"^J(\\d+)$", other["short"]).group(1)))
+                            int(re.match(r"^J([0-9]+)$", other["short"]).group(1)))
                            for other in nodes
-                           if (other.get("kind") == "day" or other.get("category") == "day") and re.match(r"^J(\\d+)$", str(other.get("short", "")))]
+                           if (other.get("kind") == "day" or other.get("category") == "day") and re.match(r"^J([0-9]+)$", str(other.get("short", "")))]
                 day = min(anchors)[1] if anchors else 0
             days[node_id] = day
             return day
