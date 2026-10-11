@@ -345,6 +345,9 @@ label _5_1_KAEL_NYRA:
 # Total : 2h 12m 00s
 
 label _5_1_CAFETERIA_MATIN:
+    call START_EXPLORATION_LIBRE("_5_1_CAFETERIA_MATIN_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j5_alt_cafeteria
+
+label _5_1_CAFETERIA_MATIN_ARRIVEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_248
     scene bg_cafeteria at adaptive_fullscreen with dissolve
