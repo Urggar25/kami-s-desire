@@ -37,6 +37,7 @@ label _22_0_1_1_0_0_REVEIL:
 
 
 label _22_0_1_1_0_0_CAFETERIA:
+    call KD_ROUTE_J22_NYRA from _call_optional_kd_route_j22_nyra
     call START_EXPLORATION_LIBRE("_22_0_1_1_0_0_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j22_cafeteria
 
 label _22_0_1_1_0_0_CAFETERIA_ARRIVEE:
