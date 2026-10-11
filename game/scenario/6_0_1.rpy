@@ -120,6 +120,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     $ corridor_current = "dortoir"
 
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
+    call KD_ROUTE_J6_ELEN from _call_optional_kd_route_j6_elen
     tuto "(Rejoins la cafétéria.)"
 
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_6_0_1_CAFETERIA
