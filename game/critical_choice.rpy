@@ -36,7 +36,7 @@ init python:
 
     def cc_owned_packs():
         # Development entitlement, NOT commercial DRM.
-        return getattr(persistent, "kd_story_packs_owned", ["origine"])
+        return getattr(persistent, "kd_story_packs_owned", None) or ["origine"]
 
     def cc_option_status(destination=None, pack=None):
         if pack in CC_UNRELEASED_PACKS:
