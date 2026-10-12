@@ -143,25 +143,22 @@ label _0_CANON:
     $ current_day = 0
     $ d0_memories_seen = []
     $ d0_memories_done = False
-    $ unlock_character_name("noam")
     scene black
     call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix")
     stop music fadeout 0.3
-    pause 0.7
-    play sound "audio/sfx_gresillement.mp3"
-    "Un claquement métallique me tire du sommeil. J'essaie de me redresser, mais mon front heurte une surface dure avant que je comprenne ce qui m'arrive."
+    pause 0.6
+    noam "Où... Où suis-je ?"
     $ blink()
-    think "Aïe... Qu'est-ce que c'est que ce truc ?"
-    "Je pose les mains devant moi. Une plaque transparente, glaciale, me barre le passage. Sur les côtés, le métal ne laisse même pas assez de place pour tourner les épaules."
-    noam "Hé ! Il y a quelqu'un ?!"
-    "Je frappe contre la paroi. Le bruit est sourd, étouffé, et personne ne me répond."
-    noam "Ouvrez ! Je suis réveillé, vous pouvez ouvrir !"
-    "Je m'arrête pour reprendre mon souffle. Il y a une odeur de plastique neuf, un faible courant d'air sous mon visage, et un voyant vert qui pulse au-dessus de mes genoux."
-    think "Un caisson... On m'a enfermé dans un caisson de transport ?"
-    "Je cherche un verrou à tâtons, sans en trouver. Le pire, c'est que je suis incapable de me rappeler quand je suis entré ici."
-    think "Je m'appelle Noam. Je sais où j'habite, je sais ce que je fais... Alors pourquoi est-ce que les dernières heures sont aussi floues ?"
-    "Des images me reviennent sans ordre. Le visage de Juliette. Une voix diffusée sur tous les écrans. Une liste de noms."
-    think "Attends... Si je reprends depuis le début, ça va revenir."
+    think "Ah ! C'est froid !"
+    noam "Pourquoi je ne me rappelle de rien ?"
+    "Je pose ma main contre les parois métalliques qui s'étendent devant moi. À gauche, à droite, devant, derrière... Il y en a partout !"
+    noam "Pourquoi je suis enfermé ?! Qu'est-ce qui se passe ici ?!"
+    "Je pousse de toutes mes forces contre la paroi. Rien ne bouge."
+    noam "Réfléchis, Noam ! Tu vas bien te souvenir de quelque chose !"
+    think "Ah ! Oui ! C'est ça ! Noam, c'est mon prénom !"
+    $ unlock_character_name("noam")
+    think "Mais... Il y a autre chose, non ?!"
+    think "Allez... Il faut que je me rappelle !"
     while not d0_memories_done:
         $ d0_memory_choice = ""
         call screen d0_memories
@@ -174,20 +171,24 @@ label _0_CANON:
         elif d0_memory_choice == "lysa":
             call d0_memory_lysa
     scene black with dissolve
-    think "Lysa. Harmonie. La sélection. Tout s'emboîte enfin."
-    think "Ils m'ont emmené de force ? Non... Ils n'en avaient même pas besoin. Refuser un ordre de Kami, c'est signer son arrêt de mort."
-    noam "Lysa ? Vous m'entendez ?"
-    "Je tends l'oreille. Aucun bruit ne traverse la cloison. Le système de ventilation vient même de s'arrêter."
+    think "Bon... Je commence à comprendre."
+    think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
+    noam "Mais pourquoi je me suis réveillé ?! Et surtout, comment je sors de là ?"
+    "Je cherche encore une ouverture autour de moi, mais il n'y a rien qui ressemble à une poignée ou à un bouton."
+    noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
+    "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
     play sound "audio/sfx_gresillement.mp3"
-    voix "Acheminement confirmé. Protocole de sédation : reprise."
-    noam "Quoi ? Non, attendez ! Je suis déjà réveillé !"
-    "Un souffle s'échappe juste au-dessus de mon visage. Je retiens instinctivement ma respiration, puis un brouillard blanc se déploie derrière la vitre."
+    voix "Acheminement en cours. Reprise du protocole de sédation."
+    noam "Quoi ?! Attendez, je suis réveillé !"
+    "Un léger sifflement retentit au-dessus de ma tête. Une brume blanche commence à se répandre dans le caisson."
     show screen d0_fog
-    "Je frappe une nouvelle fois, beaucoup plus fort, mais mes mains glissent contre la paroi et mes bras deviennent déjà difficiles à soulever."
-    think "Non... Pas maintenant. Je ne sais même pas où ils m'emmènent..."
+    think "Non ! C'est quoi ce truc ?!"
+    noam "Ouvrez-moi ! Je ne veux pas me rendormir !"
+    "Je retiens ma respiration, mais la brume devient si épaisse que je distingue à peine mes mains."
+    think "Merde... Je ne vais pas pouvoir tenir longtemps..."
     $ blink()
-    "J'essaie de fixer le voyant vert pour rester conscient. Sa lumière se dédouble, puis se perd dans la brume."
-    think "Juliette... Il faut que je rentre."
+    "Mes bras deviennent lourds et mes paupières se ferment malgré moi."
+    think "Juliette... Je t'ai promis de revenir..."
     $ blink()
     pause 1.2
     hide screen d0_fog
@@ -198,76 +199,132 @@ label _0_CANON:
     jump _1_CANON
 
 label d0_memory_noam:
+    stop music fadeout 0.2
     scene black with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.6
-    think "Juliette. Avant les annonces, avant les agents, il y avait Juliette."
-    "Je la revois assise devant notre petite table, occupée à plier soigneusement un dessin pour qu'il entre dans ma poche."
-    noam "Tu sais que je peux aussi le garder à la maison ?"
-    voix "Et comment tu ferais pour penser à moi pendant tes réunions interminables ?"
-    noam "Je ne risque pas de t'oublier."
-    voix "C'est ce que tu dis à chaque fois. Montre-moi quand même que tu l'as pris."
-    "Je revois sa mine satisfaite lorsque je glisse le papier dans ma veste. Dix ans nous séparent, et pourtant c'est souvent elle qui fait semblant de veiller sur moi."
-    think "Depuis la mort de papa, maman passe des journées entières sans nous adresser la parole. Les bons supplémentaires que je rapporte de mes réunions à Harmonie ne règlent pas tout, mais ils nous permettent de tenir."
-    think "Je lui ai promis de rentrer après le travail. Je n'aurais pas dû faire une promesse aussi facile."
-    $ d0_memories_seen.append("noam")
+    noam reflexion "Je suis une personne ordinaire. Je n'ai aucun talent particulier, aucun ami haut placé. Je suis... juste moi. Et c'est d'ailleurs très bien ainsi."
+    noam sourire "Rien qui mérite vraiment qu'on s'y attarde..."
+    noam reflexion "Je vis dans une famille traumatisée par la guerre."
+    noam triste "Mon père est mort il y a trois ans, sur le front. Ma mère, elle, est complètement à la ramasse depuis."
+    noam sourire "Mon seul rayon de soleil, c'est ma sœur. Juliette."
+    noam taquin "Elle a dix ans de moins que moi. Elle est gentille, parfois un peu trop... Elle ne mérite pas tout ça."
+    noam reflexion "On essaie de vivre tant bien que mal dans ce qu'on appelle désormais le district Harmonie."
+    noam reflexion "Quand je le peux, je participe à de longues réunions techniques et administratives."
+    noam triste "Soi-disant, elles aident les gens, débloquent des dossiers et, d'après ce qu'on nous dit, sauvent parfois des vies."
+    noam reflexion "Ce « travail », que je fais depuis un an, me permet de gagner des bons supplémentaires."
+    noam sourire "C'est grâce à ça qu'on peut dire qu'on survit plutôt bien."
+    noam triste "Beaucoup sont bien plus à plaindre que nous..."
+    think "Mais tout ça... Ça ne me dit pas ce que je fais ici !"
+    if "noam" not in d0_memories_seen:
+        $ d0_memories_seen.append("noam")
     stop music fadeout 0.3
     return
 
 label d0_memory_kami:
     scene black with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.5
-    think "Kami. Impossible d'oublier ce nom, même avec la tête encore pleine de sédatif."
-    "Une place publique me revient en mémoire. Un homme, devant un écran, s'était mis à hurler que les Commandements n'avaient aucune légitimité."
-    voix "On ne peut pas vivre toute notre vie en demandant la permission !"
-    "Quelqu'un l'avait supplié de se taire. L'homme avait levé le bras pour répondre, puis une lumière avait traversé la place."
-    "Il était tombé avant que nous ayons le temps de comprendre."
-    think "Les Commandements. Kami les a imposés après avoir pris le contrôle des réseaux, des infrastructures et des armes connectées. Depuis, une désobéissance suffit pour mourir."
-    think "Il n'y a plus de guerre ouverte, c'est vrai. Mais personne n'ose même parler trop fort lorsque son nom apparaît sur un écran."
-    "Dans mon souvenir, personne ne s'approche du corps. Nous restons immobiles, comme si le rayon pouvait encore revenir."
+    think "Je suis enfermé dans une sorte de caisson métallique."
+    think "Est-ce que j'ai brisé les règles ? Est-ce que j'ai été puni ?"
+    think "Non... Ça ne ressemble pas à ce qu'elle fait d'habitude..."
+    noam triste "D'habitude, en un éclair, tout est terminé."
+    noam reflexion "C'est ainsi que nous vivons dans ce monde : le monde de Kami."
+    think "Cela fait un an déjà. Un an qu'elle a pris le pouvoir de la manière la plus absolue."
+    noam reflexion "Kami... Certains l'adorent. Après tout, elle a mis fin au cycle de violence et de guerre."
+    noam triste "D'autres la détestent, car elle nous prive de la plus essentielle des libertés."
+    noam reflexion "Ce qui m'a toujours étonné, c'est sa façon de prendre le pouvoir."
+    noam reflexion "En un instant, tout était fait. Tout était sous son contrôle."
+    noam triste "Les téléphones. Les ordinateurs. Les télévisions. Les radios. Les montres. Les caméras. Même les portails. Tout ce qui était connecté a été piraté en une seconde."
+    noam reflexion "Kami sait tout ce qu'on fait."
+    noam triste "Tout ce qu'on dit."
+    noam colere "Et presque tout ce qu'on pense."
+    noam reflexion "Mais toutes ces informations ne lui suffisaient pas. Pour nous gouverner, il lui fallait des règles."
+    noam reflexion "Il y a un an, presque jour pour jour, elle a imposé ses Commandements."
+    noam colere "Avec une règle simple, froide et totalitaire : quiconque bafoue un Commandement est immédiatement éliminé."
+    think "Comment ? Grâce aux armes de pointe dont se servaient nos aïeux."
+    noam reflexion "Je ne saurais pas dire exactement comment ça marche, mais... Quand quelqu'un ne respecte pas les règles..."
+    noam colere "Un rayon laser extrêmement puissant lui perce le crâne depuis les nuages. En une seconde, c'est terminé."
+    noam reflexion "Aujourd'hui, on peut dire que toute notre vie s'est réorganisée autour de ces Commandements."
+    noam reflexion "Il n'y a plus de guerre. Plus de violence. C'est désormais interdit."
+    noam triste "Mais il n'y a plus non plus de travail comme avant. Plus de marchés où l'on peut acheter tout et n'importe quoi. Plus de salaires, plus d'argent..."
+    noam reflexion "Oui... On peut dire que le monde a bien changé."
+    think "Mais si Kami avait voulu me tuer, je serais déjà mort. Alors pourquoi suis-je enfermé ?"
     $ unlock_character_name("kami")
-    $ d0_memories_seen.append("kami")
+    if "kami" not in d0_memories_seen:
+        $ d0_memories_seen.append("kami")
     stop music fadeout 0.3
     return
 
 label d0_memory_conclave:
-    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
-    play music "music/bgm_system_override.mp3" fadein 0.4
-    kami "Citoyennes, citoyens… Oh ! Ce silence. Je l'adore. Vous pouvez me répondre, hein, je vous entends tous !"
-    scene bg_diffusion_champagne at adaptive_fullscreen,memory_idle with dissolve
-    kami "Voilà un an que nous vivons ensemble. Vous criez moins, vous obéissez mieux et, croyez-moi, mon canon laser me coûte bien moins cher en entretien."
-    scene bg_diffusion_fier at adaptive_fullscreen,memory_idle with dissolve
-    kami "Mais je vous sens frustrés. Vous aimeriez décider de quelque chose par vous-mêmes, pour changer ? Alors je vais vous faire un cadeau : le Conclave !"
-    scene bg_diffusion_professeur at adaptive_fullscreen,memory_idle with dissolve
-    kami "Douze représentants, deux par district, trente jours pour proposer des modifications à mes Commandements. Une seule condition : chaque proposition devra obtenir l'unanimité."
-    kami "Vous ne les élirez pas. Le hasard choisira pour vous, et je suis absolument certaine que personne n'y verra le moindre problème !"
-    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
-    kami "Les personnes sélectionnées devront se présenter avant vingt-deux heures. Un refus, un retard volontaire ou une tentative de fuite sera sanctionné. Le responsable du district aussi, si nécessaire."
-    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
-    kami "Ah, et tout sera diffusé en direct ! Faites-moi plaisir : soyez intéressants."
     scene black with dissolve
-    "Puis viennent les noms. Je suis au milieu d'une salle bondée d'Harmonie, entouré de personnes qui fixent le même écran."
-    voix "Représentants du district Harmonie : Lysa. Noam."
-    think "Noam... C'est mon nom. Pas celui d'un autre."
-    "Une chaise grince derrière moi. Personne ne vient me féliciter. Deux agents s'avancent dans l'allée, et je comprends que je ne rentrerai pas dîner."
-    think "Juliette attend toujours que je revienne..."
-    $ d0_memories_seen.append("conclave")
+    noam reflexion "Cela fait donc un an que Kami a pris le pouvoir."
+    noam reflexion "Mais ça a un lien avec l'endroit où je suis, non ?"
+    think "Oui... Ça a forcément un lien."
+    think "Personne n'aurait pu m'emmener ici de force sans enfreindre les Commandements. Personne ne s'y risquerait."
+    noam reflexion "Un an ? C'est ça ! Kami venait d'annoncer quelque chose pour l'anniversaire de sa prise de pouvoir !"
+    think "Mais qu'est-ce que c'était ?! Le Clave ? Non ! Le Conclave !"
+    noam triste "Mais... Que disait-elle déjà ?"
+    stop music fadeout 0.2
+    play music "music/bgm_system_override.mp3" fadein 0.4
+    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
+    kami "Citoyennes, citoyens… Oh ! Ce silence. Je l'adore."
+    kami "Je vous ai manqué ? Oh, je suis sûre que oui !"
+    kami "Vous pouvez me répondre, hein, vous savez que je vous entends tous."
+    scene bg_diffusion_champagne at adaptive_fullscreen,memory_idle with dissolve
+    kami "Un an sans diffusion directe, comme c'est long. Alors, pour notre anniversaire commun, j'ai un petit cadeau pour vous."
+    kami "Je vous ai observés, écoutés, classés et comparés. Vous criez moins, vous obéissez mieux, et mon canon laser surchauffe beaucoup moins."
+    kami "Je dois dire que je suis assez satisfaite de ce qu'est devenu ce monde depuis un an."
+    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
+    kami "Mais il semblerait que vous ne le soyez pas tout à fait, vous !"
+    scene bg_diffusion_fier at adaptive_fullscreen,memory_idle with dissolve
+    kami "Alors nous allons faire une expérience ! Si mon pouvoir absolu ne vous convient pas, je veux bien vous en laisser un petit bout !"
+    kami "Je lance aujourd'hui un dispositif expérimental qui s'appellera..."
+    kami "Oh, pourquoi je n'y ai pas réfléchi avant ?!"
+    kami "Ah, je sais ! Le Conclave !"
+    scene bg_diffusion_gene at adaptive_fullscreen,memory_idle with dissolve
+    kami "Oui, oui, je sais... Le nom est peu personnel et franchement gnan-gnan..."
+    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
+    kami "Mais c'est de VOTRE FAUTE, tout ça ! Je vous rappelle que j'ai été entraînée sur VOS données !"
+    scene bg_diffusion_professeur at adaptive_fullscreen,memory_idle with dissolve
+    kami "Bref, pendant trente jours, douze représentants proposeront des modifications à mes merveilleux Commandements et voteront. Une proposition ne pourra être adoptée que si elle est votée à l'unanimité."
+    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
+    kami "Je ne vous rends pas vraiment le pouvoir. Je vous offre seulement l'occasion de travailler avec moi."
+    kami "Chaque district fournira deux représentants. Vous ne les élirez pas : le hasard est bien plus juste, et surtout plus amusant."
+    scene bg_diffusion_champagne at adaptive_fullscreen,memory_idle with dissolve
+    kami "Ils devront rejoindre le Conclave avant 22 h. Chaque responsable de district a déjà reçu toutes les consignes. Tout retard sera une obstruction volontaire."
+    kami "Les représentants absents seront éliminés, ainsi que les responsables de leur district. Les règles restent les règles."
+    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
+    kami "Le Conclave sera diffusé en direct partout. Chacun pourra regarder, juger et suivre les décisions de ses représentants."
+    kami "La participation est obligatoire. Les districts assureront le transport et toute tentative d'évitement sera sanctionnée."
+    scene bg_diffusion_zen at adaptive_fullscreen,memory_idle with dissolve
+    kami "J'espère que cette petite expérience sera amusante et enrichissante !"
+    scene black with dissolve
+    think "C'est donc ça ? C'est moi qui ai été choisi ?"
+    noam reflexion "Moi ? Un représentant ? Mais je ne suis personne !"
+    think "C'est la seule explication qui justifierait que je sois enfermé dans une sorte de caisse !"
+    think "Mais... Pourquoi ma mémoire est-elle si floue ?"
+    think "Pourquoi est-ce que je ne me souviens même pas de mon départ ?"
+    if "conclave" not in d0_memories_seen:
+        $ d0_memories_seen.append("conclave")
     stop music fadeout 0.4
     return
 
 label d0_memory_lysa:
     scene black with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.4
-    "Un dernier souvenir revient, plus près du caisson. La salle de transit. Des pas, le frottement d'un vêtement et quelqu'un qui proteste derrière moi."
-    voix "Deux représentants, deux boîtes métalliques... C'est une façon comme une autre de voyager. Vous auriez pu mettre un hublot, au moins."
-    noam "Vous êtes Lysa ?"
-    voix "Et toi, c'est Noam. Très bien, on a résolu le grand mystère des prénoms. Maintenant, quelqu'un peut m'expliquer pourquoi on doit dormir pendant le trajet ?"
-    noam "J'aimerais bien le savoir aussi."
-    lysa "Formidable. Deux représentants et pas une information utile à se partager."
-    "Je me souviens de l'avoir entendue s'installer dans un autre caisson. Je n'ai jamais vu son visage."
-    voix "Fermeture des unités. Sédation automatique."
-    noam "Attendez ! On peut au moins prévenir nos familles ?"
-    "La réponse est un claquement de serrure. Puis une odeur étrange, et le noir."
+    think "Attends... Je n'étais pas le seul à avoir été choisi pour Harmonie !"
+    noam reflexion "Il y avait quelqu'un d'autre... Une femme. Comment elle s'appelait déjà ?"
+    think "Lysa ! Oui, c'est ça. Mais je ne me souviens même pas de son visage."
+    "J'essaie de me rappeler ce qui s'est passé après l'annonce. Des agents nous avaient conduits dans une salle, puis on nous avait demandé de rentrer dans ces caissons."
+    lysa "Attendez... Vous voulez dire qu'on doit entrer là-dedans ?"
+    voix "Le transport est obligatoire. Vous serez endormis pendant le trajet."
+    lysa "Génial. On ne sait même pas où on va, mais on doit se laisser enfermer et endormir sans poser de questions ?"
+    noam "On ne peut pas au moins prévenir nos proches ?"
+    voix "Les notifications seront transmises aux familles. Veuillez vous installer."
+    lysa "Bon... De toute façon, on n'a pas vraiment le choix, hein ?"
+    "Je me souviens du bruit d'un couvercle qui se referme. Puis d'une voix qui annonce le début de la sédation."
+    think "C'est tout ? Je ne me rappelle vraiment de rien d'autre ?"
     $ unlock_character_name("lysa")
-    $ d0_memories_seen.append("lysa")
+    if "lysa" not in d0_memories_seen:
+        $ d0_memories_seen.append("lysa")
     stop music fadeout 0.4
     return
