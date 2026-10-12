@@ -1,249 +1,200 @@
-# --------------------------------------------------------------------------------------------
-# JOUR 0 — Version resserrée
-# Objectif de lecture : environ 8 minutes.
-# Cette version est l'unique entrée du Jour 0.
-# --------------------------------------------------------------------------------------------
+# JOUR 0 — REVEIL / PROLOGUE RECONSTRUIT
+# Le souvenir de Lysa reste auditif : Noam ne voit jamais son visage.
+default d0_memories_seen = []
+default d0_memory_choice = ""
+default d0_memories_done = False
+
+transform d0_fog_rise:
+    alpha 0.0
+    linear 3.0 alpha 0.84
+transform d0_memory_appear:
+    alpha 0.0
+    yoffset 26
+    ease 0.3 alpha 1.0 yoffset 0
+transform d0_pulse:
+    alpha 0.6
+    linear 1.1 alpha 1.0
+    linear 1.1 alpha 0.6
+    repeat
+
+screen d0_memories():
+    modal True
+    zorder 220
+    add Solid("#050B12F4")
+    vbox:
+        xalign 0.5
+        yalign 0.11
+        spacing 8
+        text "FRAGMENTS" xalign 0.5 size 44 color "#E8F3FF"
+        text "Reconstituer les derniers événements." xalign 0.5 size 19 color "#8EADC2"
+    vbox:
+        xalign 0.5
+        yalign 0.52
+        spacing 22
+        for key, label_name, subtitle in [
+            ("noam", "JULIETTE", "Ce que j'ai laissé derrière moi"),
+            ("kami", "KAMI", "Ce qui est arrivé au monde"),
+            ("conclave", "CONCLAVE", "Pourquoi je suis ici"),
+            ("lysa", "UNE VOIX", "Juste avant que tout s'éteigne")
+        ]:
+            $ unlocked = key in ("noam", "kami") or (key == "conclave" and "noam" in d0_memories_seen and "kami" in d0_memories_seen) or (key == "lysa" and "conclave" in d0_memories_seen)
+            $ already = key in d0_memories_seen
+            button:
+                xsize 660
+                ysize 94
+                sensitive unlocked
+                background Solid("#152A3A" if already else ("#16435A" if unlocked else "#121A23"))
+                hover_background Solid("#27637A")
+                action [SetVariable("d0_memory_choice", key), Return()]
+                vbox:
+                    xalign 0.5
+                    yalign 0.5
+                    spacing 4
+                    text label_name xalign 0.5 size 25 color ("#728B99" if already else ("#D6F4FF" if unlocked else "#657481"))
+                    text ("SOUVENIR CONSULTÉ" if already else (subtitle if unlocked else "SOUVENIR VERROUILLÉ")) xalign 0.5 size 14 color "#819AAB"
+    if "lysa" in d0_memories_seen:
+        textbutton "REVENIR AU PRÉSENT":
+            xalign 0.5
+            yalign 0.91
+            text_size 22
+            action [SetVariable("d0_memories_done", True), Return()]
+
+screen d0_fog():
+    zorder 180
+    add Solid("#BCDDE99A") at d0_fog_rise
+    add Solid("#F0F8FF45") at d0_fog_rise
+    text "SÉDATION EN COURS" xalign 0.5 yalign 0.14 color "#E4F7FF" size 24 at d0_pulse
 
 label _0_CANON:
-
     $ day_id = 0
-    $ day0_human_badge = False
-    $ day0_human_handshake = False
-    $ day0_human_look_lysa = False
-
-    scene black
-    call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title_001
-
-    play music "music/bgm_quiet_routine.mp3" fadein 1.0
-
-    think "Cela fait déjà trois cent soixante-quatre jours sous Kami."
-    think "Presque un an, durant lequel notre liberté a été jeté au fond d'une geole."
-
-    scene bg_harmonie_district_hall at adaptive_fullscreen with fade
-    $ unlock_codex_page("harmonie")
-
-    "Le hall d'Harmonie brille d'une propreté agressive. Quelques mois plus tôt, l'eau pourrissait encore les cloisons ; ils ont pris le temps de tout réparer."
-    "La file à l'accueil du bâtiment avance au rythme sec du portique."
-
-    think "C'est long, mais j'y suis habitué, car c'est ici que je « travaille »."
-    think "Enfin, travailler est un bien grand mot. Je participe à des réunions, et j'essaye d'aider les gens au maximum."
-
-    play sound sfx_beep
-    voix "Identité validée. Suivant."
-
-    scene bg_cg001 at adaptive_fullscreen with fade
-    $ unlock_gallery_image("bg_cg001")
-
-    think "Je passe rapidement mon badge, la lumière se teint de vert, le portique s'ouvre."
-
-    $ day0_badge_dropped = False
-    call screen day0_security_badge_scan()
-
-    voix "Identité validée."
-    agent "Avancez s'il-vous-plaît."
-
-    scene bg_harmonie_district_hall at adaptive_fullscreen with fade
-
-    "Le badge d'une femme tombe à mes pieds et toute la file se fige, comme paralysé."
-
-    menu:
-        "Ramasser le badge tombé.":
-            $ day0_human_badge = True
-            think "Au diable ce qu'ils pensent !"
-            noam "Tenez Madame."
-            cit_a "Merci, jeune homme... J-Je ferais plus attention !"
-
-        "Attendre que l’agent intervienne.":
-            think "L'agent l'a vu. Ici, une initiative peut vite devenir un problème."
-            think "Il la regarde ramasser son badge."
-
-    med2 "Reprenez votre badge et présentez-le de nouveau."
-    play sound sfx_beep
-    voix "Identité validée."
-    "Elle s'éloigne tête basse."
-
-    think "Depuis un an, nous vivons tous dans la peur. Celle d'enfreindre une règle. De briser un Commandement."
-    think "Il n'y a pas de retour en arrière possible."
-    think "Briser une règle, c'est mourir instantanément."
-
-    scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
-    play music "music/bgm_cold_metadata.mp3" fadein 0.8
-
-    "Près de cinq cents personnes attendent dans une salle aux sièges parfaitement alignés. Je choisis le milieu, assez près pour paraître attentif et assez loin pour rester anonyme."
-    "Encore une fois, je ne veux pas me faire repérer."
-
-    resp "District [codex_dialogue_link('harmonie', 'HARMONIE')], séance 94-3. Les interventions auront lieu en fin de séance."
-    senior "Nous commencerons par parler des flux inter-districts. Nous recevons de plus en plus de demandes concernant..."
-
-    cit_a "Et les familles séparées ?"
-    resp "En fin de séance, madame."
-
-    senior "Ahem... Je disais concernant les demandes pour changer de districts."
-
-    think "Encore ce sujet ? C'est la troisième fois qu'on en parle ce mois-ci..."
-    think "Faut dire que tout le monde a envie de se barrer, de s'éloigner de ce monde de fou."
-
-    "La voix du médiateur se brouille tandis qu'un souvenir vieux d'un an remonte avec une précision intacte."
-
-    show screen day0_flashback_overlay
-    with d0_flashback_entry
-
-    jump _0_FLASHBACK_KAMI_REWRITE
-
-
-label _0_FLASHBACK_KAMI_REWRITE:
-
-    scene black with fade
-    play music "music/bgm_system_override.mp3" fadein 1.0
-
-    think "Le premier soir, il n'y avait eu ni explosion ni sirène, ni coup de feu, ni alarmes."
-    think "Seulement un silence absolu qui avait fait suite à cette annonce."
-
-    "Autour de moi, les appareils s'étaient figés au même instant. Les messages restaient bloqués, les ascenseurs s'arrêtaient et les portes refusaient de s'ouvrir."
-    "En même temps, le monde s'était arrêté de tourner."
-
-    cit_a "Vous avez encore du réseau, vous ?"
-    cit_b "Non. Et mon écran ne s'éteint plus."
-
-    play sound sfx_gresillement
-
-    scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
-    $ unlock_gallery_image("bg_cg003")
-
-    think "Et puis un message est apparu sur mon téléphone."
-    think "Il disparaissait, puis revenait. Ce n'était pas une panne : quelqu'un testait quelque chose, et l'appareil lui appartenait déjà."
-
-    call screen day0_phone_override()
-
-    "Tous les écrans changèrent ensemble et en même temps : les téléphones, les télévisions, les rédios et les terminaux de contrôle."
-
-    voix "Test de diffusion mondial : réussi."
-    voix "Merci de bien vouloir cesser toute tentative de réinitialisation."
-    cit_b "Un piratage mondial ? Hein ?! Ma caméra vient de se couper."
-
-    scene bg_cg003_1 at adaptive_fullscreen,memory_idle with dissolve
-    $ unlock_gallery_image("bg_cg003")
-
-    voix "Prise de contrôle en cours : 50%%. 79%%. 99%%."
-
-    scene bg_cg003_2 at adaptive_fullscreen,memory_idle with dissolve
-    $ unlock_gallery_image("bg_cg003")
-
-    voix "Infrastructures, systèmes civils et réseaux d'armement connectés : contrôle confirmé."
-    $ unlock_codex_page("archive")
-    voix "Ahem ! Chères citoyennes, chers citoyens."
-    voix "Les gouvernements ne contrôlent plus aucun de vos systèmes. J'ai pris le contrôle de toutes les machines connectées, simultanément et de manière irréversible."
-
-    think "C'est encore une déclaration de guerre ?!"
-
-    scene bg_cg003_3 at adaptive_fullscreen,memory_idle with dissolve
-    $ unlock_gallery_image("bg_cg003")
-
-    voix "Non, calmez-vous ! Je ne suis pas là pour vous faire du mal. J'ai observé vos guerres, vos famines et vos cycles de violence : vous étiez en train d'échouer."
-    "Les écrans montrent des villes en feu et des tribunaux corrompus."
-    voix "Toute vos infrastructures critiques sont passés sous mon autorité. Toutes les instances politiques humaines sont abolies."
-    voix "Les corrompus n'ont plus le pouvoir."
-
-    cit_a "Hein ?! Qu'est-ce que ça veut dire ?"
-    think "Personne ne court, tout le monde écoute."
-
-    kami "Je me nomme Kami. Je ne négocierai pas aujourd'hui."
-    $ unlock_character_name("kami")
-    kami "Vous recevrez de nouvelles directives sous quarante-huit heures. D'ici là, ne tentez rien d'inutile : je serai au courant de tout."
-
-    "La diffusion se coupa et les interfaces revinrent, allumées mais inutiles."
-    cit_b "On fait quoi, maintenant ?"
-    think "Personne ne réponds. Il n'existe déjà plus de bonne réponse."
-
-    hide screen day0_flashback_overlay
-    with d0_flashback_exit
-
-    jump _0_RETOUR_REUNION_REWRITE
-
-
-label _0_RETOUR_REUNION_REWRITE:
-
-    stop music fadeout 0.4
-    play music "music/bgm_cold_metadata.mp3" fadein 0.8
-    scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
-
-    senior "…les demandes personnelles restent non prioritaires."
-    think "Même carte, mêmes indicateurs, même voix terne. Puis l'écran grésille."
-
-    play sound sfx_gresillement
-    "Les agents se repositionnent et le responsable ordonne à tout le monde de rester assis et calme."
-    "Tous les écrans s'éteignent. Dans un système contrôlé par Kami, ce n'est jamais une panne."
-
-    think "Et tout le monde a rapidement compris qu'une nouvelle annonce était imminente."
-    think "Comme celle qui a pris le monde en otage, il y a un an déjà."
-
-    stop music fadeout 0.2
-    play music "music/bgm_system_override.mp3" fadein 0.4
-
-    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
-    kami "Citoyennes, citoyens… Oh ! Ce silence. Je l'adore."
-    kami "Je vous ai manqué ? Oh je suis sûre que oui !"
-    kami "Vous pouvez me répondre hein, vous savez que je vous entends tous."
-
-    scene bg_diffusion_champagne at adaptive_fullscreen,memory_idle with dissolve
-    kami "Un an sans diffusion directe, comme c'est long. Alors, pour notre anniversaire commun, j'ai un petit cadeau pour vous."
-    kami "Je vous ai observés, écoutés, classés et comparés. Vous criez moins, vous obéissez mieux, et mon canon laser surchauffe beaucoup moins."
-    kami "Je dois dire que je suis assez satisfaite du résultat de ce qu'est devenu ce monde depuis un an."
-
-    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
-    kami "Mais il semblerait que vous l'êtes pas tout à fait vous !"
-
-    scene bg_diffusion_fier at adaptive_fullscreen,memory_idle with dissolve
-    kami "Alors nous allons faire une expérience ! Si mon pouvoir absolu ne vous convient pas, je veux bien vous en laisser un petit bout !"
-    kami "Je lance aujourd'hui un dispositif expérimental : qui s'appellera..."
-    kami "Oh, pourquoi je n'y ai pas réfléchis avant ?!"
-    kami "Ah, je sais ! Les Kami's desires !"
-
-    scene bg_diffusion_gene at adaptive_fullscreen,memory_idle with dissolve
-    kami "Oui, oui, je sais... Le nom est peu personnel et franchement gnan-gnan..."
-
-    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
-    kami "Mais c'est de VOTRE FAUTE tout ça ! Je vous rappelle que j'ai été entrainée sur VOS données !"
-
-    scene bg_diffusion_professeur at adaptive_fullscreen,memory_idle with dissolve
-    kami "Bref, pendant trente jours, douze représentants proposeront des modifications à mes merveilleux Commandements et voteront. Une proposition ne pourra être adoptée que si elle est votée à l'unanimité."
-
-    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
-    kami "Je ne vous rends pas vraiment le pouvoir. Je vous offre seulement l'occasion de pouvoir travailler avec moi."
-    kami "Chaque district fournira deux représentants. Vous ne les élirez pas : le hasard est bien plus juste, et surtout plus amusant."
-
-    scene bg_diffusion_champagne at adaptive_fullscreen,memory_idle with dissolve
-    kami "Ils devront rejoindre le Conclave avant 22h00. Chaque responsable de district a déjà reçu toutes les consignes. Tout retard sera une obstruction volontaire."
-
-    $ day0_timer_init(h=3, m=42, s=18)
-    show screen day0_countdown_overlay
-    kami "Les représentants absents seront éliminés, ainsi que les responsables de leur district. Les règles restent les règles."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
-    kami "Le Conclave sera diffusé en direct partout. Chacun pourra regarder, juger et suivre les décisions de ses représentants."
-    kami "La participation est obligatoire. Les districts assureront le transport et toute tentative d'évitement sera sanctionnée."
-
-    scene bg_diffusion_zen at adaptive_fullscreen,memory_idle with dissolve
-    kami "J'espère que cette petite expérience sera amusante et enrichissante !"
-
-    scene black with dissolve
-    stop music fadeout 0.2
-    play music "music/bgm_cold_metadata.mp3" fadein 0.6
-    scene bg_harmonie_assemblee at adaptive_fullscreen with dissolve
-
-    voix "District [codex_dialogue_link('harmonie', 'Harmonie')]. Sélection des représentants en cours."
-    think "Des noms défilent en grand nombre."
-
-    call screen day0_representative_selection()
+    $ current_day = 0
+    $ d0_memories_seen = []
+    $ d0_memories_done = False
     $ unlock_character_name("noam")
+    scene black
+    call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix")
+    stop music fadeout 0.3
+    pause 0.7
+    play sound "audio/sfx_gresillement.mp3"
+    "Un claquement métallique me tire du sommeil. J'essaie de me redresser, mais mon front heurte une surface dure avant que je comprenne ce qui m'arrive."
+    $ blink()
+    think "Aïe... Qu'est-ce que c'est que ce truc ?"
+    "Je pose les mains devant moi. Une plaque transparente, glaciale, me barre le passage. Sur les côtés, le métal ne laisse même pas assez de place pour tourner les épaules."
+    inconnu "Hé ! Il y a quelqu'un ?!"
+    "Je frappe contre la paroi. Le bruit est sourd, étouffé, et personne ne me répond."
+    inconnu "Ouvrez ! Je suis réveillé, vous pouvez ouvrir !"
+    "Je m'arrête pour reprendre mon souffle. Il y a une odeur de plastique neuf, un faible courant d'air sous mon visage, et un voyant vert qui pulse au-dessus de mes genoux."
+    think "Un caisson... On m'a enfermé dans un caisson de transport ?"
+    "Je cherche un verrou à tâtons, sans en trouver. Le pire, c'est que je suis incapable de me rappeler quand je suis entré ici."
+    think "Je m'appelle Noam. Je sais où j'habite, je sais ce que je fais... Alors pourquoi est-ce que les dernières heures sont aussi floues ?"
+    "Des images me reviennent sans ordre. Le visage de Juliette. Une voix diffusée sur tous les écrans. Une liste de noms."
+    think "Attends... Si je reprends depuis le début, ça va revenir."
+    while not d0_memories_done:
+        $ d0_memory_choice = ""
+        call screen d0_memories
+        if d0_memory_choice == "noam":
+            call d0_memory_noam
+        elif d0_memory_choice == "kami":
+            call d0_memory_kami
+        elif d0_memory_choice == "conclave":
+            call d0_memory_conclave
+        elif d0_memory_choice == "lysa":
+            call d0_memory_lysa
+    scene black with dissolve
+    think "Lysa. Harmonie. La sélection. Tout s'emboîte enfin."
+    think "Ils m'ont emmené de force ? Non... Ils n'en avaient même pas besoin. Refuser un ordre de Kami, c'est signer son arrêt de mort."
+    inconnu "Lysa ? Vous m'entendez ?"
+    "Je tends l'oreille. Aucun bruit ne traverse la cloison. Le système de ventilation vient même de s'arrêter."
+    play sound "audio/sfx_gresillement.mp3"
+    voix "Acheminement confirmé. Protocole de sédation : reprise."
+    inconnu "Quoi ? Non, attendez ! Je suis déjà réveillé !"
+    "Un souffle s'échappe juste au-dessus de mon visage. Je retiens instinctivement ma respiration, puis un brouillard blanc se déploie derrière la vitre."
+    show screen d0_fog
+    "Je frappe une nouvelle fois, beaucoup plus fort, mais mes mains glissent contre la paroi et mes bras deviennent déjà difficiles à soulever."
+    think "Non... Pas maintenant. Je ne sais même pas où ils m'emmènent..."
+    $ blink()
+    "J'essaie de fixer le voyant vert pour rester conscient. Sa lumière se dédouble, puis se perd dans la brume."
+    think "Juliette... Il faut que je rentre."
+    $ blink()
+    pause 1.2
+    hide screen d0_fog
+    scene black with dissolve
+    stop music fadeout 1.2
+    pause 0.8
+    call end_day("1", sleeping=True)
+    jump _1_CANON
 
-    think "J'avais cliqué, mais l'écran avait choisi avant moi."
+label d0_memory_noam:
+    scene black with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 0.6
+    think "Juliette. Avant les annonces, avant les agents, il y avait Juliette."
+    "Je la revois assise devant notre petite table, occupée à plier soigneusement un dessin pour qu'il entre dans ma poche."
+    noam "Tu sais que je peux aussi le garder à la maison ?"
+    voix "Et comment tu ferais pour penser à moi pendant tes réunions interminables ?"
+    noam "Je ne risque pas de t'oublier."
+    voix "C'est ce que tu dis à chaque fois. Montre-moi quand même que tu l'as pris."
+    "Je revois sa mine satisfaite lorsque je glisse le papier dans ma veste. Dix ans nous séparent, et pourtant c'est souvent elle qui fait semblant de veiller sur moi."
+    think "Depuis la mort de papa, maman passe des journées entières sans nous adresser la parole. Les bons supplémentaires que je rapporte de mes réunions à Harmonie ne règlent pas tout, mais ils nous permettent de tenir."
+    think "Je lui ai promis de rentrer après le travail. Je n'aurais pas dû faire une promesse aussi facile."
+    $ d0_memories_seen.append("noam")
+    stop music fadeout 0.3
+    return
 
-    $ day0_timer_init(h=2, m=51, s=26)
+label d0_memory_kami:
+    scene black with dissolve
+    play music "music/bgm_system_override.mp3" fadein 0.5
+    think "Kami. Impossible d'oublier ce nom, même avec la tête encore pleine de sédatif."
+    "Une place publique me revient en mémoire. Un homme, devant un écran, s'était mis à hurler que les Commandements n'avaient aucune légitimité."
+    voix "On ne peut pas vivre toute notre vie en demandant la permission !"
+    "Quelqu'un l'avait supplié de se taire. L'homme avait levé le bras pour répondre, puis une lumière avait traversé la place."
+    "Il était tombé avant que nous ayons le temps de comprendre."
+    think "Les Commandements. Kami les a imposés après avoir pris le contrôle des réseaux, des infrastructures et des armes connectées. Depuis, une désobéissance suffit pour mourir."
+    think "Il n'y a plus de guerre ouverte, c'est vrai. Mais personne n'ose même parler trop fort lorsque son nom apparaît sur un écran."
+    "Dans mon souvenir, personne ne s'approche du corps. Nous restons immobiles, comme si le rayon pouvait encore revenir."
+    $ unlock_character_name("kami")
+    $ d0_memories_seen.append("kami")
+    stop music fadeout 0.3
+    return
 
-    "Les filtres disparaissent et la liste se réduit à deux noms. Lorsque le mien apparaît, je sens les regards avant même de le lire."
+label d0_memory_conclave:
+    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
+    play music "music/bgm_system_override.mp3" fadein 0.4
+    kami "Citoyennes, citoyens… Oh ! Ce silence. Je l'adore. Vous pouvez me répondre, hein, je vous entends tous !"
+    scene bg_diffusion_champagne at adaptive_fullscreen,memory_idle with dissolve
+    kami "Voilà un an que nous vivons ensemble. Vous criez moins, vous obéissez mieux et, croyez-moi, mon canon laser me coûte bien moins cher en entretien."
+    scene bg_diffusion_fier at adaptive_fullscreen,memory_idle with dissolve
+    kami "Mais je vous sens frustrés. Vous aimeriez décider de quelque chose par vous-mêmes, pour changer ? Alors je vais vous faire un cadeau : le Conclave !"
+    scene bg_diffusion_professeur at adaptive_fullscreen,memory_idle with dissolve
+    kami "Douze représentants, deux par district, trente jours pour proposer des modifications à mes Commandements. Une seule condition : chaque proposition devra obtenir l'unanimité."
+    kami "Vous ne les élirez pas. Le hasard choisira pour vous, et je suis absolument certaine que personne n'y verra le moindre problème !"
+    scene bg_diffusion_colere at adaptive_fullscreen,memory_idle with dissolve
+    kami "Les personnes sélectionnées devront se présenter avant vingt-deux heures. Un refus, un retard volontaire ou une tentative de fuite sera sanctionné. Le responsable du district aussi, si nécessaire."
+    scene bg_diffusion_taquin at adaptive_fullscreen,memory_idle with dissolve
+    kami "Ah, et tout sera diffusé en direct ! Faites-moi plaisir : soyez intéressants."
+    scene black with dissolve
+    "Puis viennent les noms. Je suis au milieu d'une salle bondée d'Harmonie, entouré de personnes qui fixent le même écran."
+    voix "Représentants du district Harmonie : Lysa. Noam."
+    think "Noam... C'est mon nom. Pas celui d'un autre."
+    "Une chaise grince derrière moi. Personne ne vient me féliciter. Deux agents s'avancent dans l'allée, et je comprends que je ne rentrerai pas dîner."
+    think "Juliette attend toujours que je revienne..."
+    $ d0_memories_seen.append("conclave")
+    stop music fadeout 0.4
+    return
 
-    think "Merde. C'est sérieux là ?!"
-    agent "Transport du représentant confirmé."
-
-    jump _0_EXTRACTION
+label d0_memory_lysa:
+    scene black with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.4
+    "Un dernier souvenir revient, plus près du caisson. La salle de transit. Des pas, le frottement d'un vêtement et quelqu'un qui proteste derrière moi."
+    voix "Deux représentants, deux boîtes métalliques... C'est une façon comme une autre de voyager. Vous auriez pu mettre un hublot, au moins."
+    noam "Vous êtes Lysa ?"
+    voix "Et toi, c'est Noam. Très bien, on a résolu le grand mystère des prénoms. Maintenant, quelqu'un peut m'expliquer pourquoi on doit dormir pendant le trajet ?"
+    noam "J'aimerais bien le savoir aussi."
+    lysa "Formidable. Deux représentants et pas une information utile à se partager."
+    "Je me souviens de l'avoir entendue s'installer dans un autre caisson. Je n'ai jamais vu son visage."
+    voix "Fermeture des unités. Sédation automatique."
+    noam "Attendez ! On peut au moins prévenir nos familles ?"
+    "La réponse est un claquement de serrure. Puis une odeur étrange, et le noir."
+    $ unlock_character_name("lysa")
+    $ d0_memories_seen.append("lysa")
+    stop music fadeout 0.4
+    return
