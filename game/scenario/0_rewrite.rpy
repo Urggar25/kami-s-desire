@@ -38,24 +38,13 @@ transform d0_orb_drift_c:
     ease 3.3 yoffset -5 rotate -1
     repeat
 
-transform d0_orb_glow:
+# Nuage peint sur fond transparent, partage par les quatre souvenirs.
+# Aucune glyphe Unicode n'est utilisee pour les formes ou decorations.
+transform d0_cloud_breathe:
     subpixel True
-    alpha 0.20 zoom 0.93
-    ease 1.8 alpha 0.48 zoom 1.06
-    ease 2.0 alpha 0.20 zoom 0.93
-    repeat
-
-transform d0_orb_ring:
-    subpixel True
-    alpha 0.38 zoom 0.98
-    ease 2.1 alpha 0.84 zoom 1.06
-    ease 2.4 alpha 0.38 zoom 0.98
-    repeat
-
-transform d0_star_flicker:
-    alpha 0.15
-    ease 1.5 alpha 0.72
-    ease 1.9 alpha 0.15
+    zoom 0.98
+    ease 2.6 zoom 1.025
+    ease 2.8 zoom 0.98
     repeat
 
 transform d0_pulse:
@@ -67,105 +56,81 @@ transform d0_pulse:
 screen d0_thought_orb(key, title, hint, xp, yp, diameter, drift):
     $ unlocked = key in ("noam", "kami") or (key == "conclave" and "noam" in d0_memories_seen and "kami" in d0_memories_seen) or (key == "lysa" and "conclave" in d0_memories_seen)
     $ already = key in d0_memories_seen
-    $ bright = "#E9F9FF" if not already else "#899AA7"
-    $ orb = "#5BC5EC" if not already else "#465B68"
-    $ ring = "#C2EFFF" if not already else "#697983"
-    $ caption = "SOUVENIR RETROUVÉ" if already else (hint if unlocked else "ENFOUI DANS LA MÉMOIRE")
+    $ caption = "SOUVENIR RETROUVÉ" if already else (hint if unlocked else "SOUVENIR ENFOUI")
+    $ cloud_path = "gui/day0/thought_cloud.png"
+    $ cloud_tint = "#60717B" if already else ("#D8F5FF" if unlocked else "#394956")
+    $ cloud_opacity = 0.48 if already else (0.95 if unlocked else 0.31)
     fixed:
         xpos xp
         ypos yp
         xsize diameter
         ysize diameter
         at drift
-        # Trois halos concentriques et une membrane ondulante.
-        text "●":
-            xalign 0.5 yalign 0.5
-            size int(diameter * 1.18)
-            color ("#123A57" if unlocked and not already else "#15202A")
-            at d0_orb_glow
-        text "●":
-            xalign 0.5 yalign 0.5
-            size int(diameter * 0.97)
-            color ("#14364B" if unlocked and not already else "#1D2933")
-        text "◯":
-            xalign 0.5 yalign 0.5
-            size int(diameter * 1.09)
-            color (ring if unlocked else "#374957")
-            at d0_orb_ring
-        text "◯":
-            xalign 0.5 yalign 0.5
-            size int(diameter * 0.91)
-            color (orb if unlocked else "#314353")
-        text "✦":
-            xpos int(diameter * 0.23) ypos int(diameter * 0.12)
-            color ("#D0F4FF" if unlocked else "#43515B")
-            size 23
-            at d0_star_flicker
-        text "·":
-            xpos int(diameter * 0.79) ypos int(diameter * 0.30)
-            color "#B5DDEA" size 30
-            at d0_star_flicker
+        # Le nuage est une vraie texture PNG avec transparence.
         button:
-            xalign 0.5 yalign 0.5
-            xsize int(diameter * 0.83)
-            ysize int(diameter * 0.83)
-            background None
-            hover_background None
+            xalign 0.5
+            yalign 0.5
+            xsize diameter
+            ysize diameter
+            padding (0, 0)
+            background Transform(cloud_path, xysize=(diameter, diameter), matrixcolor=TintMatrix(cloud_tint), alpha=cloud_opacity)
+            hover_background Transform(cloud_path, xysize=(diameter, diameter), matrixcolor=TintMatrix("#FFFFFF"), alpha=1.0)
+            insensitive_background Transform(cloud_path, xysize=(diameter, diameter), matrixcolor=TintMatrix("#3B4A59"), alpha=0.30)
+            focus_mask True
             sensitive unlocked
             action [SetVariable("d0_memory_choice", key), Return()]
+            at d0_cloud_breathe
             vbox:
-                xalign 0.5 yalign 0.5
+                xalign 0.5
+                yalign 0.5
+                xmaximum int(diameter * 0.73)
                 spacing 8
                 text title:
                     xalign 0.5
                     text_align 0.5
-                    size (27 if diameter > 230 else 23)
+                    size (25 if diameter >= 260 else 22)
                     bold True
-                    color (bright if unlocked else "#576675")
+                    color ("#123249" if unlocked and not already else "#C1CED8")
                 text caption:
                     xalign 0.5
                     text_align 0.5
-                    xmaximum int(diameter * 0.66)
+                    xmaximum int(diameter * 0.68)
                     size 14
-                    color ("#A9C9D8" if unlocked and not already else "#667989")
-        if not unlocked:
-            text "✧":
-                xalign 0.5 ypos int(diameter * 0.74)
-                color "#4A5E6C" size 20
+                    color ("#27526B" if unlocked and not already else "#8195A5")
 
 screen d0_memories():
     modal True
     zorder 220
-    add Solid("#03080EF2")
-    # Poussières lumineuses très discrètes, réparties dans la profondeur.
-    for px, py, sz in [(0.13,0.19,16),(0.81,0.17,13),(0.38,0.80,15),(0.76,0.72,20),(0.19,0.64,11),(0.88,0.46,12)]:
-        text "✧":
-            xpos px ypos py
-            color "#528CA1"
-            size sz
-            at d0_star_flicker
+    add Solid("#030A13F2")
     text "REMÉMORATION":
-        xalign 0.5 ypos 0.06
-        size 23 color "#A8DAEA"
-        kerning 5
-    text "Certaines images sont encore floues...":
-        xalign 0.5 ypos 0.105
-        size 16 color "#708FA1"
-    use d0_thought_orb("noam", "JULIETTE", "Ce qui m'attend chez moi", 0.16, 0.23, 286, d0_orb_drift_a)
-    use d0_thought_orb("kami", "KAMI", "Les Commandements", 0.66, 0.19, 306, d0_orb_drift_b)
-    use d0_thought_orb("conclave", "CONCLAVE", "L'annonce", 0.36, 0.51, 270, d0_orb_drift_c)
-    use d0_thought_orb("lysa", "UNE VOIX", "Un dernier souvenir", 0.76, 0.60, 238, d0_orb_drift_a)
+        xalign 0.5
+        ypos 0.065
+        size 26
+        color "#BCE7F6"
+        kerning 4
+    text "Des souvenirs flottent à la surface de ma mémoire...":
+        xalign 0.5
+        ypos 0.111
+        size 16
+        color "#7B9BAC"
+    use d0_thought_orb("noam", "JULIETTE", "Ce qui m'attend chez moi", 0.13, 0.20, 320, d0_orb_drift_a)
+    use d0_thought_orb("kami", "KAMI", "Les Commandements", 0.66, 0.18, 330, d0_orb_drift_b)
+    use d0_thought_orb("conclave", "CONCLAVE", "L'annonce", 0.34, 0.51, 310, d0_orb_drift_c)
+    use d0_thought_orb("lysa", "UNE VOIX", "Un dernier souvenir", 0.77, 0.62, 270, d0_orb_drift_a)
     if "lysa" in d0_memories_seen:
-        textbutton "REVENIR AU PRÉSENT   ›":
-            xalign 0.5 yalign 0.94
+        textbutton "REVENIR AU PRÉSENT":
+            xalign 0.5
+            yalign 0.945
             text_size 23
             text_color "#CBEEFA"
             text_hover_color "#FFFFFF"
             action [SetVariable("d0_memories_done", True), Return()]
     else:
-        text "TOUCHEZ UNE PENSÉE POUR REVIVRE LE SOUVENIR":
-            xalign 0.5 yalign 0.945
-            size 15 color "#6E94A7"
+        text "CHOISISSEZ UN SOUVENIR":
+            xalign 0.5
+            yalign 0.955
+            size 16
+            color "#91B7C7"
 
 screen d0_fog():
     zorder 180
