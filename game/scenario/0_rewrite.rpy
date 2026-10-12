@@ -110,7 +110,7 @@ screen d0_thought_orb(key, title, hint, xp, yp, diameter, drift):
             xsize int(diameter * 0.83)
             ysize int(diameter * 0.83)
             background None
-            hover_background Solid("#6BDFFF12")
+            hover_background None
             sensitive unlocked
             action [SetVariable("d0_memory_choice", key), Return()]
             vbox:
