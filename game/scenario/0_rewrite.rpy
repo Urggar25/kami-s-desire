@@ -1,4 +1,9 @@
 # JOUR 0 — REVEIL / PROLOGUE RECONSTRUIT
+# Anciens alias audio conservés pour les autres journées.
+define sfx_door = "sfx/door_soft.mp3"
+define sfx_beep = "sfx/terminal_beep.ogg"
+define sfx_paper = "audio/sfx_paper.mp3"
+define sfx_gresillement = "audio/sfx_gresillement.mp3"
 # Le souvenir de Lysa reste auditif : Noam ne voit jamais son visage.
 default d0_memories_seen = []
 default d0_memory_choice = ""
@@ -80,9 +85,9 @@ label _0_CANON:
     $ blink()
     think "Aïe... Qu'est-ce que c'est que ce truc ?"
     "Je pose les mains devant moi. Une plaque transparente, glaciale, me barre le passage. Sur les côtés, le métal ne laisse même pas assez de place pour tourner les épaules."
-    inconnu "Hé ! Il y a quelqu'un ?!"
+    noam "Hé ! Il y a quelqu'un ?!"
     "Je frappe contre la paroi. Le bruit est sourd, étouffé, et personne ne me répond."
-    inconnu "Ouvrez ! Je suis réveillé, vous pouvez ouvrir !"
+    noam "Ouvrez ! Je suis réveillé, vous pouvez ouvrir !"
     "Je m'arrête pour reprendre mon souffle. Il y a une odeur de plastique neuf, un faible courant d'air sous mon visage, et un voyant vert qui pulse au-dessus de mes genoux."
     think "Un caisson... On m'a enfermé dans un caisson de transport ?"
     "Je cherche un verrou à tâtons, sans en trouver. Le pire, c'est que je suis incapable de me rappeler quand je suis entré ici."
@@ -103,11 +108,11 @@ label _0_CANON:
     scene black with dissolve
     think "Lysa. Harmonie. La sélection. Tout s'emboîte enfin."
     think "Ils m'ont emmené de force ? Non... Ils n'en avaient même pas besoin. Refuser un ordre de Kami, c'est signer son arrêt de mort."
-    inconnu "Lysa ? Vous m'entendez ?"
+    noam "Lysa ? Vous m'entendez ?"
     "Je tends l'oreille. Aucun bruit ne traverse la cloison. Le système de ventilation vient même de s'arrêter."
     play sound "audio/sfx_gresillement.mp3"
     voix "Acheminement confirmé. Protocole de sédation : reprise."
-    inconnu "Quoi ? Non, attendez ! Je suis déjà réveillé !"
+    noam "Quoi ? Non, attendez ! Je suis déjà réveillé !"
     "Un souffle s'échappe juste au-dessus de mon visage. Je retiens instinctivement ma respiration, puis un brouillard blanc se déploie derrière la vitre."
     show screen d0_fog
     "Je frappe une nouvelle fois, beaucoup plus fort, mais mes mains glissent contre la paroi et mes bras deviennent déjà difficiles à soulever."
