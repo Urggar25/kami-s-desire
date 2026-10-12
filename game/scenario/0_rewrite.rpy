@@ -81,24 +81,24 @@ screen d0_thought_orb(key, title, hint, xp, yp, diameter, drift):
         text "●":
             xalign 0.5 yalign 0.5
             size int(diameter * 1.18)
-            color "#123A57" if unlocked and not already else "#15202A"
+            color ("#123A57" if unlocked and not already else "#15202A")
             at d0_orb_glow
         text "●":
             xalign 0.5 yalign 0.5
             size int(diameter * 0.97)
-            color "#14364B" if unlocked and not already else "#1D2933"
+            color ("#14364B" if unlocked and not already else "#1D2933")
         text "◯":
             xalign 0.5 yalign 0.5
             size int(diameter * 1.09)
-            color ring if unlocked else "#374957"
+            color (ring if unlocked else "#374957")
             at d0_orb_ring
         text "◯":
             xalign 0.5 yalign 0.5
             size int(diameter * 0.91)
-            color orb if unlocked else "#314353"
+            color (orb if unlocked else "#314353")
         text "✦":
             xpos int(diameter * 0.23) ypos int(diameter * 0.12)
-            color "#D0F4FF" if unlocked else "#43515B"
+            color ("#D0F4FF" if unlocked else "#43515B")
             size 23
             at d0_star_flicker
         text "·":
@@ -119,15 +119,15 @@ screen d0_thought_orb(key, title, hint, xp, yp, diameter, drift):
                 text title:
                     xalign 0.5
                     text_align 0.5
-                    size 27 if diameter > 230 else 23
+                    size (27 if diameter > 230 else 23)
                     bold True
-                    color bright if unlocked else "#576675"
+                    color (bright if unlocked else "#576675")
                 text caption:
                     xalign 0.5
                     text_align 0.5
                     xmaximum int(diameter * 0.66)
                     size 14
-                    color "#A9C9D8" if unlocked and not already else "#667989"
+                    color ("#A9C9D8" if unlocked and not already else "#667989")
         if not unlocked:
             text "✧":
                 xalign 0.5 ypos int(diameter * 0.74)
