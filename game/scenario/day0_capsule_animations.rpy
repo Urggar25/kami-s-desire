@@ -9,6 +9,10 @@ default d0_vent_inspecting = False
 default d0_vent_enabled = False
 default d0_air_elapsed = 0.0
 default d0_capsule_alarm = False
+default d0_valve_enabled = False
+default d0_valve_inspecting = False
+default d0_push_impact_count = 0
+default d0_push_impact_pending = False
 
 init python:
     def d0_capsule_mouse_camera():
@@ -151,6 +155,16 @@ screen d0_air_wipe():
             xpos=0, ypos=upper, xanchor=0.0, yanchor=0.0)
 
 # Un cycle relance a la demande pendant le passage de la main.
+transform reverse_img:
+    xzoom -1.0
+
+transform d0_pousse_fade:
+    alpha 0.0
+    linear 0.18 alpha 1.0
+
+transform d0_pousse_rest:
+    alpha 1.0
+
 transform d0_arm_sway:
     subpixel True
     xoffset 0
@@ -170,7 +184,7 @@ screen d0_capsule_vent_air():
 
 # Deux calques PNG successifs + la pose finale, toujours superposes au
 # caisson suivant le meme zoom et le meme decalage que la camera.
-screen d0_capsule_arm(pose=1, sway=False):
+screen d0_capsule_arm(pose=1, sway=False, reversed=False):
     zorder -3
     fixed:
         xsize config.screen_width
@@ -180,6 +194,10 @@ screen d0_capsule_arm(pose=1, sway=False):
             add (D0_CAPSULE_DIR + "d0_capsule_bras3.png"):
                 xysize (config.screen_width, config.screen_height)
                 at d0_arm_sway
+        elif reversed:
+            add (D0_CAPSULE_DIR + "d0_capsule_bras%d.png" % pose):
+                xysize (config.screen_width, config.screen_height)
+                at reverse_img
         else:
             add (D0_CAPSULE_DIR + "d0_capsule_bras%d.png" % pose) xysize (config.screen_width, config.screen_height)
 
@@ -198,6 +216,22 @@ screen d0_capsule_vent_hotspot():
                 hover_background None
                 focus_mask (D0_CAPSULE_DIR + "d0_capsule_vent.png")
                 action Call("d0_inspect_vent")
+
+# Hitbox invisible placee aux coordonnees du cylindre (sur canevas 1690x931).
+screen d0_capsule_valve_hotspot():
+    zorder -2
+    if d0_valve_enabled and not d0_valve_inspecting:
+        fixed:
+            xsize config.screen_width
+            ysize config.screen_height
+            at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+            button:
+                xsize config.screen_width
+                ysize config.screen_height
+                background None
+                hover_background None
+                focus_mask (D0_CAPSULE_DIR + "d0_capsule_valve.png")
+                action Call("d0_inspect_valve")
 
 # Le scénério change ce mode apres l'ouverture dirigee.
 screen d0_capsule_live(mode="idle"):
@@ -231,7 +265,9 @@ transform d0_push_impact_overlay:
     pause 0.8
     ease 0.12 alpha 0.0
 
-screen d0_pousse_hand(hit=False):
+# bras0 n'est actuellement pas present dans les assets du depot.
+# Au repos, la main est donc masquee plutot que de charger un PNG inexistant.
+screen d0_pousse_hand(hit=False, pressing=False):
     zorder -3
     fixed:
         xsize config.screen_width
@@ -242,7 +278,7 @@ screen d0_pousse_hand(hit=False):
             add (D0_CAPSULE_DIR + "d0_pousse_bras2_anim.png"):
                 xysize (config.screen_width, config.screen_height)
                 at d0_push_impact_overlay
-        else:
+        elif pressing:
             add (D0_CAPSULE_DIR + "d0_pousse_bras1.png"):
                 xysize (config.screen_width, config.screen_height)
-                at d0_push_strain
+                at d0_push_strain, d0_pousse_fade
