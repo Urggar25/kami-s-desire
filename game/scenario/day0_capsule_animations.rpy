@@ -63,20 +63,20 @@ screen d0_capsule_live(mode="idle"):
     fixed:
         xfill True
         yfill True
-        add D0_CAPSULE_DIR + "d0_capsule_base.png" xysize (config.screen_width, config.screen_height)
+        add (D0_CAPSULE_DIR + "d0_capsule_base.png") xysize (config.screen_width, config.screen_height)
         if mode == "startup":
-            add D0_CAPSULE_DIR + "d0_capsule_lights.png" xysize (config.screen_width, config.screen_height) at d0_capsule_lamp_start
+            add (D0_CAPSULE_DIR + "d0_capsule_lights.png") xysize (config.screen_width, config.screen_height) at d0_capsule_lamp_start
         elif mode == "alarm":
-            add D0_CAPSULE_DIR + "d0_capsule_lights.png" xysize (config.screen_width, config.screen_height) at d0_capsule_lamp_alarm
+            add (D0_CAPSULE_DIR + "d0_capsule_lights.png") xysize (config.screen_width, config.screen_height) at d0_capsule_lamp_alarm
         else:
-            add D0_CAPSULE_DIR + "d0_capsule_lights.png" xysize (config.screen_width, config.screen_height) at d0_capsule_lamp_idle
-        add D0_CAPSULE_DIR + "d0_capsule_vent.png" xysize (config.screen_width, config.screen_height) at d0_capsule_vent_idle
-        add D0_CAPSULE_DIR + "d0_capsule_valve.png" xysize (config.screen_width, config.screen_height)
+            add (D0_CAPSULE_DIR + "d0_capsule_lights.png") xysize (config.screen_width, config.screen_height) at d0_capsule_lamp_idle
+        add (D0_CAPSULE_DIR + "d0_capsule_vent.png") xysize (config.screen_width, config.screen_height) at d0_capsule_vent_idle
+        add (D0_CAPSULE_DIR + "d0_capsule_valve.png") xysize (config.screen_width, config.screen_height)
         if mode == "alarm":
-            add D0_CAPSULE_DIR + "d0_capsule_led_red.png" xysize (config.screen_width, config.screen_height) at d0_capsule_led_warning
+            add (D0_CAPSULE_DIR + "d0_capsule_led_red.png") xysize (config.screen_width, config.screen_height) at d0_capsule_led_warning
         elif mode == "startup":
-            add D0_CAPSULE_DIR + "d0_capsule_led_gray.png" xysize (config.screen_width, config.screen_height)
-            add D0_CAPSULE_DIR + "d0_capsule_led_green.png" xysize (config.screen_width, config.screen_height) at d0_capsule_valve_start
+            add (D0_CAPSULE_DIR + "d0_capsule_led_gray.png") xysize (config.screen_width, config.screen_height)
+            add (D0_CAPSULE_DIR + "d0_capsule_led_green.png") xysize (config.screen_width, config.screen_height) at d0_capsule_valve_start
         else:
-            add D0_CAPSULE_DIR + "d0_capsule_led_green.png" xysize (config.screen_width, config.screen_height) at d0_capsule_led_normal
+            add (D0_CAPSULE_DIR + "d0_capsule_led_green.png") xysize (config.screen_width, config.screen_height) at d0_capsule_led_normal
 
