@@ -103,7 +103,7 @@ screen d0_capsule_picture():
 
 screen d0_capsule_lighting(alarm=False, intro=False):
     # Positif pour passer devant toutes les textures, mais sous screen say.
-    zorder 5
+    zorder 0
     # Filtre sur la TOTALITE des sprites, jamais sur le texte.
     if intro:
         fixed:
