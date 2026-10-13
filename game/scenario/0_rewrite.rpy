@@ -142,6 +142,8 @@ screen d0_fog():
 # Aucun asset graphique supplementaire n'est necessaire.
 default d0_push_progress = 0.0
 default d0_push_held = False
+default d0_push_impact_ticks = 0
+default d0_push_wait_release = False
 
 # Ne pas flouter la CG : le reveil est assure par le blink deja present dans le jeu.
 transform d0_cg_breathe:
@@ -193,24 +195,41 @@ screen d0_name_recognition():
 
 # HUD sans encart : consigne legere et progression integree sur l'image.
 # Le joueur voit surtout son bras et le caisson, pas une boite d'interface.
+# Une seule horloge pilote jauge, impacts et verrouillage des commandes.
+# 16 ticks x 0,05 s = 0,80 s d'affichage garanti par impact.
+init python:
+    def d0_push_tick():
+        st = renpy.store
+        if st.d0_push_impact_pending:
+            st.d0_push_impact_ticks += 1
+            if st.d0_push_impact_ticks >= 16:
+                st.d0_push_impact_pending = False
+                st.d0_push_impact_ticks = 0
+            return
+        if not st.d0_push_held:
+            return
+        st.d0_push_progress = min(1.0, st.d0_push_progress + 0.012)
+        if ((st.d0_push_impact_count == 0 and st.d0_push_progress >= 0.60)
+                or (st.d0_push_impact_count == 1 and st.d0_push_progress >= 1.0)):
+            st.d0_push_impact_count += 1
+            st.d0_push_impact_pending = True
+            st.d0_push_impact_ticks = 0
+            renpy.sound.play("audio/sfx_metal_clank.mp3")
+
 screen d0_force_hatch():
     modal True
     zorder 210
-    key "mousedown_1" action SetVariable("d0_push_held", True)
+    key "mousedown_1" action If(not d0_push_impact_pending, SetVariable("d0_push_held", True), NullAction())
     key "mouseup_1" action SetVariable("d0_push_held", False)
-    # La jauge n'avance que lorsque le bouton est maintenu.
-    timer 0.05 repeat True action If(d0_push_held and not d0_push_impact_pending, SetVariable("d0_push_progress", min(1.0, d0_push_progress + 0.012)), NullAction())
-    # L'impact intervient une fois au passage de 60 %, puis de 100 %.
-    timer 0.05 repeat True action If(d0_push_progress >= 0.60 and d0_push_impact_count == 0, [SetVariable("d0_push_impact_pending", True), SetVariable("d0_push_impact_count", 1), Function(renpy.sound.play, "audio/sfx_metal_clank.mp3")], NullAction())
-    timer 0.05 repeat True action If(d0_push_progress >= 1.0 and d0_push_impact_count == 1 and not d0_push_impact_pending, [SetVariable("d0_push_impact_pending", True), SetVariable("d0_push_impact_count", 2), Function(renpy.sound.play, "audio/sfx_metal_clank.mp3")], NullAction())
-    timer 0.90 repeat True action If(d0_push_impact_pending, SetVariable("d0_push_impact_pending", False), NullAction())
+    timer 0.05 repeat True action Function(d0_push_tick)
     timer 0.05 repeat True action If(d0_push_progress >= 1.0 and d0_push_impact_count == 2 and not d0_push_impact_pending, Return("effort"), NullAction())
-    timer 18.0 action Return("timeout")
+    timer 20.0 action Return("timeout")
     vbox:
         xalign 0.5
         yalign 0.80
         spacing 16
-        text "MAINTENEZ LE CLIC" xalign 0.5 size 25 bold True color "#F0F7FF" outlines [(2, "#101D30", 0, 2)]
+        text ("IMPACT — PATIENTEZ" if d0_push_impact_pending else "MAINTENEZ LE CLIC"):
+            xalign 0.5 size 25 bold True color "#F0F7FF" outlines [(2, "#101D30", 0, 2)]
         fixed:
             xalign 0.5
             xsize 270
@@ -228,6 +247,9 @@ screen d0_pousse_game_visual():
         xsize config.screen_width
         ysize config.screen_height
         at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+        # Au repos, bras0 remplace bras1 s'il est disponible.
+        if not d0_push_held and not d0_push_impact_pending and renpy.loadable(D0_CAPSULE_DIR + "d0_pousse_bras0.png"):
+            add (D0_CAPSULE_DIR + "d0_pousse_bras0.png") xysize (config.screen_width, config.screen_height)
         showif d0_push_held and not d0_push_impact_pending:
             add (D0_CAPSULE_DIR + "d0_pousse_bras1.png"):
                 xysize (config.screen_width, config.screen_height)
@@ -300,6 +322,7 @@ label _0_CANON:
     $ d0_push_progress = 0.0
     $ d0_push_held = False
     $ d0_push_impact_count = 0
+    $ d0_push_impact_ticks = 0
     $ d0_push_impact_pending = False
     show screen d0_pousse_game_visual
     call screen d0_force_hatch
@@ -425,6 +448,7 @@ label d0_inspect_valve:
     $ d0_valve_inspecting = False
     $ d0_valve_enabled = True
     show screen d0_capsule_valve_hotspot
+    $ renpy.restart_interaction()
     return
 
 label d0_inspect_vent:
