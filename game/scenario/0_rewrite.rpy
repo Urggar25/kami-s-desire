@@ -143,16 +143,7 @@ screen d0_fog():
 default d0_push_progress = 0.0
 default d0_push_held = False
 
-transform d0_wake_focus:
-    subpixel True
-    zoom 1.045
-    blur 15
-    alpha 0.35
-    parallel:
-        linear 2.0 blur 0 alpha 1.0
-    parallel:
-        ease 2.0 zoom 1.025
-
+# Ne pas flouter la CG : le reveil est assure par le blink deja present dans le jeu.
 transform d0_cg_breathe:
     subpixel True
     zoom 1.045
@@ -200,46 +191,45 @@ screen d0_name_recognition():
         outlines [(2, "#254756", 0, 0)]
         at d0_name_appear
 
+# HUD sans encart : consigne legere et progression integree sur l'image.
+# Le joueur voit surtout son bras et le caisson, pas une boite d'interface.
 screen d0_force_hatch():
     modal True
     zorder 210
-    # Mousedown et mouseup permettent de pousser en maintenant le clic.
-    # Une sortie automatique evite de bloquer les joueurs et le mode auto.
     key "mousedown_1" action SetVariable("d0_push_held", True)
     key "mouseup_1" action SetVariable("d0_push_held", False)
-    timer 0.05 repeat True action If(d0_push_held, SetVariable("d0_push_progress", min(1.0, d0_push_progress + 0.009)), NullAction())
+    timer 0.05 repeat True action If(d0_push_held, SetVariable("d0_push_progress", min(1.0, d0_push_progress + 0.012)), NullAction())
     timer 0.05 repeat True action If(d0_push_progress >= 1.0, Return("effort"), NullAction())
-    timer 11.0 action Return("timeout")
-    add Solid("#02091455")
-    frame:
+    timer 10.0 action Return("timeout")
+
+    # Feedback centre sur le geste, sans fond rectangulaire.
+    vbox:
         xalign 0.5
-        yalign 0.83
-        xsize 530
-        padding (30, 20)
-        background Solid("#071725DD")
-        vbox:
-            spacing 12
-            xfill True
-            text "MAINTENEZ LE CLIC POUR POUSSER":
-                xalign 0.5
-                size 21
-                color "#DDF5FF"
-                bold True
-            bar:
-                value AnimatedValue(value=d0_push_progress, range=1.0, delay=0.08)
-                xfill True
-                ysize 13
-                left_bar Solid("#A6DCEB")
-                right_bar Solid("#243D4C")
-            text "Le couvercle ne cede pas.":
-                xalign 0.5
-                size 15
-                color "#9BB4C2"
+        yalign 0.80
+        spacing 16
+        text "MAINTENEZ LE CLIC":
+            xalign 0.5
+            size 25
+            bold True
+            color "#F0F7FF"
+            outlines [(2, "#101D30", 0, 2)]
+        fixed:
+            xalign 0.5
+            xsize 270
+            ysize 4
+            add Solid("#C7D8EB66") xsize 270 ysize 2 ypos 1
+            add Solid("#ECF9FF") xsize int(270 * d0_push_progress) ysize 4
+        text "POUSSER LE COUVERCLE":
+            xalign 0.5
+            size 15
+            color "#D0DBE8"
+            outlines [(1, "#101D30", 0, 1)]
     textbutton "PASSER":
         xalign 0.96
         yalign 0.94
-        text_size 17
-        text_color "#C9DCE6"
+        text_size 15
+        text_color "#D2E0EB"
+        text_hover_color "#FFFFFF"
         action Return("skip")
 
 label _0_CANON:
@@ -262,11 +252,10 @@ label _0_CANON:
     think "..."
     noam "Où... Où suis-je ?"
 
-    # Le joueur ouvre les yeux sur la premiere CG, encore trouble.
-    $ blink()
+    # CG nette des le depart : le blink existant simule les paupieres.
     $ unlock_gallery_image("bg_cg001")
-    scene bg_cg001 at adaptive_fullscreen, d0_wake_focus with dissolve
-    pause 1.6
+    scene bg_cg001 at adaptive_fullscreen
+    $ blink()
     scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe
     think "Ah ! C'est froid !"
     noam "Pourquoi je ne me rappelle de rien ?"
@@ -283,7 +272,8 @@ label _0_CANON:
 
     # Le bras dans la seconde CG rend l'effort tangible.
     $ unlock_gallery_image("bg_cg001_1")
-    scene bg_cg001_1 at adaptive_fullscreen with dissolve
+    scene bg_cg001_1 at adaptive_fullscreen
+    $ blink()
     play sound "audio/sfx_metal_clank.mp3"
     noam "Pourquoi je suis enfermé ?! Qu'est-ce qui se passe ici ?!"
     "Je plaque ma main contre le couvercle et pousse une première fois. Rien ne bouge, pas même d'un millimètre."
@@ -301,7 +291,8 @@ label _0_CANON:
     noam "Non... Non, c'est pas possible. Il doit bien y avoir un moyen de sortir !"
 
     # L'effort laisse place a la concentration : on reconstitue d'abord le prenom.
-    scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe with dissolve
+    scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe
+    $ blink()
     "Je cherche une poignée, un verrou, n'importe quoi, mais plus je m'agite, plus j'ai l'impression de manquer d'air."
     think "Calme-toi. Si tu paniques maintenant, tu vas juste t'épuiser."
     noam "Réfléchis... Je suis qui, déjà ? Qu'est-ce que je fais là ?"
@@ -317,9 +308,8 @@ label _0_CANON:
     noam "D'accord... Noam. C'est déjà ça."
     think "Mais comment je suis arrivé dans cette boîte ? Et pourquoi est-ce que je ne me rappelle de rien d'autre ?"
     think "Allez... Fouille dans ta mémoire. Il doit bien rester quelque chose !"
-    scene bg_cg001 at adaptive_fullscreen, d0_memory_sink
-    pause 1.25
-    scene black with dissolve
+    $ blink()
+    scene black
     while not d0_memories_done:
         $ d0_memory_choice = ""
         call screen d0_memories
