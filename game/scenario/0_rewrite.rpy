@@ -149,9 +149,13 @@ label _0_CANON:
     pause 0.6
     noam "Où... Où suis-je ?"
     $ blink()
+    $ unlock_gallery_image("bg_cg001")
+    scene bg_cg001 at adaptive_fullscreen with dissolve
     think "Ah ! C'est froid !"
     noam "Pourquoi je ne me rappelle de rien ?"
     "Je pose ma main contre les parois métalliques qui s'étendent devant moi. À gauche, à droite, devant, derrière... Il y en a partout !"
+    $ unlock_gallery_image("bg_cg001_1")
+    scene bg_cg001_1 at adaptive_fullscreen with dissolve
     noam "Pourquoi je suis enfermé ?! Qu'est-ce qui se passe ici ?!"
     "Je pousse de toutes mes forces contre la paroi. Rien ne bouge."
     noam "Réfléchis, Noam ! Tu vas bien te souvenir de quelque chose !"
@@ -170,13 +174,14 @@ label _0_CANON:
             call d0_memory_conclave
         elif d0_memory_choice == "lysa":
             call d0_memory_lysa
-    scene black with dissolve
+    scene bg_cg001 at adaptive_fullscreen with dissolve
     think "Bon... Je commence à comprendre."
     think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
     noam "Mais pourquoi je me suis réveillé ?! Et surtout, comment je sors de là ?"
     "Je cherche encore une ouverture autour de moi, mais il n'y a rien qui ressemble à une poignée ou à un bouton."
     noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
     "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
+    scene bg_cg001_1 at adaptive_fullscreen with vpunch
     play sound "audio/sfx_gresillement.mp3"
     voix "Acheminement en cours. Reprise du protocole de sédation."
     noam "Quoi ?! Attendez, je suis réveillé !"
