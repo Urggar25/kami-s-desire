@@ -49,7 +49,7 @@ transform d0_capsule_intro_camera:
 # Pas de longues lignes geometriques dont le pivot se decale avec rotate.
 transform d0_capsule_color_pulse:
     alpha 0.0
-    linear 0.13 alpha 0.38
+    linear 0.13 alpha 0.75
     pause 0.16
     ease 0.34 alpha 0.0
     pause 1.37
@@ -78,7 +78,7 @@ screen d0_capsule_beacon(color="#B9FFAC"):
         $ cy = int(config.screen_height * 127.0 / 931.0)
         # Eclair bref teinte la piece : le fond reste presque noir au repos.
         add Solid(color):
-            alpha 0.13
+            alpha 0.33
             at d0_capsule_color_pulse
         # Petite etoile concentree sur la diode; pas de rayons de 400 px.
         text "✦":
