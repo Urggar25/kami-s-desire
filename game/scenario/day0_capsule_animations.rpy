@@ -37,13 +37,13 @@ transform d0_capsule_intro_camera:
     xalign 0.5 yalign 0.5
     xoffset 0 yoffset 0
     pause 0.25
-    easein_out 0.85 xoffset 145 yoffset -12
+    ease 0.85 xoffset 145 yoffset -12
     pause 0.20
-    easein_out 1.25 xoffset -145 yoffset -12
+    ease 1.25 xoffset -145 yoffset -12
     pause 0.15
-    easein_out 1.10 xoffset 0 yoffset 90
+    ease 1.10 xoffset 0 yoffset 90
     pause 0.25
-    easein_out 0.60 xoffset 0 yoffset 0
+    ease 0.60 xoffset 0 yoffset 0
 
 transform d0_capsule_led_glow:
     alpha 0.0
