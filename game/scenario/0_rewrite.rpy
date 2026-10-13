@@ -334,7 +334,7 @@ label _0_CANON:
     noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
     "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
     hide screen d0_capsule_live
-    scene bg_cg001_1 at adaptive_fullscreen with vpunch
+    scene black
     show screen d0_capsule_live("alarm")
     play sound "audio/sfx_gresillement.mp3"
     voix "Acheminement en cours. Reprise du protocole de sédation."
