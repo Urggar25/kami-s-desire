@@ -254,9 +254,11 @@ label _0_CANON:
 
     # CG nette des le depart : le blink existant simule les paupieres.
     $ unlock_gallery_image("bg_cg001")
-    scene bg_cg001 at adaptive_fullscreen
+    scene black
+    show screen d0_capsule_live("startup")
     $ blink()
-    scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe
+    hide screen d0_capsule_live
+    show screen d0_capsule_live("idle")
     think "Ah ! C'est froid !"
     noam "Pourquoi je ne me rappelle de rien ?"
     "J'essaie de me redresser, mais mon front rencontre aussitôt une surface dure."
@@ -264,14 +266,13 @@ label _0_CANON:
     with hpunch
     noam "Aïe ! Mais... qu'est-ce que c'est que ce truc ?!"
     "Je tends les bras devant moi, puis sur les côtés, en cherchant à tâtons un peu d'espace. Mes doigts rencontrent du métal partout."
-    scene bg_cg001 at adaptive_fullscreen, d0_head_turn_left
-    pause 0.45
-    scene bg_cg001 at adaptive_fullscreen, d0_head_turn_right
+    # Micro-mouvements conserves sur les calques : on ne decale pas les composants.
     pause 0.45
     think "Attends... C'est pas une chambre. Il n'y a même pas assez de place pour m'asseoir !"
 
     # Le bras dans la seconde CG rend l'effort tangible.
     $ unlock_gallery_image("bg_cg001_1")
+    hide screen d0_capsule_live
     scene bg_cg001_1 at adaptive_fullscreen
     $ blink()
     play sound "audio/sfx_metal_clank.mp3"
@@ -291,7 +292,8 @@ label _0_CANON:
     noam "Non... Non, c'est pas possible. Il doit bien y avoir un moyen de sortir !"
 
     # L'effort laisse place a la concentration : on reconstitue d'abord le prenom.
-    scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe
+    scene black
+    show screen d0_capsule_live("idle")
     $ blink()
     "Je cherche une poignée, un verrou, n'importe quoi, mais plus je m'agite, plus j'ai l'impression de manquer d'air."
     think "Calme-toi. Si tu paniques maintenant, tu vas juste t'épuiser."
@@ -309,6 +311,7 @@ label _0_CANON:
     think "Mais comment je suis arrivé dans cette boîte ? Et pourquoi est-ce que je ne me rappelle de rien d'autre ?"
     think "Allez... Fouille dans ta mémoire. Il doit bien rester quelque chose !"
     $ blink()
+    hide screen d0_capsule_live
     scene black
     while not d0_memories_done:
         $ d0_memory_choice = ""
@@ -321,14 +324,18 @@ label _0_CANON:
             call d0_memory_conclave
         elif d0_memory_choice == "lysa":
             call d0_memory_lysa
-    scene bg_cg001 at adaptive_fullscreen with dissolve
+    scene black
+    show screen d0_capsule_live("idle")
+    $ blink()
     think "Bon... Je commence à comprendre."
     think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
     noam "Mais pourquoi je me suis réveillé ?! Et surtout, comment je sors de là ?"
     "Je cherche encore une ouverture autour de moi, mais il n'y a rien qui ressemble à une poignée ou à un bouton."
     noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
     "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
+    hide screen d0_capsule_live
     scene bg_cg001_1 at adaptive_fullscreen with vpunch
+    show screen d0_capsule_live("alarm")
     play sound "audio/sfx_gresillement.mp3"
     voix "Acheminement en cours. Reprise du protocole de sédation."
     noam "Quoi ?! Attendez, je suis réveillé !"
@@ -344,6 +351,7 @@ label _0_CANON:
     $ blink()
     pause 1.2
     hide screen d0_fog
+    hide screen d0_capsule_live
     scene black with dissolve
     stop music fadeout 1.2
     pause 0.8
