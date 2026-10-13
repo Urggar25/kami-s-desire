@@ -138,31 +138,188 @@ screen d0_fog():
     add Solid("#F0F8FF45") at d0_fog_rise
     text "SÉDATION EN COURS" xalign 0.5 yalign 0.14 color "#E4F7FF" size 24 at d0_pulse
 
+# Mise en scene du reveil : camera subjective, effets legers et interaction courte.
+# Aucun asset graphique supplementaire n'est necessaire.
+default d0_push_progress = 0.0
+default d0_push_held = False
+
+transform d0_wake_focus:
+    subpixel True
+    zoom 1.045
+    blur 15
+    alpha 0.35
+    parallel:
+        linear 2.0 blur 0 alpha 1.0
+    parallel:
+        ease 2.0 zoom 1.025
+
+transform d0_cg_breathe:
+    subpixel True
+    zoom 1.045
+    yoffset 0
+    ease 2.4 yoffset -6
+    ease 2.5 yoffset 0
+    repeat
+
+transform d0_head_turn_left:
+    subpixel True
+    zoom 1.07
+    xoffset 0
+    ease 0.9 xoffset 22
+    ease 0.8 xoffset 0
+
+transform d0_head_turn_right:
+    subpixel True
+    zoom 1.07
+    xoffset 0
+    ease 0.9 xoffset -22
+    ease 0.8 xoffset 0
+
+transform d0_memory_sink:
+    subpixel True
+    zoom 1.025
+    blur 0
+    alpha 1.0
+    ease 1.7 zoom 1.09 blur 17 alpha 0.0
+
+transform d0_name_appear:
+    alpha 0.0
+    zoom 1.25
+    ease 0.4 alpha 1.0 zoom 1.0
+    pause 0.5
+    ease 0.35 alpha 0.0 zoom 0.95
+
+screen d0_name_recognition():
+    zorder 205
+    text "NOAM":
+        xalign 0.5
+        yalign 0.42
+        size 68
+        bold True
+        color "#DFF6FF"
+        outlines [(2, "#254756", 0, 0)]
+        at d0_name_appear
+
+screen d0_force_hatch():
+    modal True
+    zorder 210
+    # Mousedown et mouseup permettent de pousser en maintenant le clic.
+    # Une sortie automatique evite de bloquer les joueurs et le mode auto.
+    key "mousedown_1" action SetVariable("d0_push_held", True)
+    key "mouseup_1" action SetVariable("d0_push_held", False)
+    timer 0.05 repeat True action If(d0_push_held, SetVariable("d0_push_progress", min(1.0, d0_push_progress + 0.009)), NullAction())
+    timer 0.05 repeat True action If(d0_push_progress >= 1.0, Return("effort"), NullAction())
+    timer 11.0 action Return("timeout")
+    add Solid("#02091455")
+    frame:
+        xalign 0.5
+        yalign 0.83
+        xsize 530
+        padding (30, 20)
+        background Solid("#071725DD")
+        vbox:
+            spacing 12
+            xfill True
+            text "MAINTENEZ LE CLIC POUR POUSSER":
+                xalign 0.5
+                size 21
+                color "#DDF5FF"
+                bold True
+            bar:
+                value AnimatedValue(value=d0_push_progress, range=1.0, delay=0.08)
+                xfill True
+                ysize 13
+                left_bar Solid("#A6DCEB")
+                right_bar Solid("#243D4C")
+            text "Le couvercle ne cede pas.":
+                xalign 0.5
+                size 15
+                color "#9BB4C2"
+    textbutton "PASSER":
+        xalign 0.96
+        yalign 0.94
+        text_size 17
+        text_color "#C9DCE6"
+        action Return("skip")
+
 label _0_CANON:
     $ day_id = 0
     $ current_day = 0
     $ d0_memories_seen = []
     $ d0_memories_done = False
+    $ d0_push_progress = 0.0
+    $ d0_push_held = False
     scene black
     call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix")
     stop music fadeout 0.3
-    pause 0.6
+
+    # Premier contact : seulement le souffle et les vibrations du transport.
+    scene black
+    play sound "audio/sfx_breath.mp3"
+    pause 1.4
+    play sound "audio/sfx_metal_creak.mp3"
+    pause 0.8
+    think "..."
     noam "Où... Où suis-je ?"
+
+    # Le joueur ouvre les yeux sur la premiere CG, encore trouble.
     $ blink()
     $ unlock_gallery_image("bg_cg001")
-    scene bg_cg001 at adaptive_fullscreen with dissolve
+    scene bg_cg001 at adaptive_fullscreen, d0_wake_focus with dissolve
+    pause 1.6
+    scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe
     think "Ah ! C'est froid !"
     noam "Pourquoi je ne me rappelle de rien ?"
-    "Je pose ma main contre les parois métalliques qui s'étendent devant moi. À gauche, à droite, devant, derrière... Il y en a partout !"
+    "J'essaie de me redresser, mais mon front rencontre aussitôt une surface dure."
+    play sound "audio/sfx_thud.mp3"
+    with hpunch
+    noam "Aïe ! Mais... qu'est-ce que c'est que ce truc ?!"
+    "Je tends les bras devant moi, puis sur les côtés, en cherchant à tâtons un peu d'espace. Mes doigts rencontrent du métal partout."
+    scene bg_cg001 at adaptive_fullscreen, d0_head_turn_left
+    pause 0.45
+    scene bg_cg001 at adaptive_fullscreen, d0_head_turn_right
+    pause 0.45
+    think "Attends... C'est pas une chambre. Il n'y a même pas assez de place pour m'asseoir !"
+
+    # Le bras dans la seconde CG rend l'effort tangible.
     $ unlock_gallery_image("bg_cg001_1")
     scene bg_cg001_1 at adaptive_fullscreen with dissolve
+    play sound "audio/sfx_metal_clank.mp3"
     noam "Pourquoi je suis enfermé ?! Qu'est-ce qui se passe ici ?!"
-    "Je pousse de toutes mes forces contre la paroi. Rien ne bouge."
-    noam "Réfléchis, Noam ! Tu vas bien te souvenir de quelque chose !"
-    think "Ah ! Oui ! C'est ça ! Noam, c'est mon prénom !"
+    "Je plaque ma main contre le couvercle et pousse une première fois. Rien ne bouge, pas même d'un millimètre."
+    play sound "audio/sfx_metal_creak.mp3"
+    scene bg_cg001_1 at adaptive_fullscreen with vpunch
+    "Je réessaie en prenant appui comme je peux, les épaules écrasées contre le fond du caisson."
+    $ d0_push_progress = 0.0
+    $ d0_push_held = False
+    call screen d0_force_hatch
+    $ d0_push_held = False
+    play sound "audio/sfx_metal_clank.mp3"
+    scene bg_cg001_1 at adaptive_fullscreen with hpunch
+    "Le métal gronde sous mes mains, mais le couvercle reste fermé. À bout de souffle, je laisse retomber mon bras."
+    play sound "audio/sfx_breath.mp3"
+    noam "Non... Non, c'est pas possible. Il doit bien y avoir un moyen de sortir !"
+
+    # L'effort laisse place a la concentration : on reconstitue d'abord le prenom.
+    scene bg_cg001 at adaptive_fullscreen, d0_cg_breathe with dissolve
+    "Je cherche une poignée, un verrou, n'importe quoi, mais plus je m'agite, plus j'ai l'impression de manquer d'air."
+    think "Calme-toi. Si tu paniques maintenant, tu vas juste t'épuiser."
+    noam "Réfléchis... Je suis qui, déjà ? Qu'est-ce que je fais là ?"
+    "J'essaie de me rappeler mon réveil, la veille, la dernière personne à qui j'ai parlé... Impossible. Tout se mélange."
+    think "Non. Il y a forcément quelque chose dont je me souviens."
+    pause 0.4
+    think "Noam... Oui. Je m'appelle Noam !"
+    play sound "audio/sfx_beep.mp3"
+    show screen d0_name_recognition
+    pause 1.15
+    hide screen d0_name_recognition
     $ unlock_character_name("noam")
-    think "Mais... Il y a autre chose, non ?!"
-    think "Allez... Il faut que je me rappelle !"
+    noam "D'accord... Noam. C'est déjà ça."
+    think "Mais comment je suis arrivé dans cette boîte ? Et pourquoi est-ce que je ne me rappelle de rien d'autre ?"
+    think "Allez... Fouille dans ta mémoire. Il doit bien rester quelque chose !"
+    scene bg_cg001 at adaptive_fullscreen, d0_memory_sink
+    pause 1.25
+    scene black with dissolve
     while not d0_memories_done:
         $ d0_memory_choice = ""
         call screen d0_memories
