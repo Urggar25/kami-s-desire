@@ -45,37 +45,51 @@ transform d0_capsule_intro_camera:
     pause 0.25
     ease 0.60 xoffset 0 yoffset 0
 
-transform d0_capsule_led_glow:
+# Flash concentre exactement sur le detecteur (410, 127) du CANEVAS SOURCE.
+# Pas de longues lignes geometriques dont le pivot se decale avec rotate.
+transform d0_capsule_color_pulse:
     alpha 0.0
-    linear 0.12 alpha 0.78
-    pause 0.22
-    easeout 0.34 alpha 0.0
-    pause 1.32
+    linear 0.13 alpha 0.38
+    pause 0.16
+    ease 0.34 alpha 0.0
+    pause 1.37
     repeat
 
-transform d0_capsule_ray_glow:
+transform d0_capsule_sun_pulse:
     alpha 0.0
-    linear 0.12 alpha 0.55
-    pause 0.22
-    easeout 0.34 alpha 0.0
-    pause 1.32
-    repeat
+    zoom 0.70
+    parallel:
+        linear 0.13 alpha 0.85
+        pause 0.16
+        ease 0.34 alpha 0.0
+        pause 1.37
+        repeat
+    parallel:
+        ease 0.63 zoom 1.45
+        pause 1.37
+        zoom 0.70
+        repeat
 
-# Eclairage vert au point (410, 127) dans la resolution SOURCE 1690x931.
-# Les rayons sont des traits lumineux transparents et ne constituent pas
-# une nouvelle texture qui risque de se decaler.
 screen d0_capsule_beacon(color="#B9FFAC"):
     fixed:
-        xfill True yfill True
+        xsize config.screen_width
+        ysize config.screen_height
         $ cx = int(config.screen_width * 410.0 / 1690.0)
         $ cy = int(config.screen_height * 127.0 / 931.0)
-        add Solid(color + "16") at d0_capsule_led_glow
-        # Rayons stylises autour du voyant, peu opaques, effets ponctuels.
-        for angle in (-83, -59, -38, -15, 12, 34, 60, 87, 115, 145, 178, 205, 232, 260):
-            add Transform(Solid(color), xysize=(int(config.screen_width * 0.30), 3),
-                anchor=(0.0, 0.5), rotate=angle, alpha=0.12):
-                xpos cx ypos cy
-                at d0_capsule_ray_glow
+        # Eclair bref teinte la piece : le fond reste presque noir au repos.
+        add Solid(color):
+            alpha 0.13
+            at d0_capsule_color_pulse
+        # Petite etoile concentree sur la diode; pas de rayons de 400 px.
+        text "✦":
+            xpos cx
+            ypos cy
+            xanchor 0.5
+            yanchor 0.5
+            size 37
+            color color
+            outlines [(8, color + "55", 0, 0), (18, color + "18", 0, 0)]
+            at d0_capsule_sun_pulse
 
 # Le detecteur est eteint par defaut; il pulse toutes les 2 secondes :
 # environ 0.65s allume, 1.35s gris.
@@ -96,12 +110,13 @@ screen d0_capsule_picture(alarm=False):
     fixed:
         xfill True yfill True
         add (D0_CAPSULE_DIR + "d0_capsule_base.png") xysize (config.screen_width, config.screen_height)
-        # Ambiance nuit : bleu nuit transparent, et non un voile blanc.
-        add Solid("#07122582")
-        add (D0_CAPSULE_DIR + "d0_capsule_lights.png") xysize (config.screen_width, config.screen_height) at d0_lights_stable
+        # Composer d'abord TOUS les objets, puis assombrir l'ensemble.
+        add (D0_CAPSULE_DIR + "d0_capsule_lights.png") xysize (config.screen_width, config.screen_height)
         add (D0_CAPSULE_DIR + "d0_capsule_vent.png") xysize (config.screen_width, config.screen_height)
         add (D0_CAPSULE_DIR + "d0_capsule_valve.png") xysize (config.screen_width, config.screen_height)
         add (D0_CAPSULE_DIR + "d0_capsule_led_gray.png") xysize (config.screen_width, config.screen_height)
+        # Filtre NUIT au-dessus des composants, environ 88 % d'obscurcissement.
+        add Solid("#020812E0")
         if alarm:
             add (D0_CAPSULE_DIR + "d0_capsule_led_red.png") xysize (config.screen_width, config.screen_height) at d0_led_flash
         else:
