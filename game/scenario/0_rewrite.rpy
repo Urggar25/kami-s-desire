@@ -263,6 +263,9 @@ label _0_CANON:
     $ renpy.pause(4.8, hard=True)
     hide screen d0_capsule_live
     show screen d0_capsule_live("idle")
+    show screen d0_capsule_vent_air
+    $ d0_vent_enabled = True
+    show screen d0_capsule_vent_hotspot
     think "Ah ! C'est froid !"
     noam "Pourquoi je ne me rappelle de rien ?"
     "J'essaie de me redresser, mais mon front rencontre aussitôt une surface dure."
@@ -276,6 +279,9 @@ label _0_CANON:
 
     # Le bras dans la seconde CG rend l'effort tangible.
     $ unlock_gallery_image("bg_cg001_1")
+    $ d0_vent_enabled = False
+    hide screen d0_capsule_vent_hotspot
+    hide screen d0_capsule_vent_air
     hide screen d0_capsule_live
     scene bg_cg001_1 at adaptive_fullscreen
     $ blink()
@@ -298,6 +304,9 @@ label _0_CANON:
     # L'effort laisse place a la concentration : on reconstitue d'abord le prenom.
     scene black
     show screen d0_capsule_live("idle")
+    show screen d0_capsule_vent_air
+    $ d0_vent_enabled = True
+    show screen d0_capsule_vent_hotspot
     $ blink()
     "Je cherche une poignée, un verrou, n'importe quoi, mais plus je m'agite, plus j'ai l'impression de manquer d'air."
     think "Calme-toi. Si tu paniques maintenant, tu vas juste t'épuiser."
@@ -315,6 +324,9 @@ label _0_CANON:
     think "Mais comment je suis arrivé dans cette boîte ? Et pourquoi est-ce que je ne me rappelle de rien d'autre ?"
     think "Allez... Fouille dans ta mémoire. Il doit bien rester quelque chose !"
     $ blink()
+    $ d0_vent_enabled = False
+    hide screen d0_capsule_vent_hotspot
+    hide screen d0_capsule_vent_air
     hide screen d0_capsule_live
     scene black
     while not d0_memories_done:
@@ -330,6 +342,9 @@ label _0_CANON:
             call d0_memory_lysa
     scene black
     show screen d0_capsule_live("idle")
+    show screen d0_capsule_vent_air
+    $ d0_vent_enabled = True
+    show screen d0_capsule_vent_hotspot
     $ blink()
     think "Bon... Je commence à comprendre."
     think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
@@ -337,6 +352,9 @@ label _0_CANON:
     "Je cherche encore une ouverture autour de moi, mais il n'y a rien qui ressemble à une poignée ou à un bouton."
     noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
     "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
+    $ d0_vent_enabled = False
+    hide screen d0_capsule_vent_hotspot
+    hide screen d0_capsule_vent_air
     hide screen d0_capsule_live
     scene black
     show screen d0_capsule_live("alarm")
@@ -361,6 +379,49 @@ label _0_CANON:
     pause 0.8
     call end_day("1", sleeping=True)
     jump _1_CANON
+
+# Interaction facultative disponible en cliquant sur la grille pendant
+# les dialogues du caisson. Aucun nouvel etat narratif permanent.
+label d0_inspect_vent:
+    $ d0_vent_inspecting = True
+    $ d0_vent_enabled = False
+    hide screen d0_capsule_vent_hotspot
+    hide screen d0_capsule_vent_air
+    # Environ deux secondes de levee (trois poses en fondus).
+    show screen d0_capsule_arm(1)
+    with Dissolve(0.25)
+    $ renpy.pause(0.40, hard=True)
+    show screen d0_capsule_arm(2)
+    with Dissolve(0.30)
+    $ renpy.pause(0.35, hard=True)
+    show screen d0_capsule_arm(3)
+    with Dissolve(0.30)
+    $ renpy.pause(0.40, hard=True)
+    # Oscillation pendant 0.5 s, et souffle de ventilation synchronise.
+    show screen d0_capsule_arm(3, True)
+    show screen d0_capsule_vent_air
+    $ renpy.pause(0.50, hard=True)
+    think "Il y a de l'air qui passe à travers cette grille... et il est sacrément froid."
+    "Je laisse ma main quelques instants devant les fentes. Le souffle est régulier, presque glacé, mais je ne sens aucun mécanisme d'ouverture."
+    noam "Super... Au moins, je ne vais pas étouffer ici."
+    hide screen d0_capsule_vent_air
+    # Retour en sens inverse : 3 -> 2 -> 1 -> disparition.
+    show screen d0_capsule_arm(3)
+    with Dissolve(0.15)
+    show screen d0_capsule_arm(2)
+    with Dissolve(0.30)
+    $ renpy.pause(0.35, hard=True)
+    show screen d0_capsule_arm(1)
+    with Dissolve(0.30)
+    $ renpy.pause(0.30, hard=True)
+    hide screen d0_capsule_arm
+    with Dissolve(0.30)
+    $ d0_vent_inspecting = False
+    $ d0_vent_enabled = True
+    show screen d0_capsule_vent_air
+    show screen d0_capsule_vent_hotspot
+    return
+
 
 label d0_memory_noam:
     stop music fadeout 0.2
