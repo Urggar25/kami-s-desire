@@ -47,13 +47,19 @@ transform d0_capsule_intro_camera:
 
 transform d0_capsule_led_glow:
     alpha 0.0
-    linear 0.13 alpha 0.9
-    easeout 0.24 alpha 0.0
+    linear 0.12 alpha 0.78
+    pause 0.22
+    easeout 0.34 alpha 0.0
+    pause 1.32
+    repeat
 
 transform d0_capsule_ray_glow:
     alpha 0.0
-    linear 0.10 alpha 0.55
-    easeout 0.38 alpha 0.0
+    linear 0.12 alpha 0.55
+    pause 0.22
+    easeout 0.34 alpha 0.0
+    pause 1.32
+    repeat
 
 # Eclairage vert au point (410, 127) dans la resolution SOURCE 1690x931.
 # Les rayons sont des traits lumineux transparents et ne constituent pas
@@ -75,9 +81,9 @@ screen d0_capsule_beacon(color="#B9FFAC"):
 # environ 0.65s allume, 1.35s gris.
 transform d0_led_flash:
     alpha 0.0
-    linear 0.10 alpha 1.0
-    pause 0.48
-    linear 0.10 alpha 0.0
+    linear 0.12 alpha 1.0
+    pause 0.22
+    linear 0.34 alpha 0.0
     pause 1.32
     repeat
 
@@ -100,19 +106,11 @@ screen d0_capsule_picture(alarm=False):
             add (D0_CAPSULE_DIR + "d0_capsule_led_red.png") xysize (config.screen_width, config.screen_height) at d0_led_flash
         else:
             add (D0_CAPSULE_DIR + "d0_capsule_led_green.png") xysize (config.screen_width, config.screen_height) at d0_led_flash
-        # Le rayon et sa coloration suivent le meme cycle que la LED.
+        # Le rayon et sa coloration suivent le meme cycle de 2s que la LED.
         if alarm:
-            use d0_capsule_periodic_ray("#FF9191")
+            use d0_capsule_beacon("#FF9191")
         else:
-            use d0_capsule_periodic_ray("#B9FFAC")
-
-screen d0_capsule_periodic_ray(color):
-    fixed:
-        xfill True yfill True
-        # Chaque apparition est synchronisee avec le debut du cycle de la LED.
-        if True:
-            use d0_capsule_beacon(color)
-        timer 2.0 repeat True action NullAction()
+            use d0_capsule_beacon("#B9FFAC")
 
 # Le scénério change ce mode apres l'ouverture dirigee.
 screen d0_capsule_live(mode="idle"):
