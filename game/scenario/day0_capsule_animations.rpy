@@ -213,3 +213,36 @@ screen d0_capsule_live(mode="idle"):
             xsize config.screen_width ysize config.screen_height
             at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
             use d0_capsule_picture()
+
+# Poussee sur le couvercle (sprites pleine image, meme cadrage que le caisson).
+# La main est placee SOUS le filtre nocturne et SOUS les dialogues.
+transform d0_push_strain:
+    subpixel True
+    xoffset 0 yoffset 0
+    block:
+        ease 0.18 xoffset -3 yoffset -2
+        ease 0.17 xoffset 3 yoffset 1
+        ease 0.16 xoffset -2 yoffset -1
+        ease 0.18 xoffset 0 yoffset 0
+        repeat
+
+transform d0_push_impact_overlay:
+    alpha 1.0
+    pause 0.8
+    ease 0.12 alpha 0.0
+
+screen d0_pousse_hand(hit=False):
+    zorder -3
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+        if hit:
+            add (D0_CAPSULE_DIR + "d0_pousse_bras2.png") xysize (config.screen_width, config.screen_height)
+            add (D0_CAPSULE_DIR + "d0_pousse_bras2_anim.png"):
+                xysize (config.screen_width, config.screen_height)
+                at d0_push_impact_overlay
+        else:
+            add (D0_CAPSULE_DIR + "d0_pousse_bras1.png"):
+                xysize (config.screen_width, config.screen_height)
+                at d0_push_strain
