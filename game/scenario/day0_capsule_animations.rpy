@@ -102,7 +102,8 @@ screen d0_capsule_picture():
         add (D0_CAPSULE_DIR + "d0_capsule_led_gray.png") xysize (config.screen_width, config.screen_height)
 
 screen d0_capsule_lighting(alarm=False, intro=False):
-    zorder -1
+    # Positif pour passer devant toutes les textures, mais sous screen say.
+    zorder 5
     # Filtre sur la TOTALITE des sprites, jamais sur le texte.
     if intro:
         fixed:
