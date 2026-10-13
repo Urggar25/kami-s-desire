@@ -245,7 +245,7 @@ label _0_CANON:
 
     # Premier contact : seulement le souffle et les vibrations du transport.
     scene black
-    play sound "audio/sfx_breath.mp3"
+    play sound "audio/sfx_normal_breath.mp3"
     pause 1.4
     play sound "audio/sfx_metal_creak.mp3"
     pause 0.8
@@ -281,35 +281,57 @@ label _0_CANON:
     pause 0.45
     think "Attends... C'est pas une chambre. Il n'y a même pas assez de place pour m'asseoir !"
 
-    # Le bras dans la seconde CG rend l'effort tangible.
-    $ unlock_gallery_image("bg_cg001_1")
+    # Les animations du bras utilisent le decor interactif existant.
+    # Tous les sprites restent sous le filtre nuit/vert/rouge.
     $ d0_vent_enabled = False
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
-    hide screen d0_capsule_lighting
-    hide screen d0_capsule_live
-    scene bg_cg001_1 at adaptive_fullscreen
+    show screen d0_pousse_hand(False)
     $ blink()
     play sound "audio/sfx_metal_clank.mp3"
     noam "Pourquoi je suis enfermé ?! Qu'est-ce qui se passe ici ?!"
     "Je plaque ma main contre le couvercle et pousse une première fois. Rien ne bouge, pas même d'un millimètre."
     play sound "audio/sfx_metal_creak.mp3"
-    scene bg_cg001_1 at adaptive_fullscreen with vpunch
+    with vpunch
     "Je réessaie en prenant appui comme je peux, les épaules écrasées contre le fond du caisson."
     $ d0_push_progress = 0.0
     $ d0_push_held = False
     call screen d0_force_hatch
     $ d0_push_held = False
-    play sound "audio/sfx_metal_clank.mp3"
-    scene bg_cg001_1 at adaptive_fullscreen with hpunch
+
+    # Deux impacts successifs en fin d'effort.
+    # L'overlay d'impact s'efface seul apres 0,8s ; ensuite retour par fondu.
+    if _return == "effort":
+        $ d0_cam_x = 0.0
+        $ d0_cam_y = 0.0
+        hide screen d0_pousse_hand
+        show screen d0_pousse_hand(True)
+        play sound "audio/sfx_metal_clank.mp3"
+        with hpunch
+        $ renpy.pause(0.90, hard=True)
+        hide screen d0_pousse_hand
+        show screen d0_pousse_hand(False)
+        with Dissolve(0.28)
+        $ renpy.pause(0.20, hard=True)
+        hide screen d0_pousse_hand
+        show screen d0_pousse_hand(True)
+        play sound "audio/sfx_metal_clank.mp3"
+        with hpunch
+        $ renpy.pause(0.90, hard=True)
+        hide screen d0_pousse_hand
+        show screen d0_pousse_hand(False)
+        with Dissolve(0.28)
+    else:
+        play sound "audio/sfx_metal_clank.mp3"
+        with hpunch
+
     "Le métal gronde sous mes mains, mais le couvercle reste fermé. À bout de souffle, je laisse retomber mon bras."
-    play sound "audio/sfx_breath.mp3"
+    hide screen d0_pousse_hand
+    with Dissolve(0.30)
+    play sound "audio/sfx_normal_breath.mp3"
     noam "Non... Non, c'est pas possible. Il doit bien y avoir un moyen de sortir !"
 
     # L'effort laisse place a la concentration : on reconstitue d'abord le prenom.
-    scene black
-    show screen d0_capsule_live("idle")
-    show screen d0_capsule_lighting(False)
     $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
