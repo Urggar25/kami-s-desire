@@ -158,6 +158,13 @@ screen d0_air_wipe():
 transform reverse_img:
     xzoom -1.0
 
+transform d0_push_hold_visibility:
+    on show:
+        alpha 0.0
+        linear 0.18 alpha 1.0
+    on hide:
+        linear 0.22 alpha 0.0
+
 transform d0_pousse_fade:
     alpha 0.0
     linear 0.18 alpha 1.0
