@@ -198,39 +198,49 @@ screen d0_force_hatch():
     zorder 210
     key "mousedown_1" action SetVariable("d0_push_held", True)
     key "mouseup_1" action SetVariable("d0_push_held", False)
-    timer 0.05 repeat True action If(d0_push_held, SetVariable("d0_push_progress", min(1.0, d0_push_progress + 0.012)), NullAction())
-    timer 0.05 repeat True action If(d0_push_progress >= 1.0, Return("effort"), NullAction())
-    timer 10.0 action Return("timeout")
-
-    # Feedback centre sur le geste, sans fond rectangulaire.
+    # La jauge n'avance que lorsque le bouton est maintenu.
+    timer 0.05 repeat True action If(d0_push_held and not d0_push_impact_pending, SetVariable("d0_push_progress", min(1.0, d0_push_progress + 0.012)), NullAction())
+    # L'impact intervient une fois au passage de 60 %, puis de 100 %.
+    timer 0.05 repeat True action If(d0_push_progress >= 0.60 and d0_push_impact_count == 0, [SetVariable("d0_push_impact_pending", True), SetVariable("d0_push_impact_count", 1), Function(renpy.sound.play, "audio/sfx_metal_clank.mp3")], NullAction())
+    timer 0.05 repeat True action If(d0_push_progress >= 1.0 and d0_push_impact_count == 1 and not d0_push_impact_pending, [SetVariable("d0_push_impact_pending", True), SetVariable("d0_push_impact_count", 2), Function(renpy.sound.play, "audio/sfx_metal_clank.mp3")], NullAction())
+    timer 0.90 repeat True action If(d0_push_impact_pending, SetVariable("d0_push_impact_pending", False), NullAction())
+    timer 0.05 repeat True action If(d0_push_progress >= 1.0 and d0_push_impact_count == 2 and not d0_push_impact_pending, Return("effort"), NullAction())
+    timer 18.0 action Return("timeout")
+    use d0_pousse_game_visual
     vbox:
         xalign 0.5
         yalign 0.80
         spacing 16
-        text "MAINTENEZ LE CLIC":
-            xalign 0.5
-            size 25
-            bold True
-            color "#F0F7FF"
-            outlines [(2, "#101D30", 0, 2)]
+        text "MAINTENEZ LE CLIC" xalign 0.5 size 25 bold True color "#F0F7FF" outlines [(2, "#101D30", 0, 2)]
         fixed:
             xalign 0.5
             xsize 270
             ysize 4
             add Solid("#C7D8EB66") xsize 270 ysize 2 ypos 1
             add Solid("#ECF9FF") xsize int(270 * d0_push_progress) ysize 4
-        text "POUSSER LE COUVERCLE":
-            xalign 0.5
-            size 15
-            color "#D0DBE8"
-            outlines [(1, "#101D30", 0, 1)]
-    textbutton "PASSER":
-        xalign 0.96
-        yalign 0.94
-        text_size 15
-        text_color "#D2E0EB"
-        text_hover_color "#FFFFFF"
-        action Return("skip")
+        text "POUSSER LE COUVERCLE" xalign 0.5 size 15 color "#D0DBE8" outlines [(1, "#101D30", 0, 1)]
+    textbutton "PASSER" xalign 0.96 yalign 0.94 text_size 15 text_color "#D2E0EB" text_hover_color "#FFFFFF" action Return("skip")
+
+# Le sprite reste un ecran independant sous les dialogues et la lumiere.
+screen d0_pousse_game_visual():
+    if d0_push_impact_pending:
+        use d0_pousse_game_layer(True, False)
+    elif d0_push_held:
+        use d0_pousse_game_layer(False, True)
+    else:
+        use d0_pousse_game_layer(False, False)
+
+screen d0_pousse_game_layer(hit=False, pressing=False):
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+        if hit:
+            add (D0_CAPSULE_DIR + "d0_pousse_bras2.png") xysize (config.screen_width, config.screen_height)
+            add (D0_CAPSULE_DIR + "d0_pousse_bras2_anim.png") xysize (config.screen_width, config.screen_height) at d0_push_impact_overlay
+        elif pressing:
+            add (D0_CAPSULE_DIR + "d0_pousse_bras1.png") xysize (config.screen_width, config.screen_height) at d0_push_strain, d0_pousse_fade
+
 
 label _0_CANON:
     $ day_id = 0
@@ -269,7 +279,9 @@ label _0_CANON:
     $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
+    $ d0_valve_enabled = True
     show screen d0_capsule_vent_hotspot
+    show screen d0_capsule_valve_hotspot
     think "Ah ! C'est froid !"
     noam "Pourquoi je ne me rappelle de rien ?"
     "J'essaie de me redresser, mais mon front rencontre aussitôt une surface dure."
@@ -281,53 +293,24 @@ label _0_CANON:
     pause 0.45
     think "Attends... C'est pas une chambre. Il n'y a même pas assez de place pour m'asseoir !"
 
-    # Les animations du bras utilisent le decor interactif existant.
-    # Tous les sprites restent sous le filtre nuit/vert/rouge.
+    # Le bras ne commence a pousser que lorsque le joueur maintient le clic.
     $ d0_vent_enabled = False
+    $ d0_valve_enabled = False
     hide screen d0_capsule_vent_hotspot
+    hide screen d0_capsule_valve_hotspot
     hide screen d0_capsule_vent_air
-    show screen d0_pousse_hand(False)
     $ blink()
-    play sound "audio/sfx_metal_clank.mp3"
     noam "Pourquoi je suis enfermé ?! Qu'est-ce qui se passe ici ?!"
-    "Je plaque ma main contre le couvercle et pousse une première fois. Rien ne bouge, pas même d'un millimètre."
-    play sound "audio/sfx_metal_creak.mp3"
-    with vpunch
-    "Je réessaie en prenant appui comme je peux, les épaules écrasées contre le fond du caisson."
+    "Je cherche un appui pour pousser le couvercle, mais rien ne semble vouloir céder."
     $ d0_push_progress = 0.0
     $ d0_push_held = False
+    $ d0_push_impact_count = 0
+    $ d0_push_impact_pending = False
     call screen d0_force_hatch
     $ d0_push_held = False
-
-    # Deux impacts successifs en fin d'effort.
-    # L'overlay d'impact s'efface seul apres 0,8s ; ensuite retour par fondu.
-    if _return == "effort":
-        $ d0_cam_x = 0.0
-        $ d0_cam_y = 0.0
-        hide screen d0_pousse_hand
-        show screen d0_pousse_hand(True)
-        play sound "audio/sfx_metal_clank.mp3"
-        with hpunch
-        $ renpy.pause(0.90, hard=True)
-        hide screen d0_pousse_hand
-        show screen d0_pousse_hand(False)
-        with Dissolve(0.28)
-        $ renpy.pause(0.20, hard=True)
-        hide screen d0_pousse_hand
-        show screen d0_pousse_hand(True)
-        play sound "audio/sfx_metal_clank.mp3"
-        with hpunch
-        $ renpy.pause(0.90, hard=True)
-        hide screen d0_pousse_hand
-        show screen d0_pousse_hand(False)
-        with Dissolve(0.28)
-    else:
-        play sound "audio/sfx_metal_clank.mp3"
-        with hpunch
+    $ d0_push_impact_pending = False
 
     "Le métal gronde sous mes mains, mais le couvercle reste fermé. À bout de souffle, je laisse retomber mon bras."
-    hide screen d0_pousse_hand
-    with Dissolve(0.30)
     play sound "audio/sfx_normal_breath.mp3"
     noam "Non... Non, c'est pas possible. Il doit bien y avoir un moyen de sortir !"
 
@@ -335,7 +318,9 @@ label _0_CANON:
     $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
+    $ d0_valve_enabled = True
     show screen d0_capsule_vent_hotspot
+    show screen d0_capsule_valve_hotspot
     $ blink()
     "Je cherche une poignée, un verrou, n'importe quoi, mais plus je m'agite, plus j'ai l'impression de manquer d'air."
     think "Calme-toi. Si tu paniques maintenant, tu vas juste t'épuiser."
@@ -354,6 +339,8 @@ label _0_CANON:
     think "Allez... Fouille dans ta mémoire. Il doit bien rester quelque chose !"
     $ blink()
     $ d0_vent_enabled = False
+    $ d0_valve_enabled = False
+    hide screen d0_capsule_valve_hotspot
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
     hide screen d0_capsule_lighting
@@ -376,7 +363,9 @@ label _0_CANON:
     $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
+    $ d0_valve_enabled = True
     show screen d0_capsule_vent_hotspot
+    show screen d0_capsule_valve_hotspot
     $ blink()
     think "Bon... Je commence à comprendre."
     think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
@@ -385,6 +374,8 @@ label _0_CANON:
     noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
     "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
     $ d0_vent_enabled = False
+    $ d0_valve_enabled = False
+    hide screen d0_capsule_valve_hotspot
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
     hide screen d0_capsule_lighting
@@ -417,9 +408,33 @@ label _0_CANON:
 
 # Interaction facultative disponible en cliquant sur la grille pendant
 # les dialogues du caisson. Aucun nouvel etat narratif permanent.
+# Interaction facultative avec le dispositif de sedation.
+label d0_inspect_valve:
+    $ d0_valve_inspecting = True
+    $ d0_valve_enabled = False
+    hide screen d0_capsule_valve_hotspot
+    show screen d0_capsule_arm(1, False, True)
+    with Dissolve(0.25)
+    $ renpy.pause(0.35, hard=True)
+    show screen d0_capsule_arm(2, False, True)
+    with Dissolve(0.35)
+    think "C'est quoi, cette machine ? On dirait une sorte de réservoir relié au caisson..."
+    "Je tends les doigts vers le cylindre sans trouver d'interrupteur ou de commande à portée de main."
+    noam "J'aime pas du tout ce truc..."
+    show screen d0_capsule_arm(1, False, True)
+    with Dissolve(0.30)
+    hide screen d0_capsule_arm
+    with Dissolve(0.30)
+    $ d0_valve_inspecting = False
+    $ d0_valve_enabled = True
+    show screen d0_capsule_valve_hotspot
+    return
+
 label d0_inspect_vent:
     $ d0_vent_inspecting = True
     $ d0_vent_enabled = False
+    $ d0_valve_enabled = False
+    hide screen d0_capsule_valve_hotspot
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
     # Environ deux secondes de levee (trois poses en fondus).
