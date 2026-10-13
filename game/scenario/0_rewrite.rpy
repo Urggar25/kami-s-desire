@@ -255,8 +255,12 @@ label _0_CANON:
     # CG nette des le depart : le blink existant simule les paupieres.
     $ unlock_gallery_image("bg_cg001")
     scene black
-    show screen d0_capsule_live("startup")
+    $ d0_cam_x = 0.0
+    $ d0_cam_y = 0.0
+    show screen d0_capsule_live("intro")
     $ blink()
+    # Vue guidee : gauche, droite, puis haut. La souris est verrouillee ici.
+    $ renpy.pause(4.8, hard=True)
     hide screen d0_capsule_live
     show screen d0_capsule_live("idle")
     think "Ah ! C'est froid !"
