@@ -5,6 +5,8 @@ define D0_CAPSULE_ZOOM = 1.23
 
 default d0_cam_x = 0.0
 default d0_cam_y = 0.0
+default d0_vent_inspecting = False
+default d0_vent_enabled = False
 
 init python:
     def d0_capsule_mouse_camera():
@@ -119,6 +121,73 @@ screen d0_capsule_picture(alarm=False):
             use d0_capsule_beacon("#FF9191")
         else:
             use d0_capsule_beacon("#B9FFAC")
+
+# Souffle par balayage vertical : apparition 0-1 s, disparition
+# 0.5-1.5 s. Les deux balayages se croisent pendant 0.5 s.
+# Le cycle complet dure 5 s. L'animation ne change jamais de position.
+transform d0_vent_reveal:
+    subpixel True
+    crop (0, 0, config.screen_width, 1)
+    linear 1.0 crop (0, 0, config.screen_width, config.screen_height)
+    pause 4.0
+    repeat
+
+transform d0_vent_erase:
+    subpixel True
+    crop (0, 0, config.screen_width, config.screen_height)
+    pause 0.5
+    linear 1.0 crop (0, config.screen_height - 1, config.screen_width, 1)
+    pause 3.5
+    repeat
+
+# Un cycle relance a la demande pendant le passage de la main.
+transform d0_arm_sway:
+    subpixel True
+    xoffset 0
+    ease 0.12 xoffset -11
+    ease 0.13 xoffset 11
+    ease 0.12 xoffset -7
+    ease 0.13 xoffset 0
+
+screen d0_capsule_vent_air():
+    zorder 1
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+        add At(At(Transform(D0_CAPSULE_DIR + "d0_capsule_vent_anim.png",
+            xysize=(config.screen_width, config.screen_height)), d0_vent_reveal), d0_vent_erase)
+
+# Deux calques PNG successifs + la pose finale, toujours superposes au
+# caisson suivant le meme zoom et le meme decalage que la camera.
+screen d0_capsule_arm(pose=1, sway=False):
+    zorder 20
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+        if sway:
+            add (D0_CAPSULE_DIR + "d0_capsule_bras3.png"):
+                xysize (config.screen_width, config.screen_height)
+                at d0_arm_sway
+        else:
+            add (D0_CAPSULE_DIR + "d0_capsule_bras%d.png" % pose) xysize (config.screen_width, config.screen_height)
+
+# Calque interactif exactement sur le PNG de la grille : pas de rectangle
+# invisible clicable au-dessus des autres objets.
+screen d0_capsule_vent_hotspot():
+    zorder 10
+    if d0_vent_enabled and not d0_vent_inspecting:
+        fixed:
+            xsize config.screen_width
+            ysize config.screen_height
+            at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+            imagebutton:
+                idle (D0_CAPSULE_DIR + "d0_capsule_vent.png")
+                hover (D0_CAPSULE_DIR + "d0_capsule_vent.png")
+                xysize (config.screen_width, config.screen_height)
+                focus_mask True
+                action Call("d0_inspect_vent")
 
 # Le scénério change ce mode apres l'ouverture dirigee.
 screen d0_capsule_live(mode="idle"):
