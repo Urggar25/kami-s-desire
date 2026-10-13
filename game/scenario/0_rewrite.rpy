@@ -221,25 +221,20 @@ screen d0_force_hatch():
     textbutton "PASSER" xalign 0.96 yalign 0.94 text_size 15 text_color "#D2E0EB" text_hover_color "#FFFFFF" action Return("skip")
 
 # Le sprite reste un ecran independant sous les dialogues et la lumiere.
+# Ecran sur la couche du decor : l'UI et la lumiere restent au-dessus.
 screen d0_pousse_game_visual():
     zorder -3
-    if d0_push_impact_pending:
-        use d0_pousse_game_layer(True, False)
-    elif d0_push_held:
-        use d0_pousse_game_layer(False, True)
-    else:
-        use d0_pousse_game_layer(False, False)
-
-screen d0_pousse_game_layer(hit=False, pressing=False):
     fixed:
         xsize config.screen_width
         ysize config.screen_height
         at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
-        if hit:
+        showif d0_push_held and not d0_push_impact_pending:
+            add (D0_CAPSULE_DIR + "d0_pousse_bras1.png"):
+                xysize (config.screen_width, config.screen_height)
+                at d0_push_strain, d0_push_hold_visibility
+        if d0_push_impact_pending:
             add (D0_CAPSULE_DIR + "d0_pousse_bras2.png") xysize (config.screen_width, config.screen_height)
             add (D0_CAPSULE_DIR + "d0_pousse_bras2_anim.png") xysize (config.screen_width, config.screen_height) at d0_push_impact_overlay
-        elif pressing:
-            add (D0_CAPSULE_DIR + "d0_pousse_bras1.png") xysize (config.screen_width, config.screen_height) at d0_push_strain, d0_pousse_fade
 
 
 label _0_CANON:
