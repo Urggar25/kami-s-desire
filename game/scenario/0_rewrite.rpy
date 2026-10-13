@@ -258,11 +258,15 @@ label _0_CANON:
     $ d0_cam_x = 0.0
     $ d0_cam_y = 0.0
     show screen d0_capsule_live("intro")
+    show screen d0_capsule_lighting(False, True)
     $ blink()
     # Vue guidee : gauche, droite, puis haut. La souris est verrouillee ici.
     $ renpy.pause(4.8, hard=True)
+    hide screen d0_capsule_lighting
     hide screen d0_capsule_live
     show screen d0_capsule_live("idle")
+    show screen d0_capsule_lighting(False)
+    $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
     show screen d0_capsule_vent_hotspot
@@ -282,6 +286,7 @@ label _0_CANON:
     $ d0_vent_enabled = False
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
+    hide screen d0_capsule_lighting
     hide screen d0_capsule_live
     scene bg_cg001_1 at adaptive_fullscreen
     $ blink()
@@ -304,6 +309,8 @@ label _0_CANON:
     # L'effort laisse place a la concentration : on reconstitue d'abord le prenom.
     scene black
     show screen d0_capsule_live("idle")
+    show screen d0_capsule_lighting(False)
+    $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
     show screen d0_capsule_vent_hotspot
@@ -327,6 +334,7 @@ label _0_CANON:
     $ d0_vent_enabled = False
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
+    hide screen d0_capsule_lighting
     hide screen d0_capsule_live
     scene black
     while not d0_memories_done:
@@ -342,6 +350,8 @@ label _0_CANON:
             call d0_memory_lysa
     scene black
     show screen d0_capsule_live("idle")
+    show screen d0_capsule_lighting(False)
+    $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ d0_vent_enabled = True
     show screen d0_capsule_vent_hotspot
@@ -355,9 +365,11 @@ label _0_CANON:
     $ d0_vent_enabled = False
     hide screen d0_capsule_vent_hotspot
     hide screen d0_capsule_vent_air
+    hide screen d0_capsule_lighting
     hide screen d0_capsule_live
     scene black
     show screen d0_capsule_live("alarm")
+    show screen d0_capsule_lighting(True)
     play sound "audio/sfx_gresillement.mp3"
     voix "Acheminement en cours. Reprise du protocole de sédation."
     noam "Quoi ?! Attendez, je suis réveillé !"
@@ -373,6 +385,7 @@ label _0_CANON:
     $ blink()
     pause 1.2
     hide screen d0_fog
+    hide screen d0_capsule_lighting
     hide screen d0_capsule_live
     scene black with dissolve
     stop music fadeout 1.2
@@ -399,6 +412,7 @@ label d0_inspect_vent:
     $ renpy.pause(0.40, hard=True)
     # Oscillation pendant 0.5 s, et souffle de ventilation synchronise.
     show screen d0_capsule_arm(3, True)
+    $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     $ renpy.pause(0.50, hard=True)
     think "Il y a de l'air qui passe à travers cette grille... et il est sacrément froid."
@@ -416,8 +430,10 @@ label d0_inspect_vent:
     $ renpy.pause(0.30, hard=True)
     hide screen d0_capsule_arm
     with Dissolve(0.30)
+    $ renpy.restart_interaction()
     $ d0_vent_inspecting = False
     $ d0_vent_enabled = True
+    $ d0_air_elapsed = 0.0
     show screen d0_capsule_vent_air
     show screen d0_capsule_vent_hotspot
     return
