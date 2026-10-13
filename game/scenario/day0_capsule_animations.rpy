@@ -7,6 +7,8 @@ default d0_cam_x = 0.0
 default d0_cam_y = 0.0
 default d0_vent_inspecting = False
 default d0_vent_enabled = False
+default d0_air_elapsed = 0.0
+default d0_capsule_alarm = False
 
 init python:
     def d0_capsule_mouse_camera():
@@ -72,20 +74,6 @@ transform d0_capsule_sun_pulse:
         zoom 0.70
         repeat
 
-screen d0_capsule_beacon(color="#B9FFAC"):
-    fixed:
-        xsize config.screen_width
-        ysize config.screen_height
-        $ cx = int(config.screen_width * 410.0 / 1690.0)
-        $ cy = int(config.screen_height * 127.0 / 931.0)
-        # Eclair bref teinte la piece : le fond reste presque noir au repos.
-        add Solid(color):
-            alpha 0.33
-            at d0_capsule_color_pulse
-        # Pas de glyphe Unicode : la police du jeu ne possede pas l'etoile.
-        # Le PNG du voyant gere son propre halo; la teinte de la scene
-        # est animee par d0_capsule_color_pulse.
-
 # Le detecteur est eteint par defaut; il pulse toutes les 2 secondes :
 # environ 0.65s allume, 1.35s gris.
 transform d0_led_flash:
@@ -101,44 +89,65 @@ transform d0_lights_stable:
 
 # Le calque sombre est placé AU-DESSUS de la base, SOUS les elements eclaires.
 # Ne pas flouter les illustrations, ne pas déplacer les éléments isolément.
-screen d0_capsule_picture(alarm=False):
+# Composition des objets physiques sans duplication de textures dans le hotspot.
+# L'eclairage final couvre decor, bras et ventilation, tout en restant SOUS l'UI.
+screen d0_capsule_picture():
     fixed:
-        xfill True yfill True
+        xsize config.screen_width
+        ysize config.screen_height
         add (D0_CAPSULE_DIR + "d0_capsule_base.png") xysize (config.screen_width, config.screen_height)
-        # Composer d'abord TOUS les objets, puis assombrir l'ensemble.
         add (D0_CAPSULE_DIR + "d0_capsule_lights.png") xysize (config.screen_width, config.screen_height)
         add (D0_CAPSULE_DIR + "d0_capsule_vent.png") xysize (config.screen_width, config.screen_height)
         add (D0_CAPSULE_DIR + "d0_capsule_valve.png") xysize (config.screen_width, config.screen_height)
         add (D0_CAPSULE_DIR + "d0_capsule_led_gray.png") xysize (config.screen_width, config.screen_height)
-        # Filtre NUIT au-dessus des composants, environ 88 % d'obscurcissement.
+
+screen d0_capsule_lighting(alarm=False, intro=False):
+    zorder -1
+    # Filtre sur la TOTALITE des sprites, jamais sur le texte.
+    if intro:
+        fixed:
+            xsize config.screen_width
+            ysize config.screen_height
+            at d0_capsule_intro_camera
+            use d0_capsule_lighting_contents(alarm)
+    else:
+        fixed:
+            xsize config.screen_width
+            ysize config.screen_height
+            at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
+            use d0_capsule_lighting_contents(alarm)
+
+screen d0_capsule_lighting_contents(alarm):
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
         add Solid("#020812E0")
         if alarm:
-            add (D0_CAPSULE_DIR + "d0_capsule_led_red.png") xysize (config.screen_width, config.screen_height) at d0_led_flash
+            $ pulse_color = "#FF9191"
+            $ led_asset = D0_CAPSULE_DIR + "d0_capsule_led_red.png"
         else:
-            add (D0_CAPSULE_DIR + "d0_capsule_led_green.png") xysize (config.screen_width, config.screen_height) at d0_led_flash
-        # Le rayon et sa coloration suivent le meme cycle de 2s que la LED.
-        if alarm:
-            use d0_capsule_beacon("#FF9191")
-        else:
-            use d0_capsule_beacon("#B9FFAC")
+            $ pulse_color = "#B9FFAC"
+            $ led_asset = D0_CAPSULE_DIR + "d0_capsule_led_green.png"
+        add Solid(pulse_color + "35") at d0_capsule_color_pulse
+        add led_asset xysize (config.screen_width, config.screen_height) at d0_led_flash
 
-# Souffle par balayage vertical : apparition 0-1 s, disparition
-# 0.5-1.5 s. Les deux balayages se croisent pendant 0.5 s.
-# Le cycle complet dure 5 s. L'animation ne change jamais de position.
-transform d0_vent_reveal:
-    subpixel True
-    crop (0, 0, config.screen_width, 1)
-    linear 1.0 crop (0, 0, config.screen_width, config.screen_height)
-    pause 4.0
-    repeat
+# Effet revele puis efface par deux fronts de balayage descendants.
+# Aucune translation du visuel, seule une tranche du PNG original est visible.
+init python:
+    def d0_tick_air():
+        renpy.store.d0_air_elapsed = (renpy.store.d0_air_elapsed + 0.0333333) % 5.0
 
-transform d0_vent_erase:
-    subpixel True
-    crop (0, 0, config.screen_width, config.screen_height)
-    pause 0.5
-    linear 1.0 crop (0, config.screen_height - 1, config.screen_width, 1)
-    pause 3.5
-    repeat
+screen d0_air_wipe():
+    $ t = d0_air_elapsed
+    $ w, h = config.screen_width, config.screen_height
+    $ lower = int(h * min(1.0, t / 1.0))
+    $ upper = int(h * min(1.0, max(0.0, (t - 0.5) / 0.55)))
+    $ band = max(0, lower - upper)
+    if band > 0:
+        add Transform(
+            Transform(D0_CAPSULE_DIR + "d0_capsule_vent_anim.png", xysize=(w, h)),
+            crop=(0, upper, w, band),
+            xpos=0, ypos=upper, xanchor=0.0, yanchor=0.0)
 
 # Un cycle relance a la demande pendant le passage de la main.
 transform d0_arm_sway:
@@ -150,18 +159,18 @@ transform d0_arm_sway:
     ease 0.13 xoffset 0
 
 screen d0_capsule_vent_air():
-    zorder 1
+    zorder -4
+    timer 0.0333333 repeat True action Function(d0_tick_air)
     fixed:
         xsize config.screen_width
         ysize config.screen_height
         at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
-        add At(At(Transform(D0_CAPSULE_DIR + "d0_capsule_vent_anim.png",
-            xysize=(config.screen_width, config.screen_height)), d0_vent_reveal), d0_vent_erase)
+        use d0_air_wipe
 
 # Deux calques PNG successifs + la pose finale, toujours superposes au
 # caisson suivant le meme zoom et le meme decalage que la camera.
 screen d0_capsule_arm(pose=1, sway=False):
-    zorder 20
+    zorder -3
     fixed:
         xsize config.screen_width
         ysize config.screen_height
@@ -173,33 +182,33 @@ screen d0_capsule_arm(pose=1, sway=False):
         else:
             add (D0_CAPSULE_DIR + "d0_capsule_bras%d.png" % pose) xysize (config.screen_width, config.screen_height)
 
-# Calque interactif exactement sur le PNG de la grille : pas de rectangle
-# invisible clicable au-dessus des autres objets.
+# Cible invisible : masque alpha du PNG, aucun deuxieme dessin du vent.
 screen d0_capsule_vent_hotspot():
-    zorder 10
+    zorder -2
     if d0_vent_enabled and not d0_vent_inspecting:
         fixed:
             xsize config.screen_width
             ysize config.screen_height
             at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
-            imagebutton:
-                idle (D0_CAPSULE_DIR + "d0_capsule_vent.png")
-                hover (D0_CAPSULE_DIR + "d0_capsule_vent.png")
-                xysize (config.screen_width, config.screen_height)
-                focus_mask True
+            button:
+                xsize config.screen_width
+                ysize config.screen_height
+                background None
+                hover_background None
+                focus_mask (D0_CAPSULE_DIR + "d0_capsule_vent.png")
                 action Call("d0_inspect_vent")
 
 # Le scénério change ce mode apres l'ouverture dirigee.
 screen d0_capsule_live(mode="idle"):
-    zorder -5
+    zorder -6
     if mode == "intro":
         fixed:
             xsize config.screen_width ysize config.screen_height
             at d0_capsule_intro_camera
-            use d0_capsule_picture(False)
+            use d0_capsule_picture()
     else:
         timer 0.033 repeat True action Function(d0_capsule_mouse_camera)
         fixed:
             xsize config.screen_width ysize config.screen_height
             at Transform(zoom=D0_CAPSULE_ZOOM, xalign=0.5, yalign=0.5, xoffset=d0_cam_x, yoffset=d0_cam_y)
-            use d0_capsule_picture(mode == "alarm")
+            use d0_capsule_picture()
