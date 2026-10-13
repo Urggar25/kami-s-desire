@@ -206,7 +206,6 @@ screen d0_force_hatch():
     timer 0.90 repeat True action If(d0_push_impact_pending, SetVariable("d0_push_impact_pending", False), NullAction())
     timer 0.05 repeat True action If(d0_push_progress >= 1.0 and d0_push_impact_count == 2 and not d0_push_impact_pending, Return("effort"), NullAction())
     timer 18.0 action Return("timeout")
-    use d0_pousse_game_visual
     vbox:
         xalign 0.5
         yalign 0.80
@@ -223,6 +222,7 @@ screen d0_force_hatch():
 
 # Le sprite reste un ecran independant sous les dialogues et la lumiere.
 screen d0_pousse_game_visual():
+    zorder -3
     if d0_push_impact_pending:
         use d0_pousse_game_layer(True, False)
     elif d0_push_held:
@@ -306,7 +306,9 @@ label _0_CANON:
     $ d0_push_held = False
     $ d0_push_impact_count = 0
     $ d0_push_impact_pending = False
+    show screen d0_pousse_game_visual
     call screen d0_force_hatch
+    hide screen d0_pousse_game_visual
     $ d0_push_held = False
     $ d0_push_impact_pending = False
 
