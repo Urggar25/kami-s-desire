@@ -80,16 +80,9 @@ screen d0_capsule_beacon(color="#B9FFAC"):
         add Solid(color):
             alpha 0.33
             at d0_capsule_color_pulse
-        # Petite etoile concentree sur la diode; pas de rayons de 400 px.
-        text "✦":
-            xpos cx
-            ypos cy
-            xanchor 0.5
-            yanchor 0.5
-            size 37
-            color color
-            outlines [(8, color + "55", 0, 0), (18, color + "18", 0, 0)]
-            at d0_capsule_sun_pulse
+        # Pas de glyphe Unicode : la police du jeu ne possede pas l'etoile.
+        # Le PNG du voyant gere son propre halo; la teinte de la scene
+        # est animee par d0_capsule_color_pulse.
 
 # Le detecteur est eteint par defaut; il pulse toutes les 2 secondes :
 # environ 0.65s allume, 1.35s gris.
