@@ -104,30 +104,30 @@ transform d0_memory_particle_echo:
 init python:
     D0_MEM_REF_W = 1690
     D0_MEM_REF_H = 930
-    D0_MEM_W = 760
-    D0_MEM_H = 430
-    # Points d'ancrage mesures sur le fond, sans inclure les textes.
-    D0_MEM_ANCHORS = {
-        "noam": (360, 235),
-        "kami": (1350, 250),
-        "conclave": (414, 655),
-        "lysa": (1340, 670),
+    # Bornes lues dans le masque PNG d0_memory_windows fourni :
+    # chaque texture est affichee ENTIERE dans sa fenetre, pas dans un
+    # grand canevas qui ne montre qu'un coin du dessin.
+    D0_MEM_SLOTS = {
+        "noam": (175, 120, 542, 343),
+        "kami": (1141, 136, 1566, 371),
+        "conclave": (184, 537, 641, 779),
+        "lysa": (1127, 571, 1548, 792),
     }
     def d0_memory_illustration(item, alpha=1.0, unlocked=True):
         key, stem = item[0], item[1]
         filename = d0_memory_texture("d0_memory_" + stem)
         if not filename:
-            return Solid("#233747", xysize=(1, 1))
-        cx, cy = D0_MEM_ANCHORS[key]
-        # PNG a taille constante dans chaque emplacement; le masque ecran
-        # preserve les contours du fond autour de la peinture.
-        image = Transform(filename, xysize=(D0_MEM_W, D0_MEM_H),
-                          alpha=alpha,
-                          matrixcolor=SaturationMatrix(1.0 if unlocked else 0.12))
-        composed = Composite((D0_MEM_REF_W, D0_MEM_REF_H),
-                             (cx - D0_MEM_W // 2, cy - D0_MEM_H // 2), image)
-        mask = D0_MEMORY_DIR + "d0_memory_windows.svg"
-        return AlphaMask(composed, mask)
+            return Solid("#00000000", xysize=(D0_MEM_REF_W, D0_MEM_REF_H))
+        left, top, right, bottom = D0_MEM_SLOTS[key]
+        # Un masque DIFFERENT pour chaque souvenir : les autres fenetres
+        # ne montrent plus jamais les pixels d'une illustration voisine.
+        fitted = Transform(filename, xysize=(right-left, bottom-top),
+                           alpha=alpha,
+                           matrixcolor=SaturationMatrix(1.0 if unlocked else 0.12))
+        painted = Composite((D0_MEM_REF_W, D0_MEM_REF_H),
+                            (left, top), fitted)
+        mask = D0_MEMORY_DIR + "d0_memory_mask_" + stem + ".svg"
+        return AlphaMask(painted, mask)
 
 screen d0_memory_fragment(item, unlocked=True, selected=False):
     $ key, stem, title, subtitle, x, y = item
@@ -201,7 +201,7 @@ screen d0_memory_transition(key, unlocking=False):
     else:
         add Solid("#050d19")
     add Solid("#01050a99")
-    # La scene entiere est rendue sous masque AVANT le zoom de selection.
+    # Le souvenir reste decoupe dans SA fenetre pendant la transition.
     add artwork:
         xysize (config.screen_width, config.screen_height)
         at (d0_memory_unlock_image if unlocking else d0_memory_enter_fragment)
