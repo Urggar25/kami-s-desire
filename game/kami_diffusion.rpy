@@ -17,9 +17,18 @@ init -3 python:
     )
     _kami_diffusion_cache = {}
 
+    # Les anciennes scènes conservent leur nom, mais utilisent les
+    # nouvelles textures (y compris _parle, _gene et _anim).
+    KAMI_DIFFUSION_ALIASES = {
+        "einstein": "professeur",
+        "meteo": "professeur",
+        "zen": "champagne",
+        "triste": "gene",
+        "desespoir": "gene",
+    }
+
     def kami_diffusion_normalize(expression):
-        if expression == "desespoir":
-            return "gene"
+        expression = KAMI_DIFFUSION_ALIASES.get(expression, expression)
         return expression if expression in KAMI_DIFFUSION_EXPRESSIONS else "neutre"
 
     def kami_diffusion_asset(filename):
