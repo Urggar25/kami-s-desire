@@ -609,6 +609,10 @@ label d0_memory_kami:
     noam triste "Il y avait des batailles partout, des millions de morts, des familles qui attendaient le retour de quelqu'un qui ne rentrerait jamais..."
     think "Je sais ce que ça fait. Juliette aussi."
     noam triste "À cette époque, personne n'était vraiment en sécurité. Même loin du front, on ne savait jamais si le lendemain allait ressembler à la veille."
+    noam triste "C'est dans l'une de ces guerres... Dans l'un de ces conflits sans fin que mon père est mort..."
+    noam triste "Et le pire, c'est que je ne sais même pas pourquoi il est mort. Pour défendre une frontière ? Pour quelques kilomètres de territoire ? Je me demande si ceux qui ont décidé de cette guerre le savaient eux-mêmes..."
+    noam triste "Ces guerres n'en finissaient jamais. On raconte que trois générations entières se sont succédé sur les champs de bataille, sans qu'aucune ait connu une véritable période de paix."
+    noam reflexion "Je crois qu'à force, les gens avaient fini par accepter tout ça comme quelque chose de normal. On naissait avec la guerre, on grandissait avec elle et, pour beaucoup, on mourait sans avoir connu autre chose."
     hide screen d0_kami_fresco_screen
 
     # PHASE 2 : LA PRISE DE POUVOIR — travelling pendant les dialogues.
