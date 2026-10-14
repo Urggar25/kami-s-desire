@@ -459,6 +459,50 @@ screen d0_juliette_diorama():
     # Voile gris discret : memoire du passe, sans sacrifier la lisibilite.
     add Solid("#64718414")
 
+# Passage entre deux tableaux dessines : chevauchement anime des poses.
+# Les fichiers d0_juliette sont des tableaux complets, et non des
+# personnages separes : l'interpolation reste donc une transition 2D.
+transform d0_juliette_pose_exit(direction=1):
+    subpixel True
+    alpha 1.0
+    xoffset 0 yoffset 0 zoom 1.0
+    parallel:
+        easeout 0.88 alpha 0.0
+    parallel:
+        easein 0.88 xoffset (-65 if direction > 0 else 65) yoffset 18 zoom 0.975
+
+transform d0_juliette_pose_enter(direction=1):
+    subpixel True
+    alpha 0.0
+    xoffset (105 if direction > 0 else -105)
+    yoffset -22
+    zoom 0.96
+    parallel:
+        easeout 1.05 alpha 1.0
+    parallel:
+        easeout 1.05 xoffset 0 yoffset 0 zoom 1.0
+
+screen d0_juliette_pose_change(previous, following, direction=1):
+    modal True
+    zorder 15
+    add Solid("#000000")
+    add D0_JULIETTE_DIR + "d0_maison.png":
+        xysize (config.screen_width, config.screen_height)
+    add D0_JULIETTE_DIR + "d0_juliette%d.png" % previous:
+        xysize (config.screen_width, config.screen_height)
+        at d0_juliette_pose_exit(direction)
+    add D0_JULIETTE_DIR + "d0_juliette%d.png" % following:
+        xysize (config.screen_width, config.screen_height)
+        at d0_juliette_pose_enter(direction)
+    add Solid("#64718414")
+    timer 1.08 action Return()
+
+label d0_juliette_animate_to(next_pose, direction=1):
+    $ old_pose = d0_juliette_pose
+    call screen d0_juliette_pose_change(old_pose, next_pose, direction)
+    $ d0_juliette_pose = next_pose
+    return
+
 label d0_memory_noam:
     stop music fadeout 0.25
     scene black with dissolve
@@ -484,8 +528,7 @@ label d0_memory_noam:
     "Juliette" "Pas quand tu dois encore partir à l'Administration et que tu vas finir par courir jusqu'à l'arrêt !"
 
     # 2. Noam descend de sa chambre ; Juliette boude dans son coin.
-    $ d0_juliette_pose = 2
-    with Dissolve(0.35)
+    call d0_juliette_animate_to(2, 1)
     noam "Bon, me voilà. Et c'est quoi, cette tête ? On dirait que je t'ai fait attendre trois heures."
     "Juliette" "Je t'ai appelé quatre fois. QUATRE. Et quand tu descends enfin, t'as même pas l'air désolé !"
     noam "Pardon, madame. La prochaine fois, je déposerai une demande écrite avant de sortir de ma chambre."
@@ -495,16 +538,14 @@ label d0_memory_noam:
     noam "Bon... Pour la veste, je plaide coupable. Mais pour le reste, tu exagères un peu."
 
     # 3. Noam propose un calin.
-    $ d0_juliette_pose = 3
-    with Dissolve(0.35)
+    call d0_juliette_animate_to(3, -1)
     noam "Viens là, petite râleuse. Tu vas quand même pas me laisser partir sans un câlin ?"
     "Juliette" "Hé ! Qu'est-ce que tu fais ?!"
     noam "Je tente une négociation diplomatique. Il paraît que ça marche mieux que les excuses."
     "Juliette" "Mais arrête !"
 
     # 4. Juliette est contente, mais se defend d'etre encore un bebe.
-    $ d0_juliette_pose = 4
-    with Dissolve(0.35)
+    call d0_juliette_animate_to(4, 1)
     "Juliette" "J'ai dix ans, Noam ! Dix ans ! Je suis plus un bébé que tu peux attraper dans tes bras quand ça te chante !"
     noam "Ah, pardon. C'est vrai que mademoiselle est une adulte parfaitement indépendante, maintenant."
     "Juliette" "Exactement !"
@@ -514,8 +555,7 @@ label d0_memory_noam:
     "Juliette" "Idiot... Tiens, justement, j'ai quelque chose pour toi."
 
     # 5. Juliette presente le bento qu'elle a prepare.
-    $ d0_juliette_pose = 5
-    with Dissolve(0.35)
+    call d0_juliette_animate_to(5, -1)
     "Juliette" "Regarde ! Je t'ai préparé un bento. C'est pas grand-chose, mais au moins tu pourras manger quelque chose de correct."
     noam "Attends, t'as préparé tout ça pour moi ? Juliette, fallait pas te donner autant de mal."
     "Juliette" "C'est pas du mal ! J'ai juste pris ce qu'il restait, et j'ai essayé de faire quelque chose qui tienne dans la boîte."
