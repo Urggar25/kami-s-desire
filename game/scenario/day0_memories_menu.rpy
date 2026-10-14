@@ -6,10 +6,10 @@ default d0_memory_newly_unlocked = []
 
 init python:
     D0_MEMORY_ITEMS = (
-        ("noam", "juliette", "JULIETTE", "Ce qui m'attend chez moi", .245, .292),
-        ("kami", "kami", "KAMI", "Les Commandements", .755, .292),
-        ("conclave", "conclave", "CONCLAVE", "L'annonce", .275, .698),
-        ("lysa", "lysa", "UNE VOIX", "Un dernier souvenir", .745, .698),
+        ("noam", "juliette", "JULIETTE", "Ce qui m'attend chez moi", .235, .275),
+        ("kami", "kami", "KAMI", "Les Commandements", .765, .280),
+        ("conclave", "conclave", "CONCLAVE", "L'annonce", .245, .705),
+        ("lysa", "lysa", "UNE VOIX", "Un dernier souvenir", .770, .720),
     )
     def d0_memory_open(key):
         seen = renpy.store.d0_memories_seen
@@ -46,42 +46,55 @@ transform d0_memory_lock:
 transform d0_memory_seen:
     alpha 0.66
 
+# Images dessinees deja calibrees : utiliser tout le cadre, sans les
+# reduire une seconde fois a la taille de l'ancien bouton nuage.
+define D0_MEMORY_ART_W = 960
+define D0_MEMORY_ART_H = 528
+
 transform d0_memory_unlock_image:
-    alpha 0.0
-    zoom 0.91
-    pause 0.22
-    easeout 0.78 alpha 1.0 zoom 1.0
+    subpixel True
+    alpha 0.0 zoom 0.70
+    pause 0.30
+    easeout 0.32 alpha 1.0 zoom 1.15
+    easein 0.25 zoom 1.0
 
 transform d0_memory_enter_fragment:
     subpixel True
     alpha 1.0 zoom 1.0
-    ease 0.85 zoom 1.52 alpha 0.20
+    easein 0.34 zoom 1.22
+    easeout 0.56 zoom 2.15 alpha 0.0
 
 transform d0_memory_particle_burst_left:
     subpixel True
-    alpha 0.0
-    zoom 0.80
-    rotate 0
-    pause 0.12
+    alpha 0.0 zoom 0.38 rotate -25 xoffset 0 yoffset 0
+    pause 0.13
     parallel:
-        ease 0.14 alpha 0.85
-        pause 0.24
-        ease 0.48 alpha 0.0
+        ease 0.12 alpha 1.0
+        pause 0.30
+        easeout 0.50 alpha 0.0
     parallel:
-        ease 0.86 zoom 1.30 rotate -12 xoffset -55 yoffset -27
+        easeout 0.85 zoom 2.15 rotate -110 xoffset -360 yoffset -140
 
 transform d0_memory_particle_burst_right:
     subpixel True
-    alpha 0.0
-    zoom 0.76
-    rotate 0
-    pause 0.20
+    alpha 0.0 zoom 0.35 rotate 18 xoffset 0 yoffset 0
+    pause 0.21
     parallel:
-        ease 0.13 alpha 0.78
-        pause 0.20
-        ease 0.47 alpha 0.0
+        ease 0.10 alpha 0.95
+        pause 0.30
+        easeout 0.43 alpha 0.0
     parallel:
-        ease 0.80 zoom 1.36 rotate 13 xoffset 62 yoffset 34
+        easeout 0.84 zoom 2.35 rotate 125 xoffset 375 yoffset 160
+
+transform d0_memory_particle_echo:
+    subpixel True
+    alpha 0.0 zoom 0.45
+    pause 0.36
+    parallel:
+        ease 0.13 alpha 0.65
+        easeout 0.48 alpha 0.0
+    parallel:
+        easeout 0.62 zoom 2.80 rotate -52
 
 screen d0_memory_fragment(item, unlocked=True, selected=False):
     $ key, stem, title, subtitle, x, y = item
@@ -90,14 +103,12 @@ screen d0_memory_fragment(item, unlocked=True, selected=False):
     fixed:
         xcenter int(config.screen_width*x)
         ycenter int(config.screen_height*y)
-        xsize 610
-        ysize 325
+        xsize 710
+        ysize 370
         at d0_memory_float((0.1 if key == "kami" else 0.3) if key in ("kami", "lysa") else 0.0)
         button:
-            xalign 0.5
-            yalign 0.5
-            xsize 610
-            ysize 325
+            xalign 0.5 yalign 0.5
+            xsize 710 ysize 370
             padding (0, 0)
             background None
             hover_background None
@@ -106,25 +117,24 @@ screen d0_memory_fragment(item, unlocked=True, selected=False):
             sensitive unlocked
             action Return(key)
             if filename:
-                add Transform(filename, xysize=(610, 325),
-                    alpha=(0.58 if already else (1.0 if unlocked else 0.19)),
+                # PNG integral conserve : le dessin n'est plus miniaturise
+                # dans un bouton 610x325 et retrouve sa place dans la fenetre.
+                add Transform(filename, xysize=(D0_MEMORY_ART_W, D0_MEMORY_ART_H),
+                    alpha=(0.70 if already else (1.0 if unlocked else 0.14)),
                     matrixcolor=(SaturationMatrix(1.0) if unlocked else SaturationMatrix(0.10))):
                     xalign 0.5 yalign 0.5
             else:
-                # Emplacement temporaire lorsque les ressources sont absentes.
                 add Solid("#20334699" if unlocked else "#121b26aa"):
-                    xalign 0.5 yalign 0.5 xsize 555 ysize 275
+                    xalign 0.5 yalign 0.5 xsize 600 ysize 285
             vbox:
-                xalign 0.5 yalign 0.85
+                xalign 0.5 yalign 0.90
                 spacing 5
                 text title:
-                    xalign 0.5
-                    size 25 bold True
+                    xalign 0.5 size 25 bold True
                     color ("#eaf4fa" if unlocked else "#71818f")
                     outlines [(2, "#08121bdc", 0, 1)]
                 text ("SOUVENIR RETROUVÉ" if already else (subtitle if unlocked else "SOUVENIR ENFOUI")):
-                    xalign 0.5
-                    size 16
+                    xalign 0.5 size 16
                     color ("#c1d7e3" if unlocked else "#627381")
                     outlines [(1, "#09121bdc", 0, 1)]
 
@@ -163,29 +173,35 @@ screen d0_memory_transition(key, unlocking=False):
         add bg xysize (config.screen_width, config.screen_height)
     else:
         add Solid("#050d19")
-    # Les autres fragments restent en arriere-plan, mais plus sombres.
-    for other in D0_MEMORY_ITEMS:
-        if other[0] != key:
-            $ othertex = d0_memory_texture("d0_memory_" + other[1])
-            if othertex:
-                add Transform(othertex, xysize=(610,325), alpha=0.10):
-                    xcenter int(config.screen_width*other[4])
-                    ycenter int(config.screen_height*other[5])
+    add Solid("#01050a99")
+    # L'arriere-plan ne bouge pas : la camera se concentre sur le souvenir.
     fixed:
         xcenter int(config.screen_width*xx)
         ycenter int(config.screen_height*yy)
-        xsize 610 ysize 325
+        xsize 710 ysize 370
         if tex:
             add tex:
-                xysize (610, 325)
+                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                xalign 0.5 yalign 0.5
                 at (d0_memory_unlock_image if unlocking else d0_memory_enter_fragment)
         if particle1:
-            add particle1 xysize (610,325) at d0_memory_particle_burst_left
+            add particle1:
+                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                xalign 0.5 yalign 0.5
+                at d0_memory_particle_burst_left
         if particle2:
-            add particle2 xysize (610,325) at d0_memory_particle_burst_right
+            add particle2:
+                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                xalign 0.5 yalign 0.5
+                at d0_memory_particle_burst_right
+        if particle1:
+            add particle1:
+                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                xalign 0.5 yalign 0.5
+                at d0_memory_particle_echo
     if unlocking:
         text "SOUVENIR RETROUVÉ" xalign 0.5 yalign 0.915 size 24 color "#d7e6ee"
-    timer (1.20 if unlocking else 1.08) action Return()
+    timer (1.58 if unlocking else 1.43) action Return()
 
 label d0_memory_open_transition(key):
     call screen d0_memory_transition(key, False)
