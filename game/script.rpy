@@ -674,7 +674,7 @@ define kami = DynamicCharacter(
     "character_display_name('kami')",
     what_prefix="« ", what_suffix=" »",
     who_color="#AFCBFF",
-    callback=make_autofocus_cb("__NARRATOR__", doublage_tag="kami")
+    callback=kami_diffusion_speaker_callback
 )
 
 # ---------------------------------------------------------------------------
