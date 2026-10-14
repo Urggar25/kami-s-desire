@@ -715,7 +715,6 @@ label d0_memory_lysa:
     scene bg_cg006 at adaptive_fullscreen with dissolve
     "Deux caissons étaient disposés côte à côte. Lysa s'était arrêtée devant le sien, les bras croisés, sans avoir l'air particulièrement pressée d'y entrer."
     # Retour aux sprites pendant les echanges ; les CG restent sans sprites.
-    scene black with dissolve
     $ showGroup([("lysa", "blase", 0.28), ("noam", "reflexion", 0.72)])
     lysa "Attends... Tu veux dire qu'on doit entrer là-dedans ?"
     voix "Le transport est obligatoire. Vous serez endormis pendant le trajet."
