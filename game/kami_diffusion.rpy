@@ -143,7 +143,11 @@ init -3 python:
             xpos=int(width * 0.10), ypos=int(height * 0.10),
             xanchor=0.0, yanchor=0.0,
         )
-        return Fixed(content, xysize=(width, height))
+        # Remplissage opaque sur toute la scène : sans ce fond, les marges
+        # créées par le dézoom révèlent la transparence en damier du jeu.
+        # Le moniteur reste à 80 %, tandis que la boîte de dialogue (layer
+        # screens) conserve ses dimensions habituelles.
+        return Fixed(Solid("#06090e"), content, xysize=(width, height))
 
     def kami_diffusion_frame(st, at, expression):
         expression = kami_diffusion_normalize(expression)
