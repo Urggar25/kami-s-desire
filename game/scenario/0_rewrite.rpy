@@ -12,125 +12,11 @@ default d0_memories_done = False
 transform d0_fog_rise:
     alpha 0.0
     linear 3.0 alpha 0.84
-# Les souvenirs ne sont pas un menu : ils flottent comme des pensées dans le noir.
-# Interface 100 % Ren'Py, sans image externe ni rectangles de boutons.
-transform d0_orb_drift_a:
-    subpixel True
-    yoffset 0 rotate -2
-    ease 2.7 yoffset -16 rotate 2
-    ease 2.9 yoffset 8 rotate -1
-    ease 2.6 yoffset 0 rotate -2
-    repeat
-
-transform d0_orb_drift_b:
-    subpixel True
-    yoffset 4 rotate 2
-    ease 3.2 yoffset 17 rotate -2
-    ease 2.6 yoffset -12 rotate 1
-    ease 2.9 yoffset 4 rotate 2
-    repeat
-
-transform d0_orb_drift_c:
-    subpixel True
-    yoffset -5 rotate -1
-    ease 3.6 yoffset 13 rotate 2
-    ease 3.1 yoffset -9 rotate -2
-    ease 3.3 yoffset -5 rotate -1
-    repeat
-
-# Nuage peint sur fond transparent, partage par les quatre souvenirs.
-# Aucune glyphe Unicode n'est utilisee pour les formes ou decorations.
-transform d0_cloud_breathe:
-    subpixel True
-    zoom 0.98
-    ease 2.6 zoom 1.025
-    ease 2.8 zoom 0.98
-    repeat
-
 transform d0_pulse:
     alpha 0.6
     linear 1.1 alpha 1.0
     linear 1.1 alpha 0.6
     repeat
-
-screen d0_thought_orb(key, title, hint, xp, yp, diameter, drift):
-    $ unlocked = key in ("noam", "kami") or (key == "conclave" and "noam" in d0_memories_seen and "kami" in d0_memories_seen) or (key == "lysa" and "conclave" in d0_memories_seen)
-    $ already = key in d0_memories_seen
-    $ caption = "SOUVENIR RETROUVÉ" if already else (hint if unlocked else "SOUVENIR ENFOUI")
-    $ cloud_path = "gui/day0/thought_cloud.png"
-    $ cloud_tint = "#60717B" if already else ("#D8F5FF" if unlocked else "#394956")
-    $ cloud_opacity = 0.48 if already else (0.95 if unlocked else 0.31)
-    fixed:
-        xpos xp
-        ypos yp
-        xsize diameter
-        ysize diameter
-        at drift
-        # Le nuage est une vraie texture PNG avec transparence.
-        button:
-            xalign 0.5
-            yalign 0.5
-            xsize diameter
-            ysize diameter
-            padding (0, 0)
-            background Transform(cloud_path, xysize=(diameter, diameter), matrixcolor=TintMatrix(cloud_tint), alpha=cloud_opacity)
-            hover_background Transform(cloud_path, xysize=(diameter, diameter), matrixcolor=TintMatrix("#FFFFFF"), alpha=1.0)
-            insensitive_background Transform(cloud_path, xysize=(diameter, diameter), matrixcolor=TintMatrix("#3B4A59"), alpha=0.30)
-            focus_mask True
-            sensitive unlocked
-            action [SetVariable("d0_memory_choice", key), Return()]
-            at d0_cloud_breathe
-            vbox:
-                xalign 0.5
-                yalign 0.5
-                xmaximum int(diameter * 0.73)
-                spacing 8
-                text title:
-                    xalign 0.5
-                    text_align 0.5
-                    size (25 if diameter >= 260 else 22)
-                    bold True
-                    color ("#123249" if unlocked and not already else "#C1CED8")
-                text caption:
-                    xalign 0.5
-                    text_align 0.5
-                    xmaximum int(diameter * 0.68)
-                    size 14
-                    color ("#27526B" if unlocked and not already else "#8195A5")
-
-screen d0_memories():
-    modal True
-    zorder 220
-    add Solid("#030A13F2")
-    text "REMÉMORATION":
-        xalign 0.5
-        ypos 0.065
-        size 26
-        color "#BCE7F6"
-        kerning 4
-    text "Des souvenirs flottent à la surface de ma mémoire...":
-        xalign 0.5
-        ypos 0.111
-        size 16
-        color "#7B9BAC"
-    use d0_thought_orb("noam", "JULIETTE", "Ce qui m'attend chez moi", 0.13, 0.20, 320, d0_orb_drift_a)
-    use d0_thought_orb("kami", "KAMI", "Les Commandements", 0.66, 0.18, 330, d0_orb_drift_b)
-    use d0_thought_orb("conclave", "CONCLAVE", "L'annonce", 0.34, 0.51, 310, d0_orb_drift_c)
-    use d0_thought_orb("lysa", "UNE VOIX", "Un dernier souvenir", 0.77, 0.62, 270, d0_orb_drift_a)
-    if "lysa" in d0_memories_seen:
-        textbutton "REVENIR AU PRÉSENT":
-            xalign 0.5
-            yalign 0.945
-            text_size 23
-            text_color "#CBEEFA"
-            text_hover_color "#FFFFFF"
-            action [SetVariable("d0_memories_done", True), Return()]
-    else:
-        text "CHOISISSEZ UN SOUVENIR":
-            xalign 0.5
-            yalign 0.955
-            size 16
-            color "#91B7C7"
 
 screen d0_fog():
     zorder 180
@@ -366,17 +252,31 @@ label _0_CANON:
     hide screen d0_capsule_lighting
     hide screen d0_capsule_live
     scene black
+    # Les fragments sont libres, mais la memoire reconstitue une suite fixe :
+    # Juliette + Kami -> Conclave -> Lysa.
     while not d0_memories_done:
         $ d0_memory_choice = ""
+        $ d0_seen_before = list(d0_memories_seen)
         call screen d0_memories
-        if d0_memory_choice == "noam":
-            call d0_memory_noam
-        elif d0_memory_choice == "kami":
-            call d0_memory_kami
-        elif d0_memory_choice == "conclave":
-            call d0_memory_conclave
-        elif d0_memory_choice == "lysa":
-            call d0_memory_lysa
+        $ d0_memory_choice = _return
+        if d0_memory_choice == "done":
+            $ d0_memories_done = True
+        elif d0_memory_choice in ("noam", "kami", "conclave", "lysa"):
+            call d0_memory_open_transition(d0_memory_choice)
+            if d0_memory_choice == "noam":
+                call d0_memory_noam
+            elif d0_memory_choice == "kami":
+                call d0_memory_kami
+            elif d0_memory_choice == "conclave":
+                call d0_memory_conclave
+            elif d0_memory_choice == "lysa":
+                call d0_memory_lysa
+            # On ne joue l'effet de deblocage qu'au premier retour du souvenir.
+            if ("noam" in d0_memories_seen and "kami" in d0_memories_seen
+                    and not ("noam" in d0_seen_before and "kami" in d0_seen_before)):
+                call d0_memory_unlock_transition("conclave")
+            if "conclave" in d0_memories_seen and "conclave" not in d0_seen_before:
+                call d0_memory_unlock_transition("lysa")
     scene black
     show screen d0_capsule_live("idle")
     show screen d0_capsule_lighting(False)
