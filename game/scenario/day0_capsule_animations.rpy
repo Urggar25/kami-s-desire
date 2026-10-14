@@ -210,7 +210,9 @@ screen d0_capsule_arm(pose=1, sway=False, reversed=False):
 
 # Cible invisible : masque alpha du PNG, aucun deuxieme dessin du vent.
 screen d0_capsule_vent_hotspot():
-    zorder -2
+    # Au-dessus de screen say pour capter les clics sur la grille.
+    # Aucune image affichee : uniquement le masque alpha.
+    zorder 30
     if d0_vent_enabled and not d0_vent_inspecting:
         fixed:
             xsize config.screen_width
@@ -221,12 +223,14 @@ screen d0_capsule_vent_hotspot():
                 ysize config.screen_height
                 background None
                 hover_background None
-                focus_mask (D0_CAPSULE_DIR + "d0_capsule_vent.png")
+                focus_mask Transform(D0_CAPSULE_DIR + "d0_capsule_vent.png", xysize=(config.screen_width, config.screen_height))
                 action Call("d0_inspect_vent")
 
 # Hitbox invisible placee aux coordonnees du cylindre (sur canevas 1690x931).
 screen d0_capsule_valve_hotspot():
-    zorder -2
+    # Au-dessus de screen say et du hotspot de ventilation.
+    # Sinon le dialogue consomme le clic avant le bouton.
+    zorder 31
     if d0_valve_enabled and not d0_valve_inspecting:
         fixed:
             xsize config.screen_width
@@ -237,7 +241,7 @@ screen d0_capsule_valve_hotspot():
                 ysize config.screen_height
                 background None
                 hover_background None
-                focus_mask (D0_CAPSULE_DIR + "d0_capsule_valve.png")
+                focus_mask Transform(D0_CAPSULE_DIR + "d0_capsule_valve.png", xysize=(config.screen_width, config.screen_height))
                 action Call("d0_inspect_valve")
 
 # Le scénério change ce mode apres l'ouverture dirigee.
