@@ -79,42 +79,39 @@ transform d0_memory_camera_focus(cx, cy):
 # Ondes visibles : deux cycles decales, comme des cercles qui naissent,
 # grossissent et s'eteignent. Une simple translation de 3px et 12 %
 # d'opacite etait quasiment imperceptible.
+# Deux ondes delicates : mouvement perceptible sans masquer les souvenirs.
 transform d0_memory_ripples_idle:
     subpixel True
     xalign 0.5 yalign 0.5
-    zoom 0.985
-    alpha 0.0
+    zoom 0.995 alpha 0.0
     block:
-        easeout 0.55 alpha 0.68 zoom 1.002
-        easeout 2.35 alpha 0.38 zoom 1.055
-        easein 1.10 alpha 0.0 zoom 1.092
-        pause 0.50
-        zoom 0.985
+        easeout 0.75 alpha 0.25 zoom 1.005
+        easeout 3.65 alpha 0.14 zoom 1.018
+        easein 1.60 alpha 0.0 zoom 1.030
+        zoom 0.995
         repeat
 
 transform d0_memory_ripples_delayed:
     subpixel True
     xalign 0.5 yalign 0.5
-    zoom 0.985
-    alpha 0.0
-    pause 2.25
+    zoom 0.995 alpha 0.0
+    pause 3.0
     block:
-        easeout 0.55 alpha 0.53 zoom 1.002
-        easeout 2.35 alpha 0.28 zoom 1.055
-        easein 1.10 alpha 0.0 zoom 1.092
-        pause 0.50
-        zoom 0.985
+        easeout 0.75 alpha 0.15 zoom 1.005
+        easeout 3.65 alpha 0.08 zoom 1.018
+        easein 1.60 alpha 0.0 zoom 1.030
+        zoom 0.995
         repeat
 
 # Pendant l'ouverture d'un souvenir, l'onde se contracte puis
 # s'efface pendant le zoom de camera et la fragmentation.
 transform d0_memory_ripples_focus:
     subpixel True
-    alpha 0.42
+    alpha 0.20
     zoom 1.0
     xalign 0.5
     yalign 0.5
-    easeout 0.25 alpha 0.82 zoom 0.985
+    easeout 0.25 alpha 0.42 zoom 0.985
     easein 0.75 alpha 0.0 zoom 1.045
 
 # A l'apparition d'un nouveau souvenir, une seule onde diffuse
@@ -126,7 +123,7 @@ transform d0_memory_ripples_unlock:
     xalign 0.5
     yalign 0.5
     pause 0.12
-    easeout 0.36 alpha 0.85 zoom 1.016
+    easeout 0.36 alpha 0.46 zoom 1.016
     easein 0.80 alpha 0.0 zoom 1.040
 
 transform d0_memory_particle_burst_left:
