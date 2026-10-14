@@ -66,13 +66,12 @@ init -3 python:
         return Transform(Image(path), fit="cover",
                          xysize=(config.screen_width, config.screen_height))
 
-    # Bord intérieur du moniteur dessiné dans bg_diffusion_fond. Tous les
-    # effets électroniques sont limités à cette surface et ne modifient jamais
-    # le cadre métallique ni l'interface de dialogue de Ren'Py.
+    # Limites de la vitre du fond bg_diffusion_fond (image de référence).
+    # Évite d'appliquer les balayages au cadre métallique.
     def _kami_monitor_rect():
         w, h = config.screen_width, config.screen_height
-        return (int(w * 0.105), int(h * 0.125),
-                int(w * 0.790), int(h * 0.730))
+        return (int(w * 0.045), int(h * 0.087),
+                int(w * 0.910), int(h * 0.802))
 
     def _kami_screen_fx():
         # Fines lignes derrière la vitre, sans rectangle cyan uniforme.
@@ -95,14 +94,20 @@ init -3 python:
         return result
 
     def _kami_diffusion_ghost(path):
-        # Rémanence lumineuse plus proche de l'ancien visuel. Sous le
-        # personnage, elle sert de halo et non de flou appliqué au sprite.
+        # Léger halo derrière le personnage, comme sur un écran cathodique.
         return Transform(_kami_diffusion_fullscreen(path),
-                         matrixcolor=TintMatrix("#38c9e5"),
-                         alpha=0.15, blur=15, xoffset=2, yoffset=1)
+                         matrixcolor=TintMatrix("#32d6ed"),
+                         alpha=0.16, blur=12, xoffset=2, yoffset=1)
+
+    def _kami_diffusion_tinted(path):
+        # Équivalent visuel d'une superposition cyan de Paint.NET : la teinte
+        # affecte uniquement les pixels opaques du sprite, pas tout le cadre.
+        # Le contraste du visage reste lisible, contrairement à un voile uni.
+        return Transform(_kami_diffusion_fullscreen(path),
+                         matrixcolor=TintMatrix("#6ce8fa"))
 
     def _kami_diffusion_composite(fond, main, gene=None, anim=None):
-        key = ("crt_frame", fond, main, gene, anim,
+        key = ("crt_frame_tinted_v3", fond, main, gene, anim,
                config.screen_width, config.screen_height)
         cached = _kami_diffusion_cache.get(key)
         if cached is not None:
@@ -111,8 +116,8 @@ init -3 python:
         for path in (main, gene, anim):
             if path:
                 children.append(_kami_diffusion_ghost(path))
-                # Conserver les couleurs originales, sans filtre qui grise le blanc.
-                children.append(_kami_diffusion_fullscreen(path))
+                # Traitement colorimétrique cyan sur Kami, sans contaminer le cadre.
+                children.append(_kami_diffusion_tinted(path))
         # Le traitement de l'écran passe PAR-DESSUS les personnages.
         children.append(_kami_screen_fx())
         result = Fixed(*children,
@@ -131,36 +136,26 @@ init -3 python:
                          xysize=(w, min(band_h, y+h-sweep_y)), alpha=0.035)
 
     def _kami_diffusion_scale(displayable):
-        # IMPORTANT : les scènes appellent souvent "at adaptive_fullscreen".
-        # Un simple Transform(zoom=.8) réduit aussi le rectangle renvoyé
-        # à Ren'Py, qui le ré-agrandit aussitôt avec fit="cover".
-        # Le canevas EXTERIEUR reste donc toujours en plein écran :
-        # seul le contenu intérieur est réduit à 80 % et centré.
-        width, height = config.screen_width, config.screen_height
-        content = Transform(
-            displayable,
-            zoom=0.80,
-            xpos=int(width * 0.10), ypos=int(height * 0.10),
-            xanchor=0.0, yanchor=0.0,
-        )
-        # Remplissage opaque sur toute la scène : sans ce fond, les marges
-        # créées par le dézoom révèlent la transparence en damier du jeu.
-        # Le moniteur reste à 80 %, tandis que la boîte de dialogue (layer
-        # screens) conserve ses dimensions habituelles.
-        return Fixed(Solid("#06090e"), content, xysize=(width, height))
+        # Aucun dézoom : bg_diffusion_fond couvre toute la surface de jeu.
+        # Le transform adaptive_fullscreen des scènes reste compatible.
+        return displayable
 
     def kami_diffusion_frame(st, at, expression):
         expression = kami_diffusion_normalize(expression)
         fond = kami_diffusion_asset("bg_diffusion_fond")
         idle = kami_diffusion_asset(expression)
         # Ne PAS superposer un ancien fond composite à un nouveau sprite.
-        if not renpy.loadable(fond) or not renpy.loadable(idle):
-            fallback = kami_diffusion_existing((
-                kami_diffusion_asset("bg_diffusion_" + expression),
-                kami_diffusion_asset("bg_diffusion_gene"),
-                "images/background/cg/bg_diffusion_neutre.png",
+        if not renpy.loadable(fond):
+            return Solid("#06090e"), 0.10
+        if not renpy.loadable(idle):
+            # Les anciennes expressions sans sprite dédié restent affichables
+            # sur le même fond commun, sans ancienne CG composite.
+            idle = kami_diffusion_existing((
+                kami_diffusion_asset("professeur"),
+                kami_diffusion_asset("gene"),
             ))
-            return _kami_diffusion_scale(_kami_diffusion_fullscreen(fallback)), 0.10
+            if idle is None:
+                return _kami_diffusion_fullscreen(fond), 0.10
 
         # Même cadence de bouche que les autres sprites : alternance
         # instantanée, sans transition ni dissolve entre les deux textures.
@@ -186,7 +181,7 @@ init -3 python:
         surface = Fixed(_kami_diffusion_composite(fond, main, gene, anim),
                         _kami_diffusion_scan_sweep(st),
                         xysize=(config.screen_width, config.screen_height))
-        return _kami_diffusion_scale(surface), 0.06
+        return surface, 0.06
 
     def kami_diffusion_display(expression):
         return DynamicDisplayable(kami_diffusion_frame, expression)
