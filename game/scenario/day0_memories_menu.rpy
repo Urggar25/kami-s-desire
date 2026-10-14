@@ -73,6 +73,46 @@ transform d0_memory_camera_focus(cx, cy):
     xoffset 0 yoffset 0
     easein 0.90 zoom 2.0 xoffset int((0.5 - cx) * config.screen_width * 2.0) yoffset int((0.5 - cy) * config.screen_height * 2.0)
 
+# Ondulations dessinees a la main, en surimpression tres legere.
+# Elles ne remplacent pas les lignes peintes dans le fond et ne
+# changent pas les dimensions des quatre souvenirs.
+transform d0_memory_ripples_idle:
+    subpixel True
+    alpha 0.12
+    zoom 1.0
+    xalign 0.5
+    yalign 0.5
+    xoffset 0
+    yoffset 0
+    block:
+        ease 4.2 alpha 0.24 zoom 1.012 xoffset 3 yoffset -2
+        ease 4.8 alpha 0.10 zoom 0.995 xoffset -3 yoffset 2
+        ease 3.4 alpha 0.16 zoom 1.0 xoffset 0 yoffset 0
+        repeat
+
+# Pendant l'ouverture d'un souvenir, l'onde se contracte puis
+# s'efface pendant le zoom de camera et la fragmentation.
+transform d0_memory_ripples_focus:
+    subpixel True
+    alpha 0.16
+    zoom 1.0
+    xalign 0.5
+    yalign 0.5
+    easeout 0.25 alpha 0.36 zoom 0.985
+    easein 0.75 alpha 0.0 zoom 1.045
+
+# A l'apparition d'un nouveau souvenir, une seule onde diffuse
+# puis revient au repos lors du retour au menu.
+transform d0_memory_ripples_unlock:
+    subpixel True
+    alpha 0.0
+    zoom 0.965
+    xalign 0.5
+    yalign 0.5
+    pause 0.12
+    easeout 0.36 alpha 0.40 zoom 1.016
+    easein 0.80 alpha 0.0 zoom 1.040
+
 transform d0_memory_particle_burst_left:
     subpixel True
     alpha 0.0 zoom 0.38 rotate -25 xoffset 0 yoffset 0
@@ -157,6 +197,13 @@ screen d0_memories():
         add artwork xysize (config.screen_width, config.screen_height)
     if bg:
         add bg xysize (config.screen_width, config.screen_height)
+    # Les ondulations sont au-dessus du fond, sous les zones cliquables
+    # et sous les titres : aucun risque de bloquer la souris.
+    $ ripples = d0_memory_texture("d0_memory_ripples")
+    if ripples:
+        add ripples:
+            xysize (config.screen_width, config.screen_height)
+            at d0_memory_ripples_idle
     for item in D0_MEMORY_ITEMS:
         use d0_memory_fragment(item, d0_memory_open(item[0]))
     text "REMÉMORATION" xalign 0.5 ypos 0.042 size 31 color "#bdd6e7" kerning 5
@@ -200,6 +247,11 @@ screen d0_memory_transition(key, unlocking=False):
                 add other_tex xysize (config.screen_width, config.screen_height)
         if bg:
             add bg xysize (config.screen_width, config.screen_height)
+        $ ripples = d0_memory_texture("d0_memory_ripples")
+        if ripples:
+            add ripples:
+                xysize (config.screen_width, config.screen_height)
+                at (d0_memory_ripples_unlock if unlocking else d0_memory_ripples_focus)
         # L'effet de fragmentation reste centre sur l'emplacement vise.
         fixed:
             xcenter int(config.screen_width*xx)
