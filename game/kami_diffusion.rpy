@@ -5,6 +5,7 @@
 
 default kami_diffusion_effect_kind = None
 default kami_diffusion_effect_started = 0.0
+default kami_diffusion_mouth_started = 0.0
 
 init -3 python:
     import time
@@ -159,7 +160,10 @@ init -3 python:
 
         # Même cadence de bouche que les autres sprites : alternance
         # instantanée, sans transition ni dissolve entre les deux textures.
-        speaking = is_character_speaking("kami")
+        # Exception Kami : la bouche ne s’anime que pendant les 2 premières
+        # secondes de chaque réplique, même si le texte reste à l’écran.
+        speaking = (is_character_speaking("kami") and
+                    0.0 <= time.time() - store.kami_diffusion_mouth_started < 2.0)
         talk = kami_diffusion_asset(expression + "_parle")
         main = talk if speaking and renpy.loadable(talk) and (st % 0.30) < 0.15 else idle
 
@@ -191,6 +195,7 @@ init -3 python:
             dialogue = kwargs.get("what", "")
             start_character_dialogue("kami", dialogue)
             play_dialogue_doublage("kami", dialogue)
+            store.kami_diffusion_mouth_started = time.time()
             kami_diffusion_on_dialogue(dialogue)
         elif event == "end":
             # Au clic, arrêter le mouvement de bouche immédiatement.
