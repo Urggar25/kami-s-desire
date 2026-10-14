@@ -85,7 +85,7 @@ init -3 python:
         children = []
         spacing = max(7, int(config.screen_height / 130))
         for i, yy in enumerate(range(y, y + h, spacing)):
-            strength = (0.035, 0.060, 0.045, 0.025)[i % 4]
+            strength = (0.020, 0.040, 0.025, 0.015)[i % 4]
             children.append(Transform(
                 Solid("#061d2b"), xpos=x, ypos=yy,
                 xysize=(w, 1), alpha=strength))
@@ -99,7 +99,7 @@ init -3 python:
         # personnage, elle sert de halo et non de flou appliqué au sprite.
         return Transform(_kami_diffusion_fullscreen(path),
                          matrixcolor=TintMatrix("#38c9e5"),
-                         alpha=0.11, blur=12, xoffset=2, yoffset=2)
+                         alpha=0.15, blur=15, xoffset=2, yoffset=1)
 
     def _kami_diffusion_composite(fond, main, gene=None, anim=None):
         key = ("crt_frame", fond, main, gene, anim,
@@ -131,9 +131,19 @@ init -3 python:
                          xysize=(w, min(band_h, y+h-sweep_y)), alpha=0.035)
 
     def _kami_diffusion_scale(displayable):
-        # Dézoom global : fond, Kami, reflets et balayage sont réduits
-        # ENSEMBLE, au centre de l'écran (80 % de largeur et de hauteur).
-        return Transform(displayable, zoom=0.80, xalign=0.5, yalign=0.5)
+        # IMPORTANT : les scènes appellent souvent "at adaptive_fullscreen".
+        # Un simple Transform(zoom=.8) réduit aussi le rectangle renvoyé
+        # à Ren'Py, qui le ré-agrandit aussitôt avec fit="cover".
+        # Le canevas EXTERIEUR reste donc toujours en plein écran :
+        # seul le contenu intérieur est réduit à 80 % et centré.
+        width, height = config.screen_width, config.screen_height
+        content = Transform(
+            displayable,
+            zoom=0.80,
+            xpos=int(width * 0.10), ypos=int(height * 0.10),
+            xanchor=0.0, yanchor=0.0,
+        )
+        return Fixed(content, xysize=(width, height))
 
     def kami_diffusion_frame(st, at, expression):
         expression = kami_diffusion_normalize(expression)
