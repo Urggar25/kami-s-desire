@@ -96,39 +96,58 @@ transform d0_memory_particle_echo:
     parallel:
         easeout 0.62 zoom 2.80 rotate -52
 
+# Le fond contient les bordures peintes. Les PNG des souvenirs ne doivent
+# JAMAIS etre affiches directement au-dessus des bordures : on les decoupe
+# via les quatre ouvertures dessinees dans d0_memory_windows.svg.
+# La composition est en coordonnees de reference 1690x930 et suit la taille
+# d'ecran avec un seul facteur (aucun recadrage qui depasse aux bords).
+init python:
+    D0_MEM_REF_W = 1690
+    D0_MEM_REF_H = 930
+    D0_MEM_W = 760
+    D0_MEM_H = 430
+    # Points d'ancrage mesures sur le fond, sans inclure les textes.
+    D0_MEM_ANCHORS = {
+        "noam": (360, 235),
+        "kami": (1350, 250),
+        "conclave": (414, 655),
+        "lysa": (1340, 670),
+    }
+    def d0_memory_illustration(item, alpha=1.0, unlocked=True):
+        key, stem = item[0], item[1]
+        filename = d0_memory_texture("d0_memory_" + stem)
+        if not filename:
+            return Solid("#233747", xysize=(1, 1))
+        cx, cy = D0_MEM_ANCHORS[key]
+        # PNG a taille constante dans chaque emplacement; le masque ecran
+        # preserve les contours du fond autour de la peinture.
+        image = Transform(filename, xysize=(D0_MEM_W, D0_MEM_H),
+                          alpha=alpha,
+                          matrixcolor=SaturationMatrix(1.0 if unlocked else 0.12))
+        composed = Composite((D0_MEM_REF_W, D0_MEM_REF_H),
+                             (cx - D0_MEM_W // 2, cy - D0_MEM_H // 2), image)
+        mask = D0_MEMORY_DIR + "d0_memory_windows.svg"
+        return AlphaMask(composed, mask)
+
 screen d0_memory_fragment(item, unlocked=True, selected=False):
     $ key, stem, title, subtitle, x, y = item
-    $ filename = d0_memory_texture("d0_memory_" + stem)
     $ already = key in d0_memories_seen
+    # Seul le clic est au-dessus des cadres, aucune illustration ici.
     fixed:
         xcenter int(config.screen_width*x)
         ycenter int(config.screen_height*y)
-        xsize 710
-        ysize 370
-        at d0_memory_float((0.1 if key == "kami" else 0.3) if key in ("kami", "lysa") else 0.0)
+        xsize 530
+        ysize 285
         button:
             xalign 0.5 yalign 0.5
-            xsize 710 ysize 370
-            padding (0, 0)
+            xsize 530 ysize 285
             background None
             hover_background None
-            insensitive_background None
-            at d0_memory_hover
             sensitive unlocked
             action Return(key)
-            if filename:
-                # PNG integral conserve : le dessin n'est plus miniaturise
-                # dans un bouton 610x325 et retrouve sa place dans la fenetre.
-                add Transform(filename, xysize=(D0_MEMORY_ART_W, D0_MEMORY_ART_H),
-                    alpha=(0.70 if already else (1.0 if unlocked else 0.14)),
-                    matrixcolor=(SaturationMatrix(1.0) if unlocked else SaturationMatrix(0.10))):
-                    xalign 0.5 yalign 0.5
-            else:
-                add Solid("#20334699" if unlocked else "#121b26aa"):
-                    xalign 0.5 yalign 0.5 xsize 600 ysize 285
+            at d0_memory_hover
             vbox:
-                xalign 0.5 yalign 0.90
-                spacing 5
+                xalign 0.5 yalign 0.88 spacing 5
                 text title:
                     xalign 0.5 size 25 bold True
                     color ("#eaf4fa" if unlocked else "#71818f")
@@ -146,6 +165,14 @@ screen d0_memories():
         add bg xysize (config.screen_width, config.screen_height)
     else:
         add Solid("#050d19")
+    # Un meme masque decoupe les 4 illustrations AUX LIMITES DES OUVERTURES.
+    # Le dessin du cadre reste lisible ; plus aucune image hors ecran.
+    for item in D0_MEMORY_ITEMS:
+        $ key = item[0]
+        $ unlocked = d0_memory_open(key)
+        $ already = key in d0_memories_seen
+        $ artwork = d0_memory_illustration(item, (0.72 if already else (1.0 if unlocked else 0.13)), unlocked)
+        add artwork xysize (config.screen_width, config.screen_height)
     for item in D0_MEMORY_ITEMS:
         use d0_memory_fragment(item, d0_memory_open(item[0]))
     text "REMÉMORATION" xalign 0.5 ypos 0.042 size 31 color "#bdd6e7" kerning 5
@@ -166,7 +193,7 @@ screen d0_memory_transition(key, unlocking=False):
     $ item = next(i for i in D0_MEMORY_ITEMS if i[0] == key)
     $ _, stem, title, subtitle, xx, yy = item
     $ bg = d0_memory_texture("d0_memory_background")
-    $ tex = d0_memory_texture("d0_memory_" + stem)
+    $ artwork = d0_memory_illustration(item)
     $ particle1 = d0_memory_texture("d0_memory_particle1")
     $ particle2 = d0_memory_texture("d0_memory_particle2")
     if bg:
@@ -174,16 +201,14 @@ screen d0_memory_transition(key, unlocking=False):
     else:
         add Solid("#050d19")
     add Solid("#01050a99")
-    # L'arriere-plan ne bouge pas : la camera se concentre sur le souvenir.
+    # La scene entiere est rendue sous masque AVANT le zoom de selection.
+    add artwork:
+        xysize (config.screen_width, config.screen_height)
+        at (d0_memory_unlock_image if unlocking else d0_memory_enter_fragment)
     fixed:
         xcenter int(config.screen_width*xx)
         ycenter int(config.screen_height*yy)
         xsize 710 ysize 370
-        if tex:
-            add tex:
-                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
-                xalign 0.5 yalign 0.5
-                at (d0_memory_unlock_image if unlocking else d0_memory_enter_fragment)
         if particle1:
             add particle1:
                 xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
