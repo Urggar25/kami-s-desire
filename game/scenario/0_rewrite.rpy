@@ -397,9 +397,32 @@ label d0_inspect_vent:
     return
 
 
+# Souvenir de Noam : travelling avant sur un portrait isole dans le noir.
+# L'animation est sur la couche image, la boite de dialogue reste nette.
+transform d0_noam_memory_camera:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 0.72
+    alpha 0.0
+    easeout 0.60 alpha 1.0 zoom 0.86
+    easein 4.50 zoom 1.36
+
+screen d0_noam_memory_portrait():
+    zorder -1
+    add Solid("#000000")
+    add "images/character/noam/portrait.png":
+        xalign 0.5
+        yalign 0.5
+        fit "contain"
+        xsize int(config.screen_width * 0.72)
+        ysize int(config.screen_height * 0.88)
+        at d0_noam_memory_camera
+
 label d0_memory_noam:
     stop music fadeout 0.2
     scene black with dissolve
+    show screen d0_noam_memory_portrait
+    $ renpy.pause(0.85, hard=True)
     play music "music/bgm_quiet_routine.mp3" fadein 0.6
     noam reflexion "Je suis une personne ordinaire. Je n'ai aucun talent particulier, aucun ami haut placé. Je suis... juste moi. Et c'est d'ailleurs très bien ainsi."
     noam sourire "Rien qui mérite vraiment qu'on s'y attarde..."
@@ -414,6 +437,8 @@ label d0_memory_noam:
     noam sourire "C'est grâce à ça qu'on peut dire qu'on survit plutôt bien."
     noam triste "Beaucoup sont bien plus à plaindre que nous..."
     think "Mais tout ça... Ça ne me dit pas ce que je fais ici !"
+    hide screen d0_noam_memory_portrait
+    with Dissolve(0.35)
     if "noam" not in d0_memories_seen:
         $ d0_memories_seen.append("noam")
     stop music fadeout 0.3
