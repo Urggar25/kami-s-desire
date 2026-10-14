@@ -397,47 +397,65 @@ label d0_inspect_vent:
     return
 
 
-# Souvenir de Noam : travelling avant sur un portrait isole dans le noir.
-# L'animation est sur la couche image, la boite de dialogue reste nette.
+# Le souvenir utilise le sprite multi-calques de images.rpy, et NON
+# portrait.png. noam_expression gere deja le clignement (yeux_ferme),
+# la bouche (bouche_parle) et l'equipement actuel.
+default d0_noam_memory_expression = "reflexion"
+
 transform d0_noam_memory_camera:
     subpixel True
-    xalign 0.5 yalign 0.5
+    # Point de pivot sur le haut du sprite, a la hauteur du visage.
+    xalign 0.5
+    yanchor 0.26
+    ypos 0.43
     zoom 0.72
     alpha 0.0
-    easeout 0.60 alpha 1.0 zoom 0.86
-    easein 4.50 zoom 1.36
+    easeout 0.70 alpha 1.0 zoom 0.92
+    easein 5.20 zoom 2.05
 
-screen d0_noam_memory_portrait():
+screen d0_noam_memory_character():
     zorder -1
     add Solid("#000000")
-    add "images/character/noam/portrait.png":
+    # Le DynamicDisplayable est conserve vivant pendant tout le travelling.
+    # Les repliques de Noam activent automatiquement bouche_parle,
+    # et yeux_ferme continue a cligner normalement.
+    add noam_expression(d0_noam_memory_expression):
         xalign 0.5
-        yalign 0.5
-        fit "contain"
-        xsize int(config.screen_width * 0.72)
-        ysize int(config.screen_height * 0.88)
         at d0_noam_memory_camera
 
 label d0_memory_noam:
     stop music fadeout 0.2
     scene black with dissolve
-    show screen d0_noam_memory_portrait
+    $ d0_noam_memory_expression = "reflexion"
+    show screen d0_noam_memory_character
     $ renpy.pause(0.85, hard=True)
     play music "music/bgm_quiet_routine.mp3" fadein 0.6
+    $ d0_noam_memory_expression = "reflexion"
     noam reflexion "Je suis une personne ordinaire. Je n'ai aucun talent particulier, aucun ami haut placé. Je suis... juste moi. Et c'est d'ailleurs très bien ainsi."
+    $ d0_noam_memory_expression = "sourire"
     noam sourire "Rien qui mérite vraiment qu'on s'y attarde..."
+    $ d0_noam_memory_expression = "reflexion"
     noam reflexion "Je vis dans une famille traumatisée par la guerre."
+    $ d0_noam_memory_expression = "triste"
     noam triste "Mon père est mort il y a trois ans, sur le front. Ma mère, elle, est complètement à la ramasse depuis."
+    $ d0_noam_memory_expression = "sourire"
     noam sourire "Mon seul rayon de soleil, c'est ma sœur. Juliette."
+    $ d0_noam_memory_expression = "taquin"
     noam taquin "Elle a dix ans de moins que moi. Elle est gentille, parfois un peu trop... Elle ne mérite pas tout ça."
+    $ d0_noam_memory_expression = "reflexion"
     noam reflexion "On essaie de vivre tant bien que mal dans ce qu'on appelle désormais le district Harmonie."
+    $ d0_noam_memory_expression = "reflexion"
     noam reflexion "Quand je le peux, je participe à de longues réunions techniques et administratives."
+    $ d0_noam_memory_expression = "triste"
     noam triste "Soi-disant, elles aident les gens, débloquent des dossiers et, d'après ce qu'on nous dit, sauvent parfois des vies."
+    $ d0_noam_memory_expression = "reflexion"
     noam reflexion "Ce « travail », que je fais depuis un an, me permet de gagner des bons supplémentaires."
+    $ d0_noam_memory_expression = "sourire"
     noam sourire "C'est grâce à ça qu'on peut dire qu'on survit plutôt bien."
+    $ d0_noam_memory_expression = "triste"
     noam triste "Beaucoup sont bien plus à plaindre que nous..."
     think "Mais tout ça... Ça ne me dit pas ce que je fais ici !"
-    hide screen d0_noam_memory_portrait
+    hide screen d0_noam_memory_character
     with Dissolve(0.35)
     if "noam" not in d0_memories_seen:
         $ d0_memories_seen.append("noam")
