@@ -76,29 +76,45 @@ transform d0_memory_camera_focus(cx, cy):
 # Ondulations dessinees a la main, en surimpression tres legere.
 # Elles ne remplacent pas les lignes peintes dans le fond et ne
 # changent pas les dimensions des quatre souvenirs.
+# Ondes visibles : deux cycles decales, comme des cercles qui naissent,
+# grossissent et s'eteignent. Une simple translation de 3px et 12 %
+# d'opacite etait quasiment imperceptible.
 transform d0_memory_ripples_idle:
     subpixel True
-    alpha 0.12
-    zoom 1.0
-    xalign 0.5
-    yalign 0.5
-    xoffset 0
-    yoffset 0
+    xalign 0.5 yalign 0.5
+    zoom 0.985
+    alpha 0.0
     block:
-        ease 4.2 alpha 0.24 zoom 1.012 xoffset 3 yoffset -2
-        ease 4.8 alpha 0.10 zoom 0.995 xoffset -3 yoffset 2
-        ease 3.4 alpha 0.16 zoom 1.0 xoffset 0 yoffset 0
+        easeout 0.55 alpha 0.68 zoom 1.002
+        easeout 2.35 alpha 0.38 zoom 1.055
+        easein 1.10 alpha 0.0 zoom 1.092
+        pause 0.50
+        zoom 0.985
+        repeat
+
+transform d0_memory_ripples_delayed:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 0.985
+    alpha 0.0
+    pause 2.25
+    block:
+        easeout 0.55 alpha 0.53 zoom 1.002
+        easeout 2.35 alpha 0.28 zoom 1.055
+        easein 1.10 alpha 0.0 zoom 1.092
+        pause 0.50
+        zoom 0.985
         repeat
 
 # Pendant l'ouverture d'un souvenir, l'onde se contracte puis
 # s'efface pendant le zoom de camera et la fragmentation.
 transform d0_memory_ripples_focus:
     subpixel True
-    alpha 0.16
+    alpha 0.42
     zoom 1.0
     xalign 0.5
     yalign 0.5
-    easeout 0.25 alpha 0.36 zoom 0.985
+    easeout 0.25 alpha 0.82 zoom 0.985
     easein 0.75 alpha 0.0 zoom 1.045
 
 # A l'apparition d'un nouveau souvenir, une seule onde diffuse
@@ -110,7 +126,7 @@ transform d0_memory_ripples_unlock:
     xalign 0.5
     yalign 0.5
     pause 0.12
-    easeout 0.36 alpha 0.40 zoom 1.016
+    easeout 0.36 alpha 0.85 zoom 1.016
     easein 0.80 alpha 0.0 zoom 1.040
 
 transform d0_memory_particle_burst_left:
@@ -204,6 +220,9 @@ screen d0_memories():
         add ripples:
             xysize (config.screen_width, config.screen_height)
             at d0_memory_ripples_idle
+        add ripples:
+            xysize (config.screen_width, config.screen_height)
+            at d0_memory_ripples_delayed
     for item in D0_MEMORY_ITEMS:
         use d0_memory_fragment(item, d0_memory_open(item[0]))
     text "REMÉMORATION" xalign 0.5 ypos 0.042 size 31 color "#bdd6e7" kerning 5
