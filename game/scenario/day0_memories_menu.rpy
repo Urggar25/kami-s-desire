@@ -96,38 +96,16 @@ transform d0_memory_particle_echo:
     parallel:
         easeout 0.62 zoom 2.80 rotate -52
 
-# Le fond contient les bordures peintes. Les PNG des souvenirs ne doivent
-# JAMAIS etre affiches directement au-dessus des bordures : on les decoupe
-# via les quatre ouvertures dessinees dans d0_memory_windows.svg.
-# La composition est en coordonnees de reference 1690x930 et suit la taille
-# d'ecran avec un seul facteur (aucun recadrage qui depasse aux bords).
+# Les PNG des souvenirs sont DEJA tailles et positionnes sur le meme
+# canevas que d0_memory_background. Aucun masque, crop ou redimensionnement.
+# Le fond se dessine APRES eux : ses bordures passent naturellement devant.
 init python:
-    D0_MEM_REF_W = 1690
-    D0_MEM_REF_H = 930
-    # Bornes lues dans le masque PNG d0_memory_windows fourni :
-    # chaque texture est affichee ENTIERE dans sa fenetre, pas dans un
-    # grand canevas qui ne montre qu'un coin du dessin.
-    D0_MEM_SLOTS = {
-        "noam": (175, 120, 542, 343),
-        "kami": (1141, 136, 1566, 371),
-        "conclave": (184, 537, 641, 779),
-        "lysa": (1127, 571, 1548, 792),
-    }
     def d0_memory_illustration(item, alpha=1.0, unlocked=True):
-        key, stem = item[0], item[1]
-        filename = d0_memory_texture("d0_memory_" + stem)
+        filename = d0_memory_texture("d0_memory_" + item[1])
         if not filename:
-            return Solid("#00000000", xysize=(D0_MEM_REF_W, D0_MEM_REF_H))
-        left, top, right, bottom = D0_MEM_SLOTS[key]
-        # Un masque DIFFERENT pour chaque souvenir : les autres fenetres
-        # ne montrent plus jamais les pixels d'une illustration voisine.
-        fitted = Transform(filename, xysize=(right-left, bottom-top),
-                           alpha=alpha,
-                           matrixcolor=SaturationMatrix(1.0 if unlocked else 0.12))
-        painted = Composite((D0_MEM_REF_W, D0_MEM_REF_H),
-                            (left, top), fitted)
-        mask = D0_MEMORY_DIR + "d0_memory_mask_" + stem + ".svg"
-        return AlphaMask(painted, mask)
+            return Solid("#00000000")
+        return Transform(filename, alpha=alpha,
+                         matrixcolor=SaturationMatrix(1.0 if unlocked else 0.12))
 
 screen d0_memory_fragment(item, unlocked=True, selected=False):
     $ key, stem, title, subtitle, x, y = item
@@ -161,18 +139,15 @@ screen d0_memories():
     modal True
     zorder 220
     $ bg = d0_memory_texture("d0_memory_background")
-    if bg:
-        add bg xysize (config.screen_width, config.screen_height)
-    else:
-        add Solid("#050d19")
-    # Un meme masque decoupe les 4 illustrations AUX LIMITES DES OUVERTURES.
-    # Le dessin du cadre reste lisible ; plus aucune image hors ecran.
+    # ORDRE IMPORTANT : souvenirs d'abord, cadre de fond ensuite.
     for item in D0_MEMORY_ITEMS:
         $ key = item[0]
         $ unlocked = d0_memory_open(key)
         $ already = key in d0_memories_seen
         $ artwork = d0_memory_illustration(item, (0.72 if already else (1.0 if unlocked else 0.13)), unlocked)
         add artwork xysize (config.screen_width, config.screen_height)
+    if bg:
+        add bg xysize (config.screen_width, config.screen_height)
     for item in D0_MEMORY_ITEMS:
         use d0_memory_fragment(item, d0_memory_open(item[0]))
     text "REMÉMORATION" xalign 0.5 ypos 0.042 size 31 color "#bdd6e7" kerning 5
@@ -193,18 +168,21 @@ screen d0_memory_transition(key, unlocking=False):
     $ item = next(i for i in D0_MEMORY_ITEMS if i[0] == key)
     $ _, stem, title, subtitle, xx, yy = item
     $ bg = d0_memory_texture("d0_memory_background")
-    $ artwork = d0_memory_illustration(item)
     $ particle1 = d0_memory_texture("d0_memory_particle1")
     $ particle2 = d0_memory_texture("d0_memory_particle2")
-    if bg:
-        add bg xysize (config.screen_width, config.screen_height)
-    else:
-        add Solid("#050d19")
-    add Solid("#01050a99")
-    # Le souvenir reste decoupe dans SA fenetre pendant la transition.
+    # Pendant la transition, meme composition que le menu principal.
+    # Les autres souvenirs restent en place derriere le cadre.
+    for other in D0_MEMORY_ITEMS:
+        if other[0] != key:
+            $ other_tex = d0_memory_illustration(other, 0.16, d0_memory_open(other[0]))
+            add other_tex xysize (config.screen_width, config.screen_height)
+    $ artwork = d0_memory_illustration(item)
     add artwork:
         xysize (config.screen_width, config.screen_height)
         at (d0_memory_unlock_image if unlocking else d0_memory_enter_fragment)
+    if bg:
+        add bg xysize (config.screen_width, config.screen_height)
+    add Solid("#01050a55")
     fixed:
         xcenter int(config.screen_width*xx)
         ycenter int(config.screen_height*yy)
