@@ -714,21 +714,24 @@ label d0_memory_lysa:
 
     scene bg_cg006 at adaptive_fullscreen with dissolve
     "Deux caissons étaient disposés côte à côte. Lysa s'était arrêtée devant le sien, les bras croisés, sans avoir l'air particulièrement pressée d'y entrer."
-    lysa "Attendez... Vous voulez dire qu'on doit entrer là-dedans ?"
+    # Retour aux sprites pendant les echanges ; les CG restent sans sprites.
+    scene black with dissolve
+    $ showGroup([("lysa", "blase", 0.28), ("noam", "reflexion", 0.72)])
+    lysa "Attends... Tu veux dire qu'on doit entrer là-dedans ?"
     voix "Le transport est obligatoire. Vous serez endormis pendant le trajet."
     lysa "Génial. On ne sait même pas où on va, mais on doit se laisser enfermer et endormir sans poser de questions ?"
     "Elle se tourne vers moi, comme si elle attendait que je proteste à mon tour."
 
     menu:
         "Lui donner raison":
-            noam inquiet "Je suis d'accord avec vous. On pourrait au moins nous expliquer où on va et pourquoi il faut nous endormir."
+            noam inquiet "Je suis d'accord avec toi. On pourrait au moins nous expliquer où on va et pourquoi il faut nous endormir."
             lysa "Merci ! Je commençais à croire que j'étais la seule à trouver ça complètement absurde."
         "Essayer de la rassurer":
             noam reflexion "Ils ne prendraient pas le risque de nous faire du mal, si ? On vient d'être choisis pour Harmonie."
-            lysa "Ah, parce que vous leur faites confiance, vous ? J'aimerais bien avoir votre optimisme."
+            lysa "Ah, parce que tu leur fais confiance, toi ? J'aimerais bien avoir ton optimisme."
         "En plaisanter":
             noam sourire "Au moins, on n'aura pas à supporter les discussions des autres passagers pendant le trajet."
-            lysa "Très drôle. Vous me raconterez vos meilleures blagues quand on se réveillera... si on se réveille."
+            lysa "Très drôle. Tu me raconteras tes meilleures blagues quand on se réveillera... si on se réveille."
 
     noam reflexion "On ne peut pas au moins prévenir nos proches ?"
     voix "Les notifications seront transmises aux familles. Veuillez vous installer."
@@ -739,19 +742,19 @@ label d0_memory_lysa:
     menu:
         "« On se retrouve à l'arrivée. »":
             noam sourire "On se retrouve à l'arrivée, alors. J'espère qu'on aura droit à une meilleure explication une fois sur place."
-            lysa "Comptez sur moi pour la réclamer."
-        "« Vous êtes sûre que ça va aller ? »":
-            noam inquiet "Vous êtes sûre que ça va aller ? Vous n'avez pas l'air très rassurée."
+            lysa "Compte sur moi pour la réclamer."
+        "« T'es sûre que ça va aller ? »":
+            noam inquiet "T'es sûre que ça va aller ? T'as pas l'air très rassurée."
             lysa "Non, ça ne va pas. Mais je suppose que rester plantée là ne changera rien."
-        "« Vous avez peut-être raison de vous méfier. »":
-            noam reflexion "Vous avez peut-être raison de vous méfier. Je n'aime pas beaucoup la façon dont tout ça se passe."
-            lysa "Alors gardez ça en tête. Ça nous évitera peut-être de croire tout ce qu'on nous raconte."
+        "« Tu as peut-être raison de te méfier. »":
+            noam reflexion "Tu as peut-être raison de te méfier. Je n'aime pas beaucoup la façon dont tout ça se passe."
+            lysa "Alors garde ça en tête. Ça nous évitera peut-être de croire tout ce qu'on nous raconte."
 
     scene bg_cg006_1 at adaptive_fullscreen with dissolve
     "Je m'allonge à mon tour. Le plafond paraît soudain beaucoup plus proche, et j'entends Lysa s'installer dans le caisson voisin."
-    lysa "Bon voyage, monsieur... Euh, comment vous vous appelez, déjà ?"
-    noam "Noam. Et vous, c'est Lysa, c'est ça ?"
-    lysa "Oui. Essayez de ne pas l'oublier d'ici notre arrivée."
+    lysa "Bon voyage... Euh, comment tu t'appelles, déjà ?"
+    noam "Noam. Et toi, c'est Lysa, c'est ça ?"
+    lysa "Oui. Essaie de ne pas l'oublier d'ici notre arrivée."
     "Le couvercle commence à descendre au-dessus de moi. J'ai juste le temps d'entendre un déclic, puis la voix reprend."
     voix "Début de la sédation."
     scene black with dissolve
