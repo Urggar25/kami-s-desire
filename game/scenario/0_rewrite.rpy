@@ -603,16 +603,16 @@ label d0_memory_kami:
     noam reflexion "C'est ainsi que nous vivons dans ce monde : le monde de Kami."
     think "Cela fait un an déjà. Un an qu'elle a pris le pouvoir de la manière la plus absolue."
 
-    # PHASE 1 : LE MONDE AVANT KAMI — fresque de la guerre.
+    # PHASE 1 : LE MONDE AVANT KAMI — travelling pendant les dialogues.
+    show screen d0_kami_fresco_screen(1)
     noam reflexion "Avant elle, les pays se faisaient la guerre. Et pas avec de simples fusils : on avait construit des machines capables de détruire des villes entières."
     noam triste "Il y avait des batailles partout, des millions de morts, des familles qui attendaient le retour de quelqu'un qui ne rentrerait jamais..."
     think "Je sais ce que ça fait. Juliette aussi."
     noam triste "À cette époque, personne n'était vraiment en sécurité. Même loin du front, on ne savait jamais si le lendemain allait ressembler à la veille."
-    # Le panorama occupe toute la scène et se balaie de gauche à droite.
-    call screen d0_kami_fresco_screen(1)
-    scene black with dissolve
+    hide screen d0_kami_fresco_screen
 
-    # PHASE 2 : LA PRISE DE POUVOIR — écrans, Commandements, sanction.
+    # PHASE 2 : LA PRISE DE POUVOIR — travelling pendant les dialogues.
+    show screen d0_kami_fresco_screen(2)
     noam reflexion "Ce qui m'a toujours étonné, c'est sa façon de prendre le pouvoir."
     noam reflexion "En un instant, tout était fait. Tout était sous son contrôle."
     noam triste "Les téléphones. Les ordinateurs. Les télévisions. Les radios. Les montres. Les caméras. Même les portails. Tout ce qui était connecté a été piraté en une seconde."
@@ -623,10 +623,10 @@ label d0_memory_kami:
     think "Comment ? Grâce aux armes de pointe dont se servaient nos aïeux."
     noam reflexion "Je ne saurais pas dire exactement comment ça marche, mais... Quand quelqu'un ne respecte pas les règles..."
     noam colere "Un rayon laser extrêmement puissant lui perce le crâne depuis les nuages. En une seconde, c'est terminé."
-    call screen d0_kami_fresco_screen(2)
-    scene black with dissolve
+    hide screen d0_kami_fresco_screen
 
-    # PHASE 3 : LE MONDE DE KAMI — paix, rationnement et surveillance.
+    # PHASE 3 : LE MONDE DE KAMI — travelling pendant les dialogues.
+    show screen d0_kami_fresco_screen(3)
     noam reflexion "Kami... Certains l'adorent. Après tout, elle a mis fin au cycle de violence et de guerre."
     noam triste "D'autres la détestent, car elle nous prive de la plus essentielle des libertés."
     noam reflexion "Kami sait tout ce qu'on fait."
@@ -638,8 +638,7 @@ label d0_memory_kami:
     noam reflexion "À la place, on fait la queue pour obtenir des bons de rationnement. Ça nous permet au moins de manger sans payer."
     noam triste "Certains trouvent ça formidable. D'autres ne supportent plus de dépendre de Kami pour absolument tout."
     noam reflexion "Oui... On peut dire que le monde a bien changé."
-    call screen d0_kami_fresco_screen(3)
-    scene black with dissolve
+    hide screen d0_kami_fresco_screen
 
     think "Mais si Kami avait voulu me tuer, je serais déjà mort. Alors pourquoi suis-je enfermé ?"
     $ unlock_character_name("kami")
