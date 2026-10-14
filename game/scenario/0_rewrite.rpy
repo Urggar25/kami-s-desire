@@ -462,25 +462,15 @@ screen d0_juliette_diorama():
 # Passage entre deux tableaux dessines : chevauchement anime des poses.
 # Les fichiers d0_juliette sont des tableaux complets, et non des
 # personnages separes : l'interpolation reste donc une transition 2D.
+# Fondus croises fixes : les personnages restent parfaitement en place.
+# Les deux tableaux se chevauchent assez longtemps pour suggerer le geste.
 transform d0_juliette_pose_exit(direction=1):
-    subpixel True
     alpha 1.0
-    xoffset 0 yoffset 0 zoom 1.0
-    parallel:
-        easeout 0.88 alpha 0.0
-    parallel:
-        easein 0.88 xoffset (-65 if direction > 0 else 65) yoffset 18 zoom 0.975
+    ease 1.65 alpha 0.0
 
 transform d0_juliette_pose_enter(direction=1):
-    subpixel True
     alpha 0.0
-    xoffset (105 if direction > 0 else -105)
-    yoffset -22
-    zoom 0.96
-    parallel:
-        easeout 1.05 alpha 1.0
-    parallel:
-        easeout 1.05 xoffset 0 yoffset 0 zoom 1.0
+    ease 1.65 alpha 1.0
 
 screen d0_juliette_pose_change(previous, following, direction=1):
     modal True
@@ -495,7 +485,7 @@ screen d0_juliette_pose_change(previous, following, direction=1):
         xysize (config.screen_width, config.screen_height)
         at d0_juliette_pose_enter(direction)
     add Solid("#64718414")
-    timer 1.08 action Return()
+    timer 1.70 action Return()
 
 label d0_juliette_animate_to(next_pose, direction=1):
     $ old_pose = d0_juliette_pose
