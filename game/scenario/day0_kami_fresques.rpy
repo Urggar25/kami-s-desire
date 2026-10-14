@@ -27,16 +27,11 @@ init python:
         return DynamicDisplayable(d0_kami_fresco_frame, index)
 
 screen d0_kami_fresco_screen(index):
-    modal True
-    zorder 80
+    # Simple fond animé, jamais modal : les dialogues restent au-dessus
+    # et le travelling continue pendant que le joueur lit et clique.
+    zorder -10
     add d0_kami_fresco(index)
-    # Transition douce du panorama ; ne modifie pas la boite de dialogue.
     add Solid("#060a13") at d0_kami_fresco_reveal
-    timer D0_KAMI_FRESCO_DURATION action Return()
-    textbutton "PASSER":
-        xalign 0.972 yalign 0.045
-        text_size 17 text_color "#bdcad9" text_hover_color "#ffffff"
-        action Return()
 
 transform d0_kami_fresco_reveal:
     alpha 1.0
