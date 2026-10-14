@@ -423,40 +423,139 @@ screen d0_noam_memory_character():
         xalign 0.5
         at d0_noam_memory_camera
 
+# Souvenir de Juliette : images composees sur le meme canevas que d0_maison.
+# Les cinq poses respirent doucement, sans bouger leur point d'ancrage.
+define D0_JULIETTE_DIR = "images/ui/0/s3_juliette/"
+
+default d0_juliette_pose = 1
+
+transform d0_juliette_breath:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 1.0
+    block:
+        ease 1.6 zoom 1.007 yoffset -2
+        ease 1.9 zoom 1.0 yoffset 0
+        repeat
+
+transform d0_juliette_camera:
+    subpixel True
+    xalign 0.5 yalign 0.5
+    zoom 0.94 alpha 0.0
+    easeout 1.1 alpha 1.0 zoom 1.0
+
+screen d0_juliette_diorama():
+    zorder -1
+    add Solid("#000000")
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        at d0_juliette_camera
+        add D0_JULIETTE_DIR + "d0_maison.png":
+            xysize (config.screen_width, config.screen_height)
+        add D0_JULIETTE_DIR + "d0_juliette%d.png" % d0_juliette_pose:
+            xysize (config.screen_width, config.screen_height)
+            at d0_juliette_breath
+    # Voile gris discret : memoire du passe, sans sacrifier la lisibilite.
+    add Solid("#64718414")
+
 label d0_memory_noam:
-    stop music fadeout 0.2
+    stop music fadeout 0.25
     scene black with dissolve
     $ d0_noam_memory_expression = "reflexion"
     show screen d0_noam_memory_character
-    $ renpy.pause(0.85, hard=True)
-    play music "music/bgm_quiet_routine.mp3" fadein 0.6
-    $ d0_noam_memory_expression = "reflexion"
-    noam reflexion "Je suis une personne ordinaire. Je n'ai aucun talent particulier, aucun ami haut placé. Je suis... juste moi. Et c'est d'ailleurs très bien ainsi."
+    $ renpy.pause(0.8, hard=True)
+    noam reflexion "Je m'appelle Noam. Vingt-six ans. Je vis dans le district Harmonie, avec ma mère et ma petite sœur... Juliette."
     $ d0_noam_memory_expression = "sourire"
-    noam sourire "Rien qui mérite vraiment qu'on s'y attarde..."
-    $ d0_noam_memory_expression = "reflexion"
-    noam reflexion "Je vis dans une famille traumatisée par la guerre."
-    $ d0_noam_memory_expression = "triste"
-    noam triste "Mon père est mort il y a trois ans, sur le front. Ma mère, elle, est complètement à la ramasse depuis."
-    $ d0_noam_memory_expression = "sourire"
-    noam sourire "Mon seul rayon de soleil, c'est ma sœur. Juliette."
-    $ d0_noam_memory_expression = "taquin"
-    noam taquin "Elle a dix ans de moins que moi. Elle est gentille, parfois un peu trop... Elle ne mérite pas tout ça."
-    $ d0_noam_memory_expression = "reflexion"
-    noam reflexion "On essaie de vivre tant bien que mal dans ce qu'on appelle désormais le district Harmonie."
-    $ d0_noam_memory_expression = "reflexion"
-    noam reflexion "Quand je le peux, je participe à de longues réunions techniques et administratives."
-    $ d0_noam_memory_expression = "triste"
-    noam triste "Soi-disant, elles aident les gens, débloquent des dossiers et, d'après ce qu'on nous dit, sauvent parfois des vies."
-    $ d0_noam_memory_expression = "reflexion"
-    noam reflexion "Ce « travail », que je fais depuis un an, me permet de gagner des bons supplémentaires."
-    $ d0_noam_memory_expression = "sourire"
-    noam sourire "C'est grâce à ça qu'on peut dire qu'on survit plutôt bien."
-    $ d0_noam_memory_expression = "triste"
-    noam triste "Beaucoup sont bien plus à plaindre que nous..."
-    think "Mais tout ça... Ça ne me dit pas ce que je fais ici !"
+    noam sourire "Juliette... Je me souviens de sa voix. Elle passe son temps à me rappeler des choses que j'aurais dû faire tout seul."
     hide screen d0_noam_memory_character
     with Dissolve(0.35)
+
+    play music "music/bgm_quiet_routine.mp3" fadein 0.8
+    $ d0_juliette_pose = 1
+    show screen d0_juliette_diorama
+    with Dissolve(0.8)
+
+    # 1. Juliette interpelle Noam depuis le salon.
+    "Juliette" "Noaaaaam ! Tu comptes rester là-haut toute la journée ? T'as vu l'heure ?!"
+    noam "J'arrive ! Deux secondes, j'ai même pas encore mis mes chaussures !"
+    "Juliette" "Ça fait vingt minutes que tu dis ça ! Je vais finir par croire que tu t'es rendormi !"
+    noam "Je suis réveillé, je te signale. J'ai juste le droit de me préparer tranquillement, non ?"
+    "Juliette" "Pas quand tu dois encore partir à l'Administration et que tu vas finir par courir jusqu'à l'arrêt !"
+
+    # 2. Noam descend de sa chambre ; Juliette boude dans son coin.
+    $ d0_juliette_pose = 2
+    with Dissolve(0.35)
+    noam "Bon, me voilà. Et c'est quoi, cette tête ? On dirait que je t'ai fait attendre trois heures."
+    "Juliette" "Je t'ai appelé quatre fois. QUATRE. Et quand tu descends enfin, t'as même pas l'air désolé !"
+    noam "Pardon, madame. La prochaine fois, je déposerai une demande écrite avant de sortir de ma chambre."
+    "Juliette" "Tu peux te moquer, mais tu sais très bien que j'aime pas quand tu pars à la dernière minute. Après, tu oublies des trucs."
+    noam "Comme quoi ?"
+    "Juliette" "Comme ton repas. Ou ta veste. Ou le fait que tu sois censé rentrer avant que tout le monde dorme."
+    noam "Bon... Pour la veste, je plaide coupable. Mais pour le reste, tu exagères un peu."
+
+    # 3. Noam propose un calin.
+    $ d0_juliette_pose = 3
+    with Dissolve(0.35)
+    noam "Viens là, petite râleuse. Tu vas quand même pas me laisser partir sans un câlin ?"
+    "Juliette" "Hé ! Qu'est-ce que tu fais ?!"
+    noam "Je tente une négociation diplomatique. Il paraît que ça marche mieux que les excuses."
+    "Juliette" "Mais arrête !"
+
+    # 4. Juliette est contente, mais se defend d'etre encore un bebe.
+    $ d0_juliette_pose = 4
+    with Dissolve(0.35)
+    "Juliette" "J'ai dix ans, Noam ! Dix ans ! Je suis plus un bébé que tu peux attraper dans tes bras quand ça te chante !"
+    noam "Ah, pardon. C'est vrai que mademoiselle est une adulte parfaitement indépendante, maintenant."
+    "Juliette" "Exactement !"
+    noam "Une adulte qui me hurle dessus depuis le salon parce que je descends pas assez vite ?"
+    "Juliette" "C'est différent ! Et puis... tu peux me faire un câlin quand je te le demande, d'accord ?"
+    noam "D'accord, marché conclu. Je vais essayer de survivre jusque-là."
+    "Juliette" "Idiot... Tiens, justement, j'ai quelque chose pour toi."
+
+    # 5. Juliette presente le bento qu'elle a prepare.
+    $ d0_juliette_pose = 5
+    with Dissolve(0.35)
+    "Juliette" "Regarde ! Je t'ai préparé un bento. C'est pas grand-chose, mais au moins tu pourras manger quelque chose de correct."
+    noam "Attends, t'as préparé tout ça pour moi ? Juliette, fallait pas te donner autant de mal."
+    "Juliette" "C'est pas du mal ! J'ai juste pris ce qu'il restait, et j'ai essayé de faire quelque chose qui tienne dans la boîte."
+    noam "C'est gentil, vraiment. Mais aujourd'hui, je dois retourner à l'Administration, et je sais même pas à quelle heure ils vont me laisser souffler. Je mangerai sur place, si j'ai le temps."
+    "Juliette" "Si t'as le temps ? Non, mais tu t'entends parler ?!"
+    noam "Juliette, je vais pas me laisser mourir de faim. Je te promets que je ferai une pause dès que je pourrai."
+    "Juliette" "Tu dis toujours ça, et après tu rentres complètement épuisé ! Tu travailles pour qu'on ait de quoi vivre, je sais bien, mais c'est aussi pour que TOI, tu manges, pas seulement maman et moi !"
+    noam "Je sais. T'as raison, je suis désolé."
+    "Juliette" "Alors tu prends la boîte. Et quand t'auras fini, tu la ramènes, comme ça je saurai que t'as vraiment mangé."
+    noam "Tu vas vérifier ?"
+    "Juliette" "Évidemment que je vais vérifier. Quelqu'un doit bien s'occuper de toi."
+    noam "Bon, d'accord. Je prends ton bento, je mange, et je te rapporte la boîte vide. Promis."
+    "Juliette" "Voilà. C'est quand même pas compliqué !"
+    noam "Je sais pas comment je ferais sans toi."
+    "Juliette" "Tu oublierais même de manger, apparemment..."
+    noam "Ça, j'admets que c'est un argument difficile à contredire."
+    "Juliette" "Allez, file. Et fais attention sur le chemin !"
+    noam "À ce soir, Juliette."
+    "Juliette" "À ce soir ! Et n'oublie pas de manger !"
+
+    # Retour au present : fin de la reconstitution isometrique.
+    hide screen d0_juliette_diorama
+    with Dissolve(0.65)
+    scene black
+    $ d0_noam_memory_expression = "triste"
+    show screen d0_noam_memory_character
+    with Dissolve(0.45)
+
+    noam triste "Mon père est mort à la guerre, il y a trois ans. Depuis, maman a sombré dans une dépression si profonde qu'elle ne sort pratiquement plus de sa chambre."
+    noam triste "Il y a des jours où elle ne nous répond même pas. Alors c'est Juliette et moi qui faisons tourner la maison... Enfin, surtout moi, quand j'arrive à être là."
+    $ d0_noam_memory_expression = "reflexion"
+    noam reflexion "Je suis le seul à pouvoir rapporter suffisamment de bons pour qu'on tienne le mois. C'est pour ça que je vais à l'Administration, même quand j'en ai marre et même quand je suis crevé."
+    $ d0_noam_memory_expression = "inquiet"
+    noam inquiet "Juliette a beau faire la grande, elle n'a que dix ans. Elle devrait pas avoir à se demander si son frère a mangé, ni à s'occuper de maman toute seule."
+    noam inquiet "Et maintenant, moi, je suis ici... Depuis combien de temps ? Est-ce qu'elle m'attend encore ?"
+    $ d0_noam_memory_expression = "determine"
+    noam determine "Je lui ai dit que je rentrerais ce soir. Il faut que je trouve comment sortir d'ici."
+
+    hide screen d0_noam_memory_character
+    with Dissolve(0.4)
     if "noam" not in d0_memories_seen:
         $ d0_memories_seen.append("noam")
     stop music fadeout 0.3
