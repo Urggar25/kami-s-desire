@@ -242,7 +242,7 @@ screen d0_capsule_valve_hotspot():
                 background None
                 hover_background None
                 focus_mask Transform(D0_CAPSULE_DIR + "d0_capsule_valve.png", xysize=(config.screen_width, config.screen_height))
-                action Call("d0_inspect_valve")
+                action Call("d0_inspect_valve", from_current=True)
 
 # Le scénério change ce mode apres l'ouverture dirigee.
 screen d0_capsule_live(mode="idle"):
