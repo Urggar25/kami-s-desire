@@ -154,6 +154,8 @@ label _0_CANON:
     $ d0_push_held = False
     scene black
     call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix")
+    
+    pause 2.0
     stop music fadeout 0.3
 
     # Premier contact : seulement le souffle et les vibrations du transport.
