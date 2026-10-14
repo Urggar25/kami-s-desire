@@ -602,24 +602,45 @@ label d0_memory_kami:
     noam triste "D'habitude, en un éclair, tout est terminé."
     noam reflexion "C'est ainsi que nous vivons dans ce monde : le monde de Kami."
     think "Cela fait un an déjà. Un an qu'elle a pris le pouvoir de la manière la plus absolue."
-    noam reflexion "Kami... Certains l'adorent. Après tout, elle a mis fin au cycle de violence et de guerre."
-    noam triste "D'autres la détestent, car elle nous prive de la plus essentielle des libertés."
+
+    # PHASE 1 : LE MONDE AVANT KAMI — fresque de la guerre.
+    noam reflexion "Avant elle, les pays se faisaient la guerre. Et pas avec de simples fusils : on avait construit des machines capables de détruire des villes entières."
+    noam triste "Il y avait des batailles partout, des millions de morts, des familles qui attendaient le retour de quelqu'un qui ne rentrerait jamais..."
+    think "Je sais ce que ça fait. Juliette aussi."
+    noam triste "À cette époque, personne n'était vraiment en sécurité. Même loin du front, on ne savait jamais si le lendemain allait ressembler à la veille."
+    # Le panorama occupe toute la scène et se balaie de gauche à droite.
+    call screen d0_kami_fresco_screen(1)
+    scene black with dissolve
+
+    # PHASE 2 : LA PRISE DE POUVOIR — écrans, Commandements, sanction.
     noam reflexion "Ce qui m'a toujours étonné, c'est sa façon de prendre le pouvoir."
     noam reflexion "En un instant, tout était fait. Tout était sous son contrôle."
     noam triste "Les téléphones. Les ordinateurs. Les télévisions. Les radios. Les montres. Les caméras. Même les portails. Tout ce qui était connecté a été piraté en une seconde."
-    noam reflexion "Kami sait tout ce qu'on fait."
-    noam triste "Tout ce qu'on dit."
-    noam colere "Et presque tout ce qu'on pense."
+    noam reflexion "Son visage était partout. Sur les écrans des villes, dans les maisons, jusque dans les appareils qu'on tenait dans nos mains."
     noam reflexion "Mais toutes ces informations ne lui suffisaient pas. Pour nous gouverner, il lui fallait des règles."
     noam reflexion "Il y a un an, presque jour pour jour, elle a imposé ses Commandements."
     noam colere "Avec une règle simple, froide et totalitaire : quiconque bafoue un Commandement est immédiatement éliminé."
     think "Comment ? Grâce aux armes de pointe dont se servaient nos aïeux."
     noam reflexion "Je ne saurais pas dire exactement comment ça marche, mais... Quand quelqu'un ne respecte pas les règles..."
     noam colere "Un rayon laser extrêmement puissant lui perce le crâne depuis les nuages. En une seconde, c'est terminé."
+    call screen d0_kami_fresco_screen(2)
+    scene black with dissolve
+
+    # PHASE 3 : LE MONDE DE KAMI — paix, rationnement et surveillance.
+    noam reflexion "Kami... Certains l'adorent. Après tout, elle a mis fin au cycle de violence et de guerre."
+    noam triste "D'autres la détestent, car elle nous prive de la plus essentielle des libertés."
+    noam reflexion "Kami sait tout ce qu'on fait."
+    noam triste "Tout ce qu'on dit."
+    noam colere "Et presque tout ce qu'on pense."
     noam reflexion "Aujourd'hui, on peut dire que toute notre vie s'est réorganisée autour de ces Commandements."
     noam reflexion "Il n'y a plus de guerre. Plus de violence. C'est désormais interdit."
     noam triste "Mais il n'y a plus non plus de travail comme avant. Plus de marchés où l'on peut acheter tout et n'importe quoi. Plus de salaires, plus d'argent..."
+    noam reflexion "À la place, on fait la queue pour obtenir des bons de rationnement. Ça nous permet au moins de manger sans payer."
+    noam triste "Certains trouvent ça formidable. D'autres ne supportent plus de dépendre de Kami pour absolument tout."
     noam reflexion "Oui... On peut dire que le monde a bien changé."
+    call screen d0_kami_fresco_screen(3)
+    scene black with dissolve
+
     think "Mais si Kami avait voulu me tuer, je serais déjà mort. Alors pourquoi suis-je enfermé ?"
     $ unlock_character_name("kami")
     if "kami" not in d0_memories_seen:
