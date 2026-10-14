@@ -64,6 +64,15 @@ transform d0_memory_enter_fragment:
     easein 0.34 zoom 1.22
     easeout 0.56 zoom 2.15 alpha 0.0
 
+# La camera deplace et grossit TOUTE la composition (fond, fragments,
+# cadres). Les PNG des souvenirs restent fixes a leur taille d'origine.
+transform d0_memory_camera_focus(cx, cy):
+    subpixel True
+    zoom 1.0
+    xalign 0.5 yalign 0.5
+    xoffset 0 yoffset 0
+    easein 0.90 zoom 2.0 xoffset int((0.5 - cx) * config.screen_width * 2.0) yoffset int((0.5 - cy) * config.screen_height * 2.0)
+
 transform d0_memory_particle_burst_left:
     subpixel True
     alpha 0.0 zoom 0.38 rotate -25 xoffset 0 yoffset 0
@@ -170,38 +179,49 @@ screen d0_memory_transition(key, unlocking=False):
     $ bg = d0_memory_texture("d0_memory_background")
     $ particle1 = d0_memory_texture("d0_memory_particle1")
     $ particle2 = d0_memory_texture("d0_memory_particle2")
-    # Pendant la transition, meme composition que le menu principal.
-    # Les autres souvenirs restent en place derriere le cadre.
-    for other in D0_MEMORY_ITEMS:
-        if other[0] != key:
-            $ other_tex = d0_memory_illustration(other, 0.16, d0_memory_open(other[0]))
-            add other_tex xysize (config.screen_width, config.screen_height)
-    $ artwork = d0_memory_illustration(item)
-    add artwork:
-        xysize (config.screen_width, config.screen_height)
-        at (d0_memory_unlock_image if unlocking else d0_memory_enter_fragment)
-    if bg:
-        add bg xysize (config.screen_width, config.screen_height)
-    add Solid("#01050a55")
+
+    # Plan complet filme par une camera virtuelle : les images ne changent
+    # jamais de dimensions individuellement et le cadre reste DEVANT elles.
     fixed:
-        xcenter int(config.screen_width*xx)
-        ycenter int(config.screen_height*yy)
-        xsize 710 ysize 370
-        if particle1:
-            add particle1:
-                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
-                xalign 0.5 yalign 0.5
-                at d0_memory_particle_burst_left
-        if particle2:
-            add particle2:
-                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
-                xalign 0.5 yalign 0.5
-                at d0_memory_particle_burst_right
-        if particle1:
-            add particle1:
-                xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
-                xalign 0.5 yalign 0.5
-                at d0_memory_particle_echo
+        xsize config.screen_width
+        ysize config.screen_height
+        if not unlocking:
+            at d0_memory_camera_focus(xx, yy)
+        for other in D0_MEMORY_ITEMS:
+            $ other_key = other[0]
+            $ active = (other_key == key)
+            $ original_alpha = (1.0 if active else 0.20)
+            $ other_tex = d0_memory_illustration(other, original_alpha, d0_memory_open(other_key))
+            if unlocking and active:
+                add other_tex:
+                    xysize (config.screen_width, config.screen_height)
+                    at d0_memory_unlock_image
+            else:
+                add other_tex xysize (config.screen_width, config.screen_height)
+        if bg:
+            add bg xysize (config.screen_width, config.screen_height)
+        # L'effet de fragmentation reste centre sur l'emplacement vise.
+        fixed:
+            xcenter int(config.screen_width*xx)
+            ycenter int(config.screen_height*yy)
+            xsize 710
+            ysize 370
+            if particle1:
+                add particle1:
+                    xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                    xalign 0.5 yalign 0.5
+                    at d0_memory_particle_burst_left
+            if particle2:
+                add particle2:
+                    xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                    xalign 0.5 yalign 0.5
+                    at d0_memory_particle_burst_right
+            if particle1:
+                add particle1:
+                    xysize (D0_MEMORY_ART_W, D0_MEMORY_ART_H)
+                    xalign 0.5 yalign 0.5
+                    at d0_memory_particle_echo
+
     if unlocking:
         text "SOUVENIR RETROUVÉ" xalign 0.5 yalign 0.915 size 24 color "#d7e6ee"
     timer (1.58 if unlocking else 1.43) action Return()
