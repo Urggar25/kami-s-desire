@@ -66,16 +66,51 @@ init -3 python:
         return Transform(Image(path), fit="cover",
                          xysize=(config.screen_width, config.screen_height))
 
+    # Bord intérieur du moniteur dessiné dans bg_diffusion_fond. Tous les
+    # effets électroniques sont limités à cette surface et ne modifient jamais
+    # le cadre métallique ni l'interface de dialogue de Ren'Py.
+    def _kami_monitor_rect():
+        w, h = config.screen_width, config.screen_height
+        return (int(w * 0.105), int(h * 0.125),
+                int(w * 0.790), int(h * 0.730))
+
+    def _kami_screen_fx():
+        key = ("crt_screen", config.screen_width, config.screen_height)
+        cached = _kami_diffusion_cache.get(key)
+        if cached is not None:
+            return cached
+        x, y, w, h = _kami_monitor_rect()
+        children = []
+        # Voile électronique vert / turquoise, très léger. Le personnage
+        # garde son trait et ses détails : aucune recoloration destructive.
+        children.append(Transform(Solid("#126b77"), xpos=x, ypos=y,
+                                  xysize=(w, h), alpha=0.17))
+        # Lignes de balayage discrètes. Entièrement générées en Ren'Py :
+        # aucun PNG supplémentaire, aucune dépendance à un shader.
+        spacing = max(8, int(config.screen_height / 110))
+        for yy in range(y, y + h, spacing):
+            children.append(Transform(Solid("#061b2a"), xpos=x, ypos=yy,
+                                      xysize=(w, 1), alpha=0.17))
+        # Obscurcissement léger des bords intérieurs (effet verre/CRT).
+        edge = max(8, int(w * 0.018))
+        children.append(Transform(Solid("#03141a"), xpos=x, ypos=y,
+                                  xysize=(edge, h), alpha=0.22))
+        children.append(Transform(Solid("#03141a"), xpos=x+w-edge, ypos=y,
+                                  xysize=(edge, h), alpha=0.22))
+        result = Fixed(*children, xysize=(config.screen_width, config.screen_height))
+        _kami_diffusion_cache[key] = result
+        return result
+
     def _kami_diffusion_ghost(path):
-        # Un halo réfléchi SOUS le calque normal, visible notamment sur le
-        # fond sombre de l'écran, sans remplacer sa texture ni ses contours.
-        return Transform(
-            _kami_diffusion_fullscreen(path),
-            alpha=0.27, blur=11, xoffset=5, yoffset=3
-        )
+        # Rémanence lumineuse plus proche de l'ancien visuel. Sous le
+        # personnage, elle sert de halo et non de flou appliqué au sprite.
+        return Transform(_kami_diffusion_fullscreen(path),
+                         matrixcolor=TintMatrix("#38c9e5"),
+                         alpha=0.20, blur=9, xoffset=3, yoffset=2)
 
     def _kami_diffusion_composite(fond, main, gene=None, anim=None):
-        key = (fond, main, gene, anim, config.screen_width, config.screen_height)
+        key = ("crt_frame", fond, main, gene, anim,
+               config.screen_width, config.screen_height)
         cached = _kami_diffusion_cache.get(key)
         if cached is not None:
             return cached
@@ -83,11 +118,26 @@ init -3 python:
         for path in (main, gene, anim):
             if path:
                 children.append(_kami_diffusion_ghost(path))
-                children.append(_kami_diffusion_fullscreen(path))
+                # Le léger refroidissement du blanc évoque l'ancien écran
+                # turquoise, sans effacer le dessin original.
+                children.append(Transform(_kami_diffusion_fullscreen(path),
+                    matrixcolor=TintMatrix("#b7e7ef"), alpha=0.95))
+        # Le traitement de l'écran passe PAR-DESSUS les personnages.
+        children.append(_kami_screen_fx())
         result = Fixed(*children,
                        xysize=(config.screen_width, config.screen_height))
         _kami_diffusion_cache[key] = result
         return result
+
+    def _kami_diffusion_scan_sweep(st):
+        # Balayage lumineux doux qui se déplace lentement de haut en bas.
+        x, y, w, h = _kami_monitor_rect()
+        period = 6.2
+        phase = (st % period) / period
+        sweep_y = y + int(h * phase)
+        band_h = max(3, int(h * 0.016))
+        return Transform(Solid("#78dbeb"), xpos=x, ypos=sweep_y,
+                         xysize=(w, min(band_h, y+h-sweep_y)), alpha=0.075)
 
     def kami_diffusion_frame(st, at, expression):
         expression = kami_diffusion_normalize(expression)
@@ -121,7 +171,11 @@ init -3 python:
                 anim = kami_diffusion_existing((
                     kami_diffusion_asset(expression + "_anim"),
                 ))
-        return _kami_diffusion_composite(fond, main, gene, anim), 0.06
+        # Le balayage est séparé des compositions en cache : animation
+        # continue même pendant une pause, sans refaire les 100 scanlines.
+        return Fixed(_kami_diffusion_composite(fond, main, gene, anim),
+                     _kami_diffusion_scan_sweep(st),
+                     xysize=(config.screen_width, config.screen_height)), 0.06
 
     def kami_diffusion_display(expression):
         return DynamicDisplayable(kami_diffusion_frame, expression)
