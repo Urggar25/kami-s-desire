@@ -197,40 +197,48 @@ screen d0_memory_fragment(item, unlocked=True, selected=False):
                     color ("#c1d7e3" if unlocked else "#627381")
                     outlines [(1, "#09121bdc", 0, 1)]
 
+transform d0_memories_fade_in:
+    alpha 0.0
+    ease 0.50 alpha 1.0
+
 screen d0_memories():
     modal True
     zorder 220
-    $ bg = d0_memory_texture("d0_memory_background")
-    # ORDRE IMPORTANT : souvenirs d'abord, cadre de fond ensuite.
-    for item in D0_MEMORY_ITEMS:
-        $ key = item[0]
-        $ unlocked = d0_memory_open(key)
-        $ already = key in d0_memories_seen
-        $ artwork = d0_memory_illustration(item, (0.72 if already else (1.0 if unlocked else 0.13)), unlocked)
-        add artwork xysize (config.screen_width, config.screen_height)
-    if bg:
-        add bg xysize (config.screen_width, config.screen_height)
-    # Les ondulations sont au-dessus du fond, sous les zones cliquables
-    # et sous les titres : aucun risque de bloquer la souris.
-    $ ripples = d0_memory_texture("d0_memory_ripples")
-    if ripples:
-        add ripples:
-            xysize (config.screen_width, config.screen_height)
-            at d0_memory_ripples_idle
-        add ripples:
-            xysize (config.screen_width, config.screen_height)
-            at d0_memory_ripples_delayed
-    for item in D0_MEMORY_ITEMS:
-        use d0_memory_fragment(item, d0_memory_open(item[0]))
-    text "REMÉMORATION" xalign 0.5 ypos 0.042 size 31 color "#bdd6e7" kerning 5
-    text "Des souvenirs flottent à la surface de ma mémoire..." xalign 0.5 ypos 0.103 size 17 color "#879aaa"
-    if "lysa" in d0_memories_seen:
-        textbutton "REVENIR AU PRÉSENT":
-            xalign 0.5 yalign 0.963
-            text_size 23 text_color "#cbecfa" text_hover_color "#ffffff"
-            action Return("done")
-    else:
-        text "CHOISISSEZ UN SOUVENIR" xalign 0.5 yalign 0.964 size 18 color "#a0b6c7"
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        at d0_memories_fade_in
+        $ bg = d0_memory_texture("d0_memory_background")
+        # ORDRE IMPORTANT : souvenirs d'abord, cadre de fond ensuite.
+        for item in D0_MEMORY_ITEMS:
+            $ key = item[0]
+            $ unlocked = d0_memory_open(key)
+            $ already = key in d0_memories_seen
+            $ artwork = d0_memory_illustration(item, (0.72 if already else (1.0 if unlocked else 0.13)), unlocked)
+            add artwork xysize (config.screen_width, config.screen_height)
+        if bg:
+            add bg xysize (config.screen_width, config.screen_height)
+        # Les ondulations sont au-dessus du fond, sous les zones cliquables
+        # et sous les titres : aucun risque de bloquer la souris.
+        $ ripples = d0_memory_texture("d0_memory_ripples")
+        if ripples:
+            add ripples:
+                xysize (config.screen_width, config.screen_height)
+                at d0_memory_ripples_idle
+            add ripples:
+                xysize (config.screen_width, config.screen_height)
+                at d0_memory_ripples_delayed
+        for item in D0_MEMORY_ITEMS:
+            use d0_memory_fragment(item, d0_memory_open(item[0]))
+        text "REMÉMORATION" xalign 0.5 ypos 0.042 size 31 color "#bdd6e7" kerning 5
+        text "Des souvenirs flottent à la surface de ma mémoire..." xalign 0.5 ypos 0.103 size 17 color "#879aaa"
+        if "lysa" in d0_memories_seen:
+            textbutton "REVENIR AU PRÉSENT":
+                xalign 0.5 yalign 0.963
+                text_size 23 text_color "#cbecfa" text_hover_color "#ffffff"
+                action Return("done")
+        else:
+            text "CHOISISSEZ UN SOUVENIR" xalign 0.5 yalign 0.964 size 18 color "#a0b6c7"
 
 # Transition commune aux chargements et deblocages. L'image est ancree
 # sur la position exacte du souvenir choisi et non au centre de l'ecran.
