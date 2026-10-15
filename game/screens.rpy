@@ -260,6 +260,9 @@ init python:
             "#fcfdff" if hover else "#080c14",
             "#0c1320" if hover else "#f7fcff", 6)
 
+    def minor_choice_font_size(caption):
+        return 29 if len(caption) > 52 else 35
+
     def minor_choice_face():
         expr = getattr(store, "minor_choice_noam_expression", "reflexion")
         if expr not in NOAM_EXPRESSIONS:
@@ -333,7 +336,7 @@ screen choice(items):
                         hover_background minor_choice_shape(idx, True)
                         insensitive_background minor_choice_shape(idx, False)
                         text_style "choice_button_text"
-                        text_size 30 if len(i.caption) > 52 else 35
+                        text_size minor_choice_font_size(i.caption)
                         at minor_choice_hover(MINOR_CHOICE_TILTS[idx % 4])
 
 style choice_button is default:
