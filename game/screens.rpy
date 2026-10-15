@@ -186,88 +186,134 @@ style input:
 ## Écran des choix
 ################################################################################
 
-transform choice_appear(delay=0.0):
+# --- Menu des choix mineurs : composition anime / science-fiction ---
+# Ne touche pas au systeme critical_choice.rpy.
+transform minor_choice_intro(delay=0.0):
     alpha 0.0
-    yoffset 14
+    xoffset 64
     pause delay
-    easeout 0.22 alpha 1.0 yoffset 0
+    parallel:
+        easeout 0.28 alpha 1.0
+    parallel:
+        easeout 0.34 xoffset 0
+
+transform minor_choice_portrait_intro:
+    alpha 0.0
+    xoffset 180
+    easeout 0.38 alpha 1.0 xoffset 0
+
+transform minor_choice_portrait_breathe:
+    subpixel True
+    yoffset 0
+    ease 2.0 yoffset -7
+    ease 2.0 yoffset 0
+    repeat
+
+init python:
+    def minor_choice_portrait():
+        # Les textures et clignements viennent directement de images.rpy.
+        expr = getattr(store, "minor_choice_noam_expression", "reflexion")
+        try:
+            state = getattr(store, "char_state", {}).get("noam", {})
+            visible = renpy.get_attributes("noam", layer="master") or ()
+            current = next((v for v in visible if v in NOAM_EXPRESSIONS), None)
+            if current:
+                expr = current
+            elif isinstance(state, dict) and state.get("expr") in NOAM_EXPRESSIONS:
+                expr = state["expr"]
+        except Exception:
+            pass
+        if expr not in NOAM_EXPRESSIONS:
+            expr = "reflexion"
+        # 1024x1536 => zoom 0.60 dans le sprite existant. Recadrage du buste.
+        return Crop((64, 25, 490, 615), noam_expression(expr))
 
 screen choice(items):
     style_prefix "choice"
+    modal True
+    zorder 110
 
-    add Solid("#03070dcc")
+    # La scene reste visible : assombrissement leger plutot qu'un panneau plein ecran.
+    add Solid("#050a11a9")
+    add Solid("#080f19d0", xsize=685, ysize=1080) xpos 1235
 
+    # Grandes coupes graphiques asymetriques, palette originale du Conclave.
+    add Transform(Solid("#e9f6f6", xsize=105, ysize=1260), rotate=13) xpos 1180 ypos -110
+    add Transform(Solid("#39c8e7", xsize=12, ysize=1260), rotate=13) xpos 1161 ypos -110
+    add Transform(Solid("#07121f", xsize=125, ysize=1240), rotate=13) xpos 1653 ypos -180
+    add Solid("#35cce9", xsize=560, ysize=5) xpos 1360 ypos 951
+
+    # Portrait vivant (expression de la derniere intervention de Noam).
+    fixed:
+        xpos 1320
+        ypos 72
+        xsize 565
+        ysize 860
+        at minor_choice_portrait_intro
+        add Transform(Solid("#0d2535", xsize=570, ysize=790), rotate=-5) xpos 35 ypos 70
+        add Transform(Solid("#35cce9", xsize=480, ysize=6), rotate=-5) xpos 25 ypos 64
+        frame:
+            background None
+            xsize 490
+            ysize 615
+            xpos 36
+            ypos 134
+            clipping True
+            add minor_choice_portrait() at minor_choice_portrait_breathe
+        text "NOAM" xpos 70 ypos 774 font "fonts/Rajdhani-SemiBold.ttf" size 67 color "#f4fbff" kerning 7
+        text "HARMONIE  //  01" xpos 74 ypos 847 font "fonts/Rajdhani-SemiBold.ttf" size 20 color "#45cfe9" kerning 4
+
+    # Choix lisibles, alignes a gauche, avec une entree en cascade.
     frame:
-        style "choice_panel"
-        at choice_appear(0.0)
+        background None
+        xpos 94
+        yalign 0.50
+        xsize 1050
+        ymaximum 950
+        at minor_choice_intro(0.03)
 
         vbox:
-            spacing 18
+            spacing 20
             xfill True
-
-            text _("DECISION") style "choice_header"
-            add Solid("#5cd3ff66", xsize=760, ysize=2) xalign 0.5
-
-            vbox:
-                style "choice_vbox"
-                for idx, i in enumerate(items):
-                    textbutton i.caption action i.action at choice_appear(0.12 + idx * 0.07)
-
-style choice_vbox is vbox
-style choice_button is button
-style choice_button_text is button_text
-style choice_panel is frame
-style choice_header is gui_text
-
-style choice_vbox:
-    xalign 0.5
-    spacing 18
-
-style choice_panel:
-    xalign 0.5
-    yalign 0.44
-    xsize 1340
-    padding (70, 42, 70, 48)
-    background Fixed(
-        Solid("#07111cf2"),
-        Solid("#5cd3ff44", xsize=3),
-        Solid("#5cd3ff44", xsize=3, xalign=1.0),
-        Solid("#ffffff12", ysize=1),
-        Solid("#00000066", ysize=10, yalign=1.0),
-    )
-
-style choice_header:
-    font "fonts/Rajdhani-SemiBold.ttf"
-    size 34
-    color "#5cd3ff"
-    xalign 0.5
-    textalign 0.5
-    kerning 6.0
+            hbox:
+                spacing 18
+                text "///" font "fonts/Rajdhani-SemiBold.ttf" size 40 color "#35d2ee"
+                text _("CHOISIR UNE RÉPONSE") font "fonts/Rajdhani-SemiBold.ttf" size 33 color "#eef9fe" kerning 3
+            add Solid("#49d3edbb", xsize=910, ysize=3)
+            null height 10
+            viewport:
+                mousewheel True
+                draggable True
+                scrollbars "vertical" if len(items) > 6 else None
+                ymaximum 770
+                xsize 1010
+                vbox:
+                    spacing 17
+                    for idx, i in enumerate(items):
+                        textbutton i.caption:
+                            action i.action
+                            style "choice_button"
+                            at minor_choice_intro(0.11 + idx * 0.055)
+                            text_style "choice_button_text"
+                            sensitive True
 
 style choice_button is default:
-    properties gui.button_properties("choice_button")
-    xsize gui.choice_button_width
-    yminimum 74
-    padding (34, 14, 34, 14)
-    background Fixed(
-        Solid("#0a1a2add"),
-        Solid("#5cd3ff33", xsize=4),
-        Solid("#ffffff10", ysize=1),
-    )
-    hover_background Fixed(
-        Solid("#0d2535f6"),
-        Solid("#5cd3ff", xsize=5),
-        Solid("#5cd3ff", xsize=5, xalign=1.0),
-        Solid("#ffffff20", ysize=1),
-    )
+    xsize 975
+    yminimum 87
+    padding (39, 19, 32, 19)
+    background Fixed(Solid("#081320ea"), Solid("#3acbe9", xsize=6), Solid("#ffffff13", ysize=2))
+    hover_background Fixed(Solid("#edfaff"), Solid("#1cbddf", xsize=10), Solid("#122b43", ysize=3, yalign=1.0))
+    insensitive_background Solid("#192632bb")
+    hover_sound "sound/ui/hover.ogg" if renpy.loadable("sound/ui/hover.ogg") else None
 
 style choice_button_text is default:
-    properties gui.text_properties("choice_button")
     font "fonts/Rajdhani-SemiBold.ttf"
-    idle_color "#9fc9d8"
-    hover_color "#daeaf5"
-    selected_color "#5cd3ff"
-    outlines [(1, "#03070dcc", 0, 1)]
+    size 36
+    color "#e0f2f7"
+    hover_color "#061625"
+    insensitive_color "#70808a"
+    text_align 0.0
+    outlines [(1, "#02070b77", 0, 1)]
 
 
 ################################################################################
