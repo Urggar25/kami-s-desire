@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="697" height="1010" viewBox="0 0 697 1010">
+<defs><linearGradient id="portrait-alpha" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+<stop offset="0.60" stop-color="#ffffff" stop-opacity="1"/>
+<stop offset="0.74" stop-color="#ffffff" stop-opacity="0.96"/>
+<stop offset="0.88" stop-color="#ffffff" stop-opacity="0.50"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient></defs>
+<rect width="697" height="1010" fill="url(#portrait-alpha)"/></svg>

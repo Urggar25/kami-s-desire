@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="835" viewBox="0 0 690 835">
+<defs><linearGradient id="shadow-alpha" x1="0" y1="0" x2="0.9" y2="0.25">
+<stop offset="0" stop-color="#060b16" stop-opacity="0.02"/>
+<stop offset="0.30" stop-color="#060b16" stop-opacity="0.33"/>
+<stop offset="0.77" stop-color="#050912" stop-opacity="0.53"/>
+<stop offset="1" stop-color="#050912" stop-opacity="0.40"/>
+</linearGradient></defs>
+<path d="M 222,44 L 512,15 L 690,0 L 690,835 L 84,835 L 59,721 L 102,610 L 4,425 L 88,284 Z" fill="url(#shadow-alpha)"/></svg>
