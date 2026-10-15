@@ -315,7 +315,10 @@ screen choice(items):
     on "hide" action Function(minor_choice_restore_original)
     on "replaced" action Function(minor_choice_restore_original)
 
-    # Assombrissement uniforme, plus net pendant la decision. Le portrait\n    # de Noam et les options restent au premier plan (apres ce voile).\n    add Solid("#060b1694")
+    # Le Solid sans dimensions pouvait se retrouver avec une zone de rendu
+    # nulle dans ce screen. Forcer une couche pleine resolution.
+    # Le voile est dessine AVANT les reponses et le portrait de Noam.
+    add Solid("#050913b8", xsize=1920, ysize=1080) xpos 0 ypos 0
 
     # Ombre de portrait localisee, sans la grande plaque polygonale noire.
     add "gui/choice_v6/portrait_shadow.svg" xpos 1218 ypos 229
