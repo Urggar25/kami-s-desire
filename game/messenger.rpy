@@ -28,6 +28,35 @@ init python:
         fallback = "images/character/vide.png"
         return fallback if renpy.loadable(fallback) else Solid("#17334A")
 
+    # Portrait recadre pour les DEUX cadres d'en-tete. L'original montre
+    # le buste entier : son visage devient minuscule dans un carre de 60px.
+    # Le cache evite de decoder les PNG a chaque interaction de l'ecran.
+    _messenger_header_portrait_cache = {}
+
+    def messenger_header_portrait(contact_id):
+        contact_id = str(contact_id or "")
+        if contact_id in _messenger_header_portrait_cache:
+            return _messenger_header_portrait_cache[contact_id]
+
+        portrait = messenger_portrait(contact_id)
+        if not isinstance(portrait, str):
+            _messenger_header_portrait_cache[contact_id] = portrait
+            return portrait
+
+        try:
+            width, height = renpy.image_size(portrait)
+            # Recadrage carre 72 % du petit cote : rapproche le visage
+            # sans modifier le cadrage des avatars dans les messages.
+            side = max(1, int(min(width, height) * 0.72))
+            cx = max(0, (width - side) // 2)
+            cy = min(max(0, int(height * 0.035)), max(0, height - side))
+            result = im.Crop(portrait, (cx, cy, side, side))
+        except Exception:
+            result = portrait
+
+        _messenger_header_portrait_cache[contact_id] = result
+        return result
+
     def messenger_has_pending():
         return bool(
             getattr(store, "messenger_objective_active", False)
@@ -130,14 +159,16 @@ transform messenger_panel_in:
 
 
 transform messenger_tablet_plane:
-    # Centre et rotation du plan dessine dans tablette_messagerie.png.
+    # La pente des bandes horizontales du PNG est d'environ 9-10 degres.
+    # Ne pas incliner individuellement les messages : tous les textes,
+    # portraits et bulles partagent CE MEME plan.
     subpixel True
     xanchor 0.5
     yanchor 0.5
     xpos 0.45
-    ypos 0.43
+    ypos 0.437
     zoom 0.96
-    rotate 8.0
+    rotate 9.6
 
 
 screen messenger_objective_gate():
@@ -227,14 +258,15 @@ screen messenger_conversation():
                 xpos 7 ypos 69
                 xysize (202, 82)
 
+                # Portrait rapproche et agrandi dans le cadre cyan.
                 add Transform(
-                    messenger_portrait(_contact_id), fit="cover",
-                    xsize=58, ysize=58
-                ) xpos 7 ypos 9
+                    messenger_header_portrait(_contact_id), fit="cover",
+                    xysize=(68, 68)
+                ) xpos 4 ypos 6
 
                 vbox:
-                    xpos 76 ypos 16
-                    xsize 121
+                    xpos 84 ypos 16
+                    xsize 114
                     spacing 1
 
                     text _contact_name:
@@ -251,10 +283,12 @@ screen messenger_conversation():
             xpos 284 ypos 0
             xysize (656, 94)
 
+            # Le cadre du PNG est plus grand que l'ancien portrait 57px.
+            # Recadrage visage + remplissage du cadre, sans deborder sur Kael.
             add Transform(
-                messenger_portrait(_contact_id), fit="cover",
-                xsize=57, ysize=57
-            ) xpos 28 ypos 16
+                messenger_header_portrait(_contact_id), fit="cover",
+                xysize=(76, 76)
+            ) xpos 17 ypos 7
 
             text _contact_name:
                 xpos 115 ypos 15
