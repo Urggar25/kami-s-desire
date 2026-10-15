@@ -332,11 +332,11 @@ screen messenger_conversation():
                                     line_spacing 2
 
                             if _consecutive:
-                                null width 47 height 47
+                                null width 56 height 56
                             else:
                                 add Transform(
                                     messenger_portrait("noam"), fit="cover",
-                                    xsize=47, ysize=47
+                                    xsize=56, ysize=56
                                 )
                     else:
                         hbox:
@@ -344,11 +344,11 @@ screen messenger_conversation():
                             spacing 11
 
                             if _consecutive:
-                                null width 47 height 47
+                                null width 56 height 56
                             else:
                                 add Transform(
                                     messenger_portrait(_sender), fit="cover",
-                                    xsize=47, ysize=47
+                                    xsize=56, ysize=56
                                 )
 
                             frame:
