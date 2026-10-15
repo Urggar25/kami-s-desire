@@ -192,16 +192,16 @@ style input:
 # =============================================================================
 transform minor_choice_enter(delay=0.0):
     alpha 0.0
-    xoffset -100
+    xoffset -90
     pause delay
     parallel:
-        easeout 0.23 alpha 1.0
+        easeout 0.22 alpha 1.0
     parallel:
-        easeout 0.32 xoffset 0
+        easeout 0.30 xoffset 0
 
 transform minor_choice_face_enter:
     alpha 0.0
-    xoffset 130
+    xoffset 115
     easeout 0.32 alpha 1.0 xoffset 0
 
 transform minor_choice_face_idle:
@@ -211,16 +211,19 @@ transform minor_choice_face_idle:
     ease 2.2 yoffset 0
     repeat
 
-transform minor_choice_hover:
+transform minor_choice_hover(tilt=0.0):
+    # L'inclinaison concerne aussi le texte, comme une vraie bulle dessinee.
+    rotate tilt
+    rotate_pad False
     subpixel True
     on idle:
-        ease 0.10 zoom 1.0 xoffset 0
+        easeout 0.11 zoom 1.0 xoffset 0
     on hover:
-        easeout 0.13 zoom 1.025 xoffset 16
+        easeout 0.12 zoom 1.025 xoffset 17
 
 init python:
     class MinorChoicePolygon(renpy.Displayable):
-        """Polygones dessines en temps reel, sans nouvelle texture."""
+        """Silhouette polygonale interactive (rendu natif, sans texture)."""
         def __init__(self, w, h, points, fill, edge=None, border=0, **kwargs):
             super(MinorChoicePolygon, self).__init__(**kwargs)
             self.w, self.h = w, h
@@ -235,33 +238,37 @@ init python:
                 cv.polygon(self.edge, self.points, self.border)
             return r
 
-    # Les silhouettes ne sont pas des rectangles clones :
-    # longueur, pointe, axe et coupe changent avec l'index.
+    # Chaque bulle garde une vraie pointe dirigee vers le visage de Noam.
+    # Les formes et inclinaisons alternent sans sacrifier la lisibilite.
     MINOR_CHOICE_SHAPES = (
-        (900, [(12, 18), (702, 2), (753, 16), (893, 49),
-               (764, 81), (717, 92), (3, 99), (24, 63)]),
-        (1000, [(0, 14), (831, 5), (878, 26), (992, 56),
-                (865, 91), (792, 98), (15, 92), (30, 56)]),
-        (920, [(18, 4), (731, 16), (770, 10), (912, 53),
-               (758, 102), (695, 90), (0, 95), (29, 53)]),
-        (970, [(5, 12), (795, 0), (831, 24), (963, 51),
-               (840, 90), (778, 101), (25, 96), (0, 60)]),
+        (790, [(12, 23), (621, 5), (665, 22), (782, 49),
+               (661, 86), (612, 98), (3, 100), (24, 62)]),
+        (895, [(3, 16), (719, 3), (755, 17), (887, 53),
+               (764, 95), (712, 102), (17, 95), (34, 54)]),
+        (825, [(20, 8), (644, 17), (695, 5), (817, 52),
+               (688, 103), (638, 93), (0, 97), (29, 56)]),
+        (872, [(8, 15), (692, 3), (739, 22), (863, 53),
+               (738, 94), (683, 102), (22, 96), (0, 57)]),
     )
+    MINOR_CHOICE_TILTS = (-2.1, 1.1, -1.35, 1.6)
+    MINOR_CHOICE_OFFSETS = (0, 52, 101, 25)
 
     def minor_choice_shape(index, hover=False):
         width, pts = MINOR_CHOICE_SHAPES[index % len(MINOR_CHOICE_SHAPES)]
-        return MinorChoicePolygon(width, 106, pts,
-            "#f9fcff" if hover else "#090e18",
-            "#080d16" if hover else "#ffffff", 6)
+        return MinorChoicePolygon(
+            width, 106, pts,
+            "#fcfdff" if hover else "#080c14",
+            "#0c1320" if hover else "#f7fcff", 6)
 
     def minor_choice_face():
         expr = getattr(store, "minor_choice_noam_expression", "reflexion")
         if expr not in NOAM_EXPRESSIONS:
             expr = "reflexion"
-        # Le portrait garde le DynamicDisplayable : la couche yeux_ferme
-        # continue donc de cligner et les tenues equipees sont preservees.
+        # IMPORTANT : conserver le DynamicDisplayable existant. Les calques
+        # yeux_ferme et tenue equipee continuent de fonctionner.
+        # La coupe descend hors ecran : aucun bord horizontal sous le buste.
         return Transform(
-            Crop((130, 3, 345, 330), noam_expression(expr)),
+            Crop((130, 3, 345, 585), noam_expression(expr)),
             zoom=2.02)
 
 screen choice(items):
@@ -269,76 +276,75 @@ screen choice(items):
     modal True
     zorder 110
 
-    # Le decor reste lisible. Le menu ne pose plus une grande carte sur le jeu.
-    add Solid("#03060b35")
+    # Le visage de l'interlocuteur reste visible dans le tiers gauche.
+    add Solid("#03060b28")
 
-    # Une seule silhouette asymetrique derriere le portrait :
-    # plus de panneau bleu, de cadre rectangulaire ou de barre verticale.
-    add MinorChoicePolygon(770, 1080,
-        [(220, 0), (770, 0), (770, 1080), (76, 1080),
-         (145, 900), (54, 684), (0, 504), (116, 310)],
-        "#080c15ee") xpos 1150
-    # Eclats anguleux, controles et discrets.
-    add MinorChoicePolygon(72, 1080,
-        [(62, 0), (72, 0), (12, 1080), (0, 1080)],
-        "#ffffff") xpos 1160
-    add MinorChoicePolygon(11, 1080,
-        [(9, 0), (11, 0), (3, 1080), (0, 1080)],
-        "#37cee8") xpos 1245
-    add MinorChoicePolygon(525, 145,
-        [(0, 90), (493, 0), (524, 20), (68, 145)],
-        "#ffffff") xpos 1400 ypos 95
+    # Composition continue : masque opaque le Noam de la scene d'origine
+    # afin d'eviter un doublon, et accueille son portrait de premier plan.
+    # Aucun trait vertical ni eclat blanc isole.
+    add MinorChoicePolygon(1090, 1080,
+        [(113, 0), (1090, 0), (1090, 1080), (138, 1080),
+         (68, 942), (121, 791), (0, 529), (82, 277)],
+        "#070b13fa") xpos 830
 
-    # Vrai gros plan, beaucoup plus haut, sans panneau bleu.
-    # Les bords transparents du sprite se melent a la silhouette noire.
+    # Un seul detail cyan, court et discret, au bas du cadrage.
+    add MinorChoicePolygon(390, 32,
+        [(0, 27), (387, 0), (390, 5), (14, 32)],
+        "#39cae7") xpos 1490 ypos 998
+
+    # Portrait non encadre, visage dominant et torse prolonge hors de l'ecran.
+    # Les pointes des reponses peuvent passer devant son epaule.
     fixed:
-        xpos 1263
-        ypos 168
-        xsize 657
-        ysize 780
+        xpos 1260
+        ypos 143
+        xsize 660
+        ysize 937
         at minor_choice_face_enter
-        add minor_choice_face() xpos 6 ypos 0 at minor_choice_face_idle
+        add minor_choice_face() xpos 0 ypos 0 at minor_choice_face_idle
 
-    # Les reponses sont abaissees pour ne pas effacer le visage de
-    # l'interlocuteur, et convergent visuellement vers le gros plan.
+    # Les bulles se rejoignent visuellement devant le portrait. Elles sont
+    # volontairement placees SOUS les yeux de l'interlocuteur (ex. Lysa J0).
     $ minor_count = len(items)
-    $ minor_y = max(180, 715 - min(minor_count, 5) * 110)
+    $ minor_visible = min(minor_count, 5)
+    $ minor_top = {1: 695, 2: 614, 3: 515, 4: 412, 5: 328}[minor_visible]
     viewport:
-        xpos 82
-        ypos minor_y
-        xsize 1100
-        ysize min(114 * minor_count + 12, 760)
+        xpos 430
+        ypos minor_top
+        xsize 1110
+        ysize min(124 * minor_count + 16, 720)
         mousewheel True
         draggable True
+
         vbox:
-            spacing 9
+            spacing 10
             for idx, i in enumerate(items):
                 $ minor_w = MINOR_CHOICE_SHAPES[idx % 4][0]
                 fixed:
-                    xsize 1050
-                    ysize 108
-                    xoffset (12, 34, 68, 18)[idx % 4]
-                    at minor_choice_enter(0.07 + idx * 0.06)
+                    xsize 1080
+                    ysize 114
+                    xoffset MINOR_CHOICE_OFFSETS[idx % 4]
+                    at minor_choice_enter(0.07 + idx * 0.055)
                     textbutton i.caption:
                         action i.action
                         xsize minor_w
                         ysize 106
-                        padding (38, 24, 130, 15)
+                        padding (44, 23, 127, 13)
                         background minor_choice_shape(idx, False)
                         hover_background minor_choice_shape(idx, True)
                         insensitive_background minor_choice_shape(idx, False)
                         text_style "choice_button_text"
-                        at minor_choice_hover
+                        text_size 30 if len(i.caption) > 52 else 35
+                        at minor_choice_hover(MINOR_CHOICE_TILTS[idx % 4])
 
 style choice_button is default:
     focus_mask True
 
 style choice_button_text is default:
     font "fonts/Rajdhani-SemiBold.ttf"
-    size 34
-    color "#ffffff"
-    hover_color "#06111b"
-    insensitive_color "#a4a9b1"
+    size 35
+    color "#f7fbff"
+    hover_color "#07111a"
+    insensitive_color "#9ca9b2"
     outlines []
     text_align 0.0
 
