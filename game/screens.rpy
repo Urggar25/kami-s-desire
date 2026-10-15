@@ -268,14 +268,13 @@ init python:
         return sprite
 
     def minor_choice_suspend_original():
-        # Pendant le menu, eviter de dessiner Noam deux fois.
+        # Masquage temporaire, sans modifier char_state / group_members.
         if store._minor_choice_original_sprite is not None:
             return
         state = getattr(store, "char_state", {}).get("noam", {})
         layer = state.get("layer", "master")
         if not renpy.showing("noam", layer=layer):
             return
-        at_list = renpy.get_at_list("noam", layer=layer) or []
         attrs = renpy.get_attributes("noam", layer=layer) or ()
         expr = next((a for a in attrs if a in NOAM_EXPRESSIONS),
                     state.get("expr", "neutre"))
@@ -283,9 +282,8 @@ init python:
             expr = "neutre"
         zorders = dict(renpy.get_zorder_list(layer))
         store._minor_choice_original_sprite = (
-            layer, expr, list(at_list),
-            zorders.get("noam", state.get("zorder", 0)),
-            state.get("x", 0.72), state.get("y", 1.0))
+            layer, expr,
+            zorders.get("noam", state.get("zorder", 0)))
         renpy.hide("noam", layer=layer)
 
     def minor_choice_restore_original():
@@ -293,13 +291,20 @@ init python:
         if saved is None:
             return
         store._minor_choice_original_sprite = None
-        layer, expr, at_list, zorder, x, y = saved
+        layer, expr, zorder = saved
         if renpy.showing("noam", layer=layer):
             return
-        if not at_list:
-            at_list = [char_group_place(x, y)]
-        renpy.show("noam " + expr, tag="noam",
-                   at_list=at_list, layer=layer, zorder=zorder)
+        # NE PAS reutiliser get_at_list : la liste capturee peut contenir
+        # des transforms d'autofocus et un ancien placement de camera.
+        # La source de verite est char_state, actualisee par showGroup.
+        state = getattr(store, "char_state", {}).get("noam", {})
+        x = state.get("x", getattr(store, "char_pos", {}).get("noam", 0.5))
+        y = state.get("y", 1.0)
+        expr = state.get("expr", expr)
+        if expr not in NOAM_EXPRESSIONS:
+            expr = "neutre"
+        renpy.show("noam " + expr, tag="noam", layer=layer,
+                   at_list=[char_group_place(x, y)], zorder=zorder)
 
 screen choice(items):
     style_prefix "choice"
@@ -310,8 +315,7 @@ screen choice(items):
     on "hide" action Function(minor_choice_restore_original)
     on "replaced" action Function(minor_choice_restore_original)
 
-    # Decor tres legerement assombri ; l'interlocuteur reste visible.
-    add Solid("#03060b21")
+    # Assombrissement uniforme, plus net pendant la decision. Le portrait\n    # de Noam et les options restent au premier plan (apres ce voile).\n    add Solid("#060b1694")
 
     # Ombre de portrait localisee, sans la grande plaque polygonale noire.
     add "gui/choice_v6/portrait_shadow.svg" xpos 1218 ypos 229
