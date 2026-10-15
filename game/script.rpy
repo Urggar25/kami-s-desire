@@ -35,7 +35,8 @@ default bg_cam_x_cur = 0.5
 default bg_cam_y_cur = 0.5
 default bg_cam_z_cur = 1.0
 
-default minor_choice_noam_expression = "reflexion"\ndefault char_pos = {}         # tag -> xalign
+default minor_choice_noam_expression = "reflexion"
+default char_pos = {}         # tag -> xalign
 default char_state = {}       # tag -> dict(expr,x,y,layer,zorder)
 default group_members = []    # tags visibles via showGroup
 
