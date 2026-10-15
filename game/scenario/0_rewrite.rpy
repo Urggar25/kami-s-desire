@@ -293,7 +293,7 @@ label _0_CANON:
     think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
     noam "Mais pourquoi je me suis réveillé ?! Et surtout, comment je sors de là ?"
     "Je cherche encore une ouverture autour de moi, mais il n'y a rien qui ressemble à une poignée ou à un bouton."
-    noam "Hé ! Il y a quelqu'un ?! Lysa ? Vous m'entendez ?!"
+    noam "Hé ! Il y a quelqu'un ?! Lysa ? Tu m'entends ?!"
     "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
     $ d0_vent_enabled = False
     $ d0_valve_enabled = False
