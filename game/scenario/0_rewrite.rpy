@@ -279,7 +279,12 @@ label _0_CANON:
                 call d0_memory_unlock_transition("conclave")
             if "conclave" in d0_memories_seen and "conclave" not in d0_seen_before:
                 call d0_memory_unlock_transition("lysa")
+    # Les souvenirs se rassemblent avant le retour dans le caisson.
+    stop music fadeout 0.3
+    call screen d0_memory_finale
     scene black
+    play sound "audio/sfx_normal_breath.mp3"
+    pause 0.65
     show screen d0_capsule_live("idle")
     show screen d0_capsule_lighting(False)
     $ d0_air_elapsed = 0.0
@@ -289,12 +294,17 @@ label _0_CANON:
     show screen d0_capsule_vent_hotspot
     show screen d0_capsule_valve_hotspot
     $ blink()
-    think "Bon... Je commence à comprendre."
-    think "Je suis l'un des représentants du Conclave. On m'a mis dans ce caisson pour m'y emmener."
-    noam "Mais pourquoi je me suis réveillé ?! Et surtout, comment je sors de là ?"
-    "Je cherche encore une ouverture autour de moi, mais il n'y a rien qui ressemble à une poignée ou à un bouton."
-    noam "Hé ! Il y a quelqu'un ?! Lysa ? Tu m'entends ?!"
-    "Aucune réponse. Je frappe contre la paroi, de plus en plus fort."
+    think "Juliette... Kami... Le Conclave... Lysa..."
+    think "Oui, ça me revient ! J'ai été choisi pour représenter Harmonie. On nous a fait entrer dans ces caissons pour nous emmener jusqu'au Conclave."
+    noam reflexion "Mais alors... Pourquoi je suis réveillé ?"
+    "Je regarde autour de moi, en essayant de retrouver quelque chose qui pourrait m'aider."
+    noam inquiet "Attends... Si je suis réveillé, ça veut dire qu'on est arrivés ?"
+    think "Non... Il n'y aurait aucune raison de me laisser enfermé là-dedans."
+    "Je cherche une ouverture autour de moi, mais je ne trouve rien qui ressemble à une poignée ou à un bouton."
+    noam inquiet "Hé ! Il y a quelqu'un ?!"
+    "Je frappe contre la paroi du caisson."
+    noam "Lysa ? Tu m'entends ?!"
+    "Aucune réponse. Je frappe encore, de plus en plus fort."
     $ d0_vent_enabled = False
     $ d0_valve_enabled = False
     hide screen d0_capsule_valve_hotspot

@@ -309,3 +309,48 @@ label d0_memory_open_transition(key):
 label d0_memory_unlock_transition(key):
     call screen d0_memory_transition(key, True)
     return
+
+# Conclusion des quatre souvenirs : les fragments rejoignent le centre avant
+# que l'image s'efface. Réutilise les illustrations existantes, sans HUD.
+transform d0_memory_final_fragment(dx, dy):
+    subpixel True
+    alpha 0.76
+    xoffset 0 yoffset 0 zoom 1.0
+    pause 0.20
+    parallel:
+        easein 1.50 xoffset dx yoffset dy zoom 0.64
+    parallel:
+        pause 1.04
+        easein 0.66 alpha 0.0
+
+transform d0_memory_final_background:
+    alpha 1.0
+    pause 0.25
+    easein 1.45 alpha 0.0
+
+transform d0_memory_final_flash:
+    alpha 0.0
+    pause 1.52
+    linear 0.11 alpha 0.75
+    easeout 0.60 alpha 0.0
+
+screen d0_memory_finale():
+    modal True
+    zorder 230
+    add Solid("#060b14")
+    fixed:
+        xsize config.screen_width
+        ysize config.screen_height
+        for item in D0_MEMORY_ITEMS:
+            $ dx = int((0.5 - item[4]) * config.screen_width)
+            $ dy = int((0.5 - item[5]) * config.screen_height)
+            add d0_memory_illustration(item):
+                xysize (config.screen_width, config.screen_height)
+                at d0_memory_final_fragment(dx, dy)
+        $ bg = d0_memory_texture("d0_memory_background")
+        if bg:
+            add bg:
+                xysize (config.screen_width, config.screen_height)
+                at d0_memory_final_background
+    add Solid("#e1f6ff") at d0_memory_final_flash
+    timer 2.35 action Return()
