@@ -123,3 +123,9 @@ fixed:
 - Les PNG de tablette restent dans un repère commun 1920×1080 avec `fit "contain"`. Relever la position effective des icônes sur une capture *du jeu* avant de fixer leurs `xpos`/`ypos` : ne jamais déduire les coordonnées de la taille native seule.
 - L'écran modal lancé par `Show("tablet_home")` doit déclencher un parcours inverse complet via `closing=True`, puis `Hide("tablet_home")`. La touche Échap et le bouton Exit utilisent la même action.
 - Vérifier qu'il n'existe qu'un `screen tablet_home` actif, et tester en Ren'Py : quatre images, fondu continu, Exit cliquable, Échap et Discord.
+
+## Imagebuttons dont les clics ne répondent pas (15 octobre 2026)
+
+- `focus_mask True` n'est **pas** systématiquement approprié : si le PNG contient des marges transparentes ou un cadrage différent de l'écran, le bouton peut ne jamais capter le clic sur sa zone apparente. Pour les images de boutons d'une tablette, définir explicitement `xsize`/`ysize`, utiliser `focus_mask False`, et conserver les vrais assets `idle`/`hover` sans fonds Solid parasites.
+- Les images-boutons et l'image de fond doivent être des enfants du **même conteneur de référence** (1920×1080) et utiliser des dimensions d'affichage cohérentes ; si la phase 4 apparaît via `tablet_phase_fade(0.2)`, appliquer aussi cette entrée aux `imagebutton` affichés à ce moment.
+- Ne jamais supposer qu'un `imagebutton` devient cliquable uniquement parce que son PNG est visible : tester la position, le focus, puis le déclenchement de l'action de fermeture et du lien.
