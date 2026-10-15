@@ -193,7 +193,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|
-| Tablette — accueil | Hub Conclave OS donnant accès aux statistiques, vote et autres cartes système. | `game/stats_system.rpy` | `call screen tablet_home(clock="08:00", show_vote=True)` |
+| Tablette — accueil animé | Superpose les quatre étapes PNG du terminal avec transitions à l’ouverture/fermeture (Échap ou EXIT) et lien Discord externe. | `game/tablet_home.rpy` | `show screen tablet_home` |
 | Tablette — statistiques | Présente les cinq stats et leur progression en jauges segmentées. | `game/stats_system.rpy` | `show screen tablet_stats` |
 | Tablette narrative du jour 1 | Interaction terminal scénarisée propre au réveil et à l'amendement. | `game/day1_ui.rpy` | `call screen day1_tablet_interaction` |
 | Timer dynamique | Compte à rebours persistant, modifiable en direct, avec saut optionnel à expiration. | `game/day0_ui.rpy` | `$ day0_timer_init(m=5, end_label="_TEMPS_ECOULE"); show screen day0_countdown_overlay` |
