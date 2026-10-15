@@ -140,14 +140,6 @@ init python:
         renpy.hide_screen("tablet_home")
         renpy.restart_interaction()
 
-    def messenger_message_row_height(message_text):
-        # Hauteur de securite pour eviter que les frames ne se recouvrent.
-        # La police Rajdhani 22 px dans une bulle de ~412 px peut occuper
-        # plusieurs lignes. Les textes tres longs restent scrollables.
-        text = str(message_text or "")
-        row_count = sum(max(1, (len(line) + 37) // 38) for line in text.split("\n"))
-        return max(68, 32 + 29 * max(1, row_count))
-
     def messenger_no_recent():
         renpy.notify("Aucun message récent")
 
@@ -166,9 +158,9 @@ transform messenger_tablet_plane:
     xanchor 0.5
     yanchor 0.5
     xpos 0.45
-    ypos 0.437
+    ypos 0.441
     zoom 0.96
-    rotate 9.6
+    rotate 9.3
 
 
 screen messenger_objective_gate():
@@ -280,7 +272,7 @@ screen messenger_conversation():
 
         # EN-TETE : portraits et noms dans le cadre DEJA dessine.
         fixed:
-            xpos 284 ypos 0
+            xpos 284 ypos 3
             xysize (656, 94)
 
             # Le cadre du PNG est plus grand que l'ancien portrait 57px.
@@ -291,12 +283,12 @@ screen messenger_conversation():
             ) xpos 17 ypos 7
 
             text _contact_name:
-                xpos 115 ypos 15
+                xpos 113 ypos 15
                 size 30 color "#FFFFFF"
                 font "fonts/Rajdhani-SemiBold.ttf"
 
             text "●  CANAL SÉCURISÉ":
-                xpos 117 ypos 53
+                xpos 115 ypos 52
                 size 14 color "#60E4A3"
                 font "fonts/Rajdhani-SemiBold.ttf"
                 kerning 1
@@ -305,8 +297,8 @@ screen messenger_conversation():
         # aucun chevauchement entre deux messages, quelle que soit leur taille.
         # La largeur laisse une marge avant la barre de scroll dessinee.
         viewport:
-            xpos 297 ypos 146
-            xsize 584 ysize 348
+            xpos 293 ypos 147
+            xsize 587 ysize 348
             mousewheel True
             draggable False
             yinitial 1.0
@@ -315,82 +307,76 @@ screen messenger_conversation():
                 xsize 566
                 spacing 12
 
+                # Taille naturelle des bulles et des lignes : aucune hauteur
+                # estimée en fonction du nombre de caractères. Une estimation
+                # produisait des espaces irréguliers et décalait les portraits.
                 for _index, _message in enumerate(_visible_messages):
                     $ _sender = _message.get("sender", _contact_id)
                     $ _from_noam = (_sender == "noam")
                     $ _consecutive = (_index > 0 and _visible_messages[_index - 1].get("sender") == _sender)
                     $ _message_text = _message.get("text", "")
-                    $ _row_height = messenger_message_row_height(_message_text)
 
-                    # Hauteur reservee pour les lignes reelles du texte.
-                    # Le vbox n'empile plus les bulles sur une meme ligne.
-                    fixed:
-                        xsize 558
-                        ysize _row_height
+                    if _from_noam:
+                        hbox:
+                            xalign 1.0
+                            spacing 11
 
-                        if _from_noam:
-                            hbox:
-                                xalign 1.0
-                                spacing 11
+                            frame:
+                                xmaximum 436
+                                padding (14, 10)
+                                background Solid("#145D83F0")
+                                text _message_text:
+                                    size 22 color "#F4FAFF"
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                    xmaximum 408
+                                    line_spacing 2
 
-                                frame:
-                                    xmaximum 440
-                                    padding (14, 10)
-                                    background Solid("#145D83F0")
+                            if _consecutive:
+                                null width 47 height 47
+                            else:
+                                add Transform(
+                                    messenger_portrait("noam"), fit="cover",
+                                    xsize=47, ysize=47
+                                )
+                    else:
+                        hbox:
+                            xalign 0.0
+                            spacing 11
 
-                                    text _message_text:
-                                        size 22 color "#F4FAFF"
-                                        font "fonts/Rajdhani-SemiBold.ttf"
-                                        xmaximum 412
-                                        line_spacing 2
+                            if _consecutive:
+                                null width 47 height 47
+                            else:
+                                add Transform(
+                                    messenger_portrait(_sender), fit="cover",
+                                    xsize=47, ysize=47
+                                )
 
-                                if _consecutive:
-                                    null width 47 height 47
-                                else:
-                                    add Transform(
-                                        messenger_portrait("noam"), fit="cover",
-                                        xsize=47, ysize=47
-                                    )
-                        else:
-                            hbox:
-                                xalign 0.0
-                                spacing 11
-
-                                if _consecutive:
-                                    null width 47 height 47
-                                else:
-                                    add Transform(
-                                        messenger_portrait(_sender), fit="cover",
-                                        xsize=47, ysize=47
-                                    )
-
-                                frame:
-                                    xmaximum 440
-                                    padding (14, 10)
-                                    background Solid("#21394FF0")
-
-                                    text _message_text:
-                                        size 22 color "#F0F6FB"
-                                        font "fonts/Rajdhani-SemiBold.ttf"
-                                        xmaximum 412
-                                        line_spacing 2
+                            frame:
+                                xmaximum 436
+                                padding (14, 10)
+                                background Solid("#21394FF0")
+                                text _message_text:
+                                    size 22 color "#F0F6FB"
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                    xmaximum 408
+                                    line_spacing 2
 
         # PIED DE PAGE : texte seul dans la barre integree au fond ;
         # pas de faux bandeau noir, de double bordure ou de bouton surajoute.
         fixed:
-            xpos 277 ypos 515
-            xysize (627, 37)
+            xpos 284 ypos 522
+            xysize (620, 34)
 
             if _exchange_complete:
                 text "CONVERSATION TERMINÉE — CLIQUER POUR FERMER":
                     xalign 0.5 yalign 0.5
-                    size 17 color "#8BE7B7"
+                    size 16 color "#8BE7B7"
                     font "fonts/Rajdhani-SemiBold.ttf"
                     kerning 1
             else:
                 text "CLIQUER POUR AFFICHER LE MESSAGE SUIVANT":
                     xalign 0.5 yalign 0.5
-                    size 17 color "#A7E9FF"
+                    size 16 color "#A7E9FF"
                     font "fonts/Rajdhani-SemiBold.ttf"
                     kerning 1
 
