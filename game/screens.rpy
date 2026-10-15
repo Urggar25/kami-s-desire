@@ -186,132 +186,140 @@ style input:
 ## Écran des choix
 ################################################################################
 
-# --- Menu des choix mineurs : composition anime / science-fiction ---
-# Ne touche pas au systeme critical_choice.rpy.
-transform minor_choice_intro(delay=0.0):
+# =============================================================================
+# Choix mineurs - interface decoupee, distincte des critical choices.
+# Aucune texture externe : les formes sont dessinees a la resolution native.
+# =============================================================================
+transform minor_choice_enter(delay=0.0):
     alpha 0.0
-    xoffset 64
+    xoffset -115
     pause delay
     parallel:
-        easeout 0.28 alpha 1.0
+        easeout 0.27 alpha 1.0
     parallel:
-        easeout 0.34 xoffset 0
+        easeout_back 0.36 xoffset 0
 
-transform minor_choice_portrait_intro:
+transform minor_choice_face_enter:
     alpha 0.0
-    xoffset 180
-    easeout 0.38 alpha 1.0 xoffset 0
+    xoffset 150
+    easeout 0.34 alpha 1.0 xoffset 0
 
-transform minor_choice_portrait_breathe:
+transform minor_choice_face_idle:
     subpixel True
     yoffset 0
-    ease 2.0 yoffset -7
-    ease 2.0 yoffset 0
+    ease 2.1 yoffset -5
+    ease 2.1 yoffset 0
     repeat
 
 init python:
-    def minor_choice_portrait():
-        # Les textures et clignements viennent directement de images.rpy.
+    class MinorChoicePolygon(renpy.Displayable):
+        """Une vraie silhouette polygonale, sans rectangle visible."""
+        def __init__(self, w, h, points, fill, edge=None, border=0, **kwargs):
+            super(MinorChoicePolygon, self).__init__(**kwargs)
+            self.w, self.h = w, h
+            self.points = points
+            self.fill, self.edge, self.border = fill, edge, border
+
+        def render(self, width, height, st, at):
+            r = renpy.Render(self.w, self.h)
+            cv = r.canvas()
+            cv.polygon(self.fill, self.points)
+            if self.edge and self.border:
+                cv.polygon(self.edge, self.points, self.border)
+            return r
+
+    # Les pointes relient visuellement la question au personnage.
+    def minor_choice_card(hover=False):
+        c = "#f8fdff" if hover else "#090e16"
+        outline = "#06101b" if hover else "#f8fdff"
+        return MinorChoicePolygon(935, 105,
+            [(5, 19), (813, 3), (846, 26), (930, 49),
+             (844, 77), (817, 96), (0, 101), (22, 68)],
+            c, outline, 6)
+
+    def minor_choice_face():
+        # On privilegie la derniere replique de Noam et non les sprites voisins.
         expr = getattr(store, "minor_choice_noam_expression", "reflexion")
-        try:
-            state = getattr(store, "char_state", {}).get("noam", {})
-            visible = renpy.get_attributes("noam", layer="master") or ()
-            current = next((v for v in visible if v in NOAM_EXPRESSIONS), None)
-            if current:
-                expr = current
-            elif isinstance(state, dict) and state.get("expr") in NOAM_EXPRESSIONS:
-                expr = state["expr"]
-        except Exception:
-            pass
         if expr not in NOAM_EXPRESSIONS:
             expr = "reflexion"
-        # 1024x1536 => zoom 0.60 dans le sprite existant. Recadrage du buste.
-        return Crop((64, 25, 490, 615), noam_expression(expr))
+        # Le sprite existe deja, conserve ses yeux_ferme et cligne naturellement.
+        # Gros plan: coupe au niveau des epaules, pas de bras ni de mains.
+        return Transform(Crop((115, 5, 360, 350), noam_expression(expr)), zoom=1.58)
 
 screen choice(items):
     style_prefix "choice"
     modal True
     zorder 110
 
-    # La scene reste visible : assombrissement leger plutot qu'un panneau plein ecran.
-    add Solid("#050a11a9")
-    add Solid("#080f19d0", xsize=685, ysize=1080) xpos 1235
+    # Le decor et les autres personnages restent presents sous le menu.
+    add Solid("#03060b52")
 
-    # Grandes coupes graphiques asymetriques, palette originale du Conclave.
-    add Transform(Solid("#e9f6f6", xsize=105, ysize=1260), rotate=13) xpos 1180 ypos -110
-    add Transform(Solid("#39c8e7", xsize=12, ysize=1260), rotate=13) xpos 1161 ypos -110
-    add Transform(Solid("#07121f", xsize=125, ysize=1240), rotate=13) xpos 1653 ypos -180
-    add Solid("#35cce9", xsize=560, ysize=5) xpos 1360 ypos 951
+    # Decoupe angulaire de droite, fond noir, double filet blanc / cyan.
+    add MinorChoicePolygon(780, 1080,
+        [(216, 0), (780, 0), (780, 1080), (35, 1080), (130, 720), (0, 560)],
+        "#070b13f4") xpos 1140
+    add MinorChoicePolygon(54, 1080,
+        [(44, 0), (54, 0), (10, 1080), (0, 1080)],
+        "#ffffff") xpos 1325
+    add MinorChoicePolygon(10, 1080,
+        [(6, 0), (10, 0), (4, 1080), (0, 1080)],
+        "#33d6ef") xpos 1378
 
-    # Portrait vivant (expression de la derniere intervention de Noam).
+    # Gros plan de Noam, libre dans le panneau droit.
     fixed:
-        xpos 1320
-        ypos 72
-        xsize 565
-        ysize 860
-        at minor_choice_portrait_intro
-        add Transform(Solid("#0d2535", xsize=570, ysize=790), rotate=-5) xpos 35 ypos 70
-        add Transform(Solid("#35cce9", xsize=480, ysize=6), rotate=-5) xpos 25 ypos 64
-        frame:
-            background None
-            xsize 490
-            ysize 615
-            xpos 36
-            ypos 134
-            add minor_choice_portrait() at minor_choice_portrait_breathe
-        text "NOAM" xpos 70 ypos 774 font "fonts/Rajdhani-SemiBold.ttf" size 67 color "#f4fbff" kerning 7
-        text "HARMONIE  //  01" xpos 74 ypos 847 font "fonts/Rajdhani-SemiBold.ttf" size 20 color "#45cfe9" kerning 4
+        xpos 1324
+        ypos 132
+        xsize 596
+        ysize 800
+        at minor_choice_face_enter
+        add MinorChoicePolygon(565, 645,
+            [(64, 62), (545, 0), (565, 570), (12, 645), (0, 158)],
+            "#112335") xpos 12 ypos 10
+        add MinorChoicePolygon(558, 634,
+            [(70, 60), (548, 4), (558, 572), (10, 630), (0, 160)],
+            "#2dd3ee", "#eefaff", 5) xpos 11 ypos 13 alpha 0.22
+        add minor_choice_face() xpos 0 ypos 34 at minor_choice_face_idle
 
-    # Choix lisibles, alignes a gauche, avec une entree en cascade.
-    frame:
-        background None
-        xpos 94
-        yalign 0.50
-        xsize 1050
-        ymaximum 950
-        at minor_choice_intro(0.03)
-
+    # Les reponses avancent vers Noam. La disposition varie avec leur nombre.
+    $ minor_count = len(items)
+    $ minor_height = min(114 * minor_count + 16, 750)
+    $ minor_y = max(145, int((1080 - minor_height) / 2) - 15)
+    viewport:
+        xpos 75
+        ypos minor_y
+        xsize 1140
+        ysize min(minor_height + 18, 785)
+        mousewheel True
+        draggable True
         vbox:
-            spacing 20
-            xfill True
-            hbox:
-                spacing 18
-                text "///" font "fonts/Rajdhani-SemiBold.ttf" size 40 color "#35d2ee"
-                text _("CHOISIR UNE RÉPONSE") font "fonts/Rajdhani-SemiBold.ttf" size 33 color "#eef9fe" kerning 3
-            add Solid("#49d3edbb", xsize=910, ysize=3)
-            null height 10
-            viewport:
-                mousewheel True
-                draggable True
-                scrollbars "vertical"
-                ymaximum 770
-                xsize 1010
-                vbox:
-                    spacing 17
-                    for idx, i in enumerate(items):
-                        textbutton i.caption:
-                            action i.action
-                            style "choice_button"
-                            at minor_choice_intro(0.11 + idx * 0.055)
-                            text_style "choice_button_text"
-                            sensitive True
+            spacing 13
+            for idx, i in enumerate(items):
+                fixed:
+                    xsize 1050
+                    ysize 106
+                    xoffset (idx % 3) * 28
+                    at minor_choice_enter(0.08 + idx * 0.065)
+                    textbutton i.caption:
+                        action i.action
+                        style "choice_button"
 
 style choice_button is default:
-    xsize 975
-    yminimum 87
-    padding (39, 19, 32, 19)
-    background Fixed(Solid("#081320ea"), Solid("#3acbe9", xsize=6), Solid("#ffffff13", ysize=2))
-    hover_background Fixed(Solid("#edfaff"), Solid("#1cbddf", xsize=10), Solid("#122b43", ysize=3, yalign=1.0))
-    insensitive_background Solid("#192632bb")
+    xsize 935
+    ysize 105
+    padding (40, 26, 100, 18)
+    background minor_choice_card(False)
+    hover_background minor_choice_card(True)
+    insensitive_background minor_choice_card(False)
+    focus_mask True
 
 style choice_button_text is default:
     font "fonts/Rajdhani-SemiBold.ttf"
-    size 36
-    color "#e0f2f7"
-    hover_color "#061625"
-    insensitive_color "#70808a"
+    size 35
+    color "#ffffff"
+    hover_color "#06101b"
+    insensitive_color "#a4a9b1"
+    outlines []
     text_align 0.0
-    outlines [(1, "#02070b77", 0, 1)]
 
 
 ################################################################################
