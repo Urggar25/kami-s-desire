@@ -247,7 +247,7 @@ screen messenger_conversation():
 
             # Seuls portrait et textes remplissent la carte EXISTANTE.
             fixed:
-                xpos 7 ypos 69
+                xpos -10 ypos 75
                 xysize (202, 82)
 
                 # Portrait rapproche et agrandi dans le cadre cyan.
@@ -272,23 +272,23 @@ screen messenger_conversation():
 
         # EN-TETE : laisser respirer le portrait ; nom et statut sont a droite.
         fixed:
-            xpos 284 ypos 3
+            xpos 315 ypos -2
             xysize (656, 94)
 
             # Le cadre du PNG est plus grand que l'ancien portrait 57px.
             # Recadrage visage + remplissage du cadre, sans deborder sur Kael.
             add Transform(
                 messenger_header_portrait(_contact_id), fit="cover",
-                xysize=(76, 76)
-            ) xpos 13 ypos 2
+                xysize=(95, 95)
+            ) xpos 3 ypos -10
 
             text _contact_name:
-                xpos 160 ypos 19
+                xpos 150 ypos 19
                 size 30 color "#FFFFFF"
                 font "fonts/Rajdhani-SemiBold.ttf"
 
             text "●  CANAL SÉCURISÉ":
-                xpos 161 ypos 60
+                xpos 150 ypos 60
                 size 14 color "#60E4A3"
                 font "fonts/Rajdhani-SemiBold.ttf"
                 kerning 1
@@ -360,25 +360,6 @@ screen messenger_conversation():
                                     font "fonts/Rajdhani-SemiBold.ttf"
                                     xmaximum 408
                                     line_spacing 2
-
-        # PIED DE PAGE : indication recentree a droite suivant l'annotation ;
-        # pas de faux bandeau noir, de double bordure ou de bouton surajoute.
-        fixed:
-            xpos 348 ypos 525
-            xysize (546, 34)
-
-            if _exchange_complete:
-                text "CONVERSATION TERMINÉE — CLIQUER POUR FERMER":
-                    xalign 0.5 yalign 0.5
-                    size 16 color "#8BE7B7"
-                    font "fonts/Rajdhani-SemiBold.ttf"
-                    kerning 1
-            else:
-                text "CLIQUER POUR AFFICHER LE MESSAGE SUIVANT":
-                    xalign 0.5 yalign 0.5
-                    size 16 color "#A7E9FF"
-                    font "fonts/Rajdhani-SemiBold.ttf"
-                    kerning 1
 
 label messenger_play(thread_id, contact_id, messages, objective_text="Consulter les messages", notify=True):
     $ _messenger_started = messenger_begin(thread_id, contact_id, messages, objective_text, notify)
