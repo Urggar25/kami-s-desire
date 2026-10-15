@@ -159,3 +159,10 @@ fixed:
 - Ne jamais dimensionner les lignes de conversation avec une estimation de caractères (`messenger_message_row_height`) : les métriques de Rajdhani et les retours à la ligne réels ne coïncident pas avec ce calcul, ce qui crée des écarts imprévisibles entre les bulles. Placer directement les `hbox` dans le `vbox` du `viewport` et laisser Ren'Py calculer leur hauteur naturelle ; conserver `spacing` constant.
 - Calibrer les éléments dans le même repère `messenger_tablet_plane` sans transformer les portraits et textes séparément. Sur la dernière capture, rotation ajustée de 9,6° à 9,3° et origine Y de 0,437 à 0,441 ; viewport déplacé au repère (293,147), en-tête légèrement recentré, libellé de pied de page descendu à Y=522.
 - Ces changements sont des ajustements **de placement**, pas une transformation projective. Sans capture générée directement par Ren'Py après la modification, ne pas annoncer un alignement géométrique parfait.
+
+## Placement selon flèches de capture (15 octobre 2026)
+
+- Les flèches annotées sur la capture de la messagerie imposent des **déplacements ciblés** et non une nouvelle modification de `rotate` : le plan général reste à 9,3°.
+- Recentrer les portraits **dans les cadres dessinés** en haut à gauche et dans l'en-tête ; décaler le nom du correspondant et son statut nettement vers la droite pour leur laisser de l'air.
+- Déplacer la zone de bulles légèrement vers la droite et vers le bas, en réduisant sa hauteur pour protéger la zone du pied de page, et décaler également l'instruction de progression vers la droite.
+- Conserver le rendu des bulles, leurs dimensions naturelles, la révélation par clic, l'ordre narratif et la barre de défilement. Les marges sont dans le repère local 940×560 **avant** transformation, pas dans les pixels bruts de la capture.
