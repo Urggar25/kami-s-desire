@@ -133,13 +133,20 @@ transform messenger_tablet_plane:
 
 
 screen messenger_objective_gate():
-    # Ecran exclusivement appele par le label messenger_play : son Return()
-    # rend la main au scenario des que la conversation a ete lue.
+    # Écran appelé via call screen : Return() rend la main au scénario.
     zorder 60
 
     key "K_t" action Show("tablet_home")
 
-    if messenger_objective_active:
+    # Le contrôle de fin reste actif même quand l'objectif disparaît.
+    timer 0.08 repeat True action If(
+        not messenger_objective_active,
+        Return(True),
+        NullAction()
+    )
+
+    # Ne pas afficher la carte d'objectif PAR-DESSOUS la tablette.
+    if messenger_objective_active and not renpy.get_screen("tablet_home") and not renpy.get_screen("messenger_conversation"):
         frame at messenger_panel_in:
             xalign 0.025
             yalign 0.83
@@ -163,12 +170,6 @@ screen messenger_objective_gate():
                     color "#7795A8"
                     font "fonts/Rajdhani-SemiBold.ttf"
 
-        timer 0.08 repeat True action If(
-            not messenger_objective_active,
-            Return(True),
-            NullAction()
-        )
-
 
 screen messenger_conversation():
     modal True
@@ -176,10 +177,11 @@ screen messenger_conversation():
 
     $ _contact_id = messenger_active_contact or ""
     $ _contact_name = messenger_contact_name(_contact_id)
-    $ _visible_messages = messenger_visible_messages(3)
+    $ _visible_messages = messenger_visible_messages(4)
     $ _progress_current, _progress_total = messenger_current_progress()
     $ _exchange_complete = (_progress_total > 0 and _progress_current >= _progress_total)
 
+    # Fonctionnement existant : chaque clic/touche révèle le message suivant.
     key "K_ESCAPE" action Function(renpy.notify, "Consultez tous les messages.")
     key "K_SPACE" action Function(messenger_advance)
     key "K_RETURN" action Function(messenger_advance)
@@ -188,123 +190,160 @@ screen messenger_conversation():
     add Solid("#01060BCC")
     add "images/ui/tablette/tablette_messagerie.png" fit "contain" xysize (1920, 1080)
 
-    # L'application est rendue dans le plan incline de l'ecran et non dans
-    # une fenetre droite superposee a la tablette.
+    # Tous les composants suivent le même plan que l'illustration :
+    # aucun panneau 2D droit ne déborde du cadre de la tablette.
     fixed at messenger_panel_in, messenger_tablet_plane:
         xysize (940, 560)
 
+        # Volet gauche : conversation disponible et véritable état vide.
         fixed:
-            xysize (940, 560)
+            xpos 0 ypos 0
+            xysize (225, 560)
 
-            # Une seule discussion est accessible : celle liee a l'objectif.
+            text "MESSAGERIE":
+                xpos 18 ypos 14
+                size 26 color "#F2FAFF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "CANAL PRIVÉ":
+                xpos 20 ypos 49
+                size 13 color "#70DBFF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            frame:
+                xpos 0 ypos 66
+                xsize 214 ysize 88
+                padding (9, 9)
+                background Solid("#13507599")
+
+                hbox:
+                    spacing 11
+                    fixed:
+                        xysize (64, 64)
+                        add Solid("#68D6FF") xysize (64, 64)
+                        add Transform(messenger_portrait(_contact_id), fit="cover", xsize=58, ysize=58) xpos 3 ypos 3
+                    vbox:
+                        yalign 0.5
+                        spacing 3
+                        text _contact_name:
+                            size 23 color "#FFFFFF"
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                        text ("Lecture terminée" if _exchange_complete else "Nouveaux messages"):
+                            size 15 color "#A0E4FF"
+                            font "fonts/Rajdhani-SemiBold.ttf"
+
+            # Les cases vides dessinées sur le fond étaient trompeuses :
+            # on les masque sans ajouter de faux contacts cliquables.
+            add Solid("#071827F4") xpos 0 ypos 160 xsize 213 ysize 378
+            add Solid("#4AA7CB66") xpos 18 ypos 185 xsize 176 ysize 1
+            text "CONVERSATIONS":
+                xpos 18 ypos 195
+                size 15 color "#82C9E9"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            text "Les autres discussions apparaîtront ici.":
+                xpos 18 ypos 228
+                xmaximum 175
+                size 17 color "#688EA5"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                line_spacing 2
+            text "01 / 01":
+                xpos 18 ypos 506
+                size 15 color "#547D92"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+        # En-tête et identité du correspondant (indépendant du défilement).
+        fixed:
+            xpos 284 ypos 0
+            xysize (656, 95)
+
             fixed:
-                xpos 0 ypos 0
-                xysize (225, 560)
+                xpos 20 ypos 11
+                xysize (70, 70)
+                add Solid("#6DDFFF") xysize (70, 70)
+                add Transform(messenger_portrait(_contact_id), fit="cover", xsize=64, ysize=64) xpos 3 ypos 3
+            text _contact_name:
+                xpos 111 ypos 12
+                size 32 color "#FFFFFF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "●  CANAL SÉCURISÉ":
+                xpos 114 ypos 53
+                size 14 color "#60E4A3"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+            add Solid("#55D5FF77") xpos 14 ypos 91 xsize 612 ysize 1
 
-                text "MESSAGERIE":
-                    xpos 18 ypos 17
-                    size 23 color "#E8F7FF"
-                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-                text "CANAL PRIVE":
-                    xpos 20 ypos 48
-                    size 12 color "#5CD3FF"
-                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+        # Le centre de l'écran est dédié aux dialogues, non au décor.
+        # La zone coupe le texte trop long proprement et accepte la molette.
+        viewport:
+            xpos 296 ypos 110
+            xsize 623 ysize 382
+            mousewheel True
+            draggable False
+            yinitial 1.0
 
-                frame:
-                    xpos -6 ypos 68
-                    xsize 200 ysize 82
-                    padding (9, 9)
-                    background None
+            vbox:
+                xsize 610
+                spacing 13
 
-                    hbox:
-                        spacing 10
-                        fixed:
-                            xysize (60, 60)
-                            add Solid("#5CD3FF") xysize (60, 60)
-                            add Transform(messenger_portrait(_contact_id), fit="cover", xsize=54, ysize=54) xpos 3 ypos 3
-                        vbox:
-                            yalign 0.5
-                            spacing 2
-                            text _contact_name:
-                                size 21 color "#FFFFFF"
-                                font "fonts/Rajdhani-SemiBold.ttf"
-                            text "Nouveau message":
-                                size 13 color "#79CFF2"
-                                font "fonts/Rajdhani-SemiBold.ttf"
+                for _index, _message in enumerate(_visible_messages):
+                    $ _sender = _message.get("sender", _contact_id)
+                    $ _from_noam = (_sender == "noam")
+                    $ _consecutive = (_index > 0 and _visible_messages[_index - 1].get("sender") == _sender)
 
-            # En-tete de la discussion.
-            fixed:
-                xpos 300 ypos -8
-                xysize (640, 92)
-
-                fixed:
-                    xpos 18 ypos 12
-                    xysize (60, 60)
-                    add Solid("#5CD3FF") xysize (60, 60)
-                    add Transform(messenger_portrait(_contact_id), fit="cover", xsize=54, ysize=54) xpos 3 ypos 3
-
-                text _contact_name:
-                    xpos 120 ypos 15
-                    size 29 color "#FFFFFF"
-                    font "fonts/Rajdhani-SemiBold.ttf"
-                text "●  CANAL SECURISE":
-                    xpos 121 ypos 49
-                    size 13 color "#53D48B"
-                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-
-            # Derniers messages visibles. Aucun horodatage ni accuse de lecture.
-            fixed:
-                xpos 315 ypos 102
-                xysize (600, 388)
-
-                vbox:
-                    xsize 600
-                    yalign 1.0
-                    spacing 9
-
-                    for _message in _visible_messages:
-                        $ _sender = _message.get("sender", _contact_id)
-                        $ _from_noam = (_sender == "noam")
-
-                        if _from_noam:
-                            hbox:
-                                xalign 1.0
-                                spacing 9
-                                frame:
-                                    xmaximum 440
-                                    padding (15, 10)
-                                    background Solid("#0D567BEE")
-                                    text _message.get("text", ""):
-                                        size 18 color "#F5FBFF"
-                                        font "fonts/Rajdhani-SemiBold.ttf"
-                                        xmaximum 410
+                    if _from_noam:
+                        hbox:
+                            xalign 1.0
+                            spacing 11
+                            frame:
+                                xmaximum 462
+                                padding (17, 12)
+                                background Solid("#145D83F0")
+                                text _message.get("text", ""):
+                                    size 23 color "#F4FAFF"
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                    xmaximum 428
+                                    line_spacing 2
+                            if _consecutive:
+                                null width 48 height 48
+                            else:
                                 fixed:
-                                    xysize (46, 46)
-                                    add Solid("#79CFF2") xysize (46, 46)
-                                    add Transform(messenger_portrait("noam"), fit="cover", xsize=42, ysize=42) xpos 2 ypos 2
-                        else:
-                            hbox:
-                                xalign 0.0
-                                spacing 9
+                                    xysize (48, 48)
+                                    add Solid("#8DDCFF") xysize (48, 48)
+                                    add Transform(messenger_portrait("noam"), fit="cover", xsize=44, ysize=44) xpos 2 ypos 2
+                    else:
+                        hbox:
+                            xalign 0.0
+                            spacing 11
+                            if _consecutive:
+                                null width 48 height 48
+                            else:
                                 fixed:
-                                    xysize (46, 46)
-                                    add Solid("#54758D") xysize (46, 46)
-                                    add Transform(messenger_portrait(_sender), fit="cover", xsize=42, ysize=42) xpos 2 ypos 2
-                                frame:
-                                    xmaximum 440
-                                    padding (15, 10)
-                                    background Solid("#173044EE")
-                                    text _message.get("text", ""):
-                                        size 18 color "#E8F2F8"
-                                        font "fonts/Rajdhani-SemiBold.ttf"
-                                        xmaximum 410
+                                    xysize (48, 48)
+                                    add Solid("#668CA5") xysize (48, 48)
+                                    add Transform(messenger_portrait(_sender), fit="cover", xsize=44, ysize=44) xpos 2 ypos 2
+                            frame:
+                                xmaximum 462
+                                padding (17, 12)
+                                background Solid("#21394FF0")
+                                text _message.get("text", ""):
+                                    size 23 color "#F0F6FB"
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                    xmaximum 428
+                                    line_spacing 2
 
-            fixed:
-                xpos 225 ypos 506
-                xysize (715, 54)
-                text ("Cliquer pour fermer" if _exchange_complete else "Cliquer pour afficher le message suivant"):
+        # Barre de progression lisible (mêmes contrôles au clic qu'avant).
+        fixed:
+            xpos 234 ypos 504
+            xysize (706, 56)
+            add Solid("#081B2BD8") xysize (706, 56)
+            add Solid("#48BBE955") xpos 5 ypos 0 xsize 689 ysize 1
+            if _exchange_complete:
+                text "✓  FIN DE LA CONVERSATION — CLIQUER POUR FERMER":
                     xalign 0.5 yalign 0.5
-                    size 16 color ("#53D48B" if _exchange_complete else "#79CFF2")
+                    size 19 color "#7EE6B4"
+                    font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            else:
+                text "CLIQUEZ POUR AFFICHER LE MESSAGE SUIVANT":
+                    xalign 0.5 yalign 0.5
+                    size 19 color "#A7E9FF"
                     font "fonts/Rajdhani-SemiBold.ttf" kerning 1
 
 label messenger_play(thread_id, contact_id, messages, objective_text="Consulter les messages", notify=True):
