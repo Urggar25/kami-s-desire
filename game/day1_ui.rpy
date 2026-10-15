@@ -50,6 +50,7 @@ init python:
     DAY_PERIOD_HUD_BLOCKING_SCREENS = (
         "tablet_home",
         "tablet_stats",
+        "messenger_conversation",
         "vote_dossier",
         "investigation_dossier",
     )

@@ -193,7 +193,8 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|
-| Tablette — accueil animé | Superpose les quatre étapes PNG avec fondus croisés de 0,3 s (0,2 s entre les étapes 3 et 4), boutons image EXIT/Discord et fermeture inverse par Échap ou EXIT. | `game/tablet_home.rpy` | `show screen tablet_home` |
+| Tablette — accueil animé | Superpose les quatre étapes PNG avec fondus croisés, signale les messages en attente et fournit les boutons Messagerie, EXIT et Discord. | `game/tablet_home.rpy` | `show screen tablet_home` |
+| Tablette — messagerie scénarisée | Crée un objectif « Consulter les messages », affiche la discussion sur un visuel de tablette incliné dédié et révèle chaque message au clic sans horodatage ni accusé de lecture. | `game/messenger.rpy`, `game/images/ui/tablette/tablette_messagerie.png`, `game/tablet_home.rpy` | `call messenger_play("kael", "kael", [("kael", "Noam ? T'es là ?"), ("noam", "Ouais.")])` |
 | Tablette — statistiques | Présente les cinq stats et leur progression en jauges segmentées. | `game/stats_system.rpy` | `show screen tablet_stats` |
 | Tablette narrative du jour 1 | Interaction terminal scénarisée propre au réveil et à l'amendement. | `game/day1_ui.rpy` | `call screen day1_tablet_interaction` |
 | Timer dynamique | Compte à rebours persistant, modifiable en direct, avec saut optionnel à expiration. | `game/day0_ui.rpy` | `$ day0_timer_init(m=5, end_label="_TEMPS_ECOULE"); show screen day0_countdown_overlay` |

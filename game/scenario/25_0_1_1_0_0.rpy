@@ -1120,8 +1120,16 @@ label _25_0_1_1_0_0_SOIR:
     "Le morceau de tissu est rangé dans le dossier, juste à côté. Je le sors de sa pochette et le déplie sur une feuille."
     "La couleur ressemble à celle de la veste. Pourtant, je n'ai trouvé aucune déchirure sur les parties du vêtement que j'ai pu examiner."
     "Je remets le morceau dans la pochette avant de recommencer à tourner autour de cette question."
-    "Mon téléphone vibre. Iris demande si je suis rentré."
-    "Je lui réponds que oui, puis lui raconte la conversation avec Mara. Elle m'appelle presque aussitôt."
+    "Ma tablette vibre. Iris demande si je suis rentré."
+
+    call messenger_play("iris", "iris", [
+        ("iris", "T'es rentré ?"),
+        ("noam", "Oui. Mara est venue me parler dans le couloir."),
+        ("noam", "Elle voulait que j'aille boire un verre avec elle. J'ai refusé."),
+        ("iris", "Attends. Quoi ?!"),
+    ]) from _call_messenger_j25_iris
+
+    "Iris m'appelle presque aussitôt."
 
     iris inquiet "Quoi ?! Elle t'a demandé quoi, exactement ?"
 
@@ -1214,12 +1222,15 @@ label _25_0_1_1_0_0_SOIR:
     "Iris s'arrête de tirer la couverture sur le lit. Elle tourne la tête vers moi, puis reprend son geste."
     iris fatigue "C'est justement la question que je voulais éviter de me poser ce soir."
 
-    "Mon téléphone vibre une fois contre ma cuisse. Je le sors trop rapidement, persuadé d'y trouver un message de Mara."
-    "C'est Julian. Il a envoyé le score définitif de la partie, avec un commentaire sur sa prétendue victoire morale."
+    "Ma tablette vibre une fois contre ma cuisse. Je la sors trop rapidement, persuadé d'y trouver un message de Mara."
+
+    call messenger_play("julian", "julian", [
+        ("julian", "Score définitif : ma victoire morale est incontestable. Le règlement me doit encore des points."),
+    ]) from _call_messenger_j25_julian
 
     noam neutre "C'est Julian. Il réclame encore des points."
     iris blase "Il perdrait une partie contre Goumi qu'il demanderait un recomptage."
-    "Je lui montre le message. Elle laisse échapper un rire bref, puis s'assoit à côté de moi."
+    "Je lui montre la tablette. Elle laisse échapper un rire bref, puis s'assoit à côté de moi."
     iris reflexion "Voilà pourquoi ça me fait peur."
     noam surpris "Julian ?"
     iris raison "Non. Tout le reste. Il y a deux heures, on était tous autour d'une table à l'écouter râler. Elen riait, Elias se moquait de lui, Mara distribuait les cartes..."

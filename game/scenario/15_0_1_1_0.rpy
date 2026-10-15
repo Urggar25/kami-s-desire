@@ -71,44 +71,27 @@ label _15_0_1_1_0_REVEIL_CHAMBRE:
 
     "Le nom de Kael s’affiche."
 
-    kael "Tu es réveillé ?"
-    noam "Oui. J’ai entendu l’annonce."
-    kael "Tu comptes aller au vote ?"
-
-    "Je laisse mes doigts au-dessus de l’écran sans répondre tout de suite."
-
-    noam "Je ne sais pas encore."
-    kael "Alors décide vite. C’est probablement notre meilleure occasion pour regarder les caméras."
-    noam hesitation "Tu veux faire ça pendant que tout le monde est au Conclave ?"
-    kael "Oui. La salle d’observation sera vide et les archives du huitième jour devraient enfin être déverrouillées."
-    kael "Si quelqu’un a pris la photo de Léa, on pourra peut-être le voir."
-
-    "Je relis sa dernière phrase. Depuis qu’il m’a parlé de cette photo, quelque chose a changé chez lui ; il parle encore peu, mais on sent que toute son attention s’est resserrée autour de cette seule question."
-
-    noam reflexion "Et si les images ont été supprimées ? On a déjà vu que certaines séquences pouvaient disparaître."
-    kael "Alors on cherchera ce qui reste."
-    noam "Et s’il ne reste rien ?"
-
-    pause 1.0
-
-    kael "Je ne sais pas."
-
-    "La réponse est courte, mais elle suffit à me faire comprendre qu’il y pense depuis longtemps."
-
-    noam "Tu veux qu’on se retrouve avant ?"
-    kael "Non. Attends l’annonce du rassemblement. Je serai près de la salle d’observation."
-    kael "Viens seulement si tu es sûr."
-
-    noam hesitation "Je viendrai."
-    kael "Tu vas donc manquer le vote."
-
-    "Je baisse les yeux vers mes mains."
-
-    noam fatigue "Oui. Pour une fois, je vais laisser aux autres la responsabilité de sauver le monde."
-
-    pause 1.0
-
-    kael "D’accord."
+    call messenger_play("kael", "kael", [
+        ("kael", "Tu es réveillé ?"),
+        ("noam", "Oui. J’ai entendu l’annonce."),
+        ("kael", "Tu comptes aller au vote ?"),
+        ("noam", "Je ne sais pas encore."),
+        ("kael", "Alors décide vite. C’est probablement notre meilleure occasion pour regarder les caméras."),
+        ("noam", "Tu veux faire ça pendant que tout le monde est au Conclave ?"),
+        ("kael", "Oui. La salle d’observation sera vide et les archives du huitième jour devraient enfin être déverrouillées."),
+        ("kael", "Si quelqu’un a pris la photo de Léa, on pourra peut-être le voir."),
+        ("noam", "Et si les images ont été supprimées ? On a déjà vu que certaines séquences pouvaient disparaître."),
+        ("kael", "Alors on cherchera ce qui reste."),
+        ("noam", "Et s’il ne reste rien ?"),
+        ("kael", "Je ne sais pas."),
+        ("noam", "Tu veux qu’on se retrouve avant ?"),
+        ("kael", "Non. Attends l’annonce du rassemblement. Je serai près de la salle d’observation."),
+        ("kael", "Viens seulement si tu es sûr."),
+        ("noam", "Je viendrai."),
+        ("kael", "Tu vas donc manquer le vote."),
+        ("noam", "Oui. Pour une fois, je vais laisser aux autres la responsabilité de sauver le monde."),
+        ("kael", "D’accord."),
+    ]) from _call_messenger_j15_kael_matin
 
     "La conversation s’arrête là. Je garde pourtant la tablette contre moi encore quelques secondes."
 
@@ -203,10 +186,12 @@ label _15_0_1_1_0_COULOIR:
 
     "Ma tablette vibre."
 
-    kael inquietude "Tu es sorti ?"
-    noam inquiet "Oui. Ils sont encore devant le couloir principal."
-    kael fatigue "Attends qu’ils partent. Je suis déjà près de la salle d’observation."
-    noam "J’arrive dès que je peux."
+    call messenger_play("kael", "kael", [
+        ("kael", "Tu es sorti ?"),
+        ("noam", "Oui. Ils sont encore devant le couloir principal."),
+        ("kael", "Attends qu’ils partent. Je suis déjà près de la salle d’observation."),
+        ("noam", "J’arrive dès que je peux."),
+    ]) from _call_messenger_j15_kael_couloir
 
     "Je range la tablette et commence à reculer pour reprendre un autre passage."
 

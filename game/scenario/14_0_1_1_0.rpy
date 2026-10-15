@@ -708,87 +708,62 @@ label _14_0_1_1_0_MESSAGES_KAEL:
     "Je suis toujours dans ma chambre quand ma tablette vibre sur le bureau."
     "Pendant une seconde, je pense l'ignorer. Puis je vois le nom de Kael."
 
-    kael "Noam ? T'es là ?"
-    noam "Ouais."
-    kael "Question bizarre : Ryn t'a parlé aujourd'hui ?"
+    call messenger_play("kael", "kael", [
+        ("kael", "Noam ? T'es là ?"),
+        ("noam", "Ouais."),
+        ("kael", "Question bizarre : Ryn t'a parlé aujourd'hui ?"),
+        ("noam", "On peut dire ça."),
+        ("kael", "Il vient encore de m'engueuler dans le couloir. Apparemment je suis toujours officiellement responsable de la fin du monde parce que j'ai voté contre."),
+        ("noam", "Bienvenue au club."),
+        ("kael", "Toi c'est différent. Toi t'as une secte maintenant."),
+        ("noam", "Comment tu sais ?"),
+        ("kael", "Mara t'a vu sortir en courant de la chambre de Sael. Il parait qu'elle te courait après les mains pleines de sel..."),
+        ("kael", "J'imagine que tout le monde est déjà au courant maintenant..."),
+        ("noam", "Génial."),
+        ("kael", "C'est vrai ? Sael t'a vraiment sorti du sel ?"),
+        ("noam", "T'as vraiment pas envie de savoir..."),
+        ("kael", "Putain."),
+        ("noam", "Ryn était là aussi."),
+        ("kael", "PUTAIN."),
+        ("kael", "Ils t'ont fait quoi ?"),
+        ("noam", "J'ai pas vraiment envie d'en parler."),
+        ("kael", "Je voulais surtout te parler de demain."),
+        ("noam", "Le vote sur ARCHIVE ?"),
+        ("kael", "Ouais."),
+        ("kael", "Je vais profiter du vote pour aller voir les terminaux d'archives pendant que tout le monde sera à la Salle du Conclave."),
+        ("noam", "Tu peux déjà accéder aux images ?"),
+        ("kael", "Pas normalement. Mais demain, pendant la synchronisation liée au vote, les terminaux vont devoir charger les index complets d'ARCHIVE."),
+        ("kael", "Je veux essayer de récupérer ce qui concerne ma chambre avant que les droits se referment ou que quelqu'un décide encore de supprimer quelque chose."),
+        ("noam", "Les images du jour 8."),
+        ("kael", "Exactement."),
+        ("noam", "Celles du vol de la photo de Léa."),
+        ("kael", "Oui."),
+        ("noam", "Je viens avec toi."),
+        ("kael", "T'es vraiment sûr ?"),
+        ("noam", "Oui."),
+        ("kael", "Je pensais que tu voudrais assister au vote."),
+        ("noam", "J'ai surtout envie de savoir qui entre dans nos chambres."),
+        ("kael", "... Je peux difficilement te contredire là-dessus."),
+        ("noam", "On se retrouve où ?"),
+        ("kael", "Près de la salle d'observation. 13h30."),
+        ("kael", "Je t'envoie un message avant pour vérifier que le couloir est vide."),
+        ("noam", "Ça marche."),
+        ("kael", "Au fait, pour ce que Ryn m'a dit..."),
+        ("noam", "Quoi ?"),
+        ("kael", "Il pense vraiment que j'ai sacrifié les brouilleurs juste pour ma sœur."),
+        ("noam", "C'est pas complètement faux, non ?"),
+        ("kael", "Merci pour le soutien."),
+        ("noam", "Je veux dire que je comprends pourquoi tu l'as fait."),
+        ("kael", "Ouais. Je sais pas si toi t'as raison sur tout ce qui se passe ici. Mais je sais ce que ça fait quand les autres décident que ton problème compte moins que le leur."),
+        ("kael", "En tout cas j'ai eu une idée pour me racheter. Peut-être que le groupe m'en voudra un peu moins."),
+        ("noam", "Ah ouais ? Qu'est-ce que tu as en tête ?"),
+        ("kael", "Haha ! Tu verras bien, c'est une petite surprise ! Tu en sauras plus un peu plus tard."),
+        ("kael", "Bon, alors demain on fait notre petite sortie entre parias ?"),
+        ("noam", "Dit comme ça, ça donne presque envie."),
+        ("kael", "Presque."),
+    ]) from _call_messenger_j14_kael
 
-    "Je fixe le message un peu trop longtemps."
-
-    noam "On peut dire ça."
-    kael "Il vient encore de m'engueuler dans le couloir. Apparemment je suis toujours officiellement responsable de la fin du monde parce que j'ai voté contre."
-    noam "Bienvenue au club."
-    kael "Toi c'est différent. Toi t'as une secte maintenant."
-
-    "Je fronce les sourcils."
-
-    noam "Comment tu sais ?"
-    kael "Mara t'a vu sortir en courant de la chambre de Sael. Il parait qu'elle te courait après les mains pleines de sel..."
-    kael "J'imagine que tout le monde est déjà au courant maintenant..."
-    noam "Génial."
-    kael "C'est vrai ? Sael t'a vraiment sorti du sel ?"
-    noam "T'as vraiment pas envie de savoir..."
-    kael "Putain."
-    noam "Ryn était là aussi."
-    kael "PUTAIN."
-
-    "Malgré moi, je souris légèrement."
-
-    kael "Ils t'ont fait quoi ?"
-    noam "J'ai pas vraiment envie d'en parler."
-
-    "Il ne relance pas. Ça me surprend presque."
-
-    kael "Je voulais surtout te parler de demain."
-    noam "Le vote sur ARCHIVE ?"
-    kael "Ouais."
-    kael "Je vais profiter du vote pour aller voir les terminaux d'archives pendant que tout le monde sera à la Salle du Conclave."
-    noam "Tu peux déjà accéder aux images ?"
-    kael "Pas normalement. Mais demain, pendant la synchronisation liée au vote, les terminaux vont devoir charger les index complets d'ARCHIVE."
     $ unlock_dossier_arg("p5_index_complet")
-    kael "Je veux essayer de récupérer ce qui concerne ma chambre avant que les droits se referment ou que quelqu'un décide encore de supprimer quelque chose."
-
-    "Je me redresse."
-
-    noam "Les images du jour 8."
-    kael "Exactement."
-    noam "Celles du vol de la photo de Léa."
-    kael "Oui."
-
-    "Je regarde vers mon bureau. Le cahier noir est toujours là, fermé."
-
-    noam "Je viens avec toi."
-
-    pause 0.4
-
-    kael "T'es vraiment sûr ?"
-    noam "Oui."
-    kael "Je pensais que tu voudrais assister au vote."
-    noam "J'ai surtout envie de savoir qui entre dans nos chambres."
-    kael "... Je peux difficilement te contredire là-dessus."
-
-    noam "On se retrouve où ?"
-    kael "Près de la salle d'observation. 13h30."
-    kael "Je t'envoie un message avant pour vérifier que le couloir est vide."
-    noam "Ça marche."
-
-    "Quelques secondes passent avant qu'un nouveau message apparaisse."
-
-    kael "Au fait, pour ce que Ryn m'a dit..."
-    noam "Quoi ?"
-    kael "Il pense vraiment que j'ai sacrifié les brouilleurs juste pour ma sœur."
-    noam "C'est pas complètement faux, non ?"
-    kael "Merci pour le soutien."
-    noam "Je veux dire que je comprends pourquoi tu l'as fait."
-    kael "Ouais. Je sais pas si toi t'as raison sur tout ce qui se passe ici. Mais je sais ce que ça fait quand les autres décident que ton problème compte moins que le leur."
-    kael "En tout cas j'ai eu une idée pour me racheter. Peut-être que le groupe m'en voudra un peu moins."
-
-    "Je relis la phrase."
-
-    noam "Ah ouais ? Qu'est-ce que tu as en tête ?"
-    kael "Haha ! Tu verras bien, c'est une petite surprise ! Tu en sauras plus un peu plus tard."
-    kael "Bon, alors demain on fait notre petite sortie entre parias ?"
-    noam "Dit comme ça, ça donne presque envie."
-    kael "Presque."
 
     "La conversation s'arrête là. Je repose la tablette sur le lit."
     "Je ne sais pas si Kael me croit réellement. Je ne suis même pas sûr d'avoir besoin qu'il me croie. Pour l'instant, il veut les mêmes réponses que moi, et c'est déjà beaucoup."

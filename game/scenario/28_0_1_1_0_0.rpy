@@ -391,8 +391,16 @@ label _28_0_1_1_0_0_CHAMBRE:
     noam raison "Je vais lui dire qu'on a vu Ryn en liberté. Il faut qu'il sache au moins ça."
     iris reflexion "D'accord. Envoie aussi un message à Elen. Elle est avec Lysa, normalement."
 
-    "J'écris quelques lignes, sans parler de la conversation surprise dans le couloir. Je leur demande de rester ensemble et d'éviter de se déplacer seuls."
-    "Julian répond rapidement qu'il a vu Ryn passer près de la cafétéria, mais qu'il ne sait pas pourquoi il a été libéré."
+    call messenger_play("julian", "julian", [
+        ("noam", "On vient de voir Ryn en liberté avec Elias. Reste avec les autres et évite de te déplacer seul."),
+        ("julian", "Je l'ai vu passer près de la cafétéria. Je ne sais pas pourquoi il a été libéré."),
+        ("julian", "Je vais essayer de joindre Sael. Je reste ici pour le moment."),
+    ], notify=False) from _call_messenger_j28_julian
+
+    call messenger_play("elen", "elen", [
+        ("noam", "Ryn circule librement. Reste avec Lysa et évitez de vous déplacer seules. Réponds-moi quand tu peux."),
+    ], objective_text="Prévenir Elen", notify=False) from _call_messenger_j28_elen
+
     "Elen ne répond pas."
 
     noam inquiet "Julian l'a vu aussi. Il dit qu'il va essayer de joindre Sael, mais qu'il reste à la cafétéria pour le moment."

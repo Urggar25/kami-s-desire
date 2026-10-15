@@ -339,7 +339,11 @@ label _29_0_1_1_0_0_JULIAN:
     iris inquiet "Moi non plus. Et si Julian est vraiment tombé sur eux, on sait même pas où ils l'ont emmené."
 
     "J'essaie de le rappeler. Le téléphone sonne longtemps. Cette fois, personne ne décroche."
-    "J'ouvre ma conversation avec Elen et tape quelques mots pour lui demander si elle sait où est Julian. Le message part, mais reste sans réponse."
+    call messenger_play("elen", "elen", [
+        ("noam", "Tu sais où est Julian ? Réponds-moi, s'il te plaît."),
+    ], objective_text="Contacter Elen", notify=False) from _call_messenger_j29_elen
+
+    "Le message part, mais reste sans réponse."
     "La dernière fois que nous l'avons vu, Julian essayait de réconforter Elen après la mort de Nyra. Il cherchait ses mots, les mains encore tachées de sang, sans réussir à lui arracher une réaction."
     "Je me demande s'il avait trouvé le courage de lui parler à nouveau ce matin."
 

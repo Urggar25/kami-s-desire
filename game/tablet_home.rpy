@@ -69,6 +69,27 @@ screen tablet_home():
         # transparentes ; focus_mask True rendrait alors le clic impossible
         # si les pixels opaques sont hors de la zone visuellement attendue.
         if stage == 4 and not closing:
+            # Les icones sont des calques 1536x1024 transparents alignes sur
+            # la maquette complete. Le focus alpha limite le clic a l'icone.
+            imagebutton:
+                idle Transform(
+                    "images/ui/tablette/messagerie_notif.png" if messenger_has_pending() else "images/ui/tablette/messagerie.png",
+                    xysize=(1920, 1080), fit="contain"
+                )
+                hover Transform(
+                    "images/ui/tablette/messagerie_notif.png" if messenger_has_pending() else "images/ui/tablette/messagerie.png",
+                    xysize=(1920, 1080), fit="contain", matrixcolor=BrightnessMatrix(0.18)
+                )
+                xpos 0 ypos 0
+                xsize 1920 ysize 1080
+                focus_mask True
+                at tablet_phase_fade(0.2)
+                action If(
+                    messenger_has_pending(),
+                    [Hide("tablet_home"), Show("messenger_conversation")],
+                    Function(messenger_no_recent)
+                )
+
             imagebutton:
                 idle Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
                 hover Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
