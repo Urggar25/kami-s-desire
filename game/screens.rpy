@@ -320,9 +320,12 @@ init python:
                     state.get("expr", "neutre"))
         if expr not in NOAM_EXPRESSIONS:
             expr = "neutre"
+        # Le z-order effectif de showGroup inclut l'index du personnage.
+        # Sa sauvegarde precise evite de modifier les superpositions apres choix.
+        zorders = dict(renpy.get_zorder_list(layer))
         store._minor_choice_original_sprite = (
             layer, expr, list(at_list),
-            state.get("zorder", 0), state.get("x", 0.72),
+            zorders.get("noam", state.get("zorder", 0)), state.get("x", 0.72),
             state.get("y", 1.0))
         renpy.hide("noam", layer=layer)
 
