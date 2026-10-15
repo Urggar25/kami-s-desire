@@ -258,7 +258,6 @@ screen choice(items):
             ysize 615
             xpos 36
             ypos 134
-            clipping True
             add minor_choice_portrait() at minor_choice_portrait_breathe
         text "NOAM" xpos 70 ypos 774 font "fonts/Rajdhani-SemiBold.ttf" size 67 color "#f4fbff" kerning 7
         text "HARMONIE  //  01" xpos 74 ypos 847 font "fonts/Rajdhani-SemiBold.ttf" size 20 color "#45cfe9" kerning 4
@@ -304,7 +303,6 @@ style choice_button is default:
     background Fixed(Solid("#081320ea"), Solid("#3acbe9", xsize=6), Solid("#ffffff13", ysize=2))
     hover_background Fixed(Solid("#edfaff"), Solid("#1cbddf", xsize=10), Solid("#122b43", ysize=3, yalign=1.0))
     insensitive_background Solid("#192632bb")
-    hover_sound "sound/ui/hover.ogg" if renpy.loadable("sound/ui/hover.ogg") else None
 
 style choice_button_text is default:
     font "fonts/Rajdhani-SemiBold.ttf"
