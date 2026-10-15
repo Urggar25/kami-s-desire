@@ -92,3 +92,25 @@ grep -nE "(xpos .*xalign|xalign .*xpos|ypos .*yalign|yalign .*ypos)" game/*.rpy
 ```
 
 Aucun résultat attendu.
+
+## Erreur Ren'Py — `hotspot` en dehors d'une `imagemap` (15 octobre 2026)
+
+**Symptôme réel :** `IndexError: list index out of range` dans `renpy.sl2.slast.py`, sur `imc = renpy.ui.imagemap_stack[-1]`, lorsque le screen exécute un `hotspot` dans un simple `fixed`.
+
+**Cause :** le langage screen de Ren'Py exige que `hotspot` soit enfant d'un bloc `imagemap:` comportant `ground` (et, normalement, `hover`). Un `fixed:` ne crée pas de contexte imagemap.
+
+**Solution impérative :** utiliser un `button:` transparent avec `xpos`, `ypos`, `xsize`, `ysize`, `background None` et `action` pour une zone de clic invisible sur une image `add`. N'utiliser `hotspot` qu'au sein d'un `imagemap:` explicitement défini.
+
+**Contrôle avant commit :** rechercher chaque `hotspot` ajouté/modifié et vérifier son parent réel ; vérifier également qu'un seul `screen nom_ecran` existe dans tout `game/`, car les définitions en double peuvent masquer l'implémentation voulue.
+
+**Exemple sûr :**
+
+```renpy
+fixed:
+    add "images/ui/tablette/tablette_4.png"
+    button:
+        xpos 1200 ypos 700
+        xsize 150 ysize 90
+        background None
+        action Hide("tablet_home")
+```
