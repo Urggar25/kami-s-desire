@@ -115,9 +115,11 @@ fixed:
         action Hide("tablet_home")
 ```
 
-## Tablette : transitions et boutons invisibles (15 octobre 2026)
+## Tablette : transitions et imagebuttons (15 octobre 2026)
 
-- Pour une séquence visuelle de 4 étapes à **0,5 s par phase**, garder le `timer 0.5 repeat True` cohérent avec `linear 0.5 alpha 1.0`; un timer de 0,05 s fait défiler les images dix fois trop vite.
-- Sur une image affichée en `fit "contain"`, les coordonnées des zones de clic se rapportent au conteneur 1920×1080 et non aux coordonnées natives du PNG : **recalibrer et tester les rectangles à l’écran**.
-- Un bouton sans enfant et `background None` peut être difficile à diagnostiquer : fournir une surface `background Solid("#FFFFFF01")`, une `xsize` et une `ysize` explicites, et vérifier qu’elle couvre l’icône. Pour le débogage, remplacer temporairement le fond par `Solid("#FF000066")` afin de visualiser sa zone avant livraison.
-- L’action de fermeture d’un écran ouvert par `Show("tablet_home")` doit déclencher la séquence inverse, puis `Hide("tablet_home")` ; la touche Échap doit utiliser exactement le même chemin.
+- **Ne pas créer de boutons rectangulaires Solid derrière/sur les icônes** lorsque des fichiers d'icône dédiés existent. Utiliser `imagebutton:` avec `idle`, `hover`, `focus_mask True` et l'asset réel (`images/ui/tablette/exit.png`, `discord.png`). Les clics suivent les pixels opaques, et non un carré recouvrant un autre bouton.
+- Pour une animation `tablette_1` à `tablette_4`, **ne jamais effacer le calque précédent avant le fondu** : dessiner l'étape de départ en dessous à opacité 100 %, puis l'étape suivante avec `alpha 0.0; linear duration alpha 1.0` au-dessus. Cette technique est un vrai fondu croisé, aussi à la fermeture.
+- Durées demandées : 0,3 s pour les phases normales et 0,2 s pour 3→4 (et 4→3). Synchroniser la durée d'affichage par phase et le transform de fondu.
+- Les PNG de tablette restent dans un repère commun 1920×1080 avec `fit "contain"`. Relever la position effective des icônes sur une capture *du jeu* avant de fixer leurs `xpos`/`ypos` : ne jamais déduire les coordonnées de la taille native seule.
+- L'écran modal lancé par `Show("tablet_home")` doit déclencher un parcours inverse complet via `closing=True`, puis `Hide("tablet_home")`. La touche Échap et le bouton Exit utilisent la même action.
+- Vérifier qu'il n'existe qu'un `screen tablet_home` actif, et tester en Ren'Py : quatre images, fondu continu, Exit cliquable, Échap et Discord.
