@@ -74,7 +74,6 @@ screen tablet_home():
                 hover Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
                 xpos 1210 ypos 650
                 xsize 150 ysize 150
-                focus_mask False
                 at tablet_phase_fade(0.2)
                 action OpenURL("https://discord.gg/RyN4CZCeRE")
 
@@ -83,6 +82,5 @@ screen tablet_home():
                 hover Transform("images/ui/tablette/exit.png", xysize=(130, 75), fit="contain")
                 xpos 1215 ypos 832
                 xsize 130 ysize 75
-                focus_mask False
                 at tablet_phase_fade(0.2)
                 action [SetScreenVariable("closing", True), SetScreenVariable("phase_tick", 0)]
