@@ -262,8 +262,10 @@ init python:
         sprite = Transform(
             Crop((130, 3, 345, 500), noam_expression(expr)),
             zoom=2.02)
-        # Degrade alpha SVG CONTINU, sans les bandes du masque precedent.
-        return AlphaMask(sprite, "gui/choice_v6/portrait_fade.svg")
+        # Le SVG de masque rendait le portrait entierement invisible dans
+        # Ren'Py 8.3.7. Laisser le sprite transparent natif : sa partie basse
+        # sort de l'ecran, sans coupe visible ni AlphaMask fragile.
+        return sprite
 
     def minor_choice_suspend_original():
         # Pendant le menu, eviter de dessiner Noam deux fois.
