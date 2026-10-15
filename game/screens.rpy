@@ -306,7 +306,18 @@ init python:
         renpy.show("noam " + expr, tag="noam", layer=layer,
                    at_list=[char_group_place(x, y)], zorder=zorder)
 
+# Fondu de sortie applique a TOUT le menu (voile, portrait et choix).
+# Ren'Py conserve le displayable pendant l'animation de hide.
+transform minor_choice_screen_fade:
+    on show:
+        alpha 1.0
+    on hide:
+        linear 0.30 alpha 0.0
+    on replace:
+        linear 0.30 alpha 0.0
+
 screen choice(items):
+    at minor_choice_screen_fade
     style_prefix "choice"
     modal True
     zorder 110
