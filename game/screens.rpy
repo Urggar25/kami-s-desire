@@ -197,7 +197,7 @@ transform minor_choice_enter(delay=0.0):
     parallel:
         easeout 0.27 alpha 1.0
     parallel:
-        easeout_back 0.36 xoffset 0
+        easeout 0.36 xoffset 0
 
 transform minor_choice_face_enter:
     alpha 0.0
