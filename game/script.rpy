@@ -35,7 +35,7 @@ default bg_cam_x_cur = 0.5
 default bg_cam_y_cur = 0.5
 default bg_cam_z_cur = 1.0
 
-default char_pos = {}         # tag -> xalign
+default minor_choice_noam_expression = "reflexion"\ndefault char_pos = {}         # tag -> xalign
 default char_state = {}       # tag -> dict(expr,x,y,layer,zorder)
 default group_members = []    # tags visibles via showGroup
 
@@ -585,6 +585,16 @@ init python:
                 return
 
             dialogue_text = kwargs.get("what", "")
+            # Memorise l'expression de Noam pour les choix mineurs, meme si
+            # son sprite est ensuite masque avant l'ouverture du menu.
+            if tag == "noam":
+                attrs = renpy.get_attributes("noam", layer="master") or ()
+                expr = next((a for a in attrs if a in NOAM_EXPRESSIONS), None)
+                if not expr:
+                    state = getattr(store, "char_state", {}).get("noam", {})
+                    expr = state.get("expr") if isinstance(state, dict) else None
+                if expr in NOAM_EXPRESSIONS:
+                    store.minor_choice_noam_expression = expr
             start_character_dialogue(tag, dialogue_text)
             play_dialogue_doublage(doublage_tag or tag, dialogue_text)
 
