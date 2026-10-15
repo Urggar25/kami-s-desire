@@ -317,7 +317,6 @@ transform minor_choice_screen_fade:
         linear 0.30 alpha 0.0
 
 screen choice(items):
-    at minor_choice_screen_fade
     style_prefix "choice"
     modal True
     zorder 110
@@ -326,58 +325,60 @@ screen choice(items):
     on "hide" action Function(minor_choice_restore_original)
     on "replaced" action Function(minor_choice_restore_original)
 
-    # Le Solid sans dimensions pouvait se retrouver avec une zone de rendu
-    # nulle dans ce screen. Forcer une couche pleine resolution.
-    # Le voile est dessine AVANT les reponses et le portrait de Noam.
-    add Solid("#050913b8", xsize=1920, ysize=1080) xpos 0 ypos 0
-
-    # Ombre de portrait localisee, sans la grande plaque polygonale noire.
-    add "gui/choice_v6/portrait_shadow.svg" xpos 1218 ypos 229
-
-    # Le portrait reste libre : meme cadrage que V5, sans cadre ni coupure.
     fixed:
-        xpos 1285
-        ypos 139
-        xsize 635
-        ysize 941
-        at minor_choice_face_enter
-        add minor_choice_face() xpos 0 ypos 0 at minor_choice_face_idle
+        at minor_choice_screen_fade
+        # Le Solid sans dimensions pouvait se retrouver avec une zone de rendu
+        # nulle dans ce screen. Forcer une couche pleine resolution.
+        # Le voile est dessine AVANT les reponses et le portrait de Noam.
+        add Solid("#050913b8", xsize=1920, ysize=1080) xpos 0 ypos 0
 
-    # Les options s'etagent sous le visage de l'interlocuteur.
-    # Un defilement apparait naturellement pour les menus plus longs.
-    $ minor_count = len(items)
-    $ minor_visible = min(minor_count, 5)
-    $ minor_top = {1: 687, 2: 595, 3: 502, 4: 395, 5: 290}[minor_visible]
+        # Ombre de portrait localisee, sans la grande plaque polygonale noire.
+        add "gui/choice_v6/portrait_shadow.svg" xpos 1218 ypos 229
 
-    viewport:
-        xpos 401
-        ypos minor_top
-        xsize 1160
-        ysize min(145 * minor_count + 20, 778)
-        mousewheel True
-        draggable True
-        vbox:
-            spacing 7
-            for idx, i in enumerate(items):
-                $ minor_width = minor_choice_width(idx, i.caption)
-                $ minor_height = minor_choice_height(i.caption)
-                fixed:
-                    xsize 1130
-                    ysize minor_height + 10
-                    xoffset MINOR_CHOICE_OFFSETS[idx % 4]
-                    at minor_choice_enter(0.07 + idx * 0.055)
-                    textbutton i.caption:
-                        action i.action
-                        style "choice_button"
-                        xsize minor_width
-                        ysize minor_height
-                        padding (47, 22, 130, 17)
-                        background minor_choice_image(idx, False, minor_width, minor_height)
-                        hover_background minor_choice_image(idx, True, minor_width, minor_height)
-                        insensitive_background minor_choice_image(idx, False, minor_width, minor_height)
-                        text_style "choice_button_text"
-                        text_size minor_choice_font_size(i.caption)
-                        at minor_choice_hover(MINOR_CHOICE_TILTS[idx % 4])
+        # Le portrait reste libre : meme cadrage que V5, sans cadre ni coupure.
+        fixed:
+            xpos 1285
+            ypos 139
+            xsize 635
+            ysize 941
+            at minor_choice_face_enter
+            add minor_choice_face() xpos 0 ypos 0 at minor_choice_face_idle
+
+        # Les options s'etagent sous le visage de l'interlocuteur.
+        # Un defilement apparait naturellement pour les menus plus longs.
+        $ minor_count = len(items)
+        $ minor_visible = min(minor_count, 5)
+        $ minor_top = {1: 687, 2: 595, 3: 502, 4: 395, 5: 290}[minor_visible]
+
+        viewport:
+            xpos 401
+            ypos minor_top
+            xsize 1160
+            ysize min(145 * minor_count + 20, 778)
+            mousewheel True
+            draggable True
+            vbox:
+                spacing 7
+                for idx, i in enumerate(items):
+                    $ minor_width = minor_choice_width(idx, i.caption)
+                    $ minor_height = minor_choice_height(i.caption)
+                    fixed:
+                        xsize 1130
+                        ysize minor_height + 10
+                        xoffset MINOR_CHOICE_OFFSETS[idx % 4]
+                        at minor_choice_enter(0.07 + idx * 0.055)
+                        textbutton i.caption:
+                            action i.action
+                            style "choice_button"
+                            xsize minor_width
+                            ysize minor_height
+                            padding (47, 22, 130, 17)
+                            background minor_choice_image(idx, False, minor_width, minor_height)
+                            hover_background minor_choice_image(idx, True, minor_width, minor_height)
+                            insensitive_background minor_choice_image(idx, False, minor_width, minor_height)
+                            text_style "choice_button_text"
+                            text_size minor_choice_font_size(i.caption)
+                            at minor_choice_hover(MINOR_CHOICE_TILTS[idx % 4])
 
 style choice_button is default:
     focus_mask True
