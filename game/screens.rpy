@@ -283,7 +283,7 @@ screen choice(items):
             viewport:
                 mousewheel True
                 draggable True
-                scrollbars "vertical" if len(items) > 6 else None
+                scrollbars "vertical"
                 ymaximum 770
                 xsize 1010
                 vbox:
