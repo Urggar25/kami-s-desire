@@ -190,40 +190,45 @@ style input:
 # Choix mineurs - interface decoupee, distincte des critical choices.
 # Aucune texture externe : les formes sont dessinees a la resolution native.
 # =============================================================================
+# ============================================================================
+# Choix mineurs : V5 / bulles libres + portrait sans doublon.
+# Les critical choices sont totalement independants (critical_choice.rpy).
+# ============================================================================
+default _minor_choice_original_sprite = None
+
 transform minor_choice_enter(delay=0.0):
     alpha 0.0
-    xoffset -90
+    xoffset -86
     pause delay
     parallel:
-        easeout 0.22 alpha 1.0
+        easeout 0.24 alpha 1.0
     parallel:
         easeout 0.30 xoffset 0
 
 transform minor_choice_face_enter:
     alpha 0.0
-    xoffset 115
-    easeout 0.32 alpha 1.0 xoffset 0
+    xoffset 110
+    easeout 0.36 alpha 1.0 xoffset 0
 
 transform minor_choice_face_idle:
     subpixel True
     yoffset 0
-    ease 2.2 yoffset -4
-    ease 2.2 yoffset 0
+    ease 2.25 yoffset -4
+    ease 2.25 yoffset 0
     repeat
 
 transform minor_choice_hover(tilt=0.0):
-    # L'inclinaison concerne aussi le texte, comme une vraie bulle dessinee.
+    subpixel True
     rotate tilt
     rotate_pad False
-    subpixel True
     on idle:
         easeout 0.11 zoom 1.0 xoffset 0
     on hover:
-        easeout 0.12 zoom 1.025 xoffset 17
+        easeout 0.12 zoom 1.023 xoffset 15
 
 init python:
     class MinorChoicePolygon(renpy.Displayable):
-        """Silhouette polygonale interactive (rendu natif, sans texture)."""
+        """Polygone natif, utilise pour les cartes et les petits accents."""
         def __init__(self, w, h, points, fill, edge=None, border=0, **kwargs):
             super(MinorChoicePolygon, self).__init__(**kwargs)
             self.w, self.h = w, h
@@ -231,107 +236,172 @@ init python:
             self.fill, self.edge, self.border = fill, edge, border
 
         def render(self, width, height, st, at):
-            r = renpy.Render(self.w, self.h)
-            cv = r.canvas()
-            cv.polygon(self.fill, self.points)
+            result = renpy.Render(self.w, self.h)
+            canvas = result.canvas()
+            canvas.polygon(self.fill, self.points)
             if self.edge and self.border:
-                cv.polygon(self.edge, self.points, self.border)
-            return r
+                canvas.polygon(self.edge, self.points, self.border)
+            return result
 
-    # Chaque bulle garde une vraie pointe dirigee vers le visage de Noam.
-    # Les formes et inclinaisons alternent sans sacrifier la lisibilite.
+    class MinorChoiceFadeMask(renpy.Displayable):
+        """Masque alpha vertical : disparition douce du bas du portrait."""
+        def __init__(self, w=697, h=1010, fade_start=690, **kwargs):
+            super(MinorChoiceFadeMask, self).__init__(**kwargs)
+            self.w, self.h, self.fade_start = w, h, fade_start
+
+        def render(self, width, height, st, at):
+            result = renpy.Render(self.w, self.h)
+            canvas = result.canvas()
+            canvas.polygon("#ffffff", [
+                (0, 0), (self.w, 0), (self.w, self.fade_start),
+                (0, self.fade_start)])
+            step = 12
+            for top in range(self.fade_start, self.h, step):
+                ratio = float(top - self.fade_start) / float(self.h - self.fade_start)
+                opacity = max(0, min(255, int(255 * (1.0 - ratio) ** 1.45)))
+                canvas.polygon("#ffffff%02x" % opacity, [
+                    (0, top), (self.w, top),
+                    (self.w, min(self.h, top + step + 1)),
+                    (0, min(self.h, top + step + 1))])
+            return result
+
+    # Les reponses gardent une vraie zone de texte mais ont des silhouettes
+    # clairement differentes : ruban echancre, fleche asymetrique, pli brise...
     MINOR_CHOICE_SHAPES = (
-        (790, [(12, 23), (621, 5), (665, 22), (782, 49),
-               (661, 86), (612, 98), (3, 100), (24, 62)]),
-        (895, [(3, 16), (719, 3), (755, 17), (887, 53),
-               (764, 95), (712, 102), (17, 95), (34, 54)]),
-        (825, [(20, 8), (644, 17), (695, 5), (817, 52),
-               (688, 103), (638, 93), (0, 97), (29, 56)]),
-        (872, [(8, 15), (692, 3), (739, 22), (863, 53),
-               (738, 94), (683, 102), (22, 96), (0, 57)]),
+        (805, [(10, 25), (617, 7), (682, 20), (796, 49),
+               (688, 78), (639, 94), (4, 101), (23, 61)]),
+        (930, [(0, 19), (743, 3), (784, 15), (922, 55),
+               (800, 96), (726, 100), (16, 93), (32, 54)]),
+        (765, [(19, 9), (581, 17), (630, 8), (757, 52),
+               (642, 104), (600, 89), (0, 95), (30, 59)]),
+        (865, [(6, 15), (694, 4), (742, 24), (857, 54),
+               (733, 94), (675, 102), (20, 95), (0, 59)]),
     )
-    MINOR_CHOICE_TILTS = (-2.1, 1.1, -1.35, 1.6)
-    MINOR_CHOICE_OFFSETS = (0, 52, 101, 25)
+    MINOR_CHOICE_TILTS = (-1.6, 1.2, -1.1, 1.7)
+    MINOR_CHOICE_OFFSETS = (0, 45, 103, 24)
 
-    def minor_choice_shape(index, hover=False):
-        width, pts = MINOR_CHOICE_SHAPES[index % len(MINOR_CHOICE_SHAPES)]
+    def minor_choice_shape(index, hovered=False):
+        w, pts = MINOR_CHOICE_SHAPES[index % len(MINOR_CHOICE_SHAPES)]
         return MinorChoicePolygon(
-            width, 106, pts,
-            "#fcfdff" if hover else "#080c14",
-            "#0c1320" if hover else "#f7fcff", 6)
+            w, 106, pts,
+            "#f8fcff" if hovered else "#070b14",
+            "#0a1522" if hovered else "#f7fcff", 6)
 
     def minor_choice_font_size(caption):
-        return 29 if len(caption) > 52 else 35
+        n = len(caption)
+        return 27 if n > 67 else (30 if n > 42 else 34)
 
     def minor_choice_face():
         expr = getattr(store, "minor_choice_noam_expression", "reflexion")
         if expr not in NOAM_EXPRESSIONS:
             expr = "reflexion"
-        # IMPORTANT : conserver le DynamicDisplayable existant. Les calques
-        # yeux_ferme et tenue equipee continuent de fonctionner.
-        # La coupe descend hors ecran : aucun bord horizontal sous le buste.
-        return Transform(
-            Crop((130, 3, 345, 585), noam_expression(expr)),
+        # Un seul DynamicDisplayable : expressions, equipement et clignement
+        # (yeux_ferme) sont ceux du sprite d'origine, sans duplicata d'assets.
+        sprite = Transform(
+            Crop((130, 3, 345, 500), noam_expression(expr)),
             zoom=2.02)
+        return AlphaMask(sprite, MinorChoiceFadeMask())
+
+    def minor_choice_suspend_original():
+        """
+        Retire temporairement le Noam de la scene (et uniquement lui).
+        Le sprite, sa position et sa liste de transforms sont reconstitues
+        au depart du menu. Aucun autre personnage n'est touche.
+        """
+        if store._minor_choice_original_sprite is not None:
+            return
+        state = getattr(store, "char_state", {}).get("noam", {})
+        layer = state.get("layer", "master")
+        if not renpy.showing("noam", layer=layer):
+            return
+        at_list = renpy.get_at_list("noam", layer=layer) or []
+        attrs = renpy.get_attributes("noam", layer=layer) or ()
+        expr = next((a for a in attrs if a in NOAM_EXPRESSIONS),
+                    state.get("expr", "neutre"))
+        if expr not in NOAM_EXPRESSIONS:
+            expr = "neutre"
+        store._minor_choice_original_sprite = (
+            layer, expr, list(at_list),
+            state.get("zorder", 0), state.get("x", 0.72),
+            state.get("y", 1.0))
+        renpy.hide("noam", layer=layer)
+
+    def minor_choice_restore_original():
+        saved = store._minor_choice_original_sprite
+        if saved is None:
+            return
+        store._minor_choice_original_sprite = None
+        layer, expr, at_list, zorder, x, y = saved
+        # Un scenario peut volontairement modifier la scene entretemps.
+        # Ne pas reintroduire un second Noam dans ce cas.
+        if renpy.showing("noam", layer=layer):
+            return
+        if not at_list:
+            at_list = [char_group_place(x, y)]
+        renpy.show("noam " + expr, tag="noam",
+                   at_list=at_list, layer=layer, zorder=zorder)
 
 screen choice(items):
     style_prefix "choice"
     modal True
     zorder 110
 
-    # Le visage de l'interlocuteur reste visible dans le tiers gauche.
-    add Solid("#03060b28")
+    # L'original n'apparait plus en double, sans devoir masquer tout le decor.
+    on "show" action Function(minor_choice_suspend_original)
+    on "hide" action Function(minor_choice_restore_original)
+    on "replaced" action Function(minor_choice_restore_original)
 
-    # Composition continue : masque opaque le Noam de la scene d'origine
-    # afin d'eviter un doublon, et accueille son portrait de premier plan.
-    # Aucun trait vertical ni eclat blanc isole.
-    add MinorChoicePolygon(1090, 1080,
-        [(113, 0), (1090, 0), (1090, 1080), (138, 1080),
-         (68, 942), (121, 791), (0, 529), (82, 277)],
-        "#070b13fa") xpos 830
+    # Environnement visible (notamment les expressions de l'interlocuteur).
+    add Solid("#03070e24")
 
-    # Un seul detail cyan, court et discret, au bas du cadrage.
-    add MinorChoicePolygon(390, 32,
-        [(0, 27), (387, 0), (390, 5), (14, 32)],
-        "#39cae7") xpos 1490 ypos 998
+    # Fond localise uniquement derriere les epaules du portrait, plutot
+    # qu'un enorme aplat noir qui recouvre la moitie de la scene.
+    add MinorChoicePolygon(700, 850,
+        [(160, 135), (481, 16), (695, 0), (700, 850),
+         (10, 850), (0, 641), (81, 495), (45, 299)],
+        "#080e1ab3") xpos 1220 ypos 200
+    # Une fine coupe cyan rattachee au bas de la silhouette.
+    add MinorChoicePolygon(330, 19,
+        [(0, 15), (324, 0), (330, 3), (10, 19)],
+        "#36c9e1aa") xpos 1560 ypos 1021
 
-    # Portrait non encadre, visage dominant et torse prolonge hors de l'ecran.
-    # Les pointes des reponses peuvent passer devant son epaule.
+    # Portrait sans cadre, legerement moins envahissant, buste efface
+    # progressivement pour eviter une coupe horizontale.
     fixed:
-        xpos 1260
-        ypos 143
-        xsize 660
-        ysize 937
+        xpos 1285
+        ypos 139
+        xsize 635
+        ysize 941
         at minor_choice_face_enter
         add minor_choice_face() xpos 0 ypos 0 at minor_choice_face_idle
 
-    # Les bulles se rejoignent visuellement devant le portrait. Elles sont
-    # volontairement placees SOUS les yeux de l'interlocuteur (ex. Lysa J0).
+    # Reponses en eventail, centre-bas pour laisser le visage de la
+    # personne qui parle visible dans le decor.
     $ minor_count = len(items)
     $ minor_visible = min(minor_count, 5)
-    $ minor_top = {1: 695, 2: 614, 3: 515, 4: 412, 5: 328}[minor_visible]
+    $ minor_top = {1: 690, 2: 608, 3: 515, 4: 406, 5: 300}[minor_visible]
     viewport:
         xpos 430
         ypos minor_top
-        xsize 1110
-        ysize min(124 * minor_count + 16, 720)
+        xsize 1105
+        ysize min(121 * minor_count + 23, 747)
         mousewheel True
         draggable True
 
         vbox:
             spacing 10
             for idx, i in enumerate(items):
-                $ minor_w = MINOR_CHOICE_SHAPES[idx % 4][0]
+                $ minor_width = MINOR_CHOICE_SHAPES[idx % 4][0]
                 fixed:
                     xsize 1080
-                    ysize 114
+                    ysize 113
                     xoffset MINOR_CHOICE_OFFSETS[idx % 4]
                     at minor_choice_enter(0.07 + idx * 0.055)
                     textbutton i.caption:
                         action i.action
-                        xsize minor_w
+                        xsize minor_width
                         ysize 106
-                        padding (44, 23, 127, 13)
+                        padding (40, 24, 132, 14)
                         background minor_choice_shape(idx, False)
                         hover_background minor_choice_shape(idx, True)
                         insensitive_background minor_choice_shape(idx, False)
@@ -344,10 +414,10 @@ style choice_button is default:
 
 style choice_button_text is default:
     font "fonts/Rajdhani-SemiBold.ttf"
-    size 35
-    color "#f7fbff"
-    hover_color "#07111a"
-    insensitive_color "#9ca9b2"
+    size 34
+    color "#f8fcff"
+    hover_color "#06111a"
+    insensitive_color "#98a9b7"
     outlines []
     text_align 0.0
 
