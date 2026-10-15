@@ -11,6 +11,9 @@ default messenger_active_end = 0
 default messenger_revealed_count = 0
 default messenger_objective_active = False
 default messenger_objective_text = "Consulter les messages"
+# Conserver la position de la molette entre les rafraichissements de l'ecran.
+default messenger_scroll_y = ui.adjustment()
+default messenger_scroll_pending = False
 
 init python:
     def messenger_contact_name(contact_id):
@@ -96,6 +99,8 @@ init python:
         store.messenger_active_start = start_index
         store.messenger_active_end = len(history)
         store.messenger_revealed_count = start_index + 1
+        store.messenger_scroll_y = ui.adjustment()
+        store.messenger_scroll_pending = True
         store.messenger_objective_text = str(objective_text or "Consulter les messages")
         store.messenger_objective_active = True
 
@@ -106,13 +111,22 @@ init python:
         renpy.restart_interaction()
         return True
 
-    def messenger_visible_messages(max_messages=4):
+    def messenger_visible_messages():
         thread_id = getattr(store, "messenger_active_thread", None)
         if not thread_id:
             return []
         history = list((getattr(store, "messenger_threads", {}) or {}).get(thread_id, []) or [])
         revealed = min(int(getattr(store, "messenger_revealed_count", 0)), len(history))
-        return history[:revealed][-max_messages:]
+        return history[:revealed]
+
+    def messenger_scroll_to_latest():
+        # Appele apres le rendu du viewport pour utiliser sa hauteur reelle.
+        # Un defilement manuel ne doit jamais etre annule par le timer.
+        if not store.messenger_scroll_pending:
+            return
+        store.messenger_scroll_pending = False
+        adjustment = store.messenger_scroll_y
+        adjustment.change(adjustment.range)
 
     def messenger_current_progress():
         start = int(getattr(store, "messenger_active_start", 0))
@@ -130,6 +144,7 @@ init python:
         end = int(getattr(store, "messenger_active_end", 0))
         if revealed < end:
             store.messenger_revealed_count = revealed + 1
+            store.messenger_scroll_pending = True
             if renpy.loadable("audio/sfx_beep.mp3"):
                 renpy.sound.play("audio/sfx_beep.mp3", relative_volume=0.45)
             renpy.restart_interaction()
@@ -208,7 +223,7 @@ screen messenger_conversation():
 
     $ _contact_id = messenger_active_contact or ""
     $ _contact_name = messenger_contact_name(_contact_id)
-    $ _visible_messages = messenger_visible_messages(4)
+    $ _visible_messages = messenger_visible_messages()
     $ _progress_current, _progress_total = messenger_current_progress()
     $ _exchange_complete = (_progress_total > 0 and _progress_current >= _progress_total)
 
@@ -217,6 +232,9 @@ screen messenger_conversation():
     key "K_SPACE" action Function(messenger_advance)
     key "K_RETURN" action Function(messenger_advance)
     key "mouseup_1" action Function(messenger_advance)
+
+    # Revenir au message le plus recent uniquement apres un nouveau message.
+    timer 0.02 repeat True action Function(messenger_scroll_to_latest)
 
     add Solid("#01060BCC")
     add "images/ui/tablette/tablette_messagerie.png" fit "contain" xysize (1920, 1080)
@@ -302,6 +320,7 @@ screen messenger_conversation():
             mousewheel True
             draggable False
             yinitial 1.0
+            yadjustment messenger_scroll_y
 
             vbox:
                 xsize 546
