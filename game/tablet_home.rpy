@@ -1,10 +1,10 @@
-# Tablette du Conclave : quatre phases en fondu (0,5 s chacune).
-# Vue modale ouverte via Show("tablet_home"), refermée via Hide("tablet_home").
-# Les zones de clic sont des buttons, jamais des hotspots hors imagemap.
+# Tablette du Conclave — 4 étapes en fondus CROISÉS.
+# L'image précédente reste dessinée sous celle qui apparaît.
+# L'accueil est ouvert avec Show("tablet_home") depuis le HUD.
 
-transform tablet_stage_fade:
+transform tablet_phase_fade(duration=0.3):
     alpha 0.0
-    linear 0.5 alpha 1.0
+    linear duration alpha 1.0
 
 screen tablet_home():
     modal True
@@ -12,50 +12,70 @@ screen tablet_home():
 
     default stage = 1
     default closing = False
+    default phase_tick = 0
 
-    key "K_ESCAPE" action SetScreenVariable("closing", True)
-    key "K_t" action SetScreenVariable("closing", True)
+    key "K_ESCAPE" action [SetScreenVariable("closing", True), SetScreenVariable("phase_tick", 0)]
+    key "K_t" action [SetScreenVariable("closing", True), SetScreenVariable("phase_tick", 0)]
 
-    # Horloge stable : chaque phase reste 0,5 s. Une fois en phase 4,
-    # on attend une action utilisateur ; en fermeture on parcourt 4 -> 1.
-    timer 0.5 repeat True action If(
-        closing,
-        If(stage <= 1,
-            Hide("tablet_home"),
-            SetScreenVariable("stage", stage - 1)),
-        If(stage < 4,
-            SetScreenVariable("stage", stage + 1),
-            NullAction())
-    )
+    # Horloge unique (0,1 s) : 3 ticks par phase ordinaire,
+    # 2 ticks pour 3 -> 4 à l'ouverture et 4 -> 3 à la fermeture.
+    # La phase terminée demeure visible jusqu'à une vraie action utilisateur.
+    if closing:
+        timer 0.1 repeat True action If(
+            phase_tick >= (1 if stage == 4 else 2),
+            [SetScreenVariable("phase_tick", 0),
+             If(stage == 1, Hide("tablet_home"), SetScreenVariable("stage", stage - 1))],
+            SetScreenVariable("phase_tick", phase_tick + 1)
+        )
+    elif stage < 4:
+        timer 0.1 repeat True action If(
+            phase_tick >= (1 if stage == 3 else 2),
+            [SetScreenVariable("phase_tick", 0), SetScreenVariable("stage", stage + 1)],
+            SetScreenVariable("phase_tick", phase_tick + 1)
+        )
 
     fixed:
         xysize (1920, 1080)
 
-        if stage == 1:
-            add "images/ui/tablette/tablette_1.png" fit "contain" xysize (1920, 1080) at tablet_stage_fade
+        # Le calque inférieur reste à 100 % pendant le fondu du supérieur.
+        # Ainsi, aucun trou visuel n'apparaît entre deux étapes.
+        if closing:
+            if stage == 4:
+                add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080)
+                add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.2)
+            elif stage == 3:
+                add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
+                add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
+            elif stage == 2:
+                add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080)
+                add "images/ui/tablette/tablette_1.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
+            else:
+                add "images/ui/tablette/tablette_1.png" fit "contain" xysize (1920, 1080)
+        elif stage == 1:
+            add "images/ui/tablette/tablette_1.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
         elif stage == 2:
-            add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080) at tablet_stage_fade
+            add "images/ui/tablette/tablette_1.png" fit "contain" xysize (1920, 1080)
+            add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
         elif stage == 3:
-            add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080) at tablet_stage_fade
+            add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080)
+            add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
         else:
-            add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080) at tablet_stage_fade
+            add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
+            add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.2)
 
-        # L'image est centrée avec fit contain. Les boutons ci-dessous
-        # englobent les icônes Discord et EXIT visibles en bas à droite.
-        # Un fond quasi-transparent rend toute la surface réceptrice du clic.
+        # Les deux contrôles sont de VRAIS imagebuttons, découpés dans
+        # les assets dédiés. Aucun rectangle Solid superposé.
         if stage == 4 and not closing:
-            button:
-                xpos 1160 ypos 640
-                xsize 220 ysize 245
-                padding (0, 0)
-                background Solid("#FFFFFF01")
-                hover_background Solid("#FFFFFF08")
+            imagebutton:
+                idle Transform("images/ui/tablette/discord.png", size=(150, 150))
+                hover Transform("images/ui/tablette/discord.png", size=(150, 150))
+                xpos 1210 ypos 650
+                focus_mask True
                 action OpenURL("https://discord.gg/RyN4CZCeRE")
 
-            button:
-                xpos 1380 ypos 645
-                xsize 230 ysize 245
-                padding (0, 0)
-                background Solid("#FFFFFF01")
-                hover_background Solid("#FFFFFF08")
-                action SetScreenVariable("closing", True)
+            imagebutton:
+                idle Transform("images/ui/tablette/exit.png", size=(130, 75))
+                hover Transform("images/ui/tablette/exit.png", size=(130, 75))
+                xpos 1215 ypos 832
+                focus_mask True
+                action [SetScreenVariable("closing", True), SetScreenVariable("phase_tick", 0)]
