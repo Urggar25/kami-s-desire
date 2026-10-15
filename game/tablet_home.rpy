@@ -63,19 +63,26 @@ screen tablet_home():
             add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
             add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.2)
 
-        # Les deux contrôles sont de VRAIS imagebuttons, découpés dans
-        # les assets dédiés. Aucun rectangle Solid superposé.
+        # Même repère 1920x1080 et même fondu que tablette_4.
+        # Les PNG sont des skins de boutons (pas de rectangle Solid).
+        # IMPORTANT : les fichiers d'icônes peuvent contenir des marges
+        # transparentes ; focus_mask True rendrait alors le clic impossible
+        # si les pixels opaques sont hors de la zone visuellement attendue.
         if stage == 4 and not closing:
             imagebutton:
-                idle Transform("images/ui/tablette/discord.png", size=(150, 150))
-                hover Transform("images/ui/tablette/discord.png", size=(150, 150))
+                idle Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
+                hover Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
                 xpos 1210 ypos 650
-                focus_mask True
+                xsize 150 ysize 150
+                focus_mask False
+                at tablet_phase_fade(0.2)
                 action OpenURL("https://discord.gg/RyN4CZCeRE")
 
             imagebutton:
-                idle Transform("images/ui/tablette/exit.png", size=(130, 75))
-                hover Transform("images/ui/tablette/exit.png", size=(130, 75))
+                idle Transform("images/ui/tablette/exit.png", xysize=(130, 75), fit="contain")
+                hover Transform("images/ui/tablette/exit.png", xysize=(130, 75), fit="contain")
                 xpos 1215 ypos 832
-                focus_mask True
+                xsize 130 ysize 75
+                focus_mask False
+                at tablet_phase_fade(0.2)
                 action [SetScreenVariable("closing", True), SetScreenVariable("phase_tick", 0)]
