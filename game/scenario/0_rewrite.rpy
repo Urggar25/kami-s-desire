@@ -303,8 +303,31 @@ label _0_CANON:
     "Je cherche une ouverture autour de moi, mais je ne trouve rien qui ressemble à une poignée ou à un bouton."
     noam inquiet "Hé ! Il y a quelqu'un ?!"
     "Je frappe contre la paroi du caisson."
+    # Réemploi des poses et de l'impact du minijeu initial (sans interaction).
+    show screen d0_pousse_hand(pressing=True)
+    pause 0.22
+    hide screen d0_pousse_hand
+    show screen d0_pousse_hand(hit=True)
+    play sound "audio/sfx_metal_clank.mp3"
+    with hpunch
+    pause 0.50
+    hide screen d0_pousse_hand
     noam "Lysa ? Tu m'entends ?!"
     "Aucune réponse. Je frappe encore, de plus en plus fort."
+    show screen d0_pousse_hand(pressing=True)
+    pause 0.22
+    hide screen d0_pousse_hand
+    show screen d0_pousse_hand(hit=True)
+    play sound "audio/sfx_metal_clank.mp3"
+    with hpunch
+    pause 0.46
+    hide screen d0_pousse_hand
+    pause 0.14
+    show screen d0_pousse_hand(hit=True)
+    play sound "audio/sfx_metal_clank.mp3"
+    with hpunch
+    pause 0.55
+    hide screen d0_pousse_hand
     $ d0_vent_enabled = False
     $ d0_valve_enabled = False
     hide screen d0_capsule_valve_hotspot
