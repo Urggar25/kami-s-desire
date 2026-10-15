@@ -266,10 +266,10 @@ screen stat_level_up_animation(stat_name, level):
 # =============================================================
 # ÉCRAN D'ACCUEIL TABLETTE — "CONCLAVE OS" (cf maquette)
 # =============================================================
-# Usage :  call screen tablet_home
+# Ancien écran conservé pour référence ; le HUD ouvre maintenant tablet_home
 # card_actions permet de rebrancher les boutons selon le contexte.
 
-screen tablet_home(clock="08:00", show_vote=True):
+screen tablet_home_legacy(clock="08:00", show_vote=True):
     modal True
     zorder 100
 
