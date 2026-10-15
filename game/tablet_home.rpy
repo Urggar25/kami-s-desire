@@ -45,5 +45,13 @@ screen tablet_home():
         # Zones cliquables à vérifier en jeu par rapport aux PNG affichés.
         # Repère 1920x1080, tablette mise à l'échelle en conservant le ratio.
         if stage == 4 and not closing:
-            hotspot (1175, 655, 165, 150) action OpenURL("https://discord.gg/RyN4CZCeRE")
-            hotspot (1340, 676, 180, 130) action SetScreenVariable("closing", True)
+            button:
+                xpos 1175 ypos 655
+                xsize 165 ysize 150
+                background None
+                action OpenURL("https://discord.gg/RyN4CZCeRE")
+            button:
+                xpos 1340 ypos 676
+                xsize 180 ysize 130
+                background None
+                action SetScreenVariable("closing", True)
