@@ -192,28 +192,35 @@ style input:
 # =============================================================================
 transform minor_choice_enter(delay=0.0):
     alpha 0.0
-    xoffset -115
+    xoffset -100
     pause delay
     parallel:
-        easeout 0.27 alpha 1.0
+        easeout 0.23 alpha 1.0
     parallel:
-        easeout 0.36 xoffset 0
+        easeout 0.32 xoffset 0
 
 transform minor_choice_face_enter:
     alpha 0.0
-    xoffset 150
-    easeout 0.34 alpha 1.0 xoffset 0
+    xoffset 130
+    easeout 0.32 alpha 1.0 xoffset 0
 
 transform minor_choice_face_idle:
     subpixel True
     yoffset 0
-    ease 2.1 yoffset -5
-    ease 2.1 yoffset 0
+    ease 2.2 yoffset -4
+    ease 2.2 yoffset 0
     repeat
+
+transform minor_choice_hover:
+    subpixel True
+    on idle:
+        ease 0.10 zoom 1.0 xoffset 0
+    on hover:
+        easeout 0.13 zoom 1.025 xoffset 16
 
 init python:
     class MinorChoicePolygon(renpy.Displayable):
-        """Une vraie silhouette polygonale, sans rectangle visible."""
+        """Polygones dessines en temps reel, sans nouvelle texture."""
         def __init__(self, w, h, points, fill, edge=None, border=0, **kwargs):
             super(MinorChoicePolygon, self).__init__(**kwargs)
             self.w, self.h = w, h
@@ -228,95 +235,109 @@ init python:
                 cv.polygon(self.edge, self.points, self.border)
             return r
 
-    # Les pointes relient visuellement la question au personnage.
-    def minor_choice_card(hover=False):
-        c = "#f8fdff" if hover else "#090e16"
-        outline = "#06101b" if hover else "#f8fdff"
-        return MinorChoicePolygon(935, 105,
-            [(5, 19), (813, 3), (846, 26), (930, 49),
-             (844, 77), (817, 96), (0, 101), (22, 68)],
-            c, outline, 6)
+    # Les silhouettes ne sont pas des rectangles clones :
+    # longueur, pointe, axe et coupe changent avec l'index.
+    MINOR_CHOICE_SHAPES = (
+        (900, [(12, 18), (702, 2), (753, 16), (893, 49),
+               (764, 81), (717, 92), (3, 99), (24, 63)]),
+        (1000, [(0, 14), (831, 5), (878, 26), (992, 56),
+                (865, 91), (792, 98), (15, 92), (30, 56)]),
+        (920, [(18, 4), (731, 16), (770, 10), (912, 53),
+               (758, 102), (695, 90), (0, 95), (29, 53)]),
+        (970, [(5, 12), (795, 0), (831, 24), (963, 51),
+               (840, 90), (778, 101), (25, 96), (0, 60)]),
+    )
+
+    def minor_choice_shape(index, hover=False):
+        width, pts = MINOR_CHOICE_SHAPES[index % len(MINOR_CHOICE_SHAPES)]
+        return MinorChoicePolygon(width, 106, pts,
+            "#f9fcff" if hover else "#090e18",
+            "#080d16" if hover else "#ffffff", 6)
 
     def minor_choice_face():
-        # On privilegie la derniere replique de Noam et non les sprites voisins.
         expr = getattr(store, "minor_choice_noam_expression", "reflexion")
         if expr not in NOAM_EXPRESSIONS:
             expr = "reflexion"
-        # Le sprite existe deja, conserve ses yeux_ferme et cligne naturellement.
-        # Gros plan: coupe au niveau des epaules, pas de bras ni de mains.
-        return Transform(Crop((115, 5, 360, 350), noam_expression(expr)), zoom=1.58)
+        # Le portrait garde le DynamicDisplayable : la couche yeux_ferme
+        # continue donc de cligner et les tenues equipees sont preservees.
+        return Transform(
+            Crop((130, 3, 345, 330), noam_expression(expr)),
+            zoom=2.02)
 
 screen choice(items):
     style_prefix "choice"
     modal True
     zorder 110
 
-    # Le decor et les autres personnages restent presents sous le menu.
-    add Solid("#03060b52")
+    # Le decor reste lisible. Le menu ne pose plus une grande carte sur le jeu.
+    add Solid("#03060b35")
 
-    # Decoupe angulaire de droite, fond noir, double filet blanc / cyan.
-    add MinorChoicePolygon(780, 1080,
-        [(216, 0), (780, 0), (780, 1080), (35, 1080), (130, 720), (0, 560)],
-        "#070b13f4") xpos 1140
-    add MinorChoicePolygon(54, 1080,
-        [(44, 0), (54, 0), (10, 1080), (0, 1080)],
-        "#ffffff") xpos 1325
-    add MinorChoicePolygon(10, 1080,
-        [(6, 0), (10, 0), (4, 1080), (0, 1080)],
-        "#33d6ef") xpos 1378
+    # Une seule silhouette asymetrique derriere le portrait :
+    # plus de panneau bleu, de cadre rectangulaire ou de barre verticale.
+    add MinorChoicePolygon(770, 1080,
+        [(220, 0), (770, 0), (770, 1080), (76, 1080),
+         (145, 900), (54, 684), (0, 504), (116, 310)],
+        "#080c15ee") xpos 1150
+    # Eclats anguleux, controles et discrets.
+    add MinorChoicePolygon(72, 1080,
+        [(62, 0), (72, 0), (12, 1080), (0, 1080)],
+        "#ffffff") xpos 1160
+    add MinorChoicePolygon(11, 1080,
+        [(9, 0), (11, 0), (3, 1080), (0, 1080)],
+        "#37cee8") xpos 1245
+    add MinorChoicePolygon(525, 145,
+        [(0, 90), (493, 0), (524, 20), (68, 145)],
+        "#ffffff") xpos 1400 ypos 95
 
-    # Gros plan de Noam, libre dans le panneau droit.
+    # Vrai gros plan, beaucoup plus haut, sans panneau bleu.
+    # Les bords transparents du sprite se melent a la silhouette noire.
     fixed:
-        xpos 1324
-        ypos 132
-        xsize 596
-        ysize 800
+        xpos 1263
+        ypos 168
+        xsize 657
+        ysize 780
         at minor_choice_face_enter
-        add MinorChoicePolygon(565, 645,
-            [(64, 62), (545, 0), (565, 570), (12, 645), (0, 158)],
-            "#112335") xpos 12 ypos 10
-        add MinorChoicePolygon(558, 634,
-            [(70, 60), (548, 4), (558, 572), (10, 630), (0, 160)],
-            "#2dd3ee", "#eefaff", 5) xpos 11 ypos 13 alpha 0.22
-        add minor_choice_face() xpos 0 ypos 34 at minor_choice_face_idle
+        add minor_choice_face() xpos 6 ypos 0 at minor_choice_face_idle
 
-    # Les reponses avancent vers Noam. La disposition varie avec leur nombre.
+    # Les reponses sont abaissees pour ne pas effacer le visage de
+    # l'interlocuteur, et convergent visuellement vers le gros plan.
     $ minor_count = len(items)
-    $ minor_height = min(114 * minor_count + 16, 750)
-    $ minor_y = max(145, int((1080 - minor_height) / 2) - 15)
+    $ minor_y = max(180, 715 - min(minor_count, 5) * 110)
     viewport:
-        xpos 75
+        xpos 82
         ypos minor_y
-        xsize 1140
-        ysize min(minor_height + 18, 785)
+        xsize 1100
+        ysize min(114 * minor_count + 12, 760)
         mousewheel True
         draggable True
         vbox:
-            spacing 13
+            spacing 9
             for idx, i in enumerate(items):
+                $ minor_w = MINOR_CHOICE_SHAPES[idx % 4][0]
                 fixed:
                     xsize 1050
-                    ysize 106
-                    xoffset (idx % 3) * 28
-                    at minor_choice_enter(0.08 + idx * 0.065)
+                    ysize 108
+                    xoffset (12, 34, 68, 18)[idx % 4]
+                    at minor_choice_enter(0.07 + idx * 0.06)
                     textbutton i.caption:
                         action i.action
-                        style "choice_button"
+                        xsize minor_w
+                        ysize 106
+                        padding (38, 24, 130, 15)
+                        background minor_choice_shape(idx, False)
+                        hover_background minor_choice_shape(idx, True)
+                        insensitive_background minor_choice_shape(idx, False)
+                        text_style "choice_button_text"
+                        at minor_choice_hover
 
 style choice_button is default:
-    xsize 935
-    ysize 105
-    padding (40, 26, 100, 18)
-    background minor_choice_card(False)
-    hover_background minor_choice_card(True)
-    insensitive_background minor_choice_card(False)
     focus_mask True
 
 style choice_button_text is default:
     font "fonts/Rajdhani-SemiBold.ttf"
-    size 35
+    size 34
     color "#ffffff"
-    hover_color "#06101b"
+    hover_color "#06111b"
     insensitive_color "#a4a9b1"
     outlines []
     text_align 0.0
