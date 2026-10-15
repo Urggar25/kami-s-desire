@@ -151,7 +151,7 @@ transform messenger_panel_in:
 
 
 transform messenger_tablet_plane:
-    # La pente des bandes horizontales du PNG est d'environ 9-10 degres.
+    # Inclinaison unique des composants, alignee aux traits cyan du PNG.
     # Ne pas incliner individuellement les messages : tous les textes,
     # portraits et bulles partagent CE MEME plan.
     subpixel True
@@ -254,10 +254,10 @@ screen messenger_conversation():
                 add Transform(
                     messenger_header_portrait(_contact_id), fit="cover",
                     xysize=(68, 68)
-                ) xpos 4 ypos 6
+                ) xpos 1 ypos 1
 
                 vbox:
-                    xpos 84 ypos 16
+                    xpos 94 ypos 15
                     xsize 114
                     spacing 1
 
@@ -270,7 +270,7 @@ screen messenger_conversation():
                         font "fonts/Rajdhani-SemiBold.ttf"
                         xmaximum 120
 
-        # EN-TETE : portraits et noms dans le cadre DEJA dessine.
+        # EN-TETE : laisser respirer le portrait ; nom et statut sont a droite.
         fixed:
             xpos 284 ypos 3
             xysize (656, 94)
@@ -280,32 +280,32 @@ screen messenger_conversation():
             add Transform(
                 messenger_header_portrait(_contact_id), fit="cover",
                 xysize=(76, 76)
-            ) xpos 17 ypos 7
+            ) xpos 13 ypos 2
 
             text _contact_name:
-                xpos 113 ypos 15
+                xpos 160 ypos 19
                 size 30 color "#FFFFFF"
                 font "fonts/Rajdhani-SemiBold.ttf"
 
             text "●  CANAL SÉCURISÉ":
-                xpos 115 ypos 52
+                xpos 161 ypos 60
                 size 14 color "#60E4A3"
                 font "fonts/Rajdhani-SemiBold.ttf"
                 kerning 1
 
-        # DISCUSSION : marge sous la ligne d'en-tete, espacement constant,
+        # DISCUSSION : contenu decale a droite et plus bas suivant les fleches,
         # aucun chevauchement entre deux messages, quelle que soit leur taille.
         # La largeur laisse une marge avant la barre de scroll dessinee.
         viewport:
-            xpos 293 ypos 147
-            xsize 587 ysize 348
+            xpos 307 ypos 164
+            xsize 566 ysize 324
             mousewheel True
             draggable False
             yinitial 1.0
 
             vbox:
-                xsize 566
-                spacing 12
+                xsize 546
+                spacing 11
 
                 # Taille naturelle des bulles et des lignes : aucune hauteur
                 # estimée en fonction du nombre de caractères. Une estimation
@@ -361,11 +361,11 @@ screen messenger_conversation():
                                     xmaximum 408
                                     line_spacing 2
 
-        # PIED DE PAGE : texte seul dans la barre integree au fond ;
+        # PIED DE PAGE : indication recentree a droite suivant l'annotation ;
         # pas de faux bandeau noir, de double bordure ou de bouton surajoute.
         fixed:
-            xpos 284 ypos 522
-            xysize (620, 34)
+            xpos 348 ypos 525
+            xysize (546, 34)
 
             if _exchange_complete:
                 text "CONVERSATION TERMINÉE — CLIQUER POUR FERMER":
