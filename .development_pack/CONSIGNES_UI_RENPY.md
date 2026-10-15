@@ -114,3 +114,10 @@ fixed:
         background None
         action Hide("tablet_home")
 ```
+
+## Tablette : transitions et boutons invisibles (15 octobre 2026)
+
+- Pour une séquence visuelle de 4 étapes à **0,5 s par phase**, garder le `timer 0.5 repeat True` cohérent avec `linear 0.5 alpha 1.0`; un timer de 0,05 s fait défiler les images dix fois trop vite.
+- Sur une image affichée en `fit "contain"`, les coordonnées des zones de clic se rapportent au conteneur 1920×1080 et non aux coordonnées natives du PNG : **recalibrer et tester les rectangles à l’écran**.
+- Un bouton sans enfant et `background None` peut être difficile à diagnostiquer : fournir une surface `background Solid("#FFFFFF01")`, une `xsize` et une `ysize` explicites, et vérifier qu’elle couvre l’icône. Pour le débogage, remplacer temporairement le fond par `Solid("#FF000066")` afin de visualiser sa zone avant livraison.
+- L’action de fermeture d’un écran ouvert par `Show("tablet_home")` doit déclencher la séquence inverse, puis `Hide("tablet_home")` ; la touche Échap doit utiliser exactement le même chemin.
