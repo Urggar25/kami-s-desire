@@ -1766,5 +1766,6 @@ label _24_0_1_1_0_0_SOIR:
 
     stop music fadeout 1.5
 
+    call show_chapter_title("Fin du chapitre 7", "Chapitre 7 — Un semblant de normalité")
     call end_day("25", sleeping=True) from _call_j24_stay_end_day_25
     jump _25_0_1_1_0_0_REVEIL
