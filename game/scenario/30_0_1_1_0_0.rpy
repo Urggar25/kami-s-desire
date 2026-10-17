@@ -340,7 +340,8 @@ label _30_0_1_1_0_0_FIN_NAVETTE:
     stop music fadeout 2.0
     scene black with fade
     "FIN — LE DÉPART DES AUTRES"
-    return
+    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
+    returnreturn
 
 
 # =============================================================================
@@ -475,7 +476,8 @@ label _30_0_1_1_0_0_FIN_PRODUCTION:
     stop music fadeout 2.0
     scene black with fade
     "FIN — DESTINATION INCONNUE"
-    return
+    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
+    returnreturn
 
 
 # =============================================================================
@@ -732,4 +734,5 @@ label _30_0_1_1_0_0_VENTILATION:
 
     scene black with fade
     "FIN — CEUX QU'IL VEUT LIBÉRER"
-    return
+    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
+    returnreturn
