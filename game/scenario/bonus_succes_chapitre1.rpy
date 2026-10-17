@@ -4,16 +4,43 @@
 
 label bonus_succes001:
     scene black with dissolve
-    centered "{size=38}BONUS — TROISIÈME ESSAI{/size}"
+    centered "{size=38}BONUS — UNE DRÔLE DE SENSATION{/size}"
     scene bg_conclave at adaptive_fullscreen with dissolve
-    kami "Dites donc, Noam, on m'indique que vous avez réussi à mourir trois fois pendant une procédure dont le seul objectif était de vous garder en vie."
-    noam "Je vois pas ce qu'il y a de drôle."
-    kami "Trois fois ! Même mes simulations les plus pessimistes n'avaient pas envisagé un tel enthousiasme."
-    noam "Tu pourrais peut-être arrêter de compter mes morts comme des points à un jeu ?"
-    kami "Mais vous comprenez mal ! Je vous félicite pour votre persévérance. Un autre aurait renoncé après la première."
-    noam "Oui, enfin... Un autre serait peut-être resté mort."
-    kami "Un détail technique. Recommençons, voulez-vous ?"
-    noam "Pas question."
+
+    "Je suis toujours devant cette fichue porte, les doigts posés sur mon cou. J'ai beau inspirer profondément, la brûlure que je viens de ressentir refuse de disparaître complètement."
+
+    noam inquiet "Je vous jure que pendant une seconde, j'ai eu l'impression que quelque chose me serrait la gorge. Et le plus bizarre, c'est que juste avant de paniquer, j'ai senti une sorte de... Je sais pas comment expliquer ça."
+
+    mara taquin "D'excitation ?"
+
+    noam surpris "Quoi ?! Non ! Enfin, pas comme ça ! Pourquoi tu me regardes avec ce sourire ?"
+
+    mara rire "Parce que tu viens de décrire une expérience franchement terrifiante en ayant presque l'air déçu qu'elle soit terminée. Excuse-moi, mais c'est difficile de ne pas poser la question."
+
+    noam colere "J'ai cru mourir, Mara ! Je crois que ça mérite un peu mieux qu'une blague."
+
+    sael inquiet "Attends, tu peux répéter ce que tu viens de dire ? Tu as ressenti quelque chose d'agréable au moment où tu ne pouvais plus respirer ?"
+
+    noam hesitation "Agréable, non... Enfin, c'était surtout étrange. Mon cœur battait tellement fort que j'ai eu une espèce de vertige, puis tout s'est arrêté. Je sais même pas si ce que je raconte a du sens."
+
+    sael determine "Ça en a, mais il faut surtout que tu ne cherches pas à reproduire cette sensation. Le manque d'oxygène et la pression sur le cou peuvent provoquer des lésions graves ou une perte de connaissance, parfois sans laisser le temps de comprendre ce qui arrive."
+
+    mara reflexion "Voilà qui gâche un peu ma théorie sur tes loisirs, mais j'avoue que je préfère te voir respirer normalement."
+
+    noam blase "Je suis ravi de découvrir qu'on partage au moins cette passion."
+
+    mara taquin "Oh, ne sois pas si susceptible. J'allais justement proposer une activité beaucoup moins dangereuse pour apprendre à se connaître."
+
+    noam inquiet "Laquelle ?"
+
+    mara rire "On reste assis cinq minutes sans toucher à aucune porte."
+
+    sael sourire "Pour une fois, je suis entièrement d'accord avec elle."
+
+    noam "Vous savez quoi ? J'aurais dû commencer par là."
+
+    "Je m'éloigne enfin du capteur, encore un peu tremblant. Mara conserve son sourire, mais elle attend que j'aie repris mon souffle avant de retourner à sa place."
+
     scene black with dissolve
     return
 
