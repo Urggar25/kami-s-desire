@@ -124,6 +124,22 @@ screen tablet_home():
                 at tablet_phase_fade(0.2)
                 action [Hide("tablet_home"), Show("vote_dossier"), With(Dissolve(0.25))]
 
+            # Statistiques : application intégrée à la vitre de la tablette.
+            imagebutton:
+                idle Transform(
+                    "images/ui/tablette/stats.png",
+                    xysize=(1920, 1080), fit="contain"
+                )
+                hover Transform(
+                    "images/ui/tablette/stats.png",
+                    xysize=(1920, 1080), fit="contain", matrixcolor=BrightnessMatrix(0.18)
+                )
+                xpos 0 ypos 0
+                xsize 1920 ysize 1080
+                focus_mask True
+                at tablet_phase_fade(0.2)
+                action [Hide("tablet_home"), Show("tablet_stats"), With(Dissolve(0.25))]
+
             imagebutton:
                 idle Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
                 hover Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
