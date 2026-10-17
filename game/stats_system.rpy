@@ -397,51 +397,101 @@ screen tablet_card(title, color, icon, action, progress=None):
 # =============================================================
 
 screen tablet_stats():
+    # Reprend l'interface tablette inclinée du menu Profil / Dossier.
     modal True
-    zorder 110
+    zorder 220
 
-    add Solid("#020609F2")
+    $ back_to_tablet = [Hide("tablet_stats"), Show("tablet_home"), With(Dissolve(0.25))]
+    key "K_ESCAPE" action back_to_tablet
+    key "K_t" action back_to_tablet
 
-    frame at d1_appear:
-        xalign 0.5
-        yalign 0.5
-        xsize 1120
-        ysize 780
-        background Frame(Solid("#0A121CF8"), 0, 0)
+    add Solid("#01060bcc")
+    add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
+
+    fixed at messenger_panel_in, tablet_profile_plane:
+        xysize (940, 560)
+        clipping True
+
+        add Solid("#020912f5")
+        add Solid("#0b223144", ysize=56)
+        add Solid("#5cd3ff99", ysize=2) ypos 55
+
+        text "KAMI.CORE // STATISTIQUES":
+            font "fonts/Barlow-Light.ttf"
+            size 14 color "#5cd3ff" kerning 2.2
+            xpos 18 ypos 18
+
+        text "COMPÉTENCES PERMANENTES":
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 13 color "#769aab" kerning 1.3
+            xpos 590 ypos 20
+
+        textbutton "RETOUR":
+            xpos 824 ypos 9 xsize 100 ysize 36
+            padding (8, 4)
+            background Fixed(Solid("#07131de8"), Solid("#5cd3ff", ysize=2, yalign=1.0))
+            hover_background Fixed(Solid("#123249f5"), Solid("#86e2ff", ysize=3, yalign=1.0))
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            text_size 14 text_color "#9bc7d8" text_hover_color "#ffffff"
+            text_xalign 0.5 text_yalign 0.5
+            action back_to_tablet
+
+        text "APTITUDES // NOAM":
+            xpos 22 ypos 68 size 19 color "#eaf4ff"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+        text "Niveaux actuels de vos six compétences.":
+            xpos 23 ypos 94 size 13 color "#829fad"
+            font "fonts/Barlow-Light.ttf"
+        add Solid("#294c5e") xpos 21 ypos 119 xsize 896 ysize 1
+
+        # Réutilise directement les anneaux et icônes du menu d'origine.
+        grid 3 2:
+            xpos 21 ypos 132
+            xspacing 13 yspacing 12
+            for stat_name in STATS_ORDER:
+                use tablet_stat_gauge(stat_name)
+
+        add Solid("#294c5e") xpos 21 ypos 511 xsize 896 ysize 1
+        text "CONCLAVE OS  //  STATISTIQUES ACTUALISÉES EN TEMPS RÉEL":
+            xpos 24 ypos 524 size 12 color "#698b9e"
+            font "fonts/Rajdhani-SemiBold.ttf" kerning 1.2
+
+
+screen tablet_stat_gauge(name):
+    $ meta = STATS_META[name]
+    $ lvl = get_stat(name)
+    $ col = meta["color"]
+
+    frame:
+        xsize 290 ysize 178
         padding (0, 0)
-
+        background Fixed(
+            Solid("#0a1b28ee"),
+            Solid(col + "88", ysize=2),
+            Solid("#254052", ysize=1, yalign=1.0),
+        )
         fixed:
-            xsize 1120
-            ysize 780
-
-            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 1120 ysize 2
-
-            # ---- Barre de titre ----
-            add Solid("#0A111C") xpos 0 ypos 0 xsize 1120 ysize 56
-            text "PROFIL — STATISTIQUES":
-                xpos 30 ypos 16 size 18 color "#5CD3FF"
-                font "fonts/Rajdhani-SemiBold.ttf" kerning 3
-            text "COMPÉTENCES PERMANENTES":
-                xpos 830 ypos 20 size 13 color "#3A566A"
-                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-            add Solid("#1A2D3E") xpos 0 ypos 56 xsize 1120 ysize 1
-
-            # ---- Grille 3 x 2 de jauges circulaires ----
-            grid 3 2:
-                xalign 0.5 ypos 96
-                xspacing 20
-                yspacing 8
-                for k in STATS_ORDER:
-                    use stat_gauge(k)
-
-            # ---- Retour ----
-            button:
-                xpos 40 ypos 712
-                xsize 200 ysize 46
-                background Frame(Solid("#12202E"), 0, 0)
-                hover_background Frame(Solid("#5CD3FF22"), 0, 0)
-                action [Hide("tablet_stats"), Show("tablet_home")]
-                text "◂  RETOUR" xalign 0.5 yalign 0.5 size 16 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf"
+            xysize (290, 178)
+            # Anneau et icône originaux, réduits pour tenir dans la vitre.
+            add Transform("hud/tablet/ring_" + name + "_" + str(lvl) + ".png",
+                          size=(162, 162)) xpos 6 ypos 6
+            add Transform("hud/tablet/stat_icon_" + name + ".png",
+                          size=(49, 49)) xpos 63 ypos 52
+            text str(lvl):
+                xpos 87 ypos 112 xanchor 0.5
+                size 35 color col
+                font "fonts/Rajdhani-SemiBold.ttf"
+                outlines [(1, "#00000088", 0, 0)]
+            text meta["label"]:
+                xpos 174 ypos 47 xanchor 0.0
+                xmaximum 107 size 17 color "#e4f2f9"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "NIVEAU":
+                xpos 174 ypos 86 size 12 color "#819baa"
+                font "fonts/Barlow-Light.ttf"
+            text "{:02d} / 10".format(lvl):
+                xpos 174 ypos 103 size 18 color col
+                font "fonts/Rajdhani-SemiBold.ttf"
 
 
 screen stat_gauge(name):
