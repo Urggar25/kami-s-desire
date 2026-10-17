@@ -524,7 +524,6 @@ screen system_menu():
         _("Créer une sauvegarde de votre progression actuelle."),
         _("Reprendre l'histoire depuis une sauvegarde existante."),
         _("Régler l'affichage, le texte, le son et les contrôles."),
-        _("Consulter les dossiers des représentants du Conclave."),
         _("Voir les succès découverts et ceux encore verrouillés."),
         _("Parcourir les jours, embranchements et choix du récit."),
         _("Interrompre la partie et retourner au menu principal."),
@@ -645,55 +644,44 @@ screen system_menu():
                     style "system_menu_button"
                     selected focused_item == 3
                     hovered SetScreenVariable("focused_item", 3)
-                    action ShowMenu("profiles_menu")
+                    action ShowMenu("succes_menu")
                     hbox:
                         yalign 0.5
                         spacing 22
                         text "04" style "system_menu_button_index"
-                        text _("PROFILS") style "system_menu_button_label"
+                        text _("SUCCÈS") style "system_menu_button_label"
 
                 button:
                     style "system_menu_button"
                     selected focused_item == 4
                     hovered SetScreenVariable("focused_item", 4)
-                    action ShowMenu("succes_menu")
+                    action ShowMenu("roadmap_menu")
                     hbox:
                         yalign 0.5
                         spacing 22
                         text "05" style "system_menu_button_index"
-                        text _("SUCCÈS") style "system_menu_button_label"
+                        text _("ROADMAP") style "system_menu_button_label"
 
                 button:
                     style "system_menu_button"
                     selected focused_item == 5
                     hovered SetScreenVariable("focused_item", 5)
-                    action ShowMenu("roadmap_menu")
+                    action MainMenu(confirm=True)
                     hbox:
                         yalign 0.5
                         spacing 22
                         text "06" style "system_menu_button_index"
-                        text _("ROADMAP") style "system_menu_button_label"
+                        text _("MENU PRINCIPAL") style "system_menu_button_label"
 
                 button:
                     style "system_menu_button"
                     selected focused_item == 6
                     hovered SetScreenVariable("focused_item", 6)
-                    action MainMenu(confirm=True)
-                    hbox:
-                        yalign 0.5
-                        spacing 22
-                        text "07" style "system_menu_button_index"
-                        text _("MENU PRINCIPAL") style "system_menu_button_label"
-
-                button:
-                    style "system_menu_button"
-                    selected focused_item == 7
-                    hovered SetScreenVariable("focused_item", 7)
                     action Quit(confirm=True)
                     hbox:
                         yalign 0.5
                         spacing 22
-                        text "08" style "system_menu_button_index"
+                        text "07" style "system_menu_button_index"
                         text _("QUITTER LE JEU") style "system_menu_button_label"
 
             text system_details[focused_item]:
@@ -736,7 +724,6 @@ screen navigation():
         textbutton _("Sauvegarder") sensitive not main_menu action ShowMenu("save")
         textbutton _("Charger") action ShowMenu("load")
         textbutton _("Options / Préférences") action ShowMenu("preferences")
-        textbutton _("Profils") action ShowMenu("profiles_menu")
         textbutton _("Succès") action ShowMenu("succes_menu")
         textbutton _("Roadmap") action ShowMenu("roadmap_menu")
 
