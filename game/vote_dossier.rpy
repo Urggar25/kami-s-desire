@@ -310,7 +310,10 @@ transform dossier_tint(c):
 # =============================================================================
 screen vote_dossier():
     modal True
-    zorder 115
+    zorder 205
+
+    key "K_ESCAPE" action [Hide("vote_dossier"), Show("tablet_home")]
+    key "K_t" action [Hide("vote_dossier"), Show("tablet_home")]
 
     $ restore_unlocked_arguments()
     if "day2_sync_argument_titles" in globals():
@@ -344,7 +347,7 @@ screen vote_dossier():
         xpos 1832 ypos 44 xysize (48, 48)
         background Frame(Solid("#0C1826"), 0, 0)
         hover_background Frame(Solid("#5CD3FF22"), 0, 0)
-        action Hide("vote_dossier")
+        action [Hide("vote_dossier"), Show("tablet_home")]
         text "✕" xalign 0.5 yalign 0.5 size 24 color "#8FB4CC"
 
     add Solid("#12283A") xpos 0 ypos 106 xsize 1920 ysize 2
