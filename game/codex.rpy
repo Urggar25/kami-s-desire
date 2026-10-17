@@ -31,7 +31,7 @@ init python:
             "title": "LE CONCLAVE",
             "subtitle": "Les règles, les membres\net le fonctionnement du Conclave.",
             "color": "#5CD3FF", "icon": "pack_conclave", "banner": "banner_conclave",
-            "entries": ["reglement_conclave"],
+            "entries": ["reglement_conclave", "commandements", "conclave_orbital", "propositions_amendement"],
         },
         {
             "id": "districts", "num": 2,
@@ -70,6 +70,39 @@ init python:
                 "O Conclave dura trinta dias, durante os quais seus doze representantes permanecem isolados no complexo. Cada um apresenta uma emenda, mas apenas dez são sorteadas. Há uma votação a cada três dias. A aprovação exige unanimidade entre os votos expressos; abstenções e ausências ficam fora da contagem. Os Mandamentos comuns ficam suspensos dentro do complexo, mas o regulamento interno continua valendo.",
                 "秘密会议持续三十天，十二名代表在此期间必须与外界隔离。每人提交一项修正案，但只有十项会被抽中。每三天进行一次投票；议案必须获得全部有效票一致赞成才能通过，弃权和缺席不计入有效票。普通戒律在设施内暂停执行，但设施自身的规则仍然有效。"),
             "aliases": ["règlement du Conclave", "règles du Conclave", "Conclave rules", "rules of the Conclave", "regulamento do Conclave", "regras do Conclave", "秘密会议规则"],
+        },
+        "commandements": {
+            "title": _codex_loc("Les Commandements", "The Commandments", "Os Mandamentos", "戒律"),
+            "icon": "ic_doc", "assoc": ["reglement_conclave"], "auto_unlock": False,
+            "short": _codex_loc("Les lois imposées par Kami.", "The laws imposed by Kami.", "As leis impostas por Kami.", "Kami颁布的法律。"),
+            "text": _codex_loc(
+                "Depuis sa prise de pouvoir, Kami impose les Commandements à tous les districts. Ces règles encadrent l'autorité, la liberté d'agir et l'organisation de la société. Leur violation expose les habitants aux sanctions du régime. Le Conclave est la procédure officielle permettant aux douze représentants de proposer des modifications : chaque amendement est débattu puis soumis à un vote, et seuls les textes recueillant l'unanimité des suffrages exprimés peuvent être adoptés.",
+                "Since taking power, Kami has imposed the Commandments on every district. They govern authority, individual freedom and society. Violations expose residents to the regime's sanctions. The Conclave is the official means of changing them: twelve representatives propose amendments, debate and vote, and only proposals approved unanimously by votes cast can pass.",
+                "Desde que assumiu o poder, Kami impôs os Mandamentos a todos os distritos. Essas regras regem a autoridade, as liberdades e a sociedade. As infrações sujeitam os habitantes às sanções do regime. O Conclave permite que doze representantes proponham emendas, que só podem ser aprovadas com a unanimidade dos votos expressos.",
+                "Kami掌权后向所有地区实施戒律，规范权力、自由和社会组织，违规者将受到惩罚。秘密会议是正式修改程序：十二名代表提出修正案、辩论并投票，只有获得全体有效票一致赞成才能通过。"),
+            "aliases": ["les Commandements", "Commandements", "the Commandments"],
+        },
+        "conclave_orbital": {
+            "title": _codex_loc("Le Conclave orbital", "The Orbital Conclave", "O Conclave Orbital", "轨道秘密会议"),
+            "icon": "ic_building", "assoc": ["reglement_conclave"], "auto_unlock": False,
+            "short": _codex_loc("Les installations de l'assemblée orbitale.", "Facilities aboard the orbital assembly.", "Instalações da assembleia orbital.", "轨道会议设施。"),
+            "text": _codex_loc(
+                "Le Conclave se tient dans un complexe orbital aménagé pour héberger douze représentants pendant trente jours. Il comporte des chambres individuelles, une cafétéria, une infirmerie, des espaces de repos, des installations techniques et une salle de débats. Les représentants peuvent se déplacer dans les zones autorisées, mais ne peuvent pas communiquer avec leurs districts pendant leur séjour.",
+                "The Conclave takes place in an orbital complex built to house twelve representatives for thirty days. It contains private rooms, a cafeteria, a medical bay, recreation spaces, technical facilities and a debating chamber. Representatives may access authorised areas but cannot contact their home districts.",
+                "O Conclave ocorre numa instalação orbital preparada para abrigar doze representantes durante trinta dias. Há quartos individuais, refeitório, enfermaria, áreas de descanso, instalações técnicas e uma sala de debates. É proibido comunicar com os distritos durante a estadia.",
+                "秘密会议在轨道设施内举行，十二名代表将在此居住三十天。设施包括单人房间、食堂、医务室、休息区、技术区域和辩论厅。代表可在获准区域活动，但不得联系各自地区。"),
+            "aliases": ["Conclave orbital", "orbital Conclave"],
+        },
+        "propositions_amendement": {
+            "title": _codex_loc("Les propositions d'amendement", "Amendment Proposals", "Propostas de Emenda", "修正提案"),
+            "icon": "ic_doc", "assoc": ["reglement_conclave"], "auto_unlock": False,
+            "short": _codex_loc("Déposer, préparer et défendre un changement.", "Submitting and debating changes.", "Apresentar e defender uma alteração.", "提交并辩护修正提案。"),
+            "text": _codex_loc(
+                "Chaque représentant peut déposer une proposition visant à modifier les Commandements. Dix amendements sont retenus par tirage au sort parmi les douze déposés, puis examinés au fil du Conclave. Avant chaque vote, les représentants rassemblent leurs arguments, exposent leurs désaccords et tentent de convaincre leurs collègues. Une proposition n'est adoptée que si tous les suffrages exprimés sont favorables.",
+                "Each representative can submit a proposal to amend the Commandments. Ten of the twelve submitted amendments are drawn for consideration. Before voting, members gather arguments, debate and seek support. A proposal passes only if all votes cast are in favour.",
+                "Cada representante pode propor uma alteração aos Mandamentos. Dez das doze emendas apresentadas são sorteadas para debate. Antes da votação, os representantes reúnem argumentos e tentam convencer os colegas. A aprovação exige unanimidade entre os votos expressos.",
+                "每位代表均可提出修改戒律的修正案。十二项提案中抽取十项供讨论。投票前，代表收集论据、辩论并争取支持。只有获得全体有效票赞成的提案才能通过。"),
+            "aliases": ["propositions d'amendement", "amendements", "amendment proposals"],
         },
         "harmonie": {
             "title": _codex_loc("Harmonie", "Harmony", "Harmonia", "和谐区"),
@@ -170,7 +203,7 @@ init 3 python:
     # Seules les entrées qui possèdent un vrai déblocage dans le scénario
     # peuvent apparaître. Tout le contenu de remplissage est retiré au chargement.
     _CODEX_INGAME_ENTRIES = set([
-        "reglement_conclave",
+        "reglement_conclave", "commandements", "conclave_orbital", "propositions_amendement",
         "harmonie", "axiome", "archive", "limen", "nexus", "orbite",
         "bons_rationnement", "derogations_administratives", "commerce_monnaie",
         "frontieres_interdistricts", "frontieres_limen",
