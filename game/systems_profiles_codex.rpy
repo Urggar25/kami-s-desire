@@ -367,6 +367,17 @@ transform profile_character_in:
     xoffset -28
     easeout 0.32 alpha 1.0 xoffset 0
 
+transform tablet_profile_plane:
+    # La fiche occupe toute la vitre, plus large que le canevas de la
+    # messagerie, tout en conservant exactement son inclinaison.
+    subpixel True
+    xanchor 0.5
+    yanchor 0.5
+    xpos 0.465
+    ypos 0.451
+    zoom 1.045
+    rotate 9.3
+
 style profile_selector_button is button:
     xsize 104
     ysize 104
@@ -635,9 +646,293 @@ screen profiles_menu():
         action SetScreenVariable("selected_profile", PROFILE_ORDER[(profile_index + 1) % len(PROFILE_ORDER)])
 
 
+screen _tablet_profile_stat_cell(label, value):
+    frame:
+        xsize 282
+        ysize 48
+        padding (0, 0)
+        background Fixed(
+            Solid("#101827e8"),
+            Solid("#762b9dcc", xsize=132),
+            Solid("#d469ff", ysize=2, yalign=1.0),
+        )
+
+        text label:
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 12
+            color "#f0cfff"
+            kerning 0.8
+            xpos 10
+            xmaximum 116
+            yalign 0.5
+
+        text value:
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 17
+            color "#ffffff"
+            xpos 144
+            yalign 0.5
+
+
+screen tablet_profiles():
+    modal True
+    zorder 220
+
+    default selected_profile = "noam"
+    $ profile = PROFILE_DATA[selected_profile]
+    $ profile_index = PROFILE_ORDER.index(selected_profile)
+    $ profile_render = profile_cosmetic_preview(selected_profile)
+    $ total_free_times = len(FREE_TIME_SCENES.get(selected_profile, []))
+    $ completed_free_times = free_time_character_count(selected_profile)
+    $ back_to_tablet = [Hide("tablet_profiles"), Show("tablet_home")]
+
+    key "K_ESCAPE" action back_to_tablet
+    key "K_t" action back_to_tablet
+    key "K_LEFT" action SetScreenVariable("selected_profile", PROFILE_ORDER[(profile_index - 1) % len(PROFILE_ORDER)])
+    key "K_RIGHT" action SetScreenVariable("selected_profile", PROFILE_ORDER[(profile_index + 1) % len(PROFILE_ORDER)])
+
+    add Solid("#01060bcc")
+    add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
+
+    fixed at messenger_panel_in, tablet_profile_plane:
+        xysize (940, 560)
+        clipping True
+
+        # La fiche entière partage le même plan que la vitre de la tablette.
+        add Solid("#020912e8")
+        add Solid("#0b223144", ysize=56)
+        add Solid("#5cd3ff99", ysize=2) ypos 55
+
+        text "KAMI.CORE // DOSSIERS DES REPRÉSENTANTS":
+            font "fonts/Barlow-Light.ttf"
+            size 14
+            color "#5cd3ff"
+            kerning 2.2
+            xpos 18
+            ypos 18
+
+        text "{:02d} / {:02d}".format(profile_index + 1, len(PROFILE_ORDER)):
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 14
+            color "#769aab"
+            xpos 745
+            ypos 18
+
+        textbutton "RETOUR":
+            xpos 824
+            ypos 9
+            xsize 100
+            ysize 36
+            padding (8, 4)
+            background Fixed(Solid("#07131de8"), Solid("#5cd3ff", ysize=2, yalign=1.0))
+            hover_background Fixed(Solid("#123249f5"), Solid("#86e2ff", ysize=3, yalign=1.0))
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            text_size 14
+            text_color "#9bc7d8"
+            text_hover_color "#ffffff"
+            text_xalign 0.5
+            text_yalign 0.5
+            action back_to_tablet
+
+        # Portrait principal, volontairement généreux malgré la surface compacte.
+        frame:
+            xpos 18
+            ypos 72
+            xsize 270
+            ysize 367
+            padding (0, 0)
+            background Fixed(
+                Solid("#0b1d2af2"),
+                Solid("#5cd3ff99", xsize=2),
+                Solid("#5cd3ff55", xsize=2, xalign=1.0),
+                Solid("#5cd3ff99", ysize=2, yalign=1.0),
+            )
+
+            fixed:
+                xsize 270
+                ysize 367
+                clipping True
+                add Transform(
+                    "gui/main_menu_kami/glyph_kami.png",
+                    size=(250, 250), matrixcolor=TintMatrix("#2c9fc1")
+                ) xalign 0.5 yalign 0.48 alpha 0.10
+                if profile_render:
+                    add Transform(profile_render, fit="contain", xysize=(260, 410)):
+                        xalign 0.5
+                        yalign 0.04
+                        at profile_character_in
+
+            frame:
+                xpos 12
+                ypos 319
+                xsize 246
+                ysize 36
+                padding (10, 4)
+                background Solid("#020912dc")
+                text "DOSSIER // {}".format(kd_tr(profile["district"]).upper()):
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    size 13
+                    color "#6fdfff"
+                    kerning 1.4
+                    yalign 0.5
+
+        text profile["name"]:
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 37
+            color "#f4f9fc"
+            kerning 2.4
+            xpos 318
+            ypos 66
+
+        text "{}  //  {} {}".format(kd_tr(profile["role"]), kd_tr("REPRÉSENTANT·E DE"), kd_tr(profile["district"]).upper()):
+            font "fonts/Barlow-Light.ttf"
+            size 14
+            color "#5cd3ff"
+            kerning 1.2
+            xpos 320
+            ypos 109
+
+        add Solid("#5cd3ff77") xpos 318 ypos 137 xsize 604 ysize 2
+
+        vbox:
+            xpos 318
+            ypos 154
+            spacing 8
+
+            hbox:
+                spacing 10
+                use _tablet_profile_stat_cell(_("PRÉNOM"), profile["name"])
+                use _tablet_profile_stat_cell(_("ÂGE"), _("{} ANS").format(profile["age"]))
+
+            hbox:
+                spacing 10
+                use _tablet_profile_stat_cell(_("TAILLE"), profile["height"])
+                use _tablet_profile_stat_cell(_("TOUR DE POITRINE"), profile["chest"])
+
+            hbox:
+                spacing 10
+                use _tablet_profile_stat_cell(_("DISTRICT"), kd_tr(profile["district"]).upper())
+                use _tablet_profile_stat_cell(_("ANNIVERSAIRE"), kd_tr(profile["birthday"]).upper())
+
+        frame:
+            xpos 318
+            ypos 329
+            xsize 604
+            ysize 74
+            padding (14, 9)
+            background Fixed(Solid("#111724ed"), Solid("#ff496cbb", xsize=3))
+
+            hbox:
+                yalign 0.5
+                spacing 20
+                vbox:
+                    xsize 330
+                    spacing 1
+                    text "LIEN // TEMPS LIBRES":
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 16
+                        color "#ff718a"
+                        kerning 1.4
+                    text "{} TERMINÉ{} / {} DISPONIBLE{}".format(completed_free_times, "" if completed_free_times == 1 else "S", total_free_times, "" if total_free_times == 1 else "S"):
+                        font "fonts/Barlow-Light.ttf"
+                        size 12
+                        color "#879eaa"
+
+                if total_free_times:
+                    hbox:
+                        spacing 9
+                        yalign 0.5
+                        for heart_index in range(total_free_times):
+                            if heart_index < completed_free_times:
+                                add Transform("gui/profiles/heart_complete.png", size=(38, 38))
+                            else:
+                                add Transform("gui/profiles/heart_locked.png", size=(38, 38))
+                else:
+                    text "—":
+                        size 30
+                        color "#4b5a62"
+                        yalign 0.5
+
+        text "« {} »".format(kd_tr(profile["quote"])):
+            font "fonts/Barlow-Light.ttf"
+            size 14
+            color "#a8c1cd"
+            italic True
+            xpos 318
+            ypos 416
+            xmaximum 365
+
+        textbutton "TENUES & ACCESSOIRES":
+            xpos 704
+            ypos 414
+            xsize 218
+            ysize 38
+            padding (10, 5)
+            background Fixed(Solid("#171127e8"), Solid("#c45cff", xsize=3))
+            hover_background Fixed(Solid("#39204bf5"), Solid("#e097ff", xsize=4))
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            text_size 14
+            text_color "#ecd7f8"
+            text_hover_color "#ffffff"
+            text_xalign 0.5
+            text_yalign 0.5
+            action Show("profile_wardrobe", profile_id=selected_profile)
+
+        # Bande de sélection tactile : les douze dossiers restent accessibles.
+        add Solid("#5cd3ff66", ysize=2) ypos 468
+        textbutton "‹":
+            xpos 17
+            ypos 485
+            xsize 38
+            ysize 52
+            background Solid("#07131dcc")
+            hover_background Solid("#123249f5")
+            text_size 28
+            text_color "#8edfff"
+            action SetScreenVariable("selected_profile", PROFILE_ORDER[(profile_index - 1) % len(PROFILE_ORDER)])
+
+        hbox:
+            xpos 64
+            ypos 482
+            spacing 5
+            for pid in PROFILE_ORDER:
+                button:
+                    xsize 62
+                    ysize 62
+                    padding (3, 3)
+                    selected selected_profile == pid
+                    background Fixed(Solid("#071019e8"), Solid("#29485a", ysize=2, yalign=1.0))
+                    hover_background Fixed(Solid("#123249f5"), Solid("#5cd3ff", ysize=3, yalign=1.0))
+                    selected_background Fixed(
+                        Solid("#123249f5"),
+                        Solid("#5cd3ff", xsize=2),
+                        Solid("#5cd3ff", xsize=2, xalign=1.0),
+                        Solid("#5cd3ff", ysize=3, yalign=1.0),
+                    )
+                    action SetScreenVariable("selected_profile", pid)
+                    add Transform(profile_portrait(pid), fit="cover", xysize=(56, 56))
+
+        textbutton "›":
+            xpos 879
+            ypos 485
+            xsize 38
+            ysize 52
+            background Solid("#07131dcc")
+            hover_background Solid("#123249f5")
+            text_size 28
+            text_color "#8edfff"
+            action SetScreenVariable("selected_profile", PROFILE_ORDER[(profile_index + 1) % len(PROFILE_ORDER)])
+
+    # Les pouces sont un calque de premier plan : aucun composant de
+    # l'application ne doit pouvoir se dessiner par-dessus les mains.
+    add "images/ui/tablette/tablette_pouce.png" fit "contain" xysize (1920, 1080)
+
+
 screen profile_wardrobe(profile_id):
     modal True
     zorder 400
+
+    key "K_ESCAPE" action Hide("profile_wardrobe")
 
     $ detected_skins = get_profile_detected_skins(profile_id)
     $ detected_accessories = get_profile_detected_accessories(profile_id)

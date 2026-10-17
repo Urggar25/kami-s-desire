@@ -193,8 +193,9 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|
-| Tablette — accueil animé | Superpose les quatre étapes PNG avec fondus croisés, signale les messages en attente et fournit les boutons Messagerie, EXIT et Discord. | `game/tablet_home.rpy` | `show screen tablet_home` |
+| Tablette — accueil animé | Superpose les quatre étapes PNG avec fondus croisés, signale les messages en attente et ouvre les applications Messagerie et Profils ainsi que les boutons EXIT et Discord. | `game/tablet_home.rpy` | `show screen tablet_home` |
 | Tablette — messagerie scénarisée | Affiche jusqu’à quatre derniers messages révélés en lignes à hauteur naturelle dans une zone défilante ; portraits, titre du correspondant, statut, viewport et indication de progression repositionnés selon la capture annotée sur le plan commun incliné à 9,3° ; conserve la progression au clic. | `game/messenger.rpy`, `game/images/ui/tablette/tablette_messagerie.png`, `game/tablet_home.rpy` | `call messenger_play("kael", "kael", [("kael", "Noam ? T'es là ?"), ("noam", "Ouais.")])` |
+| Tablette — profils des représentants | Charge sur la vitre inclinée une fiche compacte avec portrait équipé, identité, liens, citation, sélection des douze représentants, accès à la garde-robe et pouces redessinés au premier plan. | `game/systems_profiles_codex.rpy`, `game/tablet_home.rpy`, `game/images/ui/tablette/tablette_pouce.png` | `show screen tablet_profiles` |
 | Tablette — statistiques | Présente les cinq stats et leur progression en jauges segmentées. | `game/stats_system.rpy` | `show screen tablet_stats` |
 | Tablette narrative du jour 1 | Interaction terminal scénarisée propre au réveil et à l'amendement. | `game/day1_ui.rpy` | `call screen day1_tablet_interaction` |
 | Timer dynamique | Compte à rebours persistant, modifiable en direct, avec saut optionnel à expiration. | `game/day0_ui.rpy` | `$ day0_timer_init(m=5, end_label="_TEMPS_ECOULE"); show screen day0_countdown_overlay` |

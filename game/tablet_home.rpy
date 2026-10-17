@@ -91,6 +91,21 @@ screen tablet_home():
                 )
 
             imagebutton:
+                idle Transform(
+                    "images/ui/tablette/profil.png",
+                    xysize=(1920, 1080), fit="contain"
+                )
+                hover Transform(
+                    "images/ui/tablette/profil.png",
+                    xysize=(1920, 1080), fit="contain", matrixcolor=BrightnessMatrix(0.18)
+                )
+                xpos 0 ypos 0
+                xsize 1920 ysize 1080
+                focus_mask True
+                at tablet_phase_fade(0.2)
+                action [Hide("tablet_home"), Show("tablet_profiles")]
+
+            imagebutton:
                 idle Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
                 hover Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
                 xpos 1210 ypos 650
