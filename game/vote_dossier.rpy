@@ -473,6 +473,9 @@ screen vote_dossier():
                                         size 11 color meta["color"]
                                         font "fonts/Rajdhani-SemiBold.ttf"
 
+    # Pouce au premier plan, au-dessus de toute l’interface de l’application.
+    add "images/ui/tablette/tablette_pouce.png" fit "contain" xysize (1920, 1080)
+
 # -----------------------------------------------------------------------------
 # Onglet
 # -----------------------------------------------------------------------------
