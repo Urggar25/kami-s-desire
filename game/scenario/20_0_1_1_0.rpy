@@ -909,6 +909,7 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
 
     stop music fadeout 1.5
 
+    call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs")
     call end_day("21") from _call_j20_dropknife_end_day_21
 
     if j20_kael_depart_choice == "stay":
@@ -1906,5 +1907,6 @@ label _20_0_1_1_FIN:
     "Étrangement, ce n'est pas le cas."
 
     stop music fadeout 2.0
+    call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs")
     call end_day("21") from _call_j20_end_day_21
     jump _21_0_1_1_0_REVEIL
