@@ -26,6 +26,7 @@ default j10011_alibi_done = False
 
 
 label _10_0_1_1_REVEIL_CHAMBRE:
+    call show_chapter_title("Début du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond")
 
     scene black
 
