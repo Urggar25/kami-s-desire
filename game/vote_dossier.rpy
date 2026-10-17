@@ -364,7 +364,7 @@ screen vote_dossier():
         padding (0, 0)
         fixed:
             add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
-            text "CHAPITRES":
+            text "FRISE CHRONOLOGIQUE DES VOTES":
                 xpos 24 ypos 16 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
             add Solid("#12283A") xpos 0 ypos 52 xsize 430 ysize 1
             viewport:
@@ -494,6 +494,7 @@ screen dossier_chapter_row(chapter, sel_chapter):
     $ pid = dossier_prop_first_of_chapter(chapter_id)
     $ prop = dossier_prop(pid)
     $ selected = (chapter_id == sel_chapter)
+    $ vote_day = chapter_id * 3
 
     button:
         xsize 430 ysize 118
@@ -503,6 +504,10 @@ screen dossier_chapter_row(chapter, sel_chapter):
                 SetScreenVariable("sel_prop", pid)]
         fixed:
             xsize 430 ysize 118
+            # Fil chronologique continu : un marqueur par vote.
+            add Solid("#244558") xpos 32 ypos 0 xsize 2 ysize 118
+            add Solid("#5CD3FF" if selected else "#36627D") xpos 23 ypos 31 xysize (20, 20)
+            add Solid("#07141F") xpos 28 ypos 36 xysize (10, 10)
             if selected:
                 add Solid("#5CD3FF") xpos 0 ypos 0 xsize 3 ysize 118
                 add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
@@ -510,13 +515,13 @@ screen dossier_chapter_row(chapter, sel_chapter):
             else:
                 add Solid("#0F1A26") xpos 0 ypos 117 xsize 430 ysize 1
 
-            text ("CHAPITRE %02d" % chapter_id):
-                xpos 22 ypos 18 size 17 color ("#5CD3FF" if selected else "#6E8CA6")
+            text ("JOUR %02d  //  VOTE %02d" % (vote_day, chapter_id)):
+                xpos 62 ypos 17 size 17 color ("#5CD3FF" if selected else "#6E8CA6")
                 font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-            text prop.get("title", "").replace("\n", " "):
-                xpos 22 ypos 50 xsize 350 size 17 color ("#DCEBFF" if selected else "#8FB4CC")
+            text prop.get("title", "").replace("\\n", " "):
+                xpos 62 ypos 49 xsize 320 size 17 color ("#DCEBFF" if selected else "#8FB4CC")
                 font "fonts/Rajdhani-SemiBold.ttf" line_leading 2
-            add Solid("#5CD3FF" if selected else "#3A566A") xpos 388 ypos 54 xysize (10, 10)
+            add Solid("#5CD3FF" if selected else "#3A566A") xpos 398 ypos 54 xysize (9, 9)
 
 
 # -----------------------------------------------------------------------------
