@@ -1156,6 +1156,7 @@ label j701_play_search_drawing:
     return
 
 label _7_0_1_REVEIL_CHAMBRE:
+    call show_chapter_title("Début du chapitre 3", "Chapitre 3 — La confiance ne suffit pas")
 
     scene black
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
