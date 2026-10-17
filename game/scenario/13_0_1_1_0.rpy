@@ -1,4 +1,5 @@
 label _13_0_1_1_0_REVEIL_CHAMBRE:
+    call show_chapter_title("Début du chapitre 5", "Chapitre 5 — Les apparences sont trompeuses")
 
     $ cafeteria_food_level = "none"
     $ current_period = "Matin"
