@@ -1,10 +1,14 @@
 # Tablette du Conclave — 4 étapes en fondus CROISÉS.
-# L'image précédente reste dessinée sous celle qui apparaît.
+# La phase 4 remplace la phase 3, sans image noire sous la tablette.
 # L'accueil est ouvert avec Show("tablet_home") depuis le HUD.
 
 transform tablet_phase_fade(duration=0.3):
     alpha 0.0
     linear duration alpha 1.0
+
+transform tablet_phase_fade_out(duration=0.2):
+    alpha 1.0
+    linear duration alpha 0.0
 
 screen tablet_home():
     modal True
@@ -41,8 +45,7 @@ screen tablet_home():
         # Ainsi, aucun trou visuel n'apparaît entre deux étapes.
         if closing:
             if stage == 4:
-                add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080)
-                add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.2)
+                add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade_out(0.2)
             elif stage == 3:
                 add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
                 add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
@@ -60,7 +63,6 @@ screen tablet_home():
             add "images/ui/tablette/tablette_2.png" fit "contain" xysize (1920, 1080)
             add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.3)
         else:
-            add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
             add "images/ui/tablette/tablette_4.png" fit "contain" xysize (1920, 1080) at tablet_phase_fade(0.2)
 
         # Même repère 1920x1080 et même fondu que tablette_4.
@@ -86,7 +88,7 @@ screen tablet_home():
                 at tablet_phase_fade(0.2)
                 action If(
                     messenger_has_pending(),
-                    [Hide("tablet_home"), Show("messenger_conversation")],
+                    [Hide("tablet_home"), Show("messenger_conversation"), With(Dissolve(0.25))],
                     Function(messenger_no_recent)
                 )
 
@@ -103,7 +105,7 @@ screen tablet_home():
                 xsize 1920 ysize 1080
                 focus_mask True
                 at tablet_phase_fade(0.2)
-                action [Hide("tablet_home"), Show("tablet_profiles")]
+                action [Hide("tablet_home"), Show("tablet_profiles"), With(Dissolve(0.25))]
 
             imagebutton:
                 idle Transform("images/ui/tablette/discord.png", xysize=(150, 150), fit="contain")
