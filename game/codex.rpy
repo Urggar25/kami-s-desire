@@ -730,3 +730,172 @@ transform codex_lockdim:
 label codex_hyperlink_view(entry_id):
     call screen codex_menu(initial_entry=entry_id)
     return
+
+
+# =============================================================================
+# CODEX — VERSION INTÉGRÉE À LA TABLETTE
+# Les mêmes données, filtres et déblocages que codex_menu.
+# =============================================================================
+screen tablet_codex():
+    modal True
+    zorder 220
+    default sel_pack = 0
+    default sel_entry = codex_first_entry_of_pack(0)
+    default filt = "tous"
+    $ cur_pack = CODEX_PACKS[sel_pack]
+    $ back_to_tablet = [Hide("tablet_codex"), Show("tablet_home"), With(Dissolve(0.25))]
+
+    key "K_ESCAPE" action back_to_tablet
+    key "K_t" action back_to_tablet
+
+    add Solid("#01060bcc")
+    add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
+
+    fixed at messenger_panel_in, tablet_profile_plane:
+        xysize (940, 560)
+        clipping True
+        add Solid("#020912f5")
+        add Solid("#0b223144", ysize=56)
+        add Solid("#5cd3ff99", ysize=2) ypos 55
+
+        text "KAMI.CORE // CODEX":
+            font "fonts/Barlow-Light.ttf"
+            xpos 18 ypos 18 size 14 color "#5cd3ff" kerning 2.2
+        text "{:02d} / {:02d} DÉCOUVERTES".format(codex_total_unlocked(), codex_total_entries()):
+            font "fonts/Rajdhani-SemiBold.ttf"
+            xpos 628 ypos 20 size 13 color "#769aab"
+
+        textbutton "RETOUR":
+            xpos 824 ypos 9 xsize 100 ysize 36 padding (8, 4)
+            background Fixed(Solid("#07131de8"), Solid("#5cd3ff", ysize=2, yalign=1.0))
+            hover_background Fixed(Solid("#123249f5"), Solid("#86e2ff", ysize=3, yalign=1.0))
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            text_size 14 text_color "#9bc7d8" text_hover_color "#ffffff"
+            text_xalign 0.5 text_yalign 0.5
+            action back_to_tablet
+
+        # Packs — mêmes catégories que le Codex original.
+        frame:
+            xpos 14 ypos 68 xsize 228 ysize 476 padding (0, 0)
+            background Fixed(Solid("#081824ef"), Solid("#5cd3ff66", xsize=2))
+            text "PACKS":
+                xpos 12 ypos 10 size 17 color "#5cd3ff"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            viewport:
+                xpos 7 ypos 41 xsize 214 ysize 374
+                mousewheel True draggable True scrollbars "vertical"
+                vbox:
+                    spacing 5
+                    for pi, pack in enumerate(CODEX_PACKS):
+                        $ selected = pi == sel_pack
+                        button:
+                            xsize 205 yminimum 74
+                            background Solid("#164057" if selected else "#0d2331")
+                            hover_background Solid("#1b4b63")
+                            action [SetScreenVariable("sel_pack", pi),
+                                    SetScreenVariable("sel_entry", codex_first_entry_of_pack(pi))]
+                            vbox:
+                                spacing 5
+                                text pack["title"]:
+                                    xmaximum 192 size 15
+                                    color ("#eaf6ff" if selected else "#9cb9c7")
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                text "{} / {} ENTRÉES".format(codex_pack_unlocked_count(pack), codex_pack_total(pack)):
+                                    size 12 color pack["color"]
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+            textbutton ({"tous": "TOUS", "debloques": "DÉBLOQUÉS", "verrouilles": "VERROUILLÉS"}[filt] + "  ▾"):
+                xpos 10 ypos 426 xsize 208 ysize 36
+                background Solid("#0d2939")
+                hover_background Solid("#19445a")
+                text_size 14 text_color "#9fd8ee"
+                text_font "fonts/Rajdhani-SemiBold.ttf"
+                text_xalign 0.5 text_yalign 0.5
+                action SetScreenVariable("filt", {"tous": "debloques", "debloques": "verrouilles", "verrouilles": "tous"}[filt])
+
+        # Liste d'entrées filtrable dans le pack.
+        frame:
+            xpos 251 ypos 68 xsize 275 ysize 476 padding (0, 0)
+            background Fixed(Solid("#081824ef"), Solid(cur_pack["color"], ysize=2))
+            text "ENTRÉES // {}".format(cur_pack["title"]):
+                xpos 10 ypos 10 xmaximum 255 size 14 color "#e2f4ff"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            viewport:
+                xpos 8 ypos 42 xsize 259 ysize 418
+                mousewheel True draggable True scrollbars "vertical"
+                vbox:
+                    spacing 5
+                    for eid in cur_pack["entries"]:
+                        if codex_filter_ok(eid, filt):
+                            $ is_open = codex_is_unlocked(eid)
+                            button:
+                                xsize 245 yminimum 56
+                                background Solid("#16374b" if sel_entry == eid else "#0d2331")
+                                hover_background Solid("#1b4b63")
+                                action SetScreenVariable("sel_entry", eid)
+                                hbox:
+                                    spacing 9
+                                    add Transform("hud/codex/" + codex_entry_icon(eid) + ".png", size=(28, 28)):
+                                        yalign 0.5
+                                        alpha (1.0 if is_open else 0.35)
+                                    vbox:
+                                        spacing 2
+                                        text (codex_entry_title(eid) if is_open else "???"):
+                                            xmaximum 195 size 14
+                                            color ("#e6f4fc" if is_open else "#667f8c")
+                                            font "fonts/Rajdhani-SemiBold.ttf"
+                                        text (codex_entry_short(eid) if is_open else "Entrée verrouillée"):
+                                            xmaximum 195 size 11
+                                            color "#7596a6" font "fonts/Barlow-Light.ttf"
+                    if not any(codex_filter_ok(eid, filt) for eid in cur_pack["entries"]):
+                        text "Aucune entrée pour ce filtre.":
+                            xmaximum 225 size 13 color "#73909e"
+                            font "fonts/Barlow-Light.ttf"
+
+        # Article sélectionné. Les entrées verrouillées ne divulguent rien.
+        $ unlocked = codex_is_unlocked(sel_entry)
+        $ selected_entry_pack = CODEX_PACKS[codex_pack_index_of(sel_entry)]
+        frame:
+            xpos 535 ypos 68 xsize 389 ysize 476 padding (0, 0)
+            background Fixed(Solid("#081824ef"), Solid(selected_entry_pack["color"], ysize=2))
+            text (codex_entry_title(sel_entry) if unlocked else "???"):
+                xpos 14 ypos 12 xmaximum 358 size 21
+                color ("#eaf4ff" if unlocked else "#62798a")
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text selected_entry_pack["title"]:
+                xpos 14 ypos 45 xmaximum 350 size 13
+                color selected_entry_pack["color"]
+                font "fonts/Rajdhani-SemiBold.ttf"
+            if unlocked:
+                add Transform("hud/codex/" + selected_entry_pack["banner"] + ".png",
+                              fit="cover", xysize=(359, 124)) xpos 14 ypos 74
+                viewport:
+                    xpos 14 ypos 209 xsize 361 ysize 185
+                    mousewheel True draggable True scrollbars "vertical"
+                    text codex_entry_text(sel_entry):
+                        xmaximum 347 size 14 color "#c7dae6"
+                        font "fonts/Barlow-Light.ttf" line_leading 3
+                if codex_entry_assoc(sel_entry):
+                    text "INFORMATIONS ASSOCIÉES":
+                        xpos 14 ypos 402 size 12 color "#8ba8b7"
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                    hbox:
+                        xpos 14 ypos 423 spacing 7
+                        for assoc_id in codex_entry_assoc(sel_entry)[:2]:
+                            textbutton (codex_entry_title(assoc_id) if codex_is_unlocked(assoc_id) else "???"):
+                                xmaximum 165 ysize 35 padding (5, 5)
+                                sensitive codex_is_unlocked(assoc_id)
+                                background Solid("#102f42")
+                                hover_background Solid("#1e506b")
+                                text_size 12 text_color "#8edfff"
+                                text_font "fonts/Rajdhani-SemiBold.ttf"
+                                action [SetScreenVariable("sel_pack", codex_pack_index_of(assoc_id)),
+                                        SetScreenVariable("sel_entry", assoc_id)]
+            else:
+                add "hud/codex/badge_lock.png" xpos 169 ypos 157 xysize (52, 52)
+                text "Entrée non découverte.":
+                    xpos 80 ypos 231 size 15 color "#738a9b"
+                    font "fonts/Barlow-Light.ttf"
+
+    # Le pouce appartient à la tablette physique, au-dessus du Codex.
+    add "images/ui/tablette/tablette_pouce.png" fit "contain" xysize (1920, 1080)
+
