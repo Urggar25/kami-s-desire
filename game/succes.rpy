@@ -22,6 +22,33 @@ init -1 python:
         "succes003": "Un hasard bien cadré",
     }
 
+    # Classement explicite : les succès sans chapitre connu restent accessibles
+    # dans "AUTRES" et ne faussent pas la progression des neuf chapitres.
+    SUCCES_CHAPTERS = {
+        "succes001": 1,  # Trois morts par asphyxie, jour 1.
+    }
+    SUCCES_CHAPTER_TITLES = {
+        1: "Le poids d'une voix",
+        2: "Les lignes qui nous séparent",
+        3: "La confiance ne suffit pas",
+        4: "Quelque chose ne tourne pas rond",
+        5: "Les apparences sont trompeuses",
+        6: "Derrière les murs",
+        7: "Un semblant de normalité",
+        8: "Le visage du mensonge",
+        9: "Le dernier départ",
+    }
+
+    def get_succes_chapter_ids(chapter):
+        return [sid for sid in get_succes_ids() if SUCCES_CHAPTERS.get(sid) == chapter]
+
+    def get_succes_other_ids():
+        return [sid for sid in get_succes_ids() if SUCCES_CHAPTERS.get(sid) not in SUCCES_CHAPTER_TITLES]
+
+    def get_succes_chapter_progress(chapter):
+        ids = get_succes_chapter_ids(chapter)
+        return sum(1 for sid in ids if is_succes_unlocked(sid)), len(ids)
+
     def succes_ensure_state():
         if not hasattr(persistent, "succes_unlocked") or persistent.succes_unlocked is None:
             persistent.succes_unlocked = {}
@@ -298,23 +325,30 @@ style succes_arrow_button_text:
     yalign 0.5
     textalign 0.5
 
-# Galerie des succès intégrée à l'écran incliné de la tablette.
+# Galerie de la tablette : vue d'ensemble par chapitre et détails des succès.
 screen tablet_succes():
     modal True
     zorder 220
+    default view = "chapters"
+    default selected_chapter = 1
     default page = 0
-    $ ids = get_succes_ids()
-    $ count = sum(1 for sid in ids if is_succes_unlocked(sid))
-    $ pages = max(1, (len(ids) + 3) // 4)
+
+    $ all_ids = get_succes_ids()
+    $ overall_count = sum(1 for sid in all_ids if is_succes_unlocked(sid))
+    $ chapter_ids = get_succes_other_ids() if selected_chapter == 0 else get_succes_chapter_ids(selected_chapter)
+    $ chapter_done = sum(1 for sid in chapter_ids if is_succes_unlocked(sid))
+    $ chapter_total = len(chapter_ids)
+    $ pages = max(1, (chapter_total + 3) // 4)
     $ page_index = min(page, pages - 1)
-    $ visible_ids = ids[page_index * 4:(page_index + 1) * 4]
+    $ visible_ids = chapter_ids[page_index * 4:(page_index + 1) * 4]
     $ back_to_tablet = [Hide("tablet_succes"), Show("tablet_home"), With(Dissolve(0.25))]
 
-    key "K_ESCAPE" action back_to_tablet
+    key "K_ESCAPE" action If(view == "chapters", back_to_tablet, [SetScreenVariable("view", "chapters"), SetScreenVariable("page", 0)])
     key "K_t" action back_to_tablet
 
     add Solid("#01060bcc")
     add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
+
     fixed at messenger_panel_in, tablet_profile_plane:
         xysize (940, 560)
         clipping True
@@ -325,7 +359,7 @@ screen tablet_succes():
         text "KAMI.CORE // SUCCÈS":
             xpos 18 ypos 18 size 14 color "#5cd3ff"
             font "fonts/Barlow-Light.ttf" kerning 2.2
-        text "{:02d} / {:02d} DÉBLOQUÉS".format(count, len(ids)):
+        text "{:02d} / {:02d} DÉBLOQUÉS".format(overall_count, len(all_ids)):
             xpos 642 ypos 20 size 13 color "#769aab"
             font "fonts/Rajdhani-SemiBold.ttf"
 
@@ -336,49 +370,114 @@ screen tablet_succes():
             text_font "fonts/Rajdhani-SemiBold.ttf"
             text_size 14 text_color "#9bc7d8" text_hover_color "#ffffff"
             text_xalign 0.5 text_yalign 0.5
-            action back_to_tablet
+            action If(view == "chapters", back_to_tablet, [SetScreenVariable("view", "chapters"), SetScreenVariable("page", 0)])
 
-        text "GALERIE DES SUCCÈS":
-            xpos 24 ypos 70 size 22 color "#eaf4ff"
-            font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-        text "DÉCOUVERTES // {:d}%".format(int(100.0 * count / len(ids)) if ids else 0):
-            xpos 731 ypos 77 size 13 color "#8babba"
-            font "fonts/Rajdhani-SemiBold.ttf"
-        add Solid("#294c5e") xpos 22 ypos 109 xsize 895 ysize 1
+        if view == "chapters":
+            text "PROGRESSION PAR CHAPITRE":
+                xpos 24 ypos 72 size 22 color "#eaf4ff"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1.5
+            text "SÉLECTIONNEZ UN CHAPITRE":
+                xpos 692 ypos 80 size 13 color "#8babba"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
-        grid 2 2:
-            xpos 29 ypos 121 xspacing 18 yspacing 12
-            for sid in visible_ids:
-                use tablet_succes_card(sid)
-            for missing in range(4 - len(visible_ids)):
-                null width 430 height 179
+            for chapter in range(1, 10):
+                $ done, total = get_succes_chapter_progress(chapter)
+                $ col = (chapter - 1) % 3
+                $ row = (chapter - 1) // 3
+                $ card_x = 22 + col * 302
+                $ card_y = 120 + row * 128
+                $ ratio = float(done) / total if total else 0.0
+                button:
+                    xpos card_x ypos card_y xsize 290 ysize 116
+                    background Fixed(Solid("#0a1b28ee"), Solid("#2b5063", ysize=1, yalign=1.0), Solid("#294456", xsize=2))
+                    hover_background Fixed(Solid("#112f42f5"), Solid("#5cd3ff", ysize=2, yalign=1.0), Solid("#5cd3ff", xsize=2))
+                    action [SetScreenVariable("selected_chapter", chapter), SetScreenVariable("page", 0), SetScreenVariable("view", "details")]
+                    fixed:
+                        xysize (290, 116)
+                        text "CHAPITRE {:02d}".format(chapter):
+                            xpos 13 ypos 10 size 16 color "#5cd3ff"
+                            font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+                        text SUCCES_CHAPTER_TITLES[chapter]:
+                            xpos 13 ypos 35 xmaximum 267 size 17 color "#eaf4ff"
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                        text ("{:d} / {:d}".format(done, total) if total else "À VENIR"):
+                            xpos 215 ypos 11 xsize 62 text_align 1.0 size 14
+                            color ("#8edcff" if total and done == total else "#90a7b4")
+                            font "fonts/Rajdhani-SemiBold.ttf"
+                        add Solid("#224255") xpos 13 ypos 91 xsize 264 ysize 7
+                        if total and done:
+                            add Solid("#5cd3ff") xpos 13 ypos 91 xsize int(264 * ratio) ysize 7
+                        text ("TERMINÉ" if total and done == total else ("{:d}%".format(int(ratio * 100)) if total else "AUCUN SUCCÈS ASSOCIÉ")):
+                            xpos 13 ypos 100 size 11 color "#809faf"
+                            font "fonts/Rajdhani-SemiBold.ttf"
 
-        add Solid("#294c5e") xpos 22 ypos 507 xsize 895 ysize 1
-        text "DÉBLOQUEZ DES SUCCÈS EN PROGRESSANT DANS LE CONCLAVE.":
-            xpos 26 ypos 526 size 12 color "#7392a4"
-            font "fonts/Rajdhani-SemiBold.ttf"
-        if pages > 1:
-            hbox:
-                xpos 690 ypos 515 spacing 12
-                textbutton "‹":
-                    xysize (34, 32)
-                    sensitive page_index > 0
-                    background Solid("#102939")
-                    hover_background Solid("#1c4d65")
-                    text_size 22 text_color "#9edfff"
-                    text_xalign 0.5 text_yalign 0.5
-                    action SetScreenVariable("page", page_index - 1)
-                text "{:d} / {:d}".format(page_index + 1, pages):
-                    yalign 0.5 size 14 color "#aacddd"
+            text "Les succès non classés sont conservés dans AUTRES.":
+                xpos 24 ypos 519 size 12 color "#7392a4"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            textbutton "AUTRES ({:d})".format(len(get_succes_other_ids())):
+                xpos 742 ypos 512 xsize 173 ysize 34
+                background Solid("#102939")
+                hover_background Solid("#1c4d65")
+                text_size 16 text_color "#9edfff"
+                text_font "fonts/Rajdhani-SemiBold.ttf"
+                text_xalign 0.5 text_yalign 0.5
+                action [SetScreenVariable("selected_chapter", 0), SetScreenVariable("page", 0), SetScreenVariable("view", "details")]
+
+        else:
+            text ("AUTRES SUCCÈS" if selected_chapter == 0 else "CHAPITRE {:02d} // {}".format(selected_chapter, SUCCES_CHAPTER_TITLES[selected_chapter])):
+                xpos 24 ypos 70 xmaximum 740 size 22 color "#eaf4ff"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1.0
+            text "{:d} / {:d} DÉBLOQUÉS".format(chapter_done, chapter_total):
+                xpos 24 ypos 106 size 16 color "#9edfff"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            add Solid("#244154") xpos 200 ypos 112 xsize 710 ysize 7
+            if chapter_total and chapter_done:
+                add Solid("#5cd3ff") xpos 200 ypos 112 xsize int(710.0 * chapter_done / chapter_total) ysize 7
+            add Solid("#294c5e") xpos 22 ypos 133 xsize 895 ysize 1
+
+            if chapter_total:
+                grid 2 2:
+                    xpos 29 ypos 148 xspacing 18 yspacing 13
+                    for sid in visible_ids:
+                        use tablet_succes_card(sid)
+                    for missing in range(4 - len(visible_ids)):
+                        null width 430 height 164
+            else:
+                text "AUCUN SUCCÈS ASSOCIÉ À CE CHAPITRE POUR LE MOMENT.":
+                    xalign 0.5 ypos 300 size 19 color "#7e9baa"
                     font "fonts/Rajdhani-SemiBold.ttf"
-                textbutton "›":
-                    xysize (34, 32)
-                    sensitive page_index + 1 < pages
-                    background Solid("#102939")
-                    hover_background Solid("#1c4d65")
-                    text_size 22 text_color "#9edfff"
-                    text_xalign 0.5 text_yalign 0.5
-                    action SetScreenVariable("page", page_index + 1)
+
+            add Solid("#294c5e") xpos 22 ypos 507 xsize 895 ysize 1
+            textbutton "‹ CHAPITRES":
+                xpos 26 ypos 513 xsize 150 ysize 35
+                background Solid("#102939")
+                hover_background Solid("#1c4d65")
+                text_size 16 text_color "#9edfff"
+                text_font "fonts/Rajdhani-SemiBold.ttf"
+                text_xalign 0.5 text_yalign 0.5
+                action [SetScreenVariable("view", "chapters"), SetScreenVariable("page", 0)]
+            if pages > 1:
+                hbox:
+                    xpos 710 ypos 514 spacing 12
+                    textbutton "‹":
+                        xysize (34, 32)
+                        sensitive page_index > 0
+                        background Solid("#102939")
+                        hover_background Solid("#1c4d65")
+                        text_size 22 text_color "#9edfff"
+                        text_xalign 0.5 text_yalign 0.5
+                        action SetScreenVariable("page", page_index - 1)
+                    text "{:d} / {:d}".format(page_index + 1, pages):
+                        yalign 0.5 size 14 color "#aacddd"
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                    textbutton "›":
+                        xysize (34, 32)
+                        sensitive page_index + 1 < pages
+                        background Solid("#102939")
+                        hover_background Solid("#1c4d65")
+                        text_size 22 text_color "#9edfff"
+                        text_xalign 0.5 text_yalign 0.5
+                        action SetScreenVariable("page", page_index + 1)
 
     add "images/ui/tablette/tablette_pouce.png" fit "contain" xysize (1920, 1080)
 
@@ -387,21 +486,21 @@ screen tablet_succes_card(sid):
     $ unlocked = is_succes_unlocked(sid)
     $ title = get_succes_title(sid) if unlocked else None
     frame:
-        xsize 430 ysize 179 padding (0, 0)
+        xsize 430 ysize 164 padding (0, 0)
         background Fixed(Solid("#0a1b28eb"), Solid("#5cd3ff88" if unlocked else "#294456", xsize=2), Solid("#214257", ysize=1, yalign=1.0))
         fixed:
-            xysize (430, 179)
+            xysize (430, 164)
             if unlocked:
-                add Transform(get_succes_image(sid), fit="contain", xysize=(157, 157)) xpos 10 ypos 11
+                add Transform(get_succes_image(sid), fit="contain", xysize=(140, 140)) xpos 10 ypos 11
             else:
-                add Solid("#142633") xpos 10 ypos 11 xysize (157, 157)
-                add Transform("hud/codex/badge_lock.png", fit="contain", xysize=(54, 54)) xpos 61 ypos 60
+                add Solid("#142633") xpos 10 ypos 11 xysize (140, 140)
+                add Transform("hud/codex/badge_lock.png", fit="contain", xysize=(54, 54)) xpos 53 ypos 54
             text (title or ("SUCCÈS DÉBLOQUÉ" if unlocked else "SUCCÈS VERROUILLÉ")):
-                xpos 180 ypos 38 xmaximum 236 size 21
+                xpos 164 ypos 31 xmaximum 236 size 21
                 color ("#eaf4ff" if unlocked else "#7792a1")
                 font "fonts/Rajdhani-SemiBold.ttf"
-            add Solid("#254659") xpos 180 ypos 102 xsize 232 ysize 1
+            add Solid("#254659") xpos 164 ypos 95 xsize 232 ysize 1
             text ("OBTENU" if unlocked else "NON DÉCOUVERT"):
-                xpos 180 ypos 116 size 15
+                xpos 164 ypos 109 size 15
                 color ("#5cd3ff" if unlocked else "#657e8f")
                 font "fonts/Rajdhani-SemiBold.ttf" kerning 1
