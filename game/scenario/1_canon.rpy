@@ -30,6 +30,7 @@ label _1_CANON:
 # =============================================================================
 
     $ day_id = 1
+    $ day1_presentations_seen = []
     $ current_day = 1
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
@@ -514,6 +515,9 @@ label _1_PNC_CONCLAVE_FINISH:
 
 
 label _1_PNC_CONCLAVE_LYSA:
+    $ day1_presentations_seen.append("lysa") if "lysa" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene bg_conclave at adaptive_fullscreen with fade
 
@@ -531,6 +535,9 @@ label _1_PNC_CONCLAVE_LYSA:
 
 
 label _1_PNC_CONCLAVE_RYN:
+    $ day1_presentations_seen.append("ryn") if "ryn" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene bg_conclave at adaptive_fullscreen with fade
     
@@ -558,6 +565,9 @@ label _1_PNC_CONCLAVE_RYN:
 
 
 label _1_PNC_CONCLAVE_MARA:
+    $ day1_presentations_seen.append("mara") if "mara" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene bg_conclave at adaptive_fullscreen with fade
 
@@ -578,6 +588,9 @@ label _1_PNC_CONCLAVE_MARA:
 
 
 label _1_PNC_CONCLAVE_ELIAS:
+    $ day1_presentations_seen.append("elias") if "elias" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene bg_conclave at adaptive_fullscreen with fade
     
@@ -599,6 +612,9 @@ label _1_PNC_CONCLAVE_ELIAS:
 
 
 label _1_PNC_CONCLAVE_KAEL:
+    $ day1_presentations_seen.append("kael") if "kael" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave2 at adaptive_fullscreen with fade
     
@@ -618,6 +634,9 @@ label _1_PNC_CONCLAVE_KAEL:
 
 
 label _1_PNC_CONCLAVE_TOMAS:
+    $ day1_presentations_seen.append("tomas") if "tomas" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave2 at adaptive_fullscreen with fade
     
@@ -644,6 +663,9 @@ label _1_PNC_CONCLAVE_TOMAS:
 
 
 label _1_PNC_CONCLAVE_IRIS:
+    $ day1_presentations_seen.append("iris") if "iris" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave2 at adaptive_fullscreen with fade
 
@@ -662,6 +684,9 @@ label _1_PNC_CONCLAVE_IRIS:
 
 
 label _1_PNC_CONCLAVE_ELEN:
+    $ day1_presentations_seen.append("elen") if "elen" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave3 at adaptive_fullscreen with fade
     
@@ -681,6 +706,9 @@ label _1_PNC_CONCLAVE_ELEN:
 
 
 label _1_PNC_CONCLAVE_NYRA:
+    $ day1_presentations_seen.append("nyra") if "nyra" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave3 at adaptive_fullscreen with fade
     
@@ -698,6 +726,9 @@ label _1_PNC_CONCLAVE_NYRA:
 
 
 label _1_PNC_CONCLAVE_JULIAN:
+    $ day1_presentations_seen.append("julian") if "julian" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave3 at adaptive_fullscreen with fade
 
@@ -716,6 +747,9 @@ label _1_PNC_CONCLAVE_JULIAN:
 
 
 label _1_PNC_CONCLAVE_SAEL:
+    $ day1_presentations_seen.append("sael") if "sael" not in day1_presentations_seen else None
+    if len(day1_presentations_seen) == 11:
+        $ unlock_succes("succes005")
     hide screen day1_conclave_pnc
     scene conclave3 at adaptive_fullscreen with fade
 
@@ -1129,6 +1163,8 @@ label CHECK_ALL_SALLES_VISITEES:
     return
 
 label KAMI_MESSAGE_APRES_VISITE:
+    $ unlock_succes("succes006")
+    $ unlock_codex_page("conclave_orbital", with_notification=False)
 
     $ _first_conclave_origin_room = room_key_from_pnc_room(getattr(store, "pnc_room", None))
 
@@ -1435,6 +1471,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     kami "Mais ça dépendra de vos douces propositions."
 
     $ unlock_codex_page("reglement_conclave", with_notification=False)
+    $ unlock_codex_page("commandements", with_notification=False)
     show screen day1_codex_unlock_panel("Règlement du Conclave")
     pause 2.0
     hide screen day1_codex_unlock_panel
