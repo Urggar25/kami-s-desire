@@ -507,5 +507,6 @@ label _27_0_1_1_0_0_REVEIL:
     "Nous retournons vers l'infirmerie. Personne ne semble vouloir rentrer seul dans les dortoirs et, pour une fois, je préfère rester avec eux."
 
     stop music fadeout 1.2
+    call show_chapter_title("Fin du chapitre 8", "Chapitre 8 — Le visage du mensonge")
     call end_day("28", sleeping=True) from _call_j27_stay_end_day_28
     jump _28_0_1_1_0_0_REVEIL
