@@ -1,4 +1,5 @@
 label _25_0_1_1_0_0_REVEIL:
+    call show_chapter_title("Début du chapitre 8", "Chapitre 8 — Le visage du mensonge")
 
     $ current_day = 25
     $ day_id = 25
