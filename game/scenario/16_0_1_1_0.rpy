@@ -531,5 +531,6 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     pause 1.0
 
+    call show_chapter_title("Fin du chapitre 5", "Chapitre 5 — Les apparences sont trompeuses")
     call end_day("17") from _call_end_day_17
     jump _17_0_1_1_0_ANNONCE_KAMI
