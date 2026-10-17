@@ -70,7 +70,7 @@ init -1 python:
     CHAPTER1_ARGUMENT_IDS = frozenset((
         "approvisionnement", "rationnement", "orbite",
         "derogations_complexes", "valeur_travail",
-        "monde_avant", "enonce_precis",
+        "monde_avant", "enonce_precis", "echanges_discrets",
     ))
 
     def chapter1_check_complete_dossier():
@@ -96,7 +96,8 @@ init -1 python:
         return list(SUCCES_IDS)
 
     def get_succes_image(succes_id):
-        return SUCCES_IMAGES.get(succes_id, "gui/succes/%s.png" % succes_id)
+        path = SUCCES_IMAGES.get(succes_id, "gui/succes/%s.png" % succes_id)
+        return path if renpy.loadable(path) else "gui/succes/vide.png"
 
     def get_succes_title(succes_id):
         return kd_tr(SUCCES_TITLES.get(succes_id))
