@@ -749,6 +749,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     think "Putain mais quel enfer !"
 
     $ hideGroup()
+    call show_chapter_title("Fin du chapitre 3", "Chapitre 3 — La confiance ne suffit pas")
     call end_day("10") from _call_end_day_13
     jump _10_0_1_1_REVEIL_CHAMBRE
 
@@ -809,6 +810,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     "Je ne sais même plus comment a fini cette journée."
     "La seule chose dont je me souviens, c’est mon réveil du lendemain."
 
+    call show_chapter_title("Fin du chapitre 3", "Chapitre 3 — La confiance ne suffit pas")
     call end_day("10") from _call_end_day_14
     jump _10_0_1_1_REVEIL_CHAMBRE
 
