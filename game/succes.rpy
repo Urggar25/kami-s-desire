@@ -8,6 +8,10 @@ init -1 python:
         "succes002",
         "succes003",
         "succes004",
+        "succes005",
+        "succes006",
+        "succes007",
+        "succes008",
     ]
 
     SUCCES_IMAGES = {
@@ -15,17 +19,29 @@ init -1 python:
         "succes002": "gui/succes/succes002.png",
         "succes003": "gui/succes/succes003.png",
         "succes004": "gui/succes/succes004.png",
+        "succes005": "gui/succes/succes005.png",
+        "succes006": "gui/succes/succes006.png",
+        "succes007": "gui/succes/succes007.png",
+        "succes008": "gui/succes/succes008.png",
     }
 
     SUCCES_TITLES = {
         "succes002": "Encore humain",
         "succes003": "Un hasard bien cadré",
+        "succes005": "Les présentations sont faites !",
+        "succes006": "Tour du propriétaire",
+        "succes007": "Un dossier bien rempli",
+        "succes008": "Dans les temps !",
     }
 
     # Classement explicite : les succès sans chapitre connu restent accessibles
     # dans "AUTRES" et ne faussent pas la progression des neuf chapitres.
     SUCCES_CHAPTERS = {
         "succes001": 1,  # Trois morts par asphyxie, jour 1.
+        "succes005": 1,
+        "succes006": 1,
+        "succes007": 1,
+        "succes008": 1,
     }
     SUCCES_CHAPTER_TITLES = {
         1: "Le poids d'une voix",
@@ -48,6 +64,23 @@ init -1 python:
     def get_succes_chapter_progress(chapter):
         ids = get_succes_chapter_ids(chapter)
         return sum(1 for sid in ids if is_succes_unlocked(sid)), len(ids)
+
+    # Récompense la collecte de tous les huit arguments du premier vote.
+    # Appelé après chaque collecte (J2 et J3), sans imposer l'ordre des rencontres.
+    CHAPTER1_ARGUMENT_IDS = frozenset((
+        "approvisionnement", "rationnement", "orbite",
+        "derogations_complexes", "valeur_travail",
+        "monde_avant", "enonce_precis",
+    ))
+
+    def chapter1_check_complete_dossier():
+        # Les arguments du J2/J3 sont suivis dans la progression permanente,
+        # tandis que le succès est débloqué uniquement en cas de collection complète.
+        found = set(getattr(persistent, "unlocked_vote_argument_ids", None) or [])
+        found.update(getattr(persistent, "unlocked_dossier_args", None) or [])
+        found.update(getattr(store, "j2_vote_arguments", None) or [])
+        if CHAPTER1_ARGUMENT_IDS.issubset(found):
+            unlock_succes("succes007")
 
     def succes_ensure_state():
         if not hasattr(persistent, "succes_unlocked") or persistent.succes_unlocked is None:
