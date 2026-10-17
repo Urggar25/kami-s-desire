@@ -457,6 +457,9 @@ screen tablet_stats():
             font "fonts/Rajdhani-SemiBold.ttf" kerning 1.2
 
 
+    # Pouce au premier plan, au-dessus de toute l’interface de l’application.
+    add "images/ui/tablette/tablette_pouce.png" fit "contain" xysize (1920, 1080)
+
 screen tablet_stat_gauge(name):
     $ meta = STATS_META[name]
     $ lvl = get_stat(name)
