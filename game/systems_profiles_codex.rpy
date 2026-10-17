@@ -684,7 +684,7 @@ screen tablet_profiles():
     $ profile_render = profile_cosmetic_preview(selected_profile)
     $ total_free_times = len(FREE_TIME_SCENES.get(selected_profile, []))
     $ completed_free_times = free_time_character_count(selected_profile)
-    $ back_to_tablet = [Hide("tablet_profiles"), Show("tablet_home")]
+    $ back_to_tablet = [Hide("tablet_profiles"), Show("tablet_home"), With(Dissolve(0.25))]
 
     key "K_ESCAPE" action back_to_tablet
     key "K_t" action back_to_tablet
