@@ -1071,6 +1071,7 @@ label _12_0_1_1_APRES_EXPLOSION:
     scene black with fade
     stop music fadeout 3.0
 
+    call show_chapter_title("Fin du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond")
     call end_day("13", sleeping=True) from _call_end_day_12_0_1_1
 
     if j12011_wire_result == "security":
