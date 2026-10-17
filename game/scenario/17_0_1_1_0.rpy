@@ -1,4 +1,5 @@
 label _17_0_1_1_0_ANNONCE_KAMI:
+    call show_chapter_title("Début du chapitre 6", "Chapitre 6 — Derrière les murs")
 
     $ cafeteria_food_level = "low"
     $ current_period = "Matin"
