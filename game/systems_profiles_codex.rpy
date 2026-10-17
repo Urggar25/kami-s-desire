@@ -376,7 +376,7 @@ transform tablet_profile_plane:
     xpos 0.465
     ypos 0.451
     zoom 1.045
-    rotate 9.3
+    rotate 8.0
 
 style profile_selector_button is button:
     xsize 104
