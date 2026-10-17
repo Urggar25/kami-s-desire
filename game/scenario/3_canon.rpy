@@ -256,6 +256,7 @@ label day3_collect_vote_argument(arg_id):
     if _return:
         play sound sfx_drop
         "Argument ajouté au dossier du vote."
+        $ chapter1_check_complete_dossier()
     return
 
 
@@ -828,6 +829,9 @@ label _3_PAUSE_CHAMBRE:
     call trace_qte_run(mg_id="trace_day3_corr3", title="VIRAGE 3/3", path_type="arc", time_limit=4.2, wait_time=0.25, tolerance=54, max_errors=4, anchor_x=960, anchor_y=650, required=False, show_results=False) from _call_day3_corr3
     if _return != "FAIL":
         $ day3_corridor_success += 1
+
+    if day3_corridor_success == 3:
+        $ unlock_succes("succes008")
 
     python:
         # Plus on arrive vite, plus Tomas est épargné par Julian (bonus au vote).
