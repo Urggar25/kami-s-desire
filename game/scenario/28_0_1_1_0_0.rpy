@@ -8,6 +8,7 @@
 default j28_last_vote_announced = False
 
 label _28_0_1_1_0_0_REVEIL:
+    call show_chapter_title("Début du chapitre 9", "Chapitre 9 — Le dernier départ")
     $ current_day = 28
     $ day_id = 28
     $ current_period = "Matin"
