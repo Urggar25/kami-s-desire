@@ -3,35 +3,30 @@
 ################################################################################
 
 init -1 python:
-    SUCCES_IDS = [
-        "succes001",
-        "succes002",
-        "succes003",
-        "succes004",
-        "succes005",
-        "succes006",
-        "succes007",
-        "succes008",
-    ]
-
-    SUCCES_IMAGES = {
-        "succes001": "gui/succes/succes001.png",
-        "succes002": "gui/succes/succes002.png",
-        "succes003": "gui/succes/succes003.png",
-        "succes004": "gui/succes/succes004.png",
-        "succes005": "gui/succes/succes005.png",
-        "succes006": "gui/succes/succes006.png",
-        "succes007": "gui/succes/succes007.png",
-        "succes008": "gui/succes/succes008.png",
-    }
+    SUCCES_IDS = ["succes001", "succes005", "succes006", "succes007", "succes008"]
 
     SUCCES_TITLES = {
-        "succes002": "Encore humain",
-        "succes003": "Un hasard bien cadré",
+        "succes001": "Troisième essai",
         "succes005": "Les présentations sont faites !",
         "succes006": "Tour du propriétaire",
         "succes007": "Un dossier bien rempli",
         "succes008": "Dans les temps !",
+    }
+
+    SUCCES_BONUS_SCENES = {
+        "succes001": "bonus_succes001",
+        "succes005": "bonus_succes005",
+        "succes006": "bonus_succes006",
+        "succes007": "bonus_succes007",
+        "succes008": "bonus_succes008",
+    }
+
+    SUCCES_DESCRIPTIONS = {
+        "succes001": "Survivre à trois échecs du réveil.",
+        "succes005": "Échanger avec les onze représentants.",
+        "succes006": "Visiter toutes les installations du Conclave.",
+        "succes007": "Rassembler les huit arguments du premier vote.",
+        "succes008": "Réussir les trois virages sans échec.",
     }
 
     # Classement explicite : les succès sans chapitre connu restent accessibles
@@ -57,9 +52,6 @@ init -1 python:
 
     def get_succes_chapter_ids(chapter):
         return [sid for sid in get_succes_ids() if SUCCES_CHAPTERS.get(sid) == chapter]
-
-    def get_succes_other_ids():
-        return [sid for sid in get_succes_ids() if SUCCES_CHAPTERS.get(sid) not in SUCCES_CHAPTER_TITLES]
 
     def get_succes_chapter_progress(chapter):
         ids = get_succes_chapter_ids(chapter)
@@ -95,9 +87,8 @@ init -1 python:
     def get_succes_ids():
         return list(SUCCES_IDS)
 
-    def get_succes_image(succes_id):
-        path = SUCCES_IMAGES.get(succes_id, "gui/succes/%s.png" % succes_id)
-        return path if renpy.loadable(path) else "gui/succes/vide.png"
+    def get_succes_bonus_label(succes_id):
+        return SUCCES_BONUS_SCENES.get(succes_id)
 
     def get_succes_title(succes_id):
         return kd_tr(SUCCES_TITLES.get(succes_id))
@@ -108,6 +99,9 @@ init -1 python:
 
     def unlock_succes(succes_id):
         succes_ensure_state()
+
+        if succes_id not in SUCCES_IDS:
+            return False
 
         if not persistent.succes_unlocked.get(succes_id, False):
             persistent.succes_unlocked[succes_id] = True
@@ -181,116 +175,28 @@ screen succes_notification(succes_id):
                 font "fonts/Rajdhani-SemiBold.ttf"
 
 
+# Ancien menu plein écran : les succès se consultent maintenant dans la tablette.
 screen succes_menu():
     tag menu
-
-    default page = 0
-
-    $ succes_ids = get_succes_ids()
-    $ page_size = 2
-    $ page_count = max(1, (len(succes_ids) + page_size - 1) // page_size)
-    $ page = min(page, page_count - 1)
-    $ page_succes = succes_ids[page * page_size:(page + 1) * page_size]
-
-    add "gui/succes/succes.png" at adaptive_fullscreen
-    add Solid("#00000022")
-
     key "game_menu" action Return()
-
-    fixed:
-        xfill True
-        yfill True
-
-        text _("SUCCÈS"):
-            style "succes_menu_title"
-            xalign 0.5
-            ypos 82
-
-        add Solid("#5cd3ff66", xsize=270, ysize=2):
-            xalign 0.5
-            ypos 146
-
-        hbox:
-            xalign 0.5
-            yalign 0.53
-            spacing 76
-
-            for succes_id in page_succes:
-                use succes_tile(succes_id)
-
-            for empty_slot in range(page_size - len(page_succes)):
-                null width 430 height 430
-
-        hbox:
-            xalign 0.5
-            yalign 0.88
-            spacing 28
-
-            textbutton _("‹"):
-                style "succes_arrow_button"
-                sensitive page > 0
-                action SetScreenVariable("page", max(0, page - 1))
-
-            text _("[page + 1] / [page_count]"):
-                style "succes_menu_page_text"
-
-            textbutton _("›"):
-                style "succes_arrow_button"
-                sensitive page < page_count - 1
-                action SetScreenVariable("page", min(page_count - 1, page + 1))
-
-        textbutton _("RETOUR"):
-            style "succes_back_button"
-            xpos 92
-            ypos 70
-            action Return()
-
-        if page_count > 1:
-            textbutton _("SUIVANT"):
-                style "succes_back_button"
-                xalign 0.96
-                ypos 70
-                sensitive page < page_count - 1
-                action SetScreenVariable("page", min(page_count - 1, page + 1))
-        else:
-            textbutton _("SUIVANT"):
-                style "succes_back_button"
-                xalign 0.96
-                ypos 70
-                sensitive False
-                action Return()
-
-
-screen succes_tile(succes_id):
-    $ unlocked = is_succes_unlocked(succes_id)
-    $ succes_image = get_succes_image(succes_id)
-
-    frame:
-        style "succes_tile_frame"
-
-        fixed:
-            xysize (430, 430)
-
-            if unlocked:
-                add succes_image:
-                    xysize (430, 430)
-                    fit "contain"
-            else:
-                add im.MatrixColor(succes_image, im.matrix.saturation(0.0) * im.matrix.brightness(-0.95)):
-                    xysize (430, 430)
-                    fit "contain"
-                    alpha 0.10
-
-                add Solid("#272d33"):
-                    xysize (430, 430)
-                    alpha 0.98
-
-                add Solid("#11182099", xsize=430, ysize=3):
-                    yalign 0.0
-
-                add Solid("#5cd3ff22", xsize=430, ysize=2):
-                    yalign 1.0
-
+    add Solid("#05121c")
+    text "SUCCÈS // SCÈNES BONUS":
+        xalign 0.5 ypos 80 size 46 color "#dff7ff"
+        font "fonts/Rajdhani-SemiBold.ttf"
+    vbox:
+        xalign 0.5 yalign 0.5 spacing 18
+        for sid in get_succes_ids():
+            $ unlocked = is_succes_unlocked(sid)
+            hbox:
+                spacing 28
+                text (get_succes_title(sid) if unlocked else "SUCCÈS VERROUILLÉ"):
+                    xsize 510 size 26 color ("#dff7ff" if unlocked else "#718b9a")
+                textbutton ("LIRE LA SCÈNE" if unlocked else "À DÉBLOQUER"):
+                    sensitive unlocked and bool(get_succes_bonus_label(sid))
+                    action Function(renpy.call_in_new_context, get_succes_bonus_label(sid))
+    textbutton "RETOUR":
+        xalign 0.5 ypos 965
+        action Return()
 
 style succes_menu_title is gui_label_text
 style succes_menu_page_text is gui_text
@@ -369,7 +275,7 @@ screen tablet_succes():
 
     $ all_ids = get_succes_ids()
     $ overall_count = sum(1 for sid in all_ids if is_succes_unlocked(sid))
-    $ chapter_ids = get_succes_other_ids() if selected_chapter == 0 else get_succes_chapter_ids(selected_chapter)
+    $ chapter_ids = get_succes_chapter_ids(selected_chapter)
     $ chapter_done = sum(1 for sid in chapter_ids if is_succes_unlocked(sid))
     $ chapter_total = len(chapter_ids)
     $ pages = max(1, (chapter_total + 3) // 4)
@@ -445,20 +351,12 @@ screen tablet_succes():
                             xpos 13 ypos 100 size 11 color "#809faf"
                             font "fonts/Rajdhani-SemiBold.ttf"
 
-            text "Les succès non classés sont conservés dans AUTRES.":
-                xpos 24 ypos 519 size 12 color "#7392a4"
+            text "LES SCÈNES BONUS SE DÉBLOQUENT EN JOUANT.":
+                xpos 24 ypos 521 size 13 color "#7392a4"
                 font "fonts/Rajdhani-SemiBold.ttf"
-            textbutton "AUTRES ({:d})".format(len(get_succes_other_ids())):
-                xpos 742 ypos 512 xsize 173 ysize 34
-                background Solid("#102939")
-                hover_background Solid("#1c4d65")
-                text_size 16 text_color "#9edfff"
-                text_font "fonts/Rajdhani-SemiBold.ttf"
-                text_xalign 0.5 text_yalign 0.5
-                action [SetScreenVariable("selected_chapter", 0), SetScreenVariable("page", 0), SetScreenVariable("view", "details")]
 
         else:
-            text ("AUTRES SUCCÈS" if selected_chapter == 0 else "CHAPITRE {:02d} // {}".format(selected_chapter, SUCCES_CHAPTER_TITLES[selected_chapter])):
+            text "CHAPITRE {:02d} // {}".format(selected_chapter, SUCCES_CHAPTER_TITLES[selected_chapter]):
                 xpos 24 ypos 70 xmaximum 740 size 22 color "#eaf4ff"
                 font "fonts/Rajdhani-SemiBold.ttf" kerning 1.0
             text "{:d} / {:d} DÉBLOQUÉS".format(chapter_done, chapter_total):
@@ -518,23 +416,32 @@ screen tablet_succes():
 
 screen tablet_succes_card(sid):
     $ unlocked = is_succes_unlocked(sid)
-    $ title = get_succes_title(sid) if unlocked else None
+    $ title = get_succes_title(sid) if unlocked else "SUCCÈS VERROUILLÉ"
+    $ bonus_label = get_succes_bonus_label(sid)
     frame:
         xsize 430 ysize 164 padding (0, 0)
         background Fixed(Solid("#0a1b28eb"), Solid("#5cd3ff88" if unlocked else "#294456", xsize=2), Solid("#214257", ysize=1, yalign=1.0))
         fixed:
             xysize (430, 164)
-            if unlocked:
-                add Transform(get_succes_image(sid), fit="contain", xysize=(140, 140)) xpos 10 ypos 11
-            else:
-                add Solid("#142633") xpos 10 ypos 11 xysize (140, 140)
-                add Transform("hud/codex/badge_lock.png", fit="contain", xysize=(54, 54)) xpos 53 ypos 54
-            text (title or ("SUCCÈS DÉBLOQUÉ" if unlocked else "SUCCÈS VERROUILLÉ")):
-                xpos 164 ypos 31 xmaximum 236 size 21
+            text ("DÉBLOQUÉ" if unlocked else "VERROUILLÉ"):
+                xpos 16 ypos 13 size 13 color ("#5cd3ff" if unlocked else "#718b9a")
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text title:
+                xpos 16 ypos 36 xmaximum 398 size 22
                 color ("#eaf4ff" if unlocked else "#7792a1")
                 font "fonts/Rajdhani-SemiBold.ttf"
-            add Solid("#254659") xpos 164 ypos 95 xsize 232 ysize 1
-            text ("OBTENU" if unlocked else "NON DÉCOUVERT"):
-                xpos 164 ypos 109 size 15
-                color ("#5cd3ff" if unlocked else "#657e8f")
-                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text (SUCCES_DESCRIPTIONS.get(sid, "") if unlocked else "Continuez à explorer le Conclave pour découvrir ce succès."):
+                xpos 16 ypos 76 xmaximum 398 size 14 color "#8eacbd"
+                font "fonts/Barlow-Light.ttf"
+            textbutton ("LIRE LA SCÈNE BONUS  ›" if unlocked else "SCÈNE BONUS VERROUILLÉE"):
+                xpos 16 ypos 121 xsize 398 ysize 33
+                sensitive unlocked and bool(bonus_label)
+                background Solid("#123548")
+                hover_background Solid("#21617c")
+                insensitive_background Solid("#14232c")
+                text_font "fonts/Rajdhani-SemiBold.ttf"
+                text_size 16
+                text_color "#c5f2ff"
+                text_insensitive_color "#677f8b"
+                text_xalign 0.5 text_yalign 0.5
+                action [Hide("tablet_succes"), Function(renpy.call_in_new_context, bonus_label), Show("tablet_succes")]
