@@ -1,4 +1,5 @@
 label _4_1_REVEIL_CHAMBRE:
+    call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent")
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
