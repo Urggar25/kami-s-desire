@@ -309,164 +309,169 @@ transform dossier_tint(c):
 # ÉCRAN PRINCIPAL
 # =============================================================================
 screen vote_dossier():
+    # Interface intégrée à la vitre inclinée de la tablette, comme tablet_profiles.
     modal True
-    zorder 205
+    zorder 220
 
-    key "K_ESCAPE" action [Hide("vote_dossier"), Show("tablet_home")]
-    key "K_t" action [Hide("vote_dossier"), Show("tablet_home")]
-
+    default sel_chapter = dossier_default_chapter()
+    default sel_prop = dossier_prop_first_of_chapter(dossier_default_chapter())
+    $ back_to_tablet = [Hide("vote_dossier"), Show("tablet_home"), With(Dissolve(0.25))]
     $ restore_unlocked_arguments()
     if "day2_sync_argument_titles" in globals():
         $ day2_sync_argument_titles()
 
-    default sel_chapter = dossier_default_chapter()
-    default sel_prop = dossier_prop_first_of_chapter(dossier_default_chapter())
+    key "K_ESCAPE" action back_to_tablet
+    key "K_t" action back_to_tablet
 
-    add Solid("#05090F")
-    add Solid("#070D15") ypos 108 ysize 972
+    # Même fond, positionnement, rotation et animation que le menu Profil.
+    add Solid("#01060bcc")
+    add "images/ui/tablette/tablette_3.png" fit "contain" xysize (1920, 1080)
 
-    # ---------------- BARRE SUPÉRIEURE ----------------
-    button:
-        xpos 40 ypos 44 xysize (48, 48)
-        background Frame(Solid("#0C1826"), 0, 0)
-        hover_background Frame(Solid("#5CD3FF22"), 0, 0)
-        action [Hide("vote_dossier"), Show("tablet_home")]
-        text "←" xalign 0.5 yalign 0.5 size 28 color "#7FB6D8"
-    text "DOSSIER DE VOTE":
-        xpos 108 ypos 48 size 34 color "#DCEBFF"
-        font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+    fixed at messenger_panel_in, tablet_profile_plane:
+        xysize (940, 560)
+        clipping True
+        add Solid("#020912f5")
+        add Solid("#0b223144", ysize=56)
+        add Solid("#5cd3ff99", ysize=2) ypos 55
 
-    # Onglets centraux
-    hbox:
-        xpos 1050 ypos 42 spacing 8
-        use dossier_tab("hud/codex/ic_doc.png", "DOSSIER", "#5CD3FF", True, NullAction())
-        use dossier_tab("hud/tablet/card_stats.png", "STATISTIQUES", "#8FB4CC", False, [Hide("vote_dossier"), Show("tablet_stats")])
-        use dossier_tab("hud/tablet/card_codex.png", "CODEX", "#8FB4CC", False, [Hide("vote_dossier"), ShowMenu("codex_menu")])
+        text "KAMI.CORE // DOSSIER DE VOTE":
+            font "fonts/Barlow-Light.ttf"
+            size 14 color "#5cd3ff" kerning 2.2
+            xpos 18 ypos 18
 
-    button:
-        xpos 1832 ypos 44 xysize (48, 48)
-        background Frame(Solid("#0C1826"), 0, 0)
-        hover_background Frame(Solid("#5CD3FF22"), 0, 0)
-        action [Hide("vote_dossier"), Show("tablet_home")]
-        text "✕" xalign 0.5 yalign 0.5 size 24 color "#8FB4CC"
+        text "VOTES // {:02d}".format(len(dossier_visible_chapters())):
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 14 color "#769aab"
+            xpos 736 ypos 18
 
-    add Solid("#12283A") xpos 0 ypos 106 xsize 1920 ysize 2
+        textbutton "RETOUR":
+            xpos 824 ypos 9 xsize 100 ysize 36
+            padding (8, 4)
+            background Fixed(Solid("#07131de8"), Solid("#5cd3ff", ysize=2, yalign=1.0))
+            hover_background Fixed(Solid("#123249f5"), Solid("#86e2ff", ysize=3, yalign=1.0))
+            text_font "fonts/Rajdhani-SemiBold.ttf"
+            text_size 14 text_color "#9bc7d8" text_hover_color "#ffffff"
+            text_xalign 0.5 text_yalign 0.5
+            action back_to_tablet
 
-    $ chap = dossier_chapter(sel_chapter)
+        # Frise des votes réellement débloqués, dans l'ordre chronologique.
+        frame:
+            xpos 14 ypos 69 xsize 276 ysize 471 padding (0, 0)
+            background Fixed(Solid("#081824ef"), Solid("#5cd3ff66", xsize=2))
+            text "CHRONOLOGIE DES VOTES":
+                xpos 14 ypos 11 size 16 color "#5cd3ff"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            add Solid("#294c5e") xpos 14 ypos 40 xsize 248 ysize 1
 
-    # ===============================================================
-    # COLONNE GAUCHE
-    # ===============================================================
-    # --- Chapitres débloqués (un vote par chapitre) ---
-    frame:
-        xpos 40 ypos 128 xsize 430 ysize 560
-        background Frame(Solid("#0A121C"), 0, 0)
-        padding (0, 0)
-        fixed:
-            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 430 ysize 2
-            text "FRISE CHRONOLOGIQUE DES VOTES":
-                xpos 24 ypos 16 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
-            add Solid("#12283A") xpos 0 ypos 52 xsize 430 ysize 1
             viewport:
-                xpos 0 ypos 60 xsize 430 ysize 496
+                xpos 6 ypos 48 xsize 262 ysize 405
                 mousewheel True draggable True scrollbars "vertical"
                 vbox:
                     spacing 0
-                    for visible_chapter in dossier_visible_chapters():
-                        use dossier_chapter_row(visible_chapter, sel_chapter)
+                    for chapter in dossier_visible_chapters():
+                        $ cid = chapter["id"]
+                        $ chapter_pid = dossier_prop_first_of_chapter(cid)
+                        $ chapter_prop = dossier_prop(chapter_pid)
+                        button:
+                            xsize 245 ysize 91
+                            selected sel_chapter == cid
+                            background (Solid("#15384c") if sel_chapter == cid else Solid("#00000000"))
+                            hover_background Solid("#15384c99")
+                            action [SetScreenVariable("sel_chapter", cid), SetScreenVariable("sel_prop", chapter_pid)]
+                            fixed:
+                                xysize (245, 91)
+                                add Solid("#315a71") xpos 19 ypos 0 xsize 2 ysize 91
+                                add Solid("#5cd3ff" if sel_chapter == cid else "#567b8d") xpos 12 ypos 18 xysize (16, 16)
+                                add Solid("#0b1d2a") xpos 16 ypos 22 xysize (8, 8)
+                                text "JOUR {:02d}  /  VOTE {:02d}".format(cid * 3, cid):
+                                    xpos 42 ypos 10 size 14
+                                    color ("#82e5ff" if sel_chapter == cid else "#8daebd")
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                text chapter_prop.get("title", "").replace("\\n", " "):
+                                    xpos 42 ypos 34 xmaximum 189
+                                    size 14 color "#e3f0f8"
+                                    font "fonts/Rajdhani-SemiBold.ttf"
+                                    line_leading 1
+                                add Solid("#27485a") xpos 40 ypos 90 xsize 190 ysize 1
 
-    # --- Complétion du chapitre : arguments + succès associés ---
-    $ chapter_progress = dossier_chapter_progress(sel_chapter)
-    $ pct = chapter_progress["percent"]
-    $ chapter_done = chapter_progress["done"]
-    $ chapter_total = chapter_progress["total"]
-    $ arguments_done = chapter_progress["arguments_done"]
-    $ arguments_total = chapter_progress["arguments_total"]
-    $ successes_done = chapter_progress["successes_done"]
-    $ successes_total = chapter_progress["successes_total"]
-    frame:
-        xpos 40 ypos 704 xsize 430 ysize 304
-        background Frame(Solid("#0A121C"), 0, 0)
-        padding (0, 0)
-        fixed:
-            add Solid("#12283A") xpos 0 ypos 0 xsize 430 ysize 1
-            text "COMPLÉTION DU CHAPITRE":
-                xpos 24 ypos 18 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+        $ prop = dossier_prop(sel_prop)
+        $ chapter_progress = dossier_chapter_progress(sel_chapter)
+        $ percent = chapter_progress["percent"]
+        $ unlocked_count = dossier_prop_unlocked_count(sel_prop)
+        $ total_count = dossier_prop_total(sel_prop)
 
-            add (dossier_gauge_image(pct)) xpos 30 ypos 70 xysize (140, 140)
-            text "[pct]%":
-                xpos 100 ypos 140 xanchor 0.5 yanchor 0.5 size 34 color "#5CD3FF"
-                font "fonts/Rajdhani-SemiBold.ttf"
-
-            text "[chapter_done] / [chapter_total]":
-                xpos 200 ypos 92 size 30 color "#EAF4FF" font "fonts/Rajdhani-SemiBold.ttf"
-            text "ARGUMENTS  [arguments_done] / [arguments_total]":
-                xpos 200 ypos 132 size 16 color "#8AA6B9" font "fonts/Rajdhani-SemiBold.ttf"
-            text "SUCCÈS  [successes_done] / [successes_total]":
-                xpos 200 ypos 160 size 16 color "#8AA6B9" font "fonts/Rajdhani-SemiBold.ttf"
-            text "Le pourcentage réunit les arguments découverts\net les succès liés à ce chapitre.":
-                xpos 24 ypos 234 size 14 color "#6E8CA6" font "fonts/Barlow-Light.ttf" line_leading 2
-
-    # ===============================================================
-    # COLONNE DROITE
-    # ===============================================================
-    $ prop = dossier_prop(sel_prop)
-    $ avail = dossier_prop_available(sel_prop)
-
-    frame:
-        xpos 500 ypos 128 xsize 1380 ysize 300
-        background Frame(Solid("#0A121C"), 0, 0)
-        padding (0, 0)
-        fixed:
-            add Solid("#5CD3FF") xpos 0 ypos 0 xsize 1380 ysize 2
-            text ("PROPOSITION %02d" % prop.get("num", 0)):
-                xpos 28 ypos 18 size 16 color "#6E8CA6" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+        # Proposition du vote sélectionné et synthèse de complétion.
+        frame:
+            xpos 305 ypos 69 xsize 619 ysize 174 padding (0, 0)
+            background Fixed(Solid("#091924f4"), Solid("#5cd3ff77", ysize=2))
+            text "PROPOSITION // VOTE {:02d}".format(sel_chapter):
+                xpos 14 ypos 10 size 13 color "#5cd3ff"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1.5
             text prop.get("title", ""):
-                xpos 28 ypos 44 xsize 780 size 27 color "#EAF4FF"
-                font "fonts/Rajdhani-SemiBold.ttf" kerning 1 line_leading 2
+                xpos 14 ypos 32 xmaximum 435
+                size 20 color "#effaff" font "fonts/Rajdhani-SemiBold.ttf"
+                line_leading 1
+            text "{:d}%".format(percent):
+                xpos 524 ypos 22 xanchor 0.5 size 26 color "#5cd3ff"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "COMPLÉTION":
+                xpos 479 ypos 57 size 12 color "#8cabbc"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            add Solid("#284a5b") xpos 467 ypos 82 xsize 127 ysize 5
+            add Solid("#5cd3ff") xpos 467 ypos 82 xsize int(127 * percent / 100.0) ysize 5
 
-            # Formulation
-            frame:
-                xpos 28 ypos 132 xsize 800 ysize 148
-                background Frame(Solid("#0B1622"), 0, 0)
-                fixed:
-                    add Solid("#5CD3FF") xpos 0 ypos 0 xsize 3 ysize 148
-                    text "SA FORMULATION":
-                        xpos 20 ypos 14 size 14 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-                    text "«":
-                        xpos 16 ypos 34 size 44 color "#3A6B86" font "fonts/Rajdhani-SemiBold.ttf"
-                    text prop.get("formulation", ""):
-                        xpos 52 ypos 46 xsize 720 size 18 color "#C4D6E4"
-                        font "fonts/Barlow-Light.ttf" line_leading 3
+            add Solid("#244152") xpos 14 ypos 103 xsize 590 ysize 1
+            text "FORMULATION":
+                xpos 14 ypos 111 size 12 color "#5cd3ff"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text prop.get("formulation", ""):
+                xpos 14 ypos 130 xmaximum 587
+                size 13 color "#c0d3de" font "fonts/Barlow-Light.ttf"
+                line_leading 1
 
-            # Illustration document
-            add "hud/dossier/doc_illustration.png" xpos 1010 ypos 30 xysize (250, 250)
-
-    # --- Arguments ---
-    frame:
-        xpos 500 ypos 444 xsize 1380 ysize 564
-        background Frame(Solid("#0A121C"), 0, 0)
-        padding (0, 0)
-        fixed:
-            add Solid("#12283A") xpos 0 ypos 0 xsize 1380 ysize 1
-            text "ARGUMENTS DÉBLOQUÉS":
-                xpos 28 ypos 16 size 18 color "#5CD3FF" font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-            text "[dossier_prop_unlocked_count(sel_prop)] / [dossier_prop_total(sel_prop)] DÉBLOQUÉS":
-                xpos 1140 ypos 18 size 16 color "#8FB4CC" font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+        # Le dossier conserve les arguments et leurs états de déblocage.
+        frame:
+            xpos 305 ypos 252 xsize 619 ysize 288 padding (0, 0)
+            background Fixed(Solid("#081824f2"), Solid("#24495d", xsize=2))
+            text "ARGUMENTS // {:02d} SUR {:02d} DÉCOUVERTS".format(unlocked_count, total_count):
+                xpos 14 ypos 11 size 16 color "#5cd3ff"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 1
+            text "SUCCÈS : {} / {}".format(chapter_progress["successes_done"], chapter_progress["successes_total"]):
+                xpos 443 ypos 15 size 12 color "#8fa8b8"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            add Solid("#24495d") xpos 14 ypos 40 xsize 587 ysize 1
 
             viewport:
-                xpos 0 ypos 52 xsize 1380 ysize 458
+                xpos 12 ypos 49 xsize 593 ysize 221
                 mousewheel True draggable True scrollbars "vertical"
-                vpgrid:
-                    cols 2
-                    xspacing 20 yspacing 20
-                    xpos 28 ypos 8
+                vbox:
+                    spacing 7
                     for aid in dossier_prop_args(sel_prop):
-                        use dossier_arg_card(aid)
-
-            text "ⓘ  Les arguments recueillis vous aideront à préparer vos positions et anticiper les votes.":
-                xpos 28 ypos 522 size 15 color "#6E8CA6" font "fonts/Barlow-Light.ttf"
-
+                        $ unlocked = dossier_arg_unlocked(aid)
+                        $ meta = dossier_arg_cat(aid)
+                        $ arg = DOSSIER_ARGS.get(aid, {})
+                        frame:
+                            xsize 566
+                            yminimum 76
+                            padding (12, 8, 12, 8)
+                            background Fixed(Solid("#102634" if unlocked else "#0b1822"), Solid(meta["color"] if unlocked else "#365061", xsize=3))
+                            vbox:
+                                spacing 2
+                                hbox:
+                                    spacing 9
+                                    text (meta["label"] if unlocked else "VERROUILLÉ"):
+                                        size 11 color (meta["color"] if unlocked else "#637b8b")
+                                        font "fonts/Rajdhani-SemiBold.ttf"
+                                    text (arg.get("title", "") if unlocked else "Argument non découvert"):
+                                        size 15 color ("#eaf4ff" if unlocked else "#647d8b")
+                                        font "fonts/Rajdhani-SemiBold.ttf"
+                                text (arg.get("desc", "") if unlocked else "Explorez le Conclave pour découvrir cet argument."):
+                                    size 12 color ("#b7cad8" if unlocked else "#637b8b")
+                                    font "fonts/Barlow-Light.ttf" xmaximum 530
+                                if unlocked and arg.get("source"):
+                                    text "SOURCE : {}".format(arg["source"]):
+                                        size 11 color meta["color"]
+                                        font "fonts/Rajdhani-SemiBold.ttf"
 
 # -----------------------------------------------------------------------------
 # Onglet
