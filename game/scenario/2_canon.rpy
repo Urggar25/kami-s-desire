@@ -1,4 +1,5 @@
 label _2_CANON:
+    $ unlock_codex_page("propositions_amendement", with_notification=False)
 
     $ day_id = 2
     $ current_day = 2
@@ -1395,6 +1396,7 @@ init 3 python:
         if "unlock_dossier_arg" in globals():
             unlock_dossier_arg(arg_id)
         renpy.save_persistent()
+        chapter1_check_complete_dossier()
         renpy.restart_interaction()
         return True
 
