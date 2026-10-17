@@ -20,6 +20,7 @@ transform j21_dg_noam_approach(z=1.0):
 
 
 label _21_0_1_1_0_1_REVEIL:
+    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité")
 
     $ cafeteria_food_level = "null"
     $ current_period = "Matin"
