@@ -8,6 +8,7 @@
 # =============================================================================
 
 label _21_0_1_1_0_0_REVEIL:
+    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité")
     $ cafeteria_food_level = "null"
     $ current_day = 21
     $ day_id = 21
