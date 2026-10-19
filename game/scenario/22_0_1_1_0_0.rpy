@@ -181,11 +181,11 @@ label _22_0_1_1_0_0_CAFETERIA_ARRIVEE:
 
     iris reflexion "Elle existe. Et quand Noam et Mara l'ont trouvée, y'avait du matos de maintenance dedans. Du matos qui avait disparu avant, non ?"
 
-    elias ecoute "Oh ? Tu veux dire celui que je cherchais y'a une dizaine de jours ?"
+    elias ecoute "Hein ? Tu parles du matos que je cherche depuis dix jours ? Parce que là, je commence à croire qu'il s'est poussé tout seul sur des petites jambes."
 
     tomas reflexion "Attends... Celui que tu avais perdu ?"
 
-    elias colere "Je ne les ai PAS perdus ! Elles se sont volatilisées !"
+    elias colere "J'ai pas perdu ces plaques ! Enfin, pas cette fois, je vous jure ! Elles étaient là, et puis pouf, plus rien !"
 
     iris reflexion "Voilà. Je dis pas que Mara était morte, vivante, fantôme, zombie ou je sais pas quoi. Je dis juste qu'on a déjà retrouvé du matériel disparu là-bas."
 
@@ -199,7 +199,7 @@ label _22_0_1_1_0_0_CAFETERIA_ARRIVEE:
 
     iris reflexion "Celles d'hier ?"
 
-    elias fatigue "Ouais. J'vais finir essayer de bricoler des plaques de fortune aujourd'hui."
+    elias fatigue "Je vais essayer de me fabriquer des plaques avec ce qui traîne. C'est pas gagné, mais j'ai déjà fait tenir des tuyaux avec moins que ça."
     elias fatigue "C'est pour ça que j'ai récupéré du matériel jusqu'à tard dans la nuit."
 
     "Il boit son café, pousse son plateau et se lève."
@@ -341,15 +341,15 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam taquin "Ah, t'étais là. J'allais finir par croire que t'avais démonté un mur entier."
 
-    elias fatigue "J'ai essayé un truc. Ça marche pas."
+    elias fatigue "J'ai bricolé un truc hier soir. Ça tenait super bien... jusqu'à ce que je pousse dessus."
 
     noam reflexion "Les plaques ?"
 
-    elias fatigue "Ouais. Celles qu'on a bricolées hier, c'est de la merde."
+    elias fatigue "Ouais. Les plaques d'hier, c'est du bricolage de bric et de broc. Et pas du bon."
 
     noam reflexion "Hier tu disais que ça tiendrait."
 
-    elias fatigue "Hier je voulais que ça tienne. C'est pas pareil."
+    elias fatigue "Hier, je voulais y croire ! C'est pas pareil que d'être sûr que ça tient."
 
     "Il pose les deux morceaux de métal contre le mur avec un bruit sec."
 
@@ -365,7 +365,7 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam desaccord "Même comme ça, c'est mieux que rien."
 
-    elias raison "Non, parce que vous allez dormir en vous disant que c'est fermé. Moi je sais que ça l'est pas vraiment."
+    elias raison "Non, parce que vous allez dormir en croyant que c'est solide, alors que je sais très bien qu'un bon coup suffirait à tout arracher. Je veux pas vous raconter des salades."
 
     "Il se frotte le front avec le dos de la main."
 
@@ -408,7 +408,7 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam fatigue "D'accord."
 
-    elias neutre "Je vais enlever celles déjà posées avant que quelqu'un compte dessus pour rien."
+    elias neutre "Je vais démonter les plaques que j'ai posées. Ça m'embête de défaire mon boulot, mais j'ai pas envie que quelqu'un se croit protégé à cause de moi."
 
     noam reflexion "Tu veux de l'aide ?"
 
