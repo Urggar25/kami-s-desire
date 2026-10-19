@@ -859,11 +859,11 @@ label _23_0_1_1_0_0_SOIREE:
         ("noam", "fatigue"),
     ])
 
-    elias fatigue "Alors, le gros tube ?"
+    elias fatigue "Alors, ce fameux gros tuyau ? Vous avez trouvé quelque chose là-dedans ?"
 
     noam neutre "Toujours aussi gros."
 
-    elias "C'est chaud. J'aime pas ces trucs."
+    elias "J'aime pas ces conduits. Un truc qui passe partout et qu'on voit jamais, ça me donne pas envie d'y mettre mes mains."
 
     tomas reflexion "En réalité, une IRM est plutôt sûre si—"
 
@@ -949,7 +949,7 @@ label _23_0_1_1_0_0_SOIREE:
 
     tomas "Alors elle a raison."
 
-    elias fatigue "Donc on sait toujours rien."
+    elias fatigue "Donc, on est pas plus avancés... Bon sang, si c'était une panne, je pourrais au moins essayer de la réparer."
 
     noam "Voilà."
 
