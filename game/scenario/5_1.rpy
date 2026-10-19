@@ -560,6 +560,7 @@ label _5_1_TEMPS_LIBRE:
 # Total : 2h 14m 30s
 
 label _5_1_INFIRMERIE_KAEL:
+    $ unlock_codex_page("communications_familiales", with_notification=False)
     $ current_period = "Après-midi"
 
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
