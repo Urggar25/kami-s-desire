@@ -639,7 +639,6 @@ label _5_0_CRITICAL_CHOICE:
 
 
 label _5_0_0_JULIAN:
-    $ unlock_codex_page("surveillance_conclave", with_notification=False)
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_235
     scene bg_dortoir at adaptive_fullscreen with dissolve
@@ -704,6 +703,7 @@ label _5_0_0_JULIAN:
     julian sourire "Parce que je ne le suis pas, du moins pas vraiment."
 
     "Julian pose la main sur le brouilleur."
+    $ unlock_codex_page("surveillance_conclave", with_notification=False)
 
     play sound sfx_beep
     show screen j50_julian_surveillance_overlay
