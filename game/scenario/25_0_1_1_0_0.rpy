@@ -916,7 +916,7 @@ label _25_0_1_1_0_0_APRES_MIDI:
 
     mara reflexion "T'as deux roues, un guidon, et faut pédaler."
 
-    elias neutre "Un vélo."
+    elias neutre "Un vélo ! Ça, au moins, je connais. Je pourrais même t'en remonter un avec deux roues et trois bouts de ferraille."
 
     tomas raison "Non ça va pas, le mot pédaler était interdit."
 
@@ -926,7 +926,7 @@ label _25_0_1_1_0_0_APRES_MIDI:
 
     mara fatigue "Tu m'écoutes au moins ?"
 
-    elias agace "Oui ! Mais tu passes d'un truc à l'autre, je sais plus ce que je dois trouver, moi."
+    elias agace "Mais oui ! Sauf que tu me balances dix indices à la suite et moi, à la moitié, j'ai déjà oublié le début !"
 
     "Mara se tourne vers moi en levant les yeux au ciel. Je baisse aussitôt le regard vers le sablier."
     "À côté de moi, Iris a cessé de sourire. Elle regarde Mara, puis ses propres mains, et se force à revenir à la partie lorsque Elen nous adresse la parole."

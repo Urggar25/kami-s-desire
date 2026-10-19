@@ -241,7 +241,7 @@ label _27_0_1_1_0_0_REVEIL:
     ])
 
     noam surpris "Elias ? Lysa ? Mais vous étiez où ? On vous cherchait partout !"
-    elias fatigue "On est revenus par l'autre côté. Quand ça a commencé à gueuler, j'ai embarqué Lysa, j'allais pas la laisser coincée là-dedans."
+    elias fatigue "On est passés de l'autre côté. Quand j'ai entendu les cris, j'ai attrapé Lysa et on a filé. J'allais quand même pas la laisser coincée dans ce fichu tuyau."
     lysa inquiet "J'ai rien compris. Il me tirait par le bras et j'entendais encore des coups derrière nous... Je lui ai dit d'attendre les autres, mais il a continué."
 
     "Une voix nous demande de dégager la sortie. Je m'écarte, et Elias remarque enfin la couverture que Sael et Julian font passer par la grille."
@@ -405,11 +405,11 @@ label _27_0_1_1_0_0_REVEIL:
     mara triste "Iris, personne n'est bien avec cette idée. Mais si Ryn s'emporte encore, on fait quoi ? On attend qu'il y ait quelqu'un d'autre par terre ?"
 
     "Iris serre les dents. Elle regarde Ryn, puis Elen, et finit par détourner les yeux."
-    elias fatigue "Je peux bricoler des menottes à l'atelier, au cas où il essaierait de forcer la porte. Je dis pas qu'il faut lui mettre tout de suite, mais il vaut mieux avoir de quoi le retenir."
+    elias fatigue "Je peux fabriquer des attaches solides à l'atelier, au cas où il essaierait de forcer la porte. J'aime pas l'idée de m'en servir, mais je préfère avoir quelque chose sous la main si ça tourne mal."
 
     "Ryn relève lentement la tête."
     ryn peur "Des... Tu veux me menotter ?"
-    elias inquiet "Je veux éviter que quelqu'un soit blessé, Ryn."
+    elias inquiet "Ryn, je veux juste éviter qu'un autre se fasse mal. J'ai déjà vu assez de dégâts comme ça."
     ryn colere "Mais c'est Tomas qui l'a tuée ! Et maintenant, c'est moi que vous voulez enfermer pendant qu'il se promène tranquillement ?!"
 
     "Il se lève. Elias tend un bras pour lui barrer le passage, mais Ryn le repousse d'un coup d'épaule. L'armoire derrière eux résonne sous le choc."
@@ -448,7 +448,7 @@ label _27_0_1_1_0_0_REVEIL:
     "Le bruit fait sursauter Elen. Elle se remet à pleurer, cette fois sans même essayer de le cacher."
 
     "Elias se tourne vers nous, puis vers la porte."
-    elias fatigue "Je vais préparer les attaches. On les utilisera que si c'est nécessaire."
+    elias fatigue "Je vais préparer les attaches. Et j'espère bien qu'on les laissera dans ma boîte à outils."
     iris colere "Tu feras surtout en sorte qu'elles restent sur une table tant qu'il ne cherche pas à sortir. Il vient de perdre Nyra lui aussi."
     "Elias ne discute pas. Il quitte la salle, suivi quelques instants plus tard par Kael."
 

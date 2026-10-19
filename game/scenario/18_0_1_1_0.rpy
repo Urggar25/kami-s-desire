@@ -944,17 +944,17 @@ label _18_0_1_1_CHERCHE_ELIAS_ARRIVEE:
 
     noam hesitation "Pas ici."
 
-    elias inquiet "Ça commence bien."
+    elias inquiet "Ah bah, ça commence fort, votre histoire. Avec vous, je sens que je vais encore sortir toute la caisse à outils."
 
     noam "J'ai trouvé quelque chose cette nuit."
 
-    elias "Quel genre de quelque chose ?"
+    elias "Quel genre de machin ? Un câble arraché, une porte qui coince, quoi ?"
 
     noam "Un passage derrière ma chambre."
 
     "Il me fixe quelques secondes."
 
-    elias "Un passage ?"
+    elias "Un passage ? Mais... vous êtes passés où, exactement ?"
 
     noam "Un réseau de maintenance. Enfin... un vrai passage. On peut ramper dedans."
 
@@ -966,7 +966,7 @@ label _18_0_1_1_CHERCHE_ELIAS_ARRIVEE:
 
     noam "Mara était avec moi."
 
-    elias "C'est censé améliorer l'idée ?"
+    elias "Et ça, c'est censé me rassurer ? Parce que là, ça marche pas beaucoup."
 
     noam "Pas vraiment."
 
@@ -1004,7 +1004,7 @@ label _18_0_1_1_ELIAS_GRILLE:
 
     noam "Alors ?"
 
-    elias "C'est pas juste une gaine d'air."
+    elias "Ça, c'est pas une simple gaine d'air. J'en ai monté assez pour reconnaître quand un truc est prévu pour autre chose."
 
     noam "On avait remarqué."
 
@@ -1012,7 +1012,7 @@ label _18_0_1_1_ELIAS_GRILLE:
 
     "Il passe une main sur le bord métallique."
 
-    elias "Y'a des renforts. Des passages de câbles. Le fond est fait pour supporter du poids."
+    elias "Regarde les barres sur les côtés, les câbles, et ce plancher-là. Ça peut porter quelqu'un. Enfin, pas une troupe de danseurs, mais quelqu'un, oui."
 
     noam "Des robots ?"
 
@@ -1038,7 +1038,7 @@ label _18_0_1_1_ELIAS_GRILLE:
 
     "Il répond sans hésitation."
 
-    elias "La maintenance où je bosse, c'est les portes, les outils, les petits trucs. Pas ces machins-là."
+    elias "Moi, je m'occupe des portes, des outils, des trucs qui grincent. Ces machins-là, j'y ai jamais touché."
 
     noam reflexion "Donc y'a bien des zones qu'on nous a jamais montrées."
 
@@ -1068,7 +1068,7 @@ label _18_0_1_1_ELIAS_GRILLE:
 
     "Il soupire."
 
-    elias "Je vais préparer deux lampes correctes, une corde et de quoi bloquer les grilles. On y retourne demain si on doit y retourner."
+    elias "Je vais bricoler deux bonnes lampes, trouver une corde et préparer de quoi bloquer les grilles. Et la prochaine fois, on y va équipés. J'ai pas envie de devoir vous tirer de là par les chevilles."
 
     noam "Pourquoi demain ?"
 

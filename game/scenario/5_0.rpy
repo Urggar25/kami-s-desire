@@ -887,8 +887,8 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     noam surpris "Hein ? Comment tu as su que c'était moi ?!"
 
-    elias sourire "Facile, au bruit de tes pas."
-    elias rire "Je t'ai déjà dit, non ? Que j'avais une excellente ouïe."
+    elias sourire "Au bruit de tes pas ! Je reconnais les gens comme je reconnais les machines. Bon, il m'arrive de confondre les deux quand je suis fatigué."
+    elias rire "J'ai une sacrée oreille, à force de bosser près des moteurs. Sauf pour entendre quand on me dit de pas toucher à quelque chose."
 
     noam triste "Ah ouais, c'est vrai. Tout est vraiment plus calme aujourd'hui."
 
@@ -941,7 +941,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     noam "C'est moi qui— j'ai tendu le bras, enfin, j'ai dû te—"
 
-    elias inquiet "Non, c'était ma tasse. Mon coude. Ma connerie. T'inquiète, j'ai l'habitude..."
+    elias inquiet "Non, c'était ma tasse. Et mon coude. Et ma faute, quoi... J'ai encore fait une de mes conneries. Bon, on va arranger ça, t'inquiète."
 
     "Un voyant orange s'allume. Une fumée grise monte de la grille latérale."
 
@@ -961,8 +961,8 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
 
     elias panique "Putain, putain, putain…"
-    elias inquiet "Noam, viens là. Tu vas relier les fils pendant que j'essaye de réparer ça."
-    elias "Même couleur ensemble. Tu réfléchis pas. Tu relies."
+    elias inquiet "Noam, viens me filer un coup de main ! Tiens ces deux fils pendant que je bidouille le panneau. Mais les touche pas ensemble, hein !"
+    elias "Les fils de la même couleur ensemble. Enfin, sauf si quelqu'un a changé les couleurs... Ah, fais-moi confiance, on va y arriver."
 
     "Elias arrache le panneau. Des grappes de fils pendent sous la console."
 
@@ -991,20 +991,20 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     if j50_wire_errors > 0:
         elias colere "Non, pas celui-là !"
-        elias "Putain… Bon. Bah je sais plus quoi faire pour réparer ça..."
+        elias "Merde... Là, j'ai épuisé mes idées. Il doit bien rester un truc à essayer, non ? Me regarde pas comme ça !"
 
     if j50_wire_success >= 8:
-        elias rire "Oh super, t'as géré !"
+        elias rire "Ah, nickel ! Bien joué, Noam ! On va peut-être réussir à sortir de la panne que j'ai provoquée."
     elif j50_wire_success >= 5:
-        elias fatigue "C'est moche. Mais ça tient. C'est le principal."
+        elias fatigue "C'est rafistolé de partout, mais ça tient ! On va éviter de secouer le meuble, par contre."
     else:
-        elias inquiet "C'est pété de partout. Mais ça fume moins. Franchement, on prend."
+        elias inquiet "C'est pas franchement réparé, mais ça fume moins. Pour le moment, c'est une sacrée victoire."
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
 
     elias "La ventilation tourne. Au moins on va pas étouffer."
-    elias fatigue "Mais ouais… on est bloqués pour un moment. C'est chaud, cette salle est censée observer les problèmes, pas en devenir un."
+    elias fatigue "Bon... on est coincés dans une salle censée surveiller les problèmes. Fallait bien que j'arrive à lui en créer un, hein."
 
     "Elias s'assoit par terre, loin du panneau."
 
@@ -1048,12 +1048,12 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     "Elias se relève en s'étirant."
 
-    elias "Je vais voir si j'ai cramé un truc important. Enfin, je veux dire plus important que la porte."
+    elias "Je vais voir ce que j'ai grillé. En espérant que c'était juste un petit truc... enfin, en plus de la porte, évidemment."
 
     think "Quelques touches collent. L'écran latéral est mort."
 
     elias neutre "Rien de trop grave. Enfin je crois."
-    elias reflechit "Mais je comprends pas pourquoi ça a fumé autant..."
+    elias reflechit "Ce que je pige pas, c'est pourquoi ça a fumé autant... j'ai dû toucher le mauvais machin en ramassant ma tasse."
 
     think "Nous nous séparons dans le couloir, avec un vote condamné et une caméra en moins. Bilan mitigé."
 

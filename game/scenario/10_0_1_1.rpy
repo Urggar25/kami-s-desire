@@ -147,7 +147,7 @@ label _10_0_1_1_CAFETERIA_ELIAS:
 
     mara colere "Non. Ça me donne surtout envie que t'arrêtes de parler comme si on avait oublié ce qui s'est passé."
 
-    elias inquiet "On peut éviter de se bouffer entre nous pendant cinq minutes ? Juste cinq."
+    elias inquiet "Les gars, on peut arrêter de s'engueuler cinq minutes ? J'ai déjà assez de trucs cassés à réparer sans qu'on se casse la figure entre nous."
 
     "Ryn lâche enfin le dossier, mais il ne s'assoit pas. Sa colère ne retombe pas vraiment ; elle change simplement de place."
 

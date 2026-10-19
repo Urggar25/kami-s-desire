@@ -180,7 +180,7 @@ label _6_0_1_CAFETERIA:
 
     mara "Je confirme. Faudrait être fou."
 
-    elias inquiet "J'ai glissé. Je suis vraiment désolé Mara ! Vraiment désolé."
+    elias inquiet "J'ai glissé, Mara ! Je te jure que j'ai pas fait exprès ! Putain, j'arrive même à foutre le bordel quand j'essaie de faire attention..."
 
     mara neutre "Comme d'habitude : je suis toujours au mauvais endroit, au pire moment."
 
@@ -194,7 +194,7 @@ label _6_0_1_CAFETERIA:
 
     lysa rire "Je crois pas que ce soit possible !"
 
-    elias reflechit "Kami joue toujours un rôle. C'est son truc. En soi, elle nous imite."
+    elias reflechit "Kami, elle joue la comédie depuis le début, non ? Enfin, je crois. Elle prend nos façons de parler comme un gamin qui copie les autres."
 
     lysa blase "Ouais. Mais là c'était pas comme d'habitude."
 
@@ -826,7 +826,7 @@ label _6_0_1_VOTE:
     think "Quel enfoiré celui-là."
 
     elias triste "De toute façon, on savait comment ça finirait. T'aurais rien pu changer."
-    elias "Les bugs ont juste rendu le choix encore plus évident."
+    elias "Avec tous ces machins qui déconnent, c'était encore plus dur de se raconter des histoires. Et pourtant, des trucs qui déconnent, j'en connais."
 
     think "Elias ne défend même pas son choix. Il est vidé."
 
@@ -870,7 +870,7 @@ label _6_0_1_FIN_JOURNEE:
 
     tomas triste "Franchement, je-je crois bien qu'on va jamais réussir à faire passer un amendement."
 
-    elias colere "On sert vraiment à rien..."
+    elias colere "On est là à discuter pendant que tout pète autour... C'est quand même pas comme ça que je sais aider les gens."
 
     iris triste "Je veux prendre une douche."
     iris colere "Et je veux que ce cirque s'arrête. Nous ne changerons rien tant que Kami sera là."
