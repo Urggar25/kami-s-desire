@@ -920,7 +920,6 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     play sound sfx_drop
 
     scene bg_cg027 at adaptive_fullscreen with dissolve
-    $ unlock_codex_page("securite_orbitale", with_notification=False)
     $ unlock_gallery_image("bg_cg027")
 
     "Le café se répand sur les touches et le panneau latéral."
@@ -948,6 +947,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     "Un claquement mécanique nous fait nous retourner. La porte s'est verrouillée."
     think "VERROUILLAGE SÉCURITÉ — ANOMALIE DÉTECTÉE. Pour une fois, l'écran résume bien la situation."
+    $ unlock_codex_page("securite_orbitale", with_notification=False)
 
     pause 0.5
 
