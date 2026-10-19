@@ -356,7 +356,7 @@ label _26_0_1_1_0_0_SECRET:
     "Elle se rassoit en levant les yeux au ciel. Je profite de l'interruption pour m'approcher de l'écran sans répondre."
 
     tomas reflexion "Kael a pu accéder aux journaux de transfert. Ils prévoient deux phases d'évacuation."
-    elias reflexion "Deux transports ?"
+    elias reflexion "Deux transports ? Attends, on parle de camions, de navettes... de quoi, là ?"
     tomas raison "Le premier vers la Terre. C'est la navette qu'on nous annonce depuis le début. Le second est classé comme une affectation vers une station de production."
     mara inquiet "Et ils comptent y mettre qui ?"
     tomas neutre "C'est bien le problème. Regarde la catégorie de ces unités."
@@ -373,7 +373,7 @@ label _26_0_1_1_0_0_SECRET:
     mara inquiet "Donc on pourrait finir là-bas au lieu de rentrer ?"
     tomas raison "En tout cas c'est ce qui était le plan. Il y a écrit que toutes les formes de vie et robots du Conclave restants sur le Conclave après le départ de la première navette seront déposés sur Keyper."
     tomas agace "Et dans les registres il y a écrit que Keyper est une... Station de production inspirée des usines d'Axiome."
-    elias reflechit "Hein ?! Genre c'est inspiré de chez moi ?"
+    elias reflechit "Hein ? Tu veux dire qu'ils ont pris des idées à la Forge ? Mais pourquoi ils ont pas demandé aux gars qui bossent là-bas ?"
     mara reflexion "Pouah, de chez toi ?! C'est que tu y crois vraiment en plus."
     mara taquin "Je te rappelle que tu es né ici. Réfléchis un peu."
     elias surpris "Ouais mais tu comprends ce que je veux dire."
@@ -386,7 +386,7 @@ label _26_0_1_1_0_0_SECRET:
     tomas raison "Je sais que ça vous passionne pas vraiment mais vu le peu de temps qu'il reste, si vous êtes dispo pour aier, je suis preneur !"
     noam hesitation "O-Ouais, j'imagine que je peux te filer un coup de main."
     tomas neutre "Par contre il faut vraiment être sûr que ton Original ne vienne pas. Sinon on sera tous dans la panade."
-    elias reflechit "Tu veux que je l'occupe ? Il se méfie pas trop de moi, je crois."
+    elias reflechit "Tu veux que je l'occupe ? Je peux lui raconter ma dernière réparation, ça prend du temps. Après, faut pas qu'il me pose trop de questions."
     mara taquin "C'est sûr que moi je ne peux plus l'approcher sans qu'il ne tremble... Je savais pas que j'étais si terrifiante."
     noam panne "Oh ça tu peux l'être..."
     mara colere "Eh ! Reviens-là tu vas voir toi si je peux être terrifiante !"
@@ -670,9 +670,9 @@ label _26_0_1_1_0_0_CONFRONTATION:
     mara triste "Je viens aussi. Si vous comptez examiner un corps avec ma tête, je veux pas attendre ici qu'on décide si j'ai le droit de rentrer chez moi."
     sael raison "Si le corps est toujours là, il faudra éviter de déplacer quoi que ce soit avant que je l'aie examiné."
     sael raison "Et je préfère prévenir : avec les moyens de l'infirmerie, je pourrai peut-être déterminer certaines choses, mais certainement pas tout expliquer sur-le-champ."
-    elias fatigue "Vous voulez faire passer tout le monde là-dedans ? Y a des endroits où on rampe sur le ventre, et la lumière est pourrie."
+    elias fatigue "Vous voulez faire ramper tout le monde là-dedans ? Y a des passages où même moi je me coince avec ma caisse à outils, et on y voit que dalle."
     noam raison "Je peux vous guider. Iris et moi avons fait le trajet hier, et l'ouverture se trouve assez près de ma chambre pour qu'on n'ait pas besoin de traverser toute la station."
-    elias reflexion "On ferait mieux d'y aller demain matin. On aura le temps de préparer les lampes et au moins on verra où on met les pieds."
+    elias reflexion "Demain matin, je vous prépare des lampes correctes, et on vérifie les grilles avant de passer. J'ai pas envie de devoir tirer quelqu'un par les pieds au beau milieu de la nuit."
 
     "Plusieurs représentants acquiescent."
     "Ryn semble prêt à accepter le report, mais je revois le morceau de tissu coincé derrière le Goumi et l'espace dans lequel le corps avait été dissimulé."
@@ -755,7 +755,7 @@ label _26_0_1_1_0_0_EXPEDITION:
         ("noam", "reflexion", 0.76),
     ])
 
-    elias fatigue "Les vis ont déjà pris cher avec tous vos allers-retours. Faites gaffe en retirant la grille, j'ai pas de quoi la remplacer cette nuit."
+    elias fatigue "Faites gaffe aux vis en enlevant cette grille ! Elles sont presque fichues, et j'ai plus de rechange. Si vous les foirez, je vais encore me taper la réparation."
     iris inquiet "On va faire attention. Vous nous laissez juste un peu d'avance avant de faire entrer le deuxième groupe."
     elias neutre "Ouais, j'ai compris. Si vous avez un souci, vous revenez nous le dire au lieu de jouer aux héros."
 
