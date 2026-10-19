@@ -193,28 +193,28 @@ label decouverte_gymnase:
     "Repose la barre doucement."
     "Puis enfin, il me regarde."
 
-    elias neutre "Salut."
+    elias neutre "Salut, camarade ! Fais gaffe à la barre, elle a essayé de me tomber sur le pied tout à l'heure. Bon, j'avais oublié de la bloquer, aussi."
 
     noam sourire "Je pensais être seul."
     noam sourire "Visiblement non."
 
-    elias fatigue "J’aime le sport."
-    elias fatigue "Ça m’empêche de trop cogiter sur ce qui peut merder."
+    elias fatigue "Moi, quand j'ai la tête qui chauffe, je viens soulever de la ferraille. Au moins, les haltères me font pas de discours."
+    elias fatigue "Enfin... sauf quand je monte un appareil de travers. Mais ça, je m'en rends compte assez vite, en général."
 
     noam taquin "Ouais... J'imagine que c'est devenu une habitude depuis un an."
 
     "Il rit de façon courte."
 
-    elias neutre "Pas à cause d’elle."
-    elias neutre "Avant, une balle ou une guerre, et c’était fini sans sommation."
-    elias neutre "Là au moins, on sait à quoi s’attendre."
-    elias raison "Faut juste respecter les règles quoi."
+    elias neutre "Oh, j'ai pas attendu Kami pour avoir besoin de me défouler, tu sais."
+    elias neutre "Avant, à la Forge, ça pouvait te tomber dessus sans prévenir. Un tir, une bagarre, une machine qui te lâche entre les doigts..."
+    elias neutre "Là, c'est pas la joie non plus, mais au moins Kami annonce la couleur. C'est déjà ça, j'imagine."
+    elias raison "Faut pas se planter avec ses règles, quoi. C'est moins facile que de revisser un boulon."
 
     "Il marque une pause un instant."
     
-    elias jaloux "Est-ce qu'on vit moins bien qu'avant ?"
-    elias jaloux "Perso, j'ai pas la réponse."
-    elias jaloux "Alors je fais le taf. Le reste, c'est que du bruit dont je ne m'occupe pas vraiment."
+    elias jaloux "Alors, on vit mieux qu'avant ou pas ? Pff... bonne question, ça."
+    elias jaloux "Moi, j'en sais foutre rien. J'ai jamais été très doué pour les grandes questions."
+    elias jaloux "Du coup, je fais ce que je sais faire : je bosse, je bricole, et quand ça me prend trop la tête, je viens courir. Enfin, j'essaie de courir sans me casser la gueule."
 
     pause 0.2
     "Je ne sais pas vraiment quoi répondre."
@@ -228,15 +228,15 @@ label decouverte_gymnase:
 
     "Il hoche la tête, comme si ça validait une info dans sa tête."
 
-    elias neutre "Elias."
+    elias neutre "Elias ! Si tu cherches un truc à réparer, tu peux venir me voir. Enfin, si c'est moi qui l'ai cassé, je suis probablement déjà dessus."
     $ unlock_character_name("elias")
-    elias neutre "AXIOME. Quartier bas."
+    elias neutre "AXIOME, quartier bas. La Forge, les ateliers, les mains pleines de cambouis... le grand luxe, quoi."
 
     noam surpris "AXIOME…"
     noam surpris "La Forge."
 
-    elias content "Ouais."
-    elias content "C’est là qu’on fabrique presque tout ce que les autres utilisent."
+    elias content "Ouais, c'est ça."
+    elias content "Là-bas, on fabrique tout un tas de trucs pour les autres. Et quand ça tombe en panne, devine qui se tape la réparation ?"
 
     "Il dit ça sans fierté particulière."
     "Mais il sait dans son timbre de voix que AXIOME est nécessaire à tout le monde."
@@ -245,9 +245,9 @@ label decouverte_gymnase:
 
     noam reflexion "Tu t'entraînes pour quoi ?"
 
-    elias rire "Pour dormir mieux."
-    elias rire "Une petite session avant 18h, ça serait pas de refus."
-    elias rire "J’espère qu’il y a des douches après."
+    elias rire "Pour dormir, déjà ! Après une bonne séance, je ronfle comme un compresseur."
+    elias rire "Si je peux me faire une séance avant dix-huit heures, je vais pas me gêner. Ça me change de porter des caisses."
+    elias rire "Par contre, j'espère qu'ils ont prévu des douches. La dernière fois, j'ai confondu le robinet d'eau chaude et celui de purge... mauvaise soirée."
 
     noam rire "Ah."
     noam rire "La meilleure raison."
@@ -261,24 +261,24 @@ label decouverte_gymnase:
 
     "Ça me rappelle qi'avant on était innocent et les problèmes nous passaient au dessus de la tête."
 
-    elias ecoute "Tu fais du sport, toi ?"
+    elias ecoute "Et toi, Noam, tu bouges un peu ou t'es plutôt du genre à encourager les autres depuis le banc ?"
 
     noam hesitation "Avant, oui j'en faisais parfois."
     noam hesitation "Mais ça fait un moment que j'en ai pas fait …"
     noam hesitation "Je sais plus trop ce que je fais, honnêtement."
 
-    elias fatigue "C’est pour ça que je continue."
-    elias fatigue "Quand tout part en vrille, faut garder un repère."
-    elias neutre "C’est le principe."
+    elias fatigue "Justement, faut t'y remettre doucement. Si tu commences trop fort, après tu peux plus lever les bras pour manger."
+    elias fatigue "Quand tout se barre en cacahuète, au moins t'as ça. Tu comptes tes répétitions, tu souffles et, pendant cinq minutes, t'oublies le reste."
+    elias neutre "Enfin, en principe. Moi, j'ai déjà perdu le compte en plein milieu d'une série."
 
     pause 0.2
 
     noam taquin "Donc si je veux survivre ici…"
     noam taquin "Je dois courir et soulever des trucs."
 
-    elias content "Et bois de l’eau."
-    elias content "Respire."
-    elias content "Sinon t’auras des crampes, et bon courage."
+    elias content "Et bois de l'eau, hein !"
+    elias content "Et respire ! Ça paraît bête, mais faut pas oublier."
+    elias content "Sinon, tu vas finir plié en deux. Je te dis ça parce que j'ai déjà essayé de m'entraîner en retenant mon souffle. Très mauvaise idée."
 
     noam sourire "Merci docteur."
 
@@ -287,27 +287,27 @@ label decouverte_gymnase:
 
     pause 0.3
 
-    elias ecoute "Tu sais ce qui est drôle ?"
-    elias ecoute "Ils nous filent un gymnase."
-    elias ecoute "Comme si on était en colonie."
-    elias ecoute "On soit, c'est pas pour me déplaire. J'ai toujours voulu aller en colo."
+    elias ecoute "Tu sais ce qui me fait marrer, quand même ?"
+    elias ecoute "Ils nous collent un gymnase sur une station spatiale, avec des ballons et tout le bazar."
+    elias ecoute "On dirait une colonie de vacances. Y manque plus que les moniteurs et les chansons autour du feu."
+    elias ecoute "Bon, ça me dérange pas, moi. J'ai jamais eu les moyens d'aller en colo quand j'étais gosse. Ça compte, si on est prisonniers ?"
 
     noam reflexion "Ouais. Notre animateur est juste un peu plus cinglé que les autres."
 
-    elias neutre "Exactement."
+    elias neutre "Voilà ! Par contre, j'irai pas demander à Kami de nous faire chanter."
 
     "Il regarde la machine de muscu."
     "Puis les lignes au sol."
     "Puis moi."
 
-    elias inquiet "Ces 30 jours, ça va pas être une partie de plaisir."
-    elias inquiet "On va être sur le qui-vive tout le temps, pas seulement aux votes."
-    elias inquiet "Fatigue, nerfs à vif… ça va peser."
+    elias inquiet "Trente jours enfermés ici... même avec une salle de sport, ça risque d'être coton."
+    elias inquiet "Entre les votes et les embrouilles, on va pas beaucoup souffler, je te le dis."
+    elias inquiet "Quand t'es crevé, tu fais des bourdes. Moi, j'en fais déjà quand je suis frais, alors imagine."
 
     noam inquiet "Tu crois que le sport change quelque chose ?"
 
-    elias neutre "Non. Pas forcément."
-    elias neutre "Mais ça permet au moins de se vider la tête."
+    elias neutre "Changer le monde ? Non, faut pas rêver."
+    elias neutre "Mais ça m'évite de ruminer. Et puis, quand quelqu'un a besoin d'un coup de main pour déplacer un machin lourd, je suis utile."
 
     pause 0.3
 
@@ -319,9 +319,9 @@ label decouverte_gymnase:
     noam hesitation "Bon, allez fais moi une démo, Sensei !"
     noam hesitation "Histoire de faire semblant d'être normal dans ce monde chelou."
 
-    elias content "Ok."
-    elias content "Mais écoute bien."
-    elias content "Sinon tu vas te péter quelque chose."
+    elias content "Allez, viens ! Je te montre. Fais juste pas exactement comme moi, j'ai deux ou trois mauvaises habitudes."
+    elias content "Regarde surtout où tu mets tes pieds et où tu poses tes mains."
+    elias content "J'ai déjà laissé tomber un poids sur mes chaussures en voulant montrer le bon geste. Depuis, j'explique avant de faire le malin."
 
     noam sourire "Promis."
 
