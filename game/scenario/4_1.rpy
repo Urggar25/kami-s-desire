@@ -272,6 +272,8 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     sael triste "Leurs tranchées ont fini par dessiner une limite visible. Sans eux, il y aurait eu beaucoup plus de morts."
     $ unlock_codex_page("frontieres_limen", with_notification=False)
+    $ unlock_codex_page("mont_kensen", with_notification=False)
+    $ unlock_codex_page("gardiens_limen", with_notification=False)
 
     ryn colere "Et maintenant on devrait continuer à garder cette limite pour toujours ? Non. Je veux que ça s'arrête."
 
