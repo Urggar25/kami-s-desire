@@ -709,6 +709,8 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     ryn colere "Parce que j'en ai ras le cul de ramasser des cadavres ! La frontière, je la connais ! Je la garde !"
     $ unlock_codex_page("frontieres_limen", with_notification=False)
+    $ unlock_codex_page("mont_kensen", with_notification=False)
+    $ unlock_codex_page("gardiens_limen", with_notification=False)
 
     iris desaccord "Imaginons qu'on réouvre les frontières : les gens peuvent passer. Super. Et après ?"
     iris desaccord "C'est pas comme s'ils partaient ailleurs pour travailler avec ces foutus bons de rationnement."
