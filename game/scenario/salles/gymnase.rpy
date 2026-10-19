@@ -281,6 +281,9 @@ label decouverte_gymnase:
     elias content "Sinon, tu vas finir plié en deux. Je te dis ça parce que j'ai déjà essayé de m'entraîner en retenant mon souffle. Très mauvaise idée."
 
     noam sourire "Merci docteur."
+    elias surpris "Docteur ? Ah non, moi, j'répare les trucs, pas les gens ! Enfin, j'ai déjà remis l'épaule d'un copain en place... mais c'était en lui rentrant dedans sans faire exprès."
+    noam rire "Je crois que je vais éviter de me blesser pendant tes cours."
+    elias rire "Ouais, ce sera plus prudent !"
 
     "Il souffle du nez."
     "Ça ressemble presque à un vrai rire."
@@ -324,6 +327,12 @@ label decouverte_gymnase:
     elias content "J'ai déjà laissé tomber un poids sur mes chaussures en voulant montrer le bon geste. Depuis, j'explique avant de faire le malin."
 
     noam sourire "Promis."
+
+    "Elias attrape un petit haltère pour me montrer le geste. Au moment de le soulever, son coude heurte la gourde posée près du banc, qui roule jusqu'à mes pieds."
+    elias panique "Ah, merde ! Bouge pas, je vais la rattraper !"
+    "Il se penche trop vite, manque de cogner le banc, puis récupère la gourde juste avant qu'elle tombe."
+    elias rire "Voilà ! Tu vois ? Les réflexes, ça se travaille aussi. Bon... celui-là, je l'avais pas prévu."
+    noam taquin "Je sens que je vais apprendre beaucoup de choses aujourd'hui."
 
     pause 0.4
 
