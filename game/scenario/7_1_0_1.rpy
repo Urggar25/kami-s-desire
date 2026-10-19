@@ -369,7 +369,7 @@ label _7_1_0_1_INFIRMERIE_MATIN:
 
     sael determine "Posez-la ici. Doucement."
 
-    elias inquiet "Le chauffage est à fond, mais collez pas le truc contre elle. On la réchauffe, on la cuit pas."
+    elias inquiet "Le chauffage est au maximum, mais poussez pas le radiateur contre elle ! On essaie de la réchauffer, pas de la faire griller."
 
     $ anya_lit_infirmerie = 1
     think "Tomas et moi déposons la jeune femme sur le lit. Sael glisse immédiatement une main sous sa nuque."
@@ -384,7 +384,7 @@ label _7_1_0_1_INFIRMERIE_MATIN:
 
     iris colere "Alors active-les au lieu de faire l'inventaire."
 
-    elias colere "Je sais, bordel. J'essaie juste de pas faire une connerie."
+    elias colere "Je sais, merde ! J'essaie justement de pas tout bousiller comme d'habitude."
 
     nyra raison "Vous avez besoin de nous ?"
 
@@ -685,11 +685,11 @@ label _7_1_0_1_INFIRMERIE_APRES_MIDI_ARRIVEE:
 
     sael desaccord "Alors nous gérerons ce problème lorsqu'il se présentera. Pas avant."
 
-    elias neutre "On va continuer à la chauffer doucement. Le machin tient, mais faut le surveiller."
+    elias neutre "On va la réchauffer petit à petit. Mon bricolage tient pour l'instant, mais faut pas le quitter des yeux."
 
     noam surpris "Tu l'as réparé ?"
 
-    elias mefiant "Réparé, c'est un grand mot. Disons qu'il a arrêté de faire des étincelles."
+    elias mefiant "Réparé, réparé... disons qu'il fait plus d'étincelles. Je vais pas te vendre ça comme du neuf."
 
     sael colere "Il en a fait une seule."
 
