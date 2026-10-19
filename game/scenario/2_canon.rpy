@@ -202,8 +202,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     pause 0.4
 
-    elias ecoute "… Façon on peut rien faire d'autre que d'attendre. Donc ça sert à rien de se prendre la tête avec ça."
-    elias neutre "Ça se trouve la première proposition va être géniale."
+    elias ecoute "Bah, on peut pas faire grand-chose là, si ? Autant pas se ronger les ongles. Moi, quand j'attends trop, je finis par démonter un truc sans raison."
+    elias neutre "Et puis, qui sait ? La première proposition sera peut-être pas si mal. J'ai déjà vu des machines repartir après un bon coup de pied."
 
     sael raison "Elias a raison, en attendant, il faut profiter de ce bon repas."
     sael mefiant "Mangez. Nous aurons besoin de forces quand le signe viendra."
@@ -445,7 +445,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     mara colere "C'est un système où les riches peuvent tout acheter et où les pauvres doivent se démerder."
 
-    elias colere "Hein ? Pourquoi c'est toi qui t'attaque à ça ? T'es bien la fille Shiran, non ?!"
+    elias colere "Hein ? Attends, c'est toi qui t'occupes de ça ? J'avais compris que... ah, non, j'ai encore mélangé les gens. Pardon !"
 
     mara colere "Je m'appelle Mara, c'est tout."
 
@@ -500,7 +500,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     lysa blase "Pourquoi il me semble avoir déjà entendu ça quelque part...?"
 
-    elias taquin "Bah, c'est pas trop compliqué à comprendre !"
+    elias taquin "Bah, ça me paraît pas sorcier ! Enfin, c'est peut-être moi qui ai compris de travers, ça m'arrive."
     elias ecoute "La télé dans les couloirs elle redit aussi ce que Kami dit. C'est chaud de faire genre t'as deviné."
 
     julian panne "… T'aurais pas pu te taire, hein ?!"
@@ -524,7 +524,7 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     kael reflechit "Ah, la formulation est là."
 
-    elias triste "hein ? Attendez, montrez-moi, j'ai pas ma tablette !"
+    elias triste "Hein ? Attendez, montrez voir ! J'ai laissé ma tablette quelque part... probablement sous un outil."
 
     kael reflechit "« Ça serait bien qu'on réautorise le commerce comme avant. »"
     kael neutre "La formulation est soumise à changement."
@@ -563,13 +563,13 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     mara surpris "Hein ? Tu continues à travailler ? Pourquoi ? Tu y es obligé ?"
 
-    elias sourire "C'est la seule chose que je sais faire. Et même si on est plus payé, je me dis que ce que je fabrique servira toujours à quelqu'un d'autre."
-    elias sourire "Alors oui, c'est pas facile. Ça c'est clair. Mais si je peux être utile..."
+    elias sourire "Moi, je sais surtout me servir de mes dix doigts. On nous paie plus comme avant, d'accord, mais si je répare une pompe, y a toujours quelqu'un qui aura de l'eau."
+    elias sourire "C'est pas toujours la fête, mais tant que je peux filer un coup de main à quelqu'un, ça me va. Même si, des fois, je dois réparer mes propres bêtises."
     
     mara colere "Me dis pas que tu préférais le système d'avant ?"
 
-    elias reflechit "Bah ouais ! Avant, quand il me manquait une pièce, j'allais l'acheter."
-    elias colere "Maintenant, faut remplir trois formulaires et attendre qu'un type décide si j'en ai vraiment besoin. C'est complètement con !"
+    elias reflechit "Bah ouais ! Avant, quand il me manquait un écrou, j'allais en chercher un. Bon, je revenais parfois avec la mauvaise taille, mais c'était mon problème."
+    elias colere "Maintenant, faut remplir trois papiers pour un pauvre boulon ! Trois ! À force, la machine est encore en panne quand la pièce arrive."
 
     nyra taquin "Factuellement, quelqu'un a quelque chose à perdre si les échanges reprennent ?"
     nyra raison "Il faut qu'on en parle pour savoir quels sont les points de blocage."
@@ -781,7 +781,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
         ("lysa", "triste", 0.25),
     ])
 
-    elias ecoute "Tu devrais parler avec nous. Si tu veux. Faut pas rester seule ici."
+    elias ecoute "Hé, viens te poser avec nous, si tu veux. On mord pas. Enfin, moi en tout cas, j'ai jamais mordu personne."
 
     lysa neutre "Tu sais je préfère... Ouais, fin- Je sais..."
 
@@ -1068,23 +1068,23 @@ label _2_GYMNASE:
     iris taquin "Pas tant que tu ne prends pas ma place et que tu ne te blesses pas de façon stupide. J'ai déjà assez de travail."
 
     elias ecoute "Non. Tu tombes bien."
-    elias joie "Tu veux apprendre ? Ouais ! J'peux te montrer."
+    elias joie "Tu veux que je te montre ? Avec plaisir ! Par contre, écoute ce que je dis, pas forcément ce que je fais."
 
     noam surpris "Euh… Je crois ?"
 
     iris determine "Alors bouge au lieu de me mater. Il y a des bancs libres."
 
-    elias joie "Celui-là. Regarde, assieds-toi. On va faire un truc simple pour le début."
+    elias joie "Tiens, commence avec celui-là. Pas trop lourd, hein. J'ai déjà voulu impressionner un collègue et j'ai passé trois jours à me masser le dos."
 
     think "Le métal est froid sous mon dos."
 
-    elias raison "Stop tu vas te bousiller le dos dos. Souffle quand tu pousses, et respire fort en descendant."
+    elias raison "Hé, doucement ! Tu vas te péter le dos ! Souffle quand tu pousses, et respire quand tu redescends."
 
     iris taquin "Tu lui fais commencer par du développé couché dès la première séance ? Excellent. Le spectacle sera amusant !"
 
     noam inquiet "Je tremble déjà rien que d'y penser."
 
-    elias ecoute "C'est pas si difficile, regarde. Faut pas lutterr. Accompagne le mouvement."
+    elias ecoute "C'est pas compliqué, regarde... enfin, non, regarde pas mes pieds, je me suis mis de travers. Accompagne le mouvement."
 
     think "Je soulève. Ouh ! C'est beaucoup plus lourd que prévu."
 
@@ -1112,8 +1112,8 @@ label _2_GYMNASE:
 
     pause 0.6
 
-    elias joie "Tu sens tes muscles ? C'est ça qu'on aime. La sensation de toujours faire mieux ! Mais le sport, ça se perd vite, alors refais-en souvent !"
-    elias raison "Tu viens souvent. Force, endurance, concentration. Le corps comprend le concret."
+    elias joie "Ça tire un peu, hein ? C'est bon signe ! Enfin, si ça craque, tu t'arrêtes. Je veux pas devoir te réparer comme une machine."
+    elias raison "Viens t'entraîner de temps en temps. Ça fait du bien aux bras, aux jambes et surtout à la tête. Moi, sans ça, je deviens encore plus distrait."
 
     iris determine "Et parfois, c'est juste pour ne pas rentrer et tout casser."
     iris taquin "La fonte, ça coûte moins cher qu'un psy et ça pose moins de questions idiotes."
@@ -1122,7 +1122,7 @@ label _2_GYMNASE:
 
     noam reflexion "Donc… Si je ne fais rien…"
 
-    elias neutre "Tu vas stagner. Et plus tard, ton corps te le fait payer."
+    elias neutre "Si tu bouges plus du tout, tu vas rouiller. Comme une vieille machine. Enfin, je te traite pas de machine, hein !"
 
     think "Mes mains tremblent encore."
 
@@ -1130,7 +1130,7 @@ label _2_GYMNASE:
 
     iris sourire "Bonne idée."
 
-    elias ecoute "Je serai là. Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?"
+    elias ecoute "Reviens quand tu veux, je serai là ! La prochaine fois, on va juste essayer de pas trembler avant même de toucher la barre."
 
     $ hideGroup()
 
