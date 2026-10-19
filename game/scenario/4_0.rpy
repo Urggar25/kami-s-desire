@@ -285,7 +285,7 @@ label _4_0_CAFETERIA_ECRANS:
 
     elen "Quoi ?! Mais nooon, on n'a déjà presque rien ici !"
 
-    elias "Moi, j'voulais juste des barres moins dégueulasses. C'est chaud, elles ont même pas de goût, celles-là."
+    elias "Moi, j'voulais juste une barre qui ait un goût de quelque chose. J'ai mordu dans l'emballage la première fois, figure-toi que c'était presque meilleur."
 
     nyra "Je crois bien qu'on a pas le choix. J'imagine que c'est un ordre de Kami pour nous punir d'avoir échoué."
 
@@ -293,7 +293,7 @@ label _4_0_CAFETERIA_ECRANS:
 
     elen "Mais c'est injuste ! On est coincés ici et on peut même pas avoir un tout petit truc qui soit… différent ?"
 
-    elias "Ouais, on est censés bosser pour tout le monde et on bouffe des trucs immangeables."
+    elias "On répare la moitié des trucs pour les autres, et en échange, on nous donne des briques à mâcher. C'est un peu fort, non ?"
 
     elen "…Je voulais juste que ça ait un peu de goût pour une fois."
 
@@ -675,7 +675,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     iris blase "Qu'est-ce qui pourrait mal tourner ? Si ce n'est retourner aux sources de toutes les guerres qui nous ont opposés ?"
 
-    elias reflechit "Ouais, le sujet est chaud, il fera probablement pas l'unanimité. Mais c'est pas inutile."
+    elias reflechit "Ouais, ça va coincer. Mais c'est pas parce qu'un truc coince qu'il faut arrêter d'essayer de le débloquer."
 
     kael reflechit "À Orbite, le débat ne nous concerne pas vraiment. On a pas vraiment de frontières avec les autres districts nous."
     $ unlock_dossier_arg("p2_orbite")
@@ -809,7 +809,7 @@ label _4_0_APRES_CLASH_PRE_FETE:
 
     nyra determine "Tu as entendu sa voix : ce soir, elle n'écoutera que sa colère. Il faudra essayer de lui parler calmement demain."
 
-    elias reflechit "Bon. Quelqu'un propose un truc, ou on reste là comme des plantes mortes ? C'est chaud, même elles ont l'air plus vivantes."
+    elias reflechit "Bon, quelqu'un a une idée ? Parce que là, on est plantés comme des poteaux. Et moi, si je reste planté trop longtemps, je finis par casser quelque chose."
 
     iris sourire "On pourrait se poser un coup à la salle de repos. Enfin, si cette brillante assemblée sait encore décompresser sans se prendre la tête."
 
