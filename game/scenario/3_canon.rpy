@@ -549,13 +549,13 @@ label _3_CAFETERIA_ARRIVE:
         ("elias", "neutre"),
     ])
 
-    elias sourire "Wesh. Vous mangez quoi ?"
+    elias sourire "Salut les gars ! Ça mange quoi, ici ? J'ai une faim de loup, j'ai failli croquer un bout de pain encore dans son emballage."
 
     elen joie "Le bonheur."
 
     iris taquin "Ne la crois surtout pas."
 
-    elias inquiet "…Faut manger correctement. Surtout aujourd'hui."
+    elias inquiet "Faut manger un truc qui tient au ventre, surtout aujourd'hui. Les grandes discussions, ça m'épuise plus que de porter des sacs."
 
     elen taquin "Oh non. Iris me faisait déjà la morale. Pas besoin de rab."
 
@@ -563,20 +563,20 @@ label _3_CAFETERIA_ARRIVE:
 
     iris taquin "Il plaisante jamais. Ça, c'est vrai."
 
-    elias sourire "Protéines. Œufs. Poulet. Simple, efficace."
+    elias sourire "Des œufs, un peu de poulet... enfin, ce qu'ils ont. Moi, tant que ça se mange à la fourchette, je suis pas difficile."
 
     think "Elen le regarde comme s'il venait de recommander de l'eau tiède pour le plaisir."
 
     elen triste "Tu veux manger du poulet ? Ici, le seul endroit où on peut demander tout ce qu'on veut ?"
 
-    elias reflechit "C'est une base. Ça tient au corps. Ton truc, là… c'est chaud d'appeler ça un repas."
+    elias reflechit "Ça te cale pour la journée. Ton truc, là, j'sais pas si c'est un repas ou un échantillon."
 
     iris taquin "Merci. Elle a clairement un palais de doberman."
 
     elen colere "Oh ! C'est pas des pâtes aux noix. C'est une œuvre d'art gustative."
 
     elias peur "Franchement, j'en doute."
-    elias reflechit "Cet aprèm, faut être lucides. On peut pas débarquer là-bas tout mous."
+    elias reflechit "Cet aprèm, faut qu'on ait les idées claires. Enfin, plus claires que moi quand je cherche mes lunettes alors que je les ai sur le nez."
 
     iris triste "…"
 
@@ -586,7 +586,7 @@ label _3_CAFETERIA_ARRIVE:
 
     iris colere "On n'est pas obligés. Là. Maintenant. On mange."
 
-    elias triste "On fait quoi, alors ? On arrive et on improvise ? C'est chaud comme plan."
+    elias triste "On va pas y aller les mains dans les poches, quand même ? Moi, quand j'improvise, y a souvent un truc qui finit par fumer."
 
     elen sourire "Bon. Puisque vous me cassez l'appétit avec ça…"
 
@@ -650,7 +650,7 @@ label _3_CAFETERIA_ARRIVE:
 
     iris fatigue "Une seule voix contre suffit à tout faire capoter. L'enthousiasme n'est pas une stratégie de vote."
 
-    elias "Pour. Mais faut que ça soit vraiment appliqué. Sinon on vote pour du vent, et ça, c'est chaud."
+    elias "Pour, oui ! Mais faut que ça serve vraiment à quelque chose. J'ai déjà bossé pour du vent, crois-moi, ça fait pas tourner une machine."
 
     think "Kael tente de passer avec son plateau. Elen lui barre la route en souriant."
 
@@ -1569,7 +1569,7 @@ label _3_DEBAT1_PHASE3:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
-    elias "Le vrai problème, c'est qu'on évite la vraie question. Le système actuel, il marche pas. Point."
+    elias "Le fond du problème, c'est que leur système marche pas. Quand un moteur tourne mal, tu peux repeindre le capot, il tournera toujours mal."
 
     sael "…Vous dépendez trop de ce système."
     sael colere "Les gens ne veulent plus travailler, plus faire d'effort, mais ils veulent être libres."
@@ -1698,7 +1698,7 @@ label _3_DEBAT1_PHASE3_INT1:
 
         noam "Même avec les bons, les rayons sont vides. On distribue des droits sur des étagères qui n'existent pas."
 
-        elias determine "Ça, c'est la vérité vraie. Un bon pour du riz, et pas de riz au bout. On appelle ça la sécurité ?"
+        elias determine "C'est ça ! On te file un bon pour du riz, mais quand t'arrives, y a plus de riz. À l'atelier, on appellerait ça une commande ratée."
 
         julian sourire "Le commerce remplit les rayons. Un producteur qui peut vendre produit davantage. C'est mécanique."
 
@@ -1739,7 +1739,7 @@ label _3_DEBAT1_PHASE3_INT1:
 
         mara reflexion "…D'accord. Là, tu marques un point. Défendre ce système-là, c'est défendre du vide."
 
-        elias determine "Le même ticket pour rien, qu'on se crève au boulot ou qu'on dorme toute la journée. Faut que ça change."
+        elias determine "Tu peux te crever toute la journée à la Forge, tu reçois le même bout de papier et parfois rien au bout. Ça donne pas envie de se lever."
 
         elen joie "Plus de fournisseurs, plus de concurrence, plus de choix. On mérite mieux qu'un ticket vide !"
 
@@ -1838,7 +1838,7 @@ label _3_DEBAT1_PHASE3_INT2:
         ryn colere "Lisez le texte, bon sang ! « Suppression des bons. Fin de la distribution. » Point."
         ryn colere "Pas de « minimum vital ». Pas de « transition ». Rien."
 
-        elias determine "C'est ça qui libère ! Plus de bons, plus de laisse. On produit, on échange, on vit."
+        elias determine "Laissez-nous fabriquer, réparer, échanger nos pièces sans réclamer trois autorisations ! Ça, au moins, je sais comment ça marche."
 
         noam "Le texte est binaire. Pour : suppression totale, tout de suite. Contre : rien ne change. Aucun entre-deux."
 
