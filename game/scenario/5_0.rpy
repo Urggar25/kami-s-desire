@@ -639,6 +639,7 @@ label _5_0_CRITICAL_CHOICE:
 
 
 label _5_0_0_JULIAN:
+    $ unlock_codex_page("surveillance_conclave", with_notification=False)
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_235
     scene bg_dortoir at adaptive_fullscreen with dissolve
@@ -919,6 +920,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     play sound sfx_drop
 
     scene bg_cg027 at adaptive_fullscreen with dissolve
+    $ unlock_codex_page("securite_orbitale", with_notification=False)
     $ unlock_gallery_image("bg_cg027")
 
     "Le café se répand sur les touches et le panneau latéral."
