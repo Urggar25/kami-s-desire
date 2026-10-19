@@ -31,28 +31,28 @@ init python:
             "title": "LE CONCLAVE",
             "subtitle": "Les règles, les membres\net le fonctionnement du Conclave.",
             "color": "#5CD3FF", "icon": "pack_conclave", "banner": "banner_conclave",
-            "entries": ["reglement_conclave", "commandements", "conclave_orbital", "propositions_amendement"],
+            "entries": ["reglement_conclave", "commandements", "conclave_orbital", "propositions_amendement", "surveillance_conclave", "communications_familiales"],
         },
         {
             "id": "districts", "num": 2,
             "title": "LES DISTRICTS",
             "subtitle": "Les différents districts, leurs\nressources et leurs particularités.",
             "color": "#F0A835", "icon": "pack_districts", "banner": "banner_districts",
-            "entries": ["harmonie", "axiome", "archive", "limen", "nexus", "orbite"],
+            "entries": ["harmonie", "axiome", "archive", "limen", "nexus", "orbite", "mont_kensen"],
         },
         {
             "id": "societe", "num": 3,
             "title": "SYSTÈMES ET FRONTIÈRES",
             "subtitle": "L'organisation matérielle, économique\net territoriale sous Kami.",
             "color": "#70D6A5", "icon": "pack_conclave", "banner": "banner_conclave",
-            "entries": ["bons_rationnement", "derogations_administratives", "commerce_monnaie", "frontieres_interdistricts", "frontieres_limen"],
+            "entries": ["bons_rationnement", "derogations_administratives", "commerce_monnaie", "frontieres_interdistricts", "frontieres_limen", "gardiens_limen"],
         },
         {
             "id": "orbite", "num": 4,
             "title": "ORBITE",
             "subtitle": "La station orbitale, ses systèmes\net ses technologies.",
             "color": "#B57BFF", "icon": "pack_orbite", "banner": "banner_orbite",
-            "entries": ["complexe_c"],
+            "entries": ["complexe_c", "securite_orbitale"],
         },
     ]
 
@@ -103,6 +103,41 @@ init python:
                 "Cada representante pode propor uma alteração aos Mandamentos. Dez das doze emendas apresentadas são sorteadas para debate. Antes da votação, os representantes reúnem argumentos e tentam convencer os colegas. A aprovação exige unanimidade entre os votos expressos.",
                 "每位代表均可提出修改戒律的修正案。十二项提案中抽取十项供讨论。投票前，代表收集论据、辩论并争取支持。只有获得全体有效票赞成的提案才能通过。"),
             "aliases": ["propositions d'amendement", "amendements", "amendment proposals"],
+        },
+        "surveillance_conclave": {
+            "title": _codex_loc("La surveillance du Conclave", "Conclave Surveillance", "Vigilância do Conclave", "秘密会议监控"),
+            "icon": "ic_antenna", "assoc": [], "auto_unlock": False,
+            "short": _codex_loc("Les caméras, les diffusions et les brouilleurs.", "Cameras, broadcasts and jammers.", "Câmeras, transmissões e bloqueadores.", "摄像头、公开转播与干扰器。"),
+            "text": _codex_loc("Les installations du Conclave sont équipées de caméras, de microphones et de dispositifs permettant à Kami d'observer les représentants et de diffuser certains de leurs échanges. Des brouilleurs peuvent interrompre momentanément la captation dans des zones prévues à cet effet. Cette surveillance pèse sur les prises de parole : certains représentants, comme Julian, adaptent délibérément leur attitude à la présence des caméras.", "The Conclave is equipped with cameras and microphones through which Kami monitors delegates and may broadcast their exchanges. Jammers can temporarily interrupt recording in designated areas. Knowing they are being watched influences how delegates behave and speak.", "O Conclave possui câmeras e microfones que permitem a Kami acompanhar os representantes e transmitir suas conversas. Bloqueadores podem interromper temporariamente a gravação em determinadas áreas. Essa vigilância influencia o comportamento dos participantes.", "秘密会议安装了摄像头和麦克风，Kami能监视代表并播出部分谈话。某些区域的干扰器可暂时中断监控。被监视的意识影响着代表的言行。"),
+            "aliases": ["La surveillance du Conclave"],
+        },
+        "mont_kensen": {
+            "title": _codex_loc("Le Mont Kensen", "Mount Kensen", "Monte Kensen", "剑仙山"),
+            "icon": "ic_building", "assoc": [], "auto_unlock": False,
+            "short": _codex_loc("Une région montagneuse du district de Limen.", "A mountainous area of the Limen district.", "Uma região montanhosa de Limen.", "利门区的一片山区。"),
+            "text": _codex_loc("Le Mont Kensen se trouve dans le district de Limen, à distance des frontières les plus contestées. Sael évoque cette région lorsqu'elle parle de son peuple et des violences commises autrefois par des groupes armés qui traversaient leurs terres. Son expérience de Limen diffère de celle de Ryn, marqué par la situation aux frontières. Leur désaccord ne se résume donc pas à une opposition abstraite sur la liberté de circulation.", "Mount Kensen is an area of Limen far from its most contested borders. Sael recalls armed groups crossing her people's lands before Kami. Her experience of Limen differs from Ryn's, which is deeply shaped by the border conflict.", "O monte Kensen fica em Limen, longe das fronteiras mais disputadas. Sael recorda grupos armados que atravessavam as terras de seu povo antes de Kami. A experiência dela difere da de Ryn, marcada pelos conflitos fronteiriços.", "剑仙山位于利门区，远离争议最激烈的边境。Sael回忆起Kami掌权前武装团体穿越其族人土地的往事。她对利门的经历与受边境冲突影响的Ryn不同。"),
+            "aliases": ["Le Mont Kensen"],
+        },
+        "gardiens_limen": {
+            "title": _codex_loc("Les Gardiens", "The Guardians", "Os Guardiões", "守卫者"),
+            "icon": "ic_doc", "assoc": [], "auto_unlock": False,
+            "short": _codex_loc("Un groupe lié à la défense des frontières de Limen.", "A group tied to defending Limen's borders.", "Um grupo ligado à defesa das fronteiras de Limen.", "与利门边境防御有关的团体。"),
+            "text": _codex_loc("Les Gardiens sont évoqués par les représentants de Limen au cours du débat sur l'ouverture des frontières. Leur histoire est marquée par les dangers entourant les limites du district et par des pertes humaines. Ryn et Sael connaissent tous deux ce passé, mais n'en tirent pas les mêmes conclusions sur l'utilité de maintenir les frontières. Leurs missions exactes ne sont pas encore entièrement connues.", "The Guardians are mentioned during the debate on Limen's borders. Their history is marked by dangerous frontiers and casualties. Ryn and Sael know this past but draw different conclusions from it. Their precise responsibilities remain unclear.", "Os Guardiões são mencionados no debate sobre as fronteiras de Limen. Sua história inclui perigos e perdas humanas. Ryn e Sael interpretam esse passado de maneiras diferentes. Suas funções exatas ainda não são conhecidas.", "代表们在讨论利门边境时提到了守卫者。他们的历史伴随着危险和伤亡。Ryn与Sael对这段历史有不同理解，其具体职责尚未完全揭晓。"),
+            "aliases": ["Les Gardiens"],
+        },
+        "communications_familiales": {
+            "title": _codex_loc("Les communications familiales", "Family Communications", "Comunicações Familiares", "家庭通讯"),
+            "icon": "ic_doc", "assoc": [], "auto_unlock": False,
+            "short": _codex_loc("Un isolement imposé aux représentants.", "An isolation rule imposed on delegates.", "Uma regra de isolamento dos representantes.", "代表必须遵守的隔离规定。"),
+            "text": _codex_loc("Pendant les trente jours du Conclave, les représentants ne peuvent normalement pas communiquer avec leur famille ni avec leur district. Kami peut refuser même une demande très brève, en invoquant le règlement ou la nécessité d'éviter les distractions. Lorsque Kael souhaite joindre sa petite sœur Léa après une alerte sur Orbite, ce refus transforme son inquiétude en véritable crise.", "For thirty days, delegates are normally forbidden from contacting family or their home districts. Kami may refuse even brief requests on procedural grounds. When Kael wants to check on his young sister Léa after an alert on Orbit, the refusal turns his concern into a crisis.", "Durante trinta dias, os representantes não podem normalmente contactar as famílias nem seus distritos. Kami pode recusar até um pedido muito breve. Após um alerta em Órbita, Kael tenta obter notícias de sua irmã Léa, mas é impedido.", "在三十天的会议期间，代表通常不得联系家人或所属地区。Kami甚至可以拒绝短暂通话。轨道区发生警报后，Kael想确认妹妹Léa是否平安，却遭到拒绝。"),
+            "aliases": ["Les communications familiales"],
+        },
+        "securite_orbitale": {
+            "title": _codex_loc("La sécurité des installations orbitales", "Orbital Facility Safety", "Segurança das Instalações Orbitais", "轨道设施安全"),
+            "icon": "ic_antenna", "assoc": [], "auto_unlock": False,
+            "short": _codex_loc("Les dispositifs d'isolement en cas d'anomalie.", "Emergency isolation systems.", "Sistemas de isolamento em caso de falha.", "故障时的隔离安全系统。"),
+            "text": _codex_loc("Les installations orbitales reposent sur des systèmes vitaux : alimentation électrique, ventilation, pressurisation et contrôle des accès. Certaines anomalies provoquent automatiquement le verrouillage d'une salle pour empêcher qu'un incident ne se propage. Ces sécurités peuvent aussi piéger temporairement les occupants : dans la salle d'observation, une console endommagée entraîne la fermeture des portes jusqu'à ce que les représentants puissent intervenir.", "Orbital facilities depend on power, ventilation, pressure regulation and access controls. Some failures automatically seal off rooms to contain danger, but can trap occupants. Damage to the observation room console triggers such a lockdown.", "Instalações orbitais dependem de energia, ventilação, pressurização e controle de acesso. Algumas falhas trancam salas automaticamente para conter o perigo, podendo prender os ocupantes. Isso ocorre após danos à consola de observação.", "轨道设施依赖供电、通风、气压维持及门禁系统。某些异常会自动封锁房间以防事故蔓延，也可能暂时困住室内人员。观察室控制台受损后便触发了此类封锁。"),
+            "aliases": ["La sécurité des installations orbitales"],
         },
         "harmonie": {
             "title": _codex_loc("Harmonie", "Harmony", "Harmonia", "和谐区"),
@@ -204,6 +239,7 @@ init 3 python:
     # peuvent apparaître. Tout le contenu de remplissage est retiré au chargement.
     _CODEX_INGAME_ENTRIES = set([
         "reglement_conclave", "commandements", "conclave_orbital", "propositions_amendement",
+        "surveillance_conclave", "mont_kensen", "gardiens_limen", "communications_familiales", "securite_orbitale",
         "harmonie", "axiome", "archive", "limen", "nexus", "orbite",
         "bons_rationnement", "derogations_administratives", "commerce_monnaie",
         "frontieres_interdistricts", "frontieres_limen",
