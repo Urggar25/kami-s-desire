@@ -160,18 +160,53 @@ transform choice_appear(delay=0.0):
     parallel:
         easeout 0.25 yoffset 0
 
+# Styles autonomes : ne dependent pas des styles du menu principal.
+style stat_dialogue_panel is frame:
+    background Solid("#101b2bf5")
+    xalign 0.5
+    yalign 0.5
+    xmaximum 1200
+    xpadding 42
+    ypadding 32
+
+style stat_dialogue_header is text:
+    font "fonts/Barlow-Light.ttf"
+    size 34
+    bold True
+    color "#5cd3ff"
+    xalign 0.5
+
+style stat_dialogue_vbox is vbox:
+    spacing 12
+    xfill True
+
+style stat_dialogue_button is button:
+    background Solid("#192d42")
+    hover_background Solid("#27506a")
+    insensitive_background Solid("#121b27")
+    xfill True
+    xpadding 24
+    ypadding 16
+
+style stat_dialogue_button_text is button_text:
+    font "fonts/Barlow-Light.ttf"
+    size 23
+    color "#d6e8f0"
+    hover_color "#ffffff"
+    insensitive_color "#6e8191"
+
 screen stat_dialogue_choice(dialogue):
-    style_prefix "choice"
+    style_prefix "stat_dialogue"
     modal True
     zorder 210
 
     add Solid("#03070ddd")
     frame at choice_appear(0.0):
-        style "choice_panel"
+        style "stat_dialogue_panel"
         vbox:
             spacing 18
             xfill True
-            text "RÉPONDRE" style "choice_header"
+            text "RÉPONDRE" style "stat_dialogue_header"
             text dialogue["prompt"]:
                 xalign 0.5
                 textalign 0.5
@@ -181,7 +216,7 @@ screen stat_dialogue_choice(dialogue):
                 font "fonts/Barlow-Light.ttf"
             add Solid("#5cd3ff66", xsize=760, ysize=2) xalign 0.5
             vbox:
-                style "choice_vbox"
+                style "stat_dialogue_vbox"
                 for idx, option in enumerate(dialogue["options"]):
                     $ unlocked = stat_choice_unlocked(option)
                     textbutton (option["text"] if unlocked else "VERROUILLÉ   —   ? ? ?"):
