@@ -150,80 +150,65 @@ init 3 python:
 
 
 
-# Animation d'apparition des choix statistiques.
-transform choice_appear(delay=0.0):
-    alpha 0.0
-    yoffset 20
-    pause delay
-    parallel:
-        linear 0.25 alpha 1.0
-    parallel:
-        easeout 0.25 yoffset 0
-
-# Styles autonomes : ne dependent pas des styles du menu principal.
-style stat_dialogue_panel is frame:
-    background Solid("#101b2bf5")
-    xalign 0.5
-    yalign 0.5
-    xmaximum 1200
-    xpadding 42
-    ypadding 32
-
-style stat_dialogue_header is text:
-    font "fonts/Barlow-Light.ttf"
-    size 34
-    bold True
-    color "#5cd3ff"
-    xalign 0.5
-
-style stat_dialogue_vbox is vbox:
-    spacing 12
-    xfill True
-
-style stat_dialogue_button is button:
-    background Solid("#192d42")
-    hover_background Solid("#27506a")
-    insensitive_background Solid("#121b27")
-    xfill True
-    xpadding 24
-    ypadding 16
-
-style stat_dialogue_button_text is button_text:
-    font "fonts/Barlow-Light.ttf"
-    size 23
-    color "#d6e8f0"
-    hover_color "#ffffff"
-    insensitive_color "#6e8191"
-
+# Reutilise le meme habillage que le menu de choix natif (screens.rpy).
+# Les conditions de statistiques ne changent que l'accessibilite des options.
 screen stat_dialogue_choice(dialogue):
-    style_prefix "stat_dialogue"
     modal True
-    zorder 210
+    zorder 110
 
-    add Solid("#03070ddd")
-    frame at choice_appear(0.0):
-        style "stat_dialogue_panel"
-        vbox:
-            spacing 18
-            xfill True
-            text "RÉPONDRE" style "stat_dialogue_header"
-            text dialogue["prompt"]:
-                xalign 0.5
-                textalign 0.5
-                xmaximum 1120
-                size 25
-                color "#d6e8f0"
-                font "fonts/Barlow-Light.ttf"
-            add Solid("#5cd3ff66", xsize=760, ysize=2) xalign 0.5
+    on "show" action Function(minor_choice_suspend_original)
+    on "hide" action Function(minor_choice_restore_original)
+    on "replaced" action Function(minor_choice_restore_original)
+
+    fixed:
+        at minor_choice_screen_fade
+        add Solid("#050913b8", xsize=1920, ysize=1080) xpos 0 ypos 0
+        add "gui/choice_v6/portrait_shadow.svg" xpos 1218 ypos 229
+
+        fixed:
+            xpos 1285
+            ypos 139
+            xsize 635
+            ysize 941
+            at minor_choice_face_enter
+            add minor_choice_face() xpos 0 ypos 0 at minor_choice_face_idle
+
+        $ stat_count = len(dialogue["options"])
+        $ stat_visible = min(max(stat_count, 1), 5)
+        $ stat_top = {1: 687, 2: 595, 3: 502, 4: 395, 5: 290}[stat_visible]
+
+        viewport:
+            xpos 401
+            ypos stat_top
+            xsize 1160
+            ysize min(145 * stat_count + 20, 778)
+            mousewheel True
+            draggable True
             vbox:
-                style "stat_dialogue_vbox"
+                spacing 7
                 for idx, option in enumerate(dialogue["options"]):
                     $ unlocked = stat_choice_unlocked(option)
-                    textbutton (option["text"] if unlocked else "VERROUILLÉ   —   ? ? ?"):
-                        action Return(option["id"])
-                        sensitive unlocked
-                        at choice_appear(0.12 + idx * 0.07)
-
+                    $ caption = option["text"] if unlocked else "VERROUILLÉ   —   ? ? ?"
+                    $ stat_width = minor_choice_width(idx, caption)
+                    $ stat_height = minor_choice_height(caption)
+                    fixed:
+                        xsize 1130
+                        ysize stat_height + 10
+                        xoffset MINOR_CHOICE_OFFSETS[idx % 4]
+                        at minor_choice_enter(0.07 + idx * 0.055)
+                        textbutton caption:
+                            action Return(option["id"])
+                            sensitive unlocked
+                            style "choice_button"
+                            xsize stat_width
+                            ysize stat_height
+                            padding (47, 22, 130, 17)
+                            background minor_choice_image(idx, False, stat_width, stat_height)
+                            hover_background minor_choice_image(idx, True, stat_width, stat_height)
+                            insensitive_background minor_choice_image(idx, False, stat_width, stat_height)
+                            text_style "choice_button_text"
+                            text_size minor_choice_font_size(caption)
+                            at minor_choice_hover(MINOR_CHOICE_TILTS[idx % 4])
 
 label play_stat_dialogue(dialogue_id):
     $ _stat_dialogue = STAT_DIALOGUES[dialogue_id]
