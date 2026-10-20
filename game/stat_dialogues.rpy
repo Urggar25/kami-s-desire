@@ -149,6 +149,17 @@ init 3 python:
     }
 
 
+
+# Animation d'apparition des choix statistiques.
+transform choice_appear(delay=0.0):
+    alpha 0.0
+    yoffset 20
+    pause delay
+    parallel:
+        linear 0.25 alpha 1.0
+    parallel:
+        easeout 0.25 yoffset 0
+
 screen stat_dialogue_choice(dialogue):
     style_prefix "choice"
     modal True
