@@ -25,25 +25,28 @@ init 2 python:
         },
     ]
 
-# Mise en scène du réveil : effets ATL autonomes, sans nouveaux assets.
-transform day1_wake_vision:
-    zoom 1.12
-    blur 22
-    alpha 0.60
-    linear 1.6 blur 11 alpha 0.88 zoom 1.07
+# Réveil jour 1 : mouvements opaques de la couche de jeu (HUD non affecté).
+transform day1_lysa_shake:
+    zoom 1.36
+    xalign 0.5
+    yalign 0.44
+    xoffset -18
+    yoffset 9
+    linear 0.10 xoffset 16 yoffset -10
+    linear 0.11 xoffset -13 yoffset 8
+    linear 0.12 xoffset 10 yoffset -5
+    ease 0.16 xoffset 0 yoffset 0
 
-transform day1_wake_recovery:
-    zoom 1.07
-    blur 11
-    alpha 0.88
-    ease 1.4 blur 0 alpha 1.0 zoom 1.0
+transform day1_lysa_close:
+    zoom 1.36
+    xalign 0.5
+    yalign 0.44
 
-transform day1_wake_reveal:
-    zoom 1.10
-    xalign 0.52
-    yalign 0.50
-    blur 3
-    ease 2.4 zoom 1.0 xalign 0.5 blur 0
+transform day1_lysa_pullback:
+    zoom 1.36
+    xalign 0.5
+    yalign 0.44
+    ease 2.0 zoom 1.0 xalign 0.5 yalign 0.5
 
 # =============================================================================
 label _1_CANON:
@@ -56,74 +59,34 @@ label _1_CANON:
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
 
-    # Réveil subjectif : d'abord les sons, puis deux clignements et la motricité.
-    # La musique attend la reprise de conscience pour préserver la désorientation.
+    # Lysa réveille Noam : aucun QTE, aucune transparence ou flou de décor.
     scene black
-    stop music fadeout 0.5
-    pause 1.0
+    stop music fadeout 0.3
+    pause 0.5
 
-    think "Un ronronnement grave, régulier, quelque part derrière ma tête. Au-dessus, des voix étouffées se mêlent au souffle continu d'une ventilation, mais je suis incapable d'en distinguer un seul mot."
-    think "J'essaie d'ouvrir les yeux. La lumière me traverse le crâne et je les referme presque aussitôt."
+    lysa blase "Hé. Hé, tu m'entends ?"
+    think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
+    lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
 
-    # Premier clignement : une fraction de seconde de vision trouble.
-    scene bg_conclave at adaptive_fullscreen, day1_wake_vision with Dissolve(0.25)
-    pause 0.35
-    scene black with Dissolve(0.16)
-    pause 0.55
+    # Plan très serré : Lysa au centre, caméra secouée avec la couche master.
+    scene bg_conclave at adaptive_fullscreen
+    $ showGroup([("lysa", "blase", 0.50)])
+    show layer master at day1_lysa_shake
+    pause 0.46
+    show layer master at day1_lysa_close
+    $ blink()
 
-    think "Jour un. Enfin, je crois... Tout ce dont je me rappelle, c'est ce foutu caisson et ce mal de crâne qui ne me quitte plus."
-    think "Un siège contre mon dos, quelque chose de froid sous mes doigts, et cette impression désagréable d'avoir été déplacé pendant mon sommeil."
+    noam inquiet "Mh... Arrête de me secouer..."
+    lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
+    think "J'ouvre péniblement les yeux. Le visage de Lysa occupe presque tout ce que je vois, si près que je dois reculer la tête pour parvenir à la regarder correctement."
+    $ blink()
+    lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
+    noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
+    lysa blase "Ça ou te laisser baver sur ton pupitre, j'ai choisi la solution la plus charitable."
+    noam inquiet "J'ai la tête en vrac... On est où ?"
+    lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
-    # Second clignement : le joueur distingue le cercle, sans voir encore le groupe en sprites.
-    scene bg_conclave at adaptive_fullscreen, day1_wake_vision with Dissolve(0.3)
-    pause 0.75
-    scene black with Dissolve(0.12)
-    pause 0.30
-    scene bg_conclave at adaptive_fullscreen, day1_wake_vision with Dissolve(0.25)
-
-    noam "Ma main..."
-    think "J'ai la tête qui tourne, la bouche sèche, la nuque en vrac. Qu'est-ce qu'ils ont utilisé comme produit pour nous endormir ?!"
-    think "J'essaie de lever le bras, mais mes doigts répondent avec un temps de retard, comme si mon corps attendait encore qu'on lui donne la permission de bouger."
-
-    # Tutoriel et QTE conservés : la récupération visuelle survient après l'effort.
-    show screen day1_tuto_trace
-    pause
-    call day1_play_trace(path_type="curve_right", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True) from _call_day1_trace_wakeup
-
-    scene bg_conclave at adaptive_fullscreen, day1_wake_recovery with Dissolve(0.25)
-    think "J'étends enfin les bras devant moi. Le geste est maladroit, mais au moins ils m'obéissent, et les contours de la pièce commencent à se remettre en place."
-    pause 1.45
-
-    # Lent recul subjectif : la salle et ses douze places se révèlent progressivement.
-    play music "music/bgm_calm_not_peace.mp3" fadein 2.0
-    scene bg_conclave at adaptive_fullscreen, day1_wake_reveal with Dissolve(0.35)
-    think "Des sièges disposés en cercle. Il y a quelqu'un sur chacun d'eux. Certains redressent péniblement la tête, d'autres restent affalés, et je ne reconnais aucun de ces visages."
-    think "Une gorge se racle, un vêtement frotte contre un dossier, puis un fauteuil grince dans mon dos. Personne ne semble savoir s'il vaut mieux parler ou attendre."
-    pause 2.5
-    scene bg_conclave at adaptive_fullscreen with Dissolve(0.35)
-
-    play sound sfx_beep
-    voix "Initialisation en cours..."
-    think "Une voix robotique retentit depuis plus bas. Il y a plusieurs niveaux, peut-être."
-    think "Une tablette noire est encastrée dans mon pupitre."
-
-    menu:
-        "Que dois-je faire ?"
-
-        "Poser la main sur l'écran":
-            think "Voyons voir ce que tu as à m'apprendre."
-            call screen day1_tablet_interaction()
-            play sound sfx_beep
-            $ shake(6, 0.2)
-            voix "Noam. Accès limité."
-            think "Elle me reconnaît à ma main, ils ont dû prendre nos empreintes."
-
-        "Regarder autour de moi":
-            think "La tablette ne m'intéresse pas."
-            think "Pas maintenant. Pas avant de comprendre où on est."
-
-    think "Je cherche des yeux Lysa. C'est la seule personne ici que je connais. Enfin connaître, je ne connais que son prénom."
-
+    # Ouverture du cadre : les autres représentants émergent dans le plan.
     $ showGroup([
         ("lysa", "neutre", -0.11),
         ("noam", "inquiet", 0.01),
@@ -138,19 +101,31 @@ label _1_CANON:
         ("elias", "neutre", 1.08),
         ("sael", "raison", 1.20),
     ])
+    show layer master at day1_lysa_pullback
+    pause 2.1
+    show layer master
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.5
 
-    noam inquiet "Lysa… ?"
-
-    lysa blase "Sérieux, arrête de crier !"
-
-    noam inquiet "Hein ? Mais je crie pas..."
-
-    lysa blase "Bien sûr que si que tu cries, tu ne t'en rends même pas compte ?"
-    lysa blase "Les Sept Dormants ont tenu des siècles. Toi, au bout de dix minutes, et t'as déjà mauvaise mine."
-
-    noam inquiet "On est où… ?"
-
+    think "Douze sièges disposés en cercle. Un corps sur chacun. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse, et je réalise brusquement que je ne connais presque aucun de ces visages."
+    noam inquiet "Attends... C'est vraiment le Conclave ?"
     lysa reflexion "Tu vois bien où on est. À ton avis... Le Conclave."
+    lysa blase "Les Sept Dormants ont tenu des siècles. Toi, au bout de dix minutes, t'as déjà mauvaise mine."
+
+    # Tablette conservée, après le réveil et hors de la mise en scène rapprochée.
+    play sound sfx_beep
+    voix "Initialisation en cours..."
+    think "Une tablette noire s'allume sur mon pupitre. Sa voix synthétique couvre un instant les murmures dans la salle."
+    menu:
+        "Que dois-je faire ?"
+        "Poser la main sur l'écran":
+            think "Voyons voir ce que tu as à m'apprendre."
+            call screen day1_tablet_interaction()
+            play sound sfx_beep
+            $ shake(6, 0.2)
+            voix "Noam. Accès limité."
+            think "Elle me reconnaît à ma main, ils ont dû prendre nos empreintes."
+        "Regarder autour de moi":
+            think "La tablette ne m'intéresse pas. Pas avant de comprendre ce qui se passe ici."
 
     call play_stat_dialogue("d1") from _call_stat_dialogue_d1
     lysa reflexion "Mais faut dire que je voyais ça d'une façon totalement différente."
