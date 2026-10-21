@@ -192,3 +192,16 @@ label bonus_succes008:
     $ hideGroup()
     scene black with dissolve
     return
+
+label bonus_succes009:
+    scene black with dissolve
+    centered "{size=38}BONUS — PEU ATTENTIF{/size}"
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("lysa", "blase", 0.50)])
+    camera master at day1_wake_close
+    lysa blase "Noam ? ... Hé, tu m'écoutes ou pas ?"
+    call _1_WAKE_HIDDEN_SCENE
+    camera master
+    $ hideGroup()
+    scene black with dissolve
+    return
