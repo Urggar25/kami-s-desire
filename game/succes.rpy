@@ -3,7 +3,7 @@
 ################################################################################
 
 init -1 python:
-    SUCCES_IDS = ["succes001", "succes005", "succes006", "succes007", "succes008"]
+    SUCCES_IDS = ["succes001", "succes005", "succes006", "succes007", "succes008", "succes009"]
 
     SUCCES_TITLES = {
         "succes001": "Troisième essai",
@@ -11,6 +11,7 @@ init -1 python:
         "succes006": "Tour du propriétaire",
         "succes007": "Un dossier bien rempli",
         "succes008": "Dans les temps !",
+        "succes009": "Peu attentif",
     }
 
     SUCCES_BONUS_SCENES = {
@@ -19,6 +20,7 @@ init -1 python:
         "succes006": "bonus_succes006",
         "succes007": "bonus_succes007",
         "succes008": "bonus_succes008",
+        "succes009": "bonus_succes009",
     }
 
     SUCCES_DESCRIPTIONS = {
@@ -27,6 +29,7 @@ init -1 python:
         "succes006": "Visiter toutes les installations du Conclave.",
         "succes007": "Rassembler les huit arguments du premier vote.",
         "succes008": "Réussir les trois virages sans échec.",
+        "succes009": "Rester trois secondes sur une bordure pendant le réveil.",
     }
 
     # Classement explicite : les succès sans chapitre connu restent accessibles
@@ -37,6 +40,7 @@ init -1 python:
         "succes006": 1,
         "succes007": 1,
         "succes008": 1,
+        "succes009": 1,
     }
     SUCCES_CHAPTER_TITLES = {
         1: "Le poids d'une voix",
