@@ -49,20 +49,20 @@ transform day1_wake_focus:
     linear 1.8 blur 0
 
 transform day1_wake_close:
-    zoom 2.45
+    zoom 1.68
     xalign 0.5
     yalign 0.41
     function day1_wake_pan
 
 transform day1_wake_close_talk:
-    zoom 2.45
+    zoom 1.68
     xalign 0.5
     yalign 0.41
-    ease 0.30 zoom 2.52
+    ease 0.30 zoom 1.73
     function day1_wake_pan
 
 transform day1_wake_jolt:
-    zoom 2.45
+    zoom 1.68
     xalign 0.5
     yalign 0.41
     xoffset -27
@@ -73,7 +73,7 @@ transform day1_wake_jolt:
     ease 0.14 xoffset 0 yoffset 0
 
 transform day1_wake_pullback:
-    zoom 2.45
+    zoom 1.68
     xalign 0.5
     yalign 0.41
     ease 2.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
@@ -89,6 +89,8 @@ label _1_CANON:
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
 
+    # Le cadrage manuel du réveil est indépendant du système global de dialogue.
+    $ _cinema_manual_override = True
     # Gros plan dès la PREMIÈRE réplique : décor et Lysa dans la caméra.
     scene bg_conclave at adaptive_fullscreen, day1_wake_focus
     $ showGroup([("lysa", "blase", 0.50)])
@@ -126,6 +128,7 @@ label _1_CANON:
     camera master at day1_wake_pullback
     pause 2.3
     camera master
+    $ _cinema_manual_override = False
     scene bg_conclave at adaptive_fullscreen with Dissolve(0.2)
     $ showGroup([
         ("lysa", "neutre", -0.11),
