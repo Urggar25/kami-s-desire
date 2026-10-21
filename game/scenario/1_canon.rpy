@@ -158,6 +158,7 @@ label _1_CANON:
         "Que dois-je faire ?"
         "Poser la main sur l'écran":
             think "Voyons voir ce que tu as à m'apprendre."
+            $ cam_reset(t=0.0)  # Interface interactive : projection originale.
             call screen day1_tablet_interaction()
             play sound sfx_beep
             $ shake(6, 0.2)
@@ -536,6 +537,7 @@ screen day1_conclave_pnc():
 label _1_PNC_CONCLAVE:
     $ pnc_room = "day1_conclave"
     $ room_scene_indices["conclave"] = room_scene_current_number("conclave") or 1
+    $ cam_reset(t=0.0)  # Point & click : aucun zoom cinéma sur les zones cliquables.
     call screen day1_conclave_pnc()
     jump _1_PNC_CONCLAVE
 
@@ -1730,6 +1732,7 @@ label _1_proposition_amendement:
     play sound sfx_drop
     $ impact(8, 0.2, "#3BCC82")
     voix "Amendement enregistré."
+    $ cam_reset(t=0.0)  # Minijeu/interaction sans zoom.
     call screen day1_urn_confirmation()
     think "Impossible de la récupérer. Tant mieux. Sinon je l'effacerais encore."
 
