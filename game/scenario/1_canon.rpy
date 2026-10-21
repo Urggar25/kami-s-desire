@@ -1,5 +1,8 @@
 default noam_room_jammer_on = True
 default choix_1_soir = "dormir"
+default day1_wake_edge_enabled = False
+default day1_wake_edge_started = None
+default day1_wake_edge_triggered = False
 define sfx_drop = "audio/sfx_drop.mp3"
 define sfx_shower = "audio/sfx_shower.mp3"
 
@@ -94,6 +97,31 @@ transform day1_wake_pullback:
     ease 2.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
 
 # =============================================================================
+
+init python:
+    import time as _day1_wake_time
+
+    def day1_wake_edge_tick():
+        if not store.day1_wake_edge_enabled or store.day1_wake_edge_triggered:
+            return
+        w, h = renpy.config.screen_width, renpy.config.screen_height
+        mx, my = renpy.get_mouse_pos()
+        edge = mx <= w * .05 or mx >= w * .95 or my <= h * .05 or my >= h * .95
+        if not edge:
+            store.day1_wake_edge_started = None
+            return
+        now = _day1_wake_time.monotonic()
+        if store.day1_wake_edge_started is None:
+            store.day1_wake_edge_started = now
+        elif now - store.day1_wake_edge_started >= 3.0:
+            store.day1_wake_edge_triggered = True
+            store.day1_wake_edge_enabled = False
+            renpy.hide_screen("day1_wake_edge_watch")
+            renpy.call_in_new_context("_1_WAKE_HIDDEN_SCENE")
+
+screen day1_wake_edge_watch():
+    timer 0.08 repeat True action Function(day1_wake_edge_tick)
+
 label _1_CANON:
 # =============================================================================
 
@@ -106,6 +134,9 @@ label _1_CANON:
 
     # Le cadrage manuel du réveil est indépendant du système global de dialogue.
     $ _cinema_manual_override = True
+    $ day1_wake_edge_enabled = False
+    $ day1_wake_edge_started = None
+    $ day1_wake_edge_triggered = False
     # Gros plan dès la PREMIÈRE réplique : décor et Lysa dans la caméra.
     scene bg_conclave at adaptive_fullscreen, day1_wake_focus
     $ showGroup([("lysa", "blase", 0.50)])
@@ -122,6 +153,8 @@ label _1_CANON:
     $ renpy.pause(0.67, hard=True)
     camera master at day1_wake_close
     $ blink()
+    $ day1_wake_edge_enabled = True
+    show screen day1_wake_edge_watch
     noam inquiet "Mh... Arrête de me secouer..."
     camera master at day1_wake_close_talk
     lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
@@ -140,6 +173,8 @@ label _1_CANON:
     camera master at day1_wake_close_talk
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
+    $ day1_wake_edge_enabled = False
+    hide screen day1_wake_edge_watch
     # Le gros plan ne prend fin QU'ICI. Recul continu avant la discussion.
     camera master at day1_wake_pullback
     pause 2.3
@@ -170,18 +205,12 @@ label _1_CANON:
     play sound sfx_beep
     voix "Initialisation en cours..."
     think "Une tablette noire s'allume sur mon pupitre. Sa voix synthétique couvre un instant les murmures dans la salle."
-    menu:
-        "Que dois-je faire ?"
-        "Poser la main sur l'écran":
-            think "Voyons voir ce que tu as à m'apprendre."
-            $ cam_reset(t=0.0)  # Interface interactive : projection originale.
-            call screen day1_tablet_interaction()
-            play sound sfx_beep
-            $ shake(6, 0.2)
-            voix "Noam. Accès limité."
-            think "Elle me reconnaît à ma main, ils ont dû prendre nos empreintes."
-        "Regarder autour de moi":
-            think "La tablette ne m'intéresse pas. Pas avant de comprendre ce qui se passe ici."
+    $ cam_reset(t=0.0)
+    call screen day1_tablet_interaction()
+    play sound sfx_beep
+    $ shake(6, 0.2)
+    voix "Noam. Accès limité."
+    think "Elle me reconnaît à ma main, ils ont dû prendre nos empreintes."
 
     call play_stat_dialogue("d1") from _call_stat_dialogue_d1
     lysa reflexion "Mais faut dire que je voyais ça d'une façon totalement différente."
@@ -2140,3 +2169,13 @@ label day1_play_trace(path_type="curve_right", time_limit=6.0, wait_time=1.2, to
     return (_return != "FAIL")
 
 # Total J1 + exploration des salles : 44m30
+
+label _1_WAKE_HIDDEN_SCENE:
+    camera master at day1_wake_face_shake
+    $ renpy.pause(0.67, hard=True)
+    camera master at day1_wake_close
+    lysa colere "Hé ! Je te parle, là ! Tu comptes regarder les murs encore longtemps ?!"
+    noam surpris "Ah ! Mais arrête de me secouer comme ça ! Je t'écoute !"
+    lysa blase "Ah ouais ? Parce qu'à te voir fixer le plafond, j'avais un sérieux doute."
+    $ unlock_succes("succes009")
+    return
