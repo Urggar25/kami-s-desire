@@ -115,8 +115,7 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, mouse_e
     yoffset dy0
     zoom z0
     ease t xoffset dx1 yoffset dy1 zoom z1
-    if mouse_enabled:
-        function cinema_mouse_follow(dx1, dy1)
+    function cinema_mouse_follow(dx1, dy1)
 
 
 init python:
