@@ -116,7 +116,10 @@ init python:
         mx, my = renpy.get_mouse_pos()
         mouse_x = (0.5 - max(0.0, min(1.0, float(mx) / w))) * 2.0 * edge_x
         mouse_y = (0.5 - max(0.0, min(1.0, float(my) / h))) * 2.0 * edge_y
-        amount = 0.56 if speaker_mode else 1.0
+        # Priorité au locuteur : déplacement de souris autour du focus,
+        # plutôt qu'une interpolation moitié-moitié qui le décale du centre.
+        # Le clamp final garde l'image dans ses bords, même aux extrémités.
+        amount = 0.24 if speaker_mode else 1.0
         target_x = max(-edge_x, min(edge_x, base_x * (1.0 - amount) + mouse_x * amount))
         target_y = max(-edge_y, min(edge_y, base_y * (1.0 - amount) + mouse_y * amount))
         trans.xoffset += (target_x - trans.xoffset) * 0.23
@@ -683,7 +686,10 @@ init python:
 
             last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
             if last_tag == tag:
-                return  # Skip parfait
+                # Même locuteur : ne pas recréer le transform, car cela
+                # relancerait le travelling et réinitialiserait le curseur.
+                # Ses animations de bouche et son audio ont déjà été lancés.
+                return
 
             cinematic_focus(tag, t=0.6)
 
