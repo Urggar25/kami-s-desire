@@ -58,6 +58,7 @@ default cam_runtime_speaker = False
 default _cinema_manual_override = False
 default _focus_locked = False
 default _focus_last_params = None
+default _cinema_last_scene_signature = None
 default arguments = []
 # Arguments débloqués de façon GLOBALE : conservés entre les sauvegardes et
 # même après avoir recommencé une nouvelle partie.
@@ -119,6 +120,8 @@ init python:
         # Priorité au locuteur : déplacement de souris autour du focus,
         # plutôt qu'une interpolation moitié-moitié qui le décale du centre.
         # Le clamp final garde l'image dans ses bords, même aux extrémités.
+        # Pensées/narration : 100 % du déplacement autorisé par le zoom.
+        # Aucun rayon artificiel autour du point de focus.
         amount = 0.24 if speaker_mode else 1.0
         target_x = max(-edge_x, min(edge_x, base_x * (1.0 - amount) + mouse_x * amount))
         target_y = max(-edge_y, min(edge_y, base_y * (1.0 - amount) + mouse_y * amount))
@@ -635,6 +638,18 @@ init python:
             return bool((store.current_bg_name or "").lower().startswith(("bg_cg", "bg_diffusion")))
         return False
 
+    def cinema_scene_signature():
+        """Identifie la scène réellement visible, indépendamment du dernier locuteur."""
+        visible = []
+        for layer in ("bgcam", "master"):
+            for tag in renpy.get_showing_tags(layer=layer):
+                lower = tag.lower()
+                if lower.startswith(("bg_", "scene_")) or tag == "BG":
+                    visible.append((layer, tag))
+        if any(tag == "BG" for _, tag in visible):
+            visible.append(("bg_show", store.current_bg_name))
+        return tuple(sorted(visible, key=str))
+
     def cinema_visible_speaker(tag):
         """Répare le suivi si un sprite est affiché sans passer par showP."""
         if tag in store.char_state and renpy.showing(tag, layer="master"):
@@ -670,22 +685,29 @@ init python:
             if manual_camera:
                 return  # Son, bouche et clignement restent opérationnels.
 
+            scene_signature = cinema_scene_signature()
+            scene_changed = scene_signature != store._cinema_last_scene_signature
+            store._cinema_last_scene_signature = scene_signature
+
             if scene_has_no_character_sprites():
-                if store._focus_last_params != dict(tag="__NO_AUTOFOCUS__"):
+                if scene_changed or store._focus_last_params != dict(tag="__NO_AUTOFOCUS__"):
                     cam_reset(t=0.6)
                     store._focus_last_params = dict(tag="__NO_AUTOFOCUS__")
                 return
 
             if tag == "__NARRATOR__":
                 last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
-                if last_tag == "__NARRATOR__":
+                # Ne pas sauter le cadrage après un changement de pièce,
+                # même si les deux répliques consécutives sont des pensées.
+                wanted_zoom = CINEMA_ZOOM_BG * 0.80
+                wrong_camera = abs(store.cam_z_cur - wanted_zoom) > 0.001 or abs(store.bg_cam_z_cur - wanted_zoom) > 0.001
+                if not scene_changed and last_tag == "__NARRATOR__" and not wrong_camera:
                     return
                 cinematic_reset(t=0.6)
-                store._focus_last_params = dict(tag="__NARRATOR__")
                 return
 
             last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
-            if last_tag == tag:
+            if last_tag == tag and not scene_changed:
                 # Même locuteur : ne pas recréer le transform, car cela
                 # relancerait le travelling et réinitialiserait le curseur.
                 # Ses animations de bouche et son audio ont déjà été lancés.
