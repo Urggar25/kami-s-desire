@@ -536,7 +536,8 @@ init python:
         if tag == "__NARRATOR__":
             return
 
-        if tag not in store.char_state:
+        if not cinema_visible_speaker(tag):
+            # Voix hors champ : conserver une caméra légèrement rapprochée.
             cinematic_reset(t=t)
             return
 
@@ -585,26 +586,30 @@ init python:
 
 init python:
     def scene_has_no_character_sprites():
-        special_tokens = ("bg_cg", "bg_diffusion")
+        """Exclusion uniquement si une CG est ACTUELLEMENT affichée.
 
-        def is_sport_bg(name):
-            if not name:
-                return False
-            low = name.lower()
-            return low.startswith("sport") and low[5:].isdigit()
-
-        # Cas où le BG est suivi via bg_show().
-        bg_name = store.current_bg_name or ""
-        if any(token in bg_name for token in special_tokens) or is_sport_bg(bg_name):
-            return True
-
-        # Cas des `scene bg_xxx` affichés directement par le script.
+        current_bg_name peut conserver l'ancienne salle après un 'scene' direct :
+        ne jamais s'en servir comme preuve d'une CG active.
+        """
         for layer in ("bgcam", "master"):
             for tag in renpy.get_showing_tags(layer=layer):
-                if any(token in tag for token in special_tokens) or is_sport_bg(tag):
+                if tag.lower().startswith("bg_cg"):
                     return True
-
+        # bg_show affiche le fond sous le tag BG ; la référence réelle est
+        # suivie par current_bg_name. La vérification du tag est nécessaire.
+        if any("BG" in renpy.get_showing_tags(layer=layer) for layer in ("bgcam", "master")):
+            return bool((store.current_bg_name or "").lower().startswith("bg_cg"))
         return False
+
+    def cinema_visible_speaker(tag):
+        """Répare le suivi si un sprite est affiché sans passer par showP."""
+        if tag in store.char_state and renpy.showing(tag, layer="master"):
+            return True
+        if not renpy.showing(tag, layer="master"):
+            return False
+        x = store.char_pos.get(tag, 0.5)
+        store.char_state[tag] = dict(expr="neutre", x=x, y=1.0, layer="master", zorder=0)
+        return True
 
 
 init python:
@@ -628,6 +633,12 @@ init python:
                     store.minor_choice_noam_expression = expr
             start_character_dialogue(tag, dialogue_text)
             play_dialogue_doublage(doublage_tag or tag, dialogue_text)
+
+            if scene_has_no_character_sprites():
+                if store._focus_last_params != dict(tag="__NO_AUTOFOCUS__"):
+                    cam_reset(t=0.6)
+                    store._focus_last_params = dict(tag="__NO_AUTOFOCUS__")
+                return
 
             if tag == "__NARRATOR__":
                 last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
