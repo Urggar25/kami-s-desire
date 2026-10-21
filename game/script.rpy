@@ -47,6 +47,14 @@ default current_day = 0
 default _last_autofocus_tag = None
 default character_speaking_until = {}
 
+default cam_runtime_dx0 = 0.0
+default cam_runtime_dy0 = 0.0
+default cam_runtime_z0 = 1.0
+default cam_runtime_dx1 = 0.0
+default cam_runtime_dy1 = 0.0
+default cam_runtime_z1 = 1.0
+default cam_runtime_duration = 0.6
+default cam_runtime_speaker = False
 default _cinema_manual_override = False
 default _focus_locked = False
 default _focus_last_params = None
@@ -85,10 +93,15 @@ init -2:
 init python:
     def cinema_mouse_follow(trans, st, at):
         """Callback global sérialisable par Ren'Py (aucune closure locale)."""
-        args = getattr(trans, "cinema_camera_args", None)
-        if args is None:
-            return 0.016
-        dx0, dy0, z0, dx1, dy1, z1, duration, speaker_mode = args
+        # Arguments passés via des propriétés ATL standard, sauvegardables.
+        dx0 = store.cam_runtime_dx0
+        dy0 = store.cam_runtime_dy0
+        z0 = store.cam_runtime_z0
+        dx1 = store.cam_runtime_dx1
+        dy1 = store.cam_runtime_dy1
+        z1 = store.cam_runtime_z1
+        duration = store.cam_runtime_duration
+        speaker_mode = store.cam_runtime_speaker
         w = float(config.screen_width)
         h = float(config.screen_height)
         progress = min(1.0, max(0.0, st / max(0.001, duration)))
@@ -116,7 +129,6 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, speaker
     zoom z0
     xoffset dx0
     yoffset dy0
-    cinema_camera_args (dx0, dy0, z0, dx1, dy1, z1, t, speaker_mode)
     function cinema_mouse_follow
 
 init python:
@@ -272,6 +284,14 @@ init python:
             prev_pointer_x = (0.5 - max(0.0, min(1.0, float(mx) / sw))) * 2.0 * prev_edge_x
             prev_pointer_y = (0.5 - max(0.0, min(1.0, float(my) / sh))) * 2.0 * prev_edge_y
             store._cinema_previous_mode = (prev_pointer_x, prev_pointer_y, z0, z0 >= 1.75, dx0, dy0)
+            store.cam_runtime_dx0 = dx0
+            store.cam_runtime_dy0 = dy0
+            store.cam_runtime_z0 = z0
+            store.cam_runtime_dx1 = dx1
+            store.cam_runtime_dy1 = dy1
+            store.cam_runtime_z1 = z1
+            store.cam_runtime_duration = t
+            store.cam_runtime_speaker = z1 >= 1.75
             tr = cam_runtime(
                 dx0=dx0, dy0=dy0, z0=z0,
                 dx1=dx1, dy1=dy1, z1=z1,
