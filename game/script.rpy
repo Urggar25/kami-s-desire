@@ -113,6 +113,17 @@ init python:
             target_y = base_y * (1.0 - amount) + mouse_y * amount
             target_x = max(-edge_x, min(edge_x, target_x))
             target_y = max(-edge_y, min(edge_y, target_y))
+            # La première frame part du cadrage visible précédent, et non
+            # d'une position réinitialisée au centre de la scène.
+            if st < 0.04:
+                old_mode = getattr(store, "_cinema_previous_mode", None)
+                if old_mode is not None:
+                    old_mx, old_my, old_zoom, old_speaker, old_bx, old_by = old_mode
+                    old_edge_x = w * (old_zoom - 1.0) / 2.0
+                    old_edge_y = h * (old_zoom - 1.0) / 2.0
+                    old_share = 0.56 if old_speaker else 1.0
+                    trans.xoffset = max(-old_edge_x, min(old_edge_x, old_bx * (1.0 - old_share) + old_mx * old_share))
+                    trans.yoffset = max(-old_edge_y, min(old_edge_y, old_by * (1.0 - old_share) + old_my * old_share))
             # Mouvement fluide mais immédiatement actif pendant le travelling.
             trans.xoffset += (target_x - trans.xoffset) * 0.23
             trans.yoffset += (target_y - trans.yoffset) * 0.23
@@ -272,6 +283,14 @@ init python:
             dy0 = int((0.5 - y0) * (sh * (z0 - 1.0)))
             dx1 = int((0.5 - x1) * (sw * (z1 - 1.0)))
             dy1 = int((0.5 - y1) * (sh * (z1 - 1.0)))
+            # Snapshot de la position précédente pour débuter la transition
+            # depuis l'ancienne vue, même après changement de locuteur.
+            mx, my = renpy.get_mouse_pos()
+            prev_edge_x = sw * max(0.0, z0 - 1.0) / 2.0
+            prev_edge_y = sh * max(0.0, z0 - 1.0) / 2.0
+            prev_pointer_x = (0.5 - max(0.0, min(1.0, float(mx) / sw))) * 2.0 * prev_edge_x
+            prev_pointer_y = (0.5 - max(0.0, min(1.0, float(my) / sh))) * 2.0 * prev_edge_y
+            store._cinema_previous_mode = (prev_pointer_x, prev_pointer_y, z0, z0 >= 1.75, dx0, dy0)
             tr = cam_runtime(
                 dx0=dx0, dy0=dy0, z0=z0,
                 dx1=dx1, dy1=dy1, z1=z1,
@@ -500,7 +519,7 @@ init python:
         z = base_z
 
         if mode == "dim":
-            at_list.append(char_dim(0.86))
+            at_list.append(char_dim(0.35))
         elif mode == "focus":
             at_list.append(char_focus)
             z = 500
@@ -532,7 +551,7 @@ init python:
     def cinematic_reset(t=0.6, cam_layers=("bgcam", "master"), blur_radius=2.0):
         # Reset garanti : cam + blur OFF + restore tous les persos
         bg_set_blur(False, blur_radius, layer="bgcam")
-        cam_move(0.5, 0.5, 1.50, t=t, layers=cam_layers)
+        cam_move(0.5, 0.5, CINEMA_ZOOM_BG * 0.80, t=t, layers=cam_layers)
 
         for c in list(store.char_state.keys()):
             if renpy.showing(c, layer="master"):
@@ -628,8 +647,7 @@ init python:
         def _cb(event, interact=True, **kwargs):
             if event != "begin":
                 return
-            if getattr(store, "_cinema_manual_override", False):
-                return
+            manual_camera = getattr(store, "_cinema_manual_override", False)
 
             dialogue_text = kwargs.get("what", "")
             # Memorise l'expression de Noam pour les choix mineurs, meme si
@@ -644,6 +662,9 @@ init python:
                     store.minor_choice_noam_expression = expr
             start_character_dialogue(tag, dialogue_text)
             play_dialogue_doublage(doublage_tag or tag, dialogue_text)
+
+            if manual_camera:
+                return  # Son, bouche et clignement restent opérationnels.
 
             if scene_has_no_character_sprites():
                 if store._focus_last_params != dict(tag="__NO_AUTOFOCUS__"):
@@ -662,13 +683,6 @@ init python:
             last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
             if last_tag == tag:
                 return  # Skip parfait
-
-            if scene_has_no_character_sprites():
-                if last_tag == "__NO_AUTOFOCUS__":
-                    return
-                cinematic_reset(t=0.30)
-                store._focus_last_params = dict(tag="__NO_AUTOFOCUS__")
-                return
 
             cinematic_focus(tag, t=0.6)
 
