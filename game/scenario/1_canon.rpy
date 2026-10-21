@@ -72,33 +72,20 @@ transform day1_wake_jolt:
     linear 0.12 xoffset 14 yoffset -7
     ease 0.14 xoffset 0 yoffset 0
 
-# Trois images transparentes en vue subjective : mains de Lysa qui approchent.
-# Les phases se chevauchent brièvement pour obtenir de vrais fondus croisés.
-transform day1_arms_phase1:
-    alpha 0.0
-    linear 0.06 alpha 1.0
-    pause 0.16
-    linear 0.10 alpha 0.0
-
-transform day1_arms_phase2:
-    alpha 0.0
-    pause 0.22
-    linear 0.10 alpha 1.0
-    pause 0.14
-    linear 0.10 alpha 0.0
-
-transform day1_arms_phase3:
-    alpha 0.0
-    pause 0.46
-    linear 0.10 alpha 1.0
-    pause 0.35
-    linear 0.12 alpha 0.0
-
-screen day1_lysa_shaking_arms():
-    zorder 150
-    add Transform("images/ui/bras_secoue/bras_secoue1.png", fit="contain", xysize=(config.screen_width, config.screen_height)) at day1_arms_phase1
-    add Transform("images/ui/bras_secoue/bras_secoue2.png", fit="contain", xysize=(config.screen_width, config.screen_height)) at day1_arms_phase2
-    add Transform("images/ui/bras_secoue/bras_secoue3.png", fit="contain", xysize=(config.screen_width, config.screen_height)) at day1_arms_phase3
+# Réveil subjectif : rapprochement brutal sur le visage de Lysa.
+# Le tremblement concerne le décor ET Lysa, sur la caméra master ;
+# les sprites de bras au premier plan ne sont volontairement pas utilisés.
+transform day1_wake_face_shake:
+    zoom 1.68
+    xalign 0.5
+    yalign 0.30
+    easeout 0.16 zoom 2.65
+    linear 0.065 xoffset -27 yoffset 18
+    linear 0.065 xoffset 28 yoffset -15
+    linear 0.065 xoffset -23 yoffset 12
+    linear 0.065 xoffset 21 yoffset -11
+    linear 0.065 xoffset -14 yoffset 9
+    easeout 0.16 xoffset 0 yoffset 0 zoom 1.68
 
 transform day1_wake_pullback:
     zoom 1.68
@@ -129,13 +116,10 @@ label _1_CANON:
     think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
     lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
 
-    # Les bras surgissent en trois temps, puis la caméra subit la secousse.
-    # Le panoramique au curseur reprend ensuite sans changer le cadrage.
-    show screen day1_lysa_shaking_arms
-    $ renpy.pause(0.59, hard=True)
-    camera master at day1_wake_jolt
-    $ renpy.pause(0.43, hard=True)
-    hide screen day1_lysa_shaking_arms
+    # Gros plan sur le visage de Lysa, secousses de point de vue.
+    # Aucun bras superposé : les deux personnages restent dans la même perspective.
+    camera master at day1_wake_face_shake
+    $ renpy.pause(0.67, hard=True)
     camera master at day1_wake_close
     $ blink()
     noam inquiet "Mh... Arrête de me secouer..."
