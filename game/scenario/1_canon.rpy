@@ -25,6 +25,26 @@ init 2 python:
         },
     ]
 
+# Mise en scène du réveil : effets ATL autonomes, sans nouveaux assets.
+transform day1_wake_vision:
+    zoom 1.12
+    blur 22
+    alpha 0.60
+    linear 1.6 blur 11 alpha 0.88 zoom 1.07
+
+transform day1_wake_recovery:
+    zoom 1.07
+    blur 11
+    alpha 0.88
+    ease 1.4 blur 0 alpha 1.0 zoom 1.0
+
+transform day1_wake_reveal:
+    zoom 1.10
+    xalign 0.52
+    yalign 0.50
+    blur 3
+    ease 2.4 zoom 1.0 xalign 0.5 blur 0
+
 # =============================================================================
 label _1_CANON:
 # =============================================================================
@@ -36,34 +56,51 @@ label _1_CANON:
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
 
+    # Réveil subjectif : d'abord les sons, puis deux clignements et la motricité.
+    # La musique attend la reprise de conscience pour préserver la désorientation.
     scene black
-    play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    stop music fadeout 0.5
+    pause 1.0
 
-    think "Jour un."
-    think "Enfin, je crois... Tout ce dont je me rappelle, c'est ce foutu caisson et ce mal de crâne qui ne me quitte plus."
+    think "Un ronronnement grave, régulier, quelque part derrière ma tête. Au-dessus, des voix étouffées se mêlent au souffle continu d'une ventilation, mais je suis incapable d'en distinguer un seul mot."
+    think "J'essaie d'ouvrir les yeux. La lumière me traverse le crâne et je les referme presque aussitôt."
 
-    pause 0.4
+    # Premier clignement : une fraction de seconde de vision trouble.
+    scene bg_conclave at adaptive_fullscreen, day1_wake_vision with Dissolve(0.25)
+    pause 0.35
+    scene black with Dissolve(0.16)
+    pause 0.55
 
-    scene bg_conclave at adaptive_fullscreen with fade
+    think "Jour un. Enfin, je crois... Tout ce dont je me rappelle, c'est ce foutu caisson et ce mal de crâne qui ne me quitte plus."
+    think "Un siège contre mon dos, quelque chose de froid sous mes doigts, et cette impression désagréable d'avoir été déplacé pendant mon sommeil."
 
-    think "Dossier rigide. Métal froid. Air recyclé. Plastique neuf. Finalement, j'ai l'impression de n'avoir jamais quitté Harmonie."
-    think "C'est exactement le même niveau de confort... Si on peut appeler ça comme ça."
-
-    $ blink()
+    # Second clignement : le joueur distingue le cercle, sans voir encore le groupe en sprites.
+    scene bg_conclave at adaptive_fullscreen, day1_wake_vision with Dissolve(0.3)
+    pause 0.75
+    scene black with Dissolve(0.12)
+    pause 0.30
+    scene bg_conclave at adaptive_fullscreen, day1_wake_vision with Dissolve(0.25)
 
     noam "Ma main..."
     think "J'ai la tête qui tourne, la bouche sèche, la nuque en vrac. Qu'est-ce qu'ils ont utilisé comme produit pour nous endormir ?!"
+    think "J'essaie de lever le bras, mais mes doigts répondent avec un temps de retard, comme si mon corps attendait encore qu'on lui donne la permission de bouger."
 
-    # --- Tutoriel trace QTE (première fois) ---
+    # Tutoriel et QTE conservés : la récupération visuelle survient après l'effort.
     show screen day1_tuto_trace
     pause
-
     call day1_play_trace(path_type="curve_right", time_limit=5.5, wait_time=1.2, tolerance=55, max_errors=4, anchor_x=960, anchor_y=620, required=True) from _call_day1_trace_wakeup
 
-    think "J'étends mes bras devant moi, difficilement, mais j'y parviens."
-    think "Tout me semble lointain, comme si je me réveillais d'une anesthésie complète."
-    think "Il y a des sièges en cercle. Un corps sur chacun. Certains remuent, d'autres dorment encore."
-    think "Il n'y a pas beaucoup de bruits, des respirations fortes, des vêtements qui se froissent, une gorge qui racle. Personne n'ose faire davantage de bruit."
+    scene bg_conclave at adaptive_fullscreen, day1_wake_recovery with Dissolve(0.25)
+    think "J'étends enfin les bras devant moi. Le geste est maladroit, mais au moins ils m'obéissent, et les contours de la pièce commencent à se remettre en place."
+    pause 1.45
+
+    # Lent recul subjectif : la salle et ses douze places se révèlent progressivement.
+    play music "music/bgm_calm_not_peace.mp3" fadein 2.0
+    scene bg_conclave at adaptive_fullscreen, day1_wake_reveal with Dissolve(0.35)
+    think "Des sièges disposés en cercle. Il y a quelqu'un sur chacun d'eux. Certains redressent péniblement la tête, d'autres restent affalés, et je ne reconnais aucun de ces visages."
+    think "Une gorge se racle, un vêtement frotte contre un dossier, puis un fauteuil grince dans mon dos. Personne ne semble savoir s'il vaut mieux parler ou attendre."
+    pause 2.5
+    scene bg_conclave at adaptive_fullscreen with Dissolve(0.35)
 
     play sound sfx_beep
     voix "Initialisation en cours..."
