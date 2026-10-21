@@ -627,12 +627,12 @@ init python:
         """
         for layer in ("bgcam", "master"):
             for tag in renpy.get_showing_tags(layer=layer):
-                if tag.lower().startswith("bg_cg"):
+                if tag.lower().startswith(("bg_cg", "bg_diffusion")):
                     return True
         # bg_show affiche le fond sous le tag BG ; la référence réelle est
         # suivie par current_bg_name. La vérification du tag est nécessaire.
         if any("BG" in renpy.get_showing_tags(layer=layer) for layer in ("bgcam", "master")):
-            return bool((store.current_bg_name or "").lower().startswith("bg_cg"))
+            return bool((store.current_bg_name or "").lower().startswith(("bg_cg", "bg_diffusion")))
         return False
 
     def cinema_visible_speaker(tag):
