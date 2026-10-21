@@ -17,7 +17,7 @@
 # ------------------------------------------------------------
 init -2 python:
     config.layers = [ "bgcam", "master", "lighting", "transient", "screens", "overlay" ]
-    CINEMA_ZOOM_BG = 1.53
+    CINEMA_ZOOM_BG = 1.95
     CINEMA_CAM_Y = 0.41
     CINEMA_SPRITE_ZOOM = 1.0
     CINEMA_SPRITE_YPUSH = -80
@@ -83,40 +83,53 @@ init -2:
 # Camera interactive : après le travelling (0,6 s), le curseur peut explorer
 # librement le plan large, ou un rayon réduit autour du locuteur.
 init python:
-    def cinema_mouse_follow(base_x, base_y):
-      def follow(trans, st, at):
-          try:
-              w = float(config.screen_width)
-              h = float(config.screen_height)
-              mx, my = renpy.get_mouse_pos()
-              zoom = max(1.0, float(getattr(trans, "zoom", 1.0)))
-              radius = 0.19 if getattr(store, "_focus_last_params", None) and store._focus_last_params.get("tag") not in ("__NARRATOR__", "__NO_AUTOFOCUS__") else 0.76
-              # La réserve d'image due au zoom garantit l'absence de bandes vides.
-              limit_x = w * (zoom - 1.0) / 2.0
-              limit_y = h * (zoom - 1.0) / 2.0
-              offset_x = (float(mx) / w - 0.5) * 2.0 * limit_x * radius
-              offset_y = (float(my) / h - 0.5) * 2.0 * limit_y * radius
-              cx = base_x
-              cy = base_y
-              # Clamping sur l'espace disponible, même près des bords du fond.
-              target_x = max(-limit_x, min(limit_x, cx + offset_x))
-              target_y = max(-limit_y, min(limit_y, cy + offset_y))
-              trans.xoffset += (target_x - trans.xoffset) * 0.14
-              trans.yoffset += (target_y - trans.yoffset) * 0.14
-          except Exception:
-              pass
-          return 0.016
+    def cinema_mouse_follow(focus_x, focus_y, speaker_mode):
+        """Explore l'image agrandie sans dévoiler de bord vide.
 
-      return follow
-transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, mouse_enabled=True):
+        Locuteur : interpolation entre son cadrage et la position du curseur.
+        Narration : toute la surface du décor est accessible, de bord à bord.
+        """
+        def follow(trans, st, at):
+            try:
+                w = float(config.screen_width)
+                h = float(config.screen_height)
+                mx, my = renpy.get_mouse_pos()
+                z = max(1.0, float(trans.zoom))
+                edge_x = w * (z - 1.0) / 2.0
+                edge_y = h * (z - 1.0) / 2.0
+
+                # Position de la caméra suivant le curseur sur la totalité
+                # des débattements possibles de l'image zoomée.
+                mouse_x = (0.5 - max(0.0, min(1.0, mx / w))) * 2.0 * edge_x
+                mouse_y = (0.5 - max(0.0, min(1.0, my / h))) * 2.0 * edge_y
+
+                # Position qui centre le locuteur ; limitée au rectangle sûr.
+                center_x = max(-edge_x, min(edge_x, (0.5 - focus_x) * w * z))
+                center_y = max(-edge_y, min(edge_y, (0.5 - focus_y) * h * z))
+
+                # Au lieu d'ajouter un petit déplacement à un cadrage déjà
+                # bloqué contre un bord, on mélange deux cadrages valides.
+                # Cela préserve une véritable exploration pour les locuteurs
+                # placés à l'extrême gauche ou droite.
+                share = 0.58 if speaker_mode else 1.0
+                wanted_x = center_x * (1.0 - share) + mouse_x * share
+                wanted_y = center_y * (1.0 - share) + mouse_y * share
+
+                trans.xoffset += (wanted_x - trans.xoffset) * 0.12
+                trans.yoffset += (wanted_y - trans.yoffset) * 0.12
+            except Exception:
+                pass
+            return 0.016
+        return follow
+
+transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, focus_x=0.5, focus_y=0.5, speaker_mode=False):
     xalign 0.5
     yalign 0.5
     xoffset dx0
     yoffset dy0
     zoom z0
     ease t xoffset dx1 yoffset dy1 zoom z1
-    function cinema_mouse_follow(dx1, dy1)
-
+    function cinema_mouse_follow(focus_x, focus_y, speaker_mode)
 
 init python:
     CHARACTER_REAL_NAMES = {
@@ -266,7 +279,8 @@ init python:
             tr = cam_runtime(
                 dx0=dx0, dy0=dy0, z0=z0,
                 dx1=dx1, dy1=dy1, z1=z1,
-                t=t
+                t=t, focus_x=x1, focus_y=y1,
+                speaker_mode=(z1 >= 1.75)
             )
             renpy.show_layer_at([], layer=ly)
             renpy.show_layer_at([tr], layer=ly)
@@ -491,7 +505,7 @@ init python:
         z = base_z
 
         if mode == "dim":
-            at_list.append(char_dim(0.30))
+            at_list.append(char_dim(0.86))
         elif mode == "focus":
             at_list.append(char_focus)
             z = 500
@@ -521,7 +535,7 @@ init python:
     def cinematic_reset(t=0.6, cam_layers=("bgcam", "master"), blur_radius=2.0):
         # Reset garanti : cam + blur OFF + restore tous les persos
         bg_set_blur(False, blur_radius, layer="bgcam")
-        cam_move(0.5, 0.5, 1.22, t=t, layers=cam_layers)
+        cam_move(0.5, 0.5, 1.50, t=t, layers=cam_layers)
 
         for c in list(store.char_state.keys()):
             if renpy.showing(c, layer="master"):
@@ -756,7 +770,7 @@ init -2:
 # ------------------------------------------------------------
 
 label _init_cinema_params:
-    $ CINEMA_ZOOM_BG = 1.53          # Zoom modéré sur le locuteur
+    $ CINEMA_ZOOM_BG = 1.95          # Zoom modéré sur le locuteur
     $ CINEMA_CAM_Y = 0.41            # Cadrage relevé vers le visage
     $ CINEMA_SPRITE_ZOOM = 1.0       # Évite un double grossissement
     $ CINEMA_SPRITE_YPUSH = -80      # Relevé sprite (négatif = vers le haut)
