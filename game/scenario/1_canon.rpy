@@ -25,27 +25,61 @@ init 2 python:
         },
     ]
 
-# Réveil jour 1 : mouvements opaques de la couche de jeu (HUD non affecté).
-transform day1_lysa_shake:
-    zoom 1.36
-    xalign 0.5
-    yalign 0.44
-    xoffset -18
-    yoffset 9
-    linear 0.10 xoffset 16 yoffset -10
-    linear 0.11 xoffset -13 yoffset 8
-    linear 0.12 xoffset 10 yoffset -5
-    ease 0.16 xoffset 0 yoffset 0
+# Caméra subjective du réveil : le mouvement de souris est appliqué au décor
+# et aux sprites via la couche master. Aucune opacité réduite.
+init python:
+    def day1_wakeup_mouse_camera(trans, st, at):
+        try:
+            mx, my = renpy.get_mouse_pos()
+            sw, sh = renpy.config.screen_width, renpy.config.screen_height
+            # Faible parallaxe, centrée sur le curseur et amortie.
+            target_x = -((float(mx) / max(sw, 1)) - 0.5) * 145
+            target_y = -((float(my) / max(sh, 1)) - 0.5) * 75
+            trans.xoffset += (target_x - trans.xoffset) * 0.12
+            trans.yoffset += (target_y - trans.yoffset) * 0.12
+        except Exception:
+            pass
+        return 0.016
 
-transform day1_lysa_close:
-    zoom 1.36
-    xalign 0.5
-    yalign 0.44
+transform day1_wake_bg_blurry:
+    blur 15
+    linear 1.1 blur 6
+    linear 1.1 blur 0
 
-transform day1_lysa_pullback:
-    zoom 1.36
+transform day1_wake_camera_shake:
+    zoom 1.90
     xalign 0.5
-    yalign 0.44
+    yalign 0.40
+    xoffset -25
+    yoffset 15
+    linear 0.10 xoffset 22 yoffset -16
+    linear 0.11 xoffset -18 yoffset 12
+    linear 0.11 xoffset 16 yoffset -10
+    ease 0.12 xoffset 0 yoffset 0
+
+transform day1_wake_camera_look:
+    zoom 1.90
+    xalign 0.5
+    yalign 0.40
+    function day1_wakeup_mouse_camera
+
+transform day1_wake_turn_left:
+    zoom 1.90
+    xalign 0.5
+    yalign 0.40
+    xoffset 0
+    ease 0.60 xoffset 210
+    pause 0.35
+    ease 0.70 xoffset -190
+    pause 0.35
+    ease 0.50 xoffset 0
+
+transform day1_wake_camera_out:
+    zoom 1.90
+    xalign 0.5
+    yalign 0.40
+    xoffset 0
+    yoffset 0
     ease 2.0 zoom 1.0 xalign 0.5 yalign 0.5
 
 # =============================================================================
@@ -68,25 +102,37 @@ label _1_CANON:
     think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
     lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
 
-    # Plan très serré : Lysa au centre, caméra secouée avec la couche master.
-    scene bg_conclave at adaptive_fullscreen
+    # Gros plan réellement zoomé : l'arrière-plan reste opaque et se clarifie.
+    scene bg_conclave at adaptive_fullscreen, day1_wake_bg_blurry
     $ showGroup([("lysa", "blase", 0.50)])
-    show layer master at day1_lysa_shake
-    pause 0.46
-    show layer master at day1_lysa_close
+    show layer master at day1_wake_camera_shake
+    pause 0.45
+    show layer master at day1_wake_camera_look
     $ blink()
 
     noam inquiet "Mh... Arrête de me secouer..."
     lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
-    think "J'ouvre péniblement les yeux. Le visage de Lysa occupe presque tout ce que je vois, si près que je dois reculer la tête pour parvenir à la regarder correctement."
+    think "J'ouvre péniblement les yeux. Lysa est penchée si près au-dessus de moi que je distingue à peine ce qui se trouve derrière elle. La pièce tangue encore."
     $ blink()
     lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
     lysa blase "Ça ou te laisser baver sur ton pupitre, j'ai choisi la solution la plus charitable."
+    think "Je tente de tourner la tête. Le regard suit lentement le mouvement, et je découvre des silhouettes autour de nous."
+
+    # Les représentants entrent dans le champ pendant le balayage de la caméra.
+    $ showGroup([
+        ("lysa", "blase", 0.50),
+        ("ryn", "colere", 0.09),
+        ("mara", "rire", 0.87),
+        ("iris", "inquiet", 1.12),
+    ])
+    show layer master at day1_wake_turn_left
+    pause 2.55
+    show layer master at day1_wake_camera_look
     noam inquiet "J'ai la tête en vrac... On est où ?"
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
-    # Ouverture du cadre : les autres représentants émergent dans le plan.
+    # Recul et révélation du groupe : plan large seulement après le face-à-face.
     $ showGroup([
         ("lysa", "neutre", -0.11),
         ("noam", "inquiet", 0.01),
@@ -101,7 +147,7 @@ label _1_CANON:
         ("elias", "neutre", 1.08),
         ("sael", "raison", 1.20),
     ])
-    show layer master at day1_lysa_pullback
+    show layer master at day1_wake_camera_out
     pause 2.1
     show layer master
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
