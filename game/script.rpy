@@ -83,52 +83,32 @@ init -2:
 # Camera interactive : après le travelling (0,6 s), le curseur peut explorer
 # librement le plan large, ou un rayon réduit autour du locuteur.
 init python:
-    def cinema_mouse_follow(dx0, dy0, z0, dx1, dy1, z1, duration, speaker_mode):
-        """Panoramique continu actif dès la première frame du nouveau dialogue.
-
-        Le suivi de souris est calculé dans le même callback que l'animation :
-        aucun ATL 'ease' ne peut retarder son activation de 0,6 seconde.
-        """
-        def follow(trans, st, at):
-            import math
-            w = float(config.screen_width)
-            h = float(config.screen_height)
-            progress = min(1.0, max(0.0, st / max(0.001, duration)))
-            smooth = progress * progress * (3.0 - 2.0 * progress)
-            zoom = z0 + (z1 - z0) * smooth
-            trans.zoom = zoom
-
-            # Les deux cadrages sont exprimés en pixels de décalage.
-            base_x = dx0 + (dx1 - dx0) * smooth
-            base_y = dy0 + (dy1 - dy0) * smooth
-            edge_x = max(0.0, w * (zoom - 1.0) / 2.0)
-            edge_y = max(0.0, h * (zoom - 1.0) / 2.0)
-            mx, my = renpy.get_mouse_pos()
-            mouse_x = (0.5 - max(0.0, min(1.0, float(mx) / w))) * 2.0 * edge_x
-            mouse_y = (0.5 - max(0.0, min(1.0, float(my) / h))) * 2.0 * edge_y
-            # Centre toujours sur le locuteur au changement de réplique,
-            # mais laisse ensuite l'utilisateur parcourir les alentours.
-            amount = 0.56 if speaker_mode else 1.0
-            target_x = base_x * (1.0 - amount) + mouse_x * amount
-            target_y = base_y * (1.0 - amount) + mouse_y * amount
-            target_x = max(-edge_x, min(edge_x, target_x))
-            target_y = max(-edge_y, min(edge_y, target_y))
-            # La première frame part du cadrage visible précédent, et non
-            # d'une position réinitialisée au centre de la scène.
-            if st < 0.04:
-                old_mode = getattr(store, "_cinema_previous_mode", None)
-                if old_mode is not None:
-                    old_mx, old_my, old_zoom, old_speaker, old_bx, old_by = old_mode
-                    old_edge_x = w * (old_zoom - 1.0) / 2.0
-                    old_edge_y = h * (old_zoom - 1.0) / 2.0
-                    old_share = 0.56 if old_speaker else 1.0
-                    trans.xoffset = max(-old_edge_x, min(old_edge_x, old_bx * (1.0 - old_share) + old_mx * old_share))
-                    trans.yoffset = max(-old_edge_y, min(old_edge_y, old_by * (1.0 - old_share) + old_my * old_share))
-            # Mouvement fluide mais immédiatement actif pendant le travelling.
-            trans.xoffset += (target_x - trans.xoffset) * 0.23
-            trans.yoffset += (target_y - trans.yoffset) * 0.23
+    def cinema_mouse_follow(trans, st, at):
+        """Callback global sérialisable par Ren'Py (aucune closure locale)."""
+        args = getattr(trans, "cinema_camera_args", None)
+        if args is None:
             return 0.016
-        return follow
+        dx0, dy0, z0, dx1, dy1, z1, duration, speaker_mode = args
+        w = float(config.screen_width)
+        h = float(config.screen_height)
+        progress = min(1.0, max(0.0, st / max(0.001, duration)))
+        smooth = progress * progress * (3.0 - 2.0 * progress)
+        zoom = z0 + (z1 - z0) * smooth
+        trans.zoom = zoom
+
+        base_x = dx0 + (dx1 - dx0) * smooth
+        base_y = dy0 + (dy1 - dy0) * smooth
+        edge_x = max(0.0, w * (zoom - 1.0) / 2.0)
+        edge_y = max(0.0, h * (zoom - 1.0) / 2.0)
+        mx, my = renpy.get_mouse_pos()
+        mouse_x = (0.5 - max(0.0, min(1.0, float(mx) / w))) * 2.0 * edge_x
+        mouse_y = (0.5 - max(0.0, min(1.0, float(my) / h))) * 2.0 * edge_y
+        amount = 0.56 if speaker_mode else 1.0
+        target_x = max(-edge_x, min(edge_x, base_x * (1.0 - amount) + mouse_x * amount))
+        target_y = max(-edge_y, min(edge_y, base_y * (1.0 - amount) + mouse_y * amount))
+        trans.xoffset += (target_x - trans.xoffset) * 0.23
+        trans.yoffset += (target_y - trans.yoffset) * 0.23
+        return 0.016
 
 transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, speaker_mode=False):
     xalign 0.5
@@ -136,7 +116,8 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, speaker
     zoom z0
     xoffset dx0
     yoffset dy0
-    function cinema_mouse_follow(dx0, dy0, z0, dx1, dy1, z1, t, speaker_mode)
+    cinema_camera_args (dx0, dy0, z0, dx1, dy1, z1, t, speaker_mode)
+    function cinema_mouse_follow
 
 init python:
     CHARACTER_REAL_NAMES = {
