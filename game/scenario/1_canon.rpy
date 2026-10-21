@@ -39,8 +39,15 @@ init python:
             # Recadrage dans l'image agrandie, sans afficher ses bordures.
             tx = -(mx / sw - 0.5) * 440.0
             ty = -(my / sh - 0.5) * 230.0
-            trans.xoffset += (tx - trans.xoffset) * 0.075
-            trans.yoffset += (ty - trans.yoffset) * 0.075
+            # Léger tremblement indicateur quand le regard bute sur un bord.
+            if (store.day1_wake_edge_enabled and
+                    (mx <= sw * .05 or mx >= sw * .95 or
+                     my <= sh * .05 or my >= sh * .95)):
+                import math
+                tx += math.sin(st * 65.0) * 5.0
+                ty += math.cos(st * 79.0) * 4.0
+            trans.xoffset += (tx - trans.xoffset) * 0.18
+            trans.yoffset += (ty - trans.yoffset) * 0.18
         except Exception:
             pass
         return 0.016
