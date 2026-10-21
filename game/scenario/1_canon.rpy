@@ -25,62 +25,58 @@ init 2 python:
         },
     ]
 
-# Caméra subjective du réveil : le mouvement de souris est appliqué au décor
-# et aux sprites via la couche master. Aucune opacité réduite.
+# Ouverture J1 : caméra rapprochée persistante, panoramique au curseur.
+# La caméra reste active pendant TOUS les dialogues rapprochés, même en cas
+# de changement d'expression. On n'applique jamais d'alpha au décor.
 init python:
-    def day1_wakeup_mouse_camera(trans, st, at):
+    def day1_wake_pan(trans, st, at):
         try:
             mx, my = renpy.get_mouse_pos()
-            sw, sh = renpy.config.screen_width, renpy.config.screen_height
-            # Faible parallaxe, centrée sur le curseur et amortie.
-            target_x = -((float(mx) / max(sw, 1)) - 0.5) * 145
-            target_y = -((float(my) / max(sh, 1)) - 0.5) * 75
-            trans.xoffset += (target_x - trans.xoffset) * 0.12
-            trans.yoffset += (target_y - trans.yoffset) * 0.12
+            sw, sh = float(renpy.config.screen_width), float(renpy.config.screen_height)
+            # Recadrage dans l'image agrandie, sans afficher ses bordures.
+            tx = -(mx / sw - 0.5) * 440.0
+            ty = -(my / sh - 0.5) * 230.0
+            trans.xoffset += (tx - trans.xoffset) * 0.075
+            trans.yoffset += (ty - trans.yoffset) * 0.075
         except Exception:
             pass
         return 0.016
 
-transform day1_wake_bg_blurry:
-    blur 15
-    linear 1.1 blur 6
-    linear 1.1 blur 0
+transform day1_wake_focus:
+    blur 20
+    linear 2.4 blur 13
+    linear 2.8 blur 5
+    linear 1.8 blur 0
 
-transform day1_wake_camera_shake:
-    zoom 1.90
+transform day1_wake_close:
+    zoom 2.45
     xalign 0.5
-    yalign 0.40
-    xoffset -25
+    yalign 0.41
+    function day1_wake_pan
+
+transform day1_wake_close_talk:
+    zoom 2.45
+    xalign 0.5
+    yalign 0.41
+    ease 0.30 zoom 2.52
+    function day1_wake_pan
+
+transform day1_wake_jolt:
+    zoom 2.45
+    xalign 0.5
+    yalign 0.41
+    xoffset -27
     yoffset 15
-    linear 0.10 xoffset 22 yoffset -16
-    linear 0.11 xoffset -18 yoffset 12
-    linear 0.11 xoffset 16 yoffset -10
-    ease 0.12 xoffset 0 yoffset 0
+    linear 0.10 xoffset 24 yoffset -12
+    linear 0.11 xoffset -18 yoffset 8
+    linear 0.12 xoffset 14 yoffset -7
+    ease 0.14 xoffset 0 yoffset 0
 
-transform day1_wake_camera_look:
-    zoom 1.90
+transform day1_wake_pullback:
+    zoom 2.45
     xalign 0.5
-    yalign 0.40
-    function day1_wakeup_mouse_camera
-
-transform day1_wake_turn_left:
-    zoom 1.90
-    xalign 0.5
-    yalign 0.40
-    xoffset 0
-    ease 0.60 xoffset 210
-    pause 0.35
-    ease 0.70 xoffset -190
-    pause 0.35
-    ease 0.50 xoffset 0
-
-transform day1_wake_camera_out:
-    zoom 1.90
-    xalign 0.5
-    yalign 0.40
-    xoffset 0
-    yoffset 0
-    ease 2.0 zoom 1.0 xalign 0.5 yalign 0.5
+    yalign 0.41
+    ease 2.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
 
 # =============================================================================
 label _1_CANON:
@@ -93,44 +89,44 @@ label _1_CANON:
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
 
-    # La caméra est déjà cadrée serré sur le décor ET Lysa dès sa première réplique.
-    # Aucune transparence : on utilise blink() pour les paupières.
-    scene bg_conclave at adaptive_fullscreen, day1_wake_bg_blurry
+    # Gros plan dès la PREMIÈRE réplique : décor et Lysa dans la caméra.
+    scene bg_conclave at adaptive_fullscreen, day1_wake_focus
     $ showGroup([("lysa", "blase", 0.50)])
-    show layer master at day1_wake_camera_shake
+    camera master at day1_wake_close
     stop music fadeout 0.3
     $ blink()
     lysa blase "Hé. Hé, tu m'entends ?"
     think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
     lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
-    pause 0.45
-    show layer master at day1_wake_camera_look
-    $ blink()
 
+    # Secousses brèves, puis retour au mouvement de souris SANS dézoomer.
+    camera master at day1_wake_jolt
+    pause 0.48
+    camera master at day1_wake_close
+    $ blink()
     noam inquiet "Mh... Arrête de me secouer..."
+    camera master at day1_wake_close_talk
     lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
-    think "J'ouvre péniblement les yeux. Lysa est penchée si près au-dessus de moi que je distingue à peine ce qui se trouve derrière elle. La pièce tangue encore."
+    camera master at day1_wake_close
+    think "J'ouvre péniblement les yeux. Lysa est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste encore indistincte."
     $ blink()
+    camera master at day1_wake_close_talk
     lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
+    camera master at day1_wake_close
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
+    camera master at day1_wake_close_talk
     lysa blase "Ça ou te laisser baver sur ton pupitre, j'ai choisi la solution la plus charitable."
-
-    # Le regard dérive vers les autres sièges. Lysa reste à l'écran pendant
-    # tout le mouvement, même lorsqu'elle ne parle pas.
-    think "Je tente de tourner la tête. Au-delà de son épaule, j'aperçois d'autres silhouettes, encore difficilement reconnaissables."
-    show layer master at day1_wake_turn_left
-    pause 2.55
-    show layer master at day1_wake_camera_look
+    camera master at day1_wake_close
+    think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans que Lysa s'éloigne vraiment."
     noam inquiet "J'ai la tête en vrac... On est où ?"
+    camera master at day1_wake_close_talk
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
-    # Transition vers la discussion collective : on éloigne d'abord la caméra
-    # SANS changer la composition des sprites, pour éviter leur apparition brusque
-    # en plein gros plan ; ensuite seulement, le plan large s'installe.
-    show layer master at day1_wake_camera_out
-    pause 2.1
-    show layer master
-    scene bg_conclave at adaptive_fullscreen with Dissolve(0.25)
+    # Le gros plan ne prend fin QU'ICI. Recul continu avant la discussion.
+    camera master at day1_wake_pullback
+    pause 2.3
+    camera master
+    scene bg_conclave at adaptive_fullscreen with Dissolve(0.2)
     $ showGroup([
         ("lysa", "neutre", -0.11),
         ("noam", "inquiet", 0.01),
