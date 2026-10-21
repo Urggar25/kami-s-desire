@@ -83,7 +83,7 @@ init -2:
 # Camera interactive : après le travelling (0,6 s), le curseur peut explorer
 # librement le plan large, ou un rayon réduit autour du locuteur.
 init python:
-    def cinema_mouse_follow(focus_x, focus_y, speaker_mode):
+    def cinema_mouse_follow(base_x, base_y, speaker_mode):
         """Explore l'image agrandie sans dévoiler de bord vide.
 
         Locuteur : interpolation entre son cadrage et la position du curseur.
@@ -104,8 +104,8 @@ init python:
                 mouse_y = (0.5 - max(0.0, min(1.0, my / h))) * 2.0 * edge_y
 
                 # Position qui centre le locuteur ; limitée au rectangle sûr.
-                center_x = max(-edge_x, min(edge_x, (0.5 - focus_x) * w * z))
-                center_y = max(-edge_y, min(edge_y, (0.5 - focus_y) * h * z))
+                center_x = max(-edge_x, min(edge_x, base_x))
+                center_y = max(-edge_y, min(edge_y, base_y))
 
                 # Au lieu d'ajouter un petit déplacement à un cadrage déjà
                 # bloqué contre un bord, on mélange deux cadrages valides.
@@ -129,7 +129,7 @@ transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, focus_x
     yoffset dy0
     zoom z0
     ease t xoffset dx1 yoffset dy1 zoom z1
-    function cinema_mouse_follow(focus_x, focus_y, speaker_mode)
+    function cinema_mouse_follow(dx1, dy1, speaker_mode)
 
 init python:
     CHARACTER_REAL_NAMES = {
