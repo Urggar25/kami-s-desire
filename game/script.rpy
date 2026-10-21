@@ -17,9 +17,9 @@
 # ------------------------------------------------------------
 init -2 python:
     config.layers = [ "bgcam", "master", "lighting", "transient", "screens", "overlay" ]
-    CINEMA_ZOOM_BG = 1.80
+    CINEMA_ZOOM_BG = 1.53
     CINEMA_CAM_Y = 0.41
-    CINEMA_SPRITE_ZOOM = 1.60
+    CINEMA_SPRITE_ZOOM = 1.0
     CINEMA_SPRITE_YPUSH = -80
 
 define config.say_attribute_transition = None
@@ -47,6 +47,7 @@ default current_day = 0
 default _last_autofocus_tag = None
 default character_speaking_until = {}
 
+default _cinema_manual_override = False
 default _focus_locked = False
 default _focus_last_params = None
 default arguments = []
@@ -79,15 +80,43 @@ init -2:
 # ------------------------------------------------------------
 # Caméra runtime (appliquée aux layers)
 # ------------------------------------------------------------
-transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.35):
+# Camera interactive : après le travelling (0,6 s), le curseur peut explorer
+# librement le plan large, ou un rayon réduit autour du locuteur.
+init python:
+    def cinema_mouse_follow(base_x, base_y):
+      def follow(trans, st, at):
+          try:
+              w = float(config.screen_width)
+              h = float(config.screen_height)
+              mx, my = renpy.get_mouse_pos()
+              zoom = max(1.0, float(getattr(trans, "zoom", 1.0)))
+              radius = 0.19 if getattr(store, "_focus_last_params", None) and store._focus_last_params.get("tag") not in ("__NARRATOR__", "__NO_AUTOFOCUS__") else 0.76
+              # La réserve d'image due au zoom garantit l'absence de bandes vides.
+              limit_x = w * (zoom - 1.0) / 2.0
+              limit_y = h * (zoom - 1.0) / 2.0
+              offset_x = (float(mx) / w - 0.5) * 2.0 * limit_x * radius
+              offset_y = (float(my) / h - 0.5) * 2.0 * limit_y * radius
+              cx = base_x
+              cy = base_y
+              # Clamping sur l'espace disponible, même près des bords du fond.
+              target_x = max(-limit_x, min(limit_x, cx + offset_x))
+              target_y = max(-limit_y, min(limit_y, cy + offset_y))
+              trans.xoffset += (target_x - trans.xoffset) * 0.14
+              trans.yoffset += (target_y - trans.yoffset) * 0.14
+          except Exception:
+              pass
+          return 0.016
+
+      return follow
+transform cam_runtime(dx0=0, dy0=0, z0=1.0, dx1=0, dy1=0, z1=1.0, t=0.6, mouse_enabled=True):
     xalign 0.5
     yalign 0.5
-
     xoffset dx0
     yoffset dy0
     zoom z0
-
     ease t xoffset dx1 yoffset dy1 zoom z1
+    if mouse_enabled:
+        function cinema_mouse_follow(dx1, dy1)
 
 
 init python:
@@ -217,7 +246,7 @@ init python:
             return "_call_day1_trace_jammer"
         return "_call_day1_trace_wakeup"
 
-    def cam_apply(x1, y1, z1, t=0.35, layers=("bgcam", "master")):
+    def cam_apply(x1, y1, z1, t=0.6, layers=("bgcam", "master")):
         sw = config.screen_width
         sh = config.screen_height
 
@@ -266,7 +295,7 @@ init python:
     def cam_move(fx=0.5, fy=0.5, z=1.35, t=0.35, layers=("bgcam", "master")):
         cam_apply(fx, fy, z, t, layers)
 
-    def cam_reset(t=0.35, layers=("bgcam", "master")):
+    def cam_reset(t=0.6, layers=("bgcam", "master")):
         cam_apply(0.5, 0.5, 1.0, t, layers)
 
 
@@ -490,10 +519,10 @@ init python:
 # Cinéma : zoom BG + zoom sprite + dim autres + blur BG
 # ------------------------------------------------------------
 init python:
-    def cinematic_reset(t=0.22, cam_layers=("bgcam", "master"), blur_radius=2.0):
+    def cinematic_reset(t=0.6, cam_layers=("bgcam", "master"), blur_radius=2.0):
         # Reset garanti : cam + blur OFF + restore tous les persos
         bg_set_blur(False, blur_radius, layer="bgcam")
-        cam_reset(t=t, layers=cam_layers)
+        cam_move(0.5, 0.5, 1.22, t=t, layers=cam_layers)
 
         for c in list(store.char_state.keys()):
             if renpy.showing(c, layer="master"):
@@ -502,7 +531,7 @@ init python:
         store._focus_last_params = None
 
 init python:
-    def cinematic_focus(tag, t=0.30):
+    def cinematic_focus(tag, t=0.6):
         store._focus_last_params = dict(tag=tag)
 
         if tag == "__NARRATOR__":
@@ -512,7 +541,7 @@ init python:
             cinematic_reset(t=t)
             return
 
-        bg_set_blur(True, 2.5, layer="bgcam")
+        bg_set_blur(False, 2.5, layer="bgcam")
         safe_tx = cam_x_for_edge_safe_char(tag, CINEMA_ZOOM_BG)
         cam_move(safe_tx, CINEMA_CAM_Y, CINEMA_ZOOM_BG, t, layers=("bgcam", "master"))
 
@@ -584,6 +613,8 @@ init python:
         def _cb(event, interact=True, **kwargs):
             if event != "begin":
                 return
+            if getattr(store, "_cinema_manual_override", False):
+                return
 
             dialogue_text = kwargs.get("what", "")
             # Memorise l'expression de Noam pour les choix mineurs, meme si
@@ -603,7 +634,7 @@ init python:
                 last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
                 if last_tag == "__NARRATOR__":
                     return
-                cinematic_reset(t=0.30)
+                cinematic_reset(t=0.6)
                 store._focus_last_params = dict(tag="__NARRATOR__")
                 return
 
@@ -618,7 +649,7 @@ init python:
                 store._focus_last_params = dict(tag="__NO_AUTOFOCUS__")
                 return
 
-            cinematic_focus(tag, t=0.30)
+            cinematic_focus(tag, t=0.6)
 
         return _cb
 
@@ -715,9 +746,9 @@ init -2:
 # ------------------------------------------------------------
 
 label _init_cinema_params:
-    $ CINEMA_ZOOM_BG = 1.80          # Gros plan renforcé sur le locuteur
+    $ CINEMA_ZOOM_BG = 1.53          # Zoom modéré sur le locuteur
     $ CINEMA_CAM_Y = 0.41            # Cadrage relevé vers le visage
-    $ CINEMA_SPRITE_ZOOM = 1.60      # Zoom du sprite locuteur
+    $ CINEMA_SPRITE_ZOOM = 1.0       # Évite un double grossissement
     $ CINEMA_SPRITE_YPUSH = -80      # Relevé sprite (négatif = vers le haut)
     return
 
