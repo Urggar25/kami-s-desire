@@ -93,19 +93,16 @@ label _1_CANON:
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
 
-    # Lysa réveille Noam : aucun QTE, aucune transparence ou flou de décor.
-    scene black
-    stop music fadeout 0.3
-    pause 0.5
-
-    lysa blase "Hé. Hé, tu m'entends ?"
-    think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
-    lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
-
-    # Gros plan réellement zoomé : l'arrière-plan reste opaque et se clarifie.
+    # La caméra est déjà cadrée serré sur le décor ET Lysa dès sa première réplique.
+    # Aucune transparence : on utilise blink() pour les paupières.
     scene bg_conclave at adaptive_fullscreen, day1_wake_bg_blurry
     $ showGroup([("lysa", "blase", 0.50)])
     show layer master at day1_wake_camera_shake
+    stop music fadeout 0.3
+    $ blink()
+    lysa blase "Hé. Hé, tu m'entends ?"
+    think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
+    lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
     pause 0.45
     show layer master at day1_wake_camera_look
     $ blink()
@@ -117,22 +114,23 @@ label _1_CANON:
     lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
     lysa blase "Ça ou te laisser baver sur ton pupitre, j'ai choisi la solution la plus charitable."
-    think "Je tente de tourner la tête. Le regard suit lentement le mouvement, et je découvre des silhouettes autour de nous."
 
-    # Les représentants entrent dans le champ pendant le balayage de la caméra.
-    $ showGroup([
-        ("lysa", "blase", 0.50),
-        ("ryn", "colere", 0.09),
-        ("mara", "rire", 0.87),
-        ("iris", "inquiet", 1.12),
-    ])
+    # Le regard dérive vers les autres sièges. Lysa reste à l'écran pendant
+    # tout le mouvement, même lorsqu'elle ne parle pas.
+    think "Je tente de tourner la tête. Au-delà de son épaule, j'aperçois d'autres silhouettes, encore difficilement reconnaissables."
     show layer master at day1_wake_turn_left
     pause 2.55
     show layer master at day1_wake_camera_look
     noam inquiet "J'ai la tête en vrac... On est où ?"
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
-    # Recul et révélation du groupe : plan large seulement après le face-à-face.
+    # Transition vers la discussion collective : on éloigne d'abord la caméra
+    # SANS changer la composition des sprites, pour éviter leur apparition brusque
+    # en plein gros plan ; ensuite seulement, le plan large s'installe.
+    show layer master at day1_wake_camera_out
+    pause 2.1
+    show layer master
+    scene bg_conclave at adaptive_fullscreen with Dissolve(0.25)
     $ showGroup([
         ("lysa", "neutre", -0.11),
         ("noam", "inquiet", 0.01),
@@ -147,17 +145,13 @@ label _1_CANON:
         ("elias", "neutre", 1.08),
         ("sael", "raison", 1.20),
     ])
-    show layer master at day1_wake_camera_out
-    pause 2.1
-    show layer master
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
-
-    think "Douze sièges disposés en cercle. Un corps sur chacun. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse, et je réalise brusquement que je ne connais presque aucun de ces visages."
+    think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
     noam inquiet "Attends... C'est vraiment le Conclave ?"
     lysa reflexion "Tu vois bien où on est. À ton avis... Le Conclave."
     lysa blase "Les Sept Dormants ont tenu des siècles. Toi, au bout de dix minutes, t'as déjà mauvaise mine."
 
-    # Tablette conservée, après le réveil et hors de la mise en scène rapprochée.
+    # La tablette n'interrompt plus le face-à-face : elle s'initialise en plan large.
     play sound sfx_beep
     voix "Initialisation en cours..."
     think "Une tablette noire s'allume sur mon pupitre. Sa voix synthétique couvre un instant les murmures dans la salle."
