@@ -1,3 +1,13 @@
+# QTE rapide du retour au laboratoire : touche Espace avant la fin du compte à rebours.
+screen j27_escape_key_qte():
+    modal True
+    zorder 120
+    add Solid("#050c19c9")
+    text "SAUTE DANS LE LABORATOIRE !" xalign 0.5 yalign 0.35 size 48 color "#ffffff"
+    text "ESPACE — VITE !" xalign 0.5 yalign 0.53 size 44 color "#ffe585"
+    key "K_SPACE" action Return(True)
+    timer 1.6 action Return(False)
+
 # JOUR 27 — CEUX QUI N'EXISTENT PAS
 # Route secrète : Noam est pris pour son double ; Noam-DG joue l'original.
 # Keyper-IIB : présence de vie confirmée ; existence d'une « station de production ».
@@ -22,6 +32,8 @@ label _27_0_1_1_0_0_1_REVEIL:
     $ j27_secret_report_seen = False
     $ j27_secret_alarm_choice = None
     $ j27_secret_iris_doubt = False
+    $ j27_secret_trace_success = False
+    $ j27_secret_key_success = False
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Bonjour, chers représentants ! Votre vote est prévu aujourd'hui à quatorze heures. Essayez de ne pas vous faire attendre !"
@@ -82,8 +94,13 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas raison "Prendre la place de quelqu'un. On fait comme si c'était logique, parce que sinon certains d'entre nous ne supporteraient même plus de se regarder dans une glace."
     tomas triste "Mais... Ouais... C'est pas une situation simple à vivre..."
     "Je pensais trouver des gens prêts à tout pour tuer leurs doubles. C'est plus compliqué. Et, quelque part, c'est encore plus difficile à supporter."
-    "Un signal retentit sur sa tablette."
-    tomas raison "Elias l'a avec lui. On y va. Et Noam... si tu ne veux vraiment pas le remplacer, il faudra le dire aux autres. Pas seulement à moi."
+    "Mon téléphone vibre. Un message d'Elias s'affiche."
+    "Elias : « C'est bon, je m'en occupe ! »"
+    noam sourire "Ah, super ! Il s'en occupe."
+    "Je lui réponds aussitôt : « Super, merci ! »"
+    tomas raison "Parfait, ça veut dire qu'il a récupéré ton original. On a notre fenêtre. On y va."
+    noam neutre "Ouais... Et Tomas, à propos de ce qu'on disait..."
+    tomas raison "On en reparlera. Mais si tu veux vraiment pas le remplacer, faudra le dire aux autres. Pas seulement à moi."
 
     $ hideGroup()
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
@@ -111,45 +128,65 @@ label _27_0_1_1_0_0_1_REVEIL:
     noam inquiet "Production de quoi ?"
     tomas agace "Bah justement, je cherche ! Laisse-moi deux secondes..."
     tomas reflechit "S'il y a déjà de la vie là-bas alors ça veut dire que... Zero avait raison finalement ?"
-    "Il essaie un autre onglet. Une notification apparaît en haut de l'écran."
-
-    
-
-    tomas inquiet "Merde... Attends, quelqu'un vient d'ouvrir l'accès au couloir des archives."
-    noam peur "Quoi ?! C'est mon original ?!"
-    tomas inquiet "J'ai pas son nom ! Elias était censé le retenir... Putain, ferme la porte du fond, vite !"
-    "Un second signal. Cette fois, une lumière orange clignote au-dessus de la porte."
-    tomas raison "J'ai les infos sur l'écran, mais pas encore la référence complète. Si je les copie maintenant, on risque de se faire prendre. On fait quoi ?"
-    menu:
-        "Lui demander de tout arrêter et partir immédiatement.":
-            $ j27_secret_alarm_choice = "prudence"
-            $ j27_secret_tomas_trust += 1
-            noam inquiet "On se casse, Tomas ! Maintenant ! Si on nous trouve ici, tes dossiers serviront plus à rien !"
-            tomas reflexion "T'as raison. Je garde ce que j'ai déjà noté."
-            "Il ferme la session. Nous gagnons l'accès technique au moment où un bruit de pas résonne dans le couloir."
-        "Lui laisser quelques secondes pour enregistrer les références.":
-            $ j27_secret_alarm_choice = "risque"
-            noam determine "Non, attends, copie-les ! Je surveille, mais grouille-toi !"
-            tomas raison "Dix secondes, pas une de plus. Si ça s'ouvre, on court !"
-            "Je fixe le voyant orange. Des pas approchent, s'arrêtent, puis reprennent."
-            "Tomas copie le numéro du dossier et ferme la session à la dernière seconde."
-            tomas fatigue "C'est bon. Bouge !"
+    "Mon téléphone vibre encore. Je baisse les yeux, persuadé qu'Elias nous annonce que tout se passe bien."
+    "Elias : « Putain, c'est la merde, je le trouve pas ! »"
+    "Elias : « Il doit encore être avec Iris... »"
+    noam peur "Attends... QUOI ?!"
+    tomas inquiet "Qu'est-ce qu'il y a ?"
+    noam peur "Elias dit qu'il a pas trouvé mon original !"
+    tomas colere "Mais il nous a dit que c'était bon ! Passe-moi ça !"
+    "Je tape aussi vite que je peux : « Mais pourquoi t'as dit que c'était bon alors ?! On est déjà aux archives ! »"
+    "Tomas se penche par-dessus mon épaule."
+    "Tomas : « Elias, réponds ! Tu l'as avec toi ou pas ?! »"
+    "Elias : « MAIS NON ! Je disais que c'était bon, que j'allais m'en occuper ! Je commençais à le chercher ! »"
+    noam colere "Mais putain, on a cru que tu l'avais trouvé !"
+    tomas agace "C'est pas vrai... Ferme le dossier, on se tire."
+    "Tomas commence à fermer les fenêtres. Je regarde la porte, puis mon téléphone. Trois nouveaux messages arrivent presque d'un coup."
+    "Elias : « OH JE LES VOIS ! PUTAIN ILS SONT DANS LE COULOIR ! »"
+    "Elias : « Ils arrivent vers vous ! »"
+    "Elias : « RETOURNEZ AU LABO ! VITE ! »"
+    noam peur "Tomas ! Ils viennent ici !"
+    tomas inquiet "J'ai compris ! Laisse les fichiers et cours !"
+    $ j27_secret_alarm_choice = "fuite"
     $ hideGroup()
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
     $ flashlight_on(0)
-    "Nous regagnons le conduit sans parler. Tomas attend d'avoir replacé la plaque pour souffler."
-    $ showGroup([("tomas", "fatigue", 0.35), ("noam", "inquiet", 0.65)])
-    noam inquiet "C'était qui ?"
-    tomas neutre "J'en sais rien... Mais franchement, j'aimerais bien savoir qui se baladait là à cette heure-ci."
-    if j27_secret_alarm_choice == "risque":
-        tomas raison "Au moins, j'ai le numéro de référence complet. On pourra vérifier d'où vient ce dossier."
-        noam fatigue "J'ai vraiment cru qu'on allait se faire prendre."
+    "Je plonge dans le conduit derrière Tomas. Il faut franchir la première courbe sans se coincer contre les renforts."
+    # QTE de tracé : utilisation du screen existant, sans tutoriel ni écran de résultats.
+    call screen trace_qte(path_type="curve_left", time_limit=3.2, wait_time=0.25, tolerance=65, max_errors=3, anchor_x=960, anchor_y=540)
+    $ j27_secret_trace_success = _return.get("success", False)
+    if j27_secret_trace_success:
+        "Je glisse le long de la courbe d'un seul mouvement. Tomas est juste devant moi."
+        tomas inquiet "Bien ! Continue !"
     else:
-        tomas raison "J'ai l'essentiel : la confirmation de vie et cette histoire de station. Pour le reste, il faudra revenir."
-        noam reflexion "Tu crois que quelqu'un nous a vus ?"
-    tomas fatigue "On ne le saura pas en restant ici."
-    $ hideGroup()
+        "Mon épaule heurte un renfort. Je perds quelques secondes à me dégager."
+        noam peur "Merde, merde... !"
+        tomas inquiet "Noam ! Bouge, ils arrivent !"
+    "Au prochain embranchement, Tomas se retourne et me montre la grille du laboratoire."
+    tomas inquiet "Là ! Saute, maintenant !"
+    # QTE de touche : barre Espace dans une fenêtre très courte.
+    call screen j27_escape_key_qte
+    $ j27_secret_key_success = _return
+    if j27_secret_key_success:
+        "Je bondis vers l'ouverture et me laisse tomber dans le laboratoire, juste derrière Tomas."
+    else:
+        "Je rate le rebord, me rattrape à la dernière seconde et me hisse de force dans l'ouverture."
+        "Un choc métallique résonne derrière moi. Je retiens un juron."
     $ flashlight_off()
+    scene bg_laboratoire at adaptive_fullscreen with dissolve
+    "Tomas rabat la grille. Nous restons immobiles, le souffle court, pendant que des pas résonnent de l'autre côté."
+    if not j27_secret_trace_success or not j27_secret_key_success:
+        "Quelqu'un ralentit tout près. Je plaque une main sur ma bouche pour étouffer ma respiration."
+    "Les pas finissent par s'éloigner. Tomas attend encore quelques secondes avant de me regarder."
+    $ showGroup([("tomas", "fatigue", 0.35), ("noam", "inquiet", 0.65)])
+    tomas agace "La prochaine fois, on attend une phrase claire avant de bouger. « C'est bon », ça voulait absolument rien dire !"
+    noam colere "C'est surtout Elias qui aurait pu dire qu'il l'avait PAS trouvé !"
+    "Mon téléphone vibre une dernière fois."
+    "Elias : « Désolé... Je vais essayer de les éloigner. Restez au labo. »"
+    tomas fatigue "Bon... On a au moins appris qu'il y a de la vie sur Keyper et cette histoire de station de production. Pour les références complètes, c'est raté."
+    noam inquiet "T'es sûr qu'ils nous ont pas entendus ?"
+    tomas neutre "Non. Et j'ai pas envie de retourner vérifier."
+    $ hideGroup()
 
     scene bg_laboratoire at adaptive_fullscreen with dissolve
     $ showGroup([("tomas", "reflexion", 0.36), ("noam", "inquiet", 0.65)])
