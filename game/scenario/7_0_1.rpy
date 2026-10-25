@@ -1712,7 +1712,7 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     "CLAC."
 
-    elias inquiet "Ok. Bon. Faut qu'on parle sérieusement."
+    elias inquiet "Bon, les copains, faut qu'on cause. J'aime pas faire le rabat-joie, mais là j'ai un vrai souci."
 
     mara agace "Houla ! Tu es inquiétant quand tu tires cette tronche."
 
@@ -1722,11 +1722,11 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     mara doute "Hein ? Pourquoi ?"
 
-    elias inquiet "Parce qu'il manque du matériel."
+    elias inquiet "Parce qu'il me manque du matos. Et pour une fois, j'suis presque sûr que c'est pas moi qui l'ai égaré."
 
     iris surpris "Quel genre de matériel ?"
 
-    elias "Des outils. Des composants. Et des grosses batteries."
+    elias "Des outils, des pièces, et deux grosses batteries. Je peux me débrouiller sans une clé, mais une batterie, ça se fabrique pas avec trois vis."
 
     kael surpris "Des batteries ? Pourquoi tu crois qu'on aurait besoin de batteries ?"
 
@@ -1734,16 +1734,16 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     elias colere "Oui je suis sûr. Elles y étaient encore hier."
     elias fatigue "Tout était encore rangé ce matin."
-    elias fatigue "Je bricolais un truc. Un petit truc. Rien de bizarre, hein."
+    elias fatigue "Je bricolais un machin, voilà. Rien de dangereux ! Enfin, c'était pas censé l'être."
 
     mara taquin "Pourquoi quand tu dis ça, ça te rend encore plus suspect ?"
 
-    elias fatigue "J'ai refait la liste dans ma tête."
-    elias inquiet "Plus je recompte, moins ça colle. Et moi, les listes, je les rate pas."
+    elias fatigue "J'ai refait mon inventaire dans ma tête. Ça m'a pris un moment, y a pas mal de bazar là-dedans."
+    elias inquiet "Je recompte et je retombe jamais sur le même chiffre. Bon, je suis pas un champion des listes, mais je reconnais mes outils, quand même !"
 
     kael reflechit "On a redistribué les stocks ce matin avec la livraison, on les a peut-être déplacés dans la salle de maintenance ?"
 
-    elias neutre "Non, impossible. J'ai déjà tout retourné au moins dix fois."
+    elias neutre "J'ai retourné tout le stock, même les caisses où je range mes propres bêtises. Y a rien !"
 
     mara reflexion "Il manque beaucoup de choses ?"
 
@@ -1754,7 +1754,7 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
     julian reflexion "Pourquoi quelqu'un volerait des batteries ?"
 
-    elias panique "J'en sais rien, pour bricoler ?"
+    elias panique "Bah, pour bricoler, j'imagine ? À moins que quelqu'un ait besoin de trois batteries pour faire cuire ses nouilles."
 
     iris colere "Génial. Tu sous-entends qu'il y a un voleur parmi nous ?"
 

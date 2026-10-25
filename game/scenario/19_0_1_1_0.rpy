@@ -262,7 +262,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     "La question coupe immédiatement les plaisanteries."
 
-    elias ecoute "Si les grilles donnent directement sur le réseau, oui."
+    elias ecoute "Ouais, si ces grilles donnent sur le grand réseau, on peut passer par là. Ça me plaît pas du tout."
 
     iris colere "Génial. Vraiment génial."
 
@@ -300,7 +300,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     noam "Un presque entier et un autre démonté."
 
-    elias ecoute "Donc ils passent probablement par ce réseau pour leur entretien."
+    elias ecoute "Ces Goumi doivent passer par là quand on les emmène réparer. C'est le chemin le plus pratique."
 
     tomas raison "Ça explique pourquoi le réseau existe. Pas pourquoi il passe juste derrière nos lits."
 
@@ -360,7 +360,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     "Elias frappe deux fois dans ses mains pour couper court au brouhaha."
 
-    elias ecoute "Je peux poser des plaques. Pas sur douze chambres en cinq minutes."
+    elias ecoute "Je peux visser des plaques sur les ouvertures, ouais. Mais douze chambres en cinq minutes, je suis bricoleur, pas magicien."
 
     sael raison "Commence par les femmes."
 
@@ -370,7 +370,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     iris colere "Et nous, on vient littéralement d'apprendre qu'un tunnel passe derrière notre lit."
 
-    elias fatigue "Je vais commencer par les filles."
+    elias fatigue "Je commence par les chambres des filles, et après je fais le reste. On va pas perdre de temps."
 
     noam panne "..."
 
@@ -433,11 +433,11 @@ label _19_0_1_1_SECURISATION:
 
     noam "Je tiens."
 
-    elias "Non, tu tiens de travers."
+    elias "Non, pas comme ça, tu la tiens de travers ! Attends, je te montre... non, bouge pas, c'est moi qui ai la perceuse."
 
     noam "C'est une plaque, Elias."
 
-    elias colere "Et elle pèse quinze kilos. Si tu la tiens de travers pendant que je perce, elle me tombe sur les doigts."
+    elias colere "Elle fait quinze kilos, cette fichue plaque. Si elle me tombe sur les doigts pendant que je perce, je vais plus pouvoir tenir une vis pendant trois jours."
 
     noam "D'accord."
 
@@ -451,13 +451,13 @@ label _19_0_1_1_SECURISATION:
 
     noam "Tu te plains depuis une heure que t'as trop de chambres à faire."
 
-    elias "Je me plains parce que j'ai trop de chambres à faire. Ça veut pas dire que j'ai envie d'aide mal faite."
+    elias "Je râle parce que j'ai une montagne de boulot, pas parce que j'ai envie de faire ça tout seul. Mais faut tenir droit, Noam, sinon on va finir avec une grille encore plus dangereuse."
 
     "Il termine de fixer la plaque devant la grille de Lysa et vérifie les attaches une par une."
 
     noam reflexion "Ça tiendra ?"
 
-    elias "À moins qu'un abruti arrive avec une perceuse de l'autre côté, ouais."
+    elias "À moins qu'un type se ramène avec une perceuse de l'autre côté, ouais. Là, même mes vis y pourront rien."
 
     noam inquiet "Et de l'autre côté ?"
 
@@ -499,7 +499,7 @@ label _19_0_1_1_SECURISATION:
 
     noam "Je pensais pas qu'il y avait un passage derrière mon mur jusque-là."
 
-    elias "Et maintenant tu le sais. Donc tu mets ton bureau devant et tu dors."
+    elias "Maintenant, tu sais. Pousse ton bureau contre l'ouverture cette nuit, et demain je viendrai te fixer une vraie plaque."
 
     noam "J'ai déjà fait ça."
 

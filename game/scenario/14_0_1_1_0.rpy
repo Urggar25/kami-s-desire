@@ -790,19 +790,19 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
     noam reflexion "Vous faites quoi ?"
 
-    elias fatigue "Service public."
+    elias fatigue "Hé hé, service maison ! Et ça m'a coûté que deux tournevis perdus et une bonne partie de ma nuit."
 
     kael calme "Depuis qu'ils ont retiré les brouilleurs, Elias voulait un moyen simple de couper au moins l'image dans les chambres."
 
     "Kael prend une petite plaque noire dans la boîte. Une charnière minuscule et deux aimants ont été fixés au dos."
 
-    elias reflechit "On les pose directement devant l'objectif. Ça bloque rien d'autre, ça pirate rien, ça fait juste un cache."
+    elias reflechit "Tu colles ça devant la caméra, et voilà. Ça coupe pas les fils, ça bidouille pas l'électronique, c'est juste un bout de plastique. J'ai même réussi à pas le casser cette fois."
 
     noam surpris "Vous avez fabriqué ça aujourd'hui ?"
 
     kael "J'ai fait les supports. Elias a découpé les plaques et fixé les aimants."
 
-    elias fatigue "Et on en a fait assez pour tout le monde, alors prends le tien avant que je regrette."
+    elias fatigue "J'en ai bricolé un pour chacun, alors prends le tien. Mais vas-y doucement, y en a deux dont la colle est encore fraîche."
 
     "Il m'en tend un."
 
@@ -816,7 +816,7 @@ label _14_0_1_1_0_MESSAGES_KAEL:
 
     noam reflexion "Kami va adorer."
 
-    elias fatigue "Elle peut déposer une réclamation."
+    elias fatigue "Bah, qu'elle vienne se plaindre à l'atelier. Je lui ferai un formulaire... enfin, si je trouve du papier."
 
     "Ils repartent vers la chambre suivante avec leur boîte."
 

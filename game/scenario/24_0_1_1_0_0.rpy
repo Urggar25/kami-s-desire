@@ -144,7 +144,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     nyra raison "À condition qu'elle soit réellement appliquée, mais oui. Le principe est difficile à contester."
 
-    elias neutre "Moi je vois même pas ce qu'on peut raconter pendant le débat. T'as faim, on te donne à bouffer. T'as soif, on te donne de l'eau. T'as nulle part où dormir, on te trouve un toit."
+    elias neutre "Moi, j'vois pas pourquoi on devrait discuter pendant des heures. Quand quelqu'un a faim, on lui donne à manger. Quand il a soif, de l'eau. Et s'il a pas de toit, ben on lui en trouve un. C'est peut-être simpliste, mais au moins ça sert à quelque chose."
 
     mara taquin "Pour le toit, si jamais il manque de place, je suis prête à partager mon lit."
 
@@ -345,7 +345,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     iris reflexion "Un peu."
 
-    elias fatigue "Il est juste crevé."
+    elias fatigue "Il est juste rincé, le pauvre. Ça se voit à dix mètres."
 
     ryn neutre "Ouais, enfin il oublie sa tablette alors qu'il vient de dire qu'il va relire un texte dessus."
 

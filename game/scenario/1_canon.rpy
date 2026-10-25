@@ -319,7 +319,7 @@ label _1_CANON:
     think "Tout le monde se regarde de travers."
     think "L'un d'entre nous a-t-il la permission d'ouvrir la porte ?"
 
-    elias inquiet "Sinon, on peut tenter de la forcer."
+    elias inquiet "Sinon, on peut essayer de la débloquer. J'ai de quoi bricoler une poignée... enfin, si j'ai pas perdu mon tournevis."
 
     iris peur "Tu veux nous faire tuer ou quoi ?!"
 
@@ -704,15 +704,15 @@ label _1_PNC_CONCLAVE_ELIAS:
         ("elias", "taquin", 0.6),
     ])
 
-    elias reflechit "La ventilation a changé depuis tout à l'heure."
-    elias ecoute "C'est léger, mais c'est certain, c'est plus la même depuis qu'on s'est réveillé."
+    elias reflechit "Eh, vous entendez ? La ventilation fait pas le même bruit que tout à l'heure."
+    elias ecoute "À la Forge, j'ai passé assez de nuits près des moteurs pour reconnaître quand un truc commence à déconner."
     noam surpris "Hein ? Comment tu sais ça ?"
     elias neutre "À force de bosser au milieu des machines, je reconnais quand un truc tourne pas rond. Là, ça fait un genre de... Vrrrr..."
     elias reflechit "Non, attends... Brrrrr... Enfin bref, c'est pas le même bruit !"
     noam reflechit "Maintenant que tu le dis, c'est vrai que la ventilation n'est plus la même."
-    elias surpris "Ah, tu l'as remarqué toi aussi ?"
+    elias surpris "Ah ! Toi aussi tu l'entends ? Je commençais à croire que c'était mon ventre."
     noam sourire "On m'a souvent dit que j'avais une très bonne ouïe."
-    elias ecoute "Intéressant à savoir !"
+    elias ecoute "Ah ben, ça me rassure ! Enfin... pas pour la ventilation, hein."
     jump _1_PNC_CONCLAVE
 
 
@@ -1152,7 +1152,7 @@ label _1_KAMI_APPARITION:
     ])
 
     ryn colere "C'est quoi ce délire ?"
-    elias panique "Attends, trente jours ? C'est chaud !"
+    elias panique "Trente jours ?! Oh la vache... J'ai même pas prévu assez de chaussettes !"
     iris blase "On est pas sorti de l'auberge."
 
     noam reflexion "On va devoir vraiment passer trente jours ici…"
@@ -1563,8 +1563,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     show screen kami_broadcast_ui
     $ bc_show("elias", "reflechit", px=-70, py=-50, pz=0.85)
 
-    elias neutre "Attendez... Donc si onze personnes disent oui et qu'un seul type dit non, on a perdu ?"
-    elias peur "Mais alors... Pourquoi on est douze ?!"
+    elias neutre "Attends, j'ai pas pigé : si onze disent oui et qu'un seul dit non, ça fait non ? Pourtant onze, c'est plus que un !"
+    elias peur "Mais pourquoi on est douze, alors ?! C'est pour faire joli autour de la table ?"
 
     $ bc_hide()
     hide screen kami_broadcast_ui
@@ -2095,12 +2095,12 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     think "Son sourire est franc. Fatigué, mais franc."
 
-    elias detendu "Putain, je suis crevé... Pourtant, j'ai rien foutu de la journée ! Enfin, j'ai beaucoup parlé. C'est peut-être ça qui fatigue."
+    elias detendu "Pfiou, je suis rincé... J'ai même pas porté une caisse aujourd'hui, et j'ai l'impression d'avoir fait trois postes à l'atelier. C'est peut-être les réunions qui me tuent."
 
     noam neutre "Ouais. C'est clair. C'était une journée épuisante..."
 
-    elias inquiet "Tu crois qu'on va devoir refaire ça tous les jours ?!"
-    elias sourire "Je vais pas te mentir, ce genre de réunion ça me saoule vite..."
+    elias inquiet "Dis, on va devoir rester assis à discuter comme ça tous les jours ? Parce que moi, au bout d'une heure, j'ai les jambes qui demandent à se barrer."
+    elias sourire "Les réunions, c'est pas mon fort. À la Forge, quand ça coinçait, au moins on pouvait sortir une clé et s'y mettre."
 
     noam neutre "Ouais. M'en parle pas..."
 
