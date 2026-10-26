@@ -24,8 +24,13 @@ label _30_0_1_1_0_0_1_0_REVEIL:
     kami "Bonjour, mes petits passagers ! Dernier réveil au Conclave ! L'embarquement approche, alors tâchez de ne pas rater votre merveilleux retour sur Terre !"
     kami "Je vous conseille de régler vos différends avant de monter. Une dispute familiale à bord, c'est terrible pour l'ambiance."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "La diffusion disparaît. J'entends aussitôt un claquement au-dessus de mon bureau."
-    "La grille d'aération bouge. Une fois. Puis une deuxième, plus violemment."
+    "J'entends quelques frottements étouffés derrière la grille d'aération. Je me redresse, mais le bruit s'arrête et je finis par me rallonger."
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
+    kami "Mes chers représentants, rassemblement en salle du Conclave ! Le dernier vote commence dans quelques minutes : « Quiconque ne respecte pas un Commandement aura désormais la mémoire effacée, plutôt que d'être éliminé. »"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    think "Le vote... Je peux pas y aller. Si ma copie s'y présente aussi, tout le monde verra qu'on est deux. Ça ferait tout exploser."
+    "Je reste dans ma chambre et j'essaie de me reposer un peu, même si les bruits reprennent derrière la paroi."
+    "Cette fois, la grille d'aération bouge. Une fois. Puis une deuxième, plus violemment."
     noam inquiet "Elias ?"
     "Un frottement, des coups de genou dans le métal. Quelqu'un essaie de ramper sans faire de bruit, mais n'y arrive manifestement pas."
     "J'ouvre la grille et passe la tête à l'intérieur."
@@ -53,14 +58,17 @@ label _30_0_1_1_0_0_1_0_CONDUIT:
     noam peur "Julian ! Attends !"
     julian peur "ME SUIS PAS !"
     "Je le suis malgré tout. Il va si vite qu'il se cogne contre les parois, mais il finit par atteindre la grille de sortie."
-    "Je vois ses pieds disparaître. La grille s'ouvre sur des voix."
+    "Par l'ouverture qui donne sur la cafétéria, une voix amplifiée nous parvient depuis les haut-parleurs de la salle. On n'entend rien dans le reste des conduits, mais ici la grille est juste au-dessus des enceintes."
+    kami "Le dernier scrutin est terminé. L'unanimité n'a pas été atteinte : l'amendement est rejeté !"
+    "Des conversations et des pas résonnent de l'autre côté. Les représentants reviennent du vote."
+    "Je vois les pieds de Julian disparaître. La grille s'ouvre sur leurs voix."
     $ hideGroup()
     jump _30_0_1_1_0_0_1_0_CAFETERIA
     # Durée : 1m30
 
 label _30_0_1_1_0_0_1_0_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    "La cafétéria est pleine : les représentants terminent leur dernier petit-déjeuner, avec leurs sacs à côté des tables."
+    "Les représentants reviennent tout juste du scrutin. Ils entrent presque tous en même temps dans la cafétéria, parlant encore de l'amendement rejeté, leurs sacs à la main."
     "Julian trébuche en sortant de la grille. Elen se précipite vers lui."
     $ showGroup([("julian", "peur", 0.18), ("elen", "inquiet", 0.49), ("lysa", "surpris", 0.81)])
     elen inquiet "Julian ?! Mais qu'est-ce qui t'est arrivé ?! T'es couvert de poussière !"

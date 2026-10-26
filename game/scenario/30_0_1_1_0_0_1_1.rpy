@@ -20,7 +20,16 @@ label _30_0_1_1_0_0_1_1_REVEIL:
     kami "Bonjour, mes chers passagers ! Aujourd'hui, on rentre à la maison ! Enfin... certains d'entre vous. À 9 h, embarquement, et à 10 h, décollage !"
     kami "Merci de ne pas oublier vos affaires, vos petits secrets et vos merveilleux souvenirs du Conclave. Les retards ne seront pas acceptés, même avec une très bonne excuse !"
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Dix heures. Dans moins de trois heures, la navette sera partie."
+    "Je me rallonge quelques instants. Le départ approche, mais je suis tellement crevé que je n'arrive même pas à me décider à bouger."
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
+    kami "Avis aux représentants ! Le dernier vote commence dans quelques minutes. Retrouvez-vous en salle du Conclave pour vous prononcer sur le texte suivant : « Quiconque ne respecte pas un Commandement aura désormais la mémoire effacée, plutôt que d'être éliminé. »"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    think "Merde, le vote... Je peux pas y aller. Si mon double s'y rend aussi, on se retrouvera tous les deux devant les autres."
+    "Je reste donc dans ma chambre. Je ferme les yeux un moment, en espérant au moins pouvoir récupérer un peu."
+    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
+    kami "Le scrutin est clos ! Quel dommage, chers représentants : le dernier amendement n'a pas obtenu l'unanimité. Le vote a échoué !"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    think "Encore un vote raté... Et cette fois, je n'y étais même pas."
     "On frappe doucement à ma porte. Quand je l'ouvre, c'est mon double qui attend, un sac à la main."
     # Durée : 1m
 
