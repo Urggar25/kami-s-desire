@@ -365,7 +365,7 @@ label _29_0_1_1_0_0_1_1_PREPARATION_MACHINE:
     $ current_period = "Midi"
     scene bg_laboratoire at adaptive_fullscreen with dissolve
     "Vers midi, Nyra revient avec un petit objet enveloppé dans du tissu."
-    $ showGroup([("nyra", "neutre", 0.16), ("elias", "reflechit", 0.42), ("tomas", "reflexion", 0.63), ("noam", "inquiet", 0.86)])
+    $ showGroup([("kael", "calme", 0.08), ("nyra", "neutre", 0.26), ("elias", "reflechit", 0.45), ("tomas", "reflexion", 0.64), ("noam", "inquiet", 0.87)])
     nyra raison "J'ai trouvé."
     elias joie "Ah, enfin ! C'est bien à lui ?"
     nyra neutre "Oui. Il le gardait dans sa chambre."
@@ -412,7 +412,7 @@ label _29_0_1_1_0_0_1_1_NAISSANCE:
     noam inquiet "Et si ça marche pas ?"
     kael raison "Ça va marcher, Noam. C'est moi qui ai géré les autres créations, tu te souviens ?"
     "Le panneau s'ouvre. Julian est debout au milieu de la chambre de fabrication. Ses yeux sont ouverts, mais il ne regarde personne en particulier."
-    $ showGroup([("nyra", "reflexion", 0.16), ("julian", "neutre", 0.50), ("noam", "peur", 0.84)])
+    $ showGroup([("kael", "calme", 0.08), ("nyra", "reflexion", 0.29), ("julian", "neutre", 0.53), ("noam", "peur", 0.86)])
     noam peur "Putain... c'est vraiment lui."
     kael raison "Julian, tu m'entends ?"
     julian neutre "..."
@@ -459,7 +459,7 @@ label _29_0_1_1_0_0_1_1_NAISSANCE:
     kael raison "On a une seconde phase. Il faut compléter tes souvenirs, c'est tout."
     julian inquiet "C'est tout ?! Il me manque trois semaines et tu dis 'c'est tout' ?!"
     "Sael se rapproche de lui. Elle évite de croiser mon regard."
-    $ showGroup([("sael", "raison", 0.17), ("julian", "inquiet", 0.50), ("noam", "inquiet", 0.83)])
+    $ showGroup([("kael", "calme", 0.10), ("sael", "raison", 0.31), ("julian", "inquiet", 0.55), ("noam", "inquiet", 0.85)])
     sael raison "Julian, viens t'allonger dans la machine. On va te rendre les souvenirs des derniers jours."
     julian inquiet "Mais vous me demandez de retourner dans ce machin ?!"
     sael raison "Oui. Je sais que c'est flippant, mais ça ne prendra pas longtemps."
@@ -475,7 +475,7 @@ label _29_0_1_1_0_0_1_1_NAISSANCE:
     "Kael referme la chambre et démarre la procédure. Nous attendons plusieurs minutes en regardant l'écran."
     kael neutre "C'est terminé. On peut ouvrir."
     "Julian se redresse. Sael l'aide à s'asseoir."
-    $ showGroup([("sael", "reflexion", 0.16), ("julian", "fatigue", 0.50), ("noam", "inquiet", 0.84)])
+    $ showGroup([("kael", "calme", 0.08), ("sael", "reflexion", 0.29), ("julian", "fatigue", 0.53), ("noam", "inquiet", 0.86)])
     julian fatigue "Oh... putain, j'ai mal à la tête."
     noam inquiet "Ça va ?"
     julian reflexion "Attends... Le vote... Iris, Elen... Et hier, à la cafétéria..."
