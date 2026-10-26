@@ -1089,7 +1089,7 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
 
     hide screen kami_broadcast_ui
 
-    scene bg_navette_retour at adaptive_fullscreen, shuttle_background with fade
+    scene bg_navette at adaptive_fullscreen, shuttle_background with fade
 
     "Les représentants prennent place à bord."
 
@@ -1540,7 +1540,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
 label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
 
-    scene bg_navette_retour at adaptive_fullscreen, shuttle_background with fade
+    scene bg_navette at adaptive_fullscreen, shuttle_background with fade
 
     "Les portes se ferment derrière nous."
 
@@ -1604,7 +1604,7 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
     kami "Partez."
 
     hide screen kami_broadcast_ui
-    scene bg_navette_retour at adaptive_fullscreen, shuttle_background with dissolve
+    scene bg_navette at adaptive_fullscreen, shuttle_background with dissolve
 
     "La navette tremble."
 

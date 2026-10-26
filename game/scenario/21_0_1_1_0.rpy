@@ -403,7 +403,7 @@ label _21_0_1_1_EPILOGUE:
 
     $ current_period = "Matin"
 
-    scene bg_navette_retour at adaptive_fullscreen, shuttle_background with fade
+    scene bg_navette at adaptive_fullscreen, shuttle_background with fade
 
     pause 1.2
 
