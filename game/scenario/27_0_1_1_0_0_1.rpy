@@ -42,9 +42,9 @@ label _27_0_1_1_0_0_1_REVEIL:
     "Je me redresse d'un coup et cogne ma tête contre une barre métallique."
     noam fatigue "Aïe... Merde."
     "Je suis toujours dans le conduit, près du laboratoire. J'ai dû m'endormir ici, avec ma lampe contre la poitrine."
-    "Sur mon téléphone, la conversation avec Iris s'arrête à hier. Aucun nouveau message."
+    "Sur ma tablette, la conversation avec Iris s'arrête à hier. Aucun nouveau message."
     think "Je lui ai dit que je revenais. C'est mon double qui a dû rentrer à ma place."
-    "Je pourrais lui écrire. Mais s'il a mon téléphone, ou si elle est avec lui, une simple question suffirait à tout faire déraper."
+    "Je pourrais lui écrire. Mais si elle est avec mon double, une seule question pourrait tout faire foirer."
     "Je rampe jusqu'à la grille du laboratoire."
     think "Les autres doivent être là-bas..."
 
@@ -94,7 +94,19 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas raison "Prendre la place de quelqu'un. On fait comme si c'était logique, parce que sinon certains d'entre nous ne supporteraient même plus de se regarder dans une glace."
     tomas triste "Mais... Ouais... C'est pas une situation simple à vivre..."
     "Je pensais trouver des gens prêts à tout pour tuer leurs doubles. C'est plus compliqué. Et, quelque part, c'est encore plus difficile à supporter."
-    "Ma tablette vibre. Elias vient de m'écrire."
+    "Je sors ma tablette pour lire le message d'Elias. Tomas s'arrête net."
+    tomas surpris "Attends... C'est quoi, ça ?"
+    noam hesitation "Quoi ?"
+    tomas inquiet "La tablette. T'as récupéré celle de ton original ?"
+    "Je la regarde. Putain, j'avais même pas pensé à ça."
+    noam hesitation "Ah... ouais. Enfin, je... j'ai réussi à lui prendre."
+    elias surpris "Tu lui as volé sa tablette ? Sans qu'il s'en aperçoive ?"
+    noam inquiet "Ouais. Il l'avait posée, alors... je l'ai prise. Je me suis dit que ce serait plus simple pour discuter du plan."
+    tomas reflexion "Et il l'a pas réclamée ?"
+    noam hesitation "Pas encore. Enfin, je crois pas."
+    elias fatigue "Bon, bah fais gaffe à pas la sortir devant lui, surtout."
+    noam neutre "Ouais, t'inquiète."
+    "Je baisse les yeux vers le message. Elias vient de m'écrire."
     call messenger_play("elias", "elias", [("elias", "C'est bon, je m'en occupe !"), ("noam", "Super, merci !")], objective_text="Lire le message d'Elias")
     noam sourire "Ah, super ! Il s'en occupe."
     tomas raison "Parfait, ça veut dire qu'il a récupéré ton original. On a notre fenêtre. On y va."
@@ -240,11 +252,11 @@ label _27_0_1_1_0_0_1_DOCUMENTS:
 
 label _27_0_1_1_0_0_1_APRES_VOTE:
     $ j27_secret_report_seen = True
-    "Je ferme les fichiers. Les minutes passent. J'ai le réflexe de regarder mon téléphone, encore et encore. Iris ne m'a rien écrit."
+    "Je ferme les fichiers. Je regarde plusieurs fois ma tablette, mais Iris m'a rien écrit."
     call show_custom_title("En fin d'après-midi") from _call_j27_secret_late_afternoon
     scene bg_laboratoire at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.7
-    "Des voix approchent par le conduit. Je range mon téléphone juste avant que Kael, Mara et Sael n'entrent."
+    "Des voix approchent par le conduit. Je range la tablette juste avant que Kael, Mara et Sael n'entrent."
     $ showGroup([("kael", "sourire", 0.14), ("mara", "taquin", 0.35), ("sael", "neutre", 0.57), ("noam", "reflexion", 0.80)])
     mara sourire "Ah, t'es toujours là ? Je commençais à croire que tu t'étais encore perdu dans les conduits !"
     noam neutre "Tomas m'a demandé de l'attendre."
@@ -337,7 +349,7 @@ label _27_0_1_1_0_0_1_APRES_VOTE:
     mara fatigue "Bon. Je vais chercher à manger. Il y en a qui ont passé la journée ici sans avaler grand-chose."
     elias sourire "Pour une fois, tu parles de toi ou de nous ?"
     mara agace "Les deux, abruti."
-    "Ils se dispersent autour de la table. J'en profite pour regarder une dernière fois mon téléphone."
+    "Ils se dispersent autour de la table. J'en profite pour regarder une dernière fois ma tablette."
     "Un nouveau message s'affiche. Iris."
     "Je l'ouvre si vite que je manque de faire tomber l'appareil."
     "« On doit parler de ce que tu m'as dit après le vote. Pas devant les autres. »"
@@ -345,7 +357,7 @@ label _27_0_1_1_0_0_1_APRES_VOTE:
     think "Ce que je lui ai dit ?"
     "Je n'ai pas assisté au vote. Je ne sais même pas ce que mon double a pu lui raconter."
     "Une autre notification apparaît : « Tu m'avais promis de ne rien me cacher. »"
-    "Je range le téléphone avant que quelqu'un puisse voir ma tête."
+    "Je range la tablette avant que quelqu'un puisse voir ma tête."
     think "Qu'est-ce qu'il a fait, exactement, pendant que j'étais ici ?"
     $ j27_secret_iris_doubt = True
     $ hideGroup()
