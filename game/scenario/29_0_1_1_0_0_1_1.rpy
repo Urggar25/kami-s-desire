@@ -2,10 +2,14 @@
 # Route secrète / choix Julian du J28. Nuit du 28 au 29, puis matin, après-midi et soir.
 # Noam reste l'original ; ses interlocuteurs du laboratoire le prennent pour son double.
 # La création du double de Julian ne restaure pas l'original.
-define zero_j29 = Character("Zero", color="#bdc9e8")
+define zero_j29 = Character("Noam ?", color="#bdc9e8", image="dg_noam")
+define zero_nyra_j29 = Character("Noam ?", color="#bdc9e8", image="nyra")
 default j29_julian_original_dead = False
 default j29_julian_double_awake = False
 default j29_zero_offer_heard = False
+default j29_julian_syringe_choice = None
+default j29_julian_syringe_qte_success = False
+default j29_julian_syringe_swapped = False
 
 label _29_0_1_1_0_0_1_1_REVEIL:
     $ current_day = 29
@@ -15,6 +19,9 @@ label _29_0_1_1_0_0_1_1_REVEIL:
     $ j29_julian_original_dead = False
     $ j29_julian_double_awake = False
     $ j29_zero_offer_heard = False
+    $ j29_julian_syringe_choice = None
+    $ j29_julian_syringe_qte_success = False
+    $ j29_julian_syringe_swapped = False
     scene bg_laboratoire at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
     "Je regarde encore ma tablette. Iris a dit oui à mon double. J'ai essayé de lui répondre au moins quatre fois, mais j'ai tout effacé."
@@ -93,6 +100,48 @@ label _29_0_1_1_0_0_1_1_PREPARATION:
     mara agace "C'est toi qui l'as choisi hier !"
     noam peur "J'ai choisi Julian parce que je voulais pas qu'on s'en prenne à Iris ! Je pensais qu'on aurait encore le temps de réfléchir !"
     mara fatigue "Eh ben non. On l'a plus, ce temps-là."
+    "Mara appelle Sael pour lui montrer une grille qui ferme mal. Toutes les deux s'éloignent en laissant le matériel sur la table."
+    mara neutre "Sael, viens voir deux secondes !"
+    sael fatigue "J'arrive !"
+    "Je reste seul devant la table. Personne me regarde."
+    think "Je peux peut-être empêcher ça... Mais si elles me surprennent, ma couverture est foutue."
+    $ hideGroup()
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Ne rien faire":{"label":"_29_0_1_1_0_0_1_1_SERINGUE_NE_RIEN_FAIRE"},"Remplacer le curare par de l'eau":{"label":"_29_0_1_1_0_0_1_1_SERINGUE_SABOTER"}}):
+        "ESSAYER DE SAUVER JULIAN ?"
+        "Ne rien faire":
+            $ j29_julian_syringe_choice = "leave"
+            jump _29_0_1_1_0_0_1_1_SERINGUE_NE_RIEN_FAIRE
+        "Remplacer le curare par de l'eau":
+            $ j29_julian_syringe_choice = "water"
+            jump _29_0_1_1_0_0_1_1_SERINGUE_SABOTER
+
+label _29_0_1_1_0_0_1_1_SERINGUE_NE_RIEN_FAIRE:
+    "Je fixe la seringue, puis je détourne les yeux. Si elles reviennent maintenant, elles vont comprendre."
+    jump _29_0_1_1_0_0_1_1_APRES_SERINGUE
+
+label _29_0_1_1_0_0_1_1_SERINGUE_SABOTER:
+    "J'essaie de remplacer discrètement la préparation dangereuse par de l'eau, sans laisser le temps aux autres de me surprendre."
+    # QTE abstrait de tracés : aucune manipulation réelle détaillée.
+    call screen trace_qte(path_type="curve_left", time_limit=2.4, wait_time=0.25, tolerance=65, max_errors=3, anchor_x=960, anchor_y=540)
+    $ j29_julian_syringe_qte_success = bool(_return.get("success", False))
+    if j29_julian_syringe_qte_success:
+        call screen trace_qte(path_type="s_curve", time_limit=2.5, wait_time=0.25, tolerance=65, max_errors=3, anchor_x=960, anchor_y=540)
+        $ j29_julian_syringe_qte_success = bool(_return.get("success", False))
+    if j29_julian_syringe_qte_success:
+        call screen trace_qte(path_type="vertical_down", time_limit=2.2, wait_time=0.25, tolerance=65, max_errors=3, anchor_x=960, anchor_y=540)
+        $ j29_julian_syringe_qte_success = bool(_return.get("success", False))
+    $ j29_julian_syringe_swapped = j29_julian_syringe_qte_success
+    if j29_julian_syringe_swapped:
+        "Je finis juste avant d'entendre leurs pas. Je retire les mains et m'écarte de la table."
+        think "Putain... J'espère que ça a marché."
+    else:
+        "J'entends les filles revenir beaucoup trop tôt. Je m'écarte avant d'avoir terminé."
+        think "Merde. C'est raté."
+    jump _29_0_1_1_0_0_1_1_APRES_SERINGUE
+
+label _29_0_1_1_0_0_1_1_APRES_SERINGUE:
+    $ showGroup([("sael", "reflexion", 0.21), ("mara", "neutre", 0.48), ("noam", "inquiet", 0.80)])
+    "Sael revient chercher son matériel. Je regarde ailleurs."
     "Sael referme sa trousse et nous regarde."
     sael raison "Noam, si tu viens, tu fais ce que je te dis. Je veux pas que ça parte en bagarre dans sa chambre."
     noam inquiet "Je veux pas qu'il meure."
@@ -195,6 +244,8 @@ label _29_0_1_1_0_0_1_1_JULIAN:
     "Je me penche vers Julian. Il essaie de bouger une main. Puis plus rien."
     noam peur "Julian ? Hé, Julian ! Regarde-moi !"
     "Sael m'écarte doucement. Elle vérifie son état, longtemps."
+    if j29_julian_syringe_swapped:
+        think "Je sais pas si ce que j'ai fait a suffi. Il bouge plus, mais je peux pas me trahir maintenant."
     mara inquiet "Sael ?"
     sael triste "C'est terminé."
     mara peur "T'es sûre ?"
@@ -260,7 +311,7 @@ label _29_0_1_1_0_0_1_1_RETOUR_NUIT:
     kael calme "C'est ce qu'on avait prévu."
     noam fatigue "Ouais. Je sais."
     "Je vais m'asseoir sur la banquette. Je crois que je pourrais dormir, mais chaque fois que je ferme les yeux, je revois Julian me regarder."
-    $ j29_julian_original_dead = True
+    $ j29_julian_original_dead = not j29_julian_syringe_swapped
     $ hideGroup()
     scene black with dissolve
     pause 0.6
@@ -306,6 +357,8 @@ label _29_0_1_1_0_0_1_1_MATIN:
     $ hideGroup()
     "Je prends ma tablette. Aucun nouveau message d'Iris. Elle doit être avec mon double."
     "Je pense à Julian, qui plaisantait avec eux hier soir, puis je range l'écran."
+    if j29_julian_syringe_swapped:
+        think "Je sais pas s'il est vivant. J'ai même pas pu vérifier."
     # Durée estimée du bloc : 2 min.
 
 label _29_0_1_1_0_0_1_1_PREPARATION_MACHINE:
@@ -464,6 +517,8 @@ label _29_0_1_1_0_0_1_1_NAISSANCE:
     noam reflexion "Tu veux qu'on te laisse un peu tranquille ?"
     julian fatigue "Ouais. S'il te plaît."
     "Je recule. Je suis pas capable de rester devant lui plus longtemps."
+    if j29_julian_syringe_swapped:
+        think "Lui, il ignore que j'ai essayé de sauver son original. J'ignore même si j'ai réussi."
     $ j29_julian_double_awake = True
     $ hideGroup()
     # Durée estimée du bloc : 5 min.
@@ -560,7 +615,7 @@ label _29_0_1_1_0_0_1_1_SOIR:
     noam hesitation "Je vois pas de quoi tu parles."
     zero_j29 "Je l'ai compris quand je t'ai touché. Pour prendre l'apparence de quelqu'un, il faut que j'entre en contact avec son ADN."
     noam inquiet "Donc tu viens de te transformer en moi en me touchant le bras ?"
-    zero_j29 "Oui. J'avais déjà touché ton double. Son ADN et le tien ne sont pas identiques."
+    zero_j29 "Non. Les doubles n'ont pas d'ADN humain. Leur empreinte est encodée autrement. Quand j'ai touché ton bras, j'ai tout de suite reconnu une empreinte humaine."
     noam peur "Et ça t'a suffi pour comprendre ?"
     zero_j29 "Oui. Je sais maintenant que c'est toi, l'original."
     noam colere "Et t'as rien dit à Kael ?"
@@ -578,7 +633,7 @@ label _29_0_1_1_0_0_1_1_SOIR:
     noam inquiet "T'es quoi, au juste ?"
     zero_j29 "Un Doppelgänger. Mais je suis pas fait exactement comme les autres."
     noam reflexion "C'est pour ça que tu peux changer de tête ?"
-    zero_j29 "Oui, mais je dois d'abord toucher la personne et entrer en contact avec son ADN. Je peux ensuite reprendre cette apparence."
+    zero_nyra_j29 "Pour les humains, je dois entrer en contact avec leur ADN. Pour les doubles, c'est une empreinte encodée différente."
     noam raison "Et Kael ? C'est vraiment toi qui l'as créé ?"
     zero_j29 "Oui. C'était le premier qui a réussi à vivre sans que j'aie besoin de le maintenir ici."
     noam inquiet "Tu l'as envoyé tuer son original ?"
@@ -598,7 +653,7 @@ label _29_0_1_1_0_0_1_1_SOIR:
     noam inquiet "Mais elle sait qu'ils comprennent ce qu'on leur dit ?"
     zero_j29 "Bien sûr qu'elle le sait."
     noam raison "Et sur Terre, personne sait ?"
-    zero_j29 "La plupart des gens ne savent même pas qu'on existe."
+    zero_nyra_j29 "Personne sur Terre ne sait que les Doppelgängers existent. Sinon, on aurait déjà des réponses à donner."
     noam fatigue "Putain..."
     zero_j29 "Kael, Mara, Elias, les autres... ils ont les mêmes peurs que toi. Ils veulent pas mourir. Ils veulent juste avoir une vie à eux."
     noam colere "Ouais, sauf que pour ça, ils ont tué des gens !"
@@ -639,9 +694,9 @@ label _29_0_1_1_0_0_1_1_SOIR:
     noam colere "Tu peux rien me promettre, en fait."
     zero_j29 "Non."
     noam reflexion "Tu sais au moins si on peut revenir ?"
-    zero_j29 "Je sais qu'il y a des navettes. Je sais pas si Kami nous laissera les utiliser."
+    zero_nyra_j29 "Je sais même pas si on pourra revenir. Je sais pas si tu reverras ta famille. Et je veux pas te mentir là-dessus."
     noam fatigue "Super..."
-    zero_j29 "Je vais pas te raconter que ça sera facile."
+    zero_nyra_j29 "Je te demande pas de sacrifier ta vie sur une promesse. C'est à toi de décider, et je t'obligerai à rien."
     noam peur "J'ai une famille, moi."
     zero_j29 "Je sais."
     noam colere "Non, tu sais pas ! J'ai une petite sœur ! Juliette ! Je lui ai promis que je serais là pour son anniversaire !"
@@ -664,7 +719,7 @@ label _29_0_1_1_0_0_1_1_SOIR:
     zero_j29 "Oui. Je comprends que tu me le reproches."
     "Je le regarde encore. Il n'essaie pas de s'approcher."
     noam reflexion "Et mon double, il sait que tu veux m'envoyer là-bas ?"
-    zero_j29 "Il sait que je voulais te parler. Il sait pas ce que tu vas décider."
+    zero_nyra_j29 "Non. Il n'est même pas au courant qu'on discute. Je suis venu sans lui en parler."
     noam inquiet "Tu lui as demandé de me contacter au jour 26 ?"
     zero_j29 "Oui."
     noam agace "Donc depuis le début, vous avez tout organisé."
@@ -677,7 +732,7 @@ label _29_0_1_1_0_0_1_1_SOIR:
     noam reflexion "Je dois te répondre quand ?"
     zero_j29 "Avant le départ. Demain."
     noam inquiet "Et si je dis non ?"
-    zero_j29 "Je te laisserai partir."
+    zero_nyra_j29 "Je te laisserai partir. Tu fais ton choix, pas le mien."
     noam raison "Tu le promets ?"
     zero_j29 "Oui."
     noam agace "Je sais même pas si je peux croire ça."
@@ -708,6 +763,8 @@ label _29_0_1_1_0_0_1_1_FIN:
     "Je relis son message. J'ai envie de lui répondre maintenant, juste pour lui dire que je pense à elle."
     "Mais je peux pas."
     "Je repense à Julian. À celui qui s'est réveillé cette nuit. Et à celui qui s'est réveillé cet après-midi, avec exactement la même voix."
+    if j29_julian_syringe_swapped:
+        think "Et si l'original était encore vivant ? Je dois trouver un moyen de le vérifier demain."
     think "Et si je rentre... ça veut dire quoi pour ceux qui restent sur Keyper ?"
     "Je pose la tablette sur la table de nuit et je m'allonge, sans éteindre la lumière."
     "Demain, il faudra que je réponde à Zero."
