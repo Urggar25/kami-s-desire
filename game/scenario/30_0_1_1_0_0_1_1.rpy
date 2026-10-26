@@ -56,44 +56,6 @@ label _30_0_1_1_0_0_1_1_DOUBLE:
     jump _30_0_1_1_0_0_1_1_CHOIX
     # Durée : 2m30
 
-label _30_0_1_1_0_0_1_1_LABO:
-    scene bg_laboratoire at adaptive_fullscreen with dissolve
-    play music "music/bgm_cold_metadata.mp3" fadein 0.5
-    "Il est presque huit heures quand je reviens au laboratoire. Les autres ferment des caisses et se passent des affaires. Tout le monde parle en même temps."
-    $ showGroup([("mara", "neutre", 0.17), ("kael", "calme", 0.50), ("julian", "sourire", 0.82)])
-    mara neutre "Mais non, Julian, tu prends pas trois vestes. On part pour la Terre, pas pour traverser une montagne."
-    julian taquin "Je me méfie de tes conseils vestimentaires, ma chère. Et puis, on ignore totalement la météo à l'arrivée !"
-    kael calme "Vous avez tous les deux fini ? Parce que si on rate l'embarquement pour une veste, je vous laisse ici."
-    julian surpris "Ah, il plaisante même pas ! C'est bon, c'est bon, j'en prends une."
-    "Julian se retourne vers moi. Il me sourit, comme il aurait souri hier soir."
-    julian sourire "Noam ! Tu vas pouvoir m'aider : tu préfères laquelle ?"
-    noam fatigue "J'en sais rien, Julian."
-    julian inquiet "Hé, t'as une tête de malade. T'as dormi, au moins ?"
-    noam raison "Pas beaucoup."
-    mara fatigue "Il est comme ça depuis hier. Laisse-le."
-    julian reflexion "Bon... Je prends la noire, alors."
-    "Je fixe le sol. J'ai l'impression d'entendre l'autre Julian me parler depuis son lit."
-    kael neutre "Le départ est à dix heures. Il nous reste une heure pour être au sas à neuf heures. Tomas a vérifié les derniers accès."
-    noam inquiet "Vous êtes sûrs que personne va se rendre compte de quelque chose ?"
-    kael raison "Non. Sûr à cent pour cent, personne l'est. Mais on a fait tout ce qu'on pouvait."
-    mara agace "Et maintenant, si tout le monde pouvait arrêter de nous porter la poisse, ce serait sympa."
-    julian sourire "Moi, je nous trouve très convaincants !"
-    noam colere "Ouais. C'est justement le problème."
-    julian inquiet "Pardon ?"
-    kael calme "Laisse, Julian. Va retrouver Nyra, elle t'attend pour les derniers détails."
-    julian neutre "D'accord... À tout à l'heure, alors."
-    $ showGroup([("mara", "fatigue", 0.21), ("kael", "inquiet", 0.55), ("noam", "fatigue", 0.82)])
-    mara fatigue "Tu lui en veux à lui aussi, maintenant ? Il vient à peine de comprendre ce qu'il est."
-    noam colere "Je lui en veux pas, Mara. Je pense juste à celui qui est mort dans sa chambre, c'est tout."
-    mara fatigue "Moi aussi, j'y pense. Tu crois que j'ai oublié ?"
-    kael calme "Ça suffit. On doit partir."
-    "Kael regarde la porte, puis revient vers moi."
-    kael inquiet "Noam, j'ai besoin de savoir : tu vas bien rejoindre le groupe au départ ?"
-    noam hesitation "Ouais... enfin, faut encore que je règle un truc."
-    mara agace "On dirait tous qu'on a un truc à régler aujourd'hui. Fais vite, alors."
-    $ hideGroup()
-    # Durée : 2m
-
 label _30_0_1_1_0_0_1_1_CHOIX:
     # Le choix se fait directement face au double, sans revoir Zero.
     scene bg_chambre at adaptive_fullscreen with dissolve
