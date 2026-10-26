@@ -276,7 +276,12 @@ label _30_0_1_1_0_0_1_0_LIBERATION:
     # Durée : 3m
 
 label _30_0_1_1_0_0_1_0_FIN:
-    scene bg_navette at adaptive_fullscreen with dissolve
+    # CG 077 : dernier départ de Noam, Julian-DG et Zero vers Keyper-IIB.
+    if renpy.loadable("images/background/cg/bg_cg077.png"):
+        $ unlock_gallery_image("bg_cg077")
+        scene bg_cg077 at adaptive_fullscreen with dissolve
+    else:
+        scene bg_navette at adaptive_fullscreen with dissolve
     "La petite navette s'éloigne du Conclave. Sur le siège à côté de moi, le double de Julian essaie de comprendre les commandes de son harnais. Zero reste debout près du poste de pilotage."
     "Par le hublot, la Terre n'est déjà plus qu'une direction sur l'écran de navigation."
     julian inquiet "Noam ?"
