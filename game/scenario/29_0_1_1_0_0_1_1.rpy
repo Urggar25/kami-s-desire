@@ -144,7 +144,7 @@ label _29_0_1_1_0_0_1_1_JULIAN:
     sael mefiant "Stop. Pas ici."
     "Mara ouvre discrètement la grille. Je me retrouve à l'intérieur sans avoir le temps de trouver une nouvelle excuse."
     $ flashlight_off()
-    scene bg_chambre_julian at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("sael", "mefiant", 0.18), ("mara", "inquiet", 0.47), ("noam", "peur", 0.83)])
     "Julian respire profondément. Il a laissé un livre ouvert sur le bord de son lit."
     "Sael avance. Mara reste près de la grille."
@@ -186,7 +186,7 @@ label _29_0_1_1_0_0_1_1_JULIAN:
     julian peur "Qu'est-ce que vous faites ?! Noam !"
     "J'entends sa voix, puis des bruits étouffés. Sael me tourne le dos."
     "Je cherche à me dégager. Mara serre les dents. Je finis par la repousser."
-    scene bg_chambre_julian at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
     "Sael est penchée sur Julian. La seringue est dans sa main. Elle ne me regarde pas."
     noam peur "Non, non, non..."
     "Julian ne bouge presque plus. Ses yeux restent ouverts."
@@ -703,7 +703,7 @@ label _29_0_1_1_0_0_1_1_SOIR:
 
 label _29_0_1_1_0_0_1_1_FIN:
     $ current_period = "Nuit"
-    scene bg_chambre_noam at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
     "Je finis par rejoindre ma chambre. J'ai vérifié qu'il n'y avait personne avant d'entrer."
     "Je ferme la porte et m'assois sur le lit. Ça fait plusieurs jours que je n'ai pas dormi ici."
