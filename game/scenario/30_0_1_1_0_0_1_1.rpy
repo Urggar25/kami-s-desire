@@ -11,7 +11,7 @@ label _30_0_1_1_0_0_1_1_REVEIL:
     $ j30_secret_zero_choice = None
     $ j30_secret_ending = None
     if j29_julian_syringe_swapped:
-        jump _30_0_1_1_0_0_1_1_JULIAN_VIVANT_PLACEHOLDER
+        jump _30_0_1_1_0_0_1_0_REVEIL
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
     "Je regarde l'heure sur ma tablette. 7 h 02. Je suis réveillé depuis un moment, mais j'ai pas réussi à sortir de mon lit."
@@ -208,11 +208,3 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_KEYPER:
     return
     # Durée : 3m
 
-label _30_0_1_1_0_0_1_1_JULIAN_VIVANT_PLACEHOLDER:
-    # Ne jamais faire passer un Julian vivant pour mort : branche J30 à écrire.
-    scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je repense à ce que j'ai fait avec la seringue. Si Julian est toujours vivant, il est peut-être encore au laboratoire."
-    "Je dois le retrouver avant le décollage. Je peux pas faire comme si tout s'était passé normalement."
-    "À suivre — Julian sauvé."
-    return
-    # Durée : 0m30
