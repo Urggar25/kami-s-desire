@@ -59,7 +59,7 @@ label _30_0_1_1_0_0_1_0_CONDUIT:
     julian peur "ME SUIS PAS !"
     "Je le suis malgré tout. Il va si vite qu'il se cogne contre les parois, mais il finit par atteindre la grille de sortie."
     "Par l'ouverture qui donne sur la cafétéria, une voix amplifiée nous parvient depuis les haut-parleurs de la salle. On n'entend rien dans le reste des conduits, mais ici la grille est juste au-dessus des enceintes."
-    kami "Le dernier scrutin est terminé. L'unanimité n'a pas été atteinte : l'amendement est rejeté !"
+    kami "Le dernier scrutin est terminé. L'unanimité a été atteinte : l'amendement est adopté !"
     "Des conversations et des pas résonnent de l'autre côté. Les représentants reviennent du vote."
     "Je vois les pieds de Julian disparaître. La grille s'ouvre sur leurs voix."
     $ hideGroup()
@@ -68,7 +68,7 @@ label _30_0_1_1_0_0_1_0_CONDUIT:
 
 label _30_0_1_1_0_0_1_0_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    "Les représentants reviennent tout juste du scrutin. Ils entrent presque tous en même temps dans la cafétéria, parlant encore de l'amendement rejeté, leurs sacs à la main."
+    "Les représentants reviennent tout juste du scrutin. Ils entrent presque tous en même temps dans la cafétéria, parlant encore de l'amendement adopté, leurs sacs à la main."
     "Julian trébuche en sortant de la grille. Elen se précipite vers lui."
     $ showGroup([("julian", "peur", 0.18), ("elen", "inquiet", 0.49), ("lysa", "surpris", 0.81)])
     elen inquiet "Julian ?! Mais qu'est-ce qui t'est arrivé ?! T'es couvert de poussière !"
