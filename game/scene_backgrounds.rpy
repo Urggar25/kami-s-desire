@@ -508,6 +508,9 @@ image noam_salle_bain = DynamicDisplayable(automatic_scene_image_dynamic, "image
 
 # Décors narratifs des jours 17 à 21. Leur éclairage est volontairement
 # intégré à l'illustration et ne passe pas par la teinte horaire automatique.
+# Le laboratoire est un PNG unique (bg_laboratoire.png) : sans déclaration
+# dynamique, Ren'Py l'affiche brut, sans l'étalonnage de current_period.
+image bg_laboratoire = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_laboratoire.png")
 image bg_conduit_reseau = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_conduit_reseau.png")
 image bg_cavite_technique = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_cavite_technique.png")
 image bg_salle_goumi_cachee = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_salle_goumi_cachee.png")
