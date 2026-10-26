@@ -3,7 +3,7 @@
 # Noam reste l'original ; ses interlocuteurs du laboratoire le prennent pour son double.
 # La création du double de Julian ne restaure pas l'original.
 define zero_j29 = Character("Noam ?", color="#bdc9e8", image="dg_noam")
-define zero_nyra_j29 = Character("Noam ?", color="#bdc9e8", image="nyra")
+define zero_nyra_j29 = Character("Nyra ?", color="#bdc9e8", image="nyra")
 default j29_julian_original_dead = False
 default j29_julian_double_awake = False
 default j29_zero_offer_heard = False
@@ -766,11 +766,9 @@ label _29_0_1_1_0_0_1_1_FIN:
     "Une fois Zero parti, je m'assois sur mon lit. Ça fait plusieurs jours que je n'ai pas dormi ici."
     "Je sors ma tablette. Le dernier message d'Iris est toujours là."
     "Je commence à lui écrire que je vais bien, puis j'efface. Je sais même pas si elle est avec mon double."
-    "J'ouvre une vieille conversation avec Juliette."
-    "Je retrouve un message où elle me rappelle la date de son anniversaire, avec plein de points d'exclamation."
-    think "Je lui ai promis que je rentrerais."
-    "Je relis son message. J'ai envie de lui répondre maintenant, juste pour lui dire que je pense à elle."
-    "Mais je peux pas."
+    "Je retrouve le dessin de Juliette dans mes affaires. Elle me l'avait donné avant de partir."
+    think "Je lui ai promis que je rentrerais pour son anniversaire."
+    "Je reste un moment à regarder le dessin. Je sais même pas comment lui expliquer ce qui se passe ici."
     "Je repense à Julian. À celui qui s'est réveillé cette nuit. Et à celui qui s'est réveillé cet après-midi, avec exactement la même voix."
     if j29_julian_syringe_swapped:
         think "Et si l'original était encore vivant ? Je dois trouver un moyen de le vérifier demain."
