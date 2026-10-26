@@ -17,11 +17,11 @@ label _30_0_1_1_0_0_1_0_REVEIL:
     $ j30_julian_saved_ending = None
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
-    "7 h 04. J'ai les yeux ouverts depuis cinq minutes, et la seule chose à laquelle j'arrive à penser, c'est la main de Julian qui bougeait encore."
+    "Je suis réveillé depuis un moment, et la seule chose à laquelle j'arrive à penser, c'est la main de Julian qui bougeait encore."
     "J'ai remplacé le produit. Je l'ai fait. Mais personne ne m'a dit ce qu'il était devenu après qu'on l'a ramené au laboratoire."
     "Sur le bureau, le dessin de Juliette est posé à côté de ma tablette. Je le prends, puis je le glisse dans ma poche."
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    kami "Bonjour, mes petits passagers ! Dernier réveil au Conclave ! Embarquement à neuf heures, décollage à dix. Dix heures pile !"
+    kami "Bonjour, mes petits passagers ! Dernier réveil au Conclave ! L'embarquement approche, alors tâchez de ne pas rater votre merveilleux retour sur Terre !"
     kami "Je vous conseille de régler vos différends avant de monter. Une dispute familiale à bord, c'est terrible pour l'ambiance."
     scene bg_chambre at adaptive_fullscreen with dissolve
     "La diffusion disparaît. J'entends aussitôt un claquement au-dessus de mon bureau."
@@ -36,15 +36,18 @@ label _30_0_1_1_0_0_1_0_CONDUIT:
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.4
     "À quelques mètres de moi, quelqu'un s'arrête de ramper. Ses vêtements sont froissés, son visage couvert de sueur."
-    "Julian."
+    "Julian. Enfin... son double, forcément. L'original a été emmené au laboratoire, et je l'ai vu cesser de bouger."
     $ showGroup([("noam", "surpris", 0.25), ("julian", "peur", 0.77)])
-    noam surpris "Julian ?! Putain, t'es vivant !"
+    noam surpris "Julian ? Qu'est-ce que tu fous là ?! Tu devrais pas être avec les autres ?"
     julian peur "Non... Non, recule !"
-    noam raison "Attends, écoute-moi ! Je t'ai aidé, hier. C'est moi qui ai changé le produit !"
-    julian colere "T'étais dans ma chambre ! Je t'ai vu !"
-    noam inquiet "Oui, j'étais là, mais..."
-    julian peur "Y avait Mara ! Sael ! Elle m'a piqué avec un truc et après je me suis réveillé au milieu de... de..."
-    noam raison "Je sais pour le laboratoire, je sais, mais si t'es là c'est parce que j'ai essayé de te sauver !"
+    noam inquiet "Quoi ? Mais qu'est-ce qui t'arrive ?"
+    julian colere "T'ÉTAIS DANS MA CHAMBRE ! Je t'ai vu !"
+    noam surpris "Attends... Ta chambre ?"
+    julian peur "Y avait Mara ! Et Sael ! Elle m'a piqué avec un truc, et après je me suis réveillé entouré de..."
+    "Mon estomac se serre. Ce n'est pas le double de Julian. C'est lui. Celui que j'ai vu allongé, sans bouger."
+    noam inquiet "Julian, écoute, c'est pas ce que tu crois. Je peux t'expliquer !"
+    julian colere "Tu veux m'expliquer quoi ?! Pourquoi vous avez essayé de me tuer ?!"
+    noam panique "Non ! C'était pas... Putain, je voulais pas que ça arrive !"
     julian colere "ARRÊTE ! Tu vas pas me refaire le même coup !"
     "Julian recule si brusquement qu'il heurte une jonction. Il se retourne et se met à ramper vers le passage qui rejoint la cafétéria."
     noam peur "Julian ! Attends !"
@@ -57,7 +60,7 @@ label _30_0_1_1_0_0_1_0_CONDUIT:
 
 label _30_0_1_1_0_0_1_0_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    "Il est à peine 7 h 30. La cafétéria est pleine : les représentants terminent leur dernier petit-déjeuner, avec leurs sacs à côté des tables."
+    "La cafétéria est pleine : les représentants terminent leur dernier petit-déjeuner, avec leurs sacs à côté des tables."
     "Julian trébuche en sortant de la grille. Elen se précipite vers lui."
     $ showGroup([("julian", "peur", 0.18), ("elen", "inquiet", 0.49), ("lysa", "surpris", 0.81)])
     elen inquiet "Julian ?! Mais qu'est-ce qui t'est arrivé ?! T'es couvert de poussière !"
@@ -69,7 +72,7 @@ label _30_0_1_1_0_0_1_0_CAFETERIA:
     noam raison "Julian, pose ça. Je veux juste te parler !"
     julian colere "C'EST LUI ! C'est Noam ! Il a essayé de me tuer cette nuit !"
     elen peur "Quoi ?! Mais qu'est-ce que tu racontes ?"
-    noam colere "C'est pas vrai ! Enfin... j'étais là, oui, mais j'ai essayé de l'empêcher !"
+    noam panique "Attendez ! C'est pas ce que vous croyez ! J'étais là, oui, mais c'est beaucoup plus compliqué que ça !"
     julian peur "Il était dans ma chambre avec deux autres ! J'ai reconnu leurs visages. Ils m'ont plaqué sur le lit et..."
     noam inquiet "Julian, tu dois m'écouter, je suis pas celui que tu crois !"
     julian colere "Tu m'as poursuivi dans les conduits, espèce de malade !"
@@ -93,7 +96,7 @@ label _30_0_1_1_0_0_1_0_CAFETERIA:
     ryn colere "Noam nous a raconté exactement ce genre de trucs il y a quelques jours !"
     noam raison "Oui ! Je vous ai dit que quelqu'un copiait les représentants ! C'est ce qui se passe !"
     lysa inquiet "Alors pourquoi Julian dit que c'est toi qui l'as attaqué ?"
-    noam panique "Parce qu'il m'a vu avec Mara et Sael ! Je vous jure que j'ai essayé de le sauver !"
+    noam panique "Parce qu'il m'a vu avec Mara et Sael ! Mais j'ai rien fait contre lui, je vous le jure !"
     ryn colere "T'as fait quoi avec elles, déjà ?! Pourquoi t'étais dans sa chambre ?"
     noam peur "Je peux vous expliquer, mais pas tous en train de me hurler dessus !"
     jump _30_0_1_1_0_0_1_0_DEUX_NOAM
@@ -102,24 +105,24 @@ label _30_0_1_1_0_0_1_0_CAFETERIA:
 label _30_0_1_1_0_0_1_0_DEUX_NOAM:
     "La porte de la cafétéria s'ouvre. Iris arrive avec celui que tout le monde croit être moi."
     scene bg_cafeteria at adaptive_fullscreen with vpunch
-    $ showGroup([("iris", "inquiet", 0.19), ("dg_noam", "surpris", 0.52), ("noam", "peur", 0.82)])
-    iris inquiet "C'est quoi, ce bordel ?! On vous entend jusque dans le couloir !"
+    $ showGroup([("iris", "determine", 0.19), ("dg_noam", "surpris", 0.52), ("noam", "peur", 0.82)])
+    iris colere "C'est quoi, ce bordel ?! On vous entend jusque dans le couloir !"
     dg_noam surpris "..."
     noam peur "Iris !"
-    iris surpris "Quoi... ?"
-    "Elle regarde son compagnon, puis moi. Même visage. Même cheveux. Elle recule immédiatement."
-    iris peur "Non... Attendez. Pourquoi y a deux Noam ?!"
-    dg_noam inquiet "Iris, je peux..."
-    noam colere "C'est lui ! C'est mon double ! On a échangé nos places, je voulais découvrir ce qu'ils faisaient au laboratoire !"
-    iris colere "Un double ?! Tu te fous de moi ?"
-    noam raison "Non ! Je te l'ai dit, je te l'ai dit depuis des jours !"
+    "Iris s'arrête net en voyant mon visage à côté de celui du garçon avec lequel elle vient d'entrer. Elle recule aussitôt, se décale loin de nous deux et lève les mains, prête à se défendre."
+    iris determine "Personne bouge. Aucun des deux, compris ?!"
+    dg_noam inquiet "Iris, attends..."
+    iris colere "Non, toi aussi tu fermes ta gueule ! J'ai déjà vu le corps de Mara, alors deux Noam dans la même pièce, ça me donne surtout envie de frapper avant de poser des questions."
+    noam colere "C'est lui, le double ! On a échangé nos places pour que je puisse découvrir ce qu'ils faisaient au laboratoire !"
+    iris determine "Et je suis censée savoir lequel dit vrai comment ? Restez à distance !"
+    noam raison "Iris, tu sais que je t'avais parlé de tout ça !" 
     dg_noam raison "Je sais pas ce qu'il raconte, Iris. Je suis venu avec toi, là, maintenant. Tu le sais."
     noam colere "Parce qu'il a pris ma place au jour 26 !"
     dg_noam inquiet "Qu'est-ce qu'il est en train d'inventer ?"
     "La voix du double tremble un peu. Il n'arrive pas à me regarder franchement."
     $ showGroup([("julian", "peur", 0.18), ("iris", "inquiet", 0.50), ("noam", "colere", 0.82)])
     julian colere "C'est LUI qui m'a attaqué ! Celui-là ! Je reconnais ses fringues, et sa voix !"
-    noam colere "Julian, si je voulais te tuer, pourquoi j'aurais changé la seringue ?! Tu crois que tu te serais réveillé sinon ?!"
+    noam panique "Julian, je voulais pas que ça arrive ! Je sais ce que t'as vu, mais tu comprends pas pourquoi j'étais là !"
     julian peur "J'en sais rien ! Arrête de me poser des questions !"
     iris raison "Julian, va te mettre près d'Elen. Personne te touche."
     julian colere "Non ! Je veux pas qu'on s'approche de moi !"
@@ -145,7 +148,7 @@ label _30_0_1_1_0_0_1_0_DEUX_NOAM:
     noam panique "Mais justement ! C'était lui, hier ! Je viens de vous le dire !"
     lysa inquiet "Iris, connaître une histoire, ça suffit pas forcément. Si ces copies récupèrent les souvenirs..."
     iris colere "Et on fait quoi, alors ? On prend les deux dans la navette ?! Tu veux qu'il lui arrive ce qui est arrivé à Julian ?!"
-    noam colere "Mais Julian est vivant parce que j'ai changé le produit !"
+    noam panique "Mais vous voyez bien qu'il y a quelque chose qui cloche ! Pourquoi vous refusez de m'écouter deux secondes ?!"
     julian peur "ARRÊTE DE PARLER DE MOI !"
     "Ryn se met entre nous. Sael et Mara arrivent au fond de la cafétéria, attirées par les cris, et s'immobilisent en découvrant la scène."
     $ showGroup([("mara", "surpris", 0.17), ("sael", "inquiet", 0.50), ("noam", "colere", 0.82)])
@@ -195,7 +198,7 @@ label _30_0_1_1_0_0_1_0_EXCLUSION:
     "Les autres discutent à voix basse. Iris reste près de mon double. Julian se tient contre le mur, refusant toujours que qui que ce soit l'approche."
     $ showGroup([("noam", "peur", 0.18), ("lysa", "inquiet", 0.50), ("iris", "colere", 0.82)])
     lysa inquiet "On devrait au moins essayer de vérifier avant..."
-    iris colere "Il est presque neuf heures ! Julian dit qu'il a failli mourir. Tu veux qu'on le laisse monter ?!"
+    iris colere "L'embarquement va commencer ! Julian dit qu'il a failli mourir. Tu veux qu'on le laisse monter ?!"
     noam raison "Lysa ! Tu me connais, toi !"
     lysa inquiet "Je... je sais même plus ce que ça veut dire, Noam."
     "Cette réponse me coupe davantage que les cordes qu'on serre autour de mes poignets."
@@ -207,14 +210,13 @@ label _30_0_1_1_0_0_1_0_EXCLUSION:
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Ils m'enferment finalement dans une chambre vide, les mains attachées à une barre métallique. Ils ont pris ma tablette, mais personne n'a remarqué le dessin plié dans ma poche."
     "Au-dessus de moi, les haut-parleurs crachent les dernières consignes d'embarquement."
-    "9 h 46."
     "J'essaie encore de défaire mes liens. Rien ne bouge."
     noam colere "HÉ ! Y A QUELQU'UN ?!"
     "Personne ne répond."
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Dernier appel ! Tous les passagers sont priés de rejoindre la navette. Fermeture des portes dans quelques instants !"
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "10 h. Un grondement traverse la station. Le sol vibre longuement, puis tout devient silencieux."
+    "Un grondement traverse la station. Le sol vibre longuement, puis tout devient silencieux."
     "Ils sont partis."
     "Iris. Juliette, qui attend toujours que je rentre. Et mon double, qui va pouvoir se présenter chez elle avec mon visage."
     noam fatigue "Putain..."
