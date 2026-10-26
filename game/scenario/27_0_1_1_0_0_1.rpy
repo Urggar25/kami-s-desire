@@ -352,4 +352,5 @@ label _27_0_1_1_0_0_1_APRES_VOTE:
     stop music fadeout 1.5
     call end_day("28", sleeping=True) from _call_j27_secret_end_day_28
     # Route secrète du J28 : conserver les flags j27_secret_* pour les reprises.
-    return
+    
+    jump _28_0_1_1_0_0_1_REVEIL

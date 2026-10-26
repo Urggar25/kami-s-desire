@@ -233,6 +233,7 @@ init python:
         "ivre": ("corps", "bras_derriere_tete", "bouche_taquin", "yeux_fatigue"),
         "vide": ("corps", "bras_derriere_tete", "bouche_doute", "yeux_fatigue"),
         "peur": ("corps", "bras_derriere_tete", "bouche_colere", "yeux_mefiant"),
+        "raison": ("corps", "bras_derriere_tete", "bouche_sourire", "yeux_mefiant"),
         "triste": ("corps", "bras_main_hanche", "bouche_doute", "yeux_fatigue"),
         "surpris": ("corps", "bras_explication", "bouche_doute", "yeux_mefiant"),
     }
@@ -277,6 +278,7 @@ image mara colere             = mara_expression("colere")
 image mara colere_noire       = mara_expression("colere_noire")
 image mara content            = mara_expression("content")
 image mara doute              = mara_expression("doute")
+image mara raison              = mara_expression("raison")
 image mara desaccord          = mara_expression("doute")
 image mara jaloux             = mara_expression("jaloux")
 image mara joie               = mara_expression("joie")
