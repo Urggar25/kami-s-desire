@@ -782,4 +782,4 @@ label _29_0_1_1_0_0_1_1_FIN:
     "Pour l'instant, je sais pas ce que je vais faire."
     stop music fadeout 1.5
     call end_day("30", sleeping=True) from _call_j29_julian_secret_end_day_30
-    return
+    jump _30_0_1_1_0_0_1_1_REVEIL
