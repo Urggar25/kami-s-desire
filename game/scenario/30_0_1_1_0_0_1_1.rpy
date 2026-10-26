@@ -124,8 +124,14 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR:
     "Je sors le dessin de Juliette de ma poche. Elle doit compter les jours depuis mon départ."
     think "J'arrive, Juliette. Cette fois, je rentre."
     $ j30_secret_ending = "retour_terre"
-    "FIN — LE POIDS DU RETOUR"
-    stop music fadeout 1.0
+    scene black with fade
+    stop music fadeout 0.2
+    pause 1.2
+    call screen kd_ending_reached(
+        "Le poids du retour",
+        "ENDING 03 // JOUR 30"
+    )
+    $ _ending_screen_closed = _return
     return
     # Durée : 3m
 
@@ -191,8 +197,14 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_KEYPER:
     "Mais la Terre disparaît lentement derrière nous. Notre navette se met en route vers Keyper-IIB."
     think "Je suis désolé, Juliette. J'espère que tu comprendras un jour."
     $ j30_secret_ending = "keyper"
-    "FIN — À TA PLACE"
-    stop music fadeout 1.0
+    scene black with fade
+    stop music fadeout 0.2
+    pause 1.2
+    call screen kd_ending_reached(
+        "À ta place",
+        "ENDING 04 // JOUR 30"
+    )
+    $ _ending_screen_closed = _return
     return
     # Durée : 3m
 
