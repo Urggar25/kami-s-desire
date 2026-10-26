@@ -15,268 +15,172 @@ label _30_0_1_1_0_0_1_1_REVEIL:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
     "Je regarde l'heure sur ma tablette. 7 h 02. Je suis réveillé depuis un moment, mais j'ai pas réussi à sortir de mon lit."
-    "La conversation avec Juliette est encore ouverte. Je relis son dernier message une fois de plus, puis j'éteins l'écran."
+    "Sur mon bureau, je retrouve le dessin de Juliette. Elle me l'avait donné avant mon départ. Je le garde un instant dans les mains, puis le repose soigneusement."
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Bonjour, mes chers passagers ! Aujourd'hui, on rentre à la maison ! Enfin... certains d'entre vous. À 9 h, embarquement, et à 10 h, décollage !"
     kami "Merci de ne pas oublier vos affaires, vos petits secrets et vos merveilleux souvenirs du Conclave. Les retards ne seront pas acceptés, même avec une très bonne excuse !"
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Dix heures. Dans moins de trois heures, la navette sera partie."
-    think "Il faut que je parle à mon double. Maintenant."
+    "On frappe doucement à ma porte. Quand je l'ouvre, c'est mon double qui attend, un sac à la main."
     # Durée : 1m
 
 label _30_0_1_1_0_0_1_1_DOUBLE:
-    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
-    $ flashlight_on(0)
-    "Je le retrouve près de l'accès aux dortoirs. Il est déjà habillé pour partir, un sac sur l'épaule."
-    $ flashlight_off()
-    $ showGroup([("noam", "inquiet", 0.25), ("dg_noam", "neutre", 0.75)])
-    dg_noam neutre "Ah, t'es là. Je commençais à me demander si tu t'étais pas rendormi."
-    noam colere "Tu vas vraiment monter dans la navette comme ça ?"
-    dg_noam surpris "Hein ? Bah... ouais. C'est ce qu'on avait prévu, non ?"
-    noam agace "On avait prévu que je prenne ta place pour voir les autres. Deux jours. Pas que tu récupères ma vie entière."
-    dg_noam inquiet "Je sais. Mais c'est plus compliqué maintenant, Noam. Avec Iris, on a parlé hier soir, et..."
-    noam colere "Ouais, Iris ! J'ai vu ses messages ! Elle croit que c'est à moi qu'elle parle !"
-    dg_noam raison "Elle parle à moi. Enfin... elle sait pas que je suis pas toi, d'accord, mais tout ce que je lui ai dit, je le pensais."
-    noam colere "Tu peux pas faire comme si ça changeait rien !"
-    dg_noam inquiet "Je fais pas comme si ça changeait rien ! Tu crois que ça me fait plaisir de savoir qu'elle va me regarder comme un monstre si je lui raconte ?"
-    noam raison "Alors raconte-lui."
-    dg_noam agace "Tu sais très bien que je peux pas. Il est sept heures, la navette part à dix heures, et si quelqu'un apprend qu'on existe, c'est fini."
-    noam inquiet "Tu vas aussi aller voir Juliette ?"
-    dg_noam surpris "Ta sœur ? Bah... je suis censé être toi, donc oui."
-    noam colere "Tu la connais même pas."
-    dg_noam raison "Si. Je me souviens d'elle. Je me souviens de ses anniversaires, de quand elle était petite... C'est pas des histoires qu'on m'a racontées, je les ai dans la tête."
-    noam fatigue "Mais c'est pas à toi qu'elle a demandé de rentrer."
-    dg_noam inquiet "Ouais. Je sais."
-    noam colere "Non, je crois pas que tu saches. Quand elle va me prendre dans ses bras, ça sera toi. Et elle le saura jamais."
-    dg_noam fatigue "..."
-    dg_noam raison "Écoute, je sais pas quoi te dire. J'avais pas prévu de tomber amoureux d'Iris, si c'est ce que tu veux entendre. Ça m'est arrivé, c'est tout."
-    noam reflexion "Si je décide de rentrer ?"
-    dg_noam inquiet "Tu comptes rentrer ?"
-    noam raison "Je t'ai posé une question."
-    dg_noam agace "Alors on devra en discuter. Je vais pas prétendre que ça me dérange pas, parce que si, ça me dérange."
-    noam colere "Me rendre ma place, c'est pas une faveur !"
-    dg_noam colere "Je t'ai pas dit que c'en était une ! Arrête de me parler comme si j'étais venu te voler ton sac !"
-    "On se regarde. Il est autant en colère que moi. Et c'est ça qui me fout encore plus mal à l'aise."
-    dg_noam fatigue "Je vais pas me battre contre toi. Mais décide-toi vite, parce qu'à neuf heures, je rejoins les autres."
-    noam inquiet "T'es au courant pour Zero ?"
-    dg_noam surpris "Quoi, Zero ?"
-    noam hesitation "Laisse tomber."
-    dg_noam raison "Noam, s'il t'a raconté quelque chose, dis-le-moi."
-    noam fatigue "J'ai dit laisse tomber."
-    "Je repars avant qu'il insiste. Il ne sait vraiment pas ce que Zero m'a proposé."
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    $ showGroup([("noam", "inquiet", 0.27), ("dg_noam", "neutre", 0.73)])
+    dg_noam neutre "Salut... Désolé de débarquer comme ça, mais je voulais te voir avant qu'on parte. Je peux entrer ?"
+    noam reflexion "Ouais. Vas-y."
+    "Il entre et pose son sac près de la porte, puis il regarde mon lit comme s'il hésitait à s'asseoir."
+    dg_noam inquiet "Bon... je sais pas si t'as pris une décision. Zero m'a rien dit, et je veux pas te mettre la pression. Je voulais juste savoir ce que tu comptes faire."
+    noam fatigue "J'en sais rien. Je me suis retourné toute la nuit. J'ai surtout pensé à Juliette."
+    dg_noam raison "Ouais, je me doute. Tu lui avais promis de rentrer."
+    noam inquiet "C'est pas juste la promesse. C'est ma petite sœur. Je peux pas lui demander d'attendre encore je sais pas combien de temps."
+    dg_noam neutre "Je comprends. Si tu veux rentrer, dis-le-moi. Je vais pas te piquer la navette dans ton dos."
+    noam reflexion "Et toi ? Tu veux faire quoi ?"
+    dg_noam inquiet "Je vais pas te mentir : j'ai envie de partir. Je veux voir la Terre, et surtout j'ai envie de continuer avec Iris."
+    noam agace "Elle sait même pas que t'es pas moi."
+    dg_noam raison "Je sais. Et je te demande pas de trouver ça normal, mais les trucs que je lui ai dits, je les pensais vraiment. Je suis pas juste en train de jouer ton rôle."
+    noam fatigue "Ça fait bizarre de t'entendre parler d'elle comme ça."
+    dg_noam fatigue "Ouais... j'imagine."
+    noam inquiet "Et si vous finissez pas dans le même district ? Tu t'es posé la question ?"
+    dg_noam neutre "Oui. On trouvera un moyen de se voir. On sera pas obligés de vivre à l'autre bout de la planète sans jamais se parler. Enfin, j'espère. J'ai envie qu'on essaie, quoi."
+    noam raison "Et si c'est moi qui rentre ?"
+    dg_noam inquiet "Alors... je vais devoir trouver autre chose. Je te dis pas que ça me fera plaisir. Mais c'est toi qui décides, Noam."
+    noam surpris "Tu me demandes même pas de te laisser ma place ?"
+    dg_noam fatigue "Je te dis que j'en ai envie. Ça suffit, non ? Je vais pas te faire culpabiliser avec Juliette en plus."
+    "Il remarque le dessin posé sur le bureau. Je le récupère avant qu'il dise quoi que ce soit."
+    dg_noam neutre "Je m'en souviens, de ce dessin."
+    noam fatigue "Ouais. Moi aussi."
+    dg_noam raison "On va bientôt devoir bouger. Tu veux encore réfléchir deux minutes ?"
+    noam inquiet "Non. Si j'attends encore, je vais jamais me décider."
     $ hideGroup()
+    jump _30_0_1_1_0_0_1_1_CHOIX
     # Durée : 2m30
 
-label _30_0_1_1_0_0_1_1_LABO:
-    scene bg_laboratoire at adaptive_fullscreen with dissolve
-    play music "music/bgm_cold_metadata.mp3" fadein 0.5
-    "Il est presque huit heures quand je reviens au laboratoire. Les autres ferment des caisses et se passent des affaires. Tout le monde parle en même temps."
-    $ showGroup([("mara", "neutre", 0.17), ("kael", "calme", 0.50), ("julian", "sourire", 0.82)])
-    mara neutre "Mais non, Julian, tu prends pas trois vestes. On part pour la Terre, pas pour traverser une montagne."
-    julian taquin "Je me méfie de tes conseils vestimentaires, ma chère. Et puis, on ignore totalement la météo à l'arrivée !"
-    kael calme "Vous avez tous les deux fini ? Parce que si on rate l'embarquement pour une veste, je vous laisse ici."
-    julian surpris "Ah, il plaisante même pas ! C'est bon, c'est bon, j'en prends une."
-    "Julian se retourne vers moi. Il me sourit, comme il aurait souri hier soir."
-    julian sourire "Noam ! Tu vas pouvoir m'aider : tu préfères laquelle ?"
-    noam fatigue "J'en sais rien, Julian."
-    julian inquiet "Hé, t'as une tête de malade. T'as dormi, au moins ?"
-    noam raison "Pas beaucoup."
-    mara fatigue "Il est comme ça depuis hier. Laisse-le."
-    julian reflexion "Bon... Je prends la noire, alors."
-    "Je fixe le sol. J'ai l'impression d'entendre l'autre Julian me parler depuis son lit."
-    kael neutre "Le départ est à dix heures. Il nous reste une heure pour être au sas à neuf heures. Tomas a vérifié les derniers accès."
-    noam inquiet "Vous êtes sûrs que personne va se rendre compte de quelque chose ?"
-    kael raison "Non. Sûr à cent pour cent, personne l'est. Mais on a fait tout ce qu'on pouvait."
-    mara agace "Et maintenant, si tout le monde pouvait arrêter de nous porter la poisse, ce serait sympa."
-    julian sourire "Moi, je nous trouve très convaincants !"
-    noam colere "Ouais. C'est justement le problème."
-    julian inquiet "Pardon ?"
-    kael calme "Laisse, Julian. Va retrouver Nyra, elle t'attend pour les derniers détails."
-    julian neutre "D'accord... À tout à l'heure, alors."
-    $ showGroup([("mara", "fatigue", 0.21), ("kael", "inquiet", 0.55), ("noam", "fatigue", 0.82)])
-    mara fatigue "Tu lui en veux à lui aussi, maintenant ? Il vient à peine de comprendre ce qu'il est."
-    noam colere "Je lui en veux pas, Mara. Je pense juste à celui qui est mort dans sa chambre, c'est tout."
-    mara fatigue "Moi aussi, j'y pense. Tu crois que j'ai oublié ?"
-    kael calme "Ça suffit. On doit partir."
-    "Kael regarde la porte, puis revient vers moi."
-    kael inquiet "Noam, j'ai besoin de savoir : tu vas bien rejoindre le groupe au départ ?"
-    noam hesitation "Ouais... enfin, faut encore que je règle un truc."
-    mara agace "On dirait tous qu'on a un truc à régler aujourd'hui. Fais vite, alors."
-    $ hideGroup()
-    # Durée : 2m
-
 label _30_0_1_1_0_0_1_1_CHOIX:
-    $ current_period = "Matin"
-    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
-    "À 9 h 10, le Conclave commence à se vider. J'entends les premiers appels d'embarquement à travers les parois."
-    "Zero m'attend dans un embranchement, sous les traits de Nyra. Il a encore quelques cheveux serrés dans la main."
-    $ showGroup([("noam", "inquiet", 0.28), ("nyra", "neutre", 0.72)])
-    zero_nyra_j29 neutre "Je voulais pas te faire attendre. Il faut que tu choisisses maintenant."
-    noam agace "Ouais, j'ai compris. T'es sûr que c'est pas un piège ?"
-    zero_nyra_j29 neutre "Non. Je veux vraiment que tu viennes sur Keyper, mais si tu refuses, je te laisse partir."
-    noam raison "Et si j'accepte ?"
-    zero_nyra_j29 neutre "Je te retrouverai après le départ. On prendra une autre navette. Mais je te le redis : je ne sais pas si on pourra revenir, ni si tu reverras Juliette."
-    noam inquiet "Et si je dis non, tu fais quoi ?"
-    zero_nyra_j29 neutre "Je tenterai d'y aller quand même. Je trouverai une autre solution, ou j'échouerai. C'est pas à toi de porter tout ça tout seul."
-    noam fatigue "Putain... Il reste combien ?"
-    zero_nyra_j29 neutre "Moins d'une heure. Et il te faudra encore rejoindre le sas si tu rentres."
-    "Je regarde ma tablette. J'ai la photo de Juliette devant les yeux. J'aimerais tellement pouvoir lui demander ce qu'elle ferait."
+    # Le choix se fait directement face au double, sans revoir Zero.
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    $ showGroup([("noam", "hesitation", 0.27), ("dg_noam", "inquiet", 0.73)])
+    "Je regarde le dessin de Juliette, puis mon double. Il ne dit rien. Il attend que je me décide."
     $ hideGroup()
-    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Refuser Zero — retourner sur Terre":{"label":"_30_0_1_1_0_0_1_1_RETOUR"},"Accepter Zero — partir pour Keyper-IIB":{"label":"_30_0_1_1_0_0_1_1_KEYPER"}}):
-        "QUE FAIRE DE MA PLACE ?"
-        "Refuser Zero — retourner sur Terre":
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Retourner sur Terre":{"label":"_30_0_1_1_0_0_1_1_RETOUR"},"Aller sur Keyper-IIB":{"label":"_30_0_1_1_0_0_1_1_KEYPER"}}):
+        "QU'EST-CE QUE JE DÉCIDE ?"
+        "Retourner sur Terre":
             $ j30_secret_zero_choice = "refuse"
             jump _30_0_1_1_0_0_1_1_RETOUR
-        "Accepter Zero — partir pour Keyper-IIB":
+        "Aller sur Keyper-IIB":
             $ j30_secret_zero_choice = "accept"
             jump _30_0_1_1_0_0_1_1_KEYPER
-    # Durée : 1m30
+    # Durée : 1m
 
 label _30_0_1_1_0_0_1_1_RETOUR:
-    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "fatigue", 0.28), ("nyra", "neutre", 0.72)])
-    noam fatigue "Je rentre. Je suis désolé, Zero, mais j'ai promis à Juliette d'être là, et je vais pas lui faire ça."
-    zero_nyra_j29 neutre "T'as pas à t'excuser. Je t'avais dit que tu pouvais refuser."
-    noam reflexion "Et Julian ? Tout ce qui s'est passé cette nuit... Tu vas pas me demander d'oublier ça ?"
-    zero_nyra_j29 neutre "Non. Je ne veux pas que tu oublies."
-    noam raison "Alors bonne chance, je suppose."
-    zero_nyra_j29 neutre "Merci. Va voir ton double. Il est encore temps."
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    $ showGroup([("noam", "fatigue", 0.27), ("dg_noam", "inquiet", 0.73)])
+    noam raison "Je vais rentrer. J'ai promis à Juliette que je serais là, et j'arrive pas à me dire que je vais encore lui faire faux bond."
+    dg_noam fatigue "D'accord... Ouais. Je m'en doutais un peu."
+    noam inquiet "Je suis désolé pour Iris. Je sais que t'as vraiment envie de la revoir."
+    dg_noam raison "C'est pas grave. Enfin, si, ça me fait chier, évidemment. Mais c'était le risque quand on a échangé nos places."
+    noam reflexion "Tu vas faire quoi, alors ?"
+    dg_noam fatigue "Je sais pas encore. Je vais trouver. T'occupe pas de moi maintenant, la navette va pas t'attendre."
+    noam neutre "Merci. Pour m'avoir laissé décider."
+    dg_noam neutre "Ouais. Allez, file."
     $ hideGroup()
-    "Je cours jusqu'au conduit des dortoirs. Je retrouve mon double avec son sac."
-    $ showGroup([("noam", "inquiet", 0.25), ("dg_noam", "inquiet", 0.75)])
-    noam raison "C'est moi qui pars sur Terre. Je vais monter à bord. Je veux reprendre ma place."
-    dg_noam agace "Tu te fous de moi ? On en a parlé il y a une heure !"
-    noam colere "Ouais, et maintenant j'ai décidé. C'est ma famille, ma vie, ma place, putain !"
-    dg_noam colere "Et Iris ? Tu vas lui dire quoi ? Que le type dont elle est tombée amoureuse était juste un remplaçant ?"
-    noam inquiet "Je lui dirai la vérité quand je pourrai. Mais je vais pas te laisser te faire passer pour moi jusqu'à la fin de sa vie."
-    dg_noam fatigue "Tu crois vraiment que ça va être aussi simple ?"
-    noam raison "Non. Et franchement j'ai aucune idée de ce qui va se passer. Mais il faut que ça s'arrête."
-    dg_noam inquiet "Moi, j'ai rien, tu comprends ? J'ai pas de maison. Si je monte pas dans cette navette, je retourne où ?"
-    noam fatigue "Zero part sur Keyper. Tu peux lui demander de venir avec lui."
-    dg_noam surpris "Sur Keyper ? Là où Kami exploite les doubles ?"
-    noam raison "Il veut les libérer."
-    dg_noam agace "Tu me demandes de faire ça alors que t'as même pas voulu y aller toi-même !"
-    noam fatigue "Ouais. T'as raison. J'ai pas le droit de te demander ça."
-    "Il pose son sac. Il regarde la grille, puis ses mains."
-    dg_noam raison "Si je reste ici, ils vont me trouver. J'ai pas le choix, en fait."
-    noam inquiet "Je peux pas t'obliger à partir non plus."
-    dg_noam fatigue "Non. Mais tu vas le faire quand même, sans le dire."
-    noam raison "..."
-    dg_noam inquiet "Promets-moi juste un truc. Quand tu parleras à Iris, raconte pas que je me suis foutu d'elle. J'ai pas fait semblant."
-    noam fatigue "Je sais."
-    dg_noam agace "Non. Tu le sais pas, mais bon... c'est pas grave."
-    "Il me tend son sac. Je le repousse : c'est le sien."
-    dg_noam fatigue "Prends soin de Juliette."
-    noam inquiet "Je vais essayer."
-    dg_noam neutre "Bon. File, alors. Tu vas rater la navette."
+    jump _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR
+    # Durée : 1m
+
+label _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR:
+    scene bg_laboratoire at adaptive_fullscreen with dissolve
+    "Je passe par la petite salle où les autres terminent leurs préparatifs. Mara ferme un sac, Kael surveille l'heure."
+    $ showGroup([("mara", "neutre", 0.17), ("kael", "calme", 0.49), ("noam", "fatigue", 0.82)])
+    kael inquiet "Noam ? T'étais où ? On t'attendait. Tu fais quoi, là ?"
+    noam raison "Je rentre chez moi. Je prends la navette."
+    mara surpris "Attends, tu rentres ? Et ton original, t'en fais quoi ?"
+    noam hesitation "Je... je me débrouille."
+    mara agace "Tu te débrouilles ? Putain, c'est pas une réponse !"
+    noam raison "C'est tout ce que je peux vous dire. Il reste pas une heure, j'ai pas envie de discuter pendant dix minutes."
+    kael calme "Bon. Si t'as réglé ça, on te retrouve à l'embarquement. Mais fais attention."
+    noam fatigue "Ouais."
     $ hideGroup()
     scene bg_sas at adaptive_fullscreen with dissolve
-    "J'arrive au sas alors que les derniers représentants montent. Iris me repère tout de suite."
-    $ showGroup([("iris", "inquiet", 0.33), ("noam", "fatigue", 0.71)])
-    iris inquiet "Putain, Noam ! T'étais où ?! Ça fait une éternité que je te cherche !"
-    noam hesitation "J'ai dû... régler un truc. Je t'expliquerai."
-    iris agace "J'espère bien ! J'ai cru que tu comptais partir sans moi, espèce d'idiot."
-    noam inquiet "Non. Je suis là."
-    iris neutre "Bon... viens, ils ferment bientôt."
-    "Elle m'attrape la main. Je ne sais pas si elle se rend compte que ce n'est pas celle qu'elle a tenue hier."
-    noam raison "Iris ? Après le départ, il faut vraiment qu'on parle."
-    iris reflexion "Ouais. Je sais. Moi aussi j'ai des trucs à te dire."
+    "Au sas, Iris m'attrape par le bras dès qu'elle m'aperçoit."
+    $ showGroup([("iris", "inquiet", 0.31), ("noam", "fatigue", 0.72)])
+    iris inquiet "Eh ! Je te cherchais ! T'en as mis, du temps !"
+    noam hesitation "Ouais, désolé. J'avais un truc à régler."
+    iris agace "Bon, tu viens ? Ils vont fermer les portes et j'ai pas envie de courir après toi."
+    noam raison "J'arrive. Et... faut qu'on parle, une fois qu'on sera partis."
+    iris reflexion "Ouais, d'accord. Mais monte déjà, idiot."
     $ hideGroup()
     scene bg_navette at adaptive_fullscreen with dissolve
-    "Je m'assois près du hublot. À dix heures précises, la navette se détache du Conclave."
-    "Les autres parlent déjà de ce qu'ils vont faire en arrivant. Julian plaisante avec Elen, exactement comme il l'aurait fait."
-    think "L'autre Julian est mort. Et je rentre quand même."
-    scene black with fade
-    "Quelques jours plus tard."
-    # CG future 074 : Juliette retrouve Noam à son anniversaire.
-    "Juliette me saute au cou dès que j'ouvre la porte. Elle m'engueule parce que je lui ai fait peur, puis elle me demande si j'ai pensé à son cadeau."
-    "Je lui dis que oui. Je la serre tellement fort qu'elle finit par râler."
-    "Quand elle repart chercher le gâteau, je reste un instant devant la fenêtre."
-    think "Je suis rentré. C'est ce que je voulais."
-    "Sur mon écran, une publicité vante les nouvelles ressources venues de Keyper-IIB."
-    "Je l'éteins avant que Juliette revienne."
+    "À dix heures, la navette se détache du Conclave. Iris est assise à côté de moi, et les autres parlent déjà de leur retour."
+    "Je pense à Julian. À celui qui est mort, et à celui qui est ici avec nous."
+    "Je sors le dessin de Juliette de ma poche. Elle doit compter les jours depuis mon départ."
+    think "J'arrive, Juliette. Cette fois, je rentre."
     $ j30_secret_ending = "retour_terre"
     "FIN — LE POIDS DU RETOUR"
     stop music fadeout 1.0
     return
-    # Durée : 4m
+    # Durée : 3m
 
 label _30_0_1_1_0_0_1_1_KEYPER:
-    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "fatigue", 0.28), ("nyra", "neutre", 0.72)])
-    noam raison "D'accord. Je viens. Mais tu me promets rien sur le retour, hein ? Parce que j'ai pas envie que tu me ressortes ça dans une heure."
-    zero_nyra_j29 neutre "Je te promets rien. Et si tu changes d'avis avant dix heures, je te laisserai rejoindre les autres."
-    noam colere "Je te préviens aussi : je te pardonne pas Julian. Je vais t'aider pour Keyper, mais je te pardonne pas ce que vous avez fait."
-    zero_nyra_j29 neutre "Je comprends. Et je te demanderai pas de le faire."
-    noam fatigue "Bon. Je vais parler à mon double."
-    zero_nyra_j29 neutre "Je reste ici. Je veux pas qu'il sache que je t'ai fait cette proposition."
-    $ hideGroup()
-    "Je retourne à l'entrée des dortoirs. Mon double est toujours là. Il semble avoir renoncé à m'attendre."
-    $ showGroup([("noam", "inquiet", 0.25), ("dg_noam", "neutre", 0.75)])
-    noam raison "Je vais pas prendre la navette."
-    dg_noam surpris "Quoi ?"
-    noam fatigue "Tu peux rentrer sur Terre. Je te laisse ma place."
-    dg_noam inquiet "Attends... t'es sérieux ?"
-    noam neutre "Ouais."
-    dg_noam surpris "Mais... pourquoi ?"
-    noam raison "J'ai appris des choses sur Keyper. Il y a des gens là-bas qui ont besoin d'aide. J'ai décidé d'y aller."
-    dg_noam inquiet "Qui t'a raconté ça ?"
-    noam agace "Je peux pas te le dire. Pas maintenant."
-    dg_noam raison "Et Iris ?"
-    noam fatigue "Iris croit que t'es moi. Je sais. Mais fais pas le con avec elle."
-    dg_noam colere "Pourquoi tu dis ça ? Je me suis jamais moqué d'elle !"
-    noam raison "Alors tant mieux. Fais en sorte qu'elle soit heureuse, c'est tout."
-    dg_noam inquiet "Noam, c'est... t'es en train de me donner ta vie, là."
-    noam agace "Ouais, j'avais remarqué. Pas besoin de le répéter."
-    "Il baisse les yeux, puis me regarde avec un air complètement perdu."
-    noam raison "Il y a un truc que je veux que tu fasses. Juliette. Son anniversaire approche, je lui ai promis que je serais là."
-    dg_noam inquiet "Je m'en souviens."
-    noam colere "Non, écoute ! Je te demande pas de faire semblant d'être gentil deux minutes. Elle attend vraiment que je rentre. Si tu y vas, tu t'occupes d'elle. Tu l'abandonnes pas."
-    dg_noam raison "Je vais y aller. Et je m'occuperai d'elle. Je te le promets."
-    noam fatigue "J'espère."
-    dg_noam inquiet "Tu penses que tu pourras revenir ?"
-    noam neutre "J'en sais rien."
-    dg_noam peur "Et si tu reviens pas ?"
-    noam fatigue "Alors elle aura au moins quelqu'un à son anniversaire."
-    dg_noam raison "Putain, Noam..."
-    "Il me serre maladroitement dans ses bras, avant de se reculer comme s'il venait de faire une connerie."
-    dg_noam fatigue "Désolé. Je savais pas quoi faire."
-    noam neutre "Ouais. Moi non plus."
-    $ hideGroup()
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Il est 9 h 45. Je suis revenu chercher ma tablette. La conversation avec Juliette est encore ouverte."
-    "J'enregistre un message, juste pour lui dire que je l'aime et que je suis désolé de ne pas rentrer."
-    "Je le réécoute. Elle le recevrait alors que quelqu'un avec mon visage viendra lui ouvrir les bras."
-    "Je supprime l'enregistrement. Je garde la tablette avec moi."
+    $ showGroup([("noam", "fatigue", 0.27), ("dg_noam", "inquiet", 0.73)])
+    noam raison "Je vais sur Keyper. Tu peux rentrer sur Terre à ma place."
+    dg_noam surpris "T'es sérieux ?"
+    noam fatigue "Ouais. Je sais pas du tout comment je vais m'en sortir là-bas, mais je peux pas laisser tous ces gens sans même essayer."
+    dg_noam inquiet "Et Juliette ?"
+    noam raison "C'est justement ce dont je voulais te parler. Tu te souviens de sa promesse pour son anniversaire ?"
+    dg_noam neutre "Ouais, je m'en souviens. Je lui dirai pas que tu l'as oubliée, promis."
+    noam agace "C'est pas ce que je te demande. Fais attention à elle, d'accord ? C'est ma sœur, et elle a besoin de quelqu'un sur qui compter."
+    dg_noam raison "Je ferai attention à elle. Et à Iris aussi. Je sais que tu me fais pas entièrement confiance, mais je te promets que je vais essayer de bien faire."
+    noam fatigue "J'espère. Et arrête de dire à Iris que je suis nul au baby-foot."
+    dg_noam surpris "Quoi ? J'ai jamais dit ça !"
+    noam neutre "Ouais, ben fais pas ça, alors."
+    "Il sourit, puis devient sérieux."
+    dg_noam inquiet "Tu sais si tu pourras revenir ?"
+    noam fatigue "Non. Zero le sait pas non plus."
+    dg_noam raison "Putain... Bon. Fais gaffe à toi."
+    noam neutre "Toi aussi."
+    $ hideGroup()
+    jump _30_0_1_1_0_0_1_1_PETITE_SALLE_KEYPER
+    # Durée : 1m30
+
+label _30_0_1_1_0_0_1_1_PETITE_SALLE_KEYPER:
+    scene bg_laboratoire at adaptive_fullscreen with dissolve
+    "Je retourne dans la petite salle. Les derniers sacs sont prêts. Kael et Mara relèvent la tête en me voyant."
+    $ showGroup([("mara", "neutre", 0.17), ("kael", "calme", 0.49), ("noam", "fatigue", 0.82)])
+    kael inquiet "Noam ? Qu'est-ce que tu fais encore là ? C'est l'heure d'aller au sas."
+    noam raison "Je vais pas prendre la navette. Je pars sur Keyper avec Zero."
+    mara surpris "Hein ? Depuis quand tu lui parles, toi ?"
+    noam hesitation "Depuis hier. C'est compliqué, et on a pas le temps de tout reprendre."
+    kael inquiet "Et... tu veux vraiment aller là-bas ?"
+    noam raison "Ouais. Je sais pas si je pourrai revenir, mais j'ai décidé d'essayer de les aider."
+    mara fatigue "Putain. Bon... on pourra pas dire que t'as choisi la solution facile."
+    kael calme "C'est ta décision. Je vais pas te retenir, mais fais attention à ce que tu fais."
+    noam neutre "Ouais. Vous aussi."
+    $ hideGroup()
     scene bg_sas at adaptive_fullscreen with dissolve
-    "À 9 h 55, je reste derrière la porte du sas. De là, je vois Iris rejoindre mon double."
+    "Je reste en retrait, assez loin pour que personne ne me remarque. Iris rejoint mon double juste avant la fermeture des portes."
     $ showGroup([("iris", "neutre", 0.32), ("dg_noam", "neutre", 0.72)])
-    iris agace "Ah, quand même ! Tu sais que j'étais à deux doigts de te chercher partout ?"
-    dg_noam neutre "Ouais, désolé. On y va ?"
-    iris sourire "Allez. Et dépêche-toi, j'ai pas envie de me faire engueuler par Kami pour toi."
-    "Ils montent ensemble. Iris lui prend la main. Je regarde ailleurs."
+    iris agace "Enfin ! Ça fait vingt minutes que je te cherche !"
+    dg_noam neutre "Je suis là. Allez, viens."
+    "Ils montent ensemble, et je ne les vois plus."
+    $ hideGroup()
+    "Je rejoins Zero derrière le sas. Il porte toujours les traits de Nyra."
+    $ showGroup([("noam", "fatigue", 0.28), ("nyra", "neutre", 0.72)])
+    zero_nyra_j29 neutre "Tu as vraiment décidé de venir ?"
+    noam raison "Ouais. Mais je te préviens, je te pardonne toujours pas ce qui s'est passé avec Julian."
+    zero_nyra_j29 neutre "Je ne te demande pas de me pardonner. Tu peux encore renoncer."
+    noam fatigue "Non. On y va."
     $ hideGroup()
     scene bg_navette at adaptive_fullscreen with dissolve
-    "À dix heures, la navette quitte le Conclave. Je l'observe à travers la vitre, jusqu'à ce qu'elle soit trop loin pour distinguer les hublots."
-    "Je rejoins Zero. Il a repris les traits de Nyra."
-    $ showGroup([("noam", "fatigue", 0.28), ("nyra", "neutre", 0.72)])
-    zero_nyra_j29 neutre "Tu peux encore me dire non."
-    noam raison "Elle est déjà partie, la navette. Alors va falloir qu'on se bouge si tu veux libérer les autres."
-    zero_nyra_j29 neutre "D'accord. Viens."
-    $ hideGroup()
-    scene black with fade
-    "Plus tard."
-    # CG future 075 : arrivée au-dessus des complexes industriels de Keyper-IIB.
-    "De l'autre côté du hublot, Keyper-IIB apparaît. Je distingue des installations immenses, des lumières partout et des colonnes de fumée."
-    zero_nyra_j29 neutre "Ils sont là-dessous. Je sais pas combien on pourra faire sortir."
-    noam fatigue "Ouais... Moi non plus."
-    zero_nyra_j29 neutre "Tu regrettes ?"
-    noam raison "J'ai pas encore décidé. On commence par où ?"
+    "À dix heures, la navette pour la Terre quitte le Conclave. Je la regarde s'éloigner depuis le hublot de la petite navette où Zero m'attend."
+    "Je récupère le dessin de Juliette. Je ne sais pas si je la reverrai un jour, et rien que d'y penser, j'ai envie de tout arrêter."
+    "Mais la Terre disparaît lentement derrière nous. Notre navette se met en route vers Keyper-IIB."
+    think "Je suis désolé, Juliette. J'espère que tu comprendras un jour."
     $ j30_secret_ending = "keyper"
     "FIN — À TA PLACE"
     stop music fadeout 1.0
     return
-    # Durée : 4m
+    # Durée : 3m
 
 label _30_0_1_1_0_0_1_1_JULIAN_VIVANT_PLACEHOLDER:
     # Ne jamais faire passer un Julian vivant pour mort : branche J30 à écrire.

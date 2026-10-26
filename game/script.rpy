@@ -685,6 +685,16 @@ init python:
             if manual_camera:
                 return  # Son, bouche et clignement restent opérationnels.
 
+            # Les CG et les diffusions de Kami doivent rester en plan fixe
+            # (zoom 1.0, sans autofocus, même lors des pensées/narrations).
+            if scene_has_no_character_sprites():
+                scene_signature = cinema_scene_signature()
+                if (store._focus_last_params or {}).get("tag") != "__STATIC_BACKGROUND__" or scene_signature != store._cinema_last_scene_signature:
+                    cam_reset(t=0.0)
+                    store._focus_last_params = dict(tag="__STATIC_BACKGROUND__")
+                store._cinema_last_scene_signature = scene_signature
+                return
+
             scene_signature = cinema_scene_signature()
             scene_changed = scene_signature != store._cinema_last_scene_signature
             store._cinema_last_scene_signature = scene_signature
