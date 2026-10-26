@@ -27,9 +27,9 @@ label _30_0_1_1_0_0_1_1_REVEIL:
     think "Merde, le vote... Je peux pas y aller. Si mon double s'y rend aussi, on se retrouvera tous les deux devant les autres."
     "Je reste donc dans ma chambre. Je ferme les yeux un moment, en espérant au moins pouvoir récupérer un peu."
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    kami "Le scrutin est clos ! Quel dommage, chers représentants : le dernier amendement n'a pas obtenu l'unanimité. Le vote a échoué !"
+    kami "Le scrutin est clos ! Félicitations, chers représentants : l'unanimité a été atteinte. Le dernier amendement est adopté !"
     scene bg_chambre at adaptive_fullscreen with dissolve
-    think "Encore un vote raté... Et cette fois, je n'y étais même pas."
+    think "Le texte est passé... Et cette fois, je n'y étais même pas."
     "On frappe doucement à ma porte. Quand je l'ouvre, c'est mon double qui attend, un sac à la main."
     # Durée : 1m
 
