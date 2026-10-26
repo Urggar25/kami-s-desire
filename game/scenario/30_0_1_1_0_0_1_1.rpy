@@ -62,6 +62,10 @@ label _30_0_1_1_0_0_1_1_CHOIX:
     $ showGroup([("noam", "hesitation", 0.27), ("dg_noam", "inquiet", 0.73)])
     "Je regarde le dessin de Juliette, puis mon double. Il ne dit rien. Il attend que je me décide."
     $ hideGroup()
+    # CG 074 : les deux Noam face au dessin de Juliette, au moment du choix final.
+    if renpy.loadable("images/background/cg/bg_cg074.png"):
+        $ unlock_gallery_image("bg_cg074")
+        scene bg_cg074 at adaptive_fullscreen with dissolve
     menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Retourner sur Terre":{"label":"_30_0_1_1_0_0_1_1_RETOUR"},"Aller sur Keyper-IIB":{"label":"_30_0_1_1_0_0_1_1_KEYPER"}}):
         "QU'EST-CE QUE JE DÉCIDE ?"
         "Retourner sur Terre":
@@ -109,7 +113,12 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR:
     noam raison "J'arrive. Et... faut qu'on parle, une fois qu'on sera partis."
     iris reflexion "Ouais, d'accord. Mais monte déjà, idiot."
     $ hideGroup()
-    scene bg_navette at adaptive_fullscreen with dissolve
+    # CG 075 : Noam et Iris, dans la navette qui repart vers la Terre.
+    if renpy.loadable("images/background/cg/bg_cg075.png"):
+        $ unlock_gallery_image("bg_cg075")
+        scene bg_cg075 at adaptive_fullscreen with dissolve
+    else:
+        scene bg_navette at adaptive_fullscreen with dissolve
     "À dix heures, la navette se détache du Conclave. Iris est assise à côté de moi, et les autres parlent déjà de leur retour."
     "Je pense à Julian. À celui qui est mort, et à celui qui est ici avec nous."
     "Je sors le dessin de Juliette de ma poche. Elle doit compter les jours depuis mon départ."
@@ -171,7 +180,12 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_KEYPER:
     zero_nyra_j29 neutre "Je ne te demande pas de me pardonner. Tu peux encore renoncer."
     noam fatigue "Non. On y va."
     $ hideGroup()
-    scene bg_navette at adaptive_fullscreen with dissolve
+    # CG 076 : Noam et Zero, dans la navette pour Keyper-IIB.
+    if renpy.loadable("images/background/cg/bg_cg076.png"):
+        $ unlock_gallery_image("bg_cg076")
+        scene bg_cg076 at adaptive_fullscreen with dissolve
+    else:
+        scene bg_navette at adaptive_fullscreen with dissolve
     "À dix heures, la navette pour la Terre quitte le Conclave. Je la regarde s'éloigner depuis le hublot de la petite navette où Zero m'attend."
     "Je récupère le dessin de Juliette. Je ne sais pas si je la reverrai un jour, et rien que d'y penser, j'ai envie de tout arrêter."
     "Mais la Terre disparaît lentement derrière nous. Notre navette se met en route vers Keyper-IIB."
