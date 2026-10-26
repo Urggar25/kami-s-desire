@@ -20,8 +20,8 @@ label _28_0_1_1_0_0_1_REVEIL:
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     "Je me réveille avec un mal de dos horrible. J'ai encore dormi sur la banquette du labo."
-    "Je cherche mon téléphone entre les coussins. Il a dû tomber pendant la nuit."
-    "Je le récupère aussitôt. Les messages d'Iris sont toujours là."
+    "Je cherche ma tablette entre les coussins. Je finis par la retrouver."
+    "Je la récupère. Les messages d'Iris sont toujours là."
     think "« On doit parler de ce que tu m'as dit après le vote. »"
     "Iris pense qu'on a parlé hier. Sauf que moi, j'étais ici pendant qu'il était avec elle."
     noam fatigue "Putain..."
@@ -37,8 +37,8 @@ label _28_0_1_1_0_0_1_REVEIL:
     tomas raison "Non. J'ai relu ce passage dix fois et je comprends toujours pas."
     noam neutre "Tu devrais peut-être dormir un peu."
     tomas fatigue "Ouais, merci. Ça m'aide vachement."
-    "Mon téléphone vibre."
-    call messenger_play("iris", "iris", [("iris", "Tu comptes me répondre ou pas ?"), ("iris", "J'ai pas beaucoup dormi cette nuit."), ("iris", "Et je te préviens, c'est un peu de ta faute.")], objective_text="Lire les messages d'Iris")
+    "Ma tablette vibre."
+    call messenger_play("iris", "iris", [("iris", "Tu m'as dit que tu revenais dans cinq minutes, ça fait déjà un quart d'heure !"), ("iris", "T'es encore parti chercher quoi ?"), ("iris", "Et reviens vite, j'ai envie de te parler d'hier. Pas devant les autres.")], objective_text="Lire les messages d'Iris")
     "Je relis le message. Je sais pas quoi répondre."
     tomas reflexion "C'est ton double qui t'écrit ?"
     noam hesitation "Non. Iris."
@@ -176,9 +176,7 @@ label _28_0_1_1_0_0_1_REUNION:
     kael calme "Bon. On est pas d'accord."
     mara taquin "Ah bah moi, je suis d'accord !"
     kael neutre "Oui, Mara, on a compris."
-    "Mon téléphone vibre. Je regarde discrètement l'écran."
-    call messenger_play("iris", "iris", [("iris", "Bon, je vais te dire un truc, mais te moque pas."), ("iris", "J'ai repensé à ce que tu m'as dit hier."), ("iris", "Enfin, bref. Tu vois ce que je veux dire.")], objective_text="Lire le message d'Iris")
-    "Je lis le message d'Iris deux fois. C'est à mon double qu'elle devrait écrire."
+    "Je pose la main sur ma tablette, mais je me retiens de la sortir. Il faut que j'écoute : ils sont en train de choisir qui remplacer."
     mara taquin "Oh, Noam ! Tu nous écoutes ou pas ?"
     noam hesitation "Hein ? Oui, pardon, je suis là."
     mara rire "Ouais, on voit ça !"
@@ -344,9 +342,9 @@ label _28_0_1_1_0_0_1_EXPEDITION:
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
     $ flashlight_on(0)
     "Au retour, le sac est encore plus lourd. On s'arrête à un endroit où on peut souffler."
-    "Je profite de la pause pour regarder mon téléphone."
-    call messenger_play("iris", "iris", [("iris", "Je t'envoie trop de messages ?"), ("iris", "Je voulais juste dire que j'ai bien aimé hier."), ("iris", "Et que ça me ferait plaisir qu'on se retrouve tous les deux."), ("iris", "Voilà. Je vais arrêter de t'embêter.")], objective_text="Lire les messages d'Iris")
-    "J'aimerais demander à Iris ce qui s'est passé hier. Mais si je fais ça, il faudra que je lui explique tout."
+    "Je profite de la pause pour regarder ma tablette."
+    call messenger_play("iris", "iris", [("iris", "Bon, t'en as encore pour longtemps ?"), ("iris", "Tu m'avais dit que t'allais juste récupérer un truc."), ("iris", "J'aimerais qu'on se retrouve tous les deux après. On pourra parler tranquillement.")], objective_text="Lire les messages d'Iris")
+    "Elle pense qu'il est juste parti chercher quelque chose. Moi, ça fait des heures que je suis ici. Je peux même pas lui répondre."
     elias neutre "Tu viens ?"
     noam fatigue "Ouais, j'arrive."
     elias rire "C'est Iris ?"
@@ -382,7 +380,7 @@ label _28_0_1_1_0_0_1_RETOUR:
         nyra raison "Pour Iris, il faudra trouver un moment où elle sera pas dans sa chambre."
         elias fatigue "Bon courage. Elle reste presque tout le temps avec l'autre Noam."
         tomas raison "Alors on attend. On se précipite pas."
-        "Je serre mon téléphone dans ma main. Iris m'a encore écrit, et ils préparent déjà la suite."
+        "Je garde ma tablette dans ma poche. Iris attend mon double, et eux préparent déjà la suite."
     sael mefiant "Et si elle nous surprend, on fait quoi ?"
     mara agace "On en parlera demain, Sael."
     sael raison "Non. Je veux qu'on y pense avant d'essayer."
@@ -437,10 +435,7 @@ label _28_0_1_1_0_0_1_OBSERVATION:
     $ hideGroup()
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
     $ flashlight_on(0)
-    "Mon téléphone vibre presque aussitôt."
-    call messenger_play("iris", "iris", [("iris", "T'as vu Julian ? Il était trop vexé !"), ("iris", "Et arrête de raconter des trucs sur ta sœur, c'est mignon et ça m'énerve."), ("iris", "Bon, à plus tard.")], objective_text="Lire le message d'Iris")
-    "Elle vient de m'écrire au sujet d'une conversation que j'ai entendue sans y participer."
-    noam fatigue "Ouais... À plus."
+    "Je reprends ma tablette, par réflexe, puis je la range. Iris est encore avec lui, juste en dessous. Elle a aucune raison de m'écrire maintenant."
     "Je continue d'avancer dans le conduit."
     $ j28_secret_iris_exchange = True
     $ flashlight_off()
@@ -464,7 +459,9 @@ label _28_0_1_1_0_0_1_FIN:
     "Kael ne répond pas tout de suite."
     kael calme "Je sais. Et ça me plaît pas non plus. Je peux juste lui poser des questions pour l'instant."
     noam reflexion "Il t'a aidé comment ?"
-    kael neutre "C'est compliqué. Je t'en parlerai, mais pas ce soir."
+    kael neutre "Zero, c'est celui qui m'a créé. J'étais le premier double. Sans lui, je serais même pas là." 
+    noam surpris "Le premier ? C'était toi ?"
+    kael calme "Ouais. C'est pour ça que je lui laisse encore une chance de s'expliquer. Mais je sais qu'il nous dit pas tout."
     "Il regarde rapidement le terminal."
     if j28_secret_target == "iris":
         kael calme "Pour Iris, personne n'a encore rien fait. On en parlera demain."
@@ -481,18 +478,18 @@ label _28_0_1_1_0_0_1_FIN:
     "Il part. Je reste dans le laboratoire."
     $ hideGroup()
     $ j28_secret_zero_contact = True
-    "Je m'assois sur la banquette et je prends mon téléphone."
-    "Iris m'a encore écrit."
-    call messenger_play("iris", "iris", [("iris", "Bon, je voulais te demander un truc."), ("iris", "Hier, quand t'as dit que tu voulais qu'on soit ensemble..."), ("iris", "C'était sérieux ?"), ("iris", "Parce que moi, j'ai envie aussi."), ("iris", "Voilà. Et si tu te moques, je te frappe. ❤️")], objective_text="Lire le dernier message d'Iris")
+    "Je m'assois sur la banquette et je prends ma tablette."
+    "Un message d'Iris vient d'arriver. Elle a dû se retrouver seule après la cafétéria."
+    call messenger_play("iris", "iris", [("iris", "Je suis rentrée dans ma chambre. J'ai pas osé t'en parler avec les autres."), ("iris", "Hier, quand t'as dit que tu voulais qu'on soit ensemble... c'était sérieux ?"), ("iris", "Parce que moi, j'en ai envie aussi."), ("iris", "Voilà. Réponds pas un truc débile, hein. ❤️")], objective_text="Lire le dernier message d'Iris")
     "Je lis le message. Puis je le relis."
     "Mon double lui a demandé de sortir avec lui."
     "Et Iris vient d'accepter."
     "Je commence à écrire : « Iris, faut que je te parle. » Puis j'efface."
     think "C'est lui qui lui a demandé. Pas moi."
-    "Je garde le téléphone dans ma main sans répondre."
+    "Je garde la tablette dans ma main sans répondre."
     "Je regarde les pièces ramenées par Elias. Demain, ils vont continuer."
     "Et moi, je sais toujours pas quoi dire à Iris."
-    "Je finis par poser le téléphone à côté de moi."
+    "Je finis par poser la tablette à côté de moi."
     stop music fadeout 1.5
     # Le J29 exploitera j28_secret_target. Aucune création ni remplacement au J28.
     call end_day("29", sleeping=True) from _call_j28_secret_end_day_29
