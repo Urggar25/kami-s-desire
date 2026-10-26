@@ -1006,7 +1006,7 @@ init -2 python:
         {
             "id": "day_30_julian_saved",
             "title": "Jour 30 — Le prix d'une vie",
-            "short": "J30 Sauvé",
+            "short": "J30",
             "label": "_30_0_1_1_0_0_1_0_REVEIL",
             "category": "day",
             "kind": "day",
