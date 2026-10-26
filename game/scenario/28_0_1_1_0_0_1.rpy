@@ -492,5 +492,11 @@ label _28_0_1_1_0_0_1_FIN:
     "Je finis par poser la tablette à côté de moi."
     stop music fadeout 1.5
     # Le J29 exploitera j28_secret_target. Aucune création ni remplacement au J28.
-    call end_day("29", sleeping=True) from _call_j28_secret_end_day_29
+    if j28_secret_target == "julian":
+        # Début J29 au cœur de la nuit, sans sommeil ni réveil intermédiaire.
+        call end_day("29", sleeping=False) from _call_j28_secret_end_day_29
+        jump _29_0_1_1_0_0_1_1_REVEIL
+    else:
+        # La route Iris conserve sa transition historique tant que sa suite n'est pas écrite.
+        call end_day("29", sleeping=True) from _call_j28_secret_iris_end_day_29
     return
