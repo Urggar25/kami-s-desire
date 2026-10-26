@@ -163,7 +163,7 @@ label _30_0_1_1_0_0_1_0_DEUX_NOAM:
     iris colere "Justement, je te regarde ! Et je vois quelqu'un qui ressemble à Noam et qui a poursuivi Julian dans les conduits !"
     noam panique "Je suis Noam !"
     "Plusieurs personnes s'avancent. Je recule jusqu'à la table, mais je ne peux pas fuir sans leur donner encore plus de raisons de croire que je mens."
-    call impact_fx("heavy", direction="left")
+    call impact_fx("brutal", direction="left")
     "Quelqu'un m'attrape les poignets. Je me débats, je cogne une chaise, et Ryn me plaque contre le bord de la table."
     noam colere "LÂCHEZ-MOI !"
     ryn colere "Alors arrête de te débattre !"
