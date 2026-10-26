@@ -232,7 +232,12 @@ label _29_0_1_1_0_0_1_1_JULIAN:
     julian peur "Qu'est-ce que vous faites ?! Noam !"
     "J'entends sa voix, puis des bruits étouffés. Sael me tourne le dos."
     "Je cherche à me dégager. Mara serre les dents. Je finis par la repousser."
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    # CG de l'exécution de Julian ; conserver un décor de secours si l'asset est absent.
+    if renpy.loadable("images/background/cg/bg_cg073.png"):
+        $ unlock_gallery_image("bg_cg073")
+        scene bg_cg073 at adaptive_fullscreen with dissolve
+    else:
+        scene bg_chambre at adaptive_fullscreen with dissolve
     "Sael est penchée sur Julian. La seringue est dans sa main. Elle ne me regarde pas."
     noam peur "Non, non, non..."
     "Julian ne bouge presque plus. Ses yeux restent ouverts."
