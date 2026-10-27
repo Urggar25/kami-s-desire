@@ -418,13 +418,13 @@ label _1_CHOICE_DEATH:
         think "Quel est ce sentiment ? Qu'est-ce que je faisais déjà ?"
         think "Ah oui, on hésitait sur la marche à suivre..."
     elif _day1_asphyxia_deaths == 2:
-        "Je prends une grande bouffée d'air, comme si j'allais en avoir besoin."
+        "Je prends une grande inspiration sans trop savoir pourquoi."
         think "Qu'est ce qui m'arrive ?"
         think "Pourquoi j'ai un mauvais présentiment ?"
     else:
-        "Je caresse du bout des doigts la ligne de mon cou."
-        think "Cette sensation, d'où venait-elle ?"
-        think "Et pourquoi est-elle aussi intense ?"
+        "Je touche mon cou. J'ai l'impression qu'il me fait encore mal."
+        think "Pourquoi j'ai cette sensation bizarre ?"
+        think "J'ai vraiment l'impression d'avoir déjà vécu ça."
 
     jump _1_CHOICE
 
@@ -1275,7 +1275,7 @@ label _1_KAMI_APPARITION:
     kael neutre "Histoire que personne ne propose des grosses dingueries."
 
     elen inquiet "Oh ! On peut commencer par une règle toute simple !"
-    elen sourire "Genre : personne s'étripe avant le petit-déj. Après, idéalement personne s'étripe du tout, hein."
+    elen sourire "Déjà, on pourrait interdire de se taper dessus, non ?"
 
     pause 0.4
 
@@ -1352,17 +1352,17 @@ label KAMI_MESSAGE_APRES_VISITE:
 
     kami "Il est bientôt dix-sept heures. Votre visite libre touche à sa fin."
 
-    kami "J'espère que vous avez trouvé ça… Inspirant et complet."
+    kami "J'espère que la visite vous a plu !"
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "On a mis du cœur à l'ouvrage. VRAIMENT ! Je vous le promets !"
     kami "Enfin. On a surtout forcé quelques ingénieurs à travailler avec passion."
-    kami "Mais vous n'êtes pas là pour apprendre ce qu'étaient les coulisses de ce Conclave, n'est-ce pas ?"
+    kami "Mais vous avez sûrement autre chose à faire que de visiter les installations !"
     pause 0.2
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je vous attends avec hâte dans la Salle de Conclave."
+    kami "Je vous attends dans la salle du Conclave."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1404,10 +1404,10 @@ label FIRST_CONCLAVE_ELEN_INTERACT:
 
     noam reflexion "J'avais remarqué, oui."
 
-    elen content "Mais c'est complètement fou ! Il suffit que je pense à tout ce vide sous nos pieds et j'ai envie de sautiller partout."
-    elen joie "On voit la planète d'en haut, on flotte au milieu des étoiles, et tout le monde agit comme si c'était un couloir normal !"
+    elen content "C'est fou ! On est là-haut, au-dessus de tout le monde !"
+    elen joie "On voit la planète de là-haut, et les autres continuent à discuter comme si c'était normal !"
 
-    noam inquiet "Dit comme ça, le vide sous nos pieds est surtout rassurant."
+    noam inquiet "Tu sais que tu rends ça encore plus flippant ?"
 
     elen taquin "Ah non, fais pas cette tête ! C'est génial !"
     elen joie "J'ai toujours rêvé de voir l'espace. Je pensais juste pas que ça arriverait comme ça."
@@ -1422,11 +1422,11 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     scene bg_conclave at adaptive_fullscreen with fade
 
     "Les portes du Conclave s'ouvrent ; dedans, il y a déjà plusieurs personnes."
-    "On évite tous de se regarder, comme si on était gênés de quelque chose."
-    "Personne n'a envie d'être le premier à parler, à briser ce silence."
+    "Personne ne sait trop quoi dire aux autres."
+    "On s'assoit sans vraiment discuter."
 
-    "La salle du Conclave n'a pas changé depuis tout à l'heure."
-    "Et on est toujours insignifiants dans ce monde gigantesque."
+    "La salle est exactement comme ce matin."
+    "Sauf que maintenant, je sais ce qu'on attend de nous."
 
     "Je m'assois et ceux déjà présents m'imitent."
     "Les autres arrivent par grappes. Des fauteuils raclent."
@@ -1449,8 +1449,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     mara taquin "Et moi j'ai pas envie d'être sa cible du jour, alors merci, mais tais-toi."
 
     iris fatigue "Super. Vraiment super."
-    iris fatigue "On nous convoque comme des mômes qui ont fait des conneries. Génial, l'ambiance."
-    iris fatigue "J'ai hâte de voir qui va nous mettre au coin cette fois."
+    iris fatigue "On nous fait revenir comme si on était des gamins. Ça commence bien."
+    iris fatigue "Manque plus qu'elle nous engueule parce qu'on est en retard."
 
     julian sourire "Perso je trouve ça hyper marrant."
     julian sourire "J'ai trop envie de voir jusqu'où on peut aller dans cet endroit…"
@@ -1459,7 +1459,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     julian taquin "Exactement ! C'est ça qui est excitant."
     julian taquin "Si on peut réécrire les règles, on peut tout changer."
-    julian taquin "Et sortir tout le monde de là. On SERA les héros de l'humanité !"
+    julian taquin "Et si ça marche, les gens vont enfin parler de ce qu'on a fait ici !"
 
     "L'écran central s'allume et Kami apparaît."
     $ hideGroup()
@@ -1487,8 +1487,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Vous êtes libres d'avoir la liberté absolue !"
-    kami "Pas de commandement, pas de loi, pas de responsabilités ! C'est ça la belle vie !"
+    kami "Ici, vous pouvez faire ce que vous voulez !"
+    kami "Plus de Commandements, plus de sanctions automatiques. La belle vie, non ?"
     kami "Juste vous et votre conscience, si vous en avez une."
 
     $ bc_show("ryn", "colere", px=-70, py=-50, pz=0.85)
@@ -1497,8 +1497,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Oh qu'ils sont mignons les sourires qui commencent à poindre sur vos visages..."
-    kami "Je me demande quel supplice... Pardon délice, vous venez d'imaginer !"
+    kami "Oh, je vois déjà certains d'entre vous sourire !"
+    kami "Je devrais peut-être m'inquiéter de ce que vous avez en tête... Non, je plaisante !"
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1550,14 +1550,14 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     $ bc_hide()
 
     kami "Vos chambres sont équipées d'un brouilleur. Il est activé par défaut."
-    kami "Caméras, audio, capteurs : tout est coupé et rien ne va jusqu'à la cellule de diffusion."
-    kami "Vous êtes filmés quand même, mais personne ne peut accéder aux images et aux sons, même moi !"
+    kami "Le brouilleur empêche les images et le son de parvenir à la diffusion."
+    kami "Les enregistrements existent toujours, mais personne ne peut les consulter tout de suite. Pas même moi !"
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Enfin... Pas pour le moment. Les images me deviennent accessibles une semaine après leur date d'enregistrement."
     kami "Mais rien ne pourra être diffusé si les brouilleurs sont actifs."
-    kami "Ils resteront actifs. Vous pourrez donc faire semblant d'avoir une vie privée."
+    kami "Alors profitez bien de votre petite intimité !"
 
     $ bc_show("noam", "neutre", px=-70, py=-50, pz=0.85)
     noam "Mais qui ferait ça ?!"
@@ -1613,8 +1613,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "La participation aux votes est libre. Libre à vous de venir voter, ou pas."
-    kami "Sur les bulletins exprimés, il faut une unanimité de POUR pour adopter le vote."
-    kami "Sont retirés des bulletins exprimés : les abstentions et les absences au vote."
+    kami "Pour adopter un amendement, il faut que tous ceux qui votent se prononcent pour."
+    kami "Les abstentions et les absences ne comptent pas comme des votes contre."
     kami "Je ne suis pas un monstre, tout de même. MOI je respecte le principe du vote blanc."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -1632,9 +1632,9 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
-    kami "Pour chaque proposition d'amendement adoptée, j'initierai immédiatement le changement."
+    kami "Si vous adoptez un amendement, je l'appliquerai aussitôt."
     kami "Pour certains, un refus de l'amendement pourra aussi avoir des conséquences."
-    kami "Mais ça dépendra de vos douces propositions."
+    kami "Ça dépendra de ce que vous aurez proposé. Alors faites attention !"
 
     $ unlock_codex_page("reglement_conclave", with_notification=False)
     $ unlock_codex_page("commandements", with_notification=False)
@@ -1687,14 +1687,14 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     ])
 
     kael calme "Bon, il faut qu'on se mette d'accord. On partage nos intentions, oui ou non ?!"
-    kael colere "On a plus le temps de se balader et de parler de la pluie et du beau temps."
+    kael colere "On a plus le temps de discuter pour rien."
 
     iris fatigue "Ouais, nan, ça sert à rien."
 
     kael triste "Pourquoi ?"
 
     iris desaccord "Parce qu'on peut voter un truc qui a l'air bien et foutre tout le monde dans la merde."
-    iris taquin "Kami dira quoi ? Elle cherchera un responsable. Nous."
+    iris taquin "Et après, quand ça tourne mal, les gens vont chercher à qui en vouloir."
     iris desaccord "Et si tout le monde sait qui a déposé quoi..."
 
     kael reflechit "Attends. Tu veux dire qu'on devrait pouvoir proposer sans donner nos noms ?"
@@ -1703,18 +1703,18 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     iris desaccord "Je suis pas une politicienne moi ! Je sais même pas écrire ce truc-là d'amande je sais pas quoi !"
     iris colere "Et tu voudrais que je sois responsable ? C'est pas moi qui ai décidé tout ça hein !"
 
-    noam calme "Je suis sûr que ce n'est pas ce qu'il a voulu dire..."
+    noam calme "Attends, Iris. Je crois pas que c'est ce qu'il voulait dire."
 
-    sael determine "Une faute sans visage finit toujours par en emprunter un."
-    sael determine "Si quelque chose tourne mal, l'un de nous portera ce visage, l'un de nous sera responsable aux yeux des gens."
+    sael determine "Si ça tourne mal, les gens trouveront forcément quelqu'un à accuser."
+    sael determine "Même si on a tous voté, c'est quelqu'un d'ici qui prendra tout dans la figure."
 
     elen inquiet "Et puis tout le monde veut peut-être pas en parler, nooon ?"
     elen sourire "On a tous nos petits secrets, pas vrai ?"
 
     julian sourire "Moi je suis d'accord pour en parler. La transparence est le premier devoir d'un collectif."
-    julian sourire "JE ne demanderai pas aux autres un courage que je me refuse à moi-même."
+    julian sourire "Moi, je suis prêt à dire ce que je veux proposer."
 
-    mara neutre "Le type qui parle de lui quasi à la troisième personne craint de ne pas se faire remarquer. Adorable."
+    mara neutre "Ah bah lui, il a surtout peur qu'on l'oublie."
     mara taquin "Ton prénom, déjà ? Jules ? Justin ?"
 
     julian neutre "Julian. Mais ça tu le savais ma belle."
@@ -1725,8 +1725,8 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     ryn reflechit "Et si on touche à rien ?"
     ryn reflechit "On vote contre tout. Les règles restent connues, les mêmes qu'actuellement. Fin."
 
-    nyra triste "Tu veux vraiment protéger le système actuel ? C'est peut-être le truc le moins risqué mais comment l'expliquer aux gens."
-    nyra neutre " « Désolé on avait une chance de tout changer mais on avait peur du changement » ?"
+    nyra triste "Tu veux vraiment rien changer ? D'accord, c'est moins risqué. Mais tu leur expliques quoi, aux gens ?"
+    nyra neutre "Qu'on a préféré rien tenter parce qu'on avait la trouille ?"
 
     tomas hesitation "Ça ne marchera pas, Ryn. Enfin... pas forcément."
     tomas hesitation "Kami a dit qu'un refus pouvait aussi avoir des conséquences. On ne sait juste pas lesquelles..."
@@ -1737,9 +1737,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     kael reflechit "Si on fait tout ça tout seul dans notre coin, on va se retrouver avec des conneries sur le dos."
 
     lysa doute "Vous êtes sérieux ? Vous faites confiance à tout le monde, comme ça ?!"
-    lysa reflexion "Quelqu'un peut très bien annoncer une chose et écrire tout autre chose !"
+    lysa reflexion "Rien n'empêche quelqu'un de nous raconter n'importe quoi et d'écrire autre chose !"
     lysa taquin "Et si son texte sort jamais, personne saura ce qu'il avait proposé !"
-    lysa colere "Il suffira de dire que notre texte n'a pas été choisi. Personne ne pourra le vérifier !"
+    lysa colere "Et après, il dira que son texte a pas été tiré. On pourra jamais vérifier !"
 
     pause 0.4
 
@@ -1785,10 +1785,10 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     think "L'urne se remplit, papier après papier, Kael a déposé le sien."
     play sound sfx_drop
 
-    think "C'est ça le Conclave. Qui a pu vraiment croire que ce serait un lieu de débat et de discussion ?"
+    think "On devait discuter ensemble, et là on écrit chacun dans notre coin. Ça commence mal."
 
-    elen inquiet "Et si quelqu'un met un truc vraiiiment horrible ?"
-    elen inquiet "Genre le genre de surprise qui te coupe l'appétit. Ça existe, ça ?"
+    elen inquiet "Et si quelqu'un propose un truc vraiment dangereux ?"
+    elen inquiet "On peut proposer n'importe quoi, non ? Même un truc horrible ?"
 
     iris fatigue "Alors on votera contre et on verra bien."
 
@@ -1899,7 +1899,7 @@ label _1_AMENDEMENT_DEPOSE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "En attendant. L'accès aux chambres est désormais ouvert."
-    kami "Vous êtes libres de circuler. Oui, de manger aussi, ma petite Elen et surtout de vous reposer."
+    kami "Vous pouvez aller manger, vous reposer... Oui, Elen, tu peux enfin retourner à la cafétéria !"
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1979,7 +1979,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     think "Julian se laisse tomber dans un fauteuil avec juste assez de bruit pour rester au centre de la scène."
 
-    julian detendu "J'ai réécrit ma proposition trois fois. TROIS FOIS. Tu imagines ?!"
+    julian detendu "J'ai recommencé mon texte trois fois. Trois !"
     julian sourire "Je voulais pas me planter sur les mots. Les gens vont peut-être la lire, cette proposition."
     julian detendu "Ça me ferait chier qu'on la rejette juste parce que je l'ai mal écrite !"
 
@@ -1997,7 +1997,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     mara sourire "Vous croyez qu'elle nous regarde, là ? J'espère que mon profil est du bon côté."
 
-    julian detendu "Sûrement. Et tant mieux. Contenter un public attentif, ça demande beaucoup de travail."
+    julian detendu "Évidemment qu'elle nous regarde. Alors autant lui donner quelque chose à voir !"
     mara taquin "Bien sûr. C'est pour ça que tu vérifies la caméra toutes les trente secondes. Par responsabilité bien sûr."
 
     julian joie "Avoue, t'es jalouse. Tout le monde va m'adorer !"
@@ -2084,7 +2084,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     think "On boit en silence. Je sais pas combien de temps ce calme durera."
     think "Mais là, en ce moment… C'est agréable."
-    think "Les tasses se vident. La dernière reste sur le plateau, intacte."
+    think "On finit nos boissons. Il reste une tasse sur le plateau."
 
     mara vide "Bon bah voilà. C'était sympa."
     mara vide "Je vais aller essayer d'aller me pieuter avant de péter un câble."
@@ -2096,7 +2096,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian vide "Excellente idée."
 
     think "Ils se lèvent un à un. La parenthèse se referme."
-    think "Je reste quelques secondes, la tasse vide, encore à moitié chaude, entre les mains."
+    think "Je garde ma tasse dans les mains encore un moment, même si elle est vide."
     think "Je devrais y aller aussi."
 
     $ hideGroup()
