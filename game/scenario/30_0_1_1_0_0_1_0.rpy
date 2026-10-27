@@ -259,7 +259,7 @@ label _30_0_1_1_0_0_1_0_LIBERATION:
     noam raison "Et toi, tu me crois ?"
     julian fatigue "Tu viens de te faire abandonner ici à cause de ça. Je vois pas bien pourquoi t'aurais inventé toute cette histoire."
     "Je frotte mes poignets sans rien répondre. Julian récupère la corde et la jette sur le lit."
-    julian neutre "Bon, on fait quoi, maintenant ? J'ai pas vraiment prévu de passer le reste de ma vie dans cette station."
+    julian neutre "Bon... on fait quoi ? Parce que moi, je compte pas finir ma vie ici, hein."
     $ hideGroup()
     "Des pas résonnent derrière la porte. Une silhouette entre, avec le visage de Nyra."
     $ showGroup([("noam", "inquiet", 0.17), ("julian", "inquiet", 0.48), ("nyra", "neutre", 0.82)])
