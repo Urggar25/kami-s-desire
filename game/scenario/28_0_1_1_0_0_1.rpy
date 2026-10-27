@@ -105,7 +105,7 @@ label _28_0_1_1_0_0_1_REUNION:
     kael calme "Tomas, on sait ! Tu vas pas recommencer toute la réunion d'hier ?"
     nyra raison "Bah si, tant qu'on n'a pas de réponse ! Ça vous dérange pas ?"
     "Nyra montre la date sur sa tablette. Elias s'approche."
-    elias fatigue "Deux jours, c'est très court. On fabrique pas un double en cinq minutes !"
+    elias fatigue "Deux jours ? Mais ça se fabrique pas en cinq minutes, un double !"
     noam reflexion "Il vous faut combien de temps ?"
     elias raison "Si on trouve les pièces aujourd'hui, on peut en faire un. Un seul."
     mara taquin "Et sans tout casser, cette fois ?"
