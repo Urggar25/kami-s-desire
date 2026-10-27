@@ -823,8 +823,7 @@ screen day1_amendment_timer():
     $ _muted = "#A1BFCE"
     $ _display_time = day0_timer_fmt(_seconds)
     $ _filled_width = max(0, min(414, int(414 * _progress)))
-    $ _minutes = int(_seconds) // 60
-    $ _seconds_part = int(_seconds) % 60
+    $ _status_text = "SESSION TERMINÉE" if _closed else "SESSION ACTIVE"
 
     fixed at day1_timer_enter:
         xpos 38
@@ -896,7 +895,7 @@ screen day1_amendment_timer():
                 size 15
                 color _accent
         else:
-            text "SESSION ACTIVE" if not _closed else "SESSION TERMINÉE":
+            text _status_text:
                 xpos 319 ypos 69
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 14
