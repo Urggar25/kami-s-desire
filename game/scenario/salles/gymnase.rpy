@@ -198,23 +198,23 @@ label decouverte_gymnase:
     noam sourire "Je pensais être seul."
     noam sourire "Visiblement non."
 
-    elias fatigue "J’aime le sport."
-    elias fatigue "Ça m’empêche de trop cogiter sur ce qui peut merder."
+    elias fatigue "J'aime bien venir m'entraîner."
+    elias fatigue "Ça m'évite de penser à toutes les merdes qui peuvent nous tomber dessus."
 
     noam taquin "Ouais... J'imagine que c'est devenu une habitude depuis un an."
 
     "Il rit de façon courte."
 
     elias neutre "Pas à cause d’elle."
-    elias neutre "Avant, une balle ou une guerre, et c’était fini sans sommation."
-    elias neutre "Là au moins, on sait à quoi s’attendre."
+    elias neutre "Avant, tu pouvais te prendre une balle n'importe quand. Une guerre, une embrouille..."
+    elias neutre "Là, au moins, on sait ce qu'il faut pas faire."
     elias raison "Faut juste respecter les règles quoi."
 
     "Il marque une pause un instant."
     
     elias jaloux "Est-ce qu'on vit moins bien qu'avant ?"
     elias jaloux "Perso, j'ai pas la réponse."
-    elias jaloux "Alors je fais le taf. Le reste, c'est que du bruit dont je ne m'occupe pas vraiment."
+    elias jaloux "Moi, je fais mon boulot et j'essaie de pas trop y penser."
 
     pause 0.2
     "Je ne sais pas vraiment quoi répondre."
