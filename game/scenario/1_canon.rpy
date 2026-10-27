@@ -1630,13 +1630,13 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     iris fatigue "Ouais, nan, ça sert à rien."
 
-    kael triste "Hein ?! Pourquoi ça ?"
+    kael triste "Pourquoi ?"
 
-    iris desaccord "Parce qu'un amendement peut sembler raisonnable en apparence et provoquer une catastrophe."
+    iris desaccord "Parce qu'on peut voter un truc qui a l'air bien et foutre tout le monde dans la merde."
     iris taquin "Kami dira quoi ? Elle cherchera un responsable. Nous."
     iris desaccord "Et si tout le monde sait qui a déposé quoi..."
 
-    kael colere "T'es vraiment en train de dire que tu ne veux pas qu'on assume nos actes ?"
+    kael reflechit "Attends. Tu veux dire qu'on devrait pouvoir proposer sans donner nos noms ?"
 
     iris colere "Et alors ?!"
     iris desaccord "Je suis pas une politicienne moi ! Je sais même pas écrire ce truc-là d'amande je sais pas quoi !"
@@ -1672,7 +1672,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     pause 0.3
 
-    kael reflechit "Raison de plus pour qu'on se parle !"
+    kael reflechit "Justement. Autant en parler avant."
     kael reflechit "Si on fait tout ça tout seul dans notre coin, on va se retrouver avec des conneries sur le dos."
 
     lysa doute "Vous avez été choisis pour votre naïveté ou quoi ?!"
