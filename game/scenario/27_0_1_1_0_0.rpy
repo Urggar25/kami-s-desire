@@ -177,7 +177,7 @@ label _27_0_1_1_0_0_REVEIL:
     ryn colere "C'est lui ! Je l'ai vu prendre Nyra par la tête ! Il l'a cognée contre le mur et... Je lui ai sauté dessus pour qu'il arrête !"
     tomas peur "C'est faux ! On t'a vu la frapper, Ryn ! Kael et moi, on a essayé de te retenir !"
     ryn colere "Menteur ! Regarde-la, putain ! REGARDE CE QUE T'AS FAIT !"
-    kael inquiet "Ryn, recule. Je comprends que tu sois dans un état terrible, mais Tomas n'a rien fait à Nyra. On a essayé de vous séparer, tous les deux."
+    kael inquiet "Ryn, recule. Tomas l'a pas touchée. On essayait de vous séparer, tu comprends ?"
 
     "Ryn veut répondre, puis ses yeux reviennent vers le corps. Ses bras retombent et il se laisse glisser le long de la paroi."
     ryn peur "J'avais sa main... Elle bougeait encore. Pourquoi vous m'avez laissé avec elle si longtemps ?"
