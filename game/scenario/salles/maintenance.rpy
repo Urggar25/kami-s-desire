@@ -124,9 +124,9 @@ label decouverte_salle_maintenance:
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     think "Salle de maintenance."
-    think "Le nom sonne comme une excuse."
+    think "Au moins, on sait à quoi sert cette salle."
     think "Comme si ici, on réparait juste des trucs."
-    think "Si on devait réparer tout ce qui n'allait pas, il faudrait réparer le monde."
+    think "Vu l'état du monde, ils auraient du boulot."
 
     pause 0.4
 
@@ -178,9 +178,9 @@ label decouverte_salle_maintenance:
     kael reflechit "T’as vu le reste ?"
     kael reflechit "La cafétéria, les salles…"
     kael reflechit "On dirait un campus."
-    kael reflechit "Sauf que personne n’a choisi de s'y inscrire."
-    kael reflechit "Tout le monde court partout, c'est assez bruyant."
-    kael reflechit "Ici les gens n'y passent que quelques minutes. C'est assez calme."
+    kael reflechit "Sauf qu'on nous a pas demandé notre avis."
+    kael reflechit "Y a du monde partout, ça me fatigue déjà."
+    kael reflechit "Ici, au moins, on me laisse tranquille."
 
     noam desaccord "Ouais tu m'étonnes."
     noam desaccord "L'odeur d'huile peut en rébuter plus d'un."
