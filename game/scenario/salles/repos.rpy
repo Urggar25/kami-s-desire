@@ -261,6 +261,17 @@ label decouverte_salle_repos:
     
     iris taquin "Par pitié, oublie ce que j'ai dis."
 
+    "Je me passe une main sur le front. Iris le remarque tout de suite."
+    iris inquiet "Attends, t'as encore mal à la tête ?"
+    noam hesitation "Un peu, ouais. Ça va passer."
+    iris desaccord "T'as des vertiges ? Des nausées ?"
+    noam neutre "Non, juste la tête lourde depuis le réveil."
+    iris reflexion "Bon. Si ça empire, va à l'infirmerie. J'ai vu du matériel en passant."
+    julian taquin "Oh, c'est mignon. Tu t'inquiètes pour lui ?"
+    iris colere "Oh, ferme-la ! Je demande juste parce que j'ai pas envie qu'il nous tombe dans les pommes !"
+    noam sourire "D'accord, promis. Et merci."
+    iris blase "Ouais, bon. Fais juste attention."
+
     pause 0.2
 
     noam reflexion "Ça vous dérange pas ?"
