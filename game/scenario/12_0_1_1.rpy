@@ -738,7 +738,7 @@ label _12_0_1_1_DEBAT_SECURITE:
 
     noam fatigue "… Je réfléchis."
 
-    julian taquin "Allez mec, t’es plutôt team liberté ou team Big Sister Kami ?"
+    julian taquin "Noam, on peut au moins décider de ce qu'on fait dans nos chambres, non ? T'es avec nous ?"
 
     think "Si on vote pour les brouilleurs…"
     think "Tout le monde pourra vivre l'esprit plus serein..."
@@ -851,7 +851,7 @@ label _12_0_1_1_DEBAT_LIBERTE:
 
     noam fatigue "… Je réfléchis encore."
 
-    julian taquin "Allez, Noam ! T’es team liberté hein ?! Me dis pas que tu veux qu'on continue à se faire espionner ?!"
+    julian taquin "Noam ! On a une chance de récupérer un peu de liberté. Tu vas quand même pas nous laisser passer à côté ?"
 
     "Je sens ma mâchoire se crisper."
 
