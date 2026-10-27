@@ -147,7 +147,7 @@ label decouverte_salle_archive:
 
     noam reflexion "Quoi ?"
 
-    tomas mefiant "Je pensais que… Enfin... Je m’attendais à plus de… livres"
+    tomas mefiant "Je pensais qu'il y aurait plus de livres, c'est tout."
 
     noam reflexion "Des vrais ?"
 
@@ -156,13 +156,13 @@ label decouverte_salle_archive:
 
     noam reflexion "Respire."
 
-    tomas panne "Je croyais que ‘archives’ voulait dire…"
-    tomas panne "Des trucs qu’on peut lire."
+    tomas panne "Je croyais qu'une salle d'archives, ça serait surtout..."
+    tomas panne "Des livres. Des dossiers papier, quoi."
     tomas panne "Enfin, tu sais ..."
 
     noam reflexion "Faut te mettre à la page mon vieux. Puis y'en a des livres quand même par là."
 
-    tomas culpabilite "O-Ouais mais c'est plus des recceuil de données imprimés que de vrais ouvrages... Je suis surtout nouveau dans…"
+    tomas culpabilite "Ouais, mais là c'est surtout des données imprimées. J'ai pas trop l'habitude de..."
     tomas culpabilite "Tout ça. D-Désolé, je suis pas très à l'aise à l'oral..."
 
     "Il fait un geste vague."
@@ -189,7 +189,7 @@ label decouverte_salle_archive:
     noam taquin "T’as pas besoin de te présenter comme à un entretien."
 
     tomas panne "O-Ouais. C’est un réflexe."
-    tomas panne "Je… J’essaye toujours de faire les choses proprement."
+    tomas panne "J'aime bien faire les choses correctement. C'est tout."
 
     noam taquin "Mauvais endroit je crois."
 
