@@ -636,7 +636,7 @@ label _3_CAFETERIA_ARRIVE:
 
     think "La moitié de la salle regarde vers nous. Elen fédère, même par accident."
 
-    elen taquin "Bon, puisqu'il faut y aller : question simple. Qui vote pour ?"
+    elen taquin "Bon... vous en pensez quoi, vous ? Qui serait pour ?"
 
     think "Julian lève la main comme si une caméra attendait précisément ce plan."
 
