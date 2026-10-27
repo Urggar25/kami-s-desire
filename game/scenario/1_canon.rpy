@@ -129,6 +129,39 @@ init python:
 screen day1_wake_edge_watch():
     timer 0.08 repeat True action Function(day1_wake_edge_tick)
 
+# Reactions silencieuses du groupe : changement d'expression uniquement.
+# La camera/focalisation et les animations de dialogue existantes restent actives.
+init python:
+    _day1_group_cast = [
+        ("lysa", "neutre", -0.11), ("noam", "inquiet", 0.01),
+        ("ryn", "colere", 0.13), ("mara", "rire", 0.25),
+        ("tomas", "reflechit", 0.37), ("elen", "surpris", 0.49),
+        ("julian", "peur", 0.60), ("iris", "inquiet", 0.72),
+        ("nyra", "triste", 0.84), ("kael", "calme", 0.96),
+        ("elias", "neutre", 1.08), ("sael", "raison", 1.20),
+    ]
+
+    def day1_group_reaction(**expressions):
+        """Actualise les expressions des temoins, sans ajouter de dialogue."""
+        store.showGroup([
+            (name, expressions.get(name, face), position)
+            for name, face, position in _day1_group_cast
+        ])
+
+transform day1_asphyxia_overlay_in:
+    alpha 0.0
+    ease 0.85 alpha 0.50
+    block:
+        ease 0.48 alpha 0.68
+        ease 0.58 alpha 0.44
+        repeat
+
+screen day1_asphyxia_overlay():
+    zorder 880
+    # Le rouge obscur se referme autour du champ visuel.
+    add Solid("#26030c") at day1_asphyxia_overlay_in
+    add "images/effects/stress_vignette.svg" at _stress_breathe
+
 label _1_CANON:
 # =============================================================================
 
@@ -226,9 +259,11 @@ label _1_CANON:
 
     "Un homme se lève d'un bond. Son siège claque au sol."
 
+    $ day1_group_reaction(iris="peur", elen="inquiet", mara="taquin", tomas="surpris")
     ryn colere "Putain mais on est où là ?!"
     ryn colere "Qui a fait ça ?!"
 
+    $ day1_group_reaction(ryn="colere", iris="blase", lysa="blase", elen="inquiet")
     mara rire "Tu veux dire... à part l'IA qui tient le monde en laisse ?"
     mara taquin "Joli réveil, cela dit. Très viril. Les caméras ont dû adorer."
     "Elle fait un mouvement de tête dans une direction, pour montrer une caméra."
@@ -247,6 +282,7 @@ label _1_CANON:
 
     ryn colere "Hein ?! Emballé dans des boîtes ? Mais qu'est-ce que vous racontez ? Et qui vous êtes d'abord !"
 
+    $ day1_group_reaction(lysa="blase", mara="taquin", elen="inquiet", kael="inquiet")
     lysa blase "Sérieux ? Comment ça t'es au courant de rien ?"
 
     ryn colere "Vous êtes de mèche avec ceux qui m'ont attaqué ? C'est ça ?!"
@@ -262,6 +298,7 @@ label _1_CANON:
 
     think "Je cherche les caméras. Elles sont propres, discrètes, partout. Enfin quelque chose de familier."
 
+    $ day1_group_reaction(mara="rire", ryn="colere", iris="blase", nyra="reflexion")
     julian peur "On pourrait presque apprécier le silence, si l'un d'entre nous ne faisait pas que de meugler."
     julian reflexion "Kami veut que nous nous sentions seuls. JE refuse de lui offrir ce spectacle."
 
@@ -316,6 +353,7 @@ label _1_CANON:
 
     pause 0.4
 
+    $ day1_group_reaction(ryn="colere")
     think "Tout le monde se regarde de travers."
     think "L'un d'entre nous a-t-il la permission d'ouvrir la porte ?"
 
@@ -346,7 +384,17 @@ label _1_CANON:
     jump _1_CHOICE
 
 label _1_CHOICE_DEATH:
-    scene bg_conclave at adaptive_fullscreen with fade
+    hide screen day1_asphyxia_overlay
+    $ _day1_return_count = getattr(persistent, "succes_day1_asphyxia_deaths", 0)
+    if _day1_return_count >= 3:
+        play sound "audio/sfx_glitch.mp3"
+        scene bg_conclave at adaptive_fullscreen with signal_stutter
+    elif _day1_return_count == 2:
+        play sound "audio/sfx_static.mp3"
+        scene bg_conclave at adaptive_fullscreen with glitch_diss
+    else:
+        scene bg_conclave at adaptive_fullscreen with fade
+    play music "music/bgm_calm_not_peace.mp3" fadein 1.8
 
     $ showGroup([
         ("lysa", "neutre", -0.11),
@@ -404,6 +452,9 @@ label _1_CHOICE:
             noam triste "Fait chier, ça marche pas..."
 
             play sound sfx_clim volume 5.0
+            # Le lecteur biométrique devient le seul point d'attention.
+            play sound "audio/sfx_beep.mp3"
+            pause 0.2
 
             think "Je regarde plus en détail l'écran pour voir s'il y a d'autres indications."
             noam surpris "Hein, c'est quoi ça ?"
@@ -419,11 +470,19 @@ label _1_CHOICE:
 
             noam peur "Quoi qu'est-ce qu'il y a ?!"
 
+            # La mort est annoncee par le son et une perte graduelle de perception.
+            stop music fadeout 0.7
+            play sound "audio/sfx_heartbeat.mp3"
+            show screen day1_asphyxia_overlay
             "Ma tête commence soudainement à tourner. Quelque chose ne va pas."
 
             "Quel est ce bruit ?"
             think "Pourquoi je vois tout flou ?"
+            play sound "audio/sfx_tinnitus.wav"
+            $ shake(9, 0.36)
             scene cg007 at adaptive_fullscreen with vpunch
+            hide screen day1_asphyxia_overlay
+            with flash_red
             $ unlock_gallery_image("cg007")
             $ _day1_asphyxia_deaths = register_day1_asphyxia_death()
 
@@ -439,7 +498,9 @@ label _1_CHOICE:
 
             think "Put...a..."
 
-            scene black with dissolve
+            stop sound
+            scene black with suffocation_cut
+            pause 0.35
 
             jump _1_CHOICE_DEATH
 
