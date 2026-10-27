@@ -190,8 +190,8 @@ label decouverte_infirmerie:
     noam hesitation "Il semble y avoir ce qu'il faut pour se faire prescrire un truc."
 
     sael sourire "Ouais."
-    sael taquin "Une cure contre les idées de merde."
-    sael taquin "Mais j’ai l’impression qu’il y a rupture de stock."
+    sael taquin "Contre la connerie ?"
+    sael taquin "Non, ça, ils ont pas prévu le traitement."
 
     "Je suis son regard."
     "Les casiers."
@@ -228,7 +228,7 @@ label decouverte_infirmerie:
     "Elle regarde les casiers et cherche quelque chose du regard."
     
     
-    sael determine "Rigole pas trop, tu as déjà ta place à la morgue toi aussi."
+    sael determine "Rigole pas. Y a sûrement un casier à ton nom aussi."
 
     "Un frisson me parcoure l'échine en entendant ce mot."
 
