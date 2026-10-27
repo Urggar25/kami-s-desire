@@ -206,7 +206,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     elias colere "Et combien de fois."
 
-    iris colere "Et ce qu'on nous a retiré."
+    iris colere "Attendez... si c'est Kami qui a touché à nos souvenirs, elle a fait comment ?! C'est pas un simple dossier médical, ça !"
 
     "Les voix commencent à monter. Plusieurs parlent en même temps. Elen essaie de calmer Iris pendant que Ryn demande à Sael si le livre contient d'autres informations."
 
@@ -439,7 +439,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Tout le monde se tourne vers Elen. Elle se lève à son tour."
 
-    elen "Si on continue comme avant, Kami n'a aucune raison de nous répondre. Alors on ne vote plus jusqu'à ce qu'elle le fasse."
+    elen "Je... je crois que Nyra a raison. Si on continue les votes, pourquoi Kami nous répondrait ? On pourrait arrêter, non ?"
 
     elias joie "Voilà."
 
@@ -453,7 +453,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     iris "Pourquoi t'as l'air aussi contente ?"
 
-    elen hesitation "Je suis pas contente ! Enfin... je suis motivée. C'est différent."
+    elen hesitation "Je suis pas contente ! Enfin... j'essaie juste de nous motiver, hein."
 
 
     mara rire "Non, non, laisse-la. Elle est lancée."
