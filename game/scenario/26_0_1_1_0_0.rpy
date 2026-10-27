@@ -54,7 +54,7 @@ label _26_0_1_1_0_0_REVEIL:
 
     noam reflexion "Et Kami ? Elle a accès aux caméras, aux enregistrements, à tous les systèmes de maintenance."
     noam reflexion "Si quelque chose s'est passé dans cette station, elle devrait pouvoir le vérifier."
-    iris agace "Tu veux demander de l'aide à Kami ? Après tout ce qu'elle nous a fait ?!"
+    iris agace "Tu veux demander ça à Kami ? Sérieux ? J'aimerais bien savoir ce qu'elle sait, mais tu crois vraiment qu'elle va nous aider ?!"
     noam raison "Je dis pas qu'elle va nous aider. Mais elle peut pas laisser un imposteur repartir à la place d'un représentant."
     iris reflexion "Ou alors elle sait déjà et c'est précisément pour ça qu'elle ne nous en a jamais parlé."
 
