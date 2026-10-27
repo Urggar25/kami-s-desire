@@ -722,7 +722,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ryn colere "Me dites pas que vous voulez ignorer tout ça ? Que vous voulez ENCORE voter contre ?!"
     ryn triste "Putain, c'est vraiment ce que vous voulez ? RÉPONDEZ !"
 
-    sael determine "Les frontières sont une digue. Elles nous empêchent de nous faire submerger."
+    sael determine "Les frontières, c'est ce qui nous empêche de revivre ça. Moi, je veux pas voir revenir la guerre."
     sael determine "Elles ont un rôle. Et une histoire aussi."
 
     ryn colere "Non. Moi, j’en ai juste marre de vivre dans une cage."
