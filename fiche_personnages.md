@@ -537,3 +537,114 @@ La simple possibilité d'obtenir une information inédite peut la transformer : 
 **Iris :** « MAIS PUTAIN ! TU PEUX PAS ME DIRE ÇA APRÈS M'AVOIR DONNÉ ENVIE DE SAVOIR ! »
 
 **Position de départ :** Iris veut avant tout **comprendre** Kami, et non la détruire. Elle pourrait dénoncer ses décisions et, dans le même temps, s'opposer à ce qu'on détruise une intelligence artificielle aussi exceptionnelle sans avoir tenté de l'étudier.
+
+---
+
+# JULIAN
+
+## 1. Identité
+
+- **Prénom :** Julian
+- **Âge :** environ 19–20 ans.
+- **District :** Nexus.
+- **Rôle :** représentant de Nexus au Conclave.
+- **Statut social :** jeune homme populaire et visible dans son district, habitué à soigner son image.
+
+## 2. Caractère
+
+- **Prétentieux :** possède une très haute opinion de lui-même.
+- **Charismatique :** sait captiver un public et donner de l'importance à ses mots.
+- **Théâtral :** met en scène ses prises de parole et aime être le protagoniste des événements.
+- **Ambitieux :** rêve d'être reconnu comme une grande figure du Conclave.
+- **Séducteur :** utilise son charme pour obtenir de l'attention ou de la sympathie.
+- **Intelligent :** lit assez bien les rapports de force et adapte son discours aux personnes présentes.
+- **Égocentrique :** ramène fréquemment les débats à ses idées et à son rôle.
+- **Manipulateur :** valorise les autres lorsqu'il y trouve son intérêt.
+- **Compétitif :** supporte difficilement qu'on lui vole la vedette.
+- **Sensible à la critique :** cache mal, intérieurement, la blessure que lui causent ses échecs.
+- **Courageux :** peut s'exposer réellement lorsqu'une situation le demande.
+- **Idéaliste :** veut sincèrement que le Conclave serve à quelque chose, même s'il tient à en être la figure emblématique.
+
+**Contradiction centrale :** Julian veut sincèrement contribuer à sauver l'humanité, mais supporte mal qu'elle puisse être sauvée sans lui.
+
+## 3. Façon de s'exprimer
+
+- **Registre :** soutenu, élégant, emphatique et théâtral.
+- Construit des phrases longues, avec un rythme de discours.
+- Recherche des formules mémorables, comme si ses interventions devaient entrer dans l'histoire.
+- Emploie « Mes chers collègues », « Permettez-moi », « Notre responsabilité », « L'histoire retiendra ».
+- Parle au nom du groupe sans toujours avoir obtenu son accord.
+- Utilise le « nous » pour présenter ses opinions comme des décisions collectives.
+- Peut parler de lui à la **troisième personne** dans les moments solennels.
+- Module sa voix pour séduire, rassurer et impressionner.
+- Déteste les interruptions qui cassent l'effet qu'il avait préparé.
+- Quand il perd pied, ses phrases deviennent moins fluides et son langage soudainement ordinaire.
+
+**Particularité :** Julian parle comme s'il était constamment filmé pour un documentaire consacré à sa propre vie.
+
+**Exemples de répliques :**
+
+- « Mes chers collègues, je crois qu'il est temps que quelqu'un prenne enfin ses responsabilités. »
+- « Vous vous rendez compte de l'importance historique de ce que nous sommes en train de vivre ? »
+- « Julian n'a jamais reculé devant l'adversité. Et ce n'est certainement pas aujourd'hui qu'il commencera. »
+- « Noam, je comprends parfaitement ton raisonnement. Permets-moi simplement de le reformuler de manière un peu plus… convaincante. »
+
+## 4. Stéréotype ambivalent
+
+**Le héros autoproclamé qui a désespérément besoin qu'on le considère comme exceptionnel.**
+
+- **Stéréotype :** jeune homme séduisant, arrogant et convaincu d'être destiné à accomplir de grandes choses.
+- **Contrepoint :** il cache une peur profonde de n'être personne et de tomber dans l'oubli.
+- **Ambivalence :** il veut aider les autres mais confond parfois conviction sincère et désir d'admiration.
+- **Contradiction fondamentale :** il rêve d'agir héroïquement, mais serait profondément frustré si personne ne savait jamais ce qu'il avait accompli.
+
+## 5. Histoire personnelle et fantômes
+
+- A grandi dans le district de Nexus, marqué par le prestige de la technologie et de l'intelligence.
+- A vite compris l'importance de l'image, de l'éloquence et des relations sociales.
+- A développé un talent naturel pour parler en public et séduire.
+- A appris à occuper une place centrale dans les conversations et les événements.
+- A acquis une certaine popularité, sans nécessairement nouer de liens profonds.
+- A appris à modeler son comportement selon les attentes de son public.
+- A fini par mesurer sa valeur à l'attention qu'on lui accordait. **(Fantôme : peur de ne rien valoir sans admiration.)**
+- A développé le désir de laisser une trace durable dans l'histoire. **(Fantôme : peur d'être oublié.)**
+- Supporte mal les situations où ses efforts passent inaperçus. **(Fantôme : peur de l'indifférence.)**
+- Dissimule les échecs derrière de nouvelles démonstrations d'assurance. **(Fantôme : incapacité à montrer ses faiblesses.)**
+- A tenté de séduire Iris avant le Conclave, sans succès.
+- A mal vécu son indifférence, inhabituelle pour lui. **(Fantôme secondaire : peur de ne pas plaire.)**
+- A considéré sa désignation au Conclave comme une chance exceptionnelle d'accomplir quelque chose de mémorable.
+
+**Fantôme principal :** la peur de l'insignifiance. Julian redoute d'être un homme ordinaire, interchangeable et oublié.
+
+## 6. Relations initiales avec les autres représentants
+
+Ce tableau présente **le ressenti de Julian au début du Conclave**, sans développer les routes.
+
+| Personnage | Ressenti initial de Julian |
+|---|---|
+| **Noam** | **Son rival involontaire.** Il le trouve ordinaire, hésitant et sans ambition ; l'attention qu'on lui accorde l'intrigue. Il aimerait le prendre sous son aile tout en gardant l'ascendant. |
+| **Iris** | **Son échec sentimental le plus irritant.** Il a tenté de la séduire sans succès. Il admire son intelligence, mais supporte mal son indifférence et ses remarques qui le ridiculisent. |
+| **Elen** | **Une admiratrice potentielle.** Son enthousiasme lui plaît ; il aime ceux qui accueillent favorablement ses discours. |
+| **Mara** | **Une séductrice qui lui résiste.** Il apprécie son assurance mais perd souvent la main quand elle retourne son charme contre lui. |
+| **Lysa** | **Une cynique insupportable.** Elle peut ruiner une intervention solennelle en une phrase. Il déteste qu'elle ne le prenne pas au sérieux. |
+| **Kael** | **Un homme utile, mais insignifiant.** Il respecte ses compétences, mais juge sa discrétion et son absence apparente d'ambition peu intéressantes. |
+| **Ryn** | **Une brute sans diplomatie.** Il déplore son agressivité et sa tendance à hausser le ton plutôt qu'argumenter. |
+| **Sael** | **Une traditionaliste difficile à convaincre.** Il respecte sa détermination, mais trouve ses convictions dépassées. |
+| **Tomas** | **Un intellectuel à valoriser.** Il apprécie ses connaissances et le verrait bien appuyer ses idées, à condition de lui laisser les discours. |
+| **Nyra** | **Une alliée intellectuelle de valeur.** Il admire sa rigueur et aimerait s'assurer son soutien ; il s'agace de sa froideur face à son charme. |
+| **Elias** | **Un garçon sympathique mais limité.** Il apprécie sa bonne volonté et adopte parfois une attitude paternaliste à son égard. |
+
+## 7. Relation initiale avec Kami
+
+**Une autorité qu'il considère à la fois comme son principal adversaire et comme le public idéal de ses exploits.**
+
+- Désapprouve l'autorité absolue d'une intelligence artificielle sur l'humanité.
+- Souhaite que les humains retrouvent une souveraineté politique.
+- Se frustre de l'influence limitée des représentants.
+- Cherche à se montrer sérieux, digne et éloquent lorsqu'il s'adresse à Kami.
+- Aime l'idée de démontrer publiquement qu'un humain peut lui tenir tête.
+- Supporte très mal ses moqueries et ses remarques condescendantes.
+- Reconnaît malgré tout qu'une opposition purement frontale serait inutile.
+- Veut devenir le symbole d'une éventuelle reconquête de l'autonomie humaine.
+
+**Position de départ :** Julian souhaite que le Conclave redonne une part de liberté à l'humanité ; il veut surtout être celui dont le nom restera associé à cette victoire.
