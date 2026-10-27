@@ -330,7 +330,7 @@ label decouverte_salle_observation:
     noam reflexion "Et y’a des gens dehors."
 
     lysa blase "Bien sûr qu’il y a des gens."
-    lysa triste "On est juste… pas du même côté de la vitre."
+    lysa triste "Ouais. Mais nous, on peut pas sortir."
 
     pause 0.4
 
@@ -339,19 +339,19 @@ label decouverte_salle_observation:
     noam reflexion "Comme si c’était anodin…"
     noam reflexion "Comme si c'était juste un décor."
 
-    lysa reflexion "C’est un décor."
-    lysa reflexion "Mais c’est aussi un message."
+    lysa reflexion "C'est pas juste pour faire joli."
+    lysa reflexion "Elle nous montre surtout qu'on est loin de chez nous."
 
     noam hesitation "Lequel ?"
 
-    lysa determine "Qu’on est hors du monde."
-    lysa determine "Hors des règles."
-    lysa triste "Hors de tout ce qu'on connait depuis là."
+    lysa determine "Qu'on est loin de tout."
+    lysa determine "Et qu'on a plus notre mot à dire sur grand-chose."
+    lysa triste "On peut même pas appeler les gens qu'on a laissés derrière."
 
     noam reflexion "Tu dis ça calmement."
 
-    lysa sourire "Je fais semblant. J'essaye de me rassurer."
-    lysa taquin "Ça marche une fois sur deux."
+    lysa sourire "Bah oui, je fais semblant. Tu préfères que je panique ?"
+    lysa taquin "Pas toujours très bien, d'ailleurs."
 
     noam taquin "Joli ratio."
 
@@ -364,8 +364,8 @@ label decouverte_salle_observation:
 
     noam neutre "Vas-y."
 
-    lysa triste "J’arrive pas à décider si c’est magnifique…"
-    lysa triste "Ou si c’est juste une autre façon de nous écraser."
+    lysa triste "Je sais pas si je trouve ça beau..."
+    lysa triste "...ou si ça me fait surtout flipper."
 
     noam raison "Les deux."
 
