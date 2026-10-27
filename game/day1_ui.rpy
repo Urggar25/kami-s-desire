@@ -792,68 +792,139 @@ screen day1_codex_unlock_panel(entry_title):
 # AMENDMENT TIMER — synchronisé avec système day0
 # =============================================================
 
+# Compte à rebours de l'urne : le temps provient toujours du système day0.
+# La jauge représente les 31 minutes de la phase de dépôt.
+transform day1_timer_alert_pulse:
+    alpha 1.0
+    block:
+        ease 0.55 alpha 0.48
+        ease 0.55 alpha 1.0
+        repeat
+
+transform day1_timer_enter:
+    alpha 0.0
+    xoffset -18
+    easeout 0.35 alpha 1.0 xoffset 0
+
 screen day1_amendment_timer():
     zorder 70
 
-    # Variables écran pour le tick
+    # L'interface se rafraîchit pendant les dialogues sans modifier le temps.
     default _tick = 0
-    timer 1.0 repeat True action SetScreenVariable("_tick", _tick + 1)
+    timer 0.10 repeat True action SetScreenVariable("_tick", _tick + 1)
 
-    $ _t = day0_timer_remaining()
-    $ _ts = day0_timer_fmt(_t)
-    $ _expired = (_t <= 0 and day0_timer_active)
-    $ _warn = (_t < 300)  # rouge sous 5 min
-    $ _bar_color = "#E03850" if _warn else "#F0A835"
-    $ _txt_color = "#E03850" if _expired else ("#F0A835" if _warn else "#5CD3FF")
+    $ _seconds = max(0.0, float(day0_timer_remaining()))
+    $ _total = 31.0 * 60.0
+    $ _progress = min(1.0, _seconds / _total)
+    $ _closed = (day0_timer_active and _seconds <= 0.0)
+    $ _danger = _seconds <= 60.0
+    $ _warning = _seconds <= 300.0
+    $ _accent = "#FF536F" if _danger else ("#FFBE64" if _warning else "#5CD3FF")
+    $ _muted = "#A1BFCE"
+    $ _display_time = day0_timer_fmt(_seconds)
+    $ _filled_width = max(0, min(414, int(414 * _progress)))
+    $ _minutes = int(_seconds) // 60
+    $ _seconds_part = int(_seconds) % 60
 
-    frame:
-        xpos 56
-        ypos 50
-        background Frame(Solid("#06090DEE"), 0, 0)
-        padding (0, 0)
+    fixed at day1_timer_enter:
+        xpos 38
+        ypos 30
+        xsize 466
+        ysize 126
 
-        fixed:
-            xsize 320
-            ysize 68
+        # Panneau technique compact et lisible sur toutes les scènes.
+        add Solid("#06121DEB") xpos 0 ypos 0 xsize 466 ysize 126
+        add Solid("#102737") xpos 1 ypos 1 xsize 464 ysize 124
+        add Solid("#071622") xpos 3 ypos 3 xsize 460 ysize 120
+        add Solid(_accent) xpos 0 ypos 0 xsize 5 ysize 126
+        add Solid(_accent + "32") xpos 5 ypos 0 xsize 461 ysize 2
 
-            # Bande colorée gauche
-            add Solid(_bar_color) xpos 0 ypos 0 xsize 4 ysize 68
+        # Repères angulaires et lecture de type console embarquée.
+        add Solid(_accent) xpos 5 ypos 0 xsize 38 ysize 2
+        add Solid(_accent) xpos 463 ypos 0 xsize 3 ysize 18
+        add Solid(_accent) xpos 433 ypos 124 xsize 33 ysize 2
+        add Solid("#294859") xpos 17 ypos 95 xsize 432 ysize 1
 
-            # Fond texturé
-            add Solid("#FFFFFF05") xpos 4 ypos 0 xsize 316 ysize 68
+        text "CONCLAVE  /  PROTOCOLE DE DÉPÔT":
+            xpos 20 ypos 11
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 15
+            kerning 2
+            color _muted
 
-            # Barre progression temps
-            if not _expired:
-                $ _pct = day0_timer_pct()
-                add Solid(_bar_color + "22") xpos 4 ypos 0 xsize int(316 * _pct) ysize 68
+        text "01  ·  URNE":
+            xpos 324 ypos 12
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 14
+            kerning 1
+            color _accent
 
-            text "URN" + "E  OUVERTE":
-                xpos 18 ypos 8
-                size 11
-                color "#7A98A8"
+        if _closed:
+            text "DÉPÔT CLOS" at day1_timer_alert_pulse:
+                xpos 17 ypos 31
                 font "fonts/Rajdhani-SemiBold.ttf"
-                kerning 2
-
-            if _expired:
-                text "DÉPÔT CLOS" at d1_blink_fast:
-                    xpos 18 ypos 26
-                    size 26
-                    color "#E03850"
-                    font "fonts/Rajdhani-SemiBold.ttf"
-                    bold True
-            else:
-                text _ts:
-                    xpos 18 ypos 26
-                    size 26
-                    color _txt_color
-                    font "fonts/Rajdhani-SemiBold.ttf"
-                    bold True
-
-            text "FERMETURE  ▸  RESTANT":
-                xpos 18 ypos 54
-                size 10
-                color "#3A5A6A"
+                size 42
+                bold True
+                color "#FF536F"
+        else:
+            text _display_time:
+                xpos 15 ypos 27
                 font "fonts/Rajdhani-SemiBold.ttf"
+                size 59
+                bold True
+                color "#F2FAFF"
+                outlines [(1, _accent + "66", 0, 0)]
+
+        text "TEMPS RESTANT":
+            xpos 315 ypos 46
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 15
+            kerning 2
+            color _accent
+
+        if _danger and not _closed:
+            text "CRITIQUE" at day1_timer_alert_pulse:
+                xpos 335 ypos 69
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 16
+                bold True
+                color _accent
+        elif _warning and not _closed:
+            text "FIN IMMINENTE":
+                xpos 317 ypos 69
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 15
+                color _accent
+        else:
+            text "SESSION ACTIVE" if not _closed else "SESSION TERMINÉE":
+                xpos 319 ypos 69
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 14
+                color _muted
+
+        # Progression continue, lisible d'un coup d'œil.
+        add Solid("#173040") xpos 19 ypos 103 xsize 414 ysize 8
+        if _filled_width > 0:
+            add Solid(_accent + "55") xpos 19 ypos 101 xsize _filled_width ysize 12
+            add Solid(_accent) xpos 19 ypos 103 xsize _filled_width ysize 8
+            add Solid("#FFFFFF") xpos (19 + max(0, _filled_width - 2)) ypos 102 xsize 2 ysize 10
+
+        # Divisions fixes : la barre reste animée derrière les repères.
+        for _index in range(1, 12):
+            add Solid("#071622") xpos (19 + _index * 34) ypos 103 xsize 2 ysize 8
+
+        text "FERMETURE AUTOMATIQUE":
+            xpos 19 ypos 115
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 9
+            kerning 1
+            color "#7795A5"
+
+        text "31:00 → 00:00":
+            xpos 346 ypos 114
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 10
+            color _muted
 
 
 # =============================================================
