@@ -308,7 +308,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     elias inquiet "Si les gens peuvent bouger, les médecins et les ressources pourront bouger aussi. Ça sauvera des vies."
 
     sael colere "Tu crois que je n'y ai pas réfléchi ?"
-    sael determine "Ma réponse est non. Je ne vais pas risquer la vie des miens pour réparer la frontière de Limen."
+    sael determine "Non. Pas si ça risque de ramener des hommes armés chez nous. J'ai déjà vu ce que ça donnait."
 
     elias colere "C'est pas seulement la frontière de Limen !"
 
