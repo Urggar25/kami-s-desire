@@ -188,6 +188,18 @@ label decouverte_salle_maintenance:
     kael rire "Exactement."
     kael rire "Au moins on est au calme ici."
 
+    "Son regard revient sur les armoires électriques. Il vérifie un écran, puis un autre."
+    noam reflexion "Y a un problème ?"
+    kael reflechit "Je sais pas encore. Mais t'as vu la taille des installations ?"
+    noam neutre "Oui. C'est grand."
+    kael reflechit "Un peu trop, pour douze types qui doivent juste rester là un mois."
+    noam inquiet "Tu veux dire qu'ils ont prévu autre chose ?"
+    kael neutre "J'en sais rien. Peut-être qu'ils ont simplement prévu large."
+    noam reflexion "Tu devrais en parler aux autres."
+    kael calme "Pour leur dire quoi ? Que j'ai trouvé une armoire électrique bizarre ?"
+    kael reflechit "Je préfère regarder avant. J'ai pas envie de foutre tout le monde en panique pour rien."
+    noam neutre "Ouais. Vu comme ça..."
+
     "Il hoche la tête vers le fond."
     "Je suis son regard."
 
