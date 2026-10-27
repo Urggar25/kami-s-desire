@@ -314,7 +314,7 @@ label _16_0_1_1_CORRIDOR_KAEL:
 
     noam desaccord "Quel rapport avec les autres ?"
 
-    kael "Si je comprends, on a vu une vidéo de moi volant la photo de ma propre sœur sans que j'en garde le moindre souvenir, puis une autre vidéo où j'entre dans ta chambre pour prendre le dessin de la tienne."
+    kael "Donc on me voit prendre la photo de ma sœur. Je m'en souviens pas. Et après, on me voit entrer chez toi pour prendre ton dessin. C'est ça ?"
     kael triste "Pour l'instant, je me méfie de tout."
 
     noam surpris "Hein ? De moi ?!"
