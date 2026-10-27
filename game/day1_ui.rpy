@@ -844,7 +844,6 @@ screen day1_amendment_timer():
     $ _remaining = max(0.0, float(day0_timer_remaining()))
     $ _seconds = int(_remaining + 0.999)
     $ _minute_now = _seconds // 60
-    $ _second_text = ":{:02d}".format(_seconds % 60)
     $ _minute_text = "{:02d}".format(_minute_now)
     $ _roll_active = (_minute_prev >= 0 and _minute_prev == _minute_last + 1 and _tick - _minute_change_tick < 6)
     timer 0.10 repeat True action [
@@ -899,18 +898,22 @@ screen day1_amendment_timer():
             # Fenetre de deux chiffres : l'ancienne minute glisse vers le haut.
             fixed:
                 xpos 16 ypos 29
-                xsize 91 ysize 64
+                xsize 82 ysize 64
                 clipping True
 
                 if _roll_active:
                     text "{:02d}".format(_minute_prev) at day1_minute_roll_out:
                         xpos 0 ypos 0
+                        xsize 82
+                        text_align 0.5
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 62
                         bold True
                         color _clock_color
                     text "{:02d}".format(_minute_last) at day1_minute_roll_in:
                         xpos 0 ypos 0
+                        xsize 82
+                        text_align 0.5
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 62
                         bold True
@@ -918,14 +921,28 @@ screen day1_amendment_timer():
                 else:
                     text _minute_text:
                         xpos 0 ypos 0
+                        xsize 82
+                        text_align 0.5
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 62
                         bold True
                         color _clock_color
 
-            # Les secondes continuent normalement pendant le défilement.
-            text _second_text:
-                xpos 106 ypos 29
+            # Trois colonnes fixes : MM | : | SS, sur la même ligne de base.
+            # Cela supprime le trou variable dû à la largeur des glyphes.
+            text ":":
+                xpos 98 ypos 29
+                xsize 21
+                text_align 0.5
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 62
+                bold True
+                color _clock_color
+
+            text "{:02d}".format(_seconds % 60):
+                xpos 121 ypos 29
+                xsize 82
+                text_align 0.5
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 62
                 bold True
@@ -934,7 +951,7 @@ screen day1_amendment_timer():
         # Statut compact : une seule information complementaire.
         if not _closed:
             text _status:
-                xpos 267 ypos 58
+                xpos 253 ypos 58
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 17
                 bold _critical
