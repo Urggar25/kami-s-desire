@@ -58,7 +58,7 @@ label _27_0_1_1_0_0_1_REVEIL:
     elias raison "Tu n'avais pas dit qu'il dormait dans la chambre d'Iris maintenant ? Pourquoi t'y es pas retourné ?"
     noam peur "... Hein ? Euh..."
     noam reflexion "Ouais, je sais pas trop, j'y ai pas vraiment pensé..."
-    tomas raison "Tu dormiras mieux ce soir. Là, on a pas vraiment le temps pour ça, on a une fenêtre assez courte pour consulter les archives."
+    tomas raison "On en reparlera ce soir. Là, on a pas beaucoup de temps pour les archives."
     noam reflexion "Vous avez trouvé quelque chose d'intéressant ?"
     tomas neutre "Pas encore. Va falloir aller dans la salle des archives pour chercher des informations sur Keyper-IIB."
     elias raison "Et surtout, va falloir faire gaffe à ce que ton original débarque pas. Il pourrait très bien s'y pointer sans prévenir."
