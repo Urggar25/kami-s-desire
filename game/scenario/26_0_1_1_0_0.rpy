@@ -41,6 +41,7 @@ label _26_0_1_1_0_0_REVEIL:
     iris reflexion "C'est bien ce qui me dérange. J'avais l'impression de parler à la même Mara que depuis le premier jour."
 
     "Je récupère mon téléphone entre les draps. Aucun message, aucune annonce particulière de Kami."
+    think "Si ces doubles pensent et ont peur comme nous, qu'est-ce qu'on fait d'eux ? Je déteste déjà la question."
     "Depuis plusieurs jours, ce silence me paraissait reposant ; ce matin, j'aimerais presque qu'elle nous interrompe pour nous obliger à parler d'autre chose."
 
     noam raison "On ne peut pas continuer à garder ça pour nous."
@@ -213,6 +214,8 @@ label _26_0_1_1_0_0_SECRET:
     iris agace "Ça, c'est ce que tu dis maintenant."
     noam raison "Je prends trois tee-shirts et je reviens. Dix minutes, maximum."
     iris neutre "D'accord. Tu m'envoies un message quand tu repars."
+    iris reflexion "Au fait, garde bien ta tablette avec toi. Je préfère pouvoir te joindre si ça tourne mal."
+    noam taquin "Promis. Et non, je vais pas la prêter à Mara."
     noam sourire "Promis."
     iris reflexion "Et si tu croises Mara, ne te mets pas à lui poser des questions."
     noam fatigue "Je sais, Iris."
