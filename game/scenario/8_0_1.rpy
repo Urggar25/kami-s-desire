@@ -340,7 +340,7 @@ label _8_0_1_CAFETERIA_ARRIVEE:
 
     noam reflechit "Depuis que Kami a commencé à buguer il n'y a plus aucune exécution ?"
 
-    julian decontracte "Moi j'ai compris ce qu'il se passe. Elias renverse une tasse de café sur une machine, Kami disparaît et plus personne n'est exécuté dans le monde."
+    julian decontracte "Vous imaginez ? Elias renverse un café et sauve le monde. Même moi, j'aurais pas osé inventer ça !"
     julian sourire "Nous avons devant nous le héros de l'humanité. Il est armé de son imparable tasse de café ! J'annonce, le grand Elias !"
 
     elias detendu "J'ai rien fait. J'ai même pas fait exprès de renverser ce foutu café."
