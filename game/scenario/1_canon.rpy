@@ -206,7 +206,7 @@ label _1_CANON:
     camera master at day1_wake_close
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
     camera master at day1_wake_close_talk
-    lysa blase "Bah, fallait bien que je te réveille. Tu comptais dormir encore longtemps ?"
+    lysa blase "Bah quoi ? J'allais pas te laisser dormir là toute la journée."
     camera master at day1_wake_close
     think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans que Lysa s'éloigne vraiment."
     noam inquiet "J'ai la tête en vrac... On est où ?"
@@ -239,7 +239,7 @@ label _1_CANON:
     think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
     noam inquiet "Attends... C'est vraiment le Conclave ?"
     lysa reflexion "J'en sais pas beaucoup plus que toi, mais ouais. Ça ressemble bien au Conclave."
-    lysa blase "T'as dormi dix minutes de plus que tout le monde et t'as déjà une sale tête."
+    lysa blase "T'as vraiment pas l'air frais, toi."
 
     # La tablette n'interrompt plus le face-à-face : elle s'initialise en plan large.
     play sound sfx_beep
@@ -1220,7 +1220,7 @@ label _1_KAMI_APPARITION:
 
     lysa doute "L'unanimité ? Ah ouais. Rien que ça."
     lysa blase "Un seul vote contre et tout le monde est bloqué. Sérieux ?"
-    lysa colere "C'est un système tellement tordu que rien ne pourra jamais aboutir."
+    lysa colere "Avec ça, on va jamais réussir à se mettre d'accord."
 
     tomas raison "Ou alors... il faut faire des compromis. Enfin, pour une fois."
 
@@ -1250,7 +1250,7 @@ label _1_KAMI_APPARITION:
     think "Il offre son meilleur profil à la caméra. Pour lui, ça semble avoir toute l'importance du monde."
 
     lysa doute "T'es sérieux ?"
-    lysa colere "On nous enferme, on nous filme, on nous fait jouer les réformateurs sous peine de mort — et toi, t'es là en train de jouer au beau ?"
+    lysa colere "On est coincés ici, on risque de crever si ça tourne mal, et toi tu poses pour les caméras ?!"
     lysa blase "T'es vraiment obligé de faire ton numéro devant la caméra ?"
 
     julian idee "Si nous devons rester ici trente jours, faisons-en sorte qu'ils comptent."
