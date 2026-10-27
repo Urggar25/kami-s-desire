@@ -40,16 +40,16 @@ init python:
     AMB_VOL = [1.0, 0.78, 0.55, 0.32, 0.12, 0.0]
 
     # -- Mise en page (la feuille est réduite en haut, plateau de fragments en bas)
-    SHEET_ZOOM = 0.70
-    SHEET_X    = 540                       # source 1200 * 0.70 = 840 -> centré
-    SHEET_Y    = 24
-    # zone d'écriture (coords écran, par-dessus la feuille affichée)
-    WRITE_X0, WRITE_X1 = 620, 1300
-    WRITE_Y0           = 120
-    # plateau des fragments (garanti à l'écran)
-    TRAY_X0, TRAY_X1 = 90, 1830
-    TRAY_Y0          = 700
-    TRAY_ROW_H       = 116
+    # Composition 1920x1080 : la feuille à gauche, les fragments à droite.
+    # Séparer les zones évite la ligne unique de textes illisibles du prototype.
+    SHEET_ZOOM = 0.73
+    SHEET_X    = 160
+    SHEET_Y    = 108
+    WRITE_X0, WRITE_X1 = 245, 930
+    WRITE_Y0           = 265
+    TRAY_X0, TRAY_X1 = 1102, 1825
+    TRAY_Y0          = 236
+    TRAY_ROW_H       = 82
 
     SFX_PLACE   = AMEND_DIR + "amend_place.ogg"
     SFX_RUB     = AMEND_DIR + "amend_eraser_rub.ogg"
@@ -164,20 +164,16 @@ init python:
 
         @staticmethod
         def _frag_w(tok, size):
-            return int(len(tok) * size * 0.50) + 44
+            # Largeur légèrement généreuse, identique entre drag et emplacement.
+            return max(120, int(len(tok) * size * 0.60) + 62)
 
         # --- dispose les fragments libres dans le plateau du bas (flow wrap) ---
         def _layout_tray(self, loose, rnd):
-            cx = TRAY_X0
-            cy = TRAY_Y0
-            for fr in loose:
-                w = fr["w"]
-                if cx + w > TRAY_X1:
-                    cx = TRAY_X0
-                    cy += TRAY_ROW_H
-                fr["x"] = int(cx + rnd.randint(-4, 4))
-                fr["y"] = int(cy + rnd.randint(-6, 6))
-                cx += w + 34
+            # Une ligne par fragment : les étiquettes ne se chevauchent jamais.
+            # Huit fragments maximum pour les données actuelles (236..810).
+            for index, fr in enumerate(loose):
+                fr["x"] = TRAY_X0 + rnd.randint(-2, 2)
+                fr["y"] = TRAY_Y0 + index * TRAY_ROW_H
 
         def build_step(self, i):
             self.step = i
@@ -191,7 +187,7 @@ init python:
 
             # --- disposition de la phrase sur la feuille (flow wrap) ---
             y = WRITE_Y0 + rnd.randint(-4, 4)
-            line_h = 90 - level * 3
+            line_h = 96
             cur_x = WRITE_X0
             slots = []
             for idx, tok in enumerate(tokens):
@@ -199,7 +195,7 @@ init python:
                 if level >= 2:
                     size = rnd.choice([26, 28, 30, 32])
                 w = self._frag_w(tok, size)
-                h = size + 26
+                h = 64
                 if cur_x + w > WRITE_X1:
                     cur_x = WRITE_X0
                     y += line_h
@@ -213,7 +209,7 @@ init python:
                     "w": w, "h": h, "size": size, "rot": rot,
                     "filled": idx not in new,
                 })
-                cur_x += w + 22
+                cur_x += w + 15
             self.slots = slots
             self.required = list(step["new"])
 
@@ -230,7 +226,7 @@ init python:
                 tok = kd_tr(par["token"])
                 loose.append({
                     "id": "p%d" % pi, "token": tok, "x": 0, "y": 0,
-                    "w": self._frag_w(tok, 30), "h": 56, "size": 30,
+                    "w": self._frag_w(tok, 30), "h": 64, "size": 30,
                     "target": None, "is_parasite": True, "thought": par["thought"],
                 })
             rnd.shuffle(loose)
@@ -472,6 +468,34 @@ screen amend_board():
 
     add "amend_desk"
     add "amend_sheet_img" xpos SHEET_X ypos SHEET_Y zoom SHEET_ZOOM
+
+    # En-tête d'amendement : le document doit sembler réel et utilisable.
+    text "CONCLAVE  /  PROPOSITION D'AMENDEMENT":
+        xpos 246 ypos 149
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 24 color "#483C35" kerning 2
+    add Solid("#806E57") xpos 246 ypos 185 xsize 635 ysize 2
+    text "ARTICLE UNIQUE — ASSISTANCE À PERSONNE EN DANGER":
+        xpos 246 ypos 198
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 18 color "#766354"
+
+    # Plateau séparé du papier, compatible avec les fragments existants.
+    add Solid("#071520E8") xpos 1032 ypos 127 xsize 835 ysize 828
+    add Solid("#5CD3FF") xpos 1032 ypos 127 xsize 5 ysize 828
+    add Solid("#5CD3FF55") xpos 1037 ypos 127 xsize 830 ysize 2
+    text "FRAGMENTS À PLACER":
+        xpos 1070 ypos 154
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 30 color "#E7F8FF" kerning 2
+    text "Glisse chaque morceau sur son emplacement dans le document.":
+        xpos 1070 ypos 195
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 19 color "#AAC8D5"
+    text "VERSION [amend_st.step + 1] / [len(AMEND_STEPS)]":
+        xpos 1070 ypos 918
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 19 color "#5CD3FF"
     if amend_st.wear >= 1:
         add (AMEND_DIR + "amend_wrinkle%d.png" % min(3, amend_st.wear)) xpos SHEET_X ypos SHEET_Y zoom SHEET_ZOOM
 
@@ -510,12 +534,15 @@ screen amend_board():
                     30,
                     20
                 )
-                padding (16, 10)
+                xsize int(s["w"])
+                ysize int(s["h"])
+                padding (8, 6)
 
                 text s["token"]:
                     font AMEND_FONT
                     size s["size"]
                     color "#20202e"
+                    xalign 0.5 yalign 0.5
                     at Transform(alpha=_al)
 
     # emplacements vides (guides visibles) pendant l'assemblage
@@ -528,8 +555,12 @@ screen amend_board():
                 yanchor 0.5
                 xsize int(s["w"])
                 ysize int(s["h"])
-                add Solid("#5a472a2e")
+                add Solid("#A8937040")
                 add Solid("#8a7450") ysize 3 yalign 1.0
+                text "À COMPLÉTER":
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    size 15 color "#8C795F"
+                    xalign 0.5 yalign 0.5
 
     # surbrillance nerveuse du mot à effacer
     if amend_st.eraser_mode == "erase" and amend_st.erase_slot is not None:
@@ -558,9 +589,12 @@ screen amend_input(mode):
                     dragged amend_frag_dropped
                     frame:
                         background Frame(AMEND_DIR + "amend_note.png", 30, 20)
-                        padding (16, 10)
+                        xsize int(fr["w"])
+                        ysize int(fr["h"])
+                        padding (8, 6)
                         text fr["token"]:
                             font AMEND_FONT size fr["size"]
+                            xalign 0.5 yalign 0.5
                             color ("#5a2333" if fr["is_parasite"] else "#2a2333")
     else:
         draggroup:
