@@ -541,6 +541,15 @@ screen amend_board():
     if amend_st.wear >= 1:
         add (AMEND_DIR + "amend_wrinkle%d.png" % min(3, amend_st.wear)) xpos SHEET_X ypos SHEET_Y zoom SHEET_ZOOM
 
+    # Le document garde une trace lisible de la réécriture, sans masquer les mots.
+    if amend_st.wear > 0:
+        text "REPRISE N° [amend_st.wear] — FORMULATION À REVOIR":
+            xpos 246 ypos 615
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 18
+            color "#846D62"
+            italic True
+
     # ratures / traces cumulées
     for m in amend_st.marks:
         if m["type"] == "smudge":
