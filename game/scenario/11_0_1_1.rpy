@@ -333,7 +333,7 @@ label _11_0_1_1_APRES_REVEIL:
 
     hide kael with dissolve
 
-    iris inquiet "T’as vu sa tête ? Il est de plus en plus obsédé par sa photo non ?"
+    iris inquiet "T'as vu sa tête ? Il dort encore, à ton avis ?"
 
     sael reflexion "On peut le comprendre…"
     sael reflexion "Qu'est ce que tu ferais si ce que tu avais de plus précieux avait été piqué par on ne sait qui ?"
