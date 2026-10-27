@@ -46,10 +46,10 @@ init python:
     SHEET_X    = 160
     SHEET_Y    = 108
     WRITE_X0, WRITE_X1 = 245, 930
-    WRITE_Y0           = 265
+    WRITE_Y0           = 330
     TRAY_X0, TRAY_X1 = 1102, 1825
-    TRAY_Y0          = 236
-    TRAY_ROW_H       = 82
+    TRAY_Y0          = 267
+    TRAY_ROW_H       = 88
 
     SFX_PLACE   = AMEND_DIR + "amend_place.ogg"
     SFX_RUB     = AMEND_DIR + "amend_eraser_rub.ogg"
@@ -161,11 +161,12 @@ init python:
             self.eraser_xy = (1300, 820)
             self.eraser_prev = None
             self.final_touch = False
+            self.layout_revision = 3
 
         @staticmethod
         def _frag_w(tok, size):
             # Largeur légèrement généreuse, identique entre drag et emplacement.
-            return max(120, int(len(tok) * size * 0.60) + 62)
+            return max(120, min(625, int(len(tok) * size * 0.47) + 62))
 
         # --- dispose les fragments libres dans le plateau du bas (flow wrap) ---
         def _layout_tray(self, loose, rnd):
@@ -191,9 +192,9 @@ init python:
             cur_x = WRITE_X0
             slots = []
             for idx, tok in enumerate(tokens):
-                size = 30
+                size = 27
                 if level >= 2:
-                    size = rnd.choice([26, 28, 30, 32])
+                    size = rnd.choice([25, 26, 27, 28])
                 w = self._frag_w(tok, size)
                 h = 64
                 if cur_x + w > WRITE_X1:
@@ -219,14 +220,14 @@ init python:
                 s = slots[idx]
                 loose.append({
                     "id": "f%d" % idx, "token": s["token"], "x": 0, "y": 0,
-                    "w": s["w"], "h": s["h"], "size": s["size"],
+                    "w": s["w"], "h": s["h"], "size": 26,
                     "target": idx, "is_parasite": False, "thought": None,
                 })
             for pi, par in enumerate(step.get("parasites", [])):
                 tok = kd_tr(par["token"])
                 loose.append({
                     "id": "p%d" % pi, "token": tok, "x": 0, "y": 0,
-                    "w": self._frag_w(tok, 30), "h": 64, "size": 30,
+                    "w": self._frag_w(tok, 26), "h": 64, "size": 26,
                     "target": None, "is_parasite": True, "thought": par["thought"],
                 })
             rnd.shuffle(loose)
@@ -234,6 +235,26 @@ init python:
             self.loose = loose
             self.eraser_mode = None
             self.erase_slot = None
+
+        def ensure_layout(self):
+            """Migrer les sauvegardes prises dans l'ancienne interface du minijeu."""
+            if getattr(self, "layout_revision", 0) == 3:
+                return
+            fresh = AmendState()
+            fresh.build_step(self.step)
+            old_by_id = {fr["id"]: fr for fr in self.loose}
+            for i, new_slot in enumerate(fresh.slots):
+                if i < len(self.slots):
+                    new_slot["filled"] = self.slots[i]["filled"]
+            self.slots = fresh.slots
+            self.required = fresh.required
+            self.loose = []
+            for new_frag in fresh.loose:
+                old = old_by_id.get(new_frag["id"])
+                if old is not None:
+                    self.loose.append(new_frag)
+            # Les ratures restent visibles sur la feuille dans les sauvegardes.
+            self.layout_revision = 3
 
         def get_loose(self, fid):
             for f in self.loose:
@@ -312,7 +333,7 @@ init python:
     def amend_frag_dropped(drags, drop):
         st = store.amend_st
         d = drags[0]
-        fr = st.get_loose(d.drag_name)
+        fr = st.get_loose(d.drag_name.split(":")[-1])
         if fr is None:
             return
         w = d.w if d.w else fr["w"]
@@ -466,6 +487,7 @@ label amend_reflection(message):
 screen amend_board():
     zorder 40
 
+    $ amend_st.ensure_layout()
     add "amend_desk"
     add "amend_sheet_img" xpos SHEET_X ypos SHEET_Y zoom SHEET_ZOOM
 
@@ -482,6 +504,7 @@ screen amend_board():
 
     # Plateau séparé du papier, compatible avec les fragments existants.
     add Solid("#071520E8") xpos 1032 ypos 127 xsize 835 ysize 828
+    add Solid("#274353") xpos 1068 ypos 231 xsize 755 ysize 1
     add Solid("#5CD3FF") xpos 1032 ypos 127 xsize 5 ysize 828
     add Solid("#5CD3FF55") xpos 1037 ypos 127 xsize 830 ysize 2
     text "FRAGMENTS À PLACER":
@@ -582,18 +605,19 @@ screen amend_input(mode):
         draggroup:
             for _i, fr in enumerate(amend_st.loose):
                 drag:
-                    drag_name fr["id"]
+                    drag_name "amend_v3:%d:%s" % (amend_st.step, fr["id"])
                     draggable True
                     droppable False
                     xpos fr["x"] ypos fr["y"]
                     dragged amend_frag_dropped
                     frame:
                         background Frame(AMEND_DIR + "amend_note.png", 30, 20)
-                        xsize int(fr["w"])
-                        ysize int(fr["h"])
-                        padding (8, 6)
+                        xsize 642
+                        ysize 70
+                        padding (20, 6)
                         text fr["token"]:
-                            font AMEND_FONT size fr["size"]
+                            font AMEND_FONT size 26
+                            xmaximum 597
                             xalign 0.5 yalign 0.5
                             color ("#5a2333" if fr["is_parasite"] else "#2a2333")
     else:
