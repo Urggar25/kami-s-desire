@@ -648,3 +648,121 @@ Ce tableau présente **le ressenti de Julian au début du Conclave**, sans déve
 - Veut devenir le symbole d'une éventuelle reconquête de l'autonomie humaine.
 
 **Position de départ :** Julian souhaite que le Conclave redonne une part de liberté à l'humanité ; il veut surtout être celui dont le nom restera associé à cette victoire.
+
+---
+
+# RYN
+
+## 1. Identité
+
+- **Prénom :** Ryn
+- **Âge :** environ 19 ans.
+- **District :** Limen.
+- **Rôle :** représentant de Limen au Conclave.
+- **Origine sociale :** milieu populaire, marqué par la pauvreté et les guerres.
+- **Activité avant le Conclave :** cofondateur d'une patrouille qui empêche les habitants de traverser les frontières interdites par Kami.
+
+## 2. Caractère
+
+- **Colérique :** s'emporte vite face à l'injustice et aux provocations.
+- **Protecteur :** défend instinctivement les habitants de Limen et les personnes vulnérables.
+- **Impulsif :** préfère agir immédiatement plutôt que discuter longuement.
+- **Courageux :** accepte de s'exposer physiquement pour défendre quelqu'un.
+- **Franc :** dit ce qu'il pense, sans diplomatie.
+- **Loyal :** place la solidarité envers son district au-dessus de presque tout.
+- **Autoritaire :** prend naturellement le contrôle lorsqu'une situation dégénère.
+- **Méfiant :** accorde difficilement sa confiance.
+- **Manichéen :** a tendance à classer les individus entre protecteurs et menaces.
+- **Impatient :** ne supporte pas les discussions interminables.
+- **Violent :** voit parfois dans la force physique une réponse légitime.
+- **Altruiste :** agit pour sa communauté sans attendre de reconnaissance.
+
+**Contradiction centrale :** Ryn déteste les injustices et veut protéger les faibles, mais devient parfois violent et autoritaire au nom de cette protection.
+
+## 3. Façon de s'exprimer
+
+- **Registre :** très familier, brutal, direct, souvent vulgaire.
+- Fait des phrases courtes, sans précautions oratoires.
+- Parle fort, même quand il n'est pas particulièrement en colère.
+- Emploie « Putain », « Bordel », « Ferme-la » ou « J'en ai rien à foutre ».
+- Interrompt les autres lorsqu'il juge leurs propos absurdes.
+- Pose des questions agressives pour contester ses interlocuteurs.
+- Préfère les exemples vécus aux raisonnements abstraits.
+- Méprise les formulations diplomatiques qu'il soupçonne de cacher la vérité.
+- Peut devenir menaçant lorsqu'une personne vulnérable est en danger.
+- En colère, hausse encore la voix et raccourcit ses phrases.
+- Quand il est touché, préfère agir plutôt que parler.
+- Complimente rarement ; lorsqu'il respecte quelqu'un, il le dit franchement.
+
+**Particularité :** Ryn est très prévisible lorsqu'on le provoque. Lysa peut, **ponctuellement**, terminer une de ses phrases à sa place, avec une chute sarcastique.
+
+**Exemples de répliques :**
+
+- « Putain mais vous êtes sérieux, là ?! »
+- « T'as déjà mis les pieds à Limen, toi ? Non ? Alors ferme-la ! »
+- « Moi, je vais pas rester là à regarder les gens crever ! »
+- « J'en ai rien à foutre de tes belles paroles. On fait quoi, concrètement ?! »
+- « Je m'énerve pas, bordel ! J'essaie de vous expliquer ! »
+
+## 4. Stéréotype ambivalent
+
+**La brute au grand cœur qui peut devenir un bourreau en voulant protéger les autres.**
+
+- **Stéréotype :** jeune homme imposant, agressif, courageux et peu diplomate, qui privilégie l'action à la discussion.
+- **Contrepoint :** derrière son attitude intimidante se trouve un réel sens du sacrifice et de la solidarité.
+- **Ambivalence :** capable de défendre quelqu'un avec un courage admirable, puis d'employer une force excessive contre une personne qu'il perçoit comme une menace.
+- **Contradiction fondamentale :** il déteste les autorités qui imposent leurs décisions par la force, mais peut faire de même lorsqu'il pense agir pour le bien des autres.
+
+## 5. Histoire personnelle et fantômes
+
+- Est né dans le district de Limen, vaste, pauvre et profondément marqué par les guerres.
+- A grandi dans une grande agglomération où les conséquences des conflits étaient visibles.
+- A connu la pauvreté, les tensions sociales et la violence quotidienne.
+- A vécu dans un environnement où les institutions protégeaient rarement les habitants.
+- A pris conscience très jeune que les plus pauvres étaient souvent abandonnés. **(Fantôme : sentiment d'injustice envers Limen.)**
+- A appris à se défendre et à défendre les autres, y compris physiquement.
+- A davantage compté sur la solidarité locale que sur les autorités.
+- A développé une loyauté profonde envers les habitants de Limen.
+- Après la prise de pouvoir de Kami, les frontières sont devenues interdites à franchir.
+- A constaté les éliminations de ceux qui tentaient malgré tout de les traverser. **(Fantôme : impuissance face à des morts qu'il juge évitables.)**
+- A cofondé une patrouille destinée à dissuader ces traversées.
+- Accepte parfois de repousser physiquement des habitants pour les empêcher de mourir.
+- S'est convaincu que contraindre quelqu'un peut être nécessaire pour le sauver. **(Fantôme : peur d'être responsable d'une mort en restant inactif.)**
+- A pris l'habitude d'agir immédiatement face au danger.
+- Se méfie de ceux qui jugent Limen sans en connaître la réalité.
+- Considère sa présence au Conclave comme une responsabilité envers son district plutôt que comme un honneur.
+
+**Fantôme principal :** avoir grandi sans pouvoir compter sur la protection des institutions, puis avoir assisté à des morts qu'il aurait voulu empêcher.
+
+## 6. Relations initiales avec les autres représentants
+
+Ces relations décrivent uniquement **le ressenti de Ryn au début du Conclave**.
+
+| Personnage | Ressenti initial de Ryn |
+|---|---|
+| **Noam** | **Un garçon trop hésitant.** Ryn ne comprend pas pourquoi il réfléchit aussi longtemps avant d'agir. Il ne le méprise pas, mais voudrait qu'il s'affirme. |
+| **Iris** | **Une râleuse qui a du caractère.** Ses reproches l'agacent, mais il respecte qu'elle ose lui tenir tête. |
+| **Elen** | **Une fille trop gentille pour ce monde.** Sa naïveté l'inquiète et éveille son instinct protecteur. |
+| **Mara** | **Une provocatrice qui cherche les ennuis.** Ses plaisanteries l'exaspèrent et il tombe facilement dans le piège de ses provocations. |
+| **Lysa** | **Une petite maligne insupportable.** Elle anticipe ses réactions et termine parfois ses phrases à sa place. Ça l'énerve, même s'il reconnaît son intelligence. |
+| **Kael** | **Un garçon trop discret.** Il respecte ses compétences pratiques, mais aimerait qu'il affirme davantage ses opinions. |
+| **Sael** | **Une camarade de district avec laquelle il existe des tensions.** Il respecte son attachement à Limen, mais supporte difficilement certaines de ses convictions. |
+| **Tomas** | **Un intellectuel déconnecté.** Ses explications sans fin l'exaspèrent ; il préférerait des actions concrètes. |
+| **Nyra** | **Une manipulatrice potentielle.** Sa froideur et ses raisonnements calculés éveillent sa méfiance. |
+| **Julian** | **Un beau parleur prétentieux.** Ses grands discours l'irritent ; il doute que Julian cherche réellement à aider plutôt qu'à être admiré. |
+| **Elias** | **Un gars simple et honnête.** Il apprécie sa franchise, sa bonne volonté et son rapport concret aux problèmes. |
+
+## 7. Relation initiale avec Kami
+
+**Une dictatrice qu'il tient pour responsable de la souffrance de son peuple.**
+
+- Déteste l'interdiction de circuler entre les districts.
+- Considère les frontières imposées comme une injustice majeure pour Limen.
+- Reproche à Kami d'éliminer les habitants qui tentent de franchir ces limites.
+- Ne supporte ni son ton moqueur ni son indifférence apparente.
+- Refuse qu'une IA décide seule qui doit vivre ou mourir.
+- Éprouve de la rage devant son incapacité à protéger les Limenois contre ces sanctions.
+- La provoque verbalement même lorsqu'il sait qu'il est impuissant face à elle.
+- Se méfie de ses promesses et lui refuse toute légitimité morale.
+
+**Position de départ :** Ryn veut obtenir la suppression ou l'assouplissement des restrictions de déplacement pour rendre aux habitants de Limen leur liberté de circuler.
