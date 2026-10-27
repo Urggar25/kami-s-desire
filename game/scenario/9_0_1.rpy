@@ -157,7 +157,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
     kael fatigue "Elle est revenue. Le penser dans le couloir et l'entendre ici, ce n'est pas la même chose."
 
-    iris fatigue "Personne n'a besoin qu'on le répète, mais je comprends ce que tu veux dire."
+    iris surpris "Deux jours sans rien, et là elle revient comme si de rien n'était ? Mais qu'est-ce qui s'est passé ?!"
 
     sael inquiet "Deux jours sans sa voix, puis elle revient comme si le silence n'avait jamais existé. C'est bien digne de Kami."
 
