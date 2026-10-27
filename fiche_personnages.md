@@ -913,3 +913,149 @@ Sael ne considère pas Kami comme une simple intelligence artificielle : elle la
 **Position de départ :** Sael voit en Kami une force providentielle ayant épargné à Limen la poursuite des guerres. Elle n'est pas nécessairement opposée à toute modification des Commandements, mais exige une prudence extrême.
 
 **Contradiction ultime :** elle pourrait accepter une injustice concrète au nom d'une paix sacrée, alors que son instinct maternel la pousse à protéger ceux qui en sont victimes.
+
+---
+
+# KAEL — Fiche de personnage
+
+## 1. Identité
+
+- **Prénom :** Kael
+- **Âge :** Environ 19-20 ans
+- **District :** Orbite
+- **Rôle :** Représentant d'Orbite au Conclave.
+- **Origine sociale :** Milieu technique et industriel d'Orbite.
+- **Activité avant le Conclave :** Ingénieur spécialisé dans les systèmes informatiques, les réseaux et les infrastructures critiques.
+- **Situation familiale :** Possède une petite sœur, Mira, de trois ans sa cadette.
+
+## 2. Caractère
+
+- **Introverti :** parle peu et ne recherche jamais l'attention des autres.
+- **Réservé :** exprime rarement ses émotions ou ses opinions personnelles.
+- **Observateur :** préfère écouter et analyser les comportements avant d'intervenir.
+- **Méthodique :** étudie soigneusement les conséquences de ses décisions.
+- **Prudent :** évite les risques inutiles et se méfie des initiatives improvisées.
+- **Intelligent :** possède d'excellentes capacités de raisonnement logique et technique.
+- **Compétent :** maîtrise remarquablement bien l'informatique, les réseaux et les systèmes automatisés.
+- **Anxieux :** éprouve une inquiétude permanente pour les habitants d'Orbite, particulièrement pour sa sœur.
+- **Secret :** conserve ses informations et ses préoccupations pour lui.
+- **Protecteur :** accorde une importance absolue à la sécurité de ses proches.
+- **Loyal :** peut se montrer extrêmement fiable envers les personnes ayant gagné sa confiance.
+- **Indépendant :** préfère résoudre ses problèmes seul plutôt que demander de l'aide.
+- **Perfectionniste :** supporte difficilement les erreurs techniques, particulièrement lorsqu'elles pourraient avoir des conséquences humaines.
+- **Indécis :** peut hésiter longtemps avant de prendre une décision importante, par peur de ses conséquences.
+
+**Contradiction centrale :** Kael possède les compétences nécessaires pour contourner des restrictions et prendre des initiatives audacieuses, mais sa peur de mettre sa sœur en danger l'empêche souvent d'agir.
+
+Il est capable de résoudre des problèmes extrêmement complexes, mais se retrouve paralysé lorsqu'aucune solution ne permet de protéger tout le monde.
+
+## 3. Façon de s'exprimer
+
+- **Registre :** neutre, précis, sobre et parfois technique.
+- Utilise des phrases courtes, généralement dépourvues de formulations inutiles.
+- Parle relativement lentement, après avoir réfléchi à ce qu'il souhaite dire.
+- Ne cherche jamais à combler les silences.
+- N'interrompt presque jamais les autres.
+- Ne hausse pratiquement jamais la voix.
+- Évite les plaisanteries et les provocations.
+- Répond souvent par quelques mots, même à des questions complexes.
+- Utilise un vocabulaire technique lorsqu'il aborde un sujet qu'il maîtrise.
+- Préfère signaler une erreur plutôt que critiquer personnellement celui qui l'a commise.
+- Exprime rarement ses opinions tant qu'il n'a pas évalué leurs conséquences.
+- Lorsqu'il est inquiet, devient encore plus silencieux.
+- Lorsqu'il est contrarié, peut se montrer inhabituellement froid et catégorique.
+- Lorsqu'il souhaite témoigner de l'affection, préfère rendre service plutôt que prononcer des paroles réconfortantes.
+
+**Particularité :** Kael ne considère pas les silences comme gênants. Il peut rester plusieurs secondes sans répondre, même lorsque son interlocuteur attend manifestement une réaction.
+
+Cette attitude donne parfois l'impression qu'il est indifférent ou qu'il n'écoute pas.
+
+**Exemples de répliques :**
+
+- « ... Je vais y réfléchir. »
+- « Ce n'est pas une bonne idée. »
+- « Le système présente une faille. Je peux la corriger. »
+- « Ça ne fonctionnera pas. »
+- « Sur Orbite, une erreur comme celle-là peut tuer des gens. »
+- « Je n'ai pas dit que j'étais d'accord. »
+- « ... Pour l'instant, tout va bien. »
+
+## 4. Stéréotype ambivalent
+
+**Le génie informatique silencieux qui sait tout contrôler, sauf sa propre peur.**
+
+- **Stéréotype :** jeune homme introverti, extrêmement compétent en informatique, froid et difficile à approcher.
+- **Contrepoint :** son apparente indifférence dissimule une anxiété permanente et un profond attachement à ses proches.
+- **Ambivalence :** il semble toujours maîtriser la situation lorsqu'il intervient sur un système informatique, mais perd ses moyens lorsqu'il doit prendre une décision dont les conséquences humaines sont incertaines.
+- **Contradiction fondamentale :** il cherche à protéger sa sœur de tous les dangers, mais son besoin de contrôle peut le conduire à prendre des risques qu'elle n'aurait jamais acceptés.
+
+## 5. Histoire personnelle et fantômes
+
+- Est né et a grandi dans le district d'Orbite, une installation spatiale dépendante de systèmes artificiels pour assurer la survie de ses habitants.
+- A vécu toute sa vie dans un environnement où l'oxygène, l'énergie et les systèmes de sécurité sont indispensables à chaque instant.
+- A très tôt compris qu'une simple défaillance technique pouvait provoquer une catastrophe.
+- A développé une grande sensibilité aux risques et aux conséquences des erreurs humaines. **(Fantôme : peur de provoquer involontairement une catastrophe.)**
+- S'est intéressé très jeune à l'informatique, aux réseaux et aux systèmes automatisés.
+- A progressivement développé des compétences techniques exceptionnelles.
+- S'est spécialisé dans le fonctionnement des infrastructures critiques et les moyens de les sécuriser.
+- A appris à diagnostiquer des problèmes techniques complexes et à identifier les failles des systèmes.
+- A grandi avec sa petite sœur Mira, de trois ans sa cadette.
+- A développé envers elle un instinct protecteur particulièrement puissant.
+- Sa sœur possède un caractère indépendant et débrouillard, ce qui provoque régulièrement des inquiétudes chez Kael.
+- A pris l'habitude de surveiller discrètement sa sécurité et de lui rappeler régulièrement de faire attention.
+- Après la prise de pouvoir de Kami, les habitants d'Orbite ont été soumis à des sanctions particulièrement dangereuses.
+- Chaque infraction aux Commandements commise sur Orbite peut entraîner une attaque contre les systèmes d'oxygénation de la station.
+- A été confronté aux conséquences mortelles de ces sanctions collectives. **(Fantôme : peur permanente de voir les habitants mourir à cause d'une décision individuelle.)**
+- A progressivement développé une anxiété chronique concernant la sécurité des infrastructures et des habitants d'Orbite.
+- A mis en place un système discret de surveillance des installations afin d'être informé rapidement d'une éventuelle anomalie.
+- A pris l'habitude de consulter régulièrement les données techniques concernant Orbite.
+- Supporte difficilement d'être éloigné de sa sœur. **(Fantôme : peur de ne pas pouvoir la protéger au moment où elle aurait besoin de lui.)**
+- Considère sa désignation au Conclave comme une responsabilité écrasante plutôt que comme un honneur.
+- Redoute que ses propres décisions puissent indirectement mettre sa sœur et les autres habitants d'Orbite en danger.
+
+**Fantôme principal :** la peur de perdre sa sœur à cause d'un événement qu'il aurait pu anticiper ou empêcher.
+
+Kael a grandi dans un environnement où la moindre erreur technique pouvait entraîner des conséquences mortelles.
+
+Depuis la prise de pouvoir de Kami, cette peur s'est transformée en obsession : il veut constamment surveiller et contrôler les risques pour empêcher une catastrophe.
+
+## 6. Relations initiales avec les autres représentants
+
+Ces relations décrivent uniquement **le ressenti de Kael au début du Conclave**.
+
+| Personnage | Ressenti initial de Kael |
+|---|---|
+| **Noam** | **Un observateur discret.** Il apprécie que Noam ne cherche pas constamment à attirer l'attention. Il remarque néanmoins ses hésitations et sa tendance à éviter les confrontations. Il pourrait facilement s'entendre avec lui. |
+| **Iris** | **Une fille compétente, mais épuisante.** Il reconnaît son intelligence et apprécie sa capacité à résoudre les problèmes. Ses plaintes permanentes l'agacent cependant, même s'il ne le montre pas. |
+| **Elen** | **Une présence bienveillante.** Il apprécie sa gentillesse et ses attentions, mais se sent parfois embarrassé lorsqu'elle insiste pour savoir comment il va. |
+| **Mara** | **Une fille provocatrice avec laquelle il n'a pas grand-chose en commun.** Il comprend mal son besoin constant de plaisanter et de séduire. Ses provocations le laissent généralement indifférent, ce qui peut frustrer Mara. |
+| **Lysa** | **Une observatrice perspicace.** Il reconnaît son intelligence et sa capacité à identifier les contradictions des autres. Son sarcasme l'intéresse peu, mais il apprécie qu'elle ne se laisse pas facilement manipuler. |
+| **Ryn** | **Un garçon beaucoup trop impulsif.** Il comprend son désir de protéger Limen, mais considère que son agressivité risque de provoquer des catastrophes. Il évite généralement de le contredire inutilement. |
+| **Sael** | **Une femme calme, mais irrationnelle.** Il apprécie sa sérénité, mais ne comprend pas son attachement aux présages et aux traditions. Il se méfie particulièrement de sa confiance envers Kami. |
+| **Tomas** | **Un interlocuteur intellectuellement intéressant.** Il apprécie ses connaissances et son goût du raisonnement. Il regrette cependant qu'il parle autant et qu'il transforme parfois une simple question en conférence. |
+| **Nyra** | **Une collègue fiable.** Il apprécie son intelligence, sa rigueur et sa capacité à analyser froidement les situations. Leur origine commune favorise une certaine compréhension mutuelle, même s'ils ne partagent pas toujours les mêmes conclusions. |
+| **Julian** | **Un homme trop préoccupé par son image.** Ses grands discours et son besoin de reconnaissance l'indiffèrent. Il préfère juger ses propositions sur leur efficacité plutôt que sur leur présentation. |
+| **Elias** | **Un garçon sympathique et sincère.** Elias lui parle beaucoup, parfois sans obtenir de réponse. Kael apprécie progressivement sa simplicité et le fait qu'il ne cherche pas constamment à interpréter ses silences. |
+
+## 7. Relation initiale avec Kami
+
+**Une menace permanente pour la sécurité de sa sœur et des habitants d'Orbite.**
+
+- Considère Kami comme une intelligence artificielle extrêmement dangereuse en raison des sanctions collectives qu'elle applique.
+- Lui reproche particulièrement d'attaquer les systèmes d'oxygénation d'Orbite lorsqu'un habitant enfreint les Commandements.
+- Estime que ces sanctions font peser une responsabilité injuste sur l'ensemble de la population.
+- Reconnaît ses capacités technologiques extraordinaires et comprend qu'il serait imprudent de la sous-estimer.
+- Évite de la provoquer directement.
+- Cherche à comprendre les limites de ses systèmes afin d'anticiper d'éventuelles menaces.
+- Se méfie de ses déclarations et préfère vérifier les informations lorsqu'il en a la possibilité.
+- Redoute qu'une opposition frontale des représentants entraîne des représailles sur Orbite.
+- Considère que les décisions du Conclave doivent impérativement prendre en compte la sécurité des habitants de sa station.
+- Peut être tenté de privilégier une solution techniquement sûre, même lorsqu'elle présente des conséquences politiques ou morales discutables.
+
+**Position de départ :** Kael ne cherche pas à défier Kami par principe.
+
+Il souhaite avant tout éviter que ses décisions ne mettent en danger sa sœur et les autres habitants d'Orbite.
+
+Il peut soutenir une modification des Commandements, mais seulement s'il estime que les risques pour sa station sont acceptables.
+
+**Contradiction ultime :** Kael possède les compétences nécessaires pour contourner certaines restrictions de Kami, mais chaque initiative clandestine représente potentiellement un danger pour les personnes qu'il cherche précisément à protéger.
