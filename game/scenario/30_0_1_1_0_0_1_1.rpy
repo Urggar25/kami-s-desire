@@ -101,7 +101,7 @@ label _30_0_1_1_0_0_1_1_RETOUR:
     dg_noam fatigue "Je sais pas encore. Je vais trouver. T'occupe pas de moi maintenant, la navette va pas t'attendre."
     noam neutre "Merci. Pour m'avoir laissé décider."
     dg_noam neutre "Attends mon signal avant de sortir. Je dois finir ce que je t'ai dit dans les conduits. Après, tu pourras passer sans qu'on se retrouve face à face."
-    "Je patiente jusqu'à ce qu'un bref message apparaisse sur le terminal près de la porte : « C'est bon. »"
+    "Il ressort par la grille, puis j'attends quelques minutes dans la chambre. Quand j'entends deux petits coups contre la tôle, je sais qu'il a terminé et que le passage est libre."
     dg_noam neutre "Ouais. Allez, file."
     $ hideGroup()
     jump _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR
