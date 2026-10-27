@@ -847,7 +847,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
 
     elias inquiet "Si quelqu'un tabasse son voisin derrière un brouilleur, Kami voit rien. C'est tout ce que je dis."
 
-    iris colere "Kami ne protège personne, Elias. Elle détecte une bagarre et elle exécute celui qu'elle a décidé coupable."
+    iris colere "Elias, elle décide toute seule qui est coupable et elle le tue. Ça te rassure, toi ?"
 
     elias inquiet "Je sais. Mais la personne derrière le brouilleur, elle, peut toujours se faire frapper."
 
