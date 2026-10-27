@@ -37,6 +37,7 @@ label _30_0_1_1_0_0_1_1_DOUBLE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.27), ("dg_noam", "neutre", 0.73)])
     dg_noam neutre "Salut... Désolé de débarquer comme ça, mais je voulais te voir avant qu'on parte. Je peux entrer ?"
+    dg_noam reflexion "Et avant qu'on échange nos places, je dois encore régler un truc dans les conduits. Je te dirai quand c'est fait. Ça nous évitera de nous croiser au mauvais endroit."
     noam reflexion "Ouais. Vas-y."
     "Il entre et pose son sac près de la porte, puis il regarde mon lit comme s'il hésitait à s'asseoir."
     dg_noam inquiet "Bon... je sais pas si t'as pris une décision. Zero m'a rien dit, et je veux pas te mettre la pression. Je voulais juste savoir ce que tu comptes faire."
@@ -89,12 +90,18 @@ label _30_0_1_1_0_0_1_1_RETOUR:
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "fatigue", 0.27), ("dg_noam", "inquiet", 0.73)])
     noam raison "Je vais rentrer. J'ai promis à Juliette que je serais là, et j'arrive pas à me dire que je vais encore lui faire faux bond."
-    dg_noam fatigue "D'accord... Ouais. Je m'en doutais un peu."
+    dg_noam fatigue "D'accord... Je m'en doutais un peu. Mais ça fait mal quand même."
+    dg_noam agace "J'ai passé ces journées avec Iris. J'ai envie de rentrer avec elle. Une partie de moi espérait que tu me laisserais partir, tu vois ?"
+    noam inquiet "Ouais. Je sais."
+    dg_noam fatigue "Et puis je pense à Juliette. Je peux pas te demander de lui mentir, ni de manquer ta promesse à cause de moi."
+    "Il baisse les yeux quelques secondes, visiblement déçu."
     noam inquiet "Je suis désolé pour Iris. Je sais que t'as vraiment envie de la revoir."
     dg_noam raison "C'est pas grave. Enfin, si, ça me fait chier, évidemment. Mais c'était le risque quand on a échangé nos places."
     noam reflexion "Tu vas faire quoi, alors ?"
     dg_noam fatigue "Je sais pas encore. Je vais trouver. T'occupe pas de moi maintenant, la navette va pas t'attendre."
     noam neutre "Merci. Pour m'avoir laissé décider."
+    dg_noam neutre "Attends mon signal avant de sortir. Je dois finir ce que je t'ai dit dans les conduits. Après, tu pourras passer sans qu'on se retrouve face à face."
+    "Je patiente jusqu'à ce qu'un bref message apparaisse sur le terminal près de la porte : « C'est bon. »"
     dg_noam neutre "Ouais. Allez, file."
     $ hideGroup()
     jump _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR
@@ -106,6 +113,7 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR:
     $ showGroup([("mara", "neutre", 0.17), ("kael", "calme", 0.49), ("noam", "fatigue", 0.82)])
     kael inquiet "Noam ? T'étais où ? On t'attendait. Tu fais quoi, là ?"
     noam raison "Je rentre chez moi. Je prends la navette."
+    think "Ils croient toujours que je suis le double. S'ils comprennent que je leur ai menti tout ce temps, je sais pas comment ils réagiront. Pas question de leur donner une raison de me retenir maintenant."
     mara surpris "Attends, tu rentres ? Et ton original, t'en fais quoi ?"
     noam hesitation "Je... je me débrouille."
     mara agace "Tu te débrouilles ? Putain, c'est pas une réponse !"
@@ -149,6 +157,7 @@ label _30_0_1_1_0_0_1_1_KEYPER:
     $ showGroup([("noam", "fatigue", 0.27), ("dg_noam", "inquiet", 0.73)])
     noam raison "Je vais sur Keyper. Tu peux rentrer sur Terre à ma place."
     dg_noam surpris "T'es sérieux ?"
+    dg_noam fatigue "Je vais pas te cacher que j'espérais ça. Mais si tu changes d'avis pour Juliette, je te laisserai rentrer. Je veux pas te voler ta promesse."
     noam fatigue "Ouais. Je sais pas du tout comment je vais m'en sortir là-bas, mais je peux pas laisser tous ces gens sans même essayer."
     dg_noam inquiet "Et Juliette ?"
     noam raison "C'est justement ce dont je voulais te parler. Tu te souviens de sa promesse pour son anniversaire ?"
