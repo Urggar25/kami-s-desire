@@ -278,3 +278,106 @@ Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution 
 - Reconnaît cependant, sans forcément vouloir s'y attarder, que l'arrivée de Kami a précipité le départ de ses parents et lui a laissé une indépendance nouvelle.
 
 **Position de départ :** Mara ne cherche pas à combattre Kami par conviction politique. Elle veut avant tout profiter de sa liberté et ne plus laisser qui que ce soit décider de sa vie à sa place.
+
+---
+
+# ELIAS
+
+## 1. Identité
+
+- **Prénom :** Elias
+- **Âge :** environ 19 ans.
+- **District :** Axiome.
+- **Rôle :** représentant d'Axiome au Conclave.
+- **Origine sociale :** milieu populaire et ouvrier.
+
+## 2. Caractère
+
+- **Maladroit :** renverse, casse ou fait tomber des objets, parfois au pire moment.
+- **Enthousiaste :** réagit avec une énergie spontanée, même lorsqu'il ne comprend pas tout.
+- **Naïf :** accorde facilement sa confiance et peine à imaginer des intentions cachées.
+- **Franc :** dit ce qu'il pense sans toujours mesurer les conséquences de ses paroles.
+- **Travailleur :** apprécie les activités manuelles et possède un véritable savoir-faire technique.
+- **Loyal :** s'attache sincèrement aux personnes qui lui témoignent de l'amitié.
+- **Peu cultivé :** connaît mal la politique et l'histoire, sans être incapable d'apprendre.
+- **Concret :** raisonne surtout à partir de faits vécus plutôt que de principes abstraits.
+- **Complexé :** sait qu'on le prend parfois pour un idiot et veut montrer qu'il est capable.
+- **Optimiste :** croit volontiers que l'effort et la bonne volonté peuvent arranger les choses.
+
+**Contradiction centrale :** Elias est sincèrement bienveillant, mais son manque de recul peut l'amener à défendre des décisions profondément injustes.
+
+## 3. Façon de s'exprimer
+
+- **Registre :** très familier, populaire et spontané.
+- Emploie des phrases courtes, simples, parfois répétitives.
+- Utilise des contractions : « J'sais pas », « T'as vu », « J'comprends pas ».
+- Répète ses arguments quand il peine à se faire comprendre.
+- Parle parfois avant d'avoir fini de réfléchir.
+- Interrompt involontairement les autres pour poser une question.
+- Emploie volontiers « Putain », « Merde », « Wesh », « Franchement ».
+- Ne cherche pas à impressionner par son vocabulaire et ne change guère son registre selon son interlocuteur.
+- Préfère les exemples pratiques aux grands principes.
+- Quand il est embarrassé, se justifie beaucoup et peut tourner en rond.
+- Quand il est profondément triste, devient plus silencieux et peine à trouver ses mots.
+
+**Particularité :** Elias peut poser une question très naïve au beau milieu d'une discussion politique particulièrement grave. Son langage décontracté contraste avec son apparence toujours soignée.
+
+## 4. Stéréotype ambivalent
+
+**Le gentil idiot qui comprend parfois l'essentiel mieux que les intellectuels.**
+
+- **Stéréotype :** jeune homme sympathique, maladroit et peu instruit, souvent comique sans le vouloir.
+- **Contrepoint :** il possède une excellente intelligence pratique et une véritable compétence professionnelle.
+- **Ambivalence :** il peut passer à côté d'un raisonnement politique tout en identifiant immédiatement un problème concret.
+- **Contradiction fondamentale :** son désir de protéger les gens l'amène à soutenir une autorité qui peut aussi leur faire du mal.
+
+## 5. Histoire personnelle et fantômes
+
+- A grandi dans un quartier populaire du district industriel d'Axiome.
+- A connu les tensions entre quartiers, bandes et districts avant Kami.
+- Son père est mort lors d'un conflit entre districts. **(Fantôme : deuil de son père.)**
+- A longtemps vécu avec la crainte de la violence et de l'insécurité. **(Fantôme : peur du retour au chaos.)**
+- A vu la sécurité s'améliorer après la prise de pouvoir de Kami.
+- En a conçu une reconnaissance sincère envers elle, qu'il associe à la fin des violences.
+- A évolué dans un environnement largement favorable à Kami, dont il questionne peu les opinions.
+- Travaille volontairement dans les usines d'Axiome.
+- Possède un talent réel pour les tâches manuelles, malgré sa maladresse dans la vie quotidienne.
+- Est connu dans son quartier pour sa bonne volonté et son goût du travail.
+- A été moqué pour ses maladresses et ses difficultés à suivre certains raisonnements. **(Fantôme : peur d'être jugé incapable.)**
+- Accorde une grande importance à des vêtements propres et soignés, comme marque de dignité.
+- Tire sa fierté de son travail et de ce qu'il parvient à accomplir. **(Fantôme : peur d'être inutile lorsqu'il ne peut rien faire de concret.)**
+
+**Fantôme principal :** la mort de son père dans les violences de l'ancien monde. Elias redoute qu'un rejet de Kami ramène les conditions qui ont détruit sa famille.
+
+## 6. Relations initiales avec les autres représentants
+
+Le tableau décrit **le ressenti d'Elias au début du Conclave**, sans anticiper les routes.
+
+| Personnage | Ressenti initial d'Elias |
+|---|---|
+| **Noam** | **Un copain accessible.** Il apprécie son attitude simple et le fait qu'il ne cherche pas constamment à lui donner des leçons. Il plaisante facilement avec lui. |
+| **Iris** | **Une râleuse qui lui fait un peu peur.** Il redoute ses remarques après une bêtise, mais se sent rassuré par ses compétences de soigneuse. |
+| **Elen** | **Une fille adorable.** Sa gentillesse le met à l'aise et son enthousiasme lui plaît. |
+| **Mara** | **Une fille de son district qu'il trouve intimidante.** Il connaît sa réputation, aimerait se rapprocher d'elle et comprend mal pourquoi elle le tient à distance. |
+| **Lysa** | **Une fille trop savante pour lui.** Ses références lui passent souvent au-dessus de la tête ; il la trouve amusante quand ses piques ne le visent pas. |
+| **Kael** | **Un collègue bricoleur.** Il respecte ses compétences et aime parler de machines avec quelqu'un qui s'y connaît. |
+| **Ryn** | **Un gros dur impressionnant.** Ses colères l'intimident, même s'il admire sa force et son assurance. |
+| **Sael** | **Une fille étrange, mais respectable.** Il ne comprend pas bien ses traditions, mais apprécie son pragmatisme et ses compétences physiques. |
+| **Tomas** | **Un génie incompréhensible.** Il admire ses connaissances, même s'il lui demande fréquemment de simplifier. |
+| **Nyra** | **Une femme impressionnante.** Son intelligence et son calme l'intimident ; il lui fait facilement confiance, parfois sans avoir compris son raisonnement. |
+| **Julian** | **Un type qui en fait beaucoup trop.** Ses grands discours l'impressionnent au début, mais son besoin d'attention le déconcerte. |
+
+## 7. Relation initiale avec Kami
+
+**Une protectrice envers laquelle il éprouve une reconnaissance sincère.**
+
+- Considère Kami comme responsable de l'amélioration de la sécurité à Axiome.
+- Lui attribue la disparition des violences qui marquaient son quotidien.
+- Estime que les Commandements ont sauvé des vies.
+- Comprend mal pourquoi certains représentants lui sont si hostiles.
+- Défend Kami avec des exemples vécus, sans chercher à justifier philosophiquement son pouvoir.
+- N'a pas le sentiment d'être personnellement opprimé par des règles qui ont rendu son quartier plus sûr.
+- Peut reconnaître des défauts au système, mais considère qu'ils sont un prix à payer pour préserver la paix.
+- Respecte spontanément Kami et lui accorde une légitimité importante.
+
+**Position de départ :** Elias est sincèrement favorable à Kami. À ses yeux, son père est mort dans un monde violent ; depuis l'arrivée de Kami, cette violence a reculé. Il refuse de perdre cette paix.
