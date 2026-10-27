@@ -447,7 +447,7 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
     noam reflexion "Pourquoi t'as trois fois le texte ?"
 
-    tomas raison "C'est pas exactement trois fois le même document. À gauche, c'est la proposition originale déposée. Au milieu, la version enregistrée par Kami après le tirage au sort. À droite, c'est une retranscription que j'ai faite moi-même pour vérifier s'il y avait une différence de formulation."
+    tomas raison "Non, attends, c'est pas trois fois pareil. Là, c'est le texte déposé. Au milieu, celui que Kami a enregistré. Et le dernier, c'est moi qui l'ai recopié pour comparer. Enfin... pour vérifier les mots."
 
     noam reflexion "Et il y en a une ?"
 
