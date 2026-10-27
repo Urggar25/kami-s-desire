@@ -282,6 +282,17 @@ label decouverte_gymnase:
 
     noam sourire "Merci docteur."
 
+    "Elias se penche sur le panneau d'une machine et appuie sur plusieurs touches."
+    elias content "Attends, je vais te montrer. Ça se règle facilement, ce truc."
+    "Le tapis roulant se met brusquement à accélérer. Elias se redresse d'un coup."
+    elias panique "Oh, merde ! Non, c'est pas ça !"
+    noam surpris "Euh... Elias ?!"
+    "Il appuie sur une touche. Rien. Il trouve enfin le bouton d'arrêt et le tapis ralentit."
+    elias gene "Putain... Je voulais juste régler la vitesse."
+    noam taquin "T'es sûr que tu connais la machine ?"
+    elias rire "Maintenant, oui. Je sais surtout quel bouton pas toucher."
+    "Je me mets à rire. Elias aussi, après une seconde."
+
     "Il souffle du nez."
     "Ça ressemble presque à un vrai rire."
 
