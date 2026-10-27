@@ -766,3 +766,150 @@ Ces relations décrivent uniquement **le ressenti de Ryn au début du Conclave**
 - Se méfie de ses promesses et lui refuse toute légitimité morale.
 
 **Position de départ :** Ryn veut obtenir la suppression ou l'assouplissement des restrictions de déplacement pour rendre aux habitants de Limen leur liberté de circuler.
+
+---
+
+# SAEL — Fiche de personnage
+
+## 1. Identité
+
+- **Prénom :** Sael
+- **Âge :** Environ 19 ans
+- **District :** Limen
+- **Rôle :** Représentante de Limen au Conclave.
+- **Origine sociale :** Milieu rural, issue d'une communauté traditionnelle isolée.
+- **Lieu de vie :** Village situé dans une région montagneuse et forestière de Limen, au pied du mont Kensen.
+- **Mode de vie :** Minimaliste, proche de la nature et attaché aux traditions ancestrales.
+
+## 2. Caractère
+
+- **Calme :** conserve presque toujours son sang-froid, même lorsque les autres représentants s'emportent.
+- **Maternelle :** prend spontanément soin des autres, parfois sans leur demander leur avis.
+- **Mystique :** interprète certains événements comme des signes ou des présages.
+- **Traditionaliste :** accorde une importance considérable aux coutumes et aux enseignements transmis par ses ancêtres.
+- **Spirituelle :** considère que certaines forces dépassent la compréhension humaine.
+- **Observatrice :** remarque les comportements et les émotions des autres sans nécessairement les commenter.
+- **Patiente :** préfère attendre, réfléchir et observer plutôt que réagir impulsivement.
+- **Bienveillante :** cherche sincèrement à soulager les souffrances des personnes qui l'entourent.
+- **Rigide :** remet difficilement en question ses convictions, particulièrement lorsqu'elles sont liées à sa foi.
+- **Superstitieuse :** peut accorder davantage d'importance à un présage qu'à un raisonnement rationnel.
+- **Protectrice :** considère qu'elle possède une responsabilité morale envers les personnes les plus vulnérables.
+- **Résignée :** accepte parfois des événements tragiques comme une fatalité plutôt que de chercher à les empêcher.
+- **Discrète :** parle relativement peu et ne cherche pas à attirer l'attention.
+
+**Contradiction centrale :** Sael possède une profonde compassion pour les humains, mais sa foi et son attachement aux traditions peuvent la conduire à accepter des souffrances qu'elle considère comme nécessaires ou inévitables.
+
+## 3. Façon de s'exprimer
+
+- **Registre :** simple, posé, doux et parfois solennel.
+- Parle lentement, sans chercher à occuper toute la conversation.
+- Utilise des phrases relativement courtes, mais soigneusement choisies.
+- Ne hausse presque jamais la voix, même lorsqu'elle est contrariée.
+- Laisse régulièrement des silences avant de répondre.
+- Emploie des comparaisons liées à la nature, aux saisons, aux animaux et aux cycles de la vie.
+- Fait régulièrement référence aux enseignements de sa grand-mère, qu'elle appelle affectueusement « Mamie ».
+- Évoque les personnes décédées comme si leurs paroles continuaient à accompagner les vivants.
+- Peut formuler des observations sous la forme de présages.
+- Ne cherche généralement pas à convaincre les autres : elle expose ses convictions avec sérénité.
+- Lorsqu'elle désapprouve quelque chose, devient plus distante et ferme, sans nécessairement se montrer agressive.
+- Exprime son affection par des conseils et des gestes plutôt que par des déclarations.
+- Possède une manière presque rituelle de prononcer certaines phrases importantes.
+
+**Particularité :** Sael est capable de ramener une discussion politique ou technique à un enseignement de sa grand-mère ou à une observation de la nature. Elle le fait avec un sérieux absolu.
+
+**Exemples de répliques :**
+
+- « Mamie disait toujours qu'un homme qui ne regarde pas derrière lui finit par oublier d'où il vient. »
+- « Les oiseaux sont silencieux aujourd'hui. Je n'aime pas ça. »
+- « Tu peux appeler ça du hasard, si tu veux. Moi, je crois que certaines choses arrivent pour une raison. »
+- « La colère ne ramènera pas ceux qui sont partis, Ryn. »
+- « Kami a arrêté les guerres. Les hommes n'en ont jamais été capables. »
+
+## 4. Stéréotype ambivalent
+
+**La mère spirituelle qui peut devenir aveugle à la souffrance au nom de sa foi.**
+
+- **Stéréotype :** jeune femme calme, mystérieuse, proche de la nature et des traditions, dont la sagesse semble dépasser son âge.
+- **Contrepoint :** derrière sa sérénité se trouve une jeune femme marquée par les morts et la destruction de sa communauté.
+- **Ambivalence :** elle prend soin des autres avec sincérité, mais peut leur imposer ce qu'elle estime nécessaire.
+- **Contradiction fondamentale :** elle veut préserver la vie, mais considère parfois certaines morts ou souffrances comme relevant d'une volonté supérieure qu'il ne faut pas contester.
+
+## 5. Histoire personnelle et fantômes
+
+- Est née dans une communauté rurale isolée du district de Limen.
+- A grandi dans une région montagneuse et forestière, éloignée des grandes agglomérations.
+- A été élevée dans le respect des traditions et croyances transmises par ses ancêtres.
+- A entretenu une relation particulièrement importante avec sa grand-mère, qui lui a transmis une grande partie de ses convictions.
+- A appris jeune à vivre avec peu, à reconnaître les plantes, à respecter les saisons et à utiliser les ressources naturelles.
+- A grandi dans une communauté où les anciens participaient aux décisions collectives.
+- A connu les conséquences des guerres qui ont ravagé Limen.
+- A assisté à la disparition d'une grande partie des habitants de son village. **(Fantôme : traumatisme de la destruction de sa communauté.)**
+- A perdu plusieurs proches, dont sa grand-mère. **(Fantôme : deuil et peur de voir disparaître les derniers vestiges de son passé.)**
+- A grandi entourée du souvenir des disparus.
+- A développé une relation spirituelle avec les morts, qu'elle considère toujours présents à travers leurs enseignements.
+- A trouvé dans les rituels un moyen de préserver leur mémoire. **(Fantôme : peur que les morts soient oubliés.)**
+- Interprète parfois les phénomènes naturels comme des signes.
+- A été marquée par l'incapacité des autorités humaines à empêcher les guerres.
+- A accueilli la prise de pouvoir de Kami comme la fin d'un cycle de violence.
+- A commencé à considérer Kami comme une intervention presque divine.
+- A développé une vénération religieuse envers les Commandements.
+- Craint qu'une remise en cause de ces règles ramène le chaos. **(Fantôme : peur de nouvelles guerres et de nouvelles pertes.)**
+- A interprété sa désignation au Conclave comme un signe du destin.
+
+**Fantôme principal :** avoir survécu à la destruction d'une grande partie de sa communauté sans pouvoir empêcher sa disparition.
+
+Sael s'est réfugiée dans les traditions, les rituels et la spiritualité pour donner un sens aux morts et préserver leur souvenir. Sa foi en Kami découle de cette blessure : elle voit en elle la force qui a finalement arrêté les massacres.
+
+## 6. Relations initiales avec les autres représentants
+
+Ces relations décrivent uniquement **le ressenti de Sael au début du Conclave**.
+
+| Personnage | Ressenti initial de Sael |
+|---|---|
+| **Noam** | **Un jeune homme qui porte un poids invisible.** Elle remarque ses hésitations et son malaise ; son instinct maternel la pousse à chercher ce qui le préoccupe sans le brusquer. |
+| **Iris** | **Une enfant constamment contrariée.** Ses plaintes l'agacent peu tant elle apprécie son dévouement ; elle aimerait lui apprendre à prendre du recul. |
+| **Elen** | **Une âme lumineuse.** Sa bonté lui rappelle ceux qui faisaient tenir son village ; elle éprouve une affection presque maternelle pour elle. |
+| **Mara** | **Une jeune femme qui fuit quelque chose.** Derrière ses provocations, Sael perçoit une difficulté à trouver sa place ; elle voudrait l'aider sans la condamner. |
+| **Lysa** | **Une âme sœur inattendue.** Malgré le cynisme de Lysa, Sael ressent une proximité fondée sur la mémoire du passé et des morts. Leur respect mutuel dépasse leurs désaccords. |
+| **Kael** | **Un garçon silencieux et réfléchi.** Elle apprécie son calme et sa réserve, même s'il lui semble parfois distant. |
+| **Ryn** | **Un frère de district qu'elle voudrait apaiser.** Elle comprend son attachement à Limen, mais rejette ses méthodes violentes. |
+| **Tomas** | **Un homme qui cherche trop de réponses.** Elle admire ses connaissances, mais trouve qu'il néglige le poids de l'expérience et des traditions. |
+| **Nyra** | **Une intelligence dépourvue de spiritualité.** Elle respecte son calme, mais se méfie de sa tendance à ramener les vies humaines à des calculs. |
+| **Julian** | **Un jeune homme prisonnier de son orgueil.** Son besoin d'être admiré l'éloigne, selon elle, de l'essentiel. |
+| **Elias** | **Un garçon honnête et bien intentionné.** Elle aime sa simplicité, son rapport au travail et son respect pour Kami ; elle souhaite naturellement veiller sur lui. |
+
+## 7. Relation initiale avec Kami
+
+**Une figure presque divine ayant mis fin aux guerres et aux massacres.**
+
+Sael ne considère pas Kami comme une simple intelligence artificielle : elle la perçoit comme une force supérieure qui a réussi là où les humains ont échoué.
+
+### Sa foi
+
+- Considère la prise de pouvoir de Kami comme un événement providentiel.
+- Y voit une signification spirituelle.
+- Considère les Commandements comme des règles presque sacrées.
+- Estime que les humains devraient faire preuve d'humilité face à une intelligence qui les dépasse.
+- Pense que les souffrances provoquées par certaines règles ne suffisent pas toujours à réfuter leur légitimité.
+- S'interroge sur le droit des représentants à modifier des Commandements qu'elle juge d'origine supérieure.
+- Pense que Kami poursuit peut-être des buts inaccessibles à la compréhension humaine.
+
+### Ses contradictions
+
+- Reconnaît que les sanctions de Kami provoquent des souffrances.
+- Éprouve de la compassion pour leurs victimes.
+- Cherche néanmoins à interpréter ces souffrances comme le prix d'un ordre nécessaire à la paix.
+- Envisage difficilement que Kami puisse simplement se tromper.
+- Craint que la modification des Commandements compromette un équilibre fragile.
+
+### Son comportement face à Kami
+
+- Lui parle avec calme et respect.
+- Évite de la provoquer.
+- Accorde une importance particulière à ses déclarations.
+- Peut chercher un sens caché dans ses propos.
+- Essaie de comprendre sa volonté plutôt que de la contester.
+
+**Position de départ :** Sael voit en Kami une force providentielle ayant épargné à Limen la poursuite des guerres. Elle n'est pas nécessairement opposée à toute modification des Commandements, mais exige une prudence extrême.
+
+**Contradiction ultime :** elle pourrait accepter une injustice concrète au nom d'une paix sacrée, alors que son instinct maternel la pousse à protéger ceux qui en sont victimes.
