@@ -151,7 +151,7 @@ label decouverte_salle_canon:
     noam surpris "Hein ?"
 
     ryn neutre "Mon prénom."
-    ryn neutre "On est deux dans une salle avec une arme géante, autant faire ça propre."
+    ryn neutre "Tant qu'à être coincés ici, autant savoir comment tu t'appelles."
 
     noam sourire "Noam."
 
@@ -175,8 +175,8 @@ label decouverte_salle_canon:
     "Pas trop."
     "Juste assez pour voir le fond de la fosse."
 
-    ryn reflechit "Ils l’ont mis au centre comme on expose un trophé."
-    ryn reflechit "Comme un rappel."
+    ryn reflechit "Ils ont même pas essayé de le cacher."
+    ryn reflechit "Comme si on risquait d'oublier ce truc."
 
     noam reflexion "Un rappel de quoi ?"
 
