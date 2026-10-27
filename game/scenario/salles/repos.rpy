@@ -224,8 +224,8 @@ label decouverte_salle_repos:
     ])
 
     julian sourire "Hey."
-    julian sourire "On a survécu à trois réunions ensemble."
-    julian sourire "Ça crée des liens, inévitablement."
+    julian sourire "On s'est déjà tapé trois réunions ensemble."
+    julian sourire "Forcément, ça rapproche."
 
     iris taquin "Crois moi, ça crée surtout des migraines."
 
@@ -252,10 +252,10 @@ label decouverte_salle_repos:
     "Il marque encore."
 
     julian joie "Voilà."
-    julian joie "Le Conclave peut attendre."
+    julian joie "Allez, encore une partie !"
 
     iris inquiet "Non."
-    iris inquiet "T'as beau dire qu'il attendra, ça m'étonnerait que Kami change les règles pour tes beaux yeux."
+    iris inquiet "Tu crois vraiment que Kami va attendre que t'aies fini ton baby-foot ?"
     
     julian taquin "Même toi tu confirmes que j'ai des beaux yeux."
     
