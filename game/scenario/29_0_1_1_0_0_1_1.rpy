@@ -161,6 +161,11 @@ label _29_0_1_1_0_0_1_1_APRES_SERINGUE:
     noam inquiet "Sa grille est toujours accessible, alors ?"
     mara neutre "Oui, comme celles des autres garçons. C'est par là qu'on passera."
     sael raison "Alors on y va. Et pas un mot dans les couloirs."
+    "Pendant que Mara récupère sa lampe, je sors discrètement ma tablette et ouvre la messagerie."
+    think "S'il est encore réveillé, il peut au moins se barrer."
+    call messenger_play("julian", "julian", [("noam", "Julian, réveille-toi. C'est sérieux. Ne reste pas dans ta chambre."), ("noam", "Réponds-moi, putain.")], objective_text="Prévenir Julian")
+    "J'attends quelques secondes. Aucun message en retour. Mara me fait signe d'avancer."
+    think "Allez, Julian... regarde ta tablette."
     $ hideGroup()
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
     $ flashlight_on(0)
