@@ -163,7 +163,7 @@ label decouverte_stockage:
     noam reflexion "Avec trois tournevis et une boîte de pansements."
 
     nyra rire "Ouais. Moi j'avais imaginé une armoire qui ferme à clé ou un truc du genre."
-    nyra rire "Et un petit mot du style : 'demander gentiment'."
+    nyra rire "Et qu'on nous ferait remplir un papier pour prendre une vis."
 
     "Elle désigne la salle du menton."
 
@@ -199,14 +199,14 @@ label decouverte_stockage:
 
     noam taquin "Tu fais quoi, du coup ? Du shopping ?"
 
-    nyra sourire "Je regarde ce qu’ils ont laissé traîner."
-    nyra sourire "Parce que si y'a un problème… C'est mieux de le savoir avant d'en avoir besoin."
+    nyra sourire "Je fais l'inventaire, en gros."
+    nyra sourire "Si un truc tombe en panne, je préfère savoir où trouver le matériel."
 
-    nyra taquin "Et la bonne nouvelle c'est qu'on trouve vraiment tout ! C'est une vraie montagne de trésor !"
+    nyra taquin "Au moins, ils ont prévu pas mal de trucs. Ça peut servir."
 
     noam raison "J'imagine que vous faites toujours ça sur Orbite. Prévoir la panne avant la panne."
 
-    nyra taquin "Merci. On a une réputation à tenir."
+    nyra taquin "Disons que ça évite les mauvaises surprises."
 
     pause 0.3
 
