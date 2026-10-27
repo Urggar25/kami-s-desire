@@ -230,6 +230,15 @@ label decouverte_sas:
     mara sourire "Au moins, si y a un problème, je saurai où aller."
     mara taquin "Parce que ça finira bien par merder quelque part."
 
+    noam hesitation "Ça te fait pas peur, quand même ? De rester bloquée ici un mois ?"
+    mara rire "Moi ? Oh non, je suis ravie. Des portes blindées, zéro moyen de rentrer chez moi... Le rêve."
+    noam reflexion "Non, je te demande vraiment."
+    "Elle jette un coup d'œil au sas. Son sourire disparaît une seconde."
+    mara stress "Évidemment que j'ai les boules. Tu crois quoi ?"
+    "Elle détourne les yeux, puis reprend son sourire habituel."
+    mara taquin "Mais si je commence à flipper avec toi, on va pas s'en sortir. Allez, change de sujet."
+    noam neutre "D'accord."
+
     pause 0.3
 
     noam neutre "J'imagine que tu viens d'Axiome alors ?"
