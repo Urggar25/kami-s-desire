@@ -156,6 +156,14 @@ label OBS_PNC_EXIT:
     return
 
 
+# Zoom doux sur la baie vitrée pendant la première découverte de l'espace.
+# Un cadrage sur le décor seul évite d'agrandir les sprites des interlocuteurs.
+transform observation_day1_window_zoom:
+    zoom 1.0
+    xalign 0.5
+    yalign 0.42
+    ease 2.0 zoom 1.22
+
 # -----------------------------------------------------------------------
 # Label d'histoire
 # -----------------------------------------------------------------------
@@ -206,6 +214,10 @@ label decouverte_salle_observation:
 
     lysa neutre "Viens."
 
+    # La caméra s'attarde sur la vitre, sans zoomer les personnages.
+    $ hideGroup()
+    scene bg_observation at adaptive_fullscreen
+    camera master at observation_day1_window_zoom
     "Je m’approche."
     "Et je comprends tout de suite."
     "Mon cerveau met une seconde à suivre."
@@ -217,6 +229,9 @@ label decouverte_salle_observation:
     "Des étoiles."
     "Quand on plonge le regard, on voit une masse imposante et une sorte de gros vaisseau volant."
 
+    # Retour au cadre normal avant de reprendre le dialogue à deux.
+    camera master
+    $ showGroup([("noam", "reflexion", 0.22), ("lysa", "reflexion", 0.78)])
 
     noam surpris "…"
     noam surpris "Attends."
