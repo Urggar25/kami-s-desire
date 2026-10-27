@@ -261,8 +261,8 @@ label decouverte_cafeteria:
     goumi vide "Stock : remplis."
     goumi vide "Gestion : optimale."
 
-    elen vide "Raah j'aime pas ce mode de discussion ! On dirait vraiment un robot limité."
-    elen vide "C'est pas très naturel."
+    elen vide "Rah, c'est impossible de discuter avec lui !"
+    elen vide "Il répond toujours comme ça ?"
 
     "Je souffle un petit rire."
     "Tu t'attendais à quoi en même temps."
@@ -281,8 +281,8 @@ label decouverte_cafeteria:
     goumi vide "Je travaille de 6h du matin à 14h puis de 17h à 22h."
     goumi vide "Le reste du temps est destiné à ma recharge."
 
-    elen vide "Il a au moins le mérite d'être honnête."
-    elen vide "C'est déjà plus que beaucoup de gens."
+    elen vide "Au moins, il nous dit clairement comment ça marche."
+    elen vide "C'est déjà ça."
 
     pause 0.2
 
