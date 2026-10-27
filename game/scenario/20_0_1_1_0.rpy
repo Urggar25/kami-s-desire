@@ -1724,7 +1724,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam "Quelqu'un connaissait cette salle ! Quelqu'un a pu déplacer le corps avant qu'on revienne ! Et demain on quitte tous le Conclave comme si de rien n'était !"
 
-    sael "Calme-toi."
+    sael "Noam, arrête de tirer comme ça. Tu vas te faire mal."
 
     noam colere "ARRÊTEZ DE ME DIRE DE ME CALMER !"
 
@@ -1732,7 +1732,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam surpris "..." id j20_infirmerie_seringue_silence
 
-    sael neutre "Si tu continues, je t'injecte un anesthésiant et tu dormiras jusqu'à ce que je décide que tu peux te réveiller sans arracher les sangles."
+    sael neutre "Noam, je veux pas te faire ça. Mais si tu continues à te débattre, je vais devoir te rendormir. Tu vas te blesser."
 
     noam inquiet "Tu plaisantes ?"
 
