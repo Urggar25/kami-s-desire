@@ -206,7 +206,7 @@ label _1_CANON:
     camera master at day1_wake_close
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
     camera master at day1_wake_close_talk
-    lysa blase "Ça ou te laisser baver sur ton pupitre, j'ai choisi la solution la plus charitable."
+    lysa blase "Bah, fallait bien que je te réveille. Tu comptais dormir encore longtemps ?"
     camera master at day1_wake_close
     think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans que Lysa s'éloigne vraiment."
     noam inquiet "J'ai la tête en vrac... On est où ?"
@@ -238,8 +238,8 @@ label _1_CANON:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
     think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
     noam inquiet "Attends... C'est vraiment le Conclave ?"
-    lysa reflexion "Tu vois bien où on est. À ton avis... Le Conclave."
-    lysa blase "Les Sept Dormants ont tenu des siècles. Toi, au bout de dix minutes, t'as déjà mauvaise mine."
+    lysa reflexion "J'en sais pas beaucoup plus que toi, mais ouais. Ça ressemble bien au Conclave."
+    lysa blase "T'as dormi dix minutes de plus que tout le monde et t'as déjà une sale tête."
 
     # La tablette n'interrompt plus le face-à-face : elle s'initialise en plan large.
     play sound sfx_beep
@@ -265,7 +265,7 @@ label _1_CANON:
 
     $ day1_group_reaction(ryn="colere", iris="blase", lysa="blase", elen="inquiet")
     mara rire "Tu veux dire... à part l'IA qui tient le monde en laisse ?"
-    mara taquin "Joli réveil, cela dit. Très viril. Les caméras ont dû adorer."
+    mara taquin "Et toi, t'as fini de gueuler ? Parce que là, tu nous réveilles tous une deuxième fois."
     "Elle fait un mouvement de tête dans une direction, pour montrer une caméra."
 
     ryn colere "Hein ?! Mais de quoi vous parlez ?"
@@ -299,14 +299,14 @@ label _1_CANON:
     think "Je cherche les caméras. Elles sont propres, discrètes, partout. Enfin quelque chose de familier."
 
     $ day1_group_reaction(mara="rire", ryn="colere", iris="blase", nyra="reflexion")
-    julian peur "On pourrait presque apprécier le silence, si l'un d'entre nous ne faisait pas que de meugler."
-    julian reflexion "Kami veut que nous nous sentions seuls. JE refuse de lui offrir ce spectacle."
+    julian peur "On pourrait peut-être discuter sans hurler, non ?"
+    julian reflexion "C'est exactement ce qu'elle veut : qu'on commence à s'engueuler. Je vais pas lui faire ce plaisir."
 
     iris inquiet "Tu ne changeras donc jamais."
     iris blase "On attend quoi ? Un miracle ? Une notice ? Quelqu'un de compétent ? On ne sait même pas ce qu'on doit faire."
 
     nyra triste "Si elle voulait nous parler elle pourrait le faire à tout moment."
-    nyra neutre "Elle est omnipotente après tout."
+    nyra neutre "Elle contrôle tout ici, non ?"
 
     kael calme "Mouais, si elle a envie."
     kael calme "Si ça se trouve ça la fait marrer de voir douze inconnus enfermés dans une pièce."
@@ -325,7 +325,7 @@ label _1_CANON:
     mara taquin "Il est vraiment mal foutu cet enlèvement. Amatrice !"
 
     tomas reflechit "T-Tu sais qu'elle entend tout ce qu'on dit ? Tout le temps."
-    tomas reflechit "Le fait qu'on ne la voie pas ne change rien à ce qu'on fait à cause d'elle."
+    tomas reflechit "C'est pas parce qu'elle dit rien qu'elle nous écoute pas."
 
     think "D'habitude, Kami adore être présente. Là, c'est comme une salle de classe sans prof."
     think "Sauf qu'ici le prof peut tuer les élèves à tout moment, et à distance."
@@ -362,11 +362,11 @@ label _1_CANON:
     iris peur "Tu veux nous faire tuer ou quoi ?!"
 
     sael raison "Il n'y a pas le choix."
-    sael raison "Ma grand-mère disait que le premier pas dans le brouillard appartient rarement à celui qui le fait."
+    sael raison "Ma grand-mère disait toujours de réfléchir avant de se jeter sur une porte fermée."
     sael raison "Il faut prendre une décision claire."
 
     elen desaccord "Mais attendre, c'est risqué aussi, nooon ?"
-    elen desaccord "C'est comme laisser un plat au four en espérant qu'il décide tout seul de pas brûler !"
+    elen desaccord "Et si on reste là sans rien faire, ça va pas nous aider non plus !"
 
     sael "Donc il faut choisir. Soit on tente d'ouvrir la porte."
     sael "Soit on attend."
@@ -749,7 +749,7 @@ label _1_PNC_CONCLAVE_MARA:
     mara rire "On devrait pouvoir bien s'amuser !"
     mara taquin "Ou plus, si affinité ?"
     noam peur "Hein ?!"
-    mara rire_profond "Quelle réaction exquise !"
+    mara rire_profond "Ah ah ! Je t'ai mis mal à l'aise, hein ?"
     jump _1_PNC_CONCLAVE
 
 
@@ -903,11 +903,11 @@ label _1_PNC_CONCLAVE_JULIAN:
         ("julian", "reflexion", 0.6),
     ])
 
-    julian reflexion "Le Conclave porte bien son nom."
-    julian joie "Un cercle, des regards, une autorité invisible. Tout est pensé pour nous mettre en scène."
+    julian reflexion "Au moins, ils ont pas lésiné sur la salle."
+    julian joie "Regarde : les sièges, l'écran, les caméras... C'est fait pour être filmé."
     noam "Tu crois que quelqu'un regarde ?"
-    julian determine "JE dirais même : qui ne regarderait pas ?!"
-    julian decontracte "L'avenir de l'humanité se joue ici ! La modification des lois se jouera ici !"
+    julian determine "Franchement, qui voudrait rater ça ?"
+    julian decontracte "On va peut-être changer les lois de Kami, tu te rends compte ?!"
     julian joie "Tout le monde regardera ! Évidemment !"
     jump _1_PNC_CONCLAVE
 
@@ -924,11 +924,11 @@ label _1_PNC_CONCLAVE_SAEL:
         ("sael", "reflexion", 0.6),
     ])
 
-    sael determine "Ma grand-mère disait qu'une salle silencieuse n'est jamais véritablement vide."
+    sael determine "Ma grand-mère disait toujours qu'il fallait se méfier quand tout était trop calme."
     noam surpris "Elle disait ça souvent ?"
     sael taquin "Seulement quand quelqu'un écoutait derrière les murs."
     noam triste "J'imagine qu'on peut dire avec Kami qu'il y a toujours quelqu'un qui écoute derrière les murs."
-    sael triste "Mamie n'est plus physiquement là pour le dire mais elle avait souvent raison."
+    sael triste "Elle avait souvent raison, ma grand-mère."
     jump _1_PNC_CONCLAVE
 
 
@@ -1120,9 +1120,9 @@ label _1_KAMI_APPARITION:
     kami "Vous allez apprendre quelque chose d'important."
     kami "Très vite."
 
-    kami "Convaincre est plus difficile que contraindre."
-    kami "Et le consensus…"
-    kami "Est un luxe que peu de sociétés peuvent se permettre."
+    kami "Vous verrez, c'est pas si simple de mettre douze personnes d'accord."
+    kami "Et croyez-moi..."
+    kami "Vous allez vite comprendre pourquoi."
 
     pause 0.6
 
@@ -1135,7 +1135,7 @@ label _1_KAMI_APPARITION:
 
     kami "Je ne participerai pas aux votes."
     kami "Je ne donnerai pas mon avis."
-    kami "Je ne prendrai part à aucune de vos manigances."
+    kami "Je vous laisse vous débrouiller entre vous."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1218,8 +1218,8 @@ label _1_KAMI_APPARITION:
 
     noam reflexion "On va devoir vraiment passer trente jours ici…"
 
-    lysa doute "L'unanimité. C'est adorable."
-    lysa blase "La Diète polonaise avait déjà testé le veto individuel."
+    lysa doute "L'unanimité ? Ah ouais. Rien que ça."
+    lysa blase "Un seul vote contre et tout le monde est bloqué. Sérieux ?"
     lysa colere "C'est un système tellement tordu que rien ne pourra jamais aboutir."
 
     tomas raison "Ou alors... il faut faire des compromis. Enfin, pour une fois."
@@ -1238,7 +1238,7 @@ label _1_KAMI_APPARITION:
     ryn colere "Si quelqu'un pète un câble, on fait quoi ?"
 
     iris reflexion "On est filmés en permanence. La pression publique est censée nous contenir."
-    iris blase "Parce que la honte a toujours été un excellent protocole de sécurité. Aucun défaut connu."
+    iris blase "Ah bah oui, ça va sûrement empêcher quelqu'un de péter un câble."
     iris taquin "Quoique, certains ça ne les gêne pas tant que ça."
 
     think "Julian se lève, il ajuste sa veste et trouve une caméra avant de trouver ses mots."
@@ -1251,7 +1251,7 @@ label _1_KAMI_APPARITION:
 
     lysa doute "T'es sérieux ?"
     lysa colere "On nous enferme, on nous filme, on nous fait jouer les réformateurs sous peine de mort — et toi, t'es là en train de jouer au beau ?"
-    lysa blase "Même Narcisse serait plus intéressant que toi."
+    lysa blase "T'es vraiment obligé de faire ton numéro devant la caméra ?"
 
     julian idee "Si nous devons rester ici trente jours, faisons-en sorte qu'ils comptent."
     julian idee "Tu peux me mépriser. Mais les gens, eux, ont besoin d'un résultat, ils veulent du CHANGEMENT."
@@ -1736,9 +1736,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     kael reflechit "Justement. Autant en parler avant."
     kael reflechit "Si on fait tout ça tout seul dans notre coin, on va se retrouver avec des conneries sur le dos."
 
-    lysa doute "Vous avez été choisis pour votre naïveté ou quoi ?!"
+    lysa doute "Vous êtes sérieux ? Vous faites confiance à tout le monde, comme ça ?!"
     lysa reflexion "Quelqu'un peut très bien annoncer une chose et écrire tout autre chose !"
-    lysa taquin "Et avec deux textes jamais tirés, l'alibi est parfait."
+    lysa taquin "Et si son texte sort jamais, personne saura ce qu'il avait proposé !"
     lysa colere "Il suffira de dire que notre texte n'a pas été choisi. Personne ne pourra le vérifier !"
 
     pause 0.4
@@ -1761,15 +1761,15 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     nyra reflexion "Tu savais déjà ce que tu voulais changer ?"
 
-    mara sourire "Dès que l'un de nous fait le premier pas, les autres suivent rapidement."
-    mara taquin "Ils ont tous commencé à griffonner des trucs. L'instinct de troupeau. Rudimentaire mais très élégant également."
+    mara sourire "Bah voilà, il suffisait qu'un seul se lance."
+    mara taquin "Regardez-les, maintenant ils écrivent tous. Ils attendaient quoi, une autorisation ?"
 
     pause 0.3
 
     voix "Dépôt enregistré."
 
-    sael neutre "Nous pouvons en parler jusqu'à la nuit. Chacun écrira ce qu'il croit être juste."
-    sael neutre "Les morts savent mieux que nous combien la justice change de visage."
+    sael neutre "On peut encore en parler, mais chacun devra choisir ce qu'il écrit."
+    sael neutre "On sait très bien ce qui arrive quand une règle est mal faite."
 
     play sound sfx_drop
     voix "Deuxième amendement. Troisième amendement."
@@ -1821,9 +1821,9 @@ label _1_proposition_amendement:
     think "Bon... Ok."
     think "Il faut que je me grouille. C'est à moi."
 
-    think "Chaque papier qui tombe me rappelle que je traîne. Feuille blanche, stylo, vide au milieu de la poitrine."
-    think "Un examen où une mauvaise réponse peut brûler une ville. Non, ça va, pas de quoi stresser. Vraiment..."
-    think "Respire, Noam. T'as peur. Enfin, j'imagine qu'ils ont tous peur, n'importe qui dans cette situation flipperait grave."
+    think "Les autres ont presque tous fini et moi, j'ai encore rien écrit."
+    think "Si mon idée est tirée au sort et que ça tourne mal, il y aura peut-être des gens qui en paieront le prix."
+    think "Bon. Faut arrêter de paniquer. Les autres ont réussi à écrire quelque chose, je peux le faire aussi."
     pause 0.3
 
     "Une idée me vient en tête."
@@ -1837,11 +1837,11 @@ label _1_proposition_amendement:
     play sound "audio/sfx_announce.mp3"
     voix "Trente secondes avant fermeture de l'urne."
 
-    think "Je me lève. Ma chaise racle le sol, seule voix dans la salle vide."
-    think "L'urne paraît plus loin à chaque pas. Ma gorge se serre."
+    think "Je me lève. Ma chaise fait un bruit énorme dans la salle presque vide."
+    think "J'avance jusqu'à l'urne, mais j'ai encore envie de retourner corriger mon texte."
 
     play sound sfx_paper
-    think "Je pousse la feuille dans la fente. Sale, pliée, ratée. Vivante."
+    think "Je glisse ma feuille dans l'urne. Elle est un peu froissée, mais tant pis."
     play sound sfx_drop
     $ impact(8, 0.2, "#3BCC82")
     voix "Amendement enregistré."
@@ -1881,8 +1881,8 @@ label _1_AMENDEMENT_DEPOSE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Je suis ravie. Vraiment. Vous avez tous participé. Dans les temps. Sans exception."
-    kami "C'est rare et particulièrement appréciable. Comme quoi, vous êtes peut-être plus efficaces que vos anciens élus !"
+    kami "Oh, vous avez tous rendu votre copie ! Et dans les temps, en plus !"
+    kami "C'est presque impressionnant. Vous feriez de très bons élèves !"
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
@@ -1894,7 +1894,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     pause 0.2
 
-    kami "Je vous conseille d'être attentifs. Le hasard a parfois beaucoup de goût."
+    kami "J'ai hâte de voir lequel de vos petits textes va sortir."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1903,7 +1903,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Profitez de votre douce nuit de tranquillité ! Demain, on recommencera à jouer tous ensemble."
+    kami "Dormez bien ! Demain, on remet ça !"
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
@@ -1914,7 +1914,7 @@ label _1_AMENDEMENT_DEPOSE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_132
     scene couloir_dortoir at adaptive_fullscreen with fade
 
-    think "Le couloir est calme. Presque normal, si on oublie l'urne capable de réécrire le monde derrière moi."
+    think "Le couloir est vide. J'ai du mal à croire qu'on vient tous de déposer un texte qui pourrait changer les règles du monde."
 
     think "J'ai déposé un amendement. On en a tous déposé un."
     think "J'espère ne pas avoir fait une connerie."
@@ -1980,18 +1980,18 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     think "Julian se laisse tomber dans un fauteuil avec juste assez de bruit pour rester au centre de la scène."
 
     julian detendu "J'ai réécrit ma proposition trois fois. TROIS FOIS. Tu imagines ?!"
-    julian sourire "Ce genre de phrase peut rester dans l'Histoire."
-    julian detendu "JE refuse de ne pas y entrer à cause d'une mauvaise formulation !"
+    julian sourire "Je voulais pas me planter sur les mots. Les gens vont peut-être la lire, cette proposition."
+    julian detendu "Ça me ferait chier qu'on la rejette juste parce que je l'ai mal écrite !"
 
-    mara sourire "Moi, j'ai pu écrire ce que je voulais. C'est une expérience assez nouvelle."
-    mara taquin "Si ça vous plaît, je prends les compliments. Sinon, je prends quand même un verre."
+    mara sourire "Moi j'ai écrit ce que je pensais. C'est déjà pas mal."
+    mara taquin "Si ça plaît à personne, je m'en remettrai. Par contre, j'ai soif."
 
-    julian detendu "Nous écrivons pour des millions de personnes, puis le hasard décide si nos idées existeront lors du tirage au sort."
-    julian inquiet "Imaginez que ma proposition reste dans l'urne. Un moment pareil, perdu avant même d'avoir été entendu. Non, impossible !"
+    julian detendu "On peut proposer un truc qui change la vie de millions de gens, et même pas être tirés au sort."
+    julian inquiet "Imaginez que mon texte soit même pas tiré. Tout ça pour rien. Ça me rend dingue !"
 
-    nyra taquin "Tu veux être utile, ou tu veux être entendu ?"
-    julian detendu "Les deux ne s'opposent pas."
-    nyra sourire "Je n'ai pas dit qu'ils s'opposaient."
+    nyra taquin "T'es surtout inquiet qu'on parle pas de toi, non ?"
+    julian detendu "Je peux vouloir les deux, non ?"
+    nyra sourire "J'ai pas dit le contraire."
 
     pause 1.0
 
@@ -2000,8 +2000,8 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian detendu "Sûrement. Et tant mieux. Contenter un public attentif, ça demande beaucoup de travail."
     mara taquin "Bien sûr. C'est pour ça que tu vérifies la caméra toutes les trente secondes. Par responsabilité bien sûr."
 
-    julian joie "Avoue juste que tu es jalouse car tout le monde me préfèrera à toi !"
-    mara sourire "Ah ! Dans tes rêves, jamais tu ne vaincras mon charme !"
+    julian joie "Avoue, t'es jalouse. Tout le monde va m'adorer !"
+    mara sourire "Ah ouais ? Bah continue de rêver, mon grand !"
 
     "Malgré la tension de la journée, l'ambiance est plutôt chaleureuse."
     think "Ça fait vraiment du bien..."
@@ -2021,13 +2021,13 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     mara sourire "Attention, tout le monde. Opération à haut risque !"
 
     $ bc_show("julian", "detendu", px=-70, py=-50, pz=0.85)
-    julian detendu "Voilà une entrée que je respecte. Et un ravitaillement plus que bienvenu !"
+    julian detendu "Ah, enfin quelqu'un qui a pensé à ramener à boire !"
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
     nyra sourire "Tu veux qu'on libère la table, ou tu préfères réussir seul ?"
     $ bc_hide()
 
-    tomas hesitation "Si je renverse ça maintenant, enfin... j'irai vivre sous une table jusqu'au trentième jour, mort de honte."
+    tomas hesitation "Si je renverse tout, je vous jure que je sors plus de ma chambre."
     $ bc_show("mara", "content", px=-70, py=-50, pz=0.85)
     mara sourire "Oh ! Y'a pire."
     mara taquin "Tu pourrais être mort tout court."
@@ -2044,7 +2044,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     tomas "Voilà. Rien de cassé. Enfin, pas encore."
 
     $ bc_show("julian", "joie", px=-70, py=-50, pz=0.85)
-    julian detendu "Un vrai héros. Et sans discours, en plus. C'est presque vexant."
+    julian detendu "Merci, Tomas. Franchement, ça fait du bien."
     $ bc_hide()
 
     pause 0.3
@@ -2052,10 +2052,10 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     scene bg_cg010_1 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg010")
 
-    think "Les tasses circulent rapidement. La vapeur transforme la table en refuge provisoire."
+    think "On se passe les tasses. Pendant un moment, personne ne parle de Kami."
     think "Ça sent le thé. Un vrai thé bien fort comme il faut. Pas un truc synthétique."
 
-    nyra vide "Ça vous manquait aussi ? Tenir quelque chose de chaud."
+    nyra vide "Ça fait du bien, un truc chaud. Vous trouvez pas ?"
 
     mara vide "Ouais… C'est débile mais ça fait du bien. Un tout petit peu."
     mara vide "Oh et puis ce thé ! Mon dieu qu'il est exquis !"
@@ -2064,7 +2064,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     mara "Tu m'étonnes, un thé comme ça, ça valait une blinde à l'époque !"
 
-    julian "Je vois que Madame a déjà eu l'occasion de goûter à de tels mets !"
+    julian "Ah ouais ? Madame s'y connaît en thé, maintenant ?"
 
     mara "Ah ! Ne fais pas ta jalouse mon petit Julius !"
 
@@ -2078,7 +2078,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     tomas vide "Demain… À neuf heures on saura…"
 
     julian vide "Ouais. Demain. Mais c'est encore loin !"
-    julian "Alors ne brise pas l'ambiance ! Tu as ramené les boissons, ne gâche pas ce moment !"
+    julian "Allez, parle pas déjà de demain. On peut souffler cinq minutes ?"
 
     pause 0.4
 
@@ -2125,7 +2125,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_136
     scene bg_dortoir at adaptive_fullscreen with fade
 
-    think "La lumière du dortoir est plus chaude, moins clinique. Elias est déjà là."
+    think "Le dortoir est moins froid que le reste du bâtiment. Elias est déjà là."
 
     $ showGroup([
         ("elias", "detendu", 0.22),
@@ -2191,7 +2191,7 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     play sound sfx_shower
 
-    think "L'eau chaude coule longtemps. Je laisse le stress de la journée s'évaporer."
+    think "Je reste sous l'eau un bon moment. J'ai pas envie de repenser à cette journée."
     think "Pas ce soir. Je réfléchirai demain."
 
     pause 0.5
@@ -2199,8 +2199,8 @@ label _1_FIN_JOURNEE_DORTOIR:
     scene bg_chambre at adaptive_fullscreen with fade
 
     think "Je m'allonge. Le lit est plus confortable que prévu."
-    think "Mon amendement est déposé. Le reste ne m'appartient plus."
-    think "Le plafond est immobile."
+    think "C'est fait, j'ai déposé mon texte. J'espère juste que j'ai pas écrit une connerie."
+    think "Je fixe le plafond sans réussir à arrêter de réfléchir."
 
     $ blink()
 
