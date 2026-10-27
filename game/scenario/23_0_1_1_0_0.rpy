@@ -66,7 +66,7 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
     "Mara lève les mains, mais Sael n'a pas souri."
 
-    sael raison "Je veux te faire passer des examens."
+    sael raison "Noam, j'aimerais vérifier deux ou trois choses. Tu veux bien ?"
 
     noam surpris "Des examens ?"
 
