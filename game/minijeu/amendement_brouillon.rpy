@@ -449,6 +449,9 @@ screen amend_reflection_bubble(message):
 
     key "dismiss" action Return()
 
+    # Une réflexion se lit au premier plan, sans recouvrir l'article.
+    add Solid("#02081188")
+
     button:
         xfill True
         yfill True
@@ -456,31 +459,34 @@ screen amend_reflection_bubble(message):
         action Return()
 
     frame at amend_fade_in:
-        xpos 58
-        ypos 54
-        xsize 470
-        yminimum 210
-        background Frame("gui/thoughtbubble.png", 55, 55, 55, 55)
-        padding (50, 36, 50, 54)
+        xpos 270
+        ypos 790
+        xsize 1380
+        yminimum 178
+        background Solid("#0B1D2AF7")
+        padding (34, 19, 34, 23)
 
         vbox:
-            spacing 12
+            spacing 9
+            xfill True
 
-            text "NOAM — PENSÉE":
-                size 18
-                color "#45627a"
-                bold True
+            text "NOAM  /  RÉFLEXION":
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 20
+                color "#5CD3FF"
                 kerning 2
 
             text kd_tr(message):
-                size 25
-                color "#202738"
-                italic True
-                line_spacing 5
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 29
+                color "#F1F7FA"
+                xmaximum 1300
+                line_spacing 4
 
             text "CLIQUER POUR CONTINUER":
-                size 13
-                color "#718296"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 15
+                color "#A6C4D0"
                 xalign 1.0
 
 
@@ -511,7 +517,11 @@ screen amend_board():
         size 18 color "#766354"
 
     # Plateau séparé du papier, compatible avec les fragments existants.
-    $ _tray_height = min(828, max(232, 140 + len(amend_st.loose) * TRAY_ROW_H))
+    # La hauteur dépend des coordonnées effectives, et non du nombre de
+    # fragments restants : les trous ne font plus remonter le pied de panneau.
+    $ _last_frag_bottom = max([fr["y"] + 70 for fr in amend_st.loose] or [TRAY_Y0])
+    $ _tray_bottom = max(395, min(950, _last_frag_bottom + 88))
+    $ _tray_height = _tray_bottom - TRAY_PANEL_TOP
     add Solid("#071520E8") xpos 1032 ypos TRAY_PANEL_TOP xsize 835 ysize _tray_height
     add Solid("#274353") xpos 1068 ypos 231 xsize 755 ysize 1
     add Solid("#5CD3FF") xpos 1032 ypos TRAY_PANEL_TOP xsize 5 ysize _tray_height
@@ -525,7 +535,7 @@ screen amend_board():
         font "fonts/Rajdhani-SemiBold.ttf"
         size 19 color "#AAC8D5"
     text "VERSION [amend_st.step + 1] / [len(AMEND_STEPS)]":
-        xpos 1070 ypos (TRAY_PANEL_TOP + _tray_height - 31)
+        xpos 1070 ypos (_tray_bottom - 39)
         font "fonts/Rajdhani-SemiBold.ttf"
         size 19 color "#5CD3FF"
     if amend_st.wear >= 1:
