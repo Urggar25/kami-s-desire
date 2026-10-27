@@ -208,6 +208,21 @@ label decouverte_stockage:
 
     nyra taquin "Disons que ça évite les mauvaises surprises."
 
+    "Elle remet une boîte de composants sur son étagère, puis regarde les caisses encore fermées."
+    nyra reflexion "Par contre, si tout le monde commence à piocher là-dedans, ça va vite devenir compliqué."
+    noam reflexion "On peut toujours se partager ce qu'il y a, non ?"
+    nyra neutre "Se partager comment ?"
+    noam hesitation "Bah... équitablement. Chacun prend sa part."
+    nyra reflexion "Même quantité pour tout le monde ? Même si l'un en a besoin pour réparer un truc vital et l'autre juste pour son confort ?"
+    noam reflexion "Non, évidemment. Dans ce cas, on donne la priorité à celui qui en a vraiment besoin."
+    nyra doute "Et qui décide de ce qui est vraiment nécessaire ?"
+    "Je regarde les étagères. J'avais pas pensé à ça."
+    noam hesitation "J'en sais rien. On en discute ?"
+    nyra sourire "Voilà. C'est surtout ça, le problème."
+    nyra reflexion "Partager, tout le monde est pour. Jusqu'au moment où il faut dire à quelqu'un qu'il aura moins que les autres."
+    noam taquin "Tu fais souvent ce genre de conversation au milieu des cartons ?"
+    nyra taquin "Seulement quand on me propose de répartir les cartons."
+
     pause 0.3
 
     "Je repère un panneau sur le côté. Plastifié avec une grosse écriture."
