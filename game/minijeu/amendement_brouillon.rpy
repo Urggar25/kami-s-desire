@@ -50,6 +50,7 @@ init python:
     TRAY_X0, TRAY_X1 = 1102, 1825
     TRAY_Y0          = 267
     TRAY_ROW_H       = 88
+    TRAY_PANEL_TOP   = 127
 
     SFX_PLACE   = AMEND_DIR + "amend_place.ogg"
     SFX_RUB     = AMEND_DIR + "amend_eraser_rub.ogg"
@@ -431,6 +432,13 @@ transform amend_fade_in:
     alpha 0.0
     easein 0.6 alpha 1.0
 
+transform amend_slot_breathe:
+    alpha 0.66
+    block:
+        ease 1.15 alpha 1.0
+        ease 1.15 alpha 0.66
+        repeat
+
 
 # =============================================================================
 # BULLE DE RÉFLEXION — remplace la boîte de dialogue pendant l'écriture
@@ -503,20 +511,21 @@ screen amend_board():
         size 18 color "#766354"
 
     # Plateau séparé du papier, compatible avec les fragments existants.
-    add Solid("#071520E8") xpos 1032 ypos 127 xsize 835 ysize 828
+    $ _tray_height = min(828, max(232, 140 + len(amend_st.loose) * TRAY_ROW_H))
+    add Solid("#071520E8") xpos 1032 ypos TRAY_PANEL_TOP xsize 835 ysize _tray_height
     add Solid("#274353") xpos 1068 ypos 231 xsize 755 ysize 1
-    add Solid("#5CD3FF") xpos 1032 ypos 127 xsize 5 ysize 828
+    add Solid("#5CD3FF") xpos 1032 ypos TRAY_PANEL_TOP xsize 5 ysize _tray_height
     add Solid("#5CD3FF55") xpos 1037 ypos 127 xsize 830 ysize 2
     text "FRAGMENTS À PLACER":
         xpos 1070 ypos 154
         font "fonts/Rajdhani-SemiBold.ttf"
         size 30 color "#E7F8FF" kerning 2
-    text "Glisse chaque morceau sur son emplacement dans le document.":
+    text "Déplace les fragments sur la feuille pour tester ta formulation.":
         xpos 1070 ypos 195
         font "fonts/Rajdhani-SemiBold.ttf"
         size 19 color "#AAC8D5"
     text "VERSION [amend_st.step + 1] / [len(AMEND_STEPS)]":
-        xpos 1070 ypos 918
+        xpos 1070 ypos (TRAY_PANEL_TOP + _tray_height - 31)
         font "fonts/Rajdhani-SemiBold.ttf"
         size 19 color "#5CD3FF"
     if amend_st.wear >= 1:
@@ -578,7 +587,7 @@ screen amend_board():
                 yanchor 0.5
                 xsize int(s["w"])
                 ysize int(s["h"])
-                add Solid("#A8937040")
+                add Solid("#A8937040") at amend_slot_breathe
                 add Solid("#8a7450") ysize 3 yalign 1.0
                 text "À COMPLÉTER":
                     font "fonts/Rajdhani-SemiBold.ttf"
