@@ -563,8 +563,8 @@ label _5_0_CHERCHE_SAEL:
     noam triste "Peut-être. Ou peut-être pas."
     noam reflechit "Arrêter les guerres et la violence n'était sans doute qu'un prétexte parfait pour que Kami prenne les pleins pouvoirs sans grande résistance."
 
-    sael determine "Les Limenois doivent rester à Limen. Non seulement pour les protéger, mais aussi pour payer le prix du sang qu'on a fait couler."
-    sael colere "Et je me fiche de savoir si mon peuple est de mon avis. Cette décision est celle de la responsabilité."
+    sael determine "Je veux pas revoir les hommes armés débarquer chez nous. Ça recommencera, Noam. Je le sais."
+    sael colere "Alors oui, même si les miens m'en veulent, je voterai contre. Je peux pas leur faire courir ce risque."
 
     noam inquiet "Donc tu voteras contre quoi qu'il arrive ?"
 
