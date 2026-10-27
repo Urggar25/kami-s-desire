@@ -814,16 +814,47 @@ transform day1_timer_live_glint:
         ease 1.7 alpha 0.15
         repeat
 
+# Chaque changement de minute : ancien nombre vers le haut,
+# nouvelle minute par le bas. Les secondes ne bougent pas.
+transform day1_minute_roll_out:
+    yoffset 0
+    alpha 1.0
+    parallel:
+        easeout 0.42 yoffset -56
+    parallel:
+        easeout 0.30 alpha 0.0
+
+transform day1_minute_roll_in:
+    yoffset 56
+    alpha 0.0
+    parallel:
+        easeout 0.42 yoffset 0
+    parallel:
+        easeout 0.22 alpha 1.0
+
 screen day1_amendment_timer():
     zorder 70
 
-    # Le tick provoque un redraw sans accelerer le compte a rebours.
+    # Le tick ne modifie pas le temps, il surveille le changement de minute.
     default _tick = 0
-    timer 0.10 repeat True action SetScreenVariable("_tick", _tick + 1)
+    default _minute_last = -1
+    default _minute_prev = -1
+    default _minute_change_tick = -99
 
     $ _remaining = max(0.0, float(day0_timer_remaining()))
     $ _seconds = int(_remaining + 0.999)
-    $ _clock = "{:02d}:{:02d}".format(_seconds // 60, _seconds % 60)
+    $ _minute_now = _seconds // 60
+    $ _second_text = ":{:02d}".format(_seconds % 60)
+    $ _minute_text = "{:02d}".format(_minute_now)
+    $ _roll_active = (_minute_prev >= 0 and _minute_prev == _minute_last + 1 and _tick - _minute_change_tick < 6)
+    timer 0.10 repeat True action [
+        SetScreenVariable("_tick", _tick + 1),
+        If(_minute_now != _minute_last, [
+            SetScreenVariable("_minute_prev", _minute_last),
+            SetScreenVariable("_minute_last", _minute_now),
+            SetScreenVariable("_minute_change_tick", _tick + 1)
+        ], NullAction())
+    ]
     $ _progress = max(0.0, min(1.0, _remaining / 1860.0))
     $ _bar_width = max(0, min(344, int(_progress * 344)))
     $ _closed = (day0_timer_active and _remaining <= 0)
@@ -863,20 +894,41 @@ screen day1_amendment_timer():
                 size 48
                 bold True
                 color "#F25C73"
-        elif _critical:
-            text _clock at day1_timer_alert_pulse:
-                xpos 16 ypos 29
-                font "fonts/Rajdhani-SemiBold.ttf"
-                size 62
-                bold True
-                color _accent
         else:
-            text _clock:
+            # Fenetre de deux chiffres : l'ancienne minute glisse vers le haut.
+            fixed:
                 xpos 16 ypos 29
+                xsize 91 ysize 64
+                clipping True
+
+                if _roll_active:
+                    text "{:02d}".format(_minute_prev) at day1_minute_roll_out:
+                        xpos 0 ypos 0
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 62
+                        bold True
+                        color _accent if _critical else "#F1FAFF"
+                    text "{:02d}".format(_minute_last) at day1_minute_roll_in:
+                        xpos 0 ypos 0
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 62
+                        bold True
+                        color _accent if _critical else "#F1FAFF"
+                else:
+                    text _minute_text:
+                        xpos 0 ypos 0
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 62
+                        bold True
+                        color _accent if _critical else "#F1FAFF"
+
+            # Les secondes continuent normalement pendant le défilement.
+            text _second_text:
+                xpos 106 ypos 29
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 62
                 bold True
-                color "#F1FAFF"
+                color _accent if _critical else "#F1FAFF"
 
         # Statut compact : une seule information complementaire.
         if not _closed:
