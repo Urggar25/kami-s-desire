@@ -861,6 +861,7 @@ screen day1_amendment_timer():
     $ _critical = (_remaining <= 60 and not _closed)
     $ _warning = (_remaining <= 300 and not _closed)
     $ _accent = "#F25C73" if (_critical or _closed) else ("#F2B55D" if _warning else "#5CD3FF")
+    $ _clock_color = _accent if _critical else "#F1FAFF"
     $ _status = "URGENT" if _critical else ("Bientôt clos" if _warning else "En cours")
 
     fixed at day1_timer_enter:
@@ -907,20 +908,20 @@ screen day1_amendment_timer():
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 62
                         bold True
-                        color _accent if _critical else "#F1FAFF"
+                        color _clock_color
                     text "{:02d}".format(_minute_last) at day1_minute_roll_in:
                         xpos 0 ypos 0
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 62
                         bold True
-                        color _accent if _critical else "#F1FAFF"
+                        color _clock_color
                 else:
                     text _minute_text:
                         xpos 0 ypos 0
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 62
                         bold True
-                        color _accent if _critical else "#F1FAFF"
+                        color _clock_color
 
             # Les secondes continuent normalement pendant le défilement.
             text _second_text:
@@ -928,7 +929,7 @@ screen day1_amendment_timer():
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 62
                 bold True
-                color _accent if _critical else "#F1FAFF"
+                color _clock_color
 
         # Statut compact : une seule information complementaire.
         if not _closed:
