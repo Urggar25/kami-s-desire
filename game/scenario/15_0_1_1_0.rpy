@@ -492,7 +492,7 @@ label _15_0_1_1_0_VIDEO_KAEL:
     "Kael tourne enfin la tête vers moi."
 
     kael triste "Je peux oublier où j’étais à 21h17. Je peux oublier ce que j’ai mangé ou à qui j’ai parlé."
-    kael triste "Je n’oublierais pas avoir décroché la seule photo de ma sœur."
+    kael triste "J'aurais pas oublié avoir décroché la seule photo de ma sœur. Pas ça."
 
     "Je n’ai rien à répondre à ça."
 
