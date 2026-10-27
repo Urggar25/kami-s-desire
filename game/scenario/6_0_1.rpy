@@ -873,7 +873,7 @@ label _6_0_1_FIN_JOURNEE:
     elias colere "On sert vraiment à rien..."
 
     iris triste "Je veux prendre une douche."
-    iris colere "Et je veux que ce cirque s'arrête. Nous ne changerons rien tant que Kami sera là."
+    iris colere "Et j'en ai marre qu'elle décide tout pour nous ! Qu'elle garde son cerveau de génie, mais qu'elle nous foute la paix deux minutes !"
 
     kael "Navré hein, mais ça ça sera pas demain la veille."
 
