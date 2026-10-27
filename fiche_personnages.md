@@ -181,3 +181,100 @@ Ces relations décrivent **ce que Lysa ressent au début du Conclave**, sans ant
 - Ne croit pas spontanément que le Conclave pourra changer les choses.
 
 **Position de départ :** Lysa n'a pas de projet héroïque contre Kami. Elle observe le système, en cherche les contradictions et attend de voir jusqu'où les représentants accepteront de jouer son jeu.
+
+---
+
+# MARA
+
+## 1. Identité
+
+- **Prénom :** Mara
+- **Âge :** environ 18–19 ans.
+- **District :** Axiome.
+- **Rôle :** représentante d'Axiome au Conclave.
+- **Origine sociale :** héritière d'une famille très fortunée de l'ancien monde.
+
+## 2. Caractère
+
+- **Provocatrice :** adore embarrasser les autres, les tester et observer leurs réactions.
+- **Extravertie :** parle fort, rit volontiers et occupe facilement l'espace.
+- **Séductrice :** flirte sans distinction avec les femmes et les hommes, parfois simplement pour jouer.
+- **Hédoniste :** recherche la fête, la bonne nourriture, l'alcool et les plaisirs immédiats.
+- **Rebelle :** rejette les bonnes manières imposées et toute autorité qui prétend organiser sa vie.
+- **Impulsive :** suit parfois ses envies sans mesurer les conséquences.
+- **Généreuse :** sait agir concrètement pour les personnes démunies et déteste qu'on les méprise.
+- **Fière :** ne supporte ni les leçons de morale ni qu'on la réduise à son milieu d'origine.
+- **Fuyante affectivement :** transforme les questions intimes en plaisanteries.
+- **Très attachante malgré elle :** recherche la présence des autres, mais cache le sérieux de ses attachements.
+
+**Contradiction centrale :** Mara proclame qu'elle n'a besoin de personne, alors qu'elle craint profondément d'être laissée seule.
+
+## 3. Façon de s'exprimer
+
+- **Registre :** très familier, énergique, provocateur, parfois vulgaire.
+- A adopté l'argot d'Axiome pour rompre avec l'éducation bourgeoise de son enfance.
+- Parle vite, coupe parfois la parole et ponctue ses phrases d'exclamations.
+- Glisse fréquemment des sous-entendus sexuels et des doubles sens, même dans des conversations sérieuses.
+- Donne volontiers des surnoms moqueurs et chambre les autres.
+- Utilise naturellement « Putain », « Bordel », « Bah » ou « Sérieux ? ».
+- Force parfois le trait pour obtenir une réaction : rire, gêne ou colère.
+- Dès qu'on l'interroge sur ce qu'elle ressent vraiment, détourne la conversation par le flirt ou la provocation.
+- Quand elle est sincèrement blessée, sa voix peut devenir agressive ; lorsqu'elle défend quelqu'un, elle devient au contraire étonnamment sobre et directe.
+
+**Particularité :** elle peut transformer une phrase anodine en plaisanterie équivoque. Son langage tranche avec les manières policées qu'on lui imposait autrefois.
+
+## 4. Stéréotype ambivalent
+
+**La fêtarde délurée qui cache une profonde blessure d'abandon.**
+
+- **Stéréotype :** jeune femme insolente, séductrice, libre et apparemment insouciante, qui ne pense qu'à s'amuser.
+- **Contrepoint :** son exubérance est aussi une fuite devant la solitude et les conversations sincères.
+- **Ambivalence :** elle prétend ne s'attacher à personne, mais peut tenir très fort à ceux qu'elle laisse entrer dans sa vie.
+- **Contradiction fondamentale :** elle veut être aimée telle qu'elle est, mais joue sans cesse un personnage qui empêche les autres de la connaître pleinement.
+
+## 5. Histoire personnelle et fantômes
+
+- Est née dans une famille extrêmement fortunée, à la tête d'un empire financier avant Kami.
+- A grandi au milieu du confort et des privilèges, mais dans un cadre très strict.
+- Ses parents contrôlaient son éducation, ses fréquentations et son avenir. **(Fantôme : impression de n'avoir jamais été libre.)**
+- Devait incarner l'héritière parfaite, respecter les convenances et préserver la réputation familiale. **(Fantôme : peur de ne jamais être acceptée pour sa véritable personnalité.)**
+- Après l'arrivée de Kami, l'empire financier familial s'est effondré.
+- Ses parents ont fui Axiome et l'ont laissée derrière eux. **(Fantôme : abandon parental.)**
+- Présente leur départ comme une délivrance, sans admettre qu'il l'a aussi blessée. **(Fantôme : difficulté à reconnaître sa souffrance.)**
+- S'est installée dans la grande maison familiale désormais vide.
+- Y a organisé des fêtes et s'est rapprochée d'habitants d'Axiome bien éloignés de son ancien milieu.
+- A adopté leurs expressions et leur manière de vivre, comme une rupture revendiquée avec son enfance.
+- A accueilli dans sa demeure des habitants pauvres ou sans logement, sans contrepartie.
+- Découvre pour la première fois la possibilité de vivre selon ses propres envies, sans savoir exactement ce qu'elle souhaite construire. **(Fantôme : peur du vide une fois l'autorité de ses parents disparue.)**
+
+**Fantôme principal :** avoir été abandonnée par des parents dont elle recherchait autrefois l'approbation, tout en refusant d'admettre qu'ils lui manquent ou qu'ils l'ont blessée.
+
+## 6. Relations initiales avec les autres représentants
+
+Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution des relations dans les routes.
+
+| Personnage | Ressenti initial de Mara |
+|---|---|
+| **Noam** | **Son jouet favori.** Elle adore le déstabiliser avec des allusions et regarder ses réactions. Il est facile à faire rougir, ce qui l'amuse énormément. |
+| **Iris** | **Une râleuse à décoincer.** Son tempérament fermé donne à Mara une envie irrésistible de la provoquer, rien que pour la voir réagir. |
+| **Elen** | **Une petite sœur à taquiner.** Sa gentillesse lui inspire une affection sincère ; elle aime la faire rougir sans chercher à lui faire du mal. |
+| **Lysa** | **Une partenaire de piques.** Mara aime son sarcasme et apprécie qu'elle sache lui répondre sans se laisser impressionner. |
+| **Kael** | **Un garçon fade et ennuyeux.** Sa neutralité permanente n'éveille rien chez elle. Elle ne ressent aucune affinité avec lui et n'a guère envie de faire l'effort de le connaître. |
+| **Ryn** | **Un gros dur facile à provoquer.** Ses réactions explosives l'amusent et l'incitent à le pousser dans ses retranchements. |
+| **Sael** | **Un rappel désagréable de ses parents.** Ses règles et son attachement aux devoirs réveillent le souvenir de l'éducation contraignante de Mara. Elle se montre assez froide avec elle, sans pour autant nier sa sagesse : elle écoute ses conseils, même quand elle n'aime pas les entendre. |
+| **Tomas** | **Un intello maladroit, avec un petit côté pervers qu'il n'assume pas.** Mara repère volontiers ses regards ou ses sous-entendus involontaires et prend plaisir à le mettre face à ce qu'il essaie de cacher. Ses explications interminables l'amusent aussi. |
+| **Nyra** | **Une femme impossible à faire réagir.** Mara trouve son contrôle permanent frustrant et serait ravie de la surprendre en défaut, ne serait-ce qu'une fois. |
+| **Julian** | **Un séducteur prétentieux à remettre à sa place.** Elle voit venir ses numéros de charme et s'amuse à les retourner contre lui. |
+| **Elias** | **Une attache à Axiome qu'elle préfère tenir à distance.** Ils partagent le même district, mais Mara refuse précisément qu'on la ramène à ses origines et à son ancienne identité. Elle le garde donc à l'écart, sans hostilité particulière, pour éviter de renouer avec ce qu'elle veut laisser derrière elle. |
+
+## 7. Relation initiale avec Kami
+
+**Une autorité qu'elle déteste, mais dont la prise de pouvoir l'a paradoxalement libérée de ses parents.**
+
+- Supporte mal les interdictions, le rationnement et le contrôle quotidien de Kami.
+- Réagit volontiers par des provocations ou une insolence assumée.
+- Déteste qu'on lui dise comment vivre, comme ses parents le faisaient auparavant.
+- Regrette particulièrement la liberté de manger, boire, acheter et faire la fête comme elle l'entend.
+- Reconnaît cependant, sans forcément vouloir s'y attarder, que l'arrivée de Kami a précipité le départ de ses parents et lui a laissé une indépendance nouvelle.
+
+**Position de départ :** Mara ne cherche pas à combattre Kami par conviction politique. Elle veut avant tout profiter de sa liberté et ne plus laisser qui que ce soit décider de sa vie à sa place.
