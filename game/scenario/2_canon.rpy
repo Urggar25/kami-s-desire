@@ -667,7 +667,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     ryn colere "Mais tu viens d'où en fait ? Déjà tout à l'heure tu disais ne pas savoir ce que sont les bons de ravitaillement ?"
 
     sael reflechit "Je viens d'une tribu située au pied du Mont Kensen."
-    sael sourire "Chez nous, pour tout vous dire, l'arrivée de Kami n'a rien changé."
+    sael sourire "Chez nous, les habitudes ont peu changé depuis l'arrivée de Kami."
     sael sourire "Nous ne faisions pas de commerce, nous ne demandions rien. Tout le monde travaillait constamment."
     sael joie "Alors quand la divine Ka-"
 
@@ -679,8 +679,8 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     elen joie "Ouaah t'étais la cheffe de ton village ?! Mais t'es toute jeune pourtant !"
 
-    sael sourire "Bref, l'arrivée de Kami n'a absolument rien changé à notre quotidien."
-    sael reflechit "Enfin si, elle se chargeait d'éliminer les plus violents et dangereux d'entre nous."
+    sael sourire "On cultive toujours la même terre. Mais au moins, les combats ont cessé."
+    sael reflechit "Avant, on craignait les groupes armés. Depuis Kami, ils ne viennent plus. Pour moi, ça compte."
 
     elias sourire "Ah ouais... C'est quand même un sacré bordel, votre histoire."
     elias triste "Au moins, Kami a mis fin à la violence. Alors c'est pas parfait, hein, mais c'est déjà ça."
