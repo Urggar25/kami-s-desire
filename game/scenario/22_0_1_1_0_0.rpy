@@ -564,7 +564,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     iris fatigue "Tu vas quand même réussir à en faire un spectacle."
 
-    julian sourire "Évidemment. Tu crois vraiment que je vais laisser passer le premier vote presque consensuel du Conclave sans en profiter ?"
+    julian sourire "Pour une fois qu'on peut tous défendre le même truc, je compte bien en profiter !"
 
     "Il se tourne vers les autres avec une énergie presque ridicule, mais contagieuse."
 
@@ -586,7 +586,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     noam blase "J'aurais pas dû demander."
 
-    tomas hesitation "Moi je... oui. Je veux lire le texte, vraiment, mais si c'est bien ça, oui."
+    tomas hesitation "M-Moi, oui. Enfin, je veux quand même lire le texte. Mais si c'est bien ça... oui."
 
     julian joie "Vous voyez ?! Ça, c'est ce que je voulais depuis le début ! Une salle où, pour une fois, on part pas directement du principe qu'on va se détester."
 
