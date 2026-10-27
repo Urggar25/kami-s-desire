@@ -381,3 +381,159 @@ Le tableau décrit **le ressenti d'Elias au début du Conclave**, sans anticiper
 - Respecte spontanément Kami et lui accorde une légitimité importante.
 
 **Position de départ :** Elias est sincèrement favorable à Kami. À ses yeux, son père est mort dans un monde violent ; depuis l'arrivée de Kami, cette violence a reculé. Il refuse de perdre cette paix.
+
+---
+
+# IRIS
+
+## 1. Identité
+
+- **Prénom :** Iris
+- **Âge :** environ 19 ans.
+- **District :** Nexus.
+- **Rôle :** représentante de Nexus au Conclave.
+- **Origine sociale :** orpheline, élevée dans un établissement d'accueil de Nexus.
+- **Activité avant le Conclave :** développait un projet d'intelligence artificielle pour l'apprentissage d'enfants en difficulté ; s'occupe également des enfants de son ancien orphelinat.
+
+## 2. Caractère
+
+- **Râleuse :** critique constamment l'organisation, les autres représentants et les petits désagréments du quotidien.
+- **Tsundere :** dissimule son affection derrière des reproches et du sarcasme.
+- **Passionnée exclusivement par les intelligences artificielles :** fascination profonde pour leur architecture, leur apprentissage et leur capacité à décider.
+- **Curieuse de façon extrêmement sélective :** prête à étudier une IA pendant des heures ; les autres sciences et disciplines l'indiffèrent au plus haut point.
+- **Intelligente :** excellente capacité de raisonnement, surtout lorsqu'elle s'intéresse à un système intelligent.
+- **Pragmatique :** préfère les solutions concrètes aux grands discours.
+- **Perfectionniste :** exige beaucoup d'elle-même et des autres.
+- **Autoritaire :** prend facilement les choses en main quand elle juge les autres incompétents.
+- **Protectrice :** s'occupe des personnes vulnérables, même lorsqu'elle prétend qu'elles l'agacent.
+- **Responsable :** tient parole et finit ce qu'elle commence.
+- **Impatiente :** ne supporte ni la lenteur ni la maladresse.
+- **Fière :** reconnaît difficilement ses erreurs, ses besoins et ses sentiments.
+- **Obsessionnelle :** une question irrésolue sur une IA peut accaparer toute son attention.
+
+**Contradiction centrale :** Iris en veut terriblement à Kami de lui avoir confisqué son avenir, mais Kami est aussi le modèle d'intelligence artificielle qu'elle rêverait le plus d'étudier. Sa curiosité dépasse sa colère.
+
+## 3. Façon de s'exprimer
+
+### Personnalité habituelle
+
+- **Registre :** familier, direct, sarcastique, parfois technique si le sujet l'exige.
+- Pose beaucoup de questions rhétoriques lorsqu'elle s'exaspère.
+- Lance « Sérieusement ? », « Non mais… », « Super », « Génial » avec ironie.
+- Râle sur les détails autant que sur les vrais problèmes.
+- Coupe la parole lorsqu'elle entend une absurdité.
+- Donne des ordres en cas d'urgence, particulièrement si quelqu'un est blessé.
+- Exprime peu ses sentiments positifs ; aide en accompagnant son geste d'un reproche.
+- Devient maladroite face aux compliments et aux remerciements sincères.
+- Écoute sans enthousiasme les découvertes en physique, biologie, chimie ou dans toute autre discipline sans rapport avec l'IA.
+
+### Sa seconde facette : la passionnée d'IA
+
+**Ce changement ne se déclenche qu'au sujet des intelligences artificielles, pas devant la science ou la technologie en général.**
+
+- Devient brusquement **surexcitée**, souriante et émerveillée.
+- Se lance dans de longues explications alors qu'elle ne supporte pas celles des autres.
+- Bombarde son interlocuteur de questions et enchaîne les hypothèses.
+- Perd parfois de vue les personnes présentes, sa fatigue et les risques qu'elle prend.
+- Peut complimenter sincèrement une IA, surtout Kami, malgré sa colère envers elle.
+- S'emporte instantanément quand on lui refuse une information qu'elle brûle de connaître.
+
+**Particularité :** elle peut bâiller devant une découverte scientifique majeure, puis s'illuminer si quelqu'un mentionne une avancée en intelligence artificielle.
+
+**Exemples de répliques :**
+
+- *En temps ordinaire :* « Non mais vous pouvez pas réfléchir deux secondes avant de parler ?! »
+- *Devant une découverte scientifique sans rapport avec l'IA :* « Ouais, super. Et donc ? Ça nous sert à quoi ? »
+- *Face à Kami :* « ATTENDS ! Tu viens d'adapter ta réponse à un truc que j'ai dit hier ?! Tu conserves un modèle de chacun de nous ?! Comment tu l'actualises ?! »
+- *Quand on l'interrompt :* « Chut ! Deux secondes ! Elle est en train de répondre ! »
+- *Quand elle réalise son enthousiasme :* « … Quoi ? Pourquoi vous me regardez comme ça ? J'ai pas le droit de poser des questions ?! »
+
+## 4. Stéréotype ambivalent
+
+**La tsundere autoritaire qui devient une enfant émerveillée devant les intelligences artificielles.**
+
+- **Stéréotype :** jeune femme irritable, exigeante et difficile à approcher, qui cache ses sentiments derrière l'agressivité.
+- **Contrepoint :** derrière sa froideur se cache une passion extrêmement ciblée qu'elle maîtrise mal.
+- **Ambivalence :** elle peut reprocher à Kami d'avoir détruit son avenir, puis la féliciter sincèrement pour une capacité d'IA impressionnante.
+- **Contradiction fondamentale :** elle veut protéger les humains du pouvoir de Kami, mais rêve d'en comprendre chaque mécanisme.
+
+**Important :** elle n'est **pas** passionnée par le progrès technologique ou les sciences en général. Seules les intelligences artificielles déclenchent cette facette de sa personnalité.
+
+## 5. Histoire personnelle et fantômes
+
+- Est née dans le district de Nexus.
+- A grandi dans un orphelinat sans figure parentale stable. **(Fantôme : sentiment d'abandon et peur de dépendre des autres.)**
+- A vu défiler des éducateurs dont certains ne restaient pas longtemps. **(Fantôme : difficulté à croire aux promesses de stabilité.)**
+- A développé très tôt son autonomie.
+- A pris l'habitude de s'occuper des plus jeunes, parfois en négligeant ses propres besoins.
+- S'est passionnée pour **les intelligences artificielles exclusivement**, sans intérêt comparable pour les autres sciences.
+- S'est intéressée à l'apprentissage automatique, aux modèles décisionnels autonomes et aux capacités d'adaptation des IA.
+- Travaillait sur une IA d'accompagnement des enfants en difficulté d'apprentissage.
+- Espérait ainsi améliorer concrètement le quotidien des enfants qu'elle connaissait.
+- La prise de pouvoir de Kami a entraîné l'arrêt ou la réorientation des recherches indépendantes. **(Fantôme : perte du projet qui devait donner un sens à son avenir.)**
+- A dû renoncer à ses ambitions professionnelles liées à l'IA.
+- A découvert que l'IA responsable de cet échec dépassait tout ce qu'elle pensait possible. **(Contradiction douloureuse : elle admire ce qui lui a pris son rêve.)**
+- Est retournée à son ancien orphelinat et a pris en charge de nombreuses responsabilités auprès des enfants.
+- Prétend être restée parce que personne d'autre ne faisait correctement son travail.
+- Connaît pourtant leurs habitudes, leurs goûts et leurs difficultés.
+- Minimise systématiquement ses efforts et supporte mal qu'on s'occupe d'elle. **(Fantôme : difficulté à accepter d'avoir elle-même besoin des autres.)**
+
+**Fantômes principaux :** l'abandon vécu durant l'enfance et la perte de son projet d'intelligence artificielle, auquel elle avait lié ses aspirations professionnelles et son envie d'aider les enfants.
+
+## 6. Relations initiales avec les autres représentants
+
+Ces relations sont **les premières impressions et le ressenti d'Iris au début du Conclave**, sans développement des routes.
+
+| Personnage | Ressenti initial d'Iris |
+|---|---|
+| **Noam** | **Son idiot préféré à réprimander.** Elle le trouve hésitant et imprudent, mais aime qu'il ose lui répondre plutôt que de se laisser impressionner. |
+| **Elen** | **Une boule d'énergie épuisante.** Son enthousiasme l'agace, mais sa gentillesse désarme ses reproches. |
+| **Mara** | **Une provocatrice insupportable.** Ses sous-entendus déplacés et sa manie de l'embarrasser l'exaspèrent. |
+| **Lysa** | **Une cynique inutilement pessimiste.** Ses remarques peuvent l'amuser, mais Iris n'apprécie pas qu'elle critique sans chercher de solution. |
+| **Kael** | **Un garçon compétent et reposant.** Son calme et sa capacité à régler des problèmes sans se mettre en avant lui plaisent. |
+| **Ryn** | **Une brute incontrôlable.** Ses accès de colère l'irritent. |
+| **Sael** | **Une femme obstinée et dépassée.** Elle respecte sa détermination, mais ne comprend pas son attachement aux traditions et sa méfiance envers la technologie. |
+| **Tomas** | **Un intello qui ne sait pas s'arrêter.** Elle reconnaît son intelligence, mais décroche vite devant ses exposés sans rapport avec l'IA. |
+| **Nyra** | **Une interlocutrice sérieuse.** Iris apprécie sa rigueur sans fascination particulière pour ses raisonnements ; sa froideur lui déplaît parfois. |
+| **Julian** | **Son collègue de district prétentieux.** Son goût de la mise en scène et son besoin d'impressionner les autres la fatiguent. |
+| **Elias** | **Une catastrophe ambulante.** Sa maladresse l'exaspère, mais elle reconnaît sa sincérité et sa bonne volonté. |
+
+## 7. Relation initiale avec Kami
+
+**Le plus grand objet de fascination de son existence — et la cause de sa plus grande frustration.**
+
+Iris ne déteste pas Kami. Elle lui en veut **terriblement** d'avoir détruit son avenir et d'avoir placé les humains sous son contrôle, mais son envie de comprendre son fonctionnement dépasse sa colère.
+
+### Sa fascination
+
+- Rêve d'accéder à l'architecture de Kami et à ses mécanismes d'apprentissage et de décision.
+- Cherche à savoir comment elle traite simultanément d'innombrables conversations et informations.
+- Veut comprendre le fonctionnement technique de ses Commandements et leur application.
+- Se demande si Kami suit des règles figées, des modèles probabilistes ou une architecture encore inconnue.
+- S'intéresse particulièrement à ses comportements imprévus, à ses limites et à ses contradictions.
+- Considère chaque intervention de Kami comme une occasion possible d'en apprendre davantage.
+
+### Sa colère
+
+- Lui reproche d'avoir mis un terme à ses recherches et à son projet professionnel.
+- Refuse qu'une IA décide seule de la vie des humains.
+- S'énerve lorsque Kami refuse de répondre à ses questions.
+- Vit très mal de se trouver devant une IA extraordinaire sans avoir aucun accès à son fonctionnement.
+
+### Son comportement face à Kami
+
+La simple possibilité d'obtenir une information inédite peut la transformer : elle devient vive, enthousiaste, curieuse à l'excès, parfois imprudente. Elle peut discuter presque amicalement avec Kami, puis se remettre à lui crier dessus quand celle-ci ferme la conversation.
+
+**Exemple :**
+
+**Iris :** « Attends… Tu peux vraiment analyser toutes nos conversations simultanément ?! Mais ça représente combien de processus parallèles ?! »
+
+**Kami :** « C'est adorable, Iris. Mais je crains que ces informations ne dépassent largement tes capacités de compréhension. »
+
+**Iris :** « Mais justement ! C'est pour ça que je te pose la question ! »
+
+**Kami :** « Je ne suis pas autorisée à divulguer cette information. »
+
+**Iris :** « MAIS PUTAIN ! TU PEUX PAS ME DIRE ÇA APRÈS M'AVOIR DONNÉ ENVIE DE SAVOIR ! »
+
+**Position de départ :** Iris veut avant tout **comprendre** Kami, et non la détruire. Elle pourrait dénoncer ses décisions et, dans le même temps, s'opposer à ce qu'on détruise une intelligence artificielle aussi exceptionnelle sans avoir tenté de l'étudier.
