@@ -282,7 +282,7 @@ label _1_CANON:
 
     ryn colere "Hein ?! Emballé dans des boîtes ? Mais qu'est-ce que vous racontez ? Et qui vous êtes d'abord !"
 
-    $ day1_group_reaction(lysa="blase", mara="taquin", elen="inquiet", kael="inquiet")
+    $ day1_group_reaction(lysa="blase", mara="taquin", elen="inquiet", kael="surpris")
     lysa blase "Sérieux ? Comment ça t'es au courant de rien ?"
 
     ryn colere "Vous êtes de mèche avec ceux qui m'ont attaqué ? C'est ça ?!"
