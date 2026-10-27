@@ -441,14 +441,14 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
     sael neutre "Du sel."
     noam blase "... Vous êtes sérieux là ?!"
 
-    sael colere "Chez moi, on utilisait ça pour vérifier si quelqu'un avait ramené quelque chose des zones mortes."
+    sael colere "Chez moi, on faisait ça quand quelqu'un revenait des zones mortes. Je veux juste être sûre."
     noam colere "J'en ai rien à foutre de tes histoires de fantômes."
-    sael mefiant "Justement."
+    sael mefiant "Je sais que tu trouves ça idiot. Mais chez moi, ça servait à quelque chose."
 
     "Elle ouvre le sachet et prend une poignée de sel."
 
     noam inquiet "Sael..."
-    sael raison "Si j'ai tort, ça ne fera rien."
+    sael raison "Écoute, Noam. J'ai besoin de vérifier un truc. Après, je te laisse tranquille."
     noam colere "Alors teste-le sur toi."
 
     "Elle s'approche."
