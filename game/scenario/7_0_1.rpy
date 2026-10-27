@@ -1446,8 +1446,8 @@ label _7_0_1_CAFETERIA_ARRIVEE:
         ("elen",   "joie"),
     ])
 
-    iris sourire "Franchement ? Si on m'avait dit qu'un jour Kami pouvait bugger comme ça..."
-    iris rire "Je n'y aurais jamais cru."
+    iris surpris "Attendez... Kami a vraiment planté ? Mais comment ? Elle a des systèmes de secours, forcément !"
+    iris sourire "Oh putain, j'aimerais tellement voir ce qui s'est passé là-dedans..."
 
     julian decontracte "Ah mais complètement."
     julian joie "Le meilleur réveil depuis notre arrivée. J'ai enfin pu DORMIR !"
@@ -1457,7 +1457,7 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     julian taquin "Mais je ne te permets pas. Évidemment que les annonces pour le moins agaçantes de Kami me stressent."
     julian decontracte "C'est justement pour ça que je prends mon temps le matin !"
 
-    iris rire "Ouais ouais, bien sûr. Tu n'as jamais vraiment été à l'heure, Julian. JAMAIS."
+    iris taquin "Ouais, bien sûr. Mais attends, si Kami s'est arrêtée toute seule, ça veut dire quoi ? Elle peut redémarrer sans prévenir ?"
 
     call show_custom_title("Le repas se déroule sans accroc pendant de longues minutes.") from _call_show_custom_title_02
     pause 2.0
@@ -1494,7 +1494,7 @@ label _7_0_1_CAFETERIA_ARRIVEE:
 
     elen triste "Quoi ?! Mais nan !! Je veux de la bonne humeur c'est tout !"
 
-    iris desaccord "Quelle naïveté ! Tu crois vraiment que Kami nous laissera respirer ?"
+    iris desaccord "Elle peut revenir n'importe quand. Et moi, je veux savoir ce qui l'a arrêtée !"
 
     julian idee "Bah ça dépend, peut-être même qu'elle est cassée."
 
