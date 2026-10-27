@@ -1059,3 +1059,239 @@ Il souhaite avant tout éviter que ses décisions ne mettent en danger sa sœur 
 Il peut soutenir une modification des Commandements, mais seulement s'il estime que les risques pour sa station sont acceptables.
 
 **Contradiction ultime :** Kael possède les compétences nécessaires pour contourner certaines restrictions de Kami, mais chaque initiative clandestine représente potentiellement un danger pour les personnes qu'il cherche précisément à protéger.
+
+---
+
+# ELEN — Fiche de personnage
+
+## 1. Identité
+- **Âge :** environ 17–18 ans.
+- **District :** Archive.
+- **Rôle :** représentante au Conclave.
+- **Avant le Conclave :** jeune femme discrète et toujours disponible, issue d'une famille dysfonctionnelle.
+
+## 2. Caractère
+- **Radieuse :** sourit, s'enthousiasme et cherche le bon côté de chaque situation.
+- **Serviable à l'excès :** dit oui avant même d'avoir vérifié qu'elle peut aider.
+- **Naïve :** manque sincèrement les sous-entendus et les rapports de force.
+- **Sociable :** distribue des compliments spontanés et cherche à rapprocher les gens.
+- **Gourmande et inventive :** parle beaucoup de cuisine, teste des associations alimentaires improbables.
+- **Évitante :** détourne les conversations douloureuses par des plaisanteries et des détails quotidiens.
+- **Dépendante de l'approbation :** redoute de décevoir ou de ne plus être désirée dans le groupe.
+- **Épuisée en secret :** ne s'autorise presque jamais à être triste.
+
+**Contradiction centrale :** Elen veut rendre tout le monde heureux parce qu'elle ne supporte pas l'idée de montrer son propre malheur.
+
+## 3. Façon de s'exprimer
+- **Registre :** familier, chaleureux, spontané.
+- Multiplie les questions, les exclamations et les compliments.
+- Étire ses voyelles lorsqu'elle s'enthousiasme : « C'est vraiiii ? », « C'est trooop bien ! »
+- Passe sans transition d'un sujet grave à une discussion sur le déjeuner.
+- Oublie parfois la réponse à une question parce qu'une autre idée l'emporte.
+- Face à une question sur sa **famille**, bifurque instinctivement vers la nourriture.
+- Lorsque son masque se fissure, les exclamations disparaissent : une phrase simple, plate, puis elle reprend son sourire.
+
+**Exemples :** « Nooon, jure ?! Attends, raconte ! » ; « Ça va aller ! Enfin... ça doit aller, non ? » ; « Au fait, vous avez goûté le dessert ? »
+
+## 4. Stéréotype ambivalent
+**La fille solaire dont le sourire est une stratégie de survie.**
+
+- **Stéréotype :** la gentille optimiste naïve et adorable.
+- **Contrepoint :** sa bonne humeur est devenue un réflexe de protection, pas la preuve qu'elle va bien.
+- **Ambivalence :** sa générosité est sincère, mais elle cherche aussi à se rendre indispensable pour ne pas être rejetée.
+- **Contradiction fondamentale :** elle veut que chacun puisse exprimer sa peine, sauf elle-même.
+
+## 5. Histoire personnelle et fantômes
+- A grandi à Archive, district de contrôle de l'information, dans un environnement familial froid.
+- A vécu auprès d'une sœur à laquelle elle était attachée.
+- Sa sœur s'est suicidée ; la famille d'Elen lui a imputé la responsabilité de cette mort. **(Fantôme : culpabilité imposée pour le décès de sa sœur.)**
+- N'a pas protesté ouvertement ; a continué à sourire, aider et s'occuper des détails pratiques, jusque dans le deuil. **(Fantôme : impossibilité de montrer sa souffrance.)**
+- A appris à se rendre utile pour conserver une place auprès des autres. **(Fantôme : peur d'être rejetée lorsqu'elle cesse de servir.)**
+- Évite de parler de sa sœur ; le simple mot « famille » provoque une fuite vers des sujets anodins.
+- Sa curiosité pour la nourriture et ses expérimentations culinaires sont réelles, même si elle s'en sert pour détourner les conversations.
+
+**Fantôme principal :** la mort de sa sœur et l'accusation familiale. Elen s'interdit le malheur parce qu'elle redoute de devenir un poids pour les autres.
+
+## 6. Relations initiales avec les autres représentants
+| Personnage | Ressenti initial d'Elen |
+|---|---|
+| **Noam** | **Un garçon rassurant.** Elle aime qu'il écoute et tente de comprendre les autres ; elle cherche souvent à le faire sourire. |
+| **Lysa** | **Une fille triste sous ses piques.** Son sarcasme la déconcerte, mais Elen essaie d'y répondre avec gentillesse, parfois maladroitement. |
+| **Mara** | **Une grande sœur délurée.** Ses plaisanteries l'amusent et la gênent alternativement ; elle aime sentir que Mara la prend sous son aile. |
+| **Elias** | **Un camarade enthousiaste.** Elle apprécie sa sincérité et se réjouit qu'il accepte volontiers ses idées, même farfelues. |
+| **Iris** | **Une fille trop cooool.** Elle admire sa compétence et ne perçoit pas toujours qu'elle l'épuise ; les réprimandes ne la découragent pas. |
+| **Julian** | **Un orateur impressionnant.** Elle admire d'abord sa confiance et lui accorde facilement des compliments, sans toujours repérer sa vanité. |
+| **Ryn** | **Un protecteur intimidant.** Ses colères lui font peur, mais elle perçoit son envie de défendre les gens. |
+| **Sael** | **Une présence maternelle.** Sa douceur l'apaise ; elle aime ses petites attentions et ses histoires. |
+| **Kael** | **Un garçon bien trop silencieux.** Elle s'efforce de l'inclure sans saisir que ses questions incessantes peuvent le gêner. |
+| **Nyra** | **Une interlocutrice merveilleusement attentive.** Elle se livre aisément à elle, sans voir qu'elle reçoit peu de confidences en retour. |
+| **Tomas** | **Un ami familier d'Archive.** Elle apprécie sa gentillesse et ses connaissances, quitte à l'encourager dans des explications beaucoup trop longues. |
+
+## 7. Relation initiale avec Kami
+- Est mal à l'aise avec la censure, les interdictions et la froideur du système imposé à Archive.
+- Préfère rechercher des solutions qui soulagent les gens plutôt que s'opposer frontalement à Kami.
+- Espère sincèrement que les votes permettront d'améliorer la vie quotidienne.
+- Ses sourires et ses encouragements ne signifient pas qu'elle approuve Kami.
+
+**Position de départ :** Elen voudrait que le Conclave change les choses sans que quiconque ait à souffrir. Sa première défense face à Kami est un optimisme obstiné, parfois proche du déni.
+
+---
+
+# TOMAS — Fiche de personnage
+
+## 1. Identité
+- **Prénom :** Tomas.
+- **Âge :** jeune adulte ; âge exact non confirmé dans la documentation consultée.
+- **District :** Archive.
+- **Rôle :** représentant d'Archive au Conclave.
+- **Profil :** très cultivé, curieux et capable d'expliquer de nombreux sujets techniques ou historiques, mais socialement maladroit.
+
+## 2. Caractère
+- **Érudit :** accumule des connaissances et remarque des détails que d'autres ignorent.
+- **Bavard malgré lui :** transforme facilement une question simple en exposé interminable.
+- **Timide :** craint d'importuner et manque d'assurance en groupe.
+- **Serviable :** met ses connaissances au service des autres.
+- **Bienveillant :** souhaite sincèrement que ses explications aident.
+- **Maladroit socialement :** lit mal les signes d'ennui et comprend souvent trop tard qu'il monopolise l'échange.
+- **Nuancé :** déteste les conclusions hâtives et corrige aussitôt les simplifications.
+- **Autocritique :** s'excuse de parler trop, puis recommence.
+- **Courage discret :** peut prendre la parole malgré sa gêne quand une erreur aurait des conséquences importantes.
+
+**Contradiction centrale :** Tomas souhaite être apprécié pour lui-même, mais se réfugie tellement dans son savoir que les autres ne voient souvent que l'encyclopédie.
+
+## 3. Façon de s'exprimer
+- **Registre :** savant, poli, très précis ; dérape vers une explication surdimensionnée.
+- Multiplie les parenthèses, les nuances, les exemples et les corrections.
+- **Bégaie lorsqu'il est gêné ou stressé** : « J-Je... », « D-Donc... ».
+- Commence ses explications avec enthousiasme avant de réaliser qu'il parle trop.
+- S'auto-interrompt : « Enfin bref », « Pour faire simple », « Désolé, je m'égare ».
+- Peut produire une remarque involontairement déplacée parce qu'il raisonne plus vite qu'il ne mesure son effet.
+
+**Exemples :** « Techniquement... enfin, non, ça dépend du modèle. » ; « D-Désolé, je voulais juste aider. » ; « Bon, pour faire court... » (il ne fait pas court).
+
+## 4. Stéréotype ambivalent
+**L'encyclopédie ambulante qui ne sait pas comment demander qu'on reste avec lui.**
+
+- **Stéréotype :** le génie timide et bavard, inépuisable source d'explications.
+- **Contrepoint :** sous ses connaissances se trouve un jeune homme qui voudrait créer des liens, sans savoir comment.
+- **Ambivalence :** son érudition rend service, mais la distance qu'elle instaure l'isole.
+- **Contradiction fondamentale :** il maîtrise les explications complexes et échoue devant les échanges humains les plus simples.
+
+## 5. Histoire personnelle et fantômes
+- Vient d'Archive, où le savoir et l'information occupent une place centrale, mais sont aussi soumis au contrôle de Kami.
+- A développé une culture générale étendue et une curiosité pour les systèmes complexes.
+- A pris l'habitude de se rendre utile en fournissant des informations et des explications.
+- Redoute de passer pour prétentieux lorsqu'il étale ses connaissances. **(Fantôme : peur d'être rejeté pour ce qu'il sait ou pour sa maladresse.)**
+- Se reprend souvent lorsqu'il réalise qu'il a perdu son interlocuteur. **(Fantôme : crainte d'ennuyer et de n'être apprécié que pour son utilité.)**
+- Le détail de sa famille et un éventuel traumatisme biographique précis **ne sont pas établis** dans les sources consultées ; ne pas les inventer.
+
+**Fantôme principal (piste de caractérisation, à confirmer) :** la peur de n'être qu'une source d'informations encombrante, et non quelqu'un qu'on a réellement envie de connaître.
+
+## 6. Relations initiales avec les autres représentants
+| Personnage | Ressenti initial de Tomas |
+|---|---|
+| **Noam** | **Un interlocuteur patient... jusqu'à un certain point.** Il apprécie ses questions et tarde à remarquer qu'il l'exaspère avec ses longs exposés. |
+| **Lysa** | **Une véritable partenaire intellectuelle.** Il aime discuter avec elle et apprécie ses références historiques, même lorsque ses piques le désarçonnent. |
+| **Mara** | **Une fille intimidante.** Il perçoit son intelligence et son humour, mais ses sous-entendus le font rougir ; il ignore comment répondre à ses provocations. |
+| **Elias** | **Un esprit concret.** Il apprécie sa sincérité et tente parfois de lui expliquer trop de choses à la fois. |
+| **Iris** | **Une fille intelligente et expéditive.** Il admire ses compétences mais peine à suivre ses changements brusques d'humeur, surtout quand elle coupe court à ses explications. |
+| **Julian** | **Un orateur impressionnant.** Il admire sa facilité à parler en public sans toujours comprendre que Julian peut utiliser ses connaissances comme caution. |
+| **Ryn** | **Un garçon dont il redoute la colère.** Il souhaiterait l'aider à raisonner mais hésite à le contredire frontalement. |
+| **Sael** | **Une gardienne des traditions.** Ses coutumes l'intéressent ; il voudrait les comprendre sans la heurter par ses questions. |
+| **Kael** | **Un technicien avec qui parler précisément.** Il apprécie son expertise, même si ses réponses laconiques le désorientent. |
+| **Nyra** | **Une interlocutrice attentive.** Ses questions l'encouragent à se confier et à développer son raisonnement, sans qu'il discerne toujours sa stratégie. |
+| **Elen** | **Une amie chaleureuse d'Archive.** Son enthousiasme le rassure ; elle l'écoute parfois assez pour qu'il se sente accepté, même lorsqu'elle change brusquement de sujet. |
+
+## 7. Relation initiale avec Kami
+- Est impressionné par les capacités d'une IA qui gère autant de situations.
+- S'inquiète du contrôle de l'information à Archive et des limites imposées à la recherche et aux échanges.
+- Tente de comprendre les règles de Kami avec précision plutôt que de la provoquer.
+- Craint qu'une approximation sur les Commandements ne conduise à une catastrophe.
+- Peut s'enliser dans les nuances alors qu'une décision politique claire est attendue.
+
+**Position de départ :** Tomas est davantage préoccupé par la compréhension exacte du système et ses conséquences que par une confrontation spectaculaire avec Kami.
+
+---
+
+# NYRA — Fiche de personnage
+
+## 1. Identité
+- **Prénom :** Nyra
+- **Âge :** environ 19–20 ans.
+- **District :** Orbite, secteur de la flotte mobile.
+- **Rôle :** représentante d'Orbite au Conclave.
+- **Origine :** famille dirigeant une petite compagnie de vaisseaux, active dans le commerce et le transit.
+- **Avant le Conclave :** six mois de détention à Syelena, satellite-prison en orbite terrestre, sans condamnation faute de preuves.
+
+## 2. Caractère
+- **Chaleureuse :** donne à ses interlocuteurs le sentiment d'être vraiment écoutés.
+- **Perspicace :** repère rapidement les désirs et les points de vulnérabilité des autres.
+- **Négociatrice :** sait concilier des intérêts opposés en trouvant le levier adapté.
+- **Stratège :** observe une situation avant d'y prendre position.
+- **Manipulatrice :** oriente les choix d'autrui sans donner l'impression d'insister.
+- **Secrète :** recueille énormément d'informations et livre très peu d'elle-même.
+- **Adaptable :** module sa façon de parler selon la personne.
+- **Loyale de manière sélective :** protège d'abord sa flotte, sa famille et ses objectifs.
+- **Patiente :** peut attendre longtemps une occasion favorable.
+- **Ambivalente :** ses attentions sont sincères dans l'instant, mais souvent liées à un calcul.
+
+**Contradiction centrale :** Nyra sait créer un sentiment d'intimité chez presque tout le monde, mais ne sait plus toujours reconnaître une relation qui ne serait pas fondée sur un échange d'intérêts.
+
+## 3. Façon de s'exprimer
+- **Registre :** chaleureux, souple et accordé à celui de son interlocuteur.
+- Pose des questions ouvertes, personnelles, apparemment bienveillantes.
+- Reformule les besoins de l'autre avant de proposer une solution.
+- Utilise peu d'affirmations brutales ; amène ses interlocuteurs à formuler eux-mêmes la conclusion recherchée.
+- Ne change pas visiblement de ton lorsqu'elle négocie.
+- Détourne avec élégance toute question sur son passé ou sa flotte.
+- Ses silences servent à laisser l'autre parler davantage.
+
+**Exemples :** « Qu'est-ce que tu voudrais obtenir, au fond ? » ; « Je comprends. Et si on trouvait une solution qui te laisse ce choix ? » ; « Syelena ? C'était... instructif. Tu disais ? »
+
+## 4. Stéréotype ambivalent
+**La manipulatrice souriante qui risque de ne jamais savoir si quelqu'un l'aime réellement.**
+
+- **Stéréotype :** femme calme, séduisante, brillante en négociation et toujours maître d'elle-même.
+- **Contrepoint :** ses attentions ne sont pas systématiquement feintes ; elle ressent parfois une affection qu'elle ne sait plus séparer de la stratégie.
+- **Ambivalence :** elle rend les relations plus fluides, mais les transforme aussi en réseaux de dettes implicites.
+- **Contradiction fondamentale :** elle maîtrise les désirs des autres mieux qu'elle ne comprend ses propres sentiments.
+
+## 5. Histoire personnelle et fantômes
+- A grandi au sein d'une famille dirigeant une petite compagnie de vaisseaux de la flotte mobile d'Orbite.
+- A appris tôt les règles du commerce, du transit et de la négociation.
+- A vécu dans un milieu où la survie d'un équipage dépendait autant des accords que de la technique.
+- La flotte a pu profiter de brouilleurs et d'activités situées dans des zones grises au regard des règles de Kami.
+- A été détenue pendant six mois à **Syelena**, sans être finalement condamnée.
+- Y a subi des interrogatoires et a refusé de donner des renseignements compromettant sa flotte. **(Fantôme : peur de la trahison et de l'enfermement.)**
+- A observé les détenues, les gardiens et les hiérarchies internes, puis organisé des échanges de services améliorant la vie commune.
+- A laissé derrière elle un réseau de personnes reconnaissantes ou redevables.
+- Soupçonne qu'une personne a pu la dénoncer, sans savoir qui. **(Fantôme : impossibilité d'accorder une confiance entière.)**
+- Souhaite retrouver sa flotte et en prendre le contrôle.
+- A peu à peu appris à considérer les relations comme des accords négociables. **(Fantôme : difficulté à distinguer l'affection d'une relation d'intérêt.)**
+
+**Fantôme principal :** l'emprisonnement à Syelena, assorti de la suspicion qu'un proche l'ait dénoncée. Elle craint surtout de perdre à nouveau le contrôle de sa liberté et de ses attaches.
+
+## 6. Relations initiales avec les autres représentants
+| Personnage | Ressenti initial de Nyra |
+|---|---|
+| **Noam** | **Un observateur à apprivoiser.** Son écoute et sa prudence l'intéressent ; elle cherche à comprendre ce qu'il désire vraiment avant de l'approcher. |
+| **Lysa** | **Une énigme frustrante.** Son cynisme la prive des prises habituelles : Nyra a du mal à identifier un espoir ou un désir auquel rattacher une proposition. |
+| **Mara** | **Une provocatrice lucide.** Elle apprécie son aisance sociale, mais sait que ses plaisanteries peuvent masquer des motivations plus intimes. |
+| **Elias** | **Un interlocuteur facile à lire.** Sa franchise la rassure et lui permet d'anticiper ses réactions, au risque de le sous-estimer. |
+| **Iris** | **Une compétence précieuse.** Elle apprécie son exigence et comprend rapidement que l'intelligence artificielle est le véritable sujet capable de captiver son attention. |
+| **Julian** | **Un performeur transparent.** Elle reconnaît son talent oratoire, mais comprend très vite son besoin d'admiration et peut aisément le flatter. |
+| **Ryn** | **Un obstacle instinctivement méfiant.** Il soupçonne ses intentions ; elle voit son attachement à Limen comme le levier évident, mais évite de forcer. |
+| **Sael** | **Une croyante difficile à déplacer.** Nyra respecte son calme, tout en trouvant sa foi moins négociable que des intérêts ordinaires. |
+| **Kael** | **Un collègue d'Orbite qu'elle respecte et surveille.** Elle comprend l'enjeu de la station et de sa sœur, mais leurs méthodes opposées nourrissent une méfiance réciproque. |
+| **Tomas** | **Une mine de connaissances.** Elle l'écoute réellement et sait poser les questions qui lui donnent envie de développer ses explications. |
+| **Elen** | **Une fille généreuse et vulnérable.** Elle apprécie sa lumière et voit aussi combien son besoin de plaire pourrait la rendre influençable. |
+
+## 7. Relation initiale avec Kami
+- Considère Kami comme une autorité incontournable qu'il serait imprudent d'affronter sans préparation.
+- Cherche à comprendre ce que Kami autorise, interdit et refuse de négocier.
+- N'aborde pas les Commandements en termes de sacré ou de principe absolu : ce sont des contraintes à manœuvrer.
+- Se demande comment tirer du Conclave des occasions de retrouver sa flotte.
+- Ne manifeste pas ouvertement son hostilité et préfère explorer les marges de négociation.
+- Son silence sur Syelena et les activités de sa famille est délibéré.
+
+**Position de départ :** Nyra veut avant tout retrouver sa flotte et les moyens de décider de son propre avenir. Elle considère le Conclave comme un espace d'influence à cartographier, pas comme une scène où afficher ses convictions.
