@@ -218,17 +218,17 @@ label decouverte_sas:
     noam reflexion "je pensais pas tomber sur quelqu’un ici."
 
     mara doute "Ouais…"
-    mara doute "Les gens passent, matent la porte deux secondes,"
-    mara doute "captent que c’est fermé à double tour,"
-    mara doute "et se barrent direct comme des rats."
+    mara doute "Les autres regardent la porte deux secondes,"
+    mara doute "voient qu'elle est fermée,"
+    mara doute "et repartent."
     mara taquin "Ils ont pas les couilles de rester."
 
     noam sourire "Et toi ?"
 
     mara sourire "Moi je reste."
-    mara sourire "J’aime bien savoir exactement comment tout peut partir en vrille."
-    mara sourire "Rien de tel que de connaître chaque recoin pourri d’un endroit."
-    mara taquin "Ça permet de mieux anticiper le moment où ça va chier."
+    mara sourire "Je préfère savoir comment ça marche, au cas où."
+    mara sourire "Au moins, si y a un problème, je saurai où aller."
+    mara taquin "Parce que ça finira bien par merder quelque part."
 
     pause 0.3
 
