@@ -63,6 +63,19 @@
 
 **Fantôme dominant :** la peur de faire du mal, de décevoir ou d'abandonner quelqu'un qui comptait sur lui — par une mauvaise décision comme par son silence.
 
+## 5 bis. Secret de scénario — recherches pré-Kami et projet Reus (SPOILERS, route Iris J28–J29)
+
+- **Avant la prise de pouvoir de Kami**, Iris a participé, en tant que scientifique, à un programme privé de recherche sur la duplication des corps humains et la conservation/restitution de souvenirs.
+- Ce programme était financé par **Reus**, un marchand immensément riche. Il voulait atteindre une forme de vie éternelle, convaincu que **la continuité des souvenirs définit la continuité d'une vie**, et produire des copies capables de lui tenir compagnie, de travailler pour lui ou de représenter des proches.
+- Iris a participé au développement de la **machine de duplication**. Elle a même **enregistré les données de son propre corps et de ses souvenirs** pour une expérience de clonage, avant la prise de pouvoir de Kami. Cet enregistrement est antérieur de plusieurs années aux événements du Conclave.
+- L'infrastructure de duplication **existait déjà avant Kami** ; Zero n'a donc pas inventé le principe technologique. Sa création de Kael comme premier Doppelgänger de son opération reste compatible avec cette antériorité.
+- Le **Conclave** occupe une ancienne station gigantesque appartenant à Reus ; Iris **n'y était jamais allée** avant sa désignation comme représentante. La présence d'un laboratoire lié à ces recherches ne suppose donc pas qu'elle connaisse les lieux.
+- **Branche J28 : « Choisir Iris »** — le procédé de fabrication récupère un **enregistrement mémoriel ancien** au lieu des souvenirs de l'Iris ayant vécu le Conclave. À son réveil, la nouvelle Iris demande avec enthousiasme si l'expérience a réussi, puis s'étonne du lieu et de l'identité des personnes présentes. Elle ne connaît pas le Conclave actuel ni les événements de la prise de pouvoir de Kami.
+- **Révélation finale prévue pour cette route :** « Mais enfin, j'ai participé à la création de cette machine ! »
+- **Conséquence identitaire :** cette Iris possède un passé commun ancien avec l'originale, mais **aucun vécu partagé avec Noam et les autres représentants**. Le fait de lui donner le même visage n'efface pas cette rupture.
+- **À ne pas dévoiler prématurément :** la participation d'Iris au programme de Reus, son auto-enregistrement et l'ancienneté des données doivent rester un secret d'auteur jusqu'à la route dédiée.
+- **Point de continuité à arbitrer :** la fiche actuelle donne à Iris environ **19 ans** et la présente comme passionnée exclusivement par l'IA. Une collaboration scientifique antérieure de plusieurs années sur la duplication biologique doit recevoir une chronologie crédible et une fonction cohérente avec sa spécialité (par exemple le volet modélisation/restitution des souvenirs), sans modifier silencieusement son âge ni effacer son projet d'IA éducative.
+
 ## 6. Relations initiales avec les autres représentants
 
 Il s'agit du **ressenti de Noam au début**, et non d'un bilan de leurs relations futures.
@@ -1295,3 +1308,30 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 - Son silence sur Syelena et les activités de sa famille est délibéré.
 
 **Position de départ :** Nyra veut avant tout retrouver sa flotte et les moyens de décider de son propre avenir. Elle considère le Conclave comme un espace d'influence à cartographier, pas comme une scène où afficher ses convictions.
+
+
+---
+
+# REUS — FICHE DE LORE (PERSONNAGE NON INTRODUIT À L'ÉCRAN)
+
+## Identité et position
+
+- **Nom :** Reus.
+- **Statut avant Kami :** marchand immensément riche, disposant de moyens financiers, de stations spatiales et de programmes de recherche privés.
+- **Patrimoine :** le bâtiment devenu le **Conclave** était autrefois l'une de ses gigantesques stations. Le futur Conclave n'était pas encore connu d'Iris lorsqu'elle y travaillait à distance ou sur d'autres sites du programme.
+- **Statut après la prise de pouvoir de Kami :** **non établi**. Ne pas déclarer qu'il est mort, toujours vivant ou déjà dupliqué sans décision de scénario.
+
+## Projet et vision de l'identité
+
+- Finance avant Kami le développement d'une machine capable de reproduire un corps humain et d'y restituer des souvenirs enregistrés.
+- **Objectif 1 — immortalité :** considère que les souvenirs sont l'essence d'une vie ; selon sa philosophie, une copie porteuse de ceux-ci pourrait lui permettre de poursuivre son existence.
+- **Objectif 2 — copies à son service :** veut des clones pour tenir compagnie, travailler pour lui et représenter des proches.
+- **Contradiction morale :** confond la reproduction d'une mémoire avec la continuité subjective d'une personne ; la validité de cette croyance n'est pas établie par le récit.
+- Employait ou finançait une équipe scientifique à laquelle appartenait **Iris**, notamment pour la composante mémorielle de la duplication. Iris a enregistré sa propre empreinte corporelle et ses souvenirs avant Kami.
+
+## Place dans la révélation de la route Iris
+
+- La machine et la technologie sous-jacente **précèdent Kami et les Doppelgängers de Zero**.
+- Dans la branche de remplacement d'Iris, la machine utilise une **archive ancienne** de ses souvenirs ; la copie ainsi réveillée reconnaît l'expérience de duplication, mais pas les personnes ni le lieu actuels.
+- **Dernière réplique prévue :** « Mais enfin, j'ai participé à la création de cette machine ! »
+- **À laisser ouvert :** le sort de Reus, son éventuelle duplication personnelle et ses liens directs avec Zero ou Kami. Ce sont des pistes possibles, **pas des faits établis**.
