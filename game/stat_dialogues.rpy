@@ -17,8 +17,9 @@ init 3 python:
                 return option
         raise ValueError("Choix de statistique inconnu : {}".format(option_id))
 
-    # Chaque échange contient quatre réponses, dont deux verrouillées par les
-    # statistiques. Les variantes couvrent tous les points d'entrée jouables.
+    # Chaque échange contient cinq réponses, dont deux verrouillées par les
+    # statistiques. Les nouvelles options ordinaires favorisent un équilibre
+    # des compétences sur les différentes routes. Les variantes couvrent tous les points d'entrée jouables.
     STAT_DIALOGUES = {
         "d1": {
             "prompt": "Lysa baisse la voix. « Tu crois qu'on peut vraiment se faire confiance ici ? »",
@@ -27,6 +28,7 @@ init 3 python:
                 _sd_option("solidaire", "Je dis pas qu'on doit se faire confiance les yeux fermés. Mais on peut au moins essayer de s'entraider, non ?", "sd_d1_solidaire"),
                 _sd_option("details", "Lysa, je t'ai vue trembler tout à l'heure. Tu vas pas me dire que tout va bien ?", "sd_d1_details", requires={"observation": 2}),
                 _sd_option("rassurer", "Tu sais, t'es pas obligée de faire comme si tout ça te passait au-dessus. Pas avec moi, en tout cas.", "sd_d1_rassurer", requires={"empathie": 2}),
+                _sd_option("souffler", "Je vais déjà essayer de reprendre mon souffle. Depuis le réveil, j'ai les jambes en coton, et j'aime pas ça.", "sd_d1_souffler"),
             ],
         },
         "d2": {
@@ -36,6 +38,7 @@ init 3 python:
                 _sd_option("texte", "Je vais déjà relire la proposition mot par mot. Si on se trompe sur ce qu'on vote, on est mal partis.", "sd_d2_texte"),
                 _sd_option("signaux", "Tu vois ceux qui changent de sujet dès qu'on parle du vote ? Je commencerais par aller leur parler.", "sd_d2_signaux", requires={"observation": 2}),
                 _sd_option("frontal", "Ça suffit de tourner autour du pot. Je vais leur demander directement ce qu'ils comptent voter.", "sd_d2_frontal", requires={"audace": 2}),
+                _sd_option("observer", "Avant d'aller leur parler, on pourrait regarder qui s'assoit avec qui. Ça nous donnera peut-être une idée des alliances.", "sd_d2_observer"),
             ],
         },
         "d3": {
@@ -45,105 +48,117 @@ init 3 python:
                 _sd_option("pression", "S'ils veulent voter contre, très bien. Mais je veux qu'ils regardent aussi les conséquences de ce refus.", "sd_d3_pression"),
                 _sd_option("contradiction", "Attends. Si on reprend leurs arguments un par un, il y a plusieurs choses qui ne collent pas. On peut partir de là.", "sd_d3_contradiction", requires={"logique": 2}),
                 _sd_option("peur", "Et si on leur demandait d'abord ce qui leur fait peur ? À mon avis, certains ne disent pas vraiment pourquoi ils hésitent.", "sd_d3_peur", requires={"empathie": 2}),
+                _sd_option("garder_tete", "On va éviter de s'énerver avant même d'entrer. Si quelqu'un cherche à nous provoquer, je préfère garder la tête froide.", "sd_d3_garder_tete"),
             ],
         },
         "d4_0": {
             "prompt": "Ryn frappe la table. « On a perdu hier. Tu comptes encore demander gentiment ? »",
             "options": [
-                _sd_option("tenir", "Je compte surtout comprendre pourquoi on a perdu.", "sd_d4_0_tenir"),
-                _sd_option("relancer", "Oui. Jusqu'à ce qu'ils soient obligés de répondre.", "sd_d4_0_relancer"),
+                _sd_option("tenir", "Je veux comprendre ce qui a fait échouer le vote. Si on sait pas où on s'est plantés, on va refaire exactement la même erreur.", "sd_d4_0_tenir"),
+                _sd_option("relancer", "Oui, et je vais recommencer tant qu'on n'aura pas de vraie réponse. On peut pas juste faire comme si rien ne s'était passé.", "sd_d4_0_relancer"),
                 _sd_option("colere", "Ryn, je vois bien que t'es en colère. Mais ce vote t'a aussi fait peur, non ? Qu'est-ce qui te travaille autant ?", "sd_d4_0_colere", requires={"empathie": 2}),
                 _sd_option("faille", "Ils ont tous voté contre, mais pas pour les mêmes raisons. Si on comprend ce qui a bloqué chacun, on aura peut-être une chance.", "sd_d4_0_faille", requires={"logique": 2}),
+                _sd_option("rester_calme", "Je suis aussi énervé que toi, Ryn. Mais si on retourne les voir en hurlant, on va juste se faire claquer la porte au nez.", "sd_d4_0_rester_calme"),
             ],
         },
         "d4_1": {
             "prompt": "Sael me dévisage. « Vous avez gagné le commerce. Cela vous suffit-il ? »",
             "options": [
-                _sd_option("consequences", "Une victoire ne vaut rien si on refuse d'en surveiller les conséquences.", "sd_d4_1_consequences"),
-                _sd_option("humains", "Non. Les marchandises passent, les gens restent enfermés.", "sd_d4_1_humains"),
+                _sd_option("consequences", "Je suis content qu'on ait obtenu ce vote, mais je veux voir ce que ça change vraiment. Sinon, on saura jamais si on a eu raison.", "sd_d4_1_consequences"),
+                _sd_option("humains", "Non, évidemment. On a réussi à faire circuler les marchandises, mais les gens sont toujours coincés derrière les frontières.", "sd_d4_1_humains"),
                 _sd_option("interet", "Sael, j'ai l'impression que vous ne refusez pas ce vote par principe. Vous essayez de protéger quelqu'un, c'est ça ?", "sd_d4_1_interet", requires={"observation": 2}),
                 _sd_option("calme", "D'accord. Je ne vais pas essayer de vous convaincre tout de suite. Dites-moi seulement ce qui vous empêche d'accepter.", "sd_d4_1_calme", requires={"sang_froid": 2}),
+                _sd_option("regarder", "Je veux surtout voir ce que ça change pour les gens. On a voté le texte, mais on n'a encore rien vu de ses effets.", "sd_d4_1_regarder"),
             ],
         },
         "d5_0": {
             "prompt": "Sael soupire. « Vous savez déjà que je voterai non. Pourquoi insister ? »",
             "options": [
-                _sd_option("raison", "Parce que je veux entendre votre raison, pas seulement votre vote.", "sd_d5_0_raison"),
-                _sd_option("limite", "Parce qu'un refus absolu cache toujours une limite négociable.", "sd_d5_0_limite"),
+                _sd_option("raison", "Parce que je voudrais comprendre ce qui vous bloque. Je connais déjà votre vote, mais pas vraiment vos raisons.", "sd_d5_0_raison"),
+                _sd_option("limite", "Parce que je suis pas convaincu que tout soit non négociable. Il doit bien y avoir quelque chose qu'on peut revoir ensemble.", "sd_d5_0_limite"),
                 _sd_option("micro", "Chaque fois qu'on parle des frontières, vous vous arrêtez au milieu de vos phrases. Il y a quelque chose que vous ne nous dites pas ?", "sd_d5_0_micro", requires={"observation": 3}),
                 _sd_option("silence", "On n'est pas obligés de régler ça maintenant. Je peux attendre un peu, si vous avez besoin de réfléchir.", "sd_d5_0_silence", requires={"sang_froid": 2}),
+                _sd_option("tenir_bon", "Parce que je suis venu vous parler, et je vais pas partir juste parce que la discussion est désagréable. On peut au moins essayer.", "sd_d5_0_tenir_bon"),
             ],
         },
         "d5_1": {
             "prompt": "Kael fixe l'écran éteint. « Si ma sœur est à C-3, je dois faire quoi ? »",
             "options": [
-                _sd_option("present", "D'abord respirer. Ensuite, on rassemble ce qu'on sait vraiment.", "sd_d5_1_present"),
-                _sd_option("agir", "Me donner tout ce que tu sais. On trouvera un moyen d'agir.", "sd_d5_1_agir"),
+                _sd_option("present", "Attends, Kael. Respire un peu. On va reprendre ce qu'on sait de ta sœur et voir ce qu'on peut faire, sans inventer le pire.", "sd_d5_1_present"),
+                _sd_option("agir", "Dis-moi tout ce que tu sais, même les détails qui te semblent inutiles. Après, on trouvera comment bouger.", "sd_d5_1_agir"),
                 _sd_option("alerte", "L'alerte ne correspond pas à une rupture totale du complexe.", "sd_d5_1_alerte", requires={"logique": 3}),
                 _sd_option("mensonge", "Tu ne me dis pas tout sur la situation de ta sœur.", "sd_d5_1_mensonge", requires={"observation": 2}),
+                _sd_option("soutenir", "Si tu dois aller chercher quelqu'un ou transporter du matériel, je viens avec toi. On va pas te laisser gérer ça tout seul.", "sd_d5_1_soutenir"),
             ],
         },
         "d6_0_1": {
             "prompt": "Mara observe la porte du Conclave. « On entre malgré le texte incompréhensible ? »",
             "options": [
-                _sd_option("procedure", "On entre, mais personne ne vote avant une formulation claire.", "sd_d6_0_1_procedure"),
-                _sd_option("ensemble", "On entre ensemble et personne ne reste isolé face à Kami.", "sd_d6_0_1_ensemble"),
+                _sd_option("procedure", "On entre, mais je veux qu'on exige une explication avant le vote. Impossible de se prononcer sur un texte qu'on comprend pas.", "sd_d6_0_1_procedure"),
+                _sd_option("ensemble", "On y va tous ensemble. Si Kami essaie de nous mettre la pression, personne ne doit se retrouver seul à lui répondre.", "sd_d6_0_1_ensemble"),
                 _sd_option("glitch", "Les coupures suivent un rythme. Kami ne contrôle pas tout.", "sd_d6_0_1_glitch", requires={"observation": 3}),
                 _sd_option("refus", "Si elle nous presse, je prends la parole et je refuse le cadre.", "sd_d6_0_1_refus", requires={"audace": 3}),
+                _sd_option("reperer", "Attends une seconde. On regarde d'abord les issues et les caméras, histoire de savoir où on met les pieds.", "sd_d6_0_1_reperer"),
             ],
         },
         "d6_1_0": {
             "prompt": "Lysa murmure. « Le vote est perdu d'avance. On joue quand même la scène ? »",
             "options": [
-                _sd_option("trace", "Oui. Chaque argument laissera une trace pour le prochain vote.", "sd_d6_1_0_trace"),
-                _sd_option("sael", "Oui. Sael doit voir qu'on ne la réduit pas à son non.", "sd_d6_1_0_sael"),
+                _sd_option("trace", "Oui. Même si on perd aujourd'hui, il faut qu'on sache précisément ce que chacun nous reproche. Ça servira pour la suite.", "sd_d6_1_0_trace"),
+                _sd_option("sael", "Oui. Et je veux surtout que Sael comprenne qu'on ne la considère pas comme une ennemie juste parce qu'elle vote contre.", "sd_d6_1_0_sael"),
                 _sd_option("hesitation", "Elle évite mon regard depuis ce matin. Sa décision n'est pas aussi solide qu'elle le dit.", "sd_d6_1_0_hesitation", requires={"observation": 3}),
                 _sd_option("rupture", "On brise le rythme de Kami et on impose notre propre question.", "sd_d6_1_0_rupture", requires={"audace": 3}),
+                _sd_option("oser", "Même si Sael vote contre, j'ai pas envie de rester assis à faire semblant. Je vais lui poser la question devant tout le monde.", "sd_d6_1_0_oser"),
             ],
         },
         "d7_0_1": {
             "prompt": "Tomas tient son rapport contre lui. « Plus aucune exécution. Tu comprends ce que ça signifie ? »",
             "options": [
-                _sd_option("verifier", "Que nous devons vérifier avant d'inventer une explication.", "sd_d7_0_1_verifier"),
-                _sd_option("espoir", "Que des gens sont vivants aujourd'hui grâce à cette anomalie.", "sd_d7_0_1_espoir"),
+                _sd_option("verifier", "Que c'est énorme, mais qu'on ferait mieux de vérifier avant de commencer à raconter n'importe quoi.", "sd_d7_0_1_verifier"),
+                _sd_option("espoir", "Que, pour une fois, des gens ont peut-être survécu à une journée entière sans craindre d'être exécutés. Rien que ça, c'est immense.", "sd_d7_0_1_espoir"),
                 _sd_option("motif", "Le silence de Kami et l'arrêt des exécutions ont commencé ensemble.", "sd_d7_0_1_motif", requires={"logique": 3}),
                 _sd_option("publier", "On l'annonce à tout le monde avant que Kami puisse réécrire les faits.", "sd_d7_0_1_publier", requires={"audace": 3}),
+                _sd_option("se_risquer", "Alors on devrait aller le dire aux autres tout de suite, quitte à se tromper. On ne peut pas garder ça pour nous.", "sd_d7_0_1_se_risquer"),
             ],
         },
         "d7_1_0": {
             "prompt": "Iris bloque la porte. « On cache cette femme ou on prévient Kami ? »",
             "options": [
-                _sd_option("soins", "On commence par ce qui la maintient en vie, puis on décide.", "sd_d7_1_0_soins"),
-                _sd_option("cacher", "On la cache. Kami n'a aucun droit sur elle.", "sd_d7_1_0_cacher"),
+                _sd_option("soins", "On peut débattre de ce qu'on doit dire à Kami après. Là, il faut surtout vérifier qu'elle va tenir le coup.", "sd_d7_1_0_soins"),
+                _sd_option("cacher", "On la cache. Je sais que c'est risqué, mais je refuse de la livrer à Kami alors qu'elle est à peine consciente.", "sd_d7_1_0_cacher"),
                 _sd_option("symptomes", "Sa respiration indique qu'on n'a que quelques minutes pour la déplacer.", "sd_d7_1_0_symptomes", requires={"observation": 3}),
                 _sd_option("peur", "Tu veux la cacher parce qu'elle te rappelle quelqu'un.", "sd_d7_1_0_peur", requires={"empathie": 3}),
+                _sd_option("porter", "On la met à l'abri d'abord. Je peux la porter jusqu'à l'infirmerie si vous me montrez le chemin.", "sd_d7_1_0_porter"),
             ],
         },
         "d7_1_0_1": {
             "prompt": "Nyra fixe la caméra. « Si nous appelons Kami, il faut contrôler les premiers mots. »",
             "options": [
-                _sd_option("medical", "On décrit uniquement l'urgence médicale et on exige des soins.", "sd_d7_1_0_1_medical"),
-                _sd_option("responsable", "Je parle le premier et j'assume la découverte.", "sd_d7_1_0_1_responsable"),
+                _sd_option("medical", "On lui dit qu'on a trouvé une femme blessée et qu'elle a besoin de soins. Pas besoin de raconter toute l'histoire d'un coup.", "sd_d7_1_0_1_medical"),
+                _sd_option("responsable", "Je vais parler en premier. Si Kami cherche un responsable, elle pourra s'en prendre à moi plutôt qu'aux autres.", "sd_d7_1_0_1_responsable"),
                 _sd_option("camera", "La caméra a changé d'angle avant notre arrivée. Kami savait déjà.", "sd_d7_1_0_1_camera", requires={"observation": 3}),
                 _sd_option("unite", "On parle au pluriel. Elle ne doit pouvoir isoler personne.", "sd_d7_1_0_1_unite", requires={"sang_froid": 3}),
+                _sd_option("tenir_calme", "On va lui parler sans hausser la voix. Si Kami cherche à nous faire paniquer, faut surtout pas lui donner ce plaisir.", "sd_d7_1_0_1_tenir_calme"),
             ],
         },
         "d8": {
             "prompt": "Kael serre sa photo disparue contre son souvenir. « Dis-moi que ce n'est pas quelqu'un d'ici. »",
             "options": [
-                _sd_option("promesse", "Je ne peux pas te le promettre. Mais je peux t'aider à chercher.", "sd_d8_promesse"),
-                _sd_option("indices", "On reconstitue les accès, les horaires et les objets visés.", "sd_d8_indices"),
+                _sd_option("promesse", "Je vais pas te mentir, Kael. J'en sais rien. Mais si tu veux chercher qui a fait ça, je viens avec toi.", "sd_d8_promesse"),
+                _sd_option("indices", "On devrait reprendre les horaires et voir qui pouvait entrer dans ta chambre. Il doit forcément rester une trace quelque part.", "sd_d8_indices"),
                 _sd_option("cible", "Le dessin et la photo ont la même fonction : nous rappeler quelqu'un.", "sd_d8_cible", requires={"logique": 3}),
                 _sd_option("confronter", "Je vais réunir tout le monde. On a assez perdu de temps à se demander ce qui se passe chacun dans notre coin.", "sd_d8_confronter", requires={"audace": 3}),
+                _sd_option("garder_calme", "Je sais que t'as peur, Kael. Mais on va commencer par regarder ce qu'on a, sans accuser quelqu'un au hasard.", "sd_d8_garder_calme"),
             ],
         },
         "d9": {
             "prompt": "Ryn regarde les écrans. « Kami est revenue. On suit encore sa procédure ? »",
             "options": [
-                _sd_option("temps", "On suit assez longtemps pour gagner du temps aux campements.", "sd_d9_temps"),
-                _sd_option("prevenir", "La priorité est de prévenir les gens, quel qu'en soit le prix.", "sd_d9_prevenir"),
+                _sd_option("temps", "On fait semblant de suivre sa procédure pour l'instant. Chaque minute qu'on gagne peut aider les gens dans les campements.", "sd_d9_temps"),
+                _sd_option("prevenir", "On doit prévenir les gens, Ryn. Je préfère prendre le risque de me faire repérer plutôt que de les laisser sans rien savoir.", "sd_d9_prevenir"),
                 _sd_option("maintenance", "Sa maintenance a laissé des irrégularités dans le réseau. C'est notre passage.", "sd_d9_maintenance", requires={"observation": 3}),
                 _sd_option("provoquer", "Je la provoque à l'écran pendant que vous détournez le signal.", "sd_d9_provoquer", requires={"sang_froid": 3}),
+                _sd_option("tenir_position", "On reste près des sorties et on se tient prêts à aider les autres si ça dégénère. Je veux pas qu'on se retrouve coincés.", "sd_d9_tenir_position"),
             ],
         },
     }
@@ -280,7 +295,7 @@ label sd_d2_frontal:
 # JOUR 3 — toujours disponible. Gain : +1 XP Logique.
 label sd_d3_coalition:
     julian "Du consensus avant du spectacle. Tu es terriblement raisonnable."
-    $ _stat_xp_results = award_stats_xp({"logique": 1})
+    $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
 # JOUR 3 — toujours disponible. Gain : +1 XP Audace.
@@ -475,7 +490,7 @@ label sd_d7_0_1_publier:
 # JOUR 7, route 1-0 — toujours disponible. Gain : +1 XP Sang-froid.
 label sd_d7_1_0_soins:
     iris "D'accord. Une priorité à la fois."
-    $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
+    $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
 # JOUR 7, route 1-0 — toujours disponible. Gain : +1 XP Audace.
@@ -549,14 +564,14 @@ label sd_d8_confronter:
 # JOUR 9 — toujours disponible. Gain : +1 XP Logique.
 label sd_d9_temps:
     ryn "Obéir en apparence. Ça me plaît moins que ça ne devrait."
-    $ _stat_xp_results = award_stats_xp({"logique": 1})
+    $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
     return
 
 # JOUR 9 — toujours disponible. Gain : +1 XP Empathie.
 label sd_d9_prevenir:
     "Ryn tend déjà la main vers la console."
     ryn "Enfin une phrase utile."
-    $ _stat_xp_results = award_stats_xp({"empathie": 1})
+    $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
 # JOUR 9 — existe si Observation >= 3. Aucune XP.
@@ -569,4 +584,88 @@ label sd_d9_maintenance:
 label sd_d9_provoquer:
     "Ryn sourit sans joie."
     ryn "Tiens assez longtemps et je fais le reste."
+    return
+
+# JOUR d1 — nouvelle réponse ordinaire : +1 XP physique.
+label sd_d1_souffler:
+    lysa "Si tu comptes t'effondrer dès le premier jour, préviens-moi. J'ai pas envie de te porter."
+    $ _stat_xp_results = award_stats_xp({"physique": 1})
+    return
+
+# JOUR d2 — nouvelle réponse ordinaire : +1 XP observation.
+label sd_d2_observer:
+    tomas "C'est une bonne piste. Les places autour de cette table ne doivent pas toutes être le fruit du hasard."
+    $ _stat_xp_results = award_stats_xp({"observation": 1})
+    return
+
+# JOUR d3 — nouvelle réponse ordinaire : +1 XP sang_froid.
+label sd_d3_garder_tete:
+    julian "Pas très spectaculaire, mais je reconnais que ça pourrait nous éviter un désastre."
+    $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
+    return
+
+# JOUR d4_0 — nouvelle réponse ordinaire : +1 XP sang_froid.
+label sd_d4_0_rester_calme:
+    ryn "Ouais, bon. J'ai pas dit que j'allais cogner quelqu'un. Enfin, pas encore."
+    $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
+    return
+
+# JOUR d4_1 — nouvelle réponse ordinaire : +1 XP observation.
+label sd_d4_1_regarder:
+    sael "Au moins, vous admettez qu'un vote ne règle pas tout. C'est déjà cela."
+    $ _stat_xp_results = award_stats_xp({"observation": 1})
+    return
+
+# JOUR d5_0 — nouvelle réponse ordinaire : +1 XP audace.
+label sd_d5_0_tenir_bon:
+    sael "Vous avez de la suite dans les idées. C'est parfois un défaut, vous savez."
+    $ _stat_xp_results = award_stats_xp({"audace": 1})
+    return
+
+# JOUR d5_1 — nouvelle réponse ordinaire : +1 XP physique.
+label sd_d5_1_soutenir:
+    kael "Merci. Mais attends qu'on sache au moins où aller, d'accord ?"
+    $ _stat_xp_results = award_stats_xp({"physique": 1})
+    return
+
+# JOUR d6_0_1 — nouvelle réponse ordinaire : +1 XP observation.
+label sd_d6_0_1_reperer:
+    mara "Charmant. Même la salle du vote me donne envie de chercher une sortie de secours, maintenant."
+    $ _stat_xp_results = award_stats_xp({"observation": 1})
+    return
+
+# JOUR d6_1_0 — nouvelle réponse ordinaire : +1 XP audace.
+label sd_d6_1_0_oser:
+    lysa "Ça va être pénible à regarder... mais au moins, on saura ce qu'elle répond."
+    $ _stat_xp_results = award_stats_xp({"audace": 1})
+    return
+
+# JOUR d7_0_1 — nouvelle réponse ordinaire : +1 XP audace.
+label sd_d7_0_1_se_risquer:
+    tomas "Je préférerais vérifier deux fois... Mais je comprends pourquoi tu ne veux pas attendre."
+    $ _stat_xp_results = award_stats_xp({"audace": 1})
+    return
+
+# JOUR d7_1_0 — nouvelle réponse ordinaire : +1 XP physique.
+label sd_d7_1_0_porter:
+    iris "Tu la soulèves doucement, compris ? Si tu la secoues, je te fais regretter de m'avoir proposé ton aide."
+    $ _stat_xp_results = award_stats_xp({"physique": 1})
+    return
+
+# JOUR d7_1_0_1 — nouvelle réponse ordinaire : +1 XP sang_froid.
+label sd_d7_1_0_1_tenir_calme:
+    nyra "C'est la seule façon d'avoir une conversation utile avec elle. Ne sortons pas de ce cadre."
+    $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
+    return
+
+# JOUR d8 — nouvelle réponse ordinaire : +1 XP sang_froid.
+label sd_d8_garder_calme:
+    kael "D'accord. Je vais essayer. J'ai juste besoin qu'on ne laisse pas tomber."
+    $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
+    return
+
+# JOUR d9 — nouvelle réponse ordinaire : +1 XP physique.
+label sd_d9_tenir_position:
+    ryn "Là, au moins, on parle concret. Je vais vérifier le couloir."
+    $ _stat_xp_results = award_stats_xp({"physique": 1})
     return
