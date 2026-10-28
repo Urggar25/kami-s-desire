@@ -313,6 +313,8 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     tomas neutre "Oui."
 
+    call play_stat_dialogue("j24")
+
     ryn desaccord "Et si tu trouves rien ?"
 
     tomas fatigue "Alors j'aurai rien à présenter."
