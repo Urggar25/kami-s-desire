@@ -500,8 +500,8 @@ label _28_0_1_1_0_0_1_FIN:
         # Début J29 au cœur de la nuit, sans sommeil ni réveil intermédiaire.
         call end_day("29", sleeping=False) from _call_j28_secret_end_day_29
         jump _29_0_1_1_0_0_1_1_REVEIL
-    else:
-        # La route Iris conserve sa transition historique tant que sa suite n'est pas écrite.
+    elif j28_secret_target == "iris":
+        # Branche Iris : le choix du J28 mène au J29 consacré à son remplacement.
         call end_day("29", sleeping=True) from _call_j28_secret_iris_end_day_29
         jump _29_0_1_1_0_0_1_2_REVEIL
     return
