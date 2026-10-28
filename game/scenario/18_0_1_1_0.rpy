@@ -372,6 +372,8 @@ label _18_0_1_1_RESEAU_CONCLAVE:
 
     noam reflexion "..." id j18_reseau_silence_noam
 
+    call play_stat_dialogue("j18")
+
     mara "On regarde cinq minutes et après on redescend si tu veux."
 
     noam "D'accord."
