@@ -636,6 +636,8 @@ label _17_0_1_1_APRES_PROTESTATION:
     "Le ton de Mara est étrangement doux. Elen détourne les yeux."
 
 
+    call play_stat_dialogue("j17")
+
     nyra neutre "On maintient la position pour aujourd'hui. Pas de vote, pas de nouvelle proposition."
 
     tomas reflechit "Et demain ?"
