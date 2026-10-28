@@ -244,8 +244,13 @@ label sd_d1_solidaire:
 
 # JOUR 1 — existe si Observation >= 2. Aucune XP.
 label sd_d1_details:
-    "Lysa se fige, surprise que j'aie remarqué, puis détourne les yeux."
-    lysa gene "Rien... On a beau dire ce qu'on veut, cette situation fait franchement flipper..."
+    "Lysa glisse ses mains sous la table."
+    lysa gene "Quoi ? J'ai froid. Ça arrive."
+    noam "Tu regardes aussi la porte toutes les dix secondes."
+    lysa "Je suis enfermée avec des inconnus et une IA qui joue à Dieu. Tu veux que je sois détendue ?"
+    noam "Non. Je voulais juste savoir si ça allait."
+    lysa "Eh bien non. Et si tu pouvais éviter de le répéter, ça m'arrangerait."
+    noam "D'accord. Je garde ça pour moi."
     return
 
 
@@ -264,8 +269,12 @@ label sd_d2_texte:
 
 # JOUR 2 — existe si Audace >= 2. Aucune XP.
 label sd_d2_frontal:
-    "Tomas grimace, puis cède."
-    tomas "Brutal... mais au moins ce sera clair."
+    tomas "Tu peux leur demander clairement, mais évite de les coincer devant tout le monde."
+    noam "On vote bientôt. On peut pas passer la journée à deviner ce qu'ils pensent."
+    tomas "Alors commence par leur demander ce qui les inquiète. Ensuite, tu demandes leur position."
+    noam "Et s'ils répondent à côté ?"
+    tomas "Tu insistes. Mais au moins tu leur auras laissé une chance de s'expliquer."
+    noam "Bon. Je vais essayer comme ça."
     return
 
 # JOUR 3 — toujours disponible. Gain : +1 XP Logique.
@@ -284,8 +293,13 @@ label sd_d3_pression:
 
 # JOUR 3 — existe si Empathie >= 2. Aucune XP.
 label sd_d3_peur:
-    "Le sourire de Julian disparaît."
-    julian "D'accord. Parlons à la personne, pas au vote."
+    "Julian cesse de sourire."
+    julian "Tu penses à quelqu'un en particulier ?"
+    noam "À ceux qui ne disent presque rien. J'ai pas envie de leur prêter des intentions avant de les écouter."
+    julian "Et moi qui pensais qu'on allait leur faire un grand discours..."
+    noam "Tu pourrais aller voir deux ou trois personnes sans essayer de les impressionner ?"
+    julian "Aïe. Tu demandes beaucoup. Mais je peux essayer."
+    noam "Alors on se retrouve après et on compare ce qu'ils nous ont dit."
     return
 
 # JOUR 4, route refus — toujours disponible. Gain : +1 XP Logique.
@@ -319,8 +333,13 @@ label sd_d4_1_humains:
 
 # JOUR 4, route adoption — existe si Sang-froid >= 2. Aucune XP.
 label sd_d4_1_calme:
-    "Sael hésite, déstabilisée par l'absence d'attaque."
-    sael "Très bien. Une fois."
+    sael "Vous pensez que je vais vous donner toutes mes raisons comme ça ?"
+    noam "Non. Mais je peux au moins vous écouter jusqu'au bout."
+    sael "Les échanges de marchandises, c'est une chose. Vous ne connaissez pas les gens qui devront vivre avec la suite."
+    noam "Les habitants de Limen ?"
+    sael "Entre autres. Ils ne sont pas tous aussi pressés que vous de voir les choses changer."
+    noam "D'accord. Je ne vais pas décider à leur place de ce qui est bon pour eux."
+    sael "Alors nous avons peut-être quelque chose à nous dire."
     return
 
 # JOUR 5, route refus — toujours disponible. Gain : +1 XP Empathie.
@@ -337,8 +356,13 @@ label sd_d5_0_limite:
 
 # JOUR 5, route refus — existe si Observation >= 3. Aucune XP.
 label sd_d5_0_micro:
-    "Sael raidit les épaules."
-    sael "Vous observez des choses qui ne vous concernent pas."
+    "Sael s'interrompt encore et jette un œil vers la porte."
+    sael "Qu'est-ce que vous insinuez ?"
+    noam "Rien. Je remarque juste que vous regardez derrière moi chaque fois qu'on parle des frontières."
+    sael "Je regarde où je veux."
+    noam "D'accord. Mais si quelqu'un vous empêche de parler, je préfère le savoir."
+    sael "Personne ne m'empêche de parler. Ce qui m'inquiète, ce sont ceux qui devront subir votre décision."
+    noam "Alors parlons d'eux, plutôt que de revenir sur votre vote."
     return
 
 
@@ -357,8 +381,13 @@ label sd_d5_1_agir:
 
 # JOUR 5, route adoption — existe si Logique >= 3. Aucune XP.
 label sd_d5_1_alerte:
-    "Kael relève la tête."
-    kael "Donc certaines zones peuvent encore tenir."
+    kael "Attends... Tu veux dire que tout C-3 n'est pas forcément coupé ?"
+    noam "L'alerte ne dit pas ça. Elle parle d'un problème localisé, pas d'une destruction totale."
+    kael "Mais ma sœur pourrait quand même être dans la zone touchée."
+    noam "Oui. Je veux pas te faire croire le contraire."
+    kael "Alors qu'est-ce qu'on cherche ?"
+    noam "Une information sur son secteur précis. Pour l'instant, on n'en sait pas assez."
+    "Kael reprend l'écran et commence à chercher, un peu plus calmement."
     return
 
 
@@ -378,8 +407,13 @@ label sd_d6_0_1_ensemble:
 
 # JOUR 6, route 0-1 — existe si Audace >= 3. Aucune XP.
 label sd_d6_0_1_refus:
-    mara "Tu vas attirer tout le feu."
-    noam "C'est précisément l'idée."
+    mara "Tu vas vraiment dire non devant tout le monde ?"
+    noam "Si Kami veut qu'on vote sans comprendre le texte, oui."
+    mara "Et si elle décide de s'en prendre à toi ?"
+    noam "On sera pas plus en sécurité en acceptant n'importe quoi."
+    mara "Peut-être, mais j'aimerais autant que tu sortes de là entier."
+    noam "Alors reste à côté. Si je m'emballe, tu m'arrêtes."
+    mara "Pas de souci. Ça, je sais faire."
     return
 
 # JOUR 6, route 1-0 — toujours disponible. Gain : +1 XP Logique.
@@ -397,7 +431,13 @@ label sd_d6_1_0_sael:
 
 # JOUR 6, route 1-0 — existe si Observation >= 3. Aucune XP.
 label sd_d6_1_0_hesitation:
-    lysa "J'avais pris ça pour du mépris. Tu as peut-être raison."
+    "Lysa observe discrètement Sael."
+    lysa "Moi, je pensais qu'elle nous méprisait, c'est tout."
+    noam "Elle regarde toujours les autres avant de répondre. Ça ressemble pas à quelqu'un de si sûr de son coup."
+    lysa "Ou alors elle cherche juste la meilleure façon de nous envoyer balader."
+    noam "Possible. Mais je préfère lui poser la question."
+    lysa "Bonne chance. Évite quand même de lui dire que tu l'observes depuis une heure."
+    noam "Oui, je vais trouver autre chose."
     return
 
 
@@ -416,8 +456,13 @@ label sd_d7_0_1_espoir:
 
 # JOUR 7, route 0-1 — existe si Logique >= 3. Aucune XP.
 label sd_d7_0_1_motif:
-    "Tomas blêmit."
-    tomas "Ce n'est donc probablement pas un choix politique."
+    tomas "Tu penses que les deux événements sont liés ?"
+    noam "Ils ont commencé au même moment. Pour moi, ça mérite qu'on vérifie."
+    tomas "Ça voudrait dire que Kami n'a peut-être pas choisi d'arrêter les exécutions..."
+    noam "On sait pas encore. Et on sait surtout pas si ça va durer."
+    tomas "Je vais relever les horaires exacts dans le rapport."
+    noam "Et on évite de dire aux autres que le danger est passé."
+    tomas "Oui. Ce serait une erreur."
     return
 
 
@@ -436,14 +481,24 @@ label sd_d7_1_0_cacher:
 
 # JOUR 7, route 1-0 — existe si Observation >= 3. Aucune XP.
 label sd_d7_1_0_symptomes:
-    "Iris cesse de discuter."
-    iris "Alors guide-nous."
+    "Iris s'agenouille aussitôt près de la jeune femme."
+    iris "Qu'est-ce que t'as remarqué ?"
+    noam "Elle respire très vite, puis presque plus du tout pendant une seconde. Ça recommence."
+    iris "Merde. Elias, viens voir ça."
+    noam "Je fais quoi ?"
+    iris "Tu tiens la couverture, tu évites de la secouer et tu fais ce que je te dis. On discutera du reste après."
+    noam "Compris. Je bouge pas."
     return
 
 # JOUR 7, route 1-0 — existe si Empathie >= 3. Aucune XP.
 label sd_d7_1_0_peur:
-    "Iris vacille."
-    iris "Plus tard. Sauve-la d'abord."
+    "Iris détourne le regard."
+    iris "C'est pas le moment de parler de ça."
+    noam "Je te demande pas de m'expliquer. Je voulais juste être sûr que t'allais bien."
+    iris "Ben non, ça va pas. Maintenant, tu veux bien m'aider ?"
+    noam "Bien sûr. Qu'est-ce qu'il te faut ?"
+    iris "Une couverture. Et cinq minutes de tranquillité quand on aura fini."
+    noam "Ça marche. Je t'en trouverai une."
     return
 
 # JOUR 7, route déclaration — toujours disponible. Gain : +1 XP Logique.
@@ -462,7 +517,13 @@ label sd_d7_1_0_1_responsable:
 
 # JOUR 7, route déclaration — existe si Sang-froid >= 3. Aucune XP.
 label sd_d7_1_0_1_unite:
-    nyra "Nous avons trouvé. Nous demandons. Nous refusons. Compris."
+    nyra "Oui. Personne ne répond seul si Kami cherche à désigner un coupable."
+    noam "On explique ce qu'on a trouvé et ce qu'on demande. Pas besoin de se rejeter la faute."
+    nyra "Et si elle menace celui qui prend la parole ?"
+    noam "On revient aux faits : il y a une femme blessée, elle a besoin de soins."
+    nyra "Très bien. Tu gardes cette version, même si elle essaie de te faire sortir de tes gonds."
+    noam "Je vais faire de mon mieux."
+    nyra "Il faudra faire mieux que ça. On va répéter une fois."
     return
 
 # JOUR 8 — toujours disponible. Gain : +1 XP Empathie.
@@ -480,8 +541,13 @@ label sd_d8_indices:
 
 # JOUR 8 — existe si Logique >= 3. Aucune XP.
 label sd_d8_cible:
-    "Kael pâlit."
-    kael "Donc le voleur ne prend pas des objets. Il prend nos attaches."
+    kael "Tu crois que quelqu'un prend ces objets juste pour nous faire du mal ?"
+    noam "Je sais pas. Mais la photo et le dessin ont un point commun : ils comptent pour nous. Ils valent pas grand-chose autrement."
+    kael "Ça voudrait dire que la personne savait quoi chercher."
+    noam "Ou qu'elle a pris le temps de regarder ce qu'on gardait."
+    kael "C'est encore pire..."
+    noam "On va vérifier les accès avant d'accuser qui que ce soit."
+    kael "D'accord. Je peux t'aider pour ça."
     return
 
 
@@ -501,8 +567,13 @@ label sd_d9_prevenir:
 
 # JOUR 9 — existe si Sang-froid >= 3. Aucune XP.
 label sd_d9_provoquer:
-    "Ryn sourit sans joie."
-    ryn "Tiens assez longtemps et je fais le reste."
+    ryn "Tu vas discuter avec elle pendant que je touche à la console ?"
+    noam "Si elle est occupée à me répondre, elle regardera peut-être moins ce que tu fais."
+    ryn "Peut-être ? Super rassurant, ton plan."
+    noam "Tu préfères qu'on reste plantés là ?"
+    ryn "Non. Mais si elle se tourne vers moi, tu changes de sujet tout de suite."
+    noam "D'accord. Et toi, tu prends pas de risques inutiles."
+    ryn "Je te promets rien, mais j'ai compris."
     return
 
 # JOUR d1 — nouvelle réponse ordinaire : +1 XP physique.
