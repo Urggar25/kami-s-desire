@@ -417,6 +417,8 @@ label _29_0_1_1_0_0_1_1_NAISSANCE:
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Kael nous appelle en début d'après-midi. La première phase est terminée."
     $ showGroup([("kael", "calme", 0.12), ("nyra", "reflexion", 0.35), ("mara", "inquiet", 0.58), ("noam", "inquiet", 0.83)])
+    call play_stat_dialogue("j29")
+
     kael raison "Bon. Le corps est prêt. Personne ne touche aux commandes tant que j'ai pas fini."
     mara surpris "Il est là ?"
     kael calme "Oui. Mais il va être un peu perdu tant qu'on n'aura pas activé sa personnalité."
