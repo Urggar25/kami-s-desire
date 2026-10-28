@@ -1,5 +1,5 @@
 # =============================================================
-# STATISTIQUES SECONDAIRES — permanentes (persistent), jets D10
+# STATISTIQUES SECONDAIRES — progression permanente partagée
 # =============================================================
 
 # ---- Données permanentes (partagées entre toutes les saves) ----
@@ -120,8 +120,7 @@ init python:
     def award_stat_xp(name, amount):
         """Point d'entrée unique des gains d'XP de statistiques.
 
-        Le surplus est abandonné lors d'une montée de niveau, conformément à la
-        remise à zéro demandée. Aucun chiffre d'XP n'est présenté au joueur.
+        Le surplus est conservé lors des montées de niveau. La tablette affiche l'XP.
         """
         stats_init()
         if name not in STATS_META:
@@ -141,14 +140,18 @@ init python:
             result["blocked"] = True
             return result
 
+        # Préserve le surplus lors des passages de niveaux successifs.
         persistent.stats_xp[name] += amount
-        result["awarded"] = amount
-        required = stat_xp_required(name)
-        if required is not None and persistent.stats_xp[name] >= required:
+        while result["level"] < STAT_MAX:
+            required = stat_xp_required(name)
+            if required is None or persistent.stats_xp[name] < required:
+                break
+            persistent.stats_xp[name] -= required
             result["level"] = set_stat(name, result["level"] + 1)
-            persistent.stats_xp[name] = 0
             result["leveled"] = True
             queue_stat_level_up(name, result["level"])
+        if result["level"] >= STAT_MAX:
+            persistent.stats_xp[name] = 0
 
         renpy.save_persistent()
         return result
@@ -168,30 +171,6 @@ init python:
         # Conservé pour les appels historiques : award_stat_xp anime déjà le gain.
         return
 
-    # ---- Jet de dé D10 ----
-    # roll 1 = échec critique TOUJOURS ; 10 = réussite critique TOUJOURS.
-    # Sinon : réussite si (roll + niveau_stat) >= dc.
-    def roll_stat(name, dc=10):
-        import random
-        lvl = get_stat(name)
-        roll = random.randint(1, 10)
-        if roll == 1:
-            success, crit = False, True
-        elif roll == 10:
-            success, crit = True, True
-        else:
-            success, crit = (roll + lvl) >= dc, False
-        return {
-            "stat": name,
-            "label": STATS_META[name]["label"],
-            "color": STATS_META[name]["color"],
-            "level": lvl,
-            "roll": roll,
-            "total": roll + lvl,
-            "dc": dc,
-            "success": success,
-            "critical": crit,
-        }
 
 $ stats_init()
 
@@ -464,6 +443,9 @@ screen tablet_stat_gauge(name):
     $ meta = STATS_META[name]
     $ lvl = get_stat(name)
     $ col = meta["color"]
+    $ xp_needed = stat_xp_required(name)
+    $ xp_current = persistent.stats_xp.get(name, 0) if xp_needed is not None else 0
+    $ xp_fraction = min(1.0, max(0.0, float(xp_current) / xp_needed)) if xp_needed else 1.0
 
     frame:
         xsize 290 ysize 178
@@ -495,6 +477,13 @@ screen tablet_stat_gauge(name):
             text "{:02d} / 10".format(lvl):
                 xpos 174 ypos 103 size 18 color col
                 font "fonts/Rajdhani-SemiBold.ttf"
+            # Progression intégrée dans la tuile existante (290 x 178).
+            add Solid("#243c4b") xpos 174 ypos 137 xsize 102 ysize 5
+            if xp_needed is not None and xp_fraction > 0:
+                add Solid(col) xpos 174 ypos 137 xsize max(1, int(102 * xp_fraction)) ysize 5
+            text ("XP {:d}/{:d}".format(xp_current, xp_needed) if xp_needed is not None else "MAÎTRISE MAX"):
+                xpos 174 ypos 147 size 12 color "#a9c8d5"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
 
 screen stat_gauge(name):
@@ -520,80 +509,3 @@ screen stat_gauge(name):
         text meta["label"]:
             xalign 0.5 ypos 262 size 22 color "#D6E8F0"
             font "fonts/Rajdhani-SemiBold.ttf" kerning 1
-
-
-# =============================================================
-# JET DE DÉ D10 — écran de résolution
-# =============================================================
-# Usage dans le script :
-#   call screen stat_check("logique", 12, "Déchiffrer le protocole Kami")
-#   if _return:  ... réussite ...  else: ... échec ...
-
-screen stat_check(name, dc=10, titre=""):
-    modal True
-    zorder 200
-
-    default rolled = False
-    default res = None
-
-    add Solid("#020609F5")
-
-    frame at d1_appear:
-        xalign 0.5 yalign 0.5
-        xsize 640 ysize 460
-        background Frame(Solid("#0A121CF8"), 0, 0)
-        padding (0, 0)
-
-        fixed:
-            xsize 640 ysize 460
-            $ col = STATS_META[name]["color"]
-            add Solid(col) xpos 0 ypos 0 xsize 640 ysize 2
-
-            text "TEST — [STATS_META[name]['label']]":
-                xpos 26 ypos 20 size 20 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-            if titre:
-                text kd_tr(titre):
-                    xpos 26 ypos 50 size 14 color "#7A98A8" font "fonts/Rajdhani-SemiBold.ttf"
-
-            text "Niveau [get_stat(name)]   •   Difficulté [dc]":
-                xpos 26 ypos 90 size 15 color "#D6E8F0" font "fonts/Rajdhani-SemiBold.ttf"
-
-            # Icône de la stat testée (coin)
-            add Transform("hud/tablet/stat_icon_" + name + ".png", size=(40, 40)) xpos 560 ypos 22
-
-            # Dé
-            frame:
-                xalign 0.5 ypos 150
-                xysize (150, 150)
-                background Frame(Solid(col + "16"), 0, 0)
-                if not rolled:
-                    add Transform("hud/tablet/stat_icon_" + name + ".png", size=(80, 80)) xalign 0.5 ypos 24 at stat_check_idle
-                    text "D10" xalign 0.5 ypos 104 size 30 color col font "fonts/Rajdhani-SemiBold.ttf"
-                else:
-                    text "[res['roll']]" xalign 0.5 yalign 0.5 size 78 color col font "fonts/Rajdhani-SemiBold.ttf"
-
-            if not rolled:
-                button:
-                    xalign 0.5 ypos 340
-                    xsize 260 ysize 54
-                    background Frame(Solid(col + "22"), 0, 0)
-                    hover_background Frame(Solid(col + "44"), 0, 0)
-                    action [SetScreenVariable("res", roll_stat(name, dc)), SetScreenVariable("rolled", True)]
-                    text "LANCER LE DÉ" xalign 0.5 yalign 0.5 size 18 color col font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-            else:
-                # Verdict
-                $ verdict = ("RÉUSSITE CRITIQUE" if (res["success"] and res["critical"])
-                             else "ÉCHEC CRITIQUE" if (not res["success"] and res["critical"])
-                             else "RÉUSSITE" if res["success"] else "ÉCHEC")
-                $ vcol = "#6BD98A" if res["success"] else "#E85C6B"
-                text "[res['roll']] + [res['level']] = [res['total']]  vs  [dc]":
-                    xalign 0.5 ypos 320 size 16 color "#7A98A8" font "fonts/Rajdhani-SemiBold.ttf"
-                text kd_tr(verdict):
-                    xalign 0.5 ypos 348 size 26 color vcol font "fonts/Rajdhani-SemiBold.ttf" kerning 2
-                button:
-                    xalign 0.5 ypos 400
-                    xsize 200 ysize 44
-                    background Frame(Solid("#12202E"), 0, 0)
-                    hover_background Frame(Solid(vcol + "33"), 0, 0)
-                    action Return(res["success"])
-                    text "CONTINUER" xalign 0.5 yalign 0.5 size 16 color vcol font "fonts/Rajdhani-SemiBold.ttf"
