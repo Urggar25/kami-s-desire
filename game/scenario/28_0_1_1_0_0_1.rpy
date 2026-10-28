@@ -503,4 +503,5 @@ label _28_0_1_1_0_0_1_FIN:
     else:
         # La route Iris conserve sa transition historique tant que sa suite n'est pas écrite.
         call end_day("29", sleeping=True) from _call_j28_secret_iris_end_day_29
+        jump _29_0_1_1_0_0_1_2_REVEIL
     return
