@@ -308,7 +308,7 @@ label _30_0_1_1_0_0_1_0_FIN:
     pause 1.2
     call screen kd_ending_reached(
         "Le prix d'une vie",
-        "ENDING 05 // JOUR 30"
+        "ENDING 08 // JOUR 30"
     )
     $ _ending_screen_closed = _return
     return
