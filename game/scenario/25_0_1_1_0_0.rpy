@@ -258,6 +258,8 @@ label _25_0_1_1_0_0_BRUIT:
 
     noam neutre "On pourra demander à Elias de regarder. Elen nous attend."
 
+    call play_stat_dialogue("j25")
+
     iris neutre "Deux secondes. Passe-moi la lampe."
 
     "Je regarde celle qui est restée près de mon lit, puis la lui tends. Iris essaie d'éclairer entre les lames de la grille, mais le bureau la gêne."
