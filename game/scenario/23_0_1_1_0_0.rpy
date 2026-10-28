@@ -126,6 +126,8 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
     "Le ton change. Plus personne ne plaisante."
 
+    call play_stat_dialogue("j23")
+
     sael "Tu veux savoir si ce que t'as vu peut venir de toi ou pas ?"
 
     "Je regarde Mara. Elle évite mes yeux."
