@@ -703,6 +703,8 @@ label _12_0_1_1_DEBAT_SECURITE:
 
     "Quelques rires nerveux parcourent la salle."
 
+    call play_stat_dialogue("j12")
+
     elias fatigue "Je comprends l’idée, mais le sujet est quand même important."
     elias fatigue "Sans ça, Kami pourra plus ni nous surveiller, ni nous protéger..."
 
