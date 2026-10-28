@@ -70,7 +70,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Personnages inconnus génériques | Produit des portraits homme/femme inconnus avec expressions composées. | `game/unknown_characters.rpy` | `show expression unknown_expression("female", "neutre") as inconnue` |
 | Choix critique | Présente 2 à 4 décisions majeures dans un HUD adaptatif avec Noam glitché. | `game/critical_choice.rpy` | `menu (screen="critical_choice", noam_expr="hesitation"):` |
 | Statistiques persistantes | Gère les niveaux et l'XP persistants entre parties, le délai anti-farm de 60 secondes, le surplus d'XP, l'affichage de progression dans la tablette et une cérémonie cinématique plein écran à chaque niveau (anneaux/icônes de tablette agrandis, charge, flash, onde de choc, ancien et nouveau palier, file d'animations). | `game/stats_system.rpy` | `$ award_stat_xp("logique", 2)` |
-| Dialogue conditionné par les stats | Jours 1 à 9 : menus de trois réponses ordinaires attribuant chacune 1 XP, complétées selon l'enjeu par zéro, une ou exceptionnellement deux réponses conditionnelles sans XP, chacune accompagnée d'une courte scène supplémentaire propre au personnage et à l'enjeu, progression persistante et rééquilibrage contextuel des six statistiques. | `game/stat_dialogues.rpy` | `call play_stat_dialogue("d3")` |
+| Dialogue conditionné par les stats | Jours 1 à 20 : menus de trois réponses ordinaires attribuant chacune 1 XP, complétées selon l'enjeu par zéro, une ou exceptionnellement deux réponses conditionnelles sans XP, chacune accompagnée d'une courte scène supplémentaire propre au personnage et à l'enjeu, progression persistante et rééquilibrage contextuel des six statistiques. | `game/stat_dialogues.rpy`, `game/stat_dialogues_11_20.rpy` | `call play_stat_dialogue("d3")` |
 | Arguments globaux | Débloque un argument de débat de manière persistante et compatible avec les anciennes sauvegardes. | `game/script.rpy` | `$ add_argument("Le coût humain")` |
 | Notification d'argument | Affiche un panneau animé signalant au joueur qu'un argument vient d'être obtenu. | `game/screens.rpy` | `show screen argument_unlock("Le coût humain")` |
 | Dossier de vote | Organise propositions et arguments par chapitre avec progression, jauge et déblocages. | `game/vote_dossier.rpy` | `$ unlock_dossier_arg("id_argument"); show screen vote_dossier` |
@@ -241,3 +241,10 @@ Pour chaque ajout ou modification future :
 4. Si un nouvel outil est créé, l'ajouter dans la bonne catégorie avec les quatre champs obligatoires.
 5. Vérifier que l'exemple appelle bien l'API publique et que le chemin existe.
 6. Mettre à jour la date du dernier audit lorsqu'un recensement complet est refait.
+
+### Dialogues statistiques des jours 11 à 20
+
+- Dix menus intégrés aux journées 11 à 20 via `call play_stat_dialogue("j11")` jusqu'à `j20`.
+- Chaque menu contient trois réponses ordinaires (+1 XP, réparties entre les six statistiques) et, si l'enjeu le justifie, une réponse verrouillée donnant une scène supplémentaire sans XP.
+- Les sept scènes verrouillées restent courtes et sans modification des branches principales ; ne pas créer d'XP dans leurs labels.
+- Toutes les données des menus et tous les labels correspondants se trouvent dans `game/stat_dialogues_11_20.rpy`. La fonction et l'écran communs restent dans `game/stat_dialogues.rpy`.
