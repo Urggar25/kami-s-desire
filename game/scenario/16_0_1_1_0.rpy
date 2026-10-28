@@ -184,6 +184,8 @@ label _16_0_1_1_CAFETERIA_TENSION_ARRIVEE:
 
     nyra "Je ne sais pas. Il n'a pas voulu me répondre. Quand j'ai essayé de continuer la discussion, il a vérifié deux fois derrière moi avant de refermer sa porte."
 
+    call play_stat_dialogue("j16")
+
     mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Je l'ai toujours trouvée chelou, mais là de plus en plus."
 
     lysa blase "Je donne encore trois jours avant qu'on commence tous à dormir avec une chaise sous la poignée."
