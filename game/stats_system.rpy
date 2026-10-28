@@ -272,13 +272,12 @@ transform stat_level_exit:
 # de niveau sont enchaînées dans une même attribution d'XP.
 screen stat_level_up_animation(stat_name, level):
     zorder 260
-    modal False
+    modal True
     $ meta = STATS_META[stat_name]
     $ col = meta["color"]
     $ old_level = max(STAT_MIN, level - 1)
     $ new_level = min(STAT_MAX, level)
     $ icon = "hud/tablet/stat_icon_" + stat_name + ".png"
-    $ old_ring = "hud/tablet/ring_" + stat_name + "_" + str(old_level) + ".png"
     $ new_ring = "hud/tablet/ring_" + stat_name + "_" + str(new_level) + ".png"
 
     # Le screen passe au-dessus du dialogue, sans changer le menu tablette.
