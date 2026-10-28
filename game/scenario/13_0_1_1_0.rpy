@@ -297,6 +297,8 @@ label _13_0_1_1_CAFETERIA_ARRIVEE:
 
     "Il ne rajoute rien et se détourne. Sa façon de couper court à la discussion me met presque plus mal à l'aise que Mara."
 
+    call play_stat_dialogue("j13")
+
     elen triste "Tu crois qu'elle regarde quand on dort ?"
 
     "La question tombe au milieu de la conversation sans prévenir. Mara cesse de parler. Iris tourne la tête vers Elen."
