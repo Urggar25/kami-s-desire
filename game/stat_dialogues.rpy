@@ -17,9 +17,9 @@ init 3 python:
                 return option
         raise ValueError("Choix de statistique inconnu : {}".format(option_id))
 
-    # Chaque échange contient cinq réponses, dont deux verrouillées par les
-    # statistiques. Les nouvelles options ordinaires favorisent un équilibre
-    # des compétences sur les différentes routes. Les variantes couvrent tous les points d'entrée jouables.
+    # Chaque échange comporte trois réponses ordinaires et de zéro à deux réponses
+    # conditionnelles (exceptionnelles). Éviter deux verrous sauf si les deux
+    # approches enrichissent réellement une situation narrative majeure. Les variantes couvrent tous les points d'entrée jouables.
     STAT_DIALOGUES = {
         "d1": {
             "prompt": "Lysa baisse la voix. « Tu crois qu'on peut vraiment se faire confiance ici ? »",
@@ -27,7 +27,6 @@ init 3 python:
                 _sd_option("prudent", "Franchement, j'en sais rien. On vient à peine d'arriver et j'ai déjà l'impression que tout le monde se méfie de tout le monde.", "sd_d1_prudent"),
                 _sd_option("solidaire", "Je dis pas qu'on doit se faire confiance les yeux fermés. Mais on peut au moins essayer de s'entraider, non ?", "sd_d1_solidaire"),
                 _sd_option("details", "Lysa, je t'ai vue trembler tout à l'heure. Tu vas pas me dire que tout va bien ?", "sd_d1_details", requires={"observation": 2}),
-                _sd_option("rassurer", "Tu sais, t'es pas obligée de faire comme si tout ça te passait au-dessus. Pas avec moi, en tout cas.", "sd_d1_rassurer", requires={"empathie": 2}),
                 _sd_option("souffler", "Je vais déjà essayer de reprendre mon souffle. Depuis le réveil, j'ai les jambes en coton, et j'aime pas ça.", "sd_d1_souffler"),
             ],
         },
@@ -36,7 +35,6 @@ init 3 python:
             "options": [
                 _sd_option("ecouter", "Avant de défendre quoi que ce soit, je veux comprendre ce que chacun risque de perdre avec ce vote.", "sd_d2_ecouter"),
                 _sd_option("texte", "Je vais déjà relire la proposition mot par mot. Si on se trompe sur ce qu'on vote, on est mal partis.", "sd_d2_texte"),
-                _sd_option("signaux", "Tu vois ceux qui changent de sujet dès qu'on parle du vote ? Je commencerais par aller leur parler.", "sd_d2_signaux", requires={"observation": 2}),
                 _sd_option("frontal", "Ça suffit de tourner autour du pot. Je vais leur demander directement ce qu'ils comptent voter.", "sd_d2_frontal", requires={"audace": 2}),
                 _sd_option("observer", "Avant d'aller leur parler, on pourrait regarder qui s'assoit avec qui. Ça nous donnera peut-être une idée des alliances.", "sd_d2_observer"),
             ],
@@ -46,7 +44,6 @@ init 3 python:
             "options": [
                 _sd_option("coalition", "On devrait commencer par chercher ce sur quoi tout le monde est d'accord. Après, on verra ce qui bloque.", "sd_d3_coalition"),
                 _sd_option("pression", "S'ils veulent voter contre, très bien. Mais je veux qu'ils regardent aussi les conséquences de ce refus.", "sd_d3_pression"),
-                _sd_option("contradiction", "Attends. Si on reprend leurs arguments un par un, il y a plusieurs choses qui ne collent pas. On peut partir de là.", "sd_d3_contradiction", requires={"logique": 2}),
                 _sd_option("peur", "Et si on leur demandait d'abord ce qui leur fait peur ? À mon avis, certains ne disent pas vraiment pourquoi ils hésitent.", "sd_d3_peur", requires={"empathie": 2}),
                 _sd_option("garder_tete", "On va éviter de s'énerver avant même d'entrer. Si quelqu'un cherche à nous provoquer, je préfère garder la tête froide.", "sd_d3_garder_tete"),
             ],
@@ -56,8 +53,6 @@ init 3 python:
             "options": [
                 _sd_option("tenir", "Je veux comprendre ce qui a fait échouer le vote. Si on sait pas où on s'est plantés, on va refaire exactement la même erreur.", "sd_d4_0_tenir"),
                 _sd_option("relancer", "Oui, et je vais recommencer tant qu'on n'aura pas de vraie réponse. On peut pas juste faire comme si rien ne s'était passé.", "sd_d4_0_relancer"),
-                _sd_option("colere", "Ryn, je vois bien que t'es en colère. Mais ce vote t'a aussi fait peur, non ? Qu'est-ce qui te travaille autant ?", "sd_d4_0_colere", requires={"empathie": 2}),
-                _sd_option("faille", "Ils ont tous voté contre, mais pas pour les mêmes raisons. Si on comprend ce qui a bloqué chacun, on aura peut-être une chance.", "sd_d4_0_faille", requires={"logique": 2}),
                 _sd_option("rester_calme", "Je suis aussi énervé que toi, Ryn. Mais si on retourne les voir en hurlant, on va juste se faire claquer la porte au nez.", "sd_d4_0_rester_calme"),
             ],
         },
@@ -66,7 +61,6 @@ init 3 python:
             "options": [
                 _sd_option("consequences", "Je suis content qu'on ait obtenu ce vote, mais je veux voir ce que ça change vraiment. Sinon, on saura jamais si on a eu raison.", "sd_d4_1_consequences"),
                 _sd_option("humains", "Non, évidemment. On a réussi à faire circuler les marchandises, mais les gens sont toujours coincés derrière les frontières.", "sd_d4_1_humains"),
-                _sd_option("interet", "Sael, j'ai l'impression que vous ne refusez pas ce vote par principe. Vous essayez de protéger quelqu'un, c'est ça ?", "sd_d4_1_interet", requires={"observation": 2}),
                 _sd_option("calme", "D'accord. Je ne vais pas essayer de vous convaincre tout de suite. Dites-moi seulement ce qui vous empêche d'accepter.", "sd_d4_1_calme", requires={"sang_froid": 2}),
                 _sd_option("regarder", "Je veux surtout voir ce que ça change pour les gens. On a voté le texte, mais on n'a encore rien vu de ses effets.", "sd_d4_1_regarder"),
             ],
@@ -77,7 +71,6 @@ init 3 python:
                 _sd_option("raison", "Parce que je voudrais comprendre ce qui vous bloque. Je connais déjà votre vote, mais pas vraiment vos raisons.", "sd_d5_0_raison"),
                 _sd_option("limite", "Parce que je suis pas convaincu que tout soit non négociable. Il doit bien y avoir quelque chose qu'on peut revoir ensemble.", "sd_d5_0_limite"),
                 _sd_option("micro", "Chaque fois qu'on parle des frontières, vous vous arrêtez au milieu de vos phrases. Il y a quelque chose que vous ne nous dites pas ?", "sd_d5_0_micro", requires={"observation": 3}),
-                _sd_option("silence", "On n'est pas obligés de régler ça maintenant. Je peux attendre un peu, si vous avez besoin de réfléchir.", "sd_d5_0_silence", requires={"sang_froid": 2}),
                 _sd_option("tenir_bon", "Parce que je suis venu vous parler, et je vais pas partir juste parce que la discussion est désagréable. On peut au moins essayer.", "sd_d5_0_tenir_bon"),
             ],
         },
@@ -87,7 +80,6 @@ init 3 python:
                 _sd_option("present", "Attends, Kael. Respire un peu. On va reprendre ce qu'on sait de ta sœur et voir ce qu'on peut faire, sans inventer le pire.", "sd_d5_1_present"),
                 _sd_option("agir", "Dis-moi tout ce que tu sais, même les détails qui te semblent inutiles. Après, on trouvera comment bouger.", "sd_d5_1_agir"),
                 _sd_option("alerte", "L'alerte ne correspond pas à une rupture totale du complexe.", "sd_d5_1_alerte", requires={"logique": 3}),
-                _sd_option("mensonge", "Tu ne me dis pas tout sur la situation de ta sœur.", "sd_d5_1_mensonge", requires={"observation": 2}),
                 _sd_option("soutenir", "Si tu dois aller chercher quelqu'un ou transporter du matériel, je viens avec toi. On va pas te laisser gérer ça tout seul.", "sd_d5_1_soutenir"),
             ],
         },
@@ -96,7 +88,6 @@ init 3 python:
             "options": [
                 _sd_option("procedure", "On entre, mais je veux qu'on exige une explication avant le vote. Impossible de se prononcer sur un texte qu'on comprend pas.", "sd_d6_0_1_procedure"),
                 _sd_option("ensemble", "On y va tous ensemble. Si Kami essaie de nous mettre la pression, personne ne doit se retrouver seul à lui répondre.", "sd_d6_0_1_ensemble"),
-                _sd_option("glitch", "Les coupures suivent un rythme. Kami ne contrôle pas tout.", "sd_d6_0_1_glitch", requires={"observation": 3}),
                 _sd_option("refus", "Si elle nous presse, je prends la parole et je refuse le cadre.", "sd_d6_0_1_refus", requires={"audace": 3}),
                 _sd_option("reperer", "Attends une seconde. On regarde d'abord les issues et les caméras, histoire de savoir où on met les pieds.", "sd_d6_0_1_reperer"),
             ],
@@ -107,7 +98,6 @@ init 3 python:
                 _sd_option("trace", "Oui. Même si on perd aujourd'hui, il faut qu'on sache précisément ce que chacun nous reproche. Ça servira pour la suite.", "sd_d6_1_0_trace"),
                 _sd_option("sael", "Oui. Et je veux surtout que Sael comprenne qu'on ne la considère pas comme une ennemie juste parce qu'elle vote contre.", "sd_d6_1_0_sael"),
                 _sd_option("hesitation", "Elle évite mon regard depuis ce matin. Sa décision n'est pas aussi solide qu'elle le dit.", "sd_d6_1_0_hesitation", requires={"observation": 3}),
-                _sd_option("rupture", "On brise le rythme de Kami et on impose notre propre question.", "sd_d6_1_0_rupture", requires={"audace": 3}),
                 _sd_option("oser", "Même si Sael vote contre, j'ai pas envie de rester assis à faire semblant. Je vais lui poser la question devant tout le monde.", "sd_d6_1_0_oser"),
             ],
         },
@@ -117,7 +107,6 @@ init 3 python:
                 _sd_option("verifier", "Que c'est énorme, mais qu'on ferait mieux de vérifier avant de commencer à raconter n'importe quoi.", "sd_d7_0_1_verifier"),
                 _sd_option("espoir", "Que, pour une fois, des gens ont peut-être survécu à une journée entière sans craindre d'être exécutés. Rien que ça, c'est immense.", "sd_d7_0_1_espoir"),
                 _sd_option("motif", "Le silence de Kami et l'arrêt des exécutions ont commencé ensemble.", "sd_d7_0_1_motif", requires={"logique": 3}),
-                _sd_option("publier", "On l'annonce à tout le monde avant que Kami puisse réécrire les faits.", "sd_d7_0_1_publier", requires={"audace": 3}),
                 _sd_option("se_risquer", "Alors on devrait aller le dire aux autres tout de suite, quitte à se tromper. On ne peut pas garder ça pour nous.", "sd_d7_0_1_se_risquer"),
             ],
         },
@@ -136,7 +125,6 @@ init 3 python:
             "options": [
                 _sd_option("medical", "On lui dit qu'on a trouvé une femme blessée et qu'elle a besoin de soins. Pas besoin de raconter toute l'histoire d'un coup.", "sd_d7_1_0_1_medical"),
                 _sd_option("responsable", "Je vais parler en premier. Si Kami cherche un responsable, elle pourra s'en prendre à moi plutôt qu'aux autres.", "sd_d7_1_0_1_responsable"),
-                _sd_option("camera", "La caméra a changé d'angle avant notre arrivée. Kami savait déjà.", "sd_d7_1_0_1_camera", requires={"observation": 3}),
                 _sd_option("unite", "On parle au pluriel. Elle ne doit pouvoir isoler personne.", "sd_d7_1_0_1_unite", requires={"sang_froid": 3}),
                 _sd_option("tenir_calme", "On va lui parler sans hausser la voix. Si Kami cherche à nous faire paniquer, faut surtout pas lui donner ce plaisir.", "sd_d7_1_0_1_tenir_calme"),
             ],
@@ -147,7 +135,6 @@ init 3 python:
                 _sd_option("promesse", "Je vais pas te mentir, Kael. J'en sais rien. Mais si tu veux chercher qui a fait ça, je viens avec toi.", "sd_d8_promesse"),
                 _sd_option("indices", "On devrait reprendre les horaires et voir qui pouvait entrer dans ta chambre. Il doit forcément rester une trace quelque part.", "sd_d8_indices"),
                 _sd_option("cible", "Le dessin et la photo ont la même fonction : nous rappeler quelqu'un.", "sd_d8_cible", requires={"logique": 3}),
-                _sd_option("confronter", "Je vais réunir tout le monde. On a assez perdu de temps à se demander ce qui se passe chacun dans notre coin.", "sd_d8_confronter", requires={"audace": 3}),
                 _sd_option("garder_calme", "Je sais que t'as peur, Kael. Mais on va commencer par regarder ce qu'on a, sans accuser quelqu'un au hasard.", "sd_d8_garder_calme"),
             ],
         },
@@ -156,7 +143,6 @@ init 3 python:
             "options": [
                 _sd_option("temps", "On fait semblant de suivre sa procédure pour l'instant. Chaque minute qu'on gagne peut aider les gens dans les campements.", "sd_d9_temps"),
                 _sd_option("prevenir", "On doit prévenir les gens, Ryn. Je préfère prendre le risque de me faire repérer plutôt que de les laisser sans rien savoir.", "sd_d9_prevenir"),
-                _sd_option("maintenance", "Sa maintenance a laissé des irrégularités dans le réseau. C'est notre passage.", "sd_d9_maintenance", requires={"observation": 3}),
                 _sd_option("provoquer", "Je la provoque à l'écran pendant que vous détournez le signal.", "sd_d9_provoquer", requires={"sang_froid": 3}),
                 _sd_option("tenir_position", "On reste près des sorties et on se tient prêts à aider les autres si ça dégénère. Je veux pas qu'on se retrouve coincés.", "sd_d9_tenir_position"),
             ],
@@ -262,11 +248,6 @@ label sd_d1_details:
     lysa gene "Rien... On a beau dire ce qu'on veut, cette situation fait franchement flipper..."
     return
 
-# JOUR 1 — existe si Empathie >= 2. Aucune XP.
-label sd_d1_rassurer:
-    "Son expression se fissure une seconde."
-    lysa "Facile à dire. Tu as plus peur que moi."
-    return
 
 # JOUR 2 — toujours disponible. Gain : +1 XP Empathie.
 label sd_d2_ecouter:
@@ -280,11 +261,6 @@ label sd_d2_texte:
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
-# JOUR 2 — existe si Observation >= 2. Aucune XP.
-label sd_d2_signaux:
-    "Le regard de Tomas suit le mien."
-    tomas "Je n'avais pas vu ce manège."
-    return
 
 # JOUR 2 — existe si Audace >= 2. Aucune XP.
 label sd_d2_frontal:
@@ -305,10 +281,6 @@ label sd_d3_pression:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 3 — existe si Logique >= 2. Aucune XP.
-label sd_d3_contradiction:
-    julian "Chirurgical. J'aime beaucoup quand tu deviens inquiétant."
-    return
 
 # JOUR 3 — existe si Empathie >= 2. Aucune XP.
 label sd_d3_peur:
@@ -329,17 +301,7 @@ label sd_d4_0_relancer:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 4, route refus — existe si Empathie >= 2. Aucune XP.
-label sd_d4_0_colere:
-    "Ryn ouvre la bouche pour m'envoyer promener, puis renonce."
-    ryn "Que rien ne change jamais."
-    return
 
-# JOUR 4, route refus — existe si Logique >= 2. Aucune XP.
-label sd_d4_0_faille:
-    "Ryn se penche vers moi."
-    ryn "Alors on sépare leurs alliances."
-    return
 
 # JOUR 4, route adoption — toujours disponible. Gain : +1 XP Logique.
 label sd_d4_1_consequences:
@@ -354,10 +316,6 @@ label sd_d4_1_humains:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 4, route adoption — existe si Observation >= 2. Aucune XP.
-label sd_d4_1_interet:
-    "Le silence de Sael confirme que j'ai touché juste, sans me dire qui."
-    return
 
 # JOUR 4, route adoption — existe si Sang-froid >= 2. Aucune XP.
 label sd_d4_1_calme:
@@ -383,10 +341,6 @@ label sd_d5_0_micro:
     sael "Vous observez des choses qui ne vous concernent pas."
     return
 
-# JOUR 5, route refus — existe si Sang-froid >= 2. Aucune XP.
-label sd_d5_0_silence:
-    "Le duel dure longtemps. C'est Sael qui parle la première."
-    return
 
 # JOUR 5, route adoption — toujours disponible. Gain : +1 XP Sang-froid.
 label sd_d5_1_present:
@@ -407,11 +361,6 @@ label sd_d5_1_alerte:
     kael "Donc certaines zones peuvent encore tenir."
     return
 
-# JOUR 5, route adoption — existe si Observation >= 2. Aucune XP.
-label sd_d5_1_mensonge:
-    "Kael baisse les yeux."
-    kael "Elle n'était pas censée être dans cette section."
-    return
 
 # JOUR 6, route 0-1 — toujours disponible. Gain : +1 XP Logique.
 label sd_d6_0_1_procedure:
@@ -426,11 +375,6 @@ label sd_d6_0_1_ensemble:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 6, route 0-1 — existe si Observation >= 3. Aucune XP.
-label sd_d6_0_1_glitch:
-    "Mara écoute le bourdonnement."
-    mara "Alors on utilise ses fenêtres de faiblesse."
-    return
 
 # JOUR 6, route 0-1 — existe si Audace >= 3. Aucune XP.
 label sd_d6_0_1_refus:
@@ -456,11 +400,6 @@ label sd_d6_1_0_hesitation:
     lysa "J'avais pris ça pour du mépris. Tu as peut-être raison."
     return
 
-# JOUR 6, route 1-0 — existe si Audace >= 3. Aucune XP.
-label sd_d6_1_0_rupture:
-    "Le sourire de Lysa est bref."
-    lysa "Là, je te reconnais."
-    return
 
 # JOUR 7, route 0-1 — toujours disponible. Gain : +1 XP Logique.
 label sd_d7_0_1_verifier:
@@ -481,11 +420,6 @@ label sd_d7_0_1_motif:
     tomas "Ce n'est donc probablement pas un choix politique."
     return
 
-# JOUR 7, route 0-1 — existe si Audace >= 3. Aucune XP.
-label sd_d7_0_1_publier:
-    tomas "C'est dangereux."
-    noam "Le silence le serait davantage."
-    return
 
 # JOUR 7, route 1-0 — toujours disponible. Gain : +1 XP Sang-froid.
 label sd_d7_1_0_soins:
@@ -525,11 +459,6 @@ label sd_d7_1_0_1_responsable:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 7, route déclaration — existe si Observation >= 3. Aucune XP.
-label sd_d7_1_0_1_camera:
-    "Nyra lève les yeux."
-    nyra "Alors cet appel est une mise en scène."
-    return
 
 # JOUR 7, route déclaration — existe si Sang-froid >= 3. Aucune XP.
 label sd_d7_1_0_1_unite:
@@ -555,11 +484,6 @@ label sd_d8_cible:
     kael "Donc le voleur ne prend pas des objets. Il prend nos attaches."
     return
 
-# JOUR 8 — existe si Audace >= 3. Aucune XP.
-label sd_d8_confronter:
-    kael "Ils vont te détester."
-    noam "Qu'ils commencent par répondre."
-    return
 
 # JOUR 9 — toujours disponible. Gain : +1 XP Logique.
 label sd_d9_temps:
@@ -574,11 +498,6 @@ label sd_d9_prevenir:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 9 — existe si Observation >= 3. Aucune XP.
-label sd_d9_maintenance:
-    ryn "Tu peux les trouver ?"
-    noam "Donne-moi une minute."
-    return
 
 # JOUR 9 — existe si Sang-froid >= 3. Aucune XP.
 label sd_d9_provoquer:
