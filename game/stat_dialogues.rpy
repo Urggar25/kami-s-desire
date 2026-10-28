@@ -23,28 +23,28 @@ init 3 python:
         "d1": {
             "prompt": "Lysa baisse la voix. « Tu crois qu'on peut vraiment se faire confiance ici ? »",
             "options": [
-                _sd_option("prudent", "J'en sais rien. Personne ne montre encore son vrai visage.", "sd_d1_prudent"),
-                _sd_option("solidaire", "On n'a pas besoin de se faire confiance pour s'entraider.", "sd_d1_solidaire"),
-                _sd_option("details", "Tu trembles depuis notre réveil. Qu'est-ce que tu as ?", "sd_d1_details", requires={"observation": 2}),
-                _sd_option("rassurer", "Tu n'as pas à faire semblant avec moi. Pas maintenant.", "sd_d1_rassurer", requires={"empathie": 2}),
+                _sd_option("prudent", "Franchement, j'en sais rien. On vient à peine d'arriver et j'ai déjà l'impression que tout le monde se méfie de tout le monde.", "sd_d1_prudent"),
+                _sd_option("solidaire", "Je dis pas qu'on doit se faire confiance les yeux fermés. Mais on peut au moins essayer de s'entraider, non ?", "sd_d1_solidaire"),
+                _sd_option("details", "Lysa, je t'ai vue trembler tout à l'heure. Tu vas pas me dire que tout va bien ?", "sd_d1_details", requires={"observation": 2}),
+                _sd_option("rassurer", "Tu sais, t'es pas obligée de faire comme si tout ça te passait au-dessus. Pas avec moi, en tout cas.", "sd_d1_rassurer", requires={"empathie": 2}),
             ],
         },
         "d2": {
             "prompt": "Tomas regarde les autres tables. « Comment tu veux aborder ce premier vote ? »",
             "options": [
-                _sd_option("ecouter", "Je vais écouter ce que chacun risque de perdre.", "sd_d2_ecouter"),
-                _sd_option("texte", "Je commence par décortiquer le texte exact.", "sd_d2_texte"),
-                _sd_option("signaux", "Regarde qui évite déjà le sujet. Ce sont eux qu'il faut interroger.", "sd_d2_signaux", requires={"observation": 2}),
-                _sd_option("frontal", "Je force chacun à annoncer sa position maintenant.", "sd_d2_frontal", requires={"audace": 2}),
+                _sd_option("ecouter", "Avant de défendre quoi que ce soit, je veux comprendre ce que chacun risque de perdre avec ce vote.", "sd_d2_ecouter"),
+                _sd_option("texte", "Je vais déjà relire la proposition mot par mot. Si on se trompe sur ce qu'on vote, on est mal partis.", "sd_d2_texte"),
+                _sd_option("signaux", "Tu vois ceux qui changent de sujet dès qu'on parle du vote ? Je commencerais par aller leur parler.", "sd_d2_signaux", requires={"observation": 2}),
+                _sd_option("frontal", "Ça suffit de tourner autour du pot. Je vais leur demander directement ce qu'ils comptent voter.", "sd_d2_frontal", requires={"audace": 2}),
             ],
         },
         "d3": {
             "prompt": "Julian croise les bras. « Une voix peut tout faire échouer. Tu proposes quoi ? »",
             "options": [
-                _sd_option("coalition", "On construit un terrain commun avant de parler du résultat.", "sd_d3_coalition"),
-                _sd_option("pression", "On leur rappelle ce que l'immobilisme coûte réellement.", "sd_d3_pression"),
-                _sd_option("contradiction", "On expose calmement leurs contradictions, une par une.", "sd_d3_contradiction", requires={"logique": 2}),
-                _sd_option("peur", "On identifie leur peur avant qu'ils ne la transforment en refus.", "sd_d3_peur", requires={"empathie": 2}),
+                _sd_option("coalition", "On devrait commencer par chercher ce sur quoi tout le monde est d'accord. Après, on verra ce qui bloque.", "sd_d3_coalition"),
+                _sd_option("pression", "S'ils veulent voter contre, très bien. Mais je veux qu'ils regardent aussi les conséquences de ce refus.", "sd_d3_pression"),
+                _sd_option("contradiction", "Attends. Si on reprend leurs arguments un par un, il y a plusieurs choses qui ne collent pas. On peut partir de là.", "sd_d3_contradiction", requires={"logique": 2}),
+                _sd_option("peur", "Et si on leur demandait d'abord ce qui leur fait peur ? À mon avis, certains ne disent pas vraiment pourquoi ils hésitent.", "sd_d3_peur", requires={"empathie": 2}),
             ],
         },
         "d4_0": {
@@ -52,8 +52,8 @@ init 3 python:
             "options": [
                 _sd_option("tenir", "Je compte surtout comprendre pourquoi on a perdu.", "sd_d4_0_tenir"),
                 _sd_option("relancer", "Oui. Jusqu'à ce qu'ils soient obligés de répondre.", "sd_d4_0_relancer"),
-                _sd_option("colere", "Ta colère cache de la peur. Dis-moi laquelle.", "sd_d4_0_colere", requires={"empathie": 2}),
-                _sd_option("faille", "Le refus n'était pas unanime dans les raisons. C'est notre faille.", "sd_d4_0_faille", requires={"logique": 2}),
+                _sd_option("colere", "Ryn, je vois bien que t'es en colère. Mais ce vote t'a aussi fait peur, non ? Qu'est-ce qui te travaille autant ?", "sd_d4_0_colere", requires={"empathie": 2}),
+                _sd_option("faille", "Ils ont tous voté contre, mais pas pour les mêmes raisons. Si on comprend ce qui a bloqué chacun, on aura peut-être une chance.", "sd_d4_0_faille", requires={"logique": 2}),
             ],
         },
         "d4_1": {
@@ -61,8 +61,8 @@ init 3 python:
             "options": [
                 _sd_option("consequences", "Une victoire ne vaut rien si on refuse d'en surveiller les conséquences.", "sd_d4_1_consequences"),
                 _sd_option("humains", "Non. Les marchandises passent, les gens restent enfermés.", "sd_d4_1_humains"),
-                _sd_option("interet", "Votre opposition protège quelqu'un en particulier, pas un principe.", "sd_d4_1_interet", requires={"observation": 2}),
-                _sd_option("calme", "Expliquez-moi votre limite. Je vous écouterai sans vous interrompre.", "sd_d4_1_calme", requires={"sang_froid": 2}),
+                _sd_option("interet", "Sael, j'ai l'impression que vous ne refusez pas ce vote par principe. Vous essayez de protéger quelqu'un, c'est ça ?", "sd_d4_1_interet", requires={"observation": 2}),
+                _sd_option("calme", "D'accord. Je ne vais pas essayer de vous convaincre tout de suite. Dites-moi seulement ce qui vous empêche d'accepter.", "sd_d4_1_calme", requires={"sang_froid": 2}),
             ],
         },
         "d5_0": {
@@ -70,8 +70,8 @@ init 3 python:
             "options": [
                 _sd_option("raison", "Parce que je veux entendre votre raison, pas seulement votre vote.", "sd_d5_0_raison"),
                 _sd_option("limite", "Parce qu'un refus absolu cache toujours une limite négociable.", "sd_d5_0_limite"),
-                _sd_option("micro", "Votre voix change chaque fois que vous évoquez les frontières.", "sd_d5_0_micro", requires={"observation": 3}),
-                _sd_option("silence", "Je peux rester là en silence jusqu'à ce que vous soyez prête.", "sd_d5_0_silence", requires={"sang_froid": 2}),
+                _sd_option("micro", "Chaque fois qu'on parle des frontières, vous vous arrêtez au milieu de vos phrases. Il y a quelque chose que vous ne nous dites pas ?", "sd_d5_0_micro", requires={"observation": 3}),
+                _sd_option("silence", "On n'est pas obligés de régler ça maintenant. Je peux attendre un peu, si vous avez besoin de réfléchir.", "sd_d5_0_silence", requires={"sang_froid": 2}),
             ],
         },
         "d5_1": {
@@ -134,7 +134,7 @@ init 3 python:
                 _sd_option("promesse", "Je ne peux pas te le promettre. Mais je peux t'aider à chercher.", "sd_d8_promesse"),
                 _sd_option("indices", "On reconstitue les accès, les horaires et les objets visés.", "sd_d8_indices"),
                 _sd_option("cible", "Le dessin et la photo ont la même fonction : nous rappeler quelqu'un.", "sd_d8_cible", requires={"logique": 3}),
-                _sd_option("confronter", "Je rassemble tout le monde et personne ne sort avant qu'on ait une réponse.", "sd_d8_confronter", requires={"audace": 3}),
+                _sd_option("confronter", "Je vais réunir tout le monde. On a assez perdu de temps à se demander ce qui se passe chacun dans notre coin.", "sd_d8_confronter", requires={"audace": 3}),
             ],
         },
         "d9": {
@@ -226,7 +226,7 @@ label play_stat_dialogue(dialogue_id):
 # =============================================================
 # LABELS DES RÉPONSES
 # Le prérequis est déclaré dans STAT_DIALOGUES. Le gain exact est écrit ici.
-# Chaque option donne au total 1 ou 2 XP maximum.
+# Les réponses ordinaires donnent de l'XP ; les réponses conditionnelles n'en donnent jamais.
 # =============================================================
 
 # JOUR 1 — toujours disponible. Gain : +1 XP Observation.
@@ -241,18 +241,16 @@ label sd_d1_solidaire:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 1 — existe si Observation >= 2. Gain : +1 Observation, +1 Logique.
+# JOUR 1 — existe si Observation >= 2. Aucune XP.
 label sd_d1_details:
     "Lysa se fige, surprise que j'aie remarqué, puis détourne les yeux."
     lysa gene "Rien... On a beau dire ce qu'on veut, cette situation fait franchement flipper..."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
-# JOUR 1 — existe si Empathie >= 2. Gain : +1 Empathie, +1 Sang-froid.
+# JOUR 1 — existe si Empathie >= 2. Aucune XP.
 label sd_d1_rassurer:
     "Son expression se fissure une seconde."
     lysa "Facile à dire. Tu as plus peur que moi."
-    $ _stat_xp_results = award_stats_xp({"empathie": 1, "sang_froid": 1})
     return
 
 # JOUR 2 — toujours disponible. Gain : +1 XP Empathie.
@@ -267,18 +265,16 @@ label sd_d2_texte:
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
-# JOUR 2 — existe si Observation >= 2. Gain : +2 XP Observation.
+# JOUR 2 — existe si Observation >= 2. Aucune XP.
 label sd_d2_signaux:
     "Le regard de Tomas suit le mien."
     tomas "Je n'avais pas vu ce manège."
-    $ _stat_xp_results = award_stats_xp({"observation": 2})
     return
 
-# JOUR 2 — existe si Audace >= 2. Gain : +1 Audace, +1 Sang-froid.
+# JOUR 2 — existe si Audace >= 2. Aucune XP.
 label sd_d2_frontal:
     "Tomas grimace, puis cède."
     tomas "Brutal... mais au moins ce sera clair."
-    $ _stat_xp_results = award_stats_xp({"audace": 1, "sang_froid": 1})
     return
 
 # JOUR 3 — toujours disponible. Gain : +1 XP Logique.
@@ -294,17 +290,15 @@ label sd_d3_pression:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 3 — existe si Logique >= 2. Gain : +1 Logique, +1 Sang-froid.
+# JOUR 3 — existe si Logique >= 2. Aucune XP.
 label sd_d3_contradiction:
     julian "Chirurgical. J'aime beaucoup quand tu deviens inquiétant."
-    $ _stat_xp_results = award_stats_xp({"logique": 1, "sang_froid": 1})
     return
 
-# JOUR 3 — existe si Empathie >= 2. Gain : +1 Empathie, +1 Observation.
+# JOUR 3 — existe si Empathie >= 2. Aucune XP.
 label sd_d3_peur:
     "Le sourire de Julian disparaît."
     julian "D'accord. Parlons à la personne, pas au vote."
-    $ _stat_xp_results = award_stats_xp({"empathie": 1, "observation": 1})
     return
 
 # JOUR 4, route refus — toujours disponible. Gain : +1 XP Logique.
@@ -320,18 +314,16 @@ label sd_d4_0_relancer:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 4, route refus — existe si Empathie >= 2. Gain : +2 XP Empathie.
+# JOUR 4, route refus — existe si Empathie >= 2. Aucune XP.
 label sd_d4_0_colere:
     "Ryn ouvre la bouche pour m'envoyer promener, puis renonce."
     ryn "Que rien ne change jamais."
-    $ _stat_xp_results = award_stats_xp({"empathie": 2})
     return
 
-# JOUR 4, route refus — existe si Logique >= 2. Gain : +1 Observation, +1 Logique.
+# JOUR 4, route refus — existe si Logique >= 2. Aucune XP.
 label sd_d4_0_faille:
     "Ryn se penche vers moi."
     ryn "Alors on sépare leurs alliances."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
 # JOUR 4, route adoption — toujours disponible. Gain : +1 XP Logique.
@@ -347,17 +339,15 @@ label sd_d4_1_humains:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 4, route adoption — existe si Observation >= 2. Gain : +1 Observation, +1 Audace.
+# JOUR 4, route adoption — existe si Observation >= 2. Aucune XP.
 label sd_d4_1_interet:
     "Le silence de Sael confirme que j'ai touché juste, sans me dire qui."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "audace": 1})
     return
 
-# JOUR 4, route adoption — existe si Sang-froid >= 2. Gain : +1 Empathie, +1 Sang-froid.
+# JOUR 4, route adoption — existe si Sang-froid >= 2. Aucune XP.
 label sd_d4_1_calme:
     "Sael hésite, déstabilisée par l'absence d'attaque."
     sael "Très bien. Une fois."
-    $ _stat_xp_results = award_stats_xp({"empathie": 1, "sang_froid": 1})
     return
 
 # JOUR 5, route refus — toujours disponible. Gain : +1 XP Empathie.
@@ -372,17 +362,15 @@ label sd_d5_0_limite:
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
-# JOUR 5, route refus — existe si Observation >= 3. Gain : +2 XP Observation.
+# JOUR 5, route refus — existe si Observation >= 3. Aucune XP.
 label sd_d5_0_micro:
     "Sael raidit les épaules."
     sael "Vous observez des choses qui ne vous concernent pas."
-    $ _stat_xp_results = award_stats_xp({"observation": 2})
     return
 
-# JOUR 5, route refus — existe si Sang-froid >= 2. Gain : +1 Sang-froid, +1 Empathie.
+# JOUR 5, route refus — existe si Sang-froid >= 2. Aucune XP.
 label sd_d5_0_silence:
     "Le duel dure longtemps. C'est Sael qui parle la première."
-    $ _stat_xp_results = award_stats_xp({"sang_froid": 1, "empathie": 1})
     return
 
 # JOUR 5, route adoption — toujours disponible. Gain : +1 XP Sang-froid.
@@ -398,18 +386,16 @@ label sd_d5_1_agir:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 5, route adoption — existe si Logique >= 3. Gain : +2 XP Logique.
+# JOUR 5, route adoption — existe si Logique >= 3. Aucune XP.
 label sd_d5_1_alerte:
     "Kael relève la tête."
     kael "Donc certaines zones peuvent encore tenir."
-    $ _stat_xp_results = award_stats_xp({"logique": 2})
     return
 
-# JOUR 5, route adoption — existe si Observation >= 2. Gain : +1 Observation, +1 Empathie.
+# JOUR 5, route adoption — existe si Observation >= 2. Aucune XP.
 label sd_d5_1_mensonge:
     "Kael baisse les yeux."
     kael "Elle n'était pas censée être dans cette section."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "empathie": 1})
     return
 
 # JOUR 6, route 0-1 — toujours disponible. Gain : +1 XP Logique.
@@ -425,18 +411,16 @@ label sd_d6_0_1_ensemble:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 6, route 0-1 — existe si Observation >= 3. Gain : +1 Observation, +1 Logique.
+# JOUR 6, route 0-1 — existe si Observation >= 3. Aucune XP.
 label sd_d6_0_1_glitch:
     "Mara écoute le bourdonnement."
     mara "Alors on utilise ses fenêtres de faiblesse."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
-# JOUR 6, route 0-1 — existe si Audace >= 3. Gain : +1 Audace, +1 Sang-froid.
+# JOUR 6, route 0-1 — existe si Audace >= 3. Aucune XP.
 label sd_d6_0_1_refus:
     mara "Tu vas attirer tout le feu."
     noam "C'est précisément l'idée."
-    $ _stat_xp_results = award_stats_xp({"audace": 1, "sang_froid": 1})
     return
 
 # JOUR 6, route 1-0 — toujours disponible. Gain : +1 XP Logique.
@@ -452,17 +436,15 @@ label sd_d6_1_0_sael:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 6, route 1-0 — existe si Observation >= 3. Gain : +2 XP Observation.
+# JOUR 6, route 1-0 — existe si Observation >= 3. Aucune XP.
 label sd_d6_1_0_hesitation:
     lysa "J'avais pris ça pour du mépris. Tu as peut-être raison."
-    $ _stat_xp_results = award_stats_xp({"observation": 2})
     return
 
-# JOUR 6, route 1-0 — existe si Audace >= 3. Gain : +1 Audace, +1 Sang-froid.
+# JOUR 6, route 1-0 — existe si Audace >= 3. Aucune XP.
 label sd_d6_1_0_rupture:
     "Le sourire de Lysa est bref."
     lysa "Là, je te reconnais."
-    $ _stat_xp_results = award_stats_xp({"audace": 1, "sang_froid": 1})
     return
 
 # JOUR 7, route 0-1 — toujours disponible. Gain : +1 XP Logique.
@@ -478,18 +460,16 @@ label sd_d7_0_1_espoir:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 7, route 0-1 — existe si Logique >= 3. Gain : +1 Observation, +1 Logique.
+# JOUR 7, route 0-1 — existe si Logique >= 3. Aucune XP.
 label sd_d7_0_1_motif:
     "Tomas blêmit."
     tomas "Ce n'est donc probablement pas un choix politique."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
-# JOUR 7, route 0-1 — existe si Audace >= 3. Gain : +2 XP Audace.
+# JOUR 7, route 0-1 — existe si Audace >= 3. Aucune XP.
 label sd_d7_0_1_publier:
     tomas "C'est dangereux."
     noam "Le silence le serait davantage."
-    $ _stat_xp_results = award_stats_xp({"audace": 2})
     return
 
 # JOUR 7, route 1-0 — toujours disponible. Gain : +1 XP Sang-froid.
@@ -505,18 +485,16 @@ label sd_d7_1_0_cacher:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 7, route 1-0 — existe si Observation >= 3. Gain : +1 Observation, +1 Logique.
+# JOUR 7, route 1-0 — existe si Observation >= 3. Aucune XP.
 label sd_d7_1_0_symptomes:
     "Iris cesse de discuter."
     iris "Alors guide-nous."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
-# JOUR 7, route 1-0 — existe si Empathie >= 3. Gain : +2 XP Empathie.
+# JOUR 7, route 1-0 — existe si Empathie >= 3. Aucune XP.
 label sd_d7_1_0_peur:
     "Iris vacille."
     iris "Plus tard. Sauve-la d'abord."
-    $ _stat_xp_results = award_stats_xp({"empathie": 2})
     return
 
 # JOUR 7, route déclaration — toujours disponible. Gain : +1 XP Logique.
@@ -532,17 +510,15 @@ label sd_d7_1_0_1_responsable:
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
-# JOUR 7, route déclaration — existe si Observation >= 3. Gain : +2 XP Observation.
+# JOUR 7, route déclaration — existe si Observation >= 3. Aucune XP.
 label sd_d7_1_0_1_camera:
     "Nyra lève les yeux."
     nyra "Alors cet appel est une mise en scène."
-    $ _stat_xp_results = award_stats_xp({"observation": 2})
     return
 
-# JOUR 7, route déclaration — existe si Sang-froid >= 3. Gain : +1 Empathie, +1 Sang-froid.
+# JOUR 7, route déclaration — existe si Sang-froid >= 3. Aucune XP.
 label sd_d7_1_0_1_unite:
     nyra "Nous avons trouvé. Nous demandons. Nous refusons. Compris."
-    $ _stat_xp_results = award_stats_xp({"empathie": 1, "sang_froid": 1})
     return
 
 # JOUR 8 — toujours disponible. Gain : +1 XP Empathie.
@@ -558,18 +534,16 @@ label sd_d8_indices:
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
-# JOUR 8 — existe si Logique >= 3. Gain : +1 Observation, +1 Logique.
+# JOUR 8 — existe si Logique >= 3. Aucune XP.
 label sd_d8_cible:
     "Kael pâlit."
     kael "Donc le voleur ne prend pas des objets. Il prend nos attaches."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
-# JOUR 8 — existe si Audace >= 3. Gain : +2 XP Audace.
+# JOUR 8 — existe si Audace >= 3. Aucune XP.
 label sd_d8_confronter:
     kael "Ils vont te détester."
     noam "Qu'ils commencent par répondre."
-    $ _stat_xp_results = award_stats_xp({"audace": 2})
     return
 
 # JOUR 9 — toujours disponible. Gain : +1 XP Logique.
@@ -585,16 +559,14 @@ label sd_d9_prevenir:
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
-# JOUR 9 — existe si Observation >= 3. Gain : +1 Observation, +1 Logique.
+# JOUR 9 — existe si Observation >= 3. Aucune XP.
 label sd_d9_maintenance:
     ryn "Tu peux les trouver ?"
     noam "Donne-moi une minute."
-    $ _stat_xp_results = award_stats_xp({"observation": 1, "logique": 1})
     return
 
-# JOUR 9 — existe si Sang-froid >= 3. Gain : +1 Audace, +1 Sang-froid.
+# JOUR 9 — existe si Sang-froid >= 3. Aucune XP.
 label sd_d9_provoquer:
     "Ryn sourit sans joie."
     ryn "Tiens assez longtemps et je fais le reste."
-    $ _stat_xp_results = award_stats_xp({"audace": 1, "sang_froid": 1})
     return
