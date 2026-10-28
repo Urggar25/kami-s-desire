@@ -306,6 +306,8 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     lysa blase "Tu veux dire qu'une réponse soulève encore plus de questions ? Quelle surprise."
 
+    call play_stat_dialogue("j19")
+
     kael inquietude "Et les caméras ?"
 
     "Tout le monde tourne légèrement la tête vers lui."
