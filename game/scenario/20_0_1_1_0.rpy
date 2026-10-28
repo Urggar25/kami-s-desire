@@ -186,6 +186,13 @@ label _20_0_1_1_0_REVEIL:
 
     noam colere "Je la regarde ! C'est justement pour ça que je vous demande de venir avec moi ! Il y avait un corps sur cette table, et ce corps avait son visage !"
 
+    "Iris, qui allait répondre, fixe Mara. Elle a l'air moins inquiète pour moi que tout à l'heure."
+    iris reflexion "Attends. Tu dis que t'as vu son corps ? Pas quelqu'un qui lui ressemble ?"
+    noam colere "Oui, Iris ! C'est ce que je me tue à vous dire !"
+    iris inquiet "Et elle était vraiment morte ? T'as vérifié ?"
+    noam agace "Elle bougeait pas ! Elle était froide !"
+    iris reflexion "D'accord..."
+    "Elle regarde encore Mara, puis baisse les yeux. On dirait qu'elle cherche quelque chose dans sa tête."
     iris inquiet "Tu es sûr que tu n'as pas simplement..."
 
     noam colere "Non !"
