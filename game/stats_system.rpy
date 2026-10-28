@@ -189,186 +189,244 @@ transform stat_check_idle:
 
 # ── Cérémonie de progression : réutilise les icônes et anneaux de la tablette.
 # Les étapes s'enchaînent sans clic : entrée, ancien niveau, transition, victoire.
-transform stat_level_overlay_in:
-    alpha 0.0
-    ease 0.30 alpha 1.0
+# =============================================================
+# CÉRÉMONIE DE MONTÉE DE NIVEAU — Conclave OS / stat reveal
+# Réutilise EXCLUSIVEMENT les anneaux et icônes de la tablette.
+# Chronologie : 0.0 ouverture / 0.7 ancien palier / 1.45 charge /
+#               1.85 impact / 2.18 nouveau palier / 3.9 sortie.
+# =============================================================
 
-transform stat_level_backdrop_breathe:
-    alpha 0.18
-    linear 1.4 alpha 0.38
-    linear 1.4 alpha 0.18
+transform stat_up_curtain:
+    alpha 0.0
+    easeout 0.30 alpha 1.0
+
+transform stat_up_stage:
+    alpha 0.0
+    zoom 0.94
+    pause 0.10
+    easeout 0.55 alpha 1.0 zoom 1.0
+
+transform stat_up_ambient:
+    alpha 0.12
+    linear 1.15 alpha 0.30
+    linear 1.15 alpha 0.12
     repeat
 
-transform stat_level_panel_enter:
+transform stat_up_outer_halo:
     alpha 0.0
-    zoom 0.88
-    yoffset 40
-    easeout 0.52 alpha 1.0 zoom 1.0 yoffset 0
+    zoom 0.82
+    pause 0.22
+    easeout 0.58 alpha 0.27 zoom 1.0
+    linear 1.4 alpha 0.12 zoom 1.09
+    linear 1.4 alpha 0.27 zoom 1.0
+    repeat
 
-transform stat_level_ring_enter:
+transform stat_up_ring_intro:
     alpha 0.0
-    zoom 0.65
-    rotate -18
+    zoom 0.60
+    rotate -35
+    pause 0.18
     parallel:
-        easeout 0.55 alpha 1.0 zoom 1.0
+        easeout 0.75 alpha 1.0 zoom 1.0
     parallel:
-        easeout 0.65 rotate 0
+        easeout 0.90 rotate 0
 
-transform stat_level_ring_breathe:
-    zoom 0.97
-    linear 0.85 zoom 1.035
-    linear 0.85 zoom 0.97
-    repeat
+transform stat_up_old_ring:
+    alpha 1.0
+    pause 1.72
+    easeout 0.28 alpha 0.0 zoom 1.20
 
-transform stat_level_ring_spin:
-    rotate 0
-    linear 6.0 rotate 360
-    repeat
-
-transform stat_level_old_phase:
+transform stat_up_ring_upgrade:
     alpha 0.0
-    pause 0.38
-    ease 0.18 alpha 1.0
-    pause 0.78
-    ease 0.24 alpha 0.0
+    zoom 0.72
+    rotate -22
+    pause 1.75
+    parallel:
+        easeout 0.43 alpha 1.0 zoom 1.0
+    parallel:
+        easeout 0.64 rotate 0
 
-transform stat_level_new_phase:
-    alpha 0.0
-    zoom 1.36
-    pause 1.56
-    easeout 0.30 alpha 1.0 zoom 1.0
-
-transform stat_level_flash:
-    alpha 0.0
-    pause 1.39
-    linear 0.10 alpha 0.82
-    linear 0.42 alpha 0.0
-
-transform stat_level_burst:
+transform stat_up_icon:
     alpha 0.0
     zoom 0.4
-    pause 1.34
-    easeout 0.72 alpha 0.0 zoom 1.85
+    pause 0.43
+    easeout 0.48 alpha 1.0 zoom 1.0
+    pause 0.75
+    ease 0.19 zoom 0.81
+    easeout 0.33 zoom 1.08
+    ease 0.30 zoom 1.0
 
-transform stat_level_line_sweep:
+transform stat_up_rotating_ornament:
+    rotate 0
+    linear 13.0 rotate 360
+    repeat
+
+transform stat_up_heading:
     alpha 0.0
-    xoffset -380
-    pause 1.40
-    linear 0.10 alpha 1.0
-    easeout 0.50 xoffset 380 alpha 0.0
+    yoffset 18
+    pause 0.53
+    easeout 0.40 alpha 1.0 yoffset 0
 
-transform stat_level_footer_in:
+transform stat_up_previous_level:
     alpha 0.0
-    yoffset 16
-    pause 1.83
-    easeout 0.36 alpha 1.0 yoffset 0
+    pause 0.79
+    ease 0.28 alpha 1.0
+    pause 0.73
+    easeout 0.18 alpha 0.0 yoffset -12
 
-transform stat_level_exit:
+transform stat_up_charge_line:
+    xzoom 0.0
+    pause 0.92
+    easein 0.85 xzoom 1.0
+
+transform stat_up_flash:
+    alpha 0.0
+    pause 1.76
+    linear 0.07 alpha 0.72
+    easeout 0.40 alpha 0.0
+
+transform stat_up_shockwave:
+    alpha 0.0
+    zoom 0.45
+    pause 1.78
+    linear 0.08 alpha 0.75
+    easeout 0.68 alpha 0.0 zoom 1.65
+
+transform stat_up_radial_burst:
+    alpha 0.0
+    zoom 0.65
+    pause 1.79
+    easeout 0.15 alpha 0.8 zoom 1.0
+    easeout 0.50 alpha 0.0 zoom 1.30
+
+transform stat_up_new_level:
+    alpha 0.0
+    zoom 1.55
+    yoffset 20
+    pause 1.92
+    easeout 0.44 alpha 1.0 zoom 1.0 yoffset 0
+
+transform stat_up_footer:
+    alpha 0.0
+    yoffset 18
+    pause 2.43
+    easeout 0.40 alpha 1.0 yoffset 0
+
+transform stat_up_scene_out:
     alpha 1.0
-    pause 3.9
-    easein 0.40 alpha 0.0
+    pause 3.73
+    easein 0.42 alpha 0.0
 
-# Valeur visuelle du niveau PRÉCÉDENT : indispensable lorsque deux montées
-# de niveau sont enchaînées dans une même attribution d'XP.
+# Le rendu n'écrit jamais dans persistent.stats : une prévisualisation via
+# queue_stat_level_up("observation", 4) reste purement cosmétique.
 screen stat_level_up_animation(stat_name, level):
-    zorder 260
     modal True
+    zorder 260
+
     $ meta = STATS_META[stat_name]
     $ col = meta["color"]
-    $ old_level = max(STAT_MIN, level - 1)
-    $ new_level = min(STAT_MAX, level)
-    $ icon = "hud/tablet/stat_icon_" + stat_name + ".png"
-    $ new_ring = "hud/tablet/ring_" + stat_name + "_" + str(new_level) + ".png"
+    $ previous_level = max(STAT_MIN, level - 1)
+    $ current_level = min(STAT_MAX, level)
+    $ icon_texture = "hud/tablet/stat_icon_" + stat_name + ".png"
+    $ ring_before = "hud/tablet/ring_" + stat_name + "_" + str(previous_level) + ".png"
+    $ ring_after = "hud/tablet/ring_" + stat_name + "_" + str(current_level) + ".png"
 
-    # Le screen passe au-dessus du dialogue, sans changer le menu tablette.
-    # Chaque affichage se ferme automatiquement ; la file gère les gains simultanés.
-    fixed at stat_level_exit:
+    fixed at stat_up_scene_out:
         xysize (1920, 1080)
-        add Solid("#01060BD6") at stat_level_overlay_in
-        add Solid(col + "15") at stat_level_backdrop_breathe
 
-        # Habillage Conclave OS, mêmes teintes et typographies que la tablette.
-        frame at stat_level_panel_enter:
-            xalign 0.5 yalign 0.5
-            xsize 900 ysize 594
-            background Solid("#071522F7")
-            padding (0, 0)
+        # La scène reste perceptible derrière la cérémonie.
+        add Solid("#01070BDF") at stat_up_curtain
+        add Solid(col + "13") at stat_up_ambient
 
+        # Barres et repères : habillage HUD, pas de fenêtre rectangulaire.
+        fixed at stat_up_stage:
+            xysize (1920, 1080)
+            add Solid(col + "55") xpos 0 ypos 126 xsize 1920 ysize 2
+            add Solid(col + "33") xpos 0 ypos 938 xsize 1920 ysize 2
+            add Solid(col + "33") xpos 119 ypos 180 xsize 2 ysize 700
+            add Solid(col + "33") xpos 1799 ypos 180 xsize 2 ysize 700
+
+            text "KAMI.CORE    //    PROGRESSION":
+                xpos 154 ypos 152 size 22 color "#C2DCE8"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+
+            text "CONCLAVE OS":
+                xpos 1590 ypos 155 size 18 color col
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 2
+
+            # Centre optique 960, 485 : anneaux natifs agrandis au même ratio.
             fixed:
-                xysize (900, 594)
-                add Solid("#102B3BC0") xsize 900 ysize 62
-                add Solid(col) xsize 900 ysize 3
-                add Solid(col + "77") xpos 0 ypos 60 xsize 900 ysize 1
-                add Solid(col + "44") xpos 20 ypos 78 xsize 860 ysize 1
-                add Solid(col + "44") xpos 20 ypos 515 xsize 860 ysize 1
-                add Solid("#193B50") xpos 0 ypos 591 xsize 900 ysize 3
+                xpos 560 ypos 188
+                xysize (800, 645)
 
-                text "CONCLAVE OS   //   ÉVOLUTION DES APTITUDES":
-                    xpos 30 ypos 22 size 19 color "#DCECF6"
-                    font "fonts/Rajdhani-SemiBold.ttf" kerning 1.6
-                text "KAMI.CORE  /  01":
-                    xpos 725 ypos 26 size 13 color col
-                    font "fonts/Barlow-Light.ttf"
+                add Solid(col + "07") xalign 0.5 yalign 0.46 xsize 760 ysize 590
+                add Transform(ring_after, size=(670, 670)) at stat_up_outer_halo:
+                    xalign 0.5 yalign 0.45
 
-                # Grand anneau et icône : fichiers EXACTS du menu statistiques.
-                fixed:
-                    xpos 40 ypos 104
-                    xysize (375, 355)
-                    add Solid(col + "0E") xalign 0.5 yalign 0.5 xsize 350 ysize 350
-                    add new_ring at stat_level_ring_enter:
-                        xalign 0.5 yalign 0.5
-                    add new_ring at stat_level_ring_breathe:
-                        xalign 0.5 yalign 0.5
-                        alpha 0.20
-                    add icon at stat_level_ring_enter:
-                        xalign 0.5 yalign 0.5
-                    add Solid(col + "15") at stat_level_flash:
-                        xalign 0.5 yalign 0.5 xsize 310 ysize 310
-                    add Solid(col + "88") at stat_level_burst:
-                        xalign 0.5 yalign 0.5 xsize 145 ysize 145
+                add Transform(ring_before, size=(530, 530)) at stat_up_ring_intro:
+                    xalign 0.5 yalign 0.45
+                add Transform(ring_before, size=(530, 530)) at stat_up_old_ring:
+                    xalign 0.5 yalign 0.45
+                add Transform(ring_after, size=(530, 530)) at stat_up_ring_upgrade:
+                    xalign 0.5 yalign 0.45
+                add Transform(icon_texture, size=(174, 174)) at stat_up_icon:
+                    xalign 0.5 yalign 0.45
 
-                text "APTITUDE AMÉLIORÉE":
-                    xpos 425 ypos 153 size 19 color "#91AEBE"
-                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2.2
+                # Impulsion centrale après l'activation des segments.
+                add Transform(ring_after, size=(530, 530)) at stat_up_shockwave:
+                    xalign 0.5 yalign 0.45
+                add Solid(col + "67") at stat_up_flash:
+                    xalign 0.5 yalign 0.45 xsize 420 ysize 420
 
-                text meta["label"].upper():
-                    xpos 424 ypos 202 size 42 color "#F2FAFF"
-                    font "fonts/Rajdhani-SemiBold.ttf" kerning 1.2
+                # Rayons discrets ; effet de succès, sans animation permanente.
+                for beam_x, beam_y, beam_rotation in [
+                    (398, 16, 0), (398, 576, 0),
+                    (105, 292, 90), (691, 292, 90),
+                    (188, 90, -45), (600, 500, -45),
+                    (600, 90, 45), (188, 500, 45),
+                ]:
+                    add Solid(col + "BB", xsize=5, ysize=68) at stat_up_radial_burst:
+                        xpos beam_x ypos beam_y rotate beam_rotation
 
-                fixed at stat_level_old_phase:
-                    xpos 422 ypos 290
-                    xysize (455, 110)
-                    text "NIVEAU [old_level]":
-                        xpos 0 ypos 0 size 39 color "#A1BAC9"
-                        font "fonts/Rajdhani-SemiBold.ttf"
-                    add Solid("#244154") xpos 0 ypos 68 xsize 392 ysize 9
-                    add Solid(col) xpos 0 ypos 68 xsize 392 ysize 9
+            # Nom au-dessus et chiffres sous l'anneau : un seul point focal.
+            text meta["label"].upper() at stat_up_heading:
+                xalign 0.5 ypos 258 size 52 color "#F4FBFF"
+                font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+                outlines [(2, "#06121CEB", 0, 0)]
 
-                fixed at stat_level_new_phase:
-                    xpos 422 ypos 280
-                    xysize (450, 120)
-                    text "NIVEAU [new_level]":
-                        xpos 0 ypos 0 size 49 color col
-                        font "fonts/Rajdhani-SemiBold.ttf" outlines [(1, "#01060B", 0, 0)]
-                    add Solid("#244154") xpos 0 ypos 76 xsize 392 ysize 9
-                    add Solid(col) xpos 0 ypos 76 xsize 392 ysize 9
-                    text "NOUVEAU PALIER ATTEINT":
-                        xpos 2 ypos 93 size 17 color "#D1E8F2"
-                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1.3
+            fixed at stat_up_previous_level:
+                xalign 0.5 ypos 778
+                xsize 700 ysize 74
+                text "NIVEAU [previous_level]":
+                    xalign 0.5 ypos 0 size 44 color "#95B0C1"
+                    font "fonts/Rajdhani-SemiBold.ttf" kerning 3
 
-                add Solid("#FFFFFFAA") xpos 422 ypos 407 xsize 5 ysize 45 at stat_level_line_sweep
+            # Charge jusqu'au flash ; retirée visuellement par le palier suivant.
+            fixed at stat_up_previous_level:
+                xalign 0.5 ypos 865
+                xsize 480 ysize 6
+                add Solid("#183544", xsize=480, ysize=6)
+                add Solid(col, xsize=480, ysize=6) at stat_up_charge_line
 
-                fixed at stat_level_footer_in:
-                    xpos 34 ypos 531
-                    xysize (825, 45)
-                    text "PROGRESSION PERMANENTE ENREGISTRÉE":
-                        xpos 0 ypos 5 size 16 color "#A4C0CD"
-                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1.6
-                    text ("NIVEAU MAXIMUM" if new_level >= STAT_MAX else "+1 NIVEAU"):
-                        xalign 1.0 ypos 5 size 18 color col
-                        font "fonts/Rajdhani-SemiBold.ttf" kerning 1.3
+            fixed at stat_up_new_level:
+                xalign 0.5 ypos 766
+                xsize 760 ysize 104
+                text "NIVEAU [current_level]":
+                    xalign 0.5 ypos 0 size 72 color col
+                    font "fonts/Rajdhani-SemiBold.ttf" kerning 4
+                    outlines [(2, "#01101A", 0, 0)]
 
-    timer 4.32 action Function(finish_stat_level_up)
+            fixed at stat_up_footer:
+                xalign 0.5 ypos 881
+                xsize 680 ysize 60
+                add Solid(col + "A0") xalign 0.5 ypos 0 xsize 148 ysize 2
+                text ("MAÎTRISE MAXIMALE" if current_level >= STAT_MAX else "COMPÉTENCE AMÉLIORÉE"):
+                    xalign 0.5 ypos 17 size 22 color "#D7ECF5"
+                    font "fonts/Rajdhani-SemiBold.ttf" kerning 2.5
+
+    # Aucune interaction requise et aucune modification du niveau réel.
+    timer 4.18 action Function(finish_stat_level_up)
+
 
 # =============================================================
 # ÉCRAN D'ACCUEIL TABLETTE — "CONCLAVE OS" (cf maquette)
