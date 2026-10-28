@@ -575,6 +575,15 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
     "Elle me lâche et recule jusqu'à l'établi. La lampe tremble dans sa main ; je la récupère doucement avant qu'elle la fasse tomber."
 
     iris peur "Mais on vient de lui parler. Elle était avec nous, elle..."
+    "Elle s'interrompt. Pendant quelques secondes, elle ne regarde plus le corps. Elle fixe plutôt l'espace vide au-dessus de la table."
+    iris reflexion "Non... attends. Ça me rappelle un truc."
+    noam surpris "Quoi ?"
+    iris inquiet "Rien. Enfin, je sais pas."
+    noam reflexion "Iris, tu viens de dire que ça te rappelait quelque chose."
+    iris agace "Ouais, j'ai dit ça. J'ai pas dit que j'avais une explication !"
+    noam inquiet "T'as l'air de penser à autre chose."
+    iris fatigue "Je pense surtout qu'il y a un cadavre juste devant nous. On peut en parler ailleurs, s'il te plaît ?"
+    "Elle se frotte les yeux et se retourne vers la grille. Je n'insiste pas, mais sa réaction m'étonne : on aurait dit qu'elle avait reconnu quelque chose."
 
     "Elle se retourne vers la grille par laquelle nous sommes entrés, puis revient au corps. Je reste près d'elle, incapable de lui donner une explication qui rendrait la scène moins impossible."
 
