@@ -276,5 +276,9 @@ label _29_0_1_1_0_0_1_2_REVELATION:
     stop music fadeout 0.2
     scene black with fade
     pause 1.2
-    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
-    return
+
+    call screen kd_ending_reached(
+        "Reus ?",
+        "ENDING 11 // JOUR 29"
+    )
+    $ _ending_screen_closed = _return
