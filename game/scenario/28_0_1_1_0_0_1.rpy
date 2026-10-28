@@ -160,6 +160,8 @@ label _28_0_1_1_0_0_1_REUNION:
     noam colere "Je sais, Mara ! Me prends pas pour un con !"
     mara colere "Bah alors arrête de nous engueuler et propose autre chose !"
     tomas colere "Mara, ça suffit ! Il a le droit de pas vouloir !"
+    call play_stat_dialogue("j28")
+
     mara colere "Et moi j'ai le droit d'avoir peur de Keyper ! Vous voulez qu'on attende quoi, le jour du départ ?"
     "Elias soupire et passe une main sur son visage."
     sael mefiant "Si c'est Iris, faut prévoir ce qu'on fait si elle nous surprend. Parce qu'elle va pas se laisser faire."
