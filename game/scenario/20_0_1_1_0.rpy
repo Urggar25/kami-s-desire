@@ -693,6 +693,8 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     noam reflexion "Quoi ?"
 
+    call play_stat_dialogue("j20")
+
     kael doute "Non, rien."
 
     noam "Kael."
