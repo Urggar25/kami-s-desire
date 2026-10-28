@@ -402,6 +402,8 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam surpris "Ah."
 
+    call play_stat_dialogue("j22")
+
     elias fatigue "J'ai pas envie de ramper dans vos conduits pour chercher six bouts de métal. Si quelqu'un veut le faire, grand bien lui fasse."
 
     "Son ton est sec, mais après la journée d'hier je peux difficilement lui reprocher d'en avoir marre."
