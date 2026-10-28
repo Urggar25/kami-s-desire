@@ -429,6 +429,8 @@ label _21_0_1_1_0_0_LIVRAISON:
     elias "Voilà."
 
     lysa blase "Elles sont peut-être au sas."
+    call play_stat_dialogue("j21")
+
     elias "J'ai regardé."
     noam "Dans une autre caisse ?"
     elias "Aussi."
