@@ -131,6 +131,22 @@ Et ses critiques, aussi dures soient-elles, sont presque toujours justes.
 
 ---
 
+## SECRET DE LORE — PROJET REUS (SPOILERS : ROUTE SACRIFIER IRIS)
+
+**Période : avant la prise de pouvoir de Kami.** Iris travaillait également sur une technologie de duplication humaine financée par **Reus**, marchand extrêmement riche. Son intérêt et sa contribution scientifiques portaient en particulier sur la conservation, la modélisation et la restitution des souvenirs ; ce secret doit coexister avec son projet public d'IA éducative pour les enfants de Nexus.
+
+Reus voulait vivre indéfiniment : pour lui, préserver les souvenirs dans un nouveau corps revenait à prolonger une existence. Il voulait aussi créer des clones pour lui tenir compagnie, travailler à son service et représenter ses proches. La machine de duplication existait **avant Kami**. Iris a participé à sa création et a réalisé un **enregistrement de son propre corps et de ses souvenirs**, plusieurs années avant le Conclave.
+
+Le Conclave est installé dans **une ancienne immense station de Reus**. Iris n'avait jamais visité cette station avant d'y être convoquée comme représentante ; elle ne peut donc pas reconnaître le décor simplement parce qu'elle connaissait le projet initial.
+
+**Révélation de la branche J28 « choisir Iris » :** la duplication au laboratoire utilise l'archive mémorielle ancienne, **pas la mémoire de l'Iris actuelle**. La nouvelle Iris se réveille persuadée de sortir de son expérience passée : « Ça a réussi ? », avant de ne reconnaître ni la pièce ni les personnes autour d'elle. Elle n'a pas vécu la prise de pouvoir de Kami ni les journées passées avec Noam. La route doit s'achever sur : **« Mais enfin, j'ai participé à la création de cette machine ! »**
+
+**À préserver :** Iris-DG n'est pas une copie des liens affectifs créés au Conclave ; ne pas lui prêter les souvenirs de la relation avec Noam. Ne pas révéler cette histoire aux joueurs sur les autres routes sans mise en scène spécifique.
+
+**Continuité à clarifier avant écriture :** la fiche actuelle donne ~18–19 ans à Iris et indique qu'elle n'a jamais vraiment quitté son orphelinat ; elle affirme aussi son intérêt exclusif pour l'IA. Définir précisément l'âge auquel elle a travaillé avec Reus, la durée écoulée et son rôle dans la partie cognitive de la machine. Ne pas faire comme si ces contradictions étaient déjà résolues.
+
+---
+
 ## NOTES DE DESIGN
 
 - **Carapace :** Le sarcasme permanent. Personne ne peut l'atteindre si elle a toujours une réplique prête.
