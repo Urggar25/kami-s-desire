@@ -146,7 +146,7 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_RETOUR:
     pause 1.2
     call screen kd_ending_reached(
         "Le poids du retour",
-        "ENDING 03 // JOUR 30"
+        "ENDING 09 // JOUR 30"
     )
     $ _ending_screen_closed = _return
     return
@@ -220,7 +220,7 @@ label _30_0_1_1_0_0_1_1_PETITE_SALLE_KEYPER:
     pause 1.2
     call screen kd_ending_reached(
         "À ta place",
-        "ENDING 04 // JOUR 30"
+        "ENDING 10 // JOUR 30"
     )
     $ _ending_screen_closed = _return
     return
