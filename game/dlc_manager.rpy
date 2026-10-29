@@ -3,10 +3,12 @@
 # En développement la présence des labels du pack vaut installation ; en
 # distribution commerciale le distributeur doit fournir les fichiers achetés.
 init -40 python:
+    # Lien de recherche Steam provisoire : aucune page produit DLC vérifiée.
+    KD_DLC_STEAM_URL = "https://store.steampowered.com/search/?term=Kami%27s%20Desires"
     KD_DLC_CATALOG = {
         "doppelganger_routes": {
-            "title": "Les autres vies",
-            "subtitle": "Route Doppelgänger — fins alternatives (J20–J30)",
+            "title": "L’Angle mort",
+            "subtitle": "Un autre regard sur les derniers jours du Conclave",
             "description": "Après la première fin gratuite, découvrez les autres choix et leurs conséquences.",
             "entry_label": "kd_doppelganger_pack_ready",
         },
