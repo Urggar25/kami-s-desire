@@ -157,8 +157,8 @@ label kd_dlc_doppelganger_trailer:
     $ renpy.pause(1.3, hard=True)
     play trl_b "audio/trailer/trl_final_hit.wav"
     show screen trl_endcard(
-        _("KAMI'S DESIRES : LES AUTRES VIES"),
-        _("DOPPELGÄNGER  ·  JOURS 20 À 30"),
+        _("KAMI'S DESIRES : L'ANGLE MORT"),
+        _("UNE HISTOIRE QUE VOUS N'AVEZ PAS ENCORE VUE"),
         note=_("UNE FIN GRATUITE. LES AUTRES CHOIX DANS LE DLC.")
     )
     $ renpy.pause(4.4, hard=True)
