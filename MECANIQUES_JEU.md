@@ -46,6 +46,9 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Console instable | Calibre des valeurs d'une console avant verrouillage et révélation. | `game/scenario/7_0_1.rpy` | `call j701_play_console` |
 | Nettoyer / chercher le dessin | Balaye des particules et anomalies pour retrouver un élément caché. | `game/scenario/7_0_1.rpy` | `call j701_play_search_drawing` |
 
+
+| Cut-in interruption — Noam | Fondu du fond, apparition du corps et des yeux à 0,5 s depuis le bas, clignement unique, retour automatique à 2 s. Les quatre PNG restent superposés sur le même canevas. Test placé au début du J2. | `game/noam_interupt.rpy` | `call play_noam_interupt` |
+
 ## Mécaniques de jeu
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
