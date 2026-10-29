@@ -389,7 +389,7 @@ label _20_0_1_1_IRIS_CONFRONTATION:
     "Je pourrais simplement ouvrir la main."
 
     "Ça devrait être facile."
-    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Lâcher le couteau":{"label":"_20_0_1_1_LACHER_COUTEAU","pack":"origine"},"Garder le couteau":{"label":"_20_0_1_1_GARDER_COUTEAU","pack":"origine"}}):
+    menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Lâcher le couteau":{"label":"_20_0_1_1_LACHER_COUTEAU","pack":"doppelganger_routes"},"Garder le couteau":{"label":"_20_0_1_1_GARDER_COUTEAU"}}):
         "Que faire du couteau ?"
 
         "Lâcher le couteau":
@@ -464,6 +464,10 @@ label _20_0_1_1_GARDER_COUTEAU:
 
 
 label _20_0_1_1_LACHER_COUTEAU:
+    if not kd_dlc_unlocked("doppelganger_routes"):
+        call screen kd_dlc_locked_notice
+        jump _20_0_1_1_IRIS_CONFRONTATION
+
     $ danger_off()
 
     "Mes doigts restent serrés autour du manche encore une seconde."
@@ -757,7 +761,7 @@ label _20_0_1_1_KAEL_QUESTION:
         ("noam", "reflexion", 0.30),
         ("kael", "doute", 0.70),
     ])
-    menu (screen="critical_choice", noam_expr="reflexion", cc_targets={"Je monte dans la navette.":{"label":"_20_0_1_1_KAEL_PARTIR","pack":"origine"},"Je reste s'il y a encore une chance de le sortir.":{"label":"_20_0_1_1_KAEL_RESTER","pack":"origine"}}):
+    menu (screen="critical_choice", noam_expr="reflexion", cc_targets={"Je monte dans la navette.":{"label":"_20_0_1_1_KAEL_PARTIR","pack":"doppelganger_routes"},"Je reste s'il y a encore une chance de le sortir.":{"label":"_20_0_1_1_KAEL_RESTER","pack":"doppelganger_routes"}}):
         "Si demain la navette arrive... mais que quelqu'un reste coincé ici ?"
 
         "Je monte dans la navette.":
@@ -770,6 +774,10 @@ label _20_0_1_1_KAEL_QUESTION:
 
 
 label _20_0_1_1_KAEL_PARTIR:
+    if not kd_dlc_unlocked("doppelganger_routes"):
+        call screen kd_dlc_locked_notice
+        jump _20_0_1_1_IRIS_CONFRONTATION
+
 
     noam reflexion "Oui."
 
@@ -804,6 +812,10 @@ label _20_0_1_1_KAEL_PARTIR:
 
 
 label _20_0_1_1_KAEL_RESTER:
+    if not kd_dlc_unlocked("doppelganger_routes"):
+        call screen kd_dlc_locked_notice
+        jump _20_0_1_1_IRIS_CONFRONTATION
+
 
     noam reflexion "Non."
 
@@ -928,6 +940,10 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
 
 
 label _20_0_1_1_IRIS_QTE_ECHEC:
+    if not kd_dlc_unlocked("doppelganger_routes"):
+        call screen kd_dlc_qte_retry
+        jump _20_0_1_1_GARDER_COUTEAU
+
 
     $ unlock_gallery_image("bg_cg047")
     scene bg_cg047 at adaptive_fullscreen with flash_white
