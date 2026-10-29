@@ -33,7 +33,7 @@ init python:
     CC_UNFINISHED_LABELS = set()
     CC_UNRELEASED_PACKS = {"mystere"}  # Annonce réservée, aucune date ni achat.
     CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."},
-        "doppelganger_routes": {"title": "Les autres vies", "days": "Jours 20 à 30", "endings": "Fins alternatives", "tagline": "Et si Noam avait choisi autrement ?"}}
+        "doppelganger_routes": {"title": "L’Origine", "days": "Jours 20 à 30", "endings": "Fins alternatives", "tagline": "Et si Noam avait choisi autrement ?"}}
 
     def cc_owned_packs():
         # Development entitlement, NOT commercial DRM.
