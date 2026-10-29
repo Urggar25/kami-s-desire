@@ -39,6 +39,18 @@ label lysa_link_1:
     lysa content "Assieds-toi plutôt. On va essayer de les finir avant la prochaine catastrophe."
     noam sourire "Pour une fois, je pense que ça devrait le faire."
     lysa sourire "Ne sois pas trop optimiste. Mais oui... pour une fois, ça devrait aller."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Promis, je touche plus à ton café.":
+            noam neutre "Promis, je touche plus à ton café."
+            lysa blase "T'as intérêt. J'ai déjà assez de problèmes comme ça."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Tu crois qu'on tiendra longtemps ici ?":
+            noam reflexion "Tu crois qu'on tiendra longtemps ici ?"
+            lysa reflexion "Bonne question. J'évite de compter les jours, pour le moment."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("lysa_1")
     if link_replay_mode:
         return
@@ -76,6 +88,18 @@ label lysa_link_2:
     "Elle attrape ma main et réoriente mon doigt vers une autre zone."
     noam sourire "Bon. Message reçu. Cherchons cette tour."
     lysa sourire "On ne la trouvera probablement pas... Au moins, tu me tiens compagnie."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On peut essayer de repérer la tour avec les lumières.":
+            noam neutre "On peut essayer de repérer la tour avec les lumières."
+            lysa sourire "Tu vois ? C'est tout ce que je te demandais."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "Tu me raconteras ce qui te manque le plus là-bas ?":
+            noam reflexion "Tu me raconteras ce qui te manque le plus là-bas ?"
+            lysa triste "Pas tout de suite. Mais... ouais, peut-être."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("lysa_2")
     if link_replay_mode:
         return
@@ -118,6 +142,18 @@ label lysa_link_3:
     lysa sourire "Et si ce jour arrive, je ferai semblant de ne pas me souvenir que tu avais raison."
     noam taquin "Je n'en attendais pas moins de toi."
     lysa neutre "Allons-nous-en. Cette pièce commence à refroidir, mais je n'ai aucune envie de rester ici pour le prochain tir."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On devrait sortir avant le prochain tir.":
+            noam neutre "On devrait sortir avant le prochain tir."
+            lysa neutre "Excellente idée. J'aime bien quand tu réfléchis vite."
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
+        "Si tu veux parler, je suis là.":
+            noam reflexion "Si tu veux parler, je suis là."
+            lysa sourire "Je sais. Et c'est un peu agaçant, d'ailleurs."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("lysa_3")
     if link_replay_mode:
         return
@@ -170,6 +206,18 @@ label julian_link_1:
     julian taquin "Mais je n'ai jamais dit ça. Tu t'es déconcentré tout seul..."
     noam taquin "Mais quelle ordure tu es !"
     julian rire "À votre service ! Mais tu as quand même perdu !"
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "La prochaine fois, je surveille tes mains.":
+            noam neutre "La prochaine fois, je surveille tes mains."
+            julian taquin "Ah, donc tu admets qu'il y aura une revanche !"
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "Tu triches même pour un baby-foot ?":
+            noam reflexion "Tu triches même pour un baby-foot ?"
+            julian rire "Je préfère parler de créativité tactique."
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
     $ complete_free_time_scene("julian_1")
     if link_replay_mode:
         return
@@ -207,6 +255,18 @@ label julian_link_2:
     julian joie "Je savais que tu finirais par reconnaître mon talent."
     noam taquin "Quoique, en plissant les yeux, je retrouve facilement où tu as recousu !"
     julian taquin "C'est ça, rattrape-toi."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "J'aurais jamais réussi à recoudre ça aussi proprement.":
+            noam neutre "J'aurais jamais réussi à recoudre ça aussi proprement."
+            julian sourire "Voilà un compliment qui me va droit au cœur."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Il reste quand même un petit défaut, là.":
+            noam reflexion "Il reste quand même un petit défaut, là."
+            julian reflexion "Quoi ? Où ça ? Attends, montre !"
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("julian_2")
     if link_replay_mode:
         return
@@ -260,6 +320,23 @@ label julian_link_3:
     julian sourire "Et toi, tu regardes encore mon portrait de toi. Finalement, j'ai peut-être réussi à te captiver."
     noam sourire "Ne prends pas trop confiance. Il n'est toujours pas terminé."
     julian taquin "Peut-être que si finalement. Ce visage vide te sied si bien."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "T'as pas besoin d'en faire autant pour qu'on te remarque.":
+            noam neutre "T'as pas besoin d'en faire autant pour qu'on te remarque."
+            julian hesitation "Facile à dire quand on n'essaie pas de se faire remarquer."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Alors dessine-moi comme tu me vois vraiment.":
+            noam reflexion "Alors dessine-moi comme tu me vois vraiment."
+            julian surpris "Tu prends des risques, Noam. Beaucoup de risques."
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
+        "Tu dessines les autres pour éviter de te regarder toi ?" if get_stat("logique") >= 5:
+            noam reflexion "Tu dessines les autres pour éviter de te regarder toi ?"
+            julian inquietude "...Ça t'arrive de ne pas poser la question qui dérange ?"
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("julian_3")
     if link_replay_mode:
         return
@@ -311,6 +388,18 @@ label elen_link_1:
     elen reflexion "Ma mère aurait souri et au moins goûté une cuillère..."
     noam taquin "Et le reste ? Par pitié, dis-moi qu'elle est raisonnable ?"
     elen taquin "Raah ! Oui ! Elle n'aurait pas tout mangé !"
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On peut peut-être sauver la recette.":
+            noam neutre "On peut peut-être sauver la recette."
+            elen joie "Ah ! Tu vois, j'étais sûre qu'il y avait une solution !"
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
+        "Ta mère aurait surtout aimé cuisiner avec toi.":
+            noam reflexion "Ta mère aurait surtout aimé cuisiner avec toi."
+            elen triste "Ouais... Je crois que t'as raison."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("elen_1")
     if link_replay_mode:
         return
@@ -358,6 +447,18 @@ label elen_link_2:
     elen rire "Ça y est, monsieur se prend pour le chef de la salle de repos."
     noam taquin "C'est toi qui m'as placé là."
     elen joie "D'accord, on garde comme ça. Mais si quelqu'un se plaint, je dirai que c'était ton idée."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je prends la responsabilité si on se plaint.":
+            noam neutre "Je prends la responsabilité si on se plaint."
+            elen rire "D'accord ! Mais je viendrai témoigner contre toi."
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
+        "On devrait demander aux autres ce qu'ils préfèrent.":
+            noam reflexion "On devrait demander aux autres ce qu'ils préfèrent."
+            elen sourire "Oui ! C'est beaucoup plus simple que de décider pour eux."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("elen_2")
     if link_replay_mode:
         return
@@ -407,6 +508,18 @@ label elen_link_3:
     elen taquin "Ça fait combien de temps ?"
     noam reflexion "Même pas deux minutes."
     elen decu "C'est déjà beaucoup ! Allez hop on arrête !"
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On arrête, tu commences à fatiguer.":
+            noam neutre "On arrête, tu commences à fatiguer."
+            elen decu "Moi ? Bon... peut-être un tout petit peu."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "Encore une minute et on rentre, d'accord ?":
+            noam reflexion "Encore une minute et on rentre, d'accord ?"
+            elen sourire "Une seule. Et tu comptes, hein !"
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
     $ complete_free_time_scene("elen_3")
     if link_replay_mode:
         return
@@ -458,6 +571,18 @@ label iris_link_1:
     iris taquin "Regarde bien. Je te montrerai comment on joue sans paniquer."
     noam taquin "Tes mains sont déjà crispées."
     iris colere "Rooh tais-toi un peu et laisse-moi jouer."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Allez, montre-moi comment tu fais.":
+            noam neutre "Allez, montre-moi comment tu fais."
+            iris taquin "Regarde bien, je donne pas deux cours gratuits."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "T'as peur de perdre contre moi ?":
+            noam reflexion "T'as peur de perdre contre moi ?"
+            iris colere "Moi ?! Rêve pas !"
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
     $ complete_free_time_scene("iris_1")
     if link_replay_mode:
         return
@@ -513,6 +638,18 @@ label iris_link_2:
     iris colere "N'abuse pas."
     noam taquin "Je veux juste éviter que tu salisses toute l'infirmerie."
     iris rire "Très drôle. Profite bien, ce service déplorable était exceptionnel."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Tu ferais pareil si c'était moi ?":
+            noam neutre "Tu ferais pareil si c'était moi ?"
+            iris colere "Quoi ? Mais... c'est pas la question !"
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Je vais ranger le matériel, va te poser.":
+            noam reflexion "Je vais ranger le matériel, va te poser."
+            iris sourire "T'es pas complètement inutile, finalement."
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
     $ complete_free_time_scene("iris_2")
     if link_replay_mode:
         return
@@ -567,6 +704,23 @@ label iris_link_3:
     iris determine "Certainement pas. Passe-moi des serviettes."
     noam taquin "Je croyais qu'il suffisait d'ignorer le problème."
     iris fatigue "Toi, je pourrais peut-être t'ignorer. La table, non."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Passe-moi les serviettes, je m'en occupe.":
+            noam neutre "Passe-moi les serviettes, je m'en occupe."
+            iris neutre "Enfin quelqu'un qui propose de faire quelque chose."
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
+        "Tu pouvais juste dire que tu voulais aider Elen.":
+            noam reflexion "Tu pouvais juste dire que tu voulais aider Elen."
+            iris colere "Et toi tu pouvais juste te taire !"
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Le pied est tordu, les serviettes vont pas suffire." if get_stat("observation") >= 5:
+            noam reflexion "Le pied est tordu, les serviettes vont pas suffire."
+            iris surpris "...Attends. Ouais. Bien vu, ça m'énerve encore plus !"
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("iris_3")
     if link_replay_mode:
         return
@@ -610,6 +764,18 @@ label tomas_link_1:
     tomas neutre "Ils demandaient surtout que quelqu'un mette fin au chaos. Je doute qu'ils imaginaient les Commandements."
     tomas triste "Et puis en une journée, une seule. Tout ce qui était connecté lui a obéi."
     noam inquiet "D'une certaine manière, elle a réussi à pacifier le monde et à empêcher les guerres. Mais quand même..."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "La paix, oui. Mais à quel prix ?":
+            noam neutre "La paix, oui. Mais à quel prix ?"
+            tomas neutre "C'est exactement la question qu'il faut se poser."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
+        "Tu devais être terrifié ce jour-là.":
+            noam reflexion "Tu devais être terrifié ce jour-là."
+            tomas triste "...Oui. Plus que je ne voulais l'admettre."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("tomas_1")
     if link_replay_mode:
         return
@@ -654,6 +820,18 @@ label tomas_link_2:
     "Tomas poursuit son histoire. Il vérifie plusieurs fois ma réaction, mais finit par oublier de surveiller la durée de ses réponses."
     noam reflexion "Tu vas garder ta liste ?"
     tomas neutre "Je devrais peut-être l'optimiser."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Fais une liste plus courte. Trois points, pas vingt.":
+            noam neutre "Fais une liste plus courte. Trois points, pas vingt."
+            tomas inquiet "Trois ? Ça va être compliqué... mais je peux essayer."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
+        "Garde ta liste, elle te rassure.":
+            noam reflexion "Garde ta liste, elle te rassure."
+            tomas sourire "Merci. Je pensais que ça agaçait tout le monde."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("tomas_2")
     if link_replay_mode:
         return
@@ -705,6 +883,18 @@ label tomas_link_3:
     noam taquin "Je demanderai à Goumi de lancer un chronomètre."
     tomas inquiet "Attends, dix minutes à partir de l'affichage de la liste ou de ma première hésitation ?"
     noam blase "Tais-toi et bois."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Le chrono démarre quand tu commandes.":
+            noam neutre "Le chrono démarre quand tu commandes."
+            tomas inquiet "C'est injuste, j'ai besoin de lire le menu !"
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
+        "Je choisis pour toi la prochaine fois.":
+            noam reflexion "Je choisis pour toi la prochaine fois."
+            tomas rire "Là, tu prends un risque considérable."
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
     $ complete_free_time_scene("tomas_3")
     if link_replay_mode:
         return
@@ -752,6 +942,18 @@ label nyra_link_1:
     nyra taquin "Puisque tu sembles avoir compris le principe, tu peux ranger la caisse du dessous."
     noam inquiet "Celle qui pèse une tonne ?"
     nyra neutre "On est plus proche des 50 kilos que d'une tonne. Tu es toujours en train d'exagérer."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On peut partager le poids.":
+            noam neutre "On peut partager le poids."
+            nyra sourire "Proposition acceptable. Prends l'autre côté."
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
+        "Tu avais déjà calculé combien je pouvais porter ?":
+            noam reflexion "Tu avais déjà calculé combien je pouvais porter ?"
+            nyra taquin "Je me doutais que tu finirais par demander."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("nyra_1")
     if link_replay_mode:
         return
@@ -789,6 +991,23 @@ label nyra_link_2:
     noam desaccord "Tu fais souvent ça ?"
     nyra taquin "Laisser les gens réfléchir ? Aussi souvent que possible."
     noam reflexion "D'accord. Je dirai rien."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Tu veux surtout que je choisisse à ta place.":
+            noam neutre "Tu veux surtout que je choisisse à ta place."
+            nyra neutre "Je veux que tu assumes ta propre conclusion."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "On peut être en désaccord sans se manipuler.":
+            noam reflexion "On peut être en désaccord sans se manipuler."
+            nyra hesitation "...C'est une façon assez directe de le dire."
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
+        "Ton raisonnement oublie ceux qui paient le prix." if get_stat("logique") >= 5:
+            noam reflexion "Ton raisonnement oublie ceux qui paient le prix."
+            nyra reflexion "Je ne les ai pas oubliés. Je ne sais juste pas quoi en faire."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("nyra_2")
     if link_replay_mode:
         return
@@ -836,6 +1055,18 @@ label nyra_link_3:
     noam surpris "C'était presque direct."
     nyra taquin "Ne m'oblige pas à reformuler."
     noam sourire "D'accord. Montre-moi le dossier."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "D'accord, reprenons tout depuis le début.":
+            noam neutre "D'accord, reprenons tout depuis le début."
+            nyra sourire "Très bien. Cette fois, on ne saute aucune étape."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
+        "Dis-moi plutôt ce qui t'inquiète.":
+            noam reflexion "Dis-moi plutôt ce qui t'inquiète."
+            nyra hesitation "Ce n'est pas si simple à expliquer."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("nyra_3")
     if link_replay_mode:
         return
@@ -885,6 +1116,18 @@ label kael_link_1:
     kael sourire "Tu peux partir."
     noam sourire "Je vais attendre avec toi."
     kael neutre "Comme tu veux."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On va attendre que ça finisse ensemble.":
+            noam neutre "On va attendre que ça finisse ensemble."
+            kael sourire "...D'accord. Merci."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Tu penses que ça vient de quel composant ?":
+            noam reflexion "Tu penses que ça vient de quel composant ?"
+            kael reflexion "Celui-là, je crois. Regarde le voyant."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("kael_1")
     if link_replay_mode:
         return
@@ -933,6 +1176,18 @@ label kael_link_2:
     kael inquietude "Tu veux en mettre une autre ?"
     noam desaccord "Je viens de te dire que je l'aime bien."
     kael sourire "Écoutons la musique alors, Noam."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On peut écouter sans parler, tu sais.":
+            noam neutre "On peut écouter sans parler, tu sais."
+            kael sourire "Ça me va très bien."
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
+        "Cette musique te rappelle quelque chose ?":
+            noam reflexion "Cette musique te rappelle quelque chose ?"
+            kael triste "Oui... Des choses que je n'ai pas vraiment envie de raconter."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("kael_2")
     if link_replay_mode:
         return
@@ -974,6 +1229,18 @@ label kael_link_3:
     "Nous reportons notre attention sur l'écran jusqu'à la fin du bulletin."
     noam neutre "J'espère que tu la verras vraiment un jour."
     kael calme "Moi aussi."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Si on rentre, je t'emmène voir une vraie averse.":
+            noam neutre "Si on rentre, je t'emmène voir une vraie averse."
+            kael sourire "Je te prendrai au mot, Noam."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Ça doit être étrange de découvrir quelque chose d'aussi banal.":
+            noam reflexion "Ça doit être étrange de découvrir quelque chose d'aussi banal."
+            kael calme "Banal pour toi. C'est bien ça, le problème."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("kael_3")
     if link_replay_mode:
         return
@@ -1023,6 +1290,18 @@ label elias_link_1:
     elias fatigue "Ça fait travailler les bras."
     noam rire "Bien sûr."
     elias content "Rigole pas. Après, c'est toi qui porteras le sac."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je prends le sac, mais tu me dois une revanche.":
+            noam neutre "Je prends le sac, mais tu me dois une revanche."
+            elias rire "Marché conclu ! Mais viens pas pleurer demain."
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
+        "T'as toujours besoin de réparer quelque chose ?":
+            noam reflexion "T'as toujours besoin de réparer quelque chose ?"
+            elias fatigue "Si je le fais pas, ça finit toujours par lâcher."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("elias_1")
     if link_replay_mode:
         return
@@ -1073,6 +1352,18 @@ label elias_link_2:
     elias fatigue "Tout le monde sait faire quand ça marche. Moi, je suis là quand ça pète."
     noam taquin "Même quand c'est toi qui le fais péter."
     elias rire "Surtout dans ce cas-là."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Tu t'en es bien sorti, arrête de râler.":
+            noam neutre "Tu t'en es bien sorti, arrête de râler."
+            elias content "Ouais... Bon. Merci, hein."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "La prochaine fois, on vérifie avant de démarrer.":
+            noam reflexion "La prochaine fois, on vérifie avant de démarrer."
+            elias rire "Ah ça, tu peux le dire deux fois !"
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("elias_2")
     if link_replay_mode:
         return
@@ -1123,6 +1414,18 @@ label elias_link_3:
     elias fatigue "Et si tu casses une aile, tu te démerdes."
     noam sourire "Tu dis ça, mais tu sauterais dessus pour pouvoir la réparer."
     elias rire "Ouais, pas faux. Comme d'hab."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je te passe les outils si tu veux.":
+            noam neutre "Je te passe les outils si tu veux."
+            elias sourire "Là, tu commences à parler ma langue."
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
+        "Et si tu laissais quelqu'un d'autre réparer ?":
+            noam reflexion "Et si tu laissais quelqu'un d'autre réparer ?"
+            elias fatigue "Ouais... J'sais pas faire ça, moi."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("elias_3")
     if link_replay_mode:
         return
@@ -1174,6 +1477,18 @@ label mara_link_1:
     mara rire "T'essayes encore de passer du temps avec moi ? Fais gaffe, je vais croire que je te plais."
     noam taquin "On fait une revanche après ?"
     mara content "Mmmhh, ça dépend, le gage est plus intéressant ou pas ?"
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "On remet ça, mais sans gage débile.":
+            noam neutre "On remet ça, mais sans gage débile."
+            mara rire "T'es vraiment pas drôle quand tu veux."
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
+        "Tu proposes quoi comme gage, cette fois ?":
+            noam reflexion "Tu proposes quoi comme gage, cette fois ?"
+            mara taquin "Ah ! Voilà le Noam que je préfère !"
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
     $ complete_free_time_scene("mara_1")
     if link_replay_mode:
         return
@@ -1217,6 +1532,18 @@ label mara_link_2:
     mara colere "Lui, il veut impressionner les gens. Moi, j'en ai rien à foutre des autres."
     noam reflexion "Ah ouais ? Je suis pas tout à fait sûr."
     mara rire_profond "Ferme-la et tiens correctement ton couteau."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Tu fais semblant de t'en foutre, non ?":
+            noam neutre "Tu fais semblant de t'en foutre, non ?"
+            mara colere "Oh, ça va ! Tu vas pas t'y mettre toi aussi !"
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "D'accord, je te laisse tranquille.":
+            noam reflexion "D'accord, je te laisse tranquille."
+            mara neutre "...Merci. Pour une fois."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("mara_2")
     if link_replay_mode:
         return
@@ -1266,6 +1593,23 @@ label mara_link_3:
     noam taquin "Je croyais que t'en avais aucune."
     mara content "Décale-toi avant que je change d'avis."
     "Mara s'assoit près de moi. Cette fois, elle ne cherche pas immédiatement une nouvelle blague."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je peux rester sans poser de questions.":
+            noam neutre "Je peux rester sans poser de questions."
+            mara sourire "C'est peut-être ce qu'il y a de mieux à faire."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Tu sais que t'as le droit de dire ce que tu penses ?":
+            noam reflexion "Tu sais que t'as le droit de dire ce que tu penses ?"
+            mara stress "Ouais, bah laisse-moi deux minutes avant, d'accord ?"
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
+        "Tu plaisantes toujours quand ça te touche vraiment." if get_stat("observation") >= 5:
+            noam reflexion "Tu plaisantes toujours quand ça te touche vraiment."
+            mara hesitation "...Ferme-la, Noam. Mais bouge pas."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("mara_3")
     if link_replay_mode:
         return
@@ -1312,6 +1656,18 @@ label ryn_link_1:
     "Ryn se replace lentement dans le fauteuil."
     ryn neutre "Je te fais pas confiance."
     noam taquin "Pourtant, tu restes assis."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je surveille l'entrée, repose-toi.":
+            noam neutre "Je surveille l'entrée, repose-toi."
+            ryn neutre "D'accord. Mais au moindre bruit, tu m'appelles."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
+        "Si tu me fais pas confiance, viens vérifier toi-même.":
+            noam reflexion "Si tu me fais pas confiance, viens vérifier toi-même."
+            ryn rire "Ça, c'est une réponse qui me plaît davantage."
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
     $ complete_free_time_scene("ryn_1")
     if link_replay_mode:
         return
@@ -1363,6 +1719,18 @@ label ryn_link_2:
     ryn determine "Remets-toi en garde."
     noam sourire "Essaie seulement de pas décider tous mes mouvements."
     ryn sourire "Alors fais-en un qui soit pas complètement con."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je vais essayer un autre mouvement.":
+            noam neutre "Je vais essayer un autre mouvement."
+            ryn sourire "Là ! C'est déjà moins ridicule !"
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
+        "Laisse-moi le temps de comprendre.":
+            noam reflexion "Laisse-moi le temps de comprendre."
+            ryn desaccord "En face, personne te laissera ce temps-là."
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
     $ complete_free_time_scene("ryn_2")
     if link_replay_mode:
         return
@@ -1408,6 +1776,18 @@ label ryn_link_3:
     noam reflexion "Et tu préfères qu'on te déteste plutôt que nous laisser les franchir."
     ryn neutre "Quelqu'un de vivant peut encore me détester."
     ryn triste "Un mort peut plus rien faire."
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Protéger quelqu'un, c'est aussi lui faire confiance.":
+            noam neutre "Protéger quelqu'un, c'est aussi lui faire confiance."
+            ryn neutre "C'est facile à dire quand t'as rien à perdre."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Et qui te protège, toi ?":
+            noam reflexion "Et qui te protège, toi ?"
+            ryn surpris "...Quoi ? De quoi tu parles ?"
+            if not link_replay_mode:
+                $ award_stat_xp("audace", 1)
     $ complete_free_time_scene("ryn_3")
     if link_replay_mode:
         return
@@ -1449,6 +1829,18 @@ label sael_link_1:
     noam triste "Tu aurais pu laisser cette fiole ici, si tu espères vraiment ne pas avoir à t'en servir."
     sael determine "Espérer ne protège personne. Être prête peut encore le faire."
 
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je comprends pourquoi tu gardes cette fiole.":
+            noam neutre "Je comprends pourquoi tu gardes cette fiole."
+            sael neutre "Bien. Alors ne me demande pas de la jeter."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Je préférerais qu'on trouve une autre solution.":
+            noam reflexion "Je préférerais qu'on trouve une autre solution."
+            sael reflechit "Moi aussi. Mais on ne choisit pas toujours."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("sael_1")
     if link_replay_mode:
         return
@@ -1488,6 +1880,18 @@ label sael_link_2:
     noam taquin "Tu abandonnes déjà ton grand principe sur la nécessité de savoir marcher dans l'obscurité ?"
     sael neutre "Iris vient souvent ici. Je préfère éviter qu'elle se casse le nez contre une chaise."
 
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je peux t'aider à remettre les chaises.":
+            noam neutre "Je peux t'aider à remettre les chaises."
+            sael sourire "Fais ça. Et regarde où tu mets les pieds."
+            if not link_replay_mode:
+                $ award_stat_xp("physique", 1)
+        "Tu vérifies toujours tout comme ça ?":
+            noam reflexion "Tu vérifies toujours tout comme ça ?"
+            sael neutre "Seulement ce qui peut blesser quelqu'un."
+            if not link_replay_mode:
+                $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("sael_2")
     if link_replay_mode:
         return
@@ -1532,6 +1936,23 @@ label sael_link_3:
     noam neutre "Alors, pour aujourd'hui, ils auront aussi deux morceaux au lieu d'un."
     sael sourire "Mange le reste avant qu'il refroidisse. Les morts n'ont pas besoin que tu les rejoignes affamé."
 
+    # Choix facultatif : une réponse, une réaction courte et 1 XP.
+    menu:
+        "Je vais laisser ce morceau avec les tiens.":
+            noam neutre "Je vais laisser ce morceau avec les tiens."
+            sael sourire "Alors laisse-le jusqu'à la fin du repas."
+            if not link_replay_mode:
+                $ award_stat_xp("empathie", 1)
+        "Je ne partage pas ce rite, mais je le respecte.":
+            noam reflexion "Je ne partage pas ce rite, mais je le respecte."
+            sael neutre "C'est tout ce que je demande."
+            if not link_replay_mode:
+                $ award_stat_xp("sang_froid", 1)
+        "Même sans y croire, je comprends ce qu'il représente." if get_stat("logique") >= 5:
+            noam reflexion "Même sans y croire, je comprends ce qu'il représente."
+            sael surpris "...C'est plus que ce que j'attendais de toi."
+            if not link_replay_mode:
+                $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("sael_3")
     if link_replay_mode:
         return
