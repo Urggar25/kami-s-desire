@@ -1463,6 +1463,21 @@ init -2 python:
 
     ROADMAP_NODE_BY_ID = {node["id"]: node for node in ROADMAP_NODES}
 
+    def roadmap_ancestry(node_id):
+        """Collect ancestors of a selected narrative node."""
+        visited = set()
+        def visit(candidate):
+            if candidate in visited:
+                return
+            visited.add(candidate)
+            found = ROADMAP_NODE_BY_ID.get(candidate)
+            if found:
+                for parent in found.get("requires", []):
+                    visit(parent)
+        if node_id:
+            visit(node_id)
+        return visited
+
     def roadmap_node(node_id):
         return ROADMAP_NODE_BY_ID.get(node_id)
 
@@ -1809,7 +1824,7 @@ init -2 python:
         # no required_variables (e.g. the J20 knife confrontation).
         label = node["label"]
         import re
-        match = re.match(r"^_(\\d+)_", label)
+        match = re.match(r"^_(\d+)_", label)
         if match:
             target_day = int(match.group(1))
             store.current_day = target_day
@@ -1886,8 +1901,9 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
 
     default selected_node_id = roadmap_selected_or_latest(roadmap_selected_node)
     default map_zoom = initial_zoom if initial_zoom is not None else 0.78
+    default map_filter = "all"
 
-    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node) and roadmap_should_show(node)]
+    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node) and roadmap_should_show(node) and (map_filter == "all" or (map_filter == "day" and roadmap_is_day(node)) or (map_filter == "choice" and roadmap_is_divergence(node)) or (map_filter == "ending" and roadmap_is_ending(node)))]
     $ map_w, map_h = roadmap_map_size(visible_nodes)
     $ fit_zoom = roadmap_fit_zoom(visible_nodes)
     $ z = max(fit_zoom, min(1.40, map_zoom))
@@ -1897,10 +1913,11 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
     $ map_offset_y = max(0, int((canvas_h - map_h * z) / 2))
     $ node_w = max(44, int(310 * z))
     $ node_h = max(24, int(118 * z))
-    $ compact_nodes = z < 0.45
+    $ compact_nodes = z < 0.68
     $ day_bands = roadmap_day_bands(visible_nodes)
     $ visible_node_ids = set([node["id"] for node in visible_nodes])
     $ selected_node = roadmap_node(selected_node_id) if selected_node_id in visible_node_ids else None
+    $ selected_path_ids = roadmap_ancestry(selected_node_id) if selected_node else set()
     $ focus_id = focus_node_id or (selected_node_id if selected_node_id in visible_node_ids else roadmap_latest_node_id())
 
     add "gui/roadmap/backgrounds/roadmap_bg_hologram.png"
@@ -1971,18 +1988,29 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
 
             hbox:
                 xpos 32
-                ypos 168
+                ypos 154
+                spacing 8
+                text "AFFICHER :" style "roadmap_legend_text" yalign 0.5
+                for filter_key, filter_name in [("all", "Tout"), ("day", "Journées"), ("choice", "Choix"), ("ending", "Fins")]:
+                    textbutton kd_tr(filter_name):
+                        style "roadmap_filter_button"
+                        selected map_filter == filter_key
+                        action [SetScreenVariable("map_filter", filter_key), SetScreenVariable("selected_node_id", None), SetVariable("roadmap_selected_node", None)]
+
+            hbox:
+                xpos 32
+                ypos 210
                 spacing 20
 
                 frame:
                     xsize 1280
-                    ysize 800
+                    ysize 748
                     background Solid("#020812aa")
                     padding (0, 0)
 
                     viewport:
                         xsize 1280
-                        ysize 800
+                        ysize 748
                         draggable True
                         scrollbars "both"
                         pagekeys True
@@ -2022,6 +2050,9 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                         $ edge_state = roadmap_edge_status(req, node["id"])
                                         $ edge_color = {"active": "#5cd3ffcc", "locked": "#39495699", "alt": "#b27bffcc", "vote": "#d6b15fcc", "ending": "#ff5f7acc"}.get(edge_state, "#5cd3ffcc")
                                         $ edge_glow = {"active": "#5cd3ff22", "locked": "#39495618", "alt": "#b27bff22", "vote": "#d6b15f22", "ending": "#ff5f7a22"}.get(edge_state, "#5cd3ff22")
+                                        if selected_path_ids and not (req in selected_path_ids and node["id"] in selected_path_ids):
+                                            $ edge_color = "#334a5b48"
+                                            $ edge_glow = "#00000000"
                                         add Solid(edge_glow) xpos min(sx, mx) ypos (sy - 3) xsize max(6, abs(mx - sx)) ysize 8
                                         add Solid(edge_glow) xpos (mx - 3) ypos min(sy, ty) xsize 8 ysize max(6, abs(ty - sy))
                                         add Solid(edge_glow) xpos min(mx, tx) ypos (ty - 3) xsize max(6, abs(tx - mx)) ysize 8
@@ -2046,6 +2077,8 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                     ]
 
                                     fixed:
+                                        if selected_node_id == node["id"]:
+                                            add Solid("#e0faff") xpos 0 ypos 0 xsize node_w ysize max(2, int(5 * z))
                                         if roadmap_is_ending(node):
                                             add Solid("#ff5f7acc") xpos 0 ypos 0 xsize node_w ysize max(3, int(5 * z))
                                             add Solid("#ff5f7acc") xpos 0 ypos (node_h - max(3, int(5 * z))) xsize node_w ysize max(3, int(5 * z))
@@ -2054,7 +2087,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                                 xalign 0.5
                                                 yalign 0.5
                                                 style "roadmap_node_code_text"
-                                                size 12
+                                                size max(15, int(24 * z))
                                         else:
                                             add Transform(roadmap_icon(node), size=(int(38 * z), int(38 * z))) xpos int(16 * z) ypos int(32 * z)
                                             text kd_tr(node.get("short", node["id"])):
@@ -2068,7 +2101,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                                 xsize int(204 * z)
                                                 ysize int(60 * z)
                                                 style "roadmap_node_title_text"
-                                                size max(12, int(18 * z))
+                                                size max(15, int(19 * z))
                                             if roadmap_can_teleport(node):
                                                 add Transform("gui/roadmap/icons/roadmap_icon_teleport.png", size=(int(24 * z), int(24 * z))) xpos int(272 * z) ypos int(14 * z)
 
@@ -2094,7 +2127,7 @@ screen roadmap_legend_item(color_value, label_value):
 screen roadmap_node_details(node):
     frame:
         xsize 500
-        ysize 800
+        ysize 748
         background Frame("gui/roadmap/roadmap_panel_side.png", 18, 18)
         padding (28, 26)
 
@@ -2106,6 +2139,13 @@ screen roadmap_node_details(node):
                 add Solid("#3a9fca66") xsize 444 ysize 1
 
                 text roadmap_display_summary(node) style "roadmap_body_text"
+
+                if not roadmap_is_redacted(node) and node.get("choice"):
+                    text kd_tr("Décision / enjeu") style "roadmap_section_text"
+                    text kd_tr(node["choice"]) style "roadmap_body_text"
+                if not roadmap_is_redacted(node) and node.get("consequence"):
+                    text kd_tr("Conséquence") style "roadmap_section_text"
+                    text kd_tr(node["consequence"]) style "roadmap_body_text"
 
                 null height 8
 
@@ -2124,6 +2164,7 @@ screen roadmap_node_details(node):
                 textbutton "Fermer la sélection":
                     style "roadmap_action_button"
                     action [
+                        SetScreenVariable("selected_node_id", None),
                         SetVariable("roadmap_selected_node", None),
                     ]
         else:
@@ -2155,7 +2196,7 @@ style roadmap_filter_button is button:
 
 style roadmap_filter_button_text is button_text:
     font "fonts/Rajdhani-SemiBold.ttf"
-    size 22
+    size 19
     color "#75a9bd"
     hover_color "#dff2ff"
     selected_color "#5cd3ff"
