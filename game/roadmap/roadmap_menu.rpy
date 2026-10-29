@@ -664,7 +664,7 @@ init -2 python:
             "y": 330,
             "summary": "Noam refuse de lâcher le couteau. Iris tente de le désarmer et la confrontation devient physique.",
             "choice": "Réussir ou rater les quatre QTE.",
-            "consequence": "La réussite révèle brutalement les Doppelgängers ; l'échec mène au Jour 21 déjà existant.",
+            "consequence": "La réussite débloque la fin gratuite. Sans le DLC, l’échec permet de recommencer la séquence.",
             "requires": ["split_noam_iris"],
             "required_variables": {"j20_knife_choice": "keep"},
             "teleportable": True,
@@ -1325,16 +1325,16 @@ init -2 python:
         },
         {
             "id": "ending_doppelganger_revelation",
-            "title": "FIN — Derrière les visages",
+            "title": "FIN — Derrière la grille",
             "short": "FIN",
             "label": "_20_0_1_1_IRIS_QTE_REUSSITE",
             "category": "ending",
             "kind": "ending",
             "x": 11100,
             "y": 230,
-            "summary": "Noam réussit les quatre QTE face à Iris. La lutte tourne au drame avant que Kael révèle sa véritable nature et que la salle de fabrication des Doppelgängers soit découverte.",
+            "summary": "Noam parvient à échapper à la prise d’Iris. La confrontation dégénère et la journée se termine sur une inquiétante découverte.",
             "choice": "Réussir les quatre QTE face à Iris.",
-            "consequence": "Fin alternative : les corps originaux et le procédé de remplacement sont révélés.",
+            "consequence": "Fin gratuite du jour 20. La suite et les autres fins sont réservées à l’extension.",
             "requires": ["qte_noam_iris"],
             "required_variables": {"j20_knife_choice": "keep"},
             "teleportable": True,
@@ -1522,6 +1522,18 @@ init -2 python:
     def roadmap_should_show(node):
         if node.get("dev_only") and not store.roadmap_dev_mode:
             return False
+        # Ne jamais montrer les descriptions des routes DLC dans l'édition gratuite,
+        # même avec un nœud déjà découvert via une ancienne sauvegarde.
+        if not kd_dlc_unlocked("doppelganger_routes"):
+            label = node.get("label", "") or ""
+            if label.startswith(("_21_0_1_1", "_22_0_1_1", "_23_0_1_1",
+                                 "_24_0_1_1", "_25_0_1_1", "_26_0_1_1",
+                                 "_27_0_1_1", "_28_0_1_1", "_29_0_1_1",
+                                 "_30_0_1_1")):
+                return False
+            if label.startswith(("_20_0_1_1_LACHER", "_20_0_1_1_KAEL_",
+                                 "_20_0_1_1_IRIS_QTE_ECHEC")):
+                return False
         if node.get("kind") == "day" or node.get("category") == "day":
             return True
         return True
