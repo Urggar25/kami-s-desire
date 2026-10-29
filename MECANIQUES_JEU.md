@@ -47,7 +47,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Nettoyer / chercher le dessin | Balaye des particules et anomalies pour retrouver un élément caché. | `game/scenario/7_0_1.rpy` | `call j701_play_search_drawing` |
 
 
-| Cut-in interruption — Noam | Fondu du fond, apparition du corps et des yeux à 0,5 s depuis le bas, clignement unique, retour automatique à 2 s. Les quatre PNG restent superposés sur le même canevas. Test placé au début du J2. | `game/noam_interupt.rpy` | `call play_noam_interupt` |
+| Cut-in interruption — Noam | Fond en fondu, entrée du corps à 0,50 s avec overshoot/mini-tremblement à 0,70 s, clignement unique facultatif, sortie en fondu à 1,74 s et retour automatique à 2 s. Sons `audio/sfx_interrupt_intro.wav` (0 s), `audio/sfx_interrupt_impact.wav` (0,70 s), `audio/sfx_interrupt_outro.wav` (1,70 s). Calques corps/yeux alignés sur le même canevas. Prévisualisation au début du J2. | `game/noam_interupt.rpy` | `call play_noam_interupt` (ou `call play_noam_interupt(blink=False)`) |
 
 ## Mécaniques de jeu
 
