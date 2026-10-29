@@ -1845,6 +1845,11 @@ init -2 python:
         discovered = [node["id"] for node in ROADMAP_NODES if roadmap_is_day(node) and roadmap_is_discovered(node)]
         return discovered[-1] if discovered else "day_0"
 
+    def roadmap_zoom_ease(current, target):
+        """Ease toward a requested zoom without overshooting."""
+        delta = float(target) - float(current)
+        return float(target) if abs(delta) < 0.002 else float(current) + delta * 0.28
+
     def roadmap_focus_initial(node_id, axis, zoom=1.0, nodes=None):
         node = ROADMAP_NODE_BY_ID.get(node_id)
         if not node:
@@ -1901,19 +1906,21 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
 
     default selected_node_id = roadmap_selected_or_latest(roadmap_selected_node)
     default map_zoom = initial_zoom if initial_zoom is not None else 0.78
+    default zoom_render = initial_zoom if initial_zoom is not None else 0.78
     default map_filter = "all"
 
     $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node) and roadmap_should_show(node) and (map_filter == "all" or (map_filter == "day" and roadmap_is_day(node)) or (map_filter == "choice" and roadmap_is_divergence(node)) or (map_filter == "ending" and roadmap_is_ending(node)))]
     $ map_w, map_h = roadmap_map_size(visible_nodes)
     $ fit_zoom = roadmap_fit_zoom(visible_nodes)
-    $ z = max(fit_zoom, min(1.40, map_zoom))
+    $ map_zoom = max(fit_zoom, min(1.40, map_zoom))
+    $ z = max(fit_zoom, min(1.40, zoom_render))
     $ canvas_w = max(1280, int(map_w * z))
     $ canvas_h = max(800, int(map_h * z))
     $ map_offset_x = max(0, int((canvas_w - map_w * z) / 2))
     $ map_offset_y = max(0, int((canvas_h - map_h * z) / 2))
     $ node_w = max(44, int(310 * z))
     $ node_h = max(24, int(118 * z))
-    $ compact_nodes = z < 0.68
+    $ compact_nodes = z < 0.62
     $ day_bands = roadmap_day_bands(visible_nodes)
     $ visible_node_ids = set([node["id"] for node in visible_nodes])
     $ selected_node = roadmap_node(selected_node_id) if selected_node_id in visible_node_ids else None
@@ -1927,8 +1934,10 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
 
     key "game_menu" action NullAction()
     key "K_ESCAPE" action NullAction()
-    key "mousedown_4" action SetScreenVariable("map_zoom", min(1.40, z + 0.08))
-    key "mousedown_5" action SetScreenVariable("map_zoom", max(fit_zoom, z - 0.08))
+    key "mousedown_4" action SetScreenVariable("map_zoom", min(1.40, map_zoom * 1.12))
+    key "mousedown_5" action SetScreenVariable("map_zoom", max(fit_zoom, map_zoom / 1.12))
+    if abs(z - map_zoom) > 0.002:
+        timer 0.025 repeat True action SetScreenVariable("zoom_render", roadmap_zoom_ease(z, map_zoom))
 
     frame:
         xpos 28
@@ -1962,17 +1971,17 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                 textbutton "−":
                     style "roadmap_small_button"
                     xsize 58
-                    sensitive z > fit_zoom
-                    action SetScreenVariable("map_zoom", max(fit_zoom, z - 0.10))
-                textbutton "[int(z * 100)] %":
+                    sensitive map_zoom > fit_zoom + 0.002
+                    action SetScreenVariable("map_zoom", max(fit_zoom, map_zoom / 1.25))
+                textbutton "[int(map_zoom * 100)] %":
                     style "roadmap_small_button"
                     xsize 78
                     action SetScreenVariable("map_zoom", fit_zoom)
                 textbutton "+":
                     style "roadmap_small_button"
                     xsize 58
-                    sensitive z < 1.40
-                    action SetScreenVariable("map_zoom", min(1.40, z + 0.10))
+                    sensitive map_zoom < 1.398
+                    action SetScreenVariable("map_zoom", min(1.40, map_zoom * 1.25))
                 textbutton "Vue globale":
                     style "roadmap_small_button"
                     xsize 154
@@ -2116,7 +2125,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                 use roadmap_legend_item("#b27bff", "Embranchement")
                 use roadmap_legend_item("#ff5f7a", "Fin")
                 use roadmap_legend_item("#677989", "Verrouillé")
-                text "Molette : zoom  •  Glisser : déplacer  •  Vue globale : tout afficher" style "roadmap_legend_text"
+                text "Molette : zoom progressif  •  Glisser : déplacer  •  Vue globale : ajuster" style "roadmap_legend_text"
 
 screen roadmap_legend_item(color_value, label_value):
     hbox:
