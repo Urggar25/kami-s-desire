@@ -1,4 +1,7 @@
 label _2_CANON:
+    # Prévisualisation temporaire du cut-in Noam, au tout début du jour 2.
+    call play_noam_interupt from _call_noam_interupt_preview_day2
+
     $ unlock_codex_page("propositions_amendement", with_notification=False)
 
     $ day_id = 2
