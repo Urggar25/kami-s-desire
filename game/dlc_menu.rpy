@@ -59,3 +59,18 @@ screen kd_dlc_qte_retry():
             text "UNE AUTRE ISSUE EXISTE" size 39 color "#F4FCFF" xalign 0.5
             text "Cette issue mène à une autre branche, comprise dans « Les autres vies ». Vous pouvez recommencer cette séquence pour découvrir la fin gratuite." size 25 color "#D6EAF4"
             textbutton "RECOMMENCER LA SÉQUENCE" action Return() xalign 0.5
+
+# Proposition seulement après avoir terminé la route gratuite.
+screen kd_dlc_extend_j20():
+    modal True
+    add Solid("#010611ED")
+    frame:
+        xalign 0.5 yalign 0.5 xsize 880
+        background Solid("#152739")
+        padding (45, 35)
+        vbox:
+            spacing 23
+            text "UNE AUTRE SCÈNE EXISTE" size 41 color "#E9F9FF" xalign 0.5
+            text "Vous avez atteint la fin gratuite. Voulez-vous découvrir ce qui se passe après ?" size 26 color "#C8E6ED" xalign 0.5
+            textbutton "VOIR LA SUITE (DLC)" action Return(True) xalign 0.5
+            textbutton "REVENIR AU MENU" action Return(False) xalign 0.5
