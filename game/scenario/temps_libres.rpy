@@ -3,7 +3,7 @@ label lysa_link_1:
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_356
     scene bg_repos at adaptive_fullscreen with fade
     "En passant devant la salle de repos, j'aperçois Lysa seule. Elle ne me remarque pas, alors je poursuis discrètement jusqu'à la cafétéria."
-    think "Elle regrettait tellement son café lors de notre rencontre... Autant réparer cette tragédie."
+    think "Elle avait râlé parce qu'il n'y avait pas de café le premier jour. Je peux au moins lui en ramener un."
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_357
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -11,7 +11,7 @@ label lysa_link_1:
         ("goumi", "vide", 0.70),
     ])
     noam neutre "Goumi, prépare-moi deux cafés. Du café ordinaire, sans supplément. Pas d'expérience bizarre avec. Je pense qu'elle le préfère comme ça."
-    goumi vide "Votre méfiance est injustifiée. Mes préparations expérimentales respectent toutes un protocole rigoureux."
+    goumi vide "Je suis parfaitement capable de préparer un café."
     noam inquiet "C'est précisément le mot « expérimental » qui m'inquiète. Deux cafés simples suffiront."
     goumi vide "Demande acceptée. Deux boissons chaudes, amères et terriblement simples."
     noam sourire "Parfait. Tu vois, quand tu veux, tu sais vendre tes produits."
@@ -65,17 +65,17 @@ label lysa_link_2:
         ("noam", "taquin", 0.22),
         ("lysa", "reflexion", 0.78),
     ])
-    noam taquin "Si ton objectif est de fusionner avec la vitre, je préfère te prévenir : ça risque de prendre un moment."
+    noam taquin "Tu vas finir par te cogner contre la vitre à force de te coller dessus."
     lysa blase "Je me demandais justement combien de secondes tu mettrais avant de faire une remarque inutile."
     noam sourire "Mais sinon, qu'est-ce que tu essaies de voir en te collant comme ça ?"
     lysa reflexion "La tour d'Archive. Elle est immense, alors je me dis qu'avec le bon angle, je pourrais peut-être la voir."
-    noam surpris "Tu essaies de repérer un bâtiment précis depuis une station en orbite ? Tu es devenue folle ?"
+    noam surpris "Attends, tu cherches vraiment un bâtiment depuis ici ?"
     lysa colere "Je sais que les chances sont faibles. Si tu comptes seulement te moquer, tu sais où est la sortie."
     noam neutre "Mais nan, je me moque pas. Pourquoi est-ce si important de trouver la tour ?"
     lysa reflexion "Archive est enclavée dans Harmonie. Si je repère la tour, je saurai exactement quelle partie de la planète regarder."
     noam reflexion "Et si elle est vraiment impossible à distinguer au milieu de toutes ces lumières ?"
     lysa neutre "Alors je regarderai simplement Harmonie. Ce sera déjà un peu comme regarder l'endroit d'où nous venons."
-    noam neutre "Vu d'ici, tout paraît étrangement calme. On ne distingue même plus les frontières entre les territoires."
+    noam neutre "C'est bizarre. D'ici, on dirait que tout va bien en bas."
     lysa triste "C'est ce qui me dérange. On voit les villes briller, mais pas ce que les gens subissent."
     noam raison "Pour ça, y'a la télévision de la cafétéria, ça permet au moins d'avoir une sorte de lien avec l'extérieur."
     lysa reflexion "Tu arrives parfois à dire quelque chose de pertinent. C'est rare, mais suffisamment troublant pour être signalé."
@@ -125,13 +125,13 @@ label lysa_link_3:
     noam reflexion "Nos votes ont quand même des conséquences. On peut influencer une partie de ce qui arrive."
     lysa blase "Influencer une partie... pendant que le canon tire quand elle le décide. Tu trouves vraiment ça encourageant ?"
     noam neutre "Non. Mais ça prouve qu'on est pas complètement inutile."
-    lysa reflexion "Et si nous ne pouvions rien changer d'important ? Si tout ce cirque servait seulement à nous donner cette impression ?"
+    lysa reflexion "Et si nos votes servaient à rien ? Si Kami nous laissait juste croire qu'on décide ?"
     noam raison "C'est possible. J'en sais rien, on comprend à peine les règles."
-    lysa blase "Ta carapace se fissure. T'as plus l'air aussi sûr de toi qu'à notre arrivée."
+    lysa blase "Tiens. T'as moins de réponses toutes faites qu'au début."
     noam taquin "J'essaie d'être honnête. Et puis, j'ai jamais été franchement optimiste non plus."
     lysa triste "Alors honnêtement, Noam : tu crois vraiment que nous pouvons changer quelque chose ?"
     noam determine "Je crois que ça sera très difficile. Mais je crois que c'est pas impossible."
-    lysa blase "C'est presque un discours héroïque. Encore quelques phrases et Julian va surgir pour réclamer des droits d'auteur."
+    lysa blase "Fais gaffe, tu commences à parler comme Julian."
     noam sourire "Oh, par pitié, pas lui ! Sinon, tout espoir sera anéanti !"
     lysa triste "Je suis pas certaine qu'il m'en reste encore beaucoup, de l'espoir. Chaque tir de ce canon en emporte un peu plus."
     noam neutre "Alors garde seulement ce qu'il en reste. Si ça ne suffit plus, je partagerai le mien avec toi."
@@ -172,7 +172,7 @@ label julian_link_1:
     ])
     julian sourire "Enfin un adversaire convenable. J'allais finir par croire que cette merveille avait été installée uniquement pour décorer la pièce."
     noam reflexion "Tu m'attendais vraiment devant un baby-foot ? Tu en as marre de jouer tout seul ?"
-    julian taquin "Je laissais simplement au destin une chance de m'offrir un peu de résistance. Il a fini par t'envoyer."
+    julian taquin "J'attendais quelqu'un capable de me tenir tête. Tu tombes bien."
     noam neutre "T'as vraiment cru que je n'ai que ça à faire ?"
     julian sourire "Oh mince ! Je serai obligé de raconter aux autres que tu as fui avant même le début de la partie."
     noam blase "Pff ! Donne-moi les poignées."
@@ -188,13 +188,13 @@ label julian_link_1:
     noam taquin "Donc tu m'as laissé marquer volontairement ?"
     julian sourire "Disons que j'ai choisi de préserver le suspense. Une victoire trop facile manque terriblement d'élégance."
     noam reflexion "Ah ouais ? Et si on réglait ça une bonne fois pour toutes ?! On se fait une balle en or ?"
-    julian neutre "Tu es bien pressé de transformer une partie amicale en duel à mort."
+    julian neutre "C'est un baby-foot, Noam. Pas une guerre."
     noam sourire "C'est toi qui m'as menacé de raconter que j'avais fui."
-    julian taquin "Et tu n'as pas fui. Ma méthode de motivation était donc i-rré-pro-cha-ble."
+    julian taquin "Et tu es resté. Donc ma méthode a parfaitement marché."
     noam neutre "Alors tu la lances ta balle ?"
     "Il fait tourner la balle entre ses doigts."
     noam taquin "Qu'est-ce qu'il y a ? Tu as peur de perdre ?"
-    julian blase "J'ai peur que ta déception ternisse définitivement notre relation."
+    julian blase "Tu vas t'en remettre, j'espère. Ça me ferait de la peine."
     noam reflexion "Il n'y a personne pour te voir gagner, de toute façon."
     julian sourire "Tu es là, Noam. Ça fait déjà un spectateur particulièrement difficile à impressionner."
     julian taquin "Et dois-je te rappeler que nous ne sommes jamais seuls ?"
@@ -208,8 +208,8 @@ label julian_link_1:
     julian rire "À votre service ! Mais tu as quand même perdu !"
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "La prochaine fois, je surveille tes mains.":
-            noam neutre "La prochaine fois, je surveille tes mains."
+        "La prochaine fois, je vais te surveiller.":
+            noam neutre "La prochaine fois, je vais te surveiller."
             julian taquin "Ah, donc tu admets qu'il y aura une revanche !"
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
@@ -246,9 +246,9 @@ label julian_link_2:
     noam neutre "Même quand il s'agit d'un accroc de deux centimètres ?"
     julian sourire "Surtout dans ce cas. Les petites imperfections attirent toujours les regards les plus moqueurs."
     noam reflexion "Donc tu répares ton costume pour que personne ne remarque ce qu'il y a derrière."
-    julian surpris "Tu transformes vraiment une couture en analyse psychologique ? Je ne sais pas si ça me fait pitié ou non ?"
+    julian surpris "Tu vas vraiment me faire une analyse psychologique à cause d'une manche ?"
     julian neutre "Même sur ça, tu réfléchis longtemps et tu essayes d'analyser tout. Surtout ce qui n'a pas de sens."
-    julian taquin "Tu as beau être adorable, ton masque finira aussi par tomber."
+    julian taquin "Tu te moques, mais toi aussi, tu fais semblant sur pas mal de choses."
     "Julian coupe le fil, enfile sa veste et lisse soigneusement sa manche."
     julian neutre "Alors ? Est-ce que la réparation se voit ?"
     noam reflexion "Non. Franchement, c'est bien fait."
@@ -282,13 +282,13 @@ label julian_link_3:
         ("julian", "neutre", 0.78),
     ])
     noam taquin "Tu caches quoi ? Une nouvelle stratégie pour gagner au baby-foot ?"
-    julian sourire "Bien plus dangereux : mon regard impitoyable sur la condition humaine."
+    julian sourire "Pire. Je dessine les gens d'ici."
     "Je plisse les yeux et regarde plus attentivement."
     noam reflexion "Attends, tu dessines des caricatures ? De nous ?!"
-    julian taquin "Je réalise des portraits satiriques. Le terme « caricature » manque terriblement de prestige."
+    julian taquin "Des portraits satiriques, Noam. « Caricatures », c'est tellement banal."
     julian sourire "Mais on ne t'a jamais dit que c'est impoli de regarder dans les affaires des autres ?"
     "Il ouvre son carnet. Je reconnais Iris en train de râler contre une chaise, puis Elias enseveli sous une montagne de dossiers."
-    noam taquin "Si tu ne voulais pas que je regarde, tu aurais fermé complètement ton carnet."
+    noam taquin "Si tu voulais pas que je regarde, fallait fermer ton carnet."
     noam sourire "C'est méchant... mais ils sont plutôt réussis."
     julian joie "Plutôt ? J'ai capturé leur essence en quelques traits. Certains artistes attendent une vie entière avant d'atteindre ce niveau."
     noam reflexion "Et celui-là, c'est moi ?"
@@ -306,10 +306,10 @@ label julian_link_3:
     noam neutre "Tu savais exactement quoi exagérer chez les autres."
     julian inquietude "Les autres me donnent une version assez stable. La seule raison pour laquelle je n'arrive pas à te dessiner, c'est que tu es... Creux."
     noam reflexion "Creux ?! Et toi, tu changes selon la personne qui te regarde."
-    julian decu "C'est pratique, venant de quelqu'un qui ne laisse jamais rien dépasser. Au moins, moi, je propose quelque chose au public."
+    julian decu "C'est toi qui dis ça ? On sait jamais ce que tu penses. Moi, au moins, je montre quelque chose."
     julian taquin "Je ne suis pas OUBLIABLE !"
     noam desaccord "Je ne savais pas qu'il fallait choisir un personnage."
-    julian triste "Tout le monde en choisit un. Certains ont simplement le luxe de faire croire que ce n'en est pas un."
+    julian triste "Tout le monde fait semblant, Noam. Toi aussi, parfois."
     noam reflexion "Alors ton portrait de moi n'est peut-être pas vide. Il montre juste ce que tu n'arrives pas à voir."
     julian taquin "Et le mien montre peut-être trop de choses à la fois. Au final, on se ressemble peut-être un peu."
     noam sourire "Non merci, vraiment."
@@ -322,8 +322,8 @@ label julian_link_3:
     julian taquin "Peut-être que si finalement. Ce visage vide te sied si bien."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "T'as pas besoin d'en faire autant pour qu'on te remarque.":
-            noam neutre "T'as pas besoin d'en faire autant pour qu'on te remarque."
+        "T'as pas besoin de te donner autant de mal pour attirer l'attention.":
+            noam neutre "T'as pas besoin de te donner autant de mal pour attirer l'attention."
             julian hesitation "Facile à dire quand on n'essaie pas de se faire remarquer."
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
@@ -332,8 +332,8 @@ label julian_link_3:
             julian surpris "Tu prends des risques, Noam. Beaucoup de risques."
             if not link_replay_mode:
                 $ award_stat_xp("audace", 1)
-        "Tu dessines les autres pour éviter de te regarder toi ?" if get_stat("logique") >= 5:
-            noam reflexion "Tu dessines les autres pour éviter de te regarder toi ?"
+        "Tu dessines les autres parce que t'arrives pas à te dessiner ?" if get_stat("logique") >= 5:
+            noam reflexion "Tu dessines les autres parce que t'arrives pas à te dessiner ?"
             julian inquietude "...Ça t'arrive de ne pas poser la question qui dérange ?"
             if not link_replay_mode:
                 $ award_stat_xp("logique", 1)
@@ -449,8 +449,8 @@ label elen_link_2:
     elen joie "D'accord, on garde comme ça. Mais si quelqu'un se plaint, je dirai que c'était ton idée."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "Je prends la responsabilité si on se plaint.":
-            noam neutre "Je prends la responsabilité si on se plaint."
+        "Si quelqu'un râle, je dirai que c'est ma faute.":
+            noam neutre "Si quelqu'un râle, je dirai que c'est ma faute."
             elen rire "D'accord ! Mais je viendrai témoigner contre toi."
             if not link_replay_mode:
                 $ award_stat_xp("audace", 1)
@@ -711,8 +711,8 @@ label iris_link_3:
             iris neutre "Enfin quelqu'un qui propose de faire quelque chose."
             if not link_replay_mode:
                 $ award_stat_xp("physique", 1)
-        "Tu pouvais juste dire que tu voulais aider Elen.":
-            noam reflexion "Tu pouvais juste dire que tu voulais aider Elen."
+        "Tu pouvais dire que tu voulais aider Elen, tu sais.":
+            noam reflexion "Tu pouvais dire que tu voulais aider Elen, tu sais."
             iris colere "Et toi tu pouvais juste te taire !"
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
@@ -794,9 +794,9 @@ label tomas_link_2:
     tomas surpris "Non ! C'est juste... une liste."
     noam neutre "Avec une rubrique intitulée « relances possibles »."
     tomas inquiet "J-J'essaie de trouver des sujets... Simples pour discuter avec les autres."
-    noam taquin "Tu révises tes conversations avant de les avoir ?"
+    noam taquin "Attends. Tu prépares ce que tu vas dire aux gens ?"
     tomas desaccord "Je les prépare. C'est différent."
-    noam sourire "Pour être plus à l'aise ? Entraîne-toi sur moi si tu veux."
+    noam sourire "Tu veux t'entraîner ? Vas-y, on peut essayer."
     tomas reflexion "T'es sûr ?? D-D'accord... Quel est ton plat préféré ?"
     noam neutre "Les lasagnes."
     tomas joie "Intéressant. Tu parles de la version traditionnelle ou des variantes développées après les pénuries ?"
@@ -819,7 +819,7 @@ label tomas_link_2:
     noam taquin "Évidemment."
     "Tomas poursuit son histoire. Il vérifie plusieurs fois ma réaction, mais finit par oublier de surveiller la durée de ses réponses."
     noam reflexion "Tu vas garder ta liste ?"
-    tomas neutre "Je devrais peut-être l'optimiser."
+    tomas neutre "Bon. Je peux déjà enlever quelques questions."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
         "Fais une liste plus courte. Trois points, pas vingt.":
@@ -856,7 +856,7 @@ label tomas_link_3:
     goumi vide "Cent quatre-vingt-neuf."
     tomas inquiet "Il faudrait aussi tenir compte de ce qu'on va manger."
     noam reflexion "On est venus boire un truc, pas organiser un banquet, hein !"
-    tomas desaccord "Une boisson peut modifier la perception du goût pendant plusieurs minutes."
+    tomas desaccord "Si on mange après, ça change le goût. Faut en tenir compte."
     noam neutre "Choisis celle qui te fait envie."
     tomas reflexion "Justement, j'en sais rien. Si j'en prends une et qu'une autre était meilleure..."
     noam taquin "Ta journée sera ruinée à jamais."
@@ -874,10 +874,10 @@ label tomas_link_3:
     noam reflexion "Et c'est bon ?"
     tomas joie "Oui. Plutôt."
     noam taquin "Tu reprendras la même la prochaine fois."
-    tomas reflexion "Ce serait prématuré. Je n'ai testé qu'une option sur deux cent quarante-sept."
+    tomas reflexion "Attends, j'en ai goûté une seule sur deux cent quarante-sept !"
     noam desaccord "Si la prochaine est mauvaise, tu en commanderas une autre."
     tomas surpris "On peut faire ça."
-    noam sourire "Tu devrais en profiter, contrairement à chez nous, on a un buffet à volonté ici."
+    noam sourire "Au moins ici, si ça te plaît pas, tu peux en prendre une autre."
     goumi vide "Je confirme. Cette restriction serait commercialement contre-productive."
     tomas rire "D'accord. La prochaine fois, j'essaierai de choisir en moins de dix minutes."
     noam taquin "Je demanderai à Goumi de lancer un chronomètre."
@@ -920,17 +920,17 @@ label nyra_link_1:
     noam reflexion "Pourquoi en bas ?"
     nyra raison "Parce qu'une personne blessée ne devrait pas avoir à grimper sur une chaise."
     noam sourire "D'accord. Là, je reconnais que c'est utile."
-    nyra taquin "Ton approbation facilitera grandement notre survie."
+    nyra taquin "Heureusement que tu es là pour valider mon rangement."
     "Je découvre une caisse remplie de café, de sucreries et de boissons colorées."
     noam surpris "Tout ça faisait partie de la livraison ?"
     nyra fatigue "Oui. Des produits non essentiels qui occupent un espace parfaitement essentiel."
     noam neutre "On pourrait s'en débarrasser."
     nyra degout "Ce serait stupide."
     noam reflexion "Tu viens de dire qu'ils étaient inutiles."
-    nyra raison "J'ai dit non essentiels. C'est très différent."
-    nyra neutre "La fatigue réduit la concentration. La frustration augmente les conflits. Quelques produits de confort limitent les deux."
+    nyra raison "J'ai dit que c'était pas indispensable. C'est pas pareil."
+    nyra neutre "Quand les gens sont crevés et qu'ils ont rien qui leur fait plaisir, ils s'engueulent. Ça peut aider."
     noam sourire "Tu pourrais juste dire que tu veux garder le chocolat."
-    nyra sourire "Je pourrais. Ce serait cependant une justification moins solide."
+    nyra sourire "Ce serait moins convaincant."
     noam taquin "Mais ce serait sans doute plus honnête."
     nyra neutre "Pas vraiment, étant donné que tout ceci n'est pas pour moi."
     noam reflexion "Tu prends quoi, alors ?"
@@ -946,7 +946,7 @@ label nyra_link_1:
     menu:
         "On peut partager le poids.":
             noam neutre "On peut partager le poids."
-            nyra sourire "Proposition acceptable. Prends l'autre côté."
+            nyra sourire "D'accord. Prends l'autre côté."
             if not link_replay_mode:
                 $ award_stat_xp("physique", 1)
         "Tu avais déjà calculé combien je pouvais porter ?":
@@ -987,14 +987,14 @@ label nyra_link_2:
     nyra hesitation "J'en suis convaincue."
     nyra sourire "Je ne te demande rien mais... Évitons de trop en parler."
     noam taquin "Tu as peur que Kami se lance à leur poursuite ?"
-    nyra neutre "Tu es libre d'en tirer la conclusion qui te paraît cohérente."
+    nyra neutre "Je pense que tu as compris pourquoi."
     noam desaccord "Tu fais souvent ça ?"
     nyra taquin "Laisser les gens réfléchir ? Aussi souvent que possible."
     noam reflexion "D'accord. Je dirai rien."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "Tu veux surtout que je choisisse à ta place.":
-            noam neutre "Tu veux surtout que je choisisse à ta place."
+        "Tu veux que je te dise ce que j'en pense, c'est ça ?":
+            noam neutre "Tu veux que je te dise ce que j'en pense, c'est ça ?"
             nyra neutre "Je veux que tu assumes ta propre conclusion."
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
@@ -1026,7 +1026,7 @@ label nyra_link_3:
     noam neutre "Pas vraiment."
     nyra raison "C'est risqué d'interpréter seul un document incomplet."
     noam reflexion "Tu veux que je le lise ?"
-    nyra neutre "Tu es libre de le faire."
+    nyra neutre "Si tu veux, oui."
     noam taquin "Ça ressemble beaucoup à une demande."
     nyra sourire "Seulement si tu l'acceptes. Je ne te force à rien."
     "Je m'assieds près d'elle et parcours le rapport."
@@ -1046,9 +1046,9 @@ label nyra_link_3:
     noam desaccord "Tu m'as surtout poussé vers la tienne."
     nyra sourire "Non. Je n'ai fait que poser des questions. Pour voir comment toi tu réagirais."
     noam sourire "Ou tu voulais juste pas rester seule."
-    nyra panne "Ta conclusion repose sur très peu d'éléments."
+    nyra panne "T'as pas grand-chose pour affirmer ça."
     noam taquin "Tu ne l'as pas niée."
-    nyra neutre "Je n'ai aucune obligation de réfuter toutes tes erreurs."
+    nyra neutre "Je vais pas répondre à toutes tes suppositions."
     noam sourire "La prochaine fois, demande-moi directement de t'aider au lieu de tourner autour du pot."
     "Nyra reste silencieuse, puis pousse un second dossier vers moi."
     nyra hesitation "Reste encore un peu. J'ai encore besoin de ton avis."
@@ -1064,7 +1064,7 @@ label nyra_link_3:
                 $ award_stat_xp("logique", 1)
         "Dis-moi plutôt ce qui t'inquiète.":
             noam reflexion "Dis-moi plutôt ce qui t'inquiète."
-            nyra hesitation "Ce n'est pas si simple à expliquer."
+            nyra hesitation "C'est... compliqué. Je sais pas par où commencer."
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("nyra_3")
@@ -1161,7 +1161,7 @@ label kael_link_2:
     "Kael supporte encore quelques secondes avant de baisser le volume."
     kael fatigue "Ça va déranger les autres."
     noam reflexion "Il n'y a personne d'autre."
-    kael neutre "Ils peuvent arriver, en se demandant d'où sort ce bruit."
+    kael neutre "Quelqu'un peut arriver. Et là, il va nous demander de couper."
     noam taquin "Choisis un morceau alors, Kael."
     kael calme "Prends celui que tu préfères."
     noam desaccord "Non. Cette fois, je ne choisis rien."
@@ -1212,13 +1212,13 @@ label kael_link_3:
     kael calme "On voyait les tempêtes se former au-dessus des continents."
     "À l'écran, des passants courent se mettre à l'abri sous les bâtiments."
     noam reflexion "Ils ont pas l'air de trouver ça très intéressant."
-    kael taquin "Les gens se plaignent facilement de ce qu'ils ont toujours connu."
+    kael taquin "Quand on a toujours eu quelque chose, on finit par plus y faire attention."
     noam sourire "Tu dis ça parce que tu voudrais être à leur place."
     kael calme "Peut-être. Au moins pour voir... Ce que ça fait."
     kael neutre "On peut vouloir quelque chose sans le connaître."
     kael reflexion "Je chercherais sans doute un abri."
     noam taquin "Réponse passionnante."
-    kael calme "La température est basse et leurs vêtements sont trempés."
+    kael calme "Il fait froid. Ils sont trempés."
     kael triste "Ils risquent de tomber malades et ça doit pas être très agréable."
     kael sourire "Mais quand même, j'ai envie de savoir ce que ça fait. D'être mouillé comme ça."
     "Kael regarde encore quelques secondes les rues noyées sous la pluie."
@@ -1236,8 +1236,8 @@ label kael_link_3:
             kael sourire "Je te prendrai au mot, Noam."
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
-        "Ça doit être étrange de découvrir quelque chose d'aussi banal.":
-            noam reflexion "Ça doit être étrange de découvrir quelque chose d'aussi banal."
+        "Pour toi, c'est complètement nouveau, en fait.":
+            noam reflexion "Pour toi, c'est complètement nouveau, en fait."
             kael calme "Banal pour toi. C'est bien ça, le problème."
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
@@ -1297,8 +1297,8 @@ label elias_link_1:
             elias rire "Marché conclu ! Mais viens pas pleurer demain."
             if not link_replay_mode:
                 $ award_stat_xp("physique", 1)
-        "T'as toujours besoin de réparer quelque chose ?":
-            noam reflexion "T'as toujours besoin de réparer quelque chose ?"
+        "Tu peux pas t'empêcher de réparer des trucs, hein ?":
+            noam reflexion "Tu peux pas t'empêcher de réparer des trucs, hein ?"
             elias fatigue "Si je le fais pas, ça finit toujours par lâcher."
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
@@ -1452,11 +1452,11 @@ label mara_link_1:
     noam neutre "T'as peur de perdre ?"
     mara agace "Oh tu vas voir ! Mets-toi en place."
     "Mara s'installe à côté de moi. Nous reprenons la position en même temps."
-    mara content "Je te préviens, je peux rester comme ça toute la journée."
+    mara content "J'te préviens, je peux tenir comme ça toute la journée."
     noam inquiet "Ça ne fait que dix secondes."
     mara rire "Et t'as déjà les bras qui tremblent."
     noam taquin "Toi aussi."
-    mara neutre "C'est le sol qui bouge. Je te rappelle qu'on lévite dans l'espace !"
+    mara neutre "C'est le sol qui bouge ! On est dans l'espace, je te rappelle !"
     noam sourire "Bien sûr."
     "Nous tenons encore quelques secondes en silence."
     mara rire "T'as quand même un joli cul vu d'ici."
@@ -1474,7 +1474,7 @@ label mara_link_1:
     noam sourire "On est tombés en même temps."
     mara mefiant "Donc personne va chercher les boissons."
     noam desaccord "Ou on y va tous les deux."
-    mara rire "T'essayes encore de passer du temps avec moi ? Fais gaffe, je vais croire que je te plais."
+    mara rire "Tu veux encore traîner avec moi ? Fais gaffe, j'vais croire que j'te plais."
     noam taquin "On fait une revanche après ?"
     mara content "Mmmhh, ça dépend, le gage est plus intéressant ou pas ?"
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
@@ -1534,8 +1534,8 @@ label mara_link_2:
     mara rire_profond "Ferme-la et tiens correctement ton couteau."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "Tu fais semblant de t'en foutre, non ?":
-            noam neutre "Tu fais semblant de t'en foutre, non ?"
+        "Arrête. Ça se voit que ça te touche.":
+            noam neutre "Arrête. Ça se voit que ça te touche."
             mara colere "Oh, ça va ! Tu vas pas t'y mettre toi aussi !"
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
@@ -1605,8 +1605,8 @@ label mara_link_3:
             mara stress "Ouais, bah laisse-moi deux minutes avant, d'accord ?"
             if not link_replay_mode:
                 $ award_stat_xp("audace", 1)
-        "Tu plaisantes toujours quand ça te touche vraiment." if get_stat("observation") >= 5:
-            noam reflexion "Tu plaisantes toujours quand ça te touche vraiment."
+        "Dès que ça te touche, tu fais une blague." if get_stat("observation") >= 5:
+            noam reflexion "Dès que ça te touche, tu fais une blague."
             mara hesitation "...Ferme-la, Noam. Mais bouge pas."
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
@@ -1721,8 +1721,8 @@ label ryn_link_2:
     ryn sourire "Alors fais-en un qui soit pas complètement con."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "Je vais essayer un autre mouvement.":
-            noam neutre "Je vais essayer un autre mouvement."
+        "Attends, je vais essayer autrement.":
+            noam neutre "Attends, je vais essayer autrement."
             ryn sourire "Là ! C'est déjà moins ridicule !"
             if not link_replay_mode:
                 $ award_stat_xp("physique", 1)
@@ -1774,13 +1774,13 @@ label ryn_link_3:
     noam neutre "Tu continues à faire pareil avec nous."
     ryn desaccord "Ici aussi, y'a des limites qui tuent."
     noam reflexion "Et tu préfères qu'on te déteste plutôt que nous laisser les franchir."
-    ryn neutre "Quelqu'un de vivant peut encore me détester."
-    ryn triste "Un mort peut plus rien faire."
+    ryn neutre "Je préfère qu'ils me détestent et qu'ils soient en vie."
+    ryn triste "Un mort, il revient pas."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
-        "Protéger quelqu'un, c'est aussi lui faire confiance.":
-            noam neutre "Protéger quelqu'un, c'est aussi lui faire confiance."
-            ryn neutre "C'est facile à dire quand t'as rien à perdre."
+        "Tu peux aussi les laisser décider, de temps en temps.":
+            noam neutre "Tu peux aussi les laisser décider, de temps en temps."
+            ryn neutre "C'est facile à dire quand c'est pas toi qui risques de perdre quelqu'un."
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
         "Et qui te protège, toi ?":
@@ -1809,15 +1809,15 @@ label sael_link_1:
     noam taquin "Des bandages, de l'antiseptique, des médicaments... Tu pars en expédition ou tu vas simplement marcher dans les couloirs ?"
     sael neutre "Je vais marcher dehors. Un accident ne devient pas moins grave sous prétexte que la promenade devait être courte."
     noam reflexion "On ne peut même pas quitter le Conclave. Il suffirait de revenir ici en cas de problème."
-    sael desaccord "Une trousse posée sur une étagère ne soigne personne. Et certains blessés ne peuvent pas attendre qu'on les ramène."
+    sael desaccord "Si quelqu'un se blesse loin d'ici, il faudra le soigner sur place."
     noam sourire "Tu as vraiment prévu toutes les catastrophes possibles avant même d'avoir quitté la pièce."
     sael raison "Non. Seulement les plus probables. Prévoir toutes les autres rendrait cette trousse trop lourde pour être utile."
 
     "Sael retire un appareil électronique de la trousse et le replace sur une étagère."
     noam surpris "Tu ne prends pas ce scanner ? Il peut détecter une fracture bien plus vite que toi."
-    sael mefiant "Il est fragile, dépend d'une batterie et demande trop de temps. Mes mains et une attelle ne tomberont pas en panne."
+    sael mefiant "Il faut le recharger, et il peut casser. Une attelle, non."
     noam taquin "Pour quelqu'un qui se méfie du progrès, tu emportes quand même beaucoup de médicaments fabriqués par des machines."
-    sael neutre "Je rejette le confort qui affaiblit. Pas les outils capables de garder quelqu'un en vie."
+    sael neutre "J'ai rien contre les outils utiles. J'ai un problème avec ceux dont on ne sait plus se passer."
 
     "En refermant une poche, elle laisse apparaître une petite fiole sombre."
     noam inquiet "Attends... Ce symbole sur la fiole, c'est bien celui qu'on utilise pour identifier un poison ?"
@@ -1866,9 +1866,9 @@ label sael_link_2:
 
     "J'annule ses dernières commandes, puis je coupe l'éclairage. La pièce plonge aussitôt dans l'obscurité."
     noam surpris "Je ne pensais pas qu'on pouvait voir autant d'étoiles depuis la station. Certaines étaient complètement invisibles avant."
-    sael joie "Les lumières artificielles effacent le ciel, puis les hommes finissent par oublier ce qu'elles leur ont pris."
+    sael joie "Avec toutes ces lumières, on ne voit même plus les étoiles. Je préfère quand elles sont éteintes."
     noam reflexion "Elles nous évitent aussi de trébucher, de geler et de chercher nos affaires pendant une heure."
-    sael raison "Je ne dis pas qu'il faut les supprimer. Je dis qu'il faut encore être capable de vivre lorsqu'elles s'éteignent."
+    sael raison "Je dis pas qu'il faut s'en passer. Je dis qu'il faut savoir faire sans."
     noam neutre "Tu penses vraiment qu'un peu de lumière peut rendre quelqu'un dépendant à ce point ?"
     sael reflechit "La lumière, le chauffage, le bruit permanent... À force de remplir chaque vide, les gens finissent par en avoir peur."
     noam sourire "Tu as quand même eu besoin d'une machine moderne et de mon aide pour retrouver cette fameuse nuit."
@@ -1912,11 +1912,11 @@ label sael_link_3:
     sael mefiant "N'y touche pas. Ce morceau n'est pas destiné à quelqu'un qui peut encore se servir lui-même."
     noam surpris "D'accord... Je pensais seulement que tu avais décidé de ne pas finir ton repas."
     sael neutre "C'est une offrande. Chez moi, le premier morceau revenait à la terre et aux morts de la famille."
-    noam taquin "La terre se trouve plusieurs étages sous nos pieds. Ton pain risque d'avoir du mal à l'atteindre."
+    noam taquin "On est dans l'espace, Sael. Tu vas pas pouvoir le poser par terre."
     sael sourire "La terre sait attendre. Elle le fait depuis bien plus longtemps que nous."
     noam reflexion "Et tu crois vraiment que les morts peuvent recevoir ce que tu poses dans cette assiette ?"
     sael raison "Ce qu'ils reçoivent n'a aucune importance. Ce geste sert surtout à rappeler quelque chose aux vivants."
-    noam neutre "Que nous devons éviter de voler le pain laissé sur une table dès que quelqu'un détourne les yeux ?"
+    noam neutre "Que c'est pas bien de prendre le pain des autres ?"
     sael desaccord "Que nous mangeons encore parce que d'autres ne le peuvent plus. Ce n'est pas un privilège à oublier."
 
     "Sael observe le morceau de pain quelques secondes avant de reprendre."
@@ -1933,7 +1933,7 @@ label sael_link_3:
     sael surpris "Tu n'es pas obligé de suivre un rite qui n'appartient ni à ta famille ni à ton district."
     noam triste "Je sais. Mais les gens dont tu parles n'appartenaient pas seulement à Limen."
     sael reflechit "Non... Kami s'est chargée de donner les mêmes morts à tous les districts."
-    noam neutre "Alors, pour aujourd'hui, ils auront aussi deux morceaux au lieu d'un."
+    noam neutre "Alors je laisse le mien aussi."
     sael sourire "Mange le reste avant qu'il refroidisse. Les morts n'ont pas besoin que tu les rejoignes affamé."
 
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
@@ -1943,13 +1943,13 @@ label sael_link_3:
             sael sourire "Alors laisse-le jusqu'à la fin du repas."
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
-        "Je ne partage pas ce rite, mais je le respecte.":
-            noam reflexion "Je ne partage pas ce rite, mais je le respecte."
+        "C'est pas une tradition de chez moi, mais je comprends.":
+            noam reflexion "C'est pas une tradition de chez moi, mais je comprends."
             sael neutre "C'est tout ce que je demande."
             if not link_replay_mode:
                 $ award_stat_xp("sang_froid", 1)
-        "Même sans y croire, je comprends ce qu'il représente." if get_stat("logique") >= 5:
-            noam reflexion "Même sans y croire, je comprends ce qu'il représente."
+        "J'y crois pas vraiment, mais je vois pourquoi tu le fais." if get_stat("logique") >= 5:
+            noam reflexion "J'y crois pas vraiment, mais je vois pourquoi tu le fais."
             sael surpris "...C'est plus que ce que j'attendais de toi."
             if not link_replay_mode:
                 $ award_stat_xp("logique", 1)
