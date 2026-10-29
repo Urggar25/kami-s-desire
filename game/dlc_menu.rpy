@@ -98,7 +98,7 @@ screen kd_dlc_menu():
             add Solid("#0C1C29") xsize 724 ysize 704
             add Solid("#D24464") xpos 33 ypos 36 xsize 56 ysize 4
             text "EXTENSION NARRATIVE" xpos 106 ypos 22 font "fonts/Rajdhani-SemiBold.ttf" size 22 color "#E3879C" kerning 2
-            text "L'ANGLE MORT" xpos 35 ypos 76 font "fonts/Rajdhani-SemiBold.ttf" size 62 color "#F5FAFD"
+            text "L'ORIGINE" xpos 35 ypos 76 font "fonts/Rajdhani-SemiBold.ttf" size 62 color "#F5FAFD"
             text "UN DOSSIER RESTÉ OUVERT" xpos 38 ypos 159 font "fonts/Rajdhani-SemiBold.ttf" size 27 color "#9ED7E6" kerning 2
             add Solid("#4C718360") xpos 37 ypos 212 xsize 646 ysize 2
             hbox:
@@ -143,7 +143,7 @@ screen kd_dlc_store_information():
         padding (48, 42)
         vbox:
             spacing 20
-            text "L'ANGLE MORT" size 44 color "#F3FAFF" xalign 0.5
+            text "L'ORIGINE" size 44 color "#F3FAFF" xalign 0.5
             text "Cette extension n'est pas installée." size 27 color "#F4A2B1" xalign 0.5
             text "Vous pouvez consulter sa disponibilité sur Steam. Après installation, relancez Kami's Desires." size 24 color "#C5D9E2" xalign 0.5
             textbutton "FERMER" style "kd_dlc_secondary" xalign 0.5 action Hide("kd_dlc_store_information")
@@ -159,7 +159,7 @@ screen kd_dlc_locked_notice():
         vbox:
             spacing 20
             text "CHOIX VERROUILLÉ" size 40 color "#FFF0E1" xalign 0.5
-            text "Cette branche fait partie de l’extension « L’Angle mort »." size 27 color "#D6E9F0" xalign 0.5
+            text "Cette branche fait partie de l’extension « L’Origine »." size 27 color "#D6E9F0" xalign 0.5
             text "La fin gratuite reste accessible par l'autre choix." size 23 color "#A3CFDD" xalign 0.5
             textbutton "REVENIR AU CHOIX" action Return() xalign 0.5
     key "K_ESCAPE" action Return()
@@ -174,7 +174,7 @@ screen kd_dlc_qte_retry():
         vbox:
             spacing 22
             text "UNE AUTRE ISSUE EXISTE" size 39 color "#F4FCFF" xalign 0.5
-            text "Cette issue mène à une autre branche, comprise dans « L’Angle mort ». Vous pouvez recommencer cette séquence pour découvrir la fin gratuite." size 25 color "#D6EAF4"
+            text "Cette issue mène à une autre branche, comprise dans « L’Origine ». Vous pouvez recommencer cette séquence pour découvrir la fin gratuite." size 25 color "#D6EAF4"
             textbutton "RECOMMENCER LA SÉQUENCE" action Return() xalign 0.5
 
 screen kd_dlc_extend_j20():
