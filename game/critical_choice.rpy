@@ -342,7 +342,7 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                         fixed:
                             xsize 500 ysize 174
                             clipping True
-                            add Transform("bg_cg070", fit="cover", xysize=(500, 174), alpha=0.93)
+                            add Transform("bg_cg052", fit="cover", xysize=(500, 174), alpha=0.93)
                             add Solid("#090C1B62") xsize 500 ysize 174
                             add Solid("#EC567A") xsize 4 ysize 174
                             add Solid("#082338CC") xpos 209 ypos 49 xsize 82 ysize 75 at cc_teaser_pulse

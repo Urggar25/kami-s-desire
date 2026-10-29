@@ -22,6 +22,10 @@ screen kd_dlc_menu():
                     text "La première fin du jour 20 est accessible gratuitement. Les autres branches et fins nécessitent cette extension." size 23 color "#D4E4EC"
                     if kd_dlc_unlocked("doppelganger_routes"):
                         text "INSTALLÉ — CONTENU DISPONIBLE" size 25 color "#8BE3B6"
+                        hbox:
+                            spacing 20
+                            textbutton "GALERIE" action ShowMenu("gallery_menu")
+                            textbutton "SOUVENIRS" action ShowMenu("scene_select_menu")
                     else:
                         text "NON INSTALLÉ — CONTENU VERROUILLÉ" size 25 color "#F8B98E"
                         text "Installez l'extension acquise auprès du distributeur, puis relancez le jeu." size 19 color "#A7BBC9"
