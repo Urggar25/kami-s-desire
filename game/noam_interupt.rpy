@@ -72,7 +72,7 @@ screen noam_interupt_screen(blink=True):
 
     # Les effets utilisent le canal sound du jeu ; le chronométrage reste
     # entièrement piloté par cet écran, sans attente entre deux sons.
-    timer 0.50 action Play("sound", "audio/sfx_interrupt_impact.wav")
+    timer 0.70 action Play("sound", "audio/sfx_interrupt_impact.wav")
     timer 1.70 action Play("sound", "audio/sfx_interrupt_outro.wav")
     timer 2.00 action Return()
 
