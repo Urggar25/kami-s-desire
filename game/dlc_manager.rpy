@@ -7,7 +7,7 @@ init -40 python:
     KD_DLC_STEAM_URL = "https://store.steampowered.com/search/?term=Kami%27s%20Desires"
     KD_DLC_CATALOG = {
         "doppelganger_routes": {
-            "title": "L’Angle mort",
+            "title": "L’Origine",
             "subtitle": "Un autre regard sur les derniers jours du Conclave",
             "description": "Après la première fin gratuite, découvrez les autres choix et leurs conséquences.",
             "entry_label": "kd_doppelganger_pack_ready",
