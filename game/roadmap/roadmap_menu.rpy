@@ -2163,16 +2163,16 @@ screen roadmap_node_details(node):
                                 Function(roadmap_jump_to_node, node["id"]),
                             ]
                     else:
-                    textbutton "Accès refusé par Kami":
-                        style "roadmap_action_button"
-                        sensitive False
+                        textbutton "Accès refusé par Kami":
+                            style "roadmap_action_button"
+                            sensitive False
 
-                textbutton "Fermer la sélection":
-                    style "roadmap_action_button"
-                    action [
-                        SetScreenVariable("selected_node_id", None),
-                        SetVariable("roadmap_selected_node", None),
-                    ]
+                    textbutton "Fermer la sélection":
+                        style "roadmap_action_button"
+                        action [
+                            SetScreenVariable("selected_node_id", None),
+                            SetVariable("roadmap_selected_node", None),
+                        ]
         else:
             vbox:
                 spacing 18
