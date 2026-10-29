@@ -2132,31 +2132,37 @@ screen roadmap_node_details(node):
         padding (28, 26)
 
         if node:
-            vbox:
-                spacing 14
-                text roadmap_display_title(node) style "roadmap_details_title_text"
-                text roadmap_status_label(node) style "roadmap_status_text"
-                add Solid("#3a9fca66") xsize 444 ysize 1
+            viewport:
+                xsize 444
+                ysize 690
+                mousewheel True
+                draggable True
+                scrollbars "vertical"
+                vbox:
+                    spacing 14
+                    text roadmap_display_title(node) style "roadmap_details_title_text"
+                    text roadmap_status_label(node) style "roadmap_status_text"
+                    add Solid("#3a9fca66") xsize 444 ysize 1
 
-                text roadmap_display_summary(node) style "roadmap_body_text"
+                    text roadmap_display_summary(node) style "roadmap_body_text"
 
-                if not roadmap_is_redacted(node) and node.get("choice"):
-                    text kd_tr("Décision / enjeu") style "roadmap_section_text"
-                    text kd_tr(node["choice"]) style "roadmap_body_text"
-                if not roadmap_is_redacted(node) and node.get("consequence"):
-                    text kd_tr("Conséquence") style "roadmap_section_text"
-                    text kd_tr(node["consequence"]) style "roadmap_body_text"
+                    if not roadmap_is_redacted(node) and node.get("choice"):
+                        text kd_tr("Décision / enjeu") style "roadmap_section_text"
+                        text kd_tr(node["choice"]) style "roadmap_body_text"
+                    if not roadmap_is_redacted(node) and node.get("consequence"):
+                        text kd_tr("Conséquence") style "roadmap_section_text"
+                        text kd_tr(node["consequence"]) style "roadmap_body_text"
 
-                null height 8
+                    null height 8
 
-                if roadmap_can_teleport(node):
-                    textbutton "Rejoindre cette séquence":
-                        style "roadmap_action_button"
-                        action [
-                            Hide("roadmap_menu"),
-                            Function(roadmap_jump_to_node, node["id"]),
-                        ]
-                else:
+                    if roadmap_can_teleport(node):
+                        textbutton "Rejoindre cette séquence":
+                            style "roadmap_action_button"
+                            action [
+                                Hide("roadmap_menu"),
+                                Function(roadmap_jump_to_node, node["id"]),
+                            ]
+                    else:
                     textbutton "Accès refusé par Kami":
                         style "roadmap_action_button"
                         sensitive False
