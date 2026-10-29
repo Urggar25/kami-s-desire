@@ -79,9 +79,9 @@ screen kd_dlc_menu():
             text "DOSSIER CLASSIFIÉ  //  J20–J30" xpos 38 ypos 76 font "fonts/Rajdhani-SemiBold.ttf" size 19 color "#F1A6B6" kerning 2
             vbox:
                 xpos 40 ypos 501 spacing 6
-                text "ET SI VOUS N'ÉTIEZ" font "fonts/Rajdhani-SemiBold.ttf" size 49 color "#F3F9FF"
-                text "PAS SEUL ?" font "fonts/Rajdhani-SemiBold.ttf" size 67 color "#FB718B"
-                text "Un mystère. Plusieurs décisions. Des fins qui changent tout." font "fonts/Barlow-Light.ttf" size 23 color "#B9CBD6"
+                text "UNE SEULE" font "fonts/Rajdhani-SemiBold.ttf" size 49 color "#F3F9FF"
+                text "VERSION DES FAITS." font "fonts/Rajdhani-SemiBold.ttf" size 67 color "#FB718B"
+                text "Toutes les réponses ne se trouvent pas au même endroit." font "fonts/Barlow-Light.ttf" size 23 color "#B9CBD6"
             button:
                 xpos 385 ypos 224 xsize 202 ysize 148
                 background Solid("#050C18BC")
@@ -98,8 +98,8 @@ screen kd_dlc_menu():
             add Solid("#0C1C29") xsize 724 ysize 704
             add Solid("#D24464") xpos 33 ypos 36 xsize 56 ysize 4
             text "EXTENSION NARRATIVE" xpos 106 ypos 22 font "fonts/Rajdhani-SemiBold.ttf" size 22 color "#E3879C" kerning 2
-            text "LES AUTRES VIES" xpos 35 ypos 76 font "fonts/Rajdhani-SemiBold.ttf" size 62 color "#F5FAFD"
-            text "ROUTE DOPPELGÄNGER" xpos 38 ypos 159 font "fonts/Rajdhani-SemiBold.ttf" size 27 color "#9ED7E6" kerning 2
+            text "L'ANGLE MORT" xpos 35 ypos 76 font "fonts/Rajdhani-SemiBold.ttf" size 62 color "#F5FAFD"
+            text "UN DOSSIER RESTÉ OUVERT" xpos 38 ypos 159 font "fonts/Rajdhani-SemiBold.ttf" size 27 color "#9ED7E6" kerning 2
             add Solid("#4C718360") xpos 37 ypos 212 xsize 646 ysize 2
             hbox:
                 xpos 38 ypos 235 spacing 14
@@ -117,23 +117,18 @@ screen kd_dlc_menu():
             add Solid(_accent) xpos 39 ypos 539 xsize 10 ysize 10
             text ("EXTENSION INSTALLÉE" if _installed else "EXTENSION NON INSTALLÉE") xpos 65 ypos 527 font "fonts/Rajdhani-SemiBold.ttf" size 26 color _accent
             if _installed:
-                text "Prête à jouer. Retrouvez les autres routes dans la roadmap." xpos 38 ypos 563 font "fonts/Barlow-Light.ttf" size 20 color "#91B6C4"
+                text "Contenu disponible dans votre partie." xpos 38 ypos 563 font "fonts/Barlow-Light.ttf" size 20 color "#91B6C4"
             else:
                 text "Les routes supplémentaires sont verrouillées dans cette édition." xpos 38 ypos 563 font "fonts/Barlow-Light.ttf" size 20 color "#91B6C4"
             hbox:
                 xpos 38 ypos 615 spacing 14
                 textbutton "▶  BANDE-ANNONCE" style "kd_dlc_action" action Function(renpy.call_in_new_context, "kd_dlc_doppelganger_trailer")
-                if _installed:
-                    textbutton "ROADMAP  ↗" style "kd_dlc_secondary" action ShowMenu("roadmap_menu")
-                else:
-                    textbutton "EN SAVOIR PLUS" style "kd_dlc_secondary" action Show("kd_dlc_store_information")
+                textbutton "STEAM  ↗" style "kd_dlc_secondary" action Function(renpy.open_url, KD_DLC_STEAM_URL)
 
     hbox:
         xpos 78 ypos 960 spacing 20
         textbutton "←  RETOUR AU MENU" style "kd_dlc_secondary" action Return()
-        if _installed:
-            textbutton "GALERIE" style "kd_dlc_secondary" action ShowMenu("gallery_menu")
-            textbutton "SOUVENIRS" style "kd_dlc_secondary" action ShowMenu("scene_select_menu")
+
     text "KAMI'S DESIRES   /   LES ARCHIVES NE DISENT PAS TOUT." xpos 1340 ypos 979 font "fonts/Rajdhani-SemiBold.ttf" size 19 color "#6B91A3"
     key "K_ESCAPE" action Return()
 
@@ -148,9 +143,9 @@ screen kd_dlc_store_information():
         padding (48, 42)
         vbox:
             spacing 20
-            text "LES AUTRES VIES" size 44 color "#F3FAFF" xalign 0.5
+            text "L'ANGLE MORT" size 44 color "#F3FAFF" xalign 0.5
             text "Cette extension n'est pas installée." size 27 color "#F4A2B1" xalign 0.5
-            text "Installez-la depuis la boutique où vous avez obtenu le jeu, puis relancez Kami's Desires." size 24 color "#C5D9E2" xalign 0.5
+            text "Vous pouvez consulter sa disponibilité sur Steam. Après installation, relancez Kami's Desires." size 24 color "#C5D9E2" xalign 0.5
             textbutton "FERMER" style "kd_dlc_secondary" xalign 0.5 action Hide("kd_dlc_store_information")
     key "K_ESCAPE" action Hide("kd_dlc_store_information")
 
@@ -164,7 +159,7 @@ screen kd_dlc_locked_notice():
         vbox:
             spacing 20
             text "CHOIX VERROUILLÉ" size 40 color "#FFF0E1" xalign 0.5
-            text "Cette branche fait partie du DLC « Les autres vies »." size 27 color "#D6E9F0" xalign 0.5
+            text "Cette branche fait partie de l’extension « L’Angle mort »." size 27 color "#D6E9F0" xalign 0.5
             text "La fin gratuite reste accessible par l'autre choix." size 23 color "#A3CFDD" xalign 0.5
             textbutton "REVENIR AU CHOIX" action Return() xalign 0.5
     key "K_ESCAPE" action Return()
@@ -179,7 +174,7 @@ screen kd_dlc_qte_retry():
         vbox:
             spacing 22
             text "UNE AUTRE ISSUE EXISTE" size 39 color "#F4FCFF" xalign 0.5
-            text "Cette issue mène à une autre branche, comprise dans « Les autres vies ». Vous pouvez recommencer cette séquence pour découvrir la fin gratuite." size 25 color "#D6EAF4"
+            text "Cette issue mène à une autre branche, comprise dans « L’Angle mort ». Vous pouvez recommencer cette séquence pour découvrir la fin gratuite." size 25 color "#D6EAF4"
             textbutton "RECOMMENCER LA SÉQUENCE" action Return() xalign 0.5
 
 screen kd_dlc_extend_j20():
@@ -191,7 +186,7 @@ screen kd_dlc_extend_j20():
         padding (45, 35)
         vbox:
             spacing 23
-            text "UNE AUTRE SCÈNE EXISTE" size 41 color "#E9F9FF" xalign 0.5
+            text "UNE SUITE RESTE À DÉCOUVRIR" size 41 color "#E9F9FF" xalign 0.5
             text "Vous avez atteint la fin gratuite. Voulez-vous découvrir ce qui se passe après ?" size 26 color "#C8E6ED" xalign 0.5
             textbutton "VOIR LA SUITE (DLC)" action Return(True) xalign 0.5
             textbutton "REVENIR AU MENU" action Return(False) xalign 0.5
