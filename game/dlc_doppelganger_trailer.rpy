@@ -54,7 +54,7 @@ label kd_dlc_doppelganger_trailer:
     scene bg_diffusion_taquin at trl_unstable(5, 1.04)
     with trl_flash
     show screen trl_title(
-        _("VOUS VOULIEZ"), _("RENTREZ CHEZ VOUS ?"),
+        _("VOUS VOULIEZ"), _("RENTRER CHEZ VOUS ?"),
         kicker=_("JOUR 20 — LE DÉBUT DE LA FIN"), accent="#F77991", slam=True
     )
     $ renpy.pause(2.5, hard=True)
