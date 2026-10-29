@@ -255,3 +255,17 @@ Pour chaque ajout ou modification future :
 - Chaque menu contient trois réponses ordinaires (+1 XP selon la compétence choisie) ; quatre menus ajoutent une réponse conditionnelle sans XP, avec sa courte scène narrative.
 - Les fins et branches alternatives qui ne traversent pas ces points d'insertion ne présentent pas ces menus. Ne pas ajouter automatiquement ces choix aux routes de mort, aux variantes d'enquête et aux différentes fins sans vérifier leur contexte narratif.
 - Les menus et leurs labels sont définis dans `game/stat_dialogues_21_30.rpy`, qui réutilise le système et l'interface de `game/stat_dialogues.rpy`.
+
+
+## DLC — Route Doppelgänger
+
+| Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
+|---|---|---|---|
+| Détection d'extension | Détermine si le pack narratif est présent dans l'installation (pas de déverrouillage par `persistent`). | `game/dlc_manager.rpy` | `if kd_dlc_unlocked("doppelganger_routes"):` |
+| Menu DLC | Affiche les extensions et leur statut d'installation dans le menu principal. | `game/dlc_menu.rpy` | `ShowMenu("kd_dlc_menu")` |
+| Notification de route verrouillée | Informe qu'une branche demande le pack et revient au choix initial. | `game/dlc_menu.rpy` | `call screen kd_dlc_locked_notice` |
+| Relance QTE gratuite | Permet de rejouer la confrontation J20 pour atteindre la fin offerte sans DLC. | `game/dlc_menu.rpy` | `call screen kd_dlc_qte_retry` |
+| Distribution DLC | Classe les scripts DLC hors de la distribution de base et les empaquette séparément. | `game/dlc_build.rpy` | `build.package("doppelganger-routes", "zip", "kd_doppelganger_routes", dlc=True)` |
+
+| Prolongement de la fin gratuite | Propose au possesseur du pack de visionner « La peau des autres » après la fin offerte J20. | `game/dlc_menu.rpy` | `call screen kd_dlc_extend_j20` |
+| Bouton de fin configurable | Personnalise le libellé du bouton de sortie afin de proposer la suite DLC après la fin gratuite. | `game/ending_screen.rpy` | `call screen kd_ending_reached("Derrière la grille", "FIN GRATUITE // JOUR 20", button_text="CONTINUER")` |

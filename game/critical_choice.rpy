@@ -32,11 +32,16 @@ init python:
 
     CC_UNFINISHED_LABELS = set()
     CC_UNRELEASED_PACKS = {"mystere"}  # Annonce réservée, aucune date ni achat.
-    CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."}}
+    CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."},
+        "doppelganger_routes": {"title": "Les autres vies", "days": "Jours 20 à 30", "endings": "Fins alternatives", "tagline": "Et si Noam avait choisi autrement ?"}}
 
     def cc_owned_packs():
         # Development entitlement, NOT commercial DRM.
-        return getattr(persistent, "kd_story_packs_owned", None) or ["origine"]
+        # Les anciens packs restent inchangés ; pas de faux droit d'accès persistant.
+        owned = ["origine"]
+        if kd_dlc_unlocked("doppelganger_routes"):
+            owned.append("doppelganger_routes")
+        return owned
 
     def cc_option_status(destination=None, pack=None):
         if pack in CC_UNRELEASED_PACKS:
@@ -337,7 +342,7 @@ screen critical_choice(items, noam_expr="reflexion", cc_targets=None, cc_prompt=
                         fixed:
                             xsize 500 ysize 174
                             clipping True
-                            add Transform("bg_cg070", fit="cover", xysize=(500, 174), alpha=0.93)
+                            add Transform("bg_cg052", fit="cover", xysize=(500, 174), alpha=0.93)
                             add Solid("#090C1B62") xsize 500 ysize 174
                             add Solid("#EC567A") xsize 4 ysize 174
                             add Solid("#082338CC") xpos 209 ypos 49 xsize 82 ysize 75 at cc_teaser_pulse

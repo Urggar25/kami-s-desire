@@ -334,6 +334,7 @@ screen main_menu():
             textbutton _("Charger")     style "kami_button" action ShowMenu("load")
             textbutton _("Roadmap")     style "kami_button" action ShowMenu("roadmap_menu")
             textbutton _("Contenu bonus") style "kami_button" action ShowMenu("bonus_content_menu")
+            textbutton _("DLC")           style "kami_button" action ShowMenu("kd_dlc_menu")
             textbutton _("Codex")       style "kami_button" action ShowMenu("codex_menu")
             textbutton _("Boutique")    style "kami_button" action ShowMenu("kami_shop_menu")
             textbutton _("Évènement")   style "kami_button" action ShowMenu("kami_event_menu")
