@@ -1259,7 +1259,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Elle est bizarrement familière."
     "Et après ça, plus rien."
 
-    call screen kd_ending_reached("Derrière la grille", "FIN GRATUITE // JOUR 20")
+    call screen kd_ending_reached("Derrière la grille", "FIN GRATUITE // JOUR 20", button_text=("CONTINUER" if kd_dlc_unlocked("doppelganger_routes") else None))
     $ _ending_screen_closed = _return
 
     if kd_dlc_unlocked("doppelganger_routes"):

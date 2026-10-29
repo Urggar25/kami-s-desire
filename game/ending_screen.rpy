@@ -58,7 +58,7 @@ style kd_ending_menu_button_text is button_text:
     yalign 0.5
 
 
-screen kd_ending_reached(ending_name, ending_code, ending_label="ENDING"):
+screen kd_ending_reached(ending_name, ending_code, ending_label="ENDING", button_text=None):
 
     modal True
 
@@ -143,7 +143,7 @@ screen kd_ending_reached(ending_name, ending_code, ending_label="ENDING"):
         xysize (360, 62)
         at kd_ending_button_in
 
-        textbutton _("MENU PRINCIPAL"):
+        textbutton (button_text or _("MENU PRINCIPAL")):
             style "kd_ending_menu_button"
             action Return(True)
 

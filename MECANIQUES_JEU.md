@@ -268,3 +268,4 @@ Pour chaque ajout ou modification future :
 | Distribution DLC | Classe les scripts DLC hors de la distribution de base et les empaquette séparément. | `game/dlc_build.rpy` | `build.package("doppelganger-routes", "zip", "kd_doppelganger_routes", dlc=True)` |
 
 | Prolongement de la fin gratuite | Propose au possesseur du pack de visionner « La peau des autres » après la fin offerte J20. | `game/dlc_menu.rpy` | `call screen kd_dlc_extend_j20` |
+| Bouton de fin configurable | Personnalise le libellé du bouton de sortie afin de proposer la suite DLC après la fin gratuite. | `game/ending_screen.rpy` | `call screen kd_ending_reached("Derrière la grille", "FIN GRATUITE // JOUR 20", button_text="CONTINUER")` |
