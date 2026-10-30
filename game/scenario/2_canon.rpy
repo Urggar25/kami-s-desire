@@ -1,6 +1,4 @@
 label _2_CANON:
-    # Prévisualisation temporaire du cut-in Noam, au tout début du jour 2.
-    call play_noam_interupt from _call_noam_interupt_preview_day2
 
     $ unlock_codex_page("propositions_amendement", with_notification=False)
 
@@ -19,6 +17,9 @@ label _2_CANON:
     think "Un coup sur le côté gauche. Non, ça ne va pas. Sur le dos, peut-être ? Raah c'est pire. Une jambe repliée... toujours pas."
     think "Le matelas est confortable, même très confortable. Le problème, enfin... c'est moi. C'est tout ce qui nous arrive."
 
+
+    call play_noam_interupt from _call_noam_interupt_preview_day2
+    
     $ blink()
 
     pause 0.6
