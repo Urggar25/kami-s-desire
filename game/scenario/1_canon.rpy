@@ -241,9 +241,10 @@ label _1_CANON:
     think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
     noam inquiet "Attends... C'est vraiment le Conclave ?"
     lysa reflexion "J'en sais pas beaucoup plus que toi, mais ouais. Ça ressemble bien à ce que Kami pourrait appeler le Conclave."
+    lysa blase "Et tous ces gens... On sait même pas à qui on a affaire."
 
     call play_stat_dialogue("d1") from _call_stat_dialogue_d1
-    lysa reflexion "Mais faut dire que je voyais ça d'une façon totalement différente."
+    lysa reflexion "Bon. De toute façon, va bien falloir qu'on apprenne à les connaître."
 
     think "Je regarde autour, en m'efforçant de ne pas parler. Je ne reconnais aucun autre visage. Donc c'est vrai : les douze représentants sont bien réunis dans la même cage."
 
