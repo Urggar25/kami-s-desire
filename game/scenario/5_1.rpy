@@ -175,7 +175,6 @@ label _5_1_KAEL_NYRA:
     nyra raison "Je sais. Tu l'as lue combien de fois ?"
 
     kael triste "Sept fois. J'aurais dû la voir cette nuit."
-    kael inquietude "Si Léa est encore dans la zone C-3, je fais quoi, moi ?"
 
     call play_stat_dialogue("d5_1") from _call_stat_dialogue_d5_1
 
