@@ -2,10 +2,10 @@
 init 4 python:
     STAT_DIALOGUES.update({
         "j11": {"prompt": "Kael vient d'apprendre que les images seront bloquées une semaine.", "options": [
-            _sd_option("pause", "On devrait souffler un peu. Ça sert à rien de s'épuiser maintenant.", "sd_j11_pause"),
-            _sd_option("relire", "On peut relire ensemble ce que Kami a dit sur les sept jours.", "sd_j11_relire"),
-            _sd_option("aider", "Si tu dois transporter des dossiers, je peux venir avec toi.", "sd_j11_aider"),
-            _sd_option("detail", "Tu t'attendais à ce délai, non ?", "sd_j11_detail", requires={"observation": 2}),
+            _sd_option("pause", "Kael, t'as l'air épuisé. Ça sert à rien de te rendre malade avec ces enregistrements.", "sd_j11_pause"),
+            _sd_option("relire", "Tu veux qu'on relise ensemble ce que Kami vient de dire ? Histoire d'être sûrs.", "sd_j11_relire"),
+            _sd_option("aider", "Si tu veux qu'on cherche ensemble dans les dossiers, je peux t'aider.", "sd_j11_aider"),
+            _sd_option("detail", "Attends, tu savais déjà qu'il y aurait sept jours d'attente ?", "sd_j11_detail", requires={"observation": 2}),
         ]},
         "j12": {"prompt": "Le débat sur les brouilleurs s'emballe.", "options": [
             _sd_option("risque", "Faut aussi parler des risques. Si quelqu'un fait une connerie, on le saura trop tard.", "sd_j12_risque"),
