@@ -109,7 +109,6 @@ label _4_1_CAFETERIA_ECRANS:
 
     sael mefiant "À Limen, les gens ont toujours échangé entre eux. Ils continueront."
     sael triste "Ceux qui n'ont plus rien dépendront seulement de voisins qui n'ont presque rien non plus."
-    sael mefiant "Vous avez obtenu ce que vous vouliez pour le commerce. Ça vous suffit ?"
 
     call play_stat_dialogue("d4_1") from _call_stat_dialogue_d4_1
 
