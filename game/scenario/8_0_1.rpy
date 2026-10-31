@@ -560,6 +560,7 @@ label _8_0_1_APRES_STABILISATION:
     noam reflechit "Quelqu'un a peut-être choisi précisément ce qui avait le plus de valeur pour nous ?"
 
     think "Je devrais garder ces faits séparés du Codex. Pas du lore : une trace de ce qui nous arrive."
+    kael inquietude "Dis-moi que tu crois pas que c'est quelqu'un d'ici qui a fait ça..."
 
     call play_stat_dialogue("d8") from _call_stat_dialogue_d8
 
