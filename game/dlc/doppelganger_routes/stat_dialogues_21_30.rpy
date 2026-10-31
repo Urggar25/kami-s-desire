@@ -23,10 +23,10 @@ init 4 python:
             _sd_option("calme", "On peut chercher sans passer la journée à se crier dessus.", "sd_j24_calme"),
         ]},
         "j25": {"prompt": "Iris examine la salle.", "options": [
-            _sd_option("sol", "Attends, je veux regarder le sol avant qu'on avance.", "sd_j25_sol"),
-            _sd_option("prudence", "On ne déplace rien tant qu'on sait pas ce qu'on cherche.", "sd_j25_prudence"),
-            _sd_option("caisse", "Je peux bouger cette caisse pour que tu voies derrière.", "sd_j25_caisse"),
-            _sd_option("poussiere", "Il y a une trace dans la poussière, là. On devrait la prendre en photo.", "sd_j25_poussiere", requires={"observation": 3}),
+            _sd_option("sol", "Attends, on peut regarder d'où vient ce bruit avant de partir.", "sd_j25_sol"),
+            _sd_option("prudence", "On ferait mieux de pas toucher à la grille avant de savoir ce qu'il y a derrière.", "sd_j25_prudence"),
+            _sd_option("caisse", "Je peux déplacer le bureau pour que tu voies mieux derrière la grille.", "sd_j25_caisse"),
+            _sd_option("poussiere", "La grille a l'air d'avoir été touchée récemment. Tu vois les traces sur le bord ?", "sd_j25_poussiere", requires={"observation": 3}),
         ]},
         "j26": {"prompt": "Le double veut parler.", "options": [
             _sd_option("clair", "Alors explique-moi exactement ce que tu veux.", "sd_j26_clair"),
@@ -40,9 +40,9 @@ init 4 python:
             _sd_option("parler", "Je vais lui parler. Je peux pas laisser les autres décider à ma place.", "sd_j27_parler"),
         ]},
         "j28": {"prompt": "Mara s'inquiète du départ.", "options": [
-            _sd_option("peur", "Je comprends que ça te fasse peur. On sait pas vraiment ce qu'on trouvera là-bas.", "sd_j28_peur"),
-            _sd_option("infos", "On devrait vérifier ce qu'on sait de cette planète.", "sd_j28_infos"),
-            _sd_option("temps", "On peut en parler sans décider tout de suite.", "sd_j28_temps"),
+            _sd_option("peur", "Mara, je sais que Keyper te fait peur. Mais ça justifie pas qu'on s'en prenne à Iris.", "sd_j28_peur"),
+            _sd_option("infos", "Avant de choisir quelqu'un à remplacer, on devrait au moins savoir ce qui nous attend sur Keyper.", "sd_j28_infos"),
+            _sd_option("temps", "On a encore un peu de temps. On va pas choisir quelqu'un à sacrifier en pleine dispute.", "sd_j28_temps"),
         ]},
         "j29": {"prompt": "Kael prépare l'opération.", "options": [
             _sd_option("voyants", "Je garde un œil sur les voyants. Tu me dis si ça change.", "sd_j29_voyants"),
@@ -51,9 +51,9 @@ init 4 python:
             _sd_option("copie", "Tu as une copie de secours si le transfert se passe mal ?", "sd_j29_copie", requires={"logique": 4}),
         ]},
         "j30": {"prompt": "Le double attend la décision.", "options": [
-            _sd_option("minute", "Je vais te répondre. J'ai juste besoin d'une minute.", "sd_j30_minute"),
-            _sd_option("autres", "Je dois aussi penser à ce que ça change pour les autres.", "sd_j30_autres"),
-            _sd_option("decision", "Je sais. C'est à moi de décider, et je vais le faire.", "sd_j30_decision"),
+            _sd_option("minute", "J'ai pas encore décidé. Laisse-moi une minute pour y réfléchir.", "sd_j30_minute"),
+            _sd_option("autres", "Je pense aussi à Iris et à Juliette. Quelle que soit ma réponse, quelqu'un va en souffrir.", "sd_j30_autres"),
+            _sd_option("decision", "Oui, je sais que c'est à moi de décider. Mais je veux pas te répondre n'importe quoi.", "sd_j30_decision"),
         ]},
     })
 
