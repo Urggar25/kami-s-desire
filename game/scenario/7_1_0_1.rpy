@@ -6,6 +6,7 @@ default j7_1_1_1_transport_qte_step = 0
 # Nom canonique de la branche "déclarer la jeune femme".
 label _7_1_0_1_CANON:
 
+    nyra raison "Si on prévient Kami, il faudra faire attention à ce qu'on lui dit en premier."
     call play_stat_dialogue("d7_1_0_1") from _call_stat_dialogue_d7_1_0_1
 
     jump _7_1_0_DECLARER_PLACEHOLDER
