@@ -68,11 +68,10 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas raison "Ouais. Pas de violence et pas de remplacement improvisé."
     "Il dit ça en vérifiant les accès sur son écran, comme s'il parlait de déplacer une caisse."
     "Je reste silencieux. Eux savent ce qu'ils ont fait pour être ici."
-    call play_stat_dialogue("j27")
-
     tomas raison "Tu as réfléchi pour ton original depuis hier ?"
     noam inquiet "N-Non. Pourquoi...?"
     tomas neutre "Il faut qu'on décide ce qu'il adviendra de lui. Si tu veux prendre sa place au départ, on ne pourra pas éviter cette conversation éternellement."
+    call play_stat_dialogue("j27")
     noam agace "... Mais on ne-"
     elias colere "Ouais, on sait très bien ce que tu en penses. On te comprend, tu sais... Mais..."
     tomas triste "Si tu veux vraiment monter dans cette navette, tu n'as pas vraiment le choix..."
