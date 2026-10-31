@@ -68,7 +68,6 @@ label _6_1_0_CAFETERIA:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_J6_02
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
-    lysa blase "Sael va voter contre, elle l'a dit. On va quand même faire semblant d'y croire ?"
 
     call play_stat_dialogue("d6_1_0") from _call_stat_dialogue_d6_1_0
 
