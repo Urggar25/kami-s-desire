@@ -463,8 +463,6 @@ label _5_0_CHERCHE_SAEL:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 2.0
 
-    call play_stat_dialogue("d5_0") from _call_stat_dialogue_d5_0
-
     pause 0.8
 
     think "Voyons voir, où se trouve la chambre de Sael ? Ah, ici. La porte avec le tissu noir sur la poignée. Signe ou habitude, je n'en sais rien."
@@ -525,6 +523,7 @@ label _5_0_CHERCHE_SAEL:
 
     sael sourire "Dis ce que tu es venu dire. Le reste ne t'aidera pas."
     sael triste "Je n'attends pas de toi que tu comprennes comment on vit en dehors des grandes villes."
+    call play_stat_dialogue("d5_0") from _call_stat_dialogue_d5_0
 
     pause 0.3
 
