@@ -522,7 +522,6 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     show screen day2_quick_vote_notes
 
-    tomas reflechit "Bon, maintenant qu'on connaît le sujet... vous comptez vous y prendre comment pour ce vote ?"
     call play_stat_dialogue("d2") from _call_stat_dialogue_d2
 
     think "Tout le monde sort sa tablette."
