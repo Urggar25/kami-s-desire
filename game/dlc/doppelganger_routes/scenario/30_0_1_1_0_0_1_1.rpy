@@ -40,9 +40,8 @@ label _30_0_1_1_0_0_1_1_DOUBLE:
     dg_noam reflexion "Et avant qu'on échange nos places, je dois encore régler un truc dans les conduits. Je te dirai quand c'est fait. Ça nous évitera de nous croiser au mauvais endroit."
     noam reflexion "Ouais. Vas-y."
     "Il entre et pose son sac près de la porte, puis il regarde mon lit comme s'il hésitait à s'asseoir."
-    call play_stat_dialogue("j30")
-
     dg_noam inquiet "Bon... je sais pas si t'as pris une décision. Zero m'a rien dit, et je veux pas te mettre la pression. Je voulais juste savoir ce que tu comptes faire."
+    call play_stat_dialogue("j30")
     noam fatigue "J'en sais rien. Je me suis retourné toute la nuit. J'ai surtout pensé à Juliette."
     dg_noam raison "Ouais, je me doute. Tu lui avais promis de rentrer."
     noam inquiet "C'est pas juste la promesse. C'est ma petite sœur. Je peux pas lui demander d'attendre encore je sais pas combien de temps."
