@@ -236,21 +236,11 @@ label _1_CANON:
         ("sael", "raison", 1.20),
     ])
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
+
+    $ blink ()
     think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
     noam inquiet "Attends... C'est vraiment le Conclave ?"
-    lysa reflexion "J'en sais pas beaucoup plus que toi, mais ouais. Ça ressemble bien au Conclave."
-    lysa blase "T'as vraiment pas l'air frais, toi."
-
-    # La tablette n'interrompt plus le face-à-face : elle s'initialise en plan large.
-    play sound sfx_beep
-    voix "Initialisation en cours..."
-    think "Une tablette noire s'allume sur mon pupitre. Sa voix synthétique couvre un instant les murmures dans la salle."
-    $ cam_reset(t=0.0)
-    call screen day1_tablet_interaction()
-    play sound sfx_beep
-    $ shake(6, 0.2)
-    voix "Noam. Accès limité."
-    think "Elle me reconnaît à ma main, ils ont dû prendre nos empreintes."
+    lysa reflexion "J'en sais pas beaucoup plus que toi, mais ouais. Ça ressemble bien à ce que Kami pourrait appeler le Conclave."
 
     call play_stat_dialogue("d1") from _call_stat_dialogue_d1
     lysa reflexion "Mais faut dire que je voyais ça d'une façon totalement différente."
