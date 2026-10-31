@@ -27,7 +27,7 @@ init 3 python:
                 _sd_option("prudent", "J'en sais rien. On les connaît pas, et eux non plus. Je préfère rester prudent.", "sd_d1_prudent"),
                 _sd_option("solidaire", "On n'est pas obligés de leur faire confiance tout de suite. Mais on peut essayer de se parler, non ?", "sd_d1_solidaire"),
                 _sd_option("details", "Je sais pas pour eux... Mais toi, ça va ? Je t'ai vue trembler tout à l'heure.", "sd_d1_details", requires={"observation": 2}),
-                _sd_option("souffler", "Avant de faire confiance à qui que ce soit, j'aimerais déjà comprendre comment on a atterri ici.", "sd_d1_souffler"),
+                _sd_option("souffler", "Là, j'ai encore les jambes en coton. On pourra parler confiance quand j'arriverai à tenir debout.", "sd_d1_souffler"),
             ],
         },
         "d2": {
@@ -578,7 +578,7 @@ label sd_d9_provoquer:
 
 # JOUR d1 — nouvelle réponse ordinaire : +1 XP physique.
 label sd_d1_souffler:
-    lysa blase "Bonne question. Moi, je me souviens surtout qu'on nous a endormis. Ça donne envie de leur faire confiance, hein."
+    lysa taquin "Si tu t'écroules, préviens-moi. J'ai pas très envie de te porter."
     $ _stat_xp_results = award_stats_xp({"physique": 1})
     return
 
