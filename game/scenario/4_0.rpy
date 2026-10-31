@@ -396,6 +396,7 @@ label _4_0_CAFETERIA_ECRANS:
 
 label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
 
+    ryn colere "On a perdu hier. Et maintenant, tu vas encore leur demander gentiment de nous écouter ?"
     call play_stat_dialogue("d4_0") from _call_stat_dialogue_d4_0
 
     $ room_scene_indices["cafeteria"] = 1
