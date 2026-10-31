@@ -1540,8 +1540,6 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     noam taquin "J'ai pas grand-chose d'autre à faire. À cette heure-là, on est déjà censé savoir quel est le prochain vote."
     noam taquin "Tu vas encore essayer de me faire lire des statistiques incompréhensibles ?"
 
-    call play_stat_dialogue("d7_0_1") from _call_stat_dialogue_d7_0_1
-
     tomas determine "Justement, à ce propos..."
 
     "Il plisse légèrement les yeux avant de continuer sur un ton un peu plus grave."
@@ -1604,6 +1602,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     "Il déglutit légèrement."
 
     tomas inquiet "Zéro. Depuis hier il y a zéro exécution."
+    call play_stat_dialogue("d7_0_1") from _call_stat_dialogue_d7_0_1
 
     "Je regarde l'écran. 0. Partout. Toutes régions confondues."
 
