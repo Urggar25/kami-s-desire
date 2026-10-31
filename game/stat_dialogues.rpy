@@ -33,36 +33,36 @@ init 3 python:
         "d2": {
             "prompt": "Tomas regarde les autres tables. « Comment tu veux aborder ce premier vote ? »",
             "options": [
-                _sd_option("ecouter", "Avant de défendre quoi que ce soit, je veux comprendre ce que chacun risque de perdre avec ce vote.", "sd_d2_ecouter"),
-                _sd_option("texte", "Je vais déjà relire la proposition mot par mot. Si on se trompe sur ce qu'on vote, on est mal partis.", "sd_d2_texte"),
-                _sd_option("frontal", "Ça suffit de tourner autour du pot. Je vais leur demander directement ce qu'ils comptent voter.", "sd_d2_frontal", requires={"audace": 2}),
-                _sd_option("observer", "Avant d'aller leur parler, on pourrait regarder qui s'assoit avec qui. Ça nous donnera peut-être une idée des alliances.", "sd_d2_observer"),
+                _sd_option("ecouter", "Avant de me faire un avis, je veux surtout savoir ce que les autres pensent de cette proposition.", "sd_d2_ecouter"),
+                _sd_option("texte", "Attends, je vais déjà ouvrir le dossier sur ma tablette. On n'a même pas lu la formulation exacte.", "sd_d2_texte"),
+                _sd_option("frontal", "On va leur demander franchement s'ils comptent voter pour. Autant savoir à quoi s'en tenir.", "sd_d2_frontal", requires={"audace": 2}),
+                _sd_option("observer", "Tout le monde a reçu le dossier en même temps. Je vais voir qui réagit en premier.", "sd_d2_observer"),
             ],
         },
         "d3": {
             "prompt": "Julian croise les bras. « Une voix peut tout faire échouer. Tu proposes quoi ? »",
             "options": [
-                _sd_option("coalition", "On devrait commencer par chercher ce sur quoi tout le monde est d'accord. Après, on verra ce qui bloque.", "sd_d3_coalition"),
-                _sd_option("pression", "S'ils veulent voter contre, très bien. Mais je veux qu'ils regardent aussi les conséquences de ce refus.", "sd_d3_pression"),
-                _sd_option("peur", "Et si on leur demandait d'abord ce qui leur fait peur ? À mon avis, certains ne disent pas vraiment pourquoi ils hésitent.", "sd_d3_peur", requires={"empathie": 2}),
-                _sd_option("garder_tete", "On va éviter de s'énerver avant même d'entrer. Si quelqu'un cherche à nous provoquer, je préfère garder la tête froide.", "sd_d3_garder_tete"),
+                _sd_option("coalition", "Bon, avant que ça commence, il faudrait savoir sur quoi on est tous d'accord.", "sd_d3_coalition"),
+                _sd_option("pression", "On est enfermés ici jusqu'à la décision... Ça met sacrément la pression pour un premier vote.", "sd_d3_pression"),
+                _sd_option("peur", "Je me demande surtout qui a peur de voter contre. Ça peut changer toutes les discussions.", "sd_d3_peur", requires={"empathie": 2}),
+                _sd_option("garder_tete", "On est enfermés, d'accord, mais ça sert à rien de paniquer. On va essayer de garder la tête froide.", "sd_d3_garder_tete"),
             ],
         },
         "d4_0": {
             "prompt": "Ryn frappe la table. « On a perdu hier. Tu comptes encore demander gentiment ? »",
             "options": [
-                _sd_option("tenir", "Je veux comprendre ce qui a fait échouer le vote. Si on sait pas où on s'est plantés, on va refaire exactement la même erreur.", "sd_d4_0_tenir"),
-                _sd_option("relancer", "Oui, et je vais recommencer tant qu'on n'aura pas de vraie réponse. On peut pas juste faire comme si rien ne s'était passé.", "sd_d4_0_relancer"),
-                _sd_option("rester_calme", "Je suis aussi énervé que toi, Ryn. Mais si on retourne les voir en hurlant, on va juste se faire claquer la porte au nez.", "sd_d4_0_rester_calme"),
+                _sd_option("tenir", "J'arrête pas de repenser au vote. On doit comprendre ce qui a coincé.", "sd_d4_0_tenir"),
+                _sd_option("relancer", "On peut pas laisser cette journée se passer comme si rien n'avait changé.", "sd_d4_0_relancer"),
+                _sd_option("rester_calme", "Je suis en colère, mais ça sert à rien de s'en prendre aux autres.", "sd_d4_0_rester_calme"),
             ],
         },
         "d4_1": {
             "prompt": "Sael me dévisage. « Vous avez gagné le commerce. Cela vous suffit-il ? »",
             "options": [
-                _sd_option("consequences", "Je suis content qu'on ait obtenu ce vote, mais je veux voir ce que ça change vraiment. Sinon, on saura jamais si on a eu raison.", "sd_d4_1_consequences"),
-                _sd_option("humains", "Non, évidemment. On a réussi à faire circuler les marchandises, mais les gens sont toujours coincés derrière les frontières.", "sd_d4_1_humains"),
-                _sd_option("calme", "D'accord. Je ne vais pas essayer de vous convaincre tout de suite. Dites-moi seulement ce qui vous empêche d'accepter.", "sd_d4_1_calme", requires={"sang_froid": 2}),
-                _sd_option("regarder", "Je veux surtout voir ce que ça change pour les gens. On a voté le texte, mais on n'a encore rien vu de ses effets.", "sd_d4_1_regarder"),
+                _sd_option("consequences", "On a voté pour, mais voir des gens repartir les mains vides... Je pensais pas que ce serait aussi rapide.", "sd_d4_1_consequences"),
+                _sd_option("humains", "Ça me fait penser aux gens qui sont déjà coincés à Limen. On les aide pas beaucoup avec ça.", "sd_d4_1_humains"),
+                _sd_option("calme", "Sael, je comprends que ça t'inquiète. Mais tu crois qu'on aurait pu éviter ça autrement ?", "sd_d4_1_calme", requires={"sang_froid": 2}),
+                _sd_option("regarder", "Il faudrait comparer ce qui se passe dans les autres districts. Peut-être qu'ailleurs, ça marche mieux.", "sd_d4_1_regarder"),
             ],
         },
         "d5_0": {
@@ -77,37 +77,37 @@ init 3 python:
         "d5_1": {
             "prompt": "Kael fixe l'écran éteint. « Si ma sœur est à C-3, je dois faire quoi ? »",
             "options": [
-                _sd_option("present", "Attends, Kael. Respire un peu. On va reprendre ce qu'on sait de ta sœur et voir ce qu'on peut faire, sans inventer le pire.", "sd_d5_1_present"),
-                _sd_option("agir", "Dis-moi tout ce que tu sais, même les détails qui te semblent inutiles. Après, on trouvera comment bouger.", "sd_d5_1_agir"),
-                _sd_option("alerte", "L'alerte ne correspond pas à une rupture totale du complexe.", "sd_d5_1_alerte", requires={"logique": 3}),
-                _sd_option("soutenir", "Si tu dois aller chercher quelqu'un ou transporter du matériel, je viens avec toi. On va pas te laisser gérer ça tout seul.", "sd_d5_1_soutenir"),
+                _sd_option("present", "Kael, tu pouvais pas prévoir cette alerte. Te reprocher d'avoir dormi va rien changer.", "sd_d5_1_present"),
+                _sd_option("agir", "Montre-moi l'alerte. On va regarder ce qu'elle dit exactement.", "sd_d5_1_agir"),
+                _sd_option("alerte", "Attends, le message parle d'une alerte, pas de la destruction de toute la zone.", "sd_d5_1_alerte", requires={"logique": 3}),
+                _sd_option("soutenir", "Si tu as besoin d'aide pour vérifier les relevés, je suis là.", "sd_d5_1_soutenir"),
             ],
         },
         "d6_0_1": {
             "prompt": "Mara observe la porte du Conclave. « On entre malgré le texte incompréhensible ? »",
             "options": [
-                _sd_option("procedure", "On entre, mais je veux qu'on exige une explication avant le vote. Impossible de se prononcer sur un texte qu'on comprend pas.", "sd_d6_0_1_procedure"),
-                _sd_option("ensemble", "On y va tous ensemble. Si Kami essaie de nous mettre la pression, personne ne doit se retrouver seul à lui répondre.", "sd_d6_0_1_ensemble"),
-                _sd_option("refus", "Si elle nous presse, je prends la parole et je refuse le cadre.", "sd_d6_0_1_refus", requires={"audace": 3}),
-                _sd_option("reperer", "Attends une seconde. On regarde d'abord les issues et les caméras, histoire de savoir où on met les pieds.", "sd_d6_0_1_reperer"),
+                _sd_option("procedure", "On devrait tous demander une explication du texte avant de voter. Là, personne n'a l'air de comprendre.", "sd_d6_0_1_procedure"),
+                _sd_option("ensemble", "On est tous là, mais chacun reste dans son coin. On devrait essayer de parler ensemble avant le vote.", "sd_d6_0_1_ensemble"),
+                _sd_option("refus", "Si Kami essaie de nous faire voter sans expliquer le texte, je compte bien lui dire non.", "sd_d6_0_1_refus", requires={"audace": 3}),
+                _sd_option("reperer", "Tout le monde regarde les autres au lieu de parler. On dirait que chacun attend de voir qui va craquer.", "sd_d6_0_1_reperer"),
             ],
         },
         "d6_1_0": {
             "prompt": "Lysa murmure. « Le vote est perdu d'avance. On joue quand même la scène ? »",
             "options": [
-                _sd_option("trace", "Oui. Même si on perd aujourd'hui, il faut qu'on sache précisément ce que chacun nous reproche. Ça servira pour la suite.", "sd_d6_1_0_trace"),
-                _sd_option("sael", "Oui. Et je veux surtout que Sael comprenne qu'on ne la considère pas comme une ennemie juste parce qu'elle vote contre.", "sd_d6_1_0_sael"),
-                _sd_option("hesitation", "Elle évite mon regard depuis ce matin. Sa décision n'est pas aussi solide qu'elle le dit.", "sd_d6_1_0_hesitation", requires={"observation": 3}),
-                _sd_option("oser", "Même si Sael vote contre, j'ai pas envie de rester assis à faire semblant. Je vais lui poser la question devant tout le monde.", "sd_d6_1_0_oser"),
+                _sd_option("trace", "Sael a annoncé qu'elle voterait contre. Il faut quand même écouter les autres aujourd'hui.", "sd_d6_1_0_trace"),
+                _sd_option("sael", "Sael a ses raisons. Je veux pas que tout le monde lui tombe dessus à cause de son vote.", "sd_d6_1_0_sael"),
+                _sd_option("hesitation", "Depuis hier, Sael évite tout le monde. Je crois que ça lui coûte plus qu'elle veut le montrer.", "sd_d6_1_0_hesitation", requires={"observation": 3}),
+                _sd_option("oser", "Même si le vote est perdu, je vais pas rester assis à regarder les autres faire.", "sd_d6_1_0_oser"),
             ],
         },
         "d7_0_1": {
             "prompt": "Tomas tient son rapport contre lui. « Plus aucune exécution. Tu comprends ce que ça signifie ? »",
             "options": [
-                _sd_option("verifier", "Que c'est énorme, mais qu'on ferait mieux de vérifier avant de commencer à raconter n'importe quoi.", "sd_d7_0_1_verifier"),
-                _sd_option("espoir", "Que, pour une fois, des gens ont peut-être survécu à une journée entière sans craindre d'être exécutés. Rien que ça, c'est immense.", "sd_d7_0_1_espoir"),
-                _sd_option("motif", "Le silence de Kami et l'arrêt des exécutions ont commencé ensemble.", "sd_d7_0_1_motif", requires={"logique": 3}),
-                _sd_option("se_risquer", "Alors on devrait aller le dire aux autres tout de suite, quitte à se tromper. On ne peut pas garder ça pour nous.", "sd_d7_0_1_se_risquer"),
+                _sd_option("verifier", "Attends, si tu as trouvé quelque chose, montre-moi d'abord les chiffres.", "sd_d7_0_1_verifier"),
+                _sd_option("espoir", "Tu as l'air presque content. Pour une fois, j'espère que tes statistiques sont de bonnes nouvelles.", "sd_d7_0_1_espoir"),
+                _sd_option("motif", "Si Kami est toujours silencieuse, je me demande si ses systèmes fonctionnent encore normalement.", "sd_d7_0_1_motif", requires={"logique": 3}),
+                _sd_option("se_risquer", "Si tu as découvert quelque chose d'important, on devrait peut-être prévenir les autres tout de suite.", "sd_d7_0_1_se_risquer"),
             ],
         },
         "d7_1_0": {
@@ -132,19 +132,19 @@ init 3 python:
         "d8": {
             "prompt": "Kael serre sa photo disparue contre son souvenir. « Dis-moi que ce n'est pas quelqu'un d'ici. »",
             "options": [
-                _sd_option("promesse", "Je vais pas te mentir, Kael. J'en sais rien. Mais si tu veux chercher qui a fait ça, je viens avec toi.", "sd_d8_promesse"),
-                _sd_option("indices", "On devrait reprendre les horaires et voir qui pouvait entrer dans ta chambre. Il doit forcément rester une trace quelque part.", "sd_d8_indices"),
-                _sd_option("cible", "Le dessin et la photo ont la même fonction : nous rappeler quelqu'un.", "sd_d8_cible", requires={"logique": 3}),
-                _sd_option("garder_calme", "Je sais que t'as peur, Kael. Mais on va commencer par regarder ce qu'on a, sans accuser quelqu'un au hasard.", "sd_d8_garder_calme"),
+                _sd_option("promesse", "Kael, je comprends pas non plus pourquoi quelqu'un nous ferait ça. Mais on va chercher.", "sd_d8_promesse"),
+                _sd_option("indices", "On sait qu'on nous a pris deux objets personnels. On peut peut-être retracer qui est passé dans les chambres.", "sd_d8_indices"),
+                _sd_option("cible", "La photo de Léa et mon dessin ont le même point commun : ce sont des souvenirs de nos proches.", "sd_d8_cible", requires={"logique": 3}),
+                _sd_option("garder_calme", "Je veux pas qu'on accuse quelqu'un sans preuve. Ça nous aidera pas à retrouver nos affaires.", "sd_d8_garder_calme"),
             ],
         },
         "d9": {
             "prompt": "Ryn regarde les écrans. « Kami est revenue. On suit encore sa procédure ? »",
             "options": [
-                _sd_option("temps", "On fait semblant de suivre sa procédure pour l'instant. Chaque minute qu'on gagne peut aider les gens dans les campements.", "sd_d9_temps"),
-                _sd_option("prevenir", "On doit prévenir les gens, Ryn. Je préfère prendre le risque de me faire repérer plutôt que de les laisser sans rien savoir.", "sd_d9_prevenir"),
-                _sd_option("provoquer", "Je la provoque à l'écran pendant que vous détournez le signal.", "sd_d9_provoquer", requires={"sang_froid": 3}),
-                _sd_option("tenir_position", "On reste près des sorties et on se tient prêts à aider les autres si ça dégénère. Je veux pas qu'on se retrouve coincés.", "sd_d9_tenir_position"),
+                _sd_option("temps", "Ryn, je veux éviter le pire, moi aussi. On doit trouver comment obtenir l'unanimité.", "sd_d9_temps"),
+                _sd_option("prevenir", "Je comprends que tu sois furieux. Mais si on se menace entre nous, on risque de faire échouer le vote.", "sd_d9_prevenir"),
+                _sd_option("provoquer", "Si Kami cherche à nous piéger pendant le vote, je suis prêt à lui répondre devant tout le monde.", "sd_d9_provoquer", requires={"sang_froid": 3}),
+                _sd_option("tenir_position", "On a besoin que tout le monde garde son calme, même si on est terrifiés.", "sd_d9_tenir_position"),
             ],
         },
     }
