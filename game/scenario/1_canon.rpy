@@ -646,11 +646,26 @@ label _1_PNC_CONCLAVE:
     jump _1_PNC_CONCLAVE
 
 
+# Retour discret vers l'exploration après une interaction optionnelle.
+# La scène du point & click est rétablie avant le fondu pour éviter
+# le changement brusque entre les portraits du dialogue et les hotspots.
+label _1_PNC_CONCLAVE_SOFT_RETURN:
+    $ hideGroup()
+    $ _day1_pnc_scene = room_scene_current_number("conclave") or 1
+    if _day1_pnc_scene == 1:
+        scene conclave1 at adaptive_fullscreen with Dissolve(0.45)
+    elif _day1_pnc_scene == 2:
+        scene conclave2 at adaptive_fullscreen with Dissolve(0.45)
+    else:
+        scene conclave3 at adaptive_fullscreen with Dissolve(0.45)
+    jump _1_PNC_CONCLAVE
+
+
 label _1_PNC_CONCLAVE_PORTE:
     hide screen day1_conclave_pnc
     "La porte reste fermée."
     think "Sortir d'ici n'est visiblement pas une option."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_DEBARAS:
@@ -659,7 +674,7 @@ label _1_PNC_CONCLAVE_DEBARAS:
     "Un bip sec répond aussitôt."
     think "Permission denied."
     think "Cette porte aussi est fermée..."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_FINISH:
@@ -688,7 +703,7 @@ label _1_PNC_CONCLAVE_LYSA:
     noam "Comment tu le sens ?"
     lysa blase "Je préfère ne pas y penser. On verra ce que ça donne."
     hide lysa
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_RYN:
@@ -718,7 +733,7 @@ label _1_PNC_CONCLAVE_RYN:
     ryn triste "Alors j'aimerais comprendre ce qu'il se passe ici !"
     noam reflechit "C'est assez dur à expliquer, même nous on ne sait pas grand-chose, Kami va sans doute nous en dire plus..."
     ryn colere "Donc on doit encore attendre après elle... Génial..."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_MARA:
@@ -741,7 +756,7 @@ label _1_PNC_CONCLAVE_MARA:
     mara taquin "Ou plus, si affinité ?"
     noam peur "Hein ?!"
     mara rire_profond "Ah ah ! Je t'ai mis mal à l'aise, hein ?"
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_ELIAS:
@@ -765,7 +780,7 @@ label _1_PNC_CONCLAVE_ELIAS:
     elias surpris "Ah, tu l'as remarqué toi aussi ?"
     noam sourire "On m'a souvent dit que j'avais une très bonne ouïe."
     elias ecoute "Intéressant à savoir !"
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_KAEL:
@@ -787,7 +802,7 @@ label _1_PNC_CONCLAVE_KAEL:
     noam panique "Donc on ne pourra jamais passer par ces portes ?"
     kael raison "C'est pas ce que j'ai dit, il suffit qu'on nous donne l'accès et on pourra y accéder."
     noam neutre "J'espère..."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_TOMAS:
@@ -816,7 +831,7 @@ label _1_PNC_CONCLAVE_TOMAS:
     tomas determine "Enfin bref, pour faire simple d'habitude sur ce modèle il y a des boutons, là il n'y en a pas. Et évidemment on a pas de sortes de télécommande."
     noam surpris "Et c'est censé vouloir dire quoi ?"
     tomas raison "Qu'on ne peut pas éteindre cet écran. Il est en veille et peut se rallumer à tout moment."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_IRIS:
@@ -837,7 +852,7 @@ label _1_PNC_CONCLAVE_IRIS:
     iris taquin "Moi ? Non. Et puis quoi encore ?! Je dis juste que vous pouvez montrer que vous êtes paniqués !"
     iris blase "Pas besoin de faire les hypocrites à jouer les durs."
     iris desaccord "Ce n'est pas ça qui ouvrira ces portes de toute façon."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_ELEN:
@@ -859,7 +874,7 @@ label _1_PNC_CONCLAVE_ELEN:
     noam triste "Je crois que nos envies, Kami s'en contrefout."
     elen joie "J'espère au moins qu'il y aura des trucs bons à manger !"
     hide elen
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_NYRA:
@@ -879,7 +894,7 @@ label _1_PNC_CONCLAVE_NYRA:
     noam "Tu as une idée ?"
     nyra sourire "Kami avait annoncé qu'on devrait voter sur des trucs ? Vu la salle, ça se fera ici."
     nyra raison "Peut-être qu'il faut chercher quelque chose en rapport avec ça ?"
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_JULIAN:
@@ -900,7 +915,7 @@ label _1_PNC_CONCLAVE_JULIAN:
     julian determine "Franchement, qui voudrait rater ça ?"
     julian decontracte "On va peut-être changer les lois de Kami, tu te rends compte ?!"
     julian joie "Tout le monde regardera ! Évidemment !"
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_PNC_CONCLAVE_SAEL:
@@ -920,7 +935,7 @@ label _1_PNC_CONCLAVE_SAEL:
     sael taquin "Seulement quand quelqu'un écoutait derrière les murs."
     noam triste "J'imagine qu'on peut dire avec Kami qu'il y a toujours quelqu'un qui écoute derrière les murs."
     sael triste "Elle avait souvent raison, ma grand-mère."
-    jump _1_PNC_CONCLAVE
+    jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
 label _1_KAMI_APPARITION:
