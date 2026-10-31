@@ -1039,6 +1039,7 @@ label _3_TRANSITION_CONCLAVE:
 # ============================================================================
 
 label _3_DEBAT1_PHASE1:
+    julian inquietude "Il suffit qu'une personne vote contre pour qu'on perde tout. On fait quoi ?"
     call play_stat_dialogue("d3") from _call_stat_dialogue_d3
 
     pause 0.4
