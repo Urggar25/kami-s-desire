@@ -22,12 +22,12 @@ init 3 python:
     # approches enrichissent réellement une situation narrative majeure. Les variantes couvrent tous les points d'entrée jouables.
     STAT_DIALOGUES = {
         "d1": {
-            "prompt": "Lysa baisse la voix. « Tu crois qu'on peut vraiment se faire confiance ici ? »",
+            "prompt": "Lysa baisse la voix. « Tu crois qu'on peut leur faire confiance ? »",
             "options": [
-                _sd_option("prudent", "Franchement, j'en sais rien. On vient à peine d'arriver et j'ai déjà l'impression que tout le monde se méfie de tout le monde.", "sd_d1_prudent"),
-                _sd_option("solidaire", "Je dis pas qu'on doit se faire confiance les yeux fermés. Mais on peut au moins essayer de s'entraider, non ?", "sd_d1_solidaire"),
-                _sd_option("details", "Lysa, je t'ai vue trembler tout à l'heure. Tu vas pas me dire que tout va bien ?", "sd_d1_details", requires={"observation": 2}),
-                _sd_option("souffler", "Je vais déjà essayer de reprendre mon souffle. Depuis le réveil, j'ai les jambes en coton, et j'aime pas ça.", "sd_d1_souffler"),
+                _sd_option("prudent", "J'en sais rien. On les connaît pas, et eux non plus. Je préfère rester prudent.", "sd_d1_prudent"),
+                _sd_option("solidaire", "On n'est pas obligés de leur faire confiance tout de suite. Mais on peut essayer de se parler, non ?", "sd_d1_solidaire"),
+                _sd_option("details", "Je sais pas pour eux... Mais toi, ça va ? Je t'ai vue trembler tout à l'heure.", "sd_d1_details", requires={"observation": 2}),
+                _sd_option("souffler", "Avant de faire confiance à qui que ce soit, j'aimerais déjà comprendre comment on a atterri ici.", "sd_d1_souffler"),
             ],
         },
         "d2": {
@@ -232,24 +232,24 @@ label play_stat_dialogue(dialogue_id):
 
 # JOUR 1 — toujours disponible. Gain : +1 XP Observation.
 label sd_d1_prudent:
-    lysa "Enfin une réponse raisonnable. Garde les yeux ouverts."
+    lysa blase "Ouais. Pour une fois, on est d'accord. On va éviter de se précipiter."
     $ _stat_xp_results = award_stats_xp({"observation": 1})
     return
 
 # JOUR 1 — toujours disponible. Gain : +1 XP Empathie.
 label sd_d1_solidaire:
-    lysa "C'est naïf... mais je préfère encore ça à la panique."
+    lysa taquin "Tu veux déjà te faire des copains ? Bon... c'est toujours mieux que de se regarder de travers."
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
 # JOUR 1 — existe si Observation >= 2. Aucune XP.
 label sd_d1_details:
     "Lysa glisse ses mains sous la table."
-    lysa gene "Quoi ? J'ai froid. Ça arrive."
+    lysa blase "Quoi ? J'ai froid. Ça arrive."
     noam "Tu regardes aussi la porte toutes les dix secondes."
-    lysa "Je suis enfermée avec des inconnus et une IA qui joue à Dieu. Tu veux que je sois détendue ?"
+    lysa blase "Je me réveille avec des inconnus, je sais même pas où on est... Tu veux que je sois détendue ?"
     noam "Non. Je voulais juste savoir si ça allait."
-    lysa "Eh bien non. Et si tu pouvais éviter de le répéter, ça m'arrangerait."
+    lysa inquiet "Bah non, pas vraiment. Mais évite d'en parler aux autres, d'accord ?"
     noam "D'accord. Je garde ça pour moi."
     return
 
@@ -578,7 +578,7 @@ label sd_d9_provoquer:
 
 # JOUR d1 — nouvelle réponse ordinaire : +1 XP physique.
 label sd_d1_souffler:
-    lysa "Si tu comptes t'effondrer dès le premier jour, préviens-moi. J'ai pas envie de te porter."
+    lysa blase "Bonne question. Moi, je me souviens surtout qu'on nous a endormis. Ça donne envie de leur faire confiance, hein."
     $ _stat_xp_results = award_stats_xp({"physique": 1})
     return
 
