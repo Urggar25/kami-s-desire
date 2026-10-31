@@ -137,6 +137,7 @@ label _6_0_1_CAFETERIA:
     pause 0.8
 
     think "Ils sont presque tous là. Ils parlent un peu tous dans leur coin, mais pas vraiment ensemble."
+    mara agace "Alors, on va vraiment entrer au Conclave avec ce texte qu'on comprend toujours pas ?"
 
     call play_stat_dialogue("d6_0_1") from _call_stat_dialogue_d6_0_1
 
