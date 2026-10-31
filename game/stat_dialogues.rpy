@@ -104,10 +104,10 @@ init 3 python:
         "d7_0_1": {
             "prompt": "Tomas tient son rapport contre lui. « Plus aucune exécution. Tu comprends ce que ça signifie ? »",
             "options": [
-                _sd_option("verifier", "Attends, si tu as trouvé quelque chose, montre-moi d'abord les chiffres.", "sd_d7_0_1_verifier"),
-                _sd_option("espoir", "Tu as l'air presque content. Pour une fois, j'espère que tes statistiques sont de bonnes nouvelles.", "sd_d7_0_1_espoir"),
-                _sd_option("motif", "Si Kami est toujours silencieuse, je me demande si ses systèmes fonctionnent encore normalement.", "sd_d7_0_1_motif", requires={"logique": 3}),
-                _sd_option("se_risquer", "Si tu as découvert quelque chose d'important, on devrait peut-être prévenir les autres tout de suite.", "sd_d7_0_1_se_risquer"),
+                _sd_option("verifier", "Attends, zéro exécution depuis hier ? Tu es sûr que tes chiffres sont bons ?", "sd_d7_0_1_verifier"),
+                _sd_option("espoir", "Ça veut dire que personne n'a été exécuté depuis hier ? C'est énorme, Tomas !", "sd_d7_0_1_espoir"),
+                _sd_option("motif", "Le silence de Kami et l'arrêt des exécutions ont commencé au même moment. C'est pas une coïncidence.", "sd_d7_0_1_motif", requires={"logique": 3}),
+                _sd_option("se_risquer", "Il faut le dire aux autres. Ça fait peut-être une journée entière sans exécution !", "sd_d7_0_1_se_risquer"),
             ],
         },
         "d7_1_0": {
