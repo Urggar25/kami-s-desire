@@ -807,7 +807,7 @@ screen tablet_codex():
     modal True
     zorder 220
     default sel_pack = 0
-    default sel_entry = codex_first_entry_of_pack(0)
+    default sel_entry = "commandements" if day1_rules_stage == 2 else codex_first_entry_of_pack(0)
     default filt = "tous"
     $ cur_pack = CODEX_PACKS[sel_pack]
     $ back_to_tablet = [Hide("tablet_codex"), Show("tablet_home"), With(Dissolve(0.25))]
