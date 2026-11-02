@@ -1,68 +1,72 @@
-# J1 — guidage par un seul repère contextuel à la fois.
-# Positions calibrées sur les écrans 1920x1080, d'après les captures de jeu.
+# Tutoriel Jour 1 - animations par textures PNG du pack fourni.
+# Assets : game/images/ui/tutorial_conclave/guide_*.png
+# Les boutons existants restent seuls interactifs ; les textures sont décoratives.
 default day1_rules_stage = -1
 
-transform day1_guide_pulse:
-    alpha 0.42
-    linear 0.7 alpha 1.0
-    linear 0.7 alpha 0.42
+transform conclave_guide_panel_arrive:
+    alpha 0.0
+    yoffset 18
+    easeout 0.35 alpha 1.0 yoffset 0
+
+transform conclave_guide_arrow_move:
+    alpha 0.75
+    xoffset -12
+    easein 0.65 alpha 1.0 xoffset 5
+    easeout 0.65 alpha 0.75 xoffset -12
     repeat
 
-transform day1_guide_nudge:
-    yoffset -8
-    linear 0.6 yoffset 0
-    linear 0.6 yoffset -8
+transform conclave_guide_focus_blink:
+    alpha 0.45
+    zoom 0.94
+    easein 0.65 alpha 0.95 zoom 1.04
+    easeout 0.65 alpha 0.45 zoom 0.94
     repeat
-
-# Pointe fine dessinée avec des segments, pas avec des caractères spéciaux.
-screen day1_guide_marker(cx, cy, caption, label_x, label_y):
-    # La cible est matérialisée par 4 coins discontinus, sans carré plein.
-    fixed:
-        xpos cx - 39 ypos cy - 37 xysize (78, 74)
-        at day1_guide_pulse
-        add Solid("#73E4FF") xpos 0 ypos 0 xsize 15 ysize 2
-        add Solid("#73E4FF") xpos 0 ypos 0 xsize 2 ysize 15
-        add Solid("#73E4FF") xpos 63 ypos 0 xsize 15 ysize 2
-        add Solid("#73E4FF") xpos 76 ypos 0 xsize 2 ysize 15
-        add Solid("#73E4FF") xpos 0 ypos 72 xsize 15 ysize 2
-        add Solid("#73E4FF") xpos 0 ypos 59 xsize 2 ysize 15
-        add Solid("#73E4FF") xpos 63 ypos 72 xsize 15 ysize 2
-        add Solid("#73E4FF") xpos 76 ypos 59 xsize 2 ysize 15
-
-    # Flèche vers le bas : tige + deux branches géométriques.
-    fixed:
-        xpos cx - 14 ypos cy - 95 xysize (30, 52)
-        at day1_guide_nudge
-        add Solid("#E8FBFF") xpos 13 ypos 0 xsize 3 ysize 36
-        add Transform(Solid("#E8FBFF", xysize=(3, 19)), rotate=-45) xpos 7 ypos 29
-        add Transform(Solid("#E8FBFF", xysize=(3, 19)), rotate=45) xpos 19 ypos 29
-
-    text caption:
-        xpos label_x ypos label_y
-        size 18 color "#ECFAFF"
-        font "fonts/Rajdhani-SemiBold.ttf"
-        outlines [(2, "#071421", 0, 0)]
 
 screen day1_rules_guided_reading():
     zorder 360
     modal False
     on "show" action SetVariable("day1_rules_stage", 0)
 
+    # Les deux moyens ouvrent exactement la même tablette.
     if day1_rules_stage == 0:
         key "K_t" action [SetVariable("day1_rules_stage", 1), Show("tablet_home")]
     elif day1_rules_stage == 1 and not renpy.get_screen("tablet_home"):
         key "K_t" action Show("tablet_home")
 
+    # Aucune reprise du dialogue avant la fermeture de la tablette.
     if day1_rules_stage == 3 and not renpy.get_screen("tablet_codex") and not renpy.get_screen("tablet_home"):
         timer 0.25 action Return()
 
+    if day1_rules_stage in (0, 1, 2):
+        # Panneau illustré : un seul visible à la fois.
+        $ _step = day1_rules_stage + 1
+        add "images/ui/tutorial_conclave/guide_step_%d.png" % _step:
+            xpos 30 ypos 798 xysize (654, 175)
+            at conclave_guide_panel_arrive
+
     if day1_rules_stage == 0:
-        # Premier vrai bouton du HUD (coin supérieur droit).
-        use day1_guide_marker(1755, 159, "CLIQUEZ ICI OU APPUYEZ SUR T", 1450, 206)
+        # Vrai bouton tablette du HUD (1920x1080) : ~1754, 157.
+        add "images/ui/tutorial_conclave/guide_arrow.png":
+            xpos 1560 ypos 85 xysize (160, 104)
+            at conclave_guide_arrow_move
+        add "images/ui/tutorial_conclave/guide_focus.png":
+            xpos 1720 ypos 115 xysize (72, 80)
+            at conclave_guide_focus_blink
+
     elif day1_rules_stage == 1 and renpy.get_screen("tablet_home"):
-        # Icône livre CODEX sur la deuxième rangée.
-        use day1_guide_marker(467, 395, "OUVRIR LE CODEX", 502, 432)
+        # Icône CODEX : livre de la deuxième ligne de l'accueil tablette.
+        add "images/ui/tutorial_conclave/guide_arrow.png":
+            xpos 234 ypos 317 xysize (155, 100)
+            at conclave_guide_arrow_move
+        add "images/ui/tutorial_conclave/guide_focus.png":
+            xpos 397 ypos 322 xysize (133, 139)
+            at conclave_guide_focus_blink
+
     elif day1_rules_stage == 2 and renpy.get_screen("tablet_codex"):
-        # Première fiche de la colonne centrale, PAS le pack de gauche.
-        use day1_guide_marker(800, 328, "RÈGLES DU CONCLAVE", 840, 370)
-    # Après le clic sur la fiche, aucun guide n'est superposé à la lecture.
+        # Première carte de la colonne centrale (et non la colonne des PACKS).
+        add "images/ui/tutorial_conclave/guide_arrow.png":
+            xpos 525 ypos 248 xysize (151, 98)
+            at conclave_guide_arrow_move
+        add "images/ui/tutorial_conclave/guide_focus.png":
+            xpos 678 ypos 253 xysize (150, 105)
+            at conclave_guide_focus_blink
