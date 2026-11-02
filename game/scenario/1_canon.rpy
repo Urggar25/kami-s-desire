@@ -1206,36 +1206,12 @@ label _1_KAMI_APPARITION:
 
     kael reflechit "J'ai trouvé ! Vous avez une tablette sur vous, non ? Les infos sont dessus !"
 
-    # Jouer une animation qui montre comment ouvrir la tablette, jusqu'à ce que le joueur ouvre la tablette
-    # Dans l'onglet Codex, on va ajouter "Règles du Conclave" :
-        # On y ajoutera les règles suivantes :
-
-        # Règles générales :
-        # - La durée du Conclave est fixée à trente jours.
-        # - Au sein du Conclave les Commandements ne s'appliquent pas.
-        # - Kami n'interfera en rien dans les intrigues menées au sein du Conclave.
-        # - Toutes les salles du Conclave sont libres d'exploration.
-        # - Deux représentants ont été choisi par district pour les représenter.
-
-        # Règles de bienséances :
-        # - Il est interdit de dégrader volontairement des biens appartenant au Conclave.
-        # - Il est interdit d'initier un contact vers l'extérieur par le biais des appareils de communication.
-        # - Les représentants ont l'interdiction de quitter le district Orbite durant la durée du Conclave.
-
-        # Transmission et diffusion du Conclave :
-        # - Les salles du périmètre officiel du Conclave sont équipées de caméras dont les images sont retransmises en ditect via une cellule de diffusion.
-        # - Les chambres des représentants sont équipés d'un brouilleur activé par défaut qui empêche toute consultation par la cellule de diffusion et qui ne sont pas consultables avant une semaine.
-
-        # Fonctionnement des votes :
-        # - Chaque représentant rédige un amendement qu'il déposera de façon anonyme au cours de la première journée.
-        # - Un vote aura lieu tous les trois jours sur un amendement déposé par l'un des représentants.
-        # - Si un amendement est rédigé d'une façon peu claire, Kami se réserve le droit de le rédiger de façon à ce que la modification soit applucable.
-        # - Les représentants qui ne participent pas au vote, sont considérés comme s'abstenant.
-        # - Si au moins un des représentants vote contre un amendement, il est refusé. Autrement, il est adopté s'il a au moins une voix pour son adoption.
-        # - Les votes se déroulent à bulletin secret.
-
-        # Divers :
-        # - Kami est en mesure de modifier et d'ajouter des règles au cours des trente jours du Conclave.
+    # Première consultation interactive : la vraie tablette, son Codex et la fiche.
+    # L'entrée est débloquée AVANT l'ouverture du tutoriel.
+    $ unlock_codex_page("reglement_conclave", with_notification=False)
+    call screen day1_rules_guided_reading
+    think "Je parcours le règlement. Il y a beaucoup plus de détails que ce que Kami vient de nous raconter."
+    noam reflexion "Bon... au moins, les règles sont écrites noir sur blanc."
 
     iris reflexion "On est filmés en permanence. La pression publique est censée nous contenir."
     iris blase "Ah bah oui, ça va sûrement empêcher quelqu'un de péter un câble."
