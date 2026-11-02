@@ -940,6 +940,12 @@ label _1_PNC_CONCLAVE_SAEL:
 
 label _1_KAMI_APPARITION:
 
+    $ showGroup([
+        ("elias", "reflexion"),
+        ("noam", "reflexion"),
+        ("iris", "blase"),
+    ])
+
     elias surpris "Ah. C'est parti !"
 
     iris peur "Hein quoi ?!"
@@ -949,7 +955,6 @@ label _1_KAMI_APPARITION:
     play sound sfx_gresillement
     $ shake(8, 0.25)
 
-    voix "Diffusion centrale active."
     $ cam_move(0.5, 0.05, 3.00, 1.0)
 
     play music "music/bgm_system_override.mp3" fadein 0.4
@@ -957,9 +962,8 @@ label _1_KAMI_APPARITION:
     $ bc_off()
     show screen kami_broadcast_ui
 
-    kami "Ah… vous êtes tous réveillés."
-    kami "Parfait."
-    kami "J'avais peur d'avoir surestimé votre capacité à survivre à une sieste forcée."
+    kami "Ah… vous êtes tous réveillés. Parfait."
+    kami "J'avais peur d'avoir surestimé votre capacité à survivre à une petite sieste forcée."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -995,39 +999,33 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Du calme mon petit Ryn, c'est vrai que tu n'es pas au courant de tout..."
-    kami "Un test de vous."
-    kami "De vos choix."
-    kami "De l'humanité en général."
+    kami "Vous êtes les petits échantillons de l'Humanité que je vais m'amuser à tester."
+    kami "Je vais confronter vos rêves, vos choix, peut-être même ce qui vous rend si spécial.."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
-    kami "De votre capacité à obéir…"
+    kami "Mais aussi votre capacité à obéir…"
     kami "Et à prétendre que vous obéissez 'pour le bien commun'."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Croyez-moi."
-    kami "Ça ne sera pas si évident."
+    kami "Croyez-moi. Ça ne sera pas si évident."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
-    kami "Bienvenue au Conclave."
+    kami "Alors je vous le dis : bienvenue au Conclave."
 
     pause 0.5
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "Le Conclave durera trente jours."
-    kami "Trente jours exactement."
-    kami "Pas un de plus."
-    kami "Pas un de moins."
     kami "Et pendant ces trente jours, vous ne retournerez pas chez vous."
 
     scene bg_diffusion_triste at adaptive_fullscreen with dissolve
 
     kami "Trente jours pendant lesquels vous allez décider."
-    kami "Pas pour vous."
-    kami "Pour tous les autres…"
+    kami "Pas pour vous mais pour tous les autres."
 
     pause 0.4
 
@@ -1047,29 +1045,23 @@ label _1_KAMI_APPARITION:
     pause 0.4
 
     kami "Aujourd'hui, au cours de cette première journée…"
-    kami "Chacun de vous proposera une modification."
-    kami "On appellera ça un amendement."
-    kami "Un seul."
+    kami "Chacun de vous proposera une modification, un Amendement. Un seul."
     kami "Sur le commandement ou la règle de votre choix."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Vous pourrez renforcer une règle."
-    kami "L'adoucir."
-    kami "La tordre."
-    kami "Ou l'habiller d'un joli mot pour faire croire que c'est une avancée."
+    kami "Vous pourrez renforcer une règle. L'adoucir. La tordre. En ajouter ou en supprimer."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Vous êtes libres de proposer ce que vous voulez."
-    kami "Et personne ne saura jamais qui a proposé quoi."
+    kami "Et personne ne saura jamais qui a proposé quoi, le dépot sera entièrement anonyme !"
     kami "Vous êtes libres de ne penser qu'à vous ; ou à tous les autres."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Je vous laisse être créatifs."
-    kami "Après tout…"
-    kami "C'est ce que vous faites de mieux."
+    kami "Après tout… C'est sans doute ce que vous faites de mieux."
 
     pause 0.5
 
@@ -1080,116 +1072,83 @@ label _1_KAMI_APPARITION:
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "Ensuite ?"
-    kami "Vous votez."
-
-    kami "Tous les trois jours."
-    kami "Un vote. Ce sera simple, clair, binaire."
+    kami "Ensuite ? Vous voterez. Il y aura un vote tous les trois jours."
+    kami "Je vous offre la possibilité de changer les règles de mon monde. Mais, ça ne sera pas si simple."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Pour ou contre."
+    kami "Pour chaque amendement, vous pourrez voter pour, voter contre ou vous abstenir."
+    kami "Si vous ne votez pas, votre voix sera considéré comme une abstention."
 
     pause 0.3
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "Mais attention."
-    kami "Pour qu'un amendement soit adopté… Il faut l'UNANIMITÉ !"
+    kami "Mais attention !"
+    kami "Pour qu'un amendement soit adopté… Il faudra convaincre tous les autres !"
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     $ impact(10, 0.25, "#c81e2e")
 
-    kami "Personne ne devra voter contre. Sinon le vote est refusé."
-
-    pause 0.5
-
-    $ bc_show("nyra", "triste", px=-70, py=-55, pz=0.85)
-    nyra panne "Donc si une seule personne vote contre…"
-
-    $ bc_hide()
+    kami "Personne ne devra voter contre. Sinon, le vote est refusé."
 
     scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
 
-    kami "Alors l'amendement est rejeté. Il disparaît."
-    kami "Comme s'il n'avait jamais existé."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "Un peu comme certaines personnes."
-    kami "Dans d'autres circonstances."
+    kami "Dans ce cas, l'amendement disparait. Et votre espoir de changer le monde avec."
+    kami "Une seule petite voix contre et tout peut tomber à l'eau."
 
     pause 0.4
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "Vous allez apprendre quelque chose d'important."
-    kami "Très vite."
-
-    kami "Vous verrez, c'est pas si simple de mettre douze personnes d'accord."
-    kami "Et croyez-moi..."
-    kami "Vous allez vite comprendre pourquoi."
+    kami "Vous allez apprendre quelque chose d'important ici."
+    kami "Vous verrez, ce n'est pas si simple de mettre douze personnes d'accord."
+    kami "Alors imaginez convaincre des millions de gens."
 
     pause 0.6
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
-    kami "Oh !"
-    kami "Dernière précision."
+    kami "Petite précision qui a toute son importance :"
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
-    kami "Je ne participerai pas aux votes."
-    kami "Je ne donnerai pas mon avis."
-    kami "Je vous laisse vous débrouiller entre vous."
+    kami "Je ne participerai pas aux votes. Je ne donnerai pas mon avis."
+    kami "Je ne participerai à aucune de vos manigances. Je vous laisse vous débrouiller entre vous."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Je regarderai."
-    kami "Et j'apprendrai encore de vous."
+    kami "Je regarderai. Et j'apprendrai en vous observant."
 
     pause 0.4
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
 
-    kami "Et maintenant, la précision de taille."
-    kami "Ici… les Commandements n'ont pas lieu d'être."
+    kami "D'ailleurs, à ce sujet. Ici… les Commandements n'ont pas lieu d'être."
 
     kami "Vous pouvez vous battre."
     kami "Vous pouvez mentir."
     kami "Vous pouvez voler."
     kami "Vous pouvez vous entretuer."
-    kami "Je ne m'en mêlerai pas."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "Mais n'oubliez pas."
-    kami "Tout ce que vous faites est filmé et diffusé."
+    kami "Je ne m'en mêlerai pas. Je ne vous défendrai pas. Je ne vous en empêcherai pas."
+    kami "Ici, vous êtes libres de vos actions à condition qu'elles respectent le réglement du Conclave."
 
     pause 0.4
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-
-    kami "J'ai passé un an à vous observer."
-    kami "Vos débats."
-    kami "Vos justifications."
-    kami "Vos excuses."
+    kami "J'ai passé un an à vous observer. Vos débats. Vos justifications. Vos excuses. Votre haine ou votre fascination."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
     kami "Ce serait dommage de s'arrêter maintenant."
 
     pause 0.6
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-
-    kami "Le Conclave commence, je vous donne à tous les autorisations pour explorer librement le Conclave."
+    kami "Le Conclave commence, je vous donne à tous les autorisations pour l'explorer librement."
     kami "Les portes vous sont désormais ouvertes."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "Faites connaissance."
-    kami "Après tout, vous allez devoir vous supporter pendant un mois."
+    kami "Faites bien connaissance. Après tout, vous allez devoir vous supporter pendant un mois."
 
     pause 0.5
 
@@ -1219,29 +1178,64 @@ label _1_KAMI_APPARITION:
     ])
 
     ryn colere "C'est quoi ce délire ?"
-    elias panique "Attends, trente jours ? C'est chaud !"
+    elias panique "Attends, sérieux, on sera là pendant trente jours ? C'est chaud !"
     iris blase "On est pas sorti de l'auberge."
 
-    noam reflexion "On va devoir vraiment passer trente jours ici…"
+    think "On va devoir vraiment passer trente jours ici…"
 
-    lysa doute "L'unanimité ? Ah ouais. Rien que ça."
-    lysa blase "Un seul vote contre et tout le monde est bloqué. Sérieux ?"
+    lysa doute "Mmmhh, pire que ça ce sont ses règles tordues.."
+    lysa blase "Un seul vote contre et tout le monde est bloqué. Sérieusement ?"
     lysa colere "Avec ça, on va jamais réussir à se mettre d'accord."
 
-    tomas raison "Ou alors... il faut faire des compromis. Enfin, pour une fois."
+    tomas raison "Pou-Pourquoi tu dis ça... Tu crois qu'on arrivera pas à f-faire des compromis ?"
 
-    nyra triste "C'est vrai que ça va être dur de tout le temps avoir l'unanimité."
-    nyra neutre "Mais si c'est nous qui proposons les modifications, ce n'est pas impossible."
+    nyra triste "Elle a raison, on peut croire que c'est simple mais c'est loin d'être le cas."
+    nyra neutre "Mais... Si c'est nous qui avons le choix des modifications, ce n'est pas impossible."
 
     elen joie "Mais on peut vraiment proposer n'importe quoi ? C'est énooorme !"
 
-    lysa blase "Quelle naïveté..."
+    lysa blase "Quelle naïveté... Tu crois vraiment qu'elle nous laissera faire ?"
 
     mara rire "Vous parlez comme si on avait gagné au loto."
-    mara taquin "On est toujours dans une cage, en train d'obéir aux règles de Madame."
+    mara taquin "On est toujours dans la même merde, en train d'obéir aux règles de Madame."
 
     ryn colere "Attendez. Ici, les Commandements ne s'appliquent pas ?!"
     ryn colere "Si quelqu'un pète un câble, on fait quoi ?"
+
+    nyra reflechit "Attends, ces règles doivent bien être écris quelque part."
+
+    kael reflechit "J'ai trouvé ! Vous avez une tablette sur vous, non ? Les infos sont dessus !"
+
+    # Jouer une animation qui montre comment ouvrir la tablette, jusqu'à ce que le joueur ouvre la tablette
+    # Dans l'onglet Codex, on va ajouter "Règles du Conclave" :
+        # On y ajoutera les règles suivantes :
+
+        # Règles générales :
+        # - La durée du Conclave est fixée à trente jours.
+        # - Au sein du Conclave les Commandements ne s'appliquent pas.
+        # - Kami n'interfera en rien dans les intrigues menées au sein du Conclave.
+        # - Toutes les salles du Conclave sont libres d'exploration.
+        # - Deux représentants ont été choisi par district pour les représenter.
+
+        # Règles de bienséances :
+        # - Il est interdit de dégrader volontairement des biens appartenant au Conclave.
+        # - Il est interdit d'initier un contact vers l'extérieur par le biais des appareils de communication.
+        # - Les représentants ont l'interdiction de quitter le district Orbite durant la durée du Conclave.
+
+        # Transmission et diffusion du Conclave :
+        # - Les salles du périmètre officiel du Conclave sont équipées de caméras dont les images sont retransmises en ditect via une cellule de diffusion.
+        # - Les chambres des représentants sont équipés d'un brouilleur activé par défaut qui empêche toute consultation par la cellule de diffusion et qui ne sont pas consultables avant une semaine.
+
+        # Fonctionnement des votes :
+        # - Chaque représentant rédige un amendement qu'il déposera de façon anonyme au cours de la première journée.
+        # - Un vote aura lieu tous les trois jours sur un amendement déposé par l'un des représentants.
+        # - Si un amendement est rédigé d'une façon peu claire, Kami se réserve le droit de le rédiger de façon à ce que la modification soit applucable.
+        # - Les représentants qui ne participent pas au vote, sont considérés comme s'abstenant.
+        # - Si au moins un des représentants vote contre un amendement, il est refusé. Autrement, il est adopté s'il a au moins une voix pour son adoption.
+        # - Les votes se déroulent à bulletin secret.
+
+        # Divers :
+        # - Kami est en mesure de modifier et d'ajouter des règles au cours des trente jours du Conclave.
 
     iris reflexion "On est filmés en permanence. La pression publique est censée nous contenir."
     iris blase "Ah bah oui, ça va sûrement empêcher quelqu'un de péter un câble."
