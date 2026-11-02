@@ -1,26 +1,53 @@
-# Guidage visuel Jour 1 — balises HUD précises, sans glyphes de flèche.
+# J1 — guidage par un seul repère contextuel à la fois.
+# Positions calibrées sur les écrans 1920x1080, d'après les captures de jeu.
 default day1_rules_stage = -1
 
-transform rules_marker_breathe:
-    alpha 0.65
-    linear 0.65 alpha 1.0
-    linear 0.65 alpha 0.65
+transform day1_guide_pulse:
+    alpha 0.42
+    linear 0.7 alpha 1.0
+    linear 0.7 alpha 0.42
     repeat
 
-# Pointe dessinée par deux traits inclinés (aucune dépendance à une police).
-screen rules_guide_pointer(x, y, w, h, direction="left"):
+transform day1_guide_nudge:
+    yoffset -8
+    linear 0.6 yoffset 0
+    linear 0.6 yoffset -8
+    repeat
+
+# Pointe fine dessinée avec des segments, pas avec des caractères spéciaux.
+screen day1_guide_marker(cx, cy, caption, label_x, label_y):
+    # La cible est matérialisée par 4 coins discontinus, sans carré plein.
     fixed:
-        xpos x ypos y xysize (w, h)
-        # Cadre léger qui englobe uniquement la vraie cible interactive.
-        add Solid("#60DDFE") xpos 0 ypos 0 xsize w ysize 2
-        add Solid("#60DDFE") xpos 0 ypos (h - 2) xsize w ysize 2
-        add Solid("#60DDFE") xpos 0 ypos 0 xsize 2 ysize h
-        add Solid("#60DDFE") xpos (w - 2) ypos 0 xsize 2 ysize h
+        xpos cx - 39 ypos cy - 37 xysize (78, 74)
+        at day1_guide_pulse
+        add Solid("#73E4FF") xpos 0 ypos 0 xsize 15 ysize 2
+        add Solid("#73E4FF") xpos 0 ypos 0 xsize 2 ysize 15
+        add Solid("#73E4FF") xpos 63 ypos 0 xsize 15 ysize 2
+        add Solid("#73E4FF") xpos 76 ypos 0 xsize 2 ysize 15
+        add Solid("#73E4FF") xpos 0 ypos 72 xsize 15 ysize 2
+        add Solid("#73E4FF") xpos 0 ypos 59 xsize 2 ysize 15
+        add Solid("#73E4FF") xpos 63 ypos 72 xsize 15 ysize 2
+        add Solid("#73E4FF") xpos 76 ypos 59 xsize 2 ysize 15
+
+    # Flèche vers le bas : tige + deux branches géométriques.
+    fixed:
+        xpos cx - 14 ypos cy - 95 xysize (30, 52)
+        at day1_guide_nudge
+        add Solid("#E8FBFF") xpos 13 ypos 0 xsize 3 ysize 36
+        add Transform(Solid("#E8FBFF", xysize=(3, 19)), rotate=-45) xpos 7 ypos 29
+        add Transform(Solid("#E8FBFF", xysize=(3, 19)), rotate=45) xpos 19 ypos 29
+
+    text caption:
+        xpos label_x ypos label_y
+        size 18 color "#ECFAFF"
+        font "fonts/Rajdhani-SemiBold.ttf"
+        outlines [(2, "#071421", 0, 0)]
 
 screen day1_rules_guided_reading():
     zorder 360
     modal False
     on "show" action SetVariable("day1_rules_stage", 0)
+
     if day1_rules_stage == 0:
         key "K_t" action [SetVariable("day1_rules_stage", 1), Show("tablet_home")]
     elif day1_rules_stage == 1 and not renpy.get_screen("tablet_home"):
@@ -30,45 +57,12 @@ screen day1_rules_guided_reading():
         timer 0.25 action Return()
 
     if day1_rules_stage == 0:
-        # Position dérivée du HUD 330px aligné à droite : icône tablette en 1er.
-        use rules_guide_pointer(1495, 110, 57, 47)
-        fixed:
-            xpos 1195 ypos 122 xysize (285, 70)
-            text "OUVRIR LA TABLETTE":
-                xpos 0 ypos 3 size 21 color "#F1FBFF"
-                font "fonts/Rajdhani-SemiBold.ttf"
-                outlines [(2, "#071421", 0, 0)]
-            text "Cliquez sur l'icône ou appuyez sur T":
-                xpos 0 ypos 31 size 16 color "#B9E9F6"
-                font "fonts/Barlow-Light.ttf"
-                outlines [(2, "#071421", 0, 0)]
-            add Solid("#60DDFE") xpos 270 ypos 17 xsize 20 ysize 2 at rules_marker_breathe
+        # Premier vrai bouton du HUD (coin supérieur droit).
+        use day1_guide_marker(1755, 159, "CLIQUEZ ICI OU APPUYEZ SUR T", 1450, 206)
     elif day1_rules_stage == 1 and renpy.get_screen("tablet_home"):
-        # Icône Codex : seconde rangée, tout à gauche de la vraie tablette.
-        use rules_guide_pointer(369, 284, 129, 127)
-        fixed:
-            xpos 510 ypos 313 xysize (250, 77)
-            add Solid("#60DDFE") xpos 0 ypos 24 xsize 24 ysize 2 at rules_marker_breathe
-            text "OUVRIR LE CODEX":
-                xpos 39 ypos 4 size 22 color "#F1FBFF"
-                font "fonts/Rajdhani-SemiBold.ttf"
-                outlines [(2, "#071421", 0, 0)]
-            text "Sélectionnez cette application":
-                xpos 39 ypos 34 size 15 color "#B9E9F6"
-                font "fonts/Barlow-Light.ttf"
-                outlines [(2, "#071421", 0, 0)]
+        # Icône livre CODEX sur la deuxième rangée.
+        use day1_guide_marker(467, 395, "OUVRIR LE CODEX", 502, 432)
     elif day1_rules_stage == 2 and renpy.get_screen("tablet_codex"):
-        # Première carte de la colonne ENTRÉES (maquette tablette en 1920x1080).
-        use rules_guide_pointer(438, 229, 251, 63)
-        fixed:
-            xpos 710 ypos 233 xysize (270, 66)
-            add Solid("#60DDFE") xpos 0 ypos 23 xsize 24 ysize 2 at rules_marker_breathe
-            text "RÈGLES DU CONCLAVE":
-                xpos 36 ypos 5 size 21 color "#F1FBFF"
-                font "fonts/Rajdhani-SemiBold.ttf"
-                outlines [(2, "#071421", 0, 0)]
-            text "Ouvrez cette entrée":
-                xpos 36 ypos 34 size 15 color "#B9E9F6"
-                font "fonts/Barlow-Light.ttf"
-                outlines [(2, "#071421", 0, 0)]
-    # L'aide disparaît complètement dès que l'entrée est ouverte.
+        # Première fiche de la colonne centrale, PAS le pack de gauche.
+        use day1_guide_marker(800, 328, "RÈGLES DU CONCLAVE", 840, 370)
+    # Après le clic sur la fiche, aucun guide n'est superposé à la lecture.
