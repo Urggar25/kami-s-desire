@@ -29,7 +29,7 @@ screen day1_rules_guided_reading():
             if day1_rules_stage == 0:
                 text "1 / 3 — Ouvrez votre tablette.":
                     size 19 color "#F1F9FF"
-                textbutton "OUVRIR LA TABLETTE [T]":
+                textbutton "OUVRIR LA TABLETTE [[T]":
                     action [SetVariable("day1_rules_stage", 1), Show("tablet_home")]
                     text_size 19 text_color "#FFFFFF" background Solid("#13526C") hover_background Solid("#207C9D")
             elif day1_rules_stage == 1:
@@ -37,7 +37,7 @@ screen day1_rules_guided_reading():
                     at day1_rules_hint_pulse
                     size 19 color "#F1F9FF"
                 if not renpy.get_screen("tablet_home"):
-                    textbutton "RÉOUVRIR LA TABLETTE [T]":
+                    textbutton "RÉOUVRIR LA TABLETTE [[T]":
                         action Show("tablet_home")
                         text_size 17 text_color "#FFFFFF" background Solid("#13526C") hover_background Solid("#207C9D")
             elif day1_rules_stage == 2:
