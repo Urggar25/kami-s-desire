@@ -147,7 +147,7 @@ screen tablet_home():
                 xsize 1920 ysize 1080
                 focus_mask True
                 at tablet_phase_fade(0.2)
-                action [Hide("tablet_home"), Show("tablet_codex"), With(Dissolve(0.25))]
+                action [If(day1_rules_stage == 1, SetVariable("day1_rules_stage", 2), NullAction()), Hide("tablet_home"), Show("tablet_codex"), With(Dissolve(0.25))]
 
             imagebutton:
                 idle Transform("images/ui/tablette/succes.png", xysize=(1920, 1080), fit="contain")
