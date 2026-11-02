@@ -1,83 +1,72 @@
-# Tutoriel de navigation contextuel — Jour 1.
-# Aucune fenêtre opaque sur les personnages : aide discrète et contextuelle.
+# Jour 1 — flèches contextuelles sur les vrais contrôles de l'interface.
+# Ne substitue aucun écran : le joueur doit ouvrir la tablette, le Codex, puis l'entrée.
 default day1_rules_stage = -1
 
-transform day1_rules_soft_pulse:
-    alpha 0.78
-    linear 0.7 alpha 1.0
-    linear 0.7 alpha 0.78
+transform day1_rules_arrow_bounce:
+    alpha 0.98
+    xoffset -12
+    linear 0.55 xoffset 0
+    linear 0.55 xoffset -12
+    repeat
+
+transform day1_rules_arrow_down:
+    alpha 0.98
+    yoffset -12
+    linear 0.55 yoffset 0
+    linear 0.55 yoffset -12
     repeat
 
 screen day1_rules_guided_reading():
-    zorder 260
+    zorder 360
     modal False
     on "show" action SetVariable("day1_rules_stage", 0)
+
+    # Le raccourci T et le bouton réel du HUD déclenchent la même transition.
     if day1_rules_stage == 0:
         key "K_t" action [SetVariable("day1_rules_stage", 1), Show("tablet_home")]
     elif day1_rules_stage == 1 and not renpy.get_screen("tablet_home"):
         key "K_t" action Show("tablet_home")
-    # Reprise du récit seulement après la vraie consultation, tablette fermée.
+
+    # Ne pas reprendre le dialogue tant que la lecture est en cours.
     if day1_rules_stage == 3 and not renpy.get_screen("tablet_codex") and not renpy.get_screen("tablet_home"):
         timer 0.25 action Return()
 
     if day1_rules_stage == 0:
-        frame:
-            xalign 0.98 ypos 182 xsize 350
-            padding (18, 14)
-            background Solid("#071929F2")
-            vbox:
-                spacing 8
-                text "01  /  TABLETTE":
-                    size 20 color "#67d9ff" font "fonts/Rajdhani-SemiBold.ttf"
-                text "Accédez aux informations du Conclave.":
-                    xmaximum 315 size 16 color "#edf8ff"
-                textbutton "OUVRIR  ·  T":
-                    action [SetVariable("day1_rules_stage", 1), Show("tablet_home")]
-                    text_font "fonts/Rajdhani-SemiBold.ttf" text_size 19 text_color "#ffffff"
-                    background Solid("#126080") hover_background Solid("#248cac")
-    elif day1_rules_stage == 1:
-        frame:
-            xalign 0.5 ypos 870 xsize 590
-            padding (16, 12)
-            background Solid("#071929F0")
-            at day1_rules_soft_pulse
-            hbox:
-                spacing 16
-                text "02  /  CODEX":
-                    size 21 color "#67d9ff" font "fonts/Rajdhani-SemiBold.ttf"
-                text "Sur la tablette, sélectionnez l'application CODEX.":
-                    xmaximum 365 size 17 color "#f1f8ff"
-            if not renpy.get_screen("tablet_home"):
-                textbutton "RÉOUVRIR LA TABLETTE":
-                    xalign 0.97 ypos 49
-                    action Show("tablet_home")
-                    text_size 14 text_color "#8ce4ff" background None
-    elif day1_rules_stage == 2:
-        frame:
-            xalign 0.5 ypos 880 xsize 710
-            padding (15, 12)
-            background Solid("#071929F0")
-            at day1_rules_soft_pulse
-            hbox:
-                spacing 16
-                text "03  /  RÈGLEMENT":
-                    size 20 color "#67d9ff" font "fonts/Rajdhani-SemiBold.ttf"
-                text "LE CONCLAVE  →  Règles du Conclave":
-                    size 17 color "#f1f8ff"
-            if not renpy.get_screen("tablet_codex"):
-                textbutton "REVENIR AU CODEX":
-                    xalign 0.97 ypos 46
-                    action [Hide("tablet_home"), Show("tablet_codex")]
-                    text_size 14 text_color "#8ce4ff" background None
-    elif day1_rules_stage == 3:
-        if renpy.get_screen("tablet_codex") or renpy.get_screen("tablet_home"):
-            frame:
-                xalign 0.5 ypos 880 xsize 650
-                padding (16, 13)
-                background Solid("#071929F0")
-                hbox:
-                    spacing 15
-                    text "✓  RÈGLEMENT CONSULTÉ":
-                        size 20 color "#9cebd0" font "fonts/Rajdhani-SemiBold.ttf"
-                    text "Prenez le temps de lire, puis fermez la tablette.":
-                        size 16 color "#f1f8ff"
+        # HUD coin supérieur droit : premier bouton de la rangée, sous JOUR.
+        text "▼":
+            xpos 1733 ypos 152 size 68 color "#74E5FF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#062334", 0, 0)]
+            at day1_rules_arrow_down
+        text "TABLETTE  ·  OU TOUCHE T":
+            xpos 1350 ypos 198 size 19 color "#F2FBFF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#00121D", 0, 0)]
+    elif day1_rules_stage == 1 and renpy.get_screen("tablet_home"):
+        # Le bouton CODEX est une icône sur la tablette existante.
+        # La flèche ne capte pas les clics : c'est le vrai imagebutton.
+        text "➤":
+            xpos 1100 ypos 580 size 74 color "#74E5FF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#062334", 0, 0)]
+            at day1_rules_arrow_bounce
+        text "CODEX":
+            xpos 1025 ypos 660 size 24 color "#FFFFFF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#00121D", 0, 0)]
+    elif day1_rules_stage == 2 and renpy.get_screen("tablet_codex"):
+        # Première entrée de la liste LE CONCLAVE, sur la vitre inclinée.
+        text "➤":
+            xpos 480 ypos 264 size 66 color "#74E5FF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#062334", 0, 0)]
+            at day1_rules_arrow_bounce
+        text "RÈGLES DU CONCLAVE":
+            xpos 465 ypos 339 size 20 color "#FFFFFF"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#00121D", 0, 0)]
+    elif day1_rules_stage == 3 and (renpy.get_screen("tablet_codex") or renpy.get_screen("tablet_home")):
+        text "RÈGLEMENT OUVERT  —  REFERMEZ LA TABLETTE POUR CONTINUER":
+            xalign 0.5 ypos 925 size 19 color "#ACF6D8"
+            font "fonts/Rajdhani-SemiBold.ttf"
+            outlines [(2, "#00121D", 0, 0)]
