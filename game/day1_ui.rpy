@@ -399,7 +399,7 @@ screen day_period_hud_content():
             xalign 1.0
             ypos 126
             spacing 6
-            use day_period_hud_action_button("tablet", Show("tablet_home"), True)
+            use day_period_hud_action_button("tablet", [If(day1_rules_stage == 0, SetVariable("day1_rules_stage", 1), NullAction()), Show("tablet_home")], True)
             use day_period_hud_action_button("dossier", [Function(investigation_sync_legacy_save), Show("investigation_dossier", persistent_access=True)], investigation_story_available())
             use day_period_hud_action_button("menu", ShowMenu("system_menu"), True)
 
