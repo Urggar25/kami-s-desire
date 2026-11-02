@@ -14,6 +14,8 @@ screen day1_rules_guided_reading():
     on "show" action SetVariable("day1_rules_stage", 0)
     if day1_rules_stage == 0:
         key "K_t" action [SetVariable("day1_rules_stage", 1), Show("tablet_home")]
+    elif day1_rules_stage == 1:
+        key "K_t" action Show("tablet_home")
     timer 0.15 repeat True action If(day1_rules_stage == 3, Return(), NullAction())
 
     frame:
@@ -34,10 +36,18 @@ screen day1_rules_guided_reading():
                 text "2 / 3 — Touchez l'icône CODEX sur votre tablette.":
                     at day1_rules_hint_pulse
                     size 19 color "#F1F9FF"
+                if not renpy.get_screen("tablet_home"):
+                    textbutton "RÉOUVRIR LA TABLETTE [T]":
+                        action Show("tablet_home")
+                        text_size 17 text_color "#FFFFFF" background Solid("#13526C") hover_background Solid("#207C9D")
             elif day1_rules_stage == 2:
                 text "3 / 3 — Dans LE CONCLAVE, ouvrez « Règles du Conclave ».":
                     at day1_rules_hint_pulse
                     size 19 color "#F1F9FF"
+                if not renpy.get_screen("tablet_codex"):
+                    textbutton "RETOURNER AU CODEX":
+                        action [Hide("tablet_home"), Show("tablet_codex")]
+                        text_size 17 text_color "#FFFFFF" background Solid("#13526C") hover_background Solid("#207C9D")
             else:
                 text "Règlement ouvert. Bonne lecture !":
                     size 19 color "#A2F2C9"
