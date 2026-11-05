@@ -1229,26 +1229,29 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 # NYRA — Fiche de personnage
 
 ## 1. Identité
-- **Prénom :** Nyra
+- **Prénom :** Nyra.
 - **Âge :** environ 19–20 ans.
 - **District :** Orbite, secteur de la flotte mobile.
 - **Rôle :** représentante d'Orbite au Conclave.
-- **Origine :** famille dirigeant une petite compagnie de vaisseaux, active dans le commerce et le transit.
-- **Avant le Conclave :** six mois de détention à Syelena, satellite-prison en orbite terrestre, sans condamnation faute de preuves.
+- **Origine :** issue d'une famille liée au commerce et au transit spatial ; elle a ensuite dirigé son propre équipage et une flotte de vaisseaux.
+- **Avant le Conclave :** ancienne cheffe de flotte et hors-la-loi de l'espace, détenue pendant six mois à **Syelena**, satellite-prison en orbite terrestre, sans condamnation pour violation d'un Commandement.
+- **Enjeu personnel caché :** à la fin du Conclave (jour 30), Nyra doit être renvoyée à Syelena. Elle est prête à prendre des risques extrêmes pour éviter ce retour.
 
 ## 2. Caractère
+- **Ambitieuse :** refuse de se contenter d'une place secondaire ; elle veut décider elle-même de son destin.
+- **Amoureuse de la liberté :** la vie en vaisseau, les voyages et les risques lui manquent plus que tout.
 - **Chaleureuse :** donne à ses interlocuteurs le sentiment d'être vraiment écoutés.
 - **Perspicace :** repère rapidement les désirs et les points de vulnérabilité des autres.
 - **Négociatrice :** sait concilier des intérêts opposés en trouvant le levier adapté.
-- **Stratège :** observe une situation avant d'y prendre position.
+- **Stratège :** observe une situation avant d'y prendre position ; son passé de commandante lui a appris à prévoir plusieurs issues.
 - **Manipulatrice :** oriente les choix d'autrui sans donner l'impression d'insister.
 - **Secrète :** recueille énormément d'informations et livre très peu d'elle-même.
 - **Adaptable :** module sa façon de parler selon la personne.
-- **Loyale de manière sélective :** protège d'abord sa flotte, sa famille et ses objectifs.
-- **Patiente :** peut attendre longtemps une occasion favorable.
-- **Ambivalente :** ses attentions sont sincères dans l'instant, mais souvent liées à un calcul.
+- **Loyale de manière sélective :** protège d'abord ses anciens compagnons, sa flotte et ses objectifs.
+- **Patiente :** peut attendre une occasion favorable, mais la perspective d'un retour en prison peut briser son sang-froid.
+- **Ambivalente :** ses attentions peuvent être sincères tout en servant une stratégie.
 
-**Contradiction centrale :** Nyra sait créer un sentiment d'intimité chez presque tout le monde, mais ne sait plus toujours reconnaître une relation qui ne serait pas fondée sur un échange d'intérêts.
+**Contradiction centrale :** Nyra sait créer un sentiment d'intimité et susciter la loyauté, mais sa peur obsessionnelle de perdre sa liberté peut la conduire à trahir ou sacrifier des personnes auxquelles elle tient réellement.
 
 ## 3. Façon de s'exprimer
 - **Registre :** chaleureux, souple et accordé à celui de son interlocuteur.
@@ -1256,33 +1259,52 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 - Reformule les besoins de l'autre avant de proposer une solution.
 - Utilise peu d'affirmations brutales ; amène ses interlocuteurs à formuler eux-mêmes la conclusion recherchée.
 - Ne change pas visiblement de ton lorsqu'elle négocie.
-- Détourne avec élégance toute question sur son passé ou sa flotte.
+- Détourne avec élégance toute question sur son passé, sa flotte ou son emprisonnement.
 - Ses silences servent à laisser l'autre parler davantage.
+- Lorsqu'on l'acculе sur la possibilité d'être à nouveau enfermée, son calme peut se fissurer et laisser apparaître la commandante autoritaire qu'elle était.
 
 **Exemples :** « Qu'est-ce que tu voudrais obtenir, au fond ? » ; « Je comprends. Et si on trouvait une solution qui te laisse ce choix ? » ; « Syelena ? C'était... instructif. Tu disais ? »
 
 ## 4. Stéréotype ambivalent
-**La manipulatrice souriante qui risque de ne jamais savoir si quelqu'un l'aime réellement.**
+**La manipulatrice souriante qui fut une redoutable commandante, mais qui ne supporte pas d'être prisonnière.**
 
 - **Stéréotype :** femme calme, séduisante, brillante en négociation et toujours maître d'elle-même.
-- **Contrepoint :** ses attentions ne sont pas systématiquement feintes ; elle ressent parfois une affection qu'elle ne sait plus séparer de la stratégie.
+- **Contrepoint :** elle fut une cheffe de flotte audacieuse, capable de violence et de décisions impitoyables ; ses attentions envers ses proches ne sont pas systématiquement feintes.
 - **Ambivalence :** elle rend les relations plus fluides, mais les transforme aussi en réseaux de dettes implicites.
-- **Contradiction fondamentale :** elle maîtrise les désirs des autres mieux qu'elle ne comprend ses propres sentiments.
+- **Contradiction fondamentale :** elle maîtrise les désirs des autres mieux qu'elle n'accepte sa propre vulnérabilité face à l'enfermement.
 
 ## 5. Histoire personnelle et fantômes
-- A grandi au sein d'une famille dirigeant une petite compagnie de vaisseaux de la flotte mobile d'Orbite.
-- A appris tôt les règles du commerce, du transit et de la négociation.
-- A vécu dans un milieu où la survie d'un équipage dépendait autant des accords que de la technique.
-- La flotte a pu profiter de brouilleurs et d'activités situées dans des zones grises au regard des règles de Kami.
-- A été détenue pendant six mois à **Syelena**, sans être finalement condamnée.
-- Y a subi des interrogatoires et a refusé de donner des renseignements compromettant sa flotte. **(Fantôme : peur de la trahison et de l'enfermement.)**
-- A observé les détenues, les gardiens et les hiérarchies internes, puis organisé des échanges de services améliorant la vie commune.
-- A laissé derrière elle un réseau de personnes reconnaissantes ou redevables.
-- Soupçonne qu'une personne a pu la dénoncer, sans savoir qui. **(Fantôme : impossibilité d'accorder une confiance entière.)**
-- Souhaite retrouver sa flotte et en prendre le contrôle.
-- A peu à peu appris à considérer les relations comme des accords négociables. **(Fantôme : difficulté à distinguer l'affection d'une relation d'intérêt.)**
 
-**Fantôme principal :** l'emprisonnement à Syelena, assorti de la suspicion qu'un proche l'ait dénoncée. Elle craint surtout de perdre à nouveau le contrôle de sa liberté et de ses attaches.
+### Avant la prise de pouvoir de Kami
+- A grandi dans une famille possédant une activité de commerce et de transit spatial ; elle a appris tôt la négociation, le transport et les rapports de force entre équipages.
+- A pris la tête de **son propre équipage**, puis d'un **vaisseau amiral accompagné d'une petite flotte** dont les membres lui étaient profondément loyaux.
+- A vécu en parcourant librement l'espace : contrebande, commerce clandestin, exploitation de ressources lointaines dans le système spatial et expéditions de prospection.
+- S'est affrontée à de nombreux clans rivaux et en a anéanti plusieurs. Elle n'était pas seulement commerçante : elle savait diriger une flotte au combat.
+- Considérait cette existence dangereuse et imprévisible comme les meilleures années de sa vie.
+
+### La chute
+- L'arrivée de Kami et de ses Commandements a profondément bouleversé le trafic, les déplacements et les activités de la flotte.
+- Au cours d'une mission dans **un petit vaisseau de prospection**, Nyra et ses camarades ont été attaqués par une patrouille particulièrement nombreuse de drones contrôlés par Kami.
+- Ses camarades présents à bord ont péri dans l'affrontement. **Nyra a simulé sa propre mort**, mais a finalement été capturée et emprisonnée.
+- Kami la tenait pour une hors-la-loi dangereuse, sans avoir établi qu'elle avait enfreint un Commandement applicable. La détention ne reposait donc pas sur une condamnation pour violation connue d'un Commandement.
+
+### Syelena
+- Nyra a passé **six mois à Syelena**, satellite-prison en orbite terrestre.
+- La prison abritait de nombreux détenus déjà incarcérés **avant** la prise de pouvoir de Kami. Nyra en était la dernière arrivante.
+- Elle a rapidement compris les rapports de force et pris le contrôle informel de la population carcérale grâce à sa stratégie, son autorité et son aptitude à négocier.
+- Cette domination ne lui a pas permis de sortir de prison : elle pouvait commander à l'intérieur des murs, mais ne pouvait plus retrouver sa liberté.
+- A subi des interrogatoires sans fournir de renseignements compromettant ses anciens compagnons.
+- A laissé derrière elle des détenus redevables et des relations d'influence. Sa méfiance vis-à-vis d'une possible dénonciation demeure, mais **aucune trahison précise n'est établie**.
+
+### Le Conclave et la fuite
+- Sa présence au Conclave constitue une parenthèse : **elle sait qu'au jour 30 elle sera renvoyée à Syelena**, sauf si elle parvient à s'échapper.
+- Elle cherche à reprendre contact avec les survivants de son ancienne escouade et de sa flotte, dans l'espoir qu'ils viennent la récupérer.
+- Toute communication extérieure non autorisée étant interdite, elle utilise clandestinement **du matériel et des signaux dissimulés dans les circuits logistiques ou techniques de la station**. Les modalités exactes du camouflage vis-à-vis de la surveillance de Kami restent à préciser dans le scénario.
+- Dans la **branche alternative où le vote du jour 24 échoue**, Tomas repère des anomalies liées à ces communications sans en identifier immédiatement l'autrice ; il demande de l'aide à Nyra, sans savoir qu'il menace son projet d'évasion.
+- Nyra a donc un mobile personnel susceptible de la pousser à faire taire Tomas : la divulgation du canal clandestin pourrait ruiner ses chances de quitter le Conclave avant son retour en prison.
+- **Ne pas présenter comme un fait accompli dans toutes les routes** le projet de meurtre de Tomas ou la mort d'Elen : ce sont des développements réservés à la branche en cours de conception.
+
+**Fantôme principal :** la perte de son équipage lors de l'attaque des drones, puis l'enfermement à Syelena. Sa plus grande peur n'est pas de mourir au combat, mais de finir à nouveau sa vie derrière des barreaux, privée d'espace et de choix.
 
 ## 6. Relations initiales avec les autres représentants
 | Personnage | Ressenti initial de Nyra |
@@ -1296,18 +1318,19 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 | **Ryn** | **Un obstacle instinctivement méfiant.** Il soupçonne ses intentions ; elle voit son attachement à Limen comme le levier évident, mais évite de forcer. |
 | **Sael** | **Une croyante difficile à déplacer.** Nyra respecte son calme, tout en trouvant sa foi moins négociable que des intérêts ordinaires. |
 | **Kael** | **Un collègue d'Orbite qu'elle respecte et surveille.** Elle comprend l'enjeu de la station et de sa sœur, mais leurs méthodes opposées nourrissent une méfiance réciproque. |
-| **Tomas** | **Une mine de connaissances.** Elle l'écoute réellement et sait poser les questions qui lui donnent envie de développer ses explications. |
+| **Tomas** | **Une mine de connaissances.** Elle l'écoute réellement et sait poser les questions qui lui donnent envie de développer ses explications. Dans la branche du vote rejeté au J24, cette confiance devient dangereuse pour elle. |
 | **Elen** | **Une fille généreuse et vulnérable.** Elle apprécie sa lumière et voit aussi combien son besoin de plaire pourrait la rendre influençable. |
 
 ## 7. Relation initiale avec Kami
-- Considère Kami comme une autorité incontournable qu'il serait imprudent d'affronter sans préparation.
-- Cherche à comprendre ce que Kami autorise, interdit et refuse de négocier.
+- Considère Kami comme l'autorité qui a détruit sa vie libre, sa flotte telle qu'elle existait et ses possibilités de déplacement.
+- Sait que Kami la considérait comme une criminelle sans avoir établi de violation d'un Commandement.
+- Cherche à comprendre ce que Kami autorise, interdit et refuse de négocier, pour identifier une possibilité de fuite.
 - N'aborde pas les Commandements en termes de sacré ou de principe absolu : ce sont des contraintes à manœuvrer.
-- Se demande comment tirer du Conclave des occasions de retrouver sa flotte.
+- Redoute particulièrement la surveillance de Kami, qui rend tout contact avec l'extérieur dangereux.
 - Ne manifeste pas ouvertement son hostilité et préfère explorer les marges de négociation.
-- Son silence sur Syelena et les activités de sa famille est délibéré.
+- Son silence sur Syelena, son ancienne flotte et son retour annoncé en prison est délibéré.
 
-**Position de départ :** Nyra veut avant tout retrouver sa flotte et les moyens de décider de son propre avenir. Elle considère le Conclave comme un espace d'influence à cartographier, pas comme une scène où afficher ses convictions.
+**Position de départ :** Nyra entend utiliser le Conclave pour retrouver sa liberté et rejoindre sa flotte. Pour les autres, elle est une négociatrice rationnelle ; pour elle, les jours qui restent avant le retour à Syelena constituent un compte à rebours.
 
 
 ---
