@@ -1,4 +1,4 @@
-# DLC « Les autres vies » — route Doppelgänger
+# DLC « Les autres vies » — route des Éidons
 
 Ce dossier contient le contenu additionnel des jours 20 à 30. Ne pas inclure ces fichiers dans la distribution gratuite.
 

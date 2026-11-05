@@ -574,3 +574,12 @@ Mara est une bourgeoise qui s'est émancipée de sa vie de luxure, elle détesta
 - **Ne pas décrire les expressions des personnages dans la narration** si `showP()` le fait déjà.
 - **Toujours nommer les labels clairement** : `_JOURX_LIEU_CONTENU`, par exemple `_3_CAFETERIA_DEBAT`.
 - **Toujours fermer les `hide`** avant de lancer un `showP` sur un nouveau personnage dans le même slot.
+
+
+## Lexique canonique — doubles / Éidons
+
+- **Kami et les documents scientifiques ou administratifs** : utilisent la désignation technique **« Unité ÉID-0 »** (pluriel : « unités ÉID-0 »). Kami déshumanise ces êtres ; éviter qu'elle les appelle « Éidons » dans ses propres annonces.
+- **Zero et les habitants de Keyper-IIB** : utilisent **« Éidon »** (pluriel : « Éidons ») ou, à l'oral, **« les nôtres »**. Le terme désigne leur peuple, pas simplement une imitation.
+- **Les humains qui découvrent le phénomène, et la narration de Noam avant adoption explicite du vocabulaire** : conservent **« double »**, **« copie »** ou **« imposteur »**, selon l'émotion et le contexte. Ne pas mettre « Éidon » dans leur bouche prématurément.
+- **Ne pas utiliser « Doppelgänger » dans les dialogues, choix ou textes narratifs visibles**. Les anciennes occurrences dans les identifiants Ren'Py, noms de fichiers, labels, fonctions, clés de sauvegarde, IDs de DLC et chemins d'assets sont **des identifiants techniques à préserver** pour la compatibilité.
+- Employer « double » quand un personnage parle de la copie d'une personne précise (« mon double », « le double de Julian »), y compris après la révélation ; employer « Éidon » quand Zero parle de son peuple.

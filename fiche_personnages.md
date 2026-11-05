@@ -1331,7 +1331,7 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 
 ## Place dans la révélation de la route Iris
 
-- La machine et la technologie sous-jacente **précèdent Kami et les Doppelgängers de Zero**.
+- La machine et la technologie sous-jacente **précèdent Kami et les Éidons de Zero**.
 - Dans la branche de remplacement d'Iris, la machine utilise une **archive ancienne** de ses souvenirs ; la copie ainsi réveillée reconnaît l'expérience de duplication, mais pas les personnes ni le lieu actuels.
 - **Dernière réplique prévue :** « Mais enfin, j'ai participé à la création de cette machine ! »
 - **À laisser ouvert :** le sort de Reus, son éventuelle duplication personnelle et ses liens directs avec Zero ou Kami. Ce sont des pistes possibles, **pas des faits établis**.

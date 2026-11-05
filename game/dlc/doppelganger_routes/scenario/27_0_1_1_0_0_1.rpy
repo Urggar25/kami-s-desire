@@ -227,9 +227,9 @@ label _27_0_1_1_0_0_1_DOCUMENTS:
             "Je n'arrive pas à savoir si les passagers étaient volontaires. Rien ne l'indique. Rien ne dit non plus qu'ils ont été forcés."
             think "On peut effacer toute une vie derrière une ligne de registre."
             jump _27_0_1_1_0_0_1_DOCUMENTS
-        "Examiner la classification des Doppelgängers." if "statut" not in j27_secret_archive_read:
+        "Examiner la classification des doubles." if "statut" not in j27_secret_archive_read:
             $ j27_secret_archive_read.append("statut")
-            "Les représentants sont enregistrés individuellement. Une autre catégorie, appelée « unités biologiques de duplication », apparaît dans les règles de transfert."
+            "Les représentants sont enregistrés individuellement. Une autre catégorie, désignée « Unité ÉID-0 » et décrite comme « unité biologique de duplication », apparaît dans les règles de transfert."
             "Les textes qui définissent les droits des représentants n'y sont pas repris. Je cherche une mention du vote du jour vingt-quatre ; un renvoi apparaît, mais sans explication."
             think "Est-ce que les Commandements protègent les êtres que Kami refuse d'appeler des personnes ?"
             jump _27_0_1_1_0_0_1_DOCUMENTS
@@ -303,7 +303,7 @@ label _27_0_1_1_0_0_1_APRES_VOTE:
     tomas raison "Ouais, les transferts sont bien réels. Et il y a une installation là-bas, appelée « station de production ». Par contre, impossible de savoir ce qu'il y a dedans."
     sael inquiet "Production de quoi ?"
     tomas fatigue "Aucune idée. Le dossier de fonctionnement est verrouillé."
-    elias reflexion "On a aussi un problème de classification. Dans certains registres, les Doppelgängers ne sont pas enregistrés comme des représentants."
+    elias reflexion "On a aussi un problème de classification. Dans certains registres, on est notés « unités ÉID-0 », pas comme des représentants."
     kael inquietude "Donc la protection votée au jour vingt-quatre pourrait ne pas nous concerner ?"
     tomas raison "Elle pourrait nous concerner. Ou pas. Les documents ne permettent pas de trancher et je refuse qu'on présente une inquiétude comme une certitude."
     mara agace "Et ça te dérange pas plus que ça d'être rangé dans une catégorie comme du matériel ?!"
