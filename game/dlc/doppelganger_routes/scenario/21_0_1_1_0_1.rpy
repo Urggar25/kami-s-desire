@@ -2,9 +2,9 @@
 # JOUR 21 — Route 0_1_1_0_1
 # Réponse à Kael : "Je monte dans la navette."
 #
-# Les Doppelgängers choisissent de ne pas prolonger le Conclave.
+# Les Éidons infiltrés choisissent de ne pas prolonger le Conclave.
 # Ceux qui ont déjà pris la place de leur original partiront aujourd'hui.
-# Le Doppelgänger de Noam n'a, lui, toujours pas remplacé Noam.
+# Le double de Noam n'a, lui, toujours pas remplacé Noam.
 # =============================================================================
 
 default j21_leave_qte_success = False

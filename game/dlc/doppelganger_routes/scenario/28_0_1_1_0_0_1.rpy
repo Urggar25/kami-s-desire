@@ -1,5 +1,5 @@
 # JOUR 28 — UNE PLACE POUR DEUX
-# Route secrète : Noam se fait passer pour son Doppelgänger.
+# Route secrète : Noam se fait passer pour son double.
 # Le choix du dernier double est enregistré ici. La mise en œuvre aura lieu au J29.
 default j28_secret_target = None
 default j28_secret_plan_decided = False
@@ -465,7 +465,7 @@ label _28_0_1_1_0_0_1_FIN:
     "Kael ne répond pas tout de suite."
     kael calme "Je sais. Et ça me plaît pas non plus. Je peux juste lui poser des questions pour l'instant."
     noam reflexion "Il t'a aidé comment ?"
-    kael neutre "Zero, c'est celui qui m'a créé. J'étais le premier double. Sans lui, je serais même pas là." 
+    kael neutre "Zero, c'est celui qui m'a créé. J'étais le premier Éidon à pouvoir vivre loin de lui. Sans lui, je serais même pas là." 
     noam surpris "Le premier ? C'était toi ?"
     kael calme "Ouais. C'est pour ça que je lui laisse encore une chance de s'expliquer. Mais je sais qu'il nous dit pas tout."
     "Il regarde rapidement le terminal."

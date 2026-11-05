@@ -26,7 +26,7 @@ label _20_0_1_1_0_REVEIL:
     $ cafeteria_food_level = "null"
     $ current_period = "Matin"
     $ current_day = 20
-    # À compter du J20, la Mara visible dans cette route est son Doppelganger.
+    # À compter du J20, la Mara visible dans cette route est son double.
     # Le sprite conserve les bras/expressions habituels, seul le corps change.
     $ mara_dg_body_locked = True
     $ noam_has_juliette_drawing = False

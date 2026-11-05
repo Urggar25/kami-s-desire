@@ -2,7 +2,7 @@
 # JOUR 21 — Route 0_1_1_0_0
 # Réponse à Kael : "Je reste s'il y a encore une chance de le sortir."
 #
-# Les Doppelgängers choisissent de prolonger le Conclave jusqu'au jour 30.
+# Les Éidons infiltrés choisissent de prolonger le Conclave jusqu'au jour 30.
 # Aucun vote n'est annoncé au cours de cette journée.
 
 # =============================================================================
