@@ -507,7 +507,6 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     julian panne "… T'aurais pas pu te taire, hein ?!"
 
     $ j2_vote_codex_unlocked = True
-    call screen day2_vote_tablet_notice
     think "La tablette vibre dans ma poche. Je la sors. Une notification est notée dessus : Nouveau dossier de vote."
 
     jump _2_CAFETERIA_POST_ANNONCE
@@ -1489,30 +1488,6 @@ screen vote_argument_briefcase(arg_id, argument_data, card_drag_name, drop_drag_
 
 screen day2_quick_vote_notes():
     pass
-
-screen day2_vote_tablet_notice():
-    modal True
-    zorder 120
-    add Solid("#02050bcc")
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 820
-        padding (34, 28)
-        background Solid("#081722f2")
-        vbox:
-            spacing 16
-            text "TABLETTE DE NOAM" size 34 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
-            text "Nouveau dossier disponible : Prochain vote" size 25 color "#9ed8ff"
-            text "La fiche rassemble la proposition, les arguments rangés dans ton dossier et les positions que tu supposes chez les autres représentants." size 21 color "#b8d8e4"
-            text "Les portraits peuvent être déplacés librement entre POUR, INCONNU et CONTRE. Ce classement est une note personnelle, pas une correction automatique." size 21 color "#b8d8e4"
-            textbutton "Continuer":
-                xalign 0.5
-                xsize 210
-                background Solid("#1a2530")
-                hover_background Solid("#2d3a45")
-                text_color "#dff8ff"
-                action Return(False)
 
 screen day2_current_vote_codex():
     tag menu
