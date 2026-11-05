@@ -4,7 +4,7 @@ default stat_physique = 0
 # --- Config réutilisable (modifiée par minijeu_halteres_run) ---
 default mg_title = "ENTRAÎNEMENT AUX HALTÈRES"
 default mg_subtitle = "Synchronise ton effort avec la zone verte pour valider chaque répétition."
-default mg_bg = "gym_bg.png"
+default mg_bg = "bg_gymnase"
 default mg_duration = 60.0
 default mg_base_speed = 0.9
 default mg_target_reps = 10
@@ -54,7 +54,8 @@ init python:
         store.mg_base_speed = float(base_speed)
         if title: store.mg_title = title
         if subtitle: store.mg_subtitle = subtitle
-        if bg: store.mg_bg = bg
+        # Décor déclaré dans images.rpy ; on évite l'ancien gym_bg.png absent.
+        store.mg_bg = bg if bg and renpy.has_image(bg) else "bg_gymnase"
 
     def mg_reset():
         store.mg_reps = 0
@@ -142,6 +143,7 @@ init python:
                 store.mg_progress += 1 + combo_bonus
                 store.mg_feedback = (kd_tr("Correct.") + " x%d" % store.mg_combo) if store.mg_combo >= 2 else kd_tr("Correct.")
                 store.mg_feedback_color = "#f2c94c"
+                store.mg_flash = 0.14
                 renpy.play("audio/sfx_beep.mp3", channel="sound")
         else:
             store.mg_misses += 1
@@ -149,12 +151,17 @@ init python:
             store.mg_energy = max(0.0, store.mg_energy - 0.15)
             store.mg_feedback = kd_tr("Raté...")
             store.mg_feedback_color = "#ff6b6b"
+            store.mg_flash = 0.14
             renpy.play("audio/sfx_drop.mp3", channel="sound")
 
         mg_relocate_zone()
 
         if store.mg_reps >= store.mg_target_reps:
             store.mg_done = True
+
+    def mg_clock_text():
+        seconds = max(0, int(store.mg_time_left + 0.999))
+        return "{:02d}:{:02d}".format(seconds // 60, seconds % 60)
 
     def mg_is_successful():
         return store.mg_progress >= store.mg_target_reps
@@ -232,147 +239,214 @@ style mg_value_text is default:
     size 24
     outlines [(2, "#04131f", 0, 0)]
 
+# L'interface distingue désormais le portrait (ambiance) de la barre de
+# timing (action). Sans asset de Noam en position de développé couché, on
+# n'affiche plus une haltère flottant derrière un sprite immobile.
 screen minijeu_halteres():
     modal True
     zorder 200
 
     timer 0.02 repeat True action Function(mg_tick, 0.02)
     key "mouseup_1" action Function(mg_click)
+    key "K_UP" action Function(mg_click)
+    key "K_DOWN" action Function(mg_click)
+    key "K_SPACE" action Function(mg_click)
 
     if mg_done:
         timer 0.05 action Return()
 
     default mg_font = mg_get_ui_font()
+    $ beat = max(0.0, min(1.0, mg_value))
+    $ energy = max(0.0, min(1.0, mg_energy))
+    $ zone_start = max(0.0, min(1.0, mg_zone_start))
+    $ zone_end = max(zone_start, min(1.0, mg_zone_end))
+    $ beat_width = 638
+    $ clock = mg_clock_text()
 
-    add mg_bg
-    add Solid("#020912b0")
-    add Solid("#1f5fa833") at mg_bg_idle
+    # Fond du vrai gymnase : plus de référence à gym_bg.png introuvable.
+    add mg_bg at adaptive_fullscreen
+    add Solid("#020914E8")
+    add Solid("#1D3C5425") at mg_bg_idle
 
-    if mg_flash > 0.0:
-        add Solid("#5ad45a2e")
+    # En-tête compact : l'action conserve l'essentiel de la hauteur disponible.
+    frame at mg_panel_fade(0.0):
+        xpos 220 ypos 75
+        xsize 1480 ysize 110
+        padding (28, 15)
+        background Solid("#081826F4")
+        vbox:
+            spacing 5
+            text "ENTRAÎNEMENT AUX HALTÈRES":
+                size 30 color "#ECF9FF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                kerning 2
+            text "Appuie quand le curseur atteint la zone verte.":
+                size 23 color "#9CC6D8"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
-    use mk_challenge_hud(mg_live_challenges(), 24, 240)
     use mk_help_button("tuto_halteres")
 
-    frame at mg_panel_fade(0.0):
-        xalign 0.5
-        yalign 0.06
-        xsize 1480
-        ysize 165
-        background Solid("#071827c0")
-        padding (40, 22)
-
-        vbox:
-            spacing 8
-            text kd_tr(mg_title) style "mg_title_text" xalign 0.5 font mg_font
-            text kd_tr(mg_subtitle) style "mg_subtitle_text" xalign 0.5 font mg_font
-
-    hbox:
-        xalign 0.5
-        yalign 0.57
-        spacing 30
-
-        frame at mg_panel_fade(0.08):
-            xsize 980
-            ysize 650
-            background Solid("#07131fcf")
-            padding (26, 26)
+    # Colonne de gauche : portrait et progression, sans haltère qui flotte
+    # derrière Noam et sans découpe au milieu de son corps.
+    frame at mg_panel_fade(0.06):
+        xpos 220 ypos 210
+        xsize 685 ysize 620
+        padding (14, 14)
+        background Solid("#071825EA")
+        fixed:
+            xysize (657, 592)
+            add Solid("#102A3D") xsize 657 ysize 592
+            add Solid("#17465C55") xsize 657 ysize 592 at mg_bg_idle
+            add Solid("#71D4EF") xsize 657 ysize 3
+            add Solid("#71D4EF") xsize 3 ysize 592
+            text "NOAM  //  EFFORT":
+                xpos 26 ypos 22
+                size 23 color "#90DCEF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                kerning 2
 
             fixed:
-                xfill True
-                yfill True
-                add Solid("#0f2439") xsize 928 ysize 598
-                add Solid("#1f8fff18") xsize 928 ysize 598 at mg_bg_idle
-
-                $ dumbbell_y = int(440 - (mg_value * 300))
-                add Solid("#9fb3c7") xpos 320 ypos dumbbell_y xsize 280 ysize 22
-                add Solid("#232f3a") xpos 264 ypos dumbbell_y-13 xsize 66 ysize 48
-                add Solid("#232f3a") xpos 595 ypos dumbbell_y-13 xsize 66 ysize 48
-                add Solid("#576572") xpos 280 ypos dumbbell_y-9 xsize 40 ysize 40
-                add Solid("#576572") xpos 604 ypos dumbbell_y-9 xsize 40 ysize 40
-                add Solid("#57e86c") xpos 300 ypos 540 xsize 320 ysize 6 at mg_hud_pulse
-
+                xpos 18 ypos 65
+                xysize (620, 430)
+                clipping True
                 if renpy.has_image("noam neutre"):
-                    add "noam neutre" xpos 40 yalign 1.0 zoom 0.82
+                    add "noam neutre":
+                        xpos 58
+                        yalign 0.0
+                        zoom 0.65
                 else:
-                    text "NOAM" xpos 68 yalign 1.0 style "mg_value_text" font mg_font
+                    text "NOAM" xalign 0.5 yalign 0.5 size 48 color "#D4ECF7"
 
-        vbox at mg_panel_fade(0.14):
-            spacing 20
+            # La progression est indépendante du portrait : aucun élément
+            # physique imaginaire ne traverse l'anatomie du sprite.
+            add Solid("#061622") xpos 16 ypos 510 xsize 625 ysize 66
+            text "SÉRIE EN COURS":
+                xpos 28 ypos 518
+                size 20 color "#A5CCDD"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            $ rep_total = max(1, mg_target_reps)
+            $ segment_w = max(5, int(594 / rep_total) - 5)
+            for index in range(rep_total):
+                add Solid("#58DFA6" if index < mg_reps else "#2A4A5F"):
+                    xpos (28 + index * (594.0 / rep_total))
+                    ypos 551
+                    xsize segment_w
+                    ysize 9
 
-            frame:
-                xsize 470
-                ysize 150
-                background Solid("#06111dd8")
-                padding (20, 18)
+    # Colonne de droite : le timing devient l'élément dominant.
+    frame at mg_panel_fade(0.12):
+        xpos 930 ypos 210
+        xsize 770 ysize 620
+        padding (22, 20)
+        background Solid("#071725F4")
+        fixed:
+            xysize (726, 578)
 
-                vbox:
-                    spacing 8
-                    hbox:
-                        spacing 24
-                        text "RÉPÉTITIONS" style "mg_label_text" font mg_font
-                        if mg_combo >= 2:
-                            text "COMBO x[mg_combo]" style "mg_label_text" color "#5ad45a" font mg_font at mg_hud_pulse
-                    text "[mg_reps]/[mg_target_reps]" style "mg_value_text" xalign 0.5 font mg_font
-                    if mg_feedback:
-                        text kd_tr(mg_feedback) at mg_feedback_pop style "mg_subtitle_text" color mg_feedback_color xalign 0.5 font mg_font
+            text "RÉPÉTITIONS":
+                xpos 12 ypos 4
+                size 23 color "#8DBCCF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                kerning 2
+            text "[mg_reps] / [mg_target_reps]":
+                xpos 12 ypos 33
+                size 62 color "#F2FAFF"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
-            frame:
-                xsize 470
-                ysize 308
-                background Solid("#06111dd8")
-                padding (20, 18)
+            if mg_combo >= 2:
+                text "COMBO x[mg_combo]" at mg_hud_pulse:
+                    xpos 320 ypos 59
+                    size 30 color "#68E3AC"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+            if mg_feedback:
+                text kd_tr(mg_feedback) at mg_feedback_pop:
+                    xpos 320 ypos 8
+                    xsize 395
+                    text_align 1.0
+                    size 30
+                    color mg_feedback_color
+                    font "fonts/Rajdhani-SemiBold.ttf"
 
-                vbox:
-                    spacing 14
+            add Solid("#31586B") xpos 12 ypos 126 xsize 696 ysize 2
+            text "TIMING  //  ZONE D'EFFORT":
+                xpos 14 ypos 151
+                size 27 color "#BDEBFA"
+                font "fonts/Rajdhani-SemiBold.ttf"
+                kerning 1
 
-                    text "ÉNERGIE // CHARGE MUSCULAIRE" style "mg_label_text" font mg_font
-                    fixed:
-                        xsize 430
-                        ysize 40
-                        add Solid("#0d2235") xsize 430 ysize 40
-                        add Solid("#3ed06f") xsize int(430 * mg_energy) ysize 40
-                        add Solid("#ffffff20") xsize int(430 * mg_energy) ysize 16
+            # Grande jauge : curseur blanc, fenêtre verte, centre parfait.
+            add Solid("#061521") xpos 13 ypos 204 xsize 700 ysize 92
+            add Solid("#16394E") xpos 30 ypos 219 xsize 666 ysize 62
+            add Solid("#2FBB75") xpos (30 + int(zone_start * beat_width)) ypos 219 xsize max(1, int((zone_end - zone_start) * beat_width)) ysize 62
+            add Solid("#A3F5C6") xpos (30 + int((zone_start + zone_end) * beat_width / 2) - 5) ypos 219 xsize 10 ysize 62
+            add Solid("#F5FBFF") xpos (30 + int(beat * beat_width)) ypos 204 xsize 7 ysize 92
+            if mg_flash > 0.0:
+                add Solid(mg_feedback_color + "44") xpos 13 ypos 204 xsize 700 ysize 92
 
-                    text "RYTHME // FENÊTRE D'EFFORT" style "mg_label_text" font mg_font
-                    fixed:
-                        xsize 430
-                        ysize 34
-                        add Solid("#11293f") xsize 430 ysize 34
-                        $ zone_width = (mg_zone_end - mg_zone_start)
-                        add Solid("#22c065") xpos int(mg_zone_start * 430) xsize int(zone_width * 430) ysize 34 at mg_hud_pulse
-                        add Solid("#f4faff") xpos int(mg_value * 430) xsize 8 ysize 34
+            text "ESPACE / CLIC / ↑ / ↓  —  POUSSER":
+                xpos 12 ypos 311
+                xsize 700
+                text_align 0.5
+                size 24 color "#B1D3E1"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
-                    text "TEMPS // CHRONO" style "mg_label_text" font mg_font
-                    fixed:
-                        xsize 430
-                        ysize 28
-                        add Solid("#101e2e") xsize 430 ysize 28
-                        add Solid("#e74f4f") xsize int((mg_time_left / max(0.01, mg_duration)) * 430) ysize 28
+            # Une petite jauge d'énergie et un chrono numérique suffisent.
+            text "ÉNERGIE":
+                xpos 15 ypos 379
+                size 23 color "#A6CADA"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            add Solid("#183244") xpos 16 ypos 420 xsize 455 ysize 24
+            add Solid("#49D889") xpos 16 ypos 420 xsize int(455 * energy) ysize 24
 
-                    text "⬆ ⬇  Clic, ↑ ou ↓ pour pousser." style "mg_subtitle_text" xalign 0.5 font mg_font
+            text "TEMPS":
+                xpos 538 ypos 379
+                size 23 color "#A6CADA"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "[clock]":
+                xpos 538 ypos 411
+                size 36 color "#ECF7FF" if mg_time_left > 10 else "#FF7878"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
+            # Bouton de secours pour le tactile ; la zone de timing reste le
+            # centre de l'attention. Le clic est aussi accepté partout.
             textbutton "POUSSER":
+                xpos 12 ypos 479
+                xsize 696 ysize 65
+                text_font "fonts/Rajdhani-SemiBold.ttf"
+                text_size 31
+                text_color "#EDFAFF"
+                background Solid("#0D466B")
+                hover_background Solid("#16638D")
                 action Function(mg_click)
-                xsize 470
-                ysize 94
-                text_size 34
-                text_font mg_font
-                text_color "#e6f7ff"
-                background Solid("#0d3b63")
-                hover_background Solid("#1e7fce")
-                insensitive_background Solid("#203447")
 
-            textbutton "RETOUR":
-                action Return()
-                xalign 1.0
-                text_font mg_font
-                text_color "#9eb3c7"
-                background Solid("#091522aa")
-                hover_background Solid("#16324acc")
+    # Défis en bas, intégrés au HUD plutôt que superposés au décor.
+    frame at mg_panel_fade(0.18):
+        xpos 220 ypos 854
+        xsize 1480 ysize 92
+        padding (22, 13)
+        background Solid("#081725EA")
+        hbox:
+            spacing 30
+            text "DÉFIS BONUS":
+                size 22 color "#86BCD1"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            for challenge in mg_live_challenges():
+                $ label = challenge[0]
+                $ complete = challenge[1]
+                $ failed = len(challenge) > 2 and challenge[2]
+                text ("✓  " if complete else "✕  " if failed else "○  ") + label:
+                    size 22
+                    color "#63DDA5" if complete else "#F28484" if failed else "#ADC2CD"
+                    font "fonts/Rajdhani-SemiBold.ttf"
 
-    key "K_UP" action Function(mg_click)
-    key "K_DOWN" action Function(mg_click)
+    textbutton "RETOUR":
+        xpos 1570 ypos 970
+        xsize 130 ysize 45
+        text_color "#B8CCD7"
+        text_font "fonts/Rajdhani-SemiBold.ttf"
+        text_size 24
+        background Solid("#07152299")
+        hover_background Solid("#17405C")
+        action Return()
 
 
 # ------------------------------------------------------------
