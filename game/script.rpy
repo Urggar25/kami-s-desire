@@ -623,20 +623,27 @@ init python:
 
 init python:
     def scene_has_no_character_sprites():
-        """Exclusion uniquement si une CG est ACTUELLEMENT affichée.
+        """Pas d'autofocus sur les CG, diffusions ou décors via bg_show.
 
-        current_bg_name peut conserver l'ancienne salle après un 'scene' direct :
-        ne jamais s'en servir comme preuve d'une CG active.
+        On vérifie les images réellement visibles, jamais current_bg_name seul
+        qui peut garder la référence d'une scène précédente.
         """
         for layer in ("bgcam", "master"):
             for tag in renpy.get_showing_tags(layer=layer):
-                if tag.lower().startswith(("bg_cg", "bg_diffusion")):
+                if tag == "BG" or tag.lower().startswith(("bg_cg", "bg_diffusion")):
                     return True
-        # bg_show affiche le fond sous le tag BG ; la référence réelle est
-        # suivie par current_bg_name. La vérification du tag est nécessaire.
-        if any("BG" in renpy.get_showing_tags(layer=layer) for layer in ("bgcam", "master")):
-            return bool((store.current_bg_name or "").lower().startswith(("bg_cg", "bg_diffusion")))
         return False
+
+    def cinema_lock_static_background():
+        """Revient à un plan fixe sans recréer un zoom à chaque réplique."""
+        signature = cinema_scene_signature()
+        if ((store._focus_last_params or {}).get("tag") != "__STATIC_BACKGROUND__"
+                or signature != store._cinema_last_scene_signature
+                or abs(store.cam_z_cur - 1.0) > 0.001
+                or abs(store.bg_cam_z_cur - 1.0) > 0.001):
+            cam_reset(t=0.0)
+        store._focus_last_params = dict(tag="__STATIC_BACKGROUND__")
+        store._cinema_last_scene_signature = signature
 
     def cinema_scene_signature():
         """Identifie la scène réellement visible, indépendamment du dernier locuteur."""
@@ -682,28 +689,19 @@ init python:
             start_character_dialogue(tag, dialogue_text)
             play_dialogue_doublage(doublage_tag or tag, dialogue_text)
 
-            if manual_camera:
-                return  # Son, bouche et clignement restent opérationnels.
-
-            # Les CG et les diffusions de Kami doivent rester en plan fixe
-            # (zoom 1.0, sans autofocus, même lors des pensées/narrations).
+            # Les décors via bg_show et les diffusions ne doivent pas être
+            # recadrés par les personnages, même si leurs sprites sont présents.
             if scene_has_no_character_sprites():
-                scene_signature = cinema_scene_signature()
-                if (store._focus_last_params or {}).get("tag") != "__STATIC_BACKGROUND__" or scene_signature != store._cinema_last_scene_signature:
-                    cam_reset(t=0.0)
-                    store._focus_last_params = dict(tag="__STATIC_BACKGROUND__")
-                store._cinema_last_scene_signature = scene_signature
+                if not manual_camera:
+                    cinema_lock_static_background()
                 return
+
+            if manual_camera:
+                return  # Les mouvements de caméra explicitement scénarisés restent possibles.
 
             scene_signature = cinema_scene_signature()
             scene_changed = scene_signature != store._cinema_last_scene_signature
             store._cinema_last_scene_signature = scene_signature
-
-            if scene_has_no_character_sprites():
-                if scene_changed or store._focus_last_params != dict(tag="__NO_AUTOFOCUS__"):
-                    cam_reset(t=0.6)
-                    store._focus_last_params = dict(tag="__NO_AUTOFOCUS__")
-                return
 
             if tag == "__NARRATOR__":
                 last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
