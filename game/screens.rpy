@@ -82,7 +82,7 @@ screen say(who, what):
     use dialogue_punctuation_overlay(what)
 
     on "show" action [
-        Function(start_dialogue_animation, what),
+        Function(start_dialogue_animation, what, who),
         Function(codex_discover_from_text, what),
     ]
 
