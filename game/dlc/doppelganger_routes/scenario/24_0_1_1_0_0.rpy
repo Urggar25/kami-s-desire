@@ -1,11 +1,13 @@
 default j24_vital_vote = None
 default j24_tomas_convinced = False
+default j24_production_inquiry = False
 
 
 label _24_0_1_1_0_0_REVEIL:
 
     $ current_day = 24
     $ day_id = 24
+    $ j24_production_inquiry = False
     $ current_period = "Matin"
 
     scene black
@@ -557,6 +559,19 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
     tomas neutre "Probablement."
 
+    "Tomas regarde encore ses trois documents. Je sais pas trop quoi lui conseiller."
+
+    menu (screen="critical_choice", noam_expr="reflexion", cc_targets={"On ne peut pas attendre un texte parfait.":{"label":"_24_0_1_1_0_0_ARCHIVES_PRINCIPE"},"Vérifions ce que Kami devra produire.":{"label":"_24_0_1_1_0_0_ARCHIVES_PRODUCTION"}}):
+        "Que conseiller à Tomas ?"
+        "On ne peut pas attendre un texte parfait.":
+            $ j24_production_inquiry = False
+            jump _24_0_1_1_0_0_ARCHIVES_PRINCIPE
+        "Vérifions ce que Kami devra produire.":
+            $ j24_production_inquiry = True
+            jump _24_0_1_1_0_0_ARCHIVES_PRODUCTION
+
+# Durée : choix majeur, environ 30 s.
+label _24_0_1_1_0_0_ARCHIVES_PRINCIPE:
     noam raison "Alors garde ça pour le débat."
 
     tomas surpris "Quoi ?"
@@ -647,6 +662,58 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
     jump _24_0_1_1_0_0_AVANT_VOTE
 
+
+label _24_0_1_1_0_0_ARCHIVES_PRODUCTION:
+    $ current_period = "Matin"
+    scene bg_archive at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+    $ showGroup([("tomas", "reflexion", 0.35), ("noam", "neutre", 0.65)])
+    noam reflexion "Attends. On fait peut-être ça à l'envers."
+    tomas surpris "Quoi ?"
+    noam raison "Au lieu de relire le texte, on peut regarder comment Kami compte fournir tout ça."
+    tomas reflexion "Les stocks, la production, les besoins par district ?"
+    noam sourire "Ouais. Voilà."
+    tomas fatigue "Ça va faire beaucoup de chiffres."
+    noam taquin "Je me suis fait à l'idée."
+    "Tomas ouvre les archives logistiques et fait défiler des tableaux."
+    tomas raison "Là, t'as les besoins prévus. Et là, les ressources disponibles."
+    noam surpris "Il manque autant que ça ?"
+    tomas neutre "Bah oui. Si tout le monde doit recevoir quelque chose, faut bien le produire."
+    noam reflexion "Donc elle va augmenter la production."
+    tomas raison "Forcément. Mais je veux voir où."
+    "Il ouvre une projection conditionnelle liée au vote de cet après-midi."
+    tomas surpris "Attends, c'est quoi cette ligne ?"
+    "Sur l'écran, un nouvel encadré apparaît."
+    "KEYPER-IIB — STATION DE PRODUCTION"
+    "UNITÉS ÉID-0 — QUOTAS À RÉVISER SI LE COMMANDEMENT EST ADOPTÉ"
+    noam reflexion "Keyper... C'est où ?"
+    tomas hesitation "Aucune idée."
+    noam neutre "Et les unités ÉID-0 ?"
+    tomas reflexion "Je sais pas non plus."
+    noam taquin "On progresse."
+    tomas fatigue "Très drôle."
+    "Tomas tente d'ouvrir le descriptif des unités. Une mention d'accès refusé apparaît."
+    tomas agace "Ah, super. Même ça, c'est verrouillé."
+    noam raison "Peut-être que c'est des machines."
+    tomas inquiet "Peut-être. Mais si c'est autre chose ?"
+    noam reflexion "Quel genre d'autre chose ?"
+    tomas fatigue "J'en sais rien ! Des gens ? Des ouvriers ? Pourquoi ils parlent de quotas ?"
+    noam neutre "Les machines aussi ont des quotas."
+    tomas raison "Oui, je sais. Mais on va voter pour une augmentation sans même savoir de quoi on parle."
+    noam raison "Ça prouve pas que c'est mauvais."
+    tomas inquiet "Non. C'est ça le problème. Ça prouve rien."
+    noam reflexion "Alors garde ce relevé. Tu pourras expliquer ce qui te gêne."
+    tomas fatigue "Je vais essayer de trouver autre chose avant le vote."
+    noam sourire "OK. Mais mange un truc avant, cette fois."
+    tomas fatigue "J'ai mangé."
+    noam taquin "T'as aussi essayé de boire une tasse vide."
+    tomas agace "Deux fois. Pas trois."
+    noam sourire "À tout à l'heure."
+    "Tomas conserve une copie des chiffres. Je quitte les archives en le laissant devant sa tablette."
+    $ hideGroup()
+    jump _24_0_1_1_0_0_AVANT_VOTE
+
+# Durée : environ 2m30.
 
 label _24_0_1_1_0_0_AVANT_VOTE:
 
@@ -878,6 +945,9 @@ label _24_0_1_1_0_0_CONCLAVE:
         ("ryn", "neutre", 1.08),
         ("sael", "neutre", 1.20),
     ])
+
+    if j24_production_inquiry:
+        jump _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT
 
     julian sourire "Puisque notre chère Kami semble attendre un spectacle, je propose exceptionnellement de la décevoir et d'être tous d'accord en moins de cinq minutes."
 
@@ -1261,6 +1331,77 @@ label _24_0_1_1_0_0_CONCLAVE:
     jump _24_0_1_1_0_0_VOTE
 
 
+label _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT:
+    julian sourire "Bon. Pour une fois, on peut être tous d'accord en moins de cinq minutes ?"
+    elen joie "Oui !"
+    ryn neutre "Pareil."
+    tomas fatigue "Attendez."
+    julian fatigue "Non..."
+    tomas agace "Je peux juste finir une phrase ?"
+    nyra raison "Vas-y."
+    tomas reflexion "J'ai regardé les projections de production, ce matin. Avec Noam."
+    noam neutre "On a trouvé une installation dont on avait jamais entendu parler."
+    tomas raison "Keyper-IIB. Si ce Commandement passe, les quotas de certaines unités là-bas augmentent."
+    elias surpris "Des unités de quoi ?"
+    tomas fatigue "Je sais pas. C'est ça qui m'embête."
+    nyra reflexion "Tu n'as pas réussi à ouvrir la fiche ?"
+    tomas neutre "Non. Accès refusé."
+    kael calme "Ça peut être une station automatisée."
+    tomas raison "Oui. Mais on n'en sait rien."
+    ryn agace "Donc on va tout bloquer parce qu'un tableau est pas assez détaillé ?"
+    tomas colere "J'ai pas dit ça !"
+    julian agace "Tu le sous-entends assez fort."
+    tomas colere "J'essaie de comprendre comment elle va tenir sa promesse !"
+    elen inquiet "Mais c'est quand même pour aider les gens..."
+    tomas fatigue "Je sais, Elen."
+    sael reflexion "Si les quotas concernent des travailleurs, il faudrait effectivement savoir dans quelles conditions."
+    tomas raison "Voilà ! Merci."
+    iris reflexion "Et s'il s'agit juste de machines ?"
+    tomas fatigue "Alors j'aurai eu peur pour rien. Je l'espère, même."
+    julian agace "Ça reste une hypothèse. Les gens qui ont faim, eux, c'est pas une hypothèse."
+    noam raison "C'est moi qui lui ai demandé de vérifier. Ça vaut le coup qu'on l'écoute."
+    julian colere "Et pendant qu'on écoute, qu'est-ce qu'on fait pour ceux qui attendent sur Terre ?!"
+    tomas colere "Tu peux arrêter de me parler comme si je voulais les laisser crever ?!"
+    ryn colere "Bah dis-nous ce que tu veux faire, alors !"
+    tomas stress "J'EN SAIS RIEN !"
+    "Il s'arrête, ferme les yeux et reprend plus bas."
+    tomas fatigue "Si. Je sais que je veux pas voter pour un truc que j'ai même pas pu vérifier."
+    nyra neutre "On ne pourra pas le vérifier aujourd'hui. Alors il faut choisir."
+    elen inquiet "Tomas... tu vas voter contre ?"
+    tomas hesitation "Je..."
+    pause 0.4
+    tomas fatigue "Oui."
+    julian colere "Tu plaisantes ?!"
+    tomas colere "Non !"
+    julian colere "Tu sais ce que ça implique ?!"
+    tomas stress "Oui, Julian ! Arrête de me le répéter !"
+    noam agace "Julian, baisse d'un ton."
+    julian colere "Et toi, Noam ! C'est toi qui l'as envoyé fouiller ces dossiers !"
+    noam neutre "Je lui ai dit de regarder les conséquences. Pas de voter contre."
+    tomas fatigue "C'est mon vote. Laissez Noam tranquille."
+    elen inquiet "Tu pourrais peut-être juste t'abstenir..."
+    tomas reflexion "Si je m'abstiens, le texte passe."
+    elen neutre "Oui..."
+    tomas fatigue "C'est justement pour ça que je vais voter contre. Désolé."
+    mara agace "Bon, on a compris. On va se crier dessus jusqu'à demain ?"
+    lysa blase "Julian a déjà pris de l'avance."
+    julian colere "Très drôle."
+    lysa neutre "Je rigolais pas."
+    "Tomas fixe sa tablette. Il ne regarde plus personne, même quand Elen essaie de lui parler."
+    play sound sfx_announce
+    stop music fadeout 0.5
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    kami "Ah ! Voilà qui est nettement plus amusant."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Vous avez suffisamment parlé. Place au vote."
+    hide screen kami_broadcast_ui
+    stop music fadeout 0.6
+    jump _24_0_1_1_0_0_VOTE
+
+# Durée : environ 3m30.
+
 label _24_0_1_1_0_0_VOTE:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1277,7 +1418,7 @@ label _24_0_1_1_0_0_VOTE:
     "Cette fois, il ne reste plus que le mien."
 
     # Réutilise l'interface de vote commune aux autres débats.
-    # J24 ne propose volontairement que POUR ou ABSTENTION.
+    # Noam choisit POUR ou ABSTENTION ; dans l'autre route Tomas vote CONTRE.
     $ renpy.block_rollback()
     $ vote_phase3_time_left = 10
     $ vote_phase3_hover_side = None
@@ -1307,7 +1448,7 @@ label _24_0_1_1_0_0_VOTE:
         ("Elias", "pour"),
         ("Lysa", "pour"),
         ("Iris", "pour"),
-        ("Tomas", "pour"),
+        ("Tomas", "contre" if j24_production_inquiry else "pour"),
         ("Elen", "pour"),
         ("Sael", "pour"),
         ("Noam", vote_phase3_player_choice if vote_phase3_player_choice in ("pour", "abstention") else "abstention"),
@@ -1327,6 +1468,8 @@ label _24_0_1_1_0_0_VOTE:
 
 
 label _24_0_1_1_0_0_RESULTAT:
+    if j24_production_inquiry:
+        jump _24_0_1_1_0_0_RESULTAT_REJET
 
     stop music fadeout 0.5
     play sound sfx_announce
@@ -1510,6 +1653,77 @@ label _24_0_1_1_0_0_RESULTAT:
 
     jump _24_0_1_1_0_0_APRES_VOTE
 
+
+label _24_0_1_1_0_0_RESULTAT_REJET:
+    stop music fadeout 0.5
+    play sound sfx_announce
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    if j24_vital_vote == "for":
+        kami "Onze voix pour. Une voix contre."
+    else:
+        kami "Dix voix pour. Une abstention. Une voix contre."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Un seul vote contre, et c'est terminé. Vous adorez l'unanimité, n'est-ce pas ?"
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    kami "Le Commandement est rejeté. Rien ne change."
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "C'est dommage. J'aurais adoré voir ce que vous alliez faire de cette jolie promesse."
+    hide screen kami_broadcast_ui
+    stop music fadeout 0.6
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.8
+    $ showGroup([("tomas", "fatigue", 0.15), ("julian", "colere", 0.36), ("elen", "inquiet", 0.57), ("noam", "inquiet", 0.79)])
+    elen inquiet "Non... C'est pas possible."
+    julian colere "T'as vraiment fait ça."
+    tomas fatigue "Ouais."
+    julian colere "Onze personnes voulaient que les gens aient de quoi vivre !"
+    tomas agace "J'ai pas voté pour les laisser mourir !"
+    julian colere "Ah bon ? C'est exactement ce que tu viens de faire !"
+    noam agace "Julian, ça suffit."
+    julian colere "Non ! Il va quand même pas s'en tirer avec un « désolé » !"
+    elen inquiet "Tomas, tu aurais pu..."
+    tomas fatigue "Je suis désolé, Elen. Vraiment."
+    julian agace "C'est tout ce que t'as à dire ?"
+    tomas colere "Putain, tu veux que je te dise quoi ?!"
+    pause 0.4
+    tomas fatigue "Non. Laisse tomber. J'ai plus envie de parler."
+    "Tomas récupère sa tablette et quitte la salle. Il ne se retourne pas."
+    elen inquiet "Il faudrait peut-être aller le voir."
+    noam fatigue "Laissez-lui un peu d'air. On reparlera demain."
+    julian agace "On aurait dû reparler de tout ça avant qu'il vote."
+    "Personne ne trouve quoi répondre."
+    $ hideGroup()
+    jump _24_0_1_1_0_0_SOIR_REJET
+
+# Durée : environ 2m00.
+
+label _24_0_1_1_0_0_SOIR_REJET:
+    $ current_period = "Soir"
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+    "Tomas s'est enfermé dans sa chambre. Les autres se dispersent sans vraiment se dire au revoir."
+    $ showGroup([("elen", "inquiet", 0.36), ("noam", "fatigue", 0.64)])
+    elen inquiet "Il a même pas voulu que je lui apporte à manger."
+    noam fatigue "Il a juste besoin de dormir."
+    elen inquiet "Tu crois ?"
+    noam neutre "Je crois, ouais."
+    elen fatigue "Bon... Bonne nuit."
+    noam neutre "Bonne nuit, Elen."
+    $ hideGroup()
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
+    "Je regarde un instant ma tablette. Le Commandement n'a pas été ajouté."
+    think "Keyper-IIB..."
+    "Je me demande si j'ai bien fait de pousser Tomas à fouiller ces archives. Je voulais juste qu'il comprenne ce qui le gênait."
+    "Pour l'instant, il a surtout réussi à se mettre tout le monde à dos."
+    "Je coupe la lumière sans avoir trouvé quoi lui dire demain."
+    stop music fadeout 1.0
+    call end_day("25", sleeping=True) from _call_j24_rejet_end_day_25
+    jump _25_0_1_1_0_1_REVEIL
+
+# Durée : environ 1m30.
 
 label _24_0_1_1_0_0_APRES_VOTE:
 
