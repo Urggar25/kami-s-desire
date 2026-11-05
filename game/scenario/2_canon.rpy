@@ -1071,7 +1071,7 @@ label _2_GYMNASE:
 
     think "Le métal est froid sous mon dos."
 
-    elias raison "Stop tu vas te bousiller le dos dos. Souffle quand tu pousses, et respire fort en descendant."
+    elias raison "Stop, tu vas te bousiller le dos ! Souffle quand tu pousses. Voilà, doucement."
 
     iris taquin "Tu lui fais commencer par du développé couché dès la première séance ? Excellent. Le spectacle sera amusant !"
 
