@@ -847,7 +847,7 @@ label _3_PAUSE_CHAMBRE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_164
     scene couloir_cafeteria at adaptive_fullscreen with fade
-    think "Je l'entends rire derrière la porte. Ce rire trop rond, trop travaillé."
+    think "J'entends Julian derrière la porte. Il parle encore plus fort que d'habitude."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_165
     scene bg_repos at adaptive_fullscreen with fade
@@ -879,7 +879,7 @@ label _3_PAUSE_CHAMBRE:
 
         think "Il l'a essoré. Tomas n'ose même plus finir ses phrases. J'aurais dû courir plus vite."
 
-    julian rire "Allez, Tomas. Tu veux que ça change, non ? Écoute-moi. Le monde a besoin de toi."
+    julian rire "Tomas, réfléchis. Si on se présente ensemble, les autres écouteront."
 
     tomas inquiet "O-Ouais, sans doute…"
 
@@ -933,8 +933,8 @@ label _3_PAUSE_CHAMBRE:
     hide nyra with moveoutleft
 
     think "Ce vote, ce n'est pas juste un texte. C'est une question de confiance."
-    think "Julian n'est pas un ennemi. Mais son besoin d'exister peut causer le pire comme le meilleur."
-    think "Je serre les poings. Ils tremblent moins qu'avant."
+    think "Julian veut vraiment que le vote passe. Mais il a toujours besoin qu'on le remarque."
+    think "J'ai encore les mains moites. Ça promet pour le débat."
     think "Julian m'énerve. Mais il a raison sur un truc : jusqu'ici, j'ai surtout regardé les autres se débrouiller."
 
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
@@ -1059,11 +1059,11 @@ label _3_DEBAT1_PHASE1:
     kami "Vos petites phrases d'amateurs, seules, ne valent rien en droit. Il a fallu les traduire."
 
     $ bc_show("nyra", "stress", px=-70, py=-50, pz=0.85)
-    nyra "Traduire. Ou réécrire ?"
+    nyra "Tu l'as seulement reformulé ? Ou tu as aussi changé ce qu'il disait ?"
     $ bc_hide()
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Réécrire est un vilain mot. Disons que j'ai rendu vos intentions… exécutables."
+    kami "Oh, j'ai juste fait en sorte que ça puisse s'appliquer. Chaque détail compte, vous savez."
     kami "Le texte est là. Compilé, dense, juridique. Exactement comme les lois que vous adoriez ignorer avant moi."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
@@ -1088,13 +1088,13 @@ label _3_DEBAT1_PHASE1:
         ("elias", "reflechit", 1.19),
     ])
 
-    ryn colere "Un texte juridique compilé ?! On voulait juste autoriser le commerce !"
+    ryn colere "Pourquoi elle nous sort un pavé pareil ? On voulait juste le commerce !"
 
     tomas hesitation "C'est… c'est exactement là qu'il faut se méfier. Un texte de loi, c'est jamais neutre."
-    tomas raison "Chaque mot ajouté peut changer tout le sens. Faut le reconstruire proprement avant d'en juger."
+    tomas raison "Une seule phrase en plus peut tout changer. Faut lire jusqu'au bout."
 
-    nyra "On fait ça vite et bien. Cherchez la ponctuation et les majuscules, ça situe les fragments."
-    nyra "Chacun prend un morceau. Personne ne conclut avant qu'on ait la phrase entière."
+    nyra "Regardez la ponctuation, ça aidera à remettre les morceaux dans l'ordre."
+    nyra "On lit tout avant de commencer à se disputer, d'accord ?"
 
     noam "D'accord. On assemble, on lit, ensuite on discute."
     noam "Et on garde les yeux ouverts sur ce qu'elle a pu glisser dedans."
@@ -1129,9 +1129,9 @@ label _3_DEBAT1_PHASE1:
     lysa "« Autoriser le transport, la vente et l'échange de marchandises. »"
     lysa colere "« En conséquence, le système de distribution de denrées est aboli. »"
 
-    elen surpris "Attendez… « aboli » ? C'était pas dans l'idée de départ, ça !"
+    elen surpris "Quoi ? On supprime les bons ? Mais personne a demandé ça !"
 
-    tomas "M-Maintenant, le vrai débat peut commencer. Et il est plus grave qu'on croyait."
+    tomas hesitation "A-Attendez... Ça change complètement le vote, là."
 
     jump _3_DEBAT1_PHASE2
 
@@ -1158,10 +1158,10 @@ label _3_DEBAT1_PHASE2:
         ("elias", "reflechit", 1.19),
     ])
 
-    mara surpris "Donc voilà le piège. Autoriser le commerce, ça supprime les rations. En un seul texte."
+    mara surpris "Ah bah voilà. On demande le commerce et on perd les rations. Génial."
 
-    noam "Du calme. On sait tous que ce n'est pas ce qui avait été proposé au départ."
-    noam "C'est l'habillage qu'en a fait Kami. La question, c'est : est-ce qu'on peut vivre avec ?"
+    noam "Attendez. Le texte de départ parlait pas des rations."
+    noam "Mais c'est celui-là qu'on doit voter. Alors on fait quoi ?"
 
     nyra reflechit "Si on vote ce texte, demain il n'y a plus une seule distribution gratuite. Nulle part."
 
@@ -1173,11 +1173,10 @@ label _3_DEBAT1_PHASE2:
 
     noam "…Comment ça ?"
 
-    lysa blase "On disait hier : rétablir le commerce, c'est rétablir la monnaie."
-    lysa reflechit "Pour gagner de la monnaie, il faut travailler. Et pour pousser les gens à travailler…"
-    lysa blase "…on arrête de leur donner de quoi vivre gratuitement. Kami n'a rien inventé. Elle a juste écrit tout haut ce qu'on pensait tout bas."
+    lysa blase "Avec le commerce, il faut de l'argent. Pour en avoir, il faut bosser."
+    lysa reflechit "Kami a juste décidé de couper les rations pour forcer tout le monde à s'y mettre. Sympa."
 
-    nyra reflechit "Sauf que supprimer une structure mondiale, ça ne se décide pas sur un coup de tête."
+    nyra reflechit "Ça reste énorme, comme changement. Et on n'a même pas le temps de s'y préparer."
 
     sael triste "Les morts de Limen n'ont pas besoin d'un nouveau responsable."
     sael reflechit "Kami. Dis-nous seulement une chose : ce texte vient-il vraiment de l'un de nous ?"
@@ -1186,11 +1185,11 @@ label _3_DEBAT1_PHASE2:
     think "Le silence dure trop longtemps pour être innocent."
 
     lysa blase "Elle ne répondra pas. Dix votes pour douze textes, le tour de passe-passe est parfait."
-    lysa colere "Elle peut ajouter, couper, tordre ce qu'elle veut. On ne le saura jamais."
+    lysa colere "Elle peut changer ce qu'elle veut. Et on pourra rien prouver."
 
     ryn reflechit "Attends… tu dis quoi, là ?"
 
-    lysa salut "Que peut-être aucun de ces textes n'est de nous. Que la manipulation est invérifiable. Bienvenue."
+    lysa salut "Qu'elle nous raconte peut-être n'importe quoi depuis le début. Voilà."
 
     noam "Elle nous a peut-être bien eus. Mais on doit quand même voter."
     noam reflexion "Alors parlons de ce qui va vraiment arriver chez nous."
@@ -1225,7 +1224,7 @@ label day3_before_objection_protocol_minigame:
         ("ryn", "colere", 0.62),
     ])
 
-    ryn colere "On tourne en rond depuis une heure ! Pendant qu'on parle, eux, ils attendent."
+    ryn colere "Putain, on y passe la journée ! Les gens attendent, eux !"
 
     think "Il a raison. Et Kami adore avoir raison à notre place."
 
@@ -1574,14 +1573,13 @@ label _3_DEBAT1_PHASE3:
 
     elias "Le vrai problème, c'est qu'on évite la vraie question. Le système actuel, il marche pas. Point."
 
-    sael "…Vous dépendez trop de ce système."
-    sael colere "Les gens ne veulent plus travailler, plus faire d'effort, mais ils veulent être libres."
-    sael colere "Il va falloir choisir. Entre la liberté et la sécurité. On ne peut pas garder les deux entières."
+    sael "Chez nous, on s'aide déjà sans bons."
+    sael determine "Je comprends votre peur. Mais je ne crois pas qu'attendre Kami pour chaque chose nous aide davantage."
 
     lysa blase "Même en votant pour, il reste un trou béant dans le texte."
     lysa reflechit "Avec quoi les gens gagnent leur premier argent ? Si personne n'a rien, personne ne peut rien acheter à personne."
 
-    noam "Elle a raison. C'est le point noir de toute la proposition."
+    noam "Ouais, c'est vrai. On va les trouver où, les premiers salaires ?"
     noam "Kami. Tu peux nous éclairer, ou tu comptes rester muette encore une heure ?"
 
     show screen kami_broadcast_ui
@@ -1594,7 +1592,7 @@ label _3_DEBAT1_PHASE3:
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Libre à vous de travailler. Ou pas. Mais ne comptez plus sur la générosité des rations."
-    kami "La faim est une motivation remarquablement efficace. Je l'ai observé sur vous mille fois."
+    kami "Et pour ceux qui ne voudront pas travailler... Eh bien, il faudra se débrouiller sans rations. Motivant, non ?"
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1613,9 +1611,9 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    lysa reflechit "Un système de contrats. C'est… viable. Au moins pour amorcer l'économie."
+    lysa reflechit "D'accord, les gens auront au moins un moyen de gagner de l'argent."
 
-    nyra reflechit "Et avec le commerce, des structures plus grosses finiront par émerger. Des entreprises. Un vrai tissu."
+    nyra reflechit "Et si les échanges reprennent, des entreprises pourront se remettre à tourner."
 
     ryn reflechit "Ouais, sur le papier. Mais qui décide des contrats ? Elle. Toujours elle."
 
@@ -1647,7 +1645,7 @@ label _3_DEBAT1_PHASE3:
         ("kael", "inquiet", 0.68),
     ])
 
-    noam "Il ne manque plus que… vous deux. Ceux de qui tout dépend."
+    noam "Ryn, Kael... Vous en pensez quoi, maintenant ?"
 
     ryn triste "…Moi, je sais. Que je le veuille ou non. Limen, c'est écrit là. Alors je porterai mon choix."
 
@@ -1701,23 +1699,23 @@ label _3_DEBAT1_PHASE3_INT1:
             ("elen", "joie", 0.98),
         ])
 
-        noam "Même avec les bons, les rayons sont vides. On distribue des droits sur des étagères qui n'existent pas."
+        noam "Les gens ont des bons, mais souvent y a rien à acheter avec. Ça sert à quoi ?"
 
         elias determine "Ça, c'est la vérité vraie. Un bon pour du riz, et pas de riz au bout. On appelle ça la sécurité ?"
 
-        julian sourire "Le commerce remplit les rayons. Un producteur qui peut vendre produit davantage. C'est mécanique."
+        julian sourire "Si les producteurs peuvent vendre, ils auront une bonne raison d'en faire plus."
 
-        mara doute "Ou alors les rayons se remplissent là où il y a de l'argent. Et Limen regarde par la fenêtre."
+        mara doute "Ouais, et tout partira là où y a de l'argent. À Limen, ils auront quoi ?"
 
         ryn colere "Voilà ! Nexus déborde, nous on ramasse les miettes. Comme aujourd'hui, mais en pire."
 
-        kael reflechit "…Sauf que Limen est le plus peuplé. La demande y sera énorme. Un marché suit la demande, non ?"
+        kael reflechit "Limen a beaucoup d'habitants. Des vendeurs voudront sûrement y aller aussi."
 
         ryn reflechit "…Mouais. Peut-être. Si on a de quoi payer, déjà."
 
-        sael neutre "Chez nous, on fabrique ce qu'il nous faut. Le manque, on le connaît. On lui survit."
+        sael neutre "Chez moi, on fait avec ce qu'on a. Mais c'est pas toujours simple."
 
-        elen joie "Et avec les échanges, on n'aura plus à seulement survivre. On pourra vivre !"
+        elen joie "Et si on pouvait enfin avoir ce qui nous manque ? Ça serait bien, non ?"
 
         # Montre que le système actuel ne nourrit pas : pousse doucement les hésitants.
         $ debat_day3_apply_influence({"ryn": 1, "kael": 1, "mara": -1, "julian": 1, "elen": 1})
@@ -1735,18 +1733,18 @@ label _3_DEBAT1_PHASE3_INT1:
 
         noam "On répète que les bons donnent droit à tout. En vrai, ils donnent droit à quoi ?"
 
-        tomas raison "Euh… 62 %% des références listées sont en rupture permanente en périphérie. C'est… c'est pas rien."
+        tomas raison "J'ai vu les chiffres. Dans certains endroits, plus de la moitié des produits manquent presque tout le temps."
 
         iris colere "Un bon, c'est un ticket pour faire la queue. Point. Le produit correct part en deux jours."
 
         ryn colere "À Limen, on a des bons pour du lait qui arrive caillé. Des médocs périmés avant même la livraison."
         ryn triste "Ça, c'est votre « sécurité » ? Un papier qui promet ce qui n'arrive jamais ?"
 
-        mara reflexion "…D'accord. Là, tu marques un point. Défendre ce système-là, c'est défendre du vide."
+        mara reflexion "Ouais, ça marche pas bien. Mais le supprimer d'un coup, c'est pas mieux."
 
         elias determine "Le même ticket pour rien, qu'on se crève au boulot ou qu'on dorme toute la journée. Faut que ça change."
 
-        elen joie "Plus de fournisseurs, plus de concurrence, plus de choix. On mérite mieux qu'un ticket vide !"
+        elen joie "Moi, j'aimerais juste qu'on arrête de se battre pour trois bricoles."
 
         # L'argument le plus efficace pour rallier les pauvres (Ryn) : preuve vécue.
         $ debat_day3_apply_influence({"ryn": 2, "mara": 1, "kael": 1, "tomas": 1, "iris": 1})
@@ -1768,15 +1766,15 @@ label _3_DEBAT1_PHASE3_INT1:
         kael mefiant "Un écart de flux. Un module dépressurisé. Là-haut, une erreur logistique, ça tue en silence."
         kael triste "On ne peut pas se permettre l'imprévu. Jamais."
 
-        noam "Et le commerce, c'est de l'imprévu par définition."
+        noam "Et avec le commerce, les livraisons peuvent changer tout le temps."
 
         iris inquiet "…Ok. Là, même moi je tique. On met des vies en balance contre des étals mieux garnis ?"
 
-        tomas raison "P-Paradoxalement, c'est sur Orbite qu'il y a le moins de morts par an. Le carcan actuel les protège."
+        tomas raison "Sur Orbite, il y a pourtant peu de morts. Les règles actuelles ont aussi cet avantage."
 
         julian hesitation "On n'interdit rien de plus, pourtant… Enfin. Je vois l'idée. Mais je vois aussi le vide sous nos pieds."
 
-        lysa blase "Un grain de sable dans un système sous pression, et tout saute. Kael et Nyra le savent mieux que nous."
+        lysa blase "Il suffit qu'une livraison merde et ils ont un gros problème. On a compris."
 
         nyra stress "Sur Orbite, la perte de contrôle se paie dans la seconde. Pas au prochain vote."
 
@@ -1840,17 +1838,17 @@ label _3_DEBAT1_PHASE3_INT2:
 
         elen joie "Voilà ! Tu bossais, tu achetais. Personne pour juger si tes chaussures étaient assez trouées."
 
-        julian sourire "Ce monde n'était pas parfait. Il était vivant. Je préfère le mouvement à une égalité dans l'attente."
+        julian sourire "C'était pas parfait, mais on pouvait essayer autre chose. Aujourd'hui, on attend que Kami décide."
 
         mara reflexion "« Choisir »… c'est un joli mot, Elen."
         mara reflexion "Moi, je me souviens surtout des sourires obligatoires. Des portes qui se ferment si tu n'es pas… parfaite."
         mara triste "La liberté d'avant, certains l'ont payée très cher. J'en fais partie."
 
-        tomas raison "Faut dire… ce qui pourrissait tout, avant, c'était la guerre. Elle est interdite maintenant. Techniquement, ça pourrait mieux tourner."
+        tomas raison "Les guerres faisaient beaucoup de dégâts aussi. Avec Kami, ce risque-là est plus faible. Enfin... en théorie."
 
         ryn colere "« Techniquement ». Dis ça aux gamins de Limen qui bouffaient les restes des riches."
 
-        noam "Le monde d'avant offrait la liberté à ceux qui avaient déjà les moyens. Aux autres, la loi de la jungle."
+        noam "Ouais. Enfin, avant, les gens qui avaient pas d'argent galéraient aussi."
 
         elen joie "Alors gardons le meilleur ! L'essentiel pour tous, la liberté pour le reste. Comme avant, mais sans la guerre !"
 
@@ -1879,14 +1877,14 @@ label _3_DEBAT1_PHASE3_INT2:
 
         kael triste "Aucune transition. On saute sans corde. Sur Orbite, ça, c'est un arrêt de mort."
 
-        lysa blase "« Suppression » veut dire suppression. Pas « réduction ». Icare aussi croyait pouvoir négocier avec la gravité."
+        lysa blase "Y a écrit « supprimer ». Pas « réduire ». C'est quand même pas compliqué."
 
         ryn colere "Sans bons, à Limen, on meurt en silence pendant que vous « produisez » vos rêves."
-        ryn colere "Le texte condamne les faibles. C'est écrit noir sur blanc !"
+        ryn colere "Et ceux qui peuvent pas bosser, ils crèvent ? C'est ça, le plan ?!"
 
         mara stress "…Et il l'écrit noir sur blanc. On ne pourra pas dire qu'on ne savait pas."
 
-        sael determine "Les Limenois échangent déjà pour survivre. Ce texte ne les condamne pas. Il les libère du mensonge."
+        sael determine "Les gens échangent déjà des choses là-bas. On le sait tous."
 
         think "Ryn frappe du poing. Sael ne cille pas."
 
@@ -1908,13 +1906,13 @@ label _3_DEBAT1_PHASE3_INT2:
 
         sael reflechit "Depuis toujours. Un sac contre une réparation. Un service contre du tissu. Ça tient les gens debout entre deux rations."
 
-        noam "Ça marche en petit. Mais à grande échelle, officiel : est-ce que ça reste sous contrôle ?"
+        noam "Ça marche entre voisins. Mais dans tous les districts ? J'en suis moins sûr."
 
-        kael doute "…Si ça existe déjà sans provoquer le chaos, alors peut-être que sur Orbite aussi, ça pourrait tenir."
+        kael doute "Si ça existe déjà, on pourrait peut-être trouver un moyen de le faire chez nous aussi."
 
         julian sourire "Exactement ! Les gens s'organisent déjà. Supprimer les bons, c'est cesser de nier ce qu'ils font en cachette."
 
-        lysa blase "S'organiser… ou couronner des petits rois. Les marchés noirs finissent toujours par sacrer quelqu'un."
+        lysa blase "Et y aura toujours des types pour prendre leur part au passage."
 
         ryn reflechit "…Mais si c'est déjà là, et que ça sauve des familles… alors on pourrait faire pareil. En mieux. Sans crever en attendant Kami."
 
