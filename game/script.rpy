@@ -117,21 +117,28 @@ init python:
         mx, my = renpy.get_mouse_pos()
         mouse_x = (0.5 - max(0.0, min(1.0, float(mx) / w))) * 2.0 * edge_x
         mouse_y = (0.5 - max(0.0, min(1.0, float(my) / h))) * 2.0 * edge_y
-        # Priorité au locuteur : déplacement de souris autour du focus,
-        # plutôt qu'une interpolation moitié-moitié qui le décale du centre.
-        # Le clamp final garde l'image dans ses bords, même aux extrémités.
-        # Pensées/narration : 100 % du déplacement autorisé par le zoom.
-        # Aucun rayon artificiel autour du point de focus.
-        # En mode dialogue, la position du locuteur doit rester prioritaire.
-        # L'ancien mélange avec la souris (24 %) déplaçait le cadrage vers
-        # le milieu de l'écran et pouvait même sortir les sprites des bords.
-        # Le suivi libre de la souris reste réservé aux autres vues.
+        # Changement de locuteur : on recadre d'abord le personnage au plus
+        # près du centre pendant le travelling. La souris reprend ensuite la
+        # main, sans annuler l'autofocus dès la première image.
         if speaker_mode:
-            target_x = max(-edge_x, min(edge_x, base_x))
-            target_y = max(-edge_y, min(edge_y, base_y))
+            if st < duration:
+                target_x, target_y = base_x, base_y
+            else:
+                # Décalage RELATIF au locuteur : au centre de l'écran, la
+                # souris ne décentre pas le personnage (contrairement à un
+                # mélange de la position absolue de la souris et du focus).
+                # Le joueur peut parcourir le reste du plan en déplaçant
+                # volontairement le curseur vers les bords.
+                pointer_range = 0.55
+                target_x = base_x + mouse_x * pointer_range
+                target_y = base_y + mouse_y * pointer_range
         else:
-            target_x = max(-edge_x, min(edge_x, mouse_x))
-            target_y = max(-edge_y, min(edge_y, mouse_y))
+            # Narration : déplacement libre sur l'ensemble de la vue zoomée.
+            target_x, target_y = mouse_x, mouse_y
+
+        # Pas de zone hors champ, même si le locuteur est sur un bord.
+        target_x = max(-edge_x, min(edge_x, target_x))
+        target_y = max(-edge_y, min(edge_y, target_y))
         trans.xoffset += (target_x - trans.xoffset) * 0.23
         trans.yoffset += (target_y - trans.yoffset) * 0.23
         return 0.016
