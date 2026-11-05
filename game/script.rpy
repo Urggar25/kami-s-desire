@@ -122,9 +122,16 @@ init python:
         # Le clamp final garde l'image dans ses bords, même aux extrémités.
         # Pensées/narration : 100 % du déplacement autorisé par le zoom.
         # Aucun rayon artificiel autour du point de focus.
-        amount = 0.24 if speaker_mode else 1.0
-        target_x = max(-edge_x, min(edge_x, base_x * (1.0 - amount) + mouse_x * amount))
-        target_y = max(-edge_y, min(edge_y, base_y * (1.0 - amount) + mouse_y * amount))
+        # En mode dialogue, la position du locuteur doit rester prioritaire.
+        # L'ancien mélange avec la souris (24 %) déplaçait le cadrage vers
+        # le milieu de l'écran et pouvait même sortir les sprites des bords.
+        # Le suivi libre de la souris reste réservé aux autres vues.
+        if speaker_mode:
+            target_x = max(-edge_x, min(edge_x, base_x))
+            target_y = max(-edge_y, min(edge_y, base_y))
+        else:
+            target_x = max(-edge_x, min(edge_x, mouse_x))
+            target_y = max(-edge_y, min(edge_y, mouse_y))
         trans.xoffset += (target_x - trans.xoffset) * 0.23
         trans.yoffset += (target_y - trans.yoffset) * 0.23
         return 0.016
@@ -537,17 +544,21 @@ init python:
 
 init python:
     def cam_x_for_edge_safe_char(tag, zoom=None):
-        """Centre autant que possible sans jamais découvrir un bord du décor."""
-        x = store.char_pos.get(tag, 0.5)
+        """Cadre le sprite, en limitant le déplacement pour éviter les bandes vides."""
+        state = store.char_state.get(tag, {})
+        x = state.get("x", store.char_pos.get(tag, 0.5))
+        try:
+            x = max(0.0, min(1.0, float(x)))
+        except (ValueError, TypeError):
+            x = 0.5
         z = zoom if zoom is not None else CINEMA_ZOOM_BG
         if z <= 1.0:
             return 0.5
 
-        # Cette cible centrerait exactement le personnage. La borner à 0..1
-        # garantit que l'image zoomée couvre encore les deux bords de l'écran.
-        # Le point de référence est la position réelle du sprite dans le plan.
-        # Le focus doit rester dans l'image zoomée, sans compenser deux fois.
-        target = 0.5 + (x - 0.5) * z / max(0.001, (z - 1.0))
+        # Le centre idéal demande un décalage de (0.5 - x) * z * largeur.
+        # La conversion ci-dessous le ramène à la convention de cam_apply.
+        # Aux extrémités, le clamp est inévitable pour ne pas montrer de vide.
+        target = 0.5 + (x - 0.5) * z / (z - 1.0)
         return max(0.0, min(1.0, target))
 
 
