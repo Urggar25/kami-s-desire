@@ -403,11 +403,13 @@ screen minijeu_halteres():
                 font "fonts/Rajdhani-SemiBold.ttf"
             text "[clock]":
                 xpos 538 ypos 411
-                size 36 color "#ECF7FF" if mg_time_left > 10 else "#FF7878"
+                size 36 color ("#ECF7FF" if mg_time_left > 10 else "#FF7878")
                 font "fonts/Rajdhani-SemiBold.ttf"
 
             # Bouton de secours pour le tactile ; la zone de timing reste le
             # centre de l'attention. Le clic est aussi accepté partout.
+            # Un seul déclenchement sur relâchement : l'écoute globale
+            # mouseup_1 gère déjà le clic. Ce bouton sert de repère tactile.
             textbutton "POUSSER":
                 xpos 12 ypos 479
                 xsize 696 ysize 65
@@ -416,7 +418,7 @@ screen minijeu_halteres():
                 text_color "#EDFAFF"
                 background Solid("#0D466B")
                 hover_background Solid("#16638D")
-                action Function(mg_click)
+                action NullAction()
 
     # Défis en bas, intégrés au HUD plutôt que superposés au décor.
     frame at mg_panel_fade(0.18):
@@ -433,9 +435,10 @@ screen minijeu_halteres():
                 $ label = challenge[0]
                 $ complete = challenge[1]
                 $ failed = len(challenge) > 2 and challenge[2]
-                text ("✓  " if complete else "✕  " if failed else "○  ") + label:
+                $ challenge_label = ("OK  " if complete else "NON  " if failed else "—  ") + label
+                text challenge_label:
                     size 22
-                    color "#63DDA5" if complete else "#F28484" if failed else "#ADC2CD"
+                    color ("#63DDA5" if complete else "#F28484" if failed else "#ADC2CD")
                     font "fonts/Rajdhani-SemiBold.ttf"
 
     textbutton "RETOUR":
