@@ -73,10 +73,11 @@ init 4 python:
 
     def day3_vote_argument_drop(drags, drop, arg_id):
         if drop is not None and getattr(drop, "drag_name", "") == "day3_briefcase_drop":
-            day2_vote_add_argument(arg_id)
-            store.j3_codex_dot = True
-            return True
+            if day2_vote_add_argument(arg_id):
+                store.j3_codex_dot = True
+                return True
         renpy.restart_interaction()
+        return False
 
 screen day3_current_vote_codex(called=False):
     modal True
@@ -255,7 +256,7 @@ label day3_collect_vote_argument(arg_id):
     call screen day3_argument_briefcase(arg_id)
     if _return:
         play sound sfx_drop
-        "Argument ajouté au dossier du vote."
+        call screen day2_argument_deposit_success(DAY3_VOTE_ARGUMENTS[arg_id] if arg_id in DAY3_VOTE_ARGUMENTS else DAY2_VOTE_ARGUMENTS[arg_id])
         $ chapter1_check_complete_dossier()
     return
 
@@ -308,8 +309,8 @@ label _3_CANON:
     think "Le plafond blanc me fixe autant que je le fixe."
     $ blink()
 
-    think "Dans le couloir, les pas traînent déjà. Personne ne court. Personne ne parle fort."
-    think "C'est le silence des gens qui savent qu'aujourd'hui, quelqu'un va perdre."
+    think "J'entends du monde dans le couloir. Personne ne parle bien fort."
+    think "Je crois qu'on a tous le vote en tête."
     $ blink()
 
     play sound sfx_announce
@@ -385,10 +386,10 @@ label _3_OPT_KAEL_DIAL:
 
     noam "Le vote ?"
 
-    kael inquiet "Tout le monde répète que les effets seront minimes."
-    kael inquiet "Ils ne le seront pas. Sur Orbite, rien n'est jamais minime. Un écart, et c'est le vide."
+    kael inquiet "Tout le monde dit que ça va rien changer."
+    kael inquiet "Sur Orbite, une livraison en retard peut tuer des gens. Alors si, ça me fait peur."
 
-    kael mefiant "Un module dépend d'une chaîne logistique au gramme près. Change le flux, et tu joues avec des vies là-haut."
+    kael mefiant "On dépend des livraisons pour presque tout. Si ça se dérègle, on fait comment ?"
 
     think "Ce qu'il décrit, je pourrai le ressortir au débat. La fragilité d'Orbite, personne d'autre ne la mesure vraiment."
 
@@ -402,7 +403,7 @@ label _3_OPT_KAEL_DIAL:
     kael surpris "Non. Enfin… je suis pour. En théorie."
     kael culpabilite "Mais toucher aux règles de ce monde, ça me terrifie. Et je déteste avoir peur devant les autres."
 
-    noam "On a tous peur. Vouloir que rien ne bouge, c'est un choix aussi. Et il tue aussi, juste plus lentement."
+    noam "Je comprends. Mais si on laisse tout comme ça, ça va pas s'arranger non plus."
 
     kael calme "…Ouais. On verra à quatorze heures."
     kael sourire "Merci d'être passé. Ça aide, même si je le montre mal."
@@ -790,8 +791,8 @@ label _3_PAUSE_CHAMBRE:
 
     noam "Attends. Qu'est-ce qu'il fait, exactement ?"
 
-    nyra colere "Il est allé voir Tomas, puis deux autres. Il ne défend plus le texte."
-    nyra triste "Il se vend, lui. Et le pire, c'est que ça va braquer les gens au lieu de les convaincre."
+    nyra colere "Il est passé voir Tomas, puis d'autres. Il parle surtout de lui, maintenant."
+    nyra triste "Ça va finir par agacer tout le monde. Et on a besoin de leurs voix."
 
     noam "Il est où ?"
 
@@ -882,31 +883,31 @@ label _3_PAUSE_CHAMBRE:
 
     tomas inquiet "O-Ouais, sans doute…"
 
-    think "Il l'enveloppe comme un vendeur. Tomas se ratatine à chaque phrase. Je m'avance."
+    think "Tomas cherche ses mots. Julian ne lui laisse même pas le temps de répondre. Je m'approche."
 
     call day3_julian_clash_minigame from _call_day3_julian_clash_minigame
 
-    noam determine "Personne ici n'a de mandat pour se poser en chef."
+    noam determine "Julian, attends. Qu'est-ce que tu racontes à Tomas ?"
 
     julian sourire "Ah. Noam. Il fallait bien que tu débarques."
 
-    noam hesitation "Que tu veuilles que le vote passe, je le comprends."
-    noam "Mais si tu te mets trop en avant, les hésitants vont voir autre chose que le texte."
-    noam reflexion "On lit clair dans ton jeu, Julian. Tu veux briller."
-    noam raison "Résultat : le vote ne portera plus sur la proposition. Il portera sur toi."
-    noam colere "Et une chose est sûre : toi, tu ne fais pas l'unanimité."
+    noam hesitation "Je veux aussi que ça passe. Mais là, tu parles plus de toi que du texte."
+    julian reflexion "Et toi, tu fais quoi pour convaincre les autres ? Tu attends que tout le monde se mette d'accord par miracle ?"
+    noam reflexion "Non, mais..."
+    julian sourire "Alors laisse-moi essayer. Tomas avait des questions, je lui répondais."
+    tomas hesitation "E-Enfin... Il me demandait surtout de le soutenir lui."
+    noam raison "Voilà. C'est ça le problème. Tu crois pas que ça va finir par les braquer ?"
+    julian hesitation "Peut-être. Mais au moins, je fais quelque chose. Et si personne se bouge, ce vote est mort."
 
-    julian sourire "Tu te réveilles, aujourd'hui ? On ne t'entendait pas depuis le premier jour."
-    julian taquin "Et là, tu viens faire le malin ?"
-    julian "JE veux que ce texte passe. Alors laisse-moi convaincre les autres."
+    julian taquin "Tu m'en veux parce que je parle trop fort, Noam ? Ça, j'avais remarqué."
+    julian reflexion "Mais je suis d'accord sur un point : je dois mieux parler du texte."
 
-    noam "Parle du texte. Rien d'autre. Ta personne, ta gloire, tout le monde s'en contrefiche."
+    noam "C'est tout ce que je te demande. Les autres doivent pouvoir choisir sans te suivre les yeux fermés."
 
-    tomas "I-Il a raison. Enfin… je veux dire…"
-    tomas "Si ça ressemble à une démonstration d'ego, f-franchement… ce sera sans moi."
+    tomas hesitation "Je... Je veux bien écouter vos arguments. Mais j'ai pas envie de choisir un camp entre vous deux."
 
-    julian triste "Bon. Très bien. On verra au Conclave qui porte réellement ce vote."
-    julian "Évite juste de me transformer en méchant de l'histoire. Je me bouge pour le collectif, moi. C'est déjà plus que la plupart."
+    julian triste "Très bien. On parlera du texte. Mais ne viens pas me reprocher ensuite de n'avoir rien tenté."
+    julian reflexion "Et arrête de faire comme si j'étais le seul à avoir quelque chose à prouver."
 
     hide julian with moveoutleft
 
@@ -917,12 +918,12 @@ label _3_PAUSE_CHAMBRE:
 
     nyra "Non. Il fallait remettre les points sur les i de toute façon."
 
-    tomas "P-Pour être honnête… je ne veux pas que ce soit lui qui donne le ton."
-    tomas "Il faut que quelqu'un puisse lui tenir tête. T-Tu vas parler, tout à l'heure ?"
+    tomas hesitation "En fait... Il m'a mis mal à l'aise. Mais il a pas tort sur tout."
+    tomas hesitation "Tu vas prendre la parole tout à l'heure, Noam ?"
 
-    noam "Oui. Mais pas pour briller. Pour que ça avance dans le bon sens."
+    noam "Je vais essayer. J'ai pas envie qu'on se plante à cause d'une dispute."
 
-    tomas hoche_la_tete "Alors ça a une chance de passer."
+    tomas hoche_la_tete "O-Ouais. On verra bien."
 
     nyra sourire "Allez, viens, Tomas. Tu as bien mérité une pause."
     nyra "Merci, Noam."
@@ -934,7 +935,7 @@ label _3_PAUSE_CHAMBRE:
     think "Ce vote, ce n'est pas juste un texte. C'est une question de confiance."
     think "Julian n'est pas un ennemi. Mais son besoin d'exister peut causer le pire comme le meilleur."
     think "Je serre les poings. Ils tremblent moins qu'avant."
-    think "Les grands discours, c'est pas pour moi. Mais je ne peux pas laisser ça déraper."
+    think "Julian m'énerve. Mais il a raison sur un truc : jusqu'ici, j'ai surtout regardé les autres se débrouiller."
 
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
 
@@ -967,13 +968,13 @@ label _3_TRANSITION_CONCLAVE:
     "Le groupe accélère quand le couloir se resserre. Elle, non. Elle traîne les pieds, exprès."
 
     lysa triste "On va voter. On va échouer."
-    lysa triste "Puis demain on se réveillera ici, mêmes murs, même pression. Et dans trois jours, on recommencera."
-    lysa blase "Et on échouera encore. On ne change pas un monde à douze marionnettes."
+    lysa triste "Et demain on sera encore coincés ici. Dans trois jours, on recommencera."
+    lysa blase "On est douze à jouer les députés pendant qu'elle décide de tout."
 
     think "Elle ne me parle pas vraiment. Elle récite une conclusion qu'elle a déjà tranchée toute seule."
 
-    noam reflechit "Il n'y a que ceux qui ne tentent rien qui n'ont jamais rien."
-    noam sourire "On avance, et ce qui arrivera arrivera. C'est déjà ça de moins à regretter."
+    noam reflechit "On n'a pas encore voté, Lysa."
+    noam sourire "Attends au moins le résultat avant de nous enterrer."
 
     "Lysa fait une moue déconfite alors qu'on approche de la porte du Conclave."
 
@@ -983,20 +984,19 @@ label _3_TRANSITION_CONCLAVE:
     think "Sael s'est laissée glisser à l'arrière du groupe, elle aussi. Volontairement. Elle observe Lysa depuis un moment."
     "Sans prévenir, sans théâtre, elle attrape Lysa et la serre contre elle."
 
-    sael "Je te regarde depuis hier. Tu portes tout ce que les autres refusent de voir. C'est lourd."
-    sael "Ma grand-mère disait que même les morts se reposent avant de revenir dans nos rêves."
-    sael "On a besoin de ta lucidité. Pas d'une autre Lysa. De celle qui est là, maintenant."
+    sael "Lysa... Tu as l'air épuisée."
+    sael "Tu vois les problèmes avant tout le monde. C'est utile. Mais tu peux aussi te reposer un peu."
+    sael "On aura besoin de toi pendant le vote."
 
     "Elle pointe la poitrine de Lysa du doigt. Les épaules de Lysa se relâchent, à peine."
 
     lysa "Tu dramatises. Je suis toujours là."
 
-    sael "Alors montre-le. Montre-nous la battante qui se cache là-dedans."
-    sael "Tu vois des failles qu'on ne voit pas. C'est pénible. Mais aujourd'hui, ça peut nous sauver."
+    sael "Je sais. Je te demande juste de ne pas abandonner avant d'avoir essayé."
 
-    lysa "…Si je sauve le débat, tu me dois un café. Les oracles se faisaient mieux payer, pourtant."
+    lysa "Bon. Mais tu me devras un café après ça."
 
-    sael sourire "Je t'en offre deux. Ici, personne ne paie rien. Peut-être un signe que ton monde d'avant n'était pas si parfait."
+    sael sourire "Deux, même. Et sans formulaire."
 
     lysa blase "Touché. Bref. On y va avant que je devienne sentimentale."
 
@@ -1068,7 +1068,7 @@ label _3_DEBAT1_PHASE1:
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "À vous de le remettre en ordre et de le lire. Vraiment le lire."
-    kami "Le diable se cache dans les détails. Moi, je me contente de l'y ranger."
+    kami "Faites attention aux petits mots. Je vous assure que ça compte."
 
     hide screen kami_broadcast_ui
 
@@ -1192,8 +1192,8 @@ label _3_DEBAT1_PHASE2:
 
     lysa salut "Que peut-être aucun de ces textes n'est de nous. Que la manipulation est invérifiable. Bienvenue."
 
-    noam "Manipulation ou pas, il faudra voter. Alors autant décider en connaissance de cause."
-    noam reflexion "Concentrons-nous sur ce qu'on peut vérifier : ce que ce texte fait, concrètement, à chacun de nos districts."
+    noam "Elle nous a peut-être bien eus. Mais on doit quand même voter."
+    noam reflexion "Alors parlons de ce qui va vraiment arriver chez nous."
 
     # ── Mini-jeu buzzer (Objection Protocol) : influence l'adhésion des PNJ ──
     pause 0.4
@@ -1278,8 +1278,8 @@ label day3_before_objection_protocol_minigame:
 
     mara colere "Ou alors c'est exactement ce qu'elle veut qu'on pense. Paniquer, voter vite, se planter."
 
-    noam reflexion "Elle nous montre le prix de l'attente. Pas celui de l'erreur. Ne la laissons pas choisir pour nous."
-    noam "On garde la tête froide. On finit ce qu'on a commencé, mais on le finit lucides."
+    noam reflexion "Elle nous montre des gens qui ont faim. Mais ça dit pas ce qui se passera si on supprime les bons."
+    noam "On peut pas décider juste parce qu'elle nous fait peur."
 
     jump _3_DEBAT1_PHASE3
 
@@ -1529,10 +1529,10 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    noam "Bon. On a le vrai texte, on a le chiffre de Kami. Il nous reste à décider avec la tête, pas avec la peur."
+    noam "Bon. On sait ce qu'elle veut nous faire voter. Parlons des conséquences."
 
     julian "La tête ? On est en train de crever à petit feu, Noam."
-    julian "Le statu quo, c'est une tombe collective avec des bons de pain rassi. Tu appelles ça la sécurité ?"
+    julian "Et rester comme ça, tu appelles ça une solution ? Les gens manquent déjà de tout."
 
     ryn colere "Et ton grand soir, c'est quoi ? On sacrifie Limen pour que Nexus se paie du luxe ?"
 
@@ -1542,10 +1542,10 @@ label _3_DEBAT1_PHASE3:
 
     mara colere "Ryn. Respire. On avance mieux sans hurler."
 
-    elen joie "Mais c'est ça qui est beau ! Choisir ce qu'on mange sans demander la permission !"
+    elen joie "Imaginez : tu peux acheter ce que tu veux sans remplir trois formulaires !"
 
     # (combinaison « lysa raison » ajoutée dans images.rpy)
-    lysa raison "Pour choisir, il faut de l'argent, Elen. Midas transformait tout en or, et il est quand même mort de faim."
+    lysa raison "Encore faut-il avoir de l'argent, Elen. Sinon tu regardes juste les vitrines."
 
     tomas "Euh… il faut dire que la production mondiale s'est effondrée depuis Kami."
     tomas "On fabrique presque quatre fois moins qu'avant. C'est… c'est pas rien."
@@ -1560,10 +1560,13 @@ label _3_DEBAT1_PHASE3:
     kami "Continuez. Vous êtes bien plus intéressants quand vous avez peur."
 
     play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], phase=3, prompt="Moment 1 — Cadrer la première salve.")
-    if p3_pick is None:
-        $ p3_pick = 0
-    call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], phase=3, prompt="Premier échange — Quel argument présenter ?")
+    if p3_pick is not None and p3_round_options[0][p3_pick]["unlocked"]:
+        $ p3_argument_one = p3_round_options[0][p3_pick]["id"]
+        call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
+    else:
+        $ p3_argument_one = None
+        think "Je n'ai rien de suffisamment solide à ajouter pour le moment."
 
     stop music fadeout 1.0
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1617,10 +1620,13 @@ label _3_DEBAT1_PHASE3:
     ryn reflechit "Ouais, sur le papier. Mais qui décide des contrats ? Elle. Toujours elle."
 
     play sound "sound/sfx_argument_impact.ogg"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Moment 2 — Désamorcer ou accélérer la fracture.")
-    if p3_pick is None:
-        $ p3_pick = 0
-    call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
+    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Dernier échange — Quel argument présenter ?")
+    if p3_pick is not None and p3_round_options[1][p3_pick]["unlocked"]:
+        $ p3_argument_two = p3_round_options[1][p3_pick]["id"]
+        call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
+    else:
+        $ p3_argument_two = None
+        think "Je préfère me taire plutôt que parler pour ne rien dire."
 
     stop music fadeout 1.0
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1628,9 +1634,8 @@ label _3_DEBAT1_PHASE3:
 
     pause 1.0
 
-    noam "Bon. Je crois qu'on a fait le tour."
-    noam "Le monde d'avant, le texte brut, les trocs qui existent déjà, les contrats de Kami…"
-    noam "On sait tout ce qu'on peut savoir. Le reste, c'est un pari."
+    noam "Bon, je crois qu'on a fait le tour."
+    noam "On sait ce que ce texte change. Pour le reste... il faudra assumer notre vote."
 
     # ── CLIFFHANGER 2 : le dernier indécis, avant le vote ──
     think "Je regarde autour de la table. Les visages se sont figés. Chacun a choisi. Ou presque."
@@ -1679,11 +1684,11 @@ label _3_DEBAT1_PHASE3:
 # ============================================================================
 
 label _3_DEBAT1_PHASE3_INT1:
-    $ selected = p3_round_options[0][p3_pick]["title"]
+    $ selected = p3_argument_one
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    if "appro" in selected.lower() or "inégal" in selected.lower():
+    if selected == "approvisionnement":
 
         # Tous les locuteurs de la branche sont dans le showGroup (aucun sprite parasite).
         $ showGroup([
@@ -1717,7 +1722,7 @@ label _3_DEBAT1_PHASE3_INT1:
         # Montre que le système actuel ne nourrit pas : pousse doucement les hésitants.
         $ debat_day3_apply_influence({"ryn": 1, "kael": 1, "mara": -1, "julian": 1, "elen": 1})
 
-    elif "ration" in selected.lower() or "choix" in selected.lower():
+    elif selected == "rationnement":
 
         $ showGroup([
             ("tomas", "raison", 0.05),
@@ -1746,7 +1751,7 @@ label _3_DEBAT1_PHASE3_INT1:
         # L'argument le plus efficace pour rallier les pauvres (Ryn) : preuve vécue.
         $ debat_day3_apply_influence({"ryn": 2, "mara": 1, "kael": 1, "tomas": 1, "iris": 1})
 
-    elif "orbite" in selected.lower() or "dépress" in selected.lower():
+    elif selected == "orbite":
 
         $ showGroup([
             ("nyra", "raison", 0.02),
@@ -1782,14 +1787,44 @@ label _3_DEBAT1_PHASE3_INT1:
         # Argument « danger » : refroidit fortement les hésitants (surtout Kael).
         $ debat_day3_apply_influence({"kael": -2, "nyra": -1, "mara": -1, "ryn": -1, "julian": -1, "lysa": -1})
 
+    elif selected == "valeur_travail":
+        $ showGroup([
+            ("sael", "neutre", 0.12),
+            ("elias", "reflechit", 0.33),
+            ("mara", "doute", 0.55),
+            ("ryn", "reflechit", 0.77),
+        ])
+        noam "Sael, chez toi, tout le monde aide les autres, c'est ça ?"
+        sael neutre "Oui. Quand quelqu'un ne peut pas travailler, on l'aide. Sinon, chacun fait sa part."
+        elias reflechit "Ça, ça me parle. Mais avec les nouveaux contrats, ceux qui peuvent pas bosser, ils font quoi ?"
+        mara doute "Voilà. C'est exactement ce qui me gêne."
+        noam "Si on vote pour, on doit savoir ce qui arrive à ces gens-là. Pas juste leur dire de se débrouiller."
+        ryn reflechit "Au moins, tu poses la bonne question."
+        $ debat_day3_apply_influence({"sael": 1, "elias": 1, "mara": -1, "ryn": 1})
+
+    elif selected == "derogations_complexes":
+        $ showGroup([
+            ("elen", "reflechit", 0.16),
+            ("iris", "blase", 0.38),
+            ("kael", "calme", 0.60),
+            ("nyra", "raison", 0.82),
+        ])
+        noam "Elen a dû remplir des formulaires juste pour avoir quelques ingrédients. C'est normal, ça ?"
+        elen reflechit "Trois pages ! Pour des épices ! J'ai cru devenir folle."
+        iris blase "Et pour une pièce de rechange, c'est la même galère."
+        kael calme "Oui. Certains dossiers mettent des jours à être validés."
+        nyra raison "Donc le système bloque même les demandes les plus simples. On peut au moins être d'accord là-dessus."
+        noam "Ça explique pourquoi les gens veulent que ça change. Même si on ne sait pas encore si ce texte est le bon."
+        $ debat_day3_apply_influence({"elen": 1, "iris": 1, "kael": 1, "nyra": 1})
+
     return
 
 label _3_DEBAT1_PHASE3_INT2:
-    $ selected = p3_round_options[1][p3_pick]["title"]
+    $ selected = p3_argument_two
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    if "avant" in selected.lower():
+    if selected == "monde_avant":
 
         $ showGroup([
             ("iris", "reflechit", 0.05),
@@ -1824,7 +1859,7 @@ label _3_DEBAT1_PHASE3_INT2:
         # Galvanise les convaincus, mais réveille les blessures de Mara et l'amertume de Ryn.
         $ debat_day3_apply_influence({"julian": 1, "elen": 1, "iris": 1, "mara": -1, "ryn": -1})
 
-    elif "énoncé" in selected.lower():
+    elif selected == "enonce_precis":
 
         $ showGroup([
             ("ryn", "colere", 0.05),
@@ -1858,7 +1893,7 @@ label _3_DEBAT1_PHASE3_INT2:
         # Brutalité du texte : durcit les hésitants (Ryn surtout), galvanise Sael et Elias.
         $ debat_day3_apply_influence({"ryn": -2, "kael": -1, "mara": -1, "elias": 1, "sael": 2})
 
-    elif "échange" in selected.lower() or "discret" in selected.lower():
+    elif selected == "echanges_discrets":
 
         $ showGroup([
             ("ryn", "surpris", 0.05),
@@ -1891,6 +1926,36 @@ label _3_DEBAT1_PHASE3_INT2:
 
         # Rassure les hésitants avec une preuve concrète : le levier de l'unanimité.
         $ debat_day3_apply_influence({"ryn": 2, "kael": 2, "mara": 1, "sael": 1, "julian": 1})
+
+    elif selected == "rationnement":
+        $ showGroup([
+            ("ryn", "colere", 0.12),
+            ("mara", "doute", 0.34),
+            ("iris", "blase", 0.56),
+            ("tomas", "hesitation", 0.78),
+        ])
+        noam "On parle de supprimer les bons. Mais dans certains districts, ils ne suffisent déjà pas à nourrir tout le monde."
+        ryn colere "À Limen, tu peux attendre toute la journée et repartir les mains vides."
+        iris blase "Donc on garde un système qui marche mal, ou on le supprime d'un coup. Super choix."
+        tomas hesitation "O-On devrait au moins prévoir une période de transition..."
+        mara doute "Sauf qu'on peut pas rajouter une ligne au texte. C'est bien le problème."
+        noam "Alors arrêtons de prétendre que ce vote règle tout."
+        $ debat_day3_apply_influence({"ryn": -1, "mara": -1, "tomas": -1, "iris": 1})
+
+    elif selected == "approvisionnement":
+        $ showGroup([
+            ("lysa", "blase", 0.12),
+            ("nyra", "raison", 0.34),
+            ("kael", "inquiet", 0.56),
+            ("elen", "inquiet", 0.78),
+        ])
+        noam "Même aujourd'hui, tous les districts ne reçoivent pas la même chose."
+        lysa blase "Et demain, ceux qui ont déjà de quoi payer seront servis les premiers. Quelle surprise."
+        nyra raison "Pas forcément. S'il y a plus de marchandises en circulation, certains endroits pourraient aussi y gagner."
+        kael inquiet "Il faudra surtout que les livraisons arrivent à temps."
+        elen inquiet "Donc on sait pas si ce sera mieux. C'est ça ?"
+        noam "C'est ça. Et on va devoir décider quand même."
+        $ debat_day3_apply_influence({"lysa": -1, "kael": -1, "nyra": 1, "elen": 1})
 
     return
 
