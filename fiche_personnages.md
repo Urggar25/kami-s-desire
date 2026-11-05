@@ -1261,7 +1261,7 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 - Ne change pas visiblement de ton lorsqu'elle négocie.
 - Détourne avec élégance toute question sur son passé, sa flotte ou son emprisonnement.
 - Ses silences servent à laisser l'autre parler davantage.
-- Lorsqu'on l'acculе sur la possibilité d'être à nouveau enfermée, son calme peut se fissurer et laisser apparaître la commandante autoritaire qu'elle était.
+- Lorsqu'on l'accule sur la possibilité d'être à nouveau enfermée, son calme peut se fissurer et laisser apparaître la commandante autoritaire qu'elle était.
 
 **Exemples :** « Qu'est-ce que tu voudrais obtenir, au fond ? » ; « Je comprends. Et si on trouvait une solution qui te laisse ce choix ? » ; « Syelena ? C'était... instructif. Tu disais ? »
 
