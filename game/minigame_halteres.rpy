@@ -3,10 +3,11 @@ default stat_physique = 0
 
 # --- Config réutilisable (modifiée par minijeu_halteres_run) ---
 default mg_title = "ENTRAÎNEMENT AUX HALTÈRES"
-default mg_subtitle = "Synchronise ton effort avec la zone verte pour valider chaque répétition."
+default mg_subtitle = "Marque un maximum de points en 60 secondes. Parfait : +2, bien : +1."
 default mg_bg = "bg_gymnase"
 default mg_duration = 60.0
 default mg_base_speed = 0.9
+# Repère de performance pour les récompenses ; ne limite plus les coups.
 default mg_target_reps = 10
 default mg_reps = 0
 default mg_progress = 0
@@ -50,10 +51,10 @@ init python:
 
     def mg_configure(target_reps=10, duration=60.0, base_speed=0.9, title=None, subtitle=None, bg=None):
         store.mg_target_reps = target_reps
-        store.mg_duration = float(duration)
+        store.mg_duration = 60.0  # Défi d'une minute, quelle que soit la config précédente.
         store.mg_base_speed = float(base_speed)
         if title: store.mg_title = title
-        if subtitle: store.mg_subtitle = subtitle
+        store.mg_subtitle = "Marque un maximum de points en 60 secondes. Parfait : +2, bien : +1."
         # Décor déclaré dans images.rpy ; on évite l'ancien gym_bg.png absent.
         store.mg_bg = bg if bg and renpy.has_image(bg) else "bg_gymnase"
 
@@ -107,18 +108,19 @@ init python:
             store.mg_value = 0.0
             store.mg_direction = 1
 
-        if store.mg_time_left <= 0 or store.mg_reps >= store.mg_target_reps or store.mg_energy <= 0:
+        if store.mg_time_left <= 0 or store.mg_energy <= 0:
             store.mg_done = True
 
     def mg_relocate_zone():
-        # La zone se déplace et rétrécit avec la progression (difficulté).
-        progress = store.mg_reps / float(max(1, store.mg_target_reps))
-        width = max(0.10, 0.20 - progress * 0.08)
+        # La difficulté progresse avec le temps et reste bornée même si
+        # le joueur réussit un grand nombre de coups.
+        difficulty = 1.0 - max(0.0, min(1.0, store.mg_time_left / 60.0))
+        width = max(0.11, 0.22 - difficulty * 0.09)
         center = renpy.random.uniform(0.22 + width, 0.78 - width)
         store.mg_zone_start = center - width / 2.0
         store.mg_zone_end = center + width / 2.0
         # Vitesse croissante
-        store.mg_speed = store.mg_base_speed + progress * 0.55
+        store.mg_speed = store.mg_base_speed + difficulty * 0.45
 
     def mg_click():
         if store.mg_done:
@@ -130,18 +132,17 @@ init python:
             center = (store.mg_zone_start + store.mg_zone_end) / 2.0
             store.mg_combo += 1
             store.mg_combo_max = max(store.mg_combo_max, store.mg_combo)
-            combo_bonus = 1 if store.mg_combo >= 3 else 0
-
+            # Le combo est un défi annexe, sans bonus de score.
             if abs(val - center) <= store.mg_perfect_margin:
                 store.mg_perfects += 1
-                store.mg_progress += 2 + combo_bonus
-                store.mg_feedback = (kd_tr("PARFAIT !") + " x%d" % store.mg_combo) if store.mg_combo >= 2 else kd_tr("PARFAIT !")
+                store.mg_progress += 2
+                store.mg_feedback = kd_tr("PARFAIT ! +2")
                 store.mg_feedback_color = "#5ad45a"
                 store.mg_flash = 0.18
                 renpy.play("audio/sfx_clap.mp3", channel="sound")
             else:
-                store.mg_progress += 1 + combo_bonus
-                store.mg_feedback = (kd_tr("Correct.") + " x%d" % store.mg_combo) if store.mg_combo >= 2 else kd_tr("Correct.")
+                store.mg_progress += 1
+                store.mg_feedback = kd_tr("BIEN ! +1")
                 store.mg_feedback_color = "#f2c94c"
                 store.mg_flash = 0.14
                 renpy.play("audio/sfx_beep.mp3", channel="sound")
@@ -149,15 +150,15 @@ init python:
             store.mg_misses += 1
             store.mg_combo = 0
             store.mg_energy = max(0.0, store.mg_energy - 0.15)
-            store.mg_feedback = kd_tr("Raté...")
+            store.mg_feedback = kd_tr("RATÉ ! ÉNERGIE -15 %")
             store.mg_feedback_color = "#ff6b6b"
             store.mg_flash = 0.14
             renpy.play("audio/sfx_drop.mp3", channel="sound")
 
-        mg_relocate_zone()
-
-        if store.mg_reps >= store.mg_target_reps:
+        if store.mg_energy <= 0:
             store.mg_done = True
+        else:
+            mg_relocate_zone()
 
     def mg_clock_text():
         seconds = max(0, int(store.mg_time_left + 0.999))
@@ -320,18 +321,18 @@ screen minijeu_halteres():
             # La progression est indépendante du portrait : aucun élément
             # physique imaginaire ne traverse l'anatomie du sprite.
             add Solid("#061622") xpos 16 ypos 510 xsize 625 ysize 66
-            text "SÉRIE EN COURS":
+            text "POINTS GAGNÉS":
                 xpos 28 ypos 518
                 size 20 color "#A5CCDD"
                 font "fonts/Rajdhani-SemiBold.ttf"
-            $ rep_total = max(1, mg_target_reps)
-            $ segment_w = max(5, int(594 / rep_total) - 5)
-            for index in range(rep_total):
-                add Solid("#58DFA6" if index < mg_reps else "#2A4A5F"):
-                    xpos (28 + index * (594.0 / rep_total))
-                    ypos 551
-                    xsize segment_w
-                    ysize 9
+            text "[mg_progress]":
+                xpos 28 ypos 539
+                size 36 color "#64E8AF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+            text "PARFAIT : +2   /   BIEN : +1":
+                xpos 180 ypos 548
+                size 19 color "#9CC7D7"
+                font "fonts/Rajdhani-SemiBold.ttf"
 
     # Colonne de droite : le timing devient l'élément dominant.
     frame at mg_panel_fade(0.12):
@@ -342,14 +343,14 @@ screen minijeu_halteres():
         fixed:
             xysize (726, 578)
 
-            text "RÉPÉTITIONS":
+            text "SCORE  //  60 SECONDES":
                 xpos 12 ypos 4
                 size 23 color "#8DBCCF"
                 font "fonts/Rajdhani-SemiBold.ttf"
                 kerning 2
-            text "[mg_reps] / [mg_target_reps]":
+            text "[mg_progress] POINTS":
                 xpos 12 ypos 33
-                size 62 color "#F2FAFF"
+                size 54 color "#F2FAFF"
                 font "fonts/Rajdhani-SemiBold.ttf"
 
             if mg_combo >= 2:
@@ -485,7 +486,8 @@ screen tuto_halteres(as_overlay=False):
     use mk_tuto_chrome("RYTHME D'ENTRAÎNEMENT", [
         ("Observe le curseur", "Le curseur blanc balaye la barre de rythme en continu."),
         ("Frappe dans la zone verte", "Clique (ou ↑/↓) quand le curseur traverse la zone. Au centre exact : PARFAIT."),
-        ("Enchaîne les combos", "Chaque réussite consécutive augmente le combo et le score. Un raté coûte de l'énergie."),
+        ("Marque des points", "Parfait : +2 points. Bien : +1 point. Les combos comptent pour les défis bonus."),
+        ("Tiens une minute", "Chaque raté retire 15 % d'énergie. À zéro, la partie s'arrête."),
     ], "tuto_halteres", as_overlay):
 
         fixed:
@@ -538,14 +540,16 @@ label minijeu_halteres_run(mg_id="halteres", title=None, subtitle=None, bg=None,
 
     $ mg_was_success = mg_is_successful()
 
-    # Écran de résultats avec rang, défis et record
-    $ mg_final_score = min(mg_target_reps * 2, mg_progress + len([1 for c in mg_final_challenges() if c[1]]))
+    # Score brut non plafonné. Le seuil de référence ne sert qu'au rang.
+    $ mg_final_score = mg_progress
+    $ mg_score_reference = max(40, mg_final_score)
     call mk_show_results(
         mg_title,
         mg_final_score,
-        mg_target_reps * 2,
+        mg_score_reference,
         stats=[
-            ("Répétitions", "%d/%d" % (mg_reps, mg_target_reps)),
+            ("Points", str(mg_progress)),
+            ("Tentatives", str(mg_reps)),
             ("Parfaits", str(mg_perfects)),
             ("Combo max", "x%d" % mg_combo_max),
             ("Ratés", str(mg_misses)),
