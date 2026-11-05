@@ -1763,7 +1763,7 @@ label _3_DEBAT1_PHASE3_INT1:
 
         nyra raison "Vous parlez de Limen. Mais que savez-vous du prix d'une erreur sur Orbite ?"
 
-        kael mefiant "Un écart de flux. Un module dépressurisé. Là-haut, une erreur logistique, ça tue en silence."
+        kael mefiant "Chez nous, un retard de livraison, ça peut vite devenir dangereux. On a pas le droit de se planter."
         kael triste "On ne peut pas se permettre l'imprévu. Jamais."
 
         noam "Et avec le commerce, les livraisons peuvent changer tout le temps."
@@ -1833,8 +1833,8 @@ label _3_DEBAT1_PHASE3_INT2:
             ("ryn", "colere", 0.95),
         ])
 
-        iris reflechit "Le monde d'avant… vous en parlez comme d'un paradis perdu. Moi, je me souviens des files et des prix qui doublaient sans raison."
-        iris reflechit "…Mais au moins, ça bougeait. On pouvait râler ET agir. Aujourd'hui, on ne fait plus que râler."
+        iris reflechit "Avant, tout coûtait cher. Vous avez oublié les prix qui grimpaient sans arrêt ?"
+        iris reflechit "Mais quand un truc manquait, on pouvait au moins chercher ailleurs."
 
         elen joie "Voilà ! Tu bossais, tu achetais. Personne pour juger si tes chaussures étaient assez trouées."
 
