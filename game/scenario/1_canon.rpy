@@ -485,7 +485,7 @@ label _1_CHOICE:
             scene black with suffocation_cut
             pause 0.35
 
-            jump _1_CHOICE_DEATH
+            jump _1_CHOICE_FATAL_END
 
         "Rester assis et écouter":
             think "Je m'assois à une chaise et ne bouge pas."
@@ -2107,65 +2107,31 @@ label _1_FIN_JOURNEE_DORTOIR:
     scene black with fade
     stop music fadeout 2.0
 
+    # Progression normale : la journée 1 se poursuit directement au jour 2.
     $ roadmap_complete("day_1")
     $ roadmap_unlock("day_2", set_current=False)
-    $ renpy.block_rollback()
-    jump _1_CHAPTER_COMPLETE
+    call end_day("2", sleeping=True) from _call_end_day_21
+    jump _2_CANON
 
-label _1_CHAPTER_COMPLETE:
-    stop music fadeout 1.0
+# Fin alternative : Noam meurt en tentant d'ouvrir la porte.
+# La route s'arrête ici et le joueur revient à la chronologie.
+label _1_CHOICE_FATAL_END:
+    $ hideGroup()
+    stop music fadeout 0.6
     scene black with dissolve
-    call screen day1_chapter_complete
-    call screen roadmap_menu(focus_node_id="day_2")
-    jump _1_CHAPTER_COMPLETE
+    $ roadmap_unlock("day_1", set_current=False)
+    $ renpy.block_rollback()
+    call screen kd_ending_reached(
+        "L'air vient à manquer",
+        "JOUR 01 // PORTE INTERDITE",
+        ending_label="FIN PRÉMATURÉE",
+        button_text="OUVRIR LA ROADMAP"
+    )
+    jump _1_CHOICE_FATAL_ROADMAP
 
-screen day1_chapter_complete():
-    modal True
-    zorder 210
-    key "game_menu" action NullAction()
-    key "K_ESCAPE" action NullAction()
-    add Solid("#020811")
-    add "gui/main_menu_kami/scanlines.png" at kd_ending_scan
-    add "gui/main_menu_kami/vignette.png" alpha 0.75
-    add Solid("#5CD3FF55", ysize=2) ypos 188
-    add Solid("#5CD3FF33", ysize=2) ypos 875
-    vbox:
-        xalign 0.5
-        yalign 0.42
-        spacing 24
-        text "KAMI.CORE // ARCHIVES DU CONCLAVE":
-            xalign 0.5
-            font "fonts/Barlow-Light.ttf"
-            size 24
-            color "#7AAAC3"
-            kerning 4
-        text "JOUR 01 TERMINÉ":
-            xalign 0.5
-            font "fonts/Rajdhani-SemiBold.ttf"
-            size 76
-            color "#E1F5FF"
-            kerning 5
-        text "Douze amendements déposés. Le premier vote approche.":
-            xalign 0.5
-            font "fonts/Barlow-Light.ttf"
-            size 27
-            color "#9FBCCB"
-        text "Choisissez une journée ou un choix découvert dans la chronologie.":
-            xalign 0.5
-            font "fonts/Barlow-Light.ttf"
-            size 23
-            color "#75A5BD"
-    textbutton "OUVRIR LA ROADMAP  →":
-        xalign 0.5
-        yalign 0.78
-        xsize 440
-        ysize 65
-        background Solid("#123047")
-        hover_background Solid("#1A4969")
-        text_color "#DDF7FF"
-        text_size 29
-        text_font "fonts/Rajdhani-SemiBold.ttf"
-        action Return(True)
+label _1_CHOICE_FATAL_ROADMAP:
+    call screen roadmap_menu(focus_node_id="day_1")
+    jump _1_CHOICE_FATAL_ROADMAP
 
 # Durée : 1m40 — Total : ~1h 4m 50s
 
