@@ -285,7 +285,7 @@ label _1_CANON:
 
     mara taquin "Ouuuh effraaayant !"
 
-    noam "Bon arrêtez un peu là. Je pense qu'on essaye tous de comprendre ce qui nous arrive."
+    noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
 
     think "Je cherche les caméras. Elles sont propres, discrètes, partout. Enfin quelque chose de familier."
 
@@ -363,14 +363,6 @@ label _1_CANON:
     sael "Soit on attend."
 
     think "Mon cœur accélère."
-
-    tuto "Prêt pour un nouveau tutoriel ?"
-    tuto "J'espère bien !"
-    tuto "Au cours de votre aventure, vous pourrez faire des choix !"
-    tuto "Mais attention, tous les choix ne se valent pas !"
-    tuto "Il y a des choix mineurs qui ont une importance limitée : ils peuvent changer vos relations, ou vous débloquer de petites scènes différentes."
-    tuto "Et puis il y a les choix CRITIQUES. Qui peuvent changer TOUT LE RESTE de votre aventure ou vous réserver bien des surprises !"
-    tuto "Ce choix en est un, alors choisissez bien !"
 
     jump _1_CHOICE
 
@@ -515,7 +507,7 @@ label _1_CHOICE:
 
     noam doute "On ne sait pas ce qu'on doit faire, il vaut mieux attendre les consignes."
 
-    julian "Comme tu es arrangeant. Typique du premier de la classe."
+    julian taquin "Toujours à calmer le jeu, hein ? Tu veux qu'on te nomme président de la salle ?"
 
     think "Jour un, et on en est déjà là, à se chamailler pour rien."
 
@@ -1221,7 +1213,7 @@ label _1_KAMI_APPARITION:
 
     julian rire "Franchement ? Ce moment est historique."
     julian neutre "Enfin un lieu où nos paroles peuvent peser sur les règles."
-    julian idee "Julian n'a pas l'intention de gaspiller cette scène."
+    julian idee "Je n'ai pas l'intention de gaspiller cette occasion."
 
     think "Il offre son meilleur profil à la caméra. Pour lui, ça semble avoir toute l'importance du monde."
 
@@ -1255,7 +1247,7 @@ label _1_KAMI_APPARITION:
 
     pause 0.4
 
-    noam reflexion "On y réfléchira plus tard. On ne sait toujours pas où nous sommes."
+    noam reflexion "On y réfléchira plus tard. On ne connaît même pas encore les différentes salles de cette station."
     noam neutre "Et puis ça nous laissera du temps pour réfléchir à ce qu'on voudrait modifier."
 
     lysa determine "Ouais, on devrait visiter."
@@ -1397,47 +1389,28 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     scene bg_conclave at adaptive_fullscreen with fade
 
-    "Les portes du Conclave s'ouvrent ; dedans, il y a déjà plusieurs personnes."
-    "Personne ne sait trop quoi dire aux autres."
-    "On s'assoit sans vraiment discuter."
-
-    "La salle est exactement comme ce matin."
-    "Sauf que maintenant, je sais ce qu'on attend de nous."
-
-    "Je m'assois et ceux déjà présents m'imitent."
-    "Les autres arrivent par grappes. Des fauteuils raclent."
-    "Mais personne ne parle. On attend."
-
+    "Les portes du Conclave s'ouvrent. Plusieurs représentants sont déjà assis, mais personne ne regarde l'écran."
+    "Kael attend que les derniers arrivent avant de prendre la parole."
     $ showGroup([
-        ("ryn", "fatigue", 0.02),
-        ("mara", "rire", 0.25),
-        ("iris", "fatigue", 0.50),
-        ("julian", "sourire", 0.75),
-        ("elen", "inquiet", 0.98),
+        ("kael", "calme", 0.04),
+        ("ryn", "fatigue", 0.23),
+        ("mara", "rire", 0.43),
+        ("iris", "fatigue", 0.63),
+        ("lysa", "blase", 0.82),
+        ("julian", "sourire", 1.02),
     ])
-
-    ryn fatigue "On est tous là ?"
-    ryn colere "Me dites pas qu'on va encore attendre pour rien."
-
-    mara rire "Chuuut."
-    mara rire "T'as capté ou quoi ?"
-    mara rire "Kami supporte pas qu'on lui fasse perdre son temps, soi-disant."
-    mara taquin "Et moi j'ai pas envie d'être sa cible du jour, alors merci, mais tais-toi."
-
-    iris fatigue "Super. Vraiment super."
-    iris fatigue "On nous fait revenir comme si on était des gamins. Ça commence bien."
-    iris fatigue "Manque plus qu'elle nous engueule parce qu'on est en retard."
-
-    julian sourire "Perso je trouve ça hyper marrant."
-    julian sourire "J'ai trop envie de voir jusqu'où on peut aller dans cet endroit…"
-
-    elen joie "On va réussir à changer les choses ! C'est sûr !"
-
-    julian taquin "Exactement ! C'est ça qui est excitant."
-    julian taquin "Si on peut réécrire les règles, on peut tout changer."
-    julian taquin "Et si ça marche, les gens vont enfin parler de ce qu'on a fait ici !"
-
-    "L'écran central s'allume et Kami apparaît."
+    kael calme "Avant que Kami commence... On pourrait peut-être discuter de ce qu'on veut proposer ?"
+    kael reflechit "Pas besoin de tout écrire ensemble. Mais si deux textes se contredisent, ce serait bien de le savoir."
+    iris blase "Non. J'ai déjà assez de mal à rédiger le mien sans devoir le défendre devant vous."
+    lysa blase "Et puis rien ne garantit que quelqu'un dira la vérité."
+    kael calme "Je sais. Je demande juste qu'on essaie."
+    mara taquin "T'es mignon, Kael. Mais t'auras pas le mien sur un plateau, désolée."
+    ryn determine "Moi, je veux qu'on arrête d'écraser Limen. Mais je vais pas donner le détail à des inconnus."
+    kael triste "D'accord. Je comprends."
+    julian sourire "Moi, je n'ai rien contre un peu de transparence. Au moins on aurait une vraie discussion."
+    lysa blase "Évidemment. Tant qu'il y a un public."
+    think "Kael baisse les yeux vers la table. Il n'insiste pas davantage, mais personne ne semble plus disposé à se confier."
+    "Un grésillement interrompt le silence. L'écran central s'allume."
     $ hideGroup()
 
     play sound sfx_announce volume 5.0
@@ -1448,56 +1421,12 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Oh que ça faisait longtemps que j'en rêvais, de ce Conclave !"
-    kami "C'était un travail monstre de tout organiser ! Vous n'imaginez même pas !"
-    kami "Mais je pense que ça va valoir le coup !"
-
-    pause 0.2
-
+    kami "Je ne vais pas vous refaire le discours de ce matin. Vous savez déjà que les Commandements ne s'appliquent pas ici."
+    kami "En revanche, il reste quelques règles propres à la station. Écoutez bien celles-là."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-
-    kami "Mais revenons à nos moutons. Je vais être claire."
-    kami "Ici, dans le Conclave…"
-    kami "les Commandements sont suspendus, abolis."
-    kami "Toutes les règles que vous connaissiez jusque-là n'ont plus lieu d'être."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "Ici, vous pouvez faire ce que vous voulez !"
-    kami "Plus de Commandements, plus de sanctions automatiques. La belle vie, non ?"
-    kami "Juste vous et votre conscience, si vous en avez une."
-
-    $ bc_show("ryn", "colere", px=-70, py=-50, pz=0.85)
-    ryn "Ça, c'est censé nous rassurer ?"
-    $ bc_hide()
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "Oh, je vois déjà certains d'entre vous sourire !"
-    kami "Je devrais peut-être m'inquiéter de ce que vous avez en tête... Non, je plaisante !"
-
+    kami "Règle une : pas de départ d'Orbite avant la fin du trentième jour. Oui, vous êtes coincés avec moi."
+    kami "Vous l'aviez compris, mais je préfère qu'il n'y ait aucun malentendu."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-
-    kami "Donc. Il n'y a plus de Commandements ici."
-    kami "Mais il reste certaines règles."
-    kami "Celles du Conclave. Alors ouvrez grand vos oreilles !"
-
-    kami "Règle une."
-    kami "Il est interdit de retourner dans votre district."
-    kami "Il est interdit de quitter le district actuel, à savoir Orbite jusqu'à la fin du trentième jour."
-
-    pause 0.2
-
-    kami "Vous devrez rester ici. Avec moi."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "De toute façon, vous l'avez vu, comme on est dans l'espace, il n'y a pas beaucoup d'endroits où vous pourriez aller !"
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Pendant trente petits jours, nous allons nous amuser ensemble."
-
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-
     kami "Règle deux."
     kami "Il est interdit d'initier un contact vers l'extérieur."
 
@@ -1567,27 +1496,9 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
-    kami "Il y aura dix votes. Dix amendements tirés au sort. Pas un de plus."
-    kami "Vous êtes douze."
-    kami "Donc deux amendements ne seront pas votés lors de ce Conclave."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "Ne le prenez pas mal. C'est MATHEMATIQUE."
-    kami "Et ce n'est pas plus mal, si jamais je devais reproduire le Conclave l'an prochain."
-    kami "Je pourrais peut-être ajouter les amendements restants dans la prochaine urne !"
-
+    kami "Comme annoncé ce matin, un amendement sera tiré au sort tous les trois jours. Dix au total, pour douze propositions."
+    kami "Et je maintiens ma petite exigence : aucun vote contre pour l'adoption. Vous connaissez la chanson."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-
-    kami "Tous les trois jours. Un amendement sera tiré au sort."
-    kami "Puis tous les trois jours, vous voterez sur cet amendement. Votre objectif : l'unanimité."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-
-    kami "Comme je vous l'ai déjà dit : une seule voix contre et l'amendement est refusé."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
     kami "La participation aux votes est libre. Libre à vous de venir voter, ou pas."
     kami "Pour adopter un amendement, il faut que tous ceux qui votent se prononcent pour."
     kami "Les abstentions et les absences ne comptent pas comme des votes contre."
@@ -1600,8 +1511,8 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     show screen kami_broadcast_ui
     $ bc_show("elias", "reflechit", px=-70, py=-50, pz=0.85)
 
-    elias neutre "Attendez... Donc si onze personnes disent oui et qu'un seul type dit non, on a perdu ?"
-    elias peur "Mais alors... Pourquoi on est douze ?!"
+    elias neutre "Donc on peut même pas être sûrs que les douze viendront voter ?"
+    elias peur "Ça promet, cette histoire..."
 
     $ bc_hide()
     hide screen kami_broadcast_ui
@@ -1662,8 +1573,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
         ("elias", "reflechit", 1.19),
     ])
 
-    kael calme "Bon, il faut qu'on se mette d'accord. On partage nos intentions, oui ou non ?!"
-    kael colere "On a plus le temps de discuter pour rien."
+    kael calme "Je voudrais juste revenir sur ce que j'ai proposé avant l'arrivée de Kami."
+    kael reflechit "On pourrait au moins se dire quels sujets on compte aborder. Pas besoin de révéler nos textes."
+    kael calme "Je sais que certains ne veulent pas. Mais ce serait dommage de découvrir nos désaccords seulement au moment de voter."
 
     iris fatigue "Ouais, nan, ça sert à rien."
 
@@ -1673,9 +1585,9 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     iris taquin "Et après, quand ça tourne mal, les gens vont chercher à qui en vouloir."
     iris desaccord "Et si tout le monde sait qui a déposé quoi..."
 
-    kael reflechit "Attends. Tu veux dire qu'on devrait pouvoir proposer sans donner nos noms ?"
+    kael reflechit "Je ne demande pas les noms sur les bulletins. Juste une discussion, si vous êtes d'accord."
 
-    iris colere "Et alors ?!"
+    iris colere "On est libres de garder ça pour nous, non ?!"
     iris desaccord "Je suis pas une politicienne moi ! Je sais même pas écrire ce truc-là d'amande je sais pas quoi !"
     iris colere "Et tu voudrais que je sois responsable ? C'est pas moi qui ai décidé tout ça hein !"
 
@@ -1698,19 +1610,20 @@ label _1_CONCLAVE_DEBAT_DEPOT:
 
     pause 0.3
 
-    ryn reflechit "Et si on touche à rien ?"
-    ryn reflechit "On vote contre tout. Les règles restent connues, les mêmes qu'actuellement. Fin."
+    ryn reflechit "Je vais pas défendre les lois de Kami. Encore moins celles qui étranglent Limen."
+    ryn colere "Mais si on vote une connerie sans savoir ce que ça fera aux gens de chez moi, qui ramassera les morceaux ?"
+    ryn reflechit "Tant qu'on connaît pas les conséquences, je préfère refuser. Pas question de jouer avec leur peau."
 
-    nyra triste "Tu veux vraiment rien changer ? D'accord, c'est moins risqué. Mais tu leur expliques quoi, aux gens ?"
+    nyra triste "Je comprends ta prudence. Mais on ne pourra pas refuser indéfiniment. Qu'est-ce qu'on dira aux gens qui attendent un changement ?"
     nyra neutre "Qu'on a préféré rien tenter parce qu'on avait la trouille ?"
 
-    tomas hesitation "Ça ne marchera pas, Ryn. Enfin... pas forcément."
+    tomas hesitation "Même cette prudence ne garantit rien, Ryn."
     tomas hesitation "Kami a dit qu'un refus pouvait aussi avoir des conséquences. On ne sait juste pas lesquelles..."
 
     pause 0.3
 
-    kael reflechit "Justement. Autant en parler avant."
-    kael reflechit "Si on fait tout ça tout seul dans notre coin, on va se retrouver avec des conneries sur le dos."
+    kael reflechit "C'est justement ce qui m'inquiète. On ne peut pas tout prévoir, mais parler des risques maintenant nous éviterait peut-être des surprises."
+    kael calme "Après, je ne peux forcer personne à me répondre."
 
     lysa doute "Vous êtes sérieux ? Vous faites confiance à tout le monde, comme ça ?!"
     lysa reflexion "Rien n'empêche quelqu'un de nous raconter n'importe quoi et d'écrire autre chose !"
@@ -1753,7 +1666,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     think "Plus personne ne débat vraiment."
     think "Nous ne sommes plus que quelques-uns sans avoir écrit. Personne ne cherche nos regards."
 
-    kael calme "Bon, d'accord. Vous ne voulez pas bosser ensemble, j'ai compris."
+    kael triste "D'accord... J'aurais préféré qu'on en parle. Mais je vois bien que je n'obtiendrai rien de plus."
 
     noam triste "Non attends Kael !"
 
@@ -2142,7 +2055,7 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     think "On n'insiste pas. Pas besoin."
 
-    elias jaloux "Bonne nuit, Noam."
+    elias neutre "Bonne nuit, Noam."
 
     noam neutre "Bonne nuit."
 
@@ -2194,9 +2107,65 @@ label _1_FIN_JOURNEE_DORTOIR:
     scene black with fade
     stop music fadeout 2.0
 
-    call end_day("2", sleeping=True) from _call_end_day_21
+    $ roadmap_complete("day_1")
+    $ roadmap_unlock("day_2", set_current=False)
+    $ renpy.block_rollback()
+    jump _1_CHAPTER_COMPLETE
 
-    jump _2_CANON
+label _1_CHAPTER_COMPLETE:
+    stop music fadeout 1.0
+    scene black with dissolve
+    call screen day1_chapter_complete
+    call screen roadmap_menu(focus_node_id="day_2")
+    jump _1_CHAPTER_COMPLETE
+
+screen day1_chapter_complete():
+    modal True
+    zorder 210
+    key "game_menu" action NullAction()
+    key "K_ESCAPE" action NullAction()
+    add Solid("#020811")
+    add "gui/main_menu_kami/scanlines.png" at kd_ending_scan
+    add "gui/main_menu_kami/vignette.png" alpha 0.75
+    add Solid("#5CD3FF55", ysize=2) ypos 188
+    add Solid("#5CD3FF33", ysize=2) ypos 875
+    vbox:
+        xalign 0.5
+        yalign 0.42
+        spacing 24
+        text "KAMI.CORE // ARCHIVES DU CONCLAVE":
+            xalign 0.5
+            font "fonts/Barlow-Light.ttf"
+            size 24
+            color "#7AAAC3"
+            kerning 4
+        text "JOUR 01 TERMINÉ":
+            xalign 0.5
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 76
+            color "#E1F5FF"
+            kerning 5
+        text "Douze amendements déposés. Le premier vote approche.":
+            xalign 0.5
+            font "fonts/Barlow-Light.ttf"
+            size 27
+            color "#9FBCCB"
+        text "Choisissez une journée ou un choix découvert dans la chronologie.":
+            xalign 0.5
+            font "fonts/Barlow-Light.ttf"
+            size 23
+            color "#75A5BD"
+    textbutton "OUVRIR LA ROADMAP  →":
+        xalign 0.5
+        yalign 0.78
+        xsize 440
+        ysize 65
+        background Solid("#123047")
+        hover_background Solid("#1A4969")
+        text_color "#DDF7FF"
+        text_size 29
+        text_font "fonts/Rajdhani-SemiBold.ttf"
+        action Return(True)
 
 # Durée : 1m40 — Total : ~1h 4m 50s
 
