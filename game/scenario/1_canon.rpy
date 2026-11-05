@@ -1822,7 +1822,6 @@ label _1_proposition_amendement:
     $ impact(8, 0.2, "#3BCC82")
     voix "Amendement enregistré."
     $ cam_reset(t=0.0)  # Minijeu/interaction sans zoom.
-    call screen day1_urn_confirmation()
     think "Impossible de la récupérer. Tant mieux. Sinon je l'effacerais encore."
 
     pause 0.4
