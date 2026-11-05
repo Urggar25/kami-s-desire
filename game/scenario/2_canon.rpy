@@ -156,14 +156,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     think "Je mets un pied dans la cafétéria, ils sont déjà nombreux à être là."
     play sound sfx_door
 
-    menu:
-        "Choisir où se placer."
-        "Je m'assois près d'une table encore libre.":
-            think "Je tire une chaise sans bruit. D'ici, je vois presque toute la salle."
-        "Rester près du buffet.":
-            think "Je prends un plateau pour occuper mes mains. Les voix arrivent par morceaux."
-        "Me tenir près de l'entrée.":
-            think "Je reste près de la porte. Au moins je pourrais voir facilement qui rentre et qui sort. Ce sera aussi plus simple pour repartir aussi."
+    think "Je prends un plateau et m'installe sans faire de bruit. La discussion a déjà commencé."
 
 
     $ showGroup([
@@ -191,7 +184,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     elen content "Oh !"
     elen joie "C'est vraiii que l'ambiance est un peu chelou..."
     elen surpris "Oh ! Mais faut voir le bon côté des choses !"
-    elen joie "On peut changer les choses en mieux ! Et ici tout est super ultra méga bon !"
+    elen joie "On peut peut-être arranger les choses ! Et franchement, vous avez goûté ce qu'ils servent ici ?"
 
     iris desaccord "Ravie de savoir que l'estomac sur patte est content."
     iris colere "Reste à savoir à quelle sauce NOUS allons être mangés."
@@ -206,8 +199,8 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     elias ecoute "… Façon on peut rien faire d'autre que d'attendre. Donc ça sert à rien de se prendre la tête avec ça."
     elias neutre "Ça se trouve la première proposition va être géniale."
 
-    sael raison "Elias a raison, en attendant, il faut profiter de ce bon repas."
-    sael mefiant "Mangez. Nous aurons besoin de forces quand le signe viendra."
+    sael raison "Elias a raison. Mangez tant que vous pouvez."
+    sael mefiant "On ne sait pas ce qui nous attend après."
 
     pause 0.6
 
@@ -359,7 +352,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     sael triste "Le commerce ?!"
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra taquin "Intéressant, mais ça voudrait aussi dire changer complètement ce nouveau monde."
+    nyra taquin "Le commerce ? Ça pourrait changer pas mal de choses, quand même."
 
     $ bc_show("iris", "triste", px=-70, py=-50, pz=0.85)
     iris colere "L'idée est mieux qu'attendue."
@@ -416,7 +409,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "mefiant", 1.20),
     ])
 
-    tomas hesitation "… C’est… c’est sérieux, là. On peut vraiment genre revenir au système d'avant ?"
+    tomas hesitation "A-Attendez... On pourrait vraiment recommencer à acheter des choses ? Comme avant ?"
 
     nyra sourire "A priori, oui. Enfin, si Kami respecte vraiment l'idée proposée."
 
@@ -444,7 +437,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     iris colere "Oh par pitié, tu ne vas quand même pas nous faire la leçon..."
 
-    mara colere "C'est un système où les riches peuvent tout acheter et où les pauvres doivent se démerder."
+    mara colere "Les riches se servent et les autres ramassent ce qui reste. Vous avez déjà oublié ?"
 
     elias colere "Hein ? Pourquoi c'est toi qui t'attaque à ça ? T'es bien la fille Shiran, non ?!"
 
@@ -527,25 +520,25 @@ label _2_CAFETERIA_POST_ANNONCE:
     elias triste "hein ? Attendez, montrez-moi, j'ai pas ma tablette !"
 
     kael reflechit "« Ça serait bien qu'on réautorise le commerce comme avant. »"
-    kael neutre "La formulation est soumise à changement."
+    kael neutre "Kami peut encore modifier la façon dont c'est écrit."
 
-    noam inquiet "Hein ? Soumise à changement ? Qu'est-ce qu'elle veut dire exactement ?"
-    noam reflechit "Elle va modifier la formulation et on devra voter dessus demain ?"
+    noam inquiet "Attends, elle peut changer le texte ?"
+    noam reflechit "Et demain on devra voter sur sa version ?"
 
     lysa colere "Ça veut surtout dire que c'est un piège évidemment."
 
     sael raison "C'est peut-être trop beau pour être vrai. Il faut se méfier de nos certitudes."
 
     kael neutre "L'amendement vient en théorie de l'un de nous. La volonté est claire en tout cas."
-    kael inquiet "Ce qui est risqué, ce n’est pas l’intention, mais les conséquences de la manière dont ce sera formulé."
+    kael inquiet "Ça dépend surtout de ce qu'elle va écrire. Un mot peut tout changer."
 
     mara neutre "Ce qui est risqué c'est de retomber dans le capitalisme qui a causé toutes ces guerres."
 
     nyra raison "Qu'est-ce que tu veux dire, Mara ?"
 
     mara triste "Pff. Vous ne voyez pas où ça nous mène ?"
-    mara triste "Si on réautorise le commerce, il faudra une valeur à échanger. De l'argent en gros."
-    mara peur "Ce sera le retour au travail, à l'argent et aux inégalités."
+    mara triste "Si on remet le commerce, on remet l'argent avec. Forcément."
+    mara peur "Et les gens qui ont déjà tout auront encore une longueur d'avance."
 
     iris colere "Et en quoi c'est problématique, hein ?!"
     iris colere "Si travailler est le prix pour être libre, où est le problème ?"
@@ -571,10 +564,10 @@ label _2_CAFETERIA_POST_ANNONCE:
     elias reflechit "Bah ouais ! Avant, quand il me manquait une pièce, j'allais l'acheter."
     elias colere "Maintenant, faut remplir trois formulaires et attendre qu'un type décide si j'en ai vraiment besoin. C'est complètement con !"
 
-    nyra taquin "Factuellement, quelqu'un a quelque chose à perdre si les échanges reprennent ?"
+    nyra taquin "Et vous, qu'est-ce qui vous ferait vraiment peur si les échanges reprenaient ?"
     nyra raison "Il faut qu'on en parle pour savoir quels sont les points de blocage."
 
-    iris colere "Actuellement, plus flou tu meurs. Faudrait avoir plus de précisions sur ce qui serait mis en place si on venait à voter pour."
+    iris colere "Là, on sait même pas ce qu'on vote ! On pourrait avoir le texte exact, déjà ?"
 
     mara taquin "Tu sais que t'es sexy quand tu deviens sérieuse ?"
 
@@ -584,7 +577,7 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     iris colere "Sérieusement… Et ça veut dire qu’on va devoir causer de tout le reste ensemble. L'enfer."
 
-    kael reflechit "On ne peut pas vraiment esquiver cette question, demain, il va falloir faire le bon choix et voter."
+    kael reflechit "Faudra trancher demain. Qu'on le veuille ou non."
 
     elen joie "On peut essayer d’être d’accord, non ? Juste une fois. Rien qu’une."
     elen joie "Pour pas leur filer exactement ce qu’ils attendent de nous. Puis si on peut de nouveau avoir accès à tout ce qu'on veut ! Moi je vote pour !"
@@ -596,14 +589,14 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     think "Personne ne répond. Personne ne proteste non plus."
 
-    sael raison "Souhaiter l'accord est une bonne chose. Prendre cette formulation pour acquise en est une autre."
+    sael raison "Ce serait bien qu'on s'entende. Mais on n'a pas encore le vrai texte."
 
     tomas hesitation "Je… Je pense que c’est important. Parce que ça concerne nos districts. Directement."
     tomas inquiet "Et si on peut faire circuler des choses entre nous… Ben… on peut aussi s’entraider, non ?"
 
     kael surpris "C'est-à-dire ?"
 
-    tomas hesitation "S-Si on autorise le commerce, alors il pourra y avoir du transport de médicaments, de matériaux, ou… ce genre de choses..."
+    tomas hesitation "On pourrait déjà faire venir des médicaments. Ou des pièces pour réparer les machines..."
     tomas surpris "Et pourquoi pas des gens, aussi. À un moment donné."
 
     noam inquiet "Les gens, c’est autre chose. La proposition ne parle que du commerce."
@@ -611,7 +604,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     tomas hesitation "O-Ouais. Je sais… M-Mais si les échanges deviennent autorisés… alors peut-être que…"
 
     mara taquin "C’est mignon tout ça, mais qui va surveiller ces petits échanges ?"
-    mara reflechit "Qui va faire en sorte que TOUT LE MONDE soit livré ? Qu'il n'y ait pas tout dans un district et rien dans un autre ?"
+    mara reflechit "Et qui empêchera que tout parte à Nexus ? Les autres, on leur laissera quoi ?"
 
     tomas hesitation "On n’a pas les détails."
 
@@ -621,8 +614,8 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     tomas colere "Du coup… on doit se faire confiance. Voilà."
 
-    nyra taquin "Qu'est-ce qu'on sait ? Qu'est-ce qu'on ignore ?"
-    nyra raison "Commençons par là. Chacun pourra ajouter ce qui concerne son district."
+    nyra taquin "On se pose deux minutes ? Qu'est-ce qu'on sait, au juste ?"
+    nyra raison "Dites-moi ce qui vous inquiète chez vous. On verra ensuite."
 
     mara taquin "T’as de quoi pondre un roman sur tout ce qu’on sait pas ?"
 
@@ -679,7 +672,7 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     elen joie "Ouaah t'étais la cheffe de ton village ?! Mais t'es toute jeune pourtant !"
 
-    sael sourire "On cultive toujours la même terre. Mais au moins, les combats ont cessé."
+    sael sourire "On cultive toujours nos champs. Et depuis Kami, les attaques ont cessé."
     sael reflechit "Avant, on craignait les groupes armés. Depuis Kami, ils ne viennent plus. Pour moi, ça compte."
 
     elias sourire "Ah ouais... C'est quand même un sacré bordel, votre histoire."
@@ -919,7 +912,7 @@ label _2_APRES_MIDI_SAEL:
 
     noam raison "Donc pour toi, travailler donne aussi le droit de recevoir."
 
-    sael raison "Le travail prouve surtout qu'on appartient au groupe. La récompense vient après."
+    sael raison "Chez nous, tout le monde aide. On ne se demande pas combien ça rapporte."
 
     call day2_collect_vote_argument("valeur_travail") from _call_day2_collect_vote_argument_valeur_travail
 
@@ -1011,7 +1004,7 @@ label _2_SALLE_OBSERVATION:
     noam neutre "Le commerce pourrait améliorer ça. Des magasins, du libre accès... peut-être."
 
     kael raison "Peut-être, mais-"
-    kael doute "Chaque commandement supplémentaire augmente le risque d'un tir."
+    kael doute "Plus il y a de règles, plus quelqu'un risque de se faire tirer dessus."
 
     noam neutre "Il suffit de respecter les règles, non ? Enfin... en théorie."
 
@@ -1021,7 +1014,7 @@ label _2_SALLE_OBSERVATION:
 
     noam triste "Hein ?! Comment vous faites alors ?!"
 
-    kael inquiet "La justice n'entre pas dans le calcul. Nous avons des masques à oxygène partout. Ils ne sauvent pas tout le monde."
+    kael inquiet "On a des masques partout. Mais quand la coque est percée, on n'a pas toujours le temps de les attraper."
 
     $ hideGroup()
 
@@ -1084,7 +1077,7 @@ label _2_GYMNASE:
 
     noam inquiet "Je tremble déjà rien que d'y penser."
 
-    elias ecoute "C'est pas si difficile, regarde. Faut pas lutterr. Accompagne le mouvement."
+    elias ecoute "Regarde. Vas-y doucement et laisse pas tomber la barre."
 
     think "Je soulève. Ouh ! C'est beaucoup plus lourd que prévu."
 
@@ -1113,7 +1106,7 @@ label _2_GYMNASE:
     pause 0.6
 
     elias joie "Tu sens tes muscles ? C'est ça qu'on aime. La sensation de toujours faire mieux ! Mais le sport, ça se perd vite, alors refais-en souvent !"
-    elias raison "Tu viens souvent. Force, endurance, concentration. Le corps comprend le concret."
+    elias raison "Si tu reviens de temps en temps, tu verras, ça ira mieux."
 
     iris determine "Et parfois, c'est juste pour ne pas rentrer et tout casser."
     iris taquin "La fonte, ça coûte moins cher qu'un psy et ça pose moins de questions idiotes."
@@ -1162,7 +1155,7 @@ label _2_CAFETERIA_SOIR:
     think "Lorsque j'arrive à la cafétéria, Nyra est en pleine discussion sur sa vie à Orbite."
 
     nyra sourire "À Orbite, on mangeait en décalé. Quel rythme vous aviez, à [codex_dialogue_link('harmonie', 'Harmonie')] ?"
-    nyra sourire "Là-haut, le silence faisait partie du travail. Ici, j'ai l'impression qu'il faut le mériter."
+    nyra sourire "Là-haut, on mangeait souvent sans parler. Ici, c'est presque impossible."
 
     noam hesitation "Tu regrettes ?"
 
@@ -1177,7 +1170,7 @@ label _2_CAFETERIA_SOIR:
     tomas hesitation "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
     tomas inquiet "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
 
-    kael calme "Il n'y a pas vraiment de décisions à prendre. On a des protocoles, on les respecte. Sinon on meurt."
+    kael calme "On suit les consignes. Si on improvise, ça peut très mal finir."
 
     tomas inquiet "Et si on fait une erreur ...?"
 
@@ -1352,6 +1345,14 @@ init 3 python:
                 store.j2_vote_arguments.append(arg_id)
                 changed = True
 
+        # Compatibilité des sauvegardes ayant débloqué le titre avant l'ID.
+        for arg_id, arg_data in DAY2_VOTE_ARGUMENTS.items():
+            if arg_data["title"] in store.arguments or arg_data["title"] in persistent.unlocked_arguments:
+                if arg_id not in store.j2_vote_arguments:
+                    store.j2_vote_arguments.append(arg_id)
+                if arg_id not in persistent.unlocked_dossier_args:
+                    persistent.unlocked_dossier_args.append(arg_id)
+                    changed = True
         for arg_id in getattr(store, "j2_vote_arguments", []):
             if arg_id in DAY2_VOTE_ARGUMENTS:
                 title = DAY2_VOTE_ARGUMENTS[arg_id]["title"]
@@ -1418,9 +1419,10 @@ init 3 python:
 
     def day2_argument_drop(drags, drop, arg_id):
         if drop is not None and getattr(drop, "drag_name", "") == "day2_briefcase_drop":
-            day2_vote_add_argument(arg_id)
-            return True
+            return bool(day2_vote_add_argument(arg_id))
+        # L'échec du dépôt replace la carte au départ et garde l'écran ouvert.
         renpy.restart_interaction()
+        return False
 
 
 # La zone de dépôt est déclarée AVANT la carte dans le draggroup.
