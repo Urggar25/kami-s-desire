@@ -110,7 +110,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Bandes cinéma | Anime un letterbox en haut et en bas pour cadrer une séquence dramatique. | `game/effects.rpy` | `$ letterbox_on(h=110, t=0.4)` |
 | Interjection plein écran | Projette un texte façon objection/verdict, avec slam, fond graphique et secousse optionnelle. | `game/effects.rpy` | `$ interject("OBJECTION !", color="#5cd3ff")` |
 | Vignette de stress périphérique | Fait respirer une ombre diffuse dans les seuls bords et coins, sans masquer le centre ni encadrer l'image en rouge. | `game/effects.rpy`, `game/images/effects/stress_vignette.svg` | `$ danger_on()` |
-| Révélation de doppelgänger | Coupe presque tout son et toute lumière, révèle des yeux puis un sourire dans le noir et peut conclure par un screamer sec. | `game/effects.rpy`, `game/images/effects/doppelganger_eyes.svg`, `game/images/effects/doppelganger_smile.svg` | `$ doppelganger_reveal(screamer=True)` |
+| Révélation d'un double | Coupe presque tout son et toute lumière, révèle des yeux puis un sourire dans le noir et peut conclure par un screamer sec. | `game/effects.rpy`, `game/images/effects/doppelganger_eyes.svg`, `game/images/effects/doppelganger_smile.svg` | `$ doppelganger_reveal(screamer=True)` |
 | Image sous lampe | Plonge presque entièrement décor et personnages dans le noir, puis révèle une zone nette avec un faisceau mobile suivant cinq parcours aléatoires fermés. | `game/effects.rpy`, `game/images/effects/flashlight_vignette.svg`, `game/script.rpy` | `$ flashlight_on(); pause; $ flashlight_off()` |
 | Transitions d'horreur | Regroupe fondu rampant, noir instantané/lent, pulsation rouge, glitch, saut de signal, déchirure mnésique, suffocation et pixellisation. | `game/effects.rpy` | `with signal_stutter` |
 | Transforms d'angoisse | Applique zoom lent, dérive, flash dur, respiration sombre, rémanence, poussée, progression dans un conduit ou inclinaison. | `game/effects.rpy` | `show bg_conduit_reseau at corridor_crawl` |
@@ -260,7 +260,7 @@ Pour chaque ajout ou modification future :
 - Les menus et leurs labels sont définis dans `game/stat_dialogues_21_30.rpy`, qui réutilise le système et l'interface de `game/stat_dialogues.rpy`.
 
 
-## DLC — Route Doppelgänger
+## DLC — Route des Éidons
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|

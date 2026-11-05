@@ -1,4 +1,4 @@
-# Scènes secondaires de caractérisation — route Doppelganger.
+# Scènes secondaires de caractérisation — route des doubles.
 # Chaque label revient à son appelant. Les scènes ne modifient aucun état d'enquête.
 
 label KD_EXTRA_J8_JULIAN:

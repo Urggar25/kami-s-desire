@@ -1,7 +1,7 @@
 # =============================================================================
 # JOUR 22 — Route 0_1_1_0_0
 # Le Conclave a été prolongé jusqu'au jour 30.
-# Elias est remplacé hors champ par son Doppelgänger au cours de la journée.
+# Elias est remplacé hors champ par son double au cours de la journée.
 # =============================================================================
 
 default j22_elias_replaced = False

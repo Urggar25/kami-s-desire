@@ -1,6 +1,6 @@
 # JOUR 26 — Route 0_1_1_0_0 — La preuve
 # Branche : Noam choisit de révéler la photographie à Kami.
-# Dans cette route, Mara, Elias, Tomas, Kael et Sael sont déjà des Doppelgängers.
+# Dans cette route, Mara, Elias, Tomas, Kael et Sael ont déjà été remplacés par des Éidons.
 # L'identité des remplaçants n'est pas connue des protagonistes.
 # La journée se poursuit directement dans les conduits, de nuit.
 
