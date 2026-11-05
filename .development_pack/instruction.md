@@ -277,7 +277,7 @@ Le système d'affichage utilise `showP("nom", "expression", position)`. Règles 
 
 ### Fidélité des voix — contrôle avant validation
 
-- Avant d'écrire ou de réviser une scène sociale importante, relire les fiches des personnages réellement présents dans `.development_pack/character.txt`.
+- Avant d'écrire ou de réviser une scène sociale importante, relire les fiches des personnages réellement présents dans `fiche_personnages.md`.
 - Vérifier que chaque personnage agit selon sa manière habituelle de gérer la situation, pas seulement selon ce dont l'intrigue a besoin.
 - **Mara** doit rester provocatrice, corporelle, volontiers sexualisée et un peu beauf ; ne pas la transformer en simple sarcastique propre.
 - **Iris** protège en râlant, mais ne doit pas systématiquement couper Mara ou devenir la police morale de la table. Elle peut laisser une vanne vivre, répondre sèchement, puis intervenir seulement quand Noam en a réellement besoin.
