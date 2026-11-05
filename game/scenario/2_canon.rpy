@@ -1422,69 +1422,153 @@ init 3 python:
             return True
         renpy.restart_interaction()
 
+# Animation de guidage : le réceptacle attire l'œil sans déplacer sa
+# véritable zone de dépôt (l'interaction drag & drop reste inchangée).
+transform day2_briefcase_target_pulse:
+    alpha 0.35
+    ease 0.9 alpha 0.95
+    ease 0.9 alpha 0.35
+    repeat
+
+transform day2_briefcase_arrow_pulse:
+    alpha 0.30
+    ease 0.8 alpha 1.0
+    ease 0.8 alpha 0.30
+    repeat
+
 screen vote_argument_briefcase(arg_id, argument_data, card_drag_name, drop_drag_name, drop_handler):
     modal True
     zorder 180
     $ arg = argument_data
 
-    add Solid("#02050bd9")
+    # Fond contrasté : les dialogues restent perceptibles, mais l'action domine.
+    add Solid("#02070DDC")
+    add Solid("#0B263020") xpos 0 ypos 185 xsize 1920 ysize 710
+
+    # Bandeau de consigne intégré, sans chevauchement avec le HUD.
     frame:
-        xalign 0.5
-        yalign 0.09
-        padding (18, 10)
-        background Solid("#06131d")
-        text "Glisse la carte dans la mallette de Noam." size 24 color "#dff8ff" font "fonts/Rajdhani-SemiBold.ttf"
+        xpos 265
+        ypos 165
+        xsize 1390
+        ysize 120
+        padding (30, 16)
+        background Solid("#071724F5")
+        vbox:
+            spacing 8
+            hbox:
+                spacing 16
+                text "KAMI.CORE  /  CLASSEMENT DES ARGUMENTS":
+                    size 18
+                    color "#67BEDC"
+                    kerning 2
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                text "01 / 01":
+                    size 18
+                    color "#8DA9BA"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+            text "Fais glisser la carte vers le dossier du prochain vote.":
+                size 29
+                color "#F0F8FF"
+                font "fonts/Rajdhani-SemiBold.ttf"
+
+    # Les libellés restent dans leurs propres panneaux ; aucun texte n'est
+    # peint par-dessus une texture portant déjà des inscriptions.
+    text "ARGUMENT DÉCOUVERT":
+        xpos 285 ypos 312
+        size 22
+        kerning 2
+        color "#79CFE8"
+        font "fonts/Rajdhani-SemiBold.ttf"
+    text "DOSSIER DU PROCHAIN VOTE":
+        xpos 1015 ypos 312
+        size 22
+        kerning 2
+        color "#79CFE8"
+        font "fonts/Rajdhani-SemiBold.ttf"
+
+    # Liaison explicite entre les deux zones.
+    add Solid("#3D8AA555") xpos 812 ypos 495 xsize 175 ysize 2
+    text "➜" at day2_briefcase_arrow_pulse:
+        xpos 882 ypos 460
+        size 53
+        color "#7AE8FF"
+        font "DejaVuSans.ttf"
 
     draggroup:
         drag:
             drag_name card_drag_name
-            xpos 330
-            ypos 338
-            xsize 460
-            ysize 260
+            xpos 270
+            ypos 360
+            xsize 500
+            ysize 285
             draggable True
             droppable False
+            drag_raise True
             dragged (lambda drags, drop, arg_id=arg_id, drop_handler=drop_handler: drop_handler(drags, drop, arg_id))
             fixed:
-                xfill True
-                yfill True
-                # Un fond sans texte évite les doublons des cartes précomposées
-                # et conserve les accents dans les titres du Jour 3.
-                add "gui/day3/argument_card_bg.png"
-                text "ARGUMENT":
-                    xpos 30
-                    ypos 24
-                    size 20
-                    color "#6fdfff"
+                xysize (500, 285)
+                add Solid("#00000077") xpos 9 ypos 12 xsize 491 ysize 273
+                add Solid("#11283A") xpos 0 ypos 0 xsize 490 ysize 273
+                add Solid("#6BDFFF") xpos 0 ypos 0 xsize 490 ysize 3
+                add Solid("#6BDFFF") xpos 0 ypos 0 xsize 3 ysize 273
+                add Solid("#6BDFFF") xpos 487 ypos 0 xsize 3 ysize 273
+                add Solid("#6BDFFF") xpos 0 ypos 270 xsize 490 ysize 3
+                add Solid("#173B52") xpos 20 ypos 20 xsize 450 ysize 46
+                text "◈  PIÈCE À CLASSER":
+                    xpos 34 ypos 29
+                    size 23
+                    color "#9FEAFF"
                     font "fonts/Rajdhani-SemiBold.ttf"
                 text kd_tr(arg["title"]):
-                    xpos 30
-                    ypos 84
-                    xsize 400
-                    size 40
-                    color "#ffffff"
+                    xpos 30 ypos 91
+                    xsize 430
+                    ysize 115
+                    size 37
+                    color "#F1F8FF"
                     font "fonts/Rajdhani-SemiBold.ttf"
-                text "DOSSIER DU VOTE":
-                    xpos 30
-                    ypos 202
+                add Solid("#31566B") xpos 30 ypos 220 xsize 430 ysize 1
+                text "MAINTENIR ET GLISSER  ↗":
+                    xpos 30 ypos 232
                     size 20
-                    color "#9ed8ff"
+                    color "#A2CFE0"
                     font "fonts/Rajdhani-SemiBold.ttf"
 
         drag:
             drag_name drop_drag_name
-            xpos 1020
-            ypos 308
-            xsize 560
+            xpos 1005
+            ypos 360
+            xsize 630
             ysize 330
             draggable False
             droppable True
             fixed:
-                xfill True
-                yfill True
-                add "gui/day3/argument_drop_zone.png"
-                add "gui/day3/argument_briefcase_open.png" xpos 20 ypos 24
-                text "DÉPOSER ICI" xalign 0.5 ypos 250 size 28 color "#ffffff" font "fonts/Rajdhani-SemiBold.ttf"
+                xysize (630, 330)
+                add Solid("#00000066") xpos 9 ypos 12 xsize 621 ysize 318
+                add Solid("#0A2635E8") xpos 0 ypos 0 xsize 620 ysize 318
+                add Solid("#59B5D555") xpos 0 ypos 0 xsize 620 ysize 3
+                add Solid("#59B5D555") xpos 0 ypos 315 xsize 620 ysize 3
+                add Solid("#59B5D555") xpos 0 ypos 0 xsize 3 ysize 318
+                add Solid("#59B5D555") xpos 617 ypos 0 xsize 3 ysize 318
+                # Liseré lumineux discret qui signale la zone réceptrice.
+                add Solid("#79E9FF") xpos 18 ypos 17 xsize 584 ysize 2 at day2_briefcase_target_pulse
+                add Solid("#79E9FF") xpos 18 ypos 299 xsize 584 ysize 2 at day2_briefcase_target_pulse
+                add Solid("#79E9FF") xpos 18 ypos 17 xsize 2 ysize 284 at day2_briefcase_target_pulse
+                add Solid("#79E9FF") xpos 600 ypos 17 xsize 2 ysize 284 at day2_briefcase_target_pulse
+                # Mallette existante : affichée dans une surface maîtrisée.
+                add Transform("gui/day3/argument_briefcase_open.png", xysize=(500, 220), fit="contain"):
+                    xpos 60 ypos 30
+                text "DÉPOSER L'ARGUMENT ICI":
+                    xalign 0.5 ypos 255
+                    size 26
+                    color "#E6F7FF"
+                    font "fonts/Rajdhani-SemiBold.ttf"
+
+    text "Relâche la carte sur la zone lumineuse pour l'enregistrer.":
+        xalign 0.5
+        ypos 750
+        size 21
+        color "#8AABBC"
+        font "fonts/Barlow-Light.ttf"
 
 screen day2_quick_vote_notes():
     pass
