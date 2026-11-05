@@ -87,8 +87,8 @@ init -2 python:
         dy = int((0.5 - y) * (config.screen_height * (z - 1.0)))
         return cam_runtime(dx0=dx, dy0=dy, z0=z, dx1=dx, dy1=dy, z1=z, t=0.0)
 
-    def start_dialogue_animation(text):
-        """Declenche le son et la secousse sans bloquer le dialogue."""
+    def start_dialogue_animation(text, speaker=None):
+        """Déclenche les effets de ponctuation, sans secouer la caméra pour Kami."""
         profile = dialogue_effect_profile(text)
         if profile == "none" or renpy.is_skipping():
             return
@@ -98,6 +98,13 @@ init -2 python:
             sound_path, sound_volume = sound_settings
             if renpy.loadable(sound_path):
                 renpy.sound.play(sound_path, relative_volume=sound_volume)
+
+        # Kami parle via les écrans de diffusion : ses exclamations ne doivent
+        # pas provoquer de secousse automatique de la caméra. Les effets sonores
+        # et le reste de l'interface de dialogue restent inchangés.
+        kami_name = character_display_name("kami")
+        if speaker is not None and str(speaker) in (str(kami_name), "Kami"):
+            return
 
         shake_settings = _DIALOGUE_SHAKE_PROFILES.get(profile)
         if shake_settings is None:
