@@ -406,7 +406,7 @@ image noam blase         = noam_expression("neutre")
 image noam agace         = noam_expression("inquiet")
 
 
-# Doppelgänger de Noam : toutes les expressions partagent les assets de Noam.
+# Double de Noam : toutes les expressions partagent les assets de Noam.
 image dg_noam colere = dg_noam_expression("colere")
 image dg_noam colere2 = dg_noam_expression("colere")
 image dg_noam culpabilite = dg_noam_expression("culpabilite")

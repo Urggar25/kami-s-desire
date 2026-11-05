@@ -63,7 +63,7 @@ init python:
             "day": "J7–8", "origin": "CONCLAVE OS", "status": "ANOMALIE",
         },
         "doppelganger": {
-            "category": "anomalies", "title": "DOPPELGÄNGER",
+            "category": "anomalies", "title": "UN DOUBLE ?",
             "desc": "Kael adopte soudain une voix et un comportement méconnaissables juste avant le trou de mémoire de Noam.",
             "day": "J15", "origin": "COULOIR DES DORTOIRS", "status": "IDENTITÉ SUSPECTE",
         },

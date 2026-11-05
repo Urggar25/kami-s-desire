@@ -255,7 +255,7 @@ screen danger_vignette():
 
 
 # ------------------------------------------------------------
-# Révélation de doppelgänger — noir, regard, sourire et screamer
+# Révélation d'un double — noir, regard, sourire et screamer
 # ------------------------------------------------------------
 transform _doppel_dark_in:
     alpha 0.0
