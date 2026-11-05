@@ -195,6 +195,9 @@ init -3 python:
             dialogue = kwargs.get("what", "")
             start_character_dialogue("kami", dialogue)
             play_dialogue_doublage("kami", dialogue)
+            # Kami n'est jamais une cible d'autofocus, même quand une
+            # scène utilise un autre décor que bg_diffusion.
+            cinema_lock_static_background()
             store.kami_diffusion_mouth_started = time.time()
             kami_diffusion_on_dialogue(dialogue)
         elif event == "end":
