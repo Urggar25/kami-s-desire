@@ -98,9 +98,9 @@ label _26_0_1_1_0_1_PORTE:
     "Je colle l'oreille contre la porte. Rien. Même pas un mouvement."
     lysa inquiet "Bon. Là, j'aime pas du tout."
     elen inquiet "Il doit dormir. Il a juste... il dort vraiment profondément, des fois."
-    noam raison "Elen, recule. Je vais chercher Elias. Et Iris."
-    elen inquiet "Pourquoi Iris ?"
-    noam fatigue "Parce que je préfère qu'elle soit là."
+    noam raison "Elen, recule. Je vais chercher Elias. Et Sael."
+    elen inquiet "Pourquoi Sael ?"
+    noam fatigue "Parce que si Tomas va mal, elle saura quoi faire."
     $ hideGroup()
     jump _26_0_1_1_0_1_DECOUVERTE
 # Durée : 1m30 — Total : 4m15.
@@ -108,14 +108,14 @@ label _26_0_1_1_0_1_PORTE:
 label _26_0_1_1_0_1_DECOUVERTE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
-    "Elias arrive avec Kael, sa boîte à outils à moitié ouverte. Iris les suit, encore en tenue de repos. Personne ne lui a expliqué pourquoi on l'avait appelée."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
+    "Elias arrive avec Kael et sa boîte à outils. Sael les suit d'un pas pressé. Elle comprend à nos têtes que quelque chose ne va pas."
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "inquiet", 0.414), ("sael", "inquiet", 0.586), ("noam", "inquiet", 0.758), ("lysa", "inquiet", 0.930)])
     kael reflexion "Il a mis le verrou intérieur ?"
     elen inquiet "Oui. Enfin, c'est ce qu'il m'a dit hier. Vous pouvez ouvrir ?"
     elias raison "Faut passer par le boîtier. Je vais essayer."
     elen peur "Mais dépêche-toi !"
     elias inquiet "Je fais ce que je peux, Elen."
-    iris colere "Elias, pousse-toi un peu, je veux être devant quand ça s'ouvre."
+    sael raison "Elias, laisse-moi le passage quand tu ouvriras."
     elias surpris "OK, OK."
     "Elias s'accroupit. Il cherche une prise avec son outil, jure entre ses dents et recommence."
     elen inquiet "Ça fait super longtemps."
@@ -127,7 +127,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elias neutre "C'est ouvert. Bougez pas."
     "Le verrou cède avec un claquement. Il pousse la porte."
     scene j26_elen_corps at adaptive_fullscreen with dissolve
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "inquiet", 0.414), ("sael", "inquiet", 0.586), ("noam", "inquiet", 0.758), ("lysa", "inquiet", 0.930)])
     "L'air est lourd. Il y a une odeur aigre, des barquettes ouvertes au pied du lit et des vêtements partout. Je commence à chercher Tomas du regard, puis j'arrête de regarder le reste."
     noam fatigue "Oh, merde..."
     elen fatigue "J'avais laissé des trucs partout, je..."
@@ -137,26 +137,42 @@ label _26_0_1_1_0_1_DECOUVERTE:
     noam inquiet "Tomas ?"
     "Je lui touche l'épaule. Son t-shirt est trempé et ses cheveux collent à son front."
     noam peur "Hé... c'est pas drôle. Tomas ?"
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "inquiet", 0.414), ("sael", "inquiet", 0.586), ("noam", "inquiet", 0.758), ("lysa", "inquiet", 0.930)])
     elen peur "Pourquoi il a pas enlevé sa veste ? Tomas, t'as trop chaud ?"
     noam panique "Réveille-toi !"
-    iris determine "Noam. Pousse-toi."
-    "Elle se penche sur lui, cherche son pouls, puis vérifie sa respiration. Je me retrouve derrière elle sans me souvenir d'avoir bougé."
-    elen inquiet "Iris ?"
-    iris determine "Attends."
+    sael raison "Noam. Écarte-toi."
+    "Sael s'agenouille près de Tomas. Elle cherche son pouls, puis vérifie sa respiration. Je me retrouve derrière elle sans me souvenir d'avoir bougé."
+    elen inquiet "Sael ?"
+    sael raison "Une seconde."
     pause 0.5
-    "Iris vérifie une seconde fois. Elle a cessé de nous regarder."
+    "Sael vérifie une seconde fois. Elle a cessé de nous regarder."
     elen peur "Dis quelque chose !"
-    iris inquiet "Je sens rien..."
+    sael inquiet "Je ne trouve pas de pouls..."
     noam surpris "Quoi ?"
-    iris determine "Noam, recule. S'il te plaît."
-    "Elle vérifie encore. J'entends Elen demander quelque chose, mais je n'arrive pas à suivre."
-    "Sael arrive et rejoint Iris près du lit. Toutes les deux échangent quelques mots à voix basse."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "peur", 0.414), ("iris", "inquiet", 0.586), ("noam", "vide", 0.758), ("sael", "triste", 0.930)])
-    elen inquiet "Vous faites quoi ? Pourquoi vous lui parlez pas ?"
-    sael triste "Elen, viens avec moi."
-    elen peur "Non. Non, attends. Iris, t'as pas fini, hein ?"
-    "Iris ne répond pas tout de suite. Sael baisse les yeux."
+    sael raison "Noam, recule. S'il te plaît."
+    "Sael vérifie encore. J'entends Elen demander quelque chose, mais je n'arrive pas à suivre."
+    "Un carillon retentit dans les haut-parleurs. Sael relève la tête, les doigts encore sur le cou de Tomas."
+    play sound sfx_announce
+    $ hideGroup()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show screen kami_broadcast_ui
+    kami "Ding, dong, ding, dong ! Une annonce exceptionnelle pour tous mes chers représentants !"
+    kami "Un corps a été découvert dans la chambre d'Elen ! Oui, un vrai corps !"
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Tous les représentants sont invités à se rendre immédiatement sur les lieux de la découverte !"
+    kami "Hiiii ! J'ai toujours voulu faire ça !"
+    hide screen kami_broadcast_ui
+    scene j26_elen_corps at adaptive_fullscreen with dissolve
+    $ showGroup([("kael", "reflexion", 0.07), ("elias", "fatigue", 0.242), ("elen", "peur", 0.414), ("sael", "triste", 0.586), ("noam", "vide", 0.758), ("lysa", "inquiet", 0.93)])
+    elen peur "Un corps ? Elle parle de Tomas ?"
+    "Des pas résonnent dans le couloir. Nyra apparaît sur le seuil presque aussitôt."
+    $ showGroup([("kael", "reflexion", 0.06), ("elias", "fatigue", 0.207), ("elen", "peur", 0.353), ("sael", "triste", 0.500), ("noam", "vide", 0.647), ("lysa", "inquiet", 0.793), ("nyra", "inquiet", 0.94)])
+    nyra inquiet "Qu'est-ce qui s'est passé ?"
+    "Elle ouvre la porte en grand et la cale pour qu'elle ne puisse plus se refermer."
+    nyra raison "Il faut aérer. Cette odeur est irrespirable."
+    sael fatigue "Merci, Nyra. Elle commence à me monter à la tête."
+    noam inquiet "Sael... ?"
+    "Sael retire lentement ses mains. Elle regarde Elen."
     sael triste "Elen... Tomas est mort."
     pause 1.0
     elen peur "Non. Attends. Tu peux pas savoir aussi vite."
@@ -171,7 +187,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     pause 0.6
     lysa inquiet "Viens, Elen. Viens dans le couloir."
     elen peur "Mais il va être tout seul."
-    lysa triste "Iris est avec lui. Allez, viens."
+    lysa triste "Sael est avec lui. Allez, viens."
     "Elen finit par se laisser entraîner dans le couloir. Je reste devant le lit. Je pourrais compter les secondes qui passent, mais je sais plus depuis combien de temps je suis là."
     "Une main se pose sur mon épaule. C'est Iris."
     $ showGroup([("iris", "fatigue", 0.31), ("noam", "vide", 0.66)])
