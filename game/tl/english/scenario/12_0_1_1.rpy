@@ -2692,3 +2692,9 @@ translate english strings:
 
     old "Rejoindre le vote"
     new "Head to the vote"
+
+# Room investigation HUD
+translate english strings:
+
+    old "FOUILLER LA CHAMBRE  ·  [len(pnc_flags)]/3 INDICES MINIMUM"
+    new "SEARCH THE ROOM  ·  [len(pnc_flags)]/3 CLUES MINIMUM"
