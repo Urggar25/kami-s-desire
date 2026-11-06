@@ -278,8 +278,8 @@ label _27_0_1_1_0_1_FOUILLE:
             nyra neutre "Il cherchait des coordonnées orbitales. Peut-être qu'il a voulu comprendre un système."
             noam raison "Je prends une photo du livre."
             $ hideGroup()
-    call investigation_evidence_photo_take("j27_photo_yanma") from _call_j27_photo_yanma
-    $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
+            call investigation_evidence_photo_take("j27_photo_yanma") from _call_j27_photo_yanma
+            $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
             $ hideGroup()
             jump _27_0_1_1_0_1_FOUILLE
         "Le registre de Keyper" if not j27a_eid:
@@ -296,8 +296,8 @@ label _27_0_1_1_0_1_FOUILLE:
             noam fatigue "Non. Mais il a voté contre à cause de ça."
             "Je photographie la page du registre qui mentionne les unités ÉID-0."
             $ hideGroup()
-    call investigation_evidence_photo_take("j27_photo_keyper") from _call_j27_photo_keyper
-    $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
+            call investigation_evidence_photo_take("j27_photo_keyper") from _call_j27_photo_keyper
+            $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
             "Je garde une copie du registre."
             $ hideGroup()
             jump _27_0_1_1_0_1_FOUILLE
