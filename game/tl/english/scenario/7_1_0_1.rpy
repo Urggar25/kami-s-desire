@@ -118,7 +118,7 @@ translate english 491f4f6f:
 translate english 45d7e21d:
 
     # kami "Je comptais justement vous féliciter pour votre remarquable découverte. Une chaussure humaine au milieu des conserves, ça réveille mieux qu'un café."
-    kami "I was just about to congratulate you on your remarkable discovery. A human shoe among the canned goods wakes you up better than coffee."
+    kami "Congratulations on that astonishing discovery! Who knew a human shoe among the canned goods worked better than coffee?"
 
 # game/scenario/7_1_0_1.rpy:86
 translate english a554f7bc:
@@ -718,7 +718,7 @@ translate english bc59aab5:
 translate english f7becad3:
 
     # kami "Maintenant que tout le monde connaît la nouvelle, permettez-moi de vous présenter officiellement votre invitée indésirable !"
-    kami "Now that everyone has heard the news, allow me to formally introduce your unwelcome guest!"
+    kami "Now that the cat's out of the bag, allow me to introduce your very unwelcome guest!"
 
 # game/scenario/7_1_0_1.rpy:468
 translate english 72808963:
@@ -754,7 +754,7 @@ translate english 5ec18cdd:
 translate english e505f46e:
 
     # kami "Je vous laisse donc décider qui mangera un peu moins. Voilà une charmante occasion de transformer votre compassion en quantité mesurable !"
-    kami "So I'll let you decide who eats a little less. What a charming opportunity to turn your compassion into a measurable quantity!"
+    kami "I'll let you decide who gets to eat less. What a delightful way to put a number on your compassion!"
 
 # game/scenario/7_1_0_1.rpy:507
 translate english 117ddf42:
@@ -766,7 +766,7 @@ translate english 117ddf42:
 translate english c15128cd:
 
     # kami "Quelle excellente suggestion ! Elle arrivera avec la prochaine livraison. Celle qui la ramènera."
-    kami "What an excellent suggestion! It'll arrive with the next delivery. The one taking her back."
+    kami "What a wonderful suggestion! It'll arrive with the next shipment. The same one that'll take her away."
 
 # game/scenario/7_1_0_1.rpy:532
 translate english fd85314a:
