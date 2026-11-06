@@ -213,3 +213,237 @@ label _26_0_1_1_0_1_APRES_CHOC:
     $ hideGroup()
     jump _26_0_1_1_0_1_INSPECTION_INTRO
 
+
+# Catalogue local : salles, actions point-and-click et fiches du dossier.
+init 10 python:
+    J26A_ROOMS = {
+    "dortoir": {
+        "title": "DORTOIRS — CHAMBRE D'ELEN",
+        "background": "bg_chambre",
+        "description": "La chambre est sous surveillance. Iris a autorisé quelques examens ciblés.",
+        "actions": [
+            "flacon",
+            "grille"
+        ]
+    },
+    "infirmerie": {
+        "title": "INFIRMERIE",
+        "background": "infirmerie2",
+        "description": "Iris travaille sur les premières constatations médicales.",
+        "actions": [
+            "iris"
+        ]
+    },
+    "repos": {
+        "title": "SALLE COMMUNE",
+        "background": "bg_repos",
+        "description": "Elen essaie de reprendre ses esprits. Sael attend un peu plus loin.",
+        "actions": [
+            "elen",
+            "sael"
+        ]
+    },
+    "cafeteria": {
+        "title": "CAFÉTÉRIA",
+        "background": "bg_cafeteria",
+        "description": "Julian et Nyra sont restés ici après la découverte.",
+        "actions": [
+            "julian",
+            "nyra"
+        ]
+    },
+    "maintenance": {
+        "title": "MAINTENANCE",
+        "background": "bg_maintenance",
+        "description": "Kael et Elias examinent les équipements du couloir.",
+        "actions": [
+            "kael"
+        ]
+    },
+    "gymnase": {
+        "title": "GYMNASE",
+        "background": "bg_gymnase",
+        "description": "Ryn est venu s'isoler.",
+        "actions": [
+            "ryn"
+        ]
+    },
+    "archive": {
+        "title": "ARCHIVES",
+        "background": "bg_archive",
+        "description": "Les dernières recherches de Tomas pourraient encore être accessibles.",
+        "actions": [
+            "notes"
+        ]
+    },
+    "observation": {
+        "title": "OBSERVATION",
+        "background": "bg_observation",
+        "description": "La console sur laquelle Tomas travaillait est restée allumée.",
+        "actions": [
+            "console"
+        ]
+    },
+    "conclave": {
+        "title": "SALLE DU CONCLAVE",
+        "background": "bg_conclave",
+        "description": "Une salle vide. Celle où Tomas a voté contre.",
+        "actions": []
+    }
+}
+    J26A_ACTIONS = {
+    "flacon": {
+        "title": "Examiner le flacon",
+        "description": "Observer et photographier le flacon, sans perturber le travail d'Iris.",
+        "label": "_26_0_1_1_0_1_PA_FLACON",
+        "evidence": "j26_tomas_flacon"
+    },
+    "grille": {
+        "title": "Observer la grille d'aération",
+        "description": "Vérifier les plaques de protection et la circulation de l'air.",
+        "label": "_26_0_1_1_0_1_PA_GRILLE",
+        "evidence": "j26_tomas_aeration"
+    },
+    "iris": {
+        "title": "Parler à Iris",
+        "description": "Demander ce que les constatations permettent réellement de conclure.",
+        "label": "_26_0_1_1_0_1_PA_IRIS",
+        "evidence": "j26_tomas_rapport"
+    },
+    "elen": {
+        "title": "Parler à Elen",
+        "description": "Revenir avec précaution sur l'échange de chambres et la dernière soirée.",
+        "label": "_26_0_1_1_0_1_PA_ELEN",
+        "evidence": "j26_tomas_echange"
+    },
+    "sael": {
+        "title": "Interroger Sael",
+        "description": "Lui demander où elle se trouvait après le dîner.",
+        "label": "_26_0_1_1_0_1_PA_SAEL",
+        "evidence": "j26_tomas_alibi_sael"
+    },
+    "julian": {
+        "title": "Interroger Julian",
+        "description": "Revenir sur sa dispute avec Tomas et ses déplacements.",
+        "label": "_26_0_1_1_0_1_PA_JULIAN",
+        "evidence": "j26_tomas_alibi_julian"
+    },
+    "nyra": {
+        "title": "Interroger Nyra",
+        "description": "Lui demander où elle a passé la nuit après l'avoir croisée aux dortoirs.",
+        "label": "_26_0_1_1_0_1_PA_NYRA",
+        "evidence": "j26_tomas_alibi_nyra"
+    },
+    "kael": {
+        "title": "Interroger Kael et Elias",
+        "description": "Vérifier le verrou et les accès de maintenance.",
+        "label": "_26_0_1_1_0_1_PA_KAEL",
+        "evidence": "j26_tomas_verrou"
+    },
+    "ryn": {
+        "title": "Interroger Ryn",
+        "description": "Vérifier son alibi après les tensions de la veille.",
+        "label": "_26_0_1_1_0_1_PA_RYN",
+        "evidence": "j26_tomas_alibi_ryn"
+    },
+    "notes": {
+        "title": "Rechercher les travaux de Tomas",
+        "description": "Consulter les documents laissés en cours sur Keyper-IIB.",
+        "label": "_26_0_1_1_0_1_PA_NOTES",
+        "evidence": "j26_tomas_keyper"
+    },
+    "console": {
+        "title": "Examiner la console",
+        "description": "Vérifier ce qu'on peut déduire des manipulations de Tomas.",
+        "label": "_26_0_1_1_0_1_PA_CONSOLE",
+        "evidence": "j26_tomas_console"
+    }
+}
+    INVESTIGATION_ENTRIES.update({
+        "j26_tomas_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES", "desc": "Un flacon presque vide a été découvert près du lit. Rien ne prouve que Tomas a pris ces comprimés.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER"},
+        "j26_tomas_aeration": {"category": "preuves", "title": "GRILLE D'AÉRATION", "desc": "Une plaque empêche physiquement le passage par la grille, mais laisse l'air circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER"},
+        "j26_tomas_rapport": {"category": "hypotheses", "title": "CAUSE DU DÉCÈS INCERTAINE", "desc": "Iris a constaté une sudation importante et aucune blessure évidente. Elle ne confirme ni suicide ni empoisonnement.", "day": "J26", "origin": "INFIRMERIE", "status": "À VÉRIFIER"},
+        "j26_tomas_echange": {"category": "evenements", "title": "ÉCHANGE DE CHAMBRES", "desc": "Tomas et Elen ont échangé leurs chambres pour éviter des visiteurs hostiles. Elen nie être revenue chez elle la nuit.", "day": "J26", "origin": "TÉMOIGNAGE D'ELEN", "status": "À VÉRIFIER"},
+        "j26_tomas_alibi_sael": {"category": "personnes", "title": "ALIBI DE SAEL", "desc": "Sael dit avoir passé une partie de la soirée à l'infirmerie, sans témoin constant.", "day": "J26", "origin": "TÉMOIGNAGE DE SAEL", "status": "À VÉRIFIER"},
+        "j26_tomas_alibi_julian": {"category": "personnes", "title": "ALIBI DE JULIAN", "desc": "Julian dit avoir été avec Ryn et Mara puis être rentré. Il nie avoir connu l'échange de chambres.", "day": "J26", "origin": "TÉMOIGNAGE DE JULIAN", "status": "À VÉRIFIER"},
+        "j26_tomas_alibi_nyra": {"category": "personnes", "title": "ALIBI DE NYRA", "desc": "Nyra dit être allée se coucher après sa rencontre avec Noam dans le couloir. Aucun témoin ne confirme la nuit entière.", "day": "J26", "origin": "TÉMOIGNAGE DE NYRA", "status": "À VÉRIFIER"},
+        "j26_tomas_verrou": {"category": "preuves", "title": "VERROU INTÉRIEUR", "desc": "Elias a forcé le verrou engagé depuis l'intérieur. Les protections d'aération sont en place.", "day": "J26", "origin": "MAINTENANCE", "status": "À VÉRIFIER"},
+        "j26_tomas_alibi_ryn": {"category": "personnes", "title": "ALIBI DE RYN", "desc": "Ryn dit avoir passé la soirée avec Julian et Mara puis être allé dormir.", "day": "J26", "origin": "TÉMOIGNAGE DE RYN", "status": "À VÉRIFIER"},
+        "j26_tomas_keyper": {"category": "evenements", "title": "DERNIÈRES RECHERCHES DE TOMAS", "desc": "Tomas consultait encore Keyper-IIB et les quotas la veille de sa mort. Cela n'établit aucun mobile.", "day": "J26", "origin": "ARCHIVES", "status": "À VÉRIFIER"},
+        "j26_tomas_console": {"category": "anomalies", "title": "CONSOLE D'OBSERVATION", "desc": "La session technique de Tomas a été fermée sans incident apparent. Noam se souvient d'un petit objet examiné la veille.", "day": "J26", "origin": "OBSERVATION", "status": "À VÉRIFIER"},
+    })
+
+label _26_0_1_1_0_1_INSPECTION_INTRO:
+    $ current_period = "Après-midi"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "Plus tard, Iris me laisse entrer quelques minutes. Tomas a été transféré à l'infirmerie. Le lit est vide, mais le drap porte encore la trace de sa présence."
+    $ showGroup([("iris", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
+    iris raison "J'ai pris les photos nécessaires. Si tu veux m'aider, ne déplace rien sans me prévenir."
+    noam raison "D'accord."
+    iris reflexion "J'ai pas trouvé de blessure extérieure évidente. Et les draps étaient vraiment trempés."
+    noam inquiet "Ça veut dire quoi ?"
+    iris fatigue "J'en sais rien. Ça peut correspondre à plusieurs causes. Je veux pas te donner une réponse au hasard."
+    noam neutre "La porte était fermée de l'intérieur."
+    iris raison "Oui. Elias a dû forcer le verrou. C'est noté."
+    "Elle me montre les photos, puis reprend les prélèvements. Le flacon aperçu près du lit est toujours là, photographié mais pas encore analysé."
+    iris inquiet "Et Elen ?"
+    noam fatigue "Lysa est avec elle."
+    iris neutre "Bien. Évite de lui poser trop de questions tout de suite."
+    noam reflexion "J'avais envie de comprendre ce qui s'est passé. Mais j'ai pas envie de passer ma journée à leur demander où ils étaient comme si..."
+    iris raison "Comme s'ils étaient tous suspects ?"
+    noam fatigue "Ouais."
+    iris neutre "Alors fais pas ça n'importe comment. Tomas mérite qu'on soit prudents."
+    $ hideGroup()
+    jump _26_0_1_1_0_1_ENQUETE
+
+label _26_0_1_1_0_1_ENQUETE:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
+    "Je retrouve Nyra et Lysa dans la salle commune. Elles ont commencé à noter les horaires dont on se souvient."
+    $ showGroup([("nyra", "neutre", 0.22), ("lysa", "inquiet", 0.46), ("noam", "fatigue", 0.71)])
+    lysa fatigue "Elen a fini par s'endormir un peu. Je préfère qu'on la laisse tranquille."
+    nyra raison "On peut commencer par les lieux et les gens qui acceptent de parler. Sans forcer."
+    noam reflexion "Et si quelqu'un refuse ?"
+    lysa neutre "Il refuse. On n'est pas la police."
+    nyra raison "C'est pour ça qu'on devrait limiter les recherches. On a déjà perdu toute la matinée, et Iris a besoin de travailler."
+    noam neutre "OK. Cinq vraies actions. Pas plus aujourd'hui."
+    lysa reflexion "Tu vas compter ?"
+    noam sourire "Si ça peut m'éviter de passer toute la soirée à harceler les autres, oui."
+    nyra sourire "D'accord. Et tu notes bien la différence entre un alibi et une simple déclaration."
+    "Je sors ma tablette. On pourra se déplacer librement, mais je choisirai les éléments que je veux vraiment approfondir."
+    $ investigation_pa_begin(26, 5)
+    $ investigation_unlocked = True
+    $ hideGroup()
+    jump _26_0_1_1_0_1_PA_MAP
+
+label _26_0_1_1_0_1_PA_MAP:
+    if investigation_pa_remaining <= 0:
+        jump _26_0_1_1_0_1_BILAN
+    call screen investigation_pa_map(J26A_ROOMS, title="JOUR 26 — ENQUÊTE AU CONCLAVE")
+    if _return == "finish":
+        jump _26_0_1_1_0_1_BILAN
+    $ investigation_pa_room = _return
+    jump _26_0_1_1_0_1_PA_ROOM
+
+label _26_0_1_1_0_1_PA_ROOM:
+    if investigation_pa_remaining <= 0:
+        jump _26_0_1_1_0_1_BILAN
+    call screen investigation_pa_room(investigation_pa_room, J26A_ROOMS, J26A_ACTIONS)
+    if _return == "back":
+        jump _26_0_1_1_0_1_PA_MAP
+    $ investigation_pa_selected = _return
+    if not investigation_pa_can_take(investigation_pa_selected):
+        jump _26_0_1_1_0_1_PA_ROOM
+    call screen investigation_pa_confirm(J26A_ACTIONS[investigation_pa_selected])
+    if not _return:
+        jump _26_0_1_1_0_1_PA_ROOM
+    if not investigation_pa_spend(investigation_pa_selected):
+        jump _26_0_1_1_0_1_PA_ROOM
+    call expression J26A_ACTIONS[investigation_pa_selected]["label"] from _call_j26a_pa_action_dynamic
+    $ investigation_add(J26A_ACTIONS[investigation_pa_selected]["evidence"])
+    if investigation_pa_remaining == 0:
+        "Ma tablette vibre : je n'ai plus de points d'action. Il faut faire le point avec les informations que j'ai."
+        jump _26_0_1_1_0_1_BILAN
+    jump _26_0_1_1_0_1_PA_ROOM
+
