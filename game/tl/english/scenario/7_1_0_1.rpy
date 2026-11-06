@@ -328,7 +328,7 @@ translate english 4e7d71a2:
 translate english f09ee674:
 
     # kami "Si elle tient absolument à voyager dans une caisse, je suis certaine que le trajet retour lui plaira."
-    kami "If she insists on traveling in a crate, I'm sure she'll enjoy the return trip."
+    kami "If she insists on riding around in a crate, I'm sure she'll love the trip back."
 
 # game/scenario/7_1_0_1.rpy:232
 translate english 4d14ced7:
@@ -346,7 +346,7 @@ translate english 545d44af:
 translate english d938b8d7:
 
     # kami "L'accès est autorisé. Sael et Elias ont été prévenus. Transportez-la sans la faire tomber, ce serait une conclusion terriblement médiocre."
-    kami "Access granted. Sael and Elias have been notified. Try not to drop her on the way. That would be a terribly mediocre ending."
+    kami "Access granted. Sael and Elias have been notified. Try not to drop her. That would be a rather pathetic ending."
 
 # game/scenario/7_1_0_1.rpy:262
 translate english 0ed36d70:
@@ -724,7 +724,7 @@ translate english f7becad3:
 translate english 72808963:
 
     # kami "Une jeune femme sans badge, sans invitation et, pour l'instant, sans la courtoisie élémentaire de nous donner son nom."
-    kami "A young woman with no badge, no invitation, and, so far, not even the basic courtesy to give us her name."
+    kami "A young woman. No badge, no invitation, and so far not even the courtesy to tell us her name."
 
 # game/scenario/7_1_0_1.rpy:472
 translate english 0477b24e:
@@ -736,13 +736,13 @@ translate english 0477b24e:
 translate english 0d08181d:
 
     # kami "Je vous rappelle qu'elle n'est pas une représentante. Elle n'a aucune voix, aucun siège et aucun droit d'interrompre vos débats avec ses opinions de passagère clandestine."
-    kami "Let me remind you that she is not a representative. She has no vote, no seat, and no right to interrupt your debates with her stowaway opinions."
+    kami "Let me remind you: she's not a representative. No vote, no seat, and no right to hijack your debates with her stowaway opinions."
 
 # game/scenario/7_1_0_1.rpy:480
 translate english af48f6bc:
 
     # kami "En revanche, elle possède une bouche. Une bouche supplémentaire, précisément."
-    kami "She does, however, have a mouth. One additional mouth, to be precise."
+    kami "She does, however, have a mouth. One extra mouth to feed, to be precise."
 
 # game/scenario/7_1_0_1.rpy:484
 translate english 5ec18cdd:
@@ -784,7 +784,7 @@ translate english 819c1e24:
 translate english 617470d0:
 
     # kami "Oui, Nyra. J'avais compris la conséquence de ma propre décision. Merci."
-    kami "Yes, Nyra. I had grasped the consequence of my own decision. Thank you."
+    kami "Yes, Nyra. I understood the implications of my own decision. Thank you."
 
 # game/scenario/7_1_0_1.rpy:544
 translate english 4a623556:
@@ -1132,7 +1132,7 @@ translate english eac2c6bd:
 translate english c42b3ea5:
 
     # kami "Une liberté sous formulaire. C'est presque poétique."
-    kami "Freedom by application form. Almost poetic."
+    kami "Freedom, pending paperwork. Almost poetic."
 
 # game/scenario/7_1_0_1.rpy:777
 translate english 65176637:
