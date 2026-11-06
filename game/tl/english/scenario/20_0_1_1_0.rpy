@@ -4622,109 +4622,109 @@ translate english ecff708d:
 translate english a5a7a463:
 
     # lysa "Moi aussi."
-    lysa ""
+    lysa "So am I."
 
 # game/scenario/20_0_1_1_0.rpy:1483
 translate english 88d4a057:
 
     # "Je prends une longue inspiration. J'essaie de parler moins fort, mais ma colère revient dès que je repense à la table vide."
-    ""
+    "I take a deep breath. I try to speak more quietly, but my anger comes straight back when I think of that empty table."
 
 # game/scenario/20_0_1_1_0.rpy:1485
 translate english 35d0a152:
 
     # noam reflexion "Écoutez-moi juste jusqu'au bout. Quand je suis entré dans cette salle cette nuit, Mara était là. Quand je suis revenu avec Iris et Kael, elle avait disparu. Entre les deux, quelqu'un a forcément fait quelque chose."
-    noam reflexion ""
+    noam reflexion "Just hear me out. When I entered that room last night, Mara was there. When I came back with Iris and Kael, she was gone. Someone must have done something in between."
 
 # game/scenario/20_0_1_1_0.rpy:1487
 translate english 4aca7be3:
 
     # sael mefiant "Ou ton souvenir est faux."
-    sael mefiant ""
+    sael mefiant "Or your memory is wrong."
 
 # game/scenario/20_0_1_1_0.rpy:1489
 translate english 323f8aa0:
 
     # noam colere "Je savais que t'allais dire ça."
-    noam colere ""
+    noam colere "I knew you were going to say that."
 
 # game/scenario/20_0_1_1_0.rpy:1491
 translate english 7b94756c:
 
     # sael "Parce que c'est possible."
-    sael ""
+    sael "Because it's possible."
 
 # game/scenario/20_0_1_1_0.rpy:1493
 translate english 22d43d5e:
 
     # noam "Et c'est pratique, hein ? Depuis qu'on a découvert M16, dès qu'il se passe quelque chose qu'on n'arrive pas à expliquer, on peut juste dire que ma mémoire déconne."
-    noam ""
+    noam "Convenient, isn't it? Ever since we found out about M16, whenever something happens that we can't explain, we can just say my memory's playing tricks on me."
 
 # game/scenario/20_0_1_1_0.rpy:1495
 translate english d69cca3f:
 
     # sael raison "J'ai pas dit ça. Je dis juste qu'on peut pas écarter l'idée parce qu'elle te fait peur."
-    sael raison ""
+    sael raison "I didn't say that. I'm saying we can't rule out the possibility just because it scares you."
 
 # game/scenario/20_0_1_1_0.rpy:1497
 translate english 56b09ad1:
 
     # noam "Ce qui me fait peur, c'est qu'on puisse tous rester là à discuter pendant que quelqu'un se balade dans les murs."
-    noam ""
+    noam "What scares me is that we could all sit here talking while somebody's crawling around inside the walls."
 
 # game/scenario/20_0_1_1_0.rpy:1499
 translate english e11fa428:
 
     # lysa reflexion "Et qui serait ce quelqu'un ?"
-    lysa reflexion ""
+    lysa reflexion "And who would that somebody be?"
 
 # game/scenario/20_0_1_1_0.rpy:1501
 translate english 77d2b6a4:
 
     # noam "J'en sais rien."
-    noam ""
+    noam "I don't know."
 
 # game/scenario/20_0_1_1_0.rpy:1503
 translate english 824e06bf:
 
     # lysa "Voilà."
-    lysa ""
+    lysa "There you go."
 
 # game/scenario/20_0_1_1_0.rpy:1505
 translate english 522232b4:
 
     # noam colere "Non, justement ! C'est pas 'voilà' ! Le fait que je sache pas qui c'est ne veut pas dire qu'il n'existe pas."
-    noam colere ""
+    noam colere "No, NOT 'there you go'! Just because I don't know who it is doesn't mean they don't exist."
 
 # game/scenario/20_0_1_1_0.rpy:1507
 translate english 428c1e78:
 
     # "Je tire brusquement sur les sangles, plus fort que je ne le voulais."
-    ""
+    "I yank at the straps, harder than I meant to."
 
 # game/scenario/20_0_1_1_0.rpy:1511
 translate english bb11d346:
 
     # noam "Quelqu'un connaissait cette salle ! Quelqu'un a pu déplacer le corps avant qu'on revienne ! Et demain on quitte tous le Conclave comme si de rien n'était !"
-    noam ""
+    noam "Someone knew about that room! Someone could have moved the body before we came back! And tomorrow we're all leaving the Conclave as if nothing happened!"
 
 # game/scenario/20_0_1_1_0.rpy:1513
 translate english b2f9d316:
 
     # sael "Noam, arrête de tirer comme ça. Tu vas te faire mal."
-    sael ""
+    sael "Noam, stop pulling like that. You'll hurt yourself."
 
 # game/scenario/20_0_1_1_0.rpy:1515
 translate english 508c0238:
 
     # noam colere "ARRÊTEZ DE ME DIRE DE ME CALMER !"
-    noam colere ""
+    noam colere "STOP TELLING ME TO CALM DOWN!"
 
 # game/scenario/20_0_1_1_0.rpy:1517
 translate english 08e22aa4:
 
     # "Sael ouvre immédiatement le petit meuble à côté du lit et en sort une seringue encore emballée."
-    ""
+    "Sael immediately opens the small cabinet beside the bed and takes out a still-wrapped syringe."
 
 # game/scenario/20_0_1_1_0.rpy:1519
 translate english j20_infirmerie_seringue_silence:
@@ -4736,121 +4736,121 @@ translate english j20_infirmerie_seringue_silence:
 translate english 4ad93d79:
 
     # sael neutre "Noam, je veux pas te faire ça. Mais si tu continues à te débattre, je vais devoir te rendormir. Tu vas te blesser."
-    sael neutre ""
+    sael neutre "Noam, I don't want to do this. But if you keep struggling, I'll have to sedate you again. You're going to hurt yourself."
 
 # game/scenario/20_0_1_1_0.rpy:1523
 translate english 96188bb5:
 
     # noam inquiet "Tu plaisantes ?"
-    noam inquiet ""
+    noam inquiet "You're joking, right?"
 
 # game/scenario/20_0_1_1_0.rpy:1527
 translate english 6594b664:
 
     # lysa blase "Pour une fois, je te conseille vraiment de la croire."
-    lysa blase ""
+    lysa blase "For once, I really recommend believing her."
 
 # game/scenario/20_0_1_1_0.rpy:1529
 translate english 64e338e7:
 
     # "Je regarde la seringue, puis Sael. Elle n'a même pas besoin de hausser le ton."
-    ""
+    "I look at the syringe, then at Sael. She doesn't even have to raise her voice."
 
 # game/scenario/20_0_1_1_0.rpy:1531
 translate english dc9fbe2e:
 
     # "Je relâche lentement mes bras."
-    ""
+    "I slowly relax my arms."
 
 # game/scenario/20_0_1_1_0.rpy:1533
 translate english 48cbefdb:
 
     # noam hesitation "D'accord... D'accord, je me calme."
-    noam hesitation ""
+    noam hesitation "Okay... Okay, I'll calm down."
 
 # game/scenario/20_0_1_1_0.rpy:1535
 translate english 02dbe3cf_1:
 
     # sael "Bien."
-    sael ""
+    sael "Good."
 
 # game/scenario/20_0_1_1_0.rpy:1537
 translate english 0fe271a0:
 
     # "Elle garde tout de même la seringue à portée de main."
-    ""
+    "She keeps the syringe within reach anyway."
 
 # game/scenario/20_0_1_1_0.rpy:1539
 translate english 66313149:
 
     # lysa taquin "Incroyable. Vingt jours pour découvrir le bouton pause de Noam."
-    lysa taquin ""
+    lysa taquin "Amazing. It only took twenty days to find Noam's pause button."
 
 # game/scenario/20_0_1_1_0.rpy:1541
 translate english cd9da780:
 
     # noam colere "Profite."
-    noam colere ""
+    noam colere "Enjoy it while it lasts."
 
 # game/scenario/20_0_1_1_0.rpy:1543
 translate english a3334fda:
 
     # lysa "Je compte bien."
-    lysa ""
+    lysa "Oh, I intend to."
 
 # game/scenario/20_0_1_1_0.rpy:1545
 translate english 8e123e0f:
 
     # "Je respire plus lentement. Cette fois, je fais réellement l'effort de ne pas crier."
-    ""
+    "I breathe more slowly. This time I make a real effort not to shout."
 
 # game/scenario/20_0_1_1_0.rpy:1547
 translate english c71aa756:
 
     # noam raison "Je vous demande même plus de croire que Mara est morte. Juste... admettez qu'il y a quelqu'un ici qui en sait beaucoup plus que nous."
-    noam raison ""
+    noam raison "I'm not even asking you to believe Mara is dead anymore. Just... admit there's someone here who knows far more than we do."
 
 # game/scenario/20_0_1_1_0.rpy:1549
 translate english fb56073f:
 
     # "Lysa ne répond pas immédiatement."
-    ""
+    "Lysa doesn't answer immediately."
 
 # game/scenario/20_0_1_1_0.rpy:1551
 translate english 3889836f:
 
     # noam "Quelqu'un connaissait ces conduits avant nous. Quelqu'un savait comment atteindre cette salle et... si ce corps était réel, bordel, quelqu'un l'a déplacé pendant que j'étais parti."
-    noam ""
+    noam "Someone knew about those ducts before we did. Someone knew how to reach that room and... if that body was real, for fuck's sake, somebody moved it while I was gone."
 
 # game/scenario/20_0_1_1_0.rpy:1553
 translate english 4eb2293b:
 
     # sael mefiant "Tu parles d'un traître."
-    sael mefiant ""
+    sael mefiant "You're talking about a traitor."
 
 # game/scenario/20_0_1_1_0.rpy:1555
 translate english 205802a7:
 
     # noam determine "Oui."
-    noam determine ""
+    noam determine "Yes."
 
 # game/scenario/20_0_1_1_0.rpy:1557
 translate english 20a48098:
 
     # "Le mot reste un instant dans la pièce."
-    ""
+    "The word hangs in the room for a moment."
 
 # game/scenario/20_0_1_1_0.rpy:1559
 translate english 42b3b204:
 
     # noam "Il y a un traître parmi nous."
-    noam ""
+    noam "There's a traitor among us."
 
 # game/scenario/20_0_1_1_0.rpy:1561
 translate english ff548e60:
 
     # lysa reflexion "Tu as un nom ?"
-    lysa reflexion ""
+    lysa reflexion "Do you have a name?"
 
 # game/scenario/20_0_1_1_0.rpy:1563
 translate english 290dd969_9:
@@ -4862,7 +4862,7 @@ translate english 290dd969_9:
 translate english f6dd1b36:
 
     # lysa "Un indice qui désigne quelqu'un en particulier ?"
-    lysa ""
+    lysa "Any evidence pointing to someone in particular?"
 
 # game/scenario/20_0_1_1_0.rpy:1567
 translate english 290dd969_10:
@@ -4874,91 +4874,91 @@ translate english 290dd969_10:
 translate english 3adbd1e8:
 
     # lysa fatigue "Tu vois bien le problème. Si on commence à regarder tout le monde comme un traître à moins de vingt-quatre heures du départ, on va finir par s'entretuer tout seuls."
-    lysa fatigue ""
+    lysa fatigue "You see the problem. If we start treating everyone like a traitor less than twenty-four hours before we leave, we'll end up killing each other."
 
 # game/scenario/20_0_1_1_0.rpy:1571
 translate english 8e19a3dc:
 
     # noam desaccord "Et si on ne fait rien, on peut partir avec cette personne demain."
-    noam desaccord ""
+    noam desaccord "And if we do nothing, we might leave with that person tomorrow."
 
 # game/scenario/20_0_1_1_0.rpy:1573
 translate english 96487a13:
 
     # sael "Peut-être."
-    sael ""
+    sael "Maybe."
 
 # game/scenario/20_0_1_1_0.rpy:1575
 translate english 10f0a854:
 
     # noam "Tu vois ? Même toi tu l'envisages."
-    noam ""
+    noam "See? Even you're considering it."
 
 # game/scenario/20_0_1_1_0.rpy:1577
 translate english b2c848b6:
 
     # sael raison "J'envisage tout. Ça veut pas dire que je vais pointer quelqu'un du doigt sans la moindre preuve."
-    sael raison ""
+    sael raison "I'm considering everything. Doesn't mean I'm going to point fingers without a shred of proof."
 
 # game/scenario/20_0_1_1_0.rpy:1579
 translate english be4b111a:
 
     # "Je ferme les yeux. Elles comprennent rien. Ou alors elles comprennent très bien et elles veulent juste pas me suivre là-dedans."
-    ""
+    "I close my eyes. They don't understand. Or maybe they understand perfectly well and just refuse to follow me down this path."
 
 # game/scenario/20_0_1_1_0.rpy:1581
 translate english 0c505e59:
 
     # noam fatigue "Faites seulement attention. C'est tout ce que je vous demande."
-    noam fatigue ""
+    noam fatigue "Just be careful. That's all I'm asking."
 
 # game/scenario/20_0_1_1_0.rpy:1583
 translate english f58ca5d2:
 
     # lysa fatigue "Ça, je peux le faire."
-    lysa fatigue ""
+    lysa fatigue "That I can do."
 
 # game/scenario/20_0_1_1_0.rpy:1585
 translate english 4c71f1b4:
 
     # "Sa réponse est moins moqueuse."
-    ""
+    "There's less mockery in her voice now."
 
 # game/scenario/20_0_1_1_0.rpy:1587
 translate english 85189c44:
 
     # lysa "Mais toi, tu vas rester ici pour l'instant. Tu vas arrêter de courir dans les murs, arrêter de chercher des cadavres tout seul et surtout arrêter de prendre des couteaux dès que tu entends un bruit."
-    lysa ""
+    lysa "But you're staying here for now. You're going to stop running around inside walls, stop hunting for corpses by yourself, and above all stop grabbing knives every time you hear a noise."
 
 # game/scenario/20_0_1_1_0.rpy:1589
 translate english 9caf72d8:
 
     # noam colere "Tu dis ça comme si c'était une habitude."
-    noam colere ""
+    noam colere "You say that like it's a habit."
 
 # game/scenario/20_0_1_1_0.rpy:1591
 translate english e570a2a3:
 
     # lysa taquin "Une fois suffit largement."
-    lysa taquin ""
+    lysa taquin "Once is more than enough."
 
 # game/scenario/20_0_1_1_0.rpy:1593
 translate english ff90ce0c:
 
     # "Elle s'approche encore et remet correctement la couverture qui avait glissé pendant que je me débattais."
-    ""
+    "She comes closer and straightens the blanket that slipped while I was struggling."
 
 # game/scenario/20_0_1_1_0.rpy:1597
 translate english ca96d5d8:
 
     # lysa fatigue "Et avant que tu recommences : non, je ne te détache pas. J'ai envie de te retrouver vivant demain, même si tu fais absolument tout pour rendre ça compliqué."
-    lysa fatigue ""
+    lysa fatigue "And before you start again: no, I'm not untying you. I'd like to find you alive tomorrow, even though you're doing everything you can to make that difficult."
 
 # game/scenario/20_0_1_1_0.rpy:1599
 translate english 66acd704:
 
     # "Je la regarde sans savoir quoi répondre."
-    ""
+    "I look at her, unsure what to say."
 
 # game/scenario/20_0_1_1_0.rpy:1601
 translate english fd3601a2_1:
@@ -4970,175 +4970,175 @@ translate english fd3601a2_1:
 translate english fdd80a52:
 
     # lysa "Quoi ?"
-    lysa ""
+    lysa "What?"
 
 # game/scenario/20_0_1_1_0.rpy:1605
 translate english 32d582cd:
 
     # noam inquiet "Si tu entends quelque chose cette nuit, derrière une grille ou dans un mur... ne va pas voir toute seule."
-    noam inquiet ""
+    noam inquiet "If you hear something tonight, behind a grille or inside a wall... don't go looking on your own."
 
 # game/scenario/20_0_1_1_0.rpy:1607
 translate english 2b34df9d:
 
     # "Elle me fixe quelques secondes, puis soupire."
-    ""
+    "She studies me for a few seconds, then sighs."
 
 # game/scenario/20_0_1_1_0.rpy:1609
 translate english 556c1e2c:
 
     # lysa sourire "D'accord."
-    lysa sourire ""
+    lysa sourire "Okay."
 
 # game/scenario/20_0_1_1_0.rpy:1611
 translate english 051c2f7b:
 
     # noam "Je suis sérieux."
-    noam ""
+    noam "I'm serious."
 
 # game/scenario/20_0_1_1_0.rpy:1613
 translate english 4f04fb02:
 
     # lysa "Moi aussi. Je te promets que si quelqu'un vient ramper derrière ma chambre cette nuit, je hurlerai suffisamment fort pour réveiller tout le Conclave."
-    lysa ""
+    lysa "So am I. I promise that if somebody comes crawling behind my room tonight, I'll scream loudly enough to wake the entire Conclave."
 
 # game/scenario/20_0_1_1_0.rpy:1615
 translate english d93cf4e6:
 
     # sael neutre "Nous devrions y aller."
-    sael neutre ""
+    sael neutre "We should go."
 
 # game/scenario/20_0_1_1_0.rpy:1617
 translate english 92b86673:
 
     # noam inquiet "Attendez."
-    noam inquiet ""
+    noam inquiet "Wait."
 
 # game/scenario/20_0_1_1_0.rpy:1619
 translate english 8c581efc:
 
     # sael "Quoi encore ?"
-    sael ""
+    sael "What now?"
 
 # game/scenario/20_0_1_1_0.rpy:1621
 translate english 03b559dc:
 
     # noam "Vous allez vraiment me laisser ici ?"
-    noam ""
+    noam "You're really going to leave me here?"
 
 # game/scenario/20_0_1_1_0.rpy:1623
 translate english f6df91f5:
 
     # lysa blase "Oui."
-    lysa blase ""
+    lysa blase "Yes."
 
 # game/scenario/20_0_1_1_0.rpy:1625
 translate english 316bc73b:
 
     # noam "Attaché ?"
-    noam ""
+    noam "Tied up?"
 
 # game/scenario/20_0_1_1_0.rpy:1627
 translate english 18071eb0:
 
     # lysa "Tu progresses vite."
-    lysa ""
+    lysa "You're a quick learner."
 
 # game/scenario/20_0_1_1_0.rpy:1629
 translate english 3c848a74:
 
     # noam colere "Lysa..."
-    noam colere ""
+    noam colere "Lysa..."
 
 # game/scenario/20_0_1_1_0.rpy:1631
 translate english 466a2dca:
 
     # lysa fatigue "Dors, Noam. Pour une fois, essaie juste de ne rien résoudre pendant quelques heures."
-    lysa fatigue ""
+    lysa fatigue "Get some sleep, Noam. For once, try not to solve anything for a few hours."
 
 # game/scenario/20_0_1_1_0.rpy:1633
 translate english 38d155ea:
 
     # "Sael ouvre la porte."
-    ""
+    "Sael opens the door."
 
 # game/scenario/20_0_1_1_0.rpy:1635
 translate english 02b49a47:
 
     # noam "Et le traître ?"
-    noam ""
+    noam "And the traitor?"
 
 # game/scenario/20_0_1_1_0.rpy:1637
 translate english e26ed80e:
 
     # sael mefiant "S'il existe, il sera encore là quand tu te réveilleras."
-    sael mefiant ""
+    sael mefiant "If they exist, they'll still be here when you wake up."
 
 # game/scenario/20_0_1_1_0.rpy:1639
 translate english 32bde21e:
 
     # noam "C'est justement ce qui m'inquiète."
-    noam ""
+    noam "That's exactly what worries me."
 
 # game/scenario/20_0_1_1_0.rpy:1641
 translate english 68a63a51:
 
     # "Elles échangent un regard, mais aucune ne répond."
-    ""
+    "They exchange a glance, but neither answers."
 
 # game/scenario/20_0_1_1_0.rpy:1647
 translate english 8ca343a3:
 
     # "La porte se referme derrière elles."
-    ""
+    "The door closes behind them."
 
 # game/scenario/20_0_1_1_0.rpy:1659
 translate english a2908c80:
 
     # "Je reste seul dans l'infirmerie, toujours attaché au lit."
-    ""
+    "I'm alone in the infirmary, still tied to the bed."
 
 # game/scenario/20_0_1_1_0.rpy:1662
 translate english d149e44a:
 
     # "Pendant un long moment, je fixe simplement la porte par laquelle Lysa et Sael viennent de sortir. J'aimerais me convaincre qu'elles vont réfléchir à ce que je leur ai dit, mais je n'en sais rien."
-    ""
+    "For a long while, I just stare at the door Lysa and Sael went through. I'd like to believe they'll think about what I told them, but I have no idea."
 
 # game/scenario/20_0_1_1_0.rpy:1664
 translate english af0f9514:
 
     # think "Il y a un traître parmi nous."
-    think ""
+    think "There's a traitor among us."
 
 # game/scenario/20_0_1_1_0.rpy:1665
 translate english 80ce7d26:
 
     # "Je me répète la phrase. J'en sais rien. Mais pour l'instant, c'est la seule chose qui relie encore tout le reste."
-    ""
+    "I repeat the words to myself. I don't know if they're true. But for now, it's the only thing still connecting everything else."
 
 # game/scenario/20_0_1_1_0.rpy:1667
 translate english 643a3bc7:
 
     # think "Mara dans la salle."
-    think ""
+    think "Mara in the room."
 
 # game/scenario/20_0_1_1_0.rpy:1668
 translate english 4fbed552:
 
     # think "Mara dans la cafétéria."
-    think ""
+    think "Mara in the cafeteria."
 
 # game/scenario/20_0_1_1_0.rpy:1669
 translate english 9f736836:
 
     # think "Le corps disparu."
-    think ""
+    think "The missing body."
 
 # game/scenario/20_0_1_1_0.rpy:1671
 translate english e4a0a4e9:
 
     # "Trois faits qui ne peuvent pas exister ensemble, et pourtant je me souviens des trois."
-    ""
+    "Three facts that can't all be true, yet I remember all three."
 
 # game/scenario/20_0_1_1_0.rpy:1673
 translate english j20_fin_silence_noam:
@@ -5150,61 +5150,61 @@ translate english j20_fin_silence_noam:
 translate english b6cc149e:
 
     # "Je ferme les yeux, puis les rouvre presque aussitôt."
-    ""
+    "I close my eyes, then open them again almost immediately."
 
 # game/scenario/20_0_1_1_0.rpy:1677
 translate english 54c74d09:
 
     # "Demain, la navette arrivera."
-    ""
+    "Tomorrow, the shuttle will arrive."
 
 # game/scenario/20_0_1_1_0.rpy:1679
 translate english 7ac722dc:
 
     # "Tout le monde quittera le Conclave."
-    ""
+    "Everyone will leave the Conclave."
 
 # game/scenario/20_0_1_1_0.rpy:1681
 translate english 80070af3:
 
     # "Et si j'ai raison, celui qui nous manipule quittera peut-être cet endroit avec nous."
-    ""
+    "And if I'm right, whoever's manipulating us might leave this place with us."
 
 # game/scenario/20_0_1_1_0.rpy:1683
 translate english fa29de71:
 
     # "Je tire une dernière fois, doucement, sur la sangle de mon poignet."
-    ""
+    "I give the strap around my wrist one last gentle tug."
 
 # game/scenario/20_0_1_1_0.rpy:1685
 translate english 896c5fca:
 
     # "Elle ne bouge pas."
-    ""
+    "It doesn't budge."
 
 # game/scenario/20_0_1_1_0.rpy:1687
 translate english 713dc7a1:
 
     # noam inquiet "Génial..."
-    noam inquiet ""
+    noam inquiet "Great..."
 
 # game/scenario/20_0_1_1_0.rpy:1689
 translate english f76f319b:
 
     # "Pour la première fois depuis plusieurs nuits, je n'ai même plus accès à la bouche d'aération."
-    ""
+    "For the first time in several nights, I can't even reach the air vent."
 
 # game/scenario/20_0_1_1_0.rpy:1691
 translate english 55450a85:
 
     # "Ça devrait me rassurer."
-    ""
+    "That should reassure me."
 
 # game/scenario/20_0_1_1_0.rpy:1693
 translate english 295757ad:
 
     # "Étrangement, ce n'est pas le cas."
-    ""
+    "Strangely enough, it doesn't."
 
 translate english strings:
 
