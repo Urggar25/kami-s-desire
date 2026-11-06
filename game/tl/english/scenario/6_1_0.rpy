@@ -1354,25 +1354,25 @@ translate english 0d202e0a:
 translate english dd916e5c:
 
     # kami "Une menace, un coup au visage, une salle entière prête à s'étriper... et vous interrompez déjà le débat ?"
-    kami "A threat, a punch to the face, a room full of people ready to tear each other apart... and you're ending the debate already?"
+    kami "A threat, a punch in the face, a whole room ready to rip each other apart... and you're calling it a debate already?"
 
 # game/scenario/6_1_0.rpy:664
 translate english 331eb4de:
 
     # kami "J'avais préparé plusieurs angles de caméra. J'espérais des arguments, des larmes, peut-être même une seconde droite !"
-    kami "I had several camera angles set up. I was hoping for arguments, tears, maybe even a second right hook!"
+    kami "I set up all those camera angles! I was promised arguments, tears, maybe even another right hook!"
 
 # game/scenario/6_1_0.rpy:668
 translate english bc5d4658:
 
     # kami "Vous pourriez faire un effort ! La démocratie mérite de meilleurs débats que cette catastrophe expédiée en quelques minutes."
-    kami "You could at least make an effort! Democracy deserves better debates than this disaster you rushed through in a matter of minutes."
+    kami "Come on, at least TRY! Democracy deserves better than a five-minute train wreck!"
 
 # game/scenario/6_1_0.rpy:672
 translate english 96055b9a:
 
     # kami "Mais soit. Une représentante s'est exprimée. La démocratie a parlé !"
-    kami "But fine. One representative has spoken. Democracy has spoken!"
+    kami "But fine! One representative has spoken. Democracy wins! Apparently."
 
 # game/scenario/6_1_0.rpy:673
 translate english 8c50cc0d:
@@ -1384,7 +1384,7 @@ translate english 8c50cc0d:
 translate english 44563a5b:
 
     # kami "Allez. Faites au moins semblant de prendre cette partie au sérieux."
-    kami "Go on. At least pretend you're taking this part seriously."
+    kami "Go on. At least PRETEND this part matters to you."
 
 # game/scenario/6_1_0.rpy:682
 translate english 99491448:
@@ -1420,7 +1420,7 @@ translate english 255b8ac9:
 translate english e2078cc8:
 
     # kami "Deux refus ! Sael n'était donc pas la seule à vouloir refermer la porte. Comme c'est intéressant."
-    kami "Two rejections! So Sael wasn't the only one who wanted to close the door again. How interesting."
+    kami "Two votes against! So Sael wasn't the only one slamming the door shut. How interesting."
 
 # game/scenario/6_1_0.rpy:747
 translate english baf6abce:
@@ -1462,7 +1462,7 @@ translate english 11f3e2c1:
 translate english 9fe790c7:
 
     # kami "Félicitations pour cette magnifique démonstration démocratique ! Essayez seulement de ne pas vous frapper avant le prochain vote."
-    kami "Congratulations on this magnificent display of democracy! Just try not to hit each other before the next vote."
+    kami "Congratulations on that dazzling display of democracy! Do try not to punch anyone before the next vote."
 
 # game/scenario/6_1_0.rpy:775
 translate english 7d7e4bf3:
