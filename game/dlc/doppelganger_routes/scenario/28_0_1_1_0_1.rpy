@@ -455,25 +455,20 @@ label _28_0_1_1_0_1_TEMOINS:
     jump _28_0_1_1_0_1_PA_MAP
 
 label _28_0_1_1_0_1_PA_MAP:
-    call screen investigation_pa_map(J28A_ROOMS, title="JOUR 28 — LES CONDUITS")
-    if _return == "finish":
-        jump _28_0_1_1_0_1_PA_FIN
-    if _return == "corridors":
-        jump _28_0_1_1_0_1_PA_CORRIDORS
-    $ investigation_pa_current_room = _return
-    jump _28_0_1_1_0_1_PA_ROOM
+    # Compatibilité avec les anciens jumps et sauvegardes.
+    jump _28_0_1_1_0_1_PA_CORRIDORS
 
 label _28_0_1_1_0_1_PA_CORRIDORS:
     call CORRIDOR_NAVIGATION(corridor_current) from _call_j28a_pa_corridors
     $ investigation_pa_current_room = _return
     if investigation_pa_current_room not in J28A_ROOMS:
-        jump _28_0_1_1_0_1_PA_MAP
+        jump _28_0_1_1_0_1_PA_CORRIDORS
     jump _28_0_1_1_0_1_PA_ROOM
 
 label _28_0_1_1_0_1_PA_ROOM:
     call screen investigation_pa_room(investigation_pa_current_room, J28A_ROOMS, J28A_ACTIONS)
-    if _return == "back":
-        jump _28_0_1_1_0_1_PA_MAP
+    if _return == "finish":
+        jump _28_0_1_1_0_1_PA_FIN
     if _return == "corridors":
         jump _28_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_selected = _return
