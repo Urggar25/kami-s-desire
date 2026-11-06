@@ -5418,3 +5418,9 @@ translate english cbcaad30_1:
 
     # kael triste "Je sais."
     kael triste "I know."
+
+# Navigation string localized for day 15
+translate english strings:
+
+    old "Rejoindre Kael à l'Observation"
+    new "Meet Kael in the Observation Room"
