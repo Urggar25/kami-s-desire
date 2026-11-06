@@ -2672,3 +2672,17 @@ translate english 7da19eb8:
     # "Le sommeil finit par me tomber dessus d’un coup, lourd et sale, comme une coupure de courant."
     "Sleep finally crashes over me all at once, heavy and grimy, like a power cut."
 
+
+# Missing current-source dialogue translation units (reviewed 2026-11-06)
+
+# game/scenario/12_0_1_1.rpy:127
+translate english 96fb98c9:
+
+    # think "Évidemment."
+    think "Of course."
+
+# game/scenario/12_0_1_1.rpy:879
+translate english 0e80e0da:
+
+    # noam "..."
+    noam "..."
