@@ -188,7 +188,7 @@ label _28_0_1_1_0_1_LIVRAISON:
     scene bg_maintenance at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
     "Près du sas de livraison, Elias et Elen chargent des caisses sur un chariot. Goumi attend derrière eux."
-    $ showGroup([("elias", "fatigue", 0.20), ("elen", "reflexion", 0.42), ("noam", "neutre", 0.64), ("lysa", "blase", 0.87)])
+    $ showGroup([("elias", "fatigue", 0.22), ("elen", "reflexion", 0.48), ("noam", "neutre", 0.74)])
     elias fatigue "Attends, Elen, pas celle-là."
     elen neutre "Pourquoi ?"
     elias raison "Elle est plus lourde."
@@ -196,15 +196,18 @@ label _28_0_1_1_0_1_LIVRAISON:
     elen peur "Oh ! Merde !"
     noam surpris "Ça va ?"
     elen fatigue "Ouais. C'est rien."
+    $ showGroup([("lysa", "blase", 0.22), ("elen", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     lysa blase "C'est la deuxième en cinq minutes."
     elen colere "Lysa !"
     lysa neutre "Quoi ? Je compte."
     "Je les aide à remettre la caisse en place."
     noam reflexion "Kami a toujours pas arrêté les livraisons ?"
+    $ showGroup([("elias", "fatigue", 0.22), ("elen", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     elias fatigue "Non. C'est pareil que d'habitude. Infirmerie, cafétéria, maintenance."
     elen triste "Elle fait vraiment comme si rien s'était passé."
     noam neutre "Tu veux qu'on termine sans toi ?"
     elen fatigue "Non. J'ai besoin de faire quelque chose. Si je reste seule, je vais encore penser à Tomas."
+    $ showGroup([("lysa", "inquiet", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
     lysa inquiet "Elen..."
     elen neutre "Ça va. Enfin, non, mais j'ai pas envie d'en parler pour l'instant."
     noam raison "OK. On termine les caisses."
@@ -489,20 +492,24 @@ label _28_0_1_1_0_1_PA_FIN:
 
 label _28_0_1_1_0_1_SAEL_RYN:
     scene bg_repos at adaptive_fullscreen with dissolve
-    $ showGroup([("sael", "neutre", 0.17), ("ryn", "fatigue", 0.37), ("lysa", "neutre", 0.57), ("noam", "neutre", 0.77)])
+    $ showGroup([("sael", "neutre", 0.22), ("ryn", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     ryn fatigue "Qu'est-ce qu'il y a, encore ?"
     noam raison "On a trouvé quelque chose dans un conduit. Je voulais savoir si vous connaissez une plante : Bulbuma Corienis."
     sael reflexion "J'en ai entendu parler. On en trouve dans certaines régions de Limen."
     ryn reflexion "C'est celle qui pousse dans le désert ?"
     sael neutre "Il y a plusieurs espèces. Pourquoi ?"
+    $ showGroup([("lysa", "neutre", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
     lysa raison "Des restes de plante brûlée, dans un bol. Près de la ventilation d'Elen."
     sael inquiet "Et vous pensez que ça pourrait avoir un rapport avec la mort de Tomas ?"
     noam neutre "Iris dit que c'est possible, oui."
+    $ showGroup([("ryn", "colere", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
     ryn colere "Ah. Donc parce qu'on vient de Limen, c'est nous maintenant ?"
     noam agace "Mais j'ai pas dit ça !"
     ryn colere "Vous arrivez avec une plante du désert et vous nous regardez tous les deux !"
+    $ showGroup([("lysa", "blase", 0.22), ("ryn", "colere", 0.48), ("noam", "neutre", 0.74)])
     lysa blase "On va aussi parler à Kael. Calme-toi."
     ryn fatigue "Ouais, c'est ça..."
+    $ showGroup([("sael", "neutre", 0.22), ("ryn", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     sael raison "Ryn, laisse-le finir."
     noam reflexion "Sael, tu sais ce qui se passe quand on brûle cette plante ?"
     sael neutre "Certaines préparations sont irritantes. Je n'en ai jamais utilisé, alors je ne vais pas inventer."
@@ -682,42 +689,60 @@ label _28_0_1_1_0_1_REUNION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.8
     "On se retrouve au Conclave à la demande d'Iris. La place de Tomas reste vide, et cette fois personne ne propose de faire semblant de préparer un vote."
-    $ showGroup([("iris", "reflexion", 0.10), ("elen", "triste", 0.26), ("julian", "fatigue", 0.42), ("lysa", "neutre", 0.58), ("noam", "neutre", 0.74), ("sael", "neutre", 0.90), ("ryn", "fatigue", 1.06), ("nyra", "neutre", -0.06)])
+    $ showGroup([("iris", "reflexion", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     iris raison "On a trouvé un récipient avec des résidus brûlés dans le conduit relié à la chambre d'Elen."
     julian surpris "Un récipient ?"
+    $ showGroup([("lysa", "neutre", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     lysa raison "Un petit bol, oui. Il y avait une plaque qui changeait la circulation de l'air."
     noam neutre "On a photographié le montage. C'était pas une des protections installées par Kael."
+    $ showGroup([("elen", "triste", 0.22), ("iris", "reflexion", 0.48), ("noam", "neutre", 0.74)])
     elen inquiet "Mais quelqu'un a mis ça là ?"
     iris raison "Ça ne fait pas partie du réseau normal. Oui, quelqu'un l'a placé."
+    $ showGroup([("julian", "fatigue", 0.22), ("iris", "reflexion", 0.48), ("noam", "neutre", 0.74)])
     julian reflexion "Tu penses que Tomas a été empoisonné ?"
     iris neutre "C'est une possibilité sérieuse. On a retrouvé des fragments végétaux brûlés. Une partie pourrait provenir d'une plante capable de dégager des substances toxiques."
+    $ showGroup([("elen", "triste", 0.22), ("iris", "reflexion", 0.48), ("noam", "neutre", 0.74)])
     elen peur "Attends... Tu veux dire qu'il a pu respirer ça pendant qu'il dormait ?"
     iris reflexion "Ça pourrait correspondre à une intoxication par inhalation. Mais je n'ai pas encore la preuve que ce soit la cause de sa mort."
     elen triste "Oh, putain..."
+    $ showGroup([("julian", "fatigue", 0.22), ("iris", "reflexion", 0.48), ("noam", "neutre", 0.74)])
     julian neutre "Et les somnifères ?"
     iris neutre "On sait toujours pas s'il en a pris. Le flacon ne suffit pas à expliquer la plaque et le récipient."
+    $ showGroup([("elen", "triste", 0.22), ("iris", "reflexion", 0.48), ("noam", "neutre", 0.74)])
     elen colere "Donc il s'est peut-être pas suicidé du tout !"
     iris raison "Oui. C'est possible."
-    ryn agace "Et vous avez commencé par nous demander si on connaissait cette plante."
+    $ showGroup([("ryn", "agace", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
+    if "limen" in investigation_pa_completed:
+        ryn agace "Et vous avez commencé par nous demander si on connaissait cette plante."
+    else:
+        ryn agace "Et là, parce qu'on vient de Limen, on devient suspects ?"
+    $ showGroup([("julian", "fatigue", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
     julian surpris "Quelle plante ?"
     lysa raison "Du Bulbuma Corienis. Ça pousse dans les régions arides."
+    $ showGroup([("ryn", "agace", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
     ryn colere "Voilà ! Tu vois !"
     sael calme "Ryn. Arrête de t'énerver."
     ryn agace "Mais on nous a posé des questions parce qu'on vient de Limen !"
     noam agace "On sait que cette plante peut venir de plusieurs endroits !"
     sael raison "La provenance d'une plante ne permet pas d'identifier celui qui l'a apportée."
+    $ showGroup([("nyra", "neutre", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
     nyra raison "Et il y a des régions arides à Orbite. Sans parler des livraisons entre districts."
+    $ showGroup([("julian", "fatigue", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
     julian reflexion "C'est pas pour autant qu'on doit ignorer la piste."
     nyra neutre "Non. Mais on peut chercher sans décider que les gens de Limen sont coupables."
+    $ showGroup([("kael", "calme", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
     kael raison "La plaque ne ressemble pas aux protections habituelles. Je vais vérifier les journaux de maintenance."
     elen inquiet "Vous pensez vraiment que quelqu'un ici a fait ça ?"
     noam fatigue "On sait pas qui a pu passer par les conduits. Mais quelqu'un y a installé quelque chose."
+    $ showGroup([("lysa", "neutre", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
     lysa raison "Et cette personne pouvait préparer le dispositif sans ouvrir la porte d'Elen."
     pause 0.4
+    $ showGroup([("julian", "fatigue", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
     julian fatigue "Je pensais vraiment que Tomas avait pu..."
     julian triste "Merde. Je lui ai crié dessus jusqu'à la fin."
     elen triste "Julian..."
     julian fatigue "Non, laisse. Je sais."
+    $ showGroup([("iris", "fatigue", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
     iris determine "Je garde les prélèvements et je continue les examens. Et je veux que personne ne touche au montage dans le conduit sans nous prévenir."
     nyra raison "On peut aussi reprendre calmement les témoignages de cette nuit-là. Avec ce qu'on vient de trouver, certaines choses vont peut-être changer."
     noam neutre "Ouais. Mais pas ce soir."
