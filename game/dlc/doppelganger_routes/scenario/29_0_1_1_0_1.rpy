@@ -87,7 +87,7 @@ label _29_0_1_1_0_1_RECON_MENU:
                 nyra neutre "Ça, on peut le garder."
             "Tomas avait décidé de se suicider.":
                 $ j29a_erreurs += 1
-                lysa agace "On en sait rien. C'est justement ce qu'on vérifie."
+                lysa colere "On en sait rien. C'est justement ce qu'on vérifie."
         jump _29_0_1_1_0_1_RECON_MENU
     if j29a_reconstitution == 1:
         menu:
@@ -214,10 +214,9 @@ label _29_0_1_1_0_1_OBSERVATION:
     noam raison "Oui. Et l'intensité est presque nulle."
     lysa neutre "Donc ça pourrait être le boîtier."
     noam reflexion "Peut-être. Mais y a aucune destination, aucun propriétaire, rien."
-    lysa raison "Garde une copie. Et surtout, dis pas que t'as trouvé une preuve que Nyra communiquait avec des pirates."
-    noam surpris "Avec des quoi ?"
-    lysa sourire "C'était un exemple, Noam ! J'aurais pu dire des extraterrestres."
-    noam blase "T'as des exemples bizarres."
+    lysa raison "Garde une copie. Mais ne dis pas que tu connais la destination du signal."
+    noam neutre "Je sais même pas si le boîtier était un émetteur."
+    lysa neutre "Voilà."
     lysa neutre "Oui, bon. Tu m'as compris."
     "Je photographie le relevé. Je n'ai rien permettant de confirmer qu'il s'agissait d'une émission Yanma, encore moins de savoir qui aurait été à l'autre bout."
     $ j29a_signal = True
@@ -271,7 +270,7 @@ label _29_0_1_1_0_1_REUNION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
     "On se retrouve dans la salle du Conclave. J'ai demandé à tout le monde de venir parce que je ne veux plus discuter de la mort de Tomas par petits groupes, en inventant des morceaux d'histoire chacun de notre côté."
-    $ showGroup([("noam", "neutre", 0.12), ("iris", "fatigue", 0.28), ("julian", "neutre", 0.44), ("elen", "triste", 0.60), ("lysa", "neutre", 0.76), ("nyra", "neutre", 0.92), ("ryn", "fatigue", 1.08), ("sael", "neutre", -0.06)])
+    $ showGroup([("noam", "neutre", 0.12), ("iris", "fatigue", 0.28), ("julian", "neutre", 0.44), ("elen", "triste", 0.60), ("lysa", "neutre", 0.76), ("nyra", "neutre", 0.92), ("ryn", "fatigue", 1.08), ("sael", "neutre", -0.06), ("kael", "calme", 0.02)])
     julian reflexion "Bon. Tu nous as dit que t'avais quelque chose d'important."
     noam raison "Oui. Mais d'abord, Iris va vous expliquer ce qu'elle a trouvé."
     iris raison "L'hypothèse d'une intoxication par inhalation s'est renforcée. Avec le dispositif du conduit, l'homicide est désormais plus probable qu'un suicide."
@@ -284,7 +283,7 @@ label _29_0_1_1_0_1_REUNION:
     nyra neutre "C'est ce qu'il faut faire."
     elen triste "Je veux juste savoir. Même si c'est horrible, je préfère savoir."
     noam neutre "Ouais. Moi aussi."
-    "J'affiche les photos de la chambre et du conduit sur la table. C'est maintenant au joueur de montrer quels éléments contredisent les différentes hypothèses."
+    "J'affiche les photos de la chambre et du conduit sur la table. Il va falloir reprendre les arguments un par un."
     jump _29_0_1_1_0_1_OBJECTIONS
 # Durée : ~1m30.
 
