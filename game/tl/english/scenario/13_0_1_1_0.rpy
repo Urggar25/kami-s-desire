@@ -2962,229 +2962,229 @@ translate english 42702197:
 translate english b0b2dcba:
 
     # "Je sens ma respiration s’accélérer."
-    ""
+    "My breathing quickens."
 
 # game/scenario/13_0_1_1_0.rpy:824
 translate english 6136d019:
 
     # think "C’est une menace ?"
-    think ""
+    think "Is this a threat?"
 
 # game/scenario/13_0_1_1_0.rpy:825
 translate english 74f9f983:
 
     # think "Une façon de me dire qu’ils peuvent entrer quand ils veulent ?"
-    think ""
+    think "A way of telling me they can get in whenever they like?"
 
 # game/scenario/13_0_1_1_0.rpy:826
 translate english 3c0fdefb:
 
     # think "Qu’ils savent exactement ce qui me touche ?"
-    think ""
+    think "That they know exactly what hurts me?"
 
 # game/scenario/13_0_1_1_0.rpy:828
 translate english 502d467e:
 
     # "Je regarde la porte de ma chambre."
-    ""
+    "I look at my bedroom door."
 
 # game/scenario/13_0_1_1_0.rpy:830
 translate english f2796138:
 
     # "Verrouillée."
-    ""
+    "Locked."
 
 # game/scenario/13_0_1_1_0.rpy:832
 translate english 25ab616c:
 
     # "Je regarde la fenêtre."
-    ""
+    "I look at the window."
 
 # game/scenario/13_0_1_1_0.rpy:834
 translate english 775fe0b0:
 
     # "Fermée."
-    ""
+    "Shut."
 
 # game/scenario/13_0_1_1_0.rpy:836
 translate english 7b5296af:
 
     # "Je regarde autour de moi."
-    ""
+    "I look around."
 
 # game/scenario/13_0_1_1_0.rpy:838
 translate english 8b015107:
 
     # "Chaque objet est à sa place."
-    ""
+    "Everything is in its place."
 
 # game/scenario/13_0_1_1_0.rpy:840
 translate english ff0f860f:
 
     # think "Alors comment ?"
-    think ""
+    think "Then how?"
 
 # game/scenario/13_0_1_1_0.rpy:842
 translate english abaec6c8:
 
     # "Je referme violemment le cahier, comme si ça pouvait effacer ce que je viens de voir."
-    ""
+    "I slam the notebook shut, as if that could erase what I've just seen."
 
 # game/scenario/13_0_1_1_0.rpy:844
 translate english d1af98c2_4:
 
     # think "Non."
-    think ""
+    think "No."
 
 # game/scenario/13_0_1_1_0.rpy:845
 translate english 94ad3139:
 
     # think "Je deviens parano."
-    think ""
+    think "I'm getting paranoid."
 
 # game/scenario/13_0_1_1_0.rpy:846
 translate english 54deb9dc:
 
     # think "J’ai peut-être fait ça moi-même sans m’en rendre compte."
-    think ""
+    think "Maybe I did it myself without realizing."
 
 # game/scenario/13_0_1_1_0.rpy:847
 translate english aa550e51:
 
     # think "Avec tout le stress, le manque de sommeil… c’est possible."
-    think ""
+    think "With all the stress and lack of sleep... it's possible."
 
 # game/scenario/13_0_1_1_0.rpy:848
 translate english 8c5fe3cb:
 
     # think "Oui… c’est forcément ça."
-    think ""
+    think "Yeah... that has to be it."
 
 # game/scenario/13_0_1_1_0.rpy:850
 translate english 418bb712:
 
     # "Je fixe le bureau."
-    ""
+    "I stare at the desk."
 
 # game/scenario/13_0_1_1_0.rpy:852
 translate english 04fb3ac0:
 
     # "Le silence revient."
-    ""
+    "Silence returns."
 
 # game/scenario/13_0_1_1_0.rpy:854
 translate english 08c5b9b6:
 
     # "Long."
-    ""
+    "Long."
 
 # game/scenario/13_0_1_1_0.rpy:856
 translate english fb8d868f:
 
     # "Pesant."
-    ""
+    "Heavy."
 
 # game/scenario/13_0_1_1_0.rpy:858
 translate english 75aca248:
 
     # "Insupportable."
-    ""
+    "Unbearable."
 
 # game/scenario/13_0_1_1_0.rpy:860
 translate english 20565d7d:
 
     # "Pourtant, au fond de moi, je n’y crois pas une seule seconde."
-    ""
+    "And yet deep down, I don't believe it for a second."
 
 # game/scenario/13_0_1_1_0.rpy:862
 translate english 8a98e6c0:
 
     # "Je rouvre le cahier et fixe à nouveau le dessin décalqué."
-    ""
+    "I reopen the notebook and stare at the traced drawing again."
 
 # game/scenario/13_0_1_1_0.rpy:864
 translate english 963db6c4:
 
     # think "Qui ?"
-    think ""
+    think "Who?"
 
 # game/scenario/13_0_1_1_0.rpy:865
 translate english 87c0aa83:
 
     # think "Qui ferait une chose pareille ?"
-    think ""
+    think "Who would do something like this?"
 
 # game/scenario/13_0_1_1_0.rpy:866
 translate english c2100191:
 
     # think "Et surtout… pourquoi ?"
-    think ""
+    think "And more importantly... why?"
 
 # game/scenario/13_0_1_1_0.rpy:868
 translate english 62735b20:
 
     # "Je passe lentement le doigt sur le contour du dessin."
-    ""
+    "I slowly run a finger along the drawing's outline."
 
 # game/scenario/13_0_1_1_0.rpy:870
 translate english 1210447b:
 
     # "Le trait est réel."
-    ""
+    "The lines are real."
 
 # game/scenario/13_0_1_1_0.rpy:871
 translate english 2f9bcdd5:
 
     # "L’encre est réelle."
-    ""
+    "The ink is real."
 
 # game/scenario/13_0_1_1_0.rpy:872
 translate english 5a37fb38:
 
     # "La copie est réelle."
-    ""
+    "The copy is real."
 
 # game/scenario/13_0_1_1_0.rpy:874
 translate english b9d2ffd1:
 
     # think "Quelqu’un a tenu ce cahier."
-    think ""
+    think "Someone held this notebook."
 
 # game/scenario/13_0_1_1_0.rpy:875
 translate english a708ea7d:
 
     # think "Quelqu’un a passé du temps dessus."
-    think ""
+    think "Someone spent time working on it."
 
 # game/scenario/13_0_1_1_0.rpy:876
 translate english b193d5e7:
 
     # think "Quelqu’un a voulu que je le voie."
-    think ""
+    think "Someone wanted me to see it."
 
 # game/scenario/13_0_1_1_0.rpy:878
 translate english 94202449:
 
     # "Je reste assis là, longtemps, à fixer cette page comme si elle allait me répondre."
-    ""
+    "I sit there for a long time, staring at the page as though it might answer me."
 
 # game/scenario/13_0_1_1_0.rpy:880
 translate english b973b9e2:
 
     # think "Je dois découvrir qui est derrière tout ça."
-    think ""
+    think "I have to find out who's behind all this."
 
 # game/scenario/13_0_1_1_0.rpy:881
 translate english 1af71295:
 
     # think "Avant que ça n'empire."
-    think ""
+    think "Before it gets worse."
 
 # game/scenario/13_0_1_1_0.rpy:882
 translate english 4f131767:
 
     # think "Avant que je ne perde complètement la tête."
-    think ""
+    think "Before I lose my mind completely."
 
 # TODO: Translation updated at 2026-09-04 18:15
 
@@ -3192,19 +3192,19 @@ translate english 4f131767:
 translate english 588a5cf2_1:
 
     # think "Plus de brouilleur."
-    think ""
+    think "No jammer."
 
 # game/scenario/13_0_1_1_0.rpy:774
 translate english 96fb98c9_2:
 
     # think "Évidemment."
-    think ""
+    think "Of course."
 
 # game/scenario/13_0_1_1_0.rpy:819
 translate english 29edfe25_1:
 
     # "Puis une troisième."
-    ""
+    "Then a third time."
 
 # TODO: Translation updated at 2026-11-06 17:50
 
@@ -3212,25 +3212,25 @@ translate english 29edfe25_1:
 translate english d99df7f2:
 
     # "Un bruit métallique me tire du sommeil bien avant que j'aie le temps de comprendre ce qui se passe."
-    ""
+    "A metallic noise jerks me awake before I can figure out what's happening."
 
 # game/scenario/13_0_1_1_0.rpy:14
 translate english a57394fa:
 
     # "Quelque chose claque contre le mur, puis recommence avec la même régularité agaçante, juste à côté de mon lit."
-    ""
+    "Something clacks against the wall, then repeats at the same maddening rhythm right beside my bed."
 
 # game/scenario/13_0_1_1_0.rpy:15
 translate english a158f786:
 
     # "Je me redresse encore à moitié endormi et aperçois un petit robot de maintenance devant le brouilleur de ma chambre."
-    ""
+    "I sit up, still half asleep, and spot a little maintenance robot in front of my bedroom jammer."
 
 # game/scenario/13_0_1_1_0.rpy:16
 translate english 888561a0:
 
     # "Deux de ses bras retiennent déjà le boîtier pendant qu'un troisième dévisse tranquillement sa fixation."
-    ""
+    "Two of its arms are already holding the unit while a third calmly undoes the mounting screws."
 
 # game/scenario/13_0_1_1_0.rpy:21
 translate english e24cf309:
@@ -3242,13 +3242,13 @@ translate english e24cf309:
 translate english 3b4cf1b4:
 
     # "Le robot tourne sa tête vers moi sans interrompre son travail. Ses deux voyants rouges clignotent une fois."
-    ""
+    "The robot turns its head toward me without stopping work. Its two red indicators blink once."
 
 # game/scenario/13_0_1_1_0.rpy:25
 translate english acb91996:
 
     # robot "Bonjour. Je retire votre brouilleur."
-    robot ""
+    robot "Good morning. I'm removing your jammer."
 
 # game/scenario/13_0_1_1_0.rpy:27
 translate english 21d6dd55:
@@ -3260,13 +3260,13 @@ translate english 21d6dd55:
 translate english 3e7210a5:
 
     # robot "Décision du Conclave. Les dispositifs de brouillage ne sont plus autorisés dans les chambres des représentants."
-    robot ""
+    robot "Conclave decision. Jamming devices are no longer permitted in representatives' bedrooms."
 
 # game/scenario/13_0_1_1_0.rpy:31
 translate english 6ad817d9:
 
     # "Il tire sur un câble qui résiste quelques secondes avant de céder dans un petit craquement sec."
-    ""
+    "It tugs on a cable that resists for a few seconds before snapping free with a small crack."
 
 # game/scenario/13_0_1_1_0.rpy:33
 translate english b34d8e74:
@@ -3278,61 +3278,61 @@ translate english b34d8e74:
 translate english 445753ec:
 
     # robot "Oui."
-    robot ""
+    robot "Yes."
 
 # game/scenario/13_0_1_1_0.rpy:37
 translate english 4754652b:
 
     # noam "Et personne n'a réussi à l'empêcher ?"
-    noam ""
+    noam "And nobody managed to stop it?"
 
 # game/scenario/13_0_1_1_0.rpy:39
 translate english 6ab8951c:
 
     # robot "Une personne s'y est opposée au dernier moment. Cela n'a pas modifié la procédure qui m'a été transmise."
-    robot ""
+    robot "Someone opposed it at the last moment. That didn't change the procedure I was sent."
 
 # game/scenario/13_0_1_1_0.rpy:41
 translate english bfc1a23b:
 
     # "Je reste immobile un instant, encore trop embrumé pour remettre les événements d'hier dans le bon ordre."
-    ""
+    "I stay still, too groggy to put yesterday's events back in order."
 
 # game/scenario/13_0_1_1_0.rpy:43
 translate english 611f38de:
 
     # think "Kael..."
-    think ""
+    think "Kael..."
 
 # game/scenario/13_0_1_1_0.rpy:44
 translate english f581df91:
 
     # think "Il a peut-être changé d'avis à cause de sa sœur."
-    think ""
+    think "Maybe he changed his mind because of his sister."
 
 # game/scenario/13_0_1_1_0.rpy:46
 translate english bf94bb25:
 
     # noam "Tu sais qui a voté contre ?"
-    noam ""
+    noam "Do you know who voted against?"
 
 # game/scenario/13_0_1_1_0.rpy:48
 translate english 445753ec_1:
 
     # robot "Oui."
-    robot ""
+    robot "Yes."
 
 # game/scenario/13_0_1_1_0.rpy:50
 translate english fe3e6487_1:
 
     # noam "Et ?"
-    noam ""
+    noam "And?"
 
 # game/scenario/13_0_1_1_0.rpy:52
 translate english 501dd960:
 
     # robot "Et je ne suis pas autorisé à vous le dire."
-    robot ""
+    robot "And I'm not authorized to tell you."
 
 # game/scenario/13_0_1_1_0.rpy:54
 translate english f00ee197:
@@ -3344,25 +3344,25 @@ translate english f00ee197:
 translate english 11c43151:
 
     # robot "Exactement. Vous comprenez vite une fois réveillé."
-    robot ""
+    robot "Exactly. You catch on quickly once you're awake."
 
 # game/scenario/13_0_1_1_0.rpy:58
 translate english 46a4735b:
 
     # "Je passe une main sur mon visage et regarde les morceaux du brouilleur s'accumuler au sol."
-    ""
+    "I rub my face and watch the dismantled pieces of the jammer pile up on the floor."
 
 # game/scenario/13_0_1_1_0.rpy:59
 translate english 0ff9ea16:
 
     # "Depuis des jours, ce boîtier était devenu la seule chose qui me donnait encore l'impression d'avoir une pièce à moi."
-    ""
+    "For days, that little box was the only thing that made this room feel like mine."
 
 # game/scenario/13_0_1_1_0.rpy:60
 translate english 42eded06:
 
     # "Je savais bien que ce n'était qu'un appareil fixé sur un mur, mais le voir disparaître me donne la sensation qu'on ouvre la chambre de force."
-    ""
+    "I knew it was just a device bolted to a wall, but watching it disappear feels like someone is forcing the room open."
 
 # game/scenario/13_0_1_1_0.rpy:62
 translate english 07b0b603:
@@ -3374,55 +3374,55 @@ translate english 07b0b603:
 translate english 42731859:
 
     # robot "Pas encore. La reconnexion complète sera effective quelques minutes après mon départ."
-    robot ""
+    robot "Not yet. The connection will be fully restored a few minutes after I leave."
 
 # game/scenario/13_0_1_1_0.rpy:66
 translate english 5e1988a6:
 
     # noam "Donc après ça, elle pourra nous regarder quand elle veut."
-    noam ""
+    noam "So after that, she can watch whenever she wants."
 
 # game/scenario/13_0_1_1_0.rpy:68
 translate english 445753ec_2:
 
     # robot "Oui."
-    robot ""
+    robot "Yes."
 
 # game/scenario/13_0_1_1_0.rpy:70
 translate english bd67aef9:
 
     # noam "Même la nuit ?"
-    noam ""
+    noam "Even at night?"
 
 # game/scenario/13_0_1_1_0.rpy:72
 translate english 445753ec_3:
 
     # robot "Oui."
-    robot ""
+    robot "Yes."
 
 # game/scenario/13_0_1_1_0.rpy:74
 translate english 585fd728:
 
     # noam "Même quand on se change ?"
-    noam ""
+    noam "Even when we're changing?"
 
 # game/scenario/13_0_1_1_0.rpy:76
 translate english 445753ec_4:
 
     # robot "Oui."
-    robot ""
+    robot "Yes."
 
 # game/scenario/13_0_1_1_0.rpy:78
 translate english 2f3c12b7:
 
     # "Il marque une courte pause, comme s'il venait seulement de comprendre pourquoi je posais la question."
-    ""
+    "It pauses, as if it's only just worked out why I'm asking."
 
 # game/scenario/13_0_1_1_0.rpy:80
 translate english afa1d2a7:
 
     # robot "Si cela peut vous rassurer, vous êtes douze. Elle aura donc probablement autre chose à regarder de temps en temps."
-    robot ""
+    robot "If it helps, there are twelve of you. Presumably she'll find something else to watch now and then."
 
 # game/scenario/13_0_1_1_0.rpy:82
 translate english b9e6998b:
@@ -3434,49 +3434,49 @@ translate english b9e6998b:
 translate english 4db6bf89:
 
     # robot "Je m'en doutais."
-    robot ""
+    robot "I thought you might say that."
 
 # game/scenario/13_0_1_1_0.rpy:86
 translate english 013c84a0:
 
     # "Le dernier panneau du brouilleur se décroche et le robot le récupère avant qu'il ne tombe."
-    ""
+    "The final jammer panel comes loose, and the robot catches it before it falls."
 
 # game/scenario/13_0_1_1_0.rpy:87
 translate english 7fa0259a:
 
     # "Derrière, il ne reste plus qu'une cavité dans le mur et quelques fils coupés proprement."
-    ""
+    "All that's left behind is a cavity in the wall and a few neatly severed wires."
 
 # game/scenario/13_0_1_1_0.rpy:89
 translate english f73c9615:
 
     # noam "Tu peux au moins laisser le boîtier ?"
-    noam ""
+    noam "Can't you at least leave the unit?"
 
 # game/scenario/13_0_1_1_0.rpy:95
 translate english ba915230:
 
     # robot "Parce qu'un brouilleur laissé dans une chambre peut être réparé. Un brouilleur emporté, beaucoup moins."
-    robot ""
+    robot "Because a jammer left in a room can be repaired. One that's been taken away is much harder to fix."
 
 # game/scenario/13_0_1_1_0.rpy:97
 translate english 2e1bb3af:
 
     # noam "Et si je refuse qu'on me surveille ?"
-    noam ""
+    noam "And what if I refuse to be watched?"
 
 # game/scenario/13_0_1_1_0.rpy:99
 translate english cd8b0dc2:
 
     # "Le robot range son outil puis me regarde enfin vraiment."
-    ""
+    "The robot puts away its tool and finally gives me its full attention."
 
 # game/scenario/13_0_1_1_0.rpy:101
 translate english 6b82d39a:
 
     # robot "Alors vous refusez une décision qui est déjà appliquée. Votre refus ne change rien à mon intervention."
-    robot ""
+    robot "Then you're refusing a decision that's already in effect. Your objection won't change my work."
 
 # game/scenario/13_0_1_1_0.rpy:103
 translate english 5031b710:
@@ -3488,43 +3488,43 @@ translate english 5031b710:
 translate english d58748ee:
 
     # robot "Je préfère aussi quand les gens disent simplement merci, mais je travaille avec ce qu'on me donne."
-    robot ""
+    robot "I also prefer it when people just say thank you, but I make do with what I get."
 
 # game/scenario/13_0_1_1_0.rpy:107
 translate english 5e2ec1ca:
 
     # "Il ramasse les deux derniers morceaux tombés au sol et les glisse dans un compartiment sur son flanc."
-    ""
+    "It picks up the last two pieces from the floor and slides them into a compartment in its side."
 
 # game/scenario/13_0_1_1_0.rpy:109
 translate english f486e5a4:
 
     # noam "Tu pouvais au moins attendre que je sois réveillé."
-    noam ""
+    noam "You could at least have waited until I was awake."
 
 # game/scenario/13_0_1_1_0.rpy:111
 translate english abb7e894:
 
     # robot "J'ai essayé."
-    robot ""
+    robot "I tried."
 
 # game/scenario/13_0_1_1_0.rpy:113
 translate english 10cc7eb0:
 
     # noam "Comment ça, essayé ?"
-    noam ""
+    noam "What do you mean, tried?"
 
 # game/scenario/13_0_1_1_0.rpy:115
 translate english 7dd8b936:
 
     # robot "Une vis est tombée sur votre front. Vous n'avez pas réagi."
-    robot ""
+    robot "A screw fell on your forehead. You didn't respond."
 
 # game/scenario/13_0_1_1_0.rpy:117
 translate english 4a069284:
 
     # "Je porte machinalement la main au-dessus de mon sourcil et trouve une petite zone douloureuse."
-    ""
+    "I instinctively touch the spot above my eyebrow and find a small tender patch."
 
 # game/scenario/13_0_1_1_0.rpy:119
 translate english 18daed85:
@@ -3536,19 +3536,19 @@ translate english 18daed85:
 translate english f5a009a5:
 
     # robot "Elle est tombée. La nuance est importante pour le rapport."
-    robot ""
+    robot "It fell. That distinction matters for the report."
 
 # game/scenario/13_0_1_1_0.rpy:123
 translate english 73a2cd88:
 
     # "Je le fixe sans répondre. Le robot referme son compartiment et pivote vers la porte."
-    ""
+    "I stare at it without answering. The robot closes its compartment and turns toward the door."
 
 # game/scenario/13_0_1_1_0.rpy:125
 translate english 38f2f368:
 
     # robot "Intervention terminée. J'ai encore plusieurs chambres à traiter."
-    robot ""
+    robot "Work complete. I still have several rooms to do."
 
 # game/scenario/13_0_1_1_0.rpy:127
 translate english 310af466:
@@ -3560,109 +3560,109 @@ translate english 310af466:
 translate english 8de13b4e:
 
     # robot "Avec plaisir. L'ambiance ici est sensiblement moins agréable que dans la chambre précédente."
-    robot ""
+    robot "Gladly. The atmosphere here is noticeably less pleasant than in the previous room."
 
 # game/scenario/13_0_1_1_0.rpy:131
 translate english 89c97199:
 
     # "Il roule jusqu'à la sortie puis s'arrête juste avant de franchir la porte."
-    ""
+    "It rolls to the exit and stops just short of the doorway."
 
 # game/scenario/13_0_1_1_0.rpy:133
 translate english b8060f6a:
 
     # robot "Dernière information : la surveillance centrale sera rétablie automatiquement. Ne tentez pas de toucher aux connexions laissées dans le mur."
-    robot ""
+    robot "Final notice: central surveillance will reconnect automatically. Do not tamper with the connections left in the wall."
 
 # game/scenario/13_0_1_1_0.rpy:135
 translate english 9c76fc5e:
 
     # noam "Sinon quoi ?"
-    noam ""
+    noam "Or what?"
 
 # game/scenario/13_0_1_1_0.rpy:137
 translate english 27391339:
 
     # robot "Sinon je devrai revenir. Et je crois que ni vous ni moi n'avons envie de ça."
-    robot ""
+    robot "Or I'll have to come back. And I don't think either of us wants that."
 
 # game/scenario/13_0_1_1_0.rpy:139
 translate english f99f6065:
 
     # "La porte s'ouvre et le petit robot disparaît dans le couloir."
-    ""
+    "The door opens and the little robot disappears into the corridor."
 
 # game/scenario/13_0_1_1_0.rpy:140
 translate english d750a2b2:
 
     # "Quelques secondes plus tard, le même cliquetis métallique résonne plus loin. Une autre chambre vient de subir exactement le même sort."
-    ""
+    "A few seconds later, the same metallic clatter sounds farther down. Another room has just suffered the same fate."
 
 # game/scenario/13_0_1_1_0.rpy:144
 translate english 7333c2e6:
 
     # "Je reste assis sur le lit, les yeux fixés sur l'emplacement vide du brouilleur. La chambre est exactement la même, mais je ne la regarde déjà plus de la même façon."
-    ""
+    "I stay seated on the bed, staring at the empty space where the jammer used to be. The room is exactly the same, but I already see it differently."
 
 # game/scenario/13_0_1_1_0.rpy:145
 translate english f60dea82:
 
     # "Jusqu'ici, je pouvais au moins fermer cette porte et me raconter que ce qui se passait à l'intérieur ne regardait que moi. Cette illusion vient de disparaître avec trois vis et un câble."
-    ""
+    "Until now, I could at least close this door and tell myself whatever happened inside was my business. Three screws and a cable have put an end to that illusion."
 
 # game/scenario/13_0_1_1_0.rpy:147
 translate english ea35bdb1:
 
     # think "Ils ont vraiment voté pour ça..."
-    think ""
+    think "They really voted for this..."
 
 # game/scenario/13_0_1_1_0.rpy:148
 translate english 1ddd9a24:
 
     # think "Après tout ce qui s'est passé, ils ont choisi de rendre les chambres à Kami."
-    think ""
+    think "After everything that's happened, they handed the bedrooms back to Kami."
 
 # game/scenario/13_0_1_1_0.rpy:150
 translate english f1e13d11:
 
     # "Je me lève pour m'habiller puis m'arrête en attrapant mon haut."
-    ""
+    "I get up to dress, then stop as I pick up my shirt."
 
 # game/scenario/13_0_1_1_0.rpy:151
 translate english e7afcd3c:
 
     # "Je regarde le plafond, les murs, les coins de la pièce. Il n'y a aucune caméra visible, aucun voyant, rien qui permette de savoir si quelqu'un regarde déjà."
-    ""
+    "I scan the ceiling, the walls, the corners. No visible camera, no indicator light, nothing to tell me whether someone's already watching."
 
 # game/scenario/13_0_1_1_0.rpy:153
 translate english 07f00465:
 
     # think "C'est presque pire quand on ne voit rien."
-    think ""
+    think "It's almost worse when you can't see anything."
 
 # game/scenario/13_0_1_1_0.rpy:155
 translate english f4528284:
 
     # "Je finis par me changer en tournant stupidement le dos au mur, comme si quelques centimètres pouvaient encore faire une différence."
-    ""
+    "I finally change with my back foolishly turned to the wall, as though a few inches could still make a difference."
 
 # game/scenario/13_0_1_1_0.rpy:156
 translate english 3e572284:
 
     # "Au moment où j'enfile ma veste, un petit grésillement traverse les haut-parleurs de la chambre."
-    ""
+    "As I pull on my jacket, a faint crackle comes from the bedroom speaker."
 
 # game/scenario/13_0_1_1_0.rpy:158
 translate english 30af89a5:
 
     # kami "Tu sais que te tourner ne change rien, Noam ?"
-    kami ""
+    kami "You know turning around doesn't change anything, Noam?"
 
 # game/scenario/13_0_1_1_0.rpy:160
 translate english 846db0b0:
 
     # "Je me fige, une manche encore à moitié passée."
-    ""
+    "I freeze, one sleeve still only half on."
 
 # game/scenario/13_0_1_1_0.rpy:162
 translate english eeef3f0e:
@@ -3674,67 +3674,67 @@ translate english eeef3f0e:
 translate english 3ae55e26:
 
     # kami "Et gâcher ce charmant moment où tu fais semblant d'avoir encore de l'intimité ? Ce serait dommage."
-    kami ""
+    kami "And miss this adorable moment when you pretend you still have privacy? What a shame that would be."
 
 # game/scenario/13_0_1_1_0.rpy:166
 translate english 63e74589:
 
     # noam "Va te faire voir."
-    noam ""
+    noam "Go screw yourself."
 
 # game/scenario/13_0_1_1_0.rpy:168
 translate english f46de054:
 
     # kami "Techniquement, c'est plutôt toi que je peux voir. Bonne journée !"
-    kami ""
+    kami "Technically, you're the one I can see. Have a lovely day!"
 
 # game/scenario/13_0_1_1_0.rpy:170
 translate english 7df02ca4:
 
     # "Le haut-parleur se coupe aussitôt. Je reste quelques secondes sans bouger avant de finir de m'habiller."
-    ""
+    "The speaker cuts off. I stand still for a few seconds before finishing getting dressed."
 
 # game/scenario/13_0_1_1_0.rpy:172
 translate english 630be087:
 
     # think "Au moins, c'est clair."
-    think ""
+    think "Well, that settles it."
 
 # game/scenario/13_0_1_1_0.rpy:173
 translate english c146577b:
 
     # think "Elle voit vraiment."
-    think ""
+    think "She really can see me."
 
 # game/scenario/13_0_1_1_0.rpy:175
 translate english 544b88fe:
 
     # "Je regarde une dernière fois le trou dans le mur avant d'ouvrir la porte."
-    ""
+    "I give the hole in the wall one last look before opening the door."
 
 # game/scenario/13_0_1_1_0.rpy:176
 translate english 435def31:
 
     # "Le plus inquiétant n'est même plus de savoir que Kami peut regarder. C'est de me rappeler que quelqu'un a déjà réussi à agir malgré elle."
-    ""
+    "The most frightening part isn't even knowing Kami can watch. It's remembering someone managed to act despite her."
 
 # game/scenario/13_0_1_1_0.rpy:192
 translate english 79615fd1:
 
     # "La cafétéria est pleine, mais personne n'a vraiment l'air de prendre son petit-déjeuner. Les tables sont occupées, les plateaux sont presque tous vides et quelques tasses de café circulent d'une main à l'autre."
-    ""
+    "The cafeteria is full, but no one's really having breakfast. People sit at the tables with nearly empty trays, passing a few cups of coffee around."
 
 # game/scenario/13_0_1_1_0.rpy:193
 translate english 5abd22c4:
 
     # "Quand j'entre, plusieurs conversations baissent d'un ton. Pas assez pour créer un vrai silence, juste assez pour que je comprenne que mon arrivée n'est pas passée inaperçue."
-    ""
+    "When I enter, several conversations drop in volume. Not enough for total silence, just enough to let me know I've been noticed."
 
 # game/scenario/13_0_1_1_0.rpy:204
 translate english 8e852711:
 
     # "Je fais comme si je ne remarquais rien et vais directement vers le comptoir. Goumi est derrière, les bras posés devant lui, avec une cafetière presque vide pour seule compagnie."
-    ""
+    "I pretend not to notice and head straight for the counter. Goumi stands behind it, arms resting in front of him, a nearly empty coffee pot for company."
 
 # game/scenario/13_0_1_1_0.rpy:206
 translate english 33478306:
@@ -3746,7 +3746,7 @@ translate english 33478306:
 translate english 65b46808:
 
     # "Goumi me regarde une seconde, puis soupire comme s'il avait déjà répondu à cette question vingt fois depuis le réveil."
-    ""
+    "Goumi looks at me for a second, then sighs like he's already answered the same question twenty times this morning."
 
 # game/scenario/13_0_1_1_0.rpy:210
 translate english f3651dd3:
