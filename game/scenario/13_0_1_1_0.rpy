@@ -563,7 +563,7 @@ label _13_0_1_1_DISCUSSION_ECOUTEE:
     call OFFER_DAILY_EXPLORATION(
         "_13_0_1_1_CHAMBRE_PAPIER", 2,
         ["archive", "cafeteria", "observation", "dortoir"],
-        "Retourner mettre les faits en ordre", "dortoir"
+        _("Retourner mettre les faits en ordre"), "dortoir"
     ) from _call_offer_exploration_j13
 
 label _13_0_1_1_CHAMBRE_PAPIER:
