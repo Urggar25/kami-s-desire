@@ -2276,7 +2276,7 @@ translate english 3f12adfa:
 translate english 0323665a_2:
 
     # "Je baisse les yeux."
-    "I lower my eyes."
+    "I look down."
 
 # game/scenario/20_0_1_1_0.rpy:351
 translate english j20_couteau_silence_noam:
@@ -2624,7 +2624,7 @@ translate english 3be5d66f:
 translate english 0323665a_3:
 
     # "Je baisse les yeux."
-    "I lower my eyes."
+    "I look down."
 
 # game/scenario/20_0_1_1_0.rpy:543
 translate english 809ba9c0_3:
@@ -3422,43 +3422,43 @@ translate english a419ef12:
 translate english d5beb2c7:
 
     # "Maintenant, tout est redevenu calme."
-    ""
+    "Now everything is calm again."
 
 # game/scenario/20_0_1_1_0.rpy:883
 translate english 6c9e835d:
 
     # "Trop calme."
-    ""
+    "Too calm."
 
 # game/scenario/20_0_1_1_0.rpy:892
 translate english 8cd42254:
 
     # "La nuit tombe sans que je trouve la moindre réponse."
-    ""
+    "Night falls without bringing a single answer."
 
 # game/scenario/20_0_1_1_0.rpy:894
 translate english 95fcf2f5:
 
     # "Mara est vivante."
-    ""
+    "Mara is alive."
 
 # game/scenario/20_0_1_1_0.rpy:896
 translate english d031cf95:
 
     # "J'en suis sûr."
-    ""
+    "I'm sure of it."
 
 # game/scenario/20_0_1_1_0.rpy:898
 translate english 3e81dabe:
 
     # "Je suis aussi sûr d'avoir vu son corps."
-    ""
+    "I'm just as sure I saw her body."
 
 # game/scenario/20_0_1_1_0.rpy:900
 translate english afba6ca4:
 
     # "Et ces deux certitudes se cognent dans ma tête depuis des heures."
-    ""
+    "And those two certainties have been colliding inside my head for hours."
 
 # game/scenario/20_0_1_1_0.rpy:902
 translate english f7bb92cd_2:
@@ -3470,139 +3470,139 @@ translate english f7bb92cd_2:
 translate english 6ddc1a6e:
 
     # "C'est presque pire de savoir que mes souvenirs ont pu être modifiés."
-    ""
+    "Knowing my memories might have been altered almost makes it worse."
 
 # game/scenario/20_0_1_1_0.rpy:906
 translate english 471fe766:
 
     # "Avant, je pouvais au moins me fier à ce que j'avais vu."
-    ""
+    "Before, I could at least trust what I'd seen."
 
 # game/scenario/20_0_1_1_0.rpy:908
 translate english f3971e95:
 
     # "Maintenant..."
-    ""
+    "Now..."
 
 # game/scenario/20_0_1_1_0.rpy:910
 translate english e6cc7a9f:
 
     # noam fatigue "Putain."
-    noam fatigue ""
+    noam fatigue "Fuck."
 
 # game/scenario/20_0_1_1_0.rpy:912
 translate english ef5d3c7b:
 
     # "Je me laisse tomber sur le dos."
-    ""
+    "I collapse onto my back."
 
 # game/scenario/20_0_1_1_0.rpy:914
 translate english 99cbaab0:
 
     # "Demain, la navette doit arriver."
-    ""
+    "The shuttle is supposed to arrive tomorrow."
 
 # game/scenario/20_0_1_1_0.rpy:916
 translate english 71944c8a:
 
     # "Demain, tout ça est censé être terminé."
-    ""
+    "Tomorrow, all of this is supposed to be over."
 
 # game/scenario/20_0_1_1_0.rpy:918
 translate english 7af7b854_8:
 
     # "Je ferme les yeux."
-    ""
+    "I close my eyes."
 
 # game/scenario/20_0_1_1_0.rpy:920
 translate english 481bd947:
 
     # "La question étrange de Kael me revient en tête."
-    ""
+    "Kael's strange question comes back to me."
 
 # game/scenario/20_0_1_1_0.rpy:923
 translate english 15828933:
 
     # think "Ça fera juste deux personnes coincées au lieu d'une."
-    think ""
+    think "There'd just be two people trapped instead of one."
 
 # game/scenario/20_0_1_1_0.rpy:925
 translate english 7447e64a:
 
     # think "S'il reste une chance de le sortir..."
-    think ""
+    think "If there's still a chance of getting them out..."
 
 # game/scenario/20_0_1_1_0.rpy:927
 translate english 005b9a8c:
 
     # "Je ne sais toujours pas pourquoi il m'a demandé ça."
-    ""
+    "I still don't know why he asked."
 
 # game/scenario/20_0_1_1_0.rpy:929
 translate english b34d6fef:
 
     # "Et je suis trop fatigué pour chercher."
-    ""
+    "And I'm too exhausted to think about it."
 
 # game/scenario/20_0_1_1_0.rpy:951
 translate english 57f6aa17:
 
     # "Le couteau tombe immédiatement. J'essaie de me dégager par réflexe, mais elle garde mon bras bloqué et me repousse contre la table."
-    ""
+    "The knife immediately falls. I instinctively try to pull free, but she keeps my arm pinned and shoves me against the table."
 
 # game/scenario/20_0_1_1_0.rpy:953
 translate english 5037ba9b:
 
     # iris colere "Arrête de bouger !"
-    iris colere ""
+    iris colere "Stop moving!"
 
 # game/scenario/20_0_1_1_0.rpy:955
 translate english 64739c31:
 
     # noam colere "Lâche-moi !"
-    noam colere ""
+    noam colere "Let go!"
 
 # game/scenario/20_0_1_1_0.rpy:957
 translate english 1f3bc692:
 
     # iris "Je te lâche dès que tu te calmes !"
-    iris ""
+    iris "I'll let go when you calm down!"
 
 # game/scenario/20_0_1_1_0.rpy:959
 translate english 784e50d3:
 
     # noam "Je suis calme !"
-    noam ""
+    noam "I AM calm!"
 
 # game/scenario/20_0_1_1_0.rpy:961
 translate english 940a6067:
 
     # kael "Non, Noam, là t'es vraiment pas calme !"
-    kael ""
+    kael "No, Noam, you're really not calm right now!"
 
 # game/scenario/20_0_1_1_0.rpy:963
 translate english 227075d1:
 
     # "Je force pour me relever. Iris change simplement d'appui, me déséquilibre une deuxième fois et, quand j'essaie encore de lui échapper, son mouvement suivant part beaucoup plus vite que le précédent."
-    ""
+    "I struggle to get up. Iris simply shifts her weight, throws me off balance a second time, and when I try to escape again, her next move comes much faster than the last."
 
 # game/scenario/20_0_1_1_0.rpy:965
 translate english 5bf6b204:
 
     # "Je vois son poing arriver sur le côté."
-    ""
+    "I see her fist coming from the side."
 
 # game/scenario/20_0_1_1_0.rpy:971
 translate english 602bcfb4:
 
     # "Un choc sec me frappe à la tempe."
-    ""
+    "A sharp blow strikes my temple."
 
 # game/scenario/20_0_1_1_0.rpy:973
 translate english f111eba5:
 
     # "Mes jambes se dérobent immédiatement."
-    ""
+    "My legs give way at once."
 
 # game/scenario/20_0_1_1_0.rpy:975
 translate english 76264c3c_30:
@@ -3614,145 +3614,145 @@ translate english 76264c3c_30:
 translate english 42e9374e:
 
     # "J'entends Iris m'appeler, puis Kael lui répondre quelque chose que je ne comprends déjà plus."
-    ""
+    "I hear Iris calling my name, then Kael saying something in reply that I can no longer make out."
 
 # game/scenario/20_0_1_1_0.rpy:979
 translate english 1921d741:
 
     # "Tout devient noir avant même que je touche complètement le sol."
-    ""
+    "Everything goes black before I even hit the floor."
 
 # game/scenario/20_0_1_1_0.rpy:996
 translate english fe018846:
 
     # "Je baisse l'épaule au moment où Iris cherche à verrouiller mon bras. Sa prise glisse."
-    ""
+    "I drop my shoulder as Iris tries to lock my arm. Her grip slips."
 
 # game/scenario/20_0_1_1_0.rpy:998
 translate english 751c765c:
 
     # "Elle revient aussitôt. J'évite son coude de justesse et je tire mon poignet vers moi avant qu'elle puisse le reprendre."
-    ""
+    "She comes at me again immediately. I barely dodge her elbow and pull my wrist back before she can grab it again."
 
 # game/scenario/20_0_1_1_0.rpy:1000
 translate english 5037ba9b_1:
 
     # iris colere "Arrête de bouger !"
-    iris colere ""
+    iris colere "Stop moving!"
 
 # game/scenario/20_0_1_1_0.rpy:1002
 translate english 8852d4bb:
 
     # noam colere "Arrête de m'attaquer !"
-    noam colere ""
+    noam colere "Stop attacking me!"
 
 # game/scenario/20_0_1_1_0.rpy:1004
 translate english 692121b1:
 
     # "Elle tente encore de saisir mon bras. Je recule contre la table, le couteau toujours serré dans ma main."
-    ""
+    "She reaches for my arm again. I back into the table, still gripping the knife."
 
 # game/scenario/20_0_1_1_0.rpy:1006
 translate english 39274265:
 
     # noam inquiet "Iris, stop !"
-    noam inquiet ""
+    noam inquiet "Iris, stop!"
 
 # game/scenario/20_0_1_1_0.rpy:1008
 translate english 979da974:
 
     # iris colere "Alors lâche-le !"
-    iris colere ""
+    iris colere "Then drop it!"
 
 # game/scenario/20_0_1_1_0.rpy:1010
 translate english 1cab8cf3:
 
     # noam "Je vais le poser, mais arrête de me sauter dessus deux secondes !"
-    noam ""
+    noam "I'll put it down, but stop jumping me for two seconds!"
 
 # game/scenario/20_0_1_1_0.rpy:1012
 translate english 4ac0c615:
 
     # iris "Tu dis ça depuis tout à l'heure !"
-    iris ""
+    iris "You've been saying that this whole time!"
 
 # game/scenario/20_0_1_1_0.rpy:1014
 translate english b3f04f00:
 
     # "Elle attrape mon avant-bras à deux mains."
-    ""
+    "She grabs my forearm with both hands."
 
 # game/scenario/20_0_1_1_0.rpy:1016
 translate english 64739c31_1:
 
     # noam colere "Lâche-moi !"
-    noam colere ""
+    noam colere "Let go!"
 
 # game/scenario/20_0_1_1_0.rpy:1018
 translate english 440397cd:
 
     # iris "Lâche le couteau !"
-    iris ""
+    iris "Drop the knife!"
 
 # game/scenario/20_0_1_1_0.rpy:1020
 translate english 61e16b1b:
 
     # "Je tire mon bras vers moi. Elle tire dans l'autre sens."
-    ""
+    "I pull my arm toward me. She pulls the other way."
 
 # game/scenario/20_0_1_1_0.rpy:1022
 translate english fac9c87a:
 
     # "Pendant une seconde, personne ne gagne."
-    ""
+    "For a second, neither of us wins."
 
 # game/scenario/20_0_1_1_0.rpy:1024
 translate english 135a4c57:
 
     # kael inquietude "Ça suffit !"
-    kael inquietude ""
+    kael inquietude "Enough!"
 
 # game/scenario/20_0_1_1_0.rpy:1026
 translate english 86b2083e:
 
     # "Iris change brusquement d'appui."
-    ""
+    "Iris abruptly shifts her footing."
 
 # game/scenario/20_0_1_1_0.rpy:1028
 translate english f97ec409:
 
     # "Son pied accroche le bord de la table."
-    ""
+    "Her foot catches the edge of the table."
 
 # game/scenario/20_0_1_1_0.rpy:1030
 translate english 132f7c84:
 
     # iris surpris "Merde—"
-    iris surpris ""
+    iris surpris "Shit—"
 
 # game/scenario/20_0_1_1_0.rpy:1035
 translate english 810b2abf:
 
     # "Tout va beaucoup trop vite."
-    ""
+    "Everything happens far too fast."
 
 # game/scenario/20_0_1_1_0.rpy:1037
 translate english c8617d20:
 
     # "Je sens son poids partir vers moi."
-    ""
+    "I feel her weight lurch toward me."
 
 # game/scenario/20_0_1_1_0.rpy:1039
 translate english 60280a0c:
 
     # "Puis quelque chose s'arrête net."
-    ""
+    "Then something stops dead."
 
 # game/scenario/20_0_1_1_0.rpy:1046
 translate english 6f97f17f_1:
 
     # "Iris ne bouge plus."
-    ""
+    "Iris doesn't move."
 
 # game/scenario/20_0_1_1_0.rpy:1048
 translate english 76264c3c_31:
@@ -3764,139 +3764,139 @@ translate english 76264c3c_31:
 translate english d1415da0:
 
     # "Sa main est toujours refermée sur mon poignet."
-    ""
+    "Her hand is still closed around my wrist."
 
 # game/scenario/20_0_1_1_0.rpy:1052
 translate english 0323665a_4:
 
     # "Je baisse les yeux."
-    "I lower my eyes."
+    "I look down."
 
 # game/scenario/20_0_1_1_0.rpy:1054
 translate english b3c801b4:
 
     # "Le couteau est entre nous."
-    ""
+    "The knife is between us."
 
 # game/scenario/20_0_1_1_0.rpy:1056
 translate english f610be4d:
 
     # "Une partie de la lame a disparu dans son ventre."
-    ""
+    "Part of the blade has disappeared into her stomach."
 
 # game/scenario/20_0_1_1_0.rpy:1058
 translate english f13fe439_1:
 
     # noam peur "Iris..."
-    noam peur ""
+    noam peur "Iris..."
 
 # game/scenario/20_0_1_1_0.rpy:1060
 translate english 797946f9:
 
     # "Elle baisse les yeux à son tour."
-    ""
+    "She looks down too."
 
 # game/scenario/20_0_1_1_0.rpy:1062
 translate english 8b72b5e4_2:
 
     # iris panne "..."
-    iris panne ""
+    iris panne "..."
 
 # game/scenario/20_0_1_1_0.rpy:1064
 translate english 4ad5397c:
 
     # "Pendant une seconde, elle a juste l'air agacée. Comme si son cerveau refusait encore de comprendre."
-    ""
+    "For a second, she just looks annoyed. As though her brain still refuses to understand."
 
 # game/scenario/20_0_1_1_0.rpy:1066
 translate english 1144ca1a:
 
     # iris fatigue "T'es... sérieux... ?"
-    iris fatigue ""
+    iris fatigue "Are you... serious...?"
 
 # game/scenario/20_0_1_1_0.rpy:1068
 translate english aebb39e8:
 
     # noam desespoir "J'ai pas fait exprès. Putain, Iris, j'ai pas fait exprès !"
-    noam desespoir ""
+    noam desespoir "I didn't mean to. Fuck, Iris, I didn't mean to!"
 
 # game/scenario/20_0_1_1_0.rpy:1070
 translate english 777d3044:
 
     # "Je lâche immédiatement le manche."
-    ""
+    "I immediately let go of the handle."
 
 # game/scenario/20_0_1_1_0.rpy:1072
 translate english 3f28e760:
 
     # iris peur "Non !"
-    iris peur ""
+    iris peur "No!"
 
 # game/scenario/20_0_1_1_0.rpy:1074
 translate english 10fcf246:
 
     # "Sa voix me coupe."
-    ""
+    "Her voice stops me."
 
 # game/scenario/20_0_1_1_0.rpy:1076
 translate english 18184107:
 
     # iris "Touche pas... laisse-le."
-    iris ""
+    iris "Don't touch it... leave it."
 
 # game/scenario/20_0_1_1_0.rpy:1078
 translate english ee3ffea2:
 
     # noam "D'accord. D'accord, je touche pas."
-    noam ""
+    noam "Okay. Okay, I won't touch it."
 
 # game/scenario/20_0_1_1_0.rpy:1080
 translate english 4d8d27b0:
 
     # "Ses jambes commencent à lâcher."
-    ""
+    "Her legs begin to give out."
 
 # game/scenario/20_0_1_1_0.rpy:1082
 translate english dd8602f5:
 
     # "Je la rattrape comme je peux et l'accompagne au sol."
-    ""
+    "I catch her as best I can and ease her to the floor."
 
 # game/scenario/20_0_1_1_0.rpy:1084
 translate english 76660c4c:
 
     # noam desespoir "Kael ! Va chercher Sael ! Maintenant !"
-    noam desespoir ""
+    noam desespoir "Kael! Go get Sael! Now!"
 
 # game/scenario/20_0_1_1_0.rpy:1086
 translate english 1b2a2a40_5:
 
     # "Aucune réponse."
-    ""
+    "No answer."
 
 # game/scenario/20_0_1_1_0.rpy:1109
 translate english 62c8decc:
 
     # noam colere "KAEL !"
-    noam colere ""
+    noam colere "KAEL!"
 
 # game/scenario/20_0_1_1_0.rpy:1113
 translate english cda63a62:
 
     # "Il ne répond pas. Il me regarde seulement, parfaitement immobile, comme s'il attendait que je comprenne tout seul."
-    ""
+    "He doesn't respond. He just looks at me, perfectly still, as though he's waiting for me to figure it out on my own."
 
 # game/scenario/20_0_1_1_0.rpy:1115
 translate english f4072a84:
 
     # noam "Mais bouge, putain !"
-    noam ""
+    noam "For fuck's sake, MOVE!"
 
 # game/scenario/20_0_1_1_0.rpy:1119
 translate english 1078bdb9:
 
     # "Ses lèvres remontent un peu plus."
-    ""
+    "The corners of his mouth creep a little higher."
 
 # game/scenario/20_0_1_1_0.rpy:1121
 translate english 76264c3c_32:
@@ -3908,115 +3908,115 @@ translate english 76264c3c_32:
 translate english a013ee0d:
 
     # "Je connais le sourire de Kael."
-    ""
+    "I know Kael's smile."
 
 # game/scenario/20_0_1_1_0.rpy:1127
 translate english 8c7f09ab:
 
     # "Celui-là, non."
-    ""
+    "Not this one."
 
 # game/scenario/20_0_1_1_0.rpy:1129
 translate english 9d1980ef:
 
     # noam inquiet "Kael... ?"
-    noam inquiet ""
+    noam inquiet "Kael...?"
 
 # game/scenario/20_0_1_1_0.rpy:1133
 translate english 5e234b6f:
 
     # "Il fait un pas vers nous."
-    ""
+    "He takes a step toward us."
 
 # game/scenario/20_0_1_1_0.rpy:1135
 translate english 77426427:
 
     # noam "Qu'est-ce que tu fous ? Va chercher quelqu'un !"
-    noam ""
+    noam "What the hell are you doing? Go get someone!"
 
 # game/scenario/20_0_1_1_0.rpy:1139
 translate english 4e8bc181:
 
     # "Encore un pas."
-    ""
+    "Another step."
 
 # game/scenario/20_0_1_1_0.rpy:1141
 translate english 5fcdd37a:
 
     # iris fatigue "Kael..."
-    iris fatigue ""
+    iris fatigue "Kael..."
 
 # game/scenario/20_0_1_1_0.rpy:1145
 translate english 0e79ff6b:
 
     # "J'essaie de me relever sans lâcher Iris."
-    ""
+    "I try to stand without letting go of Iris."
 
 # game/scenario/20_0_1_1_0.rpy:1147
 translate english 1358002d:
 
     # noam inquiet "Reste où tu es."
-    noam inquiet ""
+    noam inquiet "Stay where you are."
 
 # game/scenario/20_0_1_1_0.rpy:1151
 translate english 6655272c:
 
     # "Son visage prend maintenant presque tout mon champ de vision."
-    ""
+    "His face now fills almost my entire field of vision."
 
 # game/scenario/20_0_1_1_0.rpy:1162
 translate english c9e0e05b_9:
 
     # noam peur "..."
-    noam peur ""
+    noam peur "..."
 
 # game/scenario/20_0_1_1_0.rpy:1164
 translate english 30c45cff:
 
     # noam "T'es pas Kael."
-    noam ""
+    noam "You're not Kael."
 
 # game/scenario/20_0_1_1_0.rpy:1170
 translate english 1417b3da:
 
     # "Il se jette sur moi."
-    ""
+    "He lunges at me."
 
 # game/scenario/20_0_1_1_0.rpy:1172
 translate english d6304f96:
 
     # "Je lève le bras par réflexe."
-    ""
+    "I throw up my arm on instinct."
 
 # game/scenario/20_0_1_1_0.rpy:1177
 translate english 206ca4fd:
 
     # "Il frappe mon poignet contre le bord de la table."
-    ""
+    "He slams my wrist against the edge of the table."
 
 # game/scenario/20_0_1_1_0.rpy:1181
 translate english 265511e0:
 
     # "Le couteau tombe quelque part au sol."
-    ""
+    "The knife clatters to the floor somewhere."
 
 # game/scenario/20_0_1_1_0.rpy:1183
 translate english a14a091f_1:
 
     # noam colere "DÉGAGE !"
-    noam colere ""
+    noam colere "GET OFF ME!"
 
 # game/scenario/20_0_1_1_0.rpy:1188
 translate english cb1d65c8:
 
     # "Je lui donne un coup d'épaule et réussis à le repousser."
-    ""
+    "I ram him with my shoulder and manage to push him back."
 
 # game/scenario/20_0_1_1_0.rpy:1190
 translate english 080a7508:
 
     # "Iris essaie de se redresser derrière moi."
-    ""
+    "Behind me, Iris struggles to sit up."
 
 # game/scenario/20_0_1_1_0.rpy:1192
 translate english 76d09236:
@@ -4208,7 +4208,7 @@ translate english ef64dfea:
 translate english 1b2a2a40_6:
 
     # "Aucune réponse."
-    ""
+    "No answer."
 
 # game/scenario/20_0_1_1_0.rpy:1299
 translate english 9cbfd44f:
