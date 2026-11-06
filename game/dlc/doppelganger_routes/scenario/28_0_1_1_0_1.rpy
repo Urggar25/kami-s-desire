@@ -334,3 +334,104 @@ label _28_0_1_1_0_1_KAEL:
     noam neutre "Merci."
     $ hideGroup()
     return
+
+
+label _28_0_1_1_0_1_NYRA:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+    "Nyra nous rejoint près de la porte. Je lui montre les photos du conduit."
+    $ showGroup([("nyra", "inquiet", 0.26), ("lysa", "neutre", 0.50), ("noam", "neutre", 0.74)])
+    nyra surpris "Attends, un bol brûlé ? Dans la ventilation ?"
+    noam raison "Ouais. Et une plaque qui redirigeait l'air."
+    nyra reflexion "C'est... bizarre. Vraiment bizarre."
+    lysa raison "Iris pense que le récipient a pu servir à diffuser une substance toxique."
+    nyra inquiet "Merde."
+    noam neutre "On peut toujours pas affirmer que c'est ça qui l'a tué."
+    nyra raison "Mais ça expliquerait comment quelqu'un aurait pu agir sans ouvrir la porte."
+    lysa neutre "On a demandé à Sael, Ryn et Kael s'ils connaissaient le Bulbuma."
+    nyra reflexion "Et alors ?"
+    noam raison "Ils en ont entendu parler. Rien de plus."
+    nyra neutre "Ça nous dit pas d'où vient ce qu'on a trouvé."
+    lysa raison "Non. On va regarder les livraisons."
+    nyra sourire "Je peux m'en occuper. J'ai déjà consulté une partie des registres pour Keyper."
+    noam neutre "Ouais, merci."
+    nyra reflexion "Juste une chose. Si on annonce que Tomas a été assassiné, ça risque de partir en vrille."
+    noam raison "Je sais. Iris va présenter les éléments, pas accuser quelqu'un."
+    nyra neutre "OK. Je vais regarder ce que je trouve dans les livraisons."
+    "Elle part vers les archives. Lysa referme son carnet."
+    lysa blase "Elle a pas tort. Ryn était déjà prêt à nous arracher la tête."
+    noam fatigue "C'est bien pour ça que je voulais pas l'accuser."
+    $ hideGroup()
+    jump _28_0_1_1_0_1_REUNION
+# Durée : ~1m15.
+
+label _28_0_1_1_0_1_REUNION:
+    $ current_period = "Soir"
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.8
+    "On se retrouve au Conclave à la demande d'Iris. La place de Tomas reste vide, et cette fois personne ne propose de faire semblant de préparer un vote."
+    $ showGroup([("iris", "reflexion", 0.10), ("elen", "triste", 0.26), ("julian", "fatigue", 0.42), ("lysa", "neutre", 0.58), ("noam", "neutre", 0.74), ("sael", "neutre", 0.90), ("ryn", "fatigue", 1.06), ("nyra", "neutre", -0.06)])
+    iris raison "On a trouvé un récipient avec des résidus brûlés dans le conduit relié à la chambre d'Elen."
+    julian surpris "Un récipient ?"
+    lysa raison "Un petit bol, oui. Il y avait une plaque qui changeait la circulation de l'air."
+    noam neutre "On a photographié le montage. C'était pas une des protections installées par Kael."
+    elen inquiet "Mais quelqu'un a mis ça là ?"
+    iris raison "Ça ne fait pas partie du réseau normal. Oui, quelqu'un l'a placé."
+    julian reflexion "Tu penses que Tomas a été empoisonné ?"
+    iris neutre "C'est une possibilité sérieuse. On a retrouvé des fragments végétaux brûlés. Une partie pourrait provenir d'une plante capable de dégager des substances toxiques."
+    elen peur "Attends... Tu veux dire qu'il a pu respirer ça pendant qu'il dormait ?"
+    iris reflexion "Ça pourrait correspondre à une intoxication par inhalation. Mais je n'ai pas encore la preuve que ce soit la cause de sa mort."
+    elen triste "Oh, putain..."
+    julian raison "Et les somnifères ?"
+    iris neutre "On sait toujours pas s'il en a pris. Le flacon ne suffit pas à expliquer la plaque et le récipient."
+    elen colere "Donc il s'est peut-être pas suicidé du tout !"
+    iris raison "Oui. C'est possible."
+    ryn agace "Et vous avez commencé par nous demander si on connaissait cette plante."
+    julian surpris "Quelle plante ?"
+    lysa raison "Du Bulbuma Corienis. Ça pousse dans les régions arides."
+    ryn colere "Voilà ! Tu vois !"
+    sael calme "Ryn. Arrête de t'énerver."
+    ryn agace "Mais on nous a posé des questions parce qu'on vient de Limen !"
+    noam agace "On a aussi parlé à Kael !"
+    sael raison "La provenance d'une plante ne permet pas d'identifier celui qui l'a apportée."
+    nyra raison "Et il y a des régions arides à Orbite. Sans parler des livraisons entre districts."
+    julian reflexion "C'est pas pour autant qu'on doit ignorer la piste."
+    nyra neutre "Non. Mais on peut chercher sans décider que les gens de Limen sont coupables."
+    kael raison "J'ai regardé les photos. La plaque est anormale. Je vais vérifier ce que je peux sur les accès de maintenance."
+    elen inquiet "Vous pensez vraiment que quelqu'un ici a fait ça ?"
+    noam fatigue "On sait pas qui a pu passer par les conduits. Mais quelqu'un y a installé quelque chose."
+    lysa raison "Et cette personne pouvait préparer le dispositif sans ouvrir la porte d'Elen."
+    pause 0.4
+    julian fatigue "Je pensais vraiment que Tomas avait pu..."
+    julian triste "Merde. Je lui ai crié dessus jusqu'à la fin."
+    elen triste "Julian..."
+    julian fatigue "Non, laisse. Je sais."
+    iris determine "Je garde les prélèvements et je continue les examens. Et je veux que personne ne touche au montage dans le conduit sans nous prévenir."
+    nyra raison "On peut aussi reprendre calmement les témoignages de cette nuit-là. Avec ce qu'on vient de trouver, certaines choses vont peut-être changer."
+    noam neutre "Ouais. Mais pas ce soir."
+    "Personne ne proteste. On quitte la table les uns après les autres, sans savoir quoi dire à Elen."
+    $ hideGroup()
+    jump _28_0_1_1_0_1_NUIT
+# Durée : ~3m00.
+
+label _28_0_1_1_0_1_NUIT:
+    $ current_period = "Nuit"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
+    "Je pose la tablette sur le lit. Je suis couvert de poussière, mais j'ai pas envie de me lever pour aller me laver."
+    "J'ouvre les photos : la plaque, le bol noirci, les fragments végétaux. Tout ça était juste derrière une chambre où on pensait que personne ne pouvait entrer."
+    think "Le verrou était bien fermé. Et pourtant, il suffisait peut-être de passer par les conduits."
+    "Je reviens au flacon de somnifères. Il paraît presque trop pratique maintenant. Mais peut-être que je suis en train de lui donner un sens qu'il n'a pas."
+    "Je repense à la première fois qu'on a ouvert la porte. Nyra avait proposé d'aérer. Avec cette odeur, je lui aurais demandé la même chose."
+    "Je relis les témoignages de Julian, Ryn, Sael, Kael, Elen et Nyra. Aucun ne permet de dire qui a installé cette plaque."
+    "La plante pourrait venir de Limen, ou d'Orbite. Et même ça, ça ne prouve rien."
+    noam reflexion "Mais pourquoi Tomas ?"
+    "Pour son vote ? Parce qu'il avait énervé tout le monde ? Ou parce qu'il avait découvert quelque chose que quelqu'un ne voulait pas qu'il trouve ?"
+    "J'ouvre une dernière fois le dossier Keyper-IIB. Il y a les unités ÉID-0, le livre sur la résonance Yanma et ce petit appareil disparu."
+    "Je sais pas si c'est lié au bol dans les conduits. Je sais seulement que Tomas avait commencé à chercher, et qu'il n'aura jamais terminé."
+    "Demain, je reprends tous les indices. Même ceux qui ont l'air de ne rien avoir à faire là."
+    "Je coupe l'écran."
+    stop music fadeout 1.0
+    call end_day("29", sleeping=True) from _call_j28a_end_day_29
+    jump _29_0_1_1_0_1_REVEIL
+# Durée : ~1m00.
