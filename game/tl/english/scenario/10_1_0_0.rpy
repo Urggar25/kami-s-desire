@@ -280,7 +280,7 @@ translate english c3826f5c:
 translate english f0298c53:
 
     # kami "Profitez bien de vos conversations privées tant que vous le pouvez."
-    kami "Do enjoy your private conversations while you still can."
+    kami "Enjoy your private conversations while you still can."
 
 # game/scenario/10_1_0_0.rpy:154
 translate english 4281464c:
@@ -304,7 +304,7 @@ translate english 1caa3a62:
 translate english 189792e3:
 
     # kami "Vous connaissez déjà ces merveilleux petits appareils. Certains d'entre vous en possèdent dans leurs chambres. Ils permettent de perturber localement mes systèmes de surveillance audio et vidéo."
-    kami "You already know these wonderful little gadgets. Some of you have them in your rooms. They locally disrupt my audio and video surveillance systems."
+    kami "You know these lovely little gadgets already. Some of you even have one in your room. They interfere with my audio and video surveillance nearby."
 
 # game/scenario/10_1_0_0.rpy:168
 translate english c87ece32:
@@ -322,7 +322,7 @@ translate english b654c2a2:
 translate english 36862c48:
 
     # kami "Vos déclarations d'amour maladroites."
-    kami "Your clumsy declarations of love."
+    kami "Those adorably awkward love confessions."
 
 # game/scenario/10_1_0_0.rpy:180
 translate english e837b19d:
@@ -370,7 +370,7 @@ translate english 59a90a29:
 translate english bab52ee2:
 
     # kami "Vous aurez jusqu'à demain pour réfléchir."
-    kami "You have until tomorrow to think it over."
+    kami "You've got until tomorrow to think it over."
 
 # game/scenario/10_1_0_0.rpy:216
 translate english 05c76708:
@@ -682,7 +682,7 @@ translate english c1d43630:
 translate english 73576b90:
 
     # nyra "C'est littéralement mon travail."
-    nyra "This is literally my job."
+    nyra "It's literally my job."
 
 # game/scenario/10_1_0_0.rpy:356
 translate english faa78f1f:
@@ -2164,7 +2164,7 @@ translate english 592bacab:
 translate english dfbadb0b:
 
     # ryn "{i}Ou pour ne pas les signaler.{/i}"
-    ryn "{i}Or to not flag them.{/i}"
+    ryn "{i}Or choose not to report them.{/i}"
 
 # game/scenario/10_1_0_0.rpy:932
 translate english a1cd8d9f:
@@ -2224,7 +2224,7 @@ translate english 9d34acbc:
 translate english a5368041:
 
     # ryn "{i}Les missions sont ouvertes à plusieurs personnes.{/i} {i}Je peux te montrer comment ça fonctionne.{/i}"
-    ryn "{i}The assignments are open to several people.{/i} {i}I can show you how it works.{/i}"
+    ryn "{i}More than one person can take an assignment.{/i} {i}I can show you how it works.{/i}"
 
 # game/scenario/10_1_0_0.rpy:952
 translate english 6b698a1b:
@@ -2512,7 +2512,7 @@ translate english f1dfa066:
 translate english 78a9ec6e:
 
     # ryn "{i}D'accord. Je vais pas essayer de te culpabiliser pour ça.{/i}"
-    ryn "{i}All right. I'm not going to guilt-trip you over it.{/i}"
+    ryn "{i}All right. I'm not going to make you feel guilty about that.{/i}"
 
 # game/scenario/10_1_0_0.rpy:1087
 translate english 6ee55b07:
