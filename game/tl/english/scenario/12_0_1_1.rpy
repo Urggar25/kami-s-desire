@@ -1932,13 +1932,13 @@ translate english b18c73d5:
 translate english 4c5604b0:
 
     # ryn "On n’est pas des putains de prisonniers ! On mérite de pouvoir avoir un minimum d’intimité dans cet enfer !"
-    ryn "Several voices call out in support. The momentum is clearly on the side of freedom."
+    ryn "We're not fucking prisoners! We deserve at least a little privacy in this hellhole!"
 
 # game/scenario/12_0_1_1.rpy:829
 translate english f6188717:
 
     # "Plusieurs voix s’élèvent en soutien. L’énergie est clairement du côté de la liberté."
-    "But we can't ignore the risks. If everyone has a jammer, how do we prove anything?"
+    "Several voices rise in agreement. The momentum is clearly on the side of freedom."
 
 # game/scenario/12_0_1_1.rpy:831
 translate english 15bf4715:
@@ -1950,19 +1950,19 @@ translate english 15bf4715:
 translate english c26090e4:
 
     # nyra "Mais on ne peut pas ignorer les risques. Si tout le monde porte un brouilleur, comment on prouve quoi que ce soit ?"
-    nyra "...Like what happened to me."
+    nyra "But we can't ignore the risks. If everyone has a jammer, how can we prove anything?"
 
 # game/scenario/12_0_1_1.rpy:834
 translate english eb96ae54:
 
     # kael "… Comme ce qui m’est arrivé."
-    kael "Silence falls for a moment."
+    kael "...Like what happened to me."
 
 # game/scenario/12_0_1_1.rpy:836
 translate english 73b085c0:
 
     # "Le silence retombe un instant."
-    "The thief will stay invisible. Forever."
+    "Silence falls for a moment."
 
 # game/scenario/12_0_1_1.rpy:838
 translate english 0cd95c25:
@@ -1980,7 +1980,7 @@ translate english 074f3714:
 translate english 37d4a519:
 
     # kael "Le voleur restera invisible. Pour toujours."
-    kael "Exactly! We're trading one prison for another!"
+    kael "The thief will remain invisible. Forever."
 
 # game/scenario/12_0_1_1.rpy:842
 translate english 0d19a445:
@@ -1992,31 +1992,31 @@ translate english 0d19a445:
 translate english 87bbe6c4:
 
     # mara "Exactement ! On échange une prison contre une autre !"
-    mara "I'd rather take my chances than live in a gilded cage."
+    mara "Exactly! We're trading one prison for another!"
 
 # game/scenario/12_0_1_1.rpy:845
 translate english afab74f9:
 
     # mara "Moi je préfère risquer l’insécurité plutôt que de vivre dans une cage dorée."
-    mara "The discussion grows louder and more heated. I sit there with my arms crossed, listening."
+    mara "I'd rather risk being unsafe than live in a gilded cage."
 
 # game/scenario/12_0_1_1.rpy:848
 translate english cd8e6281:
 
     # "La discussion devient de plus en plus animée. Je reste silencieux, les bras croisés, à écouter."
-    "Noam? Still nothing to say?"
+    "The argument grows increasingly heated. I sit with my arms crossed, listening in silence."
 
 # game/scenario/12_0_1_1.rpy:850
 translate english a4f1078e:
 
     # iris "Noam ? Tu n’as toujours rien dit ?"
-    iris "Every eye turns toward me."
+    iris "Noam? You still haven't said anything?"
 
 # game/scenario/12_0_1_1.rpy:852
 translate english 35b60eeb:
 
     # "Les regards convergent vers moi."
-    "I feel my jaw tighten."
+    "Everyone turns to look at me."
 
 # game/scenario/12_0_1_1.rpy:854
 translate english 991e3743:
@@ -2034,7 +2034,7 @@ translate english b2091ab0:
 translate english 0745e194:
 
     # "Je sens ma mâchoire se crisper."
-    "The words leave a bitter taste in my mouth."
+    "I feel my jaw tighten."
 
 # game/scenario/12_0_1_1.rpy:860
 translate english 88d826d2:
@@ -2046,13 +2046,13 @@ translate english 88d826d2:
 translate english ffeb741e:
 
     # "Le mot me laisse un goût amer dans la bouche."
-    "I'm not saying it's risk-free."
+    "The word leaves a bitter taste in my mouth."
 
 # game/scenario/12_0_1_1.rpy:864
 translate english f3c4f390:
 
     # noam "Je ne dis pas que c’est sans risque."
-    noam "But if we agree to let Kami watch everything, all the time, then we're not voting for our own safety anymore."
+    noam "I'm not saying there aren't risks."
 
 # game/scenario/12_0_1_1.rpy:865
 translate english d61f6bb2:
@@ -2064,13 +2064,13 @@ translate english d61f6bb2:
 translate english 356dcd9a:
 
     # noam "Mais si on accepte que Kami voie tout, tout le temps, alors on ne vote plus pour notre sécurité."
-    noam "So you're with us?"
+    noam "But if we agree to let Kami watch us every second, we're no longer voting for our safety."
 
 # game/scenario/12_0_1_1.rpy:869
 translate english 8927d265:
 
     # elen "Donc tu es avec nous ?"
-    elen "Then we'll have to catch whoever did it some other way."
+    elen "So you're with us?"
 
 # game/scenario/12_0_1_1.rpy:871
 translate english 704901cc:
@@ -2094,49 +2094,49 @@ translate english 7348d5ea:
 translate english e62fd509:
 
     # noam "Alors il faudra le coincer autrement."
-    noam "I lower my eyes slightly."
+    noam "Then we'll have to catch whoever did it some other way."
 
 # game/scenario/12_0_1_1.rpy:881
 translate english 2cd646c8:
 
     # "Je baisse légèrement les yeux."
-    "I don't even fully believe what I just said."
+    "I lower my eyes slightly."
 
 # game/scenario/12_0_1_1.rpy:883
 translate english 5f4eb3cc:
 
     # think "Je ne crois même pas totalement à ce que je viens de dire."
-    think "Not the way they do."
+    think "I don't even fully believe what I just said."
 
 # game/scenario/12_0_1_1.rpy:884
 translate english 63b262bc:
 
     # think "Pas comme eux."
-    think "Not while I still don't know which of them is responsible for all this."
+    think "Not the way they do."
 
 # game/scenario/12_0_1_1.rpy:885
 translate english 9b590504:
 
     # think "Pas tant que je ne sais pas qui, parmi eux, est responsable de tout ça."
-    think "The argument starts up again, loud and impassioned."
+    think "Not until I know which of them is responsible for all this."
 
 # game/scenario/12_0_1_1.rpy:887
 translate english c82d56d7:
 
     # "La discussion reprend de plus belle, passionnée et bruyante."
-    "I stay on the sidelines, my heart heavy and my thoughts in turmoil."
+    "The argument flares up again, loud and impassioned."
 
 # game/scenario/12_0_1_1.rpy:888
 translate english 6caa04f2:
 
     # "Moi, je reste en retrait, le cœur lourd et l’esprit tourmenté."
-    "The debate has been raging for minutes. Voices overlap, arguments fly."
+    "I stay on the sidelines, my heart heavy and my thoughts in turmoil."
 
 # game/scenario/12_0_1_1.rpy:913
 translate english 6ca9af2b:
 
     # "Le débat fait rage depuis plusieurs minutes. Les voix se chevauchent, les arguments fusent."
-    "Y-Yeah... Maybe it's for the best..."
+    "The debate has been raging for minutes. Voices overlap, arguments fly."
 
 # game/scenario/12_0_1_1.rpy:915
 translate english 23f95102:
@@ -2154,7 +2154,7 @@ translate english 8a4f1126:
 translate english 96a0dae2:
 
     # tomas "O-Ouais... C'est peut-être pour le mieux..."
-    tomas "Something inside me snaps."
+    tomas "Y-Yeah... Maybe it's for the best..."
 
 # game/scenario/12_0_1_1.rpy:921
 translate english a7d8b0aa:
@@ -2412,7 +2412,7 @@ translate english 9035c982:
 translate english ab9cb975:
 
     # julian "Un traître ? Carrément ?!"
-    julian "My voice breaks slightly at the end. I'm out of breath, shaking with rage and exhaustion."
+    julian "A traitor? Seriously?!"
 
 # game/scenario/12_0_1_1.rpy:988
 translate english 781f58cc:
@@ -2460,7 +2460,7 @@ translate english 1623564f:
 translate english c7b10d8e:
 
     # "Ma voix se brise légèrement sur la fin. Je suis essoufflé, tremblant de rage et de fatigue."
-    "The silence that follows is deafening."
+    "My voice cracks toward the end. I'm breathless, shaking with rage and exhaustion."
 
 # game/scenario/12_0_1_1.rpy:1001
 translate english af7ddc77:
@@ -2484,7 +2484,7 @@ translate english 23853dbe:
 translate english ab9a033e:
 
     # "Le silence qui suit est assourdissant."
-    "We're all tired. We're all on edge. But we're a team."
+    "The silence that follows is deafening."
 
 # game/scenario/12_0_1_1.rpy:1008
 translate english 359bb9fe:
@@ -2496,7 +2496,7 @@ translate english 359bb9fe:
 translate english b4a9cd35:
 
     # iris "On est tous fatigués. On est tous sur les nerfs. Mais on est une équipe."
-    iris "I remain standing, my hands trembling."
+    iris "We're all tired. We're all on edge. But we're a team."
 
 # game/scenario/12_0_1_1.rpy:1011
 translate english b404f4bc:
@@ -2514,13 +2514,13 @@ translate english 3eed4528:
 translate english b1956a36:
 
     # "Je reste debout, les mains tremblantes."
-    "Everyone is looking at me now with a mixture of fear, pity, and suspicion."
+    "I remain standing, my hands trembling."
 
 # game/scenario/12_0_1_1.rpy:1016
 translate english 003ffbe6:
 
     # "Tout le monde me regarde maintenant avec un mélange de peur, de pitié et de suspicion."
-    "No one answers."
+    "Everyone is looking at me now with a mixture of fear, pity, and suspicion."
 
 # game/scenario/12_0_1_1.rpy:1022
 translate english 04659524:
@@ -2562,61 +2562,61 @@ translate english 492ed03e:
 translate english 96aae473_1:
 
     # "Personne ne répond."
-    "I turn away before anyone can find another reason to stop me."
+    "No one answers."
 
 # game/scenario/12_0_1_1.rpy:1035
 translate english 037d886a:
 
     # "Je tourne les talons avant que quelqu’un trouve une nouvelle phrase pour me retenir."
-    "The corridor feels too long."
+    "I turn away before anyone can find another reason to stop me."
 
 # game/scenario/12_0_1_1.rpy:1041
 translate english b6d9e514:
 
     # "Le couloir me paraît trop long."
-    "Too white."
+    "The corridor feels too long."
 
 # game/scenario/12_0_1_1.rpy:1042
 translate english 9548cf21:
 
     # "Trop blanc."
-    "Too quiet after all that noise."
+    "Too white."
 
 # game/scenario/12_0_1_1.rpy:1043
 translate english 25cb3955:
 
     # "Trop silencieux après tout ce bruit."
-    "I went too far."
+    "Too quiet after all that noise."
 
 # game/scenario/12_0_1_1.rpy:1045
 translate english 4d13deaa:
 
     # think "Je suis allé trop loin."
-    think "Or not far enough."
+    think "I went too far."
 
 # game/scenario/12_0_1_1.rpy:1046
 translate english 2cc34135:
 
     # think "Ou pas assez."
-    think "I don't know anymore."
+    think "Or not far enough."
 
 # game/scenario/12_0_1_1.rpy:1047
 translate english d0b6b741:
 
     # think "Je ne sais plus."
-    think "I shut my bedroom door behind me."
+    think "I don't know anymore."
 
 # game/scenario/12_0_1_1.rpy:1055
 translate english 483a29d2:
 
     # "Je referme la porte de ma chambre derrière moi."
-    "The click of the lock nearly makes me jump."
+    "I shut my bedroom door behind me."
 
 # game/scenario/12_0_1_1.rpy:1056
 translate english 6a35a18e:
 
     # "Le déclic de la serrure me fait presque sursauter."
-    "I don't even bother properly undressing."
+    "The click of the lock nearly makes me jump."
 
 # game/scenario/12_0_1_1.rpy:1058
 translate english 9a451c8d:
@@ -2628,43 +2628,43 @@ translate english 9a451c8d:
 translate english 6a9be978:
 
     # "Je ne prends même pas le temps d’enlever correctement mes vêtements."
-    "I lie down, still tense, still furious, still ashamed."
+    "I don't even bother undressing properly."
 
 # game/scenario/12_0_1_1.rpy:1061
 translate english 155bb2f9:
 
     # "Je m’allonge sur le lit, encore tendu, encore furieux, encore honteux."
-    "I don't want to think anymore."
+    "I lie down, still tense, still furious, still ashamed."
 
 # game/scenario/12_0_1_1.rpy:1063
 translate english b3d1af87:
 
     # think "Je ne veux plus penser."
-    think "Not about the vote."
+    think "I don't want to think anymore."
 
 # game/scenario/12_0_1_1.rpy:1064
 translate english 265ce4de:
 
     # think "Pas au vote."
-    think "Not about Kael."
+    think "Not about the vote."
 
 # game/scenario/12_0_1_1.rpy:1065
 translate english 0c97f443:
 
     # think "Pas à Kael."
-    think "Not about the jammers."
+    think "Not about Kael."
 
 # game/scenario/12_0_1_1.rpy:1066
 translate english c2bc2739:
 
     # think "Pas aux brouilleurs."
-    think "Not about whoever's lying."
+    think "Not about the jammers."
 
 # game/scenario/12_0_1_1.rpy:1067
 translate english 775def5e:
 
     # think "Pas à celui qui ment."
-    think "Sleep finally hits me all at once, heavy and filthy, like the power being cut."
+    think "Not about whoever's lying."
 
 # game/scenario/12_0_1_1.rpy:1071
 translate english 7da19eb8:
