@@ -2684,455 +2684,455 @@ translate english bf7cd40a:
 translate english 200ba605:
 
     # kael fatigue "Je suis sérieux. Je veux pas te souffler ce que j'ai lu avant que tu regardes toi-même. Si tu trouves rien, tant mieux. Si tu trouves la même chose... Alors c'est sans doute plus grave que ce qu'on imagine."
-    kael fatigue ""
+    kael fatigue "I'm serious. I don't want to put ideas in your head before you've seen what I found. If you find nothing, great. If you find the same thing... then it's probably worse than we think."
 
 # game/scenario/16_0_1_1_0.rpy:349
 translate english 1b146dc4:
 
     # "Je n'aime pas la manière dont il dit ça. Encore moins la peur qu'il essaie visiblement de cacher derrière son calme."
-    ""
+    "I don't like the way he says that. I like the fear he's clearly trying to hide behind his calm even less."
 
 # game/scenario/16_0_1_1_0.rpy:351
 translate english d979615b:
 
     # noam inquiet "Et tu comptes faire quoi, toi ?"
-    noam inquiet ""
+    noam inquiet "And what are you going to do?"
 
 # game/scenario/16_0_1_1_0.rpy:353
 translate english c2688621:
 
     # kael "Retourner dans ma chambre. J'ai vraiment envie de croiser personne."
-    kael ""
+    kael "Go back to my room. I really don't want to see anyone."
 
 # game/scenario/16_0_1_1_0.rpy:355
 translate english 78c92443:
 
     # noam desaccord "Nyra nous a dit que tu agissais bizarrement."
-    noam desaccord ""
+    noam desaccord "Nyra said you've been acting strange."
 
 # game/scenario/16_0_1_1_0.rpy:357
 translate english f1486f6a:
 
     # kael "Parce que tu crois que je peux faire comme si de rien n'était après avoir vu la vidéo d'hier ?!"
-    kael ""
+    kael "You think I can just pretend nothing happened after watching yesterday's footage?!"
 
 # game/scenario/16_0_1_1_0.rpy:358
 translate english fd74f3e2:
 
     # kael colere "C'est impossible. J'ai trop de questions en tête et aucune réponse !"
-    kael colere ""
+    kael colere "I can't. I've got too many questions and not a single answer!"
 
 # game/scenario/16_0_1_1_0.rpy:360
 translate english e171db99:
 
     # "Il me contourne sans attendre de réponse."
-    ""
+    "He walks around me without waiting for a reply."
 
 # game/scenario/16_0_1_1_0.rpy:362
 translate english 3bc1bb05:
 
     # noam "Kael. Attends."
-    noam ""
+    noam "Kael. Wait."
 
 # game/scenario/16_0_1_1_0.rpy:364
 translate english e590d7c0:
 
     # "Il s'arrête sans se retourner."
-    ""
+    "He stops without turning around."
 
 # game/scenario/16_0_1_1_0.rpy:366
 translate english bd0d5f7b:
 
     # noam hesitation "Hier... tu es sûr que je ne suis jamais venu te parler ?"
-    noam hesitation ""
+    noam hesitation "Last night... are you sure I never came to talk to you?"
 
 # game/scenario/16_0_1_1_0.rpy:368
 translate english 6931646c:
 
     # kael fatigue "Si j'en crois mes souvenirs, je suis sûr. Mais je ne les crois plus, alors je ne sais pas."
-    kael fatigue ""
+    kael fatigue "According to my memories, yes. But I don't trust them anymore, so I don't know."
 
 # game/scenario/16_0_1_1_0.rpy:370
 translate english edebbc37:
 
     # "Il repart vers les dortoirs. Je le regarde s'éloigner jusqu'à ce qu'il disparaisse au prochain croisement."
-    ""
+    "He heads back toward the dormitory. I watch until he disappears around the next corner."
 
 # game/scenario/16_0_1_1_0.rpy:372
 translate english 809b13c5:
 
     # think "Mon dossier médical, il est dans la salle des archives, c'est ça ?"
-    think ""
+    think "My medical file... that's in the archives, right?"
 
 # game/scenario/16_0_1_1_0.rpy:373
 translate english 2d983871:
 
     # "Je n'ai aucune envie d'aller fouiller là-dedans. Ce qui suffit largement à me convaincre que je dois le faire."
-    ""
+    "I have absolutely no desire to go digging through that. Which is reason enough to know I have to."
 
 # game/scenario/16_0_1_1_0.rpy:392
 translate english dea5f869:
 
     # "Les Archives sont presque vides à cette heure-ci. Je croise seulement deux terminaux allumés au fond de la salle et personne devant les rayonnages principaux."
-    ""
+    "The archives are nearly empty at this hour. There are just two terminals glowing at the far end of the room, and nobody by the main shelves."
 
 # game/scenario/16_0_1_1_0.rpy:393
 translate english ca0a9f62:
 
     # "Je m'installe devant un écran et passe mon badge."
-    ""
+    "I sit down at a screen and scan my badge."
 
 # game/scenario/16_0_1_1_0.rpy:397
 translate english 21bf3fc0:
 
     # "Je dois fouiller quelques menus avant de trouver la partie médicale. Visiblement, l'accès semble récent."
-    ""
+    "I have to dig through several menus to find the medical section. Apparently, access was granted only recently."
 
 # game/scenario/16_0_1_1_0.rpy:399
 translate english 55ba986a:
 
     # noam reflexion "Donc Kael disait vrai..."
-    noam reflexion ""
+    noam reflexion "So Kael was telling the truth..."
 
 # game/scenario/16_0_1_1_0.rpy:401
 translate english 69a49f2f:
 
     # "Je sélectionne mon nom."
-    ""
+    "I select my name."
 
 # game/scenario/16_0_1_1_0.rpy:402
 translate english bfaff45d:
 
     # "Le dossier est beaucoup plus banal que ce que j'imaginais. Groupe sanguin, allergies, examens à l'arrivée, anciennes blessures, passages à l'infirmerie... Je descends rapidement jusqu'aux dernières lignes."
-    ""
+    "The file is far more ordinary than I expected. Blood type, allergies, admission examinations, old injuries, infirmary visits... I scroll quickly to the last few entries."
 
 # game/scenario/16_0_1_1_0.rpy:403
 translate english 212b83b3:
 
     # "Une référence que je ne connais pas apparaît entre deux entrées."
-    ""
+    "An unfamiliar reference appears between two records."
 
 # game/scenario/16_0_1_1_0.rpy:405
 translate english 87a654a2:
 
     # noam inquiet "M16... ?"
-    noam inquiet ""
+    noam inquiet "M16...?"
 
 # game/scenario/16_0_1_1_0.rpy:407
 translate english c4fbc563:
 
     # "Je clique dessus. Rien ne s'ouvre. Pas de description, pas de date détaillée, pas de compte rendu. Juste ce code posé là comme s'il était censé suffire."
-    ""
+    "I click on it. Nothing opens. No description, no detailed date, no report. Just that code sitting there as if it ought to explain itself."
 
 # game/scenario/16_0_1_1_0.rpy:409
 translate english f4b898c0:
 
     # noam desaccord "Évidemment."
-    noam desaccord ""
+    noam desaccord "Of course."
 
 # game/scenario/16_0_1_1_0.rpy:411
 translate english 00f3c1c9:
 
     # "J'essaie une recherche interne. Aucun résultat. Une seconde. Toujours rien."
-    ""
+    "I try an internal search. No results. I try again. Still nothing."
 
 # game/scenario/16_0_1_1_0.rpy:412
 translate english 002b5a98:
 
     # "Un bruit de pages qu'on tourne me fait lever la tête. Cette fois, ce n'est pas un terminal. Quelqu'un fouille réellement dans les rayonnages derrière moi."
-    ""
+    "The sound of turning pages makes me look up. This time it's not a terminal. Someone is actually searching through the shelves behind me."
 
 # game/scenario/16_0_1_1_0.rpy:414
 translate english 0cc8a6d5:
 
     # noam inquiet "Tomas ? C'est toi ?"
-    noam inquiet ""
+    noam inquiet "Tomas? Is that you?"
 
 # game/scenario/16_0_1_1_0.rpy:416
 translate english 3d238ea3:
 
     # sael neutre "Non, désolée de te décevoir."
-    sael neutre ""
+    sael neutre "No, sorry to disappoint."
 
 # game/scenario/16_0_1_1_0.rpy:418
 translate english 0a3d691f:
 
     # "Sael apparaît au bout de l'allée avec trois ouvrages coincés sous le bras. Elle pose le premier sur une table, l'ouvre presque au milieu et recommence à parcourir l'index."
-    ""
+    "Sael appears at the end of the aisle with three books tucked under one arm. She sets the first on a table, opens it halfway through, and starts scanning the index again."
 
 # game/scenario/16_0_1_1_0.rpy:425
 translate english f9b1615f:
 
     # noam surpris "Qu'est-ce que tu fais ici à cette heure-là ?"
-    noam surpris ""
+    noam surpris "What are you doing here at this hour?"
 
 # game/scenario/16_0_1_1_0.rpy:427
 translate english 86d2d2f6:
 
     # sael reflechit "Je cherche une référence."
-    sael reflechit ""
+    sael reflechit "Looking for a reference."
 
 # game/scenario/16_0_1_1_0.rpy:431
 translate english 2f57367c:
 
     # "Elle ne répond pas tout de suite. Son doigt descend le long d'une colonne, s'arrête, puis repart sur la page suivante."
-    ""
+    "She doesn't answer immediately. Her finger moves down a column, stops, then moves on to the next page."
 
 # game/scenario/16_0_1_1_0.rpy:433
 translate english 48397fd0:
 
     # sael "M16."
-    sael ""
+    sael "M16."
 
 # game/scenario/16_0_1_1_0.rpy:435
 translate english 79cf14d2:
 
     # "Je tourne immédiatement la tête vers mon écran."
-    ""
+    "I whip my head toward my screen."
 
 # game/scenario/16_0_1_1_0.rpy:437
 translate english f9619be6:
 
     # noam inquiet "Où as-tu entendu parler de ce truc ?"
-    noam inquiet ""
+    noam inquiet "Where did you hear about that?"
 
 # game/scenario/16_0_1_1_0.rpy:439
 translate english 703062b5:
 
     # "Sael relève enfin les yeux vers moi."
-    ""
+    "Sael finally looks up at me."
 
 # game/scenario/16_0_1_1_0.rpy:441
 translate english 53d77e03:
 
     # sael mefiant "Pourquoi, tu sais ce que c'est ?"
-    sael mefiant ""
+    sael mefiant "Why? Do you know what it is?"
 
 # game/scenario/16_0_1_1_0.rpy:443
 translate english 947a7c97:
 
     # noam "Non, je viens de le trouver dans mon dossier médical."
-    noam ""
+    noam "No. I just found it in my medical file."
 
 # game/scenario/16_0_1_1_0.rpy:445
 translate english f8246646:
 
     # "Son expression change à peine, mais elle referme lentement le livre qu'elle tenait."
-    ""
+    "Her expression barely changes, but she slowly closes the book she was holding."
 
 # game/scenario/16_0_1_1_0.rpy:447
 translate english eacdbd02:
 
     # sael neutre "Moi aussi."
-    sael neutre ""
+    sael neutre "Me too."
 
 # game/scenario/16_0_1_1_0.rpy:449
 translate english 36883386:
 
     # noam "Hein ? Depuis quand tu sais qu'on peut les consulter ?"
-    noam ""
+    noam "Huh? Since when did you know we could access them?"
 
 # game/scenario/16_0_1_1_0.rpy:451
 translate english f8f833e2:
 
     # sael raison "Depuis ce matin. Je cherchais une ancienne fiche de soins dans le système. Le menu n'était pas là avant alors j'ai cliqué par curiosité."
-    sael raison ""
+    sael raison "Since this morning. I was looking for an old treatment record in the system. That menu wasn't there before, so I clicked on it out of curiosity."
 
 # game/scenario/16_0_1_1_0.rpy:452
 translate english 1e64d3e1:
 
     # sael mefiant "J'essaye de trouver à quoi ça correspond depuis ce matin. Y'a rien sur internet, alors je regarde dans les archives papiers."
-    sael mefiant ""
+    sael mefiant "I've been trying to figure out what it means all morning. There's nothing online, so I'm checking the paper archives."
 
 # game/scenario/16_0_1_1_0.rpy:453
 translate english f9721304:
 
     # sael reflechit "Je me suis dis que ça devait avoir un lien avec le médical, alors j'ai été cherché quelques bouquants dans l'infirmerie directement."
-    sael reflechit ""
+    sael reflechit "I figured it had to be medical, so I went and grabbed a few books straight from the infirmary."
 
 # game/scenario/16_0_1_1_0.rpy:455
 translate english 1b92f7d2:
 
     # "Elle prend le deuxième ouvrage, beaucoup plus épais, et l'ouvre à une série d'abréviations médicales."
-    ""
+    "She picks up the second book, much thicker than the first, and opens it to a list of medical abbreviations."
 
 # game/scenario/16_0_1_1_0.rpy:457
 translate english 5ab72d3a:
 
     # sael "Les vieux protocoles ont parfois été archivés sur papier. Les systèmes changent. Les livres restent."
-    sael ""
+    sael "Older protocols were sometimes archived on paper. Systems change. Books stay."
 
 # game/scenario/16_0_1_1_0.rpy:459
 translate english 7dff15e5:
 
     # noam "Et tu penses que l'abréviation est là-dedans ?"
-    noam ""
+    noam "And you think the abbreviation is in there?"
 
 # game/scenario/16_0_1_1_0.rpy:461
 translate english f4fb6c37:
 
     # sael "Elle doit bien être quelque part. On ne note pas un truc dans un dossier médical sans pouvoir retrouver ce que c'est."
-    sael ""
+    sael "It has to be somewhere. You don't put something in a medical file without keeping a way to find out what it means."
 
 # game/scenario/16_0_1_1_0.rpy:463
 translate english 970d9023:
 
     # "Je m'approche de la table. Pour la première fois depuis mon réveil, ma frustration laisse place à quelque chose de plus froid."
-    ""
+    "I move closer to the table. For the first time since I woke up, my frustration gives way to something colder."
 
 # game/scenario/16_0_1_1_0.rpy:465
 translate english 4c456ce7:
 
     # noam inquiet "En tout cas on est plusieurs à l'avoir. Donc ça doit être un point commune. Kael aussi l'a sans doute."
-    noam inquiet ""
+    noam inquiet "At least we're not the only ones who have it. There must be something we have in common. Kael probably has it too."
 
 # game/scenario/16_0_1_1_0.rpy:467
 translate english 4953fdf4:
 
     # "Sael s'arrête une fraction de seconde."
-    ""
+    "Sael pauses for a fraction of a second."
 
 # game/scenario/16_0_1_1_0.rpy:469
 translate english e9f13036:
 
     # sael mefiant "Tu as vu son dossier ? Comment tu as fais ? Ils sont bloqu..."
-    sael mefiant ""
+    sael mefiant "You saw his file? How did you do that? They're restric—"
 
 # game/scenario/16_0_1_1_0.rpy:471
 translate english ae463ef9:
 
     # noam "Non. C'est lui qui m'a dit de regarder mon dossier. J'ai pas tout compris mais il semblait avoir trouvé un truc bizarre dedans."
-    noam ""
+    noam "No. He's the one who told me to check mine. I didn't really understand, but he seemed to have found something strange in his."
 
 # game/scenario/16_0_1_1_0.rpy:472
 translate english 4d866a0f:
 
     # noam reflechit "Alors ça doit être ça..."
-    noam reflechit ""
+    noam reflechit "Then that must be it..."
 
 # game/scenario/16_0_1_1_0.rpy:474
 translate english 431bb38b:
 
     # sael "Donc ça fait trois. Raaah, faut vraiment trouver ce que ça veut dire !"
-    sael ""
+    sael "That makes three of us. Argh, we really need to find out what this means!"
 
 # game/scenario/16_0_1_1_0.rpy:476
 translate english 102dfeff:
 
     # "Elle tourne encore quelques pages. Une première fois trop vite, puis elle revient en arrière."
-    ""
+    "She flips through a few more pages, too quickly at first, then goes back."
 
 # game/scenario/16_0_1_1_0.rpy:478
 translate english d8e7cad8:
 
     # sael reflechit "Oh ! Attends."
-    sael reflechit ""
+    sael reflechit "Oh! Wait."
 
 # game/scenario/16_0_1_1_0.rpy:480
 translate english d76be0bb:
 
     # "Son doigt reste posé sur une ligne."
-    ""
+    "Her finger comes to rest on a line."
 
 # game/scenario/16_0_1_1_0.rpy:482
 translate english 7c2b1574:
 
     # noam inquiet "Tu as trouvé ?"
-    noam inquiet ""
+    noam inquiet "Found something?"
 
 # game/scenario/16_0_1_1_0.rpy:484
 translate english c2b0fe46:
 
     # "Sael ne répond pas immédiatement. Elle relit le passage une deuxième fois, puis pousse le livre vers moi."
-    ""
+    "Sael doesn't answer right away. She reads the passage a second time, then pushes the book toward me."
 
 # game/scenario/16_0_1_1_0.rpy:485
 translate english 1713a67b:
 
     # "Au milieu d'une liste de procédures anciennes, une seule ligne correspond au code de mon dossier."
-    ""
+    "In the middle of a list of old procedures, one line matches the code in my file."
 
 # game/scenario/16_0_1_1_0.rpy:494
 translate english bf705228:
 
     # "Je reste à la regarder quelques secondes sans comprendre ce que les mots viennent réellement de dire."
-    ""
+    "I stare at it for several seconds, unable to grasp what the words are actually telling me."
 
 # game/scenario/16_0_1_1_0.rpy:495
 translate english 27dd9b99:
 
     # "Ma voix est plus basse que je ne le voudrais. Je relis la ligne, puis encore une fois, comme si elle pouvait finir par changer."
-    ""
+    "My voice comes out quieter than I'd like. I read the line again, then once more, as though it might eventually change."
 
 # game/scenario/16_0_1_1_0.rpy:497
 translate english e351eb14:
 
     # noam inquiet "Qu'est-ce que ça veut dire ...?"
-    noam inquiet ""
+    noam inquiet "What does that mean...?"
 
 # game/scenario/16_0_1_1_0.rpy:499
 translate english e2000f5d:
 
     # "Sael tourne la page. La suivante a été arrachée proprement au ras de la reliure."
-    ""
+    "Sael turns the page. The next one has been neatly torn out right along the binding."
 
 # game/scenario/16_0_1_1_0.rpy:501
 translate english a05da76e:
 
     # noam inquiet "C'est une blague ?"
-    noam inquiet ""
+    noam inquiet "You've got to be kidding me."
 
 # game/scenario/16_0_1_1_0.rpy:503
 translate english a4c846dc:
 
     # sael mefiant "Visiblement, on a le droit d'en savoir un peu, mais pas trop quand même..."
-    sael mefiant ""
+    sael mefiant "Apparently we're allowed to know a little, but not too much..."
 
 # game/scenario/16_0_1_1_0.rpy:505
 translate english 80c6b04a:
 
     # "Je reprends le livre et vérifie moi-même, comme si elle pouvait avoir raté quelque chose. Il ne reste qu'un morceau de papier au niveau de la couture."
-    ""
+    "I take the book and check for myself, as if she might have missed something. All that's left is a scrap of paper along the seam."
 
 # game/scenario/16_0_1_1_0.rpy:514
 translate english 35041b47_2:
 
     # noam colere "Putain..."
-    noam colere ""
+    noam colere "Fuck..."
 
 # game/scenario/16_0_1_1_0.rpy:516
 translate english efbfaf4b:
 
     # "Je repense à mon réveil. Au couloir. À Kael que je suis certain d'avoir retrouvé sans être capable de me rappeler un seul mot après ça."
-    ""
+    "I think back to waking up. To the corridor. To Kael, whom I'm certain I found, though I can't remember a single word of what happened afterward."
 
 # game/scenario/16_0_1_1_0.rpy:518
 translate english fdbdc0ce:
 
     # sael inquiet "Mais... Qu'est-ce que ça veut dire ?"
-    sael inquiet ""
+    sael inquiet "But... what does it mean?"
 
 # game/scenario/16_0_1_1_0.rpy:524
 translate english ef1320a0:
 
     # "Le terminal derrière nous émet soudain un grésillement. Quand je me retourne, mon dossier est toujours ouvert, mais la ligne M16 n'est plus visible à l'écran."
-    ""
+    "The terminal behind us suddenly crackles. When I turn around, my file is still open, but the M16 entry has vanished from the screen."
 
 # game/scenario/16_0_1_1_0.rpy:526
 translate english 6eaad599:
 
     # sael mefiant "Pourquoi diable il y a écrit Accès mnésique ?!"
-    sael mefiant ""
+    sael mefiant "Why the hell does it say 'Memory Access'?!"
 
 # game/scenario/16_0_1_1_0.rpy:527
 translate english e7be8c33:
 
     # sael colere "Qu'est-ce que c'est sensé vouloir dire..."
-    sael colere ""
+    sael colere "What the hell is that supposed to mean...?"
 
 # game/scenario/16_0_1_1_0.rpy:529
 translate english 060f5c52:
 
     # noam colere "Qu'on nous a trifouillé la mémoire !"
-    noam colere ""
+    noam colere "That someone's been messing with our memories!"
 
