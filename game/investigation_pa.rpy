@@ -75,6 +75,10 @@ init python:
         return None
 
     def investigation_pa_actor(action_id):
+        # J26 route Tomas : identifiant historique « iris » conservé
+        # pour les sauvegardes, mais c'est Sael qui assure les soins.
+        if store.investigation_pa_day == 26 and action_id == "iris":
+            return "sael"
         return INVESTIGATION_PA_INTERLOCUTORS.get(action_id)
 
     def investigation_pa_room_actions(room_id, rooms, actions):
