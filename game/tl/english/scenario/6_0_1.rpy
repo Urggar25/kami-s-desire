@@ -174,7 +174,7 @@ translate english a3e03d3b:
 translate english 64e9199c:
 
     # kami "Mes relevés comportementaux indiquent une baisse notable de votre capacité à produire quelque chose d'intéressant."
-    kami "My behavioral readings indicate a significant decline in your ability to produce anything interesting."
+    kami "My behavior logs show a worrying drop in your ability to do anything remotely entertaining."
 # game/scenario/6_0_1.rpy:172
 translate english 8ddff526:
 
@@ -464,7 +464,7 @@ translate english 4249680d:
 translate english 2cc7f91a:
 
     # elias "Kami joue toujours son rôle. C'est son truc."
-    elias "Kami is always playing a part. That's her thing."
+    elias "Kami's always putting on a show. That's her whole thing."
 # game/scenario/6_0_1.rpy:347
 translate english 1e7097cc:
 
@@ -734,7 +734,7 @@ translate english a367e5a9:
 translate english 80c05e35:
 
     # kami "Immédiatement, même."
-    kami "Immediately, even."
+    kami "Right this second, in fact."
 # game/scenario/6_0_1.rpy:465
 translate english b78ead97:
 
@@ -1044,7 +1044,7 @@ translate english 519f863b_2:
 translate english 86bc78df:
 
     # kami "Interaction insuffisante."
-    kami "Insufficient interaction."
+    kami "Not enough interaction."
 # game/scenario/6_0_1.rpy:643
 translate english c2153e4b:
 
@@ -1374,7 +1374,7 @@ translate english fd07f7e0:
 translate english a7877dc3:
 
     # tomas "J’ai entendu libre circulation."
-    tomas "I heard free movement."
+    tomas "I distinctly heard 'freedom of movement.'"
 # game/scenario/6_0_1.rpy:849
 translate english 71c44597:
 
@@ -1604,7 +1604,7 @@ translate english ae2e27e8:
 translate english 736a629c:
 
     # iris "J'adore quand tu annonces le programme. Cela dit, ça ne change pas beaucoup de d'habitude."
-    iris "I love it when you announce the agenda. Though it isn't much different from usual."
+    iris "Oh, I love it when you give us the schedule. Not that it's much different from any other day."
 # game/scenario/6_0_1.rpy:936
 translate english 320e4fca:
 
@@ -1989,7 +1989,7 @@ translate english fb9a6984:
 translate english 94592af3:
 
     # julian "Nous aurions pu défendre le principe malgré la panne. Nous avons choisi le retrait."
-    julian "We could have defended the principle despite the breakdown. We chose to back away."
+    julian "We could've stood up for the principle, even with the system breaking down. Instead, we backed off."
 # game/scenario/6_0_1.rpy:1183
 translate english 93a016cd:
 
@@ -2289,7 +2289,7 @@ translate english cd594985:
 translate english 633c75ee:
 
     # tomas "Je veux être sûr que Kami n'a pas appliqué une pénalité par rapport à ce vote..."
-    tomas "I want to make sure Kami didn't apply a penalty because of this vote..."
+    tomas "I want to make sure Kami hasn't imposed some kind of penalty because of this vote..."
 # game/scenario/6_0_1.rpy:1326
 translate english bd718c9a:
 
@@ -2630,7 +2630,7 @@ translate english a704626b:
 translate english e04d30de:
 
     # kami "Eh bien bonjouur à tous ! Aujourd'hui est le jour que vous attendez tant ! C'est jour de vote !"
-    kami "Well, goooood morning, everyone! Today is the day you've all been waiting for! It's voting day!"
+    kami "Well, goooood morning, everyone! Today's the day you've all been waiting for! VOTING DAY!"
 # game/scenario/6_0_1.rpy:41
 translate english c31db4cb:
 
@@ -3231,7 +3231,7 @@ translate english j601_sael_vote_animation_b7f30dd6:
 translate english j601_sael_vote_animation_4e5dda21:
 
     # kami "Prévis—ble. Décevant. Mais prévisible."
-    kami "Predic—table. Disappointing. But predictable."
+    kami "Predic—table. Disappointing. But oh, so predictable."
 # game/scenario/6_0_1.rpy:811
 translate english j601_sael_vote_animation_9f5d0810:
 
