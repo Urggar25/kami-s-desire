@@ -4,7 +4,7 @@ default investigation_pa_remaining = 0
 default investigation_pa_max = 5
 default investigation_pa_day = 0
 default investigation_pa_completed = []
-default investigation_pa_room = "dortoir"
+default investigation_pa_current_room = "dortoir"
 default investigation_pa_selected = ""
 
 init python:
