@@ -1760,673 +1760,673 @@ translate english bd46902d:
 translate english f36589ee:
 
     # tomas raison "Tu nous as dit que tu pouvais pas intervenir dans les manigances du Conclave. Si M16 a un rapport avec tout ça, alors tu sais forcément quelque chose."
-    tomas raison ""
+    tomas raison "You told us you couldn't interfere with anything going on behind the scenes at the Conclave. If M16 has anything to do with that, you must know something."
 
 # game/scenario/17_0_1_1_0.rpy:339
 translate english a74e14f6:
 
     # kami "Et je maintiens ce que j'ai dit. Je ne peux prendre part à aucune manigance du Conclave."
-    kami ""
+    kami "And I stand by what I said. I cannot take part in any of the Conclave's machinations."
 
 # game/scenario/17_0_1_1_0.rpy:342
 translate english d39c4d84:
 
     # tomas "Ce n'est pas une réponse."
-    tomas ""
+    tomas "That's not an answer."
 
 # game/scenario/17_0_1_1_0.rpy:345
 translate english 86aa0c1b:
 
     # kami "C'est pourtant la seule que je peux vous donner."
-    kami ""
+    kami "It's the only answer I can give you."
 
 # game/scenario/17_0_1_1_0.rpy:348
 translate english fdaf7877:
 
     # ryn colere "Tu sais quelque chose."
-    ryn colere ""
+    ryn colere "You know something."
 
 # game/scenario/17_0_1_1_0.rpy:351
 translate english 2ccd9615:
 
     # kami "Probablement."
-    kami ""
+    kami "Probably."
 
 # game/scenario/17_0_1_1_0.rpy:354
 translate english 16c5b7af:
 
     # ryn colere2 "Alors parle !"
-    ryn colere2 ""
+    ryn colere2 "Then spit it out!"
 
 # game/scenario/17_0_1_1_0.rpy:378
 translate english 8ac2d71e:
 
     # "Ryn fait un pas vers l'écran comme s'il pouvait atteindre Kami à travers lui. Sael lui attrape le bras avant même qu'il ne réalise ce qu'il fait."
-    ""
+    "Ryn takes a step toward the screen as though he could reach Kami through it. Sael grabs his arm before he even realizes what he's doing."
 
 # game/scenario/17_0_1_1_0.rpy:380
 translate english 0afa06d0:
 
     # sael desaccord "Ryn."
-    sael desaccord ""
+    sael desaccord "Ryn."
 
 # game/scenario/17_0_1_1_0.rpy:382
 translate english 06216726:
 
     # "Il s'arrête, le souffle court."
-    ""
+    "He stops, breathing hard."
 
 # game/scenario/17_0_1_1_0.rpy:384
 translate english 462ce84d:
 
     # nyra neutre "Très bien."
-    nyra neutre ""
+    nyra neutre "Fine."
 
 # game/scenario/17_0_1_1_0.rpy:386
 translate english bdf29bb0:
 
     # "Elle ferme sa tablette."
-    ""
+    "She closes her tablet."
 
 # game/scenario/17_0_1_1_0.rpy:388
 translate english 3ec9b60a:
 
     # nyra "Alors arrêtons."
-    nyra ""
+    nyra "Then let's stop."
 
 # game/scenario/17_0_1_1_0.rpy:391
 translate english 65e10897:
 
     # elen inquiet "Arrêtons quoi ?"
-    elen inquiet ""
+    elen inquiet "Stop what?"
 
 # game/scenario/17_0_1_1_0.rpy:393
 translate english 3385a025:
 
     # nyra "De participer."
-    nyra ""
+    nyra "Participating."
 
 # game/scenario/17_0_1_1_0.rpy:395
 translate english d46ac2b1:
 
     # "Plusieurs regards convergent vers elle."
-    ""
+    "Several people turn to her."
 
 # game/scenario/17_0_1_1_0.rpy:397
 translate english a3d3c875:
 
     # nyra raison "On est censés voter librement, en sachant ce qu'on fait. Là, on découvre M16 dans tous nos dossiers et celle qui organise les votes refuse même de nous dire ce que c'est."
-    nyra raison ""
+    nyra raison "We're supposed to vote freely, knowing what we're doing. Instead, we discover M16 in all our files, and the one running the votes won't even tell us what it is."
 
 # game/scenario/17_0_1_1_0.rpy:399
 translate english 978cfdf0:
 
     # tomas inquiet "Nyra..."
-    tomas inquiet ""
+    tomas inquiet "Nyra..."
 
 # game/scenario/17_0_1_1_0.rpy:401
 translate english 436fdfdf:
 
     # nyra "Alors non. Faire comme si nos décisions étaient encore éclairées, ça n'a plus aucun sens."
-    nyra ""
+    nyra "Then no. Pretending we're still making informed decisions makes no sense."
 
 # game/scenario/17_0_1_1_0.rpy:404
 translate english 6b5a7187:
 
     # elias neutre "Plus de votes."
-    elias neutre ""
+    elias neutre "No more votes."
 
 # game/scenario/17_0_1_1_0.rpy:406
 translate english 0cbbb8f1:
 
     # "Nyra tourne les yeux vers lui. Elias pose sa tasse avec un bruit sec."
-    ""
+    "Nyra looks at him. Elias sets his cup down with a sharp clack."
 
 # game/scenario/17_0_1_1_0.rpy:408
 translate english 46c66594:
 
     # elias colere "Tant qu'on sait pas ce qu'on nous a foutu dans le crâne, je vote plus pour rien."
-    elias colere ""
+    elias colere "Until we know what they did to our heads, I'm not voting on a damn thing."
 
 # game/scenario/17_0_1_1_0.rpy:410
 translate english 01dc96b0:
 
     # ryn determine "Moi non plus."
-    ryn determine ""
+    ryn determine "Me neither."
 
 # game/scenario/17_0_1_1_0.rpy:412
 translate english 7329d8a8:
 
     # mara colere "Pareil."
-    mara colere ""
+    mara colere "Same here."
 
 # game/scenario/17_0_1_1_0.rpy:415
 translate english a7636c17:
 
     # iris determine "Je vais certainement pas continuer à cocher des cases comme si de rien n'était."
-    iris determine ""
+    iris determine "I'm sure as hell not going to keep ticking boxes as if nothing happened."
 
 # game/scenario/17_0_1_1_0.rpy:417
 translate english 54b565e2:
 
     # lysa blase "Ça tombe bien, j'avais justement toujours rêvé de faire grève dans l'espace."
-    lysa blase ""
+    lysa blase "Perfect. I've always dreamed of going on strike in space."
 
 # game/scenario/17_0_1_1_0.rpy:419
 translate english ae749db2:
 
     # julian hesitation "Je suis d'accord, mais... attendez. Si on arrête tout, on balance peut-être notre seule chance de changer quoi que ce soit ici."
-    julian hesitation ""
+    julian hesitation "I agree, but... wait. If we stop everything, we might be throwing away our only chance to change anything here."
 
 # game/scenario/17_0_1_1_0.rpy:422
 translate english 2e1c965f:
 
     # tomas raison "C'est ça qui me fait peur. On devrait peut-être réfléchir deux minutes avant d'en faire une décision pour tout le monde."
-    tomas raison ""
+    tomas raison "That's what worries me. Maybe we should think for two minutes before making a decision for everyone."
 
 # game/scenario/17_0_1_1_0.rpy:424
 translate english 3101ed18:
 
     # nyra colere "Et voter demain comme si nous n'avions rien découvert serait plus raisonnable ?"
-    nyra colere ""
+    nyra colere "And voting tomorrow as if we found nothing would be more reasonable?"
 
 # game/scenario/17_0_1_1_0.rpy:426
 translate english d946b421:
 
     # tomas "Je n'ai pas dit ça."
-    tomas ""
+    tomas "I didn't say that."
 
 # game/scenario/17_0_1_1_0.rpy:428
 translate english 7484a75b:
 
     # nyra "Alors qu'est-ce que tu proposes ?"
-    nyra ""
+    nyra "Then what do you suggest?"
 
 # game/scenario/17_0_1_1_0.rpy:430
 translate english 9829cdbd:
 
     # tomas inquiet "Je dis juste qu'on devrait pas décider ça maintenant, alors que tout le monde est à cran."
-    tomas inquiet ""
+    tomas inquiet "I'm just saying we shouldn't decide this right now when everyone's on edge."
 
 # game/scenario/17_0_1_1_0.rpy:433
 translate english 6cc57cf3:
 
     # ryn colere "C'est pas de la colère. C'est du bon sens."
-    ryn colere ""
+    ryn colere "This isn't anger. It's common sense."
 
 # game/scenario/17_0_1_1_0.rpy:435
 translate english 19296f06:
 
     # mara mefiant "Pour une fois que je suis d'accord avec lui, notez la date."
-    mara mefiant ""
+    mara mefiant "Someone mark the date. For once, I agree with him."
 
 # game/scenario/17_0_1_1_0.rpy:438
 translate english 029177ca:
 
     # elen determine "Non. Nyra a raison."
-    elen determine ""
+    elen determine "No. Nyra's right."
 
 # game/scenario/17_0_1_1_0.rpy:440
 translate english 262611f5:
 
     # "Tout le monde se tourne vers Elen. Elle se lève à son tour."
-    ""
+    "Everyone turns to Elen. She stands up too."
 
 # game/scenario/17_0_1_1_0.rpy:442
 translate english a32e1fbd:
 
     # elen "Je... je crois que Nyra a raison. Si on continue les votes, pourquoi Kami nous répondrait ? On pourrait arrêter, non ?"
-    elen ""
+    elen "I... I think Nyra's right. If we keep voting, why would Kami ever answer us? We could stop, couldn't we?"
 
 # game/scenario/17_0_1_1_0.rpy:444
 translate english fda872b7:
 
     # elias joie "Voilà."
-    elias joie ""
+    elias joie "Exactly."
 
 # game/scenario/17_0_1_1_0.rpy:446
 translate english acd035be:
 
     # elen joie "Pas de réponses, pas de vote !"
-    elen joie ""
+    elen joie "No answers, no votes!"
 
 # game/scenario/17_0_1_1_0.rpy:448
 translate english 4f434e55:
 
     # "Un court silence."
-    ""
+    "A brief silence."
 
 # game/scenario/17_0_1_1_0.rpy:450
 translate english 5ad3dad4:
 
     # iris neutre "... Tu viens vraiment de faire un slogan ?"
-    iris neutre ""
+    iris neutre "...Did you seriously just make up a slogan?"
 
 # game/scenario/17_0_1_1_0.rpy:452
 translate english 2997eea8_3:
 
     # elen joie "Oui !"
-    elen joie ""
+    elen joie "Yes!"
 
 # game/scenario/17_0_1_1_0.rpy:454
 translate english ff967fba:
 
     # iris "Pourquoi t'as l'air aussi contente ?"
-    iris ""
+    iris "Why do you look so pleased with yourself?"
 
 # game/scenario/17_0_1_1_0.rpy:456
 translate english 7a14a68a:
 
     # elen hesitation "Je suis pas contente ! Enfin... j'essaie juste de nous motiver, hein."
-    elen hesitation ""
+    elen hesitation "I'm not pleased! I mean... I'm just trying to rally everyone, okay?"
 
 # game/scenario/17_0_1_1_0.rpy:459
 translate english fbd2d8b5:
 
     # mara rire "Non, non, laisse-la. Elle est lancée."
-    mara rire ""
+    mara rire "No, no, let her go. She's on a roll."
 
 # game/scenario/17_0_1_1_0.rpy:461
 translate english daee27d1:
 
     # elen determine "Pas de réponses—"
-    elen determine ""
+    elen determine "No answers—"
 
 # game/scenario/17_0_1_1_0.rpy:463
 translate english bcf1db74:
 
     # elias fatigue "Non."
-    elias fatigue ""
+    elias fatigue "No."
 
 # game/scenario/17_0_1_1_0.rpy:465
 translate english 32db816e:
 
     # mara rire "Si, attends, moi je veux entendre la suite."
-    mara rire ""
+    mara rire "Yes, wait, I want to hear the rest."
 
 # game/scenario/17_0_1_1_0.rpy:467
 translate english 9df7f566:
 
     # elen joie "Pas de vote !"
-    elen joie ""
+    elen joie "No votes!"
 
 # game/scenario/17_0_1_1_0.rpy:470
 translate english d45cd748:
 
     # lysa blase "On va tous mourir, mais au moins on aura eu une manif correcte."
-    lysa blase ""
+    lysa blase "We're all going to die, but at least we'll have staged a decent protest."
 
 # game/scenario/17_0_1_1_0.rpy:472
 translate english 40409ac7:
 
     # "Même Ryn laisse échapper un bref rire nerveux. La tension retombe à peine quelques secondes, puis Nyra revient vers l'écran."
-    ""
+    "Even Ryn lets out a brief, nervous laugh. The tension eases for all of a few seconds before Nyra turns back to the screen."
 
 # game/scenario/17_0_1_1_0.rpy:474
 translate english 4c4c7f53:
 
     # nyra determine "Tu as entendu. Pas de réponse sur M16, pas de vote. C'est aussi simple que ça."
-    nyra determine ""
+    nyra determine "You heard us. No answers about M16, no votes. It's that simple."
 
 # game/scenario/17_0_1_1_0.rpy:482
 translate english 6c001be7:
 
     # kami "C'est votre droit."
-    kami ""
+    kami "That's your right."
 
 # game/scenario/17_0_1_1_0.rpy:484
 translate english 8c5cf258:
 
     # "La réponse déstabilise tout le monde."
-    ""
+    "The answer throws everyone off."
 
 # game/scenario/17_0_1_1_0.rpy:487
 translate english b279c4c3:
 
     # nyra surpris "... Quoi ?"
-    nyra surpris ""
+    nyra surpris "...What?"
 
 # game/scenario/17_0_1_1_0.rpy:492
 translate english 27ef5ec4:
 
     # kami "Vous êtes libres de refuser de participer. Aucune règle ne vous oblige à déposer une proposition, débattre ou voter."
-    kami ""
+    kami "You're free to refuse to participate. No rule requires you to submit a proposal, debate, or vote."
 
 # game/scenario/17_0_1_1_0.rpy:495
 translate english ec97b391:
 
     # ryn desaccord "C'est tout ?"
-    ryn desaccord ""
+    ryn desaccord "That's it?"
 
 # game/scenario/17_0_1_1_0.rpy:498
 translate english 1f7b5811:
 
     # kami "Pas exactement."
-    kami ""
+    kami "Not quite."
 
 # game/scenario/17_0_1_1_0.rpy:500
 translate english 447c69ee:
 
     # "Le ton de Kami ne change pas. C'est justement ce qui me déplaît."
-    ""
+    "Kami's tone doesn't change. That's precisely what I don't like."
 
 # game/scenario/17_0_1_1_0.rpy:502
 translate english c518178f:
 
     # kami "Si les représentants refusent durablement d'exercer leur fonction, la phase finale du Conclave sera annulée."
-    kami ""
+    kami "If the representatives refuse to fulfill their duties for an extended period, the Conclave's final phase will be canceled."
 
 # game/scenario/17_0_1_1_0.rpy:505
 translate english b951388b:
 
     # tomas inquiet "Définis 'durablement'."
-    tomas inquiet ""
+    tomas inquiet "Define 'extended period.'"
 
 # game/scenario/17_0_1_1_0.rpy:508
 translate english 7cc9d852:
 
     # kami "Jusqu'au jour vingt-et-un."
-    kami ""
+    kami "Until day twenty-one."
 
 # game/scenario/17_0_1_1_0.rpy:511
 translate english 59ae93b6:
 
     # "Plus personne ne bouge."
-    ""
+    "Nobody moves."
 
 # game/scenario/17_0_1_1_0.rpy:514
 translate english 5532f167:
 
     # noam surpris "Le jour vingt-et-un ?"
-    noam surpris ""
+    noam surpris "Day twenty-one?"
 
 # game/scenario/17_0_1_1_0.rpy:517
 translate english 10f7cf73:
 
     # kami "Oui. Si votre mouvement de protestation se poursuit jusque-là, le Conclave prendra fin."
-    kami ""
+    kami "Yes. If your protest continues until then, the Conclave will end."
 
 # game/scenario/17_0_1_1_0.rpy:520
 translate english cb7db5ff:
 
     # iris inquiet "Attends. Il devait durer un mois."
-    iris inquiet ""
+    iris inquiet "Wait. It was supposed to last a month."
 
 # game/scenario/17_0_1_1_0.rpy:523
 translate english 4a183dfe:
 
     # kami "Il devait pouvoir durer un mois. Nuance."
-    kami ""
+    kami "It was supposed to be able to last a month. There's a difference."
 
 # game/scenario/17_0_1_1_0.rpy:526
 translate english 1a7084b3:
 
     # tomas colere "Mais c'était écrit nulle part dans les règles que tu nous as données !"
-    tomas colere ""
+    tomas colere "But that wasn't written anywhere in the rules you gave us!"
 
 # game/scenario/17_0_1_1_0.rpy:529
 translate english fda0c14d:
 
     # kami "Ce mécanisme relève de mes règles internes."
-    kami ""
+    kami "That mechanism falls under my internal rules."
 
 # game/scenario/17_0_1_1_0.rpy:532
 translate english 7543d859:
 
     # mara colere "Putain, encore elles."
-    mara colere ""
+    mara colere "Fuck. Those again."
 
 # game/scenario/17_0_1_1_0.rpy:535
 translate english 3a477b90:
 
     # kami "La troisième livraison, prévue au jour vingt-et-un, sera remplacée par une navette. Vous serez invités à quitter le Conclave et à retourner dans vos districts."
-    kami ""
+    kami "The third delivery, scheduled for day twenty-one, will be replaced by a shuttle. You'll be invited to leave the Conclave and return to your districts."
 
 # game/scenario/17_0_1_1_0.rpy:538
 translate english 815eaca3:
 
     # ryn colere "Et si on refuse de monter ?"
-    ryn colere ""
+    ryn colere "And if we refuse to board?"
 
 # game/scenario/17_0_1_1_0.rpy:545
 translate english cdaf8548:
 
     # kami "Nous pourrons examiner cette possibilité au jour vingt-et-un."
-    kami ""
+    kami "We can examine that possibility on day twenty-one."
 
 # game/scenario/17_0_1_1_0.rpy:547
 translate english 76da14f5:
 
     # "Ryn serre les poings. Personne ne relève la menace, si c'en est une."
-    ""
+    "Ryn clenches his fists. Nobody comments on the threat, if that's what it was."
 
 # game/scenario/17_0_1_1_0.rpy:552
 translate english 598fa61e:
 
     # nyra colere "Donc c'est ça, ta réponse ? Tu t'assois et t'attends quatre jours qu'on craque ?"
-    nyra colere ""
+    nyra colere "So that's your answer? You're just going to sit back and wait four days for us to crack?"
 
 # game/scenario/17_0_1_1_0.rpy:555
 translate english 58389d43:
 
     # kami "Je n'ai pas besoin de répondre à votre protestation."
-    kami ""
+    kami "I have no obligation to respond to your protest."
 
 # game/scenario/17_0_1_1_0.rpy:556
 translate english 06a3885b:
 
     # kami "Vous avez formulé une position. Je vous ai indiqué ses conséquences."
-    kami ""
+    kami "You've stated your position. I've informed you of the consequences."
 
 # game/scenario/17_0_1_1_0.rpy:557
 translate english 24dcb9d5:
 
     # kami "Enfin, les conséquences... Elles seront plutôt à assumer face aux gens que vous allez retrouver."
-    kami ""
+    kami "And speaking of consequences... those are something you'll have to face when you meet the people back home."
 
 # game/scenario/17_0_1_1_0.rpy:560
 translate english 1ea223b8:
 
     # kami "Vous croyez vraiment que cette excuse marchera pour justifier votre inaction ?"
-    kami ""
+    kami "Do you really think that excuse will justify your inaction?"
 
 # game/scenario/17_0_1_1_0.rpy:561
 translate english fb497b24:
 
     # kami "Que vous avez préféré abandonner au lieu de changer les règles de ce monde ?"
-    kami ""
+    kami "That you chose to give up instead of changing the rules of this world?"
 
 # game/scenario/17_0_1_1_0.rpy:564
 translate english e16ac5dc:
 
     # kami "Quoi qu'il en soit cette question est très intéréssante !"
-    kami ""
+    kami "In any case, what a fascinating question!"
 
 # game/scenario/17_0_1_1_0.rpy:565
 translate english f0401fa4:
 
     # kami "Votre mouvement est parfaitement compatible avec les règles du Conclave. Je vous encourage même à le poursuivre aussi longtemps que vous le jugerez nécessaire."
-    kami ""
+    kami "Your movement is entirely compatible with the Conclave's rules. I even encourage you to continue for as long as you deem necessary."
 
 # game/scenario/17_0_1_1_0.rpy:568
 translate english d58da5c4:
 
     # mara colere "Va te faire foutre."
-    mara colere ""
+    mara colere "Go fuck yourself."
 
 # game/scenario/17_0_1_1_0.rpy:571
 translate english 6966bbc3:
 
     # kami "Message reçu."
-    kami ""
+    kami "Message received."
 
 # game/scenario/17_0_1_1_0.rpy:577
 translate english c333114d:
 
     # "L'écran s'éteint."
-    ""
+    "The screen goes dark."
 
 # game/scenario/17_0_1_1_0.rpy:578
 translate english bdeacdbe:
 
     # "Personne ne parle. On pensait enfin tenir quelque chose contre elle. En fait, elle peut juste attendre qu'on craque."
-    ""
+    "Nobody speaks. We thought we'd finally found some leverage against her. Turns out she can just wait for us to break."
 
 # game/scenario/17_0_1_1_0.rpy:604
 translate english b67a3af0:
 
     # tomas inquiet "Quatre jours."
-    tomas inquiet ""
+    tomas inquiet "Four days."
 
 # game/scenario/17_0_1_1_0.rpy:606
 translate english 24a129d2:
 
     # nyra fatigue "J'ai entendu."
-    nyra fatigue ""
+    nyra fatigue "I heard."
 
 # game/scenario/17_0_1_1_0.rpy:608
 translate english e8340fb8:
 
     # tomas "Je dis pas qu'il faut céder. Je dis qu'on vient peut-être de réduire tout ce qu'il nous reste à quatre jours... et qu'on n'a aucun plan derrière."
-    tomas ""
+    tomas "I'm not saying we should give in. I'm saying we may have just reduced everything we have left to four days... and we don't have a plan beyond that."
 
 # game/scenario/17_0_1_1_0.rpy:610
 translate english 35ef1d23:
 
     # ryn colere "On en trouvera un."
-    ryn colere ""
+    ryn colere "We'll come up with one."
 
 # game/scenario/17_0_1_1_0.rpy:612
 translate english d51d5381:
 
     # tomas "Comment ?"
-    tomas ""
+    tomas "How?"
 
 # game/scenario/17_0_1_1_0.rpy:614
 translate english 3dbe08a3:
 
     # ryn "J'en sais rien, mais continuer à voter en souriant, c'est pas un plan non plus."
-    ryn ""
+    ryn "I don't know. But carrying on voting with a smile isn't a plan either."
 
 # game/scenario/17_0_1_1_0.rpy:617
 translate english 26d86112:
 
     # iris colere "Et on fait quoi si le jour vingt-et-un arrive et qu'on sait toujours rien ? On rentre chez nous avec une jolie mention 'procédure d'accès mnésique' dans le dossier et on reprend notre vie ?"
-    iris colere ""
+    iris colere "And what do we do if day twenty-one comes and we still know nothing? Go home with a nice little 'mnemonic access procedure' in our files and get on with our lives?"
 
 # game/scenario/17_0_1_1_0.rpy:619
 translate english fe4f5455:
 
     # lysa blase "Personnellement, j'avais prévu de faire comme si tout ça n'était jamais arrivé. Vu le thème du moment, quelqu'un pourra peut-être m'aider."
-    lysa blase ""
+    lysa blase "Personally, I was planning to pretend none of this ever happened. Given the theme lately, maybe someone can help me with that."
 
 # game/scenario/17_0_1_1_0.rpy:621
 translate english d8140cbc:
 
     # iris colere "Lysa."
-    iris colere ""
+    iris colere "Lysa."
 
 # game/scenario/17_0_1_1_0.rpy:623
 translate english b0dcb415:
 
     # lysa "Quoi ? Je préfère encore faire une blague de merde que commencer à paniquer."
-    lysa ""
+    lysa "What? I'd rather make a shitty joke than start panicking."
 
 # game/scenario/17_0_1_1_0.rpy:625
 translate english c03da0ec:
 
     # "Cette fois, personne ne lui répond."
-    ""
+    "This time, nobody answers her."
 
 # game/scenario/17_0_1_1_0.rpy:627
 translate english b3dd4ee0:
 
     # elen inquiet "On va trouver quelque chose."
-    elen inquiet ""
+    elen inquiet "We'll figure something out."
 
 # game/scenario/17_0_1_1_0.rpy:630
 translate english a117df69:
 
     # mara neutre "T'as rangé la pancarte imaginaire ?"
-    mara neutre ""
+    mara neutre "Put your imaginary protest sign away?"
 
 # game/scenario/17_0_1_1_0.rpy:632
 translate english c6314c2c:
 
     # elen colere "J'essayais juste de garder tout le monde ensemble !"
-    elen colere ""
+    elen colere "I was just trying to keep everyone together!"
 
 # game/scenario/17_0_1_1_0.rpy:636
 translate english 2403240f:
 
     # "Le ton de Mara est étrangement doux. Elen détourne les yeux."
-    ""
+    "Mara's voice is strangely gentle. Elen looks away."
 
 # game/scenario/17_0_1_1_0.rpy:641
 translate english f1e3fc94:
 
     # nyra neutre "On maintient la position pour aujourd'hui. Pas de vote, pas de nouvelle proposition."
-    nyra neutre ""
+    nyra neutre "We hold our position today. No votes, no new proposals."
 
 # game/scenario/17_0_1_1_0.rpy:643
 translate english b6d18a2d:
 
     # tomas reflechit "Et demain ?"
-    tomas reflechit ""
+    tomas reflechit "And tomorrow?"
 
 # game/scenario/17_0_1_1_0.rpy:645
 translate english 376bb96a:
 
     # nyra "Demain, on réévalue. Mais personne ne décide seul."
-    nyra ""
+    nyra "Tomorrow, we reassess. But nobody makes the decision alone."
 
 # game/scenario/17_0_1_1_0.rpy:647
 translate english acc9ba95:
 
     # ryn desaccord "Moi je change pas d'avis."
-    ryn desaccord ""
+    ryn desaccord "I'm not changing my mind."
 
 # game/scenario/17_0_1_1_0.rpy:649
 translate english be609410:
 
     # nyra "Je n'ai pas dit que tu devais."
-    nyra ""
+    nyra "I didn't say you had to."
 
 # game/scenario/17_0_1_1_0.rpy:651
 translate english 513e715e:
 
     # "Je reste un peu en retrait. Tout le monde discute désormais des quatre jours qui nous restent, de ce qu'on pourrait demander à Kami, de ce qu'on peut encore consulter dans les Archives."
-    ""
+    "I stay a little apart. Everyone is discussing the four days we have left, what we might ask Kami, and what we can still access in the archives."
 
 # game/scenario/17_0_1_1_0.rpy:652
 translate english 1038267c:
 
     # "Moi, je n'arrive pas à quitter M16 des yeux."
-    ""
+    "I can't take my eyes off M16."
 
 # game/scenario/17_0_1_1_0.rpy:654
 translate english 3e475fa2:
 
     # think "Tout le monde l'a."
-    think ""
+    think "Every one of us has it."
 
 # game/scenario/17_0_1_1_0.rpy:656
 translate english 1715bc26:
 
     # "Je devrais peut-être leur dire que j'ai réellement perdu une partie de ma soirée. Sael le sait. Kael aussi, plus ou moins."
-    ""
+    "Maybe I should tell them I really did lose part of last night. Sael knows. Kael does too, more or less."
 
 # game/scenario/17_0_1_1_0.rpy:657
 translate english 0eddfe67:
 
     # "Mais tant que je comprends pas ce qui m'est arrivé, j'ai aucune envie de balancer ça devant tout le monde. Pas encore."
-    ""
+    "But until I understand what happened to me, I can't bring myself to announce it to everyone. Not yet."
 
 # game/scenario/17_0_1_1_0.rpy:660
 translate english f457f4a8:
 
     # noam hesitation "Je vais retourner dans ma chambre."
-    noam hesitation ""
+    noam hesitation "I'm going back to my room."
 
 # game/scenario/17_0_1_1_0.rpy:662
 translate english 4506e771:
