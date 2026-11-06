@@ -4670,25 +4670,25 @@ translate english 0a1d06ac:
 translate english a7b14bf3:
 
     # nyra "Je sais. Et c'était stupide. Ça ne répond pas à ma question."
-    nyra ""
+    nyra "I know. And it was stupid. That doesn't answer my question."
 
 # game/scenario/13_0_1_1_0.rpy:536
 translate english e0ec8261:
 
     # tomas "Tu penses qu'il a une vraie raison ?"
-    tomas ""
+    tomas "You think he has a good reason?"
 
 # game/scenario/13_0_1_1_0.rpy:538
 translate english 40217be4:
 
     # nyra "Je pense surtout qu'on n'en sait rien."
-    nyra ""
+    nyra "I think we don't know enough to say."
 
 # game/scenario/13_0_1_1_0.rpy:540
 translate english 9ad13d35:
 
     # "Ryn souffle bruyamment."
-    ""
+    "Ryn exhales loudly."
 
 # game/scenario/13_0_1_1_0.rpy:542
 translate english b6345736:
@@ -4706,79 +4706,79 @@ translate english 491dd15b:
 translate english 778eb5c7:
 
     # tomas "On pourrait juste lui dire ça en face."
-    tomas ""
+    tomas "We could just say that to his face."
 
 # game/scenario/13_0_1_1_0.rpy:548
 translate english ab826714:
 
     # ryn "Je compte bien le faire."
-    ryn ""
+    ryn "Oh, I intend to."
 
 # game/scenario/13_0_1_1_0.rpy:550
 translate english 6d14e42d:
 
     # "Je recule légèrement du mur. Une partie de moi voudrait rester pour entendre la suite, mais je n'ai aucune envie qu'ils me surprennent à les écouter."
-    ""
+    "I edge away from the wall. Part of me wants to stay and hear the rest, but I don't want them catching me eavesdropping."
 
 # game/scenario/13_0_1_1_0.rpy:553
 translate english cceff405:
 
     # think "Mais Nyra n'a pas dit que j'avais tort."
-    think ""
+    think "But Nyra didn't say I was wrong."
 
 # game/scenario/13_0_1_1_0.rpy:555
 translate english 45fad737:
 
     # "Je repense à Goumi, au couloir, aux images qui manquent et à toutes les petites choses que j'ai essayé de mettre de côté parce qu'elles avaient l'air trop absurdes."
-    ""
+    "I think about Goumi, the corridor, the missing footage, and all the little things I've tried to brush aside because they seemed too ridiculous."
 
 # game/scenario/13_0_1_1_0.rpy:557
 translate english 62491c99:
 
     # think "Il faut que j'arrête de chercher un coupable au hasard."
-    think ""
+    think "I need to stop looking for someone to blame at random."
 
 # game/scenario/13_0_1_1_0.rpy:558
 translate english f4594b7d:
 
     # think "Je dois reprendre ce que je sais vraiment, depuis le début."
-    think ""
+    think "I need to go back over what I actually know, from the beginning."
 
 # game/scenario/13_0_1_1_0.rpy:560
 translate english 54f6c7f7:
 
     # "Je rebrousse chemin avant que quelqu'un ne tourne au croisement."
-    ""
+    "I retrace my steps before anyone turns the corner."
 
 # game/scenario/13_0_1_1_0.rpy:576
 translate english 9920196c:
 
     # "De retour dans ma chambre, je ferme la porte derrière moi puis reste quelques secondes la main sur la poignée. Le réflexe me fait presque rire : verrouillée ou non, cette porte ne protège plus grand-chose."
-    ""
+    "Back in my room, I shut the door and stand with my hand on the handle for a few seconds. The habit almost makes me laugh: locked or not, this door doesn't protect much anymore."
 
 # game/scenario/13_0_1_1_0.rpy:577
 translate english ff710ccc:
 
     # "L'emplacement vide du brouilleur me saute immédiatement aux yeux. Je détourne le regard et vais m'asseoir au bureau."
-    ""
+    "The empty space where the jammer used to be immediately catches my eye. I look away and sit down at the desk."
 
 # game/scenario/13_0_1_1_0.rpy:579
 translate english a3fa0126:
 
     # think "Très bien. Pas de théorie. Pas de traître choisi au hasard."
-    think ""
+    think "All right. No theories. No picking a traitor at random."
 
 # game/scenario/13_0_1_1_0.rpy:580
 translate english 59b19414:
 
     # think "Seulement ce que je sais."
-    think ""
+    think "Just what I know."
 
 # game/scenario/13_0_1_1_0.rpy:582
 translate english 7c86990d:
 
     # "Je prends une feuille et un stylo. Au lieu d'écrire des noms, je trace trois colonnes assez larges."
-    ""
+    "I take a sheet of paper and a pen. Instead of writing down names, I draw three wide columns."
 
 # game/scenario/13_0_1_1_0.rpy:584
 translate english 7bbb7671:
@@ -4790,325 +4790,325 @@ translate english 7bbb7671:
 translate english 8ec2010e:
 
     # "Dans la première colonne, je note les faits dont je suis sûr."
-    ""
+    "In the first column, I list the facts I'm certain of."
 
 # game/scenario/13_0_1_1_0.rpy:588
 translate english 4d6c3f6a:
 
     # "Des matériaux ont disparu de la réserve technique."
-    ""
+    "Materials have gone missing from the maintenance storeroom."
 
 # game/scenario/13_0_1_1_0.rpy:589
 translate english a9ef463e:
 
     # "La photo de Léa a été volée dans la chambre de Kael."
-    ""
+    "Léa's photo was stolen from Kael's room."
 
 # game/scenario/13_0_1_1_0.rpy:590
 translate english 1b3eb207:
 
     # "Mon dessin de Juliette a disparu lui aussi."
-    ""
+    "My drawing of Juliette disappeared too."
 
 # game/scenario/13_0_1_1_0.rpy:591
 translate english 2194b7cd:
 
     # "Une partie des images du couloir a été supprimée."
-    ""
+    "Part of the corridor footage was deleted."
 
 # game/scenario/13_0_1_1_0.rpy:593
 translate english 24b0701f:
 
     # "Je relis les quatre lignes avant de continuer. Rien de tout ça n'est une impression. Même si je me trompe sur le responsable, ces choses se sont réellement produites."
-    ""
+    "I reread the four lines before continuing. None of this is just a feeling. Even if I'm wrong about who's responsible, these things really happened."
 
 # game/scenario/13_0_1_1_0.rpy:599
 translate english 9b4ebe00:
 
     # "Dans la seconde colonne, j'écris ce qui reste beaucoup moins clair."
-    ""
+    "In the second column, I put what I'm much less sure about."
 
 # game/scenario/13_0_1_1_0.rpy:601
 translate english d7410d0e:
 
     # "La silhouette aperçue dans le couloir."
-    ""
+    "The silhouette in the corridor."
 
 # game/scenario/13_0_1_1_0.rpy:602
 translate english 45eed6ed:
 
     # "Les comportements qui ne correspondent pas toujours à mes souvenirs."
-    ""
+    "Behavior that doesn't always match my memories."
 
 # game/scenario/13_0_1_1_0.rpy:603
 translate english 7f3a8b65:
 
     # "Goumi persuadé, pendant quelques secondes, de m'avoir déjà servi ce matin."
-    ""
+    "Goumi being convinced, for a few seconds, that he'd served me coffee earlier that morning."
 
 # game/scenario/13_0_1_1_0.rpy:608
 translate english b700cdb8:
 
     # "Je m'arrête sur cette dernière ligne."
-    ""
+    "I stop on that last line."
 
 # game/scenario/13_0_1_1_0.rpy:610
 translate english f47d0bbb:
 
     # think "Il était fatigué."
-    think ""
+    think "He was tired."
 
 # game/scenario/13_0_1_1_0.rpy:611
 translate english bf86a115:
 
     # think "Ça peut vraiment être aussi simple que ça."
-    think ""
+    think "It really could be that simple."
 
 # game/scenario/13_0_1_1_0.rpy:613
 translate english 21f341c8:
 
     # "Je la laisse quand même. Si je commence à retirer tout ce qui me dérange sous prétexte que ça peut avoir une explication, cette feuille ne sert à rien."
-    ""
+    "I leave it there anyway. If I cross out everything uncomfortable just because it might have an explanation, this list is pointless."
 
 # game/scenario/13_0_1_1_0.rpy:615
 translate english 3f3f31e9:
 
     # "La troisième colonne reste vide."
-    ""
+    "The third column stays empty."
 
 # game/scenario/13_0_1_1_0.rpy:617
 translate english cc05737e:
 
     # think "Et le reste ?"
-    think ""
+    think "And the rest?"
 
 # game/scenario/13_0_1_1_0.rpy:619
 translate english 1c49664c:
 
     # "Je pose le stylo et regarde les deux premières colonnes."
-    ""
+    "I put down the pen and look at the first two columns."
 
 # game/scenario/13_0_1_1_0.rpy:620
 translate english d64bb3e1:
 
     # "Les vols me dérangent toujours autant, mais ce n'est pas leur valeur qui m'intéresse. Les matériaux peuvent servir à quelque chose. Pour la photo et le dessin, c'est différent."
-    ""
+    "The thefts still bother me, but it isn't the value of the stolen items that matters. Materials could be useful to someone. The photo and the drawing are different."
 
 # game/scenario/13_0_1_1_0.rpy:622
 translate english 909892a9:
 
     # think "Une photo de Léa. Un dessin de Juliette."
-    think ""
+    think "A picture of Léa. A drawing of Juliette."
 
 # game/scenario/13_0_1_1_0.rpy:623
 translate english ce746307:
 
     # think "Deux objets personnels. Deux représentations de quelqu'un qui compte pour nous."
-    think ""
+    think "Two personal objects. Two images of people who matter to us."
 
 # game/scenario/13_0_1_1_0.rpy:625
 translate english 27e45cef:
 
     # "Je souligne cette idée une fois. Pas davantage."
-    ""
+    "I underline that once. No more."
 
 # game/scenario/13_0_1_1_0.rpy:629
 translate english 05e72906:
 
     # think "Ça ne prouve rien."
-    think ""
+    think "That doesn't prove anything."
 
 # game/scenario/13_0_1_1_0.rpy:630
 translate english 2abc2c4b:
 
     # think "Mais au moins, c'est un point commun qui existe vraiment."
-    think ""
+    think "But at least it's a connection that really exists."
 
 # game/scenario/13_0_1_1_0.rpy:632
 translate english d97faa6e:
 
     # "Je note une nouvelle question à côté des deux lignes."
-    ""
+    "I write a new question beside those two lines."
 
 # game/scenario/13_0_1_1_0.rpy:634
 translate english 4dc59eb9:
 
     # "Pourquoi voler une image plutôt qu'un objet utile ?"
-    ""
+    "Why steal an image instead of something useful?"
 
 # game/scenario/13_0_1_1_0.rpy:636
 translate english 13a1eb58:
 
     # "Je passe ensuite aux caméras. Si quelqu'un a supprimé volontairement des images, il savait exactement ce qu'il voulait cacher. Si c'est Kami qui l'a fait, je ne comprends pas pourquoi elle aurait laissé le moindre doute."
-    ""
+    "Then I turn to the cameras. If someone deliberately deleted footage, they knew exactly what they wanted to hide. If Kami did it, I don't understand why she'd leave any doubt."
 
 # game/scenario/13_0_1_1_0.rpy:637
 translate english e8978457:
 
     # "Et si ce n'est pas Kami, alors quelqu'un ici possède des moyens que je ne comprends pas encore."
-    ""
+    "And if it wasn't Kami, someone here has access to tools or abilities I don't understand yet."
 
 # game/scenario/13_0_1_1_0.rpy:639
 translate english 9864f3e9:
 
     # think "Ça, c'est le problème."
-    think ""
+    think "That's the problem."
 
 # game/scenario/13_0_1_1_0.rpy:641
 translate english 5072e9e9:
 
     # "Je me recule sur ma chaise et regarde la feuille entière. Ce n'est pas une réponse, mais au moins je distingue mieux ce qui est réel de ce que je suis en train d'imaginer."
-    ""
+    "I lean back in my chair and look over the entire sheet. It's not an answer, but at least I can tell what's real from what I'm imagining."
 
 # game/scenario/13_0_1_1_0.rpy:643
 translate english 879faf7b:
 
     # think "Nyra a raison sur un point."
-    think ""
+    think "Nyra's right about one thing."
 
 # game/scenario/13_0_1_1_0.rpy:644
 translate english f3da9279:
 
     # think "Je peux être paranoïaque et avoir quand même remarqué quelque chose."
-    think ""
+    think "I can be paranoid and still have noticed something real."
 
 # game/scenario/13_0_1_1_0.rpy:646
 translate english 7c47fdad:
 
     # "Je prends mon vieux cahier noir dans le tiroir. J'ai toujours eu l'habitude d'y mettre les idées qui me passent par la tête, surtout quand j'ai besoin d'arrêter de tourner en rond."
-    ""
+    "I take my old black notebook out of the drawer. I've always used it to jot down whatever's on my mind, especially when I need to stop going in circles."
 
 # game/scenario/13_0_1_1_0.rpy:647
 translate english 65f9718f:
 
     # "Le cahier est exactement là où je pensais l'avoir laissé. Je le pose à côté de la feuille et commence à chercher une page vide."
-    ""
+    "The notebook is exactly where I thought I'd left it. I set it beside the sheet and look for a blank page."
 
 # game/scenario/13_0_1_1_0.rpy:649
 translate english ce1011f9:
 
     # "Je tourne une première page, puis une deuxième."
-    ""
+    "I turn one page, then another."
 
 # game/scenario/13_0_1_1_0.rpy:650
 translate english eaefc6a7:
 
     # "Ma main s'arrête au milieu du geste."
-    ""
+    "My hand stops halfway through."
 
 # game/scenario/13_0_1_1_0.rpy:654
 translate english 6e80e7e5:
 
     # "Je connais ce dessin."
-    ""
+    "I know this drawing."
 
 # game/scenario/13_0_1_1_0.rpy:656
 translate english db3c127d:
 
     # "Pendant une seconde, je crois avoir ouvert la mauvaise page. Puis je comprends que ce n'est pas possible."
-    ""
+    "For a second, I think I've opened the wrong page. Then I realize that's impossible."
 
 # game/scenario/13_0_1_1_0.rpy:658
 translate english 98a8814f:
 
     # "Quelqu'un a reproduit le dessin de Juliette dans mon cahier."
-    ""
+    "Someone has reproduced Juliette's drawing in my notebook."
 
 # game/scenario/13_0_1_1_0.rpy:660
 translate english e1d63d20:
 
     # "Les traits suivent presque parfaitement les miens. La forme du visage, les cheveux, le pli du vêtement, tout est assez proche pour que je reconnaisse immédiatement l'original."
-    ""
+    "The lines follow my own almost perfectly. The shape of her face, her hair, the fold of her clothes—everything is close enough for me to recognize the original immediately."
 
 # game/scenario/13_0_1_1_0.rpy:661
 translate english 674d5168:
 
     # "Mais ce n'est pas mon dessin. Le trait est plus sombre et légèrement plus appuyé, comme si la personne avait repassé plusieurs fois sur certaines lignes."
-    ""
+    "But it isn't my drawing. The strokes are darker, a little heavier, as though someone went over certain lines several times."
 
 # game/scenario/13_0_1_1_0.rpy:663
 translate english 0c344ca3:
 
     # "Je rapproche le cahier de la lampe."
-    ""
+    "I move the notebook closer to the lamp."
 
 # game/scenario/13_0_1_1_0.rpy:665
 translate english e4773575:
 
     # think "Je n'ai jamais fait ça."
-    think ""
+    think "I never did this."
 
 # game/scenario/13_0_1_1_0.rpy:666
 translate english f59aa5ea:
 
     # think "Je n'ai même pas sorti ce cahier depuis plusieurs jours."
-    think ""
+    think "I haven't even taken this notebook out in days."
 
 # game/scenario/13_0_1_1_0.rpy:668
 translate english 7b59a63c:
 
     # "Je tourne les pages avant et après. Rien d'autre n'a changé. Aucun mot ajouté, aucune feuille arrachée, aucune trace qui m'aide à comprendre quand quelqu'un a pu toucher au cahier."
-    ""
+    "I flip through the pages on either side. Nothing else has changed. No new words, no torn pages, no clue as to when someone could have touched it."
 
 # game/scenario/13_0_1_1_0.rpy:670
 translate english 128d708f:
 
     # "Je reviens au dessin."
-    ""
+    "I return to the drawing."
 
 # game/scenario/13_0_1_1_0.rpy:675
 translate english ce4877fc:
 
     # think "Quelqu'un est entré ici."
-    think ""
+    think "Someone came in here."
 
 # game/scenario/13_0_1_1_0.rpy:676
 translate english 496e4aeb:
 
     # think "Ou alors quelqu'un l'a pris sans que je m'en rende compte."
-    think ""
+    think "Or someone took it without me noticing."
 
 # game/scenario/13_0_1_1_0.rpy:678
 translate english 2c5a0983:
 
     # "Je regarde la porte, puis l'emplacement désormais vide du brouilleur. L'idée de demander à Kami me traverse l'esprit avant que je l'écarte aussitôt."
-    ""
+    "I look at the door, then the empty space where the jammer used to be. For a moment I consider asking Kami, then immediately dismiss the idea."
 
 # game/scenario/13_0_1_1_0.rpy:680
 translate english 2e17059d:
 
     # think "Si elle sait, elle ne me dira probablement rien."
-    think ""
+    think "If she knows, she probably won't tell me."
 
 # game/scenario/13_0_1_1_0.rpy:681
 translate english 530cf608:
 
     # think "Et si elle ne sait pas, c'est encore pire."
-    think ""
+    think "And if she doesn't know, that's even worse."
 
 # game/scenario/13_0_1_1_0.rpy:683
 translate english c75984ac:
 
     # "Je garde les deux versions en tête. Les changements sont trop précis, trop choisis pour être de simples erreurs de copie."
-    ""
+    "I keep both versions in mind. The changes are too precise, too deliberate to be simple copying mistakes."
 
 # game/scenario/13_0_1_1_0.rpy:685
 translate english 58075912:
 
     # think "C'est volontaire."
-    think ""
+    think "Someone did this on purpose."
 
 # game/scenario/13_0_1_1_0.rpy:687
 translate english d3398cc7:
 
     # "Je voudrais trouver une autre explication, me dire que je me souviens mal du dessin ou que la copie est simplement imparfaite. Mais quelqu'un a reproduit assez précisément chaque détail pour que cette petite différence ressorte encore davantage."
-    ""
+    "I want another explanation—to tell myself I'm misremembering the drawing, or that the copy is just imperfect. But someone reproduced every detail so accurately that the tiny differences stand out even more."
 
 # game/scenario/13_0_1_1_0.rpy:689
 translate english 82ea3982:
 
     # "Je referme le cahier, puis le rouvre presque aussitôt. Le dessin est toujours là."
-    ""
+    "I close the notebook, then almost immediately open it again. The drawing is still there."
 
 # game/scenario/13_0_1_1_0.rpy:691
 translate english be631f2b:
@@ -5120,41 +5120,41 @@ translate english be631f2b:
 translate english f04db993:
 
     # "Aucune réponse ne vient. Seulement le bourdonnement discret de la ventilation et le silence trop propre de la chambre."
-    ""
+    "No answer comes. Just the faint hum of the ventilation and the room's unnaturally clean silence."
 
 # game/scenario/13_0_1_1_0.rpy:695
 translate english 0bf0b79d:
 
     # "Je regarde la feuille posée à côté du cahier. La troisième colonne est toujours vide."
-    ""
+    "I look at the sheet beside the notebook. The third column is still empty."
 
 # game/scenario/13_0_1_1_0.rpy:696
 translate english c91905aa:
 
     # "Je reprends lentement mon stylo et écris une seule ligne dedans."
-    ""
+    "I slowly pick up my pen and write a single line in it."
 
 # game/scenario/13_0_1_1_0.rpy:698
 translate english 96d7c98d:
 
     # "Quelqu'un a copié le dessin de Juliette dans mon cahier."
-    ""
+    "Someone copied Juliette's drawing into my notebook."
 
 # game/scenario/13_0_1_1_0.rpy:700
 translate english 594152e7:
 
     # "Je reste quelques secondes avec la pointe du stylo sur le papier, puis ajoute juste en dessous :"
-    ""
+    "I hold the pen against the paper for a few seconds, then add underneath:"
 
 # game/scenario/13_0_1_1_0.rpy:702
 translate english d4f353e2:
 
     # "Je ne sais pas comment."
-    ""
+    "I don't know how."
 
 # game/scenario/13_0_1_1_0.rpy:704
 translate english b4e025f9:
 
     # "Cette fois, je ne raye rien."
-    ""
+    "This time, I don't cross anything out."
 
