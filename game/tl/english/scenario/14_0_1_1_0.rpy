@@ -5354,31 +5354,31 @@ translate english 16b91e97:
 translate english a84d05b2:
 
     # ryn colere "Tu te calmes deux minutes et je te lâche."
-    ryn colere ""
+    ryn colere "Calm down for two minutes and I'll let go."
 
 # game/scenario/14_0_1_1_0.rpy:434
 translate english 358a5107:
 
     # noam colere "Je vais pas me calmer pendant que vous me retenez de force !"
-    noam colere ""
+    noam colere "I'm not calming down while you're holding me against my will!"
 
 # game/scenario/14_0_1_1_0.rpy:436
 translate english 44906414:
 
     # sael colere "Ryn, ne l'étrangle pas."
-    sael colere ""
+    sael colere "Ryn, don't choke him."
 
 # game/scenario/14_0_1_1_0.rpy:437
 translate english 9d4bb4a0:
 
     # ryn agace "Je l'étrangle pas."
-    ryn agace ""
+    ryn agace "I'm not choking him."
 
 # game/scenario/14_0_1_1_0.rpy:438
 translate english a70d0ebb:
 
     # noam colere "Ah oui ? C'est super confortable !"
-    noam colere ""
+    noam colere "Oh, really? Well, this feels GREAT!"
 
 # game/scenario/14_0_1_1_0.rpy:440
 translate english 339ac5b1:
@@ -5390,37 +5390,37 @@ translate english 339ac5b1:
 translate english a1f123f8_1:
 
     # noam inquiet "C'est quoi ?"
-    noam inquiet ""
+    noam inquiet "What's that?"
 
 # game/scenario/14_0_1_1_0.rpy:443
 translate english 74ce953e:
 
     # sael neutre "Du sel."
-    sael neutre ""
+    sael neutre "Salt."
 
 # game/scenario/14_0_1_1_0.rpy:444
 translate english f01fc517:
 
     # noam blase "... Vous êtes sérieux là ?!"
-    noam blase ""
+    noam blase "...You're seriously doing this?!"
 
 # game/scenario/14_0_1_1_0.rpy:446
 translate english 8164302d:
 
     # sael colere "Chez moi, on faisait ça quand quelqu'un revenait des zones mortes. Je veux juste être sûre."
-    sael colere ""
+    sael colere "Back home, we did this whenever someone returned from the dead zones. I just want to make sure."
 
 # game/scenario/14_0_1_1_0.rpy:447
 translate english 934f5d88:
 
     # noam colere "J'en ai rien à foutre de tes histoires de fantômes."
-    noam colere ""
+    noam colere "I don't give a shit about your ghost stories."
 
 # game/scenario/14_0_1_1_0.rpy:448
 translate english d0a0c861:
 
     # sael mefiant "Je sais que tu trouves ça idiot. Mais chez moi, ça servait à quelque chose."
-    sael mefiant ""
+    sael mefiant "I know you think it's stupid. But it served a purpose where I come from."
 
 # game/scenario/14_0_1_1_0.rpy:450
 translate english b472c0bd:
@@ -5432,19 +5432,19 @@ translate english b472c0bd:
 translate english efe3f39f_1:
 
     # noam inquiet "Sael..."
-    noam inquiet ""
+    noam inquiet "Sael..."
 
 # game/scenario/14_0_1_1_0.rpy:453
 translate english f571aaf9:
 
     # sael raison "Écoute, Noam. J'ai besoin de vérifier un truc. Après, je te laisse tranquille."
-    sael raison ""
+    sael raison "Listen, Noam. I need to check something. Then I'll leave you alone."
 
 # game/scenario/14_0_1_1_0.rpy:454
 translate english 54e857ec:
 
     # noam colere "Alors teste-le sur toi."
-    noam colere ""
+    noam colere "Then try it on yourself."
 
 # game/scenario/14_0_1_1_0.rpy:456
 translate english 9625d666:
@@ -5456,7 +5456,7 @@ translate english 9625d666:
 translate english 4a206500:
 
     # noam panique "Ne me touche pas."
-    noam panique ""
+    noam panique "Don't touch me."
 
 # game/scenario/14_0_1_1_0.rpy:460
 translate english 1a30d940:
@@ -5468,13 +5468,13 @@ translate english 1a30d940:
 translate english 24e990c5:
 
     # ryn colere "Arrête !"
-    ryn colere ""
+    ryn colere "Stop!"
 
 # game/scenario/14_0_1_1_0.rpy:463
 translate english 2c1c3c4e:
 
     # noam colere "LÂCHE-MOI !"
-    noam colere ""
+    noam colere "LET ME GO!"
 
 # game/scenario/14_0_1_1_0.rpy:465
 translate english c2d03089:
@@ -5486,7 +5486,7 @@ translate english c2d03089:
 translate english 18b7d4bf:
 
     # noam panique "PUTAIN !"
-    noam panique ""
+    noam panique "FUCK!"
 
 # game/scenario/14_0_1_1_0.rpy:473
 translate english 39105968:
@@ -5498,55 +5498,55 @@ translate english 39105968:
 translate english 9c2a49bc:
 
     # noam colere "T'es complètement malade !"
-    noam colere ""
+    noam colere "You're out of your mind!"
 
 # game/scenario/14_0_1_1_0.rpy:483
 translate english e1d49318:
 
     # sael determine "Regarde-moi."
-    sael determine ""
+    sael determine "Look at me."
 
 # game/scenario/14_0_1_1_0.rpy:484
 translate english 1d4f8fa2:
 
     # noam colere "Va te faire foutre."
-    noam colere ""
+    noam colere "Go fuck yourself."
 
 # game/scenario/14_0_1_1_0.rpy:485
 translate english 262d277c:
 
     # sael determine "Dis ton nom."
-    sael determine ""
+    sael determine "Say your name."
 
 # game/scenario/14_0_1_1_0.rpy:486
 translate english 3ee7b7fe_3:
 
     # noam colere "Non."
-    noam colere ""
+    noam colere "No."
 
 # game/scenario/14_0_1_1_0.rpy:488
 translate english 285bdf2c:
 
     # sael determine "Noam, dis ton nom."
-    sael determine ""
+    sael determine "Noam, say your name."
 
 # game/scenario/14_0_1_1_0.rpy:489
 translate english e495fb9a:
 
     # noam colere "Tu le connais très bien."
-    noam colere ""
+    noam colere "You know damn well what my name is."
 
 # game/scenario/14_0_1_1_0.rpy:490
 translate english 965979ea:
 
     # sael colere "DIS-LE !"
-    sael colere ""
+    sael colere "SAY IT!"
 
 # game/scenario/14_0_1_1_0.rpy:491
 translate english 2ac36f88:
 
     # noam panique "NON !"
-    noam panique ""
+    noam panique "NO!"
 
 # game/scenario/14_0_1_1_0.rpy:493
 translate english facf87d4:
@@ -5558,25 +5558,25 @@ translate english facf87d4:
 translate english ade87a8f:
 
     # ryn agace "Réponds juste et on avance."
-    ryn agace ""
+    ryn agace "Just answer and we can move on."
 
 # game/scenario/14_0_1_1_0.rpy:496
 translate english de936a29:
 
     # noam colere "Vous me plaquez contre un mur pour un exorcisme et c'est moi qui vous fais perdre du temps ?!"
-    noam colere ""
+    noam colere "You pin me to a wall for an exorcism and I'M wasting your time?!"
 
 # game/scenario/14_0_1_1_0.rpy:498
 translate english a7a21688:
 
     # sael mefiant "Qui es-tu ?"
-    sael mefiant ""
+    sael mefiant "Who are you?"
 
 # game/scenario/14_0_1_1_0.rpy:499
 translate english 75e0fb60:
 
     # noam colere "Quelqu'un qui va vous en coller une dès qu'il sera libre."
-    noam colere ""
+    noam colere "Someone who's going to punch you both the second I'm free."
 
 # game/scenario/14_0_1_1_0.rpy:501
 translate english aede66d7:
@@ -5588,7 +5588,7 @@ translate english aede66d7:
 translate english 3759dfb8:
 
     # sael determine "Il faut qu'il boive."
-    sael determine ""
+    sael determine "He needs to drink."
 
 # game/scenario/14_0_1_1_0.rpy:505
 translate english f8716061:
@@ -5600,19 +5600,19 @@ translate english f8716061:
 translate english 447b144e:
 
     # sael raison "C'est de l'eau."
-    sael raison ""
+    sael raison "It's water."
 
 # game/scenario/14_0_1_1_0.rpy:509
 translate english faca3b76:
 
     # noam colere "J'ai dit non."
-    noam colere ""
+    noam colere "I said no."
 
 # game/scenario/14_0_1_1_0.rpy:512
 translate english ad6f87e4:
 
     # noam panique "Ryn, ne fais pas ça."
-    noam panique ""
+    noam panique "Ryn, don't do this."
 
 # game/scenario/14_0_1_1_0.rpy:514
 translate english d27286b9:
@@ -5624,7 +5624,7 @@ translate english d27286b9:
 translate english 46227dcb:
 
     # noam peur "Me touche pas !"
-    noam peur ""
+    noam peur "Don't touch me!"
 
 # game/scenario/14_0_1_1_0.rpy:518
 translate english b4573798:
@@ -5636,13 +5636,13 @@ translate english b4573798:
 translate english 02abe97c:
 
     # ryn colere "Ouvre la bouche."
-    ryn colere ""
+    ryn colere "Open your mouth."
 
 # game/scenario/14_0_1_1_0.rpy:521
 translate english 1d4f8fa2_1:
 
     # noam colere "Va te faire foutre."
-    noam colere ""
+    noam colere "Go fuck yourself."
 
 # game/scenario/14_0_1_1_0.rpy:523
 translate english 8a17dcdd:
@@ -5654,7 +5654,7 @@ translate english 8a17dcdd:
 translate english 73c5ec3e:
 
     # noam panique "Mmh !"
-    noam panique ""
+    noam panique "Mmph!"
 
 # game/scenario/14_0_1_1_0.rpy:527
 translate english 6afa633f:
@@ -5666,7 +5666,7 @@ translate english 6afa633f:
 translate english c4b49e02:
 
     # noam peur "Mmh..."
-    noam peur ""
+    noam peur "Mmph..."
 
 # game/scenario/14_0_1_1_0.rpy:531
 translate english e3d4fd91:
@@ -5678,7 +5678,7 @@ translate english e3d4fd91:
 translate english 6e100d13:
 
     # ryn colere "Maintenant."
-    ryn colere ""
+    ryn colere "Now."
 
 # game/scenario/14_0_1_1_0.rpy:535
 translate english 242891e5:
@@ -5690,7 +5690,7 @@ translate english 242891e5:
 translate english ff788ead:
 
     # noam panique "MMPH !"
-    noam panique ""
+    noam panique "MMPH!"
 
 # game/scenario/14_0_1_1_0.rpy:539
 translate english 6bd44d86:
@@ -5702,7 +5702,7 @@ translate english 6bd44d86:
 translate english 3d1fee20:
 
     # ryn colere "Voilà."
-    ryn colere ""
+    ryn colere "There."
 
 # game/scenario/14_0_1_1_0.rpy:543
 translate english 94e1b73c:
@@ -5714,25 +5714,25 @@ translate english 94e1b73c:
 translate english e911509a:
 
     # noam panique "HAA— PUTAIN !"
-    noam panique ""
+    noam panique "HAA— FUCK!"
 
 # game/scenario/14_0_1_1_0.rpy:548
 translate english fdcae3ae:
 
     # noam colere "BANDE DE TARÉS !"
-    noam colere ""
+    noam colere "YOU'RE BOTH INSANE!"
 
 # game/scenario/14_0_1_1_0.rpy:550
 translate english 7fbbace7:
 
     # sael inquiet "Est-ce que tu sens quelque chose ?"
-    sael inquiet ""
+    sael inquiet "Do you feel anything?"
 
 # game/scenario/14_0_1_1_0.rpy:551
 translate english f5371e31:
 
     # noam colere "Oui ! J'ai envie de vous casser la gueule !"
-    noam colere ""
+    noam colere "Yeah! I feel like beating the shit out of you!"
 
 # game/scenario/14_0_1_1_0.rpy:553
 translate english 1a3e9bf0:
@@ -5744,13 +5744,13 @@ translate english 1a3e9bf0:
 translate english a4d5c452:
 
     # sael raison "Tu entends quelque chose ?"
-    sael raison ""
+    sael raison "Do you hear anything?"
 
 # game/scenario/14_0_1_1_0.rpy:556
 translate english 7145b391:
 
     # noam colere "J'entends surtout vos conneries."
-    noam colere ""
+    noam colere "Mostly the bullshit you're spouting."
 
 # game/scenario/14_0_1_1_0.rpy:569
 translate english 6058155f:
@@ -5762,19 +5762,19 @@ translate english 6058155f:
 translate english 9d342977:
 
     # ryn inquiet "Quoi ?!"
-    ryn inquiet ""
+    ryn inquiet "What?!"
 
 # game/scenario/14_0_1_1_0.rpy:582
 translate english 35e926ba:
 
     # noam peur "Vous avez pas entendu ?!"
-    noam peur ""
+    noam peur "Didn't you hear it?!"
 
 # game/scenario/14_0_1_1_0.rpy:584
 translate english 355eda79:
 
     # noam panique "LE CRI !"
-    noam panique ""
+    noam panique "THE SCREAM!"
 
 # game/scenario/14_0_1_1_0.rpy:586
 translate english df880ccf:
@@ -5786,25 +5786,25 @@ translate english df880ccf:
 translate english 5e7e4f68:
 
     # ryn inquiet "Y'a eu aucun cri."
-    ryn inquiet ""
+    ryn inquiet "Nobody screamed."
 
 # game/scenario/14_0_1_1_0.rpy:589
 translate english 9c8ff015:
 
     # noam peur "Si ! Je l'ai entendu !"
-    noam peur ""
+    noam peur "YES! I heard it!"
 
 # game/scenario/14_0_1_1_0.rpy:590
 translate english bd9e2018:
 
     # sael determine "D'où il venait ?"
-    sael determine ""
+    sael determine "Where did it come from?"
 
 # game/scenario/14_0_1_1_0.rpy:591
 translate english 0561a1a3:
 
     # noam colere "J'en sais rien ! Arrête de me regarder comme ça !"
-    noam colere ""
+    noam colere "I DON'T KNOW! Stop looking at me like that!"
 
 # game/scenario/14_0_1_1_0.rpy:595
 translate english 0d5336f6:
@@ -5822,43 +5822,43 @@ translate english ee9f28a7:
 translate english 04dd9df7:
 
     # noam panique "C'est le néon ! Ils font ça tout le temps ici !"
-    noam panique ""
+    noam panique "It's the fluorescent light! They do that all the time here!"
 
 # game/scenario/14_0_1_1_0.rpy:601
 translate english f0609664:
 
     # sael mefiant "Dis ton nom."
-    sael mefiant ""
+    sael mefiant "Say your name."
 
 # game/scenario/14_0_1_1_0.rpy:603
 translate english 3ee7b7fe_4:
 
     # noam colere "Non."
-    noam colere ""
+    noam colere "No."
 
 # game/scenario/14_0_1_1_0.rpy:604
 translate english 62317b90:
 
     # sael determine "Noam."
-    sael determine ""
+    sael determine "Noam."
 
 # game/scenario/14_0_1_1_0.rpy:605
 translate english 4c540f78:
 
     # noam panique "ARRÊTE !"
-    noam panique ""
+    noam panique "STOP!"
 
 # game/scenario/14_0_1_1_0.rpy:606
 translate english 2c016bdf:
 
     # sael colere "Dis ton nom !"
-    sael colere ""
+    sael colere "Say your name!"
 
 # game/scenario/14_0_1_1_0.rpy:607
 translate english 50868afc:
 
     # noam colere "NOAM ! CONTENTE ?!"
-    noam colere ""
+    noam colere "NOAM! HAPPY?!"
 
 # game/scenario/14_0_1_1_0.rpy:612
 translate english d68f5b7a:
@@ -5870,37 +5870,37 @@ translate english d68f5b7a:
 translate english ae129af2:
 
     # sael mefiant "..."
-    sael mefiant ""
+    sael mefiant "..."
 
 # game/scenario/14_0_1_1_0.rpy:618
 translate english ef8b8cc0:
 
     # noam panique "QU'EST-CE QU'IL Y A ?!"
-    noam panique ""
+    noam panique "WHAT IS IT?!"
 
 # game/scenario/14_0_1_1_0.rpy:619
 translate english b09dee8c:
 
     # sael determine "Encore."
-    sael determine ""
+    sael determine "Again."
 
 # game/scenario/14_0_1_1_0.rpy:620
 translate english 3ee7b7fe_5:
 
     # noam colere "Non."
-    noam colere ""
+    noam colere "No."
 
 # game/scenario/14_0_1_1_0.rpy:621
 translate english c1cb4097:
 
     # sael determine "Dis-le encore."
-    sael determine ""
+    sael determine "Say it again."
 
 # game/scenario/14_0_1_1_0.rpy:622
 translate english 79e165f8:
 
     # noam panique "J'AI DIT NON !"
-    noam panique ""
+    noam panique "I SAID NO!"
 
 # game/scenario/14_0_1_1_0.rpy:624
 translate english 8bd0e0de:
@@ -5918,43 +5918,43 @@ translate english ed9bd1bc:
 translate english 414bd83c:
 
     # ryn colere "Arrête, putain !"
-    ryn colere ""
+    ryn colere "Stop, damn it!"
 
 # game/scenario/14_0_1_1_0.rpy:632
 translate english 7ef51d30_1:
 
     # noam panique "LÂCHE-MOI !"
-    noam panique ""
+    noam panique "LET ME GO!"
 
 # game/scenario/14_0_1_1_0.rpy:633
 translate english c3993ce3:
 
     # sael determine "Ryn, tiens-le encore une seconde."
-    sael determine ""
+    sael determine "Ryn, hold him just one more second."
 
 # game/scenario/14_0_1_1_0.rpy:634
 translate english 415693ab:
 
     # ryn inquiet "Ça suffit, Sael."
-    ryn inquiet ""
+    ryn inquiet "That's enough, Sael."
 
 # game/scenario/14_0_1_1_0.rpy:635
 translate english d16524c6:
 
     # sael colere "Tu n'as pas vu sa réaction !"
-    sael colere ""
+    sael colere "You didn't see how he reacted!"
 
 # game/scenario/14_0_1_1_0.rpy:636
 translate english 173dcec0:
 
     # ryn colere "Il panique parce qu'on le tient contre un mur depuis cinq minutes !"
-    ryn colere ""
+    ryn colere "He's panicking because we've pinned him against a wall for five minutes!"
 
 # game/scenario/14_0_1_1_0.rpy:638
 translate english 77eece8b:
 
     # noam colere "ENFIN !"
-    noam colere ""
+    noam colere "FINALLY!"
 
 # game/scenario/14_0_1_1_0.rpy:640
 translate english ee1586db:
@@ -5984,7 +5984,7 @@ translate english 68c7e1b5:
 translate english 7998fe9e:
 
     # ryn surpris "GH—!"
-    ryn surpris ""
+    ryn surpris "GH—!"
 
 # game/scenario/14_0_1_1_0.rpy:653
 translate english 1e60db3e:
@@ -5996,7 +5996,7 @@ translate english 1e60db3e:
 translate english a14a091f:
 
     # noam colere "DÉGAGE !"
-    noam colere ""
+    noam colere "GET OFF ME!"
 
 # game/scenario/14_0_1_1_0.rpy:657
 translate english b9a48183:
@@ -6008,13 +6008,13 @@ translate english b9a48183:
 translate english 0fb95714:
 
     # ryn colere "Putain... arrête-le !"
-    ryn colere ""
+    ryn colere "Fuck... stop him!"
 
 # game/scenario/14_0_1_1_0.rpy:661
 translate english 58536839:
 
     # noam panique "RESTEZ LOIN DE MOI !"
-    noam panique ""
+    noam panique "STAY AWAY FROM ME!"
 
 # game/scenario/14_0_1_1_0.rpy:668
 translate english d7101dd2:
@@ -6026,7 +6026,7 @@ translate english d7101dd2:
 translate english 1eab610b:
 
     # sael inquiet "Noam !"
-    sael inquiet ""
+    sael inquiet "Noam!"
 
 # game/scenario/14_0_1_1_0.rpy:672
 translate english bc3fadec:
@@ -6038,7 +6038,7 @@ translate english bc3fadec:
 translate english 7a8405e8:
 
     # sael raison "Si tu entends encore le cri..."
-    sael raison ""
+    sael raison "If you hear that scream again..."
 
 # game/scenario/14_0_1_1_0.rpy:676
 translate english debcf800:
@@ -6050,13 +6050,13 @@ translate english debcf800:
 translate english 607940f2:
 
     # sael triste "Ne lui réponds pas."
-    sael triste ""
+    sael triste "Don't answer it."
 
 # game/scenario/14_0_1_1_0.rpy:680
 translate english a8cd9d8e:
 
     # noam panique "VA TE FAIRE FOUTRE !"
-    noam panique ""
+    noam panique "GO FUCK YOURSELF!"
 
 # game/scenario/14_0_1_1_0.rpy:682
 translate english f3d833a0:
@@ -6122,7 +6122,7 @@ translate english 05c365c4:
 translate english da6d6ddb:
 
     # noam fatigue "Quoi encore..."
-    noam fatigue ""
+    noam fatigue "What now..."
 
 # game/scenario/14_0_1_1_0.rpy:783
 translate english 515ff518:
@@ -6134,19 +6134,19 @@ translate english 515ff518:
 translate english b2531019:
 
     # noam reflexion "Vous faites quoi ?"
-    noam reflexion ""
+    noam reflexion "What are you two doing?"
 
 # game/scenario/14_0_1_1_0.rpy:795
 translate english da78e34e:
 
     # elias fatigue "Service public."
-    elias fatigue ""
+    elias fatigue "Public service."
 
 # game/scenario/14_0_1_1_0.rpy:797
 translate english 63ae1c22:
 
     # kael calme "Depuis qu'ils ont retiré les brouilleurs, Elias voulait un moyen simple de couper au moins l'image dans les chambres."
-    kael calme ""
+    kael calme "Since they took the jammers away, Elias wanted a simple way to block at least the cameras in our rooms."
 
 # game/scenario/14_0_1_1_0.rpy:799
 translate english b5e5606d:
@@ -6158,13 +6158,13 @@ translate english b5e5606d:
 translate english a269e954:
 
     # elias reflechit "On les pose directement devant l'objectif. Ça bloque rien d'autre, ça pirate rien, ça fait juste un cache."
-    elias reflechit ""
+    elias reflechit "They go right over the lens. They don't block anything else or hack anything. Just a cover."
 
 # game/scenario/14_0_1_1_0.rpy:803
 translate english 1141f569:
 
     # noam surpris "Vous avez fabriqué ça aujourd'hui ?"
-    noam surpris ""
+    noam surpris "You made these today?"
 
 # game/scenario/14_0_1_1_0.rpy:805
 translate english 90c10eea:
@@ -6176,7 +6176,7 @@ translate english 90c10eea:
 translate english 95112b84:
 
     # elias fatigue "Et on en a fait assez pour tout le monde, alors prends le tien avant que je regrette."
-    elias fatigue ""
+    elias fatigue "And we made one for everybody, so take yours before I change my mind."
 
 # game/scenario/14_0_1_1_0.rpy:809
 translate english 4514acad:
@@ -6188,19 +6188,19 @@ translate english 4514acad:
 translate english 289c9e99:
 
     # noam taquin "C'est étonnamment propre."
-    noam taquin ""
+    noam taquin "That's surprisingly neat."
 
 # game/scenario/14_0_1_1_0.rpy:813
 translate english a1bc9423:
 
     # elias colere "Va te faire foutre."
-    elias colere ""
+    elias colere "Go fuck yourself."
 
 # game/scenario/14_0_1_1_0.rpy:815
 translate english c69e107f:
 
     # kael sourire "Ça veut dire merci, chez lui."
-    kael sourire ""
+    kael sourire "That's how he says thank you."
 
 # game/scenario/14_0_1_1_0.rpy:817
 translate english f50396ac:
@@ -6212,13 +6212,13 @@ translate english f50396ac:
 translate english 136fbd99:
 
     # noam reflexion "Kami va adorer."
-    noam reflexion ""
+    noam reflexion "Kami's going to love this."
 
 # game/scenario/14_0_1_1_0.rpy:821
 translate english f95ee65f:
 
     # elias fatigue "Elle peut déposer une réclamation."
-    elias fatigue ""
+    elias fatigue "She can file a complaint."
 
 # game/scenario/14_0_1_1_0.rpy:823
 translate english 3a5a38c4:
