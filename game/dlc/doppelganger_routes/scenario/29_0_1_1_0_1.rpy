@@ -645,37 +645,29 @@ label _29_0_1_1_0_1_REUNION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
     "On se retrouve dans la salle du Conclave. J'ai demandé à tout le monde de venir parce que je ne veux plus discuter de la mort de Tomas par petits groupes, en inventant des morceaux d'histoire chacun de notre côté."
-    $ showGroup([("noam", "neutre", 0.22), ("iris", "fatigue", 0.48), ("julian", "fatigue", 0.74)])
+    $ showGroup([("noam", "neutre", 0.080), ("iris", "fatigue", 0.185), ("julian", "fatigue", 0.290), ("elen", "triste", 0.395), ("ryn", "agace", 0.500), ("sael", "neutre", 0.605), ("nyra", "neutre", 0.710), ("kael", "calme", 0.815), ("lysa", "neutre", 0.920)])
     julian reflexion "Bon. Tu nous as dit que t'avais quelque chose d'important."
     noam raison "Oui. Mais d'abord, Iris va vous expliquer ce qu'elle a trouvé."
     iris raison "L'hypothèse d'une intoxication par inhalation s'est renforcée. Avec le dispositif du conduit, l'homicide est désormais plus probable qu'un suicide."
-    $ showGroup([("noam", "neutre", 0.22), ("iris", "fatigue", 0.48), ("elen", "triste", 0.74)])
     elen inquiet "Donc... il s'est pas tué ?"
     iris fatigue "Je ne peux pas te le garantir. Mais je ne crois plus qu'on puisse continuer à parler d'un suicide probable."
-    $ showGroup([("noam", "neutre", 0.22), ("iris", "fatigue", 0.48), ("julian", "fatigue", 0.74)])
     julian fatigue "D'accord."
-    $ showGroup([("noam", "neutre", 0.22), ("ryn", "agace", 0.48), ("sael", "neutre", 0.74)])
     ryn agace "Et nous, on est encore dans la liste des suspects à cause de cette plante ?"
     sael calme "Ryn, laisse-le parler."
     noam raison "On va reprendre les éléments, sans essayer de choisir quelqu'un avant."
-    $ showGroup([("noam", "neutre", 0.22), ("nyra", "neutre", 0.48), ("elen", "triste", 0.74)])
     nyra neutre "C'est ce qu'il faut faire."
     elen triste "Je veux juste savoir. Même si c'est horrible, je préfère savoir."
     noam neutre "Ouais. Moi aussi."
     if "elias" in investigation_pa_completed or "kael" in investigation_pa_completed:
-        $ showGroup([("kael", "calme", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
         noam raison "J'ai revu le journal d'accès. Le lecteur enregistre un badge, pas la personne qui l'utilise."
         kael neutre "Exactement. Ça reste une piste, pas une identification."
     if "livraisons" in investigation_pa_completed or "sael" in investigation_pa_completed:
-        $ showGroup([("sael", "neutre", 0.22), ("iris", "fatigue", 0.48), ("noam", "neutre", 0.74)])
         noam raison "Les registres et l'origine de la plante ne permettent pas de désigner une personne."
         sael raison "Donc ne le faisons pas."
     if "elen" in investigation_pa_completed:
-        $ showGroup([("elen", "triste", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
         noam raison "On ne sait toujours pas qui a entendu l'échange de chambres."
         elen fatigue "J'aimerais tellement pouvoir vous répondre..."
         lysa raison "On sait. On peut pas te demander de te souvenir de tout."
-    $ showGroup([("iris", "fatigue", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     "J'affiche les photos de la chambre et du conduit sur la table. Il va falloir reprendre les arguments un par un."
     jump _29_0_1_1_0_1_OBJECTIONS
 # Durée : ~1m30.
@@ -737,28 +729,23 @@ label _29_0_1_1_0_1_OBJECTIONS:
 label _29_0_1_1_0_1_ACCUSATION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
-    $ showGroup([("julian", "fatigue", 0.22), ("iris", "fatigue", 0.48), ("noam", "neutre", 0.74)])
+    $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.200), ("noam", "neutre", 0.320), ("elen", "triste", 0.440), ("nyra", "neutre", 0.560), ("lysa", "neutre", 0.680), ("ryn", "agace", 0.800), ("sael", "neutre", 0.920)])
     julian reflexion "Tout ça, c'est bien joli, mais on sait toujours pas qui aurait pu faire ça."
     noam raison "Kael a trouvé un relevé. Un accès de maintenance a été ouvert à 02 h 17 la nuit de la mort de Tomas."
     iris surpris "Avec quel badge ?"
     noam reflexion "Celui de Nyra."
     pause 0.5
-    $ showGroup([("elen", "triste", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     elen surpris "Nyra ?"
     julian surpris "Attends, quoi ?!"
-    $ showGroup([("nyra", "neutre", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
     nyra neutre "Oui. Noam m'en a parlé. Je lui ai dit que je ne m'étais pas rendue dans la maintenance cette nuit-là."
     lysa raison "Le système a enregistré ton autorisation, pas ton visage."
     nyra raison "Exactement. Si mon badge a été utilisé par quelqu'un d'autre, ça ne dit rien sur moi."
-    $ showGroup([("julian", "fatigue", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
     julian inquiet "Mais tu l'avais avec toi ?"
     nyra reflexion "Normalement. Je ne peux pas certifier chaque minute de la nuit."
     noam neutre "Je peux pas prouver que tu étais dans le conduit. Mais je peux pas faire comme si ce relevé existait pas."
     nyra raison "Alors ne fais pas comme si c'était une vidéo de moi."
-    $ showGroup([("elen", "triste", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
     elen inquiet "Noam, tu soupçonnes Nyra ?"
     noam fatigue "Je soupçonne plusieurs personnes. Je vais devoir dire ce que je pense."
-    $ showGroup([("iris", "fatigue", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
     iris reflexion "Et tu sais que ça peut se retourner contre quelqu'un qui n'a rien fait."
     noam neutre "Je sais."
     "Je regarde les visages autour de la table. Même après tout ça, j'aimerais encore qu'Iris me dise qu'elle a trouvé une autre explication."
@@ -781,11 +768,8 @@ label _29_0_1_1_0_1_FAUSSE_ACCUSATION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
     if j29a_accuse == "julian":
-        $ showGroup([("noam", "inquiet", 0.22), ("nyra", "neutre", 0.48), ("julian", "fatigue", 0.74)])
     elif j29a_accuse == "ryn":
-        $ showGroup([("noam", "inquiet", 0.22), ("ryn", "agace", 0.48), ("sael", "neutre", 0.74)])
     else:
-        $ showGroup([("noam", "inquiet", 0.22), ("sael", "neutre", 0.48), ("elen", "triste", 0.74)])
     if j29a_accuse == "julian":
         noam raison "Julian. Tu lui en voulais, et tu l'as menacé devant tout le monde."
         julian colere "Je l'ai engueulé, oui ! Mais ça fait trois jours que je vous dis que je voulais pas sa mort !"
@@ -871,25 +855,18 @@ label _29_0_1_1_0_1_CONFRONTATION:
 label _29_0_1_1_0_1_CONSEQUENCE_NYRA:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
-    $ showGroup([("nyra", "neutre", 0.22), ("elen", "triste", 0.48), ("noam", "inquiet", 0.74)])
+    $ showGroup([("nyra", "neutre", 0.080), ("elen", "triste", 0.248), ("noam", "inquiet", 0.416), ("julian", "fatigue", 0.584), ("iris", "fatigue", 0.752), ("sael", "neutre", 0.920)])
     elen inquiet "Vous voulez l'enfermer ?"
-    $ showGroup([("nyra", "neutre", 0.22), ("julian", "fatigue", 0.48), ("noam", "inquiet", 0.74)])
     julian reflexion "On va quand même pas prendre une décision définitive avec une seule ligne dans un journal."
     noam raison "Pas une décision définitive. Mais le départ approche. Si elle peut accéder aux conduits, on peut pas juste faire comme si on avait rien trouvé."
     nyra neutre "Je n'ai touché à aucun conduit. Tu me crois ou non, c'est tout ce que je peux dire."
-    $ showGroup([("nyra", "neutre", 0.22), ("iris", "fatigue", 0.48), ("noam", "inquiet", 0.74)])
     iris raison "Ça n'est pas une preuve complète de culpabilité. Il faut être clair là-dessus."
-    $ showGroup([("nyra", "neutre", 0.22), ("sael", "neutre", 0.48), ("noam", "inquiet", 0.74)])
     sael reflexion "On peut néanmoins la placer sous surveillance jusqu'à ce qu'on puisse vérifier ce relevé."
-    $ showGroup([("nyra", "neutre", 0.22), ("elen", "triste", 0.48), ("noam", "inquiet", 0.74)])
     elen triste "Je veux pas qu'il arrive quelque chose à quelqu'un d'autre."
     nyra reflexion "Et moi, je dois accepter d'être enfermée parce qu'on n'a pas compris qui a utilisé mon badge ?"
-    $ showGroup([("nyra", "neutre", 0.22), ("julian", "fatigue", 0.48), ("noam", "inquiet", 0.74)])
     julian fatigue "Je sais pas quoi penser. Mais pour cette nuit, je préfère qu'on évite de laisser les accès techniques libres."
     noam neutre "On peut garder Nyra dans une chambre surveillée. Pas la condamner. On continuera l'enquête sur Terre."
-    $ showGroup([("nyra", "neutre", 0.22), ("iris", "fatigue", 0.48), ("noam", "inquiet", 0.74)])
     iris neutre "Si c'est provisoire et que personne n'y touche, je peux accepter. Je veux pouvoir lui parler si elle en a besoin."
-    $ showGroup([("nyra", "neutre", 0.22), ("sael", "neutre", 0.48), ("noam", "inquiet", 0.74)])
     sael raison "Je surveillerai la porte avec Kael. Et on conservera son badge séparément."
     nyra fatigue "..."
     pause 0.4
