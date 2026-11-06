@@ -4,7 +4,7 @@
 translate english KD_ROUTE_J9_ELEN_edca3aad:
 
     # "Elen sort de sa chambre en ajustant sa veste. Elle ralentit en me voyant."
-    ""
+    "Elen comes out of her room, adjusting her jacket. She slows down when she sees me."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:10
 translate english KD_ROUTE_J9_ELEN_7bc841e7:
@@ -22,13 +22,13 @@ translate english KD_ROUTE_J9_ELEN_88362704:
 translate english KD_ROUTE_J9_ELEN_00df9252:
 
     # elen "Avant sa panne. Les annonces, les votes, les journées qui se ressemblent..."
-    elen ""
+    elen "Before she broke down. The announcements, the votes, the days that all looked alike..."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:13
 translate english KD_ROUTE_J9_ELEN_a616600f:
 
     # noam "Elle a déjà repris ses habitudes, non ?"
-    noam ""
+    noam "She's already back to her old habits, isn't she?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:14
 translate english KD_ROUTE_J9_ELEN_a9344fc2:
@@ -40,7 +40,7 @@ translate english KD_ROUTE_J9_ELEN_a9344fc2:
 translate english KD_ROUTE_J9_ELEN_9236b12f:
 
     # noam "Moi aussi."
-    noam ""
+    noam "Me too."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:16
 translate english KD_ROUTE_J9_ELEN_1725bc9f:
@@ -58,7 +58,7 @@ translate english KD_ROUTE_J9_ELEN_228e2806:
 translate english KD_ROUTE_J9_TOMAS_253c5c48:
 
     # "Tomas consulte sa tablette près d'un croisement. Il relève les yeux quand j'approche."
-    ""
+    "Tomas is checking his tablet near an intersection. He looks up as I approach."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:29
 translate english KD_ROUTE_J9_TOMAS_7b29f83d:
@@ -70,19 +70,19 @@ translate english KD_ROUTE_J9_TOMAS_7b29f83d:
 translate english KD_ROUTE_J9_TOMAS_cda182ef:
 
     # noam "Tu travailles encore sur le texte ?"
-    noam ""
+    noam "Still working on the wording?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:31
 translate english KD_ROUTE_J9_TOMAS_1853a2cb:
 
     # tomas "Je vérifie qu'on parle bien de la même chose quand on dit « rétablir les échanges »."
-    tomas ""
+    tomas "I'm making sure we mean the same thing by 'restoring trade.'"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:32
 translate english KD_ROUTE_J9_TOMAS_effff413:
 
     # noam "Tu devrais peut-être poser la question pendant le débat."
-    noam ""
+    noam "Maybe you should bring that up during the debate."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:33
 translate english KD_ROUTE_J9_TOMAS_aa93d33f:
@@ -112,7 +112,7 @@ translate english KD_ROUTE_J9_TOMAS_727f395a:
 translate english KD_ROUTE_J10_LYSA_7d6ad236:
 
     # "Lysa apparaît au bout du couloir. Son regard s'arrête immédiatement sur mon visage."
-    ""
+    "Lysa appears at the end of the corridor. Her eyes go straight to my face."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:48
 translate english KD_ROUTE_J10_LYSA_f0314977:
@@ -124,13 +124,13 @@ translate english KD_ROUTE_J10_LYSA_f0314977:
 translate english KD_ROUTE_J10_LYSA_d3f56390:
 
     # noam "J'ai connu de meilleures nuits."
-    noam ""
+    noam "I've had better nights."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:50
 translate english KD_ROUTE_J10_LYSA_6388fee3:
 
     # lysa "Ça se voit. T'as une tête à faire peur à Goumi."
-    lysa ""
+    lysa "Yeah, I can tell. You look like you could scare Goumi."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:51
 translate english KD_ROUTE_J10_LYSA_8028a065:
@@ -154,19 +154,19 @@ translate english KD_ROUTE_J10_LYSA_6ac70416:
 translate english KD_ROUTE_J10_LYSA_2a999567:
 
     # lysa "D'accord. Mange quelque chose au moins, avant de t'écrouler."
-    lysa ""
+    lysa "Okay. At least get some food before you collapse."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:55
 translate english KD_ROUTE_J10_LYSA_fc0bc656:
 
     # noam "C'est ce que je comptais faire."
-    noam ""
+    noam "That's what I was planning."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:63
 translate english KD_ROUTE_J10_JULIAN_c89fa6ac:
 
     # "Julian est près de l'entrée de la salle commune. Il lève une main pour m'arrêter."
-    ""
+    "Julian is by the lounge entrance. He raises a hand to stop me."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:67
 translate english KD_ROUTE_J10_JULIAN_8367724c:
@@ -178,13 +178,13 @@ translate english KD_ROUTE_J10_JULIAN_8367724c:
 translate english KD_ROUTE_J10_JULIAN_91e69bcd:
 
     # noam "Pour ou contre quoi, exactement ?"
-    noam ""
+    noam "Voting for or against what, exactly?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:69
 translate english KD_ROUTE_J10_JULIAN_522dde66:
 
     # julian "Le prochain vote. J'essaie de prendre la température avant que Tomas sorte ses dossiers."
-    julian ""
+    julian "The next vote. I'm trying to read the room before Tomas breaks out his files."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:70
 translate english KD_ROUTE_J10_JULIAN_3dc94f22:
@@ -202,7 +202,7 @@ translate english KD_ROUTE_J10_JULIAN_dde42780:
 translate english KD_ROUTE_J10_JULIAN_1c51739c:
 
     # noam "Et toi, t'as choisi ?"
-    noam ""
+    noam "And you? Made up your mind?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:73
 translate english KD_ROUTE_J10_JULIAN_8695854e:
@@ -226,19 +226,19 @@ translate english KD_ROUTE_J10_JULIAN_9e8efae0:
 translate english KD_ROUTE_J11_NYRA_ec69c085:
 
     # "Nyra sort d'un couloir latéral et s'arrête en remarquant ma démarche."
-    ""
+    "Nyra comes out of a side corridor and stops when she notices the way I'm walking."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:87
 translate english KD_ROUTE_J11_NYRA_5ad7bb90:
 
     # nyra "Tu es sûr de pouvoir marcher jusque-là ?"
-    nyra ""
+    nyra "Are you sure you're up to walking that far?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:88
 translate english KD_ROUTE_J11_NYRA_a4454ded:
 
     # noam "Oui. Pourquoi ?"
-    noam ""
+    noam "Yeah. Why?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:89
 translate english KD_ROUTE_J11_NYRA_9e86033f:
@@ -250,13 +250,13 @@ translate english KD_ROUTE_J11_NYRA_9e86033f:
 translate english KD_ROUTE_J11_NYRA_81a069ff:
 
     # noam "J'en sais rien. Pas assez."
-    noam ""
+    noam "I don't know. Not enough."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:91
 translate english KD_ROUTE_J11_NYRA_3181ecb7:
 
     # nyra "Alors évite de prendre une décision importante dans cet état."
-    nyra ""
+    nyra "Then don't make any major decisions in this state."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:92
 translate english KD_ROUTE_J11_NYRA_fdffe582:
@@ -280,19 +280,19 @@ translate english KD_ROUTE_J11_NYRA_a84be97b:
 translate english KD_ROUTE_J11_NYRA_087eb7ed:
 
     # nyra "Et demande de l'aide si tu te sens mal."
-    nyra ""
+    nyra "And ask for help if you're not feeling well."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:103
 translate english KD_ROUTE_J12_JULIAN_bf2f65dc:
 
     # "Julian rejoint le croisement au même moment que moi, une tablette serrée sous le bras."
-    ""
+    "Julian reaches the intersection at the same time as me, a tablet tucked under his arm."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:107
 translate english KD_ROUTE_J12_JULIAN_e3666528:
 
     # julian "Alors, tu sais ce que tu vas voter ?"
-    julian ""
+    julian "So, do you know how you're voting?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:108
 translate english KD_ROUTE_J12_JULIAN_b126ab1f:
@@ -304,13 +304,13 @@ translate english KD_ROUTE_J12_JULIAN_b126ab1f:
 translate english KD_ROUTE_J12_JULIAN_3ad9518d:
 
     # julian "Ça me rassure presque. J'ai l'impression que tout le monde a déjà choisi son camp."
-    julian ""
+    julian "That's almost reassuring. Feels like everyone else has already picked a side."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:110
 translate english KD_ROUTE_J12_JULIAN_722170c8:
 
     # noam "Toi aussi ?"
-    noam ""
+    noam "Even you?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:111
 translate english KD_ROUTE_J12_JULIAN_8c130a33:
@@ -322,7 +322,7 @@ translate english KD_ROUTE_J12_JULIAN_8c130a33:
 translate english KD_ROUTE_J12_JULIAN_45911ed3:
 
     # noam "Au moins, on pourra écouter le débat."
-    noam ""
+    noam "At least we can hear the debate."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:113
 translate english KD_ROUTE_J12_JULIAN_cdee1e55:
@@ -340,39 +340,39 @@ translate english KD_ROUTE_J12_JULIAN_ab3824e7:
 translate english KD_ROUTE_J12_JULIAN_e06523fe:
 
     # julian "Profite de cette occasion historique."
-    julian ""
+    julian "Make the most of this historic occasion."
 
 translate english strings:
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:7
     old "Discuter avec Elen."
-    new ""
+    new "Talk to Elen."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:7
     old "Rejoindre le Conclave sans s'arrêter."
-    new ""
+    new "Head to the Conclave without stopping."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:26
     old "Écouter Tomas."
-    new ""
+    new "Listen to Tomas."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:26
     old "Continuer vers la salle du Conclave."
-    new ""
+    new "Continue to the Conclave chamber."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:64
     old "Entrer dans la salle commune."
-    new ""
+    new "Enter the lounge."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:84
     old "Parler à Nyra."
-    new ""
+    new "Talk to Nyra."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:84
     old "Continuer jusqu'à l'Observation."
-    new ""
+    new "Continue to the observation room."
 
     # game/scenario/optional_route_encounters_j9_j12.rpy:104
     old "Rejoindre directement le vote."
-    new ""
+    new "Go straight to the vote."
 
