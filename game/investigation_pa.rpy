@@ -101,7 +101,9 @@ screen investigation_pa_room(room_id, rooms, actions):
     # Sortie intégrée au décor : pas de menu permanent au bas de l'écran.
     # Le retour au couloir réactive CORRIDOR_NAVIGATION et ses portes natives.
     button:
-        xpos 0 ypos 250 xsize 140 ysize 620
+        # Ne pas recouvrir la bande de rotation native (44 px) ni le flacon
+        # interactif de la table de chevet d'Elen.
+        xpos 80 ypos 735 xsize 150 ysize 225
         background None
         hover_background Solid("#79C9DE18")
         hovered SetScreenVariable("hovered_action", "__sortie")
