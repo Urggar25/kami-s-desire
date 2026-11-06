@@ -4,223 +4,223 @@
 translate english 8b8a53b4:
 
     # "Je me réveille avant même que la lumière ne s’allume."
-    ""
+    "I wake before the lights even come on."
 
 # game/scenario/15_0_1_1_0.rpy:5
 translate english 429f3e6a:
 
     # "La chambre est grise."
-    ""
+    "The room is gray."
 
 # game/scenario/15_0_1_1_0.rpy:6
 translate english a969cbc7:
 
     # "Le plafond aussi."
-    ""
+    "So is the ceiling."
 
 # game/scenario/15_0_1_1_0.rpy:7
 translate english 28efca0f:
 
     # "Même mon souffle paraît gris."
-    ""
+    "Even my breath feels gray."
 
 # game/scenario/15_0_1_1_0.rpy:8
 translate english dfa6a0b6:
 
     # think "Jour 15."
-    think ""
+    think "Day fifteen."
 
 # game/scenario/15_0_1_1_0.rpy:9
 translate english dc114861:
 
     # think "Encore un vote."
-    think ""
+    think "Another vote."
 
 # game/scenario/15_0_1_1_0.rpy:10
 translate english 2c2b106a:
 
     # think "Encore une façon de choisir qui va souffrir dehors."
-    think ""
+    think "Another chance to decide who suffers out there."
 
 # game/scenario/15_0_1_1_0.rpy:11
 translate english e9eb1e38:
 
     # "Je reste immobile sous la couverture."
-    ""
+    "I lie motionless under the blanket."
 
 # game/scenario/15_0_1_1_0.rpy:12
 translate english 41d8d164:
 
     # "Je n’ai pas faim."
-    ""
+    "I'm not hungry."
 
 # game/scenario/15_0_1_1_0.rpy:13
 translate english f46d44e5:
 
     # "Je n’ai pas envie de parler."
-    ""
+    "I don't feel like talking."
 
 # game/scenario/15_0_1_1_0.rpy:14
 translate english 8e1c6600:
 
     # "Je n’ai même pas envie de bouger."
-    ""
+    "I don't even want to move."
 
 # game/scenario/15_0_1_1_0.rpy:15
 translate english 2f39e29d:
 
     # think "À 14h, ils voteront sur l’ouverture totale des archives d’ARCHIVE."
-    think ""
+    think "At two o'clock, they'll vote on opening ARCHIVE's records to everyone."
 
 # game/scenario/15_0_1_1_0.rpy:16
 translate english 4120b9d5:
 
     # think "Un amendement au Commandement V."
-    think ""
+    think "An amendment to Commandment V."
 
 # game/scenario/15_0_1_1_0.rpy:17
 translate english 246eaa76:
 
     # think "Diffuser ce qui était caché."
-    think ""
+    think "Release what was hidden."
 
 # game/scenario/15_0_1_1_0.rpy:18
 translate english 3b1b799c:
 
     # think "Rendre public ce qui était réservé."
-    think ""
+    think "Make public what was kept out of reach."
 
 # game/scenario/15_0_1_1_0.rpy:19
 translate english 32afd9ed:
 
     # think "En théorie, c’est une bonne chose."
-    think ""
+    think "In theory, it's a good thing."
 
 # game/scenario/15_0_1_1_0.rpy:20
 translate english 29ffe273:
 
     # think "En théorie seulement."
-    think ""
+    think "In theory."
 
 # game/scenario/15_0_1_1_0.rpy:24
 translate english 2230cde5:
 
     # kami "Bonjour, mes chers représentants."
-    kami ""
+    kami "Good morning, my dear representatives."
 
 # game/scenario/15_0_1_1_0.rpy:25
 translate english 42789f0d:
 
     # kami "J’espère que vous êtes tous bien réveillés."
-    kami ""
+    kami "I do hope you're all wide awake."
 
 # game/scenario/15_0_1_1_0.rpy:26
 translate english 75b9420f:
 
     # kami "Ou au moins assez vivants pour m’écouter."
-    kami ""
+    kami "Or at least alive enough to listen."
 
 # game/scenario/15_0_1_1_0.rpy:28
 translate english a42a6462:
 
     # kami "Le vote du jour aura lieu à 14h précises."
-    kami ""
+    kami "Today's vote will take place at precisely two p.m."
 
 # game/scenario/15_0_1_1_0.rpy:29
 translate english 03e6abbd:
 
     # kami "Sujet : ouverture totale des archives d’[codex_dialogue_link('archive', 'ARCHIVE')] aux citoyens des districts."
-    kami ""
+    kami "On the agenda: full public access to [codex_dialogue_link('archive', 'ARCHIVE')]'s records."
 
 # game/scenario/15_0_1_1_0.rpy:30
 translate english 88552d24:
 
     # kami "Une petite révolution documentaire."
-    kami ""
+    kami "A little paperwork revolution!"
 
 # game/scenario/15_0_1_1_0.rpy:31
 translate english 6e899f66:
 
     # kami "Un grand moment de transparence."
-    kami ""
+    kami "A historic moment for transparency!"
 
 # game/scenario/15_0_1_1_0.rpy:32
 translate english ba09f6de:
 
     # kami "Et peut-être quelques crises existentielles au passage."
-    kami ""
+    kami "And perhaps a few existential crises along the way."
 
 # game/scenario/15_0_1_1_0.rpy:34
 translate english 49271325:
 
     # kami "Rappel utile."
-    kami ""
+    kami "A friendly reminder!"
 
 # game/scenario/15_0_1_1_0.rpy:35
 translate english 3db6f394:
 
     # kami "Le Commandement V encadre actuellement toute diffusion d’information."
-    kami ""
+    kami "Commandment V currently controls all information sharing."
 
 # game/scenario/15_0_1_1_0.rpy:36
 translate english 0d3f1c9e:
 
     # kami "Toute donnée non validée par [codex_dialogue_link('archive', 'ARCHIVE')] reste interdite."
-    kami ""
+    kami "Anything not approved by [codex_dialogue_link('archive', 'ARCHIVE')] is still forbidden."
 
 # game/scenario/15_0_1_1_0.rpy:37
 translate english b8c5d397:
 
     # kami "Si l’amendement est adopté, les citoyens auront accès à une partie immense des archives historiques, judiciaires et administratives."
-    kami ""
+    kami "If the amendment passes, citizens will gain access to a vast collection of historical, judicial, and administrative records."
 
 # game/scenario/15_0_1_1_0.rpy:38
 translate english a7ea6424:
 
     # kami "S’il est refusé, le verrouillage restera total."
-    kami ""
+    kami "If it fails, everything stays locked up tight."
 
 # game/scenario/15_0_1_1_0.rpy:41
 translate english 0d70a05f:
 
     # kami "C’est lourd."
-    kami ""
+    kami "Heavy stuff."
 
 # game/scenario/15_0_1_1_0.rpy:42
 translate english a62af76a:
 
     # kami "Mais vous adorez les décisions impossibles."
-    kami ""
+    kami "But you just love impossible decisions."
 
 # game/scenario/15_0_1_1_0.rpy:43
 translate english a6c0ae2a:
 
     # kami "Sinon vous ne seriez pas ici."
-    kami ""
+    kami "Otherwise, you wouldn't be here!"
 
 # game/scenario/15_0_1_1_0.rpy:45
 translate english 4d456b3b:
 
     # kami "Et toi, Noam ?"
-    kami ""
+    kami "And you, Noam?"
 
 # game/scenario/15_0_1_1_0.rpy:46
 translate english 6b53cc8c:
 
     # kami "Tu viendras aujourd’hui ?"
-    kami ""
+    kami "Will you be joining us today?"
 
 # game/scenario/15_0_1_1_0.rpy:47
 translate english b4385f35:
 
     # kami "Ou tu préfères encore rester derrière ta porte ?"
-    kami ""
+    kami "Or are you going to hide behind your door again?"
 
 # game/scenario/15_0_1_1_0.rpy:48
 translate english f73f39f7:
 
     # "Mon estomac se serre."
-    ""
+    "My stomach tightens."
 
 # game/scenario/15_0_1_1_0.rpy:49
 translate english c9e0e05b:
@@ -232,109 +232,109 @@ translate english c9e0e05b:
 translate english dbf5d67b:
 
     # kami "Je te taquine."
-    kami ""
+    kami "I'm only teasing!"
 
 # game/scenario/15_0_1_1_0.rpy:52
 translate english db0509a1:
 
     # kami "Enfin..."
-    kami ""
+    kami "Well..."
 
 # game/scenario/15_0_1_1_0.rpy:53
 translate english 6c3fe9ad:
 
     # kami "À moitié."
-    kami ""
+    kami "Half teasing."
 
 # game/scenario/15_0_1_1_0.rpy:54
 translate english ddb1ab1b:
 
     # kami "À tout à l’heure, mes petits archivistes de l’apocalypse."
-    kami ""
+    kami "See you soon, my little archivists of the apocalypse!"
 
 # game/scenario/15_0_1_1_0.rpy:57
 translate english 499043e9:
 
     # "La chambre redevient silencieuse."
-    ""
+    "The room falls silent again."
 
 # game/scenario/15_0_1_1_0.rpy:58
 translate english 1137c9be:
 
     # think "Elle l’a fait exprès."
-    think ""
+    think "She did that on purpose."
 
 # game/scenario/15_0_1_1_0.rpy:59
 translate english d4e39830:
 
     # think "Elle voulait que les autres entendent mon nom."
-    think ""
+    think "She wanted everyone else to hear my name."
 
 # game/scenario/15_0_1_1_0.rpy:60
 translate english e627a4c5:
 
     # think "Elle voulait leur rappeler que je suis encore là."
-    think ""
+    think "She wanted to remind them I'm still here."
 
 # game/scenario/15_0_1_1_0.rpy:61
 translate english fd0885fa:
 
     # think "Et que je peux encore ne pas venir."
-    think ""
+    think "And that I might not show up again."
 
 # game/scenario/15_0_1_1_0.rpy:62
 translate english b2a419e4:
 
     # "Je m’assois lentement."
-    ""
+    "I slowly sit up."
 
 # game/scenario/15_0_1_1_0.rpy:63
 translate english dd18b2e6:
 
     # "Ma tête tourne."
-    ""
+    "My head spins."
 
 # game/scenario/15_0_1_1_0.rpy:64
 translate english 3c948992:
 
     # "La bouche pâteuse."
-    ""
+    "My mouth is dry."
 
 # game/scenario/15_0_1_1_0.rpy:65
 translate english 3c4e8411:
 
     # "Les yeux lourds."
-    ""
+    "My eyes are heavy."
 
 # game/scenario/15_0_1_1_0.rpy:66
 translate english 268c82fe:
 
     # think "Ouvrir les archives..."
-    think ""
+    think "Opening the archives..."
 
 # game/scenario/15_0_1_1_0.rpy:67
 translate english 4c4f34c3:
 
     # think "Les dossiers personnels."
-    think ""
+    think "Personal files."
 
 # game/scenario/15_0_1_1_0.rpy:68
 translate english aeca2736:
 
     # think "Les rapports des districts."
-    think ""
+    think "District reports."
 
 # game/scenario/15_0_1_1_0.rpy:69
 translate english 3ea02bd3:
 
     # think "Les images des votes."
-    think ""
+    think "Footage from the votes."
 
 # game/scenario/15_0_1_1_0.rpy:70
 translate english 7076f05e:
 
     # think "Les conséquences."
-    think ""
+    think "The consequences."
 
 # game/scenario/15_0_1_1_0.rpy:71
 translate english 1931f512:
