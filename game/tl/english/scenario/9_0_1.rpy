@@ -1250,5 +1250,5 @@ translate english 8969f8ff:
 translate english 5ab0598a_1:
 
     # kael "..."
-    kael ""
+    kael "..."
 
