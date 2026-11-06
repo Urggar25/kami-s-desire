@@ -176,7 +176,7 @@ default j27a_sael = False
 default j27a_appareil_absent = False
 
 label _27_0_1_1_0_1_REVEIL:
-    $ current_day = 27
+$ current_day = 27
     $ day_id = 27
     $ current_period = "Matin"
     $ j27a_yanma = False
@@ -191,37 +191,46 @@ label _27_0_1_1_0_1_REVEIL:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
     $ blink()
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je me réveille avec le rappel du vote du jour 27 sur ma tablette."
-    "J'avais oublié de le désactiver. Après ce qui s'est passé hier, la dernière chose que je veux, c'est retourner voter."
-    "Je fais défiler mes notes : le flacon de somnifères, les draps trempés, le verrou intérieur, les témoignages..."
-    think "J'ai tout écrit. Et j'ai toujours aucune idée de ce qui lui est arrivé."
-    "Je me rappelle Tomas devant ses cartes, dans la salle d'observation. Il avait passé sa dernière journée à chercher Keyper."
-    noam fatigue "Bon. On va regarder ce qu'il a laissé."
+    "Le rappel du vote me réveille. J'avais oublié de désactiver l'alarme."
+    "Je regarde l'écran un moment avant de l'éteindre. Aujourd'hui, il devrait y avoir douze personnes autour de la table. Je sais déjà qui ne viendra pas."
+    "J'ouvre mes notes : le flacon de médicaments, les draps trempés, le verrou intérieur, les premiers témoignages. Une quantité absurde de détails, et toujours aucune cause de décès."
+    think "Tomas aurait repris chaque détail jusqu'à comprendre. Il détestait ne pas terminer ce qu'il avait commencé."
+    "Sur ma dernière photo, il se penche sur une carte orbitale. Je lui avais demandé de m'expliquer plus tard. Maintenant, j'ai tout mon temps pour regretter."
+    noam fatigue "Bon. On va au moins regarder ce que t'as laissé."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "couloir_dortoir") from _call_j27a_door_1
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     jump _27_0_1_1_0_1_CAFETERIA
-# Durée : ~1m00.
 
 label _27_0_1_1_0_1_CAFETERIA:
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j27a_door_2
+call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j27a_door_2
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-    "Il reste plusieurs places libres. Celle de Tomas me saute aux yeux."
+    "Il reste plusieurs places libres. Celle de Tomas me saute aux yeux : personne n'y a posé son plateau."
     $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.248), ("elen", "triste", 0.416), ("lysa", "blase", 0.584), ("noam", "neutre", 0.752), ("nyra", "neutre", 0.920)])
-    julian reflexion "Iris, pour les analyses... T'as pu avancer ?"
-    iris fatigue "Pas assez pour donner une cause de décès. On en a déjà parlé."
-    elen inquiet "Et les médicaments ?"
-    iris raison "On sait pas ce qu'il a pris. Je veux pas conclure à une surdose juste à cause d'un flacon."
-    julian fatigue "Personne a dit qu'on devait conclure."
-    lysa blase "C'est vrai. Pas aujourd'hui."
-    noam neutre "Elen, je peux te demander un truc ?"
-    elen neutre "Bien sûr."
-    noam reflexion "Tu as dormi dans la chambre de Tomas. Je voudrais y retourner pour regarder ses notes. Il cherchait encore Keyper la veille."
-    elen inquiet "Tu crois que tu vas trouver quelque chose ?"
-    noam fatigue "Franchement, j'en sais rien. Mais je veux pas m'arrêter au flacon."
-    elen neutre "Vas-y. J'ai rien déplacé là-bas à part les draps."
-    nyra raison "Je peux t'accompagner, Noam. On prendra des photos de ce qu'on trouve."
-    noam sourire "Merci."
+    julian reflexion "Iris, les analyses...?"
+    iris fatigue "Toujours pas de cause de décès. Je te l'ai dit hier."
+    julian fatigue "D'accord. Désolé."
+    iris agace "Non, c'est moi. J'ai presque pas dormi."
+    elen inquiet "Et le flacon ? On sait si les comprimés étaient à lui ?"
+    iris raison "Non. Tant qu'on sait pas ce qu'il a pris, on arrête de parler d'une surdose comme si c'était établi."
+    "Elen remue son déjeuner sans manger. Dès que la porte s'ouvre, elle lève la tête."
+    lysa blase "Elen... Tu peux arrêter de regarder l'entrée."
+    elen triste "Je sais qu'il viendra pas."
+    lysa triste "Pardon. C'était idiot."
+    julian fatigue "Il voulait encore me parler après le vote. Il m'avait écrit."
+    noam inquiet "Tu lui as répondu ?"
+    julian triste "Non."
+    "Il pose sa tasse un peu trop fort. Personne ne relève."
+    noam neutre "Elen, je voudrais retourner dans la chambre de Tomas. Celle où tu as dormi."
+    elen surpris "Pour quoi faire ?"
+    noam raison "Il cherchait encore des informations sur Keyper. Peut-être qu'il a laissé des notes."
+    elen hesitation "J'ai pas déplacé ses papiers. Juste les draps, quand on a échangé."
+    elen triste "Je lui avais proposé cet échange pour qu'il se repose. Je pensais lui rendre service..."
+    noam inquiet "Tu pouvais pas prévoir ce qui allait se passer."
+    elen colere "C'est ce que tout le monde me répète. Mais personne n'en sait rien !"
+    pause 0.4
+    nyra raison "Je peux accompagner Noam. On photographie les documents et on remet tout en place."
+    noam neutre "D'accord."
     play sound sfx_announce
     $ hideGroup()
     stop music fadeout 0.5
@@ -232,37 +241,35 @@ label _27_0_1_1_0_1_CAFETERIA:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Mais vous avez décidé de bouder tous ensemble. Comme c'est touchant !"
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
-    kami "Faute de participants, aucun nouveau Commandement ne sera adopté aujourd'hui. Je précise que cela ne suspend aucune de mes règles."
+    kami "Faute de participants, aucun nouveau Commandement ne sera adopté aujourd'hui. Toutes mes autres règles restent en vigueur, naturellement !"
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Je vous souhaite une excellente petite journée de repos. Essayez de ne pas trop vous ennuyer sans moi !"
+    kami "Je vous souhaite une excellente journée libre. Essayez de ne pas trop vous ennuyer sans moi !"
     hide screen kami_broadcast_ui
     stop music fadeout 0.6
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.248), ("elen", "triste", 0.416), ("lysa", "blase", 0.584), ("noam", "fatigue", 0.752), ("nyra", "neutre", 0.920)])
-    elen fatigue "Elle pourrait au moins nous laisser tranquilles."
-    nyra neutre "On y va ?"
+    iris agace "Elle pourrait fermer sa gueule cinq minutes."
+    nyra neutre "Noam, on y va ?"
     noam neutre "Ouais."
     $ hideGroup()
     jump _27_0_1_1_0_1_CHAMBRE
-# Durée : ~2m30.
 
 label _27_0_1_1_0_1_CHAMBRE:
-    $ current_period = "Après-midi"
+$ current_period = "Après-midi"
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
-    "On passe devant la chambre d'Elen. Je ralentis sans le vouloir, puis je continue."
-    "Nous entrons dans celle de Tomas avec l'accès qu'Elen nous a prêté."
+    "Nous passons devant la chambre d'Elen. C'est là qu'on a retrouvé Tomas, alors qu'il aurait dû dormir quelques portes plus loin."
+    "Je ralentis, puis continue jusqu'à sa chambre avec l'accès qu'Elen nous a prêté."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Les livres sont alignés. Les vêtements sont pliés. Il a même une pile de documents parfaitement droite sur le bureau."
+    "Les vêtements sont pliés, les livres rangés par taille. Même les documents sur son bureau sont alignés au millimètre."
     $ showGroup([("nyra", "neutre", 0.37), ("noam", "reflexion", 0.68)])
-    noam reflexion "Tomas, quoi..."
-    nyra sourire "On dirait qu'il va revenir dans deux minutes pour vérifier qu'on range bien."
-    noam fatigue "Ouais."
-    nyra raison "On examine ce qui concerne ses recherches, on photographie et on remet tout ?"
-    noam neutre "C'est ça."
+    noam fatigue "Il serait capable de revenir pour nous demander de ne pas déplacer ses dossiers."
+    nyra sourire "Et d'expliquer pendant dix minutes pourquoi leur ordre est important."
+    "Je souris. Puis je réalise que nous parlons de lui au passé."
+    nyra raison "On note ce qu'on touche. Si Iris doit revenir, elle saura ce qui a changé."
+    noam neutre "D'accord. Je commence par le bureau."
     $ hideGroup()
     jump _27_0_1_1_0_1_FOUILLE
-# Durée : ~1m00.
 
 label _27_0_1_1_0_1_FOUILLE:
     menu:
@@ -331,50 +338,49 @@ label _27_0_1_1_0_1_FOUILLE:
 # Durée : ~3m30.
 
 label _27_0_1_1_0_1_APPAREIL:
-    $ showGroup([("nyra", "reflexion", 0.38), ("noam", "neutre", 0.68)])
-    noam reflexion "Attends. Ce livre sur Yanma me rappelle quelque chose."
+$ showGroup([("nyra", "reflexion", 0.38), ("noam", "neutre", 0.68)])
+    noam reflexion "Attends. Ce livre sur Yanma me rappelle un truc."
     nyra neutre "Quoi ?"
-    noam raison "Dans la salle d'observation, il tenait un petit appareil métallique. Il l'a posé quand je suis arrivé. Il y avait un voyant dessus."
-    nyra surpris "Tu sais à quoi il servait ?"
-    noam neutre "Non. Lui non plus, d'après ce qu'il m'a dit."
-    nyra raison "Ça peut être une balise, un capteur, un boîtier de maintenance... Mais ça vaut le coup d'aller voir."
-    noam sourire "On y va."
+    noam raison "Le jour 25, Tomas manipulait un petit boîtier dans la salle d'observation. Une boîte métallique, avec un voyant. Il l'a posée quand je suis arrivé."
+    nyra reflexion "Tu sais à quoi il servait ?"
+    noam neutre "Non. Il avait pas l'air de savoir non plus."
+    nyra raison "Alors autant voir s'il est toujours là. On saura au moins de quoi on parle."
     $ hideGroup()
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_j27a_door_3
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.68)])
-    noam raison "C'était là, près du pupitre."
-    "Je regarde le dessus du meuble, puis les compartiments. L'appareil n'y est plus."
+    "Je retrouve le pupitre, le tiroir inférieur et la zone dégagée où Tomas avait posé sa boîte."
+    noam reflexion "C'était ici."
+    "Je soulève un dossier, vérifie derrière l'écran, puis ouvre chaque compartiment. Je regarde même l'espace entre le pupitre et le mur."
+    nyra neutre "Tu cherches toujours l'appareil ?"
+    noam inquiet "Il était là, je m'en souviens."
+    "Je reviens au premier tiroir, que j'avais pourtant déjà vérifié."
     noam surpris "Il a disparu."
-    nyra reflexion "T'es sûr de l'endroit ?"
-    noam agace "Oui ! Je l'ai vu le poser."
+    nyra reflexion "Tu es sûr que Tomas l'avait laissé ici en partant ?"
+    noam raison "Je l'ai vu le poser. Je sais pas ce qu'il en a fait après."
     $ j27a_appareil_absent = True
-    nyra raison "Il a pu être rangé. Kael et Elias viennent ici pour le matériel."
-    noam reflexion "Mais pourquoi celui-là ?"
-    nyra neutre "Je sais pas. On peut leur demander."
-    noam raison "Si c'était un émetteur Yanma, tu saurais le reconnaître ?"
-    nyra reflexion "Pas à partir d'un voyant. Et sans l'appareil, encore moins."
-    noam fatigue "J'aurais dû le prendre en photo."
-    nyra sourire "Tu pouvais pas prévoir qu'on reviendrait chercher ce truc."
-    "Je regarde encore une fois le meuble vide. Il y a deux jours, je me fichais complètement de cet objet."
+    nyra raison "Il a pu le reprendre. Ou quelqu'un a pu le ranger. Kael et Elias manipulent souvent le matériel de cette salle."
+    noam reflexion "Mais pourquoi cet appareil-là ?"
+    nyra neutre "On peut leur demander. Ce sera plus fiable qu'une supposition."
+    noam raison "Et toi, tu saurais reconnaître un récepteur Yanma ?"
+    nyra reflexion "Pas à partir de la description d'un voyant. Si on retrouve le modèle, je regarderai."
+    "Je vérifie encore le meuble, sans rien découvrir. Deux jours plus tôt, je n'avais même pas songé à prendre l'objet en photo."
     $ hideGroup()
     jump _27_0_1_1_0_1_QUESTIONS
-# Durée : ~2m30.
 
 label _27_0_1_1_0_1_QUESTIONS:
-    scene bg_repos at adaptive_fullscreen with dissolve
+scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-    "J'ai pris les photos de ses livres et constaté que le petit appareil n'est plus en observation. Mais je ne sais toujours pas à quoi servait ce truc."
+    "J'ai les documents de Tomas, mais il manque toujours l'appareil. Si je veux avancer, il faut confronter ce que j'ai trouvé à ce que les autres savent."
     $ showGroup([("nyra", "neutre", 0.33), ("noam", "fatigue", 0.69)])
-    nyra raison "Tu veux continuer aujourd'hui ?"
-    noam raison "Oui, mais pas passer la journée à poser les mêmes questions à tout le monde."
-    nyra neutre "Alors fais comme hier. Cinq pistes, et tu peux circuler entre les salles."
-    noam reflexion "Et si je trouve rien ?"
-    nyra raison "On gardera ce qu'on a. Le livre et le registre existent, même si tu n'interroges personne d'autre."
-    noam neutre "D'accord."
-    "Je vérifie mon dossier. Le livre Yanma, le registre ÉID-0 et la disparition de l'appareil sont déjà notés : ces éléments ne me coûteront pas de point d'action."
+    noam raison "Je vais vérifier les accès et parler à quelques personnes. On a trop d'hypothèses."
+    nyra raison "Note séparément ce que tu as vu et ce qu'on t'a raconté. Sinon, on finira par confondre les deux."
+    noam reflexion "Tu viens ?"
+    nyra neutre "Je vais reprendre les copies de Keyper. On gagnera du temps en se répartissant les recherches."
+    noam neutre "On se retrouve avant la réunion."
+    "J'ai le temps de vérifier cinq pistes. À moi de choisir lesquelles."
     $ investigation_pa_begin(27, 5)
     $ investigation_unlocked = True
     $ investigation_add("j27_core_yanma", notify=False)
