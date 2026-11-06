@@ -1374,19 +1374,19 @@ translate english 2033b383:
 translate english 1694fe79:
 
     # kami "Autoriser les déplacements de personnes entre les districts ?"
-    kami ""
+    kami "Allow people to travel between districts?"
 
 # game/scenario/4_1.rpy:313
 translate english b6c5cf6e:
 
     # "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
-    ""
+    "Sael jumps to her feet, turns on her heel, and storms out, slamming the door behind her."
 
 # game/scenario/4_1.rpy:323
 translate english f1f91550:
 
     # "Mara se lève et la suit en courant hors de la pièce."
-    ""
+    "Mara gets up and hurries after her."
 
 # game/scenario/4_1.rpy:331
 translate english 9074587d:
@@ -1404,19 +1404,19 @@ translate english cd188e58:
 translate english 086827d7:
 
     # "La porte est entrouverte. Je frappe doucement."
-    ""
+    "The door's slightly ajar. I knock softly."
 
 # game/scenario/4_1.rpy:455
 translate english e53d0209:
 
     # "Iris retient un sourire et se lève."
-    ""
+    "Iris suppresses a smile and stands up."
 
 # game/scenario/4_1.rpy:476
 translate english 9b2d1ffe:
 
     # think "La musique nous rejoint avant la salle. Au moins, Elen n'a pas perdu de temps."
-    think ""
+    think "We hear the music before we even reach the room. Well, Elen certainly didn't waste any time."
 
 # game/scenario/4_1.rpy:497
 translate english 05e439e3:
@@ -1428,7 +1428,7 @@ translate english 05e439e3:
 translate english 901ac0b2:
 
     # "La bouteille tourne sur la table basse."
-    ""
+    "The bottle spins across the coffee table."
 
 # game/scenario/4_1.rpy:579
 translate english b0149395:
@@ -1440,7 +1440,7 @@ translate english b0149395:
 translate english 0035c292:
 
     # "Mara lui barre le passage d'un pas, sans la toucher."
-    ""
+    "Mara steps into her path, blocking her way without touching her."
 
 # game/scenario/4_1.rpy:589
 translate english ed18ae3f:
@@ -1464,31 +1464,31 @@ translate english 691691dd:
 translate english b993b656:
 
     # "La bouteille tourne… s’arrête sur Tomas."
-    ""
+    "The bottle spins... and lands on Tomas."
 
 # game/scenario/4_1.rpy:673
 translate english 798a48c6:
 
     # "La bouteille pointe Sael."
-    ""
+    "The bottle points to Sael."
 
 # game/scenario/4_1.rpy:689
 translate english 6e2e333d:
 
     # "Sael pose une main sur la nuque de Tomas et l'embrasse doucement. Quand elle recule, il est écarlate."
-    ""
+    "Sael rests a hand on the back of Tomas's neck and kisses him gently. By the time she pulls away, he's bright red."
 
 # game/scenario/4_1.rpy:709
 translate english 043efa3b:
 
     # "La bouteille tourne… s’arrête sur Kael."
-    ""
+    "The bottle spins... and lands on Kael."
 
 # game/scenario/4_1.rpy:713
 translate english 89e06078:
 
     # "La bouteille repart et pointe Elias."
-    ""
+    "The bottle spins again and points to Elias."
 
 # game/scenario/4_1.rpy:720
 translate english b9a7f5fb:
@@ -1500,11 +1500,11 @@ translate english strings:
 
     # game/scenario/4_1.rpy:600
     old "Accepter de jouer"
-    new ""
+    new "Join the game"
 
     # game/scenario/4_1.rpy:600
     old "Refuser poliment"
-    new ""
+    new "Politely decline"
 
 # TODO: Translation updated at 2026-11-06 17:50
 
