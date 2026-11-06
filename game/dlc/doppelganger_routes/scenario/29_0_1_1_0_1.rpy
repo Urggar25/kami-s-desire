@@ -3,7 +3,7 @@ init 10 python:
     J29A_ROOMS = {
       "dortoir": {
         "title": "DORTOIRS",
-        "background": "bg_chambre",
+        "background": "j26_elen_vide",
         "description": "La chambre d'Elen est toujours le point de départ de l'enquête.",
         "actions": [
           "grille",
@@ -460,7 +460,7 @@ label _29_0_1_1_0_1_PA_FIN:
 
 
 label _29_0_1_1_0_1_PA_GRILLE:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "La grille paraît intacte. Je reprends mes photos et compare son emplacement avec la plaque découverte dans les conduits."
     noam reflexion "La porte pouvait rester fermée tout le temps..."
