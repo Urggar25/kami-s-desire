@@ -245,15 +245,15 @@ Chaque journée (`_X_CANON`) suit une structure canonique :
 
 ---
 
-## 3. Mise en scène des personnages (Trio dynamique)
+## 3. Mise en scène des personnages (groupe complet)
 
-Le système d'affichage utilise `showP("nom", "expression", position)`. Règles à respecter :
+Le système d'affichage collectif est `showGroup([...])`. **Aucune limite de trois personnages** : afficher simultanément **tous les personnages physiquement présents dans la scène**, même s'ils ne parlent pas immédiatement.
 
-- **Toujours 3 personnages maximum à l'écran** dans les scènes de groupe.
-- Quand un 4e personnage prend la parole, **retirer celui qui n'a pas parlé depuis le plus longtemps** via `hide nom`.
-- Les positions sont flottantes (0.0 = extrême gauche, 1.0 = extrême droite). Les positions classiques : 0.10–0.25 (gauche), 0.45–0.55 (centre), 0.75–0.90 (droite).
-- Les personnages **ne bougent pas** quand un nouveau arrive. Seul le nouveau est placé, l'ancien retire.
-- Changer l'expression d'un personnage sans le déplacer : `$ showP("nom", "nouvelle_expression", même_position)`.
+- Composer dès le début un groupe complet et stable pour toute scène collective (cafétéria, réunion, etc.), y compris au-delà de trois personnages. Ne jamais faire tourner artificiellement des trios selon le locuteur.
+- Les positions sont réparties sur la largeur disponible (0.0 à 1.0) et peuvent être adaptées au nombre de personnages. Conserver les positions pendant une scène continue.
+- Ne rappeler `showGroup()` que si un personnage entre, sort réellement, ou si le décor/une CG/une diffusion a effacé les sprites. Mettre alors à jour la composition complète, et pas seulement les trois personnages qui parlent.
+- Pour les vraies scènes à un seul personnage, `showP("nom", "expression", position)` reste utilisable ; il peut aussi mettre à jour une expression sans reconstruire le groupe si nécessaire.
+- Ne jamais masquer un participant simplement parce qu'un autre personnage vient de prendre la parole.
 
 ---
 
