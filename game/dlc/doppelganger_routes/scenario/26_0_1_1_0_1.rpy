@@ -167,6 +167,14 @@ label _26_0_1_1_0_1_DECOUVERTE:
     "Elen essaie de s'approcher, mais ses jambes semblent lâcher. Lysa, revenue derrière nous, la retient par les épaules."
     $ showGroup([("lysa", "inquiet", 0.22), ("elen", "triste", 0.49), ("noam", "vide", 0.76)])
     elen triste "Je lui ai donné ma chambre..."
+    elen peur "Attends... Il était chez moi. Et si quelqu'un s'était trompé de personne ?"
+    lysa inquiet "Quoi ?"
+    elen peur "C'est MA chambre ! Si quelqu'un voulait me faire quelque chose, c'est lui qui..."
+    noam peur "Elen, on sait même pas ce qui lui est arrivé."
+    elen colere "Mais tu comprends ce que je dis ?! J'aurais pu être à sa place !"
+    lysa inquiet "Oui. On comprend. Mais pour l'instant, personne sait s'il y a eu quelqu'un."
+    "Kael reste près de la porte. Elias regarde ses mains. Je crois que tout le monde vient de comprendre qu'on pourrait être en danger, et personne ne sait quoi faire."
+    pause 0.6
     lysa inquiet "Viens. On sort une minute."
     elen peur "Mais il est là !"
     lysa triste "Je sais. Viens juste avec moi."
@@ -215,9 +223,20 @@ label _26_0_1_1_0_1_APRES_CHOC:
     noam reflexion "Tu sais comment il est mort ?"
     iris agace "Non. J'ai pas une réponse en dix minutes, Noam."
     noam fatigue "Désolé."
-    iris raison "Et je veux éviter que tout le monde dise qu'il s'est suicidé avant même qu'on ait regardé."
+    iris raison "Et je veux que personne ne commence à raconter des choses sur sa mort avant qu'on ait vérifié."
     lysa inquiet "On a le droit d'aider ?"
     iris neutre "Deux personnes. Et pas tout de suite. J'ai besoin de finir."
+    iris reflexion "Noam... Tu pourrais m'aider pour les photos ? J'ai besoin qu'on garde une trace de l'état de la chambre avant le transfert."
+    noam inquiet "Tu veux que je photographie Tomas ?"
+    iris triste "Oui. Si tu peux. Sinon je demanderai à Elias."
+    "Je serre ma tablette un moment. Je n'ai aucune envie de faire ça, mais c'est peut-être la dernière fois qu'on pourra vérifier dans quel état on l'a trouvé."
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Je cadre les draps et ses vêtements trempés sans m'attarder sur son visage."
+    call investigation_evidence_photo_take("j26_photo_tomas") from _call_j26_tomas_photo
+    "Je prends également une photo des déchets, puis une du verrou qu'Elias a dû forcer."
+    call investigation_evidence_photo_take("j26_photo_dechets") from _call_j26_dechets_photo
+    call investigation_evidence_photo_take("j26_photo_verrou") from _call_j26_verrou_photo
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     "Elle repart dans la chambre. On attend encore un moment, sans vraiment se parler."
     $ hideGroup()
     jump _26_0_1_1_0_1_INSPECTION_INTRO
@@ -369,6 +388,11 @@ init 10 python:
         }
     }
     INVESTIGATION_ENTRIES.update({
+        "j26_photo_tomas": {"category": "preuves", "title": "TOMAS — VÊTEMENTS TREMPÉS", "desc": "La chemise et les cheveux de Tomas étaient trempés lors de la découverte de son corps.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre1.png"},
+        "j26_photo_dechets": {"category": "preuves", "title": "DÉCHETS DANS LA CHAMBRE", "desc": "Barquettes, emballages et affaires abandonnées : une odeur forte régnait dans la chambre.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre2.png"},
+        "j26_photo_verrou": {"category": "preuves", "title": "PORTE VERROUILLÉE", "desc": "Elias a dû forcer le mécanisme engagé depuis l'intérieur pour entrer dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre2.png"},
+        "j26_photo_grille": {"category": "preuves", "title": "PLAQUE DEVANT L'AÉRATION", "desc": "Une plaque de protection ferme le passage physique dans la bouche d'aération ; l'air peut toujours circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre1.png"},
+        "j26_photo_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES PRESQUE VIDE", "desc": "Un flacon presque vide a été retrouvé parmi les affaires de la chambre. Rien ne prouve que Tomas en ait pris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre3.png"},
         "j26_core_mort": {"category": "evenements", "title": "DÉCOUVERTE DU CORPS", "desc": "Tomas a été retrouvé mort dans la chambre d'Elen, derrière une porte verrouillée de l'intérieur.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
         "j26_core_sudation": {"category": "preuves", "title": "PREMIÈRES CONSTATATIONS", "desc": "Iris et Sael ont constaté l'absence de respiration et une importante sudation. La cause de la mort reste inconnue.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
         "j26_tomas_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES", "desc": "Un flacon presque vide a été découvert près du lit. Rien ne prouve que Tomas a pris ces comprimés.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
@@ -397,7 +421,9 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     iris fatigue "J'en sais rien. Ça peut correspondre à plusieurs causes. Je veux pas te donner une réponse au hasard."
     noam neutre "La porte était fermée de l'intérieur."
     iris raison "Oui. Elias a dû forcer le verrou. C'est noté."
-    "Elle me montre les photos, puis reprend les prélèvements. Le flacon aperçu près du lit est toujours là, photographié mais pas encore analysé."
+    "Iris a gardé la pièce intacte autant que possible. Je prends une photo de la protection métallique devant la bouche d'aération."
+    call investigation_evidence_photo_take("j26_photo_grille") from _call_j26_grille_photo
+    "Je regarde les vis une dernière fois. Elles sont en place, mais il y a toujours de l'air qui passe."
     iris inquiet "Et Elen ?"
     noam fatigue "Lysa est avec elle."
     iris neutre "Bien. Évite de lui poser trop de questions tout de suite."
@@ -405,6 +431,27 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     iris raison "Comme s'ils étaient tous suspects ?"
     noam fatigue "Ouais."
     iris neutre "Alors fais pas ça n'importe comment. Tomas mérite qu'on soit prudents."
+    $ hideGroup()
+    jump _26_0_1_1_0_1_DECOUVERTE_FLACON
+
+label _26_0_1_1_0_1_DECOUVERTE_FLACON:
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Avant que je parte, Iris se penche vers les affaires restées près du lit."
+    $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
+    iris surpris "Attends. C'est quoi, ça ?"
+    "Elle sort un petit flacon de médicaments, presque vide."
+    noam surpris "C'était là depuis ce matin ?"
+    iris reflexion "Je l'avais pas vu. C'est un somnifère."
+    noam inquiet "Tu crois qu'il en a pris ?"
+    iris raison "Je sais pas. Je vais vérifier, mais je peux pas te dire ça à l'œil."
+    "Je photographie le flacon sans toucher au bouchon. Iris le range dans un sachet."
+    call investigation_evidence_photo_take("j26_photo_flacon") from _call_j26_flacon_photo
+    noam fatigue "Tu veux dire qu'il aurait pu... se suicider ?"
+    iris fatigue "C'est une hypothèse. Pas une conclusion, Noam. On ne sait ni s'il a pris ces comprimés, ni quand."
+    noam inquiet "Mais hier, il avait peur. Il était vraiment mal..."
+    iris raison "Et ça ne nous permet pas de décider à sa place de ce qu'il a fait."
+    noam fatigue "OK. Je vais prévenir les autres, mais sans dire que c'est sûr."
+    $ j26_alt_flacon = True
     $ hideGroup()
     jump _26_0_1_1_0_1_ENQUETE
 
@@ -480,7 +527,7 @@ label _26_0_1_1_0_1_PA_FLACON:
     noam reflexion "Il est presque vide."
     iris raison "Ce qui ne dit rien sur qui l'a vidé, ni quand."
     noam neutre "C'est écrit somnifère."
-    iris fatigue "Oui. Ça fait partie des possibilités, mais ça veut pas dire que Tomas l'a avalé. On a déjà eu cette discussion."
+    iris fatigue "Oui. C'est une piste. Mais on ne sait toujours pas si Tomas l'a avalé."
     noam inquiet "Tu peux savoir s'il en a pris ?"
     iris raison "Je vais essayer. Pour l'instant, je peux pas."
     "Je photographie l'étiquette et note le nom. Iris récupère le flacon."
