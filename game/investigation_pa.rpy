@@ -81,6 +81,31 @@ init python:
         return [k for k in rooms.get(room_id, {}).get("actions", [])
                 if k in actions]
 
+    # Vraies portes des panoramas existants : même masque de clic et même
+    # surbrillance que dans l'exploration normale, sans barre de navigation.
+    INVESTIGATION_PA_EXIT_DOORS = {
+        "archive": ("archive1", "images/background/interact/archive/archive1/porte.png"),
+        "cafeteria": ("cafeteria1", "images/background/interact/cafeteria/cafeteria1/porte.png"),
+        "canon": ("canon1", "images/background/interact/canon/canon1/porte_couloir_cafeteria.png"),
+        "conclave": ("conclave1", "images/background/interact/conclave/conclave1/porte.png"),
+        "chambre": ("chambre2", "images/background/interact/chambre/chambre2/porte_dehors.png"),
+        "gymnase": ("gymnase1", "images/background/interact/gymnase/gymnase1/porte_couloir_infirmerie.png"),
+        "infirmerie": ("infirmerie1", "images/background/interact/infirmerie/infirmerie1/porte_couloir_infirmerie.png"),
+        "maintenance": ("maintenance1", "images/background/interact/maintenance/maintenance1/porte_couloir_maintenance.png"),
+        "observation": ("observation1", "images/background/interact/observation/observation1/porte_couloir_cafeteria.png"),
+        "repos": ("repos1", "images/background/interact/repos/repos1/porte_couloir_cafeteria.png"),
+    }
+
+    def investigation_pa_exit_door(pnc_room, day, room_id):
+        if room_id == "dortoir" and day in (26, 28, 29):
+            # La chambre d'Elen est un décor unique sans texture de porte.
+            return None
+        candidate = INVESTIGATION_PA_EXIT_DOORS.get(pnc_room)
+        if (candidate and room_scene_stem(pnc_room) == candidate[0]
+                and renpy.loadable(candidate[1])):
+            return candidate[1]
+        return None
+
 # Ce panneau n'est PAS une liste d'actions : il recouvre le décor réel.
 # Les hotspots brillants signalent les objets ; les sprites signalent les interlocuteurs.
 screen investigation_pa_room(room_id, rooms, actions):
@@ -98,20 +123,30 @@ screen investigation_pa_room(room_id, rooms, actions):
     else:
         use room_scene_background(pnc_room, navigation=True)
 
-    # Sortie intégrée au décor : pas de menu permanent au bas de l'écran.
-    # Le retour au couloir réactive CORRIDOR_NAVIGATION et ses portes natives.
-    button:
-        # Ne pas recouvrir la bande de rotation native (44 px) ni le flacon
-        # interactif de la table de chevet d'Elen.
-        xpos 80 ypos 735 xsize 150 ysize 225
-        background None
-        hover_background Solid("#79C9DE18")
-        hovered SetScreenVariable("hovered_action", "__sortie")
-        unhovered SetScreenVariable("hovered_action", None)
-        action Return("corridors")
+    # Sortie par les portes physiques des panoramas, comme en jeu normal.
+    # La chambre d'Elen (asset fixe sans porte) garde une zone de sortie
+    # discrète, à l'écart des bandes gauche/droite de rotation et du flacon.
+    $ exit_door = investigation_pa_exit_door(pnc_room, investigation_pa_day, room_id)
+    if exit_door:
+        imagebutton:
+            idle room_interaction_null()
+            hover room_interaction_hover_with_overlays(exit_door, pnc_room)
+            focus_mask room_interaction_layer(exit_door, pnc_room, "art")
+            xpos 0 ypos 0
+            hovered SetScreenVariable("hovered_action", "__sortie")
+            unhovered SetScreenVariable("hovered_action", None)
+            action Return("corridors")
+    else:
+        button:
+            xpos 80 ypos 735 xsize 150 ysize 225
+            background None
+            hover_background Solid("#79C9DE18")
+            hovered SetScreenVariable("hovered_action", "__sortie")
+            unhovered SetScreenVariable("hovered_action", None)
+            action Return("corridors")
     if hovered_action == "__sortie":
         text "← SORTIR":
-            xpos 22 ypos 530
+            xpos 78 ypos 708
             color "#E2F6FF"
             size 27
             outlines [(2, "#061421", 0, 0)]
