@@ -174,7 +174,7 @@ label _30_0_1_1_0_1_AVEU:
     pause 0.6
     nyra triste "Oui."
     julian colere "Putain..."
-    noam colere "Le bol dans la ventilation ? La plaque ?"
+    noam colere "Le bol dans la ventilation ? La plaque de dérivation dans les conduits ?"
     nyra neutre "Oui. Je les ai installés depuis la maintenance."
     iris reflexion "Et les somnifères ?"
     nyra fatigue "Le flacon était déjà dans la chambre d'Elen. Je l'avais vu avant. J'ai compté dessus pour que vous pensiez à un suicide."
