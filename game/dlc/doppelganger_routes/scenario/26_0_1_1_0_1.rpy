@@ -226,148 +226,148 @@ label _26_0_1_1_0_1_APRES_CHOC:
 # Catalogue local : salles, actions point-and-click et fiches du dossier.
 init 10 python:
     J26A_ROOMS = {
-    "dortoir": {
-        "title": "DORTOIRS — CHAMBRE D'ELEN",
-        "background": "bg_chambre",
-        "description": "La chambre est sous surveillance. Iris a autorisé quelques examens ciblés.",
-        "actions": [
-            "flacon",
-            "grille"
-        ]
-    },
-    "infirmerie": {
-        "title": "INFIRMERIE",
-        "background": "infirmerie2",
-        "description": "Iris travaille sur les premières constatations médicales.",
-        "actions": [
-            "iris"
-        ]
-    },
-    "repos": {
-        "title": "SALLE COMMUNE",
-        "background": "bg_repos",
-        "description": "Elen essaie de reprendre ses esprits. Sael attend un peu plus loin.",
-        "actions": [
-            "elen",
-            "sael"
-        ]
-    },
-    "cafeteria": {
-        "title": "CAFÉTÉRIA",
-        "background": "bg_cafeteria",
-        "description": "Julian et Nyra sont restés ici après la découverte.",
-        "actions": [
-            "julian",
-            "nyra"
-        ]
-    },
-    "maintenance": {
-        "title": "MAINTENANCE",
-        "background": "bg_maintenance",
-        "description": "Kael et Elias examinent les équipements du couloir.",
-        "actions": [
-            "kael"
-        ]
-    },
-    "gymnase": {
-        "title": "GYMNASE",
-        "background": "bg_gymnase",
-        "description": "Ryn est venu s'isoler.",
-        "actions": [
-            "ryn"
-        ]
-    },
-    "archive": {
-        "title": "ARCHIVES",
-        "background": "bg_archive",
-        "description": "Les dernières recherches de Tomas pourraient encore être accessibles.",
-        "actions": [
-            "notes"
-        ]
-    },
-    "observation": {
-        "title": "OBSERVATION",
-        "background": "bg_observation",
-        "description": "La console sur laquelle Tomas travaillait est restée allumée.",
-        "actions": [
-            "console"
-        ]
-    },
-    "conclave": {
-        "title": "SALLE DU CONCLAVE",
-        "background": "bg_conclave",
-        "description": "Une salle vide. Celle où Tomas a voté contre.",
-        "actions": []
+        "dortoir": {
+            "title": "DORTOIRS — CHAMBRE D'ELEN",
+            "background": "bg_chambre",
+            "description": "La chambre est sous surveillance. Iris a autorisé quelques examens ciblés.",
+            "actions": [
+                "flacon",
+                "grille"
+            ]
+        },
+        "infirmerie": {
+            "title": "INFIRMERIE",
+            "background": "infirmerie2",
+            "description": "Iris travaille sur les premières constatations médicales.",
+            "actions": [
+                "iris"
+            ]
+        },
+        "repos": {
+            "title": "SALLE COMMUNE",
+            "background": "bg_repos",
+            "description": "Elen essaie de reprendre ses esprits. Sael attend un peu plus loin.",
+            "actions": [
+                "elen",
+                "sael"
+            ]
+        },
+        "cafeteria": {
+            "title": "CAFÉTÉRIA",
+            "background": "bg_cafeteria",
+            "description": "Julian et Nyra sont restés ici après la découverte.",
+            "actions": [
+                "julian",
+                "nyra"
+            ]
+        },
+        "maintenance": {
+            "title": "MAINTENANCE",
+            "background": "bg_maintenance",
+            "description": "Kael et Elias examinent les équipements du couloir.",
+            "actions": [
+                "kael"
+            ]
+        },
+        "gymnase": {
+            "title": "GYMNASE",
+            "background": "bg_gymnase",
+            "description": "Ryn est venu s'isoler.",
+            "actions": [
+                "ryn"
+            ]
+        },
+        "archive": {
+            "title": "ARCHIVES",
+            "background": "bg_archive",
+            "description": "Les dernières recherches de Tomas pourraient encore être accessibles.",
+            "actions": [
+                "notes"
+            ]
+        },
+        "observation": {
+            "title": "OBSERVATION",
+            "background": "bg_observation",
+            "description": "La console sur laquelle Tomas travaillait est restée allumée.",
+            "actions": [
+                "console"
+            ]
+        },
+        "conclave": {
+            "title": "SALLE DU CONCLAVE",
+            "background": "bg_conclave",
+            "description": "Une salle vide. Celle où Tomas a voté contre.",
+            "actions": []
+        }
     }
-}
     J26A_ACTIONS = {
-    "flacon": {
-        "title": "Examiner le flacon",
-        "description": "Observer et photographier le flacon, sans perturber le travail d'Iris.",
-        "label": "_26_0_1_1_0_1_PA_FLACON",
-        "evidence": "j26_tomas_flacon"
-    },
-    "grille": {
-        "title": "Observer la grille d'aération",
-        "description": "Vérifier les plaques de protection et la circulation de l'air.",
-        "label": "_26_0_1_1_0_1_PA_GRILLE",
-        "evidence": "j26_tomas_aeration"
-    },
-    "iris": {
-        "title": "Parler à Iris",
-        "description": "Demander ce que les constatations permettent réellement de conclure.",
-        "label": "_26_0_1_1_0_1_PA_IRIS",
-        "evidence": "j26_tomas_rapport"
-    },
-    "elen": {
-        "title": "Parler à Elen",
-        "description": "Revenir avec précaution sur l'échange de chambres et la dernière soirée.",
-        "label": "_26_0_1_1_0_1_PA_ELEN",
-        "evidence": "j26_tomas_echange"
-    },
-    "sael": {
-        "title": "Interroger Sael",
-        "description": "Lui demander où elle se trouvait après le dîner.",
-        "label": "_26_0_1_1_0_1_PA_SAEL",
-        "evidence": "j26_tomas_alibi_sael"
-    },
-    "julian": {
-        "title": "Interroger Julian",
-        "description": "Revenir sur sa dispute avec Tomas et ses déplacements.",
-        "label": "_26_0_1_1_0_1_PA_JULIAN",
-        "evidence": "j26_tomas_alibi_julian"
-    },
-    "nyra": {
-        "title": "Interroger Nyra",
-        "description": "Lui demander où elle a passé la nuit après l'avoir croisée aux dortoirs.",
-        "label": "_26_0_1_1_0_1_PA_NYRA",
-        "evidence": "j26_tomas_alibi_nyra"
-    },
-    "kael": {
-        "title": "Interroger Kael et Elias",
-        "description": "Vérifier le verrou et les accès de maintenance.",
-        "label": "_26_0_1_1_0_1_PA_KAEL",
-        "evidence": "j26_tomas_verrou"
-    },
-    "ryn": {
-        "title": "Interroger Ryn",
-        "description": "Vérifier son alibi après les tensions de la veille.",
-        "label": "_26_0_1_1_0_1_PA_RYN",
-        "evidence": "j26_tomas_alibi_ryn"
-    },
-    "notes": {
-        "title": "Rechercher les travaux de Tomas",
-        "description": "Consulter les documents laissés en cours sur Keyper-IIB.",
-        "label": "_26_0_1_1_0_1_PA_NOTES",
-        "evidence": "j26_tomas_keyper"
-    },
-    "console": {
-        "title": "Examiner la console",
-        "description": "Vérifier ce qu'on peut déduire des manipulations de Tomas.",
-        "label": "_26_0_1_1_0_1_PA_CONSOLE",
-        "evidence": "j26_tomas_console"
+        "flacon": {
+            "title": "Examiner le flacon",
+            "description": "Observer et photographier le flacon, sans perturber le travail d'Iris.",
+            "label": "_26_0_1_1_0_1_PA_FLACON",
+            "evidence": "j26_tomas_flacon"
+        },
+        "grille": {
+            "title": "Observer la grille d'aération",
+            "description": "Vérifier les plaques de protection et la circulation de l'air.",
+            "label": "_26_0_1_1_0_1_PA_GRILLE",
+            "evidence": "j26_tomas_aeration"
+        },
+        "iris": {
+            "title": "Parler à Iris",
+            "description": "Demander ce que les constatations permettent réellement de conclure.",
+            "label": "_26_0_1_1_0_1_PA_IRIS",
+            "evidence": "j26_tomas_rapport"
+        },
+        "elen": {
+            "title": "Parler à Elen",
+            "description": "Revenir avec précaution sur l'échange de chambres et la dernière soirée.",
+            "label": "_26_0_1_1_0_1_PA_ELEN",
+            "evidence": "j26_tomas_echange"
+        },
+        "sael": {
+            "title": "Interroger Sael",
+            "description": "Lui demander où elle se trouvait après le dîner.",
+            "label": "_26_0_1_1_0_1_PA_SAEL",
+            "evidence": "j26_tomas_alibi_sael"
+        },
+        "julian": {
+            "title": "Interroger Julian",
+            "description": "Revenir sur sa dispute avec Tomas et ses déplacements.",
+            "label": "_26_0_1_1_0_1_PA_JULIAN",
+            "evidence": "j26_tomas_alibi_julian"
+        },
+        "nyra": {
+            "title": "Interroger Nyra",
+            "description": "Lui demander où elle a passé la nuit après l'avoir croisée aux dortoirs.",
+            "label": "_26_0_1_1_0_1_PA_NYRA",
+            "evidence": "j26_tomas_alibi_nyra"
+        },
+        "kael": {
+            "title": "Interroger Kael et Elias",
+            "description": "Vérifier le verrou et les accès de maintenance.",
+            "label": "_26_0_1_1_0_1_PA_KAEL",
+            "evidence": "j26_tomas_verrou"
+        },
+        "ryn": {
+            "title": "Interroger Ryn",
+            "description": "Vérifier son alibi après les tensions de la veille.",
+            "label": "_26_0_1_1_0_1_PA_RYN",
+            "evidence": "j26_tomas_alibi_ryn"
+        },
+        "notes": {
+            "title": "Rechercher les travaux de Tomas",
+            "description": "Consulter les documents laissés en cours sur Keyper-IIB.",
+            "label": "_26_0_1_1_0_1_PA_NOTES",
+            "evidence": "j26_tomas_keyper"
+        },
+        "console": {
+            "title": "Examiner la console",
+            "description": "Vérifier ce qu'on peut déduire des manipulations de Tomas.",
+            "label": "_26_0_1_1_0_1_PA_CONSOLE",
+            "evidence": "j26_tomas_console"
+        }
     }
-}
     INVESTIGATION_ENTRIES.update({
         "j26_tomas_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES", "desc": "Un flacon presque vide a été découvert près du lit. Rien ne prouve que Tomas a pris ces comprimés.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_aeration": {"category": "preuves", "title": "GRILLE D'AÉRATION", "desc": "Une plaque empêche physiquement le passage par la grille, mais laisse l'air circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
