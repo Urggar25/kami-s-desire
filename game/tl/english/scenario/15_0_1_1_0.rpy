@@ -1942,13 +1942,13 @@ translate english 599b4b78:
 translate english 9f8e122f:
 
     # "La chambre vide tremble légèrement sous la compression vidéo."
-    ""
+    "The empty room quivers slightly with the video compression."
 
 # game/scenario/15_0_1_1_0.rpy:502
 translate english 08e04aa7:
 
     # "Puis l’image bouge soudainement."
-    ""
+    "Then the picture suddenly shifts."
 
 # game/scenario/15_0_1_1_0.rpy:503
 translate english a1dd0f1c:
@@ -1966,31 +1966,31 @@ translate english b99ad16e:
 translate english e5842fc9:
 
     # noam "Reviens en arrière."
-    noam ""
+    noam "Go back."
 
 # game/scenario/15_0_1_1_0.rpy:506
 translate english efa0b3fb:
 
     # "Il recule."
-    ""
+    "He rewinds."
 
 # game/scenario/15_0_1_1_0.rpy:507
 translate english a8493b4b:
 
     # "L’image saute de nouveau."
-    ""
+    "The image jumps again."
 
 # game/scenario/15_0_1_1_0.rpy:508
 translate english 23ff8342:
 
     # kael "C'est quoi ? Un glitch ?!"
-    kael ""
+    kael "What was that? A glitch?!"
 
 # game/scenario/15_0_1_1_0.rpy:509
 translate english 555e8be2:
 
     # noam "Peut-être."
-    noam ""
+    noam "Maybe."
 
 # game/scenario/15_0_1_1_0.rpy:510
 translate english 7e6c154d:
@@ -2002,13 +2002,13 @@ translate english 7e6c154d:
 translate english a114b4c6:
 
     # noam "21h17."
-    noam ""
+    noam "9:17 p.m."
 
 # game/scenario/15_0_1_1_0.rpy:512
 translate english ad02f0b3:
 
     # kael "Je n’étais pas dans ma chambre."
-    kael ""
+    kael "I wasn't in my room."
 
 # game/scenario/15_0_1_1_0.rpy:513
 translate english f5de5f7b:
@@ -2026,7 +2026,7 @@ translate english 1533e039:
 translate english a8b21202:
 
     # noam "Tu crois ?"
-    noam ""
+    noam "You think?"
 
 # game/scenario/15_0_1_1_0.rpy:516
 translate english dacf1b1c:
@@ -2038,37 +2038,37 @@ translate english dacf1b1c:
 translate english 4dbecf08:
 
     # "Il avale difficilement."
-    ""
+    "He swallows hard."
 
 # game/scenario/15_0_1_1_0.rpy:518
 translate english 6a208460:
 
     # kael "Continue."
-    kael ""
+    kael "Keep going."
 
 # game/scenario/15_0_1_1_0.rpy:531
 translate english 21a24399:
 
     # "Kael relance la vidéo en temps réel, les doigts crispés sur la souris."
-    ""
+    "Kael plays the footage at normal speed, his fingers tight around the mouse."
 
 # game/scenario/15_0_1_1_0.rpy:532
 translate english 74af8606:
 
     # "L’image est nette. Trop nette."
-    ""
+    "The image is clear. Too clear."
 
 # game/scenario/15_0_1_1_0.rpy:534
 translate english fdd4edf3:
 
     # "La porte de sa chambre s’ouvre. Kael entre."
-    ""
+    "His bedroom door opens. Kael walks in."
 
 # game/scenario/15_0_1_1_0.rpy:535
 translate english ccce20f0:
 
     # "Le Kael à l’écran traverse la pièce d’un pas calme, presque nonchalant."
-    ""
+    "The Kael on-screen crosses the room at an easy, almost casual pace."
 
 # game/scenario/15_0_1_1_0.rpy:537
 translate english bfb775d4:
@@ -2080,25 +2080,25 @@ translate english bfb775d4:
 translate english 97d9de33:
 
     # "Il s’arrête devant le mur où était accrochée la photo de sa sœur."
-    ""
+    "He stops in front of the wall where his sister's picture hung."
 
 # game/scenario/15_0_1_1_0.rpy:540
 translate english d7fd9a91:
 
     # "Il tend la main, décroche le cadre avec une douceur étrange."
-    ""
+    "He reaches out and takes the frame down with a strange gentleness."
 
 # game/scenario/15_0_1_1_0.rpy:541
 translate english 841bc5d5:
 
     # "Il regarde la photo un long moment, un léger sourire aux lèvres."
-    ""
+    "He studies the photo for a long time, a faint smile on his lips."
 
 # game/scenario/15_0_1_1_0.rpy:542
 translate english 9196bd96:
 
     # "Puis il glisse tranquillement le cadre dans sa poche intérieure."
-    ""
+    "Then he calmly slips the frame into his inside pocket."
 
 # game/scenario/15_0_1_1_0.rpy:544
 translate english aefd1467:
@@ -2110,25 +2110,25 @@ translate english aefd1467:
 translate english 17f2ac1c:
 
     # "Le Kael filmé se tourne alors vers la caméra."
-    ""
+    "The Kael on the recording turns toward the camera."
 
 # game/scenario/15_0_1_1_0.rpy:547
 translate english 1e43db06:
 
     # "Juste une seconde."
-    ""
+    "Just for a second."
 
 # game/scenario/15_0_1_1_0.rpy:548
 translate english 9868cd67:
 
     # "Il regarde droit dans l’objectif."
-    ""
+    "He stares straight into the lens."
 
 # game/scenario/15_0_1_1_0.rpy:553
 translate english 9cc74dd9:
 
     # centered "{color=#FF0000}FILE DELETED{/color}"
-    centered ""
+    centered "{color=#FF0000}FILE DELETED{/color}"
 
 # game/scenario/15_0_1_1_0.rpy:562
 translate english 2569ade1:
@@ -2158,19 +2158,19 @@ translate english 19c585f9:
 translate english 00108b04:
 
     # kael "C’était moi ! C’était clairement moi ! Ma veste, ma démarche, tout !"
-    kael ""
+    kael "That was ME! It was obviously me! My jacket, the way I walk—everything!"
 
 # game/scenario/15_0_1_1_0.rpy:569
 translate english fcc1f1ae:
 
     # kael "Et pourtant je te jure sur la tête de ma sœur que je n’ai jamais touché cette photo !"
-    kael ""
+    kael "But I swear on my sister's life, I never touched that picture!"
 
 # game/scenario/15_0_1_1_0.rpy:571
 translate english 3459920b:
 
     # "Il tremble. Ses mains sont serrées si fort sur le bord du bureau que ses articulations blanchissent."
-    ""
+    "He's trembling. His hands grip the edge of the desk so hard his knuckles turn white."
 
 # game/scenario/15_0_1_1_0.rpy:573
 translate english 7b129802:
@@ -2194,55 +2194,55 @@ translate english 5e1040dd:
 translate english 1fded165:
 
     # kael "Je sais ce que j’ai fait et ce que je n’ai pas fait."
-    kael ""
+    kael "I know what I've done and what I haven't."
 
 # game/scenario/15_0_1_1_0.rpy:578
 translate english 895c73e7:
 
     # kael "Oui c'est ça ! Je me souviens parfaitement de cette soirée."
-    kael ""
+    kael "Exactly! I remember that evening perfectly."
 
 # game/scenario/15_0_1_1_0.rpy:579
 translate english 61263c55:
 
     # kael "J’étais avec Elen à la salle de repos, puis j’ai croisé Nyra, puis je suis rentré tard."
-    kael ""
+    kael "I was with Elen in the lounge, then I ran into Nyra, and I got back late."
 
 # game/scenario/15_0_1_1_0.rpy:580
 translate english fceaf0ff:
 
     # kael "Quand je suis arrivé, la photo n’était plus là."
-    kael ""
+    kael "When I returned, the picture was already gone."
 
 # game/scenario/15_0_1_1_0.rpy:581
 translate english 5a9c9d1b:
 
     # kael "Mais je n’ai jamais décroché ce cadre. Jamais."
-    kael ""
+    kael "But I never took that frame down. Never."
 
 # game/scenario/15_0_1_1_0.rpy:583
 translate english f121c0a0:
 
     # "Je relance la vidéo une deuxième fois."
-    ""
+    "I play the footage a second time."
 
 # game/scenario/15_0_1_1_0.rpy:585
 translate english ba27dadf:
 
     # "Même séquence."
-    ""
+    "Same sequence."
 
 # game/scenario/15_0_1_1_0.rpy:586
 translate english 651e2eae:
 
     # "Même Kael."
-    ""
+    "Same Kael."
 
 # game/scenario/15_0_1_1_0.rpy:587
 translate english dd30703d:
 
     # "Même geste précis."
-    ""
+    "Same precise movement."
 
 # game/scenario/15_0_1_1_0.rpy:589
 translate english 6c30fbe4:
@@ -2254,19 +2254,19 @@ translate english 6c30fbe4:
 translate english 64c0344d:
 
     # "Troisième lecture."
-    ""
+    "A third time."
 
 # game/scenario/15_0_1_1_0.rpy:592
 translate english 3c3d3198:
 
     # "Cette fois je remarque que le Kael à l’écran parle."
-    ""
+    "This time, I notice the Kael on-screen is speaking."
 
 # game/scenario/15_0_1_1_0.rpy:593
 translate english 920a6546:
 
     # "Aucun son ne sort mais ses lèvres bougent clairement."
-    ""
+    "There's no audio, but I can clearly see his lips moving."
 
 # game/scenario/15_0_1_1_0.rpy:595
 translate english 03ab7262:
@@ -2296,7 +2296,7 @@ translate english c38680bb:
 translate english 31839045:
 
     # kael "Pourquoi est-ce que je dirais ça ?!"
-    kael ""
+    kael "Why the hell would I say that?!"
 
 # game/scenario/15_0_1_1_0.rpy:603
 translate english fafa2573:
@@ -2308,7 +2308,7 @@ translate english fafa2573:
 translate english 57627da9:
 
     # "Il se passe les deux mains dans les cheveux, au bord de la crise."
-    ""
+    "He runs both hands through his hair, on the verge of breaking down."
 
 # game/scenario/15_0_1_1_0.rpy:607
 translate english 897aa8c3:
@@ -2338,7 +2338,7 @@ translate english d06b401a:
 translate english 329b79c2:
 
     # kael "Dis quelque chose, putain !"
-    kael ""
+    kael "Say something, damn it!"
 
 # game/scenario/15_0_1_1_0.rpy:615
 translate english e217ff75:
@@ -2362,13 +2362,13 @@ translate english a204cca6:
 translate english 5daba499:
 
     # "Kael me regarde longuement."
-    ""
+    "Kael stares at me for a long moment."
 
 # game/scenario/15_0_1_1_0.rpy:620
 translate english 729250b2:
 
     # "Ses yeux sont rouges, hantés."
-    ""
+    "His eyes are bloodshot, haunted."
 
 # game/scenario/15_0_1_1_0.rpy:622
 translate english 4e6b2fe3:
@@ -2398,43 +2398,43 @@ translate english 91e58dc0:
 translate english 9599029c:
 
     # "Je reste silencieux."
-    ""
+    "I say nothing."
 
 # game/scenario/15_0_1_1_0.rpy:628
 translate english 406613f0:
 
     # "Dans mon esprit, l’image de la silhouette que j'ai aperçu dans le couloir revient en force."
-    ""
+    "The silhouette I saw in the corridor comes rushing back into my mind."
 
 # game/scenario/15_0_1_1_0.rpy:629
 translate english 3d99dc62:
 
     # "Le dessin décalqué de Juliette."
-    ""
+    "The traced copy of Juliette's drawing."
 
 # game/scenario/15_0_1_1_0.rpy:630
 translate english 9c894b2e:
 
     # "Tout ça tourne, s’imbrique."
-    ""
+    "All the pieces keep turning, fitting together."
 
 # game/scenario/15_0_1_1_0.rpy:632
 translate english 5e0f7f55:
 
     # think "Et si c’était la même chose pour moi ?"
-    think ""
+    think "What if the same thing happened to me?"
 
 # game/scenario/15_0_1_1_0.rpy:633
 translate english 273d39bd:
 
     # think "Et si j’avais arraché mon propre dessin sans m’en souvenir ?"
-    think ""
+    think "What if I tore down my own drawing and don't remember it?"
 
 # game/scenario/15_0_1_1_0.rpy:635
 translate english c7b41002:
 
     # kael "Noam."
-    kael ""
+    kael "Noam."
 
 # game/scenario/15_0_1_1_0.rpy:636
 translate english f7a1f602:
@@ -2482,19 +2482,19 @@ translate english b328a73f:
 translate english 104005e3:
 
     # "Kael me fixe intensément."
-    ""
+    "Kael fixes his eyes on me."
 
 # game/scenario/15_0_1_1_0.rpy:649
 translate english 3581f9b7:
 
     # kael "On est dans la même merde, alors."
-    kael ""
+    kael "Then we're in the same shit."
 
 # game/scenario/15_0_1_1_0.rpy:651
 translate english 6def29fd:
 
     # "Un long silence s’installe entre nous."
-    ""
+    "A long silence settles between us."
 
 # game/scenario/15_0_1_1_0.rpy:653
 translate english 6091d8d2:
@@ -2512,19 +2512,19 @@ translate english 9c3d4bfe:
 translate english fcb7b46d:
 
     # noam "Oui ! C'est peut-être ça !"
-    noam ""
+    noam "Yes! Maybe that's it!"
 
 # game/scenario/15_0_1_1_0.rpy:672
 translate english d7b4d635:
 
     # "Kael reste penché sur le clavier, les yeux injectés de sang."
-    ""
+    "Kael hunches over the keyboard, his eyes bloodshot."
 
 # game/scenario/15_0_1_1_0.rpy:673
 translate english b70ffdea:
 
     # "Il tape frénétiquement, ouvre des menus que je ne comprends pas."
-    ""
+    "He types frantically, opening menus I don't understand."
 
 # game/scenario/15_0_1_1_0.rpy:675
 translate english 4b2c8b2c:
@@ -2536,13 +2536,13 @@ translate english 4b2c8b2c:
 translate english 52b02fd1:
 
     # kael "Les métadonnées, les timestamps, l’empreinte numérique… tout est enregistré ici."
-    kael ""
+    kael "Metadata, timestamps, digital signatures... it's all recorded here."
 
 # game/scenario/15_0_1_1_0.rpy:678
 translate english 67a10378:
 
     # "Il ouvre une fenêtre technique remplie de chiffres et de codes."
-    ""
+    "He opens a technical window full of numbers and code."
 
 # game/scenario/15_0_1_1_0.rpy:680
 translate english fb854b46:
@@ -2554,13 +2554,13 @@ translate english fb854b46:
 translate english 3da3006e:
 
     # kael "Dernière modification… aucune."
-    kael ""
+    kael "Last modified... never."
 
 # game/scenario/15_0_1_1_0.rpy:682
 translate english 0aca51b9:
 
     # kael "Empreinte d’intégrité… valide."
-    kael ""
+    kael "Integrity hash... valid."
 
 # game/scenario/15_0_1_1_0.rpy:683
 translate english f5726b5a:
@@ -2572,13 +2572,13 @@ translate english f5726b5a:
 translate english d183faf5:
 
     # "Il relance la vidéo une quatrième fois."
-    ""
+    "He plays the footage a fourth time."
 
 # game/scenario/15_0_1_1_0.rpy:687
 translate english 9ecc1cbe:
 
     # "Même séquence. Même Kael. Même geste précis pour décrocher la photo."
-    ""
+    "Same sequence. Same Kael. Same precise motion as he takes down the picture."
 
 # game/scenario/15_0_1_1_0.rpy:689
 translate english 2e2502db:
@@ -2608,7 +2608,7 @@ translate english 326416ac:
 translate english b099333a:
 
     # "Il frappe du poing sur le bureau."
-    ""
+    "He slams a fist onto the desk."
 
 # game/scenario/15_0_1_1_0.rpy:696
 translate english 70cf7cbd:
@@ -2620,7 +2620,7 @@ translate english 70cf7cbd:
 translate english a5d4ff58:
 
     # kael "Et je ne m’en souviens absolument pas."
-    kael ""
+    kael "And I don't remember any of it."
 
 # game/scenario/15_0_1_1_0.rpy:699
 translate english e788bf5d:
@@ -2638,7 +2638,7 @@ translate english b8789dcb:
 translate english af222fd9:
 
     # kael "Je sais ce que tu penses."
-    kael ""
+    kael "I know what you're thinking."
 
 # game/scenario/15_0_1_1_0.rpy:703
 translate english 735690f2:
@@ -2650,7 +2650,7 @@ translate english 735690f2:
 translate english 711f3156:
 
     # kael "Si j’ai fait un black-out."
-    kael ""
+    kael "That I blacked out."
 
 # game/scenario/15_0_1_1_0.rpy:705
 translate english 98e74f2e:
@@ -2680,19 +2680,19 @@ translate english 4d500088:
 translate english 0a309a38:
 
     # "Il relance encore une fois la vidéo, au ralenti cette fois."
-    ""
+    "He plays the footage again, this time in slow motion."
 
 # game/scenario/15_0_1_1_0.rpy:714
 translate english 9e917b6b:
 
     # "Le Kael à l’écran décroche la photo avec une douceur presque amoureuse."
-    ""
+    "The Kael on-screen takes down the photo with an almost loving gentleness."
 
 # game/scenario/15_0_1_1_0.rpy:715
 translate english bc77762f:
 
     # "Il la regarde, passe son pouce sur le visage de sa sœur, puis la range dans sa poche."
-    ""
+    "He studies it, runs his thumb over his sister's face, then slips it into his pocket."
 
 # game/scenario/15_0_1_1_0.rpy:717
 translate english e2ec0ae6:
@@ -2704,7 +2704,7 @@ translate english e2ec0ae6:
 translate english 84549c9a:
 
     # "Sa voix se brise."
-    ""
+    "His voice cracks."
 
 # game/scenario/15_0_1_1_0.rpy:721
 translate english 4c252f93:
@@ -2728,19 +2728,19 @@ translate english 7339e76a:
 translate english c16a8362:
 
     # "Il se laisse tomber contre le dossier de la chaise, les mains sur le visage."
-    ""
+    "He slumps back into the chair, covering his face with his hands."
 
 # game/scenario/15_0_1_1_0.rpy:727
 translate english 39834ca9:
 
     # kael "Si ce n’est pas une modification…"
-    kael ""
+    kael "If it hasn't been tampered with..."
 
 # game/scenario/15_0_1_1_0.rpy:728
 translate english 00d03e4a:
 
     # kael "Alors c’est moi."
-    kael ""
+    kael "Then it's me."
 
 # game/scenario/15_0_1_1_0.rpy:729
 translate english ce58649c:
@@ -2764,7 +2764,7 @@ translate english 09d7943c:
 translate english 48f8a902:
 
     # "Un long silence s’installe."
-    ""
+    "A long silence follows."
 
 # game/scenario/15_0_1_1_0.rpy:735
 translate english 78c6b46a:
@@ -2776,13 +2776,13 @@ translate english 78c6b46a:
 translate english 2769f7bc:
 
     # noam "On devrait peut-être regarder d’autres caméras."
-    noam ""
+    noam "Maybe we should check the other cameras."
 
 # game/scenario/15_0_1_1_0.rpy:737
 translate english 0fcc7f7e:
 
     # noam "Voir si tu étais vraiment seul ce soir-là."
-    noam ""
+    noam "See whether you were really alone that night."
 
 # game/scenario/15_0_1_1_0.rpy:739
 translate english 68ab1ba5:
@@ -2794,13 +2794,13 @@ translate english 68ab1ba5:
 translate english d3af2dd0:
 
     # kael "Aucune autre caméra ne couvre ce couloir à ce moment précis."
-    kael ""
+    kael "No other camera covers that corridor at that exact time."
 
 # game/scenario/15_0_1_1_0.rpy:742
 translate english b904f05b:
 
     # "Il tourne lentement la tête vers moi."
-    ""
+    "He slowly turns his head toward me."
 
 # game/scenario/15_0_1_1_0.rpy:744
 translate english 2edeef3c:
@@ -2812,13 +2812,13 @@ translate english 2edeef3c:
 translate english 7a4ef87c:
 
     # kael "Tu as vu quelque chose toi aussi, pas vrai ?"
-    kael ""
+    kael "You saw something too, didn't you?"
 
 # game/scenario/15_0_1_1_0.rpy:746
 translate english d8f773bb:
 
     # kael "Dans le couloir, avant l’annonce de Kami."
-    kael ""
+    kael "In the corridor, before Kami's announcement."
 
 # game/scenario/15_0_1_1_0.rpy:747
 translate english e5a56112:
@@ -2830,7 +2830,7 @@ translate english e5a56112:
 translate english 9599029c_1:
 
     # "Je reste silencieux."
-    ""
+    "I say nothing."
 
 # game/scenario/15_0_1_1_0.rpy:751
 translate english 1cfd72d3:
@@ -2848,7 +2848,7 @@ translate english d06b401a_1:
 translate english 46ed3067:
 
     # noam "Je ne sais plus quoi en penser."
-    noam ""
+    noam "I don't know what to think anymore."
 
 # game/scenario/15_0_1_1_0.rpy:755
 translate english f730e8a2:
@@ -2860,13 +2860,13 @@ translate english f730e8a2:
 translate english 4cf4c745:
 
     # "Kael me fixe encore un moment, puis retourne vers l’écran."
-    ""
+    "Kael watches me for another moment, then turns back to the screen."
 
 # game/scenario/15_0_1_1_0.rpy:758
 translate english 81bc2eb5:
 
     # "L’image figée montre toujours son propre visage en train de voler la photo de sa sœur."
-    ""
+    "The frozen image still shows his own face stealing his sister's photo."
 
 # game/scenario/15_0_1_1_0.rpy:760
 translate english ed1012f0:
@@ -2878,97 +2878,97 @@ translate english ed1012f0:
 translate english da76549f:
 
     # kael "Si ce n’est pas une manipulation…"
-    kael ""
+    kael "If this isn't a fake..."
 
 # game/scenario/15_0_1_1_0.rpy:762
 translate english 4d2b6d60:
 
     # kael "Il faut que je retrouve cette photo !"
-    kael ""
+    kael "I have to find that picture!"
 
 # game/scenario/15_0_1_1_0.rpy:767
 translate english ad37d668:
 
     # "Sur ces mots, Kael quitte la pièce rapidement et part en direction des dortoirs."
-    ""
+    "With that, Kael hurries out toward the dormitories."
 
 # game/scenario/15_0_1_1_0.rpy:776
 translate english ea127406:
 
     # "Kael est parti depuis quelques minutes."
-    ""
+    "Kael left a few minutes ago."
 
 # game/scenario/15_0_1_1_0.rpy:777
 translate english 554b3a46:
 
     # "Je suis seul dans la salle d’observation, les écrans toujours allumés."
-    ""
+    "I'm alone in the observation room, the screens still on."
 
 # game/scenario/15_0_1_1_0.rpy:778
 translate english fecf77f6:
 
     # "Le silence est assourdissant."
-    ""
+    "The silence is deafening."
 
 # game/scenario/15_0_1_1_0.rpy:780
 translate english 69a7296f:
 
     # "Je m’assois devant le terminal et tape mon code d’accès."
-    ""
+    "I sit at the terminal and enter my access code."
 
 # game/scenario/15_0_1_1_0.rpy:782
 translate english 48c70247:
 
     # think "Si Kael ne se souvient pas avoir volé sa photo…"
-    think ""
+    think "If Kael doesn't remember stealing his photo..."
 
 # game/scenario/15_0_1_1_0.rpy:783
 translate english ea504f1c:
 
     # think "Alors je dois voir pour mon dessin."
-    think ""
+    think "Then I have to check my drawing."
 
 # game/scenario/15_0_1_1_0.rpy:785
 translate english 369f9a1c:
 
     # "J’accède aux archives de ma chambre."
-    ""
+    "I open the footage archive for my room."
 
 # game/scenario/15_0_1_1_0.rpy:786
 translate english c4290bae:
 
     # "Nuit du 7 au 8."
-    ""
+    "The night of Day 7 into Day 8."
 
 # game/scenario/15_0_1_1_0.rpy:787
 translate english 7a87f0c9:
 
     # "Je remonte jusqu’à 2h10 du matin."
-    ""
+    "I skip ahead to 2:10 a.m."
 
 # game/scenario/15_0_1_1_0.rpy:789
 translate english b17e094a:
 
     # "La vidéo démarre."
-    ""
+    "The footage starts."
 
 # game/scenario/15_0_1_1_0.rpy:791
 translate english bf7e810c:
 
     # "Je dors profondément."
-    ""
+    "I'm sound asleep."
 
 # game/scenario/15_0_1_1_0.rpy:792
 translate english 35efb639:
 
     # "La porte s’ouvre sans bruit."
-    ""
+    "The door opens silently."
 
 # game/scenario/15_0_1_1_0.rpy:793
 translate english e486b330:
 
     # "Kael entre."
-    ""
+    "Kael walks in."
 
 # game/scenario/15_0_1_1_0.rpy:795
 translate english 4b99d235:
@@ -2980,25 +2980,25 @@ translate english 4b99d235:
 translate english 6d1a9b08:
 
     # "Il avance droit vers mon bureau, regarde le mur et voit le dessins de Juliette."
-    ""
+    "He heads straight for my desk, looks at the wall, and spots Juliette's drawing."
 
 # game/scenario/15_0_1_1_0.rpy:798
 translate english bf6a3f79:
 
     # "Il tire d'un coup sec dessus et regarde dans la direction du lit."
-    ""
+    "He pulls it down with one sharp tug, then looks toward the bed."
 
 # game/scenario/15_0_1_1_0.rpy:799
 translate english 9ab27b9d:
 
     # "Il regarde le dessin un instant puis fais demi-tour, il sort rapidement de la pièce."
-    ""
+    "He studies the drawing for a moment, turns around, and quickly leaves."
 
 # game/scenario/15_0_1_1_0.rpy:801
 translate english 52363b33:
 
     # "Je reste figé."
-    ""
+    "I freeze."
 
 # game/scenario/15_0_1_1_0.rpy:803
 translate english 5fe8c579:
