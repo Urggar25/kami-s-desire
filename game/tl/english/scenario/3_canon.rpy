@@ -2934,13 +2934,13 @@ translate english day3_choose_debate_argument_ef12d5c7:
 translate english day3_collect_vote_argument_69d258ad:
 
     # think "J'entends du monde dans le couloir. Personne ne parle bien fort."
-    think ""
+    think "I hear people out in the corridor. Nobody's talking very loudly."
 
 # game/scenario/3_canon.rpy:313
 translate english day3_collect_vote_argument_3821ec30:
 
     # think "Je crois qu'on a tous le vote en tête."
-    think ""
+    think "I think we've all got the vote on our minds."
 
 # game/scenario/3_canon.rpy:389
 translate english day3_collect_vote_argument_cf6f4bd4:
@@ -2964,7 +2964,7 @@ translate english day3_collect_vote_argument_1d5f89f4:
 translate english day3_collect_vote_argument_3e60f2d0:
 
     # noam "Je comprends. Mais si on laisse tout comme ça, ça va pas s'arranger non plus."
-    noam ""
+    noam "I get that. But leaving things the way they are won't make anything better, either."
 
 # game/scenario/3_canon.rpy:640
 translate english day3_collect_vote_argument_09c57bb1:
@@ -2988,7 +2988,7 @@ translate english day3_collect_vote_argument_248be62a:
 translate english day3_collect_vote_argument_e596680b:
 
     # think "J'entends Julian derrière la porte. Il parle encore plus fort que d'habitude."
-    think ""
+    think "I can hear Julian through the door. He's talking even louder than usual."
 
 # game/scenario/3_canon.rpy:882
 translate english day3_collect_vote_argument_402f949b:
@@ -3000,7 +3000,7 @@ translate english day3_collect_vote_argument_402f949b:
 translate english day3_collect_vote_argument_0dd61faf:
 
     # think "Tomas cherche ses mots. Julian ne lui laisse même pas le temps de répondre. Je m'approche."
-    think ""
+    think "Tomas is searching for the right words, but Julian won't even let him answer. I walk over."
 
 # game/scenario/3_canon.rpy:890
 translate english day3_collect_vote_argument_8ce377d3:
@@ -3066,7 +3066,7 @@ translate english day3_collect_vote_argument_f79a6775:
 translate english day3_collect_vote_argument_37a667d9:
 
     # noam "C'est tout ce que je te demande. Les autres doivent pouvoir choisir sans te suivre les yeux fermés."
-    noam ""
+    noam "That's all I'm asking. The others need to make up their own minds instead of blindly following you."
 
 # game/scenario/3_canon.rpy:907
 translate english day3_collect_vote_argument_c1095201:
@@ -3102,7 +3102,7 @@ translate english day3_collect_vote_argument_458febed:
 translate english day3_collect_vote_argument_a956c627:
 
     # noam "Je vais essayer. J'ai pas envie qu'on se plante à cause d'une dispute."
-    noam ""
+    noam "I'll try. I don't want us to screw this up over an argument."
 
 # game/scenario/3_canon.rpy:926
 translate english day3_collect_vote_argument_eccf2dc8:
@@ -3114,19 +3114,19 @@ translate english day3_collect_vote_argument_eccf2dc8:
 translate english day3_collect_vote_argument_76a010ca:
 
     # think "Julian veut vraiment que le vote passe. Mais il a toujours besoin qu'on le remarque."
-    think ""
+    think "Julian really wants this vote to pass. But he always has to be the center of attention."
 
 # game/scenario/3_canon.rpy:937
 translate english day3_collect_vote_argument_85ce25fa:
 
     # think "J'ai encore les mains moites. Ça promet pour le débat."
-    think ""
+    think "My palms are still sweaty. That's a great sign for the debate."
 
 # game/scenario/3_canon.rpy:938
 translate english day3_collect_vote_argument_57e186d5:
 
     # think "Julian m'énerve. Mais il a raison sur un truc : jusqu'ici, j'ai surtout regardé les autres se débrouiller."
-    think ""
+    think "Julian gets on my nerves. But he's right about one thing: so far, I've mostly stood by while everyone else dealt with things."
 
 # game/scenario/3_canon.rpy:971
 translate english day3_collect_vote_argument_e1b1a709:
@@ -3156,31 +3156,31 @@ translate english day3_collect_vote_argument_d9fdf5f3:
 translate english day3_collect_vote_argument_d0c10a2a:
 
     # sael "Lysa... Tu as l'air épuisée."
-    sael ""
+    sael "Lysa... you look exhausted."
 
 # game/scenario/3_canon.rpy:988
 translate english day3_collect_vote_argument_6daffe31:
 
     # sael "Tu vois les problèmes avant tout le monde. C'est utile. Mais tu peux aussi te reposer un peu."
-    sael ""
+    sael "You spot problems before anyone else. That's useful. But you need to rest sometimes, too."
 
 # game/scenario/3_canon.rpy:989
 translate english day3_collect_vote_argument_fca22cac:
 
     # sael "On aura besoin de toi pendant le vote."
-    sael ""
+    sael "We'll need you for the vote."
 
 # game/scenario/3_canon.rpy:995
 translate english day3_collect_vote_argument_5587a674:
 
     # sael "Je sais. Je te demande juste de ne pas abandonner avant d'avoir essayé."
-    sael ""
+    sael "I know. I'm just asking you not to give up before you've even tried."
 
 # game/scenario/3_canon.rpy:997
 translate english day3_collect_vote_argument_a911803a:
 
     # lysa "Bon. Mais tu me devras un café après ça."
-    lysa ""
+    lysa "Fine. But you owe me a coffee after this."
 
 # game/scenario/3_canon.rpy:999
 translate english day3_collect_vote_argument_d4c76d8c:
@@ -3192,19 +3192,19 @@ translate english day3_collect_vote_argument_d4c76d8c:
 translate english day3_collect_vote_argument_7e8e2a14:
 
     # nyra "Tu l'as seulement reformulé ? Ou tu as aussi changé ce qu'il disait ?"
-    nyra ""
+    nyra "Did you just reword it? Or did you change what it actually said?"
 
 # game/scenario/3_canon.rpy:1066
 translate english day3_collect_vote_argument_90d1f5d5:
 
     # kami "Oh, j'ai juste fait en sorte que ça puisse s'appliquer. Chaque détail compte, vous savez."
-    kami ""
+    kami "Oh, I just made sure it could be enforced. Every little detail matters, you know."
 
 # game/scenario/3_canon.rpy:1071
 translate english day3_collect_vote_argument_5fba2bfd:
 
     # kami "Faites attention aux petits mots. Je vous assure que ça compte."
-    kami ""
+    kami "Watch out for the fine print. Trust me, it matters."
 
 # game/scenario/3_canon.rpy:1091
 translate english day3_collect_vote_argument_e72f655f:
@@ -3222,13 +3222,13 @@ translate english day3_collect_vote_argument_a23dccdb:
 translate english day3_collect_vote_argument_d065968a:
 
     # nyra "Regardez la ponctuation, ça aidera à remettre les morceaux dans l'ordre."
-    nyra ""
+    nyra "Look at the punctuation. It'll help us put the pieces back in order."
 
 # game/scenario/3_canon.rpy:1097
 translate english day3_collect_vote_argument_66c62f95:
 
     # nyra "On lit tout avant de commencer à se disputer, d'accord ?"
-    nyra ""
+    nyra "Can we read the whole thing before we start arguing?"
 
 # game/scenario/3_canon.rpy:1132
 translate english day3_collect_vote_argument_80344a44:
@@ -3252,13 +3252,13 @@ translate english day3_collect_vote_argument_b1ce0384:
 translate english day3_collect_vote_argument_6a1735c6:
 
     # noam "Attendez. Le texte de départ parlait pas des rations."
-    noam ""
+    noam "Wait. The original proposal didn't mention ration coupons."
 
 # game/scenario/3_canon.rpy:1164
 translate english day3_collect_vote_argument_bc6125ab:
 
     # noam "Mais c'est celui-là qu'on doit voter. Alors on fait quoi ?"
-    noam ""
+    noam "But this is the text we're voting on. So what do we do?"
 
 # game/scenario/3_canon.rpy:1176
 translate english day3_collect_vote_argument_604e465e:
@@ -3294,7 +3294,7 @@ translate english day3_collect_vote_argument_78f7442c:
 translate english day3_collect_vote_argument_bfea1639:
 
     # noam "Elle nous a peut-être bien eus. Mais on doit quand même voter."
-    noam ""
+    noam "She might have played us. But we still have to vote."
 
 # game/scenario/3_canon.rpy:1195
 translate english day3_collect_vote_argument_82e8a52d:
@@ -3318,19 +3318,19 @@ translate english day3_before_objection_protocol_minigame_43111e12:
 translate english day3_before_objection_protocol_minigame_b0fef9aa:
 
     # noam "On peut pas décider juste parce qu'elle nous fait peur."
-    noam ""
+    noam "We can't make this decision just because she's scaring us."
 
 # game/scenario/3_canon.rpy:1531
 translate english day3_choose_debate_argument_b745465c:
 
     # noam "Bon. On sait ce qu'elle veut nous faire voter. Parlons des conséquences."
-    noam ""
+    noam "Okay. We know what she wants us to vote on. Let's talk about the consequences."
 
 # game/scenario/3_canon.rpy:1534
 translate english day3_choose_debate_argument_34473062:
 
     # julian "Et rester comme ça, tu appelles ça une solution ? Les gens manquent déjà de tout."
-    julian ""
+    julian "And you call staying like this a solution? People are already going without."
 
 # game/scenario/3_canon.rpy:1544
 translate english day3_choose_debate_argument_dcbd4312:
@@ -3348,13 +3348,13 @@ translate english day3_choose_debate_argument_70ef1803:
 translate english day3_choose_debate_argument_5e0bc088:
 
     # think "Je n'ai rien de suffisamment solide à ajouter pour le moment."
-    think ""
+    think "I don't have anything solid enough to add right now."
 
 # game/scenario/3_canon.rpy:1576
 translate english day3_choose_debate_argument_be2deed3:
 
     # sael "Chez nous, on s'aide déjà sans bons."
-    sael ""
+    sael "Back home, we already help each other without coupons."
 
 # game/scenario/3_canon.rpy:1577
 translate english day3_choose_debate_argument_94a7c929:
@@ -3366,13 +3366,13 @@ translate english day3_choose_debate_argument_94a7c929:
 translate english day3_choose_debate_argument_9bdd649d:
 
     # noam "Ouais, c'est vrai. On va les trouver où, les premiers salaires ?"
-    noam ""
+    noam "Yeah, that's true. Where's the money for those first paychecks supposed to come from?"
 
 # game/scenario/3_canon.rpy:1595
 translate english day3_choose_debate_argument_7e04ba97:
 
     # kami "Et pour ceux qui ne voudront pas travailler... Eh bien, il faudra se débrouiller sans rations. Motivant, non ?"
-    kami ""
+    kami "And anyone who doesn't want to work... well, they'll have to manage without rations. Motivating, isn't it?"
 
 # game/scenario/3_canon.rpy:1614
 translate english day3_choose_debate_argument_ce075c3a:
@@ -3390,31 +3390,31 @@ translate english day3_choose_debate_argument_1318addf:
 translate english day3_choose_debate_argument_da7a6c16:
 
     # think "Je préfère me taire plutôt que parler pour ne rien dire."
-    think ""
+    think "I'd rather stay quiet than talk just for the sake of it."
 
 # game/scenario/3_canon.rpy:1635
 translate english day3_choose_debate_argument_76e03bfb:
 
     # noam "Bon, je crois qu'on a fait le tour."
-    noam ""
+    noam "Okay. I think we've covered everything."
 
 # game/scenario/3_canon.rpy:1636
 translate english day3_choose_debate_argument_dbd7e38a:
 
     # noam "On sait ce que ce texte change. Pour le reste... il faudra assumer notre vote."
-    noam ""
+    noam "We know what this proposal would change. As for the rest... we'll have to live with our vote."
 
 # game/scenario/3_canon.rpy:1648
 translate english day3_choose_debate_argument_8892dbde:
 
     # noam "Ryn, Kael... Vous en pensez quoi, maintenant ?"
-    noam ""
+    noam "Ryn, Kael... what do you two think now?"
 
 # game/scenario/3_canon.rpy:1702
 translate english day3_choose_debate_argument_298f5997:
 
     # noam "Les gens ont des bons, mais souvent y a rien à acheter avec. Ça sert à quoi ?"
-    noam ""
+    noam "People have coupons, but half the time there's nothing to buy with them. What's the point?"
 
 # game/scenario/3_canon.rpy:1706
 translate english day3_choose_debate_argument_5dcadbf9:
@@ -3474,7 +3474,7 @@ translate english day3_choose_debate_argument_79e735dc:
 translate english day3_choose_debate_argument_1e3eec0c:
 
     # noam "Et avec le commerce, les livraisons peuvent changer tout le temps."
-    noam ""
+    noam "And with free trade, deliveries could change all the time."
 
 # game/scenario/3_canon.rpy:1773
 translate english day3_choose_debate_argument_922cf79b:
@@ -3492,7 +3492,7 @@ translate english day3_choose_debate_argument_d3009872:
 translate english day3_choose_debate_argument_159da8eb:
 
     # noam "Sael, chez toi, tout le monde aide les autres, c'est ça ?"
-    noam ""
+    noam "Sael, where you're from, everyone helps each other out, right?"
 
 # game/scenario/3_canon.rpy:1796
 translate english day3_choose_debate_argument_4878a602:
@@ -3516,7 +3516,7 @@ translate english day3_choose_debate_argument_acc672de:
 translate english day3_choose_debate_argument_eefaf4d4:
 
     # noam "Si on vote pour, on doit savoir ce qui arrive à ces gens-là. Pas juste leur dire de se débrouiller."
-    noam ""
+    noam "If we vote yes, we need to know what happens to those people. We can't just tell them to fend for themselves."
 
 # game/scenario/3_canon.rpy:1800
 translate english day3_choose_debate_argument_08241f3a:
@@ -3528,7 +3528,7 @@ translate english day3_choose_debate_argument_08241f3a:
 translate english day3_choose_debate_argument_69f7fc15:
 
     # noam "Elen a dû remplir des formulaires juste pour avoir quelques ingrédients. C'est normal, ça ?"
-    noam ""
+    noam "Elen had to fill out forms just to get a few ingredients. How is that normal?"
 
 # game/scenario/3_canon.rpy:1811
 translate english day3_choose_debate_argument_8582f0cd:
@@ -3558,7 +3558,7 @@ translate english day3_choose_debate_argument_a123bdfc:
 translate english day3_choose_debate_argument_f58f7a22:
 
     # noam "Ça explique pourquoi les gens veulent que ça change. Même si on ne sait pas encore si ce texte est le bon."
-    noam ""
+    noam "That explains why people want change. Even if we still don't know whether this proposal is the answer."
 
 # game/scenario/3_canon.rpy:1836
 translate english day3_choose_debate_argument_461a5aaa:
@@ -3588,7 +3588,7 @@ translate english day3_choose_debate_argument_dd0f3afd:
 translate english day3_choose_debate_argument_5a98a265:
 
     # noam "Ouais. Enfin, avant, les gens qui avaient pas d'argent galéraient aussi."
-    noam ""
+    noam "Yeah. Although back then, people without money struggled too."
 
 # game/scenario/3_canon.rpy:1880
 translate english day3_choose_debate_argument_f3ae64b4:
@@ -3612,7 +3612,7 @@ translate english day3_choose_debate_argument_3466eb88:
 translate english day3_choose_debate_argument_f21b1f7e:
 
     # noam "Ça marche entre voisins. Mais dans tous les districts ? J'en suis moins sûr."
-    noam ""
+    noam "That works between neighbors. But across every district? I'm not so sure."
 
 # game/scenario/3_canon.rpy:1911
 translate english day3_choose_debate_argument_fc7968a6:
@@ -3630,7 +3630,7 @@ translate english day3_choose_debate_argument_1b3bde3c:
 translate english day3_choose_debate_argument_dc29816a:
 
     # noam "On parle de supprimer les bons. Mais dans certains districts, ils ne suffisent déjà pas à nourrir tout le monde."
-    noam ""
+    noam "We're talking about getting rid of ration coupons. But in some districts, they already aren't enough to feed everyone."
 
 # game/scenario/3_canon.rpy:1936
 translate english day3_choose_debate_argument_48745d13:
@@ -3660,13 +3660,13 @@ translate english day3_choose_debate_argument_6b29ae06:
 translate english day3_choose_debate_argument_97ca0016:
 
     # noam "Alors arrêtons de prétendre que ce vote règle tout."
-    noam ""
+    noam "Then let's stop pretending this vote will fix everything."
 
 # game/scenario/3_canon.rpy:1950
 translate english day3_choose_debate_argument_3a47a954:
 
     # noam "Même aujourd'hui, tous les districts ne reçoivent pas la même chose."
-    noam ""
+    noam "Even now, the districts don't all get the same supplies."
 
 # game/scenario/3_canon.rpy:1951
 translate english day3_choose_debate_argument_5340c1cb:
@@ -3696,5 +3696,5 @@ translate english day3_choose_debate_argument_b4b12eff:
 translate english day3_choose_debate_argument_32bd9f3f:
 
     # noam "C'est ça. Et on va devoir décider quand même."
-    noam ""
+    noam "Exactly. And we still have to make a decision."
 
