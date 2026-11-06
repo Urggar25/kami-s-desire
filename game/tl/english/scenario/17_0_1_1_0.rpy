@@ -430,7 +430,7 @@ translate english bd80d5ac:
 translate english j17_m16_tomas_moi_aussi:
 
     # tomas inquiet "Moi aussi." id j17_m16_tomas_moi_aussi
-    tomas inquiet "" id j17_m16_tomas_moi_aussi
+    tomas inquiet "Me too." id j17_m16_tomas_moi_aussi
 
 # game/scenario/17_0_1_1_0.rpy:131
 translate english a927f6c7:
@@ -490,7 +490,7 @@ translate english dcd84124:
 translate english j17_m16_noam_non:
 
     # noam "Non." id j17_m16_noam_non
-    noam "" id j17_m16_noam_non
+    noam "No." id j17_m16_noam_non
 
 # game/scenario/17_0_1_1_0.rpy:156
 translate english 95fe5ef1:
@@ -1678,13 +1678,13 @@ translate english ca7e088a:
 translate english j17_chambre_silence_noam:
 
     # noam "..." id j17_chambre_silence_noam
-    noam "" id j17_chambre_silence_noam
+    noam "..." id j17_chambre_silence_noam
 
 # game/scenario/17_0_1_1_0.rpy:719
 translate english j17_chambre_rien:
 
     # "Rien." id j17_chambre_rien
-    "" id j17_chambre_rien
+    "Nothing." id j17_chambre_rien
 
 # game/scenario/17_0_1_1_0.rpy:721
 translate english 0e33109e:
@@ -1858,7 +1858,7 @@ translate english 3d42c527:
 translate english j17_maintenance_outils_oui:
 
     # noam "Oui." id j17_maintenance_outils_oui
-    noam "" id j17_maintenance_outils_oui
+    noam "Yes." id j17_maintenance_outils_oui
 
 # game/scenario/17_0_1_1_0.rpy:795
 translate english f737c60d:
@@ -1912,7 +1912,7 @@ translate english f96a324d:
 translate english j17_maintenance_mara_oui:
 
     # noam "Oui." id j17_maintenance_mara_oui
-    noam "" id j17_maintenance_mara_oui
+    noam "Yes." id j17_maintenance_mara_oui
 
 # game/scenario/17_0_1_1_0.rpy:815
 translate english 1ed350ce:
@@ -2026,7 +2026,7 @@ translate english 2ec615e2:
 translate english j17_maintenance_noam_quoi:
 
     # noam "Quoi ?" id j17_maintenance_noam_quoi
-    noam "" id j17_maintenance_noam_quoi
+    noam "What?" id j17_maintenance_noam_quoi
 
 # game/scenario/17_0_1_1_0.rpy:875
 translate english 16b1bbef:
@@ -2224,7 +2224,7 @@ translate english 086eb1ac:
 translate english j17_ventilation_mara_non:
 
     # mara mefiant "Non." id j17_ventilation_mara_non
-    mara mefiant "" id j17_ventilation_mara_non
+    mara mefiant "No." id j17_ventilation_mara_non
 
 # game/scenario/17_0_1_1_0.rpy:966
 translate english cfd9809c:
@@ -2362,7 +2362,7 @@ translate english c55016a5:
 translate english j17_ventilation_noam_oui:
 
     # noam "Oui." id j17_ventilation_noam_oui
-    noam "" id j17_ventilation_noam_oui
+    noam "Yes." id j17_ventilation_noam_oui
 
 # game/scenario/17_0_1_1_0.rpy:1016
 translate english 8e356675:
@@ -2392,7 +2392,7 @@ translate english 7524b5f9:
 translate english j17_conduit_silence_noam_1:
 
     # noam reflexion "..." id j17_conduit_silence_noam_1
-    noam reflexion "" id j17_conduit_silence_noam_1
+    noam reflexion "..." id j17_conduit_silence_noam_1
 
 # game/scenario/17_0_1_1_0.rpy:1046
 translate english ef1ac4d4:
@@ -2656,7 +2656,7 @@ translate english b363026a:
 translate english j17_conduit_attends:
 
     # noam "Attends." id j17_conduit_attends
-    noam "" id j17_conduit_attends
+    noam "Wait." id j17_conduit_attends
 
 # game/scenario/17_0_1_1_0.rpy:1140
 translate english 972c2fa7:
@@ -2722,7 +2722,7 @@ translate english 82fc910c:
 translate english j17_conduit_silence_noam_2:
 
     # noam reflexion "..." id j17_conduit_silence_noam_2
-    noam reflexion "" id j17_conduit_silence_noam_2
+    noam reflexion "..." id j17_conduit_silence_noam_2
 
 # game/scenario/17_0_1_1_0.rpy:1162
 translate english cf465c29:
