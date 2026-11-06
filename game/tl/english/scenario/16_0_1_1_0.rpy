@@ -1780,31 +1780,31 @@ translate english strings:
 
     # game/scenario/16_0_1_1_0.rpy:252
     old "Envoyer un message a Kael"
-    new ""
+    new "Send Kael a message"
 
     # game/scenario/16_0_1_1_0.rpy:252
     old "Ne rien envoyer"
-    new ""
+    new "Don't send anything"
 
     # game/scenario/16_0_1_1_0.rpy:323
     old "Prendre la chaise"
-    new ""
+    new "Take the chair"
 
     # game/scenario/16_0_1_1_0.rpy:323
     old "Rester debout"
-    new ""
+    new "Remain standing"
 
     # game/scenario/16_0_1_1_0.rpy:501
     old "Accuser Kael frontalement"
-    new ""
+    new "Confront Kael directly"
 
     # game/scenario/16_0_1_1_0.rpy:501
     old "Le pousser sur sa voix de la veille"
-    new ""
+    new "Press him about the way he spoke last night"
 
     # game/scenario/16_0_1_1_0.rpy:501
     old "Demander les logs"
-    new ""
+    new "Ask for the logs"
 
 # TODO: Translation updated at 2026-09-04 18:15
 
