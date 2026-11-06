@@ -363,7 +363,7 @@ translate english 462bffac:
 translate english j20_reveil_silence_noam:
 
     # noam surpris "..." id j20_reveil_silence_noam
-    noam surpris "" id j20_reveil_silence_noam
+    noam surpris "..." id j20_reveil_silence_noam
 
 # game/scenario/20_0_1_1_0.rpy:56
 translate english 8c4b7fde:
@@ -447,7 +447,7 @@ translate english c109d543:
 translate english j20_cafeteria_ryn_quoi:
 
     # ryn surpris "Quoi ?" id j20_cafeteria_ryn_quoi
-    ryn surpris "" id j20_cafeteria_ryn_quoi
+    ryn surpris "What?" id j20_cafeteria_ryn_quoi
 
 # game/scenario/20_0_1_1_0.rpy:110
 translate english 120b6038:
@@ -1047,7 +1047,7 @@ translate english 0323665a_2:
 translate english j20_couteau_silence_noam:
 
     # noam surpris "..." id j20_couteau_silence_noam
-    noam surpris "" id j20_couteau_silence_noam
+    noam surpris "..." id j20_couteau_silence_noam
 
 # game/scenario/20_0_1_1_0.rpy:353
 translate english ec2e135c:
@@ -3099,7 +3099,7 @@ translate english a78bd36e:
 translate english j20_infirmerie_toujours_rien:
 
     # "Toujours rien." id j20_infirmerie_toujours_rien
-    "" id j20_infirmerie_toujours_rien
+    "Still nothing." id j20_infirmerie_toujours_rien
 
 # game/scenario/20_0_1_1_0.rpy:1349
 translate english b57747df:
@@ -3309,7 +3309,7 @@ translate english fc5939bc:
 translate english j20_infirmerie_sael_non:
 
     # sael neutre "Non." id j20_infirmerie_sael_non
-    sael neutre "" id j20_infirmerie_sael_non
+    sael neutre "No." id j20_infirmerie_sael_non
 
 # game/scenario/20_0_1_1_0.rpy:1457
 translate english cb7b840b_1:
@@ -3495,7 +3495,7 @@ translate english 08e22aa4:
 translate english j20_infirmerie_seringue_silence:
 
     # noam surpris "..." id j20_infirmerie_seringue_silence
-    noam surpris "" id j20_infirmerie_seringue_silence
+    noam surpris "..." id j20_infirmerie_seringue_silence
 
 # game/scenario/20_0_1_1_0.rpy:1521
 translate english 4ad93d79:
@@ -3909,7 +3909,7 @@ translate english e4a0a4e9:
 translate english j20_fin_silence_noam:
 
     # noam fatigue "..." id j20_fin_silence_noam
-    noam fatigue "" id j20_fin_silence_noam
+    noam fatigue "..." id j20_fin_silence_noam
 
 # game/scenario/20_0_1_1_0.rpy:1675
 translate english b6cc149e:
