@@ -5158,3 +5158,23 @@ translate english b4e025f9:
     # "Cette fois, je ne raye rien."
     "This time, I don't cross anything out."
 
+
+# Missing current-source dialogue translation units (reviewed 2026-11-06)
+
+# game/scenario/13_0_1_1_0.rpy:244
+translate english 9f02da05:
+
+    # elen triste "Mara..."
+    elen triste "Mara..."
+
+# game/scenario/13_0_1_1_0.rpy:304
+translate english 4d711806:
+
+    # noam "Kami ?"
+    noam "Kami?"
+
+# game/scenario/13_0_1_1_0.rpy:413
+translate english 6d46dbe4:
+
+    # goumi "Noam ?"
+    goumi "Noam?"
