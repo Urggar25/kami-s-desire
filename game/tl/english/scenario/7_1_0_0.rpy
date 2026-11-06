@@ -1378,7 +1378,7 @@ translate english 80863dc7:
 translate english 8e87fcc4:
 
     # kami "Vous aviez une minute. Une minute entière."
-    kami "You had one minute. One whole minute."
+    kami "You had one minute. A whole minute."
 
 # game/scenario/7_1_0_0.rpy:800
 translate english 208c0e58:
@@ -1390,7 +1390,7 @@ translate english 208c0e58:
 translate english 368c59dd:
 
     # kami "Une clandestine, quatre complices et un itinéraire improvisé. Vous rendez les infractions si laborieuses."
-    kami "One stowaway, four accomplices, and an improvised route. You make breaking the rules look so exhausting."
+    kami "One stowaway, four accomplices, and a plan made up on the fly. You somehow manage to make rule-breaking look exhausting."
 
 # game/scenario/7_1_0_0.rpy:803
 translate english 2b9a0a7e:
@@ -1402,7 +1402,7 @@ translate english 2b9a0a7e:
 translate english 13edc0f5:
 
     # kami "La prochaine fois, courez plus vite. Enfin... il n'y aura pas de prochaine fois."
-    kami "Next time, run faster. Then again... there won't be a next time."
+    kami "Next time, run faster. Oh, wait... there won't be a next time."
 
 # game/scenario/7_1_0_0.rpy:811
 translate english ce26afe4:
@@ -1738,7 +1738,7 @@ translate english d3630628:
 translate english 5b5cc18b:
 
     # kami "Lorsque vous êtes invités quelque part, vous ne fouillez pas dans les tiroirs. Vous ne démontez pas les serrures."
-    kami "When you're invited somewhere, you don't rummage through drawers. You don't take the locks apart."
+    kami "When you're a guest, you don't go through people's drawers or take their locks apart."
 
 # game/scenario/7_1_0_0.rpy:1016
 translate english d65ed979:
@@ -1834,7 +1834,7 @@ translate english 326fcb9f:
 translate english 000845cc:
 
     # kami "Pour les autres : considérez ceci comme un rappel collectif. Le fait qu'une action ne soit pas interdite ne la rend pas polie."
-    kami "As for the rest of you, consider this a collective reminder: just because something isn't forbidden doesn't make it polite."
+    kami "For everyone else, consider this a friendly reminder: just because something isn't forbidden doesn't mean it's polite."
 
 # game/scenario/7_1_0_0.rpy:1070
 translate english ac737f95:
@@ -1984,7 +1984,7 @@ translate english 9fb8b80c:
 translate english ca2509f7:
 
     # kami "Vous avez donc deux jours pour décider si les habitants peuvent se retrouver en groupe sans devenir de dangereux conspirateurs."
-    kami "So you have two days to decide whether residents can gather in groups without becoming dangerous conspirators."
+    kami "You've got two days to decide whether people can get together without being branded dangerous conspirators."
 
 # game/scenario/7_1_0_0.rpy:1166
 translate english 40af24de:
