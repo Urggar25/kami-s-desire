@@ -207,13 +207,12 @@ label _27_0_1_1_0_1_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     "Il reste plusieurs places libres. Celle de Tomas me saute aux yeux."
-    $ showGroup([("julian", "fatigue", 0.22), ("iris", "fatigue", 0.48), ("elen", "triste", 0.74)])
+    $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.248), ("elen", "triste", 0.416), ("lysa", "blase", 0.584), ("noam", "neutre", 0.752), ("nyra", "neutre", 0.920)])
     julian reflexion "Iris, pour les analyses... T'as pu avancer ?"
     iris fatigue "Pas assez pour donner une cause de décès. On en a déjà parlé."
     elen inquiet "Et les médicaments ?"
     iris raison "On sait pas ce qu'il a pris. Je veux pas conclure à une surdose juste à cause d'un flacon."
     julian fatigue "Personne a dit qu'on devait conclure."
-    $ showGroup([("lysa", "blase", 0.23), ("elen", "triste", 0.49), ("noam", "neutre", 0.75)])
     lysa blase "C'est vrai. Pas aujourd'hui."
     noam neutre "Elen, je peux te demander un truc ?"
     elen neutre "Bien sûr."
@@ -221,7 +220,6 @@ label _27_0_1_1_0_1_CAFETERIA:
     elen inquiet "Tu crois que tu vas trouver quelque chose ?"
     noam fatigue "Franchement, j'en sais rien. Mais je veux pas m'arrêter au flacon."
     elen neutre "Vas-y. J'ai rien déplacé là-bas à part les draps."
-    $ showGroup([("nyra", "neutre", 0.25), ("elen", "triste", 0.49), ("noam", "neutre", 0.75)])
     nyra raison "Je peux t'accompagner, Noam. On prendra des photos de ce qu'on trouve."
     noam sourire "Merci."
     play sound sfx_announce
@@ -621,16 +619,14 @@ label _27_0_1_1_0_1_REUNION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.8
     "On se réunit autour de la table. La place de Tomas est toujours vide."
-    $ showGroup([("julian", "fatigue", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
+    $ showGroup([("julian", "fatigue", 0.080), ("elen", "triste", 0.248), ("noam", "neutre", 0.416), ("lysa", "blase", 0.584), ("iris", "fatigue", 0.752), ("nyra", "neutre", 0.920)])
     julian reflexion "On peut au moins faire le point ?"
     elen inquiet "Iris a dit qu'elle avait pas encore la cause."
     julian neutre "Je sais. Mais on va pas juste attendre sans rien faire."
     elen colere "Et tu veux qu'on dise qu'il s'est suicidé ?!"
     julian colere "J'ai pas dit ça !"
-    $ showGroup([("lysa", "blase", 0.23), ("iris", "fatigue", 0.49), ("noam", "neutre", 0.75)])
     lysa blase "C'est reparti..."
     iris agace "Stop. On n'a toujours pas de preuve qu'il a pris ces comprimés. Et on n'a pas de preuve qu'on l'a tué non plus."
-    $ showGroup([("julian", "fatigue", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
     julian fatigue "D'accord."
     noam raison "J'ai trouvé les documents de Tomas. Sur Keyper-IIB et les unités ÉID-0."
     elen reflexion "Ça nous dit ce que c'est ?"
@@ -638,32 +634,25 @@ label _27_0_1_1_0_1_REUNION:
     noam raison "Il y avait aussi un livre sur la résonance Yanma. C'est une méthode de transmission dans l'espace."
     julian reflexion "Quel rapport avec sa mort ?"
     noam neutre "J'en sais rien. Mais il avait un petit appareil dans la salle d'observation, le jour 25. Aujourd'hui, cet appareil avait disparu."
-    $ showGroup([("lysa", "neutre", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
     lysa surpris "Disparu ?"
     nyra raison "Il a pu être déplacé par quelqu'un de la maintenance. Mais on sait toujours pas ce que c'était."
-    $ showGroup([("elen", "triste", 0.22), ("iris", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     elen triste "Donc on sait toujours pas..."
     noam neutre "Pas encore."
     iris raison "Continuez à chercher. Moi je poursuis les examens. Mais arrêtez de tirer des conclusions avec une moitié d'indice."
 
     if "camera" in investigation_pa_completed:
-        $ showGroup([("lysa", "neutre", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
         noam reflexion "J'ai aussi regardé l'inventaire des appareils. Aucune référence ne correspond clairement à ce que j'ai vu."
         lysa raison "Donc il a peut-être été rangé. Ou c'était pas un appareil officiel."
         nyra neutre "On n'a pas de quoi trancher."
     if "elias" in investigation_pa_completed:
-        $ showGroup([("julian", "fatigue", 0.22), ("noam", "neutre", 0.48), ("nyra", "neutre", 0.74)])
         noam raison "Elias m'a dit qu'il déplaçait parfois du matériel. Mais il ne se souvient pas de celui-là."
         julian reflexion "Donc il l'a peut-être juste rangé ?"
         noam neutre "Peut-être."
     if "quotas" in investigation_pa_completed:
-        $ showGroup([("elen", "triste", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
         noam reflexion "J'ai cherché une définition des unités ÉID-0. Aucun des index ouverts ne répond clairement."
         elen inquiet "Alors Tomas avait peut-être raison de s'inquiéter..."
         nyra raison "Peut-être, oui. Ça reste à vérifier."
-    $ showGroup([("iris", "fatigue", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
 
-    $ showGroup([("julian", "fatigue", 0.24), ("iris", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     julian fatigue "Je peux avoir une copie des documents ?"
     noam surpris "Oui. Bien sûr."
     julian neutre "Merci."
