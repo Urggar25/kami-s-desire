@@ -1,3 +1,161 @@
+# ENQUÊTE À PA — J29. L'accusation et ses preuves essentielles restent obligatoires.
+init 10 python:
+    J29A_ROOMS = {
+      "dortoir": {
+        "title": "DORTOIRS",
+        "background": "bg_chambre",
+        "description": "La chambre d'Elen est toujours le point de départ de l'enquête.",
+        "actions": [
+          "grille",
+          "elen"
+        ]
+      },
+      "infirmerie": {
+        "title": "INFIRMERIE",
+        "background": "infirmerie2",
+        "description": "Iris peut préciser ce que les résultats permettent de conclure.",
+        "actions": [
+          "iris",
+          "flacon"
+        ]
+      },
+      "maintenance": {
+        "title": "MAINTENANCE",
+        "background": "bg_maintenance",
+        "description": "Le badge utilisé à 02 h 17 a laissé une trace, mais pas un visage.",
+        "actions": [
+          "kael",
+          "elias"
+        ]
+      },
+      "repos": {
+        "title": "SALLE COMMUNE",
+        "background": "bg_repos",
+        "description": "Ryn et Sael sont disponibles pour des questions supplémentaires.",
+        "actions": [
+          "ryn",
+          "sael"
+        ]
+      },
+      "cafeteria": {
+        "title": "CAFÉTÉRIA",
+        "background": "bg_cafeteria",
+        "description": "Julian et les autres ont gardé en tête leurs dernières disputes.",
+        "actions": [
+          "julian"
+        ]
+      },
+      "archive": {
+        "title": "ARCHIVES",
+        "background": "bg_archive",
+        "description": "Les documents techniques de Tomas et les registres de livraison.",
+        "actions": [
+          "livraisons"
+        ]
+      },
+      "observation": {
+        "title": "OBSERVATION",
+        "background": "bg_observation",
+        "description": "La console porte encore la trace d'un signal faible.",
+        "actions": [
+          "signal"
+        ]
+      },
+      "conclave": {
+        "title": "SALLE DU CONCLAVE",
+        "background": "bg_conclave",
+        "description": "La table autour de laquelle l'accusation sera présentée.",
+        "actions": []
+      },
+      "gymnase": {
+        "title": "GYMNASE",
+        "background": "bg_gymnase",
+        "description": "Personne n'a envie de s'entraîner aujourd'hui.",
+        "actions": []
+      }
+    }
+    J29A_ACTIONS = {
+      "grille": {
+        "title": "Reconstituer le passage de l'air",
+        "description": "Vérifier la différence entre l'accès physique et la diffusion dans les conduits.",
+        "label": "_29_0_1_1_0_1_PA_GRILLE",
+        "evidence": "j29_tomas_grille"
+      },
+      "elen": {
+        "title": "Revoir l'échange avec Elen",
+        "description": "Lui demander si quelqu'un aurait pu entendre l'échange des chambres.",
+        "label": "_29_0_1_1_0_1_PA_ELEN",
+        "evidence": "j29_tomas_elen"
+      },
+      "iris": {
+        "title": "Demander à Iris ce qui reste incertain",
+        "description": "Distinguer l'homicide probable d'une cause toxicologique certaine.",
+        "label": "_29_0_1_1_0_1_PA_IRIS",
+        "evidence": "j29_tomas_iris"
+      },
+      "flacon": {
+        "title": "Revoir le flacon avec Iris",
+        "description": "Vérifier si le flacon était déjà dans la chambre d'Elen.",
+        "label": "_29_0_1_1_0_1_PA_FLACON",
+        "evidence": "j29_tomas_flacon"
+      },
+      "kael": {
+        "title": "Interroger Kael sur les accès",
+        "description": "Demander pourquoi le journal du badge de Nyra n'identifie pas son porteur.",
+        "label": "_29_0_1_1_0_1_PA_KAEL",
+        "evidence": "j29_tomas_badge"
+      },
+      "elias": {
+        "title": "Interroger Elias sur les badges",
+        "description": "Vérifier les possibilités d'emprunt et de prêt d'une autorisation.",
+        "label": "_29_0_1_1_0_1_PA_ELIAS",
+        "evidence": "j29_tomas_elias"
+      },
+      "ryn": {
+        "title": "Reprendre l'alibi de Ryn",
+        "description": "Confronter calmement sa soirée à celle de Julian.",
+        "label": "_29_0_1_1_0_1_PA_RYN",
+        "evidence": "j29_tomas_ryn"
+      },
+      "sael": {
+        "title": "Questionner Sael sur la plante",
+        "description": "Demander si la provenance botanique peut vraiment désigner quelqu'un.",
+        "label": "_29_0_1_1_0_1_PA_SAEL",
+        "evidence": "j29_tomas_sael"
+      },
+      "julian": {
+        "title": "Confronter Julian à ses menaces",
+        "description": "Lui demander ce qu'il a fait après la dispute, sans l'accuser.",
+        "label": "_29_0_1_1_0_1_PA_JULIAN",
+        "evidence": "j29_tomas_julian"
+      },
+      "livraisons": {
+        "title": "Chercher une provenance du Bulbuma",
+        "description": "Comparer les cargaisons sans en déduire l'identité d'un coupable.",
+        "label": "_29_0_1_1_0_1_PA_LIVRAISONS",
+        "evidence": "j29_tomas_livraisons"
+      },
+      "signal": {
+        "title": "Comparer les signaux d'observation",
+        "description": "Revoir les mesures sans inventer une destination de l'appareil.",
+        "label": "_29_0_1_1_0_1_PA_SIGNAL",
+        "evidence": "j29_tomas_signal"
+      }
+    }
+    INVESTIGATION_ENTRIES.update({
+        "j29_tomas_grille": {"category": "preuves", "title": "VENTILATION ET VERROU", "desc": "Le dispositif pouvait agir depuis le réseau malgré une porte verrouillée.", "day": "J29", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_elen": {"category": "personnes", "title": "ELEN — ÉCHANGE CONNU", "desc": "Elen ne peut pas dire avec certitude qui a entendu leur discussion dans le couloir.", "day": "J29", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_iris": {"category": "hypotheses", "title": "INCERTITUDES MÉDICALES", "desc": "Iris privilégie l'homicide sans pouvoir identifier avec certitude la substance inhalée.", "day": "J29", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_flacon": {"category": "preuves", "title": "FLACON DÉJÀ PRÉSENT", "desc": "Elen pense avoir laissé des somnifères dans sa chambre avant l'échange ; leur quantité initiale reste inconnue.", "day": "J29", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_badge": {"category": "preuves", "title": "AUTORISATION DE NYRA", "desc": "Un lecteur de maintenance a enregistré une autorisation liée à Nyra à 02 h 17, sans identifier le porteur du badge.", "day": "J29", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_elias": {"category": "personnes", "title": "ELIAS — BADGES EMPRUNTABLES", "desc": "Le système enregistre les autorisations, et ne prouve pas qui portait le badge.", "day": "J29", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_ryn": {"category": "personnes", "title": "RYN — SOIRÉE", "desc": "Ryn maintient être resté avec Julian et Mara une partie de la soirée puis être allé dormir.", "day": "J29", "origin": "SALLE COMMUNE", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_sael": {"category": "personnes", "title": "SAEL — ORIGINES DU BULBUMA", "desc": "La présence possible de Bulbuma à Limen ne permet pas d'identifier son propriétaire sur le Conclave.", "day": "J29", "origin": "SALLE COMMUNE", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_julian": {"category": "personnes", "title": "JULIAN — REGRETS", "desc": "Julian regrette ses menaces mais maintient être resté avec Ryn et Mara avant de rentrer.", "day": "J29", "origin": "CAFÉTÉRIA", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_livraisons": {"category": "preuves", "title": "CARGAISONS NON CONCLUANTES", "desc": "Les registres n'établissent pas la provenance du récipient découvert dans la ventilation.", "day": "J29", "origin": "ARCHIVES", "status": "À VÉRIFIER", "manual_only": True},
+        "j29_tomas_signal": {"category": "anomalies", "title": "SIGNAL NON IDENTIFIÉ", "desc": "Une émission faible figure dans les relevés du jour 25, mais son origine et sa destination restent inconnues.", "day": "J29", "origin": "OBSERVATION", "status": "À VÉRIFIER", "manual_only": True},
+    })
+
 # JOUR 29 — LE DERNIER MENSONGE
 # Route alternative : Noam enquête sur l'assassinat de Tomas.
 default j29a_reconstitution = 0
@@ -224,8 +382,75 @@ label _29_0_1_1_0_1_OBSERVATION:
     lysa raison "On le fait devant les autres. Sans lui sauter à la gorge."
     noam neutre "Ouais."
     $ hideGroup()
-    jump _29_0_1_1_0_1_NYRA
+    jump _29_0_1_1_0_1_PA_INTRO
 # Durée : ~1m45.
+
+label _29_0_1_1_0_1_PA_INTRO:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.7
+    $ showGroup([("lysa", "neutre", 0.34), ("noam", "fatigue", 0.69)])
+    lysa reflexion "Tu vas vraiment confronter Nyra pour ce badge ?"
+    noam raison "Oui. Mais d'abord, je voudrais vérifier les dernières choses qu'on peut encore vérifier."
+    lysa neutre "Alors on fait comme les autres jours. Cinq actions, pas davantage."
+    noam reflexion "On pourra toujours lui poser la question même si je trouve rien ?"
+    lysa raison "Évidemment. Le journal de maintenance et ce signal, tu les as déjà."
+    noam fatigue "D'accord."
+    "J'ai les preuves principales sur ma tablette. Les prochaines actions permettront d'éclaircir certaines contradictions et de retrouver des témoignages, pas de débloquer le droit d'accuser quelqu'un."
+    $ investigation_pa_begin(29, 5)
+    $ investigation_unlocked = True
+    $ free_time_active = False
+    $ conclave_lock = False
+    $ dortoir_lock = False
+    $ exploration_libre_active = True
+    $ exploration_libre_allowed_rooms = list(J29A_ROOMS.keys())
+    $ current_scene_active = None
+    $ corridor_current = "dortoir"
+    $ hideGroup()
+    jump _29_0_1_1_0_1_PA_MAP
+
+label _29_0_1_1_0_1_PA_MAP:
+    call screen investigation_pa_map(J29A_ROOMS, title="JOUR 29 — LES DERNIERS ALIBIS")
+    if _return == "finish":
+        jump _29_0_1_1_0_1_PA_FIN
+    if _return == "corridors":
+        jump _29_0_1_1_0_1_PA_CORRIDORS
+    $ investigation_pa_current_room = _return
+    jump _29_0_1_1_0_1_PA_ROOM
+
+label _29_0_1_1_0_1_PA_CORRIDORS:
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_j29a_pa_corridors
+    $ investigation_pa_current_room = _return
+    if investigation_pa_current_room not in J29A_ROOMS:
+        jump _29_0_1_1_0_1_PA_MAP
+    jump _29_0_1_1_0_1_PA_ROOM
+
+label _29_0_1_1_0_1_PA_ROOM:
+    call screen investigation_pa_room(investigation_pa_current_room, J29A_ROOMS, J29A_ACTIONS)
+    if _return == "back":
+        jump _29_0_1_1_0_1_PA_MAP
+    if _return == "corridors":
+        jump _29_0_1_1_0_1_PA_CORRIDORS
+    $ investigation_pa_selected = _return
+    if not investigation_pa_can_take(investigation_pa_selected):
+        jump _29_0_1_1_0_1_PA_ROOM
+    call screen investigation_pa_confirm(J29A_ACTIONS[investigation_pa_selected])
+    if not _return:
+        jump _29_0_1_1_0_1_PA_ROOM
+    if not investigation_pa_spend(investigation_pa_selected):
+        jump _29_0_1_1_0_1_PA_ROOM
+    call expression J29A_ACTIONS[investigation_pa_selected]["label"] from _call_j29a_pa_dynamic
+    $ investigation_add(J29A_ACTIONS[investigation_pa_selected]["evidence"])
+    if investigation_pa_remaining == 0:
+        "J'ai utilisé mes cinq actions. Il faut maintenant parler à Nyra devant les autres."
+        jump _29_0_1_1_0_1_PA_FIN
+    jump _29_0_1_1_0_1_PA_ROOM
+
+label _29_0_1_1_0_1_PA_FIN:
+    $ exploration_libre_active = False
+    $ exploration_libre_allowed_rooms = None
+    if investigation_pa_remaining > 0:
+        "Je m'arrête là. J'ai assez de choses à vérifier et je ne veux plus tourner autour du pot."
+    jump _29_0_1_1_0_1_NYRA
 
 label _29_0_1_1_0_1_NYRA:
     scene bg_repos at adaptive_fullscreen with dissolve
