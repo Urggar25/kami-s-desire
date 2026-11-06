@@ -410,8 +410,10 @@ init 10 python:
     INVESTIGATION_ENTRIES.update({
         "j26_photo_tomas": {"category": "preuves", "title": "TOMAS — VÊTEMENTS TREMPÉS", "desc": "La chemise et les cheveux de Tomas étaient trempés lors de la découverte de son corps.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_corps"},
         "j26_photo_dechets": {"category": "preuves", "title": "DÉCHETS DANS LA CHAMBRE", "desc": "Barquettes, emballages et affaires abandonnées : une odeur forte régnait dans la chambre.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_corps"},
-        "j26_photo_verrou": {"category": "preuves", "title": "PORTE VERROUILLÉE", "desc": "Elias a dû forcer le mécanisme engagé depuis l'intérieur pour entrer dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre2.png"},
+        "j26_photo_verrou": {"category": "preuves", "title": "PORTE VERROUILLÉE", "desc": "Elias a dû forcer le mécanisme engagé depuis l'intérieur pour entrer dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "CONSTATATION", "manual_only": True},
         "j26_photo_grille": {"category": "preuves", "title": "PLAQUE DEVANT L'AÉRATION", "desc": "Une plaque de protection ferme le passage physique dans la bouche d'aération ; l'air peut toujours circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_vide"},
+        "j26_photo_flacon_detail": {"category": "preuves", "title": "PHOTO — ÉTIQUETTE DES SOMNIFÈRES", "desc": "Cliché complémentaire du flacon examiné avec Iris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True},
+        "j26_photo_grille_detail": {"category": "preuves", "title": "PHOTO — FIXATIONS DE L'AÉRATION", "desc": "Cliché complémentaire des attaches de la plaque dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True},
         "j26_photo_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES PRESQUE VIDE", "desc": "Un flacon presque vide a été retrouvé parmi les affaires de la chambre. Rien ne prouve que Tomas en ait pris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_flacon"},
         "j26_core_mort": {"category": "evenements", "title": "DÉCOUVERTE DU CORPS", "desc": "Tomas a été retrouvé mort dans la chambre d'Elen, derrière une porte verrouillée de l'intérieur.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
         "j26_core_sudation": {"category": "preuves", "title": "PREMIÈRES CONSTATATIONS", "desc": "Iris et Sael ont constaté l'absence de respiration et une importante sudation. La cause de la mort reste inconnue.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
@@ -556,7 +558,11 @@ label _26_0_1_1_0_1_PA_FLACON:
     iris fatigue "Oui. C'est une piste. Mais on ne sait toujours pas si Tomas l'a avalé."
     noam inquiet "Tu peux savoir s'il en a pris ?"
     iris raison "Je vais essayer. Pour l'instant, je peux pas."
-    "Je photographie l'étiquette et note le nom. Iris récupère le flacon."
+    "Je m'approche pour photographier une nouvelle fois l'étiquette."
+    $ hideGroup()
+    call investigation_take_manual_photo("j26_photo_flacon_detail", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_detail_photo
+    $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.68)])
+    "Je note le nom. Iris récupère le flacon."
     noam fatigue "Désolé. Je voulais juste..."
     iris neutre "Je sais. Mais je préfère qu'on vérifie avant de raconter quoi que ce soit."
     $ j26_alt_flacon = True
@@ -569,7 +575,11 @@ label _26_0_1_1_0_1_PA_GRILLE:
     $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
     noam reflexion "La grille... Tu te souviens de ce qu'Elias avait installé ?"
     lysa raison "Les protections pour pas que quelqu'un se balade dans les conduits. Tu m'avais raconté."
-    "Je photographie les vis. Aucun ne semble avoir été retiré récemment."
+    "Je décide de reprendre un cliché des fixations pour comparer leur état."
+    $ hideGroup()
+    call investigation_take_manual_photo("j26_photo_grille_detail", "j26_elen_vide", (0.625, 0.17), 2.9) from _call_j26_grille_detail_photo
+    $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
+    "Aucun des clous ne semble avoir été retiré récemment."
     noam raison "La plaque est toujours fixée."
     lysa neutre "Donc personne a pu passer sans l'enlever."
     noam reflexion "Ouais. Mais regarde, l'air circule encore."
