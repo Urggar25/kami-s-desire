@@ -28,43 +28,43 @@ translate english sd_j11_detail_12cee37a:
 translate english sd_j11_detail_ab7d332f:
 
     # noam "Tu peux me montrer ?"
-    noam ""
+    noam "Can you show me?"
 
 # game/stat_dialogues_11_20.rpy:84
 translate english sd_j11_detail_ff98281b:
 
     # kael "Ouais. Si je retrouve le fichier."
-    kael ""
+    kael "Yeah. If I can find the file."
 
 # game/stat_dialogues_11_20.rpy:85
 translate english sd_j11_detail_72b9c57a:
 
     # noam "D'accord. On vérifiera ça ensemble."
-    noam ""
+    noam "Okay. We'll check it together."
 
 # game/stat_dialogues_11_20.rpy:89
 translate english sd_j12_risque_f178c291:
 
     # tomas "Oui. On peut pas ignorer ce problème."
-    tomas ""
+    tomas "Yeah. We can't just ignore that problem."
 
 # game/stat_dialogues_11_20.rpy:94
 translate english sd_j12_prive_594ae3cd:
 
     # mara "Merci ! Enfin quelqu'un qui comprend !"
-    mara ""
+    mara "Thank you! Finally, someone gets it!"
 
 # game/stat_dialogues_11_20.rpy:99
 translate english sd_j12_franc_6d5a66f5:
 
     # tomas "Oui. Mais laissez au moins les autres finir de parler."
-    tomas ""
+    tomas "Yes, but at least let the others finish speaking."
 
 # game/stat_dialogues_11_20.rpy:105
 translate english sd_j12_nuance_aa27e75c:
 
     # tomas "Oui. C'est ce que Kami a dit."
-    tomas ""
+    tomas "Yes. That's what Kami said."
 
 # game/stat_dialogues_11_20.rpy:106
 translate english sd_j12_nuance_e187394e:
@@ -76,13 +76,13 @@ translate english sd_j12_nuance_e187394e:
 translate english sd_j12_nuance_1f2fc456:
 
     # noam "Je sais. Mais il faut que tout le monde comprenne ce qu'on vote."
-    noam ""
+    noam "I know. But everyone needs to understand what we're voting on."
 
 # game/stat_dialogues_11_20.rpy:108
 translate english sd_j12_nuance_2f149b10:
 
     # tomas "Je vais le rappeler avant de continuer."
-    tomas ""
+    tomas "I'll remind them before we go on."
 
 # game/stat_dialogues_11_20.rpy:112
 translate english sd_j13_ecouter_225bb368:
@@ -130,19 +130,19 @@ translate english sd_j14_precision_992645b8:
 translate english sd_j14_precision_7dc25248:
 
     # noam "Et si une information est fausse ?"
-    noam ""
+    noam "And what if some of the information is false?"
 
 # game/stat_dialogues_11_20.rpy:145
 translate english sd_j14_precision_f17a29b2:
 
     # nyra "Avec ce texte, rien ne garantit qu'on puisse la corriger."
-    nyra ""
+    nyra "Nothing in this wording guarantees it can be corrected."
 
 # game/stat_dialogues_11_20.rpy:146
 translate english sd_j14_precision_29a66171:
 
     # noam "Alors il faut le demander avant de voter."
-    noam ""
+    noam "Then we need to ask about that before the vote."
 
 # game/stat_dialogues_11_20.rpy:147
 translate english sd_j14_precision_fc79f5f4:
@@ -178,19 +178,19 @@ translate english sd_j15_journal_68ec47a3:
 translate english sd_j15_journal_924cf486:
 
     # noam "Ça prouve qu'on a touché aux images ?"
-    noam ""
+    noam "Does that prove someone tampered with the footage?"
 
 # game/stat_dialogues_11_20.rpy:169
 translate english sd_j15_journal_9f98fc9a:
 
     # kael "Non. Juste que le fichier a été ouvert."
-    kael ""
+    kael "No. Only that someone opened the file."
 
 # game/stat_dialogues_11_20.rpy:170
 translate english sd_j15_journal_4a86fe02:
 
     # noam "C'est déjà une piste. Mais on accuse personne avec ça."
-    noam ""
+    noam "It's a lead, but we're not accusing anyone on that alone."
 
 # game/stat_dialogues_11_20.rpy:171
 translate english sd_j15_journal_522e212b:
@@ -244,19 +244,19 @@ translate english sd_j17_conditions_a7ed7f85:
 translate english sd_j17_conditions_52b10220:
 
     # noam "Oui. Au moins, tout le monde aura entendu la même chose."
-    noam ""
+    noam "Yeah. At least everyone will have heard the same thing."
 
 # game/stat_dialogues_11_20.rpy:208
 translate english sd_j17_conditions_c540aaee:
 
     # ryn "Et si elle nous envoie balader ?"
-    ryn ""
+    ryn "And if she tells us to get lost?"
 
 # game/stat_dialogues_11_20.rpy:209
 translate english sd_j17_conditions_8eff7170:
 
     # noam "On aura au moins essayé."
-    noam ""
+    noam "At least we'll have tried."
 
 # game/stat_dialogues_11_20.rpy:210
 translate english sd_j17_conditions_c7ca1251:
@@ -280,7 +280,7 @@ translate english sd_j18_attaches_3fa7257e:
 translate english sd_j18_doucement_b18827dc:
 
     # mara "Ouais. On reste à portée de voix."
-    mara ""
+    mara "Yeah. Let's stay within earshot."
 
 # game/stat_dialogues_11_20.rpy:229
 translate english sd_j19_sur_a0edaaab:
@@ -310,19 +310,19 @@ translate english sd_j19_angles_5d33dbdb:
 translate english sd_j19_angles_710f6edb:
 
     # noam "On pourrait donc sortir d'une grille sans passer devant celle de la porte ?"
-    noam ""
+    noam "So we could come out of a vent without ever passing the one by the door?"
 
 # game/stat_dialogues_11_20.rpy:247
 translate english sd_j19_angles_3f6a7820:
 
     # kael "Peut-être. Faudrait les plans."
-    kael ""
+    kael "Maybe. We'd need the schematics."
 
 # game/stat_dialogues_11_20.rpy:248
 translate english sd_j19_angles_857e06d1:
 
     # noam "Alors vérifions avant de dire que tout le monde peut entrer partout."
-    noam ""
+    noam "Then let's check before claiming anyone can get anywhere."
 
 # game/stat_dialogues_11_20.rpy:252
 translate english sd_j20_ecouter_f3382d16:
@@ -352,23 +352,23 @@ translate english sd_j20_seul_c66b03c7:
 translate english sd_j20_seul_53f1adef:
 
     # noam "Pas tout seul, en tout cas."
-    noam ""
+    noam "Not alone, anyway."
 
 # game/stat_dialogues_11_20.rpy:270
 translate english sd_j20_seul_750441ec:
 
     # kael "Tant mieux. J'ai pas envie de revivre ce qui s'est passé."
-    kael ""
+    kael "Good. I don't want to go through that again."
 
 # game/stat_dialogues_11_20.rpy:271
 translate english sd_j20_seul_97c51db4:
 
     # noam "Tu sais autre chose ?"
-    noam ""
+    noam "Do you know something else?"
 
 # game/stat_dialogues_11_20.rpy:272
 translate english sd_j20_seul_b0dc5b50:
 
     # kael "Pas assez pour t'en parler comme si j'étais sûr."
-    kael ""
+    kael "Not enough to talk like I'm certain."
 
