@@ -609,7 +609,7 @@ label _19_0_1_1_SECURISATION:
     call OFFER_DAILY_EXPLORATION(
         "_19_0_1_1_SOIREE", 1,
         ["maintenance", "observation", "conclave", "dortoir"],
-        "Retourner au dortoir", "dortoir"
+        _("Retourner au dortoir"), "dortoir"
     ) from _call_offer_exploration_j19
 
 
