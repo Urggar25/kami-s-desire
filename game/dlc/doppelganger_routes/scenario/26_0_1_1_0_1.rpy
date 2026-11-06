@@ -215,6 +215,30 @@ label _26_0_1_1_0_1_APRES_CHOC:
     noam neutre "Iris et Sael sont avec lui. Je sais pas encore."
     lysa raison "On va attendre ce qu'elles nous disent."
     "Elen se frotte les yeux. Lysa reste assise sans lui demander de parler."
+    "J'entends plusieurs personnes arriver en courant. Julian manque de percuter Kael au tournant du couloir."
+    $ showGroup([("julian", "inquiet", 0.24), ("mara", "agace", 0.48), ("noam", "fatigue", 0.73)])
+    julian inquiet "C'est vrai ?! Quelqu'un m'a dit qu'il était mort !"
+    noam fatigue "Oui."
+    julian surpris "Mais... quoi ? Comment ?!"
+    mara agace "On sait pas. Il faut arrêter de hurler, on entend rien."
+    julian colere "Je hurle pas !"
+    mara colere "Tu veux que j'appelle ça comment ?!"
+    "Ryn déboule à son tour et essaie de regarder par-dessus nos épaules."
+    $ showGroup([("ryn", "inquiet", 0.24), ("kael", "inquiet", 0.48), ("noam", "fatigue", 0.73)])
+    ryn inquiet "Vous l'avez trouvé comme ça ? Personne a entendu quelque chose ?"
+    kael raison "On a forcé la porte. Le verrou intérieur était engagé."
+    ryn inquiet "Vous êtes sûrs que personne d'autre était dans cette chambre ?"
+    kael inquiet "On a vérifié, oui."
+    ryn agace "Alors pourquoi on le laisse là ?!"
+    noam colere "Parce qu'Iris est avec lui ! Tu veux qu'on fasse quoi, Ryn ?!"
+    "Ma voix monte toute seule. Ryn se tait. Je me rends compte que j'ai les mains qui tremblent."
+    $ showGroup([("elen", "peur", 0.24), ("nyra", "inquiet", 0.48), ("noam", "fatigue", 0.73)])
+    elen peur "Mais si c'était moi, normalement ? Si quelqu'un voulait entrer chez moi ?"
+    nyra inquiet "Elen, on sait même pas s'il y a eu une agression."
+    elen colere "Alors c'est QUOI ? Il est mort dans mon lit !"
+    nyra fatigue "Je sais. Je dis juste qu'il faut laisser Iris regarder."
+    noam fatigue "On peut pas répondre à ça, Elen. Pas maintenant."
+    "Plus personne ne parle pendant quelques secondes. On n'a pas de réponse, et ça ne rassure personne."
     "Je m'assois de l'autre côté du couloir. Personne n'a vraiment envie de retourner à la cafétéria."
     pause 0.5
     "Quand Iris ressort enfin, elle semble aussi épuisée que nous."
@@ -237,7 +261,7 @@ label _26_0_1_1_0_1_APRES_CHOC:
     call investigation_evidence_photo_take("j26_photo_dechets") from _call_j26_dechets_photo
     call investigation_evidence_photo_take("j26_photo_verrou") from _call_j26_verrou_photo
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Elle repart dans la chambre. On attend encore un moment, sans vraiment se parler."
+    "Iris reprend sa place auprès de Sael. Je sors en gardant la tablette serrée contre moi. Je n’ai plus envie de regarder ces images."
     $ hideGroup()
     jump _26_0_1_1_0_1_INSPECTION_INTRO
 
