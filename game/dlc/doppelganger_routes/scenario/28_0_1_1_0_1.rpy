@@ -479,8 +479,8 @@ label _28_0_1_1_0_1_PA_ROOM:
     call expression J28A_ACTIONS[investigation_pa_selected]["label"] from _call_j28a_pa_dynamic
     $ investigation_add(J28A_ACTIONS[investigation_pa_selected]["evidence"])
     if investigation_pa_remaining == 0:
-        "J'ai utilisé mes cinq actions. Je peux continuer à circuler, mais pas lancer un nouvel interrogatoire."
-        jump _28_0_1_1_0_1_PA_MAP
+        "Les cinq actions du jour sont utilisées. Je fais le point avant la réunion."
+        jump _28_0_1_1_0_1_PA_FIN
     jump _28_0_1_1_0_1_PA_ROOM
 
 label _28_0_1_1_0_1_PA_FIN:
@@ -760,7 +760,7 @@ label _28_0_1_1_0_1_NUIT:
     think "Le verrou était bien fermé. Et pourtant, il suffisait peut-être de passer par les conduits."
     "Je reviens au flacon de somnifères. Il paraît presque trop pratique maintenant. Mais peut-être que je suis en train de lui donner un sens qu'il n'a pas."
     "Je repense à la première fois qu'on a ouvert la porte. Nyra avait proposé d'aérer. Avec cette odeur, je lui aurais demandé la même chose."
-    "Je relis les témoignages de Julian, Ryn, Sael, Kael, Elen et Nyra. Aucun ne permet de dire qui a installé cette plaque."
+    "Je reprends les témoignages et les quelques notes que j’ai réussi à obtenir aujourd’hui. Rien ne permet de dire qui a installé cette plaque."
     "La plante pourrait venir de Limen, ou d'Orbite. Et même ça, ça ne prouve rien."
     noam reflexion "Mais pourquoi Tomas ?"
     "Pour son vote ? Parce qu'il avait énervé tout le monde ? Ou parce qu'il avait découvert quelque chose que quelqu'un ne voulait pas qu'il trouve ?"
