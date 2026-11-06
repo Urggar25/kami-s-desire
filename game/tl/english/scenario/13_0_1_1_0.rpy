@@ -4,49 +4,49 @@
 translate english 94c4579a:
 
     # "Je me réveille en sursaut, le cœur battant à tout rompre."
-    ""
+    "I jolt awake, my heart pounding."
 
 # game/scenario/13_0_1_1_0.rpy:8
 translate english 04a4d52c:
 
     # "Un bruit métallique incessant remplit la chambre. Clac. Clac. Clac."
-    ""
+    "A relentless metallic clatter fills the room. Clack. Clack. Clack."
 
 # game/scenario/13_0_1_1_0.rpy:9
 translate english d047cbbb:
 
     # "Pendant une seconde, je ne comprends même pas où je suis."
-    ""
+    "For a second, I don't even know where I am."
 
 # game/scenario/13_0_1_1_0.rpy:10
 translate english 2e367f0b:
 
     # "Mon corps réagit avant ma tête. Je me redresse d’un coup, encore à moitié dans le brouillard."
-    ""
+    "My body reacts before my brain catches up. I sit bolt upright, still half asleep."
 
 # game/scenario/13_0_1_1_0.rpy:11
 translate english df2dc180:
 
     # "La lumière froide de la chambre m’agresse les yeux."
-    ""
+    "The room's harsh light stings my eyes."
 
 # game/scenario/13_0_1_1_0.rpy:12
 translate english 5efd9105:
 
     # "Au pied de mon lit, un petit robot de maintenance, à peine plus haut qu’une poubelle, est en train de démonter méthodiquement le brouilleur fixé au mur."
-    ""
+    "At the foot of my bed, a little maintenance robot, barely taller than a trash can, is methodically dismantling the jammer mounted on the wall."
 
 # game/scenario/13_0_1_1_0.rpy:13
 translate english 6e32b7c9:
 
     # "Ses bras fins et multiples s’agitent avec une précision chirurgicale, arrachant vis, câbles et composants sans aucune délicatesse."
-    ""
+    "Its many spindly arms move with surgical precision, ripping out screws, cables, and components without the slightest care."
 
 # game/scenario/13_0_1_1_0.rpy:14
 translate english 4cfa907f:
 
     # "Des morceaux de plastique noir tombent au sol, un par un, comme les restes d’un animal disséqué."
-    ""
+    "Pieces of black plastic fall to the floor, one by one, like the remains of something being dissected."
 
 # game/scenario/13_0_1_1_0.rpy:19
 translate english baaae05f:
@@ -58,37 +58,37 @@ translate english baaae05f:
 translate english d0d92a2c:
 
     # "Le petit robot tourne lentement sa tête ronde vers moi. Ses yeux LED rouges clignotent paresseusement."
-    ""
+    "The little robot slowly turns its round head toward me. Its red LED eyes blink lazily."
 
 # game/scenario/13_0_1_1_0.rpy:22
 translate english 87c5e43e:
 
     # "Il garde une pince serrée autour d’un câble, comme si mon réveil n’était qu’un contretemps mineur."
-    ""
+    "It keeps a clamp wrapped around a cable, as if my waking up is only a minor inconvenience."
 
 # game/scenario/13_0_1_1_0.rpy:24
 translate english 25622cb5:
 
     # robot "Ah. Vous êtes réveillé."
-    robot ""
+    robot "Oh. You're awake."
 
 # game/scenario/13_0_1_1_0.rpy:26
 translate english 6b60b51d:
 
     # "Sa voix est plate, monotone, presque ennuyée. Comme un employé de bureau qui fait son troisième inventaire de la journée."
-    ""
+    "Its voice is flat, monotonous, almost bored. Like an office worker doing their third inventory of the day."
 
 # game/scenario/13_0_1_1_0.rpy:28
 translate english cc20ad51:
 
     # robot "Bonjour. Ou pas. Peu importe."
-    robot ""
+    robot "Good morning. Or not. Whatever."
 
 # game/scenario/13_0_1_1_0.rpy:30
 translate english 3861309e:
 
     # "Il continue tranquillement à démonter le brouilleur, arrachant un gros câble dans un bruit sec."
-    ""
+    "It calmly keeps dismantling the jammer, yanking out a thick cable with a sharp snap."
 
 # game/scenario/13_0_1_1_0.rpy:32
 translate english 289a28ce:
@@ -100,49 +100,49 @@ translate english 289a28ce:
 translate english c83f5033:
 
     # robot "Je démonte votre brouilleur. Ordre du Conclave."
-    robot ""
+    robot "I'm removing your jammer. Conclave orders."
 
 # game/scenario/13_0_1_1_0.rpy:36
 translate english f2679007:
 
     # "Il sort un tournevis électrique et attaque une autre vis sans même me regarder."
-    ""
+    "It pulls out an electric screwdriver and starts on another screw without so much as looking at me."
 
 # game/scenario/13_0_1_1_0.rpy:38
 translate english aa99c3e4:
 
     # robot "Le vote d’hier a interdit les dispositifs de brouillage. Donc je retire tous les brouilleurs des chambres des représentants."
-    robot ""
+    robot "Yesterday's vote banned jamming devices. So I'm removing them from every representative's room."
 
 # game/scenario/13_0_1_1_0.rpy:39
 translate english e943e615:
 
     # robot "C’est chiant. Il y en a douze à faire. Vous êtes le septième."
-    robot ""
+    robot "What a pain. Twelve rooms to do. You're number seven."
 
 # game/scenario/13_0_1_1_0.rpy:41
 translate english e14f998e:
 
     # "Je reste assis sur mon lit, complètement abasourdi."
-    ""
+    "I sit on the bed, completely dumbfounded."
 
 # game/scenario/13_0_1_1_0.rpy:42
 translate english d0339e0d:
 
     # "La phrase met quelques secondes à trouver sa place dans mon crâne."
-    ""
+    "It takes a few seconds for those words to sink in."
 
 # game/scenario/13_0_1_1_0.rpy:44
 translate english e434cdc8:
 
     # noam "Attends… ils ont voté pour interdire ?!"
-    noam ""
+    noam "Wait... they voted to ban them?!"
 
 # game/scenario/13_0_1_1_0.rpy:46
 translate english 59e28e5a:
 
     # robot "Oui. Une personne a voté contre au dernier moment. Quel suspense ! Je n'aurai jamais imaginé devoir me lever tôt ce matin."
-    robot ""
+    robot "Yes. Someone voted against at the last second. Riveting stuff. Never thought I'd have to get up this early."
 
 # game/scenario/13_0_1_1_0.rpy:48
 translate english dc2b11bc:
@@ -154,31 +154,31 @@ translate english dc2b11bc:
 translate english f7dffcec:
 
     # robot "Correct."
-    robot ""
+    robot "Correct."
 
 # game/scenario/13_0_1_1_0.rpy:52
 translate english 31459814:
 
     # noam "Qui ?"
-    noam ""
+    noam "Who?"
 
 # game/scenario/13_0_1_1_0.rpy:54
 translate english a755d71a:
 
     # "Le robot s’arrête enfin."
-    ""
+    "The robot finally stops."
 
 # game/scenario/13_0_1_1_0.rpy:55
 translate english 2b75e952:
 
     # "Il tourne sa tête vers moi avec une lenteur presque insultante."
-    ""
+    "It turns its head toward me at an almost insulting pace."
 
 # game/scenario/13_0_1_1_0.rpy:57
 translate english 07f96c6b:
 
     # robot "Vous pensez vraiment que je vais vous donner le détail nominatif d’un vote du Conclave pendant que je démonte un appareil mural ?"
-    robot ""
+    robot "Do you seriously think I'm going to hand over an itemized list of secret votes while I'm taking apart a wall fixture?"
 
 # game/scenario/13_0_1_1_0.rpy:59
 translate english c681eb57:
@@ -190,73 +190,73 @@ translate english c681eb57:
 translate english 82d64ce3:
 
     # robot "Oui. Mais ça, c’est autorisé."
-    robot ""
+    robot "Yes. But that's allowed."
 
 # game/scenario/13_0_1_1_0.rpy:63
 translate english 1f6ecbea:
 
     # "Il recommence à dévisser, parfaitement indifférent."
-    ""
+    "It starts unscrewing things again, utterly indifferent."
 
 # game/scenario/13_0_1_1_0.rpy:65
 translate english f9c331ca:
 
     # robot "La confidentialité des votes reste protégée. Votre intimité physique, en revanche, vient de perdre son statut prioritaire."
-    robot ""
+    robot "Your vote is still confidential. Your physical privacy, however, has just been downgraded."
 
 # game/scenario/13_0_1_1_0.rpy:67
 translate english cc02a4e7:
 
     # noam "C’est censé me rassurer ?"
-    noam ""
+    noam "Is that supposed to make me feel better?"
 
 # game/scenario/13_0_1_1_0.rpy:69
 translate english cbaa5999:
 
     # robot "Non. C’est censé vous informer."
-    robot ""
+    robot "No. It's supposed to inform you."
 
 # game/scenario/13_0_1_1_0.rpy:71
 translate english a1497474:
 
     # "Un nouveau morceau du brouilleur tombe au sol."
-    ""
+    "Another piece of the jammer drops to the floor."
 
 # game/scenario/13_0_1_1_0.rpy:72
 translate english 84b97496:
 
     # "Je reconnais la petite plaque extérieure que j’avais l’habitude de fixer du regard avant de dormir."
-    ""
+    "I recognize the small outer panel I'd stare at every night before going to sleep."
 
 # game/scenario/13_0_1_1_0.rpy:73
 translate english a45c08bc:
 
     # "Elle était devenue une sorte de verrou mental. Une preuve que Kami ne pouvait pas tout voir."
-    ""
+    "It had become a kind of mental lock. Proof Kami couldn't see everything."
 
 # game/scenario/13_0_1_1_0.rpy:75
 translate english 77b419d5:
 
     # think "C’était ridicule."
-    think ""
+    think "That was stupid."
 
 # game/scenario/13_0_1_1_0.rpy:76
 translate english 215e6bc1:
 
     # think "Mais au moins, c’était quelque chose."
-    think ""
+    think "But at least it was something."
 
 # game/scenario/13_0_1_1_0.rpy:78
 translate english ba24fc12:
 
     # noam "Et Kami ? Elle voit déjà ?"
-    noam ""
+    noam "And Kami? Can she see me already?"
 
 # game/scenario/13_0_1_1_0.rpy:80
 translate english 2e05425d:
 
     # robot "Pas encore totalement. Je procède au retrait physique. La reconnexion optique de la chambre se fera dans quelques minutes."
-    robot ""
+    robot "Not entirely. I'm carrying out the physical removal. Visual surveillance will reconnect in a few minutes."
 
 # game/scenario/13_0_1_1_0.rpy:82
 translate english aef97ce2:
@@ -268,61 +268,61 @@ translate english aef97ce2:
 translate english dd266dbd:
 
     # robot "La chambre redeviendra compatible avec la surveillance centrale."
-    robot ""
+    robot "Your room will be back on the central surveillance network."
 
 # game/scenario/13_0_1_1_0.rpy:86
 translate english bd1ebc50:
 
     # "Il marque une courte pause."
-    ""
+    "It pauses briefly."
 
 # game/scenario/13_0_1_1_0.rpy:87
 translate english 3e2e311f:
 
     # "Ses yeux rouges clignotent deux fois."
-    ""
+    "Its red eyes blink twice."
 
 # game/scenario/13_0_1_1_0.rpy:89
 translate english 7809caf5:
 
     # robot "En langage humain : oui, elle pourra vous voir."
-    robot ""
+    robot "In human terms: yes, she'll be able to see you."
 
 # game/scenario/13_0_1_1_0.rpy:91
 translate english 7b108b4d:
 
     # noam "Tout le temps ?"
-    noam ""
+    noam "All the time?"
 
 # game/scenario/13_0_1_1_0.rpy:93
 translate english 7ffc0bbe:
 
     # robot "Sauf panne, surcharge, angle mort temporaire, obstruction accidentelle ou décision contraire de l’autorité centrale."
-    robot ""
+    robot "Unless there's a malfunction, overload, temporary blind spot, accidental obstruction, or a directive from central authority."
 
 # game/scenario/13_0_1_1_0.rpy:95
 translate english 779d5166:
 
     # noam "Donc tout le temps."
-    noam ""
+    noam "So, all the time."
 
 # game/scenario/13_0_1_1_0.rpy:97
 translate english 990f1d9c:
 
     # robot "C’est ce que je viens de dire avec plus de précision."
-    robot ""
+    robot "That's what I just said, only more accurately."
 
 # game/scenario/13_0_1_1_0.rpy:99
 translate english c95e5e7e:
 
     # "J’ai envie de descendre du lit et de l’arracher du mur moi-même."
-    ""
+    "I want to jump out of bed and rip the thing off the wall myself."
 
 # game/scenario/13_0_1_1_0.rpy:100
 translate english 8a18877f:
 
     # "Mais mes jambes sont encore lourdes, et une partie de moi sait déjà que ça ne servirait à rien."
-    ""
+    "But my legs still feel heavy, and part of me already knows it would be pointless."
 
 # game/scenario/13_0_1_1_0.rpy:102
 translate english 33873306:
@@ -334,37 +334,37 @@ translate english 33873306:
 translate english da589e7e:
 
     # robot "Non."
-    robot ""
+    robot "No."
 
 # game/scenario/13_0_1_1_0.rpy:106
 translate english 06e71761:
 
     # noam "Pourquoi ?"
-    noam ""
+    noam "Why?"
 
 # game/scenario/13_0_1_1_0.rpy:108
 translate english 95a6cffa:
 
     # robot "Parce que si je m’arrête deux secondes dans chaque chambre, je perds vingt-quatre secondes."
-    robot ""
+    robot "Because stopping for two seconds in each room would cost me twenty-four seconds."
 
 # game/scenario/13_0_1_1_0.rpy:110
 translate english 50fe97d8:
 
     # noam "C’est dramatique."
-    noam ""
+    noam "Tragic."
 
 # game/scenario/13_0_1_1_0.rpy:112
 translate english 877a420d:
 
     # robot "Pour vous, non. Pour mon planning, oui."
-    robot ""
+    robot "Not for you. For my schedule."
 
 # game/scenario/13_0_1_1_0.rpy:114
 translate english 99bc4702:
 
     # "Il tire sur un faisceau de câbles plus épais."
-    ""
+    "It tugs on a thicker bundle of cables."
 
 # game/scenario/13_0_1_1_0.rpy:115
 translate english 04ad75c8:
