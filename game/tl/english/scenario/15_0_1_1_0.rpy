@@ -226,7 +226,7 @@ translate english f73f39f7:
 translate english c9e0e05b:
 
     # noam peur "..."
-    noam peur ""
+    noam peur "..."
 
 # game/scenario/15_0_1_1_0.rpy:51
 translate english dbf5d67b:
@@ -370,7 +370,7 @@ translate english a33392f9:
 translate english c90986e3:
 
     # noam inquiet "Déjà...?"
-    noam inquiet ""
+    noam inquiet "Already...?"
 
 # game/scenario/15_0_1_1_0.rpy:77
 translate english 5d28ae97:
@@ -616,7 +616,7 @@ translate english 8f8ecc6d:
 translate english 5ad052ab:
 
     # noam inquiet "... Qui est là ?"
-    noam inquiet ""
+    noam inquiet "...Who's there?"
 
 # game/scenario/15_0_1_1_0.rpy:133
 translate english 1b2a2a40_1:
@@ -634,7 +634,7 @@ translate english 13a13f1c:
 translate english 19401647:
 
     # noam inquiet "Je sais que tu es là."
-    noam inquiet ""
+    noam inquiet "I know you're there."
 
 # game/scenario/15_0_1_1_0.rpy:143
 translate english 9e2aff53:
@@ -652,7 +652,7 @@ translate english 26f24bd0:
 translate english 02a55bf0:
 
     # noam peur "Répondez !"
-    noam peur ""
+    noam peur "ANSWER ME!"
 
 # game/scenario/15_0_1_1_0.rpy:149
 translate english 0b8a4dd3:
@@ -922,7 +922,7 @@ translate english 63bc7630:
 translate english f270eff1:
 
     # noam murmure "Tranquille…"
-    noam murmure ""
+    noam murmure "Easy..."
 
 # game/scenario/15_0_1_1_0.rpy:222
 translate english b7e960dc:
@@ -964,13 +964,13 @@ translate english dc52bed9:
 translate english d3220ce6:
 
     # noam inquiet "..."
-    noam inquiet ""
+    noam inquiet "..."
 
 # game/scenario/15_0_1_1_0.rpy:244
 translate english 77a4ed3f:
 
     # kael inquietude "Tu es là ?"
-    kael inquietude ""
+    kael inquietude "You there?"
 
 # game/scenario/15_0_1_1_0.rpy:246
 translate english 5a2ac84d:
@@ -982,31 +982,31 @@ translate english 5a2ac84d:
 translate english df63b9b9:
 
     # noam inquiet "Oui."
-    noam inquiet ""
+    noam inquiet "Yeah."
 
 # game/scenario/15_0_1_1_0.rpy:250
 translate english 67d0e501:
 
     # kael inquietude "Ils sont devant le couloir principal ?"
-    kael inquietude ""
+    kael inquietude "Are they by the main corridor?"
 
 # game/scenario/15_0_1_1_0.rpy:252
 translate english df63b9b9_1:
 
     # noam inquiet "Oui."
-    noam inquiet ""
+    noam inquiet "Yeah."
 
 # game/scenario/15_0_1_1_0.rpy:254
 translate english d12c3ef3:
 
     # kael fatigue "Attends un peu, ils vont rapidement rentrer."
-    kael fatigue ""
+    kael fatigue "Wait a bit. They'll head in soon."
 
 # game/scenario/15_0_1_1_0.rpy:255
 translate english ba0af85b:
 
     # kael fatigue "Je t’attends."
-    kael fatigue ""
+    kael fatigue "I'll wait for you."
 
 # game/scenario/15_0_1_1_0.rpy:257
 translate english effae1a6:
@@ -1024,7 +1024,7 @@ translate english bd5195fc:
 translate english ff032cf2:
 
     # iris inquiet "Noam ?"
-    iris inquiet ""
+    iris inquiet "Noam?"
 
 # game/scenario/15_0_1_1_0.rpy:262
 translate english ca163906:
@@ -1042,25 +1042,25 @@ translate english 62420d97:
 translate english 808306b4:
 
     # iris inquiet "Je sais que tu es là."
-    iris inquiet ""
+    iris inquiet "I know you're there."
 
 # game/scenario/15_0_1_1_0.rpy:267
 translate english e0ec8ebf:
 
     # mara agace "Oh putain."
-    mara agace ""
+    mara agace "Oh, fuck."
 
 # game/scenario/15_0_1_1_0.rpy:268
 translate english 43889340:
 
     # mara colere "Bien sûr qu’il est là."
-    mara colere ""
+    mara colere "Of course he's there."
 
 # game/scenario/15_0_1_1_0.rpy:270
 translate english 55751ca5:
 
     # lysa blase "Le camouflage par culpabilité, ça ne marche pas."
-    lysa blase ""
+    lysa blase "You can't hide by feeling guilty, you know."
 
 # game/scenario/15_0_1_1_0.rpy:272
 translate english 49cedbbc:
@@ -1072,49 +1072,49 @@ translate english 49cedbbc:
 translate english d006a495:
 
     # noam hesitation "Salut."
-    noam hesitation ""
+    noam hesitation "Hey."
 
 # game/scenario/15_0_1_1_0.rpy:285
 translate english ec64e07c:
 
     # mara colere "Salut ?"
-    mara colere ""
+    mara colere "'Hey'?"
 
 # game/scenario/15_0_1_1_0.rpy:286
 translate english 5b9201be:
 
     # mara agace "C’est tout ?"
-    mara agace ""
+    mara agace "That's it?"
 
 # game/scenario/15_0_1_1_0.rpy:288
 translate english 39accab6:
 
     # noam hesitation "Oui."
-    noam hesitation ""
+    noam hesitation "Yeah."
 
 # game/scenario/15_0_1_1_0.rpy:290
 translate english e9f6abd7:
 
     # iris inquiet "Tu viens au vote ?"
-    iris inquiet ""
+    iris inquiet "Coming to the vote?"
 
 # game/scenario/15_0_1_1_0.rpy:292
 translate english e359c9e0:
 
     # noam inquiet "Je..."
-    noam inquiet ""
+    noam inquiet "I..."
 
 # game/scenario/15_0_1_1_0.rpy:294
 translate english a9ebe3fb:
 
     # ryn colere "Réponds."
-    ryn colere ""
+    ryn colere "Answer him."
 
 # game/scenario/15_0_1_1_0.rpy:296
 translate english cf373232:
 
     # noam triste "Non."
-    noam triste ""
+    noam triste "No."
 
 # game/scenario/15_0_1_1_0.rpy:298
 translate english 70c7d5ac:
@@ -1132,91 +1132,91 @@ translate english a11f6453:
 translate english 21e24c2a:
 
     # elen inquiet "Noam..."
-    elen inquiet ""
+    elen inquiet "Noam..."
 
 # game/scenario/15_0_1_1_0.rpy:303
 translate english eeb06a33:
 
     # noam triste "Je ne peux pas."
-    noam triste ""
+    noam triste "I can't."
 
 # game/scenario/15_0_1_1_0.rpy:305
 translate english 6ea9c093:
 
     # ryn desaccord "Tu ne peux pas ?"
-    ryn desaccord ""
+    ryn desaccord "You can't?"
 
 # game/scenario/15_0_1_1_0.rpy:306
 translate english a9c67f2c:
 
     # ryn colere "Ou tu ne veux pas ?"
-    ryn colere ""
+    ryn colere "Or you won't?"
 
 # game/scenario/15_0_1_1_0.rpy:308
 translate english feb1c5b0:
 
     # noam culpabilite "Les deux."
-    noam culpabilite ""
+    noam culpabilite "Both."
 
 # game/scenario/15_0_1_1_0.rpy:310
 translate english 5de20164:
 
     # mara colere "Putain, c’est pas vrai."
-    mara colere ""
+    mara colere "Oh, for fuck's sake."
 
 # game/scenario/15_0_1_1_0.rpy:311
 translate english 5795d72c:
 
     # mara agace "Tu choisis aujourd’hui pour nous faire ton ermite ?"
-    mara agace ""
+    mara agace "You pick TODAY to become a hermit?"
 
 # game/scenario/15_0_1_1_0.rpy:313
 translate english e95e5327:
 
     # tomas inquiet "Mara..."
-    tomas inquiet ""
+    tomas inquiet "Mara..."
 
 # game/scenario/15_0_1_1_0.rpy:315
 translate english 41e1851c:
 
     # mara colere "Non, désolée, mais merde."
-    mara colere ""
+    mara colere "No, I'm sorry, but screw this."
 
 # game/scenario/15_0_1_1_0.rpy:316
 translate english 3fc21c5a:
 
     # mara colere "On parle d’un amendement mondial."
-    mara colere ""
+    mara colere "We're talking about an amendment that affects the whole world."
 
 # game/scenario/15_0_1_1_0.rpy:317
 translate english c962d444:
 
     # mara agace "Pas de savoir si monsieur veut croiser trois regards à la cafèt."
-    mara agace ""
+    mara agace "Not whether His Majesty feels like making eye contact in the cafeteria."
 
 # game/scenario/15_0_1_1_0.rpy:319
 translate english 51747fb2:
 
     # iris colere "Mara, ça suffit."
-    iris colere ""
+    iris colere "Mara, that's enough."
 
 # game/scenario/15_0_1_1_0.rpy:321
 translate english a5e7ae49:
 
     # mara colere "Non."
-    mara colere ""
+    mara colere "No."
 
 # game/scenario/15_0_1_1_0.rpy:322
 translate english b625df40:
 
     # mara colere "Ça ne suffit jamais, justement."
-    mara colere ""
+    mara colere "It's never enough, is it?"
 
 # game/scenario/15_0_1_1_0.rpy:324
 translate english e4ea827b:
 
     # ryn fatigue "Pfff, vaut mieux ça qu'une crise comme l'autre fois."
-    ryn fatigue ""
+    ryn fatigue "Tch. Better this than another meltdown like last time."
 
 # game/scenario/15_0_1_1_0.rpy:326
 translate english a8506a5b:
@@ -1234,103 +1234,103 @@ translate english 201bad60:
 translate english 254b2051:
 
     # kael fatigue "On y va."
-    kael fatigue ""
+    kael fatigue "Let's go."
 
 # game/scenario/15_0_1_1_0.rpy:331
 translate english b9f0d193:
 
     # ryn surpris "Ah."
-    ryn surpris ""
+    ryn surpris "Oh."
 
 # game/scenario/15_0_1_1_0.rpy:332
 translate english ae8ec3b5:
 
     # ryn colere "Donc c’était ça."
-    ryn colere ""
+    ryn colere "So that's it."
 
 # game/scenario/15_0_1_1_0.rpy:333
 translate english 764cff16:
 
     # ryn colere "Les deux fantômes se sauvent ensemble."
-    ryn colere ""
+    ryn colere "The two ghosts run off together."
 
 # game/scenario/15_0_1_1_0.rpy:335
 translate english 19166a18:
 
     # kael inquietude "Ryn."
-    kael inquietude ""
+    kael inquietude "Ryn."
 
 # game/scenario/15_0_1_1_0.rpy:337
 translate english e064cf91:
 
     # ryn desaccord "Quoi ?"
-    ryn desaccord ""
+    ryn desaccord "What?"
 
 # game/scenario/15_0_1_1_0.rpy:338
 translate english 96e3b026:
 
     # ryn colere "J’ai tort ?"
-    ryn colere ""
+    ryn colere "Am I wrong?"
 
 # game/scenario/15_0_1_1_0.rpy:340
 translate english 3e9306ce:
 
     # kael calme "Oui."
-    kael calme ""
+    kael calme "Yes."
 
 # game/scenario/15_0_1_1_0.rpy:342
 translate english 0a56d034:
 
     # ryn colere "Explique."
-    ryn colere ""
+    ryn colere "Explain."
 
 # game/scenario/15_0_1_1_0.rpy:344
 translate english 2eaf9f21:
 
     # kael calme "Non."
-    kael calme ""
+    kael calme "No."
 
 # game/scenario/15_0_1_1_0.rpy:346
 translate english 4d2040e2:
 
     # ryn colere "Pratique."
-    ryn colere ""
+    ryn colere "Convenient."
 
 # game/scenario/15_0_1_1_0.rpy:348
 translate english bda81351:
 
     # kael fatigue "Je ne dois rien à ton besoin de cogner sur quelque chose."
-    kael fatigue ""
+    kael fatigue "I don't owe you an outlet for your anger."
 
 # game/scenario/15_0_1_1_0.rpy:350
 translate english deb7c5bf:
 
     # ryn colere2 "Répète."
-    ryn colere2 ""
+    ryn colere2 "Say that again."
 
 # game/scenario/15_0_1_1_0.rpy:352
 translate english b20017d8:
 
     # sael mefiant "Ryn."
-    sael mefiant ""
+    sael mefiant "Ryn."
 
 # game/scenario/15_0_1_1_0.rpy:354
 translate english 54f41322:
 
     # ryn colere "Non."
-    ryn colere ""
+    ryn colere "No."
 
 # game/scenario/15_0_1_1_0.rpy:355
 translate english 19453aa8:
 
     # ryn colere "J’en ai marre des types qui fuient et qui appellent ça réfléchir."
-    ryn colere ""
+    ryn colere "I'm sick of guys running away and calling it thinking."
 
 # game/scenario/15_0_1_1_0.rpy:357
 translate english 1a52956c:
 
     # kael inquietude "Et moi j’en ai marre des types qui crient et qui appellent ça protéger."
-    kael inquietude ""
+    kael inquietude "And I'm sick of guys yelling and calling it protection."
 
 # game/scenario/15_0_1_1_0.rpy:359
 translate english 22367fe4:
@@ -1348,61 +1348,61 @@ translate english 64f359b0:
 translate english 2f976c44_1:
 
     # sael mefiant "Pas ici."
-    sael mefiant ""
+    sael mefiant "Not here."
 
 # game/scenario/15_0_1_1_0.rpy:364
 translate english bacbca17:
 
     # ryn colere "..."
-    ryn colere ""
+    ryn colere "..."
 
 # game/scenario/15_0_1_1_0.rpy:366
 translate english 79077a2c:
 
     # sael raison "Pas maintenant."
-    sael raison ""
+    sael raison "Not now."
 
 # game/scenario/15_0_1_1_0.rpy:368
 translate english 18292a28:
 
     # ryn fatigue "Fait chier."
-    ryn fatigue ""
+    ryn fatigue "Fuck this."
 
 # game/scenario/15_0_1_1_0.rpy:370
 translate english 1539c442:
 
     # noam raison "On ne veut pas bloquer le vote."
-    noam raison ""
+    noam raison "We're not trying to stop the vote."
 
 # game/scenario/15_0_1_1_0.rpy:372
 translate english a524281e:
 
     # nyra raison "L’intention ne changera pas le résultat."
-    nyra raison ""
+    nyra raison "Intentions won't change the outcome."
 
 # game/scenario/15_0_1_1_0.rpy:374
 translate english c4195617:
 
     # noam triste "Je sais."
-    noam triste ""
+    noam triste "I know."
 
 # game/scenario/15_0_1_1_0.rpy:376
 translate english 97d5ca4e:
 
     # nyra raison "Alors assume-le clairement."
-    nyra raison ""
+    nyra raison "Then own it."
 
 # game/scenario/15_0_1_1_0.rpy:377
 translate english fd9db2aa:
 
     # nyra raison "Ne dis pas que tu ne peux pas."
-    nyra raison ""
+    nyra raison "Don't say you can't."
 
 # game/scenario/15_0_1_1_0.rpy:378
 translate english 51d00859:
 
     # nyra raison "Dis que tu choisis de ne pas venir."
-    nyra raison ""
+    nyra raison "Say you've chosen not to come."
 
 # game/scenario/15_0_1_1_0.rpy:380
 translate english 074f542c:
@@ -1420,49 +1420,49 @@ translate english 6a753828:
 translate english c141de89:
 
     # noam determine "Je choisis de ne pas venir."
-    noam determine ""
+    noam determine "I'm choosing not to come."
 
 # game/scenario/15_0_1_1_0.rpy:385
 translate english 53e9bcad_1:
 
     # iris inquiet "Noam..."
-    iris inquiet ""
+    iris inquiet "Noam..."
 
 # game/scenario/15_0_1_1_0.rpy:387
 translate english e0eb30ff:
 
     # noam culpabilite "Je suis désolé."
-    noam culpabilite ""
+    noam culpabilite "I'm sorry."
 
 # game/scenario/15_0_1_1_0.rpy:389
 translate english ddb56b8a:
 
     # lysa blase "Il vient de dire d’arrêter avec ça."
-    lysa blase ""
+    lysa blase "He just told you to stop."
 
 # game/scenario/15_0_1_1_0.rpy:391
 translate english a6bc0124:
 
     # mara agace "Merci, Lysa, j’avais presque oublié d’être énervée."
-    mara agace ""
+    mara agace "Thanks, Lysa. I'd almost forgotten to be pissed off."
 
 # game/scenario/15_0_1_1_0.rpy:393
 translate english 254b2051_1:
 
     # kael fatigue "On y va."
-    kael fatigue ""
+    kael fatigue "Let's go."
 
 # game/scenario/15_0_1_1_0.rpy:395
 translate english 80d1ff71_3:
 
     # noam fatigue "Oui."
-    noam fatigue ""
+    noam fatigue "Okay."
 
 # game/scenario/15_0_1_1_0.rpy:397
 translate english 133290d9:
 
     # elen inquiet "Attendez."
-    elen inquiet ""
+    elen inquiet "Wait."
 
 # game/scenario/15_0_1_1_0.rpy:399
 translate english b4cfb580:
@@ -1474,79 +1474,79 @@ translate english b4cfb580:
 translate english 6e100766:
 
     # elen inquiet "S’il vous plaît."
-    elen inquiet ""
+    elen inquiet "Please."
 
 # game/scenario/15_0_1_1_0.rpy:402
 translate english ac2e00bc:
 
     # elen triste "Faites attention."
-    elen triste ""
+    elen triste "Be careful."
 
 # game/scenario/15_0_1_1_0.rpy:403
 translate english 84b58ce1:
 
     # elen inquiet "Je ne sais pas ce que vous cherchez."
-    elen inquiet ""
+    elen inquiet "I don't know what you're looking for."
 
 # game/scenario/15_0_1_1_0.rpy:404
 translate english 86ffcc76:
 
     # elen determine "Mais revenez."
-    elen determine ""
+    elen determine "But come back."
 
 # game/scenario/15_0_1_1_0.rpy:406
 translate english 1cdc0d69:
 
     # kael triste "..."
-    kael triste ""
+    kael triste "..."
 
 # game/scenario/15_0_1_1_0.rpy:408
 translate english e63e3b4b:
 
     # noam triste "On reviendra."
-    noam triste ""
+    noam triste "We will."
 
 # game/scenario/15_0_1_1_0.rpy:410
 translate english 33b8c9c4:
 
     # iris inquiet "Et mange vraiment."
-    iris inquiet ""
+    iris inquiet "And actually eat something."
 
 # game/scenario/15_0_1_1_0.rpy:412
 translate english 348b3f55:
 
     # noam hesitation "J’ai mangé."
-    noam hesitation ""
+    noam hesitation "I ate."
 
 # game/scenario/15_0_1_1_0.rpy:414
 translate english 60ad571f:
 
     # iris colere "Une barre ne compte pas."
-    iris colere ""
+    iris colere "One protein bar doesn't count."
 
 # game/scenario/15_0_1_1_0.rpy:416
 translate english 902bb159:
 
     # mara agace "Oh, génial."
-    mara agace ""
+    mara agace "Oh, great."
 
 # game/scenario/15_0_1_1_0.rpy:417
 translate english 62b60c88:
 
     # mara agace "On est à deux doigts de l’apocalypse administrative et vous parlez goûter."
-    mara agace ""
+    mara agace "We're on the brink of bureaucratic Armageddon and you're talking about snacks."
 
 # game/scenario/15_0_1_1_0.rpy:419
 translate english de9b0e3a:
 
     # iris colere "La ferme."
-    iris colere ""
+    iris colere "Shut up."
 
 # game/scenario/15_0_1_1_0.rpy:421
 translate english dd89a213:
 
     # mara rire "Touchée."
-    mara rire ""
+    mara rire "Touché."
 
 # game/scenario/15_0_1_1_0.rpy:423
 translate english e6e80174:
@@ -1600,7 +1600,7 @@ translate english d9502abf:
 translate english 44f6c28c:
 
     # kael mefiant "..."
-    kael mefiant ""
+    kael mefiant "..."
 
 # game/scenario/15_0_1_1_0.rpy:445
 translate english 41344ee1:
@@ -1612,7 +1612,7 @@ translate english 41344ee1:
 translate english a4050042:
 
     # kael doute "Je t'ai jamais dis de venir. Mais..."
-    kael doute ""
+    kael doute "I never asked you to come. But..."
 
 # game/scenario/15_0_1_1_0.rpy:447
 translate english f423e1d1:
@@ -1624,7 +1624,7 @@ translate english f423e1d1:
 translate english c16d7a05:
 
     # kael calme "Puis... Ta présence de me dérange pas."
-    kael calme ""
+    kael calme "Well... I don't mind you being here."
 
 # game/scenario/15_0_1_1_0.rpy:449
 translate english 5239b587:
@@ -1642,19 +1642,19 @@ translate english d2e17fed:
 translate english 69a86eee:
 
     # kael fatigue "C’est presque ça le pire."
-    kael fatigue ""
+    kael fatigue "That's almost the worst part."
 
 # game/scenario/15_0_1_1_0.rpy:452
 translate english d3c9b922:
 
     # noam fatigue "Comment ça ?"
-    noam fatigue ""
+    noam fatigue "What do you mean?"
 
 # game/scenario/15_0_1_1_0.rpy:453
 translate english b3dfd927:
 
     # kael inquiet "Ils ne me détestent pas, mais ils m'ont lachés car ils ne voulaient pas se mettre à ma place."
-    kael inquiet ""
+    kael inquiet "They don't hate me. They just abandoned me because they didn't want to put themselves in my shoes."
 
 # game/scenario/15_0_1_1_0.rpy:454
 translate english 83f2ed55:
@@ -1678,7 +1678,7 @@ translate english f3fd9941:
 translate english 2cac842a:
 
     # kael doute "Si on voit quelqu’un..."
-    kael doute ""
+    kael doute "If we see someone..."
 
 # game/scenario/15_0_1_1_0.rpy:458
 translate english 3560a090:
@@ -1696,19 +1696,19 @@ translate english 1f70adb1:
 translate english 71b03e70:
 
     # noam reflexion "Tu penses que les vidéos peuvent être modifiées ?"
-    noam reflexion ""
+    noam reflexion "You think the videos could've been tampered with?"
 
 # game/scenario/15_0_1_1_0.rpy:461
 translate english ffb59b4c:
 
     # kael reflechit "C'est possible. Et franchement ce n'est pas si compliqué à faire."
-    kael reflechit ""
+    kael reflechit "It's possible. And honestly, it's not that hard."
 
 # game/scenario/15_0_1_1_0.rpy:462
 translate english d4769346:
 
     # kael raison "Même si on laisse toujours des traces quand on fait ce genre de choses."
-    kael raison ""
+    kael raison "Though you always leave traces when you do something like that."
 
 # game/scenario/15_0_1_1_0.rpy:463
 translate english 2a34a222:
@@ -1744,7 +1744,7 @@ translate english a714e2fc:
 translate english b647ebe4:
 
     # kael reflechit "Plage horaire 00h00 à 23h59."
-    kael reflechit ""
+    kael reflechit "Time range: 12:00 a.m. to 11:59 p.m."
 
 # game/scenario/15_0_1_1_0.rpy:469
 translate english 5d6d7cd7:
@@ -1762,7 +1762,7 @@ translate english ea5ebcba:
 translate english f721cb01:
 
     # noam triste "Donc n'importe qui aurait pu venir n'importe quand..."
-    noam triste ""
+    noam triste "So anyone could've come by at any time..."
 
 # game/scenario/15_0_1_1_0.rpy:472
 translate english da3419ff:
@@ -1786,7 +1786,7 @@ translate english 7bbbfd3e:
 translate english e1dad2b5:
 
     # noam raison "Oh on a même les logs pour les ouvertures de porte ici !"
-    noam raison ""
+    noam raison "Oh, we've even got door access logs here!"
 
 # game/scenario/15_0_1_1_0.rpy:476
 translate english f4e361e8:
@@ -1798,13 +1798,13 @@ translate english f4e361e8:
 translate english 937b130c:
 
     # noam joie "On peut chercher les ouvertures de porte."
-    noam joie ""
+    noam joie "We can search for door openings."
 
 # game/scenario/15_0_1_1_0.rpy:478
 translate english ad8eb318:
 
     # kael inquiet "Alors, voyons voir ce journal d’accès."
-    kael inquiet ""
+    kael inquiet "All right, let's pull up the access log."
 
 # game/scenario/15_0_1_1_0.rpy:479
 translate english bae6f5cd:
@@ -1822,7 +1822,7 @@ translate english a6e3a956:
 translate english d56a23ff:
 
     # kael calme "08h17, entrée."
-    kael calme ""
+    kael calme "8:17 a.m., entry."
 
 # game/scenario/15_0_1_1_0.rpy:482
 translate english 5ab17fb9:
@@ -1834,13 +1834,13 @@ translate english 5ab17fb9:
 translate english a970157e:
 
     # kael fatigue "13h06, entrée."
-    kael fatigue ""
+    kael fatigue "1:06 p.m., entry."
 
 # game/scenario/15_0_1_1_0.rpy:484
 translate english d1cfd28c:
 
     # noam panne "C’est normal ?"
-    noam panne ""
+    noam panne "Is that normal?"
 
 # game/scenario/15_0_1_1_0.rpy:485
 translate english b9afd1da:
@@ -1858,7 +1858,7 @@ translate english cb7e416f:
 translate english 8e42f581:
 
     # noam determine "Ensuite ?"
-    noam determine ""
+    noam determine "And then?"
 
 # game/scenario/15_0_1_1_0.rpy:488
 translate english 801eeaf5:
@@ -1876,13 +1876,13 @@ translate english 214603e0:
 translate english bb02329b:
 
     # noam neutre "Et le vol ?"
-    noam neutre ""
+    noam neutre "What about the theft?"
 
 # game/scenario/15_0_1_1_0.rpy:491
 translate english f69f5729:
 
     # kael reflechit "La photo était encore là à 19h28."
-    kael reflechit ""
+    kael reflechit "The picture was still there at 7:28."
 
 # game/scenario/15_0_1_1_0.rpy:492
 translate english 1078ffc5:
@@ -1894,7 +1894,7 @@ translate english 1078ffc5:
 translate english 406d0af4:
 
     # kael calme "Oui. Je l’ai regardée."
-    kael calme ""
+    kael calme "Yeah. I looked at it."
 
 # game/scenario/15_0_1_1_0.rpy:494
 translate english 06e71761_1:
@@ -1906,13 +1906,13 @@ translate english 06e71761_1:
 translate english 6c9cce07:
 
     # kael mefiant "Parce que je fais ça tous les soirs."
-    kael mefiant ""
+    kael mefiant "Because I do that every night."
 
 # game/scenario/15_0_1_1_0.rpy:496
 translate english bde1eef4:
 
     # noam culpabilite "Tu ne l’avais jamais dit."
-    noam culpabilite ""
+    noam culpabilite "You never mentioned that."
 
 # game/scenario/15_0_1_1_0.rpy:497
 translate english 98e4df7c:
@@ -1954,13 +1954,13 @@ translate english 08e04aa7:
 translate english a1dd0f1c:
 
     # noam surpris "Attends."
-    noam surpris ""
+    noam surpris "Wait."
 
 # game/scenario/15_0_1_1_0.rpy:504
 translate english b99ad16e:
 
     # kael inquiet "J’ai vu un truc."
-    kael inquiet ""
+    kael inquiet "I found something."
 
 # game/scenario/15_0_1_1_0.rpy:505
 translate english e5842fc9:
