@@ -82,7 +82,7 @@ translate english 34c6c893:
 translate english a363ac34:
 
     # kami "Bonjour à tous, oh vous me semblez particulièrement éteint ce matin."
-    kami "Good morning, everyone! Oh, you look especially lifeless today."
+    kami "Morning, everyone! My, you all look positively lifeless today."
 
 # game/scenario/5_0.rpy:416
 translate english c93da9bc:
@@ -946,7 +946,7 @@ translate english c9b6dc32_1:
 translate english cf484edb:
 
     # julian "C'est une façon remarquablement injuste de résumer une ambition sincère."
-    julian "That is a remarkably unfair way to summarize a sincere ambition."
+    julian "That's a spectacularly unfair way to dismiss a genuine ambition."
 
 # game/scenario/5_0.rpy:797
 translate english 290dd969_4:
@@ -1300,7 +1300,7 @@ translate english 0e5e5eb6:
 translate english 4ebdc4a2:
 
     # elias "Même couleur ensemble. Tu réfléchis pas. Tu relies."
-    elias "Match the colors. Don't think. Just connect them."
+    elias "Same colors go together. Don't overthink it. Just connect them."
 
 # game/scenario/5_0.rpy:941
 translate english 8aa6c2e7:
@@ -1360,7 +1360,7 @@ translate english 771c8f56:
 translate english d0644695:
 
     # elias "La ventilation tourne. Au moins on va pas étouffer."
-    elias "The ventilation's running. At least we won't suffocate."
+    elias "Ventilation's working. At least we won't choke in here."
 
 # game/scenario/5_0.rpy:981
 translate english 382e6598:
@@ -1462,7 +1462,7 @@ translate english 98ba4d41:
 translate english 56e7edf0:
 
     # elias "Je vais voir si j'ai cramé un truc important. Enfin, je veux dire plus important que la porte."
-    elias "I'm gonna see if I fried anything important. I mean, anything more important than the door."
+    elias "I'll go check if I fried anything important. Anything more important than the door, I mean."
 
 # game/scenario/5_0.rpy:1027
 translate english a00e45c0:
@@ -1714,7 +1714,7 @@ translate english 9080d56f:
 translate english 579be592:
 
     # elias "Faut que ça tienne jusqu'à demain, c'est tout."
-    elias "It only needs to hold until tomorrow. That's all."
+    elias "Just needs to hold till tomorrow. That's all."
 
 # game/scenario/5_0.rpy:1181
 translate english 40acc4e3:
