@@ -7424,331 +7424,331 @@ translate english elias_link_3_bb9dab2d:
 translate english elias_link_3_5d7d0da8:
 
     # noam reflexion "Et si tu laissais quelqu'un d'autre réparer ?"
-    noam reflexion ""
+    noam reflexion "What if you let someone else handle the repairs?"
 
 # game/scenario/temps_libres.rpy:1426
 translate english elias_link_3_00f8b711:
 
     # elias fatigue "Ouais... J'sais pas faire ça, moi."
-    elias fatigue ""
+    elias fatigue "Yeah... I'm not good at that."
 
 # game/scenario/temps_libres.rpy:1455
 translate english mara_link_1_d97a6037:
 
     # mara content "J'te préviens, je peux tenir comme ça toute la journée."
-    mara content ""
+    mara content "Just so you know, I can keep this up all day."
 
 # game/scenario/temps_libres.rpy:1459
 translate english mara_link_1_ec9f2e95:
 
     # mara neutre "C'est le sol qui bouge ! On est dans l'espace, je te rappelle !"
-    mara neutre ""
+    mara neutre "It's the FLOOR that's moving! We're in space, remember?"
 
 # game/scenario/temps_libres.rpy:1477
 translate english mara_link_1_a92e2a18:
 
     # mara rire "Tu veux encore traîner avec moi ? Fais gaffe, j'vais croire que j'te plais."
-    mara rire ""
+    mara rire "You still want to hang out with me? Careful, I'll start thinking you've got a thing for me."
 
 # game/scenario/temps_libres.rpy:1483
 translate english mara_link_1_909ce571:
 
     # noam neutre "On remet ça, mais sans gage débile."
-    noam neutre ""
+    noam neutre "Let's play again, but no stupid dares."
 
 # game/scenario/temps_libres.rpy:1484
 translate english mara_link_1_0b196e3b:
 
     # mara rire "T'es vraiment pas drôle quand tu veux."
-    mara rire ""
+    mara rire "You're seriously no fun when you want to be."
 
 # game/scenario/temps_libres.rpy:1488
 translate english mara_link_1_572de8ee:
 
     # noam reflexion "Tu proposes quoi comme gage, cette fois ?"
-    noam reflexion ""
+    noam reflexion "What dare are you suggesting this time?"
 
 # game/scenario/temps_libres.rpy:1489
 translate english mara_link_1_f4e32609:
 
     # mara taquin "Ah ! Voilà le Noam que je préfère !"
-    mara taquin ""
+    mara taquin "Ha! Now THAT'S the Noam I like!"
 
 # game/scenario/temps_libres.rpy:1538
 translate english mara_link_2_b37b994b:
 
     # noam neutre "Arrête. Ça se voit que ça te touche."
-    noam neutre ""
+    noam neutre "Stop. I can tell that got to you."
 
 # game/scenario/temps_libres.rpy:1539
 translate english mara_link_2_666387cb:
 
     # mara colere "Oh, ça va ! Tu vas pas t'y mettre toi aussi !"
-    mara colere ""
+    mara colere "Oh, come on! Don't you start too!"
 
 # game/scenario/temps_libres.rpy:1543
 translate english mara_link_2_4b7934b7:
 
     # noam reflexion "D'accord, je te laisse tranquille."
-    noam reflexion ""
+    noam reflexion "Okay, I'll leave you alone."
 
 # game/scenario/temps_libres.rpy:1544
 translate english mara_link_2_4e85215a:
 
     # mara neutre "...Merci. Pour une fois."
-    mara neutre ""
+    mara neutre "...Thanks. For once."
 
 # game/scenario/temps_libres.rpy:1599
 translate english mara_link_3_01aa952f:
 
     # noam neutre "Je peux rester sans poser de questions."
-    noam neutre ""
+    noam neutre "I can stay without asking any questions."
 
 # game/scenario/temps_libres.rpy:1600
 translate english mara_link_3_2469b844:
 
     # mara sourire "C'est peut-être ce qu'il y a de mieux à faire."
-    mara sourire ""
+    mara sourire "That might be the best thing you can do."
 
 # game/scenario/temps_libres.rpy:1604
 translate english mara_link_3_2bcf3498:
 
     # noam reflexion "Tu sais que t'as le droit de dire ce que tu penses ?"
-    noam reflexion ""
+    noam reflexion "You know you're allowed to say what you think, right?"
 
 # game/scenario/temps_libres.rpy:1605
 translate english mara_link_3_5350fc9d:
 
     # mara stress "Ouais, bah laisse-moi deux minutes avant, d'accord ?"
-    mara stress ""
+    mara stress "Yeah, well, give me two minutes first, okay?"
 
 # game/scenario/temps_libres.rpy:1609
 translate english mara_link_3_c0358d44:
 
     # noam reflexion "Dès que ça te touche, tu fais une blague."
-    noam reflexion ""
+    noam reflexion "Whenever something gets to you, you make a joke."
 
 # game/scenario/temps_libres.rpy:1610
 translate english mara_link_3_fdd443ad:
 
     # mara hesitation "...Ferme-la, Noam. Mais bouge pas."
-    mara hesitation ""
+    mara hesitation "...Shut up, Noam. But don't go anywhere."
 
 # game/scenario/temps_libres.rpy:1662
 translate english ryn_link_1_d548c196:
 
     # noam neutre "Je surveille l'entrée, repose-toi."
-    noam neutre ""
+    noam neutre "I'll watch the entrance. Get some rest."
 
 # game/scenario/temps_libres.rpy:1663
 translate english ryn_link_1_88f4c81b:
 
     # ryn neutre "D'accord. Mais au moindre bruit, tu m'appelles."
-    ryn neutre ""
+    ryn neutre "All right. But call me if you hear anything."
 
 # game/scenario/temps_libres.rpy:1667
 translate english ryn_link_1_22466ed9:
 
     # noam reflexion "Si tu me fais pas confiance, viens vérifier toi-même."
-    noam reflexion ""
+    noam reflexion "If you don't trust me, come check it yourself."
 
 # game/scenario/temps_libres.rpy:1668
 translate english ryn_link_1_ff3159d8:
 
     # ryn rire "Ça, c'est une réponse qui me plaît davantage."
-    ryn rire ""
+    ryn rire "Now THAT'S an answer I can respect."
 
 # game/scenario/temps_libres.rpy:1725
 translate english ryn_link_2_641e2a19:
 
     # noam neutre "Attends, je vais essayer autrement."
-    noam neutre ""
+    noam neutre "Wait, let me try a different way."
 
 # game/scenario/temps_libres.rpy:1726
 translate english ryn_link_2_d13c93fa:
 
     # ryn sourire "Là ! C'est déjà moins ridicule !"
-    ryn sourire ""
+    ryn sourire "There! That's already less pathetic!"
 
 # game/scenario/temps_libres.rpy:1730
 translate english ryn_link_2_22e93e90:
 
     # noam reflexion "Laisse-moi le temps de comprendre."
-    noam reflexion ""
+    noam reflexion "Give me a moment to understand."
 
 # game/scenario/temps_libres.rpy:1731
 translate english ryn_link_2_94c43c42:
 
     # ryn desaccord "En face, personne te laissera ce temps-là."
-    ryn desaccord ""
+    ryn desaccord "Nobody facing you in a fight is going to give you that time."
 
 # game/scenario/temps_libres.rpy:1777
 translate english ryn_link_3_9a877b09:
 
     # ryn neutre "Je préfère qu'ils me détestent et qu'ils soient en vie."
-    ryn neutre ""
+    ryn neutre "I'd rather have them hate me and stay alive."
 
 # game/scenario/temps_libres.rpy:1778
 translate english ryn_link_3_72c57859:
 
     # ryn triste "Un mort, il revient pas."
-    ryn triste ""
+    ryn triste "Dead people don't come back."
 
 # game/scenario/temps_libres.rpy:1782
 translate english ryn_link_3_e8938a2a:
 
     # noam neutre "Tu peux aussi les laisser décider, de temps en temps."
-    noam neutre ""
+    noam neutre "You can let them make their own choices sometimes."
 
 # game/scenario/temps_libres.rpy:1783
 translate english ryn_link_3_8073af2e:
 
     # ryn neutre "C'est facile à dire quand c'est pas toi qui risques de perdre quelqu'un."
-    ryn neutre ""
+    ryn neutre "Easy to say when you're not the one who could lose someone."
 
 # game/scenario/temps_libres.rpy:1787
 translate english ryn_link_3_f068c567:
 
     # noam reflexion "Et qui te protège, toi ?"
-    noam reflexion ""
+    noam reflexion "And who's looking after you?"
 
 # game/scenario/temps_libres.rpy:1788
 translate english ryn_link_3_ff9761d7:
 
     # ryn surpris "...Quoi ? De quoi tu parles ?"
-    ryn surpris ""
+    ryn surpris "...What? What are you talking about?"
 
 # game/scenario/temps_libres.rpy:1812
 translate english sael_link_1_478817c0:
 
     # sael desaccord "Si quelqu'un se blesse loin d'ici, il faudra le soigner sur place."
-    sael desaccord ""
+    sael desaccord "If someone gets hurt far from here, we'll need to treat them on the spot."
 
 # game/scenario/temps_libres.rpy:1818
 translate english sael_link_1_01d74a24:
 
     # sael mefiant "Il faut le recharger, et il peut casser. Une attelle, non."
-    sael mefiant ""
+    sael mefiant "It needs charging, and it can break. A splint doesn't."
 
 # game/scenario/temps_libres.rpy:1820
 translate english sael_link_1_2e83ceea:
 
     # sael neutre "J'ai rien contre les outils utiles. J'ai un problème avec ceux dont on ne sait plus se passer."
-    sael neutre ""
+    sael neutre "I've got nothing against useful tools. It's when people can't live without them that I object."
 
 # game/scenario/temps_libres.rpy:1835
 translate english sael_link_1_f61c40e6:
 
     # noam neutre "Je comprends pourquoi tu gardes cette fiole."
-    noam neutre ""
+    noam neutre "I understand why you keep that vial."
 
 # game/scenario/temps_libres.rpy:1836
 translate english sael_link_1_f605b714:
 
     # sael neutre "Bien. Alors ne me demande pas de la jeter."
-    sael neutre ""
+    sael neutre "Good. Then don't ask me to throw it away."
 
 # game/scenario/temps_libres.rpy:1840
 translate english sael_link_1_6dc2c92f:
 
     # noam reflexion "Je préférerais qu'on trouve une autre solution."
-    noam reflexion ""
+    noam reflexion "I'd rather we found another solution."
 
 # game/scenario/temps_libres.rpy:1841
 translate english sael_link_1_dbf20e49:
 
     # sael reflechit "Moi aussi. Mais on ne choisit pas toujours."
-    sael reflechit ""
+    sael reflechit "So would I. But we don't always get to choose."
 
 # game/scenario/temps_libres.rpy:1869
 translate english sael_link_2_4e989c90:
 
     # sael joie "Avec toutes ces lumières, on ne voit même plus les étoiles. Je préfère quand elles sont éteintes."
-    sael joie ""
+    sael joie "All these lights make the stars impossible to see. I like it better when they're off."
 
 # game/scenario/temps_libres.rpy:1871
 translate english sael_link_2_30e846b6:
 
     # sael raison "Je dis pas qu'il faut s'en passer. Je dis qu'il faut savoir faire sans."
-    sael raison ""
+    sael raison "I'm not saying we should get rid of them. I'm saying we need to know how to manage without."
 
 # game/scenario/temps_libres.rpy:1886
 translate english sael_link_2_5dcdd73a:
 
     # noam neutre "Je peux t'aider à remettre les chaises."
-    noam neutre ""
+    noam neutre "I can help put the chairs back."
 
 # game/scenario/temps_libres.rpy:1887
 translate english sael_link_2_1562900a:
 
     # sael sourire "Fais ça. Et regarde où tu mets les pieds."
-    sael sourire ""
+    sael sourire "Do that. And watch your step."
 
 # game/scenario/temps_libres.rpy:1891
 translate english sael_link_2_4eedd912:
 
     # noam reflexion "Tu vérifies toujours tout comme ça ?"
-    noam reflexion ""
+    noam reflexion "Do you always check everything like this?"
 
 # game/scenario/temps_libres.rpy:1892
 translate english sael_link_2_9cd56f16:
 
     # sael neutre "Seulement ce qui peut blesser quelqu'un."
-    sael neutre ""
+    sael neutre "Only things that could hurt someone."
 
 # game/scenario/temps_libres.rpy:1915
 translate english sael_link_3_5ac82ba5:
 
     # noam taquin "On est dans l'espace, Sael. Tu vas pas pouvoir le poser par terre."
-    noam taquin ""
+    noam taquin "We're in space, Sael. You can't exactly set it on the ground."
 
 # game/scenario/temps_libres.rpy:1919
 translate english sael_link_3_6dac2fbc:
 
     # noam neutre "Que c'est pas bien de prendre le pain des autres ?"
-    noam neutre ""
+    noam neutre "That taking other people's bread is wrong?"
 
 # game/scenario/temps_libres.rpy:1936
 translate english sael_link_3_5aa7f887:
 
     # noam neutre "Alors je laisse le mien aussi."
-    noam neutre ""
+    noam neutre "Then I'll leave mine too."
 
 # game/scenario/temps_libres.rpy:1942
 translate english sael_link_3_b8059b6c:
 
     # noam neutre "Je vais laisser ce morceau avec les tiens."
-    noam neutre ""
+    noam neutre "I'll leave this piece with yours."
 
 # game/scenario/temps_libres.rpy:1943
 translate english sael_link_3_4fc3029e:
 
     # sael sourire "Alors laisse-le jusqu'à la fin du repas."
-    sael sourire ""
+    sael sourire "Then leave it there until the meal is over."
 
 # game/scenario/temps_libres.rpy:1947
 translate english sael_link_3_30cef6c8:
 
     # noam reflexion "C'est pas une tradition de chez moi, mais je comprends."
-    noam reflexion ""
+    noam reflexion "It's not a tradition where I'm from, but I understand."
 
 # game/scenario/temps_libres.rpy:1948
 translate english sael_link_3_2e1f638d:
 
     # sael neutre "C'est tout ce que je demande."
-    sael neutre ""
+    sael neutre "That's all I'm asking."
 
 # game/scenario/temps_libres.rpy:1952
 translate english sael_link_3_cf8423f9:
 
     # noam reflexion "J'y crois pas vraiment, mais je vois pourquoi tu le fais."
-    noam reflexion ""
+    noam reflexion "I don't really believe in it, but I see why you do."
 
 # game/scenario/temps_libres.rpy:1953
 translate english sael_link_3_3096fb11:
 
     # sael surpris "...C'est plus que ce que j'attendais de toi."
-    sael surpris ""
+    sael surpris "...That's more than I expected from you."
 
 translate english strings:
 
