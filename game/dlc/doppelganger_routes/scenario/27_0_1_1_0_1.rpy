@@ -143,6 +143,9 @@ init 10 python:
       }
     }
     INVESTIGATION_ENTRIES.update({
+        "j27_core_yanma": {"category": "preuves", "title": "LIVRE SUR LA RÉSONANCE YANMA", "desc": "Tomas conservait un livre décrivant des transmissions spatiales très faibles.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "CONFIRMÉ", "manual_only": True},
+        "j27_core_eid": {"category": "anomalies", "title": "REGISTRE ÉID-0 / KEYPER-IIB", "desc": "Les relevés de production de Keyper-IIB mentionnent des unités ÉID-0 et des quotas sans expliquer leur nature.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "CONFIRMÉ", "manual_only": True},
+        "j27_core_appareil": {"category": "preuves", "title": "APPAREIL DISPARU", "desc": "Le petit appareil examiné par Tomas au jour 25 ne se trouve plus au pupitre d'observation.", "day": "J27", "origin": "OBSERVATION", "status": "CONFIRMÉ", "manual_only": True},
         "j27_tomas_carnet": {"category": "evenements", "title": "ANNOTATIONS DE TOMAS", "desc": "Tomas notait encore des questions sur les trajets et effectifs de Keyper la veille de sa mort.", "day": "J27", "origin": "CHAMBRE", "status": "À VÉRIFIER", "manual_only": True},
         "j27_tomas_grille": {"category": "preuves", "title": "PROTECTIONS DES DORTOIRS", "desc": "Les deux chambres possèdent des grilles de protection comparables. Cela ne renseigne pas sur l'air circulant dans le réseau.", "day": "J27", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j27_tomas_historique": {"category": "evenements", "title": "HISTORIQUE KEYPER", "desc": "Les recherches de Tomas sur Keyper-IIB se sont prolongées jusqu'au jour 25.", "day": "J27", "origin": "ARCHIVES", "status": "À VÉRIFIER", "manual_only": True},
@@ -363,6 +366,9 @@ label _27_0_1_1_0_1_QUESTIONS:
     "Je vérifie mon dossier. Le livre Yanma, le registre ÉID-0 et la disparition de l'appareil sont déjà notés : ces éléments ne me coûteront pas de point d'action."
     $ investigation_pa_begin(27, 5)
     $ investigation_unlocked = True
+    $ investigation_add("j27_core_yanma", notify=False)
+    $ investigation_add("j27_core_eid", notify=False)
+    $ investigation_add("j27_core_appareil", notify=False)
     $ free_time_active = False
     $ conclave_lock = False
     $ dortoir_lock = False
