@@ -2670,5 +2670,5 @@ translate english 775def5e:
 translate english 7da19eb8:
 
     # "Le sommeil finit par me tomber dessus d’un coup, lourd et sale, comme une coupure de courant."
-    ""
+    "Sleep finally crashes over me all at once, heavy and grimy, like a power cut."
 
