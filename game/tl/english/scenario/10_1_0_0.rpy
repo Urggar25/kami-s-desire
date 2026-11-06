@@ -2744,3 +2744,41 @@ translate english strings:
     old "Ne pas participer."
     new "Don't take part."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/10_1_0_0.rpy:26
+translate english 96fb98c9:
+
+    # think "Évidemment."
+    think ""
+
+# game/scenario/10_1_0_0.rpy:120
+translate english d7a823de_1:
+
+    # mara "Ah."
+    mara ""
+
+# game/scenario/10_1_0_0.rpy:296
+translate english a36bd1be_5:
+
+    # noam fatigue "D'accord."
+    noam fatigue ""
+
+# game/scenario/10_1_0_0.rpy:360
+translate english f3da6531_1:
+
+    # noam surpris "C'est tout ?"
+    noam surpris ""
+
+# game/scenario/10_1_0_0.rpy:844
+translate english 3951dc51_4:
+
+    # "Il baisse les yeux."
+    ""
+
+# game/scenario/10_1_0_0.rpy:1179
+translate english 7af7b854_5:
+
+    # "Je ferme les yeux."
+    ""
+

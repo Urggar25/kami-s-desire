@@ -46,3 +46,11 @@ translate english strings:
     old "TOUS"
     new "ALL"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+translate english strings:
+
+    # game/menu.rpy:337
+    old "DLC"
+    new ""
+

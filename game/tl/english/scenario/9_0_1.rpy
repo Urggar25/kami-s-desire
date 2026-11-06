@@ -1238,3 +1238,17 @@ translate english a91108f7:
     # tomas inquiet "Je vous rappelle qu'on est encore le matin ! Pour beaucoup vous venez juste de vous lever !"
     tomas inquiet ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/9_0_1.rpy:160
+translate english 8969f8ff:
+
+    # iris surpris "Deux jours sans rien, et là elle revient comme si de rien n'était ? Mais qu'est-ce qui s'est passé ?!"
+    iris surpris ""
+
+# game/scenario/9_0_1.rpy:313
+translate english 5ab0598a_1:
+
+    # kael "..."
+    kael ""
+

@@ -1508,3 +1508,23 @@ translate english 74615769_1:
     # noam inquiet "Ryn..."
     noam inquiet ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/6_1_0.rpy:328
+translate english e7b89fd1_1:
+
+    # noam neutre "Justement."
+    noam neutre ""
+
+# game/scenario/6_1_0.rpy:381
+translate english c8c53f36_2:
+
+    # sael fatigue "Oui."
+    sael fatigue ""
+
+# game/scenario/6_1_0.rpy:651
+translate english 4653fd41_1:
+
+    # sael fatigue "Je sais."
+    sael fatigue ""
+

@@ -1520,3 +1520,2201 @@ translate english 0c521561_2:
     # noam "Merci."
     noam ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/19_0_1_1_0.rpy:12
+translate english aaeea9f3:
+
+    # "Je ne sais pas combien de temps j'ai dormi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:13
+translate english fbc5d482:
+
+    # "Une heure, peut-être deux. Pas davantage."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:17
+translate english b41e7d01:
+
+    # "Un frottement métallique me tire encore une fois du sommeil."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:19
+translate english c9e0e05b_6:
+
+    # noam peur "..."
+    noam peur ""
+
+# game/scenario/19_0_1_1_0.rpy:21
+translate english 75895281:
+
+    # "Je reste parfaitement immobile, les yeux ouverts dans le noir. Mon premier réflexe est de regarder le bureau devant la grille d'aération."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:22
+translate english 37941ea4_1:
+
+    # "Il n'a pas bougé."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:26
+translate english ff54aadb:
+
+    # "Le bruit revient, beaucoup plus loin cette fois. Quelque chose glisse contre la tôle, puis s'arrête. Je retiens ma respiration sans même m'en rendre compte."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:28
+translate english 2357b959:
+
+    # think "C'est peut-être juste le métal qui travaille."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:29
+translate english a19e3004:
+
+    # think "Ou un Goumi."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:30
+translate english 8b01f45e:
+
+    # think "Ou rien du tout."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:32
+translate english 506e8063:
+
+    # "Je ferme les yeux et essaie de me rendormir."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:38
+translate english 47560ff0:
+
+    # "Le même bruit recommence."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:40
+translate english 35041b47_3:
+
+    # noam colere "Putain..."
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:42
+translate english 11f3fba3:
+
+    # "Je me redresse et garde les yeux fixés sur la grille pendant un long moment. Rien ne bouge. Rien ne dépasse. Pourtant je n'arrive plus à détourner le regard."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:44
+translate english 331491fc:
+
+    # think "Demain, Elias condamne ça."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:45
+translate english ff5503a3:
+
+    # think "Je m'en fous si j'ai moins d'air. Je veux juste un mur."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:53
+translate english a05380dd:
+
+    # "Quand je me réveille pour de bon, j'ai l'impression de ne pas avoir fermé l'œil. Ma nuque me fait mal et j'ai cette sensation désagréable d'avoir passé toute la nuit à attendre quelque chose qui n'est jamais venu."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:55
+translate english c41b83ff:
+
+    # noam inquiet "Super..."
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:57
+translate english d8708411:
+
+    # "Je pousse le bureau pour libérer la grille et passe mes doigts sur les vis. Elles sont toujours à leur place."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:59
+translate english 9cc70923:
+
+    # think "Donc personne n'est entré."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:63
+translate english 5a76d503:
+
+    # think "Ou alors personne n'a eu besoin d'entrer."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:65
+translate english 76264c3c_19:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:67
+translate english 4ddc9e98:
+
+    # "Je retire ma main."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:71
+translate english ccd43a16:
+
+    # "Je parle tout seul maintenant. Parfait."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:76
+translate english 56fa4a69:
+
+    # "Je sors avec une seule idée en tête : trouver Elias avant qu'il ne disparaisse encore je ne sais où."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:78
+translate english 4132f2a7:
+
+    # "Je n'ai fait que quelques mètres lorsque j'aperçois Mara au bout du couloir. Elle avance tranquillement dans ma direction avec une tasse à la main."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:85
+translate english f3c52883:
+
+    # mara "Putain, t'as une tête affreuse."
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:87
+translate english efe7a574:
+
+    # noam inquiet "Merci."
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:89
+translate english fbe9ecba:
+
+    # mara taquin "Avec plaisir. J'allais dire que t'avais l'air d'avoir passé la nuit dans un mur, mais ça aurait été un peu trop facile."
+    mara taquin ""
+
+# game/scenario/19_0_1_1_0.rpy:91
+translate english 857bc78c:
+
+    # "Je la regarde quelques secondes."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:93
+translate english b425c378:
+
+    # noam "Justement, il faut que je te parle de ça."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:95
+translate english efd5fd85:
+
+    # mara "De quoi ?"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:97
+translate english ac939e80:
+
+    # noam reflexion "Du réseau."
+    noam reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:99
+translate english 0e0eaafe:
+
+    # mara "Quel réseau ?"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:103
+translate english 58b80483:
+
+    # noam "Les conduits. Hier."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:105
+translate english f9dffb9b_1:
+
+    # mara reflexion "..."
+    mara reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:107
+translate english 884d1c9d:
+
+    # noam "La salle avec les Goumi. La branche qu'on n'a pas explorée."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:109
+translate english 013f2bc9:
+
+    # "Le sourire de Mara disparaît lentement."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:111
+translate english 837cebcf:
+
+    # mara mefiant "Noam... de quoi tu parles ?"
+    mara mefiant ""
+
+# game/scenario/19_0_1_1_0.rpy:113
+translate english 6f81c3e8:
+
+    # noam hesitation "Arrête."
+    noam hesitation ""
+
+# game/scenario/19_0_1_1_0.rpy:115
+translate english 33454416:
+
+    # mara colere "J'arrête quoi ?"
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:117
+translate english 8ae8f120:
+
+    # noam "On a passé la moitié de la nuit dans les conduits d'aération tous les deux."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:119
+translate english b9593184:
+
+    # mara stress "Pardon ?! On a quoi ?!"
+    mara stress ""
+
+# game/scenario/19_0_1_1_0.rpy:121
+translate english 72ef5da8:
+
+    # "Sa voix résonne dans tout le couloir. Deux portes s'ouvrent presque immédiatement plus loin."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:123
+translate english 6c6910bd:
+
+    # mara colere "Tu viens de dire quoi ?!"
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:125
+translate english 494a3a54:
+
+    # noam inquiet "Mara, baisse d'un ton."
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:127
+translate english a875180d:
+
+    # mara colere "Non mais attends, tu veux VRAIMENT me faire croire que t'es allé te balader derrière les chambres cette nuit ?!"
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:129
+translate english ea8b50b4:
+
+    # noam "Avec toi !"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:131
+translate english a133503d:
+
+    # mara colere_noire "Mais j'étais pas avec toi !"
+    mara colere_noire ""
+
+# game/scenario/19_0_1_1_0.rpy:139
+translate english b46a7ebb:
+
+    # think "Mon souvenir est précis. Le tournevis, sa manche accrochée à la grille, sa voix derrière moi. Et pourtant elle a l'air aussi certaine que moi."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:141
+translate english 9467ae97:
+
+    # think "Ça prouve que le réseau existe. Pas que Mara y était avec moi."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:143
+translate english e9239682:
+
+    # think "Non. Cet élément n'a rien à voir avec ce qu'elle vient de nier."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:145
+translate english 6e9e9d35:
+
+    # think "Je laisse passer la phrase. Les deux versions restent là, impossibles à superposer."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:147
+translate english 76264c3c_20:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:149
+translate english 0691848a:
+
+    # "Je la fixe. Elle ne sourit pas. Elle n'a pas l'air de jouer."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:151
+translate english 29bb8505:
+
+    # mara colere "J'étais dans ma chambre, espèce de taré !"
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:153
+translate english d2d231e2:
+
+    # noam inquiet "Non. Tu es venue me rejoindre dans le conduit. Tu m'as dit que t'avais pas trouvé Elias."
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:155
+translate english e871a888:
+
+    # mara "Je suis jamais allée chercher Elias !"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:157
+translate english dce06958:
+
+    # "Le silence tombe entre nous."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:159
+translate english 76264c3c_21:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:161
+translate english 59818ed1:
+
+    # mara mefiant "Attends..."
+    mara mefiant ""
+
+# game/scenario/19_0_1_1_0.rpy:162
+translate english c1c0f740:
+
+    # mara mefiant "Quand tu dis 'derrière les chambres'..."
+    mara mefiant ""
+
+# game/scenario/19_0_1_1_0.rpy:164
+translate english e8528fdc:
+
+    # "Elle pointe lentement du doigt le mur à côté de nous."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:166
+translate english 3bdac264:
+
+    # mara "Tu veux dire qu'il y a vraiment un passage là-dedans ?"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:168
+translate english 39accab6_1:
+
+    # noam hesitation "Oui."
+    noam hesitation ""
+
+# game/scenario/19_0_1_1_0.rpy:170
+translate english b060433a:
+
+    # mara stress "Et ça donne sur quoi ?"
+    mara stress ""
+
+# game/scenario/19_0_1_1_0.rpy:172
+translate english 5f268c82:
+
+    # noam "Sur toutes les chambres. Enfin... pas seulement. On peut rejoindre une bonne partie du Conclave."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:174
+translate english 3ff62255:
+
+    # mara stress "QUOI ?!"
+    mara stress ""
+
+# game/scenario/19_0_1_1_0.rpy:176
+translate english 690c3525:
+
+    # "Une troisième porte s'ouvre. Cette fois, c'est Iris qui apparaît, visiblement ravie d'avoir été réveillée par nos cris."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:184
+translate english aab69315:
+
+    # iris colere "Vous pouvez pas vous engueuler moins fort ?!"
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:186
+translate english d3715218:
+
+    # mara colere "Non ! Parce que monsieur vient de m'apprendre qu'il peut passer derrière ma chambre par les murs !"
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:188
+translate english 8b72b5e4_1:
+
+    # iris panne "..."
+    iris panne ""
+
+# game/scenario/19_0_1_1_0.rpy:190
+translate english f1631a24:
+
+    # iris colere "PARDON ?!"
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:192
+translate english e785b0c9:
+
+    # noam desaccord "C'est pas du tout ce que j'ai dit."
+    noam desaccord ""
+
+# game/scenario/19_0_1_1_0.rpy:194
+translate english eaa7d705:
+
+    # mara "C'est exactement ce que t'as dit !"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:196
+translate english ae9b1b05:
+
+    # noam "J'ai dit que le réseau dessert toutes les chambres !"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:198
+translate english fe07ceb9:
+
+    # iris colere "C'est pire !"
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:200
+translate english 21a0d088:
+
+    # "À ce stade, plusieurs personnes sont déjà sorties de leur chambre."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:202
+translate english 2826823c:
+
+    # noam colere "Super."
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:204
+translate english 380493f6:
+
+    # mara colere "Non, justement. Tout le monde doit savoir ça."
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:206
+translate english 45cb2484:
+
+    # noam "Mara—"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:208
+translate english a8a73cf5:
+
+    # mara "Oh non. Là tu vas tout nous expliquer sale pervers."
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:220
+translate english 61bfbde3:
+
+    # "Dix minutes plus tard, toute la cafétéria est au courant."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:221
+translate english ffd0d449:
+
+    # "Je suis debout près d'une table, avec onze paires d'yeux braquées sur moi et la très désagréable impression d'être en train de plaider ma cause devant un tribunal improvisé."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:238
+translate english 35b9eb65:
+
+    # ryn colere "Donc attends, je résume."
+    ryn colere ""
+
+# game/scenario/19_0_1_1_0.rpy:239
+translate english b0a0df2a:
+
+    # ryn colere "Il y a un passage derrière nos chambres. Tu peux ramper dedans. Et tu peux aller d'une chambre à l'autre sans passer par le couloir."
+    ryn colere ""
+
+# game/scenario/19_0_1_1_0.rpy:241
+translate english 76eec255:
+
+    # noam raison "Oui."
+    noam raison ""
+
+# game/scenario/19_0_1_1_0.rpy:243
+translate english 5ed5e784:
+
+    # iris colere "Et tu pensais nous prévenir quand ? Après avoir fini la visite guidée ?!"
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:245
+translate english 41e1329e:
+
+    # noam colere "Je l'ai découvert hier !"
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:247
+translate english 55eb9f38:
+
+    # mara colere "Avec moi, apparemment."
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:249
+translate english 6c1f1b91:
+
+    # noam desaccord "Je sais ce que j'ai vu."
+    noam desaccord ""
+
+# game/scenario/19_0_1_1_0.rpy:251
+translate english 8587a002:
+
+    # mara "Et moi je sais où j'étais !"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:253
+translate english 64a11b1d:
+
+    # julian hesitation "On peut peut-être éviter de transformer ça en procès matrimonial avant d'avoir compris ce qu'il se passe ?"
+    julian hesitation ""
+
+# game/scenario/19_0_1_1_0.rpy:255
+translate english abf34bc0:
+
+    # mara colere "Il n'y a aucun mariage ici, merci beaucoup."
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:257
+translate english aee5ef9c:
+
+    # lysa blase "Dommage. J'aurais bien aimé voir la cérémonie dans les conduits."
+    lysa blase ""
+
+# game/scenario/19_0_1_1_0.rpy:259
+translate english 3d49a705:
+
+    # noam "Très drôle."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:261
+translate english 8f4cc871:
+
+    # elen inquiet "Mais du coup... quelqu'un peut vraiment venir dans nos chambres ?"
+    elen inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:263
+translate english 0f150cbc:
+
+    # "La question coupe immédiatement les plaisanteries."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:265
+translate english 7b728e40:
+
+    # elias ecoute "Si les grilles donnent directement sur le réseau, oui."
+    elias ecoute ""
+
+# game/scenario/19_0_1_1_0.rpy:267
+translate english 08289e18:
+
+    # iris colere "Génial. Vraiment génial."
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:269
+translate english 965d0cf7:
+
+    # sael mefiant "Tu as vu quelqu'un l'utiliser ?"
+    sael mefiant ""
+
+# game/scenario/19_0_1_1_0.rpy:271
+translate english 4feb2c54_2:
+
+    # noam hesitation "Non."
+    noam hesitation ""
+
+# game/scenario/19_0_1_1_0.rpy:273
+translate english 37f2de55:
+
+    # ryn "T'as entendu quelque chose ?"
+    ryn ""
+
+# game/scenario/19_0_1_1_0.rpy:275
+translate english c891dce9:
+
+    # noam "Oui. Plusieurs fois."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:277
+translate english 0627c729:
+
+    # elias inquiet "Cette nuit aussi ?"
+    elias inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:281
+translate english b797b7be:
+
+    # "Elias croise les bras et regarde la ventilation au-dessus de la cafétéria comme s'il découvrait soudain qu'elle pouvait l'observer."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:283
+translate english 7f5b83ff:
+
+    # tomas reflechit "Attends. Je veux revenir sur un point."
+    tomas reflechit ""
+
+# game/scenario/19_0_1_1_0.rpy:285
+translate english 71db60b3:
+
+    # noam "Lequel ?"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:287
+translate english fb1c067c:
+
+    # tomas "Attends. T'as dit que le réseau passait pas seulement derrière les chambres."
+    tomas ""
+
+# game/scenario/19_0_1_1_0.rpy:289
+translate english d9a7db55:
+
+    # noam "Non. Il traverse une grande partie du Conclave."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:291
+translate english b3639efc:
+
+    # nyra raison "Quelles zones, exactement ?"
+    nyra raison ""
+
+# game/scenario/19_0_1_1_0.rpy:293
+translate english bc9e133a:
+
+    # noam reflexion "Je peux pas te faire un plan précis. On a reconnu les dortoirs, la cafétéria, plusieurs couloirs... et une salle qu'on connaissait même pas."
+    noam reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:295
+translate english 49a90482:
+
+    # elias "Quelle salle ?"
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:297
+translate english 2d3c5193:
+
+    # noam "Une zone de maintenance. Il y avait deux Goumi à l'intérieur."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:299
+translate english 14edf812:
+
+    # elias surpris "Deux Goumi ?"
+    elias surpris ""
+
+# game/scenario/19_0_1_1_0.rpy:301
+translate english 0477d9f5:
+
+    # noam "Un presque entier et un autre démonté."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:303
+translate english 25088494:
+
+    # elias ecoute "Donc ils passent probablement par ce réseau pour leur entretien."
+    elias ecoute ""
+
+# game/scenario/19_0_1_1_0.rpy:305
+translate english 90db34d0:
+
+    # tomas raison "Ça explique pourquoi le réseau existe. Pas pourquoi il passe juste derrière nos lits."
+    tomas raison ""
+
+# game/scenario/19_0_1_1_0.rpy:307
+translate english 82b0f854:
+
+    # lysa blase "Tu veux dire qu'une réponse soulève encore plus de questions ? Quelle surprise."
+    lysa blase ""
+
+# game/scenario/19_0_1_1_0.rpy:311
+translate english a2991928:
+
+    # kael inquietude "Et les caméras ?"
+    kael inquietude ""
+
+# game/scenario/19_0_1_1_0.rpy:313
+translate english ab0b9f87:
+
+    # "Tout le monde tourne légèrement la tête vers lui."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:315
+translate english f8b146ab:
+
+    # kael "Il y en a dans les conduits ?"
+    kael ""
+
+# game/scenario/19_0_1_1_0.rpy:317
+translate english e97b58ac:
+
+    # noam "J'en ai pas vu."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:319
+translate english 0763a01a:
+
+    # kael "Donc on peut circuler là-dedans sans être vu."
+    kael ""
+
+# game/scenario/19_0_1_1_0.rpy:321
+translate english dfec8af5:
+
+    # nyra neutre "On ne sait pas ça."
+    nyra neutre ""
+
+# game/scenario/19_0_1_1_0.rpy:323
+translate english d112594b:
+
+    # kael "Tu viens de l'entendre. Il n'a vu aucune caméra."
+    kael ""
+
+# game/scenario/19_0_1_1_0.rpy:325
+translate english 6346cd9c:
+
+    # nyra raison "T'en as pas vu. Ça veut pas dire qu'il y en a pas."
+    nyra raison ""
+
+# game/scenario/19_0_1_1_0.rpy:327
+translate english a1775186:
+
+    # kael inquietude "Ça ne veut pas dire qu'il y en a non plus."
+    kael inquietude ""
+
+# game/scenario/19_0_1_1_0.rpy:329
+translate english 1d7cd8a0:
+
+    # "Il regarde autour de lui, de plus en plus tendu."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:331
+translate english ba6f512e:
+
+    # kael "On devrait fermer toutes les grilles maintenant."
+    kael ""
+
+# game/scenario/19_0_1_1_0.rpy:333
+translate english c0e022a3:
+
+    # iris colere "Pour une fois, je suis d'accord."
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:335
+translate english 06ad65a4:
+
+    # mara "Moi aussi. Et on commence par les chambres des filles."
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:337
+translate english 15d5214a:
+
+    # noam surpris "Pourquoi les filles ?"
+    noam surpris ""
+
+# game/scenario/19_0_1_1_0.rpy:339
+translate english 2f113cf8:
+
+    # mara colere "Tu poses vraiment la question ?"
+    mara colere ""
+
+# game/scenario/19_0_1_1_0.rpy:341
+translate english f36c6e5a:
+
+    # noam "Parce que j'entends les mêmes bruits que vous !"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:343
+translate english 362d9e67:
+
+    # mara "Oui, mais toi t'as déjà fait le tour du propriétaire !"
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:345
+translate english 05f5daa4:
+
+    # noam colere "J'ai pas espionné qui que ce soit !"
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:347
+translate english 51178454:
+
+    # iris colere "Noam, même si t'as rien fait, tu comprends quand même que c'est légèrement inquiétant ?"
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:349
+translate english b793bce6:
+
+    # noam "Oui. Justement. C'est pour ça que je veux qu'Elias condamne aussi ma grille."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:351
+translate english 3596688b:
+
+    # mara taquin "Ah, voilà. Le début du repentir."
+    mara taquin ""
+
+# game/scenario/19_0_1_1_0.rpy:353
+translate english 22c6f736:
+
+    # noam colere "Mais quel repentir ?!"
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:355
+translate english 7a072fe4:
+
+    # lysa taquin "Laisse tomber. Plus tu te défends, plus ça devient mauvais."
+    lysa taquin ""
+
+# game/scenario/19_0_1_1_0.rpy:357
+translate english 7c4fddde:
+
+    # noam "Merci du soutien."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:359
+translate english 7d305171:
+
+    # lysa sourire "Toujours là pour toi."
+    lysa sourire ""
+
+# game/scenario/19_0_1_1_0.rpy:361
+translate english 44211faf:
+
+    # elias "Bon."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:363
+translate english c85a9d0b:
+
+    # "Elias frappe deux fois dans ses mains pour couper court au brouhaha."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:365
+translate english 9ae245a5:
+
+    # elias ecoute "Je peux poser des plaques. Pas sur douze chambres en cinq minutes."
+    elias ecoute ""
+
+# game/scenario/19_0_1_1_0.rpy:367
+translate english 622e6197:
+
+    # sael raison "Commence par les femmes."
+    sael raison ""
+
+# game/scenario/19_0_1_1_0.rpy:369
+translate english 2fd8287f:
+
+    # ryn "Ouais."
+    ryn ""
+
+# game/scenario/19_0_1_1_0.rpy:371
+translate english b2a2f7f3:
+
+    # noam desaccord "Je suis littéralement celui qui a entendu quelque chose derrière sa grille toute la nuit."
+    noam desaccord ""
+
+# game/scenario/19_0_1_1_0.rpy:373
+translate english aabb0cb1:
+
+    # iris colere "Et nous, on vient littéralement d'apprendre qu'un tunnel passe derrière notre lit."
+    iris colere ""
+
+# game/scenario/19_0_1_1_0.rpy:375
+translate english 870ea537:
+
+    # elias fatigue "Je vais commencer par les filles."
+    elias fatigue ""
+
+# game/scenario/19_0_1_1_0.rpy:377
+translate english 76264c3c_22:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:379
+translate english f6bf8c56:
+
+    # mara content "Merci Elias. Un gentleman. Contrairement à certains."
+    mara content ""
+
+# game/scenario/19_0_1_1_0.rpy:381
+translate english 0fc52265:
+
+    # noam "Je vais arrêter de répondre."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:383
+translate english b119a1ae:
+
+    # tomas "Ça serait probablement plus prudent."
+    tomas ""
+
+# game/scenario/19_0_1_1_0.rpy:385
+translate english fff67c5e:
+
+    # "Quelques rires nerveux parcourent la pièce, mais ils disparaissent vite."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:387
+translate english ef6a9179:
+
+    # nyra reflexion "Une fois les grilles sécurisées, faudra décider ce qu'on fait de ce réseau."
+    nyra reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:389
+translate english 65f0da95:
+
+    # ryn "Le fouiller."
+    ryn ""
+
+# game/scenario/19_0_1_1_0.rpy:391
+translate english 15d0e1e8:
+
+    # sael mefiant "Pas seuls."
+    sael mefiant ""
+
+# game/scenario/19_0_1_1_0.rpy:393
+translate english f3126d46:
+
+    # nyra "Et pas maintenant. Regardez-vous, tout le monde est à cran."
+    nyra ""
+
+# game/scenario/19_0_1_1_0.rpy:395
+translate english 9bc46802:
+
+    # ryn colere "On part dans deux jours."
+    ryn colere ""
+
+# game/scenario/19_0_1_1_0.rpy:397
+translate english bd348075:
+
+    # "La phrase refroidit immédiatement la pièce."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:399
+translate english 9962d0bf:
+
+    # tomas triste "Jour vingt-et-un."
+    tomas triste ""
+
+# game/scenario/19_0_1_1_0.rpy:401
+translate english d0a28812:
+
+    # elen triste "Ça arrive vite..."
+    elen triste ""
+
+# game/scenario/19_0_1_1_0.rpy:403
+translate english 17f14564:
+
+    # lysa blase "C'est souvent le problème avec les dates."
+    lysa blase ""
+
+# game/scenario/19_0_1_1_0.rpy:405
+translate english b68c3139:
+
+    # nyra raison "Justement. On ne se disperse pas. Elias sécurise les chambres. Ensuite on réfléchit."
+    nyra raison ""
+
+# game/scenario/19_0_1_1_0.rpy:407
+translate english 3e2189fa:
+
+    # "Je hoche la tête sans répondre."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:409
+translate english 9565e0b5:
+
+    # think "Deux jours."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:410
+translate english ebfc64f1:
+
+    # think "Deux jours avant de partir d'ici avec autant de questions qu'en arrivant."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:412
+translate english 58ef5ac4:
+
+    # "Et, pour la première fois, cette idée ne me rassure pas du tout."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:426
+translate english 93881ae9:
+
+    # "Elias passe une bonne partie de l'après-midi à transporter des plaques métalliques depuis la maintenance jusque dans les dortoirs."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:427
+translate english 8f879b89:
+
+    # "Je l'aide autant que possible, même si Mara a décrété devant tout le monde que ma présence dans les chambres des filles n'était 'pas forcément l'idée du siècle'."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:434
+translate english dd9189a6:
+
+    # elias fatigue "Tiens ça."
+    elias fatigue ""
+
+# game/scenario/19_0_1_1_0.rpy:436
+translate english 4d6f9559:
+
+    # noam "Je tiens."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:438
+translate english 3b5f3311:
+
+    # elias "Non, tu tiens de travers."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:440
+translate english 0c2aa2c2:
+
+    # noam "C'est une plaque, Elias."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:442
+translate english 90c0f95f:
+
+    # elias colere "Et elle pèse quinze kilos. Si tu la tiens de travers pendant que je perce, elle me tombe sur les doigts."
+    elias colere ""
+
+# game/scenario/19_0_1_1_0.rpy:444
+translate english fa451ded_7:
+
+    # noam "D'accord."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:446
+translate english 881b5a3d:
+
+    # "Je remonte légèrement mon côté."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:448
+translate english c41ec197:
+
+    # elias "Voilà. Là tu tiens."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:450
+translate english 84148dc4:
+
+    # noam taquin "C'est toujours un plaisir de travailler avec toi."
+    noam taquin ""
+
+# game/scenario/19_0_1_1_0.rpy:452
+translate english a7d266ed:
+
+    # elias "J'aurais pu faire ça tout seul."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:454
+translate english 1ee3ecc1:
+
+    # noam "Tu te plains depuis une heure que t'as trop de chambres à faire."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:456
+translate english cef74e0c:
+
+    # elias "Je me plains parce que j'ai trop de chambres à faire. Ça veut pas dire que j'ai envie d'aide mal faite."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:458
+translate english b862a195:
+
+    # "Il termine de fixer la plaque devant la grille de Lysa et vérifie les attaches une par une."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:460
+translate english ca2633a7:
+
+    # noam reflexion "Ça tiendra ?"
+    noam reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:462
+translate english 3f825606:
+
+    # elias "À moins qu'un abruti arrive avec une perceuse de l'autre côté, ouais."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:464
+translate english 2800cf0f:
+
+    # noam inquiet "Et de l'autre côté ?"
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:466
+translate english bbd2c986:
+
+    # "Il lève les yeux vers moi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:468
+translate english 865c1b15:
+
+    # elias "Noam."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:472
+translate english b7d2a852:
+
+    # elias "Arrête."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:474
+translate english 67105ca7:
+
+    # noam desaccord "J'essaie juste de comprendre."
+    noam desaccord ""
+
+# game/scenario/19_0_1_1_0.rpy:476
+translate english 84f82243:
+
+    # elias "Non. Là tu nourris ton cerveau avec de la merde et tu le regardes paniquer."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:478
+translate english 333d2eca:
+
+    # noam "C'est facile à dire quand ta grille sera condamnée."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:480
+translate english 4a85ed7e:
+
+    # elias "Ma grille sera pas condamnée aujourd'hui."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:482
+translate english 56a01ae9_4:
+
+    # noam surpris "Pourquoi ?"
+    noam surpris ""
+
+# game/scenario/19_0_1_1_0.rpy:484
+translate english cb68bb6b:
+
+    # elias "Parce qu'il y en a six avant."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:486
+translate english 14515b3f:
+
+    # noam "Six ?"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:488
+translate english 8d46d307:
+
+    # elias "Iris, Mara, Sael, Elen, Lysa, Nyra."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:490
+translate english 76264c3c_23:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:492
+translate english 983c6e4a:
+
+    # elias "Puis les autres demain si j'ai le temps."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:494
+translate english 20c9f3f1:
+
+    # noam "Donc la mienne reste ouverte cette nuit."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:496
+translate english 03b931b4_1:
+
+    # elias "Oui."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:498
+translate english e86145c4:
+
+    # noam inquiet "Super."
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:500
+translate english b64f84ce:
+
+    # elias "T'as survécu jusque-là."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:502
+translate english 99124b2b:
+
+    # noam "Je pensais pas qu'il y avait un passage derrière mon mur jusque-là."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:504
+translate english e4e06bfb:
+
+    # elias "Et maintenant tu le sais. Donc tu mets ton bureau devant et tu dors."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:506
+translate english 0284494e:
+
+    # noam "J'ai déjà fait ça."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:508
+translate english 14d1be68:
+
+    # elias "Alors continue."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:510
+translate english 734a75fa:
+
+    # "Il récupère sa caisse à outils et se dirige vers la chambre suivante."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:512
+translate english bf572510:
+
+    # noam "Elias."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:514
+translate english e590d7c0_1:
+
+    # "Il s'arrête sans se retourner."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:516
+translate english 6c5dc226:
+
+    # noam reflexion "Tu crois Mara ?"
+    noam reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:518
+translate english 45176cd3:
+
+    # elias "Sur quoi ?"
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:520
+translate english b4d01141:
+
+    # noam "Quand elle dit qu'elle était pas avec moi hier."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:522
+translate english 95df128e:
+
+    # "Il garde le silence quelques secondes."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:524
+translate english 6fb4ed1f:
+
+    # elias ecoute "J'en sais rien."
+    elias ecoute ""
+
+# game/scenario/19_0_1_1_0.rpy:526
+translate english 90fae72a:
+
+    # noam "Elle t'a pas cherché ?"
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:528
+translate english b2bfe3af_4:
+
+    # elias "Non."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:530
+translate english 76264c3c_24:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:532
+translate english fb3d2baf:
+
+    # elias "Mais j'étais pas dans ma chambre toute la nuit non plus. J'ai pu la rater."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:534
+translate english 54b237d7:
+
+    # noam "Elle m'a dit qu'elle avait fait le tour de la maintenance, de la cafétéria, de la salle de repos..."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:536
+translate english a65db3aa:
+
+    # elias "Et ?"
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:540
+translate english 91da51c7:
+
+    # elias fatigue "Bah alors... rien."
+    elias fatigue ""
+
+# game/scenario/19_0_1_1_0.rpy:542
+translate english 23881c2a_1:
+
+    # "Il reprend sa marche."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:544
+translate english 6b49557e:
+
+    # elias "Commence pas à chercher un complot dans chaque phrase, sérieux. On en a déjà assez comme ça."
+    elias ""
+
+# game/scenario/19_0_1_1_0.rpy:546
+translate english 596f5ec4_9:
+
+    # noam "Ouais."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:548
+translate english 1675743b:
+
+    # "Je reste seul dans le couloir, avec une réponse qui ne répond à rien."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:554
+translate english 80814784:
+
+    # "Quand je repasse par la cafétéria un peu plus tard, l'ambiance est étrange."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:555
+translate english bd9adce1:
+
+    # "Plus personne ne parle des votes. Ils sont annulés, et avec eux une partie de la raison même pour laquelle nous sommes ici."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:567
+translate english 66319519:
+
+    # elen triste "Deux jours... ça fait bizarre de le dire comme ça."
+    elen triste ""
+
+# game/scenario/19_0_1_1_0.rpy:569
+translate english 6dc8d968:
+
+    # tomas reflechit "Techniquement, un peu moins. La navette doit arriver dans la journée du vingt-et-un."
+    tomas reflechit ""
+
+# game/scenario/19_0_1_1_0.rpy:571
+translate english 8d9e6e16:
+
+    # iris fatigue "Merci Tomas. Ça rend tout ça beaucoup plus joyeux."
+    iris fatigue ""
+
+# game/scenario/19_0_1_1_0.rpy:573
+translate english 914e67da:
+
+    # tomas "Je voulais juste être précis."
+    tomas ""
+
+# game/scenario/19_0_1_1_0.rpy:575
+translate english cf84e4b5:
+
+    # lysa "Erreur classique."
+    lysa ""
+
+# game/scenario/19_0_1_1_0.rpy:577
+translate english a911dc9b:
+
+    # mara neutre "Moi j'ai surtout hâte de dormir dans une chambre où personne peut débarquer par le mur."
+    mara neutre ""
+
+# game/scenario/19_0_1_1_0.rpy:579
+translate english 9ef215d5:
+
+    # "Elle jette un regard dans ma direction."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:581
+translate english 0df83733:
+
+    # noam colere "Je vais finir par changer de table."
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:583
+translate english 5e1b05f8:
+
+    # mara taquin "Oh ça va, je rigole."
+    mara taquin ""
+
+# game/scenario/19_0_1_1_0.rpy:585
+translate english ca53b85c:
+
+    # noam "Depuis ce matin."
+    noam ""
+
+# game/scenario/19_0_1_1_0.rpy:587
+translate english 2e942da2:
+
+    # mara "Parce que c'est drôle depuis ce matin."
+    mara ""
+
+# game/scenario/19_0_1_1_0.rpy:589
+translate english 726d03ae:
+
+    # nyra raison "Ça le sera moins si quelqu'un utilise réellement le réseau."
+    nyra raison ""
+
+# game/scenario/19_0_1_1_0.rpy:591
+translate english a2e1bf5c:
+
+    # "Mara perd aussitôt son sourire."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:593
+translate english 4a8de879:
+
+    # iris inquiet "Tu penses vraiment que quelqu'un passe là-dedans ?"
+    iris inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:595
+translate english 9868923f_1:
+
+    # nyra "Je n'en sais rien."
+    nyra ""
+
+# game/scenario/19_0_1_1_0.rpy:597
+translate english be0517cf:
+
+    # iris "Très rassurant."
+    iris ""
+
+# game/scenario/19_0_1_1_0.rpy:599
+translate english cf872407:
+
+    # lysa blase "Aujourd'hui tout le monde fait de son mieux."
+    lysa blase ""
+
+# game/scenario/19_0_1_1_0.rpy:601
+translate english 43bee773:
+
+    # "Je regarde Mara. Elle discute normalement avec Elen, comme si notre conversation dans le couloir n'avait jamais eu lieu."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:603
+translate english b087a35f:
+
+    # think "Elle ne se souvient vraiment de rien."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:605
+translate english 605b9f48:
+
+    # "Et bizarrement, ça me fout encore plus mal que si elle avait juste menti."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:624
+translate english 1d66b161:
+
+    # "Quand je retourne vers ma chambre, Elias est encore en train de travailler plusieurs portes plus loin. Une perceuse résonne dans le couloir, puis s'arrête."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:626
+translate english cbcbb7f2:
+
+    # "Les chambres de Mara, Iris, Sael et Elen sont déjà sécurisées. Il lui en reste encore deux pour finir celles des filles."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:628
+translate english 178d2622:
+
+    # noam reflexion "La mienne demain."
+    noam reflexion ""
+
+# game/scenario/19_0_1_1_0.rpy:630
+translate english 6387b17e:
+
+    # "Je le dis à voix basse, comme si le fait de le formuler pouvait accélérer le temps."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:635
+translate english 1939f57f:
+
+    # "Ma grille est exactement dans le même état que ce matin. Deux vis serrées, deux autres faciles à retirer."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:637
+translate english cfbb1e86:
+
+    # "Je pousse de nouveau le bureau devant. Puis je reste debout quelques secondes à le regarder."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:639
+translate english c2db575e:
+
+    # noam desaccord "Ça suffit."
+    noam desaccord ""
+
+# game/scenario/19_0_1_1_0.rpy:641
+translate english ea3115da:
+
+    # "Je vérifie quand même qu'il touche bien le mur."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:643
+translate english 84e9ac53:
+
+    # "Je passe une partie de la soirée à essayer de lire sans retenir une seule phrase. Chaque fois qu'un bruit traverse la structure du Conclave, mes yeux remontent automatiquement vers la grille."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:645
+translate english 5be6ceec:
+
+    # think "Demain soir, ce sera fermé."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:646
+translate english 333ba8cb:
+
+    # think "Encore une nuit."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:648
+translate english 44f94e69:
+
+    # "Je me couche tard, persuadé que l'épuisement finira par gagner."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:657
+translate english 34356144:
+
+    # "Le bruit me réveille presque immédiatement."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:661
+translate english 074c6b87:
+
+    # "Cette fois, je sais que je ne l'ai pas rêvé."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:665
+translate english 1132d9cc:
+
+    # "Quelque chose avance dans le conduit. Lentement. Régulièrement."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:667
+translate english c9e0e05b_7:
+
+    # noam peur "..."
+    noam peur ""
+
+# game/scenario/19_0_1_1_0.rpy:669
+translate english ea60376f:
+
+    # "Je me redresse. Mon cœur bat déjà trop vite."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:673
+translate english 0e6c23b9:
+
+    # "Le bruit passe derrière ma grille."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:675
+translate english ad8c397d:
+
+    # "Puis continue."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:677
+translate english 4c4860e4:
+
+    # "Vers la chambre suivante."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:679
+translate english 76264c3c_25:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:681
+translate english 1c3bb1be:
+
+    # "Je reste assis plusieurs secondes, incapable de décider quoi faire."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:683
+translate english 65f6ac29:
+
+    # think "Va chercher Elias."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:685
+translate english c5dc29ff:
+
+    # "Je pose les pieds au sol."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:687
+translate english 9c822fa5:
+
+    # think "Va chercher Elias. Maintenant."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:693
+translate english 1655a08e:
+
+    # "Un nouveau frottement résonne plus loin."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:695
+translate english 3d5e03d8:
+
+    # "Quelque chose en moi cède."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:697
+translate english j19_chasse_noam_non:
+
+    # noam determine "Non." id j19_chasse_noam_non
+    noam determine "" id j19_chasse_noam_non
+
+# game/scenario/19_0_1_1_0.rpy:701
+translate english eef62ad7:
+
+    # "Je repousse brutalement le bureau, ouvre la porte et sors presque en courant."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:714
+translate english 457f6993:
+
+    # "Le couloir est désert. Les lumières nocturnes donnent aux murs une couleur blafarde qui me fait regretter immédiatement d'être sorti."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:716
+translate english d0ae467a:
+
+    # "Je devrais aller chercher Elias."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:718
+translate english 22512f0e:
+
+    # "À la place, je prends la direction de la cafétéria."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:720
+translate english dcdd21f6:
+
+    # think "Une lampe."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:721
+translate english b6324546:
+
+    # think "Quelque chose pour me défendre."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:723
+translate english a8b76f3a:
+
+    # "Je marche vite. Puis je cours."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:727
+translate english 9f1c343b:
+
+    # "Je n'entends plus rien derrière les murs, mais ça ne me calme pas. Au contraire, j'ai l'impression d'avoir perdu sa trace."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:731
+translate english fddeeffb:
+
+    # "La cafétéria est plongée dans le noir, à l'exception des veilleuses près du buffet."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:733
+translate english 1b1689c9:
+
+    # "J'ouvre un tiroir, puis un autre. Mes mains tremblent tellement que je fais tomber deux couverts au sol."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:737
+translate english 35041b47_4:
+
+    # noam colere "Putain..."
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:739
+translate english 2ed7f550:
+
+    # "Je finis par trouver une petite lampe portative dans un placard de service."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:741
+translate english 14189580:
+
+    # "Puis j'ouvre le tiroir des ustensiles de cuisine."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:743
+translate english cffa6e5a:
+
+    # "Ma main s'arrête sur un couteau."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:747
+translate english 9d589a7f:
+
+    # think "C'est stupide."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:749
+translate english eb589757:
+
+    # "Je le prends quand même."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:751
+translate english a31ebf36:
+
+    # "Pas pour attaquer qui que ce soit. Enfin... je crois."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:753
+translate english 76264c3c_26:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:755
+translate english 8bcbcc94:
+
+    # "Je serre la poignée et quitte la cafétéria."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:759
+translate english 7cc76195:
+
+    # "De retour dans ma chambre, le bureau est toujours déplacé."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:761
+translate english ce3f1ca4:
+
+    # "J'enlève les deux vis qui maintiennent la grille. Cette fois je ne prends même pas le temps de réfléchir."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:763
+translate english 9868f900:
+
+    # noam determine "Je vais voir ce qu'il y a là-dedans."
+    noam determine ""
+
+# game/scenario/19_0_1_1_0.rpy:765
+translate english 87ddf861:
+
+    # "La phrase sonne mal dès qu'elle sort de ma bouche."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:767
+translate english 13df9634:
+
+    # "Je passe la tête dans l'ouverture. Rien."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:769
+translate english 89f6448b:
+
+    # "Je me glisse à l'intérieur avec la lampe dans une main et le couteau dans l'autre."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:783
+translate english a491e01f:
+
+    # tuto "Enchaîne les cinq tracés. Chaque réussite te rapproche de la source."
+    tuto ""
+
+# game/scenario/19_0_1_1_0.rpy:795
+translate english 4a7077ef:
+
+    # "Le conduit paraît plus étroit que la veille."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:796
+translate english bc486428:
+
+    # "Ou peut-être que je suis simplement beaucoup plus conscient de ce qui pourrait se trouver devant moi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:798
+translate english 4009e34f:
+
+    # "Je rampe lentement. La lumière découpe des portions de tôle, des câbles, des angles que je reconnais vaguement."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:802
+translate english 18215e8e:
+
+    # "Un bruit retentit au loin."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:804
+translate english 5d80c8ea:
+
+    # noam peur "Je t'ai entendu."
+    noam peur ""
+
+# game/scenario/19_0_1_1_0.rpy:806
+translate english a0ab35b0:
+
+    # "Ma propre voix me fait sursauter."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:808
+translate english bc3fadec_1:
+
+    # "Je continue."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:810
+translate english f23bd6a0:
+
+    # "Je dépasse la première bifurcation. Puis la deuxième. Je connais maintenant assez le réseau pour savoir dans quelle direction je vais."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:812
+translate english b796a52b:
+
+    # think "La salle des Goumi."
+    think ""
+
+# game/scenario/19_0_1_1_0.rpy:814
+translate english 1195a3b1:
+
+    # "Le bruit vient de là."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:816
+translate english e2de5581:
+
+    # "J'accélère. Mon genou cogne contre une plaque, ma paume glisse sur une arête et une douleur vive traverse ma main."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:818
+translate english 2cd39c17:
+
+    # noam colere "Aïe..."
+    noam colere ""
+
+# game/scenario/19_0_1_1_0.rpy:820
+translate english 1299b3ba:
+
+    # "Je regarde rapidement. Une petite coupure. Rien de grave."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:822
+translate english aadd8c1c:
+
+    # "Je repars immédiatement."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:824
+translate english 17f2ea0d:
+
+    # "À mesure que j'approche, le bruit disparaît."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:826
+translate english 792a9a9c:
+
+    # "Je ralentis."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:828
+translate english 5f23e41f:
+
+    # "La grille qui donne sur la salle est devant moi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:830
+translate english 09498ea9:
+
+    # "Elle est entrouverte."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:832
+translate english d3220ce6_7:
+
+    # noam inquiet "..."
+    noam inquiet ""
+
+# game/scenario/19_0_1_1_0.rpy:834
+translate english 5a94868e:
+
+    # "Je suis presque certain de l'avoir refermée hier."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:836
+translate english j19_conduit_presque:
+
+    # think "Presque." id j19_conduit_presque
+    think "" id j19_conduit_presque
+
+# game/scenario/19_0_1_1_0.rpy:838
+translate english 98c3e4af:
+
+    # "Je pousse doucement la grille du bout des doigts."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:843
+translate english d90e4631:
+
+    # "Elle s'ouvre sans résistance."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:845
+translate english c01b989c:
+
+    # "Je descends."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:855
+translate english f1471303:
+
+    # "Mes pieds touchent le sol de la salle de maintenance."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:857
+translate english c115b07b:
+
+    # "Je garde la lampe braquée devant moi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:859
+translate english b400439c:
+
+    # "Les deux stations des Goumi sont toujours là. Les établis aussi. Rien ne semble avoir bougé."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:861
+translate english c9e0e05b_8:
+
+    # noam peur "..."
+    noam peur ""
+
+# game/scenario/19_0_1_1_0.rpy:863
+translate english a4e61400:
+
+    # "Je fais quelques pas."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:865
+translate english b2675169:
+
+    # "Le faisceau passe sur une caisse ouverte, un bras mécanique, plusieurs outils rangés contre le mur."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:867
+translate english 23149863:
+
+    # "Puis sur la grande table de maintenance au centre de la pièce."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:871
+translate english afc55ade_4:
+
+    # "Je m'arrête."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:873
+translate english 76264c3c_27:
+
+    # noam panne "..."
+    noam panne ""
+
+# game/scenario/19_0_1_1_0.rpy:875
+translate english c19f18ba:
+
+    # "Il y a quelque chose dessus."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:877
+translate english 588d3af3:
+
+    # "Au début, mon cerveau essaie de le ranger avec le reste. Une coque. Une pièce détachée. Un autre robot en cours de réparation."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:879
+translate english a12a992b:
+
+    # "Puis la lumière éclaire une main."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:889
+translate english 57c7141e:
+
+    # "Une vraie main."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:891
+translate english c589c942_2:
+
+    # noam peur "Non..."
+    noam peur ""
+
+# game/scenario/19_0_1_1_0.rpy:893
+translate english d069c524:
+
+    # "Je relève lentement la lampe."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:895
+translate english 686ba9bb:
+
+    # "Un bras. Une épaule. Des cheveux."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:897
+translate english 6998423e:
+
+    # "Je connais ces cheveux."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:901
+translate english be6343ef:
+
+    # "Je m'approche malgré moi. Chaque pas me donne envie de reculer."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:903
+translate english b37522b8:
+
+    # "Le faisceau atteint enfin son visage."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:908
+translate english 640ace66:
+
+    # noam desespoir "{cps=8}Mara...{/cps}"
+    noam desespoir ""
+
+# game/scenario/19_0_1_1_0.rpy:910
+translate english 7f3e7a62:
+
+    # "Elle est allongée sur la table de maintenance des Goumi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:912
+translate english 078568e5:
+
+    # "Immobile."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:914
+translate english de576438:
+
+    # "La tête légèrement tournée sur le côté, comme si quelqu'un l'avait simplement déposée là."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:916
+translate english 65a895dd:
+
+    # "Pendant plusieurs secondes, je n'arrive pas à faire le moindre mouvement."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:918
+translate english j19_cadavre_non_1:
+
+    # think "Non." id j19_cadavre_non_1
+    think "" id j19_cadavre_non_1
+
+# game/scenario/19_0_1_1_0.rpy:920
+translate english 4dcc3050:
+
+    # "Je l'ai vue ce matin."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:924
+translate english e2391fe7:
+
+    # "Elle m'a traité de pervers. Elle a crié dans le couloir. Elle a prévenu tout le monde."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:928
+translate english a85ba9ec:
+
+    # "Elle était à la cafétéria cet après-midi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:930
+translate english 6431e088:
+
+    # "Ma lampe tremble de plus en plus."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:932
+translate english 133453db_1:
+
+    # noam peur "Mara ?"
+    noam peur ""
+
+# game/scenario/19_0_1_1_0.rpy:934
+translate english 1b2a2a40_4:
+
+    # "Aucune réponse."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:936
+translate english fa123ce1:
+
+    # "Je fais encore un pas et tends la main, sans réussir à la toucher."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:938
+translate english b77af869:
+
+    # noam desespoir "Mara..."
+    noam desespoir ""
+
+# game/scenario/19_0_1_1_0.rpy:940
+translate english d95e147b:
+
+    # "Son torse ne bouge pas."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:942
+translate english cf5c4c5c:
+
+    # "Je reste là, le couteau pendant stupidement au bout de ma main, incapable de comprendre ce que je suis en train de regarder."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:949
+translate english 1ed1615d:
+
+    # "Un bruit métallique retentit derrière moi."
+    ""
+
+# game/scenario/19_0_1_1_0.rpy:951
+translate english 364162eb:
+
+    # "Je me retourne brutalement."
+    ""
+

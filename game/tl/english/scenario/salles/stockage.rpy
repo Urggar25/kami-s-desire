@@ -540,3 +540,119 @@ translate english decouverte_stockage_ced82d0c:
     # think "Je devrais aller voir ailleurs."
     think "I should go check somewhere else."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/stockage.rpy:166
+translate english decouverte_stockage_623cdfc4:
+
+    # nyra rire "Et qu'on nous ferait remplir un papier pour prendre une vis."
+    nyra rire ""
+
+# game/scenario/salles/stockage.rpy:202
+translate english decouverte_stockage_347b2925:
+
+    # nyra sourire "Je fais l'inventaire, en gros."
+    nyra sourire ""
+
+# game/scenario/salles/stockage.rpy:203
+translate english decouverte_stockage_b9bd649c:
+
+    # nyra sourire "Si un truc tombe en panne, je préfère savoir où trouver le matériel."
+    nyra sourire ""
+
+# game/scenario/salles/stockage.rpy:205
+translate english decouverte_stockage_bf4ea08b:
+
+    # nyra taquin "Au moins, ils ont prévu pas mal de trucs. Ça peut servir."
+    nyra taquin ""
+
+# game/scenario/salles/stockage.rpy:209
+translate english decouverte_stockage_ee09d64f:
+
+    # nyra taquin "Disons que ça évite les mauvaises surprises."
+    nyra taquin ""
+
+# game/scenario/salles/stockage.rpy:211
+translate english decouverte_stockage_2f224b01:
+
+    # "Elle remet une boîte de composants sur son étagère, puis regarde les caisses encore fermées."
+    ""
+
+# game/scenario/salles/stockage.rpy:212
+translate english decouverte_stockage_850d11d9:
+
+    # nyra reflexion "Par contre, si tout le monde commence à piocher là-dedans, ça va vite devenir compliqué."
+    nyra reflexion ""
+
+# game/scenario/salles/stockage.rpy:213
+translate english decouverte_stockage_5c595151:
+
+    # noam reflexion "On peut toujours se partager ce qu'il y a, non ?"
+    noam reflexion ""
+
+# game/scenario/salles/stockage.rpy:214
+translate english decouverte_stockage_575acfb4:
+
+    # nyra neutre "Se partager comment ?"
+    nyra neutre ""
+
+# game/scenario/salles/stockage.rpy:215
+translate english decouverte_stockage_3f27a73e:
+
+    # noam hesitation "Bah... équitablement. Chacun prend sa part."
+    noam hesitation ""
+
+# game/scenario/salles/stockage.rpy:216
+translate english decouverte_stockage_b779ff15:
+
+    # nyra reflexion "Même quantité pour tout le monde ? Même si l'un en a besoin pour réparer un truc vital et l'autre juste pour son confort ?"
+    nyra reflexion ""
+
+# game/scenario/salles/stockage.rpy:217
+translate english decouverte_stockage_530d6ea9:
+
+    # noam reflexion "Non, évidemment. Dans ce cas, on donne la priorité à celui qui en a vraiment besoin."
+    noam reflexion ""
+
+# game/scenario/salles/stockage.rpy:218
+translate english decouverte_stockage_624e5c0a:
+
+    # nyra doute "Et qui décide de ce qui est vraiment nécessaire ?"
+    nyra doute ""
+
+# game/scenario/salles/stockage.rpy:219
+translate english decouverte_stockage_48fb728a:
+
+    # "Je regarde les étagères. J'avais pas pensé à ça."
+    ""
+
+# game/scenario/salles/stockage.rpy:220
+translate english decouverte_stockage_bb30d12d:
+
+    # noam hesitation "J'en sais rien. On en discute ?"
+    noam hesitation ""
+
+# game/scenario/salles/stockage.rpy:221
+translate english decouverte_stockage_63087122:
+
+    # nyra sourire "Voilà. C'est surtout ça, le problème."
+    nyra sourire ""
+
+# game/scenario/salles/stockage.rpy:222
+translate english decouverte_stockage_74fc9c53:
+
+    # nyra reflexion "Partager, tout le monde est pour. Jusqu'au moment où il faut dire à quelqu'un qu'il aura moins que les autres."
+    nyra reflexion ""
+
+# game/scenario/salles/stockage.rpy:223
+translate english decouverte_stockage_1636232a:
+
+    # noam taquin "Tu fais souvent ce genre de conversation au milieu des cartons ?"
+    noam taquin ""
+
+# game/scenario/salles/stockage.rpy:224
+translate english decouverte_stockage_c4f8f59b:
+
+    # nyra taquin "Seulement quand on me propose de répartir les cartons."
+    nyra taquin ""
+

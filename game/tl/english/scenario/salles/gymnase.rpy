@@ -802,3 +802,95 @@ translate english strings:
     old "Faire une session de sport ? (Tous les évènements sport ont été découverts)"
     new "Work out? (All workout events have been discovered)"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/gymnase.rpy:201
+translate english decouverte_gymnase_f31a7702:
+
+    # elias fatigue "J'aime bien venir m'entraîner."
+    elias fatigue ""
+
+# game/scenario/salles/gymnase.rpy:202
+translate english decouverte_gymnase_604fbba4:
+
+    # elias fatigue "Ça m'évite de penser à toutes les merdes qui peuvent nous tomber dessus."
+    elias fatigue ""
+
+# game/scenario/salles/gymnase.rpy:209
+translate english decouverte_gymnase_c2a3481d:
+
+    # elias neutre "Avant, tu pouvais te prendre une balle n'importe quand. Une guerre, une embrouille..."
+    elias neutre ""
+
+# game/scenario/salles/gymnase.rpy:210
+translate english decouverte_gymnase_400b833c:
+
+    # elias neutre "Là, au moins, on sait ce qu'il faut pas faire."
+    elias neutre ""
+
+# game/scenario/salles/gymnase.rpy:217
+translate english decouverte_gymnase_47308da5:
+
+    # elias jaloux "Moi, je fais mon boulot et j'essaie de pas trop y penser."
+    elias jaloux ""
+
+# game/scenario/salles/gymnase.rpy:285
+translate english decouverte_gymnase_cdcfbba5:
+
+    # "Elias se penche sur le panneau d'une machine et appuie sur plusieurs touches."
+    ""
+
+# game/scenario/salles/gymnase.rpy:286
+translate english decouverte_gymnase_5da5f06f:
+
+    # elias content "Attends, je vais te montrer. Ça se règle facilement, ce truc."
+    elias content ""
+
+# game/scenario/salles/gymnase.rpy:287
+translate english decouverte_gymnase_8f49c1b5:
+
+    # "Le tapis roulant se met brusquement à accélérer. Elias se redresse d'un coup."
+    ""
+
+# game/scenario/salles/gymnase.rpy:288
+translate english decouverte_gymnase_78593880:
+
+    # elias panique "Oh, merde ! Non, c'est pas ça !"
+    elias panique ""
+
+# game/scenario/salles/gymnase.rpy:289
+translate english decouverte_gymnase_d6d01541:
+
+    # noam surpris "Euh... Elias ?!"
+    noam surpris ""
+
+# game/scenario/salles/gymnase.rpy:290
+translate english decouverte_gymnase_c5dcb263:
+
+    # "Il appuie sur une touche. Rien. Il trouve enfin le bouton d'arrêt et le tapis ralentit."
+    ""
+
+# game/scenario/salles/gymnase.rpy:291
+translate english decouverte_gymnase_9794d402:
+
+    # elias gene "Putain... Je voulais juste régler la vitesse."
+    elias gene ""
+
+# game/scenario/salles/gymnase.rpy:292
+translate english decouverte_gymnase_a5b66579:
+
+    # noam taquin "T'es sûr que tu connais la machine ?"
+    noam taquin ""
+
+# game/scenario/salles/gymnase.rpy:293
+translate english decouverte_gymnase_7b3bcfc5:
+
+    # elias rire "Maintenant, oui. Je sais surtout quel bouton pas toucher."
+    elias rire ""
+
+# game/scenario/salles/gymnase.rpy:294
+translate english decouverte_gymnase_b563aa8d:
+
+    # "Je me mets à rire. Elias aussi, après une seconde."
+    ""
+

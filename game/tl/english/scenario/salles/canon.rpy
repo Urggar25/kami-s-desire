@@ -1170,3 +1170,23 @@ translate english decouverte_salle_canon_b80b222d:
     # "Je n’oublierai jamais ce bruit."
     "I'll never forget that sound."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/canon.rpy:154
+translate english decouverte_salle_canon_c2d54b69:
+
+    # ryn neutre "Tant qu'à être coincés ici, autant savoir comment tu t'appelles."
+    ryn neutre ""
+
+# game/scenario/salles/canon.rpy:178
+translate english decouverte_salle_canon_ab6b839b:
+
+    # ryn reflechit "Ils ont même pas essayé de le cacher."
+    ryn reflechit ""
+
+# game/scenario/salles/canon.rpy:179
+translate english decouverte_salle_canon_5c42227e:
+
+    # ryn reflechit "Comme si on risquait d'oublier ce truc."
+    ryn reflechit ""
+

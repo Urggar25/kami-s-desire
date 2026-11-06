@@ -6602,3 +6602,1437 @@ translate english ryn_link_2_f183d1fc:
     # noam neutre "Je voulais apprendre à me défendre, pas être défendu contre l'entraîneur."
     noam neutre ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/temps_libres.rpy:6
+translate english lysa_link_1_a571a28d:
+
+    # think "Elle avait râlé parce qu'il n'y avait pas de café le premier jour. Je peux au moins lui en ramener un."
+    think ""
+
+# game/scenario/temps_libres.rpy:14
+translate english lysa_link_1_adc011af:
+
+    # goumi vide "Je suis parfaitement capable de préparer un café."
+    goumi vide ""
+
+# game/scenario/temps_libres.rpy:45
+translate english lysa_link_1_09af2958:
+
+    # noam neutre "Promis, je touche plus à ton café."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:46
+translate english lysa_link_1_3ad2f06b:
+
+    # lysa blase "T'as intérêt. J'ai déjà assez de problèmes comme ça."
+    lysa blase ""
+
+# game/scenario/temps_libres.rpy:50
+translate english lysa_link_1_fc0ee4ba:
+
+    # noam reflexion "Tu crois qu'on tiendra longtemps ici ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:51
+translate english lysa_link_1_f876a0cf:
+
+    # lysa reflexion "Bonne question. J'évite de compter les jours, pour le moment."
+    lysa reflexion ""
+
+# game/scenario/temps_libres.rpy:68
+translate english lysa_link_2_9947fa2b:
+
+    # noam taquin "Tu vas finir par te cogner contre la vitre à force de te coller dessus."
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:72
+translate english lysa_link_2_79340c09:
+
+    # noam surpris "Attends, tu cherches vraiment un bâtiment depuis ici ?"
+    noam surpris ""
+
+# game/scenario/temps_libres.rpy:78
+translate english lysa_link_2_227a530a:
+
+    # noam neutre "C'est bizarre. D'ici, on dirait que tout va bien en bas."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:94
+translate english lysa_link_2_befda2a3:
+
+    # noam neutre "On peut essayer de repérer la tour avec les lumières."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:95
+translate english lysa_link_2_73239952:
+
+    # lysa sourire "Tu vois ? C'est tout ce que je te demandais."
+    lysa sourire ""
+
+# game/scenario/temps_libres.rpy:99
+translate english lysa_link_2_d2f27351:
+
+    # noam reflexion "Tu me raconteras ce qui te manque le plus là-bas ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:100
+translate english lysa_link_2_223bfdae:
+
+    # lysa triste "Pas tout de suite. Mais... ouais, peut-être."
+    lysa triste ""
+
+# game/scenario/temps_libres.rpy:128
+translate english lysa_link_3_d0063ed7:
+
+    # lysa reflexion "Et si nos votes servaient à rien ? Si Kami nous laissait juste croire qu'on décide ?"
+    lysa reflexion ""
+
+# game/scenario/temps_libres.rpy:130
+translate english lysa_link_3_bc641daa:
+
+    # lysa blase "Tiens. T'as moins de réponses toutes faites qu'au début."
+    lysa blase ""
+
+# game/scenario/temps_libres.rpy:134
+translate english lysa_link_3_52ee5776:
+
+    # lysa blase "Fais gaffe, tu commences à parler comme Julian."
+    lysa blase ""
+
+# game/scenario/temps_libres.rpy:148
+translate english lysa_link_3_4ea18b19:
+
+    # noam neutre "On devrait sortir avant le prochain tir."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:149
+translate english lysa_link_3_e777afa1:
+
+    # lysa neutre "Excellente idée. J'aime bien quand tu réfléchis vite."
+    lysa neutre ""
+
+# game/scenario/temps_libres.rpy:153
+translate english lysa_link_3_07569e46:
+
+    # noam reflexion "Si tu veux parler, je suis là."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:154
+translate english lysa_link_3_f36a4f92:
+
+    # lysa sourire "Je sais. Et c'est un peu agaçant, d'ailleurs."
+    lysa sourire ""
+
+# game/scenario/temps_libres.rpy:175
+translate english julian_link_1_c933ba66:
+
+    # julian taquin "J'attendais quelqu'un capable de me tenir tête. Tu tombes bien."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:191
+translate english julian_link_1_32cfabca:
+
+    # julian neutre "C'est un baby-foot, Noam. Pas une guerre."
+    julian neutre ""
+
+# game/scenario/temps_libres.rpy:193
+translate english julian_link_1_359e9b0a:
+
+    # julian taquin "Et tu es resté. Donc ma méthode a parfaitement marché."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:197
+translate english julian_link_1_525b8095:
+
+    # julian blase "Tu vas t'en remettre, j'espère. Ça me ferait de la peine."
+    julian blase ""
+
+# game/scenario/temps_libres.rpy:212
+translate english julian_link_1_af565255:
+
+    # noam neutre "La prochaine fois, je vais te surveiller."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:213
+translate english julian_link_1_b4b30e57:
+
+    # julian taquin "Ah, donc tu admets qu'il y aura une revanche !"
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:217
+translate english julian_link_1_9475dfb5:
+
+    # noam reflexion "Tu triches même pour un baby-foot ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:218
+translate english julian_link_1_a62e14a7:
+
+    # julian rire "Je préfère parler de créativité tactique."
+    julian rire ""
+
+# game/scenario/temps_libres.rpy:249
+translate english julian_link_2_4b55e49a:
+
+    # julian surpris "Tu vas vraiment me faire une analyse psychologique à cause d'une manche ?"
+    julian surpris ""
+
+# game/scenario/temps_libres.rpy:251
+translate english julian_link_2_2b4587a6:
+
+    # julian taquin "Tu te moques, mais toi aussi, tu fais semblant sur pas mal de choses."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:261
+translate english julian_link_2_7bd52b33:
+
+    # noam neutre "J'aurais jamais réussi à recoudre ça aussi proprement."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:262
+translate english julian_link_2_c8a60fec:
+
+    # julian sourire "Voilà un compliment qui me va droit au cœur."
+    julian sourire ""
+
+# game/scenario/temps_libres.rpy:266
+translate english julian_link_2_02426012:
+
+    # noam reflexion "Il reste quand même un petit défaut, là."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:267
+translate english julian_link_2_26973a6b:
+
+    # julian reflexion "Quoi ? Où ça ? Attends, montre !"
+    julian reflexion ""
+
+# game/scenario/temps_libres.rpy:285
+translate english julian_link_3_1adc3d86:
+
+    # julian sourire "Pire. Je dessine les gens d'ici."
+    julian sourire ""
+
+# game/scenario/temps_libres.rpy:288
+translate english julian_link_3_53d28a0a:
+
+    # julian taquin "Des portraits satiriques, Noam. « Caricatures », c'est tellement banal."
+    julian taquin ""
+
+# game/scenario/temps_libres.rpy:291
+translate english julian_link_3_ae32a901:
+
+    # noam taquin "Si tu voulais pas que je regarde, fallait fermer ton carnet."
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:309
+translate english julian_link_3_f86861a7:
+
+    # julian decu "C'est toi qui dis ça ? On sait jamais ce que tu penses. Moi, au moins, je montre quelque chose."
+    julian decu ""
+
+# game/scenario/temps_libres.rpy:312
+translate english julian_link_3_3eeda7d9:
+
+    # julian triste "Tout le monde fait semblant, Noam. Toi aussi, parfois."
+    julian triste ""
+
+# game/scenario/temps_libres.rpy:326
+translate english julian_link_3_b5b987a3:
+
+    # noam neutre "T'as pas besoin de te donner autant de mal pour attirer l'attention."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:327
+translate english julian_link_3_5b193d09:
+
+    # julian hesitation "Facile à dire quand on n'essaie pas de se faire remarquer."
+    julian hesitation ""
+
+# game/scenario/temps_libres.rpy:331
+translate english julian_link_3_667d38a7:
+
+    # noam reflexion "Alors dessine-moi comme tu me vois vraiment."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:332
+translate english julian_link_3_904c36ee:
+
+    # julian surpris "Tu prends des risques, Noam. Beaucoup de risques."
+    julian surpris ""
+
+# game/scenario/temps_libres.rpy:336
+translate english julian_link_3_2779b98a:
+
+    # noam reflexion "Tu dessines les autres parce que t'arrives pas à te dessiner ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:337
+translate english julian_link_3_8ebf381f:
+
+    # julian inquietude "...Ça t'arrive de ne pas poser la question qui dérange ?"
+    julian inquietude ""
+
+# game/scenario/temps_libres.rpy:394
+translate english elen_link_1_7f4b8170:
+
+    # noam neutre "On peut peut-être sauver la recette."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:395
+translate english elen_link_1_1fd29d2c:
+
+    # elen joie "Ah ! Tu vois, j'étais sûre qu'il y avait une solution !"
+    elen joie ""
+
+# game/scenario/temps_libres.rpy:399
+translate english elen_link_1_9fccefb7:
+
+    # noam reflexion "Ta mère aurait surtout aimé cuisiner avec toi."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:400
+translate english elen_link_1_d83dc75a:
+
+    # elen triste "Ouais... Je crois que t'as raison."
+    elen triste ""
+
+# game/scenario/temps_libres.rpy:453
+translate english elen_link_2_d833ca89:
+
+    # noam neutre "Si quelqu'un râle, je dirai que c'est ma faute."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:454
+translate english elen_link_2_e62c7bc2:
+
+    # elen rire "D'accord ! Mais je viendrai témoigner contre toi."
+    elen rire ""
+
+# game/scenario/temps_libres.rpy:458
+translate english elen_link_2_6c1494c9:
+
+    # noam reflexion "On devrait demander aux autres ce qu'ils préfèrent."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:459
+translate english elen_link_2_5d0b9798:
+
+    # elen sourire "Oui ! C'est beaucoup plus simple que de décider pour eux."
+    elen sourire ""
+
+# game/scenario/temps_libres.rpy:514
+translate english elen_link_3_18987fc5:
+
+    # noam neutre "On arrête, tu commences à fatiguer."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:515
+translate english elen_link_3_b11e004c:
+
+    # elen decu "Moi ? Bon... peut-être un tout petit peu."
+    elen decu ""
+
+# game/scenario/temps_libres.rpy:519
+translate english elen_link_3_d08481f1:
+
+    # noam reflexion "Encore une minute et on rentre, d'accord ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:520
+translate english elen_link_3_c8b6990e:
+
+    # elen sourire "Une seule. Et tu comptes, hein !"
+    elen sourire ""
+
+# game/scenario/temps_libres.rpy:577
+translate english iris_link_1_4ce8e9db:
+
+    # noam neutre "Allez, montre-moi comment tu fais."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:578
+translate english iris_link_1_6556ee63:
+
+    # iris taquin "Regarde bien, je donne pas deux cours gratuits."
+    iris taquin ""
+
+# game/scenario/temps_libres.rpy:582
+translate english iris_link_1_2ebff5de:
+
+    # noam reflexion "T'as peur de perdre contre moi ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:583
+translate english iris_link_1_66526edb:
+
+    # iris colere "Moi ?! Rêve pas !"
+    iris colere ""
+
+# game/scenario/temps_libres.rpy:644
+translate english iris_link_2_d491249a:
+
+    # noam neutre "Tu ferais pareil si c'était moi ?"
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:645
+translate english iris_link_2_d27fcabe:
+
+    # iris colere "Quoi ? Mais... c'est pas la question !"
+    iris colere ""
+
+# game/scenario/temps_libres.rpy:649
+translate english iris_link_2_98e11e21:
+
+    # noam reflexion "Je vais ranger le matériel, va te poser."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:650
+translate english iris_link_2_88575b67:
+
+    # iris sourire "T'es pas complètement inutile, finalement."
+    iris sourire ""
+
+# game/scenario/temps_libres.rpy:710
+translate english iris_link_3_0dc871eb:
+
+    # noam neutre "Passe-moi les serviettes, je m'en occupe."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:711
+translate english iris_link_3_fd399bc9:
+
+    # iris neutre "Enfin quelqu'un qui propose de faire quelque chose."
+    iris neutre ""
+
+# game/scenario/temps_libres.rpy:715
+translate english iris_link_3_d904033d:
+
+    # noam reflexion "Tu pouvais dire que tu voulais aider Elen, tu sais."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:716
+translate english iris_link_3_d0c91fed:
+
+    # iris colere "Et toi tu pouvais juste te taire !"
+    iris colere ""
+
+# game/scenario/temps_libres.rpy:720
+translate english iris_link_3_3ba053af:
+
+    # noam reflexion "Le pied est tordu, les serviettes vont pas suffire."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:721
+translate english iris_link_3_3624fb2c:
+
+    # iris surpris "...Attends. Ouais. Bien vu, ça m'énerve encore plus !"
+    iris surpris ""
+
+# game/scenario/temps_libres.rpy:770
+translate english tomas_link_1_5ee5d8b3:
+
+    # noam neutre "La paix, oui. Mais à quel prix ?"
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:771
+translate english tomas_link_1_4ba5a8d3:
+
+    # tomas neutre "C'est exactement la question qu'il faut se poser."
+    tomas neutre ""
+
+# game/scenario/temps_libres.rpy:775
+translate english tomas_link_1_cb638ba6:
+
+    # noam reflexion "Tu devais être terrifié ce jour-là."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:776
+translate english tomas_link_1_fde77302:
+
+    # tomas triste "...Oui. Plus que je ne voulais l'admettre."
+    tomas triste ""
+
+# game/scenario/temps_libres.rpy:797
+translate english tomas_link_2_eaf2e6c9:
+
+    # noam taquin "Attends. Tu prépares ce que tu vas dire aux gens ?"
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:799
+translate english tomas_link_2_80b1dc94:
+
+    # noam sourire "Tu veux t'entraîner ? Vas-y, on peut essayer."
+    noam sourire ""
+
+# game/scenario/temps_libres.rpy:822
+translate english tomas_link_2_df2dc48d:
+
+    # tomas neutre "Bon. Je peux déjà enlever quelques questions."
+    tomas neutre ""
+
+# game/scenario/temps_libres.rpy:826
+translate english tomas_link_2_159f9920:
+
+    # noam neutre "Fais une liste plus courte. Trois points, pas vingt."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:827
+translate english tomas_link_2_e72275b2:
+
+    # tomas inquiet "Trois ? Ça va être compliqué... mais je peux essayer."
+    tomas inquiet ""
+
+# game/scenario/temps_libres.rpy:831
+translate english tomas_link_2_08e11127:
+
+    # noam reflexion "Garde ta liste, elle te rassure."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:832
+translate english tomas_link_2_80f6644a:
+
+    # tomas sourire "Merci. Je pensais que ça agaçait tout le monde."
+    tomas sourire ""
+
+# game/scenario/temps_libres.rpy:859
+translate english tomas_link_3_6abd4e22:
+
+    # tomas desaccord "Si on mange après, ça change le goût. Faut en tenir compte."
+    tomas desaccord ""
+
+# game/scenario/temps_libres.rpy:877
+translate english tomas_link_3_de5df669:
+
+    # tomas reflexion "Attends, j'en ai goûté une seule sur deux cent quarante-sept !"
+    tomas reflexion ""
+
+# game/scenario/temps_libres.rpy:880
+translate english tomas_link_3_8443a8a6:
+
+    # noam sourire "Au moins ici, si ça te plaît pas, tu peux en prendre une autre."
+    noam sourire ""
+
+# game/scenario/temps_libres.rpy:889
+translate english tomas_link_3_57fb7880:
+
+    # noam neutre "Le chrono démarre quand tu commandes."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:890
+translate english tomas_link_3_423096c9:
+
+    # tomas inquiet "C'est injuste, j'ai besoin de lire le menu !"
+    tomas inquiet ""
+
+# game/scenario/temps_libres.rpy:894
+translate english tomas_link_3_90107011:
+
+    # noam reflexion "Je choisis pour toi la prochaine fois."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:895
+translate english tomas_link_3_3fcbf58a:
+
+    # tomas rire "Là, tu prends un risque considérable."
+    tomas rire ""
+
+# game/scenario/temps_libres.rpy:923
+translate english nyra_link_1_10fbc55f:
+
+    # nyra taquin "Heureusement que tu es là pour valider mon rangement."
+    nyra taquin ""
+
+# game/scenario/temps_libres.rpy:930
+translate english nyra_link_1_c07ab7ce:
+
+    # nyra raison "J'ai dit que c'était pas indispensable. C'est pas pareil."
+    nyra raison ""
+
+# game/scenario/temps_libres.rpy:931
+translate english nyra_link_1_f1056fe9:
+
+    # nyra neutre "Quand les gens sont crevés et qu'ils ont rien qui leur fait plaisir, ils s'engueulent. Ça peut aider."
+    nyra neutre ""
+
+# game/scenario/temps_libres.rpy:933
+translate english nyra_link_1_ae9f49cd:
+
+    # nyra sourire "Ce serait moins convaincant."
+    nyra sourire ""
+
+# game/scenario/temps_libres.rpy:948
+translate english nyra_link_1_cdd49d9e:
+
+    # noam neutre "On peut partager le poids."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:949
+translate english nyra_link_1_a8f28543:
+
+    # nyra sourire "D'accord. Prends l'autre côté."
+    nyra sourire ""
+
+# game/scenario/temps_libres.rpy:953
+translate english nyra_link_1_c456202a:
+
+    # noam reflexion "Tu avais déjà calculé combien je pouvais porter ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:954
+translate english nyra_link_1_cc78b3dd:
+
+    # nyra taquin "Je me doutais que tu finirais par demander."
+    nyra taquin ""
+
+# game/scenario/temps_libres.rpy:990
+translate english nyra_link_2_38b1e02d:
+
+    # nyra neutre "Je pense que tu as compris pourquoi."
+    nyra neutre ""
+
+# game/scenario/temps_libres.rpy:997
+translate english nyra_link_2_ea9a9a50:
+
+    # noam neutre "Tu veux que je te dise ce que j'en pense, c'est ça ?"
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:998
+translate english nyra_link_2_747edf37:
+
+    # nyra neutre "Je veux que tu assumes ta propre conclusion."
+    nyra neutre ""
+
+# game/scenario/temps_libres.rpy:1002
+translate english nyra_link_2_f9f02b5c:
+
+    # noam reflexion "On peut être en désaccord sans se manipuler."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1003
+translate english nyra_link_2_44860f76:
+
+    # nyra hesitation "...C'est une façon assez directe de le dire."
+    nyra hesitation ""
+
+# game/scenario/temps_libres.rpy:1007
+translate english nyra_link_2_c642a1df:
+
+    # noam reflexion "Ton raisonnement oublie ceux qui paient le prix."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1008
+translate english nyra_link_2_8f4f65b0:
+
+    # nyra reflexion "Je ne les ai pas oubliés. Je ne sais juste pas quoi en faire."
+    nyra reflexion ""
+
+# game/scenario/temps_libres.rpy:1029
+translate english nyra_link_3_4c06455b:
+
+    # nyra neutre "Si tu veux, oui."
+    nyra neutre ""
+
+# game/scenario/temps_libres.rpy:1049
+translate english nyra_link_3_5de289c3:
+
+    # nyra panne "T'as pas grand-chose pour affirmer ça."
+    nyra panne ""
+
+# game/scenario/temps_libres.rpy:1051
+translate english nyra_link_3_ab7c463f:
+
+    # nyra neutre "Je vais pas répondre à toutes tes suppositions."
+    nyra neutre ""
+
+# game/scenario/temps_libres.rpy:1061
+translate english nyra_link_3_7269fea9:
+
+    # noam neutre "D'accord, reprenons tout depuis le début."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1062
+translate english nyra_link_3_88040473:
+
+    # nyra sourire "Très bien. Cette fois, on ne saute aucune étape."
+    nyra sourire ""
+
+# game/scenario/temps_libres.rpy:1066
+translate english nyra_link_3_5ddf7935:
+
+    # noam reflexion "Dis-moi plutôt ce qui t'inquiète."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1067
+translate english nyra_link_3_70dc1d54:
+
+    # nyra hesitation "C'est... compliqué. Je sais pas par où commencer."
+    nyra hesitation ""
+
+# game/scenario/temps_libres.rpy:1122
+translate english kael_link_1_5346c876:
+
+    # noam neutre "On va attendre que ça finisse ensemble."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1123
+translate english kael_link_1_5e836a45:
+
+    # kael sourire "...D'accord. Merci."
+    kael sourire ""
+
+# game/scenario/temps_libres.rpy:1127
+translate english kael_link_1_cff4e892:
+
+    # noam reflexion "Tu penses que ça vient de quel composant ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1128
+translate english kael_link_1_a2157672:
+
+    # kael reflexion "Celui-là, je crois. Regarde le voyant."
+    kael reflexion ""
+
+# game/scenario/temps_libres.rpy:1164
+translate english kael_link_2_1c812cca:
+
+    # kael neutre "Quelqu'un peut arriver. Et là, il va nous demander de couper."
+    kael neutre ""
+
+# game/scenario/temps_libres.rpy:1182
+translate english kael_link_2_d3c5074f:
+
+    # noam neutre "On peut écouter sans parler, tu sais."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1183
+translate english kael_link_2_180db583:
+
+    # kael sourire "Ça me va très bien."
+    kael sourire ""
+
+# game/scenario/temps_libres.rpy:1187
+translate english kael_link_2_4e50d607:
+
+    # noam reflexion "Cette musique te rappelle quelque chose ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1188
+translate english kael_link_2_1f9ac7db:
+
+    # kael triste "Oui... Des choses que je n'ai pas vraiment envie de raconter."
+    kael triste ""
+
+# game/scenario/temps_libres.rpy:1215
+translate english kael_link_3_6b1c0b47:
+
+    # kael taquin "Quand on a toujours eu quelque chose, on finit par plus y faire attention."
+    kael taquin ""
+
+# game/scenario/temps_libres.rpy:1221
+translate english kael_link_3_1572450f:
+
+    # kael calme "Il fait froid. Ils sont trempés."
+    kael calme ""
+
+# game/scenario/temps_libres.rpy:1235
+translate english kael_link_3_528b1cbf:
+
+    # noam neutre "Si on rentre, je t'emmène voir une vraie averse."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1236
+translate english kael_link_3_58d90479:
+
+    # kael sourire "Je te prendrai au mot, Noam."
+    kael sourire ""
+
+# game/scenario/temps_libres.rpy:1240
+translate english kael_link_3_5307ab55:
+
+    # noam reflexion "Pour toi, c'est complètement nouveau, en fait."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1241
+translate english kael_link_3_ef53997b:
+
+    # kael calme "Banal pour toi. C'est bien ça, le problème."
+    kael calme ""
+
+# game/scenario/temps_libres.rpy:1296
+translate english elias_link_1_0e9d36fc:
+
+    # noam neutre "Je prends le sac, mais tu me dois une revanche."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1297
+translate english elias_link_1_0c10a68c:
+
+    # elias rire "Marché conclu ! Mais viens pas pleurer demain."
+    elias rire ""
+
+# game/scenario/temps_libres.rpy:1301
+translate english elias_link_1_5ffc54d1:
+
+    # noam reflexion "Tu peux pas t'empêcher de réparer des trucs, hein ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1302
+translate english elias_link_1_762a1250:
+
+    # elias fatigue "Si je le fais pas, ça finit toujours par lâcher."
+    elias fatigue ""
+
+# game/scenario/temps_libres.rpy:1358
+translate english elias_link_2_ea1cb5b3:
+
+    # noam neutre "Tu t'en es bien sorti, arrête de râler."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1359
+translate english elias_link_2_6334ef0f:
+
+    # elias content "Ouais... Bon. Merci, hein."
+    elias content ""
+
+# game/scenario/temps_libres.rpy:1363
+translate english elias_link_2_03114a70:
+
+    # noam reflexion "La prochaine fois, on vérifie avant de démarrer."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1364
+translate english elias_link_2_8fa9a6d3:
+
+    # elias rire "Ah ça, tu peux le dire deux fois !"
+    elias rire ""
+
+# game/scenario/temps_libres.rpy:1420
+translate english elias_link_3_aaa390c5:
+
+    # noam neutre "Je te passe les outils si tu veux."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1421
+translate english elias_link_3_bb9dab2d:
+
+    # elias sourire "Là, tu commences à parler ma langue."
+    elias sourire ""
+
+# game/scenario/temps_libres.rpy:1425
+translate english elias_link_3_5d7d0da8:
+
+    # noam reflexion "Et si tu laissais quelqu'un d'autre réparer ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1426
+translate english elias_link_3_00f8b711:
+
+    # elias fatigue "Ouais... J'sais pas faire ça, moi."
+    elias fatigue ""
+
+# game/scenario/temps_libres.rpy:1455
+translate english mara_link_1_d97a6037:
+
+    # mara content "J'te préviens, je peux tenir comme ça toute la journée."
+    mara content ""
+
+# game/scenario/temps_libres.rpy:1459
+translate english mara_link_1_ec9f2e95:
+
+    # mara neutre "C'est le sol qui bouge ! On est dans l'espace, je te rappelle !"
+    mara neutre ""
+
+# game/scenario/temps_libres.rpy:1477
+translate english mara_link_1_a92e2a18:
+
+    # mara rire "Tu veux encore traîner avec moi ? Fais gaffe, j'vais croire que j'te plais."
+    mara rire ""
+
+# game/scenario/temps_libres.rpy:1483
+translate english mara_link_1_909ce571:
+
+    # noam neutre "On remet ça, mais sans gage débile."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1484
+translate english mara_link_1_0b196e3b:
+
+    # mara rire "T'es vraiment pas drôle quand tu veux."
+    mara rire ""
+
+# game/scenario/temps_libres.rpy:1488
+translate english mara_link_1_572de8ee:
+
+    # noam reflexion "Tu proposes quoi comme gage, cette fois ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1489
+translate english mara_link_1_f4e32609:
+
+    # mara taquin "Ah ! Voilà le Noam que je préfère !"
+    mara taquin ""
+
+# game/scenario/temps_libres.rpy:1538
+translate english mara_link_2_b37b994b:
+
+    # noam neutre "Arrête. Ça se voit que ça te touche."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1539
+translate english mara_link_2_666387cb:
+
+    # mara colere "Oh, ça va ! Tu vas pas t'y mettre toi aussi !"
+    mara colere ""
+
+# game/scenario/temps_libres.rpy:1543
+translate english mara_link_2_4b7934b7:
+
+    # noam reflexion "D'accord, je te laisse tranquille."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1544
+translate english mara_link_2_4e85215a:
+
+    # mara neutre "...Merci. Pour une fois."
+    mara neutre ""
+
+# game/scenario/temps_libres.rpy:1599
+translate english mara_link_3_01aa952f:
+
+    # noam neutre "Je peux rester sans poser de questions."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1600
+translate english mara_link_3_2469b844:
+
+    # mara sourire "C'est peut-être ce qu'il y a de mieux à faire."
+    mara sourire ""
+
+# game/scenario/temps_libres.rpy:1604
+translate english mara_link_3_2bcf3498:
+
+    # noam reflexion "Tu sais que t'as le droit de dire ce que tu penses ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1605
+translate english mara_link_3_5350fc9d:
+
+    # mara stress "Ouais, bah laisse-moi deux minutes avant, d'accord ?"
+    mara stress ""
+
+# game/scenario/temps_libres.rpy:1609
+translate english mara_link_3_c0358d44:
+
+    # noam reflexion "Dès que ça te touche, tu fais une blague."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1610
+translate english mara_link_3_fdd443ad:
+
+    # mara hesitation "...Ferme-la, Noam. Mais bouge pas."
+    mara hesitation ""
+
+# game/scenario/temps_libres.rpy:1662
+translate english ryn_link_1_d548c196:
+
+    # noam neutre "Je surveille l'entrée, repose-toi."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1663
+translate english ryn_link_1_88f4c81b:
+
+    # ryn neutre "D'accord. Mais au moindre bruit, tu m'appelles."
+    ryn neutre ""
+
+# game/scenario/temps_libres.rpy:1667
+translate english ryn_link_1_22466ed9:
+
+    # noam reflexion "Si tu me fais pas confiance, viens vérifier toi-même."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1668
+translate english ryn_link_1_ff3159d8:
+
+    # ryn rire "Ça, c'est une réponse qui me plaît davantage."
+    ryn rire ""
+
+# game/scenario/temps_libres.rpy:1725
+translate english ryn_link_2_641e2a19:
+
+    # noam neutre "Attends, je vais essayer autrement."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1726
+translate english ryn_link_2_d13c93fa:
+
+    # ryn sourire "Là ! C'est déjà moins ridicule !"
+    ryn sourire ""
+
+# game/scenario/temps_libres.rpy:1730
+translate english ryn_link_2_22e93e90:
+
+    # noam reflexion "Laisse-moi le temps de comprendre."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1731
+translate english ryn_link_2_94c43c42:
+
+    # ryn desaccord "En face, personne te laissera ce temps-là."
+    ryn desaccord ""
+
+# game/scenario/temps_libres.rpy:1777
+translate english ryn_link_3_9a877b09:
+
+    # ryn neutre "Je préfère qu'ils me détestent et qu'ils soient en vie."
+    ryn neutre ""
+
+# game/scenario/temps_libres.rpy:1778
+translate english ryn_link_3_72c57859:
+
+    # ryn triste "Un mort, il revient pas."
+    ryn triste ""
+
+# game/scenario/temps_libres.rpy:1782
+translate english ryn_link_3_e8938a2a:
+
+    # noam neutre "Tu peux aussi les laisser décider, de temps en temps."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1783
+translate english ryn_link_3_8073af2e:
+
+    # ryn neutre "C'est facile à dire quand c'est pas toi qui risques de perdre quelqu'un."
+    ryn neutre ""
+
+# game/scenario/temps_libres.rpy:1787
+translate english ryn_link_3_f068c567:
+
+    # noam reflexion "Et qui te protège, toi ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1788
+translate english ryn_link_3_ff9761d7:
+
+    # ryn surpris "...Quoi ? De quoi tu parles ?"
+    ryn surpris ""
+
+# game/scenario/temps_libres.rpy:1812
+translate english sael_link_1_478817c0:
+
+    # sael desaccord "Si quelqu'un se blesse loin d'ici, il faudra le soigner sur place."
+    sael desaccord ""
+
+# game/scenario/temps_libres.rpy:1818
+translate english sael_link_1_01d74a24:
+
+    # sael mefiant "Il faut le recharger, et il peut casser. Une attelle, non."
+    sael mefiant ""
+
+# game/scenario/temps_libres.rpy:1820
+translate english sael_link_1_2e83ceea:
+
+    # sael neutre "J'ai rien contre les outils utiles. J'ai un problème avec ceux dont on ne sait plus se passer."
+    sael neutre ""
+
+# game/scenario/temps_libres.rpy:1835
+translate english sael_link_1_f61c40e6:
+
+    # noam neutre "Je comprends pourquoi tu gardes cette fiole."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1836
+translate english sael_link_1_f605b714:
+
+    # sael neutre "Bien. Alors ne me demande pas de la jeter."
+    sael neutre ""
+
+# game/scenario/temps_libres.rpy:1840
+translate english sael_link_1_6dc2c92f:
+
+    # noam reflexion "Je préférerais qu'on trouve une autre solution."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1841
+translate english sael_link_1_dbf20e49:
+
+    # sael reflechit "Moi aussi. Mais on ne choisit pas toujours."
+    sael reflechit ""
+
+# game/scenario/temps_libres.rpy:1869
+translate english sael_link_2_4e989c90:
+
+    # sael joie "Avec toutes ces lumières, on ne voit même plus les étoiles. Je préfère quand elles sont éteintes."
+    sael joie ""
+
+# game/scenario/temps_libres.rpy:1871
+translate english sael_link_2_30e846b6:
+
+    # sael raison "Je dis pas qu'il faut s'en passer. Je dis qu'il faut savoir faire sans."
+    sael raison ""
+
+# game/scenario/temps_libres.rpy:1886
+translate english sael_link_2_5dcdd73a:
+
+    # noam neutre "Je peux t'aider à remettre les chaises."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1887
+translate english sael_link_2_1562900a:
+
+    # sael sourire "Fais ça. Et regarde où tu mets les pieds."
+    sael sourire ""
+
+# game/scenario/temps_libres.rpy:1891
+translate english sael_link_2_4eedd912:
+
+    # noam reflexion "Tu vérifies toujours tout comme ça ?"
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1892
+translate english sael_link_2_9cd56f16:
+
+    # sael neutre "Seulement ce qui peut blesser quelqu'un."
+    sael neutre ""
+
+# game/scenario/temps_libres.rpy:1915
+translate english sael_link_3_5ac82ba5:
+
+    # noam taquin "On est dans l'espace, Sael. Tu vas pas pouvoir le poser par terre."
+    noam taquin ""
+
+# game/scenario/temps_libres.rpy:1919
+translate english sael_link_3_6dac2fbc:
+
+    # noam neutre "Que c'est pas bien de prendre le pain des autres ?"
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1936
+translate english sael_link_3_5aa7f887:
+
+    # noam neutre "Alors je laisse le mien aussi."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1942
+translate english sael_link_3_b8059b6c:
+
+    # noam neutre "Je vais laisser ce morceau avec les tiens."
+    noam neutre ""
+
+# game/scenario/temps_libres.rpy:1943
+translate english sael_link_3_4fc3029e:
+
+    # sael sourire "Alors laisse-le jusqu'à la fin du repas."
+    sael sourire ""
+
+# game/scenario/temps_libres.rpy:1947
+translate english sael_link_3_30cef6c8:
+
+    # noam reflexion "C'est pas une tradition de chez moi, mais je comprends."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1948
+translate english sael_link_3_2e1f638d:
+
+    # sael neutre "C'est tout ce que je demande."
+    sael neutre ""
+
+# game/scenario/temps_libres.rpy:1952
+translate english sael_link_3_cf8423f9:
+
+    # noam reflexion "J'y crois pas vraiment, mais je vois pourquoi tu le fais."
+    noam reflexion ""
+
+# game/scenario/temps_libres.rpy:1953
+translate english sael_link_3_3096fb11:
+
+    # sael surpris "...C'est plus que ce que j'attendais de toi."
+    sael surpris ""
+
+translate english strings:
+
+    # game/scenario/temps_libres.rpy:43
+    old "Promis, je touche plus à ton café."
+    new ""
+
+    # game/scenario/temps_libres.rpy:43
+    old "Tu crois qu'on tiendra longtemps ici ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:92
+    old "On peut essayer de repérer la tour avec les lumières."
+    new ""
+
+    # game/scenario/temps_libres.rpy:92
+    old "Tu me raconteras ce qui te manque le plus là-bas ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:146
+    old "On devrait sortir avant le prochain tir."
+    new ""
+
+    # game/scenario/temps_libres.rpy:146
+    old "Si tu veux parler, je suis là."
+    new ""
+
+    # game/scenario/temps_libres.rpy:210
+    old "La prochaine fois, je vais te surveiller."
+    new ""
+
+    # game/scenario/temps_libres.rpy:210
+    old "Tu triches même pour un baby-foot ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:259
+    old "J'aurais jamais réussi à recoudre ça aussi proprement."
+    new ""
+
+    # game/scenario/temps_libres.rpy:259
+    old "Il reste quand même un petit défaut, là."
+    new ""
+
+    # game/scenario/temps_libres.rpy:324
+    old "T'as pas besoin de te donner autant de mal pour attirer l'attention."
+    new ""
+
+    # game/scenario/temps_libres.rpy:324
+    old "Alors dessine-moi comme tu me vois vraiment."
+    new ""
+
+    # game/scenario/temps_libres.rpy:324
+    old "Tu dessines les autres parce que t'arrives pas à te dessiner ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:392
+    old "On peut peut-être sauver la recette."
+    new ""
+
+    # game/scenario/temps_libres.rpy:392
+    old "Ta mère aurait surtout aimé cuisiner avec toi."
+    new ""
+
+    # game/scenario/temps_libres.rpy:451
+    old "Si quelqu'un râle, je dirai que c'est ma faute."
+    new ""
+
+    # game/scenario/temps_libres.rpy:451
+    old "On devrait demander aux autres ce qu'ils préfèrent."
+    new ""
+
+    # game/scenario/temps_libres.rpy:512
+    old "On arrête, tu commences à fatiguer."
+    new ""
+
+    # game/scenario/temps_libres.rpy:512
+    old "Encore une minute et on rentre, d'accord ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:575
+    old "Allez, montre-moi comment tu fais."
+    new ""
+
+    # game/scenario/temps_libres.rpy:575
+    old "T'as peur de perdre contre moi ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:642
+    old "Tu ferais pareil si c'était moi ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:642
+    old "Je vais ranger le matériel, va te poser."
+    new ""
+
+    # game/scenario/temps_libres.rpy:708
+    old "Passe-moi les serviettes, je m'en occupe."
+    new ""
+
+    # game/scenario/temps_libres.rpy:708
+    old "Tu pouvais dire que tu voulais aider Elen, tu sais."
+    new ""
+
+    # game/scenario/temps_libres.rpy:708
+    old "Le pied est tordu, les serviettes vont pas suffire."
+    new ""
+
+    # game/scenario/temps_libres.rpy:768
+    old "La paix, oui. Mais à quel prix ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:768
+    old "Tu devais être terrifié ce jour-là."
+    new ""
+
+    # game/scenario/temps_libres.rpy:824
+    old "Fais une liste plus courte. Trois points, pas vingt."
+    new ""
+
+    # game/scenario/temps_libres.rpy:824
+    old "Garde ta liste, elle te rassure."
+    new ""
+
+    # game/scenario/temps_libres.rpy:887
+    old "Le chrono démarre quand tu commandes."
+    new ""
+
+    # game/scenario/temps_libres.rpy:887
+    old "Je choisis pour toi la prochaine fois."
+    new ""
+
+    # game/scenario/temps_libres.rpy:946
+    old "On peut partager le poids."
+    new ""
+
+    # game/scenario/temps_libres.rpy:946
+    old "Tu avais déjà calculé combien je pouvais porter ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:995
+    old "Tu veux que je te dise ce que j'en pense, c'est ça ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:995
+    old "On peut être en désaccord sans se manipuler."
+    new ""
+
+    # game/scenario/temps_libres.rpy:995
+    old "Ton raisonnement oublie ceux qui paient le prix."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1059
+    old "D'accord, reprenons tout depuis le début."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1059
+    old "Dis-moi plutôt ce qui t'inquiète."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1120
+    old "On va attendre que ça finisse ensemble."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1120
+    old "Tu penses que ça vient de quel composant ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1180
+    old "On peut écouter sans parler, tu sais."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1180
+    old "Cette musique te rappelle quelque chose ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1233
+    old "Si on rentre, je t'emmène voir une vraie averse."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1233
+    old "Pour toi, c'est complètement nouveau, en fait."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1294
+    old "Je prends le sac, mais tu me dois une revanche."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1294
+    old "Tu peux pas t'empêcher de réparer des trucs, hein ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1356
+    old "Tu t'en es bien sorti, arrête de râler."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1356
+    old "La prochaine fois, on vérifie avant de démarrer."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1418
+    old "Je te passe les outils si tu veux."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1418
+    old "Et si tu laissais quelqu'un d'autre réparer ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1481
+    old "On remet ça, mais sans gage débile."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1481
+    old "Tu proposes quoi comme gage, cette fois ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1536
+    old "Arrête. Ça se voit que ça te touche."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1536
+    old "D'accord, je te laisse tranquille."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1597
+    old "Je peux rester sans poser de questions."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1597
+    old "Tu sais que t'as le droit de dire ce que tu penses ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1597
+    old "Dès que ça te touche, tu fais une blague."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1660
+    old "Je surveille l'entrée, repose-toi."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1660
+    old "Si tu me fais pas confiance, viens vérifier toi-même."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1723
+    old "Attends, je vais essayer autrement."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1723
+    old "Laisse-moi le temps de comprendre."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1780
+    old "Tu peux aussi les laisser décider, de temps en temps."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1780
+    old "Et qui te protège, toi ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1833
+    old "Je comprends pourquoi tu gardes cette fiole."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1833
+    old "Je préférerais qu'on trouve une autre solution."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1884
+    old "Je peux t'aider à remettre les chaises."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1884
+    old "Tu vérifies toujours tout comme ça ?"
+    new ""
+
+    # game/scenario/temps_libres.rpy:1940
+    old "Je vais laisser ce morceau avec les tiens."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1940
+    old "C'est pas une tradition de chez moi, mais je comprends."
+    new ""
+
+    # game/scenario/temps_libres.rpy:1940
+    old "J'y crois pas vraiment, mais je vois pourquoi tu le fais."
+    new ""
+

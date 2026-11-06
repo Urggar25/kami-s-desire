@@ -2250,3 +2250,95 @@ translate english d7f95c22:
     # think "Pourquoi tu étais dans cette chambre ?"
     think "Why were you in that room?"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/8_1_0_0.rpy:19
+translate english bc8f780c_2:
+
+    # noam reflexion "..."
+    noam reflexion ""
+
+# game/scenario/8_1_0_0.rpy:84
+translate english a53c02c6_5:
+
+    # noam surpris "..."
+    noam surpris ""
+
+# game/scenario/8_1_0_0.rpy:153
+translate english 34e0a9a3_4:
+
+    # noam surpris "Quoi ?"
+    noam surpris ""
+
+# game/scenario/8_1_0_0.rpy:181
+translate english bc8f780c_3:
+
+    # noam reflexion "..."
+    noam reflexion ""
+
+# game/scenario/8_1_0_0.rpy:257
+translate english 83c08a88_1:
+
+    # noam surpris "Moi ?"
+    noam surpris ""
+
+# game/scenario/8_1_0_0.rpy:414
+translate english 27923e2c_1:
+
+    # "Elle relève les yeux vers moi."
+    ""
+
+# game/scenario/8_1_0_0.rpy:442
+translate english 6ce7f6ed_1:
+
+    # "Iris ne répond rien."
+    ""
+
+# game/scenario/8_1_0_0.rpy:490
+translate english 59aecd40_2:
+
+    # iris "Non."
+    iris ""
+
+# game/scenario/8_1_0_0.rpy:500
+translate english 1e8df67b_1:
+
+    # "Cette fois, personne ne plaisante."
+    ""
+
+# game/scenario/8_1_0_0.rpy:572
+translate english 78c6b46a_3:
+
+    # noam fatigue "..."
+    noam fatigue ""
+
+# game/scenario/8_1_0_0.rpy:662
+translate english 03bdde15_1:
+
+    # noam "Ah."
+    noam ""
+
+# game/scenario/8_1_0_0.rpy:751
+translate english a53c02c6_6:
+
+    # noam surpris "..."
+    noam surpris ""
+
+# game/scenario/8_1_0_0.rpy:787
+translate english daf4fff8_8:
+
+    # think "..."
+    think ""
+
+# game/scenario/8_1_0_0.rpy:848
+translate english 621c6923:
+
+    # think "Ryn."
+    think ""
+
+# game/scenario/8_1_0_0.rpy:850
+translate english cdba5b76_1:
+
+    # "Je fixe le plafond."
+    ""
+

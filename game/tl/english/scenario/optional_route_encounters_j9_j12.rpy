@@ -1,0 +1,378 @@
+﻿# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:6
+translate english KD_ROUTE_J9_ELEN_edca3aad:
+
+    # "Elen sort de sa chambre en ajustant sa veste. Elle ralentit en me voyant."
+    ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:10
+translate english KD_ROUTE_J9_ELEN_7bc841e7:
+
+    # elen inquiet "Tu crois que maintenant que Kami est revenue, tout va recommencer comme avant ?"
+    elen inquiet ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:11
+translate english KD_ROUTE_J9_ELEN_88362704:
+
+    # noam reflexion "Avant quoi ?"
+    noam reflexion ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:12
+translate english KD_ROUTE_J9_ELEN_00df9252:
+
+    # elen "Avant sa panne. Les annonces, les votes, les journées qui se ressemblent..."
+    elen ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:13
+translate english KD_ROUTE_J9_ELEN_a616600f:
+
+    # noam "Elle a déjà repris ses habitudes, non ?"
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:14
+translate english KD_ROUTE_J9_ELEN_a9344fc2:
+
+    # elen triste "Oui, mais pendant deux jours j'ai cru qu'on allait enfin pouvoir souffler."
+    elen triste ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:15
+translate english KD_ROUTE_J9_ELEN_9236b12f:
+
+    # noam "Moi aussi."
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:16
+translate english KD_ROUTE_J9_ELEN_1725bc9f:
+
+    # elen sourire "Bon. On ferait mieux d'y aller avant qu'elle nous reproche d'être en retard."
+    elen sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:17
+translate english KD_ROUTE_J9_ELEN_228e2806:
+
+    # noam sourire "Ce serait bien son genre."
+    noam sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:25
+translate english KD_ROUTE_J9_TOMAS_253c5c48:
+
+    # "Tomas consulte sa tablette près d'un croisement. Il relève les yeux quand j'approche."
+    ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:29
+translate english KD_ROUTE_J9_TOMAS_7b29f83d:
+
+    # tomas reflexion "Noam, tu peux me dire si cette formulation est claire ?"
+    tomas reflexion ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:30
+translate english KD_ROUTE_J9_TOMAS_cda182ef:
+
+    # noam "Tu travailles encore sur le texte ?"
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:31
+translate english KD_ROUTE_J9_TOMAS_1853a2cb:
+
+    # tomas "Je vérifie qu'on parle bien de la même chose quand on dit « rétablir les échanges »."
+    tomas ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:32
+translate english KD_ROUTE_J9_TOMAS_effff413:
+
+    # noam "Tu devrais peut-être poser la question pendant le débat."
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:33
+translate english KD_ROUTE_J9_TOMAS_aa93d33f:
+
+    # tomas inquiet "Justement. J'aimerais éviter qu'on découvre après le vote que chacun avait compris autre chose."
+    tomas inquiet ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:34
+translate english KD_ROUTE_J9_TOMAS_338f5c3c:
+
+    # noam reflexion "Alors dis-le comme ça. Tout le monde comprendra."
+    noam reflexion ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:35
+translate english KD_ROUTE_J9_TOMAS_77d91ff4:
+
+    # tomas sourire "C'est probablement plus simple que les trois phrases que j'avais préparées."
+    tomas sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:36
+translate english KD_ROUTE_J9_TOMAS_727f395a:
+
+    # noam taquin "Tu vois, je suis utile."
+    noam taquin ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:44
+translate english KD_ROUTE_J10_LYSA_7d6ad236:
+
+    # "Lysa apparaît au bout du couloir. Son regard s'arrête immédiatement sur mon visage."
+    ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:48
+translate english KD_ROUTE_J10_LYSA_f0314977:
+
+    # lysa blase "Tu as dormi ou tu as passé la nuit à te battre avec ton oreiller ?"
+    lysa blase ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:49
+translate english KD_ROUTE_J10_LYSA_d3f56390:
+
+    # noam "J'ai connu de meilleures nuits."
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:50
+translate english KD_ROUTE_J10_LYSA_6388fee3:
+
+    # lysa "Ça se voit. T'as une tête à faire peur à Goumi."
+    lysa ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:51
+translate english KD_ROUTE_J10_LYSA_8028a065:
+
+    # noam taquin "Merci, ça m'aide beaucoup."
+    noam taquin ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:52
+translate english KD_ROUTE_J10_LYSA_a2da7cb9:
+
+    # lysa neutre "Je plaisante, mais t'as vraiment l'air mal. Il s'est passé quelque chose ?"
+    lysa neutre ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:53
+translate english KD_ROUTE_J10_LYSA_6ac70416:
+
+    # noam hesitation "J'essaie encore de comprendre."
+    noam hesitation ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:54
+translate english KD_ROUTE_J10_LYSA_2a999567:
+
+    # lysa "D'accord. Mange quelque chose au moins, avant de t'écrouler."
+    lysa ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:55
+translate english KD_ROUTE_J10_LYSA_fc0bc656:
+
+    # noam "C'est ce que je comptais faire."
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:63
+translate english KD_ROUTE_J10_JULIAN_c89fa6ac:
+
+    # "Julian est près de l'entrée de la salle commune. Il lève une main pour m'arrêter."
+    ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:67
+translate english KD_ROUTE_J10_JULIAN_8367724c:
+
+    # julian sourire "Avant de rentrer, tu es plutôt pour ou contre ?"
+    julian sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:68
+translate english KD_ROUTE_J10_JULIAN_91e69bcd:
+
+    # noam "Pour ou contre quoi, exactement ?"
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:69
+translate english KD_ROUTE_J10_JULIAN_522dde66:
+
+    # julian "Le prochain vote. J'essaie de prendre la température avant que Tomas sorte ses dossiers."
+    julian ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:70
+translate english KD_ROUTE_J10_JULIAN_3dc94f22:
+
+    # noam reflexion "J'aimerais surtout entendre les arguments."
+    noam reflexion ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:71
+translate english KD_ROUTE_J10_JULIAN_dde42780:
+
+    # julian taquin "La réponse préférée des gens qui ne veulent pas se mouiller."
+    julian taquin ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:72
+translate english KD_ROUTE_J10_JULIAN_1c51739c:
+
+    # noam "Et toi, t'as choisi ?"
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:73
+translate english KD_ROUTE_J10_JULIAN_8695854e:
+
+    # julian hesitation "Pas vraiment. Mais j'avais envie de savoir si j'étais le seul."
+    julian hesitation ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:74
+translate english KD_ROUTE_J10_JULIAN_c7b8eede:
+
+    # noam sourire "On est au moins deux."
+    noam sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:75
+translate english KD_ROUTE_J10_JULIAN_9e8efae0:
+
+    # julian sourire "Parfait. Une coalition historique."
+    julian sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:83
+translate english KD_ROUTE_J11_NYRA_ec69c085:
+
+    # "Nyra sort d'un couloir latéral et s'arrête en remarquant ma démarche."
+    ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:87
+translate english KD_ROUTE_J11_NYRA_5ad7bb90:
+
+    # nyra "Tu es sûr de pouvoir marcher jusque-là ?"
+    nyra ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:88
+translate english KD_ROUTE_J11_NYRA_a4454ded:
+
+    # noam "Oui. Pourquoi ?"
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:89
+translate english KD_ROUTE_J11_NYRA_9e86033f:
+
+    # nyra raison "Tu tiens à peine debout. Tu as dormi combien d'heures ?"
+    nyra raison ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:90
+translate english KD_ROUTE_J11_NYRA_81a069ff:
+
+    # noam "J'en sais rien. Pas assez."
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:91
+translate english KD_ROUTE_J11_NYRA_3181ecb7:
+
+    # nyra "Alors évite de prendre une décision importante dans cet état."
+    nyra ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:92
+translate english KD_ROUTE_J11_NYRA_fdffe582:
+
+    # noam desaccord "Je vais simplement vérifier quelque chose."
+    noam desaccord ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:93
+translate english KD_ROUTE_J11_NYRA_63d86e73:
+
+    # nyra reflexion "Dans ce cas, note ce que tu sais avant de commencer. Avec la fatigue, on mélange vite ce qu'on a vu et ce qu'on suppose."
+    nyra reflexion ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:94
+translate english KD_ROUTE_J11_NYRA_a84be97b:
+
+    # noam fatigue "Je vais essayer."
+    noam fatigue ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:95
+translate english KD_ROUTE_J11_NYRA_087eb7ed:
+
+    # nyra "Et demande de l'aide si tu te sens mal."
+    nyra ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:103
+translate english KD_ROUTE_J12_JULIAN_bf2f65dc:
+
+    # "Julian rejoint le croisement au même moment que moi, une tablette serrée sous le bras."
+    ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:107
+translate english KD_ROUTE_J12_JULIAN_e3666528:
+
+    # julian "Alors, tu sais ce que tu vas voter ?"
+    julian ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:108
+translate english KD_ROUTE_J12_JULIAN_b126ab1f:
+
+    # noam reflexion "Pas complètement."
+    noam reflexion ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:109
+translate english KD_ROUTE_J12_JULIAN_3ad9518d:
+
+    # julian "Ça me rassure presque. J'ai l'impression que tout le monde a déjà choisi son camp."
+    julian ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:110
+translate english KD_ROUTE_J12_JULIAN_722170c8:
+
+    # noam "Toi aussi ?"
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:111
+translate english KD_ROUTE_J12_JULIAN_8c130a33:
+
+    # julian hesitation "Je croyais. Plus on approche de la salle, moins j'en suis sûr."
+    julian hesitation ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:112
+translate english KD_ROUTE_J12_JULIAN_45911ed3:
+
+    # noam "Au moins, on pourra écouter le débat."
+    noam ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:113
+translate english KD_ROUTE_J12_JULIAN_cdee1e55:
+
+    # julian sourire "Ouais. Pour une fois, je vais peut-être me taire et écouter."
+    julian sourire ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:114
+translate english KD_ROUTE_J12_JULIAN_ab3824e7:
+
+    # noam taquin "Je demande à voir."
+    noam taquin ""
+
+# game/scenario/optional_route_encounters_j9_j12.rpy:115
+translate english KD_ROUTE_J12_JULIAN_e06523fe:
+
+    # julian "Profite de cette occasion historique."
+    julian ""
+
+translate english strings:
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:7
+    old "Discuter avec Elen."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:7
+    old "Rejoindre le Conclave sans s'arrêter."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:26
+    old "Écouter Tomas."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:26
+    old "Continuer vers la salle du Conclave."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:64
+    old "Entrer dans la salle commune."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:84
+    old "Parler à Nyra."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:84
+    old "Continuer jusqu'à l'Observation."
+    new ""
+
+    # game/scenario/optional_route_encounters_j9_j12.rpy:104
+    old "Rejoindre directement le vote."
+    new ""
+

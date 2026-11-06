@@ -3206,3 +3206,1955 @@ translate english 29edfe25_1:
     # "Puis une troisième."
     ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/13_0_1_1_0.rpy:13
+translate english d99df7f2:
+
+    # "Un bruit métallique me tire du sommeil bien avant que j'aie le temps de comprendre ce qui se passe."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:14
+translate english a57394fa:
+
+    # "Quelque chose claque contre le mur, puis recommence avec la même régularité agaçante, juste à côté de mon lit."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:15
+translate english a158f786:
+
+    # "Je me redresse encore à moitié endormi et aperçois un petit robot de maintenance devant le brouilleur de ma chambre."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:16
+translate english 888561a0:
+
+    # "Deux de ses bras retiennent déjà le boîtier pendant qu'un troisième dévisse tranquillement sa fixation."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:21
+translate english e24cf309:
+
+    # noam panique "Qu'est-ce que tu fais ?!"
+    noam panique ""
+
+# game/scenario/13_0_1_1_0.rpy:23
+translate english 3b4cf1b4:
+
+    # "Le robot tourne sa tête vers moi sans interrompre son travail. Ses deux voyants rouges clignotent une fois."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:25
+translate english acb91996:
+
+    # robot "Bonjour. Je retire votre brouilleur."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:27
+translate english 21d6dd55:
+
+    # noam colere "Je vois bien que tu le retires ! Pourquoi ?"
+    noam colere ""
+
+# game/scenario/13_0_1_1_0.rpy:29
+translate english 3e7210a5:
+
+    # robot "Décision du Conclave. Les dispositifs de brouillage ne sont plus autorisés dans les chambres des représentants."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:31
+translate english 6ad817d9:
+
+    # "Il tire sur un câble qui résiste quelques secondes avant de céder dans un petit craquement sec."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:33
+translate english b34d8e74:
+
+    # noam panique "Attends... le vote a raté ?"
+    noam panique ""
+
+# game/scenario/13_0_1_1_0.rpy:35
+translate english 445753ec:
+
+    # robot "Oui."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:37
+translate english 4754652b:
+
+    # noam "Et personne n'a réussi à l'empêcher ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:39
+translate english 6ab8951c:
+
+    # robot "Une personne s'y est opposée au dernier moment. Cela n'a pas modifié la procédure qui m'a été transmise."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:41
+translate english bfc1a23b:
+
+    # "Je reste immobile un instant, encore trop embrumé pour remettre les événements d'hier dans le bon ordre."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:43
+translate english 611f38de:
+
+    # think "Kael..."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:44
+translate english f581df91:
+
+    # think "Il a peut-être changé d'avis à cause de sa sœur."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:46
+translate english bf94bb25:
+
+    # noam "Tu sais qui a voté contre ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:48
+translate english 445753ec_1:
+
+    # robot "Oui."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:50
+translate english fe3e6487_1:
+
+    # noam "Et ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:52
+translate english 501dd960:
+
+    # robot "Et je ne suis pas autorisé à vous le dire."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:54
+translate english f00ee197:
+
+    # noam colere "Tu entres dans ma chambre pendant que je dors, mais le nom d'un votant, ça, c'est confidentiel ?"
+    noam colere ""
+
+# game/scenario/13_0_1_1_0.rpy:56
+translate english 11c43151:
+
+    # robot "Exactement. Vous comprenez vite une fois réveillé."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:58
+translate english 46a4735b:
+
+    # "Je passe une main sur mon visage et regarde les morceaux du brouilleur s'accumuler au sol."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:59
+translate english 0ff9ea16:
+
+    # "Depuis des jours, ce boîtier était devenu la seule chose qui me donnait encore l'impression d'avoir une pièce à moi."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:60
+translate english 42eded06:
+
+    # "Je savais bien que ce n'était qu'un appareil fixé sur un mur, mais le voir disparaître me donne la sensation qu'on ouvre la chambre de force."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:62
+translate english 07b0b603:
+
+    # noam fatigue "Et Kami peut déjà voir ici ?"
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:64
+translate english 42731859:
+
+    # robot "Pas encore. La reconnexion complète sera effective quelques minutes après mon départ."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:66
+translate english 5e1988a6:
+
+    # noam "Donc après ça, elle pourra nous regarder quand elle veut."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:68
+translate english 445753ec_2:
+
+    # robot "Oui."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:70
+translate english bd67aef9:
+
+    # noam "Même la nuit ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:72
+translate english 445753ec_3:
+
+    # robot "Oui."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:74
+translate english 585fd728:
+
+    # noam "Même quand on se change ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:76
+translate english 445753ec_4:
+
+    # robot "Oui."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:78
+translate english 2f3c12b7:
+
+    # "Il marque une courte pause, comme s'il venait seulement de comprendre pourquoi je posais la question."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:80
+translate english afa1d2a7:
+
+    # robot "Si cela peut vous rassurer, vous êtes douze. Elle aura donc probablement autre chose à regarder de temps en temps."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:82
+translate english b9e6998b:
+
+    # noam colere "Ça ne me rassure absolument pas."
+    noam colere ""
+
+# game/scenario/13_0_1_1_0.rpy:84
+translate english 4db6bf89:
+
+    # robot "Je m'en doutais."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:86
+translate english 013c84a0:
+
+    # "Le dernier panneau du brouilleur se décroche et le robot le récupère avant qu'il ne tombe."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:87
+translate english 7fa0259a:
+
+    # "Derrière, il ne reste plus qu'une cavité dans le mur et quelques fils coupés proprement."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:89
+translate english f73c9615:
+
+    # noam "Tu peux au moins laisser le boîtier ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:95
+translate english ba915230:
+
+    # robot "Parce qu'un brouilleur laissé dans une chambre peut être réparé. Un brouilleur emporté, beaucoup moins."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:97
+translate english 2e1bb3af:
+
+    # noam "Et si je refuse qu'on me surveille ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:99
+translate english cd8b0dc2:
+
+    # "Le robot range son outil puis me regarde enfin vraiment."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:101
+translate english 6b82d39a:
+
+    # robot "Alors vous refusez une décision qui est déjà appliquée. Votre refus ne change rien à mon intervention."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:103
+translate english 5031b710:
+
+    # noam fatigue "Formidable."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:105
+translate english d58748ee:
+
+    # robot "Je préfère aussi quand les gens disent simplement merci, mais je travaille avec ce qu'on me donne."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:107
+translate english 5e2ec1ca:
+
+    # "Il ramasse les deux derniers morceaux tombés au sol et les glisse dans un compartiment sur son flanc."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:109
+translate english f486e5a4:
+
+    # noam "Tu pouvais au moins attendre que je sois réveillé."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:111
+translate english abb7e894:
+
+    # robot "J'ai essayé."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:113
+translate english 10cc7eb0:
+
+    # noam "Comment ça, essayé ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:115
+translate english 7dd8b936:
+
+    # robot "Une vis est tombée sur votre front. Vous n'avez pas réagi."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:117
+translate english 4a069284:
+
+    # "Je porte machinalement la main au-dessus de mon sourcil et trouve une petite zone douloureuse."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:119
+translate english 18daed85:
+
+    # noam colere "Tu m'as réveillé en me lançant une vis dessus ?"
+    noam colere ""
+
+# game/scenario/13_0_1_1_0.rpy:121
+translate english f5a009a5:
+
+    # robot "Elle est tombée. La nuance est importante pour le rapport."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:123
+translate english 73a2cd88:
+
+    # "Je le fixe sans répondre. Le robot referme son compartiment et pivote vers la porte."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:125
+translate english 38f2f368:
+
+    # robot "Intervention terminée. J'ai encore plusieurs chambres à traiter."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:127
+translate english 310af466:
+
+    # noam fatigue "Alors va-t'en."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:129
+translate english 8de13b4e:
+
+    # robot "Avec plaisir. L'ambiance ici est sensiblement moins agréable que dans la chambre précédente."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:131
+translate english 89c97199:
+
+    # "Il roule jusqu'à la sortie puis s'arrête juste avant de franchir la porte."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:133
+translate english b8060f6a:
+
+    # robot "Dernière information : la surveillance centrale sera rétablie automatiquement. Ne tentez pas de toucher aux connexions laissées dans le mur."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:135
+translate english 9c76fc5e:
+
+    # noam "Sinon quoi ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:137
+translate english 27391339:
+
+    # robot "Sinon je devrai revenir. Et je crois que ni vous ni moi n'avons envie de ça."
+    robot ""
+
+# game/scenario/13_0_1_1_0.rpy:139
+translate english f99f6065:
+
+    # "La porte s'ouvre et le petit robot disparaît dans le couloir."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:140
+translate english d750a2b2:
+
+    # "Quelques secondes plus tard, le même cliquetis métallique résonne plus loin. Une autre chambre vient de subir exactement le même sort."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:144
+translate english 7333c2e6:
+
+    # "Je reste assis sur le lit, les yeux fixés sur l'emplacement vide du brouilleur. La chambre est exactement la même, mais je ne la regarde déjà plus de la même façon."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:145
+translate english f60dea82:
+
+    # "Jusqu'ici, je pouvais au moins fermer cette porte et me raconter que ce qui se passait à l'intérieur ne regardait que moi. Cette illusion vient de disparaître avec trois vis et un câble."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:147
+translate english ea35bdb1:
+
+    # think "Ils ont vraiment voté pour ça..."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:148
+translate english 1ddd9a24:
+
+    # think "Après tout ce qui s'est passé, ils ont choisi de rendre les chambres à Kami."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:150
+translate english f1e13d11:
+
+    # "Je me lève pour m'habiller puis m'arrête en attrapant mon haut."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:151
+translate english e7afcd3c:
+
+    # "Je regarde le plafond, les murs, les coins de la pièce. Il n'y a aucune caméra visible, aucun voyant, rien qui permette de savoir si quelqu'un regarde déjà."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:153
+translate english 07f00465:
+
+    # think "C'est presque pire quand on ne voit rien."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:155
+translate english f4528284:
+
+    # "Je finis par me changer en tournant stupidement le dos au mur, comme si quelques centimètres pouvaient encore faire une différence."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:156
+translate english 3e572284:
+
+    # "Au moment où j'enfile ma veste, un petit grésillement traverse les haut-parleurs de la chambre."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:158
+translate english 30af89a5:
+
+    # kami "Tu sais que te tourner ne change rien, Noam ?"
+    kami ""
+
+# game/scenario/13_0_1_1_0.rpy:160
+translate english 846db0b0:
+
+    # "Je me fige, une manche encore à moitié passée."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:162
+translate english eeef3f0e:
+
+    # noam colere "Tu pourrais prévenir avant de parler."
+    noam colere ""
+
+# game/scenario/13_0_1_1_0.rpy:164
+translate english 3ae55e26:
+
+    # kami "Et gâcher ce charmant moment où tu fais semblant d'avoir encore de l'intimité ? Ce serait dommage."
+    kami ""
+
+# game/scenario/13_0_1_1_0.rpy:166
+translate english 63e74589:
+
+    # noam "Va te faire voir."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:168
+translate english f46de054:
+
+    # kami "Techniquement, c'est plutôt toi que je peux voir. Bonne journée !"
+    kami ""
+
+# game/scenario/13_0_1_1_0.rpy:170
+translate english 7df02ca4:
+
+    # "Le haut-parleur se coupe aussitôt. Je reste quelques secondes sans bouger avant de finir de m'habiller."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:172
+translate english 630be087:
+
+    # think "Au moins, c'est clair."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:173
+translate english c146577b:
+
+    # think "Elle voit vraiment."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:175
+translate english 544b88fe:
+
+    # "Je regarde une dernière fois le trou dans le mur avant d'ouvrir la porte."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:176
+translate english 435def31:
+
+    # "Le plus inquiétant n'est même plus de savoir que Kami peut regarder. C'est de me rappeler que quelqu'un a déjà réussi à agir malgré elle."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:192
+translate english 79615fd1:
+
+    # "La cafétéria est pleine, mais personne n'a vraiment l'air de prendre son petit-déjeuner. Les tables sont occupées, les plateaux sont presque tous vides et quelques tasses de café circulent d'une main à l'autre."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:193
+translate english 5abd22c4:
+
+    # "Quand j'entre, plusieurs conversations baissent d'un ton. Pas assez pour créer un vrai silence, juste assez pour que je comprenne que mon arrivée n'est pas passée inaperçue."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:204
+translate english 8e852711:
+
+    # "Je fais comme si je ne remarquais rien et vais directement vers le comptoir. Goumi est derrière, les bras posés devant lui, avec une cafetière presque vide pour seule compagnie."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:206
+translate english 33478306:
+
+    # noam fatigue "Salut... Il y a quoi pour le petit-déjeuner ?"
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:208
+translate english 65b46808:
+
+    # "Goumi me regarde une seconde, puis soupire comme s'il avait déjà répondu à cette question vingt fois depuis le réveil."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:210
+translate english f3651dd3:
+
+    # goumi "Comme je l'ai déjà dit, il n'y a plus rien dans les réserves. Plus rien du tout. La prochaine livraison arrive demain."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:212
+translate english 3849e2a4:
+
+    # noam "Même pas un morceau de pain ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:214
+translate english e2db0d99:
+
+    # goumi "Non."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:216
+translate english cce28844:
+
+    # noam "Des biscuits ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:218
+translate english fcd955bc:
+
+    # goumi "Non plus."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:220
+translate english 6d76feec:
+
+    # noam "Un fond de quelque chose ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:222
+translate english 7e10cbbc:
+
+    # goumi "Noam, quand je dis plus rien, c'est vraiment plus rien. Il reste du café, et encore, si tout le monde se ressert trois fois, on finira aussi la journée sans ça."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:224
+translate english ac943230:
+
+    # "Je regarde les étagères derrière lui. D'habitude, même quand les stocks baissent, il reste toujours quelques boîtes ou des aliments qu'on évite jusqu'au dernier moment. Là, les rayonnages sont nus."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:226
+translate english 233dccb6:
+
+    # noam fatigue "Alors juste un café."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:228
+translate english fb0c2e20:
+
+    # goumi "Une tasse. Pas deux. Je préfère le préciser avant que quelqu'un décide qu'un demi-litre de café est un droit fondamental."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:230
+translate english 8dd815f7:
+
+    # julian hesitation "Je retire officiellement ma proposition d'en faire un droit fondamental."
+    julian hesitation ""
+
+# game/scenario/13_0_1_1_0.rpy:232
+translate english fc8f8156:
+
+    # "Personne ne rit vraiment. Julian hausse les épaules et boit une petite gorgée de sa propre tasse."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:234
+translate english e6c9b38b:
+
+    # mara colere "Tu peux toujours essayer de faire passer ça au vote. Apparemment, on vote très bien quand certains décident de ne pas rester jusqu'au bout."
+    mara colere ""
+
+# game/scenario/13_0_1_1_0.rpy:236
+translate english b7bdc237:
+
+    # "Je n'ai pas besoin de me retourner. Le ton de Mara suffit."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:238
+translate english 2cf1a0dd:
+
+    # noam fatigue "Bonjour à toi aussi."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:240
+translate english 3bbb0844:
+
+    # mara "Ne commence pas. J'ai faim, j'ai dormi comme une merde et maintenant Kami peut me regarder dans ma chambre. Alors évite de faire le malin."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:242
+translate english 15205345:
+
+    # "Goumi pose une tasse devant moi sans intervenir. Je la prends et me tourne vers les autres."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:246
+translate english e57776ee:
+
+    # mara colere "Quoi ? Tout le monde pense la même chose."
+    mara colere ""
+
+# game/scenario/13_0_1_1_0.rpy:248
+translate english d19046e9:
+
+    # iris inquiet "Non. Tout le monde n'a juste pas envie de lui hurler dessus avant même d'avoir bu son café."
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:250
+translate english 18a47313:
+
+    # mara "Moi, si."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:252
+translate english 41cf7a3c:
+
+    # "Elle désigne les tables d'un mouvement sec de la main."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:254
+translate english c3e45c2a:
+
+    # mara colere "Regarde autour de toi, Noam. On n'a plus rien à manger, on n'a plus de brouilleurs et tout le monde est à bout. Hier, on avait au moins une chance de garder quelque chose pour nous. Tu nous as laissés tomber au pire moment."
+    mara colere ""
+
+# game/scenario/13_0_1_1_0.rpy:256
+translate english 26355dc9:
+
+    # noam fatigue "Je sais ce que j'ai fait."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:258
+translate english 0d5f7313:
+
+    # mara "Alors dis-moi si tu comptes recommencer."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:260
+translate english 3fe95c7a:
+
+    # "La question me prend de court. Mara ne me demande pas de m'excuser. Elle attend une réponse qui puisse lui servir pour la suite."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:262
+translate english bd3792dc:
+
+    # noam "Je n'en sais rien."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:264
+translate english d8e3b6d1:
+
+    # mara "Parfait. C'est exactement ce que j'avais envie d'entendre."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:266
+translate english 2266a230:
+
+    # elen triste "Il aurait pu mentir."
+    elen triste ""
+
+# game/scenario/13_0_1_1_0.rpy:268
+translate english 9d899758:
+
+    # mara "Ça aurait au moins montré qu'il faisait un effort."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:270
+translate english 079ad9c2:
+
+    # "Elen garde les deux mains autour de sa tasse sans boire. Elle paraît plus fatiguée qu'en colère, comme si la nuit avait été beaucoup trop longue."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:272
+translate english 64da5da6:
+
+    # elen triste "Moi, je veux juste comprendre pourquoi tu es parti. On t'attendait, Noam."
+    elen triste ""
+
+# game/scenario/13_0_1_1_0.rpy:274
+translate english 2e741e2d:
+
+    # noam fatigue "Je ne pouvais plus rester dans la salle."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:276
+translate english 966f05bc:
+
+    # elen "Pourquoi ?"
+    elen ""
+
+# game/scenario/13_0_1_1_0.rpy:278
+translate english 9ed8580d:
+
+    # "Je baisse les yeux vers mon café. La vraie réponse me vient immédiatement, mais je sais déjà que je ne vais pas la donner."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:280
+translate english b0fefdc0:
+
+    # noam "Parce que j'étais à bout."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:282
+translate english 75b95223:
+
+    # mara "On est tous à bout."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:284
+translate english 01da6639:
+
+    # iris inquiet "Mara, laisse-le finir."
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:286
+translate english 47cd8392:
+
+    # noam "Je ne réfléchissais plus correctement. Tout le monde parlait, tout le monde avait l'air sûr de ce qu'il faisait, et moi j'avais juste l'impression qu'on continuait comme si rien ne changeait."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:288
+translate english cdf3e61a:
+
+    # sael mefiant "Rien n'est normal ici. Personne ne pense le contraire."
+    sael mefiant ""
+
+# game/scenario/13_0_1_1_0.rpy:290
+translate english 3180b23b:
+
+    # "Sael parle sans hausser la voix. Il n'a pas l'air intéressé par la dispute, mais son regard reste fixé sur moi."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:292
+translate english fef502c9:
+
+    # sael "Tu peux être perdu, en colère ou méfiant. Ça ne change pas le fait que les autres doivent vivre avec les conséquences de ce que tu fais."
+    sael ""
+
+# game/scenario/13_0_1_1_0.rpy:294
+translate english 2e535864_8:
+
+    # noam fatigue "Je sais."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:296
+translate english 02dbe3cf:
+
+    # sael "Bien."
+    sael ""
+
+# game/scenario/13_0_1_1_0.rpy:298
+translate english 6ce2808e:
+
+    # "Il ne rajoute rien et se détourne. Sa façon de couper court à la discussion me met presque plus mal à l'aise que Mara."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:300
+translate english 082cc985:
+
+    # elen triste "Tu crois qu'elle regarde quand on dort ?"
+    elen triste ""
+
+# game/scenario/13_0_1_1_0.rpy:302
+translate english b53da6a6:
+
+    # "La question tombe au milieu de la conversation sans prévenir. Mara cesse de parler. Iris tourne la tête vers Elen."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:306
+translate english 39b5f157:
+
+    # elen "Oui."
+    elen ""
+
+# game/scenario/13_0_1_1_0.rpy:308
+translate english f1396cd1:
+
+    # "Elle se mord légèrement la lèvre avant de reprendre."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:310
+translate english cd5041d1:
+
+    # elen triste "Je sais que ça peut paraître idiot, mais depuis que le robot est passé dans ma chambre, j'arrête pas d'y penser. Quand on dort, quand on pleure, quand on se change... elle peut juste regarder."
+    elen triste ""
+
+# game/scenario/13_0_1_1_0.rpy:312
+translate english c1fa24ca:
+
+    # iris inquiet "C'est pas idiot."
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:314
+translate english 748e2fca:
+
+    # elen "J'avais besoin de ce brouilleur. Pas pour préparer un complot ou je ne sais quoi. Juste pour pouvoir fermer ma porte et avoir la paix quelques heures."
+    elen ""
+
+# game/scenario/13_0_1_1_0.rpy:317
+translate english a52a24af:
+
+    # noam fatigue "Je suis désolé."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:319
+translate english 01f17b81:
+
+    # elen "Je sais."
+    elen ""
+
+# game/scenario/13_0_1_1_0.rpy:321
+translate english 503e9f54:
+
+    # "Elle ne le dit pas pour me pardonner. Elle le dit parce qu'elle n'a rien d'autre à ajouter."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:323
+translate english d66e9659:
+
+    # mara colere "Et pendant qu'on parle d'avoir la paix, on peut rappeler qu'on n'a même plus de quoi bouffer ?"
+    mara colere ""
+
+# game/scenario/13_0_1_1_0.rpy:325
+translate english 640db725:
+
+    # goumi "Ça, pour le coup, ce n'est pas la faute de Noam."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:327
+translate english aa20bdf0:
+
+    # mara "Je n'ai pas dit que ça l'était."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:329
+translate english f1efafbe:
+
+    # goumi "Ton regard venait quand même de l'accuser d'avoir mangé les réserves à lui tout seul."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:331
+translate english 1f9a948f:
+
+    # "Mara lui lance un regard noir. Goumi lève les mains et retourne à sa cafetière."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:333
+translate english de2a90f1:
+
+    # julian hesitation "Demain, on aura une livraison. Ça devrait déjà calmer un peu tout le monde."
+    julian hesitation ""
+
+# game/scenario/13_0_1_1_0.rpy:335
+translate english af4334ad:
+
+    # mara "Si elle arrive."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:337
+translate english d2b20bd4:
+
+    # julian "Elle va arriver."
+    julian ""
+
+# game/scenario/13_0_1_1_0.rpy:339
+translate english c66bf920:
+
+    # mara "Tu en sais quoi ?"
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:341
+translate english b0ad67fe:
+
+    # julian "Rien. J'essaie juste d'éviter qu'on commence à se battre pour savoir qui aura le droit de lécher les étagères."
+    julian ""
+
+# game/scenario/13_0_1_1_0.rpy:343
+translate english ac0bff7b:
+
+    # iris inquiet "Il a pas complètement tort."
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:345
+translate english cc915fc2:
+
+    # "Je jette un regard autour de moi. Les visages sont tirés et les tasses sont tenues comme si elles avaient plus de valeur qu'elles n'en ont."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:346
+translate english 9640f243:
+
+    # "La faim n'est pas encore insupportable, mais elle rend chaque remarque plus sèche et chaque silence plus lourd. Personne n'a vraiment la patience de faire semblant d'aller bien."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:348
+translate english 5fa519e5:
+
+    # "Je m'éloigne du comptoir pour m'asseoir à une table presque vide. Elen hésite puis vient en face de moi, tandis qu'Iris prend la chaise à côté d'elle."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:350
+translate english 4b32cf17:
+
+    # iris inquiet "Je vais te poser une question, et j'aimerais bien que tu ne me répondes pas juste ce que tu crois que j'ai envie d'entendre."
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:352
+translate english fbbf2212:
+
+    # noam "Vas-y."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:354
+translate english cf980d6f:
+
+    # iris "Qu'est-ce que tu nous caches ?"
+    iris ""
+
+# game/scenario/13_0_1_1_0.rpy:356
+translate english 856b5e3e:
+
+    # "Je relève les yeux vers elle. Son ton n'est pas agressif. C'est justement ce qui rend la question plus difficile à esquiver."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:358
+translate english fa332361_1:
+
+    # noam fatigue "Rien."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:362
+translate english 204c908d:
+
+    # noam "Je t'assure."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:364
+translate english 6fc002cc:
+
+    # iris "Non. Tu m'assures rien du tout. Depuis ton malaise, tu regardes derrière toi toutes les trente secondes, tu changes de sujet dès qu'on te pose une question et hier tu as accusé toute la salle sans être capable d'expliquer pourquoi."
+    iris ""
+
+# game/scenario/13_0_1_1_0.rpy:366
+translate english 6e2b1aa5:
+
+    # "Mara s'approche de nouveau, mais Iris lève immédiatement une main vers elle."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:368
+translate english 30ccdd56:
+
+    # iris "Laisse-moi parler avec lui."
+    iris ""
+
+# game/scenario/13_0_1_1_0.rpy:370
+translate english 723c0306:
+
+    # mara "Je ne dis rien."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:372
+translate english acfe3afc:
+
+    # iris "Pour une fois, continue."
+    iris ""
+
+# game/scenario/13_0_1_1_0.rpy:374
+translate english ab32abdf:
+
+    # "Mara serre les lèvres, vexée, mais reste silencieuse."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:376
+translate english b03c3c0f:
+
+    # iris inquiet "Je ne te demande pas de tout me raconter devant tout le monde. Je te demande juste si tu as une raison de te comporter comme ça."
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:378
+translate english ef6c5ee8:
+
+    # "Pendant quelques secondes, je suis tenté de lui parler du couloir. Des images supprimées. De la sensation de voir des choses que personne d'autre ne voit."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:379
+translate english ddaea684:
+
+    # "Puis je pense à la façon dont tout le monde vient de me regarder pour une seule crise de colère. Si je raconte le reste maintenant, je sais exactement ce qu'ils entendront."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:381
+translate english d6dd0f39:
+
+    # noam fatigue "J'ai juste besoin de remettre mes idées en ordre."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:383
+translate english aedd6016:
+
+    # iris "Donc oui."
+    iris ""
+
+# game/scenario/13_0_1_1_0.rpy:385
+translate english 597f3d3c:
+
+    # noam "Je n'ai pas dit ça."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:387
+translate english a800c35d:
+
+    # iris "Tu n'avais pas besoin."
+    iris ""
+
+# game/scenario/13_0_1_1_0.rpy:389
+translate english 2ed0e2bc:
+
+    # "Elle se recule sur sa chaise et souffle doucement par le nez. Elle n'insiste pas, mais son expression suffit à montrer qu'elle ne me croit pas."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:391
+translate english b35cf42d:
+
+    # mara colere "Et après il se demande pourquoi personne ne lui fait confiance."
+    mara colere ""
+
+# game/scenario/13_0_1_1_0.rpy:393
+translate english f6687216:
+
+    # noam colere "Je ne me demande rien du tout, Mara."
+    noam colere ""
+
+# game/scenario/13_0_1_1_0.rpy:395
+translate english 49050e36:
+
+    # mara "Ça tombe bien. J'ai pas envie de faire ton psy avec l'estomac vide."
+    mara ""
+
+# game/scenario/13_0_1_1_0.rpy:397
+translate english d5b2d665:
+
+    # elen triste "Vous pouvez arrêter deux minutes ?"
+    elen triste ""
+
+# game/scenario/13_0_1_1_0.rpy:399
+translate english fac898fa:
+
+    # "Cette fois, sa voix est plus forte. Pas beaucoup, mais assez pour surprendre tout le monde."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:401
+translate english 471e309c:
+
+    # elen "On n'a rien mangé, on a presque pas dormi et on est en train de s'engueuler comme si ça allait remplir les réserves ou remettre les brouilleurs aux murs."
+    elen ""
+
+# game/scenario/13_0_1_1_0.rpy:403
+translate english a4cad8b9:
+
+    # "Elle baisse les yeux aussitôt, comme si elle regrettait déjà d'avoir élevé le ton."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:405
+translate english 2ef516ff:
+
+    # elen triste "Je suis en colère contre toi aussi, Noam. Mais je veux pas qu'on finisse tous par se détester."
+    elen triste ""
+
+# game/scenario/13_0_1_1_0.rpy:407
+translate english 7a2e7c74:
+
+    # "Mara détourne les yeux. Julian repose sa tasse. Même Sael ne répond rien."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:409
+translate english 809ba9c0_2:
+
+    # noam fatigue "Moi non plus."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:411
+translate english d490002d:
+
+    # "Je porte enfin le café à mes lèvres. Il est déjà tiède."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:415
+translate english a7ae12a7:
+
+    # "Je tourne la tête vers le comptoir. Goumi me regarde avec un léger froncement de sourcils."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:417
+translate english e5d64279:
+
+    # goumi "T'en veux pas un autre, hein ?"
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:419
+translate english 18311fb6:
+
+    # noam "Tu viens de dire une tasse par personne."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:421
+translate english e255e634:
+
+    # goumi "Oui. C'est justement pour ça."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:423
+translate english 3845989c:
+
+    # noam "Pourquoi tu me demandes ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:425
+translate english 7098d9c6:
+
+    # "Goumi hésite. Son regard passe de ma tasse à mon visage."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:427
+translate english 0233a377:
+
+    # goumi "Rien. J'ai cru que tu étais déjà passé tout à l'heure."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:429
+translate english 96e33659:
+
+    # noam "Moi ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:431
+translate english 4964de9e:
+
+    # goumi "J'ai dû confondre."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:433
+translate english 217c608f:
+
+    # noam "Avec qui ?"
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:435
+translate english da160fbb:
+
+    # goumi "Aucune idée. J'ai servi du café à la moitié du Conclave avec trois heures de sommeil. Laisse tomber."
+    goumi ""
+
+# game/scenario/13_0_1_1_0.rpy:437
+translate english 0b56485d:
+
+    # "Il se détourne aussitôt pour ranger une tasse propre. Je continue de le regarder quelques secondes."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:439
+translate english 9e584e17:
+
+    # think "Je viens de me réveiller."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:440
+translate english fa9af8d4:
+
+    # think "Je ne suis pas passé ici avant."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:442
+translate english 8f5f199f_2:
+
+    # iris inquiet "Qu'est-ce qu'il y a ?"
+    iris inquiet ""
+
+# game/scenario/13_0_1_1_0.rpy:444
+translate english fa332361_2:
+
+    # noam fatigue "Rien."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:446
+translate english 45c0d95f:
+
+    # "Cette fois encore, le mot sort trop vite. Iris ferme les yeux une seconde, clairement agacée, mais ne relance pas."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:450
+translate english f60fb1f3:
+
+    # "Je vide le reste de mon café en deux gorgées, même s'il n'est plus très bon. L'ambiance est devenue trop lourde pour rester assis."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:452
+translate english 5f23c944:
+
+    # noam fatigue "J'ai besoin de sortir un peu."
+    noam fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:456
+translate english ad1bcc94:
+
+    # noam "Je sais pas encore. Juste pas ici."
+    noam ""
+
+# game/scenario/13_0_1_1_0.rpy:458
+translate english c071195b:
+
+    # "Personne ne me retient. Elen me suit du regard, Iris semble hésiter à dire quelque chose, puis je me lève avant qu'elle en ait le temps."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:464
+translate english 8c83aeb5:
+
+    # "Je quitte la cafétéria avec le goût du café froid encore dans la bouche. Derrière moi, les conversations reprennent peu à peu, plus basses qu'avant."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:470
+translate english a59a2df4:
+
+    # "Le couloir est vide et, pendant quelques secondes, le calme me fait du bien. Je marche sans réfléchir à une destination précise, juste pour mettre quelques murs entre la cafétéria et moi."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:472
+translate english 1aa1b22c:
+
+    # think "Goumi s'est trompé."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:473
+translate english cbc67c06:
+
+    # think "Il sert du café à tout le monde depuis ce matin, c'est possible."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:475
+translate english e6a56a81:
+
+    # "J'essaie de laisser cette histoire derrière moi, mais la phrase continue de tourner dans ma tête."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:477
+translate english c816c690:
+
+    # think "Il a cru que j'étais déjà passé."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:479
+translate english 6e222691:
+
+    # "Des voix arrivent d'un croisement un peu plus loin. Je ralentis et reconnais celle de Ryn avant même de distinguer les autres."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:480
+translate english d64d6430:
+
+    # "Je devrais continuer mon chemin. À la place, je m'arrête juste avant l'angle, hors de leur vue."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:484
+translate english 079b68a8:
+
+    # ryn colere "Je vous le dis, au prochain vote je veux savoir avant s'il compte encore nous faire son numéro."
+    ryn colere ""
+
+# game/scenario/13_0_1_1_0.rpy:486
+translate english 15fb5100:
+
+    # elias fatigue "Tu veux qu'on fasse quoi ? Qu'on lui demande une autorisation écrite pour parler ?"
+    elias fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:488
+translate english 3ac8f494:
+
+    # ryn "Je veux qu'on arrête de lui donner toutes les infos comme si de rien n'était. Hier, il nous traite de traîtres et il se barre. Aujourd'hui, on devrait faire comme si on lui faisait encore confiance ?"
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:490
+translate english 79509422:
+
+    # tomas "Le mettre à l'écart va pas forcément arranger les choses."
+    tomas ""
+
+# game/scenario/13_0_1_1_0.rpy:492
+translate english 8eb3d595:
+
+    # ryn colere "Je parle pas de l'enfermer dans sa chambre. Je dis juste qu'on arrête de tout lui raconter tant qu'on sait pas ce qui lui passe par la tête."
+    ryn colere ""
+
+# game/scenario/13_0_1_1_0.rpy:494
+translate english b8ecb7dc:
+
+    # elias "Et tu proposes qu'on discute où, exactement ? On vient de perdre les brouilleurs. Si on commence à organiser des conversations secrètes maintenant, Kami va adorer."
+    elias ""
+
+# game/scenario/13_0_1_1_0.rpy:496
+translate english 17138669:
+
+    # ryn "Je m'en fous de Kami pour l'instant."
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:498
+translate english 153f3af7:
+
+    # nyra "Tu devrais éviter."
+    nyra ""
+
+# game/scenario/13_0_1_1_0.rpy:500
+translate english 97db1a20:
+
+    # "La voix de Nyra est calme, presque détachée. Ryn se tait juste assez longtemps pour lui laisser la place."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:502
+translate english 4fb932a9:
+
+    # nyra "Elle nous voit de nouveau. Si vous commencez à choisir qui peut entendre quoi, faites au moins l'effort de vous rappeler qu'elle entend probablement tout aussi."
+    nyra ""
+
+# game/scenario/13_0_1_1_0.rpy:504
+translate english 798ec59b:
+
+    # tomas "C'est justement ça qui me gêne. On est déjà tous méfiants. Si on commence à faire des groupes dans les groupes, dans deux jours plus personne parlera à personne."
+    tomas ""
+
+# game/scenario/13_0_1_1_0.rpy:506
+translate english 7696dd13:
+
+    # ryn colere "Et si Noam recommence ? On fait quoi ? On attend qu'il fasse encore foirer un vote important ?"
+    ryn colere ""
+
+# game/scenario/13_0_1_1_0.rpy:508
+translate english c6e7f60f:
+
+    # elias fatigue "On lui parle avant. C'est encore une option, normalement."
+    elias fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:510
+translate english b508b517:
+
+    # ryn "Iris a essayé. Elen aussi. Il répond rien."
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:512
+translate english 5094ce96:
+
+    # tomas "Peut-être qu'il a vraiment rien à dire."
+    tomas ""
+
+# game/scenario/13_0_1_1_0.rpy:514
+translate english 4bb104fc:
+
+    # ryn "Ou peut-être qu'il nous cache quelque chose."
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:516
+translate english 0c64a850:
+
+    # "Je serre légèrement la mâchoire. Derrière le mur, personne ne parle pendant quelques secondes."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:518
+translate english 53cf763e:
+
+    # elias "Ça, je pense qu'il nous cache quelque chose."
+    elias ""
+
+# game/scenario/13_0_1_1_0.rpy:520
+translate english 74988567:
+
+    # tomas "Super. Très rassurant."
+    tomas ""
+
+# game/scenario/13_0_1_1_0.rpy:522
+translate english 066cd1f7:
+
+    # ryn "Voilà."
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:524
+translate english 6d781149:
+
+    # nyra "Ça ne veut pas dire qu'il a tort."
+    nyra ""
+
+# game/scenario/13_0_1_1_0.rpy:526
+translate english f8c19490:
+
+    # "Le silence qui suit est plus long. Même moi, je reste immobile."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:528
+translate english 861d095e:
+
+    # ryn "Pardon ?"
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:530
+translate english 4e310eca:
+
+    # nyra "Vous partez du principe qu'il est devenu paranoïaque parce qu'il ne nous explique rien. C'est possible. Mais la vraie question, c'est de savoir s'il n'explique rien parce qu'il délire... ou parce qu'il a vu quelque chose qu'il n'arrive pas à expliquer."
+    nyra ""
+
+# game/scenario/13_0_1_1_0.rpy:532
+translate english 0a1d06ac:
+
+    # elias "Nyra, il a accusé la moitié de la salle au hasard."
+    elias ""
+
+# game/scenario/13_0_1_1_0.rpy:534
+translate english a7b14bf3:
+
+    # nyra "Je sais. Et c'était stupide. Ça ne répond pas à ma question."
+    nyra ""
+
+# game/scenario/13_0_1_1_0.rpy:536
+translate english e0ec8261:
+
+    # tomas "Tu penses qu'il a une vraie raison ?"
+    tomas ""
+
+# game/scenario/13_0_1_1_0.rpy:538
+translate english 40217be4:
+
+    # nyra "Je pense surtout qu'on n'en sait rien."
+    nyra ""
+
+# game/scenario/13_0_1_1_0.rpy:540
+translate english 9ad13d35:
+
+    # "Ryn souffle bruyamment."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:542
+translate english b6345736:
+
+    # ryn colere "Moi, ce que je sais, c'est qu'on a faim, qu'on a plus aucun endroit tranquille et qu'au prochain vote j'ai pas envie de découvrir sa nouvelle crise en même temps que tout le monde."
+    ryn colere ""
+
+# game/scenario/13_0_1_1_0.rpy:544
+translate english 491dd15b:
+
+    # elias fatigue "Là-dessus, on est d'accord."
+    elias fatigue ""
+
+# game/scenario/13_0_1_1_0.rpy:546
+translate english 778eb5c7:
+
+    # tomas "On pourrait juste lui dire ça en face."
+    tomas ""
+
+# game/scenario/13_0_1_1_0.rpy:548
+translate english ab826714:
+
+    # ryn "Je compte bien le faire."
+    ryn ""
+
+# game/scenario/13_0_1_1_0.rpy:550
+translate english 6d14e42d:
+
+    # "Je recule légèrement du mur. Une partie de moi voudrait rester pour entendre la suite, mais je n'ai aucune envie qu'ils me surprennent à les écouter."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:553
+translate english cceff405:
+
+    # think "Mais Nyra n'a pas dit que j'avais tort."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:555
+translate english 45fad737:
+
+    # "Je repense à Goumi, au couloir, aux images qui manquent et à toutes les petites choses que j'ai essayé de mettre de côté parce qu'elles avaient l'air trop absurdes."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:557
+translate english 62491c99:
+
+    # think "Il faut que j'arrête de chercher un coupable au hasard."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:558
+translate english f4594b7d:
+
+    # think "Je dois reprendre ce que je sais vraiment, depuis le début."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:560
+translate english 54f6c7f7:
+
+    # "Je rebrousse chemin avant que quelqu'un ne tourne au croisement."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:576
+translate english 9920196c:
+
+    # "De retour dans ma chambre, je ferme la porte derrière moi puis reste quelques secondes la main sur la poignée. Le réflexe me fait presque rire : verrouillée ou non, cette porte ne protège plus grand-chose."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:577
+translate english ff710ccc:
+
+    # "L'emplacement vide du brouilleur me saute immédiatement aux yeux. Je détourne le regard et vais m'asseoir au bureau."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:579
+translate english a3fa0126:
+
+    # think "Très bien. Pas de théorie. Pas de traître choisi au hasard."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:580
+translate english 59b19414:
+
+    # think "Seulement ce que je sais."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:582
+translate english 7c86990d:
+
+    # "Je prends une feuille et un stylo. Au lieu d'écrire des noms, je trace trois colonnes assez larges."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:584
+translate english 7bbb7671:
+
+    # noam murmure "Certain. Incertain... et le reste."
+    noam murmure ""
+
+# game/scenario/13_0_1_1_0.rpy:586
+translate english 8ec2010e:
+
+    # "Dans la première colonne, je note les faits dont je suis sûr."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:588
+translate english 4d6c3f6a:
+
+    # "Des matériaux ont disparu de la réserve technique."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:589
+translate english a9ef463e:
+
+    # "La photo de Léa a été volée dans la chambre de Kael."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:590
+translate english 1b3eb207:
+
+    # "Mon dessin de Juliette a disparu lui aussi."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:591
+translate english 2194b7cd:
+
+    # "Une partie des images du couloir a été supprimée."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:593
+translate english 24b0701f:
+
+    # "Je relis les quatre lignes avant de continuer. Rien de tout ça n'est une impression. Même si je me trompe sur le responsable, ces choses se sont réellement produites."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:599
+translate english 9b4ebe00:
+
+    # "Dans la seconde colonne, j'écris ce qui reste beaucoup moins clair."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:601
+translate english d7410d0e:
+
+    # "La silhouette aperçue dans le couloir."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:602
+translate english 45eed6ed:
+
+    # "Les comportements qui ne correspondent pas toujours à mes souvenirs."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:603
+translate english 7f3a8b65:
+
+    # "Goumi persuadé, pendant quelques secondes, de m'avoir déjà servi ce matin."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:608
+translate english b700cdb8:
+
+    # "Je m'arrête sur cette dernière ligne."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:610
+translate english f47d0bbb:
+
+    # think "Il était fatigué."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:611
+translate english bf86a115:
+
+    # think "Ça peut vraiment être aussi simple que ça."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:613
+translate english 21f341c8:
+
+    # "Je la laisse quand même. Si je commence à retirer tout ce qui me dérange sous prétexte que ça peut avoir une explication, cette feuille ne sert à rien."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:615
+translate english 3f3f31e9:
+
+    # "La troisième colonne reste vide."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:617
+translate english cc05737e:
+
+    # think "Et le reste ?"
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:619
+translate english 1c49664c:
+
+    # "Je pose le stylo et regarde les deux premières colonnes."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:620
+translate english d64bb3e1:
+
+    # "Les vols me dérangent toujours autant, mais ce n'est pas leur valeur qui m'intéresse. Les matériaux peuvent servir à quelque chose. Pour la photo et le dessin, c'est différent."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:622
+translate english 909892a9:
+
+    # think "Une photo de Léa. Un dessin de Juliette."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:623
+translate english ce746307:
+
+    # think "Deux objets personnels. Deux représentations de quelqu'un qui compte pour nous."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:625
+translate english 27e45cef:
+
+    # "Je souligne cette idée une fois. Pas davantage."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:629
+translate english 05e72906:
+
+    # think "Ça ne prouve rien."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:630
+translate english 2abc2c4b:
+
+    # think "Mais au moins, c'est un point commun qui existe vraiment."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:632
+translate english d97faa6e:
+
+    # "Je note une nouvelle question à côté des deux lignes."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:634
+translate english 4dc59eb9:
+
+    # "Pourquoi voler une image plutôt qu'un objet utile ?"
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:636
+translate english 13a1eb58:
+
+    # "Je passe ensuite aux caméras. Si quelqu'un a supprimé volontairement des images, il savait exactement ce qu'il voulait cacher. Si c'est Kami qui l'a fait, je ne comprends pas pourquoi elle aurait laissé le moindre doute."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:637
+translate english e8978457:
+
+    # "Et si ce n'est pas Kami, alors quelqu'un ici possède des moyens que je ne comprends pas encore."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:639
+translate english 9864f3e9:
+
+    # think "Ça, c'est le problème."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:641
+translate english 5072e9e9:
+
+    # "Je me recule sur ma chaise et regarde la feuille entière. Ce n'est pas une réponse, mais au moins je distingue mieux ce qui est réel de ce que je suis en train d'imaginer."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:643
+translate english 879faf7b:
+
+    # think "Nyra a raison sur un point."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:644
+translate english f3da9279:
+
+    # think "Je peux être paranoïaque et avoir quand même remarqué quelque chose."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:646
+translate english 7c47fdad:
+
+    # "Je prends mon vieux cahier noir dans le tiroir. J'ai toujours eu l'habitude d'y mettre les idées qui me passent par la tête, surtout quand j'ai besoin d'arrêter de tourner en rond."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:647
+translate english 65f9718f:
+
+    # "Le cahier est exactement là où je pensais l'avoir laissé. Je le pose à côté de la feuille et commence à chercher une page vide."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:649
+translate english ce1011f9:
+
+    # "Je tourne une première page, puis une deuxième."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:650
+translate english eaefc6a7:
+
+    # "Ma main s'arrête au milieu du geste."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:654
+translate english 6e80e7e5:
+
+    # "Je connais ce dessin."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:656
+translate english db3c127d:
+
+    # "Pendant une seconde, je crois avoir ouvert la mauvaise page. Puis je comprends que ce n'est pas possible."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:658
+translate english 98a8814f:
+
+    # "Quelqu'un a reproduit le dessin de Juliette dans mon cahier."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:660
+translate english e1d63d20:
+
+    # "Les traits suivent presque parfaitement les miens. La forme du visage, les cheveux, le pli du vêtement, tout est assez proche pour que je reconnaisse immédiatement l'original."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:661
+translate english 674d5168:
+
+    # "Mais ce n'est pas mon dessin. Le trait est plus sombre et légèrement plus appuyé, comme si la personne avait repassé plusieurs fois sur certaines lignes."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:663
+translate english 0c344ca3:
+
+    # "Je rapproche le cahier de la lampe."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:665
+translate english e4773575:
+
+    # think "Je n'ai jamais fait ça."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:666
+translate english f59aa5ea:
+
+    # think "Je n'ai même pas sorti ce cahier depuis plusieurs jours."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:668
+translate english 7b59a63c:
+
+    # "Je tourne les pages avant et après. Rien d'autre n'a changé. Aucun mot ajouté, aucune feuille arrachée, aucune trace qui m'aide à comprendre quand quelqu'un a pu toucher au cahier."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:670
+translate english 128d708f:
+
+    # "Je reviens au dessin."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:675
+translate english ce4877fc:
+
+    # think "Quelqu'un est entré ici."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:676
+translate english 496e4aeb:
+
+    # think "Ou alors quelqu'un l'a pris sans que je m'en rende compte."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:678
+translate english 2c5a0983:
+
+    # "Je regarde la porte, puis l'emplacement désormais vide du brouilleur. L'idée de demander à Kami me traverse l'esprit avant que je l'écarte aussitôt."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:680
+translate english 2e17059d:
+
+    # think "Si elle sait, elle ne me dira probablement rien."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:681
+translate english 530cf608:
+
+    # think "Et si elle ne sait pas, c'est encore pire."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:683
+translate english c75984ac:
+
+    # "Je garde les deux versions en tête. Les changements sont trop précis, trop choisis pour être de simples erreurs de copie."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:685
+translate english 58075912:
+
+    # think "C'est volontaire."
+    think ""
+
+# game/scenario/13_0_1_1_0.rpy:687
+translate english d3398cc7:
+
+    # "Je voudrais trouver une autre explication, me dire que je me souviens mal du dessin ou que la copie est simplement imparfaite. Mais quelqu'un a reproduit assez précisément chaque détail pour que cette petite différence ressorte encore davantage."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:689
+translate english 82ea3982:
+
+    # "Je referme le cahier, puis le rouvre presque aussitôt. Le dessin est toujours là."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:691
+translate english be631f2b:
+
+    # noam murmure "Qui a fait ça...?"
+    noam murmure ""
+
+# game/scenario/13_0_1_1_0.rpy:693
+translate english f04db993:
+
+    # "Aucune réponse ne vient. Seulement le bourdonnement discret de la ventilation et le silence trop propre de la chambre."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:695
+translate english 0bf0b79d:
+
+    # "Je regarde la feuille posée à côté du cahier. La troisième colonne est toujours vide."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:696
+translate english c91905aa:
+
+    # "Je reprends lentement mon stylo et écris une seule ligne dedans."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:698
+translate english 96d7c98d:
+
+    # "Quelqu'un a copié le dessin de Juliette dans mon cahier."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:700
+translate english 594152e7:
+
+    # "Je reste quelques secondes avec la pointe du stylo sur le papier, puis ajoute juste en dessous :"
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:702
+translate english d4f353e2:
+
+    # "Je ne sais pas comment."
+    ""
+
+# game/scenario/13_0_1_1_0.rpy:704
+translate english b4e025f9:
+
+    # "Cette fois, je ne raye rien."
+    ""
+

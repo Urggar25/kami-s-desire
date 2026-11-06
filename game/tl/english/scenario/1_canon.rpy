@@ -4414,3 +4414,1247 @@ translate english strings:
     old "Laisser le brouilleur tranquille"
     new "Leave the jammer alone"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/1_canon.rpy:186
+translate english bf6d5e7d:
+
+    # lysa blase "Hé. Hé, tu m'entends ?"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:187
+translate english 6d8b3d5e:
+
+    # think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
+    think ""
+
+# game/scenario/1_canon.rpy:188
+translate english 1cfeadc8:
+
+    # lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:198
+translate english d4920c9e:
+
+    # noam inquiet "Mh... Arrête de me secouer..."
+    noam inquiet ""
+
+# game/scenario/1_canon.rpy:200
+translate english 9fd527a8:
+
+    # lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:202
+translate english 89a5fcd5:
+
+    # think "J'ouvre péniblement les yeux. Lysa est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste encore indistincte."
+    think ""
+
+# game/scenario/1_canon.rpy:205
+translate english 4646d6fa:
+
+    # lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:207
+translate english dba98e78:
+
+    # noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
+    noam inquiet ""
+
+# game/scenario/1_canon.rpy:209
+translate english 4e7885a4:
+
+    # lysa blase "Bah quoi ? J'allais pas te laisser dormir là toute la journée."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:211
+translate english 34f674d0:
+
+    # think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans que Lysa s'éloigne vraiment."
+    think ""
+
+# game/scenario/1_canon.rpy:212
+translate english c7d135ee:
+
+    # noam inquiet "J'ai la tête en vrac... On est où ?"
+    noam inquiet ""
+
+# game/scenario/1_canon.rpy:214
+translate english 57162aca:
+
+    # lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
+    lysa reflexion ""
+
+# game/scenario/1_canon.rpy:241
+translate english 3b4c2700:
+
+    # think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
+    think ""
+
+# game/scenario/1_canon.rpy:242
+translate english aaf22c23:
+
+    # noam inquiet "Attends... C'est vraiment le Conclave ?"
+    noam inquiet ""
+
+# game/scenario/1_canon.rpy:243
+translate english 83bd04c0:
+
+    # lysa reflexion "J'en sais pas beaucoup plus que toi, mais ouais. Ça ressemble bien à ce que Kami pourrait appeler le Conclave."
+    lysa reflexion ""
+
+# game/scenario/1_canon.rpy:244
+translate english 77bee651:
+
+    # lysa blase "Et tous ces gens... On sait même pas à qui on a affaire."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:247
+translate english 397fe0be:
+
+    # lysa reflexion "Bon. De toute façon, va bien falloir qu'on apprenne à les connaître."
+    lysa reflexion ""
+
+# game/scenario/1_canon.rpy:259
+translate english 236b5df1:
+
+    # mara taquin "Et toi, t'as fini de gueuler ? Parce que là, tu nous réveilles tous une deuxième fois."
+    mara taquin ""
+
+# game/scenario/1_canon.rpy:288
+translate english 392cb4db:
+
+    # noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
+    noam ""
+
+# game/scenario/1_canon.rpy:293
+translate english fd9f39e1:
+
+    # julian peur "On pourrait peut-être discuter sans hurler, non ?"
+    julian peur ""
+
+# game/scenario/1_canon.rpy:294
+translate english 6c199717:
+
+    # julian reflexion "C'est exactement ce qu'elle veut : qu'on commence à s'engueuler. Je vais pas lui faire ce plaisir."
+    julian reflexion ""
+
+# game/scenario/1_canon.rpy:300
+translate english cbfcffb8:
+
+    # nyra neutre "Elle contrôle tout ici, non ?"
+    nyra neutre ""
+
+# game/scenario/1_canon.rpy:319
+translate english eba6226d:
+
+    # tomas reflechit "C'est pas parce qu'elle dit rien qu'elle nous écoute pas."
+    tomas reflechit ""
+
+# game/scenario/1_canon.rpy:356
+translate english a3f1c5b2:
+
+    # sael raison "Ma grand-mère disait toujours de réfléchir avant de se jeter sur une porte fermée."
+    sael raison ""
+
+# game/scenario/1_canon.rpy:360
+translate english 9241b547:
+
+    # elen desaccord "Et si on reste là sans rien faire, ça va pas nous aider non plus !"
+    elen desaccord ""
+
+# game/scenario/1_canon.rpy:404
+translate english 602479b1:
+
+    # "Je prends une grande inspiration sans trop savoir pourquoi."
+    ""
+
+# game/scenario/1_canon.rpy:408
+translate english f75176f3:
+
+    # "Je touche mon cou. J'ai l'impression qu'il me fait encore mal."
+    ""
+
+# game/scenario/1_canon.rpy:409
+translate english 717ca128:
+
+    # think "Pourquoi j'ai cette sensation bizarre ?"
+    think ""
+
+# game/scenario/1_canon.rpy:410
+translate english 650f9391:
+
+    # think "J'ai vraiment l'impression d'avoir déjà vécu ça."
+    think ""
+
+# game/scenario/1_canon.rpy:510
+translate english a8ae7299:
+
+    # julian taquin "Toujours à calmer le jeu, hein ? Tu veux qu'on te nomme président de la salle ?"
+    julian taquin ""
+
+# game/scenario/1_canon.rpy:750
+translate english 4df4f64a:
+
+    # mara rire_profond "Ah ah ! Je t'ai mis mal à l'aise, hein ?"
+    mara rire_profond ""
+
+# game/scenario/1_canon.rpy:769
+translate english 3b9f79f4:
+
+    # elias neutre "À force de bosser au milieu des machines, je reconnais quand un truc tourne pas rond. Là, ça fait un genre de... Vrrrr..."
+    elias neutre ""
+
+# game/scenario/1_canon.rpy:770
+translate english 9cff5774:
+
+    # elias reflechit "Non, attends... Brrrrr... Enfin bref, c'est pas le même bruit !"
+    elias reflechit ""
+
+# game/scenario/1_canon.rpy:904
+translate english a8609620:
+
+    # julian reflexion "Au moins, ils ont pas lésiné sur la salle."
+    julian reflexion ""
+
+# game/scenario/1_canon.rpy:905
+translate english b7bcb5e8:
+
+    # julian joie "Regarde : les sièges, l'écran, les caméras... C'est fait pour être filmé."
+    julian joie ""
+
+# game/scenario/1_canon.rpy:907
+translate english 181ac747:
+
+    # julian determine "Franchement, qui voudrait rater ça ?"
+    julian determine ""
+
+# game/scenario/1_canon.rpy:908
+translate english c6cf23fc:
+
+    # julian decontracte "On va peut-être changer les lois de Kami, tu te rends compte ?!"
+    julian decontracte ""
+
+# game/scenario/1_canon.rpy:925
+translate english 74ce5fa7:
+
+    # sael determine "Ma grand-mère disait toujours qu'il fallait se méfier quand tout était trop calme."
+    sael determine ""
+
+# game/scenario/1_canon.rpy:929
+translate english fa6cb164:
+
+    # sael triste "Elle avait souvent raison, ma grand-mère."
+    sael triste ""
+
+# game/scenario/1_canon.rpy:957
+translate english 44dba8b0:
+
+    # kami "Ah… vous êtes tous réveillés. Parfait."
+    kami ""
+
+# game/scenario/1_canon.rpy:958
+translate english bb3673bc:
+
+    # kami "J'avais peur d'avoir surestimé votre capacité à survivre à une petite sieste forcée."
+    kami ""
+
+# game/scenario/1_canon.rpy:994
+translate english 257f43e9:
+
+    # kami "Vous êtes les petits échantillons de l'Humanité que je vais m'amuser à tester."
+    kami ""
+
+# game/scenario/1_canon.rpy:995
+translate english 8edede78:
+
+    # kami "Je vais confronter vos rêves, vos choix, peut-être même ce qui vous rend si spécial.."
+    kami ""
+
+# game/scenario/1_canon.rpy:999
+translate english c9a8bfa7:
+
+    # kami "Mais aussi votre capacité à obéir…"
+    kami ""
+
+# game/scenario/1_canon.rpy:1004
+translate english 13d8f94d:
+
+    # kami "Croyez-moi. Ça ne sera pas si évident."
+    kami ""
+
+# game/scenario/1_canon.rpy:1008
+translate english 77055a78:
+
+    # kami "Alors je vous le dis : bienvenue au Conclave."
+    kami ""
+
+# game/scenario/1_canon.rpy:1020
+translate english e0b02ae0:
+
+    # kami "Pas pour vous mais pour tous les autres."
+    kami ""
+
+# game/scenario/1_canon.rpy:1040
+translate english e7aea855:
+
+    # kami "Chacun de vous proposera une modification, un Amendement. Un seul."
+    kami ""
+
+# game/scenario/1_canon.rpy:1045
+translate english 19705998:
+
+    # kami "Vous pourrez renforcer une règle. L'adoucir. La tordre. En ajouter ou en supprimer."
+    kami ""
+
+# game/scenario/1_canon.rpy:1050
+translate english 421b160f:
+
+    # kami "Et personne ne saura jamais qui a proposé quoi, le dépot sera entièrement anonyme !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1056
+translate english c237272b:
+
+    # kami "Après tout… C'est sans doute ce que vous faites de mieux."
+    kami ""
+
+# game/scenario/1_canon.rpy:1067
+translate english 9693c1c8:
+
+    # kami "Ensuite ? Vous voterez. Il y aura un vote tous les trois jours."
+    kami ""
+
+# game/scenario/1_canon.rpy:1068
+translate english d23d665f:
+
+    # kami "Je vous offre la possibilité de changer les règles de mon monde. Mais, ça ne sera pas si simple."
+    kami ""
+
+# game/scenario/1_canon.rpy:1072
+translate english ff3af836:
+
+    # kami "Pour chaque amendement, vous pourrez voter pour, voter contre ou vous abstenir."
+    kami ""
+
+# game/scenario/1_canon.rpy:1073
+translate english ee60ab67:
+
+    # kami "Si vous ne votez pas, votre voix sera considéré comme une abstention."
+    kami ""
+
+# game/scenario/1_canon.rpy:1079
+translate english 726c0bc8:
+
+    # kami "Mais attention !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1080
+translate english b8bad9a1:
+
+    # kami "Pour qu'un amendement soit adopté… Il faudra convaincre tous les autres !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1085
+translate english 02891ea9:
+
+    # kami "Personne ne devra voter contre. Sinon, le vote est refusé."
+    kami ""
+
+# game/scenario/1_canon.rpy:1089
+translate english 03f6f12b:
+
+    # kami "Dans ce cas, l'amendement disparait. Et votre espoir de changer le monde avec."
+    kami ""
+
+# game/scenario/1_canon.rpy:1090
+translate english 6b3819da:
+
+    # kami "Une seule petite voix contre et tout peut tomber à l'eau."
+    kami ""
+
+# game/scenario/1_canon.rpy:1096
+translate english 67ac5035:
+
+    # kami "Vous allez apprendre quelque chose d'important ici."
+    kami ""
+
+# game/scenario/1_canon.rpy:1097
+translate english dadd423b:
+
+    # kami "Vous verrez, ce n'est pas si simple de mettre douze personnes d'accord."
+    kami ""
+
+# game/scenario/1_canon.rpy:1098
+translate english c8c49655:
+
+    # kami "Alors imaginez convaincre des millions de gens."
+    kami ""
+
+# game/scenario/1_canon.rpy:1104
+translate english 0e9eda97:
+
+    # kami "Petite précision qui a toute son importance :"
+    kami ""
+
+# game/scenario/1_canon.rpy:1108
+translate english 2a890490:
+
+    # kami "Je ne participerai pas aux votes. Je ne donnerai pas mon avis."
+    kami ""
+
+# game/scenario/1_canon.rpy:1109
+translate english c331396d:
+
+    # kami "Je ne participerai à aucune de vos manigances. Je vous laisse vous débrouiller entre vous."
+    kami ""
+
+# game/scenario/1_canon.rpy:1113
+translate english 3e13e272:
+
+    # kami "Je regarderai. Et j'apprendrai en vous observant."
+    kami ""
+
+# game/scenario/1_canon.rpy:1119
+translate english b3932e44:
+
+    # kami "D'ailleurs, à ce sujet. Ici… les Commandements n'ont pas lieu d'être."
+    kami ""
+
+# game/scenario/1_canon.rpy:1125
+translate english f59a0f43:
+
+    # kami "Je ne m'en mêlerai pas. Je ne vous défendrai pas. Je ne vous en empêcherai pas."
+    kami ""
+
+# game/scenario/1_canon.rpy:1126
+translate english 188be3a6:
+
+    # kami "Ici, vous êtes libres de vos actions à condition qu'elles respectent le réglement du Conclave."
+    kami ""
+
+# game/scenario/1_canon.rpy:1131
+translate english 8b341e6c:
+
+    # kami "J'ai passé un an à vous observer. Vos débats. Vos justifications. Vos excuses. Votre haine ou votre fascination."
+    kami ""
+
+# game/scenario/1_canon.rpy:1139
+translate english 2d21f920:
+
+    # kami "Le Conclave commence, je vous donne à tous les autorisations pour l'explorer librement."
+    kami ""
+
+# game/scenario/1_canon.rpy:1143
+translate english c2237dde:
+
+    # kami "Faites bien connaissance. Après tout, vous allez devoir vous supporter pendant un mois."
+    kami ""
+
+# game/scenario/1_canon.rpy:1173
+translate english d66bba55:
+
+    # elias panique "Attends, sérieux, on sera là pendant trente jours ? C'est chaud !"
+    elias panique ""
+
+# game/scenario/1_canon.rpy:1176
+translate english f8df080c:
+
+    # think "On va devoir vraiment passer trente jours ici…"
+    think ""
+
+# game/scenario/1_canon.rpy:1178
+translate english 247b013f:
+
+    # lysa doute "Mmmhh, pire que ça ce sont ses règles tordues.."
+    lysa doute ""
+
+# game/scenario/1_canon.rpy:1179
+translate english 2a2e375e:
+
+    # lysa blase "Un seul vote contre et tout le monde est bloqué. Sérieusement ?"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:1180
+translate english 994277c7:
+
+    # lysa colere "Avec ça, on va jamais réussir à se mettre d'accord."
+    lysa colere ""
+
+# game/scenario/1_canon.rpy:1182
+translate english 2c3b5af9:
+
+    # tomas raison "Pou-Pourquoi tu dis ça... Tu crois qu'on arrivera pas à f-faire des compromis ?"
+    tomas raison ""
+
+# game/scenario/1_canon.rpy:1184
+translate english b9ba25b3:
+
+    # nyra triste "Elle a raison, on peut croire que c'est simple mais c'est loin d'être le cas."
+    nyra triste ""
+
+# game/scenario/1_canon.rpy:1185
+translate english a5f22371:
+
+    # nyra neutre "Mais... Si c'est nous qui avons le choix des modifications, ce n'est pas impossible."
+    nyra neutre ""
+
+# game/scenario/1_canon.rpy:1189
+translate english c5526fd7:
+
+    # lysa blase "Quelle naïveté... Tu crois vraiment qu'elle nous laissera faire ?"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:1192
+translate english 8144eb7d:
+
+    # mara taquin "On est toujours dans la même merde, en train d'obéir aux règles de Madame."
+    mara taquin ""
+
+# game/scenario/1_canon.rpy:1197
+translate english b1ba12eb:
+
+    # nyra reflechit "Attends, ces règles doivent bien être écris quelque part."
+    nyra reflechit ""
+
+# game/scenario/1_canon.rpy:1199
+translate english ee0b3e11:
+
+    # kael reflechit "J'ai trouvé ! Vous avez une tablette sur vous, non ? Les infos sont dessus !"
+    kael reflechit ""
+
+# game/scenario/1_canon.rpy:1205
+translate english 739a30e3:
+
+    # think "Je parcours le règlement. Il y a beaucoup plus de détails que ce que Kami vient de nous raconter."
+    think ""
+
+# game/scenario/1_canon.rpy:1206
+translate english 601ac8f6:
+
+    # noam reflexion "Bon... au moins, les règles sont écrites noir sur blanc."
+    noam reflexion ""
+
+# game/scenario/1_canon.rpy:1209
+translate english 32f99d56:
+
+    # iris blase "Ah bah oui, ça va sûrement empêcher quelqu'un de péter un câble."
+    iris blase ""
+
+# game/scenario/1_canon.rpy:1216
+translate english 870ff626:
+
+    # julian idee "Je n'ai pas l'intention de gaspiller cette occasion."
+    julian idee ""
+
+# game/scenario/1_canon.rpy:1221
+translate english 14cb5348:
+
+    # lysa colere "On est coincés ici, on risque de crever si ça tourne mal, et toi tu poses pour les caméras ?!"
+    lysa colere ""
+
+# game/scenario/1_canon.rpy:1222
+translate english 74b49b56:
+
+    # lysa blase "T'es vraiment obligé de faire ton numéro devant la caméra ?"
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:1246
+translate english 607e052e:
+
+    # elen sourire "Déjà, on pourrait interdire de se taper dessus, non ?"
+    elen sourire ""
+
+# game/scenario/1_canon.rpy:1250
+translate english c08cd5bc:
+
+    # noam reflexion "On y réfléchira plus tard. On ne connaît même pas encore les différentes salles de cette station."
+    noam reflexion ""
+
+# game/scenario/1_canon.rpy:1323
+translate english KAMI_MESSAGE_APRES_VISITE_970d88f4:
+
+    # kami "J'espère que la visite vous a plu !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1329
+translate english KAMI_MESSAGE_APRES_VISITE_c5a95271:
+
+    # kami "Mais vous avez sûrement autre chose à faire que de visiter les installations !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1333
+translate english KAMI_MESSAGE_APRES_VISITE_2595f03e:
+
+    # kami "Je vous attends dans la salle du Conclave."
+    kami ""
+
+# game/scenario/1_canon.rpy:1375
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c6c31736:
+
+    # elen content "C'est fou ! On est là-haut, au-dessus de tout le monde !"
+    elen content ""
+
+# game/scenario/1_canon.rpy:1376
+translate english FIRST_CONCLAVE_ELEN_INTERACT_32cc72fc:
+
+    # elen joie "On voit la planète de là-haut, et les autres continuent à discuter comme si c'était normal !"
+    elen joie ""
+
+# game/scenario/1_canon.rpy:1378
+translate english FIRST_CONCLAVE_ELEN_INTERACT_e7d62838:
+
+    # noam inquiet "Tu sais que tu rends ça encore plus flippant ?"
+    noam inquiet ""
+
+# game/scenario/1_canon.rpy:1392
+translate english FIRST_CONCLAVE_ELEN_INTERACT_1512ec86:
+
+    # "Les portes du Conclave s'ouvrent. Plusieurs représentants sont déjà assis, mais personne ne regarde l'écran."
+    ""
+
+# game/scenario/1_canon.rpy:1393
+translate english FIRST_CONCLAVE_ELEN_INTERACT_f18afa8b:
+
+    # "Kael attend que les derniers arrivent avant de prendre la parole."
+    ""
+
+# game/scenario/1_canon.rpy:1402
+translate english FIRST_CONCLAVE_ELEN_INTERACT_000cc197:
+
+    # kael calme "Avant que Kami commence... On pourrait peut-être discuter de ce qu'on veut proposer ?"
+    kael calme ""
+
+# game/scenario/1_canon.rpy:1403
+translate english FIRST_CONCLAVE_ELEN_INTERACT_3283a689:
+
+    # kael reflechit "Pas besoin de tout écrire ensemble. Mais si deux textes se contredisent, ce serait bien de le savoir."
+    kael reflechit ""
+
+# game/scenario/1_canon.rpy:1404
+translate english FIRST_CONCLAVE_ELEN_INTERACT_df453af9:
+
+    # iris blase "Non. J'ai déjà assez de mal à rédiger le mien sans devoir le défendre devant vous."
+    iris blase ""
+
+# game/scenario/1_canon.rpy:1405
+translate english FIRST_CONCLAVE_ELEN_INTERACT_5c00f599:
+
+    # lysa blase "Et puis rien ne garantit que quelqu'un dira la vérité."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:1406
+translate english FIRST_CONCLAVE_ELEN_INTERACT_83ecde84:
+
+    # kael calme "Je sais. Je demande juste qu'on essaie."
+    kael calme ""
+
+# game/scenario/1_canon.rpy:1407
+translate english FIRST_CONCLAVE_ELEN_INTERACT_cf942fb0:
+
+    # mara taquin "T'es mignon, Kael. Mais t'auras pas le mien sur un plateau, désolée."
+    mara taquin ""
+
+# game/scenario/1_canon.rpy:1408
+translate english FIRST_CONCLAVE_ELEN_INTERACT_35284805:
+
+    # ryn determine "Moi, je veux qu'on arrête d'écraser Limen. Mais je vais pas donner le détail à des inconnus."
+    ryn determine ""
+
+# game/scenario/1_canon.rpy:1409
+translate english FIRST_CONCLAVE_ELEN_INTERACT_b67b2fda:
+
+    # kael triste "D'accord. Je comprends."
+    kael triste ""
+
+# game/scenario/1_canon.rpy:1410
+translate english FIRST_CONCLAVE_ELEN_INTERACT_2d856b7d:
+
+    # julian sourire "Moi, je n'ai rien contre un peu de transparence. Au moins on aurait une vraie discussion."
+    julian sourire ""
+
+# game/scenario/1_canon.rpy:1411
+translate english FIRST_CONCLAVE_ELEN_INTERACT_f0cdfb34:
+
+    # lysa blase "Évidemment. Tant qu'il y a un public."
+    lysa blase ""
+
+# game/scenario/1_canon.rpy:1412
+translate english FIRST_CONCLAVE_ELEN_INTERACT_4f6c709e:
+
+    # think "Kael baisse les yeux vers la table. Il n'insiste pas davantage, mais personne ne semble plus disposé à se confier."
+    think ""
+
+# game/scenario/1_canon.rpy:1413
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c5725b63:
+
+    # "Un grésillement interrompt le silence. L'écran central s'allume."
+    ""
+
+# game/scenario/1_canon.rpy:1424
+translate english FIRST_CONCLAVE_ELEN_INTERACT_aba90aac:
+
+    # kami "Je ne vais pas vous refaire le discours de ce matin. Vous savez déjà que les Commandements ne s'appliquent pas ici."
+    kami ""
+
+# game/scenario/1_canon.rpy:1425
+translate english FIRST_CONCLAVE_ELEN_INTERACT_97c86a61:
+
+    # kami "En revanche, il reste quelques règles propres à la station. Écoutez bien celles-là."
+    kami ""
+
+# game/scenario/1_canon.rpy:1427
+translate english FIRST_CONCLAVE_ELEN_INTERACT_ea5f0e57:
+
+    # kami "Règle une : pas de départ d'Orbite avant la fin du trentième jour. Oui, vous êtes coincés avec moi."
+    kami ""
+
+# game/scenario/1_canon.rpy:1428
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a7999495:
+
+    # kami "Vous l'aviez compris, mais je préfère qu'il n'y ait aucun malentendu."
+    kami ""
+
+# game/scenario/1_canon.rpy:1458
+translate english FIRST_CONCLAVE_ELEN_INTERACT_68f423ef:
+
+    # kami "Le brouilleur empêche les images et le son de parvenir à la diffusion."
+    kami ""
+
+# game/scenario/1_canon.rpy:1459
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a26c4c2e:
+
+    # kami "Les enregistrements existent toujours, mais personne ne peut les consulter tout de suite. Pas même moi !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1465
+translate english FIRST_CONCLAVE_ELEN_INTERACT_087630d5:
+
+    # kami "Alors profitez bien de votre petite intimité !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1499
+translate english FIRST_CONCLAVE_ELEN_INTERACT_7f3ebc41:
+
+    # kami "Comme annoncé ce matin, un amendement sera tiré au sort tous les trois jours. Dix au total, pour douze propositions."
+    kami ""
+
+# game/scenario/1_canon.rpy:1500
+translate english FIRST_CONCLAVE_ELEN_INTERACT_b29d700a:
+
+    # kami "Et je maintiens ma petite exigence : aucun vote contre pour l'adoption. Vous connaissez la chanson."
+    kami ""
+
+# game/scenario/1_canon.rpy:1503
+translate english FIRST_CONCLAVE_ELEN_INTERACT_59985108:
+
+    # kami "Pour adopter un amendement, il faut que tous ceux qui votent se prononcent pour."
+    kami ""
+
+# game/scenario/1_canon.rpy:1504
+translate english FIRST_CONCLAVE_ELEN_INTERACT_6635f916:
+
+    # kami "Les abstentions et les absences ne comptent pas comme des votes contre."
+    kami ""
+
+# game/scenario/1_canon.rpy:1514
+translate english FIRST_CONCLAVE_ELEN_INTERACT_d4464f47:
+
+    # elias neutre "Donc on peut même pas être sûrs que les douze viendront voter ?"
+    elias neutre ""
+
+# game/scenario/1_canon.rpy:1515
+translate english FIRST_CONCLAVE_ELEN_INTERACT_8ce51e9d:
+
+    # elias peur "Ça promet, cette histoire..."
+    elias peur ""
+
+# game/scenario/1_canon.rpy:1522
+translate english FIRST_CONCLAVE_ELEN_INTERACT_30a69de2:
+
+    # kami "Si vous adoptez un amendement, je l'appliquerai aussitôt."
+    kami ""
+
+# game/scenario/1_canon.rpy:1524
+translate english FIRST_CONCLAVE_ELEN_INTERACT_7e7c3302:
+
+    # kami "Ça dépendra de ce que vous aurez proposé. Alors faites attention !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1576
+translate english FIRST_CONCLAVE_ELEN_INTERACT_b555c437:
+
+    # kael calme "Je voudrais juste revenir sur ce que j'ai proposé avant l'arrivée de Kami."
+    kael calme ""
+
+# game/scenario/1_canon.rpy:1577
+translate english FIRST_CONCLAVE_ELEN_INTERACT_1256704a:
+
+    # kael reflechit "On pourrait au moins se dire quels sujets on compte aborder. Pas besoin de révéler nos textes."
+    kael reflechit ""
+
+# game/scenario/1_canon.rpy:1578
+translate english FIRST_CONCLAVE_ELEN_INTERACT_eb2301a5:
+
+    # kael calme "Je sais que certains ne veulent pas. Mais ce serait dommage de découvrir nos désaccords seulement au moment de voter."
+    kael calme ""
+
+# game/scenario/1_canon.rpy:1582
+translate english FIRST_CONCLAVE_ELEN_INTERACT_5fe170d8:
+
+    # kael triste "Pourquoi ?"
+    kael triste ""
+
+# game/scenario/1_canon.rpy:1584
+translate english FIRST_CONCLAVE_ELEN_INTERACT_440d7129:
+
+    # iris desaccord "Parce qu'on peut voter un truc qui a l'air bien et foutre tout le monde dans la merde."
+    iris desaccord ""
+
+# game/scenario/1_canon.rpy:1585
+translate english FIRST_CONCLAVE_ELEN_INTERACT_6e66709c:
+
+    # iris taquin "Et après, quand ça tourne mal, les gens vont chercher à qui en vouloir."
+    iris taquin ""
+
+# game/scenario/1_canon.rpy:1588
+translate english FIRST_CONCLAVE_ELEN_INTERACT_0f702ed3:
+
+    # kael reflechit "Je ne demande pas les noms sur les bulletins. Juste une discussion, si vous êtes d'accord."
+    kael reflechit ""
+
+# game/scenario/1_canon.rpy:1590
+translate english FIRST_CONCLAVE_ELEN_INTERACT_cf49a32c:
+
+    # iris colere "On est libres de garder ça pour nous, non ?!"
+    iris colere ""
+
+# game/scenario/1_canon.rpy:1594
+translate english FIRST_CONCLAVE_ELEN_INTERACT_1e44ed91:
+
+    # noam calme "Attends, Iris. Je crois pas que c'est ce qu'il voulait dire."
+    noam calme ""
+
+# game/scenario/1_canon.rpy:1596
+translate english FIRST_CONCLAVE_ELEN_INTERACT_0bb1d95f:
+
+    # sael determine "Si ça tourne mal, les gens trouveront forcément quelqu'un à accuser."
+    sael determine ""
+
+# game/scenario/1_canon.rpy:1597
+translate english FIRST_CONCLAVE_ELEN_INTERACT_1e0b075f:
+
+    # sael determine "Même si on a tous voté, c'est quelqu'un d'ici qui prendra tout dans la figure."
+    sael determine ""
+
+# game/scenario/1_canon.rpy:1603
+translate english FIRST_CONCLAVE_ELEN_INTERACT_40d894da:
+
+    # julian sourire "Moi, je suis prêt à dire ce que je veux proposer."
+    julian sourire ""
+
+# game/scenario/1_canon.rpy:1605
+translate english FIRST_CONCLAVE_ELEN_INTERACT_366ec4d4:
+
+    # mara neutre "Ah bah lui, il a surtout peur qu'on l'oublie."
+    mara neutre ""
+
+# game/scenario/1_canon.rpy:1613
+translate english FIRST_CONCLAVE_ELEN_INTERACT_985c4b26:
+
+    # ryn reflechit "Je vais pas défendre les lois de Kami. Encore moins celles qui étranglent Limen."
+    ryn reflechit ""
+
+# game/scenario/1_canon.rpy:1614
+translate english FIRST_CONCLAVE_ELEN_INTERACT_3f3e8198:
+
+    # ryn colere "Mais si on vote une connerie sans savoir ce que ça fera aux gens de chez moi, qui ramassera les morceaux ?"
+    ryn colere ""
+
+# game/scenario/1_canon.rpy:1615
+translate english FIRST_CONCLAVE_ELEN_INTERACT_817ca54b:
+
+    # ryn reflechit "Tant qu'on connaît pas les conséquences, je préfère refuser. Pas question de jouer avec leur peau."
+    ryn reflechit ""
+
+# game/scenario/1_canon.rpy:1617
+translate english FIRST_CONCLAVE_ELEN_INTERACT_47caa532:
+
+    # nyra triste "Je comprends ta prudence. Mais on ne pourra pas refuser indéfiniment. Qu'est-ce qu'on dira aux gens qui attendent un changement ?"
+    nyra triste ""
+
+# game/scenario/1_canon.rpy:1618
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a50c8537:
+
+    # nyra neutre "Qu'on a préféré rien tenter parce qu'on avait la trouille ?"
+    nyra neutre ""
+
+# game/scenario/1_canon.rpy:1620
+translate english FIRST_CONCLAVE_ELEN_INTERACT_ed025133:
+
+    # tomas hesitation "Même cette prudence ne garantit rien, Ryn."
+    tomas hesitation ""
+
+# game/scenario/1_canon.rpy:1625
+translate english FIRST_CONCLAVE_ELEN_INTERACT_65fb4b92:
+
+    # kael reflechit "C'est justement ce qui m'inquiète. On ne peut pas tout prévoir, mais parler des risques maintenant nous éviterait peut-être des surprises."
+    kael reflechit ""
+
+# game/scenario/1_canon.rpy:1626
+translate english FIRST_CONCLAVE_ELEN_INTERACT_fa0709b2:
+
+    # kael calme "Après, je ne peux forcer personne à me répondre."
+    kael calme ""
+
+# game/scenario/1_canon.rpy:1628
+translate english FIRST_CONCLAVE_ELEN_INTERACT_d54404ed:
+
+    # lysa doute "Vous êtes sérieux ? Vous faites confiance à tout le monde, comme ça ?!"
+    lysa doute ""
+
+# game/scenario/1_canon.rpy:1629
+translate english FIRST_CONCLAVE_ELEN_INTERACT_f747a999:
+
+    # lysa reflexion "Rien n'empêche quelqu'un de nous raconter n'importe quoi et d'écrire autre chose !"
+    lysa reflexion ""
+
+# game/scenario/1_canon.rpy:1630
+translate english FIRST_CONCLAVE_ELEN_INTERACT_00a92af5:
+
+    # lysa taquin "Et si son texte sort jamais, personne saura ce qu'il avait proposé !"
+    lysa taquin ""
+
+# game/scenario/1_canon.rpy:1631
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c4ddecef:
+
+    # lysa colere "Et après, il dira que son texte a pas été tiré. On pourra jamais vérifier !"
+    lysa colere ""
+
+# game/scenario/1_canon.rpy:1653
+translate english FIRST_CONCLAVE_ELEN_INTERACT_621d65f5:
+
+    # mara sourire "Bah voilà, il suffisait qu'un seul se lance."
+    mara sourire ""
+
+# game/scenario/1_canon.rpy:1654
+translate english FIRST_CONCLAVE_ELEN_INTERACT_e05d06e6:
+
+    # mara taquin "Regardez-les, maintenant ils écrivent tous. Ils attendaient quoi, une autorisation ?"
+    mara taquin ""
+
+# game/scenario/1_canon.rpy:1660
+translate english FIRST_CONCLAVE_ELEN_INTERACT_67747fec:
+
+    # sael neutre "On peut encore en parler, mais chacun devra choisir ce qu'il écrit."
+    sael neutre ""
+
+# game/scenario/1_canon.rpy:1661
+translate english FIRST_CONCLAVE_ELEN_INTERACT_509c1a81:
+
+    # sael neutre "On sait très bien ce qui arrive quand une règle est mal faite."
+    sael neutre ""
+
+# game/scenario/1_canon.rpy:1669
+translate english FIRST_CONCLAVE_ELEN_INTERACT_878a1812:
+
+    # kael triste "D'accord... J'aurais préféré qu'on en parle. Mais je vois bien que je n'obtiendrai rien de plus."
+    kael triste ""
+
+# game/scenario/1_canon.rpy:1677
+translate english FIRST_CONCLAVE_ELEN_INTERACT_99e6464e:
+
+    # think "On devait discuter ensemble, et là on écrit chacun dans notre coin. Ça commence mal."
+    think ""
+
+# game/scenario/1_canon.rpy:1679
+translate english FIRST_CONCLAVE_ELEN_INTERACT_74b95fa0:
+
+    # elen inquiet "Et si quelqu'un propose un truc vraiment dangereux ?"
+    elen inquiet ""
+
+# game/scenario/1_canon.rpy:1680
+translate english FIRST_CONCLAVE_ELEN_INTERACT_6ac2a96e:
+
+    # elen inquiet "On peut proposer n'importe quoi, non ? Même un truc horrible ?"
+    elen inquiet ""
+
+# game/scenario/1_canon.rpy:1713
+translate english FIRST_CONCLAVE_ELEN_INTERACT_d659a197:
+
+    # think "Les autres ont presque tous fini et moi, j'ai encore rien écrit."
+    think ""
+
+# game/scenario/1_canon.rpy:1714
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a536b139:
+
+    # think "Si mon idée est tirée au sort et que ça tourne mal, il y aura peut-être des gens qui en paieront le prix."
+    think ""
+
+# game/scenario/1_canon.rpy:1715
+translate english FIRST_CONCLAVE_ELEN_INTERACT_0db7851e:
+
+    # think "Bon. Faut arrêter de paniquer. Les autres ont réussi à écrire quelque chose, je peux le faire aussi."
+    think ""
+
+# game/scenario/1_canon.rpy:1729
+translate english FIRST_CONCLAVE_ELEN_INTERACT_ac7e568a:
+
+    # think "Je me lève. Ma chaise fait un bruit énorme dans la salle presque vide."
+    think ""
+
+# game/scenario/1_canon.rpy:1730
+translate english FIRST_CONCLAVE_ELEN_INTERACT_cbd889ed:
+
+    # think "J'avance jusqu'à l'urne, mais j'ai encore envie de retourner corriger mon texte."
+    think ""
+
+# game/scenario/1_canon.rpy:1733
+translate english FIRST_CONCLAVE_ELEN_INTERACT_993d20f2:
+
+    # think "Je glisse ma feuille dans l'urne. Elle est un peu froissée, mais tant pis."
+    think ""
+
+# game/scenario/1_canon.rpy:1772
+translate english FIRST_CONCLAVE_ELEN_INTERACT_7e58e390:
+
+    # kami "Oh, vous avez tous rendu votre copie ! Et dans les temps, en plus !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1773
+translate english FIRST_CONCLAVE_ELEN_INTERACT_9e3534ad:
+
+    # kami "C'est presque impressionnant. Vous feriez de très bons élèves !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1785
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c9f6a4a5:
+
+    # kami "J'ai hâte de voir lequel de vos petits textes va sortir."
+    kami ""
+
+# game/scenario/1_canon.rpy:1790
+translate english FIRST_CONCLAVE_ELEN_INTERACT_f0fb4823:
+
+    # kami "Vous pouvez aller manger, vous reposer... Oui, Elen, tu peux enfin retourner à la cafétéria !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1794
+translate english FIRST_CONCLAVE_ELEN_INTERACT_fd6adba5:
+
+    # kami "Dormez bien ! Demain, on remet ça !"
+    kami ""
+
+# game/scenario/1_canon.rpy:1805
+translate english FIRST_CONCLAVE_ELEN_INTERACT_aa57a8e2:
+
+    # think "Le couloir est vide. J'ai du mal à croire qu'on vient tous de déposer un texte qui pourrait changer les règles du monde."
+    think ""
+
+# game/scenario/1_canon.rpy:1870
+translate english FIRST_CONCLAVE_ELEN_INTERACT_7e99cdfa:
+
+    # julian detendu "J'ai recommencé mon texte trois fois. Trois !"
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1871
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c0af3753:
+
+    # julian sourire "Je voulais pas me planter sur les mots. Les gens vont peut-être la lire, cette proposition."
+    julian sourire ""
+
+# game/scenario/1_canon.rpy:1872
+translate english FIRST_CONCLAVE_ELEN_INTERACT_ffd13820:
+
+    # julian detendu "Ça me ferait chier qu'on la rejette juste parce que je l'ai mal écrite !"
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1874
+translate english FIRST_CONCLAVE_ELEN_INTERACT_708b8026:
+
+    # mara sourire "Moi j'ai écrit ce que je pensais. C'est déjà pas mal."
+    mara sourire ""
+
+# game/scenario/1_canon.rpy:1875
+translate english FIRST_CONCLAVE_ELEN_INTERACT_43c6907e:
+
+    # mara taquin "Si ça plaît à personne, je m'en remettrai. Par contre, j'ai soif."
+    mara taquin ""
+
+# game/scenario/1_canon.rpy:1877
+translate english FIRST_CONCLAVE_ELEN_INTERACT_6b562779:
+
+    # julian detendu "On peut proposer un truc qui change la vie de millions de gens, et même pas être tirés au sort."
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1878
+translate english FIRST_CONCLAVE_ELEN_INTERACT_846bb9d3:
+
+    # julian inquiet "Imaginez que mon texte soit même pas tiré. Tout ça pour rien. Ça me rend dingue !"
+    julian inquiet ""
+
+# game/scenario/1_canon.rpy:1880
+translate english FIRST_CONCLAVE_ELEN_INTERACT_d18936e5:
+
+    # nyra taquin "T'es surtout inquiet qu'on parle pas de toi, non ?"
+    nyra taquin ""
+
+# game/scenario/1_canon.rpy:1881
+translate english FIRST_CONCLAVE_ELEN_INTERACT_0e66e172:
+
+    # julian detendu "Je peux vouloir les deux, non ?"
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1882
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c9682ea0:
+
+    # nyra sourire "J'ai pas dit le contraire."
+    nyra sourire ""
+
+# game/scenario/1_canon.rpy:1888
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a66e6321:
+
+    # julian detendu "Évidemment qu'elle nous regarde. Alors autant lui donner quelque chose à voir !"
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1891
+translate english FIRST_CONCLAVE_ELEN_INTERACT_bf44f042:
+
+    # julian joie "Avoue, t'es jalouse. Tout le monde va m'adorer !"
+    julian joie ""
+
+# game/scenario/1_canon.rpy:1892
+translate english FIRST_CONCLAVE_ELEN_INTERACT_0f3fe894:
+
+    # mara sourire "Ah ouais ? Bah continue de rêver, mon grand !"
+    mara sourire ""
+
+# game/scenario/1_canon.rpy:1912
+translate english FIRST_CONCLAVE_ELEN_INTERACT_ad2d9f6b:
+
+    # julian detendu "Ah, enfin quelqu'un qui a pensé à ramener à boire !"
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1918
+translate english FIRST_CONCLAVE_ELEN_INTERACT_44316b18:
+
+    # tomas hesitation "Si je renverse tout, je vous jure que je sors plus de ma chambre."
+    tomas hesitation ""
+
+# game/scenario/1_canon.rpy:1935
+translate english FIRST_CONCLAVE_ELEN_INTERACT_3d6c0910:
+
+    # julian detendu "Merci, Tomas. Franchement, ça fait du bien."
+    julian detendu ""
+
+# game/scenario/1_canon.rpy:1943
+translate english FIRST_CONCLAVE_ELEN_INTERACT_176b1f3a:
+
+    # think "On se passe les tasses. Pendant un moment, personne ne parle de Kami."
+    think ""
+
+# game/scenario/1_canon.rpy:1946
+translate english FIRST_CONCLAVE_ELEN_INTERACT_b9300a6c:
+
+    # nyra vide "Ça fait du bien, un truc chaud. Vous trouvez pas ?"
+    nyra vide ""
+
+# game/scenario/1_canon.rpy:1955
+translate english FIRST_CONCLAVE_ELEN_INTERACT_5cf652d3:
+
+    # julian "Ah ouais ? Madame s'y connaît en thé, maintenant ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:1969
+translate english FIRST_CONCLAVE_ELEN_INTERACT_94bbe31b:
+
+    # julian "Allez, parle pas déjà de demain. On peut souffler cinq minutes ?"
+    julian ""
+
+# game/scenario/1_canon.rpy:1975
+translate english FIRST_CONCLAVE_ELEN_INTERACT_449d256d:
+
+    # think "On finit nos boissons. Il reste une tasse sur le plateau."
+    think ""
+
+# game/scenario/1_canon.rpy:1987
+translate english FIRST_CONCLAVE_ELEN_INTERACT_3ab2d71f:
+
+    # think "Je garde ma tasse dans les mains encore un moment, même si elle est vide."
+    think ""
+
+# game/scenario/1_canon.rpy:2016
+translate english FIRST_CONCLAVE_ELEN_INTERACT_212e1f2d:
+
+    # think "Le dortoir est moins froid que le reste du bâtiment. Elias est déjà là."
+    think ""
+
+# game/scenario/1_canon.rpy:2047
+translate english FIRST_CONCLAVE_ELEN_INTERACT_e22682fe:
+
+    # elias detendu "Putain, je suis crevé... Pourtant, j'ai rien foutu de la journée ! Enfin, j'ai beaucoup parlé. C'est peut-être ça qui fatigue."
+    elias detendu ""
+
+# game/scenario/1_canon.rpy:2051
+translate english FIRST_CONCLAVE_ELEN_INTERACT_d74a6d48:
+
+    # elias inquiet "Tu crois qu'on va devoir refaire ça tous les jours ?!"
+    elias inquiet ""
+
+# game/scenario/1_canon.rpy:2052
+translate english FIRST_CONCLAVE_ELEN_INTERACT_6fa38a11:
+
+    # elias sourire "Je vais pas te mentir, ce genre de réunion ça me saoule vite..."
+    elias sourire ""
+
+# game/scenario/1_canon.rpy:2058
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a7890001:
+
+    # elias neutre "Bonne nuit, Noam."
+    elias neutre ""
+
+# game/scenario/1_canon.rpy:2070
+translate english FIRST_CONCLAVE_ELEN_INTERACT_126a66ed:
+
+    # think "Non, ce sont MES affaires ! Du matériel informatique. Près du bureau, le voyant vert fixe du brouilleur confirme qu'il est actif."
+    think ""
+
+# game/scenario/1_canon.rpy:2082
+translate english FIRST_CONCLAVE_ELEN_INTERACT_74f5facf:
+
+    # think "Je reste sous l'eau un bon moment. J'ai pas envie de repenser à cette journée."
+    think ""
+
+# game/scenario/1_canon.rpy:2090
+translate english FIRST_CONCLAVE_ELEN_INTERACT_c1ab3af9:
+
+    # think "C'est fait, j'ai déposé mon texte. J'espère juste que j'ai pas écrit une connerie."
+    think ""
+
+# game/scenario/1_canon.rpy:2091
+translate english FIRST_CONCLAVE_ELEN_INTERACT_a9f5c469:
+
+    # think "Je fixe le plafond sans réussir à arrêter de réfléchir."
+    think ""
+
+# game/scenario/1_canon.rpy:2155
+translate english day1_play_trace_d4ebf141:
+
+    # lysa colere "Hé ! Je te parle, là ! Tu comptes regarder les murs encore longtemps ?!"
+    lysa colere ""
+
+# game/scenario/1_canon.rpy:2156
+translate english day1_play_trace_c519065b:
+
+    # noam surpris "Ah ! Mais arrête de me secouer comme ça ! Je t'écoute !"
+    noam surpris ""
+
+# game/scenario/1_canon.rpy:2157
+translate english day1_play_trace_57dafbbb:
+
+    # lysa blase "Ah ouais ? Parce qu'à te voir fixer le plafond, j'avais un sérieux doute."
+    lysa blase ""
+

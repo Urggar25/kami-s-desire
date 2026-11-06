@@ -1712,3 +1712,29 @@ translate english j701_play_search_drawing_0e0bdfb5:
     # noam content "Tu dis ça maintenant. Mais au bout de trois jours, tu risques de mourir d'ennui !"
     noam content "You say that now. But after three days, you might die of boredom!"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/7_0_1.rpy:1449
+translate english j701_play_search_drawing_c0e751ac:
+
+    # iris surpris "Attendez... Kami a vraiment planté ? Mais comment ? Elle a des systèmes de secours, forcément !"
+    iris surpris ""
+
+# game/scenario/7_0_1.rpy:1450
+translate english j701_play_search_drawing_997df94d:
+
+    # iris sourire "Oh putain, j'aimerais tellement voir ce qui s'est passé là-dedans..."
+    iris sourire ""
+
+# game/scenario/7_0_1.rpy:1460
+translate english j701_play_search_drawing_1ea3fe8b:
+
+    # iris taquin "Ouais, bien sûr. Mais attends, si Kami s'est arrêtée toute seule, ça veut dire quoi ? Elle peut redémarrer sans prévenir ?"
+    iris taquin ""
+
+# game/scenario/7_0_1.rpy:1497
+translate english j701_play_search_drawing_97a8d981:
+
+    # iris desaccord "Elle peut revenir n'importe quand. Et moi, je veux savoir ce qui l'a arrêtée !"
+    iris desaccord ""
+

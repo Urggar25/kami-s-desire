@@ -666,3 +666,89 @@ translate english strings:
     old "Me reposer jusqu'à la fin de ce temps libre ?"
     new "Rest until free time is over?"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/repos.rpy:227
+translate english decouverte_salle_repos_c3ae772f:
+
+    # julian sourire "On s'est déjà tapé trois réunions ensemble."
+    julian sourire ""
+
+# game/scenario/salles/repos.rpy:228
+translate english decouverte_salle_repos_a7f8f856:
+
+    # julian sourire "Forcément, ça rapproche."
+    julian sourire ""
+
+# game/scenario/salles/repos.rpy:255
+translate english decouverte_salle_repos_5eb27438:
+
+    # julian joie "Allez, encore une partie !"
+    julian joie ""
+
+# game/scenario/salles/repos.rpy:258
+translate english decouverte_salle_repos_e28d9428:
+
+    # iris inquiet "Tu crois vraiment que Kami va attendre que t'aies fini ton baby-foot ?"
+    iris inquiet ""
+
+# game/scenario/salles/repos.rpy:264
+translate english decouverte_salle_repos_72b0b2c2:
+
+    # "Je me passe une main sur le front. Iris le remarque tout de suite."
+    ""
+
+# game/scenario/salles/repos.rpy:265
+translate english decouverte_salle_repos_279bb141:
+
+    # iris inquiet "Attends, t'as encore mal à la tête ?"
+    iris inquiet ""
+
+# game/scenario/salles/repos.rpy:266
+translate english decouverte_salle_repos_fe1ebc6e:
+
+    # noam hesitation "Un peu, ouais. Ça va passer."
+    noam hesitation ""
+
+# game/scenario/salles/repos.rpy:267
+translate english decouverte_salle_repos_8eae919a:
+
+    # iris desaccord "T'as des vertiges ? Des nausées ?"
+    iris desaccord ""
+
+# game/scenario/salles/repos.rpy:268
+translate english decouverte_salle_repos_9da37444:
+
+    # noam neutre "Non, juste la tête lourde depuis le réveil."
+    noam neutre ""
+
+# game/scenario/salles/repos.rpy:269
+translate english decouverte_salle_repos_cd9eb3b0:
+
+    # iris reflexion "Bon. Si ça empire, va à l'infirmerie. J'ai vu du matériel en passant."
+    iris reflexion ""
+
+# game/scenario/salles/repos.rpy:270
+translate english decouverte_salle_repos_a594137f:
+
+    # julian taquin "Oh, c'est mignon. Tu t'inquiètes pour lui ?"
+    julian taquin ""
+
+# game/scenario/salles/repos.rpy:271
+translate english decouverte_salle_repos_9cf34fde:
+
+    # iris colere "Oh, ferme-la ! Je demande juste parce que j'ai pas envie qu'il nous tombe dans les pommes !"
+    iris colere ""
+
+# game/scenario/salles/repos.rpy:272
+translate english decouverte_salle_repos_ff1dbfcd:
+
+    # noam sourire "D'accord, promis. Et merci."
+    noam sourire ""
+
+# game/scenario/salles/repos.rpy:273
+translate english decouverte_salle_repos_91cd54dd:
+
+    # iris blase "Ouais, bon. Fais juste attention."
+    iris blase ""
+

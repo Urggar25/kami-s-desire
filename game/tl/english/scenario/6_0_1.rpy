@@ -3534,3 +3534,23 @@ translate english daf4fff8_5:
     # think "..."
     think ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/6_0_1.rpy:341
+translate english 8b1d53e7_1:
+
+    # noam inquiet "Sael ?"
+    noam inquiet ""
+
+# game/scenario/6_0_1.rpy:645
+translate english 07cd52c6:
+
+    # think "Elle ne va pas..."
+    think ""
+
+# game/scenario/6_0_1.rpy:876
+translate english j601_sael_vote_animation_322af418:
+
+    # iris colere "Et j'en ai marre qu'elle décide tout pour nous ! Qu'elle garde son cerveau de génie, mais qu'elle nous foute la paix deux minutes !"
+    iris colere ""
+

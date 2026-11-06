@@ -2324,3 +2324,23 @@ translate english d5e6270a:
     # nyra raison "{i}Il nous rejoindra. Si tu retournes le chercher maintenant, tu attireras l'attention.{/i}"
     nyra raison ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/7_1_0_0.rpy:450
+translate english a56405d6_4:
+
+    # noam neutre "Oui."
+    noam neutre ""
+
+# game/scenario/7_1_0_0.rpy:474
+translate english cbcaad30_3:
+
+    # kael triste "Je sais."
+    kael triste ""
+
+# game/scenario/7_1_0_0.rpy:551
+translate english dd3d3bf8_2:
+
+    # kael neutre "Oui."
+    kael neutre ""
+

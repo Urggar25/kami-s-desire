@@ -2836,3 +2836,35 @@ translate english 2bdf9ba4_1:
     # noam inquiet "Non."
     noam inquiet ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/5_1.rpy:581
+translate english 5d09db47_1:
+
+    # noam inquiet "Elias ?"
+    noam inquiet ""
+
+# game/scenario/5_1.rpy:697
+translate english cbcaad30_2:
+
+    # kael triste "Je sais."
+    kael triste ""
+
+# game/scenario/5_1.rpy:843
+translate english 24fc45ad_1:
+
+    # mara agace "Noam."
+    mara agace ""
+
+# game/scenario/5_1.rpy:845
+translate english 1f7a2c19_3:
+
+    # noam inquiet "Ouais."
+    noam inquiet ""
+
+# game/scenario/5_1.rpy:864
+translate english eaf4989e_1:
+
+    # noam inquiet "Ça va ?"
+    noam inquiet ""
+

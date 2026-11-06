@@ -1016,3 +1016,27 @@ translate english strings:
     old "Attendre, il est peut-être juste fatigué."
     new "Wait. Maybe he's just tired."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/8_0_1.rpy:343
+translate english e55ba307:
+
+    # julian decontracte "Vous imaginez ? Elias renverse un café et sauve le monde. Même moi, j'aurais pas osé inventer ça !"
+    julian decontracte ""
+
+# game/scenario/8_0_1.rpy:562
+translate english d44efeed:
+
+    # think "Je devrais garder ces faits séparés du Codex. Pas du lore : une trace de ce qui nous arrive."
+    think ""
+
+translate english strings:
+
+    # game/scenario/8_0_1.rpy:397
+    old "Discuter un instant avec Julian."
+    new ""
+
+    # game/scenario/8_0_1.rpy:397
+    old "Passer directement au temps libre."
+    new ""
+

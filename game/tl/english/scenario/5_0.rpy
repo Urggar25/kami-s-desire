@@ -1884,3 +1884,35 @@ translate english 290dd969_6:
     # noam "Non."
     noam ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/5_0.rpy:476
+translate english c09788b4_7:
+
+    # "Rien."
+    ""
+
+# game/scenario/5_0.rpy:565
+translate english 8129fc03:
+
+    # sael determine "Je veux pas revoir les hommes armés débarquer chez nous. Ça recommencera, Noam. Je le sais."
+    sael determine ""
+
+# game/scenario/5_0.rpy:566
+translate english 0f68b6cc:
+
+    # sael colere "Alors oui, même si les miens m'en veulent, je voterai contre. Je peux pas leur faire courir ce risque."
+    sael colere ""
+
+# game/scenario/5_0.rpy:621
+translate english afc55ade_5:
+
+    # "Je m'arrête."
+    ""
+
+# game/scenario/5_0.rpy:814
+translate english 290dd969_11:
+
+    # noam "Non."
+    noam ""
+

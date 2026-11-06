@@ -714,3 +714,89 @@ translate english decouverte_sas_ced82d0c:
     # think "Je devrais aller voir ailleurs."
     think "I should go look somewhere else."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/sas.rpy:221
+translate english decouverte_sas_1390beee:
+
+    # mara doute "Les autres regardent la porte deux secondes,"
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:222
+translate english decouverte_sas_1e475fa3:
+
+    # mara doute "voient qu'elle est fermée,"
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:223
+translate english decouverte_sas_67196765:
+
+    # mara doute "et repartent."
+    mara doute ""
+
+# game/scenario/salles/sas.rpy:229
+translate english decouverte_sas_c0109920:
+
+    # mara sourire "Je préfère savoir comment ça marche, au cas où."
+    mara sourire ""
+
+# game/scenario/salles/sas.rpy:230
+translate english decouverte_sas_5332c531:
+
+    # mara sourire "Au moins, si y a un problème, je saurai où aller."
+    mara sourire ""
+
+# game/scenario/salles/sas.rpy:231
+translate english decouverte_sas_0972e05f:
+
+    # mara taquin "Parce que ça finira bien par merder quelque part."
+    mara taquin ""
+
+# game/scenario/salles/sas.rpy:233
+translate english decouverte_sas_d125ccb9:
+
+    # noam hesitation "Ça te fait pas peur, quand même ? De rester bloquée ici un mois ?"
+    noam hesitation ""
+
+# game/scenario/salles/sas.rpy:234
+translate english decouverte_sas_0831f0ca:
+
+    # mara rire "Moi ? Oh non, je suis ravie. Des portes blindées, zéro moyen de rentrer chez moi... Le rêve."
+    mara rire ""
+
+# game/scenario/salles/sas.rpy:235
+translate english decouverte_sas_f66a3c48:
+
+    # noam reflexion "Non, je te demande vraiment."
+    noam reflexion ""
+
+# game/scenario/salles/sas.rpy:236
+translate english decouverte_sas_df943f21:
+
+    # "Elle jette un coup d'œil au sas. Son sourire disparaît une seconde."
+    ""
+
+# game/scenario/salles/sas.rpy:237
+translate english decouverte_sas_832f3101:
+
+    # mara stress "Évidemment que j'ai les boules. Tu crois quoi ?"
+    mara stress ""
+
+# game/scenario/salles/sas.rpy:238
+translate english decouverte_sas_ade327f9:
+
+    # "Elle détourne les yeux, puis reprend son sourire habituel."
+    ""
+
+# game/scenario/salles/sas.rpy:239
+translate english decouverte_sas_18861c4c:
+
+    # mara taquin "Mais si je commence à flipper avec toi, on va pas s'en sortir. Allez, change de sujet."
+    mara taquin ""
+
+# game/scenario/salles/sas.rpy:240
+translate english decouverte_sas_911492c2:
+
+    # noam neutre "D'accord."
+    noam neutre ""
+

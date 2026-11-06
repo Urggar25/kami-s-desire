@@ -774,3 +774,29 @@ translate english decouverte_cafeteria_c37fdb83:
     # think "Je devrais aller voir ailleurs aussi."
     think "I should go take a look around too."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/cafeteria.rpy:264
+translate english decouverte_cafeteria_57de12d6:
+
+    # elen vide "Rah, c'est impossible de discuter avec lui !"
+    elen vide ""
+
+# game/scenario/salles/cafeteria.rpy:265
+translate english decouverte_cafeteria_087a7120:
+
+    # elen vide "Il répond toujours comme ça ?"
+    elen vide ""
+
+# game/scenario/salles/cafeteria.rpy:284
+translate english decouverte_cafeteria_0ee9e4ed:
+
+    # elen vide "Au moins, il nous dit clairement comment ça marche."
+    elen vide ""
+
+# game/scenario/salles/cafeteria.rpy:285
+translate english decouverte_cafeteria_7ef51531:
+
+    # elen vide "C'est déjà ça."
+    elen vide ""
+

@@ -1236,3 +1236,23 @@ translate english decouverte_infirmerie_43094a78:
     # think "Il faut que je trouve un endroit moins morbide."
     think "I need to find somewhere less morbid."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/infirmerie.rpy:193
+translate english decouverte_infirmerie_0bd73596:
+
+    # sael taquin "Contre la connerie ?"
+    sael taquin ""
+
+# game/scenario/salles/infirmerie.rpy:194
+translate english decouverte_infirmerie_bc01f326:
+
+    # sael taquin "Non, ça, ils ont pas prévu le traitement."
+    sael taquin ""
+
+# game/scenario/salles/infirmerie.rpy:231
+translate english decouverte_infirmerie_e516ae90:
+
+    # sael determine "Rigole pas. Y a sûrement un casier à ton nom aussi."
+    sael determine ""
+

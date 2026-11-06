@@ -1506,3 +1506,11 @@ translate english strings:
     old "Refuser poliment"
     new ""
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/4_1.rpy:311
+translate english 1f05000a:
+
+    # sael determine "Non. Pas si ça risque de ramener des hommes armés chez nous. J'ai déjà vu ce que ça donnait."
+    sael determine ""
+

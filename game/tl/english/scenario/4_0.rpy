@@ -1438,3 +1438,11 @@ translate english day4_tray_scene_loop_5f7709e2:
     # ryn colere "Ferme-la, parle pas de ce que tu connais pas !"
     ryn colere "Shut the hell up. Don't talk about things you know nothing about!"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/4_0.rpy:725
+translate english day4_tray_scene_loop_c1819e3e:
+
+    # sael determine "Les frontières, c'est ce qui nous empêche de revivre ça. Moi, je veux pas voir revenir la guerre."
+    sael determine ""
+

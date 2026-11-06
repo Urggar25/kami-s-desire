@@ -2622,3 +2622,305 @@ translate english strings:
     old "Me tenir près de l'entrée."
     new "Stand near the entrance."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/2_canon.rpy:159
+translate english 79e4878b:
+
+    # think "Je prends un plateau et m'installe sans faire de bruit. La discussion a déjà commencé."
+    think ""
+
+# game/scenario/2_canon.rpy:187
+translate english a97953cf:
+
+    # elen joie "On peut peut-être arranger les choses ! Et franchement, vous avez goûté ce qu'ils servent ici ?"
+    elen joie ""
+
+# game/scenario/2_canon.rpy:202
+translate english c07e0857:
+
+    # sael raison "Elias a raison. Mangez tant que vous pouvez."
+    sael raison ""
+
+# game/scenario/2_canon.rpy:203
+translate english 5c40ec8e:
+
+    # sael mefiant "On ne sait pas ce qui nous attend après."
+    sael mefiant ""
+
+# game/scenario/2_canon.rpy:355
+translate english cc01484c:
+
+    # nyra taquin "Le commerce ? Ça pourrait changer pas mal de choses, quand même."
+    nyra taquin ""
+
+# game/scenario/2_canon.rpy:412
+translate english 7685b53f:
+
+    # tomas hesitation "A-Attendez... On pourrait vraiment recommencer à acheter des choses ? Comme avant ?"
+    tomas hesitation ""
+
+# game/scenario/2_canon.rpy:440
+translate english d335cb2b:
+
+    # mara colere "Les riches se servent et les autres ramassent ce qui reste. Vous avez déjà oublié ?"
+    mara colere ""
+
+# game/scenario/2_canon.rpy:497
+translate english 6f95213e:
+
+    # elias taquin "Bah, c'est pas trop compliqué à comprendre !"
+    elias taquin ""
+
+# game/scenario/2_canon.rpy:498
+translate english 43e120a0:
+
+    # elias ecoute "La télé dans les couloirs elle redit aussi ce que Kami dit. C'est chaud de faire genre t'as deviné."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:523
+translate english 72165dbd:
+
+    # kael neutre "Kami peut encore modifier la façon dont c'est écrit."
+    kael neutre ""
+
+# game/scenario/2_canon.rpy:525
+translate english e828ef57:
+
+    # noam inquiet "Attends, elle peut changer le texte ?"
+    noam inquiet ""
+
+# game/scenario/2_canon.rpy:526
+translate english e4b4d755:
+
+    # noam reflechit "Et demain on devra voter sur sa version ?"
+    noam reflechit ""
+
+# game/scenario/2_canon.rpy:533
+translate english a1ecfbb0:
+
+    # kael inquiet "Ça dépend surtout de ce qu'elle va écrire. Un mot peut tout changer."
+    kael inquiet ""
+
+# game/scenario/2_canon.rpy:540
+translate english d115cb52:
+
+    # mara triste "Si on remet le commerce, on remet l'argent avec. Forcément."
+    mara triste ""
+
+# game/scenario/2_canon.rpy:541
+translate english 7bd504a6:
+
+    # mara peur "Et les gens qui ont déjà tout auront encore une longueur d'avance."
+    mara peur ""
+
+# game/scenario/2_canon.rpy:564
+translate english 74a5f2c8:
+
+    # elias reflechit "Bah ouais ! Avant, quand il me manquait une pièce, j'allais l'acheter."
+    elias reflechit ""
+
+# game/scenario/2_canon.rpy:565
+translate english 04d2494f:
+
+    # elias colere "Maintenant, faut remplir trois formulaires et attendre qu'un type décide si j'en ai vraiment besoin. C'est complètement con !"
+    elias colere ""
+
+# game/scenario/2_canon.rpy:567
+translate english 968aa97f:
+
+    # nyra taquin "Et vous, qu'est-ce qui vous ferait vraiment peur si les échanges reprenaient ?"
+    nyra taquin ""
+
+# game/scenario/2_canon.rpy:570
+translate english bc232fcc:
+
+    # iris colere "Là, on sait même pas ce qu'on vote ! On pourrait avoir le texte exact, déjà ?"
+    iris colere ""
+
+# game/scenario/2_canon.rpy:580
+translate english 7c2bc981:
+
+    # kael reflechit "Faudra trancher demain. Qu'on le veuille ou non."
+    kael reflechit ""
+
+# game/scenario/2_canon.rpy:592
+translate english 030be399:
+
+    # sael raison "Ce serait bien qu'on s'entende. Mais on n'a pas encore le vrai texte."
+    sael raison ""
+
+# game/scenario/2_canon.rpy:599
+translate english 4f2ab249:
+
+    # tomas hesitation "On pourrait déjà faire venir des médicaments. Ou des pièces pour réparer les machines..."
+    tomas hesitation ""
+
+# game/scenario/2_canon.rpy:607
+translate english 1d1c7fc2:
+
+    # mara reflechit "Et qui empêchera que tout parte à Nexus ? Les autres, on leur laissera quoi ?"
+    mara reflechit ""
+
+# game/scenario/2_canon.rpy:617
+translate english 5ca6098a:
+
+    # nyra taquin "On se pose deux minutes ? Qu'est-ce qu'on sait, au juste ?"
+    nyra taquin ""
+
+# game/scenario/2_canon.rpy:618
+translate english 0fc19653:
+
+    # nyra raison "Dites-moi ce qui vous inquiète chez vous. On verra ensuite."
+    nyra raison ""
+
+# game/scenario/2_canon.rpy:663
+translate english c59b996e:
+
+    # sael sourire "Chez nous, les habitudes ont peu changé depuis l'arrivée de Kami."
+    sael sourire ""
+
+# game/scenario/2_canon.rpy:675
+translate english 3ed84cf7:
+
+    # sael sourire "On cultive toujours nos champs. Et depuis Kami, les attaques ont cessé."
+    sael sourire ""
+
+# game/scenario/2_canon.rpy:676
+translate english bcc9bfb3:
+
+    # sael reflechit "Avant, on craignait les groupes armés. Depuis Kami, ils ne viennent plus. Pour moi, ça compte."
+    sael reflechit ""
+
+# game/scenario/2_canon.rpy:678
+translate english 20872450:
+
+    # elias sourire "Ah ouais... C'est quand même un sacré bordel, votre histoire."
+    elias sourire ""
+
+# game/scenario/2_canon.rpy:777
+translate english 34320389:
+
+    # elias ecoute "Tu devrais parler avec nous. Si tu veux. Faut pas rester seule ici."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:787
+translate english 76c588f6:
+
+    # elias neutre "Et ça va, tu as trouvé ça reposant ?"
+    elias neutre ""
+
+# game/scenario/2_canon.rpy:791
+translate english fe360e9d:
+
+    # elias ecoute "Non. Mais il va bien falloir survivre."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:805
+translate english 1e520ffb:
+
+    # elias ecoute "On va CLAIREMENT avoir besoin de toi pour le débat."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:827
+translate english b5a093b6:
+
+    # elias fatigue "T'es pas obligée de parler à la réunion. Mais... On s'en sortirait mieux si tu nous aidais."
+    elias fatigue ""
+
+# game/scenario/2_canon.rpy:915
+translate english 6ca3c52d:
+
+    # sael raison "Chez nous, tout le monde aide. On ne se demande pas combien ça rapporte."
+    sael raison ""
+
+# game/scenario/2_canon.rpy:1007
+translate english 20bebaf4:
+
+    # kael doute "Plus il y a de règles, plus quelqu'un risque de se faire tirer dessus."
+    kael doute ""
+
+# game/scenario/2_canon.rpy:1017
+translate english 50015bc7:
+
+    # kael inquiet "On a des masques partout. Mais quand la coque est percée, on n'a pas toujours le temps de les attraper."
+    kael inquiet ""
+
+# game/scenario/2_canon.rpy:1049
+translate english 6b84803d:
+
+    # elias ecoute "Attends. Respire. Sinon tu vas te fatiguer pour rien."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:1064
+translate english 47e03fab:
+
+    # elias joie "Tu veux apprendre ? Ouais ! J'peux te montrer."
+    elias joie ""
+
+# game/scenario/2_canon.rpy:1070
+translate english debf26a0:
+
+    # elias joie "Celui-là. Regarde, assieds-toi. On va faire un truc simple pour le début."
+    elias joie ""
+
+# game/scenario/2_canon.rpy:1074
+translate english 511f2f8f:
+
+    # elias raison "Stop, tu vas te bousiller le dos ! Souffle quand tu pousses. Voilà, doucement."
+    elias raison ""
+
+# game/scenario/2_canon.rpy:1080
+translate english 46e456a2:
+
+    # elias ecoute "Regarde. Vas-y doucement et laisse pas tomber la barre."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:1084
+translate english f5daf8d5:
+
+    # elias ecoute "Pas comme ça. Va moins vite. Descends pas trop vite."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:1090
+translate english 4994e34a:
+
+    # elias ecoute "Encore deux séries. Après tu peux t'arrêter."
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:1109
+translate english 7a57a93b:
+
+    # elias raison "Si tu reviens de temps en temps, tu verras, ça ira mieux."
+    elias raison ""
+
+# game/scenario/2_canon.rpy:1112
+translate english ee4effe4:
+
+    # iris taquin "La fonte, ça coûte moins cher qu'un psy et ça pose moins de questions idiotes."
+    iris taquin ""
+
+# game/scenario/2_canon.rpy:1118
+translate english 37c060b4:
+
+    # elias neutre "Tu vas stagner. Et plus tard, ton corps te le fait payer."
+    elias neutre ""
+
+# game/scenario/2_canon.rpy:1126
+translate english 27e01502:
+
+    # elias ecoute "Je serai là. Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?"
+    elias ecoute ""
+
+# game/scenario/2_canon.rpy:1158
+translate english 988a66cc:
+
+    # nyra sourire "Là-haut, on mangeait souvent sans parler. Ici, c'est presque impossible."
+    nyra sourire ""
+
+# game/scenario/2_canon.rpy:1173
+translate english f91b9d03:
+
+    # kael calme "On suit les consignes. Si on improvise, ça peut très mal finir."
+    kael calme ""
+

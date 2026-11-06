@@ -1886,3 +1886,101 @@ translate english strings:
     old "Iris et Kael"
     new "Iris and Kael"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/10_0_1_1.rpy:267
+translate english e2015ae6_1:
+
+    # elias inquiet "Putain..."
+    elias inquiet ""
+
+# game/scenario/10_0_1_1.rpy:394
+translate english b4d9ca85:
+
+    # "Le gymnase n'est pas tout à fait vide."
+    ""
+
+# game/scenario/10_0_1_1.rpy:396
+translate english 53880da6:
+
+    # "Iris est seule près des tapis, les cheveux attachés et les mains entourées de bandes. Au moment où j'entre, elle enchaîne deux coups rapides contre un sac, pivote, puis termine par un mouvement de hanche sec avant de reculer."
+    ""
+
+# game/scenario/10_0_1_1.rpy:398
+translate english 0366d182:
+
+    # noam surpris "Je savais pas que tu faisais ça."
+    noam surpris ""
+
+# game/scenario/10_0_1_1.rpy:400
+translate english 51dac122:
+
+    # "Elle se retourne, essoufflée, puis attrape sa serviette."
+    ""
+
+# game/scenario/10_0_1_1.rpy:402
+translate english eb1a1461:
+
+    # iris fatigue "Tu savais pas beaucoup de choses sur moi."
+    iris fatigue ""
+
+# game/scenario/10_0_1_1.rpy:404
+translate english 345a5d9b:
+
+    # noam reflexion "Depuis longtemps ?"
+    noam reflexion ""
+
+# game/scenario/10_0_1_1.rpy:406
+translate english ed3617c0:
+
+    # iris fatigue "Quelques années. Boxe, un peu de judo. Ça m'aide à arrêter de réfléchir cinq minutes."
+    iris fatigue ""
+
+# game/scenario/10_0_1_1.rpy:408
+translate english 77f4226b:
+
+    # noam sourire "Je note de pas trop t'énerver."
+    noam sourire ""
+
+# game/scenario/10_0_1_1.rpy:410
+translate english 2b228f13:
+
+    # iris colere "Il serait temps."
+    iris colere ""
+
+# game/scenario/10_0_1_1.rpy:412
+translate english bb8e9e15:
+
+    # "Elle boit une gorgée d'eau et grimace en regardant la bouche d'aération."
+    ""
+
+# game/scenario/10_0_1_1.rpy:414
+translate english f55cdcd4:
+
+    # iris fatigue "Par contre sans clim, je vais mourir avant d'avoir fini. Amuse-toi bien avec ton truc."
+    iris fatigue ""
+
+# game/scenario/10_0_1_1.rpy:418
+translate english bebc6ded:
+
+    # "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
+    ""
+
+# game/scenario/10_0_1_1.rpy:724
+translate english 986fc99c_3:
+
+    # "Je tourne la tête vers lui."
+    ""
+
+# game/scenario/10_0_1_1.rpy:850
+translate english 0cb173b4:
+
+    # iris colere "Elias, elle décide toute seule qui est coupable et elle le tue. Ça te rassure, toi ?"
+    iris colere ""
+
+# game/scenario/10_0_1_1.rpy:942
+translate english 0b5d3fe0_1:
+
+    # noam hesitation "Je sais pas."
+    noam hesitation ""
+

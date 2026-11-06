@@ -1032,3 +1032,65 @@ translate english decouverte_salle_observation_ced82d0c:
     # think "Je devrais aller voir ailleurs."
     think "I should go check somewhere else."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/observation.rpy:333
+translate english decouverte_salle_observation_fb7db3ec:
+
+    # lysa triste "Ouais. Mais nous, on peut pas sortir."
+    lysa triste ""
+
+# game/scenario/salles/observation.rpy:342
+translate english decouverte_salle_observation_970bef2b:
+
+    # lysa reflexion "C'est pas juste pour faire joli."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:343
+translate english decouverte_salle_observation_e88fa051:
+
+    # lysa reflexion "Elle nous montre surtout qu'on est loin de chez nous."
+    lysa reflexion ""
+
+# game/scenario/salles/observation.rpy:347
+translate english decouverte_salle_observation_8e9bbe1a:
+
+    # lysa determine "Qu'on est loin de tout."
+    lysa determine ""
+
+# game/scenario/salles/observation.rpy:348
+translate english decouverte_salle_observation_e4f2c26c:
+
+    # lysa determine "Et qu'on a plus notre mot à dire sur grand-chose."
+    lysa determine ""
+
+# game/scenario/salles/observation.rpy:349
+translate english decouverte_salle_observation_a2e47911:
+
+    # lysa triste "On peut même pas appeler les gens qu'on a laissés derrière."
+    lysa triste ""
+
+# game/scenario/salles/observation.rpy:353
+translate english decouverte_salle_observation_0b7c7334:
+
+    # lysa sourire "Bah oui, je fais semblant. Tu préfères que je panique ?"
+    lysa sourire ""
+
+# game/scenario/salles/observation.rpy:354
+translate english decouverte_salle_observation_bbdb97b6:
+
+    # lysa taquin "Pas toujours très bien, d'ailleurs."
+    lysa taquin ""
+
+# game/scenario/salles/observation.rpy:367
+translate english decouverte_salle_observation_531b64a2:
+
+    # lysa triste "Je sais pas si je trouve ça beau..."
+    lysa triste ""
+
+# game/scenario/salles/observation.rpy:368
+translate english decouverte_salle_observation_9886d5bf:
+
+    # lysa triste "...ou si ça me fait surtout flipper."
+    lysa triste ""
+

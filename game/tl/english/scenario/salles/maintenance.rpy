@@ -816,3 +816,101 @@ translate english decouverte_salle_maintenance_de7855ba:
     # think "Et ce n'est pas pour me déplaire."
     think "And I don't mind that one bit."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/maintenance.rpy:127
+translate english decouverte_salle_maintenance_9a27c68d:
+
+    # think "Au moins, on sait à quoi sert cette salle."
+    think ""
+
+# game/scenario/salles/maintenance.rpy:129
+translate english decouverte_salle_maintenance_7ae1ee1f:
+
+    # think "Vu l'état du monde, ils auraient du boulot."
+    think ""
+
+# game/scenario/salles/maintenance.rpy:181
+translate english decouverte_salle_maintenance_6882477a:
+
+    # kael reflechit "Sauf qu'on nous a pas demandé notre avis."
+    kael reflechit ""
+
+# game/scenario/salles/maintenance.rpy:182
+translate english decouverte_salle_maintenance_79ffed87:
+
+    # kael reflechit "Y a du monde partout, ça me fatigue déjà."
+    kael reflechit ""
+
+# game/scenario/salles/maintenance.rpy:183
+translate english decouverte_salle_maintenance_c1037db7:
+
+    # kael reflechit "Ici, au moins, on me laisse tranquille."
+    kael reflechit ""
+
+# game/scenario/salles/maintenance.rpy:191
+translate english decouverte_salle_maintenance_1ec62ce3:
+
+    # "Son regard revient sur les armoires électriques. Il vérifie un écran, puis un autre."
+    ""
+
+# game/scenario/salles/maintenance.rpy:192
+translate english decouverte_salle_maintenance_0abc4d16:
+
+    # noam reflexion "Y a un problème ?"
+    noam reflexion ""
+
+# game/scenario/salles/maintenance.rpy:193
+translate english decouverte_salle_maintenance_0aa6e786:
+
+    # kael reflechit "Je sais pas encore. Mais t'as vu la taille des installations ?"
+    kael reflechit ""
+
+# game/scenario/salles/maintenance.rpy:194
+translate english decouverte_salle_maintenance_76837959:
+
+    # noam neutre "Oui. C'est grand."
+    noam neutre ""
+
+# game/scenario/salles/maintenance.rpy:195
+translate english decouverte_salle_maintenance_1c099e3f:
+
+    # kael reflechit "Un peu trop, pour douze types qui doivent juste rester là un mois."
+    kael reflechit ""
+
+# game/scenario/salles/maintenance.rpy:196
+translate english decouverte_salle_maintenance_e6242717:
+
+    # noam inquiet "Tu veux dire qu'ils ont prévu autre chose ?"
+    noam inquiet ""
+
+# game/scenario/salles/maintenance.rpy:197
+translate english decouverte_salle_maintenance_3b0c1dc4:
+
+    # kael neutre "J'en sais rien. Peut-être qu'ils ont simplement prévu large."
+    kael neutre ""
+
+# game/scenario/salles/maintenance.rpy:198
+translate english decouverte_salle_maintenance_dd8e02a2:
+
+    # noam reflexion "Tu devrais en parler aux autres."
+    noam reflexion ""
+
+# game/scenario/salles/maintenance.rpy:199
+translate english decouverte_salle_maintenance_35197172:
+
+    # kael calme "Pour leur dire quoi ? Que j'ai trouvé une armoire électrique bizarre ?"
+    kael calme ""
+
+# game/scenario/salles/maintenance.rpy:200
+translate english decouverte_salle_maintenance_651e8e01:
+
+    # kael reflechit "Je préfère regarder avant. J'ai pas envie de foutre tout le monde en panique pour rien."
+    kael reflechit ""
+
+# game/scenario/salles/maintenance.rpy:201
+translate english decouverte_salle_maintenance_2deb2e71:
+
+    # noam neutre "Ouais. Vu comme ça..."
+    noam neutre ""
+

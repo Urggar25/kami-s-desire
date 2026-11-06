@@ -2928,3 +2928,773 @@ translate english day3_choose_debate_argument_ef12d5c7:
     # think "Qu'est-ce qu'on peut faire, maintenant ?"
     think "What can we do now?"
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/3_canon.rpy:312
+translate english day3_collect_vote_argument_69d258ad:
+
+    # think "J'entends du monde dans le couloir. Personne ne parle bien fort."
+    think ""
+
+# game/scenario/3_canon.rpy:313
+translate english day3_collect_vote_argument_3821ec30:
+
+    # think "Je crois qu'on a tous le vote en tête."
+    think ""
+
+# game/scenario/3_canon.rpy:389
+translate english day3_collect_vote_argument_cf6f4bd4:
+
+    # kael inquiet "Tout le monde dit que ça va rien changer."
+    kael inquiet ""
+
+# game/scenario/3_canon.rpy:390
+translate english day3_collect_vote_argument_514cea87:
+
+    # kael inquiet "Sur Orbite, une livraison en retard peut tuer des gens. Alors si, ça me fait peur."
+    kael inquiet ""
+
+# game/scenario/3_canon.rpy:392
+translate english day3_collect_vote_argument_1d5f89f4:
+
+    # kael mefiant "On dépend des livraisons pour presque tout. Si ça se dérègle, on fait comment ?"
+    kael mefiant ""
+
+# game/scenario/3_canon.rpy:406
+translate english day3_collect_vote_argument_3e60f2d0:
+
+    # noam "Je comprends. Mais si on laisse tout comme ça, ça va pas s'arranger non plus."
+    noam ""
+
+# game/scenario/3_canon.rpy:640
+translate english day3_collect_vote_argument_09c57bb1:
+
+    # elen taquin "Bon... vous en pensez quoi, vous ? Qui serait pour ?"
+    elen taquin ""
+
+# game/scenario/3_canon.rpy:794
+translate english day3_collect_vote_argument_900515ff:
+
+    # nyra colere "Il est passé voir Tomas, puis d'autres. Il parle surtout de lui, maintenant."
+    nyra colere ""
+
+# game/scenario/3_canon.rpy:795
+translate english day3_collect_vote_argument_248be62a:
+
+    # nyra triste "Ça va finir par agacer tout le monde. Et on a besoin de leurs voix."
+    nyra triste ""
+
+# game/scenario/3_canon.rpy:850
+translate english day3_collect_vote_argument_e596680b:
+
+    # think "J'entends Julian derrière la porte. Il parle encore plus fort que d'habitude."
+    think ""
+
+# game/scenario/3_canon.rpy:882
+translate english day3_collect_vote_argument_402f949b:
+
+    # julian rire "Tomas, réfléchis. Si on se présente ensemble, les autres écouteront."
+    julian rire ""
+
+# game/scenario/3_canon.rpy:886
+translate english day3_collect_vote_argument_0dd61faf:
+
+    # think "Tomas cherche ses mots. Julian ne lui laisse même pas le temps de répondre. Je m'approche."
+    think ""
+
+# game/scenario/3_canon.rpy:890
+translate english day3_collect_vote_argument_8ce377d3:
+
+    # noam determine "Julian, attends. Qu'est-ce que tu racontes à Tomas ?"
+    noam determine ""
+
+# game/scenario/3_canon.rpy:894
+translate english day3_collect_vote_argument_d4e96bfd:
+
+    # noam hesitation "Je veux aussi que ça passe. Mais là, tu parles plus de toi que du texte."
+    noam hesitation ""
+
+# game/scenario/3_canon.rpy:895
+translate english day3_collect_vote_argument_76ffebbd:
+
+    # julian reflexion "Et toi, tu fais quoi pour convaincre les autres ? Tu attends que tout le monde se mette d'accord par miracle ?"
+    julian reflexion ""
+
+# game/scenario/3_canon.rpy:896
+translate english day3_collect_vote_argument_6659f185:
+
+    # noam reflexion "Non, mais..."
+    noam reflexion ""
+
+# game/scenario/3_canon.rpy:897
+translate english day3_collect_vote_argument_bc103808:
+
+    # julian sourire "Alors laisse-moi essayer. Tomas avait des questions, je lui répondais."
+    julian sourire ""
+
+# game/scenario/3_canon.rpy:898
+translate english day3_collect_vote_argument_3c450cb7:
+
+    # tomas hesitation "E-Enfin... Il me demandait surtout de le soutenir lui."
+    tomas hesitation ""
+
+# game/scenario/3_canon.rpy:899
+translate english day3_collect_vote_argument_ec377816:
+
+    # noam raison "Voilà. C'est ça le problème. Tu crois pas que ça va finir par les braquer ?"
+    noam raison ""
+
+# game/scenario/3_canon.rpy:900
+translate english day3_collect_vote_argument_0fb2c237:
+
+    # julian hesitation "Peut-être. Mais au moins, je fais quelque chose. Et si personne se bouge, ce vote est mort."
+    julian hesitation ""
+
+# game/scenario/3_canon.rpy:902
+translate english day3_collect_vote_argument_1124d2f8:
+
+    # julian taquin "Tu m'en veux parce que je parle trop fort, Noam ? Ça, j'avais remarqué."
+    julian taquin ""
+
+# game/scenario/3_canon.rpy:903
+translate english day3_collect_vote_argument_f79a6775:
+
+    # julian reflexion "Mais je suis d'accord sur un point : je dois mieux parler du texte."
+    julian reflexion ""
+
+# game/scenario/3_canon.rpy:905
+translate english day3_collect_vote_argument_37a667d9:
+
+    # noam "C'est tout ce que je te demande. Les autres doivent pouvoir choisir sans te suivre les yeux fermés."
+    noam ""
+
+# game/scenario/3_canon.rpy:907
+translate english day3_collect_vote_argument_c1095201:
+
+    # tomas hesitation "Je... Je veux bien écouter vos arguments. Mais j'ai pas envie de choisir un camp entre vous deux."
+    tomas hesitation ""
+
+# game/scenario/3_canon.rpy:909
+translate english day3_collect_vote_argument_b1d3bfe2:
+
+    # julian triste "Très bien. On parlera du texte. Mais ne viens pas me reprocher ensuite de n'avoir rien tenté."
+    julian triste ""
+
+# game/scenario/3_canon.rpy:910
+translate english day3_collect_vote_argument_e0b30cad:
+
+    # julian reflexion "Et arrête de faire comme si j'étais le seul à avoir quelque chose à prouver."
+    julian reflexion ""
+
+# game/scenario/3_canon.rpy:921
+translate english day3_collect_vote_argument_2c9502aa:
+
+    # tomas hesitation "En fait... Il m'a mis mal à l'aise. Mais il a pas tort sur tout."
+    tomas hesitation ""
+
+# game/scenario/3_canon.rpy:922
+translate english day3_collect_vote_argument_458febed:
+
+    # tomas hesitation "Tu vas prendre la parole tout à l'heure, Noam ?"
+    tomas hesitation ""
+
+# game/scenario/3_canon.rpy:924
+translate english day3_collect_vote_argument_a956c627:
+
+    # noam "Je vais essayer. J'ai pas envie qu'on se plante à cause d'une dispute."
+    noam ""
+
+# game/scenario/3_canon.rpy:926
+translate english day3_collect_vote_argument_eccf2dc8:
+
+    # tomas hoche_la_tete "O-Ouais. On verra bien."
+    tomas hoche_la_tete ""
+
+# game/scenario/3_canon.rpy:936
+translate english day3_collect_vote_argument_76a010ca:
+
+    # think "Julian veut vraiment que le vote passe. Mais il a toujours besoin qu'on le remarque."
+    think ""
+
+# game/scenario/3_canon.rpy:937
+translate english day3_collect_vote_argument_85ce25fa:
+
+    # think "J'ai encore les mains moites. Ça promet pour le débat."
+    think ""
+
+# game/scenario/3_canon.rpy:938
+translate english day3_collect_vote_argument_57e186d5:
+
+    # think "Julian m'énerve. Mais il a raison sur un truc : jusqu'ici, j'ai surtout regardé les autres se débrouiller."
+    think ""
+
+# game/scenario/3_canon.rpy:971
+translate english day3_collect_vote_argument_e1b1a709:
+
+    # lysa triste "Et demain on sera encore coincés ici. Dans trois jours, on recommencera."
+    lysa triste ""
+
+# game/scenario/3_canon.rpy:972
+translate english day3_collect_vote_argument_9c3e8429:
+
+    # lysa blase "On est douze à jouer les députés pendant qu'elle décide de tout."
+    lysa blase ""
+
+# game/scenario/3_canon.rpy:976
+translate english day3_collect_vote_argument_4d1a4dd7:
+
+    # noam reflechit "On n'a pas encore voté, Lysa."
+    noam reflechit ""
+
+# game/scenario/3_canon.rpy:977
+translate english day3_collect_vote_argument_d9fdf5f3:
+
+    # noam sourire "Attends au moins le résultat avant de nous enterrer."
+    noam sourire ""
+
+# game/scenario/3_canon.rpy:987
+translate english day3_collect_vote_argument_d0c10a2a:
+
+    # sael "Lysa... Tu as l'air épuisée."
+    sael ""
+
+# game/scenario/3_canon.rpy:988
+translate english day3_collect_vote_argument_6daffe31:
+
+    # sael "Tu vois les problèmes avant tout le monde. C'est utile. Mais tu peux aussi te reposer un peu."
+    sael ""
+
+# game/scenario/3_canon.rpy:989
+translate english day3_collect_vote_argument_fca22cac:
+
+    # sael "On aura besoin de toi pendant le vote."
+    sael ""
+
+# game/scenario/3_canon.rpy:995
+translate english day3_collect_vote_argument_5587a674:
+
+    # sael "Je sais. Je te demande juste de ne pas abandonner avant d'avoir essayé."
+    sael ""
+
+# game/scenario/3_canon.rpy:997
+translate english day3_collect_vote_argument_a911803a:
+
+    # lysa "Bon. Mais tu me devras un café après ça."
+    lysa ""
+
+# game/scenario/3_canon.rpy:999
+translate english day3_collect_vote_argument_d4c76d8c:
+
+    # sael sourire "Deux, même. Et sans formulaire."
+    sael sourire ""
+
+# game/scenario/3_canon.rpy:1062
+translate english day3_collect_vote_argument_7e8e2a14:
+
+    # nyra "Tu l'as seulement reformulé ? Ou tu as aussi changé ce qu'il disait ?"
+    nyra ""
+
+# game/scenario/3_canon.rpy:1066
+translate english day3_collect_vote_argument_90d1f5d5:
+
+    # kami "Oh, j'ai juste fait en sorte que ça puisse s'appliquer. Chaque détail compte, vous savez."
+    kami ""
+
+# game/scenario/3_canon.rpy:1071
+translate english day3_collect_vote_argument_5fba2bfd:
+
+    # kami "Faites attention aux petits mots. Je vous assure que ça compte."
+    kami ""
+
+# game/scenario/3_canon.rpy:1091
+translate english day3_collect_vote_argument_e72f655f:
+
+    # ryn colere "Pourquoi elle nous sort un pavé pareil ? On voulait juste le commerce !"
+    ryn colere ""
+
+# game/scenario/3_canon.rpy:1094
+translate english day3_collect_vote_argument_a23dccdb:
+
+    # tomas raison "Une seule phrase en plus peut tout changer. Faut lire jusqu'au bout."
+    tomas raison ""
+
+# game/scenario/3_canon.rpy:1096
+translate english day3_collect_vote_argument_d065968a:
+
+    # nyra "Regardez la ponctuation, ça aidera à remettre les morceaux dans l'ordre."
+    nyra ""
+
+# game/scenario/3_canon.rpy:1097
+translate english day3_collect_vote_argument_66c62f95:
+
+    # nyra "On lit tout avant de commencer à se disputer, d'accord ?"
+    nyra ""
+
+# game/scenario/3_canon.rpy:1132
+translate english day3_collect_vote_argument_80344a44:
+
+    # elen surpris "Quoi ? On supprime les bons ? Mais personne a demandé ça !"
+    elen surpris ""
+
+# game/scenario/3_canon.rpy:1134
+translate english day3_collect_vote_argument_a4abb5f8:
+
+    # tomas hesitation "A-Attendez... Ça change complètement le vote, là."
+    tomas hesitation ""
+
+# game/scenario/3_canon.rpy:1161
+translate english day3_collect_vote_argument_b1ce0384:
+
+    # mara surpris "Ah bah voilà. On demande le commerce et on perd les rations. Génial."
+    mara surpris ""
+
+# game/scenario/3_canon.rpy:1163
+translate english day3_collect_vote_argument_6a1735c6:
+
+    # noam "Attendez. Le texte de départ parlait pas des rations."
+    noam ""
+
+# game/scenario/3_canon.rpy:1164
+translate english day3_collect_vote_argument_bc6125ab:
+
+    # noam "Mais c'est celui-là qu'on doit voter. Alors on fait quoi ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:1176
+translate english day3_collect_vote_argument_604e465e:
+
+    # lysa blase "Avec le commerce, il faut de l'argent. Pour en avoir, il faut bosser."
+    lysa blase ""
+
+# game/scenario/3_canon.rpy:1177
+translate english day3_collect_vote_argument_e52b74d5:
+
+    # lysa reflechit "Kami a juste décidé de couper les rations pour forcer tout le monde à s'y mettre. Sympa."
+    lysa reflechit ""
+
+# game/scenario/3_canon.rpy:1179
+translate english day3_collect_vote_argument_5c871e24:
+
+    # nyra reflechit "Ça reste énorme, comme changement. Et on n'a même pas le temps de s'y préparer."
+    nyra reflechit ""
+
+# game/scenario/3_canon.rpy:1188
+translate english day3_collect_vote_argument_fa88a749:
+
+    # lysa colere "Elle peut changer ce qu'elle veut. Et on pourra rien prouver."
+    lysa colere ""
+
+# game/scenario/3_canon.rpy:1192
+translate english day3_collect_vote_argument_78f7442c:
+
+    # lysa salut "Qu'elle nous raconte peut-être n'importe quoi depuis le début. Voilà."
+    lysa salut ""
+
+# game/scenario/3_canon.rpy:1194
+translate english day3_collect_vote_argument_bfea1639:
+
+    # noam "Elle nous a peut-être bien eus. Mais on doit quand même voter."
+    noam ""
+
+# game/scenario/3_canon.rpy:1195
+translate english day3_collect_vote_argument_82e8a52d:
+
+    # noam reflexion "Alors parlons de ce qui va vraiment arriver chez nous."
+    noam reflexion ""
+
+# game/scenario/3_canon.rpy:1227
+translate english day3_before_objection_protocol_minigame_27c6a0ae:
+
+    # ryn colere "Putain, on y passe la journée ! Les gens attendent, eux !"
+    ryn colere ""
+
+# game/scenario/3_canon.rpy:1280
+translate english day3_before_objection_protocol_minigame_43111e12:
+
+    # noam reflexion "Elle nous montre des gens qui ont faim. Mais ça dit pas ce qui se passera si on supprime les bons."
+    noam reflexion ""
+
+# game/scenario/3_canon.rpy:1281
+translate english day3_before_objection_protocol_minigame_b0fef9aa:
+
+    # noam "On peut pas décider juste parce qu'elle nous fait peur."
+    noam ""
+
+# game/scenario/3_canon.rpy:1531
+translate english day3_choose_debate_argument_b745465c:
+
+    # noam "Bon. On sait ce qu'elle veut nous faire voter. Parlons des conséquences."
+    noam ""
+
+# game/scenario/3_canon.rpy:1534
+translate english day3_choose_debate_argument_34473062:
+
+    # julian "Et rester comme ça, tu appelles ça une solution ? Les gens manquent déjà de tout."
+    julian ""
+
+# game/scenario/3_canon.rpy:1544
+translate english day3_choose_debate_argument_dcbd4312:
+
+    # elen joie "Imaginez : tu peux acheter ce que tu veux sans remplir trois formulaires !"
+    elen joie ""
+
+# game/scenario/3_canon.rpy:1547
+translate english day3_choose_debate_argument_70ef1803:
+
+    # lysa raison "Encore faut-il avoir de l'argent, Elen. Sinon tu regardes juste les vitrines."
+    lysa raison ""
+
+# game/scenario/3_canon.rpy:1568
+translate english day3_choose_debate_argument_5e0bc088:
+
+    # think "Je n'ai rien de suffisamment solide à ajouter pour le moment."
+    think ""
+
+# game/scenario/3_canon.rpy:1576
+translate english day3_choose_debate_argument_be2deed3:
+
+    # sael "Chez nous, on s'aide déjà sans bons."
+    sael ""
+
+# game/scenario/3_canon.rpy:1577
+translate english day3_choose_debate_argument_94a7c929:
+
+    # sael determine "Je comprends votre peur. Mais je ne crois pas qu'attendre Kami pour chaque chose nous aide davantage."
+    sael determine ""
+
+# game/scenario/3_canon.rpy:1582
+translate english day3_choose_debate_argument_9bdd649d:
+
+    # noam "Ouais, c'est vrai. On va les trouver où, les premiers salaires ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:1595
+translate english day3_choose_debate_argument_7e04ba97:
+
+    # kami "Et pour ceux qui ne voudront pas travailler... Eh bien, il faudra se débrouiller sans rations. Motivant, non ?"
+    kami ""
+
+# game/scenario/3_canon.rpy:1614
+translate english day3_choose_debate_argument_ce075c3a:
+
+    # lysa reflechit "D'accord, les gens auront au moins un moyen de gagner de l'argent."
+    lysa reflechit ""
+
+# game/scenario/3_canon.rpy:1616
+translate english day3_choose_debate_argument_1318addf:
+
+    # nyra reflechit "Et si les échanges reprennent, des entreprises pourront se remettre à tourner."
+    nyra reflechit ""
+
+# game/scenario/3_canon.rpy:1627
+translate english day3_choose_debate_argument_da7a6c16:
+
+    # think "Je préfère me taire plutôt que parler pour ne rien dire."
+    think ""
+
+# game/scenario/3_canon.rpy:1635
+translate english day3_choose_debate_argument_76e03bfb:
+
+    # noam "Bon, je crois qu'on a fait le tour."
+    noam ""
+
+# game/scenario/3_canon.rpy:1636
+translate english day3_choose_debate_argument_dbd7e38a:
+
+    # noam "On sait ce que ce texte change. Pour le reste... il faudra assumer notre vote."
+    noam ""
+
+# game/scenario/3_canon.rpy:1648
+translate english day3_choose_debate_argument_8892dbde:
+
+    # noam "Ryn, Kael... Vous en pensez quoi, maintenant ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:1702
+translate english day3_choose_debate_argument_298f5997:
+
+    # noam "Les gens ont des bons, mais souvent y a rien à acheter avec. Ça sert à quoi ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:1706
+translate english day3_choose_debate_argument_5dcadbf9:
+
+    # julian sourire "Si les producteurs peuvent vendre, ils auront une bonne raison d'en faire plus."
+    julian sourire ""
+
+# game/scenario/3_canon.rpy:1708
+translate english day3_choose_debate_argument_eed431af:
+
+    # mara doute "Ouais, et tout partira là où y a de l'argent. À Limen, ils auront quoi ?"
+    mara doute ""
+
+# game/scenario/3_canon.rpy:1712
+translate english day3_choose_debate_argument_ef4b091a:
+
+    # kael reflechit "Limen a beaucoup d'habitants. Des vendeurs voudront sûrement y aller aussi."
+    kael reflechit ""
+
+# game/scenario/3_canon.rpy:1716
+translate english day3_choose_debate_argument_fdbf3759:
+
+    # sael neutre "Chez moi, on fait avec ce qu'on a. Mais c'est pas toujours simple."
+    sael neutre ""
+
+# game/scenario/3_canon.rpy:1718
+translate english day3_choose_debate_argument_28d0953c:
+
+    # elen joie "Et si on pouvait enfin avoir ce qui nous manque ? Ça serait bien, non ?"
+    elen joie ""
+
+# game/scenario/3_canon.rpy:1736
+translate english day3_choose_debate_argument_0f0e72c7:
+
+    # tomas raison "J'ai vu les chiffres. Dans certains endroits, plus de la moitié des produits manquent presque tout le temps."
+    tomas raison ""
+
+# game/scenario/3_canon.rpy:1743
+translate english day3_choose_debate_argument_b6f1c156:
+
+    # mara reflexion "Ouais, ça marche pas bien. Mais le supprimer d'un coup, c'est pas mieux."
+    mara reflexion ""
+
+# game/scenario/3_canon.rpy:1747
+translate english day3_choose_debate_argument_62f635a1:
+
+    # elen joie "Moi, j'aimerais juste qu'on arrête de se battre pour trois bricoles."
+    elen joie ""
+
+# game/scenario/3_canon.rpy:1766
+translate english day3_choose_debate_argument_79e735dc:
+
+    # kael mefiant "Chez nous, un retard de livraison, ça peut vite devenir dangereux. On a pas le droit de se planter."
+    kael mefiant ""
+
+# game/scenario/3_canon.rpy:1769
+translate english day3_choose_debate_argument_1e3eec0c:
+
+    # noam "Et avec le commerce, les livraisons peuvent changer tout le temps."
+    noam ""
+
+# game/scenario/3_canon.rpy:1773
+translate english day3_choose_debate_argument_922cf79b:
+
+    # tomas raison "Sur Orbite, il y a pourtant peu de morts. Les règles actuelles ont aussi cet avantage."
+    tomas raison ""
+
+# game/scenario/3_canon.rpy:1777
+translate english day3_choose_debate_argument_d3009872:
+
+    # lysa blase "Il suffit qu'une livraison merde et ils ont un gros problème. On a compris."
+    lysa blase ""
+
+# game/scenario/3_canon.rpy:1795
+translate english day3_choose_debate_argument_159da8eb:
+
+    # noam "Sael, chez toi, tout le monde aide les autres, c'est ça ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:1796
+translate english day3_choose_debate_argument_4878a602:
+
+    # sael neutre "Oui. Quand quelqu'un ne peut pas travailler, on l'aide. Sinon, chacun fait sa part."
+    sael neutre ""
+
+# game/scenario/3_canon.rpy:1797
+translate english day3_choose_debate_argument_259d4988:
+
+    # elias reflechit "Ça, ça me parle. Mais avec les nouveaux contrats, ceux qui peuvent pas bosser, ils font quoi ?"
+    elias reflechit ""
+
+# game/scenario/3_canon.rpy:1798
+translate english day3_choose_debate_argument_acc672de:
+
+    # mara doute "Voilà. C'est exactement ce qui me gêne."
+    mara doute ""
+
+# game/scenario/3_canon.rpy:1799
+translate english day3_choose_debate_argument_eefaf4d4:
+
+    # noam "Si on vote pour, on doit savoir ce qui arrive à ces gens-là. Pas juste leur dire de se débrouiller."
+    noam ""
+
+# game/scenario/3_canon.rpy:1800
+translate english day3_choose_debate_argument_08241f3a:
+
+    # ryn reflechit "Au moins, tu poses la bonne question."
+    ryn reflechit ""
+
+# game/scenario/3_canon.rpy:1810
+translate english day3_choose_debate_argument_69f7fc15:
+
+    # noam "Elen a dû remplir des formulaires juste pour avoir quelques ingrédients. C'est normal, ça ?"
+    noam ""
+
+# game/scenario/3_canon.rpy:1811
+translate english day3_choose_debate_argument_8582f0cd:
+
+    # elen reflechit "Trois pages ! Pour des épices ! J'ai cru devenir folle."
+    elen reflechit ""
+
+# game/scenario/3_canon.rpy:1812
+translate english day3_choose_debate_argument_ed984acc:
+
+    # iris blase "Et pour une pièce de rechange, c'est la même galère."
+    iris blase ""
+
+# game/scenario/3_canon.rpy:1813
+translate english day3_choose_debate_argument_64d3170c:
+
+    # kael calme "Oui. Certains dossiers mettent des jours à être validés."
+    kael calme ""
+
+# game/scenario/3_canon.rpy:1814
+translate english day3_choose_debate_argument_a123bdfc:
+
+    # nyra raison "Donc le système bloque même les demandes les plus simples. On peut au moins être d'accord là-dessus."
+    nyra raison ""
+
+# game/scenario/3_canon.rpy:1815
+translate english day3_choose_debate_argument_f58f7a22:
+
+    # noam "Ça explique pourquoi les gens veulent que ça change. Même si on ne sait pas encore si ce texte est le bon."
+    noam ""
+
+# game/scenario/3_canon.rpy:1836
+translate english day3_choose_debate_argument_461a5aaa:
+
+    # iris reflechit "Avant, tout coûtait cher. Vous avez oublié les prix qui grimpaient sans arrêt ?"
+    iris reflechit ""
+
+# game/scenario/3_canon.rpy:1837
+translate english day3_choose_debate_argument_24234b0a:
+
+    # iris reflechit "Mais quand un truc manquait, on pouvait au moins chercher ailleurs."
+    iris reflechit ""
+
+# game/scenario/3_canon.rpy:1841
+translate english day3_choose_debate_argument_b22ab4c8:
+
+    # julian sourire "C'était pas parfait, mais on pouvait essayer autre chose. Aujourd'hui, on attend que Kami décide."
+    julian sourire ""
+
+# game/scenario/3_canon.rpy:1847
+translate english day3_choose_debate_argument_dd0f3afd:
+
+    # tomas raison "Les guerres faisaient beaucoup de dégâts aussi. Avec Kami, ce risque-là est plus faible. Enfin... en théorie."
+    tomas raison ""
+
+# game/scenario/3_canon.rpy:1851
+translate english day3_choose_debate_argument_5a98a265:
+
+    # noam "Ouais. Enfin, avant, les gens qui avaient pas d'argent galéraient aussi."
+    noam ""
+
+# game/scenario/3_canon.rpy:1880
+translate english day3_choose_debate_argument_f3ae64b4:
+
+    # lysa blase "Y a écrit « supprimer ». Pas « réduire ». C'est quand même pas compliqué."
+    lysa blase ""
+
+# game/scenario/3_canon.rpy:1883
+translate english day3_choose_debate_argument_1f2fe936:
+
+    # ryn colere "Et ceux qui peuvent pas bosser, ils crèvent ? C'est ça, le plan ?!"
+    ryn colere ""
+
+# game/scenario/3_canon.rpy:1887
+translate english day3_choose_debate_argument_3466eb88:
+
+    # sael determine "Les gens échangent déjà des choses là-bas. On le sait tous."
+    sael determine ""
+
+# game/scenario/3_canon.rpy:1909
+translate english day3_choose_debate_argument_f21b1f7e:
+
+    # noam "Ça marche entre voisins. Mais dans tous les districts ? J'en suis moins sûr."
+    noam ""
+
+# game/scenario/3_canon.rpy:1911
+translate english day3_choose_debate_argument_fc7968a6:
+
+    # kael doute "Si ça existe déjà, on pourrait peut-être trouver un moyen de le faire chez nous aussi."
+    kael doute ""
+
+# game/scenario/3_canon.rpy:1915
+translate english day3_choose_debate_argument_1b3bde3c:
+
+    # lysa blase "Et y aura toujours des types pour prendre leur part au passage."
+    lysa blase ""
+
+# game/scenario/3_canon.rpy:1935
+translate english day3_choose_debate_argument_dc29816a:
+
+    # noam "On parle de supprimer les bons. Mais dans certains districts, ils ne suffisent déjà pas à nourrir tout le monde."
+    noam ""
+
+# game/scenario/3_canon.rpy:1936
+translate english day3_choose_debate_argument_48745d13:
+
+    # ryn colere "À Limen, tu peux attendre toute la journée et repartir les mains vides."
+    ryn colere ""
+
+# game/scenario/3_canon.rpy:1937
+translate english day3_choose_debate_argument_a930b53f:
+
+    # iris blase "Donc on garde un système qui marche mal, ou on le supprime d'un coup. Super choix."
+    iris blase ""
+
+# game/scenario/3_canon.rpy:1938
+translate english day3_choose_debate_argument_52efe258:
+
+    # tomas hesitation "O-On devrait au moins prévoir une période de transition..."
+    tomas hesitation ""
+
+# game/scenario/3_canon.rpy:1939
+translate english day3_choose_debate_argument_6b29ae06:
+
+    # mara doute "Sauf qu'on peut pas rajouter une ligne au texte. C'est bien le problème."
+    mara doute ""
+
+# game/scenario/3_canon.rpy:1940
+translate english day3_choose_debate_argument_97ca0016:
+
+    # noam "Alors arrêtons de prétendre que ce vote règle tout."
+    noam ""
+
+# game/scenario/3_canon.rpy:1950
+translate english day3_choose_debate_argument_3a47a954:
+
+    # noam "Même aujourd'hui, tous les districts ne reçoivent pas la même chose."
+    noam ""
+
+# game/scenario/3_canon.rpy:1951
+translate english day3_choose_debate_argument_5340c1cb:
+
+    # lysa blase "Et demain, ceux qui ont déjà de quoi payer seront servis les premiers. Quelle surprise."
+    lysa blase ""
+
+# game/scenario/3_canon.rpy:1952
+translate english day3_choose_debate_argument_a17193f0:
+
+    # nyra raison "Pas forcément. S'il y a plus de marchandises en circulation, certains endroits pourraient aussi y gagner."
+    nyra raison ""
+
+# game/scenario/3_canon.rpy:1953
+translate english day3_choose_debate_argument_a9f0d611:
+
+    # kael inquiet "Il faudra surtout que les livraisons arrivent à temps."
+    kael inquiet ""
+
+# game/scenario/3_canon.rpy:1954
+translate english day3_choose_debate_argument_b4b12eff:
+
+    # elen inquiet "Donc on sait pas si ce sera mieux. C'est ça ?"
+    elen inquiet ""
+
+# game/scenario/3_canon.rpy:1955
+translate english day3_choose_debate_argument_32bd9f3f:
+
+    # noam "C'est ça. Et on va devoir décider quand même."
+    noam ""
+

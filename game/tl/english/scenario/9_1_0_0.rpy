@@ -3636,3 +3636,95 @@ translate english 8ee4b3f4:
     # "L'épuisement finit par prendre le dessus."
     "Exhaustion finally takes over."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/9_1_0_0.rpy:233
+translate english e0d89f96_1:
+
+    # ryn reflexion "..."
+    ryn reflexion ""
+
+# game/scenario/9_1_0_0.rpy:457
+translate english 337951c6_1:
+
+    # "Même Mara laisse échapper un petit rire."
+    ""
+
+# game/scenario/9_1_0_0.rpy:473
+translate english 34e0a9a3_5:
+
+    # noam surpris "Quoi ?"
+    noam surpris ""
+
+# game/scenario/9_1_0_0.rpy:766
+translate english 62ac0d21_2:
+
+    # noam "Rien."
+    noam ""
+
+# game/scenario/9_1_0_0.rpy:840
+translate english 7d16d077:
+
+    # nyra "Pourquoi ?"
+    nyra ""
+
+# game/scenario/9_1_0_0.rpy:1039
+translate english 70563e82_1:
+
+    # noam "Et après ?"
+    noam ""
+
+# game/scenario/9_1_0_0.rpy:1153
+translate english ef1285aa_1:
+
+    # "Le silence retombe."
+    ""
+
+# game/scenario/9_1_0_0.rpy:1179
+translate english 82ac864c_1:
+
+    # noam surpris "Sérieusement ?"
+    noam surpris ""
+
+# game/scenario/9_1_0_0.rpy:1233
+translate english b11ae2df_4:
+
+    # noam "Je sais."
+    noam ""
+
+# game/scenario/9_1_0_0.rpy:1247
+translate english 59aecd40_3:
+
+    # iris "Non."
+    iris ""
+
+# game/scenario/9_1_0_0.rpy:1251
+translate english a53c02c6_7:
+
+    # noam surpris "..."
+    noam surpris ""
+
+# game/scenario/9_1_0_0.rpy:1358
+translate english 0e80e0da_3:
+
+    # noam "..."
+    noam ""
+
+# game/scenario/9_1_0_0.rpy:1406
+translate english 99c2a3ad_1:
+
+    # noam surpris "Rien ?"
+    noam surpris ""
+
+# game/scenario/9_1_0_0.rpy:1412
+translate english a522d80b:
+
+    # nyra "Non."
+    nyra ""
+
+# game/scenario/9_1_0_0.rpy:1428
+translate english dba2cb71_1:
+
+    # noam reflexion "D'accord."
+    noam reflexion ""
+

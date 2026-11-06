@@ -1008,3 +1008,35 @@ translate english decouverte_salle_archive_29b6d759:
     # "Je devrais y aller ..."
     "I should get going..."
 
+# TODO: Translation updated at 2026-11-06 17:50
+
+# game/scenario/salles/archive.rpy:150
+translate english decouverte_salle_archive_a548c72c:
+
+    # tomas mefiant "Je pensais qu'il y aurait plus de livres, c'est tout."
+    tomas mefiant ""
+
+# game/scenario/salles/archive.rpy:159
+translate english decouverte_salle_archive_8ef37036:
+
+    # tomas panne "Je croyais qu'une salle d'archives, ça serait surtout..."
+    tomas panne ""
+
+# game/scenario/salles/archive.rpy:160
+translate english decouverte_salle_archive_0bab69b4:
+
+    # tomas panne "Des livres. Des dossiers papier, quoi."
+    tomas panne ""
+
+# game/scenario/salles/archive.rpy:165
+translate english decouverte_salle_archive_8b459f2f:
+
+    # tomas culpabilite "Ouais, mais là c'est surtout des données imprimées. J'ai pas trop l'habitude de..."
+    tomas culpabilite ""
+
+# game/scenario/salles/archive.rpy:192
+translate english decouverte_salle_archive_564df41d:
+
+    # tomas panne "J'aime bien faire les choses correctement. C'est tout."
+    tomas panne ""
+
