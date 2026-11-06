@@ -544,7 +544,7 @@ translate english 5efec86d:
 translate english fa451ded_1:
 
     # noam "D'accord."
-    noam ""
+    noam "Okay."
 
 # game/scenario/18_0_1_1_0.rpy:108
 translate english 916bc128:
@@ -838,7 +838,7 @@ translate english d51c9d21:
 translate english 5c085e6b:
 
     # noam inquiet "Mara ?"
-    noam inquiet ""
+    noam inquiet "Mara?"
 
 # game/scenario/18_0_1_1_0.rpy:158
 translate english 3cc06bc9:
@@ -964,7 +964,7 @@ translate english 4361b2fc:
 translate english 7cfd3943:
 
     # mara "Pas encore."
-    mara ""
+    mara "Not yet."
 
 # game/scenario/18_0_1_1_0.rpy:185
 translate english 06e71761_3:
@@ -1006,7 +1006,7 @@ translate english d6ea518f:
 translate english fa451ded_2:
 
     # noam "D'accord."
-    noam ""
+    noam "Okay."
 
 # game/scenario/18_0_1_1_0.rpy:192
 translate english 23236bca:
@@ -1066,7 +1066,7 @@ translate english 99735657:
 translate english fa451ded_3:
 
     # noam "D'accord."
-    noam ""
+    noam "Okay."
 
 # game/scenario/18_0_1_1_0.rpy:202
 translate english e9d57393:
@@ -1146,661 +1146,661 @@ translate english b1b199be:
 translate english 06e7c443:
 
     # "Le bruit résonne encore quelque part dans le conduit."
-    ""
+    "The sound is still echoing somewhere inside the duct."
 
 # game/scenario/18_0_1_1_0.rpy:16
 translate english 462e5c65:
 
     # "Je reste figé, une main posée contre la paroi métallique, comme si le simple fait de bouger pouvait prévenir ce qui se trouve plus loin de ma présence."
-    ""
+    "I freeze, one hand pressed against the metal wall, as if moving might somehow alert whatever is farther down to my presence."
 
 # game/scenario/18_0_1_1_0.rpy:18
 translate english c9e0e05b_3:
 
     # noam peur "..."
-    noam peur ""
+    noam peur "..."
 
 # game/scenario/18_0_1_1_0.rpy:20
 translate english 19836fcd:
 
     # "Je tends l'oreille. Pendant quelques secondes, il n'y a plus rien. Seulement ma respiration, beaucoup trop forte dans cet espace étroit, et le léger grincement de la tôle sous mon poids."
-    ""
+    "I listen. For several seconds there's nothing. Just my breathing, far too loud in this cramped space, and the faint creak of metal beneath my weight."
 
 # game/scenario/18_0_1_1_0.rpy:22
 translate english 2b4e199d_1:
 
     # mara "Noam ?"
-    mara ""
+    mara "Noam?"
 
 # game/scenario/18_0_1_1_0.rpy:24
 translate english 795bc565:
 
     # "Sa voix me parvient depuis ma chambre, étouffée par plusieurs mètres de conduit."
-    ""
+    "Her voice reaches me from my room, muffled by several yards of duct."
 
 # game/scenario/18_0_1_1_0.rpy:26
 translate english 4dedca12:
 
     # mara stress "Réponds-moi, bordel."
-    mara stress ""
+    mara stress "Answer me, damn it."
 
 # game/scenario/18_0_1_1_0.rpy:28
 translate english 5de422ff:
 
     # noam inquiet "Je suis là."
-    noam inquiet ""
+    noam inquiet "I'm here."
 
 # game/scenario/18_0_1_1_0.rpy:30
 translate english 9681a335:
 
     # mara "Tu bouges pas. Je vais chercher Elias."
-    mara ""
+    mara "Don't move. I'm going to find Elias."
 
 # game/scenario/18_0_1_1_0.rpy:34
 translate english 5e82d3fa:
 
     # mara "Et cette fois, tu fais exactement ce que je te dis."
-    mara ""
+    mara "And this time, you do exactly what I say."
 
 # game/scenario/18_0_1_1_0.rpy:36
 translate english 0121bf6c_1:
 
     # noam "Je bouge pas."
-    noam ""
+    noam "I won't move."
 
 # game/scenario/18_0_1_1_0.rpy:38
 translate english e759bbbc:
 
     # "J'entends ses pas s'éloigner dans ma chambre, puis la porte se refermer."
-    ""
+    "I hear her footsteps retreat across my room, then the door closes."
 
 # game/scenario/18_0_1_1_0.rpy:40
 translate english a919b827:
 
     # "Le silence revient aussitôt."
-    ""
+    "Silence returns at once."
 
 # game/scenario/18_0_1_1_0.rpy:44
 translate english ad36b12c:
 
     # "Je regarde une dernière fois la treizième grille devant moi. Derrière, la pièce technique reste plongée dans l'obscurité. Rien ne bouge."
-    ""
+    "I take one last look at the thirteenth grille ahead. Beyond it, the service room remains shrouded in darkness. Nothing moves."
 
 # game/scenario/18_0_1_1_0.rpy:45
 translate english bb9d6285:
 
     # "Ça devrait me rassurer. Ça ne marche pas."
-    ""
+    "That should reassure me. It doesn't."
 
 # game/scenario/18_0_1_1_0.rpy:47
 translate english 78094f91:
 
     # noam reflexion "Qu'est-ce que c'est que cet endroit... ?"
-    noam reflexion ""
+    noam reflexion "What the hell is this place...?"
 
 # game/scenario/18_0_1_1_0.rpy:49
 translate english 1b5c2abf:
 
     # "Je recule lentement jusqu'au croisement, puis je m'adosse comme je peux contre la paroi. Pour la première fois depuis que je suis entré ici, je regrette vraiment d'avoir démonté cette grille."
-    ""
+    "I slowly back up to the junction and lean against the wall as best I can. For the first time since crawling in here, I truly regret unscrewing that grille."
 
 # game/scenario/18_0_1_1_0.rpy:51
 translate english f0b6efef:
 
     # "Les minutes passent beaucoup plus lentement que prévu. J'essaie de compter, puis j'abandonne rapidement. À force d'écouter chaque vibration, j'ai l'impression d'entendre du mouvement partout."
-    ""
+    "The minutes pass much more slowly than I expected. I try counting them, then quickly give up. Listening so hard for every vibration makes me feel as though something is moving everywhere."
 
 # game/scenario/18_0_1_1_0.rpy:53
 translate english 77ae91f5:
 
     # noam hesitation "Mara... ?"
-    noam hesitation ""
+    noam hesitation "Mara...?"
 
 # game/scenario/18_0_1_1_0.rpy:55
 translate english 1b2a2a40_3:
 
     # "Aucune réponse."
-    ""
+    "No answer."
 
 # game/scenario/18_0_1_1_0.rpy:59
 translate english 33190b56:
 
     # "Toujours rien. Je regarde derrière moi, vers le chemin qui mène à ma chambre."
-    ""
+    "Still nothing. I look behind me toward the route back to my bedroom."
 
 # game/scenario/18_0_1_1_0.rpy:61
 translate english 478447db:
 
     # think "Elle a peut-être juste mis du temps à le trouver."
-    think ""
+    think "Maybe it's just taking her a while to find him."
 
 # game/scenario/18_0_1_1_0.rpy:63
 translate english 641f46ad:
 
     # "Je vérifie une nouvelle fois la pièce derrière la grille. Rien n'a changé."
-    ""
+    "I check the room behind the grille again. Nothing has changed."
 
 # game/scenario/18_0_1_1_0.rpy:68
 translate english 2b4e199d_2:
 
     # mara "Noam ?"
-    mara ""
+    mara "Noam?"
 
 # game/scenario/18_0_1_1_0.rpy:70
 translate english cd20e55d:
 
     # "Je sursaute si fort que mon coude frappe la paroi."
-    ""
+    "I jump so hard my elbow smacks into the wall."
 
 # game/scenario/18_0_1_1_0.rpy:72
 translate english 92314b18:
 
     # noam surpris "Putain !"
-    noam surpris ""
+    noam surpris "Fuck!"
 
 # game/scenario/18_0_1_1_0.rpy:74
 translate english 8a415c04:
 
     # mara rire "Eh bah, t'es vraiment à cran."
-    mara rire ""
+    mara rire "Wow, you're really on edge."
 
 # game/scenario/18_0_1_1_0.rpy:77
 translate english 47f3f810:
 
     # noam colere "Tu pouvais prévenir avant de gueuler dans le conduit !"
-    noam colere ""
+    noam colere "You could've warned me before shouting down the duct!"
 
 # game/scenario/18_0_1_1_0.rpy:79
 translate english 6a78ab1f:
 
     # mara "J'ai appelé deux fois. C'est toi qui répondais pas."
-    mara ""
+    mara "I called you twice. You're the one who didn't answer."
 
 # game/scenario/18_0_1_1_0.rpy:81
 translate english 014900d8:
 
     # "Sa lampe apparaît au loin, puis Mara rampe jusqu'à moi. Elle souffle en s'installant tant bien que mal dans le passage."
-    ""
+    "Her lamp appears in the distance. Mara crawls up beside me and lets out a breath as she settles awkwardly into the passage."
 
 # game/scenario/18_0_1_1_0.rpy:88
 translate english d179a4b1:
 
     # mara agace "J'ai fait le tour. Pas d'Elias."
-    mara agace ""
+    mara agace "I looked everywhere. No Elias."
 
 # game/scenario/18_0_1_1_0.rpy:90
 translate english 044daeb4:
 
     # noam inquiet "Il est pas dans sa chambre ?"
-    noam inquiet ""
+    noam inquiet "He's not in his room?"
 
 # game/scenario/18_0_1_1_0.rpy:92
 translate english 9aa1bddf:
 
     # mara "Non. Pas à la maintenance non plus. J'ai même regardé à la cafétéria et dans la salle de repos. Rien."
-    mara ""
+    mara "No. Not in maintenance either. I even checked the cafeteria and the lounge. Nothing."
 
 # game/scenario/18_0_1_1_0.rpy:94
 translate english a2961cbc:
 
     # noam reflexion "C'est bizarre."
-    noam reflexion ""
+    noam reflexion "That's strange."
 
 # game/scenario/18_0_1_1_0.rpy:96
 translate english 76f381fc:
 
     # mara taquin "Ou alors monsieur a simplement décidé qu'il avait mieux à faire que venir sauver deux abrutis coincés dans un mur."
-    mara taquin ""
+    mara taquin "Or maybe His Majesty simply has better things to do than rescue two idiots stuck inside a wall."
 
 # game/scenario/18_0_1_1_0.rpy:98
 translate english 22942973:
 
     # "Je laisse échapper un souffle qui ressemble presque à un rire, mais mon regard revient immédiatement vers la treizième ouverture."
-    ""
+    "I let out something close to a laugh, but my eyes immediately return to the thirteenth opening."
 
 # game/scenario/18_0_1_1_0.rpy:100
 translate english 32d58a65:
 
     # mara mefiant "C'est là ?"
-    mara mefiant ""
+    mara mefiant "Is that it?"
 
 # game/scenario/18_0_1_1_0.rpy:102
 translate english 596f5ec4_5:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/18_0_1_1_0.rpy:104
 translate english 3a16a873:
 
     # "Mara s'approche à son tour de la grille et éclaire la pièce."
-    ""
+    "Mara leans toward the grille and shines her light inside."
 
 # game/scenario/18_0_1_1_0.rpy:106
 translate english f9dffb9b:
 
     # mara reflexion "..."
-    mara reflexion ""
+    mara reflexion "..."
 
 # game/scenario/18_0_1_1_0.rpy:108
 translate english 49af3cc9:
 
     # noam "Tu vois quelque chose ?"
-    noam ""
+    noam "See anything?"
 
 # game/scenario/18_0_1_1_0.rpy:110
 translate english 949c771c:
 
     # mara "Des câbles. Des supports. Deux ou trois gros blocs au fond."
-    mara ""
+    mara "Cables. Mountings. Two or three big blocks at the back."
 
 # game/scenario/18_0_1_1_0.rpy:112
 translate english 775a4039:
 
     # noam "Et la trace au sol ?"
-    noam ""
+    noam "And the mark on the floor?"
 
 # game/scenario/18_0_1_1_0.rpy:116
 translate english e1ae87df:
 
     # "Elle bouge lentement sa lampe, puis soupire."
-    ""
+    "She slowly moves her lamp, then sighs."
 
 # game/scenario/18_0_1_1_0.rpy:118
 translate english 92853e86:
 
     # mara agace "Bon. Ça nous avance pas beaucoup."
-    mara agace ""
+    mara agace "Well. That doesn't tell us much."
 
 # game/scenario/18_0_1_1_0.rpy:120
 translate english 36bc77e7:
 
     # noam "J'ai entendu quelque chose derrière moi."
-    noam ""
+    noam "I heard something behind me."
 
 # game/scenario/18_0_1_1_0.rpy:122
 translate english f4ddcc2c:
 
     # mara "Dans le conduit ?"
-    mara ""
+    mara "Inside the duct?"
 
 # game/scenario/18_0_1_1_0.rpy:124
 translate english 3c44fa7c:
 
     # noam "Oui. Et la trace dans la poussière était pas là quand je suis passé."
-    noam ""
+    noam "Yes. And that mark in the dust wasn't there when I passed."
 
 # game/scenario/18_0_1_1_0.rpy:126
 translate english e94dd03d:
 
     # "Mara tourne la tête vers le passage derrière nous."
-    ""
+    "Mara turns toward the passage behind us."
 
 # game/scenario/18_0_1_1_0.rpy:128
 translate english 3699cd90:
 
     # mara mefiant "T'es sûr ?"
-    mara mefiant ""
+    mara mefiant "You sure?"
 
 # game/scenario/18_0_1_1_0.rpy:132
 translate english 78938d91:
 
     # mara "Au moins t'es honnête."
-    mara ""
+    mara "At least you're honest."
 
 # game/scenario/18_0_1_1_0.rpy:134
 translate english 199c0173:
 
     # noam "Mais j'ai vraiment entendu quelque chose."
-    noam ""
+    noam "But I definitely heard something."
 
 # game/scenario/18_0_1_1_0.rpy:136
 translate english f56ad55a:
 
     # mara stress "Alors on va éviter de rester plantés ici pendant trois heures."
-    mara stress ""
+    mara stress "Then let's not stand around here for three hours."
 
 # game/scenario/18_0_1_1_0.rpy:138
 translate english eb7a25ac:
 
     # noam "Tu veux repartir ?"
-    noam ""
+    noam "You want to go back?"
 
 # game/scenario/18_0_1_1_0.rpy:140
 translate english d915c0e9:
 
     # mara "Je veux surtout voir où on est avant de repartir. On a déjà fait la moitié du boulot."
-    mara ""
+    mara "I mostly want to see where we are before we leave. We've already done half the work."
 
 # game/scenario/18_0_1_1_0.rpy:142
 translate english d607dab7:
 
     # "Je la regarde, un peu surpris."
-    ""
+    "I stare at her, a little surprised."
 
 # game/scenario/18_0_1_1_0.rpy:144
 translate english 93a5fc4d:
 
     # noam "Il y a trente secondes tu voulais que je sorte de là."
-    noam ""
+    noam "Thirty seconds ago, you wanted me out of here."
 
 # game/scenario/18_0_1_1_0.rpy:146
 translate english e30693d5:
 
     # mara agace "Il y a trente secondes t'étais seul dans le noir à jouer au héros. Maintenant je suis là. Nuance."
-    mara agace ""
+    mara agace "Thirty seconds ago, you were alone in the dark playing hero. Now I'm here. Big difference."
 
 # game/scenario/18_0_1_1_0.rpy:148
 translate english 50a3e16a:
 
     # noam taquin "Ça change tout ?"
-    noam taquin ""
+    noam taquin "That changes everything?"
 
 # game/scenario/18_0_1_1_0.rpy:150
 translate english b1c0da94:
 
     # mara rire "Évidemment. Je suis très rassurante comme présence."
-    mara rire ""
+    mara rire "Obviously. I'm an incredibly reassuring presence."
 
 # game/scenario/18_0_1_1_0.rpy:152
 translate english e80a40c8:
 
     # noam "C'est pas le premier mot qui me vient."
-    noam ""
+    noam "That's not the first word that comes to mind."
 
 # game/scenario/18_0_1_1_0.rpy:154
 translate english 7bd9693b:
 
     # mara "Continue et je te laisse ici."
-    mara ""
+    mara "Keep talking and I'll leave you here."
 
 # game/scenario/18_0_1_1_0.rpy:156
 translate english fd2350e8:
 
     # "Son ton est parfaitement normal. Ça suffit à faire retomber un peu la tension."
-    ""
+    "Her tone is perfectly ordinary. Somehow, that eases the tension a little."
 
 # game/scenario/18_0_1_1_0.rpy:158
 translate english a7e8c76e:
 
     # "Je pointe la grille devant nous."
-    ""
+    "I point toward the grille ahead of us."
 
 # game/scenario/18_0_1_1_0.rpy:160
 translate english e4483b6c:
 
     # noam "On regarde juste cette pièce. Après on revient chercher Elias quand il réapparaît."
-    noam ""
+    noam "We just check this room. Then we come back for Elias when he turns up."
 
 # game/scenario/18_0_1_1_0.rpy:162
 translate english cba933ec:
 
     # mara "Ça me va."
-    mara ""
+    mara "Works for me."
 
 # game/scenario/18_0_1_1_0.rpy:177
 translate english 0a3fb873:
 
     # "La grille tient avec quatre vis identiques à celles de ma chambre. Cette fois, j'ai gardé le tournevis."
-    ""
+    "Four screws hold the grille in place, identical to those in my bedroom. This time, I kept the screwdriver."
 
 # game/scenario/18_0_1_1_0.rpy:179
 translate english 6955f9f3:
 
     # mara taquin "Regarde-moi ça. Une nuit dans les murs et monsieur devient déjà professionnel du cambriolage."
-    mara taquin ""
+    mara taquin "Look at you. One night in the walls and you're already a professional burglar."
 
 # game/scenario/18_0_1_1_0.rpy:181
 translate english 5b44892c:
 
     # noam "Tu veux le faire ?"
-    noam ""
+    noam "Want to do it?"
 
 # game/scenario/18_0_1_1_0.rpy:183
 translate english 9f0d3793:
 
     # mara "Non, non. Je critique beaucoup mieux quand quelqu'un d'autre travaille."
-    mara ""
+    mara "No, no. I'm much better at criticizing other people's work."
 
 # game/scenario/18_0_1_1_0.rpy:185
 translate english c8396b94:
 
     # "Je retire la dernière vis et retiens la grille avant qu'elle ne tombe. L'ouverture est juste assez large pour passer."
-    ""
+    "I remove the last screw and catch the grille before it falls. The opening is just wide enough to squeeze through."
 
 # game/scenario/18_0_1_1_0.rpy:187
 translate english 26cef6a3:
 
     # noam "Je passe en premier."
-    noam ""
+    noam "I'll go first."
 
 # game/scenario/18_0_1_1_0.rpy:189
 translate english cd26dcab:
 
     # mara "Quelle galanterie."
-    mara ""
+    mara "What a gentleman."
 
 # game/scenario/18_0_1_1_0.rpy:191
 translate english b58fa945:
 
     # "Je me glisse de l'autre côté et descends prudemment. Mes pieds rencontrent enfin un sol stable."
-    ""
+    "I slip through and carefully climb down. At last, my feet touch solid ground."
 
 # game/scenario/18_0_1_1_0.rpy:193
 translate english 6a05a407:
 
     # "La pièce est plus grande que je le pensais. Très basse par endroits, encombrée de câbles et de structures métalliques, elle ressemble moins à une salle normale qu'à un espace qu'on aurait construit entre deux autres zones du Conclave."
-    ""
+    "The room is bigger than I expected. Low in places, crowded with cables and metal structures, it feels less like a normal room than a space built between two other parts of the Conclave."
 
 # game/scenario/18_0_1_1_0.rpy:195
 translate english fd32404d:
 
     # noam surpris "Mara..."
-    noam surpris ""
+    noam surpris "Mara..."
 
 # game/scenario/18_0_1_1_0.rpy:197
 translate english 0b50cedc_4:
 
     # mara "Quoi ?"
-    mara ""
+    mara "What?"
 
 # game/scenario/18_0_1_1_0.rpy:199
 translate english 7fb3f9fe:
 
     # noam "Viens voir."
-    noam ""
+    noam "Come take a look."
 
 # game/scenario/18_0_1_1_0.rpy:201
 translate english 150e9056:
 
     # "Elle passe à son tour, jure en accrochant sa manche, puis se redresse à côté de moi."
-    ""
+    "She climbs through, swears when her sleeve catches, then straightens up beside me."
 
 # game/scenario/18_0_1_1_0.rpy:208
 translate english 9c8ef5ce:
 
     # tuto "Déplace le curseur sur la salle. Observe les cinq éléments, puis relie la pièce à un indice du dossier."
-    tuto ""
+    tuto "Move the cursor around the room. Examine all five elements, then connect this room to a clue in your case file."
 
 # game/scenario/18_0_1_1_0.rpy:218
 translate english ff304508:
 
     # "Je m'approche d'un autre conduit qui quitte la pièce sur le côté. Il est plus large que celui des dortoirs et descend légèrement avant de se diviser en plusieurs branches."
-    ""
+    "I approach another duct leading out of the room. It's wider than the dormitory duct and slopes gently downward before splitting into several branches."
 
 # game/scenario/18_0_1_1_0.rpy:220
 translate english 88837516:
 
     # noam reflexion "Ça continue."
-    noam reflexion ""
+    noam reflexion "It keeps going."
 
 # game/scenario/18_0_1_1_0.rpy:222
 translate english c6201549:
 
     # mara "Évidemment que ça continue. Pourquoi quelque chose serait simple ici ?"
-    mara ""
+    mara "Of course it keeps going. Why would anything be simple around here?"
 
 # game/scenario/18_0_1_1_0.rpy:224
 translate english bb0af5e5:
 
     # noam "On avait dit qu'on regardait juste la pièce."
-    noam ""
+    noam "We said we'd only look at the room."
 
 # game/scenario/18_0_1_1_0.rpy:226
 translate english 3a8acfd6:
 
     # mara rire "Et techniquement, on regarde toujours la pièce. Juste... la sortie de la pièce."
-    mara rire ""
+    mara rire "And technically, we're still looking at the room. Just... the exit from the room."
 
 # game/scenario/18_0_1_1_0.rpy:228
 translate english 021c5951:
 
     # noam taquin "Belle mauvaise foi."
-    noam taquin ""
+    noam taquin "Nice bit of bad faith."
 
 # game/scenario/18_0_1_1_0.rpy:230
 translate english e1746b4c:
 
     # mara "Merci. J'y travaille depuis des années."
-    mara ""
+    mara "Thanks. I've been practicing for years."
 
 # game/scenario/18_0_1_1_0.rpy:232
 translate english ab80b01b:
 
     # "Je m'accroupis près de l'ouverture."
-    ""
+    "I crouch beside the opening."
 
 # game/scenario/18_0_1_1_0.rpy:234
 translate english c94dbf10:
 
     # "Un léger courant d'air vient de l'intérieur. Plus loin, je distingue une lumière régulière qui passe à travers une autre grille."
-    ""
+    "A faint breeze comes from inside. Farther along, I can make out a steady light filtering through another grille."
 
 # game/scenario/18_0_1_1_0.rpy:236
 translate english 491669d4:
 
     # noam "Si ça rejoint vraiment le reste du Conclave, on peut peut-être comprendre le plan sans ramper trois kilomètres."
-    noam ""
+    noam "If this really connects to the rest of the Conclave, we might be able to figure out the layout without crawling three miles."
 
 # game/scenario/18_0_1_1_0.rpy:238
 translate english 3306795f:
 
     # mara "Voilà. Dix minutes. Et après on retourne se coucher comme des gens sains d'esprit."
-    mara ""
+    mara "Exactly. Ten minutes. Then we go back to bed like sane people."
 
 # game/scenario/18_0_1_1_0.rpy:240
 translate english 57797d2c:
 
     # noam "Dix minutes."
-    noam ""
+    noam "Ten minutes."
 
 # game/scenario/18_0_1_1_0.rpy:242
 translate english 2fed167a:
 
     # "Je passe à nouveau dans le conduit. Mara me suit sans discuter."
-    ""
+    "I crawl into the duct again. Mara follows without arguing."
 
 # game/scenario/18_0_1_1_0.rpy:259
 translate english 73bc7878:
 
     # "Cette partie du réseau est beaucoup plus confortable. Je peux avancer à quatre pattes sans me cogner constamment les épaules contre les parois."
-    ""
+    "This part of the network is much more comfortable. I can crawl on all fours without constantly banging my shoulders against the walls."
 
 # game/scenario/18_0_1_1_0.rpy:261
 translate english 6129f231:
 
     # "Après quelques mètres, le conduit se sépare. Une branche remonte vers les dortoirs. Une autre continue droit devant."
-    ""
+    "After a few yards, the duct branches off. One passage climbs toward the dormitory. Another continues straight ahead."
 
 # game/scenario/18_0_1_1_0.rpy:263
 translate english 080beb93:
 
     # mara "On est où, là ?"
-    mara ""
+    mara "Where are we now?"
 
 # game/scenario/18_0_1_1_0.rpy:265
 translate english 97b7eff6:
 
     # noam reflexion "Si ma chambre est derrière nous... probablement entre les dortoirs et la cafétéria."
-    noam reflexion ""
+    noam reflexion "If my room is behind us... probably somewhere between the dormitory and the cafeteria."
 
 # game/scenario/18_0_1_1_0.rpy:267
 translate english 1d1b21bf:
 
     # mara "Probablement, c'est rassurant."
-    mara ""
+    mara "'Probably.' Very reassuring."
 
 # game/scenario/18_0_1_1_0.rpy:269
 translate english 551ba727:
 
     # noam "Tu veux faire demi-tour ?"
-    noam ""
+    noam "Want to turn back?"
 
 # game/scenario/18_0_1_1_0.rpy:273
 translate english 8820d4a9:
 
     # "Nous continuons. Une première grille apparaît sur notre droite. Je coupe ma lampe et m'approche doucement."
-    ""
+    "We continue. The first grille appears to our right. I turn off my lamp and approach quietly."
 
 # game/scenario/18_0_1_1_0.rpy:275
 translate english ca170e17:
 
     # "De l'autre côté, des chaises sont empilées près d'une table basse. Même dans la pénombre, je reconnais immédiatement la salle de repos."
-    ""
+    "On the other side, chairs are stacked beside a low table. Even in the dim light, I immediately recognize the lounge."
 
 # game/scenario/18_0_1_1_0.rpy:277
 translate english d89a9c58:
 
     # noam inquiet "La salle de repos."
-    noam inquiet ""
+    noam inquiet "The lounge."
 
 # game/scenario/18_0_1_1_0.rpy:279
 translate english c3dcbd3f:
 
     # mara "Sérieux ?"
-    mara ""
+    mara "Seriously?"
 
 # game/scenario/18_0_1_1_0.rpy:281
 translate english b0ba4747:
 
     # "Elle se penche par-dessus mon épaule pour regarder."
-    ""
+    "She leans over my shoulder to look."
 
 # game/scenario/18_0_1_1_0.rpy:283
 translate english 73237d5f:
 
     # mara reflexion "Donc ça passe vraiment partout."
-    mara reflexion ""
+    mara reflexion "So this really does go everywhere."
 
 # game/scenario/18_0_1_1_0.rpy:285
 translate english 297a15ad:
 
     # "Nous repartons. Plus loin, une nouvelle bifurcation descend légèrement. À travers une autre grille, j'aperçois des rangées d'étagères."
-    ""
+    "We move on. Farther ahead, another branch slopes downward. Through a grille, I glimpse rows of shelving."
 
 # game/scenario/18_0_1_1_0.rpy:287
 translate english d33a061f:
 
     # noam "Le stockage."
-    noam ""
+    noam "Storage."
 
 # game/scenario/18_0_1_1_0.rpy:289
 translate english 1f417a4f:
 
     # mara "Et là-bas ?"
-    mara ""
+    mara "And over there?"
 
 # game/scenario/18_0_1_1_0.rpy:291
 translate english c2a1129f:
 
     # "Elle montre une branche plus étroite."
-    ""
+    "She points toward a narrower branch."
 
 # game/scenario/18_0_1_1_0.rpy:293
 translate english cf345a8e:
 
     # noam "Aucune idée."
-    noam ""
+    noam "No idea."
 
 # game/scenario/18_0_1_1_0.rpy:295
 translate english 0e8addc4:
@@ -2322,7 +2322,7 @@ translate english 5650d747:
 translate english 596f5ec4_6:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/18_0_1_1_0.rpy:493
 translate english 5fea2202:
@@ -2490,7 +2490,7 @@ translate english 75251887:
 translate english 0b50cedc_5:
 
     # mara "Quoi ?"
-    mara ""
+    mara "What?"
 
 # game/scenario/18_0_1_1_0.rpy:551
 translate english 576cf805:
@@ -2598,7 +2598,7 @@ translate english 8f7407cf:
 translate english 596f5ec4_7:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/18_0_1_1_0.rpy:599
 translate english b5fd2aaf:
@@ -3336,7 +3336,7 @@ translate english f411c01e:
 translate english 596f5ec4_8:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/18_0_1_1_0.rpy:890
 translate english b8ed07cf:
@@ -3990,7 +3990,7 @@ translate english ecf428ae:
 translate english 290dd969_7:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # game/scenario/18_0_1_1_0.rpy:1166
 translate english ee01a0a8:
@@ -4350,7 +4350,7 @@ translate english f38985db:
 translate english c9e0e05b_4:
 
     # noam peur "..."
-    noam peur ""
+    noam peur "..."
 
 # game/scenario/18_0_1_1_0.rpy:1311
 translate english c4a13e9b:
@@ -4416,7 +4416,7 @@ translate english ebdfe609:
 translate english c9e0e05b_5:
 
     # noam peur "..."
-    noam peur ""
+    noam peur "..."
 
 # game/scenario/18_0_1_1_0.rpy:1338
 translate english 6849ce9b:
