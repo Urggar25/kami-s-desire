@@ -414,6 +414,11 @@ label _26_0_1_1_0_1_ENQUETE:
     "Je sors ma tablette. On pourra se déplacer librement, mais je choisirai les éléments que je veux vraiment approfondir."
     $ investigation_pa_begin(26, 5)
     $ investigation_unlocked = True
+    $ free_time_active = False
+    $ exploration_libre_active = True
+    $ exploration_libre_allowed_rooms = list(J26A_ROOMS.keys())
+    $ current_scene_active = None
+    $ corridor_current = "dortoir"
     $ hideGroup()
     jump _26_0_1_1_0_1_PA_MAP
 
@@ -423,7 +428,16 @@ label _26_0_1_1_0_1_PA_MAP:
     call screen investigation_pa_map(J26A_ROOMS, title="JOUR 26 — ENQUÊTE AU CONCLAVE")
     if _return == "finish":
         jump _26_0_1_1_0_1_BILAN
+    if _return == "corridors":
+        jump _26_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_current_room = _return
+    jump _26_0_1_1_0_1_PA_ROOM
+
+label _26_0_1_1_0_1_PA_CORRIDORS:
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_j26a_pa_corridors
+    $ investigation_pa_current_room = _return
+    if investigation_pa_current_room not in J26A_ROOMS:
+        jump _26_0_1_1_0_1_PA_MAP
     jump _26_0_1_1_0_1_PA_ROOM
 
 label _26_0_1_1_0_1_PA_ROOM:
@@ -432,6 +446,8 @@ label _26_0_1_1_0_1_PA_ROOM:
     call screen investigation_pa_room(investigation_pa_current_room, J26A_ROOMS, J26A_ACTIONS)
     if _return == "back":
         jump _26_0_1_1_0_1_PA_MAP
+    if _return == "corridors":
+        jump _26_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_selected = _return
     if not investigation_pa_can_take(investigation_pa_selected):
         jump _26_0_1_1_0_1_PA_ROOM
@@ -678,6 +694,8 @@ label _26_0_1_1_0_1_PA_CONSOLE:
 
 
 label _26_0_1_1_0_1_BILAN:
+    $ exploration_libre_active = False
+    $ exploration_libre_allowed_rooms = None
     $ current_period = "Soir"
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
