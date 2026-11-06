@@ -127,7 +127,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     "Personne ne répond. Elias se redresse enfin."
     elias neutre "C'est bon. Reculez."
     "Le verrou cède avec un claquement. Il pousse la porte."
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_corps at adaptive_fullscreen with dissolve
     $ showGroup([("elen", "fatigue", 0.23), ("iris", "inquiet", 0.47), ("noam", "inquiet", 0.72)])
     "Une odeur épouvantable me saute au visage. Je me bouche le nez et regarde autour de moi : des barquettes oubliées, des vêtements au sol, des emballages sous le bureau."
     noam fatigue "Putain, c'est quoi, cette odeur ?"
@@ -249,12 +249,13 @@ label _26_0_1_1_0_1_APRES_CHOC:
     noam inquiet "Tu veux que je photographie Tomas ?"
     iris triste "Oui. Si tu peux. Sinon je demanderai à Elias."
     "Je serre ma tablette un moment. Je n'ai aucune envie de faire ça, mais c'est peut-être la dernière fois qu'on pourra vérifier dans quel état on l'a trouvé."
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_corps at adaptive_fullscreen with dissolve
     "Je cadre les draps et ses vêtements trempés sans m'attarder sur son visage."
-    call investigation_evidence_photo_take("j26_photo_tomas") from _call_j26_tomas_photo
-    "Je prends également une photo des déchets, puis une du verrou qu'Elias a dû forcer."
-    call investigation_evidence_photo_take("j26_photo_dechets") from _call_j26_dechets_photo
-    call investigation_evidence_photo_take("j26_photo_verrou") from _call_j26_verrou_photo
+    call j26_photograph("j26_photo_tomas", "j26_elen_corps", (0.355, 0.535), 2.1) from _call_j26_tomas_photo
+    "Je cadre ensuite les déchets éparpillés sur le sol. Je vérifie le résultat avant de ranger la tablette."
+    call j26_photograph("j26_photo_dechets", "j26_elen_corps", (0.67, 0.80), 2.0) from _call_j26_dechets_photo
+    "Pour le verrou, Elias me montre les dégâts sur le boîtier du couloir. Il confirme avoir forcé la fermeture intérieure."
+    $ investigation_add("j26_tomas_verrou", notify=False)
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     "Iris reprend sa place auprès de Sael. Je sors en gardant la tablette serrée contre moi. Je n’ai plus envie de regarder ces images."
     $ hideGroup()
@@ -266,7 +267,7 @@ init 10 python:
     J26A_ROOMS = {
         "dortoir": {
             "title": "DORTOIRS — CHAMBRE D'ELEN",
-            "background": "bg_chambre",
+            "background": "j26_elen_vide",
             "description": "La chambre est sous surveillance. Iris a autorisé quelques examens ciblés.",
             "actions": [
                 "flacon",
@@ -407,11 +408,11 @@ init 10 python:
         }
     }
     INVESTIGATION_ENTRIES.update({
-        "j26_photo_tomas": {"category": "preuves", "title": "TOMAS — VÊTEMENTS TREMPÉS", "desc": "La chemise et les cheveux de Tomas étaient trempés lors de la découverte de son corps.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre1.png"},
-        "j26_photo_dechets": {"category": "preuves", "title": "DÉCHETS DANS LA CHAMBRE", "desc": "Barquettes, emballages et affaires abandonnées : une odeur forte régnait dans la chambre.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre2.png"},
+        "j26_photo_tomas": {"category": "preuves", "title": "TOMAS — VÊTEMENTS TREMPÉS", "desc": "La chemise et les cheveux de Tomas étaient trempés lors de la découverte de son corps.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_corps"},
+        "j26_photo_dechets": {"category": "preuves", "title": "DÉCHETS DANS LA CHAMBRE", "desc": "Barquettes, emballages et affaires abandonnées : une odeur forte régnait dans la chambre.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_corps"},
         "j26_photo_verrou": {"category": "preuves", "title": "PORTE VERROUILLÉE", "desc": "Elias a dû forcer le mécanisme engagé depuis l'intérieur pour entrer dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre2.png"},
-        "j26_photo_grille": {"category": "preuves", "title": "PLAQUE DEVANT L'AÉRATION", "desc": "Une plaque de protection ferme le passage physique dans la bouche d'aération ; l'air peut toujours circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre1.png"},
-        "j26_photo_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES PRESQUE VIDE", "desc": "Un flacon presque vide a été retrouvé parmi les affaires de la chambre. Rien ne prouve que Tomas en ait pris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre3.png"},
+        "j26_photo_grille": {"category": "preuves", "title": "PLAQUE DEVANT L'AÉRATION", "desc": "Une plaque de protection ferme le passage physique dans la bouche d'aération ; l'air peut toujours circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_vide"},
+        "j26_photo_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES PRESQUE VIDE", "desc": "Un flacon presque vide a été retrouvé parmi les affaires de la chambre. Rien ne prouve que Tomas en ait pris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_flacon"},
         "j26_core_mort": {"category": "evenements", "title": "DÉCOUVERTE DU CORPS", "desc": "Tomas a été retrouvé mort dans la chambre d'Elen, derrière une porte verrouillée de l'intérieur.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
         "j26_core_sudation": {"category": "preuves", "title": "PREMIÈRES CONSTATATIONS", "desc": "Iris et Sael ont constaté l'absence de respiration et une importante sudation. La cause de la mort reste inconnue.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
         "j26_tomas_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES", "desc": "Un flacon presque vide a été découvert près du lit. Rien ne prouve que Tomas a pris ces comprimés.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
@@ -429,7 +430,7 @@ init 10 python:
 
 label _26_0_1_1_0_1_INSPECTION_INTRO:
     $ current_period = "Après-midi"
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Plus tard, Iris me laisse entrer quelques minutes. Tomas a été transféré à l'infirmerie. Le lit est vide, mais le drap porte encore la trace de sa présence."
     $ showGroup([("iris", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
@@ -442,7 +443,7 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     iris raison "Oui. Elias a dû forcer le verrou. C'est noté."
     "Iris a gardé la pièce intacte autant que possible. Je prends une photo de la protection métallique devant la bouche d'aération."
     $ hideGroup()
-    call investigation_evidence_photo_take("j26_photo_grille") from _call_j26_grille_photo
+    call j26_photograph("j26_photo_grille", "j26_elen_vide", (0.625, 0.17), 2.9) from _call_j26_grille_photo
     $ showGroup([("iris", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
     "Je regarde les vis une dernière fois. Elles sont en place, mais il y a toujours de l'air qui passe."
     iris inquiet "Et Elen ?"
@@ -456,18 +457,19 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     jump _26_0_1_1_0_1_DECOUVERTE_FLACON
 
 label _26_0_1_1_0_1_DECOUVERTE_FLACON:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     "Avant que je parte, Iris se penche vers les affaires restées près du lit."
     $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
     iris surpris "Attends. C'est quoi, ça ?"
     "Elle sort un petit flacon de médicaments, presque vide."
+    scene j26_elen_flacon at adaptive_fullscreen with dissolve
     noam surpris "C'était là depuis ce matin ?"
     iris reflexion "Je l'avais pas vu. C'est un somnifère."
     noam inquiet "Tu crois qu'il en a pris ?"
     iris raison "Je sais pas. Je vais vérifier, mais je peux pas te dire ça à l'œil."
     "Je photographie le flacon sans toucher au bouchon. Iris le range dans un sachet."
     $ hideGroup()
-    call investigation_evidence_photo_take("j26_photo_flacon") from _call_j26_flacon_photo
+    call j26_photograph("j26_photo_flacon", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_photo
     $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
     noam fatigue "Tu veux dire qu'il aurait pu... se suicider ?"
     iris fatigue "C'est une hypothèse. Pas une conclusion, Noam. On ne sait ni s'il a pris ces comprimés, ni quand."
@@ -541,7 +543,7 @@ label _26_0_1_1_0_1_PA_ROOM:
 
 
 label _26_0_1_1_0_1_PA_FLACON:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_flacon at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.68)])
     noam reflexion "Iris, le flacon est encore là ?"
@@ -561,7 +563,7 @@ label _26_0_1_1_0_1_PA_FLACON:
     return
 
 label _26_0_1_1_0_1_PA_GRILLE:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
     noam reflexion "La grille... Tu te souviens de ce qu'Elias avait installé ?"
