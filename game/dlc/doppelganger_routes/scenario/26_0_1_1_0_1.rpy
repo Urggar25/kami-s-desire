@@ -455,58 +455,54 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     $ current_period = "Après-midi"
     scene j26_elen_vide at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "Quand Iris me laisse revenir, le lit est vide. Je savais qu'ils avaient emmené Tomas, mais voir l'oreiller sans sa tête me fait quand même quelque chose."
-    $ showGroup([("iris", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
-    iris raison "Tu peux regarder, mais touche pas aux affaires. J'ai pas fini ici."
-    noam raison "Ouais."
-    "Elle s'arrête devant le drap roulé en boule."
-    iris reflexion "J'ai pas vu de blessure. Rien qui explique ce qu'on a trouvé."
+    "Sael me laisse revenir dans la chambre. Le lit est vide. Ça ne devrait pas me surprendre, et pourtant je m'arrête net."
+    $ showGroup([("sael", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
+    sael raison "Tu peux regarder, mais on ne touche à rien sans me prévenir."
+    noam raison "D'accord."
+    sael reflexion "Pas de blessure évidente. Rien qui explique ce qu'on a trouvé."
     noam inquiet "Et il était trempé. Tu crois que..."
-    iris fatigue "Je sais, j'ai vu. J'en reviens aussi à ça, mais j'ai rien de sûr."
+    sael fatigue "J'ai vu. Ça peut avoir plusieurs causes."
     noam neutre "Même avec la porte fermée ?"
-    iris raison "Une porte fermée, ça nous dit pas pourquoi quelqu'un meurt, Noam."
-    "Je regarde la tôle fixée devant l'aération. Iris me laisse la photographier sans toucher aux attaches."
+    sael raison "Un verrou ne dit pas pourquoi quelqu'un meurt."
+    "Je regarde la tôle devant l'aération. Sael me laisse la photographier sans toucher aux attaches."
     $ hideGroup()
     call j26_photograph("j26_photo_grille", "j26_elen_vide", (0.625, 0.17), 2.9) from _call_j26_grille_photo
-    $ showGroup([("iris", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
-    "Les clous ont l'air d'être en place. En approchant la main, je sens quand même un filet d'air."
-    iris inquiet "Lysa est avec Elen ?"
-    noam fatigue "Ouais. Elle a réussi à la faire dormir un peu."
-    iris neutre "Tant mieux."
-    "Je baisse la tablette. Ça ne change rien à l'image que j'ai du lit, tout à l'heure."
-    noam reflexion "Je vais demander aux autres ce qu'ils faisaient hier. Je sais même pas comment m'y prendre."
-    iris raison "Ils vont mal le prendre."
-    noam fatigue "Je sais."
-    iris fatigue "Moi aussi, je le prendrais mal. Mais si tu dois le faire, évite Elen pour l'instant. Elle vient de perdre quelqu'un dans son propre lit."
+    $ showGroup([("sael", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
+    "Les fixations semblent en place. Un filet d'air passe encore sur le côté."
+    sael inquiet "Elen est avec Lysa ?"
+    noam fatigue "Oui. Elle a réussi à dormir un peu."
+    sael neutre "Tant mieux."
+    "Je baisse ma tablette, mais je revois encore Tomas sur le lit."
+    noam reflexion "Je vais demander aux autres ce qu'ils faisaient hier soir."
+    sael fatigue "Fais attention à la manière dont tu poses tes questions. Elen n'a pas besoin de se sentir accusée."
+    noam neutre "Je sais."
     $ hideGroup()
     jump _26_0_1_1_0_1_DECOUVERTE_FLACON
 
 label _26_0_1_1_0_1_DECOUVERTE_FLACON:
     scene j26_elen_vide at adaptive_fullscreen with dissolve
-    "Avant que je parte, Iris se penche vers les affaires restées près du lit."
-    $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
-    iris surpris "Attends, là... C'est quoi ?"
-    "Elle se baisse derrière la table de chevet et ressort un petit flacon. Il ne reste que quelques comprimés au fond."
-    noam surpris "C'était là ? On l'avait même pas vu."
-    iris reflexion "Ouais. Attends que je lise."
-    "Elle tourne le flacon sous la lumière de la lampe."
-    iris reflexion "C'est pour dormir."
+    "Avant de quitter la chambre, Sael remarque un objet derrière la table de chevet."
+    $ showGroup([("sael", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
+    sael surpris "Attends. Qu'est-ce que c'est ?"
+    "Elle se penche et découvre un petit flacon presque vide."
+    noam surpris "Il était là depuis le début ?"
+    sael reflexion "On dirait. Je regarde l'étiquette."
+    "Elle le tourne sous la lampe."
+    sael raison "Des comprimés pour dormir."
     noam inquiet "Tomas en prenait ?"
-    iris raison "J'en sais rien. Et c'est même pas dit que ce soit à lui."
-    "Elle le pose sur la table, à l'écart des autres objets."
-    iris fatigue "Prends une photo avant que je le range."
+    sael raison "Je n'en sais rien. Et ce flacon n'est peut-être même pas à lui."
+    sael fatigue "Prends une photo avant qu'on le mette de côté."
     $ hideGroup()
     scene j26_elen_flacon at adaptive_fullscreen with dissolve
     call j26_photograph("j26_photo_flacon", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_photo
-    "Iris me demande de laisser le flacon sur la table de chevet, sans y toucher, jusqu'aux prélèvements."
-    $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
-    noam fatigue "Tu penses qu'il aurait pu... en prendre trop ?"
-    iris fatigue "Noam, regarde-moi. Je sais pas s'il en a pris un seul."
-    noam inquiet "Ouais, mais hier soir, il était vraiment pas bien..."
-    iris raison "Je sais. Ça m'a pas échappé."
-    "Elle prend le flacon entre deux doigts, hésite à le manipuler, puis le repose exactement au même endroit."
-    iris fatigue "Faut que je vérifie. Pour l'instant, on dit rien."
-    noam fatigue "D'accord. Je préfère attendre aussi."
+    "Sael me demande de laisser le flacon en place pour le moment."
+    $ showGroup([("sael", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
+    noam fatigue "Tu crois qu'il aurait pu en prendre trop ?"
+    sael fatigue "Je ne sais même pas s'il en a pris un seul."
+    noam inquiet "Hier soir, il était vraiment pas bien..."
+    sael raison "Justement. Ne tire pas de conclusion avant qu'on ait des résultats."
+    "Elle le place soigneusement dans un sachet de prélèvement."
+    noam fatigue "D'accord."
     $ j26_alt_flacon = True
     $ hideGroup()
     jump _26_0_1_1_0_1_ENQUETE
@@ -580,21 +576,20 @@ label _26_0_1_1_0_1_PA_ROOM:
 label _26_0_1_1_0_1_PA_FLACON:
     scene j26_elen_flacon at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
-    $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.68)])
-    noam reflexion "Tu l'as toujours pas pris ?"
-    iris neutre "Je voulais finir les prélèvements avant. J'ai besoin que tu touches à rien."
-    "Elle me montre le flacon du bout du doigt, sans le déplacer."
+    $ showGroup([("sael", "fatigue", 0.34), ("noam", "neutre", 0.68)])
+    noam reflexion "Tu ne l'as toujours pas emporté ?"
+    sael raison "Je voulais le photographier de près avant. Ne le touche pas."
+    "Elle me désigne le flacon encore posé à l'écart."
     noam reflexion "Il en reste presque pas..."
-    iris raison "Ouais. Mais j'ai aucune idée de ce qu'il y avait dedans hier."
-    noam inquiet "Tu vas pouvoir vérifier si Tomas en a pris ?"
-    iris fatigue "Je vais essayer. Je peux pas te promettre une réponse aujourd'hui."
-    "Elle me laisse refaire une photo de l'étiquette, de plus près."
+    sael raison "On ne sait même pas combien il en contenait hier."
+    noam inquiet "Tu pourras savoir s'il en a pris ?"
+    sael fatigue "Je vais essayer. Pas forcément aujourd'hui."
     $ hideGroup()
     call investigation_take_manual_photo("j26_photo_flacon_detail", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_detail_photo
-    $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.68)])
-    "Je note le nom. Iris glisse le flacon dans un sachet et écrit quelque chose dessus."
-    noam fatigue "Je voulais juste être sûr que..."
-    iris neutre "Je sais. Moi aussi, je voudrais être sûre."
+    $ showGroup([("sael", "fatigue", 0.34), ("noam", "neutre", 0.68)])
+    "Sael vérifie l'étiquette et range le sachet dans son matériel."
+    noam fatigue "J'aimerais juste être sûr..."
+    sael neutre "Je sais. Moi aussi."
     $ j26_alt_flacon = True
     $ hideGroup()
     return
@@ -622,25 +617,22 @@ label _26_0_1_1_0_1_PA_GRILLE:
     return
 
 label _26_0_1_1_0_1_PA_IRIS:
+    # Identifiant de label historique conservé pour les sauvegardes.
     scene infirmerie2 at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
-    "Le lit sur lequel repose Tomas est dissimulé derrière un rideau. Je m'arrête devant sans oser l'ouvrir."
-    $ showGroup([("iris", "fatigue", 0.34), ("noam", "inquiet", 0.68)])
-    iris fatigue "Si c'est pour me demander si j'ai trouvé la cause, non."
-    noam raison "Je voulais juste... Il y a quelque chose qui te paraît bizarre ?"
-    "Iris regarde le rideau derrière elle, puis se tourne de nouveau vers moi."
-    iris reflexion "Il avait pas de blessure visible. Et ses vêtements étaient complètement trempés. Tu l'as vu aussi."
-    noam inquiet "Tu crois qu'il a eu mal ?"
-    iris triste "Je peux pas savoir."
+    "Le lit de Tomas est dissimulé derrière un rideau. Sael est penchée sur ses notes."
+    $ showGroup([("sael", "fatigue", 0.34), ("noam", "inquiet", 0.68)])
+    sael fatigue "Si tu viens chercher une cause de décès, je n'en ai pas encore."
+    noam raison "Je voulais juste savoir ce qui te paraît bizarre."
+    sael reflexion "Il n'avait pas de blessure visible. Ses vêtements étaient trempés. C'est ce qu'on peut dire pour le moment."
+    noam inquiet "Tu crois qu'il a souffert ?"
+    sael triste "Je ne peux pas te répondre."
     noam fatigue "D'accord."
-    iris neutre "Ça m'énerve de pas pouvoir te dire autre chose. Mais je vais pas inventer."
-    noam raison "Et cette odeur, dans la chambre ?"
-    iris reflexion "Il y avait tellement de nourriture qui traînait... J'en sais rien. J'ai eu mal au crâne en entrant, mais ça veut peut-être rien dire."
-    noam neutre "Tu me préviens quand t'as quelque chose ?"
-    iris raison "Oui."
-    "Elle retourne vers son plan de travail, puis se ravise."
-    iris fatigue "Noam... t'as le droit d'être là, mais évite de regarder derrière le rideau, d'accord ?"
-    noam neutre "Ouais. Je vais te laisser."
+    noam raison "Et l'odeur dans la chambre ?"
+    sael reflexion "Elle m'a donné mal à la tête. Il y avait beaucoup de nourriture avariée, mais je ne peux pas dire d'où venait exactement cette odeur."
+    noam neutre "Tu me préviens quand tu sais quelque chose ?"
+    sael raison "Oui. Et Noam... ne regarde pas derrière le rideau, d'accord ?"
+    noam neutre "D'accord. Je te laisse travailler."
     $ j26_alt_corps = True
     $ hideGroup()
     return
