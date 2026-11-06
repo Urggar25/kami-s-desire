@@ -582,3 +582,12 @@ translate english kd_dlc_la_peau_des_autres_6dca5b06:
     # kael sourire "Je vais tout t'expliquer !"
     kael sourire "I'll explain everything!"
 
+
+# Ending screen labels
+translate english strings:
+
+    old "La peau des autres"
+    new "The Skin of Others"
+
+    old "ENDING 01 // JOUR 20"
+    new "ENDING 01 // DAY 20"
