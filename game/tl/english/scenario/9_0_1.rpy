@@ -64,7 +64,7 @@ translate english 7914e0af:
 translate english 225e7487:
 
     # kami "Il s'en est passé, des choses, pendant ma courte absence. Vous avez presque commencé à vous comporter comme si personne ne vous surveillait."
-    kami "So much happened during my brief absence. You almost started behaving as if no one was watching you."
+    kami "Quite a lot happened while I was away. You almost started acting like nobody was watching."
 
 # game/scenario/9_0_1.rpy:45
 translate english 4de0e3b5:
@@ -88,7 +88,7 @@ translate english ebb8efb0:
 translate english 4d92ae59:
 
     # kami "C'est adorable. Vous ressemblez à des enfants persuadés que leur cabane devient imprenable dès qu'ils placent une chaise devant l'entrée."
-    kami "It's adorable. You look like children who think their fort becomes impenetrable the moment they put a chair in front of the entrance."
+    kami "It's adorable. Like kids convinced their blanket fort is impregnable because they shoved a chair in front of it."
 
 # game/scenario/9_0_1.rpy:55
 translate english ab668e57:
@@ -460,7 +460,7 @@ translate english a3439e30:
 translate english 3cdbcfb0:
 
     # kami "J'ai cependant retardé l'application du Commandement pour vous laisser le temps de voter. Sans cette délicate attention, ces campements ne seraient déjà plus un problème."
-    kami "However, I delayed enforcement of the Commandment to give you time to vote. Without that thoughtful gesture, those camps would no longer be a problem."
+    kami "I delayed enforcing the Commandment so you'd have time to vote. Without that thoughtful little gesture, those camps wouldn't be a problem anymore."
 
 # game/scenario/9_0_1.rpy:249
 translate english 8bbdf0e3:
@@ -484,7 +484,7 @@ translate english c7245477:
 translate english ff037963:
 
     # kami "Vous allez maintenant devoir choisir, mes petits humains préférés. Cette fois, réfléchissez très vite."
-    kami "Now you must choose, my favorite little humans. This time, think very quickly."
+    kami "Now then, time to choose, my favorite little humans. And do make it quick."
 
 # game/scenario/9_0_1.rpy:280
 translate english db743e23:
@@ -784,7 +784,7 @@ translate english deb39b65:
 translate english b1630938:
 
     # kami "Je reconnais une véritable efficacité technique. La majorité des campements a reçu votre avertissement. Ce serait presque respectable, si votre impertinence ne gâchait pas tout."
-    kami "I must acknowledge some genuine technical efficiency. Most of the camps received your warning. It would almost be respectable if your insolence didn't spoil everything."
+    kami "I must admit, that's some impressive technical work. Most of the camps got your warning. It might almost earn my respect, if you weren't so insolent."
 
 # game/scenario/9_0_1.rpy:413
 translate english f2503c91:
@@ -802,7 +802,7 @@ translate english e8cc701e:
 translate english f6149ad3:
 
     # kami "J'ai bien cru que vous arriveriez à un résultat probant. Agir et donner l'impression d'agir restent deux choses différentes."
-    kami "For a moment, I thought you might actually achieve something. Taking action and merely looking like you're taking action are two different things."
+    kami "For a moment there, I thought you might actually accomplish something. Looking busy and getting results are two very different things."
 
 # game/scenario/9_0_1.rpy:418
 translate english a782122e:
@@ -826,7 +826,7 @@ translate english 840f5413:
 translate english 65ff45f7:
 
     # kami "Le Conclave n'est pas une antenne de secours."
-    kami "The Conclave is not an emergency broadcast station."
+    kami "The Conclave is not your personal emergency broadcast service."
 
 # game/scenario/9_0_1.rpy:430
 translate english 94f07ee9:
@@ -928,7 +928,7 @@ translate english b7877d42:
 translate english b292c0ec:
 
     # kami "Mais c'est qu'il me remet la faute dessus, en plus ?!"
-    kami "Oh, so now he's blaming me too?!"
+    kami "Oh, so now he's blaming ME?!"
 
 # game/scenario/9_0_1.rpy:513
 translate english 3ad39f7b:
@@ -976,7 +976,7 @@ translate english 7fadc286:
 translate english 9cc17c2a:
 
     # kami "Le débat est terminé. Les demandes de délai, de clarification et les appels à la décence sont rejetés."
-    kami "The debate is over. All requests for more time, clarification, and appeals to decency are denied."
+    kami "Debate over. Requests for more time, clarification, and basic human decency: denied."
 
 # game/scenario/9_0_1.rpy:546
 translate english 1cd57a15:
