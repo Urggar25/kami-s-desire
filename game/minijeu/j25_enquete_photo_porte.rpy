@@ -306,9 +306,16 @@ screen _j25_photo_screen(view, evidence_id=None):
             background Solid("#ECE8DC")
             vbox:
                 spacing 18
-                # Même polaroïd qu'au J25 : on affiche le vrai cadrage figé
-                # au moment du déclenchement, jamais une vignette de preuve.
-                add Transform(snapshot, crop=(0, 0, 1920, 1080), xysize=(1120, 630))
+                # Pour les preuves, l'aperçu doit lire les pixels du PNG
+                # réellement sauvegardé dans le dossier, pas re-rendre un
+                # Displayable snapshot (qui pouvait rester vide dans le cadre).
+                if evidence_id and investigation_photo_data.get(evidence_id):
+                    add investigation_evidence_image(evidence_id) xsize 1120 ysize 630
+                elif snapshot is not None:
+                    # Comportement historique du jour 25, inchangé.
+                    add Transform(snapshot, crop=(0, 0, 1920, 1080), xysize=(1120, 630))
+                else:
+                    add Solid("#192A36") xsize 1120 ysize 630
                 text _("PHOTO ENREGISTRÉE") xalign 0.5 size 24 color "#25333B" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
         timer 1.0 action Return((view.center[0], view.center[1], view.zoom))
 
