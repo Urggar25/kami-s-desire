@@ -424,6 +424,8 @@ label _26_0_1_1_0_1_ENQUETE:
     $ investigation_pa_begin(26, 5)
     $ investigation_unlocked = True
     $ free_time_active = False
+    $ conclave_lock = False
+    $ dortoir_lock = False
     $ exploration_libre_active = True
     $ exploration_libre_allowed_rooms = list(J26A_ROOMS.keys())
     $ current_scene_active = None
