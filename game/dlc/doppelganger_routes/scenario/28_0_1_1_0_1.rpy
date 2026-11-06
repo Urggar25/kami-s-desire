@@ -143,6 +143,8 @@ init 10 python:
       }
     }
     INVESTIGATION_ENTRIES.update({
+        "j28_photo_plaque": {"category": "preuves", "title": "PLAQUE DANS LE CONDUIT", "desc": "Une seconde plaque non standard a été placée à l'intérieur du conduit pour dévier le flux d'air.", "day": "J28", "origin": "CONDUITS DE VENTILATION", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/maintenance1.png"},
+        "j28_photo_bulbuma": {"category": "preuves", "title": "POT DE BULBUMA BRÛLÉ", "desc": "Un récipient noirci contenant des résidus végétaux brûlés était caché derrière la plaque de dérivation.", "day": "J28", "origin": "CONDUITS DE VENTILATION", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/maintenance2.png"},
         "j28_core_plaque": {"category": "preuves", "title": "PLAQUE DE DÉRIVATION D'AIR", "desc": "Une plaque non standard dévie l'air vers la chambre d'Elen depuis l'intérieur du réseau de ventilation.", "day": "J28", "origin": "CONDUITS", "status": "CONFIRMÉ", "manual_only": True},
         "j28_core_bol": {"category": "preuves", "title": "RÉCIPIENT BRÛLÉ", "desc": "Un petit récipient noirci contenant des résidus végétaux brûlés a été découvert derrière la plaque.", "day": "J28", "origin": "CONDUITS", "status": "CONFIRMÉ", "manual_only": True},
         "j28_core_bulbuma": {"category": "hypotheses", "title": "PISTE DU BULBUMA CORIENIS", "desc": "Des fragments évoquent une plante dont certaines préparations chauffées peuvent être toxiques, sans identification définitive.", "day": "J28", "origin": "INFIRMERIE", "status": "CONFIRMÉ", "manual_only": True},
@@ -345,6 +347,7 @@ label _28_0_1_1_0_1_CONDUIT_3:
 label _28_0_1_1_0_1_PLAQUE:
     $ j28a_plaque = True
     "Je photographie le montage. La plaque détourne la circulation de l'air vers un passage qui débouche près de la chambre d'Elen."
+    call investigation_evidence_photo_take("j28_photo_plaque") from _call_j28_photo_plaque
     noam reflexion "Lysa, tu peux m'aider à la faire glisser ?"
     lysa raison "Oui. Mais pas comme un bourrin. Un... deux... trois."
     play sound "audio/sfx_duct_scrape.wav"
@@ -357,6 +360,7 @@ label _28_0_1_1_0_1_PLAQUE:
     noam raison "Je prends des photos. On touche à rien."
     $ j28a_bol = True
     "Je photographie le récipient, le renfoncement et les alentours, puis je rappelle Iris."
+    call investigation_evidence_photo_take("j28_photo_bulbuma") from _call_j28_photo_bulbuma
     noam raison "On a trouvé un bol avec quelque chose de brûlé dedans. La plaque était juste devant."
     iris "OK. Surtout, ne remuez pas les cendres. Ça peut encore être dangereux."
     lysa fatigue "Super. J'adore cette sortie."
