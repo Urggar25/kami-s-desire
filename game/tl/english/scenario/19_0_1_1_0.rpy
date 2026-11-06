@@ -3718,3 +3718,50 @@ translate english 364162eb:
     # "Je me retourne brutalement."
     "I spin around."
 
+
+# game/scenario/19_0_1_1_0.rpy:69
+translate english 54f6c196:
+
+    # noam colere "Arrête."
+    noam colere "Stop."
+
+# game/scenario/19_0_1_1_0.rpy:101
+translate english 0aec055c:
+
+    # "Je fronce les sourcils."
+    "I frown."
+
+# game/scenario/19_0_1_1_0.rpy:538
+translate english 62ac0d21:
+
+    # noam "Rien."
+    noam "Nothing."
+
+# game/scenario/19_0_1_1_0.rpy:689
+translate english e7f9759a:
+
+    # "Je regarde la porte."
+    "I look at the door."
+
+# game/scenario/19_0_1_1_0.rpy:899
+translate english 5d312c4f:
+
+    # noam peur "Non."
+    noam peur "No."
+
+# game/scenario/19_0_1_1_0.rpy:922
+translate english d1af98c2:
+
+    # think "Non."
+    think "No."
+
+# game/scenario/19_0_1_1_0.rpy:926
+translate english d1af98c2_1:
+
+    # think "Non."
+    think "No."
+
+translate english strings:
+
+    old "Retourner au dortoir"
+    new "Return to the dormitory"
