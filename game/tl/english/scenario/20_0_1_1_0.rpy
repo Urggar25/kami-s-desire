@@ -484,7 +484,7 @@ translate english 6b1ce7c2:
 translate english 290dd969_2:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # game/scenario/20_0_1_1_0.rpy:91
 translate english 3d4d4a20:
@@ -904,7 +904,7 @@ translate english ec7083fb:
 translate english b11ae2df:
 
     # noam "Je sais."
-    noam ""
+    noam "I know."
 
 # game/scenario/20_0_1_1_0.rpy:166
 translate english 04075892:
@@ -1138,7 +1138,7 @@ translate english 74d13fc3:
 translate english b11ae2df_1:
 
     # noam "Je sais."
-    noam ""
+    noam "I know."
 
 # game/scenario/20_0_1_1_0.rpy:212
 translate english 3ba2aa09:
@@ -1240,7 +1240,7 @@ translate english dce5d26c:
 translate english 1f7ba474:
 
     # kael surpris "Non."
-    kael surpris ""
+    kael surpris "No."
 
 # game/scenario/20_0_1_1_0.rpy:231
 translate english e3cdd7de:
@@ -1342,7 +1342,7 @@ translate english 55df397b:
 translate english 290dd969_3:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # game/scenario/20_0_1_1_0.rpy:248
 translate english 5b9d6b50:
@@ -1542,7 +1542,7 @@ translate english 7ad81883_4:
 translate english 290dd969_5:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # TODO: Translation updated at 2026-11-06 17:50
 
@@ -1964,7 +1964,7 @@ translate english 6efc96b4:
 translate english e2184e10_1:
 
     # "Un silence passe."
-    "A moment of silence."
+    "Silence passes."
 
 # game/scenario/20_0_1_1_0.rpy:214
 translate english 927e16d1:
@@ -2858,37 +2858,37 @@ translate english 87d733b7_1:
 translate english 51bfb328:
 
     # iris blase "Tu sais que t'es vraiment mauvais pour mentir ?"
-    iris blase ""
+    iris blase "You know you're a terrible liar, right?"
 
 # game/scenario/20_0_1_1_0.rpy:625
 translate english 8054812b:
 
     # noam "Je réfléchis."
-    noam ""
+    noam "I'm thinking."
 
 # game/scenario/20_0_1_1_0.rpy:627
 translate english fffe83dc_1:
 
     # iris "Justement."
-    iris ""
+    iris "Exactly."
 
 # game/scenario/20_0_1_1_0.rpy:629
 translate english c750eec1:
 
     # "Elle ralentit pour rester à ma hauteur."
-    ""
+    "She slows down to walk beside me."
 
 # game/scenario/20_0_1_1_0.rpy:631
 translate english eebe3fe6:
 
     # iris fatigue "T'es pas obligé de trouver une réponse maintenant."
-    iris fatigue ""
+    iris fatigue "You don't have to figure it out right now."
 
 # game/scenario/20_0_1_1_0.rpy:633
 translate english cbcef250:
 
     # noam "Demain on part."
-    noam ""
+    noam "We're leaving tomorrow."
 
 # game/scenario/20_0_1_1_0.rpy:635
 translate english 808ad75c_1:
@@ -2900,523 +2900,523 @@ translate english 808ad75c_1:
 translate english e449a260:
 
     # noam "Si j'ai vu quelque chose de réel, demain c'est trop tard."
-    noam ""
+    noam "If what I saw was real, tomorrow will be too late."
 
 # game/scenario/20_0_1_1_0.rpy:639
 translate english 69110a04:
 
     # "Iris ouvre la bouche, mais ne répond pas."
-    ""
+    "Iris opens her mouth but doesn't answer."
 
 # game/scenario/20_0_1_1_0.rpy:641
 translate english 1c6d9a3d:
 
     # "Cette fois, même elle n'a rien à me proposer."
-    ""
+    "This time, even she has nothing to suggest."
 
 # game/scenario/20_0_1_1_0.rpy:646
 translate english cdad043b:
 
     # "Nous ressortons enfin du conduit dans ma chambre."
-    ""
+    "At last, we climb back out of the duct into my bedroom."
 
 # game/scenario/20_0_1_1_0.rpy:648
 translate english df8bfe88:
 
     # "Je m'assois un instant sur le bord du lit, surtout parce que mes jambes en ont marre de me porter."
-    ""
+    "I sit on the edge of the bed, mostly because my legs are tired of holding me up."
 
 # game/scenario/20_0_1_1_0.rpy:656
 translate english 208fa491:
 
     # iris inquiet "Je vais prévenir les autres qu'on a rien trouvé."
-    iris inquiet ""
+    iris inquiet "I'll tell the others we didn't find anything."
 
 # game/scenario/20_0_1_1_0.rpy:658
 translate english dee3b2bc:
 
     # noam desaccord "Dis pas que j'ai inventé le reste."
-    noam desaccord ""
+    noam desaccord "Don't say I made up the rest."
 
 # game/scenario/20_0_1_1_0.rpy:660
 translate english 225c7702:
 
     # iris colere "J'ai pas dit ça."
-    iris colere ""
+    iris colere "I didn't say that."
 
 # game/scenario/20_0_1_1_0.rpy:662
 translate english b11ae2df_3:
 
     # noam "Je sais."
-    noam ""
+    noam "I know."
 
 # game/scenario/20_0_1_1_0.rpy:664
 translate english 9955c9de:
 
     # iris fatigue "Je vais juste leur dire qu'il n'y avait plus de corps. C'est la seule chose qu'on sait."
-    iris fatigue ""
+    iris fatigue "I'll just tell them the body wasn't there anymore. That's the only thing we know."
 
 # game/scenario/20_0_1_1_0.rpy:666
 translate english 0d5d250c:
 
     # "Elle hésite une seconde avant de sortir."
-    ""
+    "She hesitates for a moment before leaving."
 
 # game/scenario/20_0_1_1_0.rpy:668
 translate english f890ec96:
 
     # iris "Et tu restes ici."
-    iris ""
+    iris "And you're staying here."
 
 # game/scenario/20_0_1_1_0.rpy:670
 translate english 2a2c953e:
 
     # noam blase "Oui, maman."
-    noam blase ""
+    noam blase "Yes, Mom."
 
 # game/scenario/20_0_1_1_0.rpy:674
 translate english 8e62106a:
 
     # noam fatigue "Moi aussi. Enfin... oui. Je reste là."
-    noam fatigue ""
+    noam fatigue "So am I. Well... yeah. I'll stay."
 
 # game/scenario/20_0_1_1_0.rpy:676
 translate english c696916b:
 
     # "Elle me lance encore un regard méfiant, puis ouvre la porte."
-    ""
+    "She gives me another suspicious look, then opens the door."
 
 # game/scenario/20_0_1_1_0.rpy:678
 translate english 3f64906c:
 
     # iris "Kael ?"
-    iris ""
+    iris "Kael?"
 
 # game/scenario/20_0_1_1_0.rpy:680
 translate english 212a9cef:
 
     # kael doute "J'arrive."
-    kael doute ""
+    kael doute "Coming."
 
 # game/scenario/20_0_1_1_0.rpy:682
 translate english 2ddc89a3:
 
     # "Iris sort."
-    ""
+    "Iris leaves."
 
 # game/scenario/20_0_1_1_0.rpy:686
 translate english ecfac160:
 
     # "Kael, lui, ne bouge pas tout de suite."
-    ""
+    "Kael doesn't move right away."
 
 # game/scenario/20_0_1_1_0.rpy:688
 translate english c24c219f:
 
     # noam "Tu peux y aller, tu sais."
-    noam ""
+    noam "You can go, you know."
 
 # game/scenario/20_0_1_1_0.rpy:690
 translate english 3278c8fb:
 
     # kael doute "Ouais."
-    kael doute ""
+    kael doute "Yeah."
 
 # game/scenario/20_0_1_1_0.rpy:692
 translate english b40aef79:
 
     # "Il regarde la grille ouverte derrière nous."
-    ""
+    "He looks at the open grille behind us."
 
 # game/scenario/20_0_1_1_0.rpy:694
 translate english 0d2a3f18:
 
     # kael "Je voulais juste..."
-    kael ""
+    kael "I just wanted to..."
 
 # game/scenario/20_0_1_1_0.rpy:696
 translate english 81910f15_4:
 
     # "Il s'arrête."
-    ""
+    "He stops."
 
 # game/scenario/20_0_1_1_0.rpy:698
 translate english c78d66eb_7:
 
     # noam reflexion "Quoi ?"
-    noam reflexion ""
+    noam reflexion "What?"
 
 # game/scenario/20_0_1_1_0.rpy:702
 translate english 7a1288cc:
 
     # kael doute "Non, rien."
-    kael doute ""
+    kael doute "No, nothing."
 
 # game/scenario/20_0_1_1_0.rpy:704
 translate english dcdf7b8c:
 
     # noam "Kael."
-    noam ""
+    noam "Kael."
 
 # game/scenario/20_0_1_1_0.rpy:706
 translate english 0ba62cc5:
 
     # "Il inspire doucement par le nez."
-    ""
+    "He slowly breathes in through his nose."
 
 # game/scenario/20_0_1_1_0.rpy:708
 translate english e3223737:
 
     # kael inquietude "Je peux te poser une question ?"
-    kael inquietude ""
+    kael inquietude "Can I ask you something?"
 
 # game/scenario/20_0_1_1_0.rpy:710
 translate english fbbf2212_1:
 
     # noam "Vas-y."
-    noam ""
+    noam "Go ahead."
 
 # game/scenario/20_0_1_1_0.rpy:712
 translate english c6cf2054:
 
     # kael doute "C'est un peu... enfin, c'est pas vraiment lié à tout ça."
-    kael doute ""
+    kael doute "It's a little... well, it's not really about any of this."
 
 # game/scenario/20_0_1_1_0.rpy:714
 translate english 83cd81d4:
 
     # noam blase "Vu la journée, ça changera pas grand-chose."
-    noam blase ""
+    noam blase "After the day we've had, I doubt it'll make much difference."
 
 # game/scenario/20_0_1_1_0.rpy:716
 translate english 45ba9576:
 
     # "Il esquisse un sourire, mais il disparaît presque aussitôt."
-    ""
+    "He manages a smile, but it fades almost immediately."
 
 # game/scenario/20_0_1_1_0.rpy:718
 translate english faa91c89:
 
     # kael inquietude "Si demain la navette arrive..."
-    kael inquietude ""
+    kael inquietude "If the shuttle arrives tomorrow..."
 
 # game/scenario/20_0_1_1_0.rpy:720
 translate english 6f2b7486:
 
     # "Il marque une pause."
-    ""
+    "He pauses."
 
 # game/scenario/20_0_1_1_0.rpy:722
 translate english 73389658:
 
     # kael "Et que tu sais qu'en partant, quelqu'un resterait coincé ici..."
-    kael ""
+    kael "And you knew that leaving would mean someone was trapped here..."
 
 # game/scenario/20_0_1_1_0.rpy:724
 translate english e1fd935d:
 
     # "Ses yeux quittent les miens."
-    ""
+    "His eyes shift away from mine."
 
 # game/scenario/20_0_1_1_0.rpy:726
 translate english e4dd7f77:
 
     # kael doute "Tu monterais quand même dedans ?"
-    kael doute ""
+    kael doute "Would you still get on?"
 
 # game/scenario/20_0_1_1_0.rpy:730
 translate english f407e561:
 
     # noam reflexion "Pourquoi tu me demandes ça ?"
-    noam reflexion ""
+    noam reflexion "Why are you asking me that?"
 
 # game/scenario/20_0_1_1_0.rpy:732
 translate english d142000b:
 
     # kael inquietude "J'en sais rien."
-    kael inquietude ""
+    kael inquietude "I don't know."
 
 # game/scenario/20_0_1_1_0.rpy:734
 translate english 7b7d20e4:
 
     # "Il passe une main derrière sa nuque."
-    ""
+    "He rubs the back of his neck."
 
 # game/scenario/20_0_1_1_0.rpy:736
 translate english efa510ec:
 
     # kael doute "Je pensais au départ. À demain. Et puis..."
-    kael doute ""
+    kael doute "I was thinking about leaving. About tomorrow. And then..."
 
 # game/scenario/20_0_1_1_0.rpy:738
 translate english c6728c67:
 
     # "Il s'interrompt encore."
-    ""
+    "He breaks off again."
 
 # game/scenario/20_0_1_1_0.rpy:740
 translate english 5c15bb6e:
 
     # kael "Laisse tomber. C'était une question con."
-    kael ""
+    kael "Forget it. It was a stupid question."
 
 # game/scenario/20_0_1_1_0.rpy:742
 translate english 290dd969_8:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # game/scenario/20_0_1_1_0.rpy:744
 translate english 2d0c156e:
 
     # "Il relève les yeux."
-    ""
+    "He looks up."
 
 # game/scenario/20_0_1_1_0.rpy:746
 translate english 613cf55a:
 
     # noam reflexion "C'est juste... précis."
-    noam reflexion ""
+    noam reflexion "It's just... oddly specific."
 
 # game/scenario/20_0_1_1_0.rpy:748
 translate english e9b7b2af:
 
     # kael inquietude "Ouais."
-    kael inquietude ""
+    kael inquietude "Yeah."
 
 # game/scenario/20_0_1_1_0.rpy:750
 translate english e2184e10_2:
 
     # "Un silence passe."
-    "A moment of silence."
+    "Silence passes."
 
 # game/scenario/20_0_1_1_0.rpy:752
 translate english ef89aec3:
 
     # kael "Alors ?"
-    kael ""
+    kael "So?"
 
 # game/scenario/20_0_1_1_0.rpy:782
 translate english bf5d80d6:
 
     # noam reflexion "Oui."
-    noam reflexion ""
+    noam reflexion "Yes."
 
 # game/scenario/20_0_1_1_0.rpy:786
 translate english f9be81aa:
 
     # noam "Enfin... si j'ai vraiment aucun moyen de le sortir, oui. Je monte."
-    noam ""
+    noam "I mean... if there's truly no way to get them out, yes. I'd board."
 
 # game/scenario/20_0_1_1_0.rpy:788
 translate english faf846bf:
 
     # kael doute "Même en sachant qu'il reste ici ?"
-    kael doute ""
+    kael doute "Even knowing they'd be stuck here?"
 
 # game/scenario/20_0_1_1_0.rpy:790
 translate english 7deef5f8:
 
     # noam "Rester avec lui changera rien. Rester ici pour quoi faire ?"
-    noam ""
+    noam "Staying with them wouldn't change anything. What good would staying here do?"
 
 # game/scenario/20_0_1_1_0.rpy:791
 translate english ea7eebf4:
 
     # noam "On sera juste deux personnes coincées au lieu d'une."
-    noam ""
+    noam "There'd just be two people trapped instead of one."
 
 # game/scenario/20_0_1_1_0.rpy:793
 translate english a2b52673:
 
     # "Il regarde le sol quelques secondes."
-    ""
+    "He looks at the floor for a few seconds."
 
 # game/scenario/20_0_1_1_0.rpy:795
 translate english 3819d6d3:
 
     # kael inquietude "Ouais..."
-    kael inquietude ""
+    kael inquietude "Yeah..."
 
 # game/scenario/20_0_1_1_0.rpy:797
 translate english e89064a8:
 
     # kael "Je vois."
-    kael ""
+    kael "I see."
 
 # game/scenario/20_0_1_1_0.rpy:799
 translate english d49e3370:
 
     # noam "T'avais quelqu'un en tête ?"
-    noam ""
+    noam "Did you have someone in mind?"
 
 # game/scenario/20_0_1_1_0.rpy:803
 translate english 6dea51d7:
 
     # "La réponse sort un peu trop vite."
-    ""
+    "The answer comes a little too quickly."
 
 # game/scenario/20_0_1_1_0.rpy:805
 translate english 1c27d5bb:
 
     # kael doute "Non, personne. Je... je me demandais juste."
-    kael doute ""
+    kael doute "No, nobody. I... I was just wondering."
 
 # game/scenario/20_0_1_1_0.rpy:807
 translate english fa451ded_8:
 
     # noam "D'accord."
-    noam ""
+    noam "Okay."
 
 # game/scenario/20_0_1_1_0.rpy:809
 translate english 6739af56:
 
     # "Il hoche la tête, comme s'il venait de prendre une décision qui n'a rien à voir avec moi."
-    ""
+    "He nods, as though he's just made a decision that has nothing to do with me."
 
 # game/scenario/20_0_1_1_0.rpy:820
 translate english b0217e1b_1:
 
     # noam reflexion "Non."
-    noam reflexion ""
+    noam reflexion "No."
 
 # game/scenario/20_0_1_1_0.rpy:822
 translate english dae64909:
 
     # kael surpris "Tu resterais ?"
-    kael surpris ""
+    kael surpris "You'd stay?"
 
 # game/scenario/20_0_1_1_0.rpy:824
 translate english a322ffd8:
 
     # noam "S'il y a encore une chance de le sortir, oui."
-    noam ""
+    noam "If there's still a chance of getting them out, yes."
 
 # game/scenario/20_0_1_1_0.rpy:826
 translate english 4acad126:
 
     # kael inquietude "Même si tu risques de rater la navette ?"
-    kael inquietude ""
+    kael inquietude "Even if you risk missing the shuttle?"
 
 # game/scenario/20_0_1_1_0.rpy:828
 translate english b3948879:
 
     # noam "Je vais pas te dire que je resterais ici pour toujours juste pour faire le héros."
-    noam ""
+    noam "I'm not going to pretend I'd stay here forever just to play hero."
 
 # game/scenario/20_0_1_1_0.rpy:830
 translate english 71faf0ea:
 
     # noam "Mais partir alors que je peux encore faire quelque chose ? Non."
-    noam ""
+    noam "But leave while there's still something I can do? No."
 
 # game/scenario/20_0_1_1_0.rpy:832
 translate english c96ccd13:
 
     # "Kael baisse légèrement les yeux."
-    ""
+    "Kael lowers his eyes slightly."
 
 # game/scenario/20_0_1_1_0.rpy:834
 translate english 45150bd6:
 
     # kael doute "Même si c'est pas... quelqu'un que tu connais vraiment ?"
-    kael doute ""
+    kael doute "Even if it's not... someone you really know?"
 
 # game/scenario/20_0_1_1_0.rpy:836
 translate english b9350999:
 
     # noam "Ça change quoi ?"
-    noam ""
+    noam "What difference does that make?"
 
 # game/scenario/20_0_1_1_0.rpy:840
 translate english a425a811:
 
     # noam "S'il est coincé ici et que je peux l'aider, j'essaie. Après, si c'est impossible, c'est autre chose."
-    noam ""
+    noam "If they're stuck here and I can help, I'll try. If it's impossible, that's different."
 
 # game/scenario/20_0_1_1_0.rpy:842
 translate english 38505e02:
 
     # "Kael reste silencieux longtemps."
-    ""
+    "Kael stays silent for a long time."
 
 # game/scenario/20_0_1_1_0.rpy:844
 translate english 7b593269:
 
     # kael inquietude "D'accord."
-    kael inquietude ""
+    kael inquietude "Okay."
 
 # game/scenario/20_0_1_1_0.rpy:846
 translate english 58f6b35c:
 
     # noam surpris "D'accord ?"
-    noam surpris ""
+    noam surpris "Okay?"
 
 # game/scenario/20_0_1_1_0.rpy:848
 translate english 180da983:
 
     # kael doute "Ouais. C'est juste..."
-    kael doute ""
+    kael doute "Yeah. It's just..."
 
 # game/scenario/20_0_1_1_0.rpy:850
 translate english 7a31afb9:
 
     # "Il cherche ses mots."
-    ""
+    "He searches for the words."
 
 # game/scenario/20_0_1_1_0.rpy:852
 translate english 0245ca2c:
 
     # kael "Je voulais savoir."
-    kael ""
+    kael "I wanted to know."
 
 # game/scenario/20_0_1_1_0.rpy:854
 translate english b1db02bc:
 
     # noam "Tu me fais un peu flipper quand tu parles comme ça."
-    noam ""
+    noam "You're kind of freaking me out when you talk like that."
 
 # game/scenario/20_0_1_1_0.rpy:856
 translate english 1c49401c:
 
     # kael sourire "Désolé."
-    kael sourire ""
+    kael sourire "Sorry."
 
 # game/scenario/20_0_1_1_0.rpy:858
 translate english b8f17138:
 
     # "Son sourire est petit. Presque gêné."
-    ""
+    "His smile is small. Almost embarrassed."
 
 # game/scenario/20_0_1_1_0.rpy:860
 translate english 56e4b6c0:
 
     # "Mais son regard, lui, reste ailleurs."
-    ""
+    "But his mind seems to be elsewhere."
 
 # game/scenario/20_0_1_1_0.rpy:869
 translate english 32df67c7:
 
     # "Kael finit par rejoindre Iris dans le couloir."
-    ""
+    "Eventually, Kael joins Iris in the corridor."
 
 # game/scenario/20_0_1_1_0.rpy:875
 translate english 77c4bde6_1:
 
     # "La porte se referme."
-    ""
+    "The door closes."
 
 # game/scenario/20_0_1_1_0.rpy:877
 translate english 7233f1d4:
 
     # "Je reste assis sur mon lit."
-    ""
+    "I stay sitting on my bed."
 
 # game/scenario/20_0_1_1_0.rpy:879
 translate english a419ef12:
 
     # "Quelques minutes plus tôt, j'étais prêt à me battre avec Iris pour garder un couteau."
-    ""
+    "Only minutes ago, I was ready to fight Iris over a knife."
 
 # game/scenario/20_0_1_1_0.rpy:881
 translate english d5beb2c7:
@@ -4856,7 +4856,7 @@ translate english ff548e60:
 translate english 290dd969_9:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # game/scenario/20_0_1_1_0.rpy:1565
 translate english f6dd1b36:
@@ -4868,7 +4868,7 @@ translate english f6dd1b36:
 translate english 290dd969_10:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # game/scenario/20_0_1_1_0.rpy:1569
 translate english 3adbd1e8:
