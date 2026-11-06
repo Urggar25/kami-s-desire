@@ -210,6 +210,24 @@ screen investigation_pa_confirm(action):
         textbutton "ENQUÊTER — 1 PA" action Return(True)
         textbutton "ANNULER" action Return(False)
 
+# Confirmation intégrée au système de choix standard du visual novel.
+# Le décor exact de la salle reste derrière le menu, sans fenêtre modale bleue.
+label INVESTIGATION_PA_CHOICE(action, room_id):
+    if investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
+        $ _investigation_choice_bg = "j26_elen_flacon" if investigation_pa_day == 26 else "j26_elen_vide"
+        scene expression _investigation_choice_bg at adaptive_fullscreen with None
+    else:
+        $ _investigation_choice_bg = room_scene_displayable("chambre" if room_id == "dortoir" else room_id)
+        scene expression _investigation_choice_bg at cover_screen with None
+    $ _investigation_choice_title = action["title"]
+    $ _investigation_choice_remaining = investigation_pa_remaining
+    menu:
+        "[_investigation_choice_title] — dépenser 1 PA ? ([_investigation_choice_remaining] restants)"
+        "Enquêter — 1 PA":
+            return True
+        "Annuler":
+            return False
+
 # Présentation fugace de la même source photographique que le dossier.
 # Les entrées sans illustration spécifique utilisent la photo du lieu d'origine.
 screen investigation_evidence_photo_preview(eid):
