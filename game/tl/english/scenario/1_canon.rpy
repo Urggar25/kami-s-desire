@@ -694,7 +694,7 @@ translate english e4ff2197:
 translate english 998c5269:
 
     # ryn "Bon bouge de là !"
-    ryn "All right, move."
+    ryn "Move it already!"
 
 # game/scenario/1_canon.rpy:288
 translate english 2460bdd4:
@@ -982,7 +982,7 @@ translate english 5172e2d5:
 translate english 141cc420:
 
     # ryn "Et d'abord, c'était quoi votre soi-disant annonce de tout à l'heure ?!"
-    ryn "And what was that so-called announcement you were talking about earlier?!"
+    ryn "And what the hell was that so-called announcement earlier?!"
 
 # game/scenario/1_canon.rpy:544
 translate english 0b5f8d29:
@@ -2470,7 +2470,7 @@ translate english KAMI_MESSAGE_APRES_VISITE_69a97d3d:
 translate english KAMI_MESSAGE_APRES_VISITE_ffd4ecb5:
 
     # kami "Popcorn sucré évidemment ! Je me respecte."
-    kami "Sweet popcorn, obviously! I have standards."
+    kami "Sweet popcorn, obviously. A girl has standards."
 
 # game/scenario/1_canon.rpy:1170
 translate english KAMI_MESSAGE_APRES_VISITE_5967f67d:
@@ -2734,7 +2734,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_cbf2d62c:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_c6318e84:
 
     # kami "C'était un travail monstre de tout organiser ! Vous n'imaginez même pas !"
-    kami "It was an enormous amount of work to organize all this! You cannot even imagine!"
+    kami "Do you have any idea how much work went into setting all this up? No, of course you don't!"
 
 # game/scenario/1_canon.rpy:1272
 translate english FIRST_CONCLAVE_ELEN_INTERACT_35feed8e:
@@ -2788,7 +2788,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_c0dcddcd:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_a59d0a65:
 
     # ryn "Ça, c'est censé nous rassurer ?"
-    ryn "And that's supposed to reassure us?"
+    ryn "And that's supposed to make us feel better?"
 
 # game/scenario/1_canon.rpy:1295
 translate english FIRST_CONCLAVE_ELEN_INTERACT_bf776267:
@@ -2818,7 +2818,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_609b4fd0:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_1b95eb90:
 
     # kami "Celles du Conclave. Alors ouvrez grand vos oreilles !"
-    kami "The rules of the Conclave. So listen carefully!"
+    kami "The Conclave rules! So perk up those ears!"
 
 # game/scenario/1_canon.rpy:1304
 translate english FIRST_CONCLAVE_ELEN_INTERACT_38e25870:
@@ -3016,7 +3016,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_73d4c462:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_c40a99a9:
 
     # kami "Allez, je veux savoir ce que vous voulez changer dans mes règles parfaites !"
-    kami "Come on, I want to know what you would change about my perfect rules!"
+    kami "Come on! Tell me what you'd change about my flawless rules. I'm dying to hear it!"
 
 # game/scenario/1_canon.rpy:1385
 translate english FIRST_CONCLAVE_ELEN_INTERACT_fe3ada40:
@@ -3670,7 +3670,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_6fc09fcd:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_6c8b28b5:
 
     # kami "Profitez de votre douce nuit de tranquillité ! Demain, on recommencera à jouer tous ensemble."
-    kami "Enjoy your sweet, peaceful night! Tomorrow, we will all start playing together again."
+    kami "Enjoy your lovely, peaceful night! Tomorrow, we all get to play again."
 
 # game/scenario/1_canon.rpy:1703
 translate english FIRST_CONCLAVE_ELEN_INTERACT_00debec7:
@@ -4048,7 +4048,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_3e5eef75:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_b863c89d:
 
     # julian "Je vois que Madame a déjà eu l'occasion de goûter à de tels mets !"
-    julian "I see Madam has already had the opportunity to sample such delicacies!"
+    julian "Ah, so milady has sampled such exquisite fare before!"
 
 # game/scenario/1_canon.rpy:1860
 translate english FIRST_CONCLAVE_ELEN_INTERACT_ef4ea7ad:
@@ -4666,7 +4666,7 @@ translate english bb3673bc:
 translate english 257f43e9:
 
     # kami "Vous êtes les petits échantillons de l'Humanité que je vais m'amuser à tester."
-    kami "You're my tiny samples of humanity, and I'm going to have so much fun testing you."
+    kami "You're my twelve little test subjects. And I intend to have a lot of fun with you."
 
 # game/scenario/1_canon.rpy:995
 translate english 8edede78:
@@ -4750,7 +4750,7 @@ translate english ee60ab67:
 translate english 726c0bc8:
 
     # kami "Mais attention !"
-    kami "But here's the catch!"
+    kami "But wait! There's a catch!"
 
 # game/scenario/1_canon.rpy:1080
 translate english b8bad9a1:
@@ -5128,7 +5128,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_68f423ef:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_a26c4c2e:
 
     # kami "Les enregistrements existent toujours, mais personne ne peut les consulter tout de suite. Pas même moi !"
-    kami "The recordings still exist, but nobody can access them right away. Not even me!"
+    kami "The recordings are still there, but no one can watch them yet. Not even little old me!"
 
 # game/scenario/1_canon.rpy:1465
 translate english FIRST_CONCLAVE_ELEN_INTERACT_087630d5:
@@ -5422,7 +5422,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_993d20f2:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_7e58e390:
 
     # kami "Oh, vous avez tous rendu votre copie ! Et dans les temps, en plus !"
-    kami "Oh, look at that! You've all turned in your assignments! On time, too!"
+    kami "Well, look at that! Everyone turned in their homework. On time, no less!"
 
 # game/scenario/1_canon.rpy:1773
 translate english FIRST_CONCLAVE_ELEN_INTERACT_9e3534ad:
@@ -5446,7 +5446,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_f0fb4823:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_fd6adba5:
 
     # kami "Dormez bien ! Demain, on remet ça !"
-    kami "Sleep tight! We'll do it all again tomorrow!"
+    kami "Sweet dreams! Same time tomorrow!"
 
 # game/scenario/1_canon.rpy:1805
 translate english FIRST_CONCLAVE_ELEN_INTERACT_aa57a8e2:
