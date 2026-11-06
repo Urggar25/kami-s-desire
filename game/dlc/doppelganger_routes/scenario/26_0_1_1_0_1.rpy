@@ -82,7 +82,7 @@ label _26_0_1_1_0_1_PORTE:
     pause 0.5
     lysa reflexion "Frappe plus fort."
     elen inquiet "Tomas ?!"
-    play sound sfx_door_knock
+    play sound "audio/sfx_knock.mp3"
     "Pas de réponse. Elen essaie la poignée."
     elen surpris "C'est fermé."
     noam neutre "De l'intérieur ?"
