@@ -63,7 +63,7 @@ screen investigation_pa_map(rooms, title="ENQUÊTE — CONCLAVE"):
                         vbox:
                             xalign 0.5 yalign 0.5 spacing 8
                             text room["title"] size 24 color "#E3F6FF" xalign 0.5
-                            text ("%d piste(s) à examiner" % len(room.get("actions", []))) size 17 color "#83C7DE" xalign 0.5
+                            text ("%d piste(s) restante(s)" % len([x for x in room.get("actions", []) if x not in investigation_pa_completed])) size 17 color "#83C7DE" xalign 0.5
             hbox:
                 spacing 30 xalign 0.5
                 textbutton "PARCOURIR LES COULOIRS" action Return("corridors") text_size 22
