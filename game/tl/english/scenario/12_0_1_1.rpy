@@ -1686,7 +1686,7 @@ translate english be008b54:
 translate english 0adeb4ba:
 
     # ryn "Moi je dis : l'important c'est d'être libre. On n’est pas des animaux de foire."
-    ryn "Here's what I say: freedom comes first. We're not circus animals."
+    ryn "All I'm saying is, freedom comes first. We're not animals on display."
 
 # game/scenario/12_0_1_1.rpy:730
 translate english 54339bbb:
