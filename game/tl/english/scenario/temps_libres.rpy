@@ -6390,7 +6390,7 @@ translate english julian_link_1_59c9ac41:
 translate english julian_link_1_4b98dc4a:
 
     # "Je relâche mes poignées puis regarde les caméras."
-    ""
+    "I let go of the handles and glance at the cameras."
 
 # game/scenario/temps_libres.rpy:164
 translate english julian_link_1_52e869bc:
@@ -6608,7 +6608,7 @@ translate english ryn_link_2_f183d1fc:
 translate english lysa_link_1_a571a28d:
 
     # think "Elle avait râlé parce qu'il n'y avait pas de café le premier jour. Je peux au moins lui en ramener un."
-    think ""
+    think "She complained about there being no coffee on the first day. The least I can do is bring her one."
 
 # game/scenario/temps_libres.rpy:14
 translate english lysa_link_1_adc011af:
@@ -7754,285 +7754,285 @@ translate english strings:
 
     # game/scenario/temps_libres.rpy:43
     old "Promis, je touche plus à ton café."
-    new ""
+    new "Promise I won't touch your coffee again."
 
     # game/scenario/temps_libres.rpy:43
     old "Tu crois qu'on tiendra longtemps ici ?"
-    new ""
+    new "Think we'll last long in here?"
 
     # game/scenario/temps_libres.rpy:92
     old "On peut essayer de repérer la tour avec les lumières."
-    new ""
+    new "Maybe we can spot the tower with the lights."
 
     # game/scenario/temps_libres.rpy:92
     old "Tu me raconteras ce qui te manque le plus là-bas ?"
-    new ""
+    new "Will you tell me what you miss most about that place?"
 
     # game/scenario/temps_libres.rpy:146
     old "On devrait sortir avant le prochain tir."
-    new ""
+    new "We should get out before the next shot."
 
     # game/scenario/temps_libres.rpy:146
     old "Si tu veux parler, je suis là."
-    new ""
+    new "If you want to talk, I'm here."
 
     # game/scenario/temps_libres.rpy:210
     old "La prochaine fois, je vais te surveiller."
-    new ""
+    new "Next time, I'm keeping an eye on you."
 
     # game/scenario/temps_libres.rpy:210
     old "Tu triches même pour un baby-foot ?"
-    new ""
+    new "You even cheat at foosball?"
 
     # game/scenario/temps_libres.rpy:259
     old "J'aurais jamais réussi à recoudre ça aussi proprement."
-    new ""
+    new "I could never have sewn that up so neatly."
 
     # game/scenario/temps_libres.rpy:259
     old "Il reste quand même un petit défaut, là."
-    new ""
+    new "There's still a little flaw right there."
 
     # game/scenario/temps_libres.rpy:324
     old "T'as pas besoin de te donner autant de mal pour attirer l'attention."
-    new ""
+    new "You don't have to try so hard to get attention."
 
     # game/scenario/temps_libres.rpy:324
     old "Alors dessine-moi comme tu me vois vraiment."
-    new ""
+    new "Then draw me the way you really see me."
 
     # game/scenario/temps_libres.rpy:324
     old "Tu dessines les autres parce que t'arrives pas à te dessiner ?"
-    new ""
+    new "Do you draw everyone else because you can't draw yourself?"
 
     # game/scenario/temps_libres.rpy:392
     old "On peut peut-être sauver la recette."
-    new ""
+    new "Maybe we can still save the recipe."
 
     # game/scenario/temps_libres.rpy:392
     old "Ta mère aurait surtout aimé cuisiner avec toi."
-    new ""
+    new "Your mom would've loved cooking with you more than anything."
 
     # game/scenario/temps_libres.rpy:451
     old "Si quelqu'un râle, je dirai que c'est ma faute."
-    new ""
+    new "If anyone complains, I'll say it was my fault."
 
     # game/scenario/temps_libres.rpy:451
     old "On devrait demander aux autres ce qu'ils préfèrent."
-    new ""
+    new "We should ask the others what they prefer."
 
     # game/scenario/temps_libres.rpy:512
     old "On arrête, tu commences à fatiguer."
-    new ""
+    new "Let's stop. You're getting tired."
 
     # game/scenario/temps_libres.rpy:512
     old "Encore une minute et on rentre, d'accord ?"
-    new ""
+    new "One more minute, then we head back, okay?"
 
     # game/scenario/temps_libres.rpy:575
     old "Allez, montre-moi comment tu fais."
-    new ""
+    new "Come on, show me how you do it."
 
     # game/scenario/temps_libres.rpy:575
     old "T'as peur de perdre contre moi ?"
-    new ""
+    new "Scared you'll lose to me?"
 
     # game/scenario/temps_libres.rpy:642
     old "Tu ferais pareil si c'était moi ?"
-    new ""
+    new "Would you do the same if it were me?"
 
     # game/scenario/temps_libres.rpy:642
     old "Je vais ranger le matériel, va te poser."
-    new ""
+    new "I'll put the equipment away. Go take a break."
 
     # game/scenario/temps_libres.rpy:708
     old "Passe-moi les serviettes, je m'en occupe."
-    new ""
+    new "Pass me the towels. I've got this."
 
     # game/scenario/temps_libres.rpy:708
     old "Tu pouvais dire que tu voulais aider Elen, tu sais."
-    new ""
+    new "You could've just said you wanted to help Elen, you know."
 
     # game/scenario/temps_libres.rpy:708
     old "Le pied est tordu, les serviettes vont pas suffire."
-    new ""
+    new "The leg's bent. Towels aren't going to fix that."
 
     # game/scenario/temps_libres.rpy:768
     old "La paix, oui. Mais à quel prix ?"
-    new ""
+    new "Peace, sure. But at what cost?"
 
     # game/scenario/temps_libres.rpy:768
     old "Tu devais être terrifié ce jour-là."
-    new ""
+    new "You must've been terrified that day."
 
     # game/scenario/temps_libres.rpy:824
     old "Fais une liste plus courte. Trois points, pas vingt."
-    new ""
+    new "Make a shorter list. Three points, not twenty."
 
     # game/scenario/temps_libres.rpy:824
     old "Garde ta liste, elle te rassure."
-    new ""
+    new "Keep your list if it makes you feel better."
 
     # game/scenario/temps_libres.rpy:887
     old "Le chrono démarre quand tu commandes."
-    new ""
+    new "The timer starts when you place your order."
 
     # game/scenario/temps_libres.rpy:887
     old "Je choisis pour toi la prochaine fois."
-    new ""
+    new "Next time, I'll pick for you."
 
     # game/scenario/temps_libres.rpy:946
     old "On peut partager le poids."
-    new ""
+    new "We can share the load."
 
     # game/scenario/temps_libres.rpy:946
     old "Tu avais déjà calculé combien je pouvais porter ?"
-    new ""
+    new "You'd already worked out how much I could carry?"
 
     # game/scenario/temps_libres.rpy:995
     old "Tu veux que je te dise ce que j'en pense, c'est ça ?"
-    new ""
+    new "You want to know what I think, don't you?"
 
     # game/scenario/temps_libres.rpy:995
     old "On peut être en désaccord sans se manipuler."
-    new ""
+    new "We can disagree without manipulating each other."
 
     # game/scenario/temps_libres.rpy:995
     old "Ton raisonnement oublie ceux qui paient le prix."
-    new ""
+    new "Your argument leaves out the people paying the price."
 
     # game/scenario/temps_libres.rpy:1059
     old "D'accord, reprenons tout depuis le début."
-    new ""
+    new "Okay, let's go through it again from the top."
 
     # game/scenario/temps_libres.rpy:1059
     old "Dis-moi plutôt ce qui t'inquiète."
-    new ""
+    new "Tell me what's really worrying you."
 
     # game/scenario/temps_libres.rpy:1120
     old "On va attendre que ça finisse ensemble."
-    new ""
+    new "We'll wait it out together."
 
     # game/scenario/temps_libres.rpy:1120
     old "Tu penses que ça vient de quel composant ?"
-    new ""
+    new "Which component do you think it's coming from?"
 
     # game/scenario/temps_libres.rpy:1180
     old "On peut écouter sans parler, tu sais."
-    new ""
+    new "We can just listen without talking, you know."
 
     # game/scenario/temps_libres.rpy:1180
     old "Cette musique te rappelle quelque chose ?"
-    new ""
+    new "Does this song remind you of anything?"
 
     # game/scenario/temps_libres.rpy:1233
     old "Si on rentre, je t'emmène voir une vraie averse."
-    new ""
+    new "If we get home, I'll take you out to see a real rainstorm."
 
     # game/scenario/temps_libres.rpy:1233
     old "Pour toi, c'est complètement nouveau, en fait."
-    new ""
+    new "So this is all completely new to you."
 
     # game/scenario/temps_libres.rpy:1294
     old "Je prends le sac, mais tu me dois une revanche."
-    new ""
+    new "I'll take the bag, but you owe me a rematch."
 
     # game/scenario/temps_libres.rpy:1294
     old "Tu peux pas t'empêcher de réparer des trucs, hein ?"
-    new ""
+    new "You really can't help fixing things, can you?"
 
     # game/scenario/temps_libres.rpy:1356
     old "Tu t'en es bien sorti, arrête de râler."
-    new ""
+    new "You did fine. Quit grumbling."
 
     # game/scenario/temps_libres.rpy:1356
     old "La prochaine fois, on vérifie avant de démarrer."
-    new ""
+    new "Next time, we check before we start."
 
     # game/scenario/temps_libres.rpy:1418
     old "Je te passe les outils si tu veux."
-    new ""
+    new "I can hand you the tools if you want."
 
     # game/scenario/temps_libres.rpy:1418
     old "Et si tu laissais quelqu'un d'autre réparer ?"
-    new ""
+    new "What if you let someone else do the fixing for once?"
 
     # game/scenario/temps_libres.rpy:1481
     old "On remet ça, mais sans gage débile."
-    new ""
+    new "Let's do it again, but no stupid dares."
 
     # game/scenario/temps_libres.rpy:1481
     old "Tu proposes quoi comme gage, cette fois ?"
-    new ""
+    new "What kind of dare are you suggesting this time?"
 
     # game/scenario/temps_libres.rpy:1536
     old "Arrête. Ça se voit que ça te touche."
-    new ""
+    new "Stop. I can tell it matters to you."
 
     # game/scenario/temps_libres.rpy:1536
     old "D'accord, je te laisse tranquille."
-    new ""
+    new "Okay, I'll leave you alone."
 
     # game/scenario/temps_libres.rpy:1597
     old "Je peux rester sans poser de questions."
-    new ""
+    new "I can stay without asking questions."
 
     # game/scenario/temps_libres.rpy:1597
     old "Tu sais que t'as le droit de dire ce que tu penses ?"
-    new ""
+    new "You know you're allowed to say what you think, right?"
 
     # game/scenario/temps_libres.rpy:1597
     old "Dès que ça te touche, tu fais une blague."
-    new ""
+    new "The second something gets to you, you make a joke."
 
     # game/scenario/temps_libres.rpy:1660
     old "Je surveille l'entrée, repose-toi."
-    new ""
+    new "I'll watch the entrance. Get some rest."
 
     # game/scenario/temps_libres.rpy:1660
     old "Si tu me fais pas confiance, viens vérifier toi-même."
-    new ""
+    new "If you don't trust me, come check for yourself."
 
     # game/scenario/temps_libres.rpy:1723
     old "Attends, je vais essayer autrement."
-    new ""
+    new "Hold on. Let me try another way."
 
     # game/scenario/temps_libres.rpy:1723
     old "Laisse-moi le temps de comprendre."
-    new ""
+    new "Give me a minute to figure it out."
 
     # game/scenario/temps_libres.rpy:1780
     old "Tu peux aussi les laisser décider, de temps en temps."
-    new ""
+    new "You can let them make their own decisions sometimes, too."
 
     # game/scenario/temps_libres.rpy:1780
     old "Et qui te protège, toi ?"
-    new ""
+    new "And who's looking out for you?"
 
     # game/scenario/temps_libres.rpy:1833
     old "Je comprends pourquoi tu gardes cette fiole."
-    new ""
+    new "I understand why you keep that vial."
 
     # game/scenario/temps_libres.rpy:1833
     old "Je préférerais qu'on trouve une autre solution."
-    new ""
+    new "I'd rather we found another way."
 
     # game/scenario/temps_libres.rpy:1884
     old "Je peux t'aider à remettre les chaises."
-    new ""
+    new "I can help put the chairs back."
 
     # game/scenario/temps_libres.rpy:1884
     old "Tu vérifies toujours tout comme ça ?"
-    new ""
+    new "Do you always check everything this carefully?"
 
     # game/scenario/temps_libres.rpy:1940
     old "Je vais laisser ce morceau avec les tiens."
-    new ""
+    new "I'll leave this piece with yours."
 
     # game/scenario/temps_libres.rpy:1940
     old "C'est pas une tradition de chez moi, mais je comprends."
-    new ""
+    new "That's not a tradition where I come from, but I get it."
 
     # game/scenario/temps_libres.rpy:1940
     old "J'y crois pas vraiment, mais je vois pourquoi tu le fais."
-    new ""
+    new "I don't really believe in it, but I understand why you do."
 
