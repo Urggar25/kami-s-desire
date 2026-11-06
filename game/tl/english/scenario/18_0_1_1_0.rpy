@@ -4436,3 +4436,63 @@ translate english 165fe2ba:
     # "{cps=9}Ce réseau n'est pas vide.{/cps}"
     "{cps=9}That network isn't empty.{/cps}"
 
+
+# game/scenario/18_0_1_1_0.rpy:114
+translate english 5839b059:
+
+    # mara "Ouais."
+    mara "Yeah."
+
+# game/scenario/18_0_1_1_0.rpy:349
+translate english df784008:
+
+    # noam "Quoi ?"
+    noam "What?"
+
+# game/scenario/18_0_1_1_0.rpy:465
+translate english 5839b059_1:
+
+    # mara "Ouais."
+    mara "Yeah."
+
+# game/scenario/18_0_1_1_0.rpy:687
+translate english 555c9757:
+
+    # mara "Oui."
+    mara "Yes."
+
+# game/scenario/18_0_1_1_0.rpy:715
+translate english edd58536:
+
+    # noam "Je viens avec toi."
+    noam "I'm coming with you."
+
+# game/scenario/18_0_1_1_0.rpy:723
+translate english 13d9e69c:
+
+    # noam "Je vais bien."
+    noam "I'm fine."
+
+# game/scenario/18_0_1_1_0.rpy:735
+translate english 5728c60e:
+
+    # noam "Mara."
+    noam "Mara."
+
+# game/scenario/18_0_1_1_0.rpy:965
+translate english 46081631:
+
+    # noam "Oui."
+    noam "Yes."
+
+# game/scenario/18_0_1_1_0.rpy:983
+translate english 46081631_1:
+
+    # noam "Oui."
+    noam "Yes."
+
+# game/scenario/18_0_1_1_0.rpy:1200
+translate english 6e626b03:
+
+    # noam "Et toi ?"
+    noam "And you?"
