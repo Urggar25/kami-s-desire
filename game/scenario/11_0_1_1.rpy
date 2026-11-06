@@ -433,7 +433,7 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
     call OFFER_DAILY_EXPLORATION(
         "_11_0_1_3_SALLE_COMMUNICATION", 1,
         ["observation", "archive", "dortoir"],
-        "Rejoindre la salle d'Observation", "observation"
+        _("Rejoindre la salle d'Observation"), "observation"
     ) from _call_offer_exploration_j11
 
 label _11_0_1_3_SALLE_COMMUNICATION:
