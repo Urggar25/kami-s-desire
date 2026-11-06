@@ -94,7 +94,7 @@ screen investigation_pa_room(room_id, rooms, actions):
                 if action_id in investigation_pa_completed:
                     text ("✓ " + action["title"] + " — examiné") color "#7BACB5" size 19
                 elif investigation_pa_remaining > 0:
-                    textbutton ("◆ " + action["title"] + "  [1 PA]"):
+                    textbutton ("◆ " + action["title"] + "  — 1 PA"):
                         action Return(action_id)
                         text_size 22
                         text_color "#E8F7FF"
