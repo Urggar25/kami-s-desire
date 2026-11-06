@@ -71,7 +71,9 @@ screen investigation_pa_room(room_id, rooms, actions):
     default hovered_action = None
     $ room = rooms[room_id]
     $ available = investigation_pa_room_actions(room_id, rooms, actions)
-    add room["background"] at adaptive_fullscreen
+    $ pnc_room = "chambre" if room_id == "dortoir" else room_id
+    # Réutilise le panorama existant du jeu et ses rotations gauche/droite.
+    use room_scene_background(pnc_room, navigation=True)
 
     for idx, action_id in enumerate(available):
         $ action_info = actions[action_id]
