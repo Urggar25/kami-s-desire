@@ -1680,37 +1680,37 @@ translate english noam_garde_secret_182f7bd3:
 translate english noam_garde_secret_1e94283a:
 
     # kami "Ce serait dommage que tu t’évanouisses encore… n’est-ce pas ?"
-    kami ""
+    kami "It'd be a shame if you passed out again... wouldn't it?"
 
 # game/scenario/11_0_1_1.rpy:642
 translate english noam_garde_secret_9065c30a:
 
     # "Je reste silencieux un long moment, les poings serrés."
-    ""
+    "I stand there in silence for a long time, fists clenched."
 
 # game/scenario/11_0_1_1.rpy:644
 translate english noam_garde_secret_f605c4ae:
 
     # think "Elle joue avec moi… Elle s’amuse."
-    think ""
+    think "She's playing with me... She's enjoying this."
 
 # game/scenario/11_0_1_1.rpy:645
 translate english noam_garde_secret_bfb745b2:
 
     # think "Elle ne fait que ça..."
-    think ""
+    think "That's all she ever does..."
 
 # game/scenario/11_0_1_1.rpy:648
 translate english noam_garde_secret_764f36fa:
 
     # kami "Oh, et Noam ?"
-    kami ""
+    kami "Oh, and Noam?"
 
 # game/scenario/11_0_1_1.rpy:649
 translate english noam_garde_secret_90818563:
 
     # kami "N'oublie pas de trouver qui c'est. Tu trouveras sans doute plus qu'une seule réponse."
-    kami ""
+    kami "Don't forget to find out who did it. You might uncover more than one answer."
 
 # game/scenario/11_0_1_1.rpy:652
 translate english noam_garde_secret_d566764b:
@@ -1722,229 +1722,229 @@ translate english noam_garde_secret_d566764b:
 translate english noam_garde_secret_b88ebc40:
 
     # "Je tourne les talons et sors de la salle sans un regard en arrière."
-    ""
+    "I turn and leave without looking back."
 
 # game/scenario/11_0_1_1.rpy:656
 translate english noam_garde_secret_8195f13b:
 
     # "Le rire doux et cristallin de Kami me suit dans le couloir."
-    ""
+    "Kami's soft, bell-like laughter follows me into the corridor."
 
 # game/scenario/11_0_1_1.rpy:658
 translate english noam_garde_secret_0828ccdc:
 
     # think "Elle joue avec moi..."
-    think ""
+    think "She's playing with me..."
 
 # game/scenario/11_0_1_1.rpy:659
 translate english noam_garde_secret_bfb745b2_1:
 
     # think "Elle ne fait que ça..."
-    think ""
+    think "That's all she ever does..."
 
 # game/scenario/11_0_1_1.rpy:660
 translate english noam_garde_secret_0165cc0a:
 
     # think "Et pourtant..."
-    think ""
+    think "And yet..."
 
 # game/scenario/11_0_1_1.rpy:661
 translate english noam_garde_secret_63f2e550:
 
     # think "Pourquoi est-ce que j'ai l'impression qu'elle dit la vérité ?"
-    think ""
+    think "Why do I feel like she's telling the truth?"
 
 # game/scenario/11_0_1_1.rpy:674
 translate english noam_garde_secret_429240be:
 
     # "Je sors de la salle d’observation sans un regard en arrière."
-    ""
+    "I leave the observation room without looking back."
 
 # game/scenario/11_0_1_1.rpy:675
 translate english noam_garde_secret_0f69d5d3:
 
     # "Mes jambes sont lourdes. Chaque pas résonne dans ma tête comme un marteau."
-    ""
+    "My legs feel like lead. Every step pounds through my head like a hammer."
 
 # game/scenario/11_0_1_1.rpy:677
 translate english noam_garde_secret_4a51a959:
 
     # think "Je ne veux voir personne."
-    think ""
+    think "I don't want to see anyone."
 
 # game/scenario/11_0_1_1.rpy:678
 translate english noam_garde_secret_52c518ee:
 
     # think "Ni Iris, ni Sael, ni Julian… personne."
-    think ""
+    think "Not Iris, not Sael, not Julian... no one."
 
 # game/scenario/11_0_1_1.rpy:680
 translate english noam_garde_secret_37f63733:
 
     # "Je marche droit vers ma chambre, ignorant les voix lointaines qui proviennent de la salle commune."
-    ""
+    "I head straight for my room, ignoring the distant voices drifting from the common room."
 
 # game/scenario/11_0_1_1.rpy:685
 translate english noam_garde_secret_8be1e56f:
 
     # "À peine la porte refermée, je m’adosse contre elle un instant, les yeux fermés."
-    ""
+    "As soon as the door closes, I lean against it for a moment, eyes shut."
 
 # game/scenario/11_0_1_1.rpy:687
 translate english noam_garde_secret_0e80e0da:
 
     # noam "..."
-    noam ""
+    noam "..."
 
 # game/scenario/11_0_1_1.rpy:689
 translate english noam_garde_secret_2ea2902d:
 
     # "Le silence de la chambre m’enveloppe. Enfin."
-    ""
+    "At last, the silence of my room closes around me."
 
 # game/scenario/11_0_1_1.rpy:691
 translate english noam_garde_secret_d0cef316:
 
     # "Je me traîne jusqu’au lit et m’y laisse tomber lourdement, tout habillé."
-    ""
+    "I drag myself to the bed and collapse onto it, still fully dressed."
 
 # game/scenario/11_0_1_1.rpy:693
 translate english noam_garde_secret_f91f7433:
 
     # think "Je veux juste dormir."
-    think ""
+    think "I just want to sleep."
 
 # game/scenario/11_0_1_1.rpy:694
 translate english noam_garde_secret_127452b3:
 
     # think "Oublier cette journée. Oublier cette silhouette. Oublier ce qu’a dit Kami."
-    think ""
+    think "Forget today. Forget that silhouette. Forget what Kami said."
 
 # game/scenario/11_0_1_1.rpy:698
 translate english noam_garde_secret_fb96a8bd:
 
     # think "Mais je n’y arrive pas."
-    think ""
+    think "But I can't."
 
 # game/scenario/11_0_1_1.rpy:700
 translate english noam_garde_secret_8d48ec26:
 
     # "Je fixe le plafond. Les mots de Kami tournent en boucle dans ma tête."
-    ""
+    "I stare at the ceiling. Kami's words keep running through my head."
 
 # game/scenario/11_0_1_1.rpy:702
 translate english noam_garde_secret_1af9da8b:
 
     # think "« La personne qui a effacé ces images… elle est parmi vous. »"
-    think ""
+    think "'The person who deleted that footage... is one of you.'"
 
 # game/scenario/11_0_1_1.rpy:704
 translate english noam_garde_secret_3cb1e963:
 
     # noam "... Arrête."
-    noam ""
+    noam "...Stop it."
 
 # game/scenario/11_0_1_1.rpy:706
 translate english noam_garde_secret_73f600d5:
 
     # think "C’est impossible. Aucun d’entre eux ne ferait ça."
-    think ""
+    think "That's impossible. None of them would do that."
 
 # game/scenario/11_0_1_1.rpy:707
 translate english noam_garde_secret_ffb057ca:
 
     # think "Iris ? Elle était avec moi presque tout le temps."
-    think ""
+    think "Iris? She was with me almost the whole time."
 
 # game/scenario/11_0_1_1.rpy:708
 translate english noam_garde_secret_b2236561:
 
     # think "Sael ? Elle m’a aidé quand je me suis écroulé."
-    think ""
+    think "Sael? She helped me when I collapsed."
 
 # game/scenario/11_0_1_1.rpy:709
 translate english noam_garde_secret_786d5503:
 
     # think "Julian ? Il passe son temps à faire des blagues débiles…"
-    think ""
+    think "Julian? He's always cracking stupid jokes..."
 
 # game/scenario/11_0_1_1.rpy:710
 translate english noam_garde_secret_4a94c1a9:
 
     # think "Nyra ? Tomas ? Mara ?"
-    think ""
+    think "Nyra? Tomas? Mara?"
 
 # game/scenario/11_0_1_1.rpy:712
 translate english noam_garde_secret_765ae2c4:
 
     # "Je me retourne dans le lit, nerveux."
-    ""
+    "I roll over restlessly."
 
 # game/scenario/11_0_1_1.rpy:714
 translate english noam_garde_secret_588f0a2f:
 
     # think "Ils étaient tous là. Ils se sont inquiétés pour moi."
-    think ""
+    think "They were all there. They were worried about me."
 
 # game/scenario/11_0_1_1.rpy:715
 translate english noam_garde_secret_9c21a78c:
 
     # think "Pourquoi l’un d’eux irait jusqu’à supprimer des preuves ?"
-    think ""
+    think "Why would any of them go so far as to destroy evidence?"
 
 # game/scenario/11_0_1_1.rpy:717
 translate english noam_garde_secret_2b295033:
 
     # "Je serre les draps entre mes doigts."
-    ""
+    "I dig my fingers into the sheets."
 
 # game/scenario/11_0_1_1.rpy:719
 translate english noam_garde_secret_5d59eebc:
 
     # think "Kami ment. Elle ment forcément. Elle adore nous manipuler."
-    think ""
+    think "Kami's lying. She has to be. She loves manipulating us."
 
 # game/scenario/11_0_1_1.rpy:720
 translate english noam_garde_secret_e14e6a3b:
 
     # think "C’est son jeu préféré."
-    think ""
+    think "It's her favorite game."
 
 # game/scenario/11_0_1_1.rpy:724
 translate english noam_garde_secret_0eceab24:
 
     # think "... Et si elle ne mentait pas ?"
-    think ""
+    think "...But what if she's not lying?"
 
 # game/scenario/11_0_1_1.rpy:726
 translate english noam_garde_secret_8a23bb74:
 
     # "Cette pensée me glace."
-    ""
+    "The thought chills me."
 
 # game/scenario/11_0_1_1.rpy:728
 translate english noam_garde_secret_97e8e603:
 
     # think "Si c’est vraiment l’un d’eux…"
-    think ""
+    think "If it really is one of them..."
 
 # game/scenario/11_0_1_1.rpy:729
 translate english noam_garde_secret_41325254:
 
     # think "Alors tout ce qu’on a vécu ensemble, tous ces moments, tous ces votes…"
-    think ""
+    think "Then everything we've been through together, all those moments, all those votes..."
 
 # game/scenario/11_0_1_1.rpy:730
 translate english noam_garde_secret_480eb0dc:
 
     # think "… n’était que du vent ?"
-    think ""
+    think "...was any of it real?"
 
 # game/scenario/11_0_1_1.rpy:732
 translate english noam_garde_secret_bbafde29:
 
     # "Je ferme les yeux de toutes mes forces, comme si ça pouvait chasser les images."
-    ""
+    "I squeeze my eyes shut, as though that could drive the images away."
 
 # game/scenario/11_0_1_1.rpy:734
 translate english noam_garde_secret_b2f2100c:
@@ -1956,57 +1956,57 @@ translate english noam_garde_secret_b2f2100c:
 translate english noam_garde_secret_0321f677:
 
     # think "Parmi nous…"
-    think ""
+    think "One of us..."
 
 # game/scenario/11_0_1_1.rpy:738
 translate english noam_garde_secret_3a92cee4:
 
     # think "Quelqu’un m’a regardé dans les yeux aujourd’hui… et a effacé les preuves."
-    think ""
+    think "Someone looked me in the eye today... and erased the evidence."
 
 # game/scenario/11_0_1_1.rpy:740
 translate english noam_garde_secret_c68c05b8:
 
     # "Je me retourne encore une fois, le cœur serré."
-    ""
+    "I turn over again, my chest tight."
 
 # game/scenario/11_0_1_1.rpy:742
 translate english noam_garde_secret_6563f62a:
 
     # think "Je ne veux pas y croire."
-    think ""
+    think "I don't want to believe it."
 
 # game/scenario/11_0_1_1.rpy:743
 translate english noam_garde_secret_8c06621c:
 
     # think "Je refuse d’y croire."
-    think ""
+    think "I refuse to believe it."
 
 # game/scenario/11_0_1_1.rpy:745
 translate english noam_garde_secret_6545a5b1:
 
     # "Pourtant, au fond de moi, quelque chose s’est déjà fissuré."
-    ""
+    "And yet something inside me has already cracked."
 
 # game/scenario/11_0_1_1.rpy:749
 translate english noam_garde_secret_4595f79a:
 
     # "Finalement, l’épuisement prend le dessus. Mes paupières deviennent trop lourdes."
-    ""
+    "Eventually exhaustion wins. My eyelids grow too heavy."
 
 # game/scenario/11_0_1_1.rpy:752
 translate english noam_garde_secret_ae507620:
 
     # think "Demain… je réfléchirai demain."
-    think ""
+    think "Tomorrow... I'll think about it tomorrow."
 
 translate english strings:
 
     # game/scenario/11_0_1_1.rpy:61
     old "Lui demander si elle sait ce que j’ai vu avant l’annonce"
-    new ""
+    new "Ask her if she knows what I saw before the announcement"
 
     # game/scenario/11_0_1_1.rpy:61
     old "Garder ça pour moi pour l’instant"
-    new ""
+    new "Keep it to myself for now"
 
