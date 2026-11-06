@@ -146,7 +146,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     iris determine "Noam, recule. S'il te plaît."
     "Elle vérifie encore. J'entends Elen demander quelque chose, mais je n'arrive pas à suivre."
     "Sael arrive et rejoint Iris près du lit. Toutes les deux échangent quelques mots à voix basse."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "peur", 0.414), ("iris", "inquiet", 0.586), ("noam", "vide", 0.758), ("sael", "triste", 0.930)])
     elen inquiet "Vous faites quoi ? Pourquoi vous lui parlez pas ?"
     sael triste "Elen, viens avec moi."
     elen peur "Non. Non, attends. Iris, t'as pas fini, hein ?"
@@ -158,7 +158,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elen colere "Mais essayez encore ! Vous avez essayé quoi, là ?!"
     sael inquiet "On a vérifié, Elen. Je suis désolée."
     "Elen avance vers le lit comme pour refaire elle-même ce qu'Iris vient de faire, mais Lysa la rattrape avant qu'elle trébuche."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.213), ("elen", "triste", 0.357), ("iris", "inquiet", 0.500), ("noam", "vide", 0.643), ("sael", "triste", 0.787), ("lysa", "inquiet", 0.930)])
     elen triste "Il a même pas défait le lit..."
     elen peur "Je lui avais dit qu'il pouvait prendre des affaires dans l'armoire s'il voulait."
     "Elle regarde Tomas, puis sa propre main, qui tient encore la carte d'accès de sa chambre."
