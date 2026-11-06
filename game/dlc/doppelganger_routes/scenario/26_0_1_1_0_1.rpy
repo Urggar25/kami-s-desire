@@ -438,29 +438,20 @@ label _26_0_1_1_0_1_ENQUETE:
     jump _26_0_1_1_0_1_PA_MAP
 
 label _26_0_1_1_0_1_PA_MAP:
-    if investigation_pa_remaining <= 0:
-        jump _26_0_1_1_0_1_BILAN
-    call screen investigation_pa_map(J26A_ROOMS, title="JOUR 26 — ENQUÊTE AU CONCLAVE")
-    if _return == "finish":
-        jump _26_0_1_1_0_1_BILAN
-    if _return == "corridors":
-        jump _26_0_1_1_0_1_PA_CORRIDORS
-    $ investigation_pa_current_room = _return
-    jump _26_0_1_1_0_1_PA_ROOM
+    # Compatibilité avec les anciens jumps et sauvegardes.
+    jump _26_0_1_1_0_1_PA_CORRIDORS
 
 label _26_0_1_1_0_1_PA_CORRIDORS:
     call CORRIDOR_NAVIGATION(corridor_current) from _call_j26a_pa_corridors
     $ investigation_pa_current_room = _return
     if investigation_pa_current_room not in J26A_ROOMS:
-        jump _26_0_1_1_0_1_PA_MAP
+        jump _26_0_1_1_0_1_PA_CORRIDORS
     jump _26_0_1_1_0_1_PA_ROOM
 
 label _26_0_1_1_0_1_PA_ROOM:
-    if investigation_pa_remaining <= 0:
-        jump _26_0_1_1_0_1_BILAN
     call screen investigation_pa_room(investigation_pa_current_room, J26A_ROOMS, J26A_ACTIONS)
-    if _return == "back":
-        jump _26_0_1_1_0_1_PA_MAP
+    if _return == "finish":
+        jump _26_0_1_1_0_1_BILAN
     if _return == "corridors":
         jump _26_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_selected = _return
