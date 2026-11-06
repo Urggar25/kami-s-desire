@@ -1898,13 +1898,13 @@ translate english e2015ae6_1:
 translate english b4d9ca85:
 
     # "Le gymnase n'est pas tout à fait vide."
-    ""
+    "The gym isn't quite empty."
 
 # game/scenario/10_0_1_1.rpy:396
 translate english 53880da6:
 
     # "Iris est seule près des tapis, les cheveux attachés et les mains entourées de bandes. Au moment où j'entre, elle enchaîne deux coups rapides contre un sac, pivote, puis termine par un mouvement de hanche sec avant de reculer."
-    ""
+    "Iris is alone by the mats, her hair tied back and her hands wrapped. As I walk in, she lands two quick punches on a bag, pivots, then finishes with a sharp twist of her hips before stepping back."
 
 # game/scenario/10_0_1_1.rpy:398
 translate english 0366d182:
@@ -1916,7 +1916,7 @@ translate english 0366d182:
 translate english 51dac122:
 
     # "Elle se retourne, essoufflée, puis attrape sa serviette."
-    ""
+    "She turns around, slightly out of breath, and grabs her towel."
 
 # game/scenario/10_0_1_1.rpy:402
 translate english eb1a1461:
@@ -1952,7 +1952,7 @@ translate english 2b228f13:
 translate english bb8e9e15:
 
     # "Elle boit une gorgée d'eau et grimace en regardant la bouche d'aération."
-    ""
+    "She takes a sip of water and grimaces at the air vent."
 
 # game/scenario/10_0_1_1.rpy:414
 translate english f55cdcd4:
@@ -1964,13 +1964,13 @@ translate english f55cdcd4:
 translate english bebc6ded:
 
     # "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
-    ""
+    "She gathers her things and leaves the gym. Without the steady hum of the air conditioning, the smell of rubber and metal seems even stronger."
 
 # game/scenario/10_0_1_1.rpy:724
 translate english 986fc99c_3:
 
     # "Je tourne la tête vers lui."
-    ""
+    "I turn to look at him."
 
 # game/scenario/10_0_1_1.rpy:850
 translate english 0cb173b4:
