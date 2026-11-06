@@ -838,7 +838,7 @@ translate english decouverte_gymnase_47308da5:
 translate english decouverte_gymnase_cdcfbba5:
 
     # "Elias se penche sur le panneau d'une machine et appuie sur plusieurs touches."
-    ""
+    "Elias leans over a machine's control panel and presses several buttons."
 
 # game/scenario/salles/gymnase.rpy:286
 translate english decouverte_gymnase_5da5f06f:
@@ -850,7 +850,7 @@ translate english decouverte_gymnase_5da5f06f:
 translate english decouverte_gymnase_8f49c1b5:
 
     # "Le tapis roulant se met brusquement à accélérer. Elias se redresse d'un coup."
-    ""
+    "The treadmill suddenly speeds up. Elias straightens with a start."
 
 # game/scenario/salles/gymnase.rpy:288
 translate english decouverte_gymnase_78593880:
@@ -868,7 +868,7 @@ translate english decouverte_gymnase_d6d01541:
 translate english decouverte_gymnase_c5dcb263:
 
     # "Il appuie sur une touche. Rien. Il trouve enfin le bouton d'arrêt et le tapis ralentit."
-    ""
+    "He presses a button. Nothing. At last, he finds the stop button, and the belt slows down."
 
 # game/scenario/salles/gymnase.rpy:291
 translate english decouverte_gymnase_9794d402:
@@ -892,5 +892,5 @@ translate english decouverte_gymnase_7b3bcfc5:
 translate english decouverte_gymnase_b563aa8d:
 
     # "Je me mets à rire. Elias aussi, après une seconde."
-    ""
+    "I burst out laughing. After a second, Elias joins in."
 
