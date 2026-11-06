@@ -838,6 +838,10 @@ label _26_0_1_1_0_1_REUNION:
     elen inquiet "Même avec le flacon qu'on a trouvé ?"
     iris raison "Ça ne prouve rien. Je veux continuer les analyses. S'il vous plaît, arrêtez de parler comme si on avait déjà une réponse."
     elen triste "D'accord."
+    elen inquiet "Et ma chambre ? Au début, je me suis demandé si quelqu'un m'en voulait à moi."
+    noam raison "La porte était verrouillée. On a pas de preuve que quelqu'un soit entré."
+    iris fatigue "Et on n'a pas de preuve qu'il y ait eu une agression. Je veux vraiment que vous gardiez ça en tête."
+    elen triste "Oui. Je sais."
     $ showGroup([("julian", "fatigue", 0.20), ("ryn", "agace", 0.45), ("noam", "neutre", 0.72)])
     ryn reflexion "Mais hier, il allait vraiment mal. On l'a tous vu."
     julian fatigue "Oui. Et je lui ai crié dessus."
