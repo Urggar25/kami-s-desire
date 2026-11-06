@@ -4280,43 +4280,43 @@ translate english 3d00e239:
 translate english 98ad188f:
 
     # nyra raison "La proposition est simple sur le papier : rendre consultables par tous les citoyens toutes les informations qu'ARCHIVE détient."
-    nyra raison ""
+    nyra raison "On paper, it's simple: make everything ARCHIVE holds available to every citizen."
 
 # game/scenario/14_0_1_1_0.rpy:75
 translate english 56b1073f:
 
     # noam reflexion "Toutes ?"
-    noam reflexion ""
+    noam reflexion "Everything?"
 
 # game/scenario/14_0_1_1_0.rpy:76
 translate english 1e6e31d1:
 
     # nyra raison "Toutes."
-    nyra raison ""
+    nyra raison "Everything."
 
 # game/scenario/14_0_1_1_0.rpy:78
 translate english 51a2a737:
 
     # noam inquiet "Les rapports sur l'extérieur, les décisions de Kami, les anciennes données..."
-    noam inquiet ""
+    noam inquiet "Reports from outside, Kami's decisions, old records..."
 
 # game/scenario/14_0_1_1_0.rpy:79
 translate english cacf4183_2:
 
     # nyra neutre "Oui."
-    nyra neutre ""
+    nyra neutre "Yes."
 
 # game/scenario/14_0_1_1_0.rpy:80
 translate english 5c39a2b1:
 
     # noam reflexion "Alors c'est une bonne chose."
-    noam reflexion ""
+    noam reflexion "Then that's a good thing."
 
 # game/scenario/14_0_1_1_0.rpy:84
 translate english c714b44f:
 
     # nyra hesitation "En partie."
-    nyra hesitation ""
+    nyra hesitation "Partly."
 
 # game/scenario/14_0_1_1_0.rpy:86
 translate english ba44a782:
@@ -4328,13 +4328,13 @@ translate english ba44a782:
 translate english 11a12610:
 
     # noam inquiet "Qu'est-ce qui coince ?"
-    noam inquiet ""
+    noam inquiet "What's the catch?"
 
 # game/scenario/14_0_1_1_0.rpy:89
 translate english d79004bb:
 
     # nyra raison "Quand ils disent toutes les informations... Qu'est-ce que ça concerne ?"
-    nyra raison ""
+    nyra raison "When they say *everything*... what does that include?"
 
 # game/scenario/14_0_1_1_0.rpy:92
 translate english f57ab0d6:
@@ -4346,13 +4346,13 @@ translate english f57ab0d6:
 translate english a1f75247:
 
     # nyra reflexion "Je pense qu'on a besoin des informations sur l'extérieur."
-    nyra reflexion ""
+    nyra reflexion "I think we need information about the outside world."
 
 # game/scenario/14_0_1_1_0.rpy:95
 translate english 743c4e17:
 
     # nyra colere "Mais est-ce que c'est la solution ?!"
-    nyra colere ""
+    nyra colere "But is this really the answer?!"
 
 # game/scenario/14_0_1_1_0.rpy:97
 translate english 6b98c3ac:
@@ -4364,37 +4364,37 @@ translate english 6b98c3ac:
 translate english 838ceeb8:
 
     # nyra raison "Mais on aura tout le temps pour en parler. Il y a autre chose."
-    nyra raison ""
+    nyra raison "We'll have plenty of time to discuss it. There's something else."
 
 # game/scenario/14_0_1_1_0.rpy:100
 translate english 6cdc9784:
 
     # nyra inquiet "Ryn pose des questions sur toi."
-    nyra inquiet ""
+    nyra inquiet "Ryn has been asking questions about you."
 
 # game/scenario/14_0_1_1_0.rpy:102
 translate english b3fbeb28:
 
     # noam inquiet "Quel genre de questions ?"
-    noam inquiet ""
+    noam inquiet "What kind of questions?"
 
 # game/scenario/14_0_1_1_0.rpy:103
 translate english 4266ab61:
 
     # nyra raison "Si tu avais déjà eu des absences avant le Conclave. Si tu entendais des choses. Si ton comportement avait déjà changé brutalement avant ces derniers jours."
-    nyra raison ""
+    nyra raison "Whether you've had blackouts before the Conclave. Whether you hear things. Whether your behavior changed suddenly before these past few days."
 
 # game/scenario/14_0_1_1_0.rpy:105
 translate english f5f67a27:
 
     # noam colere "Il fait mon diagnostic maintenant ?"
-    noam colere ""
+    noam colere "He's diagnosing me now?"
 
 # game/scenario/14_0_1_1_0.rpy:106
 translate english 4e18cafa:
 
     # nyra neutre "Non. Il cherche une explication à ce qu'il s'est passé lors du dernier vote."
-    nyra neutre ""
+    nyra neutre "No. He's trying to explain what happened at the last vote."
 
 # game/scenario/14_0_1_1_0.rpy:108
 translate english ddca8403:
@@ -4406,13 +4406,13 @@ translate english ddca8403:
 translate english ae19892f:
 
     # nyra inquiet "Je ne te demande pas de faire confiance à tout le monde. Je te demande juste d'éviter de leur donner davantage de raisons de penser que tu deviens imprévisible."
-    nyra inquiet ""
+    nyra inquiet "I'm not asking you to trust everyone. Just stop giving them more reasons to think you're becoming unpredictable."
 
 # game/scenario/14_0_1_1_0.rpy:111
 translate english a0a13050:
 
     # nyra triste "Je préfère être désagréable maintenant que te regarder t'isoler complètement."
-    nyra triste ""
+    nyra triste "I'd rather be unpleasant now than watch you isolate yourself completely."
 
 # game/scenario/14_0_1_1_0.rpy:113
 translate english 61c6c84a:
@@ -4424,19 +4424,19 @@ translate english 61c6c84a:
 translate english a92e7a2d:
 
     # nyra neutre "Va manger. Ça ne réglera rien, mais tu réfléchiras mieux avec autre chose que du café dans le ventre."
-    nyra neutre ""
+    nyra neutre "Go eat. It won't solve anything, but you'll think more clearly with something other than coffee in your stomach."
 
 # game/scenario/14_0_1_1_0.rpy:116
 translate english de4d2327:
 
     # noam fatigue "Tu parles comme Goumi."
-    noam fatigue ""
+    noam fatigue "You sound like Goumi."
 
 # game/scenario/14_0_1_1_0.rpy:117
 translate english 188db0c1:
 
     # nyra sourire "C'est probablement la faim."
-    nyra sourire ""
+    nyra sourire "Probably the hunger."
 
 # game/scenario/14_0_1_1_0.rpy:119
 translate english 7ed255e7:
@@ -4448,13 +4448,13 @@ translate english 7ed255e7:
 translate english 747bd039:
 
     # nyra inquiet "Et Noam... demain, on aura besoin de toi. Alors viens."
-    nyra inquiet ""
+    nyra inquiet "And Noam... we'll need you tomorrow. So show up."
 
 # game/scenario/14_0_1_1_0.rpy:122
 translate english 620440bc:
 
     # noam reflexion "Compris."
-    noam reflexion ""
+    noam reflexion "Got it."
 
 # game/scenario/14_0_1_1_0.rpy:124
 translate english b77eec4d:
@@ -4502,7 +4502,7 @@ translate english 987f8d97:
 translate english 1d250ee0:
 
     # elen joie "Noam !! REGARDE !!"
-    elen joie ""
+    elen joie "Noam!! LOOK!!"
 
 # game/scenario/14_0_1_1_0.rpy:157
 translate english dfd91ab6:
@@ -4514,43 +4514,43 @@ translate english dfd91ab6:
 translate english d24103cc:
 
     # elen joie "Il y a du pain ! Et des pommes ! Et Goumi a fait un truc chaud avec des patates !"
-    elen joie ""
+    elen joie "There's bread! And apples! And Goumi made something hot with potatoes!"
 
 # game/scenario/14_0_1_1_0.rpy:160
 translate english dcfd371e:
 
     # julian sourire "Faites la taire. Elle fait l'inventaire depuis vingt minutes."
-    julian sourire ""
+    julian sourire "Someone shut her up. She's been taking inventory for twenty minutes."
 
 # game/scenario/14_0_1_1_0.rpy:161
 translate english 6ea5aac0:
 
     # elen colere "Mais c'est trooop bon les patates !!"
-    elen colere ""
+    elen colere "But potatoes are soooo good!!"
 
 # game/scenario/14_0_1_1_0.rpy:162
 translate english fc084e29:
 
     # mara sourire "Elle en a déjà mangé trois portions."
-    mara sourire ""
+    mara sourire "She's already had three helpings."
 
 # game/scenario/14_0_1_1_0.rpy:163
 translate english d4d152de:
 
     # elen joie "J'ai FAIM !"
-    elen joie ""
+    elen joie "I'M HUNGRY!"
 
 # game/scenario/14_0_1_1_0.rpy:164
 translate english 23445891:
 
     # julian taquin "Nous aussi. On ne fait juste pas une déclaration d'amour à chaque bouchée."
-    julian taquin ""
+    julian taquin "We all are. We just don't declare our undying love with every bite."
 
 # game/scenario/14_0_1_1_0.rpy:165
 translate english 4dadcd8d:
 
     # elen taquin "Tu n'as donc aucune sensibilité."
-    elen taquin ""
+    elen taquin "You have no appreciation for beauty."
 
 # game/scenario/14_0_1_1_0.rpy:169
 translate english 170b1f6f:
@@ -4568,7 +4568,7 @@ translate english 2ecf9944:
 translate english 5b6f207d:
 
     # noam fatigue "Salut. Il reste quoi ?"
-    noam fatigue ""
+    noam fatigue "Hey. What's left?"
 
 # game/scenario/14_0_1_1_0.rpy:174
 translate english 0cd7c362:
@@ -4586,7 +4586,7 @@ translate english 04fb92e0:
 translate english 84df3a31:
 
     # noam sourire "Elen a l'air au bord des larmes."
-    noam sourire ""
+    noam sourire "Elen looks like she's about to cry."
 
 # game/scenario/14_0_1_1_0.rpy:178
 translate english 06376b72:
@@ -4598,7 +4598,7 @@ translate english 06376b72:
 translate english 202002a8:
 
     # elen joie "Elle était très belle ! Et très bonne aussi !"
-    elen joie ""
+    elen joie "She was beautiful! And delicious, too!"
 
 # game/scenario/14_0_1_1_0.rpy:182
 translate english df980ff0:
@@ -4610,13 +4610,13 @@ translate english df980ff0:
 translate english b05da4ba:
 
     # julian rire "Je confirme. Il y a eu un moment très intime entre elles."
-    julian rire ""
+    julian rire "I can confirm. They shared a very intimate moment."
 
 # game/scenario/14_0_1_1_0.rpy:185
 translate english aeab3e84:
 
     # elen colere "Ah ! Jaloux ! Mange et tais-toi."
-    elen colere ""
+    elen colere "Ha! You're jealous! Eat your food and shut up."
 
 # game/scenario/14_0_1_1_0.rpy:187
 translate english 20603496:
@@ -4634,7 +4634,7 @@ translate english ecc1a7e4:
 translate english b6c89800:
 
     # noam fatigue "Ouais. Pas besoin de me convaincre aujourd'hui."
-    noam fatigue ""
+    noam fatigue "Yeah. Don't have to convince me today."
 
 # game/scenario/14_0_1_1_0.rpy:192
 translate english f85e4001:
@@ -4652,7 +4652,7 @@ translate english a55f49a0:
 translate english b9767f39:
 
     # mara mefiant "Tu peux t'asseoir là."
-    mara mefiant ""
+    mara mefiant "You can sit there."
 
 # game/scenario/14_0_1_1_0.rpy:197
 translate english cc3fcd84:
@@ -4664,25 +4664,25 @@ translate english cc3fcd84:
 translate english b124d81b:
 
     # mara agace "Ne me fais pas regretter d'avoir été civilisée pendant deux secondes."
-    mara agace ""
+    mara agace "Don't make me regret being civil for two whole seconds."
 
 # game/scenario/14_0_1_1_0.rpy:202
 translate english e988445c:
 
     # noam sourire "Tu me factures combien, les deux secondes ?"
-    noam sourire ""
+    noam sourire "What do you charge for those two seconds?"
 
 # game/scenario/14_0_1_1_0.rpy:203
 translate english 2d7e5010:
 
     # mara rire "Je t'enverrai la facture."
-    mara rire ""
+    mara rire "I'll send you the bill."
 
 # game/scenario/14_0_1_1_0.rpy:205
 translate english 8a8a2ee7:
 
     # iris fatigue "Assieds-toi avant qu'elle change d'avis."
-    iris fatigue ""
+    iris fatigue "Sit down before she changes her mind."
 
 # game/scenario/14_0_1_1_0.rpy:207
 translate english 7b7c94bc:
@@ -4706,7 +4706,7 @@ translate english 462337e0:
 translate english 6c95eca2:
 
     # elen joie "C'est vraiment trop trop trop bon. Il manque juste un tout petit peu de sel."
-    elen joie ""
+    elen joie "It's really, really, REALLY good. Just needs a tiny bit of salt."
 
 # game/scenario/14_0_1_1_0.rpy:213
 translate english fedbb8e0:
@@ -4718,25 +4718,25 @@ translate english fedbb8e0:
 translate english f3db505c:
 
     # sael mefiant "Tu pourrais me le passer après ?"
-    sael mefiant ""
+    sael mefiant "Could you pass that to me afterward?"
 
 # game/scenario/14_0_1_1_0.rpy:217
 translate english 369da8b9:
 
     # mara agace "Je vais quand même te dire un truc, Noam."
-    mara agace ""
+    mara agace "I still need to say something, Noam."
 
 # game/scenario/14_0_1_1_0.rpy:218
 translate english 63474a75:
 
     # iris fatigue "Évidemment."
-    iris fatigue ""
+    iris fatigue "Naturally."
 
 # game/scenario/14_0_1_1_0.rpy:220
 translate english baa76686:
 
     # mara mefiant "L'autre coup, tu nous as traités comme si on était tous prêts à te trahir."
-    mara mefiant ""
+    mara mefiant "The other day you acted like every single one of us was about to betray you."
 
 # game/scenario/14_0_1_1_0.rpy:222
 translate english dba89bf5:
@@ -4748,31 +4748,31 @@ translate english dba89bf5:
 translate english b320c392:
 
     # mara agace "Je dis pas ça pour revenir là-dessus. Personne n'a rien compris à ce qui t'est arrivé."
-    mara agace ""
+    mara agace "I'm not bringing this up to start another fight. None of us knows what happened to you."
 
 # game/scenario/14_0_1_1_0.rpy:225
 translate english d2895a2c:
 
     # mara colere "Je veux savoir si demain tu vas encore décider que tout le monde est ton ennemi en plein milieu du vote."
-    mara colere ""
+    mara colere "I want to know whether you're going to decide we're all your enemies again in the middle of tomorrow's vote."
 
 # game/scenario/14_0_1_1_0.rpy:227
 translate english 62222cc2:
 
     # noam hesitation "Je ne sais pas ce qui va se passer demain."
-    noam hesitation ""
+    noam hesitation "I don't know what'll happen tomorrow."
 
 # game/scenario/14_0_1_1_0.rpy:229
 translate english 913c2002:
 
     # elen hesitation "Mara... Tu as toute la journée pour parler des trucs chiants !"
-    elen hesitation ""
+    elen hesitation "Mara... you've got the whole day to talk about miserable stuff!"
 
 # game/scenario/14_0_1_1_0.rpy:230
 translate english 4890ced8:
 
     # elen joie "Laisse-nous manger tranquillement !"
-    elen joie ""
+    elen joie "Let us eat in peace!"
 
 # game/scenario/14_0_1_1_0.rpy:232
 translate english b5c0e0ab:
@@ -4784,7 +4784,7 @@ translate english b5c0e0ab:
 translate english 69e71354:
 
     # mara fatigue "Mouais... On va d'abord attendre d'avoir mangé tout ça."
-    mara fatigue ""
+    mara fatigue "Yeah, yeah... let's eat first."
 
 # game/scenario/14_0_1_1_0.rpy:236
 translate english b82befe2:
@@ -4802,19 +4802,19 @@ translate english 2d76d4ab:
 translate english 90665547:
 
     # sael mefiant "Noam. Quand tu auras fini, viens dans ma chambre."
-    sael mefiant ""
+    sael mefiant "Noam. When you're finished, come to my room."
 
 # game/scenario/14_0_1_1_0.rpy:242
 translate english 279eb947:
 
     # iris inquiet "Hein ? Pourquoi ?"
-    iris inquiet ""
+    iris inquiet "Huh? Why?"
 
 # game/scenario/14_0_1_1_0.rpy:243
 translate english c747b996:
 
     # sael raison "Je veux discuter tranquillement avec toi. Sur... Ce que tu dis avoir vu."
-    sael raison ""
+    sael raison "I want to talk to you quietly. About... what you say you saw."
 
 # game/scenario/14_0_1_1_0.rpy:245
 translate english dc69755d:
@@ -4826,19 +4826,19 @@ translate english dc69755d:
 translate english 735e7970:
 
     # noam inquiet "Tu-Tu sais quelque chose ?"
-    noam inquiet ""
+    noam inquiet "Y-you know something?"
 
 # game/scenario/14_0_1_1_0.rpy:249
 translate english 539b2be0:
 
     # sael determine "Ne me fais pas répêter. On en parlera dans ma chambre."
-    sael determine ""
+    sael determine "Don't make me repeat myself. We'll talk in my room."
 
 # game/scenario/14_0_1_1_0.rpy:251
 translate english 179e56a5:
 
     # mara agace "Sael qui se met à inviter les garçons dans sa chambre ? C'était pas dans mon bingo ça."
-    mara agace ""
+    mara agace "Sael inviting a guy to her bedroom? That wasn't on my bingo card."
 
 # game/scenario/14_0_1_1_0.rpy:253
 translate english 240fd1f3:
@@ -4850,25 +4850,25 @@ translate english 240fd1f3:
 translate english 8cece885:
 
     # elen surpris "Tu ne finis pas ? Me dis pas que t'as pas faim ?!"
-    elen surpris ""
+    elen surpris "You're not finishing that? Don't tell me you're not hungry?!"
 
 # game/scenario/14_0_1_1_0.rpy:257
 translate english d4d4bfde:
 
     # sael neutre "Tu la veux ?"
-    sael neutre ""
+    sael neutre "Want it?"
 
 # game/scenario/14_0_1_1_0.rpy:258
 translate english c77ff954:
 
     # elen joie "Ouaiiiis ! Je veux plus jamais devoir attendre pour manger !"
-    elen joie ""
+    elen joie "Yeeees! I never want to wait for food again!"
 
 # game/scenario/14_0_1_1_0.rpy:259
 translate english b9b0eee6:
 
     # elen sourire "Faut faire des réserves !"
-    elen sourire ""
+    elen sourire "Gotta stock up!"
 
 # game/scenario/14_0_1_1_0.rpy:261
 translate english 24068f96:
@@ -4886,61 +4886,61 @@ translate english 0444a5d1:
 translate english 1a4fc72e:
 
     # iris inquiet "Je n'aime pas vraiment ça."
-    iris inquiet ""
+    iris inquiet "I really don't like this."
 
 # game/scenario/14_0_1_1_0.rpy:268
 translate english 225ed63c:
 
     # iris hesitation "Elle m'a posé plein de questions bizarres sur toi hier."
-    iris hesitation ""
+    iris hesitation "She asked me a bunch of weird questions about you yesterday."
 
 # game/scenario/14_0_1_1_0.rpy:270
 translate english d2ebdc16:
 
     # mara rire "Dis surtout que t'es jalouse, ouais !"
-    mara rire ""
+    mara rire "Just admit you're jealous!"
 
 # game/scenario/14_0_1_1_0.rpy:272
 translate english 858ac4a3:
 
     # iris blase "Hein ?! Mais d'où tu sors ça toi !"
-    iris blase ""
+    iris blase "Huh?! Where the hell did that come from?!"
 
 # game/scenario/14_0_1_1_0.rpy:273
 translate english 7d8ee714:
 
     # iris colere "Pourquoi je serais jalouse ? J'en ai rien à faire de Noam !"
-    iris colere ""
+    iris colere "Why would I be jealous? I don't give a damn about Noam!"
 
 # game/scenario/14_0_1_1_0.rpy:275
 translate english 6e069d60:
 
     # iris gene "Euh... Enfin... C'est-C'est pas vraiment ce que je voulais dire."
-    iris gene ""
+    iris gene "Uh... I mean... that's not exactly what I meant."
 
 # game/scenario/14_0_1_1_0.rpy:277
 translate english 10d7e92f:
 
     # iris inquiet "Mais sinon, je suis sérieuse pour le reste. Si elle commence à devenir étrange, pars."
-    iris inquiet ""
+    iris inquiet "But seriously, the rest of what I said stands. If she starts acting strange, leave."
 
 # game/scenario/14_0_1_1_0.rpy:279
 translate english 710afa24:
 
     # iris colere "Non, ça c'est ce que tu dis quand tu comptes faire exactement l'inverse."
-    iris colere ""
+    iris colere "No, that's what you say when you're planning to do the exact opposite."
 
 # game/scenario/14_0_1_1_0.rpy:280
 translate english 02131000:
 
     # noam sourire "Je ferai très attention ?"
-    noam sourire ""
+    noam sourire "I'll be *very* careful?"
 
 # game/scenario/14_0_1_1_0.rpy:281
 translate english 91014e77:
 
     # iris blase "Tu m'épuises."
-    iris blase ""
+    iris blase "You're exhausting."
 
 # game/scenario/14_0_1_1_0.rpy:283
 translate english 39880418:
@@ -4958,31 +4958,31 @@ translate english 500e6c51:
 translate english f1cea2ad:
 
     # elen joie "Quelqu'un veut sa pomme ?"
-    elen joie ""
+    elen joie "Anyone want my apple?"
 
 # game/scenario/14_0_1_1_0.rpy:287
 translate english 19574154:
 
     # julian sourire "Tu viens d'en manger deux."
-    julian sourire ""
+    julian sourire "You've already eaten two."
 
 # game/scenario/14_0_1_1_0.rpy:288
 translate english c8e8ef42:
 
     # mara sourire "Donnez-lui la pomme avant qu'elle commence à nous regarder comme hier."
-    mara sourire ""
+    mara sourire "Give her the apple before she starts looking at us like she did yesterday."
 
 # game/scenario/14_0_1_1_0.rpy:289
 translate english 408837e2:
 
     # elen colere "J'allais pas vous manger !"
-    elen colere ""
+    elen colere "I wasn't going to EAT you!"
 
 # game/scenario/14_0_1_1_0.rpy:290
 translate english 33321b2a:
 
     # julian taquin "C'est exactement ce que dirait quelqu'un qui allait nous manger."
-    julian taquin ""
+    julian taquin "Exactly what someone planning to eat us would say."
 
 # game/scenario/14_0_1_1_0.rpy:292
 translate english 19a6d049:
@@ -4994,7 +4994,7 @@ translate english 19a6d049:
 translate english a3fe5caf:
 
     # julian rire "Gaspillage ! Crime contre l'humanité après vingt-quatre heures de famine !"
-    julian rire ""
+    julian rire "Food waste! A crime against humanity after twenty-four hours without food!"
 
 # game/scenario/14_0_1_1_0.rpy:295
 translate english e4fb499b:
@@ -5006,7 +5006,7 @@ translate english e4fb499b:
 translate english 67a905cb:
 
     # elen sourire "Mange-le alors."
-    elen sourire ""
+    elen sourire "Then eat it."
 
 # game/scenario/14_0_1_1_0.rpy:298
 translate english 57220c3b:
@@ -5018,43 +5018,43 @@ translate english 57220c3b:
 translate english 9ad95da6:
 
     # iris inquiet "Tu vas vraiment y aller ?"
-    iris inquiet ""
+    iris inquiet "You're really going?"
 
 # game/scenario/14_0_1_1_0.rpy:301
 translate english 699dd6e0:
 
     # noam reflexion "Elle dit qu'elle sait quelque chose sur ce que j'ai vu."
-    noam reflexion ""
+    noam reflexion "She says she knows something about what I saw."
 
 # game/scenario/14_0_1_1_0.rpy:302
 translate english 49747710:
 
     # iris hesitation "Elle a surtout dit qu'elle voulait en parler. C'est pas pareil."
-    iris hesitation ""
+    iris hesitation "She said she wants to talk about it. Not the same thing."
 
 # game/scenario/14_0_1_1_0.rpy:303
 translate english 2e535864_9:
 
     # noam fatigue "Je sais."
-    noam fatigue ""
+    noam fatigue "I know."
 
 # game/scenario/14_0_1_1_0.rpy:304
 translate english f71fef3b:
 
     # iris inquiet "Alors si ça devient bizarre, tu pars."
-    iris inquiet ""
+    iris inquiet "Then if things get weird, you leave."
 
 # game/scenario/14_0_1_1_0.rpy:305
 translate english 0d9df336:
 
     # noam sourire "Tu me l'as déjà dit."
-    noam sourire ""
+    noam sourire "You already told me."
 
 # game/scenario/14_0_1_1_0.rpy:306
 translate english 80917931:
 
     # iris colere "Et visiblement il faut répéter avec toi."
-    iris colere ""
+    iris colere "And apparently I have to keep repeating myself."
 
 # game/scenario/14_0_1_1_0.rpy:308
 translate english ac58b385:
@@ -5066,43 +5066,43 @@ translate english ac58b385:
 translate english c78d66eb_6:
 
     # noam reflexion "Quoi ?"
-    noam reflexion ""
+    noam reflexion "What?"
 
 # game/scenario/14_0_1_1_0.rpy:312
 translate english 14789b1f:
 
     # mara mefiant "Je pensais ce que j'ai dit. Mais... évite juste de refaire n'importe quoi demain."
-    mara mefiant ""
+    mara mefiant "I meant what I said. But... just try not to do anything stupid tomorrow."
 
 # game/scenario/14_0_1_1_0.rpy:314
 translate english 93671bc9:
 
     # mara agace "C'est déjà mieux que 'je sais pas'."
-    mara agace ""
+    mara agace "Already better than 'I don't know.'"
 
 # game/scenario/14_0_1_1_0.rpy:316
 translate english ec3ef85c:
 
     # elen joie "Et reviens manger ce soir !"
-    elen joie ""
+    elen joie "And come back for dinner!"
 
 # game/scenario/14_0_1_1_0.rpy:317
 translate english 7a5cd763:
 
     # elen sourire "Y'a encore plein de trucs !"
-    elen sourire ""
+    elen sourire "There's still loads of stuff!"
 
 # game/scenario/14_0_1_1_0.rpy:318
 translate english 08a66928:
 
     # noam sourire "Je note surtout que c'est ça qui t'inquiète."
-    noam sourire ""
+    noam sourire "Funny how *that's* what you're worried about."
 
 # game/scenario/14_0_1_1_0.rpy:319
 translate english 2997eea8_2:
 
     # elen joie "Oui !"
-    elen joie ""
+    elen joie "Yes!"
 
 # game/scenario/14_0_1_1_0.rpy:321
 translate english 11ad9219:
@@ -5144,25 +5144,25 @@ translate english 98007283:
 translate english 0246a3ff:
 
     # sael mefiant "Tu es venu."
-    sael mefiant ""
+    sael mefiant "You came."
 
 # game/scenario/14_0_1_1_0.rpy:359
 translate english 8905d94c:
 
     # noam reflexion "Tu m'as pas vraiment laissé penser que c'était facultatif."
-    noam reflexion ""
+    noam reflexion "You didn't exactly make it sound optional."
 
 # game/scenario/14_0_1_1_0.rpy:360
 translate english 687221e8:
 
     # sael raison "Entre."
-    sael raison ""
+    sael raison "Come in."
 
 # game/scenario/14_0_1_1_0.rpy:361
 translate english 63f5d320:
 
     # noam inquiet "Tu voulais parler de ce que j'ai vu, alors parle."
-    noam inquiet ""
+    noam inquiet "You wanted to talk about what I saw, so talk."
 
 # game/scenario/14_0_1_1_0.rpy:364
 translate english eee2e58e:
@@ -5180,55 +5180,55 @@ translate english 6fe6c695:
 translate english 62249fe2:
 
     # noam reflexion "Bon. Qu'est-ce que tu sais ?"
-    noam reflexion ""
+    noam reflexion "All right. What do you know?"
 
 # game/scenario/14_0_1_1_0.rpy:378
 translate english 4afe32a1:
 
     # sael raison "Avant ça, j'ai besoin que tu répondes à quelques questions."
-    sael raison ""
+    sael raison "First, I need you to answer a few questions."
 
 # game/scenario/14_0_1_1_0.rpy:379
 translate english 9a0f37b4:
 
     # noam fatigue "Non. Tu m'as fait venir parce que tu savais quelque chose, alors soit tu parles, soit je pars."
-    noam fatigue ""
+    noam fatigue "No. You brought me here because you knew something. Either talk or I'm leaving."
 
 # game/scenario/14_0_1_1_0.rpy:381
 translate english b4325618:
 
     # sael mefiant "Tu entends parfois des voix quand personne ne parle ?"
-    sael mefiant ""
+    sael mefiant "Do you ever hear voices when nobody's speaking?"
 
 # game/scenario/14_0_1_1_0.rpy:382
 translate english 3609f518:
 
     # noam colere "Sael..."
-    noam colere ""
+    noam colere "Sael..."
 
 # game/scenario/14_0_1_1_0.rpy:383
 translate english 3fcec653:
 
     # sael raison "Réponds."
-    sael raison ""
+    sael raison "Answer."
 
 # game/scenario/14_0_1_1_0.rpy:384
 translate english 3ee7b7fe_2:
 
     # noam colere "Non."
-    noam colere ""
+    noam colere "No."
 
 # game/scenario/14_0_1_1_0.rpy:385
 translate english 5c129655:
 
     # sael mefiant "Des sons que personne d'autre n'entend ? Des moments dont tu ne te souviens pas ?"
-    sael mefiant ""
+    sael mefiant "Sounds no one else hears? Gaps in your memory?"
 
 # game/scenario/14_0_1_1_0.rpy:386
 translate english 5af54608:
 
     # noam agace "J'ai dit non."
-    noam agace ""
+    noam agace "I said no."
 
 # game/scenario/14_0_1_1_0.rpy:388
 translate english 87c8d2af:
@@ -5240,7 +5240,7 @@ translate english 87c8d2af:
 translate english e70ef04d:
 
     # noam inquiet "C'est Ryn qui t'a demandé ça ?"
-    noam inquiet ""
+    noam inquiet "Did Ryn put you up to this?"
 
 # game/scenario/14_0_1_1_0.rpy:392
 translate english 6ca2b3db:
@@ -5252,7 +5252,7 @@ translate english 6ca2b3db:
 translate english 35041b47:
 
     # noam colere "Putain..."
-    noam colere ""
+    noam colere "Fuck..."
 
 # game/scenario/14_0_1_1_0.rpy:396
 translate english 3ed652a1:
@@ -5270,13 +5270,13 @@ translate english ca29c31c:
 translate english 7ef5bdd9:
 
     # ryn colere "Bouge pas."
-    ryn colere ""
+    ryn colere "Don't move."
 
 # game/scenario/14_0_1_1_0.rpy:410
 translate english 988a4e32:
 
     # noam colere "Vous vous foutez de moi ?!"
-    noam colere ""
+    noam colere "Are you fucking kidding me?!"
 
 # game/scenario/14_0_1_1_0.rpy:412
 translate english aec0c6cd:
@@ -5288,25 +5288,25 @@ translate english aec0c6cd:
 translate english 366453fc:
 
     # ryn colere "Tu restes deux minutes. Après, si elle a tort, tu repars."
-    ryn colere ""
+    ryn colere "Stay two minutes. If she's wrong, you can go."
 
 # game/scenario/14_0_1_1_0.rpy:415
 translate english 5b3208f3:
 
     # noam colere "Dégage."
-    noam colere ""
+    noam colere "Get out of my way."
 
 # game/scenario/14_0_1_1_0.rpy:416
 translate english 11d4cbe9:
 
     # ryn colere "Noam..."
-    ryn colere ""
+    ryn colere "Noam..."
 
 # game/scenario/14_0_1_1_0.rpy:417
 translate english 17486236:
 
     # noam colere "J'ai dit dégage."
-    noam colere ""
+    noam colere "I said MOVE."
 
 # game/scenario/14_0_1_1_0.rpy:419
 translate english 7972f67d:
@@ -5324,19 +5324,19 @@ translate english 205e015e:
 translate english 7ef51d30:
 
     # noam panique "LÂCHE-MOI !"
-    noam panique ""
+    noam panique "LET ME GO!"
 
 # game/scenario/14_0_1_1_0.rpy:427
 translate english 180c0e2e:
 
     # ryn colere "Arrête de bouger !"
-    ryn colere ""
+    ryn colere "Stop struggling!"
 
 # game/scenario/14_0_1_1_0.rpy:428
 translate english 8f6b87f3:
 
     # noam colere "Va te faire foutre !"
-    noam colere ""
+    noam colere "Go fuck yourself!"
 
 # game/scenario/14_0_1_1_0.rpy:430
 translate english 70008497:
@@ -5348,7 +5348,7 @@ translate english 70008497:
 translate english 16b91e97:
 
     # noam peur "Ryn, lâche-moi !"
-    noam peur ""
+    noam peur "Ryn, let me go!"
 
 # game/scenario/14_0_1_1_0.rpy:433
 translate english a84d05b2:
