@@ -774,7 +774,7 @@ translate english decouverte_sas_f66a3c48:
 translate english decouverte_sas_df943f21:
 
     # "Elle jette un coup d'œil au sas. Son sourire disparaît une seconde."
-    ""
+    "She glances toward the airlock. Her smile vanishes for a second."
 
 # game/scenario/salles/sas.rpy:237
 translate english decouverte_sas_832f3101:
@@ -786,7 +786,7 @@ translate english decouverte_sas_832f3101:
 translate english decouverte_sas_ade327f9:
 
     # "Elle détourne les yeux, puis reprend son sourire habituel."
-    ""
+    "She looks away, then puts her usual smile back on."
 
 # game/scenario/salles/sas.rpy:239
 translate english decouverte_sas_18861c4c:
