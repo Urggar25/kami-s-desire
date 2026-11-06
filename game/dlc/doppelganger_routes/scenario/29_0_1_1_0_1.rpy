@@ -340,3 +340,176 @@ label _29_0_1_1_0_1_OBJECTIONS:
                 lysa raison "Ça nous dit comment le meurtre a pu être fait, pas pourquoi."
         jump _29_0_1_1_0_1_OBJECTIONS
 # Durée : ~3m00, selon les tentatives.
+
+
+label _29_0_1_1_0_1_ACCUSATION:
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.7
+    $ showGroup([("noam", "neutre", 0.12), ("nyra", "neutre", 0.29), ("julian", "fatigue", 0.46), ("elen", "triste", 0.63), ("lysa", "neutre", 0.80), ("iris", "fatigue", 0.97)])
+    julian reflexion "Tout ça, c'est bien joli, mais on sait toujours pas qui aurait pu faire ça."
+    noam raison "Kael a trouvé un relevé. Un accès de maintenance a été ouvert à 02 h 17 la nuit de la mort de Tomas."
+    iris surpris "Avec quel badge ?"
+    noam reflexion "Celui de Nyra."
+    pause 0.5
+    elen surpris "Nyra ?"
+    julian surpris "Attends, quoi ?!"
+    nyra neutre "Oui. Noam m'en a parlé. Je lui ai dit que je ne m'étais pas rendue dans la maintenance cette nuit-là."
+    lysa raison "Le système a enregistré ton autorisation, pas ton visage."
+    nyra raison "Exactement. Si mon badge a été utilisé par quelqu'un d'autre, ça ne dit rien sur moi."
+    julian inquiet "Mais tu l'avais avec toi ?"
+    nyra reflexion "Normalement. Je ne peux pas certifier chaque minute de la nuit."
+    noam neutre "Je peux pas prouver que tu étais dans le conduit. Mais je peux pas faire comme si ce relevé existait pas."
+    nyra raison "Alors ne fais pas comme si c'était une vidéo de moi."
+    elen inquiet "Noam, tu soupçonnes Nyra ?"
+    noam fatigue "Je soupçonne plusieurs personnes. Je vais devoir dire ce que je pense."
+    iris reflexion "Et tu sais que ça peut se retourner contre quelqu'un qui n'a rien fait."
+    noam neutre "Je sais."
+    "Je regarde les visages autour de la table. Même après tout ça, j'aimerais encore qu'Iris me dise qu'elle a trouvé une autre explication."
+    menu (screen="critical_choice", noam_expr="hesitation"):
+        "Qui semble le plus directement impliqué ?"
+        "Julian — la colère contre Tomas":
+            $ j29a_accuse = "julian"
+        "Ryn — les menaces et la piste de Limen":
+            $ j29a_accuse = "ryn"
+        "Sael — les connaissances botaniques":
+            $ j29a_accuse = "sael"
+        "Nyra — le badge de maintenance et l'appareil disparu":
+            $ j29a_accuse = "nyra"
+    if j29a_accuse == "nyra":
+        jump _29_0_1_1_0_1_NYRA_ACCUSATION
+    jump _29_0_1_1_0_1_FAUSSE_ACCUSATION
+# Durée : ~2m00 + choix critique.
+
+label _29_0_1_1_0_1_FAUSSE_ACCUSATION:
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.7
+    $ showGroup([("noam", "inquiet", 0.14), ("nyra", "neutre", 0.32), ("julian", "fatigue", 0.50), ("ryn", "agace", 0.68), ("sael", "neutre", 0.86), ("elen", "triste", 1.04)])
+    if j29a_accuse == "julian":
+        noam raison "Julian. Tu lui en voulais, et tu l'as menacé devant tout le monde."
+        julian colere "Je l'ai engueulé, oui ! Mais ça fait trois jours que je vous dis que je voulais pas sa mort !"
+        noam raison "Tu savais où étaient les accès techniques."
+        julian agace "Comme la moitié des gens ici ! Montre-moi juste une preuve que j'y suis allé !"
+        "Je regarde mes notes. Je n'en ai aucune."
+        julian triste "J'ai été horrible avec lui. Ça, je peux pas le changer. Mais je l'ai pas tué."
+    elif j29a_accuse == "ryn":
+        noam raison "Ryn. Tu étais furieux, et tu connais les plantes de Limen."
+        ryn colere "Putain ! Pas encore ! Je connais le NOM d'une plante, et ça y est ?!"
+        sael raison "Il n'y a aucune preuve qu'il ait eu cette plante ou qu'il soit entré dans le conduit."
+        ryn fatigue "J'étais avec Julian et Mara une partie de la soirée. Après je suis rentré. Je sais pas quoi te dire d'autre."
+        noam fatigue "Je peux pas prouver que tu y es allé."
+    else:
+        noam raison "Sael. Tu avais accès au matériel médical et tu connais certaines plantes de Limen."
+        sael reflexion "Oui. Et ?"
+        noam raison "Tu pouvais identifier la plante et comprendre son effet."
+        sael colere "Tu m'accuses parce que je soigne les gens et que je sais lire une fiche botanique ?"
+        sael raison "Tu as une preuve de ma présence dans la ventilation ?"
+        noam fatigue "Non."
+        sael neutre "Alors tu n'as pas assez."
+    pause 0.3
+    elen inquiet "Noam, je comprends que tu veuilles trouver quelqu'un... mais on peut pas enfermer une personne juste avec ça."
+    nyra raison "Elen a raison. Et le badge retrouvé, on n'a toujours pas expliqué pourquoi il a été utilisé."
+    noam fatigue "Je sais."
+    julian reflexion "On va pas décider d'une arrestation sur un vote de popularité."
+    iris raison "Il n'y a pas assez pour conclure. Ça n'efface pas la mort de Tomas."
+    "La réunion s'arrête sans décision. J'ai désigné quelqu'un, et je n'ai pas réussi à défendre mon accusation."
+    "Personne n'est enfermé. Nyra quitte la salle avec les autres."
+    $ j29a_nyra_detained = False
+    $ hideGroup()
+    jump _29_0_1_1_0_1_NUIT
+# Durée : ~2m30.
+
+label _29_0_1_1_0_1_NYRA_ACCUSATION:
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.8
+    $ showGroup([("nyra", "neutre", 0.17), ("noam", "inquiet", 0.39), ("lysa", "neutre", 0.60), ("iris", "fatigue", 0.81), ("elen", "triste", 1.03)])
+    noam raison "Nyra. Je pense que tu es impliquée dans la mort de Tomas."
+    pause 0.6
+    nyra surpris "Moi ?"
+    elen surpris "Noam..."
+    nyra neutre "D'accord. Explique-moi."
+    noam raison "Le badge de maintenance, d'abord. Il a été utilisé vers la branche des dortoirs pendant la nuit."
+    nyra reflexion "Je viens de dire que ce relevé ne montre pas qui l'avait. Tu le sais."
+    noam neutre "Oui."
+    nyra raison "Et le fait que je sache utiliser des appareils orbitaux ne fait pas de moi une meurtrière."
+    noam fatigue "Je sais."
+    nyra reflexion "Alors qu'est-ce que tu as de plus ?"
+    "Je regarde les autres. Aucun ne parle. Je repense à toutes les fois où Nyra m'a aidé, jusqu'à cet après-midi."
+    jump _29_0_1_1_0_1_CONFRONTATION
+# Durée : ~1m30.
+
+label _29_0_1_1_0_1_CONFRONTATION:
+    menu:
+        "Quel élément confronter à la version de Nyra ?"
+        "Le badge utilisé à 02 h 17 et son affirmation qu'elle n'a pas quitté sa chambre":
+            $ j29a_contradiction = True
+            noam raison "Tu m'as dit que tu allais dormir. Aujourd'hui, tu dis que tu n'es jamais passée en maintenance. Pourtant, ton autorisation a ouvert un accès qui mène à la chambre où Tomas est mort."
+            nyra raison "Il reste possible que quelqu'un ait utilisé mon badge."
+            noam neutre "Oui. Mais tu dis l'avoir eu sur toi. Et tu ne nous as jamais signalé sa disparition."
+            nyra reflexion "Parce que j'ai jamais constaté sa disparition."
+            noam raison "Je te demande pas d'avouer. Je te demande d'expliquer ce relevé autrement qu'en disant que quelqu'un a peut-être pris ton badge."
+            nyra neutre "Je ne peux pas. Pas plus que toi tu ne peux prouver que je l'ai utilisé."
+            lysa raison "C'est vrai. Mais on a désormais une contradiction qu'il faut vérifier."
+            jump _29_0_1_1_0_1_CONSEQUENCE_NYRA
+        "La plante, parce qu'Orbite possède des zones arides":
+            noam raison "Tu viens d'Orbite. Le Bulbuma y pousse peut-être."
+            nyra reflexion "Comme à Limen. Et comme dans certaines marchandises qu'on reçoit ici. Tu sais que ça ne prouve rien."
+            iris raison "Je l'ai dit moi-même. Ce n'est pas un indice suffisant."
+            noam fatigue "Ouais..."
+            $ j29a_erreurs += 1
+            jump _29_0_1_1_0_1_CONFRONTATION
+        "Le livre Yanma, parce qu'elle connaît les transmissions spatiales":
+            noam raison "Tu connais la résonance Yanma. Tomas lisait un livre là-dessus."
+            nyra raison "Kael la connaît aussi. Et tu n'as même pas identifié l'appareil que Tomas tenait."
+            lysa neutre "On peut pas accuser quelqu'un pour ses connaissances techniques."
+            $ j29a_erreurs += 1
+            jump _29_0_1_1_0_1_CONFRONTATION
+# Durée : 1m30 selon les essais.
+
+label _29_0_1_1_0_1_CONSEQUENCE_NYRA:
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.7
+    $ showGroup([("nyra", "neutre", 0.13), ("noam", "inquiet", 0.30), ("elen", "triste", 0.47), ("iris", "fatigue", 0.64), ("julian", "fatigue", 0.81), ("sael", "neutre", 0.98)])
+    elen inquiet "Vous voulez l'enfermer ?"
+    julian reflexion "On va quand même pas prendre une décision définitive avec une seule ligne dans un journal."
+    noam raison "Pas une décision définitive. Mais le départ approche. Si elle peut accéder aux conduits, on peut pas juste faire comme si on avait rien trouvé."
+    nyra neutre "Je n'ai touché à aucun conduit. Tu me crois ou non, c'est tout ce que je peux dire."
+    iris raison "Ça n'est pas une preuve complète de culpabilité. Il faut être clair là-dessus."
+    sael reflexion "On peut néanmoins la placer sous surveillance jusqu'à ce qu'on puisse vérifier ce relevé."
+    elen triste "Je veux pas qu'il arrive quelque chose à quelqu'un d'autre."
+    nyra reflexion "Et moi, je dois accepter d'être enfermée parce qu'on n'a pas compris qui a utilisé mon badge ?"
+    julian fatigue "Je sais pas quoi penser. Mais pour cette nuit, je préfère qu'on évite de laisser les accès techniques libres."
+    noam neutre "On peut garder Nyra dans une chambre surveillée. Pas la condamner. On continuera l'enquête sur Terre."
+    iris neutre "Si c'est provisoire et que personne n'y touche, je peux accepter. Je veux pouvoir lui parler si elle en a besoin."
+    sael raison "Je surveillerai la porte avec Kael. Et on conservera son badge séparément."
+    nyra fatigue "..."
+    pause 0.4
+    nyra neutre "D'accord. Mais ne me demandez pas de vous remercier."
+    noam inquiet "Nyra..."
+    nyra raison "Tu as fait ton choix, Noam. Tu m'as même laissé répondre. Je n'ai rien d'autre à ajouter."
+    "Elle se lève. Personne ne la touche. Sael lui indique simplement la sortie, et Kael l'attend à l'extérieur."
+    $ j29a_nyra_detained = True
+    $ hideGroup()
+    jump _29_0_1_1_0_1_NUIT
+# Durée : ~3m00.
+
+label _29_0_1_1_0_1_NUIT:
+    $ current_period = "Nuit"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.9
+    "Je retrouve ma chambre avec la sensation d'avoir raté quelque chose. J'ai beau regarder les documents, je revois surtout Tomas, puis les visages des autres pendant la réunion."
+    if j29a_nyra_detained:
+        "Nyra est dans une chambre surveillée pour la nuit. Personne n'a prouvé qu'elle a tué Tomas, et pourtant c'est moi qui ai demandé qu'on l'y mette."
+        "Je repense à tous les moments où elle m'a aidé. Elle était là quand on a trouvé les livres, quand on a repris les témoignages et même ce matin, quand on cherchait à remettre les événements dans l'ordre."
+        noam fatigue "Si je me suis planté..."
+        "Je voudrais lui demander pourquoi son badge apparaît dans ce journal. Elle n'a pas d'explication. Moi non plus, pas une explication qui élimine toutes les autres."
+    else:
+        "Personne n'a été arrêté. J'ai accusé quelqu'un sans réussir à démontrer quoi que ce soit, et je sais que les autres vont s'en souvenir."
+        "Nyra m'a proposé qu'on poursuive les recherches une fois sur Terre. J'ai dit oui, mais j'arrive pas à me convaincre que tout s'arrêtera là."
+        noam fatigue "Pardon, Tomas..."
+        "Je rouvre le dossier une dernière fois. Il reste ce relevé de maintenance, l'appareil qui a disparu et les notes sur Keyper. On a encore trop de questions."
+    "Demain, on devrait enfin rentrer. Je ne sais même plus si j'en ai envie."
+    "J'éteins la tablette."
+    stop music fadeout 1.0
+    call end_day("30", sleeping=True) from _call_j29a_end_day_30
+    jump _30_0_1_1_0_1_REVEIL
+# Durée : ~1m20.
