@@ -5278,7 +5278,7 @@ translate english a53c02c6_1:
     noam surpris "..."
 
 # game/scenario/20_0_1_1_0.rpy:537
-translate english b22df8ce:
+translate english 0e80e0da:
 
     # noam "..."
     noam "..."
