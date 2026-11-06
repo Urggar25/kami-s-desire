@@ -732,6 +732,23 @@ label _28_0_1_1_0_1_REUNION:
     nyra neutre "Non. Mais on peut chercher sans décider que les gens de Limen sont coupables."
     $ showGroup([("kael", "calme", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
     kael raison "La plaque ne ressemble pas aux protections habituelles. Je vais vérifier les journaux de maintenance."
+
+    if "acces" in investigation_pa_completed:
+        $ showGroup([("kael", "calme", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
+        noam raison "J'ai consulté les premiers journaux avec Elias. Ils sont incomplets."
+        kael reflexion "Oui. Je vais essayer de récupérer les données locales de l'accès des dortoirs."
+        lysa fatigue "Donc pas de nom, pour le moment."
+    if "livraisons" in investigation_pa_completed:
+        $ showGroup([("nyra", "neutre", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
+        noam raison "J'ai regardé les livraisons. Plusieurs lots ont circulé entre districts, mais je n'ai pas retrouvé d'origine certaine."
+        nyra raison "Alors on peut pas accuser quelqu'un parce qu'il vient d'une région aride."
+        sael neutre "C'est tout ce que je demande."
+    if "julian" in investigation_pa_completed:
+        $ showGroup([("julian", "fatigue", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
+        julian triste "J'ai parlé avec Noam. Je croyais vraiment qu'il s'était suicidé, mais là... j'en sais plus rien."
+        elen fatigue "Moi non plus."
+    $ showGroup([("elen", "triste", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
+
     elen inquiet "Vous pensez vraiment que quelqu'un ici a fait ça ?"
     noam fatigue "On sait pas qui a pu passer par les conduits. Mais quelqu'un y a installé quelque chose."
     $ showGroup([("lysa", "neutre", 0.22), ("elen", "triste", 0.48), ("noam", "neutre", 0.74)])
