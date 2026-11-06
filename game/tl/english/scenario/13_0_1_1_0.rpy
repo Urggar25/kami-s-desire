@@ -46,7 +46,7 @@ translate english 6e32b7c9:
 translate english 4cfa907f:
 
     # "Des morceaux de plastique noir tombent au sol, un par un, comme les restes d’un animal disséqué."
-    "Pieces of black plastic fall to the floor, one by one, like the remains of something being dissected."
+    "Pieces of black plastic fall to the floor, one by one, like the remains of a dissected animal."
 
 # game/scenario/13_0_1_1_0.rpy:19
 translate english baaae05f:
