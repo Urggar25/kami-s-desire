@@ -364,6 +364,8 @@ label _27_0_1_1_0_1_QUESTIONS:
     $ investigation_pa_begin(27, 5)
     $ investigation_unlocked = True
     $ free_time_active = False
+    $ conclave_lock = False
+    $ dortoir_lock = False
     $ exploration_libre_active = True
     $ exploration_libre_allowed_rooms = list(J27A_ROOMS.keys())
     $ current_scene_active = None
