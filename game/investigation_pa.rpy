@@ -49,8 +49,11 @@ screen investigation_pa_map(rooms, title="ENQUÊTE — CONCLAVE"):
                 text title size 38 color "#D8F4FF"
                 text ("PA : %d / %d" % (investigation_pa_remaining, investigation_pa_max)) size 32 color "#69E0F8" xalign 1.0
             text "Déplacez-vous librement. Seuls les indices et interrogatoires approfondis coûtent 1 PA." size 20 color "#AAC8D8"
-            grid 3 3:
+            vpgrid:
+                cols 3
                 spacing 14
+                xsize 1410
+                ysize 560
                 for room_id, room in rooms.items():
                     button:
                         xsize 440 ysize 175
@@ -64,7 +67,7 @@ screen investigation_pa_map(rooms, title="ENQUÊTE — CONCLAVE"):
             hbox:
                 spacing 30 xalign 0.5
                 textbutton "TERMINER L'ENQUÊTE" action Return("finish") text_size 22
-                textbutton "DOSSIER D'ENQUÊTE" action Show("investigation_dossier") text_size 22
+                textbutton "DOSSIER D'ENQUÊTE" action Show("investigation_dossier", persistent_access=True) text_size 22
             if investigation_pa_remaining <= 0:
                 text "Tous les points d'action ont été dépensés. Vous pouvez consulter votre dossier ou terminer." size 19 color "#F3C778"
 
@@ -99,7 +102,7 @@ screen investigation_pa_room(room_id, rooms, actions):
                     text ("◆ " + action["title"] + " — PA insuffisants") size 18 color "#8799A5"
             null height 25
             textbutton "REVENIR AU PLAN" action Return("back") text_size 23
-            textbutton "CONSULTER LE DOSSIER" action Show("investigation_dossier") text_size 20
+            textbutton "CONSULTER LE DOSSIER" action Show("investigation_dossier", persistent_access=True) text_size 20
 
 screen investigation_pa_confirm(action):
     modal True
