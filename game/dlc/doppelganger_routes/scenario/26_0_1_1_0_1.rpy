@@ -441,7 +441,9 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     noam neutre "La porte était fermée de l'intérieur."
     iris raison "Oui. Elias a dû forcer le verrou. C'est noté."
     "Iris a gardé la pièce intacte autant que possible. Je prends une photo de la protection métallique devant la bouche d'aération."
+    $ hideGroup()
     call investigation_evidence_photo_take("j26_photo_grille") from _call_j26_grille_photo
+    $ showGroup([("iris", "fatigue", 0.27), ("noam", "inquiet", 0.69)])
     "Je regarde les vis une dernière fois. Elles sont en place, mais il y a toujours de l'air qui passe."
     iris inquiet "Et Elen ?"
     noam fatigue "Lysa est avec elle."
@@ -464,7 +466,9 @@ label _26_0_1_1_0_1_DECOUVERTE_FLACON:
     noam inquiet "Tu crois qu'il en a pris ?"
     iris raison "Je sais pas. Je vais vérifier, mais je peux pas te dire ça à l'œil."
     "Je photographie le flacon sans toucher au bouchon. Iris le range dans un sachet."
+    $ hideGroup()
     call investigation_evidence_photo_take("j26_photo_flacon") from _call_j26_flacon_photo
+    $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
     noam fatigue "Tu veux dire qu'il aurait pu... se suicider ?"
     iris fatigue "C'est une hypothèse. Pas une conclusion, Noam. On ne sait ni s'il a pris ces comprimés, ni quand."
     noam inquiet "Mais hier, il avait peur. Il était vraiment mal..."
