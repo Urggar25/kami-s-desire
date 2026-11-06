@@ -1492,37 +1492,37 @@ translate english 0a7bcf68:
 translate english 12343c3f:
 
     # think "Et je ne peux même pas leur expliquer."
-    think ""
+    think "And I can't even explain it to them."
 
 # game/scenario/13_0_1_1_0.rpy:427
 translate english 8e92683f:
 
     # "Je pose mon plateau devant moi."
-    ""
+    "I set my tray down in front of me."
 
 # game/scenario/13_0_1_1_0.rpy:428
 translate english 9754680c:
 
     # "Le café tremble légèrement dans la tasse."
-    ""
+    "The coffee trembles slightly in the cup."
 
 # game/scenario/13_0_1_1_0.rpy:429
 translate english 6a1a0b9b:
 
     # "Je réalise que ma main n’est pas stable."
-    ""
+    "I realize my hand isn't steady."
 
 # game/scenario/13_0_1_1_0.rpy:431
 translate english 839493cf:
 
     # "Elen hésite un instant, puis finit par venir s’asseoir en face de moi, même si elle garde les yeux baissés sur son plateau."
-    ""
+    "Elen hesitates, then comes to sit across from me, though she keeps her eyes on her tray."
 
 # game/scenario/13_0_1_1_0.rpy:432
 translate english aed2c9bb:
 
     # "Elle s’assoit lentement, comme si le simple fait de me rejoindre lui demandait un effort."
-    ""
+    "She sits slowly, as if even coming over takes an effort."
 
 # game/scenario/13_0_1_1_0.rpy:434
 translate english ff27b530:
@@ -1534,13 +1534,13 @@ translate english ff27b530:
 translate english 1e4e4666:
 
     # elen "Moi surtout. J’avais vraiment envie qu’on puisse enfin avoir un peu d’intimité."
-    elen ""
+    elen "Me especially. I really thought we'd finally have some privacy."
 
 # game/scenario/13_0_1_1_0.rpy:436
 translate english 534034a9:
 
     # elen "Et maintenant… on est tous à découvert. Tout le temps."
-    elen ""
+    elen "And now... we're all exposed. All the time."
 
 # game/scenario/13_0_1_1_0.rpy:438
 translate english c2d190a0:
@@ -1552,67 +1552,67 @@ translate english c2d190a0:
 translate english bbd5f6b4:
 
     # elen "Mais c’est arrivé."
-    elen ""
+    elen "But it happened."
 
 # game/scenario/13_0_1_1_0.rpy:442
 translate english 97306692:
 
     # "Elle relève enfin les yeux vers moi."
-    ""
+    "She finally looks up at me."
 
 # game/scenario/13_0_1_1_0.rpy:443
 translate english ea46f243:
 
     # "Ils sont rouges, fatigués."
-    ""
+    "Her eyes are red and tired."
 
 # game/scenario/13_0_1_1_0.rpy:445
 translate english 482488fc:
 
     # elen "Hier soir, j’ai cru qu’on allait tous pouvoir souffler un peu."
-    elen ""
+    elen "Last night, I really thought we'd finally be able to breathe a little."
 
 # game/scenario/13_0_1_1_0.rpy:446
 translate english 31f8afa2:
 
     # elen "Juste un peu."
-    elen ""
+    elen "Just a little."
 
 # game/scenario/13_0_1_1_0.rpy:447
 translate english 72eb198d:
 
     # elen "Et maintenant, j’ai l’impression que même pleurer dans ma chambre va devenir quelque chose qu’on devra assumer devant Kami."
-    elen ""
+    elen "And now I feel like even crying alone in my room is something I'll have to answer to Kami for."
 
 # game/scenario/13_0_1_1_0.rpy:449
 translate english 5e8885ca:
 
     # "Je n’ai rien à répondre."
-    ""
+    "I have nothing to say."
 
 # game/scenario/13_0_1_1_0.rpy:450
 translate english 65975754:
 
     # "Parce qu’elle a raison."
-    ""
+    "Because she's right."
 
 # game/scenario/13_0_1_1_0.rpy:452
 translate english 71bfb614:
 
     # iris "Elen, laisse-le."
-    iris ""
+    iris "Elen, leave him alone."
 
 # game/scenario/13_0_1_1_0.rpy:454
 translate english ec0eda57:
 
     # "Iris s’assoit à côté d’elle, mais elle ne me regarde presque pas."
-    ""
+    "Iris sits beside her, barely looking at me."
 
 # game/scenario/13_0_1_1_0.rpy:455
 translate english 27f3f0cf:
 
     # "Elle croise les bras, fixe le bord de la table, puis finit par soupirer."
-    ""
+    "She crosses her arms, stares at the edge of the table, and finally sighs."
 
 # game/scenario/13_0_1_1_0.rpy:457
 translate english 5a2e30d1:
@@ -1624,25 +1624,25 @@ translate english 5a2e30d1:
 translate english d5792583:
 
     # iris "On avait besoin de toi. Et tu nous as lâchés en plein milieu."
-    iris ""
+    iris "We needed you. And you bailed on us halfway through."
 
 # game/scenario/13_0_1_1_0.rpy:460
 translate english 2b51f12c:
 
     # "Je fixe mon café sans y toucher."
-    ""
+    "I stare at my coffee without touching it."
 
 # game/scenario/13_0_1_1_0.rpy:461
 translate english 7a9df729:
 
     # "La surface noire reflète vaguement mon visage."
-    ""
+    "I can just make out my reflection in its dark surface."
 
 # game/scenario/13_0_1_1_0.rpy:462
 translate english 2c9f8978:
 
     # "Je me trouve épuisé. Presque étranger."
-    ""
+    "I look exhausted. Almost like a stranger."
 
 # game/scenario/13_0_1_1_0.rpy:464
 translate english 440c2b3a:
@@ -1654,43 +1654,43 @@ translate english 440c2b3a:
 translate english 0ce2f20a:
 
     # iris "Personne ne fait comme si tout était normal."
-    iris ""
+    iris "No one's pretending everything's normal."
 
 # game/scenario/13_0_1_1_0.rpy:468
 translate english 9d48be69:
 
     # noam "Si."
-    noam ""
+    noam "Yes, we are."
 
 # game/scenario/13_0_1_1_0.rpy:469
 translate english 212cd620:
 
     # noam "On vote. On discute. On argumente."
-    noam ""
+    noam "We vote. We talk. We argue."
 
 # game/scenario/13_0_1_1_0.rpy:470
 translate english bc03bdae:
 
     # noam "On fait comme si ce système avait encore du sens."
-    noam ""
+    noam "We act like this whole system still makes sense."
 
 # game/scenario/13_0_1_1_0.rpy:472
 translate english a94c8668:
 
     # mara "Et nous alors ?! On fait comme si tout était normal peut-être ?!"
-    mara ""
+    mara "And what about US?! You think we're acting like everything's fine?!"
 
 # game/scenario/13_0_1_1_0.rpy:474
 translate english dc019710:
 
     # "Mara s’est approchée de la table, incapable de se retenir."
-    ""
+    "Mara has come over, unable to hold back."
 
 # game/scenario/13_0_1_1_0.rpy:475
 translate english 80d6fe9e:
 
     # "Elle pose ses deux mains sur le bord, assez fort pour faire vibrer mon plateau."
-    ""
+    "She slams both hands onto the table hard enough to rattle my tray."
 
 # game/scenario/13_0_1_1_0.rpy:477
 translate english cca5f7d4:
@@ -1702,7 +1702,7 @@ translate english cca5f7d4:
 translate english 2150fe96:
 
     # mara "Kami voit tout maintenant. Absolument tout. Et c’est grâce à Monsieur qui a pété les plombs !"
-    mara ""
+    mara "Kami can see everything now. EVERYTHING. And it's all thanks to His Highness having a meltdown!"
 
 # game/scenario/13_0_1_1_0.rpy:480
 translate english 160d34ce:
@@ -1714,67 +1714,67 @@ translate english 160d34ce:
 translate english c7121a9d:
 
     # mara "Non, justement !"
-    mara ""
+    mara "No, that's exactly the point!"
 
 # game/scenario/13_0_1_1_0.rpy:483
 translate english e9ed5645:
 
     # mara "Je crois que tu t’en rends compte seulement maintenant que tout le monde te regarde de travers."
-    mara ""
+    mara "I think you're only realizing it now because everyone's looking at you like you've lost it."
 
 # game/scenario/13_0_1_1_0.rpy:485
 translate english 6f50913a:
 
     # "Le silence autour de nous devient pesant. Plusieurs personnes aux tables voisines nous observent."
-    ""
+    "The silence grows heavy. People at the nearby tables watch us."
 
 # game/scenario/13_0_1_1_0.rpy:486
 translate english c687f6af:
 
     # "Même Goumi ne bouge plus derrière son comptoir."
-    ""
+    "Even Goumi has stopped moving behind the counter."
 
 # game/scenario/13_0_1_1_0.rpy:488
 translate english dbea8a59:
 
     # think "Ils ont raison."
-    think ""
+    think "They're right."
 
 # game/scenario/13_0_1_1_0.rpy:489
 translate english 48198cc8:
 
     # think "J’ai tout fait foirer."
-    think ""
+    think "I screwed everything up."
 
 # game/scenario/13_0_1_1_0.rpy:490
 translate english a0a4bd24:
 
     # think "Mais si je leur avais dit la vérité… ils m’auraient pris pour un fou."
-    think ""
+    think "But if I'd told them the truth... they'd have thought I was crazy."
 
 # game/scenario/13_0_1_1_0.rpy:491
 translate english 8724a435:
 
     # think "Ils me regardent déjà comme si j’étais instable."
-    think ""
+    think "They already look at me like I'm unstable."
 
 # game/scenario/13_0_1_1_0.rpy:492
 translate english e5d2862d:
 
     # think "Alors si je leur parle du couloir, de la silhouette, de tout ce qui cloche…"
-    think ""
+    think "So if I tell them about the corridor, the silhouette, everything that's wrong..."
 
 # game/scenario/13_0_1_1_0.rpy:494
 translate english 4cc161a0:
 
     # "Je serre ma tasse entre mes doigts."
-    ""
+    "I tighten my grip on the cup."
 
 # game/scenario/13_0_1_1_0.rpy:495
 translate english 23c28bd2:
 
     # "Elle est trop chaude, mais je ne la lâche pas."
-    ""
+    "It's too hot, but I don't let go."
 
 # game/scenario/13_0_1_1_0.rpy:497
 translate english afb62e82:
@@ -1786,55 +1786,55 @@ translate english afb62e82:
 translate english c690d0b8:
 
     # "Sa voix est plus basse."
-    ""
+    "Her voice is quieter."
 
 # game/scenario/13_0_1_1_0.rpy:500
 translate english 5e34933a:
 
     # "Moins dure."
-    ""
+    "Less harsh."
 
 # game/scenario/13_0_1_1_0.rpy:502
 translate english 05bb5d9c:
 
     # iris "Il y a quelque chose que tu ne nous dis pas, pas vrai ?"
-    iris ""
+    iris "There's something you're not telling us, isn't there?"
 
 # game/scenario/13_0_1_1_0.rpy:504
 translate english 9e1e5a5f:
 
     # "Je relève les yeux vers elle."
-    ""
+    "I look up at her."
 
 # game/scenario/13_0_1_1_0.rpy:505
 translate english 5db38ec0:
 
     # "Pendant une seconde, j’ai presque envie de tout lâcher."
-    ""
+    "For a second, I almost let it all out."
 
 # game/scenario/13_0_1_1_0.rpy:506
 translate english 2ad50392:
 
     # "De lui dire que quelque chose se cache dans les angles morts."
-    ""
+    "Tell her something is hiding in the blind spots."
 
 # game/scenario/13_0_1_1_0.rpy:507
 translate english 0cae9a90:
 
     # "Que quelqu’un a supprimé des images."
-    ""
+    "That someone deleted the footage."
 
 # game/scenario/13_0_1_1_0.rpy:508
 translate english 0b1a5d91:
 
     # "Que les souvenirs des autres commencent à disparaître."
-    ""
+    "That other people's memories are starting to disappear."
 
 # game/scenario/13_0_1_1_0.rpy:509
 translate english 894c2114:
 
     # "Que je ne sais plus si je suis paranoïaque ou simplement en retard sur la vérité."
-    ""
+    "That I don't know whether I'm paranoid or just late to the truth."
 
 # game/scenario/13_0_1_1_0.rpy:511
 translate english 78eb9349:
@@ -1846,31 +1846,31 @@ translate english 78eb9349:
 translate english db754345:
 
     # "Le mensonge sort trop vite."
-    ""
+    "The lie comes out too quickly."
 
 # game/scenario/13_0_1_1_0.rpy:514
 translate english ecf1bb38:
 
     # "Iris le voit immédiatement."
-    ""
+    "Iris catches it immediately."
 
 # game/scenario/13_0_1_1_0.rpy:516
 translate english b7c2aaec:
 
     # iris "D’accord."
-    iris ""
+    iris "Okay."
 
 # game/scenario/13_0_1_1_0.rpy:518
 translate english 8f6ede87:
 
     # "Elle ne me croit pas."
-    ""
+    "She doesn't believe me."
 
 # game/scenario/13_0_1_1_0.rpy:519
 translate english d74a7052:
 
     # "Mais elle n’insiste pas."
-    ""
+    "But she doesn't press me."
 
 # game/scenario/13_0_1_1_0.rpy:521
 translate english e750c693:
@@ -1882,13 +1882,13 @@ translate english e750c693:
 translate english 41674f5c:
 
     # julian "Bon… on va peut-être tous respirer un coup, hein ?"
-    julian ""
+    julian "Okay... how about everybody takes a breath, huh?"
 
 # game/scenario/13_0_1_1_0.rpy:525
 translate english e9b73a08:
 
     # "Sa tentative de détendre l’atmosphère tombe dans le vide le plus total."
-    ""
+    "His attempt to lighten the mood falls completely flat."
 
 # game/scenario/13_0_1_1_0.rpy:527
 translate english b7fbe23d:
@@ -1900,13 +1900,13 @@ translate english b7fbe23d:
 translate english 38b02698:
 
     # julian "Très bien. Mauvais timing."
-    julian ""
+    julian "Right. Bad timing."
 
 # game/scenario/13_0_1_1_0.rpy:530
 translate english 0ccd564c:
 
     # "Il recule légèrement, comme s’il regrettait d’être venu jusqu’ici."
-    ""
+    "He edges backward, as though regretting coming over at all."
 
 # game/scenario/13_0_1_1_0.rpy:532
 translate english 080e23be:
@@ -1918,73 +1918,73 @@ translate english 080e23be:
 translate english 7cc70d4f:
 
     # mara "Alors fallait peut-être y penser avant."
-    mara ""
+    mara "Maybe you should've thought of that earlier."
 
 # game/scenario/13_0_1_1_0.rpy:536
 translate english aae033ab:
 
     # elen "Je ne parle pas seulement de Noam."
-    elen ""
+    elen "I'm not just talking about Noam."
 
 # game/scenario/13_0_1_1_0.rpy:538
 translate english 9f441dc4:
 
     # "Mara se tait."
-    ""
+    "Mara falls silent."
 
 # game/scenario/13_0_1_1_0.rpy:539
 translate english 3d1799e8:
 
     # "Une seconde seulement."
-    ""
+    "Just for a second."
 
 # game/scenario/13_0_1_1_0.rpy:540
 translate english f86b41fa:
 
     # "Mais assez longtemps pour que je comprenne qu’elle aussi est épuisée."
-    ""
+    "But long enough for me to see she's exhausted too."
 
 # game/scenario/13_0_1_1_0.rpy:542
 translate english 26d9390f:
 
     # "Je reste silencieux, les épaules voûtées, sentant le poids de tous les regards."
-    ""
+    "I stay quiet, shoulders hunched under the weight of their stares."
 
 # game/scenario/13_0_1_1_0.rpy:543
 translate english 2cdc6cf2:
 
     # "Le café refroidit devant moi."
-    ""
+    "The coffee cools in front of me."
 
 # game/scenario/13_0_1_1_0.rpy:544
 translate english c482c817:
 
     # "Je n’ai toujours pas bu une seule gorgée."
-    ""
+    "I still haven't taken a sip."
 
 # game/scenario/13_0_1_1_0.rpy:546
 translate english a8656ac5:
 
     # think "Je suis seul maintenant."
-    think ""
+    think "I'm alone now."
 
 # game/scenario/13_0_1_1_0.rpy:547
 translate english 759db7dc:
 
     # think "Vraiment seul."
-    think ""
+    think "Really alone."
 
 # game/scenario/13_0_1_1_0.rpy:548
 translate english eec5f076:
 
     # think "Même ceux qui s’inquiètent ne savent plus quoi faire de moi."
-    think ""
+    think "Even the ones who care about me don't know what to do with me anymore."
 
 # game/scenario/13_0_1_1_0.rpy:550
 translate english 3bc07cbb:
 
     # "Je repousse lentement ma chaise."
-    ""
+    "I slowly push my chair back."
 
 # game/scenario/13_0_1_1_0.rpy:552
 translate english 45f1c21b:
@@ -2002,97 +2002,97 @@ translate english 269b4e53:
 translate english 26989d8e:
 
     # mara "Évidemment."
-    mara ""
+    mara "Of course."
 
 # game/scenario/13_0_1_1_0.rpy:558
 translate english 211fe3cb:
 
     # "Je prends une inspiration courte."
-    ""
+    "I take a shallow breath."
 
 # game/scenario/13_0_1_1_0.rpy:559
 translate english dbc1e623:
 
     # "Je pourrais répondre."
-    ""
+    "I could answer."
 
 # game/scenario/13_0_1_1_0.rpy:560
 translate english d36e1a89:
 
     # "Je pourrais m’énerver."
-    ""
+    "I could get angry."
 
 # game/scenario/13_0_1_1_0.rpy:561
 translate english 04cd42a1:
 
     # "Je pourrais leur hurler qu’ils ne comprennent rien."
-    ""
+    "I could scream that they don't understand a damn thing."
 
 # game/scenario/13_0_1_1_0.rpy:563
 translate english a51a68a6:
 
     # "Mais ça ne changerait rien."
-    ""
+    "But it wouldn't change anything."
 
 # game/scenario/13_0_1_1_0.rpy:565
 translate english 20cf914c:
 
     # noam "J’ai besoin d’air."
-    noam ""
+    noam "I need some air."
 
 # game/scenario/13_0_1_1_0.rpy:567
 translate english 75b04a86:
 
     # "Personne ne me retient."
-    ""
+    "No one stops me."
 
 # game/scenario/13_0_1_1_0.rpy:568
 translate english fb802dad:
 
     # "Et ça me confirme quelque chose que je n’avais pas envie de savoir."
-    ""
+    "And that confirms something I didn't want to know."
 
 # game/scenario/13_0_1_1_0.rpy:574
 translate english 4d86454d:
 
     # "Je ne supporte plus l’ambiance de la cafétéria."
-    ""
+    "I can't stand the atmosphere in the cafeteria anymore."
 
 # game/scenario/13_0_1_1_0.rpy:575
 translate english fab9dce3:
 
     # "Je me lève sans finir mon café et prends un couloir au hasard, juste pour m’éloigner."
-    ""
+    "I get up without finishing my coffee and take a random corridor, just to get away."
 
 # game/scenario/13_0_1_1_0.rpy:579
 translate english 54227fe0:
 
     # think "Je veux juste un endroit calme. Cinq minutes. Sans regards. Sans jugement."
-    think ""
+    think "I just need somewhere quiet. Five minutes. No stares. No judgment."
 
 # game/scenario/13_0_1_1_0.rpy:581
 translate english b46ae0b0:
 
     # "Je marche sans but, les épaules voûtées. Mes pas résonnent dans le couloir désert."
-    ""
+    "I wander with my shoulders slumped, my footsteps echoing through the empty corridor."
 
 # game/scenario/13_0_1_1_0.rpy:582
 translate english 38bc8cce:
 
     # "Soudain, des voix me parviennent depuis un croisement un peu plus loin. Je m’arrête net."
-    ""
+    "Suddenly I hear voices from a junction up ahead. I stop dead."
 
 # game/scenario/13_0_1_1_0.rpy:583
 translate english ecf8dfae:
 
     # "Je reconnais immédiatement la voix de Ryn, explosive comme toujours."
-    ""
+    "I immediately recognize Ryn's voice, as explosive as ever."
 
 # game/scenario/13_0_1_1_0.rpy:584
 translate english bf999608:
 
     # "Je me colle contre le mur, hors de vue, et j’écoute."
-    ""
+    "I press against the wall, out of sight, and listen."
 
 # game/scenario/13_0_1_1_0.rpy:588
 translate english 12d26271:
@@ -2104,7 +2104,7 @@ translate english 12d26271:
 translate english 66cf6eda:
 
     # ryn "Après ce qu’il a fait hier ? Il nous a tous traités de traîtres ! Il a pété un câble en plein débat !"
-    ryn ""
+    ryn "After what he did yesterday? He called us ALL traitors! He lost his shit in the middle of the debate!"
 
 # game/scenario/13_0_1_1_0.rpy:591
 translate english b12b525d:
@@ -2122,25 +2122,25 @@ translate english 8e4d1145:
 translate english 1049876f:
 
     # ryn "Le prochain vote, il va encore nous faire un scandale et tout faire foirer. Moi je dis qu’on le met hors jeu. Qu’il reste dans son coin."
-    ryn ""
+    ryn "Next time we have an important vote, he's going to pull another stunt and ruin it. I say we keep him out of it. Let him sulk on his own."
 
 # game/scenario/13_0_1_1_0.rpy:596
 translate english fd6fe629_1:
 
     # "Mon ventre se noue."
-    ""
+    "My stomach knots."
 
 # game/scenario/13_0_1_1_0.rpy:598
 translate english 4c0fd8be:
 
     # tomas "Euh… je sais pas… On ne peut pas juste l’exclure comme ça, si ?"
-    tomas ""
+    tomas "Uh... I don't know... We can't just exclude him like that, can we?"
 
 # game/scenario/13_0_1_1_0.rpy:599
 translate english aadbdde3:
 
     # tomas "C’est quand même Noam… Il a toujours été plutôt calme avant."
-    tomas ""
+    tomas "It's still Noam... He's always been pretty calm before."
 
 # game/scenario/13_0_1_1_0.rpy:601
 translate english 2bec8974:
@@ -2152,43 +2152,43 @@ translate english 2bec8974:
 translate english 378744e3:
 
     # ryn "Et maintenant on a même plus nos putains de brouilleurs ! On peut même plus être tranquille dans nos chambres !"
-    ryn ""
+    ryn "And now we don't even have our fucking jammers! Can't even have some peace in our own rooms!"
 
 # game/scenario/13_0_1_1_0.rpy:604
 translate english 1dce1a62:
 
     # nyra "…"
-    nyra ""
+    nyra "..."
 
 # game/scenario/13_0_1_1_0.rpy:606
 translate english c871245a:
 
     # "Nyra ne dit rien. Comme souvent. Elle écoute."
-    ""
+    "Nyra says nothing. As usual, she listens."
 
 # game/scenario/13_0_1_1_0.rpy:608
 translate english 5522affd:
 
     # elias "Moi je dis pas qu’on le vire complètement… mais ouais, il est devenu bizarre."
-    elias ""
+    elias "I'm not saying we should kick him out entirely... but yeah, he's acting weird."
 
 # game/scenario/13_0_1_1_0.rpy:609
 translate english d392537e:
 
     # elias "Balancer des accusations comme ça sans preuve, c’est pas constructif. Ça met juste tout le monde sur les nerfs."
-    elias ""
+    elias "Throwing accusations around without proof doesn't help. It just puts everyone on edge."
 
 # game/scenario/13_0_1_1_0.rpy:611
 translate english 05ac0dbd:
 
     # tomas "Ouais… c’est clair que c’était pas cool."
-    tomas ""
+    tomas "Yeah... that was pretty rough."
 
 # game/scenario/13_0_1_1_0.rpy:612
 translate english 24658cba:
 
     # tomas "Mais… on est tous à cran en ce moment. Peut-être qu’il regrette."
-    tomas ""
+    tomas "But... we're all on edge right now. Maybe he regrets it."
 
 # game/scenario/13_0_1_1_0.rpy:614
 translate english 4dc4d36c:
@@ -2200,61 +2200,61 @@ translate english 4dc4d36c:
 translate english e213425a:
 
     # ryn "La prochaine fois qu’il y a un vote important, je veux pas qu’il ouvre sa gueule. Point."
-    ryn ""
+    ryn "Next time there's a serious vote, I don't want to hear a damn word out of his mouth. Period."
 
 # game/scenario/13_0_1_1_0.rpy:616
 translate english 23435332:
 
     # ryn "Qu’il reste dans sa chambre s’il veut faire sa diva."
-    ryn ""
+    ryn "If he wants to act like a diva, he can stay in his room."
 
 # game/scenario/13_0_1_1_0.rpy:618
 translate english 03c6c70f:
 
     # "Un long silence."
-    ""
+    "A long silence follows."
 
 # game/scenario/13_0_1_1_0.rpy:620
 translate english 2065af3c:
 
     # think "Ils parlent de moi comme si j’étais déjà un ennemi."
-    think ""
+    think "They talk about me like I'm already the enemy."
 
 # game/scenario/13_0_1_1_0.rpy:621
 translate english 77af7289:
 
     # think "Ryn est clairement en colère… mais est-ce qu’il cache autre chose ?"
-    think ""
+    think "Ryn's obviously furious... but is he hiding something else?"
 
 # game/scenario/13_0_1_1_0.rpy:622
 translate english f6e0d1dd:
 
     # think "Elias… il essaie de temporiser, mais il me lâche aussi."
-    think ""
+    think "Elias... he's trying to keep the peace, but even he's turning his back on me."
 
 # game/scenario/13_0_1_1_0.rpy:623
 translate english 9083c78b:
 
     # think "Tomas… toujours le gentil. Trop gentil. Est-ce qu’il joue un rôle ?"
-    think ""
+    think "Tomas... always the nice guy. Too nice. Is it all an act?"
 
 # game/scenario/13_0_1_1_0.rpy:624
 translate english 71c6d674:
 
     # think "Et Nyra… elle ne dit rien. Comme d’habitude. Ça veut dire quoi ?"
-    think ""
+    think "And Nyra... she says nothing. As usual. What does that mean?"
 
 # game/scenario/13_0_1_1_0.rpy:626
 translate english f890958e:
 
     # "Je serre les poings contre le mur."
-    ""
+    "I press my fists against the wall."
 
 # game/scenario/13_0_1_1_0.rpy:628
 translate english f735e0c4:
 
     # think "L’un d’entre eux… L’un d’entre eux est le traître."
-    think ""
+    think "One of them... one of them is the traitor."
 
 # game/scenario/13_0_1_1_0.rpy:629
 translate english 1aadab1c:
