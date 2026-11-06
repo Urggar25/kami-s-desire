@@ -1168,25 +1168,25 @@ translate english 4c59eeae:
 translate english 704958e9:
 
     # mara agace "Je sais."
-    mara agace ""
+    mara agace "I know."
 
 # game/scenario/14_0_1_1_0.rpy:297
 translate english 6e0c93b7:
 
     # mara colere "Et je veux qu'il entende."
-    mara colere ""
+    mara colere "And I want him to hear it."
 
 # game/scenario/14_0_1_1_0.rpy:298
 translate english 929c5ee6:
 
     # noam fatigue "J'entends."
-    noam fatigue ""
+    noam fatigue "I can hear you."
 
 # game/scenario/14_0_1_1_0.rpy:299
 translate english 7b435265_1:
 
     # mara colere "Parfait."
-    mara colere ""
+    mara colere "Perfect."
 
 # game/scenario/14_0_1_1_0.rpy:300
 translate english 7059e813:
@@ -1204,49 +1204,49 @@ translate english b382563f:
 translate english 8c9426bf:
 
     # sael mefiant "Noam."
-    sael mefiant ""
+    sael mefiant "Noam."
 
 # game/scenario/14_0_1_1_0.rpy:303
 translate english 61b255aa:
 
     # noam inquiet "Quoi ?"
-    noam inquiet ""
+    noam inquiet "What?"
 
 # game/scenario/14_0_1_1_0.rpy:304
 translate english 75d4f1a9:
 
     # sael raison "Viens dans ma chambre après."
-    sael raison ""
+    sael raison "Come to my room afterward."
 
 # game/scenario/14_0_1_1_0.rpy:305
 translate english b27dcf16:
 
     # sael mefiant "J'ai besoin de te parler."
-    sael mefiant ""
+    sael mefiant "I need to talk to you."
 
 # game/scenario/14_0_1_1_0.rpy:306
 translate english c31eb3bf:
 
     # noam reflexion "De quoi ?"
-    noam reflexion ""
+    noam reflexion "About what?"
 
 # game/scenario/14_0_1_1_0.rpy:307
 translate english 2f976c44:
 
     # sael mefiant "Pas ici."
-    sael mefiant ""
+    sael mefiant "Not here."
 
 # game/scenario/14_0_1_1_0.rpy:308
 translate english bcf873be:
 
     # noam fatigue "Je ne suis pas sûr d'avoir envie."
-    noam fatigue ""
+    noam fatigue "I'm not sure I want to."
 
 # game/scenario/14_0_1_1_0.rpy:309
 translate english 67df9d6d:
 
     # sael determine "Ce n'était pas vraiment une invitation."
-    sael determine ""
+    sael determine "It wasn't exactly an invitation."
 
 # game/scenario/14_0_1_1_0.rpy:310
 translate english 9e1e5a5f_1:
@@ -1258,61 +1258,61 @@ translate english 9e1e5a5f_1:
 translate english de7edb43:
 
     # noam inquiet "C'est censé me rassurer ?"
-    noam inquiet ""
+    noam inquiet "Is that supposed to reassure me?"
 
 # game/scenario/14_0_1_1_0.rpy:312
 translate english c4b10f1b:
 
     # sael raison "Non."
-    sael raison ""
+    sael raison "No."
 
 # game/scenario/14_0_1_1_0.rpy:313
 translate english 4715e2e6:
 
     # sael mefiant "C'est censé être clair."
-    sael mefiant ""
+    sael mefiant "It's supposed to be clear."
 
 # game/scenario/14_0_1_1_0.rpy:314
 translate english f41996f5:
 
     # iris inquiet "Sael..."
-    iris inquiet ""
+    iris inquiet "Sael..."
 
 # game/scenario/14_0_1_1_0.rpy:315
 translate english a83a6ee2:
 
     # sael mefiant "Je ne lui veux pas de mal."
-    sael mefiant ""
+    sael mefiant "I don't mean him any harm."
 
 # game/scenario/14_0_1_1_0.rpy:316
 translate english 01457792:
 
     # mara rire_profond "Toujours bon signe quand quelqu'un précise ça."
-    mara rire_profond ""
+    mara rire_profond "Always a great sign when someone feels the need to say that."
 
 # game/scenario/14_0_1_1_0.rpy:317
 translate english 2bb2f583:
 
     # sael colere "Tais-toi."
-    sael colere ""
+    sael colere "Shut up."
 
 # game/scenario/14_0_1_1_0.rpy:318
 translate english e0f5dc72:
 
     # mara agace "Oh, l'ambiance revient."
-    mara agace ""
+    mara agace "Oh, good. The mood's back."
 
 # game/scenario/14_0_1_1_0.rpy:319
 translate english 40e09279:
 
     # sael raison "Après manger."
-    sael raison ""
+    sael raison "After you eat."
 
 # game/scenario/14_0_1_1_0.rpy:320
 translate english 816624e9:
 
     # sael mefiant "Ne tarde pas."
-    sael mefiant ""
+    sael mefiant "Don't be late."
 
 # game/scenario/14_0_1_1_0.rpy:321
 translate english 31691108:
@@ -1360,235 +1360,235 @@ translate english 032d9fb9:
 translate english 53e9bcad:
 
     # iris inquiet "Noam..."
-    iris inquiet ""
+    iris inquiet "Noam..."
 
 # game/scenario/14_0_1_1_0.rpy:332
 translate english f551449a:
 
     # noam fatigue "Tu viens aussi me faire la leçon ?"
-    noam fatigue ""
+    noam fatigue "Here to lecture me too?"
 
 # game/scenario/14_0_1_1_0.rpy:333
 translate english f1a4a2cf:
 
     # iris colere "Ne commence pas."
-    iris colere ""
+    iris colere "Don't start."
 
 # game/scenario/14_0_1_1_0.rpy:334
 translate english 1f35d1f6:
 
     # noam fatigue "Je suis sérieux."
-    noam fatigue ""
+    noam fatigue "I'm serious."
 
 # game/scenario/14_0_1_1_0.rpy:335
 translate english 8688dc08:
 
     # iris fatigue "Moi aussi."
-    iris fatigue ""
+    iris fatigue "So am I."
 
 # game/scenario/14_0_1_1_0.rpy:336
 translate english e5b3a417:
 
     # iris inquiet "Tu ne peux pas continuer comme ça."
-    iris inquiet ""
+    iris inquiet "You can't keep doing this."
 
 # game/scenario/14_0_1_1_0.rpy:337
 translate english 36177c23:
 
     # noam fatigue "Comme quoi ?"
-    noam fatigue ""
+    noam fatigue "Doing what?"
 
 # game/scenario/14_0_1_1_0.rpy:338
 translate english 8ca48b79:
 
     # iris inquiet "Comme si tout le monde était contre toi."
-    iris inquiet ""
+    iris inquiet "Acting like everyone's against you."
 
 # game/scenario/14_0_1_1_0.rpy:339
 translate english eb240e16:
 
     # iris inquiet "Comme si tu étais déjà seul."
-    iris inquiet ""
+    iris inquiet "Like you're already alone."
 
 # game/scenario/14_0_1_1_0.rpy:340
 translate english 4c4fdbcf:
 
     # iris inquiet "Comme si tu avais déjà perdu."
-    iris inquiet ""
+    iris inquiet "Like you've already lost."
 
 # game/scenario/14_0_1_1_0.rpy:341
 translate english e75a3a4f:
 
     # noam fatigue "Ce n'est pas complètement faux."
-    noam fatigue ""
+    noam fatigue "That's not entirely wrong."
 
 # game/scenario/14_0_1_1_0.rpy:342
 translate english 37420407:
 
     # iris colere "Si tu dis ça, ça va devenir vrai."
-    iris colere ""
+    iris colere "Keep saying that and it'll come true."
 
 # game/scenario/14_0_1_1_0.rpy:343
 translate english f7ca2206:
 
     # noam inquiet "Les autres parlent, c'est ça ?"
-    noam inquiet ""
+    noam inquiet "The others are talking, aren't they?"
 
 # game/scenario/14_0_1_1_0.rpy:344
 translate english f7892317:
 
     # iris hesitation "Oui."
-    iris hesitation ""
+    iris hesitation "Yes."
 
 # game/scenario/14_0_1_1_0.rpy:345
 translate english 8b96325e:
 
     # noam fatigue "Ils disent quoi ?"
-    noam fatigue ""
+    noam fatigue "What are they saying?"
 
 # game/scenario/14_0_1_1_0.rpy:346
 translate english 7f88a9fa:
 
     # iris triste "Tu le sais déjà."
-    iris triste ""
+    iris triste "You already know."
 
 # game/scenario/14_0_1_1_0.rpy:347
 translate english b681309c:
 
     # noam colere "Dis-le."
-    noam colere ""
+    noam colere "Say it."
 
 # game/scenario/14_0_1_1_0.rpy:348
 translate english d34a55b4:
 
     # iris inquiet "Certains disent que tu deviens dangereux."
-    iris inquiet ""
+    iris inquiet "Some of them think you're becoming dangerous."
 
 # game/scenario/14_0_1_1_0.rpy:349
 translate english b5f01326:
 
     # noam rire "Dangereux."
-    noam rire ""
+    noam rire "Dangerous."
 
 # game/scenario/14_0_1_1_0.rpy:350
 translate english 61760086:
 
     # iris colere "Ne ris pas."
-    iris colere ""
+    iris colere "Don't laugh."
 
 # game/scenario/14_0_1_1_0.rpy:351
 translate english 21aedebc:
 
     # noam fatigue "Je ne sais plus quoi faire d'autre."
-    noam fatigue ""
+    noam fatigue "I don't know what else to do anymore."
 
 # game/scenario/14_0_1_1_0.rpy:352
 translate english 8f4213d0:
 
     # iris triste "Noam..."
-    iris triste ""
+    iris triste "Noam..."
 
 # game/scenario/14_0_1_1_0.rpy:353
 translate english 9436ce76:
 
     # noam fatigue "Je suis celui qui a peur de tout le monde."
-    noam fatigue ""
+    noam fatigue "I'm the one who's afraid of everybody."
 
 # game/scenario/14_0_1_1_0.rpy:354
 translate english 73dd798b:
 
     # noam fatigue "Et c'est moi le danger."
-    noam fatigue ""
+    noam fatigue "And somehow I'm the danger."
 
 # game/scenario/14_0_1_1_0.rpy:355
 translate english 0088f0b3:
 
     # iris inquiet "Tu as accusé tout le monde."
-    iris inquiet ""
+    iris inquiet "You accused everyone."
 
 # game/scenario/14_0_1_1_0.rpy:356
 translate english eeee975e:
 
     # iris inquiet "Tu as quitté le débat."
-    iris inquiet ""
+    iris inquiet "You walked out of the debate."
 
 # game/scenario/14_0_1_1_0.rpy:357
 translate english dd07c90b:
 
     # iris inquiet "Tu rates les annonces."
-    iris inquiet ""
+    iris inquiet "You keep missing announcements."
 
 # game/scenario/14_0_1_1_0.rpy:358
 translate english 6a052d13:
 
     # iris inquiet "Tu t'isoles."
-    iris inquiet ""
+    iris inquiet "You shut yourself away."
 
 # game/scenario/14_0_1_1_0.rpy:359
 translate english 1234f34d:
 
     # iris inquiet "Tu ne dors plus."
-    iris inquiet ""
+    iris inquiet "You barely sleep."
 
 # game/scenario/14_0_1_1_0.rpy:360
 translate english 83d6c3a2:
 
     # noam fatigue "Merci pour le résumé."
-    noam fatigue ""
+    noam fatigue "Thanks for the recap."
 
 # game/scenario/14_0_1_1_0.rpy:361
 translate english 1508442c:
 
     # iris colere "Arrête."
-    iris colere ""
+    iris colere "Stop it."
 
 # game/scenario/14_0_1_1_0.rpy:362
 translate english a36bd1be:
 
     # noam fatigue "D'accord."
-    noam fatigue ""
+    noam fatigue "Fine."
 
 # game/scenario/14_0_1_1_0.rpy:363
 translate english 4d11f73c:
 
     # iris triste "Je ne pense pas que tu sois un monstre."
-    iris triste ""
+    iris triste "I don't think you're a monster."
 
 # game/scenario/14_0_1_1_0.rpy:364
 translate english 8b481a57:
 
     # iris inquiet "Mais je ne sais plus comment t'aider si tu ne nous parles pas."
-    iris inquiet ""
+    iris inquiet "But I don't know how to help you if you won't talk to us."
 
 # game/scenario/14_0_1_1_0.rpy:365
 translate english 6c06793a:
 
     # noam hesitation "J'ai essayé de parler."
-    noam hesitation ""
+    noam hesitation "I tried talking."
 
 # game/scenario/14_0_1_1_0.rpy:366
 translate english 0b295ac3:
 
     # iris fatigue "Non."
-    iris fatigue ""
+    iris fatigue "No."
 
 # game/scenario/14_0_1_1_0.rpy:367
 translate english d9c368ed:
 
     # iris fatigue "Tu as explosé."
-    iris fatigue ""
+    iris fatigue "You exploded."
 
 # game/scenario/14_0_1_1_0.rpy:368
 translate english 0fffecd5:
 
     # noam colere "Parce que personne n'écoutait."
-    noam colere ""
+    noam colere "Because nobody was listening."
 
 # game/scenario/14_0_1_1_0.rpy:369
 translate english 223b3cd8:
 
     # iris colere "Et tu crois qu'ils vont mieux écouter maintenant ?"
-    iris colere ""
+    iris colere "And you think they'll listen now?"
 
 # game/scenario/14_0_1_1_0.rpy:370
 translate english 0323665a:
@@ -1600,115 +1600,115 @@ translate english 0323665a:
 translate english e1a5fa86:
 
     # iris fatigue "Voilà."
-    iris fatigue ""
+    iris fatigue "Exactly."
 
 # game/scenario/14_0_1_1_0.rpy:372
 translate english 97bc07f5:
 
     # noam fatigue "Donc je fais quoi ?"
-    noam fatigue ""
+    noam fatigue "Then what am I supposed to do?"
 
 # game/scenario/14_0_1_1_0.rpy:373
 translate english 6041efe2:
 
     # iris inquiet "Tu manges."
-    iris inquiet ""
+    iris inquiet "Eat."
 
 # game/scenario/14_0_1_1_0.rpy:374
 translate english d4cad8e4:
 
     # iris inquiet "Tu dors."
-    iris inquiet ""
+    iris inquiet "Sleep."
 
 # game/scenario/14_0_1_1_0.rpy:375
 translate english 4664d92c:
 
     # iris inquiet "Tu arrêtes de disparaître."
-    iris inquiet ""
+    iris inquiet "Stop disappearing on us."
 
 # game/scenario/14_0_1_1_0.rpy:376
 translate english cc04cc31:
 
     # iris inquiet "Et tu évites de courir vers les gens qui te regardent comme un problème à régler."
-    iris inquiet ""
+    iris inquiet "And stop running toward people who look at you like a problem to solve."
 
 # game/scenario/14_0_1_1_0.rpy:377
 translate english c2d6e732:
 
     # noam reflexion "Tu parles de Sael ?"
-    noam reflexion ""
+    noam reflexion "You mean Sael?"
 
 # game/scenario/14_0_1_1_0.rpy:378
 translate english f7892317_1:
 
     # iris hesitation "Oui."
-    iris hesitation ""
+    iris hesitation "Yes."
 
 # game/scenario/14_0_1_1_0.rpy:379
 translate english a079215b:
 
     # noam inquiet "Qu'est-ce qu'elle t'a dit ?"
-    noam inquiet ""
+    noam inquiet "What did she tell you?"
 
 # game/scenario/14_0_1_1_0.rpy:380
 translate english 785f2897:
 
     # iris inquiet "Rien de clair."
-    iris inquiet ""
+    iris inquiet "Nothing clear."
 
 # game/scenario/14_0_1_1_0.rpy:381
 translate english 19ce7b94:
 
     # iris fatigue "Des histoires de signes."
-    iris fatigue ""
+    iris fatigue "Something about signs."
 
 # game/scenario/14_0_1_1_0.rpy:382
 translate english 80b4e69b:
 
     # iris inquiet "De morts qui ne dorment pas."
-    iris inquiet ""
+    iris inquiet "About the dead who never sleep."
 
 # game/scenario/14_0_1_1_0.rpy:383
 translate english dfff7d16:
 
     # iris inquiet "De choses qui restent accrochées aux vivants."
-    iris inquiet ""
+    iris inquiet "Things that cling to the living."
 
 # game/scenario/14_0_1_1_0.rpy:384
 translate english 00ecb299:
 
     # noam fatigue "Génial."
-    noam fatigue ""
+    noam fatigue "Wonderful."
 
 # game/scenario/14_0_1_1_0.rpy:385
 translate english f5bde92b:
 
     # iris colere "Je suis sérieuse."
-    iris colere ""
+    iris colere "I'm serious."
 
 # game/scenario/14_0_1_1_0.rpy:386
 translate english 84e8a201:
 
     # noam fatigue "Moi aussi."
-    noam fatigue ""
+    noam fatigue "So am I."
 
 # game/scenario/14_0_1_1_0.rpy:387
 translate english 79d6a8e0:
 
     # noam fatigue "C'est juste que ma vie devient débile."
-    noam fatigue ""
+    noam fatigue "My life's turning into a bad joke, that's all."
 
 # game/scenario/14_0_1_1_0.rpy:388
 translate english aa04d00e:
 
     # iris taquin "Elle était déjà débile avant."
-    iris taquin ""
+    iris taquin "It was already a bad joke."
 
 # game/scenario/14_0_1_1_0.rpy:389
 translate english 4dbf141e:
 
     # iris fatigue "Là, elle devient dangereuse."
-    iris fatigue ""
+    iris fatigue "Now it's turning dangerous."
 
 # game/scenario/14_0_1_1_0.rpy:390
 translate english b1d2f318:
@@ -1720,49 +1720,49 @@ translate english b1d2f318:
 translate english 95b8897c:
 
     # iris inquiet "Promets-moi de faire attention."
-    iris inquiet ""
+    iris inquiet "Promise me you'll be careful."
 
 # game/scenario/14_0_1_1_0.rpy:392
 translate english 1a419f7d:
 
     # noam fatigue "Je ferai attention."
-    noam fatigue ""
+    noam fatigue "I'll be careful."
 
 # game/scenario/14_0_1_1_0.rpy:393
 translate english fc8dbbf1:
 
     # iris colere "Ce n'est pas une promesse."
-    iris colere ""
+    iris colere "That's not a promise."
 
 # game/scenario/14_0_1_1_0.rpy:394
 translate english f3747969:
 
     # noam fatigue "C'est tout ce que j'ai."
-    noam fatigue ""
+    noam fatigue "It's all I've got."
 
 # game/scenario/14_0_1_1_0.rpy:395
 translate english 6ec369d1:
 
     # iris triste "Tu es vraiment insupportable quand tu vas mal."
-    iris triste ""
+    iris triste "You're impossible when you're not okay."
 
 # game/scenario/14_0_1_1_0.rpy:396
 translate english 2e535864_2:
 
     # noam fatigue "Je sais."
-    noam fatigue ""
+    noam fatigue "I know."
 
 # game/scenario/14_0_1_1_0.rpy:397
 translate english 1098ce91:
 
     # iris fatigue "Non, tu ne sais pas."
-    iris fatigue ""
+    iris fatigue "No, you don't."
 
 # game/scenario/14_0_1_1_0.rpy:398
 translate english 60beca67:
 
     # iris fatigue "Tu forces les gens à être gentils, et c'est très agaçant."
-    iris fatigue ""
+    iris fatigue "You make people be nice to you, and it's incredibly annoying."
 
 # game/scenario/14_0_1_1_0.rpy:399
 translate english 5817a218:
@@ -1780,31 +1780,31 @@ translate english 5a90264e:
 translate english 1d4fba4a:
 
     # noam fatigue "Désolé."
-    noam fatigue ""
+    noam fatigue "Sorry."
 
 # game/scenario/14_0_1_1_0.rpy:402
 translate english 88f4abef:
 
     # iris inquiet "Mange un peu."
-    iris inquiet ""
+    iris inquiet "Eat something."
 
 # game/scenario/14_0_1_1_0.rpy:403
 translate english a84be97b_1:
 
     # noam fatigue "Je vais essayer."
-    noam fatigue ""
+    noam fatigue "I'll try."
 
 # game/scenario/14_0_1_1_0.rpy:404
 translate english ab8422ca:
 
     # iris colere "Non."
-    iris colere ""
+    iris colere "No."
 
 # game/scenario/14_0_1_1_0.rpy:405
 translate english 6f21ce14:
 
     # iris colere "Tu vas manger."
-    iris colere ""
+    iris colere "You're going to eat."
 
 # game/scenario/14_0_1_1_0.rpy:406
 translate english 0471ccf1:
@@ -1816,7 +1816,7 @@ translate english 0471ccf1:
 translate english 57f63efb:
 
     # iris colere "Vous, ne vous en mêlez pas."
-    iris colere ""
+    iris colere "You two, stay out of it."
 
 # game/scenario/14_0_1_1_0.rpy:408
 translate english 22867fa7:
@@ -1834,13 +1834,13 @@ translate english 10e07880:
 translate english e4a30c42:
 
     # iris fatigue "Super."
-    iris fatigue ""
+    iris fatigue "Great."
 
 # game/scenario/14_0_1_1_0.rpy:411
 translate english cfa73a31:
 
     # iris fatigue "Même le cuisinier fait la morale maintenant."
-    iris fatigue ""
+    iris fatigue "Now even the cook's giving me a lecture."
 
 # game/scenario/14_0_1_1_0.rpy:412
 translate english 16836f57:
@@ -1858,43 +1858,43 @@ translate english 854f4e3c:
 translate english 3c9317f8:
 
     # iris inquiet "Je retourne là-bas."
-    iris inquiet ""
+    iris inquiet "I'm going back over there."
 
 # game/scenario/14_0_1_1_0.rpy:415
 translate english 80d1ff71:
 
     # noam fatigue "Oui."
-    noam fatigue ""
+    noam fatigue "Okay."
 
 # game/scenario/14_0_1_1_0.rpy:416
 translate english 06d24f25:
 
     # iris hesitation "Noam..."
-    iris hesitation ""
+    iris hesitation "Noam..."
 
 # game/scenario/14_0_1_1_0.rpy:417
 translate english 61b255aa_1:
 
     # noam inquiet "Quoi ?"
-    noam inquiet ""
+    noam inquiet "What?"
 
 # game/scenario/14_0_1_1_0.rpy:418
 translate english f6164e1f:
 
     # iris triste "Je suis encore là."
-    iris triste ""
+    iris triste "I'm still here."
 
 # game/scenario/14_0_1_1_0.rpy:419
 translate english d20b6613:
 
     # noam fatigue "Pour l'instant."
-    noam fatigue ""
+    noam fatigue "For now."
 
 # game/scenario/14_0_1_1_0.rpy:420
 translate english d31bfa08:
 
     # iris colere "Ne gâche pas l'effort."
-    iris colere ""
+    iris colere "Don't ruin the moment."
 
 # game/scenario/14_0_1_1_0.rpy:421
 translate english 624c0b94:
@@ -1906,43 +1906,43 @@ translate english 624c0b94:
 translate english 0fbf7389:
 
     # mara agace "Alors ?"
-    mara agace ""
+    mara agace "Well?"
 
 # game/scenario/14_0_1_1_0.rpy:423
 translate english 102ab6ad:
 
     # mara rire_profond "Le patient va survivre ?"
-    mara rire_profond ""
+    mara rire_profond "Is the patient going to live?"
 
 # game/scenario/14_0_1_1_0.rpy:424
 translate english 8fa451d9:
 
     # iris colere "Mara, je te jure que si tu ouvres encore la bouche..."
-    iris colere ""
+    iris colere "Mara, I swear, if you open your mouth one more time..."
 
 # game/scenario/14_0_1_1_0.rpy:425
 translate english c6f5f1b9:
 
     # mara rire_profond "Quoi ?"
-    mara rire_profond ""
+    mara rire_profond "What?"
 
 # game/scenario/14_0_1_1_0.rpy:426
 translate english baaea91b:
 
     # mara rire_profond "Tu vas me soigner avec une fourchette ?"
-    mara rire_profond ""
+    mara rire_profond "You'll stab me back to health with a fork?"
 
 # game/scenario/14_0_1_1_0.rpy:427
 translate english b7dd7715:
 
     # elen surpris "Iris !"
-    elen surpris ""
+    elen surpris "Iris!"
 
 # game/scenario/14_0_1_1_0.rpy:428
 translate english 5a535266:
 
     # julian rire "Voilà une image très rassurante."
-    julian rire ""
+    julian rire "That's a very reassuring image."
 
 # game/scenario/14_0_1_1_0.rpy:429
 translate english 5a444a3b:
