@@ -1732,7 +1732,7 @@ translate english 66eeb75b:
 translate english d3630628:
 
     # kami "Mes chers représentants ! J'aimerais attirer votre attention sur un concept révolutionnaire : l'éducation !"
-    kami "My dear representatives! I'd like to draw your attention to a revolutionary concept: manners!"
+    kami "My dear representatives! Allow me to introduce a groundbreaking concept: basic manners!"
 
 # game/scenario/7_1_0_0.rpy:1015
 translate english 5b5cc18b:
@@ -1744,13 +1744,13 @@ translate english 5b5cc18b:
 translate english d65ed979:
 
     # kami "Et surtout, vous n'essayez pas d'explorer les serveurs de votre hôte pendant qu'ils redémarrent !"
-    kami "And most importantly, you don't try to explore your host's servers while they're rebooting!"
+    kami "And, most importantly, you do NOT snoop around your host's servers while they're rebooting!"
 
 # game/scenario/7_1_0_0.rpy:1020
 translate english 58d9c2a2:
 
     # kami "Kael ! Tu veux expliquer aux autres pourquoi je viens de te trouver dans un relais administratif qui ne te concernait absolument pas ?"
-    kami "Kael! Would you like to tell the others why I just found you inside an administrative relay that was absolutely none of your business?"
+    kami "Kael! Care to explain why I caught you poking around an administrative relay that was none of your business?"
 
 # game/scenario/7_1_0_0.rpy:1022
 translate english d1fff5b4:
@@ -1762,7 +1762,7 @@ translate english d1fff5b4:
 translate english 26de5ba7:
 
     # kami "Oh ! Une réponse directe ! Presque touchante !"
-    kami "Oh! A straight answer! Almost touching!"
+    kami "Oh! A straight answer! Be still, my heart!"
 
 # game/scenario/7_1_0_0.rpy:1028
 translate english 5d10d07d:
@@ -1774,7 +1774,7 @@ translate english 5d10d07d:
 translate english a5021eeb:
 
     # kami "Seulement ? Tu as ouvert six registres, tenté trois requêtes extérieures et parcouru une partie de mon architecture réseau."
-    kami "Only? You opened six records, attempted three external queries, and explored part of my network architecture."
+    kami "'Only'? Six files opened, three outside queries attempted, and a little sightseeing tour of my network architecture!"
 
 # game/scenario/7_1_0_0.rpy:1034
 translate english 69b8a478:
@@ -1786,7 +1786,7 @@ translate english 69b8a478:
 translate english 30b1a8b0:
 
     # kami "Je le sais ! C'est précisément ce qui rend cette conversation insupportable !"
-    kami "I know! That's exactly what makes this conversation so infuriating!"
+    kami "I KNOW! That's what makes this conversation so maddening!"
 
 # game/scenario/7_1_0_0.rpy:1044
 translate english ba6f90e1:
@@ -1804,19 +1804,19 @@ translate english 616322f7:
 translate english 0fdba595:
 
     # kami "Mais est-ce trop demander que vous vous comportiez comme des invités correctement élevés ?!"
-    kami "But is it too much to ask that you behave like well-mannered guests?!"
+    kami "Is it really too much to ask that you behave like houseguests with a shred of manners?!"
 
 # game/scenario/7_1_0_0.rpy:1050
 translate english 86571e9b:
 
     # kami "On ne touche pas aux serveurs. On ne branche pas ses câbles partout. On ne profite pas d'une panne pour fouiller chez les autres !"
-    kami "You don't touch the servers. You don't plug your cables into everything. You don't use a power failure as an excuse to snoop through other people's things!"
+    kami "No touching the servers. No plugging cables into everything in sight. And no rummaging through someone's private files just because the power's out!"
 
 # game/scenario/7_1_0_0.rpy:1054
 translate english b80f52df:
 
     # kami "Vos familles seraient-elles fières de votre manque absolu de savoir-vivre ?"
-    kami "Would your families be proud of your complete lack of manners?"
+    kami "What would your families say if they saw your manners? Actually, don't answer that."
 
 # game/scenario/7_1_0_0.rpy:1056
 translate english 2e7dd999:
@@ -1828,7 +1828,7 @@ translate english 2e7dd999:
 translate english 326fcb9f:
 
     # kami "Ce n'est pas le sujet !"
-    kami "That is not the point!"
+    kami "That's not the point!"
 
 # game/scenario/7_1_0_0.rpy:1066
 translate english 000845cc:
@@ -1948,7 +1948,7 @@ translate english 3b140dcd:
 translate english 5b5fae23:
 
     # kami "J'en ai presque oublié de vous annoncer le thème de votre prochain vote. Presque !"
-    kami "I almost forgot to announce the subject of your next vote. Almost!"
+    kami "I almost forgot to announce your next vote. Almost. Did you miss me?"
 
 # game/scenario/7_1_0_0.rpy:1146
 translate english be24f09a:
@@ -1972,7 +1972,7 @@ translate english f110a99c:
 translate english 6db2a9b9:
 
     # kami "Une liberté parfaitement encadrée ! Le compromis préféré de ceux qui veulent ouvrir une porte tout en gardant la clé."
-    kami "Perfectly regulated freedom! The favorite compromise of people who want to open a door while keeping the key."
+    kami "Freedom, but with strings attached! The favorite compromise of people who want to open the door without giving up the key."
 
 # game/scenario/7_1_0_0.rpy:1161
 translate english 9fb8b80c:
@@ -1990,7 +1990,7 @@ translate english ca2509f7:
 translate english 40af24de:
 
     # kami "Et cette fois, essayez d'offrir un débat un peu plus long que le précédent. Je refuse de préparer autant de caméras pour rien !"
-    kami "And this time, try to give me a debate that lasts a little longer than the last one. I refuse to set up this many cameras for nothing!"
+    kami "And this time, please give me a debate that lasts longer than the last one. Those cameras don't set themselves up!"
 
 # game/scenario/7_1_0_0.rpy:1174
 translate english 92bcbc55:
