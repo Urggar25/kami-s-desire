@@ -2286,25 +2286,25 @@ translate english 83c08a88_1:
 translate english 27923e2c_1:
 
     # "Elle relève les yeux vers moi."
-    ""
+    "She looks up at me."
 
 # game/scenario/8_1_0_0.rpy:442
 translate english 6ce7f6ed_1:
 
     # "Iris ne répond rien."
-    ""
+    "Iris doesn't answer."
 
 # game/scenario/8_1_0_0.rpy:490
 translate english 59aecd40_2:
 
     # iris "Non."
-    iris ""
+    iris "No."
 
 # game/scenario/8_1_0_0.rpy:500
 translate english 1e8df67b_1:
 
     # "Cette fois, personne ne plaisante."
-    ""
+    "This time, no one's joking."
 
 # game/scenario/8_1_0_0.rpy:572
 translate english 78c6b46a_3:
@@ -2316,7 +2316,7 @@ translate english 78c6b46a_3:
 translate english 03bdde15_1:
 
     # noam "Ah."
-    noam ""
+    noam "Oh."
 
 # game/scenario/8_1_0_0.rpy:751
 translate english a53c02c6_6:
@@ -2328,17 +2328,17 @@ translate english a53c02c6_6:
 translate english daf4fff8_8:
 
     # think "..."
-    think ""
+    think "..."
 
 # game/scenario/8_1_0_0.rpy:848
 translate english 621c6923:
 
     # think "Ryn."
-    think ""
+    think "Ryn."
 
 # game/scenario/8_1_0_0.rpy:850
 translate english cdba5b76_1:
 
     # "Je fixe le plafond."
-    ""
+    "I stare at the ceiling."
 
