@@ -304,6 +304,10 @@ init python:
 
     def investigation_evidence_image(eid):
         entry = INVESTIGATION_ENTRIES.get(eid, {})
+        # Un PNG capturé pendant la partie prime toujours sur les images statiques.
+        captured = getattr(store, "investigation_photo_data", {}).get(eid)
+        if captured:
+            return im.Data(captured, "evidence_%s.png" % eid)
         # La photo affichée au déclenchement et dans le dossier utilise
         # exactement la même ressource du jeu, jamais une image reconstituée
         # différemment après sa capture.
