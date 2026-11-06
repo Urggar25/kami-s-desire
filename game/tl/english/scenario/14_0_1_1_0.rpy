@@ -5138,7 +5138,7 @@ translate english fa7a9d6d:
 translate english 98007283:
 
     # "Je toque deux fois et la porte s'ouvre presque immédiatement."
-    ""
+    "I knock twice, and the door opens almost at once."
 
 # game/scenario/14_0_1_1_0.rpy:358
 translate english 0246a3ff:
@@ -5168,13 +5168,13 @@ translate english 63f5d320:
 translate english eee2e58e:
 
     # "Je jette un coup d'œil derrière elle avant d'entrer à contrecœur."
-    ""
+    "I glance over her shoulder before reluctantly going inside."
 
 # game/scenario/14_0_1_1_0.rpy:370
 translate english 6fe6c695:
 
     # "La porte se referme derrière moi."
-    ""
+    "The door closes behind me."
 
 # game/scenario/14_0_1_1_0.rpy:377
 translate english 62249fe2:
@@ -5234,7 +5234,7 @@ translate english 5af54608:
 translate english 87c8d2af:
 
     # "Je commence à comprendre où elle veut en venir."
-    ""
+    "I'm beginning to see where she's going with this."
 
 # game/scenario/14_0_1_1_0.rpy:390
 translate english e70ef04d:
@@ -5246,7 +5246,7 @@ translate english e70ef04d:
 translate english 6ca2b3db:
 
     # "Sael ne répond pas tout de suite et son regard glisse brièvement vers la porte."
-    ""
+    "Sael doesn't answer immediately. Her eyes flick briefly toward the door."
 
 # game/scenario/14_0_1_1_0.rpy:394
 translate english 35041b47:
@@ -5258,13 +5258,13 @@ translate english 35041b47:
 translate english 3ed652a1:
 
     # "Je me retourne aussitôt et attrape la poignée."
-    ""
+    "I turn at once and grab for the handle."
 
 # game/scenario/14_0_1_1_0.rpy:400
 translate english ca29c31c:
 
     # "La porte s'ouvre avant que je puisse la toucher."
-    ""
+    "The door swings open before I can touch it."
 
 # game/scenario/14_0_1_1_0.rpy:408
 translate english 7ef5bdd9:
@@ -5282,7 +5282,7 @@ translate english 988a4e32:
 translate english aec0c6cd:
 
     # "Je tente immédiatement de passer, mais Ryn se place devant moi."
-    ""
+    "I try to get past, but Ryn blocks my way."
 
 # game/scenario/14_0_1_1_0.rpy:414
 translate english 366453fc:
@@ -5312,13 +5312,13 @@ translate english 17486236:
 translate english 7972f67d:
 
     # "Je pousse son épaule pour forcer le passage."
-    ""
+    "I shove his shoulder to force my way through."
 
 # game/scenario/14_0_1_1_0.rpy:424
 translate english 205e015e:
 
     # "Ryn réagit immédiatement. Il m'attrape par le haut du torse, me retourne brutalement et me plaque dos contre le mur."
-    ""
+    "Ryn reacts instantly. He grabs the front of my shirt, spins me around, and slams my back against the wall."
 
 # game/scenario/14_0_1_1_0.rpy:426
 translate english 7ef51d30:
@@ -5342,7 +5342,7 @@ translate english 8f6b87f3:
 translate english 70008497:
 
     # "Je tente de repousser son bras mais il se colle contre moi pour m'empêcher de prendre appui, une main sur mon épaule et l'avant-bras appuyé sous ma clavicule."
-    ""
+    "I try to push his arm away, but he crowds in to keep me from getting leverage, one hand on my shoulder and his forearm pressed beneath my collarbone."
 
 # game/scenario/14_0_1_1_0.rpy:432
 translate english 16b91e97:
@@ -5384,7 +5384,7 @@ translate english a70d0ebb:
 translate english 339ac5b1:
 
     # "Sael s'approche de son bureau et récupère un petit sachet en tissu."
-    ""
+    "Sael goes to her desk and picks up a small cloth pouch."
 
 # game/scenario/14_0_1_1_0.rpy:442
 translate english a1f123f8_1:
@@ -5426,7 +5426,7 @@ translate english d0a0c861:
 translate english b472c0bd:
 
     # "Elle ouvre le sachet et prend une poignée de sel."
-    ""
+    "She opens it and takes a handful of salt."
 
 # game/scenario/14_0_1_1_0.rpy:452
 translate english efe3f39f_1:
@@ -5450,7 +5450,7 @@ translate english 54e857ec:
 translate english 9625d666:
 
     # "Elle s'approche."
-    ""
+    "She comes closer."
 
 # game/scenario/14_0_1_1_0.rpy:458
 translate english 4a206500:
@@ -5462,7 +5462,7 @@ translate english 4a206500:
 translate english 1a30d940:
 
     # "Je recommence à me débattre, mais Ryn resserre immédiatement sa prise."
-    ""
+    "I struggle again, but Ryn immediately tightens his grip."
 
 # game/scenario/14_0_1_1_0.rpy:462
 translate english 24e990c5:
@@ -5480,7 +5480,7 @@ translate english 2c1c3c4e:
 translate english c2d03089:
 
     # "Sael me jette le sel directement sur le visage et le haut du torse."
-    ""
+    "Sael throws the salt straight into my face and across my chest."
 
 # game/scenario/14_0_1_1_0.rpy:471
 translate english 18b7d4bf:
@@ -5492,7 +5492,7 @@ translate english 18b7d4bf:
 translate english 39105968:
 
     # "Je ferme les yeux par réflexe tandis que les grains glissent dans mes cheveux, sous mon col et jusque sur mes lèvres."
-    ""
+    "I shut my eyes on instinct as the grains slide into my hair, under my collar, and onto my lips."
 
 # game/scenario/14_0_1_1_0.rpy:482
 translate english 9c2a49bc:
@@ -5552,7 +5552,7 @@ translate english 2ac36f88:
 translate english facf87d4:
 
     # "Ryn souffle entre ses dents."
-    ""
+    "Ryn breathes sharply through his teeth."
 
 # game/scenario/14_0_1_1_0.rpy:495
 translate english ade87a8f:
@@ -5582,7 +5582,7 @@ translate english 75e0fb60:
 translate english aede66d7:
 
     # "Sael reste parfaitement sérieuse."
-    ""
+    "Sael remains deadly serious."
 
 # game/scenario/14_0_1_1_0.rpy:503
 translate english 3759dfb8:
@@ -5594,7 +5594,7 @@ translate english 3759dfb8:
 translate english f8716061:
 
     # "Elle prend une petite fiole transparente posée sur son bureau."
-    ""
+    "She picks up a small clear vial from her desk."
 
 # game/scenario/14_0_1_1_0.rpy:508
 translate english 447b144e:
@@ -5618,7 +5618,7 @@ translate english ad6f87e4:
 translate english d27286b9:
 
     # "Il hésite une fraction de seconde, puis déplace sa main jusqu'à ma mâchoire."
-    ""
+    "He hesitates for a split second, then moves his hand to my jaw."
 
 # game/scenario/14_0_1_1_0.rpy:516
 translate english 46227dcb:
@@ -5630,7 +5630,7 @@ translate english 46227dcb:
 translate english b4573798:
 
     # "Je tourne la tête, mais il la bloque contre le mur."
-    ""
+    "I turn my head, but he pins it against the wall."
 
 # game/scenario/14_0_1_1_0.rpy:520
 translate english 02abe97c:
@@ -5648,7 +5648,7 @@ translate english 1d4f8fa2_1:
 translate english 8a17dcdd:
 
     # "Je serre les dents. Ryn pince alors brutalement mon nez."
-    ""
+    "I clamp my teeth shut. Ryn abruptly pinches my nose."
 
 # game/scenario/14_0_1_1_0.rpy:525
 translate english 73c5ec3e:
@@ -5660,7 +5660,7 @@ translate english 73c5ec3e:
 translate english 6afa633f:
 
     # "Je retiens ma respiration en essayant encore de me dégager, mais après quelques secondes mes poumons commencent à brûler."
-    ""
+    "I hold my breath and keep struggling, but after a few seconds my lungs start to burn."
 
 # game/scenario/14_0_1_1_0.rpy:529
 translate english c4b49e02:
@@ -5672,7 +5672,7 @@ translate english c4b49e02:
 translate english e3d4fd91:
 
     # "Je finis par entrouvrir la bouche pour reprendre de l'air."
-    ""
+    "Eventually I crack my mouth open to breathe."
 
 # game/scenario/14_0_1_1_0.rpy:533
 translate english 6e100d13:
@@ -5684,7 +5684,7 @@ translate english 6e100d13:
 translate english 242891e5:
 
     # "Sael approche aussitôt la fiole et verse de l'eau entre mes lèvres."
-    ""
+    "Sael immediately brings the vial to my lips and pours water into my mouth."
 
 # game/scenario/14_0_1_1_0.rpy:537
 translate english ff788ead:
@@ -5696,7 +5696,7 @@ translate english ff788ead:
 translate english 6bd44d86:
 
     # "J'essaie de recracher, mais Ryn maintient ma mâchoire relevée. Une partie coule sur mon menton tandis que j'avale le reste par réflexe."
-    ""
+    "I try to spit it out, but Ryn keeps my jaw tilted up. Some runs down my chin, and I swallow the rest by reflex."
 
 # game/scenario/14_0_1_1_0.rpy:541
 translate english 3d1fee20:
@@ -5708,7 +5708,7 @@ translate english 3d1fee20:
 translate english 94e1b73c:
 
     # "Il libère mon nez et je prends brutalement une grande inspiration."
-    ""
+    "He lets go of my nose and I gasp for air."
 
 # game/scenario/14_0_1_1_0.rpy:547
 translate english e911509a:
@@ -5738,7 +5738,7 @@ translate english f5371e31:
 translate english 1a3e9bf0:
 
     # "Sael m'observe, attentive au moindre mouvement."
-    ""
+    "Sael watches me closely, tracking every movement."
 
 # game/scenario/14_0_1_1_0.rpy:555
 translate english a4d5c452:
@@ -5756,7 +5756,7 @@ translate english 7145b391:
 translate english 6058155f:
 
     # "Un cri me traverse soudainement la tête, net et violent, comme si quelqu'un venait de hurler directement derrière mes yeux."
-    ""
+    "A scream suddenly tears through my skull, sharp and violent, as if someone yelled straight behind my eyes."
 
 # game/scenario/14_0_1_1_0.rpy:581
 translate english 9d342977:
@@ -5780,7 +5780,7 @@ translate english 355eda79:
 translate english df880ccf:
 
     # "Ils se regardent."
-    ""
+    "They exchange a glance."
 
 # game/scenario/14_0_1_1_0.rpy:588
 translate english 5e7e4f68:
@@ -5810,13 +5810,13 @@ translate english 0561a1a3:
 translate english 0d5336f6:
 
     # "Le néon grésille brutalement au-dessus de nous."
-    ""
+    "The fluorescent light above us crackles violently."
 
 # game/scenario/14_0_1_1_0.rpy:597
 translate english ee9f28a7:
 
     # "Sael lève les yeux une seconde avant de revenir vers moi."
-    ""
+    "Sael glances up for a moment, then back at me."
 
 # game/scenario/14_0_1_1_0.rpy:599
 translate english 04dd9df7:
@@ -5864,7 +5864,7 @@ translate english 50868afc:
 translate english d68f5b7a:
 
     # "Le son se déforme une fraction de seconde. Sael se fige aussitôt."
-    ""
+    "The sound distorts for a split second. Sael immediately freezes."
 
 # game/scenario/14_0_1_1_0.rpy:616
 translate english ae129af2:
@@ -5906,13 +5906,13 @@ translate english 79e165f8:
 translate english 8bd0e0de:
 
     # "Je recommence à me débattre de toutes mes forces."
-    ""
+    "I fight back with everything I've got."
 
 # game/scenario/14_0_1_1_0.rpy:629
 translate english ed9bd1bc:
 
     # "Mon épaule frappe violemment le mur."
-    ""
+    "My shoulder slams painfully against the wall."
 
 # game/scenario/14_0_1_1_0.rpy:631
 translate english 414bd83c:
@@ -5960,25 +5960,25 @@ translate english 77eece8b:
 translate english ee1586db:
 
     # "Ryn tourne brièvement la tête vers elle."
-    ""
+    "Ryn briefly turns toward her."
 
 # game/scenario/14_0_1_1_0.rpy:642
 translate english 183a1955:
 
     # "Sa prise se relâche juste assez."
-    ""
+    "His grip loosens just enough."
 
 # game/scenario/14_0_1_1_0.rpy:644
 translate english 87334364:
 
     # think "Maintenant."
-    think ""
+    think "Now."
 
 # game/scenario/14_0_1_1_0.rpy:646
 translate english 68c7e1b5:
 
     # "Je ramène brutalement mon genou et l'enfonce de toutes mes forces dans son abdomen."
-    ""
+    "I drive my knee as hard as I can into his stomach."
 
 # game/scenario/14_0_1_1_0.rpy:651
 translate english 7998fe9e:
@@ -5990,7 +5990,7 @@ translate english 7998fe9e:
 translate english 1e60db3e:
 
     # "Ryn se plie en deux et sa prise disparaît."
-    ""
+    "Ryn doubles over and releases me."
 
 # game/scenario/14_0_1_1_0.rpy:655
 translate english a14a091f:
@@ -6002,7 +6002,7 @@ translate english a14a091f:
 translate english b9a48183:
 
     # "Je le repousse et fonce immédiatement vers la porte."
-    ""
+    "I shove him away and sprint for the door."
 
 # game/scenario/14_0_1_1_0.rpy:660
 translate english 0fb95714:
@@ -6020,7 +6020,7 @@ translate english 58536839:
 translate english d7101dd2:
 
     # "Je sors en courant et claque la porte derrière moi sans même vérifier s'ils me suivent."
-    ""
+    "I run out and slam it behind me without stopping to see if they're following."
 
 # game/scenario/14_0_1_1_0.rpy:670
 translate english 1eab610b:
@@ -6032,7 +6032,7 @@ translate english 1eab610b:
 translate english bc3fadec:
 
     # "Je continue."
-    ""
+    "I keep going."
 
 # game/scenario/14_0_1_1_0.rpy:674
 translate english 7a8405e8:
@@ -6044,7 +6044,7 @@ translate english 7a8405e8:
 translate english debcf800:
 
     # "Je ralentis malgré moi."
-    ""
+    "Against my will, I slow down."
 
 # game/scenario/14_0_1_1_0.rpy:678
 translate english 607940f2:
@@ -6062,61 +6062,61 @@ translate english a8cd9d8e:
 translate english f3d833a0:
 
     # "Je repars aussitôt vers ma chambre, la gorge douloureuse, encore couvert de sel et avec le goût de l'eau forcée dans la bouche."
-    ""
+    "I immediately break into a run again, heading for my room with a sore throat, salt still on my clothes, and the taste of that forced water in my mouth."
 
 # game/scenario/14_0_1_1_0.rpy:688
 translate english d71bfd36:
 
     # "Je ferme la porte à clé et reste appuyé contre elle plusieurs secondes, incapable de ralentir ma respiration."
-    ""
+    "I lock the door and lean against it for several seconds, unable to slow my breathing."
 
 # game/scenario/14_0_1_1_0.rpy:690
 translate english df72c38d:
 
     # "Quand je passe une main dans mes cheveux, quelques grains de sel tombent encore sur le sol."
-    ""
+    "When I run a hand through my hair, a few grains of salt still fall to the floor."
 
 # game/scenario/14_0_1_1_0.rpy:692
 translate english 502a0885:
 
     # think "Ils sont complètement fous."
-    think ""
+    think "They're completely insane."
 
 # game/scenario/14_0_1_1_0.rpy:696
 translate english 36344d47:
 
     # think "Alors pourquoi j'ai entendu ce cri ?"
-    think ""
+    think "Then why did I hear that scream?"
 
 # game/scenario/14_0_1_1_0.rpy:710
 translate english cdad697e:
 
     # "Je suis toujours dans ma chambre quand ma tablette vibre sur le bureau."
-    ""
+    "I'm still in my room when my tablet vibrates on the desk."
 
 # game/scenario/14_0_1_1_0.rpy:711
 translate english ece7bfc2:
 
     # "Pendant une seconde, je pense l'ignorer. Puis je vois le nom de Kael."
-    ""
+    "For a second I consider ignoring it. Then I see Kael's name."
 
 # game/scenario/14_0_1_1_0.rpy:770
 translate english 05c3fff7:
 
     # "La conversation s'arrête là. Je repose la tablette sur le lit."
-    ""
+    "That's where the conversation ends. I set the tablet on the bed."
 
 # game/scenario/14_0_1_1_0.rpy:771
 translate english 3f587e3b:
 
     # "Je ne sais pas si Kael me croit réellement. Je ne suis même pas sûr d'avoir besoin qu'il me croie. Pour l'instant, il veut les mêmes réponses que moi, et c'est déjà beaucoup."
-    ""
+    "I don't know whether Kael really believes me. I'm not even sure I need him to. For now, he wants the same answers I do, and that's enough."
 
 # game/scenario/14_0_1_1_0.rpy:779
 translate english 05c365c4:
 
     # "Trois coups rapides frappent à ma porte."
-    ""
+    "Three quick knocks come at my door."
 
 # game/scenario/14_0_1_1_0.rpy:781
 translate english da6d6ddb:
@@ -6128,7 +6128,7 @@ translate english da6d6ddb:
 translate english 515ff518:
 
     # "Quand j'ouvre, Kael est dans le couloir avec Elias. Elias tient une petite boîte de pièces noires découpées à la main."
-    ""
+    "When I open it, Kael and Elias are in the corridor. Elias is holding a small box of hand-cut black pieces."
 
 # game/scenario/14_0_1_1_0.rpy:793
 translate english b2531019:
@@ -6152,7 +6152,7 @@ translate english 63ae1c22:
 translate english b5e5606d:
 
     # "Kael prend une petite plaque noire dans la boîte. Une charnière minuscule et deux aimants ont été fixés au dos."
-    ""
+    "Kael takes a small black plate from the box. A tiny hinge and two magnets are attached to the back."
 
 # game/scenario/14_0_1_1_0.rpy:801
 translate english a269e954:
@@ -6170,7 +6170,7 @@ translate english 1141f569:
 translate english 90c10eea:
 
     # kael "J'ai fait les supports. Elias a découpé les plaques et fixé les aimants."
-    kael ""
+    kael "I made the brackets. Elias cut the plates and fitted the magnets."
 
 # game/scenario/14_0_1_1_0.rpy:807
 translate english 95112b84:
@@ -6182,7 +6182,7 @@ translate english 95112b84:
 translate english 4514acad:
 
     # "Il m'en tend un."
-    ""
+    "He hands me one."
 
 # game/scenario/14_0_1_1_0.rpy:811
 translate english 289c9e99:
@@ -6206,7 +6206,7 @@ translate english c69e107f:
 translate english f50396ac:
 
     # "Je retourne le petit cache entre mes doigts avant de le poser sur mon bureau."
-    ""
+    "I turn the little camera cover over in my fingers before setting it on the desk."
 
 # game/scenario/14_0_1_1_0.rpy:819
 translate english 136fbd99:
@@ -6224,47 +6224,47 @@ translate english f95ee65f:
 translate english 3a5a38c4:
 
     # "Ils repartent vers la chambre suivante avec leur boîte."
-    ""
+    "They head to the next room with their box."
 
 # game/scenario/14_0_1_1_0.rpy:835
 translate english 9c412031:
 
     # "La journée se termine sans que je ressorte de ma chambre. J'ai largement assez vu de monde pour aujourd'hui."
-    ""
+    "The day ends without me leaving my room again. I've seen more than enough people for one day."
 
 # game/scenario/14_0_1_1_0.rpy:836
 translate english c0a474d7:
 
     # "Je reste un moment assis au bureau à relire mes notes, puis je finis par tout ranger."
-    ""
+    "I sit at the desk rereading my notes for a while, then put everything away."
 
 # game/scenario/14_0_1_1_0.rpy:840
 translate english f28bda07:
 
     # "Je me couche sans me changer et tire la couverture jusqu'au menton. Demain, Kael et moi devons aller voir les images d'ARCHIVE."
-    ""
+    "I go to bed without changing and pull the blanket up to my chin. Tomorrow, Kael and I are supposed to check ARCHIVE's footage."
 
 # game/scenario/14_0_1_1_0.rpy:841
 translate english e85d271a:
 
     # "Pour la première fois depuis plusieurs jours, j'ai au moins quelque chose de concret à faire."
-    ""
+    "For the first time in days, I have something concrete to do."
 
 # game/scenario/14_0_1_1_0.rpy:843
 translate english e6247e2a:
 
     # think "Demain, je veux une preuve. N'importe laquelle."
-    think ""
+    think "Tomorrow, I want proof. Any proof."
 
 # game/scenario/14_0_1_1_0.rpy:845
 translate english 7af7b854_6:
 
     # "Je ferme les yeux."
-    ""
+    "I close my eyes."
 
 # game/scenario/14_0_1_1_0.rpy:849
 translate english 7dc183a1:
 
     # think "Parce que si je n'en trouve pas... je vais finir par croire Sael."
-    think ""
+    think "Because if I don't find any... I'm going to end up believing Sael."
 
