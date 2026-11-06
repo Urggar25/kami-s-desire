@@ -2260,187 +2260,187 @@ translate english f735e0c4:
 translate english 1aadab1c:
 
     # think "Mais lequel ? Je n’arrive pas à le sentir. Ils ont tous l’air… normaux."
-    think ""
+    think "But which one? I can't tell. They all seem... normal."
 
 # game/scenario/13_0_1_1_0.rpy:631
 translate english aac0bd22:
 
     # "La conversation reprend, plus basse."
-    ""
+    "The conversation resumes, more quietly."
 
 # game/scenario/13_0_1_1_0.rpy:633
 translate english 5218a8c7:
 
     # ryn "Bref. On verra bien. Mais si jamais il refait son cinéma, je le lui dirai en face."
-    ryn ""
+    ryn "Anyway. We'll see. But if he pulls that crap again, I'll tell him to his face."
 
 # game/scenario/13_0_1_1_0.rpy:635
 translate english 57d16d9f:
 
     # elias "Ouais… on verra."
-    elias ""
+    elias "Yeah... we'll see."
 
 # game/scenario/13_0_1_1_0.rpy:637
 translate english 04957213:
 
     # "Je recule lentement, sans faire de bruit, et rebrousse chemin avant qu’ils ne me voient."
-    ""
+    "I back away slowly, making no sound, and retrace my steps before they spot me."
 
 # game/scenario/13_0_1_1_0.rpy:639
 translate english 938e2d1f:
 
     # "Mon cœur bat fort."
-    ""
+    "My heart is pounding."
 
 # game/scenario/13_0_1_1_0.rpy:641
 translate english e1fa5b4f:
 
     # think "Ils ne me font plus confiance."
-    think ""
+    think "They don't trust me anymore."
 
 # game/scenario/13_0_1_1_0.rpy:642
 translate english 9634cf29:
 
     # think "Et moi… je ne leur fais plus confiance non plus."
-    think ""
+    think "And I... I don't trust them either."
 
 # game/scenario/13_0_1_1_0.rpy:650
 translate english 9107ef56:
 
     # "De retour dans ma chambre, je ferme la porte à clé et m’adosse contre elle un long moment, les yeux fermés."
-    ""
+    "Back in my room, I lock the door and lean against it for a long time with my eyes closed."
 
 # game/scenario/13_0_1_1_0.rpy:652
 translate english fe9f8b4e:
 
     # "Le silence me tombe dessus d’un coup."
-    ""
+    "Silence hits me all at once."
 
 # game/scenario/13_0_1_1_0.rpy:653
 translate english 95d32e5b:
 
     # "Après la cafétéria, après les regards, après les reproches, l’absence de bruit paraît presque irréelle."
-    ""
+    "After the cafeteria, the stares, the accusations, the absence of noise feels almost unreal."
 
 # game/scenario/13_0_1_1_0.rpy:655
 translate english 2dc1e03e:
 
     # think "Je ne peux plus compter sur personne."
-    think ""
+    think "I can't rely on anyone anymore."
 
 # game/scenario/13_0_1_1_0.rpy:656
 translate english 8eeebfca:
 
     # think "Si quelqu’un ici est responsable de tout ça… je dois le découvrir moi-même."
-    think ""
+    think "If someone here is responsible for all this... I have to find them myself."
 
 # game/scenario/13_0_1_1_0.rpy:657
 translate english 976c1b49:
 
     # think "Avant de devenir complètement fou."
-    think ""
+    think "Before I lose my mind completely."
 
 # game/scenario/13_0_1_1_0.rpy:659
 translate english fdd6c784:
 
     # "Je garde les yeux fermés quelques secondes de plus."
-    ""
+    "I keep my eyes closed a few seconds longer."
 
 # game/scenario/13_0_1_1_0.rpy:661
 translate english e3dbe547:
 
     # think "Mara me déteste."
-    think ""
+    think "Mara hates me."
 
 # game/scenario/13_0_1_1_0.rpy:662
 translate english 6bc544e1:
 
     # think "Ryn veut me mettre à l’écart."
-    think ""
+    think "Ryn wants me pushed aside."
 
 # game/scenario/13_0_1_1_0.rpy:663
 translate english fd02db8d:
 
     # think "Même Iris ne me croit plus vraiment."
-    think ""
+    think "Even Iris doesn't really believe me anymore."
 
 # game/scenario/13_0_1_1_0.rpy:665
 translate english 75465f42:
 
     # "Je pousse un long soupir."
-    ""
+    "I let out a long sigh."
 
 # game/scenario/13_0_1_1_0.rpy:667
 translate english 233b60ea:
 
     # think "Et peut-être qu’ils ont raison."
-    think ""
+    think "And maybe they're right."
 
 # game/scenario/13_0_1_1_0.rpy:669
 translate english c31c773f:
 
     # "Je quitte finalement la porte et traverse la pièce."
-    ""
+    "Finally, I step away from the door and cross the room."
 
 # game/scenario/13_0_1_1_0.rpy:670
 translate english b080bafe:
 
     # "La lampe du bureau projette une lumière pâle sur le mur."
-    ""
+    "The desk lamp casts a pale glow on the wall."
 
 # game/scenario/13_0_1_1_0.rpy:671
 translate english 8ac73517:
 
     # "L’emplacement vide du brouilleur attire immédiatement mon regard."
-    ""
+    "The empty space where the jammer was catches my eye immediately."
 
 # game/scenario/13_0_1_1_0.rpy:673
 translate english ecb4391c:
 
     # think "Ils ont vraiment fait ça."
-    think ""
+    think "They actually did it."
 
 # game/scenario/13_0_1_1_0.rpy:675
 translate english 92444475:
 
     # "Les fils dépassent encore du mur."
-    ""
+    "Wires still protrude from the wall."
 
 # game/scenario/13_0_1_1_0.rpy:676
 translate english 8aa14fd4:
 
     # "On dirait les restes d’une opération chirurgicale ratée."
-    ""
+    "Like the aftermath of botched surgery."
 
 # game/scenario/13_0_1_1_0.rpy:678
 translate english 588a5cf2:
 
     # think "Plus de brouilleur."
-    think ""
+    think "No jammer."
 
 # game/scenario/13_0_1_1_0.rpy:679
 translate english 1a7e0081:
 
     # think "Plus de zone grise."
-    think ""
+    think "No gray area."
 
 # game/scenario/13_0_1_1_0.rpy:680
 translate english b318199a:
 
     # think "Plus de refuge."
-    think ""
+    think "No refuge."
 
 # game/scenario/13_0_1_1_0.rpy:682
 translate english 17a08606:
 
     # "Je m’installe à mon petit bureau, allume la lampe et sors une feuille blanche."
-    ""
+    "I sit at my small desk, turn on the lamp, and pull out a blank sheet of paper."
 
 # game/scenario/13_0_1_1_0.rpy:683
 translate english 64d7d7df:
 
     # "Mes mains tremblent légèrement en prenant le stylo."
-    ""
+    "My hands tremble slightly as I pick up the pen."
 
 # game/scenario/13_0_1_1_0.rpy:685
 translate english 1028c74c:
@@ -2452,277 +2452,277 @@ translate english 1028c74c:
 translate english a53c6b23:
 
     # "Je commence à noter tout ce dont je me souviens, d’une écriture serrée, presque maniaque."
-    ""
+    "I start writing down everything I remember in tight, almost obsessive handwriting."
 
 # game/scenario/13_0_1_1_0.rpy:689
 translate english f1c37404:
 
     # "Matériaux volés dans la réserve technique il y a plusieurs jours."
-    ""
+    "Materials stolen from the maintenance storeroom several days ago."
 
 # game/scenario/13_0_1_1_0.rpy:690
 translate english 916a3800:
 
     # "Photo de Léa, la petite sœur de Kael, disparue de sa chambre."
-    ""
+    "A photo of Léa, Kael's little sister, missing from his room."
 
 # game/scenario/13_0_1_1_0.rpy:691
 translate english 5506f982:
 
     # "Mon dessin de Juliette… également volé."
-    ""
+    "My drawing of Juliette... stolen too."
 
 # game/scenario/13_0_1_1_0.rpy:692
 translate english 29e36668:
 
     # "Images des caméras du couloir supprimées juste avant l’annonce de Kami."
-    ""
+    "Corridor footage deleted just before Kami's announcement."
 
 # game/scenario/13_0_1_1_0.rpy:694
 translate english 7088b9f1:
 
     # "Je m’arrête."
-    ""
+    "I stop."
 
 # game/scenario/13_0_1_1_0.rpy:696
 translate english 30c7a948:
 
     # "Le stylo reste suspendu au-dessus de la feuille."
-    ""
+    "The pen hangs above the page."
 
 # game/scenario/13_0_1_1_0.rpy:698
 translate english 4df1b5e0:
 
     # think "C’est tout ?"
-    think ""
+    think "Is that all?"
 
 # game/scenario/13_0_1_1_0.rpy:700
 translate english c13dcac8:
 
     # "Je réfléchis."
-    ""
+    "I think."
 
 # game/scenario/13_0_1_1_0.rpy:702
 translate english d1af98c2_2:
 
     # think "Non."
-    think ""
+    think "No."
 
 # game/scenario/13_0_1_1_0.rpy:703
 translate english b2fa0847:
 
     # think "Il y a quelque chose qui ne va pas."
-    think ""
+    think "Something's wrong."
 
 # game/scenario/13_0_1_1_0.rpy:704
 translate english fb6def04:
 
     # think "Les comportements étranges."
-    think ""
+    think "The strange behavior."
 
 # game/scenario/13_0_1_1_0.rpy:705
 translate english 26b93fea:
 
     # think "Les contradictions."
-    think ""
+    think "The contradictions."
 
 # game/scenario/13_0_1_1_0.rpy:707
 translate english 840cf554:
 
     # "Je note encore quelques mots."
-    ""
+    "I jot down a few more words."
 
 # game/scenario/13_0_1_1_0.rpy:709
 translate english 069505c6:
 
     # "Silhouette aperçue dans le couloir."
-    ""
+    "Silhouette seen in corridor."
 
 # game/scenario/13_0_1_1_0.rpy:710
 translate english 56a217d0:
 
     # "Anomalies avant l’annonce de Kami."
-    ""
+    "Anomalies before Kami's announcement."
 
 # game/scenario/13_0_1_1_0.rpy:711
 translate english 9e4f6a5f:
 
     # "Comportements incohérents."
-    ""
+    "Inconsistent behavior."
 
 # game/scenario/13_0_1_1_0.rpy:713
 translate english a64d16af:
 
     # "Je relis la liste plusieurs fois, comme si ça pouvait faire apparaître un sens."
-    ""
+    "I reread the list over and over, as if meaning might suddenly appear."
 
 # game/scenario/13_0_1_1_0.rpy:715
 translate english 965b7e30:
 
     # think "Quel est le lien entre tout ça ?"
-    think ""
+    think "What's the connection?"
 
 # game/scenario/13_0_1_1_0.rpy:716
 translate english f5d2a384:
 
     # think "Pourquoi voler des matériaux ? Pourquoi une photo de famille ? Pourquoi mon dessin d’enfance ?"
-    think ""
+    think "Why steal materials? Why a family photo? Why my childhood drawing?"
 
 # game/scenario/13_0_1_1_0.rpy:717
 translate english f81f6bcb:
 
     # think "Et pourquoi supprimer précisément ces images de caméras ?"
-    think ""
+    think "And why delete that particular camera footage?"
 
 # game/scenario/13_0_1_1_0.rpy:719
 translate english 80dc96e5:
 
     # "Je passe une main sur mon visage, frustré."
-    ""
+    "I rub my face in frustration."
 
 # game/scenario/13_0_1_1_0.rpy:721
 translate english 72b162ba:
 
     # think "Ça n’a aucun sens."
-    think ""
+    think "It makes no sense."
 
 # game/scenario/13_0_1_1_0.rpy:722
 translate english e19798c1:
 
     # think "Un voleur normal prendrait des outils, de la nourriture, des pièces… pas des souvenirs personnels."
-    think ""
+    think "A normal thief would take tools, food, spare parts... not personal keepsakes."
 
 # game/scenario/13_0_1_1_0.rpy:723
 translate english 7447ed6a:
 
     # think "C’est comme si quelqu’un cherchait à nous toucher là où ça fait mal."
-    think ""
+    think "It's almost like someone is looking for the one thing that hurts us most."
 
 # game/scenario/13_0_1_1_0.rpy:725
 translate english 526a925a:
 
     # "Je regarde à nouveau la liste."
-    ""
+    "I look at the list again."
 
 # game/scenario/13_0_1_1_0.rpy:727
 translate english ab865f6c:
 
     # think "Léa."
-    think ""
+    think "Léa."
 
 # game/scenario/13_0_1_1_0.rpy:728
 translate english 1de5b47f:
 
     # think "Juliette."
-    think ""
+    think "Juliette."
 
 # game/scenario/13_0_1_1_0.rpy:730
 translate english fa703ec6:
 
     # "Deux sœurs."
-    ""
+    "Two sisters."
 
 # game/scenario/13_0_1_1_0.rpy:732
 translate english 0aec055c:
 
     # "Je fronce les sourcils."
-    ""
+    "I frown."
 
 # game/scenario/13_0_1_1_0.rpy:734
 translate english d1af98c2_3:
 
     # think "Non."
-    think ""
+    think "No."
 
 # game/scenario/13_0_1_1_0.rpy:735
 translate english 8a5a410f_1:
 
     # think "Ça ne veut rien dire."
-    think ""
+    think "That doesn't mean anything."
 
 # game/scenario/13_0_1_1_0.rpy:737
 translate english 59bf9237:
 
     # "Je raye presque le mot avant de m’arrêter."
-    ""
+    "I nearly cross the word out, then stop."
 
 # game/scenario/13_0_1_1_0.rpy:739
 translate english c766108e:
 
     # think "Ou alors ça veut dire quelque chose."
-    think ""
+    think "Or maybe it does mean something."
 
 # game/scenario/13_0_1_1_0.rpy:740
 translate english cf3844d8:
 
     # think "Et je suis juste incapable de voir quoi."
-    think ""
+    think "And I'm just too blind to see it."
 
 # game/scenario/13_0_1_1_0.rpy:742
 translate english 121108ce:
 
     # "Je reste un moment à fixer la feuille, perdu dans mes pensées."
-    ""
+    "I spend a while staring at the sheet, lost in thought."
 
 # game/scenario/13_0_1_1_0.rpy:744
 translate english 00f5930a:
 
     # think "Est-ce que c’est la même personne qui a fait tout ça ?"
-    think ""
+    think "Did the same person do all of this?"
 
 # game/scenario/13_0_1_1_0.rpy:745
 translate english 4a82d3b9:
 
     # think "Ou est-ce que plusieurs choses se passent en même temps ?"
-    think ""
+    think "Or are several things happening at once?"
 
 # game/scenario/13_0_1_1_0.rpy:746
 translate english 27954539:
 
     # think "Et pourquoi moi ? Pourquoi ma sœur ? Pourquoi la sœur de Kael ?"
-    think ""
+    think "And why me? Why my sister? Why Kael's sister?"
 
 # game/scenario/13_0_1_1_0.rpy:748
 translate english 4871a7b3:
 
     # "Je repousse la feuille."
-    ""
+    "I push the sheet away."
 
 # game/scenario/13_0_1_1_0.rpy:750
 translate english a7e91778:
 
     # "Le papier est couvert d’annotations."
-    ""
+    "The paper is covered in notes."
 
 # game/scenario/13_0_1_1_0.rpy:751
 translate english 28a6f291:
 
     # "De flèches."
-    ""
+    "Arrows."
 
 # game/scenario/13_0_1_1_0.rpy:752
 translate english 63129fee:
 
     # "De mots entourés plusieurs fois."
-    ""
+    "Words circled again and again."
 
 # game/scenario/13_0_1_1_0.rpy:754
 translate english 5eee8d13:
 
     # think "On dirait déjà le carnet d’un paranoïaque."
-    think ""
+    think "It already looks like a paranoid person's notebook."
 
 # game/scenario/13_0_1_1_0.rpy:756
 translate english e0c3cf9e:
 
     # "Je laisse échapper un rire bref."
-    ""
+    "I give a short laugh."
 
 # game/scenario/13_0_1_1_0.rpy:757
 translate english d04d3661:
 
     # "Un rire sans amusement."
-    ""
+    "There's no humor in it."
 
 # game/scenario/13_0_1_1_0.rpy:759
 translate english 213ffd40:
@@ -2734,229 +2734,229 @@ translate english 213ffd40:
 translate english b6ef801c:
 
     # "Je soupire lourdement et me lève pour prendre mon vieux cahier noir dans le tiroir du bureau."
-    ""
+    "I sigh heavily and get up to retrieve my old black notebook from the desk drawer."
 
 # game/scenario/13_0_1_1_0.rpy:762
 translate english ae314f89:
 
     # "J'ai toujours eu l'habitude de tout mettre sur papier quand quelque chose me passe par la tête."
-    ""
+    "I've always written things down when something's on my mind."
 
 # game/scenario/13_0_1_1_0.rpy:763
 translate english 9c8710f6:
 
     # "Ou quand j'ai besoin de réfléchir."
-    ""
+    "Or when I need to think."
 
 # game/scenario/13_0_1_1_0.rpy:765
 translate english 889d5aa7:
 
     # "Le cahier est exactement là où je l’avais laissé."
-    ""
+    "The notebook is exactly where I left it."
 
 # game/scenario/13_0_1_1_0.rpy:767
 translate english 96fb98c9_1:
 
     # think "Évidemment."
-    think ""
+    think "Of course."
 
 # game/scenario/13_0_1_1_0.rpy:769
 translate english 9aba377e:
 
     # "Je le pose devant moi."
-    ""
+    "I set it in front of me."
 
 # game/scenario/13_0_1_1_0.rpy:771
 translate english a9b3ed34:
 
     # "Pendant une seconde, j’hésite."
-    ""
+    "For a moment, I hesitate."
 
 # game/scenario/13_0_1_1_0.rpy:773
 translate english a4b3b036:
 
     # think "Pourquoi est-ce que je suis nerveux ?"
-    think ""
+    think "Why am I nervous?"
 
 # game/scenario/13_0_1_1_0.rpy:775
 translate english 7b699b1f:
 
     # "Puis j’ouvre le cahier à une page vierge."
-    ""
+    "Then I open the notebook to a blank page."
 
 # game/scenario/13_0_1_1_0.rpy:777
 translate english 4a8b4198:
 
     # "Et là… mon sang se fige."
-    ""
+    "And then... my blood runs cold."
 
 # game/scenario/13_0_1_1_0.rpy:779
 translate english 8cb9f2b8:
 
     # "Je ne comprends même pas immédiatement ce que je regarde."
-    ""
+    "I don't even understand what I'm looking at at first."
 
 # game/scenario/13_0_1_1_0.rpy:781
 translate english 31d69283:
 
     # "Quelque chose cloche."
-    ""
+    "Something's wrong."
 
 # game/scenario/13_0_1_1_0.rpy:783
 translate english a4e65e29:
 
     # "Quelque chose que mon cerveau reconnaît avant moi."
-    ""
+    "Something my brain recognizes before I do."
 
 # game/scenario/13_0_1_1_0.rpy:785
 translate english 9cf2cc73:
 
     # "Je tourne légèrement le cahier."
-    ""
+    "I tilt the notebook slightly."
 
 # game/scenario/13_0_1_1_0.rpy:787
 translate english ee06ad93:
 
     # "Puis je le vois."
-    ""
+    "Then I see it."
 
 # game/scenario/13_0_1_1_0.rpy:789
 translate english fe4045e1:
 
     # "Sur une page déjà utilisée, quelqu’un a décalqué le dessin de Juliette."
-    ""
+    "On a page that's already been used, someone has traced Juliette's drawing."
 
 # game/scenario/13_0_1_1_0.rpy:791
 translate english 8f911356:
 
     # "Les contours sont parfaitement reproduits, trait pour trait."
-    ""
+    "Every outline is reproduced perfectly, stroke for stroke."
 
 # game/scenario/13_0_1_1_0.rpy:792
 translate english ffd64f71:
 
     # "Mais ce n’est pas mon dessin original."
-    ""
+    "But this isn't the original drawing."
 
 # game/scenario/13_0_1_1_0.rpy:793
 translate english a5045d15:
 
     # "Les lignes sont plus sombres, plus appuyées, presque agressives."
-    ""
+    "The lines are darker, heavier, almost aggressive."
 
 # game/scenario/13_0_1_1_0.rpy:794
 translate english 609521fc:
 
     # "Le sourire de Juliette semble… différent. Plus figé. Plus triste."
-    ""
+    "Juliette's smile looks... different. Stiffer. Sadder."
 
 # game/scenario/13_0_1_1_0.rpy:796
 translate english 415023f8:
 
     # "Je reste pétrifié, les yeux rivés sur la page."
-    ""
+    "I freeze, staring at the page."
 
 # game/scenario/13_0_1_1_0.rpy:798
 translate english c4b93c2c:
 
     # think "Ce n’est pas moi qui ai fait ça…"
-    think ""
+    think "I didn't do this..."
 
 # game/scenario/13_0_1_1_0.rpy:799
 translate english 6bbb5f90:
 
     # think "Je n’ai jamais recopié ce dessin."
-    think ""
+    think "I've never copied this drawing."
 
 # game/scenario/13_0_1_1_0.rpy:800
 translate english bfedc39e:
 
     # think "Je n’ai même pas ouvert ce cahier depuis plusieurs jours…"
-    think ""
+    think "I haven't even opened this notebook in days..."
 
 # game/scenario/13_0_1_1_0.rpy:802
 translate english 6363c3d2:
 
     # "Mes doigts tremblent en tenant la page."
-    ""
+    "My fingers tremble as I hold the page."
 
 # game/scenario/13_0_1_1_0.rpy:804
 translate english e28a00f0:
 
     # think "Quelqu’un est entré ici."
-    think ""
+    think "Someone came in here."
 
 # game/scenario/13_0_1_1_0.rpy:805
 translate english 0fee581b:
 
     # think "Quelqu’un a pris mon cahier… a décalqué le dessin de ma sœur… et l’a remis exactement à sa place."
-    think ""
+    think "Someone took my notebook... traced my sister's drawing... and put it back exactly where it was."
 
 # game/scenario/13_0_1_1_0.rpy:806
 translate english 5ccb2d49:
 
     # think "Sans laisser aucune autre trace."
-    think ""
+    think "Without leaving any other trace."
 
 # game/scenario/13_0_1_1_0.rpy:808
 translate english 41fe6ed4:
 
     # "Je tourne les pages précédentes, fébrilement."
-    ""
+    "I flip feverishly through the earlier pages."
 
 # game/scenario/13_0_1_1_0.rpy:810
 translate english c8839601:
 
     # "Une fois."
-    ""
+    "Once."
 
 # game/scenario/13_0_1_1_0.rpy:811
 translate english 8869eae5:
 
     # "Puis une deuxième."
-    ""
+    "Then again."
 
 # game/scenario/13_0_1_1_0.rpy:812
 translate english 29edfe25:
 
     # "Puis une troisième."
-    ""
+    "And again."
 
 # game/scenario/13_0_1_1_0.rpy:814
 translate english 50d303ec:
 
     # "Rien d’autre n’a été touché."
-    ""
+    "Nothing else has been touched."
 
 # game/scenario/13_0_1_1_0.rpy:815
 translate english dafcd29d:
 
     # "Seulement cette page."
-    ""
+    "Just this page."
 
 # game/scenario/13_0_1_1_0.rpy:817
 translate english 193dfe10:
 
     # think "Pourquoi ?"
-    think ""
+    think "Why?"
 
 # game/scenario/13_0_1_1_0.rpy:818
 translate english 9b01f60f:
 
     # think "Pourquoi faire ça ?"
-    think ""
+    think "Why would someone do that?"
 
 # game/scenario/13_0_1_1_0.rpy:819
 translate english 01ab5524:
 
     # think "Pourquoi copier le dessin de Juliette ?"
-    think ""
+    think "Why copy Juliette's drawing?"
 
 # game/scenario/13_0_1_1_0.rpy:820
 translate english 42702197:
 
     # think "Qu’est-ce que ça veut dire ?"
-    think ""
+    think "What does it mean?"
 
 # game/scenario/13_0_1_1_0.rpy:822
 translate english b0b2dcba:
