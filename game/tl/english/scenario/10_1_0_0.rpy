@@ -274,7 +274,7 @@ translate english f269de05:
 translate english c3826f5c:
 
     # kami "Oh, quelle adorable petite scène ! Le petit-déjeuner en famille."
-    kami "Oh, what an adorable little scene! Breakfast with the family."
+    kami "Aww, what a heartwarming little scene! Breakfast with the family."
 
 # game/scenario/10_1_0_0.rpy:148
 translate english f0298c53:
@@ -328,7 +328,7 @@ translate english 36862c48:
 translate english e837b19d:
 
     # kami "Le vote déterminera donc si leur utilisation peut officiellement être autorisée dans les districts. Mais évidemment, j'aime la cohérence."
-    kami "So the vote will determine whether their use can be officially authorized in the districts. But of course, I do love consistency."
+    kami "So you'll decide whether jammers are officially allowed in the districts. And you know how much I love consistency."
 
 # game/scenario/10_1_0_0.rpy:186
 translate english cc44ebc4:
@@ -358,7 +358,7 @@ translate english bd04be05:
 translate english 6f08584b:
 
     # kami "Après tout, vous n'allez pas demander à vos citoyens de vivre sous surveillance tout en vous réservant un petit espace privé, n'est-ce pas ?"
-    kami "After all, you're not going to ask your citizens to live under surveillance while keeping a nice little private space for yourselves, are you?"
+    kami "You wouldn't make your citizens live under constant surveillance while keeping your own cozy little hideaway, would you?"
 
 # game/scenario/10_1_0_0.rpy:208
 translate english 59a90a29:
