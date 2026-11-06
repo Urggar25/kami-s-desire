@@ -91,7 +91,10 @@ screen investigation_pa_room(room_id, rooms, actions):
     $ available = investigation_pa_room_actions(room_id, rooms, actions)
     $ pnc_room = "chambre" if room_id == "dortoir" else room_id
     # Réutilise le panorama existant du jeu et ses rotations gauche/droite.
-    use room_scene_background(pnc_room, navigation=True)
+    if investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
+        add Transform("j26_elen_vide", xysize=(1920, 1080))
+    else:
+        use room_scene_background(pnc_room, navigation=True)
 
     for idx, action_id in enumerate(available):
         $ action_info = actions[action_id]
@@ -99,7 +102,29 @@ screen investigation_pa_room(room_id, rooms, actions):
         $ native_path = investigation_pa_hotspot(action_id, pnc_room)
         $ done = action_id in investigation_pa_completed
         $ enabled = investigation_pa_can_take(action_id)
-        if native_path:
+        if investigation_pa_day in (26, 28, 29) and room_id == "dortoir" and action_id == "grille":
+            # La plaque créée pour Elen sert à la fois de surbrillance et de masque.
+            $ plate = "images/background/interact/chambre_elen/meutre_tomas/plaque.png"
+            imagebutton:
+                idle Null(width=1920, height=1080)
+                hover Transform(plate, xysize=(1920, 1080), matrixcolor=BrightnessMatrix(0.27))
+                focus_mask Transform(plate, xysize=(1920, 1080))
+                xpos 0 ypos 0
+                sensitive enabled
+                hovered SetScreenVariable("hovered_action", action_id)
+                unhovered SetScreenVariable("hovered_action", None)
+                action Return(action_id)
+        elif investigation_pa_day in (26, 28, 29) and room_id == "dortoir" and action_id == "flacon":
+            # Zone assez grande pour sélectionner le petit flacon du meuble.
+            button:
+                xpos 180 ypos 500 xsize 170 ysize 125
+                background None
+                hover_background Solid("#77DDF022")
+                sensitive enabled
+                hovered SetScreenVariable("hovered_action", action_id)
+                unhovered SetScreenVariable("hovered_action", None)
+                action Return(action_id)
+        elif native_path:
             imagebutton:
                 idle room_interaction_null()
                 hover room_interaction_hover_with_overlays(native_path, pnc_room)
