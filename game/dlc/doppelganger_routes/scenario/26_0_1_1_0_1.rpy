@@ -881,6 +881,12 @@ label _26_0_1_1_0_1_BILAN:
     else:
         lysa fatigue "T'as vraiment fait le tour de la station..."
         noam fatigue "Je sais. Et je suis pas plus avancé."
+    noam reflexion "Là, je vois mal comment ça pourrait être autre chose qu'un suicide."
+    lysa surpris "T'en es déjà là ?"
+    noam raison "La porte était verrouillée de l'intérieur. La plaque empêchait de passer par l'aération, et personne n'avait de raison valable de vouloir s'en prendre à Elen."
+    nyra reflexion "Ce n'est pas une preuve que Tomas s'est donné la mort."
+    noam fatigue "Je sais. Sael n'a même pas déterminé la cause. C'est juste l'explication qui me paraît la plus probable pour l'instant."
+    noam raison "Je vais continuer à creuser. Je veux comprendre ce qui s'est passé."
     pause 0.4
     lysa triste "L'autre jour, il avait pris ma place à table. Je lui ai fait toute une histoire pour ça."
     noam inquiet "Lysa..."
