@@ -297,7 +297,7 @@ label _27_0_1_1_0_1_FOUILLE:
             noam reflexion "Voilà. Keyper-IIB."
             "Une ligne indique « UNITÉS ÉID-0 — EFFECTIFS », suivie de chiffres. Plus bas, des quotas de production."
             noam surpris "Des effectifs ? On dirait qu'ils comptent des employés."
-            nyra raison "Ou des machines. Certains services utilisent aussi ce mot pour des unités automatisées."
+            nyra raison "Ou des machines. Dans les registres industriels, ce terme désigne parfois des unités automatisées."
             noam neutre "Et ici, il y a les quotas qu'on devait augmenter."
             "Tomas a écrit dans la marge : « ÉID-0 = personnes ? machines ? »"
             nyra neutre "Il n'avait pas encore la réponse."
@@ -325,11 +325,11 @@ label _27_0_1_1_0_1_FOUILLE:
         "La porte et les accès" if not j27a_chambre:
             $ j27a_chambre = True
             $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
-            "Je regarde le verrou et la grille d'aération. Rien ne semble avoir bougé."
+            "J'examine le verrou, puis la grille d'aération. Les fixations semblent intactes, mais j'ai appris à ne plus tirer de conclusion de ce seul détail."
             noam reflexion "Elen a dormi ici. Et Tomas s'est retrouvé dans sa chambre à elle."
             nyra neutre "Oui. On sait juste qu'ils ont échangé la veille."
             noam raison "Il faudrait vérifier qui connaissait l'échange, exactement."
-            nyra reflexion "On pourra reprendre les témoignages. Mais ne mélange pas les suppositions avec ce qu'on sait."
+            nyra reflexion "On pourra reprendre les témoignages. Il faut juste que chacun puisse préciser ce dont il se souvient."
             noam neutre "Ouais."
             $ hideGroup()
             jump _27_0_1_1_0_1_FOUILLE
@@ -597,94 +597,122 @@ scene bg_cafeteria at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_NYRA:
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
+scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-    "Je retrouve Nyra. Elle m'a gardé un plateau."
+    "Je retrouve Nyra avec deux plateaux. Elle pousse le second vers moi sans commentaire."
     $ showGroup([("nyra", "neutre", 0.38), ("noam", "fatigue", 0.68)])
-    nyra sourire "Tu m'as dit que t'avais pas mangé. Alors mange."
-    noam sourire "Merci. T'es la troisième personne à me le dire."
-    nyra reflexion "Alors, ils ont dit quoi ?"
-    noam raison "J'ai vérifié quelques pistes. Pour le moment, personne ne m'a donné une réponse claire sur les unités ÉID-0."
+    noam sourire "Tu m'as gardé à manger ?"
+    nyra sourire "Il restait une portion. Tu réfléchiras mieux après avoir mangé."
+    "Je pose la tablette entre nous et affiche les preuves recueillies."
+    noam raison "Tout se mélange. La mort de Tomas, ses recherches sur Keyper, cet appareil... J'ai du mal à savoir ce qui a vraiment un lien."
+    nyra reflexion "Peut-être qu'il y en a un. Mais ce ne serait pas la première fois que deux événements se suivent sans avoir la même cause."
+    noam reflexion "Sauf que je refuse de classer ça comme un suicide."
+    nyra raison "Et tu as raison de refuser une conclusion sans preuve. Ça marche aussi dans l'autre sens."
     if "kael" in investigation_pa_completed:
-        noam reflexion "Kael connaît Yanma, mais il ne reconnaît pas l'appareil."
+        noam reflexion "Kael connaît Yanma de nom, mais ne reconnaît pas la boîte. Il dit ne pas l'avoir déplacée."
+        nyra neutre "Alors on garde son témoignage, sans lui faire dire davantage."
+    if "elias" in investigation_pa_completed:
+        noam raison "Elias ne se rappelle pas l'avoir rangée. Il doit vérifier ses bacs."
+        nyra raison "Une incertitude honnête est plus utile qu'une certitude inventée."
     if "iris" in investigation_pa_completed:
-        noam raison "Iris croit avoir déjà vu une nomenclature proche. Elle va regarder."
-        nyra raison "Ça vaut le coup de suivre ça."
-    elif "sael" in investigation_pa_completed:
-        noam raison "Sael et Ryn ne savent pas davantage ce que sont ces unités."
-    else:
-        nyra raison "Au moins, on a les documents de Tomas. Ça nous permet de chercher demain."
-    noam neutre "Mais pas forcément pourquoi il est mort."
-    nyra reflexion "Non, pas forcément."
-    noam raison "J'ai toujours l'appareil en tête."
-    nyra neutre "On y reviendra. Pour l'instant, on sait même pas ce que c'était. Je voudrais éviter qu'on accuse quelqu'un juste pour ça."
-    noam fatigue "Ouais. T'as raison."
-    nyra sourire "On peut faire deux dossiers. Keyper et ses unités d'un côté ; la mort de Tomas de l'autre. Si ça se recoupe, on le verra."
-    noam neutre "Ça me va."
-    "Je m'assois à côté d'elle et on trie mes notes pendant que je mange."
+        noam raison "Iris croit avoir déjà vu une désignation proche d'ÉID-0."
+        nyra raison "Si elle retrouve la référence, on aura quelque chose à comparer."
+    if "julian" in investigation_pa_completed:
+        noam fatigue "Julian s'en veut d'avoir repoussé Tomas. Il ne savait pas ce qu'il voulait lui montrer."
+        nyra neutre "La culpabilité n'est pas une preuve. Mais il pourra peut-être se souvenir de leur discussion."
+    if "grille" in investigation_pa_completed:
+        noam raison "Et la protection de l'aération dans la chambre d'Elen ne bloquait pas l'air."
+        nyra reflexion "C'est important à noter. Pas assez pour conclure à une intervention par ce passage."
+    noam inquiet "Le plus dur, c'est qu'on était tous là. Et maintenant chacun peut raconter quelque chose de différent."
+    nyra raison "C'est pour ça que je préfère les faits matériels. Reprends les heures, les objets et les déplacements. Les intentions viendront après."
+    noam fatigue "Tu crois qu'on trouvera quelque chose ?"
+    nyra neutre "Je pense qu'on comprendra mieux si on arrête de chercher un coupable avant de savoir s'il y a eu un crime."
+    pause 0.3
+    noam neutre "D'accord. Je présenterai les documents sans accuser personne."
+    nyra sourire "C'est tout ce que je te demande."
+    "Je mange pendant qu'elle classe les copies en deux dossiers : les travaux sur Keyper d'un côté, les circonstances de la mort de Tomas de l'autre. L'ordre me semble raisonnable, alors je le conserve."
     $ hideGroup()
     jump _27_0_1_1_0_1_REUNION
-# Durée : ~2m00.
 
 label _27_0_1_1_0_1_REUNION:
-    $ current_period = "Soir"
+$ current_period = "Soir"
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.8
-    "On se réunit autour de la table. La place de Tomas est toujours vide."
+    "Nous nous réunissons autour de la table. La place de Tomas est vide, mais personne n'a demandé à retirer sa tablette du pupitre."
     $ showGroup([("julian", "fatigue", 0.080), ("elen", "triste", 0.248), ("noam", "neutre", 0.416), ("lysa", "blase", 0.584), ("iris", "fatigue", 0.752), ("nyra", "neutre", 0.920)])
-    julian reflexion "On peut au moins faire le point ?"
-    elen inquiet "Iris a dit qu'elle avait pas encore la cause."
-    julian neutre "Je sais. Mais on va pas juste attendre sans rien faire."
-    elen colere "Et tu veux qu'on dise qu'il s'est suicidé ?!"
-    julian colere "J'ai pas dit ça !"
-    lysa blase "C'est reparti..."
-    iris agace "Stop. On n'a toujours pas de preuve qu'il a pris ces comprimés. Et on n'a pas de preuve qu'on l'a tué non plus."
-    julian fatigue "D'accord."
-    noam raison "J'ai trouvé les documents de Tomas. Sur Keyper-IIB et les unités ÉID-0."
-    elen reflexion "Ça nous dit ce que c'est ?"
-    noam fatigue "Non. Il y a des effectifs et des quotas. Et Tomas avait localisé la station à quelques heures de vol."
-    noam raison "Il y avait aussi un livre sur la résonance Yanma. C'est une méthode de transmission dans l'espace."
-    julian reflexion "Quel rapport avec sa mort ?"
-    noam neutre "J'en sais rien. Mais il avait un petit appareil dans la salle d'observation, le jour 25. Aujourd'hui, cet appareil avait disparu."
-    lysa surpris "Disparu ?"
-    nyra raison "Il a pu être déplacé par quelqu'un de la maintenance. Mais on sait toujours pas ce que c'était."
-    elen triste "Donc on sait toujours pas..."
-    noam neutre "Pas encore."
-    iris raison "Continuez à chercher. Moi je poursuis les examens. Mais arrêtez de tirer des conclusions avec une moitié d'indice."
-
-    if "camera" in investigation_pa_completed:
-        noam reflexion "J'ai aussi regardé l'inventaire des appareils. Aucune référence ne correspond clairement à ce que j'ai vu."
-        lysa raison "Donc il a peut-être été rangé. Ou c'était pas un appareil officiel."
-        nyra neutre "On n'a pas de quoi trancher."
+    julian reflexion "On peut faire le point ? Pas pour tirer une conclusion. Pour savoir ce qu'on fait maintenant."
+    elen inquiet "Iris n'a toujours pas la cause de sa mort."
+    iris fatigue "Et je ne vais pas l'inventer parce que vous voulez tous dormir cette nuit."
+    julian neutre "Je ne te demande pas ça."
+    elen colere "Alors qu'est-ce que tu veux ? Qu'on dise qu'il a pris les comprimés et qu'on passe à autre chose ?"
+    julian colere "Arrête de me faire dire ce que j'ai pas dit !"
+    "Elen se lève si brusquement que sa chaise recule contre le sol."
+    elen triste "C'est moi qui lui ai proposé d'échanger les chambres. S'il avait refusé, il aurait dormi dans la sienne."
+    noam inquiet "Elen..."
+    elen colere "Et surtout, ne me dites pas que c'est pas ma faute ! Vous en savez rien !"
+    lysa triste "Non, on en sait rien. Mais ça marche aussi pour le contraire."
+    pause 0.4
+    "Elen se rassoit sans regarder personne. Julian fixe ses mains."
+    iris raison "Voilà ce qu'on sait : un flacon de comprimés a été retrouvé. On ignore encore ce que Tomas a pris. On n'a ni preuve de suicide, ni preuve de meurtre."
+    noam raison "J'ai retrouvé les dossiers de Tomas : Keyper-IIB, des effectifs appelés ÉID-0, des quotas de production et des trajectoires orbitales."
+    julian reflexion "Il s'inquiétait vraiment de ce vote."
+    noam neutre "Oui. Il avait aussi un livre sur la résonance Yanma, une méthode de transmission spatiale à faible intensité."
+    noam raison "Le jour 25, je l'ai vu avec un petit appareil dans la salle d'observation. Aujourd'hui, il n'était plus à l'endroit où je l'avais vu."
+    lysa surpris "L'appareil a disparu ?"
+    noam reflexion "Je ne l'ai pas retrouvé. Mais je sais pas s'il était encore là quand Tomas est parti."
+    julian colere "Et on va vraiment faire comme si ça n'avait aucune importance ?"
+    nyra raison "Personne ne dit ça. On cherche juste à savoir si Tomas l'a emporté, si quelqu'un l'a rangé, ou s'il manque réellement."
+    julian reflexion "Qui s'occupe de ces appareils ?"
+    nyra neutre "Kael et Elias manipulent régulièrement le matériel de la salle. On peut commencer par vérifier avec eux."
+    if "kael" in investigation_pa_completed:
+        noam raison "Kael ne reconnaît pas l'appareil avec ma description. Il ne se souvient pas de l'avoir déplacé."
     if "elias" in investigation_pa_completed:
-        noam raison "Elias m'a dit qu'il déplaçait parfois du matériel. Mais il ne se souvient pas de celui-là."
-        julian reflexion "Donc il l'a peut-être juste rangé ?"
-        noam neutre "Peut-être."
+        noam raison "Elias n'est pas certain d'avoir touché cette boîte. Il doit vérifier les bacs."
+        lysa blase "Donc si on résume, on cherche une petite boîte grise parmi cinquante petites boîtes grises."
+    if "camera" in investigation_pa_completed:
+        noam raison "Je n'ai trouvé aucun modèle correspondant avec certitude dans l'inventaire officiel."
+        julian reflexion "Il aurait pu l'apporter lui-même."
+        noam neutre "Oui. L'inventaire ne suffit pas à trancher."
     if "quotas" in investigation_pa_completed:
-        noam reflexion "J'ai cherché une définition des unités ÉID-0. Aucun des index ouverts ne répond clairement."
-        elen inquiet "Alors Tomas avait peut-être raison de s'inquiéter..."
-        nyra raison "Peut-être, oui. Ça reste à vérifier."
-
-    julian fatigue "Je peux avoir une copie des documents ?"
-    noam surpris "Oui. Bien sûr."
-    julian neutre "Merci."
-    "Pour une fois, la réunion se termine sans que quelqu'un sorte en claquant la porte."
+        noam raison "Les effectifs et les quotas figurent côte à côte dans le registre. Mais aucune définition d'ÉID-0 n'est accessible."
+        elen inquiet "Alors il avait peut-être raison d'avoir peur de ce qu'on votait..."
+    if "keyper" in investigation_pa_completed:
+        noam raison "L'historique montre qu'il vérifiait encore plusieurs documents au jour 25. Ses recherches n'étaient pas terminées."
+    if "grille" in investigation_pa_completed:
+        noam raison "La protection d'aération de la chambre d'Elen bloquait le passage, pas entièrement le flux d'air."
+        iris reflexion "Je le note. Mais ça ne dit pas ce qui s'est passé dans la chambre."
+    if "julian" in investigation_pa_completed:
+        julian triste "Il m'avait demandé de l'écouter. Je lui ai pas laissé le temps de m'expliquer. Je veux au moins comprendre ce qu'il avait trouvé."
+    julian colere "Ce qui me rend fou, c'est qu'on parle tous de ce qu'on ne sait pas, comme si ça suffisait à finir la discussion !"
+    elen colere "Parce qu'on a peur, Julian ! Tu crois que t'es le seul à ne pas dormir ?"
+    "Julian ouvre la bouche, puis la referme. Il n'essaie pas de répondre."
+    lysa reflexion "On devrait pouvoir se demander si quelqu'un lui a fait du mal sans devoir pointer du doigt la première personne qui passe."
+    iris raison "Oui. Mais pas de procès improvisé avant les analyses. Si vous commencez à vous accuser entre vous, on n'obtiendra plus un seul témoignage fiable."
+    nyra raison "Alors faisons simple. Chacun note ses derniers déplacements connus de Tomas et les documents restent accessibles à tous. Aucune accusation tant qu'on n'a rien de vérifiable."
+    noam raison "Et on ne conclut pas au suicide à partir d'un flacon."
+    iris neutre "Ça, je peux le soutenir."
+    elen triste "Je voudrais juste qu'on arrête de parler de ma chambre comme si c'était une preuve contre moi."
+    julian fatigue "T'es pas la seule à te répéter ce que t'aurais dû faire."
+    "Il regarde le pupitre vide. Elen suit son regard, puis baisse les yeux."
+    julian neutre "Noam, tu peux m'envoyer une copie des recherches de Tomas ?"
+    noam neutre "Bien sûr."
+    "La réunion se termine sans solution. Pour la première fois, cependant, personne ne parle du flacon comme d'une explication suffisante."
     $ hideGroup()
     jump _27_0_1_1_0_1_NUIT
-# Durée : ~2m30.
 
 label _27_0_1_1_0_1_NUIT:
-    $ current_period = "Nuit"
+$ current_period = "Nuit"
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
-    "Je relis les notes de Tomas. Keyper-IIB, les effectifs des unités ÉID-0, les trajets orbitaux, le livre sur Yanma."
-    "J'avais espéré comprendre pourquoi il était mort. À la place, j'ai surtout découvert à quel point il cherchait encore."
-    think "Et cet appareil qu'il examinait..."
-    "Je n'ai pas de photo. Aucun numéro de série. Juste un souvenir d'une petite boîte métallique et d'un voyant."
-    noam fatigue "Merde, Tomas..."
-    "Demain, je voudrais retourner voir cette chambre où on l'a trouvé. Il reste peut-être quelque chose qu'on a raté."
-    "Je pose ma tablette et ferme les yeux."
+    "J'envoie à Julian les documents que Tomas avait conservés. L'accusé de réception apparaît, mais Julian ne répond pas."
+    "Je fais défiler mes photographies. Les relevés de Keyper-IIB, les effectifs ÉID-0, le livre sur Yanma. Et cette boîte que je n'ai pas retrouvée."
+    "J'avais espéré comprendre pourquoi Tomas était mort. À la place, j'ai découvert qu'il cherchait encore des réponses, lui aussi."
+    "Je repense à Elen qui n'a presque pas mangé, à Julian devant sa tasse froide, à la chaise que personne n'ose occuper."
+    noam fatigue "On aurait dû t'écouter..."
+    "Une photographie retient mon attention : le verrou et la grille d'aération. Le mot « fermée » me revient sans cesse, comme si une porte verrouillée expliquait automatiquement tout ce qu'il y avait derrière."
+    think "Il faut que je retourne dans la chambre où on l'a trouvé. Pas pour prouver ce que j'imagine. Pour regarder ce qu'on a raté."
+    "Je règle un rappel pour le lendemain. Cette fois, ce n'est pas pour un vote."
     stop music fadeout 1.0
     call end_day("28", sleeping=True) from _call_j27a_end_day_28
     jump _28_0_1_1_0_1_REVEIL
-# Durée : ~1m00.
+
