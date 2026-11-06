@@ -88,13 +88,13 @@ translate english a363ac34:
 translate english c93da9bc:
 
     # kami "Un simple petit échec, et vous voilà dans cet état ?!"
-    kami "One tiny little failure, and this is what you turn into?!"
+    kami "One little setback and you're already falling apart?!"
 
 # game/scenario/5_0.rpy:417
 translate english 005452f0:
 
     # kami "Ne vous inquiétez pas : votre prochaine chance de tout rater arrive dans vingt-quatre heures !"
-    kami "Don't worry: your next chance to mess everything up is only twenty-four hours away!"
+    kami "Don't worry! Your next chance to screw everything up is just twenty-four hours away!"
 
 # game/scenario/5_0.rpy:420
 translate english 49d5842b:
@@ -106,7 +106,7 @@ translate english 49d5842b:
 translate english 2eac1109:
 
     # kami "Vous recevrez de nouvelles portions lors de la matinée du jour 7. En attendant, à la DIET ! Comme tout le monde !"
-    kami "You'll receive fresh portions on the morning of Day 7. Until then, you're all on a DIET! Just like everyone else!"
+    kami "Fresh rations arrive on the morning of Day 7. Until then, consider yourselves on a diet! Just like everybody else!"
 
 # game/scenario/5_0.rpy:422
 translate english 294ffbd7:
@@ -118,7 +118,7 @@ translate english 294ffbd7:
 translate english ca8ba279:
 
     # kami "Oups, j'oubliais : vous ne pouvez pas voir le soleil depuis le Conclave !"
-    kami "Oops, I forgot: you can't see the sun from inside the Conclave!"
+    kami "Oops! Silly me. You can't even see the sun from the Conclave!"
 
 # game/scenario/5_0.rpy:431
 translate english 8eb7bbcf:
