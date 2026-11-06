@@ -567,22 +567,20 @@ label _26_0_1_1_0_1_PA_FLACON:
     scene j26_elen_flacon at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.68)])
-    noam reflexion "Iris, le flacon est encore là ?"
-    iris neutre "Oui. J'attendais de pouvoir faire des prélèvements propres."
-    "Elle me le montre sans me laisser le toucher."
-    noam reflexion "Il est presque vide."
-    iris raison "Ce qui ne dit rien sur qui l'a vidé, ni quand."
-    noam neutre "C'est écrit somnifère."
-    iris fatigue "Oui. C'est une piste. Mais on ne sait toujours pas si Tomas l'a avalé."
-    noam inquiet "Tu peux savoir s'il en a pris ?"
-    iris raison "Je vais essayer. Pour l'instant, je peux pas."
-    "Je m'approche pour photographier une nouvelle fois l'étiquette."
+    noam reflexion "Tu l'as toujours pas pris ?"
+    iris neutre "Je voulais finir les prélèvements avant. J'ai besoin que tu touches à rien."
+    "Elle me montre le flacon du bout du doigt, sans le déplacer."
+    noam reflexion "Il en reste presque pas..."
+    iris raison "Ouais. Mais j'ai aucune idée de ce qu'il y avait dedans hier."
+    noam inquiet "Tu vas pouvoir vérifier si Tomas en a pris ?"
+    iris fatigue "Je vais essayer. Je peux pas te promettre une réponse aujourd'hui."
+    "Elle me laisse refaire une photo de l'étiquette, de plus près."
     $ hideGroup()
     call investigation_take_manual_photo("j26_photo_flacon_detail", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_detail_photo
     $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.68)])
-    "Je note le nom. Iris récupère le flacon."
-    noam fatigue "Désolé. Je voulais juste..."
-    iris neutre "Je sais. Mais je préfère qu'on vérifie avant de raconter quoi que ce soit."
+    "Je note le nom. Iris glisse le flacon dans un sachet et écrit quelque chose dessus."
+    noam fatigue "Je voulais juste être sûr que..."
+    iris neutre "Je sais. Moi aussi, je voudrais être sûre."
     $ j26_alt_flacon = True
     $ hideGroup()
     return
@@ -591,19 +589,20 @@ label _26_0_1_1_0_1_PA_GRILLE:
     scene j26_elen_vide at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
-    noam reflexion "La grille... Tu te souviens de ce qu'Elias avait installé ?"
-    lysa raison "Les protections pour pas que quelqu'un se balade dans les conduits. Tu m'avais raconté."
-    "Je décide de reprendre un cliché des fixations pour comparer leur état."
+    noam reflexion "Tu vois la tôle, là-haut ?"
+    lysa raison "Ouais. C'est Elias qui avait mis ces protections, non ?"
+    noam reflexion "Il devait les avoir posées partout. Je veux revoir les fixations."
+    "Je reprends un cliché. Lysa reste derrière moi, les bras croisés."
     $ hideGroup()
     call investigation_take_manual_photo("j26_photo_grille_detail", "j26_elen_vide", (0.625, 0.17), 2.9) from _call_j26_grille_detail_photo
     $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
-    "Aucun des clous ne semble avoir été retiré récemment."
-    noam raison "La plaque est toujours fixée."
-    lysa neutre "Donc personne a pu passer sans l'enlever."
-    noam reflexion "Ouais. Mais regarde, l'air circule encore."
-    lysa blase "Heureusement, sinon Elen vivrait dans une boîte de conserve."
-    noam neutre "Je sais pas si ça sert à quelque chose. Je préfère le garder."
-    lysa raison "Note ce que tu vois, pas ce que t'imagines."
+    "Les clous sont toujours en place. Je passe la main près du bord et sens l'air sur mes doigts."
+    noam raison "On dirait que personne l'a bougée."
+    lysa neutre "Ou alors il a fallu la remettre exactement comme avant. Mais va savoir."
+    noam reflexion "Tu sens ? Ça souffle quand même."
+    lysa blase "Encore heureux. Bon, t'as ta photo ?"
+    noam neutre "Ouais. Je sais pas si ça servira."
+    lysa raison "Bah on la garde. Ce sera toujours mieux que de se fier à nos souvenirs."
     $ j26_alt_vent = True
     $ hideGroup()
     return
@@ -613,20 +612,21 @@ label _26_0_1_1_0_1_PA_IRIS:
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
     "Le lit sur lequel repose Tomas est dissimulé derrière un rideau. Je m'arrête devant sans oser l'ouvrir."
     $ showGroup([("iris", "fatigue", 0.34), ("noam", "inquiet", 0.68)])
-    iris fatigue "Je viens juste de commencer. Tu voulais savoir quoi ?"
-    noam raison "Ce qu'on peut dire avec certitude."
-    iris reflexion "Il était mort quand je l'ai examiné. Je n'ai pas vu de blessure externe évidente. Il était très humide, ses vêtements aussi."
+    iris fatigue "Si c'est pour me demander si j'ai trouvé la cause, non."
+    noam raison "Je voulais juste... Il y a quelque chose qui te paraît bizarre ?"
+    "Iris regarde le rideau derrière elle, puis se tourne de nouveau vers moi."
+    iris reflexion "Il avait pas de blessure visible. Et ses vêtements étaient complètement trempés. Tu l'as vu aussi."
     noam inquiet "Tu crois qu'il a eu mal ?"
-    iris triste "J'en sais rien. Et j'ai pas envie de te dire oui ou non pour te rassurer."
-    noam fatigue "OK."
-    iris neutre "J'ai encore des analyses à faire. Ne confonds pas « suicide », « empoisonnement » et « cause inconnue ». Pour l'instant, on est au troisième."
-    noam raison "Et l'odeur dans la chambre ?"
-    iris reflexion "Il y avait des déchets. Ça peut expliquer beaucoup de choses. J'ai eu mal à la tête en entrant, mais j'en tirerai aucune conclusion."
-    noam neutre "Tu m'appelles si ça avance ?"
-    iris raison "Oui. Mais Noam..."
-    noam reflexion "Quoi ?"
-    iris fatigue "Laisse-moi travailler un peu, d'accord ?"
-    noam neutre "Ouais. Merci."
+    iris triste "Je peux pas savoir."
+    noam fatigue "D'accord."
+    iris neutre "Ça m'énerve de pas pouvoir te dire autre chose. Mais je vais pas inventer."
+    noam raison "Et cette odeur, dans la chambre ?"
+    iris reflexion "Il y avait tellement de nourriture qui traînait... J'en sais rien. J'ai eu mal au crâne en entrant, mais ça veut peut-être rien dire."
+    noam neutre "Tu me préviens quand t'as quelque chose ?"
+    iris raison "Oui."
+    "Elle retourne vers son plan de travail, puis se ravise."
+    iris fatigue "Noam... t'as le droit d'être là, mais évite de regarder derrière le rideau, d'accord ?"
+    noam neutre "Ouais. Je vais te laisser."
     $ j26_alt_corps = True
     $ hideGroup()
     return
@@ -634,30 +634,36 @@ label _26_0_1_1_0_1_PA_IRIS:
 label _26_0_1_1_0_1_PA_ELEN:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
-    "Elen est assise avec une couverture sur les épaules. Lysa m'adresse un regard qui veut clairement dire de ne pas l'embêter."
+    "Elen est recroquevillée sous une couverture. Lysa lève les yeux vers moi avec une expression qui me fait comprendre que je ferais mieux d'avoir une très bonne raison d'être là."
     $ showGroup([("elen", "triste", 0.23), ("lysa", "inquiet", 0.46), ("noam", "fatigue", 0.71)])
-    noam neutre "Elen... Ça te dérange si je te demande juste un truc ?"
-    elen fatigue "C'est pour Tomas ?"
-    noam neutre "Ouais. On peut le faire une autre fois."
-    elen triste "Non. Vas-y. Je vais pas disparaître si tu me poses une question."
+    noam neutre "Elen... Tu préfères que je revienne ?"
+    elen fatigue "Non. T'as quelque chose à me demander, je sais."
+    noam neutre "Je veux pas t'embêter."
+    elen triste "Alors demande. J'en ai marre que tout le monde chuchote quand j'arrive."
     pause 0.3
-    noam reflexion "Pourquoi vous avez échangé les chambres hier ?"
-    elen fatigue "Il avait peur que des gens reviennent l'insulter. Il arrêtait pas de regarder derrière lui, même quand on était dans le couloir."
-    lysa inquiet "Tu lui as proposé ton lit ?"
-    elen triste "Ouais. Je lui ai dit que moi, je m'en foutais qu'on vienne frapper. Qu'au pire, je leur dirais de dégager."
-    noam raison "Et après ?"
-    elen fatigue "On s'est dit bonne nuit. Je suis allée chez lui. J'ai pas bougé jusqu'au matin."
-    noam neutre "Tu sais si quelqu'un a entendu ?"
-    elen reflexion "Je sais pas. Il y avait des gens qui passaient, je crois. Je regardais pas."
-    noam inquiet "Le flacon qu'on a trouvé... Il était à toi ?"
+    noam reflexion "Hier, quand tu lui as proposé ta chambre... il avait dit quoi ?"
+    elen fatigue "Pas grand-chose. Il a demandé si j'étais sûre. Deux fois."
+    lysa inquiet "Et toi ?"
+    elen triste "Je lui ai dit que j'avais pas peur d'une bande d'idiots qui tapent aux portes. Il a rigolé un peu, même."
+    "Elle tire sur le bord de la couverture."
+    noam raison "Après, vous avez fait quoi ?"
+    elen fatigue "Rien. On s'est souhaité bonne nuit. Moi, je suis allée dans sa chambre, et j'en ai pas bougé."
+    noam neutre "Vous étiez seuls quand vous en avez parlé ?"
+    elen reflexion "Je sais pas. On était dans le couloir. Des gens passaient, je crois. Pourquoi ?"
+    noam inquiet "Je me demandais juste qui était au courant."
+    elen fatigue "Tu penses que quelqu'un a attendu qu'il aille dans ma chambre ?"
+    noam fatigue "J'en sais rien, Elen."
+    "Lysa me lance un regard noir. Je m'en veux aussitôt de ne pas avoir arrêté plus tôt."
+    noam inquiet "Le petit flacon qu'Iris a trouvé, c'était à toi ?"
     elen surpris "Quel flacon ?"
-    noam raison "Des médicaments pour dormir."
-    elen fatigue "J'en ai peut-être dans ma trousse. J'en prends pas souvent. Je sais pas combien il en restait."
-    elen triste "Il avait même pas besoin de mes médicaments. Il voulait juste qu'on le laisse tranquille..."
-    "Elle commence à pleurer. Lysa me fait signe d'arrêter."
-    noam fatigue "OK. C'est bon. Merci, Elen."
-    elen triste "Je suis désolée. Je peux pas..."
-    noam neutre "T'as rien à finir. On reparlera plus tard."
+    noam raison "Un truc pour dormir."
+    elen fatigue "Peut-être. J'en ai dans ma trousse, parfois. Je sais même pas combien il en restait."
+    elen triste "Il m'avait rien demandé, Tomas. Il voulait juste dormir..."
+    "Elle se couvre le visage et se met à pleurer. Lysa se penche près d'elle."
+    lysa inquiet "C'est bon, Noam."
+    noam fatigue "Ouais. Désolé."
+    elen triste "Non, attends... C'est pas toi."
+    noam neutre "Je repasserai plus tard."
     $ j26_alt_elen = True
     $ hideGroup()
     return
@@ -666,46 +672,49 @@ label _26_0_1_1_0_1_PA_SAEL:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.7
     $ showGroup([("sael", "neutre", 0.35), ("noam", "neutre", 0.69)])
-    sael reflexion "J'ai entendu que tu poses des questions à tout le monde."
-    noam fatigue "Je voudrais surtout savoir ce qu'on a fait hier soir."
-    sael raison "J'étais à l'infirmerie une partie de la soirée. J'ai rangé du matériel, puis je suis allée me coucher."
-    noam neutre "Quelqu'un peut confirmer ?"
-    sael neutre "Iris m'a vue plus tôt. Après, non. Je n'ai pas de témoin pour chaque minute."
-    noam raison "Et Ryn ?"
-    sael reflexion "Je l'ai croisé dans le couloir. Il avait l'air de mauvaise humeur."
-    noam fatigue "Ça, c'est pas nouveau."
-    sael neutre "Je ne te donnerai pas un alibi inventé juste parce que tu as besoin d'en avoir un."
-    noam raison "C'est pas ce que je te demande."
-    sael inquiet "J'espère. Parce qu'aujourd'hui, tout le monde souffre. Ce serait facile de chercher un responsable et de ne plus regarder le reste."
-    noam neutre "Je note seulement ce que tu me dis."
+    sael reflexion "Tu viens pour Tomas ?"
+    noam fatigue "Ouais. Tu te rappelles où t'étais hier soir ?"
+    sael raison "À l'infirmerie au début. Iris m'a vue. Après, j'ai fermé et je suis allée me coucher."
+    noam neutre "Toute seule ?"
+    sael neutre "Oui."
+    "Elle repose lentement le linge qu'elle était en train de plier."
+    sael reflexion "Tu veux savoir si j'ai croisé quelqu'un ?"
+    noam raison "Aussi. Ryn, par exemple."
+    sael reflexion "Je l'ai vu dans le couloir. Il râlait contre le vote. Comme d'habitude."
+    noam fatigue "Ouais..."
+    sael neutre "Écoute. J'ai rien à te cacher, mais si tu commences à demander à chacun de prouver qu'il dormait, ça va très mal finir."
+    noam raison "Je sais. Je cherche juste..."
+    sael inquiet "Je sais ce que tu cherches. Fais attention aux gens pendant que tu cherches, d'accord ?"
+    noam neutre "Ouais."
     $ hideGroup()
     return
 
 label _26_0_1_1_0_1_PA_JULIAN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.7
-    "Julian remue son café depuis un moment. Quand je lui demande si je peux m'asseoir, il pose la tasse un peu trop fort."
+    "Julian tourne sa cuillère dans un café froid. Quand je m'assois en face de lui, il arrête aussitôt."
     $ showGroup([("julian", "agace", 0.35), ("noam", "neutre", 0.70)])
-    julian agace "Tu viens me demander si j'ai tué Tomas ?"
-    noam reflexion "J'allais te demander où t'étais après le dîner."
-    julian colere "Je le savais !"
-    noam agace "Mais laisse-moi finir deux secondes !"
+    julian agace "Vas-y. Pose ta question."
+    noam reflexion "Je voulais savoir si t'avais revu Tomas après le dîner."
+    julian colere "Non. Et si tu veux savoir où j'étais : avec Ryn et Mara. Après, je suis rentré."
+    noam agace "Tu peux me laisser poser mes questions au lieu de deviner ?"
     julian fatigue "..."
-    noam raison "Je sais que tu t'es disputé avec lui. Tout le monde le sait. Je veux juste savoir ce qu'il s'est passé après."
-    julian reflexion "J'étais avec Ryn et Mara dans la salle commune. On a parlé, puis je suis rentré dormir."
-    noam neutre "Vers quelle heure ?"
-    julian fatigue "J'en sais rien, Noam. J'avais pas de raison de noter l'heure."
-    noam raison "Tu savais pour son échange de chambre avec Elen ?"
-    julian surpris "Hein ? Quel échange ?"
-    noam neutre "Il dormait chez Elen parce qu'il avait peur qu'on vienne le déranger."
+    "Il repousse sa tasse jusqu'au bord de la table."
+    noam raison "Vous êtes restés longtemps ensemble ?"
+    julian reflexion "J'en sais rien. Une heure ? Deux ? On parlait de ce fichu vote."
+    noam neutre "Et tu savais qu'Elen et Tomas avaient échangé leurs chambres ?"
+    julian surpris "Quoi ?"
+    noam neutre "Il avait peur qu'on revienne l'emmerder. Il a dormi chez elle."
+    "Julian fixe sa tasse. Sa cuillère glisse et tombe sur la table."
     julian triste "..."
-    julian fatigue "Putain."
-    noam inquiet "Julian ?"
-    julian triste "Je l'ai pourri devant tout le monde. Et j'ai même pas réalisé qu'il avait peur de nous."
-    noam neutre "Tu pouvais pas savoir ce qui allait arriver."
-    julian agace "Arrête. J'ai été un connard avec lui. Mais j'ai pas... enfin, j'ai jamais voulu ça."
-    noam fatigue "Je sais pas encore ce qui s'est passé. C'est pour ça que je pose des questions."
-    julian triste "Ouais."
+    julian fatigue "Merde."
+    noam inquiet "Quoi ?"
+    julian triste "Je lui ai dit des horreurs hier. Devant tout le monde."
+    noam neutre "Ouais, je sais."
+    julian agace "Et toi, tu fais quoi, là ? Tu viens me dire que c'est de ma faute ?"
+    noam fatigue "Non, Julian. J'ai pas dit ça."
+    julian triste "Ouais... pardon. J'ai juste pas envie que la dernière chose qu'il ait entendue de moi, ce soit ça."
+    "Il ramasse sa cuillère. Il n'en fait rien, la garde simplement entre ses doigts."
     $ j26_alt_julian = True
     $ hideGroup()
     return
@@ -714,20 +723,22 @@ label _26_0_1_1_0_1_PA_NYRA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.7
     $ showGroup([("nyra", "neutre", 0.36), ("noam", "neutre", 0.70)])
-    nyra reflexion "Tu as besoin de quelque chose ?"
-    noam raison "Je pose les mêmes questions à tout le monde. Hier soir, après qu'on s'est croisés aux dortoirs..."
-    nyra neutre "Je suis allée dans ma chambre."
-    noam reflexion "Et après ?"
-    nyra sourire "J'ai dormi, Noam."
-    noam neutre "Tu peux comprendre pourquoi je demande."
-    nyra raison "Oui. T'as même pas besoin de te justifier."
-    noam reflexion "Tu savais que Tomas et Elen avaient échangé ?"
-    nyra hesitation "Je savais qu'elle essayait de l'aider, mais j'ai pas entendu ce qu'ils avaient décidé."
-    noam neutre "Tu n'es pas retournée dans les couloirs ?"
-    nyra raison "Non. Et je sais bien que j'ai pas de témoin pour le prouver."
-    noam fatigue "Je déteste faire ça."
-    nyra neutre "Alors fais-le correctement, et on évitera de se raconter n'importe quoi sur Tomas."
-    "Elle reprend sa tasse. Je m'éloigne avec une réponse simple et aucun moyen de la vérifier."
+    nyra reflexion "T'as une sale tête. Assieds-toi."
+    noam raison "Je voulais te demander un truc sur hier soir."
+    nyra neutre "Quand on s'est croisés ? Je suis rentrée dans ma chambre après."
+    noam reflexion "T'es pas ressortie ?"
+    nyra sourire "Non. Pourquoi, tu m'as cherchée ?"
+    noam neutre "C'est pas ce que je veux dire."
+    nyra raison "Je sais. Je te taquine. Un peu mal choisi, désolée."
+    noam reflexion "T'avais entendu parler de l'échange de chambres ?"
+    nyra hesitation "J'avais compris qu'Elen voulait l'aider. J'ai pas entendu la suite."
+    noam neutre "T'as croisé quelqu'un d'autre, après moi ?"
+    nyra raison "Non. Enfin, personne dont je me souvienne. Je suis allée me coucher."
+    "Elle tourne sa tasse entre ses mains avant de reprendre."
+    nyra neutre "Tu cherches surtout à savoir qui était dans les couloirs, c'est ça ?"
+    noam fatigue "Je sais pas quoi chercher, en fait."
+    nyra raison "Alors commence par ce que tu as vu toi-même. Et laisse tomber le reste pour l'instant, tu vas te rendre malade."
+    "Je ne sais pas si elle a raison, mais sa réponse me fait du bien sur le moment. Je n'ai toujours aucun moyen de vérifier ce qu'elle m'a raconté."
     $ j26_alt_nyra = True
     $ hideGroup()
     return
