@@ -58,7 +58,7 @@ translate english 2c8dacdc:
 translate english e1b5a778:
 
     # kami "Ooooh ? Vous êtes déjà en train de remuer dans vos petits lits ?"
-    kami "Ooooh? Are you already stirring in your little beds?"
+    kami "Ooooh? Are my little sleepyheads awake already?"
 
 # game/scenario/2_canon.rpy:61
 translate english 6061d67a:
@@ -166,7 +166,7 @@ translate english c57ad04c:
 translate english 5a2ec9e7:
 
     # kami "Et bien, vous le saurez après un court instant publicitaire !"
-    kami "Well, you'll find out after a short commercial break!"
+    kami "Find out right after these messages!"
 
 # game/scenario/2_canon.rpy:101
 translate english bc185a80:
