@@ -676,3 +676,159 @@ label _26_0_1_1_0_1_PA_CONSOLE:
     noam fatigue "Je me souviens même pas de sa forme exacte."
     return
 
+
+label _26_0_1_1_0_1_BILAN:
+    $ current_period = "Soir"
+    scene bg_repos at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
+    "Le temps a passé plus vite que je ne pensais. J'ai pris quelques notes, parlé à des gens et, surtout, interrompu beaucoup de personnes qui auraient préféré qu'on les laisse en paix."
+    $ showGroup([("lysa", "fatigue", 0.21), ("nyra", "neutre", 0.46), ("noam", "fatigue", 0.70)])
+    lysa reflexion "Alors ?"
+    noam fatigue "J'ai pas beaucoup de choses certaines."
+    nyra raison "C'est déjà bien de s'en rendre compte."
+    if "iris" in investigation_pa_completed:
+        noam raison "Iris ne peut pas confirmer la cause. Elle veut encore faire des analyses."
+        lysa neutre "Au moins, on ne va pas raconter que c'est forcément un suicide."
+    else:
+        noam reflexion "Iris a besoin de temps. On ne sait toujours pas comment il est mort."
+    if "flacon" in investigation_pa_completed:
+        lysa reflexion "Et ce flacon ?"
+        noam raison "Presque vide, mais on ne sait pas s'il a avalé ce qu'il y avait dedans."
+    if "elen" in investigation_pa_completed:
+        noam raison "Elen confirme qu'ils ont échangé leurs chambres. Elle dit ne pas être ressortie de celle de Tomas."
+        lysa inquiet "Elle a vraiment pas besoin qu'on la questionne encore ce soir."
+    if "julian" in investigation_pa_completed:
+        noam neutre "Julian était avec Ryn et Mara. Il n'avait pas entendu parler de l'échange."
+    if "ryn" in investigation_pa_completed:
+        noam neutre "Ryn dit la même chose pour leur soirée. Il était furieux, mais ça fait pas de lui un meurtrier."
+    if "nyra" in investigation_pa_completed:
+        noam reflexion "Nyra, tu m'as dit que t'étais allée te coucher après qu'on s'est croisés."
+        nyra neutre "Oui. Et je peux pas le prouver davantage."
+    if "kael" in investigation_pa_completed:
+        noam raison "Kael et Elias ont confirmé le verrou. Et le passage physique par les grilles était bloqué."
+    if "grille" in investigation_pa_completed:
+        noam reflexion "J'ai regardé la grille. La plaque ne laisse passer personne, mais l'air circule."
+        nyra neutre "Ça ne prouve rien sur ce qui s'est passé. Mais garde la photo."
+    if "notes" in investigation_pa_completed or "console" in investigation_pa_completed:
+        noam fatigue "Tomas travaillait encore sur ses recherches. J'ai du mal à croire qu'il pensait tout arrêter hier."
+        lysa raison "Noam, ça veut rien dire sur son état d'esprit. On peut travailler et aller très mal."
+        noam neutre "Je sais."
+    if investigation_pa_remaining > 0:
+        lysa reflexion "T'as gardé des pistes de côté ?"
+        noam raison "Oui. J'ai pas voulu déranger tout le monde aujourd'hui."
+        nyra raison "On aura le temps demain. C'est mieux que de tirer des conclusions en forçant les gens à parler."
+    else:
+        lysa fatigue "Et t'as plus l'énergie de continuer."
+        noam fatigue "Franchement, non."
+    pause 0.4
+    lysa triste "Je me suis engueulée avec Tomas la semaine dernière parce qu'il avait déplacé mon plateau. C'est débile, mais c'est à ça que je pense."
+    noam inquiet "Lysa..."
+    lysa fatigue "Non, laisse. J'ai pas envie de pleurer maintenant."
+    nyra reflexion "On a une réunion. Il faut leur dire ce qu'on sait, et ce qu'on ne sait pas."
+    noam raison "D'accord. Mais pas un procès."
+    $ hideGroup()
+    jump _26_0_1_1_0_1_REUNION
+
+label _26_0_1_1_0_1_REUNION:
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_tense_meeting.mp3" fadein 0.7
+    "La place de Tomas est vide. J'ai beau le savoir, je regarde quand même sa chaise avant de m'asseoir."
+    $ showGroup([("julian", "fatigue", 0.20), ("elen", "triste", 0.46), ("noam", "fatigue", 0.73)])
+    julian reflexion "On est tous là ?"
+    elen fatigue "Pas tous."
+    julian triste "..."
+    julian fatigue "Oui. Pardon."
+    "Personne ne sait comment commencer. Iris finit par prendre la parole."
+    $ showGroup([("iris", "fatigue", 0.23), ("elen", "triste", 0.49), ("noam", "fatigue", 0.74)])
+    iris raison "Je vais le dire clairement. Pour l'instant, je ne peux pas déterminer comment Tomas est mort."
+    elen inquiet "Même avec le flacon qu'on a trouvé ?"
+    iris raison "Ça ne prouve rien. Je veux continuer les analyses. S'il vous plaît, arrêtez de parler comme si on avait déjà une réponse."
+    elen triste "D'accord."
+    $ showGroup([("julian", "fatigue", 0.20), ("ryn", "agace", 0.45), ("noam", "neutre", 0.72)])
+    ryn reflexion "Mais hier, il allait vraiment mal. On l'a tous vu."
+    julian fatigue "Oui. Et je lui ai crié dessus."
+    ryn agace "Moi aussi, j'étais en colère. Ça veut pas dire qu'on l'a tué !"
+    noam raison "Personne ne dit ça. On essaie juste de comprendre."
+    julian triste "J'arrête pas de penser à la dernière fois que je lui ai parlé. Je lui ai même pas demandé comment il allait."
+    ryn fatigue "Ouais..."
+    if "julian" in investigation_pa_completed or "ryn" in investigation_pa_completed:
+        noam neutre "J'ai parlé à certains d'entre vous. Vos déclarations ne suffisent pas à construire une chronologie certaine."
+        julian reflexion "C'est-à-dire ?"
+        noam raison "Ça veut dire qu'on ne sait pas. Pas que quelqu'un ment."
+    $ showGroup([("sael", "neutre", 0.21), ("nyra", "neutre", 0.47), ("noam", "neutre", 0.73)])
+    sael raison "La mort de Tomas n'est pas une raison pour nous accuser mutuellement au hasard."
+    nyra neutre "On devrait attendre le rapport d'Iris et garder les éléments qu'on a trouvés. Rien de plus pour ce soir."
+    noam raison "Je suis d'accord."
+    if "flacon" in investigation_pa_completed:
+        noam neutre "Le flacon ne démontre pas le suicide."
+    if "kael" in investigation_pa_completed:
+        noam raison "La porte était verrouillée. Mais ça n'explique pas tout."
+    if "elen" in investigation_pa_completed:
+        noam raison "Et Tomas avait échangé sa chambre pour être plus tranquille. Elen ne pouvait pas prévoir ce qui allait se passer."
+    $ showGroup([("julian", "reflexion", 0.22), ("elen", "triste", 0.48), ("noam", "fatigue", 0.73)])
+    julian reflexion "Il reste le vote de demain."
+    elen colere "Non. On va pas faire ça."
+    julian inquiet "Je sais, mais Kami attend une décision. Et si on ne dit rien..."
+    elen colere "Tomas est mort ce matin, Julian ! Tu veux qu'on s'assoit là demain comme si on avait juste perdu une chaise ?!"
+    julian fatigue "Non ! Je veux juste pas qu'elle nous punisse encore pour avoir laissé tomber un vote !"
+    noam raison "Alors on lui dit ensemble. Pas de vote demain."
+    elen triste "Moi, je serai pas là."
+    $ showGroup([("lysa", "neutre", 0.21), ("mara", "fatigue", 0.47), ("noam", "neutre", 0.73)])
+    lysa neutre "Moi non plus."
+    mara fatigue "Pareil. Franchement, qu'elle se débrouille."
+    "Les autres acquiescent un à un. Julian finit par baisser les yeux."
+    julian fatigue "Bon. D'accord. Mais on assume tous, alors."
+    $ j26_alt_boycott = True
+    $ hideGroup()
+    play sound sfx_announce
+    stop music fadeout 0.5
+    scene bg_diffusion_taquin at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    kami "Oh ! Un boycott collectif ? Vous êtes adorables !"
+    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+    kami "Moi qui avais préparé un beau débat sur le droit d'exprimer son opinion..."
+    scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
+    kami "Je rappelle tout de même qu'un décès ne suspend pas automatiquement le calendrier du Conclave."
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    kami "Mais si vous ne participez pas, aucun nouveau Commandement ne sera adopté demain."
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Allez, reposez-vous. Essayez juste de ne pas perdre un autre représentant, d'accord ?"
+    hide screen kami_broadcast_ui
+    stop music fadeout 0.8
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("elen", "triste", 0.26), ("iris", "fatigue", 0.50), ("noam", "fatigue", 0.75)])
+    elen colere "Elle me dégoûte."
+    iris agace "Ouais. Moi aussi."
+    noam fatigue "On rentre."
+    $ hideGroup()
+    jump _26_0_1_1_0_1_NUIT
+
+label _26_0_1_1_0_1_NUIT:
+    $ current_period = "Nuit"
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
+    "J'ai enfin fermé ma porte. Je pose la tablette sur mon lit sans même prendre le temps d'enlever mes chaussures."
+    "Dans le couloir, quelqu'un passe en parlant à voix basse. J'entends une porte se refermer. Tout est normal. Et c'est ça qui me donne envie de hurler."
+    "Hier, Tomas était là. Il aurait pu venir me demander si je savais comment trier ses dossiers ou s'il avait droit à une deuxième portion de café."
+    "J'aurais râlé. Je lui aurais dit de se débrouiller. Et demain, il serait revenu."
+    pause 0.3
+    "Je retrouve dans les anciens messages une conversation où il me demandait si je pouvais vérifier une référence sur sa tablette. J'avais répondu « après le dîner ». Je ne l'ai jamais fait."
+    noam fatigue "Merde, Tomas..."
+    "Je regarde les arguments obtenus aujourd'hui. Aucun ne dit avec certitude ce qui lui est arrivé."
+    if "flacon" in investigation_pa_completed:
+        "Je revois le flacon de somnifères. Je sais même pas s'il est lié à sa mort."
+    if "elen" in investigation_pa_completed:
+        "Je repense à Elen qui répétait qu'elle voulait juste l'aider à dormir."
+    if "julian" in investigation_pa_completed or "ryn" in investigation_pa_completed:
+        "Je me rappelle aussi la colère des autres. Et leur tête, aujourd'hui, quand ils ont compris qu'il ne reviendrait pas."
+    if "notes" in investigation_pa_completed or "console" in investigation_pa_completed:
+        "Il travaillait encore sur Keyper. J'avais l'impression que c'était la seule chose qui lui donnait encore envie de parler."
+    else:
+        "Hier, il cherchait toujours des réponses sur Keyper, cette station dont il m'avait parlé."
+    "Il y avait aussi ce petit appareil qu'il avait reposé dans la salle d'observation. J'ai à peine regardé."
+    "Demain, je voudrais retourner dans sa chambre. Juste voir ce qu'il a laissé. Peut-être que ça m'aidera à comprendre ce qu'il essayait de faire."
+    "J'éteins l'écran."
+    stop music fadeout 1.0
+    call end_day("27", sleeping=True) from _call_j26_alt_end_day_27
+    jump _27_0_1_1_0_1_REVEIL
