@@ -167,13 +167,8 @@ label _26_0_1_1_0_1_DECOUVERTE:
     "Elen essaie de s'approcher, mais ses jambes semblent lâcher. Lysa, revenue derrière nous, la retient par les épaules."
     $ showGroup([("lysa", "inquiet", 0.22), ("elen", "triste", 0.49), ("noam", "vide", 0.76)])
     elen triste "Je lui ai donné ma chambre..."
-    elen peur "Attends... Il était chez moi. Et si quelqu'un s'était trompé de personne ?"
-    lysa inquiet "Quoi ?"
-    elen peur "C'est MA chambre ! Si quelqu'un voulait me faire quelque chose, c'est lui qui..."
-    noam peur "Elen, on sait même pas ce qui lui est arrivé."
-    elen colere "Mais tu comprends ce que je dis ?! J'aurais pu être à sa place !"
-    lysa inquiet "Oui. On comprend. Mais pour l'instant, personne sait s'il y a eu quelqu'un."
-    "Kael reste près de la porte. Elias regarde ses mains. Je crois que tout le monde vient de comprendre qu'on pourrait être en danger, et personne ne sait quoi faire."
+    elen peur "Je voulais juste qu'il soit tranquille. C'est tout."
+    "Elle cherche le visage de Tomas derrière nous, comme si elle espérait qu'il allait soudain se redresser."
     pause 0.6
     lysa inquiet "Viens. On sort une minute."
     elen peur "Mais il est là !"
