@@ -439,6 +439,8 @@ label _28_0_1_1_0_1_TEMOINS:
     $ investigation_pa_begin(28, 5)
     $ investigation_unlocked = True
     $ free_time_active = False
+    $ conclave_lock = False
+    $ dortoir_lock = False
     $ exploration_libre_active = True
     $ exploration_libre_allowed_rooms = list(J28A_ROOMS.keys())
     $ current_scene_active = None
@@ -507,7 +509,7 @@ label _28_0_1_1_0_1_SAEL_RYN:
     noam agace "Mais j'ai pas dit ça !"
     ryn colere "Vous arrivez avec une plante du désert et vous nous regardez tous les deux !"
     $ showGroup([("lysa", "blase", 0.22), ("ryn", "colere", 0.48), ("noam", "neutre", 0.74)])
-    lysa blase "On va aussi parler à Kael. Calme-toi."
+    lysa blase "On cherche aussi du côté de la maintenance. Calme-toi."
     ryn fatigue "Ouais, c'est ça..."
     $ showGroup([("sael", "neutre", 0.22), ("ryn", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     sael raison "Ryn, laisse-le finir."
