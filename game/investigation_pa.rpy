@@ -212,3 +212,144 @@ label investigation_evidence_photo_take(eid):
     hide screen investigation_evidence_photo_preview
     window show
     return
+
+
+# Jour 26 — photographies prises PAR le joueur sur les vraies textures.
+# Les trois PNG sont des calques transparents à la même résolution que le BG.
+# On assemble une seule fois les images pour garder leurs coordonnées alignées.
+image j26_elen_corps = Composite(
+    (1536, 1024),
+    (0, 0), "images/background/scene/bg_chambre_elen.png",
+    (0, 0), "images/background/interact/chambre_elen/meutre_tomas/plaque.png",
+    (0, 0), "images/background/interact/chambre_elen/meutre_tomas/corps_tomas.png")
+image j26_elen_vide = Composite(
+    (1536, 1024),
+    (0, 0), "images/background/scene/bg_chambre_elen.png",
+    (0, 0), "images/background/interact/chambre_elen/meutre_tomas/plaque.png")
+image j26_elen_flacon = Composite(
+    (1536, 1024),
+    (0, 0), "images/background/scene/bg_chambre_elen.png",
+    (0, 0), "images/background/interact/chambre_elen/meutre_tomas/plaque.png",
+    (0, 0), "images/background/interact/chambre_elen/meutre_tomas/medicament.png")
+
+init python:
+    import math as _j26_math
+
+    def _j26_limit_center(value, zoom):
+        margin = 0.5 / zoom
+        return max(margin, min(1.0 - margin, value))
+
+    class _J26PhotoView(renpy.Displayable):
+        """Caméra cadrant l'image entière, puis zoom progressif vers un indice."""
+        def __init__(self, source, **kwargs):
+            super(_J26PhotoView, self).__init__(**kwargs)
+            self.child = Transform(source, xysize=(1920, 1080))
+            self.zoom = 1.0
+            self.center = (0.5, 0.5)
+            self.motion = None
+            self.draw_st = 0.0
+
+        def render(self, width, height, st, at):
+            self.draw_st = st
+            shake_x = shake_y = 0.0
+            if self.motion is not None:
+                start, z0, c0, z1, c1 = self.motion
+                elapsed = max(0.0, st - start)
+                lead = 0.12
+                if elapsed < lead:
+                    shake_x = _j26_math.sin(elapsed * 150) * 4.0 * (1 - elapsed / lead)
+                    shake_y = _j26_math.sin(elapsed * 125) * 2.5 * (1 - elapsed / lead)
+                t = max(0.0, min(1.0, (elapsed - lead) / 0.58))
+                eased = t * t * (3 - 2 * t)
+                self.zoom = z0 + (z1 - z0) * eased
+                self.center = tuple(a + (b - a) * eased for a, b in zip(c0, c1))
+                if t < 1.0:
+                    renpy.redraw(self, 0)
+                else:
+                    self.motion = None
+            cx = _j26_limit_center(self.center[0], self.zoom)
+            cy = _j26_limit_center(self.center[1], self.zoom)
+            scaled = renpy.render(Transform(self.child, zoom=self.zoom), 1920, 1080, st, at)
+            result = renpy.Render(1920, 1080)
+            result.blit(scaled, (int(960 - cx * 1920 * self.zoom + shake_x),
+                                 int(540 - cy * 1080 * self.zoom + shake_y)))
+            return result
+
+        def visit(self):
+            return [self.child]
+
+    def _j26_photo_focus(view, center, zoom):
+        view.motion = (getattr(view, "draw_st", 0.0), view.zoom,
+                       view.center, zoom, center)
+        renpy.redraw(view, 0)
+
+screen j26_photo_manual(eid, view, center, zoom):
+    modal True
+    zorder 220
+    default phase = "intro"
+
+    # Le rendu exact de cette caméra sera sauvegardé (960x540) dans le dossier.
+    add view
+
+    if phase == "intro":
+        timer 0.12 action Function(_j26_photo_focus, view, center, zoom)
+        timer 0.86 action SetScreenVariable("phase", "camera")
+
+    if phase in ("intro", "camera"):
+        # Réticule et angles dessinés en Ren'Py : aucun nouvel asset.
+        for cx, cy, sx, sy in ((180, 165, 1, 1), (1740, 165, -1, 1),
+                               (180, 865, 1, -1), (1740, 865, -1, -1)):
+            add Solid("#DDF6F4CC") xpos (cx if sx > 0 else cx - 66) ypos cy xsize 66 ysize 3
+            add Solid("#DDF6F4CC") xpos cx ypos (cy if sy > 0 else cy - 66) xsize 3 ysize 66
+        add Solid("#EAF9F5B0") xpos 939 ypos 540 xsize 42 ysize 2
+        add Solid("#EAF9F5B0") xpos 960 ypos 519 xsize 2 ysize 42
+        frame:
+            xalign 0.5 ypos 25
+            background Solid("#091721DD")
+            padding (24, 12)
+            text "TABLETTE — PRISE DE VUE" color "#E7F7FF" size 29
+        if phase == "camera":
+            key "K_SPACE" action SetScreenVariable("phase", "capture")
+            key "K_RETURN" action SetScreenVariable("phase", "capture")
+            textbutton "PRENDRE LA PHOTO  [ESPACE / ENTRÉE]":
+                xalign 0.5 yalign 0.95
+                text_size 28
+                action SetScreenVariable("phase", "capture")
+        else:
+            text "Cadrage de l'indice…" xalign 0.5 yalign 0.94 size 24 color "#E7F7FF"
+
+    elif phase == "capture":
+        # Une interaction entière sans HUD avant screenshot_to_bytes.
+        # Contrairement à l'ancienne fonction, aucune photo n'est automatique.
+        timer 0.16 action [Function(investigation_photo_capture, eid),
+                           SetScreenVariable("phase", "flash")]
+
+    elif phase == "flash":
+        add Solid("#FFFFFF") at _j26_photo_flash
+        timer 0.16 action SetScreenVariable("phase", "preview")
+
+    elif phase == "preview":
+        add Solid("#020A10BB")
+        frame:
+            xalign 0.5 yalign 0.5
+            background Solid("#EEEAE0")
+            padding (18, 18)
+            vbox:
+                spacing 14
+                add investigation_evidence_image(eid) xsize 960 ysize 540
+                text "PHOTO ENREGISTRÉE" color "#263644" size 28 xalign 0.5
+        timer 1.0 action Return(True)
+
+transform _j26_photo_flash:
+    alpha 1.0
+    linear 0.15 alpha 0.0
+
+label j26_photograph(eid, source, center, zoom=2.2):
+    # Le clic de déclenchement est obligatoire pour continuer le scénario.
+    window hide
+    with None
+    $ _j26_view = _J26PhotoView(source)
+    call screen j26_photo_manual(eid, _j26_view, center, zoom)
+    $ investigation_add(eid, notify=False)
+    window show
+    return
