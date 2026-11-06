@@ -70,13 +70,13 @@ translate english 77f1d142:
 translate english 57370326:
 
     # kami "Et bien booooonjour tout le monde ! J'espère que vous n'avez pas trop la gueule de bois ?!"
-    kami "Well, goooood morning, everyone! I hope you're not too hungover?!"
+    kami "Well, goooood morning, everyone! How are those hangovers treating you?"
 
 # game/scenario/4_0.rpy:164
 translate english 1441e9d1:
 
     # kami "Il est huit heures et, bonne nouvelle : votre petite révolution a été annulée faute de courage."
-    kami "It's eight o'clock and, good news: your little revolution was called off due to a lack of courage."
+    kami "It's eight o'clock, and here's the good news: your little revolution has been canceled due to a severe lack of backbone."
 
 # game/scenario/4_0.rpy:167
 translate english 28ba0661:
@@ -100,7 +100,7 @@ translate english e7039bfd:
 translate english 6d21d504:
 
     # kami "C'est beau, non ? Ce calme avant… le calme."
-    kami "Beautiful, isn't it? The calm before... more calm."
+    kami "Beautiful, isn't it? The calm before... absolutely nothing."
 
 # game/scenario/4_0.rpy:173
 translate english 89ea3f5d:
@@ -118,7 +118,7 @@ translate english a8b168cd:
 translate english 94c96074:
 
     # kami "Allez, ne faites pas cette tête ! Vous avez probablement sauvé des gens."
-    kami "Come on, don't look so glum! You probably saved some lives."
+    kami "Come on, chin up! You probably saved a few lives."
 
 # game/scenario/4_0.rpy:178
 translate english ea9d59b7:
@@ -202,7 +202,7 @@ translate english day4_photo_put_trace_loop_550eb465:
 translate english day4_photo_put_trace_loop_d6c42ea3:
 
     # elen "Allez, Goumi, s'il te plaît ! Un peu de cannelle. Ou du poivre. Ou un truc qui prouve que j'ai encore une langue ! Allez Steeuuuplait !"
-    elen "Come on, Goumi, please! A little cinnamon. Or pepper. Or anything that proves I still have taste buds! Pleeease!"
+    elen "Come on, Goumi! Please! Cinnamon, pepper, anything that'll remind me I still have taste buds! Pleeease!"
 
 # game/scenario/4_0.rpy:278
 translate english day4_photo_put_trace_loop_04654647:
@@ -220,7 +220,7 @@ translate english day4_photo_put_trace_loop_fb1a6f6c:
 translate english day4_photo_put_trace_loop_e0e16efa:
 
     # elen "Quoi ?! Mais nooon, on n'a déjà presque rien ici !"
-    elen "What?! Nooo, we barely have anything here as it is!"
+    elen "What?! Noooo! We barely have anything as it is!"
 
 # game/scenario/4_0.rpy:283
 translate english day4_photo_put_trace_loop_fa3c2750:
@@ -262,7 +262,7 @@ translate english day4_photo_put_trace_loop_32690014:
 translate english day4_photo_put_trace_loop_ffd166cc:
 
     # kami "Oh là là, ma petite Elen… Eh bien il faut assumer les conséquences du vote d'hier !"
-    kami "Oh, my poor little Elen... Well, you'll simply have to live with the consequences of yesterday's vote!"
+    kami "Aww, poor little Elen. Guess that's what happens when you have to live with yesterday's vote!"
 
 # game/scenario/4_0.rpy:303
 translate english day4_photo_put_trace_loop_3070d264:
@@ -280,7 +280,7 @@ translate english day4_photo_put_trace_loop_37eb0b48:
 translate english day4_photo_put_trace_loop_edcbe80a:
 
     # kami "Ne vous inquiétez pas trop… de nouvelles provisions arriveront au Jour 7."
-    kami "Don't worry too much... fresh supplies will arrive on Day 7."
+    kami "Don't fret... more supplies are coming on Day 7."
 
 # game/scenario/4_0.rpy:308
 translate english day4_photo_put_trace_loop_cab303ef:
@@ -526,7 +526,7 @@ translate english day4_photo_put_trace_loop_719a3e74:
 translate english day4_photo_put_trace_loop_de540315:
 
     # ryn "Quoi ?! T'insinues que c'est ma faute, c'est ça ?!"
-    ryn "What?! You're saying this is my fault, is that it?!"
+    ryn "What?! You're blaming me now?! Is that it?!"
 
 # game/scenario/4_0.rpy:431
 translate english day4_photo_put_trace_loop_45c5e8ad:
@@ -814,13 +814,13 @@ translate english day4_tray_scene_loop_f3220e65:
 translate english day4_tray_scene_loop_73ada004:
 
     # mara "On parle bien du même gars ? Genre celui qui faisait tout pour se faire remarquer hier ?"
-    mara "We are talking about the same guy, right? The one who spent all day yesterday trying to get everyone's attention?"
+    mara "We're talking about the same guy, right? The one who spent all day showing off yesterday?"
 
 # game/scenario/4_0.rpy:594
 translate english day4_tray_scene_loop_77980a9d:
 
     # mara "MDR ! Quelqu'un pense à prévenir les caméras que leur héros est souffrant ?"
-    mara "LMAO! Someone should tell the cameras their hero is under the weather."
+    mara "Ha! Somebody tell the cameras their leading man is feeling under the weather!"
 
 # game/scenario/4_0.rpy:596
 translate english day4_tray_scene_loop_bdadff79:
@@ -886,7 +886,7 @@ translate english day4_tray_scene_loop_56c7f5d1:
 translate english day4_tray_scene_loop_8f3c0d02:
 
     # kami "Enfin, bref, poursuivons votre petite aventure démocratique ! Je vais donc vous annoncer le prochain vote..."
-    kami "Anyway, let's continue your little democratic adventure! Time to announce the next vote..."
+    kami "Anyway! Back to your adorable little experiment in democracy. Next up on the ballot..."
 
 # game/scenario/4_0.rpy:629
 translate english day4_tray_scene_loop_1d93b6b7:
@@ -898,7 +898,7 @@ translate english day4_tray_scene_loop_1d93b6b7:
 translate english day4_tray_scene_loop_5713785f:
 
     # kami "Cette fois la formulation est claire et ne mérite aucune réédition !"
-    kami "This time, the wording is perfectly clear and requires no revision!"
+    kami "And this time, the wording's crystal clear. No surprise edits required!"
 
 # game/scenario/4_0.rpy:633
 translate english day4_tray_scene_loop_6082604b:
