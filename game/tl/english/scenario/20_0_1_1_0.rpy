@@ -5210,57 +5210,117 @@ translate english strings:
 
     # game/scenario/20_0_1_1_0.rpy:392
     old "Que faire du couteau ?"
-    new ""
+    new "What should I do with the knife?"
 
     # game/scenario/20_0_1_1_0.rpy:392
     old "Lâcher le couteau"
-    new ""
+    new "Drop the knife"
 
     # game/scenario/20_0_1_1_0.rpy:392
     old "Garder le couteau"
-    new ""
+    new "Keep the knife"
 
     # game/scenario/20_0_1_1_0.rpy:764
     old "Si demain la navette arrive... mais que quelqu'un reste coincé ici ?"
-    new ""
+    new "If the shuttle arrives tomorrow... but someone is trapped here?"
 
     # game/scenario/20_0_1_1_0.rpy:764
     old "Je monte dans la navette."
-    new ""
+    new "Board the shuttle."
 
     # game/scenario/20_0_1_1_0.rpy:764
     old "Je reste s'il y a encore une chance de le sortir."
-    new ""
+    new "Stay if there's still a chance of getting them out."
 
     # game/scenario/20_0_1_1_0.rpy:1341
     old "Rester immobile ou examiner la pièce ?"
-    new ""
+    new "Stay still or examine the room?"
 
     # game/scenario/20_0_1_1_0.rpy:1341
     old "Balayer l'infirmerie du regard"
-    new ""
+    new "Look around the infirmary"
 
     # game/scenario/20_0_1_1_0.rpy:1341
     old "Garder des forces"
-    new ""
+    new "Save my strength"
 
     # game/scenario/20_0_1_1_0.rpy:1355
     old "Que puis-je atteindre du regard ?"
-    new ""
+    new "What can I see from here?"
 
     # game/scenario/20_0_1_1_0.rpy:1355
     old "Le moniteur"
-    new ""
+    new "The monitor"
 
     # game/scenario/20_0_1_1_0.rpy:1355
     old "Les sangles"
-    new ""
+    new "The straps"
 
     # game/scenario/20_0_1_1_0.rpy:1355
     old "La porte"
-    new ""
+    new "The door"
 
     # game/scenario/20_0_1_1_0.rpy:1355
     old "Arrêter d'observer"
-    new ""
+    new "Stop looking around"
 
+
+# game/scenario/20_0_1_1_0.rpy:491
+translate english a53c02c6:
+
+    # noam surpris "..."
+    noam surpris "..."
+
+# game/scenario/20_0_1_1_0.rpy:513
+translate english a53c02c6_1:
+
+    # noam surpris "..."
+    noam surpris "..."
+
+# game/scenario/20_0_1_1_0.rpy:537
+translate english b22df8ce:
+
+    # noam "..."
+    noam "..."
+
+# game/scenario/20_0_1_1_0.rpy:672
+translate english f5bde92b:
+
+    # iris colere "Je suis sérieuse."
+    iris colere "I'm serious."
+
+# game/scenario/20_0_1_1_0.rpy:728
+translate english a53c02c6_2:
+
+    # noam surpris "..."
+    noam surpris "..."
+
+# game/scenario/20_0_1_1_0.rpy:784
+translate english 271b0340:
+
+    # kael surpris "..."
+    kael surpris "..."
+
+# game/scenario/20_0_1_1_0.rpy:838
+translate english 5ab0598a:
+
+    # kael "..."
+    kael "..."
+
+# game/scenario/20_0_1_1_0.rpy:1509
+translate english 8c9426bf:
+
+    # sael mefiant "Noam."
+    sael mefiant "Noam."
+
+# game/scenario/20_0_1_1_0.rpy:1525
+translate english 1a64985a:
+
+    # sael "Non."
+    sael "No."
+
+# game/scenario/20_0_1_1_0.rpy:1595
+translate english a53c02c6_3:
+
+    # noam surpris "..."
+    noam surpris "..."
