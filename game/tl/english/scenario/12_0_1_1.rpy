@@ -186,31 +186,31 @@ translate english b1a9c1e6:
 translate english da86a29c:
 
     # "Je me réveille en sursaut, le cœur cognant violemment dans ma poitrine."
-    ""
+    "I jolt awake, my heart hammering against my ribs."
 
 # game/scenario/12_0_1_1.rpy:14
 translate english 6ae4808b:
 
     # "Un bruit… J’ai entendu un bruit."
-    ""
+    "A noise... I heard something."
 
 # game/scenario/12_0_1_1.rpy:15
 translate english c063e779:
 
     # "Comme un frottement. Ou un pas. Juste à côté du lit."
-    ""
+    "Like something scraping. Or a footstep. Right beside the bed."
 
 # game/scenario/12_0_1_1.rpy:18
 translate english 179b6571:
 
     # "Je reste immobile plusieurs secondes, les yeux grands ouverts dans le noir."
-    ""
+    "I lie still for several seconds, eyes wide open in the darkness."
 
 # game/scenario/12_0_1_1.rpy:19
 translate english 78362fd4:
 
     # "Seul le bourdonnement lointain des ventilations du Conclave me répond."
-    ""
+    "Only the distant hum of the Conclave's ventilation answers me."
 
 # game/scenario/12_0_1_1.rpy:21
 translate english 07b57a46:
@@ -222,301 +222,301 @@ translate english 07b57a46:
 translate english 1b2a2a40_2:
 
     # "Aucune réponse."
-    ""
+    "No answer."
 
 # game/scenario/12_0_1_1.rpy:25
 translate english c85a2401:
 
     # "Je me redresse lentement, la tête lourde et la gorge sèche."
-    ""
+    "I slowly sit up, my head heavy and my throat dry."
 
 # game/scenario/12_0_1_1.rpy:27
 translate english c50d247e:
 
     # think "Ce n’était pas un rêve… J’en suis presque sûr."
-    think ""
+    think "That wasn't a dream... I'm almost sure of it."
 
 # game/scenario/12_0_1_1.rpy:29
 translate english c78c78d7:
 
     # think "Je me suis déjà réveillé en sursaut avant."
-    think ""
+    think "I've woken with a start before."
 
 # game/scenario/12_0_1_1.rpy:30
 translate english 13e76312:
 
     # think "Mais jamais comme ça."
-    think ""
+    think "But never like this."
 
 # game/scenario/12_0_1_1.rpy:31
 translate english a9fce683:
 
     # think "J'ai vraiment entendu quelque chose de bizarre."
-    think ""
+    think "I definitely heard something strange."
 
 # game/scenario/12_0_1_1.rpy:32
 translate english 4e135bf8:
 
     # think "Ou quelqu'un."
-    think ""
+    think "Or someone."
 
 # game/scenario/12_0_1_1.rpy:33
 translate english 4487acd4:
 
     # "Je tends la main vers l’interrupteur. La lumière froide de la chambre m’aveugle un instant."
-    ""
+    "I reach for the light switch. The room's cold light blinds me for a moment."
 
 # game/scenario/12_0_1_1.rpy:37
 translate english 7c069321:
 
     # "La pièce est vide."
-    ""
+    "The room is empty."
 
 # game/scenario/12_0_1_1.rpy:38
 translate english 7b5760de:
 
     # "La porte est fermée. Rien ne semble déplacé."
-    ""
+    "The door is shut. Nothing looks out of place."
 
 # game/scenario/12_0_1_1.rpy:40
 translate english 7d95f500:
 
     # think "Alors pourquoi j'ai l'impression qu'on m'observe encore ?"
-    think ""
+    think "Then why do I still feel like someone's watching me?"
 
 # game/scenario/12_0_1_1.rpy:42
 translate english a965a24d:
 
     # "Je reste immobile."
-    ""
+    "I don't move."
 
 # game/scenario/12_0_1_1.rpy:43
 translate english ce06fd62:
 
     # "À écouter."
-    ""
+    "Just listen."
 
 # game/scenario/12_0_1_1.rpy:44
 translate english 7790d616:
 
     # "À attendre un second bruit."
-    ""
+    "Waiting for another sound."
 
 # game/scenario/12_0_1_1.rpy:45
 translate english 54a78c7b:
 
     # "Quelque chose."
-    ""
+    "Anything."
 
 # game/scenario/12_0_1_1.rpy:46
 translate english f63c6fae:
 
     # "Rien ne vient."
-    ""
+    "Nothing comes."
 
 # game/scenario/12_0_1_1.rpy:47
 translate english 66e6ef8d:
 
     # "Pourtant, je ne peux pas me calmer."
-    ""
+    "And yet I can't calm down."
 
 # game/scenario/12_0_1_1.rpy:49
 translate english 237f1768:
 
     # think "Je deviens parano… Il faut que j’arrête."
-    think ""
+    think "I'm getting paranoid... I need to stop."
 
 # game/scenario/12_0_1_1.rpy:50
 translate english 57841db9:
 
     # think "… Mais si ce n’était pas de la parano ?"
-    think ""
+    think "...But what if I'm not being paranoid?"
 
 # game/scenario/12_0_1_1.rpy:52
 translate english dc5cbd35:
 
     # "Sans vraiment réfléchir, je me lève et commence à fouiller la chambre."
-    ""
+    "Without really thinking, I get up and start searching the room."
 
 # game/scenario/12_0_1_1.rpy:114
 translate english 0f471525:
 
     # "Je m’agenouille devant le lit."
-    ""
+    "I kneel beside the bed."
 
 # game/scenario/12_0_1_1.rpy:115
 translate english 0cc0ba64:
 
     # "Mon cœur bat plus vite que nécessaire."
-    ""
+    "My heart is racing for no good reason."
 
 # game/scenario/12_0_1_1.rpy:117
 translate english f6b5c18c:
 
     # think "Personne ne peut être là."
-    think ""
+    think "There's no way anyone could be here."
 
 # game/scenario/12_0_1_1.rpy:119
 translate english c8fdbfd5:
 
     # "Je soulève lentement la couverture."
-    ""
+    "I slowly lift the blanket."
 
 # game/scenario/12_0_1_1.rpy:120
 translate english 66c763db:
 
     # "Pendant une seconde, je redoute réellement ce que je pourrais trouver."
-    ""
+    "For a second, I'm genuinely afraid of what I might find."
 
 # game/scenario/12_0_1_1.rpy:121
 translate english 7c67e960:
 
     # "Je passe une main dessous."
-    ""
+    "I reach underneath."
 
 # game/scenario/12_0_1_1.rpy:122
 translate english 0713de2d:
 
     # "Puis la tête."
-    ""
+    "Then stick my head under."
 
 # game/scenario/12_0_1_1.rpy:123
 translate english c09788b4_4:
 
     # "Rien."
-    ""
+    "Nothing."
 
 # game/scenario/12_0_1_1.rpy:124
 translate english 5c694523:
 
     # "Seulement de la poussière."
-    ""
+    "Just dust."
 
 # game/scenario/12_0_1_1.rpy:125
 translate english 17d1c99c:
 
     # "Le vide."
-    ""
+    "Empty space."
 
 # game/scenario/12_0_1_1.rpy:129
 translate english a1e61a80:
 
     # "Je reste quand même quelques secondes à regarder."
-    ""
+    "I keep staring anyway."
 
 # game/scenario/12_0_1_1.rpy:131
 translate english 9f7ca568:
 
     # think "J'ai vraiment cru qu'il y aurait quelque chose."
-    think ""
+    think "I really thought something would be there."
 
 # game/scenario/12_0_1_1.rpy:152
 translate english cb8c57e9:
 
     # "J’ouvre le placard d’un coup sec, le cœur battant."
-    ""
+    "I yank the wardrobe open, my heart pounding."
 
 # game/scenario/12_0_1_1.rpy:154
 translate english 5ac0ac32:
 
     # "Mes vêtements sont là, bien rangés."
-    ""
+    "My clothes are there, neatly folded."
 
 # game/scenario/12_0_1_1.rpy:155
 translate english b18a33ae:
 
     # "Mais sur l’étagère du haut… quelque chose attire mon regard."
-    ""
+    "But something on the top shelf catches my eye..."
 
 # game/scenario/12_0_1_1.rpy:157
 translate english cc70af14:
 
     # "Un de mes sweats est légèrement de travers."
-    ""
+    "One of my hoodies is slightly out of place."
 
 # game/scenario/12_0_1_1.rpy:158
 translate english a84ebf7d:
 
     # "Et surtout… il y a une légère empreinte de main sur la poussière de l’étagère."
-    ""
+    "And worse... there's a faint handprint in the dust on the shelf."
 
 # game/scenario/12_0_1_1.rpy:159
 translate english 17ee101c:
 
     # "Je tends la main vers elle."
-    ""
+    "I reach toward it."
 
 # game/scenario/12_0_1_1.rpy:160
 translate english 032a104f:
 
     # "Sans la toucher."
-    ""
+    "Without touching it."
 
 # game/scenario/12_0_1_1.rpy:161
 translate english b93dd6ea:
 
     # "Juste assez près pour comparer."
-    ""
+    "Just close enough to compare."
 
 # game/scenario/12_0_1_1.rpy:163
 translate english c5afd502:
 
     # think "... Ce n’est pas moi qui ai touché là-haut."
-    think ""
+    think "...I wasn't the one who touched that shelf."
 
 # game/scenario/12_0_1_1.rpy:165
 translate english fd6fe629:
 
     # "Mon ventre se noue."
-    ""
+    "My stomach knots."
 
 # game/scenario/12_0_1_1.rpy:167
 translate english d1af98c2_1:
 
     # think "Non."
-    think ""
+    think "No."
 
 # game/scenario/12_0_1_1.rpy:168
 translate english 29a0f60f:
 
     # think "Je ne peux pas être certain."
-    think ""
+    think "I can't be sure."
 
 # game/scenario/12_0_1_1.rpy:169
 translate english 034a3258:
 
     # think "Je me change régulièrement j'ai peut-être bougé ça accidentellement."
-    think ""
+    think "I change clothes all the time. Maybe I knocked it out of place without noticing."
 
 # game/scenario/12_0_1_1.rpy:170
 translate english 96c855bd:
 
     # think "Je ne sais même plus."
-    think ""
+    think "I don't even remember anymore."
 
 # game/scenario/12_0_1_1.rpy:179
 translate english 1c76560a:
 
     # "Je m’approche du bureau et regarde rapidement les affaires."
-    ""
+    "I go over to the desk and quickly check my things."
 
 # game/scenario/12_0_1_1.rpy:181
 translate english 95021a8a:
 
     # "Tout semble à sa place… sauf mon badge."
-    ""
+    "Everything looks normal... except my badge."
 
 # game/scenario/12_0_1_1.rpy:182
 translate english a50a807b:
 
     # "Il est retourné, face cachée."
-    ""
+    "It's been turned face down."
 
 # game/scenario/12_0_1_1.rpy:184
 translate english d0d5c135:
 
     # think "Je ne me souviens pas l’avoir laissé comme ça."
-    think ""
+    think "I don't remember leaving it like that."
 
 # game/scenario/12_0_1_1.rpy:185
 translate english 8a5a410f:
