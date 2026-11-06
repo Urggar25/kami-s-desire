@@ -1028,15 +1028,15 @@ translate english e55ba307:
 translate english d44efeed:
 
     # think "Je devrais garder ces faits séparés du Codex. Pas du lore : une trace de ce qui nous arrive."
-    think ""
+    think "I should keep these facts separate from the Codex. This isn't lore—it's a record of what's happening to us."
 
 translate english strings:
 
     # game/scenario/8_0_1.rpy:397
     old "Discuter un instant avec Julian."
-    new ""
+    new "Talk to Julian for a moment."
 
     # game/scenario/8_0_1.rpy:397
     old "Passer directement au temps libre."
-    new ""
+    new "Go straight to free time."
 
