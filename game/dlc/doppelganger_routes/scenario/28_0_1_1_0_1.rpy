@@ -3,7 +3,7 @@ init 10 python:
     J28A_ROOMS = {
       "dortoir": {
         "title": "DORTOIRS",
-        "background": "bg_chambre",
+        "background": "j26_elen_vide",
         "description": "Les premières constatations et l'aération de la chambre d'Elen.",
         "actions": [
           "grille",
@@ -258,7 +258,7 @@ label _28_0_1_1_0_1_CHAMBRE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     "On rouvre la chambre d'Elen. L'odeur est moins forte, mais elle me rappelle immédiatement le corps de Tomas."
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     $ showGroup([("iris", "reflexion", 0.23), ("lysa", "neutre", 0.46), ("noam", "neutre", 0.69)])
     lysa fatigue "Bon. Ça sent toujours la mort ici."
     iris raison "La plaque est toujours devant la grille. Les fixations n'ont pas bougé."
@@ -556,7 +556,7 @@ label _28_0_1_1_0_1_KAEL:
 
 
 label _28_0_1_1_0_1_PA_GRILLE:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
     noam reflexion "On avait regardé cette grille le premier jour. Elle n'a pas bougé."
     lysa neutre "Oui. Mais ce qu'on a trouvé était plus loin dans le conduit."
@@ -567,7 +567,7 @@ label _28_0_1_1_0_1_PA_GRILLE:
     return
 
 label _28_0_1_1_0_1_PA_FLACON:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene j26_elen_vide at adaptive_fullscreen with dissolve
     $ showGroup([("lysa", "neutre", 0.35), ("noam", "reflexion", 0.69)])
     noam raison "Le flacon avait l'air tellement évident, le jour où on l'a trouvé."
     lysa reflexion "Tu crois que quelqu'un l'a mis exprès ?"
