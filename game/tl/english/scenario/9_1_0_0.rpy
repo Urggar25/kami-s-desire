@@ -16,7 +16,7 @@ translate english 3b2a7ae9:
 translate english 3e913be7:
 
     # kami "Et ça, ce serait profondément blessant."
-    kami "And that would be deeply hurtful."
+    kami "And that would really hurt my feelings."
 
 # game/scenario/9_1_0_0.rpy:32
 translate english 92f12e86:
@@ -544,7 +544,7 @@ translate english f496a383:
 translate english a906375f:
 
     # ryn "Et je viens de te répondre."
-    ryn "And I just answered you."
+    ryn "And I just gave you an answer."
 
 # game/scenario/9_1_0_0.rpy:253
 translate english 7b7d7991:
@@ -826,7 +826,7 @@ translate english a54a6d04:
 translate english f5a68078:
 
     # tomas "{i}C'est pas vraiment un plan.{/i}"
-    tomas "{i}That's not really a plan.{/i}"
+    tomas "{i}That's not exactly a plan.{/i}"
 
 # game/scenario/9_1_0_0.rpy:360
 translate english daf60371:
@@ -1144,7 +1144,7 @@ translate english 3bed07e4:
 translate english 70dd88fa:
 
     # kami "Puisque vous avez visiblement commencé le débat sans moi, je vais éviter de vous interrompre trop longtemps."
-    kami "Since you have clearly started the debate without me, I'll try not to interrupt for too long."
+    kami "Well, you seem to have started debating without me, so I'll try not to interrupt. Much."
 
 # game/scenario/9_1_0_0.rpy:499
 translate english 1834cf98:
@@ -1168,7 +1168,7 @@ translate english 4511bd51:
 translate english e189f434:
 
     # kami "Quelle avancée historique."
-    kami "What a historic step forward."
+    kami "What a landmark achievement."
 
 # game/scenario/9_1_0_0.rpy:527
 translate english 48e51c6e:
@@ -1390,7 +1390,7 @@ translate english 664973df:
 translate english 4517d373:
 
     # kami "Très bien. Puisque vous insistez pour vous comporter comme des adultes raisonnables, procédons au vote."
-    kami "Very well. Since you insist on behaving like reasonable adults, let's proceed to the vote."
+    kami "Fine. Since you're all determined to behave like sensible adults, let's get this vote over with."
 
 # game/scenario/9_1_0_0.rpy:625
 translate english f1f2907d:
@@ -2338,7 +2338,7 @@ translate english f68774f5:
 translate english 1ce15222:
 
     # nyra "Est-ce qu'il a donné l'impression de reconnaître ton visage ?"
-    nyra "Did he give the impression he recognized your face?"
+    nyra "Did he look like he recognized you?"
 
 # game/scenario/9_1_0_0.rpy:1028
 translate english dcd539ef:
@@ -3076,7 +3076,7 @@ translate english 46a0a634:
 translate english 1d8029e2:
 
     # iris "Nyra organise des réunions."
-    iris "Nyra holds meetings."
+    iris "Nyra calls meetings."
 
 # game/scenario/9_1_0_0.rpy:1289
 translate english 1ada444d:
@@ -3196,7 +3196,7 @@ translate english 38e42176:
 translate english e9f8a040:
 
     # iris "Un côté. Gauche ou droite. Peu importe. Mais tu le gardes."
-    iris "A side. Left or right. I don't care. But you stay on it."
+    iris "Pick a side. Left or right, I don't care. Just stay on it."
 
 # game/scenario/9_1_0_0.rpy:1329
 translate english d34c4c86:
