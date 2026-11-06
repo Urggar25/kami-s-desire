@@ -189,22 +189,22 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elen peur "Mais il va être tout seul."
     lysa triste "Sael est avec lui. Allez, viens."
     "Elen finit par se laisser entraîner dans le couloir. Je reste devant le lit. Je pourrais compter les secondes qui passent, mais je sais plus depuis combien de temps je suis là."
-    "Une main se pose sur mon épaule. C'est Iris."
-    $ showGroup([("iris", "fatigue", 0.31), ("noam", "vide", 0.66)])
-    iris fatigue "Noam. Tu peux sortir ? J'ai besoin que tu me laisses travailler."
+    "Une main se pose sur mon épaule. C'est Sael."
+    $ showGroup([("sael", "fatigue", 0.31), ("noam", "vide", 0.66)])
+    sael fatigue "Noam. Tu peux sortir ? J'ai besoin d'un peu de place."
     noam fatigue "Je lui ai parlé hier."
-    iris triste "Je sais."
+    sael triste "Je sais."
     noam inquiet "Il cherchait encore ce truc sur Keyper. Il m'en parlait, il..."
-    iris triste "Je sais, Noam. Écoute... va t'asseoir un peu. Je viens te voir après."
-    "Je sors. Sur le seuil, je croise Nyra qui vient d'arriver."
+    sael triste "Je sais, Noam. Écoute... va t'asseoir un peu. Je viens te voir après."
+    "Je sors. Nyra est toujours près de la porte, qu'elle maintient grande ouverte."
     $ showGroup([("nyra", "inquiet", 0.30), ("noam", "fatigue", 0.69)])
-    nyra inquiet "C'est Tomas ? Qu'est-ce qu'il a ?"
+    nyra inquiet "C'est Tomas, alors ?"
     noam fatigue "Il est mort."
     nyra peur "..."
     nyra inquiet "Oh, merde."
     "Elle regarde derrière moi. Je crois qu'elle va entrer, mais elle s'arrête sur le seuil."
-    nyra reflexion "Ça sent... vous devriez peut-être ouvrir un peu."
-    iris fatigue "Pas tout de suite. Laissez-moi finir ici."
+    nyra reflexion "Je vais laisser la porte ouverte. L'air doit circuler."
+    sael fatigue "D'accord, mais personne ne touche à la chambre."
     nyra raison "Oui. Pardon."
     $ hideGroup()
     jump _26_0_1_1_0_1_APRES_CHOC
@@ -241,7 +241,7 @@ label _26_0_1_1_0_1_APRES_CHOC:
     ryn inquiet "Et personne a entendu un bruit ? Même pas Elen ?"
     kael inquiet "Elle a dormi dans sa chambre à lui. On l'a déjà dit."
     ryn agace "Arrêtez de me répondre comme si j'étais con !"
-    noam colere "Alors arrête de gueuler sur tout le monde ! Iris essaie de bosser !"
+    noam colere "Alors arrête de gueuler sur tout le monde ! Sael essaie de bosser !"
     "Ryn ouvre la bouche, prêt à me répondre. Il regarde mes mains, qui tremblent tellement que j'ai dû les serrer dans mes poches, et se tait."
     $ showGroup([("elen", "peur", 0.070), ("lysa", "inquiet", 0.177), ("noam", "fatigue", 0.285), ("julian", "inquiet", 0.393), ("mara", "agace", 0.500), ("kael", "inquiet", 0.607), ("elias", "fatigue", 0.715), ("ryn", "inquiet", 0.823), ("nyra", "inquiet", 0.930)])
     elen peur "Mais attendez... c'est ma chambre."
@@ -254,26 +254,26 @@ label _26_0_1_1_0_1_APRES_CHOC:
     "Personne ne proteste. On entend juste Elias ranger ses outils, un par un, beaucoup trop bruyamment."
     "Je m'assois de l'autre côté du couloir. Personne n'a vraiment envie de retourner à la cafétéria."
     pause 0.5
-    "Quand Iris ressort enfin, elle semble aussi épuisée que nous."
+    "Quand Sael ressort enfin, elle semble aussi épuisée que nous."
     $ showGroup([("elen", "peur", 0.070), ("lysa", "inquiet", 0.166), ("noam", "fatigue", 0.261), ("julian", "inquiet", 0.357), ("mara", "agace", 0.452), ("kael", "inquiet", 0.548), ("elias", "fatigue", 0.643), ("ryn", "inquiet", 0.739), ("nyra", "inquiet", 0.834), ("iris", "fatigue", 0.930)])
-    iris fatigue "Sael va l'emmener à l'infirmerie. Avant, il faut que je garde des images de la chambre."
-    noam reflexion "Iris... il est mort de quoi ?"
-    iris agace "J'en sais rien, Noam !"
+    sael fatigue "On va l'emmener à l'infirmerie. Mais je veux d'abord des photos de la chambre."
+    noam reflexion "Sael... il est mort de quoi ?"
+    sael inquiet "Je n'en sais rien, Noam."
     "Elle se passe une main sur le visage. Je n'avais encore jamais entendu sa voix dérailler comme ça."
-    iris fatigue "Pardon. J'en sais rien. Et je peux pas le regarder cinq minutes et te sortir une cause."
+    sael fatigue "Je n'ai aucune cause certaine. Il faudra examiner le corps correctement."
     noam fatigue "Ouais."
     lysa inquiet "On peut faire quelque chose ?"
-    iris neutre "Vous pouvez déjà empêcher les autres de rentrer. J'ai besoin qu'on touche plus à rien."
+    sael raison "Empêchez les autres d'entrer. Et surtout, que personne ne touche plus à rien."
     "Elle hésite, puis se tourne vers moi."
-    iris reflexion "Noam, t'as ta tablette ?"
+    sael reflexion "Noam, t'as ta tablette ?"
     noam inquiet "Ouais... pourquoi ?"
-    iris triste "Il faut photographier Tomas. Les draps, ses vêtements. Je peux demander à Elias, si tu veux."
+    sael triste "Il faut photographier Tomas. Les draps, ses vêtements. Je peux demander à Elias, si tu veux."
     "Je regarde la tablette dans ma main. Hier encore, je m'en servais pour répondre à ses messages. Je finis par hocher la tête."
     noam fatigue "Non. Je vais le faire."
     scene j26_elen_corps at adaptive_fullscreen with dissolve
     "Je lève la tablette vers le lit. Je dois recommencer deux fois avant de réussir à garder les mains assez stables pour cadrer Tomas."
     call j26_photograph("j26_photo_tomas", "j26_elen_corps", (0.355, 0.535), 2.1) from _call_j26_tomas_photo
-    "Iris me demande aussi de garder une image du sol. Je me concentre sur les emballages, simplement pour ne plus avoir le lit en face de moi."
+    "Sael me demande aussi de garder une image du sol. Je me concentre sur les emballages, simplement pour ne plus avoir le lit en face de moi."
     call j26_photograph("j26_photo_dechets", "j26_elen_corps", (0.67, 0.80), 2.0) from _call_j26_dechets_photo
     "Pour le verrou, Elias me montre les dégâts sur le boîtier du couloir. Il confirme avoir forcé la fermeture intérieure."
     $ investigation_add("j26_tomas_verrou", notify=False)
@@ -289,7 +289,7 @@ init 10 python:
         "dortoir": {
             "title": "DORTOIRS — CHAMBRE D'ELEN",
             "background": "j26_elen_vide",
-            "description": "La chambre est sous surveillance. Iris a autorisé quelques examens ciblés.",
+            "description": "La chambre est sous surveillance. Sael a autorisé quelques examens ciblés.",
             "actions": [
                 "flacon",
                 "grille"
@@ -298,7 +298,7 @@ init 10 python:
         "infirmerie": {
             "title": "INFIRMERIE",
             "background": "infirmerie2",
-            "description": "Iris travaille sur les premières constatations médicales.",
+            "description": "Sael travaille sur les premières constatations médicales.",
             "actions": [
                 "iris"
             ]
@@ -437,10 +437,10 @@ init 10 python:
         "j26_photo_grille_detail": {"category": "preuves", "title": "PHOTO — FIXATIONS DE L'AÉRATION", "desc": "Cliché complémentaire des attaches de la plaque dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True},
         "j26_photo_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES PRESQUE VIDE", "desc": "Un flacon presque vide a été retrouvé parmi les affaires de la chambre. Rien ne prouve que Tomas en ait pris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_flacon"},
         "j26_core_mort": {"category": "evenements", "title": "DÉCOUVERTE DU CORPS", "desc": "Tomas a été retrouvé mort dans la chambre d'Elen, derrière une porte verrouillée de l'intérieur.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
-        "j26_core_sudation": {"category": "preuves", "title": "PREMIÈRES CONSTATATIONS", "desc": "Iris et Sael ont constaté l'absence de respiration et une importante sudation. La cause de la mort reste inconnue.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
+        "j26_core_sudation": {"category": "preuves", "title": "PREMIÈRES CONSTATATIONS", "desc": "Sael a constaté l'absence de respiration et une importante sudation. La cause de la mort reste inconnue.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
         "j26_tomas_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES", "desc": "Un flacon presque vide a été découvert près du lit. Rien ne prouve que Tomas a pris ces comprimés.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_aeration": {"category": "preuves", "title": "GRILLE D'AÉRATION", "desc": "Une plaque empêche physiquement le passage par la grille, mais laisse l'air circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
-        "j26_tomas_rapport": {"category": "hypotheses", "title": "CAUSE DU DÉCÈS INCERTAINE", "desc": "Iris a constaté une sudation importante et aucune blessure évidente. Elle ne confirme ni suicide ni empoisonnement.", "day": "J26", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
+        "j26_tomas_rapport": {"category": "hypotheses", "title": "CAUSE DU DÉCÈS INCERTAINE", "desc": "Sael a constaté une sudation importante et aucune blessure évidente. Elle ne confirme ni suicide ni empoisonnement.", "day": "J26", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_echange": {"category": "evenements", "title": "ÉCHANGE DE CHAMBRES", "desc": "Tomas et Elen ont échangé leurs chambres pour éviter des visiteurs hostiles. Elen nie être revenue chez elle la nuit.", "day": "J26", "origin": "TÉMOIGNAGE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_alibi_sael": {"category": "personnes", "title": "ALIBI DE SAEL", "desc": "Sael dit avoir passé une partie de la soirée à l'infirmerie, sans témoin constant.", "day": "J26", "origin": "TÉMOIGNAGE DE SAEL", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_alibi_julian": {"category": "personnes", "title": "ALIBI DE JULIAN", "desc": "Julian dit avoir été avec Ryn et Mara puis être rentré. Il nie avoir connu l'échange de chambres.", "day": "J26", "origin": "TÉMOIGNAGE DE JULIAN", "status": "À VÉRIFIER", "manual_only": True},
@@ -572,7 +572,7 @@ label _26_0_1_1_0_1_PA_ROOM:
     call expression J26A_ACTIONS[investigation_pa_selected]["label"] from _call_j26a_pa_action_dynamic
     $ investigation_add(J26A_ACTIONS[investigation_pa_selected]["evidence"])
     if investigation_pa_remaining == 0:
-        "Ma tablette vibre : je n'ai plus de points d'action. Il faut faire le point avec les informations que j'ai."
+        "La lumière baisse déjà dans les couloirs. Il se fait tard ; il est temps de rejoindre les autres et de comparer nos découvertes."
         jump _26_0_1_1_0_1_BILAN
     jump _26_0_1_1_0_1_PA_ROOM
 
@@ -848,18 +848,18 @@ label _26_0_1_1_0_1_BILAN:
     noam fatigue "Des trucs. Mais plus je cherche, moins je suis sûr de ce qu'on sait."
     nyra raison "Fais voir."
     if "iris" in investigation_pa_completed:
-        noam raison "Iris sait toujours pas ce qui lui est arrivé. Elle continue ses analyses."
-        lysa neutre "Bon. Alors si quelqu'un recommence à dire qu'il s'est suicidé, je lui envoie Iris."
+        noam raison "Sael ne sait toujours pas ce qui lui est arrivé. Elle continue ses constatations."
+        lysa neutre "Bon. Alors on attend d'avoir des éléments solides avant d'accuser qui que ce soit."
     else:
-        noam reflexion "Iris a pas encore de réponse. Et je vais pas retourner la voir une troisième fois."
+        noam reflexion "Sael n'a pas encore de réponse. Je vais lui laisser un peu de temps."
     if "flacon" in investigation_pa_completed:
         lysa reflexion "Et le truc pour dormir ?"
         noam raison "Presque vide. Mais on sait même pas si Tomas y a touché."
     if "elen" in investigation_pa_completed:
-        noam raison "Elen dit qu'elle a passé la nuit dans la chambre de Tomas."
+        noam raison "Elen dit qu'elle a passé la nuit dans la chambre de Tomas. Elle a aussi entendu quelqu'un tambouriner à la porte de Tomas hier soir, sans voir qui c'était."
         lysa inquiet "J'espère que t'as pas insisté. Elle était en train de tenir debout par miracle."
     if "julian" in investigation_pa_completed:
-        noam neutre "Julian dit qu'il était avec Ryn et Mara. Pour l'échange de chambres, il savait rien."
+        noam neutre "Julian dit qu'il était avec Ryn et Mara. Mais quand je lui ai demandé ce qu'il avait fait ensuite, il est devenu franchement mal à l'aise."
     if "ryn" in investigation_pa_completed:
         noam neutre "Ryn confirme qu'il était avec eux. Il m'a presque envoyé balader quand j'ai demandé."
     if "nyra" in investigation_pa_completed:
