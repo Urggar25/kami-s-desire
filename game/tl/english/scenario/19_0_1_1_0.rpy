@@ -2876,247 +2876,247 @@ translate english 91da51c7:
 translate english 23881c2a_1:
 
     # "Il reprend sa marche."
-    ""
+    "He starts walking again."
 
 # game/scenario/19_0_1_1_0.rpy:544
 translate english 6b49557e:
 
     # elias "Commence pas à chercher un complot dans chaque phrase, sérieux. On en a déjà assez comme ça."
-    elias ""
+    elias "Seriously, stop looking for conspiracies in every sentence. We've got enough of those already."
 
 # game/scenario/19_0_1_1_0.rpy:546
 translate english 596f5ec4_9:
 
     # noam "Ouais."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/19_0_1_1_0.rpy:548
 translate english 1675743b:
 
     # "Je reste seul dans le couloir, avec une réponse qui ne répond à rien."
-    ""
+    "I'm left alone in the corridor with an answer that answers nothing."
 
 # game/scenario/19_0_1_1_0.rpy:554
 translate english 80814784:
 
     # "Quand je repasse par la cafétéria un peu plus tard, l'ambiance est étrange."
-    ""
+    "When I stop by the cafeteria a little later, the atmosphere feels strange."
 
 # game/scenario/19_0_1_1_0.rpy:555
 translate english bd9adce1:
 
     # "Plus personne ne parle des votes. Ils sont annulés, et avec eux une partie de la raison même pour laquelle nous sommes ici."
-    ""
+    "Nobody talks about votes anymore. They've been canceled, and with them part of the very reason we're here."
 
 # game/scenario/19_0_1_1_0.rpy:567
 translate english 66319519:
 
     # elen triste "Deux jours... ça fait bizarre de le dire comme ça."
-    elen triste ""
+    elen triste "Two days... It feels weird saying it like that."
 
 # game/scenario/19_0_1_1_0.rpy:569
 translate english 6dc8d968:
 
     # tomas reflechit "Techniquement, un peu moins. La navette doit arriver dans la journée du vingt-et-un."
-    tomas reflechit ""
+    tomas reflechit "Technically, a little less. The shuttle is due to arrive sometime on day twenty-one."
 
 # game/scenario/19_0_1_1_0.rpy:571
 translate english 8d9e6e16:
 
     # iris fatigue "Merci Tomas. Ça rend tout ça beaucoup plus joyeux."
-    iris fatigue ""
+    iris fatigue "Thanks, Tomas. That makes it so much more cheerful."
 
 # game/scenario/19_0_1_1_0.rpy:573
 translate english 914e67da:
 
     # tomas "Je voulais juste être précis."
-    tomas ""
+    tomas "I was just trying to be precise."
 
 # game/scenario/19_0_1_1_0.rpy:575
 translate english cf84e4b5:
 
     # lysa "Erreur classique."
-    lysa ""
+    lysa "Classic mistake."
 
 # game/scenario/19_0_1_1_0.rpy:577
 translate english a911dc9b:
 
     # mara neutre "Moi j'ai surtout hâte de dormir dans une chambre où personne peut débarquer par le mur."
-    mara neutre ""
+    mara neutre "Me, I'm just looking forward to sleeping in a room where nobody can crawl out of the wall."
 
 # game/scenario/19_0_1_1_0.rpy:579
 translate english 9ef215d5:
 
     # "Elle jette un regard dans ma direction."
-    ""
+    "She glances in my direction."
 
 # game/scenario/19_0_1_1_0.rpy:581
 translate english 0df83733:
 
     # noam colere "Je vais finir par changer de table."
-    noam colere ""
+    noam colere "I'm going to find another table at this rate."
 
 # game/scenario/19_0_1_1_0.rpy:583
 translate english 5e1b05f8:
 
     # mara taquin "Oh ça va, je rigole."
-    mara taquin ""
+    mara taquin "Oh, come on. I'm kidding."
 
 # game/scenario/19_0_1_1_0.rpy:585
 translate english ca53b85c:
 
     # noam "Depuis ce matin."
-    noam ""
+    noam "You've been kidding since this morning."
 
 # game/scenario/19_0_1_1_0.rpy:587
 translate english 2e942da2:
 
     # mara "Parce que c'est drôle depuis ce matin."
-    mara ""
+    mara "Because it's been funny since this morning."
 
 # game/scenario/19_0_1_1_0.rpy:589
 translate english 726d03ae:
 
     # nyra raison "Ça le sera moins si quelqu'un utilise réellement le réseau."
-    nyra raison ""
+    nyra raison "It won't be nearly as funny if someone actually uses the network."
 
 # game/scenario/19_0_1_1_0.rpy:591
 translate english a2e1bf5c:
 
     # "Mara perd aussitôt son sourire."
-    ""
+    "Mara's smile vanishes."
 
 # game/scenario/19_0_1_1_0.rpy:593
 translate english 4a8de879:
 
     # iris inquiet "Tu penses vraiment que quelqu'un passe là-dedans ?"
-    iris inquiet ""
+    iris inquiet "Do you really think someone's crawling around in there?"
 
 # game/scenario/19_0_1_1_0.rpy:595
 translate english 9868923f_1:
 
     # nyra "Je n'en sais rien."
-    nyra ""
+    nyra "I don't know."
 
 # game/scenario/19_0_1_1_0.rpy:597
 translate english be0517cf:
 
     # iris "Très rassurant."
-    iris ""
+    iris "Very reassuring."
 
 # game/scenario/19_0_1_1_0.rpy:599
 translate english cf872407:
 
     # lysa blase "Aujourd'hui tout le monde fait de son mieux."
-    lysa blase ""
+    lysa blase "Everyone's doing their best today."
 
 # game/scenario/19_0_1_1_0.rpy:601
 translate english 43bee773:
 
     # "Je regarde Mara. Elle discute normalement avec Elen, comme si notre conversation dans le couloir n'avait jamais eu lieu."
-    ""
+    "I look at Mara. She's chatting normally with Elen, as though our conversation in the corridor never happened."
 
 # game/scenario/19_0_1_1_0.rpy:603
 translate english b087a35f:
 
     # think "Elle ne se souvient vraiment de rien."
-    think ""
+    think "She really doesn't remember a thing."
 
 # game/scenario/19_0_1_1_0.rpy:605
 translate english 605b9f48:
 
     # "Et bizarrement, ça me fout encore plus mal que si elle avait juste menti."
-    ""
+    "And somehow that makes me feel even worse than if she'd simply lied."
 
 # game/scenario/19_0_1_1_0.rpy:624
 translate english 1d66b161:
 
     # "Quand je retourne vers ma chambre, Elias est encore en train de travailler plusieurs portes plus loin. Une perceuse résonne dans le couloir, puis s'arrête."
-    ""
+    "When I head back toward my room, Elias is still working several doors down. A drill echoes through the corridor, then stops."
 
 # game/scenario/19_0_1_1_0.rpy:626
 translate english cbcbb7f2:
 
     # "Les chambres de Mara, Iris, Sael et Elen sont déjà sécurisées. Il lui en reste encore deux pour finir celles des filles."
-    ""
+    "Mara, Iris, Sael, and Elen's rooms are already secured. He has two more to go to finish the girls' rooms."
 
 # game/scenario/19_0_1_1_0.rpy:628
 translate english 178d2622:
 
     # noam reflexion "La mienne demain."
-    noam reflexion ""
+    noam reflexion "Mine tomorrow."
 
 # game/scenario/19_0_1_1_0.rpy:630
 translate english 6387b17e:
 
     # "Je le dis à voix basse, comme si le fait de le formuler pouvait accélérer le temps."
-    ""
+    "I say it quietly, as though speaking the words might make time pass faster."
 
 # game/scenario/19_0_1_1_0.rpy:635
 translate english 1939f57f:
 
     # "Ma grille est exactement dans le même état que ce matin. Deux vis serrées, deux autres faciles à retirer."
-    ""
+    "My grille is exactly as it was this morning. Two screws tightened, two others easy to remove."
 
 # game/scenario/19_0_1_1_0.rpy:637
 translate english cfbb1e86:
 
     # "Je pousse de nouveau le bureau devant. Puis je reste debout quelques secondes à le regarder."
-    ""
+    "I push the desk in front of it again, then stand staring at it for a few seconds."
 
 # game/scenario/19_0_1_1_0.rpy:639
 translate english c2db575e:
 
     # noam desaccord "Ça suffit."
-    noam desaccord ""
+    noam desaccord "That's enough."
 
 # game/scenario/19_0_1_1_0.rpy:641
 translate english ea3115da:
 
     # "Je vérifie quand même qu'il touche bien le mur."
-    ""
+    "I check that it's firmly against the wall anyway."
 
 # game/scenario/19_0_1_1_0.rpy:643
 translate english 84e9ac53:
 
     # "Je passe une partie de la soirée à essayer de lire sans retenir une seule phrase. Chaque fois qu'un bruit traverse la structure du Conclave, mes yeux remontent automatiquement vers la grille."
-    ""
+    "I spend part of the evening trying to read without taking in a single sentence. Every time a sound runs through the Conclave's structure, my eyes automatically flick toward the grille."
 
 # game/scenario/19_0_1_1_0.rpy:645
 translate english 5be6ceec:
 
     # think "Demain soir, ce sera fermé."
-    think ""
+    think "Tomorrow night it'll be sealed."
 
 # game/scenario/19_0_1_1_0.rpy:646
 translate english 333ba8cb:
 
     # think "Encore une nuit."
-    think ""
+    think "Just one more night."
 
 # game/scenario/19_0_1_1_0.rpy:648
 translate english 44f94e69:
 
     # "Je me couche tard, persuadé que l'épuisement finira par gagner."
-    ""
+    "I go to bed late, convinced exhaustion will eventually win."
 
 # game/scenario/19_0_1_1_0.rpy:657
 translate english 34356144:
 
     # "Le bruit me réveille presque immédiatement."
-    ""
+    "The noise wakes me almost immediately."
 
 # game/scenario/19_0_1_1_0.rpy:661
 translate english 074c6b87:
 
     # "Cette fois, je sais que je ne l'ai pas rêvé."
-    ""
+    "This time I know I didn't dream it."
 
 # game/scenario/19_0_1_1_0.rpy:665
 translate english 1132d9cc:
 
     # "Quelque chose avance dans le conduit. Lentement. Régulièrement."
-    ""
+    "Something is moving through the duct. Slowly. Steadily."
 
 # game/scenario/19_0_1_1_0.rpy:667
 translate english c9e0e05b_7:
@@ -3128,25 +3128,25 @@ translate english c9e0e05b_7:
 translate english ea60376f:
 
     # "Je me redresse. Mon cœur bat déjà trop vite."
-    ""
+    "I sit up. My heart is already racing."
 
 # game/scenario/19_0_1_1_0.rpy:673
 translate english 0e6c23b9:
 
     # "Le bruit passe derrière ma grille."
-    ""
+    "The noise passes behind my grille."
 
 # game/scenario/19_0_1_1_0.rpy:675
 translate english ad8c397d:
 
     # "Puis continue."
-    ""
+    "Then carries on."
 
 # game/scenario/19_0_1_1_0.rpy:677
 translate english 4c4860e4:
 
     # "Vers la chambre suivante."
-    ""
+    "Toward the next bedroom."
 
 # game/scenario/19_0_1_1_0.rpy:679
 translate english 76264c3c_25:
@@ -3158,37 +3158,37 @@ translate english 76264c3c_25:
 translate english 1c3bb1be:
 
     # "Je reste assis plusieurs secondes, incapable de décider quoi faire."
-    ""
+    "I sit there for several seconds, unable to decide what to do."
 
 # game/scenario/19_0_1_1_0.rpy:683
 translate english 65f6ac29:
 
     # think "Va chercher Elias."
-    think ""
+    think "Go get Elias."
 
 # game/scenario/19_0_1_1_0.rpy:685
 translate english c5dc29ff:
 
     # "Je pose les pieds au sol."
-    ""
+    "I put my feet on the floor."
 
 # game/scenario/19_0_1_1_0.rpy:687
 translate english 9c822fa5:
 
     # think "Va chercher Elias. Maintenant."
-    think ""
+    think "Go get Elias. Now."
 
 # game/scenario/19_0_1_1_0.rpy:693
 translate english 1655a08e:
 
     # "Un nouveau frottement résonne plus loin."
-    ""
+    "Another scrape echoes farther away."
 
 # game/scenario/19_0_1_1_0.rpy:695
 translate english 3d5e03d8:
 
     # "Quelque chose en moi cède."
-    ""
+    "Something inside me snaps."
 
 # game/scenario/19_0_1_1_0.rpy:697
 translate english j19_chasse_noam_non:
@@ -3200,61 +3200,61 @@ translate english j19_chasse_noam_non:
 translate english eef62ad7:
 
     # "Je repousse brutalement le bureau, ouvre la porte et sors presque en courant."
-    ""
+    "I shove the desk aside, throw open the door, and practically run out."
 
 # game/scenario/19_0_1_1_0.rpy:714
 translate english 457f6993:
 
     # "Le couloir est désert. Les lumières nocturnes donnent aux murs une couleur blafarde qui me fait regretter immédiatement d'être sorti."
-    ""
+    "The corridor is deserted. The night lighting gives the walls a sickly pallor that immediately makes me regret leaving."
 
 # game/scenario/19_0_1_1_0.rpy:716
 translate english d0ae467a:
 
     # "Je devrais aller chercher Elias."
-    ""
+    "I should go get Elias."
 
 # game/scenario/19_0_1_1_0.rpy:718
 translate english 22512f0e:
 
     # "À la place, je prends la direction de la cafétéria."
-    ""
+    "Instead, I head toward the cafeteria."
 
 # game/scenario/19_0_1_1_0.rpy:720
 translate english dcdd21f6:
 
     # think "Une lampe."
-    think ""
+    think "A flashlight."
 
 # game/scenario/19_0_1_1_0.rpy:721
 translate english b6324546:
 
     # think "Quelque chose pour me défendre."
-    think ""
+    think "Something to defend myself with."
 
 # game/scenario/19_0_1_1_0.rpy:723
 translate english a8b76f3a:
 
     # "Je marche vite. Puis je cours."
-    ""
+    "I walk fast. Then I run."
 
 # game/scenario/19_0_1_1_0.rpy:727
 translate english 9f1c343b:
 
     # "Je n'entends plus rien derrière les murs, mais ça ne me calme pas. Au contraire, j'ai l'impression d'avoir perdu sa trace."
-    ""
+    "I can't hear anything inside the walls anymore, but that doesn't calm me down. If anything, it feels like I've lost its trail."
 
 # game/scenario/19_0_1_1_0.rpy:731
 translate english fddeeffb:
 
     # "La cafétéria est plongée dans le noir, à l'exception des veilleuses près du buffet."
-    ""
+    "The cafeteria is dark except for the small night-lights beside the buffet."
 
 # game/scenario/19_0_1_1_0.rpy:733
 translate english 1b1689c9:
 
     # "J'ouvre un tiroir, puis un autre. Mes mains tremblent tellement que je fais tomber deux couverts au sol."
-    ""
+    "I open one drawer, then another. My hands are shaking so badly I knock two pieces of cutlery onto the floor."
 
 # game/scenario/19_0_1_1_0.rpy:737
 translate english 35041b47_4:
@@ -3266,37 +3266,37 @@ translate english 35041b47_4:
 translate english 2ed7f550:
 
     # "Je finis par trouver une petite lampe portative dans un placard de service."
-    ""
+    "Eventually, I find a small portable lamp in a service cupboard."
 
 # game/scenario/19_0_1_1_0.rpy:741
 translate english 14189580:
 
     # "Puis j'ouvre le tiroir des ustensiles de cuisine."
-    ""
+    "Then I open the drawer with the kitchen utensils."
 
 # game/scenario/19_0_1_1_0.rpy:743
 translate english cffa6e5a:
 
     # "Ma main s'arrête sur un couteau."
-    ""
+    "My hand stops on a knife."
 
 # game/scenario/19_0_1_1_0.rpy:747
 translate english 9d589a7f:
 
     # think "C'est stupide."
-    think ""
+    think "This is stupid."
 
 # game/scenario/19_0_1_1_0.rpy:749
 translate english eb589757:
 
     # "Je le prends quand même."
-    ""
+    "I take it anyway."
 
 # game/scenario/19_0_1_1_0.rpy:751
 translate english a31ebf36:
 
     # "Pas pour attaquer qui que ce soit. Enfin... je crois."
-    ""
+    "Not to attack anyone. At least... I don't think so."
 
 # game/scenario/19_0_1_1_0.rpy:753
 translate english 76264c3c_26:
@@ -3308,7 +3308,7 @@ translate english 76264c3c_26:
 translate english 8bcbcc94:
 
     # "Je serre la poignée et quitte la cafétéria."
-    ""
+    "I grip the handle and leave the cafeteria."
 
 # game/scenario/19_0_1_1_0.rpy:759
 translate english 7cc76195:
