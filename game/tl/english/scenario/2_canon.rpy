@@ -814,7 +814,7 @@ translate english b41c9804:
 translate english 8c5932d8:
 
     # "La porte claque. Tous les regards convergent vers Julian."
-    ""
+    "The door slams shut. Every eye turns to Julian."
 
 # game/scenario/2_canon.rpy:471
 translate english eefc8c4d:
@@ -2602,7 +2602,7 @@ translate english beb9f618:
 translate english day2_collect_vote_argument_2e604055:
 
     # "Note ajoutée au Prochain vote."
-    ""
+    "Note added to the upcoming vote."
 
 translate english strings:
 
@@ -2628,7 +2628,7 @@ translate english strings:
 translate english 79e4878b:
 
     # think "Je prends un plateau et m'installe sans faire de bruit. La discussion a déjà commencé."
-    think ""
+    think "I grab a tray and sit down quietly. The conversation's already underway."
 
 # game/scenario/2_canon.rpy:187
 translate english a97953cf:
