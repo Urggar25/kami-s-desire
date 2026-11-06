@@ -490,7 +490,7 @@ label _26_0_1_1_0_1_DECOUVERTE_FLACON:
     iris fatigue "Noam, regarde-moi. Je sais pas s'il en a pris un seul."
     noam inquiet "Ouais, mais hier soir, il était vraiment pas bien..."
     iris raison "Je sais. Ça m'a pas échappé."
-    "Elle dévisse légèrement le bouchon, s'arrête, puis se ravise et le laisse en place."
+    "Elle prend le flacon entre deux doigts, hésite à le manipuler, puis le repose exactement au même endroit."
     iris fatigue "Faut que je vérifie. Pour l'instant, on dit rien."
     noam fatigue "D'accord. Je préfère attendre aussi."
     $ j26_alt_flacon = True
