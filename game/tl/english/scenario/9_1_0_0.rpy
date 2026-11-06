@@ -4,7 +4,7 @@
 translate english d4e07e75:
 
     # kami "Booonjour, mes chers représentants ! J'espère que vous avez bien dormi, parce que certains d'entre vous semblent avoir eu une nuit particulièrement... active."
-    kami "Goooood morning, my dear representatives! I hope you slept well, because some of you seem to have had a particularly... active night."
+    kami "Goooood morning, my darling representatives! Sleep well? Some of you seem to have had a particularly... busy night."
 
 # game/scenario/9_1_0_0.rpy:24
 translate english 3b2a7ae9:
@@ -34,7 +34,7 @@ translate english 798643ff:
 translate english 4161e8f1:
 
     # kami "D'ici là, essayez de ne pas créer un incident diplomatique, une tentative de meurtre ou une nouvelle catastrophe sociale. J'aimerais beaucoup avoir quelques heures de tranquillité."
-    kami "Until then, do try not to cause a diplomatic incident, an attempted murder or a fresh social catastrophe. I would very much like a few peaceful hours."
+    kami "Until then, please refrain from starting a diplomatic incident, attempting murder, or causing yet another social catastrophe. I'd quite like a few peaceful hours."
 
 # game/scenario/9_1_0_0.rpy:49
 translate english 7a85b945:
@@ -1246,7 +1246,7 @@ translate english 153200c5:
 translate english 0395a0f3:
 
     # elen "Et j'en ai marre que tout soit triste !"
-    elen "And I'm sick of everything being sad!"
+    elen "I'm sick of everything being so miserable!"
 
 # game/scenario/9_1_0_0.rpy:553
 translate english 28f51ba9:
@@ -1336,7 +1336,7 @@ translate english 453182c4:
 translate english 0dc63b23:
 
     # elen "J'ai failli faire une attaque !"
-    elen "I nearly had a heart attack!"
+    elen "You nearly gave me a heart attack!"
 
 # game/scenario/9_1_0_0.rpy:583
 translate english 28386585:
@@ -1372,7 +1372,7 @@ translate english bbd69be2:
 translate english 6ce1b506:
 
     # kami "Personne ne veut expliquer que les festivals sont une menace contre l'ordre public ? Personne ne souhaite dénoncer le risque de révolte, de débauche ou d'effondrement moral ?"
-    kami "Nobody wants to explain that festivals are a threat to public order? Nobody wishes to denounce the risk of revolt, debauchery or moral collapse?"
+    kami "No takers? Nobody wants to tell us festivals threaten public order? Or warn us about riots, debauchery, and moral decay?"
 
 # game/scenario/9_1_0_0.rpy:608
 translate english c08ec24b:
@@ -1546,7 +1546,7 @@ translate english b81eb432:
 translate english 45b96bc1:
 
     # kami "Vous vouliez davantage d'activité économique ? La voici ! Du travail, des récompenses et une meilleure sécurité commerciale."
-    kami "You wanted more economic activity? Here it is! Work, rewards, and better trade security."
+    kami "You wanted more economic activity? Well, here you go! Jobs, rewards, and safer trade. You're welcome."
 
 # game/scenario/9_1_0_0.rpy:707
 translate english 2376fd5d:
@@ -3034,7 +3034,7 @@ translate english 7ca7f8c1:
 translate english ed559d4e:
 
     # iris "Vous avez tous des brouilleurs dans vos chambres !"
-    iris "You all have jammers in your rooms!"
+    iris "You ALL have jammers in your rooms!"
 
 # game/scenario/9_1_0_0.rpy:1275
 translate english 6c7f998b:
@@ -3220,7 +3220,7 @@ translate english 828ccf9e:
 translate english 4544af95:
 
     # iris "Cette nuit, ton pied était presque sur mon oreiller !"
-    iris "Last night your foot was practically on my pillow!"
+    iris "Your foot was practically on my pillow last night!"
 
 # game/scenario/9_1_0_0.rpy:1337
 translate english adaeb49c:
@@ -3310,7 +3310,7 @@ translate english 1667bd0a:
 translate english 7a1219be:
 
     # iris "Parce que tu prends toute la place !"
-    iris "Because you take up all the space!"
+    iris "Because you hog the whole bed!"
 
 # game/scenario/9_1_0_0.rpy:1369
 translate english d8984891:
@@ -3322,7 +3322,7 @@ translate english d8984891:
 translate english 80d0d9c1:
 
     # iris "C'est pas une raison !"
-    iris "That's not a reason!"
+    iris "That doesn't make it okay!"
 
 # game/scenario/9_1_0_0.rpy:1373
 translate english 4b0eb206:
