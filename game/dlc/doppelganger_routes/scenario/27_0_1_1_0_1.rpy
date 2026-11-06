@@ -176,7 +176,7 @@ default j27a_sael = False
 default j27a_appareil_absent = False
 
 label _27_0_1_1_0_1_REVEIL:
-$ current_day = 27
+    $ current_day = 27
     $ day_id = 27
     $ current_period = "Matin"
     $ j27a_yanma = False
@@ -202,7 +202,7 @@ $ current_day = 27
     jump _27_0_1_1_0_1_CAFETERIA
 
 label _27_0_1_1_0_1_CAFETERIA:
-call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j27a_door_2
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j27a_door_2
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     "Il reste plusieurs places libres. Celle de Tomas me saute aux yeux : personne n'y a posé son plateau."
@@ -255,7 +255,7 @@ call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j27a_door_
     jump _27_0_1_1_0_1_CHAMBRE
 
 label _27_0_1_1_0_1_CHAMBRE:
-$ current_period = "Après-midi"
+    $ current_period = "Après-midi"
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     "Nous passons devant la chambre d'Elen. C'est là qu'on a retrouvé Tomas, alors qu'il aurait dû dormir quelques portes plus loin."
@@ -338,7 +338,7 @@ label _27_0_1_1_0_1_FOUILLE:
 # Durée : ~3m30.
 
 label _27_0_1_1_0_1_APPAREIL:
-$ showGroup([("nyra", "reflexion", 0.38), ("noam", "neutre", 0.68)])
+    $ showGroup([("nyra", "reflexion", 0.38), ("noam", "neutre", 0.68)])
     noam reflexion "Attends. Ce livre sur Yanma me rappelle un truc."
     nyra neutre "Quoi ?"
     noam raison "Le jour 25, Tomas manipulait un petit boîtier dans la salle d'observation. Une boîte métallique, avec un voyant. Il l'a posée quand je suis arrivé."
@@ -371,7 +371,7 @@ $ showGroup([("nyra", "reflexion", 0.38), ("noam", "neutre", 0.68)])
     jump _27_0_1_1_0_1_QUESTIONS
 
 label _27_0_1_1_0_1_QUESTIONS:
-scene bg_repos at adaptive_fullscreen with dissolve
+    scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     "J'ai les documents de Tomas, mais il manque toujours l'appareil. Si je veux avancer, il faut confronter ce que j'ai trouvé à ce que les autres savent."
     $ showGroup([("nyra", "neutre", 0.33), ("noam", "fatigue", 0.69)])
@@ -504,7 +504,7 @@ label _27_0_1_1_0_1_IRIS:
 
 
 label _27_0_1_1_0_1_PA_CARNET:
-scene bg_chambre at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
     "Je retrouve un carnet glissé derrière les dossiers. Des rendez-vous, des calculs, des listes de vérification : rien qui ressemble à une lettre d'adieu."
     "À la dernière page, Tomas a écrit « Keyper » et « revoir les chiffres ». Une ligne a été barrée si fort que le papier est marqué de l'autre côté."
@@ -515,7 +515,7 @@ scene bg_chambre at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_GRILLE:
-scene bg_chambre at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Dans la chambre de Tomas, les fixations de la grille semblent anciennes et intactes. Je les photographie sans les dévisser."
     "Dans celle d'Elen, une tôle artisanale est clouée devant l'ouverture. Elle empêcherait un passage, mais pas la circulation de l'air."
@@ -525,7 +525,7 @@ scene bg_chambre at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_KEYPER:
-scene bg_archive at adaptive_fullscreen with dissolve
+    scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Je consulte l'historique des documents ouverts par Tomas. Les recherches sur Keyper-IIB se prolongent jusqu'au jour 25."
     "Les intitulés changent : trajectoires, ravitaillement, registres de production. Il ne relisait pas simplement le même fichier ; il essayait de vérifier ses hypothèses par plusieurs sources."
@@ -534,7 +534,7 @@ scene bg_archive at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_QUOTAS:
-scene bg_archive at adaptive_fullscreen with dissolve
+    scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Je parcours les index de production. Il y a des références de conteneurs, des machines, du fret... mais aucune définition claire des unités ÉID-0."
     "Une chose me frappe : le registre présente les « effectifs » et les quotas côte à côte, comme si l'un déterminait l'autre."
@@ -543,7 +543,7 @@ scene bg_archive at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_SIGNAL:
-scene bg_observation at adaptive_fullscreen with dissolve
+    scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Les journaux de la console comportent des heures de connexion, des interruptions et des relevés d'interférences. Une partie des valeurs est impossible à interpréter sans connaître l'appareil."
     noam reflexion "Si je retrouve ce boîtier, au moins je pourrai comparer les heures."
@@ -551,7 +551,7 @@ scene bg_observation at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_CAMERA:
-scene bg_observation at adaptive_fullscreen with dissolve
+    scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "L'inventaire officiel propose une série de capteurs presque identiques. Certains ressemblent vaguement à mon souvenir, mais aucun ne correspond avec certitude."
     "Je remarque aussi que la liste concerne le matériel attribué à cette salle. Elle ne recense pas forcément les objets qu'un représentant apporte lui-même."
@@ -560,7 +560,7 @@ scene bg_observation at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_ELIAS:
-scene bg_maintenance at adaptive_fullscreen with dissolve
+    scene bg_maintenance at adaptive_fullscreen with dissolve
     $ showGroup([("elias", "fatigue", 0.36), ("noam", "neutre", 0.68)])
     noam reflexion "Elias, tu ranges parfois les petits appareils de l'observation ?"
     elias neutre "Ouais, quand ça traîne. Sinon on finit par casser un truc."
@@ -576,7 +576,7 @@ scene bg_maintenance at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_PA_JULIAN:
-scene bg_cafeteria at adaptive_fullscreen with dissolve
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
     $ showGroup([("julian", "fatigue", 0.35), ("noam", "neutre", 0.69)])
     "Julian regarde une tasse presque pleine. Il ne semble pas avoir remarqué que son café a refroidi."
@@ -597,7 +597,7 @@ scene bg_cafeteria at adaptive_fullscreen with dissolve
     return
 
 label _27_0_1_1_0_1_NYRA:
-scene bg_cafeteria at adaptive_fullscreen with dissolve
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     "Je retrouve Nyra avec deux plateaux. Elle pousse le second vers moi sans commentaire."
     $ showGroup([("nyra", "neutre", 0.38), ("noam", "fatigue", 0.68)])
@@ -635,7 +635,7 @@ scene bg_cafeteria at adaptive_fullscreen with dissolve
     jump _27_0_1_1_0_1_REUNION
 
 label _27_0_1_1_0_1_REUNION:
-$ current_period = "Soir"
+    $ current_period = "Soir"
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.8
     "Nous nous réunissons autour de la table. La place de Tomas est vide, mais personne n'a demandé à retirer sa tablette du pupitre."
@@ -701,7 +701,7 @@ $ current_period = "Soir"
     jump _27_0_1_1_0_1_NUIT
 
 label _27_0_1_1_0_1_NUIT:
-$ current_period = "Nuit"
+    $ current_period = "Nuit"
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
     "J'envoie à Julian les documents que Tomas avait conservés. L'accusé de réception apparaît, mais Julian ne répond pas."
