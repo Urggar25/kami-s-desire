@@ -276,6 +276,10 @@ init python:
         # Ne restaure que les faits de jours entièrement terminés afin de ne
         # jamais révéler à l'avance un élément du jour en cours.
         for eid, entry in INVESTIGATION_ENTRIES.items():
+            # Les enquêtes à PA ne doivent jamais débloquer rétroactivement
+            # des actions que le joueur a volontairement laissées de côté.
+            if entry.get("manual_only", False):
+                continue
             if investigation_day_number(entry) < current:
                 store.investigation_evidence[eid] = True
         store.investigation_unlocked = True
