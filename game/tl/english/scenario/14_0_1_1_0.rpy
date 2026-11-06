@@ -34,13 +34,13 @@ translate english c18e5c76:
 translate english 621d193e:
 
     # nyra inquiet "Noam ? Tu es là ? C’est Nyra."
-    nyra inquiet ""
+    nyra inquiet "Noam? Are you there? It's Nyra."
 
 # game/scenario/14_0_1_1_0.rpy:16
 translate english 53789312:
 
     # nyra inquiet "Je peux entrer ?"
-    nyra inquiet ""
+    nyra inquiet "Can I come in?"
 
 # game/scenario/14_0_1_1_0.rpy:18
 translate english e91aee1f_1:
@@ -64,13 +64,13 @@ translate english 6add498a:
 translate english 34438ece:
 
     # nyra hesitation "Noam… s’il te plaît."
-    nyra hesitation ""
+    nyra hesitation "Noam... please."
 
 # game/scenario/14_0_1_1_0.rpy:25
 translate english 49fcac2f:
 
     # nyra raison "C’est important."
-    nyra raison ""
+    nyra raison "It's important."
 
 # game/scenario/14_0_1_1_0.rpy:27
 translate english a0d5f061:
@@ -112,7 +112,7 @@ translate english cefb46c3:
 translate english 4b5ac991:
 
     # nyra inquiet "Je sais que tu es réveillé."
-    nyra inquiet ""
+    nyra inquiet "I know you're awake."
 
 # game/scenario/14_0_1_1_0.rpy:41
 translate english 8508fed1:
@@ -130,7 +130,7 @@ translate english 3888d3f6:
 translate english 3740f874:
 
     # noam fatigue "... Entre."
-    noam fatigue ""
+    noam fatigue "...Come in."
 
 # game/scenario/14_0_1_1_0.rpy:46
 translate english 82dac422:
@@ -178,13 +178,13 @@ translate english 40cd69b0:
 translate english b8de6f7e:
 
     # nyra neutre "Merci."
-    nyra neutre ""
+    nyra neutre "Thank you."
 
 # game/scenario/14_0_1_1_0.rpy:62
 translate english 0c2f1b4c:
 
     # nyra raison "Je ne vais pas te déranger longtemps."
-    nyra raison ""
+    nyra raison "I won't keep you long."
 
 # game/scenario/14_0_1_1_0.rpy:64
 translate english 43babf9b:
@@ -202,43 +202,43 @@ translate english 14f1ea5e:
 translate english aea96d5f:
 
     # nyra neutre "Tu n’es pas venu à l’annonce de ce matin."
-    nyra neutre ""
+    nyra neutre "You missed this morning's announcement."
 
 # game/scenario/14_0_1_1_0.rpy:69
 translate english 78eb9349_1:
 
     # noam fatigue "Non."
-    noam fatigue ""
+    noam fatigue "No."
 
 # game/scenario/14_0_1_1_0.rpy:71
 translate english c722b6ff:
 
     # nyra raison "Tu savais qu’il y en avait une."
-    nyra raison ""
+    nyra raison "You knew there was one."
 
 # game/scenario/14_0_1_1_0.rpy:73
 translate english b8bedb1b:
 
     # noam hesitation "Oui, mais..."
-    noam hesitation ""
+    noam hesitation "Yeah, but..."
 
 # game/scenario/14_0_1_1_0.rpy:75
 translate english 342fac98:
 
     # nyra reflexion "Mais tu n’es pas venu."
-    nyra reflexion ""
+    nyra reflexion "But you didn't come."
 
 # game/scenario/14_0_1_1_0.rpy:77
 translate english 6225bd91:
 
     # noam fatigue "J’avais besoin de dormir."
-    noam fatigue ""
+    noam fatigue "I needed to sleep."
 
 # game/scenario/14_0_1_1_0.rpy:79
 translate english d3b05f17:
 
     # nyra neutre "Tout le monde a besoin de dormir, Noam."
-    nyra neutre ""
+    nyra neutre "Everyone needs sleep, Noam."
 
 # game/scenario/14_0_1_1_0.rpy:81
 translate english f9540532:
@@ -250,19 +250,19 @@ translate english f9540532:
 translate english 9c5ce591:
 
     # nyra raison "Tout le monde l’a remarqué."
-    nyra raison ""
+    nyra raison "Everyone noticed."
 
 # game/scenario/14_0_1_1_0.rpy:85
 translate english c256a613:
 
     # noam inquiet "... Tout le monde ?"
-    noam inquiet ""
+    noam inquiet "...Everyone?"
 
 # game/scenario/14_0_1_1_0.rpy:87
 translate english cacf4183:
 
     # nyra neutre "Oui."
-    nyra neutre ""
+    nyra neutre "Yes."
 
 # game/scenario/14_0_1_1_0.rpy:89
 translate english 3963d04a:
@@ -274,25 +274,25 @@ translate english 3963d04a:
 translate english e65941e8:
 
     # nyra raison "Noam… je vais être franche avec toi."
-    nyra raison ""
+    nyra raison "Noam... I'm going to be straight with you."
 
 # game/scenario/14_0_1_1_0.rpy:92
 translate english 31d9a980:
 
     # nyra triste "Parce que tu dois l’entendre."
-    nyra triste ""
+    nyra triste "Because you need to hear it."
 
 # game/scenario/14_0_1_1_0.rpy:93
 translate english 7372d5ea:
 
     # nyra raison "Ton comportement commence à inquiéter beaucoup de monde."
-    nyra raison ""
+    nyra raison "Your behavior is starting to worry a lot of people."
 
 # game/scenario/14_0_1_1_0.rpy:94
 translate english 1f82c6fc:
 
     # nyra reflexion "Et pas seulement pour ton bien."
-    nyra reflexion ""
+    nyra reflexion "And not just because they're concerned about you."
 
 # game/scenario/14_0_1_1_0.rpy:96
 translate english a4fb08f2:
@@ -304,13 +304,13 @@ translate english a4fb08f2:
 translate english 77614413:
 
     # noam colere "Inquiéter ?! Je vous inquiète ?!"
-    noam colere ""
+    noam colere "Worry them?! You're worried about ME?!"
 
 # game/scenario/14_0_1_1_0.rpy:99
 translate english ac88f284:
 
     # noam colere "C’est ça que vous racontez dans mon dos ?!"
-    noam colere ""
+    noam colere "Is that what you've been saying behind my back?!"
 
 # game/scenario/14_0_1_1_0.rpy:101
 translate english 8537c0b6:
@@ -328,13 +328,13 @@ translate english 1724870b:
 translate english a0bfd64a:
 
     # nyra raison "Je ne dis pas que c’est vrai. Je te dis ce que les autres pensent."
-    nyra raison ""
+    nyra raison "I'm not saying it's true. I'm telling you what the others think."
 
 # game/scenario/14_0_1_1_0.rpy:105
 translate english eb5f070a:
 
     # nyra inquiet "Et franchement… vu comment tu te comportes depuis deux jours, je les comprends un peu."
-    nyra inquiet ""
+    nyra inquiet "And frankly... given how you've acted these past two days, I can see why."
 
 # game/scenario/14_0_1_1_0.rpy:107
 translate english e40a8e4b:
@@ -358,7 +358,7 @@ translate english 7aa6fb9b:
 translate english 6505bbb2:
 
     # noam fatigue "Je… je suis fatigué. Vraiment fatigué."
-    noam fatigue ""
+    noam fatigue "I'm... I'm tired. Really tired."
 
 # game/scenario/14_0_1_1_0.rpy:113
 translate english 384cbb45:
@@ -376,43 +376,43 @@ translate english 443d81fd:
 translate english d04ced37:
 
     # nyra reflexion "Le prochain vote aura lieu demain, au cours du quinzième jour."
-    nyra reflexion ""
+    nyra reflexion "The next vote is tomorrow, on Day Fifteen."
 
 # game/scenario/14_0_1_1_0.rpy:118
 translate english 14c7384c:
 
     # nyra raison "Le sujet est : « Toute information détenue par [codex_dialogue_link('archive', 'ARCHIVE')] devient consultable par tout citoyen. »"
-    nyra raison ""
+    nyra raison "The proposal reads: 'All information held by [codex_dialogue_link('archive', 'ARCHIVE')] shall be accessible to every citizen.'"
 
 # game/scenario/14_0_1_1_0.rpy:120
 translate english 5f5213cc:
 
     # noam inquiet "Enfin… On va enfin pouvoir savoir ce qui se passe vraiment dehors ?"
-    noam inquiet ""
+    noam inquiet "So... we'll finally find out what's really happening outside?"
 
 # game/scenario/14_0_1_1_0.rpy:122
 translate english f172f0e9:
 
     # nyra neutre "C’est ce que beaucoup espèrent."
-    nyra neutre ""
+    nyra neutre "That's what many of us hope."
 
 # game/scenario/14_0_1_1_0.rpy:123
 translate english b1da38d6:
 
     # nyra raison "Si ça passe, on aura accès à toutes les données qu’[codex_dialogue_link('archive', 'ARCHIVE')] a accumulées depuis le début."
-    nyra raison ""
+    nyra raison "If it passes, we'll be able to access everything [codex_dialogue_link('archive', 'ARCHIVE')] has collected since the beginning."
 
 # game/scenario/14_0_1_1_0.rpy:125
 translate english 954ef2fb:
 
     # noam reflexion "Ça veut dire… les rapports sur l’extérieur, les vraies raisons de notre présence ici, ce qui est arrivé au monde…"
-    noam reflexion ""
+    noam reflexion "You mean... reports from outside, why we're really here, what happened to the world..."
 
 # game/scenario/14_0_1_1_0.rpy:127
 translate english 46689bde:
 
     # nyra determine "Exactement. On arrêterait enfin de tourner en rond avec des bouts d’informations."
-    nyra determine ""
+    nyra determine "Exactly. We could finally stop stumbling around with scraps of information."
 
 # game/scenario/14_0_1_1_0.rpy:129
 translate english 5d07862a:
@@ -424,37 +424,37 @@ translate english 5d07862a:
 translate english 41b4c50a:
 
     # nyra reflexion "Kami présente ça comme une mesure de transparence totale."
-    nyra reflexion ""
+    nyra reflexion "Kami calls it complete transparency."
 
 # game/scenario/14_0_1_1_0.rpy:132
 translate english d507c6e3:
 
     # nyra raison "Et pour une fois, je suis assez d’accord avec elle. On a besoin de savoir."
-    nyra raison ""
+    nyra raison "And for once, I mostly agree with her. We need answers."
 
 # game/scenario/14_0_1_1_0.rpy:133
 translate english 83a6c64a:
 
     # nyra triste "On a besoin de mettre fin à la Censure."
-    nyra triste ""
+    nyra triste "We need to put an end to the censorship."
 
 # game/scenario/14_0_1_1_0.rpy:135
 translate english d120c4ac:
 
     # noam reflexion "Ouais… Moi aussi je trouve que c’est une bonne chose."
-    noam reflexion ""
+    noam reflexion "Yeah... I think it's a good thing too."
 
 # game/scenario/14_0_1_1_0.rpy:137
 translate english d635c650:
 
     # nyra neutre "Beaucoup de monde est dans le même état d’esprit."
-    nyra neutre ""
+    nyra neutre "A lot of people feel the same way."
 
 # game/scenario/14_0_1_1_0.rpy:138
 translate english 1ff9229b:
 
     # nyra raison "Les gens veulent des réponses concrètes, pas juste des discours."
-    nyra raison ""
+    nyra raison "People want concrete answers, not more speeches."
 
 # game/scenario/14_0_1_1_0.rpy:140
 translate english cf675992:
@@ -466,43 +466,43 @@ translate english cf675992:
 translate english 16ac0419:
 
     # nyra determine "Mais ce n’est pas la seule raison de ma venue."
-    nyra determine ""
+    nyra determine "But that's not the only reason I came."
 
 # game/scenario/14_0_1_1_0.rpy:144
 translate english b91b8f6c:
 
     # noam inquiet "Je m’en doutais."
-    noam inquiet ""
+    noam inquiet "I figured."
 
 # game/scenario/14_0_1_1_0.rpy:146
 translate english b4690c24:
 
     # nyra raison "Noam, écoute-moi attentivement."
-    nyra raison ""
+    nyra raison "Noam, listen carefully."
 
 # game/scenario/14_0_1_1_0.rpy:147
 translate english d0a66764:
 
     # nyra raison "Si tu continues comme ça, si tu t’isoles, si tu fais des crises en public, si tu rates les votes…"
-    nyra raison ""
+    nyra raison "If you keep isolating yourself, having public outbursts, missing votes..."
 
 # game/scenario/14_0_1_1_0.rpy:148
 translate english e3557c13:
 
     # nyra determine "Les gens ne vont plus te voir comme quelqu’un de fatigué."
-    nyra determine ""
+    nyra determine "People will stop seeing you as someone who's exhausted."
 
 # game/scenario/14_0_1_1_0.rpy:149
 translate english 25a82c48:
 
     # nyra neutre "Ils vont te voir comme un danger."
-    nyra neutre ""
+    nyra neutre "They'll start seeing you as a threat."
 
 # game/scenario/14_0_1_1_0.rpy:150
 translate english 670c899f:
 
     # nyra raison "Et dans un endroit comme celui-ci… les dangers, on finit par les mettre à l’écart."
-    nyra raison ""
+    nyra raison "And in a place like this... threats end up being isolated."
 
 # game/scenario/14_0_1_1_0.rpy:152
 translate english 7397f8e8:
@@ -526,13 +526,13 @@ translate english ddafc6a0:
 translate english 83f0c7e7:
 
     # nyra raison "Parce que je pense encore que tu peux te ressaisir."
-    nyra raison ""
+    nyra raison "Because I still think you can pull yourself together."
 
 # game/scenario/14_0_1_1_0.rpy:158
 translate english 7ee572bd:
 
     # nyra raison "Mais si tu continues à t’enfoncer… personne ne pourra plus te défendre."
-    nyra raison ""
+    nyra raison "But if you keep spiraling... no one will be able to defend you."
 
 # game/scenario/14_0_1_1_0.rpy:160
 translate english f15bc718:
@@ -544,19 +544,19 @@ translate english f15bc718:
 translate english 092e81c2:
 
     # nyra raison "Réfléchis bien à ce que tu veux faire demain pour le vote."
-    nyra raison ""
+    nyra raison "Think carefully about what you're going to do at tomorrow's vote."
 
 # game/scenario/14_0_1_1_0.rpy:163
 translate english 86497d65:
 
     # nyra raison "Et surtout… arrête de te comporter comme si tu étais déjà seul contre tous."
-    nyra raison ""
+    nyra raison "And above all... stop acting as if it's already you against the world."
 
 # game/scenario/14_0_1_1_0.rpy:164
 translate english af03117a:
 
     # nyra neutre "Parce que si tu continues, c’est exactement ce qui va arriver."
-    nyra neutre ""
+    nyra neutre "Because if you keep this up, that's exactly where you'll end up."
 
 # game/scenario/14_0_1_1_0.rpy:166
 translate english 79aace11:
@@ -574,7 +574,7 @@ translate english 33780516:
 translate english e81cc01e:
 
     # nyra inquiet "Mais Noam… fais attention à toi."
-    nyra inquiet ""
+    nyra inquiet "But Noam... take care of yourself."
 
 # game/scenario/14_0_1_1_0.rpy:173
 translate english 52360110:
@@ -700,7 +700,7 @@ translate english dd17488c:
 translate english ffcc561f:
 
     # noam fatigue "Oui... merci."
-    noam fatigue ""
+    noam fatigue "Yeah... thanks."
 
 # game/scenario/14_0_1_1_0.rpy:217
 translate english 3f9e7920:
@@ -718,7 +718,7 @@ translate english 04cef37b:
 translate english a84be97b:
 
     # noam fatigue "Je vais essayer."
-    noam fatigue ""
+    noam fatigue "I'll try."
 
 # game/scenario/14_0_1_1_0.rpy:221
 translate english fd74a4cd:
@@ -736,7 +736,7 @@ translate english bab002d5:
 translate english 5daff8a2:
 
     # mara colere "Regardez qui ose encore se montrer."
-    mara colere ""
+    mara colere "Look who finally has the nerve to show his face."
 
 # game/scenario/14_0_1_1_0.rpy:224
 translate english fefbda29:
@@ -754,205 +754,205 @@ translate english e15e14f4:
 translate english cc1f578a:
 
     # mara colere "Après ce qu'il a fait hier, il a encore le culot de venir manger avec nous ?"
-    mara colere ""
+    mara colere "After yesterday, he's still got the balls to come eat with us?"
 
 # game/scenario/14_0_1_1_0.rpy:228
 translate english 9f02da05:
 
     # elen triste "Mara..."
-    elen triste ""
+    elen triste "Mara..."
 
 # game/scenario/14_0_1_1_0.rpy:229
 translate english 0c22b2e4:
 
     # mara agace "Quoi ?"
-    mara agace ""
+    mara agace "What?"
 
 # game/scenario/14_0_1_1_0.rpy:230
 translate english 0bb0c4af:
 
     # mara colere "C'est la vérité."
-    mara colere ""
+    mara colere "It's the truth."
 
 # game/scenario/14_0_1_1_0.rpy:231
 translate english 060d0765:
 
     # julian hesitation "On peut peut-être éviter de lui tomber dessus dès qu'il arrive."
-    julian hesitation ""
+    julian hesitation "Maybe we could avoid jumping down his throat the second he walks in."
 
 # game/scenario/14_0_1_1_0.rpy:232
 translate english 4ee46a49:
 
     # mara rire_profond "Bien sûr."
-    mara rire_profond ""
+    mara rire_profond "Sure."
 
 # game/scenario/14_0_1_1_0.rpy:233
 translate english 29caf4a5:
 
     # mara colere "On devrait lui souhaiter bon appétit, peut-être ?"
-    mara colere ""
+    mara colere "Shall we wish him a pleasant breakfast, too?"
 
 # game/scenario/14_0_1_1_0.rpy:234
 translate english 144a90cb:
 
     # iris inquiet "Mara, baisse la voix."
-    iris inquiet ""
+    iris inquiet "Mara, keep your voice down."
 
 # game/scenario/14_0_1_1_0.rpy:235
 translate english ca2ddff8:
 
     # mara colere "Pourquoi ?"
-    mara colere ""
+    mara colere "Why?"
 
 # game/scenario/14_0_1_1_0.rpy:236
 translate english 815666fb:
 
     # mara colere "On n'a plus de brouilleurs."
-    mara colere ""
+    mara colere "We don't have jammers anymore."
 
 # game/scenario/14_0_1_1_0.rpy:237
 translate english 0cd4c40f:
 
     # mara colere "Kami nous entend déjà tous."
-    mara colere ""
+    mara colere "Kami can hear every damn one of us."
 
 # game/scenario/14_0_1_1_0.rpy:238
 translate english 91231902:
 
     # sael mefiant "Ce n'est pas une raison pour hurler."
-    sael mefiant ""
+    sael mefiant "That's no reason to shout."
 
 # game/scenario/14_0_1_1_0.rpy:239
 translate english 96db6d21:
 
     # mara agace "Non."
-    mara agace ""
+    mara agace "No."
 
 # game/scenario/14_0_1_1_0.rpy:240
 translate english df35f489:
 
     # mara colere "C'est une raison pour être furieuse."
-    mara colere ""
+    mara colere "It's a reason to be furious."
 
 # game/scenario/14_0_1_1_0.rpy:241
 translate english 3f7d8305:
 
     # noam fatigue "Je suis juste venu manger."
-    noam fatigue ""
+    noam fatigue "I just came to eat."
 
 # game/scenario/14_0_1_1_0.rpy:242
 translate english 61eee638:
 
     # mara colere "Oui, voilà."
-    mara colere ""
+    mara colere "Right, of course."
 
 # game/scenario/14_0_1_1_0.rpy:243
 translate english 25f54cda:
 
     # mara colere "Tu viens juste manger."
-    mara colere ""
+    mara colere "You just came to eat."
 
 # game/scenario/14_0_1_1_0.rpy:244
 translate english 33986cd0:
 
     # mara colere "Après nous avoir tous traités de traîtres."
-    mara colere ""
+    mara colere "After calling every one of us traitors."
 
 # game/scenario/14_0_1_1_0.rpy:245
 translate english c0e7118c:
 
     # noam hesitation "Je n'ai pas..."
-    noam hesitation ""
+    noam hesitation "I didn't..."
 
 # game/scenario/14_0_1_1_0.rpy:246
 translate english d01f30a0:
 
     # mara colere "Si."
-    mara colere ""
+    mara colere "Yes."
 
 # game/scenario/14_0_1_1_0.rpy:247
 translate english 6d605045:
 
     # mara colere "Tu l'as fait."
-    mara colere ""
+    mara colere "You did."
 
 # game/scenario/14_0_1_1_0.rpy:248
 translate english e250f6f7:
 
     # mara colere "Tu as pété un câble."
-    mara colere ""
+    mara colere "You lost your shit."
 
 # game/scenario/14_0_1_1_0.rpy:249
 translate english dca7442a:
 
     # mara colere "Tu as quitté le débat."
-    mara colere ""
+    mara colere "You walked out of the debate."
 
 # game/scenario/14_0_1_1_0.rpy:250
 translate english ced3ad56:
 
     # mara colere "Et maintenant on n'a plus rien pour se protéger."
-    mara colere ""
+    mara colere "And now we've got nothing left to protect us."
 
 # game/scenario/14_0_1_1_0.rpy:251
 translate english 64f9065b:
 
     # elen inquiet "Mara, s'il te plaît..."
-    elen inquiet ""
+    elen inquiet "Mara, please..."
 
 # game/scenario/14_0_1_1_0.rpy:252
 translate english 4b258865:
 
     # mara colere "Non, Elen."
-    mara colere ""
+    mara colere "No, Elen."
 
 # game/scenario/14_0_1_1_0.rpy:253
 translate english cd0644fb:
 
     # mara colere "Je ne vais pas sourire pour qu'il se sente mieux."
-    mara colere ""
+    mara colere "I'm not going to smile just to make him feel better."
 
 # game/scenario/14_0_1_1_0.rpy:254
 translate english 04e21c4d:
 
     # iris colere "Personne ne te demande de sourire."
-    iris colere ""
+    iris colere "Nobody's asking you to smile."
 
 # game/scenario/14_0_1_1_0.rpy:255
 translate english ba2e0e9f:
 
     # mara agace "Alors quoi ?"
-    mara agace ""
+    mara agace "Then what?"
 
 # game/scenario/14_0_1_1_0.rpy:256
 translate english e4079d10:
 
     # mara colere "Je dois juste faire semblant que tout va bien ?"
-    mara colere ""
+    mara colere "I'm supposed to pretend everything's fine?"
 
 # game/scenario/14_0_1_1_0.rpy:257
 translate english 83e3ea87:
 
     # julian inquiet "Personne ne dit que tout va bien."
-    julian inquiet ""
+    julian inquiet "Nobody said everything was fine."
 
 # game/scenario/14_0_1_1_0.rpy:258
 translate english 7b435265:
 
     # mara colere "Parfait."
-    mara colere ""
+    mara colere "Great."
 
 # game/scenario/14_0_1_1_0.rpy:259
 translate english 201311d1:
 
     # mara colere "Alors on peut dire les choses."
-    mara colere ""
+    mara colere "Then let's call it what it is."
 
 # game/scenario/14_0_1_1_0.rpy:260
 translate english 0d842e7a:
 
     # mara colere "A cause de lui, on est tous à poil devant Kami."
-    mara colere ""
+    mara colere "Because of him, we're all naked in front of Kami."
 
 # game/scenario/14_0_1_1_0.rpy:261
 translate english 2f948280:
@@ -970,19 +970,19 @@ translate english af06c55c:
 translate english 772e1544:
 
     # noam colere "Ce n'était pas à cause de moi."
-    noam colere ""
+    noam colere "It wasn't all my fault."
 
 # game/scenario/14_0_1_1_0.rpy:264
 translate english 8d38ada4:
 
     # mara colere "Ah non ?"
-    mara colere ""
+    mara colere "Oh, wasn't it?"
 
 # game/scenario/14_0_1_1_0.rpy:265
 translate english c1a1edcb:
 
     # noam colere "Je n'ai pas voté contre tout seul."
-    noam colere ""
+    noam colere "I wasn't the only one who voted against."
 
 # game/scenario/14_0_1_1_0.rpy:266
 translate english f7825881:
@@ -1000,43 +1000,43 @@ translate english 1df9f8c9:
 translate english f9390d6a:
 
     # mara colere_noire "Tu veux vraiment repartir là-dessus ?"
-    mara colere_noire ""
+    mara colere_noire "You really want to go there again?"
 
 # game/scenario/14_0_1_1_0.rpy:269
 translate english 78eb9349_2:
 
     # noam fatigue "Non."
-    noam fatigue ""
+    noam fatigue "No."
 
 # game/scenario/14_0_1_1_0.rpy:270
 translate english 935b80f0:
 
     # mara colere "Alors tais-toi."
-    mara colere ""
+    mara colere "Then shut up."
 
 # game/scenario/14_0_1_1_0.rpy:271
 translate english 049b9bac:
 
     # iris colere "Mara."
-    iris colere ""
+    iris colere "Mara."
 
 # game/scenario/14_0_1_1_0.rpy:272
 translate english 4624b9a0:
 
     # mara agace "Quoi encore ?"
-    mara agace ""
+    mara agace "What now?"
 
 # game/scenario/14_0_1_1_0.rpy:273
 translate english 2eae4bb5:
 
     # iris colere "Tu vas trop loin."
-    iris colere ""
+    iris colere "You're going too far."
 
 # game/scenario/14_0_1_1_0.rpy:274
 translate english 8cd9ad33:
 
     # mara colere "Et lui, il est allé où hier ?"
-    mara colere ""
+    mara colere "And how far did HE go yesterday?"
 
 # game/scenario/14_0_1_1_0.rpy:275
 translate english 8615dbdf:
@@ -1054,19 +1054,19 @@ translate english 594be31a:
 translate english 4015090c:
 
     # noam fatigue "Laisse tomber."
-    noam fatigue ""
+    noam fatigue "Forget it."
 
 # game/scenario/14_0_1_1_0.rpy:278
 translate english e9f60c17_1:
 
     # elen triste "Noam..."
-    elen triste ""
+    elen triste "Noam..."
 
 # game/scenario/14_0_1_1_0.rpy:279
 translate english bc235794:
 
     # noam fatigue "C'est bon."
-    noam fatigue ""
+    noam fatigue "It's fine."
 
 # game/scenario/14_0_1_1_0.rpy:280
 translate english d5341ba2:
@@ -1126,43 +1126,43 @@ translate english cce36f15:
 translate english b77c5093:
 
     # mara mefiant "Je ne lui fais plus confiance."
-    mara mefiant ""
+    mara mefiant "I don't trust him anymore."
 
 # game/scenario/14_0_1_1_0.rpy:290
 translate english 4aff0b84:
 
     # elen triste "On a entendu."
-    elen triste ""
+    elen triste "We heard you."
 
 # game/scenario/14_0_1_1_0.rpy:291
 translate english 23039d94:
 
     # mara colere "Je le redis parce que personne n'a le courage de l'admettre."
-    mara colere ""
+    mara colere "I'll say it again, since no one else has the guts to admit it."
 
 # game/scenario/14_0_1_1_0.rpy:292
 translate english c56f1bde:
 
     # julian hesitation "Ce n'est pas une question de courage."
-    julian hesitation ""
+    julian hesitation "It's not about courage."
 
 # game/scenario/14_0_1_1_0.rpy:293
 translate english d01f30a0_1:
 
     # mara colere "Si."
-    mara colere ""
+    mara colere "Yes, it is."
 
 # game/scenario/14_0_1_1_0.rpy:294
 translate english 9e507ad9:
 
     # mara colere "A un moment, il faut regarder les choses en face."
-    mara colere ""
+    mara colere "Sooner or later, you have to face the facts."
 
 # game/scenario/14_0_1_1_0.rpy:295
 translate english 4c59eeae:
 
     # iris inquiet "Il est juste à côté."
-    iris inquiet ""
+    iris inquiet "He's right there."
 
 # game/scenario/14_0_1_1_0.rpy:296
 translate english 704958e9:
