@@ -1024,7 +1024,7 @@ translate english 568fe8ea_1:
 translate english 5fbcc13a:
 
     # kami "Comment vont mes petits représentants ce matin ? Bien cuits ? Bien transpirants ?"
-    kami "How are my little representatives this morning? Nicely roasted? Nicely sweaty?"
+    kami "How are my little representatives this morning? Nicely roasted? Sweating buckets?"
 
 # game/scenario/10_0_1_1.rpy:583
 translate english 16931904:
@@ -1048,13 +1048,13 @@ translate english 78773105:
 translate english 98f8263d:
 
     # kami "Aujourd'hui, le Conclave vous offre une charmante ambiance tropicale."
-    kami "Today, the Conclave is treating you to a charming tropical atmosphere."
+    kami "Today the Conclave proudly presents: your very own tropical getaway!"
 
 # game/scenario/10_0_1_1.rpy:591
 translate english e8efc2a0:
 
     # kami "La salle du Canon rattrape une partie de son retard et sollicite un peu trop le refroidissement général."
-    kami "The Cannon room is catching up on some of its backlog and putting a bit much strain on the general cooling."
+    kami "The Cannon's working through its backlog, and the cooling system is feeling the heat. Literally."
 
 # game/scenario/10_0_1_1.rpy:594
 translate english 0a084c74:
@@ -1102,13 +1102,13 @@ translate english bfbab931:
 translate english e6494422:
 
     # kami "Quoi ? Ça ne se voit pas ?"
-    kami "What? You can't tell?"
+    kami "What? Can't you tell?"
 
 # game/scenario/10_0_1_1.rpy:615
 translate english 88429e05:
 
     # kami "Nous sommes déjà au dixième jour du Conclave. Un tiers du parcours !"
-    kami "We're already at the tenth day of the Conclave. A third of the way!"
+    kami "Day ten already! We're a third of the way through this little adventure!"
 
 # game/scenario/10_0_1_1.rpy:616
 translate english ad449429:
@@ -1120,7 +1120,7 @@ translate english ad449429:
 translate english f8b87d3c:
 
     # kami "Je vous attends dans la Salle du Conclave pour découvrir votre prochain vote. Ne traînez pas !"
-    kami "I'll be waiting for you in the Conclave Hall to reveal your next vote. Don't dawdle!"
+    kami "I'll see you in the Conclave chamber for your next vote. Don't keep me waiting!"
 
 # game/scenario/10_0_1_1.rpy:630
 translate english 33c4b8b0:
@@ -1282,13 +1282,13 @@ translate english 76433c41:
 translate english 0d41d76b:
 
     # kami "Tout le monde est là ! C'est gentil de m'éviter un appel interminable."
-    kami "Everyone's here! How kind of you to spare me an endless roll call."
+    kami "Everybody's here! How thoughtful of you to spare me a tedious roll call."
 
 # game/scenario/10_0_1_1.rpy:709
 translate english e78dc20b:
 
     # kami "Vous voulez connaître le thème de votre prochaine grande décision ?"
-    kami "Would you like to know the topic of your next great decision?"
+    kami "Ready to find out what world-changing decision you're making next?"
 
 # game/scenario/10_0_1_1.rpy:712
 translate english e2bf9e0c:
@@ -1330,7 +1330,7 @@ translate english e4dbb339:
 translate english 957d9032:
 
     # kami "Et si vous les interdisez aux autres, je retirerai aussi ceux de vos chambres. Un peu de cohérence !"
-    kami "And if you ban them for everyone else, I'll remove the ones in your bedrooms too. A little consistency!"
+    kami "And if you ban jammers for everyone else, yours are going too. Fair's fair!"
 
 # game/scenario/10_0_1_1.rpy:727
 translate english 8d800452:
@@ -1408,7 +1408,7 @@ translate english 8f6d9d2b:
 translate english d4e2c13e:
 
     # kami "Je pourrais même vous dire qui ronfle !"
-    kami "I could even tell you who snores!"
+    kami "I could even tell you who's been snoring!"
 
 # game/scenario/10_0_1_1.rpy:764
 translate english a19305bd:
