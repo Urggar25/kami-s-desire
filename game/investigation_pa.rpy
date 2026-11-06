@@ -56,6 +56,24 @@ init python:
         "limen": "sael"
     }
 
+    # Calques natifs : ces hotspots ont exactement la même silhouette et
+    # le même survol que les objets interactifs du Conclave.
+    INVESTIGATION_PA_NATIVE_HOTSPOTS = {
+        "grille": ("chambre", "images/background/interact/chambre/chambre1/aeration.png"),
+        "notes": ("archive", "images/background/interact/archive/archive2/ordinateur.png"),
+        "keyper": ("archive", "images/background/interact/archive/archive2/ecran.png"),
+        "signal": ("observation", "images/background/interact/observation/observation2/radio.png"),
+        "camera": ("observation", "images/background/interact/observation/observation1/ordinateur.png"),
+        "console": ("observation", "images/background/interact/observation/observation1/ordinateur.png"),
+        "acces": ("maintenance", "images/background/interact/maintenance/maintenance1/etablit.png"),
+    }
+
+    def investigation_pa_hotspot(action_id, room_name):
+        candidate = INVESTIGATION_PA_NATIVE_HOTSPOTS.get(action_id)
+        if candidate and candidate[0] == room_name and renpy.loadable(candidate[1]):
+            return candidate[1]
+        return None
+
     def investigation_pa_actor(action_id):
         return INVESTIGATION_PA_INTERLOCUTORS.get(action_id)
 
@@ -78,9 +96,21 @@ screen investigation_pa_room(room_id, rooms, actions):
     for idx, action_id in enumerate(available):
         $ action_info = actions[action_id]
         $ actor = investigation_pa_actor(action_id)
+        $ native_path = investigation_pa_hotspot(action_id, pnc_room)
         $ done = action_id in investigation_pa_completed
         $ enabled = investigation_pa_can_take(action_id)
-        if actor:
+        if native_path:
+            imagebutton:
+                idle room_interaction_null()
+                hover room_interaction_hover_with_overlays(native_path, pnc_room)
+                focus_mask room_interaction_layer(native_path, pnc_room, "art")
+                xpos 0
+                ypos 0
+                sensitive enabled
+                hovered SetScreenVariable("hovered_action", action_id)
+                unhovered SetScreenVariable("hovered_action", None)
+                action Return(action_id)
+        elif actor:
             # Le sprite reste sur le sol, aucun panneau de sélection de personnage.
             imagebutton:
                 idle Transform(character_image(actor, "neutre"), zoom=1.00)
