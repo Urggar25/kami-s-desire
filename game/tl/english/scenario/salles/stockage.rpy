@@ -576,7 +576,7 @@ translate english decouverte_stockage_ee09d64f:
 translate english decouverte_stockage_2f224b01:
 
     # "Elle remet une boîte de composants sur son étagère, puis regarde les caisses encore fermées."
-    ""
+    "She puts a box of components back on its shelf, then looks at the unopened crates."
 
 # game/scenario/salles/stockage.rpy:212
 translate english decouverte_stockage_850d11d9:
@@ -624,7 +624,7 @@ translate english decouverte_stockage_624e5c0a:
 translate english decouverte_stockage_48fb728a:
 
     # "Je regarde les étagères. J'avais pas pensé à ça."
-    ""
+    "I look at the shelves. That hadn't occurred to me."
 
 # game/scenario/salles/stockage.rpy:220
 translate english decouverte_stockage_bb30d12d:
