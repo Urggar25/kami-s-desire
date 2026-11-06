@@ -258,8 +258,26 @@ image j26_elen_flacon = Composite(
     (0, 0), "images/background/interact/chambre_elen/meutre_tomas/medicament.png")
 
 
-# Le J26 réutilise la caméra, le déplacement du cadrage et le viseur du J25.
-# Seuls le fond photographié et la destination dans le dossier changent.
+# J26 : même cadre Polaroid animé que le J25, mais affiché sur une
+# interaction séparée une fois le véritable PNG écrit dans le dossier.
+screen j26_photo_saved_preview(eid):
+    modal True
+    zorder 220
+    add Solid("#03070DBB")
+    frame at _j25_print_in:
+        align (0.5, 0.5)
+        xsize 1156 ysize 724
+        padding (18, 18)
+        background Solid("#ECE8DC")
+        vbox:
+            spacing 18
+            add investigation_evidence_image(eid) xsize 1120 ysize 630
+            text _("PHOTO ENREGISTRÉE") xalign 0.5 size 24 color "#25333B" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+    timer 1.0 action Return()
+
+# Le J26 reprend la caméra J25 mais gère son aperçu dans le scénario J26.
+# Cela évite qu'une capture fraîchement créée soit affichée dans une screen
+# encore en train de se mettre à jour.
 label j26_photograph(eid, source, center, zoom=2.2):
     window hide
     with None
@@ -268,7 +286,12 @@ label j26_photograph(eid, source, center, zoom=2.2):
     call screen _j25_photo_screen(_j26_view, evidence_id=eid)
     hide j26_photo_view onlayer master
     $ _j26_view = None
-    $ investigation_add(eid, notify=False)
+    if investigation_photo_data.get(eid):
+        call screen j26_photo_saved_preview(eid)
+        $ investigation_add(eid, notify=False)
+    else:
+        "La photo n'a pas été enregistrée. Je dois recommencer."
+        call j26_photograph(eid, source, center, zoom) from _call_j26_photo_retry
     window show
     return
 
