@@ -472,7 +472,7 @@ label _26_0_1_1_0_1_DECOUVERTE_FLACON:
     $ hideGroup()
     scene j26_elen_flacon at adaptive_fullscreen with dissolve
     call j26_photograph("j26_photo_flacon", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_photo
-    "Une fois la photo prise, Iris enferme le flacon dans un sachet."
+    "Iris me demande de laisser le flacon sur la table de chevet, sans y toucher, jusqu'aux prélèvements."
     $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
     noam fatigue "Tu veux dire qu'il aurait pu... se suicider ?"
     iris fatigue "C'est une hypothèse. Pas une conclusion, Noam. On ne sait ni s'il a pris ces comprimés, ni quand."
@@ -528,11 +528,12 @@ label _26_0_1_1_0_1_PA_ROOM:
     if _return == "finish":
         jump _26_0_1_1_0_1_BILAN
     if _return == "corridors":
+        call EXIT_ROOM_TO_CORRIDOR from _call_j26a_pa_exit_room_native
         jump _26_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_selected = _return
     if not investigation_pa_can_take(investigation_pa_selected):
         jump _26_0_1_1_0_1_PA_ROOM
-    call screen investigation_pa_confirm(J26A_ACTIONS[investigation_pa_selected])
+    call INVESTIGATION_PA_CHOICE(J26A_ACTIONS[investigation_pa_selected], investigation_pa_current_room) from _call_j26a_pa_choice_native
     if not _return:
         jump _26_0_1_1_0_1_PA_ROOM
     if not investigation_pa_spend(investigation_pa_selected):
