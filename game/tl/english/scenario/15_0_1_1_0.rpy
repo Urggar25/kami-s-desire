@@ -784,139 +784,139 @@ translate english 8ae801dc:
 translate english 3fd380fa:
 
     # "\"Pour que tu puisses rester tranquille.\""
-    ""
+    "\"So you can have some peace and quiet.\""
 
 # game/scenario/15_0_1_1_0.rpy:186
 translate english 424208ff:
 
     # "Aucune signature."
-    ""
+    "No signature."
 
 # game/scenario/15_0_1_1_0.rpy:187
 translate english 5579ff7c:
 
     # "Aucune écriture reconnaissable."
-    ""
+    "No recognizable handwriting."
 
 # game/scenario/15_0_1_1_0.rpy:189
 translate english ac1d30c8:
 
     # "Je relis la phrase plusieurs fois."
-    ""
+    "I read the sentence several times."
 
 # game/scenario/15_0_1_1_0.rpy:191
 translate english 7bc3922e:
 
     # think "Ils ne veulent plus me voir à la cafétéria."
-    think ""
+    think "They don't want to see me in the cafeteria anymore."
 
 # game/scenario/15_0_1_1_0.rpy:192
 translate english 5426d507:
 
     # think "Ils ont trouvé la solution idéale : me nourrir sans avoir à croiser mon regard."
-    think ""
+    think "They've found the perfect solution: feed me without having to look me in the eye."
 
 # game/scenario/15_0_1_1_0.rpy:193
 translate english 3dd4f05f:
 
     # think "Comme un animal qu’on laisse dans sa cage."
-    think ""
+    think "Like an animal kept in its cage."
 
 # game/scenario/15_0_1_1_0.rpy:195
 translate english 4efcf86a:
 
     # "Je pose le sac sur le bureau."
-    ""
+    "I put the bag on the desk."
 
 # game/scenario/15_0_1_1_0.rpy:196
 translate english 4b2ecb93:
 
     # "Il est lourd. Bien rempli."
-    ""
+    "It's heavy. Packed full."
 
 # game/scenario/15_0_1_1_0.rpy:197
 translate english 144e183c:
 
     # "Presque attentionné."
-    ""
+    "Almost thoughtful."
 
 # game/scenario/15_0_1_1_0.rpy:199
 translate english aba749a1:
 
     # think "Qui a fait ça ?"
-    think ""
+    think "Who did this?"
 
 # game/scenario/15_0_1_1_0.rpy:201
 translate english 9b55a51b:
 
     # "Je m’assois sur la chaise et fixe le sac."
-    ""
+    "I sit in the chair and stare at the bag."
 
 # game/scenario/15_0_1_1_0.rpy:203
 translate english 0d4464a4:
 
     # think "Ils ont peur que je fasse une scène."
-    think ""
+    think "They're afraid I'll cause a scene."
 
 # game/scenario/15_0_1_1_0.rpy:204
 translate english c983e350:
 
     # think "Ou pire : ils ont peur de moi."
-    think ""
+    think "Or worse: they're afraid of me."
 
 # game/scenario/15_0_1_1_0.rpy:205
 translate english 6b0cb39f:
 
     # think "Alors ils me déposent de la nourriture devant la porte, comme à un chien enragé qu’on ne veut plus approcher."
-    think ""
+    think "So they leave food outside my door, like I'm a rabid dog they don't want to get near."
 
 # game/scenario/15_0_1_1_0.rpy:207
 translate english 82ae1306:
 
     # "Je passe une main sur mon visage."
-    ""
+    "I rub my face."
 
 # game/scenario/15_0_1_1_0.rpy:209
 translate english 9df1fe14:
 
     # think "C’est presque pire qu’une insulte."
-    think ""
+    think "Somehow this is worse than an insult."
 
 # game/scenario/15_0_1_1_0.rpy:210
 translate english a3430a73:
 
     # think "C’est de la pitié organisée."
-    think ""
+    think "It's organized pity."
 
 # game/scenario/15_0_1_1_0.rpy:212
 translate english cbb7edec:
 
     # "Je reste un long moment à regarder la note anonyme."
-    ""
+    "I stare at the anonymous note for a long time."
 
 # game/scenario/15_0_1_1_0.rpy:214
 translate english 4674f37d:
 
     # think "Personne n’a eu le courage de rester devant la porte."
-    think ""
+    think "Nobody had the courage to wait outside."
 
 # game/scenario/15_0_1_1_0.rpy:215
 translate english 561e9143:
 
     # think "Personne n’a eu le courage de me le dire en face."
-    think ""
+    think "Nobody had the courage to say it to my face."
 
 # game/scenario/15_0_1_1_0.rpy:216
 translate english 9607b085:
 
     # think "Ils préfèrent faire comme si je n’existais plus."
-    think ""
+    think "They'd rather pretend I don't exist."
 
 # game/scenario/15_0_1_1_0.rpy:218
 translate english 63bc7630:
 
     # "Je froisse lentement la note dans mon poing."
-    ""
+    "I slowly crush the note in my fist."
 
 # game/scenario/15_0_1_1_0.rpy:220
 translate english f270eff1:
@@ -928,37 +928,37 @@ translate english f270eff1:
 translate english b7e960dc:
 
     # "Le mot a un goût amer."
-    ""
+    "The word tastes bitter."
 
 # game/scenario/15_0_1_1_0.rpy:234
 translate english a538da1d:
 
     # "Le couloir est presque vide."
-    ""
+    "The corridor is almost empty."
 
 # game/scenario/15_0_1_1_0.rpy:235
 translate english a0c0a8e3:
 
     # "Presque."
-    ""
+    "Almost."
 
 # game/scenario/15_0_1_1_0.rpy:237
 translate english 313cb0e4:
 
     # "Je les entends."
-    ""
+    "I hear them."
 
 # game/scenario/15_0_1_1_0.rpy:238
 translate english a04a15f5:
 
     # "Tous."
-    ""
+    "All of them."
 
 # game/scenario/15_0_1_1_0.rpy:240
 translate english dc52bed9:
 
     # "Et je comprends que je ne peux pas les rejoindre."
-    ""
+    "And I realize I can't join them."
 
 # game/scenario/15_0_1_1_0.rpy:242
 translate english d3220ce6:
@@ -976,7 +976,7 @@ translate english 77a4ed3f:
 translate english 5a2ac84d:
 
     # "Le message apparaît sur ma tablette."
-    ""
+    "A message appears on my tablet."
 
 # game/scenario/15_0_1_1_0.rpy:248
 translate english df63b9b9:
@@ -1012,13 +1012,13 @@ translate english ba0af85b:
 translate english effae1a6:
 
     # "Je range la tablette."
-    ""
+    "I put the tablet away."
 
 # game/scenario/15_0_1_1_0.rpy:258
 translate english bd5195fc:
 
     # "Je commence à reculer."
-    ""
+    "I start to back off."
 
 # game/scenario/15_0_1_1_0.rpy:260
 translate english ff032cf2:
@@ -1030,13 +1030,13 @@ translate english ff032cf2:
 translate english ca163906:
 
     # "Je me fige."
-    ""
+    "I freeze."
 
 # game/scenario/15_0_1_1_0.rpy:263
 translate english 62420d97:
 
     # "Trop tard."
-    ""
+    "Too late."
 
 # game/scenario/15_0_1_1_0.rpy:265
 translate english 808306b4:
@@ -1066,7 +1066,7 @@ translate english 55751ca5:
 translate english 49cedbbc:
 
     # "Je sors lentement de l’angle."
-    ""
+    "I slowly step around the corner."
 
 # game/scenario/15_0_1_1_0.rpy:283
 translate english d006a495:
@@ -1120,13 +1120,13 @@ translate english cf373232:
 translate english 70c7d5ac:
 
     # "Le mot tombe."
-    ""
+    "The word lands."
 
 # game/scenario/15_0_1_1_0.rpy:299
 translate english a11f6453:
 
     # "Personne ne bouge."
-    ""
+    "No one moves."
 
 # game/scenario/15_0_1_1_0.rpy:301
 translate english 21e24c2a:
@@ -1222,13 +1222,13 @@ translate english e4ea827b:
 translate english a8506a5b:
 
     # "La voix de Kael arrive derrière moi."
-    ""
+    "Kael's voice comes from behind me."
 
 # game/scenario/15_0_1_1_0.rpy:327
 translate english 201bad60:
 
     # "Je me retourne."
-    ""
+    "I turn around."
 
 # game/scenario/15_0_1_1_0.rpy:329
 translate english 254b2051:
@@ -1336,13 +1336,13 @@ translate english 1a52956c:
 translate english 22367fe4:
 
     # "Ryn avance d’un pas."
-    ""
+    "Ryn takes a step forward."
 
 # game/scenario/15_0_1_1_0.rpy:360
 translate english 64f359b0:
 
     # "Sael pose une main sur son bras."
-    ""
+    "Sael puts a hand on his arm."
 
 # game/scenario/15_0_1_1_0.rpy:362
 translate english 2f976c44_1:
@@ -1408,13 +1408,13 @@ translate english 51d00859:
 translate english 074f542c:
 
     # "Sa phrase est froide."
-    ""
+    "Her words are cold."
 
 # game/scenario/15_0_1_1_0.rpy:381
 translate english 6a753828:
 
     # "Elle tombe juste."
-    ""
+    "And they hit their mark."
 
 # game/scenario/15_0_1_1_0.rpy:383
 translate english c141de89:
@@ -1468,7 +1468,7 @@ translate english 133290d9:
 translate english b4cfb580:
 
     # "Elen fait un pas vers nous."
-    ""
+    "Elen takes a step toward us."
 
 # game/scenario/15_0_1_1_0.rpy:401
 translate english 6e100766:
@@ -1552,49 +1552,49 @@ translate english dd89a213:
 translate english e6e80174:
 
     # "Kael m’entraîne dans l'angle du couloir, loin d'eux."
-    ""
+    "Kael pulls me back around the corner, away from them."
 
 # game/scenario/15_0_1_1_0.rpy:424
 translate english 7644670f:
 
     # "Je sens leurs regards dans mon dos avant de disparaitre de leur vue."
-    ""
+    "I can feel their eyes on my back until we're out of sight."
 
 # game/scenario/15_0_1_1_0.rpy:426
 translate english e1a996b9:
 
     # think "J'ai choisi de ne pas y aller."
-    think ""
+    think "I chose not to go."
 
 # game/scenario/15_0_1_1_0.rpy:427
 translate english 8b144389:
 
     # think "J'en assumerai les conséquences."
-    think ""
+    think "I'll live with the consequences."
 
 # game/scenario/15_0_1_1_0.rpy:434
 translate english a22301af:
 
     # "La salle d’observation est vide."
-    ""
+    "The observation room is empty."
 
 # game/scenario/15_0_1_1_0.rpy:435
 translate english 2c2ca901:
 
     # "Les écrans projettent une lumière bleue sur le sol."
-    ""
+    "The screens cast blue light across the floor."
 
 # game/scenario/15_0_1_1_0.rpy:436
 translate english 0375625c:
 
     # "Kael verrouille la porte derrière nous."
-    ""
+    "Kael locks the door behind us."
 
 # game/scenario/15_0_1_1_0.rpy:443
 translate english d9502abf:
 
     # noam "Kael, je peux te poser une question ?"
-    noam ""
+    noam "Kael, can I ask you something?"
 
 # game/scenario/15_0_1_1_0.rpy:444
 translate english 44f6c28c:
@@ -1606,7 +1606,7 @@ translate english 44f6c28c:
 translate english 41344ee1:
 
     # noam "Pourquoi avec moi ? Pourquoi tu me fais confiance ?"
-    noam ""
+    noam "Why me? Why do you trust me?"
 
 # game/scenario/15_0_1_1_0.rpy:446
 translate english a4050042:
@@ -1618,7 +1618,7 @@ translate english a4050042:
 translate english f423e1d1:
 
     # kael "Tu es le seul à ne pas me regarder comme si j’avais tout fait foirer."
-    kael ""
+    kael "You're the only one who doesn't look at me like I ruined everything."
 
 # game/scenario/15_0_1_1_0.rpy:448
 translate english c16d7a05:
@@ -1630,13 +1630,13 @@ translate english c16d7a05:
 translate english 5239b587:
 
     # noam "Les autres ne te détestent pas."
-    noam ""
+    noam "The others don't hate you."
 
 # game/scenario/15_0_1_1_0.rpy:450
 translate english d2e17fed:
 
     # kael "Je sais."
-    kael ""
+    kael "I know."
 
 # game/scenario/15_0_1_1_0.rpy:451
 translate english 69a86eee:
@@ -1660,19 +1660,19 @@ translate english b3dfd927:
 translate english 83f2ed55:
 
     # "Kael s’assoit devant le terminal."
-    ""
+    "Kael sits down at the terminal."
 
 # game/scenario/15_0_1_1_0.rpy:455
 translate english 22d4b83e:
 
     # "Il pose ses doigts sur le clavier."
-    ""
+    "He rests his fingers on the keyboard."
 
 # game/scenario/15_0_1_1_0.rpy:456
 translate english f3fd9941:
 
     # "Il ne tape pas."
-    ""
+    "He doesn't type."
 
 # game/scenario/15_0_1_1_0.rpy:457
 translate english 2cac842a:
@@ -1684,13 +1684,13 @@ translate english 2cac842a:
 translate english 3560a090:
 
     # noam "On saura."
-    noam ""
+    noam "We'll find out."
 
 # game/scenario/15_0_1_1_0.rpy:459
 translate english 1f70adb1:
 
     # kael "Sauf si..."
-    kael ""
+    kael "Unless..."
 
 # game/scenario/15_0_1_1_0.rpy:460
 translate english 71b03e70:
@@ -1714,31 +1714,31 @@ translate english d4769346:
 translate english 2a34a222:
 
     # "Il tape son code."
-    ""
+    "He enters his code."
 
 # game/scenario/15_0_1_1_0.rpy:464
 translate english 8f4a29c3:
 
     # "Le terminal s’ouvre."
-    ""
+    "The terminal unlocks."
 
 # game/scenario/15_0_1_1_0.rpy:465
 translate english 9b4282a4:
 
     # "Une liste de dossiers apparaît triée par jour et par lieu."
-    ""
+    "A list of folders appears, sorted by day and location."
 
 # game/scenario/15_0_1_1_0.rpy:466
 translate english 67f2bbed:
 
     # kael "Chambre Kael."
-    kael ""
+    kael "Kael's room."
 
 # game/scenario/15_0_1_1_0.rpy:467
 translate english a714e2fc:
 
     # kael "Jour 8."
-    kael ""
+    kael "Day eight."
 
 # game/scenario/15_0_1_1_0.rpy:468
 translate english b647ebe4:
@@ -1750,13 +1750,13 @@ translate english b647ebe4:
 translate english 5d6d7cd7:
 
     # noam "Tu as dormi quand ?"
-    noam ""
+    noam "When did you sleep?"
 
 # game/scenario/15_0_1_1_0.rpy:470
 translate english ea5ebcba:
 
     # kael "Il me semble que je n'ai pas été beaucoup dans ma chambre."
-    kael ""
+    kael "I don't think I spent much time in my room."
 
 # game/scenario/15_0_1_1_0.rpy:471
 translate english f721cb01:
@@ -1768,19 +1768,19 @@ translate english f721cb01:
 translate english da3419ff:
 
     # "Il appuie sur un bouton permettant de voir la vidéo en accéléré."
-    ""
+    "He presses a button to speed up the footage."
 
 # game/scenario/15_0_1_1_0.rpy:473
 translate english 8d42578d:
 
     # "Il pointe du doigt un endroit précis sur les images de surveillance."
-    ""
+    "He points to a particular spot on the surveillance video."
 
 # game/scenario/15_0_1_1_0.rpy:474
 translate english 7bbbfd3e:
 
     # "La photo accrochée au mur."
-    ""
+    "The photograph hanging on the wall."
 
 # game/scenario/15_0_1_1_0.rpy:475
 translate english e1dad2b5:
@@ -1792,7 +1792,7 @@ translate english e1dad2b5:
 translate english f4e361e8:
 
     # "Je lui montre un endroit spécifique à l'écran."
-    ""
+    "I point out a spot on the screen."
 
 # game/scenario/15_0_1_1_0.rpy:477
 translate english 937b130c:
@@ -1810,13 +1810,13 @@ translate english ad8eb318:
 translate english bae6f5cd:
 
     # "Il ouvre une fenêtre secondaire."
-    ""
+    "He opens a second window."
 
 # game/scenario/15_0_1_1_0.rpy:480
 translate english a6e3a956:
 
     # kael "08h12, sortie."
-    kael ""
+    kael "8:12 a.m., exit."
 
 # game/scenario/15_0_1_1_0.rpy:481
 translate english d56a23ff:
@@ -1828,7 +1828,7 @@ translate english d56a23ff:
 translate english 5ab17fb9:
 
     # kael "09h43, sortie."
-    kael ""
+    kael "9:43 a.m., exit."
 
 # game/scenario/15_0_1_1_0.rpy:483
 translate english a970157e:
@@ -1846,13 +1846,13 @@ translate english d1cfd28c:
 translate english b9afd1da:
 
     # kael "Oui."
-    kael ""
+    kael "Yes."
 
 # game/scenario/15_0_1_1_0.rpy:486
 translate english cb7e416f:
 
     # kael "Je suis revenu chercher ma tablette."
-    kael ""
+    kael "I came back for my tablet."
 
 # game/scenario/15_0_1_1_0.rpy:487
 translate english 8e42f581:
@@ -1864,13 +1864,13 @@ translate english 8e42f581:
 translate english 801eeaf5:
 
     # kael "14h02, sortie."
-    kael ""
+    kael "2:02 p.m., exit."
 
 # game/scenario/15_0_1_1_0.rpy:489
 translate english 214603e0:
 
     # kael "19h28, entrée."
-    kael ""
+    kael "7:28 p.m., entry."
 
 # game/scenario/15_0_1_1_0.rpy:490
 translate english bb02329b:
@@ -1888,7 +1888,7 @@ translate english f69f5729:
 translate english 1078ffc5:
 
     # noam "Tu en es sûr ?"
-    noam ""
+    noam "Are you sure?"
 
 # game/scenario/15_0_1_1_0.rpy:493
 translate english 406d0af4:
@@ -1900,7 +1900,7 @@ translate english 406d0af4:
 translate english 06e71761_1:
 
     # noam "Pourquoi ?"
-    noam ""
+    noam "Why?"
 
 # game/scenario/15_0_1_1_0.rpy:495
 translate english 6c9cce07:
@@ -1918,25 +1918,25 @@ translate english bde1eef4:
 translate english 98e4df7c:
 
     # kael "Faut dire que personne n’avait besoin de le savoir."
-    kael ""
+    kael "Well, nobody needed to know."
 
 # game/scenario/15_0_1_1_0.rpy:498
 translate english bfd04c91:
 
     # noam "Donc après 20h ?"
-    noam ""
+    noam "So after eight?"
 
 # game/scenario/15_0_1_1_0.rpy:499
 translate english b9afd1da_1:
 
     # kael "Oui."
-    kael ""
+    kael "Yes."
 
 # game/scenario/15_0_1_1_0.rpy:500
 translate english 599b4b78:
 
     # "Il accélère."
-    ""
+    "He fast-forwards."
 
 # game/scenario/15_0_1_1_0.rpy:501
 translate english 9f8e122f:
