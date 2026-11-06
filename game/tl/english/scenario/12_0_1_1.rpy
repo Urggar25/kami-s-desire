@@ -522,127 +522,127 @@ translate english d0d5c135:
 translate english 8a5a410f:
 
     # think "Ça ne veut rien dire."
-    think ""
+    think "It doesn't mean anything."
 
 # game/scenario/12_0_1_1.rpy:186
 translate english dc987896:
 
     # think "Un badge retourné."
-    think ""
+    think "A badge turned over."
 
 # game/scenario/12_0_1_1.rpy:187
 translate english e1a96545:
 
     # think "C'est ridicule."
-    think ""
+    think "This is ridiculous."
 
 # game/scenario/12_0_1_1.rpy:188
 translate english e868b64b:
 
     # think "Alors pourquoi j'ai l'impression que quelque chose ne va pas ?"
-    think ""
+    think "Then why can't I shake the feeling something's wrong?"
 
 # game/scenario/12_0_1_1.rpy:232
 translate english 18b00e66:
 
     # "Mon regard s'arrête sur l'emplacement vide du cadre."
-    ""
+    "My eyes settle on the empty space where the frame used to be."
 
 # game/scenario/12_0_1_1.rpy:233
 translate english bfd6db0b:
 
     # think "Le dessin de Juliette n'est toujours pas revenu. Rien n'a bougé autour."
-    think ""
+    think "Juliette's drawing still hasn't turned up. Nothing else around it has moved."
 
 # game/scenario/12_0_1_1.rpy:240
 translate english f1898b1d:
 
     # think "Pas encore. Je dois vérifier au moins quelques endroits avant de me recoucher."
-    think ""
+    think "Not yet. I need to check at least a few places before I go back to bed."
 
 # game/scenario/12_0_1_1.rpy:244
 translate english b326b9f8:
 
     # "Je reste un moment debout au milieu de la chambre, puis je soupire."
-    ""
+    "I stand in the middle of the room for a while, then sigh."
 
 # game/scenario/12_0_1_1.rpy:246
 translate english a78fd186:
 
     # think "Je deviens complètement dingue…"
-    think ""
+    think "I'm completely losing it..."
 
 # game/scenario/12_0_1_1.rpy:247
 translate english 10edfd52:
 
     # think "Il faut que je dorme."
-    think ""
+    think "I need to sleep."
 
 # game/scenario/12_0_1_1.rpy:249
 translate english ab41a578:
 
     # "Je me recouche, mais le sommeil met longtemps à revenir."
-    ""
+    "I get back into bed, but it takes ages to fall asleep again."
 
 # game/scenario/12_0_1_1.rpy:260
 translate english 0524d446:
 
     # "Impossible de me rendormir."
-    ""
+    "There's no way I'm getting back to sleep."
 
 # game/scenario/12_0_1_1.rpy:261
 translate english 3e791925:
 
     # "Chaque fois que je ferme les yeux, j’entends ce bruit… ou je crois l’entendre."
-    ""
+    "Every time I close my eyes, I hear that noise... or think I do."
 
 # game/scenario/12_0_1_1.rpy:263
 translate english 0c2a656e:
 
     # think "Il est encore tôt… à peine 6h30."
-    think ""
+    think "It's still early... barely six thirty."
 
 # game/scenario/12_0_1_1.rpy:264
 translate english e4beb27e:
 
     # think "Si je reste ici, je vais devenir fou."
-    think ""
+    think "If I stay here, I'm going to lose my mind."
 
 # game/scenario/12_0_1_1.rpy:266
 translate english 84f2f6fd:
 
     # "Je me lève, enfile un sweat à la hâte et sors de ma chambre sans faire de bruit."
-    ""
+    "I get up, throw on a hoodie, and slip out of my room."
 
 # game/scenario/12_0_1_1.rpy:271
 translate english 0b6f5503:
 
     # "Les couloirs sont encore déserts. Parfait."
-    ""
+    "The corridors are still deserted. Perfect."
 
 # game/scenario/12_0_1_1.rpy:273
 translate english 2ee0d7af:
 
     # think "Je ne veux voir personne. Pas maintenant."
-    think ""
+    think "I don't want to see anyone. Not now."
 
 # game/scenario/12_0_1_1.rpy:282
 translate english e92265d9:
 
     # "La cafétéria est vide et silencieuse. Seule la lumière froide des néons automatiques est allumée."
-    ""
+    "The cafeteria is empty and silent, lit only by the cold glow of the automatic overhead lights."
 
 # game/scenario/12_0_1_1.rpy:283
 translate english 031162f8:
 
     # "Derrière le comptoir, Goumi est déjà en activité, ses bras mécaniques s’affairant avec précision."
-    ""
+    "Behind the counter, Goumi is already at work, its mechanical arms moving with practiced precision."
 
 # game/scenario/12_0_1_1.rpy:289
 translate english 3ef483f8:
 
     # goumi "Bonjour, Noam. Tu es bien matinal aujourd’hui."
-    goumi ""
+    goumi "Good morning, Noam. You're up early today."
 
 # game/scenario/12_0_1_1.rpy:291
 translate english f252e488:
@@ -654,31 +654,31 @@ translate english f252e488:
 translate english f2d9e6e2:
 
     # goumi "Je comprends. Veux-tu que je te prépare quelque chose pour te rebooster ?"
-    goumi ""
+    goumi "I see. Would you like me to make you something to perk you up?"
 
 # game/scenario/12_0_1_1.rpy:295
 translate english 920fb5bb:
 
     # noam "Ce que tu peux. Rien de trop lourd."
-    noam ""
+    noam "Whatever you can manage. Nothing too heavy."
 
 # game/scenario/12_0_1_1.rpy:297
 translate english bcc9418d:
 
     # goumi "Bien reçu. Je te propose des œufs brouillés, du pain grillé et un yaourt nature. Par contre…"
-    goumi ""
+    goumi "Understood. How about scrambled eggs, toast, and plain yogurt? Although..."
 
 # game/scenario/12_0_1_1.rpy:299
 translate english b4d3a29f:
 
     # "Le robot marque une petite pause, comme s’il consultait ses stocks."
-    ""
+    "The robot pauses, as if checking its inventory."
 
 # game/scenario/12_0_1_1.rpy:301
 translate english f26d7fb5:
 
     # goumi "Je ne pourrai pas te faire de grosse portion aujourd’hui. Les réserves de nourriture sont plus faibles que prévu. Nous sommes en mode rationnement léger."
-    goumi ""
+    goumi "I can't offer you a large portion today. Food supplies are lower than expected. We're on light rations."
 
 # game/scenario/12_0_1_1.rpy:303
 translate english 8efea915:
@@ -690,55 +690,55 @@ translate english 8efea915:
 translate english abe5d467:
 
     # goumi "Les calculs de consommation ont été dépassés ces derniers jours."
-    goumi ""
+    goumi "Consumption has exceeded our estimates over the past few days."
 
 # game/scenario/12_0_1_1.rpy:306
 translate english e6be66ad:
 
     # goumi "Pourtant nos prédictions sont souvent fiables."
-    goumi ""
+    goumi "And our forecasts are usually reliable."
 
 # game/scenario/12_0_1_1.rpy:308
 translate english b32060a1:
 
     # think "Évidemment…"
-    think ""
+    think "Of course..."
 
 # game/scenario/12_0_1_1.rpy:310
 translate english ea8b540e:
 
     # noam "Je vois…"
-    noam ""
+    noam "I see..."
 
 # game/scenario/12_0_1_1.rpy:312
 translate english 26f590be:
 
     # goumi "Je peux quand même te préparer un repas correct. Tu veux quand même les œufs ?"
-    goumi ""
+    goumi "I can still make you a decent meal. Want the eggs?"
 
 # game/scenario/12_0_1_1.rpy:314
 translate english faadee89:
 
     # noam "Oui… vas-y."
-    noam ""
+    noam "Yeah... go ahead."
 
 # game/scenario/12_0_1_1.rpy:316
 translate english c6fba4ff:
 
     # "Je m’assois à une table près de la fenêtre, le regard perdu dans le vide."
-    ""
+    "I sit at a table by the window, staring into space."
 
 # game/scenario/12_0_1_1.rpy:318
 translate english 24ca8c1a:
 
     # think "Même la bouffe commence à manquer… Super."
-    think ""
+    think "Great. Now we're running out of food, too..."
 
 # game/scenario/12_0_1_1.rpy:322
 translate english ee83e137:
 
     # "Quelques minutes plus tard, j’entends des pas légers et rapides."
-    ""
+    "A few minutes later, I hear quick, light footsteps."
 
 # game/scenario/12_0_1_1.rpy:332
 translate english 1d6a433a:
@@ -750,37 +750,37 @@ translate english 1d6a433a:
 translate english c5baf570:
 
     # elen "Depuis quand ??"
-    elen ""
+    elen "Since WHEN?!"
 
 # game/scenario/12_0_1_1.rpy:335
 translate english a206b750:
 
     # "Elen arrive avec son énergie habituelle, un grand sourire aux lèvres."
-    ""
+    "Elen appears with her usual boundless energy, a huge smile on her face."
 
 # game/scenario/12_0_1_1.rpy:337
 translate english c238a4cf:
 
     # think "Toujours la même."
-    think ""
+    think "Same old Elen."
 
 # game/scenario/12_0_1_1.rpy:338
 translate english d7da2a01:
 
     # think "Toujours incapable de rester silencieuse plus de trente secondes."
-    think ""
+    think "Still physically incapable of staying quiet for more than thirty seconds."
 
 # game/scenario/12_0_1_1.rpy:340
 translate english 1ad642c3:
 
     # "Étrangement..."
-    ""
+    "Strangely enough..."
 
 # game/scenario/12_0_1_1.rpy:342
 translate english 378b235e:
 
     # think "Ça me rassure un peu."
-    think ""
+    think "It's actually a little comforting."
 
 # game/scenario/12_0_1_1.rpy:344
 translate english ee37a9e3:
@@ -792,7 +792,7 @@ translate english ee37a9e3:
 translate english 8e0855e8:
 
     # elen "T’as pas l’air en super forme dis donc. Encore fatigué de ton malaise de l'autre jour ?"
-    elen ""
+    elen "You look pretty rough! Still worn out from that fainting spell the other day?"
 
 # game/scenario/12_0_1_1.rpy:348
 translate english 331497b2:
@@ -810,7 +810,7 @@ translate english 63bf8105:
 translate english 04c539e1:
 
     # noam "Ouais… un peu."
-    noam ""
+    noam "Yeah... a bit."
 
 # game/scenario/12_0_1_1.rpy:353
 translate english 5f7045a6:
@@ -822,13 +822,13 @@ translate english 5f7045a6:
 translate english 5eb60265:
 
     # goumi "Elen… je viens justement d’expliquer à Noam que les réserves sont plus basses que prévu. Je ne peux pas faire de double portion aujourd’hui."
-    goumi ""
+    goumi "Elen... I was just explaining to Noam that our supplies are lower than expected. I can't give you a double portion today."
 
 # game/scenario/12_0_1_1.rpy:358
 translate english 903be337:
 
     # elen "Hein ?! Sérieux ?!"
-    elen ""
+    elen "What?! Seriously?!"
 
 # game/scenario/12_0_1_1.rpy:359
 translate english c7d639bb:
@@ -840,19 +840,19 @@ translate english c7d639bb:
 translate english 89c12dd7:
 
     # goumi "Et les stocks n'ont pas changé depuis... Enfin si, ils ont encore diminué."
-    goumi ""
+    goumi "And the stock levels haven't changed since... Actually, they have. They've gone down again."
 
 # game/scenario/12_0_1_1.rpy:362
 translate english 8c6a5c2a:
 
     # goumi "On ne sera pas livré avant le quatorzième jour."
-    goumi ""
+    goumi "We won't get another delivery until Day 14."
 
 # game/scenario/12_0_1_1.rpy:364
 translate english 0bbdd9d9:
 
     # "Elle se tourne vers moi, les yeux écarquillés."
-    ""
+    "She turns to me, eyes wide."
 
 # game/scenario/12_0_1_1.rpy:366
 translate english 2b3aa38e:
@@ -864,7 +864,7 @@ translate english 2b3aa38e:
 translate english b413315c:
 
     # "Elle croise mon regard vide un moment."
-    ""
+    "She meets my vacant stare for a moment."
 
 # game/scenario/12_0_1_1.rpy:370
 translate english 1919b837:
@@ -894,7 +894,7 @@ translate english 0f71f48a:
 translate english 6a5951c0:
 
     # noam "Ouais… je comprends."
-    noam ""
+    noam "Yeah... I get it."
 
 # game/scenario/12_0_1_1.rpy:379
 translate english c07b8fdb:
@@ -906,13 +906,13 @@ translate english c07b8fdb:
 translate english c2e9d9e9:
 
     # goumi "Bien reçu. Une portion normale pour Elen."
-    goumi ""
+    goumi "Understood. One regular portion for Elen."
 
 # game/scenario/12_0_1_1.rpy:383
 translate english f846fef2:
 
     # "Elen s’assoit en face de moi sans me demander mon avis, toujours avec son sourire éclatant."
-    ""
+    "Elen sits down opposite me without asking, still wearing that dazzling smile."
 
 # game/scenario/12_0_1_1.rpy:385
 translate english a5c646a1:
@@ -924,19 +924,19 @@ translate english a5c646a1:
 translate english 928b36be:
 
     # think "Si seulement c’était juste un cauchemar…"
-    think ""
+    think "If only this were a nightmare..."
 
 # game/scenario/12_0_1_1.rpy:388
 translate english 29ae6fa5:
 
     # think "Un cauchemar s'arrête quand on ouvre les yeux."
-    think ""
+    think "Nightmares end when you open your eyes."
 
 # game/scenario/12_0_1_1.rpy:389
 translate english 6a7ba6f7:
 
     # think "Là j'ai l'impression que c'est pire quand je suis réveillé."
-    think ""
+    think "This somehow feels worse when I'm awake."
 
 # game/scenario/12_0_1_1.rpy:391
 translate english 98fadee7:
@@ -1008,7 +1008,7 @@ translate english 6eb71c70:
 translate english 107e1125:
 
     # "Elle reste silencieuse deux secondes… avant de repartir de plus belle."
-    ""
+    "She manages to stay quiet for two seconds... before starting up again."
 
 # game/scenario/12_0_1_1.rpy:412
 translate english 661ec727:
@@ -1020,25 +1020,25 @@ translate english 661ec727:
 translate english c5b53c36:
 
     # think "Elle ne s’arrête donc jamais…"
-    think ""
+    think "Does she ever stop?"
 
 # game/scenario/12_0_1_1.rpy:416
 translate english da70f0d7:
 
     # noam "Elen… s’il te plaît."
-    noam ""
+    noam "Elen... please."
 
 # game/scenario/12_0_1_1.rpy:418
 translate english d3e4a306:
 
     # elen "Okay okay, je me tais !"
-    elen ""
+    elen "Okay, okay! I'll shut up!"
 
 # game/scenario/12_0_1_1.rpy:420
 translate english a67829e3:
 
     # "Je termine de manger en silence. L'heure tourne doucement."
-    ""
+    "I finish eating in silence. Time slowly slips by."
 
 # game/scenario/12_0_1_1.rpy:423
 translate english 939357fe:
