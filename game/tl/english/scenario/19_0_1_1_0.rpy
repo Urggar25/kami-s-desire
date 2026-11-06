@@ -3314,163 +3314,163 @@ translate english 8bcbcc94:
 translate english 7cc76195:
 
     # "De retour dans ma chambre, le bureau est toujours déplacé."
-    ""
+    "Back in my room, the desk is still out of the way."
 
 # game/scenario/19_0_1_1_0.rpy:761
 translate english ce3f1ca4:
 
     # "J'enlève les deux vis qui maintiennent la grille. Cette fois je ne prends même pas le temps de réfléchir."
-    ""
+    "I remove the two screws holding the grille. This time I don't even stop to think."
 
 # game/scenario/19_0_1_1_0.rpy:763
 translate english 9868f900:
 
     # noam determine "Je vais voir ce qu'il y a là-dedans."
-    noam determine ""
+    noam determine "I'm going to see what's in there."
 
 # game/scenario/19_0_1_1_0.rpy:765
 translate english 87ddf861:
 
     # "La phrase sonne mal dès qu'elle sort de ma bouche."
-    ""
+    "The words sound wrong as soon as they leave my mouth."
 
 # game/scenario/19_0_1_1_0.rpy:767
 translate english 13df9634:
 
     # "Je passe la tête dans l'ouverture. Rien."
-    ""
+    "I poke my head through the opening. Nothing."
 
 # game/scenario/19_0_1_1_0.rpy:769
 translate english 89f6448b:
 
     # "Je me glisse à l'intérieur avec la lampe dans une main et le couteau dans l'autre."
-    ""
+    "I crawl inside with the lamp in one hand and the knife in the other."
 
 # game/scenario/19_0_1_1_0.rpy:783
 translate english a491e01f:
 
     # tuto "Enchaîne les cinq tracés. Chaque réussite te rapproche de la source."
-    tuto ""
+    tuto "Complete the five tracing sequences. Every success brings you closer to the source."
 
 # game/scenario/19_0_1_1_0.rpy:795
 translate english 4a7077ef:
 
     # "Le conduit paraît plus étroit que la veille."
-    ""
+    "The duct feels narrower than it did yesterday."
 
 # game/scenario/19_0_1_1_0.rpy:796
 translate english bc486428:
 
     # "Ou peut-être que je suis simplement beaucoup plus conscient de ce qui pourrait se trouver devant moi."
-    ""
+    "Or maybe I'm just far more aware of what might be waiting ahead."
 
 # game/scenario/19_0_1_1_0.rpy:798
 translate english 4009e34f:
 
     # "Je rampe lentement. La lumière découpe des portions de tôle, des câbles, des angles que je reconnais vaguement."
-    ""
+    "I crawl slowly. My light cuts across stretches of metal, cables, and corners I vaguely recognize."
 
 # game/scenario/19_0_1_1_0.rpy:802
 translate english 18215e8e:
 
     # "Un bruit retentit au loin."
-    ""
+    "A noise echoes in the distance."
 
 # game/scenario/19_0_1_1_0.rpy:804
 translate english 5d80c8ea:
 
     # noam peur "Je t'ai entendu."
-    noam peur ""
+    noam peur "I heard you."
 
 # game/scenario/19_0_1_1_0.rpy:806
 translate english a0ab35b0:
 
     # "Ma propre voix me fait sursauter."
-    ""
+    "My own voice makes me jump."
 
 # game/scenario/19_0_1_1_0.rpy:808
 translate english bc3fadec_1:
 
     # "Je continue."
-    ""
+    "I keep going."
 
 # game/scenario/19_0_1_1_0.rpy:810
 translate english f23bd6a0:
 
     # "Je dépasse la première bifurcation. Puis la deuxième. Je connais maintenant assez le réseau pour savoir dans quelle direction je vais."
-    ""
+    "I pass the first junction. Then the second. By now, I know the network well enough to know which way I'm heading."
 
 # game/scenario/19_0_1_1_0.rpy:812
 translate english b796a52b:
 
     # think "La salle des Goumi."
-    think ""
+    think "The Goumi room."
 
 # game/scenario/19_0_1_1_0.rpy:814
 translate english 1195a3b1:
 
     # "Le bruit vient de là."
-    ""
+    "That's where the sound is coming from."
 
 # game/scenario/19_0_1_1_0.rpy:816
 translate english e2de5581:
 
     # "J'accélère. Mon genou cogne contre une plaque, ma paume glisse sur une arête et une douleur vive traverse ma main."
-    ""
+    "I speed up. My knee bangs against a panel, my palm slides along a sharp edge, and pain shoots through my hand."
 
 # game/scenario/19_0_1_1_0.rpy:818
 translate english 2cd39c17:
 
     # noam colere "Aïe..."
-    noam colere ""
+    noam colere "Ow..."
 
 # game/scenario/19_0_1_1_0.rpy:820
 translate english 1299b3ba:
 
     # "Je regarde rapidement. Une petite coupure. Rien de grave."
-    ""
+    "I check it quickly. A small cut. Nothing serious."
 
 # game/scenario/19_0_1_1_0.rpy:822
 translate english aadd8c1c:
 
     # "Je repars immédiatement."
-    ""
+    "I move on immediately."
 
 # game/scenario/19_0_1_1_0.rpy:824
 translate english 17f2ea0d:
 
     # "À mesure que j'approche, le bruit disparaît."
-    ""
+    "As I get closer, the noise fades."
 
 # game/scenario/19_0_1_1_0.rpy:826
 translate english 792a9a9c:
 
     # "Je ralentis."
-    ""
+    "I slow down."
 
 # game/scenario/19_0_1_1_0.rpy:828
 translate english 5f23e41f:
 
     # "La grille qui donne sur la salle est devant moi."
-    ""
+    "The grille leading into the room is right ahead."
 
 # game/scenario/19_0_1_1_0.rpy:830
 translate english 09498ea9:
 
     # "Elle est entrouverte."
-    ""
+    "It's slightly open."
 
 # game/scenario/19_0_1_1_0.rpy:832
 translate english d3220ce6_7:
 
     # noam inquiet "..."
-    noam inquiet ""
+    noam inquiet "..."
 
 # game/scenario/19_0_1_1_0.rpy:834
 translate english 5a94868e:
 
     # "Je suis presque certain de l'avoir refermée hier."
-    ""
+    "I'm almost certain I shut it yesterday."
 
 # game/scenario/19_0_1_1_0.rpy:836
 translate english j19_conduit_presque:
@@ -3482,37 +3482,37 @@ translate english j19_conduit_presque:
 translate english 98c3e4af:
 
     # "Je pousse doucement la grille du bout des doigts."
-    ""
+    "I gently push the grille with my fingertips."
 
 # game/scenario/19_0_1_1_0.rpy:843
 translate english d90e4631:
 
     # "Elle s'ouvre sans résistance."
-    ""
+    "It opens without resistance."
 
 # game/scenario/19_0_1_1_0.rpy:845
 translate english c01b989c:
 
     # "Je descends."
-    ""
+    "I climb down."
 
 # game/scenario/19_0_1_1_0.rpy:855
 translate english f1471303:
 
     # "Mes pieds touchent le sol de la salle de maintenance."
-    ""
+    "My feet touch the maintenance-room floor."
 
 # game/scenario/19_0_1_1_0.rpy:857
 translate english c115b07b:
 
     # "Je garde la lampe braquée devant moi."
-    ""
+    "I keep the light trained ahead of me."
 
 # game/scenario/19_0_1_1_0.rpy:859
 translate english b400439c:
 
     # "Les deux stations des Goumi sont toujours là. Les établis aussi. Rien ne semble avoir bougé."
-    ""
+    "The two Goumi stations are still there. So are the workbenches. Nothing seems to have moved."
 
 # game/scenario/19_0_1_1_0.rpy:861
 translate english c9e0e05b_8:
@@ -3524,25 +3524,25 @@ translate english c9e0e05b_8:
 translate english a4e61400:
 
     # "Je fais quelques pas."
-    ""
+    "I take a few steps."
 
 # game/scenario/19_0_1_1_0.rpy:865
 translate english b2675169:
 
     # "Le faisceau passe sur une caisse ouverte, un bras mécanique, plusieurs outils rangés contre le mur."
-    ""
+    "The beam passes over an open crate, a mechanical arm, several tools arranged against the wall."
 
 # game/scenario/19_0_1_1_0.rpy:867
 translate english 23149863:
 
     # "Puis sur la grande table de maintenance au centre de la pièce."
-    ""
+    "Then it lands on the large maintenance table in the center of the room."
 
 # game/scenario/19_0_1_1_0.rpy:871
 translate english afc55ade_4:
 
     # "Je m'arrête."
-    ""
+    "I stop."
 
 # game/scenario/19_0_1_1_0.rpy:873
 translate english 76264c3c_27:
@@ -3554,91 +3554,91 @@ translate english 76264c3c_27:
 translate english c19f18ba:
 
     # "Il y a quelque chose dessus."
-    ""
+    "There's something on it."
 
 # game/scenario/19_0_1_1_0.rpy:877
 translate english 588d3af3:
 
     # "Au début, mon cerveau essaie de le ranger avec le reste. Une coque. Une pièce détachée. Un autre robot en cours de réparation."
-    ""
+    "At first, my brain tries to file it away with everything else. A shell. A spare part. Another robot undergoing repairs."
 
 # game/scenario/19_0_1_1_0.rpy:879
 translate english a12a992b:
 
     # "Puis la lumière éclaire une main."
-    ""
+    "Then the light catches a hand."
 
 # game/scenario/19_0_1_1_0.rpy:889
 translate english 57c7141e:
 
     # "Une vraie main."
-    ""
+    "A real hand."
 
 # game/scenario/19_0_1_1_0.rpy:891
 translate english c589c942_2:
 
     # noam peur "Non..."
-    noam peur ""
+    noam peur "No..."
 
 # game/scenario/19_0_1_1_0.rpy:893
 translate english d069c524:
 
     # "Je relève lentement la lampe."
-    ""
+    "I slowly raise the lamp."
 
 # game/scenario/19_0_1_1_0.rpy:895
 translate english 686ba9bb:
 
     # "Un bras. Une épaule. Des cheveux."
-    ""
+    "An arm. A shoulder. Hair."
 
 # game/scenario/19_0_1_1_0.rpy:897
 translate english 6998423e:
 
     # "Je connais ces cheveux."
-    ""
+    "I know that hair."
 
 # game/scenario/19_0_1_1_0.rpy:901
 translate english be6343ef:
 
     # "Je m'approche malgré moi. Chaque pas me donne envie de reculer."
-    ""
+    "I move closer despite myself. Every step makes me want to retreat."
 
 # game/scenario/19_0_1_1_0.rpy:903
 translate english b37522b8:
 
     # "Le faisceau atteint enfin son visage."
-    ""
+    "At last, the beam reaches her face."
 
 # game/scenario/19_0_1_1_0.rpy:908
 translate english 640ace66:
 
     # noam desespoir "{cps=8}Mara...{/cps}"
-    noam desespoir ""
+    noam desespoir "{cps=8}Mara...{/cps}"
 
 # game/scenario/19_0_1_1_0.rpy:910
 translate english 7f3e7a62:
 
     # "Elle est allongée sur la table de maintenance des Goumi."
-    ""
+    "She's lying on the Goumi maintenance table."
 
 # game/scenario/19_0_1_1_0.rpy:912
 translate english 078568e5:
 
     # "Immobile."
-    ""
+    "Motionless."
 
 # game/scenario/19_0_1_1_0.rpy:914
 translate english de576438:
 
     # "La tête légèrement tournée sur le côté, comme si quelqu'un l'avait simplement déposée là."
-    ""
+    "Her head turned slightly to one side, as if someone had simply laid her there."
 
 # game/scenario/19_0_1_1_0.rpy:916
 translate english 65a895dd:
 
     # "Pendant plusieurs secondes, je n'arrive pas à faire le moindre mouvement."
-    ""
+    "For several seconds, I can't move at all."
 
 # game/scenario/19_0_1_1_0.rpy:918
 translate english j19_cadavre_non_1:
@@ -3650,71 +3650,71 @@ translate english j19_cadavre_non_1:
 translate english 4dcc3050:
 
     # "Je l'ai vue ce matin."
-    ""
+    "I saw her this morning."
 
 # game/scenario/19_0_1_1_0.rpy:924
 translate english e2391fe7:
 
     # "Elle m'a traité de pervers. Elle a crié dans le couloir. Elle a prévenu tout le monde."
-    ""
+    "She called me a creep. She shouted in the corridor. She warned everyone."
 
 # game/scenario/19_0_1_1_0.rpy:928
 translate english a85ba9ec:
 
     # "Elle était à la cafétéria cet après-midi."
-    ""
+    "She was in the cafeteria this afternoon."
 
 # game/scenario/19_0_1_1_0.rpy:930
 translate english 6431e088:
 
     # "Ma lampe tremble de plus en plus."
-    ""
+    "My lamp is shaking harder and harder."
 
 # game/scenario/19_0_1_1_0.rpy:932
 translate english 133453db_1:
 
     # noam peur "Mara ?"
-    noam peur ""
+    noam peur "Mara?"
 
 # game/scenario/19_0_1_1_0.rpy:934
 translate english 1b2a2a40_4:
 
     # "Aucune réponse."
-    ""
+    "No answer."
 
 # game/scenario/19_0_1_1_0.rpy:936
 translate english fa123ce1:
 
     # "Je fais encore un pas et tends la main, sans réussir à la toucher."
-    ""
+    "I take another step and reach toward her, but can't bring myself to touch her."
 
 # game/scenario/19_0_1_1_0.rpy:938
 translate english b77af869:
 
     # noam desespoir "Mara..."
-    noam desespoir ""
+    noam desespoir "Mara..."
 
 # game/scenario/19_0_1_1_0.rpy:940
 translate english d95e147b:
 
     # "Son torse ne bouge pas."
-    ""
+    "Her chest doesn't move."
 
 # game/scenario/19_0_1_1_0.rpy:942
 translate english cf5c4c5c:
 
     # "Je reste là, le couteau pendant stupidement au bout de ma main, incapable de comprendre ce que je suis en train de regarder."
-    ""
+    "I stand there, the knife dangling stupidly from my hand, unable to comprehend what I'm looking at."
 
 # game/scenario/19_0_1_1_0.rpy:949
 translate english 1ed1615d:
 
     # "Un bruit métallique retentit derrière moi."
-    ""
+    "A metallic sound rings out behind me."
 
 # game/scenario/19_0_1_1_0.rpy:951
 translate english 364162eb:
 
     # "Je me retourne brutalement."
-    ""
+    "I spin around."
 
