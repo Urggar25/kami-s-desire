@@ -66,7 +66,8 @@ screen investigation_pa_map(rooms, title="ENQUÊTE — CONCLAVE"):
                             text ("%d piste(s) à examiner" % len(room.get("actions", []))) size 17 color "#83C7DE" xalign 0.5
             hbox:
                 spacing 30 xalign 0.5
-                textbutton "TERMINER L'ENQUÊTE" action Return("finish") text_size 22
+                textbutton "PARCOURIR LES COULOIRS" action Return("corridors") text_size 22
+                textbutton "TERMINER" action Return("finish") text_size 22
                 textbutton "DOSSIER D'ENQUÊTE" action Show("investigation_dossier", persistent_access=True) text_size 22
             if investigation_pa_remaining <= 0:
                 text "Tous les points d'action ont été dépensés. Vous pouvez consulter votre dossier ou terminer." size 19 color "#F3C778"
@@ -102,6 +103,7 @@ screen investigation_pa_room(room_id, rooms, actions):
                     text ("◆ " + action["title"] + " — PA insuffisants") size 18 color "#8799A5"
             null height 25
             textbutton "REVENIR AU PLAN" action Return("back") text_size 23
+            textbutton "REPRENDRE LES COULOIRS" action Return("corridors") text_size 20
             textbutton "CONSULTER LE DOSSIER" action Show("investigation_dossier", persistent_access=True) text_size 20
 
 screen investigation_pa_confirm(action):
