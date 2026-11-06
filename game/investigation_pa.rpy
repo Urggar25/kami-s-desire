@@ -101,7 +101,7 @@ init python:
     }
 
     def investigation_pa_exit_door(pnc_room, day, room_id):
-        if room_id == "dortoir" and day in (26, 28, 29):
+        if room_id == "dortoir" and day in (26, 27, 28, 29):
             # La chambre d'Elen est un décor unique sans texture de porte.
             return None
         candidate = INVESTIGATION_PA_EXIT_DOORS.get(pnc_room)
@@ -120,7 +120,10 @@ screen investigation_pa_room(room_id, rooms, actions):
     $ available = investigation_pa_room_actions(room_id, rooms, actions)
     $ pnc_room = "chambre" if room_id == "dortoir" else room_id
     # Réutilise le panorama existant du jeu et ses rotations gauche/droite.
-    if investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
+    if investigation_pa_day == 27 and room_id == "dortoir":
+        # Décor fixe distinct de la chambre de Noam : Tomas, jour 27.
+        add Transform("bg_chambre_tomas", xysize=(1920, 1080))
+    elif investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
         # Le flacon doit réellement être visible quand Noam enquête au J26.
         $ elen_room_image = "j26_elen_flacon" if investigation_pa_day == 26 else "j26_elen_vide"
         add Transform(elen_room_image, xysize=(1920, 1080))
@@ -161,7 +164,17 @@ screen investigation_pa_room(room_id, rooms, actions):
         $ native_path = investigation_pa_hotspot(action_id, pnc_room)
         $ done = action_id in investigation_pa_completed
         $ enabled = investigation_pa_can_take(action_id)
-        if investigation_pa_day in (26, 28, 29) and room_id == "dortoir" and action_id == "grille":
+        if investigation_pa_day == 27 and room_id == "dortoir" and action_id == "grille":
+            # La ventilation est située au-dessus du lit, pas sur le calque interactif de Noam.
+            button:
+                xpos 1220 ypos 95 xsize 240 ysize 150
+                background None
+                hover_background Solid("#77DDF022")
+                sensitive enabled
+                hovered SetScreenVariable("hovered_action", action_id)
+                unhovered SetScreenVariable("hovered_action", None)
+                action Return(action_id)
+        elif investigation_pa_day in (26, 28, 29) and room_id == "dortoir" and action_id == "grille":
             # La plaque créée pour Elen sert à la fois de surbrillance et de masque.
             $ plate = "images/background/interact/chambre_elen/meutre_tomas/plaque.png"
             imagebutton:
@@ -177,6 +190,16 @@ screen investigation_pa_room(room_id, rooms, actions):
             # Zone assez grande pour sélectionner le petit flacon du meuble.
             button:
                 xpos 180 ypos 500 xsize 170 ysize 125
+                background None
+                hover_background Solid("#77DDF022")
+                sensitive enabled
+                hovered SetScreenVariable("hovered_action", action_id)
+                unhovered SetScreenVariable("hovered_action", None)
+                action Return(action_id)
+        elif investigation_pa_day == 27 and room_id == "dortoir" and action_id == "carnet":
+            # Bureau à gauche : les documents et le carnet de Tomas.
+            button:
+                xpos 90 ypos 490 xsize 490 ysize 395
                 background None
                 hover_background Solid("#77DDF022")
                 sensitive enabled
@@ -254,7 +277,9 @@ screen investigation_pa_confirm(action):
 # Confirmation intégrée au système de choix standard du visual novel.
 # Le décor exact de la salle reste derrière le menu, sans fenêtre modale bleue.
 label INVESTIGATION_PA_CHOICE(action, room_id):
-    if investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
+    if investigation_pa_day == 27 and room_id == "dortoir":
+        scene bg_chambre_tomas at adaptive_fullscreen with None
+    elif investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
         $ _investigation_choice_bg = "j26_elen_flacon" if investigation_pa_day == 26 else "j26_elen_vide"
         scene expression _investigation_choice_bg at adaptive_fullscreen with None
     else:
