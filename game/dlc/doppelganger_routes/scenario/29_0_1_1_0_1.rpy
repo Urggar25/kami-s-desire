@@ -420,25 +420,20 @@ label _29_0_1_1_0_1_PA_INTRO:
     jump _29_0_1_1_0_1_PA_MAP
 
 label _29_0_1_1_0_1_PA_MAP:
-    call screen investigation_pa_map(J29A_ROOMS, title="JOUR 29 — LES DERNIERS ALIBIS")
-    if _return == "finish":
-        jump _29_0_1_1_0_1_PA_FIN
-    if _return == "corridors":
-        jump _29_0_1_1_0_1_PA_CORRIDORS
-    $ investigation_pa_current_room = _return
-    jump _29_0_1_1_0_1_PA_ROOM
+    # Compatibilité avec les anciens jumps et sauvegardes.
+    jump _29_0_1_1_0_1_PA_CORRIDORS
 
 label _29_0_1_1_0_1_PA_CORRIDORS:
     call CORRIDOR_NAVIGATION(corridor_current) from _call_j29a_pa_corridors
     $ investigation_pa_current_room = _return
     if investigation_pa_current_room not in J29A_ROOMS:
-        jump _29_0_1_1_0_1_PA_MAP
+        jump _29_0_1_1_0_1_PA_CORRIDORS
     jump _29_0_1_1_0_1_PA_ROOM
 
 label _29_0_1_1_0_1_PA_ROOM:
     call screen investigation_pa_room(investigation_pa_current_room, J29A_ROOMS, J29A_ACTIONS)
-    if _return == "back":
-        jump _29_0_1_1_0_1_PA_MAP
+    if _return == "finish":
+        jump _29_0_1_1_0_1_PA_FIN
     if _return == "corridors":
         jump _29_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_selected = _return
