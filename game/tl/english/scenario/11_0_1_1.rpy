@@ -1050,139 +1050,139 @@ translate english noam_garde_secret_f4b900d7:
 translate english noam_garde_secret_5e71b25e:
 
     # think "Mais Kami… elle voit tout. Elle est au-dessus de tout ça."
-    think ""
+    think "But Kami... she sees everything. She's above all this."
 
 # game/scenario/11_0_1_1.rpy:400
 translate english noam_garde_secret_a15e3e59:
 
     # think "Sept jours de délai à cause des brouilleurs ?"
-    think ""
+    think "A seven-day delay because of the jammers?"
 
 # game/scenario/11_0_1_1.rpy:401
 translate english noam_garde_secret_2c1c9e59:
 
     # think "À cause des brouilleurs..."
-    think ""
+    think "Because of the jammers..."
 
 # game/scenario/11_0_1_1.rpy:406
 translate english noam_garde_secret_2fe9fe61:
 
     # "Je reste immobile plusieurs secondes. Plus je me répète ces quelques mots, plus une idée me frappe, claire et presque trop évidente."
-    ""
+    "I stay still for several seconds. The more I repeat those words, the more one idea hits me—clear, almost embarrassingly obvious."
 
 # game/scenario/11_0_1_1.rpy:408
 translate english noam_garde_secret_b5317076:
 
     # think "... Et si je lui demandais directement ?"
-    think ""
+    think "...What if I just asked her?"
 
 # game/scenario/11_0_1_1.rpy:409
 translate english noam_garde_secret_0a83ca53:
 
     # think "Si je lui demandais de me montrer les caméras du couloir d’hier soir ?"
-    think ""
+    think "What if I asked her to show me the corridor footage from last night?"
 
 # game/scenario/11_0_1_1.rpy:411
 translate english noam_garde_secret_d78d78fb:
 
     # think "Parce qu'il n'y a PAS DE BROUILLEUR dans les couloirs !"
-    think ""
+    think "Because there AREN'T ANY JAMMERS in the corridors!"
 
 # game/scenario/11_0_1_1.rpy:413
 translate english noam_garde_secret_d6b49ebc:
 
     # noam "Donc les images sont accessibles ?!"
-    noam ""
+    noam "So the footage should be available?!"
 
 # game/scenario/11_0_1_1.rpy:415
 translate english noam_garde_secret_423d249c:
 
     # "Mon cœur s’accélère un peu. L’idée est simple. Probablement stupide."
-    ""
+    "My heart picks up. It's a simple idea. Probably a stupid one."
 
 # game/scenario/11_0_1_1.rpy:416
 translate english noam_garde_secret_60db175e:
 
     # "Mais rester ici à tourner en rond dans ma tête l’est encore plus."
-    ""
+    "But lying here going around in circles in my own head is even stupider."
 
 # game/scenario/11_0_1_1.rpy:418
 translate english noam_garde_secret_68a45c5c:
 
     # noam "... Je dois savoir."
-    noam ""
+    noam "...I have to know."
 
 # game/scenario/11_0_1_1.rpy:419
 translate english noam_garde_secret_c3808e41:
 
     # noam "Elle refusera... Mais... Qui ne tente rien n'a rien, non ?"
-    noam ""
+    noam "She'll say no... but... nothing ventured, nothing gained, right?"
 
 # game/scenario/11_0_1_1.rpy:421
 translate english noam_garde_secret_57b4570e:
 
     # "Je me redresse brusquement. Trop brusquement."
-    ""
+    "I sit up sharply. Too sharply."
 
 # game/scenario/11_0_1_1.rpy:423
 translate english noam_garde_secret_f59e66e1:
 
     # think "Il faut que je sache si ce que j'ai vu est vrai."
-    think ""
+    think "I need to know whether what I saw was real."
 
 # game/scenario/11_0_1_1.rpy:424
 translate english noam_garde_secret_a61b8dae:
 
     # think "Et si ce n’était pas rien…"
-    think ""
+    think "And if it wasn't nothing..."
 
 # game/scenario/11_0_1_1.rpy:426
 translate english noam_garde_secret_636219bf:
 
     # "Je serre les poings."
-    ""
+    "I clench my fists."
 
 # game/scenario/11_0_1_1.rpy:430
 translate english noam_garde_secret_35dc1d16:
 
     # "Je me relève, encore un peu instable sur mes jambes, et me dirige vers la porte."
-    ""
+    "I get to my feet, still a little unsteady, and head for the door."
 
 # game/scenario/11_0_1_1.rpy:445
 translate english noam_garde_secret_4c587e01:
 
     # "La salle d'observation est plongée dans une lumière bleue froide. Les grands écrans sont tous allumés, mais sans image."
-    ""
+    "The observation room is bathed in cold blue light. Every large monitor is on, but none shows an image."
 
 # game/scenario/11_0_1_1.rpy:447
 translate english noam_garde_secret_0b989ea8:
 
     # noam "Kami ? Tu es là ?"
-    noam ""
+    noam "Kami? Are you there?"
 
 # game/scenario/11_0_1_1.rpy:452
 translate english noam_garde_secret_bb3f1701:
 
     # kami "Oh ? Noam ? Je suis toujours là voyons."
-    kami ""
+    kami "Oh? Noam? I'm always here, silly."
 
 # game/scenario/11_0_1_1.rpy:453
 translate english noam_garde_secret_7e45781d:
 
     # kami "Tu devrais être en train de te reposer, mon petit bout de chou. Tu étais pourtant dans un sale état tout à l’heure."
-    kami ""
+    kami "You should be resting, my little sweetheart. You were in pretty rough shape earlier."
 
 # game/scenario/11_0_1_1.rpy:455
 translate english noam_garde_secret_e6f57cee:
 
     # "Sa voix douce résonne dans toute la pièce, presque maternelle."
-    ""
+    "Her gentle voice fills the room, almost maternal."
 
 # game/scenario/11_0_1_1.rpy:458
 translate english noam_garde_secret_d790cd23:
 
     # kami "Ne me dis pas que tu as déjà repris du poil de la bête ? Comme c’est mignon."
-    kami ""
+    kami "Don't tell me you're already back on your feet! How adorable."
 
 # game/scenario/11_0_1_1.rpy:461
 translate english noam_garde_secret_94168d58:
@@ -1194,145 +1194,145 @@ translate english noam_garde_secret_94168d58:
 translate english noam_garde_secret_f6100f1d:
 
     # kami "Je t’écoute. Pose ta question, je suis toute ouïe."
-    kami ""
+    kami "I'm listening. Ask away. I'm all ears."
 
 # game/scenario/11_0_1_1.rpy:468
 translate english noam_garde_secret_86444c80:
 
     # noam "Hier soir. Juste avant l’annonce. Le couloir près de la salle de stockage."
-    noam ""
+    noam "Last night. Just before the announcement. The corridor near the storage room."
 
 # game/scenario/11_0_1_1.rpy:469
 translate english noam_garde_secret_f77651d6:
 
     # noam "Est-ce que tu peux me montrer les enregistrements des caméras de cette zone ?"
-    noam ""
+    noam "Can you show me the security footage from that area?"
 
 # game/scenario/11_0_1_1.rpy:472
 translate english noam_garde_secret_c71586fe:
 
     # "Un long silence. Les écrans clignotent légèrement."
-    ""
+    "A long silence follows. The screens flicker faintly."
 
 # game/scenario/11_0_1_1.rpy:475
 translate english noam_garde_secret_9a7a10a0:
 
     # kami "Hmm… Intéressant."
-    kami ""
+    kami "Hmm... interesting."
 
 # game/scenario/11_0_1_1.rpy:476
 translate english noam_garde_secret_4415943c:
 
     # kami "C'est ce que tu as cru voir qui te fait venir me demander ça ?."
-    kami ""
+    kami "Is what you *think* you saw the reason you've come asking?"
 
 # game/scenario/11_0_1_1.rpy:479
 translate english noam_garde_secret_9f687808:
 
     # kami "Mais bon… Je ne voudrais pas que le représentant d'[codex_dialogue_link('harmonie', 'Harmonie')] devienne totalement fou."
-    kami ""
+    kami "Still... I'd hate for [codex_dialogue_link('harmonie', 'Harmony')]'s representative to lose his mind completely."
 
 # game/scenario/11_0_1_1.rpy:482
 translate english noam_garde_secret_3f6182ac:
 
     # "Je ravale douloureusement ma salive."
-    ""
+    "I swallow hard."
 
 # game/scenario/11_0_1_1.rpy:484
 translate english noam_garde_secret_a95a92f6:
 
     # think "Pourquoi elle parle de ma famille tout à coup ?!"
-    think ""
+    think "Why is she bringing up my family all of a sudden?!"
 
 # game/scenario/11_0_1_1.rpy:485
 translate english noam_garde_secret_d263a8ac:
 
     # think "Je fais si pitié à voir ?!"
-    think ""
+    think "Do I really look that pathetic?!"
 
 # game/scenario/11_0_1_1.rpy:487
 translate english noam_garde_secret_a20cefa7:
 
     # "..."
-    ""
+    "..."
 
 # game/scenario/11_0_1_1.rpy:489
 translate english noam_garde_secret_65de040d:
 
     # think "Non ressaisis toi Noam. Te laisse pas berner."
-    think ""
+    think "No, pull yourself together, Noam. Don't fall for it."
 
 # game/scenario/11_0_1_1.rpy:492
 translate english noam_garde_secret_15b2ae8f:
 
     # noam "Je veux voir ces images."
-    noam ""
+    noam "I want to see the footage."
 
 # game/scenario/11_0_1_1.rpy:496
 translate english noam_garde_secret_80ecf459:
 
     # kami "Oh mais quelle assurance !"
-    kami ""
+    kami "Ooh, someone's feeling assertive!"
 
 # game/scenario/11_0_1_1.rpy:499
 translate english noam_garde_secret_e09a58ef:
 
     # kami "J'aime ce tact !"
-    kami ""
+    kami "Love the attitude!"
 
 # game/scenario/11_0_1_1.rpy:502
 translate english noam_garde_secret_e59abb02:
 
     # kami "Alors soit, tu peux accéder aux images de surveillance depuis un des ordinateurs."
-    kami ""
+    kami "All right, then. You can access the surveillance footage from one of the computers."
 
 # game/scenario/11_0_1_1.rpy:503
 translate english noam_garde_secret_0ebea18a:
 
     # kami "Je te débloque les accès."
-    kami ""
+    kami "I'll unlock it for you."
 
 # game/scenario/11_0_1_1.rpy:506
 translate english noam_garde_secret_24d85e7d:
 
     # kami "Enfin, si tu sais t'en servir !"
-    kami ""
+    kami "If you can figure out how to use it, that is!"
 
 # game/scenario/11_0_1_1.rpy:510
 translate english noam_garde_secret_faa0fe6e:
 
     # "Les écrans des ordinateurs s’allument d’un coup."
-    ""
+    "The computer screens suddenly light up."
 
 # game/scenario/11_0_1_1.rpy:511
 translate english noam_garde_secret_259e4e94:
 
     # "Il y a plusieurs tranches horaires et plusieurs salles disponibles."
-    ""
+    "There are several time slots and locations to choose from."
 
 # game/scenario/11_0_1_1.rpy:512
 translate english noam_garde_secret_87d25cf3:
 
     # "Il va falloir que je trouve le segment que je cherche..."
-    ""
+    "I'll have to find the segment I'm looking for..."
 
 # game/scenario/11_0_1_1.rpy:520
 translate english noam_garde_secret_3a58e1c4:
 
     # "Je sélectionne enfin la bonne combinaison."
-    ""
+    "Finally, I select the right combination."
 
 # game/scenario/11_0_1_1.rpy:521
 translate english noam_garde_secret_d355f4f7:
 
     # "L’écran s’allume… puis devient noir en une fraction de seconde."
-    ""
+    "The screen lights up... then goes black in a split second."
 
 # game/scenario/11_0_1_1.rpy:522
 translate english noam_garde_secret_be33578b:
 
     # "\"Données supprimées - Accès impossible\""
-    ""
+    "\"Data deleted — Access denied\""
 
 # game/scenario/11_0_1_1.rpy:526
 translate english noam_garde_secret_264bc9d3:
@@ -1350,13 +1350,13 @@ translate english noam_garde_secret_e51763d4:
 translate english noam_garde_secret_1f13858d:
 
     # kami "Ohhh~ Quel cri du cœur ! Tu m’as presque fait sursauter !"
-    kami ""
+    kami "Ooooh! Straight from the heart! You nearly made me jump!"
 
 # game/scenario/11_0_1_1.rpy:532
 translate english noam_garde_secret_8db6bbbd:
 
     # kami "Tu sais que quand tu t’énerves comme ça, tu deviens presque mignon ?"
-    kami ""
+    kami "You know, you're almost cute when you get this worked up."
 
 # game/scenario/11_0_1_1.rpy:535
 translate english noam_garde_secret_5b7e2968:
@@ -1374,25 +1374,25 @@ translate english noam_garde_secret_dd08a07b:
 translate english noam_garde_secret_9165e998:
 
     # kami "Je t’ai donné accès aux archives, oui. Ce n’est pas ma faute si quelqu’un a fait le ménage avant toi."
-    kami ""
+    kami "I gave you access to the archives, yes. Not my fault someone cleaned house before you got here."
 
 # game/scenario/11_0_1_1.rpy:541
 translate english noam_garde_secret_06ad95b7:
 
     # kami "Et franchement… chapeau. C’était du travail très propre. Même moi je suis un peu jalouse."
-    kami ""
+    kami "And frankly... hats off to them. That was a very tidy job. I'm almost jealous."
 
 # game/scenario/11_0_1_1.rpy:543
 translate english noam_garde_secret_3d3f0f34:
 
     # think "Quelqu'un a vraiment fait ça ?"
-    think ""
+    think "Someone really did that?"
 
 # game/scenario/11_0_1_1.rpy:544
 translate english noam_garde_secret_1fac8caf:
 
     # think "Ou elle essaie juste de me faire perdre du temps ?"
-    think ""
+    think "Or is she just trying to waste my time?"
 
 # game/scenario/11_0_1_1.rpy:547
 translate english noam_garde_secret_f0825760:
@@ -1410,19 +1410,19 @@ translate english noam_garde_secret_8772437c:
 translate english noam_garde_secret_0e2acc2f:
 
     # kami "Houlà, du calme, monsieur l’inspecteur. On se croirait dans un épisode de Brooklyn Nine-Nine, l'humour en moins cela dit."
-    kami ""
+    kami "Easy there, Detective. This is starting to feel like an episode of Brooklyn Nine-Nine, minus the jokes."
 
 # game/scenario/11_0_1_1.rpy:553
 translate english noam_garde_secret_98897dab:
 
     # kami "Je ne suis pas responsable de cette suppression, mon cœur. Parole de Kami."
-    kami ""
+    kami "I didn't delete anything, sweetheart. Kami's honor."
 
 # game/scenario/11_0_1_1.rpy:554
 translate english noam_garde_secret_5c5f3dc0:
 
     # kami "Quelqu’un d’autre a appuyé sur le petit bouton « effacer »."
-    kami ""
+    kami "Someone else pressed the little 'delete' button."
 
 # game/scenario/11_0_1_1.rpy:557
 translate english noam_garde_secret_a30286af:
@@ -1434,73 +1434,73 @@ translate english noam_garde_secret_a30286af:
 translate english noam_garde_secret_514afa34:
 
     # kami "Je n’ai pas dit ça~"
-    kami ""
+    kami "I never said that~"
 
 # game/scenario/11_0_1_1.rpy:562
 translate english noam_garde_secret_c112926c:
 
     # kami "J’ai juste dit que je n’étais pas responsable."
-    kami ""
+    kami "I only said I wasn't responsible."
 
 # game/scenario/11_0_1_1.rpy:563
 translate english noam_garde_secret_4943f528:
 
     # kami "Mais entre nous… la personne qui a fait ça est parmi vous."
-    kami ""
+    kami "But just between us... whoever did it is one of you."
 
 # game/scenario/11_0_1_1.rpy:565
 translate english noam_garde_secret_328e417d:
 
     # think "Parmi nous..."
-    think ""
+    think "One of us..."
 
 # game/scenario/11_0_1_1.rpy:566
 translate english noam_garde_secret_d1af98c2:
 
     # think "Non."
-    think ""
+    think "No."
 
 # game/scenario/11_0_1_1.rpy:567
 translate english noam_garde_secret_873ef859:
 
     # think "Impossible."
-    think ""
+    think "Impossible."
 
 # game/scenario/11_0_1_1.rpy:570
 translate english noam_garde_secret_32d69f2a:
 
     # kami "Qui ça peut bien être ? Et pourquoi se donner cette peine ?"
-    kami ""
+    kami "Who could it be? And why go to all that trouble?"
 
 # game/scenario/11_0_1_1.rpy:573
 translate english noam_garde_secret_2fcebe7a:
 
     # kami "Oui oui, parmi tes charmants petits camarades. Celle ou celui qui te sourit tous les jours."
-    kami ""
+    kami "Yes, yes, one of your delightful little friends. Someone who smiles at you every day."
 
 # game/scenario/11_0_1_1.rpy:574
 translate english noam_garde_secret_44b6be81:
 
     # kami "Celle ou celui qui vote avec toi, qui mange avec toi, qui fait semblant de s’inquiéter pour toi."
-    kami ""
+    kami "Someone who votes with you, eats with you, pretends to worry about you."
 
 # game/scenario/11_0_1_1.rpy:575
 translate english noam_garde_secret_05f506a4:
 
     # kami "N’est-ce pas excitant ?"
-    kami ""
+    kami "Isn't that exciting?"
 
 # game/scenario/11_0_1_1.rpy:577
 translate english noam_garde_secret_ab751544:
 
     # think "Elle essaie de me retourner contre eux."
-    think ""
+    think "She's trying to turn me against them."
 
 # game/scenario/11_0_1_1.rpy:578
 translate english noam_garde_secret_86c3de75:
 
     # think "C'est forcément ça."
-    think ""
+    think "That has to be it."
 
 # game/scenario/11_0_1_1.rpy:581
 translate english noam_garde_secret_79ccc1ab:
@@ -1512,13 +1512,13 @@ translate english noam_garde_secret_79ccc1ab:
 translate english noam_garde_secret_0dbc7154:
 
     # kami "Je mens ? Moi ? Jamais."
-    kami ""
+    kami "Me? Lie? Never."
 
 # game/scenario/11_0_1_1.rpy:586
 translate english noam_garde_secret_1a16a75a:
 
     # kami "Je suis une IA honnête, tu sais. Un peu sadique, certes, mais honnête et adoraaable."
-    kami ""
+    kami "I'm an honest AI, you know. A teeny bit sadistic, maybe, but honest and *adooorable*."
 
 # game/scenario/11_0_1_1.rpy:589
 translate english noam_garde_secret_e5a76aee:
@@ -1536,25 +1536,25 @@ translate english noam_garde_secret_3442676a:
 translate english noam_garde_secret_8becf42a:
 
     # kami "Et où serait le plaisir si je te le disais directement ?"
-    kami ""
+    kami "And where would the fun be in telling you outright?"
 
 # game/scenario/11_0_1_1.rpy:595
 translate english noam_garde_secret_6d9d74c8:
 
     # kami "Ce serait comme te spoiler la fin d’un bon thriller. Non, non."
-    kami ""
+    kami "That'd be like spoiling the ending of a good thriller. No, no."
 
 # game/scenario/11_0_1_1.rpy:596
 translate english noam_garde_secret_1666c381:
 
     # kami "Je préfère te regarder te torturer tout seul. C’est bien plus divertissant."
-    kami ""
+    kami "I'd much rather watch you torture yourself. Far more entertaining."
 
 # game/scenario/11_0_1_1.rpy:597
 translate english noam_garde_secret_52084502:
 
     # kami "Et puis le règlement m'interdit de te le dire. Je n'interviens dans aucune de vos manigances."
-    kami ""
+    kami "Besides, the rules forbid me from telling you. I don't interfere with your little schemes."
 
 # game/scenario/11_0_1_1.rpy:600
 translate english noam_garde_secret_d228b647:
@@ -1566,31 +1566,31 @@ translate english noam_garde_secret_d228b647:
 translate english noam_garde_secret_37b3571b:
 
     # kami "Énormément."
-    kami ""
+    kami "Very much."
 
 # game/scenario/11_0_1_1.rpy:605
 translate english noam_garde_secret_2b34f9b2:
 
     # kami "Imagine… quelqu’un qui te connaît si bien qu’il arrive à effacer des preuves sous mes propres caméras."
-    kami ""
+    kami "Imagine... someone who knows you so well they can erase evidence right under my cameras."
 
 # game/scenario/11_0_1_1.rpy:606
 translate english noam_garde_secret_4ecceeba:
 
     # kami "C’est presque romantique, non ? Comme un admirateur secret qui veut rester dans l’ombre."
-    kami ""
+    kami "Almost romantic, don't you think? Like a secret admirer who prefers to stay in the shadows."
 
 # game/scenario/11_0_1_1.rpy:608
 translate english noam_garde_secret_0d995c99:
 
     # think "Arrête."
-    think ""
+    think "Stop."
 
 # game/scenario/11_0_1_1.rpy:609
 translate english noam_garde_secret_8f4831f3:
 
     # think "Arrête de parler comme si tout ça était un jeu."
-    think ""
+    think "Stop talking as if this is all some game."
 
 # game/scenario/11_0_1_1.rpy:612
 translate english noam_garde_secret_a997e63a:
@@ -1602,31 +1602,31 @@ translate english noam_garde_secret_a997e63a:
 translate english noam_garde_secret_cbca1cf1:
 
     # kami "Parce que c’est drôle."
-    kami ""
+    kami "Because it's funny."
 
 # game/scenario/11_0_1_1.rpy:617
 translate english noam_garde_secret_2cde7731:
 
     # kami "Parce que vous êtes tous si prévisibles… Disons que ça brise la routine."
-    kami ""
+    kami "Because you're all so predictable... Let's just say it breaks up the monotony."
 
 # game/scenario/11_0_1_1.rpy:618
 translate english noam_garde_secret_fc62d5d6:
 
     # kami "Et surtout parce que je veux voir jusqu’où tu es prêt à aller pour découvrir la vérité."
-    kami ""
+    kami "And above all, because I want to see how far you're willing to go to uncover the truth."
 
 # game/scenario/11_0_1_1.rpy:619
 translate english noam_garde_secret_f70772fb:
 
     # kami "Tu vas commencer à soupçonner tout le monde maintenant ? Iris ? Sael ? Julian ?"
-    kami ""
+    kami "Going to start suspecting everyone now? Iris? Sael? Julian?"
 
 # game/scenario/11_0_1_1.rpy:620
 translate english noam_garde_secret_ae0c526e:
 
     # kami "Ou peut-être… ce que tu as vu ?"
-    kami ""
+    kami "Or maybe... whatever it was you saw?"
 
 # game/scenario/11_0_1_1.rpy:623
 translate english noam_garde_secret_92551c3d:
@@ -1638,19 +1638,19 @@ translate english noam_garde_secret_92551c3d:
 translate english noam_garde_secret_879ee004:
 
     # kami "Oh ? Touché ?"
-    kami ""
+    kami "Oh? Did I hit a nerve?"
 
 # game/scenario/11_0_1_1.rpy:628
 translate english noam_garde_secret_56bb1b13:
 
     # kami "Allez, Noam. Va les observer. Va leur poser des questions innocentes."
-    kami ""
+    kami "Go on, Noam. Watch them. Ask your innocent little questions."
 
 # game/scenario/11_0_1_1.rpy:630
 translate english noam_garde_secret_b7969824:
 
     # kami "Ce petit jeu va être TELLEMENT amusant."
-    kami ""
+    kami "This is going to be SO much fun!"
 
 # game/scenario/11_0_1_1.rpy:633
 translate english noam_garde_secret_28e531ab:
@@ -1662,19 +1662,19 @@ translate english noam_garde_secret_28e531ab:
 translate english noam_garde_secret_85fc45af:
 
     # kami "Je sais. Mais je t'aime quand même."
-    kami ""
+    kami "I know. But I love you anyway."
 
 # game/scenario/11_0_1_1.rpy:638
 translate english noam_garde_secret_a8005300:
 
     # kami "Maintenant va te reposer, mon petit détective en herbe."
-    kami ""
+    kami "Now go get some rest, my budding detective."
 
 # game/scenario/11_0_1_1.rpy:639
 translate english noam_garde_secret_182f7bd3:
 
     # kami "Tu as une sale tête. Et demain, il y a un vote très important."
-    kami ""
+    kami "You look awful. And there's a very important vote tomorrow."
 
 # game/scenario/11_0_1_1.rpy:640
 translate english noam_garde_secret_1e94283a:
