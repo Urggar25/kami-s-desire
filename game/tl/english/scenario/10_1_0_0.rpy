@@ -2750,13 +2750,13 @@ translate english strings:
 translate english 96fb98c9:
 
     # think "Évidemment."
-    think ""
+    think "Of course."
 
 # game/scenario/10_1_0_0.rpy:120
 translate english d7a823de_1:
 
     # mara "Ah."
-    mara ""
+    mara "Oh."
 
 # game/scenario/10_1_0_0.rpy:296
 translate english a36bd1be_5:
@@ -2774,11 +2774,11 @@ translate english f3da6531_1:
 translate english 3951dc51_4:
 
     # "Il baisse les yeux."
-    ""
+    "He looks down."
 
 # game/scenario/10_1_0_0.rpy:1179
 translate english 7af7b854_5:
 
     # "Je ferme les yeux."
-    ""
+    "I close my eyes."
 
