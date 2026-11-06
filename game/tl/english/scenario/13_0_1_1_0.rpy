@@ -5178,3 +5178,9 @@ translate english 6d46dbe4:
 
     # goumi "Noam ?"
     goumi "Noam?"
+
+# Navigation string localized for day 13
+translate english strings:
+
+    old "Retourner mettre les faits en ordre"
+    new "Go back and sort through the facts"
