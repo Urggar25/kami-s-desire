@@ -44,30 +44,38 @@ label _26_0_1_1_0_1_CAFETERIA:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j26_alt_door_2
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    $ showGroup([("lysa", "blase", 0.06), ("elen", "fatigue", 0.21), ("julian", "neutre", 0.36), ("mara", "taquin", 0.51), ("iris", "fatigue", 0.66), ("noam", "neutre", 0.81), ("nyra", "neutre", 0.96), ("elias", "fatigue", 1.11)])
+    $ showGroup([("julian", "neutre", 0.23), ("iris", "fatigue", 0.48), ("mara", "taquin", 0.74)])
     julian reflexion "Vous avez lu le nouveau texte ? Sur les sanctions pour les opinions ?"
     iris fatigue "J'ai essayé. Puis t'as commencé à parler."
     mara sourire "Moi j'ai retenu qu'on avait le droit de dire que Julian était chiant."
     julian agace "C'est pas ce que dit le texte !"
+    $ showGroup([("elen", "fatigue", 0.23), ("lysa", "blase", 0.48), ("noam", "neutre", 0.74)])
     noam neutre "Salut."
     elen sourire "Salut, Noam !"
     lysa reflexion "Attendez. Tomas est où ?"
+    $ showGroup([("julian", "fatigue", 0.24), ("elen", "fatigue", 0.49), ("noam", "neutre", 0.74)])
     julian fatigue "Il nous évite encore."
     elen reflexion "Je pense qu'il dort. Il était vraiment fatigué."
+    $ showGroup([("lysa", "inquiet", 0.24), ("elen", "fatigue", 0.49), ("noam", "neutre", 0.74)])
     lysa inquiet "Il est jamais en retard, même quand il a dormi deux heures."
     elen neutre "Je lui ai prêté ma chambre hier soir. On a échangé."
+    $ showGroup([("mara", "taquin", 0.22), ("elen", "neutre", 0.49), ("noam", "neutre", 0.74)])
     mara taquin "Oh ! Monsieur a passé la nuit dans ton lit ?"
     elen colere "Mara !"
     mara rire "Quoi ?! C'était gratuit, je sais, mais fallait que je la fasse."
+    $ showGroup([("lysa", "inquiet", 0.22), ("elen", "inquiet", 0.49), ("noam", "neutre", 0.74)])
     noam surpris "Pourquoi vous avez changé de chambre ?"
     elen inquiet "Il avait peur que quelqu'un revienne frapper à sa porte. Je me suis dit qu'il serait plus tranquille chez moi."
     noam reflexion "Ah. C'était donc ça, votre conversation d'hier soir."
     elen neutre "Ouais. J'ai dormi dans sa chambre, lui dans la mienne."
     lysa inquiet "Mais il est toujours pas arrivé."
+    $ showGroup([("nyra", "neutre", 0.22), ("elen", "inquiet", 0.49), ("noam", "neutre", 0.74)])
     nyra raison "On peut aller voir sans lui faire peur. Il a eu assez de monde sur le dos."
     noam neutre "Elen, tu viens avec moi ?"
     elen content "Oui."
+    $ showGroup([("lysa", "neutre", 0.22), ("elen", "content", 0.49), ("noam", "neutre", 0.74)])
     lysa neutre "Je viens aussi."
+    $ showGroup([("iris", "blase", 0.24), ("elen", "neutre", 0.49), ("noam", "neutre", 0.74)])
     iris blase "Réveillez-le doucement. S'il vous engueule, vous l'aurez mérité."
     $ hideGroup()
     jump _26_0_1_1_0_1_PORTE
@@ -120,6 +128,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elias neutre "C'est bon. Reculez."
     "Le verrou cède avec un claquement. Il pousse la porte."
     scene bg_chambre at adaptive_fullscreen with dissolve
+    $ showGroup([("elen", "fatigue", 0.23), ("iris", "inquiet", 0.47), ("noam", "inquiet", 0.72)])
     "Une odeur épouvantable me saute au visage. Je me bouche le nez et regarde autour de moi : des barquettes oubliées, des vêtements au sol, des emballages sous le bureau."
     noam fatigue "Putain, c'est quoi, cette odeur ?"
     elen fatigue "Je... j'avais pas rangé. Désolée..."
@@ -795,6 +804,7 @@ label _26_0_1_1_0_1_REUNION:
     lysa neutre "Moi non plus."
     mara fatigue "Pareil. Franchement, qu'elle se débrouille."
     "Les autres acquiescent un à un. Julian finit par baisser les yeux."
+    $ showGroup([("julian", "fatigue", 0.21), ("elen", "triste", 0.47), ("noam", "neutre", 0.72)])
     julian fatigue "Bon. D'accord. Mais on assume tous, alors."
     $ j26_alt_boycott = True
     $ hideGroup()
