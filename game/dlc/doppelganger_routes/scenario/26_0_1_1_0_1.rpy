@@ -747,20 +747,25 @@ label _26_0_1_1_0_1_PA_KAEL:
     scene bg_maintenance at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     $ showGroup([("kael", "calme", 0.21), ("elias", "fatigue", 0.45), ("noam", "neutre", 0.70)])
-    noam raison "Je voudrais comprendre comment vous avez ouvert la chambre."
-    elias reflexion "J'ai forcé le verrou intérieur avec l'outil. Tu m'as vu."
-    noam neutre "Oui. Avant ça, il était bien engagé ?"
-    elias raison "Oui. Le lecteur extérieur était bloqué. Ça arrive quand tu verrouilles depuis le dedans."
-    kael reflexion "Ça n'empêche pas de passer par une autre entrée, mais les accès aux chambres ont tous des protections."
-    noam raison "Les conduits aussi ?"
-    kael neutre "Oui. Elias a posé les plaques. Tu peux toujours faire circuler l'air, pas une personne."
-    elias agace "Heureusement, on allait pas priver tout le monde d'oxygène."
-    noam reflexion "Et hier soir, vous étiez où ?"
-    kael raison "Avec Elias pour finir des réparations. On s'est quittés après."
-    elias fatigue "On a fermé l'atelier, puis je suis rentré. J'ai pas croisé Tomas."
-    noam raison "Vous avez enregistré quelque chose ?"
-    kael reflexion "Il y a un journal des accès, mais c'est pas une caméra. Je regarderai si ça peut aider."
+    "Elias a gardé l'outil dont il s'est servi ce matin sur l'établi. Il le fait tourner entre ses doigts sans s'en rendre compte."
+    noam raison "La porte d'Elen... elle était vraiment verrouillée de l'intérieur ?"
+    elias reflexion "Ouais. C'est pour ça que j'ai dû la forcer."
+    noam neutre "Y avait pas moyen de l'ouvrir autrement ?"
+    elias raison "Pas avec la tablette, non. Le verrou bloque le lecteur."
+    kael reflexion "Les accès des chambres sont isolés. Et les conduits ont été protégés aussi."
+    noam raison "Les grilles qu'Elias a posées ?"
+    kael neutre "Ouais. L'air passe encore, mais pas quelqu'un."
+    elias agace "C'est le but, ouais. Même si j'avoue que j'aurais aimé les faire plus jolies."
+    "Il essaie de sourire. Aucun de nous ne le suit."
+    noam reflexion "Et hier, vous étiez encore ici ?"
+    kael raison "On réparait une fuite avec Elias. On a fermé l'atelier et on est partis chacun de notre côté."
+    elias fatigue "Je suis rentré direct. J'ai pas vu Tomas."
+    noam raison "Les badges ont dû enregistrer quelque chose, non ?"
+    kael reflexion "On a les heures de passage, pas les visages. Je regarderai ce qu'on peut en tirer."
     noam neutre "Merci."
+    elias fatigue "Noam... tu crois qu'il a entendu quand j'ai cassé le verrou ?"
+    noam fatigue "Non. Je crois pas."
+    "Elias baisse les yeux vers son outil."
     $ j26_alt_verrou = True
     $ j26_alt_kael = True
     $ hideGroup()
@@ -769,21 +774,26 @@ label _26_0_1_1_0_1_PA_KAEL:
 label _26_0_1_1_0_1_PA_RYN:
     scene bg_gymnase at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.7
-    "Ryn frappe dans un sac sans vraiment y mettre de force. Il s'arrête en me voyant."
+    "Ryn frappe dans un sac sans y mettre de force. Quand il me voit, il donne un dernier coup plus violent et se retourne."
     $ showGroup([("ryn", "agace", 0.35), ("noam", "neutre", 0.69)])
     ryn agace "Quoi ?"
-    noam raison "Tu étais où hier soir après la cafétéria ?"
-    ryn colere "Ah. Ça y est. On fait le tour des suspects."
-    noam fatigue "Je te demande juste où tu étais."
-    ryn agace "Avec Julian et Mara, dans la salle commune. Ensuite je suis allé dormir."
-    noam neutre "T'as parlé à Tomas après ?"
-    ryn colere "Non. Et heureusement, parce que je lui aurais encore dit des trucs que je regretterais aujourd'hui."
+    noam raison "Je voulais savoir si t'avais revu Tomas hier soir."
+    ryn colere "Putain. Toi aussi, tu vas t'y mettre ?"
+    noam fatigue "Je te demande, c'est tout."
+    ryn agace "Non, je l'ai pas revu. J'étais avec Julian et Mara. Après, je suis allé me coucher."
+    noam neutre "Vous étiez encore ensemble tard ?"
+    ryn colere "J'en sais rien. J'ai pas regardé ma montre toutes les cinq minutes !"
+    "Il reprend son souffle, puis fixe le sac."
+    ryn fatigue "Tu sais ce que je lui ai dit hier ?"
+    noam raison "J'étais là."
+    ryn agace "Ouais. Bah moi aussi, j'étais là. Et je l'entends encore, ce que je lui ai dit."
     pause 0.3
-    ryn fatigue "Écoute... Je lui en voulais pour le vote, oui. Mais je voulais qu'il arrête de nous mettre dans la merde. Pas qu'il crève."
-    noam raison "Je sais."
-    ryn agace "Non, tu sais rien. Ni toi ni moi. Vous savez même pas comment il est mort."
-    noam fatigue "C'est justement ça qui me fait peur."
-    ryn triste "Ouais... Moi aussi."
+    ryn fatigue "Je lui en voulais pour le vote. Ça veut pas dire que je voulais le voir mort."
+    noam fatigue "J'ai jamais dit ça."
+    ryn agace "Non. Mais je sais ce que tout le monde pense."
+    "Il essuie son visage avec son avant-bras. Je ne sais pas s'il transpire ou s'il essaie de cacher quelque chose."
+    noam fatigue "Moi, j'arrive même pas à penser à ça pour l'instant."
+    ryn triste "Ouais... moi non plus."
     $ j26_alt_ryn = True
     $ hideGroup()
     return
@@ -791,23 +801,24 @@ label _26_0_1_1_0_1_PA_RYN:
 label _26_0_1_1_0_1_PA_NOTES:
     scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "Le terminal que Tomas utilisait est encore ouvert à une page technique. Je me souviens de sa façon de reculer sa chaise dès qu'il trouvait une incohérence."
+    "Je retrouve le terminal que Tomas utilisait. Il a laissé une page de chiffres à moitié ouverte, comme s'il comptait revenir dessus après le dîner."
     noam reflexion "Keyper-IIB..."
-    "Les lignes indiquent des quotas et des effectifs, toujours sans expliquer à quoi correspondent les unités."
-    "Je ne trouve aucun nouveau dossier, mais l'historique montre qu'il consultait encore ces documents hier."
-    noam fatigue "Il essayait encore de comprendre..."
-    "Je prends une copie du titre et de la date, sans toucher au reste. Rien ne permet d'affirmer qu'il a été tué à cause de ces recherches."
+    "Des quotas, des effectifs, des codes que je n'arrive toujours pas à comprendre. Hier, Tomas aurait déjà commencé à m'expliquer pourquoi une colonne ne collait pas."
+    "L'historique indique qu'il a consulté ces documents jusqu'à la veille. Je me surprends à regarder l'heure de sa dernière recherche."
+    noam fatigue "T'étais encore là-dessus..."
+    "Je copie le titre et la date. C'est peut-être important. Ou peut-être que je fais ça parce que je n'ai aucune idée d'où commencer."
     return
 
 label _26_0_1_1_0_1_PA_CONSOLE:
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "La salle d'observation est vide. Je retrouve le pupitre près duquel Tomas m'avait montré la carte de Keyper."
-    "Je regarde l'historique de la console : rien d'inhabituel. Les derniers réglages datent de sa visite."
-    "Un souvenir me revient. Il tenait un petit appareil métallique, puis l'avait reposé quand je suis arrivé."
-    noam reflexion "C'était quoi, déjà, ce truc... ?"
-    "Je cherche du regard le boîtier, mais je ne le reconnais pas parmi les outils posés ici. Je préfère ne pas tirer de conclusion."
-    noam fatigue "Je me souviens même pas de sa forme exacte."
+    "La salle d'observation est vide. Je retrouve la console où Tomas m'avait montré la carte de Keyper et, pendant une seconde, je m'attends à le voir arriver derrière moi."
+    "Les derniers réglages datent de sa visite. Rien ne saute aux yeux."
+    "Je repense au petit truc métallique qu'il tenait hier. Je l'avais vu le reposer en me parlant, mais j'ai passé la suite de la conversation à regarder la carte."
+    noam reflexion "Merde. C'était où, déjà ?"
+    "Je cherche dans les tiroirs, puis sur les étagères. Aucun des petits boîtiers ne ressemble vraiment à ce dont je me souviens."
+    noam fatigue "Si j'avais su que c'était la dernière fois..."
+    "Je ferme le tiroir. Je ne sais même pas si cet appareil avait la moindre importance."
     return
 
 
