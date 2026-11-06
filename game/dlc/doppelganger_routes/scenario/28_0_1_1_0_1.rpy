@@ -382,7 +382,7 @@ label _28_0_1_1_0_1_REUNION:
     elen peur "Attends... Tu veux dire qu'il a pu respirer ça pendant qu'il dormait ?"
     iris reflexion "Ça pourrait correspondre à une intoxication par inhalation. Mais je n'ai pas encore la preuve que ce soit la cause de sa mort."
     elen triste "Oh, putain..."
-    julian raison "Et les somnifères ?"
+    julian neutre "Et les somnifères ?"
     iris neutre "On sait toujours pas s'il en a pris. Le flacon ne suffit pas à expliquer la plaque et le récipient."
     elen colere "Donc il s'est peut-être pas suicidé du tout !"
     iris raison "Oui. C'est possible."
