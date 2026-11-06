@@ -340,31 +340,31 @@ translate english 7076f05e:
 translate english 1931f512:
 
     # think "Les mensonges."
-    think ""
+    think "The lies."
 
 # game/scenario/15_0_1_1_0.rpy:72
 translate english 162e4c47:
 
     # think "Les fautes."
-    think ""
+    think "The mistakes."
 
 # game/scenario/15_0_1_1_0.rpy:73
 translate english c07f21e8:
 
     # think "Tout."
-    think ""
+    think "Everything."
 
 # game/scenario/15_0_1_1_0.rpy:74
 translate english 9bc2f32e:
 
     # "Je tends la main vers la tablette posée sur le bureau."
-    ""
+    "I reach for the tablet on the desk."
 
 # game/scenario/15_0_1_1_0.rpy:75
 translate english a33392f9:
 
     # "Elle vibre avant même que je la touche."
-    ""
+    "It vibrates before I can touch it."
 
 # game/scenario/15_0_1_1_0.rpy:76
 translate english c90986e3:
@@ -376,241 +376,241 @@ translate english c90986e3:
 translate english 5d28ae97:
 
     # "Un message apparaît."
-    ""
+    "A message appears."
 
 # game/scenario/15_0_1_1_0.rpy:78
 translate english e199c92f:
 
     # kael "Tu es réveillé ?"
-    kael ""
+    kael "You awake?"
 
 # game/scenario/15_0_1_1_0.rpy:79
 translate english 46081631:
 
     # noam "Oui."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/15_0_1_1_0.rpy:80
 translate english bdb9fff5:
 
     # kael "Tu as entendu l’annonce ?"
-    kael ""
+    kael "Heard the announcement?"
 
 # game/scenario/15_0_1_1_0.rpy:81
 translate english 46081631_1:
 
     # noam "Oui."
-    noam ""
+    noam "Yeah."
 
 # game/scenario/15_0_1_1_0.rpy:82
 translate english 2dcfa335:
 
     # kael "Tu es bien sûr de ne pas y aller ?"
-    kael ""
+    kael "Are you sure you're not going?"
 
 # game/scenario/15_0_1_1_0.rpy:83
 translate english 04d660c2:
 
     # noam "Je ne sais pas."
-    noam ""
+    noam "I don't know."
 
 # game/scenario/15_0_1_1_0.rpy:84
 translate english 7577d7be:
 
     # kael "Pas le choix, ce sera le meilleur moment pour aller vérifier les caméras."
-    kael ""
+    kael "We don't have much choice. It'll be the best time to check the cameras."
 
 # game/scenario/15_0_1_1_0.rpy:85
 translate english eb76235e:
 
     # noam "Kael..."
-    noam ""
+    noam "Kael..."
 
 # game/scenario/15_0_1_1_0.rpy:86
 translate english c11864a0_1:
 
     # noam "Je comprends."
-    noam ""
+    noam "I get it."
 
 # game/scenario/15_0_1_1_0.rpy:87
 translate english 5a996ea1:
 
     # noam "C'est le seul moment ou on pourra être au calme durant la journée."
-    noam ""
+    noam "It's the only time we'll have some peace and quiet today."
 
 # game/scenario/15_0_1_1_0.rpy:88
 translate english 716b0eeb:
 
     # "Je relis son message deux fois."
-    ""
+    "I read his message twice."
 
 # game/scenario/15_0_1_1_0.rpy:89
 translate english 240e38f9:
 
     # think "Il est devenu comme moi."
-    think ""
+    think "He's become like me."
 
 # game/scenario/15_0_1_1_0.rpy:90
 translate english 41a78f65:
 
     # think "Pas par choix."
-    think ""
+    think "Not by choice."
 
 # game/scenario/15_0_1_1_0.rpy:91
 translate english 97f7c55c:
 
     # think "Par contamination sociale."
-    think ""
+    think "Just by being dragged into the same mess."
 
 # game/scenario/15_0_1_1_0.rpy:92
 translate english 8e068fc7:
 
     # noam "Tu veux qu’on se voie avant le vote ?"
-    noam ""
+    noam "Want to meet up before the vote?"
 
 # game/scenario/15_0_1_1_0.rpy:93
 translate english 4f90a96b:
 
     # kael "Non. Pas avant que les autres ne se rassemblent au Conclave."
-    kael ""
+    kael "No. Not until everyone else has gathered in the Conclave."
 
 # game/scenario/15_0_1_1_0.rpy:94
 translate english 14588b5f:
 
     # kael "Tout le monde sera dans la Salle du Conclave."
-    kael ""
+    kael "Everyone will be in the Conclave chamber."
 
 # game/scenario/15_0_1_1_0.rpy:95
 translate english dd6b8fa1:
 
     # kael "La salle d’observation sera vide."
-    kael ""
+    kael "The observation room will be empty."
 
 # game/scenario/15_0_1_1_0.rpy:96
 translate english 8acab3da:
 
     # kael "Les archives du huitième jour devraient être accessibles aujourd’hui."
-    kael ""
+    kael "The Day 8 recordings should be accessible today."
 
 # game/scenario/15_0_1_1_0.rpy:97
 translate english 11d4a4a4:
 
     # kael "Le délai de verrouillage est terminé."
-    kael ""
+    kael "The seven-day lockout has expired."
 
 # game/scenario/15_0_1_1_0.rpy:98
 translate english b625c4dc:
 
     # kael "Si quelqu’un a pris la photo de Léa, on le verra."
-    kael ""
+    kael "If someone took Léa's photo, we'll see them."
 
 # game/scenario/15_0_1_1_0.rpy:99
 translate english 84419442:
 
     # noam "Et si on ne voit rien ?"
-    noam ""
+    noam "And if there's nothing?"
 
 # game/scenario/15_0_1_1_0.rpy:100
 translate english 71ef9bdc:
 
     # noam "Et si quelqu'un a supprimé les images comme quand j'ai été regardé l'autre jour ?"
-    noam ""
+    noam "What if someone deleted the footage, like when someone watched me the other day?"
 
 # game/scenario/15_0_1_1_0.rpy:101
 translate english 4d0452cc:
 
     # kael "Alors je ne sais plus."
-    kael ""
+    kael "Then I don't know what else to do."
 
 # game/scenario/15_0_1_1_0.rpy:102
 translate english eb76235e_1:
 
     # noam "Kael..."
-    noam ""
+    noam "Kael..."
 
 # game/scenario/15_0_1_1_0.rpy:103
 translate english f2dc10ad:
 
     # kael "Je t’attendrai près de la salle d’observation quand l'annonce sera diffusée."
-    kael ""
+    kael "I'll wait near the observation room when the announcement starts."
 
 # game/scenario/15_0_1_1_0.rpy:104
 translate english 7fe7d7f3:
 
     # kael "Si tu viens."
-    kael ""
+    kael "If you come."
 
 # game/scenario/15_0_1_1_0.rpy:105
 translate english ae2bb6e0:
 
     # noam "Je viendrai."
-    noam ""
+    noam "I'll be there."
 
 # game/scenario/15_0_1_1_0.rpy:106
 translate english c9f2e71b:
 
     # kael "Tu es sûr ?"
-    kael ""
+    kael "You sure?"
 
 # game/scenario/15_0_1_1_0.rpy:107
 translate english 0e80e0da_1:
 
     # noam "..."
-    noam ""
+    noam "..."
 
 # game/scenario/15_0_1_1_0.rpy:108
 translate english c5f25a25:
 
     # noam "Laissons aux autres la responsabilité de changer le monde."
-    noam ""
+    noam "Let's leave saving the world to everyone else."
 
 # game/scenario/15_0_1_1_0.rpy:109
 translate english a361406b:
 
     # kael "D’accord."
-    kael ""
+    kael "All right."
 
 # game/scenario/15_0_1_1_0.rpy:110
 translate english eae1715d:
 
     # "L’écran s’éteint."
-    ""
+    "The screen goes dark."
 
 # game/scenario/15_0_1_1_0.rpy:111
 translate english cab1a0d2:
 
     # "Je reste assis avec la tablette dans les mains."
-    ""
+    "I stay seated, holding the tablet."
 
 # game/scenario/15_0_1_1_0.rpy:112
 translate english d89c4650:
 
     # "Si je veux avoir des réponses. C'est la seule manière de faire."
-    ""
+    "If I want answers, this is my only shot."
 
 # game/scenario/15_0_1_1_0.rpy:120
 translate english e043ad09:
 
     # "Je suis assis sur le bord du lit depuis plus d’une heure, immobile."
-    ""
+    "I've been sitting motionless on the edge of my bed for over an hour."
 
 # game/scenario/15_0_1_1_0.rpy:121
 translate english 2ff18988:
 
     # "Je n’ai toujours pas décidé si je sortirai aujourd’hui."
-    ""
+    "I still haven't decided whether I'll leave my room today."
 
 # game/scenario/15_0_1_1_0.rpy:123
 translate english 281b5b2a:
 
     # "Soudain, trois coups légers résonnent contre la porte."
-    ""
+    "Suddenly, three soft knocks sound at the door."
 
 # game/scenario/15_0_1_1_0.rpy:127
 translate english 8f8ecc6d:
 
     # "Je relève brusquement la tête."
-    ""
+    "My head snaps up."
 
 # game/scenario/15_0_1_1_0.rpy:129
 translate english 5ad052ab:
@@ -622,13 +622,13 @@ translate english 5ad052ab:
 translate english 1b2a2a40_1:
 
     # "Aucune réponse."
-    ""
+    "No answer."
 
 # game/scenario/15_0_1_1_0.rpy:135
 translate english 13a13f1c:
 
     # "Le silence retombe, lourd et immédiat."
-    ""
+    "Silence returns, heavy and immediate."
 
 # game/scenario/15_0_1_1_0.rpy:137
 translate english 19401647:
@@ -640,13 +640,13 @@ translate english 19401647:
 translate english 9e2aff53:
 
     # "Deux coups plus faibles."
-    ""
+    "Two softer knocks."
 
 # game/scenario/15_0_1_1_0.rpy:145
 translate english 26f24bd0:
 
     # "Puis plus rien."
-    ""
+    "Then nothing."
 
 # game/scenario/15_0_1_1_0.rpy:147
 translate english 02a55bf0:
@@ -658,127 +658,127 @@ translate english 02a55bf0:
 translate english 0b8a4dd3:
 
     # "Je reste figé, le regard rivé sur la porte."
-    ""
+    "I stay frozen, staring at the door."
 
 # game/scenario/15_0_1_1_0.rpy:150
 translate english 9bb5fce9:
 
     # "Pas un mot."
-    ""
+    "Not a word."
 
 # game/scenario/15_0_1_1_0.rpy:151
 translate english 8ec3025d:
 
     # "Pas un pas qui s’éloigne."
-    ""
+    "No footsteps walking away."
 
 # game/scenario/15_0_1_1_0.rpy:152
 translate english 0258da77:
 
     # "Juste le silence."
-    ""
+    "Just silence."
 
 # game/scenario/15_0_1_1_0.rpy:154
 translate english 0f1cad13:
 
     # think "Ils ne veulent même plus me parler."
-    think ""
+    think "They don't even want to talk to me anymore."
 
 # game/scenario/15_0_1_1_0.rpy:156
 translate english 7779574d:
 
     # "Je m’approche lentement de la porte."
-    ""
+    "I slowly approach the door."
 
 # game/scenario/15_0_1_1_0.rpy:157
 translate english 90549bd9:
 
     # "Chaque pas fait grincer le sol."
-    ""
+    "Every step makes the floor creak."
 
 # game/scenario/15_0_1_1_0.rpy:158
 translate english 804ec536:
 
     # "Je colle mon oreille contre le battant."
-    ""
+    "I press my ear against it."
 
 # game/scenario/15_0_1_1_0.rpy:160
 translate english c09788b4_1:
 
     # "Rien."
-    ""
+    "Nothing."
 
 # game/scenario/15_0_1_1_0.rpy:162
 translate english 0e1e1c60:
 
     # "Je pose la main sur la poignée, hésite, puis ouvre d’un coup."
-    ""
+    "I put my hand on the handle, hesitate, then yank the door open."
 
 # game/scenario/15_0_1_1_0.rpy:166
 translate english f793b44e:
 
     # "Un sac en toile épaisse est posé juste devant le seuil."
-    ""
+    "A heavy canvas bag sits on the threshold."
 
 # game/scenario/15_0_1_1_0.rpy:167
 translate english d40a9c19:
 
     # "Dedans : des rations militaires, des conserves, des barres protéinées, des bouteilles d’eau."
-    ""
+    "Inside: military rations, canned food, protein bars, bottles of water."
 
 # game/scenario/15_0_1_1_0.rpy:168
 translate english b3e61301:
 
     # "De quoi tenir facilement trois ou quatre jours sans sortir."
-    ""
+    "Enough to last three or four days without leaving my room."
 
 # game/scenario/15_0_1_1_0.rpy:170
 translate english 00c4b9fc:
 
     # "Je regarde rapidement à gauche, puis à droite dans le couloir."
-    ""
+    "I glance left and right down the corridor."
 
 # game/scenario/15_0_1_1_0.rpy:172
 translate english c439b970:
 
     # "Personne."
-    ""
+    "No one."
 
 # game/scenario/15_0_1_1_0.rpy:174
 translate english 234fbad1:
 
     # "Pas un bruit de pas."
-    ""
+    "Not a footstep."
 
 # game/scenario/15_0_1_1_0.rpy:175
 translate english 4048c8aa:
 
     # "Pas une ombre."
-    ""
+    "Not a shadow."
 
 # game/scenario/15_0_1_1_0.rpy:176
 translate english 62a5b746:
 
     # "Celui ou celle qui a déposé ça est déjà loin."
-    ""
+    "Whoever left it is long gone."
 
 # game/scenario/15_0_1_1_0.rpy:178
 translate english 5ec3db8b:
 
     # "Je tire le sac à l’intérieur et referme aussitôt la porte, comme si j’avais peur qu’on me voie."
-    ""
+    "I drag the bag inside and shut the door at once, as if I'm afraid someone might see me."
 
 # game/scenario/15_0_1_1_0.rpy:180
 translate english 91bbdb64:
 
     # "Sur le dessus du sac, une petite note pliée."
-    ""
+    "There's a small folded note on top of the bag."
 
 # game/scenario/15_0_1_1_0.rpy:182
 translate english 8ae801dc:
 
     # "Je la déplie."
-    ""
+    "I unfold it."
 
 # game/scenario/15_0_1_1_0.rpy:184
 translate english 3fd380fa:
