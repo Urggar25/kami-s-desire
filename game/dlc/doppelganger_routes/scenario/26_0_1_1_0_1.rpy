@@ -828,51 +828,53 @@ label _26_0_1_1_0_1_BILAN:
     $ current_period = "Soir"
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
-    "Le temps a passé plus vite que je ne pensais. J'ai pris quelques notes, parlé à des gens et, surtout, interrompu beaucoup de personnes qui auraient préféré qu'on les laisse en paix."
+    "Quand je reviens dans la salle commune, Lysa est toujours devant son café de ce matin. J'ai parlé à plein de gens, et tout ce que j'ai envie de faire, c'est m'asseoir."
     $ showGroup([("lysa", "fatigue", 0.21), ("nyra", "neutre", 0.46), ("noam", "fatigue", 0.70)])
-    lysa reflexion "Alors ?"
-    noam fatigue "J'ai pas beaucoup de choses certaines."
-    nyra raison "C'est déjà bien de s'en rendre compte."
+    lysa reflexion "T'as trouvé quelque chose ?"
+    noam fatigue "Des trucs. Mais plus je cherche, moins je suis sûr de ce qu'on sait."
+    nyra raison "Fais voir."
     if "iris" in investigation_pa_completed:
-        noam raison "Iris ne peut pas confirmer la cause. Elle veut encore faire des analyses."
-        lysa neutre "Au moins, on ne va pas raconter que c'est forcément un suicide."
+        noam raison "Iris sait toujours pas ce qui lui est arrivé. Elle continue ses analyses."
+        lysa neutre "Bon. Alors si quelqu'un recommence à dire qu'il s'est suicidé, je lui envoie Iris."
     else:
-        noam reflexion "Iris a besoin de temps. On ne sait toujours pas comment il est mort."
+        noam reflexion "Iris a pas encore de réponse. Et je vais pas retourner la voir une troisième fois."
     if "flacon" in investigation_pa_completed:
-        lysa reflexion "Et ce flacon ?"
-        noam raison "Presque vide, mais on ne sait pas s'il a avalé ce qu'il y avait dedans."
+        lysa reflexion "Et le truc pour dormir ?"
+        noam raison "Presque vide. Mais on sait même pas si Tomas y a touché."
     if "elen" in investigation_pa_completed:
-        noam raison "Elen confirme qu'ils ont échangé leurs chambres. Elle dit ne pas être ressortie de celle de Tomas."
-        lysa inquiet "Elle a vraiment pas besoin qu'on la questionne encore ce soir."
+        noam raison "Elen dit qu'elle a passé la nuit dans la chambre de Tomas."
+        lysa inquiet "J'espère que t'as pas insisté. Elle était en train de tenir debout par miracle."
     if "julian" in investigation_pa_completed:
-        noam neutre "Julian était avec Ryn et Mara. Il n'avait pas entendu parler de l'échange."
+        noam neutre "Julian dit qu'il était avec Ryn et Mara. Pour l'échange de chambres, il savait rien."
     if "ryn" in investigation_pa_completed:
-        noam neutre "Ryn dit la même chose pour leur soirée. Il était furieux, mais ça fait pas de lui un meurtrier."
+        noam neutre "Ryn confirme qu'il était avec eux. Il m'a presque envoyé balader quand j'ai demandé."
     if "nyra" in investigation_pa_completed:
-        noam reflexion "Nyra, tu m'as dit que t'étais allée te coucher après qu'on s'est croisés."
-        nyra neutre "Oui. Et je peux pas le prouver davantage."
+        noam reflexion "Nyra, toi, t'étais rentrée après qu'on s'est croisés ?"
+        nyra neutre "Ouais, je t'ai dit. J'ai pas vu grand monde après."
     if "kael" in investigation_pa_completed:
-        noam raison "Kael et Elias ont confirmé le verrou. Et le passage physique par les grilles était bloqué."
+        noam raison "Kael et Elias ont bien trouvé le verrou engagé. Et les protections bloquent les passages dans les conduits."
     if "grille" in investigation_pa_completed:
-        noam reflexion "J'ai regardé la grille. La plaque ne laisse passer personne, mais l'air circule."
-        nyra neutre "Ça ne prouve rien sur ce qui s'est passé. Mais garde la photo."
+        noam reflexion "La tôle devant l'aération a pas bougé. Mais l'air passe toujours."
+        nyra neutre "Ouais. Garde quand même l'image, on sait jamais."
     if "notes" in investigation_pa_completed or "console" in investigation_pa_completed:
-        noam fatigue "Tomas travaillait encore sur ses recherches. J'ai du mal à croire qu'il pensait tout arrêter hier."
-        lysa raison "Noam, ça veut rien dire sur son état d'esprit. On peut travailler et aller très mal."
-        noam neutre "Je sais."
+        noam fatigue "Il bossait encore sur Keyper hier. Il avait même pas fini ce qu'il cherchait."
+        lysa raison "Ouais... mais ça nous dit pas comment il allait, tu sais."
+        noam neutre "Je sais. C'est juste dur à avaler."
     if investigation_pa_remaining > 0:
-        lysa reflexion "T'as gardé des pistes de côté ?"
-        noam raison "Oui. J'ai pas voulu déranger tout le monde aujourd'hui."
-        nyra raison "On aura le temps demain. C'est mieux que de tirer des conclusions en forçant les gens à parler."
+        lysa reflexion "T'as pas fait le tour de tout le monde ?"
+        noam raison "Non. Je voulais pas passer la journée à les suivre."
+        nyra raison "T'as bien fait. Y a rien qui nous oblige à tout régler ce soir."
     else:
-        lysa fatigue "Et t'as plus l'énergie de continuer."
-        noam fatigue "Franchement, non."
+        lysa fatigue "T'as vraiment fait le tour de la station..."
+        noam fatigue "Je sais. Et je suis pas plus avancé."
     pause 0.4
-    lysa triste "Je me suis engueulée avec Tomas la semaine dernière parce qu'il avait déplacé mon plateau. C'est débile, mais c'est à ça que je pense."
+    lysa triste "L'autre jour, il avait pris ma place à table. Je lui ai fait toute une histoire pour ça."
     noam inquiet "Lysa..."
-    lysa fatigue "Non, laisse. J'ai pas envie de pleurer maintenant."
-    nyra reflexion "On a une réunion. Il faut leur dire ce qu'on sait, et ce qu'on ne sait pas."
-    noam raison "D'accord. Mais pas un procès."
+    lysa fatigue "Il s'est levé direct. Et après, il m'a demandé si je voulais son dessert. Quel idiot..."
+    "Elle essaie de rire, mais ça ne sort pas. Elle essuie rapidement ses yeux et repousse sa tasse."
+    lysa fatigue "Bon. On a rendez-vous avec les autres, non ?"
+    nyra reflexion "Ouais. Faudra leur dire qu'on n'a pas trouvé de réponse."
+    noam raison "Ils vont adorer."
     $ hideGroup()
     jump _26_0_1_1_0_1_REUNION
 
@@ -887,49 +889,54 @@ label _26_0_1_1_0_1_REUNION:
     julian fatigue "Oui. Pardon."
     "Personne ne sait comment commencer. Iris finit par prendre la parole."
     $ showGroup([("iris", "fatigue", 0.23), ("elen", "triste", 0.49), ("noam", "fatigue", 0.74)])
-    iris raison "Je vais le dire clairement. Pour l'instant, je ne peux pas déterminer comment Tomas est mort."
-    elen inquiet "Même avec le flacon qu'on a trouvé ?"
-    iris raison "Ça ne prouve rien. Je veux continuer les analyses. S'il vous plaît, arrêtez de parler comme si on avait déjà une réponse."
-    elen triste "D'accord."
-    elen inquiet "Et ma chambre ? Au début, je me suis demandé si quelqu'un m'en voulait à moi."
-    noam raison "La porte était verrouillée. On a pas de preuve que quelqu'un soit entré."
-    iris fatigue "Et on n'a pas de preuve qu'il y ait eu une agression. Je veux vraiment que vous gardiez ça en tête."
-    elen triste "Oui. Je sais."
+    iris raison "J'ai pas grand-chose à vous dire. Je cherche toujours ce qui a causé sa mort."
+    elen inquiet "Et les médicaments ?"
+    iris raison "Je les ai trouvés dans sa chambre. C'est tout ce que je sais pour l'instant."
+    elen triste "C'était ma chambre..."
+    iris fatigue "Je sais, Elen. Pardon."
+    elen inquiet "Je veux dire... et si quelqu'un venait pour moi ? Si c'était pas Tomas qui devait dormir là ?"
+    noam raison "On sait pas si quelqu'un est entré. Elias a dû forcer le verrou."
+    elen triste "Mais alors comment il est mort ?"
+    "Iris reste silencieuse. Elle serre un instant les mâchoires."
+    iris fatigue "J'aimerais vraiment pouvoir te répondre. Là, je peux pas."
+    "Elen baisse la tête. Personne ne lui demande d'arrêter de pleurer."
     $ showGroup([("julian", "fatigue", 0.20), ("ryn", "agace", 0.45), ("noam", "neutre", 0.72)])
-    ryn reflexion "Mais hier, il allait vraiment mal. On l'a tous vu."
-    julian fatigue "Oui. Et je lui ai crié dessus."
-    ryn agace "Moi aussi, j'étais en colère. Ça veut pas dire qu'on l'a tué !"
-    noam raison "Personne ne dit ça. On essaie juste de comprendre."
-    julian triste "J'arrête pas de penser à la dernière fois que je lui ai parlé. Je lui ai même pas demandé comment il allait."
-    ryn fatigue "Ouais..."
+    ryn reflexion "Hier, il était déjà pas bien. Vous l'avez tous vu."
+    julian fatigue "Ouais. Y avait pas grand monde qui l'aidait, hein."
+    ryn agace "Tu vas pas commencer à me faire la morale ! T'as passé la soirée à lui hurler dessus !"
+    julian colere "Et toi, tu faisais quoi ? Tu lui apportais des fleurs ?"
+    noam colere "Vous pouvez arrêter deux secondes ?!"
+    "Julian se redresse. Ryn serre les poings, mais aucun des deux ne bouge."
+    julian triste "Je lui ai dit qu'il gâchait tout pour nous. Je voulais pas que ça se termine comme ça."
+    ryn fatigue "Personne voulait ça. Putain."
     if "julian" in investigation_pa_completed or "ryn" in investigation_pa_completed:
-        noam neutre "J'ai parlé à certains d'entre vous. Vos déclarations ne suffisent pas à construire une chronologie certaine."
-        julian reflexion "C'est-à-dire ?"
-        noam raison "Ça veut dire qu'on ne sait pas. Pas que quelqu'un ment."
+        noam neutre "J'ai parlé à deux ou trois personnes. On se rappelle même pas tous des mêmes heures."
+        julian reflexion "Donc tu penses que quelqu'un ment ?"
+        noam raison "Non, Julian. Je dis juste que j'ai rien pu vérifier."
     $ showGroup([("sael", "neutre", 0.21), ("nyra", "neutre", 0.47), ("noam", "neutre", 0.73)])
-    sael raison "La mort de Tomas n'est pas une raison pour nous accuser mutuellement au hasard."
-    nyra neutre "On devrait attendre le rapport d'Iris et garder les éléments qu'on a trouvés. Rien de plus pour ce soir."
-    noam raison "Je suis d'accord."
+    sael raison "Hé. On a déjà passé assez de temps à s'en vouloir ces derniers jours. Vous allez pas recommencer ici."
+    nyra neutre "Iris a dit qu'elle cherchait encore. On peut peut-être lui laisser une nuit avant de tout retourner."
+    noam raison "Ouais. Pour ce soir, on arrête."
     if "flacon" in investigation_pa_completed:
-        noam neutre "Le flacon ne démontre pas le suicide."
+        noam neutre "Et le flacon, on sait même pas à qui étaient les comprimés."
     if "kael" in investigation_pa_completed:
-        noam raison "La porte était verrouillée. Mais ça n'explique pas tout."
+        noam raison "Même avec ce verrou, je comprends pas ce qu'il s'est passé."
     if "elen" in investigation_pa_completed:
-        noam raison "Et Tomas avait échangé sa chambre pour être plus tranquille. Elen ne pouvait pas prévoir ce qui allait se passer."
+        noam raison "Tomas avait juste voulu dormir ailleurs. C'est tout ce qu'Elen lui avait proposé."
     $ showGroup([("julian", "reflexion", 0.22), ("elen", "triste", 0.48), ("noam", "fatigue", 0.73)])
-    julian reflexion "Il reste le vote de demain."
-    elen colere "Non. On va pas faire ça."
-    julian inquiet "Je sais, mais Kami attend une décision. Et si on ne dit rien..."
-    elen colere "Tomas est mort ce matin, Julian ! Tu veux qu'on s'assoit là demain comme si on avait juste perdu une chaise ?!"
-    julian fatigue "Non ! Je veux juste pas qu'elle nous punisse encore pour avoir laissé tomber un vote !"
-    noam raison "Alors on lui dit ensemble. Pas de vote demain."
-    elen triste "Moi, je serai pas là."
+    julian reflexion "Il y a aussi le vote de demain."
+    elen colere "Quoi ?"
+    julian inquiet "J'ai pas dit qu'on devait le faire ! Mais Kami va forcément en parler. Vous le savez."
+    elen colere "Tomas vient de mourir, Julian. Tu peux pas nous laisser cinq minutes ?"
+    julian fatigue "Je sais ! Mais si on fait rien et qu'elle nous tombe dessus, c'est encore nous qui allons payer !"
+    noam raison "Alors on lui répondra tous. Ensemble. Mais on va pas s'asseoir demain pour voter comme si de rien n'était."
+    elen triste "Moi, de toute façon, je pourrai pas."
     $ showGroup([("lysa", "neutre", 0.21), ("mara", "fatigue", 0.47), ("noam", "neutre", 0.73)])
     lysa neutre "Moi non plus."
-    mara fatigue "Pareil. Franchement, qu'elle se débrouille."
-    "Les autres acquiescent un à un. Julian finit par baisser les yeux."
+    mara fatigue "Pareil. Elle nous gonfle déjà assez comme ça."
+    "Un à un, les autres finissent par approuver. Julian regarde les places vides, puis pose les mains sur la table."
     $ showGroup([("julian", "fatigue", 0.21), ("elen", "triste", 0.47), ("noam", "neutre", 0.72)])
-    julian fatigue "Bon. D'accord. Mais on assume tous, alors."
+    julian fatigue "OK. Mais je veux pas qu'on laisse quelqu'un assumer ça tout seul."
     $ j26_alt_boycott = True
     $ hideGroup()
     play sound sfx_announce
@@ -950,9 +957,10 @@ label _26_0_1_1_0_1_REUNION:
     stop music fadeout 0.8
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([("elen", "triste", 0.26), ("iris", "fatigue", 0.50), ("noam", "fatigue", 0.75)])
-    elen colere "Elle me dégoûte."
-    iris agace "Ouais. Moi aussi."
-    noam fatigue "On rentre."
+    elen colere "Je peux plus l'entendre."
+    iris agace "Ouais. Moi non plus."
+    "Personne ne se lève tout de suite. Je regarde encore la place de Tomas, puis je pousse ma chaise."
+    noam fatigue "Venez. On s'en va."
     $ hideGroup()
     jump _26_0_1_1_0_1_NUIT
 
@@ -967,7 +975,7 @@ label _26_0_1_1_0_1_NUIT:
     pause 0.3
     "Je retrouve dans les anciens messages une conversation où il me demandait si je pouvais vérifier une référence sur sa tablette. J'avais répondu « après le dîner ». Je ne l'ai jamais fait."
     noam fatigue "Merde, Tomas..."
-    "Je regarde les arguments obtenus aujourd'hui. Aucun ne dit avec certitude ce qui lui est arrivé."
+    "J'ouvre le dossier d'enquête. J'y ai rangé des heures, des noms, des photos. Je reste longtemps sur la première, celle du lit, avant de faire défiler les autres."
     if "flacon" in investigation_pa_completed:
         "Je revois le flacon de somnifères. Je sais même pas s'il est lié à sa mort."
     if "elen" in investigation_pa_completed:
@@ -979,8 +987,9 @@ label _26_0_1_1_0_1_NUIT:
     else:
         "Hier, il cherchait toujours des réponses sur Keyper, cette station dont il m'avait parlé."
     "Il y avait aussi ce petit appareil qu'il avait reposé dans la salle d'observation. J'ai à peine regardé."
-    "Demain, je voudrais retourner dans sa chambre. Juste voir ce qu'il a laissé. Peut-être que ça m'aidera à comprendre ce qu'il essayait de faire."
-    "J'éteins l'écran."
+    "Demain, j'irai dans sa chambre. Pas pour jouer au détective. Juste parce que j'ai besoin de voir ce qu'il avait commencé, et ce qu'il comptait faire après."
+    "Je ferme le dossier. Une seconde plus tard, je le rouvre, comme si quelque chose allait apparaître."
+    "Rien. J'éteins enfin l'écran."
     stop music fadeout 1.0
     call end_day("27", sleeping=True) from _call_j26_alt_end_day_27
     jump _27_0_1_1_0_1_REVEIL
