@@ -3724,3 +3724,75 @@ translate english 6209f352:
     # noam peur "Parce qu'il y a quelqu'un ici."
     noam peur "Because someone's in here."
 
+
+# game/scenario/17_0_1_1_0.rpy:91
+translate english 5e61f539:
+
+    # sael "Oui."
+    sael "Yes."
+
+# game/scenario/17_0_1_1_0.rpy:142
+translate english 39accab6:
+
+    # noam hesitation "Oui."
+    noam hesitation "Yes."
+
+# game/scenario/17_0_1_1_0.rpy:357
+translate english ed2f68a9:
+
+    # kami "Non."
+    kami "No."
+
+# game/scenario/17_0_1_1_0.rpy:634
+translate english ba2077b9:
+
+    # mara "Je sais."
+    mara "I know."
+
+# game/scenario/17_0_1_1_0.rpy:801
+translate english d7f951d6:
+
+    # noam "Mara..."
+    noam "Mara..."
+
+# game/scenario/17_0_1_1_0.rpy:837
+translate english 06e71761:
+
+    # noam "Pourquoi ?"
+    noam "Why?"
+
+# game/scenario/17_0_1_1_0.rpy:865
+translate english 06e71761_1:
+
+    # noam "Pourquoi ?"
+    noam "Why?"
+
+# game/scenario/17_0_1_1_0.rpy:889
+translate english 5d33d7c9:
+
+    # noam "On y va."
+    noam "Let's go."
+
+# game/scenario/17_0_1_1_0.rpy:956
+translate english 0c521561:
+
+    # noam "Merci."
+    noam "Thanks."
+
+# game/scenario/17_0_1_1_0.rpy:1000
+translate english 290dd969:
+
+    # noam "Non."
+    noam "No."
+
+# game/scenario/17_0_1_1_0.rpy:1018
+translate english 9236b12f:
+
+    # noam "Moi aussi."
+    noam "Me too."
+
+# game/scenario/17_0_1_1_0.rpy:1076
+translate english 8c2d05b1:
+
+    # noam inquiet "Non..."
+    noam inquiet "No..."
