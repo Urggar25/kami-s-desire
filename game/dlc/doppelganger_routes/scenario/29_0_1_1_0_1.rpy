@@ -143,6 +143,7 @@ init 10 python:
       }
     }
     INVESTIGATION_ENTRIES.update({
+        "j29_photo_signal": {"category": "preuves", "title": "PHOTO DU RELEVÉ DE SIGNAL", "desc": "Photographie prise lors de la consultation des journaux d'observation du jour 25 ; l'émission reste non identifiée.", "day": "J29", "origin": "OBSERVATION", "status": "PHOTOGRAPHIE", "manual_only": True},
         "j29_core_rapport": {"category": "hypotheses", "title": "HOMICIDE PLUS PROBABLE", "desc": "Les dernières observations d'Iris renforcent l'hypothèse d'une intoxication par inhalation, sans certitude toxicologique.", "day": "J29", "origin": "INFIRMERIE", "status": "CONFIRMÉ", "manual_only": True},
         "j29_core_badge": {"category": "preuves", "title": "ACCÈS À 02 H 17", "desc": "Le badge associé à Nyra a ouvert un accès technique la nuit de la mort de Tomas. Cela n'identifie pas le porteur.", "day": "J29", "origin": "MAINTENANCE", "status": "CONFIRMÉ", "manual_only": True},
         "j29_core_signal": {"category": "anomalies", "title": "ÉMISSION FAIBLE NON IDENTIFIÉE", "desc": "Le jour 25, une émission faible apparaît dans les relevés d'observation, sans destination ni émetteur identifié.", "day": "J29", "origin": "OBSERVATION", "status": "CONFIRMÉ", "manual_only": True},
@@ -385,6 +386,9 @@ label _29_0_1_1_0_1_OBSERVATION:
     lysa neutre "Voilà."
     lysa neutre "Oui, bon. Tu m'as compris."
     "Je photographie le relevé. Je n'ai rien permettant de confirmer qu'il s'agissait d'une émission Yanma, encore moins de savoir qui aurait été à l'autre bout."
+    $ hideGroup()
+    call investigation_take_manual_photo("j29_photo_signal", "bg_observation", (0.53, 0.55), 2.2) from _call_j29_signal_photo
+    $ showGroup([("lysa", "neutre", 0.39), ("noam", "reflexion", 0.68)])
     $ j29a_signal = True
     noam inquiet "Je voudrais demander à Nyra pour son badge."
     lysa raison "On le fait devant les autres. Sans lui sauter à la gorge."
