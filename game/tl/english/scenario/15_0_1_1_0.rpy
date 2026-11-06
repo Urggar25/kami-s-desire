@@ -4628,7 +4628,7 @@ translate english 6dae9f60:
 translate english 226672d0:
 
     # noam fatigue "Si toi tu peux apparaître sur une vidéo sans te souvenir de ce que tu fais... alors je sais même plus ce que je peux considérer comme fiable."
-    noam fatigue "If you can appear on video doing something you don't remember, then..."
+    noam fatigue "If you can appear on video doing something you don't remember, then I don't know what I can trust anymore."
 
 # game/scenario/15_0_1_1_0.rpy:532
 translate english 8943c3d4:
@@ -4652,7 +4652,7 @@ translate english 71087aba:
 translate english 735dcab6:
 
     # kael calme "On vérifie le fichier avant de conclure quoi que ce soit."
-    kael calme "Right. No wild theories until we've ruled out the obvious."
+    kael calme "Let's check the file before jumping to conclusions."
 
 # game/scenario/15_0_1_1_0.rpy:538
 translate english 5e54fe1f:
@@ -4706,7 +4706,7 @@ translate english 5614a70a:
 translate english ba9a6885:
 
     # kael reflechit "Je dis seulement que je ne vois pas de trace de montage. C’est pas exactement la même chose."
-    kael reflechit "I'm only saying I can't see any sign it was edited. That's not the same thing."
+    kael reflechit "I'm only saying I can't see any sign of editing. That's not quite the same thing."
 
 # game/scenario/15_0_1_1_0.rpy:565
 translate english b878e636:
@@ -4838,7 +4838,7 @@ translate english 0a6f282b:
 translate english dd45281a:
 
     # noam fatigue "Je pourrais te dire que c’était quelqu’un, sauf que je serais incapable de te dire qui. Et je pourrais te dire que j’ai halluciné, sauf que j’en suis pas sûr non plus."
-    noam fatigue "I could tell you it was a person, but I couldn't tell you who. Or I could be wrong entirely."
+    noam fatigue "I could say it was a person, but I couldn't tell you who. Or I could be wrong altogether."
 
 # game/scenario/15_0_1_1_0.rpy:603
 translate english 58a4c389:
@@ -4868,7 +4868,7 @@ translate english 21bf9229:
 translate english 35d0be83:
 
     # noam raison "On va la retrouver. Mais pars pas seul en courant sans réfléchir."
-    noam raison "We'll find it. But don't go running off alone without thinking."
+    noam raison "We'll find it. But don't go running off on your own without thinking."
 
 # game/scenario/15_0_1_1_0.rpy:610
 translate english bbc1e2f1:
