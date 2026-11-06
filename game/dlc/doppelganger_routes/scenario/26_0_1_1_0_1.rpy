@@ -137,7 +137,6 @@ label _26_0_1_1_0_1_DECOUVERTE:
     noam inquiet "Tomas ?"
     "Je lui touche l'épaule. Son t-shirt est trempé et ses cheveux collent à son front."
     noam peur "Hé... c'est pas drôle. Tomas ?"
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "inquiet", 0.414), ("sael", "inquiet", 0.586), ("noam", "inquiet", 0.758), ("lysa", "inquiet", 0.930)])
     elen peur "Pourquoi il a pas enlevé sa veste ? Tomas, t'as trop chaud ?"
     noam panique "Réveille-toi !"
     sael raison "Noam. Écarte-toi."
@@ -180,7 +179,6 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elen colere "Mais essayez encore ! Vous avez essayé quoi, là ?!"
     sael inquiet "On a vérifié, Elen. Je suis désolée."
     "Elen avance vers le lit comme pour refaire elle-même ce que Sael vient de faire, mais Lysa la rattrape avant qu'elle trébuche."
-    $ showGroup([("kael", "reflexion", 0.06), ("elias", "fatigue", 0.207), ("elen", "triste", 0.353), ("sael", "triste", 0.500), ("noam", "vide", 0.647), ("lysa", "inquiet", 0.793), ("nyra", "inquiet", 0.94)])
     elen triste "Il a même pas défait le lit..."
     elen peur "Je lui avais dit qu'il pouvait prendre des affaires dans l'armoire s'il voulait."
     "Elle regarde Tomas, puis sa propre main, qui tient encore la carte d'accès de sa chambre."
@@ -519,10 +517,10 @@ label _26_0_1_1_0_1_ENQUETE:
     noam neutre "OK."
     "Je cherche sur la tablette les dernières notes de Tomas. Il y a tellement de pistes que je pourrais y passer la nuit."
     nyra raison "Tu vas t'épuiser si tu veux tout faire aujourd'hui."
-    lysa reflexion "Cinq trucs. Tu choisis cinq trucs à vérifier, après tu t'arrêtes. Sinon on te reverra demain matin avec des cernes jusqu'au menton."
+    lysa reflexion "Commence par ce qui te semble important. On n'aura pas le temps de retourner toute la station aujourd'hui."
     noam sourire "Tu comptes ça comme un conseil médical ?"
     lysa fatigue "Comme une menace."
-    "Je bloque cinq créneaux sur la tablette. Au moins, je saurai quand m'arrêter, même si je ne trouve rien."
+    "Je regarde l'heure sur ma tablette. Je vais devoir choisir où commencer si je veux encore voir les autres ce soir."
     $ investigation_pa_begin(26, 5)
     $ investigation_unlocked = True
     $ investigation_add("j26_core_mort", notify=False)
