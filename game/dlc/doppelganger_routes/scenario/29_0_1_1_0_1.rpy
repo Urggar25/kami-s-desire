@@ -767,9 +767,7 @@ label _29_0_1_1_0_1_ACCUSATION:
 label _29_0_1_1_0_1_FAUSSE_ACCUSATION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
-    if j29a_accuse == "julian":
-    elif j29a_accuse == "ryn":
-    else:
+    $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.200), ("noam", "neutre", 0.320), ("elen", "triste", 0.440), ("nyra", "neutre", 0.560), ("lysa", "neutre", 0.680), ("ryn", "agace", 0.800), ("sael", "neutre", 0.920)])
     if j29a_accuse == "julian":
         noam raison "Julian. Tu lui en voulais, et tu l'as menacé devant tout le monde."
         julian colere "Je l'ai engueulé, oui ! Mais ça fait trois jours que je vous dis que je voulais pas sa mort !"
