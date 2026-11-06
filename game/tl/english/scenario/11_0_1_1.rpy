@@ -2010,3 +2010,9 @@ translate english strings:
     old "Garder ça pour moi pour l’instant"
     new "Keep it to myself for now"
 
+
+# Navigation string localized for day 11
+translate english strings:
+
+    old "Rejoindre la salle d'Observation"
+    new "Go to the Observation Room"
