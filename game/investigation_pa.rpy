@@ -271,3 +271,62 @@ label j26_photograph(eid, source, center, zoom=2.2):
     $ investigation_add(eid, notify=False)
     window show
     return
+
+# Compatibilité avec les sauvegardes et les rechargements Ren'Py faits
+# pendant l'ancienne caméra J26. Les objets picklés y référencent cette classe.
+# Les nouvelles photographies utilisent exclusivement _J25View/_j25_photo_screen.
+init python:
+    import math as _j26_math
+
+    def _j26_limit_center(value, zoom):
+        margin = 0.5 / zoom
+        return max(margin, min(1.0 - margin, value))
+
+    class _J26PhotoView(renpy.Displayable):
+        """Caméra cadrant l'image entière, puis zoom progressif vers un indice."""
+        def __init__(self, source, **kwargs):
+            super(_J26PhotoView, self).__init__(**kwargs)
+            self.child = Transform(source, xysize=(1920, 1080))
+            self.zoom = 1.0
+            self.center = (0.5, 0.5)
+            self.motion = None
+            self.draw_st = 0.0
+
+        def render(self, width, height, st, at):
+            self.draw_st = st
+            shake_x = shake_y = 0.0
+            if self.motion is not None:
+                start, z0, c0, z1, c1 = self.motion
+                elapsed = max(0.0, st - start)
+                lead = 0.12
+                if elapsed < lead:
+                    shake_x = _j26_math.sin(elapsed * 150) * 4.0 * (1 - elapsed / lead)
+                    shake_y = _j26_math.sin(elapsed * 125) * 2.5 * (1 - elapsed / lead)
+                t = max(0.0, min(1.0, (elapsed - lead) / 0.58))
+                eased = t * t * (3 - 2 * t)
+                self.zoom = z0 + (z1 - z0) * eased
+                self.center = tuple(a + (b - a) * eased for a, b in zip(c0, c1))
+                if t < 1.0:
+                    renpy.redraw(self, 0)
+                else:
+                    self.motion = None
+            cx = _j26_limit_center(self.center[0], self.zoom)
+            cy = _j26_limit_center(self.center[1], self.zoom)
+            scaled = renpy.render(Transform(self.child, zoom=self.zoom), 1920, 1080, st, at)
+            result = renpy.Render(1920, 1080)
+            result.blit(scaled, (int(960 - cx * 1920 * self.zoom + shake_x),
+                                 int(540 - cy * 1080 * self.zoom + shake_y)))
+            return result
+
+        def visit(self):
+            return [self.child]
+
+
+# Anciennes sauvegardes : la screen appelée par un rollback/hot reload peut
+# encore être active. La rediriger vers le minijeu J25, sans forcer un nouveau départ.
+screen j26_photo_manual(eid, view, center, zoom):
+    default restored_view = _J25View(
+        zoom=getattr(view, "zoom", zoom),
+        center=getattr(view, "center", center),
+        source=getattr(view, "child", "j26_elen_corps"))
+    use _j25_photo_screen(restored_view, evidence_id=eid)
