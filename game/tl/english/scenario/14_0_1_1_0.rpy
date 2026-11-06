@@ -2200,7 +2200,7 @@ translate english e90ea067:
 translate english e5dbfa3b:
 
     # think "Je peux encore faire demi-tour."
-    think ""
+    think "I can still turn back."
 
 # game/scenario/14_0_1_1_0.rpy:485
 translate english 78eb9349_4:
@@ -2218,13 +2218,13 @@ translate english b0051e3f:
 translate english bc085e32:
 
     # "Je toque."
-    ""
+    "I knock."
 
 # game/scenario/14_0_1_1_0.rpy:496
 translate english b2ff0a6e:
 
     # "La porte s'ouvre presque immédiatement."
-    ""
+    "The door opens almost immediately."
 
 # game/scenario/14_0_1_1_0.rpy:503
 translate english 8c9426bf_1:
@@ -2332,13 +2332,13 @@ translate english deb860e5:
 translate english c51518a1:
 
     # "Quelque chose me frappe de côté."
-    ""
+    "Something slams into me from the side."
 
 # game/scenario/14_0_1_1_0.rpy:556
 translate english 853438ee:
 
     # "Et me dire d'un coup dans la chambre"
-    ""
+    "And shoves me straight into the room."
 
 # game/scenario/14_0_1_1_0.rpy:564
 translate english a43132d8:
@@ -2362,7 +2362,7 @@ translate english fa76c375:
 translate english c95347cb:
 
     # "Son avant-bras écrase ma gorge contre le mur."
-    ""
+    "His forearm pins my throat against the wall."
 
 # game/scenario/14_0_1_1_0.rpy:572
 translate english e37f1428:
@@ -2440,13 +2440,13 @@ translate english b49e47b6:
 translate english 848ac2d4:
 
     # "Ryn desserre à peine."
-    ""
+    "Ryn barely eases up."
 
 # game/scenario/14_0_1_1_0.rpy:595
 translate english befe01ac:
 
     # "Juste assez pour que l'air revienne."
-    ""
+    "Just enough to let me breathe."
 
 # game/scenario/14_0_1_1_0.rpy:597
 translate english da7494ce:
@@ -2536,7 +2536,7 @@ translate english 7527786a:
 translate english 56efe8c3:
 
     # "Le néon au-dessus de nous grésille plus fort."
-    ""
+    "The fluorescent light above us buzzes louder."
 
 # game/scenario/14_0_1_1_0.rpy:625
 translate english 514c6de7:
@@ -2722,7 +2722,7 @@ translate english 9c6ffefa:
 translate english 252d8d62:
 
     # "La chambre redevient parfaitement silencieuse."
-    ""
+    "The room falls utterly silent again."
 
 # game/scenario/14_0_1_1_0.rpy:700
 translate english 8c2d05b1:
@@ -2776,13 +2776,13 @@ translate english b2dca717:
 translate english 41379c34:
 
     # "Sael sort une petite fiole de sel."
-    ""
+    "Sael pulls out a small vial of salt."
 
 # game/scenario/14_0_1_1_0.rpy:715
 translate english f692a2dc:
 
     # "Le verre tremble légèrement entre ses doigts."
-    ""
+    "The glass trembles slightly between her fingers."
 
 # game/scenario/14_0_1_1_0.rpy:717
 translate english dcb724a6:
@@ -2812,7 +2812,7 @@ translate english e203f4c8:
 translate english a0d99feb:
 
     # "Elle verse une ligne blanche au sol."
-    ""
+    "She pours a white line across the floor."
 
 # game/scenario/14_0_1_1_0.rpy:727
 translate english 54f6c196:
@@ -2998,7 +2998,7 @@ translate english bee71fbe:
 translate english fef56ac2:
 
     # "Le grésillement enfle."
-    ""
+    "The buzzing swells."
 
 # game/scenario/14_0_1_1_0.rpy:785
 translate english f9502386:
@@ -3046,13 +3046,13 @@ translate english 5cd19432:
 translate english 9c39efa0:
 
     # "Le néon claque."
-    ""
+    "The light pops."
 
 # game/scenario/14_0_1_1_0.rpy:802
 translate english 91286806:
 
     # "Un instant, le couloir devient blanc."
-    ""
+    "For a moment, the corridor turns white."
 
 # game/scenario/14_0_1_1_0.rpy:804
 translate english 2b22d0f9:
@@ -3166,7 +3166,7 @@ translate english 0b98eafa:
 translate english 18103b28:
 
     # "Ryn serre un peu plus sa main autour de mon cou."
-    ""
+    "Ryn tightens his grip on my throat."
 
 # game/scenario/14_0_1_1_0.rpy:839
 translate english 4fb95005:
@@ -3202,25 +3202,25 @@ translate english 80e04d9f:
 translate english dea56df7:
 
     # ryn "Hein ...?"
-    ryn ""
+    ryn "Huh...?"
 
 # game/scenario/14_0_1_1_0.rpy:852
 translate english 7eb277a8:
 
     # "Ryn tourne la tête vers elle."
-    ""
+    "Ryn turns his head toward her."
 
 # game/scenario/14_0_1_1_0.rpy:853
 translate english 514bbdc7:
 
     # "Son bras se relâche d'un centimètre."
-    ""
+    "His arm loosens an inch."
 
 # game/scenario/14_0_1_1_0.rpy:855
 translate english e2eba35e:
 
     # "C'est suffisant."
-    ""
+    "That's enough."
 
 # game/scenario/14_0_1_1_0.rpy:857
 translate english 33db3231:
@@ -3232,7 +3232,7 @@ translate english 33db3231:
 translate english 3b6d8220:
 
     # "Je lui enfonce le genou dans le ventre."
-    ""
+    "I drive my knee into his stomach."
 
 # game/scenario/14_0_1_1_0.rpy:864
 translate english 31239e79:
@@ -3256,13 +3256,13 @@ translate english ad394c67:
 translate english 9e6101c9:
 
     # "Je me dégage."
-    ""
+    "I break free."
 
 # game/scenario/14_0_1_1_0.rpy:871
 translate english e16a5a2c:
 
     # "Je cours."
-    ""
+    "I run."
 
 # game/scenario/14_0_1_1_0.rpy:875
 translate english 0383ac51:
@@ -3286,13 +3286,13 @@ translate english 0b610598_1:
 translate english 1082c811:
 
     # "Le couloir se tord une seconde."
-    ""
+    "The corridor warps for a second."
 
 # game/scenario/14_0_1_1_0.rpy:884
 translate english 1792d613:
 
     # "Ou peut-être que c'est ma vue."
-    ""
+    "Or maybe it's my vision."
 
 # game/scenario/14_0_1_1_0.rpy:886
 translate english 10359d28:
@@ -3322,7 +3322,7 @@ translate english 3b93f5fe:
 translate english 81737d63:
 
     # "Je fonce vers ma chambre."
-    ""
+    "I race toward my room."
 
 # game/scenario/14_0_1_1_0.rpy:900
 translate english aa0cb381:
@@ -3334,7 +3334,7 @@ translate english aa0cb381:
 translate english 9bf65fa0:
 
     # "Je claque la porte."
-    ""
+    "I slam the door shut."
 
 # game/scenario/14_0_1_1_0.rpy:907
 translate english d8b50f03:
@@ -3358,7 +3358,7 @@ translate english bc2ac5e5:
 translate english 101e1073:
 
     # "Je pousse les meubles contre la porte."
-    ""
+    "I shove furniture up against it."
 
 # game/scenario/14_0_1_1_0.rpy:915
 translate english e25a6206:
@@ -3424,7 +3424,7 @@ translate english 88f9a08b:
 translate english 16b8cb94:
 
     # "Silence."
-    ""
+    "Silence."
 
 # game/scenario/14_0_1_1_0.rpy:939
 translate english 83fd0f06:
@@ -3466,331 +3466,331 @@ translate english c8709697:
 translate english 70213f5c:
 
     # "Plus rien."
-    ""
+    "Nothing."
 
 # game/scenario/14_0_1_1_0.rpy:973
 translate english 78f645b2:
 
     # "Je glisse contre le mur."
-    ""
+    "I slide down the wall."
 
 # game/scenario/14_0_1_1_0.rpy:974
 translate english 887fec61:
 
     # "Mes jambes ne me portent plus."
-    ""
+    "My legs won't hold me up anymore."
 
 # game/scenario/14_0_1_1_0.rpy:976
 translate english 86341a1d:
 
     # think "Ils sont devenus fous."
-    think ""
+    think "They've lost their minds."
 
 # game/scenario/14_0_1_1_0.rpy:977
 translate english 5fe43f2f:
 
     # think "Ils voulaient vraiment m'ouvrir."
-    think ""
+    think "They really wanted to cut me open."
 
 # game/scenario/14_0_1_1_0.rpy:978
 translate english ff752c33:
 
     # think "Ils pensent que quelque chose porte mon visage."
-    think ""
+    think "They think something else is wearing my face."
 
 # game/scenario/14_0_1_1_0.rpy:980
 translate english f626847d:
 
     # "Je plaque mes mains sur mes oreilles."
-    ""
+    "I clamp my hands over my ears."
 
 # game/scenario/14_0_1_1_0.rpy:982
 translate english 389b86ed:
 
     # think "Je ne peux plus faire confiance à personne."
-    think ""
+    think "I can't trust anyone anymore."
 
 # game/scenario/14_0_1_1_0.rpy:983
 translate english 4857c3b6:
 
     # think "Plus à personne."
-    think ""
+    think "No one."
 
 # game/scenario/14_0_1_1_0.rpy:996
 translate english 90bc14d4:
 
     # "Je suis allongé sur mon lit, les yeux fixés au plafond, quand ma tablette vibre doucement."
-    ""
+    "I'm lying on my bed staring at the ceiling when my tablet vibrates softly."
 
 # game/scenario/14_0_1_1_0.rpy:998
 translate english 4692e2e1:
 
     # "Un message de Kael."
-    ""
+    "A message from Kael."
 
 # game/scenario/14_0_1_1_0.rpy:1000
 translate english a367038e:
 
     # kael "Noam, tu es là ?"
-    kael ""
+    kael "Noam, you there?"
 
 # game/scenario/14_0_1_1_0.rpy:1002
 translate english 0d8c07d4:
 
     # noam "Oui. Qu’est-ce qu’il y a ?"
-    noam ""
+    noam "Yeah. What's up?"
 
 # game/scenario/14_0_1_1_0.rpy:1004
 translate english d72b8f05:
 
     # kael "Je viens de me faire engueuler par Ryn dans le couloir. Encore."
-    kael ""
+    kael "Ryn just chewed me out in the corridor. Again."
 
 # game/scenario/14_0_1_1_0.rpy:1005
 translate english eb1672a6:
 
     # kael "Il m’a dit que c’était à cause de moi qu’on n’avait plus de brouilleurs."
-    kael ""
+    kael "He said it's my fault we don't have jammers anymore."
 
 # game/scenario/14_0_1_1_0.rpy:1006
 translate english e847cf9e:
 
     # kael "Que j’avais tout fait foirer en votant contre."
-    kael ""
+    kael "That I screwed everything up by voting against them."
 
 # game/scenario/14_0_1_1_0.rpy:1008
 translate english 41243eb5:
 
     # noam "Ils me disent la même chose."
-    noam ""
+    noam "They're saying the same thing to me."
 
 # game/scenario/14_0_1_1_0.rpy:1010
 translate english 0a28b13c:
 
     # kael "Ouais… on est les deux parias maintenant."
-    kael ""
+    kael "Yeah... guess we're the two outcasts now."
 
 # game/scenario/14_0_1_1_0.rpy:1011
 translate english 6d0961d3:
 
     # kael "Toi parce que tu as pété un câble au débat."
-    kael ""
+    kael "You because you lost it during the debate."
 
 # game/scenario/14_0_1_1_0.rpy:1012
 translate english d416022a:
 
     # kael "Moi parce que j’ai voté contre les brouilleurs."
-    kael ""
+    kael "Me because I voted against the jammers."
 
 # game/scenario/14_0_1_1_0.rpy:1014
 translate english 85b3ceb1:
 
     # noam "C’était bien toi qui as voté contre ?"
-    noam ""
+    noam "So you really voted against them?"
 
 # game/scenario/14_0_1_1_0.rpy:1016
 translate english dedbaaf8:
 
     # kael "Oui. C’était moi."
-    kael ""
+    kael "Yeah. It was me."
 
 # game/scenario/14_0_1_1_0.rpy:1017
 translate english 62b5500c:
 
     # kael "Je ne pouvais pas faire autrement. Je veux voir les images de ma chambre."
-    kael ""
+    kael "I couldn't do anything else. I need to see the footage from my room."
 
 # game/scenario/14_0_1_1_0.rpy:1018
 translate english 205fd2c8:
 
     # kael "Je veux savoir qui a volé la photo de Léa."
-    kael ""
+    kael "I need to know who stole Léa's photo."
 
 # game/scenario/14_0_1_1_0.rpy:1020
 translate english c11864a0:
 
     # noam "Je comprends."
-    noam ""
+    noam "I understand."
 
 # game/scenario/14_0_1_1_0.rpy:1022
 translate english ad946d59:
 
     # kael "Demain, pour le vote… je n’irai pas."
-    kael ""
+    kael "Tomorrow's vote... I'm not going."
 
 # game/scenario/14_0_1_1_0.rpy:1023
 translate english 27fff40a:
 
     # kael "Je profiterai que tout le monde soit à la Salle du Conclave pour aller consulter les archives tranquillement."
-    kael ""
+    kael "I'll use the time when everyone's in the Conclave chamber to look through the archives in peace."
 
 # game/scenario/14_0_1_1_0.rpy:1024
 translate english 8977f3e2:
 
     # kael "Les images de J8 seront enfin accessibles."
-    kael ""
+    kael "The footage from Day 8 should finally be available."
 
 # game/scenario/14_0_1_1_0.rpy:1026
 translate english 1d2c50dd:
 
     # noam "Tu vas y aller seul ?"
-    noam ""
+    noam "You're going alone?"
 
 # game/scenario/14_0_1_1_0.rpy:1028
 translate english f573bf51:
 
     # kael "Oui. Je ne veux mêler personne à ça."
-    kael ""
+    kael "Yeah. I don't want to drag anyone else into this."
 
 # game/scenario/14_0_1_1_0.rpy:1030
 translate english edd58536:
 
     # noam "Je viens avec toi."
-    noam ""
+    noam "I'm coming with you."
 
 # game/scenario/14_0_1_1_0.rpy:1032
 translate english 4f7a8395:
 
     # kael "Vraiment ? Même après ce qui s’est passé hier ?"
-    kael ""
+    kael "Really? Even after what happened yesterday?"
 
 # game/scenario/14_0_1_1_0.rpy:1034
 translate english fbd428f1:
 
     # noam "Surtout après ce qui s’est passé hier."
-    noam ""
+    noam "Especially after what happened yesterday."
 
 # game/scenario/14_0_1_1_0.rpy:1035
 translate english 0bec7133:
 
     # noam "Je n’ai plus envie de rester avec eux de toute façon."
-    noam ""
+    noam "I don't want to be around them anyway."
 
 # game/scenario/14_0_1_1_0.rpy:1037
 translate english 4d8d4709:
 
     # kael "D’accord. On se rejoint discrètement vers 13h30 près de la salle d’observation ?"
-    kael ""
+    kael "Okay. Meet discreetly near the observation room at around one thirty?"
 
 # game/scenario/14_0_1_1_0.rpy:1039
 translate english c15e8d57:
 
     # noam "Ça marche."
-    noam ""
+    noam "Works for me."
 
 # game/scenario/14_0_1_1_0.rpy:1041
 translate english 282de300:
 
     # "Un court silence sur la conversation."
-    ""
+    "There's a brief pause in the conversation."
 
 # game/scenario/14_0_1_1_0.rpy:1043
 translate english ed74721f:
 
     # kael "Au fait… j’ai entendu une rumeur complètement dingue."
-    kael ""
+    kael "By the way... I heard a completely insane rumor."
 
 # game/scenario/14_0_1_1_0.rpy:1044
 translate english 8bc7137a:
 
     # kael "Sael et Ryn t’auraient coincé pour te faire un exorcisme de force ?"
-    kael ""
+    kael "Did Sael and Ryn corner you and try to force an exorcism on you?"
 
 # game/scenario/14_0_1_1_0.rpy:1046
 translate english a86fd352:
 
     # noam "C’est pas une rumeur."
-    noam ""
+    noam "It's not a rumor."
 
 # game/scenario/14_0_1_1_0.rpy:1047
 translate english e1026dda:
 
     # noam "Ryn m’a plaqué contre un mur. Sael a sorti du sel et a commencé à psalmodier."
-    noam ""
+    noam "Ryn pinned me against a wall. Sael pulled out some salt and started chanting."
 
 # game/scenario/14_0_1_1_0.rpy:1048
 translate english 42a8bf43:
 
     # noam "J’ai cru qu’ils allaient vraiment me tuer."
-    noam ""
+    noam "I honestly thought they were going to kill me."
 
 # game/scenario/14_0_1_1_0.rpy:1050
 translate english 25107480:
 
     # kael "Putain…"
-    kael ""
+    kael "Fuck..."
 
 # game/scenario/14_0_1_1_0.rpy:1051
 translate english 702e14b0:
 
     # kael "Ils sont devenus complètement tarés."
-    kael ""
+    kael "They've completely lost it."
 
 # game/scenario/14_0_1_1_0.rpy:1052
 translate english fb50db85:
 
     # kael "Sael est persuadée que tu es possédé par un esprit vengeur ou quelque chose comme ça."
-    kael ""
+    kael "Sael's convinced you're possessed by a vengeful spirit or something."
 
 # game/scenario/14_0_1_1_0.rpy:1054
 translate english 889dc321:
 
     # noam "Ouais… elle m’a dit ça alors que Ryn me tenait encore contre le mur."
-    noam ""
+    noam "Yeah... she told me that while Ryn still had me pinned to the wall."
 
 # game/scenario/14_0_1_1_0.rpy:1056
 translate english 1c995a21:
 
     # kael "Et toi ? Tu y crois ?"
-    kael ""
+    kael "And you? Do you believe it?"
 
 # game/scenario/14_0_1_1_0.rpy:1058
 translate english a372ede0:
 
     # noam "Bien sûr que non."
-    noam ""
+    noam "Of course not."
 
 # game/scenario/14_0_1_1_0.rpy:1059
 translate english 888f195e:
 
     # noam "Mais le pire, c’est qu’ils y croient vraiment."
-    noam ""
+    noam "But the worst part is, they really do believe it."
 
 # game/scenario/14_0_1_1_0.rpy:1060
 translate english b0caff0a:
 
     # noam "Ils pensent que je suis dangereux."
-    noam ""
+    noam "They think I'm dangerous."
 
 # game/scenario/14_0_1_1_0.rpy:1062
 translate english d691a675:
 
     # kael "Bienvenue au club."
-    kael ""
+    kael "Welcome to the club."
 
 # game/scenario/14_0_1_1_0.rpy:1063
 translate english b04a0cfb:
 
     # kael "Moi ils pensent que je suis un égoïste qui a sacrifié l’intimité de tout le monde pour sa sœur."
-    kael ""
+    kael "They think I'm a selfish bastard who sacrificed everyone's privacy for my sister."
 
 # game/scenario/14_0_1_1_0.rpy:1065
 translate english 12fda5e1:
 
     # "Pour la première fois depuis longtemps, un petit sourire m’échappe."
-    ""
+    "For the first time in ages, I manage a small smile."
 
 # game/scenario/14_0_1_1_0.rpy:1067
 translate english 37df22c9:
 
     # noam "On fait la paire tous les deux."
-    noam ""
+    noam "Quite the pair, aren't we?"
 
 # game/scenario/14_0_1_1_0.rpy:1069
 translate english 0b8d7090:
 
     # kael "Ouais… les deux pestiférés du Conclave."
-    kael ""
+    kael "Yeah... the Conclave's resident lepers."
 
 # game/scenario/14_0_1_1_0.rpy:1070
 translate english a17ff164:
