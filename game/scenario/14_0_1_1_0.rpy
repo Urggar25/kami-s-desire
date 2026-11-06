@@ -332,7 +332,7 @@ label _14_0_1_1_0_CAFETERIA_REJET:
     call OFFER_DAILY_EXPLORATION(
         "_14_0_1_1_0_CHAMBRE_SAEL", 1,
         ["cafeteria", "conclave", "maintenance", "dortoir"],
-        "Rejoindre la chambre de Sael", "dortoir"
+        _("Rejoindre la chambre de Sael"), "dortoir"
     ) from _call_offer_exploration_j14
 
 
