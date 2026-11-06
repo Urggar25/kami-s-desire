@@ -626,6 +626,24 @@ label _27_0_1_1_0_1_REUNION:
     elen triste "Donc on sait toujours pas..."
     noam neutre "Pas encore."
     iris raison "Continuez à chercher. Moi je poursuis les examens. Mais arrêtez de tirer des conclusions avec une moitié d'indice."
+
+    if "camera" in investigation_pa_completed:
+        $ showGroup([("lysa", "neutre", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
+        noam reflexion "J'ai aussi regardé l'inventaire des appareils. Aucune référence ne correspond clairement à ce que j'ai vu."
+        lysa raison "Donc il a peut-être été rangé. Ou c'était pas un appareil officiel."
+        nyra neutre "On n'a pas de quoi trancher."
+    if "elias" in investigation_pa_completed:
+        $ showGroup([("julian", "fatigue", 0.22), ("noam", "neutre", 0.48), ("nyra", "neutre", 0.74)])
+        noam raison "Elias m'a dit qu'il déplaçait parfois du matériel. Mais il ne se souvient pas de celui-là."
+        julian reflexion "Donc il l'a peut-être juste rangé ?"
+        noam neutre "Peut-être."
+    if "quotas" in investigation_pa_completed:
+        $ showGroup([("elen", "triste", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
+        noam reflexion "J'ai cherché une définition des unités ÉID-0. Aucun des index ouverts ne répond clairement."
+        elen inquiet "Alors Tomas avait peut-être raison de s'inquiéter..."
+        nyra raison "Peut-être, oui. Ça reste à vérifier."
+    $ showGroup([("iris", "fatigue", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
+
     $ showGroup([("julian", "fatigue", 0.24), ("iris", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     julian fatigue "Je peux avoir une copie des documents ?"
     noam surpris "Oui. Bien sûr."
