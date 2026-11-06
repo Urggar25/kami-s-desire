@@ -60,37 +60,37 @@ translate english noam_garde_secret_71757f34:
 translate english dfad6380:
 
     # "Je sens une sensation humide et fraîche sur mon front."
-    ""
+    "I feel something cool and damp against my forehead."
 
 # game/scenario/11_0_1_1.rpy:12
 translate english d354a2fb:
 
     # "J’ouvre les yeux difficilement. La lumière me brûle un peu."
-    ""
+    "I struggle to open my eyes. The light stings."
 
 # game/scenario/11_0_1_1.rpy:16
 translate english 97c85605:
 
     # iris "Ah bah enfin ! Monsieur daigne se réveiller."
-    iris ""
+    iris "Well, look who's finally decided to wake up!"
 
 # game/scenario/11_0_1_1.rpy:17
 translate english 6907d8d1:
 
     # iris "T’as mis le temps, hein. J’ai cru que t’allais commencer ton hibernation."
-    iris ""
+    iris "Took you long enough. I thought you were settling in for hibernation."
 
 # game/scenario/11_0_1_1.rpy:22
 translate english d06be5b7:
 
     # "Elle retire rapidement sa main de mon front."
-    ""
+    "She quickly pulls her hand away from my forehead."
 
 # game/scenario/11_0_1_1.rpy:23
 translate english 14f8e9ed:
 
     # "Sa tête était posée contre le bord du matelas. Elle a clairement passé une partie de la nuit ici."
-    ""
+    "Her head was resting against the edge of the mattress. She must have spent half the night here."
 
 # game/scenario/11_0_1_1.rpy:25
 translate english aaa91c8f:
@@ -102,43 +102,43 @@ translate english aaa91c8f:
 translate english 93c8c1dd:
 
     # noam "Qu’est-ce qui s’est passé… ?"
-    noam ""
+    noam "What... what happened?"
 
 # game/scenario/11_0_1_1.rpy:28
 translate english 61477292:
 
     # iris "Ce qui s’est passé ? Tu t’es écroulé comme une merde pendant le débat, voilà ce qui s’est passé !"
-    iris ""
+    iris "What happened? You collapsed right in the middle of the debate, that's what!"
 
 # game/scenario/11_0_1_1.rpy:29
 translate english 97cbb536:
 
     # iris "Un instant t’étais debout à poser des questions bizarres, et la seconde d’après : bam, par terre."
-    iris ""
+    iris "One second you were on your feet asking weird questions, the next—bam! Flat on the floor."
 
 # game/scenario/11_0_1_1.rpy:30
 translate english 28bf816e:
 
     # iris "On a tous flippé, espèce d’idiot."
-    iris ""
+    iris "You scared the hell out of us, idiot."
 
 # game/scenario/11_0_1_1.rpy:32
 translate english b76e91a8:
 
     # "Elle trempe un nouveau linge dans l’eau fraîche, l’essore un peu trop fort, et me le repose sur le front avec une douceur qui contraste avec son ton."
-    ""
+    "She dips another cloth in cool water, wrings it out a little too hard, then lays it on my forehead with a gentleness that doesn't match her voice."
 
 # game/scenario/11_0_1_1.rpy:34
 translate english 5b471dd1:
 
     # iris "T’as fait une fièvre de cheval toute la nuit. Genre 39.5. On s’est relayés à ton chevet, parce que bien sûr, faudrait pas que le seul mec un minimum sensé de la bande y passe."
-    iris ""
+    iris "You were burning up all night. Like, 103 degrees. We took turns watching you, because apparently we can't afford to lose the one guy around here with half a brain."
 
 # game/scenario/11_0_1_1.rpy:35
 translate english e197c211:
 
     # iris "Mara a grogné mais elle est restée deux heures, Sael a fait le médecin de campagne, même Kael est venu… Bref, tout le monde y est passé."
-    iris ""
+    iris "Mara grumbled but stayed for two hours, Sael went full country doctor, even Kael dropped by... Everyone took a shift."
 
 # game/scenario/11_0_1_1.rpy:37
 translate english 7eb98c4a:
@@ -150,73 +150,73 @@ translate english 7eb98c4a:
 translate english 5b1ad638:
 
     # "Elle croise les bras et détourne légèrement le regard, les joues un peu rouges."
-    ""
+    "She folds her arms and looks away, a faint blush creeping into her cheeks."
 
 # game/scenario/11_0_1_1.rpy:41
 translate english 98382274:
 
     # iris "… Bref. T’as intérêt à te remettre vite fait. Parce que si tu nous refais un coup pareil, je te jure que je te laisserai crever la prochaine fois."
-    iris ""
+    iris "Anyway. You'd better get back on your feet. Pull a stunt like that again, and I swear I'll let you die next time."
 
 # game/scenario/11_0_1_1.rpy:42
 translate english 18556753:
 
     # iris "C’est clair ?"
-    iris ""
+    iris "Got it?"
 
 # game/scenario/11_0_1_1.rpy:44
 translate english 7202d236:
 
     # noam "… Merci d’avoir veillé sur moi."
-    noam ""
+    noam "...Thanks for staying with me."
 
 # game/scenario/11_0_1_1.rpy:46
 translate english 842d89c7:
 
     # iris "C’est pas comme si j’avais eu le choix ! Ils m’ont tous forcée."
-    iris ""
+    iris "Like I had a choice! They all made me do it."
 
 # game/scenario/11_0_1_1.rpy:47
 translate english 2541f716:
 
     # iris "Et puis… c’est pas comme si je pouvais te laisser délirer dans ton coin."
-    iris ""
+    iris "And... I wasn't just going to leave you raving to yourself."
 
 # game/scenario/11_0_1_1.rpy:50
 translate english 3fe4cf86:
 
     # "Elle marmonne dans sa barbe, mais sa main reste près de mon épaule."
-    ""
+    "She mutters under her breath, but her hand stays close to my shoulder."
 
 # game/scenario/11_0_1_1.rpy:52
 translate english b1f9e0ed:
 
     # iris "Allez, bois ça."
-    iris ""
+    iris "Here. Drink this."
 
 # game/scenario/11_0_1_1.rpy:54
 translate english 1507329d:
 
     # "Elle me tend un verre d’eau avec un geste un peu sec, mais elle attend que je le prenne bien avant de lâcher."
-    ""
+    "She thrusts a glass of water at me, then waits until I've got a firm grip before letting go."
 
 # game/scenario/11_0_1_1.rpy:56
 translate english 9c2f35c5:
 
     # iris "Et arrête de faire cette tête de chien battu. T’as juste trop stressé, eu trop chaud, et t’as accumulé de la fatigue."
-    iris ""
+    iris "And quit looking like a kicked puppy. You were stressed, overheated, and running on fumes. That's all."
 
 # game/scenario/11_0_1_1.rpy:57
 translate english d257451c:
 
     # iris "Sael a dit que c'était probablement pas à cause d'une bactérie."
-    iris ""
+    iris "Sael said it probably wasn't a bacterial infection."
 
 # game/scenario/11_0_1_1.rpy:59
 translate english 92b41ceb:
 
     # "Elle reste un moment silencieuse, le regard un peu perdu dans le vide."
-    ""
+    "She falls quiet for a moment, staring into space."
 
 # game/scenario/11_0_1_1.rpy:77
 translate english noam_parle_doppelganger_iris_f736d990:
@@ -234,7 +234,7 @@ translate english noam_parle_doppelganger_iris_eb6d88c0:
 translate english noam_parle_doppelganger_iris_42d5f1c5:
 
     # "Iris fronce les sourcils. Son expression change du tout au tout."
-    ""
+    "Iris frowns. Her expression changes completely."
 
 # game/scenario/11_0_1_1.rpy:82
 translate english noam_parle_doppelganger_iris_c098820d:
@@ -270,7 +270,7 @@ translate english noam_parle_doppelganger_iris_62323d60:
 translate english noam_parle_doppelganger_iris_71610403:
 
     # "Elle croise les bras, mais son regard reste fixé sur moi, plus attentif qu’elle ne veut le laisser paraître."
-    ""
+    "She folds her arms, though her gaze stays fixed on me, more attentive than she'd like to admit."
 
 # game/scenario/11_0_1_1.rpy:92
 translate english noam_parle_doppelganger_iris_85458f3f:
@@ -294,7 +294,7 @@ translate english noam_parle_doppelganger_iris_3f50de9c:
 translate english noam_parle_doppelganger_iris_07145902:
 
     # "Iris reste silencieuse quelques secondes. Elle semble hésiter à dire quelque chose, puis finit par soupirer."
-    ""
+    "Iris hesitates in silence for a few seconds, then lets out a sigh."
 
 # game/scenario/11_0_1_1.rpy:99
 translate english noam_parle_doppelganger_iris_883d8c06:
@@ -318,7 +318,7 @@ translate english noam_parle_doppelganger_iris_b2b7cd59:
 translate english noam_parle_doppelganger_iris_d94336ff:
 
     # "Elle pose à nouveau le linge frais sur mon front, un peu plus doucement que nécessaire."
-    ""
+    "She places the cool cloth on my forehead again, more gently than she needs to."
 
 # game/scenario/11_0_1_1.rpy:105
 translate english noam_parle_doppelganger_iris_e7a36816:
@@ -336,7 +336,7 @@ translate english noam_parle_doppelganger_iris_ee8ce02e:
 translate english noam_parle_doppelganger_iris_b772efe5:
 
     # "Malgré son ton râleur, elle ne bouge pas tout de suite. Son regard s’attarde un peu trop longtemps sur moi."
-    ""
+    "For all her grumbling, she doesn't move away. Her eyes linger on me a little too long."
 
 # game/scenario/11_0_1_1.rpy:110
 translate english noam_parle_doppelganger_iris_028d0ed7:
@@ -354,7 +354,7 @@ translate english noam_parle_doppelganger_iris_f37b02dd:
 translate english noam_parle_doppelganger_iris_694c890a:
 
     # "Elle se lève lentement, comme si elle n’était pas vraiment convaincue par ses propres paroles."
-    ""
+    "She gets up slowly, as if she's not entirely convinced by what she just said."
 
 # game/scenario/11_0_1_1.rpy:115
 translate english noam_parle_doppelganger_iris_67c81435:
@@ -366,7 +366,7 @@ translate english noam_parle_doppelganger_iris_67c81435:
 translate english noam_parle_doppelganger_iris_856bc8df:
 
     # "Avant de sortir, elle s’arrête un instant dans l’encadrement de la porte, le dos tourné."
-    ""
+    "Before leaving, she stops in the doorway with her back to me."
 
 # game/scenario/11_0_1_1.rpy:119
 translate english noam_parle_doppelganger_iris_da205ed9:
@@ -378,7 +378,7 @@ translate english noam_parle_doppelganger_iris_da205ed9:
 translate english noam_garde_secret_57563de9:
 
     # "Je reste silencieux un moment. Les mots restent bloqués dans ma gorge."
-    ""
+    "I stay quiet. The words are stuck in my throat."
 
 # game/scenario/11_0_1_1.rpy:136
 translate english noam_garde_secret_570dc411:
@@ -396,7 +396,7 @@ translate english noam_garde_secret_94d72a3a:
 translate english noam_garde_secret_c41f8b2c:
 
     # "Iris plisse les yeux. Elle me fixe un peu trop longtemps, comme si elle sentait que je lui cachais quelque chose."
-    ""
+    "Iris narrows her eyes and studies me for a little too long, as though she knows I'm hiding something."
 
 # game/scenario/11_0_1_1.rpy:141
 translate english noam_garde_secret_792d4488:
@@ -414,7 +414,7 @@ translate english noam_garde_secret_d3d2c6a6:
 translate english noam_garde_secret_ef8b6fce:
 
     # "Elle reste silencieuse quelques secondes, visiblement pas convaincue, puis finit par hausser les épaules."
-    ""
+    "She stays silent, clearly unconvinced, before finally shrugging."
 
 # game/scenario/11_0_1_1.rpy:147
 translate english noam_garde_secret_e77fdd8b:
@@ -432,7 +432,7 @@ translate english noam_garde_secret_bb57af40:
 translate english noam_garde_secret_a663da90:
 
     # "Elle attrape le linge, le trempe à nouveau dans l'eau fraîche et me le repose sur le front un peu brusquement."
-    ""
+    "She grabs the cloth, dips it in cool water again, and presses it against my forehead a little too firmly."
 
 # game/scenario/11_0_1_1.rpy:152
 translate english noam_garde_secret_9cc29d9d:
@@ -450,7 +450,7 @@ translate english noam_garde_secret_9befee8d:
 translate english noam_garde_secret_a7eb1fcc:
 
     # "Malgré son ton sec, elle ajuste le drap sur moi."
-    ""
+    "Despite her sharp tone, she tucks the sheet around me."
 
 # game/scenario/11_0_1_1.rpy:157
 translate english noam_garde_secret_a61dd1fa:
@@ -468,7 +468,7 @@ translate english noam_garde_secret_454e42ce:
 translate english noam_garde_secret_2438405c:
 
     # "Elle se dirige vers la porte, puis s'arrête un instant sans se retourner."
-    ""
+    "She heads for the door, then stops without turning around."
 
 # game/scenario/11_0_1_1.rpy:162
 translate english noam_garde_secret_3b3e50f4:
@@ -480,79 +480,79 @@ translate english noam_garde_secret_3b3e50f4:
 translate english noam_garde_secret_a738d465:
 
     # "Elle marmonne quelque chose d'inaudible en sortant."
-    ""
+    "She mutters something I can't make out as she leaves."
 
 # game/scenario/11_0_1_1.rpy:173
 translate english noam_garde_secret_2771cba7:
 
     # "Le silence revient dans la chambre après le départ d’Iris."
-    ""
+    "Silence settles over the room after Iris leaves."
 
 # game/scenario/11_0_1_1.rpy:174
 translate english noam_garde_secret_5813025c:
 
     # "Je reste allongé, les yeux fixés au plafond. Ma tête tourne encore un peu."
-    ""
+    "I lie there staring at the ceiling. My head's still spinning a little."
 
 # game/scenario/11_0_1_1.rpy:176
 translate english noam_garde_secret_0b31e9c6:
 
     # think "Une silhouette… juste une silhouette…"
-    think ""
+    think "A silhouette... just a silhouette..."
 
 # game/scenario/11_0_1_1.rpy:177
 translate english noam_garde_secret_9c224740:
 
     # think "C’était loin. Flou. Ça ne veut rien dire."
-    think ""
+    think "It was far away. Blurry. It doesn't mean anything."
 
 # game/scenario/11_0_1_1.rpy:178
 translate english noam_garde_secret_0fb63267:
 
     # think "C’était forcément quelqu’un d’autre. Forcément."
-    think ""
+    think "It had to be someone else. It had to."
 
 # game/scenario/11_0_1_1.rpy:180
 translate english noam_garde_secret_3343087e:
 
     # noam "… C’était rien."
-    noam ""
+    noam "...It was nothing."
 
 # game/scenario/11_0_1_1.rpy:182
 translate english noam_garde_secret_0c66eca6:
 
     # "Je murmure ces mots tout bas, presque pour moi-même."
-    ""
+    "I whisper the words, almost to myself."
 
 # game/scenario/11_0_1_1.rpy:184
 translate english noam_garde_secret_a719247a:
 
     # think "Je ne vais pas commencer à me monter la tête avec ça. Pas maintenant."
-    think ""
+    think "I'm not going to work myself into a panic over this. Not now."
 
 # game/scenario/11_0_1_1.rpy:185
 translate english noam_garde_secret_e00d5ff7:
 
     # think "C’est la fièvre. Juste la fièvre et la fatigue."
-    think ""
+    think "It was the fever. Just the fever and exhaustion."
 
 # game/scenario/11_0_1_1.rpy:189
 translate english noam_garde_secret_5e5de3a0:
 
     # "Quelques minutes plus tard, la porte s’ouvre à nouveau."
-    ""
+    "A few minutes later, the door opens again."
 
 # game/scenario/11_0_1_1.rpy:199
 translate english noam_garde_secret_f74fd350:
 
     # iris "Voilà, je vous l’avais dit. Il est réveillé et il est déjà en train de se creuser la tête avec des conneries."
-    iris ""
+    iris "See? Told you he was awake. And he's already wearing himself out over some nonsense."
 
 # game/scenario/11_0_1_1.rpy:201
 translate english noam_garde_secret_d52d0c4c:
 
     # sael "On s’est dit qu’on allait pas te laisser manger tout seul comme un gosse abandonné."
-    sael ""
+    sael "We figured we wouldn't leave you to eat alone like some abandoned kid."
 
 # game/scenario/11_0_1_1.rpy:203
 translate english noam_garde_secret_92ee4f53:
@@ -564,25 +564,25 @@ translate english noam_garde_secret_92ee4f53:
 translate english noam_garde_secret_46b53d82:
 
     # julian "Franchement Noam, si tu voulais prendre la vedette pendant le débat, y’avait des façons plus discrètes que de t’évanouir d’un coup."
-    julian ""
+    julian "Come on, Noam. If you wanted to steal the spotlight during the debate, there were subtler ways than passing out."
 
 # game/scenario/11_0_1_1.rpy:206
 translate english noam_garde_secret_884dbb7f:
 
     # "Julian pose un plateau bien garni sur la table de chevet avec un sourire moqueur. Nyra reste un peu en retrait, calme comme toujours."
-    ""
+    "Julian sets a loaded tray on the bedside table with a teasing grin. Nyra hangs back, as composed as ever."
 
 # game/scenario/11_0_1_1.rpy:210
 translate english noam_garde_secret_b16c2cd2:
 
     # "Ils s’installent autour du lit : Iris s’assoit au bord, Sael prend la chaise, Julian reste debout, Nyra s’adosse au mur."
-    ""
+    "They gather around the bed: Iris sits on the edge, Sael takes the chair, Julian stays standing, and Nyra leans against the wall."
 
 # game/scenario/11_0_1_1.rpy:212
 translate english noam_garde_secret_441d781d:
 
     # "Je commence à manger lentement, sans grand appétit."
-    ""
+    "I start eating slowly, without much appetite."
 
 # game/scenario/11_0_1_1.rpy:214
 translate english noam_garde_secret_82611bc4:
