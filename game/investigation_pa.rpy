@@ -7,8 +7,24 @@ default investigation_pa_completed = []
 default investigation_pa_current_room = "dortoir"
 default investigation_pa_selected = ""
 default investigation_pa_hover = ""
+# PNG des clichés collectés, sauvegardés avec la partie (960 × 540).
+default investigation_photo_data = {}
 
 init python:
+    def investigation_photo_capture(eid):
+        # Capture réelle du rendu Ren'Py, pas une reconstitution de l'indice.
+        # La même séquence PNG est affichée lors de la prise et dans le dossier.
+        try:
+            photo_png = renpy.screenshot_to_bytes((960, 540))
+            if photo_png:
+                saved = dict(getattr(store, "investigation_photo_data", {}) or {})
+                saved[eid] = photo_png
+                store.investigation_photo_data = saved
+                return True
+        except Exception as exc:
+            renpy.log("Capture de photo d'enquête impossible : %s" % exc)
+        return False
+
     def investigation_pa_begin(day, actions=5):
         store.investigation_pa_day = int(day)
         store.investigation_pa_max = int(actions)
@@ -151,10 +167,16 @@ screen investigation_evidence_photo_preview(eid):
             text "PHOTO ENREGISTRÉE — DOSSIER D'ENQUÊTE" color "#40556B" size 21 xalign 0.5
 
 label investigation_evidence_photo_take(eid):
-    # Écran affiché temporairement dans le script, sans Return() ni clic forcé.
+    # Cache l'interface avant de photographier le rendu courant du jeu.
+    # La capture PNG reste dans la sauvegarde : le dossier réaffiche les mêmes pixels.
+    window hide
+    with None
+    $ renpy.pause(0.08, hard=True)
+    $ investigation_photo_capture(eid)
     $ investigation_add(eid, notify=False)
     play sound "audio/sfx_photo.mp3"
     show screen investigation_evidence_photo_preview(eid)
     pause 1.0
     hide screen investigation_evidence_photo_preview
+    window show
     return
