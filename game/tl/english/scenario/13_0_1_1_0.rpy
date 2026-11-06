@@ -52,7 +52,7 @@ translate english 4cfa907f:
 translate english baaae05f:
 
     # noam panique "Qu’est-ce que… ?!"
-    noam panique ""
+    noam panique "What the...?!"
 
 # game/scenario/13_0_1_1_0.rpy:21
 translate english d0d92a2c:
@@ -94,7 +94,7 @@ translate english 3861309e:
 translate english 289a28ce:
 
     # noam colere "Mais qu’est-ce que tu fous dans ma chambre ?!"
-    noam colere ""
+    noam colere "What the hell are you doing in my room?!"
 
 # game/scenario/13_0_1_1_0.rpy:34
 translate english c83f5033:
@@ -148,7 +148,7 @@ translate english 59e28e5a:
 translate english dc2b11bc:
 
     # noam panique "Une personne seulement ?"
-    noam panique ""
+    noam panique "Just one person?"
 
 # game/scenario/13_0_1_1_0.rpy:50
 translate english f7dffcec:
@@ -184,7 +184,7 @@ translate english 07f96c6b:
 translate english c681eb57:
 
     # noam colere "Tu viens littéralement d’entrer dans ma chambre pendant que je dormais."
-    noam colere ""
+    noam colere "You literally walked into my room while I was asleep."
 
 # game/scenario/13_0_1_1_0.rpy:61
 translate english 82d64ce3:
@@ -262,7 +262,7 @@ translate english 2e05425d:
 translate english aef97ce2:
 
     # noam panique "La reconnexion optique ?"
-    noam panique ""
+    noam panique "Visual surveillance reconnecting?"
 
 # game/scenario/13_0_1_1_0.rpy:84
 translate english dd266dbd:
@@ -328,7 +328,7 @@ translate english 8a18877f:
 translate english 33873306:
 
     # noam colere "Tu peux arrêter deux secondes ?"
-    noam colere ""
+    noam colere "Could you stop for two seconds?"
 
 # game/scenario/13_0_1_1_0.rpy:104
 translate english da589e7e:
@@ -430,7 +430,7 @@ translate english 4449c097:
 translate english e198d13a:
 
     # noam colere "Et tu pouvais pas attendre que je sois réveillé ?!"
-    noam colere ""
+    noam colere "Couldn't you at least wait until I woke up?!"
 
 # game/scenario/13_0_1_1_0.rpy:136
 translate english 01c4c66a:
@@ -466,7 +466,7 @@ translate english d30c3c68:
 translate english f18c5755:
 
     # noam colere "C’est pas mieux."
-    noam colere ""
+    noam colere "That doesn't make it better."
 
 # game/scenario/13_0_1_1_0.rpy:147
 translate english 5e6659b7:
@@ -586,7 +586,7 @@ translate english b5579727:
 translate english 22b361d3:
 
     # noam fatigue "Garde-les."
-    noam fatigue ""
+    noam fatigue "Keep them."
 
 # game/scenario/13_0_1_1_0.rpy:184
 translate english 759c865d:
@@ -1084,7 +1084,7 @@ translate english a0c31f0d:
 translate english 6b29d655:
 
     # noam fatigue "Ouais… juste un café et ce que tu as."
-    noam fatigue ""
+    noam fatigue "Yeah... just coffee, and whatever you've got."
 
 # game/scenario/13_0_1_1_0.rpy:321
 translate english 431d1825:
@@ -1114,7 +1114,7 @@ translate english 33d7a28c:
 translate english e6e9b0da:
 
     # mara stress "Tiens, voilà le héros du jour."
-    mara stress ""
+    mara stress "Well, look who decided to show his face."
 
 # game/scenario/13_0_1_1_0.rpy:330
 translate english 8cee80a9:
@@ -1144,7 +1144,7 @@ translate english 0c4a3ce5:
 translate english d0d160e9:
 
     # mara colere "Grâce à toi, on est tous à poil maintenant. Content ?"
-    mara colere ""
+    mara colere "Thanks to you, we're all exposed now. Happy?"
 
 # game/scenario/13_0_1_1_0.rpy:336
 translate english 835b1a97:
@@ -1180,19 +1180,19 @@ translate english 1583e538:
 translate english 513f9775:
 
     # noam fatigue "Je le suis."
-    noam fatigue ""
+    noam fatigue "I am."
 
 # game/scenario/13_0_1_1_0.rpy:346
 translate english 596eb325:
 
     # mara colere "Ah. Super. Ça me rassure énormément."
-    mara colere ""
+    mara colere "Oh, great. That makes me feel so much better."
 
 # game/scenario/13_0_1_1_0.rpy:348
 translate english a757c6dc:
 
     # elen triste "Mara… arrête."
-    elen triste ""
+    elen triste "Mara... stop."
 
 # game/scenario/13_0_1_1_0.rpy:350
 translate english fe9e4e8c:
@@ -1252,7 +1252,7 @@ translate english 807030a0:
 translate english 2e535864:
 
     # noam fatigue "Je sais."
-    noam fatigue ""
+    noam fatigue "I know."
 
 # game/scenario/13_0_1_1_0.rpy:364
 translate english 0fb317d9:
@@ -1288,19 +1288,19 @@ translate english c2ebc9b2:
 translate english 054ac83b:
 
     # iris inquiet "Tu aurais pu au moins rester jusqu’au vote… Au lieu de nous planter comme ça."
-    iris inquiet ""
+    iris inquiet "You could've at least stayed for the vote instead of ditching us."
 
 # game/scenario/13_0_1_1_0.rpy:374
 translate english 4acaf6ad:
 
     # noam fatigue "Je… je n’étais plus en état."
-    noam fatigue ""
+    noam fatigue "I... I couldn't handle it anymore."
 
 # game/scenario/13_0_1_1_0.rpy:376
 translate english 2d5d814f:
 
     # mara colere "Ah ouais ? Et nous, on était en état peut-être ?!"
-    mara colere ""
+    mara colere "Oh, really? And the rest of us could?!"
 
 # game/scenario/13_0_1_1_0.rpy:377
 translate english b8af0190:
@@ -1372,7 +1372,7 @@ translate english c1d4e200:
 translate english e9f60c17:
 
     # elen triste "Noam..."
-    elen triste ""
+    elen triste "Noam..."
 
 # game/scenario/13_0_1_1_0.rpy:396
 translate english 4c39b3ad:
@@ -1384,7 +1384,7 @@ translate english 4c39b3ad:
 translate english 480b1d6c:
 
     # julian hesitation "Allez les gars… on se calme. Noam a juste pété un câble, c’est pas la fin du monde."
-    julian hesitation ""
+    julian hesitation "Come on, everyone... let's cool it. Noam lost his temper. It's not the end of the world."
 
 # game/scenario/13_0_1_1_0.rpy:400
 translate english 8fa89e0b:
@@ -1426,7 +1426,7 @@ translate english 261bc740:
 translate english 32a06b90:
 
     # sael mefiant "Tu as rendu les choses plus difficiles pour tout le monde."
-    sael mefiant ""
+    sael mefiant "You've made things harder for everyone."
 
 # game/scenario/13_0_1_1_0.rpy:411
 translate english 7374d17c:
@@ -1444,7 +1444,7 @@ translate english 0f528ef7:
 translate english 2e535864_1:
 
     # noam fatigue "Je sais."
-    noam fatigue ""
+    noam fatigue "I know."
 
 # game/scenario/13_0_1_1_0.rpy:416
 translate english 347d2ad7:
@@ -1528,7 +1528,7 @@ translate english aed2c9bb:
 translate english ff27b530:
 
     # elen triste "… Je suis fâchée. Mais je suis surtout inquiète..."
-    elen triste ""
+    elen triste "...I'm angry. But mostly I'm worried..."
 
 # game/scenario/13_0_1_1_0.rpy:435
 translate english 1e4e4666:
@@ -1546,7 +1546,7 @@ translate english 534034a9:
 translate english c2d190a0:
 
     # noam fatigue "Je ne voulais pas que ça arrive."
-    noam fatigue ""
+    noam fatigue "I didn't want any of this to happen."
 
 # game/scenario/13_0_1_1_0.rpy:440
 translate english bbd5f6b4:
@@ -1618,7 +1618,7 @@ translate english 27f3f0cf:
 translate english 5a2e30d1:
 
     # iris inquiet "Noam… qu’est-ce qui t’a pris hier ? Vraiment ?"
-    iris inquiet ""
+    iris inquiet "Noam... what got into you yesterday? Seriously?"
 
 # game/scenario/13_0_1_1_0.rpy:458
 translate english d5792583:
@@ -1648,7 +1648,7 @@ translate english 2c9f8978:
 translate english 440c2b3a:
 
     # noam fatigue "Je ne pouvais plus rester là à faire comme si tout était normal."
-    noam fatigue ""
+    noam fatigue "I couldn't just sit there and pretend everything was normal."
 
 # game/scenario/13_0_1_1_0.rpy:466
 translate english 0ce2f20a:
@@ -1696,7 +1696,7 @@ translate english 80d6fe9e:
 translate english cca5f7d4:
 
     # mara colere "On est tous dans la merde à cause de toi !"
-    mara colere ""
+    mara colere "We're all screwed because of you!"
 
 # game/scenario/13_0_1_1_0.rpy:478
 translate english 2150fe96:
@@ -1708,7 +1708,7 @@ translate english 2150fe96:
 translate english 160d34ce:
 
     # noam colere "Tu crois que je ne le sais pas ?"
-    noam colere ""
+    noam colere "You think I don't know that?"
 
 # game/scenario/13_0_1_1_0.rpy:482
 translate english c7121a9d:
@@ -1780,7 +1780,7 @@ translate english 23c28bd2:
 translate english afb62e82:
 
     # iris inquiet "Noam."
-    iris inquiet ""
+    iris inquiet "Noam."
 
 # game/scenario/13_0_1_1_0.rpy:499
 translate english c690d0b8:
@@ -1840,7 +1840,7 @@ translate english 894c2114:
 translate english 78eb9349:
 
     # noam fatigue "Non."
-    noam fatigue ""
+    noam fatigue "No."
 
 # game/scenario/13_0_1_1_0.rpy:513
 translate english db754345:
@@ -1876,7 +1876,7 @@ translate english d74a7052:
 translate english e750c693:
 
     # mara colere "Génial. En plus il nous prend pour des cons."
-    mara colere ""
+    mara colere "Great. Now he thinks we're all idiots, too."
 
 # game/scenario/13_0_1_1_0.rpy:523
 translate english 41674f5c:
@@ -1894,7 +1894,7 @@ translate english e9b73a08:
 translate english b7fbe23d:
 
     # julian hesitation "Non ? Personne ?"
-    julian hesitation ""
+    julian hesitation "No? Anyone?"
 
 # game/scenario/13_0_1_1_0.rpy:528
 translate english 38b02698:
@@ -1912,7 +1912,7 @@ translate english 0ccd564c:
 translate english 080e23be:
 
     # elen triste "Je ne veux pas qu’on se déchire."
-    elen triste ""
+    elen triste "I don't want us tearing each other apart."
 
 # game/scenario/13_0_1_1_0.rpy:534
 translate english 7cc70d4f:
@@ -1990,13 +1990,13 @@ translate english 3bc07cbb:
 translate english 45f1c21b:
 
     # iris inquiet "Tu vas où ?"
-    iris inquiet ""
+    iris inquiet "Where are you going?"
 
 # game/scenario/13_0_1_1_0.rpy:554
 translate english 269b4e53:
 
     # noam fatigue "Je ne sais pas."
-    noam fatigue ""
+    noam fatigue "I don't know."
 
 # game/scenario/13_0_1_1_0.rpy:556
 translate english 26989d8e:
@@ -2098,7 +2098,7 @@ translate english bf999608:
 translate english 12d26271:
 
     # ryn colere "Non mais sérieusement, on va vraiment continuer à le laisser voter avec nous ?!"
-    ryn colere ""
+    ryn colere "Seriously, we're just going to let him keep voting with us?!"
 
 # game/scenario/13_0_1_1_0.rpy:589
 translate english 66cf6eda:
@@ -2110,13 +2110,13 @@ translate english 66cf6eda:
 translate english b12b525d:
 
     # elias fatigue "Ouais… c’était chaud. Mais bon, il était encore secoué par son malaise. Faut peut-être lui laisser un peu de temps."
-    elias fatigue ""
+    elias fatigue "Yeah... it was rough. But he was still shaken up after passing out. Maybe give him a little time."
 
 # game/scenario/13_0_1_1_0.rpy:593
 translate english 8e4d1145:
 
     # ryn colere "Du temps ?! On n’a pas de temps, Elias !"
-    ryn colere ""
+    ryn colere "Time?! We don't HAVE time, Elias!"
 
 # game/scenario/13_0_1_1_0.rpy:594
 translate english 1049876f:
@@ -2146,7 +2146,7 @@ translate english aadbdde3:
 translate english 2bec8974:
 
     # ryn colere "Calme ?! Tu rigoles ? Il a accusé tout le monde d’être des traîtres !"
-    ryn colere ""
+    ryn colere "Calm?! Are you kidding? He accused everyone of being traitors!"
 
 # game/scenario/13_0_1_1_0.rpy:602
 translate english 378744e3:
@@ -2194,7 +2194,7 @@ translate english 24658cba:
 translate english 4dc4d36c:
 
     # ryn colere "Regretter ?! J’en ai rien à foutre qu’il regrette !"
-    ryn colere ""
+    ryn colere "Regret it?! I don't give a damn whether he regrets it!"
 
 # game/scenario/13_0_1_1_0.rpy:615
 translate english e213425a:
@@ -2446,7 +2446,7 @@ translate english 64d7d7df:
 translate english 1028c74c:
 
     # noam murmure "Allez… réfléchis."
-    noam murmure ""
+    noam murmure "Come on... think."
 
 # game/scenario/13_0_1_1_0.rpy:687
 translate english a53c6b23:
@@ -2728,7 +2728,7 @@ translate english d04d3661:
 translate english 213ffd40:
 
     # noam murmure "Génial."
-    noam murmure ""
+    noam murmure "Fantastic."
 
 # game/scenario/13_0_1_1_0.rpy:761
 translate english b6ef801c:
@@ -3236,7 +3236,7 @@ translate english 888561a0:
 translate english e24cf309:
 
     # noam panique "Qu'est-ce que tu fais ?!"
-    noam panique ""
+    noam panique "What are you doing?!"
 
 # game/scenario/13_0_1_1_0.rpy:23
 translate english 3b4cf1b4:
@@ -3254,7 +3254,7 @@ translate english acb91996:
 translate english 21d6dd55:
 
     # noam colere "Je vois bien que tu le retires ! Pourquoi ?"
-    noam colere ""
+    noam colere "I can see you're taking it down! WHY?"
 
 # game/scenario/13_0_1_1_0.rpy:29
 translate english 3e7210a5:
@@ -3272,7 +3272,7 @@ translate english 6ad817d9:
 translate english b34d8e74:
 
     # noam panique "Attends... le vote a raté ?"
-    noam panique ""
+    noam panique "Wait... the vote failed?"
 
 # game/scenario/13_0_1_1_0.rpy:35
 translate english 445753ec:
@@ -3338,7 +3338,7 @@ translate english 501dd960:
 translate english f00ee197:
 
     # noam colere "Tu entres dans ma chambre pendant que je dors, mais le nom d'un votant, ça, c'est confidentiel ?"
-    noam colere ""
+    noam colere "You walk into my room while I'm asleep, but a voter's name is confidential?"
 
 # game/scenario/13_0_1_1_0.rpy:56
 translate english 11c43151:
@@ -3368,7 +3368,7 @@ translate english 42eded06:
 translate english 07b0b603:
 
     # noam fatigue "Et Kami peut déjà voir ici ?"
-    noam fatigue ""
+    noam fatigue "Can Kami see in here already?"
 
 # game/scenario/13_0_1_1_0.rpy:64
 translate english 42731859:
@@ -3428,7 +3428,7 @@ translate english afa1d2a7:
 translate english b9e6998b:
 
     # noam colere "Ça ne me rassure absolument pas."
-    noam colere ""
+    noam colere "That doesn't make me feel any better."
 
 # game/scenario/13_0_1_1_0.rpy:84
 translate english 4db6bf89:
@@ -3482,7 +3482,7 @@ translate english 6b82d39a:
 translate english 5031b710:
 
     # noam fatigue "Formidable."
-    noam fatigue ""
+    noam fatigue "Wonderful."
 
 # game/scenario/13_0_1_1_0.rpy:105
 translate english d58748ee:
@@ -3530,7 +3530,7 @@ translate english 4a069284:
 translate english 18daed85:
 
     # noam colere "Tu m'as réveillé en me lançant une vis dessus ?"
-    noam colere ""
+    noam colere "You woke me up by dropping a screw on my head?"
 
 # game/scenario/13_0_1_1_0.rpy:121
 translate english f5a009a5:
@@ -3554,7 +3554,7 @@ translate english 38f2f368:
 translate english 310af466:
 
     # noam fatigue "Alors va-t'en."
-    noam fatigue ""
+    noam fatigue "Then get out."
 
 # game/scenario/13_0_1_1_0.rpy:129
 translate english 8de13b4e:
@@ -3668,7 +3668,7 @@ translate english 846db0b0:
 translate english eeef3f0e:
 
     # noam colere "Tu pourrais prévenir avant de parler."
-    noam colere ""
+    noam colere "You could at least warn me before speaking."
 
 # game/scenario/13_0_1_1_0.rpy:164
 translate english 3ae55e26:
@@ -3740,7 +3740,7 @@ translate english 8e852711:
 translate english 33478306:
 
     # noam fatigue "Salut... Il y a quoi pour le petit-déjeuner ?"
-    noam fatigue ""
+    noam fatigue "Hey... what's for breakfast?"
 
 # game/scenario/13_0_1_1_0.rpy:208
 translate english 65b46808:
@@ -3800,7 +3800,7 @@ translate english ac943230:
 translate english 233dccb6:
 
     # noam fatigue "Alors juste un café."
-    noam fatigue ""
+    noam fatigue "Just coffee, then."
 
 # game/scenario/13_0_1_1_0.rpy:228
 translate english fb0c2e20:
@@ -3812,7 +3812,7 @@ translate english fb0c2e20:
 translate english 8dd815f7:
 
     # julian hesitation "Je retire officiellement ma proposition d'en faire un droit fondamental."
-    julian hesitation ""
+    julian hesitation "I hereby withdraw my proposal to make it a fundamental right."
 
 # game/scenario/13_0_1_1_0.rpy:232
 translate english fc8f8156:
@@ -3824,7 +3824,7 @@ translate english fc8f8156:
 translate english e6c9b38b:
 
     # mara colere "Tu peux toujours essayer de faire passer ça au vote. Apparemment, on vote très bien quand certains décident de ne pas rester jusqu'au bout."
-    mara colere ""
+    mara colere "Go ahead and put it to a vote. Apparently votes go brilliantly when some people can't be bothered to stick around."
 
 # game/scenario/13_0_1_1_0.rpy:236
 translate english b7bdc237:
@@ -3836,7 +3836,7 @@ translate english b7bdc237:
 translate english 2cf1a0dd:
 
     # noam fatigue "Bonjour à toi aussi."
-    noam fatigue ""
+    noam fatigue "Nice to see you too."
 
 # game/scenario/13_0_1_1_0.rpy:240
 translate english 3bbb0844:
@@ -3854,13 +3854,13 @@ translate english 15205345:
 translate english e57776ee:
 
     # mara colere "Quoi ? Tout le monde pense la même chose."
-    mara colere ""
+    mara colere "What? We're all thinking it."
 
 # game/scenario/13_0_1_1_0.rpy:248
 translate english d19046e9:
 
     # iris inquiet "Non. Tout le monde n'a juste pas envie de lui hurler dessus avant même d'avoir bu son café."
-    iris inquiet ""
+    iris inquiet "No. The rest of us just don't feel like screaming at him before we've had coffee."
 
 # game/scenario/13_0_1_1_0.rpy:250
 translate english 18a47313:
@@ -3878,13 +3878,13 @@ translate english 41cf7a3c:
 translate english c3e45c2a:
 
     # mara colere "Regarde autour de toi, Noam. On n'a plus rien à manger, on n'a plus de brouilleurs et tout le monde est à bout. Hier, on avait au moins une chance de garder quelque chose pour nous. Tu nous as laissés tomber au pire moment."
-    mara colere ""
+    mara colere "Look around, Noam. We've got no food, no jammers, and everyone's at breaking point. Yesterday we had a shot at keeping something to ourselves. You walked out on us when it mattered most."
 
 # game/scenario/13_0_1_1_0.rpy:256
 translate english 26355dc9:
 
     # noam fatigue "Je sais ce que j'ai fait."
-    noam fatigue ""
+    noam fatigue "I know what I did."
 
 # game/scenario/13_0_1_1_0.rpy:258
 translate english 0d5f7313:
@@ -3914,7 +3914,7 @@ translate english d8e3b6d1:
 translate english 2266a230:
 
     # elen triste "Il aurait pu mentir."
-    elen triste ""
+    elen triste "He could've lied."
 
 # game/scenario/13_0_1_1_0.rpy:268
 translate english 9d899758:
@@ -3932,13 +3932,13 @@ translate english 079ad9c2:
 translate english 64da5da6:
 
     # elen triste "Moi, je veux juste comprendre pourquoi tu es parti. On t'attendait, Noam."
-    elen triste ""
+    elen triste "I just want to understand why you left. We were waiting for you, Noam."
 
 # game/scenario/13_0_1_1_0.rpy:274
 translate english 2e741e2d:
 
     # noam fatigue "Je ne pouvais plus rester dans la salle."
-    noam fatigue ""
+    noam fatigue "I couldn't stay in that room anymore."
 
 # game/scenario/13_0_1_1_0.rpy:276
 translate english 966f05bc:
@@ -3968,7 +3968,7 @@ translate english 75b95223:
 translate english 01da6639:
 
     # iris inquiet "Mara, laisse-le finir."
-    iris inquiet ""
+    iris inquiet "Mara, let him finish."
 
 # game/scenario/13_0_1_1_0.rpy:286
 translate english 47cd8392:
@@ -3980,7 +3980,7 @@ translate english 47cd8392:
 translate english cdf3e61a:
 
     # sael mefiant "Rien n'est normal ici. Personne ne pense le contraire."
-    sael mefiant ""
+    sael mefiant "Nothing here is normal. Nobody thinks it is."
 
 # game/scenario/13_0_1_1_0.rpy:290
 translate english 3180b23b:
@@ -3998,7 +3998,7 @@ translate english fef502c9:
 translate english 2e535864_8:
 
     # noam fatigue "Je sais."
-    noam fatigue ""
+    noam fatigue "I know."
 
 # game/scenario/13_0_1_1_0.rpy:296
 translate english 02dbe3cf:
@@ -4016,7 +4016,7 @@ translate english 6ce2808e:
 translate english 082cc985:
 
     # elen triste "Tu crois qu'elle regarde quand on dort ?"
-    elen triste ""
+    elen triste "Do you think she watches us while we sleep?"
 
 # game/scenario/13_0_1_1_0.rpy:302
 translate english b53da6a6:
@@ -4040,13 +4040,13 @@ translate english f1396cd1:
 translate english cd5041d1:
 
     # elen triste "Je sais que ça peut paraître idiot, mais depuis que le robot est passé dans ma chambre, j'arrête pas d'y penser. Quand on dort, quand on pleure, quand on se change... elle peut juste regarder."
-    elen triste ""
+    elen triste "I know it sounds stupid, but ever since that robot came into my room, I can't stop thinking about it. Sleeping, crying, getting changed... she can just watch."
 
 # game/scenario/13_0_1_1_0.rpy:312
 translate english c1fa24ca:
 
     # iris inquiet "C'est pas idiot."
-    iris inquiet ""
+    iris inquiet "It's not stupid."
 
 # game/scenario/13_0_1_1_0.rpy:314
 translate english 748e2fca:
@@ -4058,7 +4058,7 @@ translate english 748e2fca:
 translate english a52a24af:
 
     # noam fatigue "Je suis désolé."
-    noam fatigue ""
+    noam fatigue "I'm sorry."
 
 # game/scenario/13_0_1_1_0.rpy:319
 translate english 01f17b81:
@@ -4076,7 +4076,7 @@ translate english 503e9f54:
 translate english d66e9659:
 
     # mara colere "Et pendant qu'on parle d'avoir la paix, on peut rappeler qu'on n'a même plus de quoi bouffer ?"
-    mara colere ""
+    mara colere "And while we're talking about getting some peace, can we remember we haven't got a damn thing to eat?"
 
 # game/scenario/13_0_1_1_0.rpy:325
 translate english 640db725:
@@ -4106,7 +4106,7 @@ translate english 1f9a948f:
 translate english de2a90f1:
 
     # julian hesitation "Demain, on aura une livraison. Ça devrait déjà calmer un peu tout le monde."
-    julian hesitation ""
+    julian hesitation "We're getting a delivery tomorrow. That should take the edge off things."
 
 # game/scenario/13_0_1_1_0.rpy:335
 translate english af4334ad:
@@ -4136,7 +4136,7 @@ translate english b0ad67fe:
 translate english ac0bff7b:
 
     # iris inquiet "Il a pas complètement tort."
-    iris inquiet ""
+    iris inquiet "He's not entirely wrong."
 
 # game/scenario/13_0_1_1_0.rpy:345
 translate english cc915fc2:
@@ -4160,7 +4160,7 @@ translate english 5fa519e5:
 translate english 4b32cf17:
 
     # iris inquiet "Je vais te poser une question, et j'aimerais bien que tu ne me répondes pas juste ce que tu crois que j'ai envie d'entendre."
-    iris inquiet ""
+    iris inquiet "I'm going to ask you something, and I'd appreciate it if you didn't just tell me what you think I want to hear."
 
 # game/scenario/13_0_1_1_0.rpy:352
 translate english fbbf2212:
@@ -4184,7 +4184,7 @@ translate english 856b5e3e:
 translate english fa332361_1:
 
     # noam fatigue "Rien."
-    noam fatigue ""
+    noam fatigue "Nothing."
 
 # game/scenario/13_0_1_1_0.rpy:362
 translate english 204c908d:
@@ -4232,7 +4232,7 @@ translate english ab32abdf:
 translate english b03c3c0f:
 
     # iris inquiet "Je ne te demande pas de tout me raconter devant tout le monde. Je te demande juste si tu as une raison de te comporter comme ça."
-    iris inquiet ""
+    iris inquiet "I'm not asking you to tell me everything in front of everyone. I'm just asking whether there's a reason you've been acting like this."
 
 # game/scenario/13_0_1_1_0.rpy:378
 translate english ef6c5ee8:
@@ -4250,7 +4250,7 @@ translate english ddaea684:
 translate english d6dd0f39:
 
     # noam fatigue "J'ai juste besoin de remettre mes idées en ordre."
-    noam fatigue ""
+    noam fatigue "I just need to get my thoughts straight."
 
 # game/scenario/13_0_1_1_0.rpy:383
 translate english aedd6016:
@@ -4280,13 +4280,13 @@ translate english 2ed0e2bc:
 translate english b35cf42d:
 
     # mara colere "Et après il se demande pourquoi personne ne lui fait confiance."
-    mara colere ""
+    mara colere "And then he wonders why nobody trusts him."
 
 # game/scenario/13_0_1_1_0.rpy:393
 translate english f6687216:
 
     # noam colere "Je ne me demande rien du tout, Mara."
-    noam colere ""
+    noam colere "I'm not wondering anything, Mara."
 
 # game/scenario/13_0_1_1_0.rpy:395
 translate english 49050e36:
@@ -4298,7 +4298,7 @@ translate english 49050e36:
 translate english d5b2d665:
 
     # elen triste "Vous pouvez arrêter deux minutes ?"
-    elen triste ""
+    elen triste "Can you all stop for two minutes?"
 
 # game/scenario/13_0_1_1_0.rpy:399
 translate english fac898fa:
@@ -4322,7 +4322,7 @@ translate english a4cad8b9:
 translate english 2ef516ff:
 
     # elen triste "Je suis en colère contre toi aussi, Noam. Mais je veux pas qu'on finisse tous par se détester."
-    elen triste ""
+    elen triste "I'm angry with you too, Noam. But I don't want us all to end up hating one another."
 
 # game/scenario/13_0_1_1_0.rpy:407
 translate english 7a2e7c74:
@@ -4334,7 +4334,7 @@ translate english 7a2e7c74:
 translate english 809ba9c0_2:
 
     # noam fatigue "Moi non plus."
-    noam fatigue ""
+    noam fatigue "Neither do I."
 
 # game/scenario/13_0_1_1_0.rpy:411
 translate english d490002d:
@@ -4430,13 +4430,13 @@ translate english fa9af8d4:
 translate english 8f5f199f_2:
 
     # iris inquiet "Qu'est-ce qu'il y a ?"
-    iris inquiet ""
+    iris inquiet "What's wrong?"
 
 # game/scenario/13_0_1_1_0.rpy:444
 translate english fa332361_2:
 
     # noam fatigue "Rien."
-    noam fatigue ""
+    noam fatigue "Nothing."
 
 # game/scenario/13_0_1_1_0.rpy:446
 translate english 45c0d95f:
@@ -4454,7 +4454,7 @@ translate english f60fb1f3:
 translate english 5f23c944:
 
     # noam fatigue "J'ai besoin de sortir un peu."
-    noam fatigue ""
+    noam fatigue "I need to get out for a bit."
 
 # game/scenario/13_0_1_1_0.rpy:456
 translate english ad1bcc94:
@@ -4520,13 +4520,13 @@ translate english d64d6430:
 translate english 079b68a8:
 
     # ryn colere "Je vous le dis, au prochain vote je veux savoir avant s'il compte encore nous faire son numéro."
-    ryn colere ""
+    ryn colere "I'm telling you, before the next vote I want to know if he's planning to pull another stunt."
 
 # game/scenario/13_0_1_1_0.rpy:486
 translate english 15fb5100:
 
     # elias fatigue "Tu veux qu'on fasse quoi ? Qu'on lui demande une autorisation écrite pour parler ?"
-    elias fatigue ""
+    elias fatigue "What do you want us to do? Make him get written permission to speak?"
 
 # game/scenario/13_0_1_1_0.rpy:488
 translate english 3ac8f494:
@@ -4544,7 +4544,7 @@ translate english 79509422:
 translate english 8eb3d595:
 
     # ryn colere "Je parle pas de l'enfermer dans sa chambre. Je dis juste qu'on arrête de tout lui raconter tant qu'on sait pas ce qui lui passe par la tête."
-    ryn colere ""
+    ryn colere "I'm not saying lock him in his room. I'm saying stop telling him everything until we know what's going on in his head."
 
 # game/scenario/13_0_1_1_0.rpy:494
 translate english b8ecb7dc:
@@ -4586,13 +4586,13 @@ translate english 798ec59b:
 translate english 7696dd13:
 
     # ryn colere "Et si Noam recommence ? On fait quoi ? On attend qu'il fasse encore foirer un vote important ?"
-    ryn colere ""
+    ryn colere "And what if Noam does it again? We just let him ruin another important vote?"
 
 # game/scenario/13_0_1_1_0.rpy:508
 translate english c6e7f60f:
 
     # elias fatigue "On lui parle avant. C'est encore une option, normalement."
-    elias fatigue ""
+    elias fatigue "Talk to him first. That's still an option, last I checked."
 
 # game/scenario/13_0_1_1_0.rpy:510
 translate english b508b517:
@@ -4694,13 +4694,13 @@ translate english 9ad13d35:
 translate english b6345736:
 
     # ryn colere "Moi, ce que je sais, c'est qu'on a faim, qu'on a plus aucun endroit tranquille et qu'au prochain vote j'ai pas envie de découvrir sa nouvelle crise en même temps que tout le monde."
-    ryn colere ""
+    ryn colere "Here's what I know: we're hungry, we've got nowhere private left, and I don't want his next meltdown sprung on us in the middle of another vote."
 
 # game/scenario/13_0_1_1_0.rpy:544
 translate english 491dd15b:
 
     # elias fatigue "Là-dessus, on est d'accord."
-    elias fatigue ""
+    elias fatigue "Yeah, we're on the same page there."
 
 # game/scenario/13_0_1_1_0.rpy:546
 translate english 778eb5c7:
@@ -4784,7 +4784,7 @@ translate english 7c86990d:
 translate english 7bbb7671:
 
     # noam murmure "Certain. Incertain... et le reste."
-    noam murmure ""
+    noam murmure "Certain. Uncertain... and everything else."
 
 # game/scenario/13_0_1_1_0.rpy:586
 translate english 8ec2010e:
@@ -5114,7 +5114,7 @@ translate english 82ea3982:
 translate english be631f2b:
 
     # noam murmure "Qui a fait ça...?"
-    noam murmure ""
+    noam murmure "Who did this...?"
 
 # game/scenario/13_0_1_1_0.rpy:693
 translate english f04db993:
