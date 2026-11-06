@@ -479,6 +479,92 @@ label _27_0_1_1_0_1_IRIS:
     $ hideGroup()
     return
 
+
+label _27_0_1_1_0_1_PA_CARNET:
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
+    "Je retrouve un petit carnet coincé derrière ses dossiers. Rien d'extraordinaire : des heures de rendez-vous, des listes, des calculs."
+    "À la fin, trois lignes sur Keyper. Puis une quatrième, barrée si fort que le papier a presque cédé."
+    noam reflexion "Tu préparais quoi, Tomas... ?"
+    "J'essaie de déchiffrer les mots, sans succès. Il avait pourtant prévu de continuer ses recherches le lendemain."
+    "Je prends une photo du carnet et le remets exactement où il était."
+    return
+
+label _27_0_1_1_0_1_PA_GRILLE:
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "La chambre de Tomas est impeccable, et la grille d'aération aussi. Je photographie ses fixations."
+    "On a installé la même protection devant la chambre d'Elen. La plaque bloque le passage, mais pas la circulation de l'air."
+    noam reflexion "Bon. Ça n'explique toujours pas ce qui lui est arrivé."
+    "J'enregistre les images sans toucher aux vis. Lysa me ferait une tête pas possible si je démontais tout."
+    return
+
+label _27_0_1_1_0_1_PA_KEYPER:
+    scene bg_archive at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "Je recherche les dernières consultations de Tomas. Keyper-IIB revient plusieurs fois dans l'historique."
+    "Il avait ouvert des documents la veille de sa mort, puis repris une partie de ses calculs."
+    noam raison "T'avais vraiment pas lâché l'affaire."
+    "Les dates confirment qu'il travaillait encore sur la station. Elles ne disent rien sur ce qui lui est arrivé."
+    return
+
+label _27_0_1_1_0_1_PA_QUOTAS:
+    scene bg_archive at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "Je parcours les index de production, à la recherche d'une définition d'ÉID-0."
+    "Il y a des unités de transport, des références de conteneurs, des catégories de machines... mais aucune entrée qui corresponde clairement."
+    noam fatigue "Sérieux, c'est quoi, ces effectifs ?"
+    "Je sauvegarde les références des pages consultées. Je n'ai rien trouvé qui permette de dire s'il s'agit de personnes ou de machines."
+    return
+
+label _27_0_1_1_0_1_PA_SIGNAL:
+    scene bg_observation at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "Je regarde les journaux de la console. Des mesures, des interférences, des heures de connexion. Je comprends à peine la moitié des colonnes."
+    "Je ne repère aucune mention explicite de Yanma, et je n'ai pas le modèle du petit appareil."
+    noam reflexion "Ça pourrait être là, sous mes yeux, et je le verrais même pas."
+    "J'enregistre le journal sans tirer de conclusion."
+    return
+
+label _27_0_1_1_0_1_PA_CAMERA:
+    scene bg_observation at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "J'ouvre l'inventaire des appareils censés se trouver ici."
+    "Une longue liste de boîtiers et de capteurs apparaît, avec des photos qui se ressemblent presque toutes."
+    noam fatigue "Génial... Une boîte grise, puis une autre boîte grise."
+    "Aucun modèle ne correspond clairement à mon souvenir. Je demande une copie de l'inventaire."
+    return
+
+label _27_0_1_1_0_1_PA_ELIAS:
+    scene bg_maintenance at adaptive_fullscreen with dissolve
+    $ showGroup([("elias", "fatigue", 0.36), ("noam", "neutre", 0.68)])
+    noam reflexion "Elias, tu ranges parfois les appareils de la salle d'observation ?"
+    elias raison "Ouais. Quand il traîne des trucs, je les ramène ici."
+    noam raison "T'as déplacé une petite boîte avec un voyant, depuis le jour 25 ?"
+    elias surpris "Une petite boîte ? Noam, y en a plein."
+    noam fatigue "Je sais. J'ai pas mieux comme description."
+    elias reflexion "J'ai pas le souvenir d'en avoir pris une, mais ça veut pas dire que j'ai rien bougé."
+    noam neutre "Ça marche. Tu peux vérifier si un modèle manque ?"
+    elias raison "Je peux regarder, oui. Mais je te promets pas que je vais retrouver ton truc."
+    noam sourire "Merci."
+    $ hideGroup()
+    return
+
+label _27_0_1_1_0_1_PA_JULIAN:
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([("julian", "fatigue", 0.35), ("noam", "neutre", 0.69)])
+    noam raison "Je voulais revenir sur le vote. Tu savais ce que Tomas cherchait exactement ?"
+    julian agace "Tu vas encore me demander pourquoi je me suis énervé ?"
+    noam neutre "Non. Je veux savoir s'il t'a parlé de Keyper ou des unités ÉID-0."
+    julian reflexion "Keyper, oui, il avait dit un truc sur des quotas. ÉID-quoi, j'en ai aucune idée."
+    noam raison "Il t'avait montré ses dossiers ?"
+    julian fatigue "Non. On s'est engueulés avant qu'il puisse m'expliquer. Je l'ai pas laissé finir."
+    noam inquiet "Julian..."
+    julian triste "Ouais. Je sais."
+    "Il détourne la tête. Je n'insiste pas."
+    $ hideGroup()
+    return
+
 label _27_0_1_1_0_1_NYRA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
@@ -487,10 +573,16 @@ label _27_0_1_1_0_1_NYRA:
     nyra sourire "Tu m'as dit que t'avais pas mangé. Alors mange."
     noam sourire "Merci. T'es la troisième personne à me le dire."
     nyra reflexion "Alors, ils ont dit quoi ?"
-    noam raison "Kael connaît Yanma, mais il peut pas reconnaître l'appareil. Et personne sait ce que sont les unités ÉID-0."
-    nyra neutre "Même Iris ?"
-    noam reflexion "Elle a réagi bizarrement. Elle croit avoir déjà vu une nomenclature similaire."
-    nyra raison "Ça vaut peut-être le coup de chercher de ce côté-là. Si on comprend ce que Tomas cherchait, on comprendra au moins pourquoi il a voté contre."
+    noam raison "J'ai vérifié quelques pistes. Pour le moment, personne ne m'a donné une réponse claire sur les unités ÉID-0."
+    if "kael" in investigation_pa_completed:
+        noam reflexion "Kael connaît Yanma, mais il ne reconnaît pas l'appareil."
+    if "iris" in investigation_pa_completed:
+        noam raison "Iris croit avoir déjà vu une nomenclature proche. Elle va regarder."
+        nyra raison "Ça vaut le coup de suivre ça."
+    elif "sael" in investigation_pa_completed:
+        noam raison "Sael et Ryn ne savent pas davantage ce que sont ces unités."
+    else:
+        nyra raison "Au moins, on a les documents de Tomas. Ça nous permet de chercher demain."
     noam neutre "Mais pas forcément pourquoi il est mort."
     nyra reflexion "Non, pas forcément."
     noam raison "J'ai toujours l'appareil en tête."
@@ -524,7 +616,7 @@ label _27_0_1_1_0_1_REUNION:
     julian reflexion "Quel rapport avec sa mort ?"
     noam neutre "J'en sais rien. Mais il avait un petit appareil dans la salle d'observation, le jour 25. Aujourd'hui, cet appareil avait disparu."
     lysa surpris "Disparu ?"
-    nyra raison "On a vérifié. Il a pu être déplacé par quelqu'un de la maintenance. On sait pas ce que c'était."
+    nyra raison "Il a pu être déplacé par quelqu'un de la maintenance. Mais on sait toujours pas ce que c'était."
     elen triste "Donc on sait toujours pas..."
     noam neutre "Pas encore."
     iris raison "Continuez à chercher. Moi je poursuis les examens. Mais arrêtez de tirer des conclusions avec une moitié d'indice."
