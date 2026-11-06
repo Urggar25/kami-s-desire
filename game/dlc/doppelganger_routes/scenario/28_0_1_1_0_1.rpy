@@ -143,6 +143,9 @@ init 10 python:
       }
     }
     INVESTIGATION_ENTRIES.update({
+        "j28_core_plaque": {"category": "preuves", "title": "PLAQUE DE DÉRIVATION D'AIR", "desc": "Une plaque non standard dévie l'air vers la chambre d'Elen depuis l'intérieur du réseau de ventilation.", "day": "J28", "origin": "CONDUITS", "status": "CONFIRMÉ", "manual_only": True},
+        "j28_core_bol": {"category": "preuves", "title": "RÉCIPIENT BRÛLÉ", "desc": "Un petit récipient noirci contenant des résidus végétaux brûlés a été découvert derrière la plaque.", "day": "J28", "origin": "CONDUITS", "status": "CONFIRMÉ", "manual_only": True},
+        "j28_core_bulbuma": {"category": "hypotheses", "title": "PISTE DU BULBUMA CORIENIS", "desc": "Des fragments évoquent une plante dont certaines préparations chauffées peuvent être toxiques, sans identification définitive.", "day": "J28", "origin": "INFIRMERIE", "status": "CONFIRMÉ", "manual_only": True},
         "j28_tomas_grilles": {"category": "preuves", "title": "PROTECTIONS ET FLUX D'AIR", "desc": "Les grilles bloquent le passage d'une personne, mais laissent circuler l'air vers les chambres.", "day": "J28", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j28_tomas_flacon": {"category": "hypotheses", "title": "FLACON ET SUICIDE", "desc": "La présence de somnifères ne suffit pas à expliquer la plaque et les résidus trouvés dans le conduit.", "day": "J28", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j28_tomas_iris": {"category": "personnes", "title": "IRIS — INTOXICATION POSSIBLE", "desc": "Les symptômes et les résidus rendent l'intoxication plausible, sans identifier avec certitude la substance.", "day": "J28", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
@@ -438,6 +441,9 @@ label _28_0_1_1_0_1_TEMOINS:
     "Je sauvegarde les photos de la plaque, du bol et des fragments. Ces découvertes sont déjà acquises : je n'ai pas besoin de dépenser des PA pour les garder."
     $ investigation_pa_begin(28, 5)
     $ investigation_unlocked = True
+    $ investigation_add("j28_core_plaque", notify=False)
+    $ investigation_add("j28_core_bol", notify=False)
+    $ investigation_add("j28_core_bulbuma", notify=False)
     $ free_time_active = False
     $ conclave_lock = False
     $ dortoir_lock = False
