@@ -4004,13 +4004,13 @@ translate english b7117e52:
 translate english a5cb7068:
 
     # mara agace "Pour une fois qu’elle parle comme une personne normale, profite."
-    mara agace "Thanks, Mara. Your support means the world to me."
+    mara agace "For once she's talking like a normal person. Enjoy it."
 
 # game/scenario/15_0_1_1_0.rpy:312
 translate english 11d146a1:
 
     # lysa taquin "Merci Mara, ton soutien me bouleverse."
-    lysa taquin "Noam... Kael... I don't know what you're looking for, and I guess you don't want to tell us."
+    lysa taquin "Thanks, Mara. Your support means the world to me."
 
 # game/scenario/15_0_1_1_0.rpy:314
 translate english 74bcaac2:
@@ -4022,61 +4022,61 @@ translate english 74bcaac2:
 translate english 7740aa7f:
 
     # elen inquiet "Noam... Kael... je sais pas ce que vous allez chercher, et j’imagine que vous voulez pas le dire."
-    elen inquiet "But please come back, okay? I don't want us to start losing people because we've forgotten how to talk to each other."
+    elen inquiet "Noam... Kael... I don't know what you're looking for, and I guess you don't want to tell us."
 
 # game/scenario/15_0_1_1_0.rpy:317
 translate english b5581808:
 
     # elen triste "Mais revenez, d’accord ? J’ai pas envie qu’on commence à perdre des gens parce qu’on n’arrive plus à se parler."
-    elen triste "We'll be back."
+    elen triste "But please come back, okay? I don't want us to start losing people just because we've forgotten how to talk to each other."
 
 # game/scenario/15_0_1_1_0.rpy:319
 translate english bc88af2c:
 
     # kael triste "On reviendra."
-    kael triste "Yeah."
+    kael triste "We'll be back."
 
 # game/scenario/15_0_1_1_0.rpy:320
 translate english dff233d5:
 
     # noam triste "Oui."
-    noam triste "And you—eat a proper meal first. That bar you probably scarfed down in your room doesn't count."
+    noam triste "Yeah."
 
 # game/scenario/15_0_1_1_0.rpy:322
 translate english d773c992:
 
     # iris colere "Et toi, tu manges vraiment quelque chose avant. La barre que t’as dû avaler tout seul dans ta chambre, ça compte pas comme un repas."
-    iris colere "How do you know I ate a bar?"
+    iris colere "And you, eat a proper meal first. That bar you probably scarfed down in your room doesn't count."
 
 # game/scenario/15_0_1_1_0.rpy:323
 translate english 5abc2735:
 
     # noam hesitation "Comment tu sais que j’ai mangé une barre ?"
-    noam hesitation "Because the wrapper's still sticking out of your pocket, Sherlock."
+    noam hesitation "How do you know I ate a bar?"
 
 # game/scenario/15_0_1_1_0.rpy:324
 translate english ce32b194:
 
     # iris taquin "Parce que t’as encore l’emballage qui dépasse de ta poche, Sherlock."
-    iris taquin "Wonderful. We're on the brink of another collective disaster and she's checking his snacks."
+    iris taquin "Because the wrapper's still sticking out of your pocket, Sherlock."
 
 # game/scenario/15_0_1_1_0.rpy:326
 translate english be0f3ec9:
 
     # mara rire "Magnifique. On est au bord d’un nouveau drame collectif et elle vérifie son goûter."
-    mara rire "Go fuck yourself, Mara."
+    mara rire "Wonderful. We're on the brink of another disaster and she's checking his snacks."
 
 # game/scenario/15_0_1_1_0.rpy:327
 translate english 6493cc27:
 
     # iris colere "Va te faire foutre, Mara."
-    iris colere "There she is. That's the Iris I know."
+    iris colere "Go fuck yourself, Mara."
 
 # game/scenario/15_0_1_1_0.rpy:328
 translate english 278807a0:
 
     # mara rire "Voilà, là je te reconnais."
-    mara rire "Kael... before we start, can I ask you something?"
+    mara rire "There she is. That's the Iris I know."
 
 # game/scenario/15_0_1_1_0.rpy:330
 translate english 22013d35:
@@ -4118,13 +4118,13 @@ translate english 1af22e6c:
 translate english 806773f5:
 
     # noam hesitation "Kael... avant qu’on commence, je peux te demander quelque chose ?"
-    noam hesitation "Go ahead."
+    noam hesitation "Kael... before we start, can I ask you something?"
 
 # game/scenario/15_0_1_1_0.rpy:357
 translate english c0cbe07e:
 
     # kael calme "Vas-y."
-    kael calme "You could've done this alone. Why ask me to come?"
+    kael calme "Go ahead."
 
 # game/scenario/15_0_1_1_0.rpy:360
 translate english b3afbfd9:
@@ -4136,13 +4136,13 @@ translate english b3afbfd9:
 translate english 1c4e6a81:
 
     # noam raison "Tu aurais pu faire ça tout seul. Pourquoi tu m’as demandé de venir ?"
-    noam raison "Because if I find something bad, I want someone else to see it too."
+    noam raison "You could've done this on your own. Why ask me to come?"
 
 # game/scenario/15_0_1_1_0.rpy:364
 translate english 478b1f6a:
 
     # kael reflechit "Parce que si je trouve quelque chose de mauvais, je préfère que quelqu’un d’autre le voie aussi."
-    kael reflechit "You're the only one who hasn't looked at me like I'd already done something wrong."
+    kael reflechit "Because if I find something bad, I'd rather someone else saw it too."
 
 # game/scenario/15_0_1_1_0.rpy:365
 translate english 6553fdf4:
@@ -4160,19 +4160,19 @@ translate english 18bb90a2:
 translate english fb3ecadd:
 
     # kael fatigue "Tu es le seul qui ne m’a pas encore regardé comme si j’avais déjà fait quelque chose de travers."
-    kael fatigue "Then what's bothering you?"
+    kael fatigue "You're the only one who hasn't looked at me like I'd already done something wrong."
 
 # game/scenario/15_0_1_1_0.rpy:372
 translate english 1481fd95:
 
     # noam inquiet "Alors qu’est-ce qui te dérange ?"
-    noam inquiet "That they all have a good reason to keep their distance."
+    noam inquiet "Then what's bothering you?"
 
 # game/scenario/15_0_1_1_0.rpy:374
 translate english 6ed0cb47:
 
     # kael fatigue "Qu’ils aient tous une bonne raison de rester à distance."
-    kael fatigue "If we see someone in the video, at least that's a fact. Not a feeling or a half-remembered event."
+    kael fatigue "That they all have a good reason to keep their distance."
 
 # game/scenario/15_0_1_1_0.rpy:375
 translate english 3a99d071:
@@ -4190,19 +4190,19 @@ translate english 89148aff:
 translate english ac6717ad:
 
     # kael reflechit "Si on trouve quelqu’un sur la vidéo, au moins on aura un fait. Pas une impression, pas un souvenir bancal."
-    kael reflechit "And if the video's been tampered with?"
+    kael reflechit "If we see someone on the video, at least we'll have a fact. Not a feeling or a half-remembered event."
 
 # game/scenario/15_0_1_1_0.rpy:380
 translate english 8aba58b8:
 
     # noam reflexion "Et si la vidéo est trafiquée ?"
-    noam reflexion "We'll check."
+    noam reflexion "What if the video's been tampered with?"
 
 # game/scenario/15_0_1_1_0.rpy:381
 translate english 76560ec1:
 
     # kael calme "On le vérifiera."
-    kael calme "Enough to spot a clumsy edit. If someone did a better job, it'll be harder."
+    kael calme "We'll check."
 
 # game/scenario/15_0_1_1_0.rpy:382
 translate english eee3b975:
@@ -4214,7 +4214,7 @@ translate english eee3b975:
 translate english 7d470c8f:
 
     # kael sourire "Assez pour repérer une modification grossière. Si quelqu’un a fait mieux, ce sera plus compliqué."
-    kael sourire "Yeah. I look at it almost every night."
+    kael sourire "Enough to spot a clumsy edit. If somebody did a better job, it'll be harder."
 
 # game/scenario/15_0_1_1_0.rpy:385
 translate english 6de011a9:
@@ -4232,7 +4232,7 @@ translate english acf54a90:
 translate english 4ceb2199:
 
     # kael calme "Oui. Je la regarde presque tous les soirs."
-    kael calme "You never told me that."
+    kael calme "Yeah. I look at it almost every night."
 
 # game/scenario/15_0_1_1_0.rpy:393
 translate english 64dfd529:
@@ -4244,13 +4244,13 @@ translate english 64dfd529:
 translate english 45934874:
 
     # noam hesitation "Tu ne m’avais jamais dit ça."
-    noam hesitation "There was no reason to."
+    noam hesitation "You never told me that."
 
 # game/scenario/15_0_1_1_0.rpy:396
 translate english 6df836cb:
 
     # kael calme "Il n’y avait aucune raison de le dire."
-    kael calme "8:12, exit. 8:17, return. 9:43, exit... 1:06, return."
+    kael calme "There was no reason to mention it."
 
 # game/scenario/15_0_1_1_0.rpy:398
 translate english 85e95da6:
@@ -4262,13 +4262,13 @@ translate english 85e95da6:
 translate english d5136e4e:
 
     # kael reflechit "08h12, sortie. 08h17, retour. 09h43, sortie... 13h06, retour."
-    kael reflechit "Does that match where you went?"
+    kael reflechit "8:12, exit. 8:17, return. 9:43, exit... 1:06, return."
 
 # game/scenario/15_0_1_1_0.rpy:401
 translate english cc0b5b7f:
 
     # noam reflexion "Ça correspond à tes déplacements ?"
-    noam reflexion "So if someone came in after you, they didn't use the door normally."
+    noam reflexion "Does that match where you went?"
 
 # game/scenario/15_0_1_1_0.rpy:402
 translate english 3fa1a2fc:
@@ -4286,13 +4286,13 @@ translate english f661774d:
 translate english 2562160e:
 
     # "Je pointe la ligne du doigt."
-    "I point to the line."
+    "Or the log was altered."
 
 # game/scenario/15_0_1_1_0.rpy:408
 translate english 3e55036b:
 
     # noam inquiet "Donc si quelqu’un est entré après toi, il n’a pas utilisé la porte normalement."
-    noam inquiet "Or the log was altered."
+    noam inquiet "So if someone came in after you, they didn't use the door normally."
 
 # game/scenario/15_0_1_1_0.rpy:409
 translate english 36b8ac32:
@@ -4334,7 +4334,7 @@ translate english 7ea14f36:
 translate english fe3a3d4f:
 
     # noam inquiet "Tu étais où ?"
-    noam inquiet "Probably in the lounge. I was with Elen for part of the evening."
+    noam inquiet "Where were you?"
 
 # game/scenario/15_0_1_1_0.rpy:422
 translate english f5d12501:
@@ -4346,7 +4346,7 @@ translate english f5d12501:
 translate english c51bfe5b:
 
     # kael fatigue "Probablement à la salle de repos. J’étais avec Elen une partie de la soirée."
-    kael fatigue "That was a week ago, Noam. I can't account for every minute."
+    kael fatigue "Probably in the lounge. I was with Elen for part of the evening."
 
 # game/scenario/15_0_1_1_0.rpy:425
 translate english 52f914d1:
@@ -4358,7 +4358,7 @@ translate english 52f914d1:
 translate english 82c8f583:
 
     # kael fatigue "C’était il y a une semaine, Noam. Je ne peux pas te réciter chaque minute."
-    kael fatigue "Keep going."
+    kael fatigue "That was a week ago, Noam. I can't account for every minute."
 
 # game/scenario/15_0_1_1_0.rpy:428
 translate english 63d52166:
@@ -4370,7 +4370,7 @@ translate english 63d52166:
 translate english 1404140e:
 
     # kael inquietude "On continue."
-    kael inquietude "...What?"
+    kael inquietude "Keep going."
 
 # game/scenario/15_0_1_1_0.rpy:445
 translate english 5d4d81cb:
@@ -4424,13 +4424,13 @@ translate english dc0bbb69:
 translate english 1268c57e:
 
     # noam inquiet "C’est bien toi ?"
-    noam inquiet "I..."
+    noam inquiet "Is that you?"
 
 # game/scenario/15_0_1_1_0.rpy:463
 translate english d6732652:
 
     # kael fatigue "Je..."
-    kael fatigue "Play it again."
+    kael fatigue "I..."
 
 # game/scenario/15_0_1_1_0.rpy:465
 translate english aaecf65d:
@@ -4460,19 +4460,19 @@ translate english 0cb3789d:
 translate english 04adb2bb:
 
     # kael fatigue "C’est moi."
-    kael fatigue "It looks like you, yeah."
+    kael fatigue "That's me."
 
 # game/scenario/15_0_1_1_0.rpy:484
 translate english 0394fbe9:
 
     # noam hesitation "Ça te ressemble, oui."
-    noam hesitation "No. It doesn't just *look* like me. It's my jacket, the way I walk... everything."
+    noam hesitation "It looks like you, yeah."
 
 # game/scenario/15_0_1_1_0.rpy:485
 translate english 21d1f150:
 
     # kael inquietude "Non. C’est pas juste quelqu’un qui me ressemble. C’est ma veste, ma façon de marcher... tout."
-    kael inquietude "I didn't take that picture."
+    kael inquietude "No. It doesn't just look like me. It's my jacket, the way I walk... everything."
 
 # game/scenario/15_0_1_1_0.rpy:487
 translate english 701ad5f7:
@@ -4484,13 +4484,13 @@ translate english 701ad5f7:
 translate english 00736a8a:
 
     # kael triste "Je n’ai pas pris cette photo."
-    kael triste "Are you sure you remember?"
+    kael triste "I didn't take that picture."
 
 # game/scenario/15_0_1_1_0.rpy:490
 translate english afbc536e:
 
     # noam raison "Tu es sûr de ton souvenir ?"
-    noam raison "Even after a week?"
+    noam raison "Are you sure you remember?"
 
 # game/scenario/15_0_1_1_0.rpy:492
 translate english 938db6b0:
@@ -4514,7 +4514,7 @@ translate english d6358cae:
 translate english f8d9185e:
 
     # kael triste "J'aurais pas oublié avoir décroché la seule photo de ma sœur. Pas ça."
-    kael triste "Play it again."
+    kael triste "I wouldn't forget taking down the only photo I have of my sister. Not that."
 
 # game/scenario/15_0_1_1_0.rpy:501
 translate english 26e149e0:
@@ -4538,19 +4538,19 @@ translate english dedb068d:
 translate english a67bd3f0:
 
     # kael surpris "Tu comprends ce qu’il dit ?"
-    kael surpris "Not really. Maybe 'sorry'... or something like that. I don't want to make anything up."
+    kael surpris "Can you make out what he's saying?"
 
 # game/scenario/15_0_1_1_0.rpy:507
 translate english f48c00df:
 
     # noam hesitation "Pas vraiment. Peut-être 'désolé'... ou quelque chose qui ressemble à ça. Je veux pas inventer."
-    noam hesitation "Why would I apologize?"
+    noam hesitation "Not really. Maybe 'sorry'... or something like that. I don't want to make anything up."
 
 # game/scenario/15_0_1_1_0.rpy:509
 translate english 5f8603f3:
 
     # kael fatigue "Pourquoi je m’excuserais ?"
-    kael fatigue "Why would I steal my own picture and then apologize to a camera?"
+    kael fatigue "Why would I apologize?"
 
 # game/scenario/15_0_1_1_0.rpy:511
 translate english cde0a7c0:
@@ -4568,7 +4568,7 @@ translate english 42cd36bc:
 translate english 5c79527d:
 
     # kael inquietude "Soit quelqu’un a trafiqué cette vidéo, soit j’ai un trou de mémoire que je ne peux pas expliquer."
-    kael inquietude "And I hate both options."
+    kael inquietude "Either someone doctored this video, or I've lost memories I can't account for."
 
 # game/scenario/15_0_1_1_0.rpy:516
 translate english 0459b613:
@@ -4658,7 +4658,7 @@ translate english 735dcab6:
 translate english 5e54fe1f:
 
     # noam raison "Oui. Pas d’hypothèse avant d’avoir épuisé le plus simple."
-    noam raison "Found anything?"
+    noam raison "Right. No theories until we've ruled out the simple explanations."
 
 # game/scenario/15_0_1_1_0.rpy:540
 translate english fc195faf:
@@ -4682,7 +4682,7 @@ translate english f4829797:
 translate english 9efba7cc:
 
     # kael reflechit "Rien d’évident."
-    kael reflechit "The file was created at the right time. The source matches my room's camera. The hash checks out, and I can't see any changes logged afterward."
+    kael reflechit "Nothing obvious."
 
 # game/scenario/15_0_1_1_0.rpy:559
 translate english 276d9a54:
@@ -4694,13 +4694,13 @@ translate english 276d9a54:
 translate english 81c58f0e:
 
     # kael calme "Le fichier a été créé au bon moment. La source correspond à la caméra de ma chambre. L’empreinte est valide et je ne vois aucune modification enregistrée après coup."
-    kael calme "So the video's authentic?"
+    kael calme "The file was created at the right time. The source matches my room's camera. The hash checks out, and the timestamps line up."
 
 # game/scenario/15_0_1_1_0.rpy:562
 translate english 5614a70a:
 
     # noam inquiet "Donc la vidéo est authentique ?"
-    noam inquiet "All I'm saying is I see no sign of editing. That's not quite the same thing."
+    noam inquiet "So the video's authentic?"
 
 # game/scenario/15_0_1_1_0.rpy:563
 translate english ba9a6885:
@@ -4736,13 +4736,13 @@ translate english f55eea24:
 translate english 90a1a555:
 
     # noam inquiet "Kael..."
-    noam inquiet "That's the worst part. I could tell myself someone dressed up, that the footage was fake, that I saw it wrong... but the longer I watch, the more I recognize myself."
+    noam inquiet "Kael..."
 
 # game/scenario/15_0_1_1_0.rpy:573
 translate english b0e56b8e:
 
     # kael triste "C’est ça le pire. Je pourrais me raconter que quelqu’un s’est déguisé, que l’image est fausse, que j’ai mal vu... mais plus je regarde, plus je me reconnais."
-    kael triste "What if it really was me?"
+    kael triste "That's the worst part. I could tell myself someone dressed up, that the footage was fake, that I was imagining things."
 
 # game/scenario/15_0_1_1_0.rpy:575
 translate english c26824c2:
@@ -4754,7 +4754,7 @@ translate english c26824c2:
 translate english eee5d2c0:
 
     # kael culpabilite "Et si c’était vraiment moi ?"
-    kael culpabilite "Then we need to find out why you don't remember. That doesn't prove you meant to take it."
+    kael culpabilite "What if it really was me?"
 
 # game/scenario/15_0_1_1_0.rpy:578
 translate english e6c51df4:
@@ -4796,13 +4796,13 @@ translate english 1310fa77:
 translate english 7919c3c3:
 
     # kael fatigue "J’ai déjà essayé. Il y a un angle mort à cet endroit et aucune autre caméra ne couvre l’entrée de ma chambre assez clairement."
-    kael fatigue "So this is all we've got."
+    kael fatigue "I've already tried. There's a blind spot there, and no other camera covers it."
 
 # game/scenario/15_0_1_1_0.rpy:591
 translate english be2c5287:
 
     # noam desaccord "Donc on n’a que ça."
-    noam desaccord "When you mentioned that silhouette in the corridor the other day... what exactly did you see?"
+    noam desaccord "So this is all we've got."
 
 # game/scenario/15_0_1_1_0.rpy:594
 translate english 1226a21f:
@@ -4814,13 +4814,13 @@ translate english 1226a21f:
 translate english 2888a282:
 
     # kael inquietude "Quand tu as parlé de la silhouette dans le couloir l’autre jour... tu avais vu quoi exactement ?"
-    kael inquietude "I don't know."
+    kael inquietude "When you mentioned that silhouette in the corridor the other day... what exactly did you see?"
 
 # game/scenario/15_0_1_1_0.rpy:598
 translate english 7870af99:
 
     # noam hesitation "Je ne sais pas."
-    noam hesitation "I saw something. A figure, movement... but I had a fever, and by the next day I was already doubting myself."
+    noam hesitation "I don't know."
 
 # game/scenario/15_0_1_1_0.rpy:599
 translate english 1684d0f5:
@@ -4844,7 +4844,7 @@ translate english dd45281a:
 translate english 58a4c389:
 
     # kael reflechit "Donc on a deux souvenirs qu’on ne peut pas vérifier et une vidéo qui montre quelque chose qui ne devrait pas exister."
-    kael reflechit "Well, that's reassuring."
+    kael reflechit "So we've got two memories we can't verify and a video that shows something neither of us can explain."
 
 # game/scenario/15_0_1_1_0.rpy:604
 translate english 6cc1fc0e:
@@ -4862,7 +4862,7 @@ translate english 3f529e9f:
 translate english 21bf9229:
 
     # kael triste "Je dois retrouver la photo."
-    kael triste "We'll find it. Just don't go running off on your own without thinking."
+    kael triste "I have to find that picture."
 
 # game/scenario/15_0_1_1_0.rpy:609
 translate english 35d0be83:
@@ -4874,13 +4874,13 @@ translate english 35d0be83:
 translate english bbc1e2f1:
 
     # kael calme "Je vais juste vérifier ma chambre."
-    kael calme "Noam, I need to do something tangible. Right now I'm sitting here watching my own face tell me my memory's worthless."
+    kael calme "I'm just going to check my room."
 
 # game/scenario/15_0_1_1_0.rpy:612
 translate english 564f6783:
 
     # kael fatigue "Noam, j’ai besoin de chercher quelque chose de concret. Là, je suis juste assis à regarder mon propre visage me dire que ma mémoire vaut rien."
-    kael fatigue "Okay. I'll catch up with you afterward."
+    kael fatigue "Noam, I need to do something real. I'm sitting here watching my own face tell me my memory is worthless."
 
 # game/scenario/15_0_1_1_0.rpy:614
 translate english 682cb0c6:
@@ -4892,7 +4892,7 @@ translate english 682cb0c6:
 translate english 925f1c72:
 
     # noam fatigue "D’accord. Je te rejoins après."
-    noam fatigue "...Kael?"
+    noam fatigue "Okay. I'll catch up with you afterward."
 
 # game/scenario/15_0_1_1_0.rpy:617
 translate english 805d006d:
@@ -4958,7 +4958,7 @@ translate english e486b330_1:
 translate english 1d8433a2:
 
     # noam surpris "... Kael ?"
-    noam surpris "No... wait."
+    noam surpris "...Kael?"
 
 # game/scenario/15_0_1_1_0.rpy:655
 translate english 9d10e93e:
