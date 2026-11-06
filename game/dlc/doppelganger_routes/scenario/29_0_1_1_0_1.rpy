@@ -790,7 +790,7 @@ label _29_0_1_1_0_1_FAUSSE_ACCUSATION:
         noam fatigue "Non."
         sael neutre "Alors tu n'as pas assez."
     pause 0.3
-    $ showGroup([("elen", "triste", 0.22), ("nyra", "neutre", 0.48), ("noam", "neutre", 0.74)])
+    $ showGroup([("noam", "neutre", 0.080), ("iris", "fatigue", 0.176), ("julian", "fatigue", 0.271), ("elen", "triste", 0.367), ("ryn", "agace", 0.462), ("sael", "neutre", 0.558), ("nyra", "neutre", 0.653), ("kael", "calme", 0.749), ("lysa", "neutre", 0.844), ("elias", "fatigue", 0.940)])
     elen inquiet "Noam, je comprends que tu veuilles trouver quelqu'un... mais on peut pas enfermer une personne juste avec ça."
     nyra raison "Elen a raison. Et le badge retrouvé, on n'a toujours pas expliqué pourquoi il a été utilisé."
     noam fatigue "Je sais."
@@ -806,7 +806,7 @@ label _29_0_1_1_0_1_FAUSSE_ACCUSATION:
 label _29_0_1_1_0_1_NYRA_ACCUSATION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.8
-    $ showGroup([("nyra", "neutre", 0.22), ("noam", "inquiet", 0.48), ("elen", "triste", 0.74)])
+    $ showGroup([("noam", "neutre", 0.080), ("iris", "fatigue", 0.176), ("julian", "fatigue", 0.271), ("elen", "triste", 0.367), ("ryn", "agace", 0.462), ("sael", "neutre", 0.558), ("nyra", "neutre", 0.653), ("kael", "calme", 0.749), ("lysa", "neutre", 0.844), ("elias", "fatigue", 0.940)])
     noam raison "Nyra. Je pense que tu es impliquée dans la mort de Tomas."
     pause 0.6
     nyra surpris "Moi ?"
@@ -853,7 +853,7 @@ label _29_0_1_1_0_1_CONFRONTATION:
 label _29_0_1_1_0_1_CONSEQUENCE_NYRA:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
-    $ showGroup([("nyra", "neutre", 0.080), ("elen", "triste", 0.248), ("noam", "inquiet", 0.416), ("julian", "fatigue", 0.584), ("iris", "fatigue", 0.752), ("sael", "neutre", 0.920)])
+    $ showGroup([("noam", "neutre", 0.080), ("iris", "fatigue", 0.176), ("julian", "fatigue", 0.271), ("elen", "triste", 0.367), ("ryn", "agace", 0.462), ("sael", "neutre", 0.558), ("nyra", "neutre", 0.653), ("kael", "calme", 0.749), ("lysa", "neutre", 0.844), ("elias", "fatigue", 0.940)])
     elen inquiet "Vous voulez l'enfermer ?"
     julian reflexion "On va quand même pas prendre une décision définitive avec une seule ligne dans un journal."
     noam raison "Pas une décision définitive. Mais le départ approche. Si elle peut accéder aux conduits, on peut pas juste faire comme si on avait rien trouvé."
