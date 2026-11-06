@@ -6294,3 +6294,9 @@ translate english 2bdf9ba4:
 
     # noam inquiet "Non."
     noam inquiet "No."
+
+# Navigation string localized for day 14
+translate english strings:
+
+    old "Rejoindre la chambre de Sael"
+    new "Go to Sael's room"
