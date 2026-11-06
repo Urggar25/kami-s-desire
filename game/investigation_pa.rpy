@@ -275,24 +275,29 @@ screen j26_photo_saved_preview(eid):
             text _("PHOTO ENREGISTRÉE") xalign 0.5 size 24 color "#25333B" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
     timer 1.0 action Return()
 
-# Le J26 reprend la caméra J25 mais gère son aperçu dans le scénario J26.
-# Cela évite qu'une capture fraîchement créée soit affichée dans une screen
-# encore en train de se mettre à jour.
-label j26_photograph(eid, source, center, zoom=2.2):
+# Mécanique commune à toutes les preuves photographiques (J26-J30).
+# Viseur / cadrage du J25 ; capture réelle puis Polaroid animé du J25.
+label investigation_take_manual_photo(eid, source, center=(0.5, 0.5), zoom=2.2):
     window hide
     with None
-    $ _j26_view = _J25View(zoom=zoom, center=center, source=source)
-    show expression _j26_view as j26_photo_view onlayer master
-    call screen _j25_photo_screen(_j26_view, evidence_id=eid)
-    hide j26_photo_view onlayer master
-    $ _j26_view = None
+    $ _investigation_camera = _J25View(zoom=zoom, center=center, source=source)
+    show expression _investigation_camera as investigation_camera_view onlayer master
+    call screen _j25_photo_screen(_investigation_camera, evidence_id=eid)
+    hide investigation_camera_view onlayer master
+    $ _investigation_camera = None
     if investigation_photo_data.get(eid):
         call screen j26_photo_saved_preview(eid)
         $ investigation_add(eid, notify=False)
     else:
+        window show
         "La photo n'a pas été enregistrée. Je dois recommencer."
-        call j26_photograph(eid, source, center, zoom) from _call_j26_photo_retry
+        call investigation_take_manual_photo(eid, source, center, zoom) from _call_investigation_photo_retry
     window show
+    return
+
+# Ancien point d'entrée maintenu pour les sauvegardes du jour 26.
+label j26_photograph(eid, source, center, zoom=2.2):
+    call investigation_take_manual_photo(eid, source, center, zoom) from _call_j26_photo_shared_engine
     return
 
 # Compatibilité avec les sauvegardes et les rechargements Ren'Py faits
