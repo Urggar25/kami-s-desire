@@ -144,6 +144,9 @@ init 10 python:
     }
     INVESTIGATION_ENTRIES.update({
         "j27_photo_yanma": {"category": "preuves", "title": "LIVRE — RÉSONANCE YANMA", "desc": "Tomas consultait un manuel sur les communications spatiales de faible intensité.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/chambre1.png"},
+        "j27_photo_transport": {"category": "preuves", "title": "NOTES DE TRANSPORT DE TOMAS", "desc": "Photographie des documents consultés dans la chambre de Tomas.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "PHOTOGRAPHIE", "manual_only": True},
+        "j27_photo_carnet": {"category": "preuves", "title": "CARNET DE TOMAS", "desc": "Photographie prise lors de l'inspection du carnet.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "PHOTOGRAPHIE", "manual_only": True},
+        "j27_photo_grille_tomas": {"category": "preuves", "title": "FIXATIONS — CHAMBRE DE TOMAS", "desc": "Photographie des protections de l'aération de la chambre de Tomas.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "PHOTOGRAPHIE", "manual_only": True},
         "j27_photo_keyper": {"category": "preuves", "title": "DOCUMENTS — KEYPER-IIB", "desc": "Le registre de production de Keyper-IIB mentionne les unités ÉID-0 et des quotas inexpliqués.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/archive2.png"},
         "j27_core_yanma": {"category": "preuves", "title": "LIVRE SUR LA RÉSONANCE YANMA", "desc": "Tomas conservait un livre décrivant des transmissions spatiales très faibles.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "CONFIRMÉ", "manual_only": True},
         "j27_core_eid": {"category": "anomalies", "title": "REGISTRE ÉID-0 / KEYPER-IIB", "desc": "Les relevés de production de Keyper-IIB mentionnent des unités ÉID-0 et des quotas sans expliquer leur nature.", "day": "J27", "origin": "CHAMBRE DE TOMAS", "status": "CONFIRMÉ", "manual_only": True},
@@ -278,7 +281,7 @@ label _27_0_1_1_0_1_FOUILLE:
             nyra neutre "Il cherchait des coordonnées orbitales. Peut-être qu'il a voulu comprendre un système."
             noam raison "Je prends une photo du livre."
             $ hideGroup()
-            call investigation_evidence_photo_take("j27_photo_yanma") from _call_j27_photo_yanma
+            call investigation_take_manual_photo("j27_photo_yanma", "bg_chambre", (0.39, 0.49), 2.2) from _call_j27_photo_yanma
             $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
             $ hideGroup()
             jump _27_0_1_1_0_1_FOUILLE
@@ -296,7 +299,7 @@ label _27_0_1_1_0_1_FOUILLE:
             noam fatigue "Non. Mais il a voté contre à cause de ça."
             "Je photographie la page du registre qui mentionne les unités ÉID-0."
             $ hideGroup()
-            call investigation_evidence_photo_take("j27_photo_keyper") from _call_j27_photo_keyper
+            call investigation_take_manual_photo("j27_photo_keyper", "bg_chambre", (0.61, 0.59), 2.2) from _call_j27_photo_keyper
             $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
             "Je garde une copie du registre."
             $ hideGroup()
@@ -312,6 +315,7 @@ label _27_0_1_1_0_1_FOUILLE:
             "Je remarque trois questions sous le trajet : « Pourquoi station non déclarée ? », « Quels effectifs ? », « Accès aux quotas ? »"
             noam fatigue "Il a passé toute la journée là-dessus."
             $ hideGroup()
+            call investigation_take_manual_photo("j27_photo_transport", "bg_chambre", (0.61, 0.59), 2.2) from _call_j27_transport_photo
             jump _27_0_1_1_0_1_FOUILLE
         "La porte et les accès" if not j27a_chambre:
             $ j27a_chambre = True
@@ -502,6 +506,7 @@ label _27_0_1_1_0_1_PA_CARNET:
     noam reflexion "Tu préparais quoi, Tomas... ?"
     "J'essaie de déchiffrer les mots, sans succès. Il avait pourtant prévu de continuer ses recherches le lendemain."
     "Je prends une photo du carnet et le remets exactement où il était."
+    call investigation_take_manual_photo("j27_photo_carnet", "bg_chambre", (0.61, 0.59), 2.2) from _call_j27_carnet_photo
     return
 
 label _27_0_1_1_0_1_PA_GRILLE:
@@ -511,6 +516,7 @@ label _27_0_1_1_0_1_PA_GRILLE:
     "Dans la chambre d'Elen, c'est différent : une tôle artisanale est clouée devant l'ouverture. Elle bloque le passage, mais pas la circulation de l'air."
     noam reflexion "Bon. Ça n'explique toujours pas ce qui lui est arrivé."
     "J'enregistre les images sans toucher aux vis. Lysa me ferait une tête pas possible si je démontais tout."
+    call investigation_take_manual_photo("j27_photo_grille_tomas", "bg_chambre", (0.65, 0.19), 2.2) from _call_j27_grille_photo
     return
 
 label _27_0_1_1_0_1_PA_KEYPER:
