@@ -1,3 +1,161 @@
+# INVESTIGATION À PA — J27. Les faits nécessaires au J29 restent obligatoires.
+init 10 python:
+    J27A_ROOMS = {
+      "dortoir": {
+        "title": "DORTOIRS — CHAMBRE DE TOMAS",
+        "background": "bg_chambre",
+        "description": "Les affaires de Tomas sont restées en place.",
+        "actions": [
+          "carnet",
+          "grille"
+        ]
+      },
+      "archive": {
+        "title": "ARCHIVES",
+        "background": "bg_archive",
+        "description": "Historique des consultations de Tomas.",
+        "actions": [
+          "keyper",
+          "quotas"
+        ]
+      },
+      "observation": {
+        "title": "OBSERVATION",
+        "background": "bg_observation",
+        "description": "Dernier endroit où Tomas a manipulé l'appareil.",
+        "actions": [
+          "signal",
+          "camera"
+        ]
+      },
+      "maintenance": {
+        "title": "MAINTENANCE",
+        "background": "bg_maintenance",
+        "description": "Kael et Elias peuvent expliquer le matériel.",
+        "actions": [
+          "kael",
+          "elias"
+        ]
+      },
+      "infirmerie": {
+        "title": "INFIRMERIE",
+        "background": "infirmerie2",
+        "description": "Iris poursuit ses analyses.",
+        "actions": [
+          "iris"
+        ]
+      },
+      "repos": {
+        "title": "SALLE COMMUNE",
+        "background": "bg_repos",
+        "description": "Ryn et Sael se souviennent du vote.",
+        "actions": [
+          "sael"
+        ]
+      },
+      "cafeteria": {
+        "title": "CAFÉTÉRIA",
+        "background": "bg_cafeteria",
+        "description": "Julian est resté près de la machine à café.",
+        "actions": [
+          "julian"
+        ]
+      },
+      "conclave": {
+        "title": "SALLE DU CONCLAVE",
+        "background": "bg_conclave",
+        "description": "Tomas a pris sa dernière décision ici.",
+        "actions": []
+      },
+      "gymnase": {
+        "title": "GYMNASE",
+        "background": "bg_gymnase",
+        "description": "Une salle presque déserte.",
+        "actions": []
+      }
+    }
+    J27A_ACTIONS = {
+      "carnet": {
+        "title": "Lire les annotations de Tomas",
+        "description": "Parcourir des annotations personnelles sans déplacer le reste de ses affaires.",
+        "label": "_27_0_1_1_0_1_PA_CARNET",
+        "evidence": "j27_tomas_carnet"
+      },
+      "grille": {
+        "title": "Vérifier la grille de la chambre",
+        "description": "Comparer les protections avec celles de la chambre d'Elen.",
+        "label": "_27_0_1_1_0_1_PA_GRILLE",
+        "evidence": "j27_tomas_grille"
+      },
+      "keyper": {
+        "title": "Vérifier le dossier Keyper",
+        "description": "Contrôler les dates de consultation sans révéler la nature de la station.",
+        "label": "_27_0_1_1_0_1_PA_KEYPER",
+        "evidence": "j27_tomas_historique"
+      },
+      "quotas": {
+        "title": "Chercher une définition des unités ÉID-0",
+        "description": "Explorer les index accessibles de la station de production.",
+        "label": "_27_0_1_1_0_1_PA_QUOTAS",
+        "evidence": "j27_tomas_quotas"
+      },
+      "signal": {
+        "title": "Examiner les journaux d'observation",
+        "description": "Chercher une trace de l'appareil disparu, sans connaissance technique suffisante.",
+        "label": "_27_0_1_1_0_1_PA_SIGNAL",
+        "evidence": "j27_tomas_signal"
+      },
+      "camera": {
+        "title": "Contrôler l'inventaire des appareils",
+        "description": "Comparer la description de l'appareil avec les équipements officiels.",
+        "label": "_27_0_1_1_0_1_PA_CAMERA",
+        "evidence": "j27_tomas_inventaire"
+      },
+      "kael": {
+        "title": "Demander à Kael ce qu'il sait de Yanma",
+        "description": "Questionner Kael au sujet de l'appareil de Tomas et d'ÉID-0.",
+        "label": "_27_0_1_1_0_1_KAEL",
+        "evidence": "j27_tomas_kael"
+      },
+      "elias": {
+        "title": "Interroger Elias sur les équipements déplacés",
+        "description": "Vérifier qui range normalement les petits appareils en observation.",
+        "label": "_27_0_1_1_0_1_PA_ELIAS",
+        "evidence": "j27_tomas_elias"
+      },
+      "iris": {
+        "title": "Demander à Iris si elle reconnaît ÉID-0",
+        "description": "Confronter le registre de Tomas aux dossiers consultés à l'infirmerie.",
+        "label": "_27_0_1_1_0_1_IRIS",
+        "evidence": "j27_tomas_iris"
+      },
+      "sael": {
+        "title": "Interroger Sael et Ryn",
+        "description": "Demander ce qu'ils savent réellement de Keyper et des quotas.",
+        "label": "_27_0_1_1_0_1_SAEL",
+        "evidence": "j27_tomas_sael"
+      },
+      "julian": {
+        "title": "Interroger Julian sur la décision de Tomas",
+        "description": "Revenir sur sa colère et sur ce qu'il a compris du vote.",
+        "label": "_27_0_1_1_0_1_PA_JULIAN",
+        "evidence": "j27_tomas_julian"
+      }
+    }
+    INVESTIGATION_ENTRIES.update({
+        "j27_tomas_carnet": {"category": "evenements", "title": "ANNOTATIONS DE TOMAS", "desc": "Tomas notait encore des questions sur les trajets et effectifs de Keyper la veille de sa mort.", "day": "J27", "origin": "CHAMBRE", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_grille": {"category": "preuves", "title": "PROTECTIONS DES DORTOIRS", "desc": "Les deux chambres possèdent des grilles de protection comparables. Cela ne renseigne pas sur l'air circulant dans le réseau.", "day": "J27", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_historique": {"category": "evenements", "title": "HISTORIQUE KEYPER", "desc": "Les recherches de Tomas sur Keyper-IIB se sont prolongées jusqu'au jour 25.", "day": "J27", "origin": "ARCHIVES", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_quotas": {"category": "anomalies", "title": "UNITÉS ÉID-0 NON DÉFINIES", "desc": "Les index consultables ne précisent pas si les unités ÉID-0 correspondent à des personnes ou à des machines.", "day": "J27", "origin": "ARCHIVES", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_signal": {"category": "anomalies", "title": "JOURNAUX D'OBSERVATION", "desc": "Les relevés généraux ne permettent pas d'identifier le petit appareil aperçu près de Tomas.", "day": "J27", "origin": "OBSERVATION", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_inventaire": {"category": "preuves", "title": "INVENTAIRE DE L'OBSERVATION", "desc": "Aucune référence évidente ne correspond à la description imprécise de l'appareil aperçu par Noam.", "day": "J27", "origin": "OBSERVATION", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_kael": {"category": "personnes", "title": "KAEL — TRANSMISSION YANMA", "desc": "Kael connaît la technologie Yanma de nom, mais ne reconnaît pas l'appareil décrit par Noam.", "day": "J27", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_elias": {"category": "personnes", "title": "ELIAS — MATÉRIEL D'OBSERVATION", "desc": "Elias déclare déplacer régulièrement de petits boîtiers, sans pouvoir identifier celui de Tomas.", "day": "J27", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_iris": {"category": "personnes", "title": "IRIS — CODE ÉID-0", "desc": "Iris croit avoir rencontré une désignation similaire, sans pouvoir confirmer le service d'origine.", "day": "J27", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_sael": {"category": "personnes", "title": "SAEL ET RYN — KEYPER", "desc": "Ni Sael ni Ryn ne disent connaître la signification des unités ÉID-0.", "day": "J27", "origin": "SALLE COMMUNE", "status": "À VÉRIFIER", "manual_only": True},
+        "j27_tomas_julian": {"category": "personnes", "title": "JULIAN — MOTIF DU VOTE", "desc": "Julian savait que Tomas cherchait des anomalies de production, mais ne connaissait pas ses détails techniques.", "day": "J27", "origin": "CAFÉTÉRIA", "status": "À VÉRIFIER", "manual_only": True},
+    })
+
 # JOUR 27 — LES DERNIÈRES RECHERCHES
 # Route de Tomas — uniquement les observations de Noam.
 default j27a_yanma = False
@@ -191,23 +349,69 @@ label _27_0_1_1_0_1_APPAREIL:
 
 label _27_0_1_1_0_1_QUESTIONS:
     scene bg_repos at adaptive_fullscreen with dissolve
-    "Nyra part chercher à manger pendant que je pose quelques questions aux autres."
-    menu:
-        "À qui parler ?"
-        "À Kael" if not j27a_kael:
-            $ j27a_kael = True
-            call _27_0_1_1_0_1_KAEL from _call_j27a_kael
-            jump _27_0_1_1_0_1_QUESTIONS
-        "À Sael et Ryn" if not j27a_sael:
-            $ j27a_sael = True
-            call _27_0_1_1_0_1_SAEL from _call_j27a_sael
-            jump _27_0_1_1_0_1_QUESTIONS
-        "À Iris" if not j27a_iris:
-            $ j27a_iris = True
-            call _27_0_1_1_0_1_IRIS from _call_j27a_iris
-            jump _27_0_1_1_0_1_QUESTIONS
-        "Rejoindre Nyra" if j27a_kael and j27a_sael and j27a_iris:
-            jump _27_0_1_1_0_1_NYRA
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+    "J'ai pris les photos de ses livres et constaté que le petit appareil n'est plus en observation. Mais je ne sais toujours pas à quoi servait ce truc."
+    $ showGroup([("nyra", "neutre", 0.33), ("noam", "fatigue", 0.69)])
+    nyra raison "Tu veux continuer aujourd'hui ?"
+    noam raison "Oui, mais pas passer la journée à poser les mêmes questions à tout le monde."
+    nyra neutre "Alors fais comme hier. Cinq pistes, et tu peux circuler entre les salles."
+    noam reflexion "Et si je trouve rien ?"
+    nyra raison "On gardera ce qu'on a. Le livre et le registre existent, même si tu n'interroges personne d'autre."
+    noam neutre "D'accord."
+    "Je vérifie mon dossier. Le livre Yanma, le registre ÉID-0 et la disparition de l'appareil sont déjà notés : ces éléments ne me coûteront pas de point d'action."
+    $ investigation_pa_begin(27, 5)
+    $ investigation_unlocked = True
+    $ free_time_active = False
+    $ exploration_libre_active = True
+    $ exploration_libre_allowed_rooms = list(J27A_ROOMS.keys())
+    $ current_scene_active = None
+    $ corridor_current = "dortoir"
+    $ hideGroup()
+    jump _27_0_1_1_0_1_PA_MAP
+
+label _27_0_1_1_0_1_PA_MAP:
+    call screen investigation_pa_map(J27A_ROOMS, title="JOUR 27 — LES DERNIÈRES RECHERCHES")
+    if _return == "finish":
+        jump _27_0_1_1_0_1_PA_FIN
+    if _return == "corridors":
+        jump _27_0_1_1_0_1_PA_CORRIDORS
+    $ investigation_pa_current_room = _return
+    jump _27_0_1_1_0_1_PA_ROOM
+
+label _27_0_1_1_0_1_PA_CORRIDORS:
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_j27a_pa_corridors
+    $ investigation_pa_current_room = _return
+    if investigation_pa_current_room not in J27A_ROOMS:
+        jump _27_0_1_1_0_1_PA_MAP
+    jump _27_0_1_1_0_1_PA_ROOM
+
+label _27_0_1_1_0_1_PA_ROOM:
+    call screen investigation_pa_room(investigation_pa_current_room, J27A_ROOMS, J27A_ACTIONS)
+    if _return == "back":
+        jump _27_0_1_1_0_1_PA_MAP
+    if _return == "corridors":
+        jump _27_0_1_1_0_1_PA_CORRIDORS
+    $ investigation_pa_selected = _return
+    if not investigation_pa_can_take(investigation_pa_selected):
+        jump _27_0_1_1_0_1_PA_ROOM
+    call screen investigation_pa_confirm(J27A_ACTIONS[investigation_pa_selected])
+    if not _return:
+        jump _27_0_1_1_0_1_PA_ROOM
+    if not investigation_pa_spend(investigation_pa_selected):
+        jump _27_0_1_1_0_1_PA_ROOM
+    call expression J27A_ACTIONS[investigation_pa_selected]["label"] from _call_j27a_pa_dynamic
+    $ investigation_add(J27A_ACTIONS[investigation_pa_selected]["evidence"])
+    if investigation_pa_remaining == 0:
+        "Ma tablette m'indique que mes cinq actions du jour sont épuisées. Je peux encore consulter le plan, mais il faut finir par faire le point."
+        jump _27_0_1_1_0_1_PA_MAP
+    jump _27_0_1_1_0_1_PA_ROOM
+
+label _27_0_1_1_0_1_PA_FIN:
+    $ exploration_libre_active = False
+    $ exploration_libre_allowed_rooms = None
+    if investigation_pa_remaining > 0:
+        "Je m'arrête avant de dépenser toutes mes actions. J'ai besoin de laisser un peu de temps aux autres, et à moi aussi."
+    jump _27_0_1_1_0_1_NYRA
 
 label _27_0_1_1_0_1_KAEL:
     scene bg_maintenance at adaptive_fullscreen with dissolve
