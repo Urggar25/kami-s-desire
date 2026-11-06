@@ -452,6 +452,145 @@ label _29_0_1_1_0_1_PA_FIN:
         "Je m'arrête là. J'ai assez de choses à vérifier et je ne veux plus tourner autour du pot."
     jump _29_0_1_1_0_1_NYRA
 
+
+label _29_0_1_1_0_1_PA_GRILLE:
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "La grille paraît intacte. Je reprends mes photos et compare son emplacement avec la plaque découverte dans les conduits."
+    noam reflexion "La porte pouvait rester fermée tout le temps..."
+    "L'air, lui, passait encore. Ça ne me donne pas un nom, mais ça explique pourquoi personne n'a entendu la porte."
+    return
+
+label _29_0_1_1_0_1_PA_ELEN:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
+    $ showGroup([("elen", "triste", 0.35), ("noam", "neutre", 0.69)])
+    noam inquiet "Elen, je peux te demander une dernière fois pour l'échange des chambres ?"
+    elen fatigue "Encore ?"
+    noam neutre "C'est juste pour savoir si quelqu'un a pu entendre."
+    elen reflexion "Noam, j'étais avec Tomas dans le couloir. Il y avait sûrement des gens pas loin. Mais je regardais pas qui passait."
+    noam raison "Tu n'as vu personne clairement ?"
+    elen triste "Non. Et si j'avais su..."
+    noam fatigue "Je sais. J'arrête."
+    elen inquiet "Tu penses que quelqu'un savait qu'il dormait chez moi ?"
+    noam neutre "Je cherche à comprendre, c'est tout."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_IRIS:
+    scene infirmerie2 at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "fatigue", 0.35), ("noam", "neutre", 0.69)])
+    noam raison "Je voudrais vérifier une dernière chose. Tu penses qu'on l'a tué, mais tu peux pas être sûre de la substance ?"
+    iris raison "C'est ça. L'exposition par inhalation correspond aux éléments, mais je peux pas identifier précisément ce qu'il a respiré."
+    noam reflexion "Donc on peut pas accuser quelqu'un juste parce qu'il connaît le Bulbuma."
+    iris agace "Non. Et si tu me reposes cette question une quatrième fois, je vais t'envoyer chez Kael."
+    noam sourire "D'accord, compris."
+    iris triste "Fais attention à Elen pendant la réunion, s'il te plaît."
+    noam neutre "Ouais."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_FLACON:
+    scene infirmerie2 at adaptive_fullscreen with dissolve
+    $ showGroup([("iris", "fatigue", 0.35), ("noam", "reflexion", 0.69)])
+    noam raison "Elen m'avait dit qu'elle avait peut-être des somnifères dans sa trousse."
+    iris reflexion "Oui. Elle en avait bien. Mais elle ne sait pas combien il en restait."
+    noam inquiet "Donc le flacon pouvait être dans sa chambre avant Tomas ?"
+    iris raison "Oui. On ne peut pas démontrer quand il a été déplacé, ni même s'il l'a été."
+    noam fatigue "C'est encore un truc qu'on pourra pas prouver."
+    iris neutre "Pas avec ce qu'on a ici. Note-le comme une possibilité, pas comme un fait."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_KAEL:
+    scene bg_maintenance at adaptive_fullscreen with dissolve
+    $ showGroup([("kael", "calme", 0.35), ("noam", "neutre", 0.69)])
+    noam raison "Reprenons le badge de Nyra. Il a bien ouvert le lecteur à 02 h 17 ?"
+    kael raison "Oui. Le terminal donne l'autorisation et l'heure. Il ne photographie pas la personne."
+    noam reflexion "Et quelqu'un aurait pu utiliser son badge sans qu'elle le sache ?"
+    kael neutre "Oui. Je peux pas exclure ça. Mais je peux pas non plus expliquer pourquoi cette autorisation précise a été enregistrée."
+    noam raison "Le lecteur est sur le chemin du conduit ?"
+    kael raison "Il ouvre une porte qui mène à cette branche. Pas directement à la chambre."
+    noam fatigue "Donc ça reste un indice. Pas une preuve définitive."
+    kael neutre "Exact."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_ELIAS:
+    scene bg_maintenance at adaptive_fullscreen with dissolve
+    $ showGroup([("elias", "fatigue", 0.35), ("noam", "neutre", 0.69)])
+    noam reflexion "On peut prêter son badge de maintenance ?"
+    elias raison "Oui. Enfin, faut normalement pas. Mais le lecteur sait pas si tu l'as emprunté."
+    noam neutre "Nyra dit qu'elle avait probablement le sien avec elle."
+    elias reflexion "Peut-être. Mais « probablement », ça me dit pas qui était à la porte."
+    noam raison "Et les autres journaux ?"
+    elias fatigue "Ils sont toujours incomplets. J'ai cherché."
+    noam neutre "Bon. Merci."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_RYN:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    $ showGroup([("ryn", "fatigue", 0.35), ("noam", "neutre", 0.69)])
+    ryn agace "Encore moi ?"
+    noam raison "Je voulais vérifier la soirée du 25. Tu étais avec Julian et Mara ?"
+    ryn fatigue "Ouais. Je l'ai déjà dit. Après je suis allé me coucher."
+    noam neutre "Tu les as quittés à quelle heure ?"
+    ryn reflexion "J'en sais rien. Il était tard."
+    noam inquiet "Tu savais où Tomas dormait ?"
+    ryn colere "Non ! Je savais même pas qu'il avait changé de chambre !"
+    noam raison "D'accord."
+    ryn fatigue "Je sais que j'ai été un con avec lui. Mais ça prouve quoi, tout ça ?"
+    noam neutre "Rien, à lui seul."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_SAEL:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    $ showGroup([("sael", "neutre", 0.35), ("noam", "neutre", 0.69)])
+    noam raison "Sael, la plante qui pourrait avoir brûlé dans le conduit... Elle pousse aussi ailleurs qu'à Limen ?"
+    sael raison "Oui. Et certaines espèces proches sont cultivées. On ne peut pas retrouver le propriétaire à partir de ça."
+    noam reflexion "Tu sais si quelqu'un en avait ici ?"
+    sael neutre "Non. J'ai vérifié mes affaires et celles de l'infirmerie. Rien ne correspond."
+    noam fatigue "Donc on peut pas écarter Limen, ni l'accuser."
+    sael raison "Voilà. C'est exactement ce que je dis depuis hier."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_JULIAN:
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([("julian", "fatigue", 0.35), ("noam", "neutre", 0.69)])
+    noam raison "Julian, tu peux me redire quand tu as quitté Ryn et Mara ?"
+    julian reflexion "Je sais pas, Noam. Je suis rentré après eux, ou à peu près en même temps."
+    noam neutre "Tu as revu Tomas dans la nuit ?"
+    julian fatigue "Non. J'ai passé la soirée à l'éviter. Tu connais la suite."
+    noam raison "Tu te souviens qu'il avait changé de chambre ?"
+    julian agace "Je te l'ai déjà dit : non."
+    pause 0.3
+    julian triste "Je sais que j'ai été odieux. Mais si tu veux me demander si je l'ai tué, demande-le franchement."
+    noam fatigue "J'essaie juste de comprendre ce qui s'est passé."
+    julian neutre "Alors fais-le sans inventer ce que je pense."
+    $ hideGroup()
+    return
+
+label _29_0_1_1_0_1_PA_LIVRAISONS:
+    scene bg_archive at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "Je vérifie les lots de plantes, les consommables médicaux et les petits récipients passés par le Conclave."
+    "Les références sont trop vagues pour retrouver celui qui a été installé dans le conduit. Certaines cargaisons viennent de Limen, d'autres d'Orbite ou ont transité ailleurs."
+    noam fatigue "Même les factures savent rien..."
+    "Je prends une copie des références utilisables. Pour l'instant, ça ne permet de désigner personne."
+    return
+
+label _29_0_1_1_0_1_PA_SIGNAL:
+    scene bg_observation at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.7
+    "Je reviens sur l'émission faible découverte ce matin. Le rapport est court. Aucune destination n'y figure."
+    "Ça pourrait être lié au petit appareil que Tomas tenait, mais je n'ai ni numéro de série ni preuve que ce soit un signal Yanma."
+    noam reflexion "Je peux pas me permettre de raconter que j'ai retrouvé un appel clandestin."
+    "Je garde une copie du relevé, sans lui donner plus de valeur qu'il n'en a."
+    return
+
 label _29_0_1_1_0_1_NYRA:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
@@ -508,6 +647,20 @@ label _29_0_1_1_0_1_REUNION:
     nyra neutre "C'est ce qu'il faut faire."
     elen triste "Je veux juste savoir. Même si c'est horrible, je préfère savoir."
     noam neutre "Ouais. Moi aussi."
+    if "elias" in investigation_pa_completed or "kael" in investigation_pa_completed:
+        $ showGroup([("kael", "calme", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
+        noam raison "J'ai revu le journal d'accès. Le lecteur enregistre un badge, pas la personne qui l'utilise."
+        kael neutre "Exactement. Ça reste une piste, pas une identification."
+    if "livraisons" in investigation_pa_completed or "sael" in investigation_pa_completed:
+        $ showGroup([("sael", "neutre", 0.22), ("iris", "fatigue", 0.48), ("noam", "neutre", 0.74)])
+        noam raison "Les registres et l'origine de la plante ne permettent pas de désigner une personne."
+        sael raison "Donc ne le faisons pas."
+    if "elen" in investigation_pa_completed:
+        $ showGroup([("elen", "triste", 0.22), ("lysa", "neutre", 0.48), ("noam", "neutre", 0.74)])
+        noam raison "On ne sait toujours pas qui a entendu l'échange de chambres."
+        elen fatigue "J'aimerais tellement pouvoir vous répondre..."
+        lysa raison "On sait. On peut pas te demander de te souvenir de tout."
+    $ showGroup([("iris", "fatigue", 0.22), ("julian", "fatigue", 0.48), ("noam", "neutre", 0.74)])
     "J'affiche les photos de la chambre et du conduit sur la table. Il va falloir reprendre les arguments un par un."
     jump _29_0_1_1_0_1_OBJECTIONS
 # Durée : ~1m30.
