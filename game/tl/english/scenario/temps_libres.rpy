@@ -6366,25 +6366,25 @@ translate english sael_link_3_88e8f635:
 translate english lysa_link_2_b7456189:
 
     # noam taquin "Attends, par là ? Mais y'a rien ?!."
-    noam taquin ""
+    noam taquin "Wait, that way? But there's nothing there!"
 
 # game/scenario/temps_libres.rpy:142
 translate english julian_link_1_ccb11ac5:
 
     # julian taquin "C'est adorable. T'as beau tenter d'analyser, tu ne l'as pas arrêté quand même."
-    julian taquin ""
+    julian taquin "Adorable. You can analyze it all you like, but you still couldn't stop it."
 
 # game/scenario/temps_libres.rpy:148
 translate english julian_link_1_d4f0f249:
 
     # noam reflexion "Ah ouais ? Et si on réglait ça une bonne fois pour toutes ?! On se fait une balle en or ?"
-    noam reflexion ""
+    noam reflexion "Oh, yeah? Why don't we settle this once and for all? Golden goal?"
 
 # game/scenario/temps_libres.rpy:154
 translate english julian_link_1_59c9ac41:
 
     # noam taquin "Qu'est-ce qu'il y a ? Tu as peur de perdre ?"
-    noam taquin ""
+    noam taquin "What's wrong? Scared you'll lose?"
 
 # game/scenario/temps_libres.rpy:161
 translate english julian_link_1_4b98dc4a:
@@ -6396,211 +6396,211 @@ translate english julian_link_1_4b98dc4a:
 translate english julian_link_1_52e869bc:
 
     # julian taquin "Mais je n'ai jamais dit ça. Tu t'es déconcentré tout seul..."
-    julian taquin ""
+    julian taquin "I never said that. You distracted yourself..."
 
 # game/scenario/temps_libres.rpy:166
 translate english julian_link_1_89c15fe9:
 
     # julian rire "À votre service ! Mais tu as quand même perdu !"
-    julian rire ""
+    julian rire "At your service! Though you still lost!"
 
 # game/scenario/temps_libres.rpy:187
 translate english julian_link_2_6d984740:
 
     # noam surpris "T'as l'air de savoir y faire ?"
-    noam surpris ""
+    noam surpris "Looks like you know what you're doing."
 
 # game/scenario/temps_libres.rpy:196
 translate english julian_link_2_7628e43c:
 
     # julian taquin "Tu as beau être adorable, ton masque finira aussi par tomber."
-    julian taquin ""
+    julian taquin "You're adorable, but that mask of yours will slip eventually."
 
 # game/scenario/temps_libres.rpy:201
 translate english julian_link_2_dd647ba2:
 
     # noam taquin "Quoique, en plissant les yeux, je retrouve facilement où tu as recousu !"
-    noam taquin ""
+    noam taquin "Although... if I squint, I can spot exactly where you stitched it up!"
 
 # game/scenario/temps_libres.rpy:202
 translate english julian_link_2_162b8631:
 
     # julian taquin "C'est ça, rattrape-toi."
-    julian taquin ""
+    julian taquin "Nice save."
 
 # game/scenario/temps_libres.rpy:221
 translate english julian_link_3_b0bd913e:
 
     # julian sourire "Mais on ne t'a jamais dit que c'est impoli de regarder dans les affaires des autres ?"
-    julian sourire ""
+    julian sourire "Has nobody taught you it's rude to snoop through other people's stuff?"
 
 # game/scenario/temps_libres.rpy:223
 translate english julian_link_3_2caeee52:
 
     # noam taquin "Si tu ne voulais pas que je regarde, tu aurais fermé complètement ton carnet."
-    noam taquin ""
+    noam taquin "If you didn't want me looking, you should've shut your sketchbook."
 
 # game/scenario/temps_libres.rpy:239
 translate english julian_link_3_0cb37e43:
 
     # julian inquietude "Les autres me donnent une version assez stable. La seule raison pour laquelle je n'arrive pas à te dessiner, c'est que tu es... Creux."
-    julian inquietude ""
+    julian inquietude "Everyone else gives me something consistent. The only reason I can't draw you is that you're... empty."
 
 # game/scenario/temps_libres.rpy:246
 translate english julian_link_3_e962288e:
 
     # julian taquin "Et le mien montre peut-être trop de choses à la fois. Au final, on se ressemble peut-être un peu."
-    julian taquin ""
+    julian taquin "And maybe mine reveals too much all at once. We might be more alike than you think."
 
 # game/scenario/temps_libres.rpy:303
 translate english elen_link_1_6f4747b9:
 
     # noam taquin "Et le reste ? Par pitié, dis-moi qu'elle est raisonnable ?"
-    noam taquin ""
+    noam taquin "And the rest? Please tell me she's being reasonable?"
 
 # game/scenario/temps_libres.rpy:325
 translate english elen_link_2_ba23135f:
 
     # noam surpris "Pourquoi ? Je serais curieux de savoir ce qu'ils diraient s'ils t'écoutaient."
-    noam surpris ""
+    noam surpris "Why? I'd love to hear what they'd say if they actually listened to you."
 
 # game/scenario/temps_libres.rpy:346
 translate english elen_link_2_96381728:
 
     # noam sourire "C'est moi qui ai le fauteuil du milieu, alors je veux tout le monde à côté !"
-    noam sourire ""
+    noam sourire "I've got the middle seat, so I want everybody beside me!"
 
 # game/scenario/temps_libres.rpy:448
 translate english iris_link_1_5022f02a:
 
     # iris colere "Rooh tais-toi un peu et laisse-moi jouer."
-    iris colere ""
+    iris colere "Oh, shut up and let me play!"
 
 # game/scenario/temps_libres.rpy:465
 translate english iris_link_2_6c6e8154:
 
     # noam desaccord "Eh oh ! Il tient très bien."
-    noam desaccord ""
+    noam desaccord "Hey! It's holding up just fine."
 
 # game/scenario/temps_libres.rpy:518
 translate english iris_link_3_bb95953a:
 
     # iris desaccord "Mon verre a failli se renverser !"
-    iris desaccord ""
+    iris desaccord "You nearly knocked my drink over!"
 
 # game/scenario/temps_libres.rpy:586
 translate english tomas_link_1_054c0615:
 
     # noam sourire "Un peu. Mais continue, c'est intéréssant."
-    noam sourire ""
+    noam sourire "A little. But go on, it's interesting."
 
 # game/scenario/temps_libres.rpy:597
 translate english tomas_link_1_5363c73b:
 
     # noam inquiet "D'une certaine manière, elle a réussi à pacifier le monde et à empêcher les guerres. Mais quand même..."
-    noam inquiet ""
+    noam inquiet "In a way, she really has brought peace and stopped the wars. But still..."
 
 # game/scenario/temps_libres.rpy:685
 translate english tomas_link_3_97905059:
 
     # noam sourire "Tu devrais en profiter, contrairement à chez nous, on a un buffet à volonté ici."
-    noam sourire ""
+    noam sourire "You should make the most of it. Unlike back home, we've got an all-you-can-eat buffet here."
 
 # game/scenario/temps_libres.rpy:727
 translate english nyra_link_1_4be0ec5a:
 
     # nyra neutre "Pas vraiment, étant donné que tout ceci n'est pas pour moi."
-    nyra neutre ""
+    nyra neutre "Not really. None of this is for me."
 
 # game/scenario/temps_libres.rpy:767
 translate english nyra_link_2_f7f07d64:
 
     # nyra sourire "Je ne te demande rien mais... Évitons de trop en parler."
-    nyra sourire ""
+    nyra sourire "I'm not asking you for anything, but... let's not talk about it too much."
 
 # game/scenario/temps_libres.rpy:768
 translate english nyra_link_2_78a17305:
 
     # noam taquin "Tu as peur que Kami se lance à leur poursuite ?"
-    noam taquin ""
+    noam taquin "Afraid Kami will go hunting for them?"
 
 # game/scenario/temps_libres.rpy:813
 translate english nyra_link_3_9ab50c31:
 
     # noam sourire "La prochaine fois, demande-moi directement de t'aider au lieu de tourner autour du pot."
-    noam sourire ""
+    noam sourire "Next time, just ask me for help instead of beating around the bush."
 
 # game/scenario/temps_libres.rpy:857
 translate english kael_link_1_a002abb9:
 
     # kael reflechit "Mais bon, il faut bien le tester."
-    kael reflechit ""
+    kael reflechit "Still, we should test it."
 
 # game/scenario/temps_libres.rpy:930
 translate english kael_link_3_d1af5f90:
 
     # noam taquin "Merci, j'avais remarqué. Jusque-là rien d'incroyable."
-    noam taquin ""
+    noam taquin "Thanks, I noticed. Nothing amazing so far."
 
 # game/scenario/temps_libres.rpy:944
 translate english kael_link_3_986bf3d4:
 
     # kael triste "Ils risquent de tomber malades et ça doit pas être très agréable."
-    kael triste ""
+    kael triste "They could get sick, and it can't be pleasant."
 
 # game/scenario/temps_libres.rpy:1018
 translate english elias_link_2_deedbce6:
 
     # elias colere "T'inquiète, je gère. Par contre si tu peux me passer la pince, ça serait pas de refus."
-    elias colere ""
+    elias colere "I've got it. But if you could pass me the pliers, that'd help."
 
 # game/scenario/temps_libres.rpy:1030
 translate english elias_link_2_b81408f2:
 
     # elias fatigue "Fais chier ! La fixation a pété."
-    elias fatigue ""
+    elias fatigue "Shit! The mount snapped."
 
 # game/scenario/temps_libres.rpy:1035
 translate english elias_link_2_34259031:
 
     # elias fatigue "J'en sais rien. Tiens-moi le tuyau."
-    elias fatigue ""
+    elias fatigue "No idea. Hold that pipe for me."
 
 # game/scenario/temps_libres.rpy:1121
 translate english mara_link_1_ad9faed5:
 
     # mara rire "Seulement ça ? T'es vraiment pas joueur. T'aurais pu choisir quelque chose de beaucoup plus... Intéressant."
-    mara rire ""
+    mara rire "That's it? You're no fun. You could've picked something a lot more... interesting."
 
 # game/scenario/temps_libres.rpy:1149
 translate english mara_link_1_c59b1345:
 
     # mara content "Mmmhh, ça dépend, le gage est plus intéressant ou pas ?"
-    mara content ""
+    mara content "Mmm, depends. Is the dare more interesting this time?"
 
 # game/scenario/temps_libres.rpy:1178
 translate english mara_link_2_80c0f022:
 
     # mara rire "C'est pas vraiment une fierté, mais pourquoi t'es aussi surpris ?"
-    mara rire ""
+    mara rire "Not exactly my proudest moment, but why are you so surprised?"
 
 # game/scenario/temps_libres.rpy:1185
 translate english mara_link_2_e2386be3:
 
     # mara taquin "Kami m'a bien aidée en rendant mes géniteurs aussi pauvres et impuissants que n'importe qui."
-    mara taquin ""
+    mara taquin "Kami did me a favor by making my parents as poor and powerless as everybody else."
 
 # game/scenario/temps_libres.rpy:1221
 translate english mara_link_3_f6b89922:
 
     # mara stress "Allez, réponds ! Tu vas bouder combien de temps ?"
-    mara stress ""
+    mara stress "Come on, answer me! How long are you going to sulk?"
 
 # game/scenario/temps_libres.rpy:1319
 translate english ryn_link_2_f183d1fc:
 
     # noam neutre "Je voulais apprendre à me défendre, pas être défendu contre l'entraîneur."
-    noam neutre ""
+    noam neutre "I wanted to learn to defend myself, not be rescued from the instructor."
 
 # TODO: Translation updated at 2026-11-06 17:50
 
@@ -6614,487 +6614,487 @@ translate english lysa_link_1_a571a28d:
 translate english lysa_link_1_adc011af:
 
     # goumi vide "Je suis parfaitement capable de préparer un café."
-    goumi vide ""
+    goumi vide "I can make a cup of coffee perfectly well, thank you."
 
 # game/scenario/temps_libres.rpy:45
 translate english lysa_link_1_09af2958:
 
     # noam neutre "Promis, je touche plus à ton café."
-    noam neutre ""
+    noam neutre "I promise I won't touch your coffee again."
 
 # game/scenario/temps_libres.rpy:46
 translate english lysa_link_1_3ad2f06b:
 
     # lysa blase "T'as intérêt. J'ai déjà assez de problèmes comme ça."
-    lysa blase ""
+    lysa blase "You'd better not. I've already got enough problems."
 
 # game/scenario/temps_libres.rpy:50
 translate english lysa_link_1_fc0ee4ba:
 
     # noam reflexion "Tu crois qu'on tiendra longtemps ici ?"
-    noam reflexion ""
+    noam reflexion "Think we'll last long in here?"
 
 # game/scenario/temps_libres.rpy:51
 translate english lysa_link_1_f876a0cf:
 
     # lysa reflexion "Bonne question. J'évite de compter les jours, pour le moment."
-    lysa reflexion ""
+    lysa reflexion "Good question. I'm trying not to count the days."
 
 # game/scenario/temps_libres.rpy:68
 translate english lysa_link_2_9947fa2b:
 
     # noam taquin "Tu vas finir par te cogner contre la vitre à force de te coller dessus."
-    noam taquin ""
+    noam taquin "Keep pressing your face against the glass and you'll walk right into it."
 
 # game/scenario/temps_libres.rpy:72
 translate english lysa_link_2_79340c09:
 
     # noam surpris "Attends, tu cherches vraiment un bâtiment depuis ici ?"
-    noam surpris ""
+    noam surpris "Wait, you're seriously looking for a building from all the way up here?"
 
 # game/scenario/temps_libres.rpy:78
 translate english lysa_link_2_227a530a:
 
     # noam neutre "C'est bizarre. D'ici, on dirait que tout va bien en bas."
-    noam neutre ""
+    noam neutre "It's weird. From here, everything down below looks fine."
 
 # game/scenario/temps_libres.rpy:94
 translate english lysa_link_2_befda2a3:
 
     # noam neutre "On peut essayer de repérer la tour avec les lumières."
-    noam neutre ""
+    noam neutre "We could try spotting the tower by its lights."
 
 # game/scenario/temps_libres.rpy:95
 translate english lysa_link_2_73239952:
 
     # lysa sourire "Tu vois ? C'est tout ce que je te demandais."
-    lysa sourire ""
+    lysa sourire "See? That's all I was asking."
 
 # game/scenario/temps_libres.rpy:99
 translate english lysa_link_2_d2f27351:
 
     # noam reflexion "Tu me raconteras ce qui te manque le plus là-bas ?"
-    noam reflexion ""
+    noam reflexion "Will you tell me what you miss most down there?"
 
 # game/scenario/temps_libres.rpy:100
 translate english lysa_link_2_223bfdae:
 
     # lysa triste "Pas tout de suite. Mais... ouais, peut-être."
-    lysa triste ""
+    lysa triste "Not yet. But... yeah, maybe."
 
 # game/scenario/temps_libres.rpy:128
 translate english lysa_link_3_d0063ed7:
 
     # lysa reflexion "Et si nos votes servaient à rien ? Si Kami nous laissait juste croire qu'on décide ?"
-    lysa reflexion ""
+    lysa reflexion "What if our votes don't matter? What if Kami's just making us think we're in charge?"
 
 # game/scenario/temps_libres.rpy:130
 translate english lysa_link_3_bc641daa:
 
     # lysa blase "Tiens. T'as moins de réponses toutes faites qu'au début."
-    lysa blase ""
+    lysa blase "Huh. Fewer ready-made answers than you had at the start."
 
 # game/scenario/temps_libres.rpy:134
 translate english lysa_link_3_52ee5776:
 
     # lysa blase "Fais gaffe, tu commences à parler comme Julian."
-    lysa blase ""
+    lysa blase "Careful, you're starting to sound like Julian."
 
 # game/scenario/temps_libres.rpy:148
 translate english lysa_link_3_4ea18b19:
 
     # noam neutre "On devrait sortir avant le prochain tir."
-    noam neutre ""
+    noam neutre "We should leave before the next shot."
 
 # game/scenario/temps_libres.rpy:149
 translate english lysa_link_3_e777afa1:
 
     # lysa neutre "Excellente idée. J'aime bien quand tu réfléchis vite."
-    lysa neutre ""
+    lysa neutre "Great idea. I like it when you think on your feet."
 
 # game/scenario/temps_libres.rpy:153
 translate english lysa_link_3_07569e46:
 
     # noam reflexion "Si tu veux parler, je suis là."
-    noam reflexion ""
+    noam reflexion "If you want to talk, I'm here."
 
 # game/scenario/temps_libres.rpy:154
 translate english lysa_link_3_f36a4f92:
 
     # lysa sourire "Je sais. Et c'est un peu agaçant, d'ailleurs."
-    lysa sourire ""
+    lysa sourire "I know. And it's kind of annoying, actually."
 
 # game/scenario/temps_libres.rpy:175
 translate english julian_link_1_c933ba66:
 
     # julian taquin "J'attendais quelqu'un capable de me tenir tête. Tu tombes bien."
-    julian taquin ""
+    julian taquin "I've been waiting for someone who can give me a run for my money. Excellent timing."
 
 # game/scenario/temps_libres.rpy:191
 translate english julian_link_1_32cfabca:
 
     # julian neutre "C'est un baby-foot, Noam. Pas une guerre."
-    julian neutre ""
+    julian neutre "It's foosball, Noam. Not a war."
 
 # game/scenario/temps_libres.rpy:193
 translate english julian_link_1_359e9b0a:
 
     # julian taquin "Et tu es resté. Donc ma méthode a parfaitement marché."
-    julian taquin ""
+    julian taquin "And you stayed. So my method worked perfectly."
 
 # game/scenario/temps_libres.rpy:197
 translate english julian_link_1_525b8095:
 
     # julian blase "Tu vas t'en remettre, j'espère. Ça me ferait de la peine."
-    julian blase ""
+    julian blase "You'll recover, I hope. I'd be heartbroken."
 
 # game/scenario/temps_libres.rpy:212
 translate english julian_link_1_af565255:
 
     # noam neutre "La prochaine fois, je vais te surveiller."
-    noam neutre ""
+    noam neutre "Next time I'm watching you like a hawk."
 
 # game/scenario/temps_libres.rpy:213
 translate english julian_link_1_b4b30e57:
 
     # julian taquin "Ah, donc tu admets qu'il y aura une revanche !"
-    julian taquin ""
+    julian taquin "Ah, so you admit there'll be a rematch!"
 
 # game/scenario/temps_libres.rpy:217
 translate english julian_link_1_9475dfb5:
 
     # noam reflexion "Tu triches même pour un baby-foot ?"
-    noam reflexion ""
+    noam reflexion "You even cheat at foosball?"
 
 # game/scenario/temps_libres.rpy:218
 translate english julian_link_1_a62e14a7:
 
     # julian rire "Je préfère parler de créativité tactique."
-    julian rire ""
+    julian rire "I prefer to call it tactical creativity."
 
 # game/scenario/temps_libres.rpy:249
 translate english julian_link_2_4b55e49a:
 
     # julian surpris "Tu vas vraiment me faire une analyse psychologique à cause d'une manche ?"
-    julian surpris ""
+    julian surpris "You're seriously psychoanalyzing me over one round?"
 
 # game/scenario/temps_libres.rpy:251
 translate english julian_link_2_2b4587a6:
 
     # julian taquin "Tu te moques, mais toi aussi, tu fais semblant sur pas mal de choses."
-    julian taquin ""
+    julian taquin "Laugh all you want. You put on an act about plenty of things yourself."
 
 # game/scenario/temps_libres.rpy:261
 translate english julian_link_2_7bd52b33:
 
     # noam neutre "J'aurais jamais réussi à recoudre ça aussi proprement."
-    noam neutre ""
+    noam neutre "I'd never have stitched that so neatly."
 
 # game/scenario/temps_libres.rpy:262
 translate english julian_link_2_c8a60fec:
 
     # julian sourire "Voilà un compliment qui me va droit au cœur."
-    julian sourire ""
+    julian sourire "A compliment straight to my heart."
 
 # game/scenario/temps_libres.rpy:266
 translate english julian_link_2_02426012:
 
     # noam reflexion "Il reste quand même un petit défaut, là."
-    noam reflexion ""
+    noam reflexion "There's still a little flaw here."
 
 # game/scenario/temps_libres.rpy:267
 translate english julian_link_2_26973a6b:
 
     # julian reflexion "Quoi ? Où ça ? Attends, montre !"
-    julian reflexion ""
+    julian reflexion "What? Where? Wait, show me!"
 
 # game/scenario/temps_libres.rpy:285
 translate english julian_link_3_1adc3d86:
 
     # julian sourire "Pire. Je dessine les gens d'ici."
-    julian sourire ""
+    julian sourire "Worse. I draw the people here."
 
 # game/scenario/temps_libres.rpy:288
 translate english julian_link_3_53d28a0a:
 
     # julian taquin "Des portraits satiriques, Noam. « Caricatures », c'est tellement banal."
-    julian taquin ""
+    julian taquin "Satirical portraits, Noam. 'Caricatures' sounds so pedestrian."
 
 # game/scenario/temps_libres.rpy:291
 translate english julian_link_3_ae32a901:
 
     # noam taquin "Si tu voulais pas que je regarde, fallait fermer ton carnet."
-    noam taquin ""
+    noam taquin "If you didn't want me looking, you should've closed your sketchbook."
 
 # game/scenario/temps_libres.rpy:309
 translate english julian_link_3_f86861a7:
 
     # julian decu "C'est toi qui dis ça ? On sait jamais ce que tu penses. Moi, au moins, je montre quelque chose."
-    julian decu ""
+    julian decu "That's rich coming from you. Nobody ever knows what you're thinking. At least I show something."
 
 # game/scenario/temps_libres.rpy:312
 translate english julian_link_3_3eeda7d9:
 
     # julian triste "Tout le monde fait semblant, Noam. Toi aussi, parfois."
-    julian triste ""
+    julian triste "Everybody puts on an act, Noam. Even you sometimes."
 
 # game/scenario/temps_libres.rpy:326
 translate english julian_link_3_b5b987a3:
 
     # noam neutre "T'as pas besoin de te donner autant de mal pour attirer l'attention."
-    noam neutre ""
+    noam neutre "You don't need to try this hard to get attention."
 
 # game/scenario/temps_libres.rpy:327
 translate english julian_link_3_5b193d09:
 
     # julian hesitation "Facile à dire quand on n'essaie pas de se faire remarquer."
-    julian hesitation ""
+    julian hesitation "Easy to say when you're not trying to be noticed."
 
 # game/scenario/temps_libres.rpy:331
 translate english julian_link_3_667d38a7:
 
     # noam reflexion "Alors dessine-moi comme tu me vois vraiment."
-    noam reflexion ""
+    noam reflexion "Then draw me as you really see me."
 
 # game/scenario/temps_libres.rpy:332
 translate english julian_link_3_904c36ee:
 
     # julian surpris "Tu prends des risques, Noam. Beaucoup de risques."
-    julian surpris ""
+    julian surpris "You're taking a risk, Noam. Quite a risk."
 
 # game/scenario/temps_libres.rpy:336
 translate english julian_link_3_2779b98a:
 
     # noam reflexion "Tu dessines les autres parce que t'arrives pas à te dessiner ?"
-    noam reflexion ""
+    noam reflexion "Do you draw everyone else because you can't draw yourself?"
 
 # game/scenario/temps_libres.rpy:337
 translate english julian_link_3_8ebf381f:
 
     # julian inquietude "...Ça t'arrive de ne pas poser la question qui dérange ?"
-    julian inquietude ""
+    julian inquietude "...Do you ever NOT ask the uncomfortable question?"
 
 # game/scenario/temps_libres.rpy:394
 translate english elen_link_1_7f4b8170:
 
     # noam neutre "On peut peut-être sauver la recette."
-    noam neutre ""
+    noam neutre "Maybe we can still salvage the recipe."
 
 # game/scenario/temps_libres.rpy:395
 translate english elen_link_1_1fd29d2c:
 
     # elen joie "Ah ! Tu vois, j'étais sûre qu'il y avait une solution !"
-    elen joie ""
+    elen joie "See! I knew there had to be a way!"
 
 # game/scenario/temps_libres.rpy:399
 translate english elen_link_1_9fccefb7:
 
     # noam reflexion "Ta mère aurait surtout aimé cuisiner avec toi."
-    noam reflexion ""
+    noam reflexion "Your mom would've loved cooking with you more than anything."
 
 # game/scenario/temps_libres.rpy:400
 translate english elen_link_1_d83dc75a:
 
     # elen triste "Ouais... Je crois que t'as raison."
-    elen triste ""
+    elen triste "Yeah... I think you're right."
 
 # game/scenario/temps_libres.rpy:453
 translate english elen_link_2_d833ca89:
 
     # noam neutre "Si quelqu'un râle, je dirai que c'est ma faute."
-    noam neutre ""
+    noam neutre "If anyone complains, I'll say it was my fault."
 
 # game/scenario/temps_libres.rpy:454
 translate english elen_link_2_e62c7bc2:
 
     # elen rire "D'accord ! Mais je viendrai témoigner contre toi."
-    elen rire ""
+    elen rire "Deal! But I'll testify against you."
 
 # game/scenario/temps_libres.rpy:458
 translate english elen_link_2_6c1494c9:
 
     # noam reflexion "On devrait demander aux autres ce qu'ils préfèrent."
-    noam reflexion ""
+    noam reflexion "We should ask the others what they'd prefer."
 
 # game/scenario/temps_libres.rpy:459
 translate english elen_link_2_5d0b9798:
 
     # elen sourire "Oui ! C'est beaucoup plus simple que de décider pour eux."
-    elen sourire ""
+    elen sourire "Yes! That's so much easier than choosing for them."
 
 # game/scenario/temps_libres.rpy:514
 translate english elen_link_3_18987fc5:
 
     # noam neutre "On arrête, tu commences à fatiguer."
-    noam neutre ""
+    noam neutre "Let's stop. You're getting tired."
 
 # game/scenario/temps_libres.rpy:515
 translate english elen_link_3_b11e004c:
 
     # elen decu "Moi ? Bon... peut-être un tout petit peu."
-    elen decu ""
+    elen decu "Me? Well... maybe just a tiny bit."
 
 # game/scenario/temps_libres.rpy:519
 translate english elen_link_3_d08481f1:
 
     # noam reflexion "Encore une minute et on rentre, d'accord ?"
-    noam reflexion ""
+    noam reflexion "One more minute and then we go back, okay?"
 
 # game/scenario/temps_libres.rpy:520
 translate english elen_link_3_c8b6990e:
 
     # elen sourire "Une seule. Et tu comptes, hein !"
-    elen sourire ""
+    elen sourire "Just one! And you're counting!"
 
 # game/scenario/temps_libres.rpy:577
 translate english iris_link_1_4ce8e9db:
 
     # noam neutre "Allez, montre-moi comment tu fais."
-    noam neutre ""
+    noam neutre "Come on, show me how you do it."
 
 # game/scenario/temps_libres.rpy:578
 translate english iris_link_1_6556ee63:
 
     # iris taquin "Regarde bien, je donne pas deux cours gratuits."
-    iris taquin ""
+    iris taquin "Watch carefully. I'm not giving you two free lessons."
 
 # game/scenario/temps_libres.rpy:582
 translate english iris_link_1_2ebff5de:
 
     # noam reflexion "T'as peur de perdre contre moi ?"
-    noam reflexion ""
+    noam reflexion "Scared of losing to me?"
 
 # game/scenario/temps_libres.rpy:583
 translate english iris_link_1_66526edb:
 
     # iris colere "Moi ?! Rêve pas !"
-    iris colere ""
+    iris colere "Me?! Dream on!"
 
 # game/scenario/temps_libres.rpy:644
 translate english iris_link_2_d491249a:
 
     # noam neutre "Tu ferais pareil si c'était moi ?"
-    noam neutre ""
+    noam neutre "Would you do the same if it were me?"
 
 # game/scenario/temps_libres.rpy:645
 translate english iris_link_2_d27fcabe:
 
     # iris colere "Quoi ? Mais... c'est pas la question !"
-    iris colere ""
+    iris colere "What? But... that's not the point!"
 
 # game/scenario/temps_libres.rpy:649
 translate english iris_link_2_98e11e21:
 
     # noam reflexion "Je vais ranger le matériel, va te poser."
-    noam reflexion ""
+    noam reflexion "I'll put the equipment away. You take a break."
 
 # game/scenario/temps_libres.rpy:650
 translate english iris_link_2_88575b67:
 
     # iris sourire "T'es pas complètement inutile, finalement."
-    iris sourire ""
+    iris sourire "Turns out you're not completely useless."
 
 # game/scenario/temps_libres.rpy:710
 translate english iris_link_3_0dc871eb:
 
     # noam neutre "Passe-moi les serviettes, je m'en occupe."
-    noam neutre ""
+    noam neutre "Pass me the towels. I'll handle it."
 
 # game/scenario/temps_libres.rpy:711
 translate english iris_link_3_fd399bc9:
 
     # iris neutre "Enfin quelqu'un qui propose de faire quelque chose."
-    iris neutre ""
+    iris neutre "Finally, someone volunteering to do something."
 
 # game/scenario/temps_libres.rpy:715
 translate english iris_link_3_d904033d:
 
     # noam reflexion "Tu pouvais dire que tu voulais aider Elen, tu sais."
-    noam reflexion ""
+    noam reflexion "You could've just said you wanted to help Elen, you know."
 
 # game/scenario/temps_libres.rpy:716
 translate english iris_link_3_d0c91fed:
 
     # iris colere "Et toi tu pouvais juste te taire !"
-    iris colere ""
+    iris colere "And you could've kept your mouth shut!"
 
 # game/scenario/temps_libres.rpy:720
 translate english iris_link_3_3ba053af:
 
     # noam reflexion "Le pied est tordu, les serviettes vont pas suffire."
-    noam reflexion ""
+    noam reflexion "The leg's bent. Towels won't be enough."
 
 # game/scenario/temps_libres.rpy:721
 translate english iris_link_3_3624fb2c:
 
     # iris surpris "...Attends. Ouais. Bien vu, ça m'énerve encore plus !"
-    iris surpris ""
+    iris surpris "...Wait. Yeah. Good catch, and somehow that just annoys me more!"
 
 # game/scenario/temps_libres.rpy:770
 translate english tomas_link_1_5ee5d8b3:
 
     # noam neutre "La paix, oui. Mais à quel prix ?"
-    noam neutre ""
+    noam neutre "Peace, sure. But at what cost?"
 
 # game/scenario/temps_libres.rpy:771
 translate english tomas_link_1_4ba5a8d3:
 
     # tomas neutre "C'est exactement la question qu'il faut se poser."
-    tomas neutre ""
+    tomas neutre "That's exactly the question we need to ask."
 
 # game/scenario/temps_libres.rpy:775
 translate english tomas_link_1_cb638ba6:
 
     # noam reflexion "Tu devais être terrifié ce jour-là."
-    noam reflexion ""
+    noam reflexion "You must've been terrified that day."
 
 # game/scenario/temps_libres.rpy:776
 translate english tomas_link_1_fde77302:
 
     # tomas triste "...Oui. Plus que je ne voulais l'admettre."
-    tomas triste ""
+    tomas triste "...Yeah. More than I wanted to admit."
 
 # game/scenario/temps_libres.rpy:797
 translate english tomas_link_2_eaf2e6c9:
 
     # noam taquin "Attends. Tu prépares ce que tu vas dire aux gens ?"
-    noam taquin ""
+    noam taquin "Wait. You rehearse what you're going to say to people?"
 
 # game/scenario/temps_libres.rpy:799
 translate english tomas_link_2_80b1dc94:
 
     # noam sourire "Tu veux t'entraîner ? Vas-y, on peut essayer."
-    noam sourire ""
+    noam sourire "Want to practice? Go on, we can try."
 
 # game/scenario/temps_libres.rpy:822
 translate english tomas_link_2_df2dc48d:
 
     # tomas neutre "Bon. Je peux déjà enlever quelques questions."
-    tomas neutre ""
+    tomas neutre "Okay. I can already cross off a few questions."
 
 # game/scenario/temps_libres.rpy:826
 translate english tomas_link_2_159f9920:
 
     # noam neutre "Fais une liste plus courte. Trois points, pas vingt."
-    noam neutre ""
+    noam neutre "Make a shorter list. Three points, not twenty."
 
 # game/scenario/temps_libres.rpy:827
 translate english tomas_link_2_e72275b2:
 
     # tomas inquiet "Trois ? Ça va être compliqué... mais je peux essayer."
-    tomas inquiet ""
+    tomas inquiet "Three? That's going to be tough... but I can try."
 
 # game/scenario/temps_libres.rpy:831
 translate english tomas_link_2_08e11127:
 
     # noam reflexion "Garde ta liste, elle te rassure."
-    noam reflexion ""
+    noam reflexion "Keep your list if it helps you feel better."
 
 # game/scenario/temps_libres.rpy:832
 translate english tomas_link_2_80f6644a:
 
     # tomas sourire "Merci. Je pensais que ça agaçait tout le monde."
-    tomas sourire ""
+    tomas sourire "Thanks. I thought it annoyed everyone."
 
 # game/scenario/temps_libres.rpy:859
 translate english tomas_link_3_6abd4e22:
