@@ -130,19 +130,19 @@ translate english f95220c8:
 translate english 56c1e00b:
 
     # kami "Bonjour, mes petits diablotins ! Alors, comment vous sentez-vous ce matin ?"
-    kami "Good morning, my little devils! How are we all feeling today?"
+    kami "Morning, you little troublemakers! How's everyone feeling?"
 
 # game/scenario/5_1.rpy:76
 translate english b03aa4c9:
 
     # kami "Quelques maux de crâne ? Des souvenirs un peu gênants qui commencent à revenir ?"
-    kami "A few headaches? Some slightly embarrassing memories starting to come back?"
+    kami "Splitting headaches? Embarrassing memories finally coming back to haunt you?"
 
 # game/scenario/5_1.rpy:77
 translate english da24820a:
 
     # kami "Il faut dire que le public a été surpris par certains événements de la soirée !"
-    kami "I have to say, the audience was rather surprised by some of last night's developments!"
+    kami "I must say, last night's entertainment gave our viewers quite the surprise!"
 
 # game/scenario/5_1.rpy:79
 translate english 62e79fa7:
@@ -154,19 +154,19 @@ translate english 62e79fa7:
 translate english a3582940:
 
     # kami "Franchement, je m'étonnais presque que vous n'ayez pas craqué plus tôt !"
-    kami "Honestly, I'm almost surprised you didn't crack sooner!"
+    kami "I'm amazed it took you this long to crack!"
 
 # game/scenario/5_1.rpy:84
 translate english 087616ab:
 
     # kami "Mais assez parlé de vos performances d'hier soir. Il est temps de passer à quelque chose de plus sérieux."
-    kami "But enough about last night's performance. Time to move on to something more serious."
+    kami "But enough about your little performance last night. Time for something more serious."
 
 # game/scenario/5_1.rpy:85
 translate english a7088c9e:
 
     # kami "Oui, je sais, moi aussi ça me déçoit. Mais il faut bien travailler un peu !"
-    kami "Yes, I know. I'm disappointed too. But we do have to get some work done!"
+    kami "I know, I know. I'm disappointed too. But somebody has to get some work done!"
 
 # game/scenario/5_1.rpy:87
 translate english 6c7c98bb:
@@ -178,7 +178,7 @@ translate english 6c7c98bb:
 translate english 820b0e63:
 
     # kami "Le complexe C-3 a donc reçu un tout petit rappel au laser !"
-    kami "So Complex C-3 received a tiny little laser reminder!"
+    kami "So Complex C-3 got a teensy little reminder from the laser cannon!"
 
 # game/scenario/5_1.rpy:95
 translate english 06ab8da2:
@@ -190,7 +190,7 @@ translate english 06ab8da2:
 translate english f2474f48:
 
     # kami "Deux heures d'une ambiance absolument délicieuse !"
-    kami "Two hours of an absolutely delightful atmosphere!"
+    kami "Two glorious hours of absolute chaos. Delicious!"
 
 # game/scenario/5_1.rpy:100
 translate english fa27c0a2:
@@ -220,7 +220,7 @@ translate english acc85f3f:
 translate english f0ca5bda:
 
     # kami "Figurez-vous que l'un des représentants d'Orbite n'était même pas au courant de l'alerte !"
-    kami "Would you believe that one of Orbite's representatives didn't even know about the alert?"
+    kami "Get this: one of Orbit's representatives didn't even know there was an alert!"
 
 # game/scenario/5_1.rpy:112
 translate english 26bdafb9:
@@ -232,7 +232,7 @@ translate english 26bdafb9:
 translate english 231d40f8:
 
     # kami "C'est drôle, non ? Représenter des gens sans même savoir quand ils manquent presque d'air."
-    kami "Funny, isn't it? Representing people without even knowing when they're about to run out of air."
+    kami "Funny, right? Representing people without noticing they're about to run out of air."
 
 # game/scenario/5_1.rpy:118
 translate english e308b310:
@@ -2286,7 +2286,7 @@ translate english c276f4e1:
 translate english f8e260fb:
 
     # kami "Peut-être même que c'est à cause de vous !"
-    kami "Maybe it's even your fault!"
+    kami "Who knows? Maybe it's all YOUR fault!"
 
 # game/scenario/5_1.rpy:122
 translate english 2c74d29c:
@@ -2298,7 +2298,7 @@ translate english 2c74d29c:
 translate english 114e3497:
 
     # kami "Continuez à m'amuser ! C'est peut-être la seule chose dans laquelle vous excellez !"
-    kami "Keep entertaining me! It might be the only thing you're actually good at!"
+    kami "Keep those antics coming! It's the one thing you lot seem remotely good at!"
 
 # game/scenario/5_1.rpy:149
 translate english 35fb4b9d:
