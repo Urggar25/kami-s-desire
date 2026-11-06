@@ -507,8 +507,8 @@ label _27_0_1_1_0_1_PA_CARNET:
 label _27_0_1_1_0_1_PA_GRILLE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "La chambre de Tomas est impeccable, et la grille d'aération aussi. Je photographie ses fixations."
-    "On a installé la même protection devant la chambre d'Elen. La plaque bloque le passage, mais pas la circulation de l'air."
+    "La chambre de Tomas est impeccable, et sa grille possède encore ses fixations d’origine. Je les examine."
+    "Dans la chambre d'Elen, c'est différent : une tôle artisanale est clouée devant l'ouverture. Elle bloque le passage, mais pas la circulation de l'air."
     noam reflexion "Bon. Ça n'explique toujours pas ce qui lui est arrivé."
     "J'enregistre les images sans toucher aux vis. Lysa me ferait une tête pas possible si je démontais tout."
     return
