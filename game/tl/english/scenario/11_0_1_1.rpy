@@ -96,7 +96,7 @@ translate english 14f8e9ed:
 translate english aaa91c8f:
 
     # noam faible "Iris… ?"
-    noam faible ""
+    noam faible "Iris...?"
 
 # game/scenario/11_0_1_1.rpy:26
 translate english 93c8c1dd:
@@ -144,7 +144,7 @@ translate english e197c211:
 translate english 7eb98c4a:
 
     # iris desaccord "Et Ryn a juste dit « Dis-lui de pas crever, on a déjà assez de merdes comme ça ». C’est sa façon à lui de s’inquiéter, j’imagine."
-    iris desaccord ""
+    iris desaccord "And Ryn just said, 'Tell him not to die. We've got enough shit to deal with already.' Guess that's his way of showing he cares."
 
 # game/scenario/11_0_1_1.rpy:39
 translate english 5b1ad638:
@@ -222,13 +222,13 @@ translate english 92b41ceb:
 translate english noam_parle_doppelganger_iris_f736d990:
 
     # noam hesitation "Iris… avant de m’écrouler… j’ai vu quelque chose de bizarre."
-    noam hesitation ""
+    noam hesitation "Iris... before I passed out... I saw something strange."
 
 # game/scenario/11_0_1_1.rpy:78
 translate english noam_parle_doppelganger_iris_eb6d88c0:
 
     # noam inquiet "Juste avant l’annonce de Kami. Dans le couloir, vers la salle de stockage."
-    noam inquiet ""
+    noam inquiet "Right before Kami's announcement. In the corridor by the storage room."
 
 # game/scenario/11_0_1_1.rpy:80
 translate english noam_parle_doppelganger_iris_42d5f1c5:
@@ -240,31 +240,31 @@ translate english noam_parle_doppelganger_iris_42d5f1c5:
 translate english noam_parle_doppelganger_iris_c098820d:
 
     # iris inquiet "De bizarre comment ?"
-    iris inquiet ""
+    iris inquiet "Strange how?"
 
 # game/scenario/11_0_1_1.rpy:84
 translate english noam_parle_doppelganger_iris_11b884e2:
 
     # noam reflexion "Une silhouette… au loin. Je sais pas trop."
-    noam reflexion ""
+    noam reflexion "A silhouette... in the distance. I don't really know."
 
 # game/scenario/11_0_1_1.rpy:85
 translate english noam_parle_doppelganger_iris_0df53be0:
 
     # noam peur "C’était flou, mais… ça m’a mis mal à l’aise."
-    noam peur ""
+    noam peur "It was blurry, but... something about it felt wrong."
 
 # game/scenario/11_0_1_1.rpy:87
 translate english noam_parle_doppelganger_iris_dfc21b41:
 
     # iris desaccord "Noam… t’avais déjà la tête qui tournait pendant le débat."
-    iris desaccord ""
+    iris desaccord "Noam... you were already dizzy during the debate."
 
 # game/scenario/11_0_1_1.rpy:88
 translate english noam_parle_doppelganger_iris_62323d60:
 
     # iris reflexion "T’as probablement vu un reflet, ou quelqu’un qui passait, ou juste rien du tout. Avec la fièvre que t’as eue, c’est normal."
-    iris reflexion ""
+    iris reflexion "It was probably a reflection, or someone walking past, or nothing at all. With that fever you had, it's hardly surprising."
 
 # game/scenario/11_0_1_1.rpy:90
 translate english noam_parle_doppelganger_iris_71610403:
@@ -276,19 +276,19 @@ translate english noam_parle_doppelganger_iris_71610403:
 translate english noam_parle_doppelganger_iris_85458f3f:
 
     # iris inquiet "En plus, hier soir t’as demandé à tout le monde s’ils étaient dans les couloirs. Personne n’a rien vu."
-    iris inquiet ""
+    iris inquiet "Besides, you asked everyone last night whether they'd been in the corridors. Nobody saw anything."
 
 # game/scenario/11_0_1_1.rpy:94
 translate english noam_parle_doppelganger_iris_7166009d:
 
     # noam fatigue "Ouais… t’as sûrement raison."
-    noam fatigue ""
+    noam fatigue "Yeah... you're probably right."
 
 # game/scenario/11_0_1_1.rpy:95
 translate english noam_parle_doppelganger_iris_3f50de9c:
 
     # noam hesitation "C’est juste que… sur le moment, j’étais persuadé que c’était pas normal."
-    noam hesitation ""
+    noam hesitation "It's just... at the time, I was sure something wasn't right."
 
 # game/scenario/11_0_1_1.rpy:97
 translate english noam_parle_doppelganger_iris_07145902:
@@ -300,19 +300,19 @@ translate english noam_parle_doppelganger_iris_07145902:
 translate english noam_parle_doppelganger_iris_883d8c06:
 
     # iris fatigue "Écoute… t’es encore crevé, t’as la tête dans le brouillard, et on vient tous de vivre une soirée de merde."
-    iris fatigue ""
+    iris fatigue "Look... you're still exhausted, your head's a mess, and we've all had a shitty night."
 
 # game/scenario/11_0_1_1.rpy:100
 translate english noam_parle_doppelganger_iris_eceb797f:
 
     # iris desaccord "C’est pas étonnant que ton cerveau te joue des tours."
-    iris desaccord ""
+    iris desaccord "No wonder your mind's playing tricks on you."
 
 # game/scenario/11_0_1_1.rpy:101
 translate english noam_parle_doppelganger_iris_b2b7cd59:
 
     # iris determine "Arrête de te prendre la tête avec ça pour l’instant, d’accord ?"
-    iris determine ""
+    iris determine "Quit obsessing over it for now, okay?"
 
 # game/scenario/11_0_1_1.rpy:103
 translate english noam_parle_doppelganger_iris_d94336ff:
@@ -324,13 +324,13 @@ translate english noam_parle_doppelganger_iris_d94336ff:
 translate english noam_parle_doppelganger_iris_e7a36816:
 
     # iris gene "Si tu continues à cogiter comme ça, tu vas te refaire de la fièvre pour rien."
-    iris gene ""
+    iris gene "If you keep working yourself up like this, you'll make yourself sick again for nothing."
 
 # game/scenario/11_0_1_1.rpy:106
 translate english noam_parle_doppelganger_iris_ee8ce02e:
 
     # iris inquiet "Et j’ai pas envie de repasser la nuit à te surveiller, compris ?"
-    iris inquiet ""
+    iris inquiet "And I do NOT want to spend another night keeping an eye on you. Got it?"
 
 # game/scenario/11_0_1_1.rpy:108
 translate english noam_parle_doppelganger_iris_b772efe5:
@@ -342,13 +342,13 @@ translate english noam_parle_doppelganger_iris_b772efe5:
 translate english noam_parle_doppelganger_iris_028d0ed7:
 
     # iris hesitation "… Si jamais tu revois un truc qui te semble vraiment pas normal, tu m’en parles à moi. Pas aux autres."
-    iris hesitation ""
+    iris hesitation "...If you see something that really doesn't seem right again, tell me. Not the others."
 
 # game/scenario/11_0_1_1.rpy:111
 translate english noam_parle_doppelganger_iris_f37b02dd:
 
     # iris determine "Pour l’instant, repose-toi. C’est tout ce que t’as à faire."
-    iris determine ""
+    iris determine "For now, get some rest. That's your only job."
 
 # game/scenario/11_0_1_1.rpy:113
 translate english noam_parle_doppelganger_iris_694c890a:
@@ -360,7 +360,7 @@ translate english noam_parle_doppelganger_iris_694c890a:
 translate english noam_parle_doppelganger_iris_67c81435:
 
     # iris fatigue "Je vais te chercher quelque chose à manger. Bouge pas de là."
-    iris fatigue ""
+    iris fatigue "I'm going to get you something to eat. Stay put."
 
 # game/scenario/11_0_1_1.rpy:117
 translate english noam_parle_doppelganger_iris_856bc8df:
@@ -372,7 +372,7 @@ translate english noam_parle_doppelganger_iris_856bc8df:
 translate english noam_parle_doppelganger_iris_da205ed9:
 
     # iris gene "Et arrête de faire cette tête. Ça me stresse."
-    iris gene ""
+    iris gene "And quit making that face. It's stressing me out."
 
 # game/scenario/11_0_1_1.rpy:134
 translate english noam_garde_secret_57563de9:
@@ -384,13 +384,13 @@ translate english noam_garde_secret_57563de9:
 translate english noam_garde_secret_570dc411:
 
     # noam hesitation "... Non, rien."
-    noam hesitation ""
+    noam hesitation "...No, nothing."
 
 # game/scenario/11_0_1_1.rpy:137
 translate english noam_garde_secret_94d72a3a:
 
     # noam culpabilite "C'est rien d'important."
-    noam culpabilite ""
+    noam culpabilite "It's not important."
 
 # game/scenario/11_0_1_1.rpy:139
 translate english noam_garde_secret_c41f8b2c:
@@ -402,13 +402,13 @@ translate english noam_garde_secret_c41f8b2c:
 translate english noam_garde_secret_792d4488:
 
     # iris desaccord "T'es sûr ? T'as l'air d'avoir quelque chose sur le bout de la langue."
-    iris desaccord ""
+    iris desaccord "You sure? Looks like you've got something you want to say."
 
 # game/scenario/11_0_1_1.rpy:143
 translate english noam_garde_secret_d3d2c6a6:
 
     # noam fatigue "Ouais... juste un rêve bizarre à cause de la fièvre. Laisse tomber."
-    noam fatigue ""
+    noam fatigue "Yeah... just some weird fever dream. Forget it."
 
 # game/scenario/11_0_1_1.rpy:145
 translate english noam_garde_secret_ef8b6fce:
@@ -420,13 +420,13 @@ translate english noam_garde_secret_ef8b6fce:
 translate english noam_garde_secret_e77fdd8b:
 
     # iris reflexion "Si tu le dis."
-    iris reflexion ""
+    iris reflexion "If you say so."
 
 # game/scenario/11_0_1_1.rpy:148
 translate english noam_garde_secret_bb57af40:
 
     # iris desaccord "De toute façon, t'es encore à moitié dans les vapes. Pas la peine d'essayer de te faire cracher le morceau maintenant."
-    iris desaccord ""
+    iris desaccord "You're still half out of it anyway. No point trying to drag it out of you now."
 
 # game/scenario/11_0_1_1.rpy:150
 translate english noam_garde_secret_a663da90:
@@ -438,13 +438,13 @@ translate english noam_garde_secret_a663da90:
 translate english noam_garde_secret_9cc29d9d:
 
     # iris determine "T'as intérêt à te reposer correctement, compris ?"
-    iris determine ""
+    iris determine "You'd better get some proper rest, understood?"
 
 # game/scenario/11_0_1_1.rpy:153
 translate english noam_garde_secret_9befee8d:
 
     # iris colere "Si tu te refais un malaise parce que tu stresses pour des conneries, je te jure que je te colle une baffe."
-    iris colere ""
+    iris colere "If you pass out again because you're worrying about stupid crap, I swear I'll smack you."
 
 # game/scenario/11_0_1_1.rpy:155
 translate english noam_garde_secret_a7eb1fcc:
@@ -456,13 +456,13 @@ translate english noam_garde_secret_a7eb1fcc:
 translate english noam_garde_secret_a61dd1fa:
 
     # iris fatigue "Je vais te chercher quelque chose à manger à la cafétéria. Bouge pas de ce lit, hein."
-    iris fatigue ""
+    iris fatigue "I'm getting you something to eat from the cafeteria. Don't you dare leave that bed."
 
 # game/scenario/11_0_1_1.rpy:158
 translate english noam_garde_secret_454e42ce:
 
     # iris taquin "Et si tu vomis pendant mon absence, je te fais nettoyer toi-même."
-    iris taquin ""
+    iris taquin "And if you throw up while I'm gone, you're cleaning it up yourself."
 
 # game/scenario/11_0_1_1.rpy:160
 translate english noam_garde_secret_2438405c:
@@ -474,7 +474,7 @@ translate english noam_garde_secret_2438405c:
 translate english noam_garde_secret_3b3e50f4:
 
     # iris gene "… Et arrête de cogiter. T'as une sale tête quand tu fais ça."
-    iris gene ""
+    iris gene "...And stop overthinking everything. You look awful when you do."
 
 # game/scenario/11_0_1_1.rpy:164
 translate english noam_garde_secret_a738d465:
@@ -558,7 +558,7 @@ translate english noam_garde_secret_d52d0c4c:
 translate english noam_garde_secret_92ee4f53:
 
     # julian taquin "Exactement ! Faut bien quelqu’un pour t’empêcher de refaire ton grand show dramatique."
-    julian taquin ""
+    julian taquin "Exactly! Somebody has to keep you from putting on another big dramatic show."
 
 # game/scenario/11_0_1_1.rpy:204
 translate english noam_garde_secret_46b53d82:
@@ -618,7 +618,7 @@ translate english noam_garde_secret_dd3b66f9:
 translate english noam_garde_secret_e62f1e46:
 
     # julian taquin "Ouais, reprends des forces. On a besoin de toi en pleine forme pour la prochaine connerie que Kami va nous sortir."
-    julian taquin ""
+    julian taquin "Yeah, get your strength back. We'll need you in top form for whatever nonsense Kami throws at us next."
 
 # game/scenario/11_0_1_1.rpy:223
 translate english noam_garde_secret_e8238055:
@@ -672,7 +672,7 @@ translate english noam_garde_secret_f644aa67:
 translate english noam_garde_secret_5b594b46:
 
     # julian taquin "Moi je vote pour une petite balade. Rester couché toute la journée va te ramollir le cerveau."
-    julian taquin ""
+    julian taquin "I vote for a little walk. Stay in bed all day and your brain'll turn to mush."
 
 # game/scenario/11_0_1_1.rpy:254
 translate english noam_garde_secret_577a3d24:
@@ -738,7 +738,7 @@ translate english noam_garde_secret_d2820899:
 translate english noam_garde_secret_6a24fb9c:
 
     # kael colere "J'ai vraiment besoin de ces images !"
-    kael colere ""
+    kael colere "I really need that footage!"
 
 # game/scenario/11_0_1_1.rpy:287
 translate english noam_garde_secret_25ea59f8:
@@ -768,7 +768,7 @@ translate english noam_garde_secret_ae8a12ba:
 translate english noam_garde_secret_8afe195c:
 
     # kael triste "Donc si je comprends bien… même si le vote autorise les brouilleurs, ça ne changera rien pour moi avant sept jours ?"
-    kael triste ""
+    kael triste "So if I've got this right... even if we vote to allow jammers, I still can't access the recordings for seven days?"
 
 # game/scenario/11_0_1_1.rpy:294
 translate english noam_garde_secret_a86e7860:
@@ -798,7 +798,7 @@ translate english noam_garde_secret_a6dc5fc7:
 translate english noam_garde_secret_5931c657:
 
     # sael inquiet "Noam ? Ça va ?"
-    sael inquiet ""
+    sael inquiet "Noam? You okay?"
 
 # game/scenario/11_0_1_1.rpy:306
 translate english noam_garde_secret_31bf2aae:
@@ -810,13 +810,13 @@ translate english noam_garde_secret_31bf2aae:
 translate english noam_garde_secret_4f006abb:
 
     # kael calme "... Vous étiez là."
-    kael calme ""
+    kael calme "...You were there."
 
 # game/scenario/11_0_1_1.rpy:322
 translate english noam_garde_secret_418db1c5:
 
     # julian taquin "On passait juste. On voulait pas déranger ton… entretien privé avec notre chère geôlière."
-    julian taquin ""
+    julian taquin "Just passing by. Didn't mean to interrupt your... private audience with our beloved jailer."
 
 # game/scenario/11_0_1_1.rpy:324
 translate english noam_garde_secret_2e36ac7f:
@@ -840,13 +840,13 @@ translate english noam_garde_secret_b5640641:
 translate english noam_garde_secret_c93a75bf:
 
     # noam fatigue "Ouais... Je vais bien…"
-    noam fatigue ""
+    noam fatigue "Yeah... I'm okay..."
 
 # game/scenario/11_0_1_1.rpy:331
 translate english noam_garde_secret_7885b2f7:
 
     # kael colere "… Laisse tomber. On en reparlera plus tard, Kami."
-    kael colere ""
+    kael colere "...Forget it. We'll talk later, Kami."
 
 # game/scenario/11_0_1_1.rpy:333
 translate english noam_garde_secret_e50d2102:
@@ -858,19 +858,19 @@ translate english noam_garde_secret_e50d2102:
 translate english noam_garde_secret_b151a528:
 
     # iris inquiet "T'as vu sa tête ? Il dort encore, à ton avis ?"
-    iris inquiet ""
+    iris inquiet "Did you see his face? Think he's getting any sleep?"
 
 # game/scenario/11_0_1_1.rpy:339
 translate english noam_garde_secret_4058b092:
 
     # sael reflexion "On peut le comprendre…"
-    sael reflexion ""
+    sael reflexion "Can't really blame him..."
 
 # game/scenario/11_0_1_1.rpy:340
 translate english noam_garde_secret_f3a2fc55:
 
     # sael reflexion "Qu'est ce que tu ferais si ce que tu avais de plus précieux avait été piqué par on ne sait qui ?"
-    sael reflexion ""
+    sael reflexion "What would you do if the thing you treasured most had been stolen by God knows who?"
 
 # game/scenario/11_0_1_1.rpy:342
 translate english noam_garde_secret_01425ca7:
@@ -882,7 +882,7 @@ translate english noam_garde_secret_01425ca7:
 translate english noam_garde_secret_b538a503:
 
     # nyra taquin "C'est même étonnant qu'il soit aussi calme."
-    nyra taquin ""
+    nyra taquin "Frankly, it's amazing he's keeping it together this well."
 
 # game/scenario/11_0_1_1.rpy:345
 translate english noam_garde_secret_936f07c1:
@@ -894,7 +894,7 @@ translate english noam_garde_secret_936f07c1:
 translate english noam_garde_secret_46fd2b57:
 
     # noam fatigue "Je… j’ai besoin de m’asseoir un moment."
-    noam fatigue ""
+    noam fatigue "I... I need to sit down for a bit."
 
 # game/scenario/11_0_1_1.rpy:349
 translate english noam_garde_secret_8f228068:
@@ -906,13 +906,13 @@ translate english noam_garde_secret_8f228068:
 translate english noam_garde_secret_2e570feb:
 
     # iris triste "Évidemment qu’il a besoin de s’asseoir, il est encore à moitié mort !"
-    iris triste ""
+    iris triste "Of course he needs to sit! He's practically half-dead!"
 
 # game/scenario/11_0_1_1.rpy:352
 translate english noam_garde_secret_9fa5e31a:
 
     # iris determine "On va aller se poser à la salle commune."
-    iris determine ""
+    iris determine "We're going to take a breather in the lounge."
 
 # game/scenario/11_0_1_1.rpy:354
 translate english noam_garde_secret_91add34d:
@@ -930,7 +930,7 @@ translate english noam_garde_secret_e12cfbc2:
 translate english noam_garde_secret_c2f671c7:
 
     # noam sourire "Merci de m'avoir tenu compagnie."
-    noam sourire ""
+    noam sourire "Thanks for keeping me company."
 
 # game/scenario/11_0_1_1.rpy:359
 translate english noam_garde_secret_688ca719:
@@ -1188,7 +1188,7 @@ translate english noam_garde_secret_d790cd23:
 translate english noam_garde_secret_94168d58:
 
     # noam hesitation "J’ai une question à te poser."
-    noam hesitation ""
+    noam hesitation "I have a question."
 
 # game/scenario/11_0_1_1.rpy:465
 translate english noam_garde_secret_f6100f1d:
@@ -1338,13 +1338,13 @@ translate english noam_garde_secret_be33578b:
 translate english noam_garde_secret_264bc9d3:
 
     # noam colere "C’est quoi cette putain de blague ?!"
-    noam colere ""
+    noam colere "What the fuck is this supposed to be?!"
 
 # game/scenario/11_0_1_1.rpy:527
 translate english noam_garde_secret_e51763d4:
 
     # noam colere "Kami ! Sors de là !"
-    noam colere ""
+    noam colere "Kami! Get out here!"
 
 # game/scenario/11_0_1_1.rpy:531
 translate english noam_garde_secret_1f13858d:
@@ -1362,13 +1362,13 @@ translate english noam_garde_secret_8db6bbbd:
 translate english noam_garde_secret_5b7e2968:
 
     # noam colere "Arrête tes conneries ! Pourquoi les images ont disparu ?!"
-    noam colere ""
+    noam colere "Cut the crap! Why is the footage gone?!"
 
 # game/scenario/11_0_1_1.rpy:536
 translate english noam_garde_secret_dd08a07b:
 
     # noam colere "Tu m’as dit que tu me donnais l'accès aux vidéos !"
-    noam colere ""
+    noam colere "You said you were giving me access to the recordings!"
 
 # game/scenario/11_0_1_1.rpy:540
 translate english noam_garde_secret_9165e998:
@@ -1398,13 +1398,13 @@ translate english noam_garde_secret_1fac8caf:
 translate english noam_garde_secret_f0825760:
 
     # noam colere "Tu mens ! Tu mens forcément !"
-    noam colere ""
+    noam colere "You're lying! You have to be!"
 
 # game/scenario/11_0_1_1.rpy:548
 translate english noam_garde_secret_8772437c:
 
     # noam colere "Montre-moi les images ! Tout de suite !"
-    noam colere ""
+    noam colere "Show me the footage! NOW!"
 
 # game/scenario/11_0_1_1.rpy:552
 translate english noam_garde_secret_0e2acc2f:
@@ -1428,7 +1428,7 @@ translate english noam_garde_secret_5c5f3dc0:
 translate english noam_garde_secret_a30286af:
 
     # noam colere "Et tu vas me faire croire que tu ne sais pas qui c’est ?!"
-    noam colere ""
+    noam colere "And you expect me to believe you don't know who did it?!"
 
 # game/scenario/11_0_1_1.rpy:561
 translate english noam_garde_secret_514afa34:
@@ -1506,7 +1506,7 @@ translate english noam_garde_secret_86c3de75:
 translate english noam_garde_secret_79ccc1ab:
 
     # noam peur "... Tu mens."
-    noam peur ""
+    noam peur "...You're lying."
 
 # game/scenario/11_0_1_1.rpy:585
 translate english noam_garde_secret_0dbc7154:
@@ -1524,13 +1524,13 @@ translate english noam_garde_secret_1a16a75a:
 translate english noam_garde_secret_e5a76aee:
 
     # noam colere "Arrête de jouer avec moi !"
-    noam colere ""
+    noam colere "Stop playing games with me!"
 
 # game/scenario/11_0_1_1.rpy:590
 translate english noam_garde_secret_3442676a:
 
     # noam colere "Dis-moi qui c’est !"
-    noam colere ""
+    noam colere "Tell me who it was!"
 
 # game/scenario/11_0_1_1.rpy:594
 translate english noam_garde_secret_8becf42a:
@@ -1560,7 +1560,7 @@ translate english noam_garde_secret_52084502:
 translate english noam_garde_secret_d228b647:
 
     # noam colere "Tu prends ton pied avec ça, hein ?"
-    noam colere ""
+    noam colere "You're enjoying this, aren't you?!"
 
 # game/scenario/11_0_1_1.rpy:604
 translate english noam_garde_secret_37b3571b:
@@ -1596,7 +1596,7 @@ translate english noam_garde_secret_8f4831f3:
 translate english noam_garde_secret_a997e63a:
 
     # noam fatigue "… Pourquoi tu fais ça ?"
-    noam fatigue ""
+    noam fatigue "...Why are you doing this?"
 
 # game/scenario/11_0_1_1.rpy:616
 translate english noam_garde_secret_cbca1cf1:
@@ -1632,7 +1632,7 @@ translate english noam_garde_secret_ae0c526e:
 translate english noam_garde_secret_92551c3d:
 
     # noam peur "… Tais-toi."
-    noam peur ""
+    noam peur "...Shut up."
 
 # game/scenario/11_0_1_1.rpy:627
 translate english noam_garde_secret_879ee004:
@@ -1656,7 +1656,7 @@ translate english noam_garde_secret_b7969824:
 translate english noam_garde_secret_28e531ab:
 
     # noam colere "Je te déteste."
-    noam colere ""
+    noam colere "I hate you."
 
 # game/scenario/11_0_1_1.rpy:637
 translate english noam_garde_secret_85fc45af:
@@ -1716,7 +1716,7 @@ translate english noam_garde_secret_90818563:
 translate english noam_garde_secret_d566764b:
 
     # noam colere "... Va te faire foutre."
-    noam colere ""
+    noam colere "...Go fuck yourself."
 
 # game/scenario/11_0_1_1.rpy:655
 translate english noam_garde_secret_b88ebc40:
@@ -1950,7 +1950,7 @@ translate english noam_garde_secret_bbafde29:
 translate english noam_garde_secret_b2f2100c:
 
     # noam faible "… Je veux juste dormir."
-    noam faible ""
+    noam faible "...I just want to sleep."
 
 # game/scenario/11_0_1_1.rpy:737
 translate english noam_garde_secret_0321f677:
