@@ -238,7 +238,7 @@ label _27_0_1_1_0_1_CAFETERIA:
     hide screen kami_broadcast_ui
     stop music fadeout 0.6
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    $ showGroup([("elen", "triste", 0.33), ("nyra", "neutre", 0.55), ("noam", "fatigue", 0.77)])
+    $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.248), ("elen", "triste", 0.416), ("lysa", "blase", 0.584), ("noam", "fatigue", 0.752), ("nyra", "neutre", 0.920)])
     elen fatigue "Elle pourrait au moins nous laisser tranquilles."
     nyra neutre "On y va ?"
     noam neutre "Ouais."
