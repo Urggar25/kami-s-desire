@@ -3752,49 +3752,49 @@ translate english 65b46808:
 translate english f3651dd3:
 
     # goumi "Comme je l'ai déjà dit, il n'y a plus rien dans les réserves. Plus rien du tout. La prochaine livraison arrive demain."
-    goumi ""
+    goumi "Like I said, there's nothing left in storage. Nothing at all. The next delivery is tomorrow."
 
 # game/scenario/13_0_1_1_0.rpy:212
 translate english 3849e2a4:
 
     # noam "Même pas un morceau de pain ?"
-    noam ""
+    noam "Not even a slice of bread?"
 
 # game/scenario/13_0_1_1_0.rpy:214
 translate english e2db0d99:
 
     # goumi "Non."
-    goumi ""
+    goumi "No."
 
 # game/scenario/13_0_1_1_0.rpy:216
 translate english cce28844:
 
     # noam "Des biscuits ?"
-    noam ""
+    noam "Biscuits?"
 
 # game/scenario/13_0_1_1_0.rpy:218
 translate english fcd955bc:
 
     # goumi "Non plus."
-    goumi ""
+    goumi "Nope."
 
 # game/scenario/13_0_1_1_0.rpy:220
 translate english 6d76feec:
 
     # noam "Un fond de quelque chose ?"
-    noam ""
+    noam "Not even the last scraps of something?"
 
 # game/scenario/13_0_1_1_0.rpy:222
 translate english 7e10cbbc:
 
     # goumi "Noam, quand je dis plus rien, c'est vraiment plus rien. Il reste du café, et encore, si tout le monde se ressert trois fois, on finira aussi la journée sans ça."
-    goumi ""
+    goumi "Noam, when I say nothing, I mean nothing. There's still coffee. Barely. If everyone has three refills, that'll be gone by the end of the day too."
 
 # game/scenario/13_0_1_1_0.rpy:224
 translate english ac943230:
 
     # "Je regarde les étagères derrière lui. D'habitude, même quand les stocks baissent, il reste toujours quelques boîtes ou des aliments qu'on évite jusqu'au dernier moment. Là, les rayonnages sont nus."
-    ""
+    "I look at the shelves behind him. Usually, even when supplies run low, there are a few cans or things nobody wants until they're desperate. Now the shelves are bare."
 
 # game/scenario/13_0_1_1_0.rpy:226
 translate english 233dccb6:
@@ -3806,7 +3806,7 @@ translate english 233dccb6:
 translate english fb0c2e20:
 
     # goumi "Une tasse. Pas deux. Je préfère le préciser avant que quelqu'un décide qu'un demi-litre de café est un droit fondamental."
-    goumi ""
+    goumi "One cup. Not two. Thought I'd make that clear before someone decides half a liter of coffee is a basic human right."
 
 # game/scenario/13_0_1_1_0.rpy:230
 translate english 8dd815f7:
@@ -3818,7 +3818,7 @@ translate english 8dd815f7:
 translate english fc8f8156:
 
     # "Personne ne rit vraiment. Julian hausse les épaules et boit une petite gorgée de sa propre tasse."
-    ""
+    "Nobody really laughs. Julian shrugs and takes a small sip from his own cup."
 
 # game/scenario/13_0_1_1_0.rpy:234
 translate english e6c9b38b:
@@ -3830,7 +3830,7 @@ translate english e6c9b38b:
 translate english b7bdc237:
 
     # "Je n'ai pas besoin de me retourner. Le ton de Mara suffit."
-    ""
+    "I don't need to turn around. Mara's tone says it all."
 
 # game/scenario/13_0_1_1_0.rpy:238
 translate english 2cf1a0dd:
@@ -3842,13 +3842,13 @@ translate english 2cf1a0dd:
 translate english 3bbb0844:
 
     # mara "Ne commence pas. J'ai faim, j'ai dormi comme une merde et maintenant Kami peut me regarder dans ma chambre. Alors évite de faire le malin."
-    mara ""
+    mara "Don't start. I'm starving, I slept like shit, and now Kami can watch me in my own room. So don't get smart."
 
 # game/scenario/13_0_1_1_0.rpy:242
 translate english 15205345:
 
     # "Goumi pose une tasse devant moi sans intervenir. Je la prends et me tourne vers les autres."
-    ""
+    "Goumi sets a cup in front of me without commenting. I pick it up and turn to the others."
 
 # game/scenario/13_0_1_1_0.rpy:246
 translate english e57776ee:
@@ -3866,13 +3866,13 @@ translate english d19046e9:
 translate english 18a47313:
 
     # mara "Moi, si."
-    mara ""
+    mara "Well, I do."
 
 # game/scenario/13_0_1_1_0.rpy:252
 translate english 41cf7a3c:
 
     # "Elle désigne les tables d'un mouvement sec de la main."
-    ""
+    "She gestures sharply toward the tables."
 
 # game/scenario/13_0_1_1_0.rpy:254
 translate english c3e45c2a:
@@ -3890,25 +3890,25 @@ translate english 26355dc9:
 translate english 0d5f7313:
 
     # mara "Alors dis-moi si tu comptes recommencer."
-    mara ""
+    mara "So tell me. Are you planning to do it again?"
 
 # game/scenario/13_0_1_1_0.rpy:260
 translate english 3fe95c7a:
 
     # "La question me prend de court. Mara ne me demande pas de m'excuser. Elle attend une réponse qui puisse lui servir pour la suite."
-    ""
+    "The question catches me off guard. Mara isn't asking for an apology. She wants an answer she can actually use."
 
 # game/scenario/13_0_1_1_0.rpy:262
 translate english bd3792dc:
 
     # noam "Je n'en sais rien."
-    noam ""
+    noam "I don't know."
 
 # game/scenario/13_0_1_1_0.rpy:264
 translate english d8e3b6d1:
 
     # mara "Parfait. C'est exactement ce que j'avais envie d'entendre."
-    mara ""
+    mara "Perfect. Just what I wanted to hear."
 
 # game/scenario/13_0_1_1_0.rpy:266
 translate english 2266a230:
@@ -3920,13 +3920,13 @@ translate english 2266a230:
 translate english 9d899758:
 
     # mara "Ça aurait au moins montré qu'il faisait un effort."
-    mara ""
+    mara "At least that would've shown he was trying."
 
 # game/scenario/13_0_1_1_0.rpy:270
 translate english 079ad9c2:
 
     # "Elen garde les deux mains autour de sa tasse sans boire. Elle paraît plus fatiguée qu'en colère, comme si la nuit avait été beaucoup trop longue."
-    ""
+    "Elen cups her mug in both hands without drinking. She looks more tired than angry, as if the night went on far too long."
 
 # game/scenario/13_0_1_1_0.rpy:272
 translate english 64da5da6:
@@ -3944,25 +3944,25 @@ translate english 2e741e2d:
 translate english 966f05bc:
 
     # elen "Pourquoi ?"
-    elen ""
+    elen "Why?"
 
 # game/scenario/13_0_1_1_0.rpy:278
 translate english 9ed8580d:
 
     # "Je baisse les yeux vers mon café. La vraie réponse me vient immédiatement, mais je sais déjà que je ne vais pas la donner."
-    ""
+    "I look down at my coffee. The real answer comes immediately, but I already know I won't give it."
 
 # game/scenario/13_0_1_1_0.rpy:280
 translate english b0fefdc0:
 
     # noam "Parce que j'étais à bout."
-    noam ""
+    noam "Because I'd reached my breaking point."
 
 # game/scenario/13_0_1_1_0.rpy:282
 translate english 75b95223:
 
     # mara "On est tous à bout."
-    mara ""
+    mara "We're all at our breaking point."
 
 # game/scenario/13_0_1_1_0.rpy:284
 translate english 01da6639:
@@ -3974,7 +3974,7 @@ translate english 01da6639:
 translate english 47cd8392:
 
     # noam "Je ne réfléchissais plus correctement. Tout le monde parlait, tout le monde avait l'air sûr de ce qu'il faisait, et moi j'avais juste l'impression qu'on continuait comme si rien ne changeait."
-    noam ""
+    noam "I couldn't think straight anymore. Everyone was talking, everyone seemed so sure, and all I could feel was that we were carrying on as if nothing had changed."
 
 # game/scenario/13_0_1_1_0.rpy:288
 translate english cdf3e61a:
@@ -3986,13 +3986,13 @@ translate english cdf3e61a:
 translate english 3180b23b:
 
     # "Sael parle sans hausser la voix. Il n'a pas l'air intéressé par la dispute, mais son regard reste fixé sur moi."
-    ""
+    "Sael speaks without raising her voice. She doesn't seem interested in fighting, but her eyes stay on me."
 
 # game/scenario/13_0_1_1_0.rpy:292
 translate english fef502c9:
 
     # sael "Tu peux être perdu, en colère ou méfiant. Ça ne change pas le fait que les autres doivent vivre avec les conséquences de ce que tu fais."
-    sael ""
+    sael "You can be lost, angry, or suspicious. That doesn't change the fact that everyone else has to live with the consequences of your actions."
 
 # game/scenario/13_0_1_1_0.rpy:294
 translate english 2e535864_8:
@@ -4004,13 +4004,13 @@ translate english 2e535864_8:
 translate english 02dbe3cf:
 
     # sael "Bien."
-    sael ""
+    sael "Good."
 
 # game/scenario/13_0_1_1_0.rpy:298
 translate english 6ce2808e:
 
     # "Il ne rajoute rien et se détourne. Sa façon de couper court à la discussion me met presque plus mal à l'aise que Mara."
-    ""
+    "She says nothing more and turns away. Being dismissed like that almost unsettles me more than Mara's anger."
 
 # game/scenario/13_0_1_1_0.rpy:300
 translate english 082cc985:
@@ -4022,19 +4022,19 @@ translate english 082cc985:
 translate english b53da6a6:
 
     # "La question tombe au milieu de la conversation sans prévenir. Mara cesse de parler. Iris tourne la tête vers Elen."
-    ""
+    "The question lands in the middle of the conversation without warning. Mara stops talking. Iris turns toward Elen."
 
 # game/scenario/13_0_1_1_0.rpy:306
 translate english 39b5f157:
 
     # elen "Oui."
-    elen ""
+    elen "Yes."
 
 # game/scenario/13_0_1_1_0.rpy:308
 translate english f1396cd1:
 
     # "Elle se mord légèrement la lèvre avant de reprendre."
-    ""
+    "She bites her lip lightly before continuing."
 
 # game/scenario/13_0_1_1_0.rpy:310
 translate english cd5041d1:
@@ -4052,7 +4052,7 @@ translate english c1fa24ca:
 translate english 748e2fca:
 
     # elen "J'avais besoin de ce brouilleur. Pas pour préparer un complot ou je ne sais quoi. Juste pour pouvoir fermer ma porte et avoir la paix quelques heures."
-    elen ""
+    elen "I needed that jammer. Not to plot anything or whatever. Just to close my door and have a few hours of peace."
 
 # game/scenario/13_0_1_1_0.rpy:317
 translate english a52a24af:
@@ -4064,13 +4064,13 @@ translate english a52a24af:
 translate english 01f17b81:
 
     # elen "Je sais."
-    elen ""
+    elen "I know."
 
 # game/scenario/13_0_1_1_0.rpy:321
 translate english 503e9f54:
 
     # "Elle ne le dit pas pour me pardonner. Elle le dit parce qu'elle n'a rien d'autre à ajouter."
-    ""
+    "She doesn't say it to forgive me. It's simply all she has left to say."
 
 # game/scenario/13_0_1_1_0.rpy:323
 translate english d66e9659:
@@ -4082,25 +4082,25 @@ translate english d66e9659:
 translate english 640db725:
 
     # goumi "Ça, pour le coup, ce n'est pas la faute de Noam."
-    goumi ""
+    goumi "For once, that isn't Noam's fault."
 
 # game/scenario/13_0_1_1_0.rpy:327
 translate english aa20bdf0:
 
     # mara "Je n'ai pas dit que ça l'était."
-    mara ""
+    mara "I never said it was."
 
 # game/scenario/13_0_1_1_0.rpy:329
 translate english f1efafbe:
 
     # goumi "Ton regard venait quand même de l'accuser d'avoir mangé les réserves à lui tout seul."
-    goumi ""
+    goumi "The look you gave him practically accused him of eating all our supplies single-handedly."
 
 # game/scenario/13_0_1_1_0.rpy:331
 translate english 1f9a948f:
 
     # "Mara lui lance un regard noir. Goumi lève les mains et retourne à sa cafetière."
-    ""
+    "Mara shoots him a filthy look. Goumi raises his hands and goes back to the coffee pot."
 
 # game/scenario/13_0_1_1_0.rpy:333
 translate english de2a90f1:
@@ -4112,25 +4112,25 @@ translate english de2a90f1:
 translate english af4334ad:
 
     # mara "Si elle arrive."
-    mara ""
+    mara "If it gets here."
 
 # game/scenario/13_0_1_1_0.rpy:337
 translate english d2b20bd4:
 
     # julian "Elle va arriver."
-    julian ""
+    julian "It will."
 
 # game/scenario/13_0_1_1_0.rpy:339
 translate english c66bf920:
 
     # mara "Tu en sais quoi ?"
-    mara ""
+    mara "How do you know?"
 
 # game/scenario/13_0_1_1_0.rpy:341
 translate english b0ad67fe:
 
     # julian "Rien. J'essaie juste d'éviter qu'on commence à se battre pour savoir qui aura le droit de lécher les étagères."
-    julian ""
+    julian "I don't. I'm just trying to stop us fighting over who gets to lick the shelves."
 
 # game/scenario/13_0_1_1_0.rpy:343
 translate english ac0bff7b:
@@ -4142,19 +4142,19 @@ translate english ac0bff7b:
 translate english cc915fc2:
 
     # "Je jette un regard autour de moi. Les visages sont tirés et les tasses sont tenues comme si elles avaient plus de valeur qu'elles n'en ont."
-    ""
+    "I glance around. Everyone looks worn out, clutching their mugs as though they're worth far more than they are."
 
 # game/scenario/13_0_1_1_0.rpy:346
 translate english 9640f243:
 
     # "La faim n'est pas encore insupportable, mais elle rend chaque remarque plus sèche et chaque silence plus lourd. Personne n'a vraiment la patience de faire semblant d'aller bien."
-    ""
+    "The hunger isn't unbearable yet, but it makes every remark sharper and every silence heavier. No one has the patience to pretend they're fine."
 
 # game/scenario/13_0_1_1_0.rpy:348
 translate english 5fa519e5:
 
     # "Je m'éloigne du comptoir pour m'asseoir à une table presque vide. Elen hésite puis vient en face de moi, tandis qu'Iris prend la chaise à côté d'elle."
-    ""
+    "I leave the counter and sit at an almost empty table. Elen hesitates, then sits opposite me, with Iris taking the seat beside her."
 
 # game/scenario/13_0_1_1_0.rpy:350
 translate english 4b32cf17:
@@ -4166,19 +4166,19 @@ translate english 4b32cf17:
 translate english fbbf2212:
 
     # noam "Vas-y."
-    noam ""
+    noam "Go ahead."
 
 # game/scenario/13_0_1_1_0.rpy:354
 translate english cf980d6f:
 
     # iris "Qu'est-ce que tu nous caches ?"
-    iris ""
+    iris "What are you hiding from us?"
 
 # game/scenario/13_0_1_1_0.rpy:356
 translate english 856b5e3e:
 
     # "Je relève les yeux vers elle. Son ton n'est pas agressif. C'est justement ce qui rend la question plus difficile à esquiver."
-    ""
+    "I look up at her. Her voice isn't aggressive, which somehow makes the question harder to dodge."
 
 # game/scenario/13_0_1_1_0.rpy:358
 translate english fa332361_1:
@@ -4190,43 +4190,43 @@ translate english fa332361_1:
 translate english 204c908d:
 
     # noam "Je t'assure."
-    noam ""
+    noam "I swear."
 
 # game/scenario/13_0_1_1_0.rpy:364
 translate english 6fc002cc:
 
     # iris "Non. Tu m'assures rien du tout. Depuis ton malaise, tu regardes derrière toi toutes les trente secondes, tu changes de sujet dès qu'on te pose une question et hier tu as accusé toute la salle sans être capable d'expliquer pourquoi."
-    iris ""
+    iris "No, you don't get to 'swear' and leave it at that. Ever since you collapsed, you've been looking over your shoulder every thirty seconds, dodging questions, and yesterday you accused everyone in the room without explaining why."
 
 # game/scenario/13_0_1_1_0.rpy:366
 translate english 6e2b1aa5:
 
     # "Mara s'approche de nouveau, mais Iris lève immédiatement une main vers elle."
-    ""
+    "Mara comes over again, but Iris immediately holds up a hand."
 
 # game/scenario/13_0_1_1_0.rpy:368
 translate english 30ccdd56:
 
     # iris "Laisse-moi parler avec lui."
-    iris ""
+    iris "Let me talk to him."
 
 # game/scenario/13_0_1_1_0.rpy:370
 translate english 723c0306:
 
     # mara "Je ne dis rien."
-    mara ""
+    mara "I'm not saying anything."
 
 # game/scenario/13_0_1_1_0.rpy:372
 translate english acfe3afc:
 
     # iris "Pour une fois, continue."
-    iris ""
+    iris "Then keep it that way for once."
 
 # game/scenario/13_0_1_1_0.rpy:374
 translate english ab32abdf:
 
     # "Mara serre les lèvres, vexée, mais reste silencieuse."
-    ""
+    "Mara presses her lips together, offended, but stays quiet."
 
 # game/scenario/13_0_1_1_0.rpy:376
 translate english b03c3c0f:
@@ -4238,13 +4238,13 @@ translate english b03c3c0f:
 translate english ef6c5ee8:
 
     # "Pendant quelques secondes, je suis tenté de lui parler du couloir. Des images supprimées. De la sensation de voir des choses que personne d'autre ne voit."
-    ""
+    "For a few seconds, I'm tempted to tell her about the corridor. The deleted footage. The feeling of seeing things no one else sees."
 
 # game/scenario/13_0_1_1_0.rpy:379
 translate english ddaea684:
 
     # "Puis je pense à la façon dont tout le monde vient de me regarder pour une seule crise de colère. Si je raconte le reste maintenant, je sais exactement ce qu'ils entendront."
-    ""
+    "Then I remember how everyone reacted to a single angry outburst. If I tell them the rest now, I know exactly what they'll hear."
 
 # game/scenario/13_0_1_1_0.rpy:381
 translate english d6dd0f39:
@@ -4256,25 +4256,25 @@ translate english d6dd0f39:
 translate english aedd6016:
 
     # iris "Donc oui."
-    iris ""
+    iris "So that's a yes."
 
 # game/scenario/13_0_1_1_0.rpy:385
 translate english 597f3d3c:
 
     # noam "Je n'ai pas dit ça."
-    noam ""
+    noam "I didn't say that."
 
 # game/scenario/13_0_1_1_0.rpy:387
 translate english a800c35d:
 
     # iris "Tu n'avais pas besoin."
-    iris ""
+    iris "You didn't have to."
 
 # game/scenario/13_0_1_1_0.rpy:389
 translate english 2ed0e2bc:
 
     # "Elle se recule sur sa chaise et souffle doucement par le nez. Elle n'insiste pas, mais son expression suffit à montrer qu'elle ne me croit pas."
-    ""
+    "She leans back and exhales softly through her nose. She doesn't press me, but her face makes it clear she doesn't believe me."
 
 # game/scenario/13_0_1_1_0.rpy:391
 translate english b35cf42d:
@@ -4292,7 +4292,7 @@ translate english f6687216:
 translate english 49050e36:
 
     # mara "Ça tombe bien. J'ai pas envie de faire ton psy avec l'estomac vide."
-    mara ""
+    mara "Good, because I'm not playing therapist on an empty stomach."
 
 # game/scenario/13_0_1_1_0.rpy:397
 translate english d5b2d665:
@@ -4304,19 +4304,19 @@ translate english d5b2d665:
 translate english fac898fa:
 
     # "Cette fois, sa voix est plus forte. Pas beaucoup, mais assez pour surprendre tout le monde."
-    ""
+    "This time, her voice is louder. Not much, but enough to surprise everyone."
 
 # game/scenario/13_0_1_1_0.rpy:401
 translate english 471e309c:
 
     # elen "On n'a rien mangé, on a presque pas dormi et on est en train de s'engueuler comme si ça allait remplir les réserves ou remettre les brouilleurs aux murs."
-    elen ""
+    elen "We haven't eaten, we've barely slept, and we're yelling at each other like that'll refill the pantry or put the jammers back on the walls."
 
 # game/scenario/13_0_1_1_0.rpy:403
 translate english a4cad8b9:
 
     # "Elle baisse les yeux aussitôt, comme si elle regrettait déjà d'avoir élevé le ton."
-    ""
+    "She immediately looks down, as if she already regrets raising her voice."
 
 # game/scenario/13_0_1_1_0.rpy:405
 translate english 2ef516ff:
@@ -4328,7 +4328,7 @@ translate english 2ef516ff:
 translate english 7a2e7c74:
 
     # "Mara détourne les yeux. Julian repose sa tasse. Même Sael ne répond rien."
-    ""
+    "Mara looks away. Julian sets his cup down. Even Sael has nothing to say."
 
 # game/scenario/13_0_1_1_0.rpy:409
 translate english 809ba9c0_2:
@@ -4340,91 +4340,91 @@ translate english 809ba9c0_2:
 translate english d490002d:
 
     # "Je porte enfin le café à mes lèvres. Il est déjà tiède."
-    ""
+    "I finally raise the coffee to my lips. It's already lukewarm."
 
 # game/scenario/13_0_1_1_0.rpy:415
 translate english a7ae12a7:
 
     # "Je tourne la tête vers le comptoir. Goumi me regarde avec un léger froncement de sourcils."
-    ""
+    "I turn toward the counter. Goumi is watching me with a slight frown."
 
 # game/scenario/13_0_1_1_0.rpy:417
 translate english e5d64279:
 
     # goumi "T'en veux pas un autre, hein ?"
-    goumi ""
+    goumi "You're not after another one, are you?"
 
 # game/scenario/13_0_1_1_0.rpy:419
 translate english 18311fb6:
 
     # noam "Tu viens de dire une tasse par personne."
-    noam ""
+    noam "You just said one cup per person."
 
 # game/scenario/13_0_1_1_0.rpy:421
 translate english e255e634:
 
     # goumi "Oui. C'est justement pour ça."
-    goumi ""
+    goumi "Exactly. That's why I'm asking."
 
 # game/scenario/13_0_1_1_0.rpy:423
 translate english 3845989c:
 
     # noam "Pourquoi tu me demandes ?"
-    noam ""
+    noam "Then why ask me?"
 
 # game/scenario/13_0_1_1_0.rpy:425
 translate english 7098d9c6:
 
     # "Goumi hésite. Son regard passe de ma tasse à mon visage."
-    ""
+    "Goumi hesitates, looking from my cup to my face."
 
 # game/scenario/13_0_1_1_0.rpy:427
 translate english 0233a377:
 
     # goumi "Rien. J'ai cru que tu étais déjà passé tout à l'heure."
-    goumi ""
+    goumi "Nothing. I thought you'd already been here earlier."
 
 # game/scenario/13_0_1_1_0.rpy:429
 translate english 96e33659:
 
     # noam "Moi ?"
-    noam ""
+    noam "Me?"
 
 # game/scenario/13_0_1_1_0.rpy:431
 translate english 4964de9e:
 
     # goumi "J'ai dû confondre."
-    goumi ""
+    goumi "Must've mixed you up."
 
 # game/scenario/13_0_1_1_0.rpy:433
 translate english 217c608f:
 
     # noam "Avec qui ?"
-    noam ""
+    noam "With who?"
 
 # game/scenario/13_0_1_1_0.rpy:435
 translate english da160fbb:
 
     # goumi "Aucune idée. J'ai servi du café à la moitié du Conclave avec trois heures de sommeil. Laisse tomber."
-    goumi ""
+    goumi "No idea. I've served coffee to half the Conclave on three hours' sleep. Forget it."
 
 # game/scenario/13_0_1_1_0.rpy:437
 translate english 0b56485d:
 
     # "Il se détourne aussitôt pour ranger une tasse propre. Je continue de le regarder quelques secondes."
-    ""
+    "He immediately turns away to put a clean cup away. I keep watching him for a few seconds."
 
 # game/scenario/13_0_1_1_0.rpy:439
 translate english 9e584e17:
 
     # think "Je viens de me réveiller."
-    think ""
+    think "I only just woke up."
 
 # game/scenario/13_0_1_1_0.rpy:440
 translate english fa9af8d4:
 
     # think "Je ne suis pas passé ici avant."
-    think ""
+    think "I wasn't here earlier."
 
 # game/scenario/13_0_1_1_0.rpy:442
 translate english 8f5f199f_2:
@@ -4442,13 +4442,13 @@ translate english fa332361_2:
 translate english 45c0d95f:
 
     # "Cette fois encore, le mot sort trop vite. Iris ferme les yeux une seconde, clairement agacée, mais ne relance pas."
-    ""
+    "Once again, the word comes out too quickly. Iris shuts her eyes for a second, visibly annoyed, but lets it go."
 
 # game/scenario/13_0_1_1_0.rpy:450
 translate english f60fb1f3:
 
     # "Je vide le reste de mon café en deux gorgées, même s'il n'est plus très bon. L'ambiance est devenue trop lourde pour rester assis."
-    ""
+    "I drain the rest of my coffee in two gulps, even though it doesn't taste great anymore. The atmosphere is too tense to stay."
 
 # game/scenario/13_0_1_1_0.rpy:452
 translate english 5f23c944:
@@ -4460,61 +4460,61 @@ translate english 5f23c944:
 translate english ad1bcc94:
 
     # noam "Je sais pas encore. Juste pas ici."
-    noam ""
+    noam "I don't know yet. Just not here."
 
 # game/scenario/13_0_1_1_0.rpy:458
 translate english c071195b:
 
     # "Personne ne me retient. Elen me suit du regard, Iris semble hésiter à dire quelque chose, puis je me lève avant qu'elle en ait le temps."
-    ""
+    "No one stops me. Elen watches me, Iris seems about to say something, but I stand up before she can."
 
 # game/scenario/13_0_1_1_0.rpy:464
 translate english 8c83aeb5:
 
     # "Je quitte la cafétéria avec le goût du café froid encore dans la bouche. Derrière moi, les conversations reprennent peu à peu, plus basses qu'avant."
-    ""
+    "I leave the cafeteria with the taste of cold coffee still in my mouth. Behind me, conversations slowly resume, quieter than before."
 
 # game/scenario/13_0_1_1_0.rpy:470
 translate english a59a2df4:
 
     # "Le couloir est vide et, pendant quelques secondes, le calme me fait du bien. Je marche sans réfléchir à une destination précise, juste pour mettre quelques murs entre la cafétéria et moi."
-    ""
+    "The corridor is empty, and for a few seconds the peace feels good. I walk without a destination, just putting a few walls between the cafeteria and me."
 
 # game/scenario/13_0_1_1_0.rpy:472
 translate english 1aa1b22c:
 
     # think "Goumi s'est trompé."
-    think ""
+    think "Goumi made a mistake."
 
 # game/scenario/13_0_1_1_0.rpy:473
 translate english cbc67c06:
 
     # think "Il sert du café à tout le monde depuis ce matin, c'est possible."
-    think ""
+    think "He's been serving coffee all morning. It could happen."
 
 # game/scenario/13_0_1_1_0.rpy:475
 translate english e6a56a81:
 
     # "J'essaie de laisser cette histoire derrière moi, mais la phrase continue de tourner dans ma tête."
-    ""
+    "I try to put it out of my mind, but his words keep circling back."
 
 # game/scenario/13_0_1_1_0.rpy:477
 translate english c816c690:
 
     # think "Il a cru que j'étais déjà passé."
-    think ""
+    think "He thought I'd already come by."
 
 # game/scenario/13_0_1_1_0.rpy:479
 translate english 6e222691:
 
     # "Des voix arrivent d'un croisement un peu plus loin. Je ralentis et reconnais celle de Ryn avant même de distinguer les autres."
-    ""
+    "Voices drift from a junction ahead. I slow down, recognizing Ryn before I can make out anyone else."
 
 # game/scenario/13_0_1_1_0.rpy:480
 translate english d64d6430:
 
     # "Je devrais continuer mon chemin. À la place, je m'arrête juste avant l'angle, hors de leur vue."
-    ""
+    "I should keep walking. Instead, I stop just short of the corner, out of sight."
 
 # game/scenario/13_0_1_1_0.rpy:484
 translate english 079b68a8:
@@ -4532,13 +4532,13 @@ translate english 15fb5100:
 translate english 3ac8f494:
 
     # ryn "Je veux qu'on arrête de lui donner toutes les infos comme si de rien n'était. Hier, il nous traite de traîtres et il se barre. Aujourd'hui, on devrait faire comme si on lui faisait encore confiance ?"
-    ryn ""
+    ryn "I want us to stop sharing everything with him like nothing happened. Yesterday he called us traitors and walked out. Today we're supposed to act like we still trust him?"
 
 # game/scenario/13_0_1_1_0.rpy:490
 translate english 79509422:
 
     # tomas "Le mettre à l'écart va pas forcément arranger les choses."
-    tomas ""
+    tomas "Pushing him away isn't necessarily going to help."
 
 # game/scenario/13_0_1_1_0.rpy:492
 translate english 8eb3d595:
@@ -4550,37 +4550,37 @@ translate english 8eb3d595:
 translate english b8ecb7dc:
 
     # elias "Et tu proposes qu'on discute où, exactement ? On vient de perdre les brouilleurs. Si on commence à organiser des conversations secrètes maintenant, Kami va adorer."
-    elias ""
+    elias "And where exactly do you suggest we talk? We just lost the jammers. Start holding secret meetings now, and Kami will love that."
 
 # game/scenario/13_0_1_1_0.rpy:496
 translate english 17138669:
 
     # ryn "Je m'en fous de Kami pour l'instant."
-    ryn ""
+    ryn "I don't give a damn about Kami right now."
 
 # game/scenario/13_0_1_1_0.rpy:498
 translate english 153f3af7:
 
     # nyra "Tu devrais éviter."
-    nyra ""
+    nyra "You should."
 
 # game/scenario/13_0_1_1_0.rpy:500
 translate english 97db1a20:
 
     # "La voix de Nyra est calme, presque détachée. Ryn se tait juste assez longtemps pour lui laisser la place."
-    ""
+    "Nyra's voice is calm, almost detached. Ryn falls quiet just long enough to let her speak."
 
 # game/scenario/13_0_1_1_0.rpy:502
 translate english 4fb932a9:
 
     # nyra "Elle nous voit de nouveau. Si vous commencez à choisir qui peut entendre quoi, faites au moins l'effort de vous rappeler qu'elle entend probablement tout aussi."
-    nyra ""
+    nyra "She's watching us again. If you're going to decide who gets to hear what, at least remember she's probably listening too."
 
 # game/scenario/13_0_1_1_0.rpy:504
 translate english 798ec59b:
 
     # tomas "C'est justement ça qui me gêne. On est déjà tous méfiants. Si on commence à faire des groupes dans les groupes, dans deux jours plus personne parlera à personne."
-    tomas ""
+    tomas "That's exactly what bothers me. We're already suspicious of one another. Start forming little groups within the group, and in two days nobody will talk to anybody."
 
 # game/scenario/13_0_1_1_0.rpy:506
 translate english 7696dd13:
@@ -4598,73 +4598,73 @@ translate english c6e7f60f:
 translate english b508b517:
 
     # ryn "Iris a essayé. Elen aussi. Il répond rien."
-    ryn ""
+    ryn "Iris tried. So did Elen. He won't say a thing."
 
 # game/scenario/13_0_1_1_0.rpy:512
 translate english 5094ce96:
 
     # tomas "Peut-être qu'il a vraiment rien à dire."
-    tomas ""
+    tomas "Maybe he genuinely has nothing to say."
 
 # game/scenario/13_0_1_1_0.rpy:514
 translate english 4bb104fc:
 
     # ryn "Ou peut-être qu'il nous cache quelque chose."
-    ryn ""
+    ryn "Or maybe he's hiding something from us."
 
 # game/scenario/13_0_1_1_0.rpy:516
 translate english 0c64a850:
 
     # "Je serre légèrement la mâchoire. Derrière le mur, personne ne parle pendant quelques secondes."
-    ""
+    "I clench my jaw. On the other side of the wall, everyone falls silent for a few seconds."
 
 # game/scenario/13_0_1_1_0.rpy:518
 translate english 53cf763e:
 
     # elias "Ça, je pense qu'il nous cache quelque chose."
-    elias ""
+    elias "Yeah, I reckon he's hiding something."
 
 # game/scenario/13_0_1_1_0.rpy:520
 translate english 74988567:
 
     # tomas "Super. Très rassurant."
-    tomas ""
+    tomas "Great. Very reassuring."
 
 # game/scenario/13_0_1_1_0.rpy:522
 translate english 066cd1f7:
 
     # ryn "Voilà."
-    ryn ""
+    ryn "Exactly."
 
 # game/scenario/13_0_1_1_0.rpy:524
 translate english 6d781149:
 
     # nyra "Ça ne veut pas dire qu'il a tort."
-    nyra ""
+    nyra "That doesn't mean he's wrong."
 
 # game/scenario/13_0_1_1_0.rpy:526
 translate english f8c19490:
 
     # "Le silence qui suit est plus long. Même moi, je reste immobile."
-    ""
+    "The silence that follows is longer. Even I stay perfectly still."
 
 # game/scenario/13_0_1_1_0.rpy:528
 translate english 861d095e:
 
     # ryn "Pardon ?"
-    ryn ""
+    ryn "Excuse me?"
 
 # game/scenario/13_0_1_1_0.rpy:530
 translate english 4e310eca:
 
     # nyra "Vous partez du principe qu'il est devenu paranoïaque parce qu'il ne nous explique rien. C'est possible. Mais la vraie question, c'est de savoir s'il n'explique rien parce qu'il délire... ou parce qu'il a vu quelque chose qu'il n'arrive pas à expliquer."
-    nyra ""
+    nyra "You're assuming he's paranoid because he won't explain himself. Maybe he is. But the real question is whether he won't explain because he's losing it... or because he saw something he can't explain."
 
 # game/scenario/13_0_1_1_0.rpy:532
 translate english 0a1d06ac:
 
     # elias "Nyra, il a accusé la moitié de la salle au hasard."
-    elias ""
+    elias "Nyra, he randomly accused half the room."
 
 # game/scenario/13_0_1_1_0.rpy:534
 translate english a7b14bf3:
