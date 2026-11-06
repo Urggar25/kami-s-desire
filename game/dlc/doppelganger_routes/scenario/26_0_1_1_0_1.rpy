@@ -103,7 +103,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
     "Elias arrive avec Kael, sa boîte à outils à moitié ouverte. Iris les suit, encore en tenue de repos. Personne ne lui a expliqué pourquoi on l'avait appelée."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "inquiet", 0.414), ("iris", "inquiet", 0.586), ("noam", "inquiet", 0.758), ("lysa", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
     kael reflexion "Il a mis le verrou intérieur ?"
     elen inquiet "Oui. Enfin, c'est ce qu'il m'a dit hier. Vous pouvez ouvrir ?"
     elias raison "Faut passer par le boîtier. Je vais essayer."
@@ -121,7 +121,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elias neutre "C'est ouvert. Bougez pas."
     "Le verrou cède avec un claquement. Il pousse la porte."
     scene j26_elen_corps at adaptive_fullscreen with dissolve
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "fatigue", 0.414), ("iris", "inquiet", 0.586), ("noam", "inquiet", 0.758), ("lysa", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
     "L'air est lourd. Il y a une odeur aigre, des barquettes ouvertes au pied du lit et des vêtements partout. Je commence à chercher Tomas du regard, puis j'arrête de regarder le reste."
     noam fatigue "Oh, merde..."
     elen fatigue "J'avais laissé des trucs partout, je..."
@@ -131,7 +131,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     noam inquiet "Tomas ?"
     "Je lui touche l'épaule. Son t-shirt est trempé et ses cheveux collent à son front."
     noam peur "Hé... c'est pas drôle. Tomas ?"
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.242), ("elen", "peur", 0.414), ("iris", "inquiet", 0.586), ("noam", "peur", 0.758), ("lysa", "inquiet", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
     elen peur "Pourquoi il a pas enlevé sa veste ? Tomas, t'as trop chaud ?"
     noam panique "Réveille-toi !"
     iris determine "Noam. Pousse-toi."
@@ -146,7 +146,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     iris determine "Noam, recule. S'il te plaît."
     "Elle vérifie encore. J'entends Elen demander quelque chose, mais je n'arrive pas à suivre."
     "Sael arrive et rejoint Iris près du lit. Toutes les deux échangent quelques mots à voix basse."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.213), ("elen", "peur", 0.357), ("iris", "inquiet", 0.500), ("noam", "vide", 0.643), ("lysa", "inquiet", 0.787), ("sael", "triste", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
     elen inquiet "Vous faites quoi ? Pourquoi vous lui parlez pas ?"
     sael triste "Elen, viens avec moi."
     elen peur "Non. Non, attends. Iris, t'as pas fini, hein ?"
@@ -158,7 +158,7 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elen colere "Mais essayez encore ! Vous avez essayé quoi, là ?!"
     sael inquiet "On a vérifié, Elen. Je suis désolée."
     "Elen avance vers le lit comme pour refaire elle-même ce qu'Iris vient de faire, mais Lysa la rattrape avant qu'elle trébuche."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.213), ("elen", "triste", 0.357), ("iris", "inquiet", 0.500), ("noam", "vide", 0.643), ("lysa", "inquiet", 0.787), ("sael", "triste", 0.930)])
+    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.285), ("elen", "inquiet", 0.500), ("iris", "inquiet", 0.715), ("noam", "inquiet", 0.930)])
     elen triste "Il a même pas défait le lit..."
     elen peur "Je lui avais dit qu'il pouvait prendre des affaires dans l'armoire s'il voulait."
     "Elle regarde Tomas, puis sa propre main, qui tient encore la carte d'accès de sa chambre."
@@ -942,7 +942,7 @@ label _26_0_1_1_0_1_REUNION:
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
     scene bg_conclave at adaptive_fullscreen with dissolve
-    $ showGroup([("elen", "triste", 0.26), ("iris", "fatigue", 0.50), ("noam", "fatigue", 0.75)])
+    $ showGroup([("julian", "fatigue", 0.070), ("elen", "triste", 0.177), ("noam", "fatigue", 0.285), ("iris", "fatigue", 0.393), ("ryn", "agace", 0.500), ("sael", "neutre", 0.607), ("nyra", "neutre", 0.715), ("lysa", "neutre", 0.823), ("mara", "fatigue", 0.930)])
     elen colere "Je peux plus l'entendre."
     iris agace "Ouais. Moi non plus."
     "Personne ne se lève tout de suite. Je regarde encore la place de Tomas, puis je pousse ma chaise."
