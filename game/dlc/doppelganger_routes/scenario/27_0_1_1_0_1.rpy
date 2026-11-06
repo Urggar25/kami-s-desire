@@ -408,11 +408,12 @@ label _27_0_1_1_0_1_PA_ROOM:
     if _return == "finish":
         jump _27_0_1_1_0_1_PA_FIN
     if _return == "corridors":
+        call EXIT_ROOM_TO_CORRIDOR from _call_j27a_pa_exit_room_native
         jump _27_0_1_1_0_1_PA_CORRIDORS
     $ investigation_pa_selected = _return
     if not investigation_pa_can_take(investigation_pa_selected):
         jump _27_0_1_1_0_1_PA_ROOM
-    call screen investigation_pa_confirm(J27A_ACTIONS[investigation_pa_selected])
+    call INVESTIGATION_PA_CHOICE(J27A_ACTIONS[investigation_pa_selected], investigation_pa_current_room) from _call_j27a_pa_choice_native
     if not _return:
         jump _27_0_1_1_0_1_PA_ROOM
     if not investigation_pa_spend(investigation_pa_selected):
