@@ -1820,283 +1820,283 @@ translate english 34e0a9a3_1:
 translate english dc04df4a:
 
     # "J'ouvre les yeux avec l'impression d'avoir dormi dix minutes et dix heures à la fois. Ma tête pèse une tonne, ma bouche est sèche et pendant quelques secondes je reste allongé sans même savoir pourquoi quelque chose me paraît aussi profondément anormal."
-    ""
+    "I open my eyes feeling as though I've slept for ten minutes and ten hours at once. My head weighs a ton, my mouth is dry, and for a few seconds I just lie there, unable to understand why everything feels so profoundly wrong."
 
 # game/scenario/16_0_1_1_0.rpy:17
 translate english 76264c3c_13:
 
     # noam panne "..."
-    noam panne ""
+    noam panne "..."
 
 # game/scenario/16_0_1_1_0.rpy:19
 translate english 6e9cfb37:
 
     # "Je fixe le plafond en attendant que mon cerveau se remette en marche. La chambre est la même que d'habitude, mes affaires sont à leur place, la lumière passe entre les stores... pourtant cette sensation ne part pas."
-    ""
+    "I stare at the ceiling, waiting for my brain to start working. The room looks the same as always, my things are where I left them, sunlight filters through the blinds... and yet I can't shake the feeling."
 
 # game/scenario/16_0_1_1_0.rpy:20
 translate english 988fac2f:
 
     # "Il manque quelque chose. Pas un objet. Quelque chose dans ma tête."
-    ""
+    "Something's missing. Not an object. Something inside my head."
 
 # game/scenario/16_0_1_1_0.rpy:22
 translate english 3ed05614:
 
     # "Je me redresse lentement et aussitôt une douleur sourde me traverse le crâne. Je ferme les yeux, une main contre mon front, puis j'essaie simplement de me rappeler comment je suis rentré ici."
-    ""
+    "I slowly sit up, and a dull pain immediately shoots through my skull. I shut my eyes, press a hand to my forehead, and try to remember how I got back here."
 
 # game/scenario/16_0_1_1_0.rpy:24
 translate english bd6ee628:
 
     # noam inquiet "Hier soir..."
-    noam inquiet ""
+    noam inquiet "Last night..."
 
 # game/scenario/16_0_1_1_0.rpy:26
 translate english 1afa7a09:
 
     # "La salle d'observation me revient. Les vidéos. La photo de Léa dans les mains de Kael. Puis l'enregistrement de ma propre chambre, avec Kael qui entre et repart avec le dessin de Juliette."
-    ""
+    "The observation room comes back to me. The recordings. The picture of Léa in Kael's hands. Then the footage from my own room, showing Kael coming in and leaving with Juliette's drawing."
 
 # game/scenario/16_0_1_1_0.rpy:28
 translate english 3932e62b:
 
     # noam reflexion "Après ça, je suis parti le chercher..."
-    noam reflexion ""
+    noam reflexion "After that, I went looking for him..."
 
 # game/scenario/16_0_1_1_0.rpy:30
 translate english 662adc1b:
 
     # "Je me souviens du couloir. Je me souviens de l'avoir aperçu plus loin et de l'avoir appelé. Je me souviens même d'avoir accéléré pour le rattraper."
-    ""
+    "I remember the corridor. I remember spotting him farther down and calling out. I even remember speeding up to catch him."
 
 # game/scenario/16_0_1_1_0.rpy:31
 translate english 2411ba86:
 
     # "Et ensuite, rien. Plus rien."
-    ""
+    "And then, nothing. Absolutely nothing."
 
 # game/scenario/16_0_1_1_0.rpy:33
 translate english a59161de:
 
     # noam hesitation "... Non."
-    noam hesitation ""
+    noam hesitation "...No."
 
 # game/scenario/16_0_1_1_0.rpy:35
 translate english 62ed7e02:
 
     # "Je recommence à réflechir depuis le début, plus lentement, comme si j'avais simplement sauté une étape. La vidéo. Le dessin. Le couloir. Kael."
-    ""
+    "I go over it again from the beginning, more slowly, as though I've simply skipped a step. The recording. The drawing. The corridor. Kael."
 
 # game/scenario/16_0_1_1_0.rpy:37
 translate english dfd8ba81:
 
     # noam inquiet "Je l'ai trouvé... Je sais que je l'ai trouvé. Je lui ai parlé."
-    noam inquiet ""
+    noam inquiet "I found him... I know I found him. I spoke to him."
 
 # game/scenario/16_0_1_1_0.rpy:38
 translate english c8447a8d:
 
     # think "Mais de quoi ...?"
-    think ""
+    think "But what did we talk about...?"
 
 # game/scenario/16_0_1_1_0.rpy:40
 translate english 5bb96251:
 
     # "J'en suis certain sans réussir à expliquer pourquoi. Il s'est passé quelque chose d'important, quelque chose qui devrait être juste là, à quelques secondes de portée, mais chaque fois que j'essaie de l'attraper, ma tête se vide complètement."
-    ""
+    "I'm certain of it, though I can't explain why. Something important happened, something that should be right there, only seconds out of reach. But every time I try to grasp it, my mind goes completely blank."
 
 # game/scenario/16_0_1_1_0.rpy:42
 translate english 378ed552:
 
     # noam colere "Allez... réfléchis."
-    noam colere ""
+    noam colere "Come on... think."
 
 # game/scenario/16_0_1_1_0.rpy:44
 translate english a4b461fc:
 
     # "Je ferme les yeux plus fort, comme si ça pouvait aider. J'essaie de retrouver sa voix, l'endroit où on était, ce que je lui ai dit. Une image menace de revenir, puis disparaît avant même que je puisse la reconnaître."
-    ""
+    "I squeeze my eyes shut, as if that might help. I try to remember his voice, where we were, what I said to him. An image almost surfaces, then vanishes before I can make it out."
 
 # game/scenario/16_0_1_1_0.rpy:46
 translate english 5a782a7b:
 
     # noam colere "Putain !"
-    noam colere ""
+    noam colere "Fuck!"
 
 # game/scenario/16_0_1_1_0.rpy:49
 translate english f6cd701b:
 
     # "Je frappe du plat de la main contre le matelas. La douleur dans mon crâne pulse immédiatement plus fort et je regrette mon geste."
-    ""
+    "I smack the mattress with my palm. The pain in my head immediately throbs harder, and I regret it."
 
 # game/scenario/16_0_1_1_0.rpy:50
 translate english f4b7f6d0:
 
     # "Ce n'est pas un souvenir flou. Ce n'est pas le genre de soirée où tout finit par se mélanger avec la fatigue. C'est un trou net. Je sais ce qu'il y avait juste avant, je sais que quelque chose est venu après, mais entre les deux il n'y a absolument rien."
-    ""
+    "This isn't a hazy memory. It isn't the kind of evening where exhaustion makes everything blur together. It's a clean break. I know what came just before, and I know something happened afterward, but there's absolutely nothing in between."
 
 # game/scenario/16_0_1_1_0.rpy:52
 translate english eadbe5aa:
 
     # "Je me lève et manque de perdre l'équilibre. En passant devant le miroir, je remarque seulement à quel point j'ai mauvaise mine : les yeux rouges, le visage tiré et cette expression d'idiot qui cherche une réponse sur son propre visage."
-    ""
+    "I get up and nearly lose my balance. As I pass the mirror, I finally notice how awful I look: bloodshot eyes, a drawn face, and the expression of an idiot searching his own reflection for answers."
 
 # game/scenario/16_0_1_1_0.rpy:54
 translate english 97573df6:
 
     # noam triste "Qu'est-ce qui s'est passé... ?"
-    noam triste ""
+    noam triste "What happened...?"
 
 # game/scenario/16_0_1_1_0.rpy:61
 translate english 12d5fa33:
 
     # kami "Bonjour, mes chers représentants. J'espère que cette nouvelle journée vous trouve dans une forme éclatante."
-    kami ""
+    kami "Good morning, my dear representatives. I hope this new day finds you in excellent health."
 
 # game/scenario/16_0_1_1_0.rpy:65
 translate english 2a73f9b5:
 
     # kami "Enfin... certains plus que d'autres."
-    kami ""
+    kami "Well... some of you more than others."
 
 # game/scenario/16_0_1_1_0.rpy:67
 translate english bd69ef90:
 
     # "Je relève immédiatement les yeux vers l'écran."
-    ""
+    "I immediately look up at the screen."
 
 # game/scenario/16_0_1_1_0.rpy:69
 translate english d3220ce6_3:
 
     # noam inquiet "..."
-    noam inquiet ""
+    noam inquiet "..."
 
 # game/scenario/16_0_1_1_0.rpy:71
 translate english c28cc79d:
 
     # kami "Aucun vote n'est prévu aujourd'hui. Profitez-en pour vous reposer, discuter, réfléchir à vos merveilleux choix passés... ou simplement essayer de passer quelques heures sans vous accuser mutuellement de quelque chose."
-    kami ""
+    kami "There will be no vote today. Take the opportunity to rest, chat, reflect on all those wonderful decisions you've made... or simply try to go a few hours without accusing one another of something."
 
 # game/scenario/16_0_1_1_0.rpy:75
 translate english de6e79d2:
 
     # kami "Je sais, je sais. Je vous en demande beaucoup."
-    kami ""
+    kami "I know, I know. I'm asking a lot."
 
 # game/scenario/16_0_1_1_0.rpy:79
 translate english af6fa7d2:
 
     # kami "Bonne journée à tous."
-    kami ""
+    kami "Have a lovely day, everyone."
 
 # game/scenario/16_0_1_1_0.rpy:84
 translate english e750a4aa:
 
     # "L'écran s'éteint. Je reste encore quelques secondes devant lui, avec la désagréable impression que sa remarque m'était destinée sans pouvoir en être sûr."
-    ""
+    "The screen goes dark. I stand there a little longer, with the unpleasant feeling that her remark was aimed at me. I just can't be sure."
 
 # game/scenario/16_0_1_1_0.rpy:86
 translate english c4a15771:
 
     # noam reflexion "Kael..."
-    noam reflexion ""
+    noam reflexion "Kael..."
 
 # game/scenario/16_0_1_1_0.rpy:88
 translate english e4919a89:
 
     # "Je pourrais aller le voir tout de suite. Une partie de moi en a envie. Une autre refuse de débarquer devant lui sans même savoir ce que j'ai fait ou dit la veille."
-    ""
+    "I could go see him right now. Part of me wants to. Another part refuses to show up at his door when I don't even know what I did or said yesterday."
 
 # game/scenario/16_0_1_1_0.rpy:89
 translate english 158638dc:
 
     # "La faim finit par trancher à ma place. Je n'ai presque rien dans le ventre et rester seul ici à forcer sur un souvenir qui ne revient pas ne m'avance à rien."
-    ""
+    "In the end, hunger makes the decision for me. I've barely eaten, and sitting here alone trying to force back a memory that won't come isn't getting me anywhere."
 
 # game/scenario/16_0_1_1_0.rpy:105
 translate english 812c5052:
 
     # "Je quitte les dortoirs en marchant moins vite que d'habitude. Ma tête s'est un peu calmée, mais le vide est toujours là, lourd, impossible à ignorer. À chaque fois que j'essaie de penser à Kael, je reviens exactement au même point : je l'ai cherché, je l'ai trouvé... et après, plus rien."
-    ""
+    "I leave the dormitory more slowly than usual. My headache has eased a little, but the blank is still there, heavy and impossible to ignore. Whenever I think about Kael, I end up in exactly the same place: I went looking for him, I found him... and then nothing."
 
 # game/scenario/16_0_1_1_0.rpy:110
 translate english da2ded98:
 
     # "La cafétéria est déjà bien remplie quand j'arrive. Mara et Elias discutent près du buffet, Iris râle parce que quelqu'un a encore laissé une tasse vide sur la table et Elen essaie visiblement de convaincre Ryn de manger autre chose que du pain."
-    ""
+    "The cafeteria is already busy when I arrive. Mara and Elias are talking near the buffet, Iris is complaining because someone left an empty cup on the table again, and Elen is apparently trying to convince Ryn to eat something other than bread."
 
 # game/scenario/16_0_1_1_0.rpy:111
 translate english e2d417e9:
 
     # "Pendant quelques secondes, personne ne fait particulièrement attention à moi, et ça me va très bien."
-    ""
+    "For a few seconds, nobody pays me much attention. That's fine by me."
 
 # game/scenario/16_0_1_1_0.rpy:123
 translate english 7c2c24ad:
 
     # elen joie "Noam ! Il reste du café si tu veux. Enfin, je crois que c'est encore du café. Elias a dit qu'il était vraiment mauvais aujourd'hui."
-    elen joie ""
+    elen joie "Noam! There's coffee left if you want some. Well, I think it's still coffee. Elias said it was really bad today."
 
 # game/scenario/16_0_1_1_0.rpy:125
 translate english e892bc58:
 
     # elias fatigue "J'ai dit qu'il avait goût de flotte. C'est différent."
-    elias fatigue ""
+    elias fatigue "I said it tasted like water. There's a difference."
 
 # game/scenario/16_0_1_1_0.rpy:127
 translate english a5734609:
 
     # iris neutre "Non, pour une fois il a raison. Même moi j'arrive pas à finir le mien, et pourtant je suis prête à boire n'importe quoi le matin."
-    iris neutre ""
+    iris neutre "No, for once he's right. Even I can't finish mine, and I'll drink pretty much anything in the morning."
 
 # game/scenario/16_0_1_1_0.rpy:129
 translate english b956d2bc:
 
     # mara agace "Waouh. Iris qui abandonne avant la fin d'une plainte, ça par contre c'est inquiétant."
-    mara agace ""
+    mara agace "Wow. Iris giving up on a complaint halfway through? Now that's worrying."
 
 # game/scenario/16_0_1_1_0.rpy:131
 translate english 5ecb2f9f:
 
     # iris colere "Je peux reprendre si ça te manque."
-    iris colere ""
+    iris colere "I can pick it back up if you miss it."
 
 # game/scenario/16_0_1_1_0.rpy:133
 translate english b8246d36:
 
     # "Je prends une tasse sans vraiment suivre la conversation et m'assois au bout de la table. Le bruit autour de moi devrait aider, mais il me donne surtout l'impression d'avoir la tête encore plus pleine."
-    ""
+    "I grab a cup without really following the conversation and sit at the end of the table. The noise around me should help, but mostly it makes my head feel even more crowded."
 
 # game/scenario/16_0_1_1_0.rpy:135
 translate english 9bd4ca8b:
 
     # lysa blase "T'as une sale tête."
-    lysa blase ""
+    lysa blase "You look like hell."
 
 # game/scenario/16_0_1_1_0.rpy:137
 translate english cf88acff:
 
     # noam desaccord "Merci."
-    noam desaccord ""
+    noam desaccord "Thanks."
 
 # game/scenario/16_0_1_1_0.rpy:139
 translate english 194fd4a7:
 
     # lysa taquin "De rien. J'essayais de trouver une formulation douce, mais j'ai abandonné."
-    lysa taquin ""
+    lysa taquin "You're welcome. I tried to find a gentler way to put it, but I gave up."
 
 # game/scenario/16_0_1_1_0.rpy:141
 translate english c2344dfe:
 
     # "Je porte la tasse à mes lèvres et réalise seulement à ce moment-là que je n'ai pas mis de sucre. Je la repose presque immédiatement."
-    ""
+    "I bring the cup to my lips and only then realize I forgot the sugar. I put it straight back down."
 
 # game/scenario/16_0_1_1_0.rpy:143
 translate english 0d49e40d:
 
     # iris inquiet "Attends... toi, tu bois jamais ton café comme ça."
-    iris inquiet ""
+    iris inquiet "Wait... you never drink your coffee like that."
 
 # game/scenario/16_0_1_1_0.rpy:145
 translate english eded0f17:
