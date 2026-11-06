@@ -88,7 +88,7 @@ translate english 9502f381:
 translate english 5de1657d:
 
     # iris "Arrête de bouger !"
-    iris "Stop moving!"
+    iris "Will you hold still?!"
 
 # game/scenario/8_1_0_0.rpy:50
 translate english e166465d:
@@ -1282,7 +1282,7 @@ translate english 81fc5cbf:
 translate english 70e9973c:
 
     # iris "Tu n’as pas été kidnappée !"
-    iris "You weren't kidnapped!"
+    iris "Nobody kidnapped you!"
 
 # game/scenario/8_1_0_0.rpy:472
 translate english 9b4de341:
@@ -1540,7 +1540,7 @@ translate english 0eb40f3c:
 translate english 37ad084b:
 
     # kami "Debout, mes chers représentants ! Une nouvelle merveilleuse journée commence !"
-    kami "Up you get, my dear representatives! A wonderful new day is beginning!"
+    kami "Rise and shine, my dear representatives! Another glorious day awaits!"
 
 # game/scenario/8_1_0_0.rpy:562
 translate english 68859592:
@@ -1564,7 +1564,7 @@ translate english 7d852e94:
 translate english 88ca71f9:
 
     # kami "J’espère que vous avez bien dormi ! Parce que moi, je ne dors jamais !"
-    kami "I hope you slept well! Because I never sleep!"
+    kami "Sleep well? I certainly hope so! Not that I'd know. I NEVER sleep!"
 
 # game/scenario/8_1_0_0.rpy:570
 translate english 083d2a10:
@@ -1750,7 +1750,7 @@ translate english 5a3efcdc:
 translate english 6abe6b26:
 
     # julian "Parfait. Alors, Monsieur Harmonie, verdict ?"
-    julian "Perfect. So, Mister Harmony, what's the verdict?"
+    julian "Well then, Mr. Harmony, what's your verdict?"
 
 # game/scenario/8_1_0_0.rpy:656
 translate english 97216587:
@@ -1912,7 +1912,7 @@ translate english fa4c9577:
 translate english bbafeeb1:
 
     # julian "Mais je le fais avec beaucoup de sérieux."
-    julian "But I'm doing it very seriously."
+    julian "Oh, I'm taking this VERY seriously."
 
 # game/scenario/8_1_0_0.rpy:710
 translate english bb4db117:
