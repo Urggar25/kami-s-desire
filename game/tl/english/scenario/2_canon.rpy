@@ -64,19 +64,19 @@ translate english e1b5a778:
 translate english 6061d67a:
 
     # kami "Enfin, je ne peux que spéculer : vous n'êtes pas nombreux à avoir désactivé votre brouilleur !"
-    kami "Well, I can only speculate. Not many of you have turned off your jammers!"
+    kami "Well, I can only guess. Hardly any of you switched off your jammers!"
 
 # game/scenario/2_canon.rpy:65
 translate english 42c47566:
 
     # kami "C’est mignon. Vraiment. J'espère que certains d'entre vous ont pu passer une bonne nuit !"
-    kami "That's adorable. Truly. I hope at least some of you managed to get a good night's sleep!"
+    kami "Aww. How precious. I hope at least some of you slept like babies!"
 
 # game/scenario/2_canon.rpy:66
 translate english 0f5f2bce:
 
     # kami "Mes valeureux serviteurs ont eu bien du mal à vous fabriquer des lits d'aussi bonne qualité !"
-    kami "My valiant servants had quite a time making beds this nice for you!"
+    kami "My loyal little minions worked their fingers to the bone making those lovely beds!"
 
 # game/scenario/2_canon.rpy:69
 translate english 6b4130b7:
@@ -88,7 +88,7 @@ translate english 6b4130b7:
 translate english a9a14f2d:
 
     # kami "J'espère que vos vacances se passent pour le mieux ?!"
-    kami "I hope you're all enjoying your little vacation?!"
+    kami "How's your little getaway treating you?"
 
 # game/scenario/2_canon.rpy:74
 translate english 79efa34d:
@@ -148,7 +148,7 @@ translate english 74975302:
 translate english 4d163d63:
 
     # kami "D'ailleurs il ne s'endort jamais vraiment, lui. Un peu comme moi au final !"
-    kami "Actually, it never really falls asleep. A bit like me, in the end!"
+    kami "Actually, he never really sleeps. Hey, we've got that in common!"
 
 # game/scenario/2_canon.rpy:98
 translate english 654a23b5:
@@ -160,7 +160,7 @@ translate english 654a23b5:
 translate english c57ad04c:
 
     # kami "Ah ! Vous voulez le savoir, hein ! Quelle sera la toute première proposition mise au vote !"
-    kami "Ah! You want to know, don't you? What the very first proposal put to a vote will be!"
+    kami "Ooh, you want to know, don't you? Which lucky proposal gets the very first vote!"
 
 # game/scenario/2_canon.rpy:100
 translate english 5a2ec9e7:
@@ -172,7 +172,7 @@ translate english 5a2ec9e7:
 translate english bc185a80:
 
     # kami "En attendant, je vous attends nombreux dans la Salle du Conclave pour la première annonce majeure !"
-    kami "In the meantime, I expect to see plenty of you in the Conclave Chamber for our first major announcement!"
+    kami "In the meantime, I'll see you all in the Conclave chamber for our first big reveal!"
 
 # game/scenario/2_canon.rpy:102
 translate english 840dbaf8:
@@ -496,7 +496,7 @@ translate english f477b665:
 translate english b481c61f:
 
     # kami "Mais qui est l'abruti qui a osé parler de politique ou d'argent ?!"
-    kami "But which idiot brought up politics or money?!"
+    kami "Okay, which moron brought up politics or money?!"
 
 # game/scenario/2_canon.rpy:304
 translate english c724a74a:
@@ -514,7 +514,7 @@ translate english c6b31a5b:
 translate english 6da0ad51:
 
     # kami "Et bien, tant pis pour le retardataire !"
-    kami "Well then, too bad for the latecomer!"
+    kami "Well, too bad for whoever's running late!"
 
 # game/scenario/2_canon.rpy:313
 translate english d19cc11b:
@@ -598,13 +598,13 @@ translate english 72ed0a35:
 translate english 3a0578c9:
 
     # kami "Mais qui a écrit ça ?! C'est... Comment dire... Bon, je pouvais pas en attendre mieux après tout."
-    kami "Who wrote that?! It's... how should I put this... Well, I suppose I couldn't expect any better."
+    kami "Who on earth wrote this?! It's... how do I put this kindly? Oh, who am I kidding? I should've known better."
 
 # game/scenario/2_canon.rpy:351
 translate english eb1cd723:
 
     # kami "Au moins tout le monde a compris l'idée de la proposition !"
-    kami "At least everyone understood the point of the proposal!"
+    kami "Well, at least you all managed to understand what the proposal was about. Gold star!"
 
 # game/scenario/2_canon.rpy:356
 translate english fc90295c:
@@ -682,13 +682,13 @@ translate english 3090e29e:
 translate english 5861de0b:
 
     # kami "Je vais devoir réécrire ça au propre. C'est impossible d'inclure une formulation aussi enfantine dans mes merveilleux commandements !"
-    kami "I'll have to rewrite this properly. I simply cannot add such childish wording to my magnificent Commandments!"
+    kami "I'll have to clean this up. I can't put something this childish in my glorious Commandments!"
 
 # game/scenario/2_canon.rpy:393
 translate english 7fb73447:
 
     # kami "Amusez-vous bien. Le monde vous écoute."
-    kami "Have fun. The world is listening."
+    kami "Have fun. The whole world's watching."
 
 # game/scenario/2_canon.rpy:416
 translate english 934a9b1e:
