@@ -3648,7 +3648,7 @@ translate english e0d89f96_1:
 translate english 337951c6_1:
 
     # "Même Mara laisse échapper un petit rire."
-    ""
+    "Even Mara lets out a small laugh."
 
 # game/scenario/9_1_0_0.rpy:473
 translate english 34e0a9a3_5:
@@ -3660,25 +3660,25 @@ translate english 34e0a9a3_5:
 translate english 62ac0d21_2:
 
     # noam "Rien."
-    noam ""
+    noam "Nothing."
 
 # game/scenario/9_1_0_0.rpy:840
 translate english 7d16d077:
 
     # nyra "Pourquoi ?"
-    nyra ""
+    nyra "Why?"
 
 # game/scenario/9_1_0_0.rpy:1039
 translate english 70563e82_1:
 
     # noam "Et après ?"
-    noam ""
+    noam "And then what?"
 
 # game/scenario/9_1_0_0.rpy:1153
 translate english ef1285aa_1:
 
     # "Le silence retombe."
-    ""
+    "Silence falls again."
 
 # game/scenario/9_1_0_0.rpy:1179
 translate english 82ac864c_1:
@@ -3690,13 +3690,13 @@ translate english 82ac864c_1:
 translate english b11ae2df_4:
 
     # noam "Je sais."
-    noam ""
+    noam "I know."
 
 # game/scenario/9_1_0_0.rpy:1247
 translate english 59aecd40_3:
 
     # iris "Non."
-    iris ""
+    iris "No."
 
 # game/scenario/9_1_0_0.rpy:1251
 translate english a53c02c6_7:
@@ -3708,7 +3708,7 @@ translate english a53c02c6_7:
 translate english 0e80e0da_3:
 
     # noam "..."
-    noam ""
+    noam "..."
 
 # game/scenario/9_1_0_0.rpy:1406
 translate english 99c2a3ad_1:
@@ -3720,7 +3720,7 @@ translate english 99c2a3ad_1:
 translate english a522d80b:
 
     # nyra "Non."
-    nyra ""
+    nyra "No."
 
 # game/scenario/9_1_0_0.rpy:1428
 translate english dba2cb71_1:
