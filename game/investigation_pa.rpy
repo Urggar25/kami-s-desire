@@ -336,7 +336,7 @@ screen j26_photo_manual(eid, view, center, zoom):
         if phase == "camera":
             key "K_SPACE" action SetScreenVariable("phase", "capture")
             key "K_RETURN" action SetScreenVariable("phase", "capture")
-            textbutton "PRENDRE LA PHOTO  [ESPACE / ENTRÉE]":
+            textbutton "PRENDRE LA PHOTO  [[ESPACE / ENTRÉE]":
                 xalign 0.5 yalign 0.95
                 text_size 28
                 action SetScreenVariable("phase", "capture")
