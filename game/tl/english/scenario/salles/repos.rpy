@@ -696,7 +696,7 @@ translate english decouverte_salle_repos_e28d9428:
 translate english decouverte_salle_repos_72b0b2c2:
 
     # "Je me passe une main sur le front. Iris le remarque tout de suite."
-    ""
+    "I rub my forehead. Iris notices immediately."
 
 # game/scenario/salles/repos.rpy:265
 translate english decouverte_salle_repos_279bb141:
