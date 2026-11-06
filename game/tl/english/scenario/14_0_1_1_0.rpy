@@ -652,49 +652,49 @@ translate english dc619ef5:
 translate english d8bc8af8:
 
     # "D'autres baissent ouvertement la voix."
-    ""
+    "Others deliberately lower their voices."
 
 # game/scenario/14_0_1_1_0.rpy:200
 translate english 6a931909:
 
     # "Quelques-unes tournent carrément le dos."
-    ""
+    "A few turn their backs on me outright."
 
 # game/scenario/14_0_1_1_0.rpy:202
 translate english dfa290be:
 
     # think "Ils ne font même plus semblant."
-    think ""
+    think "They're not even pretending anymore."
 
 # game/scenario/14_0_1_1_0.rpy:211
 translate english 96181fe9:
 
     # "Je me dirige vers le comptoir."
-    ""
+    "I head toward the counter."
 
 # game/scenario/14_0_1_1_0.rpy:212
 translate english 888cb47d:
 
     # "Le trajet me paraît interminable."
-    ""
+    "The walk feels endless."
 
 # game/scenario/14_0_1_1_0.rpy:213
 translate english d0e6c816:
 
     # goumi "Bonjour Noam."
-    goumi ""
+    goumi "Good morning, Noam."
 
 # game/scenario/14_0_1_1_0.rpy:214
 translate english af27df92:
 
     # "Même Goumi semble plus froid que d'habitude."
-    ""
+    "Even Goumi seems colder than usual."
 
 # game/scenario/14_0_1_1_0.rpy:215
 translate english dd17488c:
 
     # goumi "Comme d'habitude ?"
-    goumi ""
+    goumi "The usual?"
 
 # game/scenario/14_0_1_1_0.rpy:216
 translate english ffcc561f:
@@ -706,13 +706,13 @@ translate english ffcc561f:
 translate english 3f9e7920:
 
     # goumi "Mange chaud."
-    goumi ""
+    goumi "Eat it while it's hot."
 
 # game/scenario/14_0_1_1_0.rpy:218
 translate english 04cef37b:
 
     # goumi "Tu en as besoin."
-    goumi ""
+    goumi "You need it."
 
 # game/scenario/14_0_1_1_0.rpy:219
 translate english a84be97b:
@@ -724,13 +724,13 @@ translate english a84be97b:
 translate english fd74a4cd:
 
     # "Je prends le plateau à deux mains."
-    ""
+    "I take the tray in both hands."
 
 # game/scenario/14_0_1_1_0.rpy:222
 translate english bab002d5:
 
     # "Derrière moi, les murmures recommencent."
-    ""
+    "Behind me, the whispers start again."
 
 # game/scenario/14_0_1_1_0.rpy:223
 translate english 5daff8a2:
@@ -742,13 +742,13 @@ translate english 5daff8a2:
 translate english fefbda29:
 
     # "Mara est assise à une table centrale."
-    ""
+    "Mara is sitting at a table in the middle of the room."
 
 # game/scenario/14_0_1_1_0.rpy:225
 translate english e15e14f4:
 
     # "Elle ne baisse même pas la voix."
-    ""
+    "She doesn't even bother lowering her voice."
 
 # game/scenario/14_0_1_1_0.rpy:227
 translate english cc1f578a:
@@ -958,13 +958,13 @@ translate english 0d842e7a:
 translate english 2f948280:
 
     # "Je serre le plateau plus fort."
-    ""
+    "I grip the tray harder."
 
 # game/scenario/14_0_1_1_0.rpy:262
 translate english af06c55c:
 
     # "Mes doigts me font mal."
-    ""
+    "My fingers ache."
 
 # game/scenario/14_0_1_1_0.rpy:263
 translate english 772e1544:
@@ -988,13 +988,13 @@ translate english c1a1edcb:
 translate english f7825881:
 
     # "La table se fige."
-    ""
+    "The whole table freezes."
 
 # game/scenario/14_0_1_1_0.rpy:267
 translate english 1df9f8c9:
 
     # "Même Mara met une seconde à répondre."
-    ""
+    "Even Mara needs a second to respond."
 
 # game/scenario/14_0_1_1_0.rpy:268
 translate english f9390d6a:
@@ -1042,13 +1042,13 @@ translate english 8cd9ad33:
 translate english 8615dbdf:
 
     # "Iris ne répond pas tout de suite."
-    ""
+    "Iris doesn't answer right away."
 
 # game/scenario/14_0_1_1_0.rpy:276
 translate english 594be31a:
 
     # "Son silence me fait plus mal que les cris de Mara."
-    ""
+    "Her silence hurts more than Mara's shouting."
 
 # game/scenario/14_0_1_1_0.rpy:277
 translate english 4015090c:
@@ -1072,55 +1072,55 @@ translate english bc235794:
 translate english d5341ba2:
 
     # "Je vais m'asseoir à une table isolée."
-    ""
+    "I go sit at a table by myself."
 
 # game/scenario/14_0_1_1_0.rpy:281
 translate english 3f1c91c1:
 
     # "Personne ne m'arrête."
-    ""
+    "No one stops me."
 
 # game/scenario/14_0_1_1_0.rpy:282
 translate english 245a7d81:
 
     # "Personne ne m'invite non plus."
-    ""
+    "No one invites me over, either."
 
 # game/scenario/14_0_1_1_0.rpy:283
 translate english 2c4baa81:
 
     # "Le plateau touche la table dans un bruit sec."
-    ""
+    "The tray lands on the table with a sharp clatter."
 
 # game/scenario/14_0_1_1_0.rpy:284
 translate english be80ec0d:
 
     # think "Hier, ils me regardaient avec colère."
-    think ""
+    think "Yesterday, they looked at me with anger."
 
 # game/scenario/14_0_1_1_0.rpy:285
 translate english bc5811f0:
 
     # think "Aujourd'hui, ils me regardent avec méfiance."
-    think ""
+    think "Today, they look at me with suspicion."
 
 # game/scenario/14_0_1_1_0.rpy:286
 translate english 8e1bfd54:
 
     # think "Demain... ce sera probablement avec peur."
-    think ""
+    think "Tomorrow... it'll probably be fear."
 
 # game/scenario/14_0_1_1_0.rpy:287
 translate english 72500fad:
 
     # "Je prends ma fourchette."
-    ""
+    "I pick up my fork."
 
 # game/scenario/14_0_1_1_0.rpy:288
 translate english cce36f15:
 
     # "Je la repose presque aussitôt."
-    ""
+    "Then put it down almost immediately."
 
 # game/scenario/14_0_1_1_0.rpy:289
 translate english b77c5093:
@@ -1192,13 +1192,13 @@ translate english 7b435265_1:
 translate english 7059e813:
 
     # "Sael se lève."
-    ""
+    "Sael stands up."
 
 # game/scenario/14_0_1_1_0.rpy:301
 translate english b382563f:
 
     # "Elle avance jusqu'à ma table."
-    ""
+    "She walks over to my table."
 
 # game/scenario/14_0_1_1_0.rpy:302
 translate english 8c9426bf:
@@ -1252,7 +1252,7 @@ translate english 67df9d6d:
 translate english 9e1e5a5f_1:
 
     # "Je relève les yeux vers elle."
-    ""
+    "I look up at her."
 
 # game/scenario/14_0_1_1_0.rpy:311
 translate english de7edb43:
@@ -1318,43 +1318,43 @@ translate english 816624e9:
 translate english 31691108:
 
     # "Elle retourne vers la sortie sans attendre de réponse."
-    ""
+    "She heads back toward the exit without waiting for an answer."
 
 # game/scenario/14_0_1_1_0.rpy:325
 translate english d2fb3a1d:
 
     # think "Même quand elle parle calmement, j'entends une menace."
-    think ""
+    think "Even when she speaks calmly, it sounds like a threat."
 
 # game/scenario/14_0_1_1_0.rpy:326
 translate english 4a9f12b6:
 
     # "Quelques minutes passent."
-    ""
+    "A few minutes pass."
 
 # game/scenario/14_0_1_1_0.rpy:327
 translate english 6172ac65:
 
     # "Ou peut-être moins."
-    ""
+    "Or maybe less."
 
 # game/scenario/14_0_1_1_0.rpy:328
 translate english eeb67ee3:
 
     # "Je ne sais plus."
-    ""
+    "I can't tell anymore."
 
 # game/scenario/14_0_1_1_0.rpy:329
 translate english fe1d29e7:
 
     # "Iris finit par s'approcher."
-    ""
+    "Eventually, Iris comes over."
 
 # game/scenario/14_0_1_1_0.rpy:330
 translate english 032d9fb9:
 
     # "Elle reste debout à côté de ma table."
-    ""
+    "She stands beside my table."
 
 # game/scenario/14_0_1_1_0.rpy:331
 translate english 53e9bcad:
@@ -1594,7 +1594,7 @@ translate english 223b3cd8:
 translate english 0323665a:
 
     # "Je baisse les yeux."
-    ""
+    "I lower my eyes."
 
 # game/scenario/14_0_1_1_0.rpy:371
 translate english e1a5fa86:
@@ -1714,7 +1714,7 @@ translate english 4dbf141e:
 translate english b1d2f318:
 
     # "Un silence tombe entre nous."
-    ""
+    "Silence stretches between us."
 
 # game/scenario/14_0_1_1_0.rpy:391
 translate english 95b8897c:
@@ -1768,13 +1768,13 @@ translate english 60beca67:
 translate english 5817a218:
 
     # "Un très léger sourire me vient."
-    ""
+    "A faint smile creeps onto my face."
 
 # game/scenario/14_0_1_1_0.rpy:400
 translate english 5a90264e:
 
     # "Il disparaît presque aussitôt."
-    ""
+    "It vanishes almost immediately."
 
 # game/scenario/14_0_1_1_0.rpy:401
 translate english 1d4fba4a:
@@ -1810,7 +1810,7 @@ translate english 6f21ce14:
 translate english 0471ccf1:
 
     # goumi "Elle a raison."
-    goumi ""
+    goumi "She's right."
 
 # game/scenario/14_0_1_1_0.rpy:407
 translate english 57f63efb:
@@ -1822,13 +1822,13 @@ translate english 57f63efb:
 translate english 22867fa7:
 
     # goumi "Je distribue de la nourriture."
-    goumi ""
+    goumi "I serve the food."
 
 # game/scenario/14_0_1_1_0.rpy:409
 translate english 10e07880:
 
     # goumi "Mon avis est pertinent."
-    goumi ""
+    goumi "My opinion is relevant."
 
 # game/scenario/14_0_1_1_0.rpy:410
 translate english e4a30c42:
@@ -1846,13 +1846,13 @@ translate english cfa73a31:
 translate english 16836f57:
 
     # goumi "Exact."
-    goumi ""
+    goumi "Correct."
 
 # game/scenario/14_0_1_1_0.rpy:413
 translate english 854f4e3c:
 
     # "Iris soupire."
-    ""
+    "Iris sighs."
 
 # game/scenario/14_0_1_1_0.rpy:414
 translate english 3c9317f8:
@@ -1900,7 +1900,7 @@ translate english d31bfa08:
 translate english 624c0b94:
 
     # "Elle repart vers les autres."
-    ""
+    "She goes back to the others."
 
 # game/scenario/14_0_1_1_0.rpy:422
 translate english 0fbf7389:
@@ -1948,55 +1948,55 @@ translate english 5a535266:
 translate english 5a444a3b:
 
     # "Un rire nerveux circule à leur table."
-    ""
+    "A nervous laugh ripples across their table."
 
 # game/scenario/14_0_1_1_0.rpy:430
 translate english 23f33b25:
 
     # "Pas un vrai rire."
-    ""
+    "Not a real laugh."
 
 # game/scenario/14_0_1_1_0.rpy:431
 translate english 924ed00c:
 
     # "Mais quelque chose qui ressemble encore un peu à de la vie."
-    ""
+    "But something that still sounds a little like life."
 
 # game/scenario/14_0_1_1_0.rpy:432
 translate english a502857d:
 
     # think "Ils peuvent encore rire ensemble."
-    think ""
+    think "They can still laugh together."
 
 # game/scenario/14_0_1_1_0.rpy:433
 translate english 5636b5cd:
 
     # think "Même maintenant."
-    think ""
+    think "Even now."
 
 # game/scenario/14_0_1_1_0.rpy:434
 translate english 12f18262:
 
     # "Je prends une bouchée."
-    ""
+    "I take a bite."
 
 # game/scenario/14_0_1_1_0.rpy:435
 translate english c4f6be1b:
 
     # "Elle a un goût de carton."
-    ""
+    "It tastes like cardboard."
 
 # game/scenario/14_0_1_1_0.rpy:436
 translate english 16a890dc:
 
     # "Mais j'avale quand même."
-    ""
+    "But I swallow it anyway."
 
 # game/scenario/14_0_1_1_0.rpy:437
 translate english 5f6c3ce2:
 
     # "Quand je me lève, plusieurs regards se tournent aussitôt vers moi."
-    ""
+    "When I stand up, several heads turn toward me at once."
 
 # game/scenario/14_0_1_1_0.rpy:438
 translate english 1eb773e3:
@@ -2068,13 +2068,13 @@ translate english 407a32f7:
 translate english fd7df961:
 
     # "Je serre les doigts autour du plateau."
-    ""
+    "I tighten my grip on the tray."
 
 # game/scenario/14_0_1_1_0.rpy:450
 translate english 2978bff8:
 
     # "Puis je le repose sur la table."
-    ""
+    "Then set it back down on the table."
 
 # game/scenario/14_0_1_1_0.rpy:451
 translate english 9ab518a4:
@@ -2116,31 +2116,31 @@ translate english 8d72ca97:
 translate english 65ccf6e6:
 
     # "Je n'attends pas que ça reparte."
-    ""
+    "I don't wait for it to start again."
 
 # game/scenario/14_0_1_1_0.rpy:458
 translate english 8757dd1b:
 
     # "Je quitte la cafétéria sous leurs regards."
-    ""
+    "I leave the cafeteria under their stares."
 
 # game/scenario/14_0_1_1_0.rpy:460
 translate english 9445d5d8:
 
     # "La porte de la cafétéria se referme derrière moi."
-    ""
+    "The cafeteria door closes behind me."
 
 # game/scenario/14_0_1_1_0.rpy:461
 translate english 9cb4d620:
 
     # "Le couloir est plus silencieux."
-    ""
+    "The corridor is quieter."
 
 # game/scenario/14_0_1_1_0.rpy:462
 translate english 68c89c16:
 
     # "Mais pas plus rassurant."
-    ""
+    "But no more comforting."
 
 # game/scenario/14_0_1_1_0.rpy:463
 translate english 1c735c36:
@@ -2158,19 +2158,19 @@ translate english 2d97f164:
 translate english ace8ba55:
 
     # "Le couloir semble plus long que d'habitude."
-    ""
+    "The hallway seems longer than usual."
 
 # game/scenario/14_0_1_1_0.rpy:474
 translate english 193e2d56:
 
     # "Plus silencieux aussi."
-    ""
+    "Quieter, too."
 
 # game/scenario/14_0_1_1_0.rpy:475
 translate english 2c740c0b:
 
     # "Chaque néon grésille comme s'il retenait son souffle."
-    ""
+    "Every fluorescent light buzzes as though holding its breath."
 
 # game/scenario/14_0_1_1_0.rpy:477
 translate english 912f13c7:
@@ -2188,13 +2188,13 @@ translate english 63bcbef3:
 translate english 494bba02:
 
     # "Je m'arrête devant sa porte."
-    ""
+    "I stop outside her door."
 
 # game/scenario/14_0_1_1_0.rpy:481
 translate english e90ea067:
 
     # "Ma main reste levée quelques secondes."
-    ""
+    "My raised hand hangs there for a few seconds."
 
 # game/scenario/14_0_1_1_0.rpy:483
 translate english e5dbfa3b:
