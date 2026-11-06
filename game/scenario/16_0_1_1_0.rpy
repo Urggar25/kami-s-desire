@@ -377,7 +377,7 @@ label _16_0_1_1_CORRIDOR_KAEL:
     call OFFER_DAILY_EXPLORATION(
         "_16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER", 2,
         ["archive", "cafeteria", "maintenance"],
-        "Rejoindre les archives", "archive"
+        _("Rejoindre les archives"), "archive"
     ) from _call_offer_exploration_j16
 
 
