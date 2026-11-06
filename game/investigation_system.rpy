@@ -304,12 +304,16 @@ init python:
 
     def investigation_evidence_image(eid):
         entry = INVESTIGATION_ENTRIES.get(eid, {})
+        # La photo affichée au déclenchement et dans le dossier utilise
+        # exactement la même ressource du jeu, jamais une image reconstituée
+        # différemment après sa capture.
+        photo_source = entry.get("photo_source", None)
+        if photo_source and renpy.loadable(photo_source):
+            return Image(photo_source)
         image_id = entry.get("image", eid)
         path = "images/hud/investigation/evidence/%s.png" % image_id
-        # Les arguments textuels des enquêtes à PA n'ont pas tous une illustration.
-        # Leur fiche doit néanmoins rester consultable sans MissingImageError.
         if renpy.loadable(path):
-            return path
+            return Image(path)
         return Solid("#163142")
 
     def _investigation_add_link(first_evidence, second_evidence):
