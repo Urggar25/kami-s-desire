@@ -1876,13 +1876,13 @@ translate english a80f8d88:
 translate english c09788b4_3:
 
     # "Rien."
-    ""
+    "Nothing."
 
 # game/scenario/5_0.rpy:811
 translate english 290dd969_6:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
 # TODO: Translation updated at 2026-11-06 17:50
 
@@ -1890,7 +1890,7 @@ translate english 290dd969_6:
 translate english c09788b4_7:
 
     # "Rien."
-    ""
+    "Nothing."
 
 # game/scenario/5_0.rpy:565
 translate english 8129fc03:
@@ -1908,11 +1908,11 @@ translate english 0f68b6cc:
 translate english afc55ade_5:
 
     # "Je m'arrête."
-    ""
+    "I stop."
 
 # game/scenario/5_0.rpy:814
 translate english 290dd969_11:
 
     # noam "Non."
-    noam ""
+    noam "No."
 
