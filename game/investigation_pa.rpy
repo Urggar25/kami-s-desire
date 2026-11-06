@@ -308,6 +308,37 @@ init python:
                        view.center, zoom, center)
         renpy.redraw(view, 0)
 
+    # Commandes de cadrage libre inspirées du minijeu photo du jour 25.
+    # La caméra ne bouge que si le joueur la pilote : aucun cliché automatique.
+    import time as _j26_time
+
+    def _j26_photo_move(view, dx, dy):
+        view.motion = None
+        view.center = (
+            _j26_limit_center(view.center[0] + float(dx) / view.zoom, view.zoom),
+            _j26_limit_center(view.center[1] + float(dy) / view.zoom, view.zoom),
+        )
+        renpy.redraw(view, 0)
+
+    def _j26_photo_zoom(view, direction):
+        view.motion = None
+        view.zoom = max(1.25, min(4.0, view.zoom + 0.25 * direction))
+        view.center = tuple(_j26_limit_center(p, view.zoom) for p in view.center)
+        renpy.redraw(view, 0)
+
+    def _j26_photo_pan(view):
+        now = _j26_time.monotonic()
+        prev = getattr(view, "pan_tick", now)
+        view.pan_tick = now
+        dt = max(0.0, min(now - prev, 0.05))
+        mx, my = renpy.get_mouse_pos()
+        # Bords de l'écran : le joueur déplace naturellement son cadrage,
+        # comme lors de la prise de photo de Mara au jour 25.
+        dx = -1 if mx < 135 else (1 if mx > 1785 else 0)
+        dy = -1 if my < 115 else (1 if my > 960 else 0)
+        if dx or dy:
+            _j26_photo_move(view, dx * dt * 0.36, dy * dt * 0.36)
+
 screen j26_photo_manual(eid, view, center, zoom):
     modal True
     zorder 220
@@ -334,8 +365,33 @@ screen j26_photo_manual(eid, view, center, zoom):
             padding (24, 12)
             text "TABLETTE — PRISE DE VUE" color "#E7F7FF" size 29
         if phase == "camera":
+            timer 0.033 repeat True action Function(_j26_photo_pan, view)
             key "K_SPACE" action SetScreenVariable("phase", "capture")
             key "K_RETURN" action SetScreenVariable("phase", "capture")
+            key "K_LEFT" action Function(_j26_photo_move, view, -0.055, 0)
+            key "K_RIGHT" action Function(_j26_photo_move, view, 0.055, 0)
+            key "K_UP" action Function(_j26_photo_move, view, 0, -0.055)
+            key "K_DOWN" action Function(_j26_photo_move, view, 0, 0.055)
+
+            frame:
+                xpos 50 ypos 940
+                background Solid("#07121CDD")
+                padding (16, 10)
+                vbox:
+                    spacing 4
+                    text "BORDS DE L'ÉCRAN / FLÈCHES : DÉPLACER LA CAMÉRA" color "#EAF9FF" size 19
+                    text "ZOOM : + / -   |   CADRE LA PREUVE AVANT DE DÉCLENCHER" color "#A6DDEB" size 18
+
+            hbox:
+                xalign 0.94 yalign 0.12
+                spacing 12
+                textbutton "ZOOM −":
+                    text_size 23
+                    action Function(_j26_photo_zoom, view, -1)
+                textbutton "ZOOM +":
+                    text_size 23
+                    action Function(_j26_photo_zoom, view, 1)
+
             textbutton "PRENDRE LA PHOTO  [[ESPACE / ENTRÉE]":
                 xalign 0.5 yalign 0.95
                 text_size 28
