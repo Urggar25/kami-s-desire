@@ -6268,3 +6268,29 @@ translate english 7dc183a1:
     # think "Parce que si je n'en trouve pas... je vais finir par croire Sael."
     think "Because if I don't find any... I'm going to end up believing Sael."
 
+
+# Missing current-source dialogue translation units (reviewed 2026-11-06)
+
+# game/scenario/14_0_1_1_0.rpy:167
+translate english 337951c6:
+
+    # "Même Mara laisse échapper un petit rire."
+    "Even Mara lets out a small laugh."
+
+# game/scenario/14_0_1_1_0.rpy:199
+translate english 82ac864c:
+
+    # noam surpris "Sérieusement ?"
+    noam surpris "Seriously?"
+
+# game/scenario/14_0_1_1_0.rpy:310
+translate english 24fc45ad:
+
+    # mara agace "Noam."
+    mara agace "Noam."
+
+# game/scenario/14_0_1_1_0.rpy:507
+translate english 2bdf9ba4:
+
+    # noam inquiet "Non."
+    noam inquiet "No."
