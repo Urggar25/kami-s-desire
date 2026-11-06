@@ -58,7 +58,7 @@ translate english day3_collect_vote_argument_60739fef:
 translate english day3_collect_vote_argument_611bddd7:
 
     # kami "Aujourd'hui, C'est JOUR DE VOOOOOTE !"
-    kami "Today is VOOOOOTING DAAAY!"
+    kami "It's VOOOOOTING DAAAAY!"
 
 # game/scenario/3_canon.rpy:326
 translate english day3_collect_vote_argument_923829a9:
@@ -340,7 +340,7 @@ translate english day3_collect_vote_argument_0b076769:
 translate english day3_collect_vote_argument_e18bb29c:
 
     # iris "C'est quoi, ce truc ? Elen, tu ne peux pas avaler ça."
-    iris "What is that? Elen, you can't seriously eat that."
+    iris "What on earth is that? Elen, you can't seriously be eating it."
 
 # game/scenario/3_canon.rpy:483
 translate english day3_collect_vote_argument_d29bd58e:
@@ -400,13 +400,13 @@ translate english day3_collect_vote_argument_72421dbb:
 translate english day3_collect_vote_argument_e9c9b7b3:
 
     # elen "Oh ! Ch'est trooop bon ! Exactement trop bon !"
-    elen "Oh! Ish soooo good! Like, exactly too good!"
+    elen "Mmmph! Ish soooo goood! Like, the best thing ever!"
 
 # game/scenario/3_canon.rpy:501
 translate english day3_collect_vote_argument_a646f4dc:
 
     # iris "Tu essaies de nous convaincre, ou de survivre à la première bouchée ?"
-    iris "Are you trying to convince us, or survive the first bite?"
+    iris "Are you trying to sell us on it, or just survive the first bite?"
 
 # game/scenario/3_canon.rpy:503
 translate english day3_collect_vote_argument_3581a5c9:
@@ -436,7 +436,7 @@ translate english day3_collect_vote_argument_9e1eabab:
 translate english day3_collect_vote_argument_b4ab32f1:
 
     # elen "Le regard ultiiime ! C'est comme ça que j'ai eu le bol."
-    elen "The ultimate looook! That's how I got the bowl."
+    elen "The ultimate puppy-dog eyes! That's how I got the bowl."
 
 # game/scenario/3_canon.rpy:514
 translate english day3_collect_vote_argument_9d0e9969:
@@ -688,7 +688,7 @@ translate english day3_collect_vote_argument_1e4b9fee:
 translate english day3_collect_vote_argument_86ae1f1a:
 
     # julian "J'ai entendu « je vote pour » ?"
-    julian "Did I hear someone say, 'I'm voting yes'?"
+    julian "Did somebody say 'I'm voting yes'?"
 
 # game/scenario/3_canon.rpy:624
 translate english day3_collect_vote_argument_9e2195c2:
@@ -1222,7 +1222,7 @@ translate english day3_collect_vote_argument_1a307d8d:
 translate english day3_collect_vote_argument_509f52cd:
 
     # tomas "Si ça ressemble à une démonstration d'ego, f-franchement… ce sera sans moi."
-    tomas "If this turns into an ego show, h-honestly... count me out."
+    tomas "If this turns into some macho ego contest, then... honestly, count me out."
 
 # game/scenario/3_canon.rpy:895
 translate english day3_collect_vote_argument_293896b4:
@@ -1462,7 +1462,7 @@ translate english day3_collect_vote_argument_e21322e6:
 translate english day3_collect_vote_argument_50c2a97d:
 
     # lysa "…Si je sauve le débat, tu me dois un café. Les oracles se faisaient mieux payer, pourtant."
-    lysa "...If I save the debate, you owe me a coffee. Oracles used to charge better than that."
+    lysa "...If I save this debate, you owe me a coffee. Prophets used to get paid a lot better."
 
 # game/scenario/3_canon.rpy:985
 translate english day3_collect_vote_argument_5626e73a:
@@ -1498,7 +1498,7 @@ translate english day3_collect_vote_argument_040161a0:
 translate english day3_collect_vote_argument_03106f94:
 
     # kami "Et je vois des visages émus ! Il y a eu de la tendresse dans les couloirs, on dirait."
-    kami "And I see some emotional faces! Looks like there was a little tenderness in the halls."
+    kami "Ooh, look at those emotional little faces! Have we been having heart-to-hearts in the hallway?"
 
 # game/scenario/3_canon.rpy:1005
 translate english day3_collect_vote_argument_8d3b59dd:
@@ -1564,7 +1564,7 @@ translate english day3_collect_vote_argument_e8142606:
 translate english day3_collect_vote_argument_b4699d4b:
 
     # kami "Réécrire est un vilain mot. Disons que j'ai rendu vos intentions… exécutables."
-    kami "Rewritten is such an ugly word. Let's say I made your intentions... executable."
+    kami "'Rewriting' is such an ugly word. I simply made your intentions... enforceable."
 
 # game/scenario/3_canon.rpy:1050
 translate english day3_collect_vote_argument_7e8907fd:
@@ -1786,7 +1786,7 @@ translate english day3_collect_vote_argument_11812dee:
 translate english day3_collect_vote_argument_69b27004:
 
     # kami "On m'informe que l'audience décroche. Trop de blabla, pas assez de sang."
-    kami "I'm being told the audience is dropping off. Too much talking, not enough blood."
+    kami "Apparently we're losing viewers. Too much talking, not enough bloodshed."
 
 # game/scenario/3_canon.rpy:1187
 translate english day3_collect_vote_argument_dd8dcba6:
@@ -1840,7 +1840,7 @@ translate english day3_before_objection_protocol_minigame_5101debe:
 translate english day3_before_objection_protocol_minigame_27a655fc:
 
     # kami "Justement. J'ai pensé que vous débattiez un peu trop dans le vide."
-    kami "Exactly. I thought you were all debating a little too far removed from reality."
+    kami "Exactly! You were getting a little too comfortable arguing in the abstract."
 
 # game/scenario/3_canon.rpy:1220
 translate english day3_before_objection_protocol_minigame_064f17fd:
@@ -1948,7 +1948,7 @@ translate english day3_choose_debate_argument_ca2f0c1d:
 translate english day3_choose_debate_argument_5ff84e73:
 
     # julian "Le statu quo, c'est une tombe collective avec des bons de pain rassi. Tu appelles ça la sécurité ?"
-    julian "The status quo is a mass grave with coupons for stale bread. You call that security?"
+    julian "The status quo is a mass grave with vouchers for stale bread. And you call that safe?"
 
 # game/scenario/3_canon.rpy:1520
 translate english day3_choose_debate_argument_363fb5c3:
@@ -2074,7 +2074,7 @@ translate english day3_choose_debate_argument_3dc1747d:
 translate english day3_choose_debate_argument_68afe41a:
 
     # kami "Oh. Une question pratique ? On progresse."
-    kami "Oh. A practical question? Progress."
+    kami "Oh! A practical question? Look at you, making progress."
 
 # game/scenario/3_canon.rpy:1572
 translate english day3_choose_debate_argument_0f7a2fa2:
@@ -3180,7 +3180,7 @@ translate english day3_collect_vote_argument_5587a674:
 translate english day3_collect_vote_argument_a911803a:
 
     # lysa "Bon. Mais tu me devras un café après ça."
-    lysa "Fine. But you owe me a coffee after this."
+    lysa "Fine. But you're buying me coffee after this."
 
 # game/scenario/3_canon.rpy:999
 translate english day3_collect_vote_argument_d4c76d8c:
@@ -3228,7 +3228,7 @@ translate english day3_collect_vote_argument_d065968a:
 translate english day3_collect_vote_argument_66c62f95:
 
     # nyra "On lit tout avant de commencer à se disputer, d'accord ?"
-    nyra "Can we read the whole thing before we start arguing?"
+    nyra "How about we read the whole thing before tearing each other's heads off?"
 
 # game/scenario/3_canon.rpy:1132
 translate english day3_collect_vote_argument_80344a44:
@@ -3330,7 +3330,7 @@ translate english day3_choose_debate_argument_b745465c:
 translate english day3_choose_debate_argument_34473062:
 
     # julian "Et rester comme ça, tu appelles ça une solution ? Les gens manquent déjà de tout."
-    julian "And you call staying like this a solution? People are already going without."
+    julian "And staying like this is your brilliant solution? People are already going hungry."
 
 # game/scenario/3_canon.rpy:1544
 translate english day3_choose_debate_argument_dcbd4312:
