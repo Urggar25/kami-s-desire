@@ -226,7 +226,7 @@ translate english 92eb39ad:
 translate english 926a35a2:
 
     # kami "Vous ne transformerez pas une intrusion en vide juridique simplement parce que j'ai oublié d'écrire : ne voyagez pas avec les pommes de terre !"
-    kami "You cannot turn an intrusion into a legal loophole just because I forgot to write: do not travel with the potatoes!"
+    kami "You can't claim you found a loophole just because I forgot to ban hitching rides with the potatoes!"
 
 # game/scenario/7_1_0_1.rpy:162
 translate english 5ace9abb:
