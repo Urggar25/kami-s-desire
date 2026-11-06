@@ -216,7 +216,7 @@ translate english 78362fd4:
 translate english 07b57a46:
 
     # noam faible "... Il y a quelqu’un ?"
-    noam faible ""
+    noam faible "...Is someone there?"
 
 # game/scenario/12_0_1_1.rpy:23
 translate english 1b2a2a40_2:
@@ -648,7 +648,7 @@ translate english 3ef483f8:
 translate english f252e488:
 
     # noam fatigue "Ouais… je n’arrivais plus à dormir."
-    noam fatigue ""
+    noam fatigue "Yeah... I couldn't get back to sleep."
 
 # game/scenario/12_0_1_1.rpy:293
 translate english f2d9e6e2:
@@ -684,7 +684,7 @@ translate english f26d7fb5:
 translate english 8efea915:
 
     # noam hesitation "Comment ça, plus faibles que prévu ?"
-    noam hesitation ""
+    noam hesitation "What do you mean, lower than expected?"
 
 # game/scenario/12_0_1_1.rpy:305
 translate english abe5d467:
@@ -744,7 +744,7 @@ translate english ee83e137:
 translate english 1d6a433a:
 
     # elen content "Noooam ! T’es déjà là ?! T’es un lève-tôt maintenant ?!"
-    elen content ""
+    elen content "Noaaam! You're here already?! Since when are you an early bird?!"
 
 # game/scenario/12_0_1_1.rpy:333
 translate english c5baf570:
@@ -786,7 +786,7 @@ translate english 378b235e:
 translate english ee37a9e3:
 
     # noam fatigue "… Salut Elen."
-    noam fatigue ""
+    noam fatigue "...Morning, Elen."
 
 # game/scenario/12_0_1_1.rpy:347
 translate english 8e0855e8:
@@ -798,13 +798,13 @@ translate english 8e0855e8:
 translate english 331497b2:
 
     # elen content "En même temps c'est pas étonnant, je te vois jamais venir manger !"
-    elen content ""
+    elen content "Not that I'm surprised! I never see you come down to eat!"
 
 # game/scenario/12_0_1_1.rpy:349
 translate english 63bf8105:
 
     # elen rire "Tu sais c'est important hein ?!"
-    elen rire ""
+    elen rire "You know eating's important, right?!"
 
 # game/scenario/12_0_1_1.rpy:351
 translate english 04c539e1:
@@ -816,7 +816,7 @@ translate english 04c539e1:
 translate english 5f7045a6:
 
     # elen joie "Crois moi, la cafétéria c’est le meilleur remède ! Goumi, tu me fais la même chose que d’habitude ? Avec double portion de pain s’il te plaît !"
-    elen joie ""
+    elen joie "Trust me, the cafeteria is the best medicine! Goumi, the usual for me? With extra bread, please!"
 
 # game/scenario/12_0_1_1.rpy:355
 translate english 5eb60265:
@@ -834,7 +834,7 @@ translate english 903be337:
 translate english c7d639bb:
 
     # elen colere "Mais tu m'as déjà dit ça hier soir !"
-    elen colere ""
+    elen colere "But you told me that last night!"
 
 # game/scenario/12_0_1_1.rpy:361
 translate english 89c12dd7:
@@ -858,7 +858,7 @@ translate english 0bbdd9d9:
 translate english 2b3aa38e:
 
     # elen decu "Oh non… C’est à cause de moi, c’est ça ?"
-    elen decu ""
+    elen decu "Oh no... It's because of me, isn't it?"
 
 # game/scenario/12_0_1_1.rpy:368
 translate english b413315c:
@@ -870,25 +870,25 @@ translate english b413315c:
 translate english 1919b837:
 
     # elen decu "Sérieux ?! Je mange trop ?!"
-    elen decu ""
+    elen decu "Seriously?! Am I eating too much?!"
 
 # game/scenario/12_0_1_1.rpy:372
 translate english 765391ea:
 
     # noam hesitation "…"
-    noam hesitation ""
+    noam hesitation "..."
 
 # game/scenario/12_0_1_1.rpy:374
 translate english c312c1bf:
 
     # elen fatigue "Je suis désoléeééé ! Je sais que je mange beaucoup trop ! Mais la nourriture c’est vraiment mon péché mignon ici !"
-    elen fatigue ""
+    elen fatigue "I'm sooooo sorry! I know I eat way too much! But food is my one guilty pleasure around here!"
 
 # game/scenario/12_0_1_1.rpy:375
 translate english 0f71f48a:
 
     # elen taquin "Avec tout ce stress, j’ai besoin de réconfort, tu comprends ?!"
-    elen taquin ""
+    elen taquin "With all this stress, I need a little comfort food, you know?!"
 
 # game/scenario/12_0_1_1.rpy:377
 translate english 6a5951c0:
@@ -900,7 +900,7 @@ translate english 6a5951c0:
 translate english c07b8fdb:
 
     # elen determine "Goumi, tu peux me faire une portion normale alors ? Je vais me retenir, promis ! Croix de bois, croix de fer !"
-    elen determine ""
+    elen determine "Goumi, could you make that a regular portion, then? I'll behave, I promise! Cross my heart!"
 
 # game/scenario/12_0_1_1.rpy:381
 translate english c2e9d9e9:
@@ -918,7 +918,7 @@ translate english f846fef2:
 translate english a5c646a1:
 
     # elen surpris "Du coup, t’as pas réussi à te rendormir ? T’as fait un cauchemar ou quoi ?"
-    elen surpris ""
+    elen surpris "So... you couldn't get back to sleep? Bad dream or something?"
 
 # game/scenario/12_0_1_1.rpy:387
 translate english 928b36be:
@@ -942,67 +942,67 @@ translate english 6a7ba6f7:
 translate english 98fadee7:
 
     # noam triste "Quelque chose comme ça."
-    noam triste ""
+    noam triste "Something like that."
 
 # game/scenario/12_0_1_1.rpy:393
 translate english 1408b527:
 
     # elen reflexion "Raconte ! Je suis super bonne pour écouter les cauchemars ! Une fois j’ai rêvé que Kami nous transformait tous en cupcakes et qu’elle nous mangeait un par un. C'était horrible !"
-    elen reflexion ""
+    elen reflexion "Tell me! I'm great at listening to nightmares! Once I dreamed Kami turned us all into cupcakes and ate us one by one. It was horrible!"
 
 # game/scenario/12_0_1_1.rpy:394
 translate english da9ee8df:
 
     # elen rire "Je me suis réveillée avec une de ces faim, tu n'imagines même pas !"
-    elen rire ""
+    elen rire "I woke up STARVING! You have no idea!"
 
 # game/scenario/12_0_1_1.rpy:396
 translate english 92261fc0:
 
     # noam surpris "Hein ?! Me dis pas que tu voulais nous bouffer ?!"
-    noam surpris ""
+    noam surpris "What?! Don't tell me you wanted to eat us!"
 
 # game/scenario/12_0_1_1.rpy:397
 translate english a844a32d:
 
     # noam taquin "… Si seulement j'avais fais un rêve comme ça."
-    noam taquin ""
+    noam taquin "...If only I'd had a dream like that."
 
 # game/scenario/12_0_1_1.rpy:399
 translate english 9fdf8f13:
 
     # elen rire "Tu m'étonnes ! Et ouais, on avait tous l'air trop trop bons !"
-    elen rire ""
+    elen rire "Right?! And yeah, we all looked so, so delicious!"
 
 # game/scenario/12_0_1_1.rpy:400
 translate english a2a495f3:
 
     # elen taquin "Allez, dis-moi ! T’as rêvé de quoi ? Du vote d’aujourd’hui ? D’un truc bizarre ?"
-    elen taquin ""
+    elen taquin "Come on, tell me! What did you dream about? Today's vote? Something weird?"
 
 # game/scenario/12_0_1_1.rpy:402
 translate english d123b0e3:
 
     # noam colere "Elen."
-    noam colere ""
+    noam colere "Elen."
 
 # game/scenario/12_0_1_1.rpy:404
 translate english 04a28fec:
 
     # elen reflexion "Quoi ?"
-    elen reflexion ""
+    elen reflexion "What?"
 
 # game/scenario/12_0_1_1.rpy:406
 translate english 7f5723bf:
 
     # noam colere "Je n’ai pas trop envie de parler ce matin."
-    noam colere ""
+    noam colere "I really don't feel like talking this morning."
 
 # game/scenario/12_0_1_1.rpy:408
 translate english 6eb71c70:
 
     # elen triste "Oh… d’accord."
-    elen triste ""
+    elen triste "Oh... okay."
 
 # game/scenario/12_0_1_1.rpy:410
 translate english 107e1125:
@@ -1014,7 +1014,7 @@ translate english 107e1125:
 translate english 661ec727:
 
     # elen determine "Mais tu sais, si tu changes d’avis, je suis là hein ! Je peux même te raconter mes blagues nulles pour te changer les idées !"
-    elen determine ""
+    elen determine "But if you change your mind, I'm right here! I can even tell you some of my terrible jokes to cheer you up!"
 
 # game/scenario/12_0_1_1.rpy:414
 translate english c5b53c36:
@@ -1200,7 +1200,7 @@ translate english 0e7ea913:
 translate english 30960899:
 
     # noam faible "..."
-    noam faible ""
+    noam faible "..."
 
 # game/scenario/12_0_1_1.rpy:494
 translate english 0f3406e4:
@@ -1362,7 +1362,7 @@ translate english ebc9204c:
 translate english 0aaf9c6a:
 
     # mara stress "J’en peux plus de savoir que Kami peut nous mater 24h/24 !"
-    mara stress ""
+    mara stress "I can't stand knowing Kami can watch us twenty-four seven!"
 
 # game/scenario/12_0_1_1.rpy:591
 translate english 74d952ae:
@@ -1374,7 +1374,7 @@ translate english 74d952ae:
 translate english fba2bc11:
 
     # julian taquin "Et moi j’ai envie de pouvoir dire des conneries sans que Kami les enregistre pour plus tard."
-    julian taquin ""
+    julian taquin "And I want to be able to say dumb stuff without Kami recording it to use against me later."
 
 # game/scenario/12_0_1_1.rpy:595
 translate english a475545d:
@@ -1410,7 +1410,7 @@ translate english 3b3de528:
 translate english 1f1ee015:
 
     # kael calme "… Tant qu’on respecte les Commandements, oui."
-    kael calme ""
+    kael calme "...As long as we follow the Commandments, yes."
 
 # game/scenario/12_0_1_1.rpy:606
 translate english 11244820:
@@ -1458,7 +1458,7 @@ translate english e8ba10f3:
 translate english 85884d0c:
 
     # ryn colere "Moi je dis qu’on autorise tout ça. Point final."
-    ryn colere ""
+    ryn colere "I say we allow them. End of story."
 
 # game/scenario/12_0_1_1.rpy:618
 translate english 96752a13:
@@ -1470,7 +1470,7 @@ translate english 96752a13:
 translate english 3e6926d8:
 
     # nyra raison "Il faut juste faire attention aux conséquences. Si tout le monde a des brouilleurs, on ne pourra plus rien prouver."
-    nyra raison ""
+    nyra raison "We just need to think about the consequences. If everyone has a jammer, we won't be able to prove anything."
 
 # game/scenario/12_0_1_1.rpy:623
 translate english ef907f45:
@@ -1506,19 +1506,19 @@ translate english 031574e1:
 translate english 172e5f2a:
 
     # iris inquiet "Noam… tu dis rien ?"
-    iris inquiet ""
+    iris inquiet "Noam... you've been awfully quiet."
 
 # game/scenario/12_0_1_1.rpy:634
 translate english efe18a10:
 
     # noam fatigue "… Je réfléchis."
-    noam fatigue ""
+    noam fatigue "...I'm thinking."
 
 # game/scenario/12_0_1_1.rpy:637
 translate english 49e79393:
 
     # julian taquin "Allez, Noam ! T’es pas d’accord pour qu’on ait enfin un peu d’intimité ?"
-    julian taquin ""
+    julian taquin "Come on, Noam! Don't you want a little privacy for once?"
 
 # game/scenario/12_0_1_1.rpy:639
 translate english b7fc9683:
@@ -1584,7 +1584,7 @@ translate english 4124eaf0:
 translate english a1286b03:
 
     # mara stress "Pour moi c’est évident ! On autorise !"
-    mara stress ""
+    mara stress "It's obvious to me! Allow them!"
 
 # game/scenario/12_0_1_1.rpy:697
 translate english c1bc816f:
@@ -1608,7 +1608,7 @@ translate english dbf9b045:
 translate english 6d2904e1:
 
     # julian taquin "Et moi j’ai envie de pouvoir dire que Kami est une grosse sadique sans qu’elle me le rappelle gentiment le lendemain."
-    julian taquin ""
+    julian taquin "And I'd like to call Kami a sadistic bitch without her politely reminding me the next morning."
 
 # game/scenario/12_0_1_1.rpy:704
 translate english d6f0f088:
@@ -1620,31 +1620,31 @@ translate english d6f0f088:
 translate english cf005c24:
 
     # elias fatigue "Je comprends l’idée, mais le sujet est quand même important."
-    elias fatigue ""
+    elias fatigue "I get the idea, but this is still a big decision."
 
 # game/scenario/12_0_1_1.rpy:709
 translate english dc080b32:
 
     # elias fatigue "Sans ça, Kami pourra plus ni nous surveiller, ni nous protéger..."
-    elias fatigue ""
+    elias fatigue "Without them, Kami couldn't watch us or protect us..."
 
 # game/scenario/12_0_1_1.rpy:711
 translate english fc125072:
 
     # lysa inquiet "Alors pas vraiment."
-    lysa inquiet ""
+    lysa inquiet "Not exactly."
 
 # game/scenario/12_0_1_1.rpy:712
 translate english df9c08d4:
 
     # lysa inquiet "Même avec les brouilleurs, Kami peut avoir accès aux vidéos, mais après une semaine de délai."
-    lysa inquiet ""
+    lysa inquiet "Even with the jammers, Kami can access the footage—just a week later."
 
 # game/scenario/12_0_1_1.rpy:715
 translate english 26589fc3:
 
     # nyra raison "Je peux comprendre l’envie d’intimité… mais il ne faut pas oublier les risques."
-    nyra raison ""
+    nyra raison "I understand why people want privacy... but we can't ignore the risks."
 
 # game/scenario/12_0_1_1.rpy:716
 translate english c0a7baf8:
@@ -1680,7 +1680,7 @@ translate english a7f4c57d:
 translate english be008b54:
 
     # ryn colere "Et alors ? Tu préfères vivre en prison dorée juste pour avoir une chance de choper un voleur ?"
-    ryn colere ""
+    ryn colere "So what? You'd rather live in a gilded cage just for a chance to catch a thief?"
 
 # game/scenario/12_0_1_1.rpy:728
 translate english 0adeb4ba:
@@ -1692,7 +1692,7 @@ translate english 0adeb4ba:
 translate english 54339bbb:
 
     # sael mefiant "C’est facile à dire tant que ce n’est pas toi qui t’es fait voler un truc précieux."
-    sael mefiant ""
+    sael mefiant "Easy to say when you aren't the one who's had something precious stolen."
 
 # game/scenario/12_0_1_1.rpy:732
 translate english 4c879754:
@@ -1722,13 +1722,13 @@ translate english 9517c441_1:
 translate english efe18a10_1:
 
     # noam fatigue "… Je réfléchis."
-    noam fatigue ""
+    noam fatigue "...I'm still thinking."
 
 # game/scenario/12_0_1_1.rpy:743
 translate english e9b91c9b:
 
     # julian taquin "Noam, on peut au moins décider de ce qu'on fait dans nos chambres, non ? T'es avec nous ?"
-    julian taquin ""
+    julian taquin "Noam, surely we can at least decide what happens in our own rooms. Are you with us?"
 
 # game/scenario/12_0_1_1.rpy:745
 translate english f626b58d:
@@ -1776,7 +1776,7 @@ translate english a1233b02:
 translate english 3152bc84:
 
     # noam raison "… La sécurité."
-    noam raison ""
+    noam raison "...Security."
 
 # game/scenario/12_0_1_1.rpy:757
 translate english 3ba0cb4d:
@@ -1794,7 +1794,7 @@ translate english 172892da:
 translate english ee2dd911:
 
     # noam fatigue "Je ne dis pas que vivre sous caméra, c’est normal."
-    noam fatigue ""
+    noam fatigue "I'm not saying being watched all the time is normal."
 
 # game/scenario/12_0_1_1.rpy:763
 translate english 8fd6eb0d:
@@ -1812,13 +1812,13 @@ translate english 52434c7d:
 translate english 3a38830c:
 
     # noam colere "On saurait déjà qui a volé les affaires de Kael."
-    noam colere ""
+    noam colere "We'd already know who stole Kael's things."
 
 # game/scenario/12_0_1_1.rpy:767
 translate english e2f4fa51:
 
     # noam colere "Et on saurait aussi qui a touché aux miennes."
-    noam colere ""
+    noam colere "And who messed with mine."
 
 # game/scenario/12_0_1_1.rpy:769
 translate english 49d5b9d0:
@@ -1830,13 +1830,13 @@ translate english 49d5b9d0:
 translate english 6fde9bdc:
 
     # kael reflechit "…"
-    kael reflechit ""
+    kael reflechit "..."
 
 # game/scenario/12_0_1_1.rpy:773
 translate english c3cd59e2:
 
     # noam fatigue "On peut appeler ça liberté si vous voulez."
-    noam fatigue ""
+    noam fatigue "Call it freedom if you like."
 
 # game/scenario/12_0_1_1.rpy:774
 translate english 044c68f9:
@@ -1848,13 +1848,13 @@ translate english 044c68f9:
 translate english 343c1c98:
 
     # mara stress "Donc ta solution, c’est de laisser Kami nous regarder jusque dans nos chambres ?"
-    mara stress ""
+    mara stress "So your solution is to let Kami watch us in our bedrooms?"
 
 # game/scenario/12_0_1_1.rpy:778
 translate english 694ee91b:
 
     # noam desaccord "il n'y a pas de solution parfaite."
-    noam desaccord ""
+    noam desaccord "There's no perfect solution."
 
 # game/scenario/12_0_1_1.rpy:780
 translate english 9a6ff6f4:
@@ -1884,7 +1884,7 @@ translate english a90fec85:
 translate english 4b095d3c:
 
     # mara stress "Autoriser ! Évidemment qu’on autorise !"
-    mara stress ""
+    mara stress "Allow them! Of COURSE we allow them!"
 
 # game/scenario/12_0_1_1.rpy:814
 translate english 120bf47e:
@@ -1908,25 +1908,25 @@ translate english 4818b5f2:
 translate english 7e3ca4bd:
 
     # julian taquin "Moi je veux pouvoir insulter Kami tranquillement sans qu’elle me le ressorte six mois plus tard avec un petit smiley sadique."
-    julian taquin ""
+    julian taquin "I just want to insult Kami in peace without her throwing it back in my face six months later with a little sadistic smiley."
 
 # game/scenario/12_0_1_1.rpy:821
 translate english e6f15b59:
 
     # elias fatigue "Je ne vais pas mentir… moi aussi, l’idée de pouvoir respirer deux minutes sans caméra me tente."
-    elias fatigue ""
+    elias fatigue "Not gonna lie... the idea of catching my breath for two minutes without a camera watching sounds pretty good."
 
 # game/scenario/12_0_1_1.rpy:824
 translate english 4eb1909e:
 
     # lysa inquiet "Ça ne règle pas tout. Mais continuer comme ça, avec Kami partout, tout le temps… C'est quand même particulier..."
-    lysa inquiet ""
+    lysa inquiet "It doesn't solve everything. But carrying on like this, with Kami everywhere, all the time... that's pretty messed up."
 
 # game/scenario/12_0_1_1.rpy:826
 translate english b18c73d5:
 
     # ryn colere "Liberté ! Point final !"
-    ryn colere ""
+    ryn colere "Freedom! End of story!"
 
 # game/scenario/12_0_1_1.rpy:827
 translate english 4c5604b0:
@@ -1944,7 +1944,7 @@ translate english f6188717:
 translate english 15bf4715:
 
     # nyra raison "Je comprends l’envie… vraiment."
-    nyra raison ""
+    nyra raison "I get the appeal. I really do."
 
 # game/scenario/12_0_1_1.rpy:832
 translate english c26090e4:
@@ -1968,13 +1968,13 @@ translate english 73b085c0:
 translate english 0cd95c25:
 
     # kael calme "Kami m'a dit que si on interdit les brouilleurs, je n’aurai probablement jamais accès aux images de ma chambre."
-    kael calme ""
+    kael calme "Kami told me that if we ban the jammers, I'll probably never see the footage from my room."
 
 # game/scenario/12_0_1_1.rpy:839
 translate english 074f3714:
 
     # kael triste "Les brouilleurs seront désinstallés dans toutes les chambres, les images capturées avec..."
-    kael triste ""
+    kael triste "They'll remove the jammers from every room, along with the recordings they captured..."
 
 # game/scenario/12_0_1_1.rpy:840
 translate english 37d4a519:
@@ -1986,7 +1986,7 @@ translate english 37d4a519:
 translate english 0d19a445:
 
     # sael mefiant "Et si on les interdit ? On reste sous la surveillance totale de Kami. C’est encore moins la solution."
-    sael mefiant ""
+    sael mefiant "And if we ban them? We're back under Kami's total surveillance. That's even worse."
 
 # game/scenario/12_0_1_1.rpy:844
 translate english 87bbe6c4:
@@ -2022,13 +2022,13 @@ translate english 35b60eeb:
 translate english 991e3743:
 
     # noam fatigue "… Je réfléchis encore."
-    noam fatigue ""
+    noam fatigue "...I'm still thinking."
 
 # game/scenario/12_0_1_1.rpy:856
 translate english b2091ab0:
 
     # julian taquin "Noam ! On a une chance de récupérer un peu de liberté. Tu vas quand même pas nous laisser passer à côté ?"
-    julian taquin ""
+    julian taquin "Noam! We've got a chance to win back some freedom. You're not going to let us throw it away, are you?"
 
 # game/scenario/12_0_1_1.rpy:858
 translate english 0745e194:
@@ -2040,7 +2040,7 @@ translate english 0745e194:
 translate english 88d826d2:
 
     # noam fatigue "… Ouais."
-    noam fatigue ""
+    noam fatigue "...Yeah."
 
 # game/scenario/12_0_1_1.rpy:862
 translate english ffeb741e:
@@ -2058,7 +2058,7 @@ translate english f3c4f390:
 translate english d61f6bb2:
 
     # noam hesitation "Je ne dis pas que Kael a tort. Ni Nyra. Ni Tomas."
-    noam hesitation ""
+    noam hesitation "I'm not saying Kael is wrong. Or Nyra. Or Tomas."
 
 # game/scenario/12_0_1_1.rpy:866
 translate english 356dcd9a:
@@ -2076,19 +2076,19 @@ translate english 8927d265:
 translate english 704901cc:
 
     # noam fatigue "Je suis avec personne."
-    noam fatigue ""
+    noam fatigue "I'm not on anyone's side."
 
 # game/scenario/12_0_1_1.rpy:874
 translate english 99972107:
 
     # mara stress "Voilà. C’est exactement ça."
-    mara stress ""
+    mara stress "Exactly. That's the problem."
 
 # game/scenario/12_0_1_1.rpy:876
 translate english 7348d5ea:
 
     # kael calme "Et si quelqu’un utilise cet endroit pour voler encore ?"
-    kael calme ""
+    kael calme "And what if someone uses those blind spots to steal again?"
 
 # game/scenario/12_0_1_1.rpy:878
 translate english e62fd509:
@@ -2142,13 +2142,13 @@ translate english 6ca9af2b:
 translate english 23f95102:
 
     # mara stress "Bon, on passe au vote et on autorise les brouilleurs, point final ! J’en peux plus de cette surveillance constante !"
-    mara stress ""
+    mara stress "Okay, let's vote and allow the jammers already! I'm sick of this constant surveillance!"
 
 # game/scenario/12_0_1_1.rpy:917
 translate english 8a4f1126:
 
     # ryn colere "Ouais ! On n’est pas des putains de cobayes !"
-    ryn colere ""
+    ryn colere "Yeah! We're not fucking lab rats!"
 
 # game/scenario/12_0_1_1.rpy:919
 translate english 96a0dae2:
@@ -2172,7 +2172,7 @@ translate english 1f93a022:
 translate english a845a560:
 
     # noam colere "FERMEZ-LA !"
-    noam colere ""
+    noam colere "SHUT UP!"
 
 # game/scenario/12_0_1_1.rpy:927
 translate english 871d58e5:
@@ -2184,55 +2184,55 @@ translate english 871d58e5:
 translate english 08c546e4:
 
     # iris inquiet "Noam… ?"
-    iris inquiet ""
+    iris inquiet "Noam...?"
 
 # game/scenario/12_0_1_1.rpy:931
 translate english 9f805eac:
 
     # noam colere "Vous êtes tous là à débattre comme si tout était normal !"
-    noam colere ""
+    noam colere "You're all sitting here debating as if everything's normal!"
 
 # game/scenario/12_0_1_1.rpy:932
 translate english 45201bd0:
 
     # noam colere "Comme si on était une grande famille heureuse qui doit juste choisir entre avoir un peu d'intimité et vivre en sécurité !"
-    noam colere ""
+    noam colere "Like we're one big happy family choosing between a little privacy and a little safety!"
 
 # game/scenario/12_0_1_1.rpy:933
 translate english 4a51798c:
 
     # noam desespoir "Mais vous êtes aveugles ou quoi ?!"
-    noam desespoir ""
+    noam desespoir "Are you all BLIND?!"
 
 # game/scenario/12_0_1_1.rpy:935
 translate english d3bc6f3e:
 
     # julian hesitation "Noam, calme-toi mec…"
-    julian hesitation ""
+    julian hesitation "Noam, calm down, man..."
 
 # game/scenario/12_0_1_1.rpy:937
 translate english a622733e:
 
     # noam colere "Me calmer ?!"
-    noam colere ""
+    noam colere "Calm down?!"
 
 # game/scenario/12_0_1_1.rpy:938
 translate english 75f328d2:
 
     # noam desespoir "Quelqu’un a supprimé les enregistrements des caméras hier soir !"
-    noam desespoir ""
+    noam desespoir "Someone deleted the security footage last night!"
 
 # game/scenario/12_0_1_1.rpy:939
 translate english 049d62fe:
 
     # noam colere "Dans le couloir près de la salle de stockage ! Juste avant l’annonce !"
-    noam colere ""
+    noam colere "In the corridor near the storage room! Right before the announcement!"
 
 # game/scenario/12_0_1_1.rpy:940
 translate english 8d59a8d6:
 
     # noam peur "Et ce quelqu’un est ici ! Parmi nous !"
-    noam peur ""
+    noam peur "And whoever did it is HERE! One of us!"
 
 # game/scenario/12_0_1_1.rpy:942
 translate english f50befd6:
@@ -2244,97 +2244,97 @@ translate english f50befd6:
 translate english f04a334b:
 
     # sael mefiant "… Quoi ? De quoi tu parles ?!"
-    sael mefiant ""
+    sael mefiant "...What? What are you talking about?!"
 
 # game/scenario/12_0_1_1.rpy:946
 translate english dcc48432:
 
     # noam colere "J’ai demandé à Kami de me montrer les images. Elles ont été effacées !"
-    noam colere ""
+    noam colere "I asked Kami to show me the footage. It was gone!"
 
 # game/scenario/12_0_1_1.rpy:947
 translate english d586b097:
 
     # noam colere "Nettoyées. Comme si elles n’avaient jamais existé !"
-    noam colere ""
+    noam colere "Wiped clean. Like it never existed!"
 
 # game/scenario/12_0_1_1.rpy:948
 translate english b974c207:
 
     # noam panne "Et ce n’est pas Kami qui l’a fait ! Elle me l’a dit elle-même !"
-    noam panne ""
+    noam panne "And Kami didn't do it! She told me herself!"
 
 # game/scenario/12_0_1_1.rpy:950
 translate english 253e18f4:
 
     # mara stress "Attends… tu es en train de nous dire que quelqu’un aurait supprimé les images des caméras ?"
-    mara stress ""
+    mara stress "Wait... you're saying someone deliberately deleted the camera recordings?"
 
 # game/scenario/12_0_1_1.rpy:951
 translate english 771ab3cd:
 
     # mara colere "Mais pourquoi quelqu'un irait faire ça ?!"
-    mara colere ""
+    mara colere "But why the hell would anyone do that?!"
 
 # game/scenario/12_0_1_1.rpy:953
 translate english d2dea2ff:
 
     # noam colere "Oui !"
-    noam colere ""
+    noam colere "YES!"
 
 # game/scenario/12_0_1_1.rpy:954
 translate english 5f16a40a:
 
     # noam panne "Quelqu’un qui était là hier soir. Quelqu’un qui savait exactement ce qu’il faisait !"
-    noam panne ""
+    noam panne "Someone who was there last night. Someone who knew exactly what they were doing!"
 
 # game/scenario/12_0_1_1.rpy:956
 translate english 8a6e15d9:
 
     # elen inquiet "Noam… tu es sûr de ce que tu dis ? Tu étais encore malade hier, peut-être que…"
-    elen inquiet ""
+    elen inquiet "Noam... are you sure? You were still sick yesterday. Maybe..."
 
 # game/scenario/12_0_1_1.rpy:958
 translate english adeb03e9:
 
     # noam colere "Ne me parle pas comme si j’étais fou, Elen !"
-    noam colere ""
+    noam colere "Don't talk to me like I'm crazy, Elen!"
 
 # game/scenario/12_0_1_1.rpy:959
 translate english 0075d244:
 
     # noam peur "Il s'est passé quelque chose de bizarre dans ce couloir !"
-    noam peur ""
+    noam peur "Something was wrong in that corridor!"
 
 # game/scenario/12_0_1_1.rpy:960
 translate english 66ba3c92:
 
     # noam colere "Et tout a été effacé !"
-    noam colere ""
+    noam colere "And all the footage is gone!"
 
 # game/scenario/12_0_1_1.rpy:962
 translate english be3e899f:
 
     # ryn colere "Et tu nous accuses nous ?! T’es sérieux là ?!"
-    ryn colere ""
+    ryn colere "And you're accusing US?! Are you serious?!"
 
 # game/scenario/12_0_1_1.rpy:964
 translate english 0c08546b:
 
     # noam colere "Oui ! Parce que c’est forcément l’un d’entre vous !"
-    noam colere ""
+    noam colere "YES! Because it has to be one of you!"
 
 # game/scenario/12_0_1_1.rpy:965
 translate english 3a5cc55d:
 
     # noam triste "Qui d’autre aurait pu le faire ?!"
-    noam triste ""
+    noam triste "Who else could've done it?!"
 
 # game/scenario/12_0_1_1.rpy:967
 translate english 7eae5332:
 
     # kael calme "... Noam. Respire."
-    kael calme ""
+    kael calme "...Noam. Breathe."
 
 # game/scenario/12_0_1_1.rpy:969
 translate english c4453e92:
