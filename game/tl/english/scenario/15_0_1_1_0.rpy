@@ -4394,7 +4394,7 @@ translate english 2ea7204a:
 translate english 0d84be98:
 
     # kael surpris "... Quoi ?"
-    kael surpris "No..."
+    kael surpris "...What?"
 
 # game/scenario/15_0_1_1_0.rpy:455
 translate english 7e1a376c:
@@ -4412,7 +4412,7 @@ translate english cb4982fb:
 translate english 9933f87d:
 
     # kael inquietude "Non..."
-    kael inquietude "Is that you?"
+    kael inquietude "No..."
 
 # game/scenario/15_0_1_1_0.rpy:460
 translate english dc0bbb69:
