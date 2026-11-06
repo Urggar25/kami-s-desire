@@ -201,8 +201,3 @@ translate english strings:
     # game/scenario/optional_route_encounters_j17_j24.rpy:47
     old "Retourner directement au dortoir."
     new "Return straight to the dormitory."
-
-
-translate english strings:
-    old "Continuer vers la cafétéria."
-    new "Continue to the cafeteria."
