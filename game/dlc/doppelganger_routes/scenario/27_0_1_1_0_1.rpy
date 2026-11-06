@@ -404,8 +404,8 @@ label _27_0_1_1_0_1_PA_ROOM:
     call expression J27A_ACTIONS[investigation_pa_selected]["label"] from _call_j27a_pa_dynamic
     $ investigation_add(J27A_ACTIONS[investigation_pa_selected]["evidence"])
     if investigation_pa_remaining == 0:
-        "Ma tablette m'indique que mes cinq actions du jour sont épuisées. Je peux encore consulter le plan, mais il faut finir par faire le point."
-        jump _27_0_1_1_0_1_PA_MAP
+        "Les cinq actions du jour sont utilisées. Je fais le point avant la réunion."
+        jump _27_0_1_1_0_1_PA_FIN
     jump _27_0_1_1_0_1_PA_ROOM
 
 label _27_0_1_1_0_1_PA_FIN:
