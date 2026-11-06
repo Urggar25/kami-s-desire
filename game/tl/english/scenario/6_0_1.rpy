@@ -3532,7 +3532,7 @@ translate english strings:
 translate english daf4fff8_5:
 
     # think "..."
-    think ""
+    think "..."
 
 # TODO: Translation updated at 2026-11-06 17:50
 
@@ -3546,7 +3546,7 @@ translate english 8b1d53e7_1:
 translate english 07cd52c6:
 
     # think "Elle ne va pas..."
-    think ""
+    think "She's not going to..."
 
 # game/scenario/6_0_1.rpy:876
 translate english j601_sael_vote_animation_322af418:
