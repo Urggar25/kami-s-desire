@@ -3136,3 +3136,14 @@ translate english 060f5c52:
     # noam colere "Qu'on nous a trifouillé la mémoire !"
     noam colere "That someone's been messing with our memories!"
 
+
+# game/scenario/16_0_1_1_0.rpy:429
+translate english 5ebe7f88:
+
+    # noam "Laquelle ?"
+    noam "Which one?"
+
+translate english strings:
+
+    old "Rejoindre les archives"
+    new "Go to the archives"
