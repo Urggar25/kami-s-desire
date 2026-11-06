@@ -943,7 +943,7 @@ translate english fbbd554c:
 translate english j18_reseau_noam_ouais:
 
     # noam inquiet "Ouais." id j18_reseau_noam_ouais
-    noam inquiet "" id j18_reseau_noam_ouais
+    noam inquiet "Yeah." id j18_reseau_noam_ouais
 
 # game/scenario/18_0_1_1_0.rpy:311
 translate english 4563398b:
@@ -1051,7 +1051,7 @@ translate english 26cf9e1c:
 translate english j18_reseau_arret:
 
     # "Je m'arrête." id j18_reseau_arret
-    "" id j18_reseau_arret
+    "I stop." id j18_reseau_arret
 
 # game/scenario/18_0_1_1_0.rpy:351
 translate english 97468a31:
@@ -1117,7 +1117,7 @@ translate english 511f5c2f:
 translate english j18_reseau_silence_noam:
 
     # noam reflexion "..." id j18_reseau_silence_noam
-    noam reflexion "" id j18_reseau_silence_noam
+    noam reflexion "..." id j18_reseau_silence_noam
 
 # game/scenario/18_0_1_1_0.rpy:377
 translate english fe28666a:
@@ -1795,7 +1795,7 @@ translate english ecc6e832:
 translate english j18_retour_noam_rien:
 
     # noam "Rien." id j18_retour_noam_rien
-    noam "" id j18_retour_noam_rien
+    noam "Nothing." id j18_retour_noam_rien
 
 # game/scenario/18_0_1_1_0.rpy:633
 translate english 80669d13:
@@ -2395,7 +2395,7 @@ translate english a4ffca4a:
 translate english j18_cafeteria_noam_quoi:
 
     # noam surpris "Quoi ?" id j18_cafeteria_noam_quoi
-    noam surpris "" id j18_cafeteria_noam_quoi
+    noam surpris "What?" id j18_cafeteria_noam_quoi
 
 # game/scenario/18_0_1_1_0.rpy:878
 translate english ad3dfb09:
@@ -3409,7 +3409,7 @@ translate english 76264c3c_18:
 translate english j18_nuit_immobile:
 
     # "Je ne bouge pas." id j18_nuit_immobile
-    "" id j18_nuit_immobile
+    "I don't move." id j18_nuit_immobile
 
 # game/scenario/18_0_1_1_0.rpy:1297
 translate english 280b3680_1:
