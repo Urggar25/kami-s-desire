@@ -28,13 +28,13 @@ translate english KD_ROUTE_J13_JULIAN_767579eb:
 translate english KD_ROUTE_J13_JULIAN_defaf0a8:
 
     # noam fatigue "Laisse-moi finir mon café avant de te répondre."
-    noam fatigue ""
+    noam fatigue "Let me finish my coffee before I answer."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:14
 translate english KD_ROUTE_J13_JULIAN_36fa7e4d:
 
     # julian hesitation "Ah. À ce point-là ?"
-    julian hesitation ""
+    julian hesitation "Oh. That bad?"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:15
 translate english KD_ROUTE_J13_JULIAN_44994ed6:
@@ -46,13 +46,13 @@ translate english KD_ROUTE_J13_JULIAN_44994ed6:
 translate english KD_ROUTE_J13_JULIAN_48e0f632:
 
     # julian sourire "Alors je vais éviter mon grand discours sur les vertus du petit-déjeuner."
-    julian sourire ""
+    julian sourire "Then I'll spare you my grand speech about the virtues of breakfast."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:17
 translate english KD_ROUTE_J13_JULIAN_e7ce6b25:
 
     # noam taquin "Tu en avais vraiment préparé un ?"
-    noam taquin ""
+    noam taquin "You actually had one prepared?"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:18
 translate english KD_ROUTE_J13_JULIAN_422049bf:
@@ -88,13 +88,13 @@ translate english KD_ROUTE_J13_ELIAS_12fc3a46:
 translate english KD_ROUTE_J13_ELIAS_4f706bee:
 
     # noam reflexion "C'est pas un problème technique."
-    noam reflexion ""
+    noam reflexion "It's not a technical problem."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:34
 translate english KD_ROUTE_J13_ELIAS_9cf7941a:
 
     # elias taquin "Pour une fois ? Je vais noter la date."
-    elias taquin ""
+    elias taquin "For once? I'm writing down the date."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:35
 translate english KD_ROUTE_J13_ELIAS_53cde6d4:
@@ -106,7 +106,7 @@ translate english KD_ROUTE_J13_ELIAS_53cde6d4:
 translate english KD_ROUTE_J13_ELIAS_6f09ce64:
 
     # elias fatigue "Disons que ça m'évite de trop réfléchir au reste."
-    elias fatigue ""
+    elias fatigue "Let's just say it stops me thinking too much about everything else."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:37
 translate english KD_ROUTE_J13_ELIAS_f224fbee:
@@ -118,7 +118,7 @@ translate english KD_ROUTE_J13_ELIAS_f224fbee:
 translate english KD_ROUTE_J13_ELIAS_5b337c20:
 
     # elias sourire "Si tu changes d'avis, tu sais où trouver l'atelier."
-    elias sourire ""
+    elias sourire "If you change your mind, you know where the workshop is."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:46
 translate english KD_ROUTE_J14_LYSA_494a1e01:
@@ -142,7 +142,7 @@ translate english KD_ROUTE_J14_LYSA_cac5ab74:
 translate english KD_ROUTE_J14_LYSA_cae5c881:
 
     # lysa taquin "Mystérieux. Je dois deviner ou tu vas me le dire ?"
-    lysa taquin ""
+    lysa taquin "Mysterious. Am I supposed to guess, or will you tell me?"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:53
 translate english KD_ROUTE_J14_LYSA_767269de:
@@ -154,13 +154,13 @@ translate english KD_ROUTE_J14_LYSA_767269de:
 translate english KD_ROUTE_J14_LYSA_bd99d9a2:
 
     # lysa neutre "Ah. Bon courage, alors."
-    lysa neutre ""
+    lysa neutre "Oh. Good luck, then."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:55
 translate english KD_ROUTE_J14_LYSA_1ab11fed:
 
     # noam reflexion "Pourquoi ?"
-    noam reflexion ""
+    noam reflexion "Why?"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:56
 translate english KD_ROUTE_J14_LYSA_0d5a3534:
@@ -172,13 +172,13 @@ translate english KD_ROUTE_J14_LYSA_0d5a3534:
 translate english KD_ROUTE_J14_LYSA_9acfd9e6:
 
     # noam fatigue "C'est pas complètement faux."
-    noam fatigue ""
+    noam fatigue "You're not entirely wrong."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:58
 translate english KD_ROUTE_J14_LYSA_8388db2f:
 
     # lysa blase "Évite juste de revenir encore plus énervé."
-    lysa blase ""
+    lysa blase "Just try not to come back even angrier."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:66
 translate english KD_ROUTE_J15_ELEN_13bc84fc:
@@ -208,7 +208,7 @@ translate english KD_ROUTE_J15_ELEN_951202a5:
 translate english KD_ROUTE_J15_ELEN_7428da0d:
 
     # noam reflexion "On doit vérifier certaines choses."
-    noam reflexion ""
+    noam reflexion "We've got a few things to check."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:74
 translate english KD_ROUTE_J15_ELEN_7cc6276f:
@@ -220,25 +220,25 @@ translate english KD_ROUTE_J15_ELEN_7cc6276f:
 translate english KD_ROUTE_J15_ELEN_c479e2cc:
 
     # noam sourire "C'est gentil."
-    noam sourire ""
+    noam sourire "That's kind of you."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:76
 translate english KD_ROUTE_J15_ELEN_b7afeb70:
 
     # elen sourire "Et si ça se passe mal, viens manger avec nous après. Enfin, même si ça se passe bien."
-    elen sourire ""
+    elen sourire "And if it goes badly, come eat with us afterward. Actually, even if it goes well."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:77
 translate english KD_ROUTE_J15_ELEN_db7e6de8:
 
     # noam taquin "Je vais essayer de garder les deux options."
-    noam taquin ""
+    noam taquin "I'll try to keep both options open."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:78
 translate english KD_ROUTE_J15_ELEN_c278686a:
 
     # elen joie "Ça me va !"
-    elen joie ""
+    elen joie "Works for me!"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:86
 translate english KD_ROUTE_J16_JULIAN_d268a9b5:
@@ -268,7 +268,7 @@ translate english KD_ROUTE_J16_JULIAN_80613578:
 translate english KD_ROUTE_J16_JULIAN_25f6ccfc:
 
     # noam reflexion "J'ai juste mal dormi."
-    noam reflexion ""
+    noam reflexion "I just slept badly."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:94
 translate english KD_ROUTE_J16_JULIAN_cd8d293d:
@@ -280,13 +280,13 @@ translate english KD_ROUTE_J16_JULIAN_cd8d293d:
 translate english KD_ROUTE_J16_JULIAN_6a9c76c3:
 
     # noam taquin "Tu tiens à entendre le récit de mes insomnies ?"
-    noam taquin ""
+    noam taquin "Do you really want the story of my insomnia?"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:96
 translate english KD_ROUTE_J16_JULIAN_3bd2cf9a:
 
     # julian hesitation "À la réflexion, non."
-    julian hesitation ""
+    julian hesitation "On second thought, no."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:97
 translate english KD_ROUTE_J16_JULIAN_a9d35ed8:
@@ -298,7 +298,7 @@ translate english KD_ROUTE_J16_JULIAN_a9d35ed8:
 translate english KD_ROUTE_J16_JULIAN_1abfff40:
 
     # julian sourire "Voilà une proposition que je soutiens sans amendement."
-    julian sourire ""
+    julian sourire "Now THERE'S a proposal I'd support without amendments."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:106
 translate english KD_ROUTE_J16_TOMAS_82888b9e:
@@ -316,7 +316,7 @@ translate english KD_ROUTE_J16_TOMAS_623de9c9:
 translate english KD_ROUTE_J16_TOMAS_fdcebc0a:
 
     # noam hesitation "Pourquoi cette question ?"
-    noam hesitation ""
+    noam hesitation "Why do you ask?"
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:112
 translate english KD_ROUTE_J16_TOMAS_8a3f472e:
@@ -340,19 +340,19 @@ translate english KD_ROUTE_J16_TOMAS_30883908:
 translate english KD_ROUTE_J16_TOMAS_30e8d7bd:
 
     # noam desaccord "Non, merci. Je préfère regarder tout seul."
-    noam desaccord ""
+    noam desaccord "No, thanks. I'd rather look on my own."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:116
 translate english KD_ROUTE_J16_TOMAS_131b9164:
 
     # tomas inquiet "D'accord. Je voulais pas être indiscret."
-    tomas inquiet ""
+    tomas inquiet "All right. I didn't mean to pry."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:117
 translate english KD_ROUTE_J16_TOMAS_4de4cc36:
 
     # noam fatigue "Je sais. Désolé."
-    noam fatigue ""
+    noam fatigue "I know. Sorry."
 
 # game/scenario/optional_route_encounters_j13_j16.rpy:118
 translate english KD_ROUTE_J16_TOMAS_54fc514a:
