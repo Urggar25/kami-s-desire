@@ -305,7 +305,12 @@ init python:
     def investigation_evidence_image(eid):
         entry = INVESTIGATION_ENTRIES.get(eid, {})
         image_id = entry.get("image", eid)
-        return "images/hud/investigation/evidence/%s.png" % image_id
+        path = "images/hud/investigation/evidence/%s.png" % image_id
+        # Les arguments textuels des enquêtes à PA n'ont pas tous une illustration.
+        # Leur fiche doit néanmoins rester consultable sans MissingImageError.
+        if renpy.loadable(path):
+            return path
+        return Solid("#163142")
 
     def _investigation_add_link(first_evidence, second_evidence):
         if first_evidence not in INVESTIGATION_ENTRIES or second_evidence not in INVESTIGATION_ENTRIES:
