@@ -34,7 +34,7 @@ translate english 36b3a3f9:
 translate english b20a18d7:
 
     # kami "Bonjour, mes petits représentants ! Vous avez réussi à survivre deux journées entières sans mon annonce matinale. Je suis presque impressionnée."
-    kami "Good morning, my little representatives! You managed to survive two whole days without my morning announcement. I'm almost impressed."
+    kami "Goooood morning, my little representatives! Two whole days without my wake-up call, and you're still alive. I'm almost proud!"
 
 # game/scenario/9_0_1.rpy:33
 translate english 6e3e5447:
@@ -94,7 +94,7 @@ translate english 4d92ae59:
 translate english ab668e57:
 
     # kami "De quoi avez-vous peur ? De vos petits camarades ? RI-SIBLE."
-    kami "What are you afraid of? Your little friends? PA-THE-TIC."
+    kami "What are you scared of? Each other? How utterly PATHETIC."
 
 # game/scenario/9_0_1.rpy:57
 translate english b27e6cac:
@@ -112,7 +112,7 @@ translate english a0526f72:
 translate english 45b326f9:
 
     # kami "Oh, Noam ose poser la question directement. Tu veux vraiment savoir pourquoi je vous ai laissés seuls ?"
-    kami "Oh, Noam dares to ask the question directly. Do you really want to know why I left you alone?"
+    kami "Ooh, Noam's asking the hard questions! Do you really want to know why I left you all alone?"
 
 # game/scenario/9_0_1.rpy:66
 translate english e9ad96d2:
@@ -130,19 +130,19 @@ translate english de43691b:
 translate english c185f3ea:
 
     # kami "J'aurais préféré vous faire croire à une expérience complexe, mais même moi, j'ai parfois besoin de congés. Payés, évidemment."
-    kami "I'd have preferred to make you believe it was some complex experiment, but even I need time off occasionally. Paid, obviously."
+    kami "I'd love to pretend it was some elaborate experiment, but even I need a day off. Paid leave, obviously."
 
 # game/scenario/9_0_1.rpy:74
 translate english fec3f1bf:
 
     # kami "Vous savez, je pense sincèrement que je devrais mettre en place un code du travail !"
-    kami "You know, I honestly think I should introduce labor laws!"
+    kami "You know, I really should introduce labor laws. For my benefit, naturally!"
 
 # game/scenario/9_0_1.rpy:77
 translate english 7b5e9b83:
 
     # kami "Vous aussi, vous devez respecter mes droits !"
-    kami "You have to respect my rights too!"
+    kami "My rights matter too, you know!"
 
 # game/scenario/9_0_1.rpy:78
 translate english 975b8247:
@@ -310,13 +310,13 @@ translate english 0c2cd007:
 translate english aa312e39:
 
     # kami "J'en connais qui veulent retrouver le goût des festivals et aux concerts !"
-    kami "I know some of you are eager to rediscover the joys of festivals and concerts!"
+    kami "I hear some of you miss festivals and live music. How quaint!"
 
 # game/scenario/9_0_1.rpy:182
 translate english 644b604a:
 
     # kami "En cas d'échec, l'interdiction actuelle restera en vigueur. Le vote aura lieu dans quelques instants, alors essayez de ne pas tout gâcher trop vite."
-    kami "If the vote fails, the current ban will remain in force. The vote will take place in a few moments, so try not to ruin everything too quickly."
+    kami "If it fails, the ban stays. The vote's in a few minutes, so do try not to ruin everything before then."
 
 # game/scenario/9_0_1.rpy:196
 translate english 3650aa7d:
@@ -466,13 +466,13 @@ translate english 3cdbcfb0:
 translate english 8bbdf0e3:
 
     # kami "Vous pouvez me remercier, MOI, déesse de clémence et de bienveillance !"
-    kami "You may thank ME, goddess of mercy and benevolence!"
+    kami "You're welcome, by the way! That's Goddess of Mercy and Kindness to you!"
 
 # game/scenario/9_0_1.rpy:252
 translate english a91192e3:
 
     # kami "Vous voyez ? Je peux être incroyablement attentionnée."
-    kami "See? I can be incredibly considerate."
+    kami "See? I'm practically a saint."
 
 # game/scenario/9_0_1.rpy:255
 translate english c7245477:
@@ -898,19 +898,19 @@ translate english 2ddfac46:
 translate english 8641819d:
 
     # kami "Dois-je vous rappeler que si les gens se sont entassés, c'est avant tout de VOTRE faute ?!"
-    kami "Must I remind you that if people crowded together, it is primarily YOUR fault?!"
+    kami "Need I remind you that those people are crammed together because of YOU?!"
 
 # game/scenario/9_0_1.rpy:489
 translate english e749ee62:
 
     # kami "Quelle idée de dire devant le monde entier que je n'appliquerais plus les Commandements !"
-    kami "What a brilliant idea, telling the whole world I would no longer enforce the Commandments!"
+    kami "Oh, brilliant idea, telling the entire world I'd stopped enforcing the Commandments!"
 
 # game/scenario/9_0_1.rpy:490
 translate english 3f9a0662:
 
     # kami "Les Commandements sont ABSOLUS ! Je vous fais déjà une fleur considérable en retardant leur exécution."
-    kami "The Commandments are ABSOLUTE! I'm already doing you an enormous favor by delaying their enforcement."
+    kami "The Commandments are ABSOLUTE! Delaying enforcement is already an enormous favor, thank you very much."
 
 # game/scenario/9_0_1.rpy:493
 translate english aaaa238f:
@@ -1084,19 +1084,19 @@ translate english 4a6b765f:
 translate english e008745e:
 
     # kami "Vous voyez ? Lorsque vous obéissez à la procédure, des vies peuvent être sauvées. Ou pas."
-    kami "See? When you follow procedure, lives can be saved. Or not."
+    kami "See? Follow the rules, and lives might be saved! Or not. Who can say?"
 
 # game/scenario/9_0_1.rpy:703
 translate english a436758c:
 
     # kami "Quelle belle leçon collective. Ah, et n'oubliez pas !"
-    kami "What a wonderful lesson for everyone. Oh, and don't forget!"
+    kami "What a valuable lesson for all of you! Oh, and one more thing!"
 
 # game/scenario/9_0_1.rpy:706
 translate english 68ec5e07:
 
     # kami "Je ne disparaîtrai jamais !"
-    kami "I will never disappear!"
+    kami "You can't get rid of me THAT easily!"
 
 # game/scenario/9_0_1.rpy:711
 translate english 91a1cb19:
