@@ -7100,325 +7100,325 @@ translate english tomas_link_2_80f6644a:
 translate english tomas_link_3_6abd4e22:
 
     # tomas desaccord "Si on mange après, ça change le goût. Faut en tenir compte."
-    tomas desaccord ""
+    tomas desaccord "If we eat afterward, it changes the taste. We have to account for that."
 
 # game/scenario/temps_libres.rpy:877
 translate english tomas_link_3_de5df669:
 
     # tomas reflexion "Attends, j'en ai goûté une seule sur deux cent quarante-sept !"
-    tomas reflexion ""
+    tomas reflexion "Wait, I've only tried ONE out of two hundred and forty-seven!"
 
 # game/scenario/temps_libres.rpy:880
 translate english tomas_link_3_8443a8a6:
 
     # noam sourire "Au moins ici, si ça te plaît pas, tu peux en prendre une autre."
-    noam sourire ""
+    noam sourire "At least here, if you don't like it, you can order something else."
 
 # game/scenario/temps_libres.rpy:889
 translate english tomas_link_3_57fb7880:
 
     # noam neutre "Le chrono démarre quand tu commandes."
-    noam neutre ""
+    noam neutre "The timer starts when you order."
 
 # game/scenario/temps_libres.rpy:890
 translate english tomas_link_3_423096c9:
 
     # tomas inquiet "C'est injuste, j'ai besoin de lire le menu !"
-    tomas inquiet ""
+    tomas inquiet "That's not fair! I need to read the menu!"
 
 # game/scenario/temps_libres.rpy:894
 translate english tomas_link_3_90107011:
 
     # noam reflexion "Je choisis pour toi la prochaine fois."
-    noam reflexion ""
+    noam reflexion "Next time I'll choose for you."
 
 # game/scenario/temps_libres.rpy:895
 translate english tomas_link_3_3fcbf58a:
 
     # tomas rire "Là, tu prends un risque considérable."
-    tomas rire ""
+    tomas rire "Now that's taking a serious risk."
 
 # game/scenario/temps_libres.rpy:923
 translate english nyra_link_1_10fbc55f:
 
     # nyra taquin "Heureusement que tu es là pour valider mon rangement."
-    nyra taquin ""
+    nyra taquin "Good thing you're here to approve my organization system."
 
 # game/scenario/temps_libres.rpy:930
 translate english nyra_link_1_c07ab7ce:
 
     # nyra raison "J'ai dit que c'était pas indispensable. C'est pas pareil."
-    nyra raison ""
+    nyra raison "I said it wasn't essential. Not the same thing."
 
 # game/scenario/temps_libres.rpy:931
 translate english nyra_link_1_f1056fe9:
 
     # nyra neutre "Quand les gens sont crevés et qu'ils ont rien qui leur fait plaisir, ils s'engueulent. Ça peut aider."
-    nyra neutre ""
+    nyra neutre "When people are exhausted and have nothing to enjoy, they fight. This might help."
 
 # game/scenario/temps_libres.rpy:933
 translate english nyra_link_1_ae9f49cd:
 
     # nyra sourire "Ce serait moins convaincant."
-    nyra sourire ""
+    nyra sourire "That'd be a less convincing argument."
 
 # game/scenario/temps_libres.rpy:948
 translate english nyra_link_1_cdd49d9e:
 
     # noam neutre "On peut partager le poids."
-    noam neutre ""
+    noam neutre "We can share the load."
 
 # game/scenario/temps_libres.rpy:949
 translate english nyra_link_1_a8f28543:
 
     # nyra sourire "D'accord. Prends l'autre côté."
-    nyra sourire ""
+    nyra sourire "All right. Take the other end."
 
 # game/scenario/temps_libres.rpy:953
 translate english nyra_link_1_c456202a:
 
     # noam reflexion "Tu avais déjà calculé combien je pouvais porter ?"
-    noam reflexion ""
+    noam reflexion "You'd already calculated how much I could carry?"
 
 # game/scenario/temps_libres.rpy:954
 translate english nyra_link_1_cc78b3dd:
 
     # nyra taquin "Je me doutais que tu finirais par demander."
-    nyra taquin ""
+    nyra taquin "I thought you'd ask eventually."
 
 # game/scenario/temps_libres.rpy:990
 translate english nyra_link_2_38b1e02d:
 
     # nyra neutre "Je pense que tu as compris pourquoi."
-    nyra neutre ""
+    nyra neutre "I think you've figured out why."
 
 # game/scenario/temps_libres.rpy:997
 translate english nyra_link_2_ea9a9a50:
 
     # noam neutre "Tu veux que je te dise ce que j'en pense, c'est ça ?"
-    noam neutre ""
+    noam neutre "You want me to tell you what I think, don't you?"
 
 # game/scenario/temps_libres.rpy:998
 translate english nyra_link_2_747edf37:
 
     # nyra neutre "Je veux que tu assumes ta propre conclusion."
-    nyra neutre ""
+    nyra neutre "I want you to own your own conclusion."
 
 # game/scenario/temps_libres.rpy:1002
 translate english nyra_link_2_f9f02b5c:
 
     # noam reflexion "On peut être en désaccord sans se manipuler."
-    noam reflexion ""
+    noam reflexion "We can disagree without manipulating each other."
 
 # game/scenario/temps_libres.rpy:1003
 translate english nyra_link_2_44860f76:
 
     # nyra hesitation "...C'est une façon assez directe de le dire."
-    nyra hesitation ""
+    nyra hesitation "...That's one way of putting it."
 
 # game/scenario/temps_libres.rpy:1007
 translate english nyra_link_2_c642a1df:
 
     # noam reflexion "Ton raisonnement oublie ceux qui paient le prix."
-    noam reflexion ""
+    noam reflexion "Your reasoning ignores the people paying the price."
 
 # game/scenario/temps_libres.rpy:1008
 translate english nyra_link_2_8f4f65b0:
 
     # nyra reflexion "Je ne les ai pas oubliés. Je ne sais juste pas quoi en faire."
-    nyra reflexion ""
+    nyra reflexion "I haven't forgotten them. I just don't know what to do about them."
 
 # game/scenario/temps_libres.rpy:1029
 translate english nyra_link_3_4c06455b:
 
     # nyra neutre "Si tu veux, oui."
-    nyra neutre ""
+    nyra neutre "If you'd like, yes."
 
 # game/scenario/temps_libres.rpy:1049
 translate english nyra_link_3_5de289c3:
 
     # nyra panne "T'as pas grand-chose pour affirmer ça."
-    nyra panne ""
+    nyra panne "You don't have much evidence for that."
 
 # game/scenario/temps_libres.rpy:1051
 translate english nyra_link_3_ab7c463f:
 
     # nyra neutre "Je vais pas répondre à toutes tes suppositions."
-    nyra neutre ""
+    nyra neutre "I'm not going to answer every guess you make."
 
 # game/scenario/temps_libres.rpy:1061
 translate english nyra_link_3_7269fea9:
 
     # noam neutre "D'accord, reprenons tout depuis le début."
-    noam neutre ""
+    noam neutre "Okay, let's go back to the beginning."
 
 # game/scenario/temps_libres.rpy:1062
 translate english nyra_link_3_88040473:
 
     # nyra sourire "Très bien. Cette fois, on ne saute aucune étape."
-    nyra sourire ""
+    nyra sourire "Good. This time, no skipping steps."
 
 # game/scenario/temps_libres.rpy:1066
 translate english nyra_link_3_5ddf7935:
 
     # noam reflexion "Dis-moi plutôt ce qui t'inquiète."
-    noam reflexion ""
+    noam reflexion "Tell me what's worrying you instead."
 
 # game/scenario/temps_libres.rpy:1067
 translate english nyra_link_3_70dc1d54:
 
     # nyra hesitation "C'est... compliqué. Je sais pas par où commencer."
-    nyra hesitation ""
+    nyra hesitation "It's... complicated. I don't know where to start."
 
 # game/scenario/temps_libres.rpy:1122
 translate english kael_link_1_5346c876:
 
     # noam neutre "On va attendre que ça finisse ensemble."
-    noam neutre ""
+    noam neutre "We'll wait for it to end together."
 
 # game/scenario/temps_libres.rpy:1123
 translate english kael_link_1_5e836a45:
 
     # kael sourire "...D'accord. Merci."
-    kael sourire ""
+    kael sourire "...Okay. Thanks."
 
 # game/scenario/temps_libres.rpy:1127
 translate english kael_link_1_cff4e892:
 
     # noam reflexion "Tu penses que ça vient de quel composant ?"
-    noam reflexion ""
+    noam reflexion "Which component do you think is causing it?"
 
 # game/scenario/temps_libres.rpy:1128
 translate english kael_link_1_a2157672:
 
     # kael reflexion "Celui-là, je crois. Regarde le voyant."
-    kael reflexion ""
+    kael reflexion "That one, I think. Look at the indicator."
 
 # game/scenario/temps_libres.rpy:1164
 translate english kael_link_2_1c812cca:
 
     # kael neutre "Quelqu'un peut arriver. Et là, il va nous demander de couper."
-    kael neutre ""
+    kael neutre "Someone might come in and tell us to turn it off."
 
 # game/scenario/temps_libres.rpy:1182
 translate english kael_link_2_d3c5074f:
 
     # noam neutre "On peut écouter sans parler, tu sais."
-    noam neutre ""
+    noam neutre "We can listen without talking, you know."
 
 # game/scenario/temps_libres.rpy:1183
 translate english kael_link_2_180db583:
 
     # kael sourire "Ça me va très bien."
-    kael sourire ""
+    kael sourire "That sounds perfect."
 
 # game/scenario/temps_libres.rpy:1187
 translate english kael_link_2_4e50d607:
 
     # noam reflexion "Cette musique te rappelle quelque chose ?"
-    noam reflexion ""
+    noam reflexion "Does this music remind you of anything?"
 
 # game/scenario/temps_libres.rpy:1188
 translate english kael_link_2_1f9ac7db:
 
     # kael triste "Oui... Des choses que je n'ai pas vraiment envie de raconter."
-    kael triste ""
+    kael triste "Yeah... things I'd rather not talk about."
 
 # game/scenario/temps_libres.rpy:1215
 translate english kael_link_3_6b1c0b47:
 
     # kael taquin "Quand on a toujours eu quelque chose, on finit par plus y faire attention."
-    kael taquin ""
+    kael taquin "When you've always had something, you stop noticing it."
 
 # game/scenario/temps_libres.rpy:1221
 translate english kael_link_3_1572450f:
 
     # kael calme "Il fait froid. Ils sont trempés."
-    kael calme ""
+    kael calme "It's cold. They're soaking wet."
 
 # game/scenario/temps_libres.rpy:1235
 translate english kael_link_3_528b1cbf:
 
     # noam neutre "Si on rentre, je t'emmène voir une vraie averse."
-    noam neutre ""
+    noam neutre "If we ever get back, I'll take you to see a real downpour."
 
 # game/scenario/temps_libres.rpy:1236
 translate english kael_link_3_58d90479:
 
     # kael sourire "Je te prendrai au mot, Noam."
-    kael sourire ""
+    kael sourire "I'll hold you to that, Noam."
 
 # game/scenario/temps_libres.rpy:1240
 translate english kael_link_3_5307ab55:
 
     # noam reflexion "Pour toi, c'est complètement nouveau, en fait."
-    noam reflexion ""
+    noam reflexion "This really is all new to you."
 
 # game/scenario/temps_libres.rpy:1241
 translate english kael_link_3_ef53997b:
 
     # kael calme "Banal pour toi. C'est bien ça, le problème."
-    kael calme ""
+    kael calme "Ordinary for you. That's exactly the problem."
 
 # game/scenario/temps_libres.rpy:1296
 translate english elias_link_1_0e9d36fc:
 
     # noam neutre "Je prends le sac, mais tu me dois une revanche."
-    noam neutre ""
+    noam neutre "I'll carry the bag, but you owe me a rematch."
 
 # game/scenario/temps_libres.rpy:1297
 translate english elias_link_1_0c10a68c:
 
     # elias rire "Marché conclu ! Mais viens pas pleurer demain."
-    elias rire ""
+    elias rire "Deal! But don't come crying to me tomorrow."
 
 # game/scenario/temps_libres.rpy:1301
 translate english elias_link_1_5ffc54d1:
 
     # noam reflexion "Tu peux pas t'empêcher de réparer des trucs, hein ?"
-    noam reflexion ""
+    noam reflexion "You just can't stop fixing things, can you?"
 
 # game/scenario/temps_libres.rpy:1302
 translate english elias_link_1_762a1250:
 
     # elias fatigue "Si je le fais pas, ça finit toujours par lâcher."
-    elias fatigue ""
+    elias fatigue "If I don't, they always break eventually."
 
 # game/scenario/temps_libres.rpy:1358
 translate english elias_link_2_ea1cb5b3:
 
     # noam neutre "Tu t'en es bien sorti, arrête de râler."
-    noam neutre ""
+    noam neutre "You did fine. Stop complaining."
 
 # game/scenario/temps_libres.rpy:1359
 translate english elias_link_2_6334ef0f:
 
     # elias content "Ouais... Bon. Merci, hein."
-    elias content ""
+    elias content "Yeah... well. Thanks."
 
 # game/scenario/temps_libres.rpy:1363
 translate english elias_link_2_03114a70:
 
     # noam reflexion "La prochaine fois, on vérifie avant de démarrer."
-    noam reflexion ""
+    noam reflexion "Next time we check before we start."
 
 # game/scenario/temps_libres.rpy:1364
 translate english elias_link_2_8fa9a6d3:
 
     # elias rire "Ah ça, tu peux le dire deux fois !"
-    elias rire ""
+    elias rire "You can say that again!"
 
 # game/scenario/temps_libres.rpy:1420
 translate english elias_link_3_aaa390c5:
 
     # noam neutre "Je te passe les outils si tu veux."
-    noam neutre ""
+    noam neutre "I can pass you the tools, if you want."
 
 # game/scenario/temps_libres.rpy:1421
 translate english elias_link_3_bb9dab2d:
 
     # elias sourire "Là, tu commences à parler ma langue."
-    elias sourire ""
+    elias sourire "Now you're speaking my language."
 
 # game/scenario/temps_libres.rpy:1425
 translate english elias_link_3_5d7d0da8:
