@@ -46,13 +46,14 @@ init python:
         return max(margin, min(1.0 - margin, value))
 
     class _J25View(renpy.Displayable):
-        def __init__(self, zoom=1.0, center=(0.5, 0.5), **kwargs):
+        def __init__(self, zoom=1.0, center=(0.5, 0.5), source="bg_cg040", **kwargs):
             super(_J25View, self).__init__(**kwargs)
             self.zoom = zoom
             self.center = center
             self.motion = None
             self.draw_st = 0.0
-            self.child = Transform("bg_cg040", xysize=(1920, 1080))
+            self.source = source
+            self.child = Transform(source, xysize=(1920, 1080))
 
         def render(self, width, height, st, at):
             self.draw_st = st
@@ -105,10 +106,11 @@ init python:
         renpy.set_screen_variable("bonus_seen", True)
         renpy.set_screen_variable("locked", True)
 
-    def _j25_capture_photo(view):
-        # Une vue indépendante fige exactement le cadrage au déclenchement.
-        renpy.set_screen_variable("snapshot", _J25View(view.zoom, view.center))
-        renpy.set_screen_variable("phase", "flash")
+    def _j25_capture_photo(view, evidence_id=None):
+        # Reprise du système photographique du J25, avec source configurable.
+        renpy.set_screen_variable("snapshot", _J25View(view.zoom, view.center, source=view.source))
+        # Pour le dossier : attendre que le viseur ait disparu avant de capturer.
+        renpy.set_screen_variable("phase", "capture" if evidence_id else "flash")
         renpy.sound.play("audio/sfx_photo.mp3")
 
     def _j25_pan(view):
@@ -252,7 +254,7 @@ screen _j25_veste_screen(view):
         timer 0.8 action Return(list(j25_veste_inspected))
 
 
-screen _j25_photo_screen(view):
+screen _j25_photo_screen(view, evidence_id=None):
     modal True
     zorder 220
     default phase = "camera"
@@ -260,8 +262,8 @@ screen _j25_photo_screen(view):
 
     if phase == "camera":
         timer 0.033 repeat True action Function(_j25_pan, view)
-        key "K_SPACE" action Function(_j25_capture_photo, view)
-        key "K_RETURN" action Function(_j25_capture_photo, view)
+        key "K_SPACE" action Function(_j25_capture_photo, view, evidence_id)
+        key "K_RETURN" action Function(_j25_capture_photo, view, evidence_id)
 
     if phase == "camera":
         # Coins du viseur et réticule, sans nouvel asset.
@@ -275,6 +277,11 @@ screen _j25_photo_screen(view):
             xpos 55 ypos 35 padding (22, 14)
             background Solid("#07121CEE")
             text _("TABLETTE / APPAREIL PHOTO — ZOOM ×2,2") size 28 color "#DDF8FF"
+        if evidence_id:
+            textbutton _("PRENDRE LA PHOTO"):
+                xalign 0.88 yalign 0.89
+                text_size 25
+                action Function(_j25_capture_photo, view, evidence_id)
         frame:
             xpos 280 ypos 920 xsize 1360 padding (24, 18)
             background Solid("#07121CEE")
@@ -282,6 +289,11 @@ screen _j25_photo_screen(view):
                 spacing 7
                 text _("Déplace le curseur vers les bords pour ajuster le cadrage.") xalign 0.5 size 26 color "#F1F6F8"
                 text _("ESPACE ou ENTRÉE : prendre la photo") xalign 0.5 size 28 color "#5CD3FF"
+    elif phase == "capture":
+        # Le plan reste visible sur master, sans viseur ni panneau de commandes.
+        # On sauve les mêmes pixels que le joueur a cadrés à l'instant du clic.
+        timer 0.12 action [Function(investigation_photo_capture, evidence_id),
+                           SetScreenVariable("phase", "flash")]
     elif phase == "flash":
         add Solid("#FFFFFF") at _j25_shutter_flash
         timer 0.12 action SetScreenVariable("phase", "preview")
@@ -294,7 +306,10 @@ screen _j25_photo_screen(view):
             background Solid("#ECE8DC")
             vbox:
                 spacing 18
-                add Transform(snapshot, crop=(0, 0, 1920, 1080), xysize=(1120, 630))
+                if evidence_id:
+                    add investigation_evidence_image(evidence_id) xsize 1120 ysize 630
+                else:
+                    add Transform(snapshot, crop=(0, 0, 1920, 1080), xysize=(1120, 630))
                 text _("PHOTO ENREGISTRÉE") xalign 0.5 size 24 color "#25333B" font "fonts/Rajdhani-SemiBold.ttf" kerning 3
         timer 1.0 action Return((view.center[0], view.center[1], view.zoom))
 
