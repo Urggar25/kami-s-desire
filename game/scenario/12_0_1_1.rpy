@@ -523,7 +523,7 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     call OFFER_DAILY_EXPLORATION(
         "_12_0_1_1_ATTENTE_VOTE", 1,
         ["dortoir", "cafeteria", "maintenance", "conclave"],
-        "Rejoindre le vote", "conclave"
+        _("Rejoindre le vote"), "conclave"
     ) from _call_offer_exploration_j12
 
 # Compatibilité des sauvegardes créées avant la navigation par destination.
