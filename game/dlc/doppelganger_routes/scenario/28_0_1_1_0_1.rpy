@@ -1,3 +1,161 @@
+# INVESTIGATION À PA — J28. La découverte de la plaque, du bol et de la plante reste obligatoire.
+init 10 python:
+    J28A_ROOMS = {
+      "dortoir": {
+        "title": "DORTOIRS",
+        "background": "bg_chambre",
+        "description": "Les premières constatations et l'aération de la chambre d'Elen.",
+        "actions": [
+          "grille",
+          "flacon"
+        ]
+      },
+      "infirmerie": {
+        "title": "INFIRMERIE",
+        "background": "infirmerie2",
+        "description": "Iris peut vérifier certains symptômes et réexaminer les prélèvements.",
+        "actions": [
+          "iris",
+          "analyse"
+        ]
+      },
+      "maintenance": {
+        "title": "MAINTENANCE",
+        "background": "bg_maintenance",
+        "description": "Kael vérifie l'installation des plaques et les accès techniques.",
+        "actions": [
+          "kael",
+          "acces"
+        ]
+      },
+      "repos": {
+        "title": "SALLE COMMUNE",
+        "background": "bg_repos",
+        "description": "Sael et Ryn répondent aux questions sur la plante.",
+        "actions": [
+          "limen"
+        ]
+      },
+      "archive": {
+        "title": "ARCHIVES",
+        "background": "bg_archive",
+        "description": "Les documents sur le Bulbuma Corienis et les registres de livraison.",
+        "actions": [
+          "botanique",
+          "livraisons"
+        ]
+      },
+      "cafeteria": {
+        "title": "CAFÉTÉRIA",
+        "background": "bg_cafeteria",
+        "description": "Les conversations de la veille sont encore dans les mémoires.",
+        "actions": [
+          "julian"
+        ]
+      },
+      "observation": {
+        "title": "OBSERVATION",
+        "background": "bg_observation",
+        "description": "La salle où Tomas avait trouvé un mystérieux boîtier.",
+        "actions": [
+          "orbite"
+        ]
+      },
+      "conclave": {
+        "title": "SALLE DU CONCLAVE",
+        "background": "bg_conclave",
+        "description": "La place vide de Tomas reste visible.",
+        "actions": []
+      },
+      "gymnase": {
+        "title": "GYMNASE",
+        "background": "bg_gymnase",
+        "description": "Il n'y a rien à examiner ici.",
+        "actions": []
+      }
+    }
+    J28A_ACTIONS = {
+      "grille": {
+        "title": "Comparer les grilles d'aération",
+        "description": "Vérifier que les protections empêchaient le passage physique, pas l'air.",
+        "label": "_28_0_1_1_0_1_PA_GRILLE",
+        "evidence": "j28_tomas_grilles"
+      },
+      "flacon": {
+        "title": "Revoir le flacon de somnifères",
+        "description": "Reconsidérer l'hypothèse du suicide à la lumière du dispositif.",
+        "label": "_28_0_1_1_0_1_PA_FLACON",
+        "evidence": "j28_tomas_flacon"
+      },
+      "iris": {
+        "title": "Demander à Iris ce que prouvent les prélèvements",
+        "description": "Distinguer les observations médicales des suppositions.",
+        "label": "_28_0_1_1_0_1_PA_IRIS",
+        "evidence": "j28_tomas_iris"
+      },
+      "analyse": {
+        "title": "Consulter la fiche du Bulbuma Corienis",
+        "description": "Comparer les caractéristiques du fragment avec des descriptions botaniques.",
+        "label": "_28_0_1_1_0_1_PA_ANALYSE",
+        "evidence": "j28_tomas_fragment"
+      },
+      "kael": {
+        "title": "Interroger Kael sur la plaque",
+        "description": "Comprendre pourquoi cet obstacle ne vient pas des protections habituelles.",
+        "label": "_28_0_1_1_0_1_KAEL",
+        "evidence": "j28_tomas_kael"
+      },
+      "acces": {
+        "title": "Inspecter le registre de maintenance",
+        "description": "Vérifier ce que les journaux de passage peuvent ou non montrer.",
+        "label": "_28_0_1_1_0_1_PA_ACCES",
+        "evidence": "j28_tomas_acces"
+      },
+      "limen": {
+        "title": "Interroger Sael et Ryn",
+        "description": "Demander s'ils connaissent la plante et ses origines à Limen.",
+        "label": "_28_0_1_1_0_1_SAEL_RYN",
+        "evidence": "j28_tomas_limen"
+      },
+      "botanique": {
+        "title": "Vérifier la répartition du Bulbuma",
+        "description": "Chercher où cette plante pourrait pousser au-delà de Limen.",
+        "label": "_28_0_1_1_0_1_PA_BOTANIQUE",
+        "evidence": "j28_tomas_geographie"
+      },
+      "livraisons": {
+        "title": "Consulter les registres de livraison",
+        "description": "Chercher une provenance possible sans désigner prématurément un coupable.",
+        "label": "_28_0_1_1_0_1_PA_LIVRAISONS",
+        "evidence": "j28_tomas_livraisons"
+      },
+      "julian": {
+        "title": "Reparler à Julian du suicide",
+        "description": "Lui demander ce qu'il pense de l'hypothèse d'intoxication.",
+        "label": "_28_0_1_1_0_1_PA_JULIAN",
+        "evidence": "j28_tomas_julian"
+      },
+      "orbite": {
+        "title": "Examiner les équipements orbitaux",
+        "description": "Voir si des matériels auraient pu être déplacés entre observation et maintenance.",
+        "label": "_28_0_1_1_0_1_PA_ORBITE",
+        "evidence": "j28_tomas_orbite"
+      }
+    }
+    INVESTIGATION_ENTRIES.update({
+        "j28_tomas_grilles": {"category": "preuves", "title": "PROTECTIONS ET FLUX D'AIR", "desc": "Les grilles bloquent le passage d'une personne, mais laissent circuler l'air vers les chambres.", "day": "J28", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_flacon": {"category": "hypotheses", "title": "FLACON ET SUICIDE", "desc": "La présence de somnifères ne suffit pas à expliquer la plaque et les résidus trouvés dans le conduit.", "day": "J28", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_iris": {"category": "personnes", "title": "IRIS — INTOXICATION POSSIBLE", "desc": "Les symptômes et les résidus rendent l'intoxication plausible, sans identifier avec certitude la substance.", "day": "J28", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_fragment": {"category": "preuves", "title": "FRAGMENT VÉGÉTAL", "desc": "L'aspect de la matière brûlée rappelle le Bulbuma Corienis, sous réserve de confirmation.", "day": "J28", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_kael": {"category": "personnes", "title": "KAEL — PLAQUE NON STANDARD", "desc": "Kael affirme que la plaque du réseau ne correspond pas aux protections qu'il a installées.", "day": "J28", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_acces": {"category": "anomalies", "title": "ACCÈS TECHNIQUES INCOMPLETS", "desc": "Le journal du secteur technique est partiel. Il ne permet pas d'identifier les allées et venues nocturnes.", "day": "J28", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_limen": {"category": "personnes", "title": "SAEL ET RYN — BULBUMA", "desc": "Sael reconnaît le nom de la plante. Ryn s'agace des soupçons liés à Limen.", "day": "J28", "origin": "SALLE COMMUNE", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_geographie": {"category": "anomalies", "title": "BULBUMA HORS LIMEN", "desc": "Le Bulbuma Corienis et ses espèces voisines ne sont pas exclusifs à Limen ; Orbite compte aussi des régions arides.", "day": "J28", "origin": "ARCHIVES", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_livraisons": {"category": "preuves", "title": "LIVRAISONS INTERDISTRICTS", "desc": "Les cargaisons transitent entre districts. Aucune ligne retrouvée ne suffit à identifier l'origine du récipient.", "day": "J28", "origin": "ARCHIVES", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_julian": {"category": "personnes", "title": "JULIAN — DOUTE SUR LE SUICIDE", "desc": "Julian commence à douter de sa lecture des derniers jours de Tomas et regrette sa dispute.", "day": "J28", "origin": "CAFÉTÉRIA", "status": "À VÉRIFIER", "manual_only": True},
+        "j28_tomas_orbite": {"category": "anomalies", "title": "ÉQUIPEMENTS D'ORBITE", "desc": "Les instruments utilisés sur le Conclave viennent de plusieurs districts. Aucune référence ne désigne l'appareil de Tomas.", "day": "J28", "origin": "OBSERVATION", "status": "À VÉRIFIER", "manual_only": True},
+    })
+
 # JOUR 28 — CE QUI RESTE DANS LES CONDUITS
 # Route alternative du vote rejeté. Le coupable reste inconnu.
 default j28a_plaque = False
@@ -265,23 +423,69 @@ label _28_0_1_1_0_1_ANALYSE:
 label _28_0_1_1_0_1_TEMOINS:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-    "Je montre à Lysa les questions que j'ai notées."
-    $ showGroup([("lysa", "blase", 0.38), ("noam", "neutre", 0.68)])
-    lysa reflexion "Tu vas leur demander s'ils connaissent la plante ?"
-    noam raison "Oui. On essaie de comprendre d'où elle vient."
-    lysa blase "OK. Mais si tu commences avec « pourquoi t'as tué Tomas », je te laisse seul."
-    noam sourire "Promis."
+    "J'ai les photos du conduit sur ma tablette. Lysa me rejoint, mais elle n'a pas l'air d'avoir envie de reparler de ce qu'on a trouvé."
+    $ showGroup([("lysa", "fatigue", 0.36), ("noam", "neutre", 0.69)])
+    lysa reflexion "Tu vas interroger tout le monde, maintenant ?"
+    noam fatigue "Pas tous. Je voudrais comparer quelques trucs et comprendre d'où vient la plante."
+    lysa raison "Alors on garde la même limite qu'hier. Cinq actions. Après, on s'arrête."
+    noam neutre "Et si je veux juste passer dans une salle ?"
+    lysa neutre "Tu y vas. C'est poser les questions et examiner les indices qui prend du temps."
+    noam raison "OK. D'ailleurs, je vais laisser Iris tranquille un peu."
+    lysa blase "Bonne idée. Elle va finir par nous jeter dehors."
+    "Je sauvegarde les photos de la plaque, du bol et des fragments. Ces découvertes sont déjà acquises : je n'ai pas besoin de dépenser des PA pour les garder."
+    $ investigation_pa_begin(28, 5)
+    $ investigation_unlocked = True
+    $ free_time_active = False
+    $ exploration_libre_active = True
+    $ exploration_libre_allowed_rooms = list(J28A_ROOMS.keys())
+    $ current_scene_active = None
+    $ corridor_current = "dortoir"
     $ hideGroup()
-    menu:
-        "À qui parler en premier ?"
-        "Sael et Ryn":
-            call _28_0_1_1_0_1_SAEL_RYN from _call_j28a_sael_first
-            call _28_0_1_1_0_1_KAEL from _call_j28a_kael_second
-            jump _28_0_1_1_0_1_NYRA
-        "Kael":
-            call _28_0_1_1_0_1_KAEL from _call_j28a_kael_first
-            call _28_0_1_1_0_1_SAEL_RYN from _call_j28a_sael_second
-            jump _28_0_1_1_0_1_NYRA
+    jump _28_0_1_1_0_1_PA_MAP
+
+label _28_0_1_1_0_1_PA_MAP:
+    call screen investigation_pa_map(J28A_ROOMS, title="JOUR 28 — LES CONDUITS")
+    if _return == "finish":
+        jump _28_0_1_1_0_1_PA_FIN
+    if _return == "corridors":
+        jump _28_0_1_1_0_1_PA_CORRIDORS
+    $ investigation_pa_current_room = _return
+    jump _28_0_1_1_0_1_PA_ROOM
+
+label _28_0_1_1_0_1_PA_CORRIDORS:
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_j28a_pa_corridors
+    $ investigation_pa_current_room = _return
+    if investigation_pa_current_room not in J28A_ROOMS:
+        jump _28_0_1_1_0_1_PA_MAP
+    jump _28_0_1_1_0_1_PA_ROOM
+
+label _28_0_1_1_0_1_PA_ROOM:
+    call screen investigation_pa_room(investigation_pa_current_room, J28A_ROOMS, J28A_ACTIONS)
+    if _return == "back":
+        jump _28_0_1_1_0_1_PA_MAP
+    if _return == "corridors":
+        jump _28_0_1_1_0_1_PA_CORRIDORS
+    $ investigation_pa_selected = _return
+    if not investigation_pa_can_take(investigation_pa_selected):
+        jump _28_0_1_1_0_1_PA_ROOM
+    call screen investigation_pa_confirm(J28A_ACTIONS[investigation_pa_selected])
+    if not _return:
+        jump _28_0_1_1_0_1_PA_ROOM
+    if not investigation_pa_spend(investigation_pa_selected):
+        jump _28_0_1_1_0_1_PA_ROOM
+    call expression J28A_ACTIONS[investigation_pa_selected]["label"] from _call_j28a_pa_dynamic
+    $ investigation_add(J28A_ACTIONS[investigation_pa_selected]["evidence"])
+    if investigation_pa_remaining == 0:
+        "J'ai utilisé mes cinq actions. Je peux continuer à circuler, mais pas lancer un nouvel interrogatoire."
+        jump _28_0_1_1_0_1_PA_MAP
+    jump _28_0_1_1_0_1_PA_ROOM
+
+label _28_0_1_1_0_1_PA_FIN:
+    $ exploration_libre_active = False
+    $ exploration_libre_allowed_rooms = None
+    if investigation_pa_remaining > 0:
+        "Je préfère arrêter avant de faire le tour de tout le monde. On a déjà de quoi parler ce soir."
+    jump _28_0_1_1_0_1_NYRA
 
 label _28_0_1_1_0_1_SAEL_RYN:
     scene bg_repos at adaptive_fullscreen with dissolve
