@@ -198,14 +198,12 @@ label _26_0_1_1_0_1_DECOUVERTE:
     sael triste "Je sais, Noam. Écoute... va t'asseoir un peu. Je viens te voir après."
     "Je sors. Nyra est toujours près de la porte, qu'elle maintient grande ouverte."
     $ showGroup([("nyra", "inquiet", 0.30), ("noam", "fatigue", 0.69)])
-    nyra inquiet "C'est Tomas, alors ?"
-    noam fatigue "Il est mort."
-    nyra peur "..."
-    nyra inquiet "Oh, merde."
-    "Elle regarde derrière moi. Je crois qu'elle va entrer, mais elle s'arrête sur le seuil."
-    nyra reflexion "Je vais laisser la porte ouverte. L'air doit circuler."
-    sael fatigue "D'accord, mais personne ne touche à la chambre."
-    nyra raison "Oui. Pardon."
+    nyra inquiet "Sael n'a pas encore trouvé ce qui lui est arrivé ?"
+    noam fatigue "Non."
+    "Nyra jette un regard vers l'intérieur de la pièce. Elle ne lâche pas la porte."
+    nyra reflexion "Je vais la laisser ouverte encore un moment. L'air doit circuler."
+    noam neutre "Sael a demandé qu'on ne touche à rien."
+    nyra raison "Je sais. Je ne rentre pas."
     $ hideGroup()
     jump _26_0_1_1_0_1_APRES_CHOC
 
@@ -568,7 +566,7 @@ label _26_0_1_1_0_1_PA_ROOM:
     call expression J26A_ACTIONS[investigation_pa_selected]["label"] from _call_j26a_pa_action_dynamic
     $ investigation_add(J26A_ACTIONS[investigation_pa_selected]["evidence"])
     if investigation_pa_remaining == 0:
-        "La lumière baisse déjà dans les couloirs. Il se fait tard ; il est temps de rejoindre les autres et de comparer nos découvertes."
+        "Je regarde l'heure. Il se fait tard. Les autres nous attendent pour faire le point."
         jump _26_0_1_1_0_1_BILAN
     jump _26_0_1_1_0_1_PA_ROOM
 
@@ -930,7 +928,7 @@ label _26_0_1_1_0_1_REUNION:
         julian reflexion "Donc tu penses que quelqu'un ment ?"
         noam raison "Non, Julian. Je dis juste que j'ai rien pu vérifier."
     sael raison "Hé. On a déjà passé assez de temps à s'en vouloir ces derniers jours. Vous allez pas recommencer ici."
-    nyra neutre "Iris a dit qu'elle cherchait encore. On peut peut-être lui laisser une nuit avant de tout retourner."
+    nyra neutre "Sael a dit qu'elle cherchait encore. On peut peut-être lui laisser une nuit avant de tout retourner."
     noam raison "Ouais. Pour ce soir, on arrête."
     if "flacon" in investigation_pa_completed:
         noam neutre "Et le flacon, on sait même pas à qui étaient les comprimés."
@@ -999,7 +997,14 @@ label _26_0_1_1_0_1_NUIT:
     else:
         "Hier, il cherchait toujours des réponses sur Keyper, cette station dont il m'avait parlé."
     "Il y avait aussi ce petit appareil qu'il avait reposé dans la salle d'observation. J'ai à peine regardé."
-    "Demain, j'irai dans sa chambre. Pas pour jouer au détective. Juste parce que j'ai besoin de voir ce qu'il avait commencé, et ce qu'il comptait faire après."
+    noam reflexion "J'ai beau retourner ça dans tous les sens... Je vois pas comment ça pourrait être autre chose qu'un suicide."
+    "La porte était verrouillée de l'intérieur. Elias a dû forcer le mécanisme. La plaque devant la grille bloquait le passage, même si l'air circulait encore."
+    "Et surtout, personne n'avait de raison valable de s'en prendre à Elen. Pas à ma connaissance, en tout cas."
+    "Tomas était épuisé, il avait peur, et on a trouvé des somnifères. Ça dessine une explication terriblement simple, même si Sael n'a confirmé aucune cause de décès."
+    noam fatigue "Mais il y a quelque chose qui me gêne."
+    "Je revois son dernier message. Je repense à ses recherches inachevées et à la chambre qu'il avait choisie pour se cacher."
+    noam raison "Je vais continuer à creuser. J'ai besoin d'en être sûr."
+    "Demain, j'irai dans sa chambre. Je veux comprendre ce qu'il avait commencé, et ce qu'il comptait faire après."
     "Je ferme le dossier. Une seconde plus tard, je le rouvre, comme si quelque chose allait apparaître."
     "Rien. J'éteins enfin l'écran."
     stop music fadeout 1.0
