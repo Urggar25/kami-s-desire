@@ -92,9 +92,27 @@ screen investigation_pa_room(room_id, rooms, actions):
     $ pnc_room = "chambre" if room_id == "dortoir" else room_id
     # Réutilise le panorama existant du jeu et ses rotations gauche/droite.
     if investigation_pa_day in (26, 28, 29) and room_id == "dortoir":
-        add Transform("j26_elen_vide", xysize=(1920, 1080))
+        # Le flacon doit réellement être visible quand Noam enquête au J26.
+        $ elen_room_image = "j26_elen_flacon" if investigation_pa_day == 26 else "j26_elen_vide"
+        add Transform(elen_room_image, xysize=(1920, 1080))
     else:
         use room_scene_background(pnc_room, navigation=True)
+
+    # Sortie intégrée au décor : pas de menu permanent au bas de l'écran.
+    # Le retour au couloir réactive CORRIDOR_NAVIGATION et ses portes natives.
+    button:
+        xpos 0 ypos 250 xsize 140 ysize 620
+        background None
+        hover_background Solid("#79C9DE18")
+        hovered SetScreenVariable("hovered_action", "__sortie")
+        unhovered SetScreenVariable("hovered_action", None)
+        action Return("corridors")
+    if hovered_action == "__sortie":
+        text "← SORTIR":
+            xpos 22 ypos 530
+            color "#E2F6FF"
+            size 27
+            outlines [(2, "#061421", 0, 0)]
 
     for idx, action_id in enumerate(available):
         $ action_info = actions[action_id]
@@ -180,32 +198,17 @@ screen investigation_pa_room(room_id, rooms, actions):
             else:
                 text "Survolez un personnage ou un objet pour enquêter." color "#A3BFCB" size 17
 
-    hbox:
-        spacing 16
-        xalign 0.5 yalign 0.98
-        textbutton "← COULOIR" action Return("corridors") text_size 22
-        textbutton "DOSSIER" action Show("investigation_dossier", persistent_access=True) text_size 22
-        textbutton "FIN DE L'ENQUÊTE" action Return("finish") text_size 22
-
-# Seule modalité de confirmation ; l'interaction elle-même se fait sur le décor.
+# Le choix de dépense est désormais un menu Ren'Py natif, piloté directement
+# par les scénarios J26-J29. L'ancien screen n'est conservé que pour les
+# sauvegardes susceptibles d'y faire référence.
 screen investigation_pa_confirm(action):
     modal True
     zorder 120
-    add Solid("#000915B8")
-    frame:
-        background Solid("#0A2535F2")
-        xalign 0.5 yalign 0.5
-        xsize 810
-        padding (34, 30)
-        vbox:
-            spacing 18
-            text action["title"] size 30 color "#D5F5FF" xalign 0.5
-            text action["description"] size 21 color "#B9D4E3" xalign 0.5
-            text ("Coût : 1 PA  •  Restants : %d" % investigation_pa_remaining) size 20 color "#FFD486" xalign 0.5
-            hbox:
-                spacing 60 xalign 0.5
-                textbutton "ENQUÊTER — 1 PA" action Return(True) text_size 23
-                textbutton "ANNULER" action Return(False) text_size 23
+    vbox:
+        xalign 0.5 yalign 0.82
+        spacing 14
+        textbutton "ENQUÊTER — 1 PA" action Return(True)
+        textbutton "ANNULER" action Return(False)
 
 # Présentation fugace de la même source photographique que le dossier.
 # Les entrées sans illustration spécifique utilisent la photo du lieu d'origine.
