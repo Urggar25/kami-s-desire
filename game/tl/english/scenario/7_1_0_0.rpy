@@ -2040,7 +2040,7 @@ translate english strings:
 translate english 939371ad:
 
     # nyra "{i}Noam ? Ouvre. Vite.{/i}"
-    nyra ""
+    nyra "{i}Noam? Open up. Hurry.{/i}"
 
 # game/scenario/7_1_0_0.rpy:159
 translate english a941b808:
