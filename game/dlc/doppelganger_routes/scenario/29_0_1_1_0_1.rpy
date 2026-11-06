@@ -143,6 +143,9 @@ init 10 python:
       }
     }
     INVESTIGATION_ENTRIES.update({
+        "j29_core_rapport": {"category": "hypotheses", "title": "HOMICIDE PLUS PROBABLE", "desc": "Les dernières observations d'Iris renforcent l'hypothèse d'une intoxication par inhalation, sans certitude toxicologique.", "day": "J29", "origin": "INFIRMERIE", "status": "CONFIRMÉ", "manual_only": True},
+        "j29_core_badge": {"category": "preuves", "title": "ACCÈS À 02 H 17", "desc": "Le badge associé à Nyra a ouvert un accès technique la nuit de la mort de Tomas. Cela n'identifie pas le porteur.", "day": "J29", "origin": "MAINTENANCE", "status": "CONFIRMÉ", "manual_only": True},
+        "j29_core_signal": {"category": "anomalies", "title": "ÉMISSION FAIBLE NON IDENTIFIÉE", "desc": "Le jour 25, une émission faible apparaît dans les relevés d'observation, sans destination ni émetteur identifié.", "day": "J29", "origin": "OBSERVATION", "status": "CONFIRMÉ", "manual_only": True},
         "j29_tomas_grille": {"category": "preuves", "title": "VENTILATION ET VERROU", "desc": "Le dispositif pouvait agir depuis le réseau malgré une porte verrouillée.", "day": "J29", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j29_tomas_elen": {"category": "personnes", "title": "ELEN — ÉCHANGE CONNU", "desc": "Elen ne peut pas dire avec certitude qui a entendu leur discussion dans le couloir.", "day": "J29", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j29_tomas_iris": {"category": "hypotheses", "title": "INCERTITUDES MÉDICALES", "desc": "Iris privilégie l'homicide sans pouvoir identifier avec certitude la substance inhalée.", "day": "J29", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
@@ -403,6 +406,9 @@ label _29_0_1_1_0_1_PA_INTRO:
     "J'ai les preuves principales sur ma tablette. Les prochaines actions permettront d'éclaircir certaines contradictions et de retrouver des témoignages, pas de débloquer le droit d'accuser quelqu'un."
     $ investigation_pa_begin(29, 5)
     $ investigation_unlocked = True
+    $ investigation_add("j29_core_rapport", notify=False)
+    $ investigation_add("j29_core_badge", notify=False)
+    $ investigation_add("j29_core_signal", notify=False)
     $ free_time_active = False
     $ conclave_lock = False
     $ dortoir_lock = False
