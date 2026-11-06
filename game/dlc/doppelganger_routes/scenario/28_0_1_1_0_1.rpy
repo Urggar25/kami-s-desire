@@ -154,3 +154,183 @@ label _28_0_1_1_0_1_CONDUIT_2:
             noam fatigue "Je sais. On revient."
             "On retrouve le croisement et suit les indications d'Iris."
             jump _28_0_1_1_0_1_CONDUIT_3
+
+
+label _28_0_1_1_0_1_CONDUIT_3:
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
+    "Un peu plus loin, la lumière accroche une plaque métallique placée de travers. Elle coupe presque toute la largeur du conduit."
+    lysa reflexion "Attends. Ça, c'est normal ?"
+    noam reflexion "J'ai jamais vu une plaque comme ça."
+    iris "Vous êtes à la grille ?"
+    noam neutre "Presque. Il y a un truc en métal juste avant."
+    iris "Ne forcez pas. Regarde comment l'air peut passer."
+    menu:
+        "Comment examiner la plaque ?"
+        "Observer les fixations et le passage d'air":
+            "La plaque est coincée sur des supports. L'air n'a plus qu'une ouverture étroite pour passer vers la chambre."
+            jump _28_0_1_1_0_1_PLAQUE
+        "Essayer de pousser directement":
+            $ j28a_detours += 1
+            play sound "audio/sfx_duct_scrape.wav"
+            "Le métal résiste et grince contre la paroi."
+            lysa inquiet "Doucement ! Tu vas faire tomber quelque chose."
+            noam neutre "Ouais, attends."
+            "Je regarde les attaches. La plaque est posée sur des supports, pas vissée comme les protections habituelles."
+            jump _28_0_1_1_0_1_PLAQUE
+
+label _28_0_1_1_0_1_PLAQUE:
+    $ j28a_plaque = True
+    "Je photographie le montage. La plaque détourne la circulation de l'air vers un passage qui débouche près de la chambre d'Elen."
+    noam reflexion "Lysa, tu peux m'aider à la faire glisser ?"
+    lysa raison "Oui. Mais pas comme un bourrin. Un... deux... trois."
+    play sound "audio/sfx_duct_scrape.wav"
+    with hpunch
+    "La plaque bouge de quelques centimètres. Derrière, il y a un renfoncement sombre."
+    lysa inquiet "Il y a quelque chose là-dedans."
+    "Je dirige la lampe vers le fond. Un petit récipient noirci est posé sur une surface métallique. Il contient des résidus brûlés et des fragments qui ressemblent à des feuilles."
+    noam surpris "C'est quoi, ce truc ?"
+    lysa reflexion "On dirait un bol. Mais qu'est-ce qu'il fout là ?"
+    noam raison "Je prends des photos. On touche à rien."
+    $ j28a_bol = True
+    "Je photographie le récipient, le renfoncement et les alentours, puis je rappelle Iris."
+    noam raison "On a trouvé un bol avec quelque chose de brûlé dedans. La plaque était juste devant."
+    iris "OK. Surtout, ne remuez pas les cendres. Ça peut encore être dangereux."
+    lysa fatigue "Super. J'adore cette sortie."
+    iris "Vous avez des gants et un sachet. Si vous pouvez récupérer un fragment sans soulever de poussière, faites-le. Sinon, laissez tout."
+    "Je prélève avec une pince un fragment déjà détaché, puis je referme le sachet. Le reste ne bouge pas."
+    noam reflexion "Iris, si quelque chose brûlait ici, ça aurait pu passer dans la chambre ?"
+    iris "Avec une plaque qui dirige l'air dans cette direction, peut-être. Mais il faut que je voie les photos."
+    lysa inquiet "Quelqu'un aurait pu placer tout ça depuis la maintenance..."
+    noam neutre "Ouais. Sans jamais ouvrir la porte."
+    iris "Revenez. Maintenant."
+    "Je jette un dernier regard au bol. C'est la première fois que je vois quelque chose qui ne ressemble pas à un simple accident."
+    $ flashlight_off()
+    scene couloir_maintenance at adaptive_fullscreen with dissolve
+    stop music fadeout 0.7
+    $ showGroup([("lysa", "fatigue", 0.37), ("noam", "inquiet", 0.66)])
+    lysa fatigue "J'ai de la poussière partout. Je veux une douche."
+    noam fatigue "Moi aussi."
+    lysa reflexion "Tu crois que c'est à cause de ça que Tomas est mort ?"
+    noam neutre "Je sais pas. Mais cette plaque n'avait rien à faire là."
+    $ hideGroup()
+    jump _28_0_1_1_0_1_ANALYSE
+# Durée : environ 4 minutes pour la traversée.
+
+label _28_0_1_1_0_1_ANALYSE:
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie2", "infirmerie2") from _call_j28a_door_3
+    scene infirmerie2 at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 0.8
+    "Iris examine les photos du conduit. Elle garde le sachet fermé et agrandit l'image du fragment sur son écran."
+    $ showGroup([("iris", "reflexion", 0.22), ("lysa", "neutre", 0.46), ("noam", "inquiet", 0.70)])
+    iris reflexion "La plaque n'a pas été installée comme les protections habituelles. Et le récipient est bien derrière."
+    noam neutre "On dirait qu'il a brûlé quelque chose."
+    iris raison "Oui. Un matériau organique, au moins en partie."
+    lysa reflexion "Tu reconnais la plante ?"
+    "Iris cherche dans une bibliothèque d'images, puis s'arrête sur une fiche botanique."
+    iris surpris "Attendez. Ça ressemble beaucoup à du Bulbuma Corienis."
+    noam reflexion "Du quoi ?"
+    iris raison "Bulbuma Corienis. C'est une plante assez rare. Elle pousse surtout dans des régions arides."
+    lysa inquiet "Et c'est dangereux ?"
+    iris neutre "Selon la préparation, certains composants peuvent dégager des substances toxiques quand on les chauffe. Je veux confirmer l'espèce avant de dire que c'est ce qu'on a ici."
+    noam raison "Ça pourrait expliquer comment Tomas est mort ?"
+    iris reflexion "Une intoxication par inhalation pourrait expliquer une partie de ce qu'on a vu. Mais ça ne démontre pas qu'il a inhalé ce mélange-là."
+    lysa raison "Et les maux de tête qu'on a eus en ouvrant la chambre ?"
+    iris neutre "Ça peut correspondre à une exposition, oui. Mais il y avait aussi des déchets et une odeur très forte. Je peux pas en déduire davantage."
+    noam reflexion "Donc on a un bol brûlé, une plaque pas normale et une mort qui ressemble à une intoxication..."
+    iris raison "Ce sont des éléments qui rendent l'hypothèse d'un meurtre beaucoup plus sérieuse. Pas une preuve définitive."
+    lysa reflexion "Et le flacon de somnifères, alors ?"
+    iris fatigue "Toujours le même problème : on sait pas ce qu'il a pris. Si quelqu'un a mis ce flacon pour nous tromper, c'est une autre possibilité."
+    noam neutre "Au moins, la porte fermée ne règle plus rien."
+    iris raison "C'est ça. Un verrou fermé n'empêche pas quelqu'un d'agir depuis les conduits."
+    pause 0.3
+    noam fatigue "Putain, Tomas..."
+    lysa reflexion "Tu disais que la plante poussait dans les endroits arides ?"
+    iris raison "Oui."
+    lysa neutre "Ça fait penser à Limen."
+    noam reflexion "À Ryn et Sael."
+    iris agace "Pas seulement. Orbite a aussi des territoires arides. Et les livraisons circulent entre districts."
+    noam raison "Donc Kael et Nyra aussi."
+    iris neutre "Et ça ne prouve rien contre aucun des quatre. L'origine d'une plante ne te dit pas qui l'a apportée ici."
+    lysa raison "On sait. Mais ça fait au moins des gens à qui demander."
+    iris reflexion "Demandez ce qu'ils connaissent, pas s'ils ont tué Tomas."
+    noam sourire "J'essaierai."
+    iris agace "Noam..."
+    noam neutre "Je plaisante."
+    $ j28a_bulbuma = True
+    "Je conserve les photos de la plaque et du récipient sur ma tablette. Le sachet reste à l'infirmerie."
+    $ hideGroup()
+    jump _28_0_1_1_0_1_TEMOINS
+# Durée : environ 3 minutes.
+
+label _28_0_1_1_0_1_TEMOINS:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.8
+    "Je montre à Lysa les questions que j'ai notées."
+    $ showGroup([("lysa", "blase", 0.38), ("noam", "neutre", 0.68)])
+    lysa reflexion "Tu vas leur demander s'ils connaissent la plante ?"
+    noam raison "Oui. On essaie de comprendre d'où elle vient."
+    lysa blase "OK. Mais si tu commences avec « pourquoi t'as tué Tomas », je te laisse seul."
+    noam sourire "Promis."
+    $ hideGroup()
+    menu:
+        "À qui parler en premier ?"
+        "Sael et Ryn":
+            call _28_0_1_1_0_1_SAEL_RYN from _call_j28a_sael_first
+            call _28_0_1_1_0_1_KAEL from _call_j28a_kael_second
+            jump _28_0_1_1_0_1_NYRA
+        "Kael":
+            call _28_0_1_1_0_1_KAEL from _call_j28a_kael_first
+            call _28_0_1_1_0_1_SAEL_RYN from _call_j28a_sael_second
+            jump _28_0_1_1_0_1_NYRA
+
+label _28_0_1_1_0_1_SAEL_RYN:
+    scene bg_repos at adaptive_fullscreen with dissolve
+    $ showGroup([("sael", "neutre", 0.17), ("ryn", "fatigue", 0.37), ("lysa", "neutre", 0.57), ("noam", "neutre", 0.77)])
+    ryn fatigue "Qu'est-ce qu'il y a, encore ?"
+    noam raison "On a trouvé quelque chose dans un conduit. Je voulais savoir si vous connaissez une plante : Bulbuma Corienis."
+    sael reflexion "J'en ai entendu parler. On en trouve dans certaines régions de Limen."
+    ryn reflexion "C'est celle qui pousse dans le désert ?"
+    sael neutre "Il y a plusieurs espèces. Pourquoi ?"
+    lysa raison "Des restes de plante brûlée, dans un bol. Près de la ventilation d'Elen."
+    sael inquiet "Et vous pensez que ça pourrait avoir un rapport avec la mort de Tomas ?"
+    noam neutre "Iris dit que c'est possible, oui."
+    ryn colere "Ah. Donc parce qu'on vient de Limen, c'est nous maintenant ?"
+    noam agace "Mais j'ai pas dit ça !"
+    ryn colere "Vous arrivez avec une plante du désert et vous nous regardez tous les deux !"
+    lysa blase "On va aussi parler à Kael. Calme-toi."
+    ryn fatigue "Ouais, c'est ça..."
+    sael raison "Ryn, laisse-le finir."
+    noam reflexion "Sael, tu sais ce qui se passe quand on brûle cette plante ?"
+    sael neutre "Certaines préparations sont irritantes. Je n'en ai jamais utilisé, alors je ne vais pas inventer."
+    noam neutre "Tu en as déjà vu ici ?"
+    sael neutre "Non. Pas à ma connaissance."
+    ryn colere "Et moi non plus, d'accord ? J'ai même jamais touché à cette plante."
+    noam raison "D'accord."
+    sael reflexion "Vous avez trouvé comment le bol a été placé ?"
+    noam neutre "Pas encore. Mais la plaque qu'on a trouvée ne vient pas des protections habituelles."
+    sael raison "Alors c'est peut-être ça qu'il faut comprendre en priorité."
+    $ hideGroup()
+    return
+
+label _28_0_1_1_0_1_KAEL:
+    scene bg_maintenance at adaptive_fullscreen with dissolve
+    $ showGroup([("kael", "calme", 0.24), ("lysa", "neutre", 0.46), ("noam", "neutre", 0.69)])
+    noam raison "Tu peux regarder ces photos ? On a trouvé une plaque dans le réseau."
+    kael surpris "Attends... C'est quoi, ça ?"
+    lysa neutre "On espérait que tu nous le dirais."
+    kael reflexion "C'est pas une des plaques qu'on a installées. Nous, on a protégé les grilles, pas mis des obstacles à l'intérieur."
+    noam reflexion "Elle redirigeait l'air vers la chambre d'Elen."
+    kael raison "Ça en a l'air. Il faudrait voir sur place pour être sûr."
+    noam raison "On peut poser cette plaque depuis un accès de maintenance ?"
+    kael neutre "Oui. Les branches sont reliées."
+    lysa reflexion "Donc pas besoin d'ouvrir la porte de la chambre."
+    kael raison "Non, pas pour accéder à cette partie du réseau."
+    noam neutre "Et le Bulbuma Corienis ? Tu connais ?"
+    kael reflexion "De nom. On trouve des plantes du même genre dans certains secteurs d'Orbite, mais je suis pas botaniste."
+    lysa blase "Ça, on avait remarqué."
+    kael sourire "Je préfère les moteurs."
+    noam raison "Tu peux vérifier les accès de maintenance ?"
+    kael neutre "Je regarderai les journaux, mais il y a du passage. Je promets rien."
+    noam neutre "Merci."
+    $ hideGroup()
+    return
