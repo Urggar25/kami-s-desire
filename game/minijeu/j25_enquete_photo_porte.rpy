@@ -296,7 +296,13 @@ screen _j25_photo_screen(view, evidence_id=None):
                            SetScreenVariable("phase", "flash")]
     elif phase == "flash":
         add Solid("#FFFFFF") at _j25_shutter_flash
-        timer 0.12 action SetScreenVariable("phase", "preview")
+        # Pour les clichés du J26, l'aperçu est présenté APRÈS la fermeture
+        # de cette screen, directement dans le scénario J26. Ceci évite un
+        # aperçu vide pendant la mise à jour de l'image PNG sauvegardée.
+        if evidence_id:
+            timer 0.12 action Return((view.center[0], view.center[1], view.zoom))
+        else:
+            timer 0.12 action SetScreenVariable("phase", "preview")
     else:
         add Solid("#03070DBB")
         frame at _j25_print_in:
