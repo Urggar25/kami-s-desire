@@ -261,8 +261,8 @@ label kd_dlc_la_peau_des_autres:
     pause 1.2
 
     call screen kd_ending_reached(
-        "La peau des autres",
-        "ENDING 01 // JOUR 20"
+        _("La peau des autres"),
+        _("ENDING 01 // JOUR 20")
     )
     $ _ending_screen_closed = _return
 
