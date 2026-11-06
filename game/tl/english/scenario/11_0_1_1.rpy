@@ -588,31 +588,31 @@ translate english noam_garde_secret_441d781d:
 translate english noam_garde_secret_82611bc4:
 
     # think "Ils sont tous là, normaux… comme si rien ne s’était passé."
-    think ""
+    think "They're all here, acting normal... as if nothing happened."
 
 # game/scenario/11_0_1_1.rpy:215
 translate english noam_garde_secret_4ae3912f:
 
     # think "Et moi je suis là, à me repasser en boucle cette putain d'ombre que j'ai cru voir dans le couloir."
-    think ""
+    think "And here I am, replaying that damned shadow I thought I saw in the corridor over and over."
 
 # game/scenario/11_0_1_1.rpy:216
 translate english noam_garde_secret_ad9dbb60:
 
     # think "Mais non. C’était rien. Juste une silhouette. Rien de plus."
-    think ""
+    think "No. It was nothing. Just a silhouette. Nothing more."
 
 # game/scenario/11_0_1_1.rpy:218
 translate english noam_garde_secret_a5072c9c:
 
     # iris "T’as repris un peu de couleurs, c’est déjà ça."
-    iris ""
+    iris "You're looking a little less pale. That's something."
 
 # game/scenario/11_0_1_1.rpy:219
 translate english noam_garde_secret_dd3b66f9:
 
     # iris "Mange correctement hein, sinon je vais devoir te forcer."
-    iris ""
+    iris "And eat properly, or I'll have to force-feed you."
 
 # game/scenario/11_0_1_1.rpy:221
 translate english noam_garde_secret_e62f1e46:
@@ -624,49 +624,49 @@ translate english noam_garde_secret_e62f1e46:
 translate english noam_garde_secret_e8238055:
 
     # "Le repas se déroule dans une ambiance plutôt légère. Ils parlent du vote d’hier, de la chaleur, de tout et de rien. Je ris à leurs blagues, mais mon esprit reste ailleurs."
-    ""
+    "The meal is surprisingly relaxed. They talk about yesterday's vote, the heat, whatever comes to mind. I laugh at their jokes, but my mind's elsewhere."
 
 # game/scenario/11_0_1_1.rpy:225
 translate english noam_garde_secret_a0d0190a:
 
     # think "C’était forcément quelqu’un d’autre."
-    think ""
+    think "It had to be someone else."
 
 # game/scenario/11_0_1_1.rpy:226
 translate english noam_garde_secret_54c569ae:
 
     # think "Arrête de penser à ça."
-    think ""
+    think "Stop thinking about it."
 
 # game/scenario/11_0_1_1.rpy:228
 translate english noam_garde_secret_f6cfd509:
 
     # "Je force un sourire et continue à manger en silence tandis que le groupe parle de tout et de rien."
-    ""
+    "I force a smile and keep eating quietly while everyone chats."
 
 # game/scenario/11_0_1_1.rpy:245
 translate english noam_garde_secret_54e2fd2f:
 
     # "Le repas touche à sa fin. Je me sens un peu mieux, mais chaque mouvement me rappelle que mon corps n’a pas encore tout à fait récupéré."
-    ""
+    "By the end of the meal, I feel a little better. But every movement reminds me my body hasn't fully recovered."
 
 # game/scenario/11_0_1_1.rpy:247
 translate english noam_garde_secret_f9fe072b:
 
     # think "J’ai l’impression d’être en verre. Un faux mouvement et je me brise à nouveau."
-    think ""
+    think "I feel like I'm made of glass. One wrong move and I'll shatter again."
 
 # game/scenario/11_0_1_1.rpy:249
 translate english noam_garde_secret_43d5ace4:
 
     # iris "Bon, t’as fini de jouer avec ta nourriture ?"
-    iris ""
+    iris "Are you done pushing your food around?"
 
 # game/scenario/11_0_1_1.rpy:250
 translate english noam_garde_secret_f644aa67:
 
     # iris "Tu tiens debout ou on doit encore te traîner comme un sac ?"
-    iris ""
+    iris "Can you walk, or are we going to have to haul you around like a sack again?"
 
 # game/scenario/11_0_1_1.rpy:252
 translate english noam_garde_secret_5b594b46:
@@ -678,61 +678,61 @@ translate english noam_garde_secret_5b594b46:
 translate english noam_garde_secret_577a3d24:
 
     # sael "J'ai une idée Noam, je vais t'emmener à la salle d’observation. Il y a une meilleure ventilation en ce moment."
-    sael ""
+    sael "I've got an idea, Noam. Let's go to the observation room. The ventilation's better there right now."
 
 # game/scenario/11_0_1_1.rpy:255
 translate english noam_garde_secret_fca3413b:
 
     # sael "Il fera moins chaud qu'ici, même si c'est déjà beaucoup plus supportable qu'ici..."
-    sael ""
+    sael "It'll be cooler than here. Not that it's nearly as bad here as it was..."
 
 # game/scenario/11_0_1_1.rpy:257
 translate english noam_garde_secret_6afb800e:
 
     # nyra "Tant qu’il ne force pas."
-    nyra ""
+    nyra "As long as he doesn't push himself."
 
 # game/scenario/11_0_1_1.rpy:259
 translate english noam_garde_secret_4aba7d5b:
 
     # "Je me lève lentement. Mes jambes tremblent légèrement, mais je serre les dents et commence à avancer."
-    ""
+    "I stand up slowly. My legs tremble, but I grit my teeth and start walking."
 
 # game/scenario/11_0_1_1.rpy:264
 translate english noam_garde_secret_865b3a78:
 
     # "Je les suis et je marche un peu en retrait, légèrement étourdi."
-    ""
+    "I follow a few steps behind, still a little dizzy."
 
 # game/scenario/11_0_1_1.rpy:265
 translate english noam_garde_secret_a489af70:
 
     # "Au bout d’un moment, nous arrivons devant la salle d’observation. La porte est entrouverte."
-    ""
+    "Before long, we reach the observation room. The door is ajar."
 
 # game/scenario/11_0_1_1.rpy:266
 translate english noam_garde_secret_c41fa41f:
 
     # "On entend la voix de Kami à l’intérieur."
-    ""
+    "I can hear Kami speaking inside."
 
 # game/scenario/11_0_1_1.rpy:272
 translate english noam_garde_secret_2307a2a9:
 
     # kami "Je suis désolée Kael, mais c’est bien plus compliqué que ça."
-    kami ""
+    kami "I'm sorry, Kael, but it's a little more complicated than that."
 
 # game/scenario/11_0_1_1.rpy:274
 translate english noam_garde_secret_49848f13:
 
     # "Nous nous arrêtons instinctivement. Sael me fait signe de rester silencieux."
-    ""
+    "We all stop instinctively. Sael signals for me to stay quiet."
 
 # game/scenario/11_0_1_1.rpy:284
 translate english noam_garde_secret_d2820899:
 
     # kael "Sept jours ? Tu es sérieuse ?"
-    kael ""
+    kael "Seven days? Are you serious?"
 
 # game/scenario/11_0_1_1.rpy:285
 translate english noam_garde_secret_6a24fb9c:
@@ -744,25 +744,25 @@ translate english noam_garde_secret_6a24fb9c:
 translate english noam_garde_secret_25ea59f8:
 
     # kami "Les brouilleurs actuellement en circulation sont particulièrement efficaces."
-    kami ""
+    kami "The jammers currently in use are remarkably effective."
 
 # game/scenario/11_0_1_1.rpy:288
 translate english noam_garde_secret_fa9da4ee:
 
     # kami "Ils ne se contentent pas de bloquer le signal en temps réel."
-    kami ""
+    kami "They don't just block the live signal."
 
 # game/scenario/11_0_1_1.rpy:289
 translate english noam_garde_secret_d297f065:
 
     # kami "Ils appliquent un filtre de sept jours sur toutes les données vidéo et audio enregistrées dans leur rayon lorsqu'ils sont allumés."
-    kami ""
+    kami "While they're switched on, they also put a seven-day delay on any video and audio recorded within their range."
 
 # game/scenario/11_0_1_1.rpy:290
 translate english noam_garde_secret_ae8a12ba:
 
     # kami "C’est une sécurité intégrée. Même moi, je ne peux pas contourner ça instantanément."
-    kami ""
+    kami "It's a built-in safeguard. Even I can't bypass it instantly."
 
 # game/scenario/11_0_1_1.rpy:292
 translate english noam_garde_secret_8afe195c:
@@ -774,25 +774,25 @@ translate english noam_garde_secret_8afe195c:
 translate english noam_garde_secret_a86e7860:
 
     # kami "Exactement. Et si vous votez pour les interdire… eh bien, tu n’auras plus jamais accès à ces enregistrements."
-    kami ""
+    kami "Exactly. And if you vote to ban them... well, you'll never be able to access those recordings."
 
 # game/scenario/11_0_1_1.rpy:297
 translate english noam_garde_secret_428c14ce:
 
     # "Kael reste silencieux. Ses poings sont serrés."
-    ""
+    "Kael says nothing. His fists are clenched."
 
 # game/scenario/11_0_1_1.rpy:300
 translate english noam_garde_secret_7439e962:
 
     # think "Il n’abandonne toujours pas."
-    think ""
+    think "He's still not giving up."
 
 # game/scenario/11_0_1_1.rpy:302
 translate english noam_garde_secret_a6dc5fc7:
 
     # "Je sens un vertige me reprendre. Je m’appuie discrètement contre le mur."
-    ""
+    "Another wave of dizziness hits me. I discreetly lean against the wall."
 
 # game/scenario/11_0_1_1.rpy:304
 translate english noam_garde_secret_5931c657:
@@ -804,7 +804,7 @@ translate english noam_garde_secret_5931c657:
 translate english noam_garde_secret_31bf2aae:
 
     # "Le groupe se tourne vers moi. Kael remarque enfin notre présence et sursaute légèrement."
-    ""
+    "The group turns toward me. Kael finally notices us and gives a slight start."
 
 # game/scenario/11_0_1_1.rpy:308
 translate english noam_garde_secret_4f006abb:
@@ -822,19 +822,19 @@ translate english noam_garde_secret_418db1c5:
 translate english noam_garde_secret_2e36ac7f:
 
     # kami "Oh ! Mais vous ne dérangez rien du tout !"
-    kami ""
+    kami "Oh! You're not interrupting anything at all!"
 
 # game/scenario/11_0_1_1.rpy:325
 translate english noam_garde_secret_f0640e96:
 
     # kami "D’ailleurs, Noam, tu as meilleure mine. J’ai eu peur que ce soit plus grave qu'un simple malaise."
-    kami ""
+    kami "Besides, Noam, you're looking better. I was worried it might be more than a simple fainting spell."
 
 # game/scenario/11_0_1_1.rpy:327
 translate english noam_garde_secret_b5640641:
 
     # "Sa voix est douce, presque mielleuse."
-    ""
+    "Her voice is gentle, almost sickeningly sweet."
 
 # game/scenario/11_0_1_1.rpy:329
 translate english noam_garde_secret_c93a75bf:
@@ -852,7 +852,7 @@ translate english noam_garde_secret_7885b2f7:
 translate english noam_garde_secret_e50d2102:
 
     # "Kael sort de la pièce sans un mot de plus. Son regard croise le mien une fraction de seconde. Il a l’air épuisé."
-    ""
+    "Kael leaves without another word. His eyes meet mine for a split second. He looks exhausted."
 
 # game/scenario/11_0_1_1.rpy:337
 translate english noam_garde_secret_b151a528:
@@ -876,7 +876,7 @@ translate english noam_garde_secret_f3a2fc55:
 translate english noam_garde_secret_01425ca7:
 
     # nyra "..."
-    nyra ""
+    nyra "..."
 
 # game/scenario/11_0_1_1.rpy:343
 translate english noam_garde_secret_b538a503:
@@ -888,7 +888,7 @@ translate english noam_garde_secret_b538a503:
 translate english noam_garde_secret_936f07c1:
 
     # "Je sens à nouveau ma tête tourner. Je ferme les yeux une seconde."
-    ""
+    "My head starts spinning again. I close my eyes for a second."
 
 # game/scenario/11_0_1_1.rpy:347
 translate english noam_garde_secret_46fd2b57:
@@ -900,7 +900,7 @@ translate english noam_garde_secret_46fd2b57:
 translate english noam_garde_secret_8f228068:
 
     # "Iris me prend immédiatement le bras."
-    ""
+    "Iris immediately grabs my arm."
 
 # game/scenario/11_0_1_1.rpy:351
 translate english noam_garde_secret_2e570feb:
@@ -918,13 +918,13 @@ translate english noam_garde_secret_9fa5e31a:
 translate english noam_garde_secret_91add34d:
 
     # think "Encore marcher ? Non. J'en peux plus."
-    think ""
+    think "More walking? No. I can't take any more."
 
 # game/scenario/11_0_1_1.rpy:356
 translate english noam_garde_secret_e12cfbc2:
 
     # noam "Allez-y sans moi, je vais retourner me reposer un peu."
-    noam ""
+    noam "You go on without me. I'm going to head back and rest."
 
 # game/scenario/11_0_1_1.rpy:357
 translate english noam_garde_secret_c2f671c7:
@@ -936,115 +936,115 @@ translate english noam_garde_secret_c2f671c7:
 translate english noam_garde_secret_688ca719:
 
     # nyra "T'es sûr que ça va aller ?"
-    nyra ""
+    nyra "Are you sure you'll be okay?"
 
 # game/scenario/11_0_1_1.rpy:360
 translate english noam_garde_secret_98c43e16:
 
     # nyra "Tu veux qu'on t'accompagne ?"
-    nyra ""
+    nyra "Want one of us to come with you?"
 
 # game/scenario/11_0_1_1.rpy:362
 translate english noam_garde_secret_53846c70:
 
     # noam "Non ça va aller, c'est juste à côté."
-    noam ""
+    noam "No, I'll be fine. It's right next door."
 
 # game/scenario/11_0_1_1.rpy:363
 translate english noam_garde_secret_7e3e7c74:
 
     # noam "Allez profiter un peu avant la journée de demain."
-    noam ""
+    noam "Go enjoy yourselves a little before tomorrow."
 
 # game/scenario/11_0_1_1.rpy:365
 translate english noam_garde_secret_94c38dd9:
 
     # iris "Si c'est ce que Monsieur veut. Il ne faut pas le dire deux fois."
-    iris ""
+    iris "Well, if that's what His Majesty wants. You don't have to tell me twice."
 
 # game/scenario/11_0_1_1.rpy:367
 translate english noam_garde_secret_1169f55e:
 
     # "Iris s'éloigne rapidement en grimaçant."
-    ""
+    "Iris walks off quickly, grimacing."
 
 # game/scenario/11_0_1_1.rpy:368
 translate english noam_garde_secret_a6d37ae4:
 
     # "Le groupe se dissout et je retourne me poser dans ma chambre."
-    ""
+    "The group splits up, and I head back to my room."
 
 # game/scenario/11_0_1_1.rpy:378
 translate english noam_garde_secret_266d6569:
 
     # "À peine arrivé dans ma chambre, je m’effondre sur le lit sans même enlever mes chaussures."
-    ""
+    "The moment I reach my room, I collapse onto the bed without even taking off my shoes."
 
 # game/scenario/11_0_1_1.rpy:379
 translate english noam_garde_secret_2f1cdaa2:
 
     # "Mon corps est lourd. La tête tourne encore un peu par moments."
-    ""
+    "My whole body feels heavy. My head still spins now and then."
 
 # game/scenario/11_0_1_1.rpy:381
 translate english noam_garde_secret_d7e28e33:
 
     # "Je fixe le plafond blanc, la respiration un peu saccadée."
-    ""
+    "I stare at the white ceiling, breathing unevenly."
 
 # game/scenario/11_0_1_1.rpy:383
 translate english noam_garde_secret_3d1866b2:
 
     # think "Je n’en peux plus de cette fatigue… On dirait qu’elle est incrustée dans mes os."
-    think ""
+    think "I'm so sick of this exhaustion... It feels like it's worked its way into my bones."
 
 # game/scenario/11_0_1_1.rpy:384
 translate english noam_garde_secret_342350e7:
 
     # think "Et pourtant, je n’arrive pas à fermer les yeux."
-    think ""
+    think "And yet I can't close my eyes."
 
 # game/scenario/11_0_1_1.rpy:385
 translate english noam_garde_secret_d2d18fd0:
 
     # think "Impossible de me reposer vraiment."
-    think ""
+    think "I can't get any real rest."
 
 # game/scenario/11_0_1_1.rpy:389
 translate english noam_garde_secret_5c0581d5:
 
     # think "Cette silhouette… Ce n’était pas rien."
-    think ""
+    think "That silhouette... it wasn't nothing."
 
 # game/scenario/11_0_1_1.rpy:390
 translate english noam_garde_secret_556031e0:
 
     # think "J’ai beau me répéter que c’était la fièvre, la chaleur, le stress… quelque chose au fond de moi refuse d’y croire."
-    think ""
+    think "I keep telling myself it was the fever, the heat, the stress... but something deep down refuses to believe it."
 
 # game/scenario/11_0_1_1.rpy:392
 translate english noam_garde_secret_60fc5bc3:
 
     # "Je passe une main sur mon visage. Ma peau est encore chaude."
-    ""
+    "I run a hand over my face. My skin still feels warm."
 
 # game/scenario/11_0_1_1.rpy:394
 translate english noam_garde_secret_8b7472a7:
 
     # noam "Et mon état s'arrange pas..."
-    noam ""
+    noam "And I'm not getting any better..."
 
 # game/scenario/11_0_1_1.rpy:396
 translate english noam_garde_secret_d65d55aa:
 
     # think "Kael cherchait des images de sa chambre… il n'a pas pu y accéder à cause du brouilleur."
-    think ""
+    think "Kael was looking for footage from his room... but the jammer kept him from accessing it."
 
 # game/scenario/11_0_1_1.rpy:397
 translate english noam_garde_secret_f4b900d7:
 
     # think "Sept jours de délai."
-    think ""
+    think "A seven-day delay."
 
 # game/scenario/11_0_1_1.rpy:398
 translate english noam_garde_secret_5e71b25e:
