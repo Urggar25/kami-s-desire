@@ -44,38 +44,30 @@ label _26_0_1_1_0_1_CAFETERIA:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j26_alt_door_2
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    $ showGroup([("julian", "neutre", 0.23), ("iris", "fatigue", 0.48), ("mara", "taquin", 0.74)])
+    $ showGroup([("julian", "neutre", 0.080), ("iris", "fatigue", 0.220), ("mara", "taquin", 0.360), ("elen", "fatigue", 0.500), ("lysa", "blase", 0.640), ("noam", "neutre", 0.780), ("nyra", "neutre", 0.920)])
     julian reflexion "Non mais vous l'avez lu, le texte de demain ?"
     iris fatigue "Julian, je viens d'arriver."
     mara sourire "Y a un article qui interdit de parler avant le café ?"
     julian agace "Ah, très drôle. Je vous pose une question, c'est tout."
-    $ showGroup([("elen", "fatigue", 0.23), ("lysa", "blase", 0.48), ("noam", "neutre", 0.74)])
     noam neutre "Salut."
     elen sourire "Salut, Noam !"
     lysa reflexion "Tomas a déjà mangé ?"
-    $ showGroup([("julian", "fatigue", 0.24), ("elen", "fatigue", 0.49), ("noam", "neutre", 0.74)])
     julian fatigue "J'en sais rien. Il a peut-être pas envie de nous voir."
     elen reflexion "Non, il dort sûrement. Il était crevé hier."
-    $ showGroup([("lysa", "inquiet", 0.24), ("elen", "fatigue", 0.49), ("noam", "neutre", 0.74)])
     lysa inquiet "Tomas ? Celui qui vient nous réveiller parce qu'on est en retard de deux minutes ?"
     elen neutre "Il était vraiment pas bien. Je lui ai proposé ma chambre, hier."
-    $ showGroup([("mara", "taquin", 0.22), ("elen", "neutre", 0.49), ("noam", "neutre", 0.74)])
     mara taquin "Attends. Vous avez dormi ensemble ?"
     elen colere "Mais non ! On a échangé, c'est tout !"
     mara rire "Oh, ça va."
-    $ showGroup([("lysa", "inquiet", 0.22), ("elen", "inquiet", 0.49), ("noam", "neutre", 0.74)])
     noam surpris "Pourquoi ?"
     elen inquiet "Il voulait plus rester chez lui. Il arrêtait pas de regarder la porte, après les histoires d'hier. Alors j'ai dit qu'il pouvait prendre ma chambre."
     noam reflexion "C'est de ça que vous parliez dans le couloir..."
     elen neutre "Ouais. Il devait juste dormir et venir manger avec nous. Je lui ai même dit de pas oublier son réveil."
     lysa inquiet "Bah, allons voir. Ça fait un moment, là."
-    $ showGroup([("nyra", "neutre", 0.22), ("elen", "inquiet", 0.49), ("noam", "neutre", 0.74)])
     nyra raison "Oui. Mais évitez de débarquer à six. Il a déjà assez la tête à l'envers."
     noam neutre "Elen, on y va ?"
     elen content "Ouais, j'arrive."
-    $ showGroup([("lysa", "neutre", 0.22), ("elen", "content", 0.49), ("noam", "neutre", 0.74)])
     lysa neutre "Je viens. J'ai laissé mon café, alors il a intérêt à être debout."
-    $ showGroup([("iris", "blase", 0.24), ("elen", "neutre", 0.49), ("noam", "neutre", 0.74)])
     iris blase "Dites-lui que son petit-déjeuner sera froid. Il déteste ça."
     $ hideGroup()
     jump _26_0_1_1_0_1_PORTE
@@ -882,13 +874,12 @@ label _26_0_1_1_0_1_REUNION:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
     "La place de Tomas est vide. J'ai beau le savoir, je regarde quand même sa chaise avant de m'asseoir."
-    $ showGroup([("julian", "fatigue", 0.20), ("elen", "triste", 0.46), ("noam", "fatigue", 0.73)])
+    $ showGroup([("julian", "fatigue", 0.080), ("elen", "triste", 0.185), ("noam", "fatigue", 0.290), ("iris", "fatigue", 0.395), ("ryn", "agace", 0.500), ("sael", "neutre", 0.605), ("nyra", "neutre", 0.710), ("lysa", "neutre", 0.815), ("mara", "fatigue", 0.920)])
     julian reflexion "On est tous là ?"
     elen fatigue "Pas tous."
     julian triste "..."
     julian fatigue "Oui. Pardon."
     "Personne ne sait comment commencer. Iris finit par prendre la parole."
-    $ showGroup([("iris", "fatigue", 0.23), ("elen", "triste", 0.49), ("noam", "fatigue", 0.74)])
     iris raison "J'ai pas grand-chose à vous dire. Je cherche toujours ce qui a causé sa mort."
     elen inquiet "Et les médicaments ?"
     iris raison "Je les ai trouvés dans sa chambre. C'est tout ce que je sais pour l'instant."
@@ -900,7 +891,6 @@ label _26_0_1_1_0_1_REUNION:
     "Iris reste silencieuse. Elle serre un instant les mâchoires."
     iris fatigue "J'aimerais vraiment pouvoir te répondre. Là, je peux pas."
     "Elen baisse la tête. Personne ne lui demande d'arrêter de pleurer."
-    $ showGroup([("julian", "fatigue", 0.20), ("ryn", "agace", 0.45), ("noam", "neutre", 0.72)])
     ryn reflexion "Hier, il était déjà pas bien. Vous l'avez tous vu."
     julian fatigue "Ouais. Y avait pas grand monde qui l'aidait, hein."
     ryn agace "Tu vas pas commencer à me faire la morale ! T'as passé la soirée à lui hurler dessus !"
@@ -913,7 +903,6 @@ label _26_0_1_1_0_1_REUNION:
         noam neutre "J'ai parlé à deux ou trois personnes. On se rappelle même pas tous des mêmes heures."
         julian reflexion "Donc tu penses que quelqu'un ment ?"
         noam raison "Non, Julian. Je dis juste que j'ai rien pu vérifier."
-    $ showGroup([("sael", "neutre", 0.21), ("nyra", "neutre", 0.47), ("noam", "neutre", 0.73)])
     sael raison "Hé. On a déjà passé assez de temps à s'en vouloir ces derniers jours. Vous allez pas recommencer ici."
     nyra neutre "Iris a dit qu'elle cherchait encore. On peut peut-être lui laisser une nuit avant de tout retourner."
     noam raison "Ouais. Pour ce soir, on arrête."
@@ -923,7 +912,6 @@ label _26_0_1_1_0_1_REUNION:
         noam raison "Même avec ce verrou, je comprends pas ce qu'il s'est passé."
     if "elen" in investigation_pa_completed:
         noam raison "Tomas avait juste voulu dormir ailleurs. C'est tout ce qu'Elen lui avait proposé."
-    $ showGroup([("julian", "reflexion", 0.22), ("elen", "triste", 0.48), ("noam", "fatigue", 0.73)])
     julian reflexion "Il y a aussi le vote de demain."
     elen colere "Quoi ?"
     julian inquiet "J'ai pas dit qu'on devait le faire ! Mais Kami va forcément en parler. Vous le savez."
@@ -931,11 +919,9 @@ label _26_0_1_1_0_1_REUNION:
     julian fatigue "Je sais ! Mais si on fait rien et qu'elle nous tombe dessus, c'est encore nous qui allons payer !"
     noam raison "Alors on lui répondra tous. Ensemble. Mais on va pas s'asseoir demain pour voter comme si de rien n'était."
     elen triste "Moi, de toute façon, je pourrai pas."
-    $ showGroup([("lysa", "neutre", 0.21), ("mara", "fatigue", 0.47), ("noam", "neutre", 0.73)])
     lysa neutre "Moi non plus."
     mara fatigue "Pareil. Elle nous gonfle déjà assez comme ça."
     "Un à un, les autres finissent par approuver. Julian regarde les places vides, puis pose les mains sur la table."
-    $ showGroup([("julian", "fatigue", 0.21), ("elen", "triste", 0.47), ("noam", "neutre", 0.72)])
     julian fatigue "OK. Mais je veux pas qu'on laisse quelqu'un assumer ça tout seul."
     $ j26_alt_boycott = True
     $ hideGroup()
