@@ -338,7 +338,7 @@ label _14_0_1_1_0_CAFETERIA_REJET:
 
 label _14_0_1_1_0_CHAMBRE_SAEL:
 
-    $ current_period = "Apr-s-midi"
+    $ current_period = "Après-midi"
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_27
     scene bg_dortoir at adaptive_fullscreen with dissolve
