@@ -2102,583 +2102,583 @@ translate english 0d49e40d:
 translate english eded0f17:
 
     # noam hesitation "J'ai oublié."
-    noam hesitation ""
+    noam hesitation "I forgot."
 
 # game/scenario/16_0_1_1_0.rpy:147
 translate english fc92eabf:
 
     # mara agace "Bon, là ça devient grave. Quelqu'un appelle Sael, Noam a oublié son sucre."
-    mara agace ""
+    mara agace "Okay, now it's serious. Somebody call Sael. Noam forgot his sugar."
 
 # game/scenario/16_0_1_1_0.rpy:149
 translate english a7a9d7dd:
 
     # elen inquiet "Non mais sérieusement, tu vas bien ?"
-    elen inquiet ""
+    elen inquiet "No, seriously, are you okay?"
 
 # game/scenario/16_0_1_1_0.rpy:151
 translate english 6cbe75a7:
 
     # "Je relève les yeux. Cette fois, plusieurs personnes me regardent. Pas parce que j'ai fait une entrée dramatique ou parce que quelqu'un leur a raconté quoi que ce soit. Juste parce que je suis assis devant eux depuis deux minutes sans vraiment être là."
-    ""
+    "I look up. This time, several people are watching me. Not because I made a dramatic entrance or because anyone told them anything. Just because I've been sitting in front of them for two minutes without really being here."
 
 # game/scenario/16_0_1_1_0.rpy:153
 translate english 02d30914:
 
     # noam desaccord "J'ai mal dormi. C'est tout."
-    noam desaccord ""
+    noam desaccord "I didn't sleep well. That's all."
 
 # game/scenario/16_0_1_1_0.rpy:155
 translate english c46b4543:
 
     # iris inquiet "Tu trembles un peu."
-    iris inquiet ""
+    iris inquiet "You're shaking a little."
 
 # game/scenario/16_0_1_1_0.rpy:157
 translate english 4ba9c071:
 
     # noam colere "J'ai dit que ça allait."
-    noam colere ""
+    noam colere "I said I'm fine."
 
 # game/scenario/16_0_1_1_0.rpy:159
 translate english 6090c268:
 
     # "Ma réponse part beaucoup plus sèchement que prévu. Iris se fige et je m'en veux immédiatement."
-    ""
+    "The words come out much more sharply than I intended. Iris freezes, and I immediately feel awful."
 
 # game/scenario/16_0_1_1_0.rpy:161
 translate english 1b3be338:
 
     # noam culpabilite "Désolé. C'était pas contre toi."
-    noam culpabilite ""
+    noam culpabilite "Sorry. I didn't mean to snap at you."
 
 # game/scenario/16_0_1_1_0.rpy:163
 translate english c37b8b98:
 
     # iris neutre "Ouais... j'avais compris."
-    iris neutre ""
+    iris neutre "Yeah... I figured."
 
 # game/scenario/16_0_1_1_0.rpy:165
 translate english 6dcccab3:
 
     # "Elle retourne à son assiette sans insister. Les autres aussi font semblant de reprendre leur conversation, mais l'ambiance vient clairement de perdre quelque chose."
-    ""
+    "She goes back to her plate without pushing. The others pretend to resume their conversation, too, but something has clearly gone out of the room."
 
 # game/scenario/16_0_1_1_0.rpy:167
 translate english 34f25539:
 
     # nyra reflexion "Kael n'est pas venu."
-    nyra reflexion ""
+    nyra reflexion "Kael hasn't shown up."
 
 # game/scenario/16_0_1_1_0.rpy:169
 translate english a10dc993:
 
     # "Je relève la tête avant même d'avoir le temps de faire semblant que ça ne m'intéresse pas."
-    ""
+    "I look up before I can even pretend I don't care."
 
 # game/scenario/16_0_1_1_0.rpy:171
 translate english d5d5f6a6:
 
     # noam inquiet "Il est où ?"
-    noam inquiet ""
+    noam inquiet "Where is he?"
 
 # game/scenario/16_0_1_1_0.rpy:173
 translate english 24a982bf:
 
     # nyra neutre "Dans les dortoirs, probablement. Je l'ai croisé tôt ce matin."
-    nyra neutre ""
+    nyra neutre "Probably in the dormitory. I ran into him early this morning."
 
 # game/scenario/16_0_1_1_0.rpy:175
 translate english e2dcb771:
 
     # mara mefiant "Et ? Vu ta tête, y'a un 'mais'."
-    mara mefiant ""
+    mara mefiant "And? That look on your face says there's a 'but.'"
 
 # game/scenario/16_0_1_1_0.rpy:177
 translate english 3e1cc6c4:
 
     # nyra "Il m'a demandé si quelqu'un était entré dans sa chambre cette nuit. Puis il m'a demandé si j'avais vu quelqu'un toucher à ses affaires, si les caméras fonctionnaient normalement et si je savais qui avait accès aux enregistrements."
-    nyra ""
+    nyra "He asked whether anyone had entered his room last night. Then whether I'd seen anyone touch his things, whether the cameras were working properly, and whether I knew who had access to the recordings."
 
 # game/scenario/16_0_1_1_0.rpy:179
 translate english 61ce61b5:
 
     # ryn fatigue "Ça lui ressemble pas."
-    ryn fatigue ""
+    ryn fatigue "That doesn't sound like him."
 
 # game/scenario/16_0_1_1_0.rpy:181
 translate english 0b9c209c:
 
     # nyra reflexion "Non."
-    nyra reflexion ""
+    nyra reflexion "No."
 
 # game/scenario/16_0_1_1_0.rpy:183
 translate english 079c1871:
 
     # elias inquiet "Il s'est fait voler autre chose ?"
-    elias inquiet ""
+    elias inquiet "Did someone steal something else from him?"
 
 # game/scenario/16_0_1_1_0.rpy:185
 translate english d91e54c4:
 
     # nyra "Je ne sais pas. Il n'a pas voulu me répondre. Quand j'ai essayé de continuer la discussion, il a vérifié deux fois derrière moi avant de refermer sa porte."
-    nyra ""
+    nyra "I don't know. He wouldn't answer. When I tried to keep talking, he checked behind me twice before shutting his door."
 
 # game/scenario/16_0_1_1_0.rpy:189
 translate english 12aff9b9:
 
     # mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Je l'ai toujours trouvée chelou, mais là de plus en plus."
-    mara mefiant ""
+    mara mefiant "Great. So now Kael's barricading his room and checking under the beds. I always thought he was weird, but he's getting weirder by the minute."
 
 # game/scenario/16_0_1_1_0.rpy:191
 translate english 46ceef6b:
 
     # lysa blase "Je donne encore trois jours avant qu'on commence tous à dormir avec une chaise sous la poignée."
-    lysa blase ""
+    lysa blase "Give it three more days before we're all sleeping with chairs wedged under our door handles."
 
 # game/scenario/16_0_1_1_0.rpy:193
 translate english 1df2f87e:
 
     # ryn desaccord "Si quelque chose se passe dans les dortoirs, on devrait au moins savoir quoi."
-    ryn desaccord ""
+    ryn desaccord "If something's going on in the dormitory, we should at least know what."
 
 # game/scenario/16_0_1_1_0.rpy:195
 translate english eba54ff3:
 
     # nyra raison "Je suis d'accord. Mais il est inutile d'aller le coincer à dix devant sa porte. Dans son état, ça ne fera que renforcer ce qu'il pense déjà."
-    nyra raison ""
+    nyra raison "I agree. But there's no point cornering him at his door with ten people. In his current state, that would only reinforce whatever he already believes."
 
 # game/scenario/16_0_1_1_0.rpy:197
 translate english 7609c6ae:
 
     # "Je serre les doigts autour de ma tasse."
-    ""
+    "I tighten my grip on my cup."
 
 # game/scenario/16_0_1_1_0.rpy:199
 translate english b7f74b56:
 
     # think "Il pense quoi, exactement ?"
-    think ""
+    think "What exactly does he believe?"
 
 # game/scenario/16_0_1_1_0.rpy:201
 translate english d8621277:
 
     # "Une nouvelle fois, j'essaie de me rappeler ce qu'il s'est passé après l'avoir retrouvé hier. Une pression se forme derrière mes yeux, mais rien ne vient."
-    ""
+    "Once again, I try to remember what happened after I found him yesterday. Pressure builds behind my eyes, but nothing comes."
 
 # game/scenario/16_0_1_1_0.rpy:203
 translate english ca60637c_1:
 
     # elen inquiet "Noam ?"
-    elen inquiet ""
+    elen inquiet "Noam?"
 
 # game/scenario/16_0_1_1_0.rpy:205
 translate english f6c2acbf:
 
     # noam colere "Quoi ?"
-    noam colere ""
+    noam colere "What?"
 
 # game/scenario/16_0_1_1_0.rpy:207
 translate english 519e765e:
 
     # elen "Rien... Tu serres ta tasse super fort."
-    elen ""
+    elen "Nothing... You're gripping that cup really hard."
 
 # game/scenario/16_0_1_1_0.rpy:209
 translate english 29444154:
 
     # "Je desserre immédiatement les doigts."
-    ""
+    "I immediately loosen my fingers."
 
 # game/scenario/16_0_1_1_0.rpy:211
 translate english 8a777570:
 
     # noam hesitation "Je suis juste fatigué."
-    noam hesitation ""
+    noam hesitation "I'm just tired."
 
 # game/scenario/16_0_1_1_0.rpy:213
 translate english 594bf0ac:
 
     # mara agace "Ouais, ça on avait compris."
-    mara agace ""
+    mara agace "Yeah, we got that."
 
 # game/scenario/16_0_1_1_0.rpy:215
 translate english c20289c2:
 
     # noam colere "Alors arrêtez de me demander toutes les trente secondes si ça va !"
-    noam colere ""
+    noam colere "Then stop asking me if I'm okay every thirty seconds!"
 
 # game/scenario/16_0_1_1_0.rpy:217
 translate english 77c0609d:
 
     # "Cette fois, le silence tombe franchement. Même Mara ne trouve rien à répondre tout de suite."
-    ""
+    "This time, an uncomfortable silence really settles over the table. Even Mara has nothing to say at first."
 
 # game/scenario/16_0_1_1_0.rpy:219
 translate english 34230080:
 
     # noam culpabilite "... Pardon."
-    noam culpabilite ""
+    noam culpabilite "...Sorry."
 
 # game/scenario/16_0_1_1_0.rpy:221
 translate english 429d4fca:
 
     # "Je pousse ma chaise en arrière avant que quelqu'un puisse reprendre. J'ai à peine touché à mon petit-déjeuner."
-    ""
+    "I push back my chair before anyone can speak. I've barely touched my breakfast."
 
 # game/scenario/16_0_1_1_0.rpy:223
 translate english 45f1c21b_1:
 
     # iris inquiet "Tu vas où ?"
-    iris inquiet ""
+    iris inquiet "Where are you going?"
 
 # game/scenario/16_0_1_1_0.rpy:225
 translate english a0673bd4:
 
     # noam desaccord "Prendre l'air."
-    noam desaccord ""
+    noam desaccord "To get some air."
 
 # game/scenario/16_0_1_1_0.rpy:227
 translate english 24e089b1:
 
     # lysa blase "Dans une station spatiale. Excellent plan."
-    lysa blase ""
+    lysa blase "On a space station. Brilliant plan."
 
 # game/scenario/16_0_1_1_0.rpy:229
 translate english b60e48fc:
 
     # "Malgré moi, un souffle m'échappe presque comme un rire. Ça ne dure pas."
-    ""
+    "Despite myself, I let out something almost like a laugh. It doesn't last."
 
 # game/scenario/16_0_1_1_0.rpy:231
 translate english ef904045:
 
     # noam "Je reviens plus tard."
-    noam ""
+    noam "I'll be back later."
 
 # game/scenario/16_0_1_1_0.rpy:233
 translate english ba461e11:
 
     # "Je quitte la cafétéria sans expliquer davantage. Je sens les regards dans mon dos jusqu'à ce que la porte se referme."
-    ""
+    "I leave the cafeteria without another word. I can feel their eyes on my back until the door closes."
 
 # game/scenario/16_0_1_1_0.rpy:245
 translate english ae4fbaca:
 
     # "Je n'ai même pas décidé où aller quand une voix m'arrête derrière moi."
-    ""
+    "I haven't even decided where to go when a voice stops me from behind."
 
 # game/scenario/16_0_1_1_0.rpy:247
 translate english 5156da57:
 
     # kael fatigue "Noam."
-    kael fatigue ""
+    kael fatigue "Noam."
 
 # game/scenario/16_0_1_1_0.rpy:249
 translate english 08caced9:
 
     # "Je me retourne. Kael est à quelques mètres, seul. Il a l'air encore plus fatigué que la veille et garde sa tablette serrée contre lui comme s'il craignait qu'on puisse la lui arracher."
-    ""
+    "I turn around. Kael is standing a few yards away, alone. He looks even more exhausted than yesterday and clutches his tablet to his chest as if someone's about to snatch it away."
 
 # game/scenario/16_0_1_1_0.rpy:256
 translate english 23de0575:
 
     # noam surpris "Kael..."
-    noam surpris ""
+    noam surpris "Kael..."
 
 # game/scenario/16_0_1_1_0.rpy:258
 translate english ea003f63:
 
     # "Je cherche instinctivement ce qui devrait venir après son nom. Une accusation, une question, n'importe quoi. Rien n'arrive assez clairement pour sortir."
-    ""
+    "I instinctively search for whatever ought to come after his name. An accusation, a question, anything. Nothing comes clearly enough to say aloud."
 
 # game/scenario/16_0_1_1_0.rpy:260
 translate english eafc3c29:
 
     # kael fatigue "Qu'est-ce que tu veux encore ?"
-    kael fatigue ""
+    kael fatigue "What do you want now?"
 
 # game/scenario/16_0_1_1_0.rpy:262
 translate english 2a6ad959:
 
     # "Je le fixe quelques secondes, déstabilisé par la question."
-    ""
+    "I stare at him, thrown by the question."
 
 # game/scenario/16_0_1_1_0.rpy:264
 translate english 9bb63f16:
 
     # noam hesitation "Hein ? Je veux te parler de la vidéo."
-    noam hesitation ""
+    noam hesitation "Huh? I want to talk about the video."
 
 # game/scenario/16_0_1_1_0.rpy:266
 translate english 363b6c18:
 
     # kael inquietude "Encore ça ?! Tu veux que je..."
-    kael inquietude ""
+    kael inquietude "That again?! You want me to..."
 
 # game/scenario/16_0_1_1_0.rpy:268
 translate english 716a3179:
 
     # noam colere "Putain mais Kael, on te voit prendre ta propre photo. Celle dont tu jurais ne pas savoir où elle était passée."
-    noam colere ""
+    noam colere "For fuck's sake, Kael, we can see you taking your own photo. The one you swore you had no idea where it went."
 
 # game/scenario/16_0_1_1_0.rpy:270
 translate english c2cc372d:
 
     # kael colere "Tu crois que je le sais pas ?! Tu crois que je ne m'en rappelle pas ?!"
-    kael colere ""
+    kael colere "You think I don't know that?! You think I don't remember?!"
 
 # game/scenario/16_0_1_1_0.rpy:271
 translate english 275d6a54:
 
     # kael fatigue "Hier, j'ai quitté la salle parce que je voulais retourner fouiller ma chambre. Tu es resté devant les écrans."
-    kael fatigue ""
+    kael fatigue "Yesterday, I left the room because I wanted to search my bedroom again. You stayed at the monitors."
 
 # game/scenario/16_0_1_1_0.rpy:272
 translate english e451ef2e:
 
     # kael colere "J'ai tout fouillé ! TOUT ! Je ne l'ai pas retrouvé ! Où j'aurais bien pû la mettre hein ?"
-    kael colere ""
+    kael colere "I searched everywhere! EVERYWHERE! I didn't find it! Where the hell could I have put it, huh?"
 
 # game/scenario/16_0_1_1_0.rpy:273
 translate english 478b0f33:
 
     # kael triste "J'y ai passé toute la soirée..."
-    kael triste ""
+    kael triste "I spent the whole evening looking..."
 
 # game/scenario/16_0_1_1_0.rpy:275
 translate english fd4f4ce2:
 
     # "Je secoue immédiatement la tête."
-    ""
+    "I immediately shake my head."
 
 # game/scenario/16_0_1_1_0.rpy:277
 translate english 41085515:
 
     # noam desaccord "Quoi ? Tu y as passé toute la soirée. Mais... On était ensemble hier soir !"
-    noam desaccord ""
+    noam desaccord "What? You spent the whole evening there? But... we were together last night!"
 
 # game/scenario/16_0_1_1_0.rpy:279
 translate english c4a915f6:
 
     # "Kael blanchit à vue d'oeil."
-    ""
+    "Kael goes visibly pale."
 
 # game/scenario/16_0_1_1_0.rpy:281
 translate english 1b45ad84:
 
     # kael "Qu'est-ce que tu racconte ? J'ai fouillé ma chambre toute la soirée, je ne t'ai pas vu après avoir quitté la salle d'observation."
-    kael ""
+    kael "What are you talking about? I searched my room all evening. I didn't see you after I left the observation room."
 
 # game/scenario/16_0_1_1_0.rpy:283
 translate english 3f875556:
 
     # noam colere "Pourquoi tu le nies ?!"
-    noam colere ""
+    noam colere "Why are you denying it?!"
 
 # game/scenario/16_0_1_1_0.rpy:285
 translate english be42555f:
 
     # kael fatigue "Où ?"
-    kael fatigue ""
+    kael fatigue "Where?"
 
 # game/scenario/16_0_1_1_0.rpy:287
 translate english 690f5f6a:
 
     # "La question me coupe net. Je sais que je l'ai trouvé. Je pourrais le jurer. Pourtant, dès que j'essaie de replacer un mur, une porte ou même sa position dans le couloir, tout se dérobe."
-    ""
+    "The question stops me cold. I know I found him. I'd swear to it. But whenever I try to picture a wall, a door, even where he stood in the corridor, it all slips away."
 
 # game/scenario/16_0_1_1_0.rpy:289
 translate english 4e9720d1:
 
     # kael inquietude "Où est-ce que tu m'as vu, Noam ?"
-    kael inquietude ""
+    kael inquietude "Where did you see me, Noam?"
 
 # game/scenario/16_0_1_1_0.rpy:291
 translate english a234228f:
 
     # noam colere "J'en sais rien ! C'était... C'était dans le couloir je crois !"
-    noam colere ""
+    noam colere "I don't know! It was... I think it was in the corridor!"
 
 # game/scenario/16_0_1_1_0.rpy:293
 translate english 6df10b55:
 
     # "Ma voix résonne dans le couloir. Kael jette immédiatement un regard vers les caméras au-dessus de nous, puis fait un pas plus près."
-    ""
+    "My voice echoes down the corridor. Kael immediately glances at the cameras above us, then steps closer."
 
 # game/scenario/16_0_1_1_0.rpy:295
 translate english 2eacfcc3:
 
     # kael fatigue "Baisse d'un ton."
-    kael fatigue ""
+    kael fatigue "Keep your voice down."
 
 # game/scenario/16_0_1_1_0.rpy:297
 translate english f160e078:
 
     # noam colere "Me demande pas de baisser d'un ton alors que tu viens de me dire que tu ne m'as pas vu alors qu'on s'est reparlé hier soir !"
-    noam colere ""
+    noam colere "Don't tell me to keep my voice down when you're saying you never saw me, even though we spoke again last night!"
 
 # game/scenario/16_0_1_1_0.rpy:298
 translate english 4a392733:
 
     # noam triste "Putain, ça colle pas !"
-    noam triste ""
+    noam triste "Fuck, none of this adds up!"
 
 # game/scenario/16_0_1_1_0.rpy:300
 translate english a7d826dd:
 
     # kael triste "Je te dis seulement ce dont je me rappelle."
-    kael triste ""
+    kael triste "I'm only telling you what I remember."
 
 # game/scenario/16_0_1_1_0.rpy:302
 translate english 23f6ddfe:
 
     # noam colere "J'ai regardé l'enregistrement de ma chambre. Tu étais dessus Kael, c'est toi qui a pris le dessin de Juliette !"
-    noam colere ""
+    noam colere "I watched the footage from my room. You were on it, Kael. You're the one who took Juliette's drawing!"
 
 # game/scenario/16_0_1_1_0.rpy:303
 translate english 41a98eca:
 
     # noam reflechit "Je me rappelle être sorti pour te chercher. Je me rappelle t'avoir trouvé..."
-    noam reflechit ""
+    noam reflechit "I remember leaving to look for you. I remember finding you..."
 
 # game/scenario/16_0_1_1_0.rpy:305
 translate english c702d6f1:
 
     # "Je m'arrête. Les derniers mots ont plus de mal à sortir."
-    ""
+    "I stop. The last words are harder to get out."
 
 # game/scenario/16_0_1_1_0.rpy:307
 translate english 129bc760:
 
     # noam inquiet "Et après... Plus rien, je n'ai plus aucun souvenir de ce qu'il s'est passé après ça !"
-    noam inquiet ""
+    noam inquiet "And after that... nothing. I can't remember a single thing that happened after that!"
 
 # game/scenario/16_0_1_1_0.rpy:309
 translate english 8ca30180:
 
     # "Le silence change immédiatement entre nous. Kael ne semble pas soulagé. Au contraire, il recule légèrement et son regard devient plus méfiant."
-    ""
+    "The silence between us changes immediately. Kael doesn't look relieved. Quite the opposite: he takes a small step back, growing more suspicious."
 
 # game/scenario/16_0_1_1_0.rpy:311
 translate english ecba813f:
 
     # kael fatigue "Rien du tout ?"
-    kael fatigue ""
+    kael fatigue "Nothing at all?"
 
 # game/scenario/16_0_1_1_0.rpy:313
 translate english 61d8a290:
 
     # noam desaccord "Je me suis réveillé ce matin dans ma chambre. Je sais même pas comment je suis rentré."
-    noam desaccord ""
+    noam desaccord "I woke up in my room this morning. I don't even know how I got back."
 
 # game/scenario/16_0_1_1_0.rpy:315
 translate english 50540f0d:
 
     # kael fatigue "On ne sait même pas ce qui s'est passé. Et vu ce qu'on a découvert hier... Tu avais raison, vaut mieux pas en parler aux autres."
-    kael fatigue ""
+    kael fatigue "We don't even know what happened. And after what we found yesterday... you were right. Better not tell the others."
 
 # game/scenario/16_0_1_1_0.rpy:317
 translate english e6411be8:
 
     # noam desaccord "Quel rapport avec les autres ?"
-    noam desaccord ""
+    noam desaccord "What does that have to do with the others?"
 
 # game/scenario/16_0_1_1_0.rpy:319
 translate english 7ee47e52:
 
     # kael "Donc on me voit prendre la photo de ma sœur. Je m'en souviens pas. Et après, on me voit entrer chez toi pour prendre ton dessin. C'est ça ?"
-    kael ""
+    kael "So the footage shows me taking my sister's picture. I don't remember doing it. And then it shows me going into your room to take your drawing. Is that right?"
 
 # game/scenario/16_0_1_1_0.rpy:320
 translate english 6d43482d:
 
     # kael triste "Pour l'instant, je me méfie de tout."
-    kael triste ""
+    kael triste "For now, I don't trust anything."
 
 # game/scenario/16_0_1_1_0.rpy:322
 translate english 16b42cd0:
 
     # noam surpris "Hein ? De moi ?!"
-    noam surpris ""
+    noam surpris "What? You don't trust me?!"
 
 # game/scenario/16_0_1_1_0.rpy:324
 translate english b8f69e80:
 
     # kael fatigue "Tu viens de m'apprendre que tu as passé une partie de la soirée à me chercher et que tu ne te rappelles plus de ce qui s'est passé après m'avoir trouvé. Tu veux vraiment que je fasse comme si ça ne me posait aucune question ?"
-    kael fatigue ""
+    kael fatigue "You just told me you spent part of the evening looking for me and can't remember what happened after you found me. Do you really expect me to act like that doesn't raise questions?"
 
 # game/scenario/16_0_1_1_0.rpy:325
 translate english c5d0243d:
 
     # kael reflexion "Ou du moins, de notre mémoire. Avec ce qu'on a vu hier, je ne fais plus confiance à mes souvenirs."
-    kael reflexion ""
+    kael reflexion "Or at least, I don't trust our memories. After what we saw yesterday, I can't trust my own."
 
 # game/scenario/16_0_1_1_0.rpy:327
 translate english ce57bb59:
 
     # "La remarque me met en colère, surtout parce que je n'arrive pas à lui répondre honnêtement."
-    ""
+    "His remark makes me angry, mostly because I can't give him an honest answer."
 
 # game/scenario/16_0_1_1_0.rpy:329
 translate english 5f409ff5:
 
     # kael fatigue "Je ne t'accuse pas. J'essaie de te faire comprendre le problème. Hier encore, moi non plus je ne pensais pas avoir fait quoi que ce soit."
-    kael fatigue ""
+    kael fatigue "I'm not accusing you. I'm trying to make you understand the problem. Until yesterday, I didn't think I'd done anything either."
 
 # game/scenario/16_0_1_1_0.rpy:330
 translate english 6d7f0d32:
 
     # kael "Et... Disons que j'ai mes raisons de croire qu'il y a un problème bien plus grave."
-    kael ""
+    kael "And... let's just say I have reasons to believe there's a much bigger problem."
 
 # game/scenario/16_0_1_1_0.rpy:332
 translate english b944c3cc:
 
     # noam "Quoi encore ?"
-    noam ""
+    noam "What now?"
 
 # game/scenario/16_0_1_1_0.rpy:334
 translate english 21996c03:
 
     # kael "Le vote d'hier a été validé, beaucoup plus d'informations sont accessibles. Pas tout, mais suffisamment pour consulter certaines données qui nous concernent directement."
-    kael ""
+    kael "Yesterday's vote passed, so a lot more information is available. Not everything, but enough to access certain records about us."
 
 # game/scenario/16_0_1_1_0.rpy:336
 translate english e7ab9dad:
 
     # "Je le regarde, je ne comprends pas où il veut en venir."
-    ""
+    "I stare at him, unable to see where he's going with this."
 
 # game/scenario/16_0_1_1_0.rpy:338
 translate english a78bd1f1:
 
     # kael fatigue "Je te conseille d'aller consulter ton dossier médical. Je..."
-    kael fatigue ""
+    kael fatigue "You should look at your medical file. I..."
 
 # game/scenario/16_0_1_1_0.rpy:340
 translate english 1d0a47bd:
 
     # noam surpris "Depuis quand j'ai un dossier médical ici ?!"
-    noam surpris ""
+    noam surpris "Since when do I have a medical file here?!"
 
 # game/scenario/16_0_1_1_0.rpy:342
 translate english c6b5c533:
 
     # kael "Aucune idée, depuis qu'on est arrivés, j'imagine. J'ai vu qu'il était accessible en fouillant dans la salle des archives, alors... J'ai regardé."
-    kael ""
+    kael "No idea. Since we arrived, I guess. I noticed it was accessible when I was looking through the archives, so... I checked."
 
 # game/scenario/16_0_1_1_0.rpy:344
 translate english dbde785a:
 
     # "Il hésite à continuer. Son regard repart vers la caméra, puis revient sur moi."
-    ""
+    "He hesitates. His gaze drifts to the camera again before returning to me."
 
 # game/scenario/16_0_1_1_0.rpy:346
 translate english bf7cd40a:
 
     # kael fatigue "Il y a une mention que je ne comprends pas. Mais ça ne sert à rien de trop t'en dire. Va voir par toi-même."
-    kael fatigue ""
+    kael fatigue "There's something in there I don't understand. But there's no point telling you too much. Go see it for yourself."
 
 # game/scenario/16_0_1_1_0.rpy:347
 translate english 200ba605:
