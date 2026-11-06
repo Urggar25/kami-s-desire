@@ -31,10 +31,10 @@ label _26_0_1_1_0_1_REVEIL:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
     $ blink()
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je me réveille en repensant aux pancartes d'hier. Des gens veulent empêcher Tomas de rentrer sur Terre."
-    "Ma tablette affiche le rappel du vote de demain. J'ai vraiment pas envie de retourner autour de cette table."
-    think "J'espère que Tomas a réussi à dormir."
-    noam fatigue "Allez. Petit-déjeuner."
+    "Je reste un moment allongé, les yeux ouverts. Hier soir, Tomas n'arrivait même plus à traverser un couloir sans tomber sur quelqu'un qui lui en voulait."
+    "Sur ma tablette, le rappel du vote de demain s'affiche au-dessus des messages d'hier. Je le fais disparaître d'un geste."
+    think "J'espère au moins qu'il a pu dormir."
+    noam fatigue "Bon. Faut manger."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "couloir_dortoir") from _call_j26_alt_door_1
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     jump _26_0_1_1_0_1_CAFETERIA
@@ -45,38 +45,38 @@ label _26_0_1_1_0_1_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
     $ showGroup([("julian", "neutre", 0.23), ("iris", "fatigue", 0.48), ("mara", "taquin", 0.74)])
-    julian reflexion "Vous avez lu le nouveau texte ? Sur les sanctions pour les opinions ?"
-    iris fatigue "J'ai essayé. Puis t'as commencé à parler."
-    mara sourire "Moi j'ai retenu qu'on avait le droit de dire que Julian était chiant."
-    julian agace "C'est pas ce que dit le texte !"
+    julian reflexion "Non mais vous l'avez lu, le texte de demain ?"
+    iris fatigue "Julian, je viens d'arriver."
+    mara sourire "Y a un article qui interdit de parler avant le café ?"
+    julian agace "Ah, très drôle. Je vous pose une question, c'est tout."
     $ showGroup([("elen", "fatigue", 0.23), ("lysa", "blase", 0.48), ("noam", "neutre", 0.74)])
     noam neutre "Salut."
     elen sourire "Salut, Noam !"
-    lysa reflexion "Attendez. Tomas est où ?"
+    lysa reflexion "Tomas a déjà mangé ?"
     $ showGroup([("julian", "fatigue", 0.24), ("elen", "fatigue", 0.49), ("noam", "neutre", 0.74)])
-    julian fatigue "Il nous évite encore."
-    elen reflexion "Je pense qu'il dort. Il était vraiment fatigué."
+    julian fatigue "J'en sais rien. Il a peut-être pas envie de nous voir."
+    elen reflexion "Non, il dort sûrement. Il était crevé hier."
     $ showGroup([("lysa", "inquiet", 0.24), ("elen", "fatigue", 0.49), ("noam", "neutre", 0.74)])
-    lysa inquiet "Il est jamais en retard, même quand il a dormi deux heures."
-    elen neutre "Je lui ai prêté ma chambre hier soir. On a échangé."
+    lysa inquiet "Tomas ? Celui qui vient nous réveiller parce qu'on est en retard de deux minutes ?"
+    elen neutre "Il était vraiment pas bien. Je lui ai proposé ma chambre, hier."
     $ showGroup([("mara", "taquin", 0.22), ("elen", "neutre", 0.49), ("noam", "neutre", 0.74)])
-    mara taquin "Oh ! Monsieur a passé la nuit dans ton lit ?"
-    elen colere "Mara !"
-    mara rire "Quoi ?! C'était gratuit, je sais, mais fallait que je la fasse."
+    mara taquin "Attends. Vous avez dormi ensemble ?"
+    elen colere "Mais non ! On a échangé, c'est tout !"
+    mara rire "Oh, ça va."
     $ showGroup([("lysa", "inquiet", 0.22), ("elen", "inquiet", 0.49), ("noam", "neutre", 0.74)])
-    noam surpris "Pourquoi vous avez changé de chambre ?"
-    elen inquiet "Il avait peur que quelqu'un revienne frapper à sa porte. Je me suis dit qu'il serait plus tranquille chez moi."
-    noam reflexion "Ah. C'était donc ça, votre conversation d'hier soir."
-    elen neutre "Ouais. J'ai dormi dans sa chambre, lui dans la mienne."
-    lysa inquiet "Mais il est toujours pas arrivé."
+    noam surpris "Pourquoi ?"
+    elen inquiet "Il voulait plus rester chez lui. Il arrêtait pas de regarder la porte, après les histoires d'hier. Alors j'ai dit qu'il pouvait prendre ma chambre."
+    noam reflexion "C'est de ça que vous parliez dans le couloir..."
+    elen neutre "Ouais. Il devait juste dormir et venir manger avec nous. Je lui ai même dit de pas oublier son réveil."
+    lysa inquiet "Bah, allons voir. Ça fait un moment, là."
     $ showGroup([("nyra", "neutre", 0.22), ("elen", "inquiet", 0.49), ("noam", "neutre", 0.74)])
-    nyra raison "On peut aller voir sans lui faire peur. Il a eu assez de monde sur le dos."
-    noam neutre "Elen, tu viens avec moi ?"
-    elen content "Oui."
+    nyra raison "Oui. Mais évitez de débarquer à six. Il a déjà assez la tête à l'envers."
+    noam neutre "Elen, on y va ?"
+    elen content "Ouais, j'arrive."
     $ showGroup([("lysa", "neutre", 0.22), ("elen", "content", 0.49), ("noam", "neutre", 0.74)])
-    lysa neutre "Je viens aussi."
+    lysa neutre "Je viens. J'ai laissé mon café, alors il a intérêt à être debout."
     $ showGroup([("iris", "blase", 0.24), ("elen", "neutre", 0.49), ("noam", "neutre", 0.74)])
-    iris blase "Réveillez-le doucement. S'il vous engueule, vous l'aurez mérité."
+    iris blase "Dites-lui que son petit-déjeuner sera froid. Il déteste ça."
     $ hideGroup()
     jump _26_0_1_1_0_1_PORTE
 # Durée : 2m00 — Total : 2m45.
@@ -85,23 +85,24 @@ label _26_0_1_1_0_1_PORTE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     $ showGroup([("elen", "inquiet", 0.25), ("lysa", "neutre", 0.49), ("noam", "neutre", 0.73)])
-    "Elen s'arrête devant sa chambre et frappe."
-    elen neutre "Tomas ? C'est Elen. T'es réveillé ?"
+    "Elen s'arrête devant sa porte. Elle frappe deux petits coups, puis attend en souriant encore."
+    elen neutre "Tomas ? Allez, debout. C'est moi."
     pause 0.5
-    lysa reflexion "Frappe plus fort."
-    elen inquiet "Tomas ?!"
+    lysa reflexion "Il a peut-être mis quelque chose sur ses oreilles."
+    elen inquiet "Tomas ? Tu m'entends ?"
     play sound "audio/sfx_knock.mp3"
-    "Pas de réponse. Elen essaie la poignée."
-    elen surpris "C'est fermé."
-    noam neutre "De l'intérieur ?"
-    elen inquiet "Oui. Il avait dit qu'il fermerait le verrou pour être tranquille."
-    noam raison "T'as pas un accès de secours ?"
-    elen neutre "Pas quand le verrou intérieur est mis."
-    noam inquiet "Tomas ! Ouvre, s'il te plaît !"
+    "Elle essaie la poignée. Son sourire disparaît."
+    elen surpris "Ah. Il a fermé."
+    noam neutre "T'as ta tablette ?"
+    elen inquiet "Ça changera rien, il a mis le verrou. Il m'a dit qu'il ferait ça pour pas qu'on l'emmerde."
+    noam inquiet "Tomas ! C'est Noam ! Ouvre deux secondes !"
     pause 0.7
-    lysa inquiet "Ça sent pas bon."
-    elen inquiet "Je suis pas retournée dans ma chambre depuis qu'on a échangé. Je lui ai dit bonne nuit et je suis partie."
-    noam raison "D'accord. On va chercher Kael et Elias. Et Iris."
+    "Je colle l'oreille contre la porte. Rien. Même pas un mouvement."
+    lysa inquiet "Bon. Là, j'aime pas du tout."
+    elen inquiet "Il doit dormir. Il a juste... il dort vraiment profondément, des fois."
+    noam raison "Elen, recule. Je vais chercher Elias. Et Iris."
+    elen inquiet "Pourquoi Iris ?"
+    noam fatigue "Parce que je préfère qu'elle soit là."
     $ hideGroup()
     jump _26_0_1_1_0_1_DECOUVERTE
 # Durée : 1m30 — Total : 4m15.
@@ -109,88 +110,88 @@ label _26_0_1_1_0_1_PORTE:
 label _26_0_1_1_0_1_DECOUVERTE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_tense_meeting.mp3" fadein 0.7
-    "Elias arrive avec Kael. Iris n'a même pas pris le temps d'enfiler sa blouse. Elen recule pour leur laisser de la place."
+    "Elias arrive avec Kael, sa boîte à outils à moitié ouverte. Iris les suit, encore en tenue de repos. Personne ne lui a expliqué pourquoi on l'avait appelée."
     $ showGroup([("kael", "reflexion", 0.18), ("elias", "fatigue", 0.42), ("elen", "inquiet", 0.68)])
-    kael reflexion "Vous avez essayé le lecteur extérieur ?"
-    elen inquiet "Oui ! Trois fois ! Il répond pas."
-    elias raison "Si le verrou intérieur est mis, on peut pas ouvrir de dehors."
-    elen peur "Alors fais quelque chose !"
-    elias inquiet "Je vais le forcer, mais... ça va casser le mécanisme."
-    iris colere "Elias, on se fout de la serrure !"
-    elias surpris "OK ! Je fais !"
-    "Il s'agenouille devant le boîtier. L'outil ripe une première fois."
-    elen inquiet "Pourquoi ça marche pas ?"
-    elias agace "Parce que c'est pas prévu pour être ouvert comme ça ! Donne-moi dix secondes !"
-    "Je regarde la porte. Tomas est peut-être simplement endormi. C'est ce que je me répète pendant qu'Elias s'acharne."
+    kael reflexion "Il a mis le verrou intérieur ?"
+    elen inquiet "Oui. Enfin, c'est ce qu'il m'a dit hier. Vous pouvez ouvrir ?"
+    elias raison "Faut passer par le boîtier. Je vais essayer."
+    elen peur "Mais dépêche-toi !"
+    elias inquiet "Je fais ce que je peux, Elen."
+    iris colere "Elias, pousse-toi un peu, je veux être devant quand ça s'ouvre."
+    elias surpris "OK, OK."
+    "Elias s'accroupit. Il cherche une prise avec son outil, jure entre ses dents et recommence."
+    elen inquiet "Ça fait super longtemps."
+    elias agace "Ça fait vingt secondes ! Arrête de me parler, j'essaie de pas tout arracher !"
+    "J'aurais presque envie de lui dire de se calmer, mais je regarde toujours la porte. Tomas n'a pas répondu une seule fois, même avec tout ce bruit."
     play sound "audio/sfx_knock.mp3"
-    noam inquiet "Tomas ! C'est nous ! Si tu nous entends, réponds, s'il te plaît !"
-    "Personne ne répond. Elias se redresse enfin."
-    elias neutre "C'est bon. Reculez."
+    noam inquiet "Tomas ! Hé ! Réponds, même si tu veux qu'on se casse !"
+    "Rien. Elias serre les dents, tire sur le mécanisme et recule d'un coup."
+    elias neutre "C'est ouvert. Bougez pas."
     "Le verrou cède avec un claquement. Il pousse la porte."
     scene j26_elen_corps at adaptive_fullscreen with dissolve
     $ showGroup([("elen", "fatigue", 0.23), ("iris", "inquiet", 0.47), ("noam", "inquiet", 0.72)])
-    "Une odeur épouvantable me saute au visage. Je me bouche le nez et regarde autour de moi : des barquettes oubliées, des vêtements au sol, des emballages sous le bureau."
-    noam fatigue "Putain, c'est quoi, cette odeur ?"
-    elen fatigue "Je... j'avais pas rangé. Désolée..."
-    "Puis je vois Tomas."
+    "L'air est lourd. Il y a une odeur aigre, des barquettes ouvertes au pied du lit et des vêtements partout. Je commence à chercher Tomas du regard, puis j'arrête de regarder le reste."
+    noam fatigue "Oh, merde..."
+    elen fatigue "J'avais laissé des trucs partout, je..."
+    "Il est allongé sur le dos, habillé comme hier, la main pendant au bord du matelas."
     stop music fadeout 0.6
-    "Il est allongé sur le lit, dans la même tenue qu'hier. Une de ses mains dépasse du drap."
     pause 0.7
     noam inquiet "Tomas ?"
-    "Je m'approche. Sa chemise est trempée. Ses cheveux sont collés à son front."
-    noam peur "Hé. Tomas, réveille-toi."
+    "Je lui touche l'épaule. Son t-shirt est trempé et ses cheveux collent à son front."
+    noam peur "Hé... c'est pas drôle. Tomas ?"
     $ showGroup([("iris", "inquiet", 0.24), ("elen", "peur", 0.50), ("noam", "peur", 0.76)])
-    elen peur "Il fait quoi ? Pourquoi il bouge pas ?"
-    noam panique "Tomas ! Hé, tu m'entends ?!"
-    iris determine "Noam, laisse-moi passer !"
-    "Elle lui prend le poignet, puis pose deux doigts contre son cou."
-    elen inquiet "Alors ?"
+    elen peur "Pourquoi il a pas enlevé sa veste ? Tomas, t'as trop chaud ?"
+    noam panique "Réveille-toi !"
+    iris determine "Noam. Pousse-toi."
+    "Elle se penche sur lui, cherche son pouls, puis vérifie sa respiration. Je me retrouve derrière elle sans me souvenir d'avoir bougé."
+    elen inquiet "Iris ?"
     iris determine "Attends."
     pause 0.5
-    "Iris se penche près de son visage. Elle ne dit rien."
-    elen peur "Iris !"
-    iris inquiet "Je trouve pas de pouls."
+    "Iris vérifie une seconde fois. Elle a cessé de nous regarder."
+    elen peur "Dis quelque chose !"
+    iris inquiet "Je sens rien..."
     noam surpris "Quoi ?"
-    iris determine "Il respire pas. Reculez, s'il vous plaît."
+    iris determine "Noam, recule. S'il te plaît."
     "Elle vérifie encore. J'entends Elen demander quelque chose, mais je n'arrive pas à suivre."
     "Sael arrive et rejoint Iris près du lit. Toutes les deux échangent quelques mots à voix basse."
     $ showGroup([("sael", "triste", 0.21), ("elen", "peur", 0.48), ("noam", "vide", 0.74)])
-    elen inquiet "Vous allez le réveiller, hein ?"
-    sael triste "Elen..."
-    elen peur "Non. Dis pas ça."
-    sael triste "Je suis désolée. Il est mort."
+    elen inquiet "Vous faites quoi ? Pourquoi vous lui parlez pas ?"
+    sael triste "Elen, viens avec moi."
+    elen peur "Non. Non, attends. Iris, t'as pas fini, hein ?"
+    "Iris ne répond pas tout de suite. Sael baisse les yeux."
+    sael triste "Elen... Tomas est mort."
     pause 1.0
-    elen peur "Non ! Non, tu te trompes ! Il dormait, c'est tout !"
+    elen peur "Non. Attends. Tu peux pas savoir aussi vite."
     noam vide "..."
-    elen colere "Vous pouvez pas juste le laisser comme ça ! Faites quelque chose !"
-    sael inquiet "On a vérifié. Elen, je suis désolée."
-    "Elen essaie de s'approcher, mais ses jambes semblent lâcher. Lysa, revenue derrière nous, la retient par les épaules."
+    elen colere "Mais essayez encore ! Vous avez essayé quoi, là ?!"
+    sael inquiet "On a vérifié, Elen. Je suis désolée."
+    "Elen avance vers le lit comme pour refaire elle-même ce qu'Iris vient de faire, mais Lysa la rattrape avant qu'elle trébuche."
     $ showGroup([("lysa", "inquiet", 0.22), ("elen", "triste", 0.49), ("noam", "vide", 0.76)])
-    elen triste "Je lui ai donné ma chambre..."
-    elen peur "Je voulais juste qu'il soit tranquille. C'est tout."
-    "Elle cherche le visage de Tomas derrière nous, comme si elle espérait qu'il allait soudain se redresser."
+    elen triste "Il a même pas défait le lit..."
+    elen peur "Je lui avais dit qu'il pouvait prendre des affaires dans l'armoire s'il voulait."
+    "Elle regarde Tomas, puis sa propre main, qui tient encore la carte d'accès de sa chambre."
     pause 0.6
-    lysa inquiet "Viens. On sort une minute."
-    elen peur "Mais il est là !"
-    lysa triste "Je sais. Viens juste avec moi."
+    lysa inquiet "Viens, Elen. Viens dans le couloir."
+    elen peur "Mais il va être tout seul."
+    lysa triste "Iris est avec lui. Allez, viens."
     "Elen finit par se laisser entraîner dans le couloir. Je reste devant le lit. Je pourrais compter les secondes qui passent, mais je sais plus depuis combien de temps je suis là."
     "Une main se pose sur mon épaule. C'est Iris."
     $ showGroup([("iris", "fatigue", 0.31), ("noam", "vide", 0.66)])
-    iris fatigue "Noam. Tu peux sortir aussi ? J'ai besoin de place."
+    iris fatigue "Noam. Tu peux sortir ? J'ai besoin que tu me laisses travailler."
     noam fatigue "Je lui ai parlé hier."
     iris triste "Je sais."
-    noam inquiet "Il était... il allait pas bien, mais il cherchait encore des trucs, il..."
-    iris triste "Noam, s'il te plaît. Va t'asseoir."
+    noam inquiet "Il cherchait encore ce truc sur Keyper. Il m'en parlait, il..."
+    iris triste "Je sais, Noam. Écoute... va t'asseoir un peu. Je viens te voir après."
     "Je sors. Sur le seuil, je croise Nyra qui vient d'arriver."
     $ showGroup([("nyra", "inquiet", 0.30), ("noam", "fatigue", 0.69)])
-    nyra inquiet "Qu'est-ce qui s'est passé ?"
-    noam fatigue "Tomas est mort."
+    nyra inquiet "C'est Tomas ? Qu'est-ce qu'il a ?"
+    noam fatigue "Il est mort."
     nyra peur "..."
-    nyra inquiet "Merde."
-    "Elle jette un coup d'œil dans la chambre, puis détourne les yeux."
-    nyra reflexion "L'odeur est horrible. Il faudrait laisser la porte ouverte pour aérer."
-    iris fatigue "Oui... Je veux juste que vous ne touchiez à rien pour l'instant."
-    nyra raison "D'accord."
+    nyra inquiet "Oh, merde."
+    "Elle regarde derrière moi. Je crois qu'elle va entrer, mais elle s'arrête sur le seuil."
+    nyra reflexion "Ça sent... vous devriez peut-être ouvrir un peu."
+    iris fatigue "Pas tout de suite. Laissez-moi finir ici."
+    nyra raison "Oui. Pardon."
     $ hideGroup()
     jump _26_0_1_1_0_1_APRES_CHOC
 
