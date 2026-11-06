@@ -1954,7 +1954,7 @@ translate english 3d5e03d8:
 translate english j19_chasse_noam_non:
 
     # noam determine "Non." id j19_chasse_noam_non
-    noam determine "" id j19_chasse_noam_non
+    noam determine "No." id j19_chasse_noam_non
 
 # game/scenario/19_0_1_1_0.rpy:701
 translate english eef62ad7:
@@ -2236,7 +2236,7 @@ translate english 5a94868e:
 translate english j19_conduit_presque:
 
     # think "Presque." id j19_conduit_presque
-    think "" id j19_conduit_presque
+    think "Almost." id j19_conduit_presque
 
 # game/scenario/19_0_1_1_0.rpy:838
 translate english 98c3e4af:
@@ -2404,7 +2404,7 @@ translate english 65a895dd:
 translate english j19_cadavre_non_1:
 
     # think "Non." id j19_cadavre_non_1
-    think "" id j19_cadavre_non_1
+    think "No." id j19_cadavre_non_1
 
 # game/scenario/19_0_1_1_0.rpy:920
 translate english 4dcc3050:
