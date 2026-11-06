@@ -1036,13 +1036,13 @@ translate english 16931904:
 translate english c312a052:
 
     # kami "Je vois que vous vous êtes parfaitement acclimatés à mon retour."
-    kami "I see you've adjusted perfectly to my return."
+    kami "I see you've adjusted beautifully to having me back."
 
 # game/scenario/10_0_1_1.rpy:587
 translate english 78773105:
 
     # kami "Oh, en parlant de climat..."
-    kami "Oh, speaking of climate..."
+    kami "Oh! Speaking of getting comfortable..."
 
 # game/scenario/10_0_1_1.rpy:590
 translate english 98f8263d:
@@ -1066,7 +1066,7 @@ translate english 0a084c74:
 translate english 25b520c8:
 
     # kami "Cela explique votre température fort peu élégante, mais je vous laisse vos petits problèmes techniques. J'ai mieux à faire."
-    kami "That explains your rather inelegant temperature, but I'll leave you to your little technical problems. I have better things to do."
+    kami "That explains why it's so ridiculously hot in there. Anyway, I'll leave you to your little technical headaches. I've got better things to do."
 
 # game/scenario/10_0_1_1.rpy:599
 translate english cad8b995:
@@ -1078,7 +1078,7 @@ translate english cad8b995:
 translate english 0ccf7b36:
 
     # kami "Revenons à votre performance d'hier."
-    kami "Now, back to your performance yesterday."
+    kami "Now, let's talk about yesterday's performance."
 
 # game/scenario/10_0_1_1.rpy:603
 translate english d95c76e1:
@@ -1114,7 +1114,7 @@ translate english 88429e05:
 translate english ad449429:
 
     # kami "Et malgré vos efforts, vous êtes presque tous encore fonctionnels."
-    kami "And despite your best efforts, almost all of you are still functional."
+    kami "And despite your best efforts, most of you are still in working order."
 
 # game/scenario/10_0_1_1.rpy:619
 translate english f8b87d3c:
@@ -1300,7 +1300,7 @@ translate english e2bf9e0c:
 translate english e887d43a:
 
     # kami "Un vote favorable légalisera leur possession, leur fabrication et leur utilisation."
-    kami "A vote in favor will legalize owning them, making them and using them."
+    kami "A yes vote will legalize their possession, manufacture, and use."
 
 # game/scenario/10_0_1_1.rpy:714
 translate english 04445c03:
@@ -1318,7 +1318,7 @@ translate english a98e4f43:
 translate english a30f0380:
 
     # kami "Broyée, pour être précise. Je ne voudrais pas que vous sous-estimiez la sanction."
-    kami "Pulverized, to be precise. I wouldn't want you underestimating the penalty."
+    kami "Crushed to rubble, to be precise. Wouldn't want anyone underestimating the penalty."
 
 # game/scenario/10_0_1_1.rpy:721
 translate english e4dbb339:
@@ -1354,7 +1354,7 @@ translate english 4e44bcd9:
 translate english 61975b5e:
 
     # kami "Sans brouilleurs, je détecte immédiatement une infraction. Avec eux, certains vilains pourraient agir hors de mon regard."
-    kami "Without jammers, I detect a violation instantly. With them, certain naughty people could act outside my gaze."
+    kami "Without jammers, I catch every violation immediately. With them, some naughty little troublemakers might slip out of sight."
 
 # game/scenario/10_0_1_1.rpy:740
 translate english 19aca9ea:
@@ -1372,7 +1372,7 @@ translate english 9c3feccd:
 translate english d37cb8ef:
 
     # kami "Oh, Mara... Tu sous-estimes les plaisirs de l'observation."
-    kami "Oh, Mara... You underestimate the pleasures of observation."
+    kami "Oh, Mara... You have no idea what you're missing. Watching people is such fun."
 
 # game/scenario/10_0_1_1.rpy:748
 translate english b0edbc17:
@@ -1432,7 +1432,7 @@ translate english 177bbdcb:
 translate english bffd0350:
 
     # kami "Ce sera pourtant votre décision. Et vous en assumerez les conséquences."
-    kami "And yet it will be your decision. And you'll live with the consequences."
+    kami "But it'll be your decision. And you'll have to live with the consequences."
 
 # game/scenario/10_0_1_1.rpy:794
 translate english 64ab7554:
