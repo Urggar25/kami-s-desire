@@ -2160,13 +2160,13 @@ translate english 96a0dae2:
 translate english a7d8b0aa:
 
     # "Je sens quelque chose craquer en moi."
-    "All this talk... all these noble speeches... while someone in this very room deleted the camera footage."
+    "Something inside me snaps."
 
 # game/scenario/12_0_1_1.rpy:922
 translate english 1f93a022:
 
     # "Toutes ces discussions… ces belles paroles… alors que quelqu’un, ici, a effacé les images des caméras."
-    "Silence falls over the room. Everyone turns toward me, stunned."
+    "All this talk... all these noble speeches... while someone in this very room deleted the camera footage."
 
 # game/scenario/12_0_1_1.rpy:924
 translate english a845a560:
@@ -2178,7 +2178,7 @@ translate english a845a560:
 translate english 871d58e5:
 
     # "Le silence tombe d’un coup sur la salle. Tout le monde se tourne vers moi, stupéfait."
-    "A deathly silence settles over the room."
+    "Silence falls over the room. Everyone turns toward me, stunned."
 
 # game/scenario/12_0_1_1.rpy:929
 translate english 08c546e4:
@@ -2238,7 +2238,7 @@ translate english 8d59a8d6:
 translate english f50befd6:
 
     # "Un silence de plomb s’abat sur la salle."
-    "A traitor? Seriously?!"
+    "A deathly silence settles over the room."
 
 # game/scenario/12_0_1_1.rpy:944
 translate english f04a334b:
