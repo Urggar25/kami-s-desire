@@ -5374,3 +5374,47 @@ translate english 26f24bd0_2:
     # "Puis plus rien."
     "Then nothing."
 
+
+# Missing current-source dialogue translation units (reviewed 2026-11-06)
+
+# game/scenario/15_0_1_1_0.rpy:358
+translate english 96312e1b:
+
+    # noam "Pourquoi moi ?"
+    noam "Why me?"
+
+# game/scenario/15_0_1_1_0.rpy:371
+translate english cbcaad30:
+
+    # kael triste "Je sais."
+    kael triste "I know."
+
+# game/scenario/15_0_1_1_0.rpy:403
+translate english 70563e82:
+
+    # noam "Et après ?"
+    noam "And after that?"
+
+# game/scenario/15_0_1_1_0.rpy:413
+translate english 3a6a1e92:
+
+    # noam "Attends."
+    noam "Wait."
+
+# game/scenario/15_0_1_1_0.rpy:499
+translate english f9540532:
+
+    # "Je n’ai rien à répondre à ça."
+    "I have no answer to that."
+
+# game/scenario/15_0_1_1_0.rpy:581
+translate english 290dd969:
+
+    # noam "Non."
+    noam "No."
+
+# game/scenario/15_0_1_1_0.rpy:758
+translate english cbcaad30_1:
+
+    # kael triste "Je sais."
+    kael triste "I know."
