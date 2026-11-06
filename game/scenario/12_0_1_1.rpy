@@ -91,7 +91,7 @@ screen pnc_chambre_j12():
         xalign 0.5 yalign 0.04
         background Solid("#071722DC")
         padding (18, 10)
-        text "FOUILLER LA CHAMBRE  ·  [len(pnc_flags)]/3 INDICES MINIMUM" size 18 color "#DCEFFC"
+        text _("FOUILLER LA CHAMBRE  ·  [len(pnc_flags)]/3 INDICES MINIMUM") size 18 color "#DCEFFC"
 
 # ==================== MINILABELS ====================
 
