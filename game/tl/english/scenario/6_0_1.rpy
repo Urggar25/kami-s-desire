@@ -1369,7 +1369,7 @@ translate english 079454da:
 translate english fd07f7e0:
 
     # lysa "Peut-être ?"
-    lysa "May be?"
+    lysa "Maybe?"
 # game/scenario/6_0_1.rpy:848
 translate english a7877dc3:
 
@@ -1684,7 +1684,7 @@ translate english 241a7a88:
 translate english 318f460d:
 
     # ryn "Le principe vient de disparaître sous une tonne de bugs !"
-    ryn "The principle just vanished under a ton of glitches!"
+    ryn "Your precious principles just got buried under a mountain of glitches!"
 # game/scenario/6_0_1.rpy:965
 translate english d19d047e:
 
@@ -1934,7 +1934,7 @@ translate english 680d2e03:
 translate english f0314092:
 
     # ryn "On a voté contre parce que Kami était en train de péter les plombs en direct."
-    ryn "We voted no because Kami was losing her mind live on air."
+    ryn "We voted no because Kami was having a full-blown meltdown on live TV."
 # game/scenario/6_0_1.rpy:1162
 translate english e267945e:
 
@@ -2670,7 +2670,7 @@ translate english 6ee7c152:
 translate english 2f3093a2:
 
     # kami "Les jouets se cassent toujours plus vite une fois qu'on commence à jouer sérieusement avec eux."
-    kami "Toys always break faster once you start playing with them seriously."
+    kami "Toys break so much faster when you really start playing with them."
 # game/scenario/6_0_1.rpy:90
 translate english 0dde1b8d:
 
@@ -3065,7 +3065,7 @@ translate english c7c75232:
 translate english d5f90cce:
 
     # kami "Interaction insuffisante. Les gens n'aiment pas !"
-    kami "Insufficient interaction. People don't like it!"
+    kami "Not enough audience interaction! Our viewers are bored!"
 # game/scenario/6_0_1.rpy:450
 translate english f1fdfff1:
 
