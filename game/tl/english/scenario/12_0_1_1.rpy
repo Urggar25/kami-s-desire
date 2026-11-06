@@ -2340,73 +2340,73 @@ translate english 7eae5332:
 translate english c4453e92:
 
     # noam colere "Non ! Je ne respire plus !"
-    noam colere ""
+    noam colere "No! I'm DONE breathing!"
 
 # game/scenario/12_0_1_1.rpy:970
 translate english 47a74492:
 
     # noam fatigue "Quelqu’un ici joue un double jeu !"
-    noam fatigue ""
+    noam fatigue "Someone here is playing both sides!"
 
 # game/scenario/12_0_1_1.rpy:971
 translate english 7dab1482:
 
     # noam colere "Quelqu’un qui sourit, qui vote avec nous, qui fait semblant de s’inquiéter pour moi… et qui efface des preuves dans mon dos !"
-    noam colere ""
+    noam colere "Someone who smiles, votes with us, pretends to care about me... and deletes evidence behind my back!"
 
 # game/scenario/12_0_1_1.rpy:973
 translate english 038985c5:
 
     # iris inquiet "Noam, arrête… Tu es épuisé, tu as fait un malaise hier, tu—"
-    iris inquiet ""
+    iris inquiet "Noam, stop... You're exhausted, you collapsed yesterday, you—"
 
 # game/scenario/12_0_1_1.rpy:975
 translate english 89edab05:
 
     # noam colere "Ne me dis pas que je suis épuisé, Iris !"
-    noam colere ""
+    noam colere "Don't tell me I'm exhausted, Iris!"
 
 # game/scenario/12_0_1_1.rpy:976
 translate english 1dfaad8f:
 
     # noam colere "Je sais ce que j’ai vu !"
-    noam colere ""
+    noam colere "I KNOW what I saw!"
 
 # game/scenario/12_0_1_1.rpy:977
 translate english 70685222:
 
     # noam peur "Et je sais qu’un de vous ment !"
-    noam peur ""
+    noam peur "And I know one of you is lying!"
 
 # game/scenario/12_0_1_1.rpy:979
 translate english c0c329bd:
 
     # sael mefiant "Et tu accuses qui exactement ? Balance un nom si tu es si sûr de toi !"
-    sael mefiant ""
+    sael mefiant "Then who exactly are you accusing? Name names if you're so damn sure!"
 
 # game/scenario/12_0_1_1.rpy:981
 translate english 434663b1:
 
     # noam triste "Je ne sais pas encore qui !"
-    noam triste ""
+    noam triste "I don't know who yet!"
 
 # game/scenario/12_0_1_1.rpy:982
 translate english 8e88a10a:
 
     # noam colere "Mais je sais que c’est l’un d’entre vous !"
-    noam colere ""
+    noam colere "But I know it's one of you!"
 
 # game/scenario/12_0_1_1.rpy:983
 translate english 6466c253:
 
     # noam fatigue "Je ne sais pas ! Mais quelqu’un ici est un traître !"
-    noam fatigue ""
+    noam fatigue "I don't know! But someone in this room is a traitor!"
 
 # game/scenario/12_0_1_1.rpy:985
 translate english 9035c982:
 
     # julian hesitation "Woah woah… Noam, tu dérapes là…"
-    julian hesitation ""
+    julian hesitation "Whoa, whoa... Noam, you're going too far..."
 
 # game/scenario/12_0_1_1.rpy:986
 translate english ab9cb975:
@@ -2418,43 +2418,43 @@ translate english ab9cb975:
 translate english 781f58cc:
 
     # elen inquiet "Noam… on est tous avec toi. On s’est inquiétés pour toi hier…"
-    elen inquiet ""
+    elen inquiet "Noam... we're all on your side. We were worried about you yesterday..."
 
 # game/scenario/12_0_1_1.rpy:990
 translate english 6b132f7f:
 
     # lysa inquiet "Personne ne gagne quoi que ce soit à te voir t’effondrer devant nous."
-    lysa inquiet ""
+    lysa inquiet "Nobody has anything to gain from watching you fall apart in front of us."
 
 # game/scenario/12_0_1_1.rpy:992
 translate english 2eebe8e5:
 
     # elias fatigue "Et personne ne devrait voter pendant que tout le monde se jauge comme ça."
-    elias fatigue ""
+    elias fatigue "And we shouldn't be voting while everyone's looking at everyone else like this."
 
 # game/scenario/12_0_1_1.rpy:994
 translate english b4afc268:
 
     # noam fatigue "Arrêtez avec ça !"
-    noam fatigue ""
+    noam fatigue "Stop saying that!"
 
 # game/scenario/12_0_1_1.rpy:995
 translate english 23389a21:
 
     # noam inquiet "Je ne veux plus entendre que vous vous inquiétez pour moi !"
-    noam inquiet ""
+    noam inquiet "I don't want to hear how worried you are about me!"
 
 # game/scenario/12_0_1_1.rpy:996
 translate english 30fcc5d4:
 
     # noam colere "L’un de vous a supprimé ces images ! L’un de vous cache quelque chose !"
-    noam colere ""
+    noam colere "One of you deleted that footage! One of you is hiding something!"
 
 # game/scenario/12_0_1_1.rpy:997
 translate english 1623564f:
 
     # noam culpabilite "Et vous êtes tous là à débattre tranquillement sur les brouilleurs comme si rien ne s’était passé !"
-    noam culpabilite ""
+    noam culpabilite "And you're all sitting here calmly debating jammers as if nothing happened!"
 
 # game/scenario/12_0_1_1.rpy:999
 translate english c7b10d8e:
@@ -2466,19 +2466,19 @@ translate english c7b10d8e:
 translate english af7ddc77:
 
     # nyra raison "Noam… si ce que tu dis est vrai, on doit en parler calmement. Accuser tout le monde ne nous aidera pas."
-    nyra raison ""
+    nyra raison "Noam... if what you're saying is true, we need to discuss it calmly. Accusing everybody won't help."
 
 # game/scenario/12_0_1_1.rpy:1003
 translate english 41916bc0:
 
     # noam colere "Calmement ?!"
-    noam colere ""
+    noam colere "Calmly?!"
 
 # game/scenario/12_0_1_1.rpy:1004
 translate english 23853dbe:
 
     # noam desaccord "Comment tu veux que je sois calme ?!"
-    noam desaccord ""
+    noam desaccord "How the hell am I supposed to stay calm?!"
 
 # game/scenario/12_0_1_1.rpy:1006
 translate english ab9a033e:
@@ -2490,7 +2490,7 @@ translate english ab9a033e:
 translate english 359bb9fe:
 
     # iris inquiet "Noam… regarde-moi."
-    iris inquiet ""
+    iris inquiet "Noam... look at me."
 
 # game/scenario/12_0_1_1.rpy:1009
 translate english b4a9cd35:
@@ -2502,13 +2502,13 @@ translate english b4a9cd35:
 translate english b404f4bc:
 
     # noam panne "... Une équipe ?"
-    noam panne ""
+    noam panne "...A team?"
 
 # game/scenario/12_0_1_1.rpy:1012
 translate english 3eed4528:
 
     # noam peur "Une équipe où quelqu’un poignarde les autres dans le dos."
-    noam peur ""
+    noam peur "A team where someone stabs the others in the back."
 
 # game/scenario/12_0_1_1.rpy:1014
 translate english b1956a36:
@@ -2526,37 +2526,37 @@ translate english 003ffbe6:
 translate english 04659524:
 
     # noam fatigue "J’en ai marre."
-    noam fatigue ""
+    noam fatigue "I'm sick of this."
 
 # game/scenario/12_0_1_1.rpy:1024
 translate english bb183b49:
 
     # iris inquiet "Noam…"
-    iris inquiet ""
+    iris inquiet "Noam..."
 
 # game/scenario/12_0_1_1.rpy:1026
 translate english 3ee7b7fe_1:
 
     # noam colere "Non."
-    noam colere ""
+    noam colere "No."
 
 # game/scenario/12_0_1_1.rpy:1027
 translate english 0e707aa0:
 
     # noam fatigue "Ce débat ne mène nulle part."
-    noam fatigue ""
+    noam fatigue "This debate is going nowhere."
 
 # game/scenario/12_0_1_1.rpy:1029
 translate english fbdb4837:
 
     # tomas inquiet "On n’a pas fini le vote."
-    tomas inquiet ""
+    tomas inquiet "We haven't finished voting."
 
 # game/scenario/12_0_1_1.rpy:1031
 translate english 492ed03e:
 
     # noam desaccord "Alors finissez-le sans moi."
-    noam desaccord ""
+    noam desaccord "Then finish without me."
 
 # game/scenario/12_0_1_1.rpy:1033
 translate english 96aae473_1:
@@ -2622,7 +2622,7 @@ translate english 6a35a18e:
 translate english 9a451c8d:
 
     # noam fatigue "Putain…"
-    noam fatigue ""
+    noam fatigue "Fuck..."
 
 # game/scenario/12_0_1_1.rpy:1060
 translate english 6a9be978:
