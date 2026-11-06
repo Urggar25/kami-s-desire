@@ -822,13 +822,13 @@ translate english decouverte_salle_maintenance_de7855ba:
 translate english decouverte_salle_maintenance_9a27c68d:
 
     # think "Au moins, on sait à quoi sert cette salle."
-    think ""
+    think "At least we know what this room is for."
 
 # game/scenario/salles/maintenance.rpy:129
 translate english decouverte_salle_maintenance_7ae1ee1f:
 
     # think "Vu l'état du monde, ils auraient du boulot."
-    think ""
+    think "With the world in this state, they'd have plenty of work."
 
 # game/scenario/salles/maintenance.rpy:181
 translate english decouverte_salle_maintenance_6882477a:
@@ -852,7 +852,7 @@ translate english decouverte_salle_maintenance_c1037db7:
 translate english decouverte_salle_maintenance_1ec62ce3:
 
     # "Son regard revient sur les armoires électriques. Il vérifie un écran, puis un autre."
-    ""
+    "His gaze returns to the electrical cabinets. He checks one monitor, then another."
 
 # game/scenario/salles/maintenance.rpy:192
 translate english decouverte_salle_maintenance_0abc4d16:
