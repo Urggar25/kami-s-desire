@@ -179,8 +179,8 @@ label _26_0_1_1_0_1_DECOUVERTE:
     noam vide "..."
     elen colere "Mais essayez encore ! Vous avez essayé quoi, là ?!"
     sael inquiet "On a vérifié, Elen. Je suis désolée."
-    "Elen avance vers le lit comme pour refaire elle-même ce qu'Iris vient de faire, mais Lysa la rattrape avant qu'elle trébuche."
-    $ showGroup([("kael", "reflexion", 0.070), ("elias", "fatigue", 0.213), ("elen", "triste", 0.357), ("iris", "inquiet", 0.500), ("noam", "vide", 0.643), ("sael", "triste", 0.787), ("lysa", "inquiet", 0.930)])
+    "Elen avance vers le lit comme pour refaire elle-même ce que Sael vient de faire, mais Lysa la rattrape avant qu'elle trébuche."
+    $ showGroup([("kael", "reflexion", 0.06), ("elias", "fatigue", 0.207), ("elen", "triste", 0.353), ("sael", "triste", 0.500), ("noam", "vide", 0.647), ("lysa", "inquiet", 0.793), ("nyra", "inquiet", 0.94)])
     elen triste "Il a même pas défait le lit..."
     elen peur "Je lui avais dit qu'il pouvait prendre des affaires dans l'armoire s'il voulait."
     "Elle regarde Tomas, puis sa propre main, qui tient encore la carte d'accès de sa chambre."
@@ -255,7 +255,7 @@ label _26_0_1_1_0_1_APRES_CHOC:
     "Je m'assois de l'autre côté du couloir. Personne n'a vraiment envie de retourner à la cafétéria."
     pause 0.5
     "Quand Sael ressort enfin, elle semble aussi épuisée que nous."
-    $ showGroup([("elen", "peur", 0.070), ("lysa", "inquiet", 0.166), ("noam", "fatigue", 0.261), ("julian", "inquiet", 0.357), ("mara", "agace", 0.452), ("kael", "inquiet", 0.548), ("elias", "fatigue", 0.643), ("ryn", "inquiet", 0.739), ("nyra", "inquiet", 0.834), ("iris", "fatigue", 0.930)])
+    $ showGroup([("elen", "peur", 0.070), ("lysa", "inquiet", 0.166), ("noam", "fatigue", 0.261), ("julian", "inquiet", 0.357), ("mara", "agace", 0.452), ("kael", "inquiet", 0.548), ("elias", "fatigue", 0.643), ("ryn", "inquiet", 0.739), ("nyra", "inquiet", 0.834), ("sael", "fatigue", 0.930)])
     sael fatigue "On va l'emmener à l'infirmerie. Mais je veux d'abord des photos de la chambre."
     noam reflexion "Sael... il est mort de quoi ?"
     sael inquiet "Je n'en sais rien, Noam."
@@ -315,7 +315,7 @@ init 10 python:
         "cafeteria": {
             "title": "CAFÉTÉRIA",
             "background": "bg_cafeteria",
-            "description": "Julian et Nyra sont restés ici après la découverte.",
+            "description": "Julian et Nyra sont revenus à la cafétéria après la découverte.",
             "actions": [
                 "julian",
                 "nyra"
@@ -363,7 +363,7 @@ init 10 python:
     J26A_ACTIONS = {
         "flacon": {
             "title": "Examiner le flacon",
-            "description": "Observer et photographier le flacon, sans perturber le travail d'Iris.",
+            "description": "Observer et photographier le flacon, sans perturber le travail de Sael.",
             "label": "_26_0_1_1_0_1_PA_FLACON",
             "evidence": "j26_tomas_flacon"
         },
@@ -374,7 +374,7 @@ init 10 python:
             "evidence": "j26_tomas_aeration"
         },
         "iris": {
-            "title": "Parler à Iris",
+            "title": "Parler à Sael",
             "description": "Demander ce que les constatations permettent réellement de conclure.",
             "label": "_26_0_1_1_0_1_PA_IRIS",
             "evidence": "j26_tomas_rapport"
@@ -433,7 +433,7 @@ init 10 python:
         "j26_photo_dechets": {"category": "preuves", "title": "DÉCHETS DANS LA CHAMBRE", "desc": "Barquettes, emballages et affaires abandonnées : une odeur forte régnait dans la chambre.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_corps"},
         "j26_photo_verrou": {"category": "preuves", "title": "PORTE VERROUILLÉE", "desc": "Elias a dû forcer le mécanisme engagé depuis l'intérieur pour entrer dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "CONSTATATION", "manual_only": True},
         "j26_photo_grille": {"category": "preuves", "title": "PLAQUE DEVANT L'AÉRATION", "desc": "Une plaque de protection ferme le passage physique dans la bouche d'aération ; l'air peut toujours circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_vide"},
-        "j26_photo_flacon_detail": {"category": "preuves", "title": "PHOTO — ÉTIQUETTE DES SOMNIFÈRES", "desc": "Cliché complémentaire du flacon examiné avec Iris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True},
+        "j26_photo_flacon_detail": {"category": "preuves", "title": "PHOTO — ÉTIQUETTE DES SOMNIFÈRES", "desc": "Cliché complémentaire du flacon examiné avec Sael.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True},
         "j26_photo_grille_detail": {"category": "preuves", "title": "PHOTO — FIXATIONS DE L'AÉRATION", "desc": "Cliché complémentaire des attaches de la plaque dans la chambre d'Elen.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True},
         "j26_photo_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES PRESQUE VIDE", "desc": "Un flacon presque vide a été retrouvé parmi les affaires de la chambre. Rien ne prouve que Tomas en ait pris.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "j26_elen_flacon"},
         "j26_core_mort": {"category": "evenements", "title": "DÉCOUVERTE DU CORPS", "desc": "Tomas a été retrouvé mort dans la chambre d'Elen, derrière une porte verrouillée de l'intérieur.", "day": "J26", "origin": "DORTOIRS", "status": "CONFIRMÉ", "manual_only": True},
@@ -441,9 +441,9 @@ init 10 python:
         "j26_tomas_flacon": {"category": "preuves", "title": "FLACON DE SOMNIFÈRES", "desc": "Un flacon presque vide a été découvert près du lit. Rien ne prouve que Tomas a pris ces comprimés.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_aeration": {"category": "preuves", "title": "GRILLE D'AÉRATION", "desc": "Une plaque empêche physiquement le passage par la grille, mais laisse l'air circuler.", "day": "J26", "origin": "CHAMBRE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_rapport": {"category": "hypotheses", "title": "CAUSE DU DÉCÈS INCERTAINE", "desc": "Sael a constaté une sudation importante et aucune blessure évidente. Elle ne confirme ni suicide ni empoisonnement.", "day": "J26", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
-        "j26_tomas_echange": {"category": "evenements", "title": "ÉCHANGE DE CHAMBRES", "desc": "Tomas et Elen ont échangé leurs chambres pour éviter des visiteurs hostiles. Elen nie être revenue chez elle la nuit.", "day": "J26", "origin": "TÉMOIGNAGE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
+        "j26_tomas_echange": {"category": "evenements", "title": "ÉCHANGE DE CHAMBRES", "desc": "Tomas et Elen ont échangé leurs chambres pour éviter des visiteurs hostiles. Elen a entendu quelqu'un tambouriner à la porte de Tomas sans voir qui. Elle nie être revenue chez elle la nuit.", "day": "J26", "origin": "TÉMOIGNAGE D'ELEN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_alibi_sael": {"category": "personnes", "title": "ALIBI DE SAEL", "desc": "Sael dit avoir passé une partie de la soirée à l'infirmerie, sans témoin constant.", "day": "J26", "origin": "TÉMOIGNAGE DE SAEL", "status": "À VÉRIFIER", "manual_only": True},
-        "j26_tomas_alibi_julian": {"category": "personnes", "title": "ALIBI DE JULIAN", "desc": "Julian dit avoir été avec Ryn et Mara puis être rentré. Il nie avoir connu l'échange de chambres.", "day": "J26", "origin": "TÉMOIGNAGE DE JULIAN", "status": "À VÉRIFIER", "manual_only": True},
+        "j26_tomas_alibi_julian": {"category": "personnes", "title": "ALIBI DE JULIAN", "desc": "Julian dit avoir passé la soirée avec Ryn et Mara, mais se montre très mal à l'aise sur la suite de sa nuit. Il nie avoir connu l'échange de chambres.", "day": "J26", "origin": "TÉMOIGNAGE DE JULIAN", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_alibi_nyra": {"category": "personnes", "title": "ALIBI DE NYRA", "desc": "Nyra dit être allée se coucher après sa rencontre avec Noam dans le couloir. Aucun témoin ne confirme la nuit entière.", "day": "J26", "origin": "TÉMOIGNAGE DE NYRA", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_verrou": {"category": "preuves", "title": "VERROU INTÉRIEUR", "desc": "Elias a forcé le verrou engagé depuis l'intérieur. Les protections d'aération sont en place.", "day": "J26", "origin": "MAINTENANCE", "status": "À VÉRIFIER", "manual_only": True},
         "j26_tomas_alibi_ryn": {"category": "personnes", "title": "ALIBI DE RYN", "desc": "Ryn dit avoir passé la soirée avec Julian et Mara puis être allé dormir.", "day": "J26", "origin": "TÉMOIGNAGE DE RYN", "status": "À VÉRIFIER", "manual_only": True},
@@ -501,7 +501,7 @@ label _26_0_1_1_0_1_DECOUVERTE_FLACON:
     sael fatigue "Je ne sais même pas s'il en a pris un seul."
     noam inquiet "Hier soir, il était vraiment pas bien..."
     sael raison "Justement. Ne tire pas de conclusion avant qu'on ait des résultats."
-    "Elle le place soigneusement dans un sachet de prélèvement."
+    "Sael prépare un sachet, puis laisse le flacon en place pour une dernière photographie de l'étiquette."
     noam fatigue "D'accord."
     $ j26_alt_flacon = True
     $ hideGroup()
@@ -652,15 +652,19 @@ label _26_0_1_1_0_1_PA_ELEN:
     lysa inquiet "Et toi ?"
     elen triste "Je lui ai dit que j'avais pas peur d'une bande d'idiots qui tapent aux portes. Il a rigolé un peu, même."
     "Elle tire sur le bord de la couverture."
+    noam raison "Et ces coups à la porte de Tomas, tu les as entendus quand ?"
+    elen inquiet "Avant qu'on échange. Je passais devant sa chambre et quelqu'un tambourinait dessus. C'était violent, pas juste quelqu'un qui frappait pour discuter."
+    noam reflexion "T'as vu qui c'était ?"
+    elen fatigue "Non. Je voulais pas me mêler d'une autre dispute. J'ai continué mon chemin."
     noam raison "Après, vous avez fait quoi ?"
-    elen fatigue "Rien. On s'est souhaité bonne nuit. Moi, je suis allée dans sa chambre, et j'en ai pas bougé."
+    elen fatigue "On s'est souhaité bonne nuit. Moi, je suis allée dans sa chambre, et j'en ai pas bougé."
     noam neutre "Vous étiez seuls quand vous en avez parlé ?"
     elen reflexion "Je sais pas. On était dans le couloir. Des gens passaient, je crois. Pourquoi ?"
     noam inquiet "Je me demandais juste qui était au courant."
     elen fatigue "Tu penses que quelqu'un a attendu qu'il aille dans ma chambre ?"
     noam fatigue "J'en sais rien, Elen."
     "Lysa me lance un regard noir. Je m'en veux aussitôt de ne pas avoir arrêté plus tôt."
-    noam inquiet "Le petit flacon qu'Iris a trouvé, c'était à toi ?"
+    noam inquiet "Le petit flacon que Sael a trouvé, c'était à toi ?"
     elen surpris "Quel flacon ?"
     noam raison "Un truc pour dormir."
     elen fatigue "Peut-être. J'en ai dans ma trousse, parfois. Je sais même pas combien il en restait."
@@ -708,6 +712,14 @@ label _26_0_1_1_0_1_PA_JULIAN:
     "Il repousse sa tasse jusqu'au bord de la table."
     noam raison "Vous êtes restés longtemps ensemble ?"
     julian reflexion "J'en sais rien. Une heure ? Deux ? On parlait de ce fichu vote."
+    noam raison "Et après, t'as fait quoi exactement ?"
+    "Julian jette un regard vers la sortie. Il serre sa tasse jusqu'à blanchir les jointures."
+    julian fatigue "Je te l'ai dit. Je suis rentré."
+    noam reflexion "Directement ?"
+    julian agace "Tu veux un compte rendu minute par minute de ma soirée ?"
+    noam neutre "Je veux juste comprendre."
+    "Il ouvre la bouche, puis la referme. Son regard ne se pose plus sur moi."
+    julian fatigue "J'ai traîné un peu. Voilà. Je vais pas faire semblant de me rappeler chaque détour."
     noam neutre "Et tu savais qu'Elen et Tomas avaient échangé leurs chambres ?"
     julian surpris "Quoi ?"
     noam neutre "Il avait peur qu'on revienne l'emmerder. Il a dormi chez elle."
@@ -893,17 +905,17 @@ label _26_0_1_1_0_1_REUNION:
     elen fatigue "Pas tous."
     julian triste "..."
     julian fatigue "Oui. Pardon."
-    "Personne ne sait comment commencer. Iris finit par prendre la parole."
-    iris raison "J'ai pas grand-chose à vous dire. Je cherche toujours ce qui a causé sa mort."
+    "Personne ne sait comment commencer. Sael finit par prendre la parole."
+    sael raison "J'ai pas grand-chose à vous dire. Je cherche toujours ce qui a causé sa mort."
     elen inquiet "Et les médicaments ?"
-    iris raison "Je les ai trouvés dans sa chambre. C'est tout ce que je sais pour l'instant."
+    sael raison "J'ai trouvé un flacon dans la chambre. Je ne sais pas s'il en a pris."
     elen triste "C'était ma chambre..."
-    iris fatigue "Je sais, Elen. Pardon."
+    sael fatigue "Je sais, Elen. Pardon."
     elen inquiet "Je veux dire... et si quelqu'un venait pour moi ? Si c'était pas Tomas qui devait dormir là ?"
     noam raison "On sait pas si quelqu'un est entré. Elias a dû forcer le verrou."
     elen triste "Mais alors comment il est mort ?"
-    "Iris reste silencieuse. Elle serre un instant les mâchoires."
-    iris fatigue "J'aimerais vraiment pouvoir te répondre. Là, je peux pas."
+    "Sael reste silencieuse. Elle serre un instant les mâchoires."
+    sael fatigue "J'aimerais vraiment pouvoir te répondre. Là, je peux pas."
     "Elen baisse la tête. Personne ne lui demande d'arrêter de pleurer."
     ryn reflexion "Hier, il était déjà pas bien. Vous l'avez tous vu."
     julian fatigue "Ouais. Y avait pas grand monde qui l'aidait, hein."
