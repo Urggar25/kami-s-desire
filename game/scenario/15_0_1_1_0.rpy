@@ -172,7 +172,7 @@ label _15_0_1_1_0_RATIONS:
     call OFFER_DAILY_EXPLORATION(
         "_15_0_1_1_0_COULOIR", 1,
         ["observation", "archive", "dortoir"],
-        "Rejoindre Kael à l'Observation", "observation"
+        _("Rejoindre Kael à l'Observation"), "observation"
     ) from _call_offer_exploration_j15
 
 
