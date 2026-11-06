@@ -2280,37 +2280,37 @@ translate english affd096a:
 translate english c276f4e1:
 
     # think "Le métal froid traverse mes chaussettes."
-    think ""
+    think "I can feel the cold metal right through my socks."
 
 # game/scenario/5_1.rpy:91
 translate english f8e260fb:
 
     # kami "Peut-être même que c'est à cause de vous !"
-    kami ""
+    kami "Maybe it's even your fault!"
 
 # game/scenario/5_1.rpy:122
 translate english 2c74d29c:
 
     # kami "La cafétéria est ouverte."
-    kami ""
+    kami "The cafeteria is open."
 
 # game/scenario/5_1.rpy:123
 translate english 114e3497:
 
     # kami "Continuez à m'amuser ! C'est peut-être la seule chose dans laquelle vous excellez !"
-    kami ""
+    kami "Keep entertaining me! It might be the only thing you're actually good at!"
 
 # game/scenario/5_1.rpy:149
 translate english 35fb4b9d:
 
     # think "Deux voix basses et tendues viennent des chambres."
-    think ""
+    think "Two voices drift out of the rooms, low and tense."
 
 # game/scenario/5_1.rpy:153
 translate english 7f5f08f0:
 
     # think "Je m'arrête."
-    think ""
+    think "I stop in my tracks."
 
 # game/scenario/5_1.rpy:204
 translate english 95e0f73a:
@@ -2340,7 +2340,7 @@ translate english 4ba44c55:
 translate english 8469c203:
 
     # "Kael se relève lentement."
-    ""
+    "Kael slowly gets to his feet."
 
 # game/scenario/5_1.rpy:317
 translate english 13f78249:
@@ -2472,13 +2472,13 @@ translate english 7e2ab9c6:
 translate english 65c25efb:
 
     # think "Je quitte la cafétéria sans destination. J'avais seulement besoin de ne plus être là."
-    think ""
+    think "I leave the cafeteria without any particular destination in mind. I just needed to get out of there."
 
 # game/scenario/5_1.rpy:570
 translate english 3afb2f94:
 
     # think "Des pas rapides me rattrapent."
-    think ""
+    think "Quick footsteps catch up with me."
 
 # game/scenario/5_1.rpy:588
 translate english a3b11b8c:
@@ -2490,13 +2490,13 @@ translate english a3b11b8c:
 translate english 0753dd6f:
 
     # "Elias repart ; je le suis."
-    ""
+    "Elias heads off again, and I follow."
 
 # game/scenario/5_1.rpy:609
 translate english 48861ea3:
 
     # "Kael est assis sur le lit d'examen, la main droite enveloppée d'une compresse rouge."
-    ""
+    "Kael sits on the examination bed, his right hand wrapped in a bloodstained dressing."
 
 # game/scenario/5_1.rpy:619
 translate english 6c173575:
@@ -2526,7 +2526,7 @@ translate english 43b9f947:
 translate english df472ee9:
 
     # "Mara revient avec du désinfectant et retire la compresse."
-    ""
+    "Mara comes back with disinfectant and removes the dressing."
 
 # game/scenario/5_1.rpy:679
 translate english 5a8a9d0e:
@@ -2562,7 +2562,7 @@ translate english efdff04a:
 translate english 6c97f22f:
 
     # think "Elias pose la question mécaniquement, puis découvre nos regards."
-    think ""
+    think "Elias asks without thinking, then notices the looks we're giving him."
 
 # game/scenario/5_1.rpy:736
 translate english 63b2afa8:
@@ -2598,7 +2598,7 @@ translate english 5568e076:
 translate english 75562353:
 
     # think "Kael baisse les yeux vers sa main bandée."
-    think ""
+    think "Kael looks down at his bandaged hand."
 
 # game/scenario/5_1.rpy:778
 translate english dc7f3af9:
@@ -2610,7 +2610,7 @@ translate english dc7f3af9:
 translate english 554a524c:
 
     # think "Personne ne répond. Mara ferme sa trousse. Nyra reste."
-    think ""
+    think "No one answers. Mara closes her medical kit. Nyra stays where she is."
 
 # game/scenario/5_1.rpy:788
 translate english c4e38b2f:
@@ -2622,7 +2622,7 @@ translate english c4e38b2f:
 translate english 7157726b:
 
     # think "Personne ne lui offre cette sortie."
-    think ""
+    think "No one gives him that easy way out."
 
 # game/scenario/5_1.rpy:814
 translate english 2e46d5df:
@@ -2646,7 +2646,7 @@ translate english 8d8fe271:
 translate english e28f010f:
 
     # think "La porte se referme sur Kael et Nyra."
-    think ""
+    think "The door closes, leaving Kael and Nyra inside."
 
 # game/scenario/5_1.rpy:874
 translate english b33c0d0d:
@@ -2658,149 +2658,149 @@ translate english b33c0d0d:
 translate english e7d261a6:
 
     # think "Mara le regarde partir et souffle."
-    think ""
+    think "Mara watches him leave and lets out a sigh."
 
 # game/scenario/5_1.rpy:903
 translate english ccf53f0d:
 
     # think "Mara retourne auprès de Kael. Je récupère de quoi manger, puis regagne ma chambre."
-    think ""
+    think "Mara goes back to Kael. I grab something to eat and head to my room."
 
 # game/scenario/5_1.rpy:916
 translate english 23451c7a:
 
     # think "Je retrouve enfin ma chambre et son silence. Après cette journée, c'est exactement ce qu'il me faut."
-    think ""
+    think "At last, I'm back in my room, surrounded by silence. After today, that's exactly what I need."
 
 # game/scenario/5_1.rpy:918
 translate english 78729b4c:
 
     # think "Je laisse mes affaires sur le bureau et file sous la douche."
-    think ""
+    think "I drop my things on the desk and head straight for the shower."
 
 # game/scenario/5_1.rpy:926
 translate english 54beae08:
 
     # think "J'y reste beaucoup plus longtemps que nécessaire."
-    think ""
+    think "I stay in there much longer than I need to."
 
 # game/scenario/5_1.rpy:932
 translate english e08418c2:
 
     # think "Je m'habille et m'apprête à m'effondrer sur le lit."
-    think ""
+    think "I get dressed, ready to collapse onto the bed."
 
 # game/scenario/5_1.rpy:934
 translate english 91958574:
 
     # think "Et puis je le vois."
-    think ""
+    think "And then I see it."
 
 # game/scenario/5_1.rpy:936
 translate english c3b091fd:
 
     # "Un papier plié en deux a été glissé sous la porte."
-    ""
+    "Someone's slipped a folded piece of paper under my door."
 
 # game/scenario/5_1.rpy:938
 translate english 042f05d7:
 
     # think "Je le ramasse."
-    think ""
+    think "I pick it up."
 
 # game/scenario/5_1.rpy:942
 translate english dcebaa69:
 
     # "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
-    ""
+    "“Abstentions and absences shall be excluded from the votes cast.”"
 
 # game/scenario/5_1.rpy:1048
 translate english 12300871:
 
     # think "Je referme l'armoire."
-    think ""
+    think "I close the cabinet."
 
 # game/scenario/5_1.rpy:1057
 translate english 0e7cbecd:
 
     # think "Je rentre dans ma chambre sans croiser personne."
-    think ""
+    think "I make it back to my room without running into anyone."
 
 # game/scenario/5_1.rpy:1064
 translate english 58e2f3ec:
 
     # think "Je les regarde."
-    think ""
+    think "I stare at them."
 
 # game/scenario/5_1.rpy:1068
 translate english 963db6c4_1:
 
     # think "Qui ?"
-    think ""
+    think "Who?"
 
 # game/scenario/5_1.rpy:1072
 translate english 7686a34b:
 
     # think "J'avale le somnifère, m'allonge et fixe le plafond."
-    think ""
+    think "I swallow the sleeping pill, lie down, and stare at the ceiling."
 
 # game/scenario/5_1.rpy:1074
 translate english 1025d1e4:
 
     # think "Pour une fois, je dors."
-    think ""
+    think "For once, I actually sleep."
 
 # game/scenario/5_1.rpy:1088
 translate english 502ac8b8:
 
     # think "Je le regarde encore."
-    think ""
+    think "I look at it again."
 
 # game/scenario/5_1.rpy:1090
 translate english 60991580:
 
     # think "« Sont retirés des bulletins exprimés les abstentions et les absences au vote. »"
-    think ""
+    think "“Abstentions and absences shall be excluded from the votes cast.”"
 
 # game/scenario/5_1.rpy:1092
 translate english e22f9970:
 
     # think "Je le repose face contre le bureau."
-    think ""
+    think "I put it back on the desk, face down."
 
 # game/scenario/5_1.rpy:1096
 translate english f9957d42:
 
     # think "Je ne vais pas le faire."
-    think ""
+    think "I'm not going to do it."
 
 # game/scenario/5_1.rpy:1106
 translate english 9ca9be59:
 
     # think "Je me déshabille et m'allonge."
-    think ""
+    think "I get undressed and lie down."
 
 # game/scenario/5_1.rpy:1108
 translate english 3e8283af:
 
     # think "Je fixe le plafond."
-    think ""
+    think "I stare at the ceiling."
 
 # game/scenario/5_1.rpy:1120
 translate english 7332f2ed_1:
 
     # think "Je ferme les yeux."
-    think ""
+    think "I close my eyes."
 
 translate english strings:
 
     # game/scenario/5_1.rpy:971
     old "Aller à la pharmacie."
-    new ""
+    new "Go to the pharmacy."
 
     # game/scenario/5_1.rpy:971
     old "Aller se coucher."
-    new ""
+    new "Go to bed."
 
 # TODO: Translation updated at 2026-08-28 09:48
 
