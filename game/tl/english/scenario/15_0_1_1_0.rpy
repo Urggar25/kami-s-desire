@@ -4982,7 +4982,7 @@ translate english 5d2b9ea7:
 translate english 068f761f:
 
     # noam hesitation "Non... attends."
-    noam hesitation ""
+    noam hesitation "No... wait."
 
 # game/scenario/15_0_1_1_0.rpy:662
 translate english 0c6e5f06:
@@ -5000,7 +5000,7 @@ translate english 8b67fd1b:
 translate english f421e550:
 
     # noam reflexion "C’est lui."
-    noam reflexion ""
+    noam reflexion "It's him."
 
 # game/scenario/15_0_1_1_0.rpy:671
 translate english 469c5167:
@@ -5024,7 +5024,7 @@ translate english cf396ddf:
 translate english 35041b47_1:
 
     # noam colere "Putain..."
-    noam colere ""
+    noam colere "Fuck..."
 
 # game/scenario/15_0_1_1_0.rpy:678
 translate english 13c88695:
@@ -5060,7 +5060,7 @@ translate english 3944206a:
 translate english 5a387cec:
 
     # noam colere "Kael..."
-    noam colere ""
+    noam colere "Kael..."
 
 # game/scenario/15_0_1_1_0.rpy:689
 translate english 4c0f0861:
@@ -5084,7 +5084,7 @@ translate english da12f854:
 translate english 6634dac1:
 
     # kael surpris "Noam ?"
-    kael surpris ""
+    kael surpris "Noam?"
 
 # game/scenario/15_0_1_1_0.rpy:707
 translate english b402cc45:
@@ -5096,7 +5096,7 @@ translate english b402cc45:
 translate english 60862184:
 
     # noam colere "Je viens de regarder les archives de ma chambre."
-    noam colere ""
+    noam colere "I just watched the footage from my room."
 
 # game/scenario/15_0_1_1_0.rpy:711
 translate english af1eb8e8:
@@ -5108,19 +5108,19 @@ translate english af1eb8e8:
 translate english d87760eb:
 
     # noam colere "Nuit du 7 au 8. Deux heures quatorze. Tu entres, tu prends le dessin de Juliette et tu repars."
-    noam colere ""
+    noam colere "The night between Days Seven and Eight. 2:14 a.m. You walk in, take Juliette's drawing, and leave."
 
 # game/scenario/15_0_1_1_0.rpy:715
 translate english fa287578:
 
     # kael inquietude "Quoi ?"
-    kael inquietude ""
+    kael inquietude "What?"
 
 # game/scenario/15_0_1_1_0.rpy:717
 translate english 3643416b:
 
     # noam colere "Ne me réponds pas 'quoi'. Je t’ai vu."
-    noam colere ""
+    noam colere "Don't give me 'what.' I SAW you."
 
 # game/scenario/15_0_1_1_0.rpy:718
 translate english 5c3f75c3:
@@ -5132,7 +5132,7 @@ translate english 5c3f75c3:
 translate english f33836b1:
 
     # noam colere "Tu viens avec moi."
-    noam colere ""
+    noam colere "You're coming with me."
 
 # game/scenario/15_0_1_1_0.rpy:721
 translate english 99c9c25b:
@@ -5156,13 +5156,13 @@ translate english 610af7e5:
 translate english 8af1e159:
 
     # noam colere "Dis-moi que je vois mal. Dis-moi que c’est pas toi, que le fichier est faux, que n’importe quoi explique ça."
-    noam colere ""
+    noam colere "Tell me my eyes are playing tricks on me. Tell me it isn't you, that the file's fake, that SOMETHING explains it."
 
 # game/scenario/15_0_1_1_0.rpy:738
 translate english 817d9613:
 
     # noam colere "Mais ne me demande pas juste de te croire encore sans rien me donner."
-    noam colere ""
+    noam colere "But don't ask me to believe you again without giving me anything."
 
 # game/scenario/15_0_1_1_0.rpy:740
 translate english 0cb6e301:
@@ -5174,43 +5174,43 @@ translate english 0cb6e301:
 translate english 933da36c:
 
     # kael triste "... Je ne me souviens pas de ça."
-    kael triste ""
+    kael triste "...I don't remember that."
 
 # game/scenario/15_0_1_1_0.rpy:744
 translate english 9c76ee2f:
 
     # noam colere "Évidemment."
-    noam colere ""
+    noam colere "Of course."
 
 # game/scenario/15_0_1_1_0.rpy:745
 translate english e1c7cc03:
 
     # kael inquietude "Noam, écoute-moi."
-    kael inquietude ""
+    kael inquietude "Noam, listen."
 
 # game/scenario/15_0_1_1_0.rpy:746
 translate english 8ec3fc84:
 
     # noam colere "Je t’ai écouté pendant une heure !"
-    noam colere ""
+    noam colere "I listened to you for an HOUR!"
 
 # game/scenario/15_0_1_1_0.rpy:747
 translate english d1875842:
 
     # noam colere "Je t’ai défendu dans ma tête, j’ai cherché avec toi comment quelqu’un pouvait avoir trafiqué ta vidéo, et maintenant je découvre que tu es aussi celui qui est entré dans ma chambre !"
-    noam colere ""
+    noam colere "I defended you in my own head. I helped you figure out how somebody might have faked your video, and now I find out YOU'RE the one who broke into my room!"
 
 # game/scenario/15_0_1_1_0.rpy:749
 translate english 2fac231e:
 
     # kael fatigue "Je ne savais pas."
-    kael fatigue ""
+    kael fatigue "I didn't know."
 
 # game/scenario/15_0_1_1_0.rpy:750
 translate english 790f47eb:
 
     # noam colere "Comment je suis censé savoir si c’est vrai ?"
-    noam colere ""
+    noam colere "How am I supposed to know if that's true?"
 
 # game/scenario/15_0_1_1_0.rpy:752
 translate english 37506c0a:
@@ -5222,7 +5222,7 @@ translate english 37506c0a:
 translate english 73d519b8:
 
     # noam colere "C’était le dessin de ma petite sœur, Kael. Tu sais exactement ce que ça représente, puisque tu viens de passer la journée à chercher une photo de la tienne !"
-    noam colere ""
+    noam colere "It was my little sister's drawing, Kael. You know exactly what it means, because you've spent all day searching for a photo of YOUR sister!"
 
 # game/scenario/15_0_1_1_0.rpy:756
 translate english 5e10a522:
@@ -5234,37 +5234,37 @@ translate english 5e10a522:
 translate english 06a4245f:
 
     # noam colere "Alors explique-moi."
-    noam colere ""
+    noam colere "Then explain it to me."
 
 # game/scenario/15_0_1_1_0.rpy:776
 translate english 92b8d9bf:
 
     # noam colere "Je veux juste une réponse claire. Est-ce que tu es entré dans ma chambre cette nuit-là ?"
-    noam colere ""
+    noam colere "I just want a straight answer. Did you go into my room that night?"
 
 # game/scenario/15_0_1_1_0.rpy:778
 translate english 43bba0ca:
 
     # kael inquietude "Je ne m’en souviens pas."
-    kael inquietude ""
+    kael inquietude "I don't remember."
 
 # game/scenario/15_0_1_1_0.rpy:780
 translate english 2346b28d:
 
     # noam colere "C’est pas une réponse !"
-    noam colere ""
+    noam colere "That's not an answer!"
 
 # game/scenario/15_0_1_1_0.rpy:781
 translate english fd6c8fdc:
 
     # kael fatigue "C’est la seule que j’ai."
-    kael fatigue ""
+    kael fatigue "It's the only one I've got."
 
 # game/scenario/15_0_1_1_0.rpy:783
 translate english a0875c83:
 
     # noam colere "Alors où est mon dessin ?"
-    noam colere ""
+    noam colere "Then where's my drawing?"
 
 # game/scenario/15_0_1_1_0.rpy:784
 translate english a58aefcc:
@@ -5276,13 +5276,13 @@ translate english a58aefcc:
 translate english 78d5b428:
 
     # noam colere "Et ta photo ?"
-    noam colere ""
+    noam colere "And your photo?"
 
 # game/scenario/15_0_1_1_0.rpy:786
 translate english 5bfe39ca:
 
     # kael fatigue "Je ne sais pas non plus."
-    kael fatigue ""
+    kael fatigue "I don't know that either."
 
 # game/scenario/15_0_1_1_0.rpy:788
 translate english 4cd42578:
@@ -5300,7 +5300,7 @@ translate english 1dd6402e:
 translate english 630940e8:
 
     # noam hesitation "... Kael ?"
-    noam hesitation ""
+    noam hesitation "...Kael?"
 
 # game/scenario/15_0_1_1_0.rpy:796
 translate english 4f901915:
@@ -5312,7 +5312,7 @@ translate english 4f901915:
 translate english 51ef067b:
 
     # kael sourire "Noam... lâche un peu prise. Là, tu vas juste te faire du mal."
-    kael sourire ""
+    kael sourire "Noam... ease up. You're only going to hurt yourself like this."
 
 # game/scenario/15_0_1_1_0.rpy:801
 translate english 95d4a37b:
@@ -5324,19 +5324,19 @@ translate english 95d4a37b:
 translate english 8c238aa6:
 
     # noam inquiet "Qu’est-ce qui te prend ?"
-    noam inquiet ""
+    noam inquiet "What's gotten into you?"
 
 # game/scenario/15_0_1_1_0.rpy:805
 translate english 136baba3:
 
     # kael taquin "Rien. Au contraire, je crois qu’il est temps que tu comprennes enfin ce qui se passe."
-    kael taquin ""
+    kael taquin "Nothing. Actually, I think it's about time you finally understood what's happening."
 
 # game/scenario/15_0_1_1_0.rpy:807
 translate english d464f242:
 
     # noam peur "De quoi tu parles ?"
-    noam peur ""
+    noam peur "What are you talking about?"
 
 # game/scenario/15_0_1_1_0.rpy:809
 translate english 2cc9392c:
@@ -5348,13 +5348,13 @@ translate english 2cc9392c:
 translate english 87323142:
 
     # kael sourire "Viens avec moi. Je vais tout t’expliquer."
-    kael sourire ""
+    kael sourire "Come with me. I'll explain everything."
 
 # game/scenario/15_0_1_1_0.rpy:815
 translate english 2aab1c28:
 
     # noam peur "Kael, arrête."
-    noam peur ""
+    noam peur "Kael, stop."
 
 # game/scenario/15_0_1_1_0.rpy:823
 translate english e434c7a2:
