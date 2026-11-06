@@ -2686,3 +2686,9 @@ translate english 0e80e0da:
 
     # noam "..."
     noam "..."
+
+# Navigation string localized for day 12
+translate english strings:
+
+    old "Rejoindre le vote"
+    new "Head to the vote"
