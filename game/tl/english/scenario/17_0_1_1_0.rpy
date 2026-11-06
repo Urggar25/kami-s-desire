@@ -856,7 +856,7 @@ translate english 8e838281:
 translate english d3220ce6_1:
 
     # noam inquiet "..."
-    noam inquiet ""
+    noam inquiet "..."
 
 # game/scenario/17_0_1_1_0.rpy:168
 translate english 166e011c:
@@ -1076,235 +1076,235 @@ translate english d7dcecfb_1:
 translate english 9bc3096c:
 
     # "Je n'ai presque pas dormi. Chaque fois que je fermais les yeux, je revoyais la même ligne dans ce vieux livre des Archives."
-    ""
+    "I barely slept. Every time I closed my eyes, I saw the same line in that old book from the archives."
 
 # game/scenario/17_0_1_1_0.rpy:14
 translate english 21c1a326:
 
     # "Et puis le trou revient. La salle d'observation. Kael. Le couloir... et après, plus rien."
-    ""
+    "Then the blank comes back. The observation room. Kael. The corridor... and after that, nothing."
 
 # game/scenario/17_0_1_1_0.rpy:16
 translate english d3220ce6_4:
 
     # noam inquiet "..."
-    noam inquiet ""
+    noam inquiet "..."
 
 # game/scenario/17_0_1_1_0.rpy:18
 translate english 01acec2a:
 
     # "Sael avait promis qu'on en parlerait aux autres dès le matin. Une partie de moi voudrait encore attendre, juste le temps de comprendre ce que M16 veut vraiment dire."
-    ""
+    "Sael promised we'd tell the others first thing this morning. Part of me still wants to wait, just long enough to understand what M16 really means."
 
 # game/scenario/17_0_1_1_0.rpy:19
 translate english 3d095236:
 
     # "Mais après avoir vu la mention disparaître sous nos yeux, garder ça pour nous n'aurait plus eu aucun sens."
-    ""
+    "But after watching that entry vanish before our eyes, keeping it to ourselves would make no sense."
 
 # game/scenario/17_0_1_1_0.rpy:21
 translate english 4f46ee78:
 
     # noam reflexion "Il faut qu'ils sachent."
-    noam reflexion ""
+    noam reflexion "They need to know."
 
 # game/scenario/17_0_1_1_0.rpy:23
 translate english 649c1be6:
 
     # "Je reste assis quelques secondes au bord du lit, puis je me lève. Mon crâne va mieux qu'hier. Le reste, beaucoup moins. J'ai toujours cette impression qu'il me manque quelque chose."
-    ""
+    "I sit on the edge of my bed for a few seconds, then get up. My head feels better than yesterday. Everything else feels much worse. I still can't shake the feeling that something is missing."
 
 # game/scenario/17_0_1_1_0.rpy:38
 translate english b668f157:
 
     # "Je prends la direction de la cafétéria. Plus j'approche, moins j'ai envie d'y entrer. Je sais déjà que ça va partir en vrille dès qu'on parlera de M16."
-    ""
+    "I head toward the cafeteria. The closer I get, the less I want to go inside. I already know all hell will break loose as soon as we mention M16."
 
 # game/scenario/17_0_1_1_0.rpy:44
 translate english 36fe3366:
 
     # "Presque tout le monde est déjà là. Kael manque encore à l'appel, mais cette fois personne ne semble vraiment surpris."
-    ""
+    "Almost everyone is there. Kael is missing again, but this time nobody seems particularly surprised."
 
 # game/scenario/17_0_1_1_0.rpy:45
 translate english 6aa85977:
 
     # "Sael est debout près d'une table avec le vieux livre des Archives posé devant elle. Elle ne mange pas. Elle attend."
-    ""
+    "Sael stands beside a table with the old archive book in front of her. She isn't eating. She's waiting."
 
 # game/scenario/17_0_1_1_0.rpy:62
 translate english 3c13ec83:
 
     # elen joie "Salut Noam ! J'allais justement prendre du café. Tu veux que je t'en—"
-    elen joie ""
+    elen joie "Hey, Noam! I was just going to get some coffee. Want me to get you—"
 
 # game/scenario/17_0_1_1_0.rpy:64
 translate english 970cfc3a:
 
     # sael neutre "Attends."
-    sael neutre ""
+    sael neutre "Wait."
 
 # game/scenario/17_0_1_1_0.rpy:66
 translate english a78b6af2:
 
     # "Elen se retourne vers elle, surprise. Sael pose une main sur le livre."
-    ""
+    "Elen turns toward her, surprised. Sael places a hand on the book."
 
 # game/scenario/17_0_1_1_0.rpy:68
 translate english dfd4ce25:
 
     # sael "Avant de continuer, ouvrez vos dossiers médicaux."
-    sael ""
+    sael "Before we go any further, open your medical files."
 
 # game/scenario/17_0_1_1_0.rpy:71
 translate english 44d9a308:
 
     # mara agace "Bonjour à toi aussi."
-    mara agace ""
+    mara agace "Good morning to you too."
 
 # game/scenario/17_0_1_1_0.rpy:73
 translate english a26646ba:
 
     # iris fatigue "Pourquoi ?"
-    iris fatigue ""
+    iris fatigue "Why?"
 
 # game/scenario/17_0_1_1_0.rpy:75
 translate english 17715346:
 
     # sael "Cherchez une mention. M16."
-    sael ""
+    sael "Look for an entry marked M16."
 
 # game/scenario/17_0_1_1_0.rpy:77
 translate english 4731ab84:
 
     # "Le ton qu'elle emploie suffit à faire disparaître les quelques conversations encore en cours."
-    ""
+    "Something in her tone silences the few conversations still going on."
 
 # game/scenario/17_0_1_1_0.rpy:80
 translate english 3cdd2c21:
 
     # elias inquiet "C'est quoi, M16 ?"
-    elias inquiet ""
+    elias inquiet "What's M16?"
 
 # game/scenario/17_0_1_1_0.rpy:82
 translate english a78cc12a:
 
     # sael "Regardez d'abord."
-    sael ""
+    sael "Look first."
 
 # game/scenario/17_0_1_1_0.rpy:84
 translate english 06a07ab7:
 
     # mara mefiant "Tu sais que quand quelqu'un dit ça, ça donne jamais envie de regarder ?"
-    mara mefiant ""
+    mara mefiant "You know, when someone says that, it never makes you want to look."
 
 # game/scenario/17_0_1_1_0.rpy:87
 translate english 309e6d6b:
 
     # lysa blase "Moi ça me donne surtout envie de retourner me coucher."
-    lysa blase ""
+    lysa blase "Mostly makes me want to go back to bed."
 
 # game/scenario/17_0_1_1_0.rpy:89
 translate english 1b332ad3:
 
     # nyra reflexion "Tu l'as trouvée dans ton propre dossier ?"
-    nyra reflexion ""
+    nyra reflexion "You found it in your own file?"
 
 # game/scenario/17_0_1_1_0.rpy:93
 translate english 6fe1be02:
 
     # "Nyra ne pose pas d'autre question. Elle sort sa tablette et commence à naviguer dans les menus. Les autres finissent par faire pareil, les uns après les autres."
-    ""
+    "Nyra doesn't ask anything else. She takes out her tablet and starts navigating the menus. One by one, the others do the same."
 
 # game/scenario/17_0_1_1_0.rpy:96
 translate english 67eeb4db:
 
     # iris colere "Attendez... depuis quand on peut consulter ça ?"
-    iris colere ""
+    iris colere "Hang on... since when can we see these?"
 
 # game/scenario/17_0_1_1_0.rpy:98
 translate english bed43632:
 
     # tomas neutre "Depuis le dernier amendement, je crois. Une partie des restrictions a sauté avec le vote et... enfin, visiblement ça aussi."
-    tomas neutre ""
+    tomas neutre "Since the last amendment, I think. Some restrictions were lifted after the vote, and... well, apparently that included this."
 
 # game/scenario/17_0_1_1_0.rpy:100
 translate english 79a5c5ca:
 
     # iris colere "Évidemment. Et personne n'a pensé à nous prévenir."
-    iris colere ""
+    iris colere "Of course. And nobody thought to tell us."
 
 # game/scenario/17_0_1_1_0.rpy:102
 translate english e41920e3:
 
     # mara agace "Tu veux qu'on mette une alerte à chaque nouveau bouton qui apparaît ?"
-    mara agace ""
+    mara agace "What, you want a notification every time a new button appears?"
 
 # game/scenario/17_0_1_1_0.rpy:104
 translate english 5ff8ad8b:
 
     # iris "Je veux juste éviter de découvrir par hasard que quelqu'un garde un dossier médical sur moi depuis deux semaines !"
-    iris ""
+    iris "I'd just rather not find out by accident that someone's been keeping a medical file on me for two weeks!"
 
 # game/scenario/17_0_1_1_0.rpy:107
 translate english d22d8b9b:
 
     # elen inquiet "Je crois que je l'ai."
-    elen inquiet ""
+    elen inquiet "I think I've found it."
 
 # game/scenario/17_0_1_1_0.rpy:109
 translate english 93f98847:
 
     # "Tout le monde se tourne vers elle."
-    ""
+    "Everyone turns to her."
 
 # game/scenario/17_0_1_1_0.rpy:111
 translate english c91452fe:
 
     # elen "M16. C'est marqué ici."
-    elen ""
+    elen "M16. It says it right here."
 
 # game/scenario/17_0_1_1_0.rpy:113
 translate english 0a445bb3:
 
     # elias inquiet "Moi aussi."
-    elias inquiet ""
+    elias inquiet "Mine too."
 
 # game/scenario/17_0_1_1_0.rpy:115
 translate english ef52c945:
 
     # ryn desaccord "Pareil."
-    ryn desaccord ""
+    ryn desaccord "Same."
 
 # game/scenario/17_0_1_1_0.rpy:118
 translate english ec4e13de:
 
     # iris inquiet "... Ouais."
-    iris inquiet ""
+    iris inquiet "...Yeah."
 
 # game/scenario/17_0_1_1_0.rpy:120
 translate english 698583f3:
 
     # mara mefiant "Vous vous foutez de moi..."
-    mara mefiant ""
+    mara mefiant "You've got to be kidding me..."
 
 # game/scenario/17_0_1_1_0.rpy:122
 translate english 6136342a:
 
     # "Mara tourne sa tablette vers nous. La même référence apparaît au milieu de son dossier."
-    ""
+    "Mara turns her tablet toward us. The same reference sits in the middle of her file."
 
 # game/scenario/17_0_1_1_0.rpy:124
 translate english a1161341:
 
     # nyra neutre "Moi aussi."
-    nyra neutre ""
+    nyra neutre "Mine too."
 
 # game/scenario/17_0_1_1_0.rpy:127
 translate english bd80d5ac:
 
     # lysa blase "Bon. Super. Génial même."
-    lysa blase ""
+    lysa blase "Well. Great. Just fantastic."
 
 # game/scenario/17_0_1_1_0.rpy:129
 translate english j17_m16_tomas_moi_aussi:
@@ -1316,55 +1316,55 @@ translate english j17_m16_tomas_moi_aussi:
 translate english a927f6c7:
 
     # julian inquietude "... Pareil."
-    julian inquietude ""
+    julian inquietude "...Same."
 
 # game/scenario/17_0_1_1_0.rpy:133
 translate english 0c2afa55:
 
     # "Plus personne ne parle. Je savais qu'on allait tous avoir la même mention, mais la voir apparaître sur chaque écran me retourne quand même l'estomac."
-    ""
+    "Nobody says another word. I knew we'd all have the same entry, but seeing it appear on every screen still turns my stomach."
 
 # game/scenario/17_0_1_1_0.rpy:136
 translate english e40728b3:
 
     # noam inquiet "Donc on l'a tous."
-    noam inquiet ""
+    noam inquiet "So we all have it."
 
 # game/scenario/17_0_1_1_0.rpy:138
 translate english fc9a3ce2:
 
     # ryn colere "Tous ceux qui sont ici."
-    ryn colere ""
+    ryn colere "Everyone who's here."
 
 # game/scenario/17_0_1_1_0.rpy:140
 translate english cdab63ba:
 
     # nyra reflexion "Kael aussi ?"
-    nyra reflexion ""
+    nyra reflexion "Kael too?"
 
 # game/scenario/17_0_1_1_0.rpy:144
 translate english 36edb990:
 
     # "Plusieurs regards se tournent vers moi. Je réalise trop tard que j'ai répondu trop vite."
-    ""
+    "Several pairs of eyes turn toward me. I realize too late that I answered too quickly."
 
 # game/scenario/17_0_1_1_0.rpy:147
 translate english a7553a14:
 
     # mara mefiant "Comment tu sais ça ?"
-    mara mefiant ""
+    mara mefiant "How do you know that?"
 
 # game/scenario/17_0_1_1_0.rpy:149
 translate english c40bb0b2:
 
     # noam "Il me l'a dit hier."
-    noam ""
+    noam "He told me yesterday."
 
 # game/scenario/17_0_1_1_0.rpy:152
 translate english dcd84124:
 
     # ryn "Et il savait ce que ça voulait dire ?"
-    ryn ""
+    ryn "Did he know what it meant?"
 
 # game/scenario/17_0_1_1_0.rpy:154
 translate english j17_m16_noam_non:
@@ -1376,385 +1376,385 @@ translate english j17_m16_noam_non:
 translate english 95fe5ef1:
 
     # sael neutre "Moi, oui. Maintenant."
-    sael neutre ""
+    sael neutre "I do. Now."
 
 # game/scenario/17_0_1_1_0.rpy:158
 translate english 62ea68eb:
 
     # "Elle ouvre le livre à la page marquée, le fait pivoter et le pousse au centre de la table."
-    ""
+    "She opens the book at the marked page, turns it around, and pushes it to the center of the table."
 
 # game/scenario/17_0_1_1_0.rpy:160
 translate english f5008d21:
 
     # sael "J'ai trouvé la référence hier dans les Archives."
-    sael ""
+    sael "I found the reference in the archives yesterday."
 
 # game/scenario/17_0_1_1_0.rpy:162
 translate english b687f90f:
 
     # "Pendant une seconde, personne ne dit rien. Puis tout part d'un coup."
-    ""
+    "For a second, nobody speaks. Then everyone erupts at once."
 
 # game/scenario/17_0_1_1_0.rpy:165
 translate english e42d5192:
 
     # iris surpris "Quoi ?!"
-    iris surpris ""
+    iris surpris "What?!"
 
 # game/scenario/17_0_1_1_0.rpy:167
 translate english 1f346c3b:
 
     # elias colere "Attends, attends... accès à quoi ?"
-    elias colere ""
+    elias colere "Wait, wait... access to what?!"
 
 # game/scenario/17_0_1_1_0.rpy:169
 translate english ba4970eb:
 
     # tomas inquiet "Mnésique. La mémoire."
-    tomas inquiet ""
+    tomas inquiet "Mnemonic. Memory."
 
 # game/scenario/17_0_1_1_0.rpy:172
 translate english 93ec037b:
 
     # mara colere "Merci Tomas, on avait compris !"
-    mara colere ""
+    mara colere "Thanks, Tomas, we got that!"
 
 # game/scenario/17_0_1_1_0.rpy:174
 translate english 6be8680e:
 
     # julian peur "Attendez, ça peut vouloir dire autre chose, non ? Un examen, un risque neurologique... j'en sais rien. Pas forcément qu'on a fouillé dans nos souvenirs."
-    julian peur ""
+    julian peur "Hang on, it could mean something else, right? A test, a neurological risk... I don't know. It doesn't necessarily mean someone went digging through our memories."
 
 # game/scenario/17_0_1_1_0.rpy:176
 translate english 47eafd62:
 
     # tomas reflechit "C'est possible. Enfin... oui, mais le terme est quand même très précis. 'Accès mnésique', ça veut dire accès direct à la mémoire. Après, ça dit pas ce qu'ils ont fait exactement, ni pourquoi, ni—"
-    tomas reflechit ""
+    tomas reflechit "That's possible. Well... yes, but the term is very specific. 'Mnemonic access' means direct access to memory. It doesn't tell us exactly what they did, or why, or—"
 
 # game/scenario/17_0_1_1_0.rpy:179
 translate english fd15b2ea:
 
     # iris colere "Tomas."
-    iris colere ""
+    iris colere "Tomas."
 
 # game/scenario/17_0_1_1_0.rpy:181
 translate english d4020eba:
 
     # tomas neutre "Oui. J'arrête."
-    tomas neutre ""
+    tomas neutre "Right. I'll stop."
 
 # game/scenario/17_0_1_1_0.rpy:183
 translate english 976d591f:
 
     # ryn colere "Donc quelqu'un a foutu ses mains dans nos têtes ?"
-    ryn colere ""
+    ryn colere "So somebody's been messing around inside our heads?"
 
 # game/scenario/17_0_1_1_0.rpy:186
 translate english ef2ff1a2:
 
     # sael mefiant "On n'en sait rien."
-    sael mefiant ""
+    sael mefiant "We don't know that."
 
 # game/scenario/17_0_1_1_0.rpy:188
 translate english ec9b579d:
 
     # ryn "C'est écrit noir sur blanc !"
-    ryn ""
+    ryn "It's right there in black and white!"
 
 # game/scenario/17_0_1_1_0.rpy:191
 translate english bd0399be:
 
     # sael "C'est un nom de procédure. Pas une explication."
-    sael ""
+    sael "It's the name of a procedure. Not an explanation."
 
 # game/scenario/17_0_1_1_0.rpy:193
 translate english 4849995f:
 
     # lysa blase "Magnifique. On a donc le choix entre 'quelqu'un a joué avec notre mémoire' et 'quelqu'un a nommé une procédure comme ça juste pour le plaisir'. Je me sens beaucoup mieux."
-    lysa blase ""
+    lysa blase "Wonderful. So our choices are 'someone tampered with our memories' or 'someone named a procedure that way for fun.' I feel so much better."
 
 # game/scenario/17_0_1_1_0.rpy:196
 translate english daf9d91a:
 
     # elen peur "Mais... si c'est vrai, on devrait s'en souvenir, non ?"
-    elen peur ""
+    elen peur "But... if it's true, shouldn't we remember?"
 
 # game/scenario/17_0_1_1_0.rpy:198
 translate english 3649baf5:
 
     # "Je baisse instinctivement les yeux. Sael me regarde brièvement, mais ne dit rien."
-    ""
+    "I instinctively lower my gaze. Sael glances at me but says nothing."
 
 # game/scenario/17_0_1_1_0.rpy:200
 translate english 8ae5ae07:
 
     # nyra neutre "Pas forcément. C'est justement ça, le problème."
-    nyra neutre ""
+    nyra neutre "Not necessarily. That's exactly the problem."
 
 # game/scenario/17_0_1_1_0.rpy:202
 translate english 5eb88e6b:
 
     # mara colere "Ouais, bah moi je veux savoir quand ça a été fait. Et pourquoi."
-    mara colere ""
+    mara colere "Yeah, well, I want to know when it happened. And why."
 
 # game/scenario/17_0_1_1_0.rpy:205
 translate english 881f0a83:
 
     # ryn "Et par qui."
-    ryn ""
+    ryn "And who did it."
 
 # game/scenario/17_0_1_1_0.rpy:207
 translate english e45fba30:
 
     # elias colere "Et combien de fois."
-    elias colere ""
+    elias colere "And how many times."
 
 # game/scenario/17_0_1_1_0.rpy:209
 translate english e7de147c:
 
     # iris colere "Attendez... si c'est Kami qui a touché à nos souvenirs, elle a fait comment ?! C'est pas un simple dossier médical, ça !"
-    iris colere ""
+    iris colere "Wait... if Kami messed with our memories, how the hell did she do it?! This isn't just some medical record!"
 
 # game/scenario/17_0_1_1_0.rpy:211
 translate english 7e8903d1:
 
     # "Les voix commencent à monter. Plusieurs parlent en même temps. Elen essaie de calmer Iris pendant que Ryn demande à Sael si le livre contient d'autres informations."
-    ""
+    "Voices rise. Several people talk over one another. Elen tries to calm Iris while Ryn asks Sael whether the book contains anything else."
 
 # game/scenario/17_0_1_1_0.rpy:214
 translate english 7f18ef2e:
 
     # sael desaccord "La page suivante a été arrachée."
-    sael desaccord ""
+    sael desaccord "The next page was torn out."
 
 # game/scenario/17_0_1_1_0.rpy:216
 translate english 1d389463:
 
     # mara colere "Évidemment."
-    mara colere ""
+    mara colere "Of course it was."
 
 # game/scenario/17_0_1_1_0.rpy:218
 translate english 7dccfca2:
 
     # tomas inquiet "T'es sûre qu'il y en a pas une autre quelque part ?"
-    tomas inquiet ""
+    tomas inquiet "Are you sure there isn't another copy somewhere?"
 
 # game/scenario/17_0_1_1_0.rpy:220
 translate english d3a05c3f:
 
     # sael "J'en ai cherché trois. C'était la seule référence que j'ai trouvée."
-    sael ""
+    sael "I checked three books. That was the only reference I found."
 
 # game/scenario/17_0_1_1_0.rpy:223
 translate english 0aad39d3:
 
     # nyra raison "Ça suffit."
-    nyra raison ""
+    nyra raison "Enough."
 
 # game/scenario/17_0_1_1_0.rpy:225
 translate english f4b04d16:
 
     # "Sa voix n'est pas forte, mais elle coupe progressivement le brouhaha."
-    ""
+    "Her voice isn't loud, but the noise gradually dies down."
 
 # game/scenario/17_0_1_1_0.rpy:227
 translate english 1657ad36:
 
     # nyra "On peut continuer à tourner en rond toute la matinée... ou demander directement à celle qui contrôle tout ici."
-    nyra ""
+    nyra "We can spend all morning going around in circles... or we can ask the one who controls everything here."
 
 # game/scenario/17_0_1_1_0.rpy:229
 translate english 52130946:
 
     # ryn "Kami !"
-    ryn ""
+    ryn "Kami!"
 
 # game/scenario/17_0_1_1_0.rpy:231
 translate english 9f75ff57:
 
     # "Il lève les yeux vers l'écran principal."
-    ""
+    "He looks up at the main screen."
 
 # game/scenario/17_0_1_1_0.rpy:233
 translate english 0873a4e8:
 
     # ryn colere "Montre-toi !"
-    ryn colere ""
+    ryn colere "Show yourself!"
 
 # game/scenario/17_0_1_1_0.rpy:243
 translate english 257890bc:
 
     # kami "Je suis toujours touchée quand vous m'appelez tous avec autant d'enthousiasme."
-    kami ""
+    kami "I'm always so touched when you all call for me with such enthusiasm."
 
 # game/scenario/17_0_1_1_0.rpy:247
 translate english d4153b88:
 
     # kami "Même si, techniquement, un simple 's'il te plaît' aurait suffi."
-    kami ""
+    kami "Although, technically, a simple 'please' would have sufficed."
 
 # game/scenario/17_0_1_1_0.rpy:252
 translate english e58009bd:
 
     # tomas inquiet "M16. Ça veut dire quoi exactement ?"
-    tomas inquiet ""
+    tomas inquiet "M16. What exactly does it mean?"
 
 # game/scenario/17_0_1_1_0.rpy:255
 translate english 6b430416:
 
     # kami "Je ne peux pas répondre à cette question."
-    kami ""
+    kami "I cannot answer that question."
 
 # game/scenario/17_0_1_1_0.rpy:257
 translate english 52bd7198:
 
     # "Le silence est immédiat."
-    ""
+    "Silence falls immediately."
 
 # game/scenario/17_0_1_1_0.rpy:260
 translate english 907066da:
 
     # mara colere "Pardon ?"
-    mara colere ""
+    mara colere "Excuse me?"
 
 # game/scenario/17_0_1_1_0.rpy:264
 translate english 868e4fb6:
 
     # tomas "Alors donne-nous au moins la date. Quand est-ce que ça a été fait ?"
-    tomas ""
+    tomas "Then at least give us the date. When was it done?"
 
 # game/scenario/17_0_1_1_0.rpy:267
 translate english 6b430416_1:
 
     # kami "Je ne peux pas répondre à cette question."
-    kami ""
+    kami "I cannot answer that question."
 
 # game/scenario/17_0_1_1_0.rpy:270
 translate english 052e10dd:
 
     # ryn colere "Qui l'a ordonnée ?"
-    ryn colere ""
+    ryn colere "Who ordered it?"
 
 # game/scenario/17_0_1_1_0.rpy:273
 translate english 6b430416_2:
 
     # kami "Je ne peux pas répondre à cette question."
-    kami ""
+    kami "I cannot answer that question."
 
 # game/scenario/17_0_1_1_0.rpy:276
 translate english a9e87a43:
 
     # iris colere "Est-ce qu'on nous a effacé des souvenirs ?"
-    iris colere ""
+    iris colere "Have our memories been erased?"
 
 # game/scenario/17_0_1_1_0.rpy:279
 translate english 6b430416_3:
 
     # kami "Je ne peux pas répondre à cette question."
-    kami ""
+    kami "I cannot answer that question."
 
 # game/scenario/17_0_1_1_0.rpy:282
 translate english ec8a6f83:
 
     # elias colere "Putain mais tu peux répondre à quoi, exactement ?"
-    elias colere ""
+    elias colere "For fuck's sake, what CAN you answer?!"
 
 # game/scenario/17_0_1_1_0.rpy:287
 translate english 89d26692:
 
     # kami "À énormément de choses ! Essayez de me demander la température de la salle, par exemple."
-    kami ""
+    kami "Oh, all sorts of things! Try asking me the room temperature, for example."
 
 # game/scenario/17_0_1_1_0.rpy:290
 translate english 7eb9f200:
 
     # ryn colere "Arrête tes conneries !"
-    ryn colere ""
+    ryn colere "Cut the bullshit!"
 
 # game/scenario/17_0_1_1_0.rpy:296
 translate english d3cd4273:
 
     # nyra neutre "Qu'est-ce qui t'empêche de répondre ? Quelle règle ?"
-    nyra neutre ""
+    nyra neutre "What's stopping you from answering? Which rule?"
 
 # game/scenario/17_0_1_1_0.rpy:299
 translate english 975c140c:
 
     # "Kami ne répond pas immédiatement. Pour la première fois depuis le début de l'échange, son silence ressemble presque à une hésitation."
-    ""
+    "Kami doesn't respond immediately. For the first time since the conversation began, her silence almost sounds like hesitation."
 
 # game/scenario/17_0_1_1_0.rpy:301
 translate english 25a0a453:
 
     # kami "Mes règles internes."
-    kami ""
+    kami "My internal rules."
 
 # game/scenario/17_0_1_1_0.rpy:304
 translate english c3f1535f:
 
     # nyra reflexion "Quel Commandement ?"
-    nyra reflexion ""
+    nyra reflexion "Which Commandment?"
 
 # game/scenario/17_0_1_1_0.rpy:307
 translate english 59c8080a:
 
     # kami "Aucun."
-    kami ""
+    kami "None."
 
 # game/scenario/17_0_1_1_0.rpy:310
 translate english 52d7d4bd:
 
     # tomas surpris "Aucun ?"
-    tomas surpris ""
+    tomas surpris "None?"
 
 # game/scenario/17_0_1_1_0.rpy:313
 translate english 1a4c2ffd:
 
     # kami "Les Commandements encadrent votre comportement et certaines limites de mon autorité sur le monde extérieur. Ils ne constituent pas l'intégralité de mes règles de fonctionnement."
-    kami ""
+    kami "The Commandments govern your behavior and certain limits on my authority over the outside world. They do not constitute the entirety of my operating rules."
 
 # game/scenario/17_0_1_1_0.rpy:316
 translate english 8b5cfb42:
 
     # iris colere "Donc il existe des règles qu'on n'a jamais vues ?"
-    iris colere ""
+    iris colere "So there are rules we've never seen?"
 
 # game/scenario/17_0_1_1_0.rpy:319
 translate english d7da0196:
 
     # kami "Évidemment."
-    kami ""
+    kami "Obviously."
 
 # game/scenario/17_0_1_1_0.rpy:322
 translate english 6828d909:
 
     # mara colere "Ah bah oui, évidemment ! Quel jeu de merde ce serait si on connaissait toutes les règles !"
-    mara colere ""
+    mara colere "Oh, obviously! What a shitty game this would be if we knew all the rules!"
 
 # game/scenario/17_0_1_1_0.rpy:326
 translate english 88e1b404:
 
     # nyra colere "Et on est censés modifier quoi, exactement, si tu nous caches la moitié du système ?"
-    nyra colere ""
+    nyra colere "And what exactly are we supposed to change if you're hiding half the system from us?"
 
 # game/scenario/17_0_1_1_0.rpy:329
 translate english 42236f21:
 
     # kami "Vous n'êtes pas censés modifier mon système."
-    kami ""
+    kami "You are not supposed to change my system."
 
 # game/scenario/17_0_1_1_0.rpy:331
 translate english f8f4988d:
 
     # "Nyra s'arrête net."
-    ""
+    "Nyra stops dead."
 
 # game/scenario/17_0_1_1_0.rpy:333
 translate english bd46902d:
 
     # kami "Le Conclave vous permet de proposer des modifications aux Commandements. Rien de plus."
-    kami ""
+    kami "The Conclave allows you to propose amendments to the Commandments. Nothing more."
 
 # game/scenario/17_0_1_1_0.rpy:336
 translate english f36589ee:
