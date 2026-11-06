@@ -466,10 +466,11 @@ label _26_0_1_1_0_1_DECOUVERTE_FLACON:
     iris reflexion "Je l'avais pas vu. C'est un somnifère."
     noam inquiet "Tu crois qu'il en a pris ?"
     iris raison "Je sais pas. Je vais vérifier, mais je peux pas te dire ça à l'œil."
-    "Je photographie le flacon sans toucher au bouchon. Iris le range dans un sachet."
+    "Iris pose un instant le flacon sur la table de chevet, sans toucher au bouchon, pour que je puisse le photographier."
     $ hideGroup()
     scene j26_elen_flacon at adaptive_fullscreen with dissolve
     call j26_photograph("j26_photo_flacon", "j26_elen_flacon", (0.14, 0.52), 3.0) from _call_j26_flacon_photo
+    "Une fois la photo prise, Iris enferme le flacon dans un sachet."
     $ showGroup([("iris", "reflexion", 0.33), ("noam", "inquiet", 0.69)])
     noam fatigue "Tu veux dire qu'il aurait pu... se suicider ?"
     iris fatigue "C'est une hypothèse. Pas une conclusion, Noam. On ne sait ni s'il a pris ces comprimés, ni quand."
