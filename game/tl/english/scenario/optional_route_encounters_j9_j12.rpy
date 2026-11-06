@@ -10,13 +10,13 @@ translate english KD_ROUTE_J9_ELEN_edca3aad:
 translate english KD_ROUTE_J9_ELEN_7bc841e7:
 
     # elen inquiet "Tu crois que maintenant que Kami est revenue, tout va recommencer comme avant ?"
-    elen inquiet ""
+    elen inquiet "Do you think things will go back to the way they were now that Kami's back?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:11
 translate english KD_ROUTE_J9_ELEN_88362704:
 
     # noam reflexion "Avant quoi ?"
-    noam reflexion ""
+    noam reflexion "Before what?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:12
 translate english KD_ROUTE_J9_ELEN_00df9252:
@@ -34,7 +34,7 @@ translate english KD_ROUTE_J9_ELEN_a616600f:
 translate english KD_ROUTE_J9_ELEN_a9344fc2:
 
     # elen triste "Oui, mais pendant deux jours j'ai cru qu'on allait enfin pouvoir souffler."
-    elen triste ""
+    elen triste "Yeah, but for two days I really thought we might finally catch a break."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:15
 translate english KD_ROUTE_J9_ELEN_9236b12f:
@@ -46,13 +46,13 @@ translate english KD_ROUTE_J9_ELEN_9236b12f:
 translate english KD_ROUTE_J9_ELEN_1725bc9f:
 
     # elen sourire "Bon. On ferait mieux d'y aller avant qu'elle nous reproche d'être en retard."
-    elen sourire ""
+    elen sourire "Well, we'd better go before she starts complaining we're late."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:17
 translate english KD_ROUTE_J9_ELEN_228e2806:
 
     # noam sourire "Ce serait bien son genre."
-    noam sourire ""
+    noam sourire "Sounds like her."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:25
 translate english KD_ROUTE_J9_TOMAS_253c5c48:
@@ -64,7 +64,7 @@ translate english KD_ROUTE_J9_TOMAS_253c5c48:
 translate english KD_ROUTE_J9_TOMAS_7b29f83d:
 
     # tomas reflexion "Noam, tu peux me dire si cette formulation est claire ?"
-    tomas reflexion ""
+    tomas reflexion "Noam, can you tell me if this wording makes sense?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:30
 translate english KD_ROUTE_J9_TOMAS_cda182ef:
@@ -88,25 +88,25 @@ translate english KD_ROUTE_J9_TOMAS_effff413:
 translate english KD_ROUTE_J9_TOMAS_aa93d33f:
 
     # tomas inquiet "Justement. J'aimerais éviter qu'on découvre après le vote que chacun avait compris autre chose."
-    tomas inquiet ""
+    tomas inquiet "Exactly. I'd rather not find out after the vote that everyone understood it differently."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:34
 translate english KD_ROUTE_J9_TOMAS_338f5c3c:
 
     # noam reflexion "Alors dis-le comme ça. Tout le monde comprendra."
-    noam reflexion ""
+    noam reflexion "Then say it that way. Everyone will understand."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:35
 translate english KD_ROUTE_J9_TOMAS_77d91ff4:
 
     # tomas sourire "C'est probablement plus simple que les trois phrases que j'avais préparées."
-    tomas sourire ""
+    tomas sourire "That's probably simpler than the three sentences I had prepared."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:36
 translate english KD_ROUTE_J9_TOMAS_727f395a:
 
     # noam taquin "Tu vois, je suis utile."
-    noam taquin ""
+    noam taquin "See? I do have my uses."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:44
 translate english KD_ROUTE_J10_LYSA_7d6ad236:
@@ -118,7 +118,7 @@ translate english KD_ROUTE_J10_LYSA_7d6ad236:
 translate english KD_ROUTE_J10_LYSA_f0314977:
 
     # lysa blase "Tu as dormi ou tu as passé la nuit à te battre avec ton oreiller ?"
-    lysa blase ""
+    lysa blase "Did you sleep, or spend the whole night fighting your pillow?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:49
 translate english KD_ROUTE_J10_LYSA_d3f56390:
@@ -136,19 +136,19 @@ translate english KD_ROUTE_J10_LYSA_6388fee3:
 translate english KD_ROUTE_J10_LYSA_8028a065:
 
     # noam taquin "Merci, ça m'aide beaucoup."
-    noam taquin ""
+    noam taquin "Thanks. That's a huge help."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:52
 translate english KD_ROUTE_J10_LYSA_a2da7cb9:
 
     # lysa neutre "Je plaisante, mais t'as vraiment l'air mal. Il s'est passé quelque chose ?"
-    lysa neutre ""
+    lysa neutre "I'm joking, but you really look rough. Something happen?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:53
 translate english KD_ROUTE_J10_LYSA_6ac70416:
 
     # noam hesitation "J'essaie encore de comprendre."
-    noam hesitation ""
+    noam hesitation "I'm still trying to figure it out."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:54
 translate english KD_ROUTE_J10_LYSA_2a999567:
@@ -172,7 +172,7 @@ translate english KD_ROUTE_J10_JULIAN_c89fa6ac:
 translate english KD_ROUTE_J10_JULIAN_8367724c:
 
     # julian sourire "Avant de rentrer, tu es plutôt pour ou contre ?"
-    julian sourire ""
+    julian sourire "Before we go in, are you leaning yes or no?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:68
 translate english KD_ROUTE_J10_JULIAN_91e69bcd:
@@ -190,13 +190,13 @@ translate english KD_ROUTE_J10_JULIAN_522dde66:
 translate english KD_ROUTE_J10_JULIAN_3dc94f22:
 
     # noam reflexion "J'aimerais surtout entendre les arguments."
-    noam reflexion ""
+    noam reflexion "I'd rather hear the arguments first."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:71
 translate english KD_ROUTE_J10_JULIAN_dde42780:
 
     # julian taquin "La réponse préférée des gens qui ne veulent pas se mouiller."
-    julian taquin ""
+    julian taquin "The favorite answer of people who don't want to stick their neck out."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:72
 translate english KD_ROUTE_J10_JULIAN_1c51739c:
@@ -208,19 +208,19 @@ translate english KD_ROUTE_J10_JULIAN_1c51739c:
 translate english KD_ROUTE_J10_JULIAN_8695854e:
 
     # julian hesitation "Pas vraiment. Mais j'avais envie de savoir si j'étais le seul."
-    julian hesitation ""
+    julian hesitation "Not really. I just wanted to know whether I was the only one."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:74
 translate english KD_ROUTE_J10_JULIAN_c7b8eede:
 
     # noam sourire "On est au moins deux."
-    noam sourire ""
+    noam sourire "Then there's at least two of us."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:75
 translate english KD_ROUTE_J10_JULIAN_9e8efae0:
 
     # julian sourire "Parfait. Une coalition historique."
-    julian sourire ""
+    julian sourire "Perfect. A historic coalition."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:83
 translate english KD_ROUTE_J11_NYRA_ec69c085:
@@ -244,7 +244,7 @@ translate english KD_ROUTE_J11_NYRA_a4454ded:
 translate english KD_ROUTE_J11_NYRA_9e86033f:
 
     # nyra raison "Tu tiens à peine debout. Tu as dormi combien d'heures ?"
-    nyra raison ""
+    nyra raison "You can barely stand. How many hours did you sleep?"
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:90
 translate english KD_ROUTE_J11_NYRA_81a069ff:
@@ -262,19 +262,19 @@ translate english KD_ROUTE_J11_NYRA_3181ecb7:
 translate english KD_ROUTE_J11_NYRA_fdffe582:
 
     # noam desaccord "Je vais simplement vérifier quelque chose."
-    noam desaccord ""
+    noam desaccord "I'm just going to check something."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:93
 translate english KD_ROUTE_J11_NYRA_63d86e73:
 
     # nyra reflexion "Dans ce cas, note ce que tu sais avant de commencer. Avec la fatigue, on mélange vite ce qu'on a vu et ce qu'on suppose."
-    nyra reflexion ""
+    nyra reflexion "Then write down what you know before you start. When you're tired, it's easy to mix up what you saw with what you're assuming."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:94
 translate english KD_ROUTE_J11_NYRA_a84be97b:
 
     # noam fatigue "Je vais essayer."
-    noam fatigue ""
+    noam fatigue "I'll try."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:95
 translate english KD_ROUTE_J11_NYRA_087eb7ed:
@@ -298,7 +298,7 @@ translate english KD_ROUTE_J12_JULIAN_e3666528:
 translate english KD_ROUTE_J12_JULIAN_b126ab1f:
 
     # noam reflexion "Pas complètement."
-    noam reflexion ""
+    noam reflexion "Not completely."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:109
 translate english KD_ROUTE_J12_JULIAN_3ad9518d:
@@ -316,7 +316,7 @@ translate english KD_ROUTE_J12_JULIAN_722170c8:
 translate english KD_ROUTE_J12_JULIAN_8c130a33:
 
     # julian hesitation "Je croyais. Plus on approche de la salle, moins j'en suis sûr."
-    julian hesitation ""
+    julian hesitation "I thought I was. The closer we get, the less sure I am."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:112
 translate english KD_ROUTE_J12_JULIAN_45911ed3:
@@ -328,13 +328,13 @@ translate english KD_ROUTE_J12_JULIAN_45911ed3:
 translate english KD_ROUTE_J12_JULIAN_cdee1e55:
 
     # julian sourire "Ouais. Pour une fois, je vais peut-être me taire et écouter."
-    julian sourire ""
+    julian sourire "Yeah. For once, maybe I'll shut up and listen."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:114
 translate english KD_ROUTE_J12_JULIAN_ab3824e7:
 
     # noam taquin "Je demande à voir."
-    noam taquin ""
+    noam taquin "I'll believe that when I see it."
 
 # game/scenario/optional_route_encounters_j9_j12.rpy:115
 translate english KD_ROUTE_J12_JULIAN_e06523fe:
