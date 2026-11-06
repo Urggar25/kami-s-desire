@@ -4426,7 +4426,7 @@ translate english bf6d5e7d:
 translate english 6d8b3d5e:
 
     # think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
-    think ""
+    think "Someone's calling me. A girl's voice, way too close to my ear."
 
 # game/scenario/1_canon.rpy:188
 translate english 1cfeadc8:
@@ -4450,7 +4450,7 @@ translate english 9fd527a8:
 translate english 89a5fcd5:
 
     # think "J'ouvre péniblement les yeux. Lysa est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste encore indistincte."
-    think ""
+    think "I struggle to open my eyes. Lysa is leaning right over me, so close her face fills almost my entire field of vision. Beyond her shoulder, the room is still a blur."
 
 # game/scenario/1_canon.rpy:205
 translate english 4646d6fa:
@@ -4474,7 +4474,7 @@ translate english 4e7885a4:
 translate english 34f674d0:
 
     # think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans que Lysa s'éloigne vraiment."
-    think ""
+    think "I turn my head slightly to look behind her. Chairs and vague figures drift into view, but Lysa barely moves away."
 
 # game/scenario/1_canon.rpy:212
 translate english c7d135ee:
@@ -4492,7 +4492,7 @@ translate english 57162aca:
 translate english 3b4c2700:
 
     # think "Douze sièges disposés en cercle. Certains reprennent leurs esprits, d'autres discutent déjà à voix basse. Mon regard passe de l'un à l'autre, sans que je reconnaisse la plupart de ces visages."
-    think ""
+    think "Twelve chairs arranged in a circle. Some people are just coming around; others are already talking quietly. I look from face to face, but I barely recognize anyone."
 
 # game/scenario/1_canon.rpy:242
 translate english aaf22c23:
@@ -4528,7 +4528,7 @@ translate english 236b5df1:
 translate english 392cb4db:
 
     # noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
-    noam ""
+    noam "Hey, hold on! We're all in the same boat, aren't we? Yelling at each other isn't going to get us out of here."
 
 # game/scenario/1_canon.rpy:293
 translate english fd9f39e1:
@@ -4570,25 +4570,25 @@ translate english 9241b547:
 translate english 602479b1:
 
     # "Je prends une grande inspiration sans trop savoir pourquoi."
-    ""
+    "I take a deep breath, though I'm not sure why."
 
 # game/scenario/1_canon.rpy:408
 translate english f75176f3:
 
     # "Je touche mon cou. J'ai l'impression qu'il me fait encore mal."
-    ""
+    "I touch my neck. It still feels sore."
 
 # game/scenario/1_canon.rpy:409
 translate english 717ca128:
 
     # think "Pourquoi j'ai cette sensation bizarre ?"
-    think ""
+    think "Why do I have this weird feeling?"
 
 # game/scenario/1_canon.rpy:410
 translate english 650f9391:
 
     # think "J'ai vraiment l'impression d'avoir déjà vécu ça."
-    think ""
+    think "I could swear I've been through this before."
 
 # game/scenario/1_canon.rpy:510
 translate english a8ae7299:
@@ -4654,205 +4654,205 @@ translate english fa6cb164:
 translate english 44dba8b0:
 
     # kami "Ah… vous êtes tous réveillés. Parfait."
-    kami ""
+    kami "Ah... you're all awake. Perfect."
 
 # game/scenario/1_canon.rpy:958
 translate english bb3673bc:
 
     # kami "J'avais peur d'avoir surestimé votre capacité à survivre à une petite sieste forcée."
-    kami ""
+    kami "I was worried I'd overestimated your ability to survive a little forced nap."
 
 # game/scenario/1_canon.rpy:994
 translate english 257f43e9:
 
     # kami "Vous êtes les petits échantillons de l'Humanité que je vais m'amuser à tester."
-    kami ""
+    kami "You're my tiny samples of humanity, and I'm going to have so much fun testing you."
 
 # game/scenario/1_canon.rpy:995
 translate english 8edede78:
 
     # kami "Je vais confronter vos rêves, vos choix, peut-être même ce qui vous rend si spécial.."
-    kami ""
+    kami "I'll put your dreams and your choices to the test. Maybe even whatever makes you so special..."
 
 # game/scenario/1_canon.rpy:999
 translate english c9a8bfa7:
 
     # kami "Mais aussi votre capacité à obéir…"
-    kami ""
+    kami "And your ability to follow orders, of course..."
 
 # game/scenario/1_canon.rpy:1004
 translate english 13d8f94d:
 
     # kami "Croyez-moi. Ça ne sera pas si évident."
-    kami ""
+    kami "Trust me. It won't be as easy as you think."
 
 # game/scenario/1_canon.rpy:1008
 translate english 77055a78:
 
     # kami "Alors je vous le dis : bienvenue au Conclave."
-    kami ""
+    kami "So here it is: welcome to the Conclave."
 
 # game/scenario/1_canon.rpy:1020
 translate english e0b02ae0:
 
     # kami "Pas pour vous mais pour tous les autres."
-    kami ""
+    kami "Not for your sake, of course. For everyone else's."
 
 # game/scenario/1_canon.rpy:1040
 translate english e7aea855:
 
     # kami "Chacun de vous proposera une modification, un Amendement. Un seul."
-    kami ""
+    kami "Each of you will propose one change—an amendment. Just one."
 
 # game/scenario/1_canon.rpy:1045
 translate english 19705998:
 
     # kami "Vous pourrez renforcer une règle. L'adoucir. La tordre. En ajouter ou en supprimer."
-    kami ""
+    kami "You can make a rule stricter, soften it, twist it, add a new one, or get rid of one altogether."
 
 # game/scenario/1_canon.rpy:1050
 translate english 421b160f:
 
     # kami "Et personne ne saura jamais qui a proposé quoi, le dépot sera entièrement anonyme !"
-    kami ""
+    kami "And no one will ever know who proposed what. Submissions are completely anonymous!"
 
 # game/scenario/1_canon.rpy:1056
 translate english c237272b:
 
     # kami "Après tout… C'est sans doute ce que vous faites de mieux."
-    kami ""
+    kami "After all... that's probably what you humans do best."
 
 # game/scenario/1_canon.rpy:1067
 translate english 9693c1c8:
 
     # kami "Ensuite ? Vous voterez. Il y aura un vote tous les trois jours."
-    kami ""
+    kami "Then what? You'll vote. One vote every three days."
 
 # game/scenario/1_canon.rpy:1068
 translate english d23d665f:
 
     # kami "Je vous offre la possibilité de changer les règles de mon monde. Mais, ça ne sera pas si simple."
-    kami ""
+    kami "I'm giving you a chance to change the rules of my world. But it won't be that simple."
 
 # game/scenario/1_canon.rpy:1072
 translate english ff3af836:
 
     # kami "Pour chaque amendement, vous pourrez voter pour, voter contre ou vous abstenir."
-    kami ""
+    kami "For each amendment, you can vote yes, vote no, or abstain."
 
 # game/scenario/1_canon.rpy:1073
 translate english ee60ab67:
 
     # kami "Si vous ne votez pas, votre voix sera considéré comme une abstention."
-    kami ""
+    kami "If you don't cast a vote, it'll count as an abstention."
 
 # game/scenario/1_canon.rpy:1079
 translate english 726c0bc8:
 
     # kami "Mais attention !"
-    kami ""
+    kami "But here's the catch!"
 
 # game/scenario/1_canon.rpy:1080
 translate english b8bad9a1:
 
     # kami "Pour qu'un amendement soit adopté… Il faudra convaincre tous les autres !"
-    kami ""
+    kami "For an amendment to pass... you'll have to convince everyone else!"
 
 # game/scenario/1_canon.rpy:1085
 translate english 02891ea9:
 
     # kami "Personne ne devra voter contre. Sinon, le vote est refusé."
-    kami ""
+    kami "Not a single person can vote against it. Otherwise, it fails."
 
 # game/scenario/1_canon.rpy:1089
 translate english 03f6f12b:
 
     # kami "Dans ce cas, l'amendement disparait. Et votre espoir de changer le monde avec."
-    kami ""
+    kami "And just like that, the amendment is gone. Along with your hopes of changing the world."
 
 # game/scenario/1_canon.rpy:1090
 translate english 6b3819da:
 
     # kami "Une seule petite voix contre et tout peut tomber à l'eau."
-    kami ""
+    kami "One tiny vote against it, and the whole thing goes up in smoke."
 
 # game/scenario/1_canon.rpy:1096
 translate english 67ac5035:
 
     # kami "Vous allez apprendre quelque chose d'important ici."
-    kami ""
+    kami "You're going to learn something important here."
 
 # game/scenario/1_canon.rpy:1097
 translate english dadd423b:
 
     # kami "Vous verrez, ce n'est pas si simple de mettre douze personnes d'accord."
-    kami ""
+    kami "You'll see. Getting twelve people to agree isn't so easy."
 
 # game/scenario/1_canon.rpy:1098
 translate english c8c49655:
 
     # kami "Alors imaginez convaincre des millions de gens."
-    kami ""
+    kami "Now imagine trying to convince millions."
 
 # game/scenario/1_canon.rpy:1104
 translate english 0e9eda97:
 
     # kami "Petite précision qui a toute son importance :"
-    kami ""
+    kami "One small but very important detail:"
 
 # game/scenario/1_canon.rpy:1108
 translate english 2a890490:
 
     # kami "Je ne participerai pas aux votes. Je ne donnerai pas mon avis."
-    kami ""
+    kami "I won't be voting. I won't even tell you what I think."
 
 # game/scenario/1_canon.rpy:1109
 translate english c331396d:
 
     # kami "Je ne participerai à aucune de vos manigances. Je vous laisse vous débrouiller entre vous."
-    kami ""
+    kami "And I won't be taking part in your little schemes. You can sort those out yourselves."
 
 # game/scenario/1_canon.rpy:1113
 translate english 3e13e272:
 
     # kami "Je regarderai. Et j'apprendrai en vous observant."
-    kami ""
+    kami "I'll watch. And I'll learn from watching you."
 
 # game/scenario/1_canon.rpy:1119
 translate english b3932e44:
 
     # kami "D'ailleurs, à ce sujet. Ici… les Commandements n'ont pas lieu d'être."
-    kami ""
+    kami "Oh, and while we're on the subject... the Commandments don't apply here."
 
 # game/scenario/1_canon.rpy:1125
 translate english f59a0f43:
 
     # kami "Je ne m'en mêlerai pas. Je ne vous défendrai pas. Je ne vous en empêcherai pas."
-    kami ""
+    kami "I won't interfere. I won't protect you, and I won't stop you."
 
 # game/scenario/1_canon.rpy:1126
 translate english 188be3a6:
 
     # kami "Ici, vous êtes libres de vos actions à condition qu'elles respectent le réglement du Conclave."
-    kami ""
+    kami "Here, you're free to do as you please, as long as you follow the Conclave's own rules."
 
 # game/scenario/1_canon.rpy:1131
 translate english 8b341e6c:
 
     # kami "J'ai passé un an à vous observer. Vos débats. Vos justifications. Vos excuses. Votre haine ou votre fascination."
-    kami ""
+    kami "I've spent a year watching you. Your debates. Your justifications. Your excuses. Your hatred... or your fascination."
 
 # game/scenario/1_canon.rpy:1139
 translate english 2d21f920:
 
     # kami "Le Conclave commence, je vous donne à tous les autorisations pour l'explorer librement."
-    kami ""
+    kami "The Conclave is now in session, and you all have permission to explore the station freely."
 
 # game/scenario/1_canon.rpy:1143
 translate english c2237dde:
 
     # kami "Faites bien connaissance. Après tout, vous allez devoir vous supporter pendant un mois."
-    kami ""
+    kami "Get to know each other. You'll be putting up with one another for a whole month, after all."
 
 # game/scenario/1_canon.rpy:1173
 translate english d66bba55:
@@ -4864,7 +4864,7 @@ translate english d66bba55:
 translate english f8df080c:
 
     # think "On va devoir vraiment passer trente jours ici…"
-    think ""
+    think "We're really going to spend thirty days here..."
 
 # game/scenario/1_canon.rpy:1178
 translate english 247b013f:
@@ -4930,7 +4930,7 @@ translate english ee0b3e11:
 translate english 739a30e3:
 
     # think "Je parcours le règlement. Il y a beaucoup plus de détails que ce que Kami vient de nous raconter."
-    think ""
+    think "I read through the rules. There's a lot more to them than Kami told us."
 
 # game/scenario/1_canon.rpy:1206
 translate english 601ac8f6:
@@ -4978,19 +4978,19 @@ translate english c08cd5bc:
 translate english KAMI_MESSAGE_APRES_VISITE_970d88f4:
 
     # kami "J'espère que la visite vous a plu !"
-    kami ""
+    kami "I hope you enjoyed the tour!"
 
 # game/scenario/1_canon.rpy:1329
 translate english KAMI_MESSAGE_APRES_VISITE_c5a95271:
 
     # kami "Mais vous avez sûrement autre chose à faire que de visiter les installations !"
-    kami ""
+    kami "But surely you've got better things to do than wander around the facilities!"
 
 # game/scenario/1_canon.rpy:1333
 translate english KAMI_MESSAGE_APRES_VISITE_2595f03e:
 
     # kami "Je vous attends dans la salle du Conclave."
-    kami ""
+    kami "I'll be waiting in the Conclave chamber."
 
 # game/scenario/1_canon.rpy:1375
 translate english FIRST_CONCLAVE_ELEN_INTERACT_c6c31736:
@@ -5014,13 +5014,13 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_e7d62838:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_1512ec86:
 
     # "Les portes du Conclave s'ouvrent. Plusieurs représentants sont déjà assis, mais personne ne regarde l'écran."
-    ""
+    "The Conclave doors slide open. Several representatives are already seated, but nobody's looking at the screen."
 
 # game/scenario/1_canon.rpy:1393
 translate english FIRST_CONCLAVE_ELEN_INTERACT_f18afa8b:
 
     # "Kael attend que les derniers arrivent avant de prendre la parole."
-    ""
+    "Kael waits for the last few people to arrive before speaking."
 
 # game/scenario/1_canon.rpy:1402
 translate english FIRST_CONCLAVE_ELEN_INTERACT_000cc197:
@@ -5086,79 +5086,79 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_f0cdfb34:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_4f6c709e:
 
     # think "Kael baisse les yeux vers la table. Il n'insiste pas davantage, mais personne ne semble plus disposé à se confier."
-    think ""
+    think "Kael lowers his gaze to the table. He doesn't press the issue, but nobody seems any more willing to open up."
 
 # game/scenario/1_canon.rpy:1413
 translate english FIRST_CONCLAVE_ELEN_INTERACT_c5725b63:
 
     # "Un grésillement interrompt le silence. L'écran central s'allume."
-    ""
+    "A burst of static breaks the silence. The central screen lights up."
 
 # game/scenario/1_canon.rpy:1424
 translate english FIRST_CONCLAVE_ELEN_INTERACT_aba90aac:
 
     # kami "Je ne vais pas vous refaire le discours de ce matin. Vous savez déjà que les Commandements ne s'appliquent pas ici."
-    kami ""
+    kami "I'm not going to repeat this morning's speech. You already know the Commandments don't apply here."
 
 # game/scenario/1_canon.rpy:1425
 translate english FIRST_CONCLAVE_ELEN_INTERACT_97c86a61:
 
     # kami "En revanche, il reste quelques règles propres à la station. Écoutez bien celles-là."
-    kami ""
+    kami "However, the station has a few rules of its own. Pay attention."
 
 # game/scenario/1_canon.rpy:1427
 translate english FIRST_CONCLAVE_ELEN_INTERACT_ea5f0e57:
 
     # kami "Règle une : pas de départ d'Orbite avant la fin du trentième jour. Oui, vous êtes coincés avec moi."
-    kami ""
+    kami "Rule one: nobody leaves Orbit before the end of day thirty. Yep, you're stuck with me."
 
 # game/scenario/1_canon.rpy:1428
 translate english FIRST_CONCLAVE_ELEN_INTERACT_a7999495:
 
     # kami "Vous l'aviez compris, mais je préfère qu'il n'y ait aucun malentendu."
-    kami ""
+    kami "I'm sure you figured that out already, but I'd hate for there to be any misunderstandings."
 
 # game/scenario/1_canon.rpy:1458
 translate english FIRST_CONCLAVE_ELEN_INTERACT_68f423ef:
 
     # kami "Le brouilleur empêche les images et le son de parvenir à la diffusion."
-    kami ""
+    kami "The jammer blocks video and audio from reaching the broadcast."
 
 # game/scenario/1_canon.rpy:1459
 translate english FIRST_CONCLAVE_ELEN_INTERACT_a26c4c2e:
 
     # kami "Les enregistrements existent toujours, mais personne ne peut les consulter tout de suite. Pas même moi !"
-    kami ""
+    kami "The recordings still exist, but nobody can access them right away. Not even me!"
 
 # game/scenario/1_canon.rpy:1465
 translate english FIRST_CONCLAVE_ELEN_INTERACT_087630d5:
 
     # kami "Alors profitez bien de votre petite intimité !"
-    kami ""
+    kami "So enjoy your little bit of privacy!"
 
 # game/scenario/1_canon.rpy:1499
 translate english FIRST_CONCLAVE_ELEN_INTERACT_7f3ebc41:
 
     # kami "Comme annoncé ce matin, un amendement sera tiré au sort tous les trois jours. Dix au total, pour douze propositions."
-    kami ""
+    kami "As I said this morning, one amendment will be drawn at random every three days. Ten votes in total, for twelve proposals."
 
 # game/scenario/1_canon.rpy:1500
 translate english FIRST_CONCLAVE_ELEN_INTERACT_b29d700a:
 
     # kami "Et je maintiens ma petite exigence : aucun vote contre pour l'adoption. Vous connaissez la chanson."
-    kami ""
+    kami "And my one little condition still stands: not a single vote against an amendment if you want it to pass. You know the drill."
 
 # game/scenario/1_canon.rpy:1503
 translate english FIRST_CONCLAVE_ELEN_INTERACT_59985108:
 
     # kami "Pour adopter un amendement, il faut que tous ceux qui votent se prononcent pour."
-    kami ""
+    kami "To pass an amendment, everyone who actually votes must vote in favor."
 
 # game/scenario/1_canon.rpy:1504
 translate english FIRST_CONCLAVE_ELEN_INTERACT_6635f916:
 
     # kami "Les abstentions et les absences ne comptent pas comme des votes contre."
-    kami ""
+    kami "Abstentions and absences don't count as votes against."
 
 # game/scenario/1_canon.rpy:1514
 translate english FIRST_CONCLAVE_ELEN_INTERACT_d4464f47:
@@ -5176,13 +5176,13 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_8ce51e9d:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_30a69de2:
 
     # kami "Si vous adoptez un amendement, je l'appliquerai aussitôt."
-    kami ""
+    kami "If you pass an amendment, I'll put it into effect immediately."
 
 # game/scenario/1_canon.rpy:1524
 translate english FIRST_CONCLAVE_ELEN_INTERACT_7e7c3302:
 
     # kami "Ça dépendra de ce que vous aurez proposé. Alors faites attention !"
-    kami ""
+    kami "What happens next depends on what you've proposed. So choose carefully!"
 
 # game/scenario/1_canon.rpy:1576
 translate english FIRST_CONCLAVE_ELEN_INTERACT_b555c437:
@@ -5368,7 +5368,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_878a1812:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_99e6464e:
 
     # think "On devait discuter ensemble, et là on écrit chacun dans notre coin. Ça commence mal."
-    think ""
+    think "We were supposed to talk things through together, but now we're all writing on our own. Not a great start."
 
 # game/scenario/1_canon.rpy:1679
 translate english FIRST_CONCLAVE_ELEN_INTERACT_74b95fa0:
@@ -5386,73 +5386,73 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_6ac2a96e:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_d659a197:
 
     # think "Les autres ont presque tous fini et moi, j'ai encore rien écrit."
-    think ""
+    think "Almost everyone else is done, and I still haven't written a thing."
 
 # game/scenario/1_canon.rpy:1714
 translate english FIRST_CONCLAVE_ELEN_INTERACT_a536b139:
 
     # think "Si mon idée est tirée au sort et que ça tourne mal, il y aura peut-être des gens qui en paieront le prix."
-    think ""
+    think "If my idea gets picked and things go wrong, people could end up paying the price."
 
 # game/scenario/1_canon.rpy:1715
 translate english FIRST_CONCLAVE_ELEN_INTERACT_0db7851e:
 
     # think "Bon. Faut arrêter de paniquer. Les autres ont réussi à écrire quelque chose, je peux le faire aussi."
-    think ""
+    think "Okay. I need to stop panicking. Everyone else managed to write something. I can too."
 
 # game/scenario/1_canon.rpy:1729
 translate english FIRST_CONCLAVE_ELEN_INTERACT_ac7e568a:
 
     # think "Je me lève. Ma chaise fait un bruit énorme dans la salle presque vide."
-    think ""
+    think "I stand up. My chair makes a ridiculous amount of noise in the nearly empty room."
 
 # game/scenario/1_canon.rpy:1730
 translate english FIRST_CONCLAVE_ELEN_INTERACT_cbd889ed:
 
     # think "J'avance jusqu'à l'urne, mais j'ai encore envie de retourner corriger mon texte."
-    think ""
+    think "I walk up to the ballot box, still fighting the urge to go back and rewrite my proposal."
 
 # game/scenario/1_canon.rpy:1733
 translate english FIRST_CONCLAVE_ELEN_INTERACT_993d20f2:
 
     # think "Je glisse ma feuille dans l'urne. Elle est un peu froissée, mais tant pis."
-    think ""
+    think "I slip the paper into the box. It's a little crumpled, but whatever."
 
 # game/scenario/1_canon.rpy:1772
 translate english FIRST_CONCLAVE_ELEN_INTERACT_7e58e390:
 
     # kami "Oh, vous avez tous rendu votre copie ! Et dans les temps, en plus !"
-    kami ""
+    kami "Oh, look at that! You've all turned in your assignments! On time, too!"
 
 # game/scenario/1_canon.rpy:1773
 translate english FIRST_CONCLAVE_ELEN_INTERACT_9e3534ad:
 
     # kami "C'est presque impressionnant. Vous feriez de très bons élèves !"
-    kami ""
+    kami "I'm almost impressed. You'd make such good little students!"
 
 # game/scenario/1_canon.rpy:1785
 translate english FIRST_CONCLAVE_ELEN_INTERACT_c9f6a4a5:
 
     # kami "J'ai hâte de voir lequel de vos petits textes va sortir."
-    kami ""
+    kami "I can't wait to see which of your precious proposals gets picked."
 
 # game/scenario/1_canon.rpy:1790
 translate english FIRST_CONCLAVE_ELEN_INTERACT_f0fb4823:
 
     # kami "Vous pouvez aller manger, vous reposer... Oui, Elen, tu peux enfin retourner à la cafétéria !"
-    kami ""
+    kami "You can go eat, relax... Yes, Elen, you can finally go back to the cafeteria!"
 
 # game/scenario/1_canon.rpy:1794
 translate english FIRST_CONCLAVE_ELEN_INTERACT_fd6adba5:
 
     # kami "Dormez bien ! Demain, on remet ça !"
-    kami ""
+    kami "Sleep tight! We'll do it all again tomorrow!"
 
 # game/scenario/1_canon.rpy:1805
 translate english FIRST_CONCLAVE_ELEN_INTERACT_aa57a8e2:
 
     # think "Le couloir est vide. J'ai du mal à croire qu'on vient tous de déposer un texte qui pourrait changer les règles du monde."
-    think ""
+    think "The corridor is empty. I can hardly believe we've all just submitted something that could change the rules of the world."
 
 # game/scenario/1_canon.rpy:1870
 translate english FIRST_CONCLAVE_ELEN_INTERACT_7e99cdfa:
@@ -5554,7 +5554,7 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_3d6c0910:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_176b1f3a:
 
     # think "On se passe les tasses. Pendant un moment, personne ne parle de Kami."
-    think ""
+    think "We pass the cups around. For a little while, nobody talks about Kami."
 
 # game/scenario/1_canon.rpy:1946
 translate english FIRST_CONCLAVE_ELEN_INTERACT_b9300a6c:
@@ -5566,31 +5566,31 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_b9300a6c:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_5cf652d3:
 
     # julian "Ah ouais ? Madame s'y connaît en thé, maintenant ?"
-    julian ""
+    julian "Oh, really? Since when are you a tea expert, Your Highness?"
 
 # game/scenario/1_canon.rpy:1969
 translate english FIRST_CONCLAVE_ELEN_INTERACT_94bbe31b:
 
     # julian "Allez, parle pas déjà de demain. On peut souffler cinq minutes ?"
-    julian ""
+    julian "Come on, don't start worrying about tomorrow already. Can't we catch our breath for five minutes?"
 
 # game/scenario/1_canon.rpy:1975
 translate english FIRST_CONCLAVE_ELEN_INTERACT_449d256d:
 
     # think "On finit nos boissons. Il reste une tasse sur le plateau."
-    think ""
+    think "We finish our drinks. One cup is still sitting on the tray."
 
 # game/scenario/1_canon.rpy:1987
 translate english FIRST_CONCLAVE_ELEN_INTERACT_3ab2d71f:
 
     # think "Je garde ma tasse dans les mains encore un moment, même si elle est vide."
-    think ""
+    think "I keep holding my cup for a while, even though it's empty."
 
 # game/scenario/1_canon.rpy:2016
 translate english FIRST_CONCLAVE_ELEN_INTERACT_212e1f2d:
 
     # think "Le dortoir est moins froid que le reste du bâtiment. Elias est déjà là."
-    think ""
+    think "The dormitory is warmer than the rest of the station. Elias is already here."
 
 # game/scenario/1_canon.rpy:2047
 translate english FIRST_CONCLAVE_ELEN_INTERACT_e22682fe:
@@ -5620,25 +5620,25 @@ translate english FIRST_CONCLAVE_ELEN_INTERACT_a7890001:
 translate english FIRST_CONCLAVE_ELEN_INTERACT_126a66ed:
 
     # think "Non, ce sont MES affaires ! Du matériel informatique. Près du bureau, le voyant vert fixe du brouilleur confirme qu'il est actif."
-    think ""
+    think "No, that's MY stuff! Computer equipment. Near the desk, the jammer's steady green light tells me it's on."
 
 # game/scenario/1_canon.rpy:2082
 translate english FIRST_CONCLAVE_ELEN_INTERACT_74f5facf:
 
     # think "Je reste sous l'eau un bon moment. J'ai pas envie de repenser à cette journée."
-    think ""
+    think "I stay under the water for a long time. I don't want to think about today."
 
 # game/scenario/1_canon.rpy:2090
 translate english FIRST_CONCLAVE_ELEN_INTERACT_c1ab3af9:
 
     # think "C'est fait, j'ai déposé mon texte. J'espère juste que j'ai pas écrit une connerie."
-    think ""
+    think "It's done. I submitted my proposal. I just hope I haven't written something stupid."
 
 # game/scenario/1_canon.rpy:2091
 translate english FIRST_CONCLAVE_ELEN_INTERACT_a9f5c469:
 
     # think "Je fixe le plafond sans réussir à arrêter de réfléchir."
-    think ""
+    think "I stare at the ceiling, unable to stop thinking."
 
 # game/scenario/1_canon.rpy:2155
 translate english day1_play_trace_d4ebf141:
