@@ -504,89 +504,95 @@ label _27_0_1_1_0_1_IRIS:
 
 
 label _27_0_1_1_0_1_PA_CARNET:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
-    "Je retrouve un petit carnet coincé derrière ses dossiers. Rien d'extraordinaire : des heures de rendez-vous, des listes, des calculs."
-    "À la fin, trois lignes sur Keyper. Puis une quatrième, barrée si fort que le papier a presque cédé."
-    noam reflexion "Tu préparais quoi, Tomas... ?"
-    "J'essaie de déchiffrer les mots, sans succès. Il avait pourtant prévu de continuer ses recherches le lendemain."
-    "Je prends une photo du carnet et le remets exactement où il était."
+    "Je retrouve un carnet glissé derrière les dossiers. Des rendez-vous, des calculs, des listes de vérification : rien qui ressemble à une lettre d'adieu."
+    "À la dernière page, Tomas a écrit « Keyper » et « revoir les chiffres ». Une ligne a été barrée si fort que le papier est marqué de l'autre côté."
+    noam reflexion "Qu'est-ce que tu voulais vérifier ?"
+    "Je passe le doigt au-dessus du trait sans toucher l'encre. Les mots sont illisibles, mais il avait clairement prévu de poursuivre son travail."
+    "Je photographie le carnet à sa place. Il ne donne aucune réponse sur sa mort ; il contredit au moins l'idée qu'il avait cessé de chercher."
     call investigation_take_manual_photo("j27_photo_carnet", "bg_chambre", (0.61, 0.59), 2.2) from _call_j27_carnet_photo
     return
 
 label _27_0_1_1_0_1_PA_GRILLE:
-    scene bg_chambre at adaptive_fullscreen with dissolve
+scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "La chambre de Tomas est impeccable, et sa grille possède encore ses fixations d’origine. Je les examine."
-    "Dans la chambre d'Elen, c'est différent : une tôle artisanale est clouée devant l'ouverture. Elle bloque le passage, mais pas la circulation de l'air."
-    noam reflexion "Bon. Ça n'explique toujours pas ce qui lui est arrivé."
-    "J'enregistre les images sans toucher aux vis. Lysa me ferait une tête pas possible si je démontais tout."
+    "Dans la chambre de Tomas, les fixations de la grille semblent anciennes et intactes. Je les photographie sans les dévisser."
+    "Dans celle d'Elen, une tôle artisanale est clouée devant l'ouverture. Elle empêcherait un passage, mais pas la circulation de l'air."
+    noam reflexion "Une porte verrouillée... et une chambre qui n'était pas complètement isolée."
+    "Ce n'est pas une preuve que l'aération a servi à quoi que ce soit. C'est seulement une raison supplémentaire de ne pas considérer la porte comme une réponse définitive."
     call investigation_take_manual_photo("j27_photo_grille_tomas", "bg_chambre", (0.65, 0.19), 2.2) from _call_j27_grille_photo
     return
 
 label _27_0_1_1_0_1_PA_KEYPER:
-    scene bg_archive at adaptive_fullscreen with dissolve
+scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "Je recherche les dernières consultations de Tomas. Keyper-IIB revient plusieurs fois dans l'historique."
-    "Il avait ouvert des documents la veille de sa mort, puis repris une partie de ses calculs."
-    noam raison "T'avais vraiment pas lâché l'affaire."
-    "Les dates confirment qu'il travaillait encore sur la station. Elles ne disent rien sur ce qui lui est arrivé."
+    "Je consulte l'historique des documents ouverts par Tomas. Les recherches sur Keyper-IIB se prolongent jusqu'au jour 25."
+    "Les intitulés changent : trajectoires, ravitaillement, registres de production. Il ne relisait pas simplement le même fichier ; il essayait de vérifier ses hypothèses par plusieurs sources."
+    noam raison "Tu voulais comprendre exactement ce qu'on nous demandait d'approuver."
+    "Je conserve les dates. Elles ne révèlent pas la cause de sa mort, mais elles montrent qu'il n'avait pas abandonné son enquête."
     return
 
 label _27_0_1_1_0_1_PA_QUOTAS:
-    scene bg_archive at adaptive_fullscreen with dissolve
+scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "Je parcours les index de production, à la recherche d'une définition d'ÉID-0."
-    "Il y a des unités de transport, des références de conteneurs, des catégories de machines... mais aucune entrée qui corresponde clairement."
-    noam fatigue "Sérieux, c'est quoi, ces effectifs ?"
-    "Je sauvegarde les références des pages consultées. Je n'ai rien trouvé qui permette de dire s'il s'agit de personnes ou de machines."
+    "Je parcours les index de production. Il y a des références de conteneurs, des machines, du fret... mais aucune définition claire des unités ÉID-0."
+    "Une chose me frappe : le registre présente les « effectifs » et les quotas côte à côte, comme si l'un déterminait l'autre."
+    noam reflexion "Des effectifs pour produire davantage... C'est ça qui t'inquiétait, Tomas ?"
+    "Ça ne prouve pas qu'il s'agisse de personnes. En revanche, il faudra demander pourquoi cette catégorie n'est expliquée nulle part dans les documents accessibles."
     return
 
 label _27_0_1_1_0_1_PA_SIGNAL:
-    scene bg_observation at adaptive_fullscreen with dissolve
+scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "Je regarde les journaux de la console. Des mesures, des interférences, des heures de connexion. Je comprends à peine la moitié des colonnes."
-    "Je ne repère aucune mention explicite de Yanma, et je n'ai pas le modèle du petit appareil."
-    noam reflexion "Ça pourrait être là, sous mes yeux, et je le verrais même pas."
-    "J'enregistre le journal sans tirer de conclusion."
+    "Les journaux de la console comportent des heures de connexion, des interruptions et des relevés d'interférences. Une partie des valeurs est impossible à interpréter sans connaître l'appareil."
+    noam reflexion "Si je retrouve ce boîtier, au moins je pourrai comparer les heures."
+    "Je sauvegarde les lignes utiles. Je n'ai pas découvert un signal mystérieux : seulement une façon concrète de vérifier un appareil si nous le retrouvons."
     return
 
 label _27_0_1_1_0_1_PA_CAMERA:
-    scene bg_observation at adaptive_fullscreen with dissolve
+scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
-    "J'ouvre l'inventaire des appareils censés se trouver ici."
-    "Une longue liste de boîtiers et de capteurs apparaît, avec des photos qui se ressemblent presque toutes."
-    noam fatigue "Génial... Une boîte grise, puis une autre boîte grise."
-    "Aucun modèle ne correspond clairement à mon souvenir. Je demande une copie de l'inventaire."
+    "L'inventaire officiel propose une série de capteurs presque identiques. Certains ressemblent vaguement à mon souvenir, mais aucun ne correspond avec certitude."
+    "Je remarque aussi que la liste concerne le matériel attribué à cette salle. Elle ne recense pas forcément les objets qu'un représentant apporte lui-même."
+    noam raison "Donc même si la boîte n'est pas sur la liste, ça ne veut pas dire que je l'ai imaginée."
+    "J'enregistre les références possibles pour les soumettre à quelqu'un de plus compétent."
     return
 
 label _27_0_1_1_0_1_PA_ELIAS:
-    scene bg_maintenance at adaptive_fullscreen with dissolve
+scene bg_maintenance at adaptive_fullscreen with dissolve
     $ showGroup([("elias", "fatigue", 0.36), ("noam", "neutre", 0.68)])
-    noam reflexion "Elias, tu ranges parfois les appareils de la salle d'observation ?"
-    elias raison "Ouais. Quand il traîne des trucs, je les ramène ici."
-    noam raison "T'as déplacé une petite boîte avec un voyant, depuis le jour 25 ?"
-    elias surpris "Une petite boîte ? Noam, y en a plein."
-    noam fatigue "Je sais. J'ai pas mieux comme description."
-    elias reflexion "J'ai pas le souvenir d'en avoir pris une, mais ça veut pas dire que j'ai rien bougé."
-    noam neutre "Ça marche. Tu peux vérifier si un modèle manque ?"
-    elias raison "Je peux regarder, oui. Mais je te promets pas que je vais retrouver ton truc."
-    noam sourire "Merci."
+    noam reflexion "Elias, tu ranges parfois les petits appareils de l'observation ?"
+    elias neutre "Ouais, quand ça traîne. Sinon on finit par casser un truc."
+    noam raison "T'as déplacé une petite boîte métallique avec un voyant depuis le jour 25 ?"
+    elias surpris "Merde, Noam, ça décrit la moitié des machins que je touche."
+    noam fatigue "Je sais. J'ai rien de mieux."
+    elias reflexion "Je me rappelle pas l'avoir prise. Mais je te promets pas que j'ai rien rangé non plus."
+    noam raison "Tu peux vérifier les bacs ?"
+    elias neutre "Ouais. Par contre, venez pas dire que je l'ai volée si elle ressort pas."
+    noam inquiet "Je t'accuse de rien."
+    elias fatigue "Je sais. C'est juste que tout le monde commence à regarder les autres bizarrement depuis hier."
     $ hideGroup()
     return
 
 label _27_0_1_1_0_1_PA_JULIAN:
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
+scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
     $ showGroup([("julian", "fatigue", 0.35), ("noam", "neutre", 0.69)])
-    noam raison "Je voulais revenir sur le vote. Tu savais ce que Tomas cherchait exactement ?"
-    julian agace "Tu vas encore me demander pourquoi je me suis énervé ?"
-    noam neutre "Non. Je veux savoir s'il t'a parlé de Keyper ou des unités ÉID-0."
-    julian reflexion "Keyper, oui, il avait dit un truc sur des quotas. ÉID-quoi, j'en ai aucune idée."
-    noam raison "Il t'avait montré ses dossiers ?"
-    julian fatigue "Non. On s'est engueulés avant qu'il puisse m'expliquer. Je l'ai pas laissé finir."
+    "Julian regarde une tasse presque pleine. Il ne semble pas avoir remarqué que son café a refroidi."
+    noam raison "Tomas t'avait expliqué ce qu'il avait trouvé sur Keyper ?"
+    julian reflexion "Il a essayé. Il voulait me montrer ses chiffres, me convaincre d'attendre avant de me prononcer."
+    noam neutre "Et ?"
+    julian fatigue "Je lui ai répondu que s'il avait quelque chose d'important à dire, il n'avait qu'à trouver le courage de le dire devant tout le monde."
     noam inquiet "Julian..."
     julian triste "Ouais. Je sais."
-    "Il détourne la tête. Je n'insiste pas."
+    "Il baisse la tête, puis reprend sans essayer de sourire."
+    julian fatigue "Il m'a écrit après le vote. J'ai lu son message et je l'ai laissé sans réponse."
+    noam raison "Tu pouvais pas prévoir ce qui allait lui arriver."
+    julian colere "Ne me dis pas ça. Je sais. Ça change rien à ce que je lui ai dit."
+    pause 0.4
+    julian triste "Si tu trouves ce qu'il voulait me montrer, fais-moi au moins la faveur de me l'envoyer."
+    noam neutre "Je le ferai."
     $ hideGroup()
     return
 
