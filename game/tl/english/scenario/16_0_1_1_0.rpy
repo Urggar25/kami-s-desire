@@ -1637,7 +1637,7 @@ translate english ef1320a0:
 translate english 6eaad599:
 
     # sael mefiant "Pourquoi diable il y a écrit Accès mnésique ?!"
-    sael mefiant "Why the hell does it say 'Memory Access'?!"
+    sael mefiant "Why the hell does it say 'Mnemonic Access'?!"
 
 # game/scenario/16_0_1_1_0.rpy:527
 translate english e7be8c33:
