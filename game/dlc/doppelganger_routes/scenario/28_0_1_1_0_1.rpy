@@ -456,16 +456,17 @@ label _28_0_1_1_0_1_ANALYSE:
 label _28_0_1_1_0_1_TEMOINS:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-    "J'ai les photos du conduit sur ma tablette. Lysa me rejoint, mais elle n'a pas l'air d'avoir envie de reparler de ce qu'on a trouvé."
+    "Dans la salle commune, Lysa s'assoit en face de moi. Je pose la tablette entre nous."
     $ showGroup([("lysa", "fatigue", 0.36), ("noam", "neutre", 0.69)])
-    lysa reflexion "Tu vas interroger tout le monde, maintenant ?"
-    noam fatigue "Pas tous. Je voudrais comparer quelques trucs et comprendre d'où vient la plante."
-    lysa raison "Alors on garde la même limite qu'hier. Cinq actions. Après, on s'arrête."
-    noam neutre "Et si je veux juste passer dans une salle ?"
-    lysa neutre "Tu y vas. C'est poser les questions et examiner les indices qui prend du temps."
-    noam raison "OK. D'ailleurs, je vais laisser Iris tranquille un peu."
-    lysa blase "Bonne idée. Elle va finir par nous jeter dehors."
-    "Je sauvegarde les photos de la plaque, du bol et des fragments. Ces découvertes sont déjà acquises : je n'ai pas besoin de dépenser des PA pour les garder."
+    lysa reflexion "Bon. Tu veux aller voir qui ?"
+    noam raison "Kael pour la plaque. Les autres pour la plante. Et je voudrais comprendre qui savait que Tomas dormait chez Elen."
+    lysa blase "Tout ça aujourd'hui ? T'as vu l'heure ?"
+    noam fatigue "Je sais."
+    lysa raison "Comme hier. Cinq actions. On choisit celles qui nous semblent utiles, et après on fait le point."
+    noam reflexion "Même si on a pas trouvé le coupable ?"
+    lysa neutre "On va pas trouver un assassin en courant partout jusqu'à trois heures du matin."
+    noam neutre "Tu marques un point."
+    "Je note les premières découvertes. La plaque, le bol et les fragments sont acquis. Le reste dépend de ce que j'aurai le temps de vérifier."
     $ investigation_pa_begin(28, 5)
     $ investigation_unlocked = True
     $ investigation_add("j28_core_plaque", notify=False)
@@ -524,60 +525,55 @@ label _28_0_1_1_0_1_PA_FIN:
 label _28_0_1_1_0_1_SAEL_RYN:
     scene bg_repos at adaptive_fullscreen with dissolve
     $ showGroup([("sael", "neutre", 0.22), ("ryn", "fatigue", 0.48), ("noam", "neutre", 0.74)])
-    ryn fatigue "Qu'est-ce qu'il y a, encore ?"
-    noam raison "On a trouvé quelque chose dans un conduit. Je voulais savoir si vous connaissez une plante : Bulbuma Corienis."
-    sael reflexion "J'en ai entendu parler. On en trouve dans certaines régions de Limen."
-    ryn reflexion "C'est celle qui pousse dans le désert ?"
-    sael neutre "Il y a plusieurs espèces. Pourquoi ?"
-    $ showGroup([("lysa", "neutre", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
-    lysa raison "Des restes de plante brûlée, dans un bol. Près de la ventilation d'Elen."
-    sael inquiet "Et vous pensez que ça pourrait avoir un rapport avec la mort de Tomas ?"
-    noam neutre "Iris dit que c'est possible, oui."
-    $ showGroup([("ryn", "colere", 0.22), ("sael", "neutre", 0.48), ("noam", "neutre", 0.74)])
-    ryn colere "Ah. Donc parce qu'on vient de Limen, c'est nous maintenant ?"
-    noam agace "Mais j'ai pas dit ça !"
-    ryn colere "Vous arrivez avec une plante du désert et vous nous regardez tous les deux !"
-    $ showGroup([("lysa", "blase", 0.22), ("ryn", "colere", 0.48), ("noam", "neutre", 0.74)])
-    lysa blase "On cherche aussi du côté de la maintenance. Calme-toi."
-    ryn fatigue "Ouais, c'est ça..."
+    ryn fatigue "Quoi, encore ?"
+    noam raison "On cherche d'où peut venir une plante. Du Bulbuma Corienis."
+    sael reflexion "Je t'en ai parlé à l'infirmerie. Ryn, tu en as déjà vu ?"
+    ryn reflexion "Chez nous ? Oui, près des zones sèches. Enfin, je crois."
+    noam neutre "Et sur le Conclave ?"
+    ryn colere "Attends. Pourquoi tu me demandes ça à moi ?"
+    $ showGroup([("lysa", "neutre", 0.22), ("ryn", "colere", 0.48), ("noam", "neutre", 0.74)])
+    lysa raison "Parce qu'on cherche. On a aussi prévu de parler à Kael."
+    ryn colere "Ouais, mais c'est nous les premiers, hein ?"
+    noam fatigue "Ryn, on a trouvé de la plante brûlée dans un conduit. Je veux juste savoir si tu connais ça."
+    ryn colere "Et si je connais, quoi ? Je suis coupable ?"
     $ showGroup([("sael", "neutre", 0.22), ("ryn", "fatigue", 0.48), ("noam", "neutre", 0.74)])
-    sael raison "Ryn, laisse-le finir."
-    noam reflexion "Sael, tu sais ce qui se passe quand on brûle cette plante ?"
-    sael neutre "Certaines préparations sont irritantes. Je n'en ai jamais utilisé, alors je ne vais pas inventer."
-    noam neutre "Tu en as déjà vu ici ?"
-    sael neutre "Non. Pas à ma connaissance."
-    ryn colere "Et moi non plus, d'accord ? J'ai même jamais touché à cette plante."
-    noam raison "D'accord."
-    sael reflexion "Vous avez trouvé comment le bol a été placé ?"
-    noam neutre "Pas encore. Mais la plaque qu'on a trouvée ne vient pas des protections habituelles."
-    sael raison "Alors c'est peut-être ça qu'il faut comprendre en priorité."
+    sael raison "Il ne t'a pas accusé. Réponds à sa question."
+    ryn fatigue "Non. J'en ai pas vu ici. Voilà."
+    sael reflexion "Ce n'est pas une plante réservée à Limen. Et même si elle l'était, on reçoit des cargaisons de partout."
+    noam raison "Tu as déjà utilisé ça pour soigner quelqu'un ?"
+    sael neutre "Non. Certaines préparations irritent les voies respiratoires. Je ne vais pas faire semblant de connaître les dosages."
+    ryn agace "Donc maintenant, je suis censé me souvenir de toutes les mauvaises herbes de mon district ?"
+    lysa blase "Ce serait pratique, mais on va s'en passer."
+    "Ryn se lève, manifestement furieux. Sael ne le retient pas."
+    sael fatigue "Vous avez autre chose ?"
+    noam reflexion "Oui. La plaque dans le conduit. Tu crois qu'elle a pu être posée avant l'échange des chambres ?"
+    sael raison "Sans connaître les accès, je ne peux pas te dire quand. Mais si tu veux comprendre la mort de Tomas, c'est une question plus utile que de chercher qui a déjà vu cette plante."
     $ hideGroup()
     return
 
 label _28_0_1_1_0_1_KAEL:
     scene bg_maintenance at adaptive_fullscreen with dissolve
     $ showGroup([("kael", "calme", 0.24), ("lysa", "neutre", 0.46), ("noam", "neutre", 0.69)])
-    noam raison "Tu peux regarder ces photos ? On a trouvé une plaque dans le réseau."
-    kael surpris "Attends... C'est quoi, ça ?"
-    lysa neutre "On espérait que tu nous le dirais."
-    kael reflexion "C'est pas une des plaques qu'on a installées. Nous, on a protégé les grilles, pas mis des obstacles à l'intérieur."
-    noam reflexion "Elle redirigeait l'air vers la chambre d'Elen."
-    kael raison "Ça en a l'air. Il faudrait voir sur place pour être sûr."
-    noam raison "On peut poser cette plaque depuis un accès de maintenance ?"
-    kael neutre "Oui. Les branches sont reliées."
-    lysa reflexion "Donc pas besoin d'ouvrir la porte de la chambre."
-    kael raison "Non, pas pour accéder à cette partie du réseau."
-    noam neutre "Et le Bulbuma Corienis ? Tu connais ?"
-    kael reflexion "De nom. On trouve des plantes du même genre dans certains secteurs d'Orbite, mais je suis pas botaniste."
-    lysa blase "Ça, on avait remarqué."
-    kael sourire "Je préfère les moteurs."
-    noam raison "Tu peux vérifier les accès de maintenance ?"
-    kael neutre "Je regarderai les journaux, mais il y a du passage. Je promets rien."
-    noam neutre "Merci."
+    noam raison "Kael, regarde cette photo. C'est toi qui as installé cette plaque ?"
+    kael surpris "Quoi ? Non. Attends..."
+    "Il agrandit l'image, puis pose sa tablette."
+    kael reflexion "Nous, on a fixé des protections devant les grilles. Pas ça. Cette plaque est dans le réseau lui-même."
+    lysa raison "Et elle renvoie l'air vers une seule chambre."
+    kael reflexion "Oui. C'est du bricolage, mais ça peut marcher."
+    noam inquiet "Qui peut entrer dans cette branche ?"
+    kael neutre "Ceux qui ont accès à la maintenance. Et je parle pas seulement de moi. On a déplacé des outils là-dedans plusieurs fois."
+    lysa reflexion "Le journal des entrées ?"
+    kael raison "Je peux essayer de le récupérer. Mais il y a plusieurs lecteurs, et ils ne conservent pas tous la même chose."
+    noam raison "Tu penses que le montage a été posé récemment ?"
+    kael reflexion "Sur photo, impossible de dater ça. Et ne me demande pas une heure, j'en sais rien."
+    lysa blase "On peut au moins exclure que ce soit une pièce normale ?"
+    kael neutre "Oui. Ça, je peux te le dire."
+    noam reflexion "Et tu connais le Bulbuma ?"
+    kael calme "De nom. On a des plantes de ce genre dans certains secteurs d'Orbite. Mais pour l'espèce exacte, demande à quelqu'un d'autre."
+    noam raison "Préviens-moi si tu retrouves les heures de passage."
+    kael neutre "D'accord. Je regarde ça."
     $ hideGroup()
     return
-
-
 
 label _28_0_1_1_0_1_PA_GRILLE:
     scene j26_elen_vide at adaptive_fullscreen with dissolve
@@ -604,30 +600,28 @@ label _28_0_1_1_0_1_PA_FLACON:
 
 label _28_0_1_1_0_1_PA_IRIS:
     scene infirmerie2 at adaptive_fullscreen with dissolve
-    $ showGroup([("iris", "fatigue", 0.34), ("noam", "neutre", 0.69)])
-    iris fatigue "Dis-moi que tu viens pas encore pour me demander si j'ai trouvé un meurtrier."
-    noam neutre "Non. Je voudrais comprendre ce qu'on sait vraiment sur l'intoxication."
-    iris raison "Ses symptômes sont compatibles avec une substance inhalée. Le récipient et la plaque nous donnent une piste sérieuse."
-    noam reflexion "Mais tu peux pas confirmer la cause exacte ?"
-    iris neutre "Non. Et je veux pas faire croire que oui."
-    noam fatigue "D'accord."
-    iris inquiet "Tu te rends compte de ce que ça veut dire, si c'est ça ?"
-    noam neutre "Ouais. C'est pour ça que je voudrais être sûr."
-    iris raison "Alors garde les résultats. Ne rajoute rien."
+    $ showGroup([("sael", "fatigue", 0.20), ("iris", "reflexion", 0.45), ("noam", "neutre", 0.72)])
+    noam reflexion "Vous avez pu comparer les symptômes de Tomas avec ce qu'on a trouvé ?"
+    sael raison "Oui. Et ça reste compatible avec une intoxication. Mais ce n'est pas une preuve que le bol l'a tué."
+    iris fatigue "La fiche que j'ai trouvée décrit des réactions proches. Le problème, c'est qu'on n'a pas identifié ce qu'il y avait vraiment dans le récipient."
+    noam raison "Donc on peut parler d'un dispositif suspect. Pas annoncer la cause exacte."
+    sael neutre "Voilà."
+    iris agace "C'est fou, il nous écoute parfois."
+    noam taquin "Très drôle."
+    sael inquiet "Et ne laisse personne aller retirer le bol pour le montrer aux autres. Il faut conserver ce qu'on a trouvé."
     $ hideGroup()
     return
 
 label _28_0_1_1_0_1_PA_ANALYSE:
     scene infirmerie2 at adaptive_fullscreen with dissolve
-    "Iris me laisse regarder la photo du fragment sur son écran. Elle garde le sachet fermé."
-    $ showGroup([("iris", "reflexion", 0.34), ("noam", "neutre", 0.69)])
-    noam raison "Tu l'as identifié avec certitude ?"
-    iris neutre "Non. Ça ressemble beaucoup à du Bulbuma Corienis, mais il y a d'autres espèces proches."
-    noam reflexion "Et c'est dangereux quand on le brûle ?"
-    iris raison "Certaines préparations peuvent dégager des substances toxiques. Ça dépend de ce qu'on chauffe."
-    noam fatigue "Ça nous laisse pas mal d'inconnues."
-    iris fatigue "Bienvenue dans mon quotidien."
-    "Je garde la fiche descriptive, sans annoncer que le fragment vient forcément de cette espèce."
+    "Iris me montre la photo du fragment, à côté d'une fiche botanique. Sael observe les deux images."
+    $ showGroup([("sael", "reflexion", 0.19), ("iris", "neutre", 0.46), ("noam", "neutre", 0.73)])
+    noam reflexion "C'est vraiment la même plante ?"
+    iris raison "Ça y ressemble. Mais regarde, celle d'à côté aussi. Elles se ressemblent presque toutes sur une photo comme ça."
+    sael neutre "Et une plante chauffée n'a pas forcément les mêmes effets qu'une plante fraîche."
+    noam fatigue "Donc on ne peut pas dire que ça vient de Limen."
+    sael raison "Non. Et on ne sait même pas encore quelle espèce c'est."
+    iris neutre "Je garde ces deux fiches. Si on retrouve un vrai échantillon exploitable, on pourra comparer."
     $ hideGroup()
     return
 
@@ -664,14 +658,22 @@ label _28_0_1_1_0_1_PA_LIVRAISONS:
 label _28_0_1_1_0_1_PA_JULIAN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("julian", "fatigue", 0.34), ("noam", "neutre", 0.69)])
-    noam raison "T'as appris ce qu'on a trouvé dans le conduit ?"
-    julian inquiet "Un bol brûlé, ouais. Kael m'a dit qu'il y avait une plaque bizarre."
-    noam neutre "Tu penses toujours que Tomas s'est suicidé ?"
-    julian fatigue "J'en sais rien. Je pensais que c'était les somnifères, mais là..."
-    noam raison "Iris peut pas encore confirmer."
-    julian triste "Tu sais, moi je l'ai vu pleurer presque la veille. J'étais sûr qu'il avait craqué."
-    noam fatigue "On peut être au fond du trou et mourir pour autre chose."
-    julian neutre "Ouais. Ça, je commence à le comprendre."
+    "Julian remue son café depuis un bon moment. Quand je m'assois, il pose enfin sa cuillère."
+    julian fatigue "Kael m'a raconté pour le conduit. C'est vrai ?"
+    noam raison "La plaque et le bol, oui. Pour le reste, Sael continue les examens."
+    julian reflexion "Putain... Et moi qui étais sûr qu'il avait pris ces comprimés."
+    noam neutre "Tu pouvais pas savoir."
+    julian colere "Si. J'aurais surtout pu l'écouter deux minutes, au lieu de lui hurler dessus."
+    noam inquiet "Julian..."
+    julian fatigue "Je l'ai vu pleurer. Je me suis dit qu'il avait craqué. C'était tellement simple comme explication."
+    noam raison "Être mal ne veut pas dire qu'on veut mourir."
+    julian triste "Ouais. Je comprends, maintenant."
+    "Il serre sa tasse au point que ses doigts blanchissent."
+    julian inquiet "Tu crois que quelqu'un a fait ça exprès ?"
+    noam reflexion "Je crois que quelqu'un a installé le dispositif. Pourquoi, et pour qui, je sais pas."
+    julian determine "Alors trouve-le. Parce que si on repart sans savoir..."
+    noam neutre "Je cherche, Julian."
+    julian fatigue "Je sais. Désolé."
     $ hideGroup()
     return
 
@@ -686,35 +688,33 @@ label _28_0_1_1_0_1_PA_ORBITE:
 label _28_0_1_1_0_1_NYRA:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
-    "Nyra nous rejoint près de la porte. Je lui montre les photos du conduit."
+    "Nyra nous retrouve près de la porte. Elle regarde les photographies sans rien dire pendant quelques secondes."
     $ showGroup([("nyra", "inquiet", 0.26), ("lysa", "neutre", 0.50), ("noam", "neutre", 0.74)])
-    nyra surpris "Attends, un bol brûlé ? Dans la ventilation ?"
-    noam raison "Ouais. Et une plaque qui redirigeait l'air."
-    nyra reflexion "C'est... bizarre. Vraiment bizarre."
-    lysa raison "Iris pense que le récipient a pu servir à diffuser une substance toxique."
-    nyra inquiet "Merde."
-    noam neutre "On peut toujours pas affirmer que c'est ça qui l'a tué."
-    nyra raison "Mais ça expliquerait comment quelqu'un aurait pu agir sans ouvrir la porte."
-    if "limen" in investigation_pa_completed or "kael" in investigation_pa_completed:
-        lysa neutre "On a posé des questions à ceux qui connaissaient peut-être la plante."
-        nyra reflexion "Et alors ?"
-        noam raison "Rien qui dise d'où viennent les résidus."
+    nyra surpris "Un récipient brûlé ? Dans la ventilation ?"
+    noam raison "Avec une plaque qui dirigeait l'air vers la chambre d'Elen."
+    nyra reflexion "C'est quand même très étrange."
+    lysa raison "Sael pense qu'une intoxication est possible."
+    nyra inquiet "Merde..."
+    noam reflexion "On n'a pas réussi à savoir quand le montage a été installé."
+    nyra raison "Donc on ignore si la personne qui l'a posé savait que Tomas dormirait dans cette chambre."
+    lysa inquiet "Ouais."
+    if "livraisons" in investigation_pa_completed:
+        noam raison "J'ai regardé les livraisons. Rien qui permette de retracer le récipient."
+        nyra neutre "Je vais reprendre les lots avec les documents d'Orbite. Il y a peut-être une référence qu'on a ratée."
     else:
-        lysa neutre "On n'a pas encore demandé aux autres d'où ça peut venir."
-        nyra raison "Alors ne vous pressez pas de désigner quelqu'un. On a le temps d'examiner les documents."
-    nyra neutre "Ça nous dit pas d'où vient ce qu'on a trouvé."
-    lysa raison "Non. On va regarder les livraisons."
-    nyra sourire "Je peux m'en occuper. J'ai déjà consulté une partie des registres pour Keyper."
-    noam neutre "Ouais, merci."
-    nyra reflexion "Juste une chose. Si on annonce que Tomas a été assassiné, ça risque de partir en vrille."
-    noam raison "Je sais. Iris va présenter les éléments, pas accuser quelqu'un."
-    nyra neutre "OK. Je vais regarder ce que je trouve dans les livraisons."
-    "Elle part vers les archives. Lysa referme son carnet."
-    lysa blase "Elle a pas tort. On a déjà assez de gens sur les nerfs."
-    noam fatigue "C'est bien pour ça que je veux pas accuser quelqu'un sans preuve."
+        nyra neutre "Je peux regarder les livraisons. J'ai déjà parcouru ces registres pour les recherches sur Keyper."
+    if "limen" in investigation_pa_completed:
+        lysa fatigue "Ryn a pas apprécié qu'on lui parle du Bulbuma."
+        nyra neutre "Je peux le comprendre. Il va falloir éviter que tout le monde se saute dessus."
+    noam raison "Sael veut présenter les résultats au groupe."
+    nyra reflexion "Elle a raison. Mais annoncez bien ce qui est certain. Sinon la soirée va être longue."
+    lysa blase "À mon avis, elle le sera quand même."
+    nyra neutre "Je vais consulter les archives. On se retrouve au Conclave."
+    "Elle s'éloigne. Lysa reste un moment devant les photos."
+    lysa inquiet "Ça va partir en vrille."
+    noam fatigue "Ouais. Je sais."
     $ hideGroup()
     jump _28_0_1_1_0_1_REUNION
-# Durée : ~1m15.
 
 label _28_0_1_1_0_1_REUNION:
     $ current_period = "Soir"
