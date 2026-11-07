@@ -148,7 +148,7 @@ init 10 python:
         "j28_photo_bulbuma": {"category": "preuves", "title": "POT DE BULBUMA BRÛLÉ", "desc": "Un récipient noirci contenant des résidus végétaux brûlés était caché derrière la plaque de dérivation.", "day": "J28", "origin": "CONDUITS DE VENTILATION", "status": "PHOTOGRAPHIE", "manual_only": True, "photo_source": "images/background/scene/maintenance2.png"},
         "j28_core_plaque": {"category": "preuves", "title": "PLAQUE DE DÉRIVATION D'AIR", "desc": "Une plaque non standard dévie l'air vers la chambre d'Elen depuis l'intérieur du réseau de ventilation.", "day": "J28", "origin": "CONDUITS", "status": "CONFIRMÉ", "manual_only": True},
         "j28_core_bol": {"category": "preuves", "title": "RÉCIPIENT BRÛLÉ", "desc": "Un petit récipient noirci contenant des résidus végétaux brûlés a été découvert derrière la plaque.", "day": "J28", "origin": "CONDUITS", "status": "CONFIRMÉ", "manual_only": True},
-        "j28_core_bulbuma": {"category": "hypotheses", "title": "PISTE DU BULBUMA CORIENIS", "desc": "Des fragments évoquent une plante dont certaines préparations chauffées peuvent être toxiques, sans identification définitive.", "day": "J28", "origin": "INFIRMERIE", "status": "CONFIRMÉ", "manual_only": True},
+        "j28_core_bulbuma": {"category": "hypotheses", "title": "PISTE DU BULBUMA CORIENIS", "desc": "Des fragments évoquent une plante dont certaines préparations chauffées peuvent être toxiques, sans identification définitive.", "day": "J28", "origin": "INFIRMERIE", "status": "HYPOTHÈSE", "manual_only": True},
         "j28_tomas_grilles": {"category": "preuves", "title": "PROTECTIONS ET FLUX D'AIR", "desc": "Les grilles bloquent le passage d'une personne, mais laissent circuler l'air vers les chambres.", "day": "J28", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j28_tomas_flacon": {"category": "hypotheses", "title": "FLACON ET SUICIDE", "desc": "La présence de somnifères ne suffit pas à expliquer la plaque et les résidus trouvés dans le conduit.", "day": "J28", "origin": "DORTOIRS", "status": "À VÉRIFIER", "manual_only": True},
         "j28_tomas_iris": {"category": "personnes", "title": "IRIS — INTOXICATION POSSIBLE", "desc": "Les symptômes et les résidus rendent l'intoxication plausible, sans identifier avec certitude la substance.", "day": "J28", "origin": "INFIRMERIE", "status": "À VÉRIFIER", "manual_only": True},
@@ -168,6 +168,7 @@ default j28a_plaque = False
 default j28a_bol = False
 default j28a_bulbuma = False
 default j28a_detours = 0
+default j28a_air_traced = False
 
 label _28_0_1_1_0_1_REVEIL:
     $ current_day = 28
@@ -177,15 +178,19 @@ label _28_0_1_1_0_1_REVEIL:
     $ j28a_bol = False
     $ j28a_bulbuma = False
     $ j28a_detours = 0
+    $ j28a_air_traced = False
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 0.8
     $ blink()
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je me réveille en pensant encore à Tomas. Hier, j'ai passé ma journée à fouiller ses papiers. Au final, j'ai surtout découvert qu'il avait encore beaucoup de questions."
-    "Une notification apparaît sur ma tablette : livraison du jour 28."
-    noam fatigue "Ah oui... Les caisses."
-    "Je regarde une dernière fois les photos de Keyper, puis je m'habille."
-    think "Aujourd'hui, il faut que je comprenne ce qui s'est passé dans cette chambre."
+    "Je passe la main à côté de l'oreiller. Rien. Ma tablette a glissé sous le lit pendant la nuit."
+    "Elle affiche toujours les photos des affaires de Tomas. J'ai dû m'endormir dessus."
+    "Au milieu des notifications, il y a encore son dernier message. « Merci pour tout à l'heure. On se voit demain. »"
+    noam fatigue "Ouais..."
+    "Je ferme la conversation. Une alerte apparaît : livraison du jour 28."
+    noam reflexion "Les caisses. J'avais complètement oublié."
+    "Je m'habille et regarde une dernière fois la photo de la grille dans la chambre d'Elen. Hier, je l'ai fixée pendant dix minutes sans comprendre ce qui me dérangeait."
+    "On était tous tellement occupés à regarder cette foutue porte."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "couloir_dortoir") from _call_j28a_door_1
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     jump _28_0_1_1_0_1_LIVRAISON
@@ -193,31 +198,33 @@ label _28_0_1_1_0_1_REVEIL:
 label _28_0_1_1_0_1_LIVRAISON:
     scene bg_maintenance at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
-    "Près du sas de livraison, Elias et Elen chargent des caisses sur un chariot. Goumi attend derrière eux."
+    "Près du sas, Elias et Elen empilent des caisses. Goumi attend avec le chariot, parfaitement immobile. Évidemment, lui n'a aucun problème à faire comme si tout allait bien."
     $ showGroup([("elias", "fatigue", 0.080), ("elen", "reflexion", 0.360), ("noam", "neutre", 0.640), ("lysa", "blase", 0.920)])
-    elias fatigue "Attends, Elen, pas celle-là."
-    elen neutre "Pourquoi ?"
-    elias raison "Elle est plus lourde."
-    "La caisse cogne contre le chariot. Elen la retient de justesse."
-    elen peur "Oh ! Merde !"
-    noam surpris "Ça va ?"
-    elen fatigue "Ouais. C'est rien."
-    lysa blase "C'est la deuxième en cinq minutes."
-    elen colere "Lysa !"
-    lysa neutre "Quoi ? Je compte."
-    "Je les aide à remettre la caisse en place."
-    noam reflexion "Kami a toujours pas arrêté les livraisons ?"
-    elias fatigue "Non. C'est pareil que d'habitude. Infirmerie, cafétéria, maintenance."
-    elen triste "Elle fait vraiment comme si rien s'était passé."
-    noam neutre "Tu veux qu'on termine sans toi ?"
-    elen fatigue "Non. J'ai besoin de faire quelque chose. Si je reste seule, je vais encore penser à Tomas."
-    lysa inquiet "Elen..."
-    elen neutre "Ça va. Enfin, non, mais j'ai pas envie d'en parler pour l'instant."
-    noam raison "OK. On termine les caisses."
-    "Une fois le chargement fini, Elias repart avec Goumi et Elen. Lysa me rejoint."
-    lysa reflexion "Tu vas à l'infirmerie ?"
-    noam neutre "Ouais. Je veux voir si Iris a avancé."
-    lysa raison "Je viens."
+    elias fatigue "Hé ! Pas celle-là, elle est lourde !"
+    "Elen soulève la caisse et manque de la lâcher. Elias la retient par un coin."
+    elen peur "Putain ! Pardon..."
+    elias fatigue "Mais dis-le si t'arrives pas à la porter !"
+    elen colere "J'y arrive ! J'ai juste glissé."
+    lysa blase "C'est la deuxième fois."
+    elen colere "Lysa, s'il te plaît..."
+    noam neutre "Donne, je prends le côté."
+    "On finit de charger sans parler. Sur le bord d'un carton, je reconnais le symbole de l'infirmerie."
+    noam reflexion "C'est quand même dingue. Les livraisons continuent."
+    elias fatigue "Bah ouais. On va pas arrêter de bouffer."
+    elen triste "Même Goumi, il a rien changé à sa tournée."
+    lysa neutre "Tu veux rentrer, Elen ?"
+    elen fatigue "Non. Si je reste seule, je vais juste repenser à..."
+    "Elle s'arrête en voyant une petite caisse de fournitures portant la mention ARCHIVE. C'est le district de Tomas."
+    elen neutre "Allez. Il reste quoi ?"
+    elias neutre "Deux cartons. Après c'est bon."
+    "On termine ensemble. Elen repart avec Elias et Goumi, sans nous regarder."
+    lysa inquiet "Elle dort plus. Ça se voit."
+    noam fatigue "Ouais. Et on continue de lui demander ce qu'elle a fait ce soir-là."
+    lysa raison "T'as une meilleure idée ?"
+    noam neutre "Pas encore."
+    lysa reflexion "Tu voulais voir Sael, non ?"
+    noam raison "Ouais. Pour les résultats. Et pour la ventilation."
+    lysa neutre "Je viens avec toi."
     $ hideGroup()
     jump _28_0_1_1_0_1_INFIRMERIE
 
@@ -225,29 +232,33 @@ label _28_0_1_1_0_1_INFIRMERIE:
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie2", "infirmerie2") from _call_j28a_door_2
     scene infirmerie2 at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.7
-    "Iris est penchée sur ses résultats. Elle a l'air de ne pas avoir dormi."
-    $ showGroup([("iris", "fatigue", 0.24), ("lysa", "neutre", 0.46), ("noam", "neutre", 0.70)])
-    iris fatigue "Si vous venez demander si j'ai trouvé la cause du décès, je vais mettre une affiche sur la porte."
-    noam taquin "Avec juste « non » écrit dessus ?"
-    iris blase "Exactement."
-    lysa reflexion "T'as quand même une piste ?"
-    iris raison "Une intoxication est possible. On s'est trop concentrés sur les somnifères."
-    noam reflexion "Tu crois qu'il a rien pris ?"
-    iris neutre "Je sais pas ce qu'il a pris. C'est bien le problème."
-    noam raison "Il transpirait beaucoup."
-    iris reflexion "Oui. Pas de blessure évidente, des draps trempés... Et vous vous souvenez de nos maux de tête ?"
-    lysa blase "Comment oublier cette odeur ?"
-    iris raison "On a dit que ça venait des déchets. Mais il y avait peut-être autre chose."
-    noam reflexion "Tu penses à un gaz ?"
-    iris neutre "À une substance inhalée. Je sais pas encore laquelle, ni même s'il y en avait une."
-    lysa raison "Les restes de nourriture d'Elen auraient pu masquer une odeur."
-    iris reflexion "Voilà. Et on n'a regardé que la grille d'aération, pas ce qu'il y avait derrière."
-    noam fatigue "Tu veux retourner dans les conduits."
-    iris sourire "Pour une fois, t'as compris avant moi."
-    noam agace "Merci."
-    iris raison "On prend des gants, des masques et des sachets. Si vous trouvez quelque chose, vous ne le touchez pas n'importe comment."
-    lysa neutre "Je vais chercher une lampe."
-    "Iris rassemble le matériel. Elle propose de rester dans la chambre d'Elen pour nous guider pendant qu'on passe par l'accès de maintenance."
+    "Sael est encore près du lit où l'on a déposé Tomas. Iris regarde des relevés sur un écran, les yeux rouges de fatigue."
+    $ showGroup([("sael", "fatigue", 0.13), ("iris", "fatigue", 0.37), ("lysa", "neutre", 0.61), ("noam", "neutre", 0.85)])
+    iris fatigue "Si c'est encore pour me demander si j'ai trouvé le coupable, je vous fais payer la consultation."
+    noam taquin "On peut payer en café ?"
+    iris fatigue "Vu la tête de celui de ce matin, non."
+    sael raison "Laissez-la. Elle a cherché dans les dossiers toute la nuit."
+    noam reflexion "Et toi, tu as trouvé quelque chose sur Tomas ?"
+    sael fatigue "Une chose me gêne. Ses vêtements étaient trempés, il n'avait pas de blessure visible et son état ne colle pas forcément à ce qu'on attendrait des somnifères."
+    lysa reflexion "Alors c'est quoi ?"
+    sael raison "Je n'en sais rien. Une intoxication est possible. Il faut que j'en sache plus sur ce qu'il a respiré."
+    iris reflexion "Dans les archives médicales, j'ai retrouvé plusieurs descriptions d'exposition à des substances chauffées. Certains symptômes ressemblent à ceux qu'on a vus."
+    noam raison "Et cette odeur, quand on a ouvert la chambre ?"
+    sael inquiet "On a tous eu mal à la tête. Les déchets pouvaient expliquer une partie de l'odeur, mais pas forcément tout."
+    lysa reflexion "On a regardé la grille. Pas ce qu'il y avait derrière."
+    "Sael lève aussitôt les yeux."
+    sael raison "La protection était intacte ?"
+    noam neutre "Oui. Et l'air passait toujours."
+    sael reflexion "Alors il faut inspecter le conduit. Si quelque chose était dedans, on a pu le manquer."
+    iris neutre "Je peux rester dans la chambre avec le plan du réseau et vous guider par téléphone."
+    sael raison "Prenez des gants, des masques et des sachets. Et ne touchez à rien avant de l'avoir photographié."
+    lysa blase "Ça commence à ressembler à une très bonne journée."
+    iris sourire "Tu peux toujours rester ici avec moi."
+    lysa neutre "Non merci. Noam ferait une connerie sans surveillance."
+    noam fatigue "Je suis là, hein."
+    "Sael nous passe le matériel. Avant de partir, je regarde le rideau devant le lit de Tomas."
+    sael neutre "Noam. Si tu trouves quelque chose, tu m'appelles. Pas de conclusion tout seul."
+    noam raison "Promis."
     $ hideGroup()
     jump _28_0_1_1_0_1_CHAMBRE
 
@@ -255,20 +266,22 @@ label _28_0_1_1_0_1_CHAMBRE:
     $ current_period = "Après-midi"
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
-    "On rouvre la chambre d'Elen. L'odeur est moins forte, mais elle me rappelle immédiatement le corps de Tomas."
+    "Iris nous attend devant la chambre d'Elen. Elle hésite une seconde avant de débloquer la porte."
     scene j26_elen_vide at adaptive_fullscreen with dissolve
     $ showGroup([("iris", "reflexion", 0.23), ("lysa", "neutre", 0.46), ("noam", "neutre", 0.69)])
-    lysa fatigue "Bon. Ça sent toujours la mort ici."
-    iris raison "La plaque est toujours devant la grille. Les fixations n'ont pas bougé."
-    noam neutre "C'est ce qu'on avait vérifié."
-    iris reflexion "Oui. Elle bloque le passage d'une personne, pas le flux d'air."
-    noam reflexion "Donc quelque chose pouvait venir du conduit sans qu'on ouvre la porte."
-    iris neutre "C'est possible. Je veux juste savoir si le réseau a été modifié."
-    lysa raison "Tu nous guideras par téléphone ?"
-    iris neutre "Oui. Et vous prenez des photos avant de déplacer quoi que ce soit."
-    noam sourire "Compris."
-    iris agace "Je parle surtout à toi."
-    "Je laisse à Iris une copie du plan des conduits."
+    lysa fatigue "Ah, ouais. Ça sent toujours autant la merde."
+    iris neutre "Un peu moins. Mais on ne va pas rester longtemps."
+    noam reflexion "La plaque qu'Elias avait fixée sur la grille n'a pas bougé."
+    iris raison "Et elle bloque le passage d'une personne. Pas l'air. Regarde."
+    "Elle approche une bande de papier de l'aération. Elle bouge immédiatement."
+    lysa inquiet "Donc quelqu'un pouvait envoyer quelque chose par là sans ouvrir la porte ?"
+    iris reflexion "C'est une possibilité. Pas une réponse."
+    noam raison "Il faut suivre la branche jusqu'à la maintenance."
+    iris neutre "J'ai le plan. Vous m'appelez au premier croisement et vous prenez des photos avant de déplacer quoi que ce soit."
+    lysa blase "Et si on se coince ?"
+    iris sourire "J'appellerai Goumi. Il vous sortira comme deux sacs de linge."
+    noam taquin "Très rassurant."
+    "Je laisse une copie du plan à Iris et rejoins Lysa. Avant de refermer la porte, je regarde une dernière fois le lit vide."
     $ hideGroup()
     jump _28_0_1_1_0_1_CONDUIT
 
@@ -292,141 +305,153 @@ label _28_0_1_1_0_1_CONDUIT_1:
     menu:
         "À quel passage se fier ?"
         "La branche des dortoirs":
-            "On avance vers un réseau plus étroit. Le plan correspond à ce qu'Iris nous a envoyé."
+            "Je suis les flèches peintes sur la paroi. Le plan d'Iris correspond."
             jump _28_0_1_1_0_1_CONDUIT_2
         "Le conduit qui descend vers les machines":
             $ j28a_detours += 1
-            "On débouche devant un ventilateur qui barre complètement le passage."
-            lysa fatigue "Tu vois bien qu'on va pas passer là !"
-            noam agace "Ouais, demi-tour."
-            "On revient au croisement et reprend la branche des dortoirs."
+            "On débouche devant un ventilateur protégé par une grille. Le souffle couvre presque ma voix."
+            lysa fatigue "Tu veux qu'on passe à travers, peut-être ?"
+            noam fatigue "Non. J'ai compris."
+            lysa blase "C'est déjà ça."
+            "On retourne au croisement et on retrouve la branche des dortoirs."
             jump _28_0_1_1_0_1_CONDUIT_2
 
 label _28_0_1_1_0_1_CONDUIT_2:
-    "Un nouveau croisement apparaît. J'appelle Iris."
+    "Le passage se divise de nouveau. J'appelle Iris."
     iris "Vous voyez le repère quatre ?"
-    noam raison "Ouais, avec deux passages."
-    iris "Prenez la dérivation à droite du boîtier. C'est elle qui mène à la chambre d'Elen."
+    noam raison "Oui. Deux branches."
+    iris "À droite du boîtier. Si vous avez pris la bonne direction, vous devez sentir l'air tirer vers vous."
     menu:
         "Quelle direction prendre ?"
         "Suivre le repère indiqué par Iris":
             jump _28_0_1_1_0_1_CONDUIT_3
         "Explorer la branche la plus large":
             $ j28a_detours += 1
-            "Une grille donne sur le couloir de l'autre côté des dortoirs."
-            lysa blase "C'est pas du tout sa chambre."
-            noam fatigue "Je sais. On revient."
-            "On retrouve le croisement et suit les indications d'Iris."
+            "Au bout, une grille donne sur un couloir désert. Un courant d'air froid entre par les fentes."
+            lysa blase "Voilà, on a visité un autre bout de couloir. Passionnant."
+            noam neutre "On revient."
+            "On reprend la bonne branche et je commence à sentir le souffle décrit par Iris."
             jump _28_0_1_1_0_1_CONDUIT_3
-
 
 label _28_0_1_1_0_1_CONDUIT_3:
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
-    "Un peu plus loin, la lumière accroche une plaque métallique placée de travers. Elle coupe presque toute la largeur du conduit."
-    lysa reflexion "Attends. Ça, c'est normal ?"
-    noam reflexion "J'ai jamais vu une plaque comme ça."
-    iris "Vous êtes à la grille ?"
-    noam neutre "Presque. Il y a un truc en métal juste avant."
-    iris "Ne forcez pas. Regarde comment l'air peut passer."
+    "Plus loin, le passage s'élargit à peine. Ma lampe éclaire une plaque de métal qui n'a rien à faire là."
+    lysa reflexion "Attends. C'est quoi, cette tôle ?"
+    noam reflexion "Il y a une ouverture derrière. On dirait qu'elle force l'air à passer d'un seul côté."
+    iris "Vous êtes arrivés près de la chambre ?"
+    noam neutre "Presque. Il y a une plaque posée de travers."
+    iris "Ne la bougez pas encore. Il faut comprendre où va l'air."
     menu:
-        "Comment examiner la plaque ?"
-        "Observer les fixations et le passage d'air":
-            "La plaque est coincée sur des supports. L'air n'a plus qu'une ouverture étroite pour passer vers la chambre."
+        "Comment vérifier la dérivation ?"
+        "Observer les fixations et suivre le courant d'air":
+            $ j28a_air_traced = True
+            "Je passe un petit morceau de papier devant la fente. Il se plaque aussitôt contre le bord orienté vers les dortoirs."
+            noam surpris "Lysa... L'air part tout droit vers la chambre d'Elen."
+            lysa inquiet "Et de l'autre côté ?"
+            noam raison "Presque rien. C'est cette plaque qui le dirige."
             jump _28_0_1_1_0_1_PLAQUE
-        "Essayer de pousser directement":
+        "Pousser la plaque pour regarder derrière":
             $ j28a_detours += 1
             play sound "audio/sfx_duct_scrape.wav"
-            "Le métal résiste et grince contre la paroi."
-            lysa inquiet "Doucement ! Tu vas faire tomber quelque chose."
-            noam neutre "Ouais, attends."
-            "Je regarde les attaches. La plaque est posée sur des supports, pas vissée comme les protections habituelles."
+            "Le métal grince. Lysa me retient le bras."
+            lysa colere "Hé ! Iris a dit de pas y toucher !"
+            noam fatigue "Ouais. Désolé."
+            iris "Qu'est-ce que vous avez fait ?"
+            noam neutre "Rien. Enfin, presque."
+            iris "Alors prenez une photo et regardez où passe l'air avant de tout déplacer."
+            "Je sors un petit bout de papier et suis le souffle jusqu'à la branche d'Elen. Il est beaucoup plus fort de ce côté."
+            $ j28a_air_traced = True
             jump _28_0_1_1_0_1_PLAQUE
 
 label _28_0_1_1_0_1_PLAQUE:
     $ j28a_plaque = True
-    "Je photographie le montage. La plaque détourne la circulation de l'air vers un passage qui débouche près de la chambre d'Elen."
+    "Je photographie la plaque et ses supports. L'air est détourné vers la chambre d'Elen, alors qu'il devrait circuler dans plusieurs branches."
     call investigation_take_manual_photo("j28_photo_plaque", "bg_conduit_reseau", (0.55, 0.52), 2.2) from _call_j28_photo_plaque
-    noam reflexion "Lysa, tu peux m'aider à la faire glisser ?"
-    lysa raison "Oui. Mais pas comme un bourrin. Un... deux... trois."
+    if j28a_detours >= 2:
+        lysa blase "Bon, au moins on a compris le trajet. On aurait pu éviter de ramper dans toute la station."
+        noam fatigue "Tu veux vraiment en parler maintenant ?"
+    noam reflexion "Il y a un truc derrière. Tu vois ?"
+    lysa inquiet "Une espèce de niche. Attends, je vais éclairer."
+    "Je demande à Iris si on peut déplacer la plaque après l'avoir photographiée. Elle nous dit de ne la faire glisser que de quelques centimètres."
     play sound "audio/sfx_duct_scrape.wav"
     with hpunch
-    "La plaque bouge de quelques centimètres. Derrière, il y a un renfoncement sombre."
-    lysa inquiet "Il y a quelque chose là-dedans."
-    "Je dirige la lampe vers le fond. Un petit récipient noirci est posé sur une surface métallique. Il contient des résidus brûlés et des fragments qui ressemblent à des feuilles."
-    noam surpris "C'est quoi, ce truc ?"
-    lysa reflexion "On dirait un bol. Mais qu'est-ce qu'il fout là ?"
-    noam raison "Je prends des photos. On touche à rien."
+    "Le métal résiste, puis se décale. Derrière, un petit récipient noirci repose sur une surface isolante. Le fond est couvert de cendres et de fragments végétaux."
+    pause 0.4
+    noam surpris "C'est quoi ce bordel... ?"
+    lysa inquiet "Ne le touche pas."
+    "Une marque plus claire entoure le fond du récipient. Le métal au-dessous a changé de couleur, comme s'il avait chauffé. Mais je ne vois ni câble ni alimentation."
+    noam reflexion "Il a chauffé ici. Regarde le dessous."
+    lysa raison "Et comment ? Il y a rien de branché."
+    "Je prends une photo. Puis une autre, plus proche. Je vérifie les bords du renfoncement et les fixations."
     $ j28a_bol = True
-    "Je photographie le récipient, le renfoncement et les alentours, puis je rappelle Iris."
     call investigation_take_manual_photo("j28_photo_bulbuma", "bg_conduit_reseau", (0.55, 0.65), 2.2) from _call_j28_photo_bulbuma
-    noam raison "On a trouvé un bol avec quelque chose de brûlé dedans. La plaque était juste devant."
-    iris "OK. Surtout, ne remuez pas les cendres. Ça peut encore être dangereux."
-    lysa fatigue "Super. J'adore cette sortie."
-    iris "Vous avez des gants et un sachet. Si vous pouvez récupérer un fragment sans soulever de poussière, faites-le. Sinon, laissez tout."
-    "Je prélève avec une pince un fragment déjà détaché, puis je referme le sachet. Le reste ne bouge pas."
-    noam reflexion "Iris, si quelque chose brûlait ici, ça aurait pu passer dans la chambre ?"
-    iris "Avec une plaque qui dirige l'air dans cette direction, peut-être. Mais il faut que je voie les photos."
-    lysa inquiet "Quelqu'un aurait pu placer tout ça depuis la maintenance..."
-    noam neutre "Ouais. Sans jamais ouvrir la porte."
-    iris "Revenez. Maintenant."
-    "Je jette un dernier regard au bol. C'est la première fois que je vois quelque chose qui ne ressemble pas à un simple accident."
+    "Je rappelle Iris."
+    noam inquiet "On a trouvé un bol. Avec des trucs brûlés dedans. Il est caché juste derrière la plaque."
+    iris "Vous n'avez pas remué les cendres ?"
+    noam raison "Non."
+    iris "Bien. Laissez le récipient là. S'il y a des résidus dangereux, je veux pas que vous les respiriez."
+    lysa fatigue "On a des masques. Ils servent à quoi, du coup ?"
+    iris "À limiter les risques, pas à faire n'importe quoi."
+    "Avec une pince, je récupère seulement un fragment qui s'est détaché sur le bord. Je le glisse dans un sachet."
+    noam reflexion "Iris... Si ça a brûlé pendant qu'il dormait..."
+    iris "Noam, reviens. Sael regardera ce que vous avez trouvé."
+    "Je regarde à nouveau la plaque. Je pense à la porte fermée, au verrou, à Tomas qui avait peur de retourner dans sa chambre."
+    "Je revois son message : « On se voit demain. »"
+    noam fatigue "Putain..."
+    lysa inquiet "Noam ?"
+    noam neutre "On rentre."
+    "Je ne sais pas ce qu'on vient de trouver. Mais quelqu'un a mis ce bol là. Et il fallait savoir exactement quelle branche du conduit menait à cette chambre."
     $ flashlight_off()
     scene couloir_maintenance at adaptive_fullscreen with dissolve
     stop music fadeout 0.7
     $ showGroup([("lysa", "fatigue", 0.37), ("noam", "inquiet", 0.66)])
-    lysa fatigue "J'ai de la poussière partout. Je veux une douche."
-    noam fatigue "Moi aussi."
-    lysa reflexion "Tu crois que c'est à cause de ça que Tomas est mort ?"
-    noam neutre "Je sais pas. Mais cette plaque n'avait rien à faire là."
+    lysa reflexion "T'as pensé à la même chose que moi ?"
+    noam fatigue "Que quelqu'un aurait pu faire ça sans toucher au verrou ? Oui."
+    lysa inquiet "Et si c'était pas Tomas qui devait dormir là ?"
+    "Je m'arrête devant l'accès de maintenance."
+    noam reflexion "On sait pas quand le bol a été posé."
+    lysa neutre "C'est justement ce qui me fait peur."
     $ hideGroup()
     jump _28_0_1_1_0_1_ANALYSE
-# Durée : environ 4 minutes pour la traversée.
 
 label _28_0_1_1_0_1_ANALYSE:
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie2", "infirmerie2") from _call_j28a_door_3
     scene infirmerie2 at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
-    "Iris examine les photos du conduit. Elle garde le sachet fermé et agrandit l'image du fragment sur son écran."
-    $ showGroup([("iris", "reflexion", 0.22), ("lysa", "neutre", 0.46), ("noam", "inquiet", 0.70)])
-    iris reflexion "La plaque n'a pas été installée comme les protections habituelles. Et le récipient est bien derrière."
-    noam neutre "On dirait qu'il a brûlé quelque chose."
-    iris raison "Oui. Un matériau organique, au moins en partie."
-    lysa reflexion "Tu reconnais la plante ?"
-    "Iris cherche dans une bibliothèque d'images, puis s'arrête sur une fiche botanique."
-    iris surpris "Attendez. Ça ressemble beaucoup à du Bulbuma Corienis."
-    noam reflexion "Du quoi ?"
-    iris raison "Bulbuma Corienis. C'est une plante assez rare. Elle pousse surtout dans des régions arides."
-    lysa inquiet "Et c'est dangereux ?"
-    iris neutre "Selon la préparation, certains composants peuvent dégager des substances toxiques quand on les chauffe. Je veux confirmer l'espèce avant de dire que c'est ce qu'on a ici."
-    noam raison "Ça pourrait expliquer comment Tomas est mort ?"
-    iris reflexion "Une intoxication par inhalation pourrait expliquer une partie de ce qu'on a vu. Mais ça ne démontre pas qu'il a inhalé ce mélange-là."
-    lysa raison "Et les maux de tête qu'on a eus en ouvrant la chambre ?"
-    iris neutre "Ça peut correspondre à une exposition, oui. Mais il y avait aussi des déchets et une odeur très forte. Je peux pas en déduire davantage."
-    noam reflexion "Donc on a un bol brûlé, une plaque pas normale et une mort qui ressemble à une intoxication..."
-    iris raison "Ce sont des éléments qui rendent l'hypothèse d'un meurtre beaucoup plus sérieuse. Pas une preuve définitive."
-    lysa reflexion "Et le flacon de somnifères, alors ?"
-    iris fatigue "Toujours le même problème : on sait pas ce qu'il a pris. Si quelqu'un a mis ce flacon pour nous tromper, c'est une autre possibilité."
-    noam neutre "Au moins, la porte fermée ne règle plus rien."
-    iris raison "C'est ça. Un verrou fermé n'empêche pas quelqu'un d'agir depuis les conduits."
-    pause 0.3
-    noam fatigue "Putain, Tomas..."
-    lysa reflexion "Tu disais que la plante poussait dans les endroits arides ?"
-    iris raison "Oui."
-    lysa neutre "Ça fait penser à Limen."
-    noam reflexion "À Ryn et Sael."
-    iris agace "Pas seulement. Orbite a aussi des territoires arides. Et les livraisons circulent entre districts."
-    noam raison "Donc Kael et Nyra aussi."
-    iris neutre "Et ça ne prouve rien contre aucun des quatre. L'origine d'une plante ne te dit pas qui l'a apportée ici."
-    lysa raison "On sait. Mais ça fait au moins des gens à qui demander."
-    iris reflexion "Demandez ce qu'ils connaissent, pas s'ils ont tué Tomas."
-    noam sourire "J'essaierai."
-    iris agace "Noam..."
-    noam neutre "Je plaisante."
+    "Sael étale nos photographies sur la tablette. Iris garde le sachet fermé, à côté des résultats de ses recherches."
+    $ showGroup([("sael", "reflexion", 0.12), ("iris", "fatigue", 0.34), ("lysa", "neutre", 0.57), ("noam", "inquiet", 0.81)])
+    sael reflexion "La plaque n'est pas une simple protection. Elle oblige l'air à passer par une seule branche."
+    noam raison "Et le bol était juste derrière. Il y a une marque de chaleur sous le fond."
+    sael inquiet "Vous avez vu comment il a été chauffé ?"
+    noam neutre "Non. Pas de câble. Rien d'évident."
+    iris reflexion "Sur la photo, ça ressemble à des résidus végétaux. Mais je peux pas dire lesquels juste avec ça."
+    sael raison "Moi non plus. J'ai déjà entendu parler de plantes qui deviennent dangereuses quand on les chauffe. Ça dépend de la préparation."
+    "Iris ouvre une fiche et agrandit plusieurs images."
+    iris surpris "Attendez. Ça ressemble à du Bulbuma Corienis."
+    lysa reflexion "Ça se trouve où ?"
+    sael neutre "Dans certaines régions sèches de Limen. Pas seulement là, d'après ce que je sais."
+    iris raison "Il y a aussi des espèces proches. Et certaines préparations dégagent des substances toxiques si elles chauffent. Je vais garder les photos pour comparer."
+    noam inquiet "Ça pourrait tuer quelqu'un pendant son sommeil ?"
+    sael fatigue "Une intoxication par inhalation est possible, oui. Mais je ne vais pas te dire que Tomas est mort de ça sans analyse."
+    noam reflexion "Et nos maux de tête ?"
+    sael raison "Ça colle avec une exposition. Mais entre la nourriture pourrie et ce qu'on a trouvé, on ne peut pas isoler une cause."
+    lysa reflexion "Les somnifères, alors ?"
+    sael neutre "On n'a toujours pas la preuve qu'il en ait pris. Le flacon était là. C'est tout."
+    iris fatigue "Et on ne sait même pas depuis quand ce montage est dans le conduit."
+    "Je regarde les trois photos : la plaque, le récipient et la chambre."
+    noam reflexion "S'il a été placé avant que Tomas échange sa chambre avec Elen..."
+    lysa inquiet "Ça voudrait dire qu'Elen devait dormir dedans."
+    noam raison "Et s'il a été mis après, quelqu'un savait qu'ils avaient échangé."
+    sael inquiet "Voilà pourquoi je veux qu'on soit prudents. Il manque encore l'heure, le moyen de chauffer le bol et la personne qui l'a posé."
+    iris raison "Le Bulbuma, pour l'instant, c'est une piste. Pas une identification."
+    noam fatigue "On a quand même beaucoup plus qu'un flacon de comprimés."
+    sael neutre "Oui. Assez pour prévenir les autres. Pas pour donner un nom."
+    lysa reflexion "On va poser quelques questions avant la réunion."
+    sael raison "D'accord. Mais allez-y doucement avec Elen."
     $ j28a_bulbuma = True
-    "Je conserve les photos de la plaque et du récipient sur ma tablette. Le sachet reste à l'infirmerie."
+    "Les photos restent sur ma tablette. Le sachet est conservé à l'infirmerie."
     $ hideGroup()
     jump _28_0_1_1_0_1_TEMOINS
-# Durée : environ 3 minutes.
 
 label _28_0_1_1_0_1_TEMOINS:
     scene bg_repos at adaptive_fullscreen with dissolve
