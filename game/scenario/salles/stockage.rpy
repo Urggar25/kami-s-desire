@@ -118,47 +118,69 @@ label STO_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_stockage:
+
     $ decouverte_stockage = True
+
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    think "Je pensais trouver une réserve fermée à clé. Vu la taille de la porte, il doit y avoir plus que quelques cartons derrière."
+    think "J'imaginais une petite réserve, mais la porte de la salle de stockage est presque aussi large que celle d'un entrepôt."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_351
     scene bg_stockage at adaptive_fullscreen with fade
-    "Les rayonnages sont pleins de matériel, de pièces de rechange et de caisses encore scellées. Une jeune femme a posé plusieurs objets devant elle et les examine un par un."
+
+    "Des caisses et des rayonnages remplissent la salle. Une jeune femme est assise sur une caisse ouverte, un terminal posé sur les genoux et plusieurs objets soigneusement alignés à ses pieds."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("nyra", "fatigue", 0.78),
     ])
-    noam hesitation "Salut. Je peux prendre quelque chose ou il faut une autorisation ?"
-    nyra neutre "Aucune autorisation affichée. En revanche, si tu prends le seul filtre de rechange, il faudra expliquer pourquoi."
-    noam surpris "Je voulais juste regarder. Je savais même pas qu'on avait besoin d'un filtre."
-    nyra reflexion "On en aura forcément besoin un jour. La question, c'est de savoir lequel et quand."
-    noam sourire "Tu es déjà en train de faire l'inventaire ?"
-    nyra neutre "J'essaie. Pour l'instant, les caisses sont classées par usage, mais les quantités ne correspondent pas toutes à ce qui est annoncé sur le terminal."
-    noam inquiet "Il manque du matériel ?"
-    nyra raison "Pas nécessairement. Certaines caisses n'ont pas encore été ouvertes. Je préfère vérifier avant de conclure."
-    noam sourire "Moi c'est Noam, d'[codex_dialogue_link('harmonie', 'HARMONIE')]."
+
+    noam sourire "Salut. On a le droit de se servir ici ?"
+    nyra neutre "Rien n'indique le contraire. En revanche, si tu prends un objet, pense à signaler qu'il manque."
+    noam taquin "Tu fais déjà la police des cartons ?"
+    nyra sourire "J'essaie surtout d'éviter que quelqu'un cherche pendant une heure un objet que son voisin a emporté dans sa chambre."
+    "Elle fait glisser une petite boîte sur le côté et coche une case sur son terminal."
+    noam reflexion "Tu as commencé l'inventaire toute seule ?"
+    nyra neutre "Oui. Ça va plus vite tant que personne n'a encore déplacé la moitié du stock."
+    noam sourire "Moi c'est Noam, d'Harmonie."
     nyra neutre "Nyra. Orbite."
     $ unlock_character_name("nyra")
-    noam taquin "Ça explique pourquoi tu regardes les pièces détachées comme si ta vie en dépendait."
-    nyra sourire "Dans une station spatiale, c'est parfois le cas."
-    "Je prends une petite lampe sur l'étagère. Nyra lève les yeux vers ma main."
-    nyra reflexion "Tu comptes l'utiliser ?"
-    noam hesitation "Pas particulièrement. J'allais la prendre pour ma chambre, au cas où."
-    nyra neutre "Il y en a six. Pour douze personnes et plusieurs zones techniques."
-    noam desaccord "D'accord, j'ai compris. Je la repose."
-    nyra taquin "Je ne t'ai rien interdit. Tu viens de décider tout seul qu'elle serait plus utile ici."
-    noam taquin "Tu fais souvent ce coup-là ?"
-    nyra sourire "Seulement quand ça marche."
-    "Je repose la lampe. Sur le terminal, un tableau détaille les réserves et les prochaines livraisons."
-    noam reflexion "C'est quand même étrange. On peut se servir librement, alors que sur Terre on n'aurait même pas le droit de toucher à ces stocks."
-    nyra raison "Ici, personne n'a l'air chargé de distribuer le matériel. Alors soit on s'organise, soit on découvrira les pénuries au mauvais moment."
-    noam neutre "Tu veux en parler aux autres ?"
-    nyra reflexion "Quand j'aurai des chiffres fiables. Dire aux gens de se rationner sans savoir ce qu'on possède, ce serait idiot."
-    noam sourire "Bon courage avec les cartons, alors."
-    nyra taquin "Merci. Et si tu retrouves une lampe dans ta poche en sortant, tu sais où la remettre."
-    noam rire "Je sens que tu vas être très agréable à vivre."
-    nyra sourire "Seulement si les comptes sont bons."
+    noam sourire "Je peux t'aider ?"
+    nyra reflechit "Pourquoi pas. Tu peux regarder ce qu'il y a dans cette caisse et me dire combien de lampes tu trouves ?"
+    "Je soulève le couvercle. Plusieurs lampes sont rangées dans des compartiments en mousse."
+    noam neutre "Six. Et elles ont l'air toutes neuves."
+    nyra raison "Six, d'accord. C'est ce que le terminal annonçait."
+
+    "Je prends une lampe et m'amuse à l'allumer en direction du plafond."
+    noam taquin "On peut en garder une pour notre chambre ?"
+    nyra reflechit "Tu peux, si tu en as besoin."
+    noam sourire "Au cas où il y ait une panne de courant."
+    nyra neutre "D'accord. Mais il n'en restera que cinq pour les autres représentants et les salles techniques."
+    noam desaccord "Bon... Je vais la reposer."
+    nyra sourire "C'est toi qui décides."
+    noam taquin "Tu sais très bien ce que tu fais, là."
+    nyra taquin "Je t'ai juste donné le nombre."
+    noam rire "Ouais, bien sûr. Tu vas être dangereuse pendant les votes, toi."
+
+    "Nyra prend une feuille plastifiée qu'elle a déjà remplie de catégories. En la parcourant, je découvre une ligne intitulée « utilité incertaine »."
+    noam surpris "Attends. Tu as vraiment fait une catégorie pour les trucs inutiles ?"
+    nyra reflechit "Pas inutiles. D'utilité incertaine. Si je sais pas à quoi sert quelque chose, je ne vais pas l'inventer."
+    noam taquin "Et il y a une catégorie pour les objets vraiment inutiles ?"
+    nyra raison "Oui. Mais elle est vide pour l'instant."
+    noam rire "Tu te moques de moi."
+    nyra sourire "Pas du tout."
+    "Elle me montre le bas de son classement. Il y a effectivement une section réservée aux objets dépourvus de fonction identifiable."
+    noam surpris "D'accord, tu gagnes. Je n'avais jamais vu quelqu'un prévoir aussi sérieusement de ne rien trouver."
+    nyra taquin "C'est plus fréquent que tu ne l'imagines."
+
+    "Nous remettons les lampes à leur place et refermons la caisse. Nyra vérifie une dernière fois son compte."
+    noam reflexion "En fait, tu te prépares déjà au cas où on aurait des problèmes de matériel."
+    nyra neutre "Je préfère savoir ce qu'on possède avant d'en avoir besoin. C'est tout."
+    noam sourire "Et tu as prévu un endroit pour ranger le manuel de ce truc ?"
+    nyra taquin "Oui. Dans la catégorie « documents que personne ne lit »."
+    noam rire "Là, je reconnais que ça se tient."
+    "Elle reprend son inventaire en me remerciant d'un signe de tête. Je quitte la réserve en faisant bien attention à ne rien emporter par erreur."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_9
     $ hideGroup()
     jump STOCKAGE_TP
