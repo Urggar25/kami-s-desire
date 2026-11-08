@@ -117,48 +117,68 @@ label MAINT_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_salle_maintenance:
+
     $ decouverte_salle_maintenance = True
+
     scene black
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-    think "La maintenance est nettement moins accueillante que les autres salles. Au moins, ici, personne n'a essayé de cacher les tuyaux derrière de jolies plaques."
+    think "La salle de maintenance ressemble davantage à l'intérieur d'une vraie station spatiale que les autres pièces. Ici, il y a enfin des outils, des câbles et des machines."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_342
     scene bg_maintenance at adaptive_fullscreen with fade
-    "Des outils sont alignés sur les établis. Un gros robot est installé au fond, relié à plusieurs câbles de charge."
+
+    "Un énorme robot est installé au fond de l'atelier. Un homme inspecte une armoire de commande juste à côté, sans paraître particulièrement impressionné par la machine."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("kael", "neutre", 0.78),
     ])
-    "Un homme est accroupi devant une armoire électrique ouverte. Il referme doucement le panneau lorsqu'il m'entend arriver."
-    noam hesitation "Je dérange ?"
-    kael neutre "Non. Je regardais juste comment les circuits sont répartis."
-    noam sourire "Tu t'y connais ?"
-    kael sourire "Un peu. Kael, d'Orbite."
+
+    noam surpris "Ah ouais... C'est quoi, ce gros truc ?"
+    kael neutre "Un robot d'intervention. Il peut travailler à l'extérieur de la station."
+    noam sourire "Tu as l'air de connaître le modèle."
+    kael reflechit "Pas celui-là précisément. Kael, au fait. Je viens d'Orbite."
     $ unlock_character_name("kael")
-    noam sourire "Noam. C'est pas exactement le coin le plus confortable du Conclave."
-    kael taquin "C'est peut-être pour ça que je suis tranquille ici."
-    "Je m'approche du robot. Il est bien plus grand que les modèles de service que j'ai déjà vus."
-    noam surpris "Et ce machin ? Ils ont prévu de nous faire nettoyer les couloirs avec ?"
-    kael reflechit "Non. Il s'appelle Gros Berthe, d'après l'étiquette. C'est un robot d'intervention spatiale."
-    noam reflexion "Tu connais le modèle ?"
-    kael neutre "Pas exactement celui-là. Il peut travailler à l'extérieur de la station, transporter du matériel et se défendre si nécessaire."
-    noam inquiet "Se défendre comment ?"
-    kael reflechit "Avec un armement embarqué, normalement. Mais je ne vois pas ses modules ici."
-    noam taquin "Tu balances ça comme si tu me parlais d'une tondeuse."
-    kael sourire "Désolé. Sur Orbite, ce genre de machine est moins impressionnant."
-    "Kael regarde de nouveau les prises au sol, puis l'armoire qu'il vient de refermer."
-    kael reflechit "Ce que je comprends moins, c'est la taille de l'installation. Il y a de quoi alimenter beaucoup plus d'équipements que ceux qu'on voit."
-    noam reflexion "Peut-être qu'ils ont prévu large pour éviter les pannes."
-    kael neutre "C'est possible. Je n'ai pas assez d'informations pour en dire davantage."
-    noam sourire "Tu pourrais demander à Kami."
-    kael taquin "Je pourrais. Je doute qu'elle me donne les plans."
-    noam taquin "C'est sûr qu'elle a pas l'air du genre à partager ses secrets."
-    kael reflechit "J'aimerais surtout savoir si quelqu'un ici peut réparer quelque chose sans déclencher une alarme. Avec douze personnes pendant un mois, une panne arrivera forcément."
-    noam neutre "Et tu comptes t'en charger ?"
-    kael fatigue "Si je peux aider, oui. Mais je préfère comprendre le matériel avant d'y toucher."
-    "Il jette un dernier regard vers Gros Berthe, qui ne bouge pas."
-    noam sourire "Je te laisse à tes circuits. Si je casse quelque chose, je saurai où venir."
-    kael taquin "Essaie quand même de ne pas le faire exprès."
-    noam rire "Je promets rien."
+    noam sourire "Noam. Je peux regarder de plus près ?"
+    kael neutre "Oui, mais évite les commandes. Je ne sais pas encore ce qu'elles font toutes."
+    noam taquin "Je vais essayer de ne pas lancer une fusée par accident."
+
+    "Je fais le tour du robot. Une étiquette indique « GROS BERTHE ». L'appareil est beaucoup plus massif que les robots de service que je connais."
+    noam rire "Gros Berthe ? C'est vraiment son nom ?"
+    kael sourire "C'est ce qui est écrit. J'espère que ce n'est pas le nom de la personne qui l'a conçu."
+    noam reflexion "Et il fait quoi, exactement, à part prendre toute la place ?"
+    kael reflechit "Des réparations en extérieur, du transport de charges et probablement de la sécurité. Le modèle peut normalement recevoir des équipements offensifs."
+    noam inquiet "Un robot armé dans notre atelier ? Rassurant."
+    kael neutre "Il n'a pas l'air équipé pour ça, ici."
+    "Je me penche pour regarder un panneau de contrôle sur le flanc de la machine. Une petite touche tactile s'allume lorsque ma main passe devant."
+    noam hesitation "Oups. J'ai fait quoi, là ?"
+    kael surpris "Tu as touché quelque chose ?"
+    "Un grondement léger retentit dans le châssis. Les yeux du robot s'éclairent et son torse commence à se redresser."
+    noam peur "Euh, Kael ? Il vient de bouger !"
+    kael determine "Recule, Noam. Ne touche plus à rien."
+    "Je fais deux pas en arrière. Gros Berthe pivote lentement la tête dans notre direction et déploie un bras."
+    noam inquiet "Il a pas un fusil caché là-dedans, au moins ?"
+    kael reflechit "Normalement non, mais je préférerais ne pas vérifier en restant devant."
+    "Un petit accessoire sort de son bras et se met à brosser le bord de son propre support. Le robot s'immobilise ensuite, comme s'il attendait qu'on l'applaudisse."
+    noam surpris "Attends... Il est en train de faire le ménage ?"
+    kael sourire "On dirait. Tu as dû activer une routine d'entretien."
+    noam rire "J'ai cru qu'on allait se faire découper en deux et il sort une brosse !"
+    kael taquin "Tu vois, il n'y a pas que moi qui ai besoin de lire les notices."
+    "Kael coupe la routine à partir de l'armoire. Le robot replie docilement son bras."
+
+    "En revenant vers la console, je remarque plusieurs circuits affichés sur un plan de la station."
+    noam reflexion "Tu vérifiais ça quand je suis arrivé ?"
+    kael neutre "Oui. Certains équipements ont une alimentation séparée. Je voulais savoir à quoi elle sert."
+    noam sourire "Tu as trouvé ?"
+    kael reflechit "Pas encore. Il y a plus de circuits que ce qu'on voit sur le plan public, mais ça peut être une simple réserve technique."
+    noam taquin "Tu vas essayer de tous les retrouver ?"
+    kael neutre "Probablement. C'est plus prudent de savoir ce qu'on peut couper ou réparer."
+    "Il examine de nouveau le plan, puis revient au robot. J'ai l'impression qu'il aimerait poursuivre, mais qu'il préfère ne rien avancer sans être certain."
+    noam sourire "Bon, je vais te laisser travailler avant d'activer son mode combat."
+    kael taquin "Excellente idée. Et si tu repasses, préviens-moi avant de toucher à Gros Berthe."
+    noam rire "Promis. Je veux pas le déranger pendant son ménage."
+    "Je quitte l'atelier en l'entendant reprendre une vérification des circuits. Derrière lui, Gros Berthe n'a plus rien d'effrayant, mais je garde mes distances avec ses commandes."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_5
     $ hideGroup()
     jump MAINTENANCE_TP
