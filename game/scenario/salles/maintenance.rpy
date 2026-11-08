@@ -117,210 +117,48 @@ label MAINT_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_salle_maintenance:
-
     $ decouverte_salle_maintenance = True
-
     scene black
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-
-    think "Salle de maintenance."
-    think "Au moins, on sait à quoi sert cette salle."
-    think "Comme si ici, on réparait juste des trucs."
-    think "Vu l'état du monde, ils auraient du boulot."
-
-    pause 0.4
-
+    think "La maintenance est nettement moins accueillante que les autres salles. Au moins, ici, personne n'a essayé de cacher les tuyaux derrière de jolies plaques."
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_342
     scene bg_maintenance at adaptive_fullscreen with fade
-
-    "Ça sent le métal chaud."
-    "L’huile."
-    "Et un truc plus sec, comme de la poussière d’électronique."
-    "Le genre d’odeur qui colle au fond de la gorge."
-
-    "La salle est grande."
-    "Plus brute que le reste."
-    "Des panneaux ouverts."
-    "Des câbles dans des goulottes."
-    "Des modules empilés sur des racks."
-
-    "Et surtout : du silence."
-    "Pas vraiment un silence doux mais assez reposant."
-    "Un silence parfois perturbé par le vrombissement d'un moteur."
-
+    "Des outils sont alignés sur les établis. Un gros robot est installé au fond, relié à plusieurs câbles de charge."
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("kael", "neutre", 0.78),
     ])
-
-    "Je fais deux pas."
-    "Je m’arrête."
-    "Parce que quelqu’un est déjà là."
-
-
-    "Adossé à un support."
-    "Les bras croisés."
-    "Il a l’air parfaitement à sa place."
-
-    noam hesitation "Je te dérange ?"
-
-    kael taquin "Non."
-    kael taquin "J’avais juste besoin d’un endroit tranquille."
-    kael taquin "Noam c'est ça ? Moi c'est Kael."
+    "Un homme est accroupi devant une armoire électrique ouverte. Il referme doucement le panneau lorsqu'il m'entend arriver."
+    noam hesitation "Je dérange ?"
+    kael neutre "Non. Je regardais juste comment les circuits sont répartis."
+    noam sourire "Tu t'y connais ?"
+    kael sourire "Un peu. Kael, d'Orbite."
     $ unlock_character_name("kael")
-    
-    noam hesitation "Ouai."
-    noam hesitation "On est vraiment dans un endroit étrange."
-
-    "Je souffle, un rire court."
-    "Sans conviction."
-
-    kael reflechit "T’as vu le reste ?"
-    kael reflechit "La cafétéria, les salles…"
-    kael reflechit "On dirait un campus."
-    kael reflechit "Sauf qu'on nous a pas demandé notre avis."
-    kael reflechit "Y a du monde partout, ça me fatigue déjà."
-    kael reflechit "Ici, au moins, on me laisse tranquille."
-
-    noam desaccord "Ouais tu m'étonnes."
-    noam desaccord "L'odeur d'huile peut en rébuter plus d'un."
-
-    kael rire "Exactement."
-    kael rire "Au moins on est au calme ici."
-
-    "Son regard revient sur les armoires électriques. Il vérifie un écran, puis un autre."
-    noam reflexion "Y a un problème ?"
-    kael reflechit "Je sais pas encore. Mais t'as vu la taille des installations ?"
-    noam neutre "Oui. C'est grand."
-    kael reflechit "Un peu trop, pour douze types qui doivent juste rester là un mois."
-    noam inquiet "Tu veux dire qu'ils ont prévu autre chose ?"
-    kael neutre "J'en sais rien. Peut-être qu'ils ont simplement prévu large."
-    noam reflexion "Tu devrais en parler aux autres."
-    kael calme "Pour leur dire quoi ? Que j'ai trouvé une armoire électrique bizarre ?"
-    kael reflechit "Je préfère regarder avant. J'ai pas envie de foutre tout le monde en panique pour rien."
-    noam neutre "Ouais. Vu comme ça..."
-
-    "Il hoche la tête vers le fond."
-    "Je suis son regard."
-
-    "Une masse inerte imposante est tranquillement entreposée à l'arrière de la salle."
-    "Un gros robot. Il fait bien trois mètres de haut."
-    "On pourrait presque avoir l'impression qu'il va se mettre à bouger d'un instant à l'autre."
-
-    noam surpris "C’est… quoi ça ? C'est impressionnant !"
-
-    kael reflechit "Le gros Berthe."
-    kael reflechit "C’est comme ça qu’il s’appelle apparemment."
-    
-    "Kael montre du doigt une plaque derrière lui qui indique le nom du robot."
-    "Enfin, je ne sais même pas si on peut vraiment appeler ça comme ça."
-    
-    noam reflexion "Donc c’est pas juste un machin oublié."
-
-    kael neutre "Non."
-    kael neutre "C’est entretenu."
-    kael neutre "Et si c’est entretenu…"
-    kael neutre "c’est que ça peut servir."
-    
-    kael neutre "Honnêtement, c'est pas si impressionnant que ça."
-    kael neutre "Il y a des prototypes beaucoup plus robustes ou rapides sur orbite."
-    kael neutre "Mais ça a l'air fonctionnel."
-
-    pause 0.3
-
-    noam inquiet "Tu penses qu’il sert à quoi ?"
-
-    kael reflechit "C'est un modèle conçu pour deux raisons."
-    
-    "Il prend un temps de réponse, comme pour réfléchir à quels mots utiliser."
-    
-    kael reflechit "Il peut servir d'arme. Il est normalement équipé de fusils laser."
-    kael reflechit "Mais ce n'est pas son point fort."
-    kael reflechit "Il peut surtout aller dans l'espace."
-
-    "Il dit ça calmement."
-    "Trop calmement."
-    "Comme s’il parlait de la météo."
-    
-    kael reflechit "Malgré sa taille, il est équipé de propulseurs, avec la faible gravité, il peut parcourir une longue distance sans problème."
-    kael reflechit "C'est un robot d'exploration spatiale."
-
-    "Ça me fait froid dans le dos."
-
-    pause 0.4
-
-    kael taquin "Bref."
-    kael taquin "Je suis venu ici pour réfléchir tranquillement à un truc."
-
-    noam reflexion "Pour réfléchir ?"
-
-    kael reflechit "Tu sais cette histoire d'amendements."
-    kael reflechit "Les propositions."
-    kael reflechit "Tout ce cirque."
-
-    noam desaccord "Tu vas pas me dire que t’es enthousiaste."
-
-    kael rire "Non. A quoi ça servirait ?"
-    kael rire "Honnêtement, pour moi ce Conclave est plus un risque que quoi que ce soit."
-
-    kael culpabilite "Je pense qu’on devrait annoncer très vite aux autres nos propositions."
-    kael culpabilite "Pas juste ce qu'on vote."
-    kael culpabilite "Parce qu'à la moindre erreur des milliers de gens peuvent mourir par notre faute."
-
-    noam hesitation "Tu ne fais confiance en personne ?"
-
-    kael reflechit "Ce n'est pas ça."
-    kael reflechit "Quand les gens paniquent, ils s’accrochent à n’importe quoi."
-    kael reflechit "Si on en parle avant, nos propositions seront mieux cadrées et on est à peu près sûrs d'éviter une catastrophe."
-
-    pause 0.3
-
-    "Je regarde autour."
-    "L’établi."
-    "L’armoire."
-    "Le panneau d’alimentation."
-    "Tout est là."
-    "Tout est prêt."
-
-    noam reflexion "Tu veux faire ça quand ?"
-    noam reflexion "Tu as tenté d'en parler tout à l'heure, sans trop de réponses ..."
-
-    kael fatigue "Bientôt. Juste avant de déposer les amendements."
-    kael fatigue "C'est vraiment nécessaire."
-    
-    "Il regarde dans le vide, comme perdu dans ses pensées."
-
-    "Tu penses qu'on arrivera à faire avancer les choses ?"
-
-    noam triste "Je ne pense pas."
-
-    kael neutre "Et toi, Noam…"
-    kael neutre "t’as l’air de porter un sac qui n’est pas à toi."
-    kael neutre "Quelle modification vas-tu proposer ?"
-
-    noam desaccord "Franchement ? J'en sais rien du tout."
-
-    kael reflechit "C’est pas vraiment une réponse."
-
-    pause 0.4
-
-    noam desespoir "Je sais."
-    noam desespoir "Mais là, j’ai pas mieux."
-
-    kael neutre "Ouai je vois."
-    kael neutre "On est tous dans le même sac."
-
-    "Il lance un regard au panneau d’alimentation."
-
-    pause 0.5
-
-    think "Cette salle de maintenance ressemble plus à un atelier."
-    think "Et ce n'est pas pour me déplaire."
-    
+    noam sourire "Noam. C'est pas exactement le coin le plus confortable du Conclave."
+    kael taquin "C'est peut-être pour ça que je suis tranquille ici."
+    "Je m'approche du robot. Il est bien plus grand que les modèles de service que j'ai déjà vus."
+    noam surpris "Et ce machin ? Ils ont prévu de nous faire nettoyer les couloirs avec ?"
+    kael reflechit "Non. Il s'appelle Gros Berthe, d'après l'étiquette. C'est un robot d'intervention spatiale."
+    noam reflexion "Tu connais le modèle ?"
+    kael neutre "Pas exactement celui-là. Il peut travailler à l'extérieur de la station, transporter du matériel et se défendre si nécessaire."
+    noam inquiet "Se défendre comment ?"
+    kael reflechit "Avec un armement embarqué, normalement. Mais je ne vois pas ses modules ici."
+    noam taquin "Tu balances ça comme si tu me parlais d'une tondeuse."
+    kael sourire "Désolé. Sur Orbite, ce genre de machine est moins impressionnant."
+    "Kael regarde de nouveau les prises au sol, puis l'armoire qu'il vient de refermer."
+    kael reflechit "Ce que je comprends moins, c'est la taille de l'installation. Il y a de quoi alimenter beaucoup plus d'équipements que ceux qu'on voit."
+    noam reflexion "Peut-être qu'ils ont prévu large pour éviter les pannes."
+    kael neutre "C'est possible. Je n'ai pas assez d'informations pour en dire davantage."
+    noam sourire "Tu pourrais demander à Kami."
+    kael taquin "Je pourrais. Je doute qu'elle me donne les plans."
+    noam taquin "C'est sûr qu'elle a pas l'air du genre à partager ses secrets."
+    kael reflechit "J'aimerais surtout savoir si quelqu'un ici peut réparer quelque chose sans déclencher une alarme. Avec douze personnes pendant un mois, une panne arrivera forcément."
+    noam neutre "Et tu comptes t'en charger ?"
+    kael fatigue "Si je peux aider, oui. Mais je préfère comprendre le matériel avant d'y toucher."
+    "Il jette un dernier regard vers Gros Berthe, qui ne bouge pas."
+    noam sourire "Je te laisse à tes circuits. Si je casse quelque chose, je saurai où venir."
+    kael taquin "Essaie quand même de ne pas le faire exprès."
+    noam rire "Je promets rien."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_5
-
     $ hideGroup()
     jump MAINTENANCE_TP
-
-# 3m
-# Total : 43m25
