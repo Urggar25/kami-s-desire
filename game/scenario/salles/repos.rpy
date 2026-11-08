@@ -216,7 +216,7 @@ label decouverte_salle_repos:
     iris taquin "Moi non plus. C'est fou, hein ?"
     "Julian se concentre et cesse enfin de parler. Les deux échangent quelques balles, puis Iris marque de nouveau, avant qu'il puisse reprendre son souffle."
     noam rire "Je crois qu'elle joue mieux que nous deux."
-    julian desaccord "Je reconnais qu'elle se défend, mais il ne faut pas tirer de conclusions trop rapides."
+    julian surpris "Je reconnais qu'elle se défend, mais il ne faut pas tirer de conclusions trop rapides."
     iris colere "Tu veux une conclusion ? Regarde le score."
 
     "Iris gagne la partie sur un dernier tir qui laisse Julian immobile devant les poignées. Elle recule et époussette ses mains avec un air parfaitement satisfait."
