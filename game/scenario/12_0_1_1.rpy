@@ -1076,10 +1076,12 @@ label _12_0_1_1_APRES_EXPLOSION:
     call show_chapter_title("Fin du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond")
     call end_day("13", sleeping=True) from _call_end_day_12_0_1_1
 
-    if j12011_wire_result == "security":
-        jump _13_0_1_1_0_REVEIL_CHAMBRE
-
-    jump _13_0_1_1_1_REVEIL_CHAMBRE
+    # L'autre branche J13 n'a pas encore de scenario.
+    # getattr evite aussi un NameError sur les sauvegardes ou ce resultat
+    # n'a jamais ete defini par le debat.
+    if getattr(store, "j12011_wire_result", "security") != "security":
+        call screen kd_route_vote_convergence
+    jump _13_0_1_1_0_REVEIL_CHAMBRE
 
 # Total journée : 14 minutes 30
 # Durée totale : 2h56,20
