@@ -30,7 +30,14 @@ init python:
         4: [(0.238, 0.450), (0.762, 0.450), (0.238, 0.740), (0.762, 0.740)],
     }
 
-    CC_UNFINISHED_LABELS = set()
+    # Des labels existent parfois deja pour une route dont les jours suivants
+    # ne sont pas ecrits : la presence du label ne suffit pas a la rendre jouable.
+    # Liste des entrees volontairement non accessibles dans la version gratuite.
+    CC_UNFINISHED_LABELS = {
+        "_5_0_0_JULIAN",               # Route Mystere : J6 absent.
+        "_5_1_PHARMACIE",             # J6_1_1 absent.
+        "_7_1_0_DECLARER_PLACEHOLDER", # Declaration d'Anya : suite apres J7 absente.
+    }
     CC_UNRELEASED_PACKS = {"mystere"}  # Annonce réservée, aucune date ni achat.
     CC_STORY_PACKS = {"origine": {"title": "L'Origine", "days": "Jours 5 à 30", "endings": "7 fins", "tagline": "Découvrez une des vérités cachées derrière le Conclave."},
         "doppelganger_routes": {"title": "L’Origine", "days": "Jours 20 à 30", "endings": "Fins alternatives", "tagline": "Et si Noam avait choisi autrement ?"}}
