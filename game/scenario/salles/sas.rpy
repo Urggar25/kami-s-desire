@@ -163,46 +163,80 @@ label LIV_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_sas:
+
     $ decouverte_sas = True
+
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    think "Le sas de livraison. C'est peut-être le seul endroit où quelque chose peut entrer ou sortir de cette station."
+    think "Si une navette doit nous apporter de la nourriture chaque semaine, elle passera forcément par le sas. Je veux au moins voir à quoi ressemble notre seule porte vers l'extérieur."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_349
     scene bg_sas at adaptive_fullscreen with fade
-    "Une énorme porte blindée ferme le fond de la salle. Des caisses sont empilées le long des murs et plusieurs combinaisons attendent dans leurs supports."
+
+    "La porte blindée est énorme, et des caisses sont alignées le long des murs. Une femme est penchée sur le terminal de contrôle, visiblement en pleine négociation avec la machine."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("mara", "mefiant", 0.78),
     ])
-    "Une femme est plantée devant le terminal, les bras croisés. Elle appuie sur une commande et obtient exactement le même bip d'erreur que la fois précédente."
-    mara agace "Allez, ouvre-toi, espèce de saloperie."
-    noam hesitation "Tu sais qu'en général, insulter une porte ne suffit pas à l'ouvrir ?"
-    mara surpris "Putain, tu m'as fait sursauter ! T'étais obligé d'arriver comme un fantôme ?"
-    noam sourire "Désolé. Je pensais pas trouver quelqu'un en train de se battre avec le sas."
-    mara taquin "Je me bats pas. Je vérifie juste s'il y a moyen de sortir d'ici sans demander la permission à notre chère Kami."
-    noam surpris "Et alors ?"
-    mara neutre "Et alors, ça veut pas. Même le menu de maintenance est verrouillé. Ils nous prennent vraiment pour des gosses."
-    noam reflexion "Tu comptais faire quoi si ça s'ouvrait ?"
-    mara rire "Je sais pas, rentrer chez moi à pied ? Tu poses des questions franchement."
-    noam taquin "C'est toi qui essayais d'ouvrir."
-    mara sourire "Touché. Moi c'est Mara, d'Axiome."
+
+    mara agace "Allez, bordel, y a forcément un menu de maintenance quelque part !"
+    noam sourire "Salut. Tu essaies de sortir ?"
+    mara surpris "Putain ! Tu pouvais pas faire un peu de bruit en arrivant ? J'ai cru que c'était Kami."
+    noam taquin "Désolé. Du coup, ça marche ?"
+    mara rire "Bien sûr. Je suis en train de programmer une navette pour aller boire un verre sur Terre."
+    noam sourire "Ah, parfait. Tu me prends avec toi ?"
+    mara taquin "Seulement si t'arrêtes de poser des questions de merde."
+
+    "Elle tapote un nouveau menu, puis m'indique deux zones tactiles sur le panneau."
+    mara neutre "Attends, tu peux m'aider deux secondes ? Je crois qu'il faut maintenir ce bouton pour tester l'autre commande."
+    noam hesitation "Tu es sûre de toi ?"
+    mara sourire "À peu près. Et puis on va pas casser toute la station avec un bouton."
+    noam inquiet "C'est pas exactement ce que j'avais envie d'entendre."
+    mara taquin "Allez, fais pas ta chochotte. Tiens celui-là, je m'occupe du reste."
+
+    "Je maintiens la commande. Mara en active une seconde. Une alarme sonore se déclenche aussitôt, accompagnée d'un message rouge sur le terminal."
+    play sound sfx_beep
+    noam peur "DÉPRESSURISATION EN COURS ?! MARA, C'EST QUOI CE BORDEL ?!"
+    mara stress "Hein ?! Mais non, c'est pas possible ! Lâche le bouton !"
+    "Je retire ma main. L'alarme continue de retentir tandis qu'un compte à rebours apparaît."
+    noam desespoir "ÇA S'ARRÊTE PAS !"
+    mara colere "J'AI VU ! Pousse-toi, laisse-moi regarder !"
+    "Mara frappe plusieurs fois sur l'écran. Le compte à rebours atteint zéro, puis disparaît brusquement."
+    "« SIMULATION TERMINÉE — AUCUNE DÉPRESSURISATION EFFECTUÉE »"
+
+    "Il nous faut plusieurs secondes pour comprendre. Mara relit le message, puis commence à rire."
+    mara rire "Ah non, mais quelle bande de cons ! Ils ont mis un simulateur sur le même écran que les commandes !"
+    noam desaccord "Tu trouves ça drôle ?! J'ai cru qu'on allait mourir !"
+    mara rire "Bah oui, justement ! T'as vu ta tête ? On aurait dit que t'allais traverser le plafond !"
+    noam colere "Tu m'as demandé de maintenir le bouton !"
+    mara sourire "Ouais, bon, d'accord. C'était pas mon idée du siècle."
+    "Elle lève les mains en signe d'excuse, même si son sourire est encore bien trop large."
+    mara taquin "Promis, la prochaine fois que je joue avec un sas, je te préviens que je sais pas ce que je fais."
+    noam reflexion "C'est censé me donner envie de recommencer ?"
+    mara rire "Pas forcément, non."
+
+    "Mara se laisse tomber contre une caisse et finit par reprendre son souffle."
+    mara sourire "Moi c'est Mara. Axiome. Et toi, le type qui vient d'avoir la peur de sa vie ?"
     $ unlock_character_name("mara")
-    noam sourire "Noam, d'[codex_dialogue_link('harmonie', 'HARMONIE')]."
-    mara taquin "Harmonie ? Ah, donc t'es le type qui va nous demander de parler calmement quand on commencera à se foutre sur la gueule."
-    noam desaccord "J'espère surtout qu'on en arrivera pas là."
-    mara rire "Ouais, moi aussi. Ça m'emmerderait de devoir te donner raison."
-    "Mara donne un petit coup du plat de la main sur le terminal, puis désigne les caisses derrière elle."
-    mara neutre "Au moins, la logistique a l'air prévue. Livraisons aux jours 7, 14, 21 et 28. Nourriture, médocs, pièces de rechange... tout passe par ici."
-    noam reflexion "Tu as trouvé ça sur l'écran ?"
-    mara sourire "Ouais. L'horaire et les quantités sont affichés. Les codes d'ouverture, bizarrement, beaucoup moins."
-    noam inquiet "Si on a un problème urgent entre deux livraisons, on fait comment ?"
-    mara stress "Ben on se démerde avec ce qu'on a. C'est ça qui me plaît pas dans leur planning à la con."
-    noam neutre "Tu as peur qu'ils oublient de nous approvisionner ?"
-    mara taquin "J'ai surtout peur de dépendre d'une machine qui peut décider de nous faire chier pour s'amuser. Nuance."
-    "Elle recule enfin du terminal et lève les mains en signe de capitulation."
-    mara sourire "Bon, j'ai fait le tour de ma grande carrière de voleuse de vaisseau. Si tu trouves un bouton marqué « sortie », tu m'appelles."
-    noam taquin "Promis. Mais je vérifierai d'abord que c'est pas celui qui ouvre la porte sur le vide."
-    mara rire "Ah, t'apprends vite. T'es peut-être pas si chiant finalement."
+    noam neutre "Noam. Harmonie."
+    mara taquin "Harmonie ? Ah, ça explique pourquoi t'as essayé de parler poliment à la porte avant de gueuler."
+    noam taquin "C'est sûr que toi, tu as commencé par l'insulter."
+    mara rire "Et j'assume. Elle avait qu'à mieux se comporter."
+
+    "Elle me montre l'écran désormais revenu à son calendrier normal."
+    mara neutre "Bon, au moins, j'ai réussi à trouver les livraisons. Jour 7, 14, 21 et 28. Toute notre bouffe et nos pièces de rechange devraient passer par là."
+    noam inquiet "Et si on manque de quelque chose entre deux livraisons ?"
+    mara stress "Ben on sera dans la merde. C'est aussi pour ça que je voulais voir comment la porte marche."
+    noam reflexion "Tu pensais pouvoir la rouvrir toute seule ?"
+    mara taquin "J'avais peut-être une petite idée derrière la tête. Mais après notre magnifique démonstration, je vais éviter de faire la maligne."
+    "Elle se relève et regarde un instant la porte blindée. Son sourire s'atténue, juste assez pour que je le remarque."
+    mara stress "C'est con, hein ? On est à quelques mètres du seul endroit qui mène dehors, et on sait même pas comment l'ouvrir."
+    noam neutre "On aura peut-être l'occasion d'en apprendre plus à la première livraison."
+    mara sourire "Ouais. En attendant, si t'en parles aux autres, dis que c'était un test de sécurité réussi."
+    noam taquin "Je dirai surtout que tu m'as presque fait faire une crise cardiaque."
+    mara rire "Ça marche aussi !"
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
     $ hideGroup()
     jump LIVRAISON_TP
