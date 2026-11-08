@@ -169,54 +169,79 @@ transform observation_day1_window_zoom:
 # -----------------------------------------------------------------------
 
 label decouverte_salle_observation:
+
     $ decouverte_salle_observation = True
+
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    think "La salle d'observation est au bout du couloir. Je ne sais pas encore ce qu'on est censés y observer."
+    think "La salle d'observation doit donner sur l'extérieur. J'ai presque peur de découvrir à quoi ressemble la Terre depuis ici."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_344
     scene bg_observation at adaptive_fullscreen with fade
-    "Une grande baie vitrée occupe presque tout un mur. Des consoles de navigation affichent des trajectoires et des informations sur le trafic alentour."
+
+    "Une immense baie vitrée occupe le fond de la pièce. Avant même de m'en approcher, j'entends quelqu'un protester devant une console de communication."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("lysa", "neutre", 0.78),
     ])
-    "Lysa est déjà là. Elle me voit entrer, mais ne détourne presque pas les yeux du hublot."
-    noam sourire "Ça va ? Tu as l'air absorbée."
-    lysa blase "Approche et regarde. Après, tu pourras te moquer de ma tête."
+
+    lysa blase "Mais oui, je sais que c'est verrouillé. Tu peux arrêter de me le répéter ?"
+    noam hesitation "Tu parles à qui ?"
+    lysa surpris "Ah, Noam. À personne. Enfin, à une machine qui a décidé de me prendre pour une idiote."
+    noam sourire "Qu'est-ce que tu essaies de faire ?"
+    lysa taquin "Commander une pizza. Tu veux quoi dessus ?"
+    noam taquin "D'accord, j'ai compris. T'essaies de contacter quelqu'un."
+    "Lysa ramène aussitôt la console à son menu principal, mais j'ai eu le temps d'apercevoir un nom dans le champ du destinataire."
+    lysa blase "Tu peux éviter de regarder par-dessus mon épaule ?"
+    noam neutre "Désolé. Je voulais pas être indiscret."
+    lysa fatigue "Ouais, bon... Je voulais juste passer un appel. Ça a pas marché. Fin de l'histoire."
+    noam sourire "Tu peux toujours réessayer plus tard."
+    lysa taquin "Merci pour le conseil technique. Je le noterai dans mon journal de bord."
+
+    "Elle s'éloigne de l'écran et se place devant la baie vitrée."
+    lysa reflexion "Viens voir ça, plutôt. Au moins, c'est quelque chose qu'on nous laisse regarder."
     $ hideGroup()
     scene bg_observation at adaptive_fullscreen
-    "Je m'avance jusqu'à la vitre. La Terre occupe une grande partie du champ de vision, entourée de ténèbres et de quelques points lumineux."
-    "Je reste un moment sans parler. Je savais qu'on avait quitté le sol, mais le voir de mes propres yeux est une autre histoire."
+
+    "Je m'avance. La Terre s'étend derrière la vitre, immense et pourtant inaccessible. Un vaisseau traverse lentement notre champ de vision, si près que je distingue ses balises."
+    "Pendant un instant, j'oublie complètement la dispute de Lysa avec la console."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("lysa", "reflexion", 0.78),
     ])
-    noam surpris "On est vraiment aussi loin ?"
-    lysa sourire "Eh ouais. On a fait un sacré trajet pendant qu'on dormait."
-    noam inquiet "C'est magnifique, mais j'ai un peu l'impression que le sol va se dérober sous mes pieds."
-    lysa taquin "Il est déjà très loin sous tes pieds, le sol. Désolée, ça aide pas."
-    noam rire "Non, pas vraiment."
-    "Un vaisseau traverse lentement le champ de vision. Sur l'écran voisin, une trajectoire s'affiche avec l'identifiant du district Orbite."
-    noam reflexion "Il y a du trafic dehors. Tu crois qu'ils peuvent nous voir ?"
-    lysa neutre "Probablement. Par contre, nous, on n'a même pas le droit de les appeler."
-    noam desaccord "Il doit bien y avoir une radio quelque part."
-    lysa reflexion "Il y en a une, juste là. Mais l'émission est verrouillée. J'ai déjà vérifié."
-    noam sourire "J'aurais dû me douter que tu avais essayé."
-    lysa taquin "Tu me connais. Quand on me dit de rester enfermée, je commence par chercher les fenêtres."
-    noam reflexion "Tu voudrais contacter qui ?"
-    lysa triste "Ma famille. Comme tout le monde, je suppose. J'aimerais juste savoir ce qu'ils font en ce moment."
-    noam neutre "Oui, moi aussi."
-    "Elle pose la main sur le rebord de la baie, puis me laisse regarder les écrans."
-    lysa reflexion "C'est bizarre, hein ? Depuis qu'on est arrivés, je suis énervée contre à peu près tout. Et là, pendant cinq minutes, j'ai enfin réussi à penser à autre chose."
-    noam taquin "À condition de ne pas regarder la planète où on a laissé tous nos problèmes."
-    lysa rire "Bravo, t'as réussi à gâcher le moment. Je pensais que c'était mon boulot."
-    noam sourire "Pardon. C'est plutôt beau, quand même."
-    lysa sourire "Ouais. Ça me fait du bien de l'admettre, même si je sais pas trop quoi en penser."
-    "Nous restons un peu devant la vitre. Lysa finit par s'asseoir près d'une console pendant que je consulte la carte des trajectoires."
-    noam neutre "Je vais continuer la visite. Tu viens ?"
-    lysa blase "Pas tout de suite. J'ai trouvé le seul endroit d'ici où personne ne me demande mon avis."
-    noam taquin "Profites-en, ça risque de pas durer."
-    lysa sourire "Compte sur moi."
+
+    noam surpris "Ah ouais... Je savais qu'on était dans l'espace, mais la voir comme ça, c'est autre chose."
+    lysa sourire "C'est la première fois que je trouve un truc réussi dans toute cette histoire."
+    noam inquiet "Ça donne aussi une sacrée impression de vide. Tu ressens pas ça, toi ?"
+    lysa taquin "Si. Mais je préfère encore regarder le vide que les gens qui vont nous demander de voter pendant un mois."
+    noam rire "Tu es vraiment incapable de profiter d'un moment tranquille, hein ?"
+    lysa sourire "Je fais des efforts, regarde. J'ai tenu presque dix secondes."
+
+    "Un autre vaisseau apparaît, ralentit près de notre trajectoire et repart vers la Terre."
+    noam reflexion "Ils ont peut-être une radio. On pourrait demander à quelqu'un de relayer un message."
+    lysa triste "J'ai essayé de trouver un canal ouvert. Tout ce qui sert à émettre est bloqué."
+    noam neutre "Il y a peut-être une autre solution."
+    lysa blase "Je sais. C'est ce que je me répète depuis tout à l'heure."
+    "Elle garde les yeux sur le petit point lumineux qui s'éloigne."
+    lysa reflexion "C'était ma sœur que j'essayais d'appeler. On s'est quittées comme des connes, avec une dispute à propos de rien. Je voulais juste lui dire que..."
+    "Elle souffle et se met à rire, sans grande conviction."
+    lysa taquin "Super, hein ? Une vue imprenable sur la Terre et moi qui me prends la tête pour une engueulade."
+    noam neutre "Tu peux t'inquiéter pour elle. T'as pas besoin de faire comme si c'était ridicule."
+    lysa fatigue "Je sais. C'est juste que j'ai horreur qu'on me voie comme ça."
+    noam sourire "Je peux faire semblant de n'avoir rien entendu."
+    lysa sourire "Ça, ce serait sympa."
+    "Nous regardons encore le vaisseau disparaître, jusqu'à ce qu'il devienne impossible à distinguer des autres lumières."
+    lysa reflexion "J'espère qu'elle va bien."
+    noam neutre "Moi aussi."
+
+    "Lysa rejoint la baie vitrée et me donne un petit coup d'épaule."
+    lysa taquin "Bon. Si quelqu'un te demande, j'étais en train d'étudier les trajectoires spatiales. Avec beaucoup de sérieux."
+    noam rire "Évidemment. Je n'ai jamais vu quelqu'un d'aussi professionnel."
+    lysa sourire "Parfait. Maintenant, laisse-moi deux minutes avec ma vue."
+    "Je lui laisse la place. En revenant vers la porte, je remarque que la console de communication affiche toujours « ÉMISSION INTERDITE »."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_6
     $ hideGroup()
     jump OBSERVATION_TP
