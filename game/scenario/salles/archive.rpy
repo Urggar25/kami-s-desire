@@ -181,7 +181,7 @@ label decouverte_salle_archive:
     "« AUTORISATION EXPIRÉE — SESSION INTERROMPUE »"
 
     noam surpris "C'est toi qui as fait ça ?"
-    tomas panique "Non ! J'ai juste lancé une recherche ! Enfin, normalement, j'ai juste lancé une recherche..."
+    tomas panne "Non ! J'ai juste lancé une recherche ! Enfin, normalement, j'ai juste lancé une recherche..."
     "Il appuie deux fois sur le bouton de retour. La console refuse de réagir."
     noam inquiet "Tu crois qu'on a déclenché une alarme ?"
     tomas panne "J'espère pas. Je voulais pas fouiller dans des dossiers confidentiels, moi. Enfin si, un peu, mais je pensais pas que ça..."
